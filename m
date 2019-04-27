@@ -2,81 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF7AFB34D
-	for <lists+linux-rockchip@lfdr.de>; Sat, 27 Apr 2019 14:09:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 933E1B34E
+	for <lists+linux-rockchip@lfdr.de>; Sat, 27 Apr 2019 14:09:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oTROPE9vQx+p06oCze513PcbTD5AmRWVznJP700MtVk=; b=bjgC8yn6K+juSO
-	Brl7Er3f1XulyoCXWpNXtiFWrJ6VATPjYWrhLBRA24n50U27C+x+5u2rIfVmJ4kh6ZESh1142RBj7
-	YfDlogedcTT3/3qCH1JFgCG1IyVsKdUJN8C64t3h9lwXMFhrjgCKbr0NvrmKOq8LCoopdlZZ4ka6s
-	MqyZTrc+/vjeCDJXRXCw9QbVDJx/riyVieHkQrCwOGstXdQIrFoU1vp0DKFLxTHoI613xviUe+9BH
-	f4UtgTHvrM11pE9ko140LaUr6xvHCelTlQdy0cAq7ieenpS3KiWglVuvQI53XPXuZOxNTiOhG1xY3
-	//j73rYjT5t4f++akcnQ==;
+	List-Owner; bh=Bi75Ybhutba84CObJR07DLR8BFi2ncn03fqH4vkaPCo=; b=haW5dghsOkmuE/
+	5L6j73fKuhxE4lf8fvk531czwJqD2rjSnY2sQUA/IacZRMVwLBFsIDAXsO9n484WoU9lxi+NzEaCT
+	+dJHzfjrvPTmetlaqHNvGQp5GTgxAAzkUoFdeSQCTnNA8iFxj9UEVFA7PQZUwGuQbEJc1pFzIol9d
+	yIdgoTDZIX3Ls1eekxkT7EQSrzLORKU5pNBSF8I7mOFwWGfMCGbcLwKwWxVJkqzZWBTe4OeOFPn+P
+	pZn6zQQ5mTKgyc5TEUGNDxvscsOskidVdKkLhSh5EEA5nK26bPO9g2ooTL+A3vfpaMfhDvnv65mZg
+	Wj8JhSrf0uWdMkUBCUUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKM9F-0000gh-OU; Sat, 27 Apr 2019 12:09:41 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hKM9K-0000kE-KU; Sat, 27 Apr 2019 12:09:46 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKM9B-0000f9-9z
- for linux-rockchip@lists.infradead.org; Sat, 27 Apr 2019 12:09:39 +0000
-Received: by mail-pl1-x644.google.com with SMTP id y3so1987258plp.0
- for <linux-rockchip@lists.infradead.org>; Sat, 27 Apr 2019 05:09:37 -0700 (PDT)
+ id 1hKM9G-0000hE-6d
+ for linux-rockchip@lists.infradead.org; Sat, 27 Apr 2019 12:09:44 +0000
+Received: by mail-pf1-x442.google.com with SMTP id s4so3006917pfh.7
+ for <linux-rockchip@lists.infradead.org>; Sat, 27 Apr 2019 05:09:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Y+odxb7e2SyviCfoXMG3aZDT9QlLLlBgwlsyzM31e/4=;
- b=PFem2gnf4HybeTi7ZxkJyrQ3rh61tKwYvPei7JxMfA28ttoq2glSBwBpsRucfyYPQ+
- m6nNlA8O5uZaEz9juat/RsX7imnePf9w8sARMCYdfG4DUYLmZ8+WjDWK6ZKY9XW7Rwzw
- iFjfdrXPt3DzWUqO6ZGzgzDZE2eDrjNo4Vn/A=
+ bh=wgid28GwLW06ZDyqOEy6uGBCil4hovFDVOiLqMv18n8=;
+ b=L8fCmnCCX7QxJF8F2fqcoUrztbaiDeFO/xzqOGv/Mtzh9/oykJJVBCpnUs/PBE+hds
+ +TIYrjjBspWR0AVKocJ0uxU7EBrl0oRNdTm6Kxc9GkuCEtflmvK/eLR83P69cfDNjoh/
+ q2WQufdQ5GoqrKnsJXk40y8dXEB+5lYKpN1IY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Y+odxb7e2SyviCfoXMG3aZDT9QlLLlBgwlsyzM31e/4=;
- b=F9Kvy1/KOxxZ0Swo6BK3LymYw6BbwGMgm3H8Ke3CRZ0jp3IvaVfSvAR6aVTd29OxhB
- LFUkAvbKzMU7NH2H9UhaXKJaMO0ytTte2frZJcBuD31Q7yuzFpFpsfixjW1vOhzn9mHT
- CgyWbbg4hE2FTL/+EUdX4WbRcDZ0aMae9AyZmsL4HK+at7Oa9HNWhiLFFax1NqwC2dEq
- AAp/WjjSmsnczXRrhECELwD2QusAMD6VVNhj7vPbNead47O/LHF0GSgnpPJHehie+L9D
- XDZ12VXnaue4GvdU9ck77kcflM+YRorHxs18FFfl2f9HvW4qG6suUl+A0lEmmjDql6oG
- 8HiA==
-X-Gm-Message-State: APjAAAVH0py+23QIPkFzrvb7t3fR3DbkZfbPBf2mFLLWNVuyj9h1SALh
- Z7XfsAVpRGseFDb4rwVEAdAcHA==
-X-Google-Smtp-Source: APXvYqw7PdAH+zlQEolWsQa1Y5gfJD1d/Cipz+fiY9ZqAEsROXCL8VxNU+bUhzFFO36JNKtRaKSq7g==
-X-Received: by 2002:a17:902:61:: with SMTP id
- 88mr50874407pla.166.1556366976433; 
- Sat, 27 Apr 2019 05:09:36 -0700 (PDT)
+ bh=wgid28GwLW06ZDyqOEy6uGBCil4hovFDVOiLqMv18n8=;
+ b=mAGv86ufqqgxm0Q31YQLjTiTKskTY25EntYxQln1ngtJjXOgIGf4CQ27sacocS6AD3
+ gJxVfUUO1Q7TFqSgdCfrivE4TFGOZIwO7zmprfWBI2xgya9Dy8UYBcYzESyVlAgAkoeU
+ 65+3cPRXzMFQLA9Ald/nm2f9FgDJoCZGR8XhvbbRSX1ipV0riDZVyKlG6oYUU1EPrMka
+ Na9LGAjhTFEw8KqqV9oo1v8qLyGRLtHNUpEv7iApcPG3MzNUhb4NbG/9ufWV/UbGEnr5
+ 3V4SmB7seHX2i7RyQ9NhvYM9iuN9MbYqLGVhRKbow5nNPGY1lU1BAT3mGoRahZKpVkG3
+ DWTQ==
+X-Gm-Message-State: APjAAAV0QiZf9a04ho1nVuHgAPELEbkYizmWtjFx6hl5rbRaxd8TPyJJ
+ uV2m9skEdlhu0bpxmptnH6pOGw==
+X-Google-Smtp-Source: APXvYqxJZ/N93nQVdXCc9ANJkVuf5ACCuLO8DF8YF/QIJo7tvA3h+38NXiAak8XKzRehVQMs6613vw==
+X-Received: by 2002:a65:48ca:: with SMTP id o10mr5656542pgs.136.1556366981189; 
+ Sat, 27 Apr 2019 05:09:41 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.185.144])
- by smtp.gmail.com with ESMTPSA id f14sm1386872pgj.24.2019.04.27.05.09.32
+ by smtp.gmail.com with ESMTPSA id f14sm1386872pgj.24.2019.04.27.05.09.36
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 27 Apr 2019 05:09:35 -0700 (PDT)
+ Sat, 27 Apr 2019 05:09:40 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, Akash Gajjar <akash@openedev.com>,
  Tom Rini <trini@konsulko.com>,
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v6 11/13] rockchip: rk3399: Add Rockpro64 board support
-Date: Sat, 27 Apr 2019 17:39:14 +0530
-Message-Id: <20190427120916.9033-2-jagan@amarulasolutions.com>
+Subject: [PATCH v6 12/13] rockchip: rk3399: Add Rock PI 4 support
+Date: Sat, 27 Apr 2019 17:39:15 +0530
+Message-Id: <20190427120916.9033-3-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190427120916.9033-1-jagan@amarulasolutions.com>
 References: <20190427120916.9033-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190427_050937_348861_2886F102 
-X-CRM114-Status: GOOD (  14.52  )
+X-CRM114-CacheID: sfid-20190427_050942_251533_86ACDE31 
+X-CRM114-Status: GOOD (  13.45  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -106,60 +105,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add initial support for Rockpro64 board.
+Add initial support for Rock PI 4 board.
 
 Specification
 - Rockchip RK3399
-- 2/4GB Dual-Channel LPDDR3
+- LPDDR4
+- eMMC
 - SD card slot
-- eMMC socket
-- 128Mb SPI Flash
-- Gigabit ethernet
-- PCIe 4X slot
-- WiFI/BT module socket
-- HDMI In/Out, DP, MIPI DSI/CSI, eDP
-- USB 3.0, 2.0
-- USB Type C power and data
-- GPIO expansion ports
-- DC 12V/2A
+- RTL8211E 1Gbps
+- HDMI In/Out, DP, MIPI DSI/CSI
+- PCIe M.2
+- USB 2.0, USB-3.0
+- USB C Type
 
-Commit details of rk3399-rockpro64.dts sync from Linux 5.1-rc2:
-"arm64: dts: rockchip: rockpro64 dts add usb regulator"
-(sha1: 6db644c79c8d45d73b56bc389aebd85fc3679beb)
-
-'Akash' has sent an initial patch before, so I keep him as board
-maintainer and I'm co-maintainer based on our conversation.
+Commit details of rk3399-rock-pi-4.dts sync from Linux 5.1-rc2:
+"arm64: dts: rockchip: add ROCK Pi 4 DTS support"
+(sha1: 1b5715c602fda7b812af0e190eddcce2812e5417)
 
 Signed-off-by: Akash Gajjar <akash@openedev.com>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
  arch/arm/dts/Makefile                     |   1 +
- arch/arm/dts/rk3399-rockpro64-u-boot.dtsi |   6 +
- arch/arm/dts/rk3399-rockpro64.dts         | 712 ++++++++++++++++++++++
+ arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi |   6 +
+ arch/arm/dts/rk3399-rock-pi-4.dts         | 606 ++++++++++++++++++++++
  board/rockchip/evb_rk3399/MAINTAINERS     |   7 +
- configs/rockpro64-rk3399_defconfig        |  58 ++
- 5 files changed, 784 insertions(+)
- create mode 100644 arch/arm/dts/rk3399-rockpro64-u-boot.dtsi
- create mode 100644 arch/arm/dts/rk3399-rockpro64.dts
- create mode 100644 configs/rockpro64-rk3399_defconfig
+ configs/rock-pi-4-rk3399_defconfig        |  58 +++
+ 5 files changed, 678 insertions(+)
+ create mode 100644 arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi
+ create mode 100644 arch/arm/dts/rk3399-rock-pi-4.dts
+ create mode 100644 configs/rock-pi-4-rk3399_defconfig
 
 diff --git a/arch/arm/dts/Makefile b/arch/arm/dts/Makefile
-index ede7da23fb..23a9807444 100644
+index 23a9807444..a2911fa2fd 100644
 --- a/arch/arm/dts/Makefile
 +++ b/arch/arm/dts/Makefile
-@@ -95,6 +95,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += \
+@@ -94,6 +94,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += \
+ 	rk3399-puma-ddr1333.dtb \
  	rk3399-puma-ddr1600.dtb \
  	rk3399-puma-ddr1866.dtb \
++	rk3399-rock-pi-4.dtb \
  	rk3399-rock960.dtb \
-+	rk3399-rockpro64.dtb \
+ 	rk3399-rockpro64.dtb \
  	rv1108-elgin-r1.dtb \
- 	rv1108-evb.dtb
- dtb-$(CONFIG_ARCH_MESON) += \
-diff --git a/arch/arm/dts/rk3399-rockpro64-u-boot.dtsi b/arch/arm/dts/rk3399-rockpro64-u-boot.dtsi
+diff --git a/arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi b/arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi
 new file mode 100644
 index 0000000000..7bddc3acdb
 --- /dev/null
-+++ b/arch/arm/dts/rk3399-rockpro64-u-boot.dtsi
++++ b/arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi
 @@ -0,0 +1,6 @@
 +// SPDX-License-Identifier: GPL-2.0+
 +/*
@@ -167,16 +159,16 @@ index 0000000000..7bddc3acdb
 + */
 +
 +#include "rk3399-u-boot.dtsi"
-diff --git a/arch/arm/dts/rk3399-rockpro64.dts b/arch/arm/dts/rk3399-rockpro64.dts
+diff --git a/arch/arm/dts/rk3399-rock-pi-4.dts b/arch/arm/dts/rk3399-rock-pi-4.dts
 new file mode 100644
-index 0000000000..1f2394e058
+index 0000000000..4a543f2117
 --- /dev/null
-+++ b/arch/arm/dts/rk3399-rockpro64.dts
-@@ -0,0 +1,712 @@
++++ b/arch/arm/dts/rk3399-rock-pi-4.dts
+@@ -0,0 +1,606 @@
 +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
 +/*
-+ * Copyright (c) 2017 Fuzhou Rockchip Electronics Co., Ltd.
-+ * Copyright (c) 2018 Akash Gajjar <Akash_Gajjar@mentor.com>
++ * Copyright (c) 2019 Akash Gajjar <Akash_Gajjar@mentor.com>
++ * Copyright (c) 2019 Pragnesh Patel <Pragnesh_Patel@mentor.com>
 + */
 +
 +/dts-v1/;
@@ -186,8 +178,8 @@ index 0000000000..1f2394e058
 +#include "rk3399-opp.dtsi"
 +
 +/ {
-+	model = "Pine64 RockPro64";
-+	compatible = "pine64,rockpro64", "rockchip,rk3399";
++	model = "Radxa ROCK Pi 4";
++	compatible = "radxa,rockpi4", "rockchip,rk3399";
 +
 +	chosen {
 +		stdout-path = "serial2:1500000n8";
@@ -200,56 +192,7 @@ index 0000000000..1f2394e058
 +		#clock-cells = <0>;
 +	};
 +
-+	gpio-keys {
-+		compatible = "gpio-keys";
-+		autorepeat;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pwrbtn>;
-+
-+		power {
-+			debounce-interval = <100>;
-+			gpios = <&gpio0 RK_PA5 GPIO_ACTIVE_LOW>;
-+			label = "GPIO Key Power";
-+			linux,code = <KEY_POWER>;
-+			wakeup-source;
-+		};
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&work_led_gpio>, <&diy_led_gpio>;
-+
-+		work-led {
-+			label = "work";
-+			default-state = "on";
-+			gpios = <&gpio0 RK_PB3 GPIO_ACTIVE_HIGH>;
-+		};
-+
-+		diy-led {
-+			label = "diy";
-+			default-state = "off";
-+			gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_HIGH>;
-+		};
-+	};
-+
-+	sdio_pwrseq: sdio-pwrseq {
-+		compatible = "mmc-pwrseq-simple";
-+		clocks = <&rk808 1>;
-+		clock-names = "ext_clock";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&wifi_enable_h>;
-+
-+		/*
-+		 * On the module itself this is one of these (depending
-+		 * on the actual card populated):
-+		 * - SDIO_RESET_L_WL_REG_ON
-+		 * - PDN (power down when low)
-+		 */
-+		reset-gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
-+	};
-+
-+	vcc12v_dcin: vcc12v-dcin {
++	vcc12v_dcin: dc-12v {
 +		compatible = "regulator-fixed";
 +		regulator-name = "vcc12v_dcin";
 +		regulator-always-on;
@@ -258,27 +201,26 @@ index 0000000000..1f2394e058
 +		regulator-max-microvolt = <12000000>;
 +	};
 +
-+	/* switched by pmic_sleep */
-+	vcc1v8_s3: vcca1v8_s3: vcc1v8-s3 {
++	vcc5v0_sys: vcc-sys {
 +		compatible = "regulator-fixed";
-+		regulator-name = "vcc1v8_s3";
++		regulator-name = "vcc5v0_sys";
 +		regulator-always-on;
 +		regulator-boot-on;
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+		vin-supply = <&vcc_1v8>;
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		vin-supply = <&vcc12v_dcin>;
 +	};
 +
 +	vcc3v3_pcie: vcc3v3-pcie-regulator {
 +		compatible = "regulator-fixed";
 +		enable-active-high;
-+		gpio = <&gpio1 RK_PD0 GPIO_ACTIVE_HIGH>;
++		gpio = <&gpio2 RK_PD2 GPIO_ACTIVE_HIGH>;
 +		pinctrl-names = "default";
 +		pinctrl-0 = <&pcie_pwr_en>;
 +		regulator-name = "vcc3v3_pcie";
 +		regulator-always-on;
 +		regulator-boot-on;
-+		vin-supply = <&vcc12v_dcin>;
++		vin-supply = <&vcc5v0_sys>;
 +	};
 +
 +	vcc3v3_sys: vcc3v3-sys {
@@ -291,16 +233,15 @@ index 0000000000..1f2394e058
 +		vin-supply = <&vcc5v0_sys>;
 +	};
 +
-+	/* Actually 3 regulators (host0, 1, 2) controlled by the same gpio */
 +	vcc5v0_host: vcc5v0-host-regulator {
 +		compatible = "regulator-fixed";
 +		enable-active-high;
-+		gpio = <&gpio4 RK_PD2 GPIO_ACTIVE_HIGH>;
++		gpio = <&gpio4 RK_PD1 GPIO_ACTIVE_HIGH>;
 +		pinctrl-names = "default";
 +		pinctrl-0 = <&vcc5v0_host_en>;
 +		regulator-name = "vcc5v0_host";
 +		regulator-always-on;
-+		vin-supply = <&vcc5v0_usb>;
++		vin-supply = <&vcc5v0_sys>;
 +	};
 +
 +	vcc5v0_typec: vcc5v0-typec-regulator {
@@ -311,27 +252,20 @@ index 0000000000..1f2394e058
 +		pinctrl-0 = <&vcc5v0_typec_en>;
 +		regulator-name = "vcc5v0_typec";
 +		regulator-always-on;
-+		vin-supply = <&vcc5v0_usb>;
++		vin-supply = <&vcc5v0_sys>;
 +	};
 +
-+	vcc5v0_sys: vcc5v0-sys {
++	vcc_lan: vcc3v3-phy-regulator {
 +		compatible = "regulator-fixed";
-+		regulator-name = "vcc5v0_sys";
++		regulator-name = "vcc_lan";
 +		regulator-always-on;
 +		regulator-boot-on;
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		vin-supply = <&vcc12v_dcin>;
-+	};
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
 +
-+	vcc5v0_usb: vcc5v0-usb {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc5v0_usb";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		vin-supply = <&vcc12v_dcin>;
++		regulator-state-mem {
++			regulator-off-in-suspend;
++		};
 +	};
 +
 +	vdd_log: vdd-log {
@@ -391,14 +325,8 @@ index 0000000000..1f2394e058
 +};
 +
 +&hdmi {
-+	ddc-i2c-bus = <&i2c3>;
 +	pinctrl-names = "default";
 +	pinctrl-0 = <&hdmi_cec>;
-+	status = "okay";
-+};
-+
-+&gpu {
-+	mali-supply = <&vdd_gpu>;
 +	status = "okay";
 +};
 +
@@ -431,7 +359,7 @@ index 0000000000..1f2394e058
 +		vcc10-supply = <&vcc5v0_sys>;
 +		vcc11-supply = <&vcc5v0_sys>;
 +		vcc12-supply = <&vcc3v3_sys>;
-+		vddio-supply = <&vcca_1v8>;
++		vddio-supply = <&vcc_1v8>;
 +
 +		regulators {
 +			vdd_center: DCDC_REG1 {
@@ -479,8 +407,8 @@ index 0000000000..1f2394e058
 +				};
 +			};
 +
-+			vcc1v8_dvp: LDO_REG1 {
-+				regulator-name = "vcc1v8_dvp";
++			vcc1v8_codec: LDO_REG1 {
++				regulator-name = "vcc1v8_codec";
 +				regulator-always-on;
 +				regulator-boot-on;
 +				regulator-min-microvolt = <1800000>;
@@ -490,12 +418,12 @@ index 0000000000..1f2394e058
 +				};
 +			};
 +
-+			vcc3v0_touch: LDO_REG2 {
-+				regulator-name = "vcc3v0_touch";
++			vcc1v8_hdmi: LDO_REG2 {
++				regulator-name = "vcc1v8_hdmi";
 +				regulator-always-on;
 +				regulator-boot-on;
-+				regulator-min-microvolt = <3000000>;
-+				regulator-max-microvolt = <3000000>;
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
 +				regulator-state-mem {
 +					regulator-off-in-suspend;
 +				};
@@ -517,7 +445,7 @@ index 0000000000..1f2394e058
 +				regulator-name = "vcc_sdio";
 +				regulator-always-on;
 +				regulator-boot-on;
-+				regulator-min-microvolt = <1800000>;
++				regulator-min-microvolt = <3000000>;
 +				regulator-max-microvolt = <3000000>;
 +				regulator-state-mem {
 +					regulator-on-in-suspend;
@@ -548,12 +476,12 @@ index 0000000000..1f2394e058
 +				};
 +			};
 +
-+			vcca1v8_codec: LDO_REG7 {
-+				regulator-name = "vcca1v8_codec";
++			vcc0v9_hdmi: LDO_REG7 {
++				regulator-name = "vcc0v9_hdmi";
 +				regulator-always-on;
 +				regulator-boot-on;
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
++				regulator-min-microvolt = <900000>;
++				regulator-max-microvolt = <900000>;
 +				regulator-state-mem {
 +					regulator-off-in-suspend;
 +				};
@@ -571,19 +499,23 @@ index 0000000000..1f2394e058
 +				};
 +			};
 +
-+			vcc3v3_s3: vcc_lan: SWITCH_REG1 {
-+				regulator-name = "vcc3v3_s3";
++			vcc_cam: SWITCH_REG1 {
++				regulator-name = "vcc_cam";
 +				regulator-always-on;
 +				regulator-boot-on;
++				regulator-min-microvolt = <3300000>;
++				regulator-max-microvolt = <3300000>;
 +				regulator-state-mem {
 +					regulator-off-in-suspend;
 +				};
 +			};
 +
-+			vcc3v3_s0: SWITCH_REG2 {
-+				regulator-name = "vcc3v3_s0";
++			vcc_mipi: SWITCH_REG2 {
++				regulator-name = "vcc_mipi";
 +				regulator-always-on;
 +				regulator-boot-on;
++				regulator-min-microvolt = <3300000>;
++				regulator-max-microvolt = <3300000>;
 +				regulator-state-mem {
 +					regulator-off-in-suspend;
 +				};
@@ -646,17 +578,6 @@ index 0000000000..1f2394e058
 +	i2c-scl-rising-time-ns = <600>;
 +	i2c-scl-falling-time-ns = <20>;
 +	status = "okay";
-+
-+	fusb0: typec-portc@22 {
-+		compatible = "fcs,fusb302";
-+		reg = <0x22>;
-+		interrupt-parent = <&gpio1>;
-+		interrupts = <RK_PA2 IRQ_TYPE_LEVEL_LOW>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&fusb0_int>;
-+		vbus-supply = <&vcc5v0_typec>;
-+		status = "okay";
-+	};
 +};
 +
 +&i2s0 {
@@ -678,43 +599,22 @@ index 0000000000..1f2394e058
 +&io_domains {
 +	status = "okay";
 +
-+	bt656-supply = <&vcc1v8_dvp>;
-+	audio-supply = <&vcca1v8_codec>;
++	bt656-supply = <&vcc_3v0>;
++	audio-supply = <&vcc_3v0>;
 +	sdmmc-supply = <&vcc_sdio>;
 +	gpio1830-supply = <&vcc_3v0>;
 +};
 +
 +&pmu_io_domains {
-+	pmu1830-supply = <&vcc_3v0>;
 +	status = "okay";
++
++	pmu1830-supply = <&vcc_3v0>;
 +};
 +
 +&pinctrl {
-+	buttons {
-+		pwrbtn: pwrbtn {
-+			rockchip,pins = <0 RK_PA5 RK_FUNC_GPIO &pcfg_pull_up>;
-+		};
-+	};
-+
-+	fusb302x {
-+		fusb0_int: fusb0-int {
-+			rockchip,pins = <1 RK_PA2 RK_FUNC_GPIO &pcfg_pull_up>;
-+		};
-+	};
-+
-+	leds {
-+		work_led_gpio: work_led-gpio {
-+			rockchip,pins = <0 RK_PB3 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+
-+		diy_led_gpio: diy_led-gpio {
-+			rockchip,pins = <0 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
-+
 +	pcie {
 +		pcie_pwr_en: pcie-pwr-en {
-+			rockchip,pins = <1 RK_PD0 RK_FUNC_GPIO &pcfg_pull_none>;
++			rockchip,pins = <2 RK_PD2 RK_FUNC_GPIO &pcfg_pull_none>;
 +		};
 +	};
 +
@@ -732,27 +632,17 @@ index 0000000000..1f2394e058
 +		};
 +	};
 +
-+	sdio-pwrseq {
-+		wifi_enable_h: wifi-enable-h {
-+			rockchip,pins = <0 RK_PB2 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
-+
 +	usb-typec {
-+		vcc5v0_typec_en: vcc5v0_typec_en {
++		vcc5v0_typec_en: vcc5v0-typec-en {
 +			rockchip,pins = <1 RK_PA3 RK_FUNC_GPIO &pcfg_pull_up>;
 +		};
 +	};
 +
 +	usb2 {
 +		vcc5v0_host_en: vcc5v0-host-en {
-+			rockchip,pins = <4 RK_PD2 RK_FUNC_GPIO &pcfg_pull_none>;
++			rockchip,pins = <4 RK_PD1 RK_FUNC_GPIO &pcfg_pull_none>;
 +		};
 +	};
-+};
-+
-+&pwm0 {
-+	status = "okay";
 +};
 +
 +&pwm2 {
@@ -760,19 +650,20 @@ index 0000000000..1f2394e058
 +};
 +
 +&saradc {
-+	vref-supply = <&vcca1v8_s3>;
 +	status = "okay";
++
++	vref-supply = <&vcc_1v8>;
 +};
 +
 +&sdmmc {
 +	bus-width = <4>;
 +	cap-mmc-highspeed;
 +	cap-sd-highspeed;
-+	cd-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;
++	cd-gpios = <&gpio0 RK_PA7 GPIO_ACTIVE_LOW>;
 +	disable-wp;
 +	max-frequency = <150000000>;
 +	pinctrl-names = "default";
-+	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_bus4>;
++	pinctrl-0 = <&sdmmc_clk &sdmmc_cd &sdmmc_cmd &sdmmc_bus4>;
 +	status = "okay";
 +};
 +
@@ -793,11 +684,12 @@ index 0000000000..1f2394e058
 +};
 +
 +&tsadc {
++	status = "okay";
++
 +	/* tshut mode 0:CRU 1:GPIO */
 +	rockchip,hw-tshut-mode = <1>;
 +	/* tshut polarity 0:LOW 1:HIGH */
 +	rockchip,hw-tshut-polarity = <1>;
-+	status = "okay";
 +};
 +
 +&u2phy0 {
@@ -824,12 +716,6 @@ index 0000000000..1f2394e058
 +		phy-supply = <&vcc5v0_host>;
 +		status = "okay";
 +	};
-+};
-+
-+&uart0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart0_xfer &uart0_cts>;
-+	status = "okay";
 +};
 +
 +&uart2 {
@@ -886,25 +772,28 @@ index 0000000000..1f2394e058
 +	status = "okay";
 +};
 diff --git a/board/rockchip/evb_rk3399/MAINTAINERS b/board/rockchip/evb_rk3399/MAINTAINERS
-index ed58861820..c724162ef3 100644
+index c724162ef3..6da4381df6 100644
 --- a/board/rockchip/evb_rk3399/MAINTAINERS
 +++ b/board/rockchip/evb_rk3399/MAINTAINERS
-@@ -30,3 +30,10 @@ S:	Maintained
- F:	configs/orangepi-rk3399_defconfig
+@@ -31,6 +31,13 @@ F:	configs/orangepi-rk3399_defconfig
  F:	arch/arm/dts/rk3399-u-boot.dtsi
  F:	arch/arm/dts/rk3399-orangepi-u-boot.dtsi
-+
-+ROCKPRO64
+ 
++ROCK-PI-4
 +M:	Akash Gajjar <akash@openedev.com>
 +M:	Jagan Teki <jagan@amarulasolutions.com>
 +S:	Maintained
-+F:	configs/rockpro64-rk3399_defconfig
-+F:	arch/arm/dts/rk3399-rockpro64-u-boot.dtsi
-diff --git a/configs/rockpro64-rk3399_defconfig b/configs/rockpro64-rk3399_defconfig
++F:	configs/rock-pi-4-rk3399_defconfig
++F:	arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi
++
+ ROCKPRO64
+ M:	Akash Gajjar <akash@openedev.com>
+ M:	Jagan Teki <jagan@amarulasolutions.com>
+diff --git a/configs/rock-pi-4-rk3399_defconfig b/configs/rock-pi-4-rk3399_defconfig
 new file mode 100644
-index 0000000000..3d0c7d0c6d
+index 0000000000..626cb7faea
 --- /dev/null
-+++ b/configs/rockpro64-rk3399_defconfig
++++ b/configs/rock-pi-4-rk3399_defconfig
 @@ -0,0 +1,58 @@
 +CONFIG_ARM=y
 +CONFIG_ARCH_ROCKCHIP=y
@@ -919,7 +808,7 @@ index 0000000000..3d0c7d0c6d
 +CONFIG_SPL_STACK_R_ADDR=0x80000
 +CONFIG_DEBUG_UART=y
 +CONFIG_NR_DRAM_BANKS=1
-+CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-rockpro64.dtb"
++CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-rock-pi-4.dtb"
 +# CONFIG_DISPLAY_CPUINFO is not set
 +CONFIG_DISPLAY_BOARDINFO_LATE=y
 +CONFIG_SPL_STACK_R=y
@@ -932,7 +821,7 @@ index 0000000000..3d0c7d0c6d
 +# CONFIG_CMD_SETEXPR is not set
 +CONFIG_CMD_TIME=y
 +CONFIG_SPL_OF_CONTROL=y
-+CONFIG_DEFAULT_DEVICE_TREE="rk3399-rockpro64"
++CONFIG_DEFAULT_DEVICE_TREE="rk3399-rock-pi-4"
 +CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
 +CONFIG_ENV_IS_IN_MMC=y
 +CONFIG_ROCKCHIP_GPIO=y
