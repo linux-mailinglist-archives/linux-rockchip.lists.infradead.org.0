@@ -2,55 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4795B245
-	for <lists+linux-rockchip@lfdr.de>; Sat, 27 Apr 2019 03:39:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28C8BB261
+	for <lists+linux-rockchip@lfdr.de>; Sat, 27 Apr 2019 03:41:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s5eBKrk4OgSQ+XRXEJEGqGMlYAIc1FROax+QLUQi+JQ=; b=PEHHZB+cya1ZMH
-	mkskadiz/zflZ4/bRdRcrDP8yTJWbMdPjM4heu36E5J0mI9lFbUTLC0YmK6zLBQRgZv13ZPk4M0Es
-	s//Ogqg8s+I82toV7gBdAOyT6jfNxN2HXvz04AZXNfN72Pyi7vLsZDCGPp0je+C7Hy6s0fyPf2PIW
-	uFlF/YsYkuvH2+y/HDjCiIL0iHT27n0zDSsaT585G5vjC3v+ig5gjmRRpx2TvugrcW3mmk1FWe0sG
-	wERXvLWs96Ky/oFIgpeMJyBlYBEZHdHShg9GTBEQKBRIFFZLDq5vXJVcoYS/lhB0TcF6yUSWZkUEs
-	WtZA7KUrasljwPAneivw==;
+	List-Owner; bh=s5eBKrk4OgSQ+XRXEJEGqGMlYAIc1FROax+QLUQi+JQ=; b=cFpePFmvySrvIh
+	ZJhdFrhXzDs3PPLwBmMSVXxkddGRL0w5pF4OrBjILFq1q4a21GHy/kBqB3YOsNd4EG0K9Q1dEJ4Py
+	w8p9W6YGbhbSbt3UCFNQXXMNpnIVwf/bFZQza/X7+mpcTgrnP5/U0u+LhZwAy7lYIaL6SjT5eRUD0
+	rntoSGYD0sJUSWnTI+QUe4fmGKdcThbgdfSz9LPTIj0/qeJ7H9oLXogltK5bg/Wj6FSef4N4gL1A6
+	p8+E+rghWOH4Bher8XBBOKYILKDKCxNCeywXc/kB0YY03B5KoNQ1/QL5xuWUCJlEYw2asW/yYZaAE
+	VM7UcodfAaupwgr8nDWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKCJW-0006h1-2F; Sat, 27 Apr 2019 01:39:38 +0000
+	id 1hKCLV-0000mC-Ph; Sat, 27 Apr 2019 01:41:41 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKCJT-0006fK-Cn
- for linux-rockchip@lists.infradead.org; Sat, 27 Apr 2019 01:39:36 +0000
+ id 1hKCLT-0000kI-Qj
+ for linux-rockchip@lists.infradead.org; Sat, 27 Apr 2019 01:41:40 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6342120873;
- Sat, 27 Apr 2019 01:39:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C826021655;
+ Sat, 27 Apr 2019 01:41:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556329175;
+ s=default; t=1556329299;
  bh=P0SYwHsozH/6iagqvsGNIJFk3gv2btfITSQrcBJvrNE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=mNDXZPsJzTZaUDFb4ovXxOeYGRzBcDxxaVZqMzDTzYB/neRQ+WzFf864cPEcZ5QCe
- ImRsNgACWh3nGh39kFrl6DFToVMWdTHBZrqxQRfa1rwOo1FYa+Fjbh3g34NBDXwwqX
- v4r3jfDxUkFlJDq+BKdDXoIUWCqZl0tF6Srdtsu0=
+ b=18nMojSp70uFkFSFbm308ucfFhHB12lwSJUhG7QAampvZH5tagNDp7ierRBQwJihS
+ bCfti+wLKv71D/EbDveWpENBqhp5nYG/71EY9Juzyid/6rZGc5Wg0x9n8jtPykU+9S
+ nPdh1hjn2JVH90YFuIP51Xdfnh+V/xh/d/NqNHi8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.0 37/79] ASoC: rockchip: pdm: fix regmap_ops hang
+Subject: [PATCH AUTOSEL 4.19 28/53] ASoC: rockchip: pdm: fix regmap_ops hang
  issue
-Date: Fri, 26 Apr 2019 21:37:56 -0400
-Message-Id: <20190427013838.6596-37-sashal@kernel.org>
+Date: Fri, 26 Apr 2019 21:40:25 -0400
+Message-Id: <20190427014051.7522-28-sashal@kernel.org>
 X-Mailer: git-send-email 2.19.1
-In-Reply-To: <20190427013838.6596-1-sashal@kernel.org>
-References: <20190427013838.6596-1-sashal@kernel.org>
+In-Reply-To: <20190427014051.7522-1-sashal@kernel.org>
+References: <20190427014051.7522-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190426_183935_451318_392270CC 
+X-CRM114-CacheID: sfid-20190426_184139_888612_3AC5290F 
 X-CRM114-Status: UNSURE (   8.11  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
