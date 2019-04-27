@@ -2,7 +2,7 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF89BB33D
+	by mail.lfdr.de (Postfix) with ESMTPS id C7B32B33B
 	for <lists+linux-rockchip@lfdr.de>; Sat, 27 Apr 2019 13:42:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,74 +10,74 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qcteeuAkaGU74pNXg73IMZ29xdjQ5jx1BSfSezztVsk=; b=kfs8WifQD6wCtN
-	chYA2qBqEQHLBJkDoKi1bmNq7vaF+ljjaeRXlCd9JGFaefChojWyqRgTpjEAYGUpgCwPr080GcSoS
-	yI65UyzIglaapLZcWr1Aid1rgOianAj4KHmAL7P7EjG+o/8KyIxD+E6yVcP/BTXl4UpLcA01bvHUS
-	fPDcoUIwwQn/gY0o3ruDaG/UE1ycRDF4337dSB/bYJ7Co9scZMnpL3S1XwALfXF5rqrKGls7ndA1x
-	trbvBjWhYs+D6YyNkbdbAGrOlhJdDTxo/PmqDO04u5DJ6oIFuuNYaqysRhPN+75zSUnLPhTN01ieb
-	szFRACWgackGWrOTbi7g==;
+	List-Owner; bh=DhGLvetnD1D4IdLCqdYnqp6YOubfJmTxX/GgDv0LPuw=; b=NuD0DNpx9pmjsZ
+	mhMgXhPQl8g5kwhdzX3jO4jIJMZymFybG3lrxXbGHpjpnqkvpztWVVOWKnut9wXH3v5bW8/7PndAr
+	reBELoERCISFEDefxkNnLRHxdLhE8bEZCX7QqoJO56yavEsq0qfUERadPQkxHW9v9ksEhAHg67Mol
+	Xu0nZGuehZ80/lsP3UCONyvAe2la3rNtoFzhbcX4OeoZsBcIcNMPZmaSRsT5zUTy7rwaK5RJYydZ/
+	M93rmMdhhT3jiZSJFvxAaPDZDfJQm29QMvzDV3p4CoUxlCTFCyhb0UhcAucjkXqmEnjDz+aSTt60K
+	Vt3txQHHPebS/EZKehrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKLj2-0007NX-Mb; Sat, 27 Apr 2019 11:42:36 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hKLj7-0007QK-64; Sat, 27 Apr 2019 11:42:41 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKLiz-0007MY-Re
- for linux-rockchip@lists.infradead.org; Sat, 27 Apr 2019 11:42:35 +0000
-Received: by mail-pl1-x644.google.com with SMTP id d5so2221562plr.1
- for <linux-rockchip@lists.infradead.org>; Sat, 27 Apr 2019 04:42:33 -0700 (PDT)
+ id 1hKLj3-0007OU-RS
+ for linux-rockchip@lists.infradead.org; Sat, 27 Apr 2019 11:42:39 +0000
+Received: by mail-pl1-x643.google.com with SMTP id w24so2816566plp.2
+ for <linux-rockchip@lists.infradead.org>; Sat, 27 Apr 2019 04:42:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=w0N4ouP2DUFUgXUhjYEbGzSum/fljQInZXnPEQuOOj8=;
- b=VRZqtB27xvAeuDvbR7Pe6yEjmo9lb6kSHgZvD+znXgBaP4qVE+FiWa7PXiaG7WFhUk
- izc+c+txymmqP8iavGR81y/+NYKAdmZV7CXULCfJ6izCM2Wj2mWjBbxjvrLqNcKqR5jq
- j1ic2CmwrJmwOwncNMnTfGXk2lYcpJ9srQySw=
+ bh=IpZFneVy9JVt/DR/0/w8JKHfiyseQp/ECVAIuWSjprc=;
+ b=P7iFw6QxSLhZm9jgpWUOKRq4lbEqW7Ge+2xGOW3kgrKAwJHYmiZkLLA1a0xwciTVjB
+ QDIaRZnH48MZfL0PsJNMgaxBBw5aEqaE2k1V0x64VIDrxleobecO1J4zpgr44nFDzK57
+ DNt72PQGcvxdpJy5MUDGkLWmuHm59LNUqXCWM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=w0N4ouP2DUFUgXUhjYEbGzSum/fljQInZXnPEQuOOj8=;
- b=i75suMcPhAjhP+gY1NiBgVmEfPX1/W1BBdz6Ck0BHSN1nboJXcMwI+RGrZA5UFyWnE
- L6GDuECsGp1RiwsQTxWKiZ/m7a+IVg5KMJCGRPQaQVBqqqGcYYAR0d7boUdwXpuYQFBA
- UQohn2erOXmemQzHhoqoJJ+nVGoooraY72giUy4fEebjR8zfPTqNvXoE6yNJjcbd/CVj
- l9kvZAGOHMpoY3UuaYkqzSL5/KgH6fYiRr5RYsXAuKN3xoLtRUt+4McRiUHvb9u5N62K
- Px76TqnAIXCA6hb6NOD31gqSH5FDt9Hc4zjjHQC6H5cTf4Vaz4XXMwlTtv7Hv4FZJZj3
- DDvw==
-X-Gm-Message-State: APjAAAXftuvTG4gDLBBxlKca6emUg//lho2gsLMEqicNBTuJ1ySWhp4f
- kBQnoGUPMeyFom2u/Vxy1THUfg==
-X-Google-Smtp-Source: APXvYqwPQNSRQADRufc4dtOOqKBi6xBv+b/kU2Kq5f+3KI31y+kDRiQYADqizANtJloNhFAWyx2bAQ==
-X-Received: by 2002:a17:902:864b:: with SMTP id
- y11mr48537243plt.1.1556365352829; 
- Sat, 27 Apr 2019 04:42:32 -0700 (PDT)
+ bh=IpZFneVy9JVt/DR/0/w8JKHfiyseQp/ECVAIuWSjprc=;
+ b=KZlnf+qDDruhZsbxcJd92O8onKaRUOe0WsUmb02Wep/Iaky4JXMMJ2eajsB2V9tCvr
+ kMh4sNehX53drBSAohDXcvghBky4EAoFUpFSAvtXTzA8cSDti2RwQzYabLPauDYbSsnP
+ kJzEs+yKxu2YSOaghUZ9MQWcA3hPZ1LXqR6x9kyjBNdWvbDSSenTdS35nmvBKmP2KpIY
+ Iqq37hOav3tJGZ5ITYmRp6MLVLXf6GwVNoc0lgiW5xLcSvBlIGWnNMHxRZoTTA8RzXc+
+ Xg+7MKLxhYK+j30/tkJDu8VduiN69cFa4khme1nQ1VpEMlNwG/mMbHf5KJ96vdmhOsXJ
+ M/AQ==
+X-Gm-Message-State: APjAAAV4rS3+U6dfzDFJAD2vjXdJuX4W0Qz1OMLjD7h3SB/OQPAHZgHA
+ atZx70WNB4bgrrkgtr7DLljRDg==
+X-Google-Smtp-Source: APXvYqyNVOaO26g74eTbHURxCFOa42XUldQnEY3hqlRb5p38/iPsJO+c3RmJ3W46uzwF4uFYSTVm3A==
+X-Received: by 2002:a17:902:820a:: with SMTP id
+ x10mr12306899pln.316.1556365357360; 
+ Sat, 27 Apr 2019 04:42:37 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.185.144])
- by smtp.gmail.com with ESMTPSA id k79sm68958973pfj.28.2019.04.27.04.42.28
+ by smtp.gmail.com with ESMTPSA id k79sm68958973pfj.28.2019.04.27.04.42.33
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 27 Apr 2019 04:42:32 -0700 (PDT)
+ Sat, 27 Apr 2019 04:42:36 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, Akash Gajjar <akash@openedev.com>,
  Tom Rini <trini@konsulko.com>,
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v6 1/3] arm64: rockchip: dts: rk3399: Add board -u-boot.dtsi
- files
-Date: Sat, 27 Apr 2019 17:12:00 +0530
-Message-Id: <20190427114202.7358-2-jagan@amarulasolutions.com>
+Subject: [PATCH v6 2/3] arm64: rockchip: dts: Add initial rk3399-u-boot.dtsi
+ file
+Date: Sat, 27 Apr 2019 17:12:01 +0530
+Message-Id: <20190427114202.7358-3-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190427114202.7358-1-jagan@amarulasolutions.com>
 References: <20190427114202.7358-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190427_044233_890383_B936A728 
-X-CRM114-Status: GOOD (  12.75  )
+X-CRM114-CacheID: sfid-20190427_044237_885922_82068BA4 
+X-CRM114-Status: GOOD (  11.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -107,160 +107,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Devicetree files in RK3399 platform is synced from Linux, like other
-platforms does. Apart from these u-boot in rk3399 would also require
-some u-boot specific node like dmc.
+U-Boot always managed to use Linux devicetree files with respective
+bindings, but on the other hand u-boot also has it's own u-boot
+specific nodes or properties example u-boot,dm-pre-reloc which
+is required for SPL_OF_CONTROL to allocate particular node.
 
-dmc node has big chunk of DDR timing parameters which are specific
-to specific board, and maintained with rk3399-sdram*.dtsi.
+It is always better to maintain these u-boot specific nodes and
+properties into seperate dts files. This would help to sync the
+devicetrees directly from Linux.
 
-So, create board specific -u-boot.dtsi files and move these sdram dtsi
-files accordingly. This would help of maintain u-boot specific changes
-separately without touching Linux dts(i) files which indeed easy for
-syncing from Linux between releases.
-
-These board specific -u-boot.dtsi can be extendible to add more u-boot
-specific nodes or properties in future.
+This patch is adding initial rk3399-u-boot.dtsi and move sdmmc,
+spi1 u-boot,dm-pre-reloc properties into it so-that the subsequent
+rk3399 boards can include the same on their board dtsi files.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- arch/arm/dts/rk3399-evb-u-boot.dtsi     | 6 ++++++
- arch/arm/dts/rk3399-evb.dts             | 1 -
- arch/arm/dts/rk3399-ficus-u-boot.dtsi   | 6 ++++++
- arch/arm/dts/rk3399-ficus.dts           | 1 -
- arch/arm/dts/rk3399-firefly-u-boot.dtsi | 6 ++++++
- arch/arm/dts/rk3399-firefly.dts         | 1 -
- arch/arm/dts/rk3399-gru-bob-u-boot.dtsi | 6 ++++++
- arch/arm/dts/rk3399-gru-bob.dts         | 1 -
- arch/arm/dts/rk3399-rock960-u-boot.dtsi | 6 ++++++
- arch/arm/dts/rk3399-rock960.dts         | 1 -
- 10 files changed, 30 insertions(+), 5 deletions(-)
- create mode 100644 arch/arm/dts/rk3399-evb-u-boot.dtsi
- create mode 100644 arch/arm/dts/rk3399-ficus-u-boot.dtsi
- create mode 100644 arch/arm/dts/rk3399-firefly-u-boot.dtsi
- create mode 100644 arch/arm/dts/rk3399-gru-bob-u-boot.dtsi
- create mode 100644 arch/arm/dts/rk3399-rock960-u-boot.dtsi
+ arch/arm/dts/rk3399-u-boot.dtsi | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+ create mode 100644 arch/arm/dts/rk3399-u-boot.dtsi
 
-diff --git a/arch/arm/dts/rk3399-evb-u-boot.dtsi b/arch/arm/dts/rk3399-evb-u-boot.dtsi
+diff --git a/arch/arm/dts/rk3399-u-boot.dtsi b/arch/arm/dts/rk3399-u-boot.dtsi
 new file mode 100644
-index 0000000000..7e2c57af22
+index 0000000000..0786c1193a
 --- /dev/null
-+++ b/arch/arm/dts/rk3399-evb-u-boot.dtsi
-@@ -0,0 +1,6 @@
++++ b/arch/arm/dts/rk3399-u-boot.dtsi
+@@ -0,0 +1,12 @@
 +// SPDX-License-Identifier: GPL-2.0+
 +/*
 + * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
 + */
 +
-+#include "rk3399-sdram-lpddr3-4GB-1600.dtsi"
-diff --git a/arch/arm/dts/rk3399-evb.dts b/arch/arm/dts/rk3399-evb.dts
-index ce004d0d18..2366e7ed3a 100644
---- a/arch/arm/dts/rk3399-evb.dts
-+++ b/arch/arm/dts/rk3399-evb.dts
-@@ -7,7 +7,6 @@
- #include <dt-bindings/pwm/pwm.h>
- #include <dt-bindings/pinctrl/rockchip.h>
- #include "rk3399.dtsi"
--#include "rk3399-sdram-lpddr3-4GB-1600.dtsi"
- 
- / {
- 	model = "Rockchip RK3399 Evaluation Board";
-diff --git a/arch/arm/dts/rk3399-ficus-u-boot.dtsi b/arch/arm/dts/rk3399-ficus-u-boot.dtsi
-new file mode 100644
-index 0000000000..eab86bdb30
---- /dev/null
-+++ b/arch/arm/dts/rk3399-ficus-u-boot.dtsi
-@@ -0,0 +1,6 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
-+ */
++&sdmmc {
++	u-boot,dm-pre-reloc;
++};
 +
-+#include "rk3399-sdram-ddr3-1600.dtsi"
-diff --git a/arch/arm/dts/rk3399-ficus.dts b/arch/arm/dts/rk3399-ficus.dts
-index 4af0e4e383..4b2dd82b67 100644
---- a/arch/arm/dts/rk3399-ficus.dts
-+++ b/arch/arm/dts/rk3399-ficus.dts
-@@ -8,7 +8,6 @@
- 
- /dts-v1/;
- #include "rk3399-rock960.dtsi"
--#include "rk3399-sdram-ddr3-1600.dtsi"
- 
- / {
- 	model = "96boards RK3399 Ficus";
-diff --git a/arch/arm/dts/rk3399-firefly-u-boot.dtsi b/arch/arm/dts/rk3399-firefly-u-boot.dtsi
-new file mode 100644
-index 0000000000..eab86bdb30
---- /dev/null
-+++ b/arch/arm/dts/rk3399-firefly-u-boot.dtsi
-@@ -0,0 +1,6 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
-+ */
-+
-+#include "rk3399-sdram-ddr3-1600.dtsi"
-diff --git a/arch/arm/dts/rk3399-firefly.dts b/arch/arm/dts/rk3399-firefly.dts
-index f90e7e88db..5d52319393 100644
---- a/arch/arm/dts/rk3399-firefly.dts
-+++ b/arch/arm/dts/rk3399-firefly.dts
-@@ -7,7 +7,6 @@
- #include <dt-bindings/pwm/pwm.h>
- #include <dt-bindings/pinctrl/rockchip.h>
- #include "rk3399.dtsi"
--#include "rk3399-sdram-ddr3-1600.dtsi"
- 
- / {
- 	model = "Firefly-RK3399 Board";
-diff --git a/arch/arm/dts/rk3399-gru-bob-u-boot.dtsi b/arch/arm/dts/rk3399-gru-bob-u-boot.dtsi
-new file mode 100644
-index 0000000000..9edb8cf841
---- /dev/null
-+++ b/arch/arm/dts/rk3399-gru-bob-u-boot.dtsi
-@@ -0,0 +1,6 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
-+ */
-+
-+#include "rk3399-sdram-lpddr3-samsung-4GB-1866.dtsi"
-diff --git a/arch/arm/dts/rk3399-gru-bob.dts b/arch/arm/dts/rk3399-gru-bob.dts
-index 0e3d91fc28..1ee0dc0d9f 100644
---- a/arch/arm/dts/rk3399-gru-bob.dts
-+++ b/arch/arm/dts/rk3399-gru-bob.dts
-@@ -7,7 +7,6 @@
- 
- /dts-v1/;
- #include "rk3399-gru-chromebook.dtsi"
--#include "rk3399-sdram-lpddr3-samsung-4GB-1866.dtsi"
- 
- / {
- 	model = "Google Bob";
-diff --git a/arch/arm/dts/rk3399-rock960-u-boot.dtsi b/arch/arm/dts/rk3399-rock960-u-boot.dtsi
-new file mode 100644
-index 0000000000..5256f6d3f2
---- /dev/null
-+++ b/arch/arm/dts/rk3399-rock960-u-boot.dtsi
-@@ -0,0 +1,6 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
-+ */
-+
-+#include "rk3399-sdram-lpddr3-2GB-1600.dtsi"
-diff --git a/arch/arm/dts/rk3399-rock960.dts b/arch/arm/dts/rk3399-rock960.dts
-index 25c58b4261..7e06bc97e5 100644
---- a/arch/arm/dts/rk3399-rock960.dts
-+++ b/arch/arm/dts/rk3399-rock960.dts
-@@ -5,7 +5,6 @@
- 
- /dts-v1/;
- #include "rk3399-rock960.dtsi"
--#include "rk3399-sdram-lpddr3-2GB-1600.dtsi"
- 
- / {
- 	model = "96boards Rock960";
++&spi1 {
++	u-boot,dm-pre-reloc;
++};
 -- 
 2.18.0.321.gffc6fa0e3
 
