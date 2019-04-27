@@ -2,81 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C575B347
-	for <lists+linux-rockchip@lfdr.de>; Sat, 27 Apr 2019 13:49:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDE57B348
+	for <lists+linux-rockchip@lfdr.de>; Sat, 27 Apr 2019 13:49:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/H1mnIXFaOp8lLNHaS4TMokL7Poq2FYd1ZWYorC9SN0=; b=m53/PwP9JPZgj5
-	XAMGbS9g+nJUgRZKZ/sFOU/SqR0eltS3a0uU5oFTP+uGH/gse9sdZ7T2KS/6k+mjV0wSgiCy/YPaK
-	/kMtojmq2ZUEtG4af62RjRwE8t7klzFAktcexgchW3sxLxadEyZ0ShwjLq+kvsPSjKYUSiL9ZrCmZ
-	CMl7twSGGE4u/HQYMeI8EYW79R4/X3Z4s91RutM5VgUWNcG++0p4ymWK30v1hml4dmZlsqfh5qMB6
-	/eR46T8k/8S8DSpCnR9lkcA5dXfteMeJlZvrqKf0DUHU/bw4v8Z14M+smXAi6nhrmbaJUwPlRn6Ny
-	l9OYf1SUrKBLfrtF/1Lw==;
+	List-Owner; bh=rELOodhE/0aUNjNqNrW6FStTLSLb6IlfRKyfi8JRjpA=; b=dFdLAF+pghixHr
+	dUG/3vUH1epPZOQ45+kaT81NuPokTzRd/Fgvsa/bHgo7zIS7CBHRW4NqNbz3kXbfPfKVHds7eK5wA
+	yQeb28gC+y66AHN2rtMAFCu/iW/DH9b7fdhdWYQKhQENXcHiLO+tGcoGLiiiSOce7bza/ujx6qciY
+	j0bFuZTWmF73ydEeFQ//hZwO/gSFzEDQIomMrJ32GArhHYe9Yr2oX1aJBcDaZ+RnX1MRdoV2FQyJ3
+	XBhX6s+okNFIb2F32Aq1CsjyAmMC92GfxTr0FelQm5d/1AE4+/u8XdYjKu0HTYaqSCZQsgaZuUN2I
+	OUY2mHBZI8neyzQxkh5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKLpy-0001Ia-23; Sat, 27 Apr 2019 11:49:46 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hKLq2-0001M7-T2; Sat, 27 Apr 2019 11:49:50 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKLpu-0001HB-PH
- for linux-rockchip@lists.infradead.org; Sat, 27 Apr 2019 11:49:44 +0000
-Received: by mail-pl1-x643.google.com with SMTP id w20so2194262plq.3
- for <linux-rockchip@lists.infradead.org>; Sat, 27 Apr 2019 04:49:42 -0700 (PDT)
+ id 1hKLpz-0001K8-MS
+ for linux-rockchip@lists.infradead.org; Sat, 27 Apr 2019 11:49:49 +0000
+Received: by mail-pf1-x441.google.com with SMTP id z5so3001947pfn.3
+ for <linux-rockchip@lists.infradead.org>; Sat, 27 Apr 2019 04:49:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ZXFAljlEy7uZEEw89sZcsNEtB/E342lPRBYoTVsd/Qo=;
- b=i+6c97wqZXQU6C/+UpnrMYTmMk3BnoyMGvUEBpf2M4vSGbkTAJbDUPPOvk/oncGCvj
- kT8h6GHClDGRMfELom44bSEpkEwX9B8TVk+Ne4LKTMVWdW+xIYKL024JNh6saJ1viUKL
- dn5sjhTWcqlN8QHc+lv4VN81bYon1say4Y3+A=
+ bh=nS2CYSwvkgl9FT2IyVGJWO4t/HPUweOq18Y8MeDlgik=;
+ b=jP0v+iEAyZ9/IhwGv4JdlxMPJyqryfdMxDHyA0I7HtBcQfvl+KYfiyLoq0vNFTxUr5
+ TO+6mFZ9OI9lmPh6DmPdZQsbLK7mgbXUEQMcwUn5UfDyXmoElsrTHXGNqGse0otqyF8k
+ CcrqnEtKwSy19onjj1/ZDSKcEIo2CVg/NM6x4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ZXFAljlEy7uZEEw89sZcsNEtB/E342lPRBYoTVsd/Qo=;
- b=hXjOMjgFC6aFyaTFY5QTqAulAmKhbjD+tAiGVk5gfS5q4FzlVcWqvBFAS+xmktblcP
- NFT5EY0oO5SAk7tbiKiYWZiGlfVC/N7j8UTpn6LULQqpdhDlU6+iBkAwa8EnveHw9ykw
- MAX/LnAW2WKskOzgQNOmkPxAB/iYAKHHmAd4mKjQdggVHBC3g8I8ukDIe1bWxPm7Tka+
- KGEwRGlVUWKBVK5TE0NRebbruWncUNRhCA+tMZ0Msxx6NfWJaTm6RQ+7HPqOHdZaQhhY
- SGhykjz818M3mxWA6u5GnB4dfI8B4Np1a/IDZGeppIhTIiI6hH2dRxqqXxTkIzI9jXDS
- zIpA==
-X-Gm-Message-State: APjAAAWxTI+iNAVU9zTjTYp/iR47Q/1nz1kYpovUh3NUejtA4LV5noPp
- Jygrqb0xDvM9bEkrK9FXtwXtkQ==
-X-Google-Smtp-Source: APXvYqw+/TiVPRDrYD+njqr/IEyR6+5hT5O8o2ZTmjVN3iD+XQZgr6OjfJpnvCUHpx3l+TBDb8hpCg==
-X-Received: by 2002:a17:902:b190:: with SMTP id
- s16mr12944402plr.83.1556365782183; 
- Sat, 27 Apr 2019 04:49:42 -0700 (PDT)
+ bh=nS2CYSwvkgl9FT2IyVGJWO4t/HPUweOq18Y8MeDlgik=;
+ b=ZKOYPHX87SEs1WTvhibsmHme8KisUyEg6dEhCbb5BlWD79qY9iwzi6WcM11ESdYtsW
+ CI4Q42Od52qfy8FaD3xz3GxOcAEorRrZsn/0f72xPz5iJP7SXn2SGyv/pwsT4QinKaz2
+ WKwIUXG6liDadaqCzyl5qoPz4UUPZQ3aBcIxY0jJcVMheh14cygRgvy9JCqFN9KscY+E
+ CzRN0orCxhskr33ZF+1E6+YaYZwj5bDLMQeWXDXxFVtj0MrL8RAS7SFXr1A+GgsrNA1H
+ X3cZh2iU93MelxFnRfn5Jl8V3NYfrC+6zOZAMZ0eABJFycKD7LPMuJKqLtBV+K8lpBLN
+ mp3A==
+X-Gm-Message-State: APjAAAXGvm6wIyOSp0jKWbEo0gDFeQ+9zcvBqNL0oT18vte+pxhinNtl
+ POEGJBeAYeD9eJkdVUWVy2Mgeg==
+X-Google-Smtp-Source: APXvYqweMZiNueBodBn4tzqHqWwRGQSpRWuruJLRz9RO++vz9qSq9SNCxokfGlJTIMZw+3ufNkveIA==
+X-Received: by 2002:a62:528b:: with SMTP id g133mr7042388pfb.246.1556365786757; 
+ Sat, 27 Apr 2019 04:49:46 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.185.144])
- by smtp.gmail.com with ESMTPSA id y3sm2368768pfe.9.2019.04.27.04.49.38
+ by smtp.gmail.com with ESMTPSA id y3sm2368768pfe.9.2019.04.27.04.49.42
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 27 Apr 2019 04:49:41 -0700 (PDT)
+ Sat, 27 Apr 2019 04:49:46 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, Akash Gajjar <akash@openedev.com>,
  Tom Rini <trini@konsulko.com>,
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v6 08/13] rockchip: rk3399: Add Nanopi M4 board support
-Date: Sat, 27 Apr 2019 17:18:51 +0530
-Message-Id: <20190427114852.7608-9-jagan@amarulasolutions.com>
+Subject: [PATCH v6 09/13] rockchip: rk3399: Add Nanopc T4 board support
+Date: Sat, 27 Apr 2019 17:18:52 +0530
+Message-Id: <20190427114852.7608-10-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190427114852.7608-1-jagan@amarulasolutions.com>
 References: <20190427114852.7608-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190427_044942_822461_E9E3DF74 
-X-CRM114-Status: GOOD (  13.70  )
+X-CRM114-CacheID: sfid-20190427_044947_730403_8EC0C811 
+X-CRM114-Status: GOOD (  13.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -101,241 +100,123 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
 Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
  Jagan Teki <jagan@amarulasolutions.com>, u-boot@lists.denx.de
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add initial support for Nanopi M4 board.
-
-Specification
-- Rockchip RK3399
-- Dual-Channel 4GB LPDDR3-1866
-- SD card slot
-- eMMC socket
-- RTL8211E 1Gbps
-- AP6356S WiFI/BT
-- HDMI In/Out, DP, MIPI DSI/CSI
-- USB 3.0 x4
-- USB Type C power and data
-- GPIO1, GPIO2 expansion ports
-- DC5V/3A
-
-Commit details of rk3399-nanopi-m4.dts sync from Linux 5.1-rc2:
-"arm64: dts: rockchip: Refine nanopi4 differences"
-(sha1: c62ffaf5026d0b7633e62b2cea8450b5543c349a)
-
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
-Reviewed-by: Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
----
- arch/arm/dts/Makefile                     |  1 +
- arch/arm/dts/rk3399-nanopi-m4-u-boot.dtsi |  7 +++
- arch/arm/dts/rk3399-nanopi-m4.dts         | 66 +++++++++++++++++++++++
- arch/arm/dts/rk3399-nanopi4-u-boot.dtsi   |  2 +
- board/rockchip/evb_rk3399/MAINTAINERS     |  6 +++
- configs/nanopi-m4-rk3399_defconfig        | 58 ++++++++++++++++++++
- 6 files changed, 140 insertions(+)
- create mode 100644 arch/arm/dts/rk3399-nanopi-m4-u-boot.dtsi
- create mode 100644 arch/arm/dts/rk3399-nanopi-m4.dts
- create mode 100644 configs/nanopi-m4-rk3399_defconfig
-
-diff --git a/arch/arm/dts/Makefile b/arch/arm/dts/Makefile
-index 6d55b0caf8..d2ac26b556 100644
---- a/arch/arm/dts/Makefile
-+++ b/arch/arm/dts/Makefile
-@@ -87,6 +87,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += \
- 	rk3399-evb.dtb \
- 	rk3399-firefly.dtb \
- 	rk3399-gru-bob.dtb \
-+	rk3399-nanopi-m4.dtb \
- 	rk3399-orangepi.dtb \
- 	rk3399-puma-ddr1333.dtb \
- 	rk3399-puma-ddr1600.dtb \
-diff --git a/arch/arm/dts/rk3399-nanopi-m4-u-boot.dtsi b/arch/arm/dts/rk3399-nanopi-m4-u-boot.dtsi
-new file mode 100644
-index 0000000000..17201bcf41
---- /dev/null
-+++ b/arch/arm/dts/rk3399-nanopi-m4-u-boot.dtsi
-@@ -0,0 +1,7 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
-+ */
-+
-+#include "rk3399-nanopi4-u-boot.dtsi"
-+#include "rk3399-sdram-lpddr3-samsung-4GB-1866.dtsi"
-diff --git a/arch/arm/dts/rk3399-nanopi-m4.dts b/arch/arm/dts/rk3399-nanopi-m4.dts
-new file mode 100644
-index 0000000000..60358ab8c7
---- /dev/null
-+++ b/arch/arm/dts/rk3399-nanopi-m4.dts
-@@ -0,0 +1,66 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * FriendlyElec NanoPi M4 board device tree source
-+ *
-+ * Copyright (c) 2018 FriendlyElec Computer Tech. Co., Ltd.
-+ * (http://www.friendlyarm.com)
-+ *
-+ * Copyright (c) 2018 Collabora Ltd.
-+ * Copyright (c) 2019 Arm Ltd.
-+ */
-+
-+/dts-v1/;
-+#include "rk3399-nanopi4.dtsi"
-+
-+/ {
-+	model = "FriendlyElec NanoPi M4";
-+	compatible = "friendlyarm,nanopi-m4", "rockchip,rk3399";
-+
-+	vdd_5v: vdd-5v {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vdd_5v";
-+		regulator-always-on;
-+		regulator-boot-on;
-+	};
-+
-+	vcc5v0_core: vcc5v0-core {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc5v0_core";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		vin-supply = <&vdd_5v>;
-+	};
-+
-+	vcc5v0_usb1: vcc5v0-usb1 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc5v0_usb1";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		vin-supply = <&vcc5v0_sys>;
-+	};
-+
-+	vcc5v0_usb2: vcc5v0-usb2 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc5v0_usb2";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		vin-supply = <&vcc5v0_sys>;
-+	};
-+};
-+
-+&vcc3v3_sys {
-+	vin-supply = <&vcc5v0_core>;
-+};
-+
-+&u2phy0_host {
-+	phy-supply = <&vcc5v0_usb1>;
-+};
-+
-+&u2phy1_host {
-+	phy-supply = <&vcc5v0_usb2>;
-+};
-+
-+&vbus_typec {
-+	regulator-always-on;
-+	vin-supply = <&vdd_5v>;
-+};
-diff --git a/arch/arm/dts/rk3399-nanopi4-u-boot.dtsi b/arch/arm/dts/rk3399-nanopi4-u-boot.dtsi
-index 20db99c0b8..05708b6f55 100644
---- a/arch/arm/dts/rk3399-nanopi4-u-boot.dtsi
-+++ b/arch/arm/dts/rk3399-nanopi4-u-boot.dtsi
-@@ -3,6 +3,8 @@
-  * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
-  */
- 
-+#include "rk3399-u-boot.dtsi"
-+
- &sdmmc {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&sdmmc_bus4 &sdmmc_clk &sdmmc_cmd &sdmmc_cd>;
-diff --git a/board/rockchip/evb_rk3399/MAINTAINERS b/board/rockchip/evb_rk3399/MAINTAINERS
-index 07ee8ce92c..ae43805a6a 100644
---- a/board/rockchip/evb_rk3399/MAINTAINERS
-+++ b/board/rockchip/evb_rk3399/MAINTAINERS
-@@ -6,6 +6,12 @@ F:      include/configs/evb_rk3399.h
- F:      configs/evb-rk3399_defconfig
- F:      configs/firefly-rk3399_defconfig
- 
-+NANOPI-M4
-+M:	Jagan Teki <jagan@amarulasolutions.com>
-+S:	Maintained
-+F:	configs/nanopi-m4-rk3399_defconfig
-+F:	arch/arm/dts/rk3399-nanopi-m4-u-boot.dtsi
-+
- ORANGEPI-RK3399
- M:	Jagan Teki <jagan@amarulasolutions.com>
- S:	Maintained
-diff --git a/configs/nanopi-m4-rk3399_defconfig b/configs/nanopi-m4-rk3399_defconfig
-new file mode 100644
-index 0000000000..be36a28315
---- /dev/null
-+++ b/configs/nanopi-m4-rk3399_defconfig
-@@ -0,0 +1,58 @@
-+CONFIG_ARM=y
-+CONFIG_ARCH_ROCKCHIP=y
-+CONFIG_SYS_TEXT_BASE=0x00200000
-+CONFIG_SPL_LIBCOMMON_SUPPORT=y
-+CONFIG_SPL_LIBGENERIC_SUPPORT=y
-+CONFIG_SYS_MALLOC_F_LEN=0x4000
-+CONFIG_ROCKCHIP_RK3399=y
-+CONFIG_ROCKCHIP_SPL_RESERVE_IRAM=0x4000
-+CONFIG_DEBUG_UART_BASE=0xFF1A0000
-+CONFIG_DEBUG_UART_CLOCK=24000000
-+CONFIG_SPL_STACK_R_ADDR=0x80000
-+CONFIG_DEBUG_UART=y
-+CONFIG_NR_DRAM_BANKS=1
-+CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-nanopi-m4.dtb"
-+# CONFIG_DISPLAY_CPUINFO is not set
-+CONFIG_DISPLAY_BOARDINFO_LATE=y
-+CONFIG_SPL_STACK_R=y
-+CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x4000
-+CONFIG_CMD_BOOTZ=y
-+CONFIG_CMD_GPT=y
-+CONFIG_CMD_MMC=y
-+CONFIG_CMD_SF=y
-+CONFIG_CMD_USB=y
-+# CONFIG_CMD_SETEXPR is not set
-+CONFIG_CMD_TIME=y
-+CONFIG_SPL_OF_CONTROL=y
-+CONFIG_DEFAULT_DEVICE_TREE="rk3399-nanopi-m4"
-+CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
-+CONFIG_ENV_IS_IN_MMC=y
-+CONFIG_ROCKCHIP_GPIO=y
-+CONFIG_SYS_I2C_ROCKCHIP=y
-+CONFIG_MMC_DW=y
-+CONFIG_MMC_DW_ROCKCHIP=y
-+CONFIG_MMC_SDHCI=y
-+CONFIG_MMC_SDHCI_ROCKCHIP=y
-+CONFIG_DM_ETH=y
-+CONFIG_ETH_DESIGNWARE=y
-+CONFIG_GMAC_ROCKCHIP=y
-+CONFIG_PMIC_RK8XX=y
-+CONFIG_REGULATOR_PWM=y
-+CONFIG_REGULATOR_RK8XX=y
-+CONFIG_PWM_ROCKCHIP=y
-+CONFIG_BAUDRATE=1500000
-+CONFIG_DEBUG_UART_SHIFT=2
-+CONFIG_SYSRESET=y
-+CONFIG_USB=y
-+CONFIG_USB_XHCI_HCD=y
-+CONFIG_USB_XHCI_DWC3=y
-+CONFIG_USB_EHCI_HCD=y
-+CONFIG_USB_EHCI_GENERIC=y
-+CONFIG_USB_HOST_ETHER=y
-+CONFIG_USB_ETHER_ASIX=y
-+CONFIG_USB_ETHER_ASIX88179=y
-+CONFIG_USB_ETHER_MCS7830=y
-+CONFIG_USB_ETHER_RTL8152=y
-+CONFIG_USB_ETHER_SMSC95XX=y
-+CONFIG_USE_TINY_PRINTF=y
-+CONFIG_ERRNO_STR=y
--- 
-2.18.0.321.gffc6fa0e3
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+QWRkIGluaXRpYWwgc3VwcG9ydCBmb3IgTmFub3BjIFQ0IGJvYXJkLgoKU3BlY2lmaWNhdGlvbgot
+IFJvY2tjaGlwIFJLMzM5OQotIER1YWwtQ2hhbm5lbCA0R0IgTFBERFIzLTE4NjYKLSBTRCBjYXJk
+IHNsb3QKLSAxNkdCIGVNTUMKLSBSVEw4MjExRSAxR2JwcwotIEFQNjM1NlMgV2lGSS9CVAotIEhE
+TUkgSW4vT3V0LCBEUCwgTUlQSSBEU0kvQ1NJLCBlRFAKLSBVU0IgMy4wLCAyLjAKLSBVU0IgVHlw
+ZSBDIHBvd2VyIGFuZCBkYXRhCi0gR1BJTyBleHBhbnNpb24gcG9ydHMKLSBEQyAxMlYvMkEKCkNv
+bW1pdCBkZXRhaWxzIG9mIHJrMzM5OS1uYW5vcGMtdDQuZHRzIHN5bmMgZnJvbSBMaW51eCA1LjEt
+cmMyOgoiYXJtNjQ6IGR0czogcm9ja2NoaXA6IEFkZCBOYW5vUEMtVDQgSVIgcmVjZWl2ZXIiCihz
+aGExOiA5NTY1OGUyMWIxNzA3YWQ3ODQ0Zjg3M2RiMmZkYWEyOTUxMDlhNWEzKQoKVGVzdGVkLWJ5
+OiBEYW5pZWwgR3LDtmJlciA8ZHhsZEBkYXJrYm94ZWQub3JnPgpTaWduZWQtb2ZmLWJ5OiBKYWdh
+biBUZWtpIDxqYWdhbkBhbWFydWxhc29sdXRpb25zLmNvbT4KLS0tCiBhcmNoL2FybS9kdHMvTWFr
+ZWZpbGUgICAgICAgICAgICAgICAgICAgICB8ICAxICsKIGFyY2gvYXJtL2R0cy9yazMzOTktbmFu
+b3BjLXQ0LXUtYm9vdC5kdHNpIHwgIDcgKysKIGFyY2gvYXJtL2R0cy9yazMzOTktbmFub3BjLXQ0
+LmR0cyAgICAgICAgIHwgOTEgKysrKysrKysrKysrKysrKysrKysrKysKIGJvYXJkL3JvY2tjaGlw
+L2V2Yl9yazMzOTkvTUFJTlRBSU5FUlMgICAgIHwgIDYgKysKIGNvbmZpZ3MvbmFub3BjLXQ0LXJr
+MzM5OV9kZWZjb25maWcgICAgICAgIHwgNTggKysrKysrKysrKysrKysrCiA1IGZpbGVzIGNoYW5n
+ZWQsIDE2MyBpbnNlcnRpb25zKCspCiBjcmVhdGUgbW9kZSAxMDA2NDQgYXJjaC9hcm0vZHRzL3Jr
+MzM5OS1uYW5vcGMtdDQtdS1ib290LmR0c2kKIGNyZWF0ZSBtb2RlIDEwMDY0NCBhcmNoL2FybS9k
+dHMvcmszMzk5LW5hbm9wYy10NC5kdHMKIGNyZWF0ZSBtb2RlIDEwMDY0NCBjb25maWdzL25hbm9w
+Yy10NC1yazMzOTlfZGVmY29uZmlnCgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vZHRzL01ha2VmaWxl
+IGIvYXJjaC9hcm0vZHRzL01ha2VmaWxlCmluZGV4IGQyYWMyNmI1NTYuLmUwNDg1NjViYjYgMTAw
+NjQ0Ci0tLSBhL2FyY2gvYXJtL2R0cy9NYWtlZmlsZQorKysgYi9hcmNoL2FybS9kdHMvTWFrZWZp
+bGUKQEAgLTg3LDYgKzg3LDcgQEAgZHRiLSQoQ09ORklHX0FSQ0hfUk9DS0NISVApICs9IFwKIAly
+azMzOTktZXZiLmR0YiBcCiAJcmszMzk5LWZpcmVmbHkuZHRiIFwKIAlyazMzOTktZ3J1LWJvYi5k
+dGIgXAorCXJrMzM5OS1uYW5vcGMtdDQuZHRiIFwKIAlyazMzOTktbmFub3BpLW00LmR0YiBcCiAJ
+cmszMzk5LW9yYW5nZXBpLmR0YiBcCiAJcmszMzk5LXB1bWEtZGRyMTMzMy5kdGIgXApkaWZmIC0t
+Z2l0IGEvYXJjaC9hcm0vZHRzL3JrMzM5OS1uYW5vcGMtdDQtdS1ib290LmR0c2kgYi9hcmNoL2Fy
+bS9kdHMvcmszMzk5LW5hbm9wYy10NC11LWJvb3QuZHRzaQpuZXcgZmlsZSBtb2RlIDEwMDY0NApp
+bmRleCAwMDAwMDAwMDAwLi4xNzIwMWJjZjQxCi0tLSAvZGV2L251bGwKKysrIGIvYXJjaC9hcm0v
+ZHRzL3JrMzM5OS1uYW5vcGMtdDQtdS1ib290LmR0c2kKQEAgLTAsMCArMSw3IEBACisvLyBTUERY
+LUxpY2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMCsKKy8qCisgKiBDb3B5cmlnaHQgKEMpIDIwMTkg
+SmFnYW4gVGVraSA8amFnYW5AYW1hcnVsYXNvbHV0aW9ucy5jb20+CisgKi8KKworI2luY2x1ZGUg
+InJrMzM5OS1uYW5vcGk0LXUtYm9vdC5kdHNpIgorI2luY2x1ZGUgInJrMzM5OS1zZHJhbS1scGRk
+cjMtc2Ftc3VuZy00R0ItMTg2Ni5kdHNpIgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vZHRzL3JrMzM5
+OS1uYW5vcGMtdDQuZHRzIGIvYXJjaC9hcm0vZHRzL3JrMzM5OS1uYW5vcGMtdDQuZHRzCm5ldyBm
+aWxlIG1vZGUgMTAwNjQ0CmluZGV4IDAwMDAwMDAwMDAuLjg0NDMzY2YwMmIKLS0tIC9kZXYvbnVs
+bAorKysgYi9hcmNoL2FybS9kdHMvcmszMzk5LW5hbm9wYy10NC5kdHMKQEAgLTAsMCArMSw5MSBA
+QAorLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IChHUEwtMi4wKyBPUiBNSVQpCisvKgorICog
+RnJpZW5kbHlFbGVjIE5hbm9QQy1UNCBib2FyZCBkZXZpY2UgdHJlZSBzb3VyY2UKKyAqCisgKiBD
+b3B5cmlnaHQgKGMpIDIwMTggRnJpZW5kbHlFbGVjIENvbXB1dGVyIFRlY2guIENvLiwgTHRkLgor
+ICogKGh0dHA6Ly93d3cuZnJpZW5kbHlhcm0uY29tKQorICoKKyAqIENvcHlyaWdodCAoYykgMjAx
+OCBDb2xsYWJvcmEgTHRkLgorICovCisKKy9kdHMtdjEvOworI2luY2x1ZGUgInJrMzM5OS1uYW5v
+cGk0LmR0c2kiCisKKy8geworCW1vZGVsID0gIkZyaWVuZGx5RWxlYyBOYW5vUEMtVDQiOworCWNv
+bXBhdGlibGUgPSAiZnJpZW5kbHlhcm0sbmFub3BjLXQ0IiwgInJvY2tjaGlwLHJrMzM5OSI7CisK
+Kwl2Y2MxMnYwX3N5czogdmNjMTJ2MC1zeXMgeworCQljb21wYXRpYmxlID0gInJlZ3VsYXRvci1m
+aXhlZCI7CisJCXJlZ3VsYXRvci1hbHdheXMtb247CisJCXJlZ3VsYXRvci1ib290LW9uOworCQly
+ZWd1bGF0b3ItbWF4LW1pY3Jvdm9sdCA9IDwxMjAwMDAwMD47CisJCXJlZ3VsYXRvci1taW4tbWlj
+cm92b2x0ID0gPDEyMDAwMDAwPjsKKwkJcmVndWxhdG9yLW5hbWUgPSAidmNjMTJ2MF9zeXMiOwor
+CX07CisKKwl2Y2M1djBfaG9zdDA6IHZjYzV2MC1ob3N0MCB7CisJCWNvbXBhdGlibGUgPSAicmVn
+dWxhdG9yLWZpeGVkIjsKKwkJcmVndWxhdG9yLWFsd2F5cy1vbjsKKwkJcmVndWxhdG9yLWJvb3Qt
+b247CisJCXJlZ3VsYXRvci1uYW1lID0gInZjYzV2MF9ob3N0MCI7CisJCXZpbi1zdXBwbHkgPSA8
+JnZjYzV2MF9zeXM+OworCX07CisKKwlhZGMta2V5cyB7CisJCWNvbXBhdGlibGUgPSAiYWRjLWtl
+eXMiOworCQlpby1jaGFubmVscyA9IDwmc2FyYWRjIDE+OworCQlpby1jaGFubmVsLW5hbWVzID0g
+ImJ1dHRvbnMiOworCQlrZXl1cC10aHJlc2hvbGQtbWljcm92b2x0ID0gPDE4MDAwMDA+OworCQlw
+b2xsLWludGVydmFsID0gPDEwMD47CisKKwkJcmVjb3ZlcnkgeworCQkJbGFiZWwgPSAiUmVjb3Zl
+cnkiOworCQkJbGludXgsY29kZSA9IDxLRVlfVkVORE9SPjsKKwkJCXByZXNzLXRocmVzaG9sZC1t
+aWNyb3ZvbHQgPSA8MTgwMDA+OworCQl9OworCX07CisKKwlpci1yZWNlaXZlciB7CisJCWNvbXBh
+dGlibGUgPSAiZ3Bpby1pci1yZWNlaXZlciI7CisJCWdwaW9zID0gPCZncGlvMCBSS19QQTYgR1BJ
+T19BQ1RJVkVfTE9XPjsKKwkJcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKKwkJcGluY3RybC0w
+ID0gPCZpcl9yeD47CisJfTsKK307CisKKyZwaW5jdHJsIHsKKwlpciB7CisJCWlyX3J4OiBpci1y
+eCB7CisJCQkvKiBleHRlcm5hbCBwdWxsdXAgdG8gVkNDM1YzX1NZUywgZGVzcGl0ZSBiZWluZyAx
+LjhWIDovICovCisJCQlyb2NrY2hpcCxwaW5zID0gPDAgUktfUEE2IFJLX0ZVTkNfMSAmcGNmZ19w
+dWxsX25vbmU+OworCQl9OworCX07Cit9OworCismc2RoY2kgeworCW1tYy1oczQwMC0xXzh2Owor
+CW1tYy1oczQwMC1lbmhhbmNlZC1zdHJvYmU7Cit9OworCismdTJwaHkwX2hvc3QgeworCXBoeS1z
+dXBwbHkgPSA8JnZjYzV2MF9ob3N0MD47Cit9OworCismdTJwaHkxX2hvc3QgeworCXBoeS1zdXBw
+bHkgPSA8JnZjYzV2MF9ob3N0MD47Cit9OworCismdmNjNXYwX3N5cyB7CisJdmluLXN1cHBseSA9
+IDwmdmNjMTJ2MF9zeXM+OworfTsKKworJnZjYzN2M19zeXMgeworCXZpbi1zdXBwbHkgPSA8JnZj
+YzEydjBfc3lzPjsKK307CisKKyZ2YnVzX3R5cGVjIHsKKwllbmFibGUtYWN0aXZlLWhpZ2g7CisJ
+Z3Bpb3MgPSA8JmdwaW80IFJLX1BEMiBHUElPX0FDVElWRV9ISUdIPjsKKwl2aW4tc3VwcGx5ID0g
+PCZ2Y2M1djBfc3lzPjsKK307CmRpZmYgLS1naXQgYS9ib2FyZC9yb2NrY2hpcC9ldmJfcmszMzk5
+L01BSU5UQUlORVJTIGIvYm9hcmQvcm9ja2NoaXAvZXZiX3JrMzM5OS9NQUlOVEFJTkVSUwppbmRl
+eCBhZTQzODA1YTZhLi41OTE3YWJiOWMxIDEwMDY0NAotLS0gYS9ib2FyZC9yb2NrY2hpcC9ldmJf
+cmszMzk5L01BSU5UQUlORVJTCisrKyBiL2JvYXJkL3JvY2tjaGlwL2V2Yl9yazMzOTkvTUFJTlRB
+SU5FUlMKQEAgLTYsNiArNiwxMiBAQCBGOiAgICAgIGluY2x1ZGUvY29uZmlncy9ldmJfcmszMzk5
+LmgKIEY6ICAgICAgY29uZmlncy9ldmItcmszMzk5X2RlZmNvbmZpZwogRjogICAgICBjb25maWdz
+L2ZpcmVmbHktcmszMzk5X2RlZmNvbmZpZwogCitOQU5PUEMtVDQKK006CUphZ2FuIFRla2kgPGph
+Z2FuQGFtYXJ1bGFzb2x1dGlvbnMuY29tPgorUzoJTWFpbnRhaW5lZAorRjoJY29uZmlncy9uYW5v
+cGljLXQ0LXJrMzM5OV9kZWZjb25maWcKK0Y6CWFyY2gvYXJtL2R0cy9yazMzOTktbmFub3BpYy10
+NC11LWJvb3QuZHRzaQorCiBOQU5PUEktTTQKIE06CUphZ2FuIFRla2kgPGphZ2FuQGFtYXJ1bGFz
+b2x1dGlvbnMuY29tPgogUzoJTWFpbnRhaW5lZApkaWZmIC0tZ2l0IGEvY29uZmlncy9uYW5vcGMt
+dDQtcmszMzk5X2RlZmNvbmZpZyBiL2NvbmZpZ3MvbmFub3BjLXQ0LXJrMzM5OV9kZWZjb25maWcK
+bmV3IGZpbGUgbW9kZSAxMDA2NDQKaW5kZXggMDAwMDAwMDAwMC4uN2JhNGY4NTQ4NQotLS0gL2Rl
+di9udWxsCisrKyBiL2NvbmZpZ3MvbmFub3BjLXQ0LXJrMzM5OV9kZWZjb25maWcKQEAgLTAsMCAr
+MSw1OCBAQAorQ09ORklHX0FSTT15CitDT05GSUdfQVJDSF9ST0NLQ0hJUD15CitDT05GSUdfU1lT
+X1RFWFRfQkFTRT0weDAwMjAwMDAwCitDT05GSUdfU1BMX0xJQkNPTU1PTl9TVVBQT1JUPXkKK0NP
+TkZJR19TUExfTElCR0VORVJJQ19TVVBQT1JUPXkKK0NPTkZJR19TWVNfTUFMTE9DX0ZfTEVOPTB4
+NDAwMAorQ09ORklHX1JPQ0tDSElQX1JLMzM5OT15CitDT05GSUdfUk9DS0NISVBfU1BMX1JFU0VS
+VkVfSVJBTT0weDQwMDAKK0NPTkZJR19ERUJVR19VQVJUX0JBU0U9MHhGRjFBMDAwMAorQ09ORklH
+X0RFQlVHX1VBUlRfQ0xPQ0s9MjQwMDAwMDAKK0NPTkZJR19TUExfU1RBQ0tfUl9BRERSPTB4ODAw
+MDAKK0NPTkZJR19ERUJVR19VQVJUPXkKK0NPTkZJR19OUl9EUkFNX0JBTktTPTEKK0NPTkZJR19E
+RUZBVUxUX0ZEVF9GSUxFPSJyb2NrY2hpcC9yazMzOTktbmFub3BjLXQ0LmR0YiIKKyMgQ09ORklH
+X0RJU1BMQVlfQ1BVSU5GTyBpcyBub3Qgc2V0CitDT05GSUdfRElTUExBWV9CT0FSRElORk9fTEFU
+RT15CitDT05GSUdfU1BMX1NUQUNLX1I9eQorQ09ORklHX1NQTF9TVEFDS19SX01BTExPQ19TSU1Q
+TEVfTEVOPTB4NDAwMAorQ09ORklHX0NNRF9CT09UWj15CitDT05GSUdfQ01EX0dQVD15CitDT05G
+SUdfQ01EX01NQz15CitDT05GSUdfQ01EX1NGPXkKK0NPTkZJR19DTURfVVNCPXkKKyMgQ09ORklH
+X0NNRF9TRVRFWFBSIGlzIG5vdCBzZXQKK0NPTkZJR19DTURfVElNRT15CitDT05GSUdfU1BMX09G
+X0NPTlRST0w9eQorQ09ORklHX0RFRkFVTFRfREVWSUNFX1RSRUU9InJrMzM5OS1uYW5vcGMtdDQi
+CitDT05GSUdfT0ZfU1BMX1JFTU9WRV9QUk9QUz0icGluY3RybC0wIHBpbmN0cmwtbmFtZXMgY2xv
+Y2stbmFtZXMgaW50ZXJydXB0LXBhcmVudCBhc3NpZ25lZC1jbG9ja3MgYXNzaWduZWQtY2xvY2st
+cmF0ZXMgYXNzaWduZWQtY2xvY2stcGFyZW50cyIKK0NPTkZJR19FTlZfSVNfSU5fTU1DPXkKK0NP
+TkZJR19ST0NLQ0hJUF9HUElPPXkKK0NPTkZJR19TWVNfSTJDX1JPQ0tDSElQPXkKK0NPTkZJR19N
+TUNfRFc9eQorQ09ORklHX01NQ19EV19ST0NLQ0hJUD15CitDT05GSUdfTU1DX1NESENJPXkKK0NP
+TkZJR19NTUNfU0RIQ0lfUk9DS0NISVA9eQorQ09ORklHX0RNX0VUSD15CitDT05GSUdfRVRIX0RF
+U0lHTldBUkU9eQorQ09ORklHX0dNQUNfUk9DS0NISVA9eQorQ09ORklHX1BNSUNfUks4WFg9eQor
+Q09ORklHX1JFR1VMQVRPUl9QV009eQorQ09ORklHX1JFR1VMQVRPUl9SSzhYWD15CitDT05GSUdf
+UFdNX1JPQ0tDSElQPXkKK0NPTkZJR19CQVVEUkFURT0xNTAwMDAwCitDT05GSUdfREVCVUdfVUFS
+VF9TSElGVD0yCitDT05GSUdfU1lTUkVTRVQ9eQorQ09ORklHX1VTQj15CitDT05GSUdfVVNCX1hI
+Q0lfSENEPXkKK0NPTkZJR19VU0JfWEhDSV9EV0MzPXkKK0NPTkZJR19VU0JfRUhDSV9IQ0Q9eQor
+Q09ORklHX1VTQl9FSENJX0dFTkVSSUM9eQorQ09ORklHX1VTQl9IT1NUX0VUSEVSPXkKK0NPTkZJ
+R19VU0JfRVRIRVJfQVNJWD15CitDT05GSUdfVVNCX0VUSEVSX0FTSVg4ODE3OT15CitDT05GSUdf
+VVNCX0VUSEVSX01DUzc4MzA9eQorQ09ORklHX1VTQl9FVEhFUl9SVEw4MTUyPXkKK0NPTkZJR19V
+U0JfRVRIRVJfU01TQzk1WFg9eQorQ09ORklHX1VTRV9USU5ZX1BSSU5URj15CitDT05GSUdfRVJS
+Tk9fU1RSPXkKLS0gCjIuMTguMC4zMjEuZ2ZmYzZmYTBlMwoKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApM
+aW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
