@@ -2,85 +2,65 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A940EB6A2
-	for <lists+linux-rockchip@lfdr.de>; Sun, 28 Apr 2019 22:28:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91C58DC7C
+	for <lists+linux-rockchip@lfdr.de>; Mon, 29 Apr 2019 09:02:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zfq8xYIqa5uJxcx1GAHaDknGCxCygDjJIAHswgaUrx4=; b=fxwIpX9WqwZlPM
-	I/0LTWl/yn3hUDtrnelU5FqbyW0hwiOGYl2oQszfBynA9i5HWSyO390qB5MLDEi15jhPVwhfFZWm7
-	9ruoRVBziXmZqwFhqBiF4FcwNwhc6gzxp+P+NWTpyQjGB+7vcRBSTGZ++7rkWu+DaDYgh78d0pPHf
-	JKpDMHCg55NayuT5FHopJMBiXVALpPBMOKtbWJqRKJARAF7Zoe/czz/KxTzents444tnFxlk33Rwj
-	qTviG3fBWUJFaGMs9k0LOUJjmOz8YfOFPXW988dNV3ci6ZzlFe91HWaDhy3M55rLn7zbbMsHcfCMM
-	VrnPDnV14Y9sv49esnkw==;
+	List-Owner; bh=WVxuWXWWvbTaisv4EWOR/r8jTperIOnQm/9FXVcYf4I=; b=kaodtR5bF8XzBp
+	giuAZ+WUs8XwK5u36Q0WIWPRE4Kw9+LL6d/SOneClwPKx3OwDNt93MA+l0vcGYCtDNiGqPjRSoF47
+	MP4WSM2nEdZaVBx05z/gg17HEq7d7tdOIHPGuEhbo+XW4eRqfzdzKn3XSehOOWYMgD0PrKBwve6X3
+	ekeEashU9yk7ujSalG/pcKhd4c2Xc8QFlt7bSQjUmQZWZiCfwxjtjC1FjoLaM4KBXRzjwtQb7Z0hJ
+	4mememmPBdx72kJwCgOkgolbKNn74b+ppZ9uqGoIlW4VCTmHj3nWnUij3c/1bQJNP7mHZYO37jS3B
+	1n6Ec/I66/QmqXXz90iw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKqPD-0001zE-3r; Sun, 28 Apr 2019 20:28:11 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1hL0J0-0003aD-1t; Mon, 29 Apr 2019 07:02:26 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKqIy-0002RL-9l
- for linux-rockchip@lists.infradead.org; Sun, 28 Apr 2019 20:22:04 +0000
-Received: by mail-lj1-x244.google.com with SMTP id e18so1564723lja.5
- for <linux-rockchip@lists.infradead.org>; Sun, 28 Apr 2019 13:21:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=HJe7LnGkDC9Wt4+gx21M26mW6URvKsQTzWzRQYmarxs=;
- b=tl3XS1cciKbpHJoJTJgwp6w+lz9EbF5CnOrcJrxxcmiyuJoJQ9aIFUndPEXZf5uLSx
- CjKTWKjKHeLMN7g964H+ThEN6kzdYm9EWr44B8DVQNYfLw5Ibhs8L/a0AKfksBxZtjyw
- gu4ji+6vn6GTvz0LVQ1jTY8aulOdWBEuRWNZmEmPpYggc/+I93KsCNyhXb1XjldtD0T8
- lL8zEvFiFM1UKcAOJLGHHDF2/JoRod866uV6+Z7G25i7twIZE0OooqTCJcHl+EDlWT6a
- qTJHlfgOdDx3ocUW4opZYpYcHWz0OHwE0upW5WDjsvvbjWhIwPDRW8iJBxjDE/SvxIZ+
- 8kHQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=HJe7LnGkDC9Wt4+gx21M26mW6URvKsQTzWzRQYmarxs=;
- b=jp+CzuozPxkW1/+5fL9ykvNqiJGc9dWziEets3675QTB4UJ5HYCzbRHD9vhWvS5nRD
- dM6j6oN1RlTqwFm6CrcvMu9Irg17LB9CKY8TQZECbAZiGiezUkg6WE0octPSFq4tY+SY
- B6x7QV+swzXVX29SO5MmZUKpEFIsGGjk+ATQZePC9S1kyF2MO4HODIP+J4PXsvXkp5K2
- REcT9JcFOc2NFNEW2OGvBUalz9LIPBmvohG/DT4kIHYb0YTIIGrJobvq3YokRnK1/ya9
- Xe5W+RiYk9FuabF0LarhU1yYkxDairwA1z7DpYWehOOF5FN4Aak6Twd/DPJIF9NwZzy2
- tw/g==
-X-Gm-Message-State: APjAAAXYgMZg0zgC8DCbXfQN6dioTCYDTRSOKVIKiRo24fGmyQbBGrR4
- vTQBDazaCEUM8+oziHYWWbItdQ==
-X-Google-Smtp-Source: APXvYqzTtf9fxA+g/YyPjy3mhlWMEWcq0od7Wc1KbBGsAJDSWoPrhtfnpYYUSM+nCjjamdkH9RBP9Q==
-X-Received: by 2002:a2e:894e:: with SMTP id b14mr26702804ljk.158.1556482902696; 
- Sun, 28 Apr 2019 13:21:42 -0700 (PDT)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id r10sm455212ljb.81.2019.04.28.13.21.41
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 28 Apr 2019 13:21:41 -0700 (PDT)
-Date: Sun, 28 Apr 2019 13:00:44 -0700
-From: Olof Johansson <olof@lixom.net>
-To: Heiko Stuebner <heiko@sntech.de>
-Subject: Re: [GIT PULL 2/5] Rockchip dts64 updates for 5.2 - round 2
-Message-ID: <20190428200044.4midr65z7cvwle7b@localhost>
-References: <3379363.gjmLGbHmEH@phil>
- <1566191.x5jUQ05xmK@phil>
+ id 1hL0D9-00060L-63
+ for linux-rockchip@lists.infradead.org; Mon, 29 Apr 2019 06:56:49 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hL0D2-000345-5d; Mon, 29 Apr 2019 08:56:16 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hL0Cz-0003Hv-Ul; Mon, 29 Apr 2019 08:56:13 +0200
+Date: Mon, 29 Apr 2019 08:56:13 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Brian Norris <briannorris@chromium.org>
+Subject: Re: [PATCH v2 1/3] pwm: rockchip: Don't update the state for the
+ caller of pwm_apply_state()
+Message-ID: <20190429065613.n52uwgys5eugmssd@pengutronix.de>
+References: <20190312214605.10223-1-u.kleine-koenig@pengutronix.de>
+ <20190312214605.10223-2-u.kleine-koenig@pengutronix.de>
+ <1707507.TOMHpQGrZ7@phil>
+ <CAD=FV=WZHouhGcxOgNG3006XajJQaAp0uq9WjeKRikQx1ru4TA@mail.gmail.com>
+ <20190408143914.uucb5dwafq3cnsmk@pengutronix.de>
+ <CA+ASDXO=szekU97iTDK9vqWjT+JtAKeCNTyoY=8aSi5d+v4mkA@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1566191.x5jUQ05xmK@phil>
+In-Reply-To: <CA+ASDXO=szekU97iTDK9vqWjT+JtAKeCNTyoY=8aSi5d+v4mkA@mail.gmail.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-rockchip@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190428_132144_926991_A2B0B1CE 
-X-CRM114-Status: GOOD (  11.19  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190428_235623_916070_4CEC4548 
+X-CRM114-Status: GOOD (  26.30  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,35 +73,110 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, arm@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm <linux-pwm@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Doug Anderson <dianders@chromium.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Sascha Hauer <kernel@pengutronix.de>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Apr 24, 2019 at 07:57:56PM +0200, Heiko Stuebner wrote:
-> The following changes since commit b4e1728232d64b8040dae9b5405cf2db7ebd4e8b:
-> 
->   arm64: dts: rockchip: Decrease emmc-phy's drive impedance on rk3399-puma (2019-03-27 13:45:27 +0100)
-> 
-> are available in the Git repository at:
-> 
->   git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.2-rockchip-dts64-2
-> 
-> for you to fetch changes up to 798689e45190756c2eca6656ee4c624370a5012a:
-> 
->   arm64: dts: rockchip: fix IO domain voltage setting of APIO5 on rockpro64 (2019-04-23 23:29:08 +0200)
-> 
-> ----------------------------------------------------------------
-> Bulk conversion of remaining gpios to the helper constants, new peripherals
-> for the rk3328-roc-cc and some minor fixes for rk3399 and rockpro64.
+On Thu, Apr 18, 2019 at 05:27:05PM -0700, Brian Norris wrote:
+> Hi,
+> =
 
+> I'm not sure if I'm misreading you, but I thought I'd add here before
+> this expires out of my inbox:
+> =
 
-Merged, thanks!
+> On Mon, Apr 8, 2019 at 7:39 AM Uwe Kleine-K=F6nig
+> <u.kleine-koenig@pengutronix.de> wrote:
+> > My intention here is more to make all drivers behave the same way and
+> > because only two drivers updated the pwm_state this was the variant I
+> > removed.
+> =
 
+> To be clear, this patch on its own is probably breaking things. Just
+> because the other drivers don't implement the documented behavior
+> doesn't mean you should break this driver. Maybe the others just
+> aren't used in precise enough scenarios where this matters.
+> =
 
--Olof
+> > When you say that the caller might actually care about the exact
+> > parameters I fully agree. In this case however the consumer should be
+> > able to know the result before actually applying it. So if you do
+> >
+> >         pwm_apply_state(pwm, { .period =3D 17, .duty_cycle =3D 12, ...})
+> >
+> > and this results in .period =3D 100 and .duty_cycle =3D 0 then probably=
+ the
+> > bad things you want to know about already happend. So my idea is a new
+> > function pwm_round_state() that does the adaptions to pwm_state without
+> > applying it to the hardware. After that pwm_apply_state could do the
+> > following:
+> >
+> >         rstate =3D pwm_round_state(pwm, state)
+> >         pwm.apply(pwm, state)
+> >         gstate =3D pwm_get_state(pwm)
+> >
+> >         if rstate !=3D gstate:
+> >                 warn about problems
+> =
+
+> For our case (we're using this with pwm-regulator), I don't recall [*]
+> we need to be 100% precise about the period, but we do need to be as
+> precise as possible with the duty:period ratio -- so once we get the
+> "feedback" from the underlying PWM driver what the real period will
+> be, we adjust the duty appropriately.
+
+I admit that I didn't understood the whole situation and (some) things
+are worse with my patches applied. I still think that changing the
+caller's state variable is bad design, but of course pwm_get_state
+should return the currently implemented configuration.
+
+> So I don't see that "warning" would really help for this particular case.
+> =
+
+> > But before doing that I think it would be sensible to also fix the rules
+> > how the round_state callback is supposed to round.
+> =
+
+> I'm not quite sure I grok exactly what you're planning, but I would
+> much appreciate if you didn't break things on the way toward fixing
+> them ;)
+
+There are currently no rules how the driver should behave for example if
+the consumer requests
+
+	.duty_cycle =3D 10, .period =3D 50
+
+and the hardware can only implement multiples of 3 for both values. The
+obvious candidates are:
+
+ - .duty_cycle =3D 9, .period =3D 51 (round nearest for both)
+ - .duty_cycle =3D 12, .period =3D 51 (round up)
+ - .duty_cycle =3D 9, .period =3D 48 (round down)
+ - .duty_cycle =3D 9, .period =3D 45 (round duty_cycle and keep proportion)
+ - return error (which code?)
+
+And there are some other variants (e.g. round duty_cycle to nearest and
+period in the same direction) that might be sensible.
+
+Also it should be possible to know the result before actually
+configuring the hardware. Otherwise things might already go wrong
+because the driver implements a setting that is too far from the
+requested configuration.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 Linux-rockchip mailing list
