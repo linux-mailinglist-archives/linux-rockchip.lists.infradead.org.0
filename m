@@ -2,90 +2,90 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BE4EE916
-	for <lists+linux-rockchip@lfdr.de>; Mon, 29 Apr 2019 19:31:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71186E90D
+	for <lists+linux-rockchip@lfdr.de>; Mon, 29 Apr 2019 19:31:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=te7qsLHgVTcBE88q7D4XGRm+iZ8FOOce3lTI4TuWiCU=; b=nFPxFkVGiXj8Km
-	UpygIsbtteqdOpJFFr1jTKNjBDNvUYHyUMN5lOW3Vasn8cSfn8YCvjEUaMzW0nI6QvNBQKtl1DYu0
-	2Gs++6TulTjZFmglnT3gZuxP5nRfBzF9PVYJY6M7PIpe4npSPELAqs0zjCL7K6r5fjD658Q/oJWcg
-	padzo/q0B+/xDjlsXCqsAu3aKekElU1QuqfJbOjgu6hK63SR0Nt6u1qDJueceQKbTGVpsVCzacAZk
-	AD1QKfdcoW3z1fpCYfE/rj6Dq4qbOE1AwkyBcuomIHC9usP93IcvymJZTdDJILVXEgXknhJEP6GP+
-	/hYYS5NSw5ys9euj1cxQ==;
+	List-Owner; bh=LvmyPY4pHC6AIMF3Rbj9yLFu2LUrcHsqVXb0wJiDcmU=; b=fJ7AD1f9HR3dMv
+	od/tq9k8rgLYyKM9Hio2eYzhUW0qZ/Cthwr+JTQq3oCZcWjb/cFEcBU4SRopTTBUHHLinfDL+XhDE
+	sKcmK5OneyRi3YZHE33mRdaNsjKu99n4Ti8wfjcgiWWUCV2/edOPKA0p1gq+Xozzc5poc66FcZ9DV
+	OiYq7CRFGkHTBBYMXbHTrAgWfdCbb01Jhn2yguLx7RCg3DhcEvQG2eYxiXGg4tOs349Xi0Nxx3gkt
+	H7s9F0pKOW7PuPCAW7ObHl/37TVNYHoPt5s/6rmmkcXyRwcTpZ5rTjeJAmMe+lytVUuCeUDSeM/B8
+	ZM5Hc9ayxfMSR8wvBddg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLA7h-0001Wu-FK; Mon, 29 Apr 2019 17:31:25 +0000
+	id 1hLA7G-00017s-P3; Mon, 29 Apr 2019 17:30:58 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLA7K-00017k-4a
- for linux-rockchip@bombadil.infradead.org; Mon, 29 Apr 2019 17:31:02 +0000
+ id 1hLA7F-00017k-L3
+ for linux-rockchip@bombadil.infradead.org; Mon, 29 Apr 2019 17:30:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
  References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=QejXsB3OpdlM5+EAoMeXmfcyX8s/pStU8O6CJTM6QI4=; b=2Cs5UGBPhdyi84+gQeAMWyOL2
- s/bI6Njm+yx74dYq4mMwiic0l4rYRod2HVaM6Iq96dbjpnGIUulAUNhBsy7GpwNpyldZ7LJdEtP4f
- cmZnQrnu1BzzVSplXCe3pT2G7nlKp5runBCqnM0g/ItmkPmLS42Ks1UWgLw+mgVLIaW0jKPmrplIK
- y1LJvug3+F0UOjSPFI7rk+yPwSYz/3O9fkwoWAz6krNEybBltBe3wsWX0pAaUIgnIsV7VqedlNQDJ
- 8OrDFllrtE+vm45d7LE9qc3B+7U/DpGlryRyd14eX3l6OL8SG6xONByhyIcM3WEpwEOeVzRum/qS7
- G2OzK17QA==;
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+ bh=hLy/N5IIDU5S17Aiea9w/yKdhqHcRyIx5lZCj1/EzYo=; b=v3cXi/lmewwK5SjIaAaobkeH3
+ 5vATH7Typ6rXMuyNrrTz6+epDCgNNz18oHbVowpIwayr4T9P8MBKE+4tbM5l2Tl6uOfW0D01A84zr
+ XSZV2MCSIXDJo6B8gmtKZAt1vxfjbW/7IAT5Sxw2xbrDRK2njuqxHi2ZeGfzBvo0ICIVzThsPfIo8
+ xsg9Q4IPP/gcYA1XcJw13dO9cA0RZqRr2CgO6zy2/LHootfGJSCfj+4jAmtRwrSlk2j+4a7QBWQgF
+ +6YNMA0dY/WtvmcK+Nb4AaGMveAsludCMoWo3afPShX2JGrAmB9Nz096xtnOAddzi2rndRRa6as58
+ nu9TEAfSQ==;
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL9lQ-0001TN-KS
+ id 1hL9lQ-0001TP-Jk
  for linux-rockchip@lists.infradead.org; Mon, 29 Apr 2019 17:08:25 +0000
-Received: by mail-lf1-x143.google.com with SMTP id k18so8437633lfj.13
- for <linux-rockchip@lists.infradead.org>; Mon, 29 Apr 2019 10:08:23 -0700 (PDT)
+Received: by mail-lj1-x242.google.com with SMTP id y8so3666632ljd.3
+ for <linux-rockchip@lists.infradead.org>; Mon, 29 Apr 2019 10:08:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=QejXsB3OpdlM5+EAoMeXmfcyX8s/pStU8O6CJTM6QI4=;
- b=s1XyFM7kyEwQquPHfVSgIEMOWA0as3+wH5hv8HjWmIoDXz8LKRgBwwZx5aWB5I0qNJ
- SlLSSHj6P6KSpomhR56f034oBlle+WEZOZ812jT52b/s9V/xn/Xlxq9zSX1DVYN8Wyby
- UzEmf8ZfJHJIe+VTSojaKVT8xkjtaUMX7KKHln+it70jvCqsiQZPBLRpMqzBj3VXO62y
- 1Rhgbr1pbnQRgiSklQTQi3DP1XxQXsC6nDy1Wi7Dmp9PZqqARtnQRnxtdPd3nxhVUnQ/
- /scJ8o0dOOLy948Wy+bUfWpRTsQV40kWeLgTjb3NvJnHtdsY7toC65tPDSe7XSBF5fJ6
- 6UlQ==
+ bh=hLy/N5IIDU5S17Aiea9w/yKdhqHcRyIx5lZCj1/EzYo=;
+ b=xNOyBR9tm/L1PFDzPEPPpBt81NrtPjOtAaY+TztDpLOW1hnU1y9Qss0zqIrPgWLu7p
+ i1NXOVD7BMNqm4CPqx55LcldmDjz2HvstzaIbEEmVDmvRNDp2nvFRp33YlJRC8yvGLui
+ 4V4KIxvt0SloN/qaiiJycOhwb9PkWpTsD9ek5nosxmzptDYdYz9kp9ZcQ6QNaW3QIPzW
+ E8/i7Bse71rxq/XP6NEO0rUL8QC1G37TXW39/Z20yzXKV3bG8gR/LTfGhmJqoEkivuAZ
+ wdSeifmwy0FKBupzYov3+IjP878fbc0lJyyMR1rtrPhoZqjv+lVPIYOdfPr49QiUe0eF
+ LwxA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=QejXsB3OpdlM5+EAoMeXmfcyX8s/pStU8O6CJTM6QI4=;
- b=MdUo1ijOhW/tvEcbRK9gUFZ/53bVKkegtDsrwLBBtkkZwvglzhb3a4aJ/ir1tf2mXn
- nuiGLP43zORa2NfRUJ3nqQqHk7XI7/AQv1lX0ivl1xFTben9VrelBt/1ULRVe16PeMCl
- 3InIZLK+/YgPDE81EL2bjV8osbpirzOVWwM+eqlehx1RyBfpiPubtVoctBUZCXlcOmOD
- 7+KZG6J3xPIAQoL/qS0P2VMsgSYrd8FZO36YxPQWN/9KqtEo5zrTUEyULKEBiJUOKyKC
- PKi7rPlr6923Q+HZ7jX+gC2lb5771HGp3OpbVzUPxuLiv5zSyjgjhns/WmLVqe/Y/Kfz
- ATQQ==
-X-Gm-Message-State: APjAAAU/gdBBlcaDevGd8vfjZ76BEpsOoPEmIF4XGt4Gyti+ctYXtzHm
- 6hhvb9IHayNN+oj7tmMSd8JbaA==
-X-Google-Smtp-Source: APXvYqxap6GI99Zesmk+YqvGST2YvWZHO+CEpUfcGKmaQ0eu1IiN1ndNYGrloEwMQmHH4yliSNTLpw==
-X-Received: by 2002:ac2:43d8:: with SMTP id u24mr32873699lfl.94.1556557699512; 
- Mon, 29 Apr 2019 10:08:19 -0700 (PDT)
+ bh=hLy/N5IIDU5S17Aiea9w/yKdhqHcRyIx5lZCj1/EzYo=;
+ b=X7lirHYrOIpMTSbWql6oh6rppHyiWDV2wIK/RxqcH1T9KscDoet5vbxse/mXx+QT+6
+ ifbpsHoTyW3cLrouIXwpFS//TSuF6h4CY8B+lGArfhANVQm+Ku2SYrmfA8giPKLUVcoP
+ 1Q7PyaHDCUrxaERBYL5T1v3rZNJySXep2LSQ54ci0ML12NxxcXuy8Z+sYAjX+KxE/0bH
+ Aq9rkWCJ53baK0NsJHT4tqiNkEMfr2gOi7/yZvjWafocB9S0DpkfrAKT8NBCnQ/AwX60
+ k0e14Lhf9Y9HG5G7hhpJz/yO41lITdmwCujZsRDqmt3pOJtJCUOmoqhCDG1x9DVLyaHg
+ qWuA==
+X-Gm-Message-State: APjAAAUDiCZAdAiEe12YxloEhN4sgrMe8OzP/2NUvpmAxMRp+t0S5ZAW
+ 00sxIR8yF7hR4xvEAQhKWTjF/BSC1CHxQQ==
+X-Google-Smtp-Source: APXvYqx1UyC6K4jBnPvzwH/GS8GycAaY+bpNnIMrHPnz6Gy67DBivsbRsgqaoPPMMPtdouU+4iwAQA==
+X-Received: by 2002:a2e:8905:: with SMTP id d5mr30147170lji.59.1556557702067; 
+ Mon, 29 Apr 2019 10:08:22 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id q12sm7390269lfa.37.2019.04.29.10.08.18
+ by smtp.gmail.com with ESMTPSA id h26sm5374847lfm.11.2019.04.29.10.08.20
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 29 Apr 2019 10:08:18 -0700 (PDT)
-Date: Mon, 29 Apr 2019 09:56:51 -0700
+ Mon, 29 Apr 2019 10:08:20 -0700 (PDT)
+Date: Mon, 29 Apr 2019 10:03:18 -0700
 From: Olof Johansson <olof@lixom.net>
 To: Heiko Stuebner <heiko@sntech.de>
-Subject: Re: [GIT PULL 4/5] Rockchip soc32 updates for 5.2
-Message-ID: <20190429165651.r6ox3tbombvvu2mv@localhost>
+Subject: Re: [GIT PULL 5/5] Rockchip defconfig32 updates for 5.2
+Message-ID: <20190429170318.63wwgxov2lbyrvvk@localhost>
 References: <3379363.gjmLGbHmEH@phil>
- <4142453.kQgcn4UVYa@phil>
+ <3043127.yMmPYKTTFR@phil>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <4142453.kQgcn4UVYa@phil>
+In-Reply-To: <3043127.yMmPYKTTFR@phil>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_130824_741066_5AD629E5 
-X-CRM114-Status: GOOD (  14.69  )
+X-CRM114-CacheID: sfid-20190429_130824_723148_4201682F 
+X-CRM114-Status: GOOD (  14.19  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -95,7 +95,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -116,37 +116,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Apr 24, 2019 at 07:59:18PM +0200, Heiko Stuebner wrote:
+On Wed, Apr 24, 2019 at 08:00:07PM +0200, Heiko Stuebner wrote:
 > The following changes since commit 9e98c678c2d6ae3a17cb2de55d17f69dddaa231b:
 > 
 >   Linux 5.1-rc1 (2019-03-17 14:22:26 -0700)
 > 
 > are available in the Git repository at:
 > 
->   git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.2-rockchip-soc32-1
+>   git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.2-rockchip-defconfig32-1
 > 
-> for you to fetch changes up to fbd7af041586a15f5dc15b9ec051d25aa5ebe00a:
+> for you to fetch changes up to 366391f04177355320a3dbc5705daa017de5a373:
 > 
->   ARM: rockchip: add missing of_node_put in rockchip_smp_prepare_pmu (2019-04-23 19:52:37 +0200)
-> 
-> ----------------------------------------------------------------
-> Missing of_node_put and some added __init contants.
+>   ARM: multi_v7_defconfig: Enable missing drivers for supported Chromebooks (2019-04-23 19:53:29 +0200)
 > 
 > ----------------------------------------------------------------
-> Douglas Anderson (1):
->       ARM: rockchip: Mark pm-init functions __init
+> Enable more options needed by Veyron Chromebooks.
 > 
-> Wen Yang (1):
->       ARM: rockchip: add missing of_node_put in rockchip_smp_prepare_pmu
+> ----------------------------------------------------------------
+> Enric Balletbo i Serra (1):
+>       ARM: multi_v7_defconfig: Enable missing drivers for supported Chromebooks
 > 
->  arch/arm/mach-rockchip/platsmp.c | 1 +
->  arch/arm/mach-rockchip/pm.c      | 4 ++--
->  2 files changed, 3 insertions(+), 2 deletions(-)
+>  arch/arm/configs/multi_v7_defconfig | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
+> 
 
-Merged, thanks!
+Merged with some fixups due to churn in the file.
 
 
 -Olof
+> 
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
