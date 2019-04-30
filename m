@@ -2,93 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE7A9FA9D
-	for <lists+linux-rockchip@lfdr.de>; Tue, 30 Apr 2019 15:39:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B35DBFAB6
+	for <lists+linux-rockchip@lfdr.de>; Tue, 30 Apr 2019 15:42:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I7MDvbi1gjB9nwtDfaLmCTf2Ucg7nwIhiGtfPbBVYE8=; b=swlcm51+npw3aW
-	9SdpF5Mm2xATUYItIxxUYq2ah87BfNkqI49Sv9iYzXyZJjumEfJ4abzrVN1IoLhz7dF+fDYA6E3Kp
-	akEd5tCcjCeHICAoiCWDkIiEVfUTBYd9LJHvt19AQfVjtCNN1yHwXMdwAplYyCuW+rz5YqASuOIZ3
-	xX3EpCZHgPUULsgtxTyJlA6fyAwKjZiSrRp8f1BjjxL6CubQjpMSQKRiyot1bGnUTs6DTFany1g1T
-	IqH7i5EYfinkVHbQNzDceVTQiVe4WD/hp4qRMTZMUx1x+tdD6dSNU4ZEOW/7eH90MW/TmddeGPhuL
-	9o+2lwJhCNEsRydIM1OA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=dXz/p4p/WMaRTW8ZTiNBFVZZA3gz1hs6m2f/M0EGA8Y=; b=n1yhwXstwb+2z0SNpf0yqbvlA
+	MAUANfivViEzoBEVoPEgquTBa9nsZPz9vCnUrRdP17VfiLiegue4LRGs12BiydoP+9ERpMzBv6tdE
+	SEIcTrziA/jRxkzmTHtpUsYZxYxwWyhD9R5Z74Tr4vO/nKBA4pvhTKbp5IogbGPPq/FIrDvGsY5Hl
+	x7y+ErtzF9ctBF5+JZuMVe+JeWA07ehyBohuYHrFFpeEVA+J4PVpSOsAUbipiGt1yNlqMuzi72WB1
+	k+/+d5gxaVOICTmclkw4MtVvu9/C0dWjWAQOabGD4yEk5pEbkx5AW2pkgjn95Pkw9/KsJuL9VcD0R
+	rhM36Rfxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLSyK-0003DH-Dx; Tue, 30 Apr 2019 13:39:00 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLSyG-0003CO-OE
- for linux-rockchip@lists.infradead.org; Tue, 30 Apr 2019 13:38:58 +0000
-Received: by mail-wr1-x442.google.com with SMTP id s15so21031309wra.12
- for <linux-rockchip@lists.infradead.org>; Tue, 30 Apr 2019 06:38:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=itopA/ItRE7ZMWfQuGvoXaTCudQHZDXEixDU5B3vzos=;
- b=hxATa+VEqQe59yueuVRTCPUR5y+WfuYh2iPbJElIGltimA4qVtAgZ6VonBKccZRolN
- b8x6WnqvTL10fcbLkvyFf33CSGh5Y/iGV/ifZQbpxOIXUq/PUc0A5f9uNJ/zW/nA1pL9
- Mf5mwGvlRaexP67OjHDNIAhFlsW0MQbxA5Z4OSZOjF4DAkoxN2/6w3S5Sqc2DNQI/jI0
- Y43MU6UBI7wg+m8590tAZbZdiMNM176Fe/nu4sW8fc5J9AA+nbyBYYHFSRXKvS/8JjK+
- DNYpv0ZPQRXVT2xT/9Uj27WwTqaIJd4Cv1hobBFYxf5dos6S3RgKrE+nztobtmwKG8mX
- Gewg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=itopA/ItRE7ZMWfQuGvoXaTCudQHZDXEixDU5B3vzos=;
- b=nzIQGL+xUYdEgqkk3LbamQ5YnmsZwJtwJkDRzcZ93F823CgG3Bj6drwY6zIw8Py2cb
- Zv1mThBZtS1+BojYVA3/+otoDUisFzG9oK9DizsahfyyRyVNY6FRiSsRZun6xgiCjJYh
- sDpzMwci8iIRkgI5c8MCB1BmzypJPUdEiiKgCTdrKE/PoA60syFE3wA8gJdYUToyD0pF
- P1kp/HLRHvNWHsJVGYMnWhP7qw3meZd4PreZeDZ5R6KX/ng4wtga3owi31ECuxd/cwMw
- uLk1CG8OPI15hVmeN4DfeJN3vklv3OhwdCtF/rnw7G2nTmDFVM/RV2RMNw4d8xRUI73R
- Bo1A==
-X-Gm-Message-State: APjAAAVGG305NDRuvcy/zyWee2/uYSa82nnupZ3IgCKyQx579LElMNQn
- 8Q/sL6Fqv4RWN1L5U4rGbyccUA==
-X-Google-Smtp-Source: APXvYqxJo6YyqwjGZPozpgX+q3kMxOob3HtcBfq/38IG6fntTQ3NVABFe5nH5Cv3beZjeSSkT9EwJQ==
-X-Received: by 2002:a5d:5447:: with SMTP id w7mr1041635wrv.325.1556631533884; 
- Tue, 30 Apr 2019 06:38:53 -0700 (PDT)
-Received: from [192.168.0.41] (sju31-1-78-210-255-2.fbx.proxad.net.
- [78.210.255.2])
- by smtp.googlemail.com with ESMTPSA id o16sm25803167wro.63.2019.04.30.06.38.52
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 30 Apr 2019 06:38:53 -0700 (PDT)
-Subject: Re: [PATCH v3 1/3] thermal: rockchip: fix up the tsadc pinctrl
- setting error
-To: Elaine Zhang <zhangqing@rock-chips.com>, heiko@sntech.de
-References: <1556618986-18923-1-git-send-email-zhangqing@rock-chips.com>
- <1556618986-18923-2-git-send-email-zhangqing@rock-chips.com>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-Message-ID: <785392a0-282a-1e51-a4d6-a6d5ca478949@linaro.org>
-Date: Tue, 30 Apr 2019 15:38:51 +0200
+	id 1hLT1e-0006BZ-SF; Tue, 30 Apr 2019 13:42:26 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLT1N-0005rm-Gb; Tue, 30 Apr 2019 13:42:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DB55680D;
+ Tue, 30 Apr 2019 06:42:08 -0700 (PDT)
+Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C54823F5AF;
+ Tue, 30 Apr 2019 06:42:04 -0700 (PDT)
+Subject: Re: [PATCH v2 2/4] iommu/dma-iommu: Handle deferred devices
+To: Tom Murphy <tmurphy@arista.com>, iommu@lists.linux-foundation.org
+References: <20190430002952.18909-1-tmurphy@arista.com>
+ <20190430002952.18909-3-tmurphy@arista.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <2750fa37-a59c-3074-6545-b19046ce3699@arm.com>
+Date: Tue, 30 Apr 2019 14:42:03 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <1556618986-18923-2-git-send-email-zhangqing@rock-chips.com>
-Content-Language: en-US
+In-Reply-To: <20190430002952.18909-3-tmurphy@arista.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_063856_804757_05884394 
-X-CRM114-Status: GOOD (  22.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190430_064209_906808_27A72E0E 
+X-CRM114-Status: GOOD (  29.32  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -101,85 +63,198 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, huangtao@rock-chips.com,
- linux-pm@vger.kernel.org, xxx@rock-chips.com, xf@rock-chips.com,
- linux-kernel@vger.kernel.org, edubezval@gmail.com,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org, rui.zhang@intel.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Heiko Stuebner <heiko@sntech.de>, Will Deacon <will.deacon@arm.com>,
+ David Brown <david.brown@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, linux-s390@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ linux-rockchip@lists.infradead.org, Kukjin Kim <kgene@kernel.org>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ Andy Gross <andy.gross@linaro.org>, linux-tegra@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ murphyt7@tcd.ie, Rob Clark <robdclark@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gMzAvMDQvMjAxOSAxMjowOSwgRWxhaW5lIFpoYW5nIHdyb3RlOgo+IEV4cGxpY2l0bHkgdXNl
-IHRoZSBwaW5jdHJsIHRvIHNldC91bnNldCB0aGUgcmlnaHQgbW9kZQo+IGluc3RlYWQgb2YgcmVs
-eWluZyBvbiB0aGUgcGluY3RybCBpbml0IG1vZGUuCj4gQW5kIGl0IHJlcXVpcmVzIHNldHRpbmcg
-dGhlIHRzaHV0IHBvbGFyaXR5IGJlZm9yZSBzZWxlY3QgcGluY3RybC4KPiAKPiBXaGVuIHRoZSB0
-ZW1wZXJhdHVyZSBzZW5zb3IgbW9kZSBpcyBzZXQgdG8gMCwgaXQgd2lsbCBhdXRvbWF0aWNhbGx5
-Cj4gcmVzZXQgdGhlIGJvYXJkIHZpYSB0aGUgQ2xvY2stUmVzZXQtVW5pdCAoQ1JVKSBpZiB0aGUg
-b3ZlciB0ZW1wZXJhdHVyZQo+IHRocmVzaG9sZCBpcyByZWFjaGVkLiBIb3dldmVyLCB3aGVuIHRo
-ZSBwaW5jdHJsIGluaXRpYWxpemVzLCBpdCBkb2VzIGEKPiB0cmFuc2l0aW9uIHRvICJvdHBfb3V0
-IiB3aGljaCBtYXkgbGVhZCB0aGUgU29DIHJlc3RhcnQgYWxsIHRoZSB0aW1lLgo+IAo+ICJvdHBf
-b3V0IiBJTyBtYXkgYmUgY29ubmVjdGVkIHRvIHRoZSBSRVNFVCBjaXJjdWl0IG9uIHRoZSBoYXJk
-d2FyZS4KPiBJZiB0aGUgSU8gaXMgaW4gdGhlIHdyb25nIHN0YXRlLCBpdCB3aWxsIHRyaWdnZXIg
-UkVTRVQuCj4gKHNpbWlsYXIgdG8gdGhlIGVmZmVjdCBvZiBwcmVzc2luZyB0aGUgUkVTRVQgYnV0
-dG9uKQo+IHdoaWNoIHdpbGwgY2F1c2UgdGhlIHNvYyB0byByZXN0YXJ0IGFsbCB0aGUgdGltZS4K
-PiAKPiBTaWduZWQtb2ZmLWJ5OiBFbGFpbmUgWmhhbmcgPHpoYW5ncWluZ0Byb2NrLWNoaXBzLmNv
-bT4KClJldmlld2VkLWJ5OiBEYW5pZWwgTGV6Y2FubyA8ZGFuaWVsLmxlemNhbm9AbGluYXJvLm9y
-Zz4KCgoKPiAtLS0KPiAgZHJpdmVycy90aGVybWFsL3JvY2tjaGlwX3RoZXJtYWwuYyB8IDM2ICsr
-KysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKy0tLQo+ICAxIGZpbGUgY2hhbmdlZCwgMzMg
-aW5zZXJ0aW9ucygrKSwgMyBkZWxldGlvbnMoLSkKPiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy90
-aGVybWFsL3JvY2tjaGlwX3RoZXJtYWwuYyBiL2RyaXZlcnMvdGhlcm1hbC9yb2NrY2hpcF90aGVy
-bWFsLmMKPiBpbmRleCA5Yzc2NDNkNjJlZDcuLjZkYzdmYzUxNmFiZiAxMDA2NDQKPiAtLS0gYS9k
-cml2ZXJzL3RoZXJtYWwvcm9ja2NoaXBfdGhlcm1hbC5jCj4gKysrIGIvZHJpdmVycy90aGVybWFs
-L3JvY2tjaGlwX3RoZXJtYWwuYwo+IEBAIC0xNzIsNiArMTcyLDkgQEAgc3RydWN0IHJvY2tjaGlw
-X3RoZXJtYWxfZGF0YSB7Cj4gIAlpbnQgdHNodXRfdGVtcDsKPiAgCWVudW0gdHNodXRfbW9kZSB0
-c2h1dF9tb2RlOwo+ICAJZW51bSB0c2h1dF9wb2xhcml0eSB0c2h1dF9wb2xhcml0eTsKPiArCXN0
-cnVjdCBwaW5jdHJsICpwaW5jdHJsOwo+ICsJc3RydWN0IHBpbmN0cmxfc3RhdGUgKmdwaW9fc3Rh
-dGU7Cj4gKwlzdHJ1Y3QgcGluY3RybF9zdGF0ZSAqb3RwX3N0YXRlOwo+ICB9Owo+ICAKPiAgLyoq
-Cj4gQEAgLTEyNDIsNiArMTI0NSw4IEBAIHN0YXRpYyBpbnQgcm9ja2NoaXBfdGhlcm1hbF9wcm9i
-ZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICAJCXJldHVybiBlcnJvcjsKPiAgCX0K
-PiAgCj4gKwl0aGVybWFsLT5jaGlwLT5jb250cm9sKHRoZXJtYWwtPnJlZ3MsIGZhbHNlKTsKPiAr
-Cj4gIAllcnJvciA9IGNsa19wcmVwYXJlX2VuYWJsZSh0aGVybWFsLT5jbGspOwo+ICAJaWYgKGVy
-cm9yKSB7Cj4gIAkJZGV2X2VycigmcGRldi0+ZGV2LCAiZmFpbGVkIHRvIGVuYWJsZSBjb252ZXJ0
-ZXIgY2xvY2s6ICVkXG4iLAo+IEBAIC0xMjY3LDYgKzEyNzIsMzAgQEAgc3RhdGljIGludCByb2Nr
-Y2hpcF90aGVybWFsX3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAl0aGVy
-bWFsLT5jaGlwLT5pbml0aWFsaXplKHRoZXJtYWwtPmdyZiwgdGhlcm1hbC0+cmVncywKPiAgCQkJ
-CSAgdGhlcm1hbC0+dHNodXRfcG9sYXJpdHkpOwo+ICAKPiArCWlmICh0aGVybWFsLT50c2h1dF9t
-b2RlID09IFRTSFVUX01PREVfR1BJTykgewo+ICsJCXRoZXJtYWwtPnBpbmN0cmwgPSBkZXZtX3Bp
-bmN0cmxfZ2V0KCZwZGV2LT5kZXYpOwo+ICsJCWlmIChJU19FUlIodGhlcm1hbC0+cGluY3RybCkp
-IHsKPiArCQkJZGV2X2VycigmcGRldi0+ZGV2LCAiZmFpbGVkIHRvIGZpbmQgdGhlcm1hbCBwaW5j
-dHJsXG4iKTsKPiArCQkJcmV0dXJuIFBUUl9FUlIodGhlcm1hbC0+cGluY3RybCk7Cj4gKwkJfQo+
-ICsKPiArCQl0aGVybWFsLT5ncGlvX3N0YXRlID0gcGluY3RybF9sb29rdXBfc3RhdGUodGhlcm1h
-bC0+cGluY3RybCwKPiArCQkJCQkJCSAgICJncGlvIik7Cj4gKwkJaWYgKElTX0VSUl9PUl9OVUxM
-KHRoZXJtYWwtPmdwaW9fc3RhdGUpKSB7Cj4gKwkJCWRldl9lcnIoJnBkZXYtPmRldiwgImZhaWxl
-ZCB0byBmaW5kIHRoZXJtYWwgZ3BpbyBzdGF0ZVxuIik7Cj4gKwkJCXJldHVybiAtRUlOVkFMOwo+
-ICsJCX0KPiArCj4gKwkJdGhlcm1hbC0+b3RwX3N0YXRlID0gcGluY3RybF9sb29rdXBfc3RhdGUo
-dGhlcm1hbC0+cGluY3RybCwKPiArCQkJCQkJCSAgIm90cG91dCIpOwo+ICsJCWlmIChJU19FUlJf
-T1JfTlVMTCh0aGVybWFsLT5vdHBfc3RhdGUpKSB7Cj4gKwkJCWRldl9lcnIoJnBkZXYtPmRldiwg
-ImZhaWxlZCB0byBmaW5kIHRoZXJtYWwgb3Rwb3V0IHN0YXRlXG4iKTsKPiArCQkJcmV0dXJuIC1F
-SU5WQUw7Cj4gKwkJfQo+ICsKPiArCQlwaW5jdHJsX3NlbGVjdF9zdGF0ZSh0aGVybWFsLT5waW5j
-dHJsLCB0aGVybWFsLT5vdHBfc3RhdGUpOwo+ICsJfQo+ICsKPiAgCWZvciAoaSA9IDA7IGkgPCB0
-aGVybWFsLT5jaGlwLT5jaG5fbnVtOyBpKyspIHsKPiAgCQllcnJvciA9IHJvY2tjaGlwX3RoZXJt
-YWxfcmVnaXN0ZXJfc2Vuc29yKHBkZXYsIHRoZXJtYWwsCj4gIAkJCQkJCSZ0aGVybWFsLT5zZW5z
-b3JzW2ldLAo+IEBAIC0xMzM3LDggKzEzNjYsOCBAQCBzdGF0aWMgaW50IF9fbWF5YmVfdW51c2Vk
-IHJvY2tjaGlwX3RoZXJtYWxfc3VzcGVuZChzdHJ1Y3QgZGV2aWNlICpkZXYpCj4gIAo+ICAJY2xr
-X2Rpc2FibGUodGhlcm1hbC0+cGNsayk7Cj4gIAljbGtfZGlzYWJsZSh0aGVybWFsLT5jbGspOwo+
-IC0KPiAtCXBpbmN0cmxfcG1fc2VsZWN0X3NsZWVwX3N0YXRlKGRldik7Cj4gKwlpZiAodGhlcm1h
-bC0+dHNodXRfbW9kZSA9PSBUU0hVVF9NT0RFX0dQSU8pCj4gKwkJcGluY3RybF9zZWxlY3Rfc3Rh
-dGUodGhlcm1hbC0+cGluY3RybCwgdGhlcm1hbC0+Z3Bpb19zdGF0ZSk7Cj4gIAo+ICAJcmV0dXJu
-IDA7Cj4gIH0KPiBAQCAtMTM4Myw3ICsxNDEyLDggQEAgc3RhdGljIGludCBfX21heWJlX3VudXNl
-ZCByb2NrY2hpcF90aGVybWFsX3Jlc3VtZShzdHJ1Y3QgZGV2aWNlICpkZXYpCj4gIAlmb3IgKGkg
-PSAwOyBpIDwgdGhlcm1hbC0+Y2hpcC0+Y2huX251bTsgaSsrKQo+ICAJCXJvY2tjaGlwX3RoZXJt
-YWxfdG9nZ2xlX3NlbnNvcigmdGhlcm1hbC0+c2Vuc29yc1tpXSwgdHJ1ZSk7Cj4gIAo+IC0JcGlu
-Y3RybF9wbV9zZWxlY3RfZGVmYXVsdF9zdGF0ZShkZXYpOwo+ICsJaWYgKHRoZXJtYWwtPnRzaHV0
-X21vZGUgPT0gVFNIVVRfTU9ERV9HUElPKQo+ICsJCXBpbmN0cmxfc2VsZWN0X3N0YXRlKHRoZXJt
-YWwtPnBpbmN0cmwsIHRoZXJtYWwtPm90cF9zdGF0ZSk7Cj4gIAo+ICAJcmV0dXJuIDA7Cj4gIH0K
-PiAKCgotLSAKIDxodHRwOi8vd3d3LmxpbmFyby5vcmcvPiBMaW5hcm8ub3JnIOKUgiBPcGVuIHNv
-dXJjZSBzb2Z0d2FyZSBmb3IgQVJNIFNvQ3MKCkZvbGxvdyBMaW5hcm86ICA8aHR0cDovL3d3dy5m
-YWNlYm9vay5jb20vcGFnZXMvTGluYXJvPiBGYWNlYm9vayB8CjxodHRwOi8vdHdpdHRlci5jb20v
-IyEvbGluYXJvb3JnPiBUd2l0dGVyIHwKPGh0dHA6Ly93d3cubGluYXJvLm9yZy9saW5hcm8tYmxv
-Zy8+IEJsb2cKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-XwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LXJvY2tjaGlwCg==
+On 30/04/2019 01:29, Tom Murphy wrote:
+> Handle devices which defer their attach to the iommu in the dma-iommu api
+
+I've just spent a while trying to understand what this is about...
+
+AFAICS it's a kdump thing where the regular default domain attachment 
+may lead to ongoing DMA traffic from the crashed kernel raising a fault 
+storm, so we put off the "real" attach of a given device until we know 
+it's been reset and brought into a sane state, but the only way to 
+reliably detect that is to wait until the kdump kernel driver starts 
+making new DMA mappings. Is that about right?
+
+(I note that for SMMUv3 we now handle that situation with the slightly 
+more heavy-handed approach of just turning off reporting and letting the 
+'rogue' devices fault silently, but I appreciate that not all IOMMUs may 
+have that option)
+
+> Signed-off-by: Tom Murphy <tmurphy@arista.com>
+> ---
+>   drivers/iommu/dma-iommu.c | 30 ++++++++++++++++++++++++++++++
+>   1 file changed, 30 insertions(+)
+> 
+> diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
+> index 7a96c2c8f56b..c18f74ad1e8b 100644
+> --- a/drivers/iommu/dma-iommu.c
+> +++ b/drivers/iommu/dma-iommu.c
+> @@ -322,6 +322,17 @@ static int iommu_dma_init_domain(struct iommu_domain *domain, dma_addr_t base,
+>   	return iova_reserve_iommu_regions(dev, domain);
+>   }
+>   
+> +static int handle_deferred_device(struct device *dev)
+> +{
+> +	struct iommu_domain *domain = iommu_get_domain_for_dev(dev);
+
+We don't want iommu_get_domain_for_dev() in fast-paths, as the 
+contention on the group refcount has proven to have a surprisingly high 
+overhead on some large systems. That's what iommu_get_dma_domain() 
+solves, but ideally, can this be wrapped in is_kdump_kernel() such as to 
+have no impact at all on the general case?
+
+> +	const struct iommu_ops *ops = domain->ops;
+> +
+> +	if (ops->is_attach_deferred && ops->is_attach_deferred(domain, dev))
+> +		return iommu_attach_device(domain, dev);
+> +
+> +	return 0;
+> +}
+> +
+>   /**
+>    * dma_info_to_prot - Translate DMA API directions and attributes to IOMMU API
+>    *                    page flags.
+> @@ -835,6 +846,8 @@ static dma_addr_t iommu_dma_map_page(struct device *dev, struct page *page,
+>   	bool coherent = dev_is_dma_coherent(dev);
+>   	dma_addr_t dma_handle;
+>   
+> +	handle_deferred_device(dev);
+> +
+>   	dma_handle =__iommu_dma_map(dev, phys, size,
+>   			dma_info_to_prot(dir, coherent, attrs),
+>   			iommu_get_dma_domain(dev));
+> @@ -849,6 +862,8 @@ static void iommu_dma_unmap_page(struct device *dev, dma_addr_t dma_handle,
+>   {
+>   	struct iommu_domain *domain = iommu_get_dma_domain(dev);
+>   
+> +	handle_deferred_device(dev);
+
+You don't need this - it's completely bogus to make an unmap call 
+without having already called the corresponding map function, so we can 
+assume it's already been dealt with.
+
+> +
+>   	if (!dev_is_dma_coherent(dev) && !(attrs & DMA_ATTR_SKIP_CPU_SYNC)) {
+>   		phys_addr_t phys = iommu_iova_to_phys(domain, dma_handle);
+>   
+> @@ -873,6 +888,8 @@ static int __finalise_sg(struct device *dev, struct scatterlist *sg, int nents,
+>   	unsigned int cur_len = 0, max_len = dma_get_max_seg_size(dev);
+>   	int i, count = 0;
+>   
+> +	handle_deferred_device(dev);
+
+Hmm, this should be in iommu_dma_map_sg() - that's the guy that needs a 
+valid domain, and it's impossible to get to __finalise_sg() without 
+having been through there anyway.
+
+> +
+>   	for_each_sg(sg, s, nents, i) {
+>   		/* Restore this segment's original unaligned fields first */
+>   		unsigned int s_iova_off = sg_dma_address(s);
+> @@ -1022,6 +1039,8 @@ static void iommu_dma_unmap_sg(struct device *dev, struct scatterlist *sg,
+>   	struct scatterlist *tmp;
+>   	int i;
+>   
+> +	handle_deferred_device(dev);
+
+Again, not necessary.
+
+> +
+>   	if (!(attrs & DMA_ATTR_SKIP_CPU_SYNC) == 0)
+>   		iommu_dma_sync_sg_for_cpu(dev, sg, nents, dir);
+>   
+> @@ -1042,6 +1061,8 @@ static void iommu_dma_unmap_sg(struct device *dev, struct scatterlist *sg,
+>   static dma_addr_t iommu_dma_map_resource(struct device *dev, phys_addr_t phys,
+>   		size_t size, enum dma_data_direction dir, unsigned long attrs)
+>   {
+> +	handle_deferred_device(dev);
+
+Ditto.
+
+> +
+>   	return __iommu_dma_map(dev, phys, size,
+>   			dma_info_to_prot(dir, false, attrs) | IOMMU_MMIO,
+>   			iommu_get_dma_domain(dev));
+> @@ -1050,12 +1071,15 @@ static dma_addr_t iommu_dma_map_resource(struct device *dev, phys_addr_t phys,
+>   static void iommu_dma_unmap_resource(struct device *dev, dma_addr_t handle,
+>   		size_t size, enum dma_data_direction dir, unsigned long attrs)
+>   {
+> +	handle_deferred_device(dev);
+
+Ditto.
+
+> +
+>   	__iommu_dma_unmap(iommu_get_dma_domain(dev), handle, size);
+>   }
+>   
+>   static void *iommu_dma_alloc(struct device *dev, size_t size,
+>   		dma_addr_t *dma_handle, gfp_t gfp, unsigned long attrs)
+>   {
+> +	handle_deferred_device(dev);
+>   	gfp |= __GFP_ZERO;
+>   
+>   #ifdef CONFIG_DMA_DIRECT_REMAP
+> @@ -1076,6 +1100,8 @@ static void iommu_dma_free(struct device *dev, size_t size, void *cpu_addr,
+>   {
+>   	struct page *page;
+>   
+> +	handle_deferred_device(dev);
+
+Similarly, you can't free anything that hasn't already come from a 
+successful call to iommu_dma_alloc()...
+
+> +
+>   	/*
+>   	 * cpu_addr can be one of 4 things depending on how it was allocated:
+>   	 *
+> @@ -1115,6 +1141,8 @@ static int iommu_dma_mmap(struct device *dev, struct vm_area_struct *vma,
+>   	unsigned long pfn;
+>   	int ret;
+>   
+> +	handle_deferred_device(dev);
+
+...nor can you mmap() it...
+
+> +
+>   	vma->vm_page_prot = arch_dma_mmap_pgprot(dev, vma->vm_page_prot, attrs);
+>   
+>   	if (dma_mmap_from_dev_coherent(dev, vma, cpu_addr, size, &ret))
+> @@ -1143,6 +1171,8 @@ static int iommu_dma_get_sgtable(struct device *dev, struct sg_table *sgt,
+>   	struct page *page;
+>   	int ret;
+>   
+> +	handle_deferred_device(dev);
+
+...nor attempt to export it.
+
+Robin.
+
+> +
+>   #ifdef CONFIG_DMA_DIRECT_REMAP
+>   	if (is_vmalloc_addr(cpu_addr)) {
+>   		if (!(attrs & DMA_ATTR_FORCE_CONTIGUOUS))
+> 
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
