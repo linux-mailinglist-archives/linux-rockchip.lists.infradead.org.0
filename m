@@ -2,58 +2,93 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1253F809
-	for <lists+linux-rockchip@lfdr.de>; Tue, 30 Apr 2019 14:05:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE7A9FA9D
+	for <lists+linux-rockchip@lfdr.de>; Tue, 30 Apr 2019 15:39:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YhybvHY4bwnLtrv92yMlpez3jGvG2S/JqCCJSGXoeiM=; b=rBIMcK5vGkcH90j6zRgCp6Epi
-	VLL43vCMg39oVs9lKre4Vs1Vu7qDSJaFtqrcMzGloS5vaQ+RO3JSFtdezyAyIWBNQIqT0LZB25lnD
-	KaEzBJVcpRvwP2s2MkNjNTA9IYLACRWkKc9xvpHfUvFBihRKVfDNsC332pCzukZxO0CEmGItirBCz
-	KSmMzmx9WL3+uCdjiRUWqW9rSuXQH9q804Ta2tgpnfOiptrbxb2aVY1Uuoe4/f95eJHwNPXfNr4d1
-	4m9PuJXZHKX0TWSWJWKCNQEVwDyUe1yiiwriJGObzPWVc5EC7JP22+4VHNjDLbuyTDoFOk3M/FeGi
-	17puyVPqg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=I7MDvbi1gjB9nwtDfaLmCTf2Ucg7nwIhiGtfPbBVYE8=; b=swlcm51+npw3aW
+	9SdpF5Mm2xATUYItIxxUYq2ah87BfNkqI49Sv9iYzXyZJjumEfJ4abzrVN1IoLhz7dF+fDYA6E3Kp
+	akEd5tCcjCeHICAoiCWDkIiEVfUTBYd9LJHvt19AQfVjtCNN1yHwXMdwAplYyCuW+rz5YqASuOIZ3
+	xX3EpCZHgPUULsgtxTyJlA6fyAwKjZiSrRp8f1BjjxL6CubQjpMSQKRiyot1bGnUTs6DTFany1g1T
+	IqH7i5EYfinkVHbQNzDceVTQiVe4WD/hp4qRMTZMUx1x+tdD6dSNU4ZEOW/7eH90MW/TmddeGPhuL
+	9o+2lwJhCNEsRydIM1OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLRVc-0004kr-6M; Tue, 30 Apr 2019 12:05:16 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLRVP-0003Io-4W; Tue, 30 Apr 2019 12:05:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 82D9680D;
- Tue, 30 Apr 2019 05:05:00 -0700 (PDT)
-Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CB4A83F5C1;
- Tue, 30 Apr 2019 05:04:56 -0700 (PDT)
-Subject: Re: [PATCH v2 3/4] iommu/dma-iommu: Use the dev->coherent_dma_mask
-To: Christoph Hellwig <hch@infradead.org>
-References: <20190430002952.18909-1-tmurphy@arista.com>
- <20190430002952.18909-4-tmurphy@arista.com>
- <20190430111222.GA3191@infradead.org>
- <da835ce2-f73e-3035-e1d7-d3028cc1a838@arm.com>
- <20190430113253.GA23210@infradead.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <96ebb6fc-a889-fa94-09ba-65d505b85724@arm.com>
-Date: Tue, 30 Apr 2019 13:04:55 +0100
+	id 1hLSyK-0003DH-Dx; Tue, 30 Apr 2019 13:39:00 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLSyG-0003CO-OE
+ for linux-rockchip@lists.infradead.org; Tue, 30 Apr 2019 13:38:58 +0000
+Received: by mail-wr1-x442.google.com with SMTP id s15so21031309wra.12
+ for <linux-rockchip@lists.infradead.org>; Tue, 30 Apr 2019 06:38:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=itopA/ItRE7ZMWfQuGvoXaTCudQHZDXEixDU5B3vzos=;
+ b=hxATa+VEqQe59yueuVRTCPUR5y+WfuYh2iPbJElIGltimA4qVtAgZ6VonBKccZRolN
+ b8x6WnqvTL10fcbLkvyFf33CSGh5Y/iGV/ifZQbpxOIXUq/PUc0A5f9uNJ/zW/nA1pL9
+ Mf5mwGvlRaexP67OjHDNIAhFlsW0MQbxA5Z4OSZOjF4DAkoxN2/6w3S5Sqc2DNQI/jI0
+ Y43MU6UBI7wg+m8590tAZbZdiMNM176Fe/nu4sW8fc5J9AA+nbyBYYHFSRXKvS/8JjK+
+ DNYpv0ZPQRXVT2xT/9Uj27WwTqaIJd4Cv1hobBFYxf5dos6S3RgKrE+nztobtmwKG8mX
+ Gewg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=itopA/ItRE7ZMWfQuGvoXaTCudQHZDXEixDU5B3vzos=;
+ b=nzIQGL+xUYdEgqkk3LbamQ5YnmsZwJtwJkDRzcZ93F823CgG3Bj6drwY6zIw8Py2cb
+ Zv1mThBZtS1+BojYVA3/+otoDUisFzG9oK9DizsahfyyRyVNY6FRiSsRZun6xgiCjJYh
+ sDpzMwci8iIRkgI5c8MCB1BmzypJPUdEiiKgCTdrKE/PoA60syFE3wA8gJdYUToyD0pF
+ P1kp/HLRHvNWHsJVGYMnWhP7qw3meZd4PreZeDZ5R6KX/ng4wtga3owi31ECuxd/cwMw
+ uLk1CG8OPI15hVmeN4DfeJN3vklv3OhwdCtF/rnw7G2nTmDFVM/RV2RMNw4d8xRUI73R
+ Bo1A==
+X-Gm-Message-State: APjAAAVGG305NDRuvcy/zyWee2/uYSa82nnupZ3IgCKyQx579LElMNQn
+ 8Q/sL6Fqv4RWN1L5U4rGbyccUA==
+X-Google-Smtp-Source: APXvYqxJo6YyqwjGZPozpgX+q3kMxOob3HtcBfq/38IG6fntTQ3NVABFe5nH5Cv3beZjeSSkT9EwJQ==
+X-Received: by 2002:a5d:5447:: with SMTP id w7mr1041635wrv.325.1556631533884; 
+ Tue, 30 Apr 2019 06:38:53 -0700 (PDT)
+Received: from [192.168.0.41] (sju31-1-78-210-255-2.fbx.proxad.net.
+ [78.210.255.2])
+ by smtp.googlemail.com with ESMTPSA id o16sm25803167wro.63.2019.04.30.06.38.52
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 30 Apr 2019 06:38:53 -0700 (PDT)
+Subject: Re: [PATCH v3 1/3] thermal: rockchip: fix up the tsadc pinctrl
+ setting error
+To: Elaine Zhang <zhangqing@rock-chips.com>, heiko@sntech.de
+References: <1556618986-18923-1-git-send-email-zhangqing@rock-chips.com>
+ <1556618986-18923-2-git-send-email-zhangqing@rock-chips.com>
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+Message-ID: <785392a0-282a-1e51-a4d6-a6d5ca478949@linaro.org>
+Date: Tue, 30 Apr 2019 15:38:51 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190430113253.GA23210@infradead.org>
-Content-Language: en-GB
+In-Reply-To: <1556618986-18923-2-git-send-email-zhangqing@rock-chips.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_050503_232052_2224E8F6 
-X-CRM114-Status: GOOD (  20.60  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190430_063856_804757_05884394 
+X-CRM114-Status: GOOD (  22.51  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -66,50 +101,85 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, Will Deacon <will.deacon@arm.com>,
- David Brown <david.brown@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>, linux-s390@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, linux-rockchip@lists.infradead.org,
- Kukjin Kim <kgene@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- Andy Gross <andy.gross@linaro.org>, linux-arm-msm@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Tom Murphy <tmurphy@arista.com>,
- linux-kernel@vger.kernel.org, murphyt7@tcd.ie,
- iommu@lists.linux-foundation.org, David Woodhouse <dwmw2@infradead.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, huangtao@rock-chips.com,
+ linux-pm@vger.kernel.org, xxx@rock-chips.com, xf@rock-chips.com,
+ linux-kernel@vger.kernel.org, edubezval@gmail.com,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, rui.zhang@intel.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 30/04/2019 12:32, Christoph Hellwig wrote:
-> On Tue, Apr 30, 2019 at 12:27:02PM +0100, Robin Murphy wrote:
->>> Hmm, I don't think we need the DMA mask for the MSI mapping, this
->>> should probably always use a 64-bit mask.
->>
->> If that were true then we wouldn't need DMA masks for regular mappings
->> either. If we have to map the MSI doorbell at all, then we certainly have to
->> place it at an IOVA that the relevant device is actually capable of
->> addressing.
-> 
-> Well, as shown by the patch below we don't even look at the DMA mask
-> for the MSI page - we just allocate from bottom to top.
-
-In the trivial cookie for unmanaged domains, yes, but in that case the 
-responsibility is on VFIO to provide a suitable (i.e. sub-32-bit) 
-address range for that cookie in the first place. In the managed case, 
-allocation uses the streaming mask via iommu_dma_get_msi_page() calling 
-__iommu_dma_map(). Admittedly the mask can then get overlooked when 
-reusing an existing mapping, which strictly could pose a problem if you 
-have multiple devices with incompatible masks in the same group (and 
-such that the PCI stuff doesn't already mitigate it), but that's such an 
-obscure corner case that I'm reticent to introduce the complication to 
-handle it until it's actually proven necessary.
-
-Robin.
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gMzAvMDQvMjAxOSAxMjowOSwgRWxhaW5lIFpoYW5nIHdyb3RlOgo+IEV4cGxpY2l0bHkgdXNl
+IHRoZSBwaW5jdHJsIHRvIHNldC91bnNldCB0aGUgcmlnaHQgbW9kZQo+IGluc3RlYWQgb2YgcmVs
+eWluZyBvbiB0aGUgcGluY3RybCBpbml0IG1vZGUuCj4gQW5kIGl0IHJlcXVpcmVzIHNldHRpbmcg
+dGhlIHRzaHV0IHBvbGFyaXR5IGJlZm9yZSBzZWxlY3QgcGluY3RybC4KPiAKPiBXaGVuIHRoZSB0
+ZW1wZXJhdHVyZSBzZW5zb3IgbW9kZSBpcyBzZXQgdG8gMCwgaXQgd2lsbCBhdXRvbWF0aWNhbGx5
+Cj4gcmVzZXQgdGhlIGJvYXJkIHZpYSB0aGUgQ2xvY2stUmVzZXQtVW5pdCAoQ1JVKSBpZiB0aGUg
+b3ZlciB0ZW1wZXJhdHVyZQo+IHRocmVzaG9sZCBpcyByZWFjaGVkLiBIb3dldmVyLCB3aGVuIHRo
+ZSBwaW5jdHJsIGluaXRpYWxpemVzLCBpdCBkb2VzIGEKPiB0cmFuc2l0aW9uIHRvICJvdHBfb3V0
+IiB3aGljaCBtYXkgbGVhZCB0aGUgU29DIHJlc3RhcnQgYWxsIHRoZSB0aW1lLgo+IAo+ICJvdHBf
+b3V0IiBJTyBtYXkgYmUgY29ubmVjdGVkIHRvIHRoZSBSRVNFVCBjaXJjdWl0IG9uIHRoZSBoYXJk
+d2FyZS4KPiBJZiB0aGUgSU8gaXMgaW4gdGhlIHdyb25nIHN0YXRlLCBpdCB3aWxsIHRyaWdnZXIg
+UkVTRVQuCj4gKHNpbWlsYXIgdG8gdGhlIGVmZmVjdCBvZiBwcmVzc2luZyB0aGUgUkVTRVQgYnV0
+dG9uKQo+IHdoaWNoIHdpbGwgY2F1c2UgdGhlIHNvYyB0byByZXN0YXJ0IGFsbCB0aGUgdGltZS4K
+PiAKPiBTaWduZWQtb2ZmLWJ5OiBFbGFpbmUgWmhhbmcgPHpoYW5ncWluZ0Byb2NrLWNoaXBzLmNv
+bT4KClJldmlld2VkLWJ5OiBEYW5pZWwgTGV6Y2FubyA8ZGFuaWVsLmxlemNhbm9AbGluYXJvLm9y
+Zz4KCgoKPiAtLS0KPiAgZHJpdmVycy90aGVybWFsL3JvY2tjaGlwX3RoZXJtYWwuYyB8IDM2ICsr
+KysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKy0tLQo+ICAxIGZpbGUgY2hhbmdlZCwgMzMg
+aW5zZXJ0aW9ucygrKSwgMyBkZWxldGlvbnMoLSkKPiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy90
+aGVybWFsL3JvY2tjaGlwX3RoZXJtYWwuYyBiL2RyaXZlcnMvdGhlcm1hbC9yb2NrY2hpcF90aGVy
+bWFsLmMKPiBpbmRleCA5Yzc2NDNkNjJlZDcuLjZkYzdmYzUxNmFiZiAxMDA2NDQKPiAtLS0gYS9k
+cml2ZXJzL3RoZXJtYWwvcm9ja2NoaXBfdGhlcm1hbC5jCj4gKysrIGIvZHJpdmVycy90aGVybWFs
+L3JvY2tjaGlwX3RoZXJtYWwuYwo+IEBAIC0xNzIsNiArMTcyLDkgQEAgc3RydWN0IHJvY2tjaGlw
+X3RoZXJtYWxfZGF0YSB7Cj4gIAlpbnQgdHNodXRfdGVtcDsKPiAgCWVudW0gdHNodXRfbW9kZSB0
+c2h1dF9tb2RlOwo+ICAJZW51bSB0c2h1dF9wb2xhcml0eSB0c2h1dF9wb2xhcml0eTsKPiArCXN0
+cnVjdCBwaW5jdHJsICpwaW5jdHJsOwo+ICsJc3RydWN0IHBpbmN0cmxfc3RhdGUgKmdwaW9fc3Rh
+dGU7Cj4gKwlzdHJ1Y3QgcGluY3RybF9zdGF0ZSAqb3RwX3N0YXRlOwo+ICB9Owo+ICAKPiAgLyoq
+Cj4gQEAgLTEyNDIsNiArMTI0NSw4IEBAIHN0YXRpYyBpbnQgcm9ja2NoaXBfdGhlcm1hbF9wcm9i
+ZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICAJCXJldHVybiBlcnJvcjsKPiAgCX0K
+PiAgCj4gKwl0aGVybWFsLT5jaGlwLT5jb250cm9sKHRoZXJtYWwtPnJlZ3MsIGZhbHNlKTsKPiAr
+Cj4gIAllcnJvciA9IGNsa19wcmVwYXJlX2VuYWJsZSh0aGVybWFsLT5jbGspOwo+ICAJaWYgKGVy
+cm9yKSB7Cj4gIAkJZGV2X2VycigmcGRldi0+ZGV2LCAiZmFpbGVkIHRvIGVuYWJsZSBjb252ZXJ0
+ZXIgY2xvY2s6ICVkXG4iLAo+IEBAIC0xMjY3LDYgKzEyNzIsMzAgQEAgc3RhdGljIGludCByb2Nr
+Y2hpcF90aGVybWFsX3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAl0aGVy
+bWFsLT5jaGlwLT5pbml0aWFsaXplKHRoZXJtYWwtPmdyZiwgdGhlcm1hbC0+cmVncywKPiAgCQkJ
+CSAgdGhlcm1hbC0+dHNodXRfcG9sYXJpdHkpOwo+ICAKPiArCWlmICh0aGVybWFsLT50c2h1dF9t
+b2RlID09IFRTSFVUX01PREVfR1BJTykgewo+ICsJCXRoZXJtYWwtPnBpbmN0cmwgPSBkZXZtX3Bp
+bmN0cmxfZ2V0KCZwZGV2LT5kZXYpOwo+ICsJCWlmIChJU19FUlIodGhlcm1hbC0+cGluY3RybCkp
+IHsKPiArCQkJZGV2X2VycigmcGRldi0+ZGV2LCAiZmFpbGVkIHRvIGZpbmQgdGhlcm1hbCBwaW5j
+dHJsXG4iKTsKPiArCQkJcmV0dXJuIFBUUl9FUlIodGhlcm1hbC0+cGluY3RybCk7Cj4gKwkJfQo+
+ICsKPiArCQl0aGVybWFsLT5ncGlvX3N0YXRlID0gcGluY3RybF9sb29rdXBfc3RhdGUodGhlcm1h
+bC0+cGluY3RybCwKPiArCQkJCQkJCSAgICJncGlvIik7Cj4gKwkJaWYgKElTX0VSUl9PUl9OVUxM
+KHRoZXJtYWwtPmdwaW9fc3RhdGUpKSB7Cj4gKwkJCWRldl9lcnIoJnBkZXYtPmRldiwgImZhaWxl
+ZCB0byBmaW5kIHRoZXJtYWwgZ3BpbyBzdGF0ZVxuIik7Cj4gKwkJCXJldHVybiAtRUlOVkFMOwo+
+ICsJCX0KPiArCj4gKwkJdGhlcm1hbC0+b3RwX3N0YXRlID0gcGluY3RybF9sb29rdXBfc3RhdGUo
+dGhlcm1hbC0+cGluY3RybCwKPiArCQkJCQkJCSAgIm90cG91dCIpOwo+ICsJCWlmIChJU19FUlJf
+T1JfTlVMTCh0aGVybWFsLT5vdHBfc3RhdGUpKSB7Cj4gKwkJCWRldl9lcnIoJnBkZXYtPmRldiwg
+ImZhaWxlZCB0byBmaW5kIHRoZXJtYWwgb3Rwb3V0IHN0YXRlXG4iKTsKPiArCQkJcmV0dXJuIC1F
+SU5WQUw7Cj4gKwkJfQo+ICsKPiArCQlwaW5jdHJsX3NlbGVjdF9zdGF0ZSh0aGVybWFsLT5waW5j
+dHJsLCB0aGVybWFsLT5vdHBfc3RhdGUpOwo+ICsJfQo+ICsKPiAgCWZvciAoaSA9IDA7IGkgPCB0
+aGVybWFsLT5jaGlwLT5jaG5fbnVtOyBpKyspIHsKPiAgCQllcnJvciA9IHJvY2tjaGlwX3RoZXJt
+YWxfcmVnaXN0ZXJfc2Vuc29yKHBkZXYsIHRoZXJtYWwsCj4gIAkJCQkJCSZ0aGVybWFsLT5zZW5z
+b3JzW2ldLAo+IEBAIC0xMzM3LDggKzEzNjYsOCBAQCBzdGF0aWMgaW50IF9fbWF5YmVfdW51c2Vk
+IHJvY2tjaGlwX3RoZXJtYWxfc3VzcGVuZChzdHJ1Y3QgZGV2aWNlICpkZXYpCj4gIAo+ICAJY2xr
+X2Rpc2FibGUodGhlcm1hbC0+cGNsayk7Cj4gIAljbGtfZGlzYWJsZSh0aGVybWFsLT5jbGspOwo+
+IC0KPiAtCXBpbmN0cmxfcG1fc2VsZWN0X3NsZWVwX3N0YXRlKGRldik7Cj4gKwlpZiAodGhlcm1h
+bC0+dHNodXRfbW9kZSA9PSBUU0hVVF9NT0RFX0dQSU8pCj4gKwkJcGluY3RybF9zZWxlY3Rfc3Rh
+dGUodGhlcm1hbC0+cGluY3RybCwgdGhlcm1hbC0+Z3Bpb19zdGF0ZSk7Cj4gIAo+ICAJcmV0dXJu
+IDA7Cj4gIH0KPiBAQCAtMTM4Myw3ICsxNDEyLDggQEAgc3RhdGljIGludCBfX21heWJlX3VudXNl
+ZCByb2NrY2hpcF90aGVybWFsX3Jlc3VtZShzdHJ1Y3QgZGV2aWNlICpkZXYpCj4gIAlmb3IgKGkg
+PSAwOyBpIDwgdGhlcm1hbC0+Y2hpcC0+Y2huX251bTsgaSsrKQo+ICAJCXJvY2tjaGlwX3RoZXJt
+YWxfdG9nZ2xlX3NlbnNvcigmdGhlcm1hbC0+c2Vuc29yc1tpXSwgdHJ1ZSk7Cj4gIAo+IC0JcGlu
+Y3RybF9wbV9zZWxlY3RfZGVmYXVsdF9zdGF0ZShkZXYpOwo+ICsJaWYgKHRoZXJtYWwtPnRzaHV0
+X21vZGUgPT0gVFNIVVRfTU9ERV9HUElPKQo+ICsJCXBpbmN0cmxfc2VsZWN0X3N0YXRlKHRoZXJt
+YWwtPnBpbmN0cmwsIHRoZXJtYWwtPm90cF9zdGF0ZSk7Cj4gIAo+ICAJcmV0dXJuIDA7Cj4gIH0K
+PiAKCgotLSAKIDxodHRwOi8vd3d3LmxpbmFyby5vcmcvPiBMaW5hcm8ub3JnIOKUgiBPcGVuIHNv
+dXJjZSBzb2Z0d2FyZSBmb3IgQVJNIFNvQ3MKCkZvbGxvdyBMaW5hcm86ICA8aHR0cDovL3d3dy5m
+YWNlYm9vay5jb20vcGFnZXMvTGluYXJvPiBGYWNlYm9vayB8CjxodHRwOi8vdHdpdHRlci5jb20v
+IyEvbGluYXJvb3JnPiBUd2l0dGVyIHwKPGh0dHA6Ly93d3cubGluYXJvLm9yZy9saW5hcm8tYmxv
+Zy8+IEJsb2cKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LXJvY2tjaGlwCg==
