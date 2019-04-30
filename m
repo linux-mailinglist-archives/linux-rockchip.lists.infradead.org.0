@@ -2,67 +2,95 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12081F2CB
-	for <lists+linux-rockchip@lfdr.de>; Tue, 30 Apr 2019 11:28:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 392C5F33F
+	for <lists+linux-rockchip@lfdr.de>; Tue, 30 Apr 2019 11:45:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qVYjEg2v/T+eFsPTua/jd5z8LiyvHjD1LWHErvKne1w=; b=QEY0RUhqTuwPIp
-	RtyFfWvq9pABe3tmRNO1f8QDa18XU0gBqLSIhYTlsZfAP5wOuVaj9CL4idvrBnUB8JrQltxmZZDYN
-	Kuq4x2Vp4wte3PaNJD7vPJLiGnYW13DZTUjivNRoxYzLZnxEFlOHn81TB7Z0ohXoSZoWI/CWj1VyH
-	VfXGDZOGBK7ysq++SG7m3HmZeve/ncG1+Nfz9yHufMjT85EtEkhdpdHc6r0oxsVdIPyVvCkjPPP1O
-	7IEKz6doHjMrzrkRN0HPvgnKqsCGXrE958Fuq2wcEA0kZq2RCUI4Cms+SdX+EfDXSQoTxrc/RrolA
-	i3mwKoRaLdgsw4ioNBuA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YlgEWhDb7zfCGQDAfBff8FzXRitmYahM1qzm2sAztIA=; b=WOZcnXIkUodyfB
+	OCXIBv9tWPSR7PzqR/AIJTjHT7Y0fZe4JnlIVtuSvY0kekb/euSbY9LCvvD4XOyleViNVyPw2wzWh
+	TfDbY/mOrhrc6R1fv3l40kpjP39UTUCxAjrDPOWsjYpUcDi/mJCpeXUb8M8ngzpIpK+OaI6acANxT
+	jVkMUzvf+pddkAiK2+haFmmKMVxJ4zFQG8et51oMmikSvJyiqIG1pL9BYP5URzB1D3uDuWoYLWFE9
+	I204l7rjbQQzXDpUy3TaYPQX9VDlSrWK4FVV7l0n3eu64E27Sget8/ddKvd3fIkzATfJRuxZFR1Bv
+	LhIWHMdono+O6Yfk/JHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLP3z-0006YW-KA; Tue, 30 Apr 2019 09:28:35 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hLPJx-0007BG-Fm; Tue, 30 Apr 2019 09:45:05 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLP3u-0006Wz-GY
- for linux-rockchip@lists.infradead.org; Tue, 30 Apr 2019 09:28:34 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1hLP3p-0001za-VT; Tue, 30 Apr 2019 11:28:25 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1hLP3o-0007S9-6p; Tue, 30 Apr 2019 11:28:24 +0200
-Date: Tue, 30 Apr 2019 11:28:24 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Doug Anderson <dianders@chromium.org>
-Subject: Re: [PATCH v2 1/3] pwm: rockchip: Don't update the state for the
- caller of pwm_apply_state()
-Message-ID: <20190430092824.ijtq3gfh6mqujvnk@pengutronix.de>
-References: <20190312214605.10223-1-u.kleine-koenig@pengutronix.de>
- <20190312214605.10223-2-u.kleine-koenig@pengutronix.de>
- <1707507.TOMHpQGrZ7@phil>
- <CAD=FV=WZHouhGcxOgNG3006XajJQaAp0uq9WjeKRikQx1ru4TA@mail.gmail.com>
- <20190408143914.uucb5dwafq3cnsmk@pengutronix.de>
- <CA+ASDXO=szekU97iTDK9vqWjT+JtAKeCNTyoY=8aSi5d+v4mkA@mail.gmail.com>
- <20190429065613.n52uwgys5eugmssd@pengutronix.de>
- <CAD=FV=U71u39ZHkBBfAXVAP=_hY-bAw3L7JdhC=36jkUVxPOmQ@mail.gmail.com>
+ id 1hLPJl-00073R-Qc
+ for linux-rockchip@lists.infradead.org; Tue, 30 Apr 2019 09:44:55 +0000
+Received: by mail-wm1-x344.google.com with SMTP id 26so3036234wmj.3
+ for <linux-rockchip@lists.infradead.org>; Tue, 30 Apr 2019 02:44:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=looTlcqCIB3TJbyTND6k3EZ0RBWBOUlYZpKYaCAdqKk=;
+ b=k1uR299Yxm7EYSAONf0f2K3YOAM0GjiFXsqYolyfZZLTPyI1gj/cbv4DyO9ZJMMo9V
+ zaplBDtNX/iDfN7xaX2w1QFDFgjXVj/d5jAZ+h88IUQDUubQWZtxaRXTMD6XOyVdGCcy
+ PA8KZrF+CCn51wYuRpN3z978NEy4BUA0y5XChjhrGM3V9n4QCoq3AYP2efD/U13xsVsX
+ apuLMtSTLVH5zqkNoSSStkleNMmWoRppX04Wm32W6zOAMsv9N+zXPGE3QQ2a+Xx+s5Ni
+ 0NwQhN2rC+YABt5EWFekssoF+dpWSarQBwAXZzOztlay5fsAmT8xixoblGjJWBWE8II9
+ 4pYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=looTlcqCIB3TJbyTND6k3EZ0RBWBOUlYZpKYaCAdqKk=;
+ b=Q+qq0uUYhLhgQPIAvrjEwPgLqdQgGrmlhLCpFKoPErjDEotUN6EcCP67hFm/QfbhTt
+ O87HsL3ZiigZfwFzS50tHxwPBRMcH0Bp2WNP6N2XibJVlQGyQQczUN0xGC2DePCZ0lwb
+ WG3rMn2OMEgQYmBntc3LmDeg5Uwu0/eW0eYxK2Auu9iwUsSKDK9Pawa0hLGFKH/2BFOG
+ 7eY1udR2m3nm+Zzx9iuKQjf0TChhurYiMs3Ps+Hjok+j4yETOhd7636miSU2Uupsh9rS
+ DKYoZhvsUIT8sK2cGg5zoSCmYQH41AStuMC+5A/KMQ1WFn/9ziHVqReHnbkQR2J9XDaT
+ C8MQ==
+X-Gm-Message-State: APjAAAUfEECquOWDgsTrG0Cyx0G7qNIvfgrb4Fbxe8YJgTSfBYu0wEyp
+ aa6pjOCjFeJpkIwwLHKrVTpTIA==
+X-Google-Smtp-Source: APXvYqxDIo8nKc9Sp0C52XkXJ0RFa5uPzJ7miTrrLAzJ8p8qvVwZQM2Aq2xKA/IZYjIkM1ZaW930hQ==
+X-Received: by 2002:a1c:4b03:: with SMTP id y3mr2522912wma.113.1556617491604; 
+ Tue, 30 Apr 2019 02:44:51 -0700 (PDT)
+Received: from [192.168.0.41] (sju31-1-78-210-255-2.fbx.proxad.net.
+ [78.210.255.2])
+ by smtp.googlemail.com with ESMTPSA id e10sm24031411wra.52.2019.04.30.02.44.50
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 30 Apr 2019 02:44:50 -0700 (PDT)
+Subject: Re: [PATCH v2 1/3] thermal: rockchip: fix up the tsadc pinctrl
+ setting error
+To: "elaine.zhang" <zhangqing@rock-chips.com>, heiko@sntech.de
+References: <1556187154-22632-1-git-send-email-zhangqing@rock-chips.com>
+ <1556187154-22632-2-git-send-email-zhangqing@rock-chips.com>
+ <be0170d7-64dc-896d-b847-5be192304791@linaro.org>
+ <8d41ea98-e0e8-60c8-3237-ade5d0d169bf@rock-chips.com>
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+Message-ID: <70cc3a91-8f5d-da48-a815-eaf2670f9a93@linaro.org>
+Date: Tue, 30 Apr 2019 11:44:49 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAD=FV=U71u39ZHkBBfAXVAP=_hY-bAw3L7JdhC=36jkUVxPOmQ@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-rockchip@lists.infradead.org
+In-Reply-To: <8d41ea98-e0e8-60c8-3237-ade5d0d169bf@rock-chips.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_022832_585475_98C371F4 
-X-CRM114-Status: GOOD (  36.02  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190430_024453_891024_B9BFEF24 
+X-CRM114-Status: GOOD (  12.27  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -75,167 +103,36 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm <linux-pwm@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Brian Norris <briannorris@chromium.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
- Sascha Hauer <kernel@pengutronix.de>,
- Boris Brezillon <boris.brezillon@collabora.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, huangtao@rock-chips.com,
+ linux-pm@vger.kernel.org, xxx@rock-chips.com, xf@rock-chips.com,
+ linux-kernel@vger.kernel.org, edubezval@gmail.com,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, rui.zhang@intel.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Apr 29, 2019 at 11:04:20AM -0700, Doug Anderson wrote:
-> Hi,
-> =
-
-> On Sun, Apr 28, 2019 at 11:56 PM Uwe Kleine-K=F6nig
-> <u.kleine-koenig@pengutronix.de> wrote:
-> >
-> > On Thu, Apr 18, 2019 at 05:27:05PM -0700, Brian Norris wrote:
-> > > Hi,
-> > >
-> > > I'm not sure if I'm misreading you, but I thought I'd add here before
-> > > this expires out of my inbox:
-> > >
-> > > On Mon, Apr 8, 2019 at 7:39 AM Uwe Kleine-K=F6nig
-> > > <u.kleine-koenig@pengutronix.de> wrote:
-> > > > My intention here is more to make all drivers behave the same way a=
-nd
-> > > > because only two drivers updated the pwm_state this was the variant=
- I
-> > > > removed.
-> > >
-> > > To be clear, this patch on its own is probably breaking things. Just
-> > > because the other drivers don't implement the documented behavior
-> > > doesn't mean you should break this driver. Maybe the others just
-> > > aren't used in precise enough scenarios where this matters.
-> > >
-> > > > When you say that the caller might actually care about the exact
-> > > > parameters I fully agree. In this case however the consumer should =
-be
-> > > > able to know the result before actually applying it. So if you do
-> > > >
-> > > >         pwm_apply_state(pwm, { .period =3D 17, .duty_cycle =3D 12, =
-...})
-> > > >
-> > > > and this results in .period =3D 100 and .duty_cycle =3D 0 then prob=
-ably the
-> > > > bad things you want to know about already happend. So my idea is a =
-new
-> > > > function pwm_round_state() that does the adaptions to pwm_state wit=
-hout
-> > > > applying it to the hardware. After that pwm_apply_state could do the
-> > > > following:
-> > > >
-> > > >         rstate =3D pwm_round_state(pwm, state)
-> > > >         pwm.apply(pwm, state)
-> > > >         gstate =3D pwm_get_state(pwm)
-> > > >
-> > > >         if rstate !=3D gstate:
-> > > >                 warn about problems
-> > >
-> > > For our case (we're using this with pwm-regulator), I don't recall [*]
-> > > we need to be 100% precise about the period, but we do need to be as
-> > > precise as possible with the duty:period ratio -- so once we get the
-> > > "feedback" from the underlying PWM driver what the real period will
-> > > be, we adjust the duty appropriately.
-> >
-> > I admit that I didn't understood the whole situation and (some) things
-> > are worse with my patches applied. I still think that changing the
-> > caller's state variable is bad design, but of course pwm_get_state
-> > should return the currently implemented configuration.
-> =
-
-> Regardless of the pros and cons of the current situation, hopefully
-> we're in agreement that we shouldn't break existing users?
-
-Sure. And I'm happy you found the issue in my patch before it was
-applied.
-
-> In general I'll probably stay out of the debate as long as we end
-> somewhere that pwm_regulator is able to somehow know the actual state
-> that it programmed into the hardware.
-> =
-
-> +Boris too in case he has any comments.
-> =
-
-> =
-
-> > > So I don't see that "warning" would really help for this particular c=
-ase.
-> > >
-> > > > But before doing that I think it would be sensible to also fix the =
-rules
-> > > > how the round_state callback is supposed to round.
-> > >
-> > > I'm not quite sure I grok exactly what you're planning, but I would
-> > > much appreciate if you didn't break things on the way toward fixing
-> > > them ;)
-> >
-> > There are currently no rules how the driver should behave for example if
-> > the consumer requests
-> >
-> >         .duty_cycle =3D 10, .period =3D 50
-> >
-> > and the hardware can only implement multiples of 3 for both values. The
-> > obvious candidates are:
-> >
-> >  - .duty_cycle =3D 9, .period =3D 51 (round nearest for both)
-> >  - .duty_cycle =3D 12, .period =3D 51 (round up)
-> >  - .duty_cycle =3D 9, .period =3D 48 (round down)
-> >  - .duty_cycle =3D 9, .period =3D 45 (round duty_cycle and keep proport=
-ion)
-> >  - return error (which code?)
-> >
-> > And there are some other variants (e.g. round duty_cycle to nearest and
-> > period in the same direction) that might be sensible.
-> =
-
-> I will note that I had to deal with some of this recently when I
-> wanted to try to replicate the exact voltage levels for "vdd_log" from
-> downstream in rk3288-veyron devices.  See commit 864c2fee4ee9 ("ARM:
-> dts: rockchip: Add vdd_logic to rk3288-veyron") in Heiko's tree (or
-> just look in linux-next)
-
-Actually I think that it would make sense to expand the "pwm-regulator
-with table" code to interpolate voltage levels between two table entries
-assuming linear behaviour on the interval. This way a continous
-regulator becomes just a special case with two entries. (Some care might
-have to be applied to prevent changes in behaviour for already existing
-machines.)
- =
-
-> > Also it should be possible to know the result before actually
-> > configuring the hardware. Otherwise things might already go wrong
-> > because the driver implements a setting that is too far from the
-> > requested configuration.
-> =
-
-> Later in this thread Thierry didn't like the "round rate" idea due to
-> races.  One way to solve that could be to indicate to the PWM
-> framework which direction you'd like it to error in: a higher duty
-> cycle or a lower one.
-
-I don't think this would result in settings as optimal as with my
-suggestion. If you don't agree and want to convince me: Show how your
-suggestion would work with a PWM that can implement only multiples of 3
-for duty_cycle and period and you want 20% duty cycle with period <=3D 1
-ms (without making use of the knowledge about the limitation of the
-PWM in the algorithm).
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gMjkvMDQvMjAxOSAxMTo1MSwgZWxhaW5lLnpoYW5nIHdyb3RlOgoKWyAuLi4gXQoKPiBwaW5j
+dHJsIHNlbGVjdCB0byBncGlvIG1vZGUgd2hlbiB0c2FkYyBzdXNwZW5kIGFuZCBzaHV0ZG93bi4K
+PiAKPiBXaGVuIHN1c3BlbmQsIHRzYWRjIGlzIGRpc2FibGVkLCB0aGUgb3RwX3BpbiBzaG91bGQg
+cmV2ZXJ0IHRvIHRoZQo+IGRlZmF1bHQgZ3BpbyBzdGF0ZS4KPiAKPj4KPj4+IMKgIMKgwqDCoMKg
+wqAgcmV0dXJuIDA7Cj4+PiDCoCB9Cj4+PiBAQCAtMTM4Myw3ICsxNDEzLDggQEAgc3RhdGljIGlu
+dCBfX21heWJlX3VudXNlZAo+Pj4gcm9ja2NoaXBfdGhlcm1hbF9yZXN1bWUoc3RydWN0IGRldmlj
+ZSAqZGV2KQo+Pj4gwqDCoMKgwqDCoCBmb3IgKGkgPSAwOyBpIDwgdGhlcm1hbC0+Y2hpcC0+Y2hu
+X251bTsgaSsrKQo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgIHJvY2tjaGlwX3RoZXJtYWxfdG9nZ2xl
+X3NlbnNvcigmdGhlcm1hbC0+c2Vuc29yc1tpXSwgdHJ1ZSk7Cj4+PiDCoCAtwqDCoMKgIHBpbmN0
+cmxfcG1fc2VsZWN0X2RlZmF1bHRfc3RhdGUoZGV2KTsKPj4+ICvCoMKgwqAgaWYgKHRoZXJtYWwt
+PnRzaHV0X21vZGUgPT0gVFNIVVRfTU9ERV9HUElPKQo+Pj4gK8KgwqDCoMKgwqDCoMKgIHBpbmN0
+cmxfc2VsZWN0X3N0YXRlKHRoZXJtYWwtPnBpbmN0cmwsIHRoZXJtYWwtPm90cF9zdGF0ZSk7Cj4+
+IEFuZCB0aGVuCj4+IMKgwqDCoMKgcGluY3RybF9zZWxlY3Rfc3RhdGUodGhlcm1hbC0+cGluY3Ry
+bCwgdGhlcm1hbC0+cGluY3RybF9zdGF0ZSk7Cj4gCj4gcGluY3RybCBzZWxlY3QgdG8gb3RwIG1v
+ZGUgd2hlbiB0c2FkYyByZXN1bWUuCgpPaywgdGhhbmtzIGZvciBjbGFyaWZ5aW5nLgoKICAtLSBE
+YW5pZWwKCgoKLS0gCiA8aHR0cDovL3d3dy5saW5hcm8ub3JnLz4gTGluYXJvLm9yZyDilIIgT3Bl
+biBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCgpGb2xsb3cgTGluYXJvOiAgPGh0dHA6Ly93
+d3cuZmFjZWJvb2suY29tL3BhZ2VzL0xpbmFybz4gRmFjZWJvb2sgfAo8aHR0cDovL3R3aXR0ZXIu
+Y29tLyMhL2xpbmFyb29yZz4gVHdpdHRlciB8CjxodHRwOi8vd3d3LmxpbmFyby5vcmcvbGluYXJv
+LWJsb2cvPiBCbG9nCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1yb2NrY2hpcAo=
