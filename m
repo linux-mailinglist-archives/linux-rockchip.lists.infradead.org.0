@@ -2,67 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1719010807
-	for <lists+linux-rockchip@lfdr.de>; Wed,  1 May 2019 14:48:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9658108D1
+	for <lists+linux-rockchip@lfdr.de>; Wed,  1 May 2019 16:10:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jXja+Bc1JyGAZaQeTaxz2/lo11A3NatUO+82gufFs0Q=; b=KKd3iQH+Tkxd0n
-	S/45FypohPuNbMVcfyadpVzbcRXwJe6dI1AE9LCPK+DvEyjVBcUWoZs648Mb07TtA9Ei7DKipCQO2
-	0gVoMX1yMw9c/mksp9jayGcQ8KRrgb+01+dkPslR6LRcqih++fOgflSpTtgIcquqKVp/l1qwq0uPO
-	q1brpqDMzsdaGro4uashrS4ZHPNRS0SFy+E7GoyrIM2dHIiy+Pp02EkjKPdkrX2Qua6SJLLpuWZTZ
-	c2r3aGBF+espTiG+pf7b8oFL/1fTDw3wzY+NL21wGXnenEqXloYAOEoBp2JCb+9yYRtSkhiRFDs6M
-	3lo1gQoV7VSVFT+X4ZMQ==;
+	List-Owner; bh=ThB5XR6aA3YSKjh1iCoYX8H69sOwbRy5htrAicRtDLo=; b=QkbbRZK5k7Msok
+	oMKPPbPV5ut8bSCS7a+1nwswepV/wu0bGFBXC5XWzmFXeSpXgNoz80TSRT1etRqCVfi6hN9lYTBGt
+	Cd9xsMIenPcWrGDhMp9esoNMpW1CWEgsCBjx/aY2vh42oqj4492YeRUNN0j61dVmF4JePpjm2TaZj
+	BX+GTHrXyoP92YJuX3ZWrAyGipbwTO8pY+vUZg4uUKqfHnQjeX9ds3mSR1BXyAKTpQMl2zG5rnMHg
+	5KPQJowZewX5reYmm50DXAb4j6R9cN1iS42CdSug+SvykjL9aKlE0DR9o2Y7AGInJS8RO9Rs/ZaJc
+	s2hYoY1jJ3NH3bscGM7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLoeR-00061M-P7; Wed, 01 May 2019 12:47:55 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hLpw5-0006Yu-06; Wed, 01 May 2019 14:10:13 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLoeH-0005mz-K3; Wed, 01 May 2019 12:47:47 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: gportay) with ESMTPSA id D0591281890
-Date: Wed, 1 May 2019 08:47:54 -0400
-From: =?utf-8?B?R2HDq2w=?= PORTAY <gael.portay@collabora.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Heiko Stuebner <heiko@sntech.de>,
- Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- Chanwoo Choi <cw00.choi@samsung.com>,
- Sandy Huang <hjc@rock-chips.com>, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel@ffwll.ch>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-pm@vger.kernel.org,
- dri-devel@lists.freedesktop.org
-Subject: Re: [RFC 2/4] drm: rockchip: Add DDR devfreq support.
-Message-ID: <20190501124754.h7kiksljhofldpz2@archlinux.localdomain>
-References: <20190430180524.22710-1-gael.portay@collabora.com>
- <20190430180524.22710-3-gael.portay@collabora.com>
+ id 1hLpvt-0005Dl-3J
+ for linux-rockchip@lists.infradead.org; Wed, 01 May 2019 14:10:03 +0000
+Received: by mail-io1-xd44.google.com with SMTP id r18so14932054ioh.2
+ for <linux-rockchip@lists.infradead.org>; Wed, 01 May 2019 07:10:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=nB5mo0PzD9+ciKHE3nzQsu/xBNhXLuJh3fQvApZ4eDE=;
+ b=bbCwLAC8NXEO1MlCMIaPy05mv66RouPcb+bvkijVpS+pzk5BLMIHVOtFkqZcoAPTA4
+ 6ga9XjzjJ1sOuJ49EW+AI/eNAGSgIIkq1S10/GNVx8ke9aJUbIjcO98Y5Kb8NR6cOrWL
+ bjwz8AnzWjfQMhg2dn5RtOw3PplDq7u4QwDmg=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=nB5mo0PzD9+ciKHE3nzQsu/xBNhXLuJh3fQvApZ4eDE=;
+ b=eurUuXW9ycKvW/y8WvZ5zguqI7QA03+E+b1ndXcy+MinkhyUJCj1HVesQdybwJ1PL6
+ cBn09GHMffMYXsC5BZl2dSXQDibuyFZfWn0Boq+6gP5Nd+7B4fVb7j+y4QYrRCP9v/jc
+ jh+6Qw292Rb9bLLfKrPP05WRKPYwqVUMzC7mxDfhC78vhdBCWkQiupqz/WUFowKRSab5
+ SNbB/Utvl/npJbSlNRF1w0Xfgca+TXQeR/x9XGNoYYeu8VRASSYZ388L5cAP86GvjWcn
+ iBYD75kTAKvF+g00J1ljGcIjVKYUPVci3YzDiw0zz8zqkdcGOxjdfMP8qktg7djqBCfp
+ r1Ew==
+X-Gm-Message-State: APjAAAXiGlKGX2KzhfPxhVZeYqaixXtlcr+pItpUwuErt/+mLWuHhFVx
+ QHLCuVbGlX6Y4o9gFE3L3EBjpjd0gdlMdpnF/n9WrQ==
+X-Google-Smtp-Source: APXvYqwJw2QwrXIxZJq4e669u8UmLxc5NF8gdYbnL+eL3xI7LbmEUaDO3+S4myUwXwutRlCDThcxZxJk+wimJdIMuHs=
+X-Received: by 2002:a5d:8d18:: with SMTP id p24mr2089671ioj.267.1556719799202; 
+ Wed, 01 May 2019 07:09:59 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190430180524.22710-3-gael.portay@collabora.com>
-User-Agent: NeoMutt/20180716
+References: <20190501121448.3812-1-jagan@amarulasolutions.com>
+ <20190501121448.3812-2-jagan@amarulasolutions.com>
+ <cc16498b-71f8-04ce-44d1-25417fd64757@arm.com>
+In-Reply-To: <cc16498b-71f8-04ce-44d1-25417fd64757@arm.com>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Wed, 1 May 2019 19:39:46 +0530
+Message-ID: <CAMty3ZBdko3+p6SoKYH-Mwism-Qnp3F5u7JV8YQTHzNP8A5kEg@mail.gmail.com>
+Subject: Re: [DO NOT MERGE] [PATCH 2/2] arm64: rockchip: rk3399: nanopc-t4:
+ Enable FriendlyELEC HD702E eDP panel
+To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_054745_926916_51EF5621 
-X-CRM114-Status: GOOD (  21.32  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190501_071001_308610_D93545A2 
+X-CRM114-Status: GOOD (  21.78  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- 0.1 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
- information
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -75,602 +90,165 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Lin Huang <hl@rock-chips.com>, Derek Basehore <dbasehore@chromium.org>,
- Douglas Anderson <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>, kernel@collabora.com
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This commit adds the support for devfreq to control the DDR frequency
-dynamically.
+On Wed, May 1, 2019 at 6:17 PM Robin Murphy <robin.murphy@arm.com> wrote:
+>
+> On 01/05/2019 13:14, Jagan Teki wrote:
+> > FriendlyELEC HD702E is one of optional LCD panel for
+> > NanoPC T4 eDP interface.
+> >
+> > It features 800x1280 resolutions, with built in GT9271 captive
+> > touchscreen and adjustable backlight via PWM.
+> >
+> > eDP panel connections are:
+> > - VCC3V3_SYS: 3.3V panel power supply
+> > - GPIO4_C2: PWM0_BL pin
+> > - GPIO4_D5_LCD_BL_EN: Backlight enable pin
+> > - VCC12V0_SYS: 12V backlight power supply
+> > - Touchscreen connected via I2C4
+> > - GPIO1_C4_TP_INT: touchscreen interrupt pin
+> > - GPIO1_B5_TP_RST: touchscreen reset pin
+> >
+> > Add support for it.
+> >
+> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> > ---
+> > Note: we need to disable hdmi-cec pinctrl to work with
+> > edp-hpd since both share same pin, otherwise we can
+> > encounter below error during bootup
+> > [    1.047726] rockchip-pinctrl pinctrl: pin gpio4-23 already requested by ff940000.hdmi; cannot claim for ff970000.edp
+> > [    1.048655] rockchip-pinctrl pinctrl: pin-151 (ff970000.edp) status -22
+> > [    1.049235] rockchip-pinctrl pinctrl: could not request pin 151 (gpio4-23) from group edp-hpd  on device rockchip-pinctrl
+> > [    1.050191] rockchip-dp ff970000.edp: Error applying setting, reverse things back
+> > [    1.050867] rockchip-dp: probe of ff970000.edp failed with error -22
+>
+> Hmm, AFAICS that pin is exclusively wired to the HDMI connector and not
+> used for the eDP interface, so really it's the fault of rk3399.dtsi for
+> trying to claim it unconditionally. Ideally we'd pull those pinctrl
+> properties out into the board DTs which do actually need them, but the
+> quick and easy approach would be to add some "/delete-property/ ..."
+> workarounds to the &edp node here.
 
-Glitches affect the display when the DMC devfreq device changes the DDR
-frequency during the scanout. The DRM driver synchronizes the rate
-change within the VBLANK.
+Thought that initially, but the same pin shared between HDMI CEC and
+eDP hotplug with different bit function to enable.
 
-The VOP locks the DMC devfreq device that causes it to notified when a
-rate change is wanted. Then, the VOP enables the VBLANK interrupt,
-releases the lock when the interrupt arises and locks the devfreq device
-again after the vblank pulse ends using a timer.
+gpio4c7_sel
+GPIO4C[7] iomux select
+2'b00: gpio
+2'b01: hdmi_cecinout
+2'b10: edp_hotplug
+2'b11: reserved
 
-The DRM driver disables the devfreq device if more than one CRTC becomes
-active.
+GPIO4_C7/HDMI_CECINOUT/EDP_HOTPLUG is the shared pin, which is
+available in any nanopc-t4 as well in rk3399 datasheet, look like it's
+an SoC pin that driver hotplug to eDP and ie same reason is pinmux in
+rk3399.dtsi.
 
-Signed-off-by: Ga=EBl PORTAY <gael.portay@collabora.com>
----
+I event removed edp_hpd pinctrl from edp node in rk3399.dtsi, but
+display not appear on the screen and observed edp bridge issue on
+host.
 
-All,
+[    1.052191] rockchip-drm display-subsystem: bound ff8f0000.vop (ops
+vop_component_ops)
+[    1.054460] rockchip-drm display-subsystem: bound ff900000.vop (ops
+vop_component_ops)
+[    1.055214] rockchip-dp ff970000.edp: no DP phy configured
+[    1.056088] rockchip-drm display-subsystem: bound ff970000.edp (ops
+rockchip_dp_component_ops)
+[    1.056852] [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
+[    1.057449] [drm] No driver support for vblank timestamp query.
+[    1.174379] [drm:analogix_dp_bridge_enable] *ERROR* failed to get
+hpd single ret = -110
+[    1.174408] rockchip-dp ff970000.edp: failed to set bridge, retry: 0
+[    1.285524] [drm:analogix_dp_bridge_enable] *ERROR* failed to get
+hpd single ret = -110
+[    1.285539] rockchip-dp ff970000.edp: failed to set bridge, retry: 1
+[    1.355241] dwmmc_rockchip fe310000.dwmmc: Successfully tuned phase to 212
+[    1.358757] mmc0: new ultra high speed SDR104 SDIO card at address 0001
+[    1.397049] [drm:analogix_dp_bridge_enable] *ERROR* failed to get
+hpd single ret = -110
+[    1.397069] rockchip-dp ff970000.edp: failed to set bridge, retry: 2
+[    1.485582] dwmmc_rockchip fe320000.dwmmc: Successfully tuned phase to 220
+[    1.485590] mmc1: new ultra high speed SDR104 SDHC card at address 084e
+[    1.486246] mmcblk1: mmc1:084e R04GS 3.71 GiB
+[    1.488032]  mmcblk1: p1
+[    1.509088] [drm:analogix_dp_bridge_enable] *ERROR* failed to get
+hpd single ret = -110
+[    1.509119] rockchip-dp ff970000.edp: failed to set bridge, retry: 3
+[    1.620938] [drm:analogix_dp_bridge_enable] *ERROR* failed to get
+hpd single ret = -110
+[    1.620953] rockchip-dp ff970000.edp: failed to set bridge, retry: 4
+[    1.620970] rockchip-dp ff970000.edp: too many times retry set
+bridge, give it up
+[    1.644026] Console: switching to colour frame buffer device 100x80
 
-I forgot to apply the fixup commit (that fixes the rebase on 5.1) when I
-sent the patch.
 
-Here is what the commit looks like.
+>
+> >   .../boot/dts/rockchip/rk3399-nanopc-t4.dts    | 82 +++++++++++++++++++
+> >   1 file changed, 82 insertions(+)
+> >
+> > diff --git a/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts b/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts
+> > index 931c3dbf1b7d..b652d960946f 100644
+> > --- a/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts
+> > +++ b/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts
+> > @@ -46,6 +46,48 @@
+> >               };
+> >       };
+> >
+> > +     backlight: backlight {
+> > +             compatible = "pwm-backlight";
+> > +             brightness-levels = <
+> > +                       0   1   2   3   4   5   6   7
+> > +                       8   9  10  11  12  13  14  15
+> > +                      16  17  18  19  20  21  22  23
+> > +                      24  25  26  27  28  29  30  31
+> > +                      32  33  34  35  36  37  38  39
+> > +                      40  41  42  43  44  45  46  47
+> > +                      48  49  50  51  52  53  54  55
+> > +                      56  57  58  59  60  61  62  63
+> > +                      64  65  66  67  68  69  70  71
+> > +                      72  73  74  75  76  77  78  79
+> > +                      80  81  82  83  84  85  86  87
+> > +                      88  89  90  91  92  93  94  95
+> > +                      96  97  98  99 100 101 102 103
+> > +                     104 105 106 107 108 109 110 111
+> > +                     112 113 114 115 116 117 118 119
+> > +                     120 121 122 123 124 125 126 127
+> > +                     128 129 130 131 132 133 134 135
+> > +                     136 137 138 139 140 141 142 143
+> > +                     144 145 146 147 148 149 150 151
+> > +                     152 153 154 155 156 157 158 159
+> > +                     160 161 162 163 164 165 166 167
+> > +                     168 169 170 171 172 173 174 175
+> > +                     176 177 178 179 180 181 182 183
+> > +                     184 185 186 187 188 189 190 191
+> > +                     192 193 194 195 196 197 198 199
+> > +                     200 201 202 203 204 205 206 207
+> > +                     208 209 210 211 212 213 214 215
+> > +                     216 217 218 219 220 221 222 223
+> > +                     224 225 226 227 228 229 230 231
+> > +                     232 233 234 235 236 237 238 239
+> > +                     240 241 242 243 244 245 246 247
+> > +                     248 249 250 251 252 253 254 255>;
+>
+> This looks trivial enough that I wonder whether it might still work to
+> just omit it? Not that I know anything about backlights, but I had the
+> impression (from mailing list traffic, I guess) that the driver gained
+> the ability to provide a reasonable default behaviour at some point.
 
-Sorry for the noise.
-
-Regards,
-Ga=EBl
-
- drivers/gpu/drm/rockchip/rockchip_drm_drv.c |  51 ++++++-
- drivers/gpu/drm/rockchip/rockchip_drm_drv.h |   6 +
- drivers/gpu/drm/rockchip/rockchip_drm_fb.c  | 142 +++++++++++++++++++-
- drivers/gpu/drm/rockchip/rockchip_drm_fb.h  |   3 +-
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c |  82 +++++++++++
- 5 files changed, 280 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_drv.c b/drivers/gpu/drm/=
-rockchip/rockchip_drm_drv.c
-index d7fa17f12769..ef843568a7f8 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_drv.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_drv.c
-@@ -19,6 +19,8 @@
- #include <drm/drm_gem_cma_helper.h>
- #include <drm/drm_of.h>
- #include <drm/drm_probe_helper.h>
-+#include <linux/devfreq.h>
-+#include <linux/devfreq-event.h>
- #include <linux/dma-mapping.h>
- #include <linux/dma-iommu.h>
- #include <linux/pm_runtime.h>
-@@ -78,6 +80,46 @@ void rockchip_drm_dma_detach_device(struct drm_device *d=
-rm_dev,
- 	iommu_detach_device(domain, dev);
- }
- =
-
-+#if IS_ENABLED(CONFIG_ARM_RK3399_DMC_DEVFREQ)
-+static int rockchip_drm_init_devfreq(struct device *dev,
-+				     struct rockchip_drm_private *priv)
-+{
-+	struct devfreq *devfreq;
-+	struct devfreq_event_dev *edev;
-+	int ret;
-+
-+	devfreq =3D devfreq_get_devfreq_by_phandle(dev, 0);
-+	if (IS_ERR(devfreq)) {
-+		ret =3D PTR_ERR(devfreq);
-+		if (ret =3D=3D -ENODEV) {
-+			DRM_DEV_INFO(dev, "devfreq missing, skip\n");
-+			return 0;
-+		}
-+		return ret;
-+	}
-+
-+	edev =3D devfreq_event_get_edev_by_phandle(devfreq->dev.parent, 0);
-+	if (IS_ERR(edev)) {
-+		ret =3D PTR_ERR(edev);
-+		if (ret =3D=3D -ENODEV) {
-+			DRM_DEV_INFO(dev, "devfreq edev missing, skip\n");
-+			return 0;
-+		}
-+		return ret;
-+	}
-+
-+	priv->devfreq =3D devfreq;
-+	priv->devfreq_event_dev =3D edev;
-+	return 0;
-+}
-+#else
-+static int rockchip_drm_init_devfreq(struct device *dev,
-+				     struct rockchip_drm_private *priv)
-+{
-+	return 0;
-+}
-+#endif
-+
- static int rockchip_drm_init_iommu(struct drm_device *drm_dev)
- {
- 	struct rockchip_drm_private *private =3D drm_dev->dev_private;
-@@ -137,13 +179,19 @@ static int rockchip_drm_bind(struct device *dev)
- 	INIT_LIST_HEAD(&private->psr_list);
- 	mutex_init(&private->psr_list_lock);
- =
-
-+	ret =3D rockchip_drm_init_devfreq(dev, private);
-+	if (ret)
-+		goto err_free;
-+
- 	ret =3D rockchip_drm_init_iommu(drm_dev);
- 	if (ret)
- 		goto err_free;
- =
-
- 	drm_mode_config_init(drm_dev);
- =
-
--	rockchip_drm_mode_config_init(drm_dev);
-+	ret =3D rockchip_drm_mode_config_init(drm_dev);
-+	if (ret)
-+		goto err_free;
- =
-
- 	/* Try to bind all sub drivers. */
- 	ret =3D component_bind_all(dev, drm_dev);
-@@ -201,6 +249,7 @@ static void rockchip_drm_unbind(struct device *dev)
- 	drm_atomic_helper_shutdown(drm_dev);
- 	component_unbind_all(dev, drm_dev);
- 	drm_mode_config_cleanup(drm_dev);
-+	rockchip_drm_mode_config_fini(drm_dev);
- 	rockchip_iommu_cleanup(drm_dev);
- =
-
- 	drm_dev->dev_private =3D NULL;
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_drv.h b/drivers/gpu/drm/=
-rockchip/rockchip_drm_drv.h
-index ce48568ec8a0..0ac7e31b5605 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_drv.h
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_drv.h
-@@ -18,6 +18,7 @@
- #define _ROCKCHIP_DRM_DRV_H
- =
-
- #include <drm/drm_fb_helper.h>
-+#include <drm/drm_atomic.h>
- #include <drm/drm_atomic_helper.h>
- #include <drm/drm_gem.h>
- =
-
-@@ -57,6 +58,10 @@ struct rockchip_drm_private {
- 	struct drm_mm mm;
- 	struct list_head psr_list;
- 	struct mutex psr_list_lock;
-+
-+	struct devfreq *devfreq;
-+	struct devfreq_event_dev *devfreq_event_dev;
-+	struct drm_private_obj ddrfreq_lock_manager;
- };
- =
-
- int rockchip_drm_dma_attach_device(struct drm_device *drm_dev,
-@@ -66,6 +71,7 @@ void rockchip_drm_dma_detach_device(struct drm_device *dr=
-m_dev,
- int rockchip_drm_wait_vact_end(struct drm_crtc *crtc, unsigned int mstimeo=
-ut);
- =
-
- int rockchip_drm_endpoint_is_subdriver(struct device_node *ep);
-+uint32_t rockchip_drm_get_vblank_ns(struct drm_display_mode *mode);
- extern struct platform_driver cdn_dp_driver;
- extern struct platform_driver dw_hdmi_rockchip_pltfm_driver;
- extern struct platform_driver dw_mipi_dsi_rockchip_driver;
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c b/drivers/gpu/drm/r=
-ockchip/rockchip_drm_fb.c
-index 97438bbbe389..f508d5558e16 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
-@@ -13,6 +13,7 @@
-  */
- =
-
- #include <linux/kernel.h>
-+#include <linux/devfreq.h>
- #include <drm/drm.h>
- #include <drm/drmP.h>
- #include <drm/drm_atomic.h>
-@@ -25,6 +26,56 @@
- #include "rockchip_drm_gem.h"
- #include "rockchip_drm_psr.h"
- =
-
-+struct rockchip_ddrfreq_lock_state {
-+	struct drm_private_state base;
-+	int lock_counter;
-+};
-+
-+#define to_ddrfreq_lock_state(x) container_of(x, \
-+				       struct rockchip_ddrfreq_lock_state, base)
-+
-+struct drm_private_state *rockchip_atomic_duplicate_ddrfreq_lock_state(
-+						    struct drm_private_obj *obj)
-+{
-+	struct rockchip_ddrfreq_lock_state *ddrfreq_lock_state;
-+
-+	ddrfreq_lock_state =3D kmemdup(obj->state, sizeof(*ddrfreq_lock_state),
-+				     GFP_KERNEL);
-+	if (!ddrfreq_lock_state)
-+		return NULL;
-+
-+	__drm_atomic_helper_private_obj_duplicate_state(obj,
-+						     &ddrfreq_lock_state->base);
-+
-+	return &ddrfreq_lock_state->base;
-+}
-+
-+void rockchip_atomic_destroy_ddrfreq_lock_state(struct drm_private_obj *ob=
-j,
-+						struct drm_private_state *state)
-+{
-+	struct rockchip_ddrfreq_lock_state *ddrfreq_lock_state =3D
-+						   to_ddrfreq_lock_state(state);
-+
-+	kfree(ddrfreq_lock_state);
-+}
-+
-+struct drm_private_state_funcs rockchip_ddrfreq_lock_state_funcs =3D {
-+	.atomic_duplicate_state =3D rockchip_atomic_duplicate_ddrfreq_lock_state,
-+	.atomic_destroy_state =3D rockchip_atomic_destroy_ddrfreq_lock_state,
-+};
-+
-+static struct rockchip_ddrfreq_lock_state *rockchip_get_ddrfreq_lock_state(
-+		    struct drm_atomic_state *state, struct drm_private_obj *obj)
-+{
-+	struct drm_private_state *priv_state;
-+
-+	priv_state =3D drm_atomic_get_private_obj_state(state, obj);
-+	if (IS_ERR(priv_state))
-+		return ERR_CAST(priv_state);
-+
-+	return to_ddrfreq_lock_state(priv_state);
-+}
-+
- static int rockchip_drm_fb_dirty(struct drm_framebuffer *fb,
- 				 struct drm_file *file,
- 				 unsigned int flags, unsigned int color,
-@@ -127,10 +178,44 @@ rockchip_user_fb_create(struct drm_device *dev, struc=
-t drm_file *file_priv,
- 	return ERR_PTR(ret);
- }
- =
-
-+uint32_t rockchip_drm_get_vblank_ns(struct drm_display_mode *mode)
-+{
-+	uint64_t vblank_time =3D mode->vtotal - mode->vdisplay;
-+
-+	vblank_time *=3D (uint64_t)NSEC_PER_SEC * mode->htotal;
-+	do_div(vblank_time, mode->clock * 1000);
-+
-+	return vblank_time;
-+}
-+
- static void
- rockchip_atomic_helper_commit_tail_rpm(struct drm_atomic_state *old_state)
- {
- 	struct drm_device *dev =3D old_state->dev;
-+	struct rockchip_drm_private *priv =3D dev->dev_private;
-+	struct drm_crtc_state *old_crtc_state, *new_crtc_state;
-+	struct rockchip_ddrfreq_lock_state *ddrfreq_lock_state;
-+	struct drm_crtc *crtc;
-+	int i;
-+
-+	for_each_oldnew_crtc_in_state(old_state, crtc, old_crtc_state,
-+				      new_crtc_state, i) {
-+		if (old_crtc_state->enable =3D=3D new_crtc_state->enable)
-+			continue;
-+
-+		ddrfreq_lock_state =3D rockchip_get_ddrfreq_lock_state(old_state,
-+						   &priv->ddrfreq_lock_manager);
-+		if (IS_ERR(ddrfreq_lock_state))
-+			break;
-+
-+		/* TODO This logic based on the previous state looks weird :/ */
-+		if (old_crtc_state->enable &&
-+		    ddrfreq_lock_state->lock_counter =3D=3D 2)
-+			devfreq_resume_device(priv->devfreq);
-+		else if (!old_crtc_state->enable &&
-+			 ddrfreq_lock_state->lock_counter =3D=3D 1)
-+			devfreq_suspend_device(priv->devfreq);
-+	}
- =
-
- 	rockchip_drm_psr_inhibit_get_state(old_state);
- =
-
-@@ -154,10 +239,41 @@ static const struct drm_mode_config_helper_funcs rock=
-chip_mode_config_helpers =3D
- 	.atomic_commit_tail =3D rockchip_atomic_helper_commit_tail_rpm,
- };
- =
-
-+static int rockchip_drm_atomic_check(struct drm_device *dev,
-+				     struct drm_atomic_state *state)
-+{
-+	struct rockchip_drm_private *priv =3D dev->dev_private;
-+	struct rockchip_ddrfreq_lock_state *ddrfreq_lock_state;
-+	struct drm_crtc_state *crtc_state;
-+	struct drm_crtc *crtc;
-+	int ret;
-+	int i;
-+
-+	ret =3D drm_atomic_helper_check(dev, state);
-+	if (ret =3D=3D 0) {
-+		for_each_new_crtc_in_state(state, crtc, crtc_state, i) {
-+			if (!crtc_state->active_changed)
-+				continue;
-+
-+			ddrfreq_lock_state =3D rockchip_get_ddrfreq_lock_state(
-+					    state, &priv->ddrfreq_lock_manager);
-+			if (IS_ERR(ddrfreq_lock_state))
-+				return PTR_ERR(ddrfreq_lock_state);
-+
-+			if (crtc_state->enable)
-+				ddrfreq_lock_state->lock_counter++;
-+			else
-+				ddrfreq_lock_state->lock_counter--;
-+		}
-+	}
-+
-+	return ret;
-+}
-+
- static const struct drm_mode_config_funcs rockchip_drm_mode_config_funcs =
-=3D {
- 	.fb_create =3D rockchip_user_fb_create,
- 	.output_poll_changed =3D drm_fb_helper_output_poll_changed,
--	.atomic_check =3D drm_atomic_helper_check,
-+	.atomic_check =3D rockchip_drm_atomic_check,
- 	.atomic_commit =3D drm_atomic_helper_commit,
- };
- =
-
-@@ -175,8 +291,11 @@ rockchip_drm_framebuffer_init(struct drm_device *dev,
- 	return fb;
- }
- =
-
--void rockchip_drm_mode_config_init(struct drm_device *dev)
-+int rockchip_drm_mode_config_init(struct drm_device *dev)
- {
-+	struct rockchip_drm_private *priv =3D dev->dev_private;
-+	struct rockchip_ddrfreq_lock_state *ddrfreq_lock_state;
-+
- 	dev->mode_config.min_width =3D 0;
- 	dev->mode_config.min_height =3D 0;
- =
-
-@@ -190,4 +309,23 @@ void rockchip_drm_mode_config_init(struct drm_device *=
-dev)
- =
-
- 	dev->mode_config.funcs =3D &rockchip_drm_mode_config_funcs;
- 	dev->mode_config.helper_private =3D &rockchip_mode_config_helpers;
-+
-+	ddrfreq_lock_state =3D kzalloc(sizeof(*ddrfreq_lock_state),
-+				     GFP_KERNEL);
-+	if (!ddrfreq_lock_state)
-+		return -ENOMEM;
-+
-+	drm_atomic_private_obj_init(dev,
-+				    &priv->ddrfreq_lock_manager,
-+				    &ddrfreq_lock_state->base,
-+				    &rockchip_ddrfreq_lock_state_funcs);
-+
-+	return 0;
-+}
-+
-+void rockchip_drm_mode_config_fini(struct drm_device *dev)
-+{
-+	struct rockchip_drm_private *priv =3D dev->dev_private;
-+
-+	drm_atomic_private_obj_fini(&priv->ddrfreq_lock_manager);
- }
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_fb.h b/drivers/gpu/drm/r=
-ockchip/rockchip_drm_fb.h
-index f1265cb1aee8..a81df4ef8b35 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_fb.h
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_fb.h
-@@ -21,5 +21,6 @@ rockchip_drm_framebuffer_init(struct drm_device *dev,
- 			      struct drm_gem_object *obj);
- void rockchip_drm_framebuffer_fini(struct drm_framebuffer *fb);
- =
-
--void rockchip_drm_mode_config_init(struct drm_device *dev);
-+int rockchip_drm_mode_config_init(struct drm_device *dev);
-+void rockchip_drm_mode_config_fini(struct drm_device *dev);
- #endif /* _ROCKCHIP_DRM_FB_H */
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/=
-rockchip/rockchip_drm_vop.c
-index 0d4ade9d4722..e76a68ae3991 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-@@ -36,6 +36,8 @@
- #include <linux/component.h>
- #include <linux/overflow.h>
- =
-
-+#include <linux/devfreq.h>
-+
- #include <linux/reset.h>
- #include <linux/delay.h>
- =
-
-@@ -141,6 +143,12 @@ struct vop {
- =
-
- 	struct completion line_flag_completion;
- =
-
-+	/* devfreq locking */
-+	spinlock_t devfreq_lock;
-+	bool want_to_change_rate;
-+	struct devfreq_dev_userlock devfreq_userlock;
-+	struct hrtimer vblank_timer;
-+
- 	const struct vop_data *data;
- =
-
- 	uint32_t *regsbak;
-@@ -632,9 +640,12 @@ static void vop_crtc_atomic_disable(struct drm_crtc *c=
-rtc,
- 				    struct drm_crtc_state *old_state)
- {
- 	struct vop *vop =3D to_vop(crtc);
-+	struct rockchip_drm_private *priv =3D vop->crtc.dev->dev_private;
- =
-
- 	WARN_ON(vop->event);
- =
-
-+	devfreq_unlock_device(priv->devfreq, &vop->devfreq_userlock, 0);
-+
- 	mutex_lock(&vop->vop_lock);
- 	drm_crtc_vblank_off(crtc);
- =
-
-@@ -1028,6 +1039,7 @@ static void vop_crtc_atomic_enable(struct drm_crtc *c=
-rtc,
- {
- 	struct vop *vop =3D to_vop(crtc);
- 	const struct vop_data *vop_data =3D vop->data;
-+	struct rockchip_drm_private *priv =3D vop->crtc.dev->dev_private;
- 	struct rockchip_crtc_state *s =3D to_rockchip_crtc_state(crtc->state);
- 	struct drm_display_mode *adjusted_mode =3D &crtc->state->adjusted_mode;
- 	u16 hsync_len =3D adjusted_mode->hsync_end - adjusted_mode->hsync_start;
-@@ -1123,6 +1135,11 @@ static void vop_crtc_atomic_enable(struct drm_crtc *=
-crtc,
- =
-
- 	VOP_REG_SET(vop, common, standby, 0);
- 	mutex_unlock(&vop->vop_lock);
-+
-+	ret =3D devfreq_lock_device(priv->devfreq, &vop->devfreq_userlock);
-+	if (ret)
-+		DRM_DEV_ERROR(vop->dev,
-+			      "cannot lock devfreq - err %d\n", ret);
- }
- =
-
- static bool vop_fs_irq_is_pending(struct vop *vop)
-@@ -1349,10 +1366,44 @@ static void vop_handle_vblank(struct vop *vop)
- 		drm_flip_work_commit(&vop->fb_unref_work, system_unbound_wq);
- }
- =
-
-+static enum hrtimer_restart vblank_timer_function(struct hrtimer *timer)
-+{
-+	struct vop *vop =3D container_of(timer, struct vop, vblank_timer);
-+	struct rockchip_drm_private *priv =3D vop->crtc.dev->dev_private;
-+	struct devfreq *devfreq =3D priv->devfreq;
-+
-+	drm_crtc_vblank_put(&vop->crtc);
-+
-+	devfreq_lock_device(devfreq, &vop->devfreq_userlock);
-+
-+	spin_lock(&vop->devfreq_lock);
-+	vop->want_to_change_rate =3D false;
-+	spin_unlock(&vop->devfreq_lock);
-+
-+	return HRTIMER_NORESTART;
-+}
-+
-+static void want_to_change_rate(struct devfreq_dev_userlock *userlock,
-+				struct devfreq *devfreq)
-+{
-+	struct vop *vop =3D container_of(userlock, struct vop, devfreq_userlock);
-+	int err;
-+
-+	spin_lock(&vop->devfreq_lock);
-+	vop->want_to_change_rate =3D true;
-+	spin_unlock(&vop->devfreq_lock);
-+
-+	err =3D drm_crtc_vblank_get(&vop->crtc);
-+	if (err)
-+		DRM_DEV_ERROR(vop->dev, "couldn't get vblank %d\n", err);
-+}
-+
- static irqreturn_t vop_isr(int irq, void *data)
- {
- 	struct vop *vop =3D data;
- 	struct drm_crtc *crtc =3D &vop->crtc;
-+	struct rockchip_drm_private *priv =3D crtc->dev->dev_private;
-+	ktime_t vblank_timeout;
- 	uint32_t active_irqs;
- 	int ret =3D IRQ_NONE;
- =
-
-@@ -1398,6 +1449,19 @@ static irqreturn_t vop_isr(int irq, void *data)
- 	}
- =
-
- 	if (active_irqs & FS_INTR) {
-+		spin_lock(&vop->devfreq_lock);
-+		if (vop->want_to_change_rate) {
-+			vop->want_to_change_rate =3D false;
-+			vblank_timeout =3D ktime_add_ns(ktime_get(),
-+				       rockchip_drm_get_vblank_ns(&crtc->mode));
-+			hrtimer_start(&vop->vblank_timer, vblank_timeout,
-+				      HRTIMER_MODE_ABS);
-+			devfreq_unlock_device(priv->devfreq,
-+					      &vop->devfreq_userlock,
-+					      vblank_timeout);
-+		}
-+		spin_unlock(&vop->devfreq_lock);
-+
- 		drm_crtc_handle_vblank(crtc);
- 		vop_handle_vblank(vop);
- 		active_irqs &=3D ~FS_INTR;
-@@ -1746,6 +1810,7 @@ static int vop_bind(struct device *dev, struct device=
- *master, void *data)
- {
- 	struct platform_device *pdev =3D to_platform_device(dev);
- 	const struct vop_data *vop_data;
-+	struct rockchip_drm_private *priv;
- 	struct drm_device *drm_dev =3D data;
- 	struct vop *vop;
- 	struct resource *res;
-@@ -1815,6 +1880,20 @@ static int vop_bind(struct device *dev, struct devic=
-e *master, void *data)
- 		}
- 	}
- =
-
-+	hrtimer_init(&vop->vblank_timer, CLOCK_MONOTONIC, HRTIMER_MODE_ABS);
-+	vop->vblank_timer.function =3D vblank_timer_function;
-+
-+	INIT_LIST_HEAD(&vop->devfreq_userlock.node);
-+	vop->devfreq_userlock.want_to_change_rate =3D want_to_change_rate;
-+
-+	priv =3D vop->crtc.dev->dev_private;
-+	ret =3D devfreq_register_dev_user_lock(&vop->devfreq_userlock,
-+					     priv->devfreq);
-+	if (ret)
-+		DRM_DEV_ERROR(&pdev->dev,
-+			      "cannot register to devfreq user lock - err %d\n",
-+			      ret);
-+
- 	return 0;
- =
-
- err_disable_pm_runtime:
-@@ -1826,6 +1905,9 @@ static int vop_bind(struct device *dev, struct device=
- *master, void *data)
- static void vop_unbind(struct device *dev, struct device *master, void *da=
-ta)
- {
- 	struct vop *vop =3D dev_get_drvdata(dev);
-+	struct rockchip_drm_private *priv =3D vop->crtc.dev->dev_private;
-+
-+	devfreq_unregister_dev_user_lock(&vop->devfreq_userlock, priv->devfreq);
- =
-
- 	if (vop->rgb)
- 		rockchip_rgb_fini(vop->rgb);
--- =
-
-2.21.0
-
+Unaware about this, would you please pass the thread. on the
+other-hand I can see sapphire-excavator still using the brightness
+levels like this.
 
 _______________________________________________
 Linux-rockchip mailing list
