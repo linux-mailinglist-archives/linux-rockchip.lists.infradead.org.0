@@ -2,96 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E75C103BF
-	for <lists+linux-rockchip@lfdr.de>; Wed,  1 May 2019 03:51:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9F31107D1
+	for <lists+linux-rockchip@lfdr.de>; Wed,  1 May 2019 14:15:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5kbw/fqjoUJaVgl3ITJq0/ppmMpHCvQbyf8hxRvGPDU=; b=k+Pr9p1SL0/KVX
-	h5fGRO5ahx7jU9z/GoeN+2g3vGyZrnhcAmPXRav5O99f/fiyzPs/BQWEF8BnBNPjtKeKpzyaEK0gQ
-	6Q8RLDj8f0UWDxbR8brR7s0LtifWrr0veHla69j0gCWyXykVj2W99siszEUqvNU6sGudWnJ2cEch2
-	+B59hlaY3GOst968DWN2zkCQZP57yuGjqP8ypnXg0++lzCyhT30RVaj9kimXQIturZ2d+6212DC/P
-	40ME3czFhSFREJMtuHD87xPz5UgRYHYFCvvsdXoSxFsxehlhG2RHmKG9CAUvOdXicE07LVizAWvd8
-	D3oPjBrnXZ8XBVoi7+7w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Hn9YnF55MDt7fEzfJJc+pxT5AY1gBgkvn+lkWj8XZmI=; b=Cw6QZf90o5rwfi
+	NdSDvfn/GM4hiJyc5uyWiCH1Uuy6xhPiVDpbW9Ao40rcuj1LvGhZlk+NJfT9fuTSTT9Xeb+jOy2Cc
+	yTJlTQDwOox/xP5TMhMbal3DjiYb+PWrmrnCY4Z3cQGTgCu17NPz+auycm188WAhxckzcI/la+vPU
+	ET9SYxuzt5sebqqY27ThM4LoBXZUt36ogu1lymeMcrg85GE8tH1JGHRV+GNIyzbwl4aN704/s03C0
+	5qCIVEfiDkno3IrXk2SAvDm3HWcU9SjBl25d26SrQp+GJ3LXwBm/HlrQxh2KTn2MR92XuTlXMXher
+	sJDM77BZdQS3ubeM5yCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLePU-0000NA-FE; Wed, 01 May 2019 01:51:48 +0000
-Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
+	id 1hLo8x-0000k1-0N; Wed, 01 May 2019 12:15:23 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLePR-0000MQ-7C
- for linux-rockchip@lists.infradead.org; Wed, 01 May 2019 01:51:47 +0000
-Received: by mail-ua1-x944.google.com with SMTP id u34so3602156uau.7
- for <linux-rockchip@lists.infradead.org>; Tue, 30 Apr 2019 18:51:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=06LICDfjCeCtvVUkBORNi2vtZVpAhIUAW1k7qKawkC4=;
- b=j6fmWbqC7a7BBUo2lPeQez2tJf5Zgp111u3x/f4c4UZKQzbMQLEf3aF5oaD85bXQdb
- t/dAWXeGctu5hwKcP/L+ocQoEikwxwmjBJ2FdoWCGDFdd0/2zAMxOD6oV/7oR8l9OgYn
- zCJFYMTm8yPHu7NOGDd9qCKPnJuut694tNiyY=
+ id 1hLo8r-0000jI-S3
+ for linux-rockchip@lists.infradead.org; Wed, 01 May 2019 12:15:21 +0000
+Received: by mail-pf1-x441.google.com with SMTP id j11so8515638pff.13
+ for <linux-rockchip@lists.infradead.org>; Wed, 01 May 2019 05:15:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ImxxJmJZjyprEUOS1cjM4Ta2GXS4CI4CNxI78EJ27HQ=;
+ b=BwOW8AiQot0lzdxqOFplQZcvP1cnjIsyBA+ciOZuAAZqCqvmuxA+r809VDSoc6Nxm+
+ DgK9efe9hfbxEWRzzK61cZ9vBwUIZxJFiII9DwHZIJ8QD4wL5C+d0hZd/e6PY3TO6BS0
+ kItv6s2QKpCPJF6QwRzs5Xaf0efnBpPc2hlNc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=06LICDfjCeCtvVUkBORNi2vtZVpAhIUAW1k7qKawkC4=;
- b=D8vUIDaMijSthTtreVFNi7VzWHzooBFO5aY0YhGDjhq+8WaZa/tuqpxZquY8ciARaZ
- ozuuo+kau5htDxrPe0aBg7pEHuiWZzXZqiBE09SJA3WoulD/O8akCmo0Yuq1gtbojZil
- lBM6As9qgt28d/bZavSn1GbGlp7HXOkoN2uEUkLvSttzDzDpm+sGiaQR4R4AEQcIpkNA
- iQEYr6szdtOZ7sTm31gXbvODEbz3n6KwxHQDLMthXtmf7+M/CPdYJFHoYRJVn8bjgFXj
- aYiXWSKPpssZb92JBuuMq0j+Wmce3WHQf4UxBZgMWkAgDOLvfHFciPZ5TOtzDPaOHiWM
- 5vAg==
-X-Gm-Message-State: APjAAAWMdyMjsfBrAVcdpKpiKBYE6X9VlTElLUDAFS8XXVVz7oES7WRW
- vfKNt0D8qambAt7akljNN2xeZdjMy2A=
-X-Google-Smtp-Source: APXvYqw91fS0jeWqMCwmZn6CZcvgkWw7LoOnFTH/kPhIIO1O/cRCTATs9HVyzfs3WVlltW22KMFEuw==
-X-Received: by 2002:ab0:ec:: with SMTP id 99mr13028305uaj.82.1556675501526;
- Tue, 30 Apr 2019 18:51:41 -0700 (PDT)
-Received: from mail-vs1-f48.google.com (mail-vs1-f48.google.com.
- [209.85.217.48])
- by smtp.gmail.com with ESMTPSA id s194sm15497967vkf.37.2019.04.30.18.51.36
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Tue, 30 Apr 2019 18:51:37 -0700 (PDT)
-Received: by mail-vs1-f48.google.com with SMTP id b23so1556404vso.1
- for <linux-rockchip@lists.infradead.org>; Tue, 30 Apr 2019 18:51:36 -0700 (PDT)
-X-Received: by 2002:a67:7cd1:: with SMTP id x200mr7091738vsc.144.1556675496267; 
- Tue, 30 Apr 2019 18:51:36 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ImxxJmJZjyprEUOS1cjM4Ta2GXS4CI4CNxI78EJ27HQ=;
+ b=rYhI9CKjqw3dDu1DUzQVl0sbyhTAbLwFHzBKNZVHC7ItjBIIEUy0qNflN5fvkd+vDG
+ HWJ9mgpgCHApaJOgU/aa4/qdvFdyPJGCGDeixXrTLMiVzvxwXsxvNZkMCj8R6bKZCRVJ
+ JHDfQ5al28eLoVhbekqDbLrp4nPupL322VaBm7U2HU2E74J1zeqGAljZzcqsTx5+bmy4
+ K1opOhLgNwNwfbdiz4w0LPfKIlnLQ/UAXMsV7eBVX7uswLWEgWKCzOxTuAqyec/vCtmu
+ GatLmwnzFlqg3doUO3xtxqmrliXS3rLB54fA/SWGZmn7EJWosL5w4mHAOo2CqaN6PduY
+ jf2A==
+X-Gm-Message-State: APjAAAUw89TzJ4kOp/JZc2Fe5wv0qpRCY/XrPGdIckqj0dLgZAnFASmX
+ LMCl5LZcpBQF3s4oTk6iG5gRMQ==
+X-Google-Smtp-Source: APXvYqyNB0l+GQo7QXQib2EIHiEhvT+0vDtje0/2NwWvm1V+uu1x/xfQ0ZhL3ZmGNupLIEaeNg+Zcw==
+X-Received: by 2002:a63:dd58:: with SMTP id g24mr44137179pgj.161.1556712916601; 
+ Wed, 01 May 2019 05:15:16 -0700 (PDT)
+Received: from localhost.localdomain ([183.82.229.33])
+ by smtp.gmail.com with ESMTPSA id e193sm71082978pgc.53.2019.05.01.05.15.11
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 01 May 2019 05:15:15 -0700 (PDT)
+From: Jagan Teki <jagan@amarulasolutions.com>
+To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH 1/2] drm/panel: simple: Add FriendlyELEC HD702E 800x1280 LCD
+ panel
+Date: Wed,  1 May 2019 17:44:47 +0530
+Message-Id: <20190501121448.3812-1-jagan@amarulasolutions.com>
+X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 MIME-Version: 1.0
-References: <20190418001356.124334-1-dianders@chromium.org>
- <20190418001356.124334-2-dianders@chromium.org>
- <SN1PR12MB243108D1EF3239EC4F730ACDA7390@SN1PR12MB2431.namprd12.prod.outlook.com>
- <CAD=FV=UOmfNeuZPrDcZRdwAkF4yRifCpBGUuZTsmmz0UVEZ+yA@mail.gmail.com>
- <SN1PR12MB24317F315C5A4DFE70F9CB0DA73A0@SN1PR12MB2431.namprd12.prod.outlook.com>
-In-Reply-To: <SN1PR12MB24317F315C5A4DFE70F9CB0DA73A0@SN1PR12MB2431.namprd12.prod.outlook.com>
-From: Doug Anderson <dianders@chromium.org>
-Date: Tue, 30 Apr 2019 18:51:35 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=UWGOWiCpy5qUY8oFHPyxdYJe7OsdWBDuCNcXBu5BJoGA@mail.gmail.com>
-Message-ID: <CAD=FV=UWGOWiCpy5qUY8oFHPyxdYJe7OsdWBDuCNcXBu5BJoGA@mail.gmail.com>
-Subject: Re: [PATCH v2 1/5] usb: dwc2: bus suspend/resume for hosts with
- DWC2_POWER_DOWN_PARAM_NONE
-To: Artur Petrosyan <Arthur.Petrosyan@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_185145_290978_348C2269 
-X-CRM114-Status: GOOD (  35.28  )
-X-Spam-Score: -0.3 (/)
+X-CRM114-CacheID: sfid-20190501_051519_184482_C7DCC746 
+X-CRM114-Status: GOOD (  12.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -104,178 +93,117 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>,
- Amelie Delaunay <amelie.delaunay@st.com>, Randy Li <ayaka@soulik.info>,
- "amstan@chromium.org" <amstan@chromium.org>,
- Felipe Balbi <felipe.balbi@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "zyw@rock-chips.com" <zyw@rock-chips.com>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- Minas Harutyunyan <Minas.Harutyunyan@synopsys.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "mka@chromium.org" <mka@chromium.org>, Alan Stern <stern@rowland.harvard.edu>,
- Elaine Zhang <zhangqing@rock-chips.com>,
- "jwerner@chromium.org" <jwerner@chromium.org>,
- William Wu <william.wu@rock-chips.com>,
- "ryandcase@chromium.org" <ryandcase@chromium.org>,
- "dinguyen@opensource.altera.com" <dinguyen@opensource.altera.com>,
- "heiko@sntech.de" <heiko@sntech.de>
+Cc: devicetree@vger.kernel.org, David Airlie <airlied@linux.ie>,
+ Sam Ravnborg <sam@ravnborg.org>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jagan Teki <jagan@amarulasolutions.com>, Daniel Vetter <daniel@ffwll.ch>,
+ linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+HD702E lcd is FriendlyELEC developed eDP LCD panel with 800x1280
+resolution. It has built in Goodix, GT9271 captive touchscreen
+with backlight adjustable via PWM.
 
-On Mon, Apr 29, 2019 at 11:06 PM Artur Petrosyan
-<Arthur.Petrosyan@synopsys.com> wrote:
->
-> Hi,
->
-> On 4/29/2019 21:34, Doug Anderson wrote:
-> > Hi,
-> >
-> > On Mon, Apr 29, 2019 at 1:43 AM Artur Petrosyan
-> > <Arthur.Petrosyan@synopsys.com> wrote:
-> >>
-> >> Hi,
-> >>
-> >> On 4/18/2019 04:15, Douglas Anderson wrote:
-> >>> This is an attempt to rehash commit 0cf884e819e0 ("usb: dwc2: add bus
-> >>> suspend/resume for dwc2") on ToT.  That commit was reverted in commit
-> >>> b0bb9bb6ce01 ("Revert "usb: dwc2: add bus suspend/resume for dwc2"")
-> >>> because apparently it broke the Altera SOCFPGA.
-> >>>
-> >>> With all the changes that have happened to dwc2 in the meantime, it's
-> >>> possible that the Altera SOCFPGA will just magically work with this
-> >>> change now.  ...and it would be good to get bus suspend/resume
-> >>> implemented.
-> >>>
-> >>> This change is a forward port of one that's been living in the Chrome
-> >>> OS 3.14 kernel tree.
-> >>>
-> >>> Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> >>> ---
-> >>> This patch was last posted at:
-> >>>
-> >>> https://urldefense.proofpoint.com/v2/url?u=https-3A__lkml.kernel.org_r_1446237173-2D15263-2D1-2Dgit-2Dsend-2Demail-2Ddianders-40chromium.org&d=DwIDAg&c=DPL6_X_6JkXFx7AXWqB0tg&r=9hPBFKCJ_nBjJhGVrrlYOeOQjP_HlVzYqrC_D7niMJI&m=MMfe-4lZePyty6F5zfQ54kiYGuJWNulyRat944LkOsc&s=nExFpAPP_0plZfO5LMG1B-mqt1vyCvE35elVcyVgs8Y&e=
-> >>>
-> >>> ...and appears to have died the death of silence.  Maybe it could get
-> >>> some bake time in linuxnext if we can't find any proactive testing?
-> >>>
-> >>> I will also freely admit that I don't know tons about the theory
-> >>> behind this patch.  I'm mostly just re-hashing the original commit
-> >>> from Kever that was reverted since:
-> >>> * Turning on partial power down on rk3288 doesn't "just work".  I
-> >>>     don't get hotplug events.  This is despite dwc2 auto-detecting that
-> >>>     we are power optimized.
-> >> What do you mean by doesn't "just work" ? It seem to me that even after
-> >> adding this patch you don't get issues fixed.
-> >> You mention that you don't get the hotplug events. Please provide dwc2
-> >> debug logs and register dumps on this issue.
-> >
-> > I mean that partial power down in the currently upstream driver
-> > doesn't work.  AKA: if I turn on partial power down in the upstream
-> > driver then hotplug events break.  I can try to provide some logs.  On
-> > what exact version of the code do you want logs?  Just your series?
-> > Just my series?  Mainline?  Some attempt at combining both series?  As
-> > I said things seem to sorta work with the combined series.  I can try
-> > to clarify if that's the series you want me to test with.  ...or I can
-> > wait for your next version?
-> As I said this patch doesn't fix the issue with hotplug. With this patch
-> or without the hotplug behaves as it was. I have tested it on our setup.
->
-> Have you debugged your patch? Does it make any difference on your setup
-> ? Does it fix the issue with hotplug?
+Add support for it.
 
-I think we're still not taking on the same page.
+Cc: Thierry Reding <thierry.reding@gmail.com>
+Cc: Sam Ravnborg <sam@ravnborg.org>
+Cc: David Airlie <airlied@linux.ie>
+Cc: Daniel Vetter <daniel@ffwll.ch>
+Cc: dri-devel@lists.freedesktop.org
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ .../display/panel/friendlyarm,hd702e.txt      | 29 +++++++++++++++++++
+ drivers/gpu/drm/panel/panel-simple.c          | 26 +++++++++++++++++
+ 2 files changed, 55 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/display/panel/friendlyarm,hd702e.txt
 
-My patch makes no attempt to make partial power down mode work.  My
-patch attempts to make things work a little better when using
-DWC2_POWER_DOWN_PARAM_NONE.  There is no use testing my patch with
-partial power down as it shouldn't have any impact there.
+diff --git a/Documentation/devicetree/bindings/display/panel/friendlyarm,hd702e.txt b/Documentation/devicetree/bindings/display/panel/friendlyarm,hd702e.txt
+new file mode 100644
+index 000000000000..67349d7f79be
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/panel/friendlyarm,hd702e.txt
+@@ -0,0 +1,29 @@
++FriendlyELEC HD702E 800x1280 LCD panel
++
++HD702E lcd is FriendlyELEC developed eDP LCD panel with 800x1280
++resolution. It has built in Goodix, GT9271 captive touchscreen
++with backlight adjustable via PWM.
++
++Required properties:
++- compatible: should be "friendlyarm,hd702e"
++- power-supply: regulator to provide the supply voltage
++
++Optional properties:
++- backlight: phandle of the backlight device attached to the panel
++
++Optional nodes:
++- Video port for LCD panel input.
++
++Example:
++
++	panel {
++		compatible ="friendlyarm,hd702e";
++		backlight = <&backlight>;
++		power-supply = <&vcc3v3_sys>;
++
++		port {
++			panel_in_edp: endpoint {
++				remote-endpoint = <&edp_out_panel>;
++			};
++		};
++	};
+diff --git a/drivers/gpu/drm/panel/panel-simple.c b/drivers/gpu/drm/panel/panel-simple.c
+index 9e8218f6a3f2..9db3c0c65ef2 100644
+--- a/drivers/gpu/drm/panel/panel-simple.c
++++ b/drivers/gpu/drm/panel/panel-simple.c
+@@ -1184,6 +1184,29 @@ static const struct panel_desc foxlink_fl500wvr00_a0t = {
+ 	.bus_format = MEDIA_BUS_FMT_RGB888_1X24,
+ };
+ 
++static const struct drm_display_mode friendlyarm_hd702e_mode = {
++	.clock		= 67185,
++	.hdisplay	= 800,
++	.hsync_start	= 800 + 20,
++	.hsync_end	= 800 + 20 + 24,
++	.htotal		= 800 + 20 + 24 + 20,
++	.vdisplay	= 1280,
++	.vsync_start	= 1280 + 4,
++	.vsync_end	= 1280 + 4 + 8,
++	.vtotal		= 1280 + 4 + 8 + 4,
++	.vrefresh	= 60,
++	.flags 		= DRM_MODE_FLAG_NVSYNC | DRM_MODE_FLAG_NHSYNC,
++};
++
++static const struct panel_desc friendlyarm_hd702e = {
++	.modes = &friendlyarm_hd702e_mode,
++	.num_modes = 1,
++	.size = {
++		.width	= 94,
++		.height	= 151,
++	},
++};
++
+ static const struct drm_display_mode giantplus_gpg482739qs5_mode = {
+ 	.clock = 9000,
+ 	.hdisplay = 480,
+@@ -2634,6 +2657,9 @@ static const struct of_device_id platform_of_match[] = {
+ 	}, {
+ 		.compatible = "edt,etm0700g0edh6",
+ 		.data = &edt_etm0700g0bdh6,
++	}, {
++		.compatible = "friendlyarm,hd702e",
++		.data = &friendlyarm_hd702e,
+ 	}, {
+ 		.compatible = "foxlink,fl500wvr00-a0t",
+ 		.data = &foxlink_fl500wvr00_a0t,
+-- 
+2.18.0.321.gffc6fa0e3
 
-
-> > I am by no means an expert on dwc2, but an assumption made in my patch
-> > is that even cores that can't support partial power down can still
-> > save some amount of power when hcd_suspend is called.
-> Have you tried to debug dwc2 with power_down == DWC2_POWER_DOWN_PARAM_NONE ?
-> >
-> > Some evidence that this should be possible: looking at mainline Linux
-> > and at dwc2_port_suspend(), I see:
-> >
-> > * It is currently called even when we have DWC2_POWER_DOWN_PARAM_NONE
-> Currently (without your and my patches) (looking at mainline Linux) the
-> function dwc2_port_suspend() is called anyway because its call is issued
-> by the system. But it performs entering to suspend only in case of
-> DWC2_POWER_DOWN_PARAM_PARTIAL.
->
-> This is not an assumption. What I am pointing out is based on debugging
-> and before making assumptions without debugging for me seems not ok.
->
-> Currently without your patch and without my patches. In the
-> dwc2_port_suspend() it will enter to suspend only in case that
-> power_down == DWC2_POWER_DOWN_PARAM_PARTIAL. Because if you look at the
-> code more carefully you will see
->
->         if (hsotg->params.power_down != DWC2_POWER_DOWN_PARAM_PARTIAL)
->                 goto skip_power_saving;
->
-> This says if power_down is not DWC2_POWER_DOWN_PARAM_PARTIAL then skip
-> power saving.
->
-> So but after your patch. If power_down is DWC2_POWER_DOWN_PARAM_NONE it
-> tries to suspend.
-
-We must be looking at different code.  I'm looking at Linux's tree, AKA:
-
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/usb/dwc2/hcd.c#n3488
-
-I took a mainline kernel ("v5.1-rc7-5-g83a50840e72a") and added
-printouts in dwc2_port_suspend() next to where it set HPRT0_SUSP and
-PCGCTL_STOPPCLK in dwc2_port_suspend().
-
-[  454.906364] dwc2 ff540000.usb: I'm setting HPRT0_SUSP
-[  454.906367] dwc2 ff540000.usb: I'm setting PCGCTL_STOPPCLK
-
-...and just to confirm:
-
-# grep '^power' /sys/kernel/debug/*.usb/params
-/sys/kernel/debug/ff540000.usb/params:power_down                    : 0
-/sys/kernel/debug/ff580000.usb/params:power_down                    : 0
-
-So I'm really quite convinced that on mainline Linux with
-DWC2_POWER_DOWN_PARAM_NONE that dwc2_port_suspend() sets HPRT0_SUSP
-and PCGCTL_STOPPCLK.
-
-
-> > ...I believe that the net effect of my patch ends up doing both those
-> > same two things in hcd_suspend.  That is: when power_down is
-> > DWC2_POWER_DOWN_PARAM_NONE I believe my patch is really just doing the
-> > same thing that dwc2_port_suspend() would do in the same case.  Is
-> > that not OK?
-> No if your patch is doing the same thing as it was doing before what is
-> the purpose of the patch ?
-
-The purpose is to make _dwc2_hcd_suspend() work more correctly in the
-case where power_down is DWC2_POWER_DOWN_PARAM_NONE
-
-
-> My testes show that your patch doesn't fix the issue related partial
-> power down.
-
-Right.  I have been trying to say that my patch doesn't do anything at
-all for partial power down.  I am simply trying to make
-DWC2_POWER_DOWN_PARAM_NONE work more correctly.
-
-I haven't run all the power consumption tests in quite a long time and
-I'll try to get it hooked up tomorrow to confirm that my patch really
-truly is still needed to help with power consumption.  I did confirm
-that at least there are cases where _dwc2_hcd_suspend() is called and
-my patch is what sets the important bits.
-
--Doug
 
 _______________________________________________
 Linux-rockchip mailing list
