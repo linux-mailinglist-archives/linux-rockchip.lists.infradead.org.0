@@ -2,49 +2,60 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D360A109D4
-	for <lists+linux-rockchip@lfdr.de>; Wed,  1 May 2019 17:10:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F54710D45
+	for <lists+linux-rockchip@lfdr.de>; Wed,  1 May 2019 21:34:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qo0EWe/cpnQ03XbXTct22/c7P0paO7koT0DGo8jfZ5M=; b=Fn3hKYcsT2M8xk
-	TrThgJtAGp29fKIQLYXJV9qFg0EJQw8ji2WmPJu6Rlt5TPLlNBJdnR2oqr1XBeDcwvAmvCtDTUjNG
-	qXfUYeyu5k3wy+eaIldC4C9KWexWjLdsA9vGAJhOgivovd8EqMHSfiXdw8wrRZnVIhLjkvgpavWAo
-	oGSKK5VM7ZV0VXmR18E+7y6G4LlH0yIY/E132xn4EbkbIWLhSo6fEiM0rSlXFn+Zgo/dEA5jjK2bk
-	bEEBX8YptX++t8Ix384dzWuujfwIWpA2DIMBa1iIORHCZcf6kFEWaXVaInCda7wVtuvVtXNK1F2GW
-	6Z2co/MpiDthOWNhjY0A==;
+	List-Owner; bh=rleYM3xOX5ajHvKPNJrrVXdlfrlkVLOwYnZw7vBm7vk=; b=m13X+VK8pZGoUS
+	XSSYKN1dV1i9RJqo5wwTUhaDbnHojmrUS3rvJXHiaSvtbDt2BbjV2pXEaZhYxnB78kTRhRJ57QMUU
+	a/p2NeCM/Hc4P+PTGIYbOZS7ZH/Xoa97QuNHW9B5g1Z6oGXkXomdctyzbiizIovPvY3xwxY9b9ApF
+	CymVjI2PtB9HdxTXfjgcioy0Wa9GdCEeZ0HxqtWOEQCmc3eaDbjkxo9bKPu+UcGDjqoTIKZHRZeol
+	lAN4C3mREUXuTbAzwdBRDzHoZwUaTi1gDz0kFHL7TL3jHZpdvcwHGvBwEn1AOrwZqD42tCbTg3rkH
+	co1C1WdlhsnIHom8IMpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLqrz-0003la-1d; Wed, 01 May 2019 15:10:03 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1hLv0A-0006Nl-DX; Wed, 01 May 2019 19:34:46 +0000
+Received: from asavdk4.altibox.net ([109.247.116.15])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLqru-0003c3-01; Wed, 01 May 2019 15:10:00 +0000
-Received: from [195.37.15.138] (helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hLqrj-000435-PA; Wed, 01 May 2019 17:09:47 +0200
-From: Heiko Stuebner <heiko@sntech.de>
+ id 1hLv03-0006Iv-6F; Wed, 01 May 2019 19:34:41 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk4.altibox.net (Postfix) with ESMTPS id F0AB9804A7;
+ Wed,  1 May 2019 21:34:30 +0200 (CEST)
+Date: Wed, 1 May 2019 21:34:29 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
 To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [DO NOT MERGE] [PATCH 2/2] arm64: rockchip: rk3399: nanopc-t4:
- Enable FriendlyELEC HD702E eDP panel
-Date: Wed, 01 May 2019 17:09:46 +0200
-Message-ID: <59905981.qcSMt8CUfq@phil>
-In-Reply-To: <CAMty3ZBdko3+p6SoKYH-Mwism-Qnp3F5u7JV8YQTHzNP8A5kEg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] drm/panel: simple: Add FriendlyELEC HD702E 800x1280
+ LCD panel
+Message-ID: <20190501193429.GA9075@ravnborg.org>
 References: <20190501121448.3812-1-jagan@amarulasolutions.com>
- <cc16498b-71f8-04ce-44d1-25417fd64757@arm.com>
- <CAMty3ZBdko3+p6SoKYH-Mwism-Qnp3F5u7JV8YQTHzNP8A5kEg@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190501121448.3812-1-jagan@amarulasolutions.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=VcLZwmh9 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=dTbK6rJxFaEA:10
+ a=pGLkceISAAAA:8 a=7gkXJVJtAAAA:8 a=e5mUnYsNAAAA:8 a=iP-xVBlJAAAA:8
+ a=zuLzuavZAAAA:8 a=Ojeavkj-tGznWrRYVDAA:9 a=CjuIK1q_8ugA:10
+ a=tCw7dILebdcA:10 a=E9Po1WZjFZOl8hwRPBS3:22 a=Vxmtnl_E_bksehYqCbjh:22
+ a=lHLH-nfn2y1bM_0xSXwp:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_080958_181705_86E9ACF3 
-X-CRM114-Status: GOOD (  19.10  )
+X-CRM114-CacheID: sfid-20190501_123439_580504_31CE3FF7 
+X-CRM114-Status: GOOD (  20.99  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [109.247.116.15 listed in list.dnswl.org]
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -57,88 +68,140 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
  linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+ Thierry Reding <thierry.reding@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Mittwoch, 1. Mai 2019, 16:09:46 CEST schrieb Jagan Teki:
-> On Wed, May 1, 2019 at 6:17 PM Robin Murphy <robin.murphy@arm.com> wrote:
-> >
-> > On 01/05/2019 13:14, Jagan Teki wrote:
-> > > FriendlyELEC HD702E is one of optional LCD panel for
-> > > NanoPC T4 eDP interface.
-> > >
-> > > It features 800x1280 resolutions, with built in GT9271 captive
-> > > touchscreen and adjustable backlight via PWM.
-> > >
-> > > eDP panel connections are:
-> > > - VCC3V3_SYS: 3.3V panel power supply
-> > > - GPIO4_C2: PWM0_BL pin
-> > > - GPIO4_D5_LCD_BL_EN: Backlight enable pin
-> > > - VCC12V0_SYS: 12V backlight power supply
-> > > - Touchscreen connected via I2C4
-> > > - GPIO1_C4_TP_INT: touchscreen interrupt pin
-> > > - GPIO1_B5_TP_RST: touchscreen reset pin
-> > >
-> > > Add support for it.
-> > >
-> > > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > > ---
-> > > Note: we need to disable hdmi-cec pinctrl to work with
-> > > edp-hpd since both share same pin, otherwise we can
-> > > encounter below error during bootup
-> > > [    1.047726] rockchip-pinctrl pinctrl: pin gpio4-23 already requested by ff940000.hdmi; cannot claim for ff970000.edp
-> > > [    1.048655] rockchip-pinctrl pinctrl: pin-151 (ff970000.edp) status -22
-> > > [    1.049235] rockchip-pinctrl pinctrl: could not request pin 151 (gpio4-23) from group edp-hpd  on device rockchip-pinctrl
-> > > [    1.050191] rockchip-dp ff970000.edp: Error applying setting, reverse things back
-> > > [    1.050867] rockchip-dp: probe of ff970000.edp failed with error -22
-> >
-> > Hmm, AFAICS that pin is exclusively wired to the HDMI connector and not
-> > used for the eDP interface, so really it's the fault of rk3399.dtsi for
-> > trying to claim it unconditionally. Ideally we'd pull those pinctrl
-> > properties out into the board DTs which do actually need them, but the
-> > quick and easy approach would be to add some "/delete-property/ ..."
-> > workarounds to the &edp node here.
+Hi Jagan
+
+On Wed, May 01, 2019 at 05:44:47PM +0530, Jagan Teki wrote:
+> HD702E lcd is FriendlyELEC developed eDP LCD panel with 800x1280
+> resolution. It has built in Goodix, GT9271 captive touchscreen
+> with backlight adjustable via PWM.
 > 
-> Thought that initially, but the same pin shared between HDMI CEC and
-> eDP hotplug with different bit function to enable.
+> Add support for it.
 > 
-> gpio4c7_sel
-> GPIO4C[7] iomux select
-> 2'b00: gpio
-> 2'b01: hdmi_cecinout
-> 2'b10: edp_hotplug
-> 2'b11: reserved
+> Cc: Thierry Reding <thierry.reding@gmail.com>
+> Cc: Sam Ravnborg <sam@ravnborg.org>
+> Cc: David Airlie <airlied@linux.ie>
+> Cc: Daniel Vetter <daniel@ffwll.ch>
+> Cc: dri-devel@lists.freedesktop.org
+> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+
+Please submit the binding in a separate patch as per
+Documentation/devicetree/bindings/submitting-patches.txt
+
+The binding looks like it is compatible with common-panel and
+simple-panel - please say so in the bindings.
+See for example the last few binding documents added to the kernel tree.
+
+> ---
+>  .../display/panel/friendlyarm,hd702e.txt      | 29 +++++++++++++++++++
+>  drivers/gpu/drm/panel/panel-simple.c          | 26 +++++++++++++++++
+>  2 files changed, 55 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/panel/friendlyarm,hd702e.txt
 > 
-> GPIO4_C7/HDMI_CECINOUT/EDP_HOTPLUG is the shared pin, which is
-> available in any nanopc-t4 as well in rk3399 datasheet, look like it's
-> an SoC pin that driver hotplug to eDP and ie same reason is pinmux in
-> rk3399.dtsi.
+> diff --git a/Documentation/devicetree/bindings/display/panel/friendlyarm,hd702e.txt b/Documentation/devicetree/bindings/display/panel/friendlyarm,hd702e.txt
+> new file mode 100644
+> index 000000000000..67349d7f79be
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/panel/friendlyarm,hd702e.txt
+> @@ -0,0 +1,29 @@
+> +FriendlyELEC HD702E 800x1280 LCD panel
+> +
+> +HD702E lcd is FriendlyELEC developed eDP LCD panel with 800x1280
+> +resolution. It has built in Goodix, GT9271 captive touchscreen
+> +with backlight adjustable via PWM.
+> +
+> +Required properties:
+> +- compatible: should be "friendlyarm,hd702e"
+> +- power-supply: regulator to provide the supply voltage
+> +
+> +Optional properties:
+> +- backlight: phandle of the backlight device attached to the panel
+> +
+> +Optional nodes:
+> +- Video port for LCD panel input.
+> +
+> +Example:
+> +
+> +	panel {
+> +		compatible ="friendlyarm,hd702e";
+> +		backlight = <&backlight>;
+> +		power-supply = <&vcc3v3_sys>;
+> +
+> +		port {
+> +			panel_in_edp: endpoint {
+> +				remote-endpoint = <&edp_out_panel>;
+> +			};
+> +		};
+> +	};
+> diff --git a/drivers/gpu/drm/panel/panel-simple.c b/drivers/gpu/drm/panel/panel-simple.c
+> index 9e8218f6a3f2..9db3c0c65ef2 100644
+> --- a/drivers/gpu/drm/panel/panel-simple.c
+> +++ b/drivers/gpu/drm/panel/panel-simple.c
+> @@ -1184,6 +1184,29 @@ static const struct panel_desc foxlink_fl500wvr00_a0t = {
+>  	.bus_format = MEDIA_BUS_FMT_RGB888_1X24,
+>  };
+>  
+> +static const struct drm_display_mode friendlyarm_hd702e_mode = {
+> +	.clock		= 67185,
+> +	.hdisplay	= 800,
+> +	.hsync_start	= 800 + 20,
+> +	.hsync_end	= 800 + 20 + 24,
+> +	.htotal		= 800 + 20 + 24 + 20,
+> +	.vdisplay	= 1280,
+> +	.vsync_start	= 1280 + 4,
+> +	.vsync_end	= 1280 + 4 + 8,
+> +	.vtotal		= 1280 + 4 + 8 + 4,
+> +	.vrefresh	= 60,
+> +	.flags 		= DRM_MODE_FLAG_NVSYNC | DRM_MODE_FLAG_NHSYNC,
+> +};
+> +
+> +static const struct panel_desc friendlyarm_hd702e = {
+> +	.modes = &friendlyarm_hd702e_mode,
+> +	.num_modes = 1,
+> +	.size = {
+> +		.width	= 94,
+> +		.height	= 151,
+> +	},
+> +};
+As I read the datasheet then this panel needs at least a prepare delay
+of 10 ms (it says > 10 ms from VGH until Data).
+And then we also know that VGH shall be valid at least 10 ms after DVDD
+so prepare is likely 20 ms.
 
-Yes the pin of the soc is shared between those functions, so you'll
-have to check the schematics of your board where this pin is going
-to.
+Based on datasheet found here:
+https://pan.baidu.com/s/1geEfBLh/
 
-If you check the schematics [0] page 11, GPIO4_C7's signal is named HDMI_CEC
-and on page 18 you can see that it goes as expected to the cec-pin of the
-hdmi connector. 
+Please evaluate all delays.
 
-So the Nanopc-T4 should only select the cec signal.
+> +
+>  static const struct drm_display_mode giantplus_gpg482739qs5_mode = {
+>  	.clock = 9000,
+>  	.hdisplay = 480,
+> @@ -2634,6 +2657,9 @@ static const struct of_device_id platform_of_match[] = {
+>  	}, {
+>  		.compatible = "edt,etm0700g0edh6",
+>  		.data = &edt_etm0700g0bdh6,
+> +	}, {
+> +		.compatible = "friendlyarm,hd702e",
+> +		.data = &friendlyarm_hd702e,
+>  	}, {
+>  		.compatible = "foxlink,fl500wvr00-a0t",
+>  		.data = &foxlink_fl500wvr00_a0t,
 
+Add these in sorted order.
+"fox" is before "fri"
 
-Heiko
-[0] http://wiki.friendlyarm.com/wiki/images/f/f4/NanoPC-T4-1802-Schematic.pdf
-
-
-
+	Sam
 
 _______________________________________________
 Linux-rockchip mailing list
