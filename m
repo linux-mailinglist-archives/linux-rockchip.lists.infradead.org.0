@@ -2,69 +2,59 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42705115A3
-	for <lists+linux-rockchip@lfdr.de>; Thu,  2 May 2019 10:43:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 914EF12173
+	for <lists+linux-rockchip@lfdr.de>; Thu,  2 May 2019 19:58:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8SMxSzTajPtgq2r0Vn1krlRYkvyCKL5zWkAxeX18KrQ=; b=jHn/ogadlJ8lfU
-	5s1+TVJPl7b8uz5Plc8vv/uTLt2EJctpqxGpXR4QvvY2Ujhw0ZTKkCFUoCJPiv+yxkNFao3DSpIp4
-	3Hxoq79Z6Uv8fdHN8Q6lv7mJLZBzbT7YA2Az7NhJLtQ+QiQP47XLqQ2mxLBXrtPtjMvh7qJ8+i3A4
-	i+Lg/emPOOqPO0YZjIwM7rwadus1rIQax+FoT/ZIBx8Sb98tmasChAmhk723lUBAg6OVp/mQbBdHo
-	HKKt/x6/TcQf91dVqyxs3kfyRrfie8v9g2ZG/bL7u2lQurZH8fOpCqxGIYOWd4gZiu9phQtZUSMG6
-	GAVPzZi1kuuB+V3M2Lyg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Bxi2UPHa9rajcKRLNeDlGrG+FkZbjvTjb8QXLziS68U=; b=qyX8exlLpajxeV
+	LgteUGI4+953ZasTVPLuKoS3MtNhrUp3IgdGmVHAb7poU87qr2bcF5Q53NOLOPnpP/M3mIW7bzyfe
+	bTrHeh/SrDfEnvRzvltjYoM1Ij5q9hGOc9avZoELm3hH3TEoZc0/QCVMQxND/tT8taiblJtJ4fNnc
+	3L3hKQ3zPG539sIfPUYBLdB3gJY0v6ckuMdoD5EYHAYHnFwWL3nyGaMezQ/oa9YLO3bHw2AznIu7t
+	OMkLmmzSRJSEYsPYcbAa1qOOwliZu+cTBG3P7ZBgJXTNrp3kKcQhPv9oMZRkkFsVBZsNLs/ioESSQ
+	HgZKlFh2T15rF/PlOOOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM7Iw-0007JF-0D; Thu, 02 May 2019 08:42:58 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hMFyo-0002cy-6g; Thu, 02 May 2019 17:58:46 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM7Io-0007Iw-5L
- for linux-rockchip@lists.infradead.org; Thu, 02 May 2019 08:42:55 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1hM7Ij-0003O8-5b; Thu, 02 May 2019 10:42:45 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1hM7Ii-0002yT-0a; Thu, 02 May 2019 10:42:44 +0200
-Date: Thu, 2 May 2019 10:42:43 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Boris Brezillon <boris.brezillon@collabora.com>
-Subject: Re: [PATCH v2 1/3] pwm: rockchip: Don't update the state for the
- caller of pwm_apply_state()
-Message-ID: <20190502084243.anz5myut63g4torn@pengutronix.de>
-References: <20190312214605.10223-2-u.kleine-koenig@pengutronix.de>
- <1707507.TOMHpQGrZ7@phil>
- <CAD=FV=WZHouhGcxOgNG3006XajJQaAp0uq9WjeKRikQx1ru4TA@mail.gmail.com>
- <20190408143914.uucb5dwafq3cnsmk@pengutronix.de>
- <CA+ASDXO=szekU97iTDK9vqWjT+JtAKeCNTyoY=8aSi5d+v4mkA@mail.gmail.com>
- <20190429065613.n52uwgys5eugmssd@pengutronix.de>
- <CAD=FV=U71u39ZHkBBfAXVAP=_hY-bAw3L7JdhC=36jkUVxPOmQ@mail.gmail.com>
- <20190502091638.0f5a40b0@collabora.com>
- <20190502073326.sgqgkiexjkipvi27@pengutronix.de>
- <20190502100951.23ef9ed1@collabora.com>
+ id 1hMFyQ-0002AZ-SU; Thu, 02 May 2019 17:58:24 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: gportay) with ESMTPSA id 59086260C68
+From: =?UTF-8?q?Ga=C3=ABl=20PORTAY?= <gael.portay@collabora.com>
+To: MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ Chanwoo Choi <cw00.choi@samsung.com>, Rob Herring <robh+dt@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Lin Huang <hl@rock-chips.com>, Brian Norris <briannorris@chromium.org>,
+ Douglas Anderson <dianders@chromium.org>,
+ Klaus Goger <klaus.goger@theobroma-systems.com>,
+ Derek Basehore <dbasehore@chromium.org>, Randy Li <ayaka@soulik.info>,
+ linux-pm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+Subject: [PATCH v5 0/5] Add support for drm/rockchip to dynamically control
+ the DDR frequency.
+Date: Thu,  2 May 2019 13:58:14 -0400
+Message-Id: <20190502175820.25382-1-gael.portay@collabora.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190502100951.23ef9ed1@collabora.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-rockchip@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_014250_361868_79465C69 
-X-CRM114-Status: GOOD (  45.01  )
+X-CRM114-CacheID: sfid-20190502_105823_180306_72B6FF91 
+X-CRM114-Status: GOOD (  14.59  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -77,268 +67,93 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm <linux-pwm@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Brian Norris <briannorris@chromium.org>, Doug Anderson <dianders@chromium.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
- Sascha Hauer <kernel@pengutronix.de>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, kernel@collabora.com,
+ =?UTF-8?q?Ga=C3=ABl=20PORTAY?= <gael.portay@collabora.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hello Boris,
-
-On Thu, May 02, 2019 at 10:09:51AM +0200, Boris Brezillon wrote:
-> On Thu, 2 May 2019 09:33:26 +0200
-> Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de> wrote:
-> =
-
-> > Hello Boris,
-> > =
-
-> > On Thu, May 02, 2019 at 09:16:38AM +0200, Boris Brezillon wrote:
-> > > On Mon, 29 Apr 2019 11:04:20 -0700
-> > > Doug Anderson <dianders@chromium.org> wrote:
-> > >   =
-
-> > > > Hi,
-> > > > =
-
-> > > > On Sun, Apr 28, 2019 at 11:56 PM Uwe Kleine-K=F6nig
-> > > > <u.kleine-koenig@pengutronix.de> wrote:  =
-
-> > > > >
-> > > > > On Thu, Apr 18, 2019 at 05:27:05PM -0700, Brian Norris wrote:    =
-
-> > > > > > Hi,
-> > > > > >
-> > > > > > I'm not sure if I'm misreading you, but I thought I'd add here =
-before
-> > > > > > this expires out of my inbox:
-> > > > > >
-> > > > > > On Mon, Apr 8, 2019 at 7:39 AM Uwe Kleine-K=F6nig
-> > > > > > <u.kleine-koenig@pengutronix.de> wrote:    =
-
-> > > > > > > My intention here is more to make all drivers behave the same=
- way and
-> > > > > > > because only two drivers updated the pwm_state this was the v=
-ariant I
-> > > > > > > removed.    =
-
-> > > > > >
-> > > > > > To be clear, this patch on its own is probably breaking things.=
- Just
-> > > > > > because the other drivers don't implement the documented behavi=
-or
-> > > > > > doesn't mean you should break this driver. Maybe the others just
-> > > > > > aren't used in precise enough scenarios where this matters.
-> > > > > >    =
-
-> > > > > > > When you say that the caller might actually care about the ex=
-act
-> > > > > > > parameters I fully agree. In this case however the consumer s=
-hould be
-> > > > > > > able to know the result before actually applying it. So if yo=
-u do
-> > > > > > >
-> > > > > > >         pwm_apply_state(pwm, { .period =3D 17, .duty_cycle =
-=3D 12, ...})
-> > > > > > >
-> > > > > > > and this results in .period =3D 100 and .duty_cycle =3D 0 the=
-n probably the
-> > > > > > > bad things you want to know about already happend. So my idea=
- is a new
-> > > > > > > function pwm_round_state() that does the adaptions to pwm_sta=
-te without
-> > > > > > > applying it to the hardware. After that pwm_apply_state could=
- do the
-> > > > > > > following:
-> > > > > > >
-> > > > > > >         rstate =3D pwm_round_state(pwm, state)
-> > > > > > >         pwm.apply(pwm, state)
-> > > > > > >         gstate =3D pwm_get_state(pwm)
-> > > > > > >
-> > > > > > >         if rstate !=3D gstate:
-> > > > > > >                 warn about problems    =
-
-> > > > > >
-> > > > > > For our case (we're using this with pwm-regulator), I don't rec=
-all [*]
-> > > > > > we need to be 100% precise about the period, but we do need to =
-be as
-> > > > > > precise as possible with the duty:period ratio -- so once we ge=
-t the
-> > > > > > "feedback" from the underlying PWM driver what the real period =
-will
-> > > > > > be, we adjust the duty appropriately.    =
-
-> > > > >
-> > > > > I admit that I didn't understood the whole situation and (some) t=
-hings
-> > > > > are worse with my patches applied. I still think that changing the
-> > > > > caller's state variable is bad design, but of course pwm_get_state
-> > > > > should return the currently implemented configuration.    =
-
-> > > > =
-
-> > > > Regardless of the pros and cons of the current situation, hopefully
-> > > > we're in agreement that we shouldn't break existing users?  In gene=
-ral
-> > > > I'll probably stay out of the debate as long as we end somewhere th=
-at
-> > > > pwm_regulator is able to somehow know the actual state that it
-> > > > programmed into the hardware.
-> > > > =
-
-> > > > +Boris too in case he has any comments.  =
-
-> > > =
-
-> > > Well, the pwm_round_state() approach sounds okay to me, though I don't
-> > > really see why it's wrong to adjust the state in pwm_apply_state()
-> > > (just like clk_set_rate() will round the rate for you by internally
-> > > calling clk_round_rate() before applying the config).  =
-
-> > =
-
-> > This are two orthogonal things. The "should pwm_apply_state change the
-> > state argument" isn't really comparable to the clk stuff, as there only
-> > the frequency is provided that is passed by value, not by reference as
-> > the PWM state.
-> > =
-
-> > The key argument for me to *not* change it is that it might yield
-> > surprises, still more as today most drivers don't adapt. An -- I admit
-> > constructed, not real-word -- case where adaption would go wrong is:
-> > =
-
-> > 	pwm_apply_state(pwm1, &mystate);
-> > 	pwm_apply_state(pwm2, &mystate);
-> =
-
-> I see, but it's also clearly documented that pwm_apply_state() might
-> adjust the period/duty params [1], and it's not like we have a lot of
-> PWM users converted to use pwm_apply_state(), so I'd expect them to be
-> aware of that and use a reference pwm_state if they need to apply it
-> to different devices.
-
-If we accept that pwm_apply_state should adapt its state argument that
-would be ok for me, too. Then however we should make this consistent and
-consider a deviation that is not reported there as a bug.
-
-Note there are also more subtile problems. For example something like:
-
-	def enable(self):
-		state =3D pwm_get_state(self.pwm)
-		state.duty_cycle *=3D 2
-		pwm_apply_state(self.pwm, state)
-
-	def disable(self):
-		state =3D pwm_get_state(self.pwm)
-		state.duty_cycle /=3D 2
-		pwm_apply_state(self.pwm, state)
-
-doesn't guarantee that the sequence enable(); disable(); is idempotent.
-So my favourite would be to not modfies the caller's copy of state for
-pwm_apply_state(). (Note, this doesn't necessarily have implications
-about the semantik of the lowlevel driver callbacks.) Still
-pwm_get_state() should work and yield the corrected settings.
-
-> > > Note that pwm_config() is doing exactly the same: it adjusts the
-> > > config to HW caps, excepts in that case you don't know it.  =
-
-> > =
-
-> > I don't see what you mean here. I don't see any adaption.
-> =
-
-> I mean that the config you end up is not necessarily what you asked
-> for, and pwm_apply_state() was making that explicit by returning the
-> actual PWM state instead of letting the user think its config has been
-> applied with no adjustment.
-
-Ah. Of course the lowlevel driver has to work with the capabilities of
-the hardware. That is something we cannot get rid of. It's just a
-question how we communicate this to the consumer.
-
-> > > I do understand that some users might want to check how the HW will
-> > > adjust the period/duty before applying the new setup, and in that
-> > > regard, having pwm_round_rate() is a good thing. But in any case, it's
-> > > hard for the user to decide how to adjust things to get what it wants
-> > > (should he increase/decrease the period/duty?).  =
-
-> > =
-
-> > It depends on the use case. For one of them I suggested an algorithm.
-> =
-
-> Yes, I was just trying to say that passing a PWM state to
-> pwm_round_state() is not enough, we need extra info if we want to make
-> it useful, like the rounding policy, the accepted deviation on period,
-> duty or the duty/period ratio, ....
-
-Ack. My suggestion is that round_rate should do:
-
-	if polarity is unsupported:
-		polarity =3D !polarity
-		duty_cycle =3D period - duty_cycle
-
-	period =3D biggest supportable period <=3D requested period, 0 if no
-		such period exists.
-
-	duty_cycle =3D biggest supportable duty cycle <=3D requested
-		duty_cycle, 0 if no such value exists
-
-This would allow to let the consumer (or framework helper function)
-decide which deviation is ok.
-
-> > > My impression is that most users care about the duty/period ratio with
-> > > little interest in accurate period settings (as long as it's close
-> > > enough to what they expect of course). For the round-up/down/closest
-> > > aspect, I guess that's also something we can pass to the new API. So,
-> > > rather than passing it a duty in ns, maybe we could pass it a ratio
-> > > (percent is probably not precise enough for some use cases, so we cou=
-ld
-> > > make it per-million).  =
-
-> > =
-
-> > Yeah, something like that would be good. Still for the device drivers I
-> > would use the callback I suggested because that is easier to implement.
-> =
-
-> Sorry, I just joined the discussion and couldn't find the email where
-> you suggested a new driver hook to deal with that. =
-
-
-https://www.spinics.net/lists/linux-pwm/msg09627.html
-
-> > This way the complexity is once in the framework instead of in each
-> > driver.
-> =
-
-> I think we want to make it possible for drivers to do complex
-> adjustments, and that implies passing all info  to the new driver
-> hook. The core can then provide generic helpers for simple use-cases
-> (approximation for static period/duty steps, where no reclocking is
-> involved).
-
-The problem is that it is hard to come up with a formalism to map "all
-info" because there are so many different ways to prefer one
-configuration over another. I believe we won't be able to design a sane
-callback prototype that allows to map all use cases.
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+RGVhciBhbGwsCgpUaGUgcmszMzk5IHBsYXRmb3JtIGhhcyBhIERGSSBjb250cm9sbGVyIHRoYXQg
+Y2FuIG1vbml0b3IgRERSIGxvYWQgYW5kIGEKRE1DIGRyaXZlciB0aGF0IHRhbGtzIHdpdGggdGhl
+IFRGLUEgKFRydXN0ZWQgRmlybXdhcmUtQSkgdG8gZHluYW1pY2FsbHkKc2V0IHRoZSBERFIgZnJl
+cXVlbmN5IHdpdGggZm9sbG93aW5nIGZsb3cuCgogICAgICAgICAgICAga2VybmVsICAgICAgICAg
+ICAgICAgICAgICAgICAgICBUcnVzdGVkIEZpcm13YXJlLUEKICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAoYmwzMSkKICAgICAgICBtb25pdG9yIGRkciBs
+b2FkCiAgICAgICAgICAgICAgICB8CiAgICAgICAgICAgICAgICB8CiAgICAgICAgZ2V0X3Rhcmdl
+dF9yYXRlCiAgICAgICAgICAgICAgICB8CiAgICAgICAgICAgICAgICB8ICAgICAgICAgICBwYXNz
+IHJhdGUgdG8gVEYtQQogICAgICAgIGNsa19zZXRfcmF0ZShkZHIpIC0tLS0tLS0tLS0tLS0tLS0t
+LS0tLT5ydW4gZGRyIGR2cyBmbG93CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICB8CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICB8CiAgICAgICAgICAgICAgICAgPC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLWVuZCBkZHIgZHZzIGZsb3cKICAgICAgICAgICAgICAgIHwKICAgICAgICAgICAgICAg
+IHwKICAgICAgICAgICAgICByZXR1cm4KClRoZXNlIHBhdGNoZXMgYWRkIHN1cHBvcnQgZm9yIGRl
+dmZyZXEgdG8gZHluYW1pY2FsbHkgY29udHJvbCB0aGUgRERSCmZyZXF1ZW5jeSBmb3IgdGhlIGdy
+dSBjaHJvbWVib29rcy4gQnkgZGVmYXVsdCBpdCB1c2VzIHRoZQonc2ltcGxlX29uZGVtYW5kJyBn
+b3Zlcm5vciB3aGljaCBjYW4gYWRqdXN0IHRoZSBmcmVxdWVuY3kgYmFzZWQgb24gdGhlCkREUiBs
+b2FkLgoKV2FpdGluZyBmb3IgeW91ciBmZWVkYmFjay4KCkJlc3QgcmVnYXJkcywKR2HDq2wKCk5v
+dGU6IFRoZSBSRkMgYW5kIHRoZSBmaXJzdCBwYXRjaHNldCBjb250YWluZWQgdGhyZWUgcGF0Y2hl
+cyB0byBzeW5jIHRoZQpERFIgZnJlcXVlbmN5IGNoYW5nZSB3aXRoaW4gdGhlIHZibGFuay4gVGhl
+c2UgcGF0Y2hlcyB3YXMgc3VibWl0dGVkCnNlcGFyYXRseSBpbiBhIGRlZGljYXRlZCBSRkNbMV0u
+CgpbMV06IGh0dHBzOi8vbGttbC5vcmcvbGttbC8yMDE5LzQvMzAvMTA2NgoKQ2hhbmdlcyBpbiB2
+NToKLSBbUEFUQ0ggdjQgNS81XSBSZW1vdmUgdXNlIG9mIERSQU0gc2V0dGluZyBkZWZpbmVzLgoJ
+CSBSZW1vdmUgbmV3IERSQU0gc2V0dGluZyBoZWFkZXIuCi0gW1BBVENIIHY1IDYvNl0gUmVtb3Zl
+IHJlZmVyZW5jZXMgb2YgdW5leGlzdGFudCBkZWZpbmVzIGluIGRvY3VtZW50YXRpb24gKG5ldwog
+ICAgICAgICAgICAgICAgIHBhdGNoKS4KCkNoYW5nZXMgaW4gdjQ6Ci0gW1BBVENIIHYzIDEvNV0g
+QWRkIEFja2VkLWJ5OiBNeXVuZ0pvbyBIYW0gPG15dW5nam9vLmhhbUBzYW1zdW5nLmNvbT4uCi0g
+W1BBVENIIHYzIDIvNV0gQWRkIEFja2VkLWJ5OiBNeXVuZ0pvbyBIYW0gPG15dW5nam9vLmhhbUBz
+YW1zdW5nLmNvbT4uCi0gW1BBVENIIHYzIDMvNV0gQWRkIEFja2VkLWJ5OiBNeXVuZ0pvbyBIYW0g
+PG15dW5nam9vLmhhbUBzYW1zdW5nLmNvbT4uCi0gW1BBVENIIHYzIDQvNV0gUmVtb3ZlIGJvYXJk
+IHJlbGF0ZWQgRERSIHNldHRpbmdzIChtb3ZlZCB0byA1LzUpLgotIFtQQVRDSCB2MyA1LzVdIEFk
+ZCBib2FyZCByZWxhdGVkIEREUiBzZXR0aW5ncyAobW92ZWQgZnJvbSA1LzUpLgoKQ2hhbmdlcyBp
+biB2MzoKLSBbUEFUQ0ggdjIgMS81XSBBZGQgU2lnbmVkLW9mZi1ieTogR2HDq2wgUE9SVEFZIDxn
+YWVsLnBvcnRheUBjb2xsYWJvcmEuY29tPi4KLSBbUEFUQ0ggdjIgMi81XSBBZGQgU2lnbmVkLW9m
+Zi1ieTogR2HDq2wgUE9SVEFZIDxnYWVsLnBvcnRheUBjb2xsYWJvcmEuY29tPi4KLSBbUEFUQ0gg
+djIgMy81XSBBZGQgU2lnbmVkLW9mZi1ieTogR2HDq2wgUE9SVEFZIDxnYWVsLnBvcnRheUBjb2xs
+YWJvcmEuY29tPi4KCQkgUmVtb3ZlIGNvbW1lbnRzLgoJCSBNb3ZlIHBtdSBkdCBwYXJzaW5nIGFm
+dGVyIGR0LXBhcnNpbmcgb2YgdGltaW5ncyB0byBmaXgKCQkgIGRhdGEtPm9kdF9kaXNfZnJlcSB2
+YWx1ZS4KLSBbUEFUQ0ggdjIgNS81XSBSZW1vdmUgZGlzcGxheV9zdWJzeXN0ZW0gbm9kZXMuCgpD
+aGFuZ2VzIGluIHYyOgotIFtQQVRDSCAxLzhdIFJlYWxseSBhZGQgQWNrZWQtYnk6IENoYW53b28g
+Q2hvaSA8Y3cwMC5jaG9pQHNhbXN1bmcuY29tPi4KLSBbUEFUQ0ggNC84XSBSZW1vdmVkIGZyb20g
+cGF0Y2hzZXQuCi0gW1BBVENIIDUvOF0gUmVtb3ZlZCBmcm9tIHBhdGNoc2V0LgotIFtQQVRDSCA2
+LzhdIFJlbW92ZWQgZnJvbSBwYXRjaHNldC4KLSBbUEFUQ0ggNy84XSBSZXdvcmQgdGhlIGNvbW1p
+dCBtZXNzYWdlIHRvIHJlZmxlY3QgdGhlIHJlbW92YWwgb2YKICAgICAgICAgICAgICByazMzOTAt
+ZHJhbS1kZWZhdWx0LXRpbWluZy5kdHMgaW4gdjEuCi0gW1BBVENIIDgvOF0gTW92ZSBjZW50ZXIt
+c3VwcGx5IGF0dHJpYnV0ZSBvZiBkbWMgbm9kZSBpbiBmaWxlCiAgICAgICAgICAgICAgcmszMzk5
+LWdydS1jaHJvbWVib29rLmR0c2kgKHdoZXJlIHBwdmFyX2NlbnRlcmxvZ2ljIGlzCgkgICAgICBk
+ZWZpbmVkKS4KCkNoYW5nZXMgaW4gdjE6Ci0gW1JGQyAxLzEwXSBBZGQgQWNrZWQtYnk6IENoYW53
+b28gQ2hvaSA8Y3cwMC5jaG9pQHNhbXN1bmcuY29tPgotIFtSRkMgMS8xMF0gcy9HZW5lcmljL0dl
+bmVyYWwvIChSb2JpbiBNdXJwaHkpCi0gW1JGQyAyLzEwXSBBZGQgcmV2aWV3ZWQgYW5kIGFja2Vk
+IHRhZ3MgZnJvbSBDaGFud29vIENob2kgYW5kIFJvYiBIZXJyaW5nCi0gW1JGQyAzLzEwXSBBZGQg
+YW4gZXhwbGFuYXRpb24gZm9yIHBsYXRmb3JtIFNJUCBjYWxscy4KLSBbUkZDIDMvMTBdIENoYW5n
+ZSBpZiBzdGF0ZW1lbnQgZm9yIGEgc3dpdGNoLgotIFtSRkMgMy8xMF0gUmVuYW1lIGRkcl9mbGFn
+IHRvIG9kdF9lbmFibGUgdG8gYmUgbW9yZSBjbGVhci4KLSBbUkZDIDQvMTBdIFJlbW92ZWQgZnJv
+bSB0aGUgc2VyaWVzLiBJIGRpZCBub3QgZm91bmQgYSB1c2UgY2FzZSB3aGVyZSBub3QgaG9sZGlu
+ZyB0aGUgbXV0ZXggY2F1c2VzIHRoZSBpc3N1ZS4KLSBbUkZDIDcvMTBdIFJlbW92ZWQgZnJvbSB0
+aGUgc2VyaWVzLiBJIGRpZCBub3QgZm91bmQgYSB1c2UgY2FzZSB3aGVyZSB0aGlzIG1hdHRlcnMu
+Ci0gW1JGQyA4LzEwXSBNb3ZlIHJrMzM5OS1kcmFtLmggdG8gZHQtaW5jbHVkZXMuCi0gW1JGQyA4
+LzEwXSBQdXQgc2RyYW0gZGVmYXVsdCB2YWx1ZXMgdW5kZXIgdGhlIGRtYyBub2RlLgotIFtSRkMg
+OC8xMF0gUmVtb3ZlZCByazMzOTktZHJhbS1kZWZhdWx0LXRpbWluZy5kdHMKCkVucmljIEJhbGxl
+dGJvIGkgU2VycmEgKDMpOgogIGRldmZyZXE6IHJvY2tjaGlwLWRmaTogTW92ZSBHUkYgZGVmaW5p
+dGlvbnMgdG8gYSBjb21tb24gcGxhY2UuCiAgZHQtYmluZGluZ3M6IGRldmZyZXE6IHJrMzM5OV9k
+bWM6IEFkZCByb2NrY2hpcCxwbXUgcGhhbmRsZS4KICBkZXZmcmVxOiByazMzOTlfZG1jOiBQYXNz
+IE9EVCBhbmQgYXV0byBwb3dlciBkb3duIHBhcmFtZXRlcnMgdG8gVEYtQS4KCkdhw6tsIFBPUlRB
+WSAoMSk6CiAgZHQtYmluZGluZ3M6IGRldmZyZXE6IHJrMzM5OV9kbWM6IFJlbW92ZSByZWZlcmVu
+Y2VzIG9mIHVuZXhpc3RhbnQKICAgIGRlZmluZXMKCkxpbiBIdWFuZyAoMik6CiAgYXJtNjQ6IGR0
+czogcmszMzk5OiBBZGQgZGZpIGFuZCBkbWMgbm9kZXMuCiAgYXJtNjQ6IGR0czogcm9ja2NoaXA6
+IEVuYWJsZSBkbWMgYW5kIGRmaSBub2RlcyBvbiBncnUuCgogLi4uL2JpbmRpbmdzL2RldmZyZXEv
+cmszMzk5X2RtYy50eHQgICAgICAgICAgIHwgNzUgKysrKysrKysrLS0tLS0tLS0tLQogLi4uL2R0
+cy9yb2NrY2hpcC9yazMzOTktZ3J1LWNocm9tZWJvb2suZHRzaSAgIHwgIDQgKwogYXJjaC9hcm02
+NC9ib290L2R0cy9yb2NrY2hpcC9yazMzOTktZ3J1LmR0c2kgIHwgNDUgKysrKysrKysrKysKIC4u
+Li9ib290L2R0cy9yb2NrY2hpcC9yazMzOTktb3AxLW9wcC5kdHNpICAgICB8IDI5ICsrKysrKysK
+IGFyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LmR0c2kgICAgICB8IDE5ICsrKysr
+CiBkcml2ZXJzL2RldmZyZXEvZXZlbnQvcm9ja2NoaXAtZGZpLmMgICAgICAgICAgfCAyMyArKy0t
+LS0KIGRyaXZlcnMvZGV2ZnJlcS9yazMzOTlfZG1jLmMgICAgICAgICAgICAgICAgICB8IDcxICsr
+KysrKysrKysrKysrKysrLQogaW5jbHVkZS9zb2Mvcm9ja2NoaXAvcmszMzk5X2dyZi5oICAgICAg
+ICAgICAgIHwgMjEgKysrKysrCiBpbmNsdWRlL3NvYy9yb2NrY2hpcC9yb2NrY2hpcF9zaXAuaCAg
+ICAgICAgICAgfCAgMSArCiA5IGZpbGVzIGNoYW5nZWQsIDIzMiBpbnNlcnRpb25zKCspLCA1NiBk
+ZWxldGlvbnMoLSkKIGNyZWF0ZSBtb2RlIDEwMDY0NCBpbmNsdWRlL3NvYy9yb2NrY2hpcC9yazMz
+OTlfZ3JmLmgKCi0tIAoyLjIxLjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
