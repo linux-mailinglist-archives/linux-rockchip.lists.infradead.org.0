@@ -2,88 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11482122DE
-	for <lists+linux-rockchip@lfdr.de>; Thu,  2 May 2019 21:51:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46CA912432
+	for <lists+linux-rockchip@lfdr.de>; Thu,  2 May 2019 23:36:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w7orZBR9HNo0QS8cAV1sV+knXR44qN8bhEV/9erZbk4=; b=IrAmbp6y7qpyyg
-	U/F1/lqeEnGFoZj19MWKUu0PDl+/zhcL4a0vhlRnEuHr99QkGjIDy+TTGG9G43KyI4BE6vADFR54t
-	Ybm2WWdAzuJpzixX4aO6juMWviy0Cd+z2UrFNnlkmcO7oavaQKH0LsB4TFbORnamCSL02t/QIah2N
-	65x4fqpic9iUJTRWELBV2Uzm5WIcLgctSRyTjpx2GIkXrJoWvu7/c68Jao+XwV3VS6zvSjHa5HeGI
-	+woGvg2ubqlR4ql/+orlYtpTcgqxq4t9d8UaU4Rc32A12YBrZQ361Ung1Ab06v/ACaa/7xtFErByg
-	gm/npEB6dvUd9GkZjKtg==;
+	List-Owner; bh=VRvv9wPk8P0wYrw+CHh7MZpB7QPzUBAFGErZx/ZodPA=; b=rowKYfhy+niYbB
+	P6Ifv23CRat05UQx+JXWzvM46BVgPIozUX8ryvdO9VL0Cjiq3Ldw3NyqJubbYOWQWJs6JyKGXGXFE
+	DKZNeHlT999zDLaYiDz13+asFPgHGNmk22PqlDPYaKCJ5BRuMJOWQHhttnUepAsdrEbjCXUYRiQBQ
+	4p0UMoPzhE+zX3UtzLImg1h5/FRs/5wx8Hg2Fd9Vw7lAtIELQQJPktxzyLju+AtFJ/3+D4APttOmt
+	0OHNntPjhishjYH0+WFXYpbPVLL8HgC9R3KrXO1OnThRtutT25zf1E1rf9doiO5zzy0ePkKmpom4Z
+	Rlx/35DZX/x+OYdv7wRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMHjS-0001lb-SM; Thu, 02 May 2019 19:51:02 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1hMJNJ-0005p4-Ad; Thu, 02 May 2019 21:36:17 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMHj5-0001JV-0f
- for linux-rockchip@lists.infradead.org; Thu, 02 May 2019 19:50:45 +0000
-Received: by mail-qt1-x844.google.com with SMTP id c13so4064054qtn.8
- for <linux-rockchip@lists.infradead.org>; Thu, 02 May 2019 12:50:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=IADIU/EJ9FI/G06p19V/c4J8lEcHwqipgCGxkBiLylg=;
- b=Ix+JXVfo5ioRlNyP7UOsKwtCE1OZDBhyykPeRvW+abKdoCm2K5Iwhtt9QaXnM5CyQT
- QFEfeE1IT/KketqZA5YmdbDSrdGnTEUv2hi+OaOgcE3WEG+scLnzz/ecldOczc8PblKe
- w7t7g/f+LUB23NhiJqV/Amje431fC0KPD9WcMUVbNEwBA38DsWzYUpXxpNdRvbVnzuS6
- RULSnXewuPeKU00sikjI+d2D1Cmc+ZpvMfPDTcg54RpVtubQsm7pvWnTiOYhTRig4Sod
- 0yy24k5oVH7rnk8M4EnOgcCx+k/lrqn5jGBDkzYlVas4d8kBKOK0DSjkrRHQddd8i0l5
- zCFg==
+ id 1hMJNA-0005ih-0x; Thu, 02 May 2019 21:36:10 +0000
+Received: by mail-ot1-f68.google.com with SMTP id o39so3516323ota.6;
+ Thu, 02 May 2019 14:36:07 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=IADIU/EJ9FI/G06p19V/c4J8lEcHwqipgCGxkBiLylg=;
- b=bdI7oXM6TyX+jIwBXASn2Pmsxs9mA4azLjtX8VqACbdtMYmCCCWoQLuBbm0dBpnNLp
- c8V4J7oW0cbhTF3PyTnGXllcZJ9NaE3DAiILuGYpVJ2lHozQRQluLRgxb1I0XzzqFHLR
- bpeYVO00gekiCKWjTxwtLGak4yDPFpX87x8zPhpIZPWxpd4rZIoWhz+NDEXU5oemKY2C
- TOgaSplwhpBfqSnn4ZefJNRfTUQs2MHcRlGdTxKQvgML7j92letOhJnIiI6ne2IA4VLj
- Rr7yf0R6DvanBjpIdpETl/ke5PEcMBPfVIEq0FKug0X4Zz92sV1/CLArsCrW3WF43x0B
- 3nrg==
-X-Gm-Message-State: APjAAAUbMb9oUo/1whLeu22xcj+vd3xUV6Ql9riZmr3S/f5qvkoMI02R
- mwVejgR+dWUIM9tWlPD4THgVhA==
-X-Google-Smtp-Source: APXvYqxoEjvDEwkFiRYlf8cfhBENPjVWtZtE47VplWYS6ASODl3pXsDRHDYt5Doku3c45vfLjiwn3g==
-X-Received: by 2002:ac8:3166:: with SMTP id h35mr4853635qtb.268.1556826637769; 
- Thu, 02 May 2019 12:50:37 -0700 (PDT)
-Received: from rosewood.cam.corp.google.com
- ([2620:0:1013:11:89c6:2139:5435:371d])
- by smtp.gmail.com with ESMTPSA id k36sm34366qtc.52.2019.05.02.12.50.36
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 02 May 2019 12:50:37 -0700 (PDT)
-From: Sean Paul <sean@poorly.run>
-To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v3 10/10] drm/rockchip: Use drm_atomic_helper_commit_tail_rpm
-Date: Thu,  2 May 2019 15:49:52 -0400
-Message-Id: <20190502194956.218441-11-sean@poorly.run>
-X-Mailer: git-send-email 2.21.0.593.g511ec345e18-goog
-In-Reply-To: <20190502194956.218441-1-sean@poorly.run>
-References: <20190502194956.218441-1-sean@poorly.run>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=QOVychIUmtDG8Tll/ecV8whoYD0pZhfgpjrLj+GI7lA=;
+ b=FwxEoKn5Q5WysyO9sc949PRaAOy0FUMk570W81dbr8tXxR0DcIGQheWeKXAM1A+rko
+ 8hMy0yveVapxeWloQijM4dEM706Fxb9G5huNipmzIMOtyQH3ZEnHaEco0BuTniZ0T3VY
+ 2zFM7irdp1tvGTiG3alBzskSYjmUq1DKzY2eDtlhsRstvvZWYzIUEuwJ3Gdql95gmd2L
+ PUdSrIM1ZZ8liioe5YHcuN53YVCG1ffwiLAGtHZTM8GJCZkJ6SIDFXQSjASMJ/ckp64e
+ /v1kY8FP7jIpq1+FtkhnUOCgZG+ezWjfBn+7gJzt7lbx2HcYB/beJbjr3JiqM7p/NJBG
+ BLvQ==
+X-Gm-Message-State: APjAAAXgpwJXKumP7Jv7EYPNqCznHcPiwG3GjRMH0VuaD9IJUZ7cA9a5
+ Dq6kZfMkCveWl5juE0Jqd4KEHVw=
+X-Google-Smtp-Source: APXvYqzIKpF2SpUiGqboXp/KmEVvROVVZj0uRCj2SNazB/0BEXuociHSUGYQnO9Q7HpLJFsgEabH2g==
+X-Received: by 2002:a9d:7d06:: with SMTP id v6mr4009955otn.187.1556832966725; 
+ Thu, 02 May 2019 14:36:06 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id n185sm213641oif.8.2019.05.02.14.36.05
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 02 May 2019 14:36:06 -0700 (PDT)
+Date: Thu, 2 May 2019 16:36:05 -0500
+From: Rob Herring <robh@kernel.org>
+To: Jagan Teki <jagan@amarulasolutions.com>
+Subject: Re: [PATCH 1/2] drm/panel: simple: Add FriendlyELEC HD702E 800x1280
+ LCD panel
+Message-ID: <20190502213605.GA20606@bogus>
+References: <20190501121448.3812-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190501121448.3812-1-jagan@amarulasolutions.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_125039_411272_EFBE8686 
-X-CRM114-Status: GOOD (  11.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190502_143608_764949_EC8546E6 
+X-CRM114-Status: GOOD (  11.61  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,73 +90,39 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Zain Wang <wzz@rock-chips.com>,
- =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
- Sandy Huang <hjc@rock-chips.com>, Tomasz Figa <tfiga@chromium.org>,
- linux-rockchip@lists.infradead.org, Sean Paul <seanpaul@chromium.org>,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
+ Sam Ravnborg <sam@ravnborg.org>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jagan Teki <jagan@amarulasolutions.com>, Daniel Vetter <daniel@ffwll.ch>,
+ linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Sean Paul <seanpaul@chromium.org>
+On Wed,  1 May 2019 17:44:47 +0530, Jagan Teki wrote:
+> HD702E lcd is FriendlyELEC developed eDP LCD panel with 800x1280
+> resolution. It has built in Goodix, GT9271 captive touchscreen
+> with backlight adjustable via PWM.
+> 
+> Add support for it.
+> 
+> Cc: Thierry Reding <thierry.reding@gmail.com>
+> Cc: Sam Ravnborg <sam@ravnborg.org>
+> Cc: David Airlie <airlied@linux.ie>
+> Cc: Daniel Vetter <daniel@ffwll.ch>
+> Cc: dri-devel@lists.freedesktop.org
+> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> ---
+>  .../display/panel/friendlyarm,hd702e.txt      | 29 +++++++++++++++++++
+>  drivers/gpu/drm/panel/panel-simple.c          | 26 +++++++++++++++++
+>  2 files changed, 55 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/panel/friendlyarm,hd702e.txt
+> 
 
-Now that we use the drm psr helpers, we no longer need to hand-roll our
-atomic_commit_tail implementation. So use the helper
-
-Changes in v2:
-- None
-Changes in v3:
-- None
-
-Link to v1: https://patchwork.freedesktop.org/patch/msgid/20190228210939.83386-6-sean@poorly.run
-Link to v2: https://patchwork.freedesktop.org/patch/msgid/20190326204509.96515-5-sean@poorly.run
-
-Cc: Zain Wang <wzz@rock-chips.com>
-Cc: Tomasz Figa <tfiga@chromium.org>
-Signed-off-by: Sean Paul <seanpaul@chromium.org>
----
- drivers/gpu/drm/rockchip/rockchip_drm_fb.c | 21 +--------------------
- 1 file changed, 1 insertion(+), 20 deletions(-)
-
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
-index 214064d599ee..1c63d9e833bc 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
-@@ -117,27 +117,8 @@ rockchip_user_fb_create(struct drm_device *dev, struct drm_file *file_priv,
- 	return ERR_PTR(ret);
- }
- 
--static void
--rockchip_atomic_helper_commit_tail_rpm(struct drm_atomic_state *old_state)
--{
--	struct drm_device *dev = old_state->dev;
--
--	drm_atomic_helper_commit_modeset_disables(dev, old_state);
--
--	drm_atomic_helper_commit_modeset_enables(dev, old_state);
--
--	drm_atomic_helper_commit_planes(dev, old_state,
--					DRM_PLANE_COMMIT_ACTIVE_ONLY);
--
--	drm_atomic_helper_commit_hw_done(old_state);
--
--	drm_atomic_helper_wait_for_vblanks(dev, old_state);
--
--	drm_atomic_helper_cleanup_planes(dev, old_state);
--}
--
- static const struct drm_mode_config_helper_funcs rockchip_mode_config_helpers = {
--	.atomic_commit_tail = rockchip_atomic_helper_commit_tail_rpm,
-+	.atomic_commit_tail = drm_atomic_helper_commit_tail_rpm,
- };
- 
- static const struct drm_mode_config_funcs rockchip_drm_mode_config_funcs = {
--- 
-Sean Paul, Software Engineer, Google / Chromium OS
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 Linux-rockchip mailing list
