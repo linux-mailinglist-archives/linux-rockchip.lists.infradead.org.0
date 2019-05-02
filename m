@@ -2,81 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79FF5124CA
-	for <lists+linux-rockchip@lfdr.de>; Fri,  3 May 2019 00:54:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 348B7124D5
+	for <lists+linux-rockchip@lfdr.de>; Fri,  3 May 2019 00:55:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1o1/CWSWLOYlyEOuNmqxWSlOJQMtuyyBesLaaMc3ClE=; b=DhAPs9wCUIDOD2
-	ciBg5MxoIMkpXn7Zo6gXwIZCJhB/bE5Nq+o+jwSoOj+flilrKlKQjeZEppLdC9pIWKPh1JcAS1T7y
-	PU1Mzwjeui0uw/LR/wUjbEgqOHAZXC4ItGRw3H4pUVta+OGGWtVrPD0gFq21KkSL6LUZsNDPrnjz9
-	cNtDoKV5vUdyhlreHk/DN2al6CpaBg9SVwtDhe+fArjFJLOHqWy3TulQ1hb6rQgpb2PIgpXalbXx7
-	zjOY+LmirEuO48CN/0W5PWmm9g7TWPEwfdXIxcuDSQVepocTLEqDRNelRLmaXmXsFfqS64WpoO9jN
-	ECmwMZaJkypMxlUNdXSw==;
+	List-Owner; bh=zzfJCcSTMFIe2K749vFwVX0S3cvB7OqMVI4ncLaGZKM=; b=Pr/U2z00HCsrqy
+	wja2H35JZkYIh0sW1Ud2bNq93hF++RLZjFza49EIKuwerNCeazyYFM1a3z8rea6ZB1pn9E8uzCEJU
+	WzXYjFQOzJIa4Y0bA3byekWcThJCjOBAGQxAPhlatIhcYpEWLFgntYXaH5dS8UD1T2rBPNBlDCabp
+	Ir1S3JSjzydIce+uXvHF5ifvMWT7/frhYkXb8Hb1t3H650z4pRvlu/doI6veWto2yyf0i8COMQMnd
+	im/iOvpcU9FNEJwrKeAxsqOsChFlYn/Y9aB//M9m5FWUV6phw8lGoaDgSH64IsAkcObY5hqzHoOUT
+	+GqU+duYsw2RuFR2lKsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMKb8-0005HY-UV; Thu, 02 May 2019 22:54:39 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hMKbZ-0005v2-Im; Thu, 02 May 2019 22:55:05 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMKax-00053S-7A
- for linux-rockchip@lists.infradead.org; Thu, 02 May 2019 22:54:28 +0000
-Received: by mail-pl1-x641.google.com with SMTP id x15so1704414pln.9
- for <linux-rockchip@lists.infradead.org>; Thu, 02 May 2019 15:54:27 -0700 (PDT)
+ id 1hMKay-00053z-Ay
+ for linux-rockchip@lists.infradead.org; Thu, 02 May 2019 22:54:30 +0000
+Received: by mail-pl1-x642.google.com with SMTP id l2so1702127plt.11
+ for <linux-rockchip@lists.infradead.org>; Thu, 02 May 2019 15:54:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=BCfT3guVZby54KoAuU06+BY6v/qUrN3VwEkT+0PJiPM=;
- b=myoH4NG/U3H7QRfzmXh4KXBkwHqlnBXLuw+YtDbLUP16dgiGTtAys0/bk3SYGDdI70
- 6K+XsQzwdrj70SZjh8KM5efvveW/76bJR9i09nnkUlZn/ZFw1ZqUNUvi7N6yAStsPwSx
- uiRq7YcNI6KCMxbDCNVDo5hZeJamSb50B5Czo=
+ bh=P+ZPNiv5B5kytob2vOwdU5pZyvzNXPIUr8ZUKGFUcOY=;
+ b=h0wYyVMluUVAdv1NwQOAAhlwteWpgYwW8HXhS8VG32Z7Lf9yxA4NuF5+A0czBvZzKv
+ lJVcxHPaPYIKXirJmLKL7liFbEaF4geinpGCsaSD7+tuUJ31PO4yA9oJQyZ+bTMX2yqH
+ davXBEyebjxtzyIeeIKbXwcoU9AzTCZef7yaI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=BCfT3guVZby54KoAuU06+BY6v/qUrN3VwEkT+0PJiPM=;
- b=A8xb/zJzfw76X+0qAXk0i7tcAYGNJMWENF+lV+JrkGunbanZeJXAbEUunU5YbFlfey
- BjOhCq7vq1KI2PvQfiYZVsqQvvH66PRGNzOuA956PBcBRzAnJVcX/w45jfwUQqNvUhrj
- KvgK8ZD5E4N8RmaO4Zi5qyjkegMPbx2GOfYlnZWf7iXPN9afIo6vH2Yz/dWTJOg15pGr
- Dp0TrLyl2t1WJ2SnW15SABj0ax0UQ89nRK6pKlH4fQLwsqoUQdwD/d7TwpSBtZSbXuen
- gmGN9rpbSMj3d/39imq7U4EPhl2sDyz5e8lm4TplE1pwY8jzeYIPxZ9tm8/Qd2pVTDaj
- ynmw==
-X-Gm-Message-State: APjAAAU9ixoR190lqISGs29EegRGypAMP1aVrLpYA81Ty+FTEPhK3qyN
- mMNI418XDUyW5zpqYHeGJz8UGQ==
-X-Google-Smtp-Source: APXvYqw7cw2KkNl8Nu4qGTRrZSO9BSZbc8Jug59xzytFinnS0nDNEMXcfMRtFwgbTp5rGb5QpsTCQQ==
-X-Received: by 2002:a17:902:1602:: with SMTP id
- g2mr6499886plg.325.1556837666467; 
- Thu, 02 May 2019 15:54:26 -0700 (PDT)
+ bh=P+ZPNiv5B5kytob2vOwdU5pZyvzNXPIUr8ZUKGFUcOY=;
+ b=XVLcWW/3KVoCXRm7MsSI7v/DHASicrMXyqvdSa45IgkMToMuE3CDS7OsBkhzoL8EcT
+ oSXZsh0MHcqpdCiMaQBb43z/+dLhiULyaSrzM0WOg3QekeI9Dxgz2l8dIb/PYc2StYeD
+ J3TGs12U14QQLi0jApTu46225Zt/LS+Nw4ZU2E67MJ3JhKWPKCwgZpKz8o4M9O+hrwSa
+ NeM6xKnPoSlEthjID5mOZoFyP7S0hqDTXhAXr7CDu0cOGIx74opPAhyq5ivs5yDHhFj4
+ hYWn4m9vMdZS0WZXDzBs7jgmuleEh2z7SEn/ZCiCpIAmG+XyYx5iaAo0SXJyGaeuMMgV
+ Wliw==
+X-Gm-Message-State: APjAAAXGpWprTQqBXgmAicGHpPoJqCJ9cBg0zj4h+wRt1NcjPU+74EZU
+ za+DI/fhZwwzHh2ykrgouKvsJA==
+X-Google-Smtp-Source: APXvYqzd5mafem3up8aafRaHi3Cdrlk1qdlgUPk4BmPnowawJNQiWJT3C7hEk3PNUfbliN1Sz4ERKQ==
+X-Received: by 2002:a17:902:8545:: with SMTP id
+ d5mr6351215plo.198.1556837667556; 
+ Thu, 02 May 2019 15:54:27 -0700 (PDT)
 Received: from tictac2.mtv.corp.google.com
  ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id v15sm264736pff.105.2019.05.02.15.54.25
+ by smtp.gmail.com with ESMTPSA id v15sm264736pff.105.2019.05.02.15.54.26
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 02 May 2019 15:54:25 -0700 (PDT)
+ Thu, 02 May 2019 15:54:27 -0700 (PDT)
 From: Douglas Anderson <dianders@chromium.org>
 To: Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
  Andrzej Hajda <a.hajda@samsung.com>,
  Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
  Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 3/5] ARM: dts: rockchip: Switch to builtin HDMI DDC bus on
- rk3288-veyron
-Date: Thu,  2 May 2019 15:53:34 -0700
-Message-Id: <20190502225336.206885-3-dianders@chromium.org>
+Subject: [PATCH 4/5] ARM: dts: rockchip: Add unwedge pinctrl entries for
+ dw_hdmi on rk3288
+Date: Thu,  2 May 2019 15:53:35 -0700
+Message-Id: <20190502225336.206885-4-dianders@chromium.org>
 X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
 In-Reply-To: <20190502225336.206885-1-dianders@chromium.org>
 References: <20190502225336.206885-1-dianders@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_155427_257175_6B12F922 
-X-CRM114-Status: GOOD (  13.36  )
+X-CRM114-CacheID: sfid-20190502_155428_509049_DDB079B8 
+X-CRM114-Status: GOOD (  12.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -109,48 +109,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Downstream Chrome OS kernels use the builtin DDC bus from dw_hdmi on
-veyron.  This is the only way to get them to negotiate HDCP.
+This adds the "unwedge" pinctrl entries introduced by a recent dw_hdmi
+change that can unwedge the dw_hdmi i2c bus in some cases.  It's
+expected that any boards using this would add:
 
-Although HDCP isn't currently all supported upstream, it still seems
-like it makes sense to use dw_hdmi's builtin I2C.  Maybe eventually we
-can get HDCP negotiation working.
+  pinctrl-names = "default", "unwedge";
+  pinctrl-0 = <&hdmi_ddc>;
+  pinctrl-1 = <&hdmi_ddc_unwedge>;
+
+Note that this isn't added by default because some boards may choose
+to mux i2c5 for their DDC bus (if that is more tested for them).
 
 Signed-off-by: Douglas Anderson <dianders@chromium.org>
 ---
 
- arch/arm/boot/dts/rk3288-veyron.dtsi | 11 ++---------
- 1 file changed, 2 insertions(+), 9 deletions(-)
+ arch/arm/boot/dts/rk3288.dtsi | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-diff --git a/arch/arm/boot/dts/rk3288-veyron.dtsi b/arch/arm/boot/dts/rk3288-veyron.dtsi
-index 1252522392c7..e1bee663d2c5 100644
---- a/arch/arm/boot/dts/rk3288-veyron.dtsi
-+++ b/arch/arm/boot/dts/rk3288-veyron.dtsi
-@@ -163,7 +163,8 @@
- };
+diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+index 74c9517c4f92..eebc04fa1e4d 100644
+--- a/arch/arm/boot/dts/rk3288.dtsi
++++ b/arch/arm/boot/dts/rk3288.dtsi
+@@ -1545,6 +1545,15 @@
+ 				rockchip,pins = <7 RK_PC3 2 &pcfg_pull_none>,
+ 						<7 RK_PC4 2 &pcfg_pull_none>;
+ 			};
++
++			hdmi_ddc_unwedge: hdmi-ddc-unwedge {
++				rockchip,pins = <7 RK_PC3 RK_FUNC_GPIO &pcfg_output_low>,
++						<7 RK_PC4 2 &pcfg_pull_none>;
++			};
++		};
++
++		pcfg_output_low: pcfg-output-low {
++			output-low;
+ 		};
  
- &hdmi {
--	ddc-i2c-bus = <&i2c5>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&hdmi_ddc>;
- 	status = "okay";
- };
- 
-@@ -334,14 +335,6 @@
- 	i2c-scl-rising-time-ns = <300>;		/* 225ns measured */
- };
- 
--&i2c5 {
--	status = "okay";
--
--	clock-frequency = <100000>;
--	i2c-scl-falling-time-ns = <300>;
--	i2c-scl-rising-time-ns = <1000>;
--};
--
- &io_domains {
- 	status = "okay";
- 
+ 		pcfg_pull_up: pcfg-pull-up {
 -- 
 2.21.0.1020.gf2820cf01a-goog
 
