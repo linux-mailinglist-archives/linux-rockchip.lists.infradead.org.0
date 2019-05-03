@@ -2,76 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98F7F1365E
-	for <lists+linux-rockchip@lfdr.de>; Sat,  4 May 2019 01:52:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40A461366A
+	for <lists+linux-rockchip@lfdr.de>; Sat,  4 May 2019 01:58:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3N5JnCzo5TAacrqD+HRkhfBJn+b+LyibyBuFcgVw+UM=; b=KPSBElXzxGmkPj
-	VbcCxC3zetSpCyoKHB+d1ViJhu8dEE8mjm8nRUozqfBkXHMqVbMRJlRnKSp5iqI3Vx7ceT2EI0SxD
-	hIGIQ7qRcfXB5JsFChJGEcvXhRq/ugxhGSrpG+5AgDoikpU9DIgBGNto3O1Nt/STL2xSG2imcdDR+
-	kdxuJ2FEVsnNE/ffxDAbGAAxvZQvf9nkQ5MNSSifzJJ6bmEaTmK49hlCyA31pmXTASdbfIQt0YsKf
-	dxY6l+gpVbrzPMy+bKa5ynMaxte0siQHPfYOmpve+GBvl0FlaxVPsyJvCknKq/BTv2ktbx6kenPKA
-	q9Bm03XlirVui+PUD0ug==;
+	List-Owner; bh=J+yEiSdeYjipcwOgBpXFamuRfX5OdB6ovPjcw2fTi9U=; b=s++MbDEI+NSWQc
+	hKtanlL/1M4KVdt6ch803QX6LKu2FCfnWcGp+utJzlb2mXsM+Z4LRT8o4OhcuTGgb2atDWITT7QMu
+	0YQg1xC7kCLefL4TQiyunjwatp02yg8KAtJU2EC/+c0c6L2vevyDfyd4GmDYrPElvGozCs5vwFBBV
+	DDR+MR4U/8aZnKJzQNs8P8xOBZraCM5xuK7n9sDm06NkcZdV/29Yq1GTrW0IhNOkg2A39R7CjsNPi
+	EsoDRO5tZ2n1dRi1rPnQ5DsM6B8RYKA6PBqUYC6+kLwzpSCT4ye7viU5Nis5/hmu+KkxTXkPEvFPy
+	h2/nNWd0dLk5p3QN8PHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMhz1-0007jv-Ew; Fri, 03 May 2019 23:52:51 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hMi4K-0001Oc-AP; Fri, 03 May 2019 23:58:20 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMhyw-0007ix-0Z
- for linux-rockchip@lists.infradead.org; Fri, 03 May 2019 23:52:49 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 10so3658137pfo.5
- for <linux-rockchip@lists.infradead.org>; Fri, 03 May 2019 16:52:44 -0700 (PDT)
+ id 1hMi4B-0001Hc-Et
+ for linux-rockchip@lists.infradead.org; Fri, 03 May 2019 23:58:12 +0000
+Received: by mail-pl1-x644.google.com with SMTP id x15so3430086pln.9
+ for <linux-rockchip@lists.infradead.org>; Fri, 03 May 2019 16:58:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=zFYO46dMP3SAqBcqLg5CJF+YJTDQUoBvDpuV2RH5L8k=;
- b=gz6GXQvIhiRKo7gHSNL7icfBycNvIyLAkP/uuPyKgv3b8qvGaYPvg0CZiS/1UiF+K4
- +CiZIZbL04xpT0Cdcdm7jmAdxkRSx2gmsqSqNN/aenbrHMFrvIQVe3DSj3oay0qgIK9Z
- XzclcQjv6TE9dRNeLfh33aOEGRNRfIJqObuJQ=
+ bh=v7+8a0jOi82vA98ZW8MLz4Zxp+tPvn5pEZ3hYsxU2i4=;
+ b=KeUBh5m7XrqqJoGtrD6Ib6knt5i2ib8XP24NKJEJyGpAwUOaLX/x7UY2/uecLPiyDe
+ 9yyqjXnlM7Sdn7qZVIKCfp4lijNioihmlVmSLfE2FTzxpqPXWb817IqTmUzMWrglz7sL
+ SQh/iyPbwkDdI8Zm3zUAt91zibej3pbV7DGpc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=zFYO46dMP3SAqBcqLg5CJF+YJTDQUoBvDpuV2RH5L8k=;
- b=pkeFVbI5NKw/cVmCt0g1Bkss4HtZD/dU6ipxHGu7M3muihno5VKDY7iWQsQ2Xz8XN9
- hckct1mx7RRwwXNAEyAGM7+XDUY8kmEw8dQUfAsLvHhlo4kcJI5Ilu3vIV/yw/wqltxS
- gzYZa2dSVjF+sOZA2TLPrJZDkgySOvf6Aw1JaPk7StzSsggkm5yMucNB0rwauSfVpb0I
- TJY8ILXq267dqWoYdxranrQLyfNBaCmwqU0fcbiBuBJ6YBAHIvBfyNmRSIsc7e8Jxbrv
- Yk4ySjprfxQpeUSa2w70Uxnow4Lvbec/XoMpG0kBjT9gdqPzViq3VV5TpHpNWO3PWf7M
- cdzQ==
-X-Gm-Message-State: APjAAAVDprXrgE/iLnic0JxYsXalpGxmpAM0nyc/iXLJtBw3udRgUHm5
- Qo9U9qmhQTUX5dy8eUGWonLFdQ==
-X-Google-Smtp-Source: APXvYqxWLkDJ2g1GBDJh6wJtE/dVgOii3cn8aUKEB3XBCyO9lNe+ybALhKiV+alJ0o+0S+nTV+jW8g==
-X-Received: by 2002:a65:6688:: with SMTP id b8mr14057572pgw.81.1556927563905; 
- Fri, 03 May 2019 16:52:43 -0700 (PDT)
+ bh=v7+8a0jOi82vA98ZW8MLz4Zxp+tPvn5pEZ3hYsxU2i4=;
+ b=cGwDOg9y1NXeuZMZNRbcAb3t0uOA1Agyx1rnK9i9i2I8IvVhYSg5EIU6fv4GoWzKV2
+ DDXt+xwsdUazfYn20U6Rba/8G193s7xsAsJHmjkoDVkgymGmFb56PDNUzqdb8EWU5H29
+ ++KXgpZ1481Z+DGv5hf/edB4ZJmVeoneB46Va7LZEP9eITnGKHS76DXjdbmStZ/xMgIm
+ qvIs2mSYjJMIUtUbEwchGVqcSixyOB6T0QZakgxjGE/mO5wSMnajvqnCoZInW5gFJ3ml
+ SolsgpSAOs70Zy5omAUIzx0IHD06jA/sKNJOinmpANPrG3oFsLgTJiEPT1+kJzVTEWub
+ Ijdg==
+X-Gm-Message-State: APjAAAV79LBOFJhshblmwFY9UJibPgGjJfDWaR+xcCstHbpurpEnO40B
+ JbO0Azow58PSk/v7ZtUDIiDDoA==
+X-Google-Smtp-Source: APXvYqwCj3vkQhdXIGJu9EpWV0sc4q41te3mEjK0JRvTex2+xk1qSEGE3uWqGCe5EwjRzmV9owoA+A==
+X-Received: by 2002:a17:902:7207:: with SMTP id
+ ba7mr13779305plb.329.1556927890867; 
+ Fri, 03 May 2019 16:58:10 -0700 (PDT)
 Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id j12sm8848865pgg.79.2019.05.03.16.52.43
+ by smtp.gmail.com with ESMTPSA id h127sm4092709pgc.31.2019.05.03.16.58.10
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 03 May 2019 16:52:43 -0700 (PDT)
-Date: Fri, 3 May 2019 16:52:42 -0700
+ Fri, 03 May 2019 16:58:10 -0700 (PDT)
+Date: Fri, 3 May 2019 16:58:09 -0700
 From: Matthias Kaehlcke <mka@chromium.org>
 To: Douglas Anderson <dianders@chromium.org>
-Subject: Re: [PATCH] mmc: block: Fix memory leak in blk-mq when cleaning up
-Message-ID: <20190503235242.GC40515@google.com>
-References: <20190503233526.226272-1-dianders@chromium.org>
+Subject: Re: [PATCH] ARM: dts: rockchip: Remove bogus 'i2s_clk_out' from
+ rk3288-veyron-mickey
+Message-ID: <20190503235809.GD40515@google.com>
+References: <20190503234814.230901-1-dianders@chromium.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190503233526.226272-1-dianders@chromium.org>
+In-Reply-To: <20190503234814.230901-1-dianders@chromium.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_165246_055223_3D144E87 
-X-CRM114-Status: GOOD (  15.38  )
+X-CRM114-CacheID: sfid-20190503_165811_555232_7DBDAC1E 
+X-CRM114-Status: GOOD (  16.98  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,75 +96,51 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Jens Axboe <axboe@kernel.dk>, Ulf Hansson <ulf.hansson@linaro.org>,
- drinkcat@chromium.org, linux-kernel@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>, linux-mmc@vger.kernel.org,
- Adrian Hunter <adrian.hunter@intel.com>, Ming Lei <ming.lei@redhat.com>,
- linux-rockchip@lists.infradead.org, Hannes Reinecke <hare@suse.com>,
- groeck@chromium.org, Omar Sandoval <osandov@fb.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, briannorris@chromium.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ amstan@chromium.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, May 03, 2019 at 04:35:26PM -0700, Douglas Anderson wrote:
-> If I run the following on rk3288-veyron-minnie (a 2GB machine)
+On Fri, May 03, 2019 at 04:48:14PM -0700, Douglas Anderson wrote:
+> The rk3288-veyron-mickey device tree overrides the default "i2s" clock
+> settings to add the clock for "i2s_clk_out".
 > 
->   cd /sys/bus/platform/drivers/dwmmc_rockchip
->   for i in $(seq 1 3000); do
->     echo "========================" $i
->     echo ff0f0000.dwmmc > unbind
->     sleep .5
->     echo ff0f0000.dwmmc > bind
->     while true; do
->       if [ -e /dev/mmcblk2 ]; then
->         break;
->       fi
->       sleep .1
->     done
->   done
+> That clock is only present in the bindings downstream Chrome OS 3.14
+> tree.  Upstream the i2s port bindings doesn't specify that as a
+> possible clock.
 > 
-> Then I start OOMing somewhere between iteration 200 and 250.  Using
-> kmemleak, I see reports like:
+> Let's remove it.
 > 
-> unreferenced object 0xe39c5580 (size 64):
->   comm "kworker/1:0", pid 17, jiffies 4294821091 (age 96.952s)
->   hex dump (first 32 bytes):
->     00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
->     00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
->   backtrace:
->     [<ad19d10a>] __kmalloc+0x1ec/0x2dc
->     [<a28614c3>] blk_mq_alloc_tag_set+0x27c/0x2bc
->     [<0955ae01>] mmc_init_queue+0xa8/0x2a8
->     [<5102b986>] mmc_blk_alloc_req+0xf8/0x2d4
->     [<f1c2214f>] mmc_blk_probe+0x4a8/0x6c0
->     [<0dfdd9d5>] mmc_bus_probe+0x24/0x28
+> NOTE: for other rk3288-veyron devices this clock is consumed by
+> 'maxim,max98090'.  Presumably if this clock is needed for mickey it'll
+> need to be consumed by something similar.
 > 
-> It's pretty clear that we're missing a call to blk_mq_free_tag_set().
-> Let's add it.
-> 
-> Fixes: 81196976ed94 ("mmc: block: Add blk-mq support")
 > Signed-off-by: Douglas Anderson <dianders@chromium.org>
 > ---
 > 
->  drivers/mmc/core/queue.c | 2 ++
->  1 file changed, 2 insertions(+)
+>  arch/arm/boot/dts/rk3288-veyron-mickey.dts | 2 --
+>  1 file changed, 2 deletions(-)
 > 
-> diff --git a/drivers/mmc/core/queue.c b/drivers/mmc/core/queue.c
-> index 7c364a9c4eeb..09071e13282e 100644
-> --- a/drivers/mmc/core/queue.c
-> +++ b/drivers/mmc/core/queue.c
-> @@ -480,6 +480,8 @@ void mmc_cleanup_queue(struct mmc_queue *mq)
->  	 */
->  	flush_work(&mq->complete_work);
+> diff --git a/arch/arm/boot/dts/rk3288-veyron-mickey.dts b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
+> index e852594417b5..f9c4ece3c0d3 100644
+> --- a/arch/arm/boot/dts/rk3288-veyron-mickey.dts
+> +++ b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
+> @@ -142,8 +142,6 @@
 >  
-> +	blk_mq_free_tag_set(&mq->tag_set);
-> +
->  	mq->card = NULL;
->  }
+>  &i2s {
+>  	status = "okay";
+> -	clock-names = "i2s_hclk", "i2s_clk", "i2s_clk_out";
+> -	clocks = <&cru HCLK_I2S0>, <&cru SCLK_I2S0>, <&cru SCLK_I2S0_OUT>;
+>  };
 >  
+>  &rk808 {
 
-FWIW:
+effectively, 'i2s_clk_out' is not use in the upstream kernel.
 
 Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
 
