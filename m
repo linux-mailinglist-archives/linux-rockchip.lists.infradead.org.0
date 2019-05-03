@@ -2,59 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 087ED13548
-	for <lists+linux-rockchip@lfdr.de>; Sat,  4 May 2019 00:11:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C50213636
+	for <lists+linux-rockchip@lfdr.de>; Sat,  4 May 2019 01:35:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Subject:From:To:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QznkCSjFT5tyXMgfFT0PIbkboPMH2BYSfqktPRQFb1E=; b=FXv3wbOBHEVmBk
-	HxrBG2eWKs5D4mJoZF+DGW7TJc2EOVztSa6bCIrLHftulPY5CtiI3URmQlbR7YdGigpBkBNigJ3aM
-	bYjjPVgYynN7koOmn3qfuFHXNX7uixDk3TtEGnJKNVA9JG8VXWp8YLiI5aBOx7fwm0GbKD10ughC/
-	6LTsfsyTbEMMsqZl0G5MEqIGmCdh/bH6vDB0h1Gy0WOWagUPmeVyAo8tw2ypIeC7ol5dFunTuXppB
-	2iuSvBBrpisBePAVJ43a+sl2x8QAIVyU7PyQixp6Q4FQW4VswXo8n8dbTtaEZd4aLQ3XsfW6rBMri
-	I6CPCe1RHdLSr/k/JAUw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yjZfJnNwv4U2oVkVi5mYgpEwFD0L2LjGmu2IG7EJrJY=; b=U7Ti6Ht8yspgcT
+	bSDO0YH0HxzHft3HEy7zxnQUVC6UrHcWSGLZDGSbt91+rKEtWdaQIcq30B9dmkgxFFD2q2DCDV/Nt
+	Q314k3kyGPqc7C8VzdkVBLsaIRk23THTma1gzktqN3GD+1MnimUcCdb64q0MlgeAEITdaoJJZW0Vc
+	Fxft1FxFhAUmSGWq7AF0CXU7x6JOFCVzJ6h2qMqnMzrC7EznsxDiYUt7xhV/FshlxFhbMENjIkWs/
+	i4GVWC/bfoVyglJReO4rCnDVfOnRKZN6VGCRoUrqMEBZjY+7T6GSSzIIr01gUAaMfA34Uu920atqo
+	NBKV9K6aWwFvai+Z8Ehw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMgP6-0006WR-Nw; Fri, 03 May 2019 22:11:40 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hMhiV-0002IM-BT; Fri, 03 May 2019 23:35:47 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMgOr-0006Cm-Lo; Fri, 03 May 2019 22:11:29 +0000
-Received: from localhost (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 88BAB206E0;
- Fri,  3 May 2019 22:11:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556921484;
- bh=YxHTZShOcDV00VQUHv/xm7oSbg5tXMsEy2BisbYC/z4=;
- h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
- b=oMojVehQzvqv1ds0vigIDtbGTnRifWLy0j05yvSTQ0IgKts12O328jAFiC29VawIe
- ZEyiwy+G8XG2HboizeOA9yARJIf13horlV899Fj2fNkFzWQjyU42U+NSKPsxtVVuMn
- 7WA8VJaQr2xx/XOdmFPgKK1qr+/9SzcBhHjv2en8=
+ id 1hMhiR-0002HI-VB
+ for linux-rockchip@lists.infradead.org; Fri, 03 May 2019 23:35:45 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 188so3632218pfd.8
+ for <linux-rockchip@lists.infradead.org>; Fri, 03 May 2019 16:35:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=SHEjHfO9A5bRiMAqWYWHqc/8OGhvcUxNJFwk8XrvHsE=;
+ b=E1kHCtY3StjY2jL6mVYyFBDOHkYOyxkDZHKrjgcQsUNJy8dDwNhCXMPstgxWlAWDVu
+ N6/tKl0/5fSaSVUZeI/AswN2edBTfVnN7rBh5z5LP395vsJXAlfWtuvsqNrYQVbSP7/9
+ hwBMR6j63Xx/mEajgFYbn6QXfKqogcl8pxheQ=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=SHEjHfO9A5bRiMAqWYWHqc/8OGhvcUxNJFwk8XrvHsE=;
+ b=fh/th8NFa/WcOYplLdsUv+7wTVdM6khxxvYBgJDlNQ3I5GRNqnkVow9+ht3ECCS46t
+ l2b7XXhX654mtW4uyJI6h4W3dFEbEVrx+YANwuLJM2PqUeuu6nz2Outxd1m+pOsXT59o
+ Mq/+0KRU1vSaLYENBFijsVWig1Z8+kY39UmtTMBxxrkG3DdRPB+Xv9kjCC563EErmqal
+ cFQGza5dxxu9p4X2xYUTvAO3MijwFyb5RYBZ5V1yDPl/BvTs8eWyNbVqlxsUixIARYQm
+ HuAt1UQ76XICTbGWCDfeSlOVWVAdBzrETwEwUn3FbTH7i6CUlDiMDgyk33GlXnrotOJj
+ bpZg==
+X-Gm-Message-State: APjAAAX9h+KNTfc3fD8SsSKUPyleMfBNN7brhTmKXzlOvLGYr9BvTMKW
+ noh8syltGPxSS3IbkcZAFwy1ig==
+X-Google-Smtp-Source: APXvYqxSl2kbX2wBpR+4fMn6q0ci7jtMz8uiaw/Pxs3UtU6+iNJMRtgXKO7o7X0k+XZwbkDsvK4mwA==
+X-Received: by 2002:a65:62d2:: with SMTP id m18mr14209583pgv.122.1556926540856; 
+ Fri, 03 May 2019 16:35:40 -0700 (PDT)
+Received: from tictac2.mtv.corp.google.com
+ ([2620:15c:202:1:24fa:e766:52c9:e3b2])
+ by smtp.gmail.com with ESMTPSA id l184sm7763304pfc.98.2019.05.03.16.35.39
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 03 May 2019 16:35:39 -0700 (PDT)
+From: Douglas Anderson <dianders@chromium.org>
+To: Ulf Hansson <ulf.hansson@linaro.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Linus Walleij <linus.walleij@linaro.org>
+Subject: [PATCH] mmc: block: Fix memory leak in blk-mq when cleaning up
+Date: Fri,  3 May 2019 16:35:26 -0700
+Message-Id: <20190503233526.226272-1-dianders@chromium.org>
+X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
 MIME-Version: 1.0
-In-Reply-To: <20190503212208.223232-1-dianders@chromium.org>
-References: <20190503212208.223232-1-dianders@chromium.org>
-To: Douglas Anderson <dianders@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
- Shawn Lin <shawn.lin@rock-chips.com>
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH] clk: rockchip: Don't yell about bad mmc phases when
- getting
-Message-ID: <155692148370.12939.291938595926908281@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.8
-Date: Fri, 03 May 2019 15:11:23 -0700
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_151126_292317_E7BB3179 
-X-CRM114-Status: GOOD (  16.20  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190503_163544_033955_A38B4955 
+X-CRM114-Status: GOOD (  10.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -76,148 +94,74 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: hal@halemmerich.com, Michael Turquette <mturquette@baylibre.com>,
- Douglas Anderson <dianders@chromium.org>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, mka@chromium.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Jens Axboe <axboe@kernel.dk>, Hannes Reinecke <hare@suse.com>,
+ drinkcat@chromium.org, linux-kernel@vger.kernel.org, linux-mmc@vger.kernel.org,
+ Douglas Anderson <dianders@chromium.org>, Ming Lei <ming.lei@redhat.com>,
+ linux-rockchip@lists.infradead.org, mka@chromium.org, groeck@chromium.org,
+ Omar Sandoval <osandov@fb.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Quoting Douglas Anderson (2019-05-03 14:22:08)
-> At boot time, my rk3288-veyron devices yell with 8 lines that look
-> like this:
->   [    0.000000] rockchip_mmc_get_phase: invalid clk rate
-> 
-> This is because the clock framework at clk_register() time tries to
-> get the phase but we don't have a parent yet.
-> 
-> While the errors appear to be harmless they are still ugly and, in
-> general, we don't want yells like this in the log unless they are
-> important.
-> 
-> There's no real reason to be yelling here.  We can still return
-> -EINVAL to indicate that the phase makes no sense without a parent.
-> If someone really tries to do tuning and the clock is reported as 0
-> then we'll see the yells in rockchip_mmc_set_phase().
-> 
-> Fixes: 4bf59902b500 ("clk: rockchip: Prevent calculating mmc phase if clock rate is zero")
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> ---
+If I run the following on rk3288-veyron-minnie (a 2GB machine)
 
-Change looks fine, but this driver should call clk_hw_get_rate() on the
-clk instead of clk_get_rate(). Unless that needs to recalc the rate for
-some reason?
+  cd /sys/bus/platform/drivers/dwmmc_rockchip
+  for i in $(seq 1 3000); do
+    echo "========================" $i
+    echo ff0f0000.dwmmc > unbind
+    sleep .5
+    echo ff0f0000.dwmmc > bind
+    while true; do
+      if [ -e /dev/mmcblk2 ]; then
+        break;
+      fi
+      sleep .1
+    done
+  done
 
-Also, we don't check for errors from clk_ops::get_phase() in clk.c
-before storing away the result into the clk_core::phase member. I
-suppose we should skip the store in this case so that debugfs results
-don't look odd.
+Then I start OOMing somewhere between iteration 200 and 250.  Using
+kmemleak, I see reports like:
 
-diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
-index aa51756fd4d6..2455b2c43386 100644
---- a/drivers/clk/clk.c
-+++ b/drivers/clk/clk.c
-@@ -2606,14 +2606,14 @@ EXPORT_SYMBOL_GPL(clk_set_phase);
- 
- static int clk_core_get_phase(struct clk_core *core)
- {
--	int ret;
-+	int ret = 0;
- 
--	clk_prepare_lock();
-+	lockdep_assert_held(&prepare_lock);
- 	/* Always try to update cached phase if possible */
- 	if (core->ops->get_phase)
--		core->phase = core->ops->get_phase(core->hw);
--	ret = core->phase;
--	clk_prepare_unlock();
-+		ret = core->ops->get_phase(core->hw);
-+	if (ret >= 0)
-+		core->phase = ret;
- 
- 	return ret;
- }
-@@ -2627,10 +2627,16 @@ static int clk_core_get_phase(struct clk_core *core)
-  */
- int clk_get_phase(struct clk *clk)
- {
-+	int ret;
-+
- 	if (!clk)
- 		return 0;
- 
--	return clk_core_get_phase(clk->core);
-+	clk_prepare_unlock();
-+	ret = clk_core_get_phase(clk->core);
-+	clk_prepare_unlock();
-+
-+	return ret;
- }
- EXPORT_SYMBOL_GPL(clk_get_phase);
- 
-@@ -2850,16 +2856,24 @@ static struct hlist_head *orphan_list[] = {
- static void clk_summary_show_one(struct seq_file *s, struct clk_core *c,
- 				 int level)
- {
-+	int phase;
-+
- 	if (!c)
- 		return;
- 
--	seq_printf(s, "%*s%-*s %7d %8d %8d %11lu %10lu %5d %6d\n",
-+	seq_printf(s, "%*s%-*s %7d %8d %8d %11lu %10lu ",
- 		   level * 3 + 1, "",
- 		   30 - level * 3, c->name,
- 		   c->enable_count, c->prepare_count, c->protect_count,
--		   clk_core_get_rate(c), clk_core_get_accuracy(c),
--		   clk_core_get_phase(c),
--		   clk_core_get_scaled_duty_cycle(c, 100000));
-+		   clk_core_get_rate(c), clk_core_get_accuracy(c));
-+
-+	phase = clk_core_get_phase(c);
-+	if (phase >= 0)
-+		seq_printf(s, "%5d", phase);
-+	else
-+		seq_printf(s, "-----");
-+
-+	seq_printf(s, " %6d\n", clk_core_get_scaled_duty_cycle(c, 100000));
- }
- 
- static void clk_summary_show_subtree(struct seq_file *s, struct clk_core *c,
-@@ -2899,6 +2913,8 @@ DEFINE_SHOW_ATTRIBUTE(clk_summary);
- 
- static void clk_dump_one(struct seq_file *s, struct clk_core *c, int level)
- {
-+	int phase;
-+
- 	if (!c)
- 		return;
- 
-@@ -2909,7 +2925,9 @@ static void clk_dump_one(struct seq_file *s, struct clk_core *c, int level)
- 	seq_printf(s, "\"protect_count\": %d,", c->protect_count);
- 	seq_printf(s, "\"rate\": %lu,", clk_core_get_rate(c));
- 	seq_printf(s, "\"accuracy\": %lu,", clk_core_get_accuracy(c));
--	seq_printf(s, "\"phase\": %d,", clk_core_get_phase(c));
-+	phase = clk_core_get_phase(c);
-+	if (phase >= 0)
-+		seq_printf(s, "\"phase\": %d,", phase);
- 	seq_printf(s, "\"duty_cycle\": %u",
- 		   clk_core_get_scaled_duty_cycle(c, 100000));
- }
-@@ -3248,10 +3266,7 @@ static int __clk_core_init(struct clk_core *core)
- 	 * Since a phase is by definition relative to its parent, just
- 	 * query the current clock phase, or just assume it's in phase.
+unreferenced object 0xe39c5580 (size 64):
+  comm "kworker/1:0", pid 17, jiffies 4294821091 (age 96.952s)
+  hex dump (first 32 bytes):
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+  backtrace:
+    [<ad19d10a>] __kmalloc+0x1ec/0x2dc
+    [<a28614c3>] blk_mq_alloc_tag_set+0x27c/0x2bc
+    [<0955ae01>] mmc_init_queue+0xa8/0x2a8
+    [<5102b986>] mmc_blk_alloc_req+0xf8/0x2d4
+    [<f1c2214f>] mmc_blk_probe+0x4a8/0x6c0
+    [<0dfdd9d5>] mmc_bus_probe+0x24/0x28
+
+It's pretty clear that we're missing a call to blk_mq_free_tag_set().
+Let's add it.
+
+Fixes: 81196976ed94 ("mmc: block: Add blk-mq support")
+Signed-off-by: Douglas Anderson <dianders@chromium.org>
+---
+
+ drivers/mmc/core/queue.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/mmc/core/queue.c b/drivers/mmc/core/queue.c
+index 7c364a9c4eeb..09071e13282e 100644
+--- a/drivers/mmc/core/queue.c
++++ b/drivers/mmc/core/queue.c
+@@ -480,6 +480,8 @@ void mmc_cleanup_queue(struct mmc_queue *mq)
  	 */
--	if (core->ops->get_phase)
--		core->phase = core->ops->get_phase(core->hw);
--	else
--		core->phase = 0;
-+	clk_core_get_phase(core);
+ 	flush_work(&mq->complete_work);
  
- 	/*
- 	 * Set clk's duty cycle.
++	blk_mq_free_tag_set(&mq->tag_set);
++
+ 	mq->card = NULL;
+ }
+ 
+-- 
+2.21.0.1020.gf2820cf01a-goog
+
 
 _______________________________________________
 Linux-rockchip mailing list
