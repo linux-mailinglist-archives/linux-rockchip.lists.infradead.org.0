@@ -2,51 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4585412CBD
+	by mail.lfdr.de (Postfix) with ESMTPS id 52B7B12CBE
 	for <lists+linux-rockchip@lfdr.de>; Fri,  3 May 2019 13:47:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xhHuwEcheRAD14QpMHn0WMExAMcbrAVWw+m4C/QMXBA=; b=WQB4YuKw3z8qFp
-	DrdUkIlczID9Sr3AjQ5KfVPT9AvUrYLZ/ApQRp428Dfu3xtoWGGEiNqnzTaA7Y0CAJ4BxvytyVjaT
-	b1F38C/lxckuUQJSd0D7OxZ1+yir2VNO4RFTnmklaYS5saZSPoSKhNXE1yjoWrUHhfQj826F2lwJA
-	M9sibKiL9X+xwyxU5hCJOJBM7MMAcSVZi5gosIpFP9w9dXacnz6LOMcR9ZHW0nog0ClL25s4eEpMY
-	hMF0l2ruD2+lemrZC8bE61tjCJT5vEbIAWswMAIclw04a368qArl4aMb8FfgAvONXThBvTQ8+9PV2
-	PnAc5x+lMIVQ4U8UW0Rg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HrO7kEHVEuKQWaVI7O56AQ1sKHa/lGJ3EilZ+UnIBWE=; b=qASVv6pJ4DrDU9
+	Qylat8ItsMfhxinYkXYTS6i3FCsKmlOHAt6puqUOdf5ivog9iFTfvjz1HIPxXw2hCNeFvKPCYsfRJ
+	VXbtDzbMSHg1hC88lU4L8aw54Ckf5JM/mhfaZlRJpOuKH7J/UeWaq65DBU8Z9ZLE1JJQzyL98WNmh
+	cftNBvbOaT+6xCJt0W7MLrqzTiCp6EmclH1niv4vEnMzcLgJS/namvT+fYoO+nOJrvWXsKXZgYFBM
+	mPeAgz5D65XNP/Uz3Ua37ZSV3zWjXEaxDqpBZ5/ImqOXt/ahVs8x2+6Sliw1TGIZqbskQ7PXUda0U
+	b1/l+2mfB3KRTls4Om0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMWf6-0002lq-1s; Fri, 03 May 2019 11:47:32 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hMWf4-0002lS-Vm; Fri, 03 May 2019 11:47:30 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMWf0-0002hU-Dz
+ id 1hMWf0-0002hz-Lz
  for linux-rockchip@lists.infradead.org; Fri, 03 May 2019 11:47:28 +0000
 Received: from localhost.localdomain (unknown
  [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id C22CC2817E1;
- Fri,  3 May 2019 12:47:22 +0100 (BST)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 65B10283616;
+ Fri,  3 May 2019 12:47:23 +0100 (BST)
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: Mauro Carvalho Chehab <mchehab@kernel.org>,
  Hans Verkuil <hans.verkuil@cisco.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Sakari Ailus <sakari.ailus@iki.fi>, linux-media@vger.kernel.org
-Subject: [PATCH v5 00/15] Add MPEG-2 decoding to Rockchip VPU
-Date: Fri,  3 May 2019 13:47:04 +0200
-Message-Id: <20190503114719.28784-1-boris.brezillon@collabora.com>
+Subject: [PATCH v5 01/15] media: v4l2-common: Fix v4l2_fill_pixfmt[_mp]()
+ prototypes
+Date: Fri,  3 May 2019 13:47:05 +0200
+Message-Id: <20190503114719.28784-2-boris.brezillon@collabora.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190503114719.28784-1-boris.brezillon@collabora.com>
+References: <20190503114719.28784-1-boris.brezillon@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_044726_733701_5BC75B6C 
-X-CRM114-Status: GOOD (  14.57  )
+X-CRM114-CacheID: sfid-20190503_044726_852255_233CD7F2 
+X-CRM114-Status: GOOD (  11.63  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -67,115 +72,69 @@ Cc: Tomasz Figa <tfiga@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
  linux-rockchip@lists.infradead.org,
  Boris Brezillon <boris.brezillon@collabora.com>, kernel@collabora.com,
  Ezequiel Garcia <ezequiel@collabora.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-VGhpcyBzZXJpZXMgaW50cm9kdWNlcyB0aGUgZGVjb2RpbmcgaW5mcmFzdHJ1Y3R1cmUgdGhhdCB3
-aWxsIGJlCnVzZWQgdG8gYWRkIHN1cHBvcnQgZm9yIG90aGVyIGNvZGVjcyBzdWNoIGFzIFZQOCwg
-VlA5IGFuZCBILjI2NC4KCkFzIGV4cGxhaW5lZCBpbiB0aGUgY292ZXIgbGV0dGVyIGZvciB0aGUg
-djEgcGF0Y2hzZXQsCnRoZSBkcml2ZXIgaXMgbm93IGV4cG9zaW5nIHR3byB2aWRlbyBkZXZpY2Ug
-bm9kZXMuClRoZSBWUFUgZW5jb2RlciBpcyBleHBvc2VkIG9uIC9kZXYvdmlkZW8wLCBhbmQgdGhl
-IFZQVSBkZWNvZGVyCmlzIGV4cG9zZWQgb24gL2Rldi92aWRlbzEuIEJvdGggZGV2aWNlcyBhcmUg
-dGllZCB0byB0aGUgc2FtZQptZW1vcnktdG8tbWVtb3J5IHF1ZXVlLCBhbmQgc2FtZSBtZWRpYSBk
-ZXZpY2UgL2Rldi9tZWRpYTAuCgpUaGVyZWZvcmUgdGhlcmUgYXJlIHR3byBtZWRpYSBncmFwaHM6
-CgrilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi
-lIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJAK4pSCIHJvY2tj
-aGlwLHJrMzM5OS12cHUtZW5jLXNvdXJjZSDilIIK4pSCICAgICAgICAgIC9kZXYvdmlkZW8wICAg
-ICAgICAgICDilIIK4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSY
-CiAg4pSDCiAg4pSDCiAg4pa8CuKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
-gOKUgOKUkArilIIgIHJvY2tjaGlwLHJrMzM5OS12cHUtZW5jLXByb2MgIOKUggrilJTilIDilIDi
-lIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi
-lIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJgKICDilIMKICDilIMKICDilrwK4pSM
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQCuKUgiAgcm9ja2NoaXAs
-cmszMzk5LXZwdS1lbmMtc2luayAg4pSCCuKUgiAgICAgICAgICAvZGV2L3ZpZGVvMCAgICAgICAg
-ICAg4pSCCuKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmAoK4pSM
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQCuKUgiByb2NrY2hpcCxy
-azMzOTktdnB1LWRlYy1zb3VyY2Ug4pSCCuKUgiAgICAgICAgICAvZGV2L3ZpZGVvMSAgICAgICAg
-ICAg4pSCCuKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmAogIOKU
-gwogIOKUgwogIOKWvArilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi
-lIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi
-lJAK4pSCICByb2NrY2hpcCxyazMzOTktdnB1LWRlYy1wcm9jICDilIIK4pSU4pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYCiAg4pSDCiAg4pSDCiAg4pa8CuKUjOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkArilIIgIHJvY2tjaGlwLHJrMzM5
-OS12cHUtZGVjLXNpbmsgIOKUggrilIIgICAgICAgICAgL2Rldi92aWRlbzEgICAgICAgICAgIOKU
-ggrilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi
-lIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJgKCk9mIGNvdXJz
-ZSwgdGhpcyB3b3JrIGhhcyBiZWVuIHBvc3NpYmxlIHRoYW5rcyB0byBKb25hcyBLYXJsbWFuLCB3
-aG8gZGlkCnRoZSBpbml0aWFsIE1QRUctMiBkZWNvZGluZyB3b3JrIGFuZCBhbHNvIGdvdCBtcHYr
-ZmZtcGVnIHdvcmtpbmcgdXNpbmcKdGhlIFJlcXVlc3QgQVBJLgoKUmVnYXJkcywKCkJvcmlzCgp2
-NToKICogQWRkIGhlbHBlciB0byBjbGFtcCBoZWlnaHQvd2lkdGggYmFzZWQgb24gZnJtc2l6ZQog
-KiBNb2RpZnkgZmlsbF9mbXQoKSBoZWxwZXJzIHRvIGtlZXAgdXNlci1kZWZpbmVkIHNpemVpbWFn
-ZS9ieXRlc3BlcmxpbmUKICAgd2hlbiB0aGV5J3JlIGJpZyBlbm91Z2gKICogRml4ZWQgYSBidW5j
-aCBvZiBwcm9ibGVtcyByZXBvcnRlZCBieSBIYW5zIChzZWUgcGVyLXBhdGNoIGNoYW5nZWxvZwog
-ICBmb3IgbW9yZSBkZXRhaWxzKQoKdjQ6CiAqIEZpeCBpc3N1ZXMgaW4gdGhlIHByb2JlL3JlbW92
-ZSBwYXRoIHByZXZlbnRpbmcgdGhlIGRyaXZlciBmcm9tIGJlaW5nCiAgIHVubG9hZGVkL3JlbG9h
-ZGVkIChKb25hcykKICogUmV3b3JrIHRoZSBtZWRpYSBjb250cm9sbGVyIHJlZ2lzdHJhdGlvbiBj
-b2RlIHRvIHNpbXBsaWZ5IHRoZQogICBlcnJvci9yZW1vdmUgcGF0aCAoQm9yaXMpCiAqIFNwbGl0
-IHRoZSBNUEVHMiBwYXRjaGVzIChvbmUgYWRkaW5nIHRoZSBnZW5lcmljIGNvZGUgYW5kIG9uZSBw
-YXRjaAogICBwZXIgcGxhdGZvcm0pCgp2MzoKICAqIFNoYXJlIG1vcmUgY29kZSBiZXR3ZWVuIHRo
-ZSBlbmNvZGVyL2RlY29kZXIgbG9naWMgKFZCMi9WNEwyCiAgICBpbnRlcmZhY2UgaW1wbGVtZW50
-YXRpb24pCiAgKiBBZGQgYSBwYXRjaCB0byBzdXBwb3J0IE1QRUcyIGRlY29kaW5nIG9uIFJLMzI4
-OCAoSm9uYXMpCiAgKiBTZXZlcmFsIGZpeGVzL2ltcHJvdmVtZW50cyBhbGwgb3ZlciB0aGUgcGxh
-Y2UgKHNlZSBjaGFuZ2Vsb2cKICAgIGluIGVhY2ggcGF0Y2ggZm9yIG1vcmUgZGV0YWlscykKCnYy
-OgogICogRml4ZWQgc29tZSBtaW5vciBpc3N1ZXMgYnJvdWdodCB1cCBieSB2NGwyLWNvbXBsaWFu
-Y2UuCiAgKiBGaXhlZCBieXRlc3VzZWQgd3JvbmdseSBhc3NpZ25lZCAwIG9uIHRoZSBNUEVHLTIg
-ZGVjb2Rlci4KICAqIEFkZHJlc3NlZCBjb21tZW50cyBmcm9tIEhhbnMgYW5kIFRvbWFzeiBvbiB0
-aGUgcGl4ZWwgZm9ybWF0CiAgICBoZWxwZXJzLgoKQm9yaXMgQnJlemlsbG9uICg4KToKICBtZWRp
-YTogdjRsMi1jb21tb246IEZpeCB2NGwyX2ZpbGxfcGl4Zm10W19tcF0oKSBwcm90b3R5cGVzCiAg
-bWVkaWE6IHY0bDItY29tbW9uOiBBZGQgYW4gaGVscGVyIHRvIGFwcGx5IGZybXNpemUgY29uc3Ry
-YWludHMKICBtZWRpYTogdjRsMi1jb21tb246IFN1cHBvcnQgY3VzdG9tIGltYWdlc2l6ZS9ieXRl
-c3BlcmxpbmUgaW4KICAgIGZpbGxfcGl4Zm10KCkKICByb2NrY2hpcC92cHU6IFVzZSB2NGwyX2Fw
-cGx5X2ZybXNpemVfY29uc3RyYWludHMoKSB3aGVyZSBhcHByb3ByaWF0ZQogIHJvY2tjaGlwL3Zw
-dTogUmVuYW1lIHJvY2tjaGlwX3ZwdV9jb21tb24uaCBpbnRvIHJvY2tjaGlwX3ZwdV92NGwyLmgK
-ICByb2NrY2hpcC92cHU6IE1vdmUgZW5jb2RlciBsb2dpYyB0byBhIGNvbW1vbiBwbGFjZQogIHJv
-Y2tjaGlwL3ZwdTogUHJvdmlkZSBhIGhlbHBlciB0byByZXNldCBib3RoIHNyYyBhbmQgZHN0IGZv
-cm1hdHMKICByb2NrY2hpcC92cHU6IFByZXBhcmUgdGhpbmdzIHRvIHN1cHBvcnQgZGVjb2RlcnMK
-CkV6ZXF1aWVsIEdhcmNpYSAoNCk6CiAgcm9ja2NoaXAvdnB1OiBPcGVuLWNvZGUgbWVkaWEgY29u
-dHJvbGxlciByZWdpc3RlcgogIHJvY2tjaGlwL3ZwdTogU3VwcG9ydCB0aGUgUmVxdWVzdCBBUEkK
-ICByb2NrY2hpcC92cHU6IEFkZCBkZWNvZGVyIGJvaWxlcnBsYXRlCiAgcm9ja2NoaXAvdnB1OiBB
-ZGQgc3VwcG9ydCBmb3Igbm9uLXN0YW5kYXJkIGNvbnRyb2xzCgpKb25hcyBLYXJsbWFuICgzKToK
-ICByb2NrY2hpcC92cHU6IEFkZCBpbmZyYSB0byBzdXBwb3J0IE1QRUctMiBkZWNvZGluZwogIHJv
-Y2tjaGlwL3ZwdTogQWRkIE1QRUcyIGRlY29kaW5nIHN1cHBvcnQgdG8gUkszMzk5CiAgcm9ja2No
-aXAvdnB1OiBBZGQgc3VwcG9ydCBmb3IgTVBFRy0yIGRlY29kaW5nIG9uIFJLMzI4OAoKIGRyaXZl
-cnMvbWVkaWEvdjRsMi1jb3JlL3Y0bDItY29tbW9uLmMgICAgICAgICB8ICA4NiArKy0KIGRyaXZl
-cnMvc3RhZ2luZy9tZWRpYS9yb2NrY2hpcC92cHUvS2NvbmZpZyAgICB8ICAgMSArCiBkcml2ZXJz
-L3N0YWdpbmcvbWVkaWEvcm9ja2NoaXAvdnB1L01ha2VmaWxlICAgfCAgIDcgKy0KIC4uLi9tZWRp
-YS9yb2NrY2hpcC92cHUvcmszMjg4X3ZwdV9ody5jICAgICAgICB8ICA1OSArLQogLi4uL3JvY2tj
-aGlwL3ZwdS9yazMyODhfdnB1X2h3X2pwZWdfZW5jLmMgICAgIHwgICAyICstCiAuLi4vcm9ja2No
-aXAvdnB1L3JrMzI4OF92cHVfaHdfbXBlZzJfZGVjLmMgICAgfCAyNjEgKysrKysrKwogLi4uL21l
-ZGlhL3JvY2tjaGlwL3ZwdS9yazMyODhfdnB1X3JlZ3MuaCAgICAgIHwgICAxICsKIC4uLi9tZWRp
-YS9yb2NrY2hpcC92cHUvcmszMzk5X3ZwdV9ody5jICAgICAgICB8ICA1OSArLQogLi4uL3JvY2tj
-aGlwL3ZwdS9yazMzOTlfdnB1X2h3X2pwZWdfZW5jLmMgICAgIHwgICA4ICstCiAuLi4vcm9ja2No
-aXAvdnB1L3JrMzM5OV92cHVfaHdfbXBlZzJfZGVjLmMgICAgfCAyNjcgKysrKysrKwogLi4uL3N0
-YWdpbmcvbWVkaWEvcm9ja2NoaXAvdnB1L3JvY2tjaGlwX3ZwdS5oIHwgMTEwICsrLQogLi4uL21l
-ZGlhL3JvY2tjaGlwL3ZwdS9yb2NrY2hpcF92cHVfZHJ2LmMgICAgIHwgNDY3ICsrKysrKysrKyst
-LQogLi4uL21lZGlhL3JvY2tjaGlwL3ZwdS9yb2NrY2hpcF92cHVfZW5jLmMgICAgIHwgNTcxIC0t
-LS0tLS0tLS0tLS0tLQogLi4uL21lZGlhL3JvY2tjaGlwL3ZwdS9yb2NrY2hpcF92cHVfaHcuaCAg
-ICAgIHwgIDE2ICsKIC4uLi9tZWRpYS9yb2NrY2hpcC92cHUvcm9ja2NoaXBfdnB1X21wZWcyLmMg
-ICB8ICA2MSArKwogLi4uL21lZGlhL3JvY2tjaGlwL3ZwdS9yb2NrY2hpcF92cHVfdjRsMi5jICAg
-IHwgNjkyICsrKysrKysrKysrKysrKysrKwogLi4ua2NoaXBfdnB1X2NvbW1vbi5oID0+IHJvY2tj
-aGlwX3ZwdV92NGwyLmh9IHwgIDE1ICstCiBpbmNsdWRlL21lZGlhL3Y0bDItY29tbW9uLmggICAg
-ICAgICAgICAgICAgICAgfCAgMTAgKy0KIDE4IGZpbGVzIGNoYW5nZWQsIDIwMDkgaW5zZXJ0aW9u
-cygrKSwgNjg0IGRlbGV0aW9ucygtKQogY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvc3RhZ2lu
-Zy9tZWRpYS9yb2NrY2hpcC92cHUvcmszMjg4X3ZwdV9od19tcGVnMl9kZWMuYwogY3JlYXRlIG1v
-ZGUgMTAwNjQ0IGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9yb2NrY2hpcC92cHUvcmszMzk5X3ZwdV9o
-d19tcGVnMl9kZWMuYwogZGVsZXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9y
-b2NrY2hpcC92cHUvcm9ja2NoaXBfdnB1X2VuYy5jCiBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVy
-cy9zdGFnaW5nL21lZGlhL3JvY2tjaGlwL3ZwdS9yb2NrY2hpcF92cHVfbXBlZzIuYwogY3JlYXRl
-IG1vZGUgMTAwNjQ0IGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9yb2NrY2hpcC92cHUvcm9ja2NoaXBf
-dnB1X3Y0bDIuYwogcmVuYW1lIGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9yb2NrY2hpcC92cHUve3Jv
-Y2tjaGlwX3ZwdV9jb21tb24uaCA9PiByb2NrY2hpcF92cHVfdjRsMi5ofSAoNTAlKQoKLS0gCjIu
-MjAuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxp
-bnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9j
-a2NoaXAK
+Width/height and 4CC formats are expressed using u32 types everywhere,
+let's fix the v4l2_fill_pixfmt[_mp]() prototypes to do the same.
+
+Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+---
+Changes in v5:
+* New patch
+---
+ drivers/media/v4l2-core/v4l2-common.c | 5 +++--
+ include/media/v4l2-common.h           | 8 ++++----
+ 2 files changed, 7 insertions(+), 6 deletions(-)
+
+diff --git a/drivers/media/v4l2-core/v4l2-common.c b/drivers/media/v4l2-core/v4l2-common.c
+index d869a2910435..6ae84aa1f7a9 100644
+--- a/drivers/media/v4l2-core/v4l2-common.c
++++ b/drivers/media/v4l2-core/v4l2-common.c
+@@ -520,7 +520,7 @@ static inline unsigned int v4l2_format_block_height(const struct v4l2_format_inf
+ }
+ 
+ int v4l2_fill_pixfmt_mp(struct v4l2_pix_format_mplane *pixfmt,
+-			 int pixelformat, int width, int height)
++			u32 pixelformat, u32 width, u32 height)
+ {
+ 	const struct v4l2_format_info *info;
+ 	struct v4l2_plane_pix_format *plane;
+@@ -574,7 +574,8 @@ int v4l2_fill_pixfmt_mp(struct v4l2_pix_format_mplane *pixfmt,
+ }
+ EXPORT_SYMBOL_GPL(v4l2_fill_pixfmt_mp);
+ 
+-int v4l2_fill_pixfmt(struct v4l2_pix_format *pixfmt, int pixelformat, int width, int height)
++int v4l2_fill_pixfmt(struct v4l2_pix_format *pixfmt, u32 pixelformat,
++		     u32 width, u32 height)
+ {
+ 	const struct v4l2_format_info *info;
+ 	int i;
+diff --git a/include/media/v4l2-common.h b/include/media/v4l2-common.h
+index 0a41bbecf3d3..3226bc8107cc 100644
+--- a/include/media/v4l2-common.h
++++ b/include/media/v4l2-common.h
+@@ -420,9 +420,9 @@ struct v4l2_format_info {
+ 
+ const struct v4l2_format_info *v4l2_format_info(u32 format);
+ 
+-int v4l2_fill_pixfmt(struct v4l2_pix_format *pixfmt, int pixelformat,
+-		     int width, int height);
+-int v4l2_fill_pixfmt_mp(struct v4l2_pix_format_mplane *pixfmt, int pixelformat,
+-			int width, int height);
++int v4l2_fill_pixfmt(struct v4l2_pix_format *pixfmt, u32 pixelformat,
++		     u32 width, u32 height);
++int v4l2_fill_pixfmt_mp(struct v4l2_pix_format_mplane *pixfmt, u32 pixelformat,
++			u32 width, u32 height);
+ 
+ #endif /* V4L2_COMMON_H_ */
+-- 
+2.20.1
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
