@@ -2,72 +2,74 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C3EB13997
-	for <lists+linux-rockchip@lfdr.de>; Sat,  4 May 2019 13:57:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 031CF13A11
+	for <lists+linux-rockchip@lfdr.de>; Sat,  4 May 2019 15:24:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WZ+OouHFC37rjLM0ES4dxiyKxRwh/WiuXrV4U3neWo4=; b=gOJFmF480e1Xlq
-	jIR9OT2DDqTSPxj6UP0DWzbhAglZsaTu4dngjhgWh4fA7Kxn9RMrM+Y8q51Ez7a6mjscPt2QKLS2x
-	OK8/R/MDoymn3M87IF60BbU3K9bg+KhfE76oi/C9R6z41C2HO9+S3b7lrPCbmE6NMhdVoPAPFyryp
-	uxEzHk8aOtDQnzlMw5ANjQkv9IXc2H9Iai6ffA6Qtl9Di/B3ZJ+L3cl73Vo5S26QOkZkF8bA20vBg
-	NLQDTunIviC3/3zeQxF6PXQJcmqcHQon7Xwl12btL8eyD3HjIWNw3UD5Gv5zlyoa0b4OxX5HERxpD
-	owMIHiBFLQmoOxQFWdeA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=SLpHzXl+rvDmd5+z2xeswzs1eK1n9oFX4stLdE3nZUI=; b=hUG
+	VrhE7RFJgdDuGiJI4tf+f2U+3eAe0icTw+JpHzP7vk7Hlnnq6uG4U6t8J8sdPV33ef4nZhGXHEP1X
+	VkvkTYWFWJmOUllJclDjpVokjpBrwuMO4NnT++qusr2Su9rR0uT22nNpW+o9pCCsR0VLNsrhHgfxO
+	GzjrWDxasdrod2jh8dKgQbDwqJu56ZG8nctw4NJyNU8ELDVXcvTCpMfatp5Y7UK9Eje01h4joC6IJ
+	B9pgj8zaJsSDEJYiTnDQMoDSHSB/WBxxCAVb89kqJdpV4xWmNL9K5Rsjof4/7sIrTCAYvuETWwpmy
+	Bp573mqcxdZin48GXiHy7gP1xnmW6+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMtIM-00054P-4N; Sat, 04 May 2019 11:57:34 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hMueL-0005K2-6n; Sat, 04 May 2019 13:24:21 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMtII-00053Y-Dm
- for linux-rockchip@lists.infradead.org; Sat, 04 May 2019 11:57:32 +0000
-Received: by mail-lf1-x143.google.com with SMTP id n134so4327482lfn.11
- for <linux-rockchip@lists.infradead.org>; Sat, 04 May 2019 04:57:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hiyRbo1iY86Hzj/M9NZN8C2mes9fddgxbrKTHjW5zE0=;
- b=W0szkNx1iiyxaYo8r6H+St058PnaetwCUo33soDQrFpJNn2nwOQZViAv0yG6Jp8b9u
- WF5/8XtnKzKxUtXTnumQKyxDDpBg6G2CGj4R1OwPPplj5AALmSzM0uGmB1wKsvxJ4Jvo
- MJu7NY1TsgYZ1GMYFSObLA6vNZME2YaOUZUG8MiYoeYSiLLQfSiKn95Misgn7KsYDOt4
- 81MMkMF4RsA0BGrpniw7QgTuLH1u9wA901MM/Dms2rGRvKDWMZDxY/H5fymZVHtm1Br4
- p4RVdIx2XBmJd03DXbZepO8zjHgxyrIvDVijCZun7O0h3yBHGh3xHil2eyswqh56PAqR
- TSng==
+ id 1hMueH-0005J1-DF
+ for linux-rockchip@lists.infradead.org; Sat, 04 May 2019 13:24:19 +0000
+Received: by mail-ed1-x542.google.com with SMTP id m4so9452342edd.8
+ for <linux-rockchip@lists.infradead.org>; Sat, 04 May 2019 06:24:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=arista.com; s=googlenew;
+ h=from:to:cc:subject:date:message-id;
+ bh=iyAAdc/hWRW2hoexYmZRWuZhkprGVEqqGQbkYpxS37k=;
+ b=G3KCFm0fbzzI5F1zvOaRO7d1l4ziZIc3CASA+uBY+RtDmidxSUQwWdeXFWtJOGLvYw
+ a8yXmR1xI+Y2k53XMjmr8di4aBIt0In+/ytHYBL5TqUrHglv98FG0Eh0Vd6bmRsYYwYU
+ mgxtUdE4nyACk972b901w9YsVjxBsYQseAlIOI3Cy43lAcovNGZEFC8Ba71/Oj//FiL5
+ awp0y5M0274CBiGPuUoOAsJisrUXDjTUNJ9Xc3jnQTtRfUxSI/JI+U/AQGIARS0k91zP
+ 0kA1mk/UoQLSxxaLwLNPvd2A9TNRXxzX7bCEEg5Nrb8THmWNUI1ZqCSYcwSs94pbbFFl
+ Zptg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=hiyRbo1iY86Hzj/M9NZN8C2mes9fddgxbrKTHjW5zE0=;
- b=FHPl9XFe8jv1yyCb4CK5loWqczg0sAD2TRvfz8Ij4YjxbMmIvpGQ1v7QCbNtrx91aP
- e+qVvC9WU5EeaTkUS9gM0t5I8b6g3M5o3+pgTF+MHKxpD1ag29CUecGvReZGFHtGN6iY
- oecDukoacRagiCS938fTHN/tLchMdvLzVA6UDkSXPl7gm3O0H4rB9bKrbCW4v7A0k4JO
- 6RnF/G6jax5JCswK9u6Fv4HMF0ONrmhQkbhXbJbp4kiDYl2uJjOJMW8DiitWWWKK88rU
- HCdJsz6OUIQEiz1bhZKF3KT9ipDYJGJ2TP3ZQvTh0CmGvRN3SPqr9PxYLbbz11th18E3
- iJnw==
-X-Gm-Message-State: APjAAAW6DY9GnN2zOsPfRrXvFxQXedJufPuLvTppdyawFHn/EpVM8XTQ
- QYQlXpqwG4L82A2uM6D5Kkj24VjOuPjZmQ3QESGzpw==
-X-Google-Smtp-Source: APXvYqxBCbcM80t0WxfKywlZ3nTrDenba3/3wHSY5uq0o0NQn4HQaeszpvwzuYZERdQCXLNLqfPGCxXO+VVUTUB/cBc=
-X-Received: by 2002:a19:f001:: with SMTP id p1mr8317318lfc.27.1556971047580;
- Sat, 04 May 2019 04:57:27 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190503233526.226272-1-dianders@chromium.org>
-In-Reply-To: <20190503233526.226272-1-dianders@chromium.org>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Sat, 4 May 2019 13:57:15 +0200
-Message-ID: <CACRpkdagZCpFJmZ7+-DAQBD7mg5Zs4+mrT3uByXKoGYTS5yERg@mail.gmail.com>
-Subject: Re: [PATCH] mmc: block: Fix memory leak in blk-mq when cleaning up
-To: Douglas Anderson <dianders@chromium.org>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=iyAAdc/hWRW2hoexYmZRWuZhkprGVEqqGQbkYpxS37k=;
+ b=XRBV5Nxcj3xurfPYmIoBZLYaLii02VUbshbTy+BDEpU04xPu4zsbh9jH6RcuwZ2bxm
+ qbZKfgWX7ge8XNkzJCuPoZRILIZv50/PgEOA+umRdh3CToj3/DZ0Ff687NUd7lsbmvR/
+ Hrc/cgXfP/y9+4qXnWzEC1AOwh/rXCVRZYvZ1AKmP5TveasPwkNvXay3oFmDPcTsNyUI
+ Xfl/lCVyKhp+Xkn3g+72Gr+R1Wok6RnyoOIVSYsmlywJ5pTAAzzrnP4rx4gbxrh+wYzh
+ abWPS1O0DdDtPiBBRIWacObfFam+PExyv1mzQLdKuXie7c7P6Tbt5CFivnaaMJjN8VNr
+ 0hMA==
+X-Gm-Message-State: APjAAAUe5VUp6O+Szb2zXDTMDpsuZhn11aysHWaiVtkHSHLc1lcaCUvl
+ Hy3sGV8Ce7sx+hWt4a68JnovFw==
+X-Google-Smtp-Source: APXvYqz4LGJhruC7j3NhOPSVnefUenYnUMxbvpiMSoAHKZ2baaSBXg9l+vRLGrvk4q5MJKcE05cUbQ==
+X-Received: by 2002:a50:b68b:: with SMTP id d11mr13947835ede.42.1556976254830; 
+ Sat, 04 May 2019 06:24:14 -0700 (PDT)
+Received: from localhost.localdomain ([79.97.203.116])
+ by smtp.gmail.com with ESMTPSA id s53sm1391106edb.20.2019.05.04.06.24.13
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 04 May 2019 06:24:14 -0700 (PDT)
+From: Tom Murphy <tmurphy@arista.com>
+To: iommu@lists.linux-foundation.org
+Subject: [RFC 0/7] Convert the Intel iommu driver to the dma-ops api
+Date: Sat,  4 May 2019 14:23:16 +0100
+Message-Id: <20190504132327.27041-1-tmurphy@arista.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190504_045730_496905_6FB0CF62 
-X-CRM114-Status: GOOD (  10.14  )
+X-CRM114-CacheID: sfid-20190504_062417_574698_B495ECB8 
+X-CRM114-Status: GOOD (  13.53  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -77,6 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -89,64 +92,72 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Jens Axboe <axboe@kernel.dk>, Ulf Hansson <ulf.hansson@linaro.org>,
- drinkcat@chromium.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-mmc <linux-mmc@vger.kernel.org>, Adrian Hunter <adrian.hunter@intel.com>,
- Ming Lei <ming.lei@redhat.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Matthias Kaehlcke <mka@chromium.org>, Hannes Reinecke <hare@suse.com>,
- groeck@chromium.org, Omar Sandoval <osandov@fb.com>
+Cc: Heiko Stuebner <heiko@sntech.de>, kvm@vger.kernel.org,
+ Will Deacon <will.deacon@arm.com>, David Brown <david.brown@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, linux-s390@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ linux-rockchip@lists.infradead.org, Kukjin Kim <kgene@kernel.org>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ Andy Gross <andy.gross@linaro.org>, linux-tegra@vger.kernel.org,
+ Marc Zyngier <marc.zyngier@arm.com>, linux-arm-msm@vger.kernel.org,
+ Alex Williamson <alex.williamson@redhat.com>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Tom Murphy <tmurphy@arista.com>, Robin Murphy <robin.murphy@arm.com>,
+ linux-kernel@vger.kernel.org, murphyt7@tcd.ie, Rob Clark <robdclark@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sat, May 4, 2019 at 1:35 AM Douglas Anderson <dianders@chromium.org> wrote:
+Convert the intel iommu driver to the dma-ops api so that we can remove a bunch of repeated code.
 
-> If I run the following on rk3288-veyron-minnie (a 2GB machine)
->
->   cd /sys/bus/platform/drivers/dwmmc_rockchip
->   for i in $(seq 1 3000); do
->     echo "========================" $i
->     echo ff0f0000.dwmmc > unbind
->     sleep .5
->     echo ff0f0000.dwmmc > bind
->     while true; do
->       if [ -e /dev/mmcblk2 ]; then
->         break;
->       fi
->       sleep .1
->     done
->   done
->
-> Then I start OOMing somewhere between iteration 200 and 250.  Using
-> kmemleak, I see reports like:
->
-> unreferenced object 0xe39c5580 (size 64):
->   comm "kworker/1:0", pid 17, jiffies 4294821091 (age 96.952s)
->   hex dump (first 32 bytes):
->     00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
->     00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
->   backtrace:
->     [<ad19d10a>] __kmalloc+0x1ec/0x2dc
->     [<a28614c3>] blk_mq_alloc_tag_set+0x27c/0x2bc
->     [<0955ae01>] mmc_init_queue+0xa8/0x2a8
->     [<5102b986>] mmc_blk_alloc_req+0xf8/0x2d4
->     [<f1c2214f>] mmc_blk_probe+0x4a8/0x6c0
->     [<0dfdd9d5>] mmc_bus_probe+0x24/0x28
->
-> It's pretty clear that we're missing a call to blk_mq_free_tag_set().
-> Let's add it.
->
-> Fixes: 81196976ed94 ("mmc: block: Add blk-mq support")
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
+This patchset depends on the "iommu/vt-d: Delegate DMA domain to generic iommu" and
+"iommu/amd: Convert the AMD iommu driver to the dma-iommu api" patch sets which haven't
+yet merged so this is just a RFC to get some feedback before I do more testing.
 
-Looks correct to me:
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Tom Murphy (7):
+  iommu/vt-d: Set the dma_ops per device so we can remove the
+    iommu_no_mapping code
+  iommu/vt-d: Remove iova handling code from non-dma ops path
+  iommu: improve iommu iotlb flushing
+  iommu/dma-iommu: Handle freelists in the dma-iommu api path
+  iommu/dma-iommu: add wrapper for iommu_dma_free_cpu_cached_iovas
+  iommu/vt-d: convert the intel iommu driver to the dma-iommu ops api
+  iommu/vt-d: Always set DMA_PTE_READ if the iommu doens't support zero
+    length reads
 
-Yours,
-Linus Walleij
+ drivers/iommu/Kconfig           |   1 +
+ drivers/iommu/amd_iommu.c       |  14 +-
+ drivers/iommu/arm-smmu-v3.c     |   3 +-
+ drivers/iommu/arm-smmu.c        |   2 +-
+ drivers/iommu/dma-iommu.c       |  48 ++-
+ drivers/iommu/exynos-iommu.c    |   3 +-
+ drivers/iommu/intel-iommu.c     | 605 +++++---------------------------
+ drivers/iommu/iommu.c           |  21 +-
+ drivers/iommu/ipmmu-vmsa.c      |   2 +-
+ drivers/iommu/msm_iommu.c       |   2 +-
+ drivers/iommu/mtk_iommu.c       |   3 +-
+ drivers/iommu/mtk_iommu_v1.c    |   3 +-
+ drivers/iommu/omap-iommu.c      |   2 +-
+ drivers/iommu/qcom_iommu.c      |   2 +-
+ drivers/iommu/rockchip-iommu.c  |   2 +-
+ drivers/iommu/s390-iommu.c      |   3 +-
+ drivers/iommu/tegra-gart.c      |   2 +-
+ drivers/iommu/tegra-smmu.c      |   2 +-
+ drivers/vfio/vfio_iommu_type1.c |   3 +-
+ include/linux/dma-iommu.h       |   3 +
+ include/linux/intel-iommu.h     |   1 -
+ include/linux/iommu.h           |  24 +-
+ 22 files changed, 175 insertions(+), 576 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
