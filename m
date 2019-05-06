@@ -2,80 +2,68 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49EB91494E
-	for <lists+linux-rockchip@lfdr.de>; Mon,  6 May 2019 14:05:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6C5E14E95
+	for <lists+linux-rockchip@lfdr.de>; Mon,  6 May 2019 17:04:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=bfBOAmHQUmNCAr2JnOJYRj6DJQIkmUGAhYw4LQlmR08=; b=hffMQKdvMrIBWZpIiCtOuBcBEV
-	DnHs9w7btZFJdzvn1+H0utHOJ01MnaguEory393IRZkbyX3GZ/WL+LTebT7nhvmUpTbfJzQRbx6bd
-	UaKohlwRzcEptL6rzk12c4UL+yX3vu4JoEvsjNKb13Uy6BGC4fUdkPXmn7qVbOj9LyVEIk9pHD0l9
-	SpXsPfptUI3T7lc8+WkwpvG9Q9eDn6+5whoIqyn2q4jpTN54c2RIioI6Kt/Di/aNbFs69ZIGEeaL9
-	2G75I8fUze6oxlJSUntDSa0Co5ODtVohyQuivEYCc5Bnlj4Z8m6R/xAo6VRYLIfLaVwgmGEvF2rjd
-	OBrUSYcA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Xt8cH6jhrVnYXSwoVkDMUTNeQexuJtXEebYfbrx2Ziw=; b=rB2llzZ+4+mzPQ
+	ubQxIp72dVeloIffIDiIhRHi3c6SX/mDqpCYavZTPQ/TQli0xpSDsrCcn59ClwX8+2aHf/+eyeNhf
+	NIo0g5IX84FzZnqtbTnyYzkuDnxWI9EvCsuvmNPl4bfTBaR5mMYe9dt1aiO4UVyxwx81kDthgS18Y
+	EAL+JMQyW3Zj34O7EWKj098+E54RHHs82OMm+sxLbmCq9ZY5RnKvppo2quWONdEEzmOz/Ag9XayhD
+	2VA8obMXMgWOXKAVb37lcV5A1DimWDekCptOkBx6bpvcomeE3b906wMTJ0PVKcp3z/e2pwzj0YaZD
+	kK8aVnMLZK7Tmnzh+GZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNcNQ-0004ra-6O; Mon, 06 May 2019 12:05:48 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hNfAX-0006Aw-PK; Mon, 06 May 2019 15:04:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNcN8-0004Tr-Sk
- for linux-rockchip@lists.infradead.org; Mon, 06 May 2019 12:05:33 +0000
-Received: by mail-pl1-x644.google.com with SMTP id ck18so6287799plb.1
- for <linux-rockchip@lists.infradead.org>; Mon, 06 May 2019 05:05:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=OlDYrQagoRRgIUanTTiaH0xI7ydpH4Phsvkhb6Hldvk=;
- b=QZmNCGD8utu44MaRa3SN0Q0GcNmFA99KuHhZxTOd2VZMnVKc59yjcdQ/pRtA57LPED
- tnD9fTyyuHB439p746gDr0wxz8EYTiLTZyxVPqEqRVXl0aJttq/xKBHLPNGsJI94+UTw
- oRNDEWKsskTZyOpdFjppaLtL/JmS/Suj2k7T9nGi1PBfbDv3eKtg7vQ9JLDXK8qwmFxn
- tlC5BvDMHGqYwksGbUV9PT6PFNgD3ag1yScw2DFJHR+QLPcEgaj/9/PZ9r3gugaKhoi6
- j7jgIZJPDbotWYsn3ZwlWCyxp2A96hsPxfVvqg0zGFR0QFOTc77kRJb/TL5X7ASQDUl+
- eRpw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=OlDYrQagoRRgIUanTTiaH0xI7ydpH4Phsvkhb6Hldvk=;
- b=Q81ayfRa7HWa+yuIWvq61I8Au8IZ+lphYhw/0TdwMtFJ0bv4XkjlRk9mz+zrB8UJEq
- WasJZk/aLC/4E6IFBuNvPp/KIu8qxgoBvQGvvR0jAVjp8hpDq/LPrGyjyPSngZUoPyzr
- CHxM2soVGwC2PjwNKlJ02DKPw6Mg8JOXYmze6oJ2+78UBUqpoWdYQBjoY+vhuMtT1UJF
- XPva71JCcJGqKo0BnJvl2ZFhP9yRiZpZwOuA+9hX2djC3wOU3jOTk2Aftt2k3ReUmdNs
- vetdgvoDqpHT7XSwZOB8e1PCLUoqwipPLpezbxRel4d6Y2SI8aEjeaIoxj1JsefdSj/V
- 4llw==
-X-Gm-Message-State: APjAAAXq+fuC6WsUyPgBKxOJhKkb/Trw5KIy0MEuWOeEfsAPXDzmZ3UJ
- GzWzSx+tLfScdgP81nROvJCB
-X-Google-Smtp-Source: APXvYqxAN92qtTThzTYGnaJj3GjkLg+pVGzJHyzT5l3HLI6BdbkS+ocPCrKkEwXf1Pjbn44N2iNjcg==
-X-Received: by 2002:a17:902:183:: with SMTP id
- b3mr31792924plb.267.1557144330073; 
- Mon, 06 May 2019 05:05:30 -0700 (PDT)
-Received: from localhost.localdomain
- ([2409:4072:611b:55a4:e119:3b84:2d86:5b07])
- by smtp.gmail.com with ESMTPSA id q17sm26482318pfi.185.2019.05.06.05.05.25
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 06 May 2019 05:05:29 -0700 (PDT)
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: heiko@sntech.de
-Subject: [PATCH 2/2] arm64: dts: rockchip: Enable SPI1 on Ficus
-Date: Mon,  6 May 2019 17:34:58 +0530
-Message-Id: <20190506120458.25842-2-manivannan.sadhasivam@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190506120458.25842-1-manivannan.sadhasivam@linaro.org>
-References: <20190506120458.25842-1-manivannan.sadhasivam@linaro.org>
+ id 1hNfAG-0005uW-7h; Mon, 06 May 2019 15:04:32 +0000
+Received: from mail-qt1-f174.google.com (mail-qt1-f174.google.com
+ [209.85.160.174])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 408C02173B;
+ Mon,  6 May 2019 15:04:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557155063;
+ bh=GTU8OTjGtl5LOFT7cRg59KsW701NKsE0VzSWQUozfUE=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=Cvs5PHrbtmKdII0xM3nLCehc/8f272vJsChhVCWWGXtXnPy7j1H/KGXvY2kmKL2BW
+ ztsO2Cyzhz3QDyMR2bZxoONjXQdNpFbU42iJMQvfAsfgu9+xrUYnRYmd6+1vxUO5xT
+ aEepz0ihsx+ItjP/ZKs1EzwY1OQWrEXvEeWPn5E8=
+Received: by mail-qt1-f174.google.com with SMTP id y42so15047189qtk.6;
+ Mon, 06 May 2019 08:04:23 -0700 (PDT)
+X-Gm-Message-State: APjAAAUgzvqmWYJmvPEicJ8eRiZf4CBkXmh/V9he4alQ/1KSf04Vc/ax
+ VmFripgvd1j3tZuA/PiKzPkAZaHMB1yXqGqBkg==
+X-Google-Smtp-Source: APXvYqwTGaTwpQhCxUNSWGGAJ6lrotLyqlbDqtumhudX19OwLFLZtjwpqmue9eoggzwpO7k4YQzf0M3Agg9uhmRbdSE=
+X-Received: by 2002:ac8:610f:: with SMTP id a15mr21088874qtm.257.1557155062365; 
+ Mon, 06 May 2019 08:04:22 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190501121448.3812-1-jagan@amarulasolutions.com>
+ <20190501193429.GA9075@ravnborg.org>
+ <CAMty3ZAfwVyvmAmenhrQHJcy3eq-Yb61a4WLop_8jS-7vM940A@mail.gmail.com>
+In-Reply-To: <CAMty3ZAfwVyvmAmenhrQHJcy3eq-Yb61a4WLop_8jS-7vM940A@mail.gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Mon, 6 May 2019 10:04:10 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+mYy1JF_cM7sD82aLuUSnZnwsSD6-Q-W1uTp+_oSdRmg@mail.gmail.com>
+Message-ID: <CAL_Jsq+mYy1JF_cM7sD82aLuUSnZnwsSD6-Q-W1uTp+_oSdRmg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] drm/panel: simple: Add FriendlyELEC HD702E 800x1280
+ LCD panel
+To: Jagan Teki <jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_050531_159024_3A1441A2 
-X-CRM114-Status: GOOD (  10.63  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190506_080424_620625_60999CBB 
+X-CRM114-Status: GOOD (  14.08  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -84,6 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,48 +85,54 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: tom@vamrs.com, linux-kernel@vger.kernel.org, dev@vamrs.com,
- linux-rockchip@lists.infradead.org,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ David Airlie <airlied@linux.ie>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Sam Ravnborg <sam@ravnborg.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Enable SPI1 exposed on both Low and High speed expansion connectors
-of Ficus. SPI1 has 3 different chip selects wired as below:
+On Mon, May 6, 2019 at 4:56 AM Jagan Teki <jagan@amarulasolutions.com> wrote:
+>
+> Hi Sam,
+>
+> On Thu, May 2, 2019 at 1:04 AM Sam Ravnborg <sam@ravnborg.org> wrote:
+> >
+> > Hi Jagan
+> >
+> > On Wed, May 01, 2019 at 05:44:47PM +0530, Jagan Teki wrote:
+> > > HD702E lcd is FriendlyELEC developed eDP LCD panel with 800x1280
+> > > resolution. It has built in Goodix, GT9271 captive touchscreen
+> > > with backlight adjustable via PWM.
+> > >
+> > > Add support for it.
+> > >
+> > > Cc: Thierry Reding <thierry.reding@gmail.com>
+> > > Cc: Sam Ravnborg <sam@ravnborg.org>
+> > > Cc: David Airlie <airlied@linux.ie>
+> > > Cc: Daniel Vetter <daniel@ffwll.ch>
+> > > Cc: dri-devel@lists.freedesktop.org
+> > > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> >
+> > Please submit the binding in a separate patch as per
+> > Documentation/devicetree/bindings/submitting-patches.txt
+>
+> Hmm.. prepared like this initially but few of my patches were combined
+> earlier even-though I sent it separately. anyway let me separate it
+> again.
 
-CS0 - Serial Flash (unpopulated)
-CS1 - Low Speed expansion
-CS2 - High Speed expansion
+For what subsystem? All the maintainers that I was aware of doing that
+have stopped.
 
-Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
----
- arch/arm64/boot/dts/rockchip/rk3399-ficus.dts | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts b/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-index 027d428917b8..9baa378fc770 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-@@ -146,6 +146,12 @@
- 	};
- };
- 
-+&spi1 {
-+	/* On both Low speed and High speed expansion */
-+	cs-gpios = <0>, <&gpio4 6 0>, <&gpio4 7 0>;
-+	status = "okay";
-+};
-+
- &usbdrd_dwc3_0 {
- 	dr_mode = "host";
- };
--- 
-2.17.1
-
+Rob
 
 _______________________________________________
 Linux-rockchip mailing list
