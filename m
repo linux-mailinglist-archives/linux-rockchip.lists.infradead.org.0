@@ -2,78 +2,84 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D254816610
-	for <lists+linux-rockchip@lfdr.de>; Tue,  7 May 2019 16:53:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7351E167BB
+	for <lists+linux-rockchip@lfdr.de>; Tue,  7 May 2019 18:25:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vb/WgeplOo3SdmMhQRmRDRc3RUYgaxDblZoVS3p0ids=; b=h0PUAbbcKTVw+t
-	5otiwETDfQRCh5Yv8ZwZtCpdPf5OCIKIGBP/rzI9P7/lLw+wmoEw/bTlNncQLg+YJ6nuIGoVMnRwE
-	HtR5ck5CbhIyom05Ufb+C8CX3CBZnXdCa+q+Nmt+OwGqhy9aC4ihpfsTvZwS7m3Z5SYJn3K1A0q6q
-	brtJ4LapLELTKk/3+XN9XyHAErPVG8Kl6neo29L4CTOt9H4zJer1LddxybFN3jGSkFJwiZOXIoflZ
-	EULGAR7ieZXuq5o/g541UpZ/kym55ZSbXNLLU8FanifNVA9DgdFELYjgS7dmWyXsv0oBfzKbvXR+I
-	fvZQxjkSND1JAbhI4Ctg==;
+	List-Owner; bh=2gF9jAwUF512eJBIAObMmF2hlQKsliakTTHqv7nFKOI=; b=bfBnYzbgQjatCn
+	Tzzhu5GlIknVKhkPN9HJf6yIOH7d2uXdxws12rILilctzLGIyPOSeZLi5bgygebYoZZdq5LfZ4tqr
+	dJKzTytuJOTwo4r6s+6c3O3+tlTmX4kMJWfUQ4HZGjiWtAH19161Iac7xFnpYpVpAddsIh0Ey53WW
+	V/xT6hDbObO/lmBeKS3agby8hwz1QZWE0KSpuhKUl5DO5zNtdG/1y4iU5fHiDhZDR+ykHrJ6AthaW
+	dZAJbkzabQZp3bToe9kheGJQQ/9L2FQjysV16PknaJDsz87G/pKPT6HISuEMHAcDIVHTUBV3u6f59
+	C4towh64aqzU6NfXOvYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO1St-0001tH-RN; Tue, 07 May 2019 14:53:07 +0000
-Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
+	id 1hO2ub-0004A5-Kc; Tue, 07 May 2019 16:25:49 +0000
+Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO1So-0001sV-86
- for linux-rockchip@lists.infradead.org; Tue, 07 May 2019 14:53:06 +0000
-Received: by mail-yw1-xc41.google.com with SMTP id b74so13313758ywe.5
- for <linux-rockchip@lists.infradead.org>; Tue, 07 May 2019 07:52:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ id 1hO2uY-00049f-D0
+ for linux-rockchip@lists.infradead.org; Tue, 07 May 2019 16:25:47 +0000
+Received: by mail-vs1-xe42.google.com with SMTP id x78so10774532vsc.3
+ for <linux-rockchip@lists.infradead.org>; Tue, 07 May 2019 09:25:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=QsBH3/6csQjaE99mExw7IfFXVrloklkX9pCxbhdLh74=;
- b=mbgXMp/1KMUq1BUS9eZLhL8CKZK/DoGo3oNSSBQJjt5C4AfCcTEo8K03NsU2Qd7zzv
- i1JRhvOPD5EL2ftJF3As7EK4mS+lN0tF4wt28QOUQat71TEp+O+AuxHLdfo4pqZKsaEd
- kwR2mE/Oz3X/WeLW9csTbepgqy+SZfKktXiKawhU/AxNsXlehFKBMzYpLLbfwq8wBYcz
- C2+skA0IsJ2gBWmzmU85JpXxQZkyi8l/i5u9L8phzZl2jm+x0qtnOgKdyIOEnO/xl7tL
- ND6f+VSi2LXKf/z2y7f+hft23H3mSAVeIp51nrNe0AOI9ArlI8ew29HZIOTIyj5ziZeU
- T58w==
+ :cc; bh=XZBHeLaF7S92v0l4QxOY+7+a7SVFf3e4IMU1a/EyhZU=;
+ b=FdE5v5Nkjtfn+/19+R0Pk3wYCQgRQYC24hOLprsBD12gsCEw/431JDUAphm0qonEL4
+ VRGScFvxEPxHEa4donrqLG9WEjBuCQEQw2IunnnzXAJctRb0o9c7zeZc9oktalXGCDgP
+ Y9xq30nQkr7eKpuXyjdiYOywWimZcvZ86oVD8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=QsBH3/6csQjaE99mExw7IfFXVrloklkX9pCxbhdLh74=;
- b=JeVI9Xqlt2zdTG57zxC3R8m3IebYfeHvrlWWBkFopb20cXvMIvzuLZ2bgrJromyu1m
- lic6qglkJrBbOHBygjCi0LBPRs6PzMzjzmBH+WzCkwTS4Iy7kkRAfMlClNpCab3oXb+Q
- gFxkhRZCveqe4LAVb1s8XG8QEjzwS3opvWBQgBt0XIx62EieiDmc+hfK1zVtjJkhdb/5
- Up1x3d86a73rZVzSXhDHNSzumPUcPB4AXXbEfCdDl47/JsaaEr3D4GUTI2+GHz2REdPl
- 5Cfx+RAM9kgSnaiRPSz4n5Al6y2ol9mwPJ8T0hym5ACWcFKD3NXRqqWoRFxhdsi6zU3W
- aV2w==
-X-Gm-Message-State: APjAAAXhGZqXUP+g1Vy0DfiTk2BzG9FZ24e0OZBLQIquUqzPp4rk9D98
- vhIoyYc6U02VSdd1vtdqXNoO1HBK9eaMQpVc4RgICAC1
-X-Google-Smtp-Source: APXvYqwSOyNWaXXqAR64Yl6lra7e1M+E9ZK/56Uz24VtVymWObkhiXt0imSNWCiPDevrgTPeJxA2O5ZLVLoebp5pxmc=
-X-Received: by 2002:a25:5145:: with SMTP id f66mr20397598ybb.151.1557240778588; 
- Tue, 07 May 2019 07:52:58 -0700 (PDT)
+ bh=XZBHeLaF7S92v0l4QxOY+7+a7SVFf3e4IMU1a/EyhZU=;
+ b=NasO2gJCczd/1/qpX6xSW1g+VWGS82eO0nMdY6ffur/y6dTko9H2cef1IqfHrTHvj2
+ 7SfLgSorRRBjm4tfdT4D5Knx7zqsTzI/VIvrkDlOZe+ZeOx1oXjkvke1fQEDMBdhJA6F
+ DJXXaPOpaz7HJubFz3yNlvsgoey7qiFiH5XPx+NM1Xge9KBkBv3ADovfebbHVDUhYHkl
+ eI/uVSyLIDgRLNJA/R0sHmIRvPrXD8nnr5HBUAAJFkSa7lNT1igLGmDCizlnn8nHWG0x
+ aJk5mSLnxfjNgbRO7S4w9XnvAFpmfaxvDMQrCr+gG1odUTauUqN/7eAUt/paOY0v/uU/
+ k6TA==
+X-Gm-Message-State: APjAAAVQqlVQwZz4glzHowyTZWPYMac9wtZX1/BqG20jKvsK0yIXPAo1
+ V30aox8FfpQk8AYRgxX+tF8HVRf+Auk=
+X-Google-Smtp-Source: APXvYqxHQMlJ/Ae/otdwSITVQ4gq8mqqmb/yLBq6RybmR2jKgCdKT8jYhOZZZfdBiZsczkZN7SYA6A==
+X-Received: by 2002:a67:ed44:: with SMTP id m4mr17546158vsp.112.1557246344666; 
+ Tue, 07 May 2019 09:25:44 -0700 (PDT)
+Received: from mail-ua1-f44.google.com (mail-ua1-f44.google.com.
+ [209.85.222.44])
+ by smtp.gmail.com with ESMTPSA id e6sm16972154vkf.0.2019.05.07.09.25.42
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Tue, 07 May 2019 09:25:43 -0700 (PDT)
+Received: by mail-ua1-f44.google.com with SMTP id o33so6233489uae.12
+ for <linux-rockchip@lists.infradead.org>; Tue, 07 May 2019 09:25:42 -0700 (PDT)
+X-Received: by 2002:ab0:2692:: with SMTP id t18mr17168546uao.106.1557246342369; 
+ Tue, 07 May 2019 09:25:42 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190507044801.250396-1-dianders@chromium.org>
-In-Reply-To: <20190507044801.250396-1-dianders@chromium.org>
-From: Guenter Roeck <groeck@google.com>
-Date: Tue, 7 May 2019 07:52:47 -0700
-Message-ID: <CABXOdTcsDU5dSAFWZBAvrOGRa+BokgKi9huGfs=fO4ObCOvnHQ@mail.gmail.com>
-Subject: Re: [PATCH] of: Add dummy for of_node_is_root if not CONFIG_OF
-To: Douglas Anderson <dianders@chromium.org>
+References: <20190503174730.245762-1-dianders@chromium.org>
+ <CA+ASDXOkHxYumCBv-T0gxTjdMVTu-c=33Lk-0TUgJ3WGUn2DVQ@mail.gmail.com>
+In-Reply-To: <CA+ASDXOkHxYumCBv-T0gxTjdMVTu-c=33Lk-0TUgJ3WGUn2DVQ@mail.gmail.com>
+From: Doug Anderson <dianders@chromium.org>
+Date: Tue, 7 May 2019 09:25:32 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=UKTDFwq3PSdpPmShRcOtZaH1mU=2H-ynoG4VooV=rKVQ@mail.gmail.com>
+Message-ID: <CAD=FV=UKTDFwq3PSdpPmShRcOtZaH1mU=2H-ynoG4VooV=rKVQ@mail.gmail.com>
+Subject: Re: [PATCH] pstore/ram: Improve backward compatibility with older
+ Chromebooks
+To: Brian Norris <briannorris@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_075304_480349_74DA0C90 
-X-CRM114-Status: GOOD (  12.63  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190507_092546_470022_EB528C68 
+X-CRM114-Status: GOOD (  17.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -81,8 +87,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,50 +100,67 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE"
- <devicetree@vger.kernel.org>, Kees Cook <keescook@chromium.org>,
- Brian Norris <briannorris@chromium.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
+Cc: Tony Luck <tony.luck@intel.com>, Kees Cook <keescook@chromium.org>,
+ Anton Vorontsov <anton@enomsg.org>,
+ Linux Kernel <linux-kernel@vger.kernel.org>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, Guenter Roeck <groeck@chromium.org>,
- Julius Werner <jwerner@chromium.org>, Frank Rowand <frowand.list@gmail.com>
+ Matthias Kaehlcke <mka@chromium.org>, Colin Cross <ccross@android.com>,
+ Guenter Roeck <groeck@chromium.org>, Julius Werner <jwerner@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, May 6, 2019 at 9:48 PM Douglas Anderson <dianders@chromium.org> wrote:
->
-> We'll add a dummy to just return false.
->
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
+Hi,
 
-Reviewed-by: Guenter Roeck <groeck@chromium.org>
+On Mon, May 6, 2019 at 2:40 PM Brian Norris <briannorris@chromium.org> wrote:
+>
+> On Fri, May 3, 2019 at 10:48 AM Douglas Anderson <dianders@chromium.org> wrote:
+> > When you try to run an upstream kernel on an old ARM-based Chromebook
+> > you'll find that console-ramoops doesn't work.
+>
+> Ooh, nice! I still get annoyed by old depthcharge firmware. It's
+> almost as if we should have gotten an upstream binding approved before
+> baking it into firmware...
+>
+> > --- a/fs/pstore/ram.c
+> > +++ b/fs/pstore/ram.c
+>
+> > @@ -703,6 +704,23 @@ static int ramoops_parse_dt(struct platform_device *pdev,
+> >
+> >  #undef parse_size
+> >
+> > +       /*
+> > +        * Some old Chromebooks relied on the kernel setting the console_size
+> > +        * and pmsg_size to the record size since that's what the downstream
+> > +        * kernel did.  These same Chromebooks had "ramoops" straight under
+> > +        * the root node which isn't according to the upstream bindings.
+>
+> The last part of the sentence technically isn't true -- the original
+> bindings (notably, with no DT maintainer Reviewed-by) didn't specify
+> where such a node should be found:
+>
+> 35da60941e44 pstore/ram: add Device Tree bindings
+>
+> so child-of-root used to be a valid location. But anyway, this code is
+> just part of a heuristic for "old DT" (where later bindings clarified
+> this), so it still seems valid.
 
-> ---
+I agree that it was unclear in the past, but it is true that being
+under the root node is not according to the _current_ upstream
+bindings, right?  ;-)
+
+
+> >  Let's
+> > +        * make those old Chromebooks work by detecting this and mimicing the
 >
->  include/linux/of.h | 5 +++++
->  1 file changed, 5 insertions(+)
->
-> diff --git a/include/linux/of.h b/include/linux/of.h
-> index 0cf857012f11..62ae5c1cafa5 100644
-> --- a/include/linux/of.h
-> +++ b/include/linux/of.h
-> @@ -653,6 +653,11 @@ static inline bool of_have_populated_dt(void)
->         return false;
->  }
->
-> +static inline bool of_node_is_root(const struct device_node *node)
-> +{
-> +       return false;
-> +}
-> +
->  static inline struct device_node *of_get_compatible_child(const struct device_node *parent,
->                                         const char *compatible)
->  {
-> --
-> 2.21.0.1020.gf2820cf01a-goog
->
+> s/mimicing/mimicking/
+
+Kees: if you want me to spin with this typo fix then please let me
+know.  Otherwise I'll assume it's less work for you to just fix it
+yourself when applying.
+
+-Doug
 
 _______________________________________________
 Linux-rockchip mailing list
