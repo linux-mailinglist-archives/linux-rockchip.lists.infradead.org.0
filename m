@@ -2,92 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1D2016D84
-	for <lists+linux-rockchip@lfdr.de>; Wed,  8 May 2019 00:23:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEAA216DF1
+	for <lists+linux-rockchip@lfdr.de>; Wed,  8 May 2019 01:50:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dqqHpaH5Pi/BEfUWz0bfqSGwCdue0ny3u6eH1cPBovE=; b=Rm4xEerdmWc/VD
-	CYmayGOTVUbsDOlG+4W8kBPG4LtKvBK3zxQ+bhMhGIqdQUXmRI5iyHBjvq7Wd8wqi2AlSlz340TSm
-	cMXMeg4PnhH4BarvAy6WTHEdul7GUDd0qXtDJr2aEZwrgQ52QSSJnSIv80+HeYXnEefgXo0a5xBX9
-	1KXN/fkwxeVd+Mk/eQZu2XzGfZpePwEqATgI+O4G+Tvc5D0MiNl6Obky8CNeuWNeYlli2vL8bmWfi
-	TkjlFGEQvbBub1Gu+UuMmxfIhr+om1VSHd8225VvlCRFtaa9nJ4QEPbbkBQ2sLy7aNO1IGZZHxI+G
-	7u7eL7tUwvLQu8EXvfdw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ja1R/HlWAKIIL8NCOOrC2Vp8+JluJYYpHyViAI4Jk0s=; b=WzMLjC4A7WSpGO
+	mCiUJCOHbgWZX+QV7MPyu/liPEXfheZjzmT2k27xekf1i8+RALcPkfZ0zShn13ZvTRL3214lWaeok
+	6/aq/HwX6skZoh/GgRp1y9WJdgp+5zGzDZKUAzecXsiOLgjbyLAUBM36FWaOXLv2D6cF5/Nckzd83
+	epkyJ4hF6yYxD3k8lnCQ59njL2N/uZjCeGCDDO8bTCWAc9d0LRpmVDK70+DT6IBEpLZckNz429TdP
+	zzoBKoIvJjJTikw5e6zRqte1rnmjNu509w40SJy6QPMtO6xeGukCLMxrxArjGTxNGjkWGFS+BBPD8
+	I5ak837o0xKS0kY+jcAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO8Ux-0000D0-HF; Tue, 07 May 2019 22:23:43 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hO9rJ-0002tC-T6; Tue, 07 May 2019 23:50:53 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO8Uu-0000Cg-Nj
- for linux-rockchip@lists.infradead.org; Tue, 07 May 2019 22:23:42 +0000
-Received: by mail-pl1-x644.google.com with SMTP id bi2so8852785plb.13
- for <linux-rockchip@lists.infradead.org>; Tue, 07 May 2019 15:23:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=JOHw2h4WyfdeqecBWC0/iiXTy8donTOhcpgp2J9sTnQ=;
- b=vSvIk4EdOijXKIbUmWx0TMPDlflej3piFu8e+Jx6PFhJP7+snSHmhTywYinYiI1BOa
- 46i1Qpw6NrvT603v7l2UA+0fKGbMpBLXH4jcipDVxzGQkwzZzjbW/hibxcFkQqZa4TIm
- 7aZyDt3A0UHKtygqFBRth3vQnGlxrE/kGvIYkEJ0PErZ4v7yZY1XXP3fU4UEOca2TauH
- v0AY2uwG8dXuefNsp6Pp47la9Hz55w8SmlX56BoQkiua+M2L62Vg4uvHYpTHCdKdpbLX
- Wjwy+NO3QfMblucBDT+6U1tCIekfLOI7Lz0ljDtivyeMYvE9uBLtk5fpKU+MWzgCOMOb
- rQsg==
+ id 1hO9rB-0002mn-2S
+ for linux-rockchip@lists.infradead.org; Tue, 07 May 2019 23:50:46 +0000
+Received: by mail-pf1-x442.google.com with SMTP id t87so8897877pfa.2
+ for <linux-rockchip@lists.infradead.org>; Tue, 07 May 2019 16:50:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=C2o4ETy+vWyO645V7kF5tMNDqsri4a3cWb41vpQuvow=;
+ b=cOk+SU1iuvIll4eRwwIrl5D3fmLsvWuhtE1OcoCzB240FCv3dCCE2VDX8UL/cD5vIS
+ x1XUhb0ErANI7cOso8PoCamjW1SavXsouvxL+B20d1sExG7iHT8GufU1y+biN/X1HoEg
+ becIXZZzA9wVvAnEdU6TZhncZ3bW0qSkIbDs0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=JOHw2h4WyfdeqecBWC0/iiXTy8donTOhcpgp2J9sTnQ=;
- b=UtWJxgIQasGZYMMNvsH9P7duEUFN+BKyAtdvFLZtY6x3pFY6DfFp40w94bA2aY39hk
- r3sG/VLuVQ8rKjStWbtyYnt0JtK/dR4QKvpQLmxorDkXypxAo6beL4mng+zSbhyIa4ys
- NHz5ToEAm66jtwkxOVn60sCmfBrekHjC4KHZT7eOh+0UCUOj32sMeH3ZOf0KehD2bCwc
- buf04eaHYddXXY0CC4Yj30SqNXpYICc8o7B74kghN9V1/qjRZX+sL0uCEAAuRoLHuCFX
- ra+6YZFbckGE8mHLoxhL0B6E79p8dkYnvVkABMG7ltY3quYLjKX4EJWnpQPr+XM1wxdc
- 807Q==
-X-Gm-Message-State: APjAAAUdj8DfixMcmYxFG7nHoWoDbrTsJ1lPNVGkVeUxctjlAUAiQhgb
- MTXFYkGvP1Z6zAegFUzSbzM=
-X-Google-Smtp-Source: APXvYqzBkTd5yf+Lj1mGYorifVu73EKwCvtafjIH+u/EGe+ZhtZyFI7DI2NtItE9xU9g6C3iwgnLvg==
-X-Received: by 2002:a17:902:b614:: with SMTP id
- b20mr6128707pls.200.1557267819675; 
- Tue, 07 May 2019 15:23:39 -0700 (PDT)
-Received: from [192.168.1.70] (c-24-6-192-50.hsd1.ca.comcast.net.
- [24.6.192.50])
- by smtp.gmail.com with ESMTPSA id i1sm703349pgj.70.2019.05.07.15.23.38
+ bh=C2o4ETy+vWyO645V7kF5tMNDqsri4a3cWb41vpQuvow=;
+ b=S86v+mSSkTcr8gHxRScEaRzOfdFUmLBoXxczR1iotqjvcdQqkcKLNJkCeVpcDEPvg2
+ UU2Ilr+wXLxoqkLEC9YNOEkQ/USwWlwp4TBNGYNRmh1zqATq/fimrAK5rwXJfO3fuIcR
+ VHBKcoZbqjAmzbX8K+TxCYnv3ysp0QmZbE/pgOE2rJgR0m5kjJiD68lpumAJj/8Qgu2M
+ +QWrINeS0dxnHCZLfBbAVj7h2WKLZjStSjwABLmo4MBNt3qEvX8+8asEgnov4Ki8N0K6
+ xVNNCrJahCPFHdsEX3yB4tWbV97pvgCSYdNNK1UapB/bsW2AF/ng6dD98RXOr9DS8391
+ NrKg==
+X-Gm-Message-State: APjAAAWey1QfYcBdbZYf9yA7sYHhAQXm7QNCbktelGA8cnCPEdnl/WUA
+ B8i4vOUBmP4Hv9Ah/nZH5HKliA==
+X-Google-Smtp-Source: APXvYqyPRHj71I0RtZt1k/NbQYF+jTnztfdDZMDt/S2D2rOv+RAfu+tJI8s6apjo+dh+q0OSW58e1A==
+X-Received: by 2002:a63:6b49:: with SMTP id g70mr43558513pgc.340.1557273044079; 
+ Tue, 07 May 2019 16:50:44 -0700 (PDT)
+Received: from tictac2.mtv.corp.google.com
+ ([2620:15c:202:1:24fa:e766:52c9:e3b2])
+ by smtp.gmail.com with ESMTPSA id n18sm30268927pfi.48.2019.05.07.16.50.42
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 07 May 2019 15:23:39 -0700 (PDT)
-Subject: Re: [PATCH] pstore/ram: Improve backward compatibility with older
- Chromebooks
-To: Doug Anderson <dianders@chromium.org>
-References: <20190503174730.245762-1-dianders@chromium.org>
- <CAGXu5jL9cJ+8scZ+Cg9yqdc9+rb563xs-qVjXXuPRJYjNa4Y8w@mail.gmail.com>
- <CAD=FV=WcjfUwH62bHVELOmzViv7d329r6+HfPqAyXMjKCO7LeQ@mail.gmail.com>
- <30361ae7-36a6-0858-77ec-40493ef44b98@gmail.com>
- <CAD=FV=U5heONCv=W5x6cL_JAmJaeDrjMa0CnQ=UVu+DTZZBNKQ@mail.gmail.com>
-From: Frank Rowand <frowand.list@gmail.com>
-Message-ID: <90974ece-ab3a-7f5a-7d71-bd8a0d1d5aec@gmail.com>
-Date: Tue, 7 May 2019 15:23:38 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ Tue, 07 May 2019 16:50:43 -0700 (PDT)
+From: Douglas Anderson <dianders@chromium.org>
+To: Kishon Vijay Abraham I <kishon@ti.com>,
+	Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH] phy: rockchip-dp: Avoid power leak by leaving the PHY power on
+Date: Tue,  7 May 2019 16:48:56 -0700
+Message-Id: <20190507234857.81414-1-dianders@chromium.org>
+X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
 MIME-Version: 1.0
-In-Reply-To: <CAD=FV=U5heONCv=W5x6cL_JAmJaeDrjMa0CnQ=UVu+DTZZBNKQ@mail.gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_152340_805333_DD5A0D90 
-X-CRM114-Status: GOOD (  17.94  )
+X-CRM114-CacheID: sfid-20190507_165045_141902_9274AA7E 
+X-CRM114-Status: GOOD (  16.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (frowand.list[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -95,6 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -107,94 +93,88 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Brian Norris <briannorris@chromium.org>,
- Kees Cook <keescook@chromium.org>, Tony Luck <tony.luck@intel.com>,
- Anton Vorontsov <anton@enomsg.org>, LKML <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Matthias Kaehlcke <mka@chromium.org>, Colin Cross <ccross@android.com>,
- Guenter Roeck <groeck@chromium.org>, Julius Werner <jwerner@chromium.org>
+Cc: Elaine Zhang <zhangqing@rock-chips.com>, hl@rock-chips.com,
+ dbasehore@chromium.org, Douglas Anderson <dianders@chromium.org>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ mka@chromium.org, ryandcase@chromium.org, groeck@chromium.org,
+ linux-arm-kernel@lists.infradead.org, wxt@rock-chips.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Doug,
+While testing a newer kernel on rk3288-based Chromebooks I found that
+the power draw in suspend was higher on newer kernels compared to the
+downstream Chrome OS 3.14 kernel.  Specifically the power of an
+rk3288-veyron-jerry board that I tested (as measured by the smart
+battery) was ~16 mA on Chrome OS 3.14 and ~21 mA on a newer kernel.
 
-On 5/7/19 3:19 PM, Doug Anderson wrote:
-> Hi,
-> 
-> On Tue, May 7, 2019 at 3:17 PM Frank Rowand <frowand.list@gmail.com> wrote:
->>
->> On 5/6/19 4:58 PM, Doug Anderson wrote:
->>> Hi,
->>>
->>> On Mon, May 6, 2019 at 2:10 PM Kees Cook <keescook@chromium.org> wrote:
->>>>
->>>> From: Douglas Anderson <dianders@chromium.org>
->>>> Date: Fri, May 3, 2019 at 10:48 AM
->>>> To: Kees Cook, Anton Vorontsov
->>>> Cc: <linux-rockchip@lists.infradead.org>, <jwerner@chromium.org>,
->>>> <groeck@chromium.org>, <mka@chromium.org>, <briannorris@chromium.org>,
->>>> Douglas Anderson, Colin Cross, Tony Luck,
->>>> <linux-kernel@vger.kernel.org>
->>>>
->>>>> When you try to run an upstream kernel on an old ARM-based Chromebook
->>>>> you'll find that console-ramoops doesn't work.
->>>>>
->>>>> Old ARM-based Chromebooks, before <https://crrev.com/c/439792>
->>>>> ("ramoops: support upstream {console,pmsg,ftrace}-size properties")
->>>>> used to create a "ramoops" node at the top level that looked like:
->>>>>
->>>>> / {
->>>>>   ramoops {
->>>>>     compatible = "ramoops";
->>>>>     reg = <...>;
->>>>>     record-size = <...>;
->>>>>     dump-oops;
->>>>>   };
->>>>> };
->>>>>
->>>>> ...and these Chromebooks assumed that the downstream kernel would make
->>>>> console_size / pmsg_size match the record size.  The above ramoops
->>>>> node was added by the firmware so it's not easy to make any changes.
->>>>>
->>>>> Let's match the expected behavior, but only for those using the old
->>>>> backward-compatible way of working where ramoops is right under the
->>>>> root node.
->>>>>
->>>>> NOTE: if there are some out-of-tree devices that had ramoops at the
->>>>> top level, left everything but the record size as 0, and somehow
->>>>> doesn't want this behavior, we can try to add more conditions here.
->>>>>
->>>>> Signed-off-by: Douglas Anderson <dianders@chromium.org>
->>>>
->>>> I like this; thanks! Rob is this okay by you? I just want to
->>>> double-check since it's part of the DT parsing logic.
->>>>
->>>> I'll pick it up and add a Cc: stable.
->>>
->>> Hold off a second--I may need to send out a v2 but out of time for the
->>> day.  I think I need a #include file to fix errors on x86:
->>>
->>>> implicit declaration of function 'of_node_is_root' [-Werror,-Wimplicit-function-declaration
->>
->> Instead of checking "of_node_is_root(parent_node)" the patch could check
->> for parent_node not "/reserved-memory".  Then the x86 error would not
->> occur.
->>
->> The check I am suggesting is not as precise, but it should be good enough
->> for this case, correct?
-> 
-> Sure, there are a million different ways to slice it.  If you prefer
-> that instead of adding a dummy of_node_is_root() I'm happy to do that.
+I tracked the regression down to the fact that the "DP PHY" driver
+didn't exist in our downstream 3.14.  We relied on the eDP driver to
+turn on the clock and relied on the fact that the power for the PHY
+was default turned on.
 
-Yes, I would prefer to avoid adding a dummy of_node_is_root() if the
-alternative is reasonable (and if I understand, you are saying the
-alternative is reasonable).
+Specifically the thing that caused the power regression was turning
+the eDP PHY _off_.  Presumably there is some sort of power leak in the
+system and when we turn the PHY off something is leaching power from
+something else and causing excessive power draw.
 
-Thanks,
+Doing a search through device trees shows that this PHY is only ever
+used on rk3288.  Presumably this power leak is present on all
+rk3288-SoCs running upstream Linux so let's just whack the driver to
+make sure we never turn off power.  We'll still leave the parts that
+turn _on_ the power and grab the clock, though.
 
-Frank
+NOTES:
+A) If someone can identify what this power leak is and fix it in some
+   other way we can revert this patch.
+B) If someone can show that their particular board doesn't have this
+   power leak (maybe they have rails hooked up differently?) we can
+   perhaps add a device tree property indicating that for some boards
+   it's OK to turn this rail off.  I don't want to add this property
+   until I know of a board that needs it.
+
+Fixes: fd968973de95 ("phy: Add driver for rockchip Display Port PHY")
+Signed-off-by: Douglas Anderson <dianders@chromium.org>
+---
+As far as I know Yakir (the original author) is no longer at Rockchip.
+I've added a few other Rockchip people and hopefully one of them can
+help direct even if they're not directly responsible.
+
+ drivers/phy/rockchip/phy-rockchip-dp.c | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-dp.c b/drivers/phy/rockchip/phy-rockchip-dp.c
+index 8b267a746576..10bbcd69d6f5 100644
+--- a/drivers/phy/rockchip/phy-rockchip-dp.c
++++ b/drivers/phy/rockchip/phy-rockchip-dp.c
+@@ -35,7 +35,7 @@ struct rockchip_dp_phy {
+ static int rockchip_set_phy_state(struct phy *phy, bool enable)
+ {
+ 	struct rockchip_dp_phy *dp = phy_get_drvdata(phy);
+-	int ret;
++	int ret = 0;
+ 
+ 	if (enable) {
+ 		ret = regmap_write(dp->grf, GRF_SOC_CON12,
+@@ -50,9 +50,12 @@ static int rockchip_set_phy_state(struct phy *phy, bool enable)
+ 	} else {
+ 		clk_disable_unprepare(dp->phy_24m);
+ 
+-		ret = regmap_write(dp->grf, GRF_SOC_CON12,
+-				   GRF_EDP_PHY_SIDDQ_HIWORD_MASK |
+-				   GRF_EDP_PHY_SIDDQ_OFF);
++		/*
++		 * Intentionally don't turn SIDDQ off when disabling
++		 * the PHY.  There is a power leak on rk3288 and
++		 * suspend power _increases_ by 5 mA if you turn this
++		 * off.
++		 */
+ 	}
+ 
+ 	return ret;
+-- 
+2.21.0.1020.gf2820cf01a-goog
 
 
 _______________________________________________
