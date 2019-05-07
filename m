@@ -2,79 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A963116AB3
-	for <lists+linux-rockchip@lfdr.de>; Tue,  7 May 2019 20:53:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 701A916AB5
+	for <lists+linux-rockchip@lfdr.de>; Tue,  7 May 2019 20:53:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A+yZbLF+TVwukc0M3Pr8XiG/Sk6FZQ7NpzElmxwdF7c=; b=mOp1inXQLZMrBj
-	DaoTFH6diJaXehskNOFoi9apf2OI9YevGxECyLRPDspaJR4tZ4fOIK+Hn2HKM35HfK6/2MabjCt+S
-	OP3vre/hBM40uYy9mVYFRn/6vGhWvp0AmcSE5N1qhXEsIHOm+jdmNfdV5dafF8Eo1+xH9G5EuY/Lr
-	w+Hu1bhyam6ix3KYNy815IRxYsNV7gRr6jgalYawXxxd36SEJpMFo2hNcA0550w2i/4zE+/nA/CNv
-	VCJLbfo1dY68d3e8XeHEwfW9P94UHGlJ0HjWSfq6TYuqB32iVUCkK+Kn73V2GDk07TYCTtMafjD4w
-	SdnCaw/ZNtOQtilvHt9g==;
+	List-Owner; bh=K7K8ZiKHuWOxjaWyYZh5MO3nrSeQZZd2ZPobVL/94wY=; b=mLeMvRNtYLIpvQ
+	KdxA2sSkuPDd4jqzDg9UDCEa0sVn97Jm8/UosUyMeODw/Euf0aGwl0V9CPrxai3hIlF7YstP7YA30
+	9s1/aaaQRi8+5ygMf72yuVDf4HK5MK1NGbAL90zLc96dzSzvTUR2lwzh/f4sG9pmjm8RACZ8su9Uw
+	G7heS8fWzjjWRErpdRp4dd0/bTomJwerHGtyuqIlj69GHZR1zSiUicfEza27Dci60raanC20VRAl5
+	pzH4XxquYszl9DWNPNrFcG8WhQQ6M7WMjFSL6pRP31v5FK7zkmBQi1SpojXWSftKzEgpQhpqKJsq2
+	N0QGXyaj2YJP8RqoEPDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO5DL-0005qT-Po; Tue, 07 May 2019 18:53:19 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hO5DO-0005tV-ET; Tue, 07 May 2019 18:53:22 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO5DI-0005nz-C9
- for linux-rockchip@lists.infradead.org; Tue, 07 May 2019 18:53:17 +0000
-Received: by mail-pl1-x642.google.com with SMTP id bi2so8613093plb.13
- for <linux-rockchip@lists.infradead.org>; Tue, 07 May 2019 11:53:16 -0700 (PDT)
+ id 1hO5DL-0005qO-Bb
+ for linux-rockchip@lists.infradead.org; Tue, 07 May 2019 18:53:20 +0000
+Received: by mail-pg1-x542.google.com with SMTP id p6so8745259pgh.9
+ for <linux-rockchip@lists.infradead.org>; Tue, 07 May 2019 11:53:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=5NdEw/MFl+V1N8bCDji05Xp8skxj9vixXwwnqbrnruo=;
- b=LgTavitKD0+ytd6ZGgZyETwYtpL/cQsq1Pc5YrDe/k0jyRpv9tkbLROFQZW/nc1uzL
- GMOpEC8IB0LTSFJBseewDFYtX7LlxKDd5iJCi8QVyZCGYle0E8liexnmebwykmDr6T9B
- NtFaZQyl5j9Xz1xW0OFMvd92M+mEyrUxUY0Hc=
+ bh=rqIb7elc/qRzjIW8DetaTB8B+9VR8vBHJgOxmRWjXRg=;
+ b=k0PPTrpCnV+W+FCsipgQuQGj+MErHQCmn39j3LKASGC1UiKGNlBWQR9IaoHUV+mv0o
+ oF/c1HKveFisjTJ2MLc2TMsOsEliTA6cCt2OKfvfmLpR/wUL/zy/RnNOundclJ0CrK7R
+ bCj+euJ8YSHvVER/3c8DU0SLGxOfUTA3Uah1k=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=5NdEw/MFl+V1N8bCDji05Xp8skxj9vixXwwnqbrnruo=;
- b=IKuTeWU4hFtGmjcqxJULTu2J9ICqgSOWN8+k1IyWyDpK7jnr4vpsBd2albRCtexF8V
- Edu+HSkcOqKNH6egqjb3Q3QA6R8EjG/rwwaBNW1mpBtWWQefb4beZ1ayVT8o5FCdXLW3
- wW0AFO2PljEcihKGEydjfzHBeDQdUe6M7L056ncf9+wl25ydfPSucjAOBc9D6xhJ7kPz
- YA2uFuVV1HMEiQUMWPENihCJZNKLw82pzaw9pT2QmXloykzHeKaSn7nTNJuUjiwYcXxO
- +cmvhO9jdI0nxMEL2pI/936aoSHt7QAu48OqB41RwxlvVG05qlUn3pHGBsHq3BS+4kh8
- VQ7w==
-X-Gm-Message-State: APjAAAV9rI/T0WuYVlkjnnB2z6PTBzG8IvuEOObfbA/O/1FFJPV6ZHe6
- nzgiVTyEFnUxufbppqJRNXJg/Q==
-X-Google-Smtp-Source: APXvYqyv4qBgoWYiA+4VgHlfafIQmIYUG0xG0zVsuIWmD4RXnS4iKQAa9c5Gma4bt1tzOBRrfdQIHQ==
-X-Received: by 2002:a17:902:fa2:: with SMTP id
- 31mr42827839plz.128.1557255195730; 
- Tue, 07 May 2019 11:53:15 -0700 (PDT)
+ bh=rqIb7elc/qRzjIW8DetaTB8B+9VR8vBHJgOxmRWjXRg=;
+ b=aiwPJD6aaT3j8DAIG9GfIi1GBthM0gadzjArgsgOwMFohEBY5sc5TLaxJznAYke5Nu
+ G0EGeEGlAhk/Cxmhv5eHtFKtZUecOZ4bsBSj38ovHXH9AxanAe0SL7nkpEDEmhnyzBQs
+ zZEZGzv1EmoJJmKCRxgTeTpoDbOfz3PBjwkU1iTDa44pDefHus+tEgN8QKF2JgaYUc9Z
+ oOWvlzRoFuA0LkH61NlRixjGxo+enn9N5l5IdCDm517c1bO6F/RUaTIQhM81mesxp6AD
+ qD07tr8R0eWgVDAA0G3YAKaIt/HVhdbIUvy+9r1SUTYt1TkBptfLh32WILuaG718vKGa
+ 12Cw==
+X-Gm-Message-State: APjAAAXMKLjmfOu36hb30SnIemDDKbTiMPRoBeJmiSgyXoJUuSzGioP7
+ S4HKI/fgqPyCjqxfFAlXAn0AOA==
+X-Google-Smtp-Source: APXvYqxLjm/jfLSoEB7kf311TVQCmEdXBhiaAZH49aBZFq+F+dDKg8u/jM2ogoBzTOx2PUMa75+G9A==
+X-Received: by 2002:a63:9d8d:: with SMTP id
+ i135mr24820457pgd.245.1557255198884; 
+ Tue, 07 May 2019 11:53:18 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.185.144])
- by smtp.gmail.com with ESMTPSA id l83sm14668086pfi.150.2019.05.07.11.53.12
+ by smtp.gmail.com with ESMTPSA id l83sm14668086pfi.150.2019.05.07.11.53.15
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 07 May 2019 11:53:14 -0700 (PDT)
+ Tue, 07 May 2019 11:53:17 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>
-Subject: [PATCH v3 2/6] Makefile: clean bl31_*.bin
-Date: Wed,  8 May 2019 00:22:11 +0530
-Message-Id: <20190507185215.15441-3-jagan@amarulasolutions.com>
+Subject: [PATCH v3 3/6] travis.yml: Add pyelftools install entry
+Date: Wed,  8 May 2019 00:22:12 +0530
+Message-Id: <20190507185215.15441-4-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190507185215.15441-1-jagan@amarulasolutions.com>
 References: <20190507185215.15441-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_115316_538849_C54E5C85 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20190507_115319_404971_FA454FBE 
+X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -103,31 +104,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Rockchip platform has its python script that would generate various
-bl31_*bin for creating u-boot.itb file by taking bl31.elf as input.
+Currently rockchip platform is using explicit 'make u-boot.itb' for
+building u-boot.itb but if we enable CONFIG_BUILD_TARGET as 'u-boot.itb'
+then the resulting u-boot.itb directly will create by make.
 
-These bl31_*.bin files are generated in u-boot root directory and
-have no rule to clean it up. so add support for it by adding in
-command entry of clean target in Makefile.
+But, that indeed make travis build fail since it require python-pyelftools
+host package.
+
+So add pyelftools install entry as 'pip install pyelftools', this would
+create pyelftools on travis host which are required to build rk3399 itb.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- Makefile | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ .travis.yml | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Makefile b/Makefile
-index de11446ed3..64c7976f7e 100644
---- a/Makefile
-+++ b/Makefile
-@@ -1814,7 +1814,7 @@ clean: $(clean-dirs)
- 		-o -name 'dsdt.aml' -o -name 'dsdt.asl.tmp' -o -name 'dsdt.c' \
- 		-o -name '*.efi' -o -name '*.gcno' -o -name '*.so' \) \
- 		-type f -print | xargs rm -f \
--		image.map
-+		bl31_*.bin image.map
- 
- # mrproper - Delete all generated files, including .config
- #
+diff --git a/.travis.yml b/.travis.yml
+index 8bd49ef1a5..94b795ef21 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -50,6 +50,7 @@ install:
+  - . /tmp/venv/bin/activate
+  - pip install pytest==2.8.7
+  - pip install python-subunit
++ - pip install pyelftools
+  - grub-mkimage -o ~/grub_x86.efi -O i386-efi normal  echo lsefimmap lsefi lsefisystab efinet tftp minicmd
+  - grub-mkimage -o ~/grub_x64.efi -O x86_64-efi normal  echo lsefimmap lsefi lsefisystab efinet tftp minicmd
+  - mkdir ~/grub2-arm
 -- 
 2.18.0.321.gffc6fa0e3
 
