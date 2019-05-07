@@ -2,92 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EDEA156C6
-	for <lists+linux-rockchip@lfdr.de>; Tue,  7 May 2019 01:58:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23E5F15841
+	for <lists+linux-rockchip@lfdr.de>; Tue,  7 May 2019 06:06:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f4NeDaRZ+Tp6kdqZTUlRaWyoeD89GaVRuuA2vwtG0WY=; b=L0mG57U3ZKFWl9
-	1S64Eizptz4S8cimr+y85uY46O2xphXnQvEZ0M+aRRdXMQj6E5sjfSqM3u4Uy/XP2141Ork2/xv3d
-	IY8ZYQtQEbMRb+lgQ93QyPHAkzTsZAKM6w6UfCEmopEKWbna98mqlD/9IoQIsk16dZEISZB/DXCtS
-	1CHpfqm0uBFdPcRr1YmefgtljtSPYwg61WHH3k3Hkpmu3O5VcDr9W9zoxiI3J3ibRuGPw9nWgATip
-	nRQqOp0XQrIyIqZYRP3GtMvxX8w52+qm0VrUAlxuA9LNnhmIVtzD0r5x4zvTaLvj4drtY1mgGFX4b
-	QGemEaV6cZ+qvFv7vAHw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UQJ+6FxsnnNY6faFcgPzrTqKLW28ilf0eUEQmHh0+qY=; b=aunKnIYOgDEC74
+	iAuPRT6310WX+cbz+xhKPuDyWaJUijgNe1ltFMp2ZFvJxZPe4F9QRQ8+qT/GN0hdJ5gYpX608HOUD
+	tGYv5Ueq3YFZJCebF2vcstOBZ5vis/wqPqRpn7Nxr0hBunc1WmBlNzPd4ujlzCl/RH+zIC0lJiQGS
+	Ai893brTzMmvZUJsuO//D8xzCrfHbjHuUFPJC07pVHPj6kDFqHG54+pssZsr2VODkPh4Vyxi2bULk
+	tnVf7nTVTv8CDu+NtJ+OFgmhxmz8ryVu2UmrWVXocrwmzR9F1tL2YZHJEzhWiafk7MvnJmct6hSFY
+	ZOiGPnifzDht6fzeu/gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNnVR-0007up-Os; Mon, 06 May 2019 23:58:49 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1hNrMj-0005fT-Vh; Tue, 07 May 2019 04:06:05 +0000
+Received: from regular1.263xmail.com ([211.150.70.198])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNnVO-0007u9-Du
- for linux-rockchip@lists.infradead.org; Mon, 06 May 2019 23:58:47 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id g127so9251004vsd.6
- for <linux-rockchip@lists.infradead.org>; Mon, 06 May 2019 16:58:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=mx65sXO1r4vrgQ2kHviuuHpS6yfDT9JxVfsYUs6Yhno=;
- b=XJNA4uFR67wlqSxbXVvJFANNEYgMlJH7KBPzpr3b7DMeji4eUc4UYf6iB8tdfjqLj2
- 77oM72iVyJUyg5ERdVepbiioCfuJrdGT64WpTPel7XkYiuWgcVFuRGXKqFaYf/alwG8G
- nTnfmO7nurua4ICMHXTiKYOqKMonbeIU+6AIo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=mx65sXO1r4vrgQ2kHviuuHpS6yfDT9JxVfsYUs6Yhno=;
- b=mqqvtCjYHlTQokjCmUU6fVSCkKttJeLmyKWpAyKelo5qOJgW5pIKPwC980lRNLu8Au
- bI/BPztuT+9K8IMSDB7lyai48beXx1LDpx0ZnPwl08I+5DXgPx0EqOQkiyw6wYmE0pcV
- GUYKo/+sw2PaYtEXz1eyTM122w4c6FDoTJjWJKYWdcn86p6VgupvfNnCwPlrzzLv1vLR
- X3Vl1ZmWY9OrQKQ2aM/9HciErmlL+xI2P9WvJTDuP52IZVXhpW2ZgqbrP2svQSqhoVv+
- ZpG82/+t4UGSBtEkYsXs2Q+yaTuivdjTW/kXMibxRRceUzO7vDSFuG5TiP/G6UFjxCkE
- XNcA==
-X-Gm-Message-State: APjAAAV26OP5k5/PH4Qd+eeAGFeDMQFvzWGshh8/8OD0gEzgl1NqXFZo
- 7wrG//r0x4WkxmRUde73vOHO31VpCgE=
-X-Google-Smtp-Source: APXvYqxYFxb+JM5M8haDWf6kMPq5cvlkjc8WOcaRzVzTpSTYyl+8prkcF2ChUJF5DqmyXEPFnXeyaQ==
-X-Received: by 2002:a67:7617:: with SMTP id r23mr14929193vsc.171.1557187124261; 
- Mon, 06 May 2019 16:58:44 -0700 (PDT)
-Received: from mail-vs1-f43.google.com (mail-vs1-f43.google.com.
- [209.85.217.43])
- by smtp.gmail.com with ESMTPSA id 15sm2160478vkg.16.2019.05.06.16.58.43
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Mon, 06 May 2019 16:58:43 -0700 (PDT)
-Received: by mail-vs1-f43.google.com with SMTP id o10so9238133vsp.12
- for <linux-rockchip@lists.infradead.org>; Mon, 06 May 2019 16:58:43 -0700 (PDT)
-X-Received: by 2002:a67:af10:: with SMTP id v16mr9106628vsl.149.1557187122785; 
- Mon, 06 May 2019 16:58:42 -0700 (PDT)
+ id 1hNrMg-0005e6-0t
+ for linux-rockchip@lists.infradead.org; Tue, 07 May 2019 04:06:03 +0000
+Received: from kever.yang?rock-chips.com (unknown [192.168.167.97])
+ by regular1.263xmail.com (Postfix) with ESMTP id B6ABB20C;
+ Tue,  7 May 2019 12:05:50 +0800 (CST)
+X-263anti-spam: KSV:0;BIG:0;
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-KSVirus-check: 0
+X-ADDR-CHECKED4: 1
+X-ABS-CHECKED: 1
+X-SKE-CHECKED: 1
+X-ANTISPAM-LEVEL: 2
+Received: from [172.16.12.214] (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P31440T140609123755776S1557201947050296_; 
+ Tue, 07 May 2019 12:05:50 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <7362da5dbdc64dfbd02ae0366dc93f66>
+X-RL-SENDER: kever.yang@rock-chips.com
+X-SENDER: yk@rock-chips.com
+X-LOGIN-NAME: kever.yang@rock-chips.com
+X-FST-TO: klaus.goger@theobroma-systems.com
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+Subject: Re: [PATCH v6 03/13] Kconfig: Add default SPL_FIT_GENERATOR for
+ rockchip
+To: Jagan Teki <jagan@amarulasolutions.com>, Simon Glass <sjg@chromium.org>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ Akash Gajjar <akash@openedev.com>, Tom Rini <trini@konsulko.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+References: <20190427114852.7608-1-jagan@amarulasolutions.com>
+ <20190427114852.7608-4-jagan@amarulasolutions.com>
+From: Kever Yang <kever.yang@rock-chips.com>
+Message-ID: <7bd53b02-2a0f-d242-31bc-2baba0a69405@rock-chips.com>
+Date: Tue, 7 May 2019 12:05:44 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.6.0
 MIME-Version: 1.0
-References: <20190503174730.245762-1-dianders@chromium.org>
- <CAGXu5jL9cJ+8scZ+Cg9yqdc9+rb563xs-qVjXXuPRJYjNa4Y8w@mail.gmail.com>
-In-Reply-To: <CAGXu5jL9cJ+8scZ+Cg9yqdc9+rb563xs-qVjXXuPRJYjNa4Y8w@mail.gmail.com>
-From: Doug Anderson <dianders@chromium.org>
-Date: Mon, 6 May 2019 16:58:29 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=WcjfUwH62bHVELOmzViv7d329r6+HfPqAyXMjKCO7LeQ@mail.gmail.com>
-Message-ID: <CAD=FV=WcjfUwH62bHVELOmzViv7d329r6+HfPqAyXMjKCO7LeQ@mail.gmail.com>
-Subject: Re: [PATCH] pstore/ram: Improve backward compatibility with older
- Chromebooks
-To: Kees Cook <keescook@chromium.org>
+In-Reply-To: <20190427114852.7608-4-jagan@amarulasolutions.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_165846_495009_943CE2D6 
-X-CRM114-Status: GOOD (  16.32  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190506_210602_463035_C5566BB8 
+X-CRM114-Status: GOOD (  16.28  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,73 +86,121 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Brian Norris <briannorris@chromium.org>,
- Tony Luck <tony.luck@intel.com>, Anton Vorontsov <anton@enomsg.org>,
- LKML <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Matthias Kaehlcke <mka@chromium.org>, Colin Cross <ccross@android.com>,
- Guenter Roeck <groeck@chromium.org>, Julius Werner <jwerner@chromium.org>
+Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org,
+ Klaus Goger <klaus.goger@theobroma-systems.com>,
+ linux-amarula@amarulasolutions.com, u-boot@lists.denx.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Jagan,
 
-On Mon, May 6, 2019 at 2:10 PM Kees Cook <keescook@chromium.org> wrote:
+
+On 04/27/2019 07:48 PM, Jagan Teki wrote:
+> Add default SPL_FIT_GENERATOR py script for rockchip platforms if
+> specific target enabled SPL_LOAD_FIT.
 >
-> From: Douglas Anderson <dianders@chromium.org>
-> Date: Fri, May 3, 2019 at 10:48 AM
-> To: Kees Cook, Anton Vorontsov
-> Cc: <linux-rockchip@lists.infradead.org>, <jwerner@chromium.org>,
-> <groeck@chromium.org>, <mka@chromium.org>, <briannorris@chromium.org>,
-> Douglas Anderson, Colin Cross, Tony Luck,
-> <linux-kernel@vger.kernel.org>
+> So, this would help get rid of explicitly mentioning the default
+> SPL FIT generator in defconfigs. however some targets, like puma_rk3399
+> still require their own FIT generator so in those cases the default will
+> override with defconfig defined generator.
 >
-> > When you try to run an upstream kernel on an old ARM-based Chromebook
-> > you'll find that console-ramoops doesn't work.
-> >
-> > Old ARM-based Chromebooks, before <https://crrev.com/c/439792>
-> > ("ramoops: support upstream {console,pmsg,ftrace}-size properties")
-> > used to create a "ramoops" node at the top level that looked like:
-> >
-> > / {
-> >   ramoops {
-> >     compatible = "ramoops";
-> >     reg = <...>;
-> >     record-size = <...>;
-> >     dump-oops;
-> >   };
-> > };
-> >
-> > ...and these Chromebooks assumed that the downstream kernel would make
-> > console_size / pmsg_size match the record size.  The above ramoops
-> > node was added by the firmware so it's not easy to make any changes.
-> >
-> > Let's match the expected behavior, but only for those using the old
-> > backward-compatible way of working where ramoops is right under the
-> > root node.
-> >
-> > NOTE: if there are some out-of-tree devices that had ramoops at the
-> > top level, left everything but the record size as 0, and somehow
-> > doesn't want this behavior, we can try to add more conditions here.
-> >
-> > Signed-off-by: Douglas Anderson <dianders@chromium.org>
+> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> Reviewed-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> ---
+>  Kconfig                          | 1 +
+>  configs/chromebook_bob_defconfig | 1 -
+>  configs/evb-rk3399_defconfig     | 1 -
+>  configs/ficus-rk3399_defconfig   | 1 -
+>  configs/firefly-rk3399_defconfig | 1 -
+>  configs/rock960-rk3399_defconfig | 1 -
+>  6 files changed, 1 insertion(+), 5 deletions(-)
 >
-> I like this; thanks! Rob is this okay by you? I just want to
-> double-check since it's part of the DT parsing logic.
->
-> I'll pick it up and add a Cc: stable.
+> diff --git a/Kconfig b/Kconfig
+> index 305b265ed7..5679a288ec 100644
+> --- a/Kconfig
+> +++ b/Kconfig
+> @@ -424,6 +424,7 @@ config SPL_FIT_GENERATOR
+>  	string ".its file generator script for U-Boot FIT image"
+>  	depends on SPL_FIT
+>  	default "board/sunxi/mksunxi_fit_atf.sh" if SPL_LOAD_FIT && ARCH_SUNXI
+> +	default "arch/arm/mach-rockchip/make_fit_atf.py" if SPL_LOAD_FIT && ARCH_ROCKCHIP
 
-Hold off a second--I may need to send out a v2 but out of time for the
-day.  I think I need a #include file to fix errors on x86:
+What happens to puma-rk3399 board with this patch? For it use dedicate
+its file now.
+configs/puma-rk3399_defconfig
+CONFIG_SPL_FIT_SOURCE="board/theobroma-systems/puma_rk3399/fit_spl_atf.its"
 
-> implicit declaration of function 'of_node_is_root' [-Werror,-Wimplicit-function-declaration
+Thanks,
+- Kever
+>  	help
+>  	  Specifies a (platform specific) script file to generate the FIT
+>  	  source file used to build the U-Boot FIT image file. This gets
+> diff --git a/configs/chromebook_bob_defconfig b/configs/chromebook_bob_defconfig
+> index ce3deccb8a..04e25e1d4f 100644
+> --- a/configs/chromebook_bob_defconfig
+> +++ b/configs/chromebook_bob_defconfig
+> @@ -19,7 +19,6 @@ CONFIG_DEBUG_UART=y
+>  CONFIG_NR_DRAM_BANKS=1
+>  CONFIG_FIT=y
+>  CONFIG_SPL_LOAD_FIT=y
+> -CONFIG_SPL_FIT_GENERATOR="arch/arm/mach-rockchip/make_fit_atf.py"
+>  CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-gru-bob.dtb"
+>  # CONFIG_DISPLAY_CPUINFO is not set
+>  CONFIG_DISPLAY_BOARDINFO_LATE=y
+> diff --git a/configs/evb-rk3399_defconfig b/configs/evb-rk3399_defconfig
+> index d98535357a..49b2e2e089 100644
+> --- a/configs/evb-rk3399_defconfig
+> +++ b/configs/evb-rk3399_defconfig
+> @@ -13,7 +13,6 @@ CONFIG_DEBUG_UART=y
+>  CONFIG_NR_DRAM_BANKS=1
+>  CONFIG_FIT=y
+>  CONFIG_SPL_LOAD_FIT=y
+> -CONFIG_SPL_FIT_GENERATOR="arch/arm/mach-rockchip/make_fit_atf.py"
+>  CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-evb.dtb"
+>  # CONFIG_DISPLAY_CPUINFO is not set
+>  CONFIG_DISPLAY_BOARDINFO_LATE=y
+> diff --git a/configs/ficus-rk3399_defconfig b/configs/ficus-rk3399_defconfig
+> index 94c565efc2..fe3b9964e8 100644
+> --- a/configs/ficus-rk3399_defconfig
+> +++ b/configs/ficus-rk3399_defconfig
+> @@ -13,7 +13,6 @@ CONFIG_SPL_STACK_R_ADDR=0x80000
+>  CONFIG_DEBUG_UART=y
+>  CONFIG_FIT=y
+>  CONFIG_SPL_LOAD_FIT=y
+> -CONFIG_SPL_FIT_GENERATOR="arch/arm/mach-rockchip/make_fit_atf.py"
+>  # CONFIG_DISPLAY_CPUINFO is not set
+>  CONFIG_DISPLAY_BOARDINFO_LATE=y
+>  CONFIG_SPL_STACK_R=y
+> diff --git a/configs/firefly-rk3399_defconfig b/configs/firefly-rk3399_defconfig
+> index 6725b48970..914304bb43 100644
+> --- a/configs/firefly-rk3399_defconfig
+> +++ b/configs/firefly-rk3399_defconfig
+> @@ -13,7 +13,6 @@ CONFIG_DEBUG_UART=y
+>  CONFIG_NR_DRAM_BANKS=1
+>  CONFIG_FIT=y
+>  CONFIG_SPL_LOAD_FIT=y
+> -CONFIG_SPL_FIT_GENERATOR="arch/arm/mach-rockchip/make_fit_atf.py"
+>  CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-firefly.dtb"
+>  # CONFIG_DISPLAY_CPUINFO is not set
+>  CONFIG_DISPLAY_BOARDINFO_LATE=y
+> diff --git a/configs/rock960-rk3399_defconfig b/configs/rock960-rk3399_defconfig
+> index cb5a35f4f5..5e6778ea20 100644
+> --- a/configs/rock960-rk3399_defconfig
+> +++ b/configs/rock960-rk3399_defconfig
+> @@ -13,7 +13,6 @@ CONFIG_SPL_STACK_R_ADDR=0x80000
+>  CONFIG_DEBUG_UART=y
+>  CONFIG_FIT=y
+>  CONFIG_SPL_LOAD_FIT=y
+> -CONFIG_SPL_FIT_GENERATOR="arch/arm/mach-rockchip/make_fit_atf.py"
+>  CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-rock960.dtb"
+>  # CONFIG_DISPLAY_CPUINFO is not set
+>  CONFIG_DISPLAY_BOARDINFO_LATE=y
 
-I'm unfortunately out of time for now, but I'll post a v2 within the next day.
 
 
--Doug
 
 _______________________________________________
 Linux-rockchip mailing list
