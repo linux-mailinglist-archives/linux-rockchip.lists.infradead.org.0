@@ -2,69 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DA4716AB2
+	by mail.lfdr.de (Postfix) with ESMTPS id 24C9B16AB1
 	for <lists+linux-rockchip@lfdr.de>; Tue,  7 May 2019 20:53:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wWngUz4qShB1tEgBF3GDWnC0AtLiJW+S7uAfTiMC3aU=; b=BYAqdKHUMQqyBr
-	Q9vSbXxLBIXsBIIB7b6MjFB+RgpL0i3pYKIM21ZEJCaw2W/GK5R10hPOGqIltZr2ty4RmZUpU4msd
-	a9ys6aQKXKsVmIfZ4BTtjJm2PO/IJrMEx/FKgJCwkyVHOMM0sohn3saGG6Tpyeu3/hlx6S/FZUlL8
-	9HLG5ISaH380w23MPpCRZHMQofm6jIdQpbFvtxmI8O5gdF26L/V1/ZPvBK49GCB/ffDKPgy0MpsKj
-	+QP75Z8LzyZaS5/coDRsJRTrV7cz97g9ELwu9MLQumxuyy5xkMK8jrcvkRkFX8pcURVMIKs46KHdd
-	2UdEFQ4vm/woPy4bDJFg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=j8I3KQmKOvsoZQFk6qlyxYcHt19dbwvm/tx970B5520=; b=VqcD8gWK127tSN
+	w6NR9LbsAz9fsqO7/YIX31qbHZJCwyAXVrhynrEWeTNnw10xpbWJVLm+uUkA8MNr0Uv6jEJ/PjZKa
+	VUzK6tZz986NCT+M2HkTmGpmp9Wsj5Zkjl6inD2hTuMd5AvbIrShNLuYCJ1AQg0tZCglRZGhLDhj9
+	A3882H1JL79iFtFNY2PCsiLW8Yt6onSKioLt9xG0FqRyDrnbGBNrZIlxdvQL/5qhm+wrwfEIxnfDz
+	ahkEP20rjNTuk6nSU+7F0PY1QNrH2h/FuST4HZM+NAG086gDSs44q+Y7FvF2cW3V9SZDBAuJOEiSG
+	jnug2WawPY8BBjxyaaXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO5DG-0005n5-I2; Tue, 07 May 2019 18:53:14 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hO5DI-0005nd-11; Tue, 07 May 2019 18:53:16 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO5DD-0005mZ-7v
- for linux-rockchip@lists.infradead.org; Tue, 07 May 2019 18:53:12 +0000
-Received: by mail-pf1-x442.google.com with SMTP id v80so9118806pfa.3
- for <linux-rockchip@lists.infradead.org>; Tue, 07 May 2019 11:53:10 -0700 (PDT)
+ id 1hO5DF-0005mn-5y
+ for linux-rockchip@lists.infradead.org; Tue, 07 May 2019 18:53:14 +0000
+Received: by mail-pg1-x542.google.com with SMTP id c13so8770757pgt.1
+ for <linux-rockchip@lists.infradead.org>; Tue, 07 May 2019 11:53:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=HziFttqmNa2271tTCEc0a9YY7KO4/7g5MJhKXmyahPE=;
- b=jwvHgbgu3WQq6wl3P2KCksFNpYnE3cQwIEZXuhQf6zbm9gIaJEDjdxpB7Ke0/fwIxt
- lXAP+yMR6vh8O6NglxtHulYJVo5qidI65ZQmTfrkaDStyexmtyEpmmJx+mJQ49NCSH8R
- lBv+HxneiKdLEtm75awO1B6u4XWi9NCD2PFj0=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=2T/g02vSdhzKLNB1+UB5bfvHoCpXVenojxqrwIbyhYc=;
+ b=cpyAIKIoKpZrGymEpFJYyZk9DgKe01Dqwya2w2Lo2zTKoczh2UjIdoI5xgXXiotwXT
+ YG/t8ITUDSJbYiG7xpc1VS/xu1E8UQjeZhutLn2Hs6iozH6VxPo35cEINPjA0FNmdvfK
+ EjyToP3MKKLN2wtTPmTiEz2HeCLsGf5zh8ZPM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=HziFttqmNa2271tTCEc0a9YY7KO4/7g5MJhKXmyahPE=;
- b=nKfB+fYA/gc3fxbdZ+e5EPYrJkHfoJZl6RJ/tiLod4Ucp8cjufUwDKPm5tEZuxVgsR
- b8f2kGB2lDRqtcgAVFWdl7XTaiOyv9wKkvrnHa3TyXsa7IVGREib/zH2UrWwQZZFQGSI
- d6G+gxzUk+bW0DBrYtNYaNrDwgktwY1pbw6Y7CEgNya/+yGXWFxZaMoh9+T91igJnvMG
- Ug+g6gZ98vH3UXfDdp/BRaWirYH0od0L0V7fX64+AmDVJHEpeVU0uTlXa7lJClT4GajS
- 4J/x9R8AycXihLPDtKXt4fqnbxtiw5vNyBVZxgx0xCqv5VRwzC1hxZ4Lz4NvywSheh1f
- AV7A==
-X-Gm-Message-State: APjAAAW5xIJmC/5IHvquJTayB1+bXPqS/POUOB1eoupAzohs8TKB1VQd
- 5bkn0tJE5R8FFJ/Y77zBRa5wOA==
-X-Google-Smtp-Source: APXvYqx0kKDotoqfXcQseZfyMQrn/OlcjC4wi3RJbFiNnWJE8FqPBw/UEkkHsrx6ALkDtc3Lw6nD0w==
-X-Received: by 2002:a63:534f:: with SMTP id t15mr42118283pgl.445.1557255189753; 
- Tue, 07 May 2019 11:53:09 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=2T/g02vSdhzKLNB1+UB5bfvHoCpXVenojxqrwIbyhYc=;
+ b=jr38SxsJ1jdFd+1suGrePqNjeIQyZQQioAQYWjutBu4aL8dvftpvuSyOjMI27aQ0Eb
+ P50oggpO0Z5v5R8Q4KOEQuoE5lMMUJpfa/6xefxiNb+/Pf8DVKU5OuaUhfNQ+w8bTJJo
+ DUfSMwfCknoHG7LwVjCjL3TF+g42tnZjexEKS+NWvyd1pD9dSiRkYyve9l8/PMot2pdq
+ jtzyXTwP5FKkr3gfxga5+05RA1cib5vuZsLB+3t/hmLhGrCPcp+Pm2gxHOUNBSX2L9sl
+ mxhqpoFV73QFZwomC//aI4yTbs34Wafu5ecZfTBu6OXGuOCfmgLo9UX9su8zllUMhNix
+ p3ig==
+X-Gm-Message-State: APjAAAX+KM5XzWCHb+P6E8V9h7NaYayAk7bJscpaN9kFMXGSsMYR5wEi
+ 9zGLjQ78uKco8nGcnPIWQbd34A==
+X-Google-Smtp-Source: APXvYqybISpj6Ou110zkXfY6V11+rGT9s+2NaJ2XTHznRCDZ+acqilpNKPnqTw5cN0RHFIL3/XGJfw==
+X-Received: by 2002:a63:1c6:: with SMTP id 189mr39955860pgb.22.1557255192569; 
+ Tue, 07 May 2019 11:53:12 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.185.144])
- by smtp.gmail.com with ESMTPSA id l83sm14668086pfi.150.2019.05.07.11.53.06
+ by smtp.gmail.com with ESMTPSA id l83sm14668086pfi.150.2019.05.07.11.53.09
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 07 May 2019 11:53:08 -0700 (PDT)
+ Tue, 07 May 2019 11:53:12 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>
-Subject: [PATCH v3 0/6] rockchip: rk3399: Make u-boot.itb as BUILD_TARGET
-Date: Wed,  8 May 2019 00:22:09 +0530
-Message-Id: <20190507185215.15441-1-jagan@amarulasolutions.com>
+Subject: [PATCH v3 1/6] Makefile: clean image.map
+Date: Wed,  8 May 2019 00:22:10 +0530
+Message-Id: <20190507185215.15441-2-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
+In-Reply-To: <20190507185215.15441-1-jagan@amarulasolutions.com>
+References: <20190507185215.15441-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_115311_437384_8A75F348 
-X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-CacheID: sfid-20190507_115313_222114_5940F4CB 
+X-CRM114-Status: UNSURE (   9.79  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -72,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -101,39 +103,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-RK3399 TPL changes are merged recently which I was thinking 
-of waiting for next MW. so this series skip binman changes 
-from previous version[1] and have only BUILD_TARGET changes.
+binman tools for creating single image build will create image.map
+at the end, which has information about binman image node details.
 
-BINMAN changes would need another rework, where we need to consider 
-the TPL image as well and that would send separately.
+current u-boot, is unable to clean this image.map so add a command
+entry in clean target in Makefile.
 
-CHanges for v3:
-- skip binman changes
-- rebase on u-boot-rockchip/master
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ Makefile | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index d6a6ef19ab..de11446ed3 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1813,7 +1813,8 @@ clean: $(clean-dirs)
+ 		-o -name modules.builtin -o -name '.tmp_*.o.*' \
+ 		-o -name 'dsdt.aml' -o -name 'dsdt.asl.tmp' -o -name 'dsdt.c' \
+ 		-o -name '*.efi' -o -name '*.gcno' -o -name '*.so' \) \
+-		-type f -print | xargs rm -f
++		-type f -print | xargs rm -f \
++		image.map
  
-[1] https://patchwork.ozlabs.org/cover/1092198/
-
-Jagan Teki (6):
-  Makefile: clean image.map
-  Makefile: clean bl31_*.bin
-  travis.yml: Add pyelftools install entry
-  rockchip: rk3399: Get bl31.elf via BL31
-  board: puma: Get bl31.bin via BL31 and rk3399m0.bin via PMUM0
-  Kconfig: Add u-boot.itb BUILD_TARGET for Rockchip
-
- .travis.yml                                   |  1 +
- Kconfig                                       |  2 +-
- Makefile                                      |  3 +-
- arch/arm/mach-rockchip/make_fit_atf.py        | 11 ++-
- .../puma_rk3399/fit_spl_atf.its               | 58 ------------
- .../puma_rk3399/fit_spl_atf.sh                | 94 +++++++++++++++++++
- configs/puma-rk3399_defconfig                 |  2 +-
- doc/README.rockchip                           | 14 ++-
- 8 files changed, 115 insertions(+), 70 deletions(-)
- delete mode 100644 board/theobroma-systems/puma_rk3399/fit_spl_atf.its
- create mode 100755 board/theobroma-systems/puma_rk3399/fit_spl_atf.sh
-
+ # mrproper - Delete all generated files, including .config
+ #
 -- 
 2.18.0.321.gffc6fa0e3
 
