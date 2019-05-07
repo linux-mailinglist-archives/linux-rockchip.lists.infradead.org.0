@@ -2,78 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0243E16AB6
-	for <lists+linux-rockchip@lfdr.de>; Tue,  7 May 2019 20:53:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE06216AB7
+	for <lists+linux-rockchip@lfdr.de>; Tue,  7 May 2019 20:53:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=baj6mSPfosJWuYK/CQVHd98g9kWbFOvU9FLcNvSUJmk=; b=W1aBcXov2rtWx1
-	gxocvK5vNXxf/KwJ0FzJ8/wQzb4oLgCPZdYQBtEhtz/7dAsLsx6NoX6h6MxoqyOgE9hZZ1OdSSLWj
-	XEaDcORVKbfZnQBAPJDGDMhgaAo7oXAYj+SwwU8hxtFGXlmKozFKtLCOKJOchhj21WOtvIhW6DoHy
-	90UmppuUjiBJ7MBjzxT7pL2BBvl4BCMAzmsDY+KlbxMdvR9giI4KUT6YSd/uRaVFfz1V9B3llC10T
-	lq3NJF3fqb49LucSHEhqS/7XH6eGQnj/Ie8zi8KDn/GDUXkPukN3zik/MMBUts55u3yXQKN8yMf1Q
-	KMQkTU2MBuRDW7chz8XA==;
+	List-Owner; bh=OyW5Vxy22f3cScV5lsEx62KLyELLw4YUx+u46UCalXc=; b=l7yk6WJMvst7RR
+	l83cMRCOZLp6fvYMlsJMYaaJVCP94dzVxju3KqBVD5FNFGSZCCTaXrJ7pwSSfx8+u1+3ZGtP66Xsy
+	siyDZOXm65KWSJsua6TV3t48+GLB0OtZQMP1IQgAEWJxiSodpp4tXUFvTV//Ba0d9NHi4mSBtr1CD
+	V6pYdrVWyouOOMdz+vg3q2tv7spDCrJJ+eRBHMXt+IVeAnTfxEWnS1/Axl2v3ZN7+AKWQS3BaBQN4
+	pF2acvzJaK0n+RB9PRq1LH3HmKYx41VMd9nAGIOKnf4cP82FFailnQTOXETtLYr8HNccCQgEhjV5x
+	oBLIQYrtD/5GDZeoarqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO5DQ-0005w1-W4; Tue, 07 May 2019 18:53:25 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hO5DV-0005zJ-Oj; Tue, 07 May 2019 18:53:29 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO5DO-0005tj-7t
- for linux-rockchip@lists.infradead.org; Tue, 07 May 2019 18:53:23 +0000
-Received: by mail-pf1-x442.google.com with SMTP id y13so9106799pfm.11
- for <linux-rockchip@lists.infradead.org>; Tue, 07 May 2019 11:53:22 -0700 (PDT)
+ id 1hO5DR-0005x6-M7
+ for linux-rockchip@lists.infradead.org; Tue, 07 May 2019 18:53:27 +0000
+Received: by mail-pf1-x444.google.com with SMTP id z26so9117045pfg.6
+ for <linux-rockchip@lists.infradead.org>; Tue, 07 May 2019 11:53:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ImNKcjJPl5FDOV/JNbJNwcLPUBrNQElhulqr/rR/aLM=;
- b=i6eOFKkZNVK/O0KBDdZ4wwqTB3gINjzvq/mG3X5GrVQ+IXOU3rjb2Vobw5Y9Thys+M
- clx2SNjQsbYUuAEwxKF2gpj5UYHi4tEVaE5klTIgHLyRkvRVnnC4Op6IzNhxfUdqMSou
- 7fmeq1lUuUaam9dQ8FM7UdxuaTPA2PNFz4vuw=
+ bh=a8TL1A8mko6vB61txBIgdGp5GFnZlWXk1NU1ryfITfM=;
+ b=JtxEDEWPtlgLwT4Asd/HTk+jdTeTp0jBs8Iaj+2/75cJCFNwPH2od+/w3jE9YboLj3
+ vTQ+/laZ/FrPgWg5qJ/KJtnIKz0pB3h7bD/UrPDh4ugxnrmpSMSrLDaYiKMxDqVIli5s
+ HzMyLtcJxuNQNDVnVOdY+YRLEhdMe0k1Lk4RA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ImNKcjJPl5FDOV/JNbJNwcLPUBrNQElhulqr/rR/aLM=;
- b=UrrfKlnKpPR28sacZlkzx7XYrOD1klh4+Thu092QlX1V6HV863zgun6Ur376LeXV32
- pt5m35McYlN4hPuJD/SXUBbCiv2Mp7ymWlR3BOCzpud5Smp9kNnwvVwes9YQumVgiaZO
- 1AZ+1pEXquGyIeYSEK3JzMqJjIhIijvulHoYUdLtel/yD7zTcYW9++tiUkwWyt4ctf5s
- uCdIuFApi+KNrNq3eVameti7dGznXYeQMUITvPm8PDygKn8QRTJ0W2BMl1P2IobvNaEO
- 6qoJw8ry1dp5uJJsQVcUUXNw1/ffQXT0jrhOad7wkB/FrogkhIGIRt1OS6JguN+qrwZ7
- lyKg==
-X-Gm-Message-State: APjAAAU73Rbrr9bz6fi3eCR1kpSiMUbbfOeGIi8vQ481zjuUIeLnc83b
- NJA9XNsyp+rMzLvkzF9VHsXsKZFELVA=
-X-Google-Smtp-Source: APXvYqyiKFflNDxd/x4+eRXzPz4HfhnTnuN4WH8dqePgoMyjB5If6jE6EHP3arHOy0vMxVsuSBanXA==
-X-Received: by 2002:a63:1d1d:: with SMTP id d29mr13318423pgd.63.1557255201725; 
- Tue, 07 May 2019 11:53:21 -0700 (PDT)
+ bh=a8TL1A8mko6vB61txBIgdGp5GFnZlWXk1NU1ryfITfM=;
+ b=fp7lg96417YFYu16KpI5Yr5Y4mUvwA+FM/Q17MZKGBvYxJ6yHEG8mUTfRD4qpJ8QtL
+ NhH+OJdbTWucqD7u1CTjYH9D5iFPBq1aSm7qlGktiyRn6drQTX0pIlWXIflVochHl6DY
+ dd+qVAHnnwTm8lTZ/jtDpyfBLF5EXB0LXsL/EgvS9x3vjaPuhiPbrl+Khs/Bj/8Snnsc
+ iGn+8BEepMPfVmaRHJNUglBoUwcjS5TFbNDq2iLQjtDR5M94Xm/GnZuMVfU6r5zxSYHq
+ MaccOtgP/ylpJ7ga5nDIJHtfAv2Kyyy6EleZeAVXCx7gg9TNtmNbIi5OcFftW/Lt1GE0
+ fcew==
+X-Gm-Message-State: APjAAAWxtVu0bgLQbZdbDG6HbLxEzbE0N6CwJ1PEsea5+S+WJeG+8QFn
+ jAOm3BTGIVsLm8yWump9v0A4EA==
+X-Google-Smtp-Source: APXvYqwVr/idjLqOHpY4Qo4coT9GPLbsIVow9m1R3FnjhcSYPj7k1i2CMHWDvrjoYGCvQrV2GUlCKQ==
+X-Received: by 2002:aa7:8384:: with SMTP id u4mr42134083pfm.214.1557255204939; 
+ Tue, 07 May 2019 11:53:24 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.185.144])
- by smtp.gmail.com with ESMTPSA id l83sm14668086pfi.150.2019.05.07.11.53.19
+ by smtp.gmail.com with ESMTPSA id l83sm14668086pfi.150.2019.05.07.11.53.21
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 07 May 2019 11:53:21 -0700 (PDT)
+ Tue, 07 May 2019 11:53:23 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>
-Subject: [PATCH v3 4/6] rockchip: rk3399: Get bl31.elf via BL31
-Date: Wed,  8 May 2019 00:22:13 +0530
-Message-Id: <20190507185215.15441-5-jagan@amarulasolutions.com>
+Subject: [PATCH v3 5/6] board: puma: Get bl31.bin via BL31 and rk3399m0.bin
+ via PMUM0
+Date: Wed,  8 May 2019 00:22:14 +0530
+Message-Id: <20190507185215.15441-6-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190507185215.15441-1-jagan@amarulasolutions.com>
 References: <20190507185215.15441-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_115322_425662_B1EA6CE8 
-X-CRM114-Status: GOOD (  11.61  )
+X-CRM114-CacheID: sfid-20190507_115325_725280_3284982E 
+X-CRM114-Status: GOOD (  14.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -102,86 +103,236 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Right now rockchip platform need to copy bl31.elf into u-boot
-source directory to make use of building u-boot.itb.
+Right now puma rk3399 board need to copy bl31-rk3399.bin and
+rk3399m0.bin into u-boot source directory to make use of building
+u-boot.itb.
 
-So, add environment variable BL31 like Allwinner SoC so-that the
-bl31.elf would available via BL31.
+So, add environment variable
+- BL31 for bl31.bin (instead of bl31-rk3399.bin to compatible with other
+  platform BL31 env)
+- PMUM0 for rk3399m0.bin
 
-If the builds are not exporting BL31 env, the make_fit_atf.py
-explicitly create dummy bl31.elf in u-boot root directory to
-satisfy travis builds and it will show the warning on console as
+If the builds are not exporting BL31, PMUM0 env, the fit_spl_atf.sh will
+notify with warning about which document to refer for more information
+like this:
 
- WARNING: BL31 file bl31.elf NOT found, resulting binary is non-functional
- WARNING: Please read Building section in doc/README.rockchip
-
-Note, that the dummy bl31 files were created during not exporting
-BL31 case would be removed via clean target in Makefile.
+ WARNING: BL31 file bl31.bin NOT found, resulting binary is non-functional
+ Please read Building section in doc/README.rockchip
+ WARNING: PMUM0 file rk3399m0.bin NOT found, resulting binary is non-functional
+ Please read Building section in doc/README.rockchip
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- Makefile                               |  2 +-
- arch/arm/mach-rockchip/make_fit_atf.py | 11 ++++++++++-
- doc/README.rockchip                    |  4 ++--
- 3 files changed, 13 insertions(+), 4 deletions(-)
+ .../puma_rk3399/fit_spl_atf.its               | 58 ------------
+ .../puma_rk3399/fit_spl_atf.sh                | 94 +++++++++++++++++++
+ configs/puma-rk3399_defconfig                 |  2 +-
+ doc/README.rockchip                           |  8 +-
+ 4 files changed, 99 insertions(+), 63 deletions(-)
+ delete mode 100644 board/theobroma-systems/puma_rk3399/fit_spl_atf.its
+ create mode 100755 board/theobroma-systems/puma_rk3399/fit_spl_atf.sh
 
-diff --git a/Makefile b/Makefile
-index 64c7976f7e..c5078b95b7 100644
---- a/Makefile
-+++ b/Makefile
-@@ -1814,7 +1814,7 @@ clean: $(clean-dirs)
- 		-o -name 'dsdt.aml' -o -name 'dsdt.asl.tmp' -o -name 'dsdt.c' \
- 		-o -name '*.efi' -o -name '*.gcno' -o -name '*.so' \) \
- 		-type f -print | xargs rm -f \
--		bl31_*.bin image.map
-+		bl31.c bl31.elf bl31_*.bin image.map
- 
- # mrproper - Delete all generated files, including .config
- #
-diff --git a/arch/arm/mach-rockchip/make_fit_atf.py b/arch/arm/mach-rockchip/make_fit_atf.py
-index d1faff1957..327875d87b 100755
---- a/arch/arm/mach-rockchip/make_fit_atf.py
-+++ b/arch/arm/mach-rockchip/make_fit_atf.py
-@@ -10,6 +10,7 @@ usage: $0 <dt_name> [<dt_name> [<dt_name] ...]
- import os
- import sys
- import getopt
-+import logging
- 
- # pip install pyelftools
- from elftools.elf.elffile import ELFFile
-@@ -194,8 +195,16 @@ def get_bl31_segments_info(bl31_file_name):
- 
- def main():
-     uboot_elf="./u-boot"
--    bl31_elf="./bl31.elf"
-     FIT_ITS=sys.stdout
-+    if "BL31" in os.environ:
-+        bl31_elf=os.getenv("BL31");
-+    else:
-+        os.system("echo 'int main(){}' > bl31.c")
-+        os.system("${CROSS_COMPILE}gcc -c bl31.c -o bl31.elf")
-+        bl31_elf="./bl31.elf"
-+        logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
-+        logging.warning(' BL31 file bl31.elf NOT found, resulting binary is non-functional')
-+        logging.warning(' Please read Building section in doc/README.rockchip')
- 
-     opts, args = getopt.getopt(sys.argv[1:], "o:u:b:h")
-     for opt, val in opts:
+diff --git a/board/theobroma-systems/puma_rk3399/fit_spl_atf.its b/board/theobroma-systems/puma_rk3399/fit_spl_atf.its
+deleted file mode 100644
+index 530f059f3d..0000000000
+--- a/board/theobroma-systems/puma_rk3399/fit_spl_atf.its
++++ /dev/null
+@@ -1,58 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0+ OR X11 */
+-/*
+- * Copyright (C) 2017 Theobroma Systems Design und Consulting GmbH
+- *
+- * Minimal dts for a SPL FIT image payload.
+- */
+-
+-/dts-v1/;
+-
+-/ {
+-	description = "FIT image with U-Boot proper, ATF bl31, M0 Firmware, DTB";
+-	#address-cells = <1>;
+-
+-	images {
+-		uboot {
+-			description = "U-Boot (64-bit)";
+-			data = /incbin/("../../../u-boot-nodtb.bin");
+-			type = "standalone";
+-			os = "U-Boot";
+-			arch = "arm64";
+-			compression = "none";
+-			load = <0x00200000>;
+-		};
+-		atf {
+-			description = "ARM Trusted Firmware";
+-			data = /incbin/("../../../bl31-rk3399.bin");
+-			type = "firmware";
+-			arch = "arm64";
+-			os = "arm-trusted-firmware";
+-			compression = "none";
+-			load = <0x1000>;
+-			entry = <0x1000>;
+-		};
+-		pmu {
+-		        description = "Cortex-M0 firmware";
+-			data = /incbin/("../../../rk3399m0.bin");
+-			type = "pmu-firmware";
+-			compression = "none";
+-			load = <0x180000>;
+-                };
+-		fdt {
+-			description = "RK3399-Q7 (Puma) flat device-tree";
+-			data = /incbin/("../../../u-boot.dtb");
+-			type = "flat_dt";
+-			compression = "none";
+-		};
+-	};
+-
+-	configurations {
+-		default = "conf";
+-		conf {
+-			description = "Theobroma Systems RK3399-Q7 (Puma) SoM";
+-			firmware = "atf";
+-			loadables = "uboot", "pmu";
+-			fdt = "fdt";
+-		};
+-	};
+-};
+diff --git a/board/theobroma-systems/puma_rk3399/fit_spl_atf.sh b/board/theobroma-systems/puma_rk3399/fit_spl_atf.sh
+new file mode 100755
+index 0000000000..420e7daf4c
+--- /dev/null
++++ b/board/theobroma-systems/puma_rk3399/fit_spl_atf.sh
+@@ -0,0 +1,94 @@
++#!/bin/sh
++#
++# SPDX-License-Identifier:      GPL-2.0+
++#
++# Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
++#
++# Based on the board/sunxi/mksunxi_fit_atf.sh
++#
++# Script to generate FIT image source for 64-bit puma boards with
++# U-Boot proper, ATF, PMU firmware and devicetree.
++#
++# usage: $0 <dt_name> [<dt_name> [<dt_name] ...]
++
++[ -z "$BL31" ] && BL31="bl31.bin"
++
++if [ ! -f $BL31 ]; then
++	echo "WARNING: BL31 file $BL31 NOT found, resulting binary is non-functional" >&2
++	echo "Please read Building section in doc/README.rockchip" >&2
++	BL31=/dev/null
++fi
++
++[ -z "$PMUM0" ] && PMUM0="rk3399m0.bin"
++
++if [ ! -f $PMUM0 ]; then
++	echo "WARNING: PMUM0 file $PMUM0 NOT found, resulting binary is non-functional" >&2
++	echo "Please read Building section in doc/README.rockchip" >&2
++	PMUM0=/dev/null
++fi
++
++cat << __HEADER_EOF
++/* SPDX-License-Identifier: GPL-2.0+ OR X11 */
++/*
++ * Copyright (C) 2017 Theobroma Systems Design und Consulting GmbH
++ *
++ * Minimal dts for a SPL FIT image payload.
++ */
++
++/dts-v1/;
++
++/ {
++	description = "FIT image with U-Boot proper, ATF bl31, M0 Firmware, DTB";
++	#address-cells = <1>;
++
++	images {
++		uboot {
++			description = "U-Boot (64-bit)";
++			data = /incbin/("u-boot-nodtb.bin");
++			type = "standalone";
++			arch = "arm64";
++			compression = "none";
++			load = <0x4a000000>;
++		};
++		atf {
++			description = "ARM Trusted Firmware";
++			data = /incbin/("$BL31");
++			type = "firmware";
++			arch = "arm64";
++			os = "arm-trusted-firmware";
++			compression = "none";
++			load = <0x1000>;
++			entry = <0x1000>;
++		};
++		pmu {
++		        description = "Cortex-M0 firmware";
++			data = /incbin/("$PMUM0");
++			type = "pmu-firmware";
++			compression = "none";
++			load = <0x180000>;
++                };
++		fdt {
++			description = "RK3399-Q7 (Puma) flat device-tree";
++			data = /incbin/("u-boot.dtb");
++			type = "flat_dt";
++			compression = "none";
++		};
++__HEADER_EOF
++
++cat << __CONF_HEADER_EOF
++	};
++
++	configurations {
++		default = "conf";
++		conf {
++			description = "Theobroma Systems RK3399-Q7 (Puma) SoM";
++			firmware = "atf";
++			loadables = "uboot", "pmu";
++			fdt = "fdt";
++		};
++__CONF_HEADER_EOF
++
++cat << __ITS_EOF
++	};
++};
++__ITS_EOF
+diff --git a/configs/puma-rk3399_defconfig b/configs/puma-rk3399_defconfig
+index 03f0bfdb59..ebc78fb216 100644
+--- a/configs/puma-rk3399_defconfig
++++ b/configs/puma-rk3399_defconfig
+@@ -15,7 +15,7 @@ CONFIG_DEBUG_UART_CLOCK=24000000
+ CONFIG_SPL_SPI_FLASH_SUPPORT=y
+ CONFIG_SPL_SPI_SUPPORT=y
+ CONFIG_DEBUG_UART=y
+-CONFIG_SPL_FIT_SOURCE="board/theobroma-systems/puma_rk3399/fit_spl_atf.its"
++CONFIG_SPL_FIT_GENERATOR="board/theobroma-systems/puma_rk3399/fit_spl_atf.sh"
+ CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-puma-haikou.dtb"
+ CONFIG_MISC_INIT_R=y
+ # CONFIG_DISPLAY_CPUINFO is not set
 diff --git a/doc/README.rockchip b/doc/README.rockchip
-index ca4d6473b0..98a3824e2c 100644
+index 98a3824e2c..88a4593392 100644
 --- a/doc/README.rockchip
 +++ b/doc/README.rockchip
-@@ -149,8 +149,8 @@ For example:
- 	=> make realclean
- 	=> make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399
+@@ -137,8 +137,8 @@ For example:
+ 	=> cd arm-trusted-firmware
+ 	=> make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399 bl31
  
--	(copy bl31.elf into U-Boot root dir)
--	=> cp build/rk3399/release/bl31/bl31.elf /path/to/u-boot
-+	(export bl31.elf)
-+	=> export BL31=/path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf
+-	(copy bl31.bin into U-Boot root dir)
+-	=> cp build/rk3399/release/bl31/bl31.bin /path/to/u-boot/bl31-rk3399.bin
++	(export bl31.bin)
++	=> export BL31=/path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.bin
  
-    - Compile PMU M0 firmware
+      For rest of rk3399 boards.
+ 
+@@ -162,8 +162,8 @@ For example:
+      (export cross compiler path for Cortex-M0 PMU)
+      => make CROSS_COMPILE=arm-cortex_m0-eabi-
+ 
+-     (copy rk3399m0.bin into U-Boot root dir)
+-     => cp rk3399m0.bin /path/to/u-boot
++     (export rk3399m0.bin)
++     => export PMUM0=/path/to/rk3399-cortex-m0/rk3399m0.bin
+ 
+    - Compile U-Boot
  
 -- 
 2.18.0.321.gffc6fa0e3
