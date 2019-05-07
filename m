@@ -2,81 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 783F616A11
-	for <lists+linux-rockchip@lfdr.de>; Tue,  7 May 2019 20:22:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFFF116A12
+	for <lists+linux-rockchip@lfdr.de>; Tue,  7 May 2019 20:22:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3nEG4yvk3UWa38WDlF2TVx4/Y4jigdSBTo4XukDOsI4=; b=GqNEHMX/CV3DXJ
-	0M+J6MY/kgdpcBzrkSVXWv3EKRJv2YxLB68YJMv9mCge6C6JRY1rNP//JafaQV1DKZg0wz1D/8ZOf
-	cWXdvK5SsXYndl+CIKYycLouRGtjc8PNzvUIeODt9WzgQByRRCLD7Wx4ReP3pDs+Ymhl/oF0msD2i
-	oQRPCgICjqv2SafXjDqJGVu055jshfBVtUM7GEcoAOsFYvYI2ZrvIkS67t71lx3JN53hQbbOZTlod
-	jAO4UrtCZh/a9fL8FR4Z62rZO60n9GRT6P6TV6EZc9rN6NVzc+xRwrkPR6yjSgwangUPprqDck+PS
-	J3WmcK2anKG3YTLRfFkg==;
+	List-Owner; bh=3bLi5v/AMWeNRSQ6Ss9mV+0q0lEU/0s+kIHqnwrwLiI=; b=OoB3+GuLsSvffu
+	AldffKFMTwW7zewIzmpdnfe/Kfet2DJN97LRPN+1nxAA03UJYF6b0/P1e66niIjjeOwxrLR+hD+Oj
+	aASaEYaPOiTSH7s+swvHkFSZpesh6lnUJXGmJtvVpY7kWvK4TbsAvmGUZJ8LH4fceqbaWDl5+jAWp
+	Z9hXcwnzWob0I9K5p5QiQtSlqEu02RJB3GEAhQTWnfmPncaRFDa10Cjg+4L5q5U0n3bFq5wvZZMiU
+	jlIx2dv04UgdLywZ1vXHU2bTdb/iElpQ461CBpKLRD75rYHyCy9PW8mIfd/Bxa4gPCIXKY1KWKgE2
+	97tEk2o9SIAmZlIe4ASw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO4jS-000377-JP; Tue, 07 May 2019 18:22:26 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hO4jW-00039W-1j; Tue, 07 May 2019 18:22:30 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO4jP-00035S-EA
- for linux-rockchip@lists.infradead.org; Tue, 07 May 2019 18:22:24 +0000
-Received: by mail-pl1-x643.google.com with SMTP id y3so8596361plp.0
- for <linux-rockchip@lists.infradead.org>; Tue, 07 May 2019 11:22:23 -0700 (PDT)
+ id 1hO4jT-000389-IT
+ for linux-rockchip@lists.infradead.org; Tue, 07 May 2019 18:22:28 +0000
+Received: by mail-pl1-x642.google.com with SMTP id a59so8578953pla.5
+ for <linux-rockchip@lists.infradead.org>; Tue, 07 May 2019 11:22:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=xl42gez31+v93o6g0rhaZH7Knkp5dAag+f3Jzth0yO8=;
- b=cs1JhiQpr02iT2Ai/yf1Kli0yxl51QKufYFfr9v6LJP46wxrgTnwMXug2KlcB0spdh
- IQrYsyriKUDLOo0uahCbsMxUkEhKH+6redq+MKk9bhgTdfTgFLDcAOmBYm3BkDUUH1dJ
- SV+zUs/PaQvetJ1+gf8YdV/vtDAGyvmcVdLkM=
+ bh=0KtfW3TKs04iSgV5KPgv8zThhCUdoKHESc98JGCWyiY=;
+ b=KEPQv+4NS/F/xXcGADNxp59JFqmHxn17fGhAyqYxsq+ZlyXRktqEVzy+EKfOGy7UVE
+ rSW98FdNJrRX/DMrXv3+eaccXCWZjxUojpd620QM5rhQhkK9SwwS/rW757Ssd1PSeU0a
+ yk3rkt+CPvSNUyRnOxVV2K/1F0L+Cwmri8QTc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=xl42gez31+v93o6g0rhaZH7Knkp5dAag+f3Jzth0yO8=;
- b=S4+nXOlrhiPPRUPJ9p94rHf4lcGtG7nnd/sI5mfXiEOnesdBWeOoNg3cLy75GLNwzM
- dr2NRhOK7x5NdHlal0yBLH1qSDjwliQ8ql5UXOhqNMdrB6ftqwT+O5GZtn0HYdfsWzvT
- B0xEPMTS1cVMh/q+AuKkmy5L2A6el+22v8GZrqqjGJ/09uxBfXNcwoqttuzXDCc+u33r
- sJPmORJKhshCEuc4Wrywlbrn1YCuoyJc3Sc9WZsygRFz8LHUG+UZyWwJCB9UfuCrDJab
- N/7QnBB6WC4gbTvwPweEx4TkzS+mGm+9gGC9mXHgEzp94teEd01CpBvDtTdW7p/1Zf3t
- IlaA==
-X-Gm-Message-State: APjAAAUdvLX+sHUEuQaOv2Ml6w+spHw8BfgHWS7oq1++//q4bo3UI7hq
- 0xJKc5DpPslkwpyI25HaErQbTg==
-X-Google-Smtp-Source: APXvYqwOr9tFDRcH23ayGBs4Jm7j8AlVqFpMrnSww9HbQ+bBys1J7Iu2NPqBZ6JzE1tAMdoCZujiRw==
-X-Received: by 2002:a17:902:d88b:: with SMTP id
- b11mr21313314plz.186.1557253342798; 
- Tue, 07 May 2019 11:22:22 -0700 (PDT)
+ bh=0KtfW3TKs04iSgV5KPgv8zThhCUdoKHESc98JGCWyiY=;
+ b=dsOMApK4r4BNXjr5DEfebV/uLFAFiJv83t1AH/2+dSLiq4FJC4+CRa6PpZVsfbZq63
+ cpOk47O429OGozpAK6n9ONyhsJLYFAKxWqFCgKTLZC6rAG0VpxtnU0CfwHwYC4XWgzSt
+ FSzTUZF+JZsR5HWcch7HUcqe1gGuK7NqgFL/Zf/Ou15e2pD9Qsxkxs+7/Y0cP/zWj9P/
+ IGi+SxB5QWjIQUsgmmIq9kihlKybY1ThaQ2YJ/lAcG2g8gIxOROSHZGTU6R6RyuMIEns
+ tEKPdWkhpOKwd775EXqBy7JuALFimwBAXVUjxYWXhJ+A3F3R/URaGUm9OIKKDA7yFPVV
+ K92w==
+X-Gm-Message-State: APjAAAWCS0kif8swbuFv3TMQ97iGjDzogH+8OBgAA2T77lHK196jWI89
+ tjLlZkZD3Sqc0Yrh4mpDwtLNTw==
+X-Google-Smtp-Source: APXvYqzq3yRYY7ut2+52VHq+QRdNhvSpvMEmErj9zEND+WLxmb1L3Z4W6Twt2/LlYE3iw336OMgAJA==
+X-Received: by 2002:a17:902:7e4f:: with SMTP id
+ a15mr5507082pln.205.1557253346781; 
+ Tue, 07 May 2019 11:22:26 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.185.144])
- by smtp.gmail.com with ESMTPSA id d15sm18491568pfr.179.2019.05.07.11.22.18
+ by smtp.gmail.com with ESMTPSA id d15sm18491568pfr.179.2019.05.07.11.22.23
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 07 May 2019 11:22:22 -0700 (PDT)
+ Tue, 07 May 2019 11:22:26 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, Akash Gajjar <akash@openedev.com>
-Subject: [PATCH v7 3/4] rockchip: dts: rk3399-u-boot: Add u-boot,
- dm-pre-reloc for spi1
-Date: Tue,  7 May 2019 23:51:51 +0530
-Message-Id: <20190507182152.4254-4-jagan@amarulasolutions.com>
+Subject: [PATCH v7 4/4] arm64: rockchip: dts: rk3399: Use rk3399-u-boot.dtsi
+Date: Tue,  7 May 2019 23:51:52 +0530
+Message-Id: <20190507182152.4254-5-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190507182152.4254-1-jagan@amarulasolutions.com>
 References: <20190507182152.4254-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_112223_470169_A6006F06 
-X-CRM114-Status: UNSURE (   9.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190507_112227_608153_0D588750 
+X-CRM114-Status: GOOD (  13.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -106,30 +104,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add u-boot,dm-pre-reloc property for spi1, so-that the
-subsequent rk3399 boards which boot from SPI.
+Now we have
+- board specific -u-boot.dtsi files for board specific u-boot
+  dts changes.
+- soc specific rk3399-u-boot.dtsi for soc specific u-boot
+  dts changes.
 
-This help to separate the u-boot specific properties away
-from base dts files so-that the Linux sync become easy and
-meaningful.
+So, include the rk3399-u-boot-dtsi on respective board -u-boot.dtsi
+and drop the properties which are globally available in rk3399-u-boot.dtsi
+
+Right now rk3399-u-boot.dtsi has sdmmc, spi1 u-boot,dm-pre-reloc
+property and more properties and nodes can be move further based
+on the requirements.
+
+This would fix, the -u-boot.dtsi inclusion for evb, firefly, puma
+boards that was accidentally merged on below commit.
+"rockchip: dts: rk3399: Create initial rk3399-u-boot.dtsi"
+(sha1: e05b4a4fa84b65a0c8873e8f34721741fe2bc09d)
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- arch/arm/dts/rk3399-u-boot.dtsi | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/arm/dts/rk3399-evb-u-boot.dtsi     | 1 +
+ arch/arm/dts/rk3399-firefly-u-boot.dtsi | 1 +
+ arch/arm/dts/rk3399-gru-bob-u-boot.dtsi | 1 +
+ arch/arm/dts/rk3399-gru-u-boot.dtsi     | 6 ++++++
+ arch/arm/dts/rk3399-gru.dtsi            | 1 -
+ arch/arm/dts/rk3399-puma-ddr1600.dts    | 1 +
+ arch/arm/dts/rk3399-puma.dtsi           | 2 --
+ 7 files changed, 10 insertions(+), 3 deletions(-)
+ create mode 100644 arch/arm/dts/rk3399-gru-u-boot.dtsi
 
-diff --git a/arch/arm/dts/rk3399-u-boot.dtsi b/arch/arm/dts/rk3399-u-boot.dtsi
-index f533ed95eb..0786c1193a 100644
---- a/arch/arm/dts/rk3399-u-boot.dtsi
-+++ b/arch/arm/dts/rk3399-u-boot.dtsi
-@@ -6,3 +6,7 @@
- &sdmmc {
- 	u-boot,dm-pre-reloc;
- };
+diff --git a/arch/arm/dts/rk3399-evb-u-boot.dtsi b/arch/arm/dts/rk3399-evb-u-boot.dtsi
+index 7e2c57af22..20910e744b 100644
+--- a/arch/arm/dts/rk3399-evb-u-boot.dtsi
++++ b/arch/arm/dts/rk3399-evb-u-boot.dtsi
+@@ -3,4 +3,5 @@
+  * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
+  */
+ 
++#include "rk3399-u-boot.dtsi"
+ #include "rk3399-sdram-lpddr3-4GB-1600.dtsi"
+diff --git a/arch/arm/dts/rk3399-firefly-u-boot.dtsi b/arch/arm/dts/rk3399-firefly-u-boot.dtsi
+index eab86bdb30..67b63a8352 100644
+--- a/arch/arm/dts/rk3399-firefly-u-boot.dtsi
++++ b/arch/arm/dts/rk3399-firefly-u-boot.dtsi
+@@ -3,4 +3,5 @@
+  * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
+  */
+ 
++#include "rk3399-u-boot.dtsi"
+ #include "rk3399-sdram-ddr3-1600.dtsi"
+diff --git a/arch/arm/dts/rk3399-gru-bob-u-boot.dtsi b/arch/arm/dts/rk3399-gru-bob-u-boot.dtsi
+index 9edb8cf841..726f396f32 100644
+--- a/arch/arm/dts/rk3399-gru-bob-u-boot.dtsi
++++ b/arch/arm/dts/rk3399-gru-bob-u-boot.dtsi
+@@ -3,4 +3,5 @@
+  * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
+  */
+ 
++#include "rk3399-gru-u-boot.dtsi"
+ #include "rk3399-sdram-lpddr3-samsung-4GB-1866.dtsi"
+diff --git a/arch/arm/dts/rk3399-gru-u-boot.dtsi b/arch/arm/dts/rk3399-gru-u-boot.dtsi
+new file mode 100644
+index 0000000000..7bddc3acdb
+--- /dev/null
++++ b/arch/arm/dts/rk3399-gru-u-boot.dtsi
+@@ -0,0 +1,6 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
++ */
 +
-+&spi1 {
-+	u-boot,dm-pre-reloc;
-+};
++#include "rk3399-u-boot.dtsi"
+diff --git a/arch/arm/dts/rk3399-gru.dtsi b/arch/arm/dts/rk3399-gru.dtsi
+index 4cdb4320b7..ca0fc391b2 100644
+--- a/arch/arm/dts/rk3399-gru.dtsi
++++ b/arch/arm/dts/rk3399-gru.dtsi
+@@ -545,7 +545,6 @@ ap_i2c_audio: &i2c8 {
+ 
+ &spi1 {
+ 	status = "okay";
+-	u-boot,dm-pre-reloc;
+ 
+ 	pinctrl-names = "default", "sleep";
+ 	pinctrl-1 = <&spi1_sleep>;
+diff --git a/arch/arm/dts/rk3399-puma-ddr1600.dts b/arch/arm/dts/rk3399-puma-ddr1600.dts
+index 337e0eabb4..42763f82d0 100644
+--- a/arch/arm/dts/rk3399-puma-ddr1600.dts
++++ b/arch/arm/dts/rk3399-puma-ddr1600.dts
+@@ -6,5 +6,6 @@
+ /dts-v1/;
+ 
+ #include "rk3399-puma.dtsi"
++#include "rk3399-u-boot.dtsi"
+ #include "rk3399-sdram-ddr3-1600.dtsi"
+ 
+diff --git a/arch/arm/dts/rk3399-puma.dtsi b/arch/arm/dts/rk3399-puma.dtsi
+index 319a610022..897e0bda85 100644
+--- a/arch/arm/dts/rk3399-puma.dtsi
++++ b/arch/arm/dts/rk3399-puma.dtsi
+@@ -647,8 +647,6 @@
+ 
+ 
+ &spi1 {
+-	u-boot,dm-pre-reloc;
+-
+ 	status = "okay";
+ 
+ 	#address-cells = <1>;
 -- 
 2.18.0.321.gffc6fa0e3
 
