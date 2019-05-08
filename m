@@ -2,30 +2,30 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E184D17249
-	for <lists+linux-rockchip@lfdr.de>; Wed,  8 May 2019 09:06:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B69A617263
+	for <lists+linux-rockchip@lfdr.de>; Wed,  8 May 2019 09:12:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n3idh4XUHftbWjpvu6uJj6JIqpOqBZeafi2rtoT2aKc=; b=ODkup30rwcOm5b
-	0KdzOE9JVjEr21TD1WwjME45uNgvVtwrjVb8yR4TMuMpKeCEbDPggr2cc4NZlUYxTJ/SSxGZyQTUZ
-	vP/ACA1v+S7Cibil8LyAud3ApEE4waslcIMLvF2h0SFArFaCkM9vS+qHXNxoLz5rh14ZAbA7to9Xa
-	Sklx5fLu2XY3eBkemG/oNTo5NMIhJxGfmFY/USTzQGgraPjhqEU8EJsKwz/uAjtR7aoIErLBG4BLw
-	h5MTbUOExgspqKcC5yaDvdx4HiSW6LjrwXnxuf7xjHNAp5YLdkkHqVD+Fy/2oS/D0kWs0Qs64MyaY
-	jvI9WkBvb32AXhd72Eow==;
+	List-Owner; bh=hq2ZfrxWfx3yKGbv0Tp/sE8MeuJP7F8Dx1YvCfRl2f4=; b=Ri/3XzsgNUJqSA
+	hJ9e6qqUvgSLJcHnzBHxLcUyjRDTQYRBXYkdzDO4ZPYDJgo5/d/VkqtmdFKuxbQfsGV+fwSBC4xOG
+	P2pJLezyv5K9DzORVf7ZddNEfT6EP7StTuT9RRZAdeTo0631fp/GS8dVPJPr+X4NpnJGpmpr3WwL8
+	SEn2iE7lqeNTckdhNJAqpEU3UFeCHZCWGjHL5MFcxno+KmGw3+wsjsHITaePkg0Uds4Q3nM2AwOHD
+	zKyAKsW4+PxXLApYVkYQ6ZMpAW0y3yEhlEX3QzalXPImFxMC1hm6SOA3FH6cF6PEuWWVtEXXj8mXT
+	3/Qw+wXeP1Zu9zKTVySA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOGev-0008D3-Gx; Wed, 08 May 2019 07:06:33 +0000
-Received: from regular1.263xmail.com ([211.150.70.204])
+	id 1hOGkG-0002Cj-8R; Wed, 08 May 2019 07:12:04 +0000
+Received: from regular1.263xmail.com ([211.150.70.198])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOGer-0008Cj-Lf
- for linux-rockchip@lists.infradead.org; Wed, 08 May 2019 07:06:31 +0000
-Received: from kever.yang?rock-chips.com (unknown [192.168.165.103])
- by regular1.263xmail.com (Postfix) with ESMTP id 891922A0;
- Wed,  8 May 2019 15:06:27 +0800 (CST)
+ id 1hOGk3-00020X-1t
+ for linux-rockchip@lists.infradead.org; Wed, 08 May 2019 07:12:01 +0000
+Received: from kever.yang?rock-chips.com (unknown [192.168.165.252])
+ by regular1.263xmail.com (Postfix) with ESMTP id 83B8C25A;
+ Wed,  8 May 2019 15:11:47 +0800 (CST)
 X-263anti-spam: KSV:0;BIG:0;
 X-MAIL-GRAY: 0
 X-MAIL-DELIVERY: 1
@@ -36,10 +36,10 @@ X-SKE-CHECKED: 1
 X-ANTISPAM-LEVEL: 2
 Received: from [192.168.60.65] (unknown [103.29.142.67])
  by smtp.263.net (postfix) whith ESMTP id
- P31737T140211255318272S1557299179174901_; 
- Wed, 08 May 2019 15:06:25 +0800 (CST)
+ P12364T140129911953152S1557299503173891_; 
+ Wed, 08 May 2019 15:11:45 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <ef0c58c3a7e253f1de4cbe86eb669128>
+X-UNIQUE-TAG: <38fd00c2612e2c2f3d15170d046e21a5>
 X-RL-SENDER: kever.yang@rock-chips.com
 X-SENDER: yk@rock-chips.com
 X-LOGIN-NAME: kever.yang@rock-chips.com
@@ -47,22 +47,22 @@ X-FST-TO: u-boot@lists.denx.de
 X-SENDER-IP: 103.29.142.67
 X-ATTACHMENT-NUM: 0
 X-DNS-TYPE: 0
-Subject: Re: [PATCH v3 4/6] rockchip: rk3399: Get bl31.elf via BL31
+Subject: Re: [PATCH v3 6/6] Kconfig: Add u-boot.itb BUILD_TARGET for Rockchip
 To: Jagan Teki <jagan@amarulasolutions.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
 References: <20190507185215.15441-1-jagan@amarulasolutions.com>
- <20190507185215.15441-5-jagan@amarulasolutions.com>
+ <20190507185215.15441-7-jagan@amarulasolutions.com>
 From: Kever Yang <kever.yang@rock-chips.com>
-Message-ID: <3d6b28e8-1ff4-bf2c-b5a9-a97d675b2c3b@rock-chips.com>
-Date: Wed, 8 May 2019 15:06:19 +0800
+Message-ID: <79d89674-3098-f784-bb83-2d98234b1501@rock-chips.com>
+Date: Wed, 8 May 2019 15:11:43 +0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
  Thunderbird/52.6.0
 MIME-Version: 1.0
-In-Reply-To: <20190507185215.15441-5-jagan@amarulasolutions.com>
+In-Reply-To: <20190507185215.15441-7-jagan@amarulasolutions.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_000630_060123_4DF5195B 
-X-CRM114-Status: GOOD (  16.11  )
+X-CRM114-CacheID: sfid-20190508_001152_445298_8F9581D1 
+X-CRM114-Status: GOOD (  14.40  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -91,21 +91,11 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 
 On 05/08/2019 02:52 AM, Jagan Teki wrote:
-> Right now rockchip platform need to copy bl31.elf into u-boot
-> source directory to make use of building u-boot.itb.
+> Add u-boot.itb BUILD_TARGET for Rockchip platform when SPL_LOAD_FIT
+> is being used.
 >
-> So, add environment variable BL31 like Allwinner SoC so-that the
-> bl31.elf would available via BL31.
->
-> If the builds are not exporting BL31 env, the make_fit_atf.py
-> explicitly create dummy bl31.elf in u-boot root directory to
-> satisfy travis builds and it will show the warning on console as
->
->  WARNING: BL31 file bl31.elf NOT found, resulting binary is non-functional
->  WARNING: Please read Building section in doc/README.rockchip
->
-> Note, that the dummy bl31 files were created during not exporting
-> BL31 case would be removed via clean target in Makefile.
+> This can get rid of building itb explicitly with 'make u-boot.itb'
+> so, from now all required images will build just by make.
 >
 > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 
@@ -114,69 +104,43 @@ Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
 Thanks,
 - Kever
 > ---
->  Makefile                               |  2 +-
->  arch/arm/mach-rockchip/make_fit_atf.py | 11 ++++++++++-
->  doc/README.rockchip                    |  4 ++--
->  3 files changed, 13 insertions(+), 4 deletions(-)
+>  Kconfig             | 2 +-
+>  doc/README.rockchip | 2 --
+>  2 files changed, 1 insertion(+), 3 deletions(-)
 >
-> diff --git a/Makefile b/Makefile
-> index 64c7976f7e..c5078b95b7 100644
-> --- a/Makefile
-> +++ b/Makefile
-> @@ -1814,7 +1814,7 @@ clean: $(clean-dirs)
->  		-o -name 'dsdt.aml' -o -name 'dsdt.asl.tmp' -o -name 'dsdt.c' \
->  		-o -name '*.efi' -o -name '*.gcno' -o -name '*.so' \) \
->  		-type f -print | xargs rm -f \
-> -		bl31_*.bin image.map
-> +		bl31.c bl31.elf bl31_*.bin image.map
->  
->  # mrproper - Delete all generated files, including .config
->  #
-> diff --git a/arch/arm/mach-rockchip/make_fit_atf.py b/arch/arm/mach-rockchip/make_fit_atf.py
-> index d1faff1957..327875d87b 100755
-> --- a/arch/arm/mach-rockchip/make_fit_atf.py
-> +++ b/arch/arm/mach-rockchip/make_fit_atf.py
-> @@ -10,6 +10,7 @@ usage: $0 <dt_name> [<dt_name> [<dt_name] ...]
->  import os
->  import sys
->  import getopt
-> +import logging
->  
->  # pip install pyelftools
->  from elftools.elf.elffile import ELFFile
-> @@ -194,8 +195,16 @@ def get_bl31_segments_info(bl31_file_name):
->  
->  def main():
->      uboot_elf="./u-boot"
-> -    bl31_elf="./bl31.elf"
->      FIT_ITS=sys.stdout
-> +    if "BL31" in os.environ:
-> +        bl31_elf=os.getenv("BL31");
-> +    else:
-> +        os.system("echo 'int main(){}' > bl31.c")
-> +        os.system("${CROSS_COMPILE}gcc -c bl31.c -o bl31.elf")
-> +        bl31_elf="./bl31.elf"
-> +        logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
-> +        logging.warning(' BL31 file bl31.elf NOT found, resulting binary is non-functional')
-> +        logging.warning(' Please read Building section in doc/README.rockchip')
->  
->      opts, args = getopt.getopt(sys.argv[1:], "o:u:b:h")
->      for opt, val in opts:
+> diff --git a/Kconfig b/Kconfig
+> index 91c1082ace..6bcff29659 100644
+> --- a/Kconfig
+> +++ b/Kconfig
+> @@ -240,7 +240,7 @@ config BUILD_TARGET
+>  	default "u-boot-with-spl.sfp" if TARGET_SOCFPGA_GEN5
+>  	default "u-boot-spl.kwb" if ARCH_MVEBU && SPL
+>  	default "u-boot-elf.srec" if RCAR_GEN3
+> -	default "u-boot.itb" if SPL_LOAD_FIT && ARCH_SUNXI
+> +	default "u-boot.itb" if SPL_LOAD_FIT && (ROCKCHIP_RK3399 || ARCH_SUNXI)
+>  	default "u-boot.kwb" if KIRKWOOD
+>  	default "u-boot-with-spl.bin" if ARCH_AT91 && SPL_NAND_SUPPORT
+>  	help
 > diff --git a/doc/README.rockchip b/doc/README.rockchip
-> index ca4d6473b0..98a3824e2c 100644
+> index 88a4593392..c4e5f83da7 100644
 > --- a/doc/README.rockchip
 > +++ b/doc/README.rockchip
-> @@ -149,8 +149,8 @@ For example:
->  	=> make realclean
->  	=> make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399
+> @@ -103,7 +103,6 @@ For example:
+>       => cd /path/to/u-boot
+>       => make nanopi-neo4-rk3399_defconfig
+>       => make
+> -     => make u-boot.itb
 >  
-> -	(copy bl31.elf into U-Boot root dir)
-> -	=> cp build/rk3399/release/bl31/bl31.elf /path/to/u-boot
-> +	(export bl31.elf)
-> +	=> export BL31=/path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf
+>     - Get the rkbin
 >  
->     - Compile PMU M0 firmware
+> @@ -170,7 +169,6 @@ For example:
+>       => cd /path/to/u-boot
+>       => make orangepi-rk3399_defconfig
+>       => make
+> -     => make u-boot.itb
 >  
+>       (Get spl/u-boot-spl-dtb.bin, u-boot.itb images and some boards would get
+>        spl/u-boot-spl.bin since it doesn't enable CONFIG_SPL_OF_CONTROL)
 
 
 
