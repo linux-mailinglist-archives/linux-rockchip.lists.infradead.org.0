@@ -2,79 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76C9717DDF
-	for <lists+linux-rockchip@lfdr.de>; Wed,  8 May 2019 18:10:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0959F17F87
+	for <lists+linux-rockchip@lfdr.de>; Wed,  8 May 2019 20:10:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gk7ATb2s+POaf7AvNGr+DQKtdRw/DJoYcDAiZ5wt/3Y=; b=JrILMsuzwyyvIX
-	+zmxPfyMxlnacDcLsFjFs/XLBwmLoZzVIG2+MPbsEeAsDpUak1hiIvYMoZIL/tmeKyGKubM1yLMNV
-	/XJUi+SgHPHNKKkSapVRpovfc94a3QSrD9O0KZrddYPlQH3Ali5dF9DT8eDwE1uFEIBL6UiGtXxfz
-	G9LwHgLwXo1kaVyJRu3KFJTs75IJsppyz+b+0Cn8WQrjVq/BtZEs882k25ayeUBp9t1BED5eMp4P/
-	IbjgJszrPsZDt4tSYReHyH3MxQ5EDCPj1/6voCHT4JR/MB/nyEfvrfb8eUvn1wMyf2AdPufth2v1D
-	9PPDbnOFSCUDVhw5Gdaw==;
+	List-Owner; bh=PcYMUC4nVKBxEhg7A1Ia+5gsvrT8g9kvCLUEuU/ffTs=; b=LLeoqZZD6iMaT0
+	HIwixEyekx0fNj179tlch3JjAVbG6Zzl0I9+ghjOrWrk/R94eYeNRetYASJoSbnVBs/Uo3qs8NOvv
+	gNPhCq6tIPTCTl5TOVRxq8poBnGWYMAOkXHZHYSi4aOmOR5yCnRs4mmFAHm28H6IrNs+2+S3nmJvb
+	WFMABBqXBXDukXQetAS+VzgPGXo5bARnmSJ37Eh1Ug+eH3XHLuWB76V0d3LnzkexkCF0tW7pjGEF+
+	f44RxZlEPlj0GekcTW326ocJEcLK/IRXveBdBNH/Hgv8dRa2qvRDsOTf+vPPoC0p9hU/Djd2SaKRM
+	NszBoZGA85iiQZEGDUpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOP9h-0003Pd-61; Wed, 08 May 2019 16:10:53 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1hOR1L-0003Vg-78; Wed, 08 May 2019 18:10:23 +0000
+Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOP8d-00010n-H7
- for linux-rockchip@lists.infradead.org; Wed, 08 May 2019 16:09:57 +0000
-Received: by mail-qt1-x843.google.com with SMTP id k24so6654004qtq.7
- for <linux-rockchip@lists.infradead.org>; Wed, 08 May 2019 09:09:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=zRNTbKqT4JCfOSK6xrkUmA02JfSOD9QQELwl7WDvtpU=;
- b=SfmynSg1AWxXf5d82GnEIvAHjeX1xH/Fb+F7Moe9A/+pxMp24GZorMQ5g0XNcMK8Cm
- Gbhushqoo70XYPrnF+P/GHPL3Vdkr+y7M8sJvlzEFou8P7APvcpdZG9mJMO0u5dttHEw
- 3rL2nQwHour5/S9FaIR0hI1Umt1ohM+MkqyL4n6p7EBNuW8V3WIzWxVYBE9LbSBEs4Ax
- ar45aXOK3GN/0W4hYac1bNPAQy0uP819fcgjjvUWXj65rd1R+phgA+TlZvKN1fc+4lwi
- jgidmqLUXWCzUulWoSl9KCJtev6297tYX+MTVDAVfE5Yvz4ZD8xrRkKzcU/AmORcNzpq
- nvGA==
+ id 1hOR1H-0003VJ-FG
+ for linux-rockchip@lists.infradead.org; Wed, 08 May 2019 18:10:21 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id j184so13218736vsd.11
+ for <linux-rockchip@lists.infradead.org>; Wed, 08 May 2019 11:10:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=F3GSYUt5BCOwJ4C2jh44sg2SA8WHx9EsOyf2WJj0PXY=;
+ b=FlaN5J1m3i0G1C1e5AUzwxem3wCG+Fc8/Vc4jRlvw1b71OZCzWEpfzh5bf1gqiZamd
+ 6LQJSrPG5AHJ0i7TZBu/tSAtYEnGstBAztw9NM7KO/wqZJsTuO5INLfbcCxRRRsEozcj
+ DPfJJKf5Ar2zSnRmEED2scZ0nNEDB4TAKKWrg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=zRNTbKqT4JCfOSK6xrkUmA02JfSOD9QQELwl7WDvtpU=;
- b=K53twiATgTDZv6lCnddXYwatE+pLHeQaOZF3IAQYrGbHcKMJa/6pHT7j6A5S4Txfxx
- 4gEpzM1cI71XrwY1hQfOWWK+37zVP8dHp9elEzMCZn3c4wbpfhLqnxV6K0HFRpAq2Obx
- 7gJ0SzE7nBlPd0coze+DHqXlmSTl27iigTSzrc0/WOF+V+x6h4fprrne3BWVpm8LN/MT
- lmPZ1d7rhMsErp9eM4yeRV6HC/Bg7Sfai7Oyj/6cn3WfsdkjW4h5HmTgFMhyquJ8J5sy
- RMaUxMLhKRuJ7PmcrkFFm/1CLNY9BYj17x3qWiUM5iL+qncAsQ74KObRlK+I1//QdIgR
- Nmqw==
-X-Gm-Message-State: APjAAAVv7Z4bSppY3WxLo03BNd/BprHynyTWeIjv5I3v2L/fijOIb3Uf
- rMXvJ5WaeCQBDDzgBmuI4uQ4gg==
-X-Google-Smtp-Source: APXvYqy3tayWKc8duRQ+bmjeFbIIdoifi1bY3aQ16j3Eu10XqXuqG/BNha0+Qge2up4EtO7LgVBghA==
-X-Received: by 2002:ac8:36ce:: with SMTP id b14mr10657578qtc.190.1557331786216; 
- Wed, 08 May 2019 09:09:46 -0700 (PDT)
-Received: from rosewood.cam.corp.google.com
- ([2620:0:1013:11:89c6:2139:5435:371d])
- by smtp.gmail.com with ESMTPSA id s50sm10936877qts.39.2019.05.08.09.09.44
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 08 May 2019 09:09:45 -0700 (PDT)
-From: Sean Paul <sean@poorly.run>
-To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v4 11/11] drm/rockchip: Use drm_atomic_helper_commit_tail_rpm
-Date: Wed,  8 May 2019 12:09:16 -0400
-Message-Id: <20190508160920.144739-12-sean@poorly.run>
-X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
-In-Reply-To: <20190508160920.144739-1-sean@poorly.run>
-References: <20190508160920.144739-1-sean@poorly.run>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=F3GSYUt5BCOwJ4C2jh44sg2SA8WHx9EsOyf2WJj0PXY=;
+ b=k5tqtpQI5MikeuVntvHQLsIsb0HDEC3Mjk0vSvYvsJ1sWuQPJoXbrj2zQ6Dn1RTc4K
+ fE5LnIGYqjXAxpPi36SIVqhQhq8zuLsPEd57UKx4/jdRkj4WejCITcRv0CzofMYVNKcV
+ FiHURqJeDNK5f1WaDAJiJlbHKC4JkpLfcb7Z6HrbQqqXtlky85mH77sBhFz1UpWfinEE
+ SLnRLL4AE0fFm7U2A57C5RQ7xSmNTAOpDFuyDHuutKVq20H5kkzjwkMos5ssZvKsLt6b
+ 5tduhDjE0zuRYpMc82zpTqpsPnacizWDvKFuLNxc/bMGiiOuHOLDI9dDvaVAb86mcOnP
+ JDrg==
+X-Gm-Message-State: APjAAAVSJDuhKmTA39OkYAsGtbevVuKvhiRYAe9iZ7kaJSgVlF4p84qL
+ ss4acSsavhvHTVLAqYfZuFXOP+VI/d4=
+X-Google-Smtp-Source: APXvYqwiySO2dYD7BU+CYwCKALPHdFZSksLJAqLo7dkjesCJWf3PA5eCYG0L9bEcyrDQw8W9UnYBpw==
+X-Received: by 2002:a67:eb15:: with SMTP id a21mr8244607vso.197.1557339017377; 
+ Wed, 08 May 2019 11:10:17 -0700 (PDT)
+Received: from mail-vs1-f48.google.com (mail-vs1-f48.google.com.
+ [209.85.217.48])
+ by smtp.gmail.com with ESMTPSA id u3sm6463310vsi.2.2019.05.08.11.10.15
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Wed, 08 May 2019 11:10:16 -0700 (PDT)
+Received: by mail-vs1-f48.google.com with SMTP id g187so13236566vsc.8
+ for <linux-rockchip@lists.infradead.org>; Wed, 08 May 2019 11:10:15 -0700 (PDT)
+X-Received: by 2002:a67:f849:: with SMTP id b9mr15669234vsp.188.1557339015476; 
+ Wed, 08 May 2019 11:10:15 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190508154832.241525-1-dianders@chromium.org>
+In-Reply-To: <20190508154832.241525-1-dianders@chromium.org>
+From: Kees Cook <keescook@chromium.org>
+Date: Wed, 8 May 2019 11:10:03 -0700
+X-Gmail-Original-Message-ID: <CAGXu5jLhmvRbZOhNPkGr9=oSn-aA1CempctTyM3hfW3uOf8DpQ@mail.gmail.com>
+Message-ID: <CAGXu5jLhmvRbZOhNPkGr9=oSn-aA1CempctTyM3hfW3uOf8DpQ@mail.gmail.com>
+Subject: Re: [PATCH v2] pstore/ram: Improve backward compatibility with older
+ Chromebooks
+To: Douglas Anderson <dianders@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_090948_132936_5D8946FB 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20190508_111019_537097_9389E7E4 
+X-CRM114-Status: GOOD (  21.74  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -84,6 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,76 +99,106 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Zain Wang <wzz@rock-chips.com>,
- =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
- Sandy Huang <hjc@rock-chips.com>, Tomasz Figa <tfiga@chromium.org>,
- linux-rockchip@lists.infradead.org, Sean Paul <seanpaul@chromium.org>,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
+Cc: Brian Norris <briannorris@chromium.org>, Kees Cook <keescook@chromium.org>,
+ Tony Luck <tony.luck@intel.com>, Anton Vorontsov <anton@enomsg.org>,
+ LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Matthias Kaehlcke <mka@chromium.org>, Colin Cross <ccross@android.com>,
+ Guenter Roeck <groeck@chromium.org>, Julius Werner <jwerner@chromium.org>,
+ Frank Rowand <frowand.list@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Sean Paul <seanpaul@chromium.org>
+On Wed, May 8, 2019 at 8:49 AM Douglas Anderson <dianders@chromium.org> wrote:
+> When you try to run an upstream kernel on an old ARM-based Chromebook
+> you'll find that console-ramoops doesn't work.
+>
+> Old ARM-based Chromebooks, before <https://crrev.com/c/439792>
+> ("ramoops: support upstream {console,pmsg,ftrace}-size properties")
+> used to create a "ramoops" node at the top level that looked like:
+>
+> / {
+>   ramoops {
+>     compatible = "ramoops";
+>     reg = <...>;
+>     record-size = <...>;
+>     dump-oops;
+>   };
+> };
+>
+> ...and these Chromebooks assumed that the downstream kernel would make
+> console_size / pmsg_size match the record size.  The above ramoops
+> node was added by the firmware so it's not easy to make any changes.
+>
+> Let's match the expected behavior, but only for those using the old
+> backward-compatible way of working where ramoops is right under the
+> root node.
+>
+> NOTE: if there are some out-of-tree devices that had ramoops at the
+> top level, left everything but the record size as 0, and somehow
+> doesn't want this behavior, we can try to add more conditions here.
+>
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
 
-Now that we use the drm psr helpers, we no longer need to hand-roll our
-atomic_commit_tail implementation. So use the helper
+Thanks! I've applied this to my testing tree and I'll push to Linus in
+a couple days.
 
-Changes in v2:
-- None
-Changes in v3:
-- None
-Changes in v4:
-- None
+-Kees
 
-Link to v1: https://patchwork.freedesktop.org/patch/msgid/20190228210939.83386-6-sean@poorly.run
-Link to v2: https://patchwork.freedesktop.org/patch/msgid/20190326204509.96515-5-sean@poorly.run
-Link to v3: https://patchwork.freedesktop.org/patch/msgid/20190502194956.218441-11-sean@poorly.run
-
-Cc: Zain Wang <wzz@rock-chips.com>
-Cc: Tomasz Figa <tfiga@chromium.org>
-Signed-off-by: Sean Paul <seanpaul@chromium.org>
----
- drivers/gpu/drm/rockchip/rockchip_drm_fb.c | 21 +--------------------
- 1 file changed, 1 insertion(+), 20 deletions(-)
-
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
-index 214064d599ee..1c63d9e833bc 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
-@@ -117,27 +117,8 @@ rockchip_user_fb_create(struct drm_device *dev, struct drm_file *file_priv,
- 	return ERR_PTR(ret);
- }
- 
--static void
--rockchip_atomic_helper_commit_tail_rpm(struct drm_atomic_state *old_state)
--{
--	struct drm_device *dev = old_state->dev;
--
--	drm_atomic_helper_commit_modeset_disables(dev, old_state);
--
--	drm_atomic_helper_commit_modeset_enables(dev, old_state);
--
--	drm_atomic_helper_commit_planes(dev, old_state,
--					DRM_PLANE_COMMIT_ACTIVE_ONLY);
--
--	drm_atomic_helper_commit_hw_done(old_state);
--
--	drm_atomic_helper_wait_for_vblanks(dev, old_state);
--
--	drm_atomic_helper_cleanup_planes(dev, old_state);
--}
--
- static const struct drm_mode_config_helper_funcs rockchip_mode_config_helpers = {
--	.atomic_commit_tail = rockchip_atomic_helper_commit_tail_rpm,
-+	.atomic_commit_tail = drm_atomic_helper_commit_tail_rpm,
- };
- 
- static const struct drm_mode_config_funcs rockchip_drm_mode_config_funcs = {
--- 
-Sean Paul, Software Engineer, Google / Chromium OS
-
+> ---
+>
+> Changes in v2:
+> - s/mimicing/mimicking/ (Brian Norris)
+> - Slight rewording of the comment (Brian Norris)
+> - Check name rather than relying on of_node_is_root() (Frank Rowand)
+>
+>  fs/pstore/ram.c | 21 +++++++++++++++++++++
+>  1 file changed, 21 insertions(+)
+>
+> diff --git a/fs/pstore/ram.c b/fs/pstore/ram.c
+> index c5c685589e36..5195a3a3daec 100644
+> --- a/fs/pstore/ram.c
+> +++ b/fs/pstore/ram.c
+> @@ -669,6 +669,7 @@ static int ramoops_parse_dt(struct platform_device *pdev,
+>                             struct ramoops_platform_data *pdata)
+>  {
+>         struct device_node *of_node = pdev->dev.of_node;
+> +       struct device_node *parent_node;
+>         struct resource *res;
+>         u32 value;
+>         int ret;
+> @@ -703,6 +704,26 @@ static int ramoops_parse_dt(struct platform_device *pdev,
+>
+>  #undef parse_size
+>
+> +       /*
+> +        * Some old Chromebooks relied on the kernel setting the
+> +        * console_size and pmsg_size to the record size since that's
+> +        * what the downstream kernel did.  These same Chromebooks had
+> +        * "ramoops" straight under the root node which isn't
+> +        * according to the current upstream bindings (though it was
+> +        * arguably acceptable under a prior version of the bindings).
+> +        * Let's make those old Chromebooks work by detecting that
+> +        * we're not a child of "reserved-memory" and mimicking the
+> +        * expected behavior.
+> +        */
+> +       parent_node = of_get_parent(of_node);
+> +       if (!of_node_name_eq(parent_node, "reserved-memory") &&
+> +           !pdata->console_size && !pdata->ftrace_size &&
+> +           !pdata->pmsg_size && !pdata->ecc_info.ecc_size) {
+> +               pdata->console_size = pdata->record_size;
+> +               pdata->pmsg_size = pdata->record_size;
+> +       }
+> +       of_node_put(parent_node);
+> +
+>         return 0;
+>  }
+>
+> --
+> 2.21.0.1020.gf2820cf01a-goog
+>
 
 _______________________________________________
 Linux-rockchip mailing list
