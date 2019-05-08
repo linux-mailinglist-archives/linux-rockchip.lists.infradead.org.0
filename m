@@ -2,81 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82B9717DDA
-	for <lists+linux-rockchip@lfdr.de>; Wed,  8 May 2019 18:10:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9094717DDE
+	for <lists+linux-rockchip@lfdr.de>; Wed,  8 May 2019 18:10:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NoKgD3SDuUjaQrlL/s6nZaxFN13HSYH2RUlgj9IEpAY=; b=RABbZMoIBM6yzr
-	HC+4DDth8DYyzgFUKCysL6iqlvqgd4Y46KDmbeNoPo9Akt/cE5kAFDLpy6VsmDR03f7ExRfjw5NiD
-	0aMt9165U1dG7XzWj9MbSE34k+plfgFyaCPFcmBSqILQXIKG2h50QvzJD+k8VlmJu+XiXOWy02YU0
-	SHqPhIywjbmFlIOLJLoQzx9/wmNavgRHxePwG3//4VWs1GUfLLV129G8siEJzvwnZj8GI1j1Szhtf
-	YpYBOuMiDzoFs9GOOIGDIE/vMbSUEFiRgTsuHFFtOsLfsEapifCiKhrFctr47UBmvbcQn3ikw7VE5
-	5K6CACXD6kFLhZ+qcP5A==;
+	List-Owner; bh=++h4UPdrHoWyycoLTmYkn8WXiJOKupOsrDkYYDo9YZU=; b=G4nHrm1wtRbwU6
+	qEqBCGdYAk00UlUDrSZrN9xpfoMtiaKzF0/r+XsscNNZzbLzZF1kg029e0zI6fOkjzzo735Zruyii
+	d7shNGMCZBAIXrdueQsusH+CsXGUbmeUWu5dKeOqkGjbkvSOgQmwf2LUVFS1IMIH0T3vOc/tRUbDB
+	XWI0n1DEVguVqYcWZIDLxEFN806cHqA1VqU/81eaKq8lbfNYZQoEixsofYxrLgPm10FvZXwc3Yzwd
+	CQR/WcuwgGuZp3sZ7Vijh81iUpGwm6kssR+4LoqYpzQ/TFy36LHbaEP4tf4z3hSpq3JYgs+/PbFYQ
+	u0aSwRGcHiEr0V8IxKXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOP92-00020P-Or; Wed, 08 May 2019 16:10:12 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1hOP9g-0003Ni-31; Wed, 08 May 2019 16:10:52 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOP8Y-0000tX-VB
+ id 1hOP8a-0000wu-Vw
  for linux-rockchip@lists.infradead.org; Wed, 08 May 2019 16:09:53 +0000
-Received: by mail-qk1-x741.google.com with SMTP id g190so3703613qkf.8
- for <linux-rockchip@lists.infradead.org>; Wed, 08 May 2019 09:09:42 -0700 (PDT)
+Received: by mail-qt1-x841.google.com with SMTP id d13so2482008qth.5
+ for <linux-rockchip@lists.infradead.org>; Wed, 08 May 2019 09:09:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=F2jyUkK54dAtzW9q8l1lAlimvgbuYWM4fIyCnzJ6lOg=;
- b=YZjrGZw4u8UksJvAyaMTuVDWWzwcGobAms8CYvmqGVTNQzjWx1Hs2NxmZRsbQ8Uvd7
- amxnG6rrNuM0R+TDYWmmVRb/whuXLWPYJY1Y2Tt93+PXLZ/66MuhMNS/OUQd1iAdBH5d
- uRtfclY/vY6HiefGGfPOVD9k4p1MDxoANLs/ucwu9yDzjWPFlg1ollOsJMAeK0RyjKvn
- wKn0nF0rNWppHeNYi2zDH+5dMNBIVa1/XEww0rLUGW5Q07HiRTXCQ46Jmv1WSn2+kuAc
- mA3yksNEo40IXs+eVz+YXfRdrFH6ok/60pWp86Qt6C/Qjc00KsQOA2FaDJO41NfcIyZd
- Xm6w==
+ bh=LMYs8c+Tum5RlcWDu+Yjp2ss6Gwc93s4y2RXr302wBc=;
+ b=V9GXqoO00IQawyAit26xGWHY+niy9Pe4noR5ZtzE7XaUhHzxNPBhX6heQEDbjay49Z
+ xkJ4IzbsvL8tEUDZoydoxCXl2A9z/GZI5D5jWIzNq8f3wfhKb07n49CTcw8WlLhmXMtE
+ TaEB3wvfBZKMhqCGoDaugHZvUVad3S96FLtKafp69w1aw539RLitBbFVlZhg1uN/Ethv
+ oezSDrd7k0BCVmzekKQ4H0oXS5udyTb5739nCq6lBAD8iunjYSYceo+T696JaZhqljb8
+ sSiHZGUhexQhh6g0lxTburkg/6oM8Tp9x5F1Ovd9Unwn4cBJsbGBX5eJJWQGCDPeZGL5
+ hKNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=F2jyUkK54dAtzW9q8l1lAlimvgbuYWM4fIyCnzJ6lOg=;
- b=SMhtLdGADfvrETLpMH+cYJol06gkYsX/lIIY7k43xXZ3ralF8xsnMr6qVO/YaBKzpZ
- /C0EBUSDoldX1JQ440ifOmo32ul3hsTFjcZvtkYPklpXfB/q1uaoNFdyNgXcvDzxMfSf
- zWhIv6kSU9LxvYaXHNrF/Ooh/EFp+SR+jCHoDa1XZCq0EWMpjlTVTGC9penZzyPlFrqc
- kr2msl0k2LB756K8Q/M3NhHAmriZ+LI2/aXfAxM6EhljrwVKXpxHvTirwQ6EfR3nZMcK
- +9lUhWcnBW7DL0jl+IePYSGI0k4ExwCq12G3bwqBD33+/8/46V5BoXWsm708sRLnfjaS
- MOXA==
-X-Gm-Message-State: APjAAAXVW/kpFU4gYlwch2uh3hdAVjMxDNAQEomY8uBh0hizzsOpy6V2
- o46AhXPMFgIjI6iDu4GVLT8uVw==
-X-Google-Smtp-Source: APXvYqzRA5IObRuPx+SY8SNlAyq+nRRa4bmVL8DgjSZ9iDXAEVZOvPWti3Ep53uWLeh2NRo1+SzXzA==
-X-Received: by 2002:a37:6c81:: with SMTP id
- h123mr29498480qkc.201.1557331781702; 
- Wed, 08 May 2019 09:09:41 -0700 (PDT)
+ bh=LMYs8c+Tum5RlcWDu+Yjp2ss6Gwc93s4y2RXr302wBc=;
+ b=O3+wquk6qg5M/xB7cNgPwGBq0DYi/0gtNrGjbWplDEew/BDCTtyvRM9Tyq1sfCa+c/
+ ovxH6W1DWjwQ67+xhMmSGJBZBSa2v8w2QQiCK9XVTngRmX1zEVMZCscpvYjiCMBvm++O
+ S7mQtZ94878DBzLtkZZEktuBKKpwaOiWEJK/I+R3PlHc6dCjzuy+NiPUT+JHUBWlBMOD
+ YE7Q9RVmldgX5DTmgKe0ZrU5WWQLXQiJCGReYJitxQYOBSFehd/+Potp0nwWdBbs+Uza
+ AUR+BUeyR0Ji2a5YUUkfeR/MHhiMRAdDxL79RnkWKMGtj5tcxAI2cXmEptxwCZyxE8hi
+ j7Hg==
+X-Gm-Message-State: APjAAAXsD95kv0fMjEdhvwDOH4cX+dI8ZjoIjQodj4t8+c5BuTIXjFqW
+ pID3d6mKE4ShTO3JUZJ/hqJK5g==
+X-Google-Smtp-Source: APXvYqxEXJQfeSOuHsS9Kxc7CZkRGu6Bnk5tH6UETK9HU4JMYas/R8DIjUhhkcfh/hFGdmsGaq/udw==
+X-Received: by 2002:a0c:bec4:: with SMTP id f4mr30829373qvj.17.1557331783753; 
+ Wed, 08 May 2019 09:09:43 -0700 (PDT)
 Received: from rosewood.cam.corp.google.com
  ([2620:0:1013:11:89c6:2139:5435:371d])
- by smtp.gmail.com with ESMTPSA id s50sm10936877qts.39.2019.05.08.09.09.40
+ by smtp.gmail.com with ESMTPSA id s50sm10936877qts.39.2019.05.08.09.09.42
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 08 May 2019 09:09:41 -0700 (PDT)
+ Wed, 08 May 2019 09:09:43 -0700 (PDT)
 From: Sean Paul <sean@poorly.run>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v4 09/11] drm/rockchip: Use vop_win in vop_win_disable instead
- of vop_win_data
-Date: Wed,  8 May 2019 12:09:14 -0400
-Message-Id: <20190508160920.144739-10-sean@poorly.run>
+Subject: [PATCH v4 10/11] drm/rockchip: Don't fully disable vop on self refresh
+Date: Wed,  8 May 2019 12:09:15 -0400
+Message-Id: <20190508160920.144739-11-sean@poorly.run>
 X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
 In-Reply-To: <20190508160920.144739-1-sean@poorly.run>
 References: <20190508160920.144739-1-sean@poorly.run>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_090943_563835_C92F19AF 
-X-CRM114-Status: GOOD (  12.27  )
+X-CRM114-CacheID: sfid-20190508_090945_587101_0DFBACDB 
+X-CRM114-Status: GOOD (  16.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -98,10 +96,13 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, Sandy Huang <hjc@rock-chips.com>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Sean Paul <seanpaul@chromium.org>, Daniel Vetter <daniel@ffwll.ch>,
+Cc: Zain Wang <wzz@rock-chips.com>,
+ =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
+ Sandy Huang <hjc@rock-chips.com>, Tomasz Figa <tfiga@chromium.org>,
+ linux-rockchip@lists.infradead.org, Sean Paul <seanpaul@chromium.org>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ "Kristian H . Kristensen" <hoegsberg@chromium.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -110,86 +111,130 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Sean Paul <seanpaul@chromium.org>
 
-Change the argument to vop_win_disable to vop_win to accomodate future
-changes to the function.
+Instead of fully disabling and re-enabling the vop on self refresh
+transitions, only disable the active windows. This will speed up
+self refresh exits substantially and is still a power-savings win.
 
+This patch integrates portions of Zain's patch from here:
+https://patchwork.kernel.org/patch/9615063/
+
+Changes in v2:
+- None
+Changes in v3:
+- None
 Changes in v4:
-- Added to the patchset
+- Adjust for preceding vop_win_disable changes
 
+Link to v1: https://patchwork.freedesktop.org/patch/msgid/20190228210939.83386-5-sean@poorly.run
+Link to v2: https://patchwork.freedesktop.org/patch/msgid/20190326204509.96515-4-sean@poorly.run
+Link to v3: https://patchwork.freedesktop.org/patch/msgid/20190502194956.218441-10-sean@poorly.run
+
+Cc: Zain Wang <wzz@rock-chips.com>
+Cc: Tomasz Figa <tfiga@chromium.org>
+Cc: Kristian H. Kristensen <hoegsberg@chromium.org>
 Signed-off-by: Sean Paul <seanpaul@chromium.org>
 ---
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 18 +++++++++---------
- 1 file changed, 9 insertions(+), 9 deletions(-)
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 41 ++++++++++++++++++---
+ 1 file changed, 36 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-index f89d41425be0..15a5b44eb7e7 100644
+index 15a5b44eb7e7..acdc86a9144b 100644
 --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
 +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-@@ -543,8 +543,10 @@ static void vop_core_clks_disable(struct vop *vop)
- 	clk_disable(vop->hclk);
+@@ -134,6 +134,7 @@ struct vop {
+ 	bool is_enabled;
+ 
+ 	struct completion dsp_hold_completion;
++	unsigned int win_enabled;
+ 
+ 	/* protected by dev->event_lock */
+ 	struct drm_pending_vblank_event *event;
+@@ -555,6 +556,7 @@ static void vop_win_disable(struct vop *vop, const struct vop_win *vop_win)
+ 	}
+ 
+ 	VOP_WIN_SET(vop, win, enable, 0);
++	vop->win_enabled &= ~BIT(VOP_WIN_TO_INDEX(vop_win));
  }
  
--static void vop_win_disable(struct vop *vop, const struct vop_win_data *win)
-+static void vop_win_disable(struct vop *vop, const struct vop_win *vop_win)
- {
-+	const struct vop_win_data *win = vop_win->data;
+ static int vop_enable(struct drm_crtc *crtc, struct drm_crtc_state *old_state)
+@@ -637,6 +639,25 @@ static int vop_enable(struct drm_crtc *crtc, struct drm_crtc_state *old_state)
+ 	return ret;
+ }
+ 
++static void rockchip_drm_set_win_enabled(struct drm_crtc *crtc, bool enabled)
++{
++        struct vop *vop = to_vop(crtc);
++        int i;
 +
- 	if (win->phy->scl && win->phy->scl->ext) {
- 		VOP_SCL_SET_EXT(vop, win, yrgb_hor_scl_mode, SCALE_NONE);
- 		VOP_SCL_SET_EXT(vop, win, yrgb_ver_scl_mode, SCALE_NONE);
-@@ -603,9 +605,8 @@ static int vop_enable(struct drm_crtc *crtc, struct drm_crtc_state *old_state)
- 	if (!old_state || !old_state->self_refresh_active) {
- 		for (i = 0; i < vop->data->win_size; i++) {
- 			struct vop_win *vop_win = &vop->win[i];
--			const struct vop_win_data *win = vop_win->data;
- 
--			vop_win_disable(vop, win);
-+			vop_win_disable(vop, vop_win);
- 		}
- 	}
- 	spin_unlock(&vop->reg_lock);
-@@ -753,7 +754,6 @@ static void vop_plane_atomic_disable(struct drm_plane *plane,
- 				     struct drm_plane_state *old_state)
++        spin_lock(&vop->reg_lock);
++
++        for (i = 0; i < vop->data->win_size; i++) {
++                struct vop_win *vop_win = &vop->win[i];
++                const struct vop_win_data *win = vop_win->data;
++
++                VOP_WIN_SET(vop, win, enable,
++                            enabled && (vop->win_enabled & BIT(i)));
++        }
++        vop_cfg_done(vop);
++
++        spin_unlock(&vop->reg_lock);
++}
++
+ static void vop_crtc_atomic_disable(struct drm_crtc *crtc,
+ 				    struct drm_crtc_state *old_state)
  {
- 	struct vop_win *vop_win = to_vop_win(plane);
--	const struct vop_win_data *win = vop_win->data;
- 	struct vop *vop = to_vop(old_state->crtc);
+@@ -644,15 +665,16 @@ static void vop_crtc_atomic_disable(struct drm_crtc *crtc,
  
- 	if (!old_state->crtc)
-@@ -761,7 +761,7 @@ static void vop_plane_atomic_disable(struct drm_plane *plane,
+ 	WARN_ON(vop->event);
  
- 	spin_lock(&vop->reg_lock);
+-	mutex_lock(&vop->vop_lock);
++	if (crtc->state->self_refresh_active)
++		rockchip_drm_set_win_enabled(crtc, false);
  
--	vop_win_disable(vop, win);
-+	vop_win_disable(vop, vop_win);
+-	if (!vop->is_enabled) {
+-		mutex_unlock(&vop->vop_lock);
+-		return;
+-	}
++	mutex_lock(&vop->vop_lock);
  
+ 	drm_crtc_vblank_off(crtc);
+ 
++	if (crtc->state->self_refresh_active)
++		goto out;
++
+ 	/*
+ 	 * Vop standby will take effect at end of current frame,
+ 	 * if dsp hold valid irq happen, it means standby complete.
+@@ -683,6 +705,8 @@ static void vop_crtc_atomic_disable(struct drm_crtc *crtc,
+ 	clk_disable(vop->dclk);
+ 	vop_core_clks_disable(vop);
+ 	pm_runtime_put(vop->dev);
++
++out:
+ 	mutex_unlock(&vop->vop_lock);
+ 
+ 	if (crtc->state->event && !crtc->state->active) {
+@@ -900,6 +924,7 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
+ 	}
+ 
+ 	VOP_WIN_SET(vop, win, enable, 1);
++	vop->win_enabled |= BIT(win_index);
  	spin_unlock(&vop->reg_lock);
  }
-@@ -1592,7 +1592,6 @@ static void vop_destroy_crtc(struct vop *vop)
  
- static int vop_initial(struct vop *vop)
- {
--	const struct vop_data *vop_data = vop->data;
- 	struct reset_control *ahb_rst;
- 	int i, ret;
+@@ -1056,6 +1081,12 @@ static void vop_crtc_atomic_enable(struct drm_crtc *crtc,
+ 	int dither_bpc = s->output_bpc ? s->output_bpc : 10;
+ 	int ret;
  
-@@ -1659,12 +1658,13 @@ static int vop_initial(struct vop *vop)
- 	VOP_REG_SET(vop, misc, global_regdone_en, 1);
- 	VOP_REG_SET(vop, common, dsp_blank, 0);
++	if (old_state && old_state->self_refresh_active) {
++		drm_crtc_vblank_on(crtc);
++		rockchip_drm_set_win_enabled(crtc, true);
++		return;
++	}
++
+ 	mutex_lock(&vop->vop_lock);
  
--	for (i = 0; i < vop_data->win_size; i++) {
--		const struct vop_win_data *win = &vop_data->win[i];
-+	for (i = 0; i < vop->data->win_size; i++) {
-+		struct vop_win *vop_win = &vop->win[i];
-+		const struct vop_win_data *win = vop_win->data;
- 		int channel = i * 2 + 1;
- 
- 		VOP_WIN_SET(vop, win, channel, (channel + 1) << 4 | channel);
--		vop_win_disable(vop, win);
-+		vop_win_disable(vop, vop_win);
- 		VOP_WIN_SET(vop, win, gate, 1);
- 	}
- 
+ 	WARN_ON(vop->event);
 -- 
 Sean Paul, Software Engineer, Google / Chromium OS
 
