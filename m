@@ -2,83 +2,61 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A6E617350
-	for <lists+linux-rockchip@lfdr.de>; Wed,  8 May 2019 10:09:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C05A417610
+	for <lists+linux-rockchip@lfdr.de>; Wed,  8 May 2019 12:34:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WfirHFEWfd/wxgE1Gv2980BoNlxJ+wTWMCagYNP0Wn0=; b=UIQaH0F6SNdWNr
-	714vN5gSzXb4t/nTLAy6Lh/+rGQu2wen503skMVkkQWWu2X0WDn3YjkO1s/KZaJCWMN8Q9Aylt23F
-	bOh/3yHJaCgi9vsDEZRItdm+sMNv+zj28Di4scdPAQ2P9Jy+zCL6AfPnnlrgz3p5MGlsoH586VqON
-	fyC36XBdLdeUcRbtE5EDlH0g8ghWmWx5ZSMMNXdkU8VdOFQ3TfrutwKAvCqecO9pxzqwH0N/RMbyt
-	DJa8jwU5HyvsxQd1d5hS5FE7ePRflcyMbz1GG7yEo8esijX/FR+xm3GYFETDMQWPEigVShlBFdkfq
-	YbChddhHWARCTmkXtI9w==;
+	References:List-Owner; bh=k93wtV2PiMR5EfwjUnYhfJ8EG1UUNmxvQSuu8wuQXbc=; b=Rvs
+	qaPTijsfRg1plIyDMIT404Ixb70l40p/qpZqYykJ4olR8ra7wSVrIZ9Zj5Koz6H+L++URn48QuTbZ
+	d2hblmV4tWFuJeqpxBlyPGeJ6gzyV+su3rLz1Rnc8LH7G5/pLOgb5Tbbor3PhBbyJMtqNvb8arbgP
+	1iaqJg7DXiJRvasZjk5T3JYCi/0duDIIpwVJ4rBgSu4FM4HmNZbIoxfQL4A6rJsMfT+4e/1xhwfVi
+	zVY5LOG0ghOfOy0r+nHbkqdoueNf723rCHvhgnWIh2tku/hd7DlK6o/2sR/4WMCEC1z0n8jzMu3qC
+	epJYDzaCKg+7EOkQkJ216v8q4BXsAgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOHeB-0008BC-4b; Wed, 08 May 2019 08:09:51 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hOJu4-0007v9-CO; Wed, 08 May 2019 10:34:24 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOHe8-00084l-UY
- for linux-rockchip@lists.infradead.org; Wed, 08 May 2019 08:09:50 +0000
-Received: by mail-pg1-x544.google.com with SMTP id j26so9705973pgl.5
- for <linux-rockchip@lists.infradead.org>; Wed, 08 May 2019 01:09:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=YAVX44TjixlyUBQzD0G7+JGPLwAIIoO4XVm2kwePVsI=;
- b=laPxROST0tpZOjNlRc/EgG8m/HAQLk8u+hUitDPMgEAkFErdAiNBxA7/T9PN7JxGDf
- tV5JMGPvdBAklmgdI7prwvwOADRsoVe0uMNHxJ+sklhMYY+3HmP5Do7wMt6W9vnJTQrY
- gUa7jOXiQ8W/aTylnEWVMA3ZFBeu0cqZKc0ZE=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=YAVX44TjixlyUBQzD0G7+JGPLwAIIoO4XVm2kwePVsI=;
- b=NnNgu6ELu2xWs1Cm//TArLvXDmeRawuhJmZcc0pFKIS81OJsn9tBOvm+64BveB0Xmw
- 4pl3baZO0gCAHPzDHT95IhXjLNGiLs5TsIgkliSdemJ1mOtgWcSa17YnyDIbJk5IXMIP
- uKOKxB3+vjah8ceWRMi+54FfJMC8WmO8i25IoejMALelVtWQxr1ezDNTH3Fwvfh/PeyX
- fvdyeME9YA4cIvQgazE/WWLU5ZxuHaUIc0E42aHWrEClIvEBprKctTGKXyIlwrXvFJa+
- I+BRQXy1aROu+p2LzBVSipifPdH2GFwxeAsYBg9W9X0lRivvr5oanm3SOEicSwTBkSFA
- TNSA==
-X-Gm-Message-State: APjAAAVAyrRci3VdWpL43PKN6RovvT9/xNmqlceqElZVl89MO1Z0F5h+
- jBDhpes+nCUEYnILG4RFJupU/Q==
-X-Google-Smtp-Source: APXvYqw1uI580qCkwrDku0hxEyRJNc5a5i94Av0tAGlRXnQ0y4f/uYNU8/RT538AnzU38qDnoohxYg==
-X-Received: by 2002:a65:5886:: with SMTP id d6mr45196928pgu.295.1557302988487; 
- Wed, 08 May 2019 01:09:48 -0700 (PDT)
-Received: from localhost.localdomain ([115.97.185.144])
- by smtp.gmail.com with ESMTPSA id j9sm33537133pfc.43.2019.05.08.01.09.44
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 08 May 2019 01:09:47 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- Kever Yang <kever.yang@rock-chips.com>, Akash Gajjar <akash@openedev.com>
-Subject: [PATCH 8/8] rockchip: rk3399: Enable TPL_BOARD_INIT
-Date: Wed,  8 May 2019 13:39:04 +0530
-Message-Id: <20190508080904.1567-9-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
-In-Reply-To: <20190508080904.1567-1-jagan@amarulasolutions.com>
-References: <20190508080904.1567-1-jagan@amarulasolutions.com>
-MIME-Version: 1.0
+ id 1hOJtw-0007p7-1H; Wed, 08 May 2019 10:34:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=5XX6yQwWLlHH3i6hXnK8Nh0JB85+4JdaLeEd/oN5bak=; b=Ryv6B6KJvKip
+ Yr6+OPtL0vJu1hWewaMYdus0SKmvm9gLodp3sqYolTMw+a28cOU22u1q5wCkHDIpeZCfwqpP/asaI
+ 42Ii1ED1Xe10k482gZn4rYmBeeagDH2LPGd3hL4ay1WvQwfnWlH/76mcqs+u0AUAhVvBFCy1bWEaC
+ AbVfE=;
+Received: from [61.199.190.11] (helo=finisterre.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hOJto-0007t9-RK; Wed, 08 May 2019 10:34:09 +0000
+Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
+ id 5C7EB440010; Wed,  8 May 2019 11:33:58 +0100 (BST)
+From: Mark Brown <broonie@kernel.org>
+To: Emil Renner Berthing <kernel@esmil.dk>
+Subject: Applied "spi: rockchip: turn down tx dma bursts" to the spi tree
+In-Reply-To: <20190412105320.2924-1-kernel@esmil.dk>
+X-Patchwork-Hint: ignore
+Message-Id: <20190508103358.5C7EB440010@finisterre.sirena.org.uk>
+Date: Wed,  8 May 2019 11:33:58 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_010948_986339_85AB9CCF 
-X-CRM114-Status: UNSURE (   8.59  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190508_033416_222822_50E27EAA 
+X-CRM114-Status: GOOD (  16.10  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -96,35 +74,97 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
- Jagan Teki <jagan@amarulasolutions.com>, u-boot@lists.denx.de
+Cc: Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ Vicente Bergas <vicencb@gmail.com>, linux-spi@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Enable TPL_BOARD_INIT, this would help us to show
-TPL boot prints.
+The patch
 
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+   spi: rockchip: turn down tx dma bursts
+
+has been applied to the spi tree at
+
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git 
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From 47300728fb213486a830565d2af49da967c9d16a Mon Sep 17 00:00:00 2001
+From: Emil Renner Berthing <kernel@esmil.dk>
+Date: Fri, 12 Apr 2019 12:53:20 +0200
+Subject: [PATCH] spi: rockchip: turn down tx dma bursts
+
+This fixes tx and bi-directional dma transfers on rk3399-gru-kevin.
+
+It seems the SPI fifo must have room for 2 bursts when the dma_tx_req
+signal is generated or it might skip some words. This in turn makes
+the rx dma channel never complete for bi-directional transfers.
+
+Fix it by setting tx burst length to fifo_len / 4 and the dma
+watermark to fifo_len / 2.
+
+However the rk3399 TRM says (sic):
+"DMAC support incrementing-address burst and fixed-address burst. But in
+the case of access SPI and UART at byte or halfword size, DMAC only
+support fixed-address burst and the address must be aligned to word."
+
+So this relies on fifo_len being a multiple of 16 such that the
+burst length (= fifo_len / 4) is a multiple of 4 and the addresses
+will be word-aligned.
+
+Fixes: dcfc861d24ec ("spi: rockchip: adjust dma watermark and burstlen")
+Signed-off-by: Emil Renner Berthing <kernel@esmil.dk>
+Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm/mach-rockchip/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/spi/spi-rockchip.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/mach-rockchip/Kconfig b/arch/arm/mach-rockchip/Kconfig
-index ce039022df..1d483be8b9 100644
---- a/arch/arm/mach-rockchip/Kconfig
-+++ b/arch/arm/mach-rockchip/Kconfig
-@@ -184,6 +184,7 @@ config ROCKCHIP_RK3399
- 	imply TPL_LIBCOMMON_SUPPORT
- 	imply TPL_LIBGENERIC_SUPPORT
- 	imply TPL_SYS_MALLOC_SIMPLE
-+	imply TPL_BOARD_INIT
- 	imply TPL_BOOTROM_SUPPORT
- 	imply TPL_DRIVERS_MISC_SUPPORT
- 	imply TPL_OF_CONTROL
+diff --git a/drivers/spi/spi-rockchip.c b/drivers/spi/spi-rockchip.c
+index 3912526ead66..19f6a76f1c07 100644
+--- a/drivers/spi/spi-rockchip.c
++++ b/drivers/spi/spi-rockchip.c
+@@ -425,7 +425,7 @@ static int rockchip_spi_prepare_dma(struct rockchip_spi *rs,
+ 			.direction = DMA_MEM_TO_DEV,
+ 			.dst_addr = rs->dma_addr_tx,
+ 			.dst_addr_width = rs->n_bytes,
+-			.dst_maxburst = rs->fifo_len / 2,
++			.dst_maxburst = rs->fifo_len / 4,
+ 		};
+ 
+ 		dmaengine_slave_config(master->dma_tx, &txconf);
+@@ -526,7 +526,7 @@ static void rockchip_spi_config(struct rockchip_spi *rs,
+ 	else
+ 		writel_relaxed(rs->fifo_len / 2 - 1, rs->regs + ROCKCHIP_SPI_RXFTLR);
+ 
+-	writel_relaxed(rs->fifo_len / 2 - 1, rs->regs + ROCKCHIP_SPI_DMATDLR);
++	writel_relaxed(rs->fifo_len / 2, rs->regs + ROCKCHIP_SPI_DMATDLR);
+ 	writel_relaxed(0, rs->regs + ROCKCHIP_SPI_DMARDLR);
+ 	writel_relaxed(dmacr, rs->regs + ROCKCHIP_SPI_DMACR);
+ 
 -- 
-2.18.0.321.gffc6fa0e3
+2.20.1
 
 
 _______________________________________________
