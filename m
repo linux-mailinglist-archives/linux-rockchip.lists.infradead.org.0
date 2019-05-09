@@ -2,47 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 479B318702
-	for <lists+linux-rockchip@lfdr.de>; Thu,  9 May 2019 10:48:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF47C18878
+	for <lists+linux-rockchip@lfdr.de>; Thu,  9 May 2019 12:45:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m8RPxMeZbmc9n6notjnO26GsiMNZnHN8Tb5eGOdSL2o=; b=bDit8ySrus6cqF
-	3/0uYhZ8+ziog9O9iTxyE+Yj0jMQoviV5dT1yLWJMsD3d9w3un7pwOGtHBYfHdFvoPC+SsW/k3xpa
-	mvMA9PfSSElzBOfnYHevbbjBW8Tzl7hQP1shCOo2AKyURDdclA5TIhQG57GQ6g9jkyXUuh4qyvL2v
-	Z/3uRGgAVSOngwzUrCTvBdQ0OIh7IiSGPdRGPeBu4CljrBcXoeGfZK9UrHGdo/BUkFG8emJP2Mhso
-	H9YgWWlRaivBMvPCnm5wGqB7j1zTaFjQBC39Xlegedx0IWtB/7TI5WPvq/5GaKYTcDBAx7lJ3Pb71
-	aQmCIA2E1WS3axNfErxA==;
+	List-Owner; bh=QIE8Ni0IXfwMyk2Ftq38FDPk97/OuJX3bQ5E5fJ74ik=; b=dtH4jxa0i2ZHUU
+	OwNnKRzyzay0x94b400Fmg+41dbISkibJ3Lk0E98L9saXBUjE2UZSI95m5k1/jOP2Bw9DXKEJ9ayv
+	tSX7521gKNeb4+3nyzOafwX0kkL5rL3pTksaGFgC3MJXnjxDHX1vwqPJzx5YcG7+Rv+KhS+ZpJo0g
+	Oi518HSdNNiywKs3JQmzDkOYXGpQU/E/0ym5wtBPIAJlNyF0QoWdVscnejU43LOjOd+LKJFSK8YPV
+	tRc8IUsVCaACcNQCG2uJ6UuAcCefDuQ4y1vFD7aKu28lOt1nXwlsUrqLMUzUR3RMi9nrw1xD1e5lH
+	NN7znXtf71NVbYlNFsRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOeia-0003iV-Qh; Thu, 09 May 2019 08:47:56 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1hOgYC-0008QV-De; Thu, 09 May 2019 10:45:20 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOeha-0003By-ME; Thu, 09 May 2019 08:46:56 +0000
-Received: from we0048.dip.tu-dresden.de ([141.76.176.48] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hOehW-00021I-3y; Thu, 09 May 2019 10:46:50 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Douglas Anderson <dianders@chromium.org>
-Subject: Re: [PATCH] clk: rockchip: Don't yell about bad mmc phases when
- getting
-Date: Thu, 09 May 2019 10:46:49 +0200
-Message-ID: <3109854.2nZ1kdONIi@phil>
-In-Reply-To: <20190503212208.223232-1-dianders@chromium.org>
-References: <20190503212208.223232-1-dianders@chromium.org>
+ id 1hOgY7-0008Q4-Gw
+ for linux-rockchip@lists.infradead.org; Thu, 09 May 2019 10:45:17 +0000
+Received: by mail-io1-xd44.google.com with SMTP id m7so1225621ioa.6
+ for <linux-rockchip@lists.infradead.org>; Thu, 09 May 2019 03:45:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=5JTqvxYKL1uyUfPkEq5uthDKLJroVGufB/313rY0Qqs=;
+ b=QUJybTVfnrEsAcKVSEiqF7FKEjXqm9otqyMyG/Ju5QIn+SvjLfZZkfpzZlamd+Uefb
+ JbEra2J4vXEAESsVaUIiIuM0wuY8YSET0xccl7/MDKygA+leM2rWqC+U8dTczWxII+6x
+ cGzSu+8T6TCpl0oK1hq7vpafocOpcnx0uJB4Q=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=5JTqvxYKL1uyUfPkEq5uthDKLJroVGufB/313rY0Qqs=;
+ b=sJ5iLZE50W834F/MntznSWGSIZ/fhRrnl/I7i9OW3mO57fK1UoN+L71XFg+H1mbIqO
+ iywHjzv+A9j/qjSxRhOKy4/ZItDNrHY5CRjBMDfNLWbxKbAAutUX51CUNLl8/rU4IXRJ
+ w0Q9qyMjaaqETpQOZDmq3z+YMmS4O3pr4N+GmIoonL2rfYp1C/tJU6qJ86z8iNZeWxqf
+ zK0Zkxs99b1HGHb5mS/RAhPrzGdSg/EgCP9LLUCLQMDd7UTNLcRaZdFWa+uTBnTSpdta
+ FRO9sg04PlNO0IuJBvE/zHQ54dbJWGdPSgkAWVZ1I/HDdmNKmiNrbd1JC+UbJ/DraWG7
+ z3NA==
+X-Gm-Message-State: APjAAAUAsvPvn6b/065Wo0t0n1M3nYQutIXAmlcWp1wML4Oez73vsX/s
+ 5H5DtlGUvgQzQ2++61MzBJrremQGKNfaVdmWCmSYRQ==
+X-Google-Smtp-Source: APXvYqynDJ82z3hau8I3WVhtSJ+hwi6g2ICR1LSCDimLp/A8kH1kXtO3uWrocAj77MygH9FYYbU4dXoXgpV1WboKzi4=
+X-Received: by 2002:a6b:bb82:: with SMTP id l124mr2144381iof.252.1557398714186; 
+ Thu, 09 May 2019 03:45:14 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190508054151.21762-1-jagan@amarulasolutions.com>
+ <b3755da63208dffc5c0f7676ece0fe55d4dfd4f7.camel@bootlin.com>
+In-Reply-To: <b3755da63208dffc5c0f7676ece0fe55d4dfd4f7.camel@bootlin.com>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Thu, 9 May 2019 16:15:02 +0530
+Message-ID: <CAMty3ZBNGmO6Qjysih=4UROO4s6dyawWw8L13Ga7XFqBZyPdtA@mail.gmail.com>
+Subject: Re: [RESEND PATCH v7 00/11] rockchip: Add new rk3399 boards
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Kever Yang <kever.yang@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_014655_199258_5DD26870 
-X-CRM114-Status: GOOD (  12.94  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190509_034516_017539_747560F5 
+X-CRM114-Status: GOOD (  14.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -55,42 +89,68 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: hal@halemmerich.com, Stephen Boyd <sboyd@kernel.org>,
- Shawn Lin <shawn.lin@rock-chips.com>, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-rockchip@lists.infradead.org,
- mka@chromium.org, Michael Turquette <mturquette@baylibre.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Simon Glass <sjg@chromium.org>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ U-Boot-Denx <u-boot@lists.denx.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Freitag, 3. Mai 2019, 23:22:08 CEST schrieb Douglas Anderson:
-> At boot time, my rk3288-veyron devices yell with 8 lines that look
-> like this:
->   [    0.000000] rockchip_mmc_get_phase: invalid clk rate
-> 
-> This is because the clock framework at clk_register() time tries to
-> get the phase but we don't have a parent yet.
-> 
-> While the errors appear to be harmless they are still ugly and, in
-> general, we don't want yells like this in the log unless they are
-> important.
-> 
-> There's no real reason to be yelling here.  We can still return
-> -EINVAL to indicate that the phase makes no sense without a parent.
-> If someone really tries to do tuning and the clock is reported as 0
-> then we'll see the yells in rockchip_mmc_set_phase().
-> 
-> Fixes: 4bf59902b500 ("clk: rockchip: Prevent calculating mmc phase if clock rate is zero")
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
+Hi Paul,
 
-applied for 5.3
+On Thu, May 9, 2019 at 12:38 PM Paul Kocialkowski
+<paul.kocialkowski@bootlin.com> wrote:
+>
+> Hi,
+>
+> On Wed, 2019-05-08 at 11:11 +0530, Jagan Teki wrote:
+> > (Sorry for the noice, I have missed to send two patches from v7)
+> >
+> > This is v7 resend patchset for New rk3399 boards support wrt previous
+> > version[1]
+> >
+> > Unfortunately initial version of creating rk3399-u-boot.dtsi and
+> > orangepi rk3399 changes are merged, so this is rework on top of
+> > u-boot-rockchip/master.
+> >
+> > Overall this series add support below rk3399 boards
+> > - NanoPI M4
+> > - NanoPC T4
+> > - NanoPI NEO4
+> > - Orangepi RK3399
+> > - Rock PI 4
+> > - Rockpro64
+> >
+> > All the respective dts(i) files are synced from Linux 5.1-rc2 and few
+> > dts(i) from linux-next.
+> >
+> > SoC u-boot specific dtsi rk3399-u-boot.dtsi changes are part of another
+> > series [3].
+> >
+> > Out of all above boards Rockpor64, Rock-PI and Nanopi NEO4 would support
+> > booting via Rockchip miniloader as of now.
+>
+> Could you send these two boards in a separate series so that we avoid
+> merging them for now (because SPL support is broken) and then re-
+> iterate the series later with the DDR bringup? Or maybe find a way to
+> disable SPL support, but in any case, it's not ok to merge a board with
+> SPL enabled and broken.
 
-Thanks
-Heiko
+I have explained the details about this concern on v2 [1], thought you
+would comeback on the same line instead here.
 
+Anyway, making SPL as an optional is not an idea to go with Mainline
+as we make many decisions with regards to make SPL is mandatory.
+Since the DDR is show stopper here (and it would really need a good
+amount of time, since it effect the other boards), I can go with TPL
+enabled boot-chain where ddr bin, SPL and U-Boot proper can be part of
+booting stages. This way we can avoid skipping SPL usage, and many
+config changes to make SPL optional.
 
+[1] https://patchwork.ozlabs.org/cover/1086213/
 
 _______________________________________________
 Linux-rockchip mailing list
