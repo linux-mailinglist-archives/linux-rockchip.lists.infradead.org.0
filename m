@@ -2,118 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDD8419C27
-	for <lists+linux-rockchip@lfdr.de>; Fri, 10 May 2019 13:05:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40A2A19C93
+	for <lists+linux-rockchip@lfdr.de>; Fri, 10 May 2019 13:29:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xwOnmd43GAnoZSn54ejZZEivaE0x9iFnje4Jjy5VKkE=; b=ByQ59uxPUJo+kF
-	VefyB43IKSlvXy4xWUA2vftlcpaqwQWC3Iyt9ud4TJ1+BZcr5/pbx+kSxYgNZmVA2JyO3JJ5ZSdBM
-	GJePftoOopRJamK7G6upVb+veoW5XcAKp5S+n0deK1ks0yGXV16C3JydnFICcCex/3zvJrhHMRSsC
-	z4ZDv2JB75JNLsVgNjashhaWNg88bjjPo5trdxfBkA0YPvDet/F2yooFQKeUNz4QZL9xkwc6Rwmvx
-	nYEDMhmKen6n0/XLq7aynSLviCI7IP2hreXqawm+R7+Blg9XnQNxzOLC4Et13WJPf+fNjHxpy30XF
-	gMZdbXJl0+kfy2HVaJMg==;
+	List-Owner; bh=pS6GCV8VbWB5chK9G7pYip+2uudIlzspxatneGDtttM=; b=AKQuAWTNOnC1ZD
+	3DgGjQ2UeuhMRhIqxUosSr8REdDDNLJI1qYF0gtUp9Lcofgx886g5HbveDWbLcRf7od8Yt59xk54j
+	31Bfd/QhkWmCUX8UugME4Rg1xMTyTTGTXOkwWi7fDETKxgbHyGakquTz+j3XMPG59zBuhrUYWpHXx
+	kahHqpEIX0mQg9j60seHoInkkg80CKIYSZ4YQBkuimIaoent1UvQ82KChcxz9G29blZ1fuPMRZEAS
+	hO+KAbiBLqd4YgRFcp5Nt6+wTsHJ53GxsYZ+IyPIIyQfak7TCcXtCQTzMClD4pun44bUBAB/Nbwu9
+	K1a8ty0YJwY1myFSFFhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP3L2-0001AY-1D; Fri, 10 May 2019 11:05:16 +0000
-Received: from mail-by2nam03on0630.outbound.protection.outlook.com
- ([2a01:111:f400:fe4a::630]
- helo=NAM03-BY2-obe.outbound.protection.outlook.com)
+	id 1hP3iH-00024G-TC; Fri, 10 May 2019 11:29:17 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP3Kn-0008Fj-DZ; Fri, 10 May 2019 11:05:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=analog.onmicrosoft.com; s=selector1-analog-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nVlpM+6hUpJfEDjmqqh5buswTi9IXWo+idp+3aYvadA=;
- b=cJaRCIlXlhytsC0WOUjovdUXlHRExZWPjhVf03F0+kh9EW3mb68RI6Rnc3cHyEhKGz4sJV9wA82vpcEx/F+iU3ypyrnsW4/k0e997VS2hIGKO+igCU4zzHHlAx2b/kf5RKAjaKA2W3b6tkRnBRfNgWUAFNGQGOnAYoLiEYdp3VE=
-Received: from BN6PR03CA0017.namprd03.prod.outlook.com (2603:10b6:404:23::27)
- by BY2PR03MB556.namprd03.prod.outlook.com (2a01:111:e400:2c3a::17)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1878.22; Fri, 10 May
- 2019 11:04:54 +0000
-Received: from BL2NAM02FT036.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e46::208) by BN6PR03CA0017.outlook.office365.com
- (2603:10b6:404:23::27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1878.20 via Frontend
- Transport; Fri, 10 May 2019 11:04:54 +0000
-Authentication-Results: spf=pass (sender IP is 137.71.25.57)
- smtp.mailfrom=analog.com; linux.intel.com; dkim=none (message not signed)
- header.d=none;linux.intel.com; dmarc=bestguesspass action=none
- header.from=analog.com;
-Received-SPF: Pass (protection.outlook.com: domain of analog.com designates
- 137.71.25.57 as permitted sender) receiver=protection.outlook.com;
- client-ip=137.71.25.57; helo=nwd2mta2.analog.com;
-Received: from nwd2mta2.analog.com (137.71.25.57) by
- BL2NAM02FT036.mail.protection.outlook.com (10.152.77.154) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.1856.11
- via Frontend Transport; Fri, 10 May 2019 11:04:53 +0000
-Received: from NWD2HUBCAS9.ad.analog.com (nwd2hubcas9.ad.analog.com
- [10.64.69.109])
- by nwd2mta2.analog.com (8.13.8/8.13.8) with ESMTP id x4AB4rkt031706
- (version=TLSv1/SSLv3 cipher=AES256-SHA bits=256 verify=OK);
- Fri, 10 May 2019 04:04:53 -0700
-Received: from NWD2MBX7.ad.analog.com ([fe80::190e:f9c1:9a22:9663]) by
- NWD2HUBCAS9.ad.analog.com ([fe80::44a2:871b:49ab:ea47%12]) with mapi id
- 14.03.0415.000; Fri, 10 May 2019 07:04:53 -0400
-From: "Ardelean, Alexandru" <alexandru.Ardelean@analog.com>
-To: "dan.carpenter@oracle.com" <dan.carpenter@oracle.com>
-Subject: Re: [PATCH 09/16] mmc: sdhci-xenon: use new match_string()
- helper/macro
-Thread-Topic: [PATCH 09/16] mmc: sdhci-xenon: use new match_string()
- helper/macro
-Thread-Index: AQHVBZFjC5krcc3G0k+g00YBPwx6V6ZhaK0AgAAShYCAAt35AIAAHiKAgAABAAA=
-Date: Fri, 10 May 2019 11:04:53 +0000
-Message-ID: <d320a13ad06bba87fcb0c04c4143e911723684ea.camel@analog.com>
-References: <20190508112842.11654-1-alexandru.ardelean@analog.com>
- <20190508112842.11654-11-alexandru.ardelean@analog.com>
- <20190508122010.GC21059@kadam>
- <2ec6812d6bf2f33860c7c816c641167a31eb2ed6.camel@analog.com>
- <31be52eb1a1abbc99a24729f5c65619235cb201f.camel@analog.com>
- <20190510110116.GB18105@kadam>
-In-Reply-To: <20190510110116.GB18105@kadam>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.50.1.244]
-x-adiroutedonprem: True
-Content-ID: <134D0B85CEA25646B3EBD898406EC02C@analog.com>
+ id 1hP3iC-00023K-WF
+ for linux-rockchip@lists.infradead.org; Fri, 10 May 2019 11:29:14 +0000
+Received: from pendragon.ideasonboard.com
+ (dfj612yhrgyx302h3jwwy-3.rev.dnainternet.fi
+ [IPv6:2001:14ba:21f5:5b00:ce28:277f:58d7:3ca4])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id C2EBB2DF;
+ Fri, 10 May 2019 13:29:03 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1557487743;
+ bh=O5VkRp/cFdU1yhbEvfZGNpBOwVZqtwrZ6R3cmLCJos4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=ZVe4809/xGKyjijtRUyVRZmCXJP9rjMpX77EZVbaoc9YQuZeSnPMNAIQ1DXjeUP/D
+ 8/LRCseAhHpg3GB6GCwUkan5cWe1xATbeOL7fCMKrkY2K7KDYuy01TWhTEZ3J9VS0n
+ fkHVixDudWNa2E7lfJf1oQR/uefnIy47NEJKypNg=
+Date: Fri, 10 May 2019 14:28:47 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Hans Verkuil <hverkuil@xs4all.nl>
+Subject: Re: [PATCH v5 03/15] media: v4l2-common: Support custom
+ imagesize/bytesperline in fill_pixfmt()
+Message-ID: <20190510112847.GA4972@pendragon.ideasonboard.com>
+References: <20190503114719.28784-1-boris.brezillon@collabora.com>
+ <20190503114719.28784-4-boris.brezillon@collabora.com>
+ <0c5a648c-27a8-8195-8ad9-8cefb4369837@xs4all.nl>
 MIME-Version: 1.0
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:137.71.25.57; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(1496009)(136003)(396003)(376002)(346002)(39860400002)(2980300002)(189003)(199004)(426003)(76176011)(102836004)(26005)(436003)(70206006)(446003)(8936002)(7696005)(70586007)(36756003)(14444005)(6246003)(186003)(336012)(2486003)(8676002)(6116002)(3846002)(229853002)(5660300002)(11346002)(47776003)(5640700003)(356004)(305945005)(50466002)(2616005)(476003)(6916009)(2906002)(118296001)(478600001)(126002)(7736002)(86362001)(14454004)(2351001)(2501003)(7636002)(23676004)(106002)(246002)(4326008)(316002)(7416002)(7406005)(54906003)(486006);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BY2PR03MB556; H:nwd2mta2.analog.com; FPR:;
- SPF:Pass; LANG:en; PTR:nwd2mail11.analog.com; MX:1; A:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: f76a2088-dc12-4942-d433-08d6d537549b
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4709054)(2017052603328)(7193020);
- SRVR:BY2PR03MB556; 
-X-MS-TrafficTypeDiagnostic: BY2PR03MB556:
-X-Microsoft-Antispam-PRVS: <BY2PR03MB5567CAEF2048D0CACEA3D3CF90C0@BY2PR03MB556.namprd03.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:8882;
-X-Forefront-PRVS: 0033AAD26D
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: tULqUEYxx8A1Vcan/qfbE7E/YiNcE+blJBkWLIfZLYQfoW+YJfMk/7pGVcvZ1Zi7zwbrhva5fOWhPlE7BRloVhcy0b7UY+H3u7eHfxlqm2FqcBDBRA6rNCrikJSdpJCdjDevTorMO4v2pbPJ9vgXgpdzx4rSWTBAzaTFpTqnxoN6817pHFRM6OimKYwZT+zkHQBRDborUH0cfCMCTH7W/DYsug3lJUPmoVohbzUw7Qlzb5gflrpKMIIuKRlZUQA5y+LwbgY2fjwZItJ1in7CCdq2yHbgQEyod/D4nUaFXtQNysaVfM6q5P4JW2pJdKeJjrqkRhofhZP8Dy5+VsJYbafZu2hWLTkGR5O0X96SKzhm9VbATpPl5eWgoo6bTpaSEgvMToAEFFE6dQ7aXg+NwW0dDvkkJwZFaifj5Uv3dxk=
-X-OriginatorOrg: analog.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 May 2019 11:04:53.7708 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: f76a2088-dc12-4942-d433-08d6d537549b
-X-MS-Exchange-CrossTenant-Id: eaa689b4-8f87-40e0-9c6f-7228de4d754a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=eaa689b4-8f87-40e0-9c6f-7228de4d754a; Ip=[137.71.25.57];
- Helo=[nwd2mta2.analog.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY2PR03MB556
+Content-Disposition: inline
+In-Reply-To: <0c5a648c-27a8-8195-8ad9-8cefb4369837@xs4all.nl>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_040501_512067_84EE93BD 
-X-CRM114-Status: GOOD (  17.13  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190510_042913_342901_21833458 
+X-CRM114-Status: GOOD (  25.98  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -121,6 +61,10 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -133,113 +77,188 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
- "linux-fbdev@vger.kernel.org" <linux-fbdev@vger.kernel.org>,
- "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
- "linux-mtd@lists.infradead.org" <linux-mtd@lists.infradead.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "devel@driverdev.osuosl.org" <devel@driverdev.osuosl.org>,
- "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "linux-rpi-kernel@lists.infradead.org" <linux-rpi-kernel@lists.infradead.org>,
- "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
- "cgroups@vger.kernel.org" <cgroups@vger.kernel.org>,
- "linux-omap@vger.kernel.org" <linux-omap@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-ide@vger.kernel.org" <linux-ide@vger.kernel.org>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-security-module@vger.kernel.org"
- <linux-security-module@vger.kernel.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-integrity@vger.kernel.org" <linux-integrity@vger.kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
+Cc: Nicolas Dufresne <nicolas@ndufresne.ca>, kernel@collabora.com,
+ Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
+ Kieran Bingham <kieran.bingham@ideasonboard.com>,
+ Tomasz Figa <tfiga@chromium.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Sakari Ailus <sakari.ailus@iki.fi>, Hans Verkuil <hans.verkuil@cisco.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, 2019-05-10 at 14:01 +0300, Dan Carpenter wrote:
-> [External]
-> 
-> 
-> On Fri, May 10, 2019 at 09:13:26AM +0000, Ardelean, Alexandru wrote:
-> > On Wed, 2019-05-08 at 16:26 +0300, Alexandru Ardelean wrote:
-> > > On Wed, 2019-05-08 at 15:20 +0300, Dan Carpenter wrote:
-> > > > 
-> > > > 
-> > > > On Wed, May 08, 2019 at 02:28:35PM +0300, Alexandru Ardelean wrote:
-> > > > > -static const char * const phy_types[] = {
-> > > > > -     "emmc 5.0 phy",
-> > > > > -     "emmc 5.1 phy"
-> > > > > -};
-> > > > > -
-> > > > >  enum xenon_phy_type_enum {
-> > > > >       EMMC_5_0_PHY,
-> > > > >       EMMC_5_1_PHY,
-> > > > >       NR_PHY_TYPES
-> > > > 
-> > > > There is no need for NR_PHY_TYPES now so you could remove that as
-> > > > well.
-> > > > 
-> > > 
-> > > I thought the same.
-> > > The only reason to keep NR_PHY_TYPES, is for potential future
-> > > patches,
-> > > where it would be just 1 addition
-> > > 
-> > >  enum xenon_phy_type_enum {
-> > >       EMMC_5_0_PHY,
-> > >       EMMC_5_1_PHY,
-> > > +      EMMC_5_2_PHY,
-> > >       NR_PHY_TYPES
-> > >   }
-> > > 
-> > > Depending on style/preference of how to do enums (allow comma on last
-> > > enum
-> > > or not allow comma on last enum value), adding new enum values woudl
-> > > be 2
-> > > additions + 1 deletion lines.
-> > > 
-> > >  enum xenon_phy_type_enum {
-> > >       EMMC_5_0_PHY,
-> > > -      EMMC_5_1_PHY
-> > > +      EMM
-> > > C_5_1_PHY,
-> > > +      EMMC_5_2_PHY
-> > >  }
-> > > 
-> > > Either way (leave NR_PHY_TYPES or remove NR_PHY_TYPES) is fine from
-> > > my
-> > > side.
-> > > 
+Hi Hans,
+
+(CC'ing Kieran)
+
+On Fri, May 10, 2019 at 10:57:26AM +0200, Hans Verkuil wrote:
+> On 5/3/19 1:47 PM, Boris Brezillon wrote:
+> > Users can define custom sizeimage and bytesperline as long as they're
+> > big enough to store the amount of pixels required for a specific
+> > width/height under a specific format. Avoid overriding those fields in
+> > this case.
 > > 
-> > Preference on this ?
-> > If no objection [nobody insists] I would keep.
+> > Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+> > ---
+> > Hello Hans,
 > > 
-> > I don't feel strongly about it [dropping NR_PHY_TYPES or not].
+> > The sizeimage/bytesperline check on !MPLANE formats is still not 100%
+> > sure, as custom bytesperline might induce bigger sizeimage than what
+> > we calculate.
+> > 
+> > I tried implementing something smarter taking the per-component plane
+> > bpp + hdiv param as we discussed the other day but decided to step
+> > back after realizing the per-component plane macro block might also
+> > differ at least in theory (not sure that's true in practice) and that
+> > has an impact on bytesperline too.
+> > 
+> > Let me know how you want to handle that case.
+> > 
+> > Regards,
+> > 
+> > Boris
+> > 
+> > Changes in v5:
+> > * New patch
+> > ---
+> >  drivers/media/v4l2-core/v4l2-common.c | 54 +++++++++++++++++++--------
+> >  1 file changed, 39 insertions(+), 15 deletions(-)
+> > 
+> > diff --git a/drivers/media/v4l2-core/v4l2-common.c b/drivers/media/v4l2-core/v4l2-common.c
+> > index 3c6f5c115fc5..37bfc984a8b5 100644
+> > --- a/drivers/media/v4l2-core/v4l2-common.c
+> > +++ b/drivers/media/v4l2-core/v4l2-common.c
+> > @@ -563,9 +563,10 @@ int v4l2_fill_pixfmt_mp(struct v4l2_pix_format_mplane *pixfmt,
+> >  	pixfmt->num_planes = info->mem_planes;
+> >  
+> >  	if (info->mem_planes == 1) {
+> > +		u32 bytesperline, sizeimage = 0;
+> > +
+> >  		plane = &pixfmt->plane_fmt[0];
+> > -		plane->bytesperline = ALIGN(width, v4l2_format_block_width(info, 0)) * info->bpp[0];
+> > -		plane->sizeimage = 0;
+> > +		bytesperline = ALIGN(width, v4l2_format_block_width(info, 0)) * info->bpp[0];
+> >  
+> >  		for (i = 0; i < info->comp_planes; i++) {
+> >  			unsigned int hdiv = (i == 0) ? 1 : info->hdiv;
+> > @@ -576,10 +577,17 @@ int v4l2_fill_pixfmt_mp(struct v4l2_pix_format_mplane *pixfmt,
+> >  			aligned_width = ALIGN(width, v4l2_format_block_width(info, i));
+> >  			aligned_height = ALIGN(height, v4l2_format_block_height(info, i));
+> >  
+> > -			plane->sizeimage += info->bpp[i] *
+> > -				DIV_ROUND_UP(aligned_width, hdiv) *
+> > -				DIV_ROUND_UP(aligned_height, vdiv);
+> > +			sizeimage += info->bpp[i] *
+> > +				     DIV_ROUND_UP(aligned_width, hdiv) *
+> > +				     DIV_ROUND_UP(aligned_height, vdiv);
+> >  		}
+> > +
+> > +		/*
+> > +		 * The user might have specified custom sizeimage/bytesperline,
+> > +		 * only override them if they're not big enough.
+> > +		 */
+> > +		plane->sizeimage = max(sizeimage, plane->sizeimage);
+> > +		plane->bytesperline = max(bytesperline, plane->bytesperline);
 > 
-> If you end up resending the series could you remove it, but if not then
-> it's not worth it.
-
-ack
-
-thanks
-Alex
-
+> Let's just set bytesperline, ignoring the value the user supplied. There are very
+> few drivers that allow the user to set bytesperline anyway, so it's not a big deal
+> to drop support for that for now. We can add it back later.
 > 
-> regards,
-> dan carpenter
-> 
+> Just add a comment that a user-defined bytesperline value isn't currently supported.
+
+Kieran recently ran into an issue related to this, when sharing buffers
+between a CSI-2 receiver and an ISP. The ISP has alignment constraints
+in both the horizontal and vertical directions on the line stride and
+total image size. Out software framework currently allocates buffers
+from the CSI-2 receiver which doesn't have those constraints, and not
+being able to specify sizeimage is thus a problem.
+
+We have worked around this by allocating buffers on the ISP side but
+that departed from the normal way of operation, and it may not be a good
+idea to carry that forward.
+
+I wonder how we should solve these issues long term. A central memory
+allocator is probably the way to go.
+
+> >  	} else {
+> >  		for (i = 0; i < info->comp_planes; i++) {
+> >  			unsigned int hdiv = (i == 0) ? 1 : info->hdiv;
+> > @@ -591,10 +599,20 @@ int v4l2_fill_pixfmt_mp(struct v4l2_pix_format_mplane *pixfmt,
+> >  			aligned_height = ALIGN(height, v4l2_format_block_height(info, i));
+> >  
+> >  			plane = &pixfmt->plane_fmt[i];
+> > -			plane->bytesperline =
+> > -				info->bpp[i] * DIV_ROUND_UP(aligned_width, hdiv);
+> > -			plane->sizeimage =
+> > -				plane->bytesperline * DIV_ROUND_UP(aligned_height, vdiv);
+> > +
+> > +			/*
+> > +			 * The user might have specified custom
+> > +			 * sizeimage/bytesperline, only override them if
+> > +			 * they're not big enough.
+> > +			 */
+> > +			plane->bytesperline = max_t(u32,
+> > +						    info->bpp[i] *
+> > +						    DIV_ROUND_UP(aligned_width, hdiv),
+> > +						    plane->bytesperline);
+> > +			plane->sizeimage = max_t(u32,
+> > +						 plane->bytesperline *
+> > +						 DIV_ROUND_UP(aligned_height, vdiv),
+> > +						 plane->sizeimage);
+> >  		}
+> >  	}
+> >  	return 0;
+> > @@ -605,6 +623,7 @@ int v4l2_fill_pixfmt(struct v4l2_pix_format *pixfmt, u32 pixelformat,
+> >  		     u32 width, u32 height)
+> >  {
+> >  	const struct v4l2_format_info *info;
+> > +	u32 bytesperline, sizeimage = 0;
+> >  	int i;
+> >  
+> >  	info = v4l2_format_info(pixelformat);
+> > @@ -618,8 +637,7 @@ int v4l2_fill_pixfmt(struct v4l2_pix_format *pixfmt, u32 pixelformat,
+> >  	pixfmt->width = width;
+> >  	pixfmt->height = height;
+> >  	pixfmt->pixelformat = pixelformat;
+> > -	pixfmt->bytesperline = ALIGN(width, v4l2_format_block_width(info, 0)) * info->bpp[0];
+> > -	pixfmt->sizeimage = 0;
+> > +	bytesperline = ALIGN(width, v4l2_format_block_width(info, 0)) * info->bpp[0];
+> >  
+> >  	for (i = 0; i < info->comp_planes; i++) {
+> >  		unsigned int hdiv = (i == 0) ? 1 : info->hdiv;
+> > @@ -629,11 +647,17 @@ int v4l2_fill_pixfmt(struct v4l2_pix_format *pixfmt, u32 pixelformat,
+> >  
+> >  		aligned_width = ALIGN(width, v4l2_format_block_width(info, i));
+> >  		aligned_height = ALIGN(height, v4l2_format_block_height(info, i));
+> > -
+> > -		pixfmt->sizeimage += info->bpp[i] *
+> > -			DIV_ROUND_UP(aligned_width, hdiv) *
+> > -			DIV_ROUND_UP(aligned_height, vdiv);
+> > +		sizeimage += info->bpp[i] * DIV_ROUND_UP(aligned_width, hdiv) *
+> > +			     DIV_ROUND_UP(aligned_height, vdiv);
+> >  	}
+> > +
+> > +	/*
+> > +	 * The user might have specified its own sizeimage/bytesperline values,
+> > +	 * only override them if they're not big enough.
+> > +	 */
+> > +	pixfmt->sizeimage = max(sizeimage, pixfmt->sizeimage);
+> > +	pixfmt->bytesperline = max(bytesperline, pixfmt->bytesperline);
+> > +
+> >  	return 0;
+> >  }
+> >  EXPORT_SYMBOL_GPL(v4l2_fill_pixfmt);
+
+-- 
+Regards,
+
+Laurent Pinchart
+
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
