@@ -2,79 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E86AC1BE8C
-	for <lists+linux-rockchip@lfdr.de>; Mon, 13 May 2019 22:21:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5572C1BE91
+	for <lists+linux-rockchip@lfdr.de>; Mon, 13 May 2019 22:21:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UsFNjw7usSOMVTpVOTT4vW/B6ST3/QxogJKKVxf2fzk=; b=amk7asocRqE0ZU
-	8b3jWvAI3A1/wsv1Zy/wBMzfFwxQkRwEKfgaG5DD3BACzQIEAFz1l9Tf5+PKXr1vwJzoO+vNVbzCZ
-	lSHVu8LphdINvYR2KJr6YdnKTtBsOBfjAhhy1UORzNg+tAIVGjlASaaweyFpP0AVk4y3SCr1QiIqU
-	u8F3bRnf2bCOl19GmNKIT4EWHbmok8pOTaHwIcorMf2WC3gWOrAiOj86eL6b6Lker2Xbm0FLlZapD
-	PU+a7ca+xU04FV+2CNuQWQ2TtPU5lji58zo8iQw5in+oj4AXf1LLXujcu1Vu9nDlP6MxxGSDYjmBy
-	iCZYdS4aTIeTBqAekc6A==;
+	List-Owner; bh=p/brpDxTITDkX+N2v2IeC+2J9UCWZh9P32OJaIa13Sg=; b=oJqbPznGmtA7wM
+	AxycplS+QYb25L4FvJ8NGfpYaGmLooIJfml7gj3ZdeUlD7L91tT6iNL+m5Ztr8RQLLL6wxnfv+Biw
+	kKKgDnU0R2c6Ffg7la3FZ+dRmVXTIE02HJ0HvLdesUXqRsFOJjSgBYXnrPJPKRSKorzAYKzhY1iQY
+	NP3t7nlR4PmsPyP3MxoEinNSyG1bjyJwnfzTJ527dXjiEUrrMXMb76N0tXnhV7wuAxWIwQsMiKj5c
+	Q5xkd33PLHR4uCNM1kdOQJDSUJY4pJ4D7SwEnN86VU0ODZwaJKyAZMO5A1qgAApAVGOV8qiSMtWdq
+	SiXWSHZt/W0tJwJCsYmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQHRZ-00083q-E9; Mon, 13 May 2019 20:21:05 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hQHS8-0008Cq-A6; Mon, 13 May 2019 20:21:40 +0000
+Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQHRR-00080h-CY
- for linux-rockchip@lists.infradead.org; Mon, 13 May 2019 20:21:01 +0000
-Received: by mail-pl1-x643.google.com with SMTP id p15so7028666pll.4
- for <linux-rockchip@lists.infradead.org>; Mon, 13 May 2019 13:20:57 -0700 (PDT)
+ id 1hQHS5-0008CV-It
+ for linux-rockchip@lists.infradead.org; Mon, 13 May 2019 20:21:38 +0000
+Received: by mail-ua1-x941.google.com with SMTP id g16so5330523uad.2
+ for <linux-rockchip@lists.infradead.org>; Mon, 13 May 2019 13:21:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=lnf9X1JzNr0p/o4q+Qg8KxiBFNUwbq0BM3Xh4UH0r7k=;
- b=bCGz4J8ppGdokDgODI+0By4RzdTs4uc+h8HuDat4mmDuu17yR0T+GnYtO3lDNPy82H
- wEif10+dwhAiTiS7e82OhpE1ddg4BGq+ixxRvPKhAClYImqsqNDhtVsrN1xXa2wUKad+
- osLIDfAY+jE4KhX0I++jdUsrXi50hLxQ1ZsAg=
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=wuySUmJX7+xhfDb6fBuwBVyhUWbe9FHoL+dr16R0laQ=;
+ b=ihynEujhHl0/kFd3e4X0WXi48xxh859HdVja7bEkA31bUjpl/penK1wa0zlw5r7dST
+ JtzGce+FT5rp2fnJ/Cqp2xmViQjF8M1Pj5+MB7JlP63y4F3a5wwpu4tkLrs4Vudh/TIi
+ inSG2Zfqn4/s2yGu+Vl3yRbG9RjwYr6RoklNQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=lnf9X1JzNr0p/o4q+Qg8KxiBFNUwbq0BM3Xh4UH0r7k=;
- b=TAOs8m/rnr6xislO+2AG0BnhWGwFRNP9+wVUwUgu9FkKST4sT8eLAJPLH5KuVGpVgZ
- K8lvAUGnD2YcGZeBsSU/0M7boqQVT03ds3HDRsleqggOWYzFjiVHdVWPH+r59GwpngdW
- e3MZPx9nNQIE6Mt3PJ0yDEca0aRt+uzBBrx1uOpfgIOZ5RvZr+C1bci934CVM5JP6Yt/
- 0uY+EDj2RKuX7Hw2+n2jV+/6hp145DV4sr1zwc+2U6lVb8XBNMxon8i/GDTh0CQVBVu1
- 8KLcmz3RmJ56z68IV3mRrL9UGHNg4eUkoBnbL1m3CqYOUKtVB0gKQNg2paFaKrwOwPdb
- W+gw==
-X-Gm-Message-State: APjAAAUlr44HmbfG1Qc02yAF8dKq8bXn/UtIUfDyAkQo29+wG6KBd2A3
- L19+G/jTquMvC5Is2SjfrTrLYA==
-X-Google-Smtp-Source: APXvYqy5wGuT5CZ/TaXPeEZeoV8ZznOBT7/f/8i18U3AePnUU+33PWms/FxG3zRylr0ySkmVt8Ra/Q==
-X-Received: by 2002:a17:902:6948:: with SMTP id
- k8mr33923439plt.81.1557778856650; 
- Mon, 13 May 2019 13:20:56 -0700 (PDT)
-Received: from tictac2.mtv.corp.google.com
- ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id s198sm26356597pfs.34.2019.05.13.13.20.54
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 13 May 2019 13:20:55 -0700 (PDT)
-From: Douglas Anderson <dianders@chromium.org>
-To: Mark Brown <broonie@kernel.org>, Benson Leung <bleung@chromium.org>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Subject: [PATCH v2 3/3] Revert "platform/chrome: cros_ec_spi: Transfer
- messages at high priority"
-Date: Mon, 13 May 2019 13:18:25 -0700
-Message-Id: <20190513201825.166969-4-dianders@chromium.org>
-X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
-In-Reply-To: <20190513201825.166969-1-dianders@chromium.org>
-References: <20190513201825.166969-1-dianders@chromium.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=wuySUmJX7+xhfDb6fBuwBVyhUWbe9FHoL+dr16R0laQ=;
+ b=KVKLSzVug8t2dpmstGNf8JPoAA/IksN18IAYP8NTXToGkjXcPPJ4ZubGYVHuyYb+7l
+ VwfdLAKJ0TfPr9S2ShkOBCMiXiopllRuaxyIgAgFollDakHdZKjFS6e+EDY5uWXo5Df+
+ RqOzlhRBtON0kVT3gAxuwKSb/QSzv1meRmy9mzQg/j77Ayfs/wuStQlnXKnTvaq2D/HH
+ 1X7wVBSsW6i6sV6schVx980KD+xuaHeCMGo8CqRYxvEo4ledr0gWT9b0ysBAMiX0KKCw
+ DkcohPLR9SH9mi6BlNNy3nsyK90dseAP2EFvvJQx5WIUJRtvUiiK6EqOTRQyqTWdLP0a
+ lnEw==
+X-Gm-Message-State: APjAAAWhP6Hv8Wc4KhMZVWQlo2EzyGc5JdfUMfsBFaJMqsJPBkKiPHlv
+ 1Uw/ekrObjEizIbzy55aGq0hb3zxG6s=
+X-Google-Smtp-Source: APXvYqwhVGi5PPTUOicnnqgYwG7rDfJz4sM68YV7WHFm03fij/duHFuj1QlNOP2/62mJKpg+ylxWnw==
+X-Received: by 2002:ab0:6083:: with SMTP id i3mr2812788ual.128.1557778896011; 
+ Mon, 13 May 2019 13:21:36 -0700 (PDT)
+Received: from mail-vs1-f46.google.com (mail-vs1-f46.google.com.
+ [209.85.217.46])
+ by smtp.gmail.com with ESMTPSA id y72sm5980329vky.29.2019.05.13.13.21.35
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Mon, 13 May 2019 13:21:35 -0700 (PDT)
+Received: by mail-vs1-f46.google.com with SMTP id g187so8869048vsc.8
+ for <linux-rockchip@lists.infradead.org>; Mon, 13 May 2019 13:21:35 -0700 (PDT)
+X-Received: by 2002:a67:b348:: with SMTP id b8mr6727835vsm.144.1557778894709; 
+ Mon, 13 May 2019 13:21:34 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190510223437.84368-1-dianders@chromium.org>
+ <20190510223437.84368-5-dianders@chromium.org>
+ <20190512074538.GE21483@sirena.org.uk>
+ <CAD=FV=Xg96SGg-JDjEJRtC6jACcN9Xizcr-zV4rQwXYvuEvmRA@mail.gmail.com>
+ <20190513160153.GD5168@sirena.org.uk>
+ <CAD=FV=Xm-2oxit7doVAYJr28c-xHqUdt9PQC=WYpYfsAyUxuaw@mail.gmail.com>
+ <20190513164738.GE5168@sirena.org.uk>
+In-Reply-To: <20190513164738.GE5168@sirena.org.uk>
+From: Doug Anderson <dianders@chromium.org>
+Date: Mon, 13 May 2019 13:21:23 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=XkkKRJN+Vv6+nf8EjXoCuO-0MG923v-0HKPMYg=mdZww@mail.gmail.com>
+Message-ID: <CAD=FV=XkkKRJN+Vv6+nf8EjXoCuO-0MG923v-0HKPMYg=mdZww@mail.gmail.com>
+Subject: Re: [PATCH 4/4] Revert "platform/chrome: cros_ec_spi: Transfer
+ messages at high priority"
+To: Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_132058_637675_D3D8F07B 
-X-CRM114-Status: GOOD (  14.31  )
+X-CRM114-CacheID: sfid-20190513_132137_618639_E2481243 
+X-CRM114-Status: GOOD (  12.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -97,153 +105,47 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, briannorris@chromium.org,
- Douglas Anderson <dianders@chromium.org>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, mka@chromium.org,
- Guenter Roeck <groeck@chromium.org>
+Cc: Nicolas Boichat <drinkcat@chromium.org>,
+ Brian Norris <briannorris@chromium.org>, LKML <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Matthias Kaehlcke <mka@chromium.org>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Guenter Roeck <groeck@chromium.org>, Benson Leung <bleung@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This reverts commit 37a186225a0c020516bafad2727fdcdfc039a1e4.
+Hi,
 
-We have a better solution in the patch ("platform/chrome: cros_ec_spi:
-Force transfers to realtime priority").  Let's revert the uglier and
-less reliable solution.
+On Mon, May 13, 2019 at 9:47 AM, Mark Brown <broonie@kernel.org> wrote:
 
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
-Reviewed-by: Guenter Roeck <groeck@chromium.org>
----
+> On Mon, May 13, 2019 at 09:03:28AM -0700, Doug Anderson wrote:
+> > On Mon, May 13, 2019 at 9:02 AM Mark Brown <broonie@kernel.org> wrote:
+>
+> > > I'm not saying the other changes aren't helping, I'm saying that it's
+> > > not clear that this revert is improving things.
+>
+> > If I add a call to force the pumping to happen on the SPI thread then
+> > the commit I'm reverting here is useless though, isn't it?
+>
+> Well, I'm not convinced that that change is ideal anyway and it does
+> leave you vulnerable to further changes in the SPI core pushing things
+> out to calling context which feels like it isn't going to be helping
+> robustness.
 
-Changes in v2: None
+OK.  Here's my plan: in v2 I've still included this revert and you can
+see how things look.  If you hate it as much as you think you will
+then let me know and I'll send a v3 that avoids to forcing and re-adds
+the realtime thread to cros_ec.
 
- drivers/platform/chrome/cros_ec_spi.c | 80 ++-------------------------
- 1 file changed, 6 insertions(+), 74 deletions(-)
+One note just so you're aware: For my particular device I'm not nearly
+as concerned with latency / throughput as I am concerned with
+transfers not getting interrupted once started.  I've added this
+explicitly in the commit message now, too.  :-)
 
-diff --git a/drivers/platform/chrome/cros_ec_spi.c b/drivers/platform/chrome/cros_ec_spi.c
-index a2959365a870..7adaf534eb8b 100644
---- a/drivers/platform/chrome/cros_ec_spi.c
-+++ b/drivers/platform/chrome/cros_ec_spi.c
-@@ -75,27 +75,6 @@ struct cros_ec_spi {
- 	unsigned int end_of_msg_delay;
- };
- 
--typedef int (*cros_ec_xfer_fn_t) (struct cros_ec_device *ec_dev,
--				  struct cros_ec_command *ec_msg);
--
--/**
-- * struct cros_ec_xfer_work_params - params for our high priority workers
-- *
-- * @work: The work_struct needed to queue work
-- * @fn: The function to use to transfer
-- * @ec_dev: ChromeOS EC device
-- * @ec_msg: Message to transfer
-- * @ret: The return value of the function
-- */
--
--struct cros_ec_xfer_work_params {
--	struct work_struct work;
--	cros_ec_xfer_fn_t fn;
--	struct cros_ec_device *ec_dev;
--	struct cros_ec_command *ec_msg;
--	int ret;
--};
--
- static void debug_packet(struct device *dev, const char *name, u8 *ptr,
- 			 int len)
- {
-@@ -371,13 +350,13 @@ static int cros_ec_spi_receive_response(struct cros_ec_device *ec_dev,
- }
- 
- /**
-- * do_cros_ec_pkt_xfer_spi - Transfer a packet over SPI and receive the reply
-+ * cros_ec_pkt_xfer_spi - Transfer a packet over SPI and receive the reply
-  *
-  * @ec_dev: ChromeOS EC device
-  * @ec_msg: Message to transfer
-  */
--static int do_cros_ec_pkt_xfer_spi(struct cros_ec_device *ec_dev,
--				   struct cros_ec_command *ec_msg)
-+static int cros_ec_pkt_xfer_spi(struct cros_ec_device *ec_dev,
-+				struct cros_ec_command *ec_msg)
- {
- 	struct ec_host_response *response;
- 	struct cros_ec_spi *ec_spi = ec_dev->priv;
-@@ -514,13 +493,13 @@ static int do_cros_ec_pkt_xfer_spi(struct cros_ec_device *ec_dev,
- }
- 
- /**
-- * do_cros_ec_cmd_xfer_spi - Transfer a message over SPI and receive the reply
-+ * cros_ec_cmd_xfer_spi - Transfer a message over SPI and receive the reply
-  *
-  * @ec_dev: ChromeOS EC device
-  * @ec_msg: Message to transfer
-  */
--static int do_cros_ec_cmd_xfer_spi(struct cros_ec_device *ec_dev,
--				   struct cros_ec_command *ec_msg)
-+static int cros_ec_cmd_xfer_spi(struct cros_ec_device *ec_dev,
-+				struct cros_ec_command *ec_msg)
- {
- 	struct cros_ec_spi *ec_spi = ec_dev->priv;
- 	struct spi_transfer trans;
-@@ -632,53 +611,6 @@ static int do_cros_ec_cmd_xfer_spi(struct cros_ec_device *ec_dev,
- 	return ret;
- }
- 
--static void cros_ec_xfer_high_pri_work(struct work_struct *work)
--{
--	struct cros_ec_xfer_work_params *params;
--
--	params = container_of(work, struct cros_ec_xfer_work_params, work);
--	params->ret = params->fn(params->ec_dev, params->ec_msg);
--}
--
--static int cros_ec_xfer_high_pri(struct cros_ec_device *ec_dev,
--				 struct cros_ec_command *ec_msg,
--				 cros_ec_xfer_fn_t fn)
--{
--	struct cros_ec_xfer_work_params params;
--
--	INIT_WORK_ONSTACK(&params.work, cros_ec_xfer_high_pri_work);
--	params.ec_dev = ec_dev;
--	params.ec_msg = ec_msg;
--	params.fn = fn;
--
--	/*
--	 * This looks a bit ridiculous.  Why do the work on a
--	 * different thread if we're just going to block waiting for
--	 * the thread to finish?  The key here is that the thread is
--	 * running at high priority but the calling context might not
--	 * be.  We need to be at high priority to avoid getting
--	 * context switched out for too long and the EC giving up on
--	 * the transfer.
--	 */
--	queue_work(system_highpri_wq, &params.work);
--	flush_work(&params.work);
--	destroy_work_on_stack(&params.work);
--
--	return params.ret;
--}
--
--static int cros_ec_pkt_xfer_spi(struct cros_ec_device *ec_dev,
--				struct cros_ec_command *ec_msg)
--{
--	return cros_ec_xfer_high_pri(ec_dev, ec_msg, do_cros_ec_pkt_xfer_spi);
--}
--
--static int cros_ec_cmd_xfer_spi(struct cros_ec_device *ec_dev,
--				struct cros_ec_command *ec_msg)
--{
--	return cros_ec_xfer_high_pri(ec_dev, ec_msg, do_cros_ec_cmd_xfer_spi);
--}
--
- static void cros_ec_spi_dt_probe(struct cros_ec_spi *ec_spi, struct device *dev)
- {
- 	struct device_node *np = dev->of_node;
--- 
-2.21.0.1020.gf2820cf01a-goog
 
+-Doug
 
 _______________________________________________
 Linux-rockchip mailing list
