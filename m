@@ -2,93 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EB3E1BA76
-	for <lists+linux-rockchip@lfdr.de>; Mon, 13 May 2019 17:57:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4AE01BA85
+	for <lists+linux-rockchip@lfdr.de>; Mon, 13 May 2019 18:02:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=efLkNhF4L/5OqJhow5CD3TM6RE89dv++gDa3bSudfCk=; b=f1/fdFV3CPhNCt
-	X/HUu133Aqm+gaXyPzrnmCW8TdAYCMPxPO46ZOmELpgo7eGtkLpGw71+K9lf4ZrJAeoO+/zjec02P
-	6npc59faWrw5V/xjk2xu9ibHnhGzHprhAmXmjeu4dcUYRCHaYUmdPJ2b+0iSO29ss9UU5dW7VrovW
-	2vyXC0wkcBDb0jyhWhFZGYOas36OVczQ+LqOcePB2K3Jeg6C7dmjFKCQ3gZIyN6FRxiNwVGlcMEgc
-	hKTjUGQuNNnC1uwpWXBeiI3Ktjmcvgt87d4n5eIxHu5TQDcOobt6EPIKl6EM0/YXsJ6i2nH2R1L0S
-	ZlMC8D4vs6VEYGBdBKjg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=0bVbJdOD7HE/uB34nMpufCGf6BzTCaev/k4cf3w8xrs=; b=TTCGPiuG+JeoZlec9zfx0Ermi
+	/vuUpppF9ZoGeH8XIEPiXp9eQewOl/w8sj6GFFq2dp0RCmYuRXF2X9UuEXHRdWKrihUVoMVLoAn7D
+	7Cd9q2hCDdjIFTTaEqyMopsqfUSBhGeZJEf/VLvYQxtfY6TP0y9C3N6hqNeElQBIVms4sU4fCaKZL
+	Fcp/2cNFwPFBh/QDi2NttH4xyXoGIsmxQxOgOrbKDxWu1gJm7TzINsLgI3hFfgTruBIl+7wND3p65
+	OihwYqSOxsVXCpOZ64ignXVFxvwJ5SR9frQLjfP6HelSC2PIUQSrBSSQvpQY+h+7AIgzc+Rnp8uda
+	Oh0rgUFNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQDKV-00009t-R3; Mon, 13 May 2019 15:57:31 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1hQDOt-0001dy-9y; Mon, 13 May 2019 16:02:03 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQDKT-00008q-2t
- for linux-rockchip@lists.infradead.org; Mon, 13 May 2019 15:57:30 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id g187so8335231vsc.8
- for <linux-rockchip@lists.infradead.org>; Mon, 13 May 2019 08:57:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=DjnGlq1ohCd0W6xCd80xJkwkNhN63u76f9BdkZ0Jn7A=;
- b=RYLQChAOwvWzDDP10EWoPE2WZgLkeAHe9e5TCyAbKdUVa5X8FOdbfhN5Si7TWPFR66
- Z3yvhWWPUsm1OhvqlkIpHZToYFNzH5sr67anIodWdRUkJ/ACRsswQySRAe83wSRs+lyU
- iG6YOeo8I5sADkmMu4VsSDyWh5/8PbVKiNl0Q=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=DjnGlq1ohCd0W6xCd80xJkwkNhN63u76f9BdkZ0Jn7A=;
- b=KUiVUmg2d6DRqtIUeOA7O4VQLBjmcHU7LiNPXpJhzDNZ+Wd3pxR98E7HX4UTmpnCCs
- 39qSveWxjyosRKCkYyHYMYjNw3zsFSvb1Qnm7bkT7TOGnEBxkb13dPh8MxapELNUPBdS
- L3vAUZnPu60tHediUzlp35ERyScNRvw441rLivogHGmvZpdXv+UG2zpCmPxwA8cbLZXc
- Bgq+inddbSh4JMyfdY1r7+ZgC5/MdnVbUGAN14Vr5HRgENHlQsAApB+4SoJpBEo7dBo/
- 9iUo+SVDxM02HhjKa7hQI1BFN05k5uWNxTjHfktyAGDqhQs1cAxaBIY/mUkzlBTMNwcp
- O+JQ==
-X-Gm-Message-State: APjAAAVk0WFAYr7WqZ7/Oe+Oylz7ShfcEAKpAhpBeqfEg3WwW/1EUQRq
- XWDR8rVCvuGRqgWgAxVstX69VIXAAw8=
-X-Google-Smtp-Source: APXvYqy9wbAqUsLnaCLjN66onYccAPvDnRw+fsvmxD0bH9D/FtgLs/Wjh5TYdLM+kmcp65yhgZ+AkQ==
-X-Received: by 2002:a67:ec15:: with SMTP id d21mr6074554vso.186.1557763045677; 
- Mon, 13 May 2019 08:57:25 -0700 (PDT)
-Received: from mail-vk1-f178.google.com (mail-vk1-f178.google.com.
- [209.85.221.178])
- by smtp.gmail.com with ESMTPSA id e76sm10107097vke.54.2019.05.13.08.57.24
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Mon, 13 May 2019 08:57:24 -0700 (PDT)
-Received: by mail-vk1-f178.google.com with SMTP id d77so3435351vke.13
- for <linux-rockchip@lists.infradead.org>; Mon, 13 May 2019 08:57:24 -0700 (PDT)
-X-Received: by 2002:a1f:d884:: with SMTP id p126mr12860211vkg.70.1557763043730; 
- Mon, 13 May 2019 08:57:23 -0700 (PDT)
-MIME-Version: 1.0
+ id 1hQDOp-0001dd-Gq
+ for linux-rockchip@lists.infradead.org; Mon, 13 May 2019 16:02:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=3h6H85EVVknVN735yBVABZFWWJ/Hs9GjX/eqsJpiqQA=; b=dpnxvmk4LHC9RaoteNJVql2gy
+ v64CuTr4G1JlKK4YO22r4+I0GDpDcMzuyDy6UAIqxxCXigsfU3ZQgjALF5dwq75E5hOQzr2neHnJo
+ UIJgE7ZlDXZKM9/uf6vQ7rsVAUP653+XUVq1rBUr87jxJ2I4RN64I8iaZ0FcF1bFj27x8=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=debutante.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpa (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hQDOm-0006zU-84; Mon, 13 May 2019 16:01:56 +0000
+Received: by debutante.sirena.org.uk (Postfix, from userid 1000)
+ id 8E4631129232; Mon, 13 May 2019 17:01:53 +0100 (BST)
+Date: Mon, 13 May 2019 17:01:53 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Doug Anderson <dianders@chromium.org>
+Subject: Re: [PATCH 4/4] Revert "platform/chrome: cros_ec_spi: Transfer
+ messages at high priority"
+Message-ID: <20190513160153.GD5168@sirena.org.uk>
 References: <20190510223437.84368-1-dianders@chromium.org>
  <20190510223437.84368-5-dianders@chromium.org>
  <20190512074538.GE21483@sirena.org.uk>
-In-Reply-To: <20190512074538.GE21483@sirena.org.uk>
-From: Doug Anderson <dianders@chromium.org>
-Date: Mon, 13 May 2019 08:57:12 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=Xg96SGg-JDjEJRtC6jACcN9Xizcr-zV4rQwXYvuEvmRA@mail.gmail.com>
-Message-ID: <CAD=FV=Xg96SGg-JDjEJRtC6jACcN9Xizcr-zV4rQwXYvuEvmRA@mail.gmail.com>
-Subject: Re: [PATCH 4/4] Revert "platform/chrome: cros_ec_spi: Transfer
- messages at high priority"
-To: Mark Brown <broonie@kernel.org>
+ <CAD=FV=Xg96SGg-JDjEJRtC6jACcN9Xizcr-zV4rQwXYvuEvmRA@mail.gmail.com>
+MIME-Version: 1.0
+In-Reply-To: <CAD=FV=Xg96SGg-JDjEJRtC6jACcN9Xizcr-zV4rQwXYvuEvmRA@mail.gmail.com>
+X-Cookie: Must be over 18.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_085729_299725_D14A4E43 
-X-CRM114-Status: GOOD (  12.43  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190513_090159_722768_31F01B57 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -107,50 +87,62 @@ Cc: Nicolas Boichat <drinkcat@chromium.org>,
  Matthias Kaehlcke <mka@chromium.org>,
  Enric Balletbo i Serra <enric.balletbo@collabora.com>,
  Guenter Roeck <groeck@chromium.org>, Benson Leung <bleung@chromium.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0163230890330994584=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
 
-On Sun, May 12, 2019 at 10:05 AM Mark Brown <broonie@kernel.org> wrote:
->
-> On Fri, May 10, 2019 at 03:34:37PM -0700, Douglas Anderson wrote:
-> > This reverts commit 37a186225a0c020516bafad2727fdcdfc039a1e4.
-> >
-> > We have a better solution in the patch ("platform/chrome: cros_ec_spi:
-> > Set ourselves as timing sensitive").  Let's revert the uglier and less
-> > reliable solution.
->
-> It isn't clear to me that it's a bad thing to have this even with the
-> SPI thread at realime priority.
-
-The code that's there right now isn't enough.  As per the description
-in the original patch, it didn't solve all problems but just made
-things an order of magnitude better.  So if I don't do this revert I
-instead need a patch to bump cros_ec SPI up to realtime to get SPI
-transfers _truly_ reliable.  I actually have a patch coded up to do
-just that.  ...but then Guenter pointed out that I was effectively
-duplicating the work that the SPI framework could already do for me if
-I could use the pumping thread at real time priority.
-
-My current plan is parameterize things so that cros_ec_spi can request
-a forced transition to the realtime pump thread without breaking
-existing users.  I'll code that up this morning and send out a v2 soon
-so you can see what you think of it.  :-)
-
-NOTE: I actually tracked down one reason why the high priority thread
-wasn't enough and I needed something like real time.  I found that
-commit a1b89132dc4f ("dm crypt: use WQ_HIGHPRI for the IO and crypt
-workqueues") was making dm-crypt preempt me.  I'll start a separate
-discussion about that, but in the end it still seems better to use
-something like a real time priority for cros_ec.
+--===============0163230890330994584==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="EY/WZ/HvNxOox07X"
+Content-Disposition: inline
 
 
--Doug
+--EY/WZ/HvNxOox07X
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Mon, May 13, 2019 at 08:57:12AM -0700, Doug Anderson wrote:
+> On Sun, May 12, 2019 at 10:05 AM Mark Brown <broonie@kernel.org> wrote:
+
+> > It isn't clear to me that it's a bad thing to have this even with the
+> > SPI thread at realime priority.
+
+> The code that's there right now isn't enough.  As per the description
+> in the original patch, it didn't solve all problems but just made
+> things an order of magnitude better.  So if I don't do this revert I
+
+I'm not saying the other changes aren't helping, I'm saying that it's
+not clear that this revert is improving things.
+
+--EY/WZ/HvNxOox07X
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAlzZlPAACgkQJNaLcl1U
+h9C7UQf/X1Is6ypg5kydcvdMhkuJTCwQwCyVTp61r+ONkbX8IGTCy/peNvsyuQZd
+qfelfepJ1N1M1Kss7RehpaEV7TWECxlECSrfCA6a3slYTSytIRHyIQHQx6KD14xM
+YOmLPaSF4xzdMboJP4M8zVRQSDQZVWAvohvZ+xIAqoMrzd69Ew6emJeVG0aUQ++L
+DGehingQgrrHdtla+ywW8NJrat7K2garMK6syGdKS4DO90+0wUoroy9KOuvccwFQ
+QL6hcR3spWrlv4srjapt71wJGwf/S3k1R/VAIYe+7qVKj6glm94L0ziba1BdBOgP
+B4t298Dh3eaZZyPtO1x9DvgsYz2zxg==
+=SNtQ
+-----END PGP SIGNATURE-----
+
+--EY/WZ/HvNxOox07X--
+
+
+--===============0163230890330994584==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============0163230890330994584==--
+
