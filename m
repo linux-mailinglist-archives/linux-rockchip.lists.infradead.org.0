@@ -2,69 +2,122 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F9E61AD49
-	for <lists+linux-rockchip@lfdr.de>; Sun, 12 May 2019 19:05:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C44E1B09D
+	for <lists+linux-rockchip@lfdr.de>; Mon, 13 May 2019 09:00:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hLiyVpJvtQ6eAJ/zjztnlV/ZP/AnpQC+FVztGSnGgtA=; b=S4D+i1I6mwxGsmfAqYOsNWmVI
-	6tO59dXm77uoP13Swz3UomSD8Du3wF5/yK8ptdRO9uwWxvQE/go5Fao8e3HbYY0PMkkE5E4meZBT1
-	HQGjr0oFU3zlnxp8Q1Pj+QROfAIBRODisqdLTkUfUA7gHpsEKUszudL4AlskczxZgMnNoYdoLd4t2
-	mopgKuw6s39YRA6CeM+JWmNQzxJ0QsMSrr2qSBiJeADuGBDl+BPO5r56SmLNUYhqd6YP+ZavIw2Yz
-	J1p3BbT3JEEtELdak8cW3+/ieuQ++hevFpZhm393PzXyzPIpQ7iKMpnuZiB/EvV/N1AJdXPyfoLSZ
-	lIoL4jJcg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=F4XtOctrX5yfMOc4ck+czHYW4zUtJuj+3qVn5PN8MDw=; b=hW6Piu+zOOvEtk
+	6IOAh/crtabvwdyYzYMOs3/dboXNG76TajDayX2u4KMEFLl6iV2SwhUF2QgEUS2x5JodAsKR1/kGJ
+	wG+aBlUW96tgy84ydIvHqPePbAhTRh8M/1Bd5CI+EW9R8BvbgGf/Vb/ixO0vFyjVRQyo92Y5g/mSd
+	hjfd0MzJREK5SY51gKQ8a5WnRi2AsDe8zQ7recmOYynoSguGXxKF3Vj7QQBgkqz5PS4IDFSxCW7rP
+	QHdeoikc0kcANL2JygIhiwFd1djeioorIIeZOF2p31/x870ldZ5c+I7WYlP4URSjIpcwabmJGnrwQ
+	Vjqdn64hNHFbZRUcNoeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPrv5-0008SW-0n; Sun, 12 May 2019 17:05:51 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hQ4wx-0006sL-OZ; Mon, 13 May 2019 07:00:39 +0000
+Received: from mail-eopbgr770078.outbound.protection.outlook.com
+ ([40.107.77.78] helo=NAM02-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPrv1-0008PS-Lf
- for linux-rockchip@lists.infradead.org; Sun, 12 May 2019 17:05:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=nbByTlVdvhd4cJtvH/Oei0P8BYeWA+j4hmBdzYBpl7U=; b=pgfyvM8VHeCIw0PFOvMa1wVNz
- pACtyWMg0cyUO/qu4Flq2BvrCcyy8t/EE5J6W4F15cNzxWTmZcqYXjvApYtuc+LyyvihQzUkgglJO
- NupuSyvoRjZKqJW/H5M3+J05bEwM3TkEB1r723hp+dbWCjw8u37MqR89rQy79X/WRtIao=;
-Received: from [81.145.206.43] (helo=finisterre.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hPruu-00044f-8V; Sun, 12 May 2019 17:05:40 +0000
-Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id 939C8440034; Sun, 12 May 2019 08:45:38 +0100 (BST)
-Date: Sun, 12 May 2019 16:45:38 +0900
-From: Mark Brown <broonie@kernel.org>
-To: Douglas Anderson <dianders@chromium.org>
-Subject: Re: [PATCH 4/4] Revert "platform/chrome: cros_ec_spi: Transfer
- messages at high priority"
-Message-ID: <20190512074538.GE21483@sirena.org.uk>
-References: <20190510223437.84368-1-dianders@chromium.org>
- <20190510223437.84368-5-dianders@chromium.org>
+ id 1hQ4wm-0006k1-HY; Mon, 13 May 2019 07:00:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=analog.onmicrosoft.com; s=selector1-analog-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sYMxlTU42U8IEHuaefeXBUDbrbbRBESKyCojAVqw4Hs=;
+ b=gDL7Mqp4cjHd9tnfv2Oc1qnpYT4Fac8j07kqzHoMV4t4fblqqvc/VaI9b3eW64VcLXIB/IIy6eJ2zPrMIPgV3ZayvIayU+ziMWE4G1SNhTClihPWWYWJfxAonZzDgMbLjip70cWFf6cVkIyteBkWBVFGb865vhK+yAGxY5lk4K0=
+Received: from BY5PR03CA0029.namprd03.prod.outlook.com (2603:10b6:a03:1e0::39)
+ by CY1PR03MB2265.namprd03.prod.outlook.com (2603:10b6:600:1::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1878.21; Mon, 13 May
+ 2019 07:00:23 +0000
+Received: from CY1NAM02FT063.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e45::206) by BY5PR03CA0029.outlook.office365.com
+ (2603:10b6:a03:1e0::39) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1878.21 via Frontend
+ Transport; Mon, 13 May 2019 07:00:22 +0000
+Authentication-Results: spf=pass (sender IP is 137.71.25.55)
+ smtp.mailfrom=analog.com; vger.kernel.org; dkim=none (message not signed)
+ header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
+ header.from=analog.com;
+Received-SPF: Pass (protection.outlook.com: domain of analog.com designates
+ 137.71.25.55 as permitted sender) receiver=protection.outlook.com;
+ client-ip=137.71.25.55; helo=nwd2mta1.analog.com;
+Received: from nwd2mta1.analog.com (137.71.25.55) by
+ CY1NAM02FT063.mail.protection.outlook.com (10.152.75.161) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.1856.11
+ via Frontend Transport; Mon, 13 May 2019 07:00:20 +0000
+Received: from NWD2HUBCAS7.ad.analog.com (nwd2hubcas7.ad.analog.com
+ [10.64.69.107])
+ by nwd2mta1.analog.com (8.13.8/8.13.8) with ESMTP id x4D70JiL017961
+ (version=TLSv1/SSLv3 cipher=AES256-SHA bits=256 verify=OK);
+ Mon, 13 May 2019 00:00:19 -0700
+Received: from NWD2MBX7.ad.analog.com ([fe80::190e:f9c1:9a22:9663]) by
+ NWD2HUBCAS7.ad.analog.com ([fe80::595b:ced1:cc03:539d%12]) with mapi id
+ 14.03.0415.000; Mon, 13 May 2019 03:00:19 -0400
+From: "Ardelean, Alexandru" <alexandru.Ardelean@analog.com>
+To: "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>
+Subject: Re: [PATCH 03/16] lib,treewide: add new match_string() helper/macro
+Thread-Topic: [PATCH 03/16] lib,treewide: add new match_string() helper/macro
+Thread-Index: AQHVBZFQXT7pBvOEwE+osXNwuBSvQKZhdwMAgAACFgCAAADdAIAC38WAgABZCYCABDgygA==
+Date: Mon, 13 May 2019 07:00:18 +0000
+Message-ID: <146ba7b61998d1e26cf2312fdaa01525d7c7d8de.camel@analog.com>
+References: <20190508112842.11654-1-alexandru.ardelean@analog.com>
+ <20190508112842.11654-5-alexandru.ardelean@analog.com>
+ <20190508131128.GL9224@smile.fi.intel.com>
+ <20190508131856.GB10138@kroah.com>
+ <b2440bc9485456a7a90a488c528997587b22088b.camel@analog.com>
+ <4df165bc4247e60aa4952fd55cb0c77e60712767.camel@analog.com>
+ <20190510143407.GA9224@smile.fi.intel.com>
+In-Reply-To: <20190510143407.GA9224@smile.fi.intel.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.50.1.244]
+x-adiroutedonprem: True
+Content-ID: <FDDE4955D460DC40AB641BB9139D6ABF@analog.com>
 MIME-Version: 1.0
-In-Reply-To: <20190510223437.84368-5-dianders@chromium.org>
-X-Cookie: HOST SYSTEM RESPONDING, PROBABLY UP...
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:137.71.25.55; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(1496009)(396003)(346002)(39860400002)(136003)(376002)(2980300002)(189003)(199004)(51914003)(426003)(446003)(50466002)(436003)(126002)(2616005)(6246003)(2906002)(11346002)(336012)(8936002)(476003)(2351001)(246002)(186003)(356004)(26005)(316002)(86362001)(23676004)(5660300002)(305945005)(7636002)(5640700003)(70206006)(14444005)(4326008)(229853002)(106002)(2501003)(47776003)(2486003)(76176011)(14454004)(118296001)(54906003)(7736002)(3846002)(6916009)(8676002)(486006)(36756003)(6116002)(70586007)(478600001)(7696005)(102836004)(7416002)(142933001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CY1PR03MB2265; H:nwd2mta1.analog.com; FPR:;
+ SPF:Pass; LANG:en; PTR:nwd2mail10.analog.com; MX:1; A:1; 
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 00d843ba-2114-4365-1750-08d6d770ab01
+X-Microsoft-Antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4709054)(2017052603328)(7193020);
+ SRVR:CY1PR03MB2265; 
+X-MS-TrafficTypeDiagnostic: CY1PR03MB2265:
+X-Microsoft-Antispam-PRVS: <CY1PR03MB2265347D2D5A29BD38B4EABBF90F0@CY1PR03MB2265.namprd03.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:8273;
+X-Forefront-PRVS: 0036736630
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Message-Info: pqGW1MWQ3Zq088ZBBnRq58UtaiOWWrFuHBJi7VQpoJbSlJTml7IN0ZB79LgwW/q3coszuClL9TMb8LD8oKaWG7L67xaWLTLo4Dl5yXSxaYpBmG+Xog6/FxwkOZuU2IjOucWlNzpAFux6Mwb2L0fj7gBrNwwieeRaYqhwSdf06t/SMvTJASTiiAUu2AW4N7x6Xc6ahiqNZGT2RZlVmczozENjmdjvtvndvf2Dx+mGlM4/aQJY0WTqVMlcWs8jrF4ba/XFXGMyWvyAyH4V58N9E72j8+HxTQe7Yc0mkFuxWNDA0N0r9OC/7KnwHUj3pg1+Gx6dW22M8zWeA2xQJm1BF3xnZkV9zf9qWppJGAC5RZM2IO73HRpNW7spE2HNsspgIzH/VtLuyUQIVg7MbQ0TJO0gxLjUaCUyPM4+5bVRGLE=
+X-OriginatorOrg: analog.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 May 2019 07:00:20.8904 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 00d843ba-2114-4365-1750-08d6d770ab01
+X-MS-Exchange-CrossTenant-Id: eaa689b4-8f87-40e0-9c6f-7228de4d754a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=eaa689b4-8f87-40e0-9c6f-7228de4d754a; Ip=[137.71.25.55];
+ Helo=[nwd2mta1.analog.com]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY1PR03MB2265
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_100547_857908_96748A69 
-X-CRM114-Status: UNSURE (   7.44  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190513_000028_580739_A48A37DE 
+X-CRM114-Status: GOOD (  19.09  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.1 DATE_IN_PAST_06_12     Date: is 6 to 12 hours before Received: date
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.77.78 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -80,64 +133,99 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, briannorris@chromium.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- mka@chromium.org, Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Guenter Roeck <groeck@chromium.org>, Benson Leung <bleung@chromium.org>
-Content-Type: multipart/mixed; boundary="===============7844736516753287257=="
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+ "linux-fbdev@vger.kernel.org" <linux-fbdev@vger.kernel.org>,
+ "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ "linux-mtd@lists.infradead.org" <linux-mtd@lists.infradead.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "devel@driverdev.osuosl.org" <devel@driverdev.osuosl.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "linux-rpi-kernel@lists.infradead.org" <linux-rpi-kernel@lists.infradead.org>,
+ "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
+ "cgroups@vger.kernel.org" <cgroups@vger.kernel.org>,
+ "linux-omap@vger.kernel.org" <linux-omap@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-ide@vger.kernel.org" <linux-ide@vger.kernel.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-security-module@vger.kernel.org"
+ <linux-security-module@vger.kernel.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-integrity@vger.kernel.org" <linux-integrity@vger.kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+On Fri, 2019-05-10 at 17:34 +0300, andriy.shevchenko@linux.intel.com wrote:
+> [External]
+> 
+> 
+> On Fri, May 10, 2019 at 09:15:27AM +0000, Ardelean, Alexandru wrote:
+> > On Wed, 2019-05-08 at 16:22 +0300, Alexandru Ardelean wrote:
+> > > On Wed, 2019-05-08 at 15:18 +0200, Greg KH wrote:
+> > > > On Wed, May 08, 2019 at 04:11:28PM +0300, Andy Shevchenko wrote:
+> > > > > On Wed, May 08, 2019 at 02:28:29PM +0300, Alexandru Ardelean
+> > > > > wrote:
+> > > > > Can you split include/linux/ change from the rest?
+> > > > 
+> > > > That would break the build, why do you want it split out?  This
+> > > > makes
+> > > > sense all as a single patch to me.
+> > > > 
+> > > 
+> > > Not really.
+> > > It would be just be the new match_string() helper/macro in a new
+> > > commit.
+> > > And the conversions of the simple users of match_string() (the ones
+> > > using
+> > > ARRAY_SIZE()) in another commit.
+> > > 
+> > 
+> > I should have asked in my previous reply.
+> > Leave this as-is or re-formulate in 2 patches ?
+> 
+> Depends on on what you would like to spend your time: collecting Acks for
+> all
+> pieces in treewide patch or send new API first followed up by per driver
+> /
+> module update in next cycle.
 
---===============7844736516753287257==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Ns7jmDPpOpCD+GE/"
-Content-Disposition: inline
+I actually would have preferred new API first, with the current
+`match_string()` -> `__match_string()` rename from the start, but I wasn't
+sure. I am still navigating through how feedbacks are working in this
+realm.
 
+I'll send a V2 with the API change-first/only; should be a smaller list.
+Then see about follow-ups/changes per subsystems.
 
---Ns7jmDPpOpCD+GE/
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+> 
+> I also have no strong preference.
+> And I think it's good to add Heikki Krogerus to Cc list for both patch
+> series,
+> since he is the author of sysfs variant and may have something to comment
+> on
+> the rest.
 
-On Fri, May 10, 2019 at 03:34:37PM -0700, Douglas Anderson wrote:
-> This reverts commit 37a186225a0c020516bafad2727fdcdfc039a1e4.
->=20
-> We have a better solution in the patch ("platform/chrome: cros_ec_spi:
-> Set ourselves as timing sensitive").  Let's revert the uglier and less
-> reliable solution.
+Thanks for the reference.
 
-It isn't clear to me that it's a bad thing to have this even with the
-SPI thread at realime priority.
-
---Ns7jmDPpOpCD+GE/
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAlzXzyEACgkQJNaLcl1U
-h9CZ8Af/Zx78PRk1JAMVQgIM9tFEJxhIQNOf2mVis4Ku5Pv89nRp1solLrhwReKo
-osAxMTDdLUOKuZxBJxBdshhCdHB04UXpwDnaPeX8jXeN43azdvv0jz8/UuUmhl69
-9KqCSjyH2hQ+zSCMcsZK2iN+44J4Q+Sv4Gr2R95Cpvo1kRqxz/LOfhOa3xoStb7X
-eFgjYaSmEA7yS5vt2sLunTzeH7YH1o9j9tG/L0QRpeHeJIqtwcUWUctr1PUjrNdE
-AXYJpaV8wrQnzFkcmf+wQt4I477pALXbx9OlmFj1tP6YgklHvFc65Z/eNNUlYePs
-D0koY+RVt8j06SujCyTf+c9I/89Wng==
-=4tri
------END PGP SIGNATURE-----
-
---Ns7jmDPpOpCD+GE/--
-
-
---===============7844736516753287257==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
+> 
+> --
+> With Best Regards,
+> Andy Shevchenko
+> 
+> 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
---===============7844736516753287257==--
-
