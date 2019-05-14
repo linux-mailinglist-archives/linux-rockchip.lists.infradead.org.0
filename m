@@ -2,69 +2,84 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE7C71C612
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 May 2019 11:30:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D7B71C80B
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 May 2019 13:55:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AXWd+dlzsT+rs25YSND6yA3oDKGZVorwIbMRjpSlTdc=; b=XehqPf5p4KoMk9eXGMcjPJPsQ
-	kpeAk7hc2jSy6sh77trfdYoUBktiDss4pXiBCmSEDwETZEkY2Qj3Ukbr0oPymIcZoA7AjDML76U8f
-	uZmRSL2QQd1oVYxIptwxydgP4BPYqFV9o+pfmPDDu5VNZmNFrZlgE4rTaCWpdTghcJy8T7n+XozAM
-	5zKJ1MQ2teSXI3NTqS2HLxDQTb4IIS1QEL0Ge/TSox0c35ywx8GstvVgaMKdEQV+CfBWqkyOoiCgc
-	vGYnPd3cAA2rSROKGuglkEvXGEp450kNKrsqK5YeqQaDmIHBakUY7Cljoz8VFumv9PpWEH9UmW2oK
-	i+oH7N+1g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kbGN/5IFZfenWF3nOMuGkQ4DdIBOQEJavdHRhZgRrrY=; b=FPtpAkb+UXHet3
+	sFWhQuGCxJkxwQzJS8JUZtKxM5J2Y7yCinyjEqZ/812DhMgnfypvnLkW8IicNG+cEMT8zicqDeSBi
+	eWKwY9hk67ecaOAYZoHaFzEYRin5OJ3xonqtfSDqXE/MH65oopVjQWNc2M0P6bQH5G3VWppQ3GNo1
+	jkNNTl3HYFa+RdQwaDwLuDvJEN/nNxhLoAaaNes41FlI234weGso77rTzyNmNfIuUxHVhHZz8jUTE
+	5mf+1ZRijap4YM1SdBHL4Y6gYv6YHNkDpS2ecwufa8u5//fJwOWofA8cGTlagEIztmxkTzNhKJAwQ
+	7nfGlEKdyI3rZgjPzOhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQTln-0005Lk-8H; Tue, 14 May 2019 09:30:47 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hQW1G-0005EO-Ic; Tue, 14 May 2019 11:54:54 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQTlk-0005Kz-R8
- for linux-rockchip@lists.infradead.org; Tue, 14 May 2019 09:30:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ogUgaaH2FccQD+ItDmWrUWM6+03M0Do2XSZMnpUHceY=; b=CJ3twDJ4Ss3i508fdPmdK/zRj
- R7w67ibexGoEp29YCWd9SiSVlvTj16CEgFg2trAJl1h1ZwgmIrK363txkHxSuF5/DNZi1u2TvqUNZ
- iSig4jcBBeg/ZVnrzkBv8EXUH95t3/LhNkfA3b8QWtDIC2eyWjNhReN3DdBZEu7C66eIQ=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=debutante.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpa (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hQTlf-0000a2-Bf; Tue, 14 May 2019 09:30:39 +0000
-Received: by debutante.sirena.org.uk (Postfix, from userid 1000)
- id CB7981128518; Tue, 14 May 2019 10:30:38 +0100 (BST)
-Date: Tue, 14 May 2019 10:30:38 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Doug Anderson <dianders@chromium.org>
-Subject: Re: [PATCH 1/4] spi: For controllers that need realtime always use
- the pump thread
-Message-ID: <20190514093038.GB8665@sirena.org.uk>
-References: <20190510223437.84368-1-dianders@chromium.org>
- <20190510223437.84368-2-dianders@chromium.org>
- <20190512073301.GC21483@sirena.org.uk>
- <CAD=FV=UBic4qywgYQFGEXx_frD9ZoRJX7XGgDbQCvb2CbkBa9w@mail.gmail.com>
+ id 1hQW1D-0005Do-0i
+ for linux-rockchip@lists.infradead.org; Tue, 14 May 2019 11:54:52 +0000
+Received: by mail-qt1-x843.google.com with SMTP id o7so18577791qtp.4
+ for <linux-rockchip@lists.infradead.org>; Tue, 14 May 2019 04:54:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=VT2D89S828fyqzoHhGVh/qkHOHvPNUor9ixYNhWvom4=;
+ b=Qb9yLYechhXXNDKiqTNpeGqdsWjScdOVE+RIgbaE/y/FOG5wgv/RabfDvyXNwpRqtR
+ YC1X14va+dtuVFQL8xR7s6CesBTEtCzZ4udK4/QuIqTg8pLdNpsm13cPvTCYFQ9oVR2M
+ aZmqEdXBXvcVAUXeWZeBRIrvrPD42tECB3PD825dzFUVQa1cwhU+TulNgNiofCVvuNOK
+ gA3fBYLvR7JutzZ0O6WCQmNH8KVEUtONuUuXMuUJhX+KNaL56QQ7xS9s94gCkj1X2Gtn
+ AjQ9VjHYnTNlCVCNWKGiAPncNsPspS3HEfwsbR4Ss7bprT1ISeGuRkGU3P35W3YEwiWH
+ fYHA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=VT2D89S828fyqzoHhGVh/qkHOHvPNUor9ixYNhWvom4=;
+ b=qWz2t30kTqUvH7HxTQVFlYtnid9vRPiBrWpucoHahgJjHW4bPMM7vzlVhLehA4J33r
+ I7nfcPp39dJhJXCW6LgplT3deBXavSmwHcCUFYZl2//qSc7pep76sDHWtMShcQafLYEZ
+ mvwXCxM7pHXwBog4lFV3H4vLEYKKmDaLQFFz2pa2jBeI/ZibenxjbTllR5hGkeMksNu4
+ eb8/vQlx7jPsRCp+cqdAFSdIkRn/iZa9rT6zbLdzypJlxsVUFdbynk+vnNbamilVZvRK
+ AJW2ooes1j+Hs5ouG3kXA+LSqpjOhsf2RVvrmZbXoCp+gN3xwDeP713sFSyFBOCtjF2F
+ uohg==
+X-Gm-Message-State: APjAAAX/pkkWCFsR2H+2y9DvgK3O3fQKFkl8NksSsC/68t0pUY1GjKw5
+ 4UKcuKzGPWgGTcxbuciIsKPN9wIJYgDEx9+IJrk=
+X-Google-Smtp-Source: APXvYqxRghnZDrgMq7GHbt1vXPBUNuj5GF8HJ3vMC2zK5E2WyV+zxw6JWs3/NHd6qpq9iBBjqvix8YVLFyrg86TYhn8=
+X-Received: by 2002:a0c:c165:: with SMTP id i34mr27019508qvh.6.1557834889106; 
+ Tue, 14 May 2019 04:54:49 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CAD=FV=UBic4qywgYQFGEXx_frD9ZoRJX7XGgDbQCvb2CbkBa9w@mail.gmail.com>
-X-Cookie: Information is the inverse of entropy.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <066a0d38-2c64-7a1e-d176-04341f0cb6d7@gmail.com>
+ <20190512023754.GK4889@lunn.ch>
+ <ae62419b-53f1-395d-eb0e-66d138d294a8@gmail.com>
+ <4c6ef3f1-a2c7-f2da-3f2a-cd28624007f8@gmail.com>
+In-Reply-To: <4c6ef3f1-a2c7-f2da-3f2a-cd28624007f8@gmail.com>
+From: Peter Geis <pgwipeout@gmail.com>
+Date: Tue, 14 May 2019 07:53:21 -0400
+Message-ID: <CAMdYzYqcg3EXhLguTti2hP-0VVi_vX0XvoDSzTCC84p9aSp7Lg@mail.gmail.com>
+Subject: Re: [Regression] "net: phy: realtek: Add rtl8211e rx/tx delays
+ config" breaks rk3328-roc-cc networking
+To: Heiner Kallweit <hkallweit1@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_023045_025377_C07079B9 
-X-CRM114-Status: GOOD (  17.15  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190514_045451_060110_3A7C79D1 
+X-CRM114-Status: GOOD (  12.21  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pgwipeout[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -80,84 +95,108 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Nicolas Boichat <drinkcat@chromium.org>,
- Brian Norris <briannorris@chromium.org>, LKML <linux-kernel@vger.kernel.org>,
- linux-spi <linux-spi@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Matthias Kaehlcke <mka@chromium.org>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Guenter Roeck <groeck@chromium.org>, Benson Leung <bleung@chromium.org>
-Content-Type: multipart/mixed; boundary="===============9086951830431071399=="
+Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
+ Serge Semin <Sergey.Semin@t-platforms.ru>, netdev@vger.kernel.org,
+ Serge Semin <fancer.lancer@gmail.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+On Sun, May 12, 2019 at 3:34 AM Heiner Kallweit <hkallweit1@gmail.com> wrote:
+>
+> On 12.05.2019 04:50, Peter Geis wrote:
+> > On 5/11/2019 10:37 PM, Andrew Lunn wrote:
+> >> On Sat, May 11, 2019 at 07:17:08PM -0400, Peter Geis wrote:
+> >>> Good Evening,
+> >>>
+> >>> Commit f81dadbcf7fd067baf184b63c179fc392bdb226e "net: phy: realtek: Add
+> >>> rtl8211e rx/tx delays config" breaks networking completely on the
+> >>> rk3328-roc-cc.
+> >>> Reverting the offending commit solves the problem.
+> >>
+> >> Hi Peter
+> >>
+> >> The fix should be in net, and will soon make its way upwards.
+> >>
+> >>      Andrew
+> >>
+> >
+> >
+> > Good Evening,
+> >
+> > Thanks, is there a link to the patch so I may test it?
+> >
+> https://git.kernel.org/pub/scm/linux/kernel/git/davem/net.git/commit/?id=daf3ddbe11a2ff74c95bc814df8e5fe3201b4cb5
+>
+> > Peter
+> >
+> Heiner
 
---===============9086951830431071399==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="61jdw2sOBCFtR2d/"
-Content-Disposition: inline
+This patch does correct the error message on boot, however networking
+is still completely broken.
+The current error is as follows:
 
-
---61jdw2sOBCFtR2d/
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Mon, May 13, 2019 at 01:24:57PM -0700, Doug Anderson wrote:
-> On Sun, May 12, 2019 at 10:05 AM Mark Brown <broonie@kernel.org> wrote:
-
-> > If performance is important you probably also want to avoid the context
-> > thrashing - executing in the calling context is generally a substantial
-> > performance boost.  I can see this causing problems further down the
-> > line when someone else turns up with a different requirement, perhaps in
-> > an application where the caller does actually have a raised priority
-> > themselves and just wanted to make sure that the thread wasn't lower
-> > than they are.  I guess it'd be nice if we could check what priority the
-> > calling thread has and make a decision based on that but there don't
-> > seem to be any facilities for doing that which I can see right now.
-
-> In my case performance is 2nd place to a transfer not getting
-> interrupted once started (so we don't break the 8ms rule of the EC).
-
-That's great but other users do care very much about performance and are
-also interested in both priority control and avoiding context thrashing.
-
-> My solution in v2 of my series is to take out the forcing in the case
-> that the controller wanted "rt" priority and then to add "force" to
-> the parameter name.  If someone wants rt priority for the thread but
-> doesn't want to force all transfers to the thread we can later add a
-> different parameter for that?
-
-I think that's going to be the common case for this.  Forcing context
-thrashing is really not something anyone else is asking for.
-
---61jdw2sOBCFtR2d/
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAlzair4ACgkQJNaLcl1U
-h9DoXAf/fzz5EFthAbXe19mb473HQldgqE56pd7CBSi1QQH5k+puSKto+29/CYoj
-aZR8w3Cn56+X0xB3rPvvkQzvpr/Och2AYJ2EX4lbrX/YnLEPjlZwaYUbZWFh/mLi
-5lgWO8TLgLafUNknlatJCG/fh3MTBOxKtKNi8awjM7ucNn+/h0COCeml9nPe6IGg
-x+FlA7n4W4jrUbcndTHtUeW0JudK6IP4+eGImK6alhoz0YiIsmo1lWUPzDAtW2zC
-iOMaS3WleNJRO4VS5wmQMAmmjjvg/fKLbeZLQRDcRir6eiHZbwCW5R/b3K7aMNh2
-AXHNWcOHpgqSOu3CNcqik6IZyox8vw==
-=ktFw
------END PGP SIGNATURE-----
-
---61jdw2sOBCFtR2d/--
-
-
---===============9086951830431071399==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+[  121.829375] kworker/3:1     D    0    67      2 0x00000028
+[  121.829398] Workqueue: events linkwatch_event
+[  121.829403] Call trace:
+[  121.829412]  __switch_to+0xb8/0x1a8
+[  121.829420]  __schedule+0x220/0x560
+[  121.829423]  schedule+0x38/0xd8
+[  121.829429]  schedule_preempt_disabled+0x20/0x38
+[  121.829435]  __mutex_lock.isra.1+0x1c4/0x500
+[  121.829438]  __mutex_lock_slowpath+0x10/0x18
+[  121.829443]  mutex_lock+0x2c/0x38
+[  121.829449]  rtnl_lock+0x14/0x20
+[  121.829453]  linkwatch_event+0xc/0x38
+[  121.829461]  process_one_work+0x1e0/0x320
+[  121.829466]  worker_thread+0x40/0x428
+[  121.829473]  kthread+0x120/0x128
+[  121.829476]  ret_from_fork+0x10/0x18
+[  121.829533] INFO: task NetworkManager:1833 blocked for more than 61 seconds.
+[  121.830160]       Not tainted
+5.1.0-next-20190510test-00009-g3ed182aaa670-dirty #55
+[  121.830831] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs"
+disables this message.
+[  121.831589] NetworkManager  D    0  1833      1 0x00000028
+[  121.831601] Call trace:
+[  121.831614]  __switch_to+0xb8/0x1a8
+[  121.831623]  __schedule+0x220/0x560
+[  121.831631]  schedule+0x38/0xd8
+[  121.831639]  schedule_preempt_disabled+0x20/0x38
+[  121.831647]  __mutex_lock.isra.1+0x1c4/0x500
+[  121.831666]  __mutex_lock_slowpath+0x10/0x18
+[  121.831671]  mutex_lock+0x2c/0x38
+[  121.831687]  mdiobus_write+0x40/0x80
+[  121.831698]  rtl8211e_config_init+0x60/0xa0 [realtek]
+[  121.831706]  phy_init_hw+0x54/0x70
+[  121.831714]  phy_attach_direct+0xd4/0x250
+[  121.831720]  phy_connect_direct+0x20/0x70
+[  121.831728]  phy_connect+0x54/0xa0
+[  121.831741]  stmmac_init_phy+0x17c/0x200
+[  121.831748]  stmmac_open+0x124/0xac0
+[  121.831759]  __dev_open+0xd8/0x158
+[  121.831762]  __dev_change_flags+0x164/0x1c8
+[  121.831766]  dev_change_flags+0x20/0x60
+[  121.831774]  do_setlink+0x288/0xba8
+[  121.831778]  __rtnl_newlink+0x5cc/0x6e8
+[  121.831783]  rtnl_newlink+0x48/0x70
+[  121.831786]  rtnetlink_rcv_msg+0x120/0x368
+[  121.831807]  netlink_rcv_skb+0x58/0x118
+[  121.831811]  rtnetlink_rcv+0x14/0x20
+[  121.831816]  netlink_unicast+0x180/0x1f8
+[  121.831822]  netlink_sendmsg+0x190/0x330
+[  121.831837]  sock_sendmsg+0x3c/0x58
+[  121.831844]  ___sys_sendmsg+0x268/0x2a0
+[  121.831849]  __sys_sendmsg+0x68/0xb8
+[  121.831855]  __arm64_sys_sendmsg+0x20/0x28
+[  121.831864]  el0_svc_common.constprop.0+0x7c/0xe8
+[  121.831870]  el0_svc_handler+0x28/0x78
+[  121.831875]  el0_svc+0x8/0xc
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
---===============9086951830431071399==--
-
