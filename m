@@ -2,7 +2,7 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A2B51F8EA
+	by mail.lfdr.de (Postfix) with ESMTPS id C6C9C1F8ED
 	for <lists+linux-rockchip@lfdr.de>; Wed, 15 May 2019 18:48:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,71 +10,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=01oD7EIm/gavh44kxMHTZzN4BAtxATBzrCoGOqfBbX8=; b=IhRPY3Y/13lI7H
-	ZGie05AHTMgUcJSSrwdbGTSMbs2z0BRzZlrvOv7VuX710WhQsyAXRoJ/ozbctjMQThOLR/ZHgeWry
-	TZ+vekXf4vDubN6bwlxQnWVPs+5eAe+PbAul4a1AGaeBwbHK852yzD+V9rxviREccAjtdGPxj8XYe
-	6AvILiLwpfMJXJPNi8Fa/PwbAry7335DCRwJmva5sIDf1+GEyoToBdjdNVGzeTrjyC6bnhxjZPX/O
-	y2lh0eWL57T8K6i1tq2rMRgRXLOOK9HsXjyInTfyxEqiE0yzqMRKRoYoW5NJhv9FAF/D5VAglKAN9
-	aWMC3Av2nGXyRcmGhuFg==;
+	List-Owner; bh=aqoDPKzSj+wssP0f6onilGMELdLmU9K5pXkKzKgOmWE=; b=OcEwulExB++DMN
+	ki5pxBKrQFAJpXtlRF/di8kt4JIq40bfZo1nHHL241XYB8+thnlCmLtnLX6tfq+pByTt0eI8i15eT
+	ekZVXpvD5IAhXttrXJJ6xCMmlaS8c3BTTecEuc5lgSvjDiZWgsTea5xDnbzlVIlMvsD+JreWEzE1M
+	qQ5wsqzd5vty7ydiC882HCHkSpKZlS2axZA8PfAyKLZQgac8xohwIYOaQTWHbxtZc93LLja44uou1
+	5R7aFfkxYG714R50qbtbm9JPbKYSvo3sh8yjUnnB8NnXatlrUmvd/K4fp34+5IQtG41BChmOknyP4
+	NYK04s71n4GYEGNjnhaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQx5D-00037q-Rz; Wed, 15 May 2019 16:48:47 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hQx5E-00038L-Je; Wed, 15 May 2019 16:48:48 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQx5A-00035y-7L
- for linux-rockchip@lists.infradead.org; Wed, 15 May 2019 16:48:45 +0000
-Received: by mail-pl1-x644.google.com with SMTP id w7so161187plz.1
- for <linux-rockchip@lists.infradead.org>; Wed, 15 May 2019 09:48:43 -0700 (PDT)
+ id 1hQx5A-00036C-Sk
+ for linux-rockchip@lists.infradead.org; Wed, 15 May 2019 16:48:46 +0000
+Received: by mail-pl1-x642.google.com with SMTP id g5so158156plt.2
+ for <linux-rockchip@lists.infradead.org>; Wed, 15 May 2019 09:48:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=/hJ+5LXgO7LbFrdUEb9nUybskuecfmqVBDht734r15g=;
- b=YImKpzHc7T65qluqJf3imoyqOudg5R6a2hq2q7jjzcEp16f7XpDYEHGfuE6INwJELv
- 5cHKv1Y6V6wW1y8wgo2QcDVkR/ENchy9NLT2MpxwX14UYDUPi1PtCt7hs3Z3k0BivnbX
- k+gUCxidN8IdpURB33RhHWrrczm9RIpCpIGyI=
+ bh=lAmM7t9L5FMpWArr+XZL1VMYifzyuZh9O9R86wfoN2Q=;
+ b=i9Fp01ee3cpiAALGgeu13VG7tby0ZhpT0P1MJveFUU2dS8KmRBsypy/ZjXem7MH+iF
+ pvaF+6YOeK/EGGDG8s2XUuwsLZAl15aNIVlzDwlXgBKN0Yyg8/Kt4K8KTCR5R2L0yPVB
+ X0l2VCVDzhoR5X8jSqGsAdZWxjlo+P8eK5xEo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=/hJ+5LXgO7LbFrdUEb9nUybskuecfmqVBDht734r15g=;
- b=hmMj1AjKSqFPf8VRaFFBGvWMwWQosW4FtfSKWvt4K0N3qDelc0LRiI/p2o6k92Y8L7
- DNjL3fpAiphbcio06vLfyn1HQx91tQUpqWn18Kqu40zi+OaxrQLSQ+sSZZdriSg6KTI1
- Etk7I2Z417GyOIpR+Ds6ac3wgDfiTfAOLsOTWezB1+jY6xi9624NjAZZRZ1lwJ8IIJT0
- 0VrGSjugaPNNKZu+uaRtLMM1qjdJrOzcwF8GDMVk/UkwXIdTzPTGPs00OC2PDOxrPTLL
- m4TMlyvTEl/qN1VVZinDD8N4eFrOM6kTiAgJDVkxLP77mxKxgKwd3k6XNzkRhnPRxKi6
- zAuw==
-X-Gm-Message-State: APjAAAVUIMYKIv0VhleTo/Sb2fBDk3CQtKGGa8r5w+QLF2Ej5RjhvyDK
- /vbHCxz3KfXzg0gXQUq+mDpYuQ==
-X-Google-Smtp-Source: APXvYqwQB60dYkFPWRqj56XAYyuufHY1SQN6r1/gXXylUvV5OTtJGR77jwPd97AqfjKd35m/yXLB/Q==
-X-Received: by 2002:a17:902:8303:: with SMTP id
- bd3mr9922437plb.240.1557938923373; 
- Wed, 15 May 2019 09:48:43 -0700 (PDT)
+ bh=lAmM7t9L5FMpWArr+XZL1VMYifzyuZh9O9R86wfoN2Q=;
+ b=lsl5LQEdQ2x7ssW7rz9VuKbHlazqPF7O0eaP7BOX/G+nzKjX2wRIJzVBUKsfGcL1wF
+ LwF7a0Q3DMcuH6oaP4EQK6i7fXMAPH/2VN/IgP4hKCWPEkD0PBpsR+/2qobimvE/MR5l
+ aapsRpibMNw3OVNZLFihPLWI7XwvntZfTyIBNb0ZZr5s/dff1C0oYbMAjWSdnBKZTDx2
+ KOR5r+MnyiM1ruyAo/2Aj/xl69L+YX+VYxAdhtRVAiul/CU/NCvrIRUhlST7afZGHIJM
+ pXs22WTZb7K5m+dYLIGCz7Oka7Dz7psI+Hg1HI7N7L8UVdIaEGIe2LbWDWTPxqtAMAe8
+ e7uA==
+X-Gm-Message-State: APjAAAXI/FGwpyWhKiBn9rDmLgt38UjxUZcHpqrzuOKhMso8UVjfUc8U
+ 0FlgJthO7Cf5XIrUkaEALHYcwg==
+X-Google-Smtp-Source: APXvYqzMXvxNl7/rjW0EYESFViIiw/YEYqxM6GoGqqV2ZlNRyaXG+L154AlqZyiAX+ayj6tCqnFFrQ==
+X-Received: by 2002:a17:902:aa85:: with SMTP id
+ d5mr43570705plr.245.1557938924335; 
+ Wed, 15 May 2019 09:48:44 -0700 (PDT)
 Received: from tictac2.mtv.corp.google.com
  ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id h16sm6914595pfj.114.2019.05.15.09.48.42
+ by smtp.gmail.com with ESMTPSA id h16sm6914595pfj.114.2019.05.15.09.48.43
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 15 May 2019 09:48:42 -0700 (PDT)
+ Wed, 15 May 2019 09:48:43 -0700 (PDT)
 From: Douglas Anderson <dianders@chromium.org>
 To: Mark Brown <broonie@kernel.org>, Benson Leung <bleung@chromium.org>,
  Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Subject: [PATCH v4 2/3] spi: Allow SPI devices to request the pumping thread
+Subject: [PATCH v4 3/3] platform/chrome: cros_ec_spi: Request the SPI thread
  be realtime
-Date: Wed, 15 May 2019 09:48:12 -0700
-Message-Id: <20190515164814.258898-3-dianders@chromium.org>
+Date: Wed, 15 May 2019 09:48:13 -0700
+Message-Id: <20190515164814.258898-4-dianders@chromium.org>
 X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
 In-Reply-To: <20190515164814.258898-1-dianders@chromium.org>
 References: <20190515164814.258898-1-dianders@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_094844_259541_BDF940C6 
-X-CRM114-Status: GOOD (  19.79  )
+X-CRM114-CacheID: sfid-20190515_094844_922572_B6A0A1C6 
+X-CRM114-Status: GOOD (  12.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,26 +100,30 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
 Cc: drinkcat@chromium.org, briannorris@chromium.org,
  Douglas Anderson <dianders@chromium.org>, linux-kernel@vger.kernel.org,
  linux-rockchip@lists.infradead.org, mka@chromium.org,
- Guenter Roeck <groeck@chromium.org>, linux-spi@vger.kernel.org
+ Guenter Roeck <groeck@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Right now the only way to get the SPI pumping thread bumped up to
-realtime priority is for the controller to request it.  However it may
-be that the controller works fine with the normal priority but
-communication to a particular SPI device on the bus needs realtime
+All currently known ECs in the wild are very sensitive to timing.
+Specifically the ECs are known to drop a transfer if more than 8 ms
+passes from the assertion of the chip select until the transfer
+finishes.
+
+Let's use the new feature introduced in the patch (spi: Allow SPI
+devices to request the pumping thread be realtime") to request the SPI
+pumping thread be realtime.  This means that if we get shunted off to
+the SPI thread for whatever reason we won't get downgraded to low
 priority.
 
-Let's add a way for devices to request realtime priority when they set
-themselves up.
-
-NOTE: this will just affect the priority of transfers that end up on
-the SPI core's pumping thread.  In many cases transfers happen in the
-context of the caller so if you need realtime priority for all
-transfers you should ensure the calling context is also realtime
-priority.
+NOTES:
+- We still need to keep ourselves as high priority since the SPI core
+  doesn't guarantee that all transfers end up on the pumping thread
+  (in fact, it tries pretty hard to do them in the calling context).
+- If future Chrome OS ECs ever fix themselves to be less sensitive
+  then we could consider adding a property (or compatible string) to
+  not set this property.  For now we need it across the board.
 
 Signed-off-by: Douglas Anderson <dianders@chromium.org>
 Reviewed-by: Guenter Roeck <groeck@chromium.org>
@@ -127,101 +131,26 @@ Reviewed-by: Guenter Roeck <groeck@chromium.org>
 
 Changes in v4: None
 Changes in v3:
-- SPI core change now like patch v1 patch #2 (with name "rt").
+- Updated description and variable name since we no longer force.
 
 Changes in v2:
-- Now only force transfers to the thread for devices that want it.
-- Squashed patch #1 and #2 together.
 - Renamed variable to "force_rt_transfers".
 
- drivers/spi/spi.c       | 36 ++++++++++++++++++++++++++++++------
- include/linux/spi/spi.h |  2 ++
- 2 files changed, 32 insertions(+), 6 deletions(-)
+ drivers/platform/chrome/cros_ec_spi.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
-index 8eb7460dd744..466984796dd9 100644
---- a/drivers/spi/spi.c
-+++ b/drivers/spi/spi.c
-@@ -1364,10 +1364,32 @@ static void spi_pump_messages(struct kthread_work *work)
- 	__spi_pump_messages(ctlr, true);
- }
+diff --git a/drivers/platform/chrome/cros_ec_spi.c b/drivers/platform/chrome/cros_ec_spi.c
+index 1e38a885c539..daf3119191c8 100644
+--- a/drivers/platform/chrome/cros_ec_spi.c
++++ b/drivers/platform/chrome/cros_ec_spi.c
+@@ -740,6 +740,7 @@ static int cros_ec_spi_probe(struct spi_device *spi)
  
--static int spi_init_queue(struct spi_controller *ctlr)
-+/**
-+ * spi_set_thread_rt - set the controller to pump at realtime priority
-+ * @ctlr: controller to boost priority of
-+ *
-+ * This can be called because the controller requested realtime priority
-+ * (by setting the ->rt value before calling spi_register_controller()) or
-+ * because a device on the bus said that its transfers needed realtime
-+ * priority.
-+ *
-+ * NOTE: at the moment if any device on a bus says it needs realtime then
-+ * the thread will be at realtime priority for all transfers on that
-+ * controller.  If this eventually becomes a problem we may see if we can
-+ * find a way to boost the priority only temporarily during relevant
-+ * transfers.
-+ */
-+static void spi_set_thread_rt(struct spi_controller *ctlr)
- {
- 	struct sched_param param = { .sched_priority = MAX_RT_PRIO - 1 };
- 
-+	dev_info(&ctlr->dev,
-+		"will run message pump with realtime priority\n");
-+	sched_setscheduler(ctlr->kworker_task, SCHED_FIFO, &param);
-+}
-+
-+static int spi_init_queue(struct spi_controller *ctlr)
-+{
- 	ctlr->running = false;
- 	ctlr->busy = false;
- 
-@@ -1387,11 +1409,8 @@ static int spi_init_queue(struct spi_controller *ctlr)
- 	 * request and the scheduling of the message pump thread. Without this
- 	 * setting the message pump thread will remain at default priority.
- 	 */
--	if (ctlr->rt) {
--		dev_info(&ctlr->dev,
--			"will run message pump with realtime priority\n");
--		sched_setscheduler(ctlr->kworker_task, SCHED_FIFO, &param);
--	}
-+	if (ctlr->rt)
-+		spi_set_thread_rt(ctlr);
- 
- 	return 0;
- }
-@@ -2982,6 +3001,11 @@ int spi_setup(struct spi_device *spi)
- 
- 	spi_set_cs(spi, false);
- 
-+	if (spi->rt && !spi->controller->rt) {
-+		spi->controller->rt = true;
-+		spi_set_thread_rt(spi->controller);
-+	}
-+
- 	dev_dbg(&spi->dev, "setup mode %d, %s%s%s%s%u bits/w, %u Hz max --> %d\n",
- 			(int) (spi->mode & (SPI_CPOL | SPI_CPHA)),
- 			(spi->mode & SPI_CS_HIGH) ? "cs_high, " : "",
-diff --git a/include/linux/spi/spi.h b/include/linux/spi/spi.h
-index 053abd22ad31..15505c2485d6 100644
---- a/include/linux/spi/spi.h
-+++ b/include/linux/spi/spi.h
-@@ -109,6 +109,7 @@ void spi_statistics_add_transfer_stats(struct spi_statistics *stats,
-  *	This may be changed by the device's driver, or left at the
-  *	default (0) indicating protocol words are eight bit bytes.
-  *	The spi_transfer.bits_per_word can override this for each transfer.
-+ * @rt: Make the pump thread real time priority.
-  * @irq: Negative, or the number passed to request_irq() to receive
-  *	interrupts from this device.
-  * @controller_state: Controller's runtime state
-@@ -143,6 +144,7 @@ struct spi_device {
- 	u32			max_speed_hz;
- 	u8			chip_select;
- 	u8			bits_per_word;
-+	bool			rt;
- 	u32			mode;
- #define	SPI_CPHA	0x01			/* clock phase */
- #define	SPI_CPOL	0x02			/* clock polarity */
+ 	spi->bits_per_word = 8;
+ 	spi->mode = SPI_MODE_0;
++	spi->rt = true;
+ 	err = spi_setup(spi);
+ 	if (err < 0)
+ 		return err;
 -- 
 2.21.0.1020.gf2820cf01a-goog
 
