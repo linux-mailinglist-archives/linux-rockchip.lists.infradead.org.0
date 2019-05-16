@@ -2,85 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BABC220740
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 May 2019 14:49:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80F0420CFA
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 May 2019 18:29:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=94u+1LDkQ+WdWti5LUIF1v7FbDlvmOZy6BpfB7Gv0FQ=; b=FM0
-	icHvL3dp1HqnV/GbZbqNwGTi9+OkddnNyeLVR4VW0Brm/jxWcG5x6AnUPnEN2T75QKWT7NZA3EQrv
-	gwv13AghBoK5mvhZJCY//UUVZCQ85Nyoz9YvHrfxQ9D/fkC1aZ5XDRsFnd1JIUi01RLzrGeJv8nAc
-	chM6WUnHyrScNmKo4+i6UNMUKU2n40YAZNe/dowQvZLti9rylfe6OUtEdHFYS1KVwzkdzCwDEv38q
-	11+X8IuzhgGjw+9ZWoSFdUjMI+RJQ1AUW2JJS8qxsvIZCPdAzcTKm7JeJKoHRzUtJGDjJaWyEHRO3
-	4fnATab6HJwsZiTyz6lDjBkT4czlBSg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0jzlGz/PNsM0Exzw2EEmynWrUFjsUNVnrH2nwRuMpW4=; b=mVEBFD+7wFZNex
+	F3iMMVrPEWhwnMXeEkL8gWGM8yatVeq8ASXTxUzeeoGMk0CnWAOZQlsM8DzGL/n/xfCbGMnFzPMtN
+	1gYAl4WowNuIj3BGlhGY7q/ltYoEsDGqyuxUcy51/S7Jq+8S5oi0bIEqNcYzgmS6IYGJzmpojROZq
+	l86Qc2AkP0X8qFS67DdNuXwdkdbWluNcDZEKS+NAP+UJCZMU7O1eeBJB8qip6gdPEbsLQhsO13PUI
+	o3WZElqt+weHsyq3DN0x0vBUAnnHfnHy8yo1YOx6/AGrRjH41sl9gsTU8gFXYJCiQqLw6ibIyZu2A
+	TzQtvIUi7J1lI5w/nIaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRFot-0001hN-6n; Thu, 16 May 2019 12:49:11 +0000
-Received: from outgoing14.flk.host-h.net ([197.242.87.48])
+	id 1hRJGR-0007zK-3Q; Thu, 16 May 2019 16:29:51 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRFoo-0001gq-Lw; Thu, 16 May 2019 12:49:09 +0000
-Received: from www31.flk1.host-h.net ([188.40.1.173])
- by antispam4-flk1.host-h.net with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.89)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1hRFoc-0008Ba-7W; Thu, 16 May 2019 14:48:55 +0200
-Received: from [130.255.73.16] (helo=v01.28459.vpscontrol.net)
- by www31.flk1.host-h.net with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.84_2)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1hRFoX-000550-Js; Thu, 16 May 2019 14:48:49 +0200
-From: Justin Swartz <justin.swartz@risingedge.co.za>
-To: Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH] drivers/clk/rockchip/clk-rk3228.c: add 1.464GHz clock rate
-Date: Thu, 16 May 2019 12:44:36 +0000
-Message-Id: <20190516124437.4906-1-justin.swartz@risingedge.co.za>
-X-Mailer: git-send-email 2.11.0
-X-Authenticated-Sender: justin.swartz@risingedge.co.za
-X-Virus-Scanned: Clear (ClamAV 0.100.3/25451/Thu May 16 09:59:51 2019)
-X-Originating-IP: 188.40.1.173
-X-SpamExperts-Domain: risingedge.co.za
-X-SpamExperts-Username: 
-Authentication-Results: host-h.net;
- auth=pass (login) smtp.auth=@risingedge.co.za
-X-SpamExperts-Outgoing-Class: ham
-X-SpamExperts-Outgoing-Evidence: SB/global_tokens (0.00896517575494)
-X-Recommended-Action: accept
-X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0fbJ1LThpDP3PaEa+mzHFASpSDasLI4SayDByyq9LIhVyO1UfNdFVadD
- 4Wekg4mMmETNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3K7uDjV/sFUXQr+CDrNQuIHgQg
- mAX8Bxy/iUu0ThNZg0h/RxVysY5Ye6+GGw0VqdJD7ren9RtRNyYim5e3GD8LGfWrcbYvelpuN/Pk
- qhBpvAyWwieZyauFYqHkIbFa+ipFJdVl2Qo16OdG/SgJyrKdw0Znvotuy3L4aSJjqFExmwGwvf6h
- PQx0fYKjNC9VXDo4KyWWo0k/XI0fGv8bNm7IfazUKrTRmPfW13HBdTouyUQiTqTLnMPwSR2klzqa
- C1hRfn6HuUe9L0a5vwf8PHac6dlnibl3vcBqVmvQB4A18afqaqkE9y2tELrbSfbpenEpmH6eQvWp
- DWTULXV1jJ5bfceEJeNruLKdflVX7oFNsdF5bKhCA9a8IVosfxGBTbadg2lBMt3xu9nbye2CdJLN
- jSo1M+TSg3TNDI3/M5s9/ot3ko3rrae7IifWc6pL546YUVQwaYLh3di89W/ji5iahyCgJgyv93tC
- 61cbiLYl3RCqADG/Ryndzp4OfbK7c6EqHwlqvaI+zok/BsKQK4gft4+8sY8CNaDDoRMm0CGce/fp
- WUXurEbGCiZ0ePvZjCuJdbYb9IXfYGRpVS/0hA4Mwkg/wxsjmSXwdCAtc5U5IMGqr3wBwEeX6Ai5
- 5FPRpzhbYqsuNEW45+y/2kiUpWy9c957+6R4kroQiAThpzOdFqFvbdRuq0FZjQOwDKXnhaC6dkwF
- 9ybSMhHO+IPM0C985aNe1vwE2plJLdOGZ2rsAWflnmUXwJv1R9bnj+xoJG4VbeMz329ug19D+AX+
- zbkDEwtZIltLJVY6CFz3MnUtwYrRjdK3JtbOY4V5u4SqNrbdxyGLEIoLEuuC4P/fyEEgA3CnflZn
- bjDB2+RGRgaXth2/9YEbMsGSn6owqJN0kS7MUpAEhFoAxikOdx3ALFboD0vMokt+4lO8Qp33tUy6
- u+ztjUSMb/XuWI+kpQSOtXwGn8ttztpqwHsOJJ90zNCwBTwJWw42swm4bO6gacpMpzJ5RNWFoIkg
- vLC7uMZSLKkLPlzqsPnNmrTFfBI+gCHkFgyh9jAE9PwtDurXCCybWAnihjA708Lg3Y2gXyaf+rIt
- vvthbyiMZOAfvJjwL84MO4Vozqbzv/NmqBexmg1oMlu3UCyNNO7qENlLqkRemjF1A1q3g0ZrubFa
- n/xi+AGXOIO97ttnHrPmGyC6rR21+9c=
-X-Report-Abuse-To: spam@antispammaster.host-h.net
+ id 1hRJGO-0007xx-IE
+ for linux-rockchip@lists.infradead.org; Thu, 16 May 2019 16:29:49 +0000
+Received: by mail-pl1-x644.google.com with SMTP id g69so1876998plb.7
+ for <linux-rockchip@lists.infradead.org>; Thu, 16 May 2019 09:29:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=FOE0cCJQ21ga6g1DChuQ/Qq1kToyjWkdfWiPelD2OC4=;
+ b=ayq0D5zU19MEk0xwhDehYCYeWHoQ08w7g7ZjKSj8+Z7ap0fNQU02iAUi4BNKUwMN5E
+ DaDZsXTk9ac1bORDTuN/XFIeLq4ziTrZmWcEcwPx47BLpRJ937gCOyNca6DcHHrXlOI7
+ n3NMuXxbDIDHBpYxtnrBUtgjXrYN73x/nRozw=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=FOE0cCJQ21ga6g1DChuQ/Qq1kToyjWkdfWiPelD2OC4=;
+ b=HczvwtriRf2j7SpvY+RcKr+DsV9DYdTc+Fb+UQYFgGnA6bPXEpJdq2qG/P2sk//A2d
+ WqQFWx+CqyXjph7Kfx29wYavMP14MH0O+zk8HZOsBHiMezJ/ByIpumqx6IgzbONQtaKr
+ Vtg7CJIS+PF1GCDWgb8mZAlVahOk0aWnOSZ++Tl2yf/I8AGTOjrwBpuMmBDoWmG4ukTs
+ HGT1+woa6UB/fMKmc8C79/HYI107M1Q3tJYwFbtzJKdjjmcH/BrvxejOM6f6HF3Zjmpc
+ TG7jAcDpCDIEcNCc7ogQvHxucsIA0RESQG2VbnjMwLBaYCuXOGWcj+U4QA8rlkmiokIC
+ taXg==
+X-Gm-Message-State: APjAAAVHxSkUQWishKnggwrCoLAyDkZF7OfZq6vY2nhNhMUIMUR6atvz
+ 3ctOnQyhAGB7Sfft4Xe9nJlnOQ==
+X-Google-Smtp-Source: APXvYqxrvwtoWK8QdXNAIVHAwc7IGRNSlG4OKmttVtrCs4o4+DbqSeo4gMHXIbJEH9AVCcAMyz3k0w==
+X-Received: by 2002:a17:902:8a83:: with SMTP id
+ p3mr51848281plo.88.1558024187640; 
+ Thu, 16 May 2019 09:29:47 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
+ by smtp.gmail.com with ESMTPSA id g128sm7168645pfb.131.2019.05.16.09.29.46
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 16 May 2019 09:29:47 -0700 (PDT)
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH v2 1/3] ARM: dts: rockchip: raise CPU trip point temperature
+ for veyron to 100 degC
+Date: Thu, 16 May 2019 09:29:40 -0700
+Message-Id: <20190516162942.154823-1-mka@chromium.org>
+X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_054906_719546_7FAFB83A 
-X-CRM114-Status: UNSURE (   8.82  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190516_092948_623250_E40F1391 
+X-CRM114-Status: GOOD (  12.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [197.242.87.48 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,39 +95,44 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org,
- Justin Swartz <justin.swartz@risingedge.co.za>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Matthias Kaehlcke <mka@chromium.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add missing 1.464GHz clock rate to rk3228_cpuclk_rates[]
-
-Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
----
- drivers/clk/rockchip/clk-rk3228.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/clk/rockchip/clk-rk3228.c b/drivers/clk/rockchip/clk-rk3228.c
-index 7af48184b..b85730565 100644
---- a/drivers/clk/rockchip/clk-rk3228.c
-+++ b/drivers/clk/rockchip/clk-rk3228.c
-@@ -109,6 +109,7 @@ static struct rockchip_cpuclk_rate_table rk3228_cpuclk_rates[] __initdata = {
- 	RK3228_CPUCLK_RATE(1608000000, 1, 7),
- 	RK3228_CPUCLK_RATE(1512000000, 1, 7),
- 	RK3228_CPUCLK_RATE(1488000000, 1, 5),
-+	RK3228_CPUCLK_RATE(1464000000, 1, 5),
- 	RK3228_CPUCLK_RATE(1416000000, 1, 5),
- 	RK3228_CPUCLK_RATE(1392000000, 1, 5),
- 	RK3228_CPUCLK_RATE(1296000000, 1, 5),
--- 
-2.11.0
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+VGhpcyB2YWx1ZSBtYXRjaGVzIHdoYXQgaXMgdXNlZCBieSB0aGUgZG93bnN0cmVhbSBDaHJvbWUg
+T1MgMy4xNAprZXJuZWwsIHRoZSAnb2ZmaWNpYWwnIGtlcm5lbCBmb3IgdmV5cm9uIGRldmljZXMu
+IEtlZXAgdGhlIHRlbXBlcmF0dXJlCmZvciAnc3BlZWR5JyBhdCA5MMKwQywgYXMgaW4gdGhlIGRv
+d25zdHJlYW0ga2VybmVsLgoKSW5jcmVhc2UgdGhlIHRlbXBlcmF0dXJlIGZvciBhIGhhcmR3YXJl
+IHNodXRkb3duIHRvIDEyNcKwQywgd2hpY2gKbWF0Y2hlcyB0aGUgZG93bnN0cmVhbSBjb25maWd1
+cmF0aW9uIGFuZCBnaXZlcyB0aGUgc3lzdGVtIGEgY2hhbmNlCnRvIHNodXQgZG93biBvcmRlcmx5
+IGF0IHRoZSBjcml0aWNpYWwgdHJpcCBwb2ludC4KClNpZ25lZC1vZmYtYnk6IE1hdHRoaWFzIEth
+ZWhsY2tlIDxta2FAY2hyb21pdW0ub3JnPgotLS0KQ2hhbmdlcyBpbiB2MjoKLSBwYXRjaCBhZGRl
+ZCB0byB0aGUgc2VyaWVzCi0tLQogYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXZleXJvbi1zcGVl
+ZHkuZHRzIHwgNCArKysrCiBhcmNoL2FybS9ib290L2R0cy9yazMyODgtdmV5cm9uLmR0c2kgICAg
+ICAgfCA1ICsrKysrCiAyIGZpbGVzIGNoYW5nZWQsIDkgaW5zZXJ0aW9ucygrKQoKZGlmZiAtLWdp
+dCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC12ZXlyb24tc3BlZWR5LmR0cyBiL2FyY2gvYXJt
+L2Jvb3QvZHRzL3JrMzI4OC12ZXlyb24tc3BlZWR5LmR0cwppbmRleCBlMTY0MjFkODBkMjIuLmFi
+MmE2NmFhMzM3ZSAxMDA2NDQKLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXZleXJvbi1z
+cGVlZHkuZHRzCisrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC12ZXlyb24tc3BlZWR5LmR0
+cwpAQCAtNjQsNiArNjQsMTAgQEAKIAl0ZW1wZXJhdHVyZSA9IDw3MDAwMD47CiB9OwogCismY3B1
+X2NyaXQgeworCXRlbXBlcmF0dXJlID0gPDkwMDAwPjsKK307CisKICZlZHAgewogCS9kZWxldGUt
+cHJvcGVydHkvcGluY3RybC1uYW1lczsKIAkvZGVsZXRlLXByb3BlcnR5L3BpbmN0cmwtMDsKZGlm
+ZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC12ZXlyb24uZHRzaSBiL2FyY2gvYXJt
+L2Jvb3QvZHRzL3JrMzI4OC12ZXlyb24uZHRzaQppbmRleCAxOTJkYmMwODlhZGUuLjU4ZGM1Mzhi
+NWRmMyAxMDA2NDQKLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXZleXJvbi5kdHNpCisr
+KyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC12ZXlyb24uZHRzaQpAQCAtOTksNiArOTksMTAg
+QEAKIAljcHUwLXN1cHBseSA9IDwmdmRkX2NwdT47CiB9OwogCismY3B1X2NyaXQgeworCXRlbXBl
+cmF0dXJlID0gPDEwMDAwMD47Cit9OworCiAvKiByazMyODgtYyB1c2VkIGluIFZleXJvbiBDaHJv
+bWUtZGV2aWNlcyBoYXMgc2xpZ2h0bHkgY2hhbmdlZCBPUFBzICovCiAmY3B1X29wcF90YWJsZSB7
+CiAJL2RlbGV0ZS1ub2RlLyBvcHAtMzEyMDAwMDAwOwpAQCAtMzcxLDYgKzM3NSw3IEBACiAKIAly
+b2NrY2hpcCxody10c2h1dC1tb2RlID0gPDE+OyAvKiB0c2h1dCBtb2RlIDA6Q1JVIDE6R1BJTyAq
+LwogCXJvY2tjaGlwLGh3LXRzaHV0LXBvbGFyaXR5ID0gPDE+OyAvKiB0c2h1dCBwb2xhcml0eSAw
+OkxPVyAxOkhJR0ggKi8KKwlyb2NrY2hpcCxody10c2h1dC10ZW1wID0gPDEyNTAwMD47CiB9Owog
+CiAmdWFydDAgewotLSAKMi4yMS4wLjEwMjAuZ2YyODIwY2YwMWEtZ29vZwoKCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxp
+bmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
