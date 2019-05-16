@@ -2,79 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A21F20DEA
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 May 2019 19:25:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D076720E18
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 May 2019 19:39:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F0tHhPFgMzhlBTs9NBRg8c2PLXJ+KS/QyxkYKJt8md8=; b=puOV3CL6s/fclC
-	7lV+8X6Bjt2AM0ROiTycfZZInhQ1JmUtrIWI1/GPgn7nfrXyGP1ROZooG9aH4jFs/q1R5WsY8I/Ws
-	Sct03arMFgQ+Pk6evOLAbKsM4zI68fXwmc7pXViGEKL89OCIyou/Pc7bXD+OYx37YyzQKIaJkyWIn
-	19yv1Sx7oPp++pxKa1oL3sDJhoAQmX8mCXhqR/8lC/eBZaBQHUOMZ4ys7/L2S2OnC03EmiE2RqpL8
-	L5j/4oXfaOsHmsZkKwNY95jTw7eZkm+PN32jUO++TlWCZIbqFpqd6O5WWxN80Nnfi9PlxC+NMXAkn
-	511xyD9iP4qvLquVHJDQ==;
+	List-Owner; bh=vCHfe0Ta1zQyvjYsFHk614/iPDcJQMsUm0PQSWaKVEE=; b=qsxQ2SjSSKtJDE
+	qYNcrsKVKCDNcaF+5mX4bSze1HNbTb6BWKI0joUMXGsp8VcaSgx2uHq1VpvUJK2o+4wE7KUYppaq3
+	ZWLgoPyLPSN8Y1+SJh41b88sPyY6iL6uE1HW8WD2Usl0GLcMye6sgeGMmkteXp1zc26cvPs8KpGyE
+	3ieuordqoit2sKHVD5S6eGwN7EcxdAkC7P8NkCyzBe4A6/ApxTp2ys4e4e7qvSdrxEx2YIHCgTDaB
+	IOuEmdja3hiMQUa8/+YXfRiw3MC26x1UqoexQqk8rrbEmLFx/JMZQBydIaBFJZnoP26T0wXzf2GtP
+	UBeazxEdq4bs+pZ/iTOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRK8e-0003Fn-L5; Thu, 16 May 2019 17:25:52 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hRKMA-0008UX-3f; Thu, 16 May 2019 17:39:50 +0000
+Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRK86-0002aB-QW
- for linux-rockchip@lists.infradead.org; Thu, 16 May 2019 17:25:21 +0000
-Received: by mail-pl1-x641.google.com with SMTP id d21so1965138plr.3
- for <linux-rockchip@lists.infradead.org>; Thu, 16 May 2019 10:25:18 -0700 (PDT)
+ id 1hRKLx-0008Fp-3L
+ for linux-rockchip@lists.infradead.org; Thu, 16 May 2019 17:39:39 +0000
+Received: by mail-vs1-xe42.google.com with SMTP id o10so2834349vsp.12
+ for <linux-rockchip@lists.infradead.org>; Thu, 16 May 2019 10:39:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=lMSAIsZhKZG2h1JTrxIG+7d55aHOlT9g/JHuAffMChU=;
- b=lm3M7Abais25GdMpfAmlFd1RXZxXFphbeQ7jGJe3AKBVsknHbMxhyrH4vT+MBb28A+
- xP4nQPC5QkLetlEYajhKUsKHtuJITm+LT9nnHbWlAddEHLklQyGCAK0zKonDIjCHRuRm
- n0incRdHOE8Y3OOvZzwBzlqIvRx1Z2ohANK2U=
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=btkYXyszYOl4enkQNj6rF85Z8K5s124rQC98XbJLKTg=;
+ b=Jb1d/6dTS1pvv/Mc3sngMU2XidRneSla0eokNz7UyBI0yOzrq5vCgombW1gG1LdKUz
+ Z5kTaogiXfzaxz4CCpB/AezBDqTNpXyLbqEZlHFmcTaBm69PYrg8A59ElJe/LJnc4gz6
+ GygFEMTkuX9hdSY7oSVpDZbJJBD05Vgp574Ec=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=lMSAIsZhKZG2h1JTrxIG+7d55aHOlT9g/JHuAffMChU=;
- b=Fd7yIWjsiJuTH0q1DrTaRGpT/7Oi6Xd27zpvo55BKmg4cnzg5Ghk5bnr0gyz/VKYSq
- VExvm149iByJCeGNdOBH+SPdpLJXtlQTDVLsDuK6I+M1FKOJQ37vYTr8pgYNgekIvzyB
- jYzXH/SJsJ1DNm5s1P1+KofGtfid6msTwyhpy4C1sjqD05AJbzOs3Zgu5F6Ca+u+h0tr
- L1OH8Q9gUc+mqDQjBs1E9ZM9nXm9n5qgSgyyf0Lh0f+BL/E5lclGvABw0hgUhkungQxr
- cs69ExwSVjgmoOvLOnoN7/iLpmWDgBI3MgmBbvvxhWquYmFzLe1PiE6aNtan8Twoqs/b
- X9Xg==
-X-Gm-Message-State: APjAAAVgC8qRfUnuoYwRM6GAbLlgQr6DDlqKDx5vPbz3U/vKrbG4cF8P
- COsYOds3Q66SMqLnPIEXRTyCPQ==
-X-Google-Smtp-Source: APXvYqzIUsVmhUrS26/6IMXbb7QozvzV4UhQf72EtAlcEOaL7o68fTla/TZNzSHlTZB49FW8iDdDfw==
-X-Received: by 2002:a17:902:6809:: with SMTP id
- h9mr51869145plk.129.1558027518307; 
- Thu, 16 May 2019 10:25:18 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id s77sm13264216pfa.63.2019.05.16.10.25.17
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 16 May 2019 10:25:17 -0700 (PDT)
-From: Matthias Kaehlcke <mka@chromium.org>
-To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 3/3] ARM: dts: rockchip: Use GPU as cooling device for the
- GPU thermal zone of the rk3288
-Date: Thu, 16 May 2019 10:25:10 -0700
-Message-Id: <20190516172510.181473-3-mka@chromium.org>
-X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
-In-Reply-To: <20190516172510.181473-1-mka@chromium.org>
-References: <20190516172510.181473-1-mka@chromium.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=btkYXyszYOl4enkQNj6rF85Z8K5s124rQC98XbJLKTg=;
+ b=KYJfnUSYhmzoT9RxDXM7647ec083i+n23jSJn75crqt0XB6aXRoWKSdx8xGmefgLrC
+ pxr41qCVvsrFJzBvUKGBB9th9Wz1gRJCF9gEzbOxESfd+gZdmX93jBhGSCpmqB3n4kbc
+ 71+B5WJqmt23fYyWujBXvrgspTBlEapMMjCPNwDrY8qoj9O6u3Jr+YayITTycb2M76lq
+ N14/mC/AJVqkBddJ+4JrbeF11/VNRrwfcw2mn/pFmvovn+FlWnOacuYpLdbNrYMEePeA
+ LRCTJtvf7dDZeR/TfXinan7Z2dj5zNXlABjl/dlfK5dh/vLhsJkEOznTMRNsthr+V8Yh
+ xWBg==
+X-Gm-Message-State: APjAAAWwoiRlPO+4+K/lc928/TnHzwAkLO20SC+OY8Opt9ERLcL0lb3x
+ hvx57lNbgyDyEgHeNIxlDaICBlhCqgk=
+X-Google-Smtp-Source: APXvYqyb/D9G7/bXj8x9VLSqxQ8zUSQONry/Aj5FPMIXkWgFbVlRhOih2lkOrKqPPY9GLTTUQx80uQ==
+X-Received: by 2002:a67:ebc1:: with SMTP id y1mr5204513vso.16.1558028374760;
+ Thu, 16 May 2019 10:39:34 -0700 (PDT)
+Received: from mail-vk1-f171.google.com (mail-vk1-f171.google.com.
+ [209.85.221.171])
+ by smtp.gmail.com with ESMTPSA id j20sm894547uaq.5.2019.05.16.10.39.31
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Thu, 16 May 2019 10:39:32 -0700 (PDT)
+Received: by mail-vk1-f171.google.com with SMTP id h72so1249762vkh.10
+ for <linux-rockchip@lists.infradead.org>; Thu, 16 May 2019 10:39:31 -0700 (PDT)
+X-Received: by 2002:a1f:1e48:: with SMTP id e69mr23173110vke.16.1558028371386; 
+ Thu, 16 May 2019 10:39:31 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190516172510.181473-1-mka@chromium.org>
+ <20190516172510.181473-3-mka@chromium.org>
+In-Reply-To: <20190516172510.181473-3-mka@chromium.org>
+From: Doug Anderson <dianders@chromium.org>
+Date: Thu, 16 May 2019 10:39:17 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=Wk0EFO2+c=KAfemo0_w+QEA8==KzOdN-niD0mA_myh=Q@mail.gmail.com>
+Message-ID: <CAD=FV=Wk0EFO2+c=KAfemo0_w+QEA8==KzOdN-niD0mA_myh=Q@mail.gmail.com>
+Subject: Re: [PATCH v2 3/3] ARM: dts: rockchip: Use GPU as cooling device for
+ the GPU thermal zone of the rk3288
+To: Matthias Kaehlcke <mka@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_102519_146100_64D34E04 
-X-CRM114-Status: GOOD (  11.70  )
+X-CRM114-CacheID: sfid-20190516_103937_303206_B24D4AD9 
+X-CRM114-Status: GOOD (  13.77  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -98,50 +101,45 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Matthias Kaehlcke <mka@chromium.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
+ LKML <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Currently the CPUs are used as cooling devices of the rk3288 GPU
-thermal zone. The CPUs are also configured as cooling devices in the
-CPU thermal zone, which indirectly helps with cooling the GPU thermal
-zone, since the CPU and GPU temperatures are correlated on the rk3288.
+Hi,
 
-Configure the ARM Mali Midgard GPU as cooling device for the GPU
-thermal zone instead of the CPUs.
+On Thu, May 16, 2019 at 10:25 AM Matthias Kaehlcke <mka@chromium.org> wrote:
 
-Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
----
-Changes in v2:
-- patch added to the series
----
- arch/arm/boot/dts/rk3288.dtsi | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+> Currently the CPUs are used as cooling devices of the rk3288 GPU
+> thermal zone. The CPUs are also configured as cooling devices in the
+> CPU thermal zone, which indirectly helps with cooling the GPU thermal
+> zone, since the CPU and GPU temperatures are correlated on the rk3288.
+>
+> Configure the ARM Mali Midgard GPU as cooling device for the GPU
+> thermal zone instead of the CPUs.
+>
+> Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+> ---
+> Changes in v2:
+> - patch added to the series
+> ---
+>  arch/arm/boot/dts/rk3288.dtsi | 5 +----
+>  1 file changed, 1 insertion(+), 4 deletions(-)
 
-diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
-index 14d9609f0b15..988555c5118d 100644
---- a/arch/arm/boot/dts/rk3288.dtsi
-+++ b/arch/arm/boot/dts/rk3288.dtsi
-@@ -547,10 +547,7 @@
- 				map0 {
- 					trip = <&gpu_alert0>;
- 					cooling-device =
--						<&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
--						<&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
--						<&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
--						<&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-+						<&gpu THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
- 				};
- 			};
- 		};
--- 
-2.21.0.1020.gf2820cf01a-goog
+This makes sense to me unless there is some better way to model the
+intertwined nature of the CPU and GPU temperature.  It's my
+understanding that the original device tree snippet was there because
+it was added before the gpu node existed in the device tree so the
+best we could do is to suggest that the cpu could cool things down.
 
+Reviewed-by: Douglas Anderson <dianders@chromium.org>
 
 _______________________________________________
 Linux-rockchip mailing list
