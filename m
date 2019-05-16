@@ -2,80 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98EFE2101F
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 May 2019 23:39:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AC222102F
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 May 2019 23:41:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vS4TBipAfPawWfSTOlIql18eDsjD+aLTJ3/PiXEH3H0=; b=m4W3U5RvF0ovNr
-	UV2KxlMC7sV4HC7UB2joL3gg3idEmj2La3HI5JI1rKZyC29n4Luotj2lnq8CwMGSCpSzrJlYGcSPq
-	Brfh5EezFbneO4l3OlBa0LSnG6t40qPzznX8H7F9bMFfSOGSI//t4bjCkoJJn0oEWsoKl/x9NEP8z
-	DYmgREfNNpzQ6YFlw5uGf8iIazYivPA/bmqlPett5Ghj3J3sMJezhWqCCKhVxFWOM2PT+E+z5HXkR
-	aQ8udc93kU6DJEG3y7CLWcFQCt+AQthJ2I7y6ND9UdXKgNBm5s2vKbZXB9E6Nb8rP7nBTd2LZy1rQ
-	2Lg3R95Nk9sXFRz2H1rQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AHSh8/6IidIQdLYaLhIoio1rPNFWUMQDyqIymDJsIYg=; b=DjIjd7NeHFEQrV
+	NhFBvwNs3k6rZUgRCvFjwUCQv18gwXx2v3AqXdseIz/2ugh4dFxQ2ZioiQrTgAjqX9FzRSy1sPJNL
+	p1y/011G9q77tkXOek4XVkiFrNsA0Zri5NlILNEcBLibRuXsvRoW0JrSGpAUK64BwLKk+hYQGh8CF
+	VXUzB2aIj4M18FL+1J4EQYz5TV8UIFpeqqZ2HZ01EBoHHu6W2ZO2YPLjPyk/qtP/uhL8ZiaUDm64R
+	+GakZvHvE0oMXcBCMLqdB0Hl+4UBPmGZuZfU6R+z5wAcCJ10q6OIrPU79AdWy48zFctsy3DzxUmjq
+	tQp+raueV6Hc27lb1vxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRO5s-0008O9-OR; Thu, 16 May 2019 21:39:16 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1hRO7b-0001Ru-Tj; Thu, 16 May 2019 21:41:03 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRO5p-0008Nk-HZ
- for linux-rockchip@lists.infradead.org; Thu, 16 May 2019 21:39:15 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id o5so3319114vsq.4
- for <linux-rockchip@lists.infradead.org>; Thu, 16 May 2019 14:39:12 -0700 (PDT)
+ id 1hRO7N-0001IS-JL
+ for linux-rockchip@lists.infradead.org; Thu, 16 May 2019 21:40:56 +0000
+Received: by mail-pg1-x542.google.com with SMTP id z3so2188039pgp.8
+ for <linux-rockchip@lists.infradead.org>; Thu, 16 May 2019 14:40:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=++a8Pfd1pmd0gtgzMiYzStSZkT1QAJ0q9LoMMmyznno=;
- b=lxC0mVIjA0SLzDUNfcqRwxoiM0ULrrdBItgvpMV0PYh4yCZN/egZlHDYXZIOCb0MWy
- MEptyIyNH17TyhG2+6tHcF8ypoGmsF8PJqLzkBm6+Qlwyk2Q/8Ro+UcRneAkuDiSuMtV
- KnOVeynDlXHVxD7AA7uJiQXAlzHOQX14yDO8c=
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ukge0ptaqtQfzBE3gk2H8jEArL17PgyGsxqUKXtZMbQ=;
+ b=JzKx+RF4TLBsEzBvWlJuApn0knquV7p4R881+CU/VNU+JGrSzZmo4yrONglkpOvAzb
+ gFKMQzVEIn3490zilMNi3bc38jveC54jAPM+0tQpFwfuIXjhPX0C35zllfCsiU4t6RZy
+ LQxCLZG/xoArLy1BwI631/GGRSoB4DjJLfhcU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=++a8Pfd1pmd0gtgzMiYzStSZkT1QAJ0q9LoMMmyznno=;
- b=Yda3D3d0S1Zymsrja0wgOZoeOSQ7Qn631gus8cYW0iWYXNru4st15m1SAwUxEALKLv
- OwFpOwaK3S+MiXTqcfNQmjE0SoJPCgwJKvZBCOnhXqrtpWCqxQScXDo1E6ieCNis/s7k
- lLnO3AFNm/qIutODJzUwzyiJSgnbi68BiFudkNPJo7ced475YIxN+QDxy8uHtmPleHFB
- PgeW+NlxwpBSWe0REMqvR0chvdgE6hGZt489ADOBuHI1FXFztx+n4WkGLJeIw8ellb70
- hOE3TZ5PlZcarIsX5dLe7oJtftQmzx16Nz3l7MOI/NTiKWANFVJnPXDehOzdaP2CTfyz
- WEyg==
-X-Gm-Message-State: APjAAAWIZlw2INr5KXLVil0sv/AnxXemRVwgObfaud4nytyrU/RxUJVK
- IBTeFK16M3zpZIUm2pQY80AkxZ6taac=
-X-Google-Smtp-Source: APXvYqyDT551fj60t3rZYYMH8UeVeoyAAcpfMP+URPgyu7CEdtY9gUGrffqPxo5jXoN0lOA1hYrnOw==
-X-Received: by 2002:a67:f610:: with SMTP id k16mr19839196vso.85.1558042751096; 
- Thu, 16 May 2019 14:39:11 -0700 (PDT)
-Received: from mail-vs1-f48.google.com (mail-vs1-f48.google.com.
- [209.85.217.48])
- by smtp.gmail.com with ESMTPSA id q6sm1262734vsd.25.2019.05.16.14.39.07
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Thu, 16 May 2019 14:39:08 -0700 (PDT)
-Received: by mail-vs1-f48.google.com with SMTP id o10so3271113vsp.12
- for <linux-rockchip@lists.infradead.org>; Thu, 16 May 2019 14:39:07 -0700 (PDT)
-X-Received: by 2002:a67:dd8e:: with SMTP id i14mr18643024vsk.149.1558042747509; 
- Thu, 16 May 2019 14:39:07 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ukge0ptaqtQfzBE3gk2H8jEArL17PgyGsxqUKXtZMbQ=;
+ b=MXnj/asFh7VZEiNgUxYfTKN8+PKSJ7yYZqSl0h4JNQ0yQVig3/hNfS+yGcJVyr8oDN
+ rgWj5PYrPoJe+67N7RP4uu43FeuJ5JPKVN6/vk7gTOrv0+uNrJap3y2nWfBHO6D1q/7S
+ OXVEwCi/1mcAAuyElovgN3ctVdkAqrjMJrWBdpZcr68wQYSEV4634l4cV+cnP99fwHAH
+ 9Ypfz3+R+I5MOESAda2Jefg5dwAAs1ryfqzzgXhTIArJXjfA7lGEL3UV/xrmBlZKAbVm
+ ptG5NJuKtr9ya9mJu/9B9g/SkOmfBh+sV/gDOCRD6E+2/gxXNFMn0W3WrqlT5LPv3mAv
+ qvaQ==
+X-Gm-Message-State: APjAAAUHhcoFUzJD/gmg+LO1dqnK470SLvAnSVfJ+mZOMEYpHC5+qV4r
+ G4TcsY52C8YRJEYKeVDRmjtaRuIpubI=
+X-Google-Smtp-Source: APXvYqwOR1Vaun2FkXTwvszdYiYWTQfSZ7dyxK8u7skFfDe5/KjtBFl9QmluFeY4GYG/t/JXRiUNlw==
+X-Received: by 2002:a63:5c1b:: with SMTP id q27mr53715942pgb.127.1558042848815; 
+ Thu, 16 May 2019 14:40:48 -0700 (PDT)
+Received: from tictac2.mtv.corp.google.com
+ ([2620:15c:202:1:24fa:e766:52c9:e3b2])
+ by smtp.gmail.com with ESMTPSA id v4sm13127252pff.45.2019.05.16.14.40.47
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 16 May 2019 14:40:48 -0700 (PDT)
+From: Douglas Anderson <dianders@chromium.org>
+To: Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+ Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+Subject: [PATCH v2 1/2] drm: bridge: dw-hdmi: Add hook for resume
+Date: Thu, 16 May 2019 14:40:21 -0700
+Message-Id: <20190516214022.65220-1-dianders@chromium.org>
+X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
 MIME-Version: 1.0
-References: <5cdae78b.1c69fb81.a32a9.870f@mx.google.com>
-In-Reply-To: <5cdae78b.1c69fb81.a32a9.870f@mx.google.com>
-From: Doug Anderson <dianders@chromium.org>
-Date: Thu, 16 May 2019 14:38:52 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=WDjUBvwoAaWNOmXPaLpZCccpAgRWDzRSnvsQ62TFwVmQ@mail.gmail.com>
-Message-ID: <CAD=FV=WDjUBvwoAaWNOmXPaLpZCccpAgRWDzRSnvsQ62TFwVmQ@mail.gmail.com>
-Subject: Re: next/master boot bisection: next-20190514 on rk3288-veyron-jaq
-To: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_143913_608572_22845097 
-X-CRM114-Status: GOOD (  13.86  )
+X-CRM114-CacheID: sfid-20190516_144053_381780_E387E7B9 
+X-CRM114-Status: GOOD (  18.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -99,101 +95,175 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Elaine Zhang <zhangqing@rock-chips.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>, Linux PM <linux-pm@vger.kernel.org>,
- Guillaume Tucker <guillaume.tucker@collabora.com>, mgalka@collabora.com,
- LKML <linux-kernel@vger.kernel.org>, Eduardo Valentin <edubezval@gmail.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Mark Brown <broonie@kernel.org>, matthew.hart@linaro.org,
- Kevin Hilman <khilman@baylibre.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Zhang Rui <rui.zhang@intel.com>, Matthias Kaehlcke <mka@chromium.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Heiko Stuebner <heiko@sntech.de>
+Cc: Jonas Karlman <jonas@kwiboo.se>, David Airlie <airlied@linux.ie>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Douglas Anderson <dianders@chromium.org>, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ mka@chromium.org, Sean Paul <seanpaul@chromium.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Sam Ravnborg <sam@ravnborg.org>,
+ =?UTF-8?q?Ville=20Syrj=C3=A4l=C3=A4?= <ville.syrjala@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+On Rockchip rk3288-based Chromebooks when you do a suspend/resume
+cycle:
 
-From: kernelci.org bot <bot@kernelci.org>
-Date: Tue, May 14, 2019 at 9:06 AM
-To: <tomeu.vizoso@collabora.com>, <guillaume.tucker@collabora.com>,
-<mgalka@collabora.com>, <broonie@kernel.org>,
-<matthew.hart@linaro.org>, <khilman@baylibre.com>,
-<enric.balletbo@collabora.com>, Elaine Zhang, Eduardo Valentin, Daniel
-Lezcano
-Cc: Heiko Stuebner, <linux-pm@vger.kernel.org>,
-<linux-kernel@vger.kernel.org>, <linux-rockchip@lists.infradead.org>,
-Zhang Rui, <linux-arm-kernel@lists.infradead.org>
+1. You lose the ability to detect an HDMI device being plugged in.
 
-> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-> * This automated bisection report was sent to you on the basis  *
-> * that you may be involved with the breaking commit it has      *
-> * found.  No manual investigation has been done to verify it,   *
-> * and the root cause of the problem may be somewhere else.      *
-> * Hope this helps!                                              *
-> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
->
-> next/master boot bisection: next-20190514 on rk3288-veyron-jaq
->
-> Summary:
->   Start:      0a13f187b16a Add linux-next specific files for 20190514
->   Details:    https://kernelci.org/boot/id/5cda7f2259b514876d7a3628
->   Plain log:  https://storage.kernelci.org//next/master/next-20190514/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.txt
->   HTML log:   https://storage.kernelci.org//next/master/next-20190514/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.html
->   Result:     691d4947face thermal: rockchip: fix up the tsadc pinctrl setting error
->
-> Checks:
->   revert:     PASS
->   verify:     PASS
->
-> Parameters:
->   Tree:       next
->   URL:        git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
->   Branch:     master
->   Target:     rk3288-veyron-jaq
->   CPU arch:   arm
->   Lab:        lab-collabora
->   Compiler:   gcc-8
->   Config:     multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y
->   Test suite: boot
->
-> Breaking commit found:
->
-> -------------------------------------------------------------------------------
-> commit 691d4947faceb8bd841900049e07c81c95ca4b0d
-> Author: Elaine Zhang <zhangqing@rock-chips.com>
-> Date:   Tue Apr 30 18:09:44 2019 +0800
->
->     thermal: rockchip: fix up the tsadc pinctrl setting error
->
->     Explicitly use the pinctrl to set/unset the right mode
->     instead of relying on the pinctrl init mode.
->     And it requires setting the tshut polarity before select pinctrl.
->
->     When the temperature sensor mode is set to 0, it will automatically
->     reset the board via the Clock-Reset-Unit (CRU) if the over temperature
->     threshold is reached. However, when the pinctrl initializes, it does a
->     transition to "otp_out" which may lead the SoC restart all the time.
->
->     "otp_out" IO may be connected to the RESET circuit on the hardware.
->     If the IO is in the wrong state, it will trigger RESET.
->     (similar to the effect of pressing the RESET button)
->     which will cause the soc to restart all the time.
->
->     Signed-off-by: Elaine Zhang <zhangqing@rock-chips.com>
->     Reviewed-by: Daniel Lezcano <daniel.lezcano@linaro.org>
->     Signed-off-by: Eduardo Valentin <edubezval@gmail.com>
+2. If you're using the i2c bus built in to dw_hdmi then it stops
+working.
 
-I can confirm that the above commit breaks my jerry, though I haven't
-dug into the details.  :(  Is anyone fixing?  For now I'm just booting
-with the revert.
+Let's add a hook to the core dw-hdmi driver so that we can call it in
+dw_hdmi-rockchip in the next commit.
 
+NOTE: the exact set of steps I've done here in resume come from
+looking at the normal dw_hdmi init sequence in upstream Linux plus the
+sequence that we did in downstream Chrome OS 3.14.  Testing show that
+it seems to work, but if an extra step is needed or something here is
+not needed we could improve it.
 
--Doug
+As part of this change we'll refactor the hardware init bits of
+dw-hdmi to happen all in one function and all at the same time.  Since
+we need to init the interrupt mutes before we request the IRQ, this
+means moving the hardware init earlier in the function, but there
+should be no problems with that.  Also as part of this we now
+unconditionally init the "i2c" parts of dw-hdmi, but again that ought
+to be fine.
+
+Signed-off-by: Douglas Anderson <dianders@chromium.org>
+---
+
+Changes in v2:
+- No empty stub for suspend (Laurent)
+- Refactor to use the same code in probe and resume (Laurent)
+- Unconditionally init i2c (seems OK + needed before hdmi->i2c init)
+- Combine "init" of i2c and "setup" of i2c (no reason to split)
+
+ drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 50 ++++++++++++++---------
+ include/drm/bridge/dw_hdmi.h              |  2 +
+ 2 files changed, 33 insertions(+), 19 deletions(-)
+
+diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+index ab7968c8f6a2..636d55d1398c 100644
+--- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
++++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+@@ -227,6 +227,13 @@ static void hdmi_mask_writeb(struct dw_hdmi *hdmi, u8 data, unsigned int reg,
+ 
+ static void dw_hdmi_i2c_init(struct dw_hdmi *hdmi)
+ {
++	hdmi_writeb(hdmi, HDMI_PHY_I2CM_INT_ADDR_DONE_POL,
++		    HDMI_PHY_I2CM_INT_ADDR);
++
++	hdmi_writeb(hdmi, HDMI_PHY_I2CM_CTLINT_ADDR_NAC_POL |
++		    HDMI_PHY_I2CM_CTLINT_ADDR_ARBITRATION_POL,
++		    HDMI_PHY_I2CM_CTLINT_ADDR);
++
+ 	/* Software reset */
+ 	hdmi_writeb(hdmi, 0x00, HDMI_I2CM_SOFTRSTZ);
+ 
+@@ -1925,16 +1932,6 @@ static int dw_hdmi_setup(struct dw_hdmi *hdmi, struct drm_display_mode *mode)
+ 	return 0;
+ }
+ 
+-static void dw_hdmi_setup_i2c(struct dw_hdmi *hdmi)
+-{
+-	hdmi_writeb(hdmi, HDMI_PHY_I2CM_INT_ADDR_DONE_POL,
+-		    HDMI_PHY_I2CM_INT_ADDR);
+-
+-	hdmi_writeb(hdmi, HDMI_PHY_I2CM_CTLINT_ADDR_NAC_POL |
+-		    HDMI_PHY_I2CM_CTLINT_ADDR_ARBITRATION_POL,
+-		    HDMI_PHY_I2CM_CTLINT_ADDR);
+-}
+-
+ static void initialize_hdmi_ih_mutes(struct dw_hdmi *hdmi)
+ {
+ 	u8 ih_mute;
+@@ -2435,6 +2432,21 @@ static const struct regmap_config hdmi_regmap_32bit_config = {
+ 	.max_register	= HDMI_I2CM_FS_SCL_LCNT_0_ADDR << 2,
+ };
+ 
++static void dw_hdmi_init_hw(struct dw_hdmi *hdmi)
++{
++	initialize_hdmi_ih_mutes(hdmi);
++
++	/*
++	 * Reset HDMI DDC I2C master controller and mute I2CM interrupts.
++	 * Even if we are using a separate i2c adapter doing this doesn't
++	 * hurt.
++	 */
++	dw_hdmi_i2c_init(hdmi);
++
++	if (hdmi->phy.ops->setup_hpd)
++		hdmi->phy.ops->setup_hpd(hdmi, hdmi->phy.data);
++}
++
+ static struct dw_hdmi *
+ __dw_hdmi_probe(struct platform_device *pdev,
+ 		const struct dw_hdmi_plat_data *plat_data)
+@@ -2586,7 +2598,7 @@ __dw_hdmi_probe(struct platform_device *pdev,
+ 		 prod_id1 & HDMI_PRODUCT_ID1_HDCP ? "with" : "without",
+ 		 hdmi->phy.name);
+ 
+-	initialize_hdmi_ih_mutes(hdmi);
++	dw_hdmi_init_hw(hdmi);
+ 
+ 	irq = platform_get_irq(pdev, 0);
+ 	if (irq < 0) {
+@@ -2625,10 +2637,6 @@ __dw_hdmi_probe(struct platform_device *pdev,
+ 	hdmi->bridge.of_node = pdev->dev.of_node;
+ #endif
+ 
+-	dw_hdmi_setup_i2c(hdmi);
+-	if (hdmi->phy.ops->setup_hpd)
+-		hdmi->phy.ops->setup_hpd(hdmi, hdmi->phy.data);
+-
+ 	memset(&pdevinfo, 0, sizeof(pdevinfo));
+ 	pdevinfo.parent = dev;
+ 	pdevinfo.id = PLATFORM_DEVID_AUTO;
+@@ -2681,10 +2689,6 @@ __dw_hdmi_probe(struct platform_device *pdev,
+ 		hdmi->cec = platform_device_register_full(&pdevinfo);
+ 	}
+ 
+-	/* Reset HDMI DDC I2C master controller and mute I2CM interrupts */
+-	if (hdmi->i2c)
+-		dw_hdmi_i2c_init(hdmi);
+-
+ 	return hdmi;
+ 
+ err_iahb:
+@@ -2788,6 +2792,14 @@ void dw_hdmi_unbind(struct dw_hdmi *hdmi)
+ }
+ EXPORT_SYMBOL_GPL(dw_hdmi_unbind);
+ 
++int dw_hdmi_resume(struct dw_hdmi *hdmi)
++{
++	dw_hdmi_init_hw(hdmi);
++
++	return 0;
++}
++EXPORT_SYMBOL_GPL(dw_hdmi_resume);
++
+ MODULE_AUTHOR("Sascha Hauer <s.hauer@pengutronix.de>");
+ MODULE_AUTHOR("Andy Yan <andy.yan@rock-chips.com>");
+ MODULE_AUTHOR("Yakir Yang <ykk@rock-chips.com>");
+diff --git a/include/drm/bridge/dw_hdmi.h b/include/drm/bridge/dw_hdmi.h
+index 66e70770cce5..1626731e1681 100644
+--- a/include/drm/bridge/dw_hdmi.h
++++ b/include/drm/bridge/dw_hdmi.h
+@@ -154,6 +154,8 @@ struct dw_hdmi *dw_hdmi_bind(struct platform_device *pdev,
+ 			     struct drm_encoder *encoder,
+ 			     const struct dw_hdmi_plat_data *plat_data);
+ 
++int dw_hdmi_resume(struct dw_hdmi *hdmi);
++
+ void dw_hdmi_setup_rx_sense(struct dw_hdmi *hdmi, bool hpd, bool rx_sense);
+ 
+ void dw_hdmi_set_sample_rate(struct dw_hdmi *hdmi, unsigned int rate);
+-- 
+2.21.0.1020.gf2820cf01a-goog
+
 
 _______________________________________________
 Linux-rockchip mailing list
