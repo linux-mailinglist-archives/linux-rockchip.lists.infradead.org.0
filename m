@@ -2,87 +2,49 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8AD7212C0
-	for <lists+linux-rockchip@lfdr.de>; Fri, 17 May 2019 06:07:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F3D12161D
+	for <lists+linux-rockchip@lfdr.de>; Fri, 17 May 2019 11:17:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=IIrYkKYetJf7exBTGF7hJmdEZNQyi+3izBSQbAmpjyw=; b=ubYETknyvXSAdIrQQKydaFe8Xr
-	ZSOvade/0lLRWTTv0AEcZuWfTz6UL/YftcYnkiOHE4NO1j7pJxQV6HGNpEFbmT278EQNfjmXtxtRd
-	05nFUtz5c0OCSLCyjwcFqu0zu2aVSPdKbGqix7xRZQbBYKch6ko7wo3/7Ppugv1j1IhdwmIh5FfZu
-	jauBLiuCuO53jcYRXj+wHZ+BgFrz6b4DjtoV7Tl1eUNSAi0tI2dkC0yk1VnVpqXoqMniXbTlwBnX+
-	9xv2GYmsnWu1/S2eqb1o12owEyZfo8fRu0JY8Ubr+8LhbgspJYWrn6Z03oG0R7ngg87ImfAXHQysu
-	CugpHsYg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AXIha27tggqFivppg163ZKGRWtg71NUuseFcdXKBhy8=; b=kwcn2YslDJFL4q
+	BDF5mBg3R2p3XwoEgzLZJE+XPJkDMgeDe+ju6kg1ApgNdmfNhsYb+dP7ba8nP3+vsCWMox81uXm97
+	z0YyOcmZkQlA/4YTbCNqtd15zeIGlL17aQJcJbsz0qm/AegXmNpR1TtbRfCnUpLde9RSPPQzAKuOx
+	2TuAWfilFenoL+1uEZfn3FoyE/5f/oAYJ7wW7UewHeQm+b5c8eRM5ECh8zQ0DThW6ct3dSjhwlkKu
+	VKIDJRA/zI7zHAKdfwRfeuRGtC61EIPDXHgflktJgLK5Y7vZYA0N8G+JcD85BMHBd+LjPDV5FfEzZ
+	x3yIdAuo8SAOmZ4kVnsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRU9A-0005p6-4v; Fri, 17 May 2019 04:07:04 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hRYza-0005NV-8Z; Fri, 17 May 2019 09:17:30 +0000
+Received: from legacy.eumx.net ([2001:470:9853::71])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRU8r-0005Nr-AE
- for linux-rockchip@lists.infradead.org; Fri, 17 May 2019 04:06:48 +0000
-Received: by mail-pf1-x441.google.com with SMTP id q17so2976850pfq.8
- for <linux-rockchip@lists.infradead.org>; Thu, 16 May 2019 21:06:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=6yVenyf0a0qIZedfKSCtttpa0WMwEDTZq8Yud/8Uytg=;
- b=kCiLjC1owHy+UsjeF60cBtcatNacrggyR9r2TuoTOmaWEe3JT5GGpL6NQCaDV36Umb
- y/uBj3UO2rVyb7LmO0nPT1LDJ13jKkSjsa+1zBQ8ueyJ9FmLUfe5S/lk0Om0Rfr0OqhB
- udBzRgih+ZPFfi/pgEjD43225Heo+dB1r0fyB8XDYOUslZvLWhrEHS68MQPN4itx5QCF
- 5G2Si0cxb+SIySRKcJ89o6NK+bzeiKjUPq+YcDJWlujIPilrDaYpFLTrbyPSXFh2hj+S
- mx9VVpsW1bVQZmZ2Ze6IzHvT3dT9kfO2aRLIUQ1PQFdbLc/kn+Ctg79zCJGwc4LhM4IF
- pBvw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=6yVenyf0a0qIZedfKSCtttpa0WMwEDTZq8Yud/8Uytg=;
- b=ijL87lDPMCH3fX1U3xBq8aLaC3tbLlyAtzLmyuDF2H+1AawmRetfVzs6GGO0xz+svJ
- XVEckh09KcxaEJbsuxwwSk/1xPPh1WgdhL165DmmhCDjkeedAGH0obr0fPcf2T3O7O/v
- vv71hxbinBANlUCRaB8JTtBOk392oApshnzLvFx5yuZG4Zu8WiCTkzCtNz0Nm894oNvt
- jmc5FAbJFo6yXmxrr8vtCx2m+iU3mHzXEoLamGiSYhW1kidLZZgq3mxOiAYgNf2QNYVH
- rvjy3uLIkMuy3BOkvWA+qBHYYX3Rw6Urn6k8+OQMQ1xEGBbbltNHB2gY6J+4dYMUNQXK
- 37mg==
-X-Gm-Message-State: APjAAAULE5whraFfuiexctj5eoCFKYRkIc0qk+padaQ3I3tx+H336XM/
- IdCbKJOo+7CjNLzQsCvKmOln
-X-Google-Smtp-Source: APXvYqyVaMd+FX1grTr8/UOs0JxoMs+1pdWe8hTBQCYVIxmgR63mOxmsGCZ0sfjQ08bGQHR+ZiNFjw==
-X-Received: by 2002:a62:e718:: with SMTP id s24mr58695777pfh.247.1558066004331; 
- Thu, 16 May 2019 21:06:44 -0700 (PDT)
-Received: from localhost.localdomain ([2409:4072:6390:5018:b478:7b0e:49e:16a3])
- by smtp.gmail.com with ESMTPSA id d3sm8628927pfn.113.2019.05.16.21.06.39
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 16 May 2019 21:06:43 -0700 (PDT)
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: heiko@sntech.de
-Subject: [PATCH v2 2/2] arm64: dts: rockchip: Enable SPI1 on Ficus
-Date: Fri, 17 May 2019 09:36:25 +0530
-Message-Id: <20190517040625.14607-2-manivannan.sadhasivam@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190517040625.14607-1-manivannan.sadhasivam@linaro.org>
-References: <20190517040625.14607-1-manivannan.sadhasivam@linaro.org>
+ id 1hRYzQ-0005GR-H5; Fri, 17 May 2019 09:17:22 +0000
+Subject: Re: next/master boot bisection: next-20190514 on rk3288-veyron-jaq
+To: Doug Anderson <dianders@chromium.org>, "kernelci.org bot"
+ <bot@kernelci.org>
+References: <5cdae78b.1c69fb81.a32a9.870f@mx.google.com>
+ <CAD=FV=WDjUBvwoAaWNOmXPaLpZCccpAgRWDzRSnvsQ62TFwVmQ@mail.gmail.com>
+From: Jack Mitchell <ml@embed.me.uk>
+Message-ID: <a9767b82-9b3c-fc05-5f33-fb79c8fc8507@embed.me.uk>
+Date: Fri, 17 May 2019 10:17:02 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <CAD=FV=WDjUBvwoAaWNOmXPaLpZCccpAgRWDzRSnvsQ62TFwVmQ@mail.gmail.com>
+Content-Language: en-BW
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_210645_824496_2CCE5645 
-X-CRM114-Status: GOOD (  10.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190517_021720_569636_DA4E3301 
+X-CRM114-Status: GOOD (  14.67  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,53 +57,115 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: tom@vamrs.com, linux-kernel@vger.kernel.org, dev@vamrs.com,
- linux-rockchip@lists.infradead.org,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Heiko Stuebner <heiko@sntech.de>, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
+ Linux PM <linux-pm@vger.kernel.org>,
+ Guillaume Tucker <guillaume.tucker@collabora.com>,
+ Matthias Kaehlcke <mka@chromium.org>, Elaine Zhang <zhangqing@rock-chips.com>,
+ LKML <linux-kernel@vger.kernel.org>, Eduardo Valentin <edubezval@gmail.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Mark Brown <broonie@kernel.org>, matthew.hart@linaro.org, mgalka@collabora.com,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Zhang Rui <rui.zhang@intel.com>, Kevin Hilman <khilman@baylibre.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Enable SPI1 exposed on both Low and High speed expansion connectors
-of Ficus. SPI1 has 3 different chip selects wired as below:
+On 16/05/2019 22:38, Doug Anderson wrote:
+> Hi,
+> 
+> From: kernelci.org bot <bot@kernelci.org>
+> Date: Tue, May 14, 2019 at 9:06 AM
+> To: <tomeu.vizoso@collabora.com>, <guillaume.tucker@collabora.com>,
+> <mgalka@collabora.com>, <broonie@kernel.org>,
+> <matthew.hart@linaro.org>, <khilman@baylibre.com>,
+> <enric.balletbo@collabora.com>, Elaine Zhang, Eduardo Valentin, Daniel
+> Lezcano
+> Cc: Heiko Stuebner, <linux-pm@vger.kernel.org>,
+> <linux-kernel@vger.kernel.org>, <linux-rockchip@lists.infradead.org>,
+> Zhang Rui, <linux-arm-kernel@lists.infradead.org>
+> 
+>> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+>> * This automated bisection report was sent to you on the basis  *
+>> * that you may be involved with the breaking commit it has      *
+>> * found.  No manual investigation has been done to verify it,   *
+>> * and the root cause of the problem may be somewhere else.      *
+>> * Hope this helps!                                              *
+>> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+>>
+>> next/master boot bisection: next-20190514 on rk3288-veyron-jaq
+>>
+>> Summary:
+>>   Start:      0a13f187b16a Add linux-next specific files for 20190514
+>>   Details:    https://kernelci.org/boot/id/5cda7f2259b514876d7a3628
+>>   Plain log:  https://storage.kernelci.org//next/master/next-20190514/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.txt
+>>   HTML log:   https://storage.kernelci.org//next/master/next-20190514/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.html
+>>   Result:     691d4947face thermal: rockchip: fix up the tsadc pinctrl setting error
+>>
+>> Checks:
+>>   revert:     PASS
+>>   verify:     PASS
+>>
+>> Parameters:
+>>   Tree:       next
+>>   URL:        git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
+>>   Branch:     master
+>>   Target:     rk3288-veyron-jaq
+>>   CPU arch:   arm
+>>   Lab:        lab-collabora
+>>   Compiler:   gcc-8
+>>   Config:     multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y
+>>   Test suite: boot
+>>
+>> Breaking commit found:
+>>
+>> -------------------------------------------------------------------------------
+>> commit 691d4947faceb8bd841900049e07c81c95ca4b0d
+>> Author: Elaine Zhang <zhangqing@rock-chips.com>
+>> Date:   Tue Apr 30 18:09:44 2019 +0800
+>>
+>>     thermal: rockchip: fix up the tsadc pinctrl setting error
+>>
+>>     Explicitly use the pinctrl to set/unset the right mode
+>>     instead of relying on the pinctrl init mode.
+>>     And it requires setting the tshut polarity before select pinctrl.
+>>
+>>     When the temperature sensor mode is set to 0, it will automatically
+>>     reset the board via the Clock-Reset-Unit (CRU) if the over temperature
+>>     threshold is reached. However, when the pinctrl initializes, it does a
+>>     transition to "otp_out" which may lead the SoC restart all the time.
+>>
+>>     "otp_out" IO may be connected to the RESET circuit on the hardware.
+>>     If the IO is in the wrong state, it will trigger RESET.
+>>     (similar to the effect of pressing the RESET button)
+>>     which will cause the soc to restart all the time.
+>>
+>>     Signed-off-by: Elaine Zhang <zhangqing@rock-chips.com>
+>>     Reviewed-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+>>     Signed-off-by: Eduardo Valentin <edubezval@gmail.com>
+> 
+> I can confirm that the above commit breaks my jerry, though I haven't
+> dug into the details.  :(  Is anyone fixing?  For now I'm just booting
+> with the revert.
+> 
+> 
+> -Doug
 
-CS0 - Serial Flash (unpopulated)
-CS1 - Low Speed expansion
-CS2 - High Speed expansion
+I can also confirm that this breaks boot on our custom board which is
+very similar to the rk3288-Firefly. In my scenario the processor just
+seems to "hang", no reset occurs if that helps debug matters.
 
-Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
----
+Regards,
+Jack.
 
-Changes in v2:
-
-* Used pin constants instead of hardcoding cs-gpios
-
- arch/arm64/boot/dts/rockchip/rk3399-ficus.dts | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts b/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-index 027d428917b8..9af02d859dcd 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-@@ -146,6 +146,12 @@
- 	};
- };
- 
-+&spi1 {
-+	/* On both Low speed and High speed expansion */
-+	cs-gpios = <0>, <&gpio4 RK_PA6 0>, <&gpio4 RK_PA7 0>;
-+	status = "okay";
-+};
-+
- &usbdrd_dwc3_0 {
- 	dr_mode = "host";
- };
--- 
-2.17.1
-
+> 
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
