@@ -2,49 +2,90 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E13E621725
-	for <lists+linux-rockchip@lfdr.de>; Fri, 17 May 2019 12:44:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5F5421DEE
+	for <lists+linux-rockchip@lfdr.de>; Fri, 17 May 2019 21:00:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/CZKnYuA+f9Q97DgD2w9rmpfSA797QGBArsGw7Gk8xg=; b=NDvwBJxBzcf4o7
-	pR4at24frWsgfTWj+p1yFwck0kXMMYjQrCFkdUxDtEXP5EqcjMWY106wOx586NTx04OCM+1PYuuQg
-	VmvqezH3eZaQg3TvkSNPlcM4RWXYPkmFulRoAPy3vseu7GH8HEyfeJPQB3FvEYHx82VWZm6lr1j+U
-	GyYQlGl7iKGjQPrMMw2jiw5IS/Qc1xkR4XZ0bDuW+5iyBR5lTY8jitqfGtiN7tErvjp72Omj6eyyB
-	+BAkaM8lBKbqKUuVmdR4Z1andrJX4OO7+kXxCyJrZcuMnJ7D5uKRdWtVYLIzk8COop0TuVdSIM+S0
-	UHvf2lubbnhr9aLDEfNQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:MIME-Version:Date:Subject:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=QGuQHe+u1wismp6DnyXXBjoFavz8SSLj0hFohLP10kU=; b=n/43JuOKymMTCLQuKubpoqyfoi
+	s8w0g3wKB1KsWaJyLY7VQ2fDdJVAtzfNCn5PJKE6TeqZhoYMj+KL+u0eUODotykSOSZRO4sESLfRF
+	rhkC/ptqfbohi91ULXDkqpBTlLPfZlCA2HvcHM0ReEv2ICrHPGxLYFjIYQCI+YR9xTH9w/a8ITMRF
+	4OcwAziop+BXbCE8b6EHG1Z8jS1SnP5F2mdJqobWxmKRYQXiXbyJ1aaN5GQlxJRVlGhj685KNOeck
+	T75UlJMM4zYhuU2nrxYRvoutzp3pvbeK1oCWzm7SyiGwKxZv8IGx8LJSCjeeZVtgu6USHcSvT1CwL
+	oYnLXu1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRaLj-0004X2-90; Fri, 17 May 2019 10:44:27 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1hRi5F-0002hO-Mb; Fri, 17 May 2019 18:59:57 +0000
+Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRaLa-0004QO-J8; Fri, 17 May 2019 10:44:19 +0000
-Received: from we0524.dip.tu-dresden.de ([141.76.178.12] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hRaLX-0001UL-UH; Fri, 17 May 2019 12:44:15 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Matthias Kaehlcke <mka@chromium.org>
-Subject: Re: [PATCH v2 1/3] ARM: dts: rockchip: raise CPU trip point
- temperature for veyron to 100 degC
-Date: Fri, 17 May 2019 12:44:15 +0200
-Message-ID: <2157639.ILuVUxfVHr@phil>
-In-Reply-To: <20190516162942.154823-1-mka@chromium.org>
-References: <20190516162942.154823-1-mka@chromium.org>
+ id 1hRi5D-0002h3-Fu
+ for linux-rockchip@lists.infradead.org; Fri, 17 May 2019 18:59:56 +0000
+Received: by mail-wr1-x430.google.com with SMTP id f8so1803159wrt.1
+ for <linux-rockchip@lists.infradead.org>; Fri, 17 May 2019 11:59:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:mime-version:message-id:user-agent
+ :content-transfer-encoding;
+ bh=IILn9LdZKZd5ZE/3AdMJNZDfTMe+FYW+zi58vOtnBxU=;
+ b=QbpxluyEeUyEVhtX05kSL1Ds9G4m4RUipUMhQrpOQUH3CSWPsOXNHPnRPA/N1Q3cM+
+ +LAj1UVCxM5td4HalKyAhgHbuo9cyxs4fEuHOysRj7Ms0CnRKxdZ18Vvj9Nqp4nybuT1
+ Qta/pAWo0W05Fwd6s82Emfk8Vqeokb60ZRADfvoBjzlb8sRKZDl6iVQTAfvl2a5rUSti
+ VqRzf5LIvOHyeeaCxPv3Q+EjJSYZY674SfjDG8GNUCLCYMmRXHMDz4hr+8h0pM04qtmV
+ uWTBHAVVdgG9yE9N4tJ9vo9c1/hvgknsvyJAIQ31Hy3dbxr+hN/X8OuOWe26LONjPGJi
+ szww==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
+ :user-agent:content-transfer-encoding;
+ bh=IILn9LdZKZd5ZE/3AdMJNZDfTMe+FYW+zi58vOtnBxU=;
+ b=PMpS6NhLFPWlIkYWm26Ix0PUYlW7IFNAtYSZndHjHLRf4e5v5ttKK6OBdO6ZrCl/pc
+ ugou9DmTns4374bXiDhuDT7MCJEGcI0sWtVbGEpMYEVyYAaE6Wsb5k8Lk3BQXa8fcDRH
+ pyjZ2tICA0exAsbDbBdlfbmGoehe9q+KammonvUwuTQFHTsO3boahtCNmeeHGzLdi/AJ
+ hoHJYxRPOAX2TDIbILLJmiei0RavJ3kSvV8u5F/wAfyjhf/ZB9crV5M9eYtO6jC88H7J
+ 2IcBHF+KAt1GHb71/aePit4XQWuivCjQRR9+Npit3kVjYBd10ItHPoK1BXroIy8CIRKV
+ U/Kw==
+X-Gm-Message-State: APjAAAVigHkD4Yy7nA7/OlxlQzqYtSwmFDLUa6BfP7blr/RDGyWFU2lx
+ o7f0SWOLFZxELwp+LA+DAtdTS3Yj69M=
+X-Google-Smtp-Source: APXvYqxOyMu0j55MBycn8JCb0dIDHSePqTqwwlMCUqOj0dqjHJ5Jq/Z1lJgK7YjdH3vu6JQ9Ov6YSA==
+X-Received: by 2002:a05:6000:1203:: with SMTP id
+ e3mr9524720wrx.300.1558119593432; 
+ Fri, 17 May 2019 11:59:53 -0700 (PDT)
+Received: from localhost ([92.59.185.54])
+ by smtp.gmail.com with ESMTPSA id z74sm14565061wmc.2.2019.05.17.11.59.51
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Fri, 17 May 2019 11:59:52 -0700 (PDT)
+From: Vicente Bergas <vicencb@gmail.com>
+To: Elaine Zhang <zhangqing@rock-chips.com>
+Subject: [regression] thermal: rockchip: temperature not reported
+Date: Fri, 17 May 2019 20:59:51 +0200
 MIME-Version: 1.0
+Message-ID: <6d8575be-7531-43b8-b6f5-9d233f3138c5@gmail.com>
+User-Agent: Trojita
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_034418_781006_6A13A400 
-X-CRM114-Status: GOOD (  10.24  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190517_115955_556503_3A04BC0B 
+X-CRM114-Status: UNSURE (   4.31  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:430 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (vicencb[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -57,38 +98,18 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-rockchip@lists.infradead.org, Heiko Stuebner <heiko@sntech.de>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Donnerstag, 16. Mai 2019, 18:29:40 CEST schrieb Matthias Kaehlcke:
-> This value matches what is used by the downstream Chrome OS 3.14
-> kernel, the 'official' kernel for veyron devices. Keep the temperature
-> for 'speedy' at 90=B0C, as in the downstream kernel.
-> =
-
-> Increase the temperature for a hardware shutdown to 125=B0C, which
-> matches the downstream configuration and gives the system a chance
-> to shut down orderly at the criticial trip point.
-> =
-
-> Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
-
-applied all 3 for 5.3 with Doug's RB and did a small fix to the commit
-message of patch2 ("thorse").
-
-Thanks
-Heiko
-
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGVsbG8sCgpjb21taXQgMjg2OTRlMDA5ZTUxMjQ1MWVhZDU1MTlkZDgwMWY5ODY5YWNiMWY2MAp0
+aGVybWFsOiByb2NrY2hpcDogZml4IHVwIHRoZSB0c2FkYyBwaW5jdHJsIHNldHRpbmcgZXJyb3IK
+CmJyb2tlIHRlbXBlcmF0dXJlIHJlYWRpbmdzLgpTaW5jZSB0aGlzIGNvbW1pdCB0aGUgdGVtcGVy
+YXR1cmVzIGFyZSByZWFkIGFzIDAgYW5kIHRoZSBmYW4gaXMgYWx3YXlzIG9uLgpUZXN0ZWQgb24g
+dGhlIFNhcHBoaXJlIGJvYXJkLCBhIFJLMzM5OSBwbGF0Zm9ybS4KClJlZ2FyZHMsCiAgVmljZW7D
+py4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51
+eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tj
+aGlwCg==
