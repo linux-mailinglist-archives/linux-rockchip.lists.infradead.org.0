@@ -2,83 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B5CC22372
-	for <lists+linux-rockchip@lfdr.de>; Sat, 18 May 2019 14:06:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C73462237F
+	for <lists+linux-rockchip@lfdr.de>; Sat, 18 May 2019 14:29:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8OnkH+Ljwxtzjgbi6nUrKs+4lTaQn8G9smWUa1Rkr9I=; b=iGktF53ZHZwl2c
-	SAS1mmwOOcX24TRd4+VdP4Mia/CmCQeDixbQ+B5TtOgrhKC49qYXWiVk9S9fJmv84nH44RmVbX/Se
-	DyT4OxAp3u5Axr3dj+2gen0IvydlAJi+dC9Dbq4hJVv8BTQX3rEEHax+Y1l2aTDfHpIef1ilXaMGr
-	0vW01WuSyoG9NMHIld7Ec+Fi5lQint5tVQZeot35kkO71aVEq/P/bqoRjOIg5mAvhsesTssRTx1BA
-	fxS8vMCwsIhWFs/ooU2t6plBw/Szt/OZGM9jJrfItAiwGRi3DAc6B0u4yY0aDeoVvs77bs35gLk0o
-	WlwgcZrKuayiWEmbZBAg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:References:In-Reply-To:Message-ID:MIME-Version:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8izlJNXbX7sr6O79+iRLnRI83brTFN6gQcDucOua56Y=; b=AInxaNN+Nl0/kLBaq0FI+R854
+	av6sp/a3RJI77AFt4V75fURUwlFpEtBG2qJLlqxP9iSYrwDOWXnOXb1IMlBprSFqHZgUVFTVBuY+G
+	MHbQ2yxFSPR0w4pC1ushJ+34gyH5XWJjKt7ldC0GJgWnO3wZ0zd+swcdUbbzp3oDR+54s0B2DLBSB
+	uPAex/W0jMI3izTk62iHZf0ZDufHqkYNA6XMVws9YlbVhgu5Qztk/PbkZuV+ID61jGWx/BTpxHIEo
+	iGFANljA2UrXC3UUbpPmCOerYBX4aDM9nV7qbn0YCpMJ56qrTQK/YoeeM6cD6edEgIr+SycQKD3VC
+	jhYN1p1Sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRy6a-0002k0-Cd; Sat, 18 May 2019 12:06:24 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1hRyTG-0000jM-FK; Sat, 18 May 2019 12:29:50 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRy6V-0002jZ-Nf
- for linux-rockchip@lists.infradead.org; Sat, 18 May 2019 12:06:22 +0000
-Received: by mail-qt1-x841.google.com with SMTP id k24so11085622qtq.7
- for <linux-rockchip@lists.infradead.org>; Sat, 18 May 2019 05:06:18 -0700 (PDT)
+ id 1hRyTC-0000iw-W4
+ for linux-rockchip@lists.infradead.org; Sat, 18 May 2019 12:29:48 +0000
+Received: by mail-wr1-x443.google.com with SMTP id b18so9697243wrq.12
+ for <linux-rockchip@lists.infradead.org>; Sat, 18 May 2019 05:29:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=04m73gM70KQavhtW7qdWKarBML794oLZhvTsO5kuO4g=;
- b=HGy/l2ukTwfl50iG4B/BelYLIMkuwstJdF+BfFWli27KOa0D+5wCWzuQe+ubNcnQNR
- 2sX6Zkl/f87YInw8XykRwU0Pp9xV6hrtmP28FSjK+7OLGGAviSLGWGQX4DU0i3q/nvpL
- mBBN3iXs6jIoSMcw7YPyIsLC7B/buf4hDqGufKusCBRt8jmjgmBj3cEbXzSqjUpqiSMQ
- OD24CdJX7COAv7SxAZ5msT5h8W13t0Od9MQg4htjgq81KBspOaWUhtZGL8hya9PegKud
- HLCYtMC5G5tyXjV3gXh7f3wEB72eTuxXJ3I59pMqHFrfsKYfoMO3YjFTPDdvav6tP6IU
- EdfA==
+ h=from:to:cc:subject:date:mime-version:message-id:in-reply-to
+ :references:user-agent:content-transfer-encoding;
+ bh=qb7+Ies/2uVXsOi5qhulV/WRfvPjXww4diTcYzo+5OE=;
+ b=uaM8v3Qv8f2AKQM8yX1a9Pav1xOOa4y5IQqN01UAQbrtDBLmBm9+/AlDBDm/g3vR6J
+ EUvJSNXSMC3R0/6W6Y9m1eV9I/GMS8B9xJGu2Uzw0J0GD8b5fI87wbBeIWt7MTYkhVib
+ P40FNDX+ctX6DvxyKkS4wWf3xNOZgi44CvztrU6hEBiuCGCgawNpK50TP7rfhHFlEhgm
+ TA7hJE24CHf2A0qDsA+7Py8fleUkRXm2p3j7HrJHj8JvD4ilEsISwSFtQDgRl7ppCsgQ
+ c+TgYzDXWudg2LwB4cQ4epic8sc97xzYQsZTwFNyHMX3Lw5cIMpRVwQldK5DEV8FOs84
+ WTxA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=04m73gM70KQavhtW7qdWKarBML794oLZhvTsO5kuO4g=;
- b=JAi2J9d3wpOJtbWHQ7533umHYbHB1729wQHKMKz92GSyL2s1tneR3RYTbNzrfbFf2N
- DrOpIHhHWbFpLTaO/JwzaM8FI/x9knRdM6SvPaYOeTk4Cn23Z7f2gXfVyl6V874KHUjA
- vMPZ7Lfq/K6JbmzMbL7YSn0xfUSzc0SWDzah/rFhBEmpTJVe45krlUHXVY+Ugusz4pcG
- Xidj37yPcL2nwxN1C5XB9okCW6JhlAlUDjmQfuFdN4V3NvfOBR+2Mof+12Bla42y/Vcf
- FO/grt4JLG1exaJ4HL8reclmePDF2ynHm2SUWy5avHPkXVYpAEvur7jfHp7rpNoqzQPV
- CGHg==
-X-Gm-Message-State: APjAAAV+dhMBAtYkQbdXzHpBlEOuV0bzXhM6+XaNxqm13azTI5NafpxZ
- XsC2PRtgxiP7lOpYDElB3dEIgaPJS/ve0ydLsBo=
-X-Google-Smtp-Source: APXvYqwd9L335a4CMRMLAa6yZ8N7DADPguut0sWXo4rzXoA5jHEVrYd49D/K3vBvYG+cU0cy6CDgzsWiiYAWCFgROLE=
-X-Received: by 2002:ac8:e81:: with SMTP id v1mr54041955qti.16.1558181176987;
- Sat, 18 May 2019 05:06:16 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
+ :in-reply-to:references:user-agent:content-transfer-encoding;
+ bh=qb7+Ies/2uVXsOi5qhulV/WRfvPjXww4diTcYzo+5OE=;
+ b=VRHpZsQa9iYtRd7vBy86mfMSQpCcyECrgCH9FBsOC5nMyqIe1sx2xQlfT26NV6FMWY
+ 0JQtsYUvDeLUJLl8i47Iz4DV4p6HGVSf4p+KSveoN7xCPCGCsNqrfItmRLecNQ2XFSN0
+ AGuYwqOW4nVE6RybEhM3TTkGNh+W1KVsdQ45Ni6bP1fLUcyxJT6hKdyUmHyJhtyC8yba
+ wt46+UjJnsIjgMXELJ3N6ShSVpTxwnxwHFJoKMuzywXRYYUZ/KUeCHasKZzXPwOF4N03
+ 0aw9PPEr+Ucdmq09ujJU7LnNB2BYfsxDtxFIOg0Ygc+U5s78qVZKSyTVkMETjr7NiePB
+ /2zQ==
+X-Gm-Message-State: APjAAAU9W+VB4HsqNlSaTMvnugXYAtK7fFF+YUTmf5IhtWDiYprQT7J3
+ VBbT+4Pxnks3xU7m6PQtkhw=
+X-Google-Smtp-Source: APXvYqzEy5VTCCCZiBe9hypGHFfGy9NgpGR5ZfM1wg2V6/90m9BUl8jsH+7w7KeTJd4nV5md/cb2BQ==
+X-Received: by 2002:a5d:638a:: with SMTP id p10mr12153153wru.273.1558182583516; 
+ Sat, 18 May 2019 05:29:43 -0700 (PDT)
+Received: from localhost ([92.59.185.54])
+ by smtp.gmail.com with ESMTPSA id b10sm25859002wrh.59.2019.05.18.05.29.42
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Sat, 18 May 2019 05:29:42 -0700 (PDT)
+From: Vicente Bergas <vicencb@gmail.com>
+To: Heiko Stuebner <heiko@sntech.de>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ William wu <wulf@rock-chips.com>
+Subject: Re: [PATCH v2] arm64: dts: rockchip: Fix Type-C port supply in
+ =?iso-8859-1?Q?Sapphire_board?=
+Date: Sat, 18 May 2019 14:29:41 +0200
 MIME-Version: 1.0
-References: <066a0d38-2c64-7a1e-d176-04341f0cb6d7@gmail.com>
- <20190512023754.GK4889@lunn.ch>
- <ae62419b-53f1-395d-eb0e-66d138d294a8@gmail.com>
- <4c6ef3f1-a2c7-f2da-3f2a-cd28624007f8@gmail.com>
- <CAMdYzYqcg3EXhLguTti2hP-0VVi_vX0XvoDSzTCC84p9aSp7Lg@mail.gmail.com>
- <20190514161957.yq7mw3wccuie6rr3@mobilestation>
-In-Reply-To: <20190514161957.yq7mw3wccuie6rr3@mobilestation>
-From: Peter Geis <pgwipeout@gmail.com>
-Date: Sat, 18 May 2019 08:06:08 -0400
-Message-ID: <CAMdYzYr_w8Qna4gvuNeNtGd2yZt0Zqu+5fHPwWQ1VgbfU8O0qQ@mail.gmail.com>
-Subject: Re: [Regression] "net: phy: realtek: Add rtl8211e rx/tx delays
- config" breaks rk3328-roc-cc networking
-To: Serge Semin <fancer.lancer@gmail.com>
+Message-ID: <574f2bae-0121-4cc7-ad9a-5ba32315d71b@gmail.com>
+In-Reply-To: <4199457.qejmJXf6nG@phil>
+References: <3744467.8gaGBgj8zp@phil>
+ <20180910161029.1948-1-vicencb@gmail.com> <4199457.qejmJXf6nG@phil>
+User-Agent: Trojita
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190518_050619_800268_E4517050 
-X-CRM114-Status: GOOD (  17.15  )
+X-CRM114-CacheID: sfid-20190518_052947_058173_FEA124E0 
+X-CRM114-Status: GOOD (  14.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pgwipeout[at]gmail.com)
+ provider (vicencb[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -98,171 +102,63 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- Serge Semin <Sergey.Semin@t-platforms.ru>, netdev@vger.kernel.org,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "David S. Miller" <davem@davemloft.net>,
- Heiner Kallweit <hkallweit1@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-rockchip@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, May 14, 2019 at 12:20 PM Serge Semin <fancer.lancer@gmail.com> wrote:
->
-> Hello Peter
->
-> On Tue, May 14, 2019 at 07:53:21AM -0400, Peter Geis wrote:
-> > On Sun, May 12, 2019 at 3:34 AM Heiner Kallweit <hkallweit1@gmail.com> wrote:
-> > >
-> > > On 12.05.2019 04:50, Peter Geis wrote:
-> > > > On 5/11/2019 10:37 PM, Andrew Lunn wrote:
-> > > >> On Sat, May 11, 2019 at 07:17:08PM -0400, Peter Geis wrote:
-> > > >>> Good Evening,
-> > > >>>
-> > > >>> Commit f81dadbcf7fd067baf184b63c179fc392bdb226e "net: phy: realtek: Add
-> > > >>> rtl8211e rx/tx delays config" breaks networking completely on the
-> > > >>> rk3328-roc-cc.
-> > > >>> Reverting the offending commit solves the problem.
-> > > >>
-> > > >> Hi Peter
-> > > >>
-> > > >> The fix should be in net, and will soon make its way upwards.
-> > > >>
-> > > >>      Andrew
-> > > >>
-> > > >
-> > > >
-> > > > Good Evening,
-> > > >
-> > > > Thanks, is there a link to the patch so I may test it?
-> > > >
-> > > https://git.kernel.org/pub/scm/linux/kernel/git/davem/net.git/commit/?id=daf3ddbe11a2ff74c95bc814df8e5fe3201b4cb5
-> > >
-> > > > Peter
-> > > >
-> > > Heiner
-> >
-> > This patch does correct the error message on boot, however networking
-> > is still completely broken.
-> > The current error is as follows:
-> >
-> > [  121.829375] kworker/3:1     D    0    67      2 0x00000028
-> > [  121.829398] Workqueue: events linkwatch_event
-> > [  121.829403] Call trace:
-> > [  121.829412]  __switch_to+0xb8/0x1a8
-> > [  121.829420]  __schedule+0x220/0x560
-> > [  121.829423]  schedule+0x38/0xd8
-> > [  121.829429]  schedule_preempt_disabled+0x20/0x38
-> > [  121.829435]  __mutex_lock.isra.1+0x1c4/0x500
-> > [  121.829438]  __mutex_lock_slowpath+0x10/0x18
-> > [  121.829443]  mutex_lock+0x2c/0x38
-> > [  121.829449]  rtnl_lock+0x14/0x20
-> > [  121.829453]  linkwatch_event+0xc/0x38
-> > [  121.829461]  process_one_work+0x1e0/0x320
-> > [  121.829466]  worker_thread+0x40/0x428
-> > [  121.829473]  kthread+0x120/0x128
-> > [  121.829476]  ret_from_fork+0x10/0x18
-> > [  121.829533] INFO: task NetworkManager:1833 blocked for more than 61 seconds.
-> > [  121.830160]       Not tainted
-> > 5.1.0-next-20190510test-00009-g3ed182aaa670-dirty #55
-> > [  121.830831] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs"
-> > disables this message.
-> > [  121.831589] NetworkManager  D    0  1833      1 0x00000028
-> > [  121.831601] Call trace:
-> > [  121.831614]  __switch_to+0xb8/0x1a8
-> > [  121.831623]  __schedule+0x220/0x560
-> > [  121.831631]  schedule+0x38/0xd8
-> > [  121.831639]  schedule_preempt_disabled+0x20/0x38
-> > [  121.831647]  __mutex_lock.isra.1+0x1c4/0x500
-> > [  121.831666]  __mutex_lock_slowpath+0x10/0x18
-> > [  121.831671]  mutex_lock+0x2c/0x38
-> > [  121.831687]  mdiobus_write+0x40/0x80
-> > [  121.831698]  rtl8211e_config_init+0x60/0xa0 [realtek]
-> > [  121.831706]  phy_init_hw+0x54/0x70
-> > [  121.831714]  phy_attach_direct+0xd4/0x250
-> > [  121.831720]  phy_connect_direct+0x20/0x70
-> > [  121.831728]  phy_connect+0x54/0xa0
-> > [  121.831741]  stmmac_init_phy+0x17c/0x200
-> > [  121.831748]  stmmac_open+0x124/0xac0
-> > [  121.831759]  __dev_open+0xd8/0x158
-> > [  121.831762]  __dev_change_flags+0x164/0x1c8
-> > [  121.831766]  dev_change_flags+0x20/0x60
-> > [  121.831774]  do_setlink+0x288/0xba8
-> > [  121.831778]  __rtnl_newlink+0x5cc/0x6e8
-> > [  121.831783]  rtnl_newlink+0x48/0x70
-> > [  121.831786]  rtnetlink_rcv_msg+0x120/0x368
-> > [  121.831807]  netlink_rcv_skb+0x58/0x118
-> > [  121.831811]  rtnetlink_rcv+0x14/0x20
-> > [  121.831816]  netlink_unicast+0x180/0x1f8
-> > [  121.831822]  netlink_sendmsg+0x190/0x330
-> > [  121.831837]  sock_sendmsg+0x3c/0x58
-> > [  121.831844]  ___sys_sendmsg+0x268/0x2a0
-> > [  121.831849]  __sys_sendmsg+0x68/0xb8
-> > [  121.831855]  __arm64_sys_sendmsg+0x20/0x28
-> > [  121.831864]  el0_svc_common.constprop.0+0x7c/0xe8
-> > [  121.831870]  el0_svc_handler+0x28/0x78
-> > [  121.831875]  el0_svc+0x8/0xc
->
-> Thanks for sending the report. The fix has already been found and applied
-> to the net-next:
-> https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git/commit/?id=dffe7d2e04670ff98e4dacf258df30446e2e80d4
->
-> -Sergey
-
-Thanks, this fixes networking, but there are now complaints about
-leaking references.
-
-[   59.504597] ------------[ cut here ]------------
-[   59.504613] remove_proc_entry: removing non-empty directory
-'net/rpc', leaking at least 'use-gss-proxy'
-[   59.504677] WARNING: CPU: 3 PID: 7 at fs/proc/generic.c:683
-remove_proc_entry+0x178/0x188
-[   59.504682] Modules linked in: fuse bridge stp llc
-snd_soc_hdmi_codec dw_hdmi_i2s_audio aes_ce_blk crypto_simd
-aes_ce_cipher crct10dif_ce ghash_ce aes_arm64 sha2_ce sha256_arm64
-sha1_ce rockchipdrm pwm_fan dw_hdmi lima snd_soc_simple_card
-snd_soc_simple_card_utils drm_kms_helper gpu_sched drm
-snd_soc_rockchip_i2s drm_panel_orientation_quirks snd_soc_rockchip_pcm
-squashfs sch_fq_codel ip_tables x_tables ipv6 crc_ccitt btrfs xor
-xor_neon zstd_compress raid6_pq libcrc32c zstd_decompress rtc_rk808
-realtek
-[   59.504768] CPU: 3 PID: 7 Comm: kworker/u8:0 Not tainted
-5.1.0-next-20190514test-13354-gfd862c6fd105 #57
-[   59.504770] Hardware name: Firefly roc-rk3328-cc (DT)
-[   59.504790] Workqueue: netns cleanup_net
-[   59.504794] pstate: 40400005 (nZcv daif +PAN -UAO)
-[   59.504801] pc : remove_proc_entry+0x178/0x188
-[   59.504805] lr : remove_proc_entry+0x178/0x188
-[   59.504807] sp : ffff00001120fc80
-[   59.504809] x29: ffff00001120fc80 x28: 0000000000000000
-[   59.504814] x27: ffff800003284b38 x26: ffff000010c2ba00
-[   59.504818] x25: 0000000000000000 x24: ffff80000ababc50
-[   59.504822] x23: ffff8000036e5640 x22: ffff8000036e56eb
-[   59.504825] x21: ffff8000036e8feb x20: ffff000010f03688
-[   59.504829] x19: ffff8000036e8f40 x18: ffff000010f17000
-[   59.504833] x17: 0000000000000001 x16: 0000000000000007
-[   59.504836] x15: 00000000fffffff0 x14: 696b61656c202c27
-[   59.504840] x13: 6370722f74656e27 x12: 2079726f74636572
-[   59.504845] x11: 6964207974706d65 x10: 2d6e6f6e20676e69
-[   59.504849] x9 : 0000000000000000 x8 : 0000000000000004
-[   59.504853] x7 : 00000000000001c0 x6 : ffff000010ff5000
-[   59.504856] x5 : 0000000000000001 x4 : ffff8000fead22a8
-[   59.504860] x3 : ffff8000fead22a8 x2 : 0000000000000007
-[   59.504864] x1 : e5b404e852ff9000 x0 : 0000000000000000
-[   59.504868] Call trace:
-[   59.504874]  remove_proc_entry+0x178/0x188
-[   59.504884]  rpc_proc_exit+0x18/0x20
-[   59.504906]  sunrpc_exit_net+0x48/0x70
-[   59.504915]  ops_exit_list.isra.0+0x44/0x78
-[   59.504918]  cleanup_net+0x1a8/0x2c0
-[   59.504934]  process_one_work+0x1e0/0x320
-[   59.504939]  worker_thread+0x40/0x428
-[   59.504948]  kthread+0x120/0x128
-[   59.504955]  ret_from_fork+0x10/0x18
-[   59.504962] ---[ end trace 66885a1575002df1 ]---
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gTW9uZGF5LCBTZXB0ZW1iZXIgMTAsIDIwMTggNzoxOToyMCBQTSBDRVNULCBIZWlrbyBTdHVl
+Ym5lciB3cm90ZToKPiBBbSBNb250YWcsIDEwLiBTZXB0ZW1iZXIgMjAxOCwgMTg6MTA6MjkgQ0VT
+VCBzY2hyaWViIFZpY2VudGUgQmVyZ2FzOgo+PiBUaGUgcmVmZXJlbmNlIGlzIHRoZSBzY2hlbWF0
+aWMsIHBhZ2UgMTE6Cj4+IGh0dHBzOi8vZGwudmFtcnMuY29tL3Byb2R1Y3RzL3NhcHBoaXJlX2V4
+Y2F2YXRvci9SS19TQVBQSElSRV9TT0NCT0FSRF9SSzMzOTlfTFBERFIzRDE3OFAyMzJTRDhfVjEy
+XzIwMTYxMTA5SFhTLnBkZgo+PiAoYWx0ZXJuYXRlIGxpbmspCj4+IGh0dHA6Ly9vcGVuc291cmNl
+LnJvY2stY2hpcHMuY29tL2ltYWdlcy9mL2YwL1JLX1NhcHBoaXJlX1JLMzM5OS5yYXIKPj4gCj4+
+IENoYW5nZXMgaW4gdjI6Cj4+ICBUaGUgcG93ZXIgc3VwcGx5IGlzIGFwcGxpZWQgdG8gdGhlIE9U
+RyBwb3J0Lgo+PiAKPj4gU2lnbmVkLW9mZi1ieTogVmljZW50ZSBCZXJnYXMgPHZpY2VuY2JAZ21h
+aWwuY29tPgo+Cj4gYXBwbGllZCBmb3IgNC4yMAo+Cj4KPj4gSGkgSGVpa28sCj4+IHlvdXIgYXBw
+cm9hY2ggbWFrZXMgc2Vuc2UsIGkganVzdCB0cmllZCBpdCBhbmQgdGhlIFR5cGUtQyBwb3J0IGlz
+Cj4+IHN0aWxsIHBvd2VyZWQtb24sIGxpa2Ugd2l0aCB0aGUgcHJldmlvdXMgcGF0Y2guCj4+IEJ1
+dCBzYWRseSBzdGlsbCBubyBkYXRhIGZsb3cuCj4+IAo+PiBJIGhhdmUgZ290IGEgZ3J1L2tldmlu
+IGFuZCBhbHNvIGJvdWdodCBhIFVTQi1DIHRvIFNBVEEgYnJpZGdlCj4+IGZvciBpdC4gVGhlIGJy
+aWRnZSB3b3JrcyBmaW5lIG9uIGtldmluIHdpdGgga2VybmVsIDQuNCwgc3RpbGwgbm90Cj4+IHRl
+c3RlZCB3aXRoIG1haW5saW5lLgo+PiAKPj4gQnV0IHdoZW4gcGx1Z2dlZCBpbnRvIHRoZSBTYXBw
+aGlyZSB0aGVyZSBpcyBhbiBMRUQgdGhhdCBzaG93cyBpdAo+PiBpcyBwb3dlcmVkLW9uIGFuZCBu
+b3RoaW5nIGVsc2UuIE9uIHRoZSBsaW51eCBzaWRlLCBkbWVzZyBzaG93cyBubwo+PiBtZXNzYWdl
+cy4KPj4gCj4+IENvbXBhcmluZyB0aGUgVVNCIHBvcnRpb24gb2YgdGhlIERUUyB3cnQgRmlyZWZs
+eSBpIHNlZSBubwo+PiBzaWduaWZpY2FudCBkaWZmZXJlbmNlcy4KPj4gCj4+IEFyZSB0aGVyZSBv
+dGhlciBTYXBwaGlyZSBib2FyZCB1c2VycyB0aGF0IGNhbiBjb25maXJtIGlmIHRoZQo+PiBUeXBl
+LUMgcG9ydCB3b3JrcyBvciBub3Q/IFRoYXQgd291bGQgaGVscCB0byBkaXNjYXJkIGEgSFcgaXNz
+dWUuCj4KPiBFbnJpYyB3YXMgd29ya2luZyBvbiBhIHNpbWlsYXIgYm9hcmQsIG1heWJlIGhlIHJl
+bWVtYmVyIHNvbWUKPiBwZWN1bGlhcml0aWVzLgoKSGksCmkgaGF2ZSB0YWtlbiBhbm90aGVyIGxv
+b2sgYXQgdGhlIFVTQjMgVHlwZS1DIHBvcnQgb2YgdGhlIFNhcHBoaXJlIGJvYXJkCmFuZCBtYWRl
+IGEgbGl0dGxlIGJpdCBvZiBwcm9ncmVzcy4gTm93IHRoZXJlIGlzIHNvbWUgZGF0YSB0cmFuc2Zl
+ciwgYnV0CnN0aWxsIG5vdCB3b3JraW5nLgoKQXBwbHlpbmcgdGhpcyBwYXRjaDoKLS0tIGEvYXJj
+aC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzOTktc2FwcGhpcmUuZHRzaQorKysgYi9hcmNo
+L2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5OS1zYXBwaGlyZS5kdHNpCkBAIC0xMTIsNiAr
+MTExLDcgQEAKIAkJcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKIAkJcGluY3RybC0wID0gPCZ2
+Y2M1djBfdHlwZWMwX2VuPjsKIAkJcmVndWxhdG9yLW5hbWUgPSAidmNjNXYwX3R5cGVjMCI7CisJ
+CXJlZ3VsYXRvci1hbHdheXMtb247CiAJCXZpbi1zdXBwbHkgPSA8JnZjY19zeXM+OwogCX07CiAK
+YW5kIGhhdmluZyBhIG1lbW9yeSBzdGljayBwbHVnZ2VkIGludG8gdGhlIHBvcnQgZnJvbSBwb3dl
+ci11cCwgdGhlIApmb2xsb3dpbmcgaGFwcGVuczoKMS4tIFRoZSBtZW1vcnkgc3RpY2sgTEVEIGxp
+Z2h0cyBvbiBhbmQga2VybmVsIHJlcG9ydHM6ClsgICAgNC43ODI5OTldIHNjc2kgMDowOjA6MDog
+RGlyZWN0LUFjY2VzcyAgICAgVVNCICAgICAgRElTSyAgICAgICAgICAgICAKUE1BUCBQUTogMCBB
+TlNJOiA0ClsgICAgNS45MDQ1ODBdIHNkIDA6MDowOjA6IFtzZGJdIDM5MTMzNDQgNTEyLWJ5dGUg
+bG9naWNhbCBibG9ja3M6ICgyLjAwIApHQi8xLjg3IEdpQikKWyAgICA1LjkwNjg2MF0gc2QgMDow
+OjA6MDogW3NkYl0gV3JpdGUgUHJvdGVjdCBpcyBvZmYKWyAgICA1LjkwODk3M10gc2QgMDowOjA6
+MDogW3NkYl0gTW9kZSBTZW5zZTogMjMgMDAgMDAgMDAKWyAgICA1LjkwOTEyMl0gc2QgMDowOjA6
+MDogW3NkYl0gTm8gQ2FjaGluZyBtb2RlIHBhZ2UgZm91bmQKWyAgICA1LjkxMTIxNF0gc2QgMDow
+OjA6MDogW3NkYl0gQXNzdW1pbmcgZHJpdmUgY2FjaGU6IHdyaXRlIHRocm91Z2gKWyAgICA1Ljk1
+MTU4NV0gIHNkYjogc2RiMQpbICAgIDUuOTU0ODE2XSBzZCAwOjA6MDowOiBbc2RiXSBBdHRhY2hl
+ZCBTQ1NJIHJlbW92YWJsZSBkaXNrCjIuLSA0IHNlY29uZHMgbGF0ZXIgdGhlIG1lbW9yeSBzdGlj
+ayBMRUQgbGlnaHRzIG9mZiBhbmQga2VybmVsIHJlcG9ydHM6ClsgICAgOS4wODI4MjJdIHBoeSBw
+aHktZmY3NzAwMDAuc3lzY29uOnVzYjItcGh5QGU0NTAuMjogY2hhcmdlciA9IApVU0JfRENQX0NI
+QVJHRVIKMy4tIEFmdGVyIGEgbWludXRlIHRoZSBrZXJuZWwgcmVwb3J0czoKWyAgIDcxLjY2Njc2
+MV0gdXNiIDUtMTogVVNCIGRpc2Nvbm5lY3QsIGRldmljZSBudW1iZXIgMgoKVGhlIHVzYiB2YnVz
+IGlzIHByZXNlbnQgYWxsIHRoZSB0aW1lLCBzbywgaXQgZG9lcyBub3QgbG9vawpsaWtlIGFuIGlz
+c3VlIG9mIHRoZSB2Y2M1djBfdHlwZWMwIHJlZ3VsYXRvci4KClBsZWFzZSwgY2FuIHlvdSBoZWxw
+IG1lIGRlYnVnZ2luZyB0aGlzIGlzc3VlPwoKUmVnYXJkcywKICBWaWNlbsOnLgoKCl9fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1h
+aWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
