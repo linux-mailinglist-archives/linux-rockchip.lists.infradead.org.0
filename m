@@ -2,75 +2,93 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1A1F22DA4
-	for <lists+linux-rockchip@lfdr.de>; Mon, 20 May 2019 10:04:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C31E22E0D
+	for <lists+linux-rockchip@lfdr.de>; Mon, 20 May 2019 10:11:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Vwhg9W5qZT7ARuwgbrvhq4HR2ly34AByfk98ouLUS6o=; b=moIQmH448t187gK6zcfdbrhD+
-	bb8ZwigxfFTMCURrUsPWDHVEqUj+jY+29a+5vJP29CZxGov5Qpp84K+JcvsEZWx8YrwBJ0qXGW7p7
-	udKLJxuFoXNi+jCDtbTRMWkUMirRNHlGizVYiPchEOLYLY/1LOt3UBogIiM4jZ4v7dYxDqUj4PsWc
-	sLiRSqwSW/SXaKiGAuRfg7Mn6XM3x2Ah0Zm3YTHHEmT8ps9P4gBf8aVXoF7wmnWo9JIy/YIXvoWb4
-	TqN98pA452zT319QEy/+bkPbx2unmQKHyLnVqlv9Wznf0gvlA4Y7ao9gcOmFLGDvjYdr+ERPf/lVO
-	J4ZSqtG4Q==;
+	 bh=DVxCFPzCKVq5mEtp2v/sB/fOeAF3qeYkQwwkc7c1wLQ=; b=b61/7UWELztGxU+8gUHYO1EGS
+	18PXOJPVcC2+jTsos0QHx8yj9M9wayhxiyrAKm1BUFTWaeM4tZNYHAgxrGfhMHX2lKZE5MRvPZfSG
+	7q5pXIuc6Ucj8rRVltTaw7xs8eY2umhr0IzN1gKv5MwyXatSNwxuJQUOKX/OW900daG1ny23iS95u
+	vYXzF0eUffOhgVtAwSBDQGQWi6qk3mmvbVgbVMAaNfxxb2UkI9rcLoScVlZ4AgYU5e+Klev+dupim
+	Z0BRyn2GUPlmX7oexaS24o1zEN048lfK9uIXnajvF2rO2vYRHZmGVTEb9oiy70rsxndoOFrEg1G+3
+	4+QC8w1OQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSdHe-0008Gg-El; Mon, 20 May 2019 08:04:34 +0000
-Received: from regular1.263xmail.com ([211.150.70.199])
+	id 1hSdOB-0000qp-UC; Mon, 20 May 2019 08:11:19 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSdHS-0007zE-Qu; Mon, 20 May 2019 08:04:25 +0000
-Received: from wxt?rock-chips.com (unknown [192.168.167.161])
- by regular1.263xmail.com (Postfix) with ESMTP id 1F4D63EE;
- Mon, 20 May 2019 16:04:14 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from [172.16.21.194] (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P32757T140039436609280S1558339450334725_; 
- Mon, 20 May 2019 16:04:11 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <c6a2d7109fd86b9f3d455bed21fbadbc>
-X-RL-SENDER: wxt@rock-chips.com
-X-SENDER: wxt@rock-chips.com
-X-LOGIN-NAME: wxt@rock-chips.com
-X-FST-TO: hjc@rock-chips.com
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-Subject: Re: [PATCH] phy: rockchip-dp: Avoid power leak by leaving the PHY
- power on
+ id 1hSdMe-0006LZ-Gs
+ for linux-rockchip@lists.infradead.org; Mon, 20 May 2019 08:09:52 +0000
+Received: by mail-ed1-x544.google.com with SMTP id j12so22478186eds.7
+ for <linux-rockchip@lists.infradead.org>; Mon, 20 May 2019 01:09:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=hKt31xD+Dl8MzM54WFXgU95OQA9AwS6wGbeoPpSKfXE=;
+ b=I2Lnt/WtkJjDLrDgWSYRJHdM95JskcT/jxH9QckQMcj/7PmrJgwgQz6Q6ftoKRwTZ9
+ 9vCkHGOEX5MxLnlEtV98FPcLqUiMFStugzKSpO0A48EXDefeXgWbIHhMTwzBSzmXikZ5
+ CPJXahNcXca0FGjVF22eGZbd6XPVxBMapmwYg=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=hKt31xD+Dl8MzM54WFXgU95OQA9AwS6wGbeoPpSKfXE=;
+ b=Zw8FyuKuIZEj52zYwIh3cMLxpQSeFwkc9oSzZdfibKuFZuH3Wi8jvwlQ6EDztTtHML
+ wQRLaqESDCUDYeWN2wgM6PYC0TOUMsyyVoP6GyzcPa8NaHx2XD669myXvzVhYmnRKYSh
+ Io8IGrt4Z28oYa0hPU4vIWa0Dz8Go/956vqcrZ/hGGzQMD1ixIfGq6fVRfysBXt3nR7g
+ CijsFSfcAPaKTmZLlZyTdNruWnGWdQ6rMXivGEcs4xAcVouPBSrlujLJc73kiaqmrTSa
+ URt4+0Py4qRqc3Zobfqmct5eRs3ZsYJCwcNPKW39/Dn0nudvsK4iRgc+ZWbRC2Jv4Y2M
+ avzg==
+X-Gm-Message-State: APjAAAVGwNStLcI8s1Y3g/dXsqRKWj0+6GnY/ESnvKuTwelZLC39H9xy
+ H7hqQaa/I/0SMWwk0/fQlvIcaA==
+X-Google-Smtp-Source: APXvYqyzT9sszHOtK0V/iwAwNW8LGsXi2uW7QI5DTUVDOy96+wSa9nUb5iDqOpm++yl3P0LW/Icifw==
+X-Received: by 2002:aa7:c4d2:: with SMTP id p18mr73940804edr.232.1558339782382; 
+ Mon, 20 May 2019 01:09:42 -0700 (PDT)
+Received: from [10.176.68.125] ([192.19.248.250])
+ by smtp.gmail.com with ESMTPSA id x22sm5441295edd.59.2019.05.20.01.09.40
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 20 May 2019 01:09:41 -0700 (PDT)
+Subject: Re: [PATCH 1/3] brcmfmac: re-enable command decode in sdio_aos for
+ BRCM 4354
 To: Douglas Anderson <dianders@chromium.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Heiko Stuebner <heiko@sntech.de>
-References: <20190507234857.81414-1-dianders@chromium.org>
-From: Caesar Wang <wxt@rock-chips.com>
-Message-ID: <79ca5499-6b7d-fe55-2030-283f5cfb1d27@rock-chips.com>
-Date: Mon, 20 May 2019 16:04:11 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Ulf Hansson <ulf.hansson@linaro.org>, Kalle Valo <kvalo@codeaurora.org>,
+ Adrian Hunter <adrian.hunter@intel.com>
+References: <20190517225420.176893-1-dianders@chromium.org>
+ <20190517225420.176893-2-dianders@chromium.org>
+From: Arend Van Spriel <arend.vanspriel@broadcom.com>
+Message-ID: <e3f54bcb-8d10-1336-1458-2bd11cfc1010@broadcom.com>
+Date: Mon, 20 May 2019 10:09:39 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190507234857.81414-1-dianders@chromium.org>
+In-Reply-To: <20190517225420.176893-2-dianders@chromium.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_010423_182291_1D391298 
-X-CRM114-Status: GOOD (  25.96  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190520_010944_574234_61F684DF 
+X-CRM114-Status: GOOD (  17.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -83,92 +101,54 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Elaine Zhang <zhangqing@rock-chips.com>, hl@rock-chips.com,
- dbasehore@chromium.org, linux-kernel@vger.kernel.org,
- Huang Jiachai <hjc@rock-chips.com>, linux-rockchip@lists.infradead.org,
- "nickey.yang \(nickey.yang@rock-chips.com\)" <nickey.yang@rock-chips.com>,
- mka@chromium.org, ryandcase@chromium.org, groeck@chromium.org,
- wzz <wzz@rock-chips.com>, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Madhan Mohan R <madhanmohan.r@cypress.com>,
+ brcm80211-dev-list.pdl@broadcom.com, YueHaibing <yuehaibing@huawei.com>,
+ Hante Meuleman <hante.meuleman@broadcom.com>,
+ "David S. Miller" <davem@davemloft.net>, netdev@vger.kernel.org,
+ Chi-Hsien Lin <chi-hsien.lin@cypress.com>, briannorris@chromium.org,
+ linux-wireless@vger.kernel.org, Double Lo <double.lo@cypress.com>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ mka@chromium.org, Wright Feng <wright.feng@cypress.com>,
+ brcm80211-dev-list@cypress.com, Naveen Gupta <naveen.gupta@cypress.com>,
+ Franky Lin <franky.lin@broadcom.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgRG91ZywKCkZvciBub3cswqAgbm9ib2R5IG9mIHJvY2tjaGlwIGlzIHJlc3BvbnNpYmxlIGZv
-ciB0aGlzIGRyaXZlci4KQ2M6IE5pY2tleSwgWmFpbiwgSGpjCgoKT24gNS84LzE5IDc6NDggQU0s
-IERvdWdsYXMgQW5kZXJzb24gd3JvdGU6Cj4gV2hpbGUgdGVzdGluZyBhIG5ld2VyIGtlcm5lbCBv
-biByazMyODgtYmFzZWQgQ2hyb21lYm9va3MgSSBmb3VuZCB0aGF0Cj4gdGhlIHBvd2VyIGRyYXcg
-aW4gc3VzcGVuZCB3YXMgaGlnaGVyIG9uIG5ld2VyIGtlcm5lbHMgY29tcGFyZWQgdG8gdGhlCj4g
-ZG93bnN0cmVhbSBDaHJvbWUgT1MgMy4xNCBrZXJuZWwuICBTcGVjaWZpY2FsbHkgdGhlIHBvd2Vy
-IG9mIGFuCj4gcmszMjg4LXZleXJvbi1qZXJyeSBib2FyZCB0aGF0IEkgdGVzdGVkIChhcyBtZWFz
-dXJlZCBieSB0aGUgc21hcnQKPiBiYXR0ZXJ5KSB3YXMgfjE2IG1BIG9uIENocm9tZSBPUyAzLjE0
-IGFuZCB+MjEgbUEgb24gYSBuZXdlciBrZXJuZWwuCj4KPiBJIHRyYWNrZWQgdGhlIHJlZ3Jlc3Np
-b24gZG93biB0byB0aGUgZmFjdCB0aGF0IHRoZSAiRFAgUEhZIiBkcml2ZXIKPiBkaWRuJ3QgZXhp
-c3QgaW4gb3VyIGRvd25zdHJlYW0gMy4xNC4gIFdlIHJlbGllZCBvbiB0aGUgZURQIGRyaXZlciB0
-bwo+IHR1cm4gb24gdGhlIGNsb2NrIGFuZCByZWxpZWQgb24gdGhlIGZhY3QgdGhhdCB0aGUgcG93
-ZXIgZm9yIHRoZSBQSFkKPiB3YXMgZGVmYXVsdCB0dXJuZWQgb24uCj4KPiBTcGVjaWZpY2FsbHkg
-dGhlIHRoaW5nIHRoYXQgY2F1c2VkIHRoZSBwb3dlciByZWdyZXNzaW9uIHdhcyB0dXJuaW5nCj4g
-dGhlIGVEUCBQSFkgX29mZl8uICBQcmVzdW1hYmx5IHRoZXJlIGlzIHNvbWUgc29ydCBvZiBwb3dl
-ciBsZWFrIGluIHRoZQo+IHN5c3RlbSBhbmQgd2hlbiB3ZSB0dXJuIHRoZSBQSFkgb2ZmIHNvbWV0
-aGluZyBpcyBsZWFjaGluZyBwb3dlciBmcm9tCj4gc29tZXRoaW5nIGVsc2UgYW5kIGNhdXNpbmcg
-ZXhjZXNzaXZlIHBvd2VyIGRyYXcuCj4KPiBEb2luZyBhIHNlYXJjaCB0aHJvdWdoIGRldmljZSB0
-cmVlcyBzaG93cyB0aGF0IHRoaXMgUEhZIGlzIG9ubHkgZXZlcgo+IHVzZWQgb24gcmszMjg4LiAg
-UHJlc3VtYWJseSB0aGlzIHBvd2VyIGxlYWsgaXMgcHJlc2VudCBvbiBhbGwKPiByazMyODgtU29D
-cyBydW5uaW5nIHVwc3RyZWFtIExpbnV4IHNvIGxldCdzIGp1c3Qgd2hhY2sgdGhlIGRyaXZlciB0
-bwo+IG1ha2Ugc3VyZSB3ZSBuZXZlciB0dXJuIG9mZiBwb3dlci4gIFdlJ2xsIHN0aWxsIGxlYXZl
-IHRoZSBwYXJ0cyB0aGF0Cj4gdHVybiBfb25fIHRoZSBwb3dlciBhbmQgZ3JhYiB0aGUgY2xvY2ss
-IHRob3VnaC4KPgo+IE5PVEVTOgo+IEEpIElmIHNvbWVvbmUgY2FuIGlkZW50aWZ5IHdoYXQgdGhp
-cyBwb3dlciBsZWFrIGlzIGFuZCBmaXggaXQgaW4gc29tZQo+ICAgICBvdGhlciB3YXkgd2UgY2Fu
-IHJldmVydCB0aGlzIHBhdGNoLgo+IEIpIElmIHNvbWVvbmUgY2FuIHNob3cgdGhhdCB0aGVpciBw
-YXJ0aWN1bGFyIGJvYXJkIGRvZXNuJ3QgaGF2ZSB0aGlzCj4gICAgIHBvd2VyIGxlYWsgKG1heWJl
-IHRoZXkgaGF2ZSByYWlscyBob29rZWQgdXAgZGlmZmVyZW50bHk/KSB3ZSBjYW4KPiAgICAgcGVy
-aGFwcyBhZGQgYSBkZXZpY2UgdHJlZSBwcm9wZXJ0eSBpbmRpY2F0aW5nIHRoYXQgZm9yIHNvbWUg
-Ym9hcmRzCj4gICAgIGl0J3MgT0sgdG8gdHVybiB0aGlzIHJhaWwgb2ZmLiAgSSBkb24ndCB3YW50
-IHRvIGFkZCB0aGlzIHByb3BlcnR5Cj4gICAgIHVudGlsIEkga25vdyBvZiBhIGJvYXJkIHRoYXQg
-bmVlZHMgaXQuCj4KPiBGaXhlczogZmQ5Njg5NzNkZTk1ICgicGh5OiBBZGQgZHJpdmVyIGZvciBy
-b2NrY2hpcCBEaXNwbGF5IFBvcnQgUEhZIikKPiBTaWduZWQtb2ZmLWJ5OiBEb3VnbGFzIEFuZGVy
-c29uIDxkaWFuZGVyc0BjaHJvbWl1bS5vcmc+CgoKUmV2aWV3ZWQtYnk6IENhZXNhciBXYW5nIDx3
-eHRAcm9jay1jaGlwcy5jb20+Cgo+IC0tLQo+IEFzIGZhciBhcyBJIGtub3cgWWFraXIgKHRoZSBv
-cmlnaW5hbCBhdXRob3IpIGlzIG5vIGxvbmdlciBhdCBSb2NrY2hpcC4KPiBJJ3ZlIGFkZGVkIGEg
-ZmV3IG90aGVyIFJvY2tjaGlwIHBlb3BsZSBhbmQgaG9wZWZ1bGx5IG9uZSBvZiB0aGVtIGNhbgo+
-IGhlbHAgZGlyZWN0IGV2ZW4gaWYgdGhleSdyZSBub3QgZGlyZWN0bHkgcmVzcG9uc2libGUuCj4K
-PiAgIGRyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1kcC5jIHwgMTEgKysrKysrKy0t
-LS0KPiAgIDEgZmlsZSBjaGFuZ2VkLCA3IGluc2VydGlvbnMoKyksIDQgZGVsZXRpb25zKC0pCj4K
-PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLWRwLmMgYi9k
-cml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtZHAuYwo+IGluZGV4IDhiMjY3YTc0NjU3
-Ni4uMTBiYmNkNjlkNmY1IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1y
-b2NrY2hpcC1kcC5jCj4gKysrIGIvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLWRw
-LmMKPiBAQCAtMzUsNyArMzUsNyBAQCBzdHJ1Y3Qgcm9ja2NoaXBfZHBfcGh5IHsKPiAgIHN0YXRp
-YyBpbnQgcm9ja2NoaXBfc2V0X3BoeV9zdGF0ZShzdHJ1Y3QgcGh5ICpwaHksIGJvb2wgZW5hYmxl
-KQo+ICAgewo+ICAgCXN0cnVjdCByb2NrY2hpcF9kcF9waHkgKmRwID0gcGh5X2dldF9kcnZkYXRh
-KHBoeSk7Cj4gLQlpbnQgcmV0Owo+ICsJaW50IHJldCA9IDA7Cj4gICAKPiAgIAlpZiAoZW5hYmxl
-KSB7Cj4gICAJCXJldCA9IHJlZ21hcF93cml0ZShkcC0+Z3JmLCBHUkZfU09DX0NPTjEyLAo+IEBA
-IC01MCw5ICs1MCwxMiBAQCBzdGF0aWMgaW50IHJvY2tjaGlwX3NldF9waHlfc3RhdGUoc3RydWN0
-IHBoeSAqcGh5LCBib29sIGVuYWJsZSkKPiAgIAl9IGVsc2Ugewo+ICAgCQljbGtfZGlzYWJsZV91
-bnByZXBhcmUoZHAtPnBoeV8yNG0pOwo+ICAgCj4gLQkJcmV0ID0gcmVnbWFwX3dyaXRlKGRwLT5n
-cmYsIEdSRl9TT0NfQ09OMTIsCj4gLQkJCQkgICBHUkZfRURQX1BIWV9TSUREUV9ISVdPUkRfTUFT
-SyB8Cj4gLQkJCQkgICBHUkZfRURQX1BIWV9TSUREUV9PRkYpOwo+ICsJCS8qCj4gKwkJICogSW50
-ZW50aW9uYWxseSBkb24ndCB0dXJuIFNJRERRIG9mZiB3aGVuIGRpc2FibGluZwo+ICsJCSAqIHRo
-ZSBQSFkuICBUaGVyZSBpcyBhIHBvd2VyIGxlYWsgb24gcmszMjg4IGFuZAo+ICsJCSAqIHN1c3Bl
-bmQgcG93ZXIgX2luY3JlYXNlc18gYnkgNSBtQSBpZiB5b3UgdHVybiB0aGlzCj4gKwkJICogb2Zm
-Lgo+ICsJCSAqLwoKCkFzIGRlc2NyaWJlZCBieSBUUk0sIFRoZSDigJxHUkZfRURQX1BIWV9TSURE
-UV9PRkbigJ0gdGhhdCBhbGwgY2lyY3VpdHMgYXJlIApwb3dlciBkb3duLCBhbGwKSU8gYXJlIGhp
-Z2gtWi4gVGhhdCBzaG91bGQgbWFrZSBzdXJlIHRoZSBQRF9WSU9bMF0gd2FzIGRpc2FibGVkIGZp
-cnN0LCAKbm8gYWN0aXZlLgpCdXQgdGhlIHJrMzI4OCBjYW4ndCB0dXJuIHBkX3ZpbyBvZmYgYXQg
-dGhlIG1vbWVudC4KClswXQpQRF9WSU8gV2hpY2ggY2xvY2sgYXJlIGRldmljZSBjbG9ja3M6CiDC
-oMKgwqAgwqDCoMKgIMKgwqDCoCDCoCrCoMKgwqAgY2xvY2tzwqDCoMKgIMKgwqDCoCBkZXZpY2Vz
-CiDCoMKgwqAgwqDCoMKgIMKgwqDCoCDCoCrCoMKgwqAgKl9JRVDCoMKgwqAgwqDCoMKgIElFUDpJ
-bWFnZSBFbmhhbmNlbWVudCBQcm9jZXNzb3IKIMKgwqDCoCDCoMKgwqAgwqDCoMKgIMKgKsKgwqDC
-oCAqX0lTUMKgwqDCoCDCoMKgwqAgSVNQOkltYWdlIFNpZ25hbCBQcm9jZXNzaW5nCiDCoMKgwqAg
-wqDCoMKgIMKgwqDCoCDCoCrCoMKgwqAgKl9WSVDCoMKgwqAgwqDCoMKgIFZJUDpWaWRlbyBJbnB1
-dCBQcm9jZXNzb3IKIMKgwqDCoCDCoMKgwqAgwqDCoMKgIMKgKsKgwqDCoCAqX1ZPUCrCoMKgwqAg
-wqDCoMKgIFZPUDpWaXN1YWwgT3V0cHV0IFByb2Nlc3NvcgogwqDCoMKgIMKgwqDCoCDCoMKgwqAg
-wqAqwqDCoMKgICpfUkdBwqDCoMKgIMKgwqDCoCBSR0EKIMKgwqDCoCDCoMKgwqAgwqDCoMKgIMKg
-KsKgwqDCoCAqX0VEUCrCoMKgwqAgwqDCoMKgIEVEUAogwqDCoMKgIMKgwqDCoCDCoMKgwqAgwqAq
-wqDCoMKgICpfTFZEU18qwqDCoMKgIExWRFMKIMKgwqDCoCDCoMKgwqAgwqDCoMKgIMKgKsKgwqDC
-oCAqX0hETUnCoMKgwqAgwqDCoMKgIEhETUkKIMKgwqDCoCDCoMKgwqAgwqDCoMKgIMKgKsKgwqDC
-oCAqX01JUElfKsKgwqDCoCBNSVBJCgoKVGhhbmtzLAotQ2Flc2FyCgoKPiAgIAl9Cj4gICAKPiAg
-IAlyZXR1cm4gcmV0OwoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXJvY2tjaGlwCg==
+
+
+On 5/18/2019 12:54 AM, Douglas Anderson wrote:
+> In commit 29f6589140a1 ("brcmfmac: disable command decode in
+> sdio_aos") we disabled something called "command decode in sdio_aos"
+> for a whole bunch of Broadcom SDIO WiFi parts.
+> 
+> After that patch landed I find that my kernel log on
+> rk3288-veyron-minnie and rk3288-veyron-speedy is filled with:
+>    brcmfmac: brcmf_sdio_bus_sleep: error while changing bus sleep state -110
+> 
+> This seems to happen every time the Broadcom WiFi transitions out of
+> sleep mode.  Reverting the part of the commit that affects the WiFi on
+> my boards fixes the problem for me, so that's what this patch does.
+
+This sounds very similar to the issue we had during integration of wifi 
+on rk3288 chromebooks years ago.
+
+> Note that, in general, the justification in the original commit seemed
+> a little weak.  It looked like someone was testing on a SD card
+> controller that would sometimes die if there were CRC errors on the
+> bus.  This used to happen back in early days of dw_mmc (the controller
+> on my boards), but we fixed it.  Disabling a feature on all boards
+> just because one SD card controller is broken seems bad.  ...so
+> instead of just this patch possibly the right thing to do is to fully
+> revert the original commit.
+
+I am leaning towards a full revert, but let's wait for more background info.
+
+Regards,
+Arend
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
