@@ -2,83 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D054D23FE2
-	for <lists+linux-rockchip@lfdr.de>; Mon, 20 May 2019 20:05:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC41124054
+	for <lists+linux-rockchip@lfdr.de>; Mon, 20 May 2019 20:28:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uf5HOu0pjDXuq0aW6AjhqCS1GwAQmYIdULYfVMtqeHw=; b=bamw6BLhhsNFvV
-	LhQN89agulDyqxQaQFXTGLVTB07VaR4BztjEh+kk97D+BhoIwVjc1sj7n28n8auePM9xXnnnJHJy/
-	aqSkxbX3p+kp5aIX5BR+nVcTrmuoIXrXh/XcRyzYnGlxihKB01aydOLK7sreh7NZ4rk7I51SdHQy0
-	/EtPFOsUDs6uW478RiilN7Qc/hPDHVvYM2+ACw7DkZ5aZor9vHvY1CytVW/wu8IY72E1Z6GnIl4DO
-	BROLxbWy8Q0yTGboTYP4jBGEtkMaL+nS5+bS0RhOIEcGRdDUHzgjfRws7LGwUDAxNsa4MfXgStueY
-	JbpuXsPnSTEDJ7FDANvA==;
+	List-Owner; bh=avqGdR/uk3U076xOWShsGyw7thWtmrB3x+YpiSAXu0Q=; b=nuAWV9GAaoQT9y
+	kADAYRRVcgl41lb2m+3OUXd7VR7JJxskFmq5Fvkm0yWz8qTPKOl5H3xQYEYnJcVg97IxT8hGo+mYk
+	vdMAymt0jNwTYUO5kXH52gVZPrWzfyvWWYpKdXdxT607oFBlUZdXhLqGSYOpMKFeJNj5B+kpIzo8h
+	E6ntJNLthnZQN4VJ+h27f406unbBZgPgStnrO6P8Xjc2U+vob2kFw0nx+rjCtasD9ZqncgiNrJWk9
+	WJOIRXt9Nzcbg36z7tr9r1MzKvApdBK2QZpcAbCWiUWKL8tSgb/xwKPbzkAN7pSM/S0MwMq3VqX23
+	jKbviPXXBQKp5IlXP9tA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSmef-0004sD-RX; Mon, 20 May 2019 18:04:57 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1hSn0v-00089W-36; Mon, 20 May 2019 18:27:57 +0000
+Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSmec-0004rn-4C
- for linux-rockchip@lists.infradead.org; Mon, 20 May 2019 18:04:55 +0000
-Received: by mail-ot1-x342.google.com with SMTP id s19so13849010otq.5
- for <linux-rockchip@lists.infradead.org>; Mon, 20 May 2019 11:04:53 -0700 (PDT)
+ id 1hSn0f-0007rG-MD
+ for linux-rockchip@lists.infradead.org; Mon, 20 May 2019 18:27:55 +0000
+Received: by mail-ua1-x944.google.com with SMTP id a95so5596424uaa.13
+ for <linux-rockchip@lists.infradead.org>; Mon, 20 May 2019 11:27:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=l37zIVlCi4dbNDMGaFWNQ6h6zOWM8mlC8MVadX95qhk=;
- b=ZDuGf+wIJRM3SUZGnB5R5xtdCvh6zDqkd2hQEQlMJrnwn1aNAweMHsf9xJTipnH5Xm
- JZf3UZvTYWJlvaaVC3pYVCAC/YPgsGT0hFI1XlBBBwmfxPsN2niZv35FfsxOzbIDe8sL
- 1oYbID6Y9SrEv12zWHhdJyfiOGNfn2VcH3VoA=
+ :cc; bh=cEsXYaOHHpFfqvOIf/R9j2mgz7hkA3ZSG0hiHjJfsfQ=;
+ b=oYB6QTOAyrW+xrurBLaMKPFnUo9r8uSNIw0B5/zqa2y0TSIR3nr+FiEhLSwmdmx4XT
+ PSW8n6oIFIvgbr1Q8u1FLhEjC2pMWGPcFrxz9D/vDnrjHb6YxdngV4/rsvj4XVMkiS7u
+ zji43e+I4SpiwFIfKB7pf85C9sv2FuOd9EGRk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=l37zIVlCi4dbNDMGaFWNQ6h6zOWM8mlC8MVadX95qhk=;
- b=M2Qeo3mREpNcq86n+Gm0CCh+75RiPde98YmRypPV4Z251KsaKgg+RnDM/0ZBpfZxeU
- vE6LgVBzAatZXOJX0xKILeOv/suq/53m5ZUPU+NW60CNyKsvpYMadniZBxnmpEoKuKpu
- dK1ztJf3Mk5dttpvlU6FvPrhC0Ymg4qa5d3KwPKGIMnhhef6hm470bwAF1wIAF2+bly8
- 9hMzwQaI+0I0wdkTs4cCs8n7l5yWXGZPY6kSWcw49XMVC+BUbOqUnNOItw1h9gweWo5d
- 1gZDfNK5YWG8a7qEBws0qskz4CI6mcCcxEy31rgZSw4vtSrcVI4SarH7lg9AE+zXJ4DH
- NJGw==
-X-Gm-Message-State: APjAAAVcUGd99Isyq4eVn+ttk44O235z2aN1VpmFgn+QkJ9FsQit2f2z
- Og0zpVl1jvv4R4Sz4cvQ4wXSSKhW5dA68A==
-X-Google-Smtp-Source: APXvYqxgSNQCcEbFbeWPyIRCLKDMLRhv15CzKGQoRXStecdfbEdQIi1IG+uAZJagPxdC1qvYB8FYAw==
-X-Received: by 2002:a05:6830:1104:: with SMTP id
- w4mr4179415otq.165.1558375493129; 
- Mon, 20 May 2019 11:04:53 -0700 (PDT)
-Received: from mail-oi1-f180.google.com (mail-oi1-f180.google.com.
- [209.85.167.180])
- by smtp.gmail.com with ESMTPSA id f7sm7744412otb.66.2019.05.20.11.04.53
+ bh=cEsXYaOHHpFfqvOIf/R9j2mgz7hkA3ZSG0hiHjJfsfQ=;
+ b=EoRbUEiUd+n/igpedU06I1lTX9cFOKvWyWVINsWZW/n124LJVZR2pzp5cT6rMQ4Pav
+ 2NCwtvB+H6CB5bARitNaGsl1Q3LrpUk0116nwZ1hoo9mjVxLZ9vrsuWKcHZ9wvxuq+JR
+ ClrwVjqdLMX+50JVuksnV92HaefIQUw8vjW4xZc5yIOkE/o+5oe1yA1nKuzvMsV5twEU
+ 6TQO5hd8wpPal0Yo1/XKaHXBGKmXjgQYV9DVp8bRrtYMNoGFBlmzfGn+t+p9/Zz0lInv
+ 8W9fIrW7dPegcFIpGv8LaeHYxALB999emakGOWT7hVbfNTm4xVGCeajiORANRIfjkqOx
+ yL+A==
+X-Gm-Message-State: APjAAAWtDcZoIhaKqUB2MOopg6L68yQE7WfZHy2VhlWP3tHaNfMXuw2W
+ 5Y3glJzLktwfUSrIq7uRNbxjZkUsn7Q=
+X-Google-Smtp-Source: APXvYqytUkNCSuv+ZThIoBZv5r10l0wUcJYtSV8X6/UPVhG1d7OZgxRMRlK4QAeiSwkRkxNhO91HWA==
+X-Received: by 2002:ab0:24d:: with SMTP id 71mr38494224uas.31.1558376860118;
+ Mon, 20 May 2019 11:27:40 -0700 (PDT)
+Received: from mail-ua1-f41.google.com (mail-ua1-f41.google.com.
+ [209.85.222.41])
+ by smtp.gmail.com with ESMTPSA id d133sm7810755vke.19.2019.05.20.11.27.39
  for <linux-rockchip@lists.infradead.org>
  (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Mon, 20 May 2019 11:04:53 -0700 (PDT)
-Received: by mail-oi1-f180.google.com with SMTP id w144so10670880oie.12
- for <linux-rockchip@lists.infradead.org>; Mon, 20 May 2019 11:04:53 -0700 (PDT)
-X-Received: by 2002:a1f:a410:: with SMTP id n16mr8477054vke.73.1558375068277; 
- Mon, 20 May 2019 10:57:48 -0700 (PDT)
+ Mon, 20 May 2019 11:27:39 -0700 (PDT)
+Received: by mail-ua1-f41.google.com with SMTP id 7so239254uah.1
+ for <linux-rockchip@lists.infradead.org>; Mon, 20 May 2019 11:27:39 -0700 (PDT)
+X-Received: by 2002:a9f:24a3:: with SMTP id 32mr13553176uar.109.1558376433588; 
+ Mon, 20 May 2019 11:20:33 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190516225941.170355-3-dianders@chromium.org>
- <201905201037.p3rNy0yX%lkp@intel.com>
-In-Reply-To: <201905201037.p3rNy0yX%lkp@intel.com>
+References: <20190517225420.176893-1-dianders@chromium.org>
+ <20190517225420.176893-2-dianders@chromium.org>
+ <e3f54bcb-8d10-1336-1458-2bd11cfc1010@broadcom.com>
+In-Reply-To: <e3f54bcb-8d10-1336-1458-2bd11cfc1010@broadcom.com>
 From: Doug Anderson <dianders@chromium.org>
-Date: Mon, 20 May 2019 10:57:37 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=VOPAufL=u5iRCpO=Rdg--goZJ3jxM1znzyEXMTVBTFJg@mail.gmail.com>
-Message-ID: <CAD=FV=VOPAufL=u5iRCpO=Rdg--goZJ3jxM1znzyEXMTVBTFJg@mail.gmail.com>
-Subject: Re: [REPOST PATCH v2 2/3] USB: dwc2: Don't turn off the usbphy in
- suspend if wakeup is enabled
-To: kbuild test robot <lkp@intel.com>
+Date: Mon, 20 May 2019 11:20:22 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=Uvc1wUQe-W1Jvm_gQ722pFm2a4OWvJDNVtkyQynFe4Gw@mail.gmail.com>
+Message-ID: <CAD=FV=Uvc1wUQe-W1Jvm_gQ722pFm2a4OWvJDNVtkyQynFe4Gw@mail.gmail.com>
+Subject: Re: [PATCH 1/3] brcmfmac: re-enable command decode in sdio_aos for
+ BRCM 4354
+To: Arend Van Spriel <arend.vanspriel@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_110454_161375_4AD03E09 
-X-CRM114-Status: GOOD (  14.11  )
+X-CRM114-CacheID: sfid-20190520_112741_908369_981E9666 
+X-CRM114-Status: GOOD (  18.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,21 +102,20 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>,
- Artur Petrosyan <Arthur.Petrosyan@synopsys.com>,
- Amelie Delaunay <amelie.delaunay@st.com>, Randy Li <ayaka@soulik.info>,
- =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
- Felipe Balbi <felipe.balbi@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- William Wu <william.wu@rock-chips.com>, Chris <zyw@rock-chips.com>,
- linux-usb@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+Cc: Madhan Mohan R <madhanmohan.r@cypress.com>,
+ Ulf Hansson <ulf.hansson@linaro.org>, YueHaibing <yuehaibing@huawei.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Hante Meuleman <hante.meuleman@broadcom.com>,
+ "David S. Miller" <davem@davemloft.net>, netdev <netdev@vger.kernel.org>,
+ Chi-Hsien Lin <chi-hsien.lin@cypress.com>,
+ Brian Norris <briannorris@chromium.org>,
+ linux-wireless <linux-wireless@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>, Double Lo <double.lo@cypress.com>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Matthias Kaehlcke <mka@chromium.org>, Alan Stern <stern@rowland.harvard.edu>,
- kbuild-all@01.org, Elaine Zhang <zhangqing@rock-chips.com>,
- Julius Werner <jwerner@chromium.org>, Minas Harutyunyan <hminas@synopsys.com>,
- Ryan Case <ryandcase@chromium.org>,
- Dinh Nguyen <dinguyen@opensource.altera.com>,
- Alexandru M Stan <amstan@chromium.org>
+ brcm80211-dev-list.pdl@broadcom.com, Matthias Kaehlcke <mka@chromium.org>,
+ Naveen Gupta <naveen.gupta@cypress.com>, Wright Feng <wright.feng@cypress.com>,
+ brcm80211-dev-list@cypress.com, Kalle Valo <kvalo@codeaurora.org>,
+ Franky Lin <franky.lin@broadcom.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
@@ -124,35 +123,50 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 Hi,
 
-On Sun, May 19, 2019 at 7:08 PM kbuild test robot <lkp@intel.com> wrote:
+On Mon, May 20, 2019 at 1:09 AM Arend Van Spriel
+<arend.vanspriel@broadcom.com> wrote:
 >
-> Hi Douglas,
+> On 5/18/2019 12:54 AM, Douglas Anderson wrote:
+> > In commit 29f6589140a1 ("brcmfmac: disable command decode in
+> > sdio_aos") we disabled something called "command decode in sdio_aos"
+> > for a whole bunch of Broadcom SDIO WiFi parts.
+> >
+> > After that patch landed I find that my kernel log on
+> > rk3288-veyron-minnie and rk3288-veyron-speedy is filled with:
+> >    brcmfmac: brcmf_sdio_bus_sleep: error while changing bus sleep state -110
+> >
+> > This seems to happen every time the Broadcom WiFi transitions out of
+> > sleep mode.  Reverting the part of the commit that affects the WiFi on
+> > my boards fixes the problem for me, so that's what this patch does.
 >
-> Thank you for the patch! Yet something to improve:
->
-> [auto build test ERROR on balbi-usb/next]
-> [also build test ERROR on v5.2-rc1 next-20190517]
-> [if your patch is applied to the wrong git tree, please drop us a note to help improve the system]
->
-> url:    https://github.com/0day-ci/linux/commits/Douglas-Anderson/Documentation-dt-bindings-Add-snps-need-phy-for-wake-for-dwc2-USB/20190520-033119
-> base:   https://git.kernel.org/pub/scm/linux/kernel/git/balbi/usb.git next
-> config: x86_64-randconfig-h0-05191510 (attached as .config)
-> compiler: gcc-7 (Debian 7.3.0-1) 7.3.0
-> reproduce:
->         # save the attached .config to linux build tree
->         make ARCH=x86_64
->
-> If you fix the issue, kindly add following tag
-> Reported-by: kbuild test robot <lkp@intel.com>
->
-> All errors (new ones prefixed by >>):
->
->    ld: drivers/usb/dwc2/platform.o: in function `dwc2_can_poweroff_phy':
-> >> drivers/usb/dwc2/platform.c:545: undefined reference to `usb_wakeup_enabled_descendants'
+> This sounds very similar to the issue we had during integration of wifi
+> on rk3288 chromebooks years ago.
 
-Thank you.  Fixed in v3:
+I'm working on those same Chromebooks.  ;-)  I'm working on trying to
+make them well on newer kernels.
 
-https://lkml.kernel.org/r/20190520175605.2405-1-dianders@chromium.org
+...but I guess you're saying that the problem faced by the people who
+wanted commit 29f6589140a1 ("brcmfmac: disable command decode in
+sdio_aos") are similar to the problems we saw in the past on those
+Chromebooks.  I'd tend to agree.  In general it's difficult to get a
+SD Host Controller to be fully robust in the fact of any/all errors on
+the bus.  While dw_mmc is pretty robust these days I'm assuming that
+some other host controllers aren't.
+
+
+> > Note that, in general, the justification in the original commit seemed
+> > a little weak.  It looked like someone was testing on a SD card
+> > controller that would sometimes die if there were CRC errors on the
+> > bus.  This used to happen back in early days of dw_mmc (the controller
+> > on my boards), but we fixed it.  Disabling a feature on all boards
+> > just because one SD card controller is broken seems bad.  ...so
+> > instead of just this patch possibly the right thing to do is to fully
+> > revert the original commit.
+>
+> I am leaning towards a full revert, but let's wait for more background info.
+
+I'd be fine with a full revert too.  Presumably that will break
+someone but maybe they need to come up with a better solution?
 
 -Doug
 
