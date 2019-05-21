@@ -2,90 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCEBF24508
-	for <lists+linux-rockchip@lfdr.de>; Tue, 21 May 2019 02:23:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30DFA24957
+	for <lists+linux-rockchip@lfdr.de>; Tue, 21 May 2019 09:49:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UEludlkiEcAPDEe8MgavjDGJEFRkIRCXJLCKw+wOmaA=; b=thTmNIkiEEK91h
-	SYcui/pazTIFh2gD7mF2LCDqrofHkuLauUfOoehuY1WkxyG9pkl+E2UzE9hc6btFDIzqTHQlj0j8R
-	w055vJuSY9nbBgECj1peoE8d6ZDzPaiVhkAC5S+jwQC/eHNnq75qMhmcwptGQpQDShb2iWh5VW0OI
-	aaVcSJjAD42+lw0b5mjkkY2C3JI0Jy/+1PXogxDCh/33hu8jUludVNToKRDM8IG7r0CBgftZZx7ED
-	gu3fT+J8Z7o3UTRk+PS+rJemsWpuzpiHFvi+52m+CNt+J9nDCUPB1xnW29baHfYH63AA59bUIsis6
-	Qynz9J/MTARkXJTkgK9Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WQ4SQYxoDWgypjZwW+/0rrca0xSKRR3NJbZOM4lQNpU=; b=XF9zJX52zxAovx
+	HC3rpxtzjjPB6mb6SZxCwTN0juXglw10c+agZW88hc0NF9JJQlep3CzvcwirDKGGAAu5vc11CG/tu
+	KX67Jz5JZ6vw4SFjXWjjz0LohwmknudXy1tINdPqndc2W7LMBN34/WQfAh+iz7sLIXSNkL4CNMDr5
+	KnY5hE0lg6aWp7pYOx2mHQFokiXJj2UOQjjUI0WH+pf5Y29Fcl+lJPiBYWcItXWERgTSC2FHm296u
+	SyOtSVcDFv+4zsCX07gWfwm6enY1rctbAMEotem5eZrxmTi6iZ3wVj67iPB+QsvBSBELo/DJL30lm
+	MnxBA7iT8lX2S72Vav/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSsYs-0006At-Jj; Tue, 21 May 2019 00:23:22 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hSzWv-00077g-03; Tue, 21 May 2019 07:49:49 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSsYp-0006AX-Jc
- for linux-rockchip@lists.infradead.org; Tue, 21 May 2019 00:23:21 +0000
-Received: by mail-pf1-x441.google.com with SMTP id c6so8036627pfa.10
- for <linux-rockchip@lists.infradead.org>; Mon, 20 May 2019 17:23:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=LPu70Acl0dDSmwm46W0owNu3b5RSfGh3FzFKNjihb00=;
- b=MZQdLOQw3W9V15ULJxTQ96AipAiJ1kcuFGGW2c9VkUElP4pINsXi9UyEKmOKHIxKVz
- wbH2J3shvQbhbLV4ZTggOKN/KSP2TzN+miO9Q/uJDdjiIDVdhHg0R3n3qQh0fpFnEFvB
- jAif5optmrvx3phb9f3Hy8Am1MI4LkPVP+DZs=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=LPu70Acl0dDSmwm46W0owNu3b5RSfGh3FzFKNjihb00=;
- b=JmFQEgBTwYIdOw9S95YDPPFFuGuGDFhSAXBPlSVpJOZHYf8ivlu/NIktv32xkT1yu3
- uCi12/zp1+0K8G8ZgChk1nJ6j5D7ilqKPqHlK4g6FxCZGKOsSDsx/gxShhJWDPumbs4b
- aU9189gH4HmiiU61A/I9NnYX0hPiUoYqEt3P7NB29P8oJMIj5mII1uOw0/0TCcu6IbLD
- RLWezSLfgCtB5oHt966vPa6lmdSHDSZNtf5qK3L5ksu9WX2XQXuGCg93OeRmrJcFZ1A0
- LgXQAmGpN1oBlVlTg6Lh/I0qWuzx96mgzxKjGytDTzWCyeA1XXEpP2R7BAel/A9NZUUO
- Yi5A==
-X-Gm-Message-State: APjAAAVbmpgF4lxBOjFWAyIZ8X1AFGJxa82xVF/Xv7/5JXCIMRlRT4Y9
- /9TJe1ecHptf7iepcmEOeZAu8w==
-X-Google-Smtp-Source: APXvYqyHRvjDKJM7g5pNBmpglQaLaCNbnuq/wX0yAuGrBgJFe6RRW2bXvYhCXJl4QWmy07O1Y2HwHA==
-X-Received: by 2002:aa7:9e51:: with SMTP id z17mr83145568pfq.212.1558398198034; 
- Mon, 20 May 2019 17:23:18 -0700 (PDT)
-Received: from google.com ([2620:15c:202:1:534:b7c0:a63c:460c])
- by smtp.gmail.com with ESMTPSA id j184sm19177690pge.83.2019.05.20.17.23.15
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 20 May 2019 17:23:16 -0700 (PDT)
-Date: Mon, 20 May 2019 17:23:14 -0700
-From: Brian Norris <briannorris@chromium.org>
-To: Avri Altman <Avri.Altman@wdc.com>
-Subject: Re: [PATCH 0/3] brcmfmac: sdio: Deal better w/ transmission errors
- waking from sleep
-Message-ID: <20190521002312.GA89786@google.com>
-References: <20190517225420.176893-1-dianders@chromium.org>
- <SN6PR04MB49258D4FBE0B4D739E8BAF7EFC040@SN6PR04MB4925.namprd04.prod.outlook.com>
+ id 1hSzWr-00076x-Re
+ for linux-rockchip@lists.infradead.org; Tue, 21 May 2019 07:49:47 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 5AC9E284620
+Subject: Re: [PATCH v4 2/3] spi: Allow SPI devices to request the pumping
+ thread be realtime
+To: Douglas Anderson <dianders@chromium.org>, Mark Brown
+ <broonie@kernel.org>, Benson Leung <bleung@chromium.org>
+References: <20190515164814.258898-1-dianders@chromium.org>
+ <20190515164814.258898-3-dianders@chromium.org>
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Message-ID: <21d93d23-40c4-0db5-934e-77329b4dc93c@collabora.com>
+Date: Tue, 21 May 2019 09:49:39 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <SN6PR04MB49258D4FBE0B4D739E8BAF7EFC040@SN6PR04MB4925.namprd04.prod.outlook.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190515164814.258898-3-dianders@chromium.org>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_172319_672456_C301BE5C 
-X-CRM114-Status: GOOD (  15.52  )
-X-Spam-Score: 3.9 (+++)
+X-CRM114-CacheID: sfid-20190521_004946_151448_0E2C0536 
+X-CRM114-Status: GOOD (  27.61  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (3.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 4.1 FSL_HELO_FAKE          No description available.
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,60 +63,141 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>,
- "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
- Chi-Hsien Lin <chi-hsien.lin@cypress.com>,
- Adrian Hunter <adrian.hunter@intel.com>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- "brcm80211-dev-list@cypress.com" <brcm80211-dev-list@cypress.com>,
- Ritesh Harjani <riteshh@codeaurora.org>, YueHaibing <yuehaibing@huawei.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "mka@chromium.org" <mka@chromium.org>, Naveen Gupta <naveen.gupta@cypress.com>,
- Michael Trimarchi <michael@amarulasolutions.com>,
- Shawn Lin <shawn.lin@rock-chips.com>,
- Madhan Mohan R <madhanmohan.r@cypress.com>,
- Arend van Spriel <arend.vanspriel@broadcom.com>, Martin Hicks <mort@bork.org>,
- Hante Meuleman <hante.meuleman@broadcom.com>,
- Double Lo <double.lo@cypress.com>, Wright Feng <wright.feng@cypress.com>,
- Jiong Wu <lohengrin1024@gmail.com>, Kalle Valo <kvalo@codeaurora.org>,
- Franky Lin <franky.lin@broadcom.com>,
- "brcm80211-dev-list.pdl@broadcom.com" <brcm80211-dev-list.pdl@broadcom.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Douglas Anderson <dianders@chromium.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "David S. Miller" <davem@davemloft.net>
+Cc: drinkcat@chromium.org, briannorris@chromium.org,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, mka@chromium.org,
+ Guenter Roeck <groeck@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sat, May 18, 2019 at 03:09:44PM +0000, Avri Altman wrote:
-> > 
-> > This series attempts to deal better with the expected transmission
-> > errors that we get when waking up the SDIO-based WiFi on
-> > rk3288-veyron-minnie, rk3288-veyron-speedy, and rk3288-veyron-mickey.
-> > 
-> > Some details about those errors can be found in
-> > <https://crbug.com/960222>, but to summarize it here: if we try to
-> > send the wakeup command to the WiFi card at the same time it has
-> > decided to wake up itself then it will behave badly on the SDIO bus.
-> > This can cause timeouts or CRC errors.
-> Wake-up itself: as part of a WoWlan, or d0i3?
+Hi,
 
-Neither, IIUC. (It's definitely not WoWLAN, and D0i3 sounds like an
-Intel thing.)
+On 15/5/19 18:48, Douglas Anderson wrote:
+> Right now the only way to get the SPI pumping thread bumped up to
+> realtime priority is for the controller to request it.  However it may
+> be that the controller works fine with the normal priority but
+> communication to a particular SPI device on the bus needs realtime
+> priority.
+> 
+> Let's add a way for devices to request realtime priority when they set
+> themselves up.
+> 
+> NOTE: this will just affect the priority of transfers that end up on
+> the SPI core's pumping thread.  In many cases transfers happen in the
+> context of the caller so if you need realtime priority for all
+> transfers you should ensure the calling context is also realtime
+> priority.
+> 
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
+> Reviewed-by: Guenter Roeck <groeck@chromium.org>
 
-I believe it's a Broadcom-specific mode. See also Arend's response to
-this thread:
+Tested-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 
-http://lkml.kernel.org/linux-wireless/8c3fa57a-3843-947c-ec6b-a6144ccde1e9@broadcom.com
+Thanks,
+ Enric
 
-> Looks like this calls for a wifi driver fix, and not WA in the mmc driver.
-
-Basically asked and answered in patch 2's thread:
-
-https://lkml.kernel.org/lkml/20190520085201.GA1021@kunai/
+> ---
+> 
+> Changes in v4: None
+> Changes in v3:
+> - SPI core change now like patch v1 patch #2 (with name "rt").
+> 
+> Changes in v2:
+> - Now only force transfers to the thread for devices that want it.
+> - Squashed patch #1 and #2 together.
+> - Renamed variable to "force_rt_transfers".
+> 
+>  drivers/spi/spi.c       | 36 ++++++++++++++++++++++++++++++------
+>  include/linux/spi/spi.h |  2 ++
+>  2 files changed, 32 insertions(+), 6 deletions(-)
+> 
+> diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
+> index 8eb7460dd744..466984796dd9 100644
+> --- a/drivers/spi/spi.c
+> +++ b/drivers/spi/spi.c
+> @@ -1364,10 +1364,32 @@ static void spi_pump_messages(struct kthread_work *work)
+>  	__spi_pump_messages(ctlr, true);
+>  }
+>  
+> -static int spi_init_queue(struct spi_controller *ctlr)
+> +/**
+> + * spi_set_thread_rt - set the controller to pump at realtime priority
+> + * @ctlr: controller to boost priority of
+> + *
+> + * This can be called because the controller requested realtime priority
+> + * (by setting the ->rt value before calling spi_register_controller()) or
+> + * because a device on the bus said that its transfers needed realtime
+> + * priority.
+> + *
+> + * NOTE: at the moment if any device on a bus says it needs realtime then
+> + * the thread will be at realtime priority for all transfers on that
+> + * controller.  If this eventually becomes a problem we may see if we can
+> + * find a way to boost the priority only temporarily during relevant
+> + * transfers.
+> + */
+> +static void spi_set_thread_rt(struct spi_controller *ctlr)
+>  {
+>  	struct sched_param param = { .sched_priority = MAX_RT_PRIO - 1 };
+>  
+> +	dev_info(&ctlr->dev,
+> +		"will run message pump with realtime priority\n");
+> +	sched_setscheduler(ctlr->kworker_task, SCHED_FIFO, &param);
+> +}
+> +
+> +static int spi_init_queue(struct spi_controller *ctlr)
+> +{
+>  	ctlr->running = false;
+>  	ctlr->busy = false;
+>  
+> @@ -1387,11 +1409,8 @@ static int spi_init_queue(struct spi_controller *ctlr)
+>  	 * request and the scheduling of the message pump thread. Without this
+>  	 * setting the message pump thread will remain at default priority.
+>  	 */
+> -	if (ctlr->rt) {
+> -		dev_info(&ctlr->dev,
+> -			"will run message pump with realtime priority\n");
+> -		sched_setscheduler(ctlr->kworker_task, SCHED_FIFO, &param);
+> -	}
+> +	if (ctlr->rt)
+> +		spi_set_thread_rt(ctlr);
+>  
+>  	return 0;
+>  }
+> @@ -2982,6 +3001,11 @@ int spi_setup(struct spi_device *spi)
+>  
+>  	spi_set_cs(spi, false);
+>  
+> +	if (spi->rt && !spi->controller->rt) {
+> +		spi->controller->rt = true;
+> +		spi_set_thread_rt(spi->controller);
+> +	}
+> +
+>  	dev_dbg(&spi->dev, "setup mode %d, %s%s%s%s%u bits/w, %u Hz max --> %d\n",
+>  			(int) (spi->mode & (SPI_CPOL | SPI_CPHA)),
+>  			(spi->mode & SPI_CS_HIGH) ? "cs_high, " : "",
+> diff --git a/include/linux/spi/spi.h b/include/linux/spi/spi.h
+> index 053abd22ad31..15505c2485d6 100644
+> --- a/include/linux/spi/spi.h
+> +++ b/include/linux/spi/spi.h
+> @@ -109,6 +109,7 @@ void spi_statistics_add_transfer_stats(struct spi_statistics *stats,
+>   *	This may be changed by the device's driver, or left at the
+>   *	default (0) indicating protocol words are eight bit bytes.
+>   *	The spi_transfer.bits_per_word can override this for each transfer.
+> + * @rt: Make the pump thread real time priority.
+>   * @irq: Negative, or the number passed to request_irq() to receive
+>   *	interrupts from this device.
+>   * @controller_state: Controller's runtime state
+> @@ -143,6 +144,7 @@ struct spi_device {
+>  	u32			max_speed_hz;
+>  	u8			chip_select;
+>  	u8			bits_per_word;
+> +	bool			rt;
+>  	u32			mode;
+>  #define	SPI_CPHA	0x01			/* clock phase */
+>  #define	SPI_CPOL	0x02			/* clock polarity */
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
