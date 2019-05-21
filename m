@@ -2,78 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F7E425A01
-	for <lists+linux-rockchip@lfdr.de>; Tue, 21 May 2019 23:34:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB2B725A3A
+	for <lists+linux-rockchip@lfdr.de>; Wed, 22 May 2019 00:06:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nIfrLSGLLJMjImek6aYpCj1kUmKrDSUpsBUYUaF3kNM=; b=HmGsdwbCiCE26N
-	GLMCf0QYHfIYqatHN0Nq2YSVOwlQbOfHL/WDWmVqTRAE9Skf/wndlVJtHaU99tfsnAdInAZIvmMoQ
-	/NE6nl+Kaa+ZRl/pvRgG/9jYGcxwe6huX2fLrFwrDvT/A2t1hITSsU8cFPsW2o/Ggtz074sBBFCqd
-	m8nP7Q6jmq6pYO698tD5GRY1eZtxS8pIHBx1a5/8oQ9LiiwYYaQwsyK74kDMFqvyOUQRfTCvk0E86
-	wdvSWOLhHxQ3TJScC9UJu4f3UdqepEEAjOlEpij33uyUrQno/zislQCP6gsnJTNrtBtcsvPzWNua1
-	Gjcs6nPj6UJQzR7l8pmg==;
+	List-Owner; bh=f8pbnSz7H8pLmBLYZW3pz80CNpdm2uMPkgxqylsWXi0=; b=kJZcUZ8/GWBiyT
+	NWmvF7R3yXC+C87cUyywAPLTlQEsh1V03LXaZRGRULpEVpJa3p9hSKN9b50Gix/OuNsG/rWDEH6Gv
+	YDQra0Cvfg2SrY8yeN/oWaHefCPeppEFoVEig6SJf984MNmYyII8ERv3HyxaQDPFEwzBVyPx6cgWG
+	XhwuIMmKwM3euVEVRBxc7qfMlpwvZZvaHpLG2HMOE5m35ntLOmqyuXsub76ppls6VqsVXcCOCD+Ba
+	Z3qH2bX8TlExfg/0Ymb+wBCABCn3pfZFVQtwZLRNjHwE3PBDarF5Yv6EEjspJCTR4hLvMm1e9PBEA
+	+UeAk+BFB4FspW5HHqAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTCP1-0003eh-By; Tue, 21 May 2019 21:34:31 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hTCth-0006YP-Va; Tue, 21 May 2019 22:06:13 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTCOy-0003dl-3E
- for linux-rockchip@lists.infradead.org; Tue, 21 May 2019 21:34:29 +0000
-Received: by mail-pl1-x641.google.com with SMTP id d21so9051867plr.3
- for <linux-rockchip@lists.infradead.org>; Tue, 21 May 2019 14:34:27 -0700 (PDT)
+ id 1hTCte-0006Xk-NZ
+ for linux-rockchip@lists.infradead.org; Tue, 21 May 2019 22:06:11 +0000
+Received: by mail-pg1-x543.google.com with SMTP id n2so171933pgp.11
+ for <linux-rockchip@lists.infradead.org>; Tue, 21 May 2019 15:06:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=n9ODtUCTlf7QzMg+EFi0fhULa1Hv1bN8saGVoynBnt8=;
- b=Y0wLmu+PpiLo7vUy+T1dLKysSylXSg7NwAOmGwX9MPYG07Y+1uOVcznI5UzVOu0hCF
- p2wF+V53lMgvx/uZ2rLt/OkiKtI0zDZRIR8kqkWYxre5gGeEgxBkUU0sFg0V0dkCJFmA
- Lu3AzdAwwDLllUxNxExJGK/YFL3iCRzH90A5I=
+ bh=E1DrzXtGDj3hfWXv7sO+LUDSb752frj/M4xDQFuIKdI=;
+ b=ZLPsZLBQfDkyWlMuSQTbZZPvBJjcaZBc5GER2rRMijZOokHJ8ij+fr/bcT9/7dIdwb
+ 1CFYM1rB+bmDU7tm+jgEoq12FdcKNURyTwvdtiHep+LL3Xo6UxzSyCjVo/6qm5NuNPHh
+ LxP/IBMmJY9UGDj19FA28SdZ9JsowKVLe5C+A=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=n9ODtUCTlf7QzMg+EFi0fhULa1Hv1bN8saGVoynBnt8=;
- b=kad2XaMmo4y9fVdb9uKYRf+RY+AEWISXX38cWGKhGprstQ7j37h8OufbB7hYb6FHiV
- yEc5sWGlCtYQHqDb6YahDQPb2nkgR+aRy9FSHIANlKWsh70YDzT9Cd1aL1tmjfPKDE7O
- MswjOqmDMEtTkowBs3h4BUu0PxV4TqVO6+ktXqh4Z+QBWwzGBA4nratBduwjSq3UuLdT
- yqPY+l69FjAlUtS5kQBGTyGQ++sGaVpEzjWraTiwJ+YBg60gItQkr+MhOoX5b+KLNCo3
- q7Yz/vx7kc7aYlJtbO/cPyPsD6rFKQuTl14YQP+Xj2R3xclqDdZmBaCyN68bnO49njpi
- m0NQ==
-X-Gm-Message-State: APjAAAUicv49MvjicsfhGE0NHQzw7+ZKFu4nGUEoit3yloxtNmV9jVWe
- dpp0I8vxtrV31drzxFI463Hdmg==
-X-Google-Smtp-Source: APXvYqzihHia+iUnsOd86KRdycld+FsIGTxqXQCnCFsb55jp0SddgA52ec+bov96FU2MF9EkB9uLWQ==
-X-Received: by 2002:a17:902:21:: with SMTP id
- 30mr69540871pla.302.1558474466758; 
- Tue, 21 May 2019 14:34:26 -0700 (PDT)
+ bh=E1DrzXtGDj3hfWXv7sO+LUDSb752frj/M4xDQFuIKdI=;
+ b=F5bYFX+roFpFdiBK3bjcce+s3UxiBbGPCjqIkbKIzPHGIwffO0TnArMMak+YWeIsIe
+ UsRgcar0DcZmgDa0Z0tFIpO+AWTgpl1mD+6G8kH3Dor+2dWcSCZuJBKYbIHFsC6cxxf+
+ D4VmldAhTXTxjUOMyTMMV4NvN6yDXlCSI6JwLkqIUiK3zkO8A86k24sKOiVYvIMxdjQV
+ fucIePsgF0uXciYWnZw4ZWXiOXt3lSylin2fSNp5Q6O+cT6HNRqaTtUR4RV5CxQ2fq8q
+ aPu2wMpyWmIJ2nosZzMIBT8B8XbSNXnsH51FqDl6Qe8UKeePL+SAQWXVVXs02ucv6gCU
+ NXzQ==
+X-Gm-Message-State: APjAAAUREBkvhNp4PU34ccNAPNTVdvY1fG7L8VNavo3MleT+MdplwOeo
+ qqOta6xl6Kdg+RuLEILnFvpB8A==
+X-Google-Smtp-Source: APXvYqzQz7ZxAp6T6WnMzgzo44oFO/MH3Fqa55WCIqK5Qkpj/XDsVrW00b0XB9chQs/5VLWCkFpbsQ==
+X-Received: by 2002:a63:2c4a:: with SMTP id s71mr68633329pgs.343.1558476369987; 
+ Tue, 21 May 2019 15:06:09 -0700 (PDT)
 Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id 1sm24868945pfn.165.2019.05.21.14.34.26
+ by smtp.gmail.com with ESMTPSA id f17sm22771652pgv.16.2019.05.21.15.06.09
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 21 May 2019 14:34:26 -0700 (PDT)
-Date: Tue, 21 May 2019 14:34:25 -0700
+ Tue, 21 May 2019 15:06:09 -0700 (PDT)
+Date: Tue, 21 May 2019 15:06:08 -0700
 From: Matthias Kaehlcke <mka@chromium.org>
 To: Douglas Anderson <dianders@chromium.org>
-Subject: Re: [PATCH 1/2] ARM: dts: rockchip: Add pin names for
- rk3288-veyron-minnie
-Message-ID: <20190521213425.GJ40515@google.com>
+Subject: Re: [PATCH 2/2] ARM: dts: rockchip: Add pin names for
+ rk3288-veyron-jerry
+Message-ID: <20190521220608.GK40515@google.com>
 References: <20190521203215.234898-1-dianders@chromium.org>
+ <20190521203215.234898-2-dianders@chromium.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190521203215.234898-1-dianders@chromium.org>
+In-Reply-To: <20190521203215.234898-2-dianders@chromium.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_143428_139565_020149B3 
-X-CRM114-Status: GOOD (  15.26  )
+X-CRM114-CacheID: sfid-20190521_150610_784610_95658D2E 
+X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,27 +108,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, May 21, 2019 at 01:32:14PM -0700, Douglas Anderson wrote:
-> We can now use the "gpio-line-names" property to provide the names for
-> all the pins on a board.  Let's use this to provide the names for all
-> the pins on rk3288-veyron-minnie.
-> 
-> In general the names here come straight from the schematic.  That
-> means even if the schematic name is weird / doesn't have consistent
-> naming conventions / has typos I still haven't made any changes.
-> 
-> The exception here is for two pins: the recovery switch and the write
-> protect detection pin.  These two pins need to have standardized names
-> since crossystem (a Chrome OS tool) uses these names to query the
-> pins.  In downstream kernels crossystem used an out-of-tree driver to
-> do this but it has now been moved to the gpiod API and needs the
-> standardized names.
-> 
-> It's expected that other rk3288-veyron boards will get similar patches
-> shortly.
-> 
-> NOTE: I have sorted the "gpio" section to be next to the "pinctrl"
-> section since it seems to logically make the most sense there.
+On Tue, May 21, 2019 at 01:32:15PM -0700, Douglas Anderson wrote:
+> This is like the same change for rk3288-veyron-minnie.  See that patch
+> for more details.
 > 
 > Signed-off-by: Douglas Anderson <dianders@chromium.org>
 
