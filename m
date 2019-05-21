@@ -2,74 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27491258F2
+	by mail.lfdr.de (Postfix) with ESMTPS id 27F84258F3
 	for <lists+linux-rockchip@lfdr.de>; Tue, 21 May 2019 22:33:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vHJj0CtpKEORGNMJR+Hw9Nbl/tMHJawZ/T0jZ5W8myU=; b=TO1VNgy8w+SA2T
-	gtv9cCBYwyfxe9YFRInruIJnEeVQ1IBz2dewsP91qPJsQMlG+tFUyL51CxwVFm0FVTV1qzBzaUhN2
-	e8R8D1HWrN0qb8qXbyNMH1f5MqTY2fbMc+GU2U8VjGAlWHOKpeVGgY7sxRO6gNG57bSNm72enqDkw
-	1WbYXBowDuc09NHeKQukObbTIeyuSYr6kaXA9Xqi78RkIpwYzwlZDlH2dwgeSHaVP1KGGeDFKEswr
-	t4YJhdeYBAxBBooCA8qFeVbBMB+6iVmTitnwFxtOihXSumGgtrzUXf5Z0xyRemIXumX3y7odnXgYs
-	h24kRr+TuDRWaX2mbiMw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=J6/ErzGE4U0bBtVNrYYh/6zpRwktyZyj3yauVfw8a+k=; b=T2b3o9huNzk3a+
+	PHLEQCCU6F06o4sS6E6SmAhKc9KdDFOlPDV0KjCVpot7p19yyI4EXSbjgwDK8aWf/DepFrkuJTKy8
+	kjjHGpXddE/6g02D9YH4/3N2UdkYb5pfq2CpeReBB/Ubccc9iH3+zgaXplSlhlQ9t3FusDa/BDkAB
+	T8SzehAH3Xlx/GfE5rNMJCCH76NMo58LkRvqLN5LbgLXld6AHT4KM2QaV3gjBQzK9JQtWORziNeFr
+	BtW2A/2hgejoKK/CRq+tu9XFpk+Ttwp8LX1DKMmj99q9tJaviG3EQIuDuMTdi5upnSMedYOadKOkU
+	BWn1zXn301GCgQZR4PMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTBRW-0004zP-6K; Tue, 21 May 2019 20:33:02 +0000
-Received: from mail-it1-x144.google.com ([2607:f8b0:4864:20::144])
+	id 1hTBRV-0004wi-1c; Tue, 21 May 2019 20:33:01 +0000
+Received: from mail-it1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTBRB-0004YL-81
+ id 1hTBRB-0004YQ-L6
  for linux-rockchip@lists.infradead.org; Tue, 21 May 2019 20:32:44 +0000
-Received: by mail-it1-x144.google.com with SMTP id g23so3671598iti.1
- for <linux-rockchip@lists.infradead.org>; Tue, 21 May 2019 13:32:40 -0700 (PDT)
+Received: by mail-it1-x141.google.com with SMTP id j17so3676900itk.0
+ for <linux-rockchip@lists.infradead.org>; Tue, 21 May 2019 13:32:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=TL0Rco+HJb/XdiRCUNcHvK2NcbT9epjRSGpGsvVbQoI=;
- b=QBq9fahcLU2tgJhshCN0dwVdL0HE77OlAbTaVT8QDvwmSf17Ll5gBABBcZbQPKSgI8
- wPLldHhQueXNBElEdaeVQGucuCyfo4uJDJwgYvxXvlJB+Ro8K+sPZp03zZ6h3jcX+Zwn
- 8KN7ULMXhj+3tDAZroKu43AHQM5IoJZShiDBU=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=eQ2r5PQ0vvjlMI5kpOVHnGlsdtagsJZCtwtZAIF6wsM=;
+ b=jfXEHCzvUcv7X9RSwEbvGDRkOdVJyAJuHgS/ha5PpxQEQxLd7aI8p8zITCJWQYvgWv
+ kY0qQaJLquIEjt40FFKt/TRlAG0EAlfPnMWQeYOCx6yiphf4mROdATbunECkw4YwxI1W
+ varGpt1jUIIahlRNDo0ElzGp4fcD0Hx+V3FYo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=TL0Rco+HJb/XdiRCUNcHvK2NcbT9epjRSGpGsvVbQoI=;
- b=YoV7Qiz4GTHVQ88SYxIU5RsVyHmTQ80ozrgiERgET0UYVsS4Lwfec3cyqQiKNUy+7K
- Pv3VY91fJ1e40nZBc1VmMTLO//OEIva3Kt7deesv4UFkKS3a6NMnDJEIVvoBJbsCszC4
- kBswg2P/K6MWVCwXf1B1rKpt6sD4A3iGKD9Ct1XRBq8F2hGJHofzcRpEDnC0FMxh2xEn
- eAic62ScABzgeZj640eXuHUUJYZHzcJqON4qkUfWiKlmijPYjMZhpzE6KJuUNy4DKB5I
- 11r0AYeWI59efdbuJmlnfeXg6V8y7rht8G+9yWzTva17Lp6cBDM/ZVy0J5Lw0M8kYCKI
- ZNnQ==
-X-Gm-Message-State: APjAAAUFdsYcBH9eW7iYmb6GPxKvB2g0gL24mCdMbo5PKGMWC89LZE91
- r9//UPx/ynzneoGsWAAPfEYoIQ==
-X-Google-Smtp-Source: APXvYqzMgS+2Y+L54Bugxjb3Y7W5RtvSETPi7Pcr1ybp84tqKgN8/mOHXp8N4/4GVoMpgsDaegyHyg==
-X-Received: by 2002:a24:278c:: with SMTP id g134mr4385454ita.49.1558470759345; 
- Tue, 21 May 2019 13:32:39 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=eQ2r5PQ0vvjlMI5kpOVHnGlsdtagsJZCtwtZAIF6wsM=;
+ b=QgdMTimKljJ/QwDCXev73evOXKq5+b+Vr+9kovqC73ZZeR1ZCE75nz64txa5b8X6AX
+ r2pAO46U6rnaIhe2dodIMR6DQcaFd1wFvlUEx60Ds+C4IpVbprQwQfoYEUu2jVwQXYx2
+ mdPV6kMJyQmpg0Wao+ws+gHP51Fqq2dl8F0Ss0Tx8Ia8Q69MOuB8uUDSNrDn4QsgjeQa
+ y8dpiNU3u2udhy/XLcsU8amG4zd1vHCrYmq9Wpiq9KKOkQO9tnQXZErAOA8cFW2wpeZt
+ 3OyNhWsLMq5PhhL0Y1S3Whn3/lyanN7llPNAIHzNp1b7KQZHKBiFTQ7Rsa9qYOz65usG
+ Jj5A==
+X-Gm-Message-State: APjAAAV5ylux6a/qoNhYHrj1904EHoPylO22L+tF4SPlR5ob/Lrq5Zb5
+ Y7fvu2FSOPsmMNWs4TXB1bszww==
+X-Google-Smtp-Source: APXvYqxSz/8n9XxlYkdxr6ciXmid1JAcD9hFZpzXZV5KyhgrDbitGBVY4l2Wvb/tr6ZfkWjRGGs9ZQ==
+X-Received: by 2002:a02:80e:: with SMTP id 14mr53391656jac.71.1558470760572;
+ Tue, 21 May 2019 13:32:40 -0700 (PDT)
 Received: from tictac2.mtv.corp.google.com
  ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id e22sm7205710ioe.45.2019.05.21.13.32.38
+ by smtp.gmail.com with ESMTPSA id e22sm7205710ioe.45.2019.05.21.13.32.39
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 21 May 2019 13:32:38 -0700 (PDT)
+ Tue, 21 May 2019 13:32:40 -0700 (PDT)
 From: Douglas Anderson <dianders@chromium.org>
 To: Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH 1/2] ARM: dts: rockchip: Add pin names for rk3288-veyron-minnie
-Date: Tue, 21 May 2019 13:32:14 -0700
-Message-Id: <20190521203215.234898-1-dianders@chromium.org>
+Subject: [PATCH 2/2] ARM: dts: rockchip: Add pin names for rk3288-veyron-jerry
+Date: Tue, 21 May 2019 13:32:15 -0700
+Message-Id: <20190521203215.234898-2-dianders@chromium.org>
 X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
+In-Reply-To: <20190521203215.234898-1-dianders@chromium.org>
+References: <20190521203215.234898-1-dianders@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_133241_284250_8E0C4561 
-X-CRM114-Status: GOOD (  12.65  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190521_133241_688569_C7492262 
+X-CRM114-Status: GOOD (  10.77  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -80,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -103,38 +106,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-We can now use the "gpio-line-names" property to provide the names for
-all the pins on a board.  Let's use this to provide the names for all
-the pins on rk3288-veyron-minnie.
-
-In general the names here come straight from the schematic.  That
-means even if the schematic name is weird / doesn't have consistent
-naming conventions / has typos I still haven't made any changes.
-
-The exception here is for two pins: the recovery switch and the write
-protect detection pin.  These two pins need to have standardized names
-since crossystem (a Chrome OS tool) uses these names to query the
-pins.  In downstream kernels crossystem used an out-of-tree driver to
-do this but it has now been moved to the gpiod API and needs the
-standardized names.
-
-It's expected that other rk3288-veyron boards will get similar patches
-shortly.
-
-NOTE: I have sorted the "gpio" section to be next to the "pinctrl"
-section since it seems to logically make the most sense there.
+This is like the same change for rk3288-veyron-minnie.  See that patch
+for more details.
 
 Signed-off-by: Douglas Anderson <dianders@chromium.org>
 ---
 
- arch/arm/boot/dts/rk3288-veyron-minnie.dts | 212 +++++++++++++++++++++
- 1 file changed, 212 insertions(+)
+ arch/arm/boot/dts/rk3288-veyron-jerry.dts | 207 ++++++++++++++++++++++
+ 1 file changed, 207 insertions(+)
 
-diff --git a/arch/arm/boot/dts/rk3288-veyron-minnie.dts b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-index ce57881625ec..a65099b4aef1 100644
---- a/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-@@ -184,6 +184,218 @@
+diff --git a/arch/arm/boot/dts/rk3288-veyron-jerry.dts b/arch/arm/boot/dts/rk3288-veyron-jerry.dts
+index b1613af83d5d..164561f04c1d 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-jerry.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-jerry.dts
+@@ -103,6 +103,213 @@
  	pinctrl-0 = <&vcc50_hdmi_en>;
  };
  
@@ -158,7 +143,7 @@ index ce57881625ec..a65099b4aef1 100644
 +			  "HOST1_PWR_EN",
 +			  "USBOTG_PWREN_H",
 +			  "AP_WARM_RESET_H",
-+			  "nFALUT2",
++			  "nFAULT2",
 +			  "I2C0_SDA_PMIC",
 +
 +			  "I2C0_SCL_PMIC",
@@ -176,17 +161,12 @@ index ce57881625ec..a65099b4aef1 100644
 +			  "",
 +			  "CONFIG3",
 +
-+			  "PROCHOT#",
++			  "",
 +			  "EMMC_RST_L",
 +			  "",
 +			  "",
 +			  "BL_PWR_EN",
-+			  "AVDD_1V8_DISP_EN",
-+			  "TOUCH_INT",
-+			  "TOUCH_RST",
-+
-+			  "I2C3_SCL_TP",
-+			  "I2C3_SDA_TP";
++			  "AVDD_1V8_DISP_EN";
 +};
 +
 +&gpio3 {
@@ -243,7 +223,7 @@ index ce57881625ec..a65099b4aef1 100644
 +
 +			  "SDIO0_CMD",
 +			  "SDIO0_CLK",
-+			  "dev_wake",
++			  "BT_DEV_WAKE",
 +			  "",
 +			  "WIFI_ENABLE_H",
 +			  "BT_ENABLE_L",
@@ -263,8 +243,8 @@ index ce57881625ec..a65099b4aef1 100644
 +
 +			  "",
 +			  "",
-+			  "Volum_Up#",
-+			  "Volum_Down#",
++			  "",
++			  "",
 +			  "SPI0_CLK",
 +			  "SPI0_CS0",
 +			  "SPI0_TXD",
@@ -318,11 +298,11 @@ index ce57881625ec..a65099b4aef1 100644
 +			  "EC_INT",
 +
 +			  "CPU_NMI",
-+			  "DVS_OK",
-+			  "SDMMC_WP",
++			  "DVSOK",
++			  "",
 +			  "EDP_HPD",
 +			  "DVS1",
-+			  "nFALUT1",
++			  "nFAULT1",
 +			  "LCD_EN",
 +			  "DVS2",
 +
