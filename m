@@ -2,79 +2,75 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB2B725A3A
-	for <lists+linux-rockchip@lfdr.de>; Wed, 22 May 2019 00:06:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACFF225AF1
+	for <lists+linux-rockchip@lfdr.de>; Wed, 22 May 2019 01:50:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f8pbnSz7H8pLmBLYZW3pz80CNpdm2uMPkgxqylsWXi0=; b=kJZcUZ8/GWBiyT
-	NWmvF7R3yXC+C87cUyywAPLTlQEsh1V03LXaZRGRULpEVpJa3p9hSKN9b50Gix/OuNsG/rWDEH6Gv
-	YDQra0Cvfg2SrY8yeN/oWaHefCPeppEFoVEig6SJf984MNmYyII8ERv3HyxaQDPFEwzBVyPx6cgWG
-	XhwuIMmKwM3euVEVRBxc7qfMlpwvZZvaHpLG2HMOE5m35ntLOmqyuXsub76ppls6VqsVXcCOCD+Ba
-	Z3qH2bX8TlExfg/0Ymb+wBCABCn3pfZFVQtwZLRNjHwE3PBDarF5Yv6EEjspJCTR4hLvMm1e9PBEA
-	+UeAk+BFB4FspW5HHqAA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Yhsgq11g6FwkSXcDDm6x/gkrSI5+EdV21Soq9ivS8V0=; b=cUdX66L1Wa13Pt
+	JtGSTLT2C0pFwV1qiNT9uVNEySm21QQlU1kWKPcCNuau0WpfReW1egRyvMF7pOHKPV47iu7SkPGUE
+	xcCodFyGPgayinXzUTtERYxItmLX4kQXHbdMZ4wKjQ7SbCwrdTFU/O4sAphAacRr1csDqLOb7yMxb
+	vRopvEylxW+7AHbya+TTONrtMPqgbKBoMy/DedYzDJmjckF8YHQXJlIW0DMex3IcwnMX213L8jdSh
+	89zU5V3SnwkQoWbC0gIqyScLX+P1zJ3GePDykIawysjCWxH75uw4dE5mhouEKgKuDWy30V6PdYoMO
+	p9AC6tbV8Dm2oesjTJaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTCth-0006YP-Va; Tue, 21 May 2019 22:06:13 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hTEWN-0003xV-GA; Tue, 21 May 2019 23:50:15 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTCte-0006Xk-NZ
- for linux-rockchip@lists.infradead.org; Tue, 21 May 2019 22:06:11 +0000
-Received: by mail-pg1-x543.google.com with SMTP id n2so171933pgp.11
- for <linux-rockchip@lists.infradead.org>; Tue, 21 May 2019 15:06:10 -0700 (PDT)
+ id 1hTEWJ-0003wW-Pv
+ for linux-rockchip@lists.infradead.org; Tue, 21 May 2019 23:50:13 +0000
+Received: by mail-pf1-x441.google.com with SMTP id 13so265067pfw.9
+ for <linux-rockchip@lists.infradead.org>; Tue, 21 May 2019 16:50:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=E1DrzXtGDj3hfWXv7sO+LUDSb752frj/M4xDQFuIKdI=;
- b=ZLPsZLBQfDkyWlMuSQTbZZPvBJjcaZBc5GER2rRMijZOokHJ8ij+fr/bcT9/7dIdwb
- 1CFYM1rB+bmDU7tm+jgEoq12FdcKNURyTwvdtiHep+LL3Xo6UxzSyCjVo/6qm5NuNPHh
- LxP/IBMmJY9UGDj19FA28SdZ9JsowKVLe5C+A=
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=7q0PelwL9bKMV8j6fotAmIIGWuu5yPxHabkyZucfWSs=;
+ b=PgFRHz9LTKAW06xheSlCgmaBYlHudfTzK+hJD9m+hf4w8jZW0zxEWlzYfdhjW8BoOz
+ sDx93ktSy6nK4r9e0Z/eFmV3NlH0dxZppw28/hubD1RTw5WFELEY0B28z0t71MVdkawX
+ tofgt+pzOVwVuSxr4zX7Kr3vgG7xf/Uf45AW8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=E1DrzXtGDj3hfWXv7sO+LUDSb752frj/M4xDQFuIKdI=;
- b=F5bYFX+roFpFdiBK3bjcce+s3UxiBbGPCjqIkbKIzPHGIwffO0TnArMMak+YWeIsIe
- UsRgcar0DcZmgDa0Z0tFIpO+AWTgpl1mD+6G8kH3Dor+2dWcSCZuJBKYbIHFsC6cxxf+
- D4VmldAhTXTxjUOMyTMMV4NvN6yDXlCSI6JwLkqIUiK3zkO8A86k24sKOiVYvIMxdjQV
- fucIePsgF0uXciYWnZw4ZWXiOXt3lSylin2fSNp5Q6O+cT6HNRqaTtUR4RV5CxQ2fq8q
- aPu2wMpyWmIJ2nosZzMIBT8B8XbSNXnsH51FqDl6Qe8UKeePL+SAQWXVVXs02ucv6gCU
- NXzQ==
-X-Gm-Message-State: APjAAAUREBkvhNp4PU34ccNAPNTVdvY1fG7L8VNavo3MleT+MdplwOeo
- qqOta6xl6Kdg+RuLEILnFvpB8A==
-X-Google-Smtp-Source: APXvYqzQz7ZxAp6T6WnMzgzo44oFO/MH3Fqa55WCIqK5Qkpj/XDsVrW00b0XB9chQs/5VLWCkFpbsQ==
-X-Received: by 2002:a63:2c4a:: with SMTP id s71mr68633329pgs.343.1558476369987; 
- Tue, 21 May 2019 15:06:09 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id f17sm22771652pgv.16.2019.05.21.15.06.09
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 21 May 2019 15:06:09 -0700 (PDT)
-Date: Tue, 21 May 2019 15:06:08 -0700
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Douglas Anderson <dianders@chromium.org>
-Subject: Re: [PATCH 2/2] ARM: dts: rockchip: Add pin names for
- rk3288-veyron-jerry
-Message-ID: <20190521220608.GK40515@google.com>
-References: <20190521203215.234898-1-dianders@chromium.org>
- <20190521203215.234898-2-dianders@chromium.org>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=7q0PelwL9bKMV8j6fotAmIIGWuu5yPxHabkyZucfWSs=;
+ b=A+ps4aUap+HqqTN9deXcVKmcoi8Isf03STtf2+JgnT+Y5+CwvjjwzrvoMZmFpt0zYr
+ yt7jQsuNnVOpEtfT3frAcevqCqDTOucZhMPr1Hl5XbR7I/f2+4N5Qy4iFIjX7tnnUoWa
+ ARJGJ7KMpL4rSHu/19mBNxcxrYG3U2UywYOMioyO8eOJ3Yv2IW2BOkXtexlKknQILj/j
+ Frck3CiQPIFsFkBiKG7TK3FGRFubdn937OWyPvqOz9ocmau48/FJ9IZAun6uR6c/hP0U
+ xPlGnbhryBpqirVcF59E43b/hNk1bF1m0B0LptN9KPImLHiESUyJZH0b/unMoM+pVBzg
+ HzdA==
+X-Gm-Message-State: APjAAAWFMQkjuG5Nj5BgKJEIw8HmtbDbx2IPqm7jC1qkhell5LmEtBSL
+ A5afcnjLHtJNcNvvVv1G7akqQQ==
+X-Google-Smtp-Source: APXvYqyw8kaeTYK/TiQMeIZGSd18nYuR1FaVotEhqU23R+CYW+qg0qbUu1Ce2nBjA7PX/xVkt40Fqw==
+X-Received: by 2002:a65:64c9:: with SMTP id t9mr85741782pgv.221.1558482608692; 
+ Tue, 21 May 2019 16:50:08 -0700 (PDT)
+Received: from tictac2.mtv.corp.google.com
+ ([2620:15c:202:1:24fa:e766:52c9:e3b2])
+ by smtp.gmail.com with ESMTPSA id 194sm19955605pgd.33.2019.05.21.16.50.07
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 21 May 2019 16:50:08 -0700 (PDT)
+From: Douglas Anderson <dianders@chromium.org>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH] ARM: dts: rockchip: Mark that the rk3288 timer might stop in
+ suspend
+Date: Tue, 21 May 2019 16:49:33 -0700
+Message-Id: <20190521234933.153953-1-dianders@chromium.org>
+X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190521203215.234898-2-dianders@chromium.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_150610_784610_95658D2E 
-X-CRM114-Status: UNSURE (   9.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190521_165011_860965_B5F36F5B 
+X-CRM114-Status: GOOD (  11.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -99,22 +95,55 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, briannorris@chromium.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, ryandcase@chromium.org,
+ briannorris@chromium.org, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Douglas Anderson <dianders@chromium.org>,
+ linux-rockchip@lists.infradead.org, mka@chromium.org, ryandcase@chromium.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, May 21, 2019 at 01:32:15PM -0700, Douglas Anderson wrote:
-> This is like the same change for rk3288-veyron-minnie.  See that patch
-> for more details.
-> 
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
+This is similar to commit e6186820a745 ("arm64: dts: rockchip: Arch
+counter doesn't tick in system suspend").  Specifically on the rk3288
+it can be seen that the timer stops ticking in suspend if we end up
+running through the "osc_disable" path in rk3288_slp_mode_set().  In
+that path the 24 MHz clock will turn off and the timer stops.
 
-Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
+To test this, I ran this on a Chrome OS filesystem:
+  before=$(date); \
+  suspend_stress_test -c1 --suspend_min=30 --suspend_max=31; \
+  echo ${before}; date
+
+...and I found that unless I plug in a device that requests USB wakeup
+to be active that the two calls to "date" would show that fewer than
+30 seconds passed.
+
+NOTE: deep suspend (where the 24 MHz clock gets disabled) isn't
+supported yet on upstream Linux so this was tested on a downstream
+kernel.
+
+Signed-off-by: Douglas Anderson <dianders@chromium.org>
+---
+
+ arch/arm/boot/dts/rk3288.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+index 171231a0cd9b..1e5260b556b7 100644
+--- a/arch/arm/boot/dts/rk3288.dtsi
++++ b/arch/arm/boot/dts/rk3288.dtsi
+@@ -231,6 +231,7 @@
+ 			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>,
+ 			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>;
+ 		clock-frequency = <24000000>;
++		arm,no-tick-in-suspend;
+ 	};
+ 
+ 	timer: timer@ff810000 {
+-- 
+2.21.0.1020.gf2820cf01a-goog
+
 
 _______________________________________________
 Linux-rockchip mailing list
