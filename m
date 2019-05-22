@@ -2,73 +2,88 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A2FE26BC8
-	for <lists+linux-rockchip@lfdr.de>; Wed, 22 May 2019 21:30:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D9BE272A2
+	for <lists+linux-rockchip@lfdr.de>; Thu, 23 May 2019 00:53:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O1tpmT7QR9OAuIfXKRqytAUWRR0xrR9CCXGpbztIZ0g=; b=a7UToMOXMpOBQH
-	utzN3rjtwlLbx05YfU6+5PYqD5V0migBOAwZN6wR5XNEsYFi/ne51IsnVNtddIO3x7PIKFg+AxaGP
-	ZPQEtMu241UQ4AJu2FoFTw8CUODjGllbspE9GHj/rnwK8rvzo3QETtvcS72C4ng1hobc84vdgJsDO
-	p5JKo7eHKVIL0d/ntUY2yxNkuVi/46vh1K4pAKRDh+0G/GuwODfFmZPBFz8tGJFqF0/tZdkfv2WIc
-	Qc44GWLwkXSqUGgGwTICUneaGPqLcHNQChyjqYGkPZ4Pk2AvUG0wmLcaPzAJA7ReIWg5pXW4YgNs7
-	xj8ggJ4ZCMFlEFWfhtmg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=g9wFj3g3eVYc/OQKKOr0hCt1F5oc6yl8/g6NDw4GMPk=; b=SRk
+	HLk9ELt9KGJZu+T1qpZ2QZZ+TeOjbUe0M0y0sxy+KYF91SDCgBOW3XZ6IstvjL30anUIp4g02PS6i
+	8/PUpH2YQOAy1BdHsWJJmks6Vs5+7okJSVZtopmphXKdJfrsRB0Z5kq7+YanYBM/WDr4zr3jPBvjC
+	kK/7uPK6mN/pY0tr6vJTZcIS5T+WrXY0nkIIIFdmwKaERsNLUGJ5Y3WSr0LgsYBcbHsMqiyMjBq++
+	2GSKZp7wXs2VssHvXP7ae0vxJQ4Y3+gCBjo5k4W3c6yLhz5lXz2z1k91UwiZ+bCnK28hSz9EkpT87
+	4FKy75DQIwvtqRs8+oWJk+4FoffFcQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTWwG-0006CZ-T5; Wed, 22 May 2019 19:30:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hTa7B-00041G-Um; Wed, 22 May 2019 22:53:41 +0000
+Received: from outgoing4.flk.host-h.net ([188.40.0.90])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTWwD-0006B6-3o
- for linux-rockchip@lists.infradead.org; Wed, 22 May 2019 19:30:10 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 05F7C20879;
- Wed, 22 May 2019 19:30:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558553408;
- bh=oV5MnESwSqTdxHd32Kvszv6+H5fgv7apnZmsWkGPLuA=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=iIqXrDstkkFYnErM2HP/KLBSdjYm5/keR0vftV6u/VFGmxmOYEM80/U6byEzrEWLW
- eD+OYQ3WhoSvEdlzjpPVE1eot8KudqYMjE5HB/GW6+pXZ/PX1Tv9jkOH1fzM4nFqHs
- HAOE2rV+nh+SUJUkSi5nnI7515Gy9untYNxUDHRE=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 057/167] clk: rockchip: undo several noc and
- special clocks as critical on rk3288
-Date: Wed, 22 May 2019 15:26:52 -0400
-Message-Id: <20190522192842.25858-57-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190522192842.25858-1-sashal@kernel.org>
-References: <20190522192842.25858-1-sashal@kernel.org>
-MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+ id 1hTa76-00040R-Lw; Wed, 22 May 2019 22:53:39 +0000
+Received: from www31.flk1.host-h.net ([188.40.1.173])
+ by antispam1-flk1.host-h.net with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.89)
+ (envelope-from <justin.swartz@risingedge.co.za>)
+ id 1hTa6n-0000bT-Bw; Thu, 23 May 2019 00:53:18 +0200
+Received: from [130.255.73.16] (helo=v01.28459.vpscontrol.net)
+ by www31.flk1.host-h.net with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.84_2)
+ (envelope-from <justin.swartz@risingedge.co.za>)
+ id 1hTa6c-0007fD-EJ; Thu, 23 May 2019 00:53:06 +0200
+From: Justin Swartz <justin.swartz@risingedge.co.za>
+To: Sandy Huang <hjc@rock-chips.com>,
+ =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH] drm/rockchip: dw_hdmi: add basic rk3228 support
+Date: Wed, 22 May 2019 22:46:29 +0000
+Message-Id: <20190522224631.25164-1-justin.swartz@risingedge.co.za>
+X-Mailer: git-send-email 2.11.0
+X-Authenticated-Sender: justin.swartz@risingedge.co.za
+X-Virus-Scanned: Clear (ClamAV 0.100.3/25457/Wed May 22 09:57:31 2019)
+X-Originating-IP: 188.40.1.173
+X-SpamExperts-Domain: risingedge.co.za
+X-SpamExperts-Username: 
+Authentication-Results: host-h.net;
+ auth=pass (login) smtp.auth=@risingedge.co.za
+X-SpamExperts-Outgoing-Class: ham
+X-SpamExperts-Outgoing-Evidence: SB/global_tokens (0.000718690605145)
+X-Recommended-Action: accept
+X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0fHWENUdqj+4JDN3TQDP3eCpSDasLI4SayDByyq9LIhVur86TwL7jsv5
+ m6+fjp/sxETNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3K7uDjV/sFUXQr+CDrNQuIHgQg
+ mAX8Bxy/iUu0ThNZg0h/RxVysY5Ye6+GGw0VqdJD7ren9RtRNyYim5e3GD8LGfWrcbYvelpuN/Pk
+ qhBpvAyWwieZyauFYqHkIbFa+ipF21HJWO60ZqrvKy/1AXUV5oXt6ymoFHaG7BQtEYvFCSo5O9aO
+ OPCZx1b2uMC/zMc3aAOV7ICS29ZskdEzgnmWc6FyCw2oLKHJClAYHcXyktNZ2XmZE6Ulo3Sg6/fH
+ CWNxoaEnuBtnt6GUDDzwi0xE9ujBdjBi/EW6wTMO5aPWRLvv8qeRWs1kOo/p5GKJkWYAO3Aa5n+U
+ cgHka3/viXjzcoj1m7f+vTE4JStv6WwSOoIjjjxJx7TjfIl9lT02e+bLG5tY/17Am1+3t6saIBBg
+ jLL9CBTChXJpl1nl23cKb/28qAHF3ayYxbGdFos0fpCN/Zqe7k8tOuyC0ezetWWw8nL3mjAyuRnY
+ YfqoF0qwBaWr31abV7tmT2g84edke3MdOkNjooab3HXOpUJdeB9FrcmwwJhZoFj1JrH8+3dIKm8T
+ aJbF/DJ9xG35AyqkelXaj1B5NGYLZCD5qc9WTEIS3cJCoM1jZKVSdLKiMKeae175VNiXOYUQ+bYR
+ OTnFZniyHwlqvaI+zok/BsKQK4gft9MTokp23oPCMeUu86GfQl/coNq5LDsD+gmtrHR34ik+dbYb
+ 9IXfYGRpVS/0hA4MwqmkYLLjcD7HaYjxiQBclDtVrfG8Zd+nzbonxrsMSs4uYqsuNEW45+y/2kiU
+ pWy9c+XovTjsJstHtBoNlKIuslv0d6pyfV7QOE1hL9j5OVSXNVTcvF4bYNCxBEiOkhGolglPmh6a
+ ILJqM6WsXf7aQnmpO2ydeyFd1pMxtzaLrgiAa1jZ449c5QOSXHeR3E0E19yXIdNHJDPRcm8rLb1r
+ h0PyzIaTXD+uKJkHA4nFPinpYeLTxNigHOV5GQgWJq64bnCnflZnbjDB2+RGRgaXth0ZHRqQruFr
+ G/GlTGRDUHWt54s410cgWo1fMD6i15+WgVsQdC9uGg5IeWmPBYt4N47WgJgyTfy73B/Plf7FmTDV
+ qY+pQN3pVbMWvtuGUnEh3DwJWw42swm4bO6gacpMpzKjPCVKQvBNmkphbV+6LqpSOVpogBsPfG5h
+ jLRjd6kxWF4VLgIZIkTm0juO6rHlP/TihjA708Lg3Y2gXyaf+rItBxw1SWz0NFi7GeT33MAvp0E4
+ hZvaIK8zWrz4lb7RoCsWna0PdfWBYPgYUN6vj8NApCcRaz+idK1HZy9Txmtmp2+U8T3Kfj7tHuHD
+ vXqVSlU=
+X-Report-Abuse-To: spam@antispammaster.host-h.net
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_123009_189591_A9ADFA06 
-X-CRM114-Status: GOOD (  17.20  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190522_155336_721786_102B8913 
+X-CRM114-Status: GOOD (  12.65  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [188.40.0.90 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -81,131 +96,127 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Elaine Zhang <zhangqing@rock-chips.com>,
- Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
- linux-clk@vger.kernel.org
+Cc: devicetree@vger.kernel.org, Justin Swartz <justin.swartz@risingedge.co.za>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Douglas Anderson <dianders@chromium.org>
+Like the RK3328, RK322x SoCs offer a Synopsis DesignWare HDMI transmitter
+and an Innosilicon HDMI PHY.
 
-[ Upstream commit f4033db5b84ebe4b32c25ba2ed65ab20b628996a ]
+Add a new dw_hdmi_plat_data struct, rk3228_hdmi_drv_data.
+Assign a set of mostly generic rk3228_hdmi_phy_ops functions.
+Add dw_hdmi_rk3228_setup_hpd() to enable the HDMI HPD and DDC lines.
 
-This is mostly a revert of commit 55bb6a633c33 ("clk: rockchip: mark
-noc and some special clk as critical on rk3288") except that we're
-keeping "pmu_hclk_otg0" as critical still.
-
-NOTE: turning these clocks off doesn't seem to do a whole lot in terms
-of power savings (checking the power on the logic rail).  It appears
-to save maybe 1-2mW.  ...but still it seems like we should turn the
-clocks off if they aren't needed.
-
-About "pmu_hclk_otg0" (the one clock from the original commit we're
-still keeping critical) from an email thread:
-
-> pmu ahb clock
->
-> Function: Clock to pmu module when hibernation and/or ADP is
-> enabled. Must be greater than or equal to 30 MHz.
->
-> If the SOC design does not support hibernation/ADP function, only have
-> hclk_otg, this clk can be switched according to the usage of otg.
-> If the SOC design support hibernation/ADP, has two clocks, hclk_otg and
-> pmu_hclk_otg0.
-> Hclk_otg belongs to the closed part of otg logic, which can be switched
-> according to the use of otg.
->
-> pmu_hclk_otg0 belongs to the always on part.
->
-> As for whether pmu_hclk_otg0 can be turned off when otg is not in use,
-> we have not tested. IC suggest make pmu_hclk_otg0 always on.
-
-For the rest of the clocks:
-
-atclk: No documentation about this clock other than that it goes to
-the CPU.  CPU functions fine without it on.  Maybe needed for JTAG?
-
-jtag: Presumably this clock is only needed if you're debugging with
-JTAG.  It doesn't seem like it makes sense to waste power for every
-rk3288 user.  In any case to do JTAG you'd need private patches to
-adjust the pinctrl the mux the JTAG out anyway.
-
-pclk_dbg, pclk_core_niu: On veyron Chromebooks we turn these two
-clocks on only during kernel panics in order to access some coresight
-registers.  Since nothing in the upstream kernel does this we should
-be able to leave them off safely.  Maybe also needed for JTAG?
-
-hsicphy12m_xin12m: There is no indication of why this clock would need
-to be turned on for boards that don't use HSIC.
-
-pclk_ddrupctl[0-1], pclk_publ0[0-1]: On veyron Chromebooks we turn
-these 4 clocks on only when doing DDR transitions and they are off
-otherwise.  I see no reason why they'd need to be on in the upstream
-kernel which doesn't support DDRFreq.
-
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
-Reviewed-by: Elaine Zhang <zhangqing@rock-chips.com>
-Signed-off-by: Heiko Stuebner <heiko@sntech.de>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
+Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
 ---
- drivers/clk/rockchip/clk-rk3288.c | 13 ++++---------
- 1 file changed, 4 insertions(+), 9 deletions(-)
+ .../bindings/display/rockchip/dw_hdmi-rockchip.txt |  1 +
+ drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c        | 53 ++++++++++++++++++++++
+ 2 files changed, 54 insertions(+)
 
-diff --git a/drivers/clk/rockchip/clk-rk3288.c b/drivers/clk/rockchip/clk-rk3288.c
-index 450de24a1b422..45cd2897e586b 100644
---- a/drivers/clk/rockchip/clk-rk3288.c
-+++ b/drivers/clk/rockchip/clk-rk3288.c
-@@ -292,13 +292,13 @@ static struct rockchip_clk_branch rk3288_clk_branches[] __initdata = {
- 	COMPOSITE_NOMUX(0, "aclk_core_mp", "armclk", CLK_IGNORE_UNUSED,
- 			RK3288_CLKSEL_CON(0), 4, 4, DFLAGS | CLK_DIVIDER_READ_ONLY,
- 			RK3288_CLKGATE_CON(12), 6, GFLAGS),
--	COMPOSITE_NOMUX(0, "atclk", "armclk", CLK_IGNORE_UNUSED,
-+	COMPOSITE_NOMUX(0, "atclk", "armclk", 0,
- 			RK3288_CLKSEL_CON(37), 4, 5, DFLAGS | CLK_DIVIDER_READ_ONLY,
- 			RK3288_CLKGATE_CON(12), 7, GFLAGS),
- 	COMPOSITE_NOMUX(0, "pclk_dbg_pre", "armclk", CLK_IGNORE_UNUSED,
- 			RK3288_CLKSEL_CON(37), 9, 5, DFLAGS | CLK_DIVIDER_READ_ONLY,
- 			RK3288_CLKGATE_CON(12), 8, GFLAGS),
--	GATE(0, "pclk_dbg", "pclk_dbg_pre", CLK_IGNORE_UNUSED,
-+	GATE(0, "pclk_dbg", "pclk_dbg_pre", 0,
- 			RK3288_CLKGATE_CON(12), 9, GFLAGS),
- 	GATE(0, "cs_dbg", "pclk_dbg_pre", CLK_IGNORE_UNUSED,
- 			RK3288_CLKGATE_CON(12), 10, GFLAGS),
-@@ -626,7 +626,7 @@ static struct rockchip_clk_branch rk3288_clk_branches[] __initdata = {
- 	INVERTER(SCLK_HSADC, "sclk_hsadc", "sclk_hsadc_out",
- 			RK3288_CLKSEL_CON(22), 7, IFLAGS),
+diff --git a/Documentation/devicetree/bindings/display/rockchip/dw_hdmi-rockchip.txt b/Documentation/devicetree/bindings/display/rockchip/dw_hdmi-rockchip.txt
+index 39143424a..703503103 100644
+--- a/Documentation/devicetree/bindings/display/rockchip/dw_hdmi-rockchip.txt
++++ b/Documentation/devicetree/bindings/display/rockchip/dw_hdmi-rockchip.txt
+@@ -12,6 +12,7 @@ following device-specific properties.
+ Required properties:
  
--	GATE(0, "jtag", "ext_jtag", CLK_IGNORE_UNUSED,
-+	GATE(0, "jtag", "ext_jtag", 0,
- 			RK3288_CLKGATE_CON(4), 14, GFLAGS),
+ - compatible: should be one of the following:
++		"rockchip,rk3228-dw-hdmi"
+ 		"rockchip,rk3288-dw-hdmi"
+ 		"rockchip,rk3328-dw-hdmi"
+ 		"rockchip,rk3399-dw-hdmi"
+diff --git a/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c b/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c
+index 4cdc9f86c..182a852af 100644
+--- a/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c
++++ b/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c
+@@ -23,6 +23,14 @@
+ #include "rockchip_drm_drv.h"
+ #include "rockchip_drm_vop.h"
  
- 	COMPOSITE_NODIV(SCLK_USBPHY480M_SRC, "usbphy480m_src", mux_usbphy480m_p, 0,
-@@ -635,7 +635,7 @@ static struct rockchip_clk_branch rk3288_clk_branches[] __initdata = {
- 	COMPOSITE_NODIV(SCLK_HSICPHY480M, "sclk_hsicphy480m", mux_hsicphy480m_p, 0,
- 			RK3288_CLKSEL_CON(29), 0, 2, MFLAGS,
- 			RK3288_CLKGATE_CON(3), 6, GFLAGS),
--	GATE(0, "hsicphy12m_xin12m", "xin12m", CLK_IGNORE_UNUSED,
-+	GATE(0, "hsicphy12m_xin12m", "xin12m", 0,
- 			RK3288_CLKGATE_CON(13), 9, GFLAGS),
- 	DIV(0, "hsicphy12m_usbphy", "sclk_hsicphy480m", 0,
- 			RK3288_CLKSEL_CON(11), 8, 6, DFLAGS),
-@@ -816,11 +816,6 @@ static const char *const rk3288_critical_clocks[] __initconst = {
- 	"pclk_alive_niu",
- 	"pclk_pd_pmu",
- 	"pclk_pmu_niu",
--	"pclk_core_niu",
--	"pclk_ddrupctl0",
--	"pclk_publ0",
--	"pclk_ddrupctl1",
--	"pclk_publ1",
- 	"pmu_hclk_otg0",
++#define RK3228_GRF_SOC_CON2		0x0408
++#define RK3228_HDMI_SDAIN_MSK		BIT(14)
++#define RK3228_HDMI_SCLIN_MSK		BIT(13)
++#define RK3228_GRF_SOC_CON6		0x0418
++#define RK3228_HDMI_HPD_VSEL		BIT(6)
++#define RK3228_HDMI_SDA_VSEL		BIT(5)
++#define RK3228_HDMI_SCL_VSEL		BIT(4)
++
+ #define RK3288_GRF_SOC_CON6		0x025C
+ #define RK3288_HDMI_LCDC_SEL		BIT(4)
+ #define RK3328_GRF_SOC_CON2		0x0408
+@@ -325,6 +333,25 @@ static void dw_hdmi_rockchip_genphy_disable(struct dw_hdmi *dw_hdmi, void *data)
+ 	phy_power_off(hdmi->phy);
+ }
+ 
++static void dw_hdmi_rk3228_setup_hpd(struct dw_hdmi *dw_hdmi, void *data)
++{
++	struct rockchip_hdmi *hdmi = (struct rockchip_hdmi *)data;
++
++	dw_hdmi_phy_setup_hpd(dw_hdmi, data);
++
++	regmap_write(hdmi->regmap,
++		RK3228_GRF_SOC_CON6,
++		HIWORD_UPDATE(RK3228_HDMI_HPD_VSEL | RK3228_HDMI_SDA_VSEL |
++			      RK3228_HDMI_SCL_VSEL,
++			      RK3228_HDMI_HPD_VSEL | RK3228_HDMI_SDA_VSEL |
++			      RK3228_HDMI_SCL_VSEL));
++
++	regmap_write(hdmi->regmap,
++		RK3228_GRF_SOC_CON2,
++		HIWORD_UPDATE(RK3228_HDMI_SDAIN_MSK | RK3228_HDMI_SCLIN_MSK,
++			      RK3228_HDMI_SDAIN_MSK | RK3228_HDMI_SCLIN_MSK));
++}
++
+ static enum drm_connector_status
+ dw_hdmi_rk3328_read_hpd(struct dw_hdmi *dw_hdmi, void *data)
+ {
+@@ -370,6 +397,29 @@ static void dw_hdmi_rk3328_setup_hpd(struct dw_hdmi *dw_hdmi, void *data)
+ 			      RK3328_HDMI_HPD_IOE));
+ }
+ 
++static const struct dw_hdmi_phy_ops rk3228_hdmi_phy_ops = {
++	.init		= dw_hdmi_rockchip_genphy_init,
++	.disable	= dw_hdmi_rockchip_genphy_disable,
++	.read_hpd	= dw_hdmi_phy_read_hpd,
++	.update_hpd	= dw_hdmi_phy_update_hpd,
++	.setup_hpd	= dw_hdmi_rk3228_setup_hpd,
++};
++
++static struct rockchip_hdmi_chip_data rk3228_chip_data = {
++	.lcdsel_grf_reg = -1,
++};
++
++static const struct dw_hdmi_plat_data rk3228_hdmi_drv_data = {
++	.mode_valid = dw_hdmi_rockchip_mode_valid,
++	.mpll_cfg = rockchip_mpll_cfg,
++	.cur_ctr = rockchip_cur_ctr,
++	.phy_config = rockchip_phy_config,
++	.phy_data = &rk3228_chip_data,
++	.phy_ops = &rk3228_hdmi_phy_ops,
++	.phy_name = "inno_dw_hdmi_phy2",
++	.phy_force_vendor = true,
++};
++
+ static struct rockchip_hdmi_chip_data rk3288_chip_data = {
+ 	.lcdsel_grf_reg = RK3288_GRF_SOC_CON6,
+ 	.lcdsel_big = HIWORD_UPDATE(0, RK3288_HDMI_LCDC_SEL),
+@@ -422,6 +472,9 @@ static const struct dw_hdmi_plat_data rk3399_hdmi_drv_data = {
  };
  
+ static const struct of_device_id dw_hdmi_rockchip_dt_ids[] = {
++	{ .compatible = "rockchip,rk3228-dw-hdmi",
++	  .data = &rk3228_hdmi_drv_data
++	},
+ 	{ .compatible = "rockchip,rk3288-dw-hdmi",
+ 	  .data = &rk3288_hdmi_drv_data
+ 	},
 -- 
-2.20.1
+2.11.0
 
 
 _______________________________________________
