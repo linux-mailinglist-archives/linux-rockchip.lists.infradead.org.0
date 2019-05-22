@@ -2,82 +2,63 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBE25269AF
-	for <lists+linux-rockchip@lfdr.de>; Wed, 22 May 2019 20:14:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B274126B4A
+	for <lists+linux-rockchip@lfdr.de>; Wed, 22 May 2019 21:26:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZaI2MVMy9T5P95OOtcC48R03SoMOVy7HNwlYmGz6rbs=; b=ARjQvDDa6IiYbM
-	y7TCHdpvMRm3vCUAJEd912EhQXQL+VYQL4Vwua8FkMpyN2kxXJ0xhzX3A9cdhbiwDgCVQ2r39mZYQ
-	oflzXAzK9LC9H3Sq/Fvzx5WqUzezFUJbyL3EfKNM+8COtHASlmyE4hAlR0XOiDPceoZp+51O7E9oF
-	nCygDJJzmQzK0Fwn1qSTOOUgjNUNvgXkTA1svzKlrcG8qibPusN84imzwS1Lz4v8BWwvxbT7zKC3a
-	Ggyec/5LOtU5L9nQCZQ4vlxK3l+21Q7xwhin8EzTX2+tTxOb5zqYIZFv4c2uND5udbkJR+i7mFwSz
-	OOYppP+bPYZjII30+A3A==;
+	List-Owner; bh=r9fVZQ4ltNjUWEB2HhzR2vCuLBcQMKHyS0+hFhF1aqg=; b=I+jgKC33VMOlJ0
+	1wJrSgeLrTh5R5L+zBoI338eeYXSTL64zPOeJe28Nu1UHD84W/IU5IQLsaJL72GJNaIindg4W+ofC
+	THL444PflmBIXZE3refe1teQaYFoTGD66+Wycniv/q+n5KcsDaPchgUqNOJeRDCWScey5lj4axHDH
+	6RyO9IkG3VzFyVbIP3ovxB0g11/g7Gb02eC5CAWfh5wERvscLYywpvB2vihcUaZwlixpLLsL5y2fy
+	XXlszHoFDRsfFX230bY0j4oL///0/Juv0pMUK9QsbiGi9e+zy30bU0SZR7++BtUKNwqSwpQZZo8Sn
+	h8YQIcHGmok3XpJvFxwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTVkZ-0001BF-Jt; Wed, 22 May 2019 18:14:03 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1hTWsh-0003t6-AM; Wed, 22 May 2019 19:26:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTVkV-00019w-QM
- for linux-rockchip@lists.infradead.org; Wed, 22 May 2019 18:14:01 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id l20so1993044vsp.3
- for <linux-rockchip@lists.infradead.org>; Wed, 22 May 2019 11:13:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=als0AafCzNcwDpUysRFXNRE8h4TvypenDMJfaAg3x3M=;
- b=Vkv0JYag5RXjIyQv9tMB50n4hClGqOqpOhB2GGfs8w4zpDNVkiYMS8ZJDnx0wvP5XB
- F92PsIOC6CoRrTLnhridwl8W06XlPQzWSBucGXbUj0XK8y4FlsyM1ZIF6ySGv9hgOIJN
- N3J3A51yuRx/HD8R01BubkDaT1q5W+xw/9QRY=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=als0AafCzNcwDpUysRFXNRE8h4TvypenDMJfaAg3x3M=;
- b=bzNHPwuUnp+tsticsSWNxnPL5ESb8lNZMm+/Mbhk7TrAK4MNhAlCTFro1Aj1y/SCHg
- MN353kbmnE/o26+7epLJjQGbpuFGTx7xsNma53gSKellPbi2YlPvHJaoFF7dwsiahR89
- TZQoso0dl3sRl6EhGkW0h2u216AlLbnG5i76m9dCxfmED6fPLrWZqynrUsoAI9uAEdXg
- i1peT9LwY5V/13qKYwXbHXZ059XUBLkEByyyAEs4iDBUNXZ7O7s//XHsXpMVxVCy8V8g
- EkWtYy5vUC55AGxJdoTuMQx3jADiBsjNe9bpUTsfkpswolyzLkH+6tfoacRtZJun+6A1
- fIdg==
-X-Gm-Message-State: APjAAAW/EQG6fe90vl9MVoRGQr1Ch/ZKNd/51ohfwVpul0WhygaMBVlc
- kVsugYHtLzkuHCMO7WP4zHPnHenn16g=
-X-Google-Smtp-Source: APXvYqyHRHZJ5v1VCp/k3XfkqyMCN9AvD6CQppo21I7asFIq4tkCi05k6P9/BDd4SlDy1E5zs9o4uw==
-X-Received: by 2002:a67:f049:: with SMTP id q9mr43420581vsm.93.1558548838081; 
- Wed, 22 May 2019 11:13:58 -0700 (PDT)
-Received: from mail-vs1-f50.google.com (mail-vs1-f50.google.com.
- [209.85.217.50])
- by smtp.gmail.com with ESMTPSA id n132sm1562845vke.18.2019.05.22.11.13.57
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Wed, 22 May 2019 11:13:57 -0700 (PDT)
-Received: by mail-vs1-f50.google.com with SMTP id x184so1981086vsb.5
- for <linux-rockchip@lists.infradead.org>; Wed, 22 May 2019 11:13:57 -0700 (PDT)
-X-Received: by 2002:a67:ebd6:: with SMTP id y22mr28744866vso.87.1558548836544; 
- Wed, 22 May 2019 11:13:56 -0700 (PDT)
+ id 1hTWse-0003sO-HG
+ for linux-rockchip@lists.infradead.org; Wed, 22 May 2019 19:26:29 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6CBD720879;
+ Wed, 22 May 2019 19:26:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1558553188;
+ bh=MQ7GBJGYsRs7x477zz5+ZEI8vXsdtgdGw+AwAxkTOqQ=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=xjMs+iCVFAZJFQQ0mbgTW7us4mxG/ZYlw3x9y0nySj93/ZmRAhW/OvOYTsCWEamHk
+ JSoQX3qp6c/2Cj55+BbuGrrd6lrKVwSuFtZ7bk1ZyHS4nO80TMknozYtZKSiEHvjYm
+ NdenPxfU0JFn+xNQoLWrsU+f41UyzPU2Kp+lkWYA=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.0 103/317] clk: rockchip: undo several noc and
+ special clocks as critical on rk3288
+Date: Wed, 22 May 2019 15:20:04 -0400
+Message-Id: <20190522192338.23715-103-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190522192338.23715-1-sashal@kernel.org>
+References: <20190522192338.23715-1-sashal@kernel.org>
 MIME-Version: 1.0
-References: <20190520220051.54847-1-mka@chromium.org> <3108277.JP5bvJISVS@phil>
-In-Reply-To: <3108277.JP5bvJISVS@phil>
-From: Doug Anderson <dianders@chromium.org>
-Date: Wed, 22 May 2019 11:13:45 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=Ww5pYOdknESUC4S06FvPzZ03Z-tW098r2N+9tbHNx7Vw@mail.gmail.com>
-Message-ID: <CAD=FV=Ww5pYOdknESUC4S06FvPzZ03Z-tW098r2N+9tbHNx7Vw@mail.gmail.com>
-Subject: Re: [PATCH v2 1/3] ARM: dts: rockchip: disable GPU 500 MHz OPP for
- veyron
-To: Heiko Stuebner <heiko@sntech.de>
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_111359_888912_413AB937 
-X-CRM114-Status: GOOD (  10.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190522_122628_599702_CB6BC381 
+X-CRM114-Status: GOOD (  17.11  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -100,39 +81,132 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Matthias Kaehlcke <mka@chromium.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Sasha Levin <sashal@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Elaine Zhang <zhangqing@rock-chips.com>,
+ Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
+ linux-clk@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+From: Douglas Anderson <dianders@chromium.org>
 
-On Wed, May 22, 2019 at 2:14 AM Heiko Stuebner <heiko@sntech.de> wrote:
->
-> Am Dienstag, 21. Mai 2019, 00:00:49 CEST schrieb Matthias Kaehlcke:
-> > The NPLL is the only safe way to generate 500 MHz for the GPU. The
-> > downstream Chrome OS 3.14 kernel ('official' kernel for veyron
-> > devices) re-purposes NPLL to HDMI and hence disables the OPP for
-> > the GPU (see https://crrev.com/c/1574579). Disable it here as well
-> > to keep in sync and avoid problems in case someone decides to
-> > re-purpose NPLL.
-> >
-> > Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
->
-> I was actually expecting to just drop the 500MHz opp from all
-> of rk3288 ;-) .
->
-> To not have to respin, I just modified your patch accordingly,
-> see [0] and please holler if you disagree :-D .
+[ Upstream commit f4033db5b84ebe4b32c25ba2ed65ab20b628996a ]
 
-Seems fine to me, thanks!
+This is mostly a revert of commit 55bb6a633c33 ("clk: rockchip: mark
+noc and some special clk as critical on rk3288") except that we're
+keeping "pmu_hclk_otg0" as critical still.
 
--Doug
+NOTE: turning these clocks off doesn't seem to do a whole lot in terms
+of power savings (checking the power on the logic rail).  It appears
+to save maybe 1-2mW.  ...but still it seems like we should turn the
+clocks off if they aren't needed.
+
+About "pmu_hclk_otg0" (the one clock from the original commit we're
+still keeping critical) from an email thread:
+
+> pmu ahb clock
+>
+> Function: Clock to pmu module when hibernation and/or ADP is
+> enabled. Must be greater than or equal to 30 MHz.
+>
+> If the SOC design does not support hibernation/ADP function, only have
+> hclk_otg, this clk can be switched according to the usage of otg.
+> If the SOC design support hibernation/ADP, has two clocks, hclk_otg and
+> pmu_hclk_otg0.
+> Hclk_otg belongs to the closed part of otg logic, which can be switched
+> according to the use of otg.
+>
+> pmu_hclk_otg0 belongs to the always on part.
+>
+> As for whether pmu_hclk_otg0 can be turned off when otg is not in use,
+> we have not tested. IC suggest make pmu_hclk_otg0 always on.
+
+For the rest of the clocks:
+
+atclk: No documentation about this clock other than that it goes to
+the CPU.  CPU functions fine without it on.  Maybe needed for JTAG?
+
+jtag: Presumably this clock is only needed if you're debugging with
+JTAG.  It doesn't seem like it makes sense to waste power for every
+rk3288 user.  In any case to do JTAG you'd need private patches to
+adjust the pinctrl the mux the JTAG out anyway.
+
+pclk_dbg, pclk_core_niu: On veyron Chromebooks we turn these two
+clocks on only during kernel panics in order to access some coresight
+registers.  Since nothing in the upstream kernel does this we should
+be able to leave them off safely.  Maybe also needed for JTAG?
+
+hsicphy12m_xin12m: There is no indication of why this clock would need
+to be turned on for boards that don't use HSIC.
+
+pclk_ddrupctl[0-1], pclk_publ0[0-1]: On veyron Chromebooks we turn
+these 4 clocks on only when doing DDR transitions and they are off
+otherwise.  I see no reason why they'd need to be on in the upstream
+kernel which doesn't support DDRFreq.
+
+Signed-off-by: Douglas Anderson <dianders@chromium.org>
+Reviewed-by: Elaine Zhang <zhangqing@rock-chips.com>
+Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/clk/rockchip/clk-rk3288.c | 13 ++++---------
+ 1 file changed, 4 insertions(+), 9 deletions(-)
+
+diff --git a/drivers/clk/rockchip/clk-rk3288.c b/drivers/clk/rockchip/clk-rk3288.c
+index 5a67b7869960e..f3bbcdfa88ead 100644
+--- a/drivers/clk/rockchip/clk-rk3288.c
++++ b/drivers/clk/rockchip/clk-rk3288.c
+@@ -313,13 +313,13 @@ static struct rockchip_clk_branch rk3288_clk_branches[] __initdata = {
+ 	COMPOSITE_NOMUX(0, "aclk_core_mp", "armclk", CLK_IGNORE_UNUSED,
+ 			RK3288_CLKSEL_CON(0), 4, 4, DFLAGS | CLK_DIVIDER_READ_ONLY,
+ 			RK3288_CLKGATE_CON(12), 6, GFLAGS),
+-	COMPOSITE_NOMUX(0, "atclk", "armclk", CLK_IGNORE_UNUSED,
++	COMPOSITE_NOMUX(0, "atclk", "armclk", 0,
+ 			RK3288_CLKSEL_CON(37), 4, 5, DFLAGS | CLK_DIVIDER_READ_ONLY,
+ 			RK3288_CLKGATE_CON(12), 7, GFLAGS),
+ 	COMPOSITE_NOMUX(0, "pclk_dbg_pre", "armclk", CLK_IGNORE_UNUSED,
+ 			RK3288_CLKSEL_CON(37), 9, 5, DFLAGS | CLK_DIVIDER_READ_ONLY,
+ 			RK3288_CLKGATE_CON(12), 8, GFLAGS),
+-	GATE(0, "pclk_dbg", "pclk_dbg_pre", CLK_IGNORE_UNUSED,
++	GATE(0, "pclk_dbg", "pclk_dbg_pre", 0,
+ 			RK3288_CLKGATE_CON(12), 9, GFLAGS),
+ 	GATE(0, "cs_dbg", "pclk_dbg_pre", CLK_IGNORE_UNUSED,
+ 			RK3288_CLKGATE_CON(12), 10, GFLAGS),
+@@ -647,7 +647,7 @@ static struct rockchip_clk_branch rk3288_clk_branches[] __initdata = {
+ 	INVERTER(SCLK_HSADC, "sclk_hsadc", "sclk_hsadc_out",
+ 			RK3288_CLKSEL_CON(22), 7, IFLAGS),
+ 
+-	GATE(0, "jtag", "ext_jtag", CLK_IGNORE_UNUSED,
++	GATE(0, "jtag", "ext_jtag", 0,
+ 			RK3288_CLKGATE_CON(4), 14, GFLAGS),
+ 
+ 	COMPOSITE_NODIV(SCLK_USBPHY480M_SRC, "usbphy480m_src", mux_usbphy480m_p, 0,
+@@ -656,7 +656,7 @@ static struct rockchip_clk_branch rk3288_clk_branches[] __initdata = {
+ 	COMPOSITE_NODIV(SCLK_HSICPHY480M, "sclk_hsicphy480m", mux_hsicphy480m_p, 0,
+ 			RK3288_CLKSEL_CON(29), 0, 2, MFLAGS,
+ 			RK3288_CLKGATE_CON(3), 6, GFLAGS),
+-	GATE(0, "hsicphy12m_xin12m", "xin12m", CLK_IGNORE_UNUSED,
++	GATE(0, "hsicphy12m_xin12m", "xin12m", 0,
+ 			RK3288_CLKGATE_CON(13), 9, GFLAGS),
+ 	DIV(0, "hsicphy12m_usbphy", "sclk_hsicphy480m", 0,
+ 			RK3288_CLKSEL_CON(11), 8, 6, DFLAGS),
+@@ -837,11 +837,6 @@ static const char *const rk3288_critical_clocks[] __initconst = {
+ 	"pclk_alive_niu",
+ 	"pclk_pd_pmu",
+ 	"pclk_pmu_niu",
+-	"pclk_core_niu",
+-	"pclk_ddrupctl0",
+-	"pclk_publ0",
+-	"pclk_ddrupctl1",
+-	"pclk_publ1",
+ 	"pmu_hclk_otg0",
+ };
+ 
+-- 
+2.20.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
