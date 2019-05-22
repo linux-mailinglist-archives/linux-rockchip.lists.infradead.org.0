@@ -2,51 +2,92 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4046D2603E
-	for <lists+linux-rockchip@lfdr.de>; Wed, 22 May 2019 11:15:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9522263A3
+	for <lists+linux-rockchip@lfdr.de>; Wed, 22 May 2019 14:19:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RnnflXkOiGNjl6ybd+/vIrwjPaiaPbMOfgt7ZiZQgaA=; b=XLNcECd/zs0KBx
-	ZFUOqWEtzM/ZQuxj06wLucofb7oLgFVi8r7kjBrcL60IT1zHZ9NQlviuJYvoGB0UQmwShw0LHaG1b
-	8lxb0DuePpIL4c4axQhOe1Plf+/z9jpQ+TC4jvvyiLZhBLhmnvo2Rp+CgXYLSJztQOwBLUtincJ4g
-	XskmIPe3MkWPDJOVs2qFlS9Kvg4eqoIaggk/eQIEzWFq/Zy/hsgomItQdtFLyNh1gX+ZcjtgEZ2Rf
-	WrvM8b1Ni7sU/bJ1Z42aiAW1LNxye37rMtb7Hf4GShVvuzGUoxPHrtsqE2bWJjUFtSz/CgggwTp0n
-	NSnVSyR16XOCxCq1TXdA==;
+	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ETw+gc2RVtq/HPwzLBhke7o28UjvDnhbtlX6hrfU1WM=; b=PARzfnm2W/k0YY
+	USROPqtGDRnzGR2trfsVoutloQxlxscUERo8FW9p1akV6d4EsJay/K6Wx1dUO0CR+wSH3RKaI/4f8
+	CepAR4jBWHeFMui22wbZOUAmvj0GVYFUmAt6Sq6Zx+YN4iaoL8+ATRzNTSR6MZdWhoIKaA0vsZgAi
+	TPeFY4eJaK2WYoxXv9jHw1Kjs/tWKpShpvontxfuLY0Vy+Wu2MSxLVpoJF1YDr66V5UTqCzZLXKH6
+	5tXJzue9xJevdPitQky8uP7czdWUF8c1rXicS6L75J8ewIJSvVPMgwCrtgDP4BjL0nwsL9T/O9IRD
+	r+8MlsLbjQNXG1lBGhbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTNL7-00080o-GP; Wed, 22 May 2019 09:15:13 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1hTQD3-0007BV-1O; Wed, 22 May 2019 12:19:05 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTNKs-0006ye-L7; Wed, 22 May 2019 09:14:59 +0000
-Received: from we0524.dip.tu-dresden.de ([141.76.178.12] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hTNKp-0008JC-Ur; Wed, 22 May 2019 11:14:55 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Matthias Kaehlcke <mka@chromium.org>
-Subject: Re: [PATCH v2 2/3] ARM: dts: rockchip: Use the GPU to cool CPU
- thermal zone of veyron mickey
-Date: Wed, 22 May 2019 11:14:55 +0200
-Message-ID: <3939310.vedCpJl8Cg@phil>
-In-Reply-To: <20190520220051.54847-2-mka@chromium.org>
-References: <20190520220051.54847-1-mka@chromium.org>
- <20190520220051.54847-2-mka@chromium.org>
+ id 1hTQCz-0007AZ-Jc
+ for linux-rockchip@lists.infradead.org; Wed, 22 May 2019 12:19:03 +0000
+Received: by mail-wm1-x341.google.com with SMTP id 7so1985082wmo.2
+ for <linux-rockchip@lists.infradead.org>; Wed, 22 May 2019 05:18:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernelci-org.20150623.gappssmtp.com; s=20150623;
+ h=message-id:date:mime-version:content-transfer-encoding:subject:to
+ :from:cc; bh=4lhpOXU5flLHaPgCnlKi/zbwwdvQGy7aO9emZ/m2IY8=;
+ b=yIdCRbURcrDlI9SLR+Bvl5oxhZwOZqYKuBTNLSXNcHCWe0u9pHDx+OhZH6o3LcY+b+
+ EkKg1GZKdYpfmLOLGaeFR9Gnl2TNLApOUF8mF7DAtnAkOaZSVmBPLCJdPbmwc5U38f6p
+ IaylMs4wNHPvKSRP3wKlbWLeL1hed6rRspEw7Rrjp+Uo6Oi5YgM1hN+BZCdhP2M3nY9l
+ LA9qmKEdmYxmu0YsJ9dOR44DgHcpltIyweDimJilw8Dahb70Boms5wtof80Lc1R6HTiZ
+ 0yDNVrGQM4w21BUwbkLZCV6oQb0ir+qEaAXrRCO2vQoOCLX8aVuCNoStXE6aWiHuWNVP
+ +CGA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:date:mime-version
+ :content-transfer-encoding:subject:to:from:cc;
+ bh=4lhpOXU5flLHaPgCnlKi/zbwwdvQGy7aO9emZ/m2IY8=;
+ b=ivLUrv5PqjsN/l8U0z8A/SM+cGMQLWEYFNDFtiM3cH/SX9JYmdOBI6mMyM4RlCtAqa
+ ChZvLSPDFKQidvDaDB60n/i3Yw4mAISopyDYo6r0TmF7akGmhRbaySuOEWLHQkPk/yBf
+ 746pGlPcX6dA8VF9X+f5IfN7Zl5rH1+Y6Xd/cdPf869FsioIYd2nT3Y8WEo0HH9OQggU
+ 3AtSVs400u+7Y0/ynHJBytVI4bfmJHp4xEh8hQYIaZClD0rUjjX5JONBFiPAyst2TFsD
+ 9CrykLAuZX8KPIYQFwFE4dDFIgFu1jE0xNOSI30PhX/FUWiSUvZ0+N5J9grdtanFw2NL
+ DGGQ==
+X-Gm-Message-State: APjAAAUg0qkxiKCR/qA6k1D57ByKYlqmwD3rRPejrfQ5/MA0+PG4atQq
+ mISlYlkhSYRYoD2a13UJEA/ZBA==
+X-Google-Smtp-Source: APXvYqxhJBFQ6wD68xNh+ViCZQrptwFAKjQZvDM+tx4eVH7gccBPHLQDlUfDo0wxb0laDALKdQGVVQ==
+X-Received: by 2002:a1c:9c42:: with SMTP id f63mr7712636wme.23.1558527537756; 
+ Wed, 22 May 2019 05:18:57 -0700 (PDT)
+Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
+ by smtp.gmail.com with ESMTPSA id 88sm58288086wrc.33.2019.05.22.05.18.54
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 22 May 2019 05:18:56 -0700 (PDT)
+Message-ID: <5ce53e30.1c69fb81.887a7.b77c@mx.google.com>
+Date: Wed, 22 May 2019 05:18:56 -0700 (PDT)
 MIME-Version: 1.0
+X-Kernelci-Report-Type: bisect
+X-Kernelci-Tree: mainline
+X-Kernelci-Lab-Name: lab-collabora
+X-Kernelci-Branch: master
+X-Kernelci-Kernel: v5.2-rc1-129-g9c7db5004280
+Subject: mainline/master boot bisection: v5.2-rc1-129-g9c7db5004280 on
+ rk3288-veyron-jaq
+To: tomeu.vizoso@collabora.com, guillaume.tucker@collabora.com,
+ mgalka@collabora.com, broonie@kernel.org, matthew.hart@linaro.org,
+ khilman@baylibre.com, enric.balletbo@collabora.com,
+ Elaine Zhang <zhangqing@rock-chips.com>,
+ Eduardo Valentin <edubezval@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>
+From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_021458_836850_9AB8737D 
-X-CRM114-Status: UNSURE (   8.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190522_051901_695594_7FA4A860 
+X-CRM114-Status: GOOD (  11.81  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -59,33 +100,183 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Heiko Stuebner <heiko@sntech.de>, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Zhang Rui <rui.zhang@intel.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Dienstag, 21. Mai 2019, 00:00:50 CEST schrieb Matthias Kaehlcke:
-> On rk3288 the CPU and GPU temperatures are correlated. Limit the GPU
-> frequency on veyron mickey to 400 MHz for CPU temperatures >=3D 65=B0C
-> and to 300 MHz for CPU temperatures >=3D 85=B0C.
-> =
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* This automated bisection report was sent to you on the basis  *
+* that you may be involved with the breaking commit it has      *
+* found.  No manual investigation has been done to verify it,   *
+* and the root cause of the problem may be somewhere else.      *
+* Hope this helps!                                              *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-> This matches the configuration of the downstream Chrome OS 3.14 kernel,
-> the 'official' kernel for mickey.
-> =
+mainline/master boot bisection: v5.2-rc1-129-g9c7db5004280 on rk3288-veyron-jaq
 
-> Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+Summary:
+  Start:      9c7db5004280 Merge tag 'selinux-pr-20190521' of git://git.kernel.org/pub/scm/linux/kernel/git/pcmoore/selinux
+  Details:    https://kernelci.org/boot/id/5ce4966759b5141df07a362c
+  Plain log:  https://storage.kernelci.org//mainline/master/v5.2-rc1-129-g9c7db5004280/arm/multi_v7_defconfig/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.txt
+  HTML log:   https://storage.kernelci.org//mainline/master/v5.2-rc1-129-g9c7db5004280/arm/multi_v7_defconfig/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.html
+  Result:     28694e009e51 thermal: rockchip: fix up the tsadc pinctrl setting error
 
-applied patches 2+3 for 5.3
+Checks:
+  revert:     PASS
+  verify:     PASS
 
-Thanks
-Heiko
+Parameters:
+  Tree:       mainline
+  URL:        git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+  Branch:     master
+  Target:     rk3288-veyron-jaq
+  CPU arch:   arm
+  Lab:        lab-collabora
+  Compiler:   gcc-8
+  Config:     multi_v7_defconfig
+  Test suite: boot
+
+Breaking commit found:
+
+-------------------------------------------------------------------------------
+commit 28694e009e512451ead5519dd801f9869acb1f60
+Author: Elaine Zhang <zhangqing@rock-chips.com>
+Date:   Tue Apr 30 18:09:44 2019 +0800
+
+    thermal: rockchip: fix up the tsadc pinctrl setting error
+    
+    Explicitly use the pinctrl to set/unset the right mode
+    instead of relying on the pinctrl init mode.
+    And it requires setting the tshut polarity before select pinctrl.
+    
+    When the temperature sensor mode is set to 0, it will automatically
+    reset the board via the Clock-Reset-Unit (CRU) if the over temperature
+    threshold is reached. However, when the pinctrl initializes, it does a
+    transition to "otp_out" which may lead the SoC restart all the time.
+    
+    "otp_out" IO may be connected to the RESET circuit on the hardware.
+    If the IO is in the wrong state, it will trigger RESET.
+    (similar to the effect of pressing the RESET button)
+    which will cause the soc to restart all the time.
+    
+    Signed-off-by: Elaine Zhang <zhangqing@rock-chips.com>
+    Reviewed-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+    Signed-off-by: Eduardo Valentin <edubezval@gmail.com>
+
+diff --git a/drivers/thermal/rockchip_thermal.c b/drivers/thermal/rockchip_thermal.c
+index 9c7643d62ed7..6dc7fc516abf 100644
+--- a/drivers/thermal/rockchip_thermal.c
++++ b/drivers/thermal/rockchip_thermal.c
+@@ -172,6 +172,9 @@ struct rockchip_thermal_data {
+ 	int tshut_temp;
+ 	enum tshut_mode tshut_mode;
+ 	enum tshut_polarity tshut_polarity;
++	struct pinctrl *pinctrl;
++	struct pinctrl_state *gpio_state;
++	struct pinctrl_state *otp_state;
+ };
+ 
+ /**
+@@ -1242,6 +1245,8 @@ static int rockchip_thermal_probe(struct platform_device *pdev)
+ 		return error;
+ 	}
+ 
++	thermal->chip->control(thermal->regs, false);
++
+ 	error = clk_prepare_enable(thermal->clk);
+ 	if (error) {
+ 		dev_err(&pdev->dev, "failed to enable converter clock: %d\n",
+@@ -1267,6 +1272,30 @@ static int rockchip_thermal_probe(struct platform_device *pdev)
+ 	thermal->chip->initialize(thermal->grf, thermal->regs,
+ 				  thermal->tshut_polarity);
+ 
++	if (thermal->tshut_mode == TSHUT_MODE_GPIO) {
++		thermal->pinctrl = devm_pinctrl_get(&pdev->dev);
++		if (IS_ERR(thermal->pinctrl)) {
++			dev_err(&pdev->dev, "failed to find thermal pinctrl\n");
++			return PTR_ERR(thermal->pinctrl);
++		}
++
++		thermal->gpio_state = pinctrl_lookup_state(thermal->pinctrl,
++							   "gpio");
++		if (IS_ERR_OR_NULL(thermal->gpio_state)) {
++			dev_err(&pdev->dev, "failed to find thermal gpio state\n");
++			return -EINVAL;
++		}
++
++		thermal->otp_state = pinctrl_lookup_state(thermal->pinctrl,
++							  "otpout");
++		if (IS_ERR_OR_NULL(thermal->otp_state)) {
++			dev_err(&pdev->dev, "failed to find thermal otpout state\n");
++			return -EINVAL;
++		}
++
++		pinctrl_select_state(thermal->pinctrl, thermal->otp_state);
++	}
++
+ 	for (i = 0; i < thermal->chip->chn_num; i++) {
+ 		error = rockchip_thermal_register_sensor(pdev, thermal,
+ 						&thermal->sensors[i],
+@@ -1337,8 +1366,8 @@ static int __maybe_unused rockchip_thermal_suspend(struct device *dev)
+ 
+ 	clk_disable(thermal->pclk);
+ 	clk_disable(thermal->clk);
+-
+-	pinctrl_pm_select_sleep_state(dev);
++	if (thermal->tshut_mode == TSHUT_MODE_GPIO)
++		pinctrl_select_state(thermal->pinctrl, thermal->gpio_state);
+ 
+ 	return 0;
+ }
+@@ -1383,7 +1412,8 @@ static int __maybe_unused rockchip_thermal_resume(struct device *dev)
+ 	for (i = 0; i < thermal->chip->chn_num; i++)
+ 		rockchip_thermal_toggle_sensor(&thermal->sensors[i], true);
+ 
+-	pinctrl_pm_select_default_state(dev);
++	if (thermal->tshut_mode == TSHUT_MODE_GPIO)
++		pinctrl_select_state(thermal->pinctrl, thermal->otp_state);
+ 
+ 	return 0;
+ }
+-------------------------------------------------------------------------------
 
 
+Git bisection log:
+
+-------------------------------------------------------------------------------
+git bisect start
+# good: [83f3ef3de625a5766de2382f9e077d4daafd5bac] Merge tag 'libnvdimm-fixes-5.2-rc1' of git://git.kernel.org/pub/scm/linux/kernel/git/nvdimm/nvdimm
+git bisect good 83f3ef3de625a5766de2382f9e077d4daafd5bac
+# bad: [9c7db5004280767566e91a33445bf93aa479ef02] Merge tag 'selinux-pr-20190521' of git://git.kernel.org/pub/scm/linux/kernel/git/pcmoore/selinux
+git bisect bad 9c7db5004280767566e91a33445bf93aa479ef02
+# bad: [dc413a90edbe715bebebe859dc072ef73d490d70] Merge tag 'armsoc-drivers' of git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc
+git bisect bad dc413a90edbe715bebebe859dc072ef73d490d70
+# good: [b45da609a02460c6a34c395f03f891f1fb2a021a] Merge tag 'imx-bindings-5.2' of git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux into arm/dt
+git bisect good b45da609a02460c6a34c395f03f891f1fb2a021a
+# good: [6cbc4d88ad208d6f5b9567bac2fff038e1bbfa77] Merge tag 'bitmain-soc-5.2' of git://git.kernel.org/pub/scm/linux/kernel/git/mani/linux-bitmain into arm/dt
+git bisect good 6cbc4d88ad208d6f5b9567bac2fff038e1bbfa77
+# bad: [a455eda33faafcaac1effb31d682765b14ef868c] Merge branch 'linus' of git://git.kernel.org/pub/scm/linux/kernel/git/evalenti/linux-soc-thermal
+git bisect bad a455eda33faafcaac1effb31d682765b14ef868c
+# bad: [ffd1b122d3a17783b68cfd03b0479dffedf0d960] thermal: rockchip: Support the PX30 SoC in thermal driver
+git bisect bad ffd1b122d3a17783b68cfd03b0479dffedf0d960
+# good: [3e6a8fb3308419129c7a52de6eb42feef5a919a0] drivers: thermal: tsens: Add new operation to check if a sensor is enabled
+git bisect good 3e6a8fb3308419129c7a52de6eb42feef5a919a0
+# good: [d36e2fa025387567710df740fd4dce1d5001b226] thermal: generic-adc: make lookup table optional
+git bisect good d36e2fa025387567710df740fd4dce1d5001b226
+# good: [42cd9b049829d7facbd45ab503d763a86251e81b] thermal/drivers/cpu_cooling: Fixup the header and copyright
+git bisect good 42cd9b049829d7facbd45ab503d763a86251e81b
+# good: [6ec8070b9d48294fbe865535c167a79527eaf357] thermal: Fix build error of missing devm_ioremap_resource on UM
+git bisect good 6ec8070b9d48294fbe865535c167a79527eaf357
+# bad: [28694e009e512451ead5519dd801f9869acb1f60] thermal: rockchip: fix up the tsadc pinctrl setting error
+git bisect bad 28694e009e512451ead5519dd801f9869acb1f60
+# good: [fcc6d4cadadcc977911c6bfcdd95d379f4082c74] thermal: broadcom: Remove ACPI support
+git bisect good fcc6d4cadadcc977911c6bfcdd95d379f4082c74
+# first bad commit: [28694e009e512451ead5519dd801f9869acb1f60] thermal: rockchip: fix up the tsadc pinctrl setting error
+-------------------------------------------------------------------------------
 
 _______________________________________________
 Linux-rockchip mailing list
