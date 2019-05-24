@@ -2,81 +2,95 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13D0427EFE
-	for <lists+linux-rockchip@lfdr.de>; Thu, 23 May 2019 16:02:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E023428F15
+	for <lists+linux-rockchip@lfdr.de>; Fri, 24 May 2019 04:20:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eDX7sg8CaR5AxzMjf6zgwtXkNtSpp6kt2UGLqnTRl3c=; b=gpw+2kxGiL+NIz
-	swWxdOKEhmtSHe3keBNcgFfUpwZrvHNLYiMBJFgmWQpYA9pjeXDQ6AB/rZcj7mNVM8AA2GFbC/zEl
-	HY5AVem8gfnF2KohtM7/2lB2JZWQJuac/k65M4w3o2j+i2ZO/R5Sz362W/1+PvRzqow5+KYYJbLkI
-	z4NosxYY15vJ3/6PPYgRuwSV/0RefEf50VbhbewM1JH7NvF6A/jmFwsO6XblpKaeeNEPv0Zv6lJqW
-	WPNLnJklc+6JrMUtGPgxofoQOZa852IZiOGtTaFFkK8wgbAixZOjaCg22VudeLHBBd6KZ4Q1HyxjM
-	08SkhsjtUkpTIAWQQX7A==;
+	List-Owner; bh=CxdhuuvLMX7BLm0TuAzGS+eyZnDFa6dLkawrZSlN/yE=; b=r8L96R9PABhlA+
+	6HxlfJWMPRbzfsy5ZQdcfYLQj3Vj4owcPXiDBTewC05ugxHK9R/+8Onaiksk7/DYhTRv5wasZMK/Q
+	yZmj//yc7PwzBCXhhaPikRAtsA0oXQ0GlPtbjP2EMm74q/4/oi1OJS2yjrBNcOGr9PVJHPkTBePwx
+	W0dSmg2gk7jnaYxKZiDOD7WBl54o5ba+N7AWK2vT44yhaXzFtPuUavmywpx4tuvCy88amxW/3cioU
+	g57o1SlomgVyATOQ69dnBS2uXIYco0kghxCl9DN/KzhnJJ43v1xobZOgbUoplzTrKe0SAD9kJW7YT
+	bLqRq4epTXg3dPO9OwUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hToIV-0006bS-8x; Thu, 23 May 2019 14:02:19 +0000
-Received: from mga12.intel.com ([192.55.52.136])
+	id 1hTzpC-0001h9-GW; Fri, 24 May 2019 02:20:50 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hToIR-0006aE-U8; Thu, 23 May 2019 14:02:17 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 23 May 2019 07:02:13 -0700
-X-ExtLoop1: 1
-Received: from fmsmsx103.amr.corp.intel.com ([10.18.124.201])
- by orsmga008.jf.intel.com with ESMTP; 23 May 2019 07:02:13 -0700
-Received: from fmsmsx118.amr.corp.intel.com (10.18.116.18) by
- FMSMSX103.amr.corp.intel.com (10.18.124.201) with Microsoft SMTP Server (TLS)
- id 14.3.408.0; Thu, 23 May 2019 07:02:13 -0700
-Received: from shsmsx104.ccr.corp.intel.com (10.239.4.70) by
- fmsmsx118.amr.corp.intel.com (10.18.116.18) with Microsoft SMTP Server (TLS)
- id 14.3.408.0; Thu, 23 May 2019 07:02:12 -0700
-Received: from shsmsx108.ccr.corp.intel.com ([169.254.8.126]) by
- SHSMSX104.ccr.corp.intel.com ([169.254.5.33]) with mapi id 14.03.0415.000;
- Thu, 23 May 2019 22:02:11 +0800
-From: "Zhang, Rui" <rui.zhang@intel.com>
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>, Mark Brown
- <broonie@kernel.org>, Eduardo Valentin <edubezval@gmail.com>, Elaine Zhang
- <zhangqing@rock-chips.com>
-Subject: RE: mainline/master boot bisection: v5.2-rc1-165-g54dee406374c on
- rk3288-veyron-jaq
-Thread-Topic: mainline/master boot bisection: v5.2-rc1-165-g54dee406374c on
- rk3288-veyron-jaq
-Thread-Index: AQHVEQ59ng5b65ntw0ypm8xLYzn0kaZ4KgWAgAAB5wCAAJHx8A==
-Date: Thu, 23 May 2019 14:02:11 +0000
-Message-ID: <744357E9AAD1214791ACBA4B0B9092637757AD75@SHSMSX108.ccr.corp.intel.com>
-References: <5ce6040d.1c69fb81.60b3b.29fb@mx.google.com>
- <20190523131207.GC17245@sirena.org.uk>
- <ac2f06ac-2bf5-7af6-06c3-37b865c43738@collabora.com>
-In-Reply-To: <ac2f06ac-2bf5-7af6-06c3-37b865c43738@collabora.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-titus-metadata-40: eyJDYXRlZ29yeUxhYmVscyI6IiIsIk1ldGFkYXRhIjp7Im5zIjoiaHR0cDpcL1wvd3d3LnRpdHVzLmNvbVwvbnNcL0ludGVsMyIsImlkIjoiMWIyNDI1MTEtODVlNy00ZmQzLWFlZWUtYzI3OGQ0ODdiMDBlIiwicHJvcHMiOlt7Im4iOiJDVFBDbGFzc2lmaWNhdGlvbiIsInZhbHMiOlt7InZhbHVlIjoiQ1RQX05UIn1dfV19LCJTdWJqZWN0TGFiZWxzIjpbXSwiVE1DVmVyc2lvbiI6IjE3LjEwLjE4MDQuNDkiLCJUcnVzdGVkTGFiZWxIYXNoIjoibXUyNlNRZ3U4RWtRSEI1Q1ZFdjlOMURGMmlRVnc0M29SemtQREFEb0FGd0NLdDdUSkNEVXNqS2JzcXV4VXhEcCJ9
-x-ctpclassification: CTP_NT
-dlp-product: dlpe-windows
-dlp-version: 11.0.600.7
-dlp-reaction: no-action
-x-originating-ip: [10.239.127.40]
+ id 1hTzp9-0001gW-HL
+ for linux-rockchip@lists.infradead.org; Fri, 24 May 2019 02:20:49 +0000
+Received: by mail-pl1-x641.google.com with SMTP id g9so3501242plm.6
+ for <linux-rockchip@lists.infradead.org>; Thu, 23 May 2019 19:20:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=8i6sdY7hQZvF0VE8bmdd+Eg6UX6pwW91eLCHd9wKizE=;
+ b=cOX4GWm3SirJ0mfbzCgcw3AZqCJyholEQXV89WdBtgj14h6xZwMLjcZuoFGQqzIlBc
+ d7tV/mEa2ulUXk9lU9t627pEmV9b/Xj0QFNnbi7vxGBTooW8bIuHGDXcevIn+sUypy9n
+ ApLEVHIocW/Vn9FhI5Jjw80Cmr3T3y+dH4turBtTPjLJ2OmZ3nno5mdLJy9F56XxMZb0
+ CgWolSYYG87kk8MnQdVuxeZQmDYfsmMEdBvpDgIHVrlSAItDAyhosEqq23ag8Ql9wIn9
+ aIHLZMXNHeoafO/9zUYUbXIOT1EkcamcX3Uyt7zMMrITCgTq3e3b+XGgLcjvsgKT6F1o
+ D/Iw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=8i6sdY7hQZvF0VE8bmdd+Eg6UX6pwW91eLCHd9wKizE=;
+ b=r7X9G6Z/8eg8vJeu9hLUTF3CMTai9OTgQiw1w3KJrBd2Bvy2tQfncBtYA2HUhTGmkb
+ FDz7wdf6E0UTorRpFr/Fn1E+sGlc25kHOLgqWXbmnvNcFWDktzZIlO7xriUkX5cABBYs
+ iR/DbPZCYZ5mAa/LweteBFCnfAhY272n4s7o0Twm9w9sEXaGG0Fc8FOrgQ6U8Bw0izhP
+ 1fj14G0NVjv0F1Td8IkLnyBN0NIE4pC3Niv91pBXd1D5JjXrVFu7v3lIRH3zpD6bQ6Wv
+ HfdmXgMosG7taHtAyRa8XCuDwhsZ1EO031oEV8xWFO1FvWd/3bNLPgtpQmzNaFOakD0s
+ WmPg==
+X-Gm-Message-State: APjAAAV9WrqyvJu1ykI+fVUF7zPnxJ64UjdOPtgdLMd4ancSGKWJerGw
+ 1X4D6eIFAeYTl30m36XE/2JTpRUz
+X-Google-Smtp-Source: APXvYqy8IsUKhin/UgEK4yCtU0skPkff11e+FW8nFuiATBxaJlXG+/rqhfIN5xqSVctGKNxteeaTdA==
+X-Received: by 2002:a17:902:a407:: with SMTP id
+ p7mr12856160plq.41.1558664446375; 
+ Thu, 23 May 2019 19:20:46 -0700 (PDT)
+Received: from localhost.localdomain ([2601:644:8201:32e0:7256:81ff:febd:926d])
+ by smtp.gmail.com with ESMTPSA id c23sm880199pfp.0.2019.05.23.19.20.45
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 23 May 2019 19:20:45 -0700 (PDT)
+Date: Thu, 23 May 2019 19:20:43 -0700
+From: Eduardo Valentin <edubezval@gmail.com>
+To: Doug Anderson <dianders@chromium.org>,
+ Elaine Zhang <zhangqing@rock-chips.com>
+Subject: Re: [PATCH] Revert "thermal: rockchip: fix up the tsadc pinctrl
+ setting error"
+Message-ID: <20190524022042.GA1936@localhost.localdomain>
+References: <20190522141236.26987-1-heiko@sntech.de>
+ <CAD=FV=UxwqkHpsxXhEHrQDY6MtymeT3Gn_G4Q5xSh6pZVWTRHA@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAD=FV=UxwqkHpsxXhEHrQDY6MtymeT3Gn_G4Q5xSh6pZVWTRHA@mail.gmail.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_070215_985840_6B8DBD6F 
-X-CRM114-Status: GOOD (  14.58  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190523_192047_570784_F848ECDC 
+X-CRM114-Status: GOOD (  15.98  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.136 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (edubezval[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -89,77 +103,60 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- "tomeu.vizoso@collabora.com" <tomeu.vizoso@collabora.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "guillaume.tucker@collabora.com" <guillaume.tucker@collabora.com>,
+Cc: zhangqing <zhangqing@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>,
+ Linux PM <linux-pm@vger.kernel.org>,
+ Enric Balletbo Serra <eballetbo@gmail.com>,
+ Brian Norris <briannorris@chromium.org>,
  Daniel Lezcano <daniel.lezcano@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "matthew.hart@linaro.org" <matthew.hart@linaro.org>,
- "khilman@baylibre.com" <khilman@baylibre.com>,
- "mgalka@collabora.com" <mgalka@collabora.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ LKML <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Matthias Kaehlcke <mka@chromium.org>, Zhang Rui <rui.zhang@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-
-
-> -----Original Message-----
-> From: Enric Balletbo i Serra [mailto:enric.balletbo@collabora.com]
-> Sent: Thursday, May 23, 2019 9:19 PM
-> To: Mark Brown <broonie@kernel.org>; Eduardo Valentin
-> <edubezval@gmail.com>; Elaine Zhang <zhangqing@rock-chips.com>
-> Cc: tomeu.vizoso@collabora.com; guillaume.tucker@collabora.com;
-> mgalka@collabora.com; matthew.hart@linaro.org; khilman@baylibre.com;
-> Daniel Lezcano <daniel.lezcano@linaro.org>; Heiko Stuebner
-> <heiko@sntech.de>; linux-pm@vger.kernel.org; linux-
-> kernel@vger.kernel.org; linux-rockchip@lists.infradead.org; Zhang, Rui
-> <rui.zhang@intel.com>; linux-arm-kernel@lists.infradead.org
-> Subject: Re: mainline/master boot bisection: v5.2-rc1-165-g54dee406374c on
-> rk3288-veyron-jaq
-> Importance: High
+On Wed, May 22, 2019 at 08:34:34AM -0700, Doug Anderson wrote:
+> Hi,
 > 
-> Hi Mark,
-> 
-> On 23/5/19 15:12, Mark Brown wrote:
-> > On Wed, May 22, 2019 at 07:23:09PM -0700, kernelci.org bot wrote:
+> On Wed, May 22, 2019 at 7:12 AM Heiko Stuebner <heiko@sntech.de> wrote:
 > >
-> >>   Details:    https://kernelci.org/boot/id/5ce5984c59b514e6a47a364c
-> >>   Plain log:  https://storage.kernelci.org//mainline/master/v5.2-rc1-165-
-> g54dee406374c/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE
-> =y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.txt
-> >>   HTML log:   https://storage.kernelci.org//mainline/master/v5.2-rc1-165-
-> g54dee406374c/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE
-> =y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.html
-> >>   Result:     28694e009e51 thermal: rockchip: fix up the tsadc pinctrl setting
-> error
+> > This reverts commit 28694e009e512451ead5519dd801f9869acb1f60.
 > >
-> > It looks like this issue has persisted for a while without any kind of
-> > fix happening - given that the bisection has identified this commit as
-> > causing the regression and confirmed that reverting it fixes shouldn't
-> > we just revert?  My guess would be that there's some error with the
-> > pinctrl settings in the DT for the board.
+> > The commit causes multiple issues in that:
+> > - the added call to ->control does potentially run unclocked
+> >   causing a hang of the machine
+> > - the added pinctrl-states are undocumented in the binding
+> > - the added pinctrl-states are not backwards compatible, breaking
+> >   old devicetrees.
 > >
+> > Fixes: 28694e009e51 ("thermal: rockchip: fix up the tsadc pinctrl setting error")
+> > Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+> > ---
+> >  drivers/thermal/rockchip_thermal.c | 36 +++---------------------------
+> >  1 file changed, 3 insertions(+), 33 deletions(-)
 > 
-> After some discussion Heiko sent a patch that reverts the offending commit
-> one day ago [1] and it's waiting for maintainer to pick-up the patch.
+> In case it helps with the urgency, there are lots of people who have
+> all independently needed to identify which commit stopped their boards
+> from booting mainline or broke temperature reading.  I'm aware of at
+> least these reports:
 > 
-I thought Eduardo will take the patch.
-But I will apply it and queue it for -rc2 anyway.
+> Reported-by: kernelci.org bot <bot@kernelci.org>
+> Reported-by: Enric Balletbo Serra <eballetbo@gmail.com>
+> Reported-by: Vicente Bergas <vicencb@gmail.com>
+> Reported-by: Jack Mitchell <ml@embed.me.uk>
+> Reported-by: Douglas Anderson <dianders@chromium.org>
+> 
+> I can confirm that my board boots again after this revert, thus:
+> 
+> Tested-by: Douglas Anderson <dianders@chromium.org>
 
-Thanks,
-Rui
+I see. I can collect this revert if that is what unblocks you guys.
 
-> The reason why we think is best reverting that fix it is explained here [2]
-> 
-> [1] https://lkml.org/lkml/2019/5/22/467
-> [2] https://lkml.org/lkml/2019/4/30/270
-> 
-> Thanks,
->  Enric
+Elaine, do you mind checking why these pinctrl changes are causing
+boot issues?
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
