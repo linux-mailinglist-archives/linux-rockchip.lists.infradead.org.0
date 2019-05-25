@@ -2,87 +2,92 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74B462A1A1
-	for <lists+linux-rockchip@lfdr.de>; Sat, 25 May 2019 01:34:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E48772A2A1
+	for <lists+linux-rockchip@lfdr.de>; Sat, 25 May 2019 05:40:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hgJ/gSojSu2WTQFz1yGnIP/crGSMTquGMQ0liuueB1Y=; b=dcsX7/sDusHxdX
-	YRbaCa+opdcS008eheUPN/4eEAKH9n0YPEf9U4jF2CKPCL/CLLXFmX5aT9bDh+pwNvLlkws0xQyO7
-	Xg7xH4Y6L+XsUQBG35BnRJ1UNBxJ0Zh8x+8jMXc7u5i944gTZulRe4j6Sk8oJlP00hJ1HHwl9kT77
-	9wz7pzMjoqclQgfgAIezcTCYSJwDkci1qnTHFxg9cgnRSBHgqcoIe72wpFmBAY+Wbkp1uWVEBMKoH
-	iRf0ulc9YqynsoeQilCaVgFgswtxhP4yS2Y+1wJ0IL2CiIF2PuhsYue1MOhlwCfXcrVgutwYAS+3d
-	Qq8r8BcEHUh+qI004slw==;
+	List-Owner; bh=dl6d3kg1qQlzTnLlMeQWH1YZESWw8q4Ze8BLoGMw+8I=; b=OuenF5launmZhp
+	isGvEAMawBM3MYlNqfqUj6frMIi3w7f8vzdX21v9yJChCvAin4S7mkWn9ULjZn59IuatI//oIwBQT
+	eoCiJw2YJtvSw3PptlTb37YCsiUtSF6fFfYJWovYNeMEs/3y5jZO4e5SrUQw8jNqOtL2bvoj+xaxq
+	5LpKZSjh6l7brrR/qs2Vwlks8DfJMrI21yER2xTssT141/d5fKkBUc5Xsuni5whW/8Uo9Yl8blQHc
+	QC64XRqhi3o95Bun7O3KeeCVFZrvkfx942Q8KY4pqbuMTejNVp80GdpXx3CBQnwxbd1svVmy98/HJ
+	MwJSvg7OpM8KQ5H0HI3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUJhG-0002RF-Gs; Fri, 24 May 2019 23:33:58 +0000
-Received: from mail-it1-x143.google.com ([2607:f8b0:4864:20::143])
+	id 1hUNXS-0002qq-Ud; Sat, 25 May 2019 03:40:06 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUJh6-0002LG-Uh
- for linux-rockchip@lists.infradead.org; Fri, 24 May 2019 23:33:50 +0000
-Received: by mail-it1-x143.google.com with SMTP id 9so16145054itf.4
- for <linux-rockchip@lists.infradead.org>; Fri, 24 May 2019 16:33:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=rsJAxdyQb1fSKmPFjHxXfvpb54VJb++Sfbj2FzY/Spg=;
- b=Bk8w5CLRpDX5qI44NFPAOJkiTdSB1PfhAApQn8PRwtVeP7F4nLhQmsMKZwaJPEclOu
- dz7WBd6L75ePt7QJiehHndTnGL1nDXKUHrTqj4BVrnZIGNAFdNsmxDzmV/dqFELcAzOn
- AnguU1IAPT7FI6TTldutxaWWwQR5FVK0XzCVc=
+ id 1hUNXN-0002Dd-8K
+ for linux-rockchip@lists.infradead.org; Sat, 25 May 2019 03:40:03 +0000
+Received: by mail-wm1-x342.google.com with SMTP id w9so4796773wmi.0
+ for <linux-rockchip@lists.infradead.org>; Fri, 24 May 2019 20:40:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernelci-org.20150623.gappssmtp.com; s=20150623;
+ h=message-id:date:mime-version:content-transfer-encoding:subject:to
+ :from:cc; bh=Kzug+k4tEmO5qCMnG7izi+kuNCEKn4AMrAYdTZq5wbA=;
+ b=M3tCswIi19Ky2WxBxNv3ls+b4wA+FQHPK1dariiCzrXwU0bXWNvO8qztzuzqVU/b4s
+ 3nmVsF3ASuIKqFRrbZMA3S7MkL99p3A22eUcccHK78s2ex8pnTJiLMcnDw6sav4UHC02
+ iLsc/PaamRKtMuPwf8y9TYfEujxd7LaaE2IOxG6+oarIp4MUxJ0J0ZzlaiY5BzUnp0nz
+ 1wyM7mm8mMVEQ/WGPWvGLmvyoPrAfYqQ3gPDFoYCMiBEt/C7pmTejIWS9EP23e6SQwoz
+ ixxas0zvojlf+YHB9hUXM6Ij9Y6R3jwaJVq0j9cd0HNyzHCfFKRmXIz7ufqwJQC87BV5
+ TNMA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=rsJAxdyQb1fSKmPFjHxXfvpb54VJb++Sfbj2FzY/Spg=;
- b=SZnml0ZGyRxvpbt4NeOVekxE2PGoTZ6kTQ3WlD6ZDdWAcivQmK8o1NLM/bhhNQjR0H
- +38uNxGMuoDbUzpA6naB7kj58gOvWLR0bfpdKttI64EQBaSEbfNm2Xrs1c4eddc6RJPi
- 7zKge4njUZ9qBp6Ersud+BZsdkcGOUVCdOcC54CIHd8hbEAP4slyXveZAyJxy6WSWe45
- gi+QXClcxp6E1UkIS01ZPcwmBAQR0gfS92Ra4+/5zLU8FpHsXmw8qx7xbTLTxX5jzf9D
- BoE1Jdt7pAAvb+YmHy1CBRQiw+JfuztbOzOY8++Bu7DbZus3NF+JrVvxsl1qYMJEVrYW
- ptiw==
-X-Gm-Message-State: APjAAAXYliR/GrYlQ8IwzJR0p6UKMImZfqrU8zrPHIH0E0skKirA7hf1
- Ace4WErzqTU9+i9KxM18PBPcWw==
-X-Google-Smtp-Source: APXvYqwVFa87joPVWSn35JxrmqMHmyBufLK2xSqhjXJKfr9PLGyPjrLB6P95EwaiA6AODlHgrYJlNA==
-X-Received: by 2002:a24:28c1:: with SMTP id
- h184mr21936877ith.105.1558740826457; 
- Fri, 24 May 2019 16:33:46 -0700 (PDT)
-Received: from tictac2.mtv.corp.google.com
- ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id k139sm3514574itb.0.2019.05.24.16.33.44
+ h=x-gm-message-state:message-id:date:mime-version
+ :content-transfer-encoding:subject:to:from:cc;
+ bh=Kzug+k4tEmO5qCMnG7izi+kuNCEKn4AMrAYdTZq5wbA=;
+ b=k8y6po7H/7YMUv7zhUAzSdF3cau5Wako7ETrns6jWgE/KJa/gz3ZfqPRAQK7GC9iTC
+ mOiBSYjHzfB9QNX2/F06xRuNd4qVhLSuii+h8wOXQNZRQYFi67dd5xgT4X9p1hoxyISw
+ bAFEHiTrGJdk/vp+bSv3LdHhHRTZEUgUKxcq43ib4EWzH6mkwX25zQ9PmQ9QLAKUsNAs
+ kMtVmnFVlkSGi0EHUJW9L1LjH2Px+rEwfi0MUJGVQsjLj7uBtoaUKEt+edRvBXS2R+bc
+ ZK8laSQA4FlkbxaE0Gy811eeeWEEw7QsuuNp2V+dUMSspzh/e0BecUhnYVGi+63+KthR
+ Bs8A==
+X-Gm-Message-State: APjAAAWRDz58peBhKZ4pf2xZNjxDUj8TUqjgM0zV876zWqg1OgnwovGX
+ peTEl1BPV1/JnjblpbV134kfNw==
+X-Google-Smtp-Source: APXvYqwFgY3oJJxa6vDIZjkAtvXePhiYXPmuXUt4XJEpFLjFTfPHU7t7sG1+fM0eQ6hxZWFpCBmu7w==
+X-Received: by 2002:a7b:c444:: with SMTP id l4mr2026446wmi.15.1558755597826;
+ Fri, 24 May 2019 20:39:57 -0700 (PDT)
+Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
+ by smtp.gmail.com with ESMTPSA id f65sm5640544wmg.45.2019.05.24.20.39.56
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 24 May 2019 16:33:45 -0700 (PDT)
-From: Douglas Anderson <dianders@chromium.org>
-To: Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH] ARM: dts: rockchip: Add pin names for rk3288-veyron jaq,
- mickey, speedy
-Date: Fri, 24 May 2019 16:33:09 -0700
-Message-Id: <20190524233309.45420-1-dianders@chromium.org>
-X-Mailer: git-send-email 2.22.0.rc1.257.g3120a18244-goog
+ Fri, 24 May 2019 20:39:57 -0700 (PDT)
+Message-ID: <5ce8b90d.1c69fb81.a6b86.0471@mx.google.com>
+Date: Fri, 24 May 2019 20:39:57 -0700 (PDT)
 MIME-Version: 1.0
+X-Kernelci-Report-Type: bisect
+X-Kernelci-Tree: linusw
+X-Kernelci-Lab-Name: lab-collabora
+X-Kernelci-Branch: fixes
+X-Kernelci-Kernel: v5.2-rc1-1-ge9646f0f5bb6
+Subject: linusw/fixes boot bisection: v5.2-rc1-1-ge9646f0f5bb6 on
+ rk3288-veyron-jaq
+To: tomeu.vizoso@collabora.com, guillaume.tucker@collabora.com,
+ mgalka@collabora.com, broonie@kernel.org, matthew.hart@linaro.org,
+ khilman@baylibre.com, enric.balletbo@collabora.com,
+ Elaine Zhang <zhangqing@rock-chips.com>,
+ Eduardo Valentin <edubezval@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>
+From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_163348_990406_8FAA3B42 
-X-CRM114-Status: GOOD (  13.30  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190524_204001_519430_10C37EB5 
+X-CRM114-Status: GOOD (  11.88  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,646 +100,189 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- briannorris@chromium.org, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Douglas Anderson <dianders@chromium.org>,
- linux-rockchip@lists.infradead.org, mka@chromium.org, ryandcase@chromium.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Heiko Stuebner <heiko@sntech.de>, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Zhang Rui <rui.zhang@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This is like commit 0ca87bd5baa6 ("ARM: dts: rockchip: Add pin names
-for rk3288-veyron-jerry") and commit ca3516b32cd9 ("ARM: dts:
-rockchip: Add pin names for rk3288-veyron-minnie") but for 3 more
-veyron boards.
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* This automated bisection report was sent to you on the basis  *
+* that you may be involved with the breaking commit it has      *
+* found.  No manual investigation has been done to verify it,   *
+* and the root cause of the problem may be somewhere else.      *
+* Hope this helps!                                              *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-A few notes:
-- While there is most certainly duplication between all the veyron
-  boards, it still feels like it is sane to just have each board have
-  a full list of its pin names.  The format of "gpio-line-names" does
-  not lend itself to one-off overriding and besides it seems sane to
-  more fully match schematic names.  Also note that the extra
-  duplication here is only in source code and is unlikely to ever
-  change (since these boards are shipped).  Duplication in the .dtb
-  files is unavoidable.
-- veyron-jaq and veyron-mighty are very closely related and so I have
-  shared a single list for them both with comments on how they are
-  different.  This is just a typo fix on one of the boards, a possible
-  missing signal on one of the boards (or perhaps I was never given
-  the most recent schematics?) and dealing with the fact that one of
-  the two boards has full sized SD.
+linusw/fixes boot bisection: v5.2-rc1-1-ge9646f0f5bb6 on rk3288-veyron-jaq
 
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
----
+Summary:
+  Start:      e9646f0f5bb6 gpio: fix gpio-adp5588 build errors
+  Details:    https://kernelci.org/boot/id/5ce82d9f59b514bb857a3642
+  Plain log:  https://storage.kernelci.org//linusw/fixes/v5.2-rc1-1-ge9646f0f5bb6/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.txt
+  HTML log:   https://storage.kernelci.org//linusw/fixes/v5.2-rc1-1-ge9646f0f5bb6/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.html
+  Result:     28694e009e51 thermal: rockchip: fix up the tsadc pinctrl setting error
 
- arch/arm/boot/dts/rk3288-veyron-jaq.dts    | 207 +++++++++++++++++++++
- arch/arm/boot/dts/rk3288-veyron-mickey.dts | 151 +++++++++++++++
- arch/arm/boot/dts/rk3288-veyron-speedy.dts | 207 +++++++++++++++++++++
- 3 files changed, 565 insertions(+)
+Checks:
+  revert:     PASS
+  verify:     PASS
 
-diff --git a/arch/arm/boot/dts/rk3288-veyron-jaq.dts b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-index e248f55ee8d2..fcd119168cb6 100644
---- a/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-@@ -135,6 +135,213 @@
- 	pinctrl-0 = <&vcc50_hdmi_en>;
+Parameters:
+  Tree:       linusw
+  URL:        https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-gpio.git/
+  Branch:     fixes
+  Target:     rk3288-veyron-jaq
+  CPU arch:   arm
+  Lab:        lab-collabora
+  Compiler:   gcc-8
+  Config:     multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y
+  Test suite: boot
+
+Breaking commit found:
+
+-------------------------------------------------------------------------------
+commit 28694e009e512451ead5519dd801f9869acb1f60
+Author: Elaine Zhang <zhangqing@rock-chips.com>
+Date:   Tue Apr 30 18:09:44 2019 +0800
+
+    thermal: rockchip: fix up the tsadc pinctrl setting error
+    
+    Explicitly use the pinctrl to set/unset the right mode
+    instead of relying on the pinctrl init mode.
+    And it requires setting the tshut polarity before select pinctrl.
+    
+    When the temperature sensor mode is set to 0, it will automatically
+    reset the board via the Clock-Reset-Unit (CRU) if the over temperature
+    threshold is reached. However, when the pinctrl initializes, it does a
+    transition to "otp_out" which may lead the SoC restart all the time.
+    
+    "otp_out" IO may be connected to the RESET circuit on the hardware.
+    If the IO is in the wrong state, it will trigger RESET.
+    (similar to the effect of pressing the RESET button)
+    which will cause the soc to restart all the time.
+    
+    Signed-off-by: Elaine Zhang <zhangqing@rock-chips.com>
+    Reviewed-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+    Signed-off-by: Eduardo Valentin <edubezval@gmail.com>
+
+diff --git a/drivers/thermal/rockchip_thermal.c b/drivers/thermal/rockchip_thermal.c
+index 9c7643d62ed7..6dc7fc516abf 100644
+--- a/drivers/thermal/rockchip_thermal.c
++++ b/drivers/thermal/rockchip_thermal.c
+@@ -172,6 +172,9 @@ struct rockchip_thermal_data {
+ 	int tshut_temp;
+ 	enum tshut_mode tshut_mode;
+ 	enum tshut_polarity tshut_polarity;
++	struct pinctrl *pinctrl;
++	struct pinctrl_state *gpio_state;
++	struct pinctrl_state *otp_state;
  };
  
-+&gpio0 {
-+	gpio-line-names = "PMIC_SLEEP_AP",
-+			  "DDRIO_PWROFF",
-+			  "DDRIO_RETEN",
-+			  "TS3A227E_INT_L",
-+			  "PMIC_INT_L",
-+			  "PWR_KEY_L",
-+			  "AP_LID_INT_L",
-+			  "EC_IN_RW",
-+
-+			  "AC_PRESENT_AP",
-+			  /*
-+			   * RECOVERY_SW_L is Chrome OS ABI.  Schematics call
-+			   * it REC_MODE_L.
-+			   */
-+			  "RECOVERY_SW_L",
-+			  "OTP_OUT",
-+			  "HOST1_PWR_EN",
-+			  "USBOTG_PWREN_H",
-+			  "AP_WARM_RESET_H",
-+			  "nFALUT2",
-+			  "I2C0_SDA_PMIC",
-+
-+			  "I2C0_SCL_PMIC",
-+			  "SUSPEND_L",
-+			  "USB_INT";
-+};
-+
-+&gpio2 {
-+	gpio-line-names = "CONFIG0",
-+			  "CONFIG1",
-+			  "CONFIG2",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "CONFIG3",
-+
-+			  "",
-+			  "EMMC_RST_L",
-+			  "",
-+			  "",
-+			  "BL_PWR_EN",
-+			  "AVDD_1V8_DISP_EN";
-+};
-+
-+&gpio3 {
-+	gpio-line-names = "FLASH0_D0",
-+			  "FLASH0_D1",
-+			  "FLASH0_D2",
-+			  "FLASH0_D3",
-+			  "FLASH0_D4",
-+			  "FLASH0_D5",
-+			  "FLASH0_D6",
-+			  "FLASH0_D7",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "FLASH0_CS2/EMMC_CMD",
-+			  "",
-+			  "FLASH0_DQS/EMMC_CLKO";
-+};
-+
-+&gpio4 {
-+	gpio-line-names = "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "UART0_RXD",
-+			  "UART0_TXD",
-+			  "UART0_CTS",
-+			  "UART0_RTS",
-+			  "SDIO0_D0",
-+			  "SDIO0_D1",
-+			  "SDIO0_D2",
-+			  "SDIO0_D3",
-+
-+			  "SDIO0_CMD",
-+			  "SDIO0_CLK",
-+			  "BT_DEV_WAKE",	/* Maybe missing from mighty? */
-+			  "",
-+			  "WIFI_ENABLE_H",
-+			  "BT_ENABLE_L",
-+			  "WIFI_HOST_WAKE",
-+			  "BT_HOST_WAKE";
-+};
-+
-+&gpio5 {
-+	gpio-line-names = "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "SPI0_CLK",
-+			  "SPI0_CS0",
-+			  "SPI0_TXD",
-+			  "SPI0_RXD",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "VCC50_HDMI_EN";
-+};
-+
-+&gpio6 {
-+	gpio-line-names = "I2S0_SCLK",
-+			  "I2S0_LRCK_RX",
-+			  "I2S0_LRCK_TX",
-+			  "I2S0_SDI",
-+			  "I2S0_SDO0",
-+			  "HP_DET_H",
-+			  "ALS_INT",
-+			  "INT_CODEC",
-+
-+			  "I2S0_CLK",
-+			  "I2C2_SDA",
-+			  "I2C2_SCL",
-+			  "MICDET",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "SDMMC_D0",
-+			  "SDMMC_D1",
-+			  "SDMMC_D2",
-+			  "SDMMC_D3",
-+			  "SDMMC_CLK",
-+			  "SDMMC_CMD";
-+};
-+
-+&gpio7 {
-+	gpio-line-names = "LCDC_BL",
-+			  "PWM_LOG",
-+			  "BL_EN",
-+			  "TRACKPAD_INT",
-+			  "TPM_INT_H",
-+			  "SDMMC_DET_L",
-+			  /*
-+			   * AP_FLASH_WP_L is Chrome OS ABI.  Schematics call
-+			   * it FW_WP_AP.
-+			   */
-+			  "AP_FLASH_WP_L",
-+			  "EC_INT",
-+
-+			  "CPU_NMI",
-+			  "DVSOK",
-+			  "SDMMC_WP",		/* mighty only */
-+			  "EDP_HPD",
-+			  "DVS1",
-+			  "nFALUT1",		/* nFAULT1 on jaq */
-+			  "LCD_EN",
-+			  "DVS2",
-+
-+			  "VCC5V_GOOD_H",
-+			  "I2C4_SDA_TP",
-+			  "I2C4_SCL_TP",
-+			  "I2C5_SDA_HDMI",
-+			  "I2C5_SCL_HDMI",
-+			  "5V_DRV",
-+			  "UART2_RXD",
-+			  "UART2_TXD";
-+};
-+
-+&gpio8 {
-+	gpio-line-names = "RAM_ID0",
-+			  "RAM_ID1",
-+			  "RAM_ID2",
-+			  "RAM_ID3",
-+			  "I2C1_SDA_TPM",
-+			  "I2C1_SCL_TPM",
-+			  "SPI2_CLK",
-+			  "SPI2_CS0",
-+
-+			  "SPI2_RXD",
-+			  "SPI2_TXD";
-+};
-+
- &pinctrl {
- 	backlight {
- 		bl_pwr_en: bl_pwr_en {
-diff --git a/arch/arm/boot/dts/rk3288-veyron-mickey.dts b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
-index 945e80801292..aa352d40c991 100644
---- a/arch/arm/boot/dts/rk3288-veyron-mickey.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
-@@ -252,6 +252,157 @@
- 	};
- };
+ /**
+@@ -1242,6 +1245,8 @@ static int rockchip_thermal_probe(struct platform_device *pdev)
+ 		return error;
+ 	}
  
-+&gpio0 {
-+	gpio-line-names = "PMIC_SLEEP_AP",
-+			  "",
-+			  "",
-+			  "",
-+			  "PMIC_INT_L",
-+			  "POWER_BUTTON_L",
-+			  "",
-+			  "",
++	thermal->chip->control(thermal->regs, false);
 +
-+			  "",
-+			  /*
-+			   * RECOVERY_SW_L is Chrome OS ABI.  Schematics call
-+			   * it REC_MODE_L.
-+			   */
-+			  "RECOVERY_SW_L",
-+			  "OT_RESET",
-+			  "",
-+			  "",
-+			  "AP_WARM_RESET_H",
-+			  "",
-+			  "I2C0_SDA_PMIC",
-+
-+			  "I2C0_SCL_PMIC",
-+			  "",
-+			  "nFALUT";
-+};
-+
-+&gpio2 {
-+	gpio-line-names = "CONFIG0",
-+			  "CONFIG1",
-+			  "CONFIG2",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "CONFIG3",
-+
-+			  "",
-+			  "EMMC_RST_L";
-+};
-+
-+&gpio3 {
-+	gpio-line-names = "FLASH0_D0",
-+			  "FLASH0_D1",
-+			  "FLASH0_D2",
-+			  "FLASH0_D3",
-+			  "FLASH0_D4",
-+			  "FLASH0_D5",
-+			  "FLASH0_D6",
-+			  "FLASH0_D7",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "FLASH0_CS2/EMMC_CMD",
-+			  "",
-+			  "FLASH0_DQS/EMMC_CLKO";
-+};
-+
-+&gpio4 {
-+	gpio-line-names = "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "UART0_RXD",
-+			  "UART0_TXD",
-+			  "UART0_CTS_L",
-+			  "UART0_RTS_L",
-+			  "SDIO0_D0",
-+			  "SDIO0_D1",
-+			  "SDIO0_D2",
-+			  "SDIO0_D3",
-+
-+			  "SDIO0_CMD",
-+			  "SDIO0_CLK",
-+			  "BT_DEV_WAKE",
-+			  "",
-+			  "WIFI_ENABLE_H",
-+			  "BT_ENABLE_L",
-+			  "WIFI_HOST_WAKE",
-+			  "BT_HOST_WAKE";
-+};
-+
-+&gpio7 {
-+	gpio-line-names = "",
-+			  "PWM_LOG",
-+			  "",
-+			  "",
-+			  "TPM_INT_H",
-+			  "SDMMC_DET_L",
-+			  /*
-+			   * AP_FLASH_WP_L is Chrome OS ABI.  Schematics call
-+			   * it FW_WP_AP.
-+			   */
-+			  "AP_FLASH_WP_L",
-+			  "",
-+
-+			  "CPU_NMI",
-+			  "DVSOK",
-+			  "HDMI_WAKE",
-+			  "POWER_HDMI_ON",
-+			  "DVS1",
-+			  "",
-+			  "",
-+			  "DVS2",
-+
-+			  "HDMI_CEC",
-+			  "",
-+			  "",
-+			  "I2C5_SDA_HDMI",
-+			  "I2C5_SCL_HDMI",
-+			  "",
-+			  "UART2_RXD",
-+			  "UART2_TXD";
-+};
-+
-+&gpio8 {
-+	gpio-line-names = "RAM_ID0",
-+			  "RAM_ID1",
-+			  "RAM_ID2",
-+			  "RAM_ID3",
-+			  "I2C1_SDA_TPM",
-+			  "I2C1_SCL_TPM",
-+			  "SPI2_CLK",
-+			  "SPI2_CS0",
-+
-+			  "SPI2_RXD",
-+			  "SPI2_TXD";
-+};
-+
- &pinctrl {
- 	hdmi {
- 		power_hdmi_on: power-hdmi-on {
-diff --git a/arch/arm/boot/dts/rk3288-veyron-speedy.dts b/arch/arm/boot/dts/rk3288-veyron-speedy.dts
-index 9a87017347ea..9b140db04456 100644
---- a/arch/arm/boot/dts/rk3288-veyron-speedy.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-speedy.dts
-@@ -113,6 +113,213 @@
- 	pinctrl-0 = <&vcc50_hdmi_en>;
- };
+ 	error = clk_prepare_enable(thermal->clk);
+ 	if (error) {
+ 		dev_err(&pdev->dev, "failed to enable converter clock: %d\n",
+@@ -1267,6 +1272,30 @@ static int rockchip_thermal_probe(struct platform_device *pdev)
+ 	thermal->chip->initialize(thermal->grf, thermal->regs,
+ 				  thermal->tshut_polarity);
  
-+&gpio0 {
-+	gpio-line-names = "PMIC_SLEEP_AP",
-+			  "DDRIO_PWROFF",
-+			  "DDRIO_RETEN",
-+			  "TS3A227E_INT_L",
-+			  "PMIC_INT_L",
-+			  "PWR_KEY_L",
-+			  "AP_LID_INT_L",
-+			  "EC_IN_RW",
++	if (thermal->tshut_mode == TSHUT_MODE_GPIO) {
++		thermal->pinctrl = devm_pinctrl_get(&pdev->dev);
++		if (IS_ERR(thermal->pinctrl)) {
++			dev_err(&pdev->dev, "failed to find thermal pinctrl\n");
++			return PTR_ERR(thermal->pinctrl);
++		}
 +
-+			  "AC_PRESENT_AP",
-+			  /*
-+			   * RECOVERY_SW_L is Chrome OS ABI.  Schematics call
-+			   * it REC_MODE_L.
-+			   */
-+			  "RECOVERY_SW_L",
-+			  "OTP_OUT",
-+			  "HOST1_PWR_EN",
-+			  "USBOTG_PWREN_H",
-+			  "AP_WARM_RESET_H",
-+			  "nFALUT2",
-+			  "I2C0_SDA_PMIC",
++		thermal->gpio_state = pinctrl_lookup_state(thermal->pinctrl,
++							   "gpio");
++		if (IS_ERR_OR_NULL(thermal->gpio_state)) {
++			dev_err(&pdev->dev, "failed to find thermal gpio state\n");
++			return -EINVAL;
++		}
 +
-+			  "I2C0_SCL_PMIC",
-+			  "SUSPEND_L",
-+			  "USB_INT";
-+};
++		thermal->otp_state = pinctrl_lookup_state(thermal->pinctrl,
++							  "otpout");
++		if (IS_ERR_OR_NULL(thermal->otp_state)) {
++			dev_err(&pdev->dev, "failed to find thermal otpout state\n");
++			return -EINVAL;
++		}
 +
-+&gpio2 {
-+	gpio-line-names = "CONFIG0",
-+			  "CONFIG1",
-+			  "CONFIG2",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "CONFIG3",
++		pinctrl_select_state(thermal->pinctrl, thermal->otp_state);
++	}
 +
-+			  "PWRLIMIT#_CPU",
-+			  "EMMC_RST_L",
-+			  "",
-+			  "",
-+			  "BL_PWR_EN",
-+			  "AVDD_1V8_DISP_EN";
-+};
-+
-+&gpio3 {
-+	gpio-line-names = "FLASH0_D0",
-+			  "FLASH0_D1",
-+			  "FLASH0_D2",
-+			  "FLASH0_D3",
-+			  "FLASH0_D4",
-+			  "FLASH0_D5",
-+			  "FLASH0_D6",
-+			  "FLASH0_D7",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "FLASH0_CS2/EMMC_CMD",
-+			  "",
-+			  "FLASH0_DQS/EMMC_CLKO";
-+};
-+
-+&gpio4 {
-+	gpio-line-names = "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "UART0_RXD",
-+			  "UART0_TXD",
-+			  "UART0_CTS",
-+			  "UART0_RTS",
-+			  "SDIO0_D0",
-+			  "SDIO0_D1",
-+			  "SDIO0_D2",
-+			  "SDIO0_D3",
-+
-+			  "SDIO0_CMD",
-+			  "SDIO0_CLK",
-+			  "BT_DEV_WAKE",
-+			  "",
-+			  "WIFI_ENABLE_H",
-+			  "BT_ENABLE_L",
-+			  "WIFI_HOST_WAKE",
-+			  "BT_HOST_WAKE";
-+};
-+
-+&gpio5 {
-+	gpio-line-names = "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "SPI0_CLK",
-+			  "SPI0_CS0",
-+			  "SPI0_TXD",
-+			  "SPI0_RXD",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "VCC50_HDMI_EN";
-+};
-+
-+&gpio6 {
-+	gpio-line-names = "I2S0_SCLK",
-+			  "I2S0_LRCK_RX",
-+			  "I2S0_LRCK_TX",
-+			  "I2S0_SDI",
-+			  "I2S0_SDO0",
-+			  "HP_DET_H",
-+			  "ALS_INT",		/* not connected */
-+			  "INT_CODEC",
-+
-+			  "I2S0_CLK",
-+			  "I2C2_SDA",
-+			  "I2C2_SCL",
-+			  "MICDET",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "SDMMC_D0",
-+			  "SDMMC_D1",
-+			  "SDMMC_D2",
-+			  "SDMMC_D3",
-+			  "SDMMC_CLK",
-+			  "SDMMC_CMD";
-+};
-+
-+&gpio7 {
-+	gpio-line-names = "LCDC_BL",
-+			  "PWM_LOG",
-+			  "BL_EN",
-+			  "TRACKPAD_INT",
-+			  "TPM_INT_H",
-+			  "SDMMC_DET_L",
-+			  /*
-+			   * AP_FLASH_WP_L is Chrome OS ABI.  Schematics call
-+			   * it FW_WP_AP.
-+			   */
-+			  "AP_FLASH_WP_L",
-+			  "EC_INT",
-+
-+			  "CPU_NMI",
-+			  "DVS_OK",
-+			  "",
-+			  "EDP_HOTPLUG",
-+			  "DVS1",
-+			  "nFALUT1",
-+			  "LCD_EN",
-+			  "DVS2",
-+
-+			  "VCC5V_GOOD_H",
-+			  "I2C4_SDA_TP",
-+			  "I2C4_SCL_TP",
-+			  "I2C5_SDA_HDMI",
-+			  "I2C5_SCL_HDMI",
-+			  "5V_DRV",
-+			  "UART2_RXD",
-+			  "UART2_TXD";
-+};
-+
-+&gpio8 {
-+	gpio-line-names = "RAM_ID0",
-+			  "RAM_ID1",
-+			  "RAM_ID2",
-+			  "RAM_ID3",
-+			  "I2C1_SDA_TPM",
-+			  "I2C1_SCL_TPM",
-+			  "SPI2_CLK",
-+			  "SPI2_CS0",
-+
-+			  "SPI2_RXD",
-+			  "SPI2_TXD";
-+};
-+
- &pinctrl {
- 	backlight {
- 		bl_pwr_en: bl_pwr_en {
--- 
-2.22.0.rc1.257.g3120a18244-goog
+ 	for (i = 0; i < thermal->chip->chn_num; i++) {
+ 		error = rockchip_thermal_register_sensor(pdev, thermal,
+ 						&thermal->sensors[i],
+@@ -1337,8 +1366,8 @@ static int __maybe_unused rockchip_thermal_suspend(struct device *dev)
+ 
+ 	clk_disable(thermal->pclk);
+ 	clk_disable(thermal->clk);
+-
+-	pinctrl_pm_select_sleep_state(dev);
++	if (thermal->tshut_mode == TSHUT_MODE_GPIO)
++		pinctrl_select_state(thermal->pinctrl, thermal->gpio_state);
+ 
+ 	return 0;
+ }
+@@ -1383,7 +1412,8 @@ static int __maybe_unused rockchip_thermal_resume(struct device *dev)
+ 	for (i = 0; i < thermal->chip->chn_num; i++)
+ 		rockchip_thermal_toggle_sensor(&thermal->sensors[i], true);
+ 
+-	pinctrl_pm_select_default_state(dev);
++	if (thermal->tshut_mode == TSHUT_MODE_GPIO)
++		pinctrl_select_state(thermal->pinctrl, thermal->otp_state);
+ 
+ 	return 0;
+ }
+-------------------------------------------------------------------------------
 
+
+Git bisection log:
+
+-------------------------------------------------------------------------------
+git bisect start
+# good: [37624b58542fb9f2d9a70e6ea006ef8a5f66c30b] Linux 5.1-rc7
+git bisect good 37624b58542fb9f2d9a70e6ea006ef8a5f66c30b
+# bad: [e9646f0f5bb62b7d43f0968f39d536cfe7123b53] gpio: fix gpio-adp5588 build errors
+git bisect bad e9646f0f5bb62b7d43f0968f39d536cfe7123b53
+# good: [e7a1414f9dc3498c4c35b9ca266d539e8bccab53] Merge tag 'media/v5.1-2' of git://git.kernel.org/pub/scm/linux/kernel/git/mchehab/linux-media
+git bisect good e7a1414f9dc3498c4c35b9ca266d539e8bccab53
+# good: [b970afcfcabd63cd3832e95db096439c177c3592] Merge tag 'powerpc-5.2-1' of ssh://gitolite.kernel.org/pub/scm/linux/kernel/git/powerpc/linux
+git bisect good b970afcfcabd63cd3832e95db096439c177c3592
+# bad: [a455eda33faafcaac1effb31d682765b14ef868c] Merge branch 'linus' of git://git.kernel.org/pub/scm/linux/kernel/git/evalenti/linux-soc-thermal
+git bisect bad a455eda33faafcaac1effb31d682765b14ef868c
+# good: [7e9890a3500d95c01511a4c45b7e7192dfa47ae2] Merge tag 'ovl-update-5.2' of git://git.kernel.org/pub/scm/linux/kernel/git/mszeredi/vfs
+git bisect good 7e9890a3500d95c01511a4c45b7e7192dfa47ae2
+# good: [cdc90a1871d6e64080f4506e900c6ef88e6fb39f] lib/bitmap.c: guard exotic bitmap functions by CONFIG_NUMA
+git bisect good cdc90a1871d6e64080f4506e900c6ef88e6fb39f
+# good: [d2d8b146043ae7e250aef1fb312971f6f479d487] Merge tag 'trace-v5.2' of git://git.kernel.org/pub/scm/linux/kernel/git/rostedt/linux-trace
+git bisect good d2d8b146043ae7e250aef1fb312971f6f479d487
+# good: [83f3ef3de625a5766de2382f9e077d4daafd5bac] Merge tag 'libnvdimm-fixes-5.2-rc1' of git://git.kernel.org/pub/scm/linux/kernel/git/nvdimm/nvdimm
+git bisect good 83f3ef3de625a5766de2382f9e077d4daafd5bac
+# bad: [ffd1b122d3a17783b68cfd03b0479dffedf0d960] thermal: rockchip: Support the PX30 SoC in thermal driver
+git bisect bad ffd1b122d3a17783b68cfd03b0479dffedf0d960
+# good: [3e6a8fb3308419129c7a52de6eb42feef5a919a0] drivers: thermal: tsens: Add new operation to check if a sensor is enabled
+git bisect good 3e6a8fb3308419129c7a52de6eb42feef5a919a0
+# good: [d36e2fa025387567710df740fd4dce1d5001b226] thermal: generic-adc: make lookup table optional
+git bisect good d36e2fa025387567710df740fd4dce1d5001b226
+# good: [42cd9b049829d7facbd45ab503d763a86251e81b] thermal/drivers/cpu_cooling: Fixup the header and copyright
+git bisect good 42cd9b049829d7facbd45ab503d763a86251e81b
+# good: [6ec8070b9d48294fbe865535c167a79527eaf357] thermal: Fix build error of missing devm_ioremap_resource on UM
+git bisect good 6ec8070b9d48294fbe865535c167a79527eaf357
+# bad: [28694e009e512451ead5519dd801f9869acb1f60] thermal: rockchip: fix up the tsadc pinctrl setting error
+git bisect bad 28694e009e512451ead5519dd801f9869acb1f60
+# good: [fcc6d4cadadcc977911c6bfcdd95d379f4082c74] thermal: broadcom: Remove ACPI support
+git bisect good fcc6d4cadadcc977911c6bfcdd95d379f4082c74
+# first bad commit: [28694e009e512451ead5519dd801f9869acb1f60] thermal: rockchip: fix up the tsadc pinctrl setting error
+-------------------------------------------------------------------------------
 
 _______________________________________________
 Linux-rockchip mailing list
