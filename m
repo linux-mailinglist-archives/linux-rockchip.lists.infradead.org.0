@@ -2,40 +2,44 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BD9A2CCEB
-	for <lists+linux-rockchip@lfdr.de>; Tue, 28 May 2019 19:03:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF7A92CCEA
+	for <lists+linux-rockchip@lfdr.de>; Tue, 28 May 2019 19:03:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mZKTF9/NtguAF3g0eA4tjji/Wu/thEz4eqm+u9ayS7g=; b=cWo3udBmczmlZW
-	GduQuHq1lK01kDMMhiJqdjaLNWBOe7rWNio8UtS4EwfHEH+q2ERwxs9hnC3aw5GDwDBPd+2i+/rTu
-	s1pbdmEmHZibI7hdRa6yqt6o8bGwWeFVq4ap+1BcVWkmjrVB81F8q2yI7pNK267U8+6nLyIo00fuI
-	TlPx+LITwYhaP4lqhjMBUrbULU1hG9Cu81qbjgDYXjC1r7/bg1zn9dLoebJzIjAUmewaSMhd5bntm
-	X4Mbxw3BxumJ6mh9U7BC3E9WlhcC+1MYFjKU4OFt7v5KKo3HPgUnrSinxH+3p9QaHlBqAyWEu4E/Y
-	VRcm65PMi6/Brpqr8Ong==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2PWLUJh3Gyy3j6PdMXqYnLIxVxNbWczv1lxnDWGUfHE=; b=fvDYy0M6WaXnyv
+	u320q3NK+s8h6eQcyNryd/ziY8DUdNEpt975vUaf9SeALA4MXl19w0r85bPX5k0JXYG9Lio/w8Mfb
+	kDrIRsfabN0YSWj4iPD67gi3qE/NPr4yc8/xrjHlyL1+kA9IaEqEKK80cLo3ngV5oECA2j1fR1KUc
+	9yZneiOFHuEJCwaHr3oFxEUN5WUvGnNxI5do15itNX+TGzyYC2h9wzUzZGBAWCWPh2JzSSXghLH+o
+	cm/iQNZ7SVrcxqdbEOA/GC61mWCnaSwdlELNd246oHKNxQHN4qG6OTRzGBNZTLrUG7gU4cYyJ53TN
+	oUMMxfJ25vxKgLV61tIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVfVV-0007QI-A6; Tue, 28 May 2019 17:03:25 +0000
+	id 1hVfVX-0007Rd-Th; Tue, 28 May 2019 17:03:27 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVfVR-0007Oh-8m
- for linux-rockchip@lists.infradead.org; Tue, 28 May 2019 17:03:23 +0000
+ id 1hVfVT-0007PR-1B
+ for linux-rockchip@lists.infradead.org; Tue, 28 May 2019 17:03:24 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 68018263952
+ (Authenticated sender: ezequiel) with ESMTPSA id E3B19280195
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: linux-media@vger.kernel.org,
 	Hans Verkuil <hans.verkuil@cisco.com>
-Subject: [PATCH v6 00/16] Add MPEG-2 decoding to Rockchip VPU
-Date: Tue, 28 May 2019 14:02:16 -0300
-Message-Id: <20190528170232.2091-1-ezequiel@collabora.com>
+Subject: [PATCH v6 01/16] media: v4l2-common: Fix v4l2_fill_pixfmt[_mp]()
+ prototypes
+Date: Tue, 28 May 2019 14:02:17 -0300
+Message-Id: <20190528170232.2091-2-ezequiel@collabora.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190528170232.2091-1-ezequiel@collabora.com>
+References: <20190528170232.2091-1-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_100321_616828_7B3B18FD 
-X-CRM114-Status: GOOD (  12.29  )
+X-CRM114-CacheID: sfid-20190528_100323_228444_D3F923B4 
+X-CRM114-Status: UNSURE (   8.68  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -63,120 +67,70 @@ Cc: Nicolas Dufresne <nicolas.dufresne@collabora.com>,
  Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
  Tomasz Figa <tfiga@chromium.org>, linux-rockchip@lists.infradead.org,
  Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com,
- Ezequiel Garcia <ezequiel@collabora.com>
+ Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This series introduces the decoding infrastructure that will be
-used to add support for other codecs such as VP8, VP9 and H.264.
+From: Boris Brezillon <boris.brezillon@collabora.com>
 
-The driver is exposes two video device nodes, the encoder being
-/dev/video0, and decoder /dev/video1. Both devices are associated
-to a single memory-to-memory queue, and same media device /dev/media0.
+Width/height and 4CC formats are expressed using u32 types everywhere,
+let's fix the v4l2_fill_pixfmt[_mp]() prototypes to do the same.
 
-This work has been possible thanks to Jonas Karlman, who did
-the initial MPEG-2 decoding work and also got mpv+ffmpeg working using
-the Request API.
+Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+---
+Changes from v5:
+* None
 
-Patchset applies cleanly on top of:
+Changes from v4:
+* New patch
 
-git://linuxtv.org/hverkuil/media_tree.git tags/br-v5.3c
+ drivers/media/v4l2-core/v4l2-common.c | 5 +++--
+ include/media/v4l2-common.h           | 8 ++++----
+ 2 files changed, 7 insertions(+), 6 deletions(-)
 
-For those wanting to test, please find a branch here:
-
-http://git.infradead.org/users/ezequielg/linux/shortlog/refs/heads/vpu-mpeg2-v6
-
-Future plans
-------------
-
-Once this series is merged the plan is to rename the driver to Hantro
-VPU, and add support to i.MX8, and then add VP8 and H264 decoding
-support.
-
-v6:
- * Change fill_fmt() helpers to accept only user-defined sizeimage,
-   but not bytesperline.
- * Add RK3328 support, contributed by Jonas Karlman.
-
-v5:
- * Add helper to clamp height/width based on frmsize
- * Modify fill_fmt() helpers to keep user-defined sizeimage/bytesperline
-   when they're big enough
- * Fixed a bunch of problems reported by Hans (see per-patch changelog
-   for more details)
-
-v4:
- * Fix issues in the probe/remove path preventing the driver from being
-   unloaded/reloaded (Jonas)
- * Rework the media controller registration code to simplify the
-   error/remove path (Boris)
- * Split the MPEG2 patches (one adding the generic code and one patch
-   per platform)
-
-v3:
-  * Share more code between the encoder/decoder logic (VB2/V4L2
-    interface implementation)
-  * Add a patch to support MPEG2 decoding on RK3288 (Jonas)
-  * Several fixes/improvements all over the place (see changelog
-    in each patch for more details)
-
-v2:
-  * Fixed some minor issues brought up by v4l2-compliance.
-  * Fixed bytesused wrongly assigned 0 on the MPEG-2 decoder.
-  * Addressed comments from Hans and Tomasz on the pixel format
-    helpers.
-
-Boris Brezillon (8):
-  media: v4l2-common: Fix v4l2_fill_pixfmt[_mp]() prototypes
-  media: v4l2-common: Add an helper to apply frmsize constraints
-  media: v4l2-common: Support custom imagesize in fill_pixfmt()
-  rockchip/vpu: Use v4l2_apply_frmsize_constraints() where appropriate
-  rockchip/vpu: Rename rockchip_vpu_common.h into rockchip_vpu_v4l2.h
-  rockchip/vpu: Move encoder logic to a common place
-  rockchip/vpu: Provide a helper to reset both src and dst formats
-  rockchip/vpu: Prepare things to support decoders
-
-Ezequiel Garcia (4):
-  rockchip/vpu: Open-code media controller register
-  rockchip/vpu: Support the Request API
-  rockchip/vpu: Add decoder boilerplate
-  rockchip/vpu: Add support for non-standard controls
-
-Jonas Karlman (4):
-  rockchip/vpu: Add infra to support MPEG-2 decoding
-  rockchip/vpu: Add MPEG2 decoding support to RK3399
-  rockchip/vpu: Add support for MPEG-2 decoding on RK3288
-  rockchip/vpu: Add support for MPEG-2 decoding on RK3328
-
- drivers/media/v4l2-core/v4l2-common.c         |  90 ++-
- drivers/staging/media/rockchip/vpu/Kconfig    |   1 +
- drivers/staging/media/rockchip/vpu/Makefile   |   7 +-
- .../media/rockchip/vpu/rk3288_vpu_hw.c        |  59 +-
- .../rockchip/vpu/rk3288_vpu_hw_jpeg_enc.c     |   2 +-
- .../rockchip/vpu/rk3288_vpu_hw_mpeg2_dec.c    | 261 +++++++
- .../media/rockchip/vpu/rk3288_vpu_regs.h      |   1 +
- .../media/rockchip/vpu/rk3399_vpu_hw.c        |  71 +-
- .../rockchip/vpu/rk3399_vpu_hw_jpeg_enc.c     |   8 +-
- .../rockchip/vpu/rk3399_vpu_hw_mpeg2_dec.c    | 267 +++++++
- .../staging/media/rockchip/vpu/rockchip_vpu.h | 110 ++-
- .../media/rockchip/vpu/rockchip_vpu_drv.c     | 466 ++++++++++--
- .../media/rockchip/vpu/rockchip_vpu_enc.c     | 571 ---------------
- .../media/rockchip/vpu/rockchip_vpu_hw.h      |  17 +
- .../media/rockchip/vpu/rockchip_vpu_mpeg2.c   |  61 ++
- .../media/rockchip/vpu/rockchip_vpu_v4l2.c    | 692 ++++++++++++++++++
- ...kchip_vpu_common.h => rockchip_vpu_v4l2.h} |  15 +-
- include/media/v4l2-common.h                   |  10 +-
- 18 files changed, 2026 insertions(+), 683 deletions(-)
- create mode 100644 drivers/staging/media/rockchip/vpu/rk3288_vpu_hw_mpeg2_dec.c
- create mode 100644 drivers/staging/media/rockchip/vpu/rk3399_vpu_hw_mpeg2_dec.c
- delete mode 100644 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c
- create mode 100644 drivers/staging/media/rockchip/vpu/rockchip_vpu_mpeg2.c
- create mode 100644 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c
- rename drivers/staging/media/rockchip/vpu/{rockchip_vpu_common.h => rockchip_vpu_v4l2.h} (50%)
-
+diff --git a/drivers/media/v4l2-core/v4l2-common.c b/drivers/media/v4l2-core/v4l2-common.c
+index b5778b2ffa27..9417a883ebe3 100644
+--- a/drivers/media/v4l2-core/v4l2-common.c
++++ b/drivers/media/v4l2-core/v4l2-common.c
+@@ -542,7 +542,7 @@ static inline unsigned int v4l2_format_block_height(const struct v4l2_format_inf
+ }
+ 
+ int v4l2_fill_pixfmt_mp(struct v4l2_pix_format_mplane *pixfmt,
+-			 int pixelformat, int width, int height)
++			u32 pixelformat, u32 width, u32 height)
+ {
+ 	const struct v4l2_format_info *info;
+ 	struct v4l2_plane_pix_format *plane;
+@@ -596,7 +596,8 @@ int v4l2_fill_pixfmt_mp(struct v4l2_pix_format_mplane *pixfmt,
+ }
+ EXPORT_SYMBOL_GPL(v4l2_fill_pixfmt_mp);
+ 
+-int v4l2_fill_pixfmt(struct v4l2_pix_format *pixfmt, int pixelformat, int width, int height)
++int v4l2_fill_pixfmt(struct v4l2_pix_format *pixfmt, u32 pixelformat,
++		     u32 width, u32 height)
+ {
+ 	const struct v4l2_format_info *info;
+ 	int i;
+diff --git a/include/media/v4l2-common.h b/include/media/v4l2-common.h
+index 0a41bbecf3d3..3226bc8107cc 100644
+--- a/include/media/v4l2-common.h
++++ b/include/media/v4l2-common.h
+@@ -420,9 +420,9 @@ struct v4l2_format_info {
+ 
+ const struct v4l2_format_info *v4l2_format_info(u32 format);
+ 
+-int v4l2_fill_pixfmt(struct v4l2_pix_format *pixfmt, int pixelformat,
+-		     int width, int height);
+-int v4l2_fill_pixfmt_mp(struct v4l2_pix_format_mplane *pixfmt, int pixelformat,
+-			int width, int height);
++int v4l2_fill_pixfmt(struct v4l2_pix_format *pixfmt, u32 pixelformat,
++		     u32 width, u32 height);
++int v4l2_fill_pixfmt_mp(struct v4l2_pix_format_mplane *pixfmt, u32 pixelformat,
++			u32 width, u32 height);
+ 
+ #endif /* V4L2_COMMON_H_ */
 -- 
 2.20.1
 
