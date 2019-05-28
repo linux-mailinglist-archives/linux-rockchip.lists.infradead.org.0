@@ -2,70 +2,100 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 380FC2CDB1
-	for <lists+linux-rockchip@lfdr.de>; Tue, 28 May 2019 19:33:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E13CC2CF31
+	for <lists+linux-rockchip@lfdr.de>; Tue, 28 May 2019 21:08:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fG6p128NZvnX/NkhVjAesyrA9v6q+GcY0Wy5rfUwO3E=; b=VxRfuMr4gwNrS1
-	xHXMzTyd0kQmgmgYRfuQu3wGcW88lIp/22q3sTZPb9Dn0oo5YxD6Z4Bl3wStNHSkoMPLXQ56V5I1G
-	p2L1lo7m9t1iOFwQPHJQTlEaK5RndYp25seLoxEhWc+SN/P47/8XUPSnmag+7ZYePFy2C0+8xKQNu
-	stK5ZInjHDSIoF2G8GUYasBW9tSV9YX+y/O6MYgwLl8B/UZ4M1K+4pKT5sreS3NS56HsogSyFFoGj
-	sUWB5KT9fodX8owrc7MJf17zO9eWMwjprDIGqiXmnQCtygm7V0ugng/gp8JEj2ppC9MTQsWneIPLg
-	nToqo3BFXMC1g3Tk+Ivw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ORV018VMifNFzmSurmNKluu2yAYrK/mMWmod2BaoIKw=; b=SLF
+	7VH0l0FnayxXlUqaKpsNwnw9A6R3l7Hv42xB+Xg4VUaYRLWRECvYcRt2Co1pbsBR0BcPh6uNYzdRa
+	luMBoj1QgOWcRILoEWZG9zLmNSIpBK2k9p10Gy9GmHMDJ9vznB96XeZsxggyA5fDD//DIeNaBC48S
+	eJYrVbvuCt7ftkechpG2loPxPLOwWicGqlAcVvVx3hS4/cQMxxNi6Ps4UQLzIGmv8RA3mZAo2l6nZ
+	ssEy5yVc81jyjrOLsRvAHVWoBSW49NlUcanNB3HuCW7IjVMd8Y0lzLxBOw5MHSuEe6iFcNRL9nVRD
+	gvta8AnWoCNuJBqknmQfuMKRDI9fSVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVfyD-0007aF-4Y; Tue, 28 May 2019 17:33:05 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hVhSs-0006eg-4A; Tue, 28 May 2019 19:08:50 +0000
+Received: from se14p.web-hosting.com ([198.54.122.234])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVfxm-0007AV-0j
- for linux-rockchip@bombadil.infradead.org; Tue, 28 May 2019 17:32:38 +0000
+ id 1hVhSj-0006Xv-B6; Tue, 28 May 2019 19:08:42 +0000
+Received: from [68.65.123.203] (helo=server153.web-hosting.com)
+ by se14.registrar-servers.com with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.89)
+ (envelope-from <akash@openedev.com>)
+ id 1hVh8N-0009x3-QN; Tue, 28 May 2019 11:47:44 -0700
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=sQTj4k+iPtdqID/IdA/vbxKOwz+ihxZ9Whn4hmY2AZ0=; b=xuMAbPDJLe5AiI80CLw6sRls1N
- Su6XKiIIlPNRs365CN/iY/u0EAotAbGdZRCkkBRvNSgm2QKA2NdP6rHYPnn2lj0XWV0vqbA/1d8la
- vvna7OICi90r6WRF4LJOsSVMdCpO8iChw30VWU9gHVL22fmnkxEHaPuYW1jnkiFijPt1SKAga1T7w
- y4lRqI4aHQH0gi60zlksBPufzc/EPt3VT2Puf2Pm6OyJ40E8pKcADvC9N//rKcvo/s4BvazA9EgYW
- G3njd512TgLSBE1ns5Ck/5JsReTMhw6pRjn0K+SiYAFQ5vkO4JQJcFbotqL7myWZg4qkDijnK3OcG
- p84ryuUA==;
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
- by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVfWP-0005hY-L5
- for linux-rockchip@lists.infradead.org; Tue, 28 May 2019 17:04:22 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id D05BC284AF7
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: linux-media@vger.kernel.org,
-	Hans Verkuil <hans.verkuil@cisco.com>
-Subject: [PATCH v6 16/16] rockchip/vpu: Add support for MPEG-2 decoding on
- RK3328
-Date: Tue, 28 May 2019 14:02:32 -0300
-Message-Id: <20190528170232.2091-17-ezequiel@collabora.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190528170232.2091-1-ezequiel@collabora.com>
-References: <20190528170232.2091-1-ezequiel@collabora.com>
-MIME-Version: 1.0
+ d=openedev.com; s=default; h=Message-Id:Date:Subject:Cc:To:From:Sender:
+ Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=HFvG/LahunJTKLXZcRrXptt2DckpdKXTkifmZXFipgQ=; b=PJiGVMZgVGjIgbDCNwmZ/BYqnX
+ fXKKx7yfLlCHwNukhMHUcNOocKv77y7xf8izZNV6Ppo791w9CKK+Sr1CgT3z0SC1jwKeH60STKItJ
+ kQg+sYfjzMZ5NwY5yCxUQ9UWwcp1g82nQCV3P1YGiBs3JalER9nYivypJdri+6mFX3zPJJ5YEcZ0w
+ PHluyjCLBSBRUuWnh/xep34EGeusUaiX14k/257ZXAdMFBxG7bg2IdlduvFpYXz9fvrGazsiq2tph
+ /L3ZKh3KEhc5nX2oM2RlkEwOYcqXfkI7nhBQfHoAdPB7Yn20dHN6mqxgafZg+N+/ZGFa0+9KHizZa
+ ZWxG4BXg==;
+Received: from [49.36.134.52] (port=58630 helo=localhost.localdomain)
+ by server153.web-hosting.com with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.91)
+ (envelope-from <akash@openedev.com>)
+ id 1hVh8B-000LWm-RB; Tue, 28 May 2019 14:47:32 -0400
+From: Akash Gajjar <akash@openedev.com>
+To: heiko@sntech.de
+Subject: [PATCH] arm64: dts: rockchip: add WiFi+BT support on ROCK Pi4 board
+Date: Wed, 29 May 2019 00:16:58 +0530
+Message-Id: <20190528184705.5240-1-akash@openedev.com>
+X-Mailer: git-send-email 2.17.1
+X-OutGoing-Spam-Status: No, score=-1.0
+X-Originating-IP: 68.65.123.203
+X-SpamExperts-Domain: nctest.net
+X-SpamExperts-Username: whmcalls3
+Authentication-Results: registrar-servers.com;
+ auth=pass (login) smtp.auth=whmcalls3@nctest.net
+X-SpamExperts-Outgoing-Class: ham
+X-SpamExperts-Outgoing-Evidence: Combined (0.02)
+X-Recommended-Action: accept
+X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0fHWENUdqj+4JDN3TQDP3eCpSDasLI4SayDByyq9LIhVZoh+GYOxeKhX
+ 0rYQmz6690TNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3Kk502M/hntTzIKfCMISdhHXTA
+ YTyyIfs1cqM+JexaJLwYntLwFjolRFhTnXQDnB9P2e84PReenR5LSk2iUS2Af528AOBrEuOevXI0
+ ebdgRKCIKg/aUy1+rC+nt9YJr0O6xUx7ZqtwsMDZ69b8b7zqxI+lL5NhqHMWktMqMo9GxlRpzx17
+ fEWeVBQjTCzPj3JfZsHc9iz9sphsbcEfYLbbA/Vq7f6BdqHymHnsz2U1vrjjPk6p1XF7W+y4zutd
+ yrLieQwtaT8LS8s2UvPGuarJq5V04g3+jzRT0rWpGx2J7RisI4GNUZN9o6JCIHO0bcEXRyryw85/
+ rAZb27+VZ3biGpeRn+vXyl2rp3c+WLIsa2xTYi2bf0F0JzgUQ/o6tR7CyoeT9VtB9syzdRQvkcqf
+ 34ZQDkS0DHehuOHWuM7Vjf4BoMdMi3MTHLPLkhmyzwKCoSgrSPwK7H7GiJo2l1dsJpcM7kMJvj0O
+ sEsYG6FZSA0KvSDgkCQq49Bwhmr0QiXBtIgA7rb5Xakftk+kQbpsGMceNxO+7BxamuC10Aq7F6rO
+ /YET258p5gS3Y/tQ+7wViH3SZTmW3KAG173wuvejUvo9EUE9MbHVS3r/mgHJnIRYw1BzDqNFGZrh
+ +TVo3LXlhgkjL4M2T1qqsnPjyphw8gjQbS46n+oec+xQytaJegt1cLqOJqfuEFfuEby07ONb4LOp
+ SgtUXs0lCO/QMtPNbzkjHv8L1XCo8f/lClCdnQGCmomWoKHQTtA/vxRp3BmjRFUZkz7XBxuphczf
+ K2a9sHP9vI3sVqNiY7IcsXSdRq0BIkUL/j1Y48GvmeURQjjE+CVHssiRKJOGVnhkTYtSIth1Taei
+ g8OGCxX9BeyO5Yx635mhoDTZ7tQJkImekwqesW0Fhika04lb89teM7jCHuolsEZDZij6HLxcjD4A
+ kjrzujHpSlY2Fr2WwzhRAoSw64oN2HxlNw5KgUUaTYIpDCz9FipvlGvdczGojXbA7Kmf/z2jyiGR
+ IooMdE2solbjhZES3yaCYnD0cFyGWzVHlRxwEiTVJqDh0qKoKsXx5lloGmtNVzr+QC4y+mGx45d+
+ 3Lqf0a+sK979BKHqhPATJSQCCJdpTZ0kmYMGtdFn1fl+TqEWOdbpokqh9QirvZzP9FuHbI/2PO15
+ wkM9AzOwAoKm7RdD7DhCg+2QoWbS5It/atGmSN6m4V7Gg3S4FvW6J98p+AxeVIeDFBo6QTq+8ulz
+ /zXcOmPBLTmIxb/wPGs8LFudSgPI2QH+nhyrWSrH
+X-Report-Abuse-To: spam@se16.registrar-servers.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_130421_824396_4E0A369E 
-X-CRM114-Status: GOOD (  10.46  )
-X-Spam-Score: -0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.0 points)
+X-CRM114-CacheID: sfid-20190528_120841_388235_418C06BE 
+X-CRM114-Status: GOOD (  12.98  )
+X-Spam-Score: 0.8 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,78 +108,170 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Nicolas Dufresne <nicolas.dufresne@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
- Tomasz Figa <tfiga@chromium.org>, linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com,
- Ezequiel Garcia <ezequiel@collabora.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Vicente Bergas <vicencb@gmail.com>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Klaus Goger <klaus.goger@theobroma-systems.com>,
+ Akash Gajjar <akash@openedev.com>, Ezequiel Garcia <ezequiel@collabora.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Jonas Karlman <jonas@kwiboo.se>
+Rock Pi 4 has a on board AP6256 WiFi/BT Module. enable wifi and bluetooth
+support on Rock Pi 4 board.
 
-Add necessary bits to support MPEG2 decoding on RK3328.
+Signed-off-by: Akash Gajjar <akash@openedev.com>
+---
+ .../boot/dts/rockchip/rk3399-rock-pi-4.dts    | 97 +++++++++++++++++++
+ 1 file changed, 97 insertions(+)
 
-Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
-Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
---
-Changes from v5:
-* New patch.
-
- drivers/staging/media/rockchip/vpu/rk3399_vpu_hw.c   | 12 ++++++++++++
- .../staging/media/rockchip/vpu/rockchip_vpu_drv.c    |  1 +
- drivers/staging/media/rockchip/vpu/rockchip_vpu_hw.h |  1 +
- 3 files changed, 14 insertions(+)
-
-diff --git a/drivers/staging/media/rockchip/vpu/rk3399_vpu_hw.c b/drivers/staging/media/rockchip/vpu/rk3399_vpu_hw.c
-index 2b3689968ef4..341f8d69c33d 100644
---- a/drivers/staging/media/rockchip/vpu/rk3399_vpu_hw.c
-+++ b/drivers/staging/media/rockchip/vpu/rk3399_vpu_hw.c
-@@ -175,3 +175,15 @@ const struct rockchip_vpu_variant rk3399_vpu_variant = {
- 	.clk_names = {"aclk", "hclk"},
- 	.num_clocks = 2
- };
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts b/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts
+index e030627159c6..55e74f4d5cd0 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts
+@@ -25,6 +25,15 @@
+ 		#clock-cells = <0>;
+ 	};
+ 
++	sdio_pwrseq: sdio-pwrseq {
++		compatible = "mmc-pwrseq-simple";
++		clocks = <&rk808 1>;
++		clock-names = "ext_clock";
++		pinctrl-names = "default";
++		pinctrl-0 = <&wifi_enable_h>;
++		reset-gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
++	};
 +
-+const struct rockchip_vpu_variant rk3328_vpu_variant = {
-+	.dec_offset = 0x400,
-+	.dec_fmts = rk3399_vpu_dec_fmts,
-+	.num_dec_fmts = ARRAY_SIZE(rk3399_vpu_dec_fmts),
-+	.codec = RK_VPU_MPEG2_DECODER,
-+	.codec_ops = rk3399_vpu_codec_ops,
-+	.vdpu_irq = rk3399_vdpu_irq,
-+	.init = rk3399_vpu_hw_init,
-+	.clk_names = {"aclk", "hclk"},
-+	.num_clocks = 2
+ 	vcc12v_dcin: dc-12v {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "vcc12v_dcin";
+@@ -451,12 +460,46 @@
+ };
+ 
+ &pinctrl {
++	bt {
++		bt_enable_h: bt-enable-h {
++			rockchip,pins = <0 RK_PB1 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++
++		bt_host_wake_l: bt-host-wake-l {
++			rockchip,pins = <0 RK_PA4 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++
++		bt_wake_l: bt-wake-l {
++			rockchip,pins = <2 RK_PD3 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++
+ 	pcie {
+ 		pcie_pwr_en: pcie-pwr-en {
+ 			rockchip,pins = <2 RK_PD2 RK_FUNC_GPIO &pcfg_pull_none>;
+ 		};
+ 	};
+ 
++	sdio0 {
++		sdio0_bus4: sdio0-bus4 {
++			rockchip,pins =
++				<2 20 RK_FUNC_1 &pcfg_pull_up_20ma>,
++				<2 21 RK_FUNC_1 &pcfg_pull_up_20ma>,
++				<2 22 RK_FUNC_1 &pcfg_pull_up_20ma>,
++				<2 23 RK_FUNC_1 &pcfg_pull_up_20ma>;
++		};
++
++		sdio0_cmd: sdio0-cmd {
++			rockchip,pins =
++				<2 24 RK_FUNC_1 &pcfg_pull_up_20ma>;
++		};
++
++		sdio0_clk: sdio0-clk {
++			rockchip,pins =
++				<2 25 RK_FUNC_1 &pcfg_pull_none_20ma>;
++		};
++	};
++
+ 	pmic {
+ 		pmic_int_l: pmic-int-l {
+ 			rockchip,pins = <1 RK_PC5 RK_FUNC_GPIO &pcfg_pull_up>;
+@@ -482,6 +525,17 @@
+ 			rockchip,pins = <4 RK_PD1 RK_FUNC_GPIO &pcfg_pull_none>;
+ 		};
+ 	};
++
++	wifi {
++		wifi_enable_h: wifi-enable-h {
++			rockchip,pins =
++				<0 RK_PB2 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++
++		wifi_host_wake_l: wifi-host-wake-l {
++			rockchip,pins = <0 RK_PA3 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
+ };
+ 
+ &pwm2 {
+@@ -494,6 +548,32 @@
+ 	vref-supply = <&vcc_1v8>;
+ };
+ 
++&sdio0 {
++	#address-cells = <1>;
++	#size-cells = <0>;
++	bus-width = <4>;
++	clock-frequency = <50000000>;
++	cap-sdio-irq;
++	cap-sd-highspeed;
++	keep-power-in-suspend;
++	mmc-pwrseq = <&sdio_pwrseq>;
++	non-removable;
++	pinctrl-names = "default";
++	pinctrl-0 = <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
++	sd-uhs-sdr104;
++	status = "okay";
++
++	brcmf: wifi@1 {
++		compatible = "brcm,bcm4329-fmac";
++		reg = <1>;
++		interrupt-parent = <&gpio0>;
++		interrupts = <RK_PA3 GPIO_ACTIVE_HIGH>;
++		interrupt-names = "host-wake";
++		pinctrl-names = "default";
++		pinctrl-0 = <&wifi_host_wake_l>;
++	};
 +};
-diff --git a/drivers/staging/media/rockchip/vpu/rockchip_vpu_drv.c b/drivers/staging/media/rockchip/vpu/rockchip_vpu_drv.c
-index b94ff97451db..2e22009b6583 100644
---- a/drivers/staging/media/rockchip/vpu/rockchip_vpu_drv.c
-+++ b/drivers/staging/media/rockchip/vpu/rockchip_vpu_drv.c
-@@ -419,6 +419,7 @@ static const struct v4l2_file_operations rockchip_vpu_fops = {
- 
- static const struct of_device_id of_rockchip_vpu_match[] = {
- 	{ .compatible = "rockchip,rk3399-vpu", .data = &rk3399_vpu_variant, },
-+	{ .compatible = "rockchip,rk3328-vpu", .data = &rk3328_vpu_variant, },
- 	{ .compatible = "rockchip,rk3288-vpu", .data = &rk3288_vpu_variant, },
- 	{ /* sentinel */ }
- };
-diff --git a/drivers/staging/media/rockchip/vpu/rockchip_vpu_hw.h b/drivers/staging/media/rockchip/vpu/rockchip_vpu_hw.h
-index 6cecb528f994..3d6b97af90fb 100644
---- a/drivers/staging/media/rockchip/vpu/rockchip_vpu_hw.h
-+++ b/drivers/staging/media/rockchip/vpu/rockchip_vpu_hw.h
-@@ -79,6 +79,7 @@ enum rockchip_vpu_enc_fmt {
++
+ &sdmmc {
+ 	bus-width = <4>;
+ 	cap-mmc-highspeed;
+@@ -557,6 +637,23 @@
+ 	};
  };
  
- extern const struct rockchip_vpu_variant rk3399_vpu_variant;
-+extern const struct rockchip_vpu_variant rk3328_vpu_variant;
- extern const struct rockchip_vpu_variant rk3288_vpu_variant;
- 
- void rockchip_vpu_watchdog(struct work_struct *work);
++&uart0 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
++	status = "okay";
++
++	bluetooth {
++		compatible = "brcm,bcm43438-bt";
++		clocks = <&rk808 1>;
++		clock-names = "ext_clock";
++		device-wakeup-gpios = <&gpio2 RK_PD3 GPIO_ACTIVE_HIGH>;
++		host-wakeup-gpios = <&gpio0 RK_PA4 GPIO_ACTIVE_HIGH>;
++		shutdown-gpios = <&gpio0 RK_PB1 GPIO_ACTIVE_HIGH>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&bt_host_wake_l &bt_wake_l &bt_enable_h>;
++	};
++};
++
+ &uart2 {
+ 	status = "okay";
+ };
 -- 
-2.20.1
+2.17.1
 
 
 _______________________________________________
