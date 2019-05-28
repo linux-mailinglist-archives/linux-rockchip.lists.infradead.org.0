@@ -2,79 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6A662C08D
-	for <lists+linux-rockchip@lfdr.de>; Tue, 28 May 2019 09:48:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E1B12C154
+	for <lists+linux-rockchip@lfdr.de>; Tue, 28 May 2019 10:30:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NAWKNgzmtzOxpS00DgpOz/7NHAAhK6dfoTTCJrqAm5Q=; b=F9bYdPqxcylh7iVNGJLncBEjr
-	RZeqazaOMjktW4juD6zjADLrq9AEk4VfTYMm1TXMRJ03PcokgKOXaYipP927J+DTWy30GVRjO4Z4A
-	3uJlZPDMzBF/uB2/BQtihE6wjzABn3Qk5FiUEE99t7Iam3w3JB2dcXSBxPi5BchuSFUOS9JowjpUS
-	aR+YVBiIO5AiEN1CSUNXt6oOGQMruITagi+/As7rPhiy9HKX/Jp3td8TuWEWmeyYRlJendvZEjbA6
-	crsNMXXh9ximU+gmCwT5rN5FYh8mRoyarnar+o5/RVBpDtjjRan0nGKjw+25jZrBhPaAlLE0tJGxU
-	wmqlRE27g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cOfP8PYKRhWgCkhKgrq+kf1dSCmmuRF/fOvhQt9D6Xk=; b=sa6t8mWZtgKKau
+	6ZC5nreDRPWeXutq0N5yVFihO1SKhHagXraGX1H4VmNza/5jeU42EQkKAyJG+ImjgpiNhmGqreN/B
+	2RZH/e5pWouTAZraNjmzRbBUExfJwKF0K1vKShuTOuFW48V9fNihbh3SaYC0g/vgODfiXwJ++qJi5
+	T5JQhG3WrICrDosmbuahglyRlSyqaLjq8F73y8ainq4hfr/WiZwxdC1SozWK7DcpmV3o1VCxyMUZ7
+	5Ne1tH+Mm9u+0Gyie3Xd6Yr2ZKjcdLi+KDRXVTQ66IBI7MQzMZg0lPZjEKTLXGOSLUlJF9PFPFRMG
+	vLJp1ukwNMhtwP5gPMHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVWqE-0002Qy-DP; Tue, 28 May 2019 07:48:14 +0000
-Received: from lucky1.263xmail.com ([211.157.147.131])
+	id 1hVXUs-00074M-BE; Tue, 28 May 2019 08:30:14 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVWqA-0002Q0-QG
- for linux-rockchip@lists.infradead.org; Tue, 28 May 2019 07:48:13 +0000
-Received: from shawn.lin?rock-chips.com (unknown [192.168.167.139])
- by lucky1.263xmail.com (Postfix) with ESMTP id 15EDC59FD7;
- Tue, 28 May 2019 15:48:02 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 1
-X-MAIL-DELIVERY: 0
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from [172.16.12.37] (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P11884T140492318693120S1559029676862359_; 
- Tue, 28 May 2019 15:47:59 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <d51cbbad6d0037a5de7fbac59c2fc291>
-X-RL-SENDER: shawn.lin@rock-chips.com
-X-SENDER: lintao@rock-chips.com
-X-LOGIN-NAME: shawn.lin@rock-chips.com
-X-FST-TO: kvalo@codeaurora.org
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-Subject: =?UTF-8?Q?Re=3a_=5bPATCH_v2=5d_mmc=3a_dw=5fmmc=3a_Disable_SDIO_inte?=
- =?UTF-8?Q?rrupts_while_suspended_to_fix_suspend/resume=e3=80=90=e8=af=b7?=
- =?UTF-8?B?5rOo5oSP77yM6YKu5Lu255SxbGludXgtcm9ja2NoaXAtYm91bmNlcytzaGF3bi5s?=
- =?UTF-8?B?aW49cm9jay1jaGlwcy5jb21AbGlzdHMuaW5mcmFkZWFkLm9yZ+S7o+WPkeOAkQ==?=
-To: Douglas Anderson <dianders@chromium.org>,
- Jaehoon Chung <jh80.chung@samsung.com>, Ulf Hansson <ulf.hansson@linaro.org>
-References: <20190429204040.18725-1-dianders@chromium.org>
-From: Shawn Lin <shawn.lin@rock-chips.com>
-Message-ID: <982ffba1-c599-e73d-e5e0-b1be5668851c@rock-chips.com>
-Date: Tue, 28 May 2019 15:47:59 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hVXUi-0005op-MM
+ for linux-rockchip@lists.infradead.org; Tue, 28 May 2019 08:30:06 +0000
+Received: by mail-lj1-x244.google.com with SMTP id w1so16858362ljw.0
+ for <linux-rockchip@lists.infradead.org>; Tue, 28 May 2019 01:30:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=PMKt4bIgN1HEm/460cE5q68gl3N0MQbJchCnVYWm094=;
+ b=kYz0De76bfu7bcWNDUNk28cvkNqBj2DDfPreMRu80+wNclg/Cq4CnbrKsvlyZw+IA7
+ 4mkUydxfD2Un3cbAhRSfyBoX/ptzp212sf6TWmOnoVmzw5hElpJ/xwBvEz6AuMZva6NF
+ xFI5jFTk006v+f8iTbqEtzZisef/yc0VzN1HDMQHuexLTVvjEvw+WSw4oaHzQ1GwXyZP
+ B7leIoFy7G91aK8+WgDqlV7Ul/TMeP8u7cjIErXIS/5EvMra0CKyf4nuqkqEf7iO+3Hz
+ rYh62p8UD+6LgdQSbmGTNa66vWmZV2k9oSIIxhIecks0VtafIXXxBForI3acUOhb9ZfZ
+ w67w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=PMKt4bIgN1HEm/460cE5q68gl3N0MQbJchCnVYWm094=;
+ b=hAF0eVNBb7Uan0dvFL6FTZBwAJSyjBE65jajY1jw0KUlccQrEdYRF8KMxZZ0VW1lNS
+ b6baR1x1SCZmDan9QNt/P/8GwCae9zaSAqoQnK+oHdPkBGS3kXWf9TpNrhIONjHnjFw1
+ f63OSvWhpvAIkHhoZbx355fIu22vv8K4oALV0GzIS64/TSE7AZ0SqyMWOen2efto8CuF
+ dg2m1lT/qyGepXozqSHwoE7xH7IPSCUDKD0aIxMbWXLU3PapkLf7rxaA2+/Gldv2KrCv
+ V76FZMLQitCvhdBUqXbI0BukUASBAtA1bkEY7IevaurP/TvOkymB+yAaSsW/lSgmN/Tk
+ BHFg==
+X-Gm-Message-State: APjAAAX8lHfmtP+jcR6i/EsxK33rEmZBUeXgwioLoJ0e0NkPQFpVKfO4
+ 59AX9JV3mxGMtlcWyHeOk9FnIXTGHuQl6ksn27YKeA==
+X-Google-Smtp-Source: APXvYqy7veIzZ/Dja/15R5nCc1PW1p8U+rNxKMDmvhoEoTgcYhlfBi3GlLvtP/VxTSoMtFsVccJq+nIFR5XuK6elTvw=
+X-Received: by 2002:a2e:1284:: with SMTP id 4mr32732859ljs.138.1559032202173; 
+ Tue, 28 May 2019 01:30:02 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190429204040.18725-1-dianders@chromium.org>
+References: <5cec74e8.1c69fb81.37335.9d7b@mx.google.com>
+ <0edab48f-06e5-9ed8-09be-7c9976ae1afb@collabora.com>
+In-Reply-To: <0edab48f-06e5-9ed8-09be-7c9976ae1afb@collabora.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 28 May 2019 10:29:49 +0200
+Message-ID: <CACRpkdYN8_ZGd=FiV3nwbjmPPD9x5p=wTZ4SrCj5syLjYW0Ziw@mail.gmail.com>
+Subject: Re: linusw/for-next boot bisection: v5.2-rc1-8-g73a790c68d7e on
+ rk3288-veyron-jaq
+To: Guillaume Tucker <guillaume.tucker@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_004811_168854_DFC957BA 
-X-CRM114-Status: GOOD (  37.23  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190528_013004_743199_CD0F4551 
+X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.131 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -87,199 +93,43 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: heiko@sntech.de, linux-mmc@vger.kernel.org, shawn.lin@rock-chips.com,
- briannorris@chromium.org, linux-wireless@vger.kernel.org,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- linux-rockchip@lists.infradead.org, mka@chromium.org, ryandcase@chromium.org,
- Guenter Roeck <groeck@chromium.org>,
- Emil Renner Berthing <emil.renner.berthing@gmail.com>,
- Sonny Rao <sonnyrao@chromium.org>, Kalle Valo <kvalo@codeaurora.org>
+Cc: Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Heiko Stuebner <heiko@sntech.de>, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
+ Linux PM list <linux-pm@vger.kernel.org>, Kevin Hilman <khilman@baylibre.com>,
+ Elaine Zhang <zhangqing@rock-chips.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Eduardo Valentin <edubezval@gmail.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Mark Brown <broonie@kernel.org>, Matt Hart <matthew.hart@linaro.org>,
+ mgalka@collabora.com, Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Zhang Rui <rui.zhang@intel.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+On Tue, May 28, 2019 at 9:13 AM Guillaume Tucker
+<guillaume.tucker@collabora.com> wrote:
 
-On 2019/4/30 4:40, Douglas Anderson wrote:
-> Processing SDIO interrupts while dw_mmc is suspended (or partly
-> suspended) seems like a bad idea.  We really don't want to be
-> processing them until we've gotten ourselves fully powered up.
-> 
-> You might be wondering how it's even possible to become suspended when
-> an SDIO interrupt is active.  As can be seen in
-> dw_mci_enable_sdio_irq(), we explicitly keep dw_mmc out of runtime
-> suspend when the SDIO interrupt is enabled.  ...but even though we
-> stop normal runtime suspend transitions when SDIO interrupts are
-> enabled, the dw_mci_runtime_suspend() can still get called for a full
-> system suspend.
-> 
-> Let's handle all this by explicitly masking SDIO interrupts in the
-> suspend call and unmasking them later in the resume call.  To do this
-> cleanly I'll keep track of whether the client requested that SDIO
-> interrupts be enabled so that we can reliably restore them regardless
-> of whether we're masking them for one reason or another.
-> 
-> It should be noted that if dw_mci_enable_sdio_irq() is never called
-> (for instance, if we don't have an SDIO card plugged in) that
-> "client_sdio_enb" will always be false.  In those cases this patch
-> adds a tiny bit of overhead to suspend/resume (a spinlock and a
-> read/write of INTMASK) but other than that is a no-op.  The
-> SDMMC_INT_SDIO bit should always be clear and clearing it again won't
-> hurt.
-> 
-> Without this fix it can be seen that rk3288-veyron Chromebooks with
-> Marvell WiFi would sometimes fail to resume WiFi even after picking my
-> recent mwifiex patch [1].  Specifically you'd see messages like this:
->    mwifiex_sdio mmc1:0001:1: Firmware wakeup failed
->    mwifiex_sdio mmc1:0001:1: PREP_CMD: FW in reset state
-> 
-> ...and tracing through the resume code in the failing cases showed
-> that we were processing a SDIO interrupt really early in the resume
-> call.
-> 
-> NOTE: downstream in Chrome OS 3.14 and 3.18 kernels (both of which
-> support the Marvell SDIO WiFi card) we had a patch ("CHROMIUM: sdio:
-> Defer SDIO interrupt handling until after resume") [2].  Presumably
-> this is the same problem that was solved by that patch.
-> 
-> [1] https://lkml.kernel.org/r/20190404040106.40519-1-dianders@chromium.org
-> [2] https://crrev.com/c/230765
-> 
+> This commit has now been reverted in mainline.  Would it be OK
+> for you to rebase your for-next branch on v5.2-rc2 or cherry-pick
+> the revert to avoid recurring bisections?
 
-Sorry for late, but FWIW:
+Sure I can do that, it's a one-off so why not. I rebased my
+devel branch on -rc2.
 
-Reviewed-by: Shawn Lin <shawn.lin@rock-chips.com>
+> Ideally this should have been fixed or reverted in mainline
+> before v5.2-rc1 was released, or even earlier when this was first
+> found in -next on 13th May.  Unfortunately it was overlooked and
+> then spread to other branches like yours.
 
-> Cc: <stable@vger.kernel.org> # 4.14.x
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> ---
-> I didn't put any "Fixes" tag here, but presumably this could be
-> backported to whichever kernels folks found it useful for.  I have at
-> least confirmed that kernels v4.14 and v4.19 (as well as v5.1-rc2)
-> show the problem.  It is very easy to pick this to v4.19 and it
-> definitely fixes the problem there.
-> 
-> I haven't spent the time to pick this to 4.14 myself, but presumably
-> it wouldn't be too hard to backport this as far as v4.13 since that
-> contains commit 32dba73772f8 ("mmc: dw_mmc: Convert to use
-> MMC_CAP2_SDIO_IRQ_NOTHREAD for SDIO IRQs").  Prior to that it might
-> make sense for anyone experiencing this problem to just pick the old
-> CHROMIUM patch to fix them.
-> 
-> Changes in v2:
-> - Suggested 4.14+ in the stable tag (Sasha-bot)
-> - Extra note that this is a noop on non-SDIO (Shawn / Emil)
-> - Make boolean logic cleaner as per https://crrev.com/c/1586207/1
-> - Hopefully clear comments as per https://crrev.com/c/1586207/1
-> 
->   drivers/mmc/host/dw_mmc.c | 27 +++++++++++++++++++++++----
->   drivers/mmc/host/dw_mmc.h |  3 +++
->   2 files changed, 26 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/mmc/host/dw_mmc.c b/drivers/mmc/host/dw_mmc.c
-> index 80dc2fd6576c..480067b87a94 100644
-> --- a/drivers/mmc/host/dw_mmc.c
-> +++ b/drivers/mmc/host/dw_mmc.c
-> @@ -1664,7 +1664,8 @@ static void dw_mci_init_card(struct mmc_host *mmc, struct mmc_card *card)
->   	}
->   }
->   
-> -static void __dw_mci_enable_sdio_irq(struct dw_mci_slot *slot, int enb)
-> +static void __dw_mci_enable_sdio_irq(struct dw_mci_slot *slot, bool enb,
-> +				     bool client_requested)
->   {
->   	struct dw_mci *host = slot->host;
->   	unsigned long irqflags;
-> @@ -1672,6 +1673,20 @@ static void __dw_mci_enable_sdio_irq(struct dw_mci_slot *slot, int enb)
->   
->   	spin_lock_irqsave(&host->irq_lock, irqflags);
->   
-> +	/*
-> +	 * If we're being called directly from dw_mci_enable_sdio_irq()
-> +	 * (which means that the client driver actually wants to enable or
-> +	 * disable interrupts) then save the request.  Otherwise this
-> +	 * wasn't directly requested by the client and we should logically
-> +	 * AND it with the client request since we want to disable if
-> +	 * _either_ the client disabled OR we have some other reason to
-> +	 * disable temporarily.
-> +	 */
-> +	if (client_requested)
-> +		host->client_sdio_enb = enb;
-> +	else
-> +		enb &= host->client_sdio_enb;
-> +
->   	/* Enable/disable Slot Specific SDIO interrupt */
->   	int_mask = mci_readl(host, INTMASK);
->   	if (enb)
-> @@ -1688,7 +1703,7 @@ static void dw_mci_enable_sdio_irq(struct mmc_host *mmc, int enb)
->   	struct dw_mci_slot *slot = mmc_priv(mmc);
->   	struct dw_mci *host = slot->host;
->   
-> -	__dw_mci_enable_sdio_irq(slot, enb);
-> +	__dw_mci_enable_sdio_irq(slot, enb, true);
->   
->   	/* Avoid runtime suspending the device when SDIO IRQ is enabled */
->   	if (enb)
-> @@ -1701,7 +1716,7 @@ static void dw_mci_ack_sdio_irq(struct mmc_host *mmc)
->   {
->   	struct dw_mci_slot *slot = mmc_priv(mmc);
->   
-> -	__dw_mci_enable_sdio_irq(slot, 1);
-> +	__dw_mci_enable_sdio_irq(slot, true, false);
->   }
->   
->   static int dw_mci_execute_tuning(struct mmc_host *mmc, u32 opcode)
-> @@ -2734,7 +2749,7 @@ static irqreturn_t dw_mci_interrupt(int irq, void *dev_id)
->   		if (pending & SDMMC_INT_SDIO(slot->sdio_id)) {
->   			mci_writel(host, RINTSTS,
->   				   SDMMC_INT_SDIO(slot->sdio_id));
-> -			__dw_mci_enable_sdio_irq(slot, 0);
-> +			__dw_mci_enable_sdio_irq(slot, false, false);
->   			sdio_signal_irq(slot->mmc);
->   		}
->   
-> @@ -3424,6 +3439,8 @@ int dw_mci_runtime_suspend(struct device *dev)
->   {
->   	struct dw_mci *host = dev_get_drvdata(dev);
->   
-> +	__dw_mci_enable_sdio_irq(host->slot, false, false);
-> +
->   	if (host->use_dma && host->dma_ops->exit)
->   		host->dma_ops->exit(host);
->   
-> @@ -3490,6 +3507,8 @@ int dw_mci_runtime_resume(struct device *dev)
->   	/* Now that slots are all setup, we can enable card detect */
->   	dw_mci_enable_cd(host);
->   
-> +	__dw_mci_enable_sdio_irq(host->slot, true, false);
-> +
->   	return 0;
->   
->   err:
-> diff --git a/drivers/mmc/host/dw_mmc.h b/drivers/mmc/host/dw_mmc.h
-> index 46e9f8ec5398..dfbace0f5043 100644
-> --- a/drivers/mmc/host/dw_mmc.h
-> +++ b/drivers/mmc/host/dw_mmc.h
-> @@ -127,6 +127,7 @@ struct dw_mci_dma_slave {
->    * @cmd11_timer: Timer for SD3.0 voltage switch over scheme.
->    * @cto_timer: Timer for broken command transfer over scheme.
->    * @dto_timer: Timer for broken data transfer over scheme.
-> + * @client_sdio_enb: The value last passed to enable_sdio_irq.
->    *
->    * Locking
->    * =======
-> @@ -234,6 +235,8 @@ struct dw_mci {
->   	struct timer_list       cmd11_timer;
->   	struct timer_list       cto_timer;
->   	struct timer_list       dto_timer;
-> +
-> +	bool			client_sdio_enb;
->   };
->   
->   /* DMA ops for Internal/External DMAC interface */
-> 
+Usually what we would want for development trees is to ignore
+any errors coming from a commit on a release candidate
+branch, like -rcN, as it is not directly under our control.
 
-
+Yours,
+Linus Walleij
 
 _______________________________________________
 Linux-rockchip mailing list
