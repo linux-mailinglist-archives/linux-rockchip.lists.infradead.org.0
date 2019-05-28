@@ -2,68 +2,90 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 651392C5A6
-	for <lists+linux-rockchip@lfdr.de>; Tue, 28 May 2019 13:45:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29BEF2C64C
+	for <lists+linux-rockchip@lfdr.de>; Tue, 28 May 2019 14:18:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:To:References:
+	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C4wfmcfP9NWO66X4aeJNgeb1A7GInXKrcNkCGz/CmpE=; b=mJyZxSfBtLlMml
-	HQZgczSEEM8Rxry4Z6QZSM8acfb6DUI6t2lKYSN/TSHYhOswFZe9iMglqwMIjverTJOsbZd274pyO
-	fVTV0m8jlKaFwd8kU9amq3/151CZfJ5ccAecKO9Qc2l58HhwKdjLH/Tr5TZ52wFUgv1z5ZoqIW4hG
-	LANJqpLKxtH+7149I+vzXcu/EfSMVcqeZPQ3XVwE1WjtUGNY/644yRd2EBb//yFxy+SnNuJsznHwo
-	jIGGuireXb4AAUa5+I/pIWEzyGHAniRr7coJl/O9buuMQTL+cWQkVUXm1gEjAt6DGWGLHfw/V8Y4h
-	lklGB+L2kb2cfydRFO/Q==;
+	List-Owner; bh=AEJODySqaPlZiDb0Wk8Al68ty1CDuoDhW+6aKDMkzEk=; b=fNF0AiMLikeKl/
+	8xpp8Tn8206kKBFbYlaWAbr6+/2XE/hwT/hMJO4d2fSGKmyMN4VWylwb/tTHDuHMILnyVhnOPABtY
+	YTTM5U2lZkSmp4Mr4iM8Hf15ulRNvFbk2W6F9IYA3EMHJadjAWNonL6JOV4cC54HfvbHKcpm8WWRr
+	TVDGaWHp9CuP60hw09dkHqX0BfQDTDn0z1g5CeoPA02K8n94dRPB9D+fyoHkyGgw2WUgXbKoon55v
+	MYiXy8AB1kK/Oo4nSZncV+UB0LG89d1accOv/6X3COYdkqx3zQRWxDNdwBX3gAeGb40LXTMQIVwMK
+	piL2wzCZHIkftSbPwu3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVaXz-0002Qf-Eu; Tue, 28 May 2019 11:45:39 +0000
-Received: from mga12.intel.com ([192.55.52.136])
+	id 1hVb3t-0006Uz-2L; Tue, 28 May 2019 12:18:37 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVaXw-0002Nx-Vh
- for linux-rockchip@lists.infradead.org; Tue, 28 May 2019 11:45:38 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 28 May 2019 04:45:36 -0700
-X-ExtLoop1: 1
-Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.198])
- ([10.237.72.198])
- by fmsmga006.fm.intel.com with ESMTP; 28 May 2019 04:45:31 -0700
-Subject: Re: [PATCH 2/3] mmc: core: API for temporarily disabling
- auto-retuning due to errors
-To: Arend Van Spriel <arend.vanspriel@broadcom.com>,
- Douglas Anderson <dianders@chromium.org>,
- Ulf Hansson <ulf.hansson@linaro.org>, Kalle Valo <kvalo@codeaurora.org>
-References: <20190517225420.176893-1-dianders@chromium.org>
- <20190517225420.176893-3-dianders@chromium.org>
- <05af228c-139b-2b7f-f626-36fb34634be5@broadcom.com>
- <4f39e152-04ba-a64e-985a-df93e6d15ff8@intel.com>
- <aa8e526f-b382-f3b7-74a5-e0fee09ae096@broadcom.com>
-From: Adrian Hunter <adrian.hunter@intel.com>
-Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
- Business Identity Code: 0357606 - 4, Domiciled in Helsinki
-Message-ID: <2d6fa51d-27af-4f90-2bd6-144112ce75ad@intel.com>
-Date: Tue, 28 May 2019 14:45:16 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hVb3p-0006Uf-TT
+ for linux-rockchip@lists.infradead.org; Tue, 28 May 2019 12:18:35 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id 7D3A460A00; Tue, 28 May 2019 12:18:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1559045913;
+ bh=P/xJPgEaFpoP31E3fqQphLr7ltwMwL8lDre1PA+osY4=;
+ h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+ b=Rkv7vB+aIjsGcyZ1qv5RydDbPoTcnUSowtTa/dLBn9+JzJzw33tAIvMQitbspoB0G
+ xwj63pT70FPYhXuKo/df95dlOK3EC63O4G3zXEi9XyCAj2peQgINKKc/jczRorGzjd
+ bu84dxsmryLjh8YrwFASAWoB2FKJ+GoNdfrfg38Q=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.8 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,MISSING_DATE,MISSING_MID,SPF_NONE autolearn=no
+ autolearn_force=no version=3.4.0
+Received: from potku.adurom.net (88-114-240-156.elisa-laajakaista.fi
+ [88.114.240.156])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: kvalo@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 2B9A6601D4;
+ Tue, 28 May 2019 12:18:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1559045912;
+ bh=P/xJPgEaFpoP31E3fqQphLr7ltwMwL8lDre1PA+osY4=;
+ h=Subject:From:In-Reply-To:References:To:Cc:From;
+ b=Dm7mPJKpTsMbO9PbWdABRBzre4eVfMccKtNNceUaRX4rYi7Ri3Cg21sBewXc0xTas
+ GMK+s5+0l9hsRUg9GtpSsR9rzKTn8YQK0DEj3rpiue8vMjBW9JIqjVd/WIMKLRo46Q
+ 5WYrIU2mhucPnTTC2+1oBRhzvxCxCUB8F+4T4ATk=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 2B9A6601D4
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=kvalo@codeaurora.org
 MIME-Version: 1.0
-In-Reply-To: <aa8e526f-b382-f3b7-74a5-e0fee09ae096@broadcom.com>
-Content-Language: en-US
+Subject: Re: [PATCH 1/3] brcmfmac: re-enable command decode in sdio_aos for
+ BRCM 4354
+From: Kalle Valo <kvalo@codeaurora.org>
+In-Reply-To: <20190517225420.176893-2-dianders@chromium.org>
+References: <20190517225420.176893-2-dianders@chromium.org>
+To: Douglas Anderson <dianders@chromium.org>
+User-Agent: pwcli/0.0.0-git (https://github.com/kvalo/pwcli/) Python/2.7.12
+Message-Id: <20190528121833.7D3A460A00@smtp.codeaurora.org>
+Date: Tue, 28 May 2019 12:18:33 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_044537_034142_55BD3D81 
-X-CRM114-Status: GOOD (  12.46  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190528_051833_985602_ED4DECCF 
+X-CRM114-Status: GOOD (  15.40  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.136 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ medium trust [198.145.29.96 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,38 +98,64 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Madhan Mohan R <madhanmohan.r@cypress.com>,
- Ritesh Harjani <riteshh@codeaurora.org>, Martin Hicks <mort@bork.org>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
+Cc: Madhan Mohan R <MadhanMohan.R@cypress.com>,
+ Ulf Hansson <ulf.hansson@linaro.org>, Douglas Anderson <dianders@chromium.org>,
+ linux-kernel@vger.kernel.org, Hante Meuleman <hante.meuleman@broadcom.com>,
+ "David S. Miller" <davem@davemloft.net>, netdev@vger.kernel.org,
  Chi-Hsien Lin <chi-hsien.lin@cypress.com>, briannorris@chromium.org,
- linux-mmc@vger.kernel.org, Double Lo <double.lo@cypress.com>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Avri Altman <avri.altman@wdc.com>, mka@chromium.org,
- Wright Feng <wright.feng@cypress.com>, Jiong Wu <lohengrin1024@gmail.com>,
- Shawn Lin <shawn.lin@rock-chips.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ linux-wireless@vger.kernel.org,
+ Arend van Spriel <arend.vanspriel@broadcom.com>,
+ YueHaibing <yuehaibing@huawei.com>, Adrian Hunter <adrian.hunter@intel.com>,
+ linux-rockchip@lists.infradead.org, brcm80211-dev-list.pdl@broadcom.com,
+ mka@chromium.org, Naveen Gupta <naveen.gupta@cypress.com>,
+ Wright Feng <wright.feng@cypress.com>, brcm80211-dev-list@cypress.com,
+ Double Lo <double.lo@cypress.com>, Franky Lin <franky.lin@broadcom.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gMjgvMDUvMTkgMjoyMSBQTSwgQXJlbmQgVmFuIFNwcmllbCB3cm90ZToKPiAKPiAKPiBPbiA1
-LzI4LzIwMTkgMTI6MDQgUE0sIEFkcmlhbiBIdW50ZXIgd3JvdGU6Cj4+IE9uIDI2LzA1LzE5IDk6
-NDIgUE0sIEFyZW5kIFZhbiBTcHJpZWwgd3JvdGU6Cj4+PiBPbiA1LzE4LzIwMTkgMTI6NTQgQU0s
-IERvdWdsYXMgQW5kZXJzb24gd3JvdGU6Cj4+Pj4gTm9ybWFsbHkgd2hlbiB0aGUgTU1DIGNvcmUg
-c2VlcyBhbiAiLUVJTFNFUSIgZXJyb3IgcmV0dXJuZWQgYnkgYSBob3N0Cj4+Pj4gY29udHJvbGxl
-ciB0aGVuIGl0IHdpbGwgdHJpZ2dlciBhIHJldHVuaW5nIG9mIHRoZSBjYXJkLsKgIFRoaXMgaXMK
-Pj4+PiBnZW5lcmFsbHkgYSBnb29kIGlkZWEuCj4+Pgo+Pj4gUHJvYmFibHkgYSBxdWVzdGlvbiBm
-b3IgQWRyaWFuLCBidXQgaG93IGlzIHRoaXMgcmV0dW5pbmcgc2NoZWR1bGVkLiBJIHJlY2FsbAo+
-Pj4gc2VlaW5nIHNvbWV0aGluZyBpbiBtbWNfcmVxdWVzdF9kb25lLiBIb3cgYWJvdXQgZGVmZXJy
-aW5nIHRoZSByZXR1bmluZyB1cG9uCj4+PiBhIHJlbGVhc2UgaG9zdCBvciBpcyB0aGF0IHRvbyBz
-ZGlvIHNwZWNpZmljLgo+Pgo+PiBCZWxvdyBpcyB3aGF0IEkgaGF2ZSBiZWVuIGNhcnJ5aW5nIHRo
-ZSBsYXN0IDQgeWVhcnMuwqAgQnV0IGFjY29yZGluZyB0bwo+PiBEb3VnbGFzJwo+PiBwYXRjaCwg
-dGhlIHJlbGVhc2Ugd291bGQgbmVlZCB0byBiZSBmdXJ0aGVyIGRvd24uwqAgU2VlIDJuZCBkaWZm
-IGJlbG93Lgo+PiBXb3VsZCB0aGF0IHdvcms/Cj4gCj4gVGhhdCBtYWtlcyBzZW5zZS4gVGhlIGxv
-b3AgaXMgbmVlZGVkIGJlY2F1c2UgdGhlIGRldmljZSBjYW4gYmUgYSBiaXQgYm9uZQo+IGhlYWRl
-ZC4gU28gaW5kZWVkIGFmdGVyIHRoZSBsb29wIHRoZSBkZXZpY2Ugc2hvdWxkIGJlIGF3YWtlIGFu
-ZCBhYmxlIHRvCj4gaGFuZGxlIENNRDE5LgoKV2hhdCBpZiB0dW5pbmcgaXMgbmVlZGVkIHRvIHJl
-YWQgU0JTRElPX0ZVTkMxX1NMRUVQQ1NSIHN1Y2Nlc3NmdWxseT8KCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlz
-dApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+Douglas Anderson <dianders@chromium.org> wrote:
+
+> In commit 29f6589140a1 ("brcmfmac: disable command decode in
+> sdio_aos") we disabled something called "command decode in sdio_aos"
+> for a whole bunch of Broadcom SDIO WiFi parts.
+> 
+> After that patch landed I find that my kernel log on
+> rk3288-veyron-minnie and rk3288-veyron-speedy is filled with:
+>   brcmfmac: brcmf_sdio_bus_sleep: error while changing bus sleep state -110
+> 
+> This seems to happen every time the Broadcom WiFi transitions out of
+> sleep mode.  Reverting the part of the commit that affects the WiFi on
+> my boards fixes the problem for me, so that's what this patch does.
+> 
+> Note that, in general, the justification in the original commit seemed
+> a little weak.  It looked like someone was testing on a SD card
+> controller that would sometimes die if there were CRC errors on the
+> bus.  This used to happen back in early days of dw_mmc (the controller
+> on my boards), but we fixed it.  Disabling a feature on all boards
+> just because one SD card controller is broken seems bad.  ...so
+> instead of just this patch possibly the right thing to do is to fully
+> revert the original commit.
+> 
+> Fixes: 29f6589140a1 ("brcmfmac: disable command decode in sdio_aos")
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
+
+I don't see patch 2 in patchwork and I assume discussion continues.
+Please resend if/when I need to apply something.
+
+2 patches set to Changes Requested.
+
+10948785 [1/3] brcmfmac: re-enable command decode in sdio_aos for BRCM 4354
+10948777 [3/3] brcmfmac: sdio: Disable auto-tuning around commands expected to fail
+
+-- 
+https://patchwork.kernel.org/patch/10948785/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
