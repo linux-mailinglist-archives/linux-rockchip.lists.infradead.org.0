@@ -2,70 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 384432BE6A
-	for <lists+linux-rockchip@lfdr.de>; Tue, 28 May 2019 06:49:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A93D2BFEB
+	for <lists+linux-rockchip@lfdr.de>; Tue, 28 May 2019 09:13:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=KATGrFWIgxMNBZH+vzxPL867321JQdfgELrXlTZjVz4=; b=PWh
-	dgVAXGQtiFdn3+zuKzwu5NDmp4wjGHorjlJqnA/r6AqbJIeIpVw9oI3/gvDSXI5QAxoVWtUQFuBxP
-	KeO28S6oznjZATZ3OMDXkGxBLN+lGlHF01lCKQu7HX3cHhwEyz4J0C3JumEkeKqydXdkxkSVesjTW
-	DokCKYRRP45g4/2jC5UODe7rw8Y/fhTYw3wRBFCF7SlIq+4ZMrBdBpHPZfrxwRpw4lyvyQO8GEvZK
-	ybedG6wtKz8iMxDA6cz28/mTQ/Om7BO9UIuSR9w1gKgubtnZ3uKNOKn1QKToLNlZSQ1zo3AI1OmH6
-	mJTDYFIxKUvrLPpCnLmqblU9bNOxvcA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OgjsYvNt9M1FFd1jZChXhRSDdz7H5UK9pGGj88Lit8w=; b=MFdWBi/P71+PKd
+	n60OUO15DyAD2zyQhIb6dL6P/ywBG93PeRYnzoVFrpNHFQcVf8GgF1JSB21PJBF2pWlRTG7wRRDla
+	NwL5NmvYRltUB8Nz7tMfcQm0RDME/w3IEAbzPV5AZxPhx9huwb0PMnKduHNaACpuUU9N9cdqUHFwK
+	6ASD9UEEI9nkbdhstQxJ/xYVwOZyAwNyjwN+xEIansMMoAdDQrRjpyjGqEIPXnlzOHJQPm9p9Eluc
+	NxSVdpvMUBl52PIikkHwmxOo++bZGJznqVlf4G1XE6FJY6ubeE82RB1VQuoq3I54kAJ42a01ykp0p
+	rHk3EJ6Z2DJ1vBK5JbBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVU30-0002ig-LH; Tue, 28 May 2019 04:49:14 +0000
-Received: from regular1.263xmail.com ([211.150.70.195])
+	id 1hVWIp-0004jj-DG; Tue, 28 May 2019 07:13:43 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVU2s-0002d8-Ng; Tue, 28 May 2019 04:49:08 +0000
-Received: from jay.xu?rock-chips.com (unknown [192.168.167.229])
- by regular1.263xmail.com (Postfix) with ESMTP id 09B0F907;
- Tue, 28 May 2019 12:48:57 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P6627T140475876996864S1559018932287865_; 
- Tue, 28 May 2019 12:48:56 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <dc6bc3b2d626c351f61daca14b30d2eb>
-X-RL-SENDER: jay.xu@rock-chips.com
-X-SENDER: xjq@rock-chips.com
-X-LOGIN-NAME: jay.xu@rock-chips.com
-X-FST-TO: xjq@rock-chips.com
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-From: Jianqun Xu <jay.xu@rock-chips.com>
-To: jay.xu@rock-chips.com, heiko@sntech.de, mark.rutland@arm.com,
- robh+dt@kernel.org
-Subject: [PATCH 1/1] arm64: dts: rockchip: add core dtsi file for RK3399Pro
- SoCs
-Date: Tue, 28 May 2019 12:48:50 +0800
-Message-Id: <20190528044850.23703-1-jay.xu@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
+ id 1hVWIe-0004b8-CW; Tue, 28 May 2019 07:13:34 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: gtucker) with ESMTPSA id 318052804FE
+Subject: Re: linusw/for-next boot bisection: v5.2-rc1-8-g73a790c68d7e on
+ rk3288-veyron-jaq
+To: Elaine Zhang <zhangqing@rock-chips.com>,
+ Eduardo Valentin <edubezval@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Heiko Stuebner
+ <heiko@sntech.de>, Linus Walleij <linus.walleij@linaro.org>
+References: <5cec74e8.1c69fb81.37335.9d7b@mx.google.com>
+From: Guillaume Tucker <guillaume.tucker@collabora.com>
+Message-ID: <0edab48f-06e5-9ed8-09be-7c9976ae1afb@collabora.com>
+Date: Tue, 28 May 2019 08:13:25 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <5cec74e8.1c69fb81.37335.9d7b@mx.google.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_214907_142045_98A1023B 
-X-CRM114-Status: GOOD (  11.44  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190528_001332_553685_2C5CFFA6 
+X-CRM114-Status: GOOD (  10.03  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,149 +63,71 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- zhangzj@rock-chips.com, linux-rockchip@lists.infradead.org,
- manivannan.sadhasivam@linaro.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: tomeu.vizoso@collabora.com, linux-pm@vger.kernel.org, khilman@baylibre.com,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ broonie@kernel.org, matthew.hart@linaro.org, mgalka@collabora.com,
+ enric.balletbo@collabora.com, Zhang Rui <rui.zhang@intel.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This patch adds core dtsi file for Rockchip RK3399Pro SoCs,
-include rk3399.dtsi. Also enable these nodes:
-- dfi/dmc for ddr devfreq
-- pcie/pcie_phy
-- sdhci/sdio/emmc/sdmmc
+Hi Linus,
 
-Signed-off-by: Jianqun Xu <jay.xu@rock-chips.com>
----
- arch/arm64/boot/dts/rockchip/rk3399pro.dtsi | 111 ++++++++++++++++++++
- 1 file changed, 111 insertions(+)
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
+On 28/05/2019 00:38, kernelci.org bot wrote:
+> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+> * This automated bisection report was sent to you on the basis  *
+> * that you may be involved with the breaking commit it has      *
+> * found.  No manual investigation has been done to verify it,   *
+> * and the root cause of the problem may be somewhere else.      *
+> * Hope this helps!                                              *
+> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+> 
+> linusw/for-next boot bisection: v5.2-rc1-8-g73a790c68d7e on rk3288-veyron-jaq
+> 
+> Summary:
+>   Start:      73a790c68d7e Merge branch 'devel' into for-next
+>   Details:    https://kernelci.org/boot/id/5cebf03d59b514dd627a3629
+>   Plain log:  https://storage.kernelci.org//linusw/for-next/v5.2-rc1-8-g73a790c68d7e/arm/multi_v7_defconfig/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.txt
+>   HTML log:   https://storage.kernelci.org//linusw/for-next/v5.2-rc1-8-g73a790c68d7e/arm/multi_v7_defconfig/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.html
+>   Result:     28694e009e51 thermal: rockchip: fix up the tsadc pinctrl setting error
+> 
+> Checks:
+>   revert:     PASS
+>   verify:     PASS
+> 
+> Parameters:
+>   Tree:       linusw
+>   URL:        https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-gpio.git/
+>   Branch:     for-next
+>   Target:     rk3288-veyron-jaq
+>   CPU arch:   arm
+>   Lab:        lab-collabora
+>   Compiler:   gcc-8
+>   Config:     multi_v7_defconfig
+>   Test suite: boot
+> 
+> Breaking commit found:
+> 
+> -------------------------------------------------------------------------------
+> commit 28694e009e512451ead5519dd801f9869acb1f60
+> Author: Elaine Zhang <zhangqing@rock-chips.com>
+> Date:   Tue Apr 30 18:09:44 2019 +0800
+> 
+>     thermal: rockchip: fix up the tsadc pinctrl setting error
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi b/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
-new file mode 100644
-index 000000000000..62f67f857c45
---- /dev/null
-+++ b/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
-@@ -0,0 +1,111 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+// Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd.
-+
-+#include "rk3399.dtsi"
-+
-+/ {
-+	compatible = "rockchip,rk3399pro";
-+
-+	xin32k: xin32k {
-+		compatible = "fixed-clock";
-+		clock-frequency = <32768>;
-+		clock-output-names = "xin32k";
-+		#clock-cells = <0>;
-+	};
-+};
-+
-+&dfi {
-+	status = "okay";
-+};
-+
-+&dmc {
-+	status = "okay";
-+	center-supply = <&vdd_log>;
-+	upthreshold = <40>;
-+	downdifferential = <20>;
-+	system-status-freq = <
-+		/*system status         freq(KHz)*/
-+		SYS_STATUS_NORMAL       800000
-+		SYS_STATUS_REBOOT       528000
-+		SYS_STATUS_SUSPEND      200000
-+		SYS_STATUS_VIDEO_1080P  200000
-+		SYS_STATUS_VIDEO_4K     600000
-+		SYS_STATUS_VIDEO_4K_10B 800000
-+		SYS_STATUS_PERFORMANCE  800000
-+		SYS_STATUS_BOOST        400000
-+		SYS_STATUS_DUALVIEW     600000
-+		SYS_STATUS_ISP          600000
-+	>;
-+	vop-pn-msch-readlatency = <
-+	/* plane_number  readlatency */
-+		0	0
-+		4	0x20
-+	>;
-+	vop-bw-dmc-freq = <
-+	/* min_bw(MB/s) max_bw(MB/s) freq(KHz) */
-+		0       762      200000
-+		763     1893     400000
-+		1894    3012     528000
-+		3013    99999    800000
-+	>;
-+	auto-min-freq = <200000>;
-+};
-+
-+&emmc_phy {
-+	status = "okay";
-+};
-+
-+&pcie_phy {
-+	status = "okay";
-+};
-+
-+&pcie0 {
-+	ep-gpios = <&gpio0 RK_PB4 GPIO_ACTIVE_HIGH>;
-+	num-lanes = <4>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie_clkreqn_cpm>;
-+	status = "okay";
-+};
-+
-+&sdhci {
-+	bus-width = <8>;
-+	mmc-hs400-1_8v;
-+	supports-emmc;
-+	non-removable;
-+	keep-power-in-suspend;
-+	mmc-hs400-enhanced-strobe;
-+	status = "okay";
-+};
-+
-+&sdio0 {
-+	clock-frequency = <150000000>;
-+	clock-freq-min-max = <200000 150000000>;
-+	supports-sdio;
-+	bus-width = <4>;
-+	disable-wp;
-+	cap-sd-highspeed;
-+	cap-sdio-irq;
-+	keep-power-in-suspend;
-+	mmc-pwrseq = <&sdio_pwrseq>;
-+	non-removable;
-+	num-slots = <1>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
-+	sd-uhs-sdr104;
-+	status = "okay";
-+};
-+
-+&sdmmc {
-+	clock-frequency = <150000000>;
-+	clock-freq-min-max = <400000 150000000>;
-+	supports-sd;
-+	bus-width = <4>;
-+	cap-mmc-highspeed;
-+	cap-sd-highspeed;
-+	disable-wp;
-+	num-slots = <1>;
-+	vqmmc-supply = <&vccio_sd>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd &sdmmc_bus4>;
-+	status = "okay";
-+};
--- 
-2.17.1
+This commit has now been reverted in mainline.  Would it be OK
+for you to rebase your for-next branch on v5.2-rc2 or cherry-pick
+the revert to avoid recurring bisections?
 
+Ideally this should have been fixed or reverted in mainline
+before v5.2-rc1 was released, or even earlier when this was first
+found in -next on 13th May.  Unfortunately it was overlooked and
+then spread to other branches like yours.
 
-
+Thanks,
+Guillaume
 
 _______________________________________________
 Linux-rockchip mailing list
