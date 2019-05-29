@@ -2,30 +2,30 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B221A2D6ED
-	for <lists+linux-rockchip@lfdr.de>; Wed, 29 May 2019 09:48:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF5822D731
+	for <lists+linux-rockchip@lfdr.de>; Wed, 29 May 2019 10:02:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=+ep1plhw22KHF8phVVWDZ6ijle6Z6zYYzR/Rwvv9JbY=; b=i4nQqYzncedkumF4cdhVsy9u14
-	IDBPHILFM0RZVIOK5XR9TqAlupIuGov1oZYMV3zoI9y9Cf9W1qdRceBGlFCyUWOqgedX9qayg3a0X
-	Qum34QFY4HwydlpEE7Co9KAY9WN8G5euETEhZCxudnU5vqmM2ehIti5J/TYBCcyEYABkEuiR9Eqw+
-	hkSF6FJhQ0gHljwY1ZuHNT/kx90FCdqE2JT17Q4MsvxFknKHxhL4OXhb8g8awK1AEa3adAJFIJWPp
-	RUYnJ7+hUPIQYIwob4p+GbmDHaWcAAP6Y1ICc6LzOc4lC6hTxpeowSkZ0QNQnPPiMitmrNUhInyng
-	4bQvpRrQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0KQehbzyxySB706BgLtr1fK1SeyinnbNDoIY0YZ0I+E=; b=IHgYs/pI6qDhEW
+	RJ2mZWtX0hlSnuNQdJVga2GxtTTBHw5QTNns/V7yKbvxEDL5fZKSWasTJbjNbV/aop8on4dZfTxrw
+	jHkz/ynRFYTbgORSbZTYGYt2pX7yZ6SjU6UpXW9emc6N5e86VZlXp+sQzzDqYsetudxOYoi9MJJsY
+	RF5epmBDXmtSWqctPnloeeZy9AdFk6ukQt16iNT9lj2anUOTE+aPSCEsSeqHnLQwWuU1PERQOgMhv
+	aO9TZliKCQkIb5B9tTokMIjMT5syX8Yrp7164fgVzwhENPf/LZcweJY4krj9JT28QgV85CKnZHkp7
+	i+Tk150SoYnoz8DoETog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVtJo-0002Ua-JX; Wed, 29 May 2019 07:48:16 +0000
-Received: from regular1.263xmail.com ([211.150.70.198])
+	id 1hVtXB-0007rk-TG; Wed, 29 May 2019 08:02:05 +0000
+Received: from regular1.263xmail.com ([211.150.70.200])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVtJg-0002N7-7K; Wed, 29 May 2019 07:48:09 +0000
-Received: from jay.xu?rock-chips.com (unknown [192.168.167.83])
- by regular1.263xmail.com (Postfix) with ESMTP id DE17130E;
- Wed, 29 May 2019 15:47:57 +0800 (CST)
+ id 1hVtX9-0007qc-Hc
+ for linux-rockchip@lists.infradead.org; Wed, 29 May 2019 08:02:04 +0000
+Received: from kever.yang?rock-chips.com (unknown [192.168.165.252])
+ by regular1.263xmail.com (Postfix) with ESMTP id 4F9A8369;
+ Wed, 29 May 2019 16:01:56 +0800 (CST)
 X-263anti-spam: KSV:0;BIG:0;
 X-MAIL-GRAY: 0
 X-MAIL-DELIVERY: 1
@@ -34,41 +34,43 @@ X-ADDR-CHECKED4: 1
 X-ABS-CHECKED: 1
 X-SKE-CHECKED: 1
 X-ANTISPAM-LEVEL: 2
-Received: from localhost.localdomain (unknown [58.22.7.114])
+Received: from [192.168.60.65] (unknown [103.29.142.67])
  by smtp.263.net (postfix) whith ESMTP id
- P11557T140190921455360S1559116073988880_; 
- Wed, 29 May 2019 15:47:56 +0800 (CST)
+ P27783T139823264298752S1559116911507170_; 
+ Wed, 29 May 2019 16:01:53 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <2eda5746483fc101b21695d172a79742>
-X-RL-SENDER: jay.xu@rock-chips.com
-X-SENDER: xjq@rock-chips.com
-X-LOGIN-NAME: jay.xu@rock-chips.com
-X-FST-TO: xjq@rock-chips.com
-X-SENDER-IP: 58.22.7.114
+X-UNIQUE-TAG: <8ba4bef92745863434014f292e3b3723>
+X-RL-SENDER: kever.yang@rock-chips.com
+X-SENDER: yk@rock-chips.com
+X-LOGIN-NAME: kever.yang@rock-chips.com
+X-FST-TO: u-boot@lists.denx.de
+X-SENDER-IP: 103.29.142.67
 X-ATTACHMENT-NUM: 0
 X-DNS-TYPE: 0
-From: Jianqun Xu <jay.xu@rock-chips.com>
-To: jay.xu@rock-chips.com, heiko@sntech.de, mark.rutland@arm.com,
- robh+dt@kernel.org
-Subject: [PATCH v2 1/1] arm64: dts: rockchip: add core dtsi file for RK3399Pro
- SoCs
-Date: Wed, 29 May 2019 15:47:52 +0800
-Message-Id: <20190529074752.19388-1-jay.xu@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190528044850.23703-1-jay.xu@rock-chips.com>
-References: <20190528044850.23703-1-jay.xu@rock-chips.com>
+Subject: Re: [PATCH 1/3] rk3399: orangepi: Enable TPL
+To: Jagan Teki <jagan@amarulasolutions.com>, Simon Glass <sjg@chromium.org>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
+References: <20190509105746.24830-1-jagan@amarulasolutions.com>
+From: Kever Yang <kever.yang@rock-chips.com>
+Openpgp: preference=signencrypt
+Message-ID: <3d1513a8-202a-9906-ddb0-2ed1000696f3@rock-chips.com>
+Date: Wed, 29 May 2019 16:01:52 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.6.0
+MIME-Version: 1.0
+In-Reply-To: <20190509105746.24830-1-jagan@amarulasolutions.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_004808_445800_2104EED3 
-X-CRM114-Status: GOOD (  11.20  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190529_010203_760377_9FB6F9B1 
+X-CRM114-Status: GOOD (  12.99  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -81,111 +83,67 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- zhangzj@rock-chips.com, linux-rockchip@lists.infradead.org,
- manivannan.sadhasivam@linaro.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
+ u-boot@lists.denx.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This patch adds core dtsi file for Rockchip RK3399Pro SoCs,
-include rk3399.dtsi. Also enable these nodes:
-- pcie/pcie_phy
-- sdhci/sdio/emmc/sdmmc
+Hi Jagan,
 
-Signed-off-by: Jianqun Xu <jay.xu@rock-chips.com>
----
-changes since v1:
-- remove dfi and dmc
 
- arch/arm64/boot/dts/rockchip/rk3399pro.dtsi | 74 +++++++++++++++++++++
- 1 file changed, 74 insertions(+)
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
+On 05/09/2019 06:57 PM, Jagan Teki wrote:
+> Enable TPL for OrangePI rk3399 board.
+>
+> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi b/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
-new file mode 100644
-index 000000000000..b6d433ffa67d
---- /dev/null
-+++ b/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
-@@ -0,0 +1,74 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+// Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd.
-+
-+#include "rk3399.dtsi"
-+
-+/ {
-+	compatible = "rockchip,rk3399pro";
-+
-+	xin32k: xin32k {
-+		compatible = "fixed-clock";
-+		clock-frequency = <32768>;
-+		clock-output-names = "xin32k";
-+		#clock-cells = <0>;
-+	};
-+};
-+
-+&emmc_phy {
-+	status = "okay";
-+};
-+
-+&pcie_phy {
-+	status = "okay";
-+};
-+
-+&pcie0 {
-+	ep-gpios = <&gpio0 RK_PB4 GPIO_ACTIVE_HIGH>;
-+	num-lanes = <4>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie_clkreqn_cpm>;
-+	status = "okay";
-+};
-+
-+&sdhci {
-+	bus-width = <8>;
-+	mmc-hs400-1_8v;
-+	supports-emmc;
-+	non-removable;
-+	keep-power-in-suspend;
-+	mmc-hs400-enhanced-strobe;
-+	status = "okay";
-+};
-+
-+&sdio0 {
-+	clock-frequency = <150000000>;
-+	clock-freq-min-max = <200000 150000000>;
-+	supports-sdio;
-+	bus-width = <4>;
-+	disable-wp;
-+	cap-sd-highspeed;
-+	cap-sdio-irq;
-+	keep-power-in-suspend;
-+	mmc-pwrseq = <&sdio_pwrseq>;
-+	non-removable;
-+	num-slots = <1>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
-+	sd-uhs-sdr104;
-+	status = "okay";
-+};
-+
-+&sdmmc {
-+	clock-frequency = <150000000>;
-+	clock-freq-min-max = <400000 150000000>;
-+	supports-sd;
-+	bus-width = <4>;
-+	cap-mmc-highspeed;
-+	cap-sd-highspeed;
-+	disable-wp;
-+	num-slots = <1>;
-+	vqmmc-supply = <&vccio_sd>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd &sdmmc_bus4>;
-+	status = "okay";
-+};
--- 
-2.17.1
+Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
+
+Thanks,
+- Kever
+> ---
+>  configs/orangepi-rk3399_defconfig | 7 ++++---
+>  1 file changed, 4 insertions(+), 3 deletions(-)
+>
+> diff --git a/configs/orangepi-rk3399_defconfig b/configs/orangepi-rk3399_defconfig
+> index 3f02c89983..90021bb695 100644
+> --- a/configs/orangepi-rk3399_defconfig
+> +++ b/configs/orangepi-rk3399_defconfig
+> @@ -5,7 +5,7 @@ CONFIG_SPL_LIBCOMMON_SUPPORT=y
+>  CONFIG_SPL_LIBGENERIC_SUPPORT=y
+>  CONFIG_SYS_MALLOC_F_LEN=0x4000
+>  CONFIG_ROCKCHIP_RK3399=y
+> -CONFIG_ROCKCHIP_SPL_RESERVE_IRAM=0x4000
+> +CONFIG_ROCKCHIP_SPL_RESERVE_IRAM=0x50000
+>  CONFIG_DEBUG_UART_BASE=0xFF1A0000
+>  CONFIG_DEBUG_UART_CLOCK=24000000
+>  CONFIG_SPL_STACK_R_ADDR=0x80000
+> @@ -14,9 +14,8 @@ CONFIG_NR_DRAM_BANKS=1
+>  CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-orangepi.dtb"
+>  # CONFIG_DISPLAY_CPUINFO is not set
+>  CONFIG_DISPLAY_BOARDINFO_LATE=y
+> -CONFIG_SPL_TEXT_BASE=0xff8c2000
+>  CONFIG_SPL_STACK_R=y
+> -CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x4000
+> +CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000
+>  CONFIG_CMD_BOOTZ=y
+>  CONFIG_CMD_GPT=y
+>  CONFIG_CMD_MMC=y
+> @@ -24,6 +23,7 @@ CONFIG_CMD_SF=y
+>  CONFIG_CMD_USB=y
+>  # CONFIG_CMD_SETEXPR is not set
+>  CONFIG_CMD_TIME=y
+> +CONFIG_TPL=y
+>  CONFIG_SPL_OF_CONTROL=y
+>  CONFIG_DEFAULT_DEVICE_TREE="rk3399-orangepi"
+>  CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
+> @@ -56,4 +56,5 @@ CONFIG_USB_ETHER_MCS7830=y
+>  CONFIG_USB_ETHER_RTL8152=y
+>  CONFIG_USB_ETHER_SMSC95XX=y
+>  CONFIG_USE_TINY_PRINTF=y
+> +CONFIG_SPL_TINY_MEMSET=y
+>  CONFIG_ERRNO_STR=y
 
 
 
