@@ -2,88 +2,99 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38D182D7BD
-	for <lists+linux-rockchip@lfdr.de>; Wed, 29 May 2019 10:26:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53BD12D83A
+	for <lists+linux-rockchip@lfdr.de>; Wed, 29 May 2019 10:50:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hyONkNxzdacFVXE82NkD5LLlWwB2qSuTcPVt/zKkl2k=; b=O3iPtlZNKszgU9
-	3pgPGUvBda/eCslNZ+BK60Y9JhoewTJgaHNvQAdj6CVcJB5/U3iD/Xt1NkQwsUrFbx3JtgT3aBdw+
-	HIWNxY31Rvw5ONJin45PF9n/Om1sPLiEsgcapOwG+GpohLNMlizg51eqsvnvJ746GhNLeDbm27JHR
-	ZYIqZL/aku19yhDj06S9ZtDuaX+YmoTHsWyoWrkaI9NgDjJk1Ly4TgnHx6IS9/MkpZL0MRCx4ymJL
-	qWQNU8hpBLOX8OVVKfXYppLNUblqbo6egestUl2p8rtBjed/wvrSqMcFQ36q3x411NDkt7zGZgngx
-	3Om4L7Ya3OLn8jBH/Pgw==;
+	List-Owner; bh=F/CZ9QGNAmIJKfix3LzY2ujU59axnKE33SOXdXL60L8=; b=OsvtzezTctGh40
+	67n9Rv0Ug45pJ4RE3NpMjyB93UMG6+CBry/OMkMtP7MaC8xVhxYWhitXU3nR7WO7fRQTi1VEhu+Y3
+	IwkUsFlJ48pyG65rni/Se8bFVHPWjmp7jFlPMkP3HvbIObruVHfAHWJ6FLizTOL+IlfwjmtAbiYjQ
+	Og9SpefVQ3kGqjJAOr5pFLWof8cZ9QgBCyXI31hWM5wxZCtDSWcbyrs5N2W06EvvbTStKsseUrqBZ
+	UpO14oYMeF/PgM1wLY/3xiF8vv0NWcaFT7Y/oO/34wbxg9x2incMuBB/Mb7xUwphifTfS5tsIGkg2
+	OEKw0UoTJFV9NIROIHeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVtuT-00032Y-AQ; Wed, 29 May 2019 08:26:09 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hVuI1-0004nV-Qx; Wed, 29 May 2019 08:50:29 +0000
+Received: from mail-oln040092066067.outbound.protection.outlook.com
+ ([40.92.66.67] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVtuO-0002z2-I2
- for linux-rockchip@lists.infradead.org; Wed, 29 May 2019 08:26:06 +0000
-Received: by mail-pl1-x642.google.com with SMTP id c5so736162pll.11
- for <linux-rockchip@lists.infradead.org>; Wed, 29 May 2019 01:26:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Cmf3QYbWb+StZpFl8r620yXvZ7a3KSQvWw8nrzDrRJE=;
- b=n4cSqC1L8zNvpvPJ73Ut9JTFm250fiSIfr25I0pL4KD4ueZLfi//u3ar+IdkGpn75n
- t+lWvXh/PVs1LYDBvNVDepIYHufMhJVHwzxGWs6yjZTewywdaK8JZq3Lzfvk5lPJHJqt
- vtMIah5n45bf8HEAFnqi7c0atrAF4tL50Tn/8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Cmf3QYbWb+StZpFl8r620yXvZ7a3KSQvWw8nrzDrRJE=;
- b=ttT0u/TTAtEG1MlLqhjIfIcK4wruaUHx5lGp2n4neozTQmM7Ib4IeAVzf4p35s/sZw
- lXk0pc3VouEw00D/WbUrEF/UQzZvrBS5ebMLkEW9ic9RIIOMvb2r2XMBpj0kzILvy982
- DCAS8qP/Oi2k9TdPV+A4k31OxFX8D7FLloyCu4w3vowH6oazpE8NCTnBF5vtbXE3yQ/q
- el/E5EgArDfTvtN4pQzIRu2akdNbFQKq+oJhtsc+1sxHtB6iKIWsyQ9KXqps1/a+zsLn
- 4o5Id4sWcU0wyVXXHB/ypv4CRUeXLdRp8pbEfKLFE+4WDGqnwBXX5D6uzbh/rkrULOcj
- tXsA==
-X-Gm-Message-State: APjAAAXG2loMKRVXxX1mvuVM2A37WHVJAf1cM+cxpFoue2t3ow3Vmryk
- fhtNY7F8xMu/ZLOorhO9HJkc1g==
-X-Google-Smtp-Source: APXvYqziFdAovqfBJk+sMsIHpn2Fghbbf12lwB/E62Ugc635xnpMLcMZ4sbKreqn5u/hE6+pswZzBg==
-X-Received: by 2002:a17:902:868f:: with SMTP id
- g15mr1494815plo.67.1559118363592; 
- Wed, 29 May 2019 01:26:03 -0700 (PDT)
-Received: from localhost.localdomain ([49.206.202.218])
- by smtp.gmail.com with ESMTPSA id d186sm22230332pfd.183.2019.05.29.01.26.01
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 29 May 2019 01:26:03 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v2 3/3] doc: rockchip: Add doc for rk3399 TPL build/flash
-Date: Wed, 29 May 2019 13:55:49 +0530
-Message-Id: <20190529082549.32021-3-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
-In-Reply-To: <20190529082549.32021-1-jagan@amarulasolutions.com>
-References: <20190529082549.32021-1-jagan@amarulasolutions.com>
+ id 1hVuHx-0004mg-UO
+ for linux-rockchip@lists.infradead.org; Wed, 29 May 2019 08:50:28 +0000
+Received: from VE1EUR01FT061.eop-EUR01.prod.protection.outlook.com
+ (10.152.2.53) by VE1EUR01HT068.eop-EUR01.prod.protection.outlook.com
+ (10.152.3.73) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1922.16; Wed, 29 May
+ 2019 08:50:15 +0000
+Received: from VI1PR03MB4206.eurprd03.prod.outlook.com (10.152.2.54) by
+ VE1EUR01FT061.mail.protection.outlook.com (10.152.3.81) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.1922.16 via Frontend Transport; Wed, 29 May 2019 08:50:15 +0000
+Received: from VI1PR03MB4206.eurprd03.prod.outlook.com
+ ([fe80::883e:1bd6:cd36:5fb0]) by VI1PR03MB4206.eurprd03.prod.outlook.com
+ ([fe80::883e:1bd6:cd36:5fb0%4]) with mapi id 15.20.1922.021; Wed, 29 May 2019
+ 08:50:15 +0000
+From: Jonas Karlman <jonas@kwiboo.se>
+To: Hans Verkuil <hverkuil@xs4all.nl>, Ezequiel Garcia
+ <ezequiel@collabora.com>, "linux-media@vger.kernel.org"
+ <linux-media@vger.kernel.org>, Hans Verkuil <hans.verkuil@cisco.com>
+Subject: Re: [PATCH v6 16/16] rockchip/vpu: Add support for MPEG-2 decoding on
+ RK3328
+Thread-Topic: [PATCH v6 16/16] rockchip/vpu: Add support for MPEG-2 decoding
+ on RK3328
+Thread-Index: AQHVFXdhpRepMa94eEGuSMAzTBHJuKaBwT4AgAAK3gA=
+Date: Wed, 29 May 2019 08:50:15 +0000
+Message-ID: <VI1PR03MB42066B8C9F364ACF7CFFF241AC1F0@VI1PR03MB4206.eurprd03.prod.outlook.com>
+References: <20190528170232.2091-1-ezequiel@collabora.com>
+ <20190528170232.2091-17-ezequiel@collabora.com>
+ <2ef056a2-e9dc-52b1-855b-2bef759af9b6@xs4all.nl>
+In-Reply-To: <2ef056a2-e9dc-52b1-855b-2bef759af9b6@xs4all.nl>
+Accept-Language: sv-SE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: HE1PR05CA0359.eurprd05.prod.outlook.com
+ (2603:10a6:7:94::18) To VI1PR03MB4206.eurprd03.prod.outlook.com
+ (2603:10a6:803:51::23)
+x-incomingtopheadermarker: OriginalChecksum:20A87F0BA1C3D2FB3B744FC7DFCAEB88EE81604F598F3826906A6AF854513679;
+ UpperCasedChecksum:182735A26054809C3C58B62960D6A0A5BC036E699FD56A4DB264A3E87378954E;
+ SizeAsReceived:7981; Count:49
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tmn: [Xx/JXVj35Kcj/12GZKRSDQfqtdc5X1Hi]
+x-microsoft-original-message-id: <7125752d-474a-de74-5433-51070cf8e63f@kwiboo.se>
+x-ms-publictraffictype: Email
+x-incomingheadercount: 49
+x-eopattributedmessage: 0
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031322404)(2017031323274)(2017031324274)(1601125500)(1603101475)(1701031045);
+ SRVR:VE1EUR01HT068; 
+x-ms-traffictypediagnostic: VE1EUR01HT068:
+x-microsoft-antispam-message-info: w+Q/k/VRgEhFMmueK1zvC8XeGZNxealZjDC0fqeS2z7t43DB7vUhbWY1dfcBhS0GDwdEqVl7kMUkFBVxyQEVGTbQEuZwsJg7QH3T+CdgOE1ussXTn5VTck/8TDIqEAKf2ZfSNjMM3WNYVjhplhBrtOIHQqWc09aywjb8D49U/zorsUaKWsVwMpaOXV/4/yvZ
+Content-ID: <992634C6FE8AB649B52E07A020C1542B@eurprd03.prod.outlook.com>
 MIME-Version: 1.0
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 57147df8-b5d3-4747-fd26-08d6e412aa9b
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 May 2019 08:50:15.1502 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1EUR01HT068
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_012604_739575_D9B8EB88 
-X-CRM114-Status: GOOD (  10.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190529_015025_990316_961E84C3 
+X-CRM114-Status: GOOD (  16.32  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.92.66.67 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,99 +107,99 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
- Jagan Teki <jagan@amarulasolutions.com>, u-boot@lists.denx.de
+Cc: Nicolas Dufresne <nicolas.dufresne@collabora.com>,
+ Heiko Stuebner <heiko@sntech.de>, Tomasz Figa <tfiga@chromium.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ "kernel@collabora.com" <kernel@collabora.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This patch add documentation for TPL build and flashing steps
-for rk3399 boards.
+On 2019-05-29 10:11, Hans Verkuil wrote:
+> On 5/28/19 7:02 PM, Ezequiel Garcia wrote:
+>> From: Jonas Karlman <jonas@kwiboo.se>
+>>
+>> Add necessary bits to support MPEG2 decoding on RK3328.
+>>
+>> Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
+>> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+>> --
+>> Changes from v5:
+>> * New patch.
+>>
+>>  drivers/staging/media/rockchip/vpu/rk3399_vpu_hw.c   | 12 ++++++++++++
+>>  .../staging/media/rockchip/vpu/rockchip_vpu_drv.c    |  1 +
+>>  drivers/staging/media/rockchip/vpu/rockchip_vpu_hw.h |  1 +
+>>  3 files changed, 14 insertions(+)
+>>
+>> diff --git a/drivers/staging/media/rockchip/vpu/rk3399_vpu_hw.c b/drivers/staging/media/rockchip/vpu/rk3399_vpu_hw.c
+>> index 2b3689968ef4..341f8d69c33d 100644
+>> --- a/drivers/staging/media/rockchip/vpu/rk3399_vpu_hw.c
+>> +++ b/drivers/staging/media/rockchip/vpu/rk3399_vpu_hw.c
+>> @@ -175,3 +175,15 @@ const struct rockchip_vpu_variant rk3399_vpu_variant = {
+>>  	.clk_names = {"aclk", "hclk"},
+>>  	.num_clocks = 2
+>>  };
+>> +
+>> +const struct rockchip_vpu_variant rk3328_vpu_variant = {
+>> +	.dec_offset = 0x400,
+>> +	.dec_fmts = rk3399_vpu_dec_fmts,
+>> +	.num_dec_fmts = ARRAY_SIZE(rk3399_vpu_dec_fmts),
+>> +	.codec = RK_VPU_MPEG2_DECODER,
+>> +	.codec_ops = rk3399_vpu_codec_ops,
+>> +	.vdpu_irq = rk3399_vdpu_irq,
+>> +	.init = rk3399_vpu_hw_init,
+>> +	.clk_names = {"aclk", "hclk"},
+>> +	.num_clocks = 2
+>> +};
+>> diff --git a/drivers/staging/media/rockchip/vpu/rockchip_vpu_drv.c b/drivers/staging/media/rockchip/vpu/rockchip_vpu_drv.c
+>> index b94ff97451db..2e22009b6583 100644
+>> --- a/drivers/staging/media/rockchip/vpu/rockchip_vpu_drv.c
+>> +++ b/drivers/staging/media/rockchip/vpu/rockchip_vpu_drv.c
+>> @@ -419,6 +419,7 @@ static const struct v4l2_file_operations rockchip_vpu_fops = {
+>>  
+>>  static const struct of_device_id of_rockchip_vpu_match[] = {
+>>  	{ .compatible = "rockchip,rk3399-vpu", .data = &rk3399_vpu_variant, },
+>> +	{ .compatible = "rockchip,rk3328-vpu", .data = &rk3328_vpu_variant, },
+> This new compatible string should be documented in
+> Documentation/devicetree/bindings/media/rockchip-vpu.txt as well.
+>
+> I'll take patches 1-15 and drop this one. This patch can be merged once
+> the bindings file is updated as well.
 
-Add full boot log for future reference.
+Looks like the bindings patch did not get picked for v6 :-)
 
-Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
-Changes for v2:
-- rebase on master
+I am a bit unclear on how to handle patch submission that covers multiple subtrees.
+Should I send a single series including three patches: bindings update, this patch and device tree update?
+Or is a series with only bindings update and this patch preferred?
 
- doc/README.rockchip | 51 ++++++++++++++++++++++++++++++++++++++++++++-
- 1 file changed, 50 insertions(+), 1 deletion(-)
+Regards,
+Jonas
 
-diff --git a/doc/README.rockchip b/doc/README.rockchip
-index ca4d6473b0..264f7e4994 100644
---- a/doc/README.rockchip
-+++ b/doc/README.rockchip
-@@ -173,7 +173,10 @@ For example:
-      => make u-boot.itb
- 
-      (Get spl/u-boot-spl-dtb.bin, u-boot.itb images and some boards would get
--      spl/u-boot-spl.bin since it doesn't enable CONFIG_SPL_OF_CONTROL)
-+      spl/u-boot-spl.bin since it doesn't enable CONFIG_SPL_OF_CONTROL
-+
-+      If TPL enabled on the target, get tpl/u-boot-tpl-dtb.bin or tpl/u-boot-tpl.bin
-+      if CONFIG_TPL_OF_CONTROL not enabled)
- 
- Writing to the board with USB
- =============================
-@@ -455,6 +458,52 @@ Net:   eth0: ethernet@fe300000
- Hit any key to stop autoboot:  0
- =>
- 
-+Option 3: Package the image with TPL:
-+
-+  - Prefix rk3399 header to TPL image
-+
-+    => cd /path/to/u-boot
-+    => ./tools/mkimage -n rk3399 -T rksd -d tpl/u-boot-tpl-dtb.bin out
-+
-+  - Concatinate tpl with spl
-+
-+    => cd /path/to/u-boot
-+    => cat ./spl/u-boot-spl-dtb.bin >> out
-+
-+  - Write tpl+spl at 64th sector
-+
-+    => sudo dd if=out of=/dev/sdc seek=64
-+
-+  - Write U-Boot proper at 16384 sector
-+
-+    => sudo dd if=u-boot.itb of=/dev/sdc seek=16384
-+    => sync
-+
-+Put this SD (or micro-SD) card into your board and reset it. You should see
-+something like:
-+
-+U-Boot TPL board init
-+Trying to boot from BOOTROM
-+Returning to boot ROM...
-+
-+U-Boot SPL board init
-+Trying to boot from MMC1
-+
-+
-+U-Boot 2019.07-rc1-00241-g5b3244767a (May 08 2019 - 10:51:06 +0530)
-+
-+Model: Orange Pi RK3399 Board
-+DRAM:  2 GiB
-+MMC:   dwmmc@fe310000: 2, dwmmc@fe320000: 1, sdhci@fe330000: 0
-+Loading Environment from MMC... OK
-+In:    serial@ff1a0000
-+Out:   serial@ff1a0000
-+Err:   serial@ff1a0000
-+Model: Orange Pi RK3399 Board
-+Net:   eth0: ethernet@fe300000
-+Hit any key to stop autoboot:  0
-+=>
-+
- Using fastboot on rk3288
- ========================
- - Write GPT partition layout to mmc device which fastboot want to use it to
--- 
-2.18.0.321.gffc6fa0e3
-
+>
+> Regards,
+>
+> 	Hans
+>
+>>  	{ .compatible = "rockchip,rk3288-vpu", .data = &rk3288_vpu_variant, },
+>>  	{ /* sentinel */ }
+>>  };
+>> diff --git a/drivers/staging/media/rockchip/vpu/rockchip_vpu_hw.h b/drivers/staging/media/rockchip/vpu/rockchip_vpu_hw.h
+>> index 6cecb528f994..3d6b97af90fb 100644
+>> --- a/drivers/staging/media/rockchip/vpu/rockchip_vpu_hw.h
+>> +++ b/drivers/staging/media/rockchip/vpu/rockchip_vpu_hw.h
+>> @@ -79,6 +79,7 @@ enum rockchip_vpu_enc_fmt {
+>>  };
+>>  
+>>  extern const struct rockchip_vpu_variant rk3399_vpu_variant;
+>> +extern const struct rockchip_vpu_variant rk3328_vpu_variant;
+>>  extern const struct rockchip_vpu_variant rk3288_vpu_variant;
+>>  
+>>  void rockchip_vpu_watchdog(struct work_struct *work);
+>>
 
 _______________________________________________
 Linux-rockchip mailing list
