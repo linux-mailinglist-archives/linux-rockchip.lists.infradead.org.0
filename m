@@ -2,56 +2,61 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C72F2DF13
-	for <lists+linux-rockchip@lfdr.de>; Wed, 29 May 2019 16:02:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71B2C2DF22
+	for <lists+linux-rockchip@lfdr.de>; Wed, 29 May 2019 16:04:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f4ASF1eYbSGa3cpKAFKSlkmEeXiXeJ128Ay6BnaVzfw=; b=HvhqIoce9qkSKw
-	H8MMbV0+9pcGycV+69uMcj7bAb4NN6uDty8Gkt3PYguROjcyiYUyB0P0AVD48myld/qX2k7l8o2aC
-	ys+nFMEqwNmh4PKSEhQGfZSvSj15pKEN8DrkqSw4qNaEO+4LW59ynQKbTXdMfVHzRn3GZVR1W+Rdy
-	ADaN024LkERwDxpH/I3YJjZqIOL/I5rH/aTBtk0O/Qvs2ezrC3ZMMu0TdFsqewoP9YF1VcMJ+I6Is
-	L0003bBpIMPOeKPZEGKilxZHioNlAxKdLIbnUzxgfOLIhSitF6NwZVpa2+ja/MkY2EbMqGyU3vHPv
-	0AJM4AeU7q0wonoSTYTg==;
+	List-Owner; bh=rDHzrnpjIX4RDtEkrMblLFFQTHSYiwQzE18EO86hKvE=; b=UCsA6xZtRLoRib
+	/j5Yih+7NNe3sZh1fTBlXXnXR+wx+TBQvvh0d62eaoHQkDSV57Ae0zvKlnRSKw7dGYVZeiWEvjt8P
+	4GYu2dw/QyCr1lsk3MpDkm+TEThyOALQM5GawRUgyuTJ0dreA4xDQIUTZOJMMYnBsK7SiOplPlVQF
+	YurzN7K6NxcC8O7AXaTE9Q1kysYd7k7FcdKeXgnnE6EVBoinCtlVvrk9btkf+37nbJFBiTJqfV4JL
+	TX569AVJEbI0jiBqjCb3R5cTUwkbrlb/upk98ed8MULSx671kjtDZdRJDizIpRH0KXddiB9nCwBh6
+	VYEuA++N7fllZNRid7nA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVzAD-00022l-Uw; Wed, 29 May 2019 14:02:45 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hVzCC-0002jV-Vm; Wed, 29 May 2019 14:04:48 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVzAB-0001qL-Mm
- for linux-rockchip@bombadil.infradead.org; Wed, 29 May 2019 14:02:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
- MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=DzWIwTHRXYowZ370y2QK4BpFgTP2UTXGBlIiUm4zAP4=; b=f6dyF6mLf9voR8Rq30jhEZGUQR
- 4Z1xXXTdUW2Yb0vWwej9nxCrRWliRCVOUIdB6vTEsB2ebjIRweAyQJfo5K9AmAkTX86HB8x4uR2N3
- 1TMLhl6gd5w+m7JXDeqn6V4S3rkpwjylMEOMmFvsjyuByKfDjgU6JRD/zhIZxspdLlPWmQG5mbwk1
- HoCUCLxKhKcTAerDKizfZPcT07p1vueKKS6wkmN+vYwXJRSYxFG0bNQAUBom4Hd0OjBHFGU/JdR1q
- PvUS6/TYkMh0LsBEwmpkHC/fWDNEB2IvnoYU5ORIPgKe8ATCGObMoPpFASCX3npzWiyav+lUz5I42
- /ky/ksQw==;
-Received: from 177.132.232.81.dynamic.adsl.gvt.net.br ([177.132.232.81]
- helo=coco.lan)
- by casper.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVzA7-0001ls-LQ; Wed, 29 May 2019 14:02:40 +0000
-Date: Wed, 29 May 2019 11:02:33 -0300
-From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-To: Nicolas Dufresne <nicolas.dufresne@collabora.com>
+ id 1hVzC8-0002j6-Mo
+ for linux-rockchip@lists.infradead.org; Wed, 29 May 2019 14:04:46 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 5A472260A4C
+Message-ID: <04cb574b530c987a04b098962c93940c49e944d8.camel@collabora.com>
 Subject: Re: [PATCH v6 03/16] media: v4l2-common: Support custom imagesize
  in fill_pixfmt()
-Message-ID: <20190529110233.0ff81aff@coco.lan>
-In-Reply-To: <4ef64e22f4035fccf09fbb7f0be04a9778b1230d.camel@collabora.com>
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Hans Verkuil <hverkuil@xs4all.nl>, Boris Brezillon
+ <boris.brezillon@collabora.com>, Mauro Carvalho Chehab
+ <mchehab+samsung@kernel.org>
+Date: Wed, 29 May 2019 11:04:35 -0300
+In-Reply-To: <223a757d-f008-398c-64ce-18b0aaf390c5@xs4all.nl>
 References: <20190528170232.2091-1-ezequiel@collabora.com>
  <20190528170232.2091-4-ezequiel@collabora.com>
  <20190529082809.0b9f3553@coco.lan>
- <4ef64e22f4035fccf09fbb7f0be04a9778b1230d.camel@collabora.com>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ <cc51be76-81c3-1c54-2005-1b99d00a8ac1@xs4all.nl>
+ <20190529085854.6c689f8d@coco.lan> <20190529141633.19c5079b@collabora.com>
+ <223a757d-f008-398c-64ce-18b0aaf390c5@xs4all.nl>
+Organization: Collabora
+User-Agent: Evolution 3.30.5-1 
 MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190529_070445_007016_4B69FBB5 
+X-CRM114-Status: GOOD (  30.68  )
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,111 +69,141 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
- Tomasz Figa <tfiga@chromium.org>, linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Hans Verkuil <hans.verkuil@cisco.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- kernel@collabora.com, Ezequiel Garcia <ezequiel@collabora.com>,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: kernel@collabora.com, Heiko Stuebner <heiko@sntech.de>,
+ Jonas Karlman <jonas@kwiboo.se>, Tomasz Figa <tfiga@chromium.org>,
+ linux-rockchip@lists.infradead.org, Hans Verkuil <hans.verkuil@cisco.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Nicolas Dufresne <nicolas.dufresne@collabora.com>, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-RW0gV2VkLCAyOSBNYXkgMjAxOSAwOTo1NDowOSAtMDQwMApOaWNvbGFzIER1ZnJlc25lIDxuaWNv
-bGFzLmR1ZnJlc25lQGNvbGxhYm9yYS5jb20+IGVzY3JldmV1OgoKPiBIaSBNYXVybywKPiAKPiBM
-ZSBtZXJjcmVkaSAyOSBtYWkgMjAxOSDDoCAwODoyOCAtMDMwMCwgTWF1cm8gQ2FydmFsaG8gQ2hl
-aGFiIGEgw6ljcml0IDoKPiA+IEVtIFR1ZSwgMjggTWF5IDIwMTkgMTQ6MDI6MTkgLTAzMDAKPiA+
-IEV6ZXF1aWVsIEdhcmNpYSA8ZXplcXVpZWxAY29sbGFib3JhLmNvbT4gZXNjcmV2ZXU6Cj4gPiAK
-PiA+ID4gRnJvbTogQm9yaXMgQnJlemlsbG9uIDxib3Jpcy5icmV6aWxsb25AY29sbGFib3JhLmNv
-bT4KPiA+ID4gCj4gPiA+IFVzZXJzIGNhbiBkZWZpbmUgY3VzdG9tIHNpemVpbWFnZSBhcyBsb25n
-IGFzIHRoZXkncmUgYmlnIGVub3VnaCB0bwo+ID4gPiBzdG9yZSB0aGUgYW1vdW50IG9mIHBpeGVs
-cyByZXF1aXJlZCBmb3IgYSBzcGVjaWZpYyB3aWR0aC9oZWlnaHQgdW5kZXIgYQo+ID4gPiBzcGVj
-aWZpYyBmb3JtYXQuIEF2b2lkIG92ZXJyaWRpbmcgdGhvc2UgZmllbGRzIGluIHRoaXMgY2FzZS4K
-PiA+ID4gCj4gPiA+IFdlIGNvdWxkIHBvc3NpYmx5IGRvIHRoZSBzYW1lIGZvciBieXRlc3Blcmxp
-bmUsIGJ1dCBpdCBnZXRzIHRyaWNreSB3aGVuCj4gPiA+IGRlYWxpbmcgd2l0aCAhTVBMQU5FIGRl
-ZmluaXRpb25zLCBzbyB0aGlzIGNhc2UgaXMgb21pdHRlZCBmb3Igbm93IGFuZAo+ID4gPiAtPmJ5
-dGVzcGVybGluZSBpcyBhbHdheXMgb3ZlcndyaXR0ZW4gd2l0aCB0aGUgdmFsdWUgY2FsY3VsYXRl
-ZCBpbgo+ID4gPiBmaWxsX3BpeGZtdCgpLgo+ID4gPiAKPiA+ID4gU2lnbmVkLW9mZi1ieTogQm9y
-aXMgQnJlemlsbG9uIDxib3Jpcy5icmV6aWxsb25AY29sbGFib3JhLmNvbT4KPiA+ID4gLS0tCj4g
-PiA+IENoYW5nZXMgZnJvbSB2NToKPiA+ID4gKiBPdmVyd3JpdGUgYnl0ZXNwZXJsaW5lIHdpdGgg
-dGhlIHZhbHVlIGNhbGN1bGF0ZWQgaW4gZmlsbF9waXhmbXQoKQo+ID4gPiAKPiA+ID4gQ2hhbmdl
-cyBmcm9tIHY0Ogo+ID4gPiAqIE5ldyBwYXRjaAo+ID4gPiAKPiA+ID4gIGRyaXZlcnMvbWVkaWEv
-djRsMi1jb3JlL3Y0bDItY29tbW9uLmMgfCA1OCArKysrKysrKysrKysrKysrKysrKy0tLS0tLS0K
-PiA+ID4gIDEgZmlsZSBjaGFuZ2VkLCA0MyBpbnNlcnRpb25zKCspLCAxNSBkZWxldGlvbnMoLSkK
-PiA+ID4gCj4gPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL21lZGlhL3Y0bDItY29yZS92NGwyLWNv
-bW1vbi5jIGIvZHJpdmVycy9tZWRpYS92NGwyLWNvcmUvdjRsMi1jb21tb24uYwo+ID4gPiBpbmRl
-eCBiMmQxZTU1ZDk1NjEuLmZkMjg2ZjZlMTdkNyAxMDA2NDQKPiA+ID4gLS0tIGEvZHJpdmVycy9t
-ZWRpYS92NGwyLWNvcmUvdjRsMi1jb21tb24uYwo+ID4gPiArKysgYi9kcml2ZXJzL21lZGlhL3Y0
-bDItY29yZS92NGwyLWNvbW1vbi5jCj4gPiA+IEBAIC01ODUsOSArNTg1LDkgQEAgaW50IHY0bDJf
-ZmlsbF9waXhmbXRfbXAoc3RydWN0IHY0bDJfcGl4X2Zvcm1hdF9tcGxhbmUgKnBpeGZtdCwKPiA+
-ID4gIAlwaXhmbXQtPm51bV9wbGFuZXMgPSBpbmZvLT5tZW1fcGxhbmVzOwo+ID4gPiAgCj4gPiA+
-ICAJaWYgKGluZm8tPm1lbV9wbGFuZXMgPT0gMSkgewo+ID4gPiArCQl1MzIgc2l6ZWltYWdlID0g
-MDsKPiA+ID4gKwo+ID4gPiAgCQlwbGFuZSA9ICZwaXhmbXQtPnBsYW5lX2ZtdFswXTsKPiA+ID4g
-LQkJcGxhbmUtPmJ5dGVzcGVybGluZSA9IEFMSUdOKHdpZHRoLCB2NGwyX2Zvcm1hdF9ibG9ja193
-aWR0aChpbmZvLCAwKSkgKiBpbmZvLT5icHBbMF07Cj4gPiA+IC0JCXBsYW5lLT5zaXplaW1hZ2Ug
-PSAwOwo+ID4gPiAgCj4gPiA+ICAJCWZvciAoaSA9IDA7IGkgPCBpbmZvLT5jb21wX3BsYW5lczsg
-aSsrKSB7Cj4gPiA+ICAJCQl1bnNpZ25lZCBpbnQgaGRpdiA9IChpID09IDApID8gMSA6IGluZm8t
-PmhkaXY7Cj4gPiA+IEBAIC01OTgsMTAgKzU5OCwyMSBAQCBpbnQgdjRsMl9maWxsX3BpeGZtdF9t
-cChzdHJ1Y3QgdjRsMl9waXhfZm9ybWF0X21wbGFuZSAqcGl4Zm10LAo+ID4gPiAgCQkJYWxpZ25l
-ZF93aWR0aCA9IEFMSUdOKHdpZHRoLCB2NGwyX2Zvcm1hdF9ibG9ja193aWR0aChpbmZvLCBpKSk7
-Cj4gPiA+ICAJCQlhbGlnbmVkX2hlaWdodCA9IEFMSUdOKGhlaWdodCwgdjRsMl9mb3JtYXRfYmxv
-Y2tfaGVpZ2h0KGluZm8sIGkpKTsKPiA+ID4gIAo+ID4gPiAtCQkJcGxhbmUtPnNpemVpbWFnZSAr
-PSBpbmZvLT5icHBbaV0gKgo+ID4gPiAtCQkJCURJVl9ST1VORF9VUChhbGlnbmVkX3dpZHRoLCBo
-ZGl2KSAqCj4gPiA+IC0JCQkJRElWX1JPVU5EX1VQKGFsaWduZWRfaGVpZ2h0LCB2ZGl2KTsKPiA+
-ID4gKwkJCXNpemVpbWFnZSArPSBpbmZvLT5icHBbaV0gKgo+ID4gPiArCQkJCSAgICAgRElWX1JP
-VU5EX1VQKGFsaWduZWRfd2lkdGgsIGhkaXYpICoKPiA+ID4gKwkJCQkgICAgIERJVl9ST1VORF9V
-UChhbGlnbmVkX2hlaWdodCwgdmRpdik7Cj4gPiA+ICAJCX0KPiA+ID4gKwo+ID4gPiArCQkvKiBD
-dXN0b20gYnl0ZXNwZXJsaW5lIHZhbHVlIGlzIG5vdCBzdXBwb3J0ZWQgeWV0LiAqLwo+ID4gPiAr
-CQlwbGFuZS0+Ynl0ZXNwZXJsaW5lID0gQUxJR04od2lkdGgsCj4gPiA+ICsJCQkJCSAgICB2NGwy
-X2Zvcm1hdF9ibG9ja193aWR0aChpbmZvLCAwKSkgKgo+ID4gPiArCQkJCSAgICAgIGluZm8tPmJw
-cFswXTsKPiA+ID4gKwo+ID4gPiArCQkvKgo+ID4gPiArCQkgKiBUaGUgdXNlciBtaWdodCBoYXZl
-IHNwZWNpZmllZCBhIGN1c3RvbSBzaXplaW1hZ2UsIG9ubHkKPiA+ID4gKwkJICogb3ZlcnJpZGUg
-aXQgaWYgaXQncyBub3QgYmlnIGVub3VnaC4KPiA+ID4gKwkJICovCj4gPiA+ICsJCXBsYW5lLT5z
-aXplaW1hZ2UgPSBtYXgoc2l6ZWltYWdlLCBwbGFuZS0+c2l6ZWltYWdlKTsKPiA+IAo+ID4gTm8g
-dXBwZXIgbGltaXQ/IFRoYXQgZG9lc24ndCBzb3VuZCBhIGdvb2QgaWRlYSB0byBtZSwgc3BlY2lh
-bGx5IHNpbmNlIHNvbWUKPiA+IChicm9rZW4pIGFwcCBtaWdodCBub3QgYmUgbWVtc2V0IHRoZSBm
-b3JtYXQgdG8gemVybyBiZWZvcmUgZmlsbGluZyB0aGUgaW9jdGwKPiA+IHN0cnVjdHVyZS4KPiA+
-IAo+ID4gUGVyaGFwcyB3ZSBjb3VsZCBkbyBzb21ldGhpbmcgbGlrZToKPiA+IAo+ID4gCQlzaXpl
-aW1hZ2UgPSBtaW4gKHNpemVpbWFnZSwgMiAqIHBsYW5lLT5zaXplaW1hZ2UpCj4gPiAKPiA+IG9y
-IHNvbWV0aGluZyBzaW1pbGFyIHRoYXQgd291bGQgYmUgcmVhc29uYWJsZS4KPiA+IAo+ID4gPiAg
-CX0gZWxzZSB7Cj4gPiA+ICAJCWZvciAoaSA9IDA7IGkgPCBpbmZvLT5jb21wX3BsYW5lczsgaSsr
-KSB7Cj4gPiA+ICAJCQl1bnNpZ25lZCBpbnQgaGRpdiA9IChpID09IDApID8gMSA6IGluZm8tPmhk
-aXY7Cj4gPiA+IEBAIC02MTMsMTAgKzYyNCwxOSBAQCBpbnQgdjRsMl9maWxsX3BpeGZtdF9tcChz
-dHJ1Y3QgdjRsMl9waXhfZm9ybWF0X21wbGFuZSAqcGl4Zm10LAo+ID4gPiAgCQkJYWxpZ25lZF9o
-ZWlnaHQgPSBBTElHTihoZWlnaHQsIHY0bDJfZm9ybWF0X2Jsb2NrX2hlaWdodChpbmZvLCBpKSk7
-Cj4gPiA+ICAKPiA+ID4gIAkJCXBsYW5lID0gJnBpeGZtdC0+cGxhbmVfZm10W2ldOwo+ID4gPiAt
-CQkJcGxhbmUtPmJ5dGVzcGVybGluZSA9Cj4gPiA+IC0JCQkJaW5mby0+YnBwW2ldICogRElWX1JP
-VU5EX1VQKGFsaWduZWRfd2lkdGgsIGhkaXYpOwo+ID4gPiAtCQkJcGxhbmUtPnNpemVpbWFnZSA9
-Cj4gPiA+IC0JCQkJcGxhbmUtPmJ5dGVzcGVybGluZSAqIERJVl9ST1VORF9VUChhbGlnbmVkX2hl
-aWdodCwgdmRpdik7Cj4gPiA+ICsKPiA+ID4gKwkJCS8qIEN1c3RvbSBieXRlc3BlcmxpbmUgdmFs
-dWUgaXMgbm90IHN1cHBvcnRlZCB5ZXQuICovCj4gPiAKPiA+IFN1cHBvcnRpbmcgY3VzdG9tIGJ5
-dGVzcGVybGluZSBzZWVtcyB0b28gcmlza3kgb2YgYnJlYWtpbmcgYXBwcy4gCj4gPiBTbywgSSB3
-b3VsZCBkcm9wIHRoaXMgY29tbWVudC4KPiAKPiBXZSB3aWxsIHJlYWxseSBuZWVkIHRoaXMgaW4g
-dGhlIGxvbmcgcnVuIGluIG1hbnkgZHJpdmVycyBpbiBvcmRlciB0bwo+IGFsbG93IGltcG9ydC9l
-eHBvcnQgb2YgRE1BQnVmLiBXaXRob3V0IHN1Y2ggYWRhcHRpdmUgZmVhdHVyZSwgd2UgaGF2ZSBh
-Cj4gc29mdHdhcmUgbGltaXRhdGlvbiB0aGF0IGZvcmNlcyBib3VuY2luZyBtZW1vcnkuIEkgaGF2
-ZSBhbHJlYWR5Cj4gZGlzY3Vzc2VkIGFib3V0IGFkZGluZyB0aGlzIGZlYXR1cmUgbm90YWJseSBp
-biB2aXZpZCBhbmQgdXZjdmlkZW8gb24KPiBJUkMgYW5kIGluIGNvbmZlcmVuY2UsIHdoaWNoIGJv
-dGggaGF2ZSBubyByZXN0cmljdGlvbiB0aGUgbWVtb3J5Cj4gYWxpZ25tZW50LCBzbyBzaG91bGQg
-YWxsb3cgaW1wb3J0aW5nIGFueSBraW5kIG9mIHZpZGVvIGxheW91dC4KPiAKPiBXZSBhbHJlYWR5
-IGhhdmUgYSBwYXJ0aWFsIHVzZXJzcGFjZSBpbXBsZW1lbnRhdGlvbiBmb3IgdGhpcyBpbgo+IEdT
-dHJlYW1lciBhbmQgdXBzdHJlYW0gZHJpdmVyIHN1Ym1pc3Npb24gc2hvdWxkIGNvbWUgd2hlbiB0
-aGUgSVAgaXMKPiBjb25zaWRlcmVkIHN0YWJsZSBlbm91Z2guCgpJIHVuZGVyc3RhbmQgdGhlIG5l
-ZWQuIEknbSBub3QgYWdhaW5zdCBhbiBpbXBsZW1lbnRhdGlvbiBmb3Igc3VjaApmZWF0dXJlLCBw
-cm92aWRlZCB0aGF0IGl0IHdvbid0IGJyZWFrIGFueXRoaW5nLgoKSSBndWVzcyBvbmUgb2YgdGhl
-IHRoaW5ncyB3ZSBtaXNzIGF0IFY0TDIgQVBJIGlzIGFuIGluZGljYXRpb24gZnJvbQp1c2Vyc3Bh
-Y2UgYWJvdXQgd2hhdCBpdCBzdXBwb3J0cy4gSSBtZWFuLCBqdXN0IGxpa2Ugd2UgaGF2ZSB0aGUK
-Y2FwcyBmbGFncyB3aGVyZSB0aGUgS2VybmVsIHJlcG9ydHMgd2hhdCBpdCBzdXBwb3J0cywgd2Ug
-Y291bGQgaGF2ZQphIHNpbWlsYXIgInVzZXJzcGFjZSBjYXBzIiAgZmllbGQuCgo+IFdoeSBJIHRo
-aW5rIGl0IHdvbid0IGJyZWFrIHVzZXJzcGFjZSBpcyB0aGF0IHRoZSBjb3JyZWN0IHdheSB0byB1
-c2UKPiB0aGVzZSByZWFkLW9ubHkgbWVtYmVycyBvZiBWNEwyIHN0cnVjdCBpcyB0byBzZXQgdGhl
-c2UgdG8gMCwgd2hpY2ggaXMKPiBhbHNvIGRvY3VtZW50ZWQuCgpZZWFoLCB0aGUgYXBwcyBJJ20g
-YXdhcmUgb2YgdXN1YWxseSBjYWxsIG1lbXNldCgpIGJlZm9yZSBmaWxsaW5nClY0TDIgc3RydWN0
-cy4gT24gdGhvc2UsIGFkZGluZyB0aGlzIGJlaGF2aW9yIHdvdWxkIGJlIG9rLiBZZXQsCkknbSBu
-b3Qgc3VyZSBpZiAxMDAlIG9mIChvcGVuIHNvdXJjZSkgYXBwcyBkbyB0aGF0LgoKPiBBZGRpbmcg
-dXBwZXIgYm91bmQgc2VlbXMgbGlrZSBhIGdvb2QgaWRlYSB0aG91Z2guCgpBZ3JlZWQuCgo+IAo+
-ClRoYW5rcywKTWF1cm8KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtcm9ja2NoaXAK
+On Wed, 2019-05-29 at 14:31 +0200, Hans Verkuil wrote:
+> On 5/29/19 2:16 PM, Boris Brezillon wrote:
+> > On Wed, 29 May 2019 08:58:54 -0300
+> > Mauro Carvalho Chehab <mchehab+samsung@kernel.org> wrote:
+> > 
+> > > Em Wed, 29 May 2019 13:43:20 +0200
+> > > Hans Verkuil <hverkuil@xs4all.nl> escreveu:
+> > > 
+> > > > On 5/29/19 1:28 PM, Mauro Carvalho Chehab wrote:  
+> > > > > Em Tue, 28 May 2019 14:02:19 -0300
+> > > > > Ezequiel Garcia <ezequiel@collabora.com> escreveu:
+> > > > >     
+> > > > > > From: Boris Brezillon <boris.brezillon@collabora.com>
+> > > > > > 
+> > > > > > Users can define custom sizeimage as long as they're big enough to
+> > > > > > store the amount of pixels required for a specific width/height under a
+> > > > > > specific format. Avoid overriding those fields in this case.
+> > > > > > 
+> > > > > > We could possibly do the same for bytesperline, but it gets tricky when
+> > > > > > dealing with !MPLANE definitions, so this case is omitted for now and    
+> > > > > > ->bytesperline is always overwritten with the value calculated in    
+> > > > > > fill_pixfmt().
+> > > > > > 
+> > > > > > Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+> > > > > > ---
+> > > > > > Changes from v5:
+> > > > > > * Overwrite bytesperline with the value calculated in fill_pixfmt()
+> > > > > > 
+> > > > > > Changes from v4:
+> > > > > > * New patch
+> > > > > > 
+> > > > > >  drivers/media/v4l2-core/v4l2-common.c | 58 ++++++++++++++++++++-------
+> > > > > >  1 file changed, 43 insertions(+), 15 deletions(-)
+> > > > > > 
+> > > > > > diff --git a/drivers/media/v4l2-core/v4l2-common.c b/drivers/media/v4l2-core/v4l2-common.c
+> > > > > > index b2d1e55d9561..fd286f6e17d7 100644
+> > > > > > --- a/drivers/media/v4l2-core/v4l2-common.c
+> > > > > > +++ b/drivers/media/v4l2-core/v4l2-common.c
+> > > > > > @@ -585,9 +585,9 @@ int v4l2_fill_pixfmt_mp(struct v4l2_pix_format_mplane *pixfmt,
+> > > > > >  	pixfmt->num_planes = info->mem_planes;
+> > > > > >  
+> > > > > >  	if (info->mem_planes == 1) {
+> > > > > > +		u32 sizeimage = 0;
+> > > > > > +
+> > > > > >  		plane = &pixfmt->plane_fmt[0];
+> > > > > > -		plane->bytesperline = ALIGN(width, v4l2_format_block_width(info, 0)) * info->bpp[0];
+> > > > > > -		plane->sizeimage = 0;
+> > > > > >  
+> > > > > >  		for (i = 0; i < info->comp_planes; i++) {
+> > > > > >  			unsigned int hdiv = (i == 0) ? 1 : info->hdiv;
+> > > > > > @@ -598,10 +598,21 @@ int v4l2_fill_pixfmt_mp(struct v4l2_pix_format_mplane *pixfmt,
+> > > > > >  			aligned_width = ALIGN(width, v4l2_format_block_width(info, i));
+> > > > > >  			aligned_height = ALIGN(height, v4l2_format_block_height(info, i));
+> > > > > >  
+> > > > > > -			plane->sizeimage += info->bpp[i] *
+> > > > > > -				DIV_ROUND_UP(aligned_width, hdiv) *
+> > > > > > -				DIV_ROUND_UP(aligned_height, vdiv);
+> > > > > > +			sizeimage += info->bpp[i] *
+> > > > > > +				     DIV_ROUND_UP(aligned_width, hdiv) *
+> > > > > > +				     DIV_ROUND_UP(aligned_height, vdiv);
+> > > > > >  		}
+> > > > > > +
+> > > > > > +		/* Custom bytesperline value is not supported yet. */
+> > > > > > +		plane->bytesperline = ALIGN(width,
+> > > > > > +					    v4l2_format_block_width(info, 0)) *
+> > > > > > +				      info->bpp[0];
+> > > > > > +
+> > > > > > +		/*
+> > > > > > +		 * The user might have specified a custom sizeimage, only
+> > > > > > +		 * override it if it's not big enough.
+> > > > > > +		 */
+> > > > > > +		plane->sizeimage = max(sizeimage, plane->sizeimage);    
+> > > > > 
+> > > > > No upper limit? That doesn't sound a good idea to me, specially since some
+> > > > > (broken) app might not be memset the format to zero before filling the ioctl
+> > > > > structure.
+> > > > > 
+> > > > > Perhaps we could do something like:
+> > > > > 
+> > > > > 		sizeimage = min (sizeimage, 2 * plane->sizeimage)
+> > > > > 
+> > > > > or something similar that would be reasonable.    
+> > > > 
+> > > > I've no idea what's sane.
+> > > > 
+> > > > Buffers can be really large. The largest video resolution defined by CTA-861-G
+> > > > is 10240x4320, so at 4 bytes per pixel that's 0x0a8c0000. So perhaps we can
+> > > > use min(sizeimage, 0x10000000)? Although we should probably use the clamp function
+> > > > instead of min/max.  
+> > > 
+> > > Well, the max is driver-specific. 
+> > > 
+> > > For example, for a camera with a max resolution of 640x480 with 2 bytes
+> > > per pixel as the max format can only be
+> > > 
+> > > 	max_size = 640*480*2 (plus some alignment value if pertinent)
+> > > 
+> > > It sounds to me that the best would be to have a callback function
+> > > or value filled by the drivers that would support custom sizeimage.
+> > > 
+> > > The core could actually calculate during init (by asking the driver
+> > > to a very big resolution and getting the returned value), but
+> > > it sounds better to let the drivers to explicitly calculate it.
+> > 
+> > If we want max_sizeimage to be driver specific I can add it as an extra
+> > arg to the fill_pixfmt() funcs.
+> 
+> Looking more closely, only compressed formats can accept a user-specified
+> sizeimage value, and this function is only called for uncompressed formats.
+> 
+> So doesn't that mean that this sizeimage override code can be dropped?
+> 
+
+I think this is a good idea, which means just picking all patches except this one
+(and the RK3328 one).
+
+So it would be patches: 1,2 and 4 to 15.
+
+Boris, Hans: are you OK with this?
+
+Thanks,
+Ezequiel
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
