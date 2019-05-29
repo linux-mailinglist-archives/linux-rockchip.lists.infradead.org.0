@@ -2,73 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FC722D746
-	for <lists+linux-rockchip@lfdr.de>; Wed, 29 May 2019 10:06:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B2A62D74A
+	for <lists+linux-rockchip@lfdr.de>; Wed, 29 May 2019 10:07:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V/daLn3jbbugEUR6QRYMvjaTV/YqeK6T9ko05hrHDAg=; b=Bu67mT1gLATC7l
-	YDSLPXj/oYMj9UOFNpG05jepL3tXOgi1gOP11VeBMnNLmWzrGOrrGSvvLKIc5oEQucLwR1ZTqMw1I
-	EQTVGaXPGoZbcYmXNRvlYyczZ24ONxPe2cJoCQr0qUu5ISLRlU8upswZzCgXJ3moqjsRZW1LDt2qN
-	HwJ6uQgfG5nKjIyBA8Q0ct2dQXArqOLhma5HjwpoTjOdbKNPqLF/yqoKBWC8LR4fxfJozoAboC0AH
-	r5BeCa96+KSAMsoL8KZGx5ulDKnrHw2vna4JNA5gCyyI8J4CHaNOGIPTcs0xegv47OTNueB3xn5tM
-	yx8L1g5EmK4MaOvNlnHg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uGqo1TRZYUlNYhCRfmb4+eb8cTiVZe2o8A58RBWJytA=; b=ehyVwe/fXMEKYk
+	CI2llM7miIB3ZUA6fdZTtrgr6q/LRQISgFSEzgVmbDqZM3cvmWRWKoLL+oQ2m2RJ/NidA3hkfSmBP
+	jKKxYvfz+UukdXGEop1QmmENBkN40vlDS1Lr4kXA8LU0hSteneJVbfYsOMrHeZv+3VxBS7pZpwlH4
+	xmU+Yq82rG7h6AZPSeJzYUSP+aE080+KYSO0cx6JLVlLCXn059g5UoKZOMSDMYEpM1RSubKZZG6IE
+	pe94t+wZ9D0PuXEg/FftVrX6Ii+6SfBpGWou6pQFvoAfDQppPFMjaUwqQ3efs9BFRECd9qDEiMsw8
+	/fSVE67LcMePVaeVUOtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVtbJ-0001bw-A1; Wed, 29 May 2019 08:06:21 +0000
-Received: from regular1.263xmail.com ([211.150.70.205])
+	id 1hVtby-0001xa-Un; Wed, 29 May 2019 08:07:02 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVtbF-0001aw-Cb
- for linux-rockchip@lists.infradead.org; Wed, 29 May 2019 08:06:18 +0000
-Received: from kever.yang?rock-chips.com (unknown [192.168.165.103])
- by regular1.263xmail.com (Postfix) with ESMTP id 920214F6;
- Wed, 29 May 2019 16:06:14 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from [192.168.60.65] (unknown [103.29.142.67])
- by smtp.263.net (postfix) whith ESMTP id
- P11301T140087673222912S1559117165902856_; 
- Wed, 29 May 2019 16:06:13 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <06bfe263bf16d0f8b69107f8bfdbd8d8>
-X-RL-SENDER: kever.yang@rock-chips.com
-X-SENDER: yk@rock-chips.com
-X-LOGIN-NAME: kever.yang@rock-chips.com
-X-FST-TO: u-boot@lists.denx.de
-X-SENDER-IP: 103.29.142.67
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-Subject: Re: [PATCH 1/3] rk3399: orangepi: Enable TPL
-To: Jagan Teki <jagan@amarulasolutions.com>, Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-References: <20190509105746.24830-1-jagan@amarulasolutions.com>
-From: Kever Yang <kever.yang@rock-chips.com>
-Message-ID: <db013001-ba21-db2f-6a05-f756cbf1ae97@rock-chips.com>
-Date: Wed, 29 May 2019 16:06:05 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.6.0
+ id 1hVtbu-0001wa-S9; Wed, 29 May 2019 08:07:00 +0000
+Received: from ip5f5a6320.dynamic.kabel-deutschland.de ([95.90.99.32]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hVtbm-0002wf-P7; Wed, 29 May 2019 10:06:50 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Jianqun Xu <jay.xu@rock-chips.com>
+Subject: Re: [PATCH v2 1/1] arm64: dts: rockchip: add core dtsi file for
+ RK3399Pro SoCs
+Date: Wed, 29 May 2019 10:06:50 +0200
+Message-ID: <5655934.Q7EnKghNLn@diego>
+In-Reply-To: <20190529074752.19388-1-jay.xu@rock-chips.com>
+References: <20190528044850.23703-1-jay.xu@rock-chips.com>
+ <20190529074752.19388-1-jay.xu@rock-chips.com>
 MIME-Version: 1.0
-In-Reply-To: <20190509105746.24830-1-jagan@amarulasolutions.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_010617_587378_EA7FADE6 
-X-CRM114-Status: GOOD (  12.62  )
+X-CRM114-CacheID: sfid-20190529_010659_053925_AAFB1CD0 
+X-CRM114-Status: GOOD (  17.93  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -81,46 +59,138 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
- u-boot@lists.denx.de
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, zhangzj@rock-chips.com,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ manivannan.sadhasivam@linaro.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgSmFnYW4sCgrCoMKgwqAgVGhlIGZpcnN0IHR3byBwYXRjaGVzIG5lZWQgcmUtYmFzZSBhZnRl
-ciB0aGUgcGF0Y2ggZnJvbSBUb206CgozNDRhMGU0MzY3IGNvbmZpZ3M6IFJlc3luYyB3aXRoIHNh
-dmVkZWZjb25maWcKCgpUaGFua3MsCi0gS2V2ZXIKT24gMDUvMDkvMjAxOSAwNjo1NyBQTSwgSmFn
-YW4gVGVraSB3cm90ZToKPiBFbmFibGUgVFBMIGZvciBPcmFuZ2VQSSByazMzOTkgYm9hcmQuCj4K
-PiBTaWduZWQtb2ZmLWJ5OiBKYWdhbiBUZWtpIDxqYWdhbkBhbWFydWxhc29sdXRpb25zLmNvbT4K
-PiAtLS0KPiAgY29uZmlncy9vcmFuZ2VwaS1yazMzOTlfZGVmY29uZmlnIHwgNyArKysrLS0tCj4g
-IDEgZmlsZSBjaGFuZ2VkLCA0IGluc2VydGlvbnMoKyksIDMgZGVsZXRpb25zKC0pCj4KPiBkaWZm
-IC0tZ2l0IGEvY29uZmlncy9vcmFuZ2VwaS1yazMzOTlfZGVmY29uZmlnIGIvY29uZmlncy9vcmFu
-Z2VwaS1yazMzOTlfZGVmY29uZmlnCj4gaW5kZXggM2YwMmM4OTk4My4uOTAwMjFiYjY5NSAxMDA2
-NDQKPiAtLS0gYS9jb25maWdzL29yYW5nZXBpLXJrMzM5OV9kZWZjb25maWcKPiArKysgYi9jb25m
-aWdzL29yYW5nZXBpLXJrMzM5OV9kZWZjb25maWcKPiBAQCAtNSw3ICs1LDcgQEAgQ09ORklHX1NQ
-TF9MSUJDT01NT05fU1VQUE9SVD15Cj4gIENPTkZJR19TUExfTElCR0VORVJJQ19TVVBQT1JUPXkK
-PiAgQ09ORklHX1NZU19NQUxMT0NfRl9MRU49MHg0MDAwCj4gIENPTkZJR19ST0NLQ0hJUF9SSzMz
-OTk9eQo+IC1DT05GSUdfUk9DS0NISVBfU1BMX1JFU0VSVkVfSVJBTT0weDQwMDAKPiArQ09ORklH
-X1JPQ0tDSElQX1NQTF9SRVNFUlZFX0lSQU09MHg1MDAwMAo+ICBDT05GSUdfREVCVUdfVUFSVF9C
-QVNFPTB4RkYxQTAwMDAKPiAgQ09ORklHX0RFQlVHX1VBUlRfQ0xPQ0s9MjQwMDAwMDAKPiAgQ09O
-RklHX1NQTF9TVEFDS19SX0FERFI9MHg4MDAwMAo+IEBAIC0xNCw5ICsxNCw4IEBAIENPTkZJR19O
-Ul9EUkFNX0JBTktTPTEKPiAgQ09ORklHX0RFRkFVTFRfRkRUX0ZJTEU9InJvY2tjaGlwL3JrMzM5
-OS1vcmFuZ2VwaS5kdGIiCj4gICMgQ09ORklHX0RJU1BMQVlfQ1BVSU5GTyBpcyBub3Qgc2V0Cj4g
-IENPTkZJR19ESVNQTEFZX0JPQVJESU5GT19MQVRFPXkKPiAtQ09ORklHX1NQTF9URVhUX0JBU0U9
-MHhmZjhjMjAwMAo+ICBDT05GSUdfU1BMX1NUQUNLX1I9eQo+IC1DT05GSUdfU1BMX1NUQUNLX1Jf
-TUFMTE9DX1NJTVBMRV9MRU49MHg0MDAwCj4gK0NPTkZJR19TUExfU1RBQ0tfUl9NQUxMT0NfU0lN
-UExFX0xFTj0weDEwMDAwCj4gIENPTkZJR19DTURfQk9PVFo9eQo+ICBDT05GSUdfQ01EX0dQVD15
-Cj4gIENPTkZJR19DTURfTU1DPXkKPiBAQCAtMjQsNiArMjMsNyBAQCBDT05GSUdfQ01EX1NGPXkK
-PiAgQ09ORklHX0NNRF9VU0I9eQo+ICAjIENPTkZJR19DTURfU0VURVhQUiBpcyBub3Qgc2V0Cj4g
-IENPTkZJR19DTURfVElNRT15Cj4gK0NPTkZJR19UUEw9eQo+ICBDT05GSUdfU1BMX09GX0NPTlRS
-T0w9eQo+ICBDT05GSUdfREVGQVVMVF9ERVZJQ0VfVFJFRT0icmszMzk5LW9yYW5nZXBpIgo+ICBD
-T05GSUdfT0ZfU1BMX1JFTU9WRV9QUk9QUz0icGluY3RybC0wIHBpbmN0cmwtbmFtZXMgY2xvY2st
-bmFtZXMgaW50ZXJydXB0LXBhcmVudCBhc3NpZ25lZC1jbG9ja3MgYXNzaWduZWQtY2xvY2stcmF0
-ZXMgYXNzaWduZWQtY2xvY2stcGFyZW50cyIKPiBAQCAtNTYsNCArNTYsNSBAQCBDT05GSUdfVVNC
-X0VUSEVSX01DUzc4MzA9eQo+ICBDT05GSUdfVVNCX0VUSEVSX1JUTDgxNTI9eQo+ICBDT05GSUdf
-VVNCX0VUSEVSX1NNU0M5NVhYPXkKPiAgQ09ORklHX1VTRV9USU5ZX1BSSU5URj15Cj4gK0NPTkZJ
-R19TUExfVElOWV9NRU1TRVQ9eQo+ICBDT05GSUdfRVJSTk9fU1RSPXkKCgoKCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxp
-bmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+Hi Jay,
+
+Am Mittwoch, 29. Mai 2019, 09:47:52 CEST schrieb Jianqun Xu:
+> This patch adds core dtsi file for Rockchip RK3399Pro SoCs,
+> include rk3399.dtsi. Also enable these nodes:
+> - pcie/pcie_phy
+> - sdhci/sdio/emmc/sdmmc
+> 
+> Signed-off-by: Jianqun Xu <jay.xu@rock-chips.com>
+> ---
+> changes since v1:
+> - remove dfi and dmc
+> 
+>  arch/arm64/boot/dts/rockchip/rk3399pro.dtsi | 74 +++++++++++++++++++++
+>  1 file changed, 74 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi b/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
+> new file mode 100644
+> index 000000000000..b6d433ffa67d
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
+> @@ -0,0 +1,74 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +// Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd.
+> +
+> +#include "rk3399.dtsi"
+> +
+> +/ {
+> +	compatible = "rockchip,rk3399pro";
+> +
+> +	xin32k: xin32k {
+> +		compatible = "fixed-clock";
+> +		clock-frequency = <32768>;
+> +		clock-output-names = "xin32k";
+> +		#clock-cells = <0>;
+> +	};
+
+Just to clarify, is the x32k clock really part of the soc itself?
+Like on older SoCs it was always supplied from the pmic
+or a separate rtc chip.
+
+
+> +};
+> +
+> +&emmc_phy {
+> +	status = "okay";
+> +};
+
+Is the emmc used inside the soc? As otherwise emmc / mmc controller
+settings would be more a part of the actual board using the soc.
+
+
+> +&pcie_phy {
+> +	status = "okay";
+> +};
+> +
+> +&pcie0 {
+> +	ep-gpios = <&gpio0 RK_PB4 GPIO_ACTIVE_HIGH>;
+> +	num-lanes = <4>;
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pcie_clkreqn_cpm>;
+> +	status = "okay";
+> +};
+
+This is probably needed as it needs to talk the rk1808
+part over pcie, so it's really internal to the soc.
+
+
+> +
+> +&sdhci {
+> +	bus-width = <8>;
+> +	mmc-hs400-1_8v;
+> +	supports-emmc;
+> +	non-removable;
+> +	keep-power-in-suspend;
+> +	mmc-hs400-enhanced-strobe;
+> +	status = "okay";
+> +};
+
+Same comment as for emmc_phy above
+
+> +&sdio0 {
+> +	clock-frequency = <150000000>;
+> +	clock-freq-min-max = <200000 150000000>;
+> +	supports-sdio;
+> +	bus-width = <4>;
+> +	disable-wp;
+> +	cap-sd-highspeed;
+> +	cap-sdio-irq;
+> +	keep-power-in-suspend;
+> +	mmc-pwrseq = <&sdio_pwrseq>;
+> +	non-removable;
+> +	num-slots = <1>;
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
+> +	sd-uhs-sdr104;
+> +	status = "okay";
+> +};
+
+Same comment as for emmc_phy above
+
+> +&sdmmc {
+> +	clock-frequency = <150000000>;
+> +	clock-freq-min-max = <400000 150000000>;
+> +	supports-sd;
+> +	bus-width = <4>;
+> +	cap-mmc-highspeed;
+> +	cap-sd-highspeed;
+> +	disable-wp;
+> +	num-slots = <1>;
+> +	vqmmc-supply = <&vccio_sd>;
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd &sdmmc_bus4>;
+> +	status = "okay";
+> +};
+
+Same comment as for emmc_phy above
+
+
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
