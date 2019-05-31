@@ -2,83 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AE0C30788
-	for <lists+linux-rockchip@lfdr.de>; Fri, 31 May 2019 06:02:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12675307EF
+	for <lists+linux-rockchip@lfdr.de>; Fri, 31 May 2019 06:57:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QxFrUpl+YYZGWsETO4qvLPbPhEf3hPRLiccA0UjZ3HQ=; b=L8HMlnnam1J4DQ
-	4xS2kDaAUkDxQ8syV9IM9njVH5FpkYceel1TwwEVFyCUrRMnUKZkQ9hcsiqjSsalysQ9oXPrNDEFx
-	PS/W4SoRikmQhvhB7GQCIUCC/w4sWnOvHL9bTqhT8rGzj21ZtPt+cMq3UYdLiULhjA6oA8KxXwieW
-	D6fnDiwC7jeMNHhkND17e+n3UcqHR5cCLOllcVeCKHNZhTcp8PXePilf90ayRRbZ/np/j1tk3Ac1y
-	mTS1j6PhIt1JoVfW7iIRY/mqKzBQTR48mkD6XDKsNQgmSgtOqFKl+AIbRwJ1LV/Yjf8+c9E9PhXsA
-	mAQZTpb/+cPsbULfv71A==;
+	List-Owner; bh=puaWsRFWzbfJFjKWGKmj771Yp+A4G1yflg7/GpOYOrk=; b=TNusdG7LH9WElr
+	CAkxmAKyuKLb/AI67KONvARYpnqRbZXCXghN+hwV6XfS/K45KtoISdcrQWcLa6mfH+C/aafYDyK9p
+	nONlUr1c/poqwZ19CJgrMxGp1K7o83Q4SV3FEBAeh9iqf0p5hqIdLT9h8f3WPCkGaMoBhsvEIn+W9
+	N/K7byYzXOsG2XgdPFJAuJDP9qXXr3+BKq0RcY/y0NotmRn5tITeIo22KqHfoP/t/P1jFvzWUrNEI
+	yV+bTsz6VyZrz8Lm8+xjlx7wNjpJ9+t40tCZKqYJeiiOMeFZjCCLDiGHNyFVXChvuisKVdEN0Q0co
+	tN4gYqIurSwiJN30a3qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWYkX-0001ie-Az; Fri, 31 May 2019 04:02:37 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hWZbs-0001g4-I9; Fri, 31 May 2019 04:57:44 +0000
+Received: from mail-it1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWYkT-0001hn-Ph
- for linux-rockchip@lists.infradead.org; Fri, 31 May 2019 04:02:35 +0000
-Received: by mail-pf1-x441.google.com with SMTP id j2so5314906pfe.6
- for <linux-rockchip@lists.infradead.org>; Thu, 30 May 2019 21:02:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=ukEC3MMMF7VZfZKjRmeuoQSQX5eGcJH/5lmeM5Xiv1s=;
- b=VXw9JliX+By7ETjpg/VwT4cIvO5bt9B5kaUNS2hcsP92UbdLa1fgpaQAE/XPqJSi/7
- qBTnZtb9FYsYB/JtGEalVQ7ZZYtdHM4K5tJy44QI1wae6QDJJ6S6xEvY4zV25yXLj0CZ
- 2MZqvtdmBIoISzz2bpfpAUYtDs14qrbKfwdwqmhwipBSmelAD2M1dde0La5Nr8hrGpXN
- vSzuF5L7pr/hdm+lHqsgGzCD0/7xwed8vMYeMKe/4H5rC+PljIl3sPxhcohWdzLdxYFR
- D2w+5vzntIcMRodAV6qZV7cE2XYHYiHmQrgogQZ7ubjNO0Lh9y3elutJb5Pb9iO8vsbM
- QB5Q==
+ id 1hWZbk-0001ZG-1E; Fri, 31 May 2019 04:57:38 +0000
+Received: by mail-it1-x144.google.com with SMTP id t184so13707250itf.2;
+ Thu, 30 May 2019 21:57:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=pYMrn55kLH2S++DFur1WFLWOoxAYXbVwA77jHVN56K0=;
+ b=kfoYhZkf6QrrWJKyrfZm2jySez/Ob1PR92nLjbtbCIkwApTrJE8LqKlBo+hOLDWtzm
+ Kbtq5RETimAdVvyEQlSWLCxb9FxX67p4RfrZmKYTPVmM/7a66eqQt8supqC5Jl68mjXl
+ 3g0meLrU3kkQS2nIBulztcE8EsYVtq5Zt3yldQON/t2fiIgLNmGmq0iW9TjOf3cb8HRV
+ hQUCSI48LvaJU4wgAQw6+tTPUsfGbpYE1FTI8IlM24vtiVxgkCJdT3er1u/dmKP5v9xo
+ 6pn8gVndXm6lkx/pDiVVkcj0Aqz42IxHdM3Zo+vXVJjOCDvwGBRmjTKMTNy21DiMmG6H
+ FnfQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ukEC3MMMF7VZfZKjRmeuoQSQX5eGcJH/5lmeM5Xiv1s=;
- b=UUvlbg1aN1xEH6l9HgKFRs/BoVhhLDgqdOT1kTbd8F3wF5CwzC7vLeaetbcVpOg+5d
- gE/sKCNnfwdK+Lvdi5P01TG4qVKEmFyTLJ/mcC0Ner7AljAo5DGzrgaGqRswhyKPOCBC
- BEIIlKy7hMvww3o4GtC1LqY18L7jBsouhjGM69i1EwBVwlUtKEmRE0VBAId5n1DYMKLf
- eR7uTiRE4VZ+9aTyNGq5a1ub1cpleTo4egVDq13nQ1MyTGpq0yldlwpfViXDPypt28a/
- xISlX05+QFuSpUdYL/1E6rYiuR9dYYYF6JkgJiRjPIbijm9BjFknvNtXKQEu+fLK3P7P
- P0DA==
-X-Gm-Message-State: APjAAAUQAtbkXts+uYaqxVV/4+WXrkZkO66aFUsXhDsqM7fqx51iwKAR
- RpGgRpZor8+huBnthC0y4HDx
-X-Google-Smtp-Source: APXvYqzvhodd3uafA/IahYHPivWkQXtELuD62p5DCQP+wY6MG98U46yQKwyEMeP2EeyQeZcrUWJbVQ==
-X-Received: by 2002:a17:90a:26a9:: with SMTP id
- m38mr6679956pje.93.1559275352740; 
- Thu, 30 May 2019 21:02:32 -0700 (PDT)
-Received: from Mani-XPS-13-9360 ([2405:204:72cb:ebf2:a51d:3877:feab:5634])
- by smtp.gmail.com with ESMTPSA id q7sm4348899pjb.0.2019.05.30.21.02.26
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 30 May 2019 21:02:31 -0700 (PDT)
-Date: Fri, 31 May 2019 09:32:22 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Anand Moon <linux.amoon@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=pYMrn55kLH2S++DFur1WFLWOoxAYXbVwA77jHVN56K0=;
+ b=gkAzGZ4xv1pNzf5pae1Fq+oZhavJ0aERBLZrN+FuI/CfY/QD0eQ9RZa0oUwqW4+uGq
+ 8U7kSGQAIJmBx4T8MDbwafgPhXwa3DA739NzmtiXfxFZPT7bFvgYnKE54w3Rgl5wVjz4
+ k8NQUcZ9nbloo8yi4ZYWbDus4rhyrYew9CI8Ayzg8C/JP90kP9dgTe+Fjx7jD9SNMJ3W
+ hGqbnkP7jgmhpk6puQFY83ETCkuPIUFHGTPU3xUx05MLsz4uDSTaipnsl5OChhpBsu/X
+ sI9K7b6KnTA7Q1aeilEjROp2tKJvil9OYY/aDSEp9wTsjk841Ipqxlu2p3vF4LaDgfYW
+ 4gQw==
+X-Gm-Message-State: APjAAAWQdGbXv1nJSemFgs+lGR695Ti30IrFbs9iOTPCxJQGer8CaVMQ
+ O5RxZr9Y3unE0I/KdkXAnAqXtRM29QBmAaT+S7U=
+X-Google-Smtp-Source: APXvYqyrNSflW/4/Z9Kt+shMt+wzrH+meKU5Uw8V7PnnqJVcWdQXyvi3s2unKfCvSA99bkG0l1jdlkupXL3T+WefGeQ=
+X-Received: by 2002:a24:4acd:: with SMTP id k196mr5575395itb.157.1559278654178; 
+ Thu, 30 May 2019 21:57:34 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190530125837.730-1-linux.amoon@gmail.com>
+ <20190531040222.GB9641@Mani-XPS-13-9360>
+In-Reply-To: <20190531040222.GB9641@Mani-XPS-13-9360>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Fri, 31 May 2019 10:27:22 +0530
+Message-ID: <CANAwSgQ13PizDuNEVF5JMM=byt-HELCmZFhLAa3RS6kvxmXuhw@mail.gmail.com>
 Subject: Re: [PATCH] arm64: dts: rockchip: Add missing PCIe pwr amd rst
  configuration
-Message-ID: <20190531040222.GB9641@Mani-XPS-13-9360>
-References: <20190530125837.730-1-linux.amoon@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190530125837.730-1-linux.amoon@gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_210233_975998_39918515 
-X-CRM114-Status: GOOD (  16.41  )
+X-CRM114-CacheID: sfid-20190530_215736_072627_EA7C03F0 
+X-CRM114-Status: GOOD (  18.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (linux.amoon[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -99,92 +93,108 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+Cc: devicetree <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Linux Kernel <linux-kernel@vger.kernel.org>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Jagan Teki <jagan@amarulasolutions.com>,
  Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Manivannan,
 
-On Thu, May 30, 2019 at 12:58:37PM +0000, Anand Moon wrote:
-> This patch add missing PCIe gpio and pinctrl for power (#PCIE_PWR)
-> also add PCIe gpio and pinctrl for reset (#PCIE_PERST_L).
-> 
-> Signed-off-by: Anand Moon <linux.amoon@gmail.com>
-> ---
-> Tested on Rock960 Model A
-> ---
->  arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi | 16 ++++++++++++++--
->  1 file changed, 14 insertions(+), 2 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
-> index c7d48d41e184..f5bef6b0fe89 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
-> @@ -55,9 +55,10 @@
->  
->  	vcc3v3_pcie: vcc3v3-pcie-regulator {
->  		compatible = "regulator-fixed";
-> +		gpio = <&gpio2 RK_PA2 GPIO_ACTIVE_HIGH>;
->  		enable-active-high;
->  		pinctrl-names = "default";
-> -		pinctrl-0 = <&pcie_drv>;
-> +		pinctrl-0 = <&pcie_drv &pcie_pwr>;
->  		regulator-boot-on;
->  		regulator-name = "vcc3v3_pcie";
->  		regulator-min-microvolt = <3300000>;
-> @@ -381,9 +382,10 @@
->  };
->  
->  &pcie0 {
-> +	ep-gpio = <&gpio2 RK_PD4 GPIO_ACTIVE_HIGH>;
->  	num-lanes = <4>;
->  	pinctrl-names = "default";
-> -	pinctrl-0 = <&pcie_clkreqn_cpm>;
-> +	pinctrl-0 = <&pcie_clkreqn_cpm &pcie_perst_l>;
->  	vpcie3v3-supply = <&vcc3v3_pcie>;
->  	status = "okay";
->  };
-> @@ -408,6 +410,16 @@
->  		};
->  	};
->  
-> +	pcie {
-> +		pcie_pwr: pcie-pwr {
-> +			rockchip,pins = <2 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
-> +		};
-> +
-> +		pcie_perst_l:pcie-perst-l {
-> +			rockchip,pins = <2 RK_PD4 RK_FUNC_GPIO &pcfg_pull_none>;
-> +		};
+On Fri, 31 May 2019 at 09:32, Manivannan Sadhasivam
+<manivannan.sadhasivam@linaro.org> wrote:
+>
+> Hi,
+>
+> On Thu, May 30, 2019 at 12:58:37PM +0000, Anand Moon wrote:
+> > This patch add missing PCIe gpio and pinctrl for power (#PCIE_PWR)
+> > also add PCIe gpio and pinctrl for reset (#PCIE_PERST_L).
+> >
+> > Signed-off-by: Anand Moon <linux.amoon@gmail.com>
+> > ---
+> > Tested on Rock960 Model A
+> > ---
+> >  arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi | 16 ++++++++++++++--
+> >  1 file changed, 14 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
+> > index c7d48d41e184..f5bef6b0fe89 100644
+> > --- a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
+> > +++ b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
+> > @@ -55,9 +55,10 @@
+> >
+> >       vcc3v3_pcie: vcc3v3-pcie-regulator {
+> >               compatible = "regulator-fixed";
+> > +             gpio = <&gpio2 RK_PA2 GPIO_ACTIVE_HIGH>;
+> >               enable-active-high;
+> >               pinctrl-names = "default";
+> > -             pinctrl-0 = <&pcie_drv>;
+> > +             pinctrl-0 = <&pcie_drv &pcie_pwr>;
+> >               regulator-boot-on;
+> >               regulator-name = "vcc3v3_pcie";
+> >               regulator-min-microvolt = <3300000>;
+> > @@ -381,9 +382,10 @@
+> >  };
+> >
+> >  &pcie0 {
+> > +     ep-gpio = <&gpio2 RK_PD4 GPIO_ACTIVE_HIGH>;
+> >       num-lanes = <4>;
+> >       pinctrl-names = "default";
+> > -     pinctrl-0 = <&pcie_clkreqn_cpm>;
+> > +     pinctrl-0 = <&pcie_clkreqn_cpm &pcie_perst_l>;
+> >       vpcie3v3-supply = <&vcc3v3_pcie>;
+> >       status = "okay";
+> >  };
+> > @@ -408,6 +410,16 @@
+> >               };
+> >       };
+> >
+> > +     pcie {
+> > +             pcie_pwr: pcie-pwr {
+> > +                     rockchip,pins = <2 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
+> > +             };
+> > +
+> > +             pcie_perst_l:pcie-perst-l {
+> > +                     rockchip,pins = <2 RK_PD4 RK_FUNC_GPIO &pcfg_pull_none>;
+> > +             };
+>
+> Which schematics did you refer? According to Rock960 v2.1 schematics [1], below
+> is the pin mapping for PCI-E PWR and PERST:
+>
+> PCIE_PERST - GPIO2_A2
+> PCIE_PWR - GPIO2_A5
+>
 
-Which schematics did you refer? According to Rock960 v2.1 schematics [1], below
-is the pin mapping for PCI-E PWR and PERST:
+Opps, I have referred the wrong schematics *RK3399_Rock960_V1.0.pdf*
+may be old version.
+Thanks for pointing out the correct schematics.
+
+> Above mapping holds true for Rock960 version 1.1, 1.2 and 1.3. Also,
+> rk3399-rock960.dtsi is common for both Rock960 and Ficus boards, so the board
+> specific parts should go to rk3399-rock960.dts and rk3399-ficus.dts.
+>
+> Thanks,
+> Mani
+
+I have ROCK960-V 1.2 (Model A) for testing so. I will be sending patch
+v2 the relevant
+node update in rk3399-rock960.dts and rk3399-ficus.dts if below common
+for both the boards.
 
 PCIE_PERST - GPIO2_A2
 PCIE_PWR - GPIO2_A5
 
-Above mapping holds true for Rock960 version 1.1, 1.2 and 1.3. Also,
-rk3399-rock960.dtsi is common for both Rock960 and Ficus boards, so the board
-specific parts should go to rk3399-rock960.dts and rk3399-ficus.dts.
+>
+> [1] https://dl.vamrs.com/products/rock960/docs/hw/rock960_sch_v12_20180314.pdf
 
-Thanks,
-Mani
-
-[1] https://dl.vamrs.com/products/rock960/docs/hw/rock960_sch_v12_20180314.pdf
-> +	};
-> +
->  	sdmmc {
->  		sdmmc_bus1: sdmmc-bus1 {
->  			rockchip,pins =
-> -- 
-> 2.21.0
-> 
+Best Regards
+-Anand
 
 _______________________________________________
 Linux-rockchip mailing list
