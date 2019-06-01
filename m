@@ -2,54 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45AB031BCE
+	by mail.lfdr.de (Postfix) with ESMTPS id 43A0C31BCD
 	for <lists+linux-rockchip@lfdr.de>; Sat,  1 Jun 2019 15:17:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MQsOhM/MHI1sn/K17nYkatKBHnr4Csif0sTYctNkUy8=; b=JB8xEyhkLv7l1O
-	py9+TheR591B6n8WSUJdkRIXA88/o5Coc3defJnWzWXzTvmQENw/jFg+SJA8gy1y8k6gNjESNlvoY
-	CRUm9wtpeP6zXXpj/vI9bLeR8FRnmcaBg8y9tZpgvLtmO+/SxEiNvZo4l3BD6BfOncjUSEolt5CHQ
-	qW+RwnT/Pt/wIj003S0M3Hl/Kru+RyDo1sck5GC2M3FSy6rjN2fQ2s/5RQWUo7YrbjLG27ovKyYxG
-	9k7xcRiPolDno0oibvEBjuk11/Xkb3exTN+gqDr+YMMmmcAkHJ4nJRcENEwADy2t06ZnRkgIoc9XO
-	atUZSdZzqQQHZJ/wpd6g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PvUY4MeuW9mFBJz3368QiBb0h4O8M2ihV38AE5R+e8g=; b=Ue8urj3a6D4IeQ
+	NVsvoT7CgCwEuyYENNuVV5LcJ3cLWZiZ8H9MDLEaFhH82S+xhHpsJRWObzGMUqzegYuqoxtegYLv8
+	5skEL/l+6vhHpBggYTcGWFSKCb5X3qhiSKjcXfvlLf95FmJh0kVKNcN7XvamJ6JTftdCvGMws9Zml
+	njShOMfts0plBq0Q7Zq0e+ZadIf3Y2nacDesBflJnWkjKCXgCmunPKn6jkFacWWIp2xz1TCu3iGse
+	qawT1Uhj4DFbI6dN+A7KUAF+jhmuganYZQQH98qOaENMzSrvuhxm2pu8LcOU++kIsDE2jLwbKzghG
+	e8UnsxcTYmJn68Ue3/Qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hX3sc-0001Z6-9i; Sat, 01 Jun 2019 13:17:02 +0000
+	id 1hX3sh-0001bd-Pt; Sat, 01 Jun 2019 13:17:07 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hX3sZ-0001YI-88
- for linux-rockchip@lists.infradead.org; Sat, 01 Jun 2019 13:17:00 +0000
+ id 1hX3se-0001aC-GT
+ for linux-rockchip@lists.infradead.org; Sat, 01 Jun 2019 13:17:05 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4058927227;
- Sat,  1 Jun 2019 13:16:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3291A27251;
+ Sat,  1 Jun 2019 13:17:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559395016;
- bh=0BH7zsVElE5DDidWWhc24VgxlmlbeytlvrOF5RZBkgI=;
- h=From:To:Cc:Subject:Date:From;
- b=lSYxmBH8OP0szBywwxjPsK1QBhpksA6wA0X5KcGSfZLOYfRfjM4hyZkO9ubwF6Mbp
- JZi4biO+TPHEYGvcx34tDb/56w9dTf3UlyIpTRq1d19FY5M0Z//riZBQnEtSlT1K5u
- oL451r0tnRqDHJQgH+psJsSXedjgn2KBaqnqHSKM=
+ s=default; t=1559395024;
+ bh=NHp4Zus6V4JDtlhyZgmwXxF/CbFxoMXzr6qTYcrfCPI=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=fNUZChqcrX7RYjqW3ujH5RAmPbu1pel6gD8tgdY/QkGbjGwWIytXBtiod+Xf0Yfb9
+ Ip4Ypidz1vhoy0vVjBBMs70b+l/i1chrFzEQIOkkoJVLFzOCT2dPSxwm8RgUDNd/PD
+ 0c/aD1dYfIONqXL+CWThXyo0LA0a4SRhBEU6wBtQ=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.1 001/186] media: rockchip/vpu: Fix/re-order
- probe-error/remove path
-Date: Sat,  1 Jun 2019 09:13:37 -0400
-Message-Id: <20190601131653.24205-1-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.1 002/186] media: rockchip/vpu: Add missing
+ dont_use_autosuspend() calls
+Date: Sat,  1 Jun 2019 09:13:38 -0400
+Message-Id: <20190601131653.24205-2-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190601131653.24205-1-sashal@kernel.org>
+References: <20190601131653.24205-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190601_061659_309122_F4EE2F2D 
-X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-CacheID: sfid-20190601_061704_572543_51F1B1F0 
+X-CRM114-Status: UNSURE (   9.19  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -93,12 +95,11 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Jonas Karlman <jonas@kwiboo.se>
 
-[ Upstream commit fc8670d1f72b746ff3a5fe441f1fca4c4dba0e6f ]
+[ Upstream commit 5c5b90f5cbad77dc15d8b5582efdb2e362bcd710 ]
 
-media_device_cleanup() and v4l2_m2m_unregister_media_controller() were
-missing in the probe error path.
-While at it, re-order calls in the remove path to unregister/cleanup
-things in the reverse order they were initialized/registered.
+Those calls are needed to restore a clean PM state when the probe fails
+or when the driver is unloaded such that future ->probe() calls can
+initialize runtime PM again.
 
 Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
 Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
@@ -106,43 +107,29 @@ Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
 Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/staging/media/rockchip/vpu/rockchip_vpu_drv.c | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
+ drivers/staging/media/rockchip/vpu/rockchip_vpu_drv.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/staging/media/rockchip/vpu/rockchip_vpu_drv.c b/drivers/staging/media/rockchip/vpu/rockchip_vpu_drv.c
-index 962412c79b917..33b556b3f0df8 100644
+index 33b556b3f0df8..d489b5dd54d7a 100644
 --- a/drivers/staging/media/rockchip/vpu/rockchip_vpu_drv.c
 +++ b/drivers/staging/media/rockchip/vpu/rockchip_vpu_drv.c
-@@ -481,10 +481,12 @@ static int rockchip_vpu_probe(struct platform_device *pdev)
- 	return 0;
- err_video_dev_unreg:
- 	if (vpu->vfd_enc) {
-+		v4l2_m2m_unregister_media_controller(vpu->m2m_dev);
- 		video_unregister_device(vpu->vfd_enc);
- 		video_device_release(vpu->vfd_enc);
- 	}
- err_m2m_rel:
-+	media_device_cleanup(&vpu->mdev);
- 	v4l2_m2m_release(vpu->m2m_dev);
- err_v4l2_unreg:
+@@ -492,6 +492,7 @@ static int rockchip_vpu_probe(struct platform_device *pdev)
  	v4l2_device_unregister(&vpu->v4l2_dev);
-@@ -501,13 +503,13 @@ static int rockchip_vpu_remove(struct platform_device *pdev)
- 	v4l2_info(&vpu->v4l2_dev, "Removing %s\n", pdev->name);
- 
- 	media_device_unregister(&vpu->mdev);
--	v4l2_m2m_unregister_media_controller(vpu->m2m_dev);
--	v4l2_m2m_release(vpu->m2m_dev);
--	media_device_cleanup(&vpu->mdev);
- 	if (vpu->vfd_enc) {
-+		v4l2_m2m_unregister_media_controller(vpu->m2m_dev);
- 		video_unregister_device(vpu->vfd_enc);
- 		video_device_release(vpu->vfd_enc);
- 	}
-+	media_device_cleanup(&vpu->mdev);
-+	v4l2_m2m_release(vpu->m2m_dev);
+ err_clk_unprepare:
+ 	clk_bulk_unprepare(vpu->variant->num_clocks, vpu->clocks);
++	pm_runtime_dont_use_autosuspend(vpu->dev);
+ 	pm_runtime_disable(vpu->dev);
+ 	return ret;
+ }
+@@ -512,6 +513,7 @@ static int rockchip_vpu_remove(struct platform_device *pdev)
+ 	v4l2_m2m_release(vpu->m2m_dev);
  	v4l2_device_unregister(&vpu->v4l2_dev);
  	clk_bulk_unprepare(vpu->variant->num_clocks, vpu->clocks);
++	pm_runtime_dont_use_autosuspend(vpu->dev);
  	pm_runtime_disable(vpu->dev);
+ 	return 0;
+ }
 -- 
 2.20.1
 
