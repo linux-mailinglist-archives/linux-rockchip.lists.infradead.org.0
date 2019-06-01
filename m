@@ -2,93 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7299D31604
-	for <lists+linux-rockchip@lfdr.de>; Fri, 31 May 2019 22:19:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1BEA31911
+	for <lists+linux-rockchip@lfdr.de>; Sat,  1 Jun 2019 04:39:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CMeyk5zGZfqeN96tt5i3PtIvHjaZ+t70RhwVs9CgKxw=; b=n3akGa8tXY+C2W
-	DVh1n3C6M0AVpoZoNPdsBb4pY+Vr8lAidMTtE6DWIB2A6mXCiBLTZD/9Axb+YE5FBiTsKVQvJoesA
-	nHmhdaUPj5spH8C3XEoxBHGl6bRoSTajv7cEY+lsEQCy2cICoZUwVMrpKgdX9uEjsiQObqqyehNle
-	QznSxEhUx/bHTuaIuGuqMWsXAo6VSTwSBFgMXXuBbup/BQ4Xu0PfWUzJTlK5ltG/DpIwQsQN4yWBG
-	HjMJBKfvYnibXkzzitWYPM2T0zIq+aboIYQa7ehEr25RzsKj2Yo0NUzXoI50mQTgAEvIgsvHzSqt9
-	wT4xfvEQWosoRGR7qivg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pMvOzLeAO6vLtBUUz7IBKouwRn4FFOcpdyibJvUxQNw=; b=JT2sFjReYjznms
+	ChVYhwXaUWxQ/cs9Hjzx1Tfq7J6t8fa5Q3o8u5z85AxyulPPemtHaCFHQbCG4TYJfrcPl+fLEcRAJ
+	lquf8mMKo4mbrc6cwdx7Ffb+9YdYxiVvBbKInVoHtTcrbNZSIscsG/1RQuzmAnXOC2UjGg8RG0wE6
+	w0/1l8Gie6T7DKTFvAJf7MIO+XtaJjF/5CzOt7fgz8z1JVLBZ/1UmdA5JvpfPbeUlqYopcrbNUbl4
+	dL1QKJQTmkofyWLh1PbxSW9k9/ifSRud7m3cFeXo8FJuvYaGVgguoxDzB1jjlINMNOJ8j0JEP15Eq
+	tgfGYjcB2D272PZY67OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWnzv-0005FD-UW; Fri, 31 May 2019 20:19:31 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hWtvd-0003VY-8K; Sat, 01 Jun 2019 02:39:29 +0000
+Received: from regular1.263xmail.com ([211.150.70.197])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWnzm-00058O-JA; Fri, 31 May 2019 20:19:24 +0000
-Received: by mail-pl1-x641.google.com with SMTP id g69so4435625plb.7;
- Fri, 31 May 2019 13:19:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=KHXPz3bmXRLX7mBl1qQo7PINranTFtOG3PdQWBgTOjU=;
- b=a0WjSdiLPggj9E3E7xXCRM/5laD1Sw++NUkYtQzHWZdn9aw3TdUfdHoMtk3plE52kE
- zMRGyvNLZS3CcPo5HD9vJcXnxp89GfGTotKaG9tISjVp8r1DTl2umuT96gRiMzpFEEU+
- 8P3fj2xp47B3N8GQxzFuxcD2nd1XrGvsuRI85nX1lzcLi6AzWzzZRKryCQHfglMToY40
- HGTN3P7vh6LeQEvsB4lUCgipJqjL16o4H1YMkF4QUD00pC6+GnnXz8Ce17Qtt+5iKJ7L
- WxYe5SwXejZnhtSGfBMKIoKlNOyL7K/bf1gK9WSXgUXpcmw6xHG/4hUmXFJ4WP75ajWo
- 8JVQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=KHXPz3bmXRLX7mBl1qQo7PINranTFtOG3PdQWBgTOjU=;
- b=qUEYzZJ7XRv1rWKuAJIQlXUil+7RR3PICjUUKaxzxiWB807GpwX+tEBNANwrS81b8f
- cqca+MqASTdPN6zkobbDKo5FnQlU86rVmt7RiTXDLz9R9AEBvF4T6QC0ZRSJ8+2uv8v/
- /hQbdNZajQCphMa1mK1ZGgcS75Tylbk71T3N/TzSr0PpENmU3NQvuBKOODwwSu4bTdgr
- OXix8fm39Ks7DJ17h++NbVtYnDQgjTi5JH4THeBvNg/H15oyeLB+Vs1CCg8qEvo3o9Xp
- hTkcmM0x1kbSegMKHNkplkKC8Tk4KihqTVylsQ5BRAd9zT/LDeXtRnl0TqRNREySENbo
- tRBw==
-X-Gm-Message-State: APjAAAW7J+Lr8trIQHVxBCSj1VNqzaEvMFM4xjD36gSqVt/Gau1SVq1t
- IfeXDHhY35S56vjE0uTVQm4=
-X-Google-Smtp-Source: APXvYqx5vljHHiOIRFhCMYdS3kAzR4Rv1/1+nmNLeBVQtZibd3Bh1eOQllGPzSyNezBbnOOE4+G+Yw==
-X-Received: by 2002:a17:902:a405:: with SMTP id
- p5mr11115959plq.51.1559333961553; 
- Fri, 31 May 2019 13:19:21 -0700 (PDT)
-Received: from localhost.localdomain ([45.114.62.35])
- by smtp.gmail.com with ESMTPSA id j20sm4408050pff.183.2019.05.31.13.19.18
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 31 May 2019 13:19:21 -0700 (PDT)
-From: Anand Moon <linux.amoon@gmail.com>
-To: Rob Herring <robh+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Vicente Bergas <vicencb@gmail.com>, Jagan Teki <jagan@amarulasolutions.com>
-Subject: [PATCH v2] arm64: dts: rockchip: Add missing configuration pwr amd
- rst for PCIe
-Date: Fri, 31 May 2019 20:19:13 +0000
-Message-Id: <20190531201913.1122-1-linux.amoon@gmail.com>
-X-Mailer: git-send-email 2.21.0
+ id 1hWtvZ-0003Uv-KD
+ for linux-rockchip@lists.infradead.org; Sat, 01 Jun 2019 02:39:27 +0000
+Received: from kever.yang?rock-chips.com (unknown [192.168.167.235])
+ by regular1.263xmail.com (Postfix) with ESMTP id BAE895E2;
+ Sat,  1 Jun 2019 10:39:15 +0800 (CST)
+X-263anti-spam: KSV:0;BIG:0;
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-KSVirus-check: 0
+X-ADDR-CHECKED4: 1
+X-ABS-CHECKED: 1
+X-SKE-CHECKED: 1
+X-ANTISPAM-LEVEL: 2
+Received: from [172.16.12.214] (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P19792T140535949944576S1559356754247127_; 
+ Sat, 01 Jun 2019 10:39:14 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <ec8b4e61703c4db120ceded1b88a5e58>
+X-RL-SENDER: kever.yang@rock-chips.com
+X-SENDER: yk@rock-chips.com
+X-LOGIN-NAME: kever.yang@rock-chips.com
+X-FST-TO: u-boot@lists.denx.de
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+Subject: Re: [PATCH 2/3] rk3399: nanopi4: Enable TPL
+From: Kever Yang <kever.yang@rock-chips.com>
+To: Jagan Teki <jagan@amarulasolutions.com>, Simon Glass <sjg@chromium.org>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
+References: <20190509105746.24830-1-jagan@amarulasolutions.com>
+ <20190509105746.24830-2-jagan@amarulasolutions.com>
+ <a7a1c1ce-c7c4-dca3-36c3-336785a13b8f@rock-chips.com>
+Message-ID: <3b0aa147-8a63-302a-b102-b6e4fd72d04d@rock-chips.com>
+Date: Sat, 1 Jun 2019 10:39:14 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.6.0
 MIME-Version: 1.0
+In-Reply-To: <a7a1c1ce-c7c4-dca3-36c3-336785a13b8f@rock-chips.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_131922_632978_791944A4 
-X-CRM114-Status: GOOD (  13.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190531_193925_975492_E8332E74 
+X-CRM114-Status: GOOD (  12.80  )
+X-Spam-Score: 2.3 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (linux.amoon[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -101,105 +86,122 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
+Cc: linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
+ u-boot@lists.denx.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This patch add missing PCIe gpio pin (#PCIE_PWR) for vcc3v3_pcie power
-regulator node also add missing reset pinctrl (#PCIE_PERST_L) for PCIe node.
 
-Signed-off-by: Anand Moon <linux.amoon@gmail.com>
----
-using schematics: thanks for suggested by Manivannan
-[1] https://dl.vamrs.com/products/rock960/docs/hw/rock960_sch_v12_20180314.pdf
 
-Changes from prevoius patch:
-[2] https://patchwork.kernel.org/patch/10968695/
+On 05/29/2019 04:02 PM, Kever Yang wrote:
+> Hi Jagan,
+>
+>
+> On 05/09/2019 06:57 PM, Jagan Teki wrote:
+>> Enable TPL for NanoPC T4, NanoPI M4 boards.
+>>
+>> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+>
+> Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
 
-Fix the suject and commit message and corrected the PWR and PERST configuration
-as per shematics and dts nodes.
----
- arch/arm64/boot/dts/rockchip/rk3399-ficus.dts    | 7 +++++++
- arch/arm64/boot/dts/rockchip/rk3399-rock960.dts  | 7 +++++++
- arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi | 3 +--
- 3 files changed, 15 insertions(+), 2 deletions(-)
+Applied to u-boot-rockchip/master, thanks!
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts b/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-index 6b059bd7a04f..94e2a59bc1c7 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-@@ -89,6 +89,8 @@
- 
- &pcie0 {
- 	ep-gpios = <&gpio4 RK_PD4 GPIO_ACTIVE_HIGH>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie_clkreqn_cpm &pcie_perst_l>;
- };
- 
- &pinctrl {
-@@ -104,6 +106,11 @@
- 			rockchip,pins =
- 				<1 RK_PD0 RK_FUNC_GPIO &pcfg_pull_none>;
- 			};
-+
-+		pcie_perst_l: pcie-perst-l {
-+			rockchip,pins =
-+				<4 RK_PD4 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
- 	};
- 
- 	usb2 {
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dts b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dts
-index 12285c51cceb..665fe09c7c74 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dts
-@@ -64,6 +64,8 @@
- 
- &pcie0 {
- 	ep-gpios = <&gpio2 RK_PA2 GPIO_ACTIVE_HIGH>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie_clkreqn_cpm &pcie_perst_l>;
- };
- 
- &pinctrl {
-@@ -104,6 +106,11 @@
- 			rockchip,pins =
- 				<2 RK_PA5 RK_FUNC_GPIO &pcfg_pull_none>;
- 			};
-+
-+		pcie_perst_l: pcie-perst-l {
-+			rockchip,pins =
-+				<2 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
- 	};
- 
- 	usb2 {
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
-index c7d48d41e184..3df0cd67b4b2 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
-@@ -55,6 +55,7 @@
- 
- 	vcc3v3_pcie: vcc3v3-pcie-regulator {
- 		compatible = "regulator-fixed";
-+		gpio = <&gpio2 RK_PA5 GPIO_ACTIVE_HIGH>;
- 		enable-active-high;
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&pcie_drv>;
-@@ -382,8 +383,6 @@
- 
- &pcie0 {
- 	num-lanes = <4>;
--	pinctrl-names = "default";
--	pinctrl-0 = <&pcie_clkreqn_cpm>;
- 	vpcie3v3-supply = <&vcc3v3_pcie>;
- 	status = "okay";
- };
--- 
-2.21.0
+>
+> Thanks,
+> - Kever
+>> ---
+>>  configs/nanopc-t4-rk3399_defconfig | 7 ++++---
+>>  configs/nanopi-m4-rk3399_defconfig | 7 ++++---
+>>  2 files changed, 8 insertions(+), 6 deletions(-)
+>>
+>> diff --git a/configs/nanopc-t4-rk3399_defconfig b/configs/nanopc-t4-rk3399_defconfig
+>> index d9f2137b4c..9b7e15d63a 100644
+>> --- a/configs/nanopc-t4-rk3399_defconfig
+>> +++ b/configs/nanopc-t4-rk3399_defconfig
+>> @@ -5,7 +5,7 @@ CONFIG_SPL_LIBCOMMON_SUPPORT=y
+>>  CONFIG_SPL_LIBGENERIC_SUPPORT=y
+>>  CONFIG_SYS_MALLOC_F_LEN=0x4000
+>>  CONFIG_ROCKCHIP_RK3399=y
+>> -CONFIG_ROCKCHIP_SPL_RESERVE_IRAM=0x4000
+>> +CONFIG_ROCKCHIP_SPL_RESERVE_IRAM=0x50000
+>>  CONFIG_DEBUG_UART_BASE=0xFF1A0000
+>>  CONFIG_DEBUG_UART_CLOCK=24000000
+>>  CONFIG_SPL_STACK_R_ADDR=0x80000
+>> @@ -14,9 +14,8 @@ CONFIG_NR_DRAM_BANKS=1
+>>  CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-nanopc-t4.dtb"
+>>  # CONFIG_DISPLAY_CPUINFO is not set
+>>  CONFIG_DISPLAY_BOARDINFO_LATE=y
+>> -CONFIG_SPL_TEXT_BASE=0xff8c2000
+>>  CONFIG_SPL_STACK_R=y
+>> -CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x4000
+>> +CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000
+>>  CONFIG_CMD_BOOTZ=y
+>>  CONFIG_CMD_GPT=y
+>>  CONFIG_CMD_MMC=y
+>> @@ -24,6 +23,7 @@ CONFIG_CMD_SF=y
+>>  CONFIG_CMD_USB=y
+>>  # CONFIG_CMD_SETEXPR is not set
+>>  CONFIG_CMD_TIME=y
+>> +CONFIG_TPL=y
+>>  CONFIG_SPL_OF_CONTROL=y
+>>  CONFIG_DEFAULT_DEVICE_TREE="rk3399-nanopc-t4"
+>>  CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
+>> @@ -56,4 +56,5 @@ CONFIG_USB_ETHER_MCS7830=y
+>>  CONFIG_USB_ETHER_RTL8152=y
+>>  CONFIG_USB_ETHER_SMSC95XX=y
+>>  CONFIG_USE_TINY_PRINTF=y
+>> +CONFIG_SPL_TINY_MEMSET=y
+>>  CONFIG_ERRNO_STR=y
+>> diff --git a/configs/nanopi-m4-rk3399_defconfig b/configs/nanopi-m4-rk3399_defconfig
+>> index c2832788f0..92e70dd939 100644
+>> --- a/configs/nanopi-m4-rk3399_defconfig
+>> +++ b/configs/nanopi-m4-rk3399_defconfig
+>> @@ -5,7 +5,7 @@ CONFIG_SPL_LIBCOMMON_SUPPORT=y
+>>  CONFIG_SPL_LIBGENERIC_SUPPORT=y
+>>  CONFIG_SYS_MALLOC_F_LEN=0x4000
+>>  CONFIG_ROCKCHIP_RK3399=y
+>> -CONFIG_ROCKCHIP_SPL_RESERVE_IRAM=0x4000
+>> +CONFIG_ROCKCHIP_SPL_RESERVE_IRAM=0x50000
+>>  CONFIG_DEBUG_UART_BASE=0xFF1A0000
+>>  CONFIG_DEBUG_UART_CLOCK=24000000
+>>  CONFIG_SPL_STACK_R_ADDR=0x80000
+>> @@ -14,9 +14,8 @@ CONFIG_NR_DRAM_BANKS=1
+>>  CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-nanopi-m4.dtb"
+>>  # CONFIG_DISPLAY_CPUINFO is not set
+>>  CONFIG_DISPLAY_BOARDINFO_LATE=y
+>> -CONFIG_SPL_TEXT_BASE=0xff8c2000
+>>  CONFIG_SPL_STACK_R=y
+>> -CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x4000
+>> +CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000
+>>  CONFIG_CMD_BOOTZ=y
+>>  CONFIG_CMD_GPT=y
+>>  CONFIG_CMD_MMC=y
+>> @@ -24,6 +23,7 @@ CONFIG_CMD_SF=y
+>>  CONFIG_CMD_USB=y
+>>  # CONFIG_CMD_SETEXPR is not set
+>>  CONFIG_CMD_TIME=y
+>> +CONFIG_TPL=y
+>>  CONFIG_SPL_OF_CONTROL=y
+>>  CONFIG_DEFAULT_DEVICE_TREE="rk3399-nanopi-m4"
+>>  CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
+>> @@ -56,4 +56,5 @@ CONFIG_USB_ETHER_MCS7830=y
+>>  CONFIG_USB_ETHER_RTL8152=y
+>>  CONFIG_USB_ETHER_SMSC95XX=y
+>>  CONFIG_USE_TINY_PRINTF=y
+>> +CONFIG_SPL_TINY_MEMSET=y
+>>  CONFIG_ERRNO_STR=y
+>
+>
+>
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+>
+
+
 
 
 _______________________________________________
