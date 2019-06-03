@@ -2,86 +2,101 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 958F4327B9
-	for <lists+linux-rockchip@lfdr.de>; Mon,  3 Jun 2019 06:34:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BC5F327D8
+	for <lists+linux-rockchip@lfdr.de>; Mon,  3 Jun 2019 06:53:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fvxZWBQbN4pPaICkzIFx6I2GGKpOD9sXtHP9yjQVe64=; b=WMCg99mwZLuJ+7
-	uN5MDfW+9a6MKuvB3K3hUuwEugFXG3m8GYXAj4dnjqTd6aQZa8hZi6afbvU1oSagQ9c0PN+0Q+rs1
-	MW5o2i4fsx+m386R2ML3c6L4g0XJVTMMIDxFX8tnCzFWjIXJkwQNEgH2dbxRF/3SswDfXqZp8+xBJ
-	xo5T9ETxXym0csSADdIQ6ACCOReNtYvK6s/LQAyuNonQnh1YuCcF7Uzz6hNdfW+sQjY9v/T/dcfWo
-	6sVvmQqNKRhT0fJTeY4sSRPG8e04On3XQj43vm5OaNv07BWEoF7EMps1z5HCRQOOyHbBjY0RT/MNc
-	kMtrqwk5VaSuk9p30mHA==;
+	List-Owner; bh=1yJ+icT1j+QpUpWLsbFnIeSDvzxTiC20IuVmouAAIFg=; b=a/foeAeADgA8d3
+	UgtcFMKrC7zPYMk9PbJGN1gxBKy+Ez8VCptp8IZrTLO+EG4ApGkzuqvqeEyAlvu5tQpfDxjVNKbVU
+	d3VIU5uDByd+c9febG34Wv+y0K0ol5uEe+TopzBBuK+pOmWz81kTyNBwNDS8EHzQcjIeehRW/tt8a
+	t/3R06B0qKqubkQ1QOYQ5fqO0WPHrkoxVeTI1CJ/GuMYJeWqjrtpVySg8llSZlESqJKs8WfluXy95
+	ljaMmM097VL2uHOZmFIwS2+w7WLVuOJ1eI6mY8rmpLW2kMEfqZSFGgB0gTVGp9+msUVUQvzQ9hXts
+	C6LFBzEiUxgEEDdELfVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXegD-00043G-4p; Mon, 03 Jun 2019 04:34:41 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hXeyR-0002dd-Fj; Mon, 03 Jun 2019 04:53:31 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXefd-00035t-92
- for linux-rockchip@lists.infradead.org; Mon, 03 Jun 2019 04:34:35 +0000
-Received: by mail-pl1-x643.google.com with SMTP id s24so6316860plr.8
- for <linux-rockchip@lists.infradead.org>; Sun, 02 Jun 2019 21:34:05 -0700 (PDT)
+ id 1hXeyN-0002RD-7j
+ for linux-rockchip@bombadil.infradead.org; Mon, 03 Jun 2019 04:53:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=b/qy0C/+qIVS4p/9C8coL0gczc7xGffHcCTpl84Pnik=; b=QD8+gPI9etENy06tSbFrb7SFsA
+ eM65r0ttgw/zlEnmUZW9PDf9aXuqSvwlPYDXVzMw/hPkxg7VXFieEycC+KCHLHRPWnPegLVA5rUp7
+ cMF8I/Y+tPXeBI9zVpuNHKRQdtMovFIcl9JHRfa5GEV3MYADeVkwjFiiosoUp2Bh3xNO86RVdaNZF
+ akHKyi1CtEjc1R7MKhZgKGp1GFvFRlVapetIiTgObJx2P+8Ynyt3QgLtWJOLd/B6a6kiN6mg2B9f3
+ B1gWhNGa1Png5pUCg0TM1gGCknBbN1Q4RhY/uhjo5t46dU/BmJcnsw2VvvJTDyZfbqa4K9Pnhi+b1
+ FPGPaZXA==;
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+ by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hXefl-0000yC-R0
+ for linux-rockchip@lists.infradead.org; Mon, 03 Jun 2019 04:34:15 +0000
+Received: by mail-pg1-x541.google.com with SMTP id w34so7495658pga.12
+ for <linux-rockchip@lists.infradead.org>; Sun, 02 Jun 2019 21:34:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Cjn+fe9pHSnglvx4T5q/xNRom5yt6XJeMvAMIuyqpGU=;
- b=Hfq6ax4j9v67eMl3jzhORUV9xlodMxfyEB5jUFylBnMvGjbup0xltWak92wPnYo8jT
- z0URgg2rd1r5wg+Oy3xrddVqdvePsxYBMv74zKntc+d+vjFpS0hNfzpdzd1s9AT5d4X1
- i8E4gAcDkyjhrEy5aOZTU8DXTpX6OpurnFU4Q=
+ bh=b/qy0C/+qIVS4p/9C8coL0gczc7xGffHcCTpl84Pnik=;
+ b=W0HFUAGEBlitH2BpXUVE7tLd15Ng5l2TZqjITWduI3EGWRg3JKMe0MjJis9TBvMp02
+ 4awA3xZDrtX56bGXOH5ZQ3oEimCGvzikfQPZANnHJau89l5kDDX0gPAAvlPieYi8kSIP
+ TwDl7/UAUwCplFr2sy8k4qBf+wMfpuYAoO41w=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Cjn+fe9pHSnglvx4T5q/xNRom5yt6XJeMvAMIuyqpGU=;
- b=g/yxivHl3X7d+iRR860R6j0QEK6sTku1HXHy9PfpYs/mYA+6CrfA/4BDDFosUqKFBt
- X/AL0xKx6t7Gvn4zJze9+F6otTlmkjqMI9pAHuW3iK6W3lsMBP3uJZ4vK2SFMPSe4/qZ
- PtUlvaqji+mAyLApa4GWZE2FR2P5Jlo3QlEo+kkLQG2m9sLuLFGXbRm5mlgJtX8oPkR4
- S0ygup6H1mRiMfBStK0ZCwvTucbW8y71Sga5njSdanAAH9TaxsjSeT0AzPfn/+9vH1lW
- ZqQzHXrZxnVeuL5a63uF1Y3l9KFPhtRt2UFu7iyE4lgY6ADLHLMvXypDbD5u462iLdu9
- SHAw==
-X-Gm-Message-State: APjAAAXIwb4D8uFMOBJ/2ol/49jMHx/uGUQ3BFSikUcFzimIMek/4Ank
- vsb6n5asJft1yQorHwuWxO295A==
-X-Google-Smtp-Source: APXvYqwtsOJ5Pc96EE50WIzahRr4M7P5Cn839A0uqq7pGgYj7JP4xpqAWFOhLexsz8HaBDU7wChTEA==
-X-Received: by 2002:a17:902:9885:: with SMTP id
- s5mr27565604plp.102.1559536444754; 
- Sun, 02 Jun 2019 21:34:04 -0700 (PDT)
+ bh=b/qy0C/+qIVS4p/9C8coL0gczc7xGffHcCTpl84Pnik=;
+ b=VWIJPNMG1JO/hcTENGAuKD19kvw9SvqjOrihrfRIwfX85Pv/4z/9XrcTNVqVTBasYA
+ t2gR4LgZyJayzTetBXLsTdYLtTyYhtZA6NiC4sN5qd2yxcKzG5Bo9fFzp3ZkpBFEkVP4
+ UOb1ad1zc17gSJ5bGWEBvWAoU9NS1rGV7/RT6hhtgwuC2qpwGh8IGnaCVsrM63VEv9tR
+ 9GpMjyIC7Mx2NOAgg0G/ArgOT5OOTWtAyUPMosoDgmQedMJTJo8gZKYLFPFEuO0JTkhM
+ N5UDcWhM0Cqmac+6+tEjYweiBJTwQj8KmCWP3+W5CBFwncD2XIbYeYIX+2p1ya2L+Ef8
+ CmCA==
+X-Gm-Message-State: APjAAAVxxTCylXlEWoFzfMkFRU48wN1lvFj9rpI4TlxNTssyHO3QRf5i
+ wStnZWztXMkcipQSlMKdIa0hxw==
+X-Google-Smtp-Source: APXvYqyNg+8OlIDr5Hr5hFnNgwXQAuI+ahu2SvEr6XII+hIpaqZoSlyKPzFn5UBfI4WiO1Ahj/0G/w==
+X-Received: by 2002:a62:6145:: with SMTP id v66mr28539820pfb.144.1559536451549; 
+ Sun, 02 Jun 2019 21:34:11 -0700 (PDT)
 Received: from localhost ([2401:fa00:1:b:e688:dfd2:a1a7:2956])
- by smtp.gmail.com with ESMTPSA id r64sm16094840pfr.58.2019.06.02.21.34.00
+ by smtp.gmail.com with ESMTPSA id e20sm11842630pfi.35.2019.06.02.21.34.07
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 02 Jun 2019 21:34:04 -0700 (PDT)
+ Sun, 02 Jun 2019 21:34:10 -0700 (PDT)
 From: Cheng-Yi Chiang <cychiang@chromium.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 6/7] ASoC: rockchip_max98090: Add HDMI jack support
-Date: Mon,  3 Jun 2019 12:32:50 +0800
-Message-Id: <20190603043251.226549-7-cychiang@chromium.org>
+Subject: [PATCH 7/7] ARM: dts: rockchip: Specify HDMI node to sound card node
+Date: Mon,  3 Jun 2019 12:32:51 +0800
+Message-Id: <20190603043251.226549-8-cychiang@chromium.org>
 X-Mailer: git-send-email 2.22.0.rc1.257.g3120a18244-goog
 In-Reply-To: <20190603043251.226549-1-cychiang@chromium.org>
 References: <20190603043251.226549-1-cychiang@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190602_213405_646790_F3E40684 
-X-CRM114-Status: GOOD (  13.24  )
+X-CRM114-CacheID: sfid-20190603_053413_969597_B4745FE3 
+X-CRM114-Status: GOOD (  11.57  )
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -114,100 +129,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-In machine driver, create a jack and let hdmi-codec report jack status.
+Sound card needs HDMI node in order to register jack callback on HDMI
+notifier.
 
 Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
 ---
- sound/soc/rockchip/rockchip_max98090.c | 41 ++++++++++++++++++++++++++
- 1 file changed, 41 insertions(+)
+ arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/sound/soc/rockchip/rockchip_max98090.c b/sound/soc/rockchip/rockchip_max98090.c
-index 2dd247670c7a..17c50d9fbac1 100644
---- a/sound/soc/rockchip/rockchip_max98090.c
-+++ b/sound/soc/rockchip/rockchip_max98090.c
-@@ -18,6 +18,7 @@
-  */
- 
- #include <linux/module.h>
-+#include <linux/of_platform.h>
- #include <linux/platform_device.h>
- #include <linux/slab.h>
- #include <linux/gpio.h>
-@@ -27,6 +28,7 @@
- #include <sound/pcm.h>
- #include <sound/pcm_params.h>
- #include <sound/soc.h>
-+#include <sound/hdmi-codec.h>
- 
- #include "rockchip_i2s.h"
- #include "../codecs/ts3a227e.h"
-@@ -131,6 +133,26 @@ enum {
- 	DAILINK_HDMI,
- };
- 
-+static struct snd_soc_jack rk_hdmi_jack;
-+
-+static int rk_hdmi_init(struct snd_soc_pcm_runtime *runtime)
-+{
-+	struct snd_soc_card *card = runtime->card;
-+	struct snd_soc_component *component = runtime->codec_dai->component;
-+	struct device *hdmi_dev = snd_soc_card_get_drvdata(card);
-+	int ret;
-+
-+	/* enable jack detection */
-+	ret = snd_soc_card_jack_new(card, "HDMI Jack", SND_JACK_LINEOUT,
-+				    &rk_hdmi_jack, NULL, 0);
-+	if (ret) {
-+		dev_err(card->dev, "Can't new HDMI Jack %d\n", ret);
-+		return ret;
-+	}
-+
-+	return hdmi_codec_set_jack_detect(component, &rk_hdmi_jack, hdmi_dev);
-+}
-+
- /* max98090 and HDMI codec dai_link */
- static struct snd_soc_dai_link rk_dailinks[] = {
- 	[DAILINK_MAX98090] = {
-@@ -148,6 +170,7 @@ static struct snd_soc_dai_link rk_dailinks[] = {
- 		.ops = &rk_aif1_ops,
- 		.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
- 			SND_SOC_DAIFMT_CBS_CFS,
-+		.init = rk_hdmi_init,
- 	}
- };
- 
-@@ -200,6 +223,8 @@ static int snd_rk_mc_probe(struct platform_device *pdev)
- 	struct device_node *np = pdev->dev.of_node;
- 	struct device_node *np_cpu;
- 	struct of_phandle_args args;
-+	struct device_node *np_hdmi;
-+	struct platform_device *hdmi_pdev;
- 
- 	/* register the soc card */
- 	card->dev = &pdev->dev;
-@@ -248,6 +273,22 @@ static int snd_rk_mc_probe(struct platform_device *pdev)
- 		return -EINVAL;
- 	}
- 
-+	/* The hdmi device handles HDMI hotplug detection */
-+	np_hdmi = of_parse_phandle(np, "rockchip,hdmi", 0);
-+	if (!np_hdmi) {
-+		dev_err(&pdev->dev, "Failed to find HDMI node\n");
-+		return -EINVAL;
-+	}
-+
-+	hdmi_pdev = of_find_device_by_node(np_hdmi);
-+	if (!hdmi_pdev) {
-+		dev_err(&pdev->dev, "Waiting for HDMI device %s\n",
-+			np_hdmi->full_name);
-+		return -EPROBE_DEFER;
-+	}
-+
-+	snd_soc_card_set_drvdata(card, &hdmi_pdev->dev);
-+
- 	ret = snd_soc_of_parse_card_name(card, "rockchip,model");
- 	if (ret) {
- 		dev_err(&pdev->dev,
+diff --git a/arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi b/arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi
+index 445270aa136e..096ba4e96db2 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi
++++ b/arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi
+@@ -14,6 +14,7 @@
+ 		rockchip,model = "VEYRON-I2S";
+ 		rockchip,i2s-controller = <&i2s>;
+ 		rockchip,audio-codec = <&max98090>;
++		rockchip,hdmi= <&hdmi>;
+ 		rockchip,hp-det-gpios = <&gpio6 RK_PA5 GPIO_ACTIVE_HIGH>;
+ 		rockchip,mic-det-gpios = <&gpio6 RK_PB3 GPIO_ACTIVE_LOW>;
+ 		rockchip,headset-codec = <&headsetcodec>;
 -- 
 2.22.0.rc1.257.g3120a18244-goog
 
