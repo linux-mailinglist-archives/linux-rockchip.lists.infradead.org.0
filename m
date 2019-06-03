@@ -2,76 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D999D32E83
-	for <lists+linux-rockchip@lfdr.de>; Mon,  3 Jun 2019 13:22:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF65E32EA2
+	for <lists+linux-rockchip@lfdr.de>; Mon,  3 Jun 2019 13:28:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nphOkUxegvzHnN/ntdRyptN7zib2JJJFAPFDBgO4Zlk=; b=PA0isU7jHRUGS9
-	SQzcfhnSV0FlLuxPTGX5PMvNTRtLkTw0B9QdhCUmStnq0fU3fdxLcdlK5WbBve5eaZQFXQaPVdS1l
-	clhCsMlmF+MVqKqgWmvVZEy1U2Cc5btMqEtRU13aRA/GS608RP7uyMrJJCCZs3Sh6QhTzTpEHDo+C
-	F2i7UkoJba+jZnAeLrKx230qD+B74x03FK8PMymPBffOcantSvun7FEKl9jEiMQxfxNn4vo+tHRbe
-	dUhIb0gJg//ec54HqonvkZviAy3rKBpmSOBR6kW5Juoc1U15lTIgBlTUzxC5h5kPld+mioRds0SvF
-	7kxXhIsgiEjCHYGwuzyw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1CSYciGm8McsGjKvWHkBKOGRLkLlvImP9Mky5fqdu+0=; b=FwoIFeG5AJ7bKL
+	noD4bP3ZwmAxmyMORZMZkMpKeFPVvWRfP2434QAPzxrbSf2zLmdqaoXGELa6SYS5NCYQX2uxOwkru
+	xNENYEwht2EpB6SFBZF9b+DJgW8ULAroVvNuhqfgg9SqXux39fbV3/X5hfrBtOCNOcilYXCoO4lOQ
+	1ge1Gb+aMmENIuR35isxPx5hNsPmGZGx/B/TOUuJrw4FvJlAD8vtt6ijR25BS+H4iLr7mOAH1WmU4
+	Y2NdSvCsaHGxICsANHN8jIjr7RvqSPRIzSEAG5b15NzM+quqwsRv4/VQwoTasu+f1hIpWplUsOziK
+	5WUo03KEGLLH5EjtmINg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXl2Q-0006dB-Vp; Mon, 03 Jun 2019 11:22:02 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1hXl8F-0000U4-3K; Mon, 03 Jun 2019 11:28:03 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXl2N-0006co-IN; Mon, 03 Jun 2019 11:22:01 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x53BLvO4103825;
- Mon, 3 Jun 2019 06:21:57 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1559560917;
- bh=2YhNwIo/l7wzWRuENxexmzy1sBuFHUF6M4OhGWZhKHk=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=u5Ozm140iDprwkX1UzkHx925k7VJNDiqRJNRhNvieaj5M96uC5sI++R47WHGxmQZI
- HmZYqqLR29A71GOw4j75zdPLA8lOFWZBEjswNo4ekHoNUjeaA/WdZOJs32KFOQrwxZ
- XIDZKGypdW3mhKGS4cq8vsh0kEd9FS40dmckYH/4=
-Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x53BLvq2041821
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 3 Jun 2019 06:21:57 -0500
-Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE113.ent.ti.com
- (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 3 Jun
- 2019 06:21:57 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 3 Jun 2019 06:21:57 -0500
-Received: from [172.24.190.233] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x53BLqLo075595;
- Mon, 3 Jun 2019 06:21:53 -0500
-Subject: Re: [PATCH] phy: rockchip-dp: Avoid power leak by leaving the PHY
- power on
-To: Caesar Wang <wxt@rock-chips.com>, Douglas Anderson <dianders@chromium.org>,
- Heiko Stuebner <heiko@sntech.de>
-References: <20190507234857.81414-1-dianders@chromium.org>
- <79ca5499-6b7d-fe55-2030-283f5cfb1d27@rock-chips.com>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <82480aa5-ab2e-11c5-8dd5-c395f72fc6e7@ti.com>
-Date: Mon, 3 Jun 2019 16:50:33 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hXl86-0000MB-K6
+ for linux-rockchip@lists.infradead.org; Mon, 03 Jun 2019 11:27:56 +0000
+Received: by mail-pg1-x544.google.com with SMTP id v11so8113251pgl.5
+ for <linux-rockchip@lists.infradead.org>; Mon, 03 Jun 2019 04:27:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=arista.com; s=googlenew;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=yge3w9rHbWgvobFZbFOeEgA2IlTICZ6Y6fbhlA0nby0=;
+ b=Y+yacQIvPCAiHgjTQHZU0FVoG9I2CbtFWh1hmP9jN5AY8VLFjiX+k6xtFzH0HNGzit
+ O8+HuDE7HRrRPCKpVtBjzFEjUib45UJWNrACrI5dtMn5dhL7BYlOQviAmeCacyysnT/n
+ Xvty8zwlPZ+u8dVb5gfg1+6bj4mdWhGmOj9ZV4LWheZdjBeBpOVrxXrNWXT+AbiGMNl2
+ Yu+vBF4TlQWGZi8Dq4zfPpETqkKfLGxVZb/314XRDJcA/hQwkyrur5b+hi4Dx4U2BziM
+ nnSr7BJ7sU2o9o3B6SunhLofFsrm83s3EU1wt5ZiCI98JrmP0w6INx6y8G5bvgNUiRxA
+ ZVIw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=yge3w9rHbWgvobFZbFOeEgA2IlTICZ6Y6fbhlA0nby0=;
+ b=dWV2zpe3DqJ79qcxE4RrY2LRmfPNA49dHTExgQpBndQ9MP8i1qYYvrUnjZEdQInGcc
+ LQVue2Kd9ZMNT8Bn0w5uHeyDIy0uugnCX1qDjbCfFhF5UeztUNUTRu9lPKjPIQkk+jEm
+ x93iyGNuHahMPX9P+VbVmEdwTe2+b15iPn2Lz0HWe+VaqIcunlpnmd4k/vSGUdqyT6eU
+ L/+WmBee0R6eZnGu7WkG77yiaVu4hWV4ruy/wm5h4vq4G6UGBDjZPzbvoY5aKnp4yN/L
+ Oqk/kAmxpti66KXqJDHGa3MJv/NDrcsJEZDaJJBbXgU5ZKMMXQXtGEEHwUih8Q6eHDy2
+ jVFQ==
+X-Gm-Message-State: APjAAAV9CdtGutn0UOlIVlqJN4GMnsl6Og3K6yUaeFxEhIKk6d7zCYpB
+ PrtcfhdFri6NsCmJHiuJJXKK8UY6alwylWhTjZOd0A==
+X-Google-Smtp-Source: APXvYqzSN6KszB00jgSY5jsJHGaLYRRvYWrgtbKYUHrE3f1JWTjJzTyKXde3mFVwC5OO8+m15yXDYPFToKa7arJ98wc=
+X-Received: by 2002:a62:4d03:: with SMTP id a3mr30832487pfb.2.1559561268802;
+ Mon, 03 Jun 2019 04:27:48 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <79ca5499-6b7d-fe55-2030-283f5cfb1d27@rock-chips.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <20190506185207.31069-1-tmurphy@arista.com>
+ <20190603105158.GL12745@8bytes.org>
+In-Reply-To: <20190603105158.GL12745@8bytes.org>
+From: Tom Murphy <tmurphy@arista.com>
+Date: Mon, 3 Jun 2019 12:27:37 +0100
+Message-ID: <CAPL0++72dekt=re1=sTWpCJtMX=mUOc3Jcq=9d1sr1QO25_zFA@mail.gmail.com>
+Subject: Re: [PATCH v3 0/4] iommu/amd: Convert the AMD iommu driver to the
+ dma-iommu api
+To: Joerg Roedel <joro@8bytes.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_042159_732592_368E2E4C 
-X-CRM114-Status: GOOD (  20.12  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190603_042754_664401_715090A7 
+X-CRM114-Status: GOOD (  16.94  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,84 +94,70 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Elaine Zhang <zhangqing@rock-chips.com>, hl@rock-chips.com,
- dbasehore@chromium.org, linux-kernel@vger.kernel.org,
- Huang Jiachai <hjc@rock-chips.com>, linux-rockchip@lists.infradead.org,
- "nickey.yang \(nickey.yang@rock-chips.com\)" <nickey.yang@rock-chips.com>,
- mka@chromium.org, ryandcase@chromium.org, groeck@chromium.org,
- wzz <wzz@rock-chips.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Heiko Stuebner <heiko@sntech.de>, Will Deacon <will.deacon@arm.com>,
+ David Brown <david.brown@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, linux-s390@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, iommu@lists.linux-foundation.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ linux-rockchip@lists.infradead.org, Kukjin Kim <kgene@kernel.org>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ Andy Gross <andy.gross@linaro.org>, linux-tegra@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Robin Murphy <robin.murphy@arm.com>,
+ linux-kernel@vger.kernel.org, Tom Murphy <murphyt7@tcd.ie>,
+ Rob Clark <robdclark@gmail.com>, David Woodhouse <dwmw2@infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGksCgpPbiAyMC8wNS8xOSAxOjM0IFBNLCBDYWVzYXIgV2FuZyB3cm90ZToKPiBIaSBEb3VnLAo+
-IAo+IEZvciBub3cswqAgbm9ib2R5IG9mIHJvY2tjaGlwIGlzIHJlc3BvbnNpYmxlIGZvciB0aGlz
-IGRyaXZlci4KPiBDYzogTmlja2V5LCBaYWluLCBIamMKPiAKPiAKPiBPbiA1LzgvMTkgNzo0OCBB
-TSwgRG91Z2xhcyBBbmRlcnNvbiB3cm90ZToKPj4gV2hpbGUgdGVzdGluZyBhIG5ld2VyIGtlcm5l
-bCBvbiByazMyODgtYmFzZWQgQ2hyb21lYm9va3MgSSBmb3VuZCB0aGF0Cj4+IHRoZSBwb3dlciBk
-cmF3IGluIHN1c3BlbmQgd2FzIGhpZ2hlciBvbiBuZXdlciBrZXJuZWxzIGNvbXBhcmVkIHRvIHRo
-ZQo+PiBkb3duc3RyZWFtIENocm9tZSBPUyAzLjE0IGtlcm5lbC7CoCBTcGVjaWZpY2FsbHkgdGhl
-IHBvd2VyIG9mIGFuCj4+IHJrMzI4OC12ZXlyb24tamVycnkgYm9hcmQgdGhhdCBJIHRlc3RlZCAo
-YXMgbWVhc3VyZWQgYnkgdGhlIHNtYXJ0Cj4+IGJhdHRlcnkpIHdhcyB+MTYgbUEgb24gQ2hyb21l
-IE9TIDMuMTQgYW5kIH4yMSBtQSBvbiBhIG5ld2VyIGtlcm5lbC4KPj4KPj4gSSB0cmFja2VkIHRo
-ZSByZWdyZXNzaW9uIGRvd24gdG8gdGhlIGZhY3QgdGhhdCB0aGUgIkRQIFBIWSIgZHJpdmVyCj4+
-IGRpZG4ndCBleGlzdCBpbiBvdXIgZG93bnN0cmVhbSAzLjE0LsKgIFdlIHJlbGllZCBvbiB0aGUg
-ZURQIGRyaXZlciB0bwo+PiB0dXJuIG9uIHRoZSBjbG9jayBhbmQgcmVsaWVkIG9uIHRoZSBmYWN0
-IHRoYXQgdGhlIHBvd2VyIGZvciB0aGUgUEhZCj4+IHdhcyBkZWZhdWx0IHR1cm5lZCBvbi4KPj4K
-Pj4gU3BlY2lmaWNhbGx5IHRoZSB0aGluZyB0aGF0IGNhdXNlZCB0aGUgcG93ZXIgcmVncmVzc2lv
-biB3YXMgdHVybmluZwo+PiB0aGUgZURQIFBIWSBfb2ZmXy7CoCBQcmVzdW1hYmx5IHRoZXJlIGlz
-IHNvbWUgc29ydCBvZiBwb3dlciBsZWFrIGluIHRoZQo+PiBzeXN0ZW0gYW5kIHdoZW4gd2UgdHVy
-biB0aGUgUEhZIG9mZiBzb21ldGhpbmcgaXMgbGVhY2hpbmcgcG93ZXIgZnJvbQo+PiBzb21ldGhp
-bmcgZWxzZSBhbmQgY2F1c2luZyBleGNlc3NpdmUgcG93ZXIgZHJhdy4KPj4KPj4gRG9pbmcgYSBz
-ZWFyY2ggdGhyb3VnaCBkZXZpY2UgdHJlZXMgc2hvd3MgdGhhdCB0aGlzIFBIWSBpcyBvbmx5IGV2
-ZXIKPj4gdXNlZCBvbiByazMyODguwqAgUHJlc3VtYWJseSB0aGlzIHBvd2VyIGxlYWsgaXMgcHJl
-c2VudCBvbiBhbGwKPj4gcmszMjg4LVNvQ3MgcnVubmluZyB1cHN0cmVhbSBMaW51eCBzbyBsZXQn
-cyBqdXN0IHdoYWNrIHRoZSBkcml2ZXIgdG8KPj4gbWFrZSBzdXJlIHdlIG5ldmVyIHR1cm4gb2Zm
-IHBvd2VyLsKgIFdlJ2xsIHN0aWxsIGxlYXZlIHRoZSBwYXJ0cyB0aGF0Cj4+IHR1cm4gX29uXyB0
-aGUgcG93ZXIgYW5kIGdyYWIgdGhlIGNsb2NrLCB0aG91Z2guCj4+Cj4+IE5PVEVTOgo+PiBBKSBJ
-ZiBzb21lb25lIGNhbiBpZGVudGlmeSB3aGF0IHRoaXMgcG93ZXIgbGVhayBpcyBhbmQgZml4IGl0
-IGluIHNvbWUKPj4gwqDCoMKgIG90aGVyIHdheSB3ZSBjYW4gcmV2ZXJ0IHRoaXMgcGF0Y2guCj4+
-IEIpIElmIHNvbWVvbmUgY2FuIHNob3cgdGhhdCB0aGVpciBwYXJ0aWN1bGFyIGJvYXJkIGRvZXNu
-J3QgaGF2ZSB0aGlzCj4+IMKgwqDCoCBwb3dlciBsZWFrIChtYXliZSB0aGV5IGhhdmUgcmFpbHMg
-aG9va2VkIHVwIGRpZmZlcmVudGx5Pykgd2UgY2FuCj4+IMKgwqDCoCBwZXJoYXBzIGFkZCBhIGRl
-dmljZSB0cmVlIHByb3BlcnR5IGluZGljYXRpbmcgdGhhdCBmb3Igc29tZSBib2FyZHMKPj4gwqDC
-oMKgIGl0J3MgT0sgdG8gdHVybiB0aGlzIHJhaWwgb2ZmLsKgIEkgZG9uJ3Qgd2FudCB0byBhZGQg
-dGhpcyBwcm9wZXJ0eQo+PiDCoMKgwqAgdW50aWwgSSBrbm93IG9mIGEgYm9hcmQgdGhhdCBuZWVk
-cyBpdC4KPj4KPj4gRml4ZXM6IGZkOTY4OTczZGU5NSAoInBoeTogQWRkIGRyaXZlciBmb3Igcm9j
-a2NoaXAgRGlzcGxheSBQb3J0IFBIWSIpCj4+IFNpZ25lZC1vZmYtYnk6IERvdWdsYXMgQW5kZXJz
-b24gPGRpYW5kZXJzQGNocm9taXVtLm9yZz4KPiAKPiAKPiBSZXZpZXdlZC1ieTogQ2Flc2FyIFdh
-bmcgPHd4dEByb2NrLWNoaXBzLmNvbT4KPiAKPj4gLS0tCj4+IEFzIGZhciBhcyBJIGtub3cgWWFr
-aXIgKHRoZSBvcmlnaW5hbCBhdXRob3IpIGlzIG5vIGxvbmdlciBhdCBSb2NrY2hpcC4KPj4gSSd2
-ZSBhZGRlZCBhIGZldyBvdGhlciBSb2NrY2hpcCBwZW9wbGUgYW5kIGhvcGVmdWxseSBvbmUgb2Yg
-dGhlbSBjYW4KPj4gaGVscCBkaXJlY3QgZXZlbiBpZiB0aGV5J3JlIG5vdCBkaXJlY3RseSByZXNw
-b25zaWJsZS4KPj4KPj4gwqAgZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLWRwLmMg
-fCAxMSArKysrKysrLS0tLQo+PiDCoCAxIGZpbGUgY2hhbmdlZCwgNyBpbnNlcnRpb25zKCspLCA0
-IGRlbGV0aW9ucygtKQo+Pgo+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5
-LXJvY2tjaGlwLWRwLmMKPj4gYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtZHAu
-Ywo+PiBpbmRleCA4YjI2N2E3NDY1NzYuLjEwYmJjZDY5ZDZmNSAxMDA2NDQKPj4gLS0tIGEvZHJp
-dmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLWRwLmMKPj4gKysrIGIvZHJpdmVycy9waHkv
-cm9ja2NoaXAvcGh5LXJvY2tjaGlwLWRwLmMKPj4gQEAgLTM1LDcgKzM1LDcgQEAgc3RydWN0IHJv
-Y2tjaGlwX2RwX3BoeSB7Cj4+IMKgIHN0YXRpYyBpbnQgcm9ja2NoaXBfc2V0X3BoeV9zdGF0ZShz
-dHJ1Y3QgcGh5ICpwaHksIGJvb2wgZW5hYmxlKQo+PiDCoCB7Cj4+IMKgwqDCoMKgwqAgc3RydWN0
-IHJvY2tjaGlwX2RwX3BoeSAqZHAgPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKPj4gLcKgwqDCoCBp
-bnQgcmV0Owo+PiArwqDCoMKgIGludCByZXQgPSAwOwo+PiDCoCDCoMKgwqDCoMKgIGlmIChlbmFi
-bGUpIHsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgIHJldCA9IHJlZ21hcF93cml0ZShkcC0+Z3JmLCBH
-UkZfU09DX0NPTjEyLAo+PiBAQCAtNTAsOSArNTAsMTIgQEAgc3RhdGljIGludCByb2NrY2hpcF9z
-ZXRfcGh5X3N0YXRlKHN0cnVjdCBwaHkgKnBoeSwgYm9vbAo+PiBlbmFibGUpCj4+IMKgwqDCoMKg
-wqAgfSBlbHNlIHsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgIGNsa19kaXNhYmxlX3VucHJlcGFyZShk
-cC0+cGh5XzI0bSk7Cj4+IMKgIC3CoMKgwqDCoMKgwqDCoCByZXQgPSByZWdtYXBfd3JpdGUoZHAt
-PmdyZiwgR1JGX1NPQ19DT04xMiwKPj4gLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoCBHUkZfRURQX1BIWV9TSUREUV9ISVdPUkRfTUFTSyB8Cj4+IC3CoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqAgR1JGX0VEUF9QSFlfU0lERFFfT0ZGKTsKPj4gK8KgwqDCoMKg
-wqDCoMKgIC8qCj4+ICvCoMKgwqDCoMKgwqDCoMKgICogSW50ZW50aW9uYWxseSBkb24ndCB0dXJu
-IFNJRERRIG9mZiB3aGVuIGRpc2FibGluZwo+PiArwqDCoMKgwqDCoMKgwqDCoCAqIHRoZSBQSFku
-wqAgVGhlcmUgaXMgYSBwb3dlciBsZWFrIG9uIHJrMzI4OCBhbmQKPj4gK8KgwqDCoMKgwqDCoMKg
-wqAgKiBzdXNwZW5kIHBvd2VyIF9pbmNyZWFzZXNfIGJ5IDUgbUEgaWYgeW91IHR1cm4gdGhpcwo+
-PiArwqDCoMKgwqDCoMKgwqDCoCAqIG9mZi4KPj4gK8KgwqDCoMKgwqDCoMKgwqAgKi8KCkNhbiBz
-b21lb25lIGluIFJvY2tjaGlwIHRyeSB0byBmaW5kIHRoZSByb290LWNhdXNlIG9mIHRoZSBpc3N1
-ZT8gS2VlcGluZyB0aGUKUEhZIG9mZiBzaG91bGRuJ3QgaW5jcmVhc2UgcG93ZXIgZHJhdy4KClRo
-YW5rcwpLaXNob24KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtcm9ja2NoaXAK
+On Mon, Jun 3, 2019 at 11:52 AM Joerg Roedel <joro@8bytes.org> wrote:
+>
+> Hi Tom,
+>
+> On Mon, May 06, 2019 at 07:52:02PM +0100, Tom Murphy wrote:
+> > Convert the AMD iommu driver to the dma-iommu api. Remove the iova
+> > handling and reserve region code from the AMD iommu driver.
+>
+> Thank you for your work on this! I appreciate that much, but I am not
+> sure we are ready to make that move for the AMD and Intel IOMMU drivers
+> yet.
+>
+> My main concern right now is that these changes will add a per-page
+> table lock into the fast-path for dma-mapping operations. There has been
+> much work in the past to remove all locking from these code-paths and
+> make it scalable on x86.
+
+Where is the locking introduced? intel doesn't use a lock in it's
+iommu_map function:
+https://github.com/torvalds/linux/blob/f2c7c76c5d0a443053e94adb9f0918fa2fb85c3a/drivers/iommu/intel-iommu.c#L5302
+because it cleverly uses cmpxchg64 to avoid using locks:
+https://github.com/torvalds/linux/blob/f2c7c76c5d0a443053e94adb9f0918fa2fb85c3a/drivers/iommu/intel-iommu.c#L900
+And the locking in AMD's iommu_map function can be removed (and i have
+removed it in my patch set) because it does that same thing as intel:
+https://github.com/torvalds/linux/blob/f2c7c76c5d0a443053e94adb9f0918fa2fb85c3a/drivers/iommu/amd_iommu.c#L1486
+
+Is there something I'm missing?
+
+>
+> The dma-ops implementations in the x86 IOMMU drivers have the benefit
+> that they can call their page-table manipulation functions directly and
+> without locks, because they can make the necessary assumptions. The
+> IOMMU-API mapping/unmapping path can't make these assumptions because it
+> is also used for non-DMA-API use-cases.
+>
+> So before we can move the AMD and Intel drivers to the generic DMA-API
+> implementation we need to solve this problem to not introduce new
+> scalability regressions.
+>
+> Regards,
+>
+>         Joerg
+>
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
