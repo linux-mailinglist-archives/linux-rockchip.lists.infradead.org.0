@@ -2,50 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 061FD335DD
-	for <lists+linux-rockchip@lfdr.de>; Mon,  3 Jun 2019 18:59:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A2B93362B
+	for <lists+linux-rockchip@lfdr.de>; Mon,  3 Jun 2019 19:10:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=avSzmiowNFDiF0/liU1Vn6Qm3MpkHjUGZCEFAcOLuK8=; b=nW0n7Kv9AfPqtd
-	J0ei1XYCwbVjQNrI5ww6nE45jBRWq5SzGDRVw6jZHACcydQLCqdPXF6f4xeVKFJFABlL256bT2nlV
-	xS2LHocI3PmfbdJ65K/rCqmoUiAao4YCbOR8aKY5xg3MkUPIBfGkG/JQDOj940dAbbqJ3crYOINUU
-	nkQwYJN4CPUSjHS3zbN0cptk3TwR7x8zrD4c1dEnwV5PdhTOztZFG1YiIfTNGiqXET6+2l8cJydps
-	kx9426pSAnsKjMNJBOFWeoK0TPHlHPSgq/0SZlDNE4UB5vfUZvJyaxmjSGcvG/FB/Gsa4AUY9Cgbq
-	6sncLeb5vSBXHr2/+u6w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JDB/wWVJOAuRmBMw0rV2BhC2yuPmzBu49wCliPYL+iQ=; b=iF0BDL70Rgko2Q
+	tZofSDH9GZ0KHtOCxB8EfFQABiw7Tk1APILiqPO+xRncDtOowbjikT1Yn2sD4bdkDm7cRsmquwImE
+	b9stJYIvnv+q7/QzQ/c4fHnmweIK5kx0GbaxLZkgQHNbzaMkrAi8/NbtfuFzT2jIMSD/4Pq0/xJp1
+	1jeR+EqNmVismAQRwc8AuMCoL5/TkR0aRi6E6VkgnlEG+0zzm0Z7duLmnEwj1qPWli2eoPYBML/ZT
+	YBymTe0crlCTYIqymR/Jzrr5KXwKRlVN0fNNdvVVGTLHfAr0/cjTKhPOwbKEa/K9CRT6JKhJklXar
+	5cAH/goUJzA1aItiJMMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXqJH-0005Ju-6M; Mon, 03 Jun 2019 16:59:47 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hXqTW-00032j-LE; Mon, 03 Jun 2019 17:10:22 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXqGc-0001nN-TR; Mon, 03 Jun 2019 16:57:48 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id 1DD31284FB7
-From: Helen Koike <helen.koike@collabora.com>
-To: dri-devel@lists.freedesktop.org,
-	nicholas.kazlauskas@amd.com
-Subject: [PATCH v4 5/5] drm: don't block fb changes for async plane updates
-Date: Mon,  3 Jun 2019 13:56:10 -0300
-Message-Id: <20190603165610.24614-6-helen.koike@collabora.com>
+ id 1hXqSk-0000uo-I2; Mon, 03 Jun 2019 17:09:37 +0000
+Received: from ip5f5a6320.dynamic.kabel-deutschland.de ([95.90.99.32]
+ helo=phil.fritz.box)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hXqSd-0004ZW-Vz; Mon, 03 Jun 2019 19:09:28 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: broonie@kernel.org,
+	lee.jones@linaro.org
+Subject: [PATCH v8 RESEND 0/5] support a new rk80x pmic-variants (rk817 and
+ rk809)
+Date: Mon,  3 Jun 2019 19:08:55 +0200
+Message-Id: <20190603170900.5195-1-heiko@sntech.de>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190603165610.24614-1-helen.koike@collabora.com>
-References: <20190603165610.24614-1-helen.koike@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_095703_884524_8F7D803A 
-X-CRM114-Status: GOOD (  18.69  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190603_100934_749017_C2B84851 
+X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -58,163 +59,93 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- Sean Paul <seanpaul@google.com>, David Airlie <airlied@linux.ie>,
- daniel.vetter@ffwll.ch, linux-kernel@vger.kernel.org, eric@anholt.net,
- kernel@collabora.com, Maxime Ripard <maxime.ripard@bootlin.com>,
- amd-gfx@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
- harry.wentland@amd.com, andrey.grodzovsky@amd.com,
- linux-arm-msm@vger.kernel.org,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Helen Koike <helen.koike@collabora.com>, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org,
- =?UTF-8?q?St=C3=A9phane=20Marchesin?= <marcheu@google.com>,
- Sandy Huang <hjc@rock-chips.com>, stable@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>, robdclark@gmail.com,
- boris.brezillon@collabora.com, Daniel Vetter <daniel@ffwll.ch>,
- freedreno@lists.freedesktop.org
+Cc: huangtao@rock-chips.com, Heiko Stuebner <heiko@sntech.de>,
+ zhangqing@rock-chips.com, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, tony.xie@rock-chips.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-In the case of a normal sync update, the preparation of framebuffers (be
-it calling drm_atomic_helper_prepare_planes() or doing setups with
-drm_framebuffer_get()) are performed in the new_state and the respective
-cleanups are performed in the old_state.
+I've picked up and rebased Tony's patch-series for rk809 and rk817.
+From the last iteration it looks like the regulator-portion did
+fall through the cracks, the other patches seem to be sufficiently
+reviewed/acked.
 
-In the case of async updates, the preparation is also done in the
-new_state but the cleanups are done in the new_state (because updates
-are performed in place, i.e. in the current state).
+The regulator-patch could either just be picked alone to the regulator-
+tree or with an Ack go through the mfd tree with the other patches.
 
-The current code blocks async udpates when the fb is changed, turning
-async updates into sync updates, slowing down cursor updates and
-introducing regressions in igt tests with errors of type:
 
-"CRITICAL: completed 97 cursor updated in a period of 30 flips, we
-expect to complete approximately 15360 updates, with the threshold set
-at 7680"
+Original cover-letter + changelog follows:
 
-Fb changes in async updates were prevented to avoid the following scenario:
+Most of functions and registers of the rk817 and rk808 are the same,
+so they can share allmost all codes.
 
-- Async update, oldfb = NULL, newfb = fb1, prepare fb1, cleanup fb1
-- Async update, oldfb = fb1, newfb = fb2, prepare fb2, cleanup fb2
-- Non-async commit, oldfb = fb2, newfb = fb1, prepare fb1, cleanup fb2 (wrong)
-Where we have a single call to prepare fb2 but double cleanup call to fb2.
+Their specifications are as follows:
+  1) The RK809 and RK809 consist of 5 DCDCs, 9 LDOs and have the same
+registers
+     for these components except dcdc5.
+  2) The dcdc5 is a boost dcdc for RK817 and is a buck for RK809.
+  3) The RK817 has one switch but The Rk809 has two.
 
-To solve the above problems, instead of blocking async fb changes, we
-place the old framebuffer in the new_state object, so when the code
-performs cleanups in the new_state it will cleanup the old_fb and we
-will have the following scenario instead:
+Changes in V2:
+1. initialize the pm_pwroff_fn to NULL.
+2. use EXPORT_SYMBOL_GPL to export pm_power_off_prepare.
+3. change patch 2/3/4/5 subjects.
 
-- Async update, oldfb = NULL, newfb = fb1, prepare fb1, no cleanup
-- Async update, oldfb = fb1, newfb = fb2, prepare fb2, cleanup fb1
-- Non-async commit, oldfb = fb2, newfb = fb1, prepare fb1, cleanup fb2
+Changes in V3
+1. change patch 4 subjects
+2. replace pr_ with dev_ for printing in patch 2
+3. modify switch1 and switch2 configs in patch 2
+4. explain gpio information for rk809 and rk817 in patch 4
 
-Where calls to prepare/cleanup are balanced.
+Changes in V4:
+1. modify some codes for patch 2 and patch 5 according to comments 
+2. add reviewer mail lists for patch 3 and 4
 
-Cc: <stable@vger.kernel.org> # v4.14+
-Fixes: 25dc194b34dd ("drm: Block fb changes for async plane updates")
-Suggested-by: Boris Brezillon <boris.brezillon@collabora.com>
-Signed-off-by: Helen Koike <helen.koike@collabora.com>
-Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
-Reviewed-by: Nicholas Kazlauskas <nicholas.kazlauskas@amd.com>
+Changes in V5:
+modify some codes for patch 1 according to reveiw comments for v3.
+ 1) remove the pm_power_off_prepare() and replace with shutdown
+call-back from syscore
+ 2) move the macro REGMAP_IRQ_M into the regmap.h and rename it
+REGMAP_IRQ_LINE
+ 3) make some dev_warn() log clear
 
----
+Changes in V6:
+modify some codes according to reveiw comments for v5.
 
-Changes in v4:
-- update docs in atomic_async_update callback
+Changes in V7:
+modify some codes for patch 2 according to reveiw comments.
 
-Changes in v3:
-- Add Reviewed-by tags
-- Add TODO in drm_atomic_helper_async_commit()
+Changes in V8:
+- [Heiko] rebase onto current mainline
+- [Heiko] add some tags from Lee so that he can keep track of what
+  he reviewed
 
-Changes in v2:
-- Change the order of the patch in the series, add this as the last one.
-- Add documentation
-- s/ballanced/balanced
+Changes in V8 RESEND:
+- none, just needs a regulator Ack
 
- drivers/gpu/drm/drm_atomic_helper.c      | 22 ++++++++++++----------
- include/drm/drm_modeset_helper_vtables.h |  8 ++++++++
- 2 files changed, 20 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/gpu/drm/drm_atomic_helper.c b/drivers/gpu/drm/drm_atomic_helper.c
-index acf993cb8e52..ac81d8440b40 100644
---- a/drivers/gpu/drm/drm_atomic_helper.c
-+++ b/drivers/gpu/drm/drm_atomic_helper.c
-@@ -1610,15 +1610,6 @@ int drm_atomic_helper_async_check(struct drm_device *dev,
- 	    old_plane_state->crtc != new_plane_state->crtc)
- 		return -EINVAL;
- 
--	/*
--	 * FIXME: Since prepare_fb and cleanup_fb are always called on
--	 * the new_plane_state for async updates we need to block framebuffer
--	 * changes. This prevents use of a fb that's been cleaned up and
--	 * double cleanups from occuring.
--	 */
--	if (old_plane_state->fb != new_plane_state->fb)
--		return -EINVAL;
--
- 	funcs = plane->helper_private;
- 	if (!funcs->atomic_async_update)
- 		return -EINVAL;
-@@ -1649,6 +1640,8 @@ EXPORT_SYMBOL(drm_atomic_helper_async_check);
-  * drm_atomic_async_check() succeeds. Async commits are not supposed to swap
-  * the states like normal sync commits, but just do in-place changes on the
-  * current state.
-+ *
-+ * TODO: Implement full swap instead of doing in-place changes.
-  */
- void drm_atomic_helper_async_commit(struct drm_device *dev,
- 				    struct drm_atomic_state *state)
-@@ -1659,6 +1652,9 @@ void drm_atomic_helper_async_commit(struct drm_device *dev,
- 	int i;
- 
- 	for_each_new_plane_in_state(state, plane, plane_state, i) {
-+		struct drm_framebuffer *new_fb = plane_state->fb;
-+		struct drm_framebuffer *old_fb = plane->state->fb;
-+
- 		funcs = plane->helper_private;
- 		funcs->atomic_async_update(plane, plane_state);
- 
-@@ -1667,11 +1663,17 @@ void drm_atomic_helper_async_commit(struct drm_device *dev,
- 		 * plane->state in-place, make sure at least common
- 		 * properties have been properly updated.
- 		 */
--		WARN_ON_ONCE(plane->state->fb != plane_state->fb);
-+		WARN_ON_ONCE(plane->state->fb != new_fb);
- 		WARN_ON_ONCE(plane->state->crtc_x != plane_state->crtc_x);
- 		WARN_ON_ONCE(plane->state->crtc_y != plane_state->crtc_y);
- 		WARN_ON_ONCE(plane->state->src_x != plane_state->src_x);
- 		WARN_ON_ONCE(plane->state->src_y != plane_state->src_y);
-+
-+		/*
-+		 * Make sure the FBs have been swapped so that cleanups in the
-+		 * new_state performs a cleanup in the old FB.
-+		 */
-+		WARN_ON_ONCE(plane_state->fb != old_fb);
- 	}
- }
- EXPORT_SYMBOL(drm_atomic_helper_async_commit);
-diff --git a/include/drm/drm_modeset_helper_vtables.h b/include/drm/drm_modeset_helper_vtables.h
-index f9c94c2a1364..f7bbd0b0ecd1 100644
---- a/include/drm/drm_modeset_helper_vtables.h
-+++ b/include/drm/drm_modeset_helper_vtables.h
-@@ -1185,6 +1185,14 @@ struct drm_plane_helper_funcs {
- 	 * current one with the new plane configurations in the new
- 	 * plane_state.
- 	 *
-+	 * Drivers should also swap the framebuffers between current plane
-+	 * state (&drm_plane.state) and new_state.
-+	 * This is required since cleanup for async commits is performed on
-+	 * the new state, rather than old state like for traditional commits.
-+	 * Since we want to give up the reference on the current (old) fb
-+	 * instead of our brand new one, swap them in the driver during the
-+	 * async commit.
-+	 *
- 	 * FIXME:
- 	 *  - It only works for single plane updates
- 	 *  - Async Pageflips are not supported yet
+Tony Xie (5):
+  mfd: rk808: Add RK817 and RK809 support
+  regulator: rk808: add RK809 and RK817 support.
+  dt-bindings: mfd: rk808: Add binding information for RK809 and RK817.
+  rtc: rk808: add RK809 and RK817 support.
+  clk: RK808: add RK809 and RK817 support.
+
+ .../devicetree/bindings/mfd/rk808.txt         |  44 ++
+ drivers/clk/Kconfig                           |   9 +-
+ drivers/clk/clk-rk808.c                       |  64 +-
+ drivers/mfd/Kconfig                           |   6 +-
+ drivers/mfd/rk808.c                           | 192 ++++-
+ drivers/regulator/Kconfig                     |   4 +-
+ drivers/regulator/rk808-regulator.c           | 657 +++++++++++++++++-
+ drivers/rtc/Kconfig                           |   4 +-
+ drivers/rtc/rtc-rk808.c                       |  68 +-
+ include/linux/mfd/rk808.h                     | 175 +++++
+ 10 files changed, 1165 insertions(+), 58 deletions(-)
+
 -- 
 2.20.1
 
