@@ -2,76 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED7F6327B7
-	for <lists+linux-rockchip@lfdr.de>; Mon,  3 Jun 2019 06:34:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 958F4327B9
+	for <lists+linux-rockchip@lfdr.de>; Mon,  3 Jun 2019 06:34:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qNLm3yJnXU/QKjNmR45IAvuYT0GoU3XjXJgP9ob4+5U=; b=pnlZDkCQ0JTptv
-	5NwOgR0OiBU0mQc9UmkfsL3dnsAkU/4L9tclm9NgXN3+n8779X/OgGlvbJnnSXBodcfD3G276K9ME
-	hFpGbrq7W28b7R4DCcdkC87ajztzbnFMQ16O0BMtOrAglJGUjJe+Q9qR8UaRLnBToJhRCCsSkP9H5
-	n88QI5wrGZYx5xdDcgOb98spbkNt5Is8/J7L0mgxDoC9TKwXUKRNDYipK9UgnT4P6TbWYCvdr8Nf9
-	5kU5qqIrQPRkBFBCZiKfHElEjSLo3pF/MJSXZHZYMgd1WrZ1+GYSYyfEnv9EYmKAU/kpiEjp2JXfG
-	Kk/VCAYIUeosdcSxHqsw==;
+	List-Owner; bh=fvxZWBQbN4pPaICkzIFx6I2GGKpOD9sXtHP9yjQVe64=; b=WMCg99mwZLuJ+7
+	uN5MDfW+9a6MKuvB3K3hUuwEugFXG3m8GYXAj4dnjqTd6aQZa8hZi6afbvU1oSagQ9c0PN+0Q+rs1
+	MW5o2i4fsx+m386R2ML3c6L4g0XJVTMMIDxFX8tnCzFWjIXJkwQNEgH2dbxRF/3SswDfXqZp8+xBJ
+	xo5T9ETxXym0csSADdIQ6ACCOReNtYvK6s/LQAyuNonQnh1YuCcF7Uzz6hNdfW+sQjY9v/T/dcfWo
+	6sVvmQqNKRhT0fJTeY4sSRPG8e04On3XQj43vm5OaNv07BWEoF7EMps1z5HCRQOOyHbBjY0RT/MNc
+	kMtrqwk5VaSuk9p30mHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXegA-0003yA-4U; Mon, 03 Jun 2019 04:34:38 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hXegD-00043G-4p; Mon, 03 Jun 2019 04:34:41 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXefX-0002uV-0j
- for linux-rockchip@lists.infradead.org; Mon, 03 Jun 2019 04:34:30 +0000
-Received: by mail-pg1-x544.google.com with SMTP id a3so119762pgb.3
- for <linux-rockchip@lists.infradead.org>; Sun, 02 Jun 2019 21:33:58 -0700 (PDT)
+ id 1hXefd-00035t-92
+ for linux-rockchip@lists.infradead.org; Mon, 03 Jun 2019 04:34:35 +0000
+Received: by mail-pl1-x643.google.com with SMTP id s24so6316860plr.8
+ for <linux-rockchip@lists.infradead.org>; Sun, 02 Jun 2019 21:34:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=3pFTY68CYf0vqkaIF9RkUPvim3fj+DjvxB3baTxp4Mk=;
- b=RQSvUzIgUKgIsNlQFm+7zwJeVC5MSGMQ7g3/DtHR16ldFiUtk0+JARXtgZwEjl9tbN
- 9hWW1p5DfY6fy/aBLs4Yymn5h3QUKDGbkoEPEt1I/+q7XpVzAK46qrqE/1RGqPuPtlv2
- oTdErhd/k+QH1OsnOMAFqzaVQi6I8u9i9UvY8=
+ bh=Cjn+fe9pHSnglvx4T5q/xNRom5yt6XJeMvAMIuyqpGU=;
+ b=Hfq6ax4j9v67eMl3jzhORUV9xlodMxfyEB5jUFylBnMvGjbup0xltWak92wPnYo8jT
+ z0URgg2rd1r5wg+Oy3xrddVqdvePsxYBMv74zKntc+d+vjFpS0hNfzpdzd1s9AT5d4X1
+ i8E4gAcDkyjhrEy5aOZTU8DXTpX6OpurnFU4Q=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=3pFTY68CYf0vqkaIF9RkUPvim3fj+DjvxB3baTxp4Mk=;
- b=ChofBCD772PW9X4XgjEriQEhpl3Gp35N6BIJycMzRIprjNKMc6R959JJbFEyI7VsuL
- TBtehhWStD3P0Jy2bEdhoIMUX+b/nTdQz+apIlOfAFvSQVNZkKdnCLPv+tcL9kXougIp
- e0VoOMO2yRhtDsDiLrvYkurapoCArLZWZCvyL5onBMbCgyHrkkL/PS5zsmi0QByF4qoq
- 95kshO2cRiQpDF7PoCZRgUGfCAa2gGmkEwfQSu/fJ86XCO7XVggiDBZATlTNH+eieLAi
- 8qemw3zfhN1BCjj1YsQai8MTflg/LpEuMr2s1/Pjf4RwGZ/cWlGnvN4dZSO4/6wQLmua
- e5Bg==
-X-Gm-Message-State: APjAAAURyegQkQrrgkb6vPaLo1O92z8J+Vsjc8RlRvZFekthFCIw6G7W
- XtHZg51T3QKpr1imuMZyYh5EIQ==
-X-Google-Smtp-Source: APXvYqzy0pOcm1foPAUC6fqZXlzM7mUcjUylak9ZglBCN1Q2GIU98tYWPiPis4kHfvZEn5RQOneLLw==
-X-Received: by 2002:a17:90a:730b:: with SMTP id
- m11mr27194254pjk.89.1559536438112; 
- Sun, 02 Jun 2019 21:33:58 -0700 (PDT)
+ bh=Cjn+fe9pHSnglvx4T5q/xNRom5yt6XJeMvAMIuyqpGU=;
+ b=g/yxivHl3X7d+iRR860R6j0QEK6sTku1HXHy9PfpYs/mYA+6CrfA/4BDDFosUqKFBt
+ X/AL0xKx6t7Gvn4zJze9+F6otTlmkjqMI9pAHuW3iK6W3lsMBP3uJZ4vK2SFMPSe4/qZ
+ PtUlvaqji+mAyLApa4GWZE2FR2P5Jlo3QlEo+kkLQG2m9sLuLFGXbRm5mlgJtX8oPkR4
+ S0ygup6H1mRiMfBStK0ZCwvTucbW8y71Sga5njSdanAAH9TaxsjSeT0AzPfn/+9vH1lW
+ ZqQzHXrZxnVeuL5a63uF1Y3l9KFPhtRt2UFu7iyE4lgY6ADLHLMvXypDbD5u462iLdu9
+ SHAw==
+X-Gm-Message-State: APjAAAXIwb4D8uFMOBJ/2ol/49jMHx/uGUQ3BFSikUcFzimIMek/4Ank
+ vsb6n5asJft1yQorHwuWxO295A==
+X-Google-Smtp-Source: APXvYqwtsOJ5Pc96EE50WIzahRr4M7P5Cn839A0uqq7pGgYj7JP4xpqAWFOhLexsz8HaBDU7wChTEA==
+X-Received: by 2002:a17:902:9885:: with SMTP id
+ s5mr27565604plp.102.1559536444754; 
+ Sun, 02 Jun 2019 21:34:04 -0700 (PDT)
 Received: from localhost ([2401:fa00:1:b:e688:dfd2:a1a7:2956])
- by smtp.gmail.com with ESMTPSA id j23sm13509733pff.90.2019.06.02.21.33.53
+ by smtp.gmail.com with ESMTPSA id r64sm16094840pfr.58.2019.06.02.21.34.00
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 02 Jun 2019 21:33:57 -0700 (PDT)
+ Sun, 02 Jun 2019 21:34:04 -0700 (PDT)
 From: Cheng-Yi Chiang <cychiang@chromium.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5/7] ASoC: rockchip: rockchip-max98090: Add node for HDMI
-Date: Mon,  3 Jun 2019 12:32:49 +0800
-Message-Id: <20190603043251.226549-6-cychiang@chromium.org>
+Subject: [PATCH 6/7] ASoC: rockchip_max98090: Add HDMI jack support
+Date: Mon,  3 Jun 2019 12:32:50 +0800
+Message-Id: <20190603043251.226549-7-cychiang@chromium.org>
 X-Mailer: git-send-email 2.22.0.rc1.257.g3120a18244-goog
 In-Reply-To: <20190603043251.226549-1-cychiang@chromium.org>
 References: <20190603043251.226549-1-cychiang@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190602_213359_493883_463B40D2 
-X-CRM114-Status: GOOD (  10.28  )
+X-CRM114-CacheID: sfid-20190602_213405_646790_F3E40684 
+X-CRM114-Status: GOOD (  13.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -114,32 +114,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Let user specify HDMI node so machine driver can use it to let codec
-driver register callback on correct hdmi-notifier.
+In machine driver, create a jack and let hdmi-codec report jack status.
 
 Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
 ---
- Documentation/devicetree/bindings/sound/rockchip-max98090.txt | 2 ++
- 1 file changed, 2 insertions(+)
+ sound/soc/rockchip/rockchip_max98090.c | 41 ++++++++++++++++++++++++++
+ 1 file changed, 41 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/sound/rockchip-max98090.txt b/Documentation/devicetree/bindings/sound/rockchip-max98090.txt
-index a805aa99ad75..dae57c14864e 100644
---- a/Documentation/devicetree/bindings/sound/rockchip-max98090.txt
-+++ b/Documentation/devicetree/bindings/sound/rockchip-max98090.txt
-@@ -7,6 +7,7 @@ Required properties:
-   connected to the CODEC
- - rockchip,audio-codec: The phandle of the MAX98090 audio codec
- - rockchip,headset-codec: The phandle of Ext chip for jack detection
-+- rockchip,hdmi: The phandle of HDMI node for HDMI jack detection
+diff --git a/sound/soc/rockchip/rockchip_max98090.c b/sound/soc/rockchip/rockchip_max98090.c
+index 2dd247670c7a..17c50d9fbac1 100644
+--- a/sound/soc/rockchip/rockchip_max98090.c
++++ b/sound/soc/rockchip/rockchip_max98090.c
+@@ -18,6 +18,7 @@
+  */
  
- Example:
+ #include <linux/module.h>
++#include <linux/of_platform.h>
+ #include <linux/platform_device.h>
+ #include <linux/slab.h>
+ #include <linux/gpio.h>
+@@ -27,6 +28,7 @@
+ #include <sound/pcm.h>
+ #include <sound/pcm_params.h>
+ #include <sound/soc.h>
++#include <sound/hdmi-codec.h>
  
-@@ -16,4 +17,5 @@ sound {
- 	rockchip,i2s-controller = <&i2s>;
- 	rockchip,audio-codec = <&max98090>;
- 	rockchip,headset-codec = <&headsetcodec>;
-+	rockchip,hdmi= <&hdmi>;
+ #include "rockchip_i2s.h"
+ #include "../codecs/ts3a227e.h"
+@@ -131,6 +133,26 @@ enum {
+ 	DAILINK_HDMI,
  };
+ 
++static struct snd_soc_jack rk_hdmi_jack;
++
++static int rk_hdmi_init(struct snd_soc_pcm_runtime *runtime)
++{
++	struct snd_soc_card *card = runtime->card;
++	struct snd_soc_component *component = runtime->codec_dai->component;
++	struct device *hdmi_dev = snd_soc_card_get_drvdata(card);
++	int ret;
++
++	/* enable jack detection */
++	ret = snd_soc_card_jack_new(card, "HDMI Jack", SND_JACK_LINEOUT,
++				    &rk_hdmi_jack, NULL, 0);
++	if (ret) {
++		dev_err(card->dev, "Can't new HDMI Jack %d\n", ret);
++		return ret;
++	}
++
++	return hdmi_codec_set_jack_detect(component, &rk_hdmi_jack, hdmi_dev);
++}
++
+ /* max98090 and HDMI codec dai_link */
+ static struct snd_soc_dai_link rk_dailinks[] = {
+ 	[DAILINK_MAX98090] = {
+@@ -148,6 +170,7 @@ static struct snd_soc_dai_link rk_dailinks[] = {
+ 		.ops = &rk_aif1_ops,
+ 		.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
+ 			SND_SOC_DAIFMT_CBS_CFS,
++		.init = rk_hdmi_init,
+ 	}
+ };
+ 
+@@ -200,6 +223,8 @@ static int snd_rk_mc_probe(struct platform_device *pdev)
+ 	struct device_node *np = pdev->dev.of_node;
+ 	struct device_node *np_cpu;
+ 	struct of_phandle_args args;
++	struct device_node *np_hdmi;
++	struct platform_device *hdmi_pdev;
+ 
+ 	/* register the soc card */
+ 	card->dev = &pdev->dev;
+@@ -248,6 +273,22 @@ static int snd_rk_mc_probe(struct platform_device *pdev)
+ 		return -EINVAL;
+ 	}
+ 
++	/* The hdmi device handles HDMI hotplug detection */
++	np_hdmi = of_parse_phandle(np, "rockchip,hdmi", 0);
++	if (!np_hdmi) {
++		dev_err(&pdev->dev, "Failed to find HDMI node\n");
++		return -EINVAL;
++	}
++
++	hdmi_pdev = of_find_device_by_node(np_hdmi);
++	if (!hdmi_pdev) {
++		dev_err(&pdev->dev, "Waiting for HDMI device %s\n",
++			np_hdmi->full_name);
++		return -EPROBE_DEFER;
++	}
++
++	snd_soc_card_set_drvdata(card, &hdmi_pdev->dev);
++
+ 	ret = snd_soc_of_parse_card_name(card, "rockchip,model");
+ 	if (ret) {
+ 		dev_err(&pdev->dev,
 -- 
 2.22.0.rc1.257.g3120a18244-goog
 
