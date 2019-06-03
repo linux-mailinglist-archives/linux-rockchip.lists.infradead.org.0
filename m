@@ -2,72 +2,88 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0947C337BF
-	for <lists+linux-rockchip@lfdr.de>; Mon,  3 Jun 2019 20:22:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BDCF3383D
+	for <lists+linux-rockchip@lfdr.de>; Mon,  3 Jun 2019 20:38:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BHFhuA0OftuUUm4Q3WgSsts9/8PsdTjm4/wFIhsyPRU=; b=WuQA/BdUnlv71ENVwK0Yd1Fk7
-	5SZoPzTBFCREzw/1bjIcDlCbMhXmuA3X3xjg+isnd5Yt2p1bNqciZJvejqM6iojG/RuSp1+l1O+hG
-	qrFw0IvEheMUFn6bSnsq9b/KC/KpPcnnaRc1m/Z0zawO2BIaDqilXvgWeeplaEiVZ/fOwYDisyT+d
-	mUxOsquN8nZOLAsDzQlyy5kHskeL2M8TL3VN0lnkjf1x7xPXgqRSODY6SNnY/BSJ0IxaoKtTphAME
-	1vTrxKtzso2RHTDFgKwQCRiRa44Y1oPokvUvyYvl6RbgFmP8avQjj8R4w592QGklPrw1zUgGnrPKk
-	yj4C5fFqQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hdMLr9OWzTsYmJzzLcFQmon3rrnA7uOm8t+nHmgQAx0=; b=LUsMAE0r18Kx6Q
+	z6uHhMND0jnznYez8E97mr6Thy5Nahj5ECNvriuoihjDYL0eDHpUvMtv+Hdo2crX/3SMUDloDnHcy
+	a0EPa6QKK4rVO8zBgDYJDey4hHxDkRLiTt9AJIJ+kcPlcxOpYzYCn87RcC4D6sURxCeEZYH5KgukN
+	/AN6fWod1krPo799CQoafXt4xstJtNuLFAZYupDr9++jksDhv0x3yQyabtF0m9YD8Xj3YJNkmGIc1
+	R8JJg1ROYKUy2XLYEZ+pTzA6vn/Jllco9TP+ieHOsJX7dwUt8RcM0Bwybwti+IPzigl6Fo0Zl3O3z
+	ZvwM8YSOxy79w5iLIeTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXrbR-0006fb-Jt; Mon, 03 Jun 2019 18:22:37 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hXrqL-0003e8-BX; Mon, 03 Jun 2019 18:38:01 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXrbJ-0006YT-5G; Mon, 03 Jun 2019 18:22:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=3r3KESlL5pAfrYtn4vQKj5z96Mal9mpoBCdHth5veJs=; b=JfH0ghwn1a7WHN/lmUoj5GFKQ
- rlaH6Ld8CGB1LBHNnaLHyptkuOpHpVn4RlVlEajg/RfzRvZjZCPabi+FnzvpITJCWqBuMmFjgG0DJ
- F2brHBjRkTsxlKOX8ka2KclZKhdoBzGbL1u42f5VqwulFI7nQCn3QbN5VRxGiTtgRAzZY=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=finisterre.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hXrbC-0003dj-RV; Mon, 03 Jun 2019 18:22:23 +0000
-Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id 05FD9440046; Mon,  3 Jun 2019 19:22:21 +0100 (BST)
-Date: Mon, 3 Jun 2019 19:22:21 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Heiko Stuebner <heiko@sntech.de>
-Subject: Re: [PATCH v8 RESEND 2/5] regulator: rk808: add RK809 and RK817
- support.
-Message-ID: <20190603182221.GA2456@sirena.org.uk>
-References: <20190603170900.5195-1-heiko@sntech.de>
- <20190603170900.5195-3-heiko@sntech.de>
+ id 1hXrqH-0003d4-TE
+ for linux-rockchip@lists.infradead.org; Mon, 03 Jun 2019 18:37:59 +0000
+Received: by mail-pg1-x542.google.com with SMTP id 196so8778449pgc.6
+ for <linux-rockchip@lists.infradead.org>; Mon, 03 Jun 2019 11:37:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=YZsnBAN22tVtHFJc56q+rxbdD8fX8T8HXkSym7OyHiQ=;
+ b=Ps1O4MtbD2rEMRtRw6yvXGSxDXrH7HjPdY7KCq/lSlW7htShDFp+u033WFVJDjOXPb
+ OLNlYon0Wpzph3sUz2BCPyDgUNjVZMpJf1kV0lUidQnpFyFPagCNB03AVdSVyyqUvAr/
+ bxUU+BnIId5lrXnzJ6D/l5svsqW8IvWW9U+R8=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=YZsnBAN22tVtHFJc56q+rxbdD8fX8T8HXkSym7OyHiQ=;
+ b=Hr+vCj78hp0wAKERfGF6TpBLXTXiRHSS1Mbk+9xXXBvBfhZ2+bSa35Z8pAriNRKpA4
+ 8eK7DGLlj92Rpi0yaQPddLsy3zB1oNFDgtYanF9Z/iXCGV7qONTRWuE2auDhmqm2jJ8I
+ lrhU94rtC+eNuczierwUOybOtEnHwCFRAs5nbappfRwRYZK0M0FUGpdFOrda52iB0svc
+ /2bmcYdQUyK6c4ClLUFaRUpLTWUyt5eYV4NpCxZy4vXUWZzac0JR1nPSdXa96h98MDTR
+ eRgE6mfPgutzs5lwl+zeDEnreeLydldL8wJdJ7m5/BUjqnBqNcwvSW9M6GRHNm7DUYBL
+ DVhA==
+X-Gm-Message-State: APjAAAXjVcrqNoZTtij2aYP6EAZozpzCCPNOLp3FjROF0dEYSNmx/Dcc
+ zhr8oTiVhYFXUvRmqFOyowjmCg==
+X-Google-Smtp-Source: APXvYqwbLiM1y3Cof2KgcMMeZ8t9NIYK+vbdXny/5bFAdCAVPmxQ/CP9Y2AV9T+xZdprrAWMKhZjdw==
+X-Received: by 2002:a62:764d:: with SMTP id r74mr9422273pfc.110.1559587076759; 
+ Mon, 03 Jun 2019 11:37:56 -0700 (PDT)
+Received: from tictac2.mtv.corp.google.com
+ ([2620:15c:202:1:24fa:e766:52c9:e3b2])
+ by smtp.gmail.com with ESMTPSA id t2sm14808969pfh.166.2019.06.03.11.37.55
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 03 Jun 2019 11:37:56 -0700 (PDT)
+From: Douglas Anderson <dianders@chromium.org>
+To: Ulf Hansson <ulf.hansson@linaro.org>, Kalle Valo <kvalo@codeaurora.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Arend van Spriel <arend.vanspriel@broadcom.com>
+Subject: [PATCH v2 0/3] brcmfmac: sdio: Deal better w/ transmission errors
+ waking from idle
+Date: Mon,  3 Jun 2019 11:37:37 -0700
+Message-Id: <20190603183740.239031-1-dianders@chromium.org>
+X-Mailer: git-send-email 2.22.0.rc1.311.g5d7573a151-goog
 MIME-Version: 1.0
-In-Reply-To: <20190603170900.5195-3-heiko@sntech.de>
-X-Cookie: The other line moves faster.
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_112229_345993_FB731CDB 
-X-CRM114-Status: GOOD (  10.29  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190603_113757_943841_B86FBDBC 
+X-CRM114-Status: GOOD (  12.94  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -80,87 +96,72 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: huangtao@rock-chips.com, zhangqing@rock-chips.com,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- tony.xie@rock-chips.com, lee.jones@linaro.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3229406772848654694=="
+Cc: linux-mmc@vger.kernel.org, Chi-Hsien Lin <chi-hsien.lin@cypress.com>,
+ linux-kernel@vger.kernel.org, Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ brcm80211-dev-list@cypress.com, briannorris@chromium.org,
+ YueHaibing <yuehaibing@huawei.com>, linux-rockchip@lists.infradead.org,
+ mka@chromium.org, Michael Trimarchi <michael@amarulasolutions.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>,
+ Madhan Mohan R <madhanmohan.r@cypress.com>,
+ Hante Meuleman <hante.meuleman@broadcom.com>,
+ Double Lo <double.lo@cypress.com>, Hans de Goede <hdegoede@redhat.com>,
+ Wright Feng <wright.feng@cypress.com>, Naveen Gupta <naveen.gupta@cypress.com>,
+ Franky Lin <franky.lin@broadcom.com>, brcm80211-dev-list.pdl@broadcom.com,
+ Avri Altman <avri.altman@wdc.com>, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
+ "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+This series attempts to deal better with the expected transmission
+errors that we get when waking up (from idle) the SDIO-based WiFi on
+rk3288-veyron-minnie, rk3288-veyron-speedy, and rk3288-veyron-mickey.
 
---===============3229406772848654694==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="XiX5sJQOWZsNRXst"
-Content-Disposition: inline
+Some details about those errors can be found in
+<https://crbug.com/960222>, but to summarize it here: if we try to
+send the wakeup command to the WiFi card at the same time it has
+decided to wake up itself then it will behave badly on the SDIO bus.
+This can cause timeouts or CRC errors.
 
+When I tested on 4.19 and 4.20 these CRC errors can be seen to cause
+re-tuning.  Since I am currently developing on 4.19 this was the
+original problem I attempted to solve.
 
---XiX5sJQOWZsNRXst
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+On mainline it turns out that you don't see the retuning errors but
+you see tons of spam about timeouts trying to wakeup from sleep.  I
+tracked down the commit that was causing that and have partially
+reverted it here.  I have no real knowledge about Broadcom WiFi, but
+the commit that was causing problems sounds (from the descriptioin) to
+be a hack commit penalizing all Broadcom WiFi users because of a bug
+in a Cypress SD controller.  I will let others comment if this is
+truly the case and, if so, what the right solution should be.
 
-On Mon, Jun 03, 2019 at 07:08:57PM +0200, Heiko Stuebner wrote:
+There wasn't a good resolution on v1 and it's been a while, so I'm
+sending out a v2.  Other than changing patch #1 to a full revert, the
+only other changes here are just to the patch descriptions.
 
->         default:
-> -               pr_warn("%s ramp_delay: %d not supported, setting 10000\n",
-> -                       rdev->desc->name, ramp_delay);
-> +               dev_warn(&rdev->dev,
-> +                        "%s ramp_delay: %d not supported, setting 10000\n",
-> +                        rdev->desc->name, ramp_delay);
+Changes in v2:
+- A full revert, not just a partial one (Arend).  ...with explicit Cc.
+- Updated commit message to clarify based on discussion of v1.
 
-This appears to be unrelated and should've been a separate patch.
+Douglas Anderson (3):
+  Revert "brcmfmac: disable command decode in sdio_aos"
+  mmc: core: API for temporarily disabling auto-retuning due to errors
+  brcmfmac: sdio: Disable auto-tuning around commands expected to fail
 
-> +static int rk817_check_suspend_voltage(int id)
-> +{
-> +	if (id >= RK817_ID_DCDC1 && id <= RK817_ID_LDO9)
-> +		return 0;
-> +	return -1;
-> +}
+ drivers/mmc/core/core.c                       | 27 +++++++++++++++++--
+ .../broadcom/brcm80211/brcmfmac/sdio.c        |  9 +++----
+ include/linux/mmc/core.h                      |  2 ++
+ include/linux/mmc/host.h                      |  1 +
+ 4 files changed, 32 insertions(+), 7 deletions(-)
 
-Rather than have these checks in the implementation you should just not
-define these operations for regulators that don't have the
-functionality.
+-- 
+2.22.0.rc1.311.g5d7573a151-goog
 
-> +static unsigned int rk8xx_regulator_of_map_mode(unsigned int mode)
-> +{
-> +	if (mode == 1)
-> +		return REGULATOR_MODE_FAST;
-> +	if (mode == 2)
-> +		return REGULATOR_MODE_NORMAL;
-> +
-> +	return -EINVAL;
-> +}
-
-This should be written as a switch statement for clarity.
-
---XiX5sJQOWZsNRXst
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAlz1ZVsACgkQJNaLcl1U
-h9A1LAf+IawRfBxIBUR2HWNgjqoJMnLF0GaliOyoJBELCf9chqPQk1+aTKdnn4l0
-MLYTCsLJA77ur0D8ncMYsPvvBRUasG5U0T5XEyJzXWYNIx7togwumtv/w3JAnBSh
-RRMSKYhaS/wNrVHdYcVt8SzVVrVkB5OsYKXzPDbRRFTmeHXrxO2YKjLY9AQK93Sg
-cruWOCSi6HuzhAxlr5uf9TcaEM6VsN4+0HXsKT68T9iJ87q5/lhsL6REBsayhaGF
-/hlyx7ZqehspqO23eFUX1g4wTSTdatd1UXZ8RoqzrFuOX44+hsw0snF9GeCCwVUH
-KWc4k3Qa6PrxyYA9/f9G316d63x0YQ==
-=QMyH
------END PGP SIGNATURE-----
-
---XiX5sJQOWZsNRXst--
-
-
---===============3229406772848654694==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
---===============3229406772848654694==--
-
