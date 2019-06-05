@@ -2,76 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48A733686E
-	for <lists+linux-rockchip@lfdr.de>; Thu,  6 Jun 2019 01:57:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A716436873
+	for <lists+linux-rockchip@lfdr.de>; Thu,  6 Jun 2019 01:57:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TTqWTZPl2CTCiu3VqHG7FfDdT8NnZ1qYqm0Znyw5YWg=; b=VkeOprJOqHd5E9
-	VWWNUxcjasNgoKwOHGmh8B9mTMyrMJUUCo3KE1bgPcG8/We4grEHmh6vBBy4eK/BSVtdGuzcfH6iG
-	nD8wx5n/RXXxXz0LWXXlkIdDY4xs4W/SGOIMXHk+jAY/cz497YH+YjSqCVGz8nXYVrJ7vJ0sqAACl
-	gvp9RX4V261RJHMxSO38w0Lk71UYoZorWd0ol1yYU1jBMeqgFOhiXRSdF6c9vEsQhX++s9JKWu5FL
-	SQrJZ5l/SlUa+qnJnJhYq2bS977xbDa1MqiVeZ8X2M+iFmjJNNygelnJtxfGtmEwqDQodfECLGwnE
-	C7zjjsn53XbgE29ryx9Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VrQsdc4SmxwrYEQk7gtWWXuuS8BzfU4TiLS8WueWzQ0=; b=pQmFsPUrCB8oLY
+	VsoE08dXlL0TnfBjK1ZrpNA6cd2oz9taEFc3fA6pz0DYGi82rzWJFcj7G4QSBky+1UuaJpcdOcynb
+	HGxEfA8xkKxQFrUyhESQUZhnZqp2Hkqdm7nZn+bwcXiAI/nCX0CvTmG7MwbRin77IfawpG2JpdzLU
+	H8WUVF973rngEduUWjp+CzR5bA6B4CzJINzu8GnAmjukuggqsVxEBLDxQGLivj+EtPKgeLotmXS0u
+	qxF2NJ3JI1VselZhTqtEVjM8gsL4Xg8pH2hCq1fdTNW0TU4B4Vz0gvoWqoTlGoWv4VU3xhCzOqGd5
+	v9AFyJ4Mj1SHu60wOHVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYfml-0008Gz-6t; Wed, 05 Jun 2019 23:57:39 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hYfn2-0000EB-62; Wed, 05 Jun 2019 23:57:56 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYfmc-0008Am-SY; Wed, 05 Jun 2019 23:57:32 +0000
-Received: by mail-wm1-x341.google.com with SMTP id w9so647585wmd.1;
- Wed, 05 Jun 2019 16:57:29 -0700 (PDT)
+ id 1hYfmh-0008Bs-Kk; Wed, 05 Jun 2019 23:57:38 +0000
+Received: by mail-wm1-x343.google.com with SMTP id 22so557832wmg.2;
+ Wed, 05 Jun 2019 16:57:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=CoEKt3CyAM8pXZNIOFLtJ4NXiqc8XDf8/zgh2kIleYE=;
- b=ttD0EcZdokG+eHCPuoKzaxTh1/e9jppmuGOG9Bx7wn2M+XZ/MzL4+73QYIgcSOlF98
- Wwrmkd9J3VNehRzye7Kbqk7O1XJUqKO8zNxx0yoHZ3cKwl1IIKYgREu5zmc5APYT/6h/
- Ke5faRmuunUoqwM3bk52rYrH3bm/MytLpIew8Nk2h0oVNleTVbzqPn2XiOWRd55CYBvM
- +1iHfw1DAvWlcOSjBB+nHK0QvHrvPzX/N2U/jb7iyiZQwQbtRui/tPOEOjs+sLyg60rC
- j9orX4xyMYpUC2jKnVN++F8VXkZuu11O797s1ZyL53s0lhpvJdpBF0h7CbFEQGxO2+DS
- s3lQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=a+G/2dEOEsnbE77njerY0dEzhggxdzBtc1olhGXytlg=;
+ b=quruOtem69W2QhHEuO85YEGHSWX2GXMMgVEsWJmX87XrfX+oEFF4uqGgMWHqlN7l5k
+ Fcp61ocf49ehUcoMtvgScur1z5OfJIZA6qCWYD/RfO1FBQEr3HQGq5D53B1CQ3cF30oX
+ nC0DA/mYvfrXxmd0nJ2l36rT6VBf9nJYnsSevgquaNLY94nDX4ue7ndVxaaEvQcPQ/g4
+ zxTPG2Ri/yV8p6gBMX5mWZt7pnq/XXPJx2ExC6la9VUIpV96uiAAN/SGlQ0QOx1XRS+s
+ B0fa+rHOPACOoJlxcoKBUDfIhiHJHKNV8556tjx4u10IXAXHb2B+GaUuTsoCN1VC2mcd
+ 3J2A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=CoEKt3CyAM8pXZNIOFLtJ4NXiqc8XDf8/zgh2kIleYE=;
- b=kcX9wK/ZznZQcwxSTgWe96oqkfCmhuDlH9LfJA9ZCjROfN4rIBN/h8W0I4wYRA/DDc
- H87z6hAC0ejtbXqAK8gTuawV6BzjdmhF/djX0s3ILc5tgkPj1zUpiMTKuMDC13pry+6e
- qcypjHMBKbgd/MUZOKPxR3oELNDgpVNumd0coUDlZ3h472kRIdt+RI0p9TUYWq9QBSk9
- UHqOLRei7efUXtWJFTVQBX97mq8nKzIC0igVjluJmrVipq5C52FyJTBsOrefPStSrIn7
- qjKfw/c5q5ZIvRIq07dPMVHkiswQceaSLetbsa1HB8hvAoxVFmICx0whqg0godaVsaaN
- YlZw==
-X-Gm-Message-State: APjAAAV1Kw6AE0MK1/nn3xt00xop9iKRIMyHW0sgR3Ef3cMWuBraHF19
- r6Ec4ZwS5yXdxBWu9ZftXcM=
-X-Google-Smtp-Source: APXvYqwNXvyVrYJ/+XP8N6e1Hk1Le0wEopGarZqZ89V6cCoDAPq+dq0qX6FmIYJZdMYXIYqWTGNRIA==
-X-Received: by 2002:a1c:f70f:: with SMTP id v15mr23841079wmh.102.1559779048577; 
- Wed, 05 Jun 2019 16:57:28 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=a+G/2dEOEsnbE77njerY0dEzhggxdzBtc1olhGXytlg=;
+ b=PhjWmAMmdhGbUXB/FZsapcY0Qx75f+MW+IdVydByoqtcPO04o830gJlI2w8E306FM6
+ qcCNYCZT46IyuIkn4HEe3vs25kaL8aWxBN2K1ZzJ+gb4c6k8l+3q3XUqU+lMFQmfJgap
+ JTQ/bw0JCyyPiHJUjcONjTtr0XIGQc1Ncpk2SYqpShp6zCdp8zPLqA3yGQZnwnmfCmNN
+ hkFCgPcsc99ZNwYCmy9slSzquhJYVxfycQIVfEpgXJIWv3BiEYpUld1/cM8HEfi8L8pG
+ +Gf5CvoDX1u97OM6iMZIM9XASUqGaxfqlaudAITA5JUL3x+OvkbVUAuv5ULLpUx2h69L
+ HB/Q==
+X-Gm-Message-State: APjAAAXk9B8RxpZAxHOqaQyA6fCcpHGwwmQW+e4QwV5U4fcpEJEAhGOM
+ MhzERN/Q1ztekDYaszvKrvo=
+X-Google-Smtp-Source: APXvYqw+F3qx6Zsh+mA0aetKfVYltOG6KeaG0XDLA9aqdK2eY7tXvI4nC/JkW915YNGhTbRYU2uaUw==
+X-Received: by 2002:a1c:f408:: with SMTP id z8mr23548559wma.140.1559779053877; 
+ Wed, 05 Jun 2019 16:57:33 -0700 (PDT)
 Received: from X555LD.home ([2a02:85f:1501:7500:4991:f471:d726:d8ee])
- by smtp.gmail.com with ESMTPSA id q15sm245915wrr.19.2019.06.05.16.57.26
+ by smtp.gmail.com with ESMTPSA id q15sm245915wrr.19.2019.06.05.16.57.32
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 05 Jun 2019 16:57:27 -0700 (PDT)
+ Wed, 05 Jun 2019 16:57:33 -0700 (PDT)
 From: "Leonidas P. Papadakos" <papadakospan@gmail.com>
 To: Rob Herring <robh+dt@kernel.org>,
 	Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH 1/2] clk: rockchip: add clock for the watchdog pclk on rk3328
-Date: Thu,  6 Jun 2019 02:57:13 +0300
-Message-Id: <20190605235714.22432-1-papadakospan@gmail.com>
+Subject: [PATCH 2/2] arm64: dts: rockchip: enable rk3328 watchdog clock
+Date: Thu,  6 Jun 2019 02:57:14 +0300
+Message-Id: <20190605235714.22432-2-papadakospan@gmail.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190605235714.22432-1-papadakospan@gmail.com>
+References: <20190605235714.22432-1-papadakospan@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_165730_925491_D96B986F 
-X-CRM114-Status: GOOD (  11.69  )
+X-CRM114-CacheID: sfid-20190605_165735_889511_3007583C 
+X-CRM114-Status: GOOD (  12.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,59 +110,55 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: <itdaniher@gmail.com>
 
-Following the discussion here:
-https://github.com/rockchip-linux/kernel/issues/123
+Add the missing clock property for the watchdog on rk3328.
 
-it can be seen that these are the changes needed to enable the use of the hardware watchdog in the rk3328 SoC.
-
-This is in line with past changes for the rk3288:
-http://lists.infradead.org/pipermail/linux-rockchip/2015-January/002314.html
+This patch depends on:
+clk: rockchip: add clock for the watchdog pclk on rk3328
 
 Signed-off-by: Leonidas P. Papadakos <papadakospan@gmail.com>
 ---
- drivers/clk/rockchip/clk-rk3328.c      | 9 +++++++++
- include/dt-bindings/clock/rk3328-cru.h | 1 +
- 2 files changed, 10 insertions(+)
+ arch/arm64/boot/dts/rockchip/rk3328-roc-cc.dts | 4 ++++
+ arch/arm64/boot/dts/rockchip/rk3328-rock64.dts | 4 ++++
+ arch/arm64/boot/dts/rockchip/rk3328.dtsi       | 2 ++
+ 3 files changed, 10 insertions(+)
 
-diff --git a/drivers/clk/rockchip/clk-rk3328.c b/drivers/clk/rockchip/clk-rk3328.c
-index 076b9777a..546ee0ab7 100644
---- a/drivers/clk/rockchip/clk-rk3328.c
-+++ b/drivers/clk/rockchip/clk-rk3328.c
-@@ -876,6 +876,8 @@ static const char *const rk3328_critical_clocks[] __initconst = {
- 
- static void __init rk3328_clk_init(struct device_node *np)
- {
-+	struct clk *clk;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328-roc-cc.dts b/arch/arm64/boot/dts/rockchip/rk3328-roc-cc.dts
+index 5d499c908..49d51dd93 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328-roc-cc.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3328-roc-cc.dts
+@@ -349,3 +349,7 @@
+ &vop_mmu {
+ 	status = "okay";
+ };
 +
- 	struct rockchip_clk_provider *ctx;
- 	void __iomem *reg_base;
- 
-@@ -892,6 +894,13 @@ static void __init rk3328_clk_init(struct device_node *np)
- 		return;
- 	}
- 
-+	clk = clk_register_fixed_factor(NULL, "pclk_wdt", "pclk_bus", 0, 1, 1);
-+	if (IS_ERR(clk))
-+		pr_warn("%s: could not register clock pclk_wdt: %ld\n",
-+			__func__, PTR_ERR(clk));
-+	else
-+		rockchip_clk_add_lookup(ctx, clk, PCLK_WDT);
++&wdt {
++	status = "okay";
++};
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+index 7cfd5ca6c..18a3e0dfa 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+@@ -405,3 +405,7 @@
+ &vop_mmu {
+ 	status = "okay";
+ };
 +
- 	rockchip_clk_register_plls(ctx, rk3328_pll_clks,
- 				   ARRAY_SIZE(rk3328_pll_clks),
- 				   RK3328_GRF_SOC_STATUS0);
-diff --git a/include/dt-bindings/clock/rk3328-cru.h b/include/dt-bindings/clock/rk3328-cru.h
-index afb811340..555b4ff66 100644
---- a/include/dt-bindings/clock/rk3328-cru.h
-+++ b/include/dt-bindings/clock/rk3328-cru.h
-@@ -164,6 +164,7 @@
- #define PCLK_DCF		233
- #define PCLK_SARADC		234
- #define PCLK_ACODECPHY		235
-+#define PCLK_WDT		236
++&wdt {
++	status = "okay";
++};
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+index 994468671..e0a6279da 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+@@ -407,6 +407,8 @@
+ 		compatible = "snps,dw-wdt";
+ 		reg = <0x0 0xff1a0000 0x0 0x100>;
+ 		interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&cru PCLK_WDT>;
++		status = "disabled";
+ 	};
  
- /* hclk gates */
- #define HCLK_PERI		308
+ 	pwm0: pwm@ff1b0000 {
 -- 
 2.21.0
 
