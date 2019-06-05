@@ -2,94 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E86635815
-	for <lists+linux-rockchip@lfdr.de>; Wed,  5 Jun 2019 09:55:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9257735FFD
+	for <lists+linux-rockchip@lfdr.de>; Wed,  5 Jun 2019 17:15:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cXgSP8KcGT47hODCeh1WFnVDVNDvb/i67okCRHIp9V4=; b=bBvyol6N3jgGlhuVrSxGv8YNm
-	8lWbNxpw3UfH2czIynSsAaXQoLYpdwzPBs4ncsKcwakcO8tjR/I/uDQgRQGAWC4SoHMf+qQoI51o8
-	fR8tgf/u62fzTnIpg7RXreZyHr+GvegQjb17TBIe62xXT8kSLpsAbnH58pVDJgR1jIFN4uicD1bcx
-	aCsJhv+BKv8GEAqUPOHPHNpcNcJo4uTabYA69S25mwJe4s7jt+GddsieV1Fd+HYMg2bTVGIc1gfjR
-	xuY/FkjvTIoFY37uVAhdk/ZYy9hYx3bDudWg/CKyUmyMtw5l+A/aVhhYRkccAWtpPEhXnw7zesFNq
-	4r8/O616Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=+yyvj/e2cqY08a/O1csgUB/iLt9Goa79rUNiVu9FZh0=; b=OXNsUAKp34WdnHlCjLuAijkP2f
+	FKWT8eByPoslSAVaamiZlDwdwjXB8mnZ5fpjBf+73f/ZUHfrOcPBqkIevMrEKRPf8RgTB2waoMe+S
+	AkyxKDBVHlGBe1hByF8OcUohnKNAaAqKswTsBHPLUdbQWJl6AZT12DyyLe/uF6kTiKK2sd67b2oRv
+	MQQEh9WJ+U2LqHNkEKYtDq0RMigjyiqqJB7qEzkWHd51HZUqAPc9NcfRlrKKBjfwi7FZV77fEnRCi
+	Zz/CcrEd0jTjPtTW6nLwx4YgTLWab07UsmQGTJZNmUvA7Dq8EeRHgPozwT5UQDQ4C9sBw3d8gSq2T
+	wZmdqo3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYQl9-0003fK-DU; Wed, 05 Jun 2019 07:54:59 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYQl6-0003ev-Rn
- for linux-rockchip@lists.infradead.org; Wed, 05 Jun 2019 07:54:58 +0000
-Received: by mail-pl1-x642.google.com with SMTP id g21so9408464plq.0
- for <linux-rockchip@lists.infradead.org>; Wed, 05 Jun 2019 00:54:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=aiue8tHWiumr4g0nytcyTjYaJHwPhuqRgFXgCDSDwM0=;
- b=KGG4kw7mp5EISlgpPMNpn5iOHG3+VLhZMDhZ+778rosnxJtQ2DdjdZ5tkcWiWRFGGX
- 13t7oW58cPGQVxfvPViY7GfglNUiaobpnuA5U9Lhk/zaJJvJa8iiwJxVGhf39no86EP+
- tHTVDIzoVY5+6E11qiOyJvAD7RzmosldNH4nY=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=aiue8tHWiumr4g0nytcyTjYaJHwPhuqRgFXgCDSDwM0=;
- b=iyTdKR4jjkslg2VgxfmZ8oB1GTrwHn6Po0wt0YhrMDN1U8/J1uJAEGsv+r9NmiISNl
- hIfKB3hGViDi9NhggDw2GdTN7fLNouFZRlP/rmSGF5zdRLEEkM0UpNq/LbFhK11IxwOl
- KHjI6Hzc6Q5wk7J8KXnOlhsy8VdNvrzUd1bpgBok1nZJqSsxZeT0PuB+Z01rq+lOAx5F
- xcNTaVLOQg/xzCQoA30ji/OlUYhem0KIBQwv+CfEVPwfRPvwZkcF0bN7iIEQ2+T16stA
- tTYwoF89qUqIXG8RLnoOkPuufVbEyf0kA4FsyHerhDHMJqs42t9+NeLnIr7XQx5k5k+4
- Ol2A==
-X-Gm-Message-State: APjAAAXmwofyHSNx3BmZEdOMI7tlWEHNi1/ZG8oO0u68rcQoAjKrUzvU
- DTUImtNR9ECGUoJ1Ba3GWrtDyw==
-X-Google-Smtp-Source: APXvYqx1Gbz9qsU2PuuHu8YloVvKfIX0ptj4e8Hzpp+GXSquNY3RQsHEhI2ABswO9YBHJkaCFOSHnA==
-X-Received: by 2002:a17:902:8a87:: with SMTP id
- p7mr25322779plo.124.1559721294846; 
- Wed, 05 Jun 2019 00:54:54 -0700 (PDT)
-Received: from [10.230.40.234] ([192.19.215.250])
- by smtp.gmail.com with ESMTPSA id 11sm28366590pfu.155.2019.06.05.00.54.49
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 05 Jun 2019 00:54:54 -0700 (PDT)
-Subject: Re: [PATCH v2 2/3] mmc: core: API for temporarily disabling
- auto-retuning due to errors
-To: Douglas Anderson <dianders@chromium.org>,
- Ulf Hansson <ulf.hansson@linaro.org>, Kalle Valo <kvalo@codeaurora.org>,
- Adrian Hunter <adrian.hunter@intel.com>
-References: <20190603183740.239031-1-dianders@chromium.org>
- <20190603183740.239031-3-dianders@chromium.org>
-From: Arend Van Spriel <arend.vanspriel@broadcom.com>
-Message-ID: <25fe1725-76fa-2739-1427-b0e8823ea4ae@broadcom.com>
-Date: Wed, 5 Jun 2019 09:54:48 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <20190603183740.239031-3-dianders@chromium.org>
-Content-Language: en-US
+	id 1hYXd2-00068D-Og; Wed, 05 Jun 2019 15:15:04 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYXcw-0005m1-2N
+ for linux-rockchip@lists.infradead.org; Wed, 05 Jun 2019 15:15:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8D7F0374;
+ Wed,  5 Jun 2019 08:14:57 -0700 (PDT)
+Received: from en101.cambridge.arm.com (en101.cambridge.arm.com [10.1.196.93])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id
+ AFD3E3F246; Wed,  5 Jun 2019 08:14:52 -0700 (PDT)
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 11/13] drivers: Introduce variants for bus_find_device()
+Date: Wed,  5 Jun 2019 16:13:48 +0100
+Message-Id: <1559747630-28065-12-git-send-email-suzuki.poulose@arm.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1559747630-28065-1-git-send-email-suzuki.poulose@arm.com>
+References: <1559747630-28065-1-git-send-email-suzuki.poulose@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_005456_902775_1EF1A104 
-X-CRM114-Status: GOOD (  26.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190605_081500_131534_9FE556DA 
+X-CRM114-Status: GOOD (  17.33  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -102,95 +63,191 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Madhan Mohan R <madhanmohan.r@cypress.com>,
- brcm80211-dev-list.pdl@broadcom.com,
- Wolfram Sang <wsa+renesas@sang-engineering.com>, netdev@vger.kernel.org,
- Chi-Hsien Lin <chi-hsien.lin@cypress.com>, briannorris@chromium.org,
- linux-wireless@vger.kernel.org, Double Lo <double.lo@cypress.com>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Avri Altman <avri.altman@wdc.com>, mka@chromium.org,
- Wright Feng <wright.feng@cypress.com>, linux-mmc@vger.kernel.org,
- Shawn Lin <shawn.lin@rock-chips.com>, brcm80211-dev-list@cypress.com,
- Naveen Gupta <naveen.gupta@cypress.com>
+Cc: Andrew Lunn <andrew@lunn.ch>, Oliver Neukum <oneukum@suse.com>,
+ Heiko Stuebner <heiko@sntech.de>, rafael@kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
+ dri-devel@lists.freedesktop.org, Takashi Iwai <tiwai@suse.com>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ linux-i2c@vger.kernel.org, Frank Rowand <frowand.list@gmail.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, linux-rockchip@lists.infradead.org,
+ Wolfram Sang <wsa@the-dreams.de>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Doug Ledford <dledford@redhat.com>, devicetree@vger.kernel.org,
+ suzuki.poulose@arm.com, David Airlie <airlied@linux.ie>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Mark Brown <broonie@kernel.org>, Mathieu Poirier <mathieu.poirier@linaro.org>,
+ gregkh@linuxfoundation.org, linux-usb@vger.kernel.org,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-spi@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ "David S. Miller" <davem@davemloft.net>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 6/3/2019 8:37 PM, Douglas Anderson wrote:
-> Normally when the MMC core sees an "-EILSEQ" error returned by a host
-> controller then it will trigger a retuning of the card.  This is
-> generally a good idea.
-> 
-> However, if a command is expected to sometimes cause transfer errors
-> then these transfer errors shouldn't cause a re-tuning.  This
-> re-tuning will be a needless waste of time.  One example case where a
-> transfer is expected to cause errors is when transitioning between
-> idle (sometimes referred to as "sleep" in Broadcom code) and active
-> state on certain Broadcom WiFi cards.  Specifically if the card was
-> already transitioning between states when the command was sent it
-> could cause an error on the SDIO bus.
-> 
-> Let's add an API that the SDIO card drivers can call that will
-> temporarily disable the auto-tuning functionality.  Then we can add a
-> call to this in the Broadcom WiFi driver and any other driver that
-> might have similar needs.
-> 
-> NOTE: this makes the assumption that the card is already tuned well
-> enough that it's OK to disable the auto-retuning during one of these
-> error-prone situations.  Presumably the driver code performing the
-> error-prone transfer knows how to recover / retry from errors.  ...and
-> after we can get back to a state where transfers are no longer
-> error-prone then we can enable the auto-retuning again.  If we truly
-> find ourselves in a case where the card needs to be retuned sometimes
-> to handle one of these error-prone transfers then we can always try a
-> few transfers first without auto-retuning and then re-try with
-> auto-retuning if the first few fail.
-> 
-> Without this change on rk3288-veyron-minnie I periodically see this in
-> the logs of a machine just sitting there idle:
->    dwmmc_rockchip ff0d0000.dwmmc: Successfully tuned phase to XYZ
-> 
-> Fixes: bd11e8bd03ca ("mmc: core: Flag re-tuning is needed on CRC errors")
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> ---
-> Note that are are a whole boatload of different ways that we could
-> provide an API for the Broadcom WiFi SDIO driver.  This patch
-> illustrates one way but if maintainers feel strongly that this is too
-> ugly and have a better idea then I can give it a shot too.  From a
-> purist point of view I kinda felt that the "expect errors" really
-> belonged as part of the mmc_request structure, but getting it into
-> there meant changing a whole pile of core SD/MMC APIs.  Simply adding
-> it to the host seemed to match the current style better and was a less
-> intrusive change.
+Similar to the class_find_device_by_*() introduce the variants
+for bus_find_device() to automatically search for device by
+generic device properties.
 
-Hi Doug,
+Here is the list of new helpers :
 
-Sorry for bringing this up, but there used to be an issue with retuning 
-in general, ie. the device handled tuning command 19 only once after 
-startup. I guess that is no longer an issue given your results. I guess 
-the problem goes away when you disable device sleep functionality. No 
-what you want in terms of power consumption, but would be good to know. 
-You can disable it with below patch.
+	bus_find_device_by_of_node
+	bus_find_device_by_fwnode
+	bus_find_device_by_devt
+	bus_find_next_device
 
-Regards,
-Arend
+While at it convert the bus_find_device_by_name to static inline
+reusing the generic helper to match the name.
+
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Cc: Andrew Lunn <andrew@lunn.ch>
+Cc: Daniel Vetter <daniel@ffwll.ch>
+Cc: David Airlie <airlied@linux.ie>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: devicetree@vger.kernel.org
+Cc: Doug Ledford <dledford@redhat.com>
+Cc: dri-devel@lists.freedesktop.org
+Cc: Florian Fainelli <f.fainelli@gmail.com>
+Cc: Frank Rowand <frowand.list@gmail.com>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Heiko Stuebner <heiko@sntech.de>
+Cc: Jason Gunthorpe <jgg@ziepe.ca>
+Cc: Liam Girdwood <lgirdwood@gmail.com>
+Cc: linux-i2c@vger.kernel.org
+Cc: linux-rockchip@lists.infradead.org
+Cc: linux-spi@vger.kernel.org
+Cc: linux-usb@vger.kernel.org
+Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+Cc: Mark Brown <broonie@kernel.org>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>
+Cc: Oliver Neukum <oneukum@suse.com>
+Cc: "Rafael J. Wysocki" <rafael@kernel.org>
+Cc: Rob Herring <robh+dt@kernel.org>
+Cc: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
+Cc: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+Cc: Takashi Iwai <tiwai@suse.com>
+Cc: Wolfram Sang <wsa@the-dreams.de>
+Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c 
-b/drivers
-index 15a40fd..18e90bd 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
-@@ -307,7 +307,7 @@ struct rte_console {
-  #define BRCMF_IDLE_ACTIVE      0       /* Do not request any SD clock 
-change
-                                          * when idle
-                                          */
--#define BRCMF_IDLE_INTERVAL    1
-+#define BRCMF_IDLE_INTERVAL    0
+ drivers/base/bus.c     | 24 -------------------
+ include/linux/device.h | 64 +++++++++++++++++++++++++++++++++++++++++++++++---
+ 2 files changed, 61 insertions(+), 27 deletions(-)
 
-  #define KSO_WAIT_US 50
-  #define MAX_KSO_ATTEMPTS (PMU_MAX_TRANSITION_DLY/KSO_WAIT_US)
+diff --git a/drivers/base/bus.c b/drivers/base/bus.c
+index df3cac7..a1d1e82 100644
+--- a/drivers/base/bus.c
++++ b/drivers/base/bus.c
+@@ -342,30 +342,6 @@ struct device *bus_find_device(struct bus_type *bus,
+ }
+ EXPORT_SYMBOL_GPL(bus_find_device);
+ 
+-static int match_name(struct device *dev, const void *data)
+-{
+-	const char *name = data;
+-
+-	return sysfs_streq(name, dev_name(dev));
+-}
+-
+-/**
+- * bus_find_device_by_name - device iterator for locating a particular device of a specific name
+- * @bus: bus type
+- * @start: Device to begin with
+- * @name: name of the device to match
+- *
+- * This is similar to the bus_find_device() function above, but it handles
+- * searching by a name automatically, no need to write another strcmp matching
+- * function.
+- */
+-struct device *bus_find_device_by_name(struct bus_type *bus,
+-				       struct device *start, const char *name)
+-{
+-	return bus_find_device(bus, start, (void *)name, match_name);
+-}
+-EXPORT_SYMBOL_GPL(bus_find_device_by_name);
+-
+ /**
+  * subsys_find_device_by_id - find a device with a specific enumeration number
+  * @subsys: subsystem
+diff --git a/include/linux/device.h b/include/linux/device.h
+index 4396edc..10de79d 100644
+--- a/include/linux/device.h
++++ b/include/linux/device.h
+@@ -175,9 +175,67 @@ int bus_for_each_dev(struct bus_type *bus, struct device *start, void *data,
+ struct device *bus_find_device(struct bus_type *bus, struct device *start,
+ 			       const void *data,
+ 			       int (*match)(struct device *dev, const void *data));
+-struct device *bus_find_device_by_name(struct bus_type *bus,
+-				       struct device *start,
+-				       const char *name);
++/**
++ * bus_find_device_by_name - device iterator for locating a particular device
++ * of a specific name.
++ * @bus: bus type
++ * @start: Device to begin with
++ * @name: name of the device to match
++ */
++static inline struct device *bus_find_device_by_name(struct bus_type *bus,
++						     struct device *start,
++						     const char *name)
++{
++	return bus_find_device(bus, start, name, device_match_name);
++}
++
++/**
++ * bus_find_device_by_of_node : device iterator for locating a particular device
++ * matching the of_node.
++ * @bus: bus type
++ * @np: of_node of the device to match.
++ */
++static inline struct device *
++bus_find_device_by_of_node(struct bus_type *bus, const struct device_node *np)
++{
++	return bus_find_device(bus, NULL, np, device_match_of_node);
++}
++
++/**
++ * bus_find_device_by_fwnode : device iterator for locating a particular device
++ * matching the fwnode.
++ * @bus: bus type
++ * @fwnode: fwnode of the device to match.
++ */
++static inline struct device *
++bus_find_device_by_fwnode(struct bus_type *bus, const struct fwnode_handle *fwnode)
++{
++	return bus_find_device(bus, NULL, fwnode, device_match_fwnode);
++}
++
++/**
++ * bus_find_device_by_devt : device iterator for locating a particular device
++ * matching the device type.
++ * @bus: bus type
++ * @start: device to start the search from
++ * @devt: device type of the device to match.
++ */
++static inline struct device *
++bus_find_device_by_devt(struct bus_type *bus, struct device *start, dev_t devt)
++{
++	return bus_find_device(bus, start, &devt, device_match_devt);
++}
++
++/**
++ * bus_find_next_device - Find the next device after a given device in a
++ * given bus.
++ */
++static inline struct device *
++bus_find_next_device(struct bus_type *bus,struct device *cur)
++{
++	return bus_find_device(bus, cur, NULL, device_match_any);
++}
++
+ struct device *subsys_find_device_by_id(struct bus_type *bus, unsigned int id,
+ 					struct device *hint);
+ int bus_for_each_drv(struct bus_type *bus, struct device_driver *start,
+-- 
+2.7.4
 
 
 _______________________________________________
