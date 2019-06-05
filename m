@@ -2,55 +2,74 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9257735FFD
-	for <lists+linux-rockchip@lfdr.de>; Wed,  5 Jun 2019 17:15:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9ACF8364D8
+	for <lists+linux-rockchip@lfdr.de>; Wed,  5 Jun 2019 21:37:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=+yyvj/e2cqY08a/O1csgUB/iLt9Goa79rUNiVu9FZh0=; b=OXNsUAKp34WdnHlCjLuAijkP2f
-	FKWT8eByPoslSAVaamiZlDwdwjXB8mnZ5fpjBf+73f/ZUHfrOcPBqkIevMrEKRPf8RgTB2waoMe+S
-	AkyxKDBVHlGBe1hByF8OcUohnKNAaAqKswTsBHPLUdbQWJl6AZT12DyyLe/uF6kTiKK2sd67b2oRv
-	MQQEh9WJ+U2LqHNkEKYtDq0RMigjyiqqJB7qEzkWHd51HZUqAPc9NcfRlrKKBjfwi7FZV77fEnRCi
-	Zz/CcrEd0jTjPtTW6nLwx4YgTLWab07UsmQGTJZNmUvA7Dq8EeRHgPozwT5UQDQ4C9sBw3d8gSq2T
-	wZmdqo3w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zrWa8HG6nmLzostbyYudJCUC5dAbD921rGnUFaKd6T0=; b=g9b4CS5XSdJk3m
+	DoBRC4v+Avxlt+8mRxKahrwCaO5L+XUtL9NB9BGod0u9jMU7OgJ9ChNsIHuNSy6O9f7HpAFTiTGwg
+	k4NxvBLbrzQbMv/zsBb2GBBzwlmprvnvITBgnHLNlvaDI/GvYlTVJckXxd7f4h83yrKh9Ks9Jg7JJ
+	ZvVDz1ov4SjBcfqpAaXVPWalMD+xQCphZpn4O9unMxmJpmBv2A1zQXRgN/R+HQYmCKOqnYxaMAyCQ
+	J38Z4WN/72vmwrdIu0Id49bA2w8MmYiJ1S+XCNvCG3N9PqyrFhfThImYbIY+Y/u2hO02OWGWREjvs
+	M2iESNC1crNzm7vDXT+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYXd2-00068D-Og; Wed, 05 Jun 2019 15:15:04 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYXcw-0005m1-2N
- for linux-rockchip@lists.infradead.org; Wed, 05 Jun 2019 15:15:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8D7F0374;
- Wed,  5 Jun 2019 08:14:57 -0700 (PDT)
-Received: from en101.cambridge.arm.com (en101.cambridge.arm.com [10.1.196.93])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id
- AFD3E3F246; Wed,  5 Jun 2019 08:14:52 -0700 (PDT)
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 11/13] drivers: Introduce variants for bus_find_device()
-Date: Wed,  5 Jun 2019 16:13:48 +0100
-Message-Id: <1559747630-28065-12-git-send-email-suzuki.poulose@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1559747630-28065-1-git-send-email-suzuki.poulose@arm.com>
-References: <1559747630-28065-1-git-send-email-suzuki.poulose@arm.com>
+	id 1hYbie-0001dl-8u; Wed, 05 Jun 2019 19:37:08 +0000
+Received: from mail-it1-f196.google.com ([209.85.166.196])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYbiU-0001Vr-4q; Wed, 05 Jun 2019 19:37:00 +0000
+Received: by mail-it1-f196.google.com with SMTP id a186so5406226itg.0;
+ Wed, 05 Jun 2019 12:36:56 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=kwLHe6pw2ihYaqYwiNpoJsGqzozTnZa4V+fIZmXgIP4=;
+ b=OUBvd39QETSt3/jGmgvOX+N3aKGB/wBnllY7dvrYEdZiiSRWCwbe9bpuljCGgr779s
+ AEYmhF9kJ3w6ClF7aNMD0R9Lu6X6W9uWgK3SEs/O02XmlRPhFll6ZKT/dII8bHnfQkP1
+ yisRJP1d/m/WvRBoAYW9gbqpbI1UskzJvqFfY8w6KtrV8qVkeqpSkM/QGxdC0kQAZEzw
+ KsKEERYiWziDsFp+8ktTfjFHJBn7FRlsEF3nLr59uGq7ZMCaYYUCyK1PuajWYmSIRa2m
+ v6oQduxKbgIR9ZdueHIyrx1j4q0+AYy2WWLS8j24oyRjDW2ark499MiE/kjX56XFt3Gs
+ uwWQ==
+X-Gm-Message-State: APjAAAVOOAXzPeIlfNeU3X4/EmWcsUul2Bc/MYcjwYtDB72jvMIDfu8o
+ zb+odnfsezw9Q2glEmdAkE1hLWZASLEHS82pdyM=
+X-Google-Smtp-Source: APXvYqx6Oah+YT6T5psZ1qhPIYRGZiWlfwqb5jPRk8MHOTrYaBqYOjTVp1LlSMJ3g0urFLpxp888Ebd0l1PeShpDBNg=
+X-Received: by 2002:a24:7f0d:: with SMTP id r13mr25805755itc.28.1559763415651; 
+ Wed, 05 Jun 2019 12:36:55 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190412105320.2924-1-kernel@esmil.dk>
+ <20190508103358.5C7EB440010@finisterre.sirena.org.uk>
+In-Reply-To: <20190508103358.5C7EB440010@finisterre.sirena.org.uk>
+From: Emil Renner Berthing <kernel@esmil.dk>
+Date: Wed, 5 Jun 2019 21:36:44 +0200
+Message-ID: <CANBLGcxiXR7KqKn4U-2PgefuxpBFX=yR06cw6A5GEALuqa54FA@mail.gmail.com>
+Subject: Re: Applied "spi: rockchip: turn down tx dma bursts" to the spi tree
+To: Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_081500_131534_9FE556DA 
-X-CRM114-Status: GOOD (  17.33  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190605_123658_192039_9BE6BACF 
+X-CRM114-Status: GOOD (  11.52  )
+X-Spam-Score: 1.8 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (1.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.6 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.196 listed in wl.mailspike.net]
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (emil.renner.berthing[at]gmail.com)
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,192 +82,42 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Oliver Neukum <oneukum@suse.com>,
- Heiko Stuebner <heiko@sntech.de>, rafael@kernel.org,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
- dri-devel@lists.freedesktop.org, Takashi Iwai <tiwai@suse.com>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- linux-i2c@vger.kernel.org, Frank Rowand <frowand.list@gmail.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Florian Fainelli <f.fainelli@gmail.com>, linux-rockchip@lists.infradead.org,
- Wolfram Sang <wsa@the-dreams.de>, Jason Gunthorpe <jgg@ziepe.ca>,
- Doug Ledford <dledford@redhat.com>, devicetree@vger.kernel.org,
- suzuki.poulose@arm.com, David Airlie <airlied@linux.ie>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Mark Brown <broonie@kernel.org>, Mathieu Poirier <mathieu.poirier@linaro.org>,
- gregkh@linuxfoundation.org, linux-usb@vger.kernel.org,
- Liam Girdwood <lgirdwood@gmail.com>, linux-spi@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- "David S. Miller" <davem@davemloft.net>
-MIME-Version: 1.0
+Cc: Heiko Stuebner <heiko@sntech.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Vicente Bergas <vicencb@gmail.com>, linux-spi@vger.kernel.org,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Similar to the class_find_device_by_*() introduce the variants
-for bus_find_device() to automatically search for device by
-generic device properties.
+Hi Mark
 
-Here is the list of new helpers :
+On Wed, 8 May 2019 at 12:34, Mark Brown <broonie@kernel.org> wrote:
+>
+> The patch
+>
+>    spi: rockchip: turn down tx dma bursts
+>
+> has been applied to the spi tree at
+>
+>    https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git
+>
+> All being well this means that it will be integrated into the linux-next
+> tree (usually sometime in the next 24 hours) and sent to Linus during
+> the next merge window (or sooner if it is a bug fix), however if
+> problems are discovered then the patch may be dropped or reverted.
 
-	bus_find_device_by_of_node
-	bus_find_device_by_fwnode
-	bus_find_device_by_devt
-	bus_find_next_device
+I've tried looking in the for-next and for-5.x branches here, and I
+can't seem to find this patch.
+Am I missing something?
 
-While at it convert the bus_find_device_by_name to static inline
-reusing the generic helper to match the name.
+It fixes a problem introduced in 4.19, so it'd be nice if it could
+make it to stable trees eventually.
 
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Cc: Andrew Lunn <andrew@lunn.ch>
-Cc: Daniel Vetter <daniel@ffwll.ch>
-Cc: David Airlie <airlied@linux.ie>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: devicetree@vger.kernel.org
-Cc: Doug Ledford <dledford@redhat.com>
-Cc: dri-devel@lists.freedesktop.org
-Cc: Florian Fainelli <f.fainelli@gmail.com>
-Cc: Frank Rowand <frowand.list@gmail.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Heiko Stuebner <heiko@sntech.de>
-Cc: Jason Gunthorpe <jgg@ziepe.ca>
-Cc: Liam Girdwood <lgirdwood@gmail.com>
-Cc: linux-i2c@vger.kernel.org
-Cc: linux-rockchip@lists.infradead.org
-Cc: linux-spi@vger.kernel.org
-Cc: linux-usb@vger.kernel.org
-Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
-Cc: Mark Brown <broonie@kernel.org>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-Cc: Maxime Ripard <maxime.ripard@bootlin.com>
-Cc: Oliver Neukum <oneukum@suse.com>
-Cc: "Rafael J. Wysocki" <rafael@kernel.org>
-Cc: Rob Herring <robh+dt@kernel.org>
-Cc: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
-Cc: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-Cc: Takashi Iwai <tiwai@suse.com>
-Cc: Wolfram Sang <wsa@the-dreams.de>
-Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
----
- drivers/base/bus.c     | 24 -------------------
- include/linux/device.h | 64 +++++++++++++++++++++++++++++++++++++++++++++++---
- 2 files changed, 61 insertions(+), 27 deletions(-)
-
-diff --git a/drivers/base/bus.c b/drivers/base/bus.c
-index df3cac7..a1d1e82 100644
---- a/drivers/base/bus.c
-+++ b/drivers/base/bus.c
-@@ -342,30 +342,6 @@ struct device *bus_find_device(struct bus_type *bus,
- }
- EXPORT_SYMBOL_GPL(bus_find_device);
- 
--static int match_name(struct device *dev, const void *data)
--{
--	const char *name = data;
--
--	return sysfs_streq(name, dev_name(dev));
--}
--
--/**
-- * bus_find_device_by_name - device iterator for locating a particular device of a specific name
-- * @bus: bus type
-- * @start: Device to begin with
-- * @name: name of the device to match
-- *
-- * This is similar to the bus_find_device() function above, but it handles
-- * searching by a name automatically, no need to write another strcmp matching
-- * function.
-- */
--struct device *bus_find_device_by_name(struct bus_type *bus,
--				       struct device *start, const char *name)
--{
--	return bus_find_device(bus, start, (void *)name, match_name);
--}
--EXPORT_SYMBOL_GPL(bus_find_device_by_name);
--
- /**
-  * subsys_find_device_by_id - find a device with a specific enumeration number
-  * @subsys: subsystem
-diff --git a/include/linux/device.h b/include/linux/device.h
-index 4396edc..10de79d 100644
---- a/include/linux/device.h
-+++ b/include/linux/device.h
-@@ -175,9 +175,67 @@ int bus_for_each_dev(struct bus_type *bus, struct device *start, void *data,
- struct device *bus_find_device(struct bus_type *bus, struct device *start,
- 			       const void *data,
- 			       int (*match)(struct device *dev, const void *data));
--struct device *bus_find_device_by_name(struct bus_type *bus,
--				       struct device *start,
--				       const char *name);
-+/**
-+ * bus_find_device_by_name - device iterator for locating a particular device
-+ * of a specific name.
-+ * @bus: bus type
-+ * @start: Device to begin with
-+ * @name: name of the device to match
-+ */
-+static inline struct device *bus_find_device_by_name(struct bus_type *bus,
-+						     struct device *start,
-+						     const char *name)
-+{
-+	return bus_find_device(bus, start, name, device_match_name);
-+}
-+
-+/**
-+ * bus_find_device_by_of_node : device iterator for locating a particular device
-+ * matching the of_node.
-+ * @bus: bus type
-+ * @np: of_node of the device to match.
-+ */
-+static inline struct device *
-+bus_find_device_by_of_node(struct bus_type *bus, const struct device_node *np)
-+{
-+	return bus_find_device(bus, NULL, np, device_match_of_node);
-+}
-+
-+/**
-+ * bus_find_device_by_fwnode : device iterator for locating a particular device
-+ * matching the fwnode.
-+ * @bus: bus type
-+ * @fwnode: fwnode of the device to match.
-+ */
-+static inline struct device *
-+bus_find_device_by_fwnode(struct bus_type *bus, const struct fwnode_handle *fwnode)
-+{
-+	return bus_find_device(bus, NULL, fwnode, device_match_fwnode);
-+}
-+
-+/**
-+ * bus_find_device_by_devt : device iterator for locating a particular device
-+ * matching the device type.
-+ * @bus: bus type
-+ * @start: device to start the search from
-+ * @devt: device type of the device to match.
-+ */
-+static inline struct device *
-+bus_find_device_by_devt(struct bus_type *bus, struct device *start, dev_t devt)
-+{
-+	return bus_find_device(bus, start, &devt, device_match_devt);
-+}
-+
-+/**
-+ * bus_find_next_device - Find the next device after a given device in a
-+ * given bus.
-+ */
-+static inline struct device *
-+bus_find_next_device(struct bus_type *bus,struct device *cur)
-+{
-+	return bus_find_device(bus, cur, NULL, device_match_any);
-+}
-+
- struct device *subsys_find_device_by_id(struct bus_type *bus, unsigned int id,
- 					struct device *hint);
- int bus_for_each_drv(struct bus_type *bus, struct device_driver *start,
--- 
-2.7.4
-
+/Emil
 
 _______________________________________________
 Linux-rockchip mailing list
