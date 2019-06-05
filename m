@@ -2,74 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9ACF8364D8
-	for <lists+linux-rockchip@lfdr.de>; Wed,  5 Jun 2019 21:37:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BE2836500
+	for <lists+linux-rockchip@lfdr.de>; Wed,  5 Jun 2019 21:55:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zrWa8HG6nmLzostbyYudJCUC5dAbD921rGnUFaKd6T0=; b=g9b4CS5XSdJk3m
-	DoBRC4v+Avxlt+8mRxKahrwCaO5L+XUtL9NB9BGod0u9jMU7OgJ9ChNsIHuNSy6O9f7HpAFTiTGwg
-	k4NxvBLbrzQbMv/zsBb2GBBzwlmprvnvITBgnHLNlvaDI/GvYlTVJckXxd7f4h83yrKh9Ks9Jg7JJ
-	ZvVDz1ov4SjBcfqpAaXVPWalMD+xQCphZpn4O9unMxmJpmBv2A1zQXRgN/R+HQYmCKOqnYxaMAyCQ
-	J38Z4WN/72vmwrdIu0Id49bA2w8MmYiJ1S+XCNvCG3N9PqyrFhfThImYbIY+Y/u2hO02OWGWREjvs
-	M2iESNC1crNzm7vDXT+g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=7+7FwtDi55y6H7W7Xw+DB68CINv2GsKWj5or49ksLgI=; b=C3EzL0bWvryGfgkGVEoUSbhJm
+	B51s7omC+9fnLGgTjlSn/Dwz9dezdk3dES5oZWoOWSiJRlYHeRqmW3Oag9rNNdlq58iF8SDcN7ays
+	llfxCMk2TPs4x+ABb1YfgI6FDQgATcFxmPiFo+UQ6MrRRXJfpIpch+GkrZDtw5ydHX/M1Vauman2h
+	QGWfv+XBCUVTn1dD0KgQGYoYydnwcOORktI0HM/kbS/flA2J9xI9QJGAZaQcp2Fs0vRJagHQJSQPb
+	sslQCkW1qfdjvBdFnkRwkX4fGI5CU57QkhHvLF9WiG3UrPuip7M2fxc23Mi/q4q40lmBaR46lVS8w
+	wuBAbRApQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYbie-0001dl-8u; Wed, 05 Jun 2019 19:37:08 +0000
-Received: from mail-it1-f196.google.com ([209.85.166.196])
+	id 1hYc0L-0000KN-6g; Wed, 05 Jun 2019 19:55:25 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYbiU-0001Vr-4q; Wed, 05 Jun 2019 19:37:00 +0000
-Received: by mail-it1-f196.google.com with SMTP id a186so5406226itg.0;
- Wed, 05 Jun 2019 12:36:56 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kwLHe6pw2ihYaqYwiNpoJsGqzozTnZa4V+fIZmXgIP4=;
- b=OUBvd39QETSt3/jGmgvOX+N3aKGB/wBnllY7dvrYEdZiiSRWCwbe9bpuljCGgr779s
- AEYmhF9kJ3w6ClF7aNMD0R9Lu6X6W9uWgK3SEs/O02XmlRPhFll6ZKT/dII8bHnfQkP1
- yisRJP1d/m/WvRBoAYW9gbqpbI1UskzJvqFfY8w6KtrV8qVkeqpSkM/QGxdC0kQAZEzw
- KsKEERYiWziDsFp+8ktTfjFHJBn7FRlsEF3nLr59uGq7ZMCaYYUCyK1PuajWYmSIRa2m
- v6oQduxKbgIR9ZdueHIyrx1j4q0+AYy2WWLS8j24oyRjDW2ark499MiE/kjX56XFt3Gs
- uwWQ==
-X-Gm-Message-State: APjAAAVOOAXzPeIlfNeU3X4/EmWcsUul2Bc/MYcjwYtDB72jvMIDfu8o
- zb+odnfsezw9Q2glEmdAkE1hLWZASLEHS82pdyM=
-X-Google-Smtp-Source: APXvYqx6Oah+YT6T5psZ1qhPIYRGZiWlfwqb5jPRk8MHOTrYaBqYOjTVp1LlSMJ3g0urFLpxp888Ebd0l1PeShpDBNg=
-X-Received: by 2002:a24:7f0d:: with SMTP id r13mr25805755itc.28.1559763415651; 
- Wed, 05 Jun 2019 12:36:55 -0700 (PDT)
-MIME-Version: 1.0
+ id 1hYc0C-0000E6-81; Wed, 05 Jun 2019 19:55:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=KgTOG/MCFpTyXVOTj1ZuKkvtNmZGpkEpbnA949wWplg=; b=poiGgtvcOkWfzAHuVL95Men3L
+ RyJsJbFdF5jvyHsVDjz+UFH1VX2AFLCeFGFxTcLT7kjna8inPhPEgFcf0DOSnNNim+PkYMgCrol36
+ DXwfUOlPsXCYCu7DZy33rjRGAMDP7O8GtkdpVHMIYq6VWHk8G4ZZw+69OPy4tTmCUTJzk=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=finisterre.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hYc08-0001Q6-5G; Wed, 05 Jun 2019 19:55:12 +0000
+Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
+ id 90214440046; Wed,  5 Jun 2019 20:55:11 +0100 (BST)
+Date: Wed, 5 Jun 2019 20:55:11 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Emil Renner Berthing <kernel@esmil.dk>
+Subject: Re: Applied "spi: rockchip: turn down tx dma bursts" to the spi tree
+Message-ID: <20190605195511.GX2456@sirena.org.uk>
 References: <20190412105320.2924-1-kernel@esmil.dk>
  <20190508103358.5C7EB440010@finisterre.sirena.org.uk>
-In-Reply-To: <20190508103358.5C7EB440010@finisterre.sirena.org.uk>
-From: Emil Renner Berthing <kernel@esmil.dk>
-Date: Wed, 5 Jun 2019 21:36:44 +0200
-Message-ID: <CANBLGcxiXR7KqKn4U-2PgefuxpBFX=yR06cw6A5GEALuqa54FA@mail.gmail.com>
-Subject: Re: Applied "spi: rockchip: turn down tx dma bursts" to the spi tree
-To: Mark Brown <broonie@kernel.org>
+ <CANBLGcxiXR7KqKn4U-2PgefuxpBFX=yR06cw6A5GEALuqa54FA@mail.gmail.com>
+MIME-Version: 1.0
+In-Reply-To: <CANBLGcxiXR7KqKn4U-2PgefuxpBFX=yR06cw6A5GEALuqa54FA@mail.gmail.com>
+X-Cookie: The other line moves faster.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_123658_192039_9BE6BACF 
-X-CRM114-Status: GOOD (  11.52  )
-X-Spam-Score: 1.8 (+)
+X-CRM114-CacheID: sfid-20190605_125516_442477_50D7CA01 
+X-CRM114-Status: GOOD (  12.48  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.8 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.196 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.6 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
- 2.5 SORTED_RECIPS          Recipient list is sorted by address
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (emil.renner.berthing[at]gmail.com)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -88,38 +86,65 @@ Cc: Heiko Stuebner <heiko@sntech.de>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
  Robin Murphy <robin.murphy@arm.com>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============3682429563736321997=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Mark
 
-On Wed, 8 May 2019 at 12:34, Mark Brown <broonie@kernel.org> wrote:
->
-> The patch
->
->    spi: rockchip: turn down tx dma bursts
->
-> has been applied to the spi tree at
->
->    https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git
->
-> All being well this means that it will be integrated into the linux-next
-> tree (usually sometime in the next 24 hours) and sent to Linus during
-> the next merge window (or sooner if it is a bug fix), however if
-> problems are discovered then the patch may be dropped or reverted.
+--===============3682429563736321997==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="dkgfGZfPp4OU3Le7"
+Content-Disposition: inline
 
-I've tried looking in the for-next and for-5.x branches here, and I
-can't seem to find this patch.
-Am I missing something?
 
-It fixes a problem introduced in 4.19, so it'd be nice if it could
-make it to stable trees eventually.
+--dkgfGZfPp4OU3Le7
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-/Emil
+On Wed, Jun 05, 2019 at 09:36:44PM +0200, Emil Renner Berthing wrote:
+> On Wed, 8 May 2019 at 12:34, Mark Brown <broonie@kernel.org> wrote:
+
+> >    spi: rockchip: turn down tx dma bursts
+
+> I've tried looking in the for-next and for-5.x branches here, and I
+> can't seem to find this patch.
+> Am I missing something?
+
+> It fixes a problem introduced in 4.19, so it'd be nice if it could
+> make it to stable trees eventually.
+
+47300728fb213486a830565d2af49da967c9d16a is in my tree.  When it reaches
+Linus' tree send a request to Greg for it to be backported if none of
+the stable automation picks it up.
+
+--dkgfGZfPp4OU3Le7
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAlz4Hh4ACgkQJNaLcl1U
+h9BxQgf+Ljplf8ZxX4pzMeNgr9s/Oik21N9dYZN14eGepFYn3eC2JAJ66qWR5ZDX
+q18JwvA6GyMsvntlko2y2HjEIJltQ06YGplOfVLtKkwtDWSbiBlV1nkkxpZGjmJd
+AC7LI2yRkoD35/DXj4r2x8ZatFl1W+i3isANRYtSFHUeKElyYCQ+fV4YTm8xUHjP
+zpRYGv65CG88hJmzygheI3viO+zlwsUxaJaz/jcNkoyZ4etUpz8FEYjtMeBV3SXX
+MxUncjiMX3d7HlRU4CY03FyMkUJ4d+8Pfw7YMyNbF2SMDqEbApXGhBG4XS1RcE6x
+ujRznnS4Wk9Lc6MdQbWFBAMoYrCUcw==
+=Y9+I
+-----END PGP SIGNATURE-----
+
+--dkgfGZfPp4OU3Le7--
+
+
+--===============3682429563736321997==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============3682429563736321997==--
+
