@@ -2,43 +2,41 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BC3037201
-	for <lists+linux-rockchip@lfdr.de>; Thu,  6 Jun 2019 12:46:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B59363721C
+	for <lists+linux-rockchip@lfdr.de>; Thu,  6 Jun 2019 12:53:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iysI7QsvX1tw2up/8sx6E9bY9KfWogMEh/hQf+e1JDY=; b=jaT6uCawrC8TOJ
-	gs6XIpAApcBgwCmREDaSRJ1RVoWuh+fzNrARu8vcCJKvjYHHdmgkXdxV28wu0I4zJ/UwPcnzdD2Un
-	vTH0o8OrlSjriNCwXRD2pnsHcm9O+AQmY9aw0JERcbQF92HaKiaBNcUf5wTP7nbBZBKuVfsSnn6fQ
-	8qEXRuTfqbIrQzfyzL2LaD4uvLa03TEe5ddCXXVHVZLWAMenVOqxHMovVvRID2Hsx+48vLOXzEmJq
-	c55IKg+gd22f5JMsTp+diq8wrAkPCIBECp2Bvg/uFnHPNa3UhzSbjyGP4UdvUMs0mQRj+weYssGRl
-	Q8RSde4ovgdF5i0Dodrg==;
+	List-Owner; bh=TZSDQQdu9++XyndKhULvTaLQ0nbCMIrzx9dvNvTPeVs=; b=bT2BbffTRGbtq/
+	b4eOvfltK6TNuWk7ckyqloEvAF6duolI+jrhsBb8UHTdTCJO8VBIGD64vYhuPKSojFE9r/NtyOO3I
+	BJBEz6RsDNXcMlpm+OsJ4iHKOJpxlZjmEhdJfy+ndcRnOvOXTJK+2CiIozeOO/hCnGMDnny/bJz+g
+	pAVHCSRKJ+0uHAEFf0VGcJzMCBXPoN7YfDTtsT5up4phmMFpf2jOpfGUNNvE2ZE0S5GRcGQDZAY3e
+	bF0fXrOr/rlPn8OStrG2SiSl5MNVPlgJ2CY4zDGuoLWVDBxsjfB7UUF9+UIoiH3abV9G5UeNqHJu7
+	JoVoINjBBLuMTlaFTHAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYpuQ-0007WN-Kw; Thu, 06 Jun 2019 10:46:14 +0000
+	id 1hYq1b-0001CL-65; Thu, 06 Jun 2019 10:53:39 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYpuI-0007P3-44; Thu, 06 Jun 2019 10:46:07 +0000
+ id 1hYq1Y-0001Bh-Mk; Thu, 06 Jun 2019 10:53:38 +0000
 Received: from we0305.dip.tu-dresden.de ([141.76.177.49] helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hYpuG-0003im-27; Thu, 06 Jun 2019 12:46:04 +0200
+ id 1hYq1V-0003l3-NS; Thu, 06 Jun 2019 12:53:33 +0200
 From: Heiko Stuebner <heiko@sntech.de>
-To: Matthias Kaehlcke <mka@chromium.org>
-Subject: Re: [PATCH 2/2] ARM: dts: rockchip: Configure BT_HOST_WAKE as wake-up
- signal on veyron
-Date: Thu, 06 Jun 2019 12:46:03 +0200
-Message-ID: <3394571.WlNFeu2Orz@phil>
-In-Reply-To: <2828678.vPWIEPrON5@diego>
-References: <20190605204320.22343-1-mka@chromium.org>
- <20190605212427.GP40515@google.com> <2828678.vPWIEPrON5@diego>
+To: Douglas Anderson <dianders@chromium.org>
+Subject: Re: [PATCH] clk: rockchip: Remove 48 MHz PLL rate from rk3288
+Date: Thu, 06 Jun 2019 12:53:33 +0200
+Message-ID: <4759206.qoGe4VK7Kb@phil>
+In-Reply-To: <20190604223200.345-1-dianders@chromium.org>
+References: <20190604223200.345-1-dianders@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_034606_314963_CDBE2199 
-X-CRM114-Status: GOOD (  17.52  )
+X-CRM114-CacheID: sfid-20190606_035336_892225_899FACB2 
+X-CRM114-Status: GOOD (  13.00  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,49 +56,40 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Brian Norris <briannorris@chromium.org>, linux-kernel@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Urja Rannikko <urjaman@gmail.com>, linux-rockchip@lists.infradead.org,
+ mka@chromium.org, seanpaul@chromium.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Mittwoch, 5. Juni 2019, 23:52:00 CEST schrieb Heiko St=FCbner:
-> Am Mittwoch, 5. Juni 2019, 23:24:27 CEST schrieb Matthias Kaehlcke:
-> > On Wed, Jun 05, 2019 at 11:11:12PM +0200, Heiko St=FCbner wrote:
-> > > Am Mittwoch, 5. Juni 2019, 22:43:20 CEST schrieb Matthias Kaehlcke:
-> > > > This enables wake up on Bluetooth activity when the device is
-> > > > suspended. The BT_HOST_WAKE signal is only connected on devices
-> > > > with BT module that are connected through UART.
-> > > > =
+Am Mittwoch, 5. Juni 2019, 00:31:59 CEST schrieb Douglas Anderson:
+> The 48 MHz PLL rate is not present in the downstream chromeos-3.14
+> tree.  Looking at history, it was originally removed in
+> <https://crrev.com/c/265810> ("CHROMIUM: clk: rockchip: expand more
+> clocks support") with no explanation.  Much of that patch was later
+> reverted in <https://crrev.com/c/284595> ("CHROMIUM: clk: rockchip:
+> Revert more questionable PLL rates"), but that patch left in the
+> removal of 48 MHz.  What I wrote in that patch:
+> 
+> > Note that the original change also removed the rate (48000000, 1,
+> > 64, 32) from the table.  I have no idea why that was squashed in
+> > there, but that rate was invalid anyway (it appears to have an out
+> > of bounds NO).  I'm not putting that rate in.
+> 
+> Reading the TRM I see that NO is defined as
+> - NO: 1, 2-16 (even only)
+> ...and furthermore only 4 bits are assigned for NO-1, which means that
+> the highest NO we could even represent is 16.
+> 
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
 
-> > > > Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> > > > Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
-> > > =
+applied for 5.3
 
-> > > Housekeeping question, with the two Signed-off-by lines, is Doug the
-> > > original author, or was this Co-developer-by?
-> > =
-
-> > Good question, it's derived from Doug's patch for CrOS 3.14 and
-> > https://crrev.com/c/1575556 also from Doug. Let's say I did the
-> > porting to upstream, but I'm pretty sure Doug spent more time on it.
-> > =
-
-> > Maybe I should resend it with Doug as author and include the original
-> > commit message, which has more information.
-> =
-
-> It's just that the first Signed-off should be from the original author.
-> (And the sender the second)
-> In the co-developed-by case (see Kernel documentation) the order
-> doesn't matter.
-
-Holding off on this patch till we could clarify the authorship.
-
-
+Thanks
 Heiko
 
 
