@@ -2,85 +2,67 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA02F3BA16
-	for <lists+linux-rockchip@lfdr.de>; Mon, 10 Jun 2019 18:55:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E1033BB35
+	for <lists+linux-rockchip@lfdr.de>; Mon, 10 Jun 2019 19:44:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XKH6BEkaz90DHs5rSbJo6NWXvZanJjLanI1YqSDDs0Y=; b=ARKQRSwOlg2sXs
-	HqUft6oNf0fXtpPi+c8JKpI3UnGVGixgLBF6gplhsm+b3x7VLrgCaMGPoIfl5szEwq9HiDg1bmOpt
-	NVePjYiaIuHQxScL+4Lr+W2aMb/s6phZOUVfT0OONHCvhVO0sI3v3sa7N+iyFi5t2qZobt1dqlXUl
-	7KHr0ps5MMUyEpygTTn2qb7BD5J9oFNEKDfK8qArfpQgwhPnBRJIs3r02OtsEToeH9d2vAkl7TOBW
-	0TO860Mb1hJU33NJrim6uq4Ukj96bsfs60geuL/hTupPREbARWaDM2I9TTNQVzkMe8VDfyHKwOrS6
-	VggnBstYCvjBQKxl0uqA==;
+	List-Owner; bh=GFsUUGlGb89LcWI5dFGB11XHQ+CBm6UfE94hfZq2U5c=; b=ia7N1HtOjSqXQV
+	sBBsG8jxX3VkB4pQamK+vZVrkzeH8fndQZJHJfcVpUJKw5iqlMT7Q5m0zzJqxKjaDYpC7x3sDB8j0
+	W24Q9oH/tjh742xzul9SeStiGdYYp5HbVHL349vqKpvuBNvDt5BDyvY1ll4hfPO9rJwAPssZ8nb3v
+	RbNoNc3oURgea/YV/ajp+Y3/2L2N93Qy5WRPAbx62SefuWF9KpNVNYdFt5b/IjBvZhC3VZqCasCHD
+	4cr13F7f4VAKhusUwkhlg7l1787uxlV2v2r+vQ0laAcAx9pVc4HfYyRfGbwuvGZ+iDcr8RKxbYQ/m
+	0GON5+afsOGDwqa+VF+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haNZx-0000rT-BP; Mon, 10 Jun 2019 16:55:29 +0000
-Received: from mail-it1-x143.google.com ([2607:f8b0:4864:20::143])
+	id 1haOL7-0003EF-PS; Mon, 10 Jun 2019 17:44:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haNZt-0000qt-JF
- for linux-rockchip@lists.infradead.org; Mon, 10 Jun 2019 16:55:27 +0000
-Received: by mail-it1-x143.google.com with SMTP id j204so113675ite.4
- for <linux-rockchip@lists.infradead.org>; Mon, 10 Jun 2019 09:55:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jigJfFRZkdX+fDWDB3Z6i7DXek+TxEO+iFMi0ontPyI=;
- b=NS6I1EfOS4Qln6O21W/qaWiFUMqu8lDW/jqsVurVgncwNQNmgiZ7ryVM5WNjFbA1tg
- 6okpyEoD7k4sfn32wuY4Hw3AvMOSF+FH1cyzQTqePdpEc4PxU4V1MR7kC4tb8xOzYBLB
- 9dcsOIODkMVEkDakGWmtbuSR/ZtezbmGzY+/k=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=jigJfFRZkdX+fDWDB3Z6i7DXek+TxEO+iFMi0ontPyI=;
- b=YivUKUn7lM4Yx7Sb10YTiv6MKFXNBeoYxrq4WvVN7UXGIwO8mEMVti3du+4a4E1Lvd
- a+quGnzpIN8RrI0/RzlUjCTTtn1LPnNZ5gBG+5/qc2lel5NhIqopEOaJrZ5ik4VtoMPg
- ld4q/AU2BwCJlRAX+SSaVNN1vTEDLsyV6j8sWXmAhLVU1hJJeWgsSmSHxlzIByp2zDQ1
- 0zR+qvgPqhUnrn+fKLZPE28tHC6Sgn1Ysg7eTZysgIpj2Z7uqjmG7P0RzATyDanHpbxD
- n1f7IdE1fZ9gvlJODn5cvNJ5D/lmklVrUytcymtM1Imdj+AxDNKlq2vZG7thO+jtK4d/
- 8zJg==
-X-Gm-Message-State: APjAAAWma49Za/VskapbpFPpvQQ80i0vRN6KBRztwe/QJarK3+X9S/T0
- CwkCWpPzDKIxwcrHPS/XpDuMvC0dOBY=
-X-Google-Smtp-Source: APXvYqy4wzC7oQgi7n6wYmvE9X/TwLojlSs869e6pSuf+53VOYNzPYHv/ub0UUYHKcngiAU88HVc4Q==
-X-Received: by 2002:a05:660c:acd:: with SMTP id
- k13mr14491779itl.13.1560185721519; 
- Mon, 10 Jun 2019 09:55:21 -0700 (PDT)
-Received: from mail-io1-f43.google.com (mail-io1-f43.google.com.
- [209.85.166.43])
- by smtp.gmail.com with ESMTPSA id z7sm20282itd.31.2019.06.10.09.55.21
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Mon, 10 Jun 2019 09:55:21 -0700 (PDT)
-Received: by mail-io1-f43.google.com with SMTP id k13so7436328iop.5
- for <linux-rockchip@lists.infradead.org>; Mon, 10 Jun 2019 09:55:21 -0700 (PDT)
-X-Received: by 2002:a6b:b642:: with SMTP id g63mr8234768iof.142.1560185419663; 
- Mon, 10 Jun 2019 09:50:19 -0700 (PDT)
+ id 1haOKr-00030j-7M; Mon, 10 Jun 2019 17:43:58 +0000
+Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
+ [209.85.160.170])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5A7AE20870;
+ Mon, 10 Jun 2019 17:43:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560188636;
+ bh=AZlQL9E2ROhE9dNEWLxTzeKWJPg5GnszFYOvXmJbBg8=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=CrkXG5wzrMqurUflE6xs0eXDpspfh1CAZP1781AveldXZWZOfaRKic4GxAG0tqNPd
+ zh5oPa+/V/Kp6pLCYHJJyKZMrZ3Eqg6gBH2M4OqRThkgZ3hn+CODbDBqirClpMRH4H
+ F7A2m9ROQPEpCCNtsRiVUnRemEm5cXLnDw5LTiXs=
+Received: by mail-qt1-f170.google.com with SMTP id z24so4835035qtj.10;
+ Mon, 10 Jun 2019 10:43:56 -0700 (PDT)
+X-Gm-Message-State: APjAAAW/5VWdRuxg9QBDTcVgx3+ilLHVxC0clh8QMK9ruAdjtX2ZH7Lr
+ gmoT7ubpl0qvoE0qRkloHryXAHJ4n3D095rcZw==
+X-Google-Smtp-Source: APXvYqzDejCp888til0iSdGiqZLydQgb5LlMSykGZiQj0zmAnd1634cGl5crZnyD5/9LsdKeiuv6AfpNt6+njC+kFIU=
+X-Received: by 2002:aed:3fb0:: with SMTP id s45mr7491168qth.136.1560188635556; 
+ Mon, 10 Jun 2019 10:43:55 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190607223716.119277-1-dianders@chromium.org>
- <20190607223716.119277-4-dianders@chromium.org>
- <363DA0ED52042842948283D2FC38E4649C52F8A0@IRSMSX106.ger.corp.intel.com>
-In-Reply-To: <363DA0ED52042842948283D2FC38E4649C52F8A0@IRSMSX106.ger.corp.intel.com>
-From: Doug Anderson <dianders@chromium.org>
-Date: Mon, 10 Jun 2019 09:50:06 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=U8eo78Ee9xjhGXJMv=8YF9o89KLX024GH3iBRnRjCRvQ@mail.gmail.com>
-Message-ID: <CAD=FV=U8eo78Ee9xjhGXJMv=8YF9o89KLX024GH3iBRnRjCRvQ@mail.gmail.com>
-Subject: Re: [PATCH v3 3/5] brcmfmac: sdio: Disable auto-tuning around
- commands expected to fail
-To: "Hunter, Adrian" <adrian.hunter@intel.com>
+References: <20190604131516.13596-1-kishon@ti.com>
+ <20190604131516.13596-24-kishon@ti.com>
+In-Reply-To: <20190604131516.13596-24-kishon@ti.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Mon, 10 Jun 2019 11:43:44 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJ5gsctd7L3VOhTO1JdUqmMmSJRpos1XQyfxzmGO7wauw@mail.gmail.com>
+Message-ID: <CAL_JsqJ5gsctd7L3VOhTO1JdUqmMmSJRpos1XQyfxzmGO7wauw@mail.gmail.com>
+Subject: Re: [RFC PATCH 23/30] of/platform: Export
+ of_platform_device_create_pdata()
+To: Kishon Vijay Abraham I <kishon@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_095525_800831_ABE0A1CE 
-X-CRM114-Status: GOOD (  10.53  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190610_104357_287465_140DB599 
+X-CRM114-Status: GOOD (  11.91  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -103,75 +85,39 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Madhan Mohan R <madhanmohan.r@cypress.com>,
- "brcm80211-dev-list.pdl@broadcom.com"
- <brcm80211-dev-list.pdl@broadcom.com>, YueHaibing <yuehaibing@huawei.com>,
- Arend van Spriel <arend.vanspriel@broadcom.com>,
- Hante Meuleman <hante.meuleman@broadcom.com>,
- "David S. Miller" <davem@davemloft.net>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Chi-Hsien Lin <chi-hsien.lin@cypress.com>,
- "briannorris@chromium.org" <briannorris@chromium.org>,
- "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
- Double Lo <double.lo@cypress.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Jingoo Han <jingoohan1@gmail.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>, linux-pci@vger.kernel.org,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "mka@chromium.org" <mka@chromium.org>, Naveen Gupta <naveen.gupta@cypress.com>,
- Wright Feng <wright.feng@cypress.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- "brcm80211-dev-list@cypress.com" <brcm80211-dev-list@cypress.com>,
- Kalle Valo <kvalo@codeaurora.org>, Franky Lin <franky.lin@broadcom.com>
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Tom Joseph <tjoseph@cadence.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Bjorn Helgaas <bhelgaas@google.com>, linux-omap <linux-omap@vger.kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Mon, Jun 10, 2019 at 1:56 AM Hunter, Adrian <adrian.hunter@intel.com> wrote:
+On Tue, Jun 4, 2019 at 7:19 AM Kishon Vijay Abraham I <kishon@ti.com> wrote:
 >
-> > --- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
-> > +++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
-> > @@ -16,6 +16,7 @@
-> >  #include <linux/mmc/sdio_ids.h>
-> >  #include <linux/mmc/sdio_func.h>
-> >  #include <linux/mmc/card.h>
-> > +#include <linux/mmc/core.h>
->
-> SDIO function drivers should not really include linux/mmc/core.h
-> (Also don't know why linux/mmc/card.h is included)
+> Export of_platform_device_create_pdata() to be used by drivers to
+> create child devices with the given platform data. This can be used
+> by platform specific driver to send platform data core driver. For e.g.,
+> this will be used by TI's J721E SoC specific PCIe driver to send
+> ->start_link() ops and ->is_link_up() ops to Cadence core PCIe driver.
 
-OK, so I guess you're requesting an extra level of "sdio_" wrappers
-for all the functions I need to call.  I don't think the wrappers buy
-us a ton other than to abstract things a little bit and make it look
-prettier.  :-)  ...but certainly I can code that up if that's what
-everyone wants.
+NAK
 
-Just to make sure, I looked in "drivers/net/wireless/" and I do see
-quite a few instances of "mmc_" functions being used.  That doesn't
-mean all these instances are correct but it does appear to be
-commonplace.  Selected examples:
+of_platform_device_create_pdata() is purely for legacy handling of
+auxdata which is something I hope to get rid of someday. Or to put it
+another way, auxdata use is a sign of platforms not fully converted to
+DT.
 
-drivers/net/wireless/ath/ath10k/sdio.c:
-  ret = mmc_hw_reset(ar_sdio->func->card->host);
-
-drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c:
-  mmc_set_data_timeout(md, func->card);
-  mmc_wait_for_req(func->card->host, mr);
-
-drivers/net/wireless/marvell/mwifiex/sdio.c:
-  mmc_hw_reset(func->card->host);
-
-drivers/net/wireless/rsi/rsi_91x_sdio.c:
-  err = mmc_wait_for_cmd(host, &cmd, 3);
-
-
-...anyway, I'll give it a few days and if nobody else chimes in then
-I'll assume you indeed want "sdio_" wrappers for things and I'll post
-a v4.  If patch #1 happens to land in the meantime then I won't
-object.  ;-)
-
-
--Doug
+Rob
 
 _______________________________________________
 Linux-rockchip mailing list
