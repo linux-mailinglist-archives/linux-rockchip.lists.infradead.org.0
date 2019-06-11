@@ -2,80 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE7613CFA3
-	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:54:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25B533CFA4
+	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:54:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zJavpoCR5e08++zN/pne00JhDFQVEHQP5X4uYrVIcOA=; b=N7nuJpe0zAWhY5
-	15II/+qivDoh8pk+4GOKCezZStUq5nFxUPpx4LbwDH94oSYfy9IdPzXl/pc1OeLLVpiX/UZ4p/KSl
-	qBezrXucHpiMBkHbaZGOkgPse5mdOdmdVe6GcwHlq9CHPBYxo7mqjRLGwfq/C/zzTmZEDkxK1GDAu
-	S79TDlIZhsnIc9twnlGAG0OKbEwwvW3dcJ1+tmPmjRu/h7waVGIcJf1S1NNf1SRl9SoAGD+PMWGqP
-	D7fe/CLiOL0zgj3AJa8V14w59ceDQ/J0ohca9cLw1FTuXlbhBl2gIb1OV5AMf1PwKiPNwLlWg+RVo
-	6nQi4tIWHPZDnS2Vqlhw==;
+	List-Owner; bh=B4+0xpqd4TyHe5r3JtnL4e0Ec3X6RHcWYH7JkJUoM7c=; b=tO5fDkWmReHbaO
+	ZFs3Hpwa296gP7eNYxaITtR3bNeaP/NKq32LDZF4J9EVBLXe2kIUqDod9I0qr7hOxEDrJ8ANeOiAm
+	RxyBeQ5isAyo1umYi6Vdh6OZTR7+RxBD63GMLhugEnXjJDKjey7FXTHlG9KpxlP0kUiZTvkoVc2Qh
+	M94gV6lnIKhf+KWZ2ANK9NYdBXsWL4cHrs2whbZp2u3kIq32JwD/UgtqAJJxjtn3tAJTbExz16VMg
+	jUCTU2GnUq25YmPmlP3SyhY1x/HWXHCQSxHMPSD1gIk7mg9FwSwNAhuGM7K6WQ+vC41kIkRwU/cx+
+	cxL/jsh25OL+G8JL0xHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haiAj-0005g4-U5; Tue, 11 Jun 2019 14:54:49 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1haiAn-0005iz-9D; Tue, 11 Jun 2019 14:54:53 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haiAd-0005dD-Sp
- for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:54:47 +0000
-Received: by mail-pf1-x442.google.com with SMTP id t16so7580856pfe.11
- for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:54:43 -0700 (PDT)
+ id 1haiAi-0005fj-0b
+ for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:54:49 +0000
+Received: by mail-pg1-x544.google.com with SMTP id d30so7109385pgm.7
+ for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:54:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=7B3tbjY3n0ai6z9ObJzMBT9vy+XRoJe3mWhFKoigG/c=;
- b=KrImql71xcFNb0WrCWlI/09YP9UfP6n2nqcuwop+HGO/7Kjf8gN174M1Hg6A2dS6/n
- TWSTO3bjEmmqk4sU+n5/k93fJU1LnnvNn0mK+isML89vPiduUYiaL7VA0ZyJGSQYWTp0
- 6/zgxAWRPWPY2WT1ok2R3EjzOXnT9HcVLhKSU=
+ bh=XhdCNTKPTz7BvpFyl8lpuUkh8SvoRcCSv/2PVP+pBIM=;
+ b=Kf5GydXhSHZfk8YLyHWfCNqZTAvjjb58L7MF214AGcuoOuitCoDUpc2GuGxVHiJ+PW
+ x5zWwb2gbhYAV5n7nUVye+DjBShgedYDaolBg24lQXvf+0TUPki0evawJNDpb4QHwyOp
+ TQyN3N/nJE6EkuCI5ishqLJrXMd+O9HCrT5/Q=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=7B3tbjY3n0ai6z9ObJzMBT9vy+XRoJe3mWhFKoigG/c=;
- b=sgf5/qdKPaTD22CD0ETdNd2xjVd+ZD1oXorAHsmlIgYGCJcp5erUYboHeDSnnmYfd9
- 1s1Q/OBWbKQnX1im7cjY0b3+lX7GWc3btioy4z9acv0y0qEDyrq0BP/7iswpyYOxqOk/
- HncUEt8upEpn5Cr7TAjuYyQRqYEsx+Ok9UFxPAfJKpcHV//+FnEGULEd2oc9+HxRl8Cp
- 4F9wpeGrJEienRhmTB3lxZ9EgnQYOs/lP3jmnmAGA9OjECknLqsRQIh4CWfamsvvu42A
- 6bmPdkp2uuibulnX9wrbwSS3WPcm0oU5vNPgfiScR/o9lUqhH+XfnbaOJZU4M8/FvthQ
- kMMw==
-X-Gm-Message-State: APjAAAV6HZn8GB5XpBzJ8N1OLFZr+BlQiFGNd88txvRTIgxEncad/LPG
- 7ortRSLJv85QOtuu3z5tbIPafA==
-X-Google-Smtp-Source: APXvYqwW6OnI5GUa388tzpomITQPH3HaGtsstNL697ul74RNs+IlCQYMNNtiplg8wWQ0UkKkRsYofQ==
-X-Received: by 2002:aa7:8083:: with SMTP id v3mr1852563pff.69.1560264883270;
- Tue, 11 Jun 2019 07:54:43 -0700 (PDT)
+ bh=XhdCNTKPTz7BvpFyl8lpuUkh8SvoRcCSv/2PVP+pBIM=;
+ b=Xs6EjustaOr+Ct9m3ELTLmApOpPnH3DZqg16g9n0T0z5tBA6UEjBK/LJCLCg37cuoU
+ QqSbyA1iBPutM1nynUiJghAlmFl+ys+saJt1uCfx/Kni4ep5obMNvzZyqSAYUQY0Sjxk
+ P/F9UAxbCz4zfJ/pVjHpSS9QywRUKvhhOMiyOPwDsUcjKOmLv9d4U9JZXmg/PyYlyztY
+ z9+I8byUSwlT4D6rZNJsidoec2RiidwqaOrQTNGK0YDNB8wdFb7fVWXss8JihOxnApj+
+ dp0f0HTfoHnvQNzNAb09oPtFoyE9EpyMFmZu5CyNXoXHn5YqdtkG3pepAVsugq7Mtuk+
+ WU7Q==
+X-Gm-Message-State: APjAAAVPOt02laW3JIpLxljB6InBBPJBzWAxXRSia5OOfARKg80N4y2q
+ 0sFsWAhMPZi1Tid6qe5RSLn2fA==
+X-Google-Smtp-Source: APXvYqzUhXZ5xfXZMCkz7HBmdq0s9InexF7//Aw1Jea6brLReRs4f3fOxNaZnVdjriFbUEsz37K4/Q==
+X-Received: by 2002:a65:60cd:: with SMTP id r13mr20771234pgv.58.1560264887387; 
+ Tue, 11 Jun 2019 07:54:47 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.180.18])
- by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.54.39
+ by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.54.43
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 11 Jun 2019 07:54:42 -0700 (PDT)
+ Tue, 11 Jun 2019 07:54:46 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH 43/92] debug_uart: Add printdec
-Date: Tue, 11 Jun 2019 20:20:46 +0530
-Message-Id: <20190611145135.21399-44-jagan@amarulasolutions.com>
+Subject: [PATCH 44/92] ram: rockchip: Add debug sdram driver
+Date: Tue, 11 Jun 2019 20:20:47 +0530
+Message-Id: <20190611145135.21399-45-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190611145135.21399-1-jagan@amarulasolutions.com>
 References: <20190611145135.21399-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_075443_956958_1E691454 
-X-CRM114-Status: UNSURE (   8.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190611_075448_057991_3A323C00 
+X-CRM114-Status: GOOD (  13.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,52 +104,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add printdec, this would help to print an
-output a decimalism value.
+Add sdram driver to handle debug across rockchip SoCs.
+
+This would help to improve code debugging feature for
+sdram drivers in rockchip family, whoever wants to
+debug the driver should call these core debug code on
+their respective platform sdram drivers.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 Signed-off-by: YouMin Chen <cym@rock-chips.com>
 ---
- include/debug_uart.h | 19 +++++++++++++++++++
- 1 file changed, 19 insertions(+)
+ .../include/asm/arch-rockchip/sdram_common.h  |  9 +++++
+ drivers/ram/rockchip/Kconfig                  |  9 +++++
+ drivers/ram/rockchip/Makefile                 |  1 +
+ drivers/ram/rockchip/sdram_debug.c            | 34 +++++++++++++++++++
+ 4 files changed, 53 insertions(+)
+ create mode 100644 drivers/ram/rockchip/sdram_debug.c
 
-diff --git a/include/debug_uart.h b/include/debug_uart.h
-index 34e8b2fc81..cd70ae1a04 100644
---- a/include/debug_uart.h
-+++ b/include/debug_uart.h
-@@ -104,6 +104,13 @@ void printhex4(uint value);
-  */
- void printhex8(uint value);
+diff --git a/arch/arm/include/asm/arch-rockchip/sdram_common.h b/arch/arm/include/asm/arch-rockchip/sdram_common.h
+index d723e6dacc..ebf4148b4d 100644
+--- a/arch/arm/include/asm/arch-rockchip/sdram_common.h
++++ b/arch/arm/include/asm/arch-rockchip/sdram_common.h
+@@ -122,4 +122,13 @@ size_t rockchip_sdram_size(phys_addr_t reg);
  
-+/**
-+ * printdec() - Output a decimalism value
-+ *
-+ * @value:	Value to output
-+ */
-+void printdec(uint value);
+ /* Called by U-Boot board_init_r for Rockchip SoCs */
+ int dram_init(void);
 +
- #ifdef CONFIG_DEBUG_UART_ANNOUNCE
- #define _DEBUG_UART_ANNOUNCE	printascii("<debug_uart> ");
- #else
-@@ -170,6 +177,18 @@ void printhex8(uint value);
- 	{ \
- 		printhex(value, 8); \
- 	} \
-+\
-+	void printdec(uint value) \
-+	{ \
-+		if (value > 10) { \
-+			printdec(value / 10); \
-+			value %= 10; \
-+		} else if (value == 10) { \
-+			_debug_uart_putc('1'); \
-+			value = 0; \
-+		} \
-+		_debug_uart_putc('0' + value); \
-+	} \
- \
- 	void debug_uart_init(void) \
- 	{ \
++#if !defined(CONFIG_RAM_ROCKCHIP_DEBUG)
++inline void sdram_print_dram_type(unsigned char dramtype)
++{
++}
++#else
++void sdram_print_dram_type(unsigned char dramtype);
++#endif /* CONFIG_RAM_ROCKCHIP_DEBUG */
++
+ #endif
+diff --git a/drivers/ram/rockchip/Kconfig b/drivers/ram/rockchip/Kconfig
+index 995cb487b8..151ffb684d 100644
+--- a/drivers/ram/rockchip/Kconfig
++++ b/drivers/ram/rockchip/Kconfig
+@@ -7,6 +7,15 @@ config RAM_ROCKCHIP
+ 
+ if RAM_ROCKCHIP
+ 
++config RAM_ROCKCHIP_DEBUG
++	bool "Rockchip ram drivers debugging"
++	help
++	  This enables debugging ram driver API's for the platforms
++	  based on Rockchip SoCs.
++
++	  This is an option for developers to understand the ram drivers
++	  initialization, configurations and etc.
++
+ config RAM_RK3399
+ 	bool "Ram driver for Rockchip RK3399"
+ 	default ROCKCHIP_RK3399
+diff --git a/drivers/ram/rockchip/Makefile b/drivers/ram/rockchip/Makefile
+index 07d4b62a9d..feb1f82d00 100644
+--- a/drivers/ram/rockchip/Makefile
++++ b/drivers/ram/rockchip/Makefile
+@@ -3,6 +3,7 @@
+ # Copyright (c) 2017 Theobroma Systems Design und Consulting GmbH
+ #
+ 
++obj-$(CONFIG_RAM_ROCKCHIP_DEBUG) += sdram_debug.o
+ obj-$(CONFIG_ROCKCHIP_RK3368) = dmc-rk3368.o
+ obj-$(CONFIG_ROCKCHIP_RK3128) = sdram_rk3128.o
+ obj-$(CONFIG_ROCKCHIP_RK3188) = sdram_rk3188.o
+diff --git a/drivers/ram/rockchip/sdram_debug.c b/drivers/ram/rockchip/sdram_debug.c
+new file mode 100644
+index 0000000000..c13e140fa5
+--- /dev/null
++++ b/drivers/ram/rockchip/sdram_debug.c
+@@ -0,0 +1,34 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * (C) Copyright 2019 Rockchip Electronics Co., Ltd
++ * (C) Copyright 2019 Amarula Solutions.
++ * Author: Jagan Teki <jagan@amarulasolutions.com>
++ */
++
++#include <common.h>
++#include <debug_uart.h>
++#include <asm/arch-rockchip/sdram_common.h>
++
++void sdram_print_dram_type(unsigned char dramtype)
++{
++	switch (dramtype) {
++	case DDR3:
++		printascii("DDR3");
++		break;
++	case DDR4:
++		printascii("DDR4");
++		break;
++	case LPDDR2:
++		printascii("LPDDR2");
++		break;
++	case LPDDR3:
++		printascii("LPDDR3");
++		break;
++	case LPDDR4:
++		printascii("LPDDR4");
++		break;
++	default:
++		printascii("Unknown Device");
++		break;
++	}
++}
 -- 
 2.18.0.321.gffc6fa0e3
 
