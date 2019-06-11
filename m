@@ -2,80 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D597A3CF98
-	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:54:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D97D73CF99
+	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:54:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7lgbHXK+TJ1ILSz202yJ5i13prGhjQlf2BN9QhjOXZc=; b=dW+Cx+bqVe6as6
-	hJ6HZsxz7v2qN0lEDo/ZSgALtJ3gIJEvW0yhWEtf/YCAgiu7NCYNyOomvUs46nzg6Ollp2fEQBoCK
-	reHxG5S+L9KaIReGzjPPtRJ0Qr4bE07uDys955pQFWPpdOLnVE9CfVSkouTiBbfILqL/A4YtBbIpo
-	URMWoR/3PEmXqQdNUQzla08S4zS2bfGBITfibXnhcg506WT6sM0JN6z2A3aYnCpYoOGOoFm8gwE9d
-	wEg0zi8O74DnWU8uN2LK4heK2iT8FRjuui+8CeqFkjJ5l0Q0kh378e2ZZGEiHUd8tIIYHzmuUsfBF
-	8PnUXnYFKi3VjVBaBXlw==;
+	List-Owner; bh=Mk4zGRkWANP4N4uq21ZkD1jBBOSCwZWseMIzHCy9nuM=; b=nKw5xC+r27oy8C
+	4TRW1eHqslTbydefCHaHXUcOJA+/oxuD/bqJQcCeJ2A/reYO2uHz1SjqITBsPQXTIN9sSqHxx11wl
+	N3aQji+oMTcREU2jZUiiL6lwgoJy9kUqbeN4Sp/oPMQOvv8lBGSmCqZCQw5hdtSKyCTIhrxAoxt2U
+	OLgUV4KYosUHr2X821R21zKMEgpqdbFt96iWRJg71yZZxEUa4qpx11VOQURcmOfzAbZNrGSndp6ol
+	LAYM0UGoZtlgnzuzN0xdxYNVvUBCP46Rt3C7mDjLWdrHYL8bG59vZNNT1F9bjBMFwNJCPJjlb7wWt
+	rphvdkB4N0gQDnV/MxmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haiA7-0005HG-1s; Tue, 11 Jun 2019 14:54:11 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1haiAB-0005Jg-3g; Tue, 11 Jun 2019 14:54:15 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haiA3-0005GF-SJ
- for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:54:09 +0000
-Received: by mail-pf1-x442.google.com with SMTP id t16so7579926pfe.11
- for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:54:07 -0700 (PDT)
+ id 1haiA7-0005Ie-Ng
+ for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:54:13 +0000
+Received: by mail-pl1-x641.google.com with SMTP id cl9so5218908plb.10
+ for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:54:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Ckb/dVtuw942Plu9XgJ6pHzs/1bm+A1p+7DNE1ADw90=;
- b=fWT8VJYSmMzJAYNC80m2AzxvuKviRv1U4jSTik65lKbCMdRPWGSKqLdY0CWuW3SmYG
- Zu1zDSK29DPG2h7SHB+Rs8gOZh38hd8sYdsUEwUgPzPfAqMpE+V7VyPI3CmkDu57e8Ma
- xkD+AXCM2x89snotE2vfD18fPKGj4J1JGMiHQ=
+ bh=LqdRoMBofZUwal7ZnZtD8e6Bzf9aoQ3r4aEYfycEPCo=;
+ b=gvx4Nazy8FSo4zCjN3wyfMtzZhZ3swk2MtM+pemAvCVgcKFeQwCCTOFPAXcGy9Ooym
+ WwQjFvh0cZNZZbplWMI9mCJutdwQ4+AvRSpuSQUFBHnhwARsPQaO9DWYjKKOrA+ctRRI
+ cMOagxI5v0MPNus8Q8XfarKzdFmoyliMcRhnY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Ckb/dVtuw942Plu9XgJ6pHzs/1bm+A1p+7DNE1ADw90=;
- b=YosfnjWD5VtRKT8H8eG9PpdMKLS3fbBqquDUwOcby6XFSLxe1Cx9lcQPGLxDo+p1Qg
- p4LMlSx6PGkSZ2QLFwhY9Xu0P0Ve78kyxiZgBk+opgpldzHpHGs3Rz3cXtVtwmUB4PDE
- JBKOaIw1GqnDyeiUkEXD6kFCNyVtN+x83c860YQs0w/XKjm2Vca48LMlgN2u8mCrLqC8
- t/SACDEG+uhtfs6zZGHV1usu9SpBuX00zANhQTtWgf7pp1aI9yGbSMK5wE1MPnu9LpOY
- sHiladOOPuvMqq0fZjVSfVKaudvhwzrvkkfwsskK4hwqs8gq86vZ3Ugk++s/N096Q+Ie
- GdWw==
-X-Gm-Message-State: APjAAAVdWBVp1ndrnpHYBRLr/cVKLmx7fPLrWnh7GVIh+72rS4O313nr
- /TJASo5lEHuEBW+4RS32wzl9Hw==
-X-Google-Smtp-Source: APXvYqx6VkHOMAsdNKttuOPOGpRsMDbET+LXthED6rYa89xIpORcS9/+u0D+UP890ROSguwOZKxq6A==
-X-Received: by 2002:a63:2b8a:: with SMTP id
- r132mr20451397pgr.196.1560264847320; 
- Tue, 11 Jun 2019 07:54:07 -0700 (PDT)
+ bh=LqdRoMBofZUwal7ZnZtD8e6Bzf9aoQ3r4aEYfycEPCo=;
+ b=Xcxo8Lp5uu+Tjgv30iafR+oC3EMRGwgmD7QgMIAzy54XR/2kegczQA+KH81dHi5LbM
+ Yed40oXjzJ1PlBaepr+jr2jXn8/McQtmj//wHT/oIdh3wJoUnRarZXXsd2QPHv50Ep/3
+ OEXxuK5p+h9Q0CtlHATJ/BYHj+0jdzmkGSpMagDiZ9TRYdY61YW0fgb+qJwQe+L0KZ8W
+ iuJCSkF4lFs1SxaQXUAujdulpe2A3lLdHE77kVEyz9qmv834UA7aMGP4WSIfhRha5126
+ kYCKuDbY9zwU0pwXbj/EF9yy9LdLqywvIAXa38fHibYAYiJNXJvvwPrU5B4ghOCVdcEI
+ OAsA==
+X-Gm-Message-State: APjAAAX09h/idd2EdqFqS2xQ29a+DyxAv1N9wGqv/kF+oVKl1Zef4B/N
+ op+QrET0dklAgq+joKtNNvaT1g==
+X-Google-Smtp-Source: APXvYqzrZEFyDA84bNd+z8Tq4b23EssV13KHQAjeWZkfMjaadDosFyp4vSf8BHNfw//9txi6qHWK4w==
+X-Received: by 2002:a17:902:bb90:: with SMTP id
+ m16mr9745579pls.54.1560264851186; 
+ Tue, 11 Jun 2019 07:54:11 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.180.18])
- by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.54.03
+ by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.54.07
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 11 Jun 2019 07:54:06 -0700 (PDT)
+ Tue, 11 Jun 2019 07:54:10 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH 34/92] ram: rk3399: Add phy pctrl reset support
-Date: Tue, 11 Jun 2019 20:20:37 +0530
-Message-Id: <20190611145135.21399-35-jagan@amarulasolutions.com>
+Subject: [PATCH 35/92] ram: rk3399: Move pwrup_srefresh_exit to dram_info
+Date: Tue, 11 Jun 2019 20:20:38 +0530
+Message-Id: <20190611145135.21399-36-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190611145135.21399-1-jagan@amarulasolutions.com>
 References: <20190611145135.21399-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_075407_914077_4C53B4C4 
-X-CRM114-Status: GOOD (  10.14  )
+X-CRM114-CacheID: sfid-20190611_075411_768028_7FFDCD8A 
+X-CRM114-Status: UNSURE (   9.62  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,75 +106,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add support for phy pctrl reset support for both channel 0, 1.
+Add pwrup_srefresh_exit to be part of dram_info so-that
+the it can help to support pwrup_srefresh_exit in individual
+channels while starting pctl in future.
+
+No functionality change.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-Signed-off-by: YouMin Chen <cym@rock-chips.com>
 ---
- drivers/ram/rockchip/sdram_rk3399.c | 29 +++++++++++++++++++++++++++++
- 1 file changed, 29 insertions(+)
+ drivers/ram/rockchip/sdram_rk3399.c | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index e3945feca3..bbf56f29ae 100644
+index bbf56f29ae..7ca76d304f 100644
 --- a/drivers/ram/rockchip/sdram_rk3399.c
 +++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -35,6 +35,10 @@
- #define PHY_DRV_ODT_40		0xe
- #define PHY_DRV_ODT_34_3	0xf
- 
-+#define CRU_SFTRST_DDR_CTRL(ch, n)	((0x1 << (8 + 16 + (ch) * 4)) | \
-+					((n) << (8 + (ch) * 4)))
-+#define CRU_SFTRST_DDR_PHY(ch, n)	((0x1 << (9 + 16 + (ch) * 4)) | \
-+					((n) << (9 + (ch) * 4)))
- struct chan_info {
- 	struct rk3399_ddr_pctl_regs *pctl;
- 	struct rk3399_ddr_pi_regs *pi;
-@@ -79,6 +83,29 @@ static void copy_to_reg(u32 *dest, const u32 *src, u32 n)
- 	}
+@@ -49,6 +49,7 @@ struct chan_info {
+ struct dram_info {
+ #if defined(CONFIG_TPL_BUILD) || \
+ 	(!defined(CONFIG_TPL) && defined(CONFIG_SPL_BUILD))
++	u32 pwrup_srefresh_exit;
+ 	struct chan_info chan[2];
+ 	struct clk ddr_clk;
+ 	struct rk3399_cru *cru;
+@@ -487,8 +488,8 @@ static int phy_io_config(const struct chan_info *chan,
+ 	return 0;
  }
  
-+static void rkclk_ddr_reset(struct rk3399_cru *cru, u32 channel, u32 ctl,
-+			    u32 phy)
-+{
-+	channel &= 0x1;
-+	ctl &= 0x1;
-+	phy &= 0x1;
-+	writel(CRU_SFTRST_DDR_CTRL(channel, ctl) |
-+				   CRU_SFTRST_DDR_PHY(channel, phy),
-+				   &cru->softrst_con[4]);
-+}
-+
-+static void phy_pctrl_reset(struct rk3399_cru *cru,  u32 channel)
-+{
-+	rkclk_ddr_reset(cru, channel, 1, 1);
-+	udelay(10);
-+
-+	rkclk_ddr_reset(cru, channel, 1, 0);
-+	udelay(10);
-+
-+	rkclk_ddr_reset(cru, channel, 0, 0);
-+	udelay(10);
-+}
-+
- static void phy_dll_bypass_set(struct rk3399_ddr_publ_regs *ddr_publ_regs,
- 			       u32 freq)
+-static int pctl_cfg(const struct chan_info *chan, u32 channel,
+-		    const struct rk3399_sdram_params *sdram_params)
++static int pctl_cfg(struct dram_info *dram, const struct chan_info *chan,
++		    u32 channel, const struct rk3399_sdram_params *sdram_params)
  {
-@@ -1126,6 +1153,7 @@ static int sdram_init(struct dram_info *dram,
- {
- 	unsigned char dramtype = sdram_params->base.dramtype;
- 	unsigned int ddr_freq = sdram_params->base.ddr_freq;
-+	struct rk3399_cru *cru = dram->cru;
- 	int channel;
+ 	u32 *denali_ctl = chan->pctl->denali_ctl;
+ 	u32 *denali_pi = chan->pi->denali_pi;
+@@ -496,7 +497,6 @@ static int pctl_cfg(const struct chan_info *chan, u32 channel,
+ 	const u32 *params_ctl = sdram_params->pctl_regs.denali_ctl;
+ 	const u32 *params_phy = sdram_params->phy_regs.denali_phy;
+ 	u32 tmp, tmp1, tmp2;
+-	u32 pwrup_srefresh_exit;
  	int ret;
+ 	const ulong timeout_ms = 200;
  
-@@ -1142,6 +1170,7 @@ static int sdram_init(struct dram_info *dram,
- 		const struct chan_info *chan = &dram->chan[channel];
- 		struct rk3399_ddr_publ_regs *publ = chan->publ;
+@@ -516,7 +516,8 @@ static int pctl_cfg(const struct chan_info *chan, u32 channel,
+ 	writel(sdram_params->phy_regs.denali_phy[911], &denali_phy[911]);
+ 	writel(sdram_params->phy_regs.denali_phy[912], &denali_phy[912]);
  
-+		phy_pctrl_reset(cru, channel);
- 		phy_dll_bypass_set(publ, ddr_freq);
+-	pwrup_srefresh_exit = readl(&denali_ctl[68]) & PWRUP_SREFRESH_EXIT;
++	dram->pwrup_srefresh_exit = readl(&denali_ctl[68]) &
++				    PWRUP_SREFRESH_EXIT;
+ 	clrbits_le32(&denali_ctl[68], PWRUP_SREFRESH_EXIT);
  
+ 	/* PHY_DLL_RST_EN */
+@@ -592,7 +593,7 @@ static int pctl_cfg(const struct chan_info *chan, u32 channel,
+ 	debug("DRAM (%s): phy locked after %ld ms\n", __func__, get_timer(tmp));
+ 
+ 	clrsetbits_le32(&denali_ctl[68], PWRUP_SREFRESH_EXIT,
+-			pwrup_srefresh_exit);
++			dram->pwrup_srefresh_exit);
+ 	return 0;
+ }
+ 
+@@ -1176,7 +1177,7 @@ static int sdram_init(struct dram_info *dram,
  		if (channel >= sdram_params->base.num_channels)
+ 			continue;
+ 
+-		ret = pctl_cfg(chan, channel, sdram_params);
++		ret = pctl_cfg(dram, chan, channel, sdram_params);
+ 		if (ret < 0) {
+ 			printf("%s: pctl config failed\n", __func__);
+ 			return ret;
 -- 
 2.18.0.321.gffc6fa0e3
 
