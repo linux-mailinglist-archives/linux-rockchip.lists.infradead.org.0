@@ -2,81 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AF313CFD9
-	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:56:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC9023CFDA
+	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:56:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tYWY9PlBsRQgFgFjbE7iwart7jhGgw6p5jUccCZ38dA=; b=pSx9O7iN2NW1Hi
-	xEdgOlBHwNX8GPMqpW1VjrfDfmF8zRBAN4nBvbsTLdBalqBDa7FIMrJ9edF7pX4dOQup6vsSotREl
-	1kNTR2TuRoIuxWKprXNnTGhIxF4gYcNF/VdUqNvcKBcqIDdWtfTgjlxcr6WRXrIFxdteDrOkjoWVf
-	Ou84BwktT08O9o4jiGlFn34DY4h5Spf8Bg0BmUeWOMszRE9yk/fqNiQVWHDJUFSPGktbr5o4sQeJB
-	f0mHCXzzV4KSSmhd8I1W6MIgLBeOG60Gq4oDq0z8sk9nfdDmM5Lb3i8LASacv+7oK9ERlL6I6Urha
-	p9LQOvlMchuv1CgWzDCg==;
+	List-Owner; bh=6GI9bg63BJ67vvnpOpGGjbLof7J0V+4i4GYyWG7Z++E=; b=pFDhZ13y/HA3xf
+	4fFpyu4rtUm4/IF6iQu6a0sMtk4BzyxgL6PjUVPo+VlX1m0KVM8j+dI8VJgZ1jfz4W1zr6YW1nCCY
+	JYWz4H0+rOlUvFPP3x3uZlexiuuGRhWJy4zV03SxJqc74PjcuTGHXDxWNhYwRdAPqmebi0sDQrlgJ
+	gxpga3cM+lX0Zk8pz/gwzpOudRnsnAo1f6yQdCzB86rmUHHXMQuaTKzhe5Gvn4PrGgbzuf47aZLh9
+	gXZRzjHBzEtNWkDG0l0XT3xAfxjxv5vfXVU7sa8d3ox15PDMrnOgaeCOnkPWxBsU4i+vJfF73Eh+E
+	PVddlKEfvTrqQPa7Rp6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haiCP-0008BJ-4r; Tue, 11 Jun 2019 14:56:33 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1haiCS-0008E8-R5; Tue, 11 Jun 2019 14:56:36 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haiCL-00089A-7Z
- for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:56:30 +0000
-Received: by mail-pl1-x642.google.com with SMTP id go2so5218782plb.9
- for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:56:29 -0700 (PDT)
+ id 1haiCP-0008C6-5a
+ for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:56:34 +0000
+Received: by mail-pl1-x644.google.com with SMTP id cl9so5221320plb.10
+ for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:56:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=be5iGODuHUyOHnG/APAPnJWbjtO4VKwOHIm/JwaS84I=;
- b=GANHWTSc89wP98kGQKwTaI1FZ5/JJKeGgFwLCLSjz6l/szK4JnjdWMRuW7vI/m05xT
- ef++Tv2Dmla/Oc/n6vp0wb+bUd2pP/tbS/uG6S8+1FpQ/a1k+LHbXV991X3jRcu8viSU
- ftq994YJtgXTeAJaGgJQEErYXKh3De8oAkD9w=
+ bh=8c4S0X3iJtmuWtriTLrvafldLxCMegBBSbIDtgfjMO4=;
+ b=i4tr6oM5Rr332gPecrAN6qf8zVFBrw/dYxohF+a/L92sBUPWYrKOGYnUFv//QUdHNN
+ FZCbumZ8H78IR2GruNlVxPlo+lDsu8kbLBnnqqWN7lTvfbvj4mSkzmoXggElyfLdix5S
+ LE4H6jwrw33itc56v/PjCLsLlYsV4oUhtyGf8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=be5iGODuHUyOHnG/APAPnJWbjtO4VKwOHIm/JwaS84I=;
- b=Urrh64JyvCzt18PW8ZbNqAuhMdiHS7ICmcZAfB96jYJ61e9dNGxNduLcFgXI7fiYTr
- UJAoLtn+nqLMH/KHfkpkxPmUhtt3Rro+GHtbOMtY5bEy/CyCP7qZY7IlqY9R2Oe2jrED
- X5/aNxQLqN4NUb9gKrJ6PUg5PmdrH/3pEkoDdYMZhvvLq4O1PbjcQmY4SeZ6YvDBagc1
- DQqi52kgqzbm8WOlVcH5MO4BulIhxXP1fnUIydn8CkMhFZiiTY2dUFKat/+GIGXF3dgH
- cGKyhEFj45LiWiN2iwZT5SigSzd6Phl4T5yXej5kcvlpaZ0/zeFLh0REI/+dBieXYLGE
- 8PMg==
-X-Gm-Message-State: APjAAAXmAFnbOk2yYIQF2seoOVQMbOE6+03sVNnwbDEnsTBLLT1sSgCs
- EA4WSma4kIGe4dYrG7tb02TeAg==
-X-Google-Smtp-Source: APXvYqwpxnCJoFCxd2hkd4evlxOf6cPFOEaDfik1C9v3g1wCXpBM07BNlUwJqpY9/UX9APTqZYc9xQ==
-X-Received: by 2002:a17:902:4181:: with SMTP id
- f1mr73651417pld.22.1560264988626; 
- Tue, 11 Jun 2019 07:56:28 -0700 (PDT)
+ bh=8c4S0X3iJtmuWtriTLrvafldLxCMegBBSbIDtgfjMO4=;
+ b=rtS/2XCQ019FApYGNIo/0EJlm+UfJgZF6058j5AQtc3sx0qr/aKcsZwUizWCzvj9bD
+ RhLKQvNvq13ZNTy/0jjK8Bd8FGoD01vPPxUSQHoQfbXSMJB45oBU3TbTxnbctUTm9Yju
+ kFXbG0g3NrpySedz6EC0L9BaPx9A0HFU2KI9+5dojUP8Bdm96O3AMuwlhnfYjruDHSok
+ KLbhzxLyPtpaqmmc0keG5LgDHtIwTQqjC4y/Mio/IS1Xs9PW+kuxENFHBVfL3SNC86F6
+ cKKoAKwI15cjrR5DphtA84OrAZndnINItZcRlRpKhoao4dYWvHpGqfd/j7gfPwwhQUpl
+ JyLA==
+X-Gm-Message-State: APjAAAWhjSZrmm30DaQVnYHzxzH6L3ZIRI6oJ7qNh0znF9OtspdM9S6L
+ WhFGyVauWt4W1wES6Rf13neOqw==
+X-Google-Smtp-Source: APXvYqzqu9oxSH0LhGCJdm6LL2oEIt/sGA0FteyQ64VIcr+R2wIxLt54If5iWP9/ZqyhL+kUGX2Jgw==
+X-Received: by 2002:a17:902:e306:: with SMTP id
+ cg6mr46243669plb.341.1560264992549; 
+ Tue, 11 Jun 2019 07:56:32 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.180.18])
- by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.56.24
+ by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.56.28
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 11 Jun 2019 07:56:28 -0700 (PDT)
+ Tue, 11 Jun 2019 07:56:32 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH 70/92] ram: rk3399: Add IO settings
-Date: Tue, 11 Jun 2019 20:21:13 +0530
-Message-Id: <20190611145135.21399-71-jagan@amarulasolutions.com>
+Subject: [PATCH 71/92] ram: sdram: Configure lpddr4 tsel rd,
+ wr based on IO settings
+Date: Tue, 11 Jun 2019 20:21:14 +0530
+Message-Id: <20190611145135.21399-72-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190611145135.21399-1-jagan@amarulasolutions.com>
 References: <20190611145135.21399-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_075629_311371_E2F8DF0D 
-X-CRM114-Status: UNSURE (   8.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190611_075633_270850_93B04F0C 
+X-CRM114-Status: GOOD (  11.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,136 +106,107 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add IO settings for dram ctl and phy.
-
-IO settings are useful for configuring ctl, phy odt, vref,
-mr5, mode select and other needed input output operations
-for lpddr4 or any other dramtype sdram.
-
-Right now, this patch added IO setting for all supported
-sdram frequencies.
+Now we have IO settings available for all supported sdram
+frequencies, so retrieve these IO settings and make used
+for LPDDR4 ds odt configuration.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 Signed-off-by: YouMin Chen <cym@rock-chips.com>
 ---
- drivers/ram/rockchip/sdram_rk3399.c | 104 ++++++++++++++++++++++++++++
- 1 file changed, 104 insertions(+)
+ drivers/ram/rockchip/sdram_rk3399.c | 42 ++++++++++++++++++++++++-----
+ 1 file changed, 36 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index 9151b023e2..5db7cbe116 100644
+index 5db7cbe116..6385df5600 100644
 --- a/drivers/ram/rockchip/sdram_rk3399.c
 +++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -80,6 +80,110 @@ struct rockchip_dmc_plat {
- 	struct regmap *map;
+@@ -184,6 +184,33 @@ struct io_setting {
+ 	},
  };
  
-+struct io_setting {
-+	u32 mhz;
-+	u32 mr5;
-+	/* dram side */
-+	u32 dq_odt;
-+	u32 ca_odt;
-+	u32 pdds;
-+	u32 dq_vref;
-+	u32 ca_vref;
-+	/* phy side */
-+	u32 rd_odt;
-+	u32 wr_dq_drv;
-+	u32 wr_ca_drv;
-+	u32 wr_ckcs_drv;
-+	u32 rd_odt_en;
-+	u32 rd_vref;
-+} lpddr4_io_setting[] = {
-+	{
-+		50 * MHz,
-+		0,
-+		/* dram side */
-+		0,	/* dq_odt; */
-+		0,	/* ca_odt; */
-+		6,	/* pdds; */
-+		0x72,	/* dq_vref; */
-+		0x72,	/* ca_vref; */
-+		/* phy side */
-+		PHY_DRV_ODT_HI_Z,	/* rd_odt; */
-+		PHY_DRV_ODT_40,	/* wr_dq_drv; */
-+		PHY_DRV_ODT_40,	/* wr_ca_drv; */
-+		PHY_DRV_ODT_40,	/* wr_ckcs_drv; */
-+		0,	/* rd_odt_en;*/
-+		41,	/* rd_vref; (unit %, range 3.3% - 48.7%) */
-+	},
-+	{
-+		600 * MHz,
-+		0,
-+		/* dram side */
-+		1,	/* dq_odt; */
-+		0,	/* ca_odt; */
-+		6,	/* pdds; */
-+		0x72,	/* dq_vref; */
-+		0x72,	/* ca_vref; */
-+		/* phy side */
-+		PHY_DRV_ODT_HI_Z,	/* rd_odt; */
-+		PHY_DRV_ODT_48,	/* wr_dq_drv; */
-+		PHY_DRV_ODT_40,	/* wr_ca_drv; */
-+		PHY_DRV_ODT_40,	/* wr_ckcs_drv; */
-+		0,	/* rd_odt_en; */
-+		32,	/* rd_vref; (unit %, range 3.3% - 48.7%) */
-+	},
-+	{
-+		800 * MHz,
-+		0,
-+		/* dram side */
-+		1,	/* dq_odt; */
-+		0,	/* ca_odt; */
-+		1,	/* pdds; */
-+		0x72,	/* dq_vref; */
-+		0x72,	/* ca_vref; */
-+		/* phy side */
-+		PHY_DRV_ODT_40,	/* rd_odt; */
-+		PHY_DRV_ODT_48,	/* wr_dq_drv; */
-+		PHY_DRV_ODT_40,	/* wr_ca_drv; */
-+		PHY_DRV_ODT_40,	/* wr_ckcs_drv; */
-+		1,	/* rd_odt_en; */
-+		17,	/* rd_vref; (unit %, range 3.3% - 48.7%) */
-+	},
-+	{
-+		933 * MHz,
-+		0,
-+		/* dram side */
-+		3,	/* dq_odt; */
-+		0,	/* ca_odt; */
-+		6,	/* pdds; */
-+		0x59,	/* dq_vref; 32% */
-+		0x72,	/* ca_vref; */
-+		/* phy side */
-+		PHY_DRV_ODT_HI_Z,	/* rd_odt; */
-+		PHY_DRV_ODT_48,	/* wr_dq_drv; */
-+		PHY_DRV_ODT_40,	/* wr_ca_drv; */
-+		PHY_DRV_ODT_40,	/* wr_ckcs_drv; */
-+		0,	/* rd_odt_en; */
-+		32,	/* rd_vref; (unit %, range 3.3% - 48.7%) */
-+	},
-+	{
-+		1066 * MHz,
-+		0,
-+		/* dram side */
-+		6,	/* dq_odt; */
-+		0,	/* ca_odt; */
-+		1,	/* pdds; */
-+		0x10,	/* dq_vref; */
-+		0x72,	/* ca_vref; */
-+		/* phy side */
-+		PHY_DRV_ODT_40,	/* rd_odt; */
-+		PHY_DRV_ODT_60,	/* wr_dq_drv; */
-+		PHY_DRV_ODT_40,	/* wr_ca_drv; */
-+		PHY_DRV_ODT_40,	/* wr_ckcs_drv; */
-+		1,	/* rd_odt_en; */
-+		17,	/* rd_vref; (unit %, range 3.3% - 48.7%) */
-+	},
-+};
++/**
++ * phy = 0, PHY boot freq
++ * phy = 1, PHY index 0
++ * phy = 2, PHY index 1
++ */
++static struct io_setting *
++lpddr4_get_io_settings(const struct rk3399_sdram_params *params, u32 mr5)
++{
++	struct io_setting *io = NULL;
++	u32 n;
++
++	for (n = 0; n < ARRAY_SIZE(lpddr4_io_setting); n++) {
++		io = &lpddr4_io_setting[n];
++
++		if (io->mr5 != 0) {
++			if (io->mhz >= params->base.ddr_freq &&
++			    io->mr5 == mr5)
++				break;
++		} else {
++			if (io->mhz >= params->base.ddr_freq)
++				break;
++		}
++	}
++
++	return io;
++}
 +
  static void *get_ddrc0_con(struct dram_info *dram, u8 channel)
  {
  	return (channel == 0) ? &dram->grf->ddrc0_con0 : &dram->grf->ddrc0_con1;
+@@ -525,7 +552,7 @@ static int phy_io_config(const struct chan_info *chan,
+ }
+ 
+ static void set_ds_odt(const struct chan_info *chan,
+-		       const struct rk3399_sdram_params *sdram_params)
++		       const struct rk3399_sdram_params *sdram_params, u32 mr5)
+ {
+ 	u32 *denali_phy = chan->publ->denali_phy;
+ 
+@@ -534,19 +561,22 @@ static void set_ds_odt(const struct chan_info *chan,
+ 	u32 tsel_idle_select_n, tsel_rd_select_n;
+ 	u32 tsel_wr_select_dq_p, tsel_wr_select_ca_p;
+ 	u32 tsel_wr_select_dq_n, tsel_wr_select_ca_n;
++	struct io_setting *io = NULL;
+ 	u32 reg_value;
+ 
+ 	if (sdram_params->base.dramtype == LPDDR4) {
++		io = lpddr4_get_io_settings(sdram_params, mr5);
++
+ 		tsel_rd_select_p = PHY_DRV_ODT_HI_Z;
+-		tsel_rd_select_n = PHY_DRV_ODT_240;
++		tsel_rd_select_n = io->rd_odt;
+ 
+ 		tsel_idle_select_p = PHY_DRV_ODT_HI_Z;
+ 		tsel_idle_select_n = PHY_DRV_ODT_240;
+ 
+-		tsel_wr_select_dq_p = PHY_DRV_ODT_40;
++		tsel_wr_select_dq_p = io->wr_dq_drv;
+ 		tsel_wr_select_dq_n = PHY_DRV_ODT_40;
+ 
+-		tsel_wr_select_ca_p = PHY_DRV_ODT_40;
++		tsel_wr_select_ca_p = io->wr_ca_drv;
+ 		tsel_wr_select_ca_n = PHY_DRV_ODT_40;
+ 	} else if (sdram_params->base.dramtype == LPDDR3) {
+ 		tsel_rd_select_p = PHY_DRV_ODT_240;
+@@ -728,7 +758,7 @@ static void pctl_start(struct dram_info *dram,
+ }
+ 
+ static int pctl_cfg(struct dram_info *dram, const struct chan_info *chan,
+-		    u32 channel, const struct rk3399_sdram_params *sdram_params)
++		    u32 channel, struct rk3399_sdram_params *sdram_params)
+ {
+ 	u32 *denali_ctl = chan->pctl->denali_ctl;
+ 	u32 *denali_pi = chan->pi->denali_pi;
+@@ -812,7 +842,7 @@ static int pctl_cfg(struct dram_info *dram, const struct chan_info *chan,
+ 	copy_to_reg(&denali_phy[512], &params_phy[512], (549 - 512 + 1) * 4);
+ 	copy_to_reg(&denali_phy[640], &params_phy[640], (677 - 640 + 1) * 4);
+ 	copy_to_reg(&denali_phy[768], &params_phy[768], (805 - 768 + 1) * 4);
+-	set_ds_odt(chan, sdram_params);
++	set_ds_odt(chan, sdram_params, 0);
+ 
+ 	/*
+ 	 * phy_dqs_tsel_wr_timing_X 8bits DENALI_PHY_84/212/340/468 offset_8
 -- 
 2.18.0.321.gffc6fa0e3
 
