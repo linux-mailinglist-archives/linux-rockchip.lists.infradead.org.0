@@ -2,79 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A782F3CF7E
-	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:52:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 211163CF7F
+	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:52:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HdPo4qtIoTTnzBPQTO5FOwcD1KY4z0ha9xq0pRmgOMo=; b=cIwRajrLykDrxv
-	y1zWa0mTY3uSSLsESKUDOSceKfoPVqCIZEIMtDdUHT7xJmZQVPcGf5RjUmIUZtgJGrikLlGoIoWOo
-	gRY0hzgumgaK0DHDFC3IQ9EndlUF68iZlZnXAmBGfN6Wr3nv096/f/F8e/DW532vK4Eyb2DCgyJ7v
-	3ud+vcuUxUOSlU/pZwP5Lxtea14GaU8POt27M/B+AAzfyvUXFDPNk2idJxKRy5gSS9JONNGMtducA
-	tKMzHhNHNYjp0uDajEarDqzKQ2dbBTwsK5Ujlxb1bgSyP2t71lmyRMnZRpgH6D6GiPNbtRLSAoMYW
-	Xn821/0k+mBFF+RxqZOw==;
+	List-Owner; bh=Bmq5YVieDVqx2ztzPuPBG32GkTWzNeVDRXEeg7or12A=; b=YCBDxZR1HZCL0+
+	zZasalnchXwC+eeo/2/GLMALYk3VmG5vcVuZYvAB1wtxM+5Ufxp02Du7T7mGcd0hjhsk3jPjGHa1d
+	be7NehGJzIOVlXFavJws2EqDc5M3u71d/ZWqXVZBuAQaki/Ps8b0nf8v8qcjYvjBTDsEoBHrlyiSM
+	Du6QKBKw0gqWkH6tZoom65N8cvrcLCxnWzKNuu4fMAEE0g2LfoiPhj57HFQ/2n3R/61XglZzS4qXE
+	ulbNlEXC4bT/qObec7ljGWM2h5PqEmlk7YkO1h8X12ZiDmb9SdrQ93OvOW810pO9yiC1mHgwJkbAO
+	K5KOtQ61h/SMs04HDXwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hai8d-0004AC-Qi; Tue, 11 Jun 2019 14:52:39 +0000
-Received: from mail-pf1-x433.google.com ([2607:f8b0:4864:20::433])
+	id 1hai8i-0004Cv-93; Tue, 11 Jun 2019 14:52:44 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hai8a-00048q-AC
- for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:52:37 +0000
-Received: by mail-pf1-x433.google.com with SMTP id t16so7577410pfe.11
- for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:52:36 -0700 (PDT)
+ id 1hai8e-0004BO-6l
+ for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:52:41 +0000
+Received: by mail-pf1-x443.google.com with SMTP id d126so7600436pfd.2
+ for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:52:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=k8hPse+eLaJV7/L49iRCuWgFHm8RJPmX47usVOlkDFw=;
- b=j7GcbOlCFdLhgkLf9CQ8bj8uoJxAJYnIRHKJcV7QNHrN79fxEF0yCv/y+W2JLz9zUn
- 8dGWaw5WxawOHp4UHV2JJrCMQR5YIURn7C+qPaAoz/DN5fO3GhoTc7JJ8v7Q6wgsc12F
- jwqMrZU9rjQ5vjPhrE2zqINp5ZTpzptroVOFY=
+ bh=lRP180Ipi3gVE2/vJfC3zMZ5wLFrHYhOkBITeXZ444Y=;
+ b=mncECj6CeShZlpIKsJAWj8d/7ZKJOZ6lOAxH/mMg2SUM8wze5sxqHg5hCk4WSAqwIt
+ jbSGlYA6Mh8ck9qr9gOfUwTQ+B3Ln21ksbM6e3fER3X8Bi0g5kv1QACxUYsC7wDqAK82
+ N31XoeeDxv6cn8QIn3rNcrayzqpvCRmqHAK5E=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=k8hPse+eLaJV7/L49iRCuWgFHm8RJPmX47usVOlkDFw=;
- b=ViEP2Jbylo1QZIMKSvz4jBm+ff+9ZfCYtbg+nkaTNQ3R5GIAUUROPWLEa1Ati5wZ1i
- Qq1zZ8apA+ieQ4OZ7L0SxKePIYxmmeXix4/PN35iQr3KREXj/+VEGe4zmeO/dPIKD8rZ
- jUXv+eXYbO5Qi4SVnh5V76RMLRVpMkZcIUZlXRIaaAJ6Hk3Cu5nSCQcxETcV9wVYQa6f
- N4pz6VsASmpujG63aZ5/5mp3TlDls5ItQIii7m8JqPurGK5kgS25Pt4c9IkCLM8PZv+w
- ASmL2UVjZA337UFzg4xkDHF2paAfPPXIs4D6gMOSJcnttsdvkLiQjbJoBC0zPMTImcGR
- 5wTg==
-X-Gm-Message-State: APjAAAUt7jZBrt/Io/Cb0ODrl0sJ9CYhyaIHB+9YkdMCh/lKeLTU7YWN
- Cu+L6tu2oqomRRE68CfazOrUiQ==
-X-Google-Smtp-Source: APXvYqx3vmo8igCaqbQ0dolg5vQBvrpvc770u28p2qt5tPnVIZb9QHdlsY30vUG+eZ/DyXtnxb8D4w==
-X-Received: by 2002:aa7:90d3:: with SMTP id k19mr78440161pfk.1.1560264755423; 
- Tue, 11 Jun 2019 07:52:35 -0700 (PDT)
+ bh=lRP180Ipi3gVE2/vJfC3zMZ5wLFrHYhOkBITeXZ444Y=;
+ b=bWx7AwnxCQaI/drDQDSiyZeFXUfxlzbLnK5Xm00dY4vF7OiPoGo8wA+6f+dax8mRX1
+ 9bWR7zKi/UQdOliZp0w0oxWAfGXEMaBMKDhOVbqiSK+IwckB7vrv+pflQ3x2JagYMESu
+ 3ZOG8V4HiIZPT6dhhbwnNc3yLDlob1zB78z0P3K/desmXZvL3rSPwJaGBa1ket6xO8ZR
+ 0/Lt8HJs1c21kLa74PoenpQ6wrUi/7UJtK05fgGqmccymXDrJUM5OAJ9nZavzqqrnoYz
+ 1GG6DE+VFnCcN/ZF96NuDL1tun8h0PXrvLb0JszM+QQfq1/C/yxydJnxAO3D2HPYEgma
+ G1Zw==
+X-Gm-Message-State: APjAAAVcuWmb4ipvrpUqKS46zaHSSKdKzODHVfYRwVPfsKTRGEmfDFTF
+ FLJAjtonnGtwiUXwopGAi8m6dg==
+X-Google-Smtp-Source: APXvYqx+/rGrJ+0oxzQP0Xc+kMIpp/Y9BP/dTnI+9ATJW+5l+bCyh/XPgsQJ11DRRCFCcAUNcmfaHQ==
+X-Received: by 2002:a17:90a:bc08:: with SMTP id
+ w8mr27864299pjr.45.1560264759657; 
+ Tue, 11 Jun 2019 07:52:39 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.180.18])
- by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.52.31
+ by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.52.35
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 11 Jun 2019 07:52:34 -0700 (PDT)
+ Tue, 11 Jun 2019 07:52:38 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH 11/92] ram: rk3399: Add channel number encoder macro
-Date: Tue, 11 Jun 2019 20:20:14 +0530
-Message-Id: <20190611145135.21399-12-jagan@amarulasolutions.com>
+Subject: [PATCH 12/92] ram: rk3399: Add row_3_4 enc macro
+Date: Tue, 11 Jun 2019 20:20:15 +0530
+Message-Id: <20190611145135.21399-13-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190611145135.21399-1-jagan@amarulasolutions.com>
 References: <20190611145135.21399-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_075236_353517_9A82BB68 
-X-CRM114-Status: GOOD (  10.37  )
+X-CRM114-CacheID: sfid-20190611_075240_265398_EFF4CA68 
+X-CRM114-Status: GOOD (  10.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:433 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,41 +105,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add simplified and meaningful macro for channel number.
+Add simplified and meaningful macro for row_3_4.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 Signed-off-by: YouMin Chen <cym@rock-chips.com>
 ---
  arch/arm/include/asm/arch-rockchip/sdram_common.h | 1 +
- drivers/ram/rockchip/sdram_rk3399.c               | 3 +--
- 2 files changed, 2 insertions(+), 2 deletions(-)
+ drivers/ram/rockchip/sdram_rk3399.c               | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/arch/arm/include/asm/arch-rockchip/sdram_common.h b/arch/arm/include/asm/arch-rockchip/sdram_common.h
-index 83936d3679..38a8bb8642 100644
+index 38a8bb8642..49a5d14821 100644
 --- a/arch/arm/include/asm/arch-rockchip/sdram_common.h
 +++ b/arch/arm/include/asm/arch-rockchip/sdram_common.h
-@@ -35,6 +35,7 @@
+@@ -33,6 +33,7 @@
+ #define SYS_REG_NUM_CH_MASK		1
+ #define SYS_REG_ROW_3_4_SHIFT(ch)	(30 + (ch))
  #define SYS_REG_ROW_3_4_MASK		1
++#define SYS_REG_ENC_ROW_3_4(n, ch)	((n) << (30 + (ch)))
  #define SYS_REG_CHINFO_SHIFT(ch)	(28 + (ch))
  #define SYS_REG_ENC_DDRTYPE(n)		((n) << 13)
-+#define SYS_REG_ENC_NUM_CH(n)		(((n) - 1) << 12)
- #define SYS_REG_RANK_SHIFT(ch)		(11 + (ch) * 16)
- #define SYS_REG_RANK_MASK		1
- #define SYS_REG_COL_SHIFT(ch)		(9 + (ch) * 16)
+ #define SYS_REG_ENC_NUM_CH(n)		(((n) - 1) << 12)
 diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index 69c8d53314..3d2447a24e 100644
+index 3d2447a24e..0a7137784e 100644
 --- a/drivers/ram/rockchip/sdram_rk3399.c
 +++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -1009,8 +1009,7 @@ static void dram_all_config(struct dram_info *dram,
- 	unsigned int channel, idx;
- 
- 	sys_reg |= SYS_REG_ENC_DDRTYPE(sdram_params->base.dramtype);
--	sys_reg |= (sdram_params->base.num_channels - 1)
--		    << SYS_REG_NUM_CH_SHIFT;
-+	sys_reg |= SYS_REG_ENC_NUM_CH(sdram_params->base.num_channels);
- 	for (channel = 0, idx = 0;
- 	     (idx < sdram_params->base.num_channels) && (channel < 2);
- 	     channel++) {
+@@ -1021,7 +1021,7 @@ static void dram_all_config(struct dram_info *dram,
+ 		if (sdram_params->ch[channel].col == 0)
+ 			continue;
+ 		idx++;
+-		sys_reg |= info->row_3_4 << SYS_REG_ROW_3_4_SHIFT(channel);
++		sys_reg |= SYS_REG_ENC_ROW_3_4(info->row_3_4, channel);
+ 		sys_reg |= 1 << SYS_REG_CHINFO_SHIFT(channel);
+ 		sys_reg |= (info->rank - 1) << SYS_REG_RANK_SHIFT(channel);
+ 		sys_reg |= (info->col - 9) << SYS_REG_COL_SHIFT(channel);
 -- 
 2.18.0.321.gffc6fa0e3
 
