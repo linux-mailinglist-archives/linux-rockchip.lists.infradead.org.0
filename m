@@ -2,42 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4DB83C6AC
-	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 10:55:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E72343C6AE
+	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 10:55:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jih/9kUh3raWDNnSHk4GYjAdBttdrpfPbJSmUVIKbz4=; b=LZCPZQhXe7YxPC
-	uIuT0wKp3qHoFj62JTrbf0Lhi7AJi5j8ViMl8/nUPCaTQsCkLgJUn0ucXWcy1FtO88P3DjQ8BKo+z
-	rQhXhUzQGZX1MZ40vt/m0eho7TlF2DwjjY+G0YOgmFQXsgSGWXLOl80JNbPmsIQL3jW9ik3o/iDES
-	HUrrjLf5SyOxkxEz4Tew5AQfokTMD+FFRmsJ1uJEfV2wqRC4/gxDpzt545Uk8J6/66DnYx2N/aiaB
-	+qt1WNVhsxoxIxJ9NsfF0R36zTJlUsWnz3FDRDf8TAYN70RZIkEmhC1MTwqlGjqt7rkPIHBuY0StL
-	twg08sgBcdAUMEuNPowg==;
+	List-Owner; bh=dcQnzRvfOYDdHHzX451P+XVJ1Et30wwjgoxUBwjqf0E=; b=Vir5gaokuebi5Z
+	Kbs15FxBmgUsNm+A955M7/0fNOHovsVo5FwkhvR/9ZYF6SywaoCXhxPqIX28byCpdbxSnGdSF3The
+	FWx7qGPc6Awu383lPV143WWR+hSxs6X6IYh+Inz5bGEK+GWbBk0XoKrH8Dvh1YsfI/SaoGj0yOyUo
+	J9G4599ZSMwCEElukByUrXDDILquy62AVnrtbdehdlZN8jKB3qnc4lD3U+pBOBthIxKBahnhqepcf
+	1wGMEycaRT2Xq5MQvrGocpyLUmJuLVkEUTZ7NESsG6WvggOnFINHzybJsw9dbhN5ZmV5eYvyO4NMa
+	A/eL3FY3vR2FVnKmrVew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hacZ1-0003UH-P4; Tue, 11 Jun 2019 08:55:31 +0000
+	id 1hacZK-0003lf-34; Tue, 11 Jun 2019 08:55:50 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hacYN-0001rr-CI; Tue, 11 Jun 2019 08:54:53 +0000
+ id 1hacZ0-0003Ul-Hu; Tue, 11 Jun 2019 08:55:32 +0000
 Received: from p508fd648.dip0.t-ipconnect.de ([80.143.214.72]
  helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hacYL-00018w-Vp; Tue, 11 Jun 2019 10:54:50 +0200
+ id 1hacYz-00019R-5b; Tue, 11 Jun 2019 10:55:29 +0200
 From: Heiko Stuebner <heiko@sntech.de>
 To: arm@kernel.org
-Subject: [GIT PULL 2/3] Rockchip dts64 updates for 5.3 round 1
-Date: Tue, 11 Jun 2019 10:54:49 +0200
-Message-ID: <12386546.HbqOaVNIXM@phil>
+Subject: [GIT PULL 3/3] Rockchip soc32 updates for 5.3 round 1
+Date: Tue, 11 Jun 2019 10:55:28 +0200
+Message-ID: <6757963.JBp9oB5bj2@phil>
 In-Reply-To: <3004130.oi6ZuZy1Zf@phil>
 References: <3004130.oi6ZuZy1Zf@phil>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_015451_651759_221EB347 
-X-CRM114-Status: GOOD (  11.41  )
+X-CRM114-CacheID: sfid-20190611_015530_937490_7A618D7E 
+X-CRM114-Status: GOOD (  10.25  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,36 +69,22 @@ The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.3-rockchip-dts64-1
+  git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.3-rockchip-soc32-1
 
-for you to fetch changes up to 45fa7c3838715b34ccea661e4b7b261d91668b17:
+for you to fetch changes up to c2af88f1a0cdf4cbe94b51fd93e52a3f55606a13:
 
-  arm64: dts: rockchip: add WiFi+BT support on ROCK Pi4 board (2019-06-04 15:38:54 +0200)
-
-----------------------------------------------------------------
-PCIe for rockpro64, wifi+bt for Rock-PI4, spi for Rock960 family
-and a fix for the yet unused isp-iommus.
+  ARM: rockchip: fix missing of_node_put calls in smp code (2019-05-20 01:00:41 +0200)
 
 ----------------------------------------------------------------
-Akash Gajjar (1):
-      arm64: dts: rockchip: add WiFi+BT support on ROCK Pi4 board
+Another missing of_node_put
 
-Helen Koike (1):
-      arm64: dts: rockchip: fix isp iommu clocks and power domain
+----------------------------------------------------------------
+Wen Yang (1):
+      ARM: rockchip: fix missing of_node_put calls in smp code
 
-Katsuhiro Suzuki (1):
-      arm64: dts: rockchip: add PCIe nodes on rk3399-rockpro64
-
-Manivannan Sadhasivam (2):
-      arm64: dts: rockchip: Enable SPI0 and SPI4 on Rock960
-      arm64: dts: rockchip: Enable SPI1 on Ficus
-
- arch/arm64/boot/dts/rockchip/rk3399-ficus.dts     |  6 ++
- arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts | 97 +++++++++++++++++++++++
- arch/arm64/boot/dts/rockchip/rk3399-rock960.dts   | 10 +++
- arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts | 18 +++++
- arch/arm64/boot/dts/rockchip/rk3399.dtsi          |  8 +-
- 5 files changed, 135 insertions(+), 4 deletions(-)
+ arch/arm/mach-rockchip/platsmp.c | 12 ++++++++++--
+ arch/arm/mach-rockchip/pm.c      |  2 ++
+ 2 files changed, 12 insertions(+), 2 deletions(-)
 
 
 
