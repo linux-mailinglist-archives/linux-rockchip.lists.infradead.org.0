@@ -2,80 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BEAB3CFA1
-	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:54:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 464DE3CFA2
+	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:54:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BjC9JSUGBPjG6ES4K02jgeg0WQD2f21G7KUcissW7ms=; b=qJz9zpuxiT1iFJ
-	DmykX30gsZHCCGF4rvasfiBWH4Os19mKmrciDSLy966tyEgIl14HK2XX2C5uaAVriJUNLNYjs+O00
-	XT7wPmWzYlCKnuDKKOSIAkSX4gDgHCipvNVhtRookGVJwOXbDH2d1R4j1H5xPZDrSsLImXUrvMnuX
-	WDCswQ4KoPa3+8i7Rf5e0bce1kVQIqutQRHmLm0nxvs8Tb1Kpn/7pRon8OlrR+KLjYgseCNAxU44A
-	V+2c66ESheeapnlBtyotqm2DC1aZM3RpLxoEYtoYWRX1vglPxQYVaIsmP3fgIw5fq+WAB1ILIi9un
-	phNwug09iQer95tI81UQ==;
+	List-Owner; bh=8uJVHr7VcqT6VB3trx08NNaavzZ3dn6s8W+si1lpzy8=; b=OL3DieAnyIWAzJ
+	0rUH39IwvShnQ6/fIwhGR9KvzmMu53eeLL+aWHWZr7NrAbbimj0+WnfzzhsALKi2cJn+bt0g2zahe
+	cVXx3N60IrAKZJeHD92NjMG14v0suFugyKvTdKHU0QYHXRMwmdfz7RTrE/B8E3uv3hyDI1SJcOU52
+	vnBIbJ6acEm1rwx+Sm/gaQCXMTY4d+bjHDC1DuF2yspRujZo0HbWmeFVqmJVdRk67MgQy+LJt72z9
+	iEDrcQ56t2C/Z0qnqw5pS7fOBbo05NISc9QewSnAUCVkjxNgJGRDa8CLhf7WMvprfAeDRJtz3mVhp
+	F/CH0ajjYk41I+ii5vbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haiAZ-0005Yb-SH; Tue, 11 Jun 2019 14:54:39 +0000
-Received: from mail-pf1-x433.google.com ([2607:f8b0:4864:20::433])
+	id 1haiAe-0005cT-A8; Tue, 11 Jun 2019 14:54:44 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haiAW-0005VD-2T
- for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:54:37 +0000
-Received: by mail-pf1-x433.google.com with SMTP id j2so7596621pfe.6
- for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:54:36 -0700 (PDT)
+ id 1haiAa-0005a0-1M
+ for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:54:41 +0000
+Received: by mail-pl1-x642.google.com with SMTP id t7so2615543plr.11
+ for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:54:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=UO8s36uD488DPxloYMOirzQDsI0oPxHRDrZXZS1gaH4=;
- b=mAlknVM8Jbxyv7YzrvKcUhQ1vDiBOw/z+zj5WQk63uww6Nd5BZNKp7/4iq4IiQWi43
- su6qDsVv/NLZETxRQEol36RMR6uHJplAIFcD03HHQSgYvF/eGFhjcwLL0ugCbzmKHF83
- gwT5zKkbhHcaUB4Vt/WALSzS80hshcpClcHoU=
+ bh=H4/nKsiczNmGqfi/dZQpnKSiemWR24mun0ufWG0UjA4=;
+ b=X7mbBQN414+FlSYBd3owW+jQ4MskeiaEFGkf794sOSff2aYOcbbP+1s6l6+QTSuOfw
+ 28JKlzdlO0ZyM5IH/1xsVuDgLkKggbY+uGubJ0ixsUj1gMqBsa9Wvqy/5HBNuZTk7coQ
+ O2oGygJKLWWhkBm50tzt8/ys+sCAUbsYyPSnQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=UO8s36uD488DPxloYMOirzQDsI0oPxHRDrZXZS1gaH4=;
- b=ohHpOcJ8amX4AyxrjDVbvzDh1lQgSlQTHnP1Iw3H1Xa14aIe6dX4/tWsRirzaniCvF
- sigQGGCPLd13pub9iSSG58G6msIcRL16pZdgKnM2tIx/OU45SfVeDfrPNqvegId/8BxS
- wmRVcog0nXUP2dpBGn0UVBI7H/nqTkh1g1R/WXcKc5s/+ooN6gllM9qRmKti50LglSzq
- 6WU1K019aeZTJ62UIaDLIlhChUQQUQueTISiNDx0ZJzOirgdqr+1rbkYg6geMBk4FWxf
- v1WXBN70kTC/v+2L3OJ2eTs4AAo75ba+rqqFt5Guo6Vt5T1WhtNJpvvhKWNdB139HG7N
- 5M7Q==
-X-Gm-Message-State: APjAAAVk0WDvcEUaopAbjruTbI9zhU6j2rSQuQdk4dtMLCSMsQB0YrYW
- I+FE0qWpPI1tQL6OgwEq25IRcA==
-X-Google-Smtp-Source: APXvYqxu4NpASje77z1O/PuaICAB5fsaVr369J4Z5RHk69fiG7WbiCjQiPNNpIiS/72WfXx9tkrrhw==
-X-Received: by 2002:a62:5214:: with SMTP id g20mr26762065pfb.187.1560264875555; 
- Tue, 11 Jun 2019 07:54:35 -0700 (PDT)
+ bh=H4/nKsiczNmGqfi/dZQpnKSiemWR24mun0ufWG0UjA4=;
+ b=SOQ3BfV6iJkJOXs1hp3ML555lRuOMxlZDVGKXkaOSo0Vt81r951kKXHjZ8yTADeLVx
+ 7J6zaOitUkV0G6TNK7HM0N36Yu5A6ter12pgAl5VK2JcZfhMbZe+26bchsrsmfPDhJ2U
+ QyCRNpUUQaMEtVmejjD/xtsHKYeWWG9BuLkFB2ULbsY02L3/UnC2TUlV/cGrX+OCT2C9
+ HSYCW0OoNSwMVDX5XnoYWKnu5wOTREPx6w2xIZWQ3Wpqy+8bqhmP3fVU41P5bxpWRJxs
+ dNNgMb4x9X4ZUM0XOpge7JChdjWjRHRyyREzISp5UXUqAdUtSA7zIcuUWOojQpr/eOix
+ FuaQ==
+X-Gm-Message-State: APjAAAXP1n3zz+Pn2QD0FP0VpsNtI7yJPOZdVLoDDKrBmpgUw3SUPH2y
+ gPAYukeBxVjcP5YclQ4E5IISeQ==
+X-Google-Smtp-Source: APXvYqyvU38hX2Ofo8uFBXDEhjL6uaycxUEnrij4GaKel0+MBXcx2KFvmNzGyIMhYdMHCsACJi38MQ==
+X-Received: by 2002:a17:902:8b8b:: with SMTP id
+ ay11mr76266842plb.63.1560264879488; 
+ Tue, 11 Jun 2019 07:54:39 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.180.18])
- by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.54.32
+ by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.54.35
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 11 Jun 2019 07:54:35 -0700 (PDT)
+ Tue, 11 Jun 2019 07:54:39 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH 41/92] arm: include: rockchip: Add DDR4 enum
-Date: Tue, 11 Jun 2019 20:20:44 +0530
-Message-Id: <20190611145135.21399-42-jagan@amarulasolutions.com>
+Subject: [PATCH 42/92] ram: rockchip: Add initial Kconfig
+Date: Tue, 11 Jun 2019 20:20:45 +0530
+Message-Id: <20190611145135.21399-43-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190611145135.21399-1-jagan@amarulasolutions.com>
 References: <20190611145135.21399-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_075436_124844_C875BBA2 
-X-CRM114-Status: UNSURE (   8.33  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190611_075440_121568_202459EF 
+X-CRM114-Status: GOOD (  12.97  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:433 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,26 +105,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add DDR4 enum number in common header.
+Right now sdram drivers in rockchip SoC are built based
+on the SoC configs which may not be an adequate solutions
+while adding common or debug driver.
+
+So, add meaningful Kconfig options start with rk3399.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-Signed-off-by: YouMin Chen <cym@rock-chips.com>
 ---
- arch/arm/include/asm/arch-rockchip/sdram_common.h | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/ram/Kconfig           |  1 +
+ drivers/ram/rockchip/Kconfig  | 17 +++++++++++++++++
+ drivers/ram/rockchip/Makefile |  2 +-
+ 3 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 drivers/ram/rockchip/Kconfig
 
-diff --git a/arch/arm/include/asm/arch-rockchip/sdram_common.h b/arch/arm/include/asm/arch-rockchip/sdram_common.h
-index e0a94f81a4..d723e6dacc 100644
---- a/arch/arm/include/asm/arch-rockchip/sdram_common.h
-+++ b/arch/arm/include/asm/arch-rockchip/sdram_common.h
-@@ -7,6 +7,7 @@
- #define _ASM_ARCH_SDRAM_COMMON_H
+diff --git a/drivers/ram/Kconfig b/drivers/ram/Kconfig
+index fbf7d7b20f..568d8f2c6a 100644
+--- a/drivers/ram/Kconfig
++++ b/drivers/ram/Kconfig
+@@ -54,4 +54,5 @@ config K3_AM654_DDRSS
+ 	  config add support for the initialization of the external
+ 	  SDRAM devices connected to DDR subsystem.
  
- enum {
-+	DDR4 = 0,
- 	DDR3 = 0x3,
- 	LPDDR2 = 0x5,
- 	LPDDR3 = 0x6,
++source "drivers/ram/rockchip/Kconfig"
+ source "drivers/ram/stm32mp1/Kconfig"
+diff --git a/drivers/ram/rockchip/Kconfig b/drivers/ram/rockchip/Kconfig
+new file mode 100644
+index 0000000000..995cb487b8
+--- /dev/null
++++ b/drivers/ram/rockchip/Kconfig
+@@ -0,0 +1,17 @@
++config RAM_ROCKCHIP
++	bool "Ram drivers support for Rockchip SoCs"
++	depends on RAM && ARCH_ROCKCHIP
++	default y
++	help
++	  This enables support for ram drivers Rockchip SoCs.
++
++if RAM_ROCKCHIP
++
++config RAM_RK3399
++	bool "Ram driver for Rockchip RK3399"
++	default ROCKCHIP_RK3399
++	help
++	  This enables ram drivers support for the platforms based on
++	  Rockchip RK3399 SoC.
++
++endif # RAM_ROCKCHIP
+diff --git a/drivers/ram/rockchip/Makefile b/drivers/ram/rockchip/Makefile
+index 5df196066d..07d4b62a9d 100644
+--- a/drivers/ram/rockchip/Makefile
++++ b/drivers/ram/rockchip/Makefile
+@@ -9,4 +9,4 @@ obj-$(CONFIG_ROCKCHIP_RK3188) = sdram_rk3188.o
+ obj-$(CONFIG_ROCKCHIP_RK322X) = sdram_rk322x.o
+ obj-$(CONFIG_ROCKCHIP_RK3288) = sdram_rk3288.o
+ obj-$(CONFIG_ROCKCHIP_RK3328) = sdram_rk3328.o
+-obj-$(CONFIG_ROCKCHIP_RK3399) = sdram_rk3399.o
++obj-$(CONFIG_RAM_RK3399) += sdram_rk3399.o
 -- 
 2.18.0.321.gffc6fa0e3
 
