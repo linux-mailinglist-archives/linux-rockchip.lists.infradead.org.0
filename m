@@ -2,71 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 753763CFF6
-	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:57:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A90213CFF7
+	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:57:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PYihDqIu3RznEUqCerbuW14oVTidzHtXvajvhUCPpIo=; b=rJEw1xv3fEWA0B
-	8NrMy6Gj9jX/R6TtmtAreNgRczN9PRxTtdj0eBYvQzFkvNcp84+Iz50NAlOxZ/J7igUDTW445TPdM
-	7sh3UcGCADidzXoleQ/Kh2FYv2bnfGqSYaQcFqKI3apK6WPMjlMQ+M1s9upakM//Uaq3Q173LYDaV
-	7dH2isCXCcf5CppafKN5aL1x8p8P6ftpOcVGuq0buOrdjoyj6QkPfzBSPvcQL8r3mMVvJFsCvLZ20
-	AjiOfD1f6dDxDspfc2nGUuJZO2qFn/pmIb1e3A7S3OSXT8KaUQ979z77gWNEcMJLV06Vz22Fs425R
-	9CTHlz4flytyiWIgQMGQ==;
+	List-Owner; bh=/jSbWBzoabSuP+1Z6iG6659ludfrPZjLbkRI0VsvFJg=; b=ROmYS3iJlMAgmT
+	GeAoVpd7emR+2mx1dfNjwY2BmSYVF7Z4lUGHNz1jS5yjB4jB/QXz2Eh2RYs2qtwYDZpk+t9z9Tk+6
+	7kZba2C2lpdsGKcHwh73ald8A0AZFkNuEKP1iX/o7/6+euF2EiZynQ6SRxFto6zJ4H+nUFTKsLInJ
+	y2Kre09kzSKf7i4Ft9nG0OeR8Wg+6ycnt9ytCJNPVtCl4kgaI6DquLD/X18IMSQwir0+XfvHEtS62
+	EWc9JZirQdEAKyN/TL1s7RjEVtNWPccjafgc9wBNT4EA/5PjTmU62QHyyA3FJEuuVYdkW/UIGqQvx
+	NjE3CbbW+b0E0iK80TrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haiDF-0000V6-Vi; Tue, 11 Jun 2019 14:57:26 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1haiDJ-0000Y9-3j; Tue, 11 Jun 2019 14:57:29 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haiD5-0000Mj-JN
- for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:57:20 +0000
-Received: by mail-pg1-x542.google.com with SMTP id f25so7108471pgv.10
- for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:57:15 -0700 (PDT)
+ id 1haiDA-0000Q5-0V
+ for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:57:24 +0000
+Received: by mail-pl1-x641.google.com with SMTP id e5so5226085pls.13
+ for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:57:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=6IGCZvJ5OxQ32ol7rqBb2TRyEZNMkCsvqYwWAu9hehA=;
- b=kOsISm+vIn203VjdR3sK9AAo+k8/QVYRFGVk2QT1cetOi71XS1J8uylAhXNVfu6KpJ
- 3VOzN4RfKc8mBs1TmAQIeKJ92iSXimrB9ollGhDwxhSIosRp+gIfQjNl74oXAnKgPbce
- MWj1J2jIKrRPRRW62k4kPfnn/esHkbmB5QnqU=
+ bh=yFK41Swk9CvNo1HohrbxocFCC/xQIVJHjQ/lewyc/+M=;
+ b=rUToB0AYqJNq/8ABOB98WXN6V+SAqCxl3LLpcwVmtPWTjtfZogNl3UE1IxAaQRNNNH
+ 9vDzJ+3yfy1y1odKFTcuVUDP2xhuSnihFtADM0uzfCj8rLst2RyiCyFX7ZRHZDVs2hG7
+ e3FFAv9vpXwM8kU/p3Fvb6UM2yc8QmoNCSKp8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=6IGCZvJ5OxQ32ol7rqBb2TRyEZNMkCsvqYwWAu9hehA=;
- b=qLGgXIb6aTG2tECoPcF+tekFvrGFMrA6J0d+TRQLvuDw70JqTlp9tcJ7L2wJCyJmLs
- RveLmXgXHYNMsjRINUCrj7MUcLDpL9Aq45AbLKtcktfCWwX/+ukaulmVhZ8yUzJLxpl/
- grTKnRULSpljSu9nUTdbixNfFG4fY6YprbZf7qRJm8NtM0Qar94tl90XAJpsSPp3sQlt
- alrMKevv6YqJjZasLNqcnYgHn/8JOpYsy+kvMz1JTUI/EaIWklZ/3h4Hc93n5QgR6dYI
- GWEEkU0FJLtuod7f7UqONN8iGWUHDse8jOeSZ1uJXEkRj+2cidZ4hxY2TRxRD8srM8cu
- gZNw==
-X-Gm-Message-State: APjAAAWmbtNJ+55uN7KeusWZfYk5d1HQNQF0bsi+a1TIWQPbgFU2TyJ2
- SMMn8A1m+uOxNgqDzDhb5RmrNw==
-X-Google-Smtp-Source: APXvYqydFdX8Pgxip52NrQXH6AS3AM6P/M88jkP+IVKyykCqMs2RsQSdH03RORD9/TCQz8Bo26OsEg==
-X-Received: by 2002:a63:794:: with SMTP id 142mr12489761pgh.157.1560265034176; 
- Tue, 11 Jun 2019 07:57:14 -0700 (PDT)
+ bh=yFK41Swk9CvNo1HohrbxocFCC/xQIVJHjQ/lewyc/+M=;
+ b=r3XT7omGdMiJWCZG4QLEaN5xayTlb6qOQrjC3L/ZFU1LUlEsYv/kGjRwvkaPj6Pnk1
+ WlDVjxXPQJ+5hDyxbKBoJ1W/5/vtygjXN1N8mAB0Onuo4HlKw9VTRcp60D/Emdolet2p
+ 2OVyUx6k73wNXA+sWY80/AYaHujlb/6FUp3bZXO7HEJg70iLGVZ/cLH0qCwmwEdRJOr6
+ GZMs/YooB9SYvsRpZY7FO/UvKPO1JFAAt1cG8CIN2HooDw84oWF7b0QoNvB28i7WPwhH
+ l9ENJuGuW8oaaf/dqdMrweIZcOaehG86Y506dgqi0CkBpuDVONaRgu0bcm4l4byeB/YN
+ C6Yw==
+X-Gm-Message-State: APjAAAXm6kNrOtB39TYS6inKGd9i+9M5BX5RuPY+TelxZukxUzWCVAvj
+ 76fVqe2Av1A60zBuepX7uELSAg==
+X-Google-Smtp-Source: APXvYqzmViOQvN9FkTZcFaJXkxNSYFvczynje+eNSY9EVmzQFSES0+Mb5KSsjEDvM3vlyQLoNze+Ew==
+X-Received: by 2002:a17:902:9885:: with SMTP id
+ s5mr76199075plp.102.1560265038343; 
+ Tue, 11 Jun 2019 07:57:18 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.180.18])
- by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.57.10
+ by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.57.14
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 11 Jun 2019 07:57:13 -0700 (PDT)
+ Tue, 11 Jun 2019 07:57:17 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH 82/92] ram: rk3399: Add LPPDDR4-400 timings inc
-Date: Tue, 11 Jun 2019 20:21:25 +0530
-Message-Id: <20190611145135.21399-83-jagan@amarulasolutions.com>
+Subject: [PATCH 83/92] ram: rk3399: Add LPPDDR4-800 timings inc
+Date: Tue, 11 Jun 2019 20:21:26 +0530
+Message-Id: <20190611145135.21399-84-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190611145135.21399-1-jagan@amarulasolutions.com>
 References: <20190611145135.21399-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_075715_841363_FA34BA5C 
+X-CRM114-CacheID: sfid-20190611_075720_178339_25C04E09 
 X-CRM114-Status: GOOD (  11.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -74,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,21 +110,21 @@ and then it switches into 400MHz and 800MHz simultaneously to
 make the proper sequence work on each channel with associated
 training.
 
-So, add LPDDR4-400 timings inc file in driver area so-that
+So, add LPDDR4-800 timings inc file in driver area so-that
 these timings will take during LPDDR4 initialization phase.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 Signed-off-by: YouMin Chen <cym@rock-chips.com>
 ---
- .../ram/rockchip/sdram-rk3399-lpddr4-400.inc  | 1570 +++++++++++++++++
+ .../ram/rockchip/sdram-rk3399-lpddr4-800.inc  | 1570 +++++++++++++++++
  1 file changed, 1570 insertions(+)
- create mode 100644 drivers/ram/rockchip/sdram-rk3399-lpddr4-400.inc
+ create mode 100644 drivers/ram/rockchip/sdram-rk3399-lpddr4-800.inc
 
-diff --git a/drivers/ram/rockchip/sdram-rk3399-lpddr4-400.inc b/drivers/ram/rockchip/sdram-rk3399-lpddr4-400.inc
+diff --git a/drivers/ram/rockchip/sdram-rk3399-lpddr4-800.inc b/drivers/ram/rockchip/sdram-rk3399-lpddr4-800.inc
 new file mode 100644
-index 0000000000..c50a03d9dd
+index 0000000000..d8ae3359a3
 --- /dev/null
-+++ b/drivers/ram/rockchip/sdram-rk3399-lpddr4-400.inc
++++ b/drivers/ram/rockchip/sdram-rk3399-lpddr4-800.inc
 @@ -0,0 +1,1570 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
@@ -185,7 +186,7 @@ index 0000000000..c50a03d9dd
 +		}
 +	},
 +	{
-+		.ddr_freq = 400 * MHz,
++		.ddr_freq = 800 * MHz,
 +		.dramtype = LPDDR4,
 +		.num_channels = 2,
 +		.stride = 13,
@@ -742,8 +743,8 @@ index 0000000000..c50a03d9dd
 +			0x01665555,	/* DENALI_PHY_06_DATA */
 +			0x03665555,	/* DENALI_PHY_07_DATA */
 +			0x00010f00,	/* DENALI_PHY_08_DATA */
-+			0x04000100,	/* DENALI_PHY_09_DATA */
-+			0x00000001,	/* DENALI_PHY_10_DATA */
++			0x05010200,	/* DENALI_PHY_09_DATA */
++			0x00000002,	/* DENALI_PHY_10_DATA */
 +			0x00170180,	/* DENALI_PHY_11_DATA */
 +			0x00cc0201,	/* DENALI_PHY_12_DATA */
 +			0x00030066,	/* DENALI_PHY_13_DATA */
@@ -811,16 +812,16 @@ index 0000000000..c50a03d9dd
 +			0x00800080,	/* DENALI_PHY_75_DATA */
 +			0x00800080,	/* DENALI_PHY_76_DATA */
 +			0x01190080,	/* DENALI_PHY_77_DATA */
-+			0x00000001,	/* DENALI_PHY_78_DATA */
++			0x00000002,	/* DENALI_PHY_78_DATA */
 +			0x00000000,	/* DENALI_PHY_79_DATA */
 +			0x00000000,	/* DENALI_PHY_80_DATA */
 +			0x00000200,	/* DENALI_PHY_81_DATA */
 +			0x00000000,	/* DENALI_PHY_82_DATA */
 +			0x51315152,	/* DENALI_PHY_83_DATA */
-+			0xc0003150,	/* DENALI_PHY_84_DATA */
-+			0x010000c0,	/* DENALI_PHY_85_DATA */
-+			0x00100000,	/* DENALI_PHY_86_DATA */
-+			0x07044204,	/* DENALI_PHY_87_DATA */
++			0xc0013150,	/* DENALI_PHY_84_DATA */
++			0x020000c0,	/* DENALI_PHY_85_DATA */
++			0x00100001,	/* DENALI_PHY_86_DATA */
++			0x07054204,	/* DENALI_PHY_87_DATA */
 +			0x000f0c18,	/* DENALI_PHY_88_DATA */
 +			0x01000140,	/* DENALI_PHY_89_DATA */
 +			0x00000c10,	/* DENALI_PHY_90_DATA */
@@ -870,8 +871,8 @@ index 0000000000..c50a03d9dd
 +			0x01665555,	/* DENALI_PHY_134_DATA */
 +			0x03665555,	/* DENALI_PHY_135_DATA */
 +			0x00010f00,	/* DENALI_PHY_136_DATA */
-+			0x04000100,	/* DENALI_PHY_137_DATA */
-+			0x00000001,	/* DENALI_PHY_138_DATA */
++			0x05010200,	/* DENALI_PHY_137_DATA */
++			0x00000002,	/* DENALI_PHY_138_DATA */
 +			0x00170180,	/* DENALI_PHY_139_DATA */
 +			0x00cc0201,	/* DENALI_PHY_140_DATA */
 +			0x00030066,	/* DENALI_PHY_141_DATA */
@@ -939,16 +940,16 @@ index 0000000000..c50a03d9dd
 +			0x00800080,	/* DENALI_PHY_203_DATA */
 +			0x00800080,	/* DENALI_PHY_204_DATA */
 +			0x01190080,	/* DENALI_PHY_205_DATA */
-+			0x00000001,	/* DENALI_PHY_206_DATA */
++			0x00000002,	/* DENALI_PHY_206_DATA */
 +			0x00000000,	/* DENALI_PHY_207_DATA */
 +			0x00000000,	/* DENALI_PHY_208_DATA */
 +			0x00000200,	/* DENALI_PHY_209_DATA */
 +			0x00000000,	/* DENALI_PHY_210_DATA */
 +			0x51315152,	/* DENALI_PHY_211_DATA */
-+			0xc0003150,	/* DENALI_PHY_212_DATA */
-+			0x010000c0,	/* DENALI_PHY_213_DATA */
-+			0x00100000,	/* DENALI_PHY_214_DATA */
-+			0x07044204,	/* DENALI_PHY_215_DATA */
++			0xc0013150,	/* DENALI_PHY_212_DATA */
++			0x020000c0,	/* DENALI_PHY_213_DATA */
++			0x00100001,	/* DENALI_PHY_214_DATA */
++			0x07054204,	/* DENALI_PHY_215_DATA */
 +			0x000f0c18,	/* DENALI_PHY_216_DATA */
 +			0x01000140,	/* DENALI_PHY_217_DATA */
 +			0x00000c10,	/* DENALI_PHY_218_DATA */
@@ -998,8 +999,8 @@ index 0000000000..c50a03d9dd
 +			0x01665555,	/* DENALI_PHY_262_DATA */
 +			0x03665555,	/* DENALI_PHY_263_DATA */
 +			0x00010f00,	/* DENALI_PHY_264_DATA */
-+			0x04000100,	/* DENALI_PHY_265_DATA */
-+			0x00000001,	/* DENALI_PHY_266_DATA */
++			0x05010200,	/* DENALI_PHY_265_DATA */
++			0x00000002,	/* DENALI_PHY_266_DATA */
 +			0x00170180,	/* DENALI_PHY_267_DATA */
 +			0x00cc0201,	/* DENALI_PHY_268_DATA */
 +			0x00030066,	/* DENALI_PHY_269_DATA */
@@ -1067,16 +1068,16 @@ index 0000000000..c50a03d9dd
 +			0x00800080,	/* DENALI_PHY_331_DATA */
 +			0x00800080,	/* DENALI_PHY_332_DATA */
 +			0x01190080,	/* DENALI_PHY_333_DATA */
-+			0x00000001,	/* DENALI_PHY_334_DATA */
++			0x00000002,	/* DENALI_PHY_334_DATA */
 +			0x00000000,	/* DENALI_PHY_335_DATA */
 +			0x00000000,	/* DENALI_PHY_336_DATA */
 +			0x00000200,	/* DENALI_PHY_337_DATA */
 +			0x00000000,	/* DENALI_PHY_338_DATA */
 +			0x51315152,	/* DENALI_PHY_339_DATA */
-+			0xc0003150,	/* DENALI_PHY_340_DATA */
-+			0x010000c0,	/* DENALI_PHY_341_DATA */
-+			0x00100000,	/* DENALI_PHY_342_DATA */
-+			0x07044204,	/* DENALI_PHY_343_DATA */
++			0xc0013150,	/* DENALI_PHY_340_DATA */
++			0x020000c0,	/* DENALI_PHY_341_DATA */
++			0x00100001,	/* DENALI_PHY_342_DATA */
++			0x07054204,	/* DENALI_PHY_343_DATA */
 +			0x000f0c18,	/* DENALI_PHY_344_DATA */
 +			0x01000140,	/* DENALI_PHY_345_DATA */
 +			0x00000c10,	/* DENALI_PHY_346_DATA */
@@ -1126,8 +1127,8 @@ index 0000000000..c50a03d9dd
 +			0x01665555,	/* DENALI_PHY_390_DATA */
 +			0x03665555,	/* DENALI_PHY_391_DATA */
 +			0x00010f00,	/* DENALI_PHY_392_DATA */
-+			0x04000100,	/* DENALI_PHY_393_DATA */
-+			0x00000001,	/* DENALI_PHY_394_DATA */
++			0x05010200,	/* DENALI_PHY_393_DATA */
++			0x00000002,	/* DENALI_PHY_394_DATA */
 +			0x00170180,	/* DENALI_PHY_395_DATA */
 +			0x00cc0201,	/* DENALI_PHY_396_DATA */
 +			0x00030066,	/* DENALI_PHY_397_DATA */
@@ -1195,16 +1196,16 @@ index 0000000000..c50a03d9dd
 +			0x00800080,	/* DENALI_PHY_459_DATA */
 +			0x00800080,	/* DENALI_PHY_460_DATA */
 +			0x01190080,	/* DENALI_PHY_461_DATA */
-+			0x00000001,	/* DENALI_PHY_462_DATA */
++			0x00000002,	/* DENALI_PHY_462_DATA */
 +			0x00000000,	/* DENALI_PHY_463_DATA */
 +			0x00000000,	/* DENALI_PHY_464_DATA */
 +			0x00000200,	/* DENALI_PHY_465_DATA */
 +			0x00000000,	/* DENALI_PHY_466_DATA */
 +			0x51315152,	/* DENALI_PHY_467_DATA */
-+			0xc0003150,	/* DENALI_PHY_468_DATA */
-+			0x010000c0,	/* DENALI_PHY_469_DATA */
-+			0x00100000,	/* DENALI_PHY_470_DATA */
-+			0x07044204,	/* DENALI_PHY_471_DATA */
++			0xc0013150,	/* DENALI_PHY_468_DATA */
++			0x020000c0,	/* DENALI_PHY_469_DATA */
++			0x00100001,	/* DENALI_PHY_470_DATA */
++			0x07054204,	/* DENALI_PHY_471_DATA */
 +			0x000f0c18,	/* DENALI_PHY_472_DATA */
 +			0x01000140,	/* DENALI_PHY_473_DATA */
 +			0x00000c10,	/* DENALI_PHY_474_DATA */
@@ -1644,18 +1645,18 @@ index 0000000000..c50a03d9dd
 +			0x00000600,	/* DENALI_PHY_908_DATA */
 +			0x00000000,	/* DENALI_PHY_909_DATA */
 +			0x00006400,	/* DENALI_PHY_910_DATA */
-+			0x03221302,	/* DENALI_PHY_911_DATA */
++			0x01221102,	/* DENALI_PHY_911_DATA */
 +			0x00000000,	/* DENALI_PHY_912_DATA */
-+			0x000d1f01,	/* DENALI_PHY_913_DATA */
++			0x000d1f00,	/* DENALI_PHY_913_DATA */
 +			0x0d1f0d1f,	/* DENALI_PHY_914_DATA */
 +			0x0d1f0d1f,	/* DENALI_PHY_915_DATA */
 +			0x00030003,	/* DENALI_PHY_916_DATA */
 +			0x03000300,	/* DENALI_PHY_917_DATA */
 +			0x00000300,	/* DENALI_PHY_918_DATA */
-+			0x03221302,	/* DENALI_PHY_919_DATA */
++			0x01221102,	/* DENALI_PHY_919_DATA */
 +			0x00000000,	/* DENALI_PHY_920_DATA */
 +			0x00000000,	/* DENALI_PHY_921_DATA */
-+			0x01020000,	/* DENALI_PHY_922_DATA */
++			0x03020000,	/* DENALI_PHY_922_DATA */
 +			0x00000001,	/* DENALI_PHY_923_DATA */
 +			0x00000411,	/* DENALI_PHY_924_DATA */
 +			0x00000411,	/* DENALI_PHY_925_DATA */
@@ -1680,7 +1681,7 @@ index 0000000000..c50a03d9dd
 +			0x64000000,	/* DENALI_PHY_944_DATA */
 +			0x00000000,	/* DENALI_PHY_945_DATA */
 +			0x00000000,	/* DENALI_PHY_946_DATA */
-+			0x00000408,	/* DENALI_PHY_947_DATA */
++			0x00000508,	/* DENALI_PHY_947_DATA */
 +			0x00000000,	/* DENALI_PHY_948_DATA */
 +			0x00000000,	/* DENALI_PHY_949_DATA */
 +			0x00000000,	/* DENALI_PHY_950_DATA */
