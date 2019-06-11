@@ -2,57 +2,89 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 766E13D037
-	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 17:06:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 301783D1D5
+	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 18:10:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hocFrZY/4cPJXOwEjFmCGSPwCVfezYKMj4e+6w3y9dU=; b=da6D4bSZcgfaDC
-	/Wuix1n3jrrA90NpFholknRlxHxAFwK4sge4rD/vMgjNObnzlN3ncuRBlPld7fshVUeqYIMxxkZ4b
-	cLL0bkGjTftq6eAUMz6KBih/zlSoDzT6Ur+6agetMC09sYsoi+GFpTiqxo5PERcetWNFiss5Wbfqj
-	wmIG/85OnNulGoLLqW858v85aHxRybsSuVeJHVOjBitL9bjzdbeHvrU09BDWzKUdvAysdf8iG7wPO
-	Q9DlMGwhgGirBqtr2WOlaPGTwOw6Sj4ccqFTIbik5lVZBfUb/r1FpNoWQOO0zXe6SDnwOeZUbacIk
-	Yujd8S/9FBJwPOOsxVTQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5XD9kxthGM72q5yVNwERyafWcc37CfYcXUgDB37Lk4A=; b=FobU8sjxNo1u2M
+	xY3c6ZCqdDqFNuIDSzFmhL3pHoQ9Wt4nvWFyZTCsl08VkzLeBPA3w4fqWSZYXJ78SKP0KLPFgp9HR
+	YGTHaw2jXhbgl8vw6rx3wKItrH1lsuVSVJgFSAp2stGOzcSe4g+hGZTiY+iO74obMm/mejbB+W2g5
+	ozuWJ7B7176HJoaxBDMam+Hito4OTaEI7zisg4IJG1lLstbQbqCisqsYeWmQ0AiNEZFMTttEu8ikx
+	CvPjRl8HW1yOn36zG9Iux1Ol2g3nUTDveEi9N25U/JzqgMw0MV1B6lsT0hqk97FoCFXqzQd2bytTy
+	2oBi76cG6AUUR+LqQnXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haiLu-0007dV-Qn; Tue, 11 Jun 2019 15:06:22 +0000
-Received: from vegas.theobroma-systems.com ([144.76.126.164]
- helo=mail.theobroma-systems.com)
+	id 1hajLe-0004lk-J7; Tue, 11 Jun 2019 16:10:10 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haiLr-0007d2-J8
- for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 15:06:20 +0000
-Received: from ip092042140082.rev.nessus.at ([92.42.140.82]:53920
- helo=[10.4.9.214]) by mail.theobroma-systems.com with esmtpsa
- (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256) (Exim 4.80)
- (envelope-from <philipp.tomsich@theobroma-systems.com>)
- id 1haiLh-0004tM-KX; Tue, 11 Jun 2019 17:06:09 +0200
-Mime-Version: 1.0 (Mac OS X Mail 11.5 \(3445.9.1\))
-Subject: Re: [PATCH 00/92] ram: rk3399: Add LPDDR4 support
-From: Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-In-Reply-To: <CAMty3ZDxop1nKHOxGYC0O7b8HL_ybmBSZr1P8gbDpz7eKyOyDw@mail.gmail.com>
-Date: Tue, 11 Jun 2019 17:06:08 +0200
-Message-Id: <FBD392EE-BC7F-462D-89BF-4B97A70CAD9A@theobroma-systems.com>
-References: <20190611145135.21399-1-jagan@amarulasolutions.com>
- <349AB0AF-4DEE-4BC8-8FEF-B3DBD34564E4@theobroma-systems.com>
- <CAMty3ZDxop1nKHOxGYC0O7b8HL_ybmBSZr1P8gbDpz7eKyOyDw@mail.gmail.com>
-To: Jagan Teki <jagan@amarulasolutions.com>
-X-Mailer: Apple Mail (2.3445.9.1)
+ id 1hajLJ-0004c1-3t
+ for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 16:09:51 +0000
+Received: by mail-qk1-x742.google.com with SMTP id w187so7972723qkb.11
+ for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 09:09:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=5KL5I0SAkC3HgYY38CLkIrnaNCzSCjH7Gekw6kD3yas=;
+ b=Dhyyf6Zs2HJKXIA76COVerElgsDhNbHhr+jXsqwtv8uMA34bUEia2lD2YjSnWtRQkd
+ aOfZ+XHC44LA2MnyWyibwejHLvta4yB1SAHpkH1gwGqNFPWrv/XfjUc7ewC1PKLqE6pP
+ y4/SIIlXJZQnnuU6ZwYAcs7bnUMnQMqxxcZh2m2LttRmcoZllCMXiLJEr/Co/FKzBtbH
+ z+cYWR5m55ciVzS1VYKKy1LL1HmmUA40AxOLfkQm/h7/HL4Z5vgHdGGz69k0qcQz7n64
+ 3e6aD2610yVgT5q9qbL5NjbeI3FG8rixtayH0FjJcomDORrVIFnNmwtnWPPNo9JBESkW
+ 4ZfQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=5KL5I0SAkC3HgYY38CLkIrnaNCzSCjH7Gekw6kD3yas=;
+ b=fm2yumKS7a1kdtLrmEr0bDtx1OcskKDlIB/5zmQalbeUqfwcSpKHhgLVFQyoc8iYzz
+ +v6b6cbQBS5aiG/6OyNgnkJJ865n/VXVGWtIRQrfpSGRwwsWA4ZQnBeoQuZfNteUffgh
+ 4XHeTvTBA8M0MwMzBZGygkqzDkmKZRC8qeDxV3vXXkxnaUDtl3Msdg/ub3w+5Kldyw2j
+ 44j9UjjkeX9y++32BHn9RsqwvmLpTxT0a9UE8peQYh9gAoDpC3F4/gAElrSjZdsyz6QC
+ cyxJ/8dtxFGEj+Xok85KZleVfSvSyg70sQCxXdRaer3S0u0vD9uhooctUIOhfUf02wtD
+ teAg==
+X-Gm-Message-State: APjAAAXRYzbHLYl145KCRMoptvK+VV+3n76WFjOEKQ8CCgnjW1sMaG6S
+ IWH0z+0bJmzAe1L/bSQs5bL2jw==
+X-Google-Smtp-Source: APXvYqyouimZW0B4aAIYOj5G80WyFXPhJBMKXWTYK8Mb73HlKgta+rCD0kZUTBneLOUCeujgCmbY7g==
+X-Received: by 2002:a37:502:: with SMTP id 2mr57254612qkf.93.1560269386635;
+ Tue, 11 Jun 2019 09:09:46 -0700 (PDT)
+Received: from rosewood.cam.corp.google.com
+ ([2620:0:1013:11:89c6:2139:5435:371d])
+ by smtp.gmail.com with ESMTPSA id d188sm6755094qkf.40.2019.06.11.09.09.45
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 11 Jun 2019 09:09:46 -0700 (PDT)
+From: Sean Paul <sean@poorly.run>
+To: dri-devel@lists.freedesktop.org
+Subject: [PATCH v5 06/11] drm/rockchip: Use dirtyfb helper
+Date: Tue, 11 Jun 2019 12:08:20 -0400
+Message-Id: <20190611160844.257498-7-sean@poorly.run>
+X-Mailer: git-send-email 2.22.0.rc2.383.gf4fbbf30c2-goog
+In-Reply-To: <20190611160844.257498-1-sean@poorly.run>
+References: <20190611160844.257498-1-sean@poorly.run>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_080619_782158_D75EF3A4 
-X-CRM114-Status: UNSURE (   8.39  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190611_090949_156819_3B023029 
+X-CRM114-Status: GOOD (  11.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [144.76.126.164 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,51 +97,78 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: YouMin Chen <cym@rock-chips.com>, U-Boot-Denx <u-boot@lists.denx.de>,
- Simon Glass <sjg@chromium.org>, Akash Gajjar <gajjar04akash@gmail.com>,
- Kever Yang <kever.yang@rock-chips.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- linux-amarula <linux-amarula@amarulasolutions.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
+ Sandy Huang <hjc@rock-chips.com>, linux-rockchip@lists.infradead.org,
+ Sean Paul <seanpaul@chromium.org>, Daniel Vetter <daniel@ffwll.ch>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Cgo+IE9uIDExLjA2LjIwMTksIGF0IDE3OjAzLCBKYWdhbiBUZWtpIDxqYWdhbkBhbWFydWxhc29s
-dXRpb25zLmNvbT4gd3JvdGU6Cj4gCj4gT24gVHVlLCBKdW4gMTEsIDIwMTkgYXQgODoyMyBQTSBQ
-aGlsaXBwIFRvbXNpY2gKPiA8cGhpbGlwcC50b21zaWNoQHRoZW9icm9tYS1zeXN0ZW1zLmNvbT4g
-d3JvdGU6Cj4+IAo+PiAKPj4gCj4+PiBPbiAxMS4wNi4yMDE5LCBhdCAxNjo1MCwgSmFnYW4gVGVr
-aSA8amFnYW5AYW1hcnVsYXNvbHV0aW9ucy5jb20+IHdyb3RlOgo+Pj4gCj4+PiBZZXMsIGl0IGNh
-biBiZSBwb3NzaWJsZSB0byBicmVhayB0aGlzIHNlcmllcyBpbnRvIG11bHRpcGxlIHN1YiBzZXJp
-ZXMKPj4+IGJ1dCBpZGVhIGhlcmUgaXMgdG8gbWFyayBhbGwgdGhlIHJlcXVpcmVkIGNoYW5nZXMg
-dG8gc3VwcG9ydCBMUEREUjQKPj4+IGluIHJrMzM5OSBpbiBvbmUgc2V0LiBpZiByZXF1aXJlZCB3
-ZSBjYW4gYnJlYWsgaXQgZnJvbSBuZXh0IHZlcnNpb25zLgo+Pj4gCj4+PiBUaGlzIGlzIHRoZSBp
-bml0aWFsIHNldCBmb3Igc3VwcG9ydGluZyBMUEREUjQgd2l0aCBhc3NvY2lhdGVkCj4+PiBmZWF0
-dXJlcy4KPj4+IAo+Pj4gVGhhbmtzIHRvCj4+PiAtIFlvdU1pbiBDaGVuCj4+PiAtIEFrYXNoIEdh
-amphcgo+Pj4gLSBLZXZlciBZYW5nCj4+PiBmb3Igc3VwcG9ydGluZyBhbGwgdGhlIGhlbHAgb24g
-dGhpcyB3b3JrLgo+Pj4gCj4+PiBPbiBzdW1tYXJ5IHRoaXMgc2VyaWVzIHN1cHBvcnQKPj4+IC0g
-Q29kZSB3YXJuaW5nIGFuZCBmaXhlcwo+Pj4gLSByYW5rIGRldGVjdGlvbiwgdGhpcyB3b3VsZCBy
-ZXF1aXJlZCB0byBwcm9iZSBzaW5nbGUgY2hhbm5lbAo+Pj4gc2RyYW0gY29uZmlndXJlZCBpbiBO
-YW5vUEktTkVPNAo+Pj4gLSBMUEREUjQgc3VwcG9ydCwgdGVzdGVkIGluIFJvY2twcm82NCBhbmQg
-Um9jay1QSS00Cj4+PiAKPj4+IHBhdGNoIDAwMDEgLSAwMDMzOiBmaXggY29kZSB3YXJuaW5ncywg
-cHJpbnRzLCBuZXcgbWFjcm9zCj4+PiAKPj4+IHBhdGNoIDAwMzQgLSAwMDUxOiByYW5rIGRldGVj
-dGlvbiwgc2RyYW0gZGVidWcgY29kZQo+Pj4gCj4+PiBwYXRjaCAwMDUyOiBVc2UgRERSMy0xODAw
-IG9uIE5hbm9QSS1ORU80Cj4+PiAKPj4+IHBhdGNoIDAwNTMgLSAwMDg5OiBscGRkcjQgc3VwcG9y
-dAo+Pj4gCj4+PiBwYXRjaCAwMDkwOiBMUEREUjQtMTAwIHRpbWluZ3MKPj4+IAo+Pj4gcGF0Y2gg
-MDA5MTogVXNlIExQRERSNC0xMDAgb24gUm9ja3BybzY0Cj4+PiAKPj4+IHBhdGNoIDAwOTI6IFVz
-ZSBMUEREUjQtMTAwIG9uIFJvY2stUEkgNAo+Pj4gCj4+PiBOb3RlOiBQdW1hIHJrMzM5OSBoYXMg
-U1BMIHNpemUgb3ZlcmZsb3csIGJldHRlciB0byBlbmFibGUgVFBMCj4+PiBmb3IgdGhpcyBib2Fy
-ZC4KPj4gCj4+IFdlIG5lZWQgdG8ga2VlcCBQdW1hIG9uIGEgU1BMLW9ubHkgY29uZmlndXJhdGlv
-biBmb3IgdGhlIHRpbWUgYmVpbmcuCj4+IFBsZWFzZSBtYWtlIHN1cmUgdGhhdCB0aGUgTFBERFI0
-IGNvZGUgaXMgYW4gb3B0aW9uYWwgZmVhdHVyZSB0aGF0IGRvZXMgbm90Cj4+IGluY3JlYXNlIHRo
-ZSBEUkFNLWRyaXZlciBzaXplIGZvciBib2FyZHMgdGhhdCBkb27igJl0IG5lZWQvd2FudCBpdC4K
-PiAKPiBXZSBoYXZlIGZldyBib2FyZHMgZG8gaGF2ZSBUUEwtcnVubmFibGUsIHdvdWxkIGJlIGFu
-eSB0ZWNobmljYWwgaXNzdWUKPiB0byBzd2l0Y2ggcHVtYSB0byBUUEw/IGJlY2F1c2Ugd2UgaGF2
-ZSBscGRkcjQgY29kZSBwYXJ0IG9mIGV4aXN0aW5nCj4gZHJpdmVyIGl0c2VsZiBhbmQgaXQgcmVx
-dWlyZSBleHRyYSBpZmRlZiB0byBjb25zaWRlciB3aGljaCBpbmRlZWQgbG9vawo+IGF3ZnVsIGZy
-b20gY29kZSBwb2ludC1vZi12aWV3LgoKT3VyIHNlY3VyZSBib290IHByb2Nlc3MgKGkuZS4gc2ln
-bmluZyB0b29scykgY3VycmVudGx5IGRlcGVuZHMgb24gdGhpcyBhbmQKdGhlIGNoYW5nZW92ZXIg
-d29u4oCZdCBiZSBxdWlja+KApgoKVGhhbmtzLApQaGlsaXBwLgoKCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlz
-dApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+From: Sean Paul <seanpaul@chromium.org>
+
+Instead of flushing all vops every time we get a dirtyfb call, use the
+damage helper to kick off an atomic commit. Even though we don't use
+damage clips, the helper commit will force us through the normal
+psr_inhibit_get/put sequence.
+
+Changes in v3:
+- Added to the set
+Changes in v4:
+- None
+Changes in v5:
+- None
+
+Link to v3: https://patchwork.freedesktop.org/patch/msgid/20190502194956.218441-7-sean@poorly.run
+Link to v4: https://patchwork.freedesktop.org/patch/msgid/20190508160920.144739-7-sean@poorly.run
+
+Suggested-by: Daniel Vetter <daniel@ffwll.ch>
+Tested-by: Heiko Stuebner <heiko@sntech.de>
+Signed-off-by: Sean Paul <seanpaul@chromium.org>
+---
+ drivers/gpu/drm/rockchip/rockchip_drm_fb.c | 13 ++-----------
+ 1 file changed, 2 insertions(+), 11 deletions(-)
+
+diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
+index 31030cf81bc97..a888e31aa545a 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
++++ b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
+@@ -16,6 +16,7 @@
+ #include <drm/drm.h>
+ #include <drm/drmP.h>
+ #include <drm/drm_atomic.h>
++#include <drm/drm_damage_helper.h>
+ #include <drm/drm_fb_helper.h>
+ #include <drm/drm_gem_framebuffer_helper.h>
+ #include <drm/drm_probe_helper.h>
+@@ -25,20 +26,10 @@
+ #include "rockchip_drm_gem.h"
+ #include "rockchip_drm_psr.h"
+ 
+-static int rockchip_drm_fb_dirty(struct drm_framebuffer *fb,
+-				 struct drm_file *file,
+-				 unsigned int flags, unsigned int color,
+-				 struct drm_clip_rect *clips,
+-				 unsigned int num_clips)
+-{
+-	rockchip_drm_psr_flush_all(fb->dev);
+-	return 0;
+-}
+-
+ static const struct drm_framebuffer_funcs rockchip_drm_fb_funcs = {
+ 	.destroy       = drm_gem_fb_destroy,
+ 	.create_handle = drm_gem_fb_create_handle,
+-	.dirty	       = rockchip_drm_fb_dirty,
++	.dirty	       = drm_atomic_helper_dirtyfb,
+ };
+ 
+ static struct drm_framebuffer *
+-- 
+Sean Paul, Software Engineer, Google / Chromium OS
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
