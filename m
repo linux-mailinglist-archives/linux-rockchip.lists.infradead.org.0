@@ -2,80 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED5353CFC1
-	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:55:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E31683CFC9
+	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:56:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6oAvvj1rRt7/erTpT8uVUVgafUvcnZyXMRNuUnM9P4M=; b=mBtIQNoU/iZZ8p
-	t4nWvDpn9o2R1tsgQFuQbAnNQXKBB3j7h8kF8I2I936+au1W+fruM85X/advrnwdIMK3vekvcor7p
-	TrA6qqWed0Cn+gnuHsIY0GEE+Tom5R+nprFNdwGNC8vXpzP1PBmfCSxDJmtqQrEX9WrwGRGbMYM8a
-	p7H6Vx83g6CQHwaWXKW286LP19LxMyqdAMI2x+SKcw30U1khXpuGk4e8zy/y3KotWyDPmVbXEP0po
-	J0sk8W7DWMmM6f7EQtwTfxkPmZ9lyCJKaMfG5w0EOkYCFVXls01Mb2uPVxvl9wr4i0dCYbBJ4PukZ
-	Lykq8wwjeFzkE5BD/MLA==;
+	List-Owner; bh=uBlDIHqo8F8AeY7ormwpdscP1e3zell7Rs7/sfyszW8=; b=W7ptSwRj/tmgRx
+	MCMSJFO4jhmr+1HTl+kEDpg0wrWxdqcO9b7ETgy4rJdxm497b8Uz+1VX6WxopoCS2PVdjBds01lmX
+	mlIr5U+gnddMgtIWKNq7240vM5MbE/JC6fXpgriv4cMCwFSnoLOIC5axIn0nyqZLnJ3hi0Ji/HMX6
+	A8dVxycEdKSWMWoHgHMyz/bnF9FM5pdi/tCKLdzEvlJjR8tiSSV6ABrDqCADHDW33wGkuIedVA2//
+	Rc7RjkbhhIImcAflypXhIynDU3gzTfM3QahyqjPg10Hlff1Gb6nTWq5VY7YD0lDjYws+Wk5Lrc+i9
+	p8ZRTomfyRU09hDCOpIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haiBm-0007gM-Qa; Tue, 11 Jun 2019 14:55:54 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1haiBp-0007jM-VU; Tue, 11 Jun 2019 14:55:58 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haiBi-0007dp-P2
- for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:55:52 +0000
-Received: by mail-pl1-x641.google.com with SMTP id g21so5254467plq.0
- for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:55:50 -0700 (PDT)
+ id 1haiBm-0007gz-JU
+ for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:55:55 +0000
+Received: by mail-pg1-x543.google.com with SMTP id f25so7106663pgv.10
+ for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:55:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=pvtsocxqtDyRVeeeF9ZrknNra8/8DhlqqO3pIq4y19M=;
- b=ep8QmzA4gQUa1LYC9JcQ+Ds7Okj0F1/BN/tbfgKCzMVlQMwDUaOi28p5TeW9DUmxaE
- VLkWuV9INsOjKEvlZT9iMJ/hXt+CfYwmj2XTRko4GXs2QfZw/7ndjbWrysXvnc2qQbSF
- HE/qVoeUFgHU6v0EtrRqluwDN1nF03Ysmp2Bs=
+ bh=Rc17BFgLGXaaIgQA51MwKypvmo5RpUkXna/erYhtptg=;
+ b=kCYanFe7NFmbSNgJpsxSzilQIJsNtNgPlexWWMRulNLbZqj6wqPFY+YDnUvUvVY2PE
+ Utw+C0sJ9ysHkaScomI3OEFZ1S+7Nw07HBes6XJaRlsHpR5ol0HnqmRBaJR0PWRj5s4v
+ FcITLnRO4z8NhS5FEBDR6aSvo5MrU5rjvlcOI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=pvtsocxqtDyRVeeeF9ZrknNra8/8DhlqqO3pIq4y19M=;
- b=rZoAOEWpZn6fwy6V2w9I39fQH9fhMq2AUrIMUMn18ECnNzjtFrb260ZtEGqblZsClo
- +eocG7xxV7IT7Wvd0He+6/Hkdap8y1YPWvf3SNlaEx2cCBp56wtUBTHpZH/pWvcHjGxK
- eAt22ndCxLiSfegTTdfeKCCb4r43PH5GgazQrgTpqbsenJV7QiRuOLnayEFU5hHWWYSU
- 2uu24agQrY1M4RgSi8VU2Eve/YHO+S+Ihti4zyJdGnvw1H/TNDMbuoP2hJ1d6Zcp3ItK
- CiN7c/JoSE3qM2XKd0ENBLbSJPcL/5pZbyuAGf8r1e/UYaxOP3hbImVgTUfXtvoPGr1d
- ndEg==
-X-Gm-Message-State: APjAAAX19tq1kRAivit+Q244YHYX9GWARtgiMcgJ1wqTFZ4AKA/AzhSH
- 37unfeZtH4pSBccNSV6OUjbTjw==
-X-Google-Smtp-Source: APXvYqza6DSmp9j2oLS6hjsl/cqWCKxG2VqDpZTIptVPx+s+YQll/kXz+UIMi0Amz+qEszRYTpZxQA==
-X-Received: by 2002:a17:902:70cb:: with SMTP id
- l11mr15504710plt.343.1560264950254; 
- Tue, 11 Jun 2019 07:55:50 -0700 (PDT)
+ bh=Rc17BFgLGXaaIgQA51MwKypvmo5RpUkXna/erYhtptg=;
+ b=SKVA4y0uavOdawMMaMDuv+2G5MlxA5IV1jwXD9iD8017xNdBrNYnnGlqbRz7/+nY5E
+ 8Z7/yujm594cgI2/GChoMJEUTdolSpW5aJKFgCcjNF4yb4MBiidbvFKz7WIKOZgnDy5T
+ DelebKgA0iCDFrEde0MmlCVVtrDpYiV8aFArVZ8V+BxaoTPV0Ez/yAxO4ss2jahnDCr0
+ 1GzSz1PpJzG0T6smIKHFi2V4c5XlD60TATT7JbmYrlDOC/NDkaAQiOXDAXHc3bR11T9g
+ pWGD8OQeNA/OOlZ3lvLgCLAZ9jUgWl6RbjwlyWvceTQQXXQUUC74FSqvZIWktTjGn1rT
+ tbBA==
+X-Gm-Message-State: APjAAAV85UNYx8R6e79eas6SnrZZ4i/1K0K6qpPd6ix32SfP+y9Y6TZl
+ mYD687qO3CpF7oF+7i+RTn+tZQ==
+X-Google-Smtp-Source: APXvYqwhWkqinjcSEAnhFiBpk1PB0AqrBVep5gDZbrlDZG6S4Gh0Pl3ZF9z81nVJxtmz4JMkiGueUg==
+X-Received: by 2002:a63:794:: with SMTP id 142mr12485448pgh.157.1560264953912; 
+ Tue, 11 Jun 2019 07:55:53 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.180.18])
- by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.55.46
+ by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.55.50
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 11 Jun 2019 07:55:49 -0700 (PDT)
+ Tue, 11 Jun 2019 07:55:53 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH 60/92] ram: rk3399: Move mode_sel assignment
-Date: Tue, 11 Jun 2019 20:21:03 +0530
-Message-Id: <20190611145135.21399-61-jagan@amarulasolutions.com>
+Subject: [PATCH 61/92] ram: rk3399: Don't wait for PLL lock in lpddr4
+Date: Tue, 11 Jun 2019 20:21:04 +0530
+Message-Id: <20190611145135.21399-62-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190611145135.21399-1-jagan@amarulasolutions.com>
 References: <20190611145135.21399-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_075550_844220_50A15286 
-X-CRM114-Status: GOOD (  10.37  )
+X-CRM114-CacheID: sfid-20190611_075554_665339_DD96EEC0 
+X-CRM114-Status: GOOD (  10.40  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,62 +104,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-mode_sel assignment is based on dram type.
+lpddr4 has PLL bypass mode during phy initialization phase,
+which does all pll configurations.
 
-In phy_io_config, already have vref setting based
-on the dram type, so move this mode_sel assignment
-on vref setting area.
-
-No functionality change.
+So need to wait explicitly during pctl config.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+Signed-off-by: YouMin Chen <cym@rock-chips.com>
 ---
- drivers/ram/rockchip/sdram_rk3399.c | 12 +++---------
- 1 file changed, 3 insertions(+), 9 deletions(-)
+ drivers/ram/rockchip/sdram_rk3399.c | 26 ++++++++++++++++----------
+ 1 file changed, 16 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index f80c8a424c..d399ec8e38 100644
+index d399ec8e38..3d26cede77 100644
 --- a/drivers/ram/rockchip/sdram_rk3399.c
 +++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -206,6 +206,7 @@ static int phy_io_config(const struct chan_info *chan,
- 		vref_value_dq = 0x1f;
- 		vref_mode_ac = 0x6;
- 		vref_value_ac = 0x1f;
-+		mode_sel = 0x6;
- 	} else if (sdram_params->base.dramtype == LPDDR3) {
- 		if (sdram_params->base.odt == 1) {
- 			vref_mode_dq = 0x5;  /* LPDDR3 ODT */
-@@ -266,12 +267,14 @@ static int phy_io_config(const struct chan_info *chan,
- 		}
- 		vref_mode_ac = 0x2;
- 		vref_value_ac = 0x1f;
-+		mode_sel = 0x0;
- 	} else if (sdram_params->base.dramtype == DDR3) {
- 		/* DDR3L */
- 		vref_mode_dq = 0x1;
- 		vref_value_dq = 0x1f;
- 		vref_mode_ac = 0x1;
- 		vref_value_ac = 0x1f;
-+		mode_sel = 0x1;
- 	} else {
- 		debug("Unknown DRAM type.\n");
- 		return -EINVAL;
-@@ -293,15 +296,6 @@ static int phy_io_config(const struct chan_info *chan,
- 	/* PHY_915 PHY_PAD_VREF_CTRL_AC 12bits offset_16 */
- 	clrsetbits_le32(&denali_phy[915], 0xfff << 16, reg_value << 16);
+@@ -575,16 +575,22 @@ static int pctl_cfg(struct dram_info *dram, const struct chan_info *chan,
+ 	setbits_le32(&denali_pi[0], START);
+ 	setbits_le32(&denali_ctl[0], START);
  
--	if (sdram_params->base.dramtype == LPDDR4)
--		mode_sel = 0x6;
--	else if (sdram_params->base.dramtype == LPDDR3)
--		mode_sel = 0x0;
--	else if (sdram_params->base.dramtype == DDR3)
--		mode_sel = 0x1;
--	else
--		return -EINVAL;
--
- 	/* PHY_924 PHY_PAD_FDBK_DRIVE */
- 	clrsetbits_le32(&denali_phy[924], 0x7 << 15, mode_sel << 15);
- 	/* PHY_926 PHY_PAD_DATA_DRIVE */
+-	/* Waiting for phy DLL lock */
+-	while (1) {
+-		tmp = readl(&denali_phy[920]);
+-		tmp1 = readl(&denali_phy[921]);
+-		tmp2 = readl(&denali_phy[922]);
+-		if ((((tmp >> 16) & 0x1) == 0x1) &&
+-		    (((tmp1 >> 16) & 0x1) == 0x1) &&
+-		    (((tmp1 >> 0) & 0x1) == 0x1) &&
+-		    (((tmp2 >> 0) & 0x1) == 0x1))
+-			break;
++	/**
++	 * LPDDR4 use PLL bypass mode for init
++	 * not need to wait for the PLL to lock
++	 */
++	if (sdram_params->base.dramtype != LPDDR4) {
++		/* Waiting for phy DLL lock */
++		while (1) {
++			tmp = readl(&denali_phy[920]);
++			tmp1 = readl(&denali_phy[921]);
++			tmp2 = readl(&denali_phy[922]);
++			if ((((tmp >> 16) & 0x1) == 0x1) &&
++			    (((tmp1 >> 16) & 0x1) == 0x1) &&
++			    (((tmp1 >> 0) & 0x1) == 0x1) &&
++			    (((tmp2 >> 0) & 0x1) == 0x1))
++				break;
++		}
+ 	}
+ 
+ 	copy_to_reg(&denali_phy[896], &params_phy[896], (958 - 895) * 4);
 -- 
 2.18.0.321.gffc6fa0e3
 
