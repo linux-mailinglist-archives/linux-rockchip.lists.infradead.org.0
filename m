@@ -2,80 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1C5F3CF74
-	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:52:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4DAD3CF77
+	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 16:52:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w3zHPPzyXxaMVFZxTCh98E+s9fdX61dEGI5FQI9rd7M=; b=QEomUrcSvXigf6
-	M2Ig0aNSofvQHyOtIGLj1afsGyEguqYVLQge6sUwJ7HRNpcO6foW4NxBME6/2nhaXnufYess2zH97
-	osXlyF86pBZodBdg2vnmQ5VLHXfuKUVTYLptLCMGqIDLTVoIaI6iLdPyrizYKJdIIIQUTlqTECu51
-	eEfDcgEkVR+0d+B+GZpTh5Zzpn4GrshK3QENUQx4cCx7vsaEwdaIB4pAik4F3IzGf/CddqVNN4fmD
-	c6LoCBJSYI0GZKyFXiTByUlyCkt7tmIt7D/3L3ZYnTm7c52wR6Q7ASvb/3BHjGBbFNtF0QWbvlyEF
-	uddAIwHEx5KF5/NjSu4A==;
+	List-Owner; bh=oo+HbQ/4FHw0OCG5VZbDNY3G5zz8fo3F1i+x9jaStbc=; b=nMLWrghgpDzFnE
+	9NrWpORwa8KD+9PahIZMZJJyWx60lr9NSWDAYkOAlCH+B4xhDyz5NxXOvSMNGoRl4nN46MAPu759B
+	Jo3s/D+NABLJKtxCsOVXUjwjFlydGjJ/cisUj3Ip3/6Gn8GU6Y+isme4+bQA0nzcRAoggiAXuY44y
+	Qw9zM8uqfSCLrJ6ZCEhPBFVRXxO9bsjGflKAVAxEaysaBHpiRYOHw5YIMtKXOWd12434ZQdt8ZfPg
+	gxr3UYHAwtySYr8J3jDu7FRFPf0Pi80PfOOTWjyG24Azp2FK3SDjJUh3Dttjxs2LckBq5UVP9CJEe
+	0ptN3BIPF/f9epia9TLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hai88-0003oq-Jr; Tue, 11 Jun 2019 14:52:08 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hai8C-0003rx-PG; Tue, 11 Jun 2019 14:52:12 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hai84-0003mc-Fp
- for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:52:05 +0000
-Received: by mail-pf1-x442.google.com with SMTP id x15so7617406pfq.0
- for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:52:04 -0700 (PDT)
+ id 1hai87-0003oo-TY
+ for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 14:52:09 +0000
+Received: by mail-pg1-x543.google.com with SMTP id d30so7105455pgm.7
+ for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 07:52:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=HMxONh/KgJVsT04KApNrzG3DAJ+oZ016DpNMV5h196I=;
- b=enuhfKBCJLvKo2ssjbGsut1JSNtQeTw27NdDm1Gy564TijVVPmURPK/ySwrQAbz45O
- cZEBLh4CWBhoK6cQ2sB6oDZ+IpyGbYG18YuI05kMPnCPDUhSW4uqL9XGeYcI/2IH0Ol1
- 5w+m6jf0PLTcxTgHU3yE0UOEjaSPoTi/G3U4k=
+ bh=WeG8VUoLmUE+nNNbNtlE+5aIWXzGf93n9z29VHP2zqo=;
+ b=CQOq0WLRv9fmwB/kVu0o/J50blWEcswwcQKes8aoHSAtTfO+ruLcwMrVDFzxJNrTn3
+ A7FlNxkUvj7dwScs4wGEBuxURSGyRsfGYFwjAdgFhyNZTW32nREashQl3/6zfkm5sdUG
+ vDgYhvWD+lzVxBIrsKRlVAdzMJM/fdgBP2bYk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=HMxONh/KgJVsT04KApNrzG3DAJ+oZ016DpNMV5h196I=;
- b=C/xxImBfg3YOCY5e45jUb4YoEagqsUJWOyOUwf8RUuIe1I/a/8wUYtOKP6p26G08T6
- 1muOkkMyxLtbg6utpFhnCeVDstwkr6ytRU1RrVW+BDPvOukwOYt4bTT7SdIBzMI+BKXV
- tjmm3HK07/G4MGZBNlXz+PxaI8mGchfP7MT5ZsRCRtO87Z6Df2VMkNaHDGpD+vJrTy73
- 0qk8c0H3j0DWvPx68VdFmcPtr4EBba+6zPsQzCWbZ4H6NEUCh85kM63NgPqNF+tyQy1o
- gCJ872/e58DarRW66BdB09hpsHF+GM6CyS8apKpNe3tlFN09eGtS+x5sjSzF0BmkcDQG
- 3ciA==
-X-Gm-Message-State: APjAAAW1xMNayAsLajGMcTqauhDSO0HK3eHGe+Tu1SH3OaB+SJ+e2poP
- ART0uM4ZlCxy8xb3t+MsVbg3Jw==
-X-Google-Smtp-Source: APXvYqxv2UdfxOTm7GU6Ngj7ZD6Z9IrmLXKwlO0P6q9ap5h3x1/RpnZ+dSYGShKEDB9Cc1Uh5lnqzg==
-X-Received: by 2002:a65:42c3:: with SMTP id l3mr20774745pgp.372.1560264723534; 
- Tue, 11 Jun 2019 07:52:03 -0700 (PDT)
+ bh=WeG8VUoLmUE+nNNbNtlE+5aIWXzGf93n9z29VHP2zqo=;
+ b=V4nrLwxbkqshy8jhQLDd2tno3wSj2Awm81p49PoPllnpT8jOs9ODEww6kmRh3fr9XQ
+ bgf98wY3nTvLl9VKQFClIKpJldxExVqv1Pe9yCzgru/qaB+TM1aM2cJAWyFSTROiMB6p
+ C++vcSynjsND2bZzuz05Dn3vLVPcPx5mkuiZ4yujH7MCoOhcmCTS95rDVzWHd/pxBvqE
+ uVXbXLDlUkl9/UDbBTmbhrPH6JONLyLOxmkiM4/i7/lb1wo1kufeXK2THXjgcCNgG1KL
+ mMYbMDFGCLCCus8Wn00nkdAVJfPKDpVC3z3eJC0NlQ3shIvDs3jUpENrw1SjYCl+TR7k
+ TmSQ==
+X-Gm-Message-State: APjAAAXP/iW5bLxz/Pkb9LsMehBuedg+M9rIvqjTixb8pO6/0MW+Zxg2
+ DN8Ve6C7ypP5hRmqZhRSNJI8DuE5Z54=
+X-Google-Smtp-Source: APXvYqzYylbcaao5YVhBazU0YrhTjDs8ItP5CdJv1OXnai4EtOl0SUzCC6KsZeMbOZIfRArl7R7dEA==
+X-Received: by 2002:a62:fb0a:: with SMTP id x10mr58130760pfm.224.1560264727114; 
+ Tue, 11 Jun 2019 07:52:07 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.180.18])
- by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.51.59
+ by smtp.gmail.com with ESMTPSA id e9sm16206208pfn.154.2019.06.11.07.52.03
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 11 Jun 2019 07:52:02 -0700 (PDT)
+ Tue, 11 Jun 2019 07:52:06 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH 03/92] ram: rk3399: Add proper spaces in data training
-Date: Tue, 11 Jun 2019 20:20:06 +0530
-Message-Id: <20190611145135.21399-4-jagan@amarulasolutions.com>
+Subject: [PATCH 04/92] ram: rk3399: Handle data training return types
+Date: Tue, 11 Jun 2019 20:20:07 +0530
+Message-Id: <20190611145135.21399-5-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190611145135.21399-1-jagan@amarulasolutions.com>
 References: <20190611145135.21399-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_075204_552954_AF9E6FD8 
-X-CRM114-Status: UNSURE (   8.64  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190611_075208_056250_86CE6BD2 
+X-CRM114-Status: GOOD (  11.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,136 +104,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add proper spaces in the code of data training functions.
+data trainings calls like ca, wl, rg, rl, wdql have proper
+return types with -EIO and the return type missed to handle
+in data_training function.
 
-No functionality change.
+This patch, add proper return type checks along with useful
+debug statement on each data training calls.
+
+Incidentally this would help to prevent the sdram initialization
+hang for single channel dram and when the code is trying to
+initialize second channel with proper return type of relevant
+data training call might failed.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- drivers/ram/rockchip/sdram_rk3399.c | 20 ++++++++++++++++++++
- 1 file changed, 20 insertions(+)
+ drivers/ram/rockchip/sdram_rk3399.c | 50 ++++++++++++++++++++++-------
+ 1 file changed, 38 insertions(+), 12 deletions(-)
 
 diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index 8191ab6176..b0850a88a0 100644
+index b0850a88a0..73732e0767 100644
 --- a/drivers/ram/rockchip/sdram_rk3399.c
 +++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -620,8 +620,10 @@ static int data_training_ca(const struct chan_info *chan, u32 channel,
+@@ -878,6 +878,7 @@ static int data_training(const struct chan_info *chan, u32 channel,
+ 			 u32 training_flag)
+ {
+ 	u32 *denali_phy = chan->publ->denali_phy;
++	int ret;
  
- 	for (i = 0; i < rank; i++) {
- 		select_per_cs_training_index(chan, i);
-+
- 		/* PI_100 PI_CALVL_EN:RW:8:2 */
- 		clrsetbits_le32(&denali_pi[100], 0x3 << 8, 0x2 << 8);
-+
- 		/* PI_92 PI_CALVL_REQ:WR:16:1,PI_CALVL_CS:RW:24:2 */
- 		clrsetbits_le32(&denali_pi[92],
- 				(0x1 << 16) | (0x3 << 24),
-@@ -651,9 +653,11 @@ static int data_training_ca(const struct chan_info *chan, u32 channel,
- 				 (obs_err == 1))
- 				return -EIO;
- 		}
-+
- 		/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
- 		writel(0x00003f7c, (&denali_pi[175]));
+ 	/* PHY_927 PHY_PAD_DQS_DRIVE  RPULL offset_22 */
+ 	setbits_le32(&denali_phy[927], (1 << 22));
+@@ -898,24 +899,49 @@ static int data_training(const struct chan_info *chan, u32 channel,
  	}
-+
- 	clrbits_le32(&denali_pi[100], 0x3 << 8);
  
- 	return 0;
-@@ -670,8 +674,10 @@ static int data_training_wl(const struct chan_info *chan, u32 channel,
+ 	/* ca training(LPDDR4,LPDDR3 support) */
+-	if ((training_flag & PI_CA_TRAINING) == PI_CA_TRAINING)
+-		data_training_ca(chan, channel, sdram_params);
++	if ((training_flag & PI_CA_TRAINING) == PI_CA_TRAINING) {
++		ret = data_training_ca(chan, channel, sdram_params);
++		if (ret < 0) {
++			debug("%s: data training ca failed\n", __func__);
++			return ret;
++		}
++	}
  
- 	for (i = 0; i < rank; i++) {
- 		select_per_cs_training_index(chan, i);
-+
- 		/* PI_60 PI_WRLVL_EN:RW:8:2 */
- 		clrsetbits_le32(&denali_pi[60], 0x3 << 8, 0x2 << 8);
-+
- 		/* PI_59 PI_WRLVL_REQ:WR:8:1,PI_WRLVL_CS:RW:16:2 */
- 		clrsetbits_le32(&denali_pi[59],
- 				(0x1 << 8) | (0x3 << 16),
-@@ -705,6 +711,7 @@ static int data_training_wl(const struct chan_info *chan, u32 channel,
- 				 (obs_err == 1))
- 				return -EIO;
+ 	/* write leveling(LPDDR4,LPDDR3,DDR3 support) */
+-	if ((training_flag & PI_WRITE_LEVELING) == PI_WRITE_LEVELING)
+-		data_training_wl(chan, channel, sdram_params);
++	if ((training_flag & PI_WRITE_LEVELING) == PI_WRITE_LEVELING) {
++		ret = data_training_wl(chan, channel, sdram_params);
++		if (ret < 0) {
++			debug("%s: data training wl failed\n", __func__);
++			return ret;
++		}
++	}
+ 
+ 	/* read gate training(LPDDR4,LPDDR3,DDR3 support) */
+-	if ((training_flag & PI_READ_GATE_TRAINING) == PI_READ_GATE_TRAINING)
+-		data_training_rg(chan, channel, sdram_params);
++	if ((training_flag & PI_READ_GATE_TRAINING) == PI_READ_GATE_TRAINING) {
++		ret = data_training_rg(chan, channel, sdram_params);
++		if (ret < 0) {
++			debug("%s: data training rg failed\n", __func__);
++			return ret;
++		}
++	}
+ 
+ 	/* read leveling(LPDDR4,LPDDR3,DDR3 support) */
+-	if ((training_flag & PI_READ_LEVELING) == PI_READ_LEVELING)
+-		data_training_rl(chan, channel, sdram_params);
++	if ((training_flag & PI_READ_LEVELING) == PI_READ_LEVELING) {
++		ret = data_training_rl(chan, channel, sdram_params);
++		if (ret < 0) {
++			debug("%s: data training rl failed\n", __func__);
++			return ret;
++		}
++	}
+ 
+ 	/* wdq leveling(LPDDR4 support) */
+-	if ((training_flag & PI_WDQ_LEVELING) == PI_WDQ_LEVELING)
+-		data_training_wdql(chan, channel, sdram_params);
++	if ((training_flag & PI_WDQ_LEVELING) == PI_WDQ_LEVELING) {
++		ret = data_training_wdql(chan, channel, sdram_params);
++		if (ret < 0) {
++			debug("%s: data training wdql failed\n", __func__);
++			return ret;
++		}
++	}
+ 
+ 	/* PHY_927 PHY_PAD_DQS_DRIVE  RPULL offset_22 */
+ 	clrbits_le32(&denali_phy[927], (1 << 22));
+@@ -1048,7 +1074,7 @@ static int switch_to_phy_index1(struct dram_info *dram,
+ 		clrsetbits_le32(&denali_phy[896], (0x3 << 8) | 1, 1 << 8);
+ 		ret = data_training(&dram->chan[channel], channel,
+ 				    sdram_params, PI_FULL_TRAINING);
+-		if (ret) {
++		if (ret < 0) {
+ 			debug("index1 training failed\n");
+ 			return ret;
  		}
-+
- 		/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
- 		writel(0x00003f7c, (&denali_pi[175]));
- 	}
-@@ -726,8 +733,10 @@ static int data_training_rg(const struct chan_info *chan, u32 channel,
+@@ -1093,7 +1119,7 @@ static int sdram_init(struct dram_info *dram,
  
- 	for (i = 0; i < rank; i++) {
- 		select_per_cs_training_index(chan, i);
-+
- 		/* PI_80 PI_RDLVL_GATE_EN:RW:24:2 */
- 		clrsetbits_le32(&denali_pi[80], 0x3 << 24, 0x2 << 24);
-+
- 		/*
- 		 * PI_74 PI_RDLVL_GATE_REQ:WR:16:1
- 		 * PI_RDLVL_CS:RW:24:2
-@@ -764,9 +773,11 @@ static int data_training_rg(const struct chan_info *chan, u32 channel,
- 				 (obs_err == 1))
- 				return -EIO;
+ 		if (data_training(chan, channel,
+ 				  sdram_params, PI_FULL_TRAINING)) {
+-			printf("SDRAM initialization failed, reset\n");
++			printf("%s: data training failed\n", __func__);
+ 			return -EIO;
  		}
-+
- 		/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
- 		writel(0x00003f7c, (&denali_pi[175]));
- 	}
-+
- 	clrbits_le32(&denali_pi[80], 0x3 << 24);
  
- 	return 0;
-@@ -781,8 +792,10 @@ static int data_training_rl(const struct chan_info *chan, u32 channel,
- 
- 	for (i = 0; i < rank; i++) {
- 		select_per_cs_training_index(chan, i);
-+
- 		/* PI_80 PI_RDLVL_EN:RW:16:2 */
- 		clrsetbits_le32(&denali_pi[80], 0x3 << 16, 0x2 << 16);
-+
- 		/* PI_74 PI_RDLVL_REQ:WR:8:1,PI_RDLVL_CS:RW:24:2 */
- 		clrsetbits_le32(&denali_pi[74],
- 				(0x1 << 8) | (0x3 << 24),
-@@ -805,9 +818,11 @@ static int data_training_rl(const struct chan_info *chan, u32 channel,
- 			else if (((tmp >> 2) & 0x1) == 0x1)
- 				return -EIO;
- 		}
-+
- 		/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
- 		writel(0x00003f7c, (&denali_pi[175]));
- 	}
-+
- 	clrbits_le32(&denali_pi[80], 0x3 << 16);
- 
- 	return 0;
-@@ -822,13 +837,16 @@ static int data_training_wdql(const struct chan_info *chan, u32 channel,
- 
- 	for (i = 0; i < rank; i++) {
- 		select_per_cs_training_index(chan, i);
-+
- 		/*
- 		 * disable PI_WDQLVL_VREF_EN before wdq leveling?
- 		 * PI_181 PI_WDQLVL_VREF_EN:RW:8:1
- 		 */
- 		clrbits_le32(&denali_pi[181], 0x1 << 8);
-+
- 		/* PI_124 PI_WDQLVL_EN:RW:16:2 */
- 		clrsetbits_le32(&denali_pi[124], 0x3 << 16, 0x2 << 16);
-+
- 		/* PI_121 PI_WDQLVL_REQ:WR:8:1,PI_WDQLVL_CS:RW:16:2 */
- 		clrsetbits_le32(&denali_pi[121],
- 				(0x1 << 8) | (0x3 << 16),
-@@ -845,9 +863,11 @@ static int data_training_wdql(const struct chan_info *chan, u32 channel,
- 			else if (((tmp >> 6) & 0x1) == 0x1)
- 				return -EIO;
- 		}
-+
- 		/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
- 		writel(0x00003f7c, (&denali_pi[175]));
- 	}
-+
- 	clrbits_le32(&denali_pi[124], 0x3 << 16);
- 
- 	return 0;
 -- 
 2.18.0.321.gffc6fa0e3
 
