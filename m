@@ -2,83 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B93842392
-	for <lists+linux-rockchip@lfdr.de>; Wed, 12 Jun 2019 13:12:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A70C424B9
+	for <lists+linux-rockchip@lfdr.de>; Wed, 12 Jun 2019 13:49:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rogCxbb1K6UxIz2Nesgi3QThnCRWdEPo8+ulI6TN64c=; b=O8mTu3sE2dTHIn9ia2/oGisMn
-	nzrLqihgWc8EIFygGVXjuGMeqJJyyii8ONcr1FQCwMSTrVGwMwA26i5HPbxxZYBiqYIIV3bX+atSF
-	3hlC46KUC5vgxC7KP8gYJNDig0GOSd8T1xsm/VNoef1g3wYIzMnDcyTL+zuNes+L27C9Nd4/pmx7y
-	Ud86oitF16C2rvjh/rRel99rdwL75PmAQ15hReIzo4053pR2ulrqZVOy6JVxvZxDDlcnfpkAeLPgF
-	zR6WuacgI3joXAw9chGAQm91Ldao9bmlulx5G68g+jOqBZDDMSlJg6dv5U2TdNFhoICO6uce7o7tB
-	3Un4WR56g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z2VNizwMUljTS1rZ0GDhRbG2Kxp8D6Du0Zpu0M/vGvk=; b=TChumhYFDYFLyP
+	k8DChnZk9P8gzsYannNzMBHmW/yKC9q0CfGP0afx/bFwhEU7aPG3z4U8lghphCzDvCiCjCHWmo+F6
+	wpVi9GVFtgkqdM0hBVaulN4szOEjdvY1ie2pIi5BwaSF/BP9GggZY4bZj3hbM412oRkOzwb0AlhyK
+	B7ePOEqM9YUEvyx/SqxwHbGaajBbE2X1DYGVh5IYG8viI3WPHgLux0tI4w3T03H6aLdRXuyytJqMe
+	ka+DZj6Xo9okwN93SFIqQA6ZUGIjxVHw/IYuXKxwwfAL62DFQoasRl8tbTslfL4E1N1BmK1ykYmRE
+	+SnW48H6TxedEHpWtbvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb1AY-0005NT-JY; Wed, 12 Jun 2019 11:11:54 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hb1l7-0005xc-Co; Wed, 12 Jun 2019 11:49:41 +0000
+Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb1AV-0005Mx-KX
- for linux-rockchip@lists.infradead.org; Wed, 12 Jun 2019 11:11:52 +0000
-Received: by mail-wr1-x444.google.com with SMTP id c2so16435336wrm.8
- for <linux-rockchip@lists.infradead.org>; Wed, 12 Jun 2019 04:11:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=T0cZTEnUTvGGmjw5I8Wkm+xAGTXLp41aRjblrVtvO6s=;
- b=JyatqGuFCTR9C17AwuSyJvET6Y0x6fp6Y5k8x7KKvWEwZhzRSKNY+9DIRrM50+Om9Y
- WpMMP16n48yJ+G5mLjaHbe+AIIJrqRHDZXPYuhpIcfm1VjzPpUdxicueI0SOyL4HBkMt
- 3SOxQGDCQ/d0QJLUjQzOMtTSC6rQvOi7rCp94=
+ id 1hb1l1-0005lO-KU
+ for linux-rockchip@lists.infradead.org; Wed, 12 Jun 2019 11:49:38 +0000
+Received: by mail-ua1-x944.google.com with SMTP id 94so5779031uam.3
+ for <linux-rockchip@lists.infradead.org>; Wed, 12 Jun 2019 04:49:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=fL5+yAvFpszDdwrzAhEA7Ye5Luf0zjBze5h9taUU+T8=;
+ b=IWDvMyC9P5AiIW64CutGGY3WzwhVrLGaAwN6J8EHfw77V8yPYgGHANQJg8t7eiy16v
+ uMqvroecwGxZQhVf/oKmaAoo3x8Zv6b+o3OUoxe8P5B/4oLM4GhchWkpjqvRt+VvIA3l
+ OJa17Pfk4PgfzzVZjGVPa3deTyFnbxuDADm7WJ9Sc4pnYOc18CjiqS7J44hKqeXxDKCr
+ piablk8wr9MlnupnliBftfIn4flYndyYx6WkOtHT3Ju+Yeph+UIiWKaVCoxSyXhYEyIM
+ 27B1y+7ahTL2MLr2dgibSIN4AwXg/MjbIfq1YkfB3kyLgGXCBK9ZErt71PtnX/DZhIjk
+ 4Rlw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=T0cZTEnUTvGGmjw5I8Wkm+xAGTXLp41aRjblrVtvO6s=;
- b=g/li2pLfiwNLmrTE7lFMiGhUILJOlS41nLER8hrKzMyZz0aw/JVURX2jS902Geo1Er
- g6tPxCWR0YNn2kiMDtBKGuSLwbFzsh5idxvr7z+mMvh/g413tK7eDkXwjVOf/jmx5Y1T
- F0fpt9DheadD9tYT2Om6Qlv8KnIIrmRoNbEeWCItTVw0AoBNsiIqbf7puhTq+wXZhcrf
- BpPAykUC/HNzxO779FUAZ6Uieq4RRIgGhb+KC2NXsWwz2tqfp4+ZKU/XOowkcDoHqQYg
- X/6R6p/Zc/Nx6vu+6VnQHvLwnl8ZIYw/iu55V7OOzVjw4kyPa/1itwVyL5QfiY0U+AAo
- xH5A==
-X-Gm-Message-State: APjAAAWtj5pXNqTJpExqJfHvhQPUeChAYprf6WWR8Z8xkQaUX5ldiVdJ
- O9GWdtdam+L8yZadQLtp7ltrCQ==
-X-Google-Smtp-Source: APXvYqz8aasOCe6ye7E5FfdTBcDAkR84x/KcKfNBPauTc6i9sI0Ku3jNcSHbU+R9NjuSPf/RBBPEVA==
-X-Received: by 2002:adf:f8cf:: with SMTP id f15mr40008967wrq.333.1560337909649; 
- Wed, 12 Jun 2019 04:11:49 -0700 (PDT)
-Received: from [10.176.68.125] ([192.19.248.250])
- by smtp.gmail.com with ESMTPSA id 5sm5337449wmg.7.2019.06.12.04.11.47
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 12 Jun 2019 04:11:48 -0700 (PDT)
-Subject: Re: [PATCH v3 3/5] brcmfmac: sdio: Disable auto-tuning around
- commands expected to fail
-To: Ulf Hansson <ulf.hansson@linaro.org>, Doug Anderson <dianders@chromium.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=fL5+yAvFpszDdwrzAhEA7Ye5Luf0zjBze5h9taUU+T8=;
+ b=BzxGjwE5Eq1OcPtZW8u+umSDRuciYeSZosxafY5nKoxnxkyCEMtVqSrzlSPIOkgRxO
+ yX++zIJrV5V6OgTLG76iZ++Q1Gpc3eyt9Kz7gN46R2NAeLW51ifQR8fIzpQgYBqpx2tW
+ pES55yrQ15FaJFAZHKXrr5xeOGIBbkdMsO2TqsYTGUmefqIpXMPHjD3juw5r1HdvlMnK
+ kiiUJKaUESjW1S7wcM4zylnzI5Nn/xxztL3dGKFDaVFd7ubWbgBiqKEEaA+p2moEBUuo
+ LGoX8JDz1sffhZjCcqUly6h0X/huVso9VuxjSX4Pw5YivoyB2aDQOnovM+k/TXAa0xxt
+ Z7lA==
+X-Gm-Message-State: APjAAAVr9BhF94TduQbGYzwttWyJeGm1KrJ1SYpsRzBtj/C1YB4ieCGN
+ N0Nwz971NG5/Urxdt+8Td9k4a2xbuaudEqke138QllEo
+X-Google-Smtp-Source: APXvYqy9Znw8HxyqdcJxmFY7a6Iw36a1N9tWz9NbjPT8mcjJotx9MWPFEjWPSQY9+rfUfMt64hGDugr+7AVqGSrtZqY=
+X-Received: by 2002:ab0:2705:: with SMTP id s5mr576634uao.104.1560340174391;
+ Wed, 12 Jun 2019 04:49:34 -0700 (PDT)
+MIME-Version: 1.0
 References: <20190607223716.119277-1-dianders@chromium.org>
  <20190607223716.119277-4-dianders@chromium.org>
  <363DA0ED52042842948283D2FC38E4649C52F8A0@IRSMSX106.ger.corp.intel.com>
  <CAD=FV=U8eo78Ee9xjhGXJMv=8YF9o89KLX024GH3iBRnRjCRvQ@mail.gmail.com>
  <CAPDyKFo=QMRTkNYUVSE2AqiZgytkTVRXF0Mvznn6trVT4-cR=Q@mail.gmail.com>
-From: Arend Van Spriel <arend.vanspriel@broadcom.com>
-Message-ID: <c7c6d3f4-ebb1-8964-0616-973fae1ab47d@broadcom.com>
-Date: Wed, 12 Jun 2019 13:11:46 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <CAPDyKFo=QMRTkNYUVSE2AqiZgytkTVRXF0Mvznn6trVT4-cR=Q@mail.gmail.com>
-Content-Language: en-US
+ <c7c6d3f4-ebb1-8964-0616-973fae1ab47d@broadcom.com>
+In-Reply-To: <c7c6d3f4-ebb1-8964-0616-973fae1ab47d@broadcom.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Wed, 12 Jun 2019 13:48:57 +0200
+Message-ID: <CAPDyKFpM0+FfvoMo8Z_hxM9rzSjeQZHCsA2SPa8WP+SRDhhsPA@mail.gmail.com>
+Subject: Re: [PATCH v3 3/5] brcmfmac: sdio: Disable auto-tuning around
+ commands expected to fail
+To: Arend Van Spriel <arend.vanspriel@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_041151_680321_65EBE214 
-X-CRM114-Status: GOOD (  12.99  )
+X-CRM114-CacheID: sfid-20190612_044935_709402_E3259B22 
+X-CRM114-Status: GOOD (  13.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -89,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,36 +105,44 @@ Cc: Madhan Mohan R <madhanmohan.r@cypress.com>,
  "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
  Chi-Hsien Lin <chi-hsien.lin@cypress.com>,
  "briannorris@chromium.org" <briannorris@chromium.org>,
- "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, "Hunter,
- Adrian" <adrian.hunter@intel.com>, Double Lo <double.lo@cypress.com>,
+ "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+ Double Lo <double.lo@cypress.com>, Doug Anderson <dianders@chromium.org>,
  "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
  "mka@chromium.org" <mka@chromium.org>, Naveen Gupta <naveen.gupta@cypress.com>,
- Wright Feng <wright.feng@cypress.com>,
+ Wright Feng <wright.feng@cypress.com>, "Hunter,
+ Adrian" <adrian.hunter@intel.com>,
  "brcm80211-dev-list@cypress.com" <brcm80211-dev-list@cypress.com>,
  Kalle Valo <kvalo@codeaurora.org>, Franky Lin <franky.lin@broadcom.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 6/12/2019 12:10 PM, Ulf Hansson wrote:
->> drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c:
->>    mmc_set_data_timeout(md, func->card);
->>    mmc_wait_for_req(func->card->host, mr);
-> These are not okay, none of these things calls should really be done
-> from an SDIO func driver.
-> 
-> It tells me that the func driver is a doing workaround for something
-> that should be managed in a common way.
+On Wed, 12 Jun 2019 at 13:11, Arend Van Spriel
+<arend.vanspriel@broadcom.com> wrote:
+>
+> On 6/12/2019 12:10 PM, Ulf Hansson wrote:
+> >> drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c:
+> >>    mmc_set_data_timeout(md, func->card);
+> >>    mmc_wait_for_req(func->card->host, mr);
+> > These are not okay, none of these things calls should really be done
+> > from an SDIO func driver.
+> >
+> > It tells me that the func driver is a doing workaround for something
+> > that should be managed in a common way.
+>
+> We are using some low-level functions passing chain of skbuff to the
+> device using CMD53 with scatterlist. If I recall correctly Marvell made
+> an attempt to have a similar function for it in the mmc stack. Not sure
+> if that ever made it in. If so I can rework our driver using that API.
+> If not, I can make a new attempt.
 
-We are using some low-level functions passing chain of skbuff to the 
-device using CMD53 with scatterlist. If I recall correctly Marvell made 
-an attempt to have a similar function for it in the mmc stack. Not sure 
-if that ever made it in. If so I can rework our driver using that API. 
-If not, I can make a new attempt.
+I recall there were some patches, but not sure why we didn't merge them.
 
-Regards,
-Arend
+Anyway, if you want to move this forward, that would be awesome!
+
+Kind regards
+Uffe
 
 _______________________________________________
 Linux-rockchip mailing list
