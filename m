@@ -2,83 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4EFE3D77B
-	for <lists+linux-rockchip@lfdr.de>; Tue, 11 Jun 2019 22:06:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D2104220D
+	for <lists+linux-rockchip@lfdr.de>; Wed, 12 Jun 2019 12:11:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v/FhXwRGLShQDqwuzEX7KDFyDWBDsLG18Ue9aSGujvo=; b=IJiTOOScOF1JXV
-	6KBT71LoUuz/oKWgpVgnlSaEduMBwPGbLKn/BeunxZ1WlGUf6UTR1gz+ZJBeccVuBuQFsItmMFGIZ
-	pHnceeF312avFgaAxccJEnxShRV7prC/2q947up4gxpJr0KGgzB6su5KZ05sXFKsphNV/iv7VpKNl
-	To/kqzFi1AalRHLWW8XODx0EuQEkRnhBjpabRLUjcENwRZY+7cT2MCF5zQle/prkUl+vubHZJ75WY
-	Ltgh3cJoIRHsWaY/A+JRQVUZ/gCLP3SFLJv6LUmPfz5zLE4eSBMhyH/P8/+V6iDYAKCo6yIKVIbjz
-	nIX50hhidfda4S3ScB4Q==;
+	List-Owner; bh=9PXsLpr4De1UVu9sb3d8Nr8gLpWBpGwvlVYt7ESMBnk=; b=fLWbJ2J35L+UNO
+	+pzY26ENpCdmkTLG1k2wSG3J8LYAHa4duys4iwg9Cm//xGZcd6SgquDtsiy6ury2GTKKvknEeceoM
+	0Nh7b02Uv+angwS9U0+P4M36SEgfAB8U1TtqUgmOBhwu/lytlvaa7rTEA97fCjpX2rHNnXpewl3Wz
+	7abW3nF54J1yGh+S9Ycr7RWOjs5CetRvFPznzt1senQZAkpjw5RAwW0CsAgnS57NfScZ2YWrnriWP
+	5F3BU6xTSg3xxKnYN9wQjUMoz8Ir1dxZP9KhwcKA/zbsgAHsVj9G/eysB+2yynKsBum50KR+PrC0R
+	4RsE87xM1dxYDWPXSdgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1han2R-00031x-PK; Tue, 11 Jun 2019 20:06:35 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1hb0EA-0007Ad-Mv; Wed, 12 Jun 2019 10:11:34 +0000
+Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1han29-0002rV-RJ
- for linux-rockchip@lists.infradead.org; Tue, 11 Jun 2019 20:06:19 +0000
-Received: by mail-qt1-x841.google.com with SMTP id j19so16083832qtr.12
- for <linux-rockchip@lists.infradead.org>; Tue, 11 Jun 2019 13:06:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=VZ0ytceJgXCqr5ilqOVqFNo1qlLNdSpZYSsN3gN7kIc=;
- b=RvqQx6p83R88V5tFQjTLtqa3DG6UAYYrxP6i8VC1Zyf2zpg72pHTPqmRWrO6SCAYEL
- qNpk4k/sofTESFdtr2A6Ghk8KYkqqe/d+00jNYyZAG+q7Rz8m82yXoA8xTE42XE0I0zb
- yWlR7Jd925GSsiU6u7E9V2ICjcMG77Fvq2q4WLCZabCu0Rfi7Y5rXEt1uEGhHRVV6Z+3
- +c2oKfrz9iDUC3Rt6viQqTdMnfkqakb/2tV0LVPRLcUrbRKn2FXS5ulZ0crf+kqOUlyN
- L86SHTeNJbg6fKnIxohrZSvaTYWYAMO8dkzCWuA+vpluBz7vIzLwxFQc3ep257QuWJN7
- 0x0Q==
+ id 1hb0E5-0007A2-Dq
+ for linux-rockchip@lists.infradead.org; Wed, 12 Jun 2019 10:11:30 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id k9so724083vso.5
+ for <linux-rockchip@lists.infradead.org>; Wed, 12 Jun 2019 03:11:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Vwwsd0tdKxa00vg2i3C1zrYsYmEGYn7C9UHSqxLUOAY=;
+ b=cNuXOLWUPlPjzsuZ7Z6BuN/fwPgNEqYjZXIJhRFvcMn54FRyd3mnAeCRjTPJEmoRxx
+ xDPmcvmPVRh581RobGwdUC2EsTF2EhwhYlmpZcuZ1sQCcejbMGT133Abgv/YaQPzr3CV
+ ///CpGcB3drMtVF/D1a9lHuUcbiWPZGDYJrkeshfN6hkMqBjOgV60A8iRBMSAj+m6YUx
+ 5kpoq7HOqxzFwsqtg4spRZYFg0/dpuVf/aZaHr8rxUguZigoD5SiyuF8nBrVAclPtY/I
+ ASCtN2N1+XGfiS8vxP+riDAtTtka9iDhNlbnybkrK7T2xWiFKG+OL7N38Ketqfqe1GKg
+ mi2w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=VZ0ytceJgXCqr5ilqOVqFNo1qlLNdSpZYSsN3gN7kIc=;
- b=DSejPqr9ALi121v3R2yNopRVwpnVauC+yKMl7fKIoGfdAri9kHFhzjIQftHNEdFvv5
- ye+PDQHiqduq9sfLu5rW1uuruYwlpvJcVBqmHPjkBD+13TRw7frf6pTovmbt3tOtB9KV
- BqFotGC3HdZexvOLjCkWWkBoTdVO8FQTZdNkx1XY8BkIoOtWAPTawW/LTX/WsFZX4lrt
- IRm8/OvS6nwfGlIu3O2lmxEKftNtO6u4f/8gB1aOYDHMWGR5d379Pxd90wVsHjBURwnx
- OiI4P6gKe1ndGjw/hWMNfiFMdLDX6/bJRarnv54A5L0AF9ZeJD5PiqslKwGq/ZwkCyzg
- nY1g==
-X-Gm-Message-State: APjAAAWcS6ey4lRSKkI8hKqZ8V0uvS0QYEZzhYqkLlI3EpZyWZSP2hX1
- 3P1niQbmUl7cOAr+bMBKtlHD7hPogUI=
-X-Google-Smtp-Source: APXvYqxoorb+UFLKFxWkPFFB9tPlAi8vUYk8yEv7z4SR3RxkKXlvY+Q+LOr3rEjpd+RT7hNpZpC1cA==
-X-Received: by 2002:a0c:d91b:: with SMTP id p27mr47091576qvj.236.1560283576299; 
- Tue, 11 Jun 2019 13:06:16 -0700 (PDT)
-Received: from localhost ([2620:0:1013:11:89c6:2139:5435:371d])
- by smtp.gmail.com with ESMTPSA id d31sm2824197qta.39.2019.06.11.13.06.15
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 11 Jun 2019 13:06:15 -0700 (PDT)
-Date: Tue, 11 Jun 2019 16:06:14 -0400
-From: Sean Paul <sean@poorly.run>
-To: Doug Anderson <dianders@chromium.org>
-Subject: Re: [PATCH v3 2/2] drm/rockchip: dw_hdmi: Handle suspend/resume
-Message-ID: <20190611200614.GC179831@art_vandelay>
-References: <20190604204207.168085-1-dianders@chromium.org>
- <20190604204207.168085-2-dianders@chromium.org>
- <20190606164221.GI17077@art_vandelay>
- <CAD=FV=Xt6Oad9yQHZz+nwANV1MCvGc6XCgOf8HawimVQtwWsEg@mail.gmail.com>
- <CAMavQKLgBBceO3m8-ff0-79Ks_tD_xDY=N1kOuJya2USthTARg@mail.gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Vwwsd0tdKxa00vg2i3C1zrYsYmEGYn7C9UHSqxLUOAY=;
+ b=ScipVhCvycahtxgfuLBCsaqeiSWbAgEZHxJDhWtxvjxCP/2tPecJLiVygh1Dv/Y0PW
+ HYlcWkRGi9+VKPNaOsy19k/ALfNpNjX/rDkIhyDKtyOcU0FR6Ucqf9yiYDsrTba/5AKj
+ vxw2ongqAjfFmbKyr9b6rzlj4T2lnEuP0BslailW1Zfn2y3Z/O1hAlpijiqXKrmYYOjU
+ 3Eu1ZukIQqwa/vIL+Wo3d2vsV9v1ne3GCqsuVKXpFPUHQu83QZaaK1VSZW22TgjktlpZ
+ 55w5vAQ3t/SzFa70HWsjlEjikCcxi+Uy25rqun4KmJl6F/P1QISKi++TbmZ6/+ead5I1
+ s7Tg==
+X-Gm-Message-State: APjAAAVEUtFeF5T3QcNZ1Ip5gxKCG7JOP8I04lLeLU2/vNJWH4cyR7Q3
+ LdH3inRtRklwdkSeojIaVYdIJ6p9hz9oBKRKHr5UBg==
+X-Google-Smtp-Source: APXvYqz9HdjKJz1FgwE/Nx/EZT4gQSK6X7I7/l+mUBC1IPdGylVrfi3vGB2PufieZ8KgmvsoIDewFF/91qoctXVN1SA=
+X-Received: by 2002:a67:ee16:: with SMTP id f22mr9599693vsp.191.1560334287942; 
+ Wed, 12 Jun 2019 03:11:27 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMavQKLgBBceO3m8-ff0-79Ks_tD_xDY=N1kOuJya2USthTARg@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190607223716.119277-1-dianders@chromium.org>
+ <20190607223716.119277-4-dianders@chromium.org>
+ <363DA0ED52042842948283D2FC38E4649C52F8A0@IRSMSX106.ger.corp.intel.com>
+ <CAD=FV=U8eo78Ee9xjhGXJMv=8YF9o89KLX024GH3iBRnRjCRvQ@mail.gmail.com>
+In-Reply-To: <CAD=FV=U8eo78Ee9xjhGXJMv=8YF9o89KLX024GH3iBRnRjCRvQ@mail.gmail.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Wed, 12 Jun 2019 12:10:51 +0200
+Message-ID: <CAPDyKFo=QMRTkNYUVSE2AqiZgytkTVRXF0Mvznn6trVT4-cR=Q@mail.gmail.com>
+Subject: Re: [PATCH v3 3/5] brcmfmac: sdio: Disable auto-tuning around
+ commands expected to fail
+To: Doug Anderson <dianders@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_130617_907051_85583EA0 
-X-CRM114-Status: GOOD (  34.42  )
+X-CRM114-CacheID: sfid-20190612_031129_494232_5216FCE0 
+X-CRM114-Status: GOOD (  15.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,214 +94,108 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- David Airlie <airlied@linux.ie>, Neil Armstrong <narmstrong@baylibre.com>,
- Sandy Huang <hjc@rock-chips.com>, dri-devel <dri-devel@lists.freedesktop.org>,
- LKML <linux-kernel@vger.kernel.org>, Andrzej Hajda <a.hajda@samsung.com>,
- Matthias Kaehlcke <mka@chromium.org>, Sean Paul <seanpaul@chromium.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Madhan Mohan R <madhanmohan.r@cypress.com>,
+ "brcm80211-dev-list.pdl@broadcom.com"
+ <brcm80211-dev-list.pdl@broadcom.com>, YueHaibing <yuehaibing@huawei.com>,
+ Arend van Spriel <arend.vanspriel@broadcom.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Hante Meuleman <hante.meuleman@broadcom.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Chi-Hsien Lin <chi-hsien.lin@cypress.com>,
+ "briannorris@chromium.org" <briannorris@chromium.org>,
+ "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+ Double Lo <double.lo@cypress.com>, "Hunter, Adrian" <adrian.hunter@intel.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "mka@chromium.org" <mka@chromium.org>, Naveen Gupta <naveen.gupta@cypress.com>,
+ Wright Feng <wright.feng@cypress.com>,
+ "brcm80211-dev-list@cypress.com" <brcm80211-dev-list@cypress.com>,
+ Kalle Valo <kvalo@codeaurora.org>, Franky Lin <franky.lin@broadcom.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, Jun 07, 2019 at 02:06:03PM -0400, Sean Paul wrote:
-> On Thu, Jun 06, 2019 at 03:58:21PM -0700, Doug Anderson wrote:
-> > Hi,
+On Mon, 10 Jun 2019 at 18:50, Doug Anderson <dianders@chromium.org> wrote:
+>
+> Hi,
+>
+> On Mon, Jun 10, 2019 at 1:56 AM Hunter, Adrian <adrian.hunter@intel.com> wrote:
 > >
-> > On Thu, Jun 6, 2019 at 9:42 AM Sean Paul <sean@poorly.run> wrote:
-> > >
-> > > On Tue, Jun 04, 2019 at 01:42:07PM -0700, Douglas Anderson wrote:
-> > > > On Rockchip rk3288-based Chromebooks when you do a suspend/resume
-> > > > cycle:
-> > > >
-> > > > 1. You lose the ability to detect an HDMI device being plugged in.
-> > > >
-> > > > 2. If you're using the i2c bus built in to dw_hdmi then it stops
-> > > > working.
-> > > >
-> > > > Let's call the core dw-hdmi's suspend/resume functions to restore
-> > > > things.
-> > > >
-> > > > NOTE: in downstream Chrome OS (based on kernel 3.14) we used the
-> > > > "late/early" versions of suspend/resume because we found that the VOP
-> > > > was sometimes resuming before dw_hdmi and then calling into us before
-> > > > we were fully resumed.  For now I have gone back to the normal
-> > > > suspend/resume because I can't reproduce the problems.
-> > > >
-> > > > Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> > > > ---
-> > > >
-> > > > Changes in v3:
-> > > > - dw_hdmi_resume() is now a void function (Laurent)
-> > > >
-> > > > Changes in v2:
-> > > > - Add forgotten static (Laurent)
-> > > > - No empty stub for suspend (Laurent)
-> > > >
-> > > >  drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c | 14 ++++++++++++++
-> > > >  1 file changed, 14 insertions(+)
-> > > >
-> > > > diff --git a/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c b/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c
-> > > > index 4cdc9f86c2e5..7bb0f922b303 100644
-> > > > --- a/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c
-> > > > +++ b/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c
-> > > > @@ -542,11 +542,25 @@ static int dw_hdmi_rockchip_remove(struct platform_device *pdev)
-> > > >       return 0;
-> > > >  }
-> > > >
-> > > > +static int __maybe_unused dw_hdmi_rockchip_resume(struct device *dev)
-> > > > +{
-> > > > +     struct rockchip_hdmi *hdmi = dev_get_drvdata(dev);
-> > > > +
-> > > > +     dw_hdmi_resume(hdmi->hdmi);
-> > >
-> > > The rockchip driver is already using the atomic suspend/resume helpers (via the
-> > > modeset helpers). Would you be able to accomplish the same thing by just moving
-> > > this call into the encoder enable callback?
-> > >
-> > > .enable is called on resume via the atomic commit framework, so everything is
-> > > ordered properly. Of course, this would reset the dw_hdmi bridge on each enable,
-> > > but I don't think that would be a problem?
+> > > --- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
+> > > +++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
+> > > @@ -16,6 +16,7 @@
+> > >  #include <linux/mmc/sdio_ids.h>
+> > >  #include <linux/mmc/sdio_func.h>
+> > >  #include <linux/mmc/card.h>
+> > > +#include <linux/mmc/core.h>
 > >
-> > I tried and it sorta kinda half worked, but...
-> >
-> > 1. One of the problems solved by this patch is making "hot plug
-> > detect" work after suspend / resume.  AKA: if you have nothing plugged
-> > in to the HDMI port and then suspend/resume you need to be able to
-> > detect when something is plugged in.  When nothing is plugged in then
-> > the ".enable" isn't called at resume time.
-> >
-> 
-> Ahh, ok. So we've hit this with other bridges/dongles as well, and yeah the
-> solution is to keep the bridge powered up enough to detect hotplug, so you would
-> need to do some work in .resume
-> 
-> Usually there's a second stage of enable where you power things on more fully
-> and that is done in .enable
-> 
-> > 2. I'm not so convinced about the whole ordering being correct.
-> > Unfortunately on my system (Chrome OS running the chromeos-4.19
-> > kernel) we end up getting an i2c transfer before the ".enable" is
-> > called.  I put a dump_stack() in the i2c transfer:
-> >
-> > [   42.212516] CPU: 0 PID: 1479 Comm: DrmThread Tainted: G         C
-> >      4.19.47 #60
-> > [   42.221182] Hardware name: Rockchip (Device Tree)
-> > [   42.226449] [<c0211a64>] (unwind_backtrace) from [<c020cf0c>]
-> > (show_stack+0x20/0x24)
-> > [   42.235114] [<c020cf0c>] (show_stack) from [<c0a1b8d4>]
-> > (dump_stack+0x84/0xa4)
-> > [   42.243195] [<c0a1b8d4>] (dump_stack) from [<c067d7c4>]
-> > (dw_hdmi_i2c_wait+0x6c/0xa8)
-> > [   42.251858] [<c067d7c4>] (dw_hdmi_i2c_wait) from [<c067d9a8>]
-> > (dw_hdmi_i2c_xfer+0x1a8/0x30c)
-> > [   42.261298] [<c067d9a8>] (dw_hdmi_i2c_xfer) from [<c0798704>]
-> > (__i2c_transfer+0x3a8/0x5d8)
-> > [   42.270543] [<c0798704>] (__i2c_transfer) from [<c07989c8>]
-> > (i2c_transfer+0x94/0xc4)
-> > [   42.279204] [<c07989c8>] (i2c_transfer) from [<c064e6b0>]
-> > (drm_do_probe_ddc_edid+0xbc/0x11c)
-> > [   42.288642] [<c064e6b0>] (drm_do_probe_ddc_edid) from [<c064e744>]
-> > (drm_probe_ddc+0x34/0x5c)
-> > [   42.298081] [<c064e744>] (drm_probe_ddc) from [<c0651b98>]
-> > (drm_get_edid+0x60/0x2e0)
-> > [   42.306743] [<c0651b98>] (drm_get_edid) from [<c067d710>]
-> > (dw_hdmi_connector_get_modes+0x30/0x78)
-> > [   42.316669] [<c067d710>] (dw_hdmi_connector_get_modes) from
-> > [<c0634f38>] (drm_helper_probe_single_connector_modes+0x218/0x5c0)
-> > [   42.329413] [<c0634f38>] (drm_helper_probe_single_connector_modes)
-> > from [<c065b38c>] (drm_mode_getconnector+0x144/0x418)
-> > [   42.341573] [<c065b38c>] (drm_mode_getconnector) from [<c0646844>]
-> > (drm_ioctl_kernel+0xa0/0xf0)
-> > [   42.351303] [<c0646844>] (drm_ioctl_kernel) from [<c0646d34>]
-> > (drm_ioctl+0x32c/0x3c0)
-> > [   42.360063] [<c0646d34>] (drm_ioctl) from [<c03ed0cc>] (vfs_ioctl+0x28/0x44)
-> > [   42.367946] [<c03ed0cc>] (vfs_ioctl) from [<c03edee8>]
-> > (do_vfs_ioctl+0x718/0x8b0)
-> > [   42.376315] [<c03edee8>] (do_vfs_ioctl) from [<c03ee0dc>]
-> > (ksys_ioctl+0x5c/0x84)
-> > [   42.384587] [<c03ee0dc>] (ksys_ioctl) from [<c03ee11c>] (sys_ioctl+0x18/0x1c)
-> > [   42.392570] [<c03ee11c>] (sys_ioctl) from [<c02011d4>]
-> > (__sys_trace_return+0x0/0x10)
-> >
-> > ...I see several transfers fail and then finally a few seconds later
-> > finally see the .enable call:
-> 
-> This is usually solved by wrapping the code in detect() with an enable/disable
-> pair to turn on enough circuitry to do the i2c writes for edid read.
-> 
-> >
-> > [   44.021501] DOUG: dw_hdmi_rockchip_encoder_enable start
-> > [   44.027792] DOUG: dw_hdmi_rockchip_encoder_enable end
-> >
-> > I can gather more info if it's useful.
-> >
-> > ===
-> >
-> > ...any chance we can keep the patch as-is, or do you have ideas of how
-> > to solve the above problems?
-> 
-> Yeah, given the context I think this is Ok to apply as-is. Maybe we could
-> shave out some of the work done in resume and move it to a helper called in
-> enable/detect, but I don't think it's necessary to hold up getting things
-> working.
-> 
-> Thanks for the detailed explanation (as always :)
-> 
-> Reviewed-by: Sean Paul <sean@poorly.run>
+> > SDIO function drivers should not really include linux/mmc/core.h
+> > (Also don't know why linux/mmc/card.h is included)
+>
+> OK, so I guess you're requesting an extra level of "sdio_" wrappers
+> for all the functions I need to call.  I don't think the wrappers buy
+> us a ton other than to abstract things a little bit and make it look
+> prettier.  :-)  ...but certainly I can code that up if that's what
+> everyone wants.
 
-Applied both patches to drm-misc-next, thank you!
+Are the new code you refer to going to be used for anything else but
+SDIO? If not, please put them in the sdio specific headers instead.
 
-Sean
+BTW, apologize for not looking at this series any earlier, but I will
+come to it soon.
 
-> 
-> 
-> >
-> >
-> > Thanks!
-> >
-> > -Doug
-> 
-> -- 
-> Sean Paul, Software Engineer, Google / Chromium OS
-> > [   42.351303] [<c0646844>] (drm_ioctl_kernel) from [<c0646d34>]
-> > (drm_ioctl+0x32c/0x3c0)
-> > [   42.360063] [<c0646d34>] (drm_ioctl) from [<c03ed0cc>] (vfs_ioctl+0x28/0x44)
-> > [   42.367946] [<c03ed0cc>] (vfs_ioctl) from [<c03edee8>]
-> > (do_vfs_ioctl+0x718/0x8b0)
-> > [   42.376315] [<c03edee8>] (do_vfs_ioctl) from [<c03ee0dc>]
-> > (ksys_ioctl+0x5c/0x84)
-> > [   42.384587] [<c03ee0dc>] (ksys_ioctl) from [<c03ee11c>] (sys_ioctl+0x18/0x1c)
-> > [   42.392570] [<c03ee11c>] (sys_ioctl) from [<c02011d4>]
-> > (__sys_trace_return+0x0/0x10)
-> >
-> > ...I see several transfers fail and then finally a few seconds later
-> > finally see the .enable call:
-> >
-> > [   44.021501] DOUG: dw_hdmi_rockchip_encoder_enable start
-> > [   44.027792] DOUG: dw_hdmi_rockchip_encoder_enable end
-> >
-> > I can gather more info if it's useful.
-> >
-> > ===
-> >
-> > ...any chance we can keep the patch as-is, or do you have ideas of how
-> > to solve the above problems?
-> >
-> >
-> > Thanks!
-> >
-> > -Doug
-> 
-> -- 
-> Sean Paul, Software Engineer, Google / Chromium OS
+>
+> Just to make sure, I looked in "drivers/net/wireless/" and I do see
+> quite a few instances of "mmc_" functions being used.  That doesn't
+> mean all these instances are correct but it does appear to be
+> commonplace.  Selected examples:
+>
+> drivers/net/wireless/ath/ath10k/sdio.c:
+>   ret = mmc_hw_reset(ar_sdio->func->card->host);
 
--- 
-Sean Paul, Software Engineer, Google / Chromium OS
+mmc_hw_reset() is already an exported function, used by the mmc block
+layer. So I think this is okay.
+
+>
+> drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c:
+>   mmc_set_data_timeout(md, func->card);
+>   mmc_wait_for_req(func->card->host, mr);
+
+These are not okay, none of these things calls should really be done
+from an SDIO func driver.
+
+It tells me that the func driver is a doing workaround for something
+that should be managed in a common way.
+
+>
+> drivers/net/wireless/marvell/mwifiex/sdio.c:
+>   mmc_hw_reset(func->card->host);
+
+Okay.
+
+>
+> drivers/net/wireless/rsi/rsi_91x_sdio.c:
+>   err = mmc_wait_for_cmd(host, &cmd, 3);
+
+Not okay.
+
+>
+>
+> ...anyway, I'll give it a few days and if nobody else chimes in then
+> I'll assume you indeed want "sdio_" wrappers for things and I'll post
+> a v4.  If patch #1 happens to land in the meantime then I won't
+> object.  ;-)
+
+Adrian has a very good point. We need to strive to avoid exporting
+APIs to here and there and just trust that they will be used wisely.
+
+If the above calls to mmc_wait_for_req|cmd() and
+mmc_set_data_timeout() could have been avoided, we would probably have
+a more proper solution by now.
+
+Kind regards
+Uffe
 
 _______________________________________________
 Linux-rockchip mailing list
