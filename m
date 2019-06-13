@@ -2,85 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5818446D9
-	for <lists+linux-rockchip@lfdr.de>; Thu, 13 Jun 2019 18:55:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 957B144713
+	for <lists+linux-rockchip@lfdr.de>; Thu, 13 Jun 2019 18:57:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V6PC6KNcmYpilbU+c1Y9GOPSHD5wpqqFKB4AtM92NTA=; b=nN7SvYjCJzWUUY
-	0Jeaamg/K6rEOYD5IGzMLRRynEaiza7+3d79EJhgcpSWAcMqr+0xIgpmqjRCBk23cV2eSiIj3OwH8
-	HsQ53RXnwArheXPYWqd+6kRJi+bnffSxnm+ozlZ61N6cjEacXxYWitJs+J4xJBZkKFb4nGwnLbsym
-	RhSbjN42M7ioyC7r0s4fptPKSS3PwkpNQToilNlG1IVhSe11RPu4Qn/dLB8yXR4Rrvk4Ko9EP881K
-	ni74ZP2Vwb0EZ9/8QI44UAmY5/X8+9ANiB38Pd5q5tZoY7oHVO3JdB+QGKa645RutB2cEhQTKSu9P
-	o5En97S6y4Nhczzgs5AQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=DtFC8+fI7dnzRPrA+8atSdu2UApRRc5nTXFDD+7yfnM=; b=aD+HZjq9nP1dy184vEFVZIdO9
+	W2dp8puo1O/ieaJkjtcERB/HGDeHAbkGSA94Gq1JlxNua5yPoYwwRD2Uyarw3oqK9jhxC64UL5hB4
+	SCx8ECDXJuGlHxKq6x+37A11N/g1q46hyjTil2HE+LG5dQUZBVV870x01Xnpij6XzdixQ4oeDXM1S
+	aXEs42gfjSJAAbTrDqk6lkMab68L7PD7ANSsz3Lr2WWiGhJtHFl/UhL0DlQeMx110YqQ2rN0N8ins
+	HcVaf5IHxW/ro5GEgTugG36zxBO6sgcueSRlgHNoDUkp2Fh7qlSnVUEMQ4f5BRpCSIP9oZrpYYsmD
+	7iPDFWM5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbT0R-0006jM-6w; Thu, 13 Jun 2019 16:55:19 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbT0N-0006hv-6S; Thu, 13 Jun 2019 16:55:16 +0000
-Received: by mail-io1-xd41.google.com with SMTP id k13so18474397iop.5;
- Thu, 13 Jun 2019 09:55:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ClC0u2JGR2lSo+6Tvkb2x52kadnHao11/SSLbD6/58k=;
- b=JrNaEHWuGK31T7Uo+VSWno6hHFAJENibo1UonPm+66izBPrzhseMDm7bv7X64xM5DK
- Cw9kQc0KCnUjh4IFkW/C31Zk4kzA6mouPoQfGyg+p3mDujIALjKIKTevGWXwncMxhJwO
- m2kMdmGqR/BatXqMusdoFI5nCzADTl/eYJnHTXoEVhw1h5HEyYenJYrp+kjJoQb3v6xJ
- mOUMwPay5Dm1ubWMu/GLLAxiBdkfT+DerQmRsGvmVB4Tgr0z0KELyQqYVcHzYXJRIgy/
- iSvOID0iZKuxCkn7pAxT6UAXELNV164onq0HuVxvAytjhlCn0A1cPqeVRPVxyuBCioD9
- 8QjA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ClC0u2JGR2lSo+6Tvkb2x52kadnHao11/SSLbD6/58k=;
- b=mis63qv18yDOc+XdsdM/MMMWnXLGMgkxzPvdyf8+yjOnJmJ61LV0JpMwkzO+hg/yE3
- W5iPbPCAzDAb0i8YXF16fPTjug7cbUsjaX1DaJd2AGy6splID1/qWJkBGx9Nv3TXbdCs
- QEe/l+EczVX36+2cz+t0NZsG2rON0to/laFVT1EfZeUiBt3HwJ2Idvmb9pEpkaOKIhx1
- KbqbYG49aVqD0/9nV4jOIOaMDaORhi+jjCtGJlsDTSTidBf6H4g0NebidduD62++NqPr
- eBJxPrnIKWTApga5cH9ObkrNrWH8iygV2MCXJxz5sO5U+mbqMqg/phpGXw8YmdT4pkzS
- QeQg==
-X-Gm-Message-State: APjAAAWoeSXD4tY8n4sh6BnpvpteEHEKjjsikS2meaJN5l0NIpwmJKVO
- KHXa90M9LdG8yKabPZzNFlvloSh1y5cHUTc7JYY=
-X-Google-Smtp-Source: APXvYqylceZhLVcUp0gOO9Vg8sEwwQ2V26ZkYvdHadRA9KxZ4IFbMZeY52TIAhHmV5cKS4Wm3sFmdLPdFRRz42Unlow=
-X-Received: by 2002:a5e:8e42:: with SMTP id r2mr453389ioo.305.1560444913870;
- Thu, 13 Jun 2019 09:55:13 -0700 (PDT)
+	id 1hbT2D-0007mq-3o; Thu, 13 Jun 2019 16:57:09 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbT1x-0007at-AN; Thu, 13 Jun 2019 16:56:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2C32D367;
+ Thu, 13 Jun 2019 09:56:52 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0A1293F694;
+ Thu, 13 Jun 2019 09:56:49 -0700 (PDT)
+Subject: Re: [PATCH] arm64: dts: rockchip: Update DWC3 modules on RK3399 SoCs
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ devicetree@vger.kernel.org
+References: <20190613162745.12195-1-enric.balletbo@collabora.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <40d2260f-3925-acdc-eb02-8abb972f1056@arm.com>
+Date: Thu, 13 Jun 2019 17:56:48 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <20190613162703.986-1-tiny.windzz@gmail.com>
- <20190613162703.986-3-tiny.windzz@gmail.com>
- <ac67e363-70cf-af64-d634-c3b0b6d408fa@ti.com>
-In-Reply-To: <ac67e363-70cf-af64-d634-c3b0b6d408fa@ti.com>
-From: Frank Lee <tiny.windzz@gmail.com>
-Date: Fri, 14 Jun 2019 00:55:02 +0800
-Message-ID: <CAEExFWuM+oMUKf440myr0GHAnatdzaxr=0ibFDGVXDHs6J1bzA@mail.gmail.com>
-Subject: Re: [PATCH 03/10] iommu/omap: convert to SPDX license tags
-To: Suman Anna <s-anna@ti.com>
+In-Reply-To: <20190613162745.12195-1-enric.balletbo@collabora.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_095515_242532_F5EB2C8E 
-X-CRM114-Status: GOOD (  14.50  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190613_095653_457700_60FDA344 
+X-CRM114-Status: GOOD (  23.57  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,140 +62,88 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- "heiko@sntech.de" <heiko@sntech.de>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
- "joro@8bytes.org" <joro@8bytes.org>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "agross@kernel.org" <agross@kernel.org>, "krzk@kernel.org" <krzk@kernel.org>,
- "jonathanh@nvidia.com" <jonathanh@nvidia.com>,
- "david.brown@linaro.org" <david.brown@linaro.org>,
- "robdclark@gmail.com" <robdclark@gmail.com>,
- "kgene@kernel.org" <kgene@kernel.org>,
- "thierry.reding@gmail.com" <thierry.reding@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "m.szyprowski@samsung.com" <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Felipe Balbi <felipe.balbi@linux.intel.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Christoph Muellner <christoph.muellner@theobroma-systems.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Randy Li <ayaka@soulik.info>,
+ linux-kernel@vger.kernel.org, Vicente Bergas <vicencb@gmail.com>,
+ linux-rockchip@lists.infradead.org, Tony Xie <tony.xie@rock-chips.com>,
+ Klaus Goger <klaus.goger@theobroma-systems.com>,
+ Rob Herring <robh+dt@kernel.org>, Collabora Kernel ML <kernel@collabora.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, Jun 14, 2019 at 12:39 AM Suman Anna <s-anna@ti.com> wrote:
->
-> Hi Yangtao,
->
-> On 6/13/19 11:26 AM, Yangtao Li wrote:
-> > Updates license to use SPDX-License-Identifier.
-> >
-> > Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
->
-> Thanks for the patch. Can you also update another related file
-> while at this. Will leave it to Joerg if he prefers it as a separate
-> patch, or folded into this patch.
->
-> include/linux/platform_data/iommu-omap.h
->
+On 13/06/2019 17:27, Enric Balletbo i Serra wrote:
+> As per binding documentation [1], the DWC3 core should have the "ref",
+> "bus_early" and "suspend" clocks. As explained in the binding, those
+> clocks are required for new platforms but not for existing platforms
+> before commit fe8abf332b8f ("usb: dwc3: support clocks and resets for
+> DWC3 core").
+> 
+> However, as those clocks are really treated as required, this ends with
+> having some annoying messages when the "rockchip,rk3399-dwc3" is used:
+> 
+> [    1.724107] dwc3 fe800000.dwc3: Failed to get clk 'ref': -2
+> [    1.731893] dwc3 fe900000.dwc3: Failed to get clk 'ref': -2
+> [    2.495937] dwc3 fe800000.dwc3: Failed to get clk 'ref': -2
+> [    2.647239] dwc3 fe900000.dwc3: Failed to get clk 'ref': -2
+> 
+> In order to remove those annoying messages, update the DWC3 hardware
+> module node and add all the required clocks. With this change, both, the
+> glue node and the DWC3 core node, have the clocks defined, but that's
+> not really a problem and there isn't a side effect on do this. So, we
+> can get rid of the annoying get clk error messages.
 
-Done.
+Can we not just move these clocks entirely from the glue layer to the 
+core layer? That didn't seem to break when I tried it, although I'll 
+admit my 'testing' was no more than booting and mounting a USB 3.0 flash 
+drive, no suspend or anything fancy.
 
-Yangtao
+My own attempt to shut up these errors got sidetracked into c0c61471ef86 
+("usb: dwc3: of-simple: Convert to bulk clk API"), then apparently 
+stalled :)
 
-> Acked-by: Suman Anna <s-anna@ti.com>
->
-> regards
-> Suman
->
-> > ---
-> >  drivers/iommu/omap-iommu-debug.c | 5 +----
-> >  drivers/iommu/omap-iommu.c       | 5 +----
-> >  drivers/iommu/omap-iommu.h       | 5 +----
-> >  drivers/iommu/omap-iopgtable.h   | 5 +----
-> >  4 files changed, 4 insertions(+), 16 deletions(-)
-> >
-> > diff --git a/drivers/iommu/omap-iommu-debug.c b/drivers/iommu/omap-iommu-debug.c
-> > index 4abc0ef522a8..55ec67a45101 100644
-> > --- a/drivers/iommu/omap-iommu-debug.c
-> > +++ b/drivers/iommu/omap-iommu-debug.c
-> > @@ -1,13 +1,10 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> >  /*
-> >   * omap iommu: debugfs interface
-> >   *
-> >   * Copyright (C) 2008-2009 Nokia Corporation
-> >   *
-> >   * Written by Hiroshi DOYU <Hiroshi.DOYU@nokia.com>
-> > - *
-> > - * This program is free software; you can redistribute it and/or modify
-> > - * it under the terms of the GNU General Public License version 2 as
-> > - * published by the Free Software Foundation.
-> >   */
-> >
-> >  #include <linux/err.h>
-> > diff --git a/drivers/iommu/omap-iommu.c b/drivers/iommu/omap-iommu.c
-> > index d2fb347aa4ff..e6442876913f 100644
-> > --- a/drivers/iommu/omap-iommu.c
-> > +++ b/drivers/iommu/omap-iommu.c
-> > @@ -1,3 +1,4 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> >  /*
-> >   * omap iommu: tlb and pagetable primitives
-> >   *
-> > @@ -6,10 +7,6 @@
-> >   *
-> >   * Written by Hiroshi DOYU <Hiroshi.DOYU@nokia.com>,
-> >   *           Paul Mundt and Toshihiro Kobayashi
-> > - *
-> > - * This program is free software; you can redistribute it and/or modify
-> > - * it under the terms of the GNU General Public License version 2 as
-> > - * published by the Free Software Foundation.
-> >   */
-> >
-> >  #include <linux/dma-mapping.h>
-> > diff --git a/drivers/iommu/omap-iommu.h b/drivers/iommu/omap-iommu.h
-> > index 1703159ef5af..5256e17d86a7 100644
-> > --- a/drivers/iommu/omap-iommu.h
-> > +++ b/drivers/iommu/omap-iommu.h
-> > @@ -1,13 +1,10 @@
-> > +/* SPDX-License-Identifier: GPL-2.0 */
-> >  /*
-> >   * omap iommu: main structures
-> >   *
-> >   * Copyright (C) 2008-2009 Nokia Corporation
-> >   *
-> >   * Written by Hiroshi DOYU <Hiroshi.DOYU@nokia.com>
-> > - *
-> > - * This program is free software; you can redistribute it and/or modify
-> > - * it under the terms of the GNU General Public License version 2 as
-> > - * published by the Free Software Foundation.
-> >   */
-> >
-> >  #ifndef _OMAP_IOMMU_H
-> > diff --git a/drivers/iommu/omap-iopgtable.h b/drivers/iommu/omap-iopgtable.h
-> > index 01a315227bf0..871c2a38f453 100644
-> > --- a/drivers/iommu/omap-iopgtable.h
-> > +++ b/drivers/iommu/omap-iopgtable.h
-> > @@ -1,13 +1,10 @@
-> > +/* SPDX-License-Identifier: GPL-2.0 */
-> >  /*
-> >   * omap iommu: pagetable definitions
-> >   *
-> >   * Copyright (C) 2008-2010 Nokia Corporation
-> >   *
-> >   * Written by Hiroshi DOYU <Hiroshi.DOYU@nokia.com>
-> > - *
-> > - * This program is free software; you can redistribute it and/or modify
-> > - * it under the terms of the GNU General Public License version 2 as
-> > - * published by the Free Software Foundation.
-> >   */
-> >
-> >  #ifndef _OMAP_IOPGTABLE_H
-> >
->
+Robin.
+
+> 
+> [1] Documentation/devicetree/bindings/usb/dwc3.txt
+> 
+> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+> ---
+> 
+>   arch/arm64/boot/dts/rockchip/rk3399.dtsi | 6 ++++++
+>   1 file changed, 6 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> index 196ac9b78076..a15348d185ce 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> @@ -414,6 +414,9 @@
+>   			compatible = "snps,dwc3";
+>   			reg = <0x0 0xfe800000 0x0 0x100000>;
+>   			interrupts = <GIC_SPI 105 IRQ_TYPE_LEVEL_HIGH 0>;
+> +			clocks = <&cru SCLK_USB3OTG0_REF>, <&cru ACLK_USB3OTG0>,
+> +				 <&cru SCLK_USB3OTG0_SUSPEND>;
+> +			clock-names = "ref", "bus_early", "suspend";
+>   			dr_mode = "otg";
+>   			phys = <&u2phy0_otg>, <&tcphy0_usb3>;
+>   			phy-names = "usb2-phy", "usb3-phy";
+> @@ -447,6 +450,9 @@
+>   			compatible = "snps,dwc3";
+>   			reg = <0x0 0xfe900000 0x0 0x100000>;
+>   			interrupts = <GIC_SPI 110 IRQ_TYPE_LEVEL_HIGH 0>;
+> +			clocks = <&cru SCLK_USB3OTG1_REF>, <&cru ACLK_USB3OTG1>,
+> +				 <&cru SCLK_USB3OTG1_SUSPEND>;
+> +			clock-names = "ref", "bus_early", "suspend";
+>   			dr_mode = "otg";
+>   			phys = <&u2phy1_otg>, <&tcphy1_usb3>;
+>   			phy-names = "usb2-phy", "usb3-phy";
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
