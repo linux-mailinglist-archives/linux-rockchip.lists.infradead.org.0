@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D742442FB
-	for <lists+linux-rockchip@lfdr.de>; Thu, 13 Jun 2019 18:28:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBE0B442FF
+	for <lists+linux-rockchip@lfdr.de>; Thu, 13 Jun 2019 18:28:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,64 +11,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=6OsoDmK7ei2QIbLgcxJmsg/1Z9Kx4VNBDSR74UDRGOs=; b=XWaWnq43QRBfB/u0tjSsek57Aa
-	l8pcflO4MzVwc7/1QOrDyLGx0v+3p0MhoMChX/hfZhTqtfpjwXIAxutJ6h/Bu3MGnsXm4a3sVA7XV
-	x3cw0Gq8fJxiv+SCkIU4C2o8sRr6Zr+iV3eY3RA1smejMQWmb2tSADwuBm0RzK/JuQXKGTldMNXWI
-	M1/MyPvDONSLP0rX6NVSNTT/f9cS6s/K+le9wecSZBK6bT6UqUWntekIHIExYD7X7YXX1WtpiqWiV
-	ERTFBlRvEIlZt/b2mmR7dnAyu8bmKh6CZnvx0+AH8CJB1XN99ik2vsHS9TnrIuFHfOg6z00Kgj3w/
-	yen8lzbg==;
+	bh=v/pYj7HQtBLY8YDJkSfXQH/SVEPSstbTs5f23I7mKiU=; b=V3lOpjvYp6ehysQMWXWoWTbl8E
+	MjVSf8sT44t1AINqwi/H394yxHalrhV2nfEgBZO0UYX1jfrQ0etU48k0mSGn3Dfv2RO44nbAtW3SH
+	O5yVJOE+OBbLSWB3LiARrsvjQ1wGZFNDmDpXs6RGF7leyedsEOSchjTpBTu0svoaf9eC9rRlBKmOB
+	KSJ3YsfKPZQlN9B7thrNg9Nr+OzDtG5GkimfE7uanQpxGahn+qmDn+jE5ICLS/tqo/mvXxUdOGsBq
+	eQZFWc6BnElT8wEDjXeqokWSlIxcYfyPZbxglOvCki/hqIuEdv4JCqz1dxmNDl2RHQCaYIez7eXDx
+	rNXfZFWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbSa2-00039o-41; Thu, 13 Jun 2019 16:28:02 +0000
+	id 1hbSaM-0003U0-IA; Thu, 13 Jun 2019 16:28:22 +0000
 Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbSZF-0002XT-It; Thu, 13 Jun 2019 16:27:15 +0000
-Received: by mail-pg1-x543.google.com with SMTP id p10so5392446pgn.1;
- Thu, 13 Jun 2019 09:27:13 -0700 (PDT)
+ id 1hbSZI-0002aS-RJ; Thu, 13 Jun 2019 16:27:18 +0000
+Received: by mail-pg1-x543.google.com with SMTP id s21so704181pga.12;
+ Thu, 13 Jun 2019 09:27:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=r1vy7DnzNlW7BikrT1aYtCzomLZ4jnCb1JSwMR9zHaI=;
- b=ThcDxsm2Eo7zmQtLPSCGbD3aEVtad1mN6qL3VVuxd32Ezhy3h2gEuGJOB5igc6ejUi
- 8Tw/ooqqLqbKROz4UOMjhfE+0MEUn+wzcvHJIUfQKqeT9ftOaehe0G+B+nbBVbIHDVCG
- f12Z0/tv+bh6ILWIY35miZeb0HaDAZhrhYF/bc3ZRdYs2e6NTxF2QUwK7R0IUa2m1k2z
- IjJPuVzLzzye9N56nP2N1bs1hGoe13ydtlOWdcuN3RsYcC/ZRq9v8wAUHczMA1ZUHWkr
- aqy9QPNtz/dhG54rl5XGKA+aoI52ct7cgtVQGs+5afZ70qj8buSJASglXjK2dYttNmKf
- ndig==
+ bh=4q0HVXuQG17ks872jOkTIKAqD21+aLHXoXWPegnJvdQ=;
+ b=KIQBhcVGmgiJ+25JjcqJ9tMu8LPz/C1psYpC5wyrJmzadCvcovqJZGLqt8+qJ1BF/5
+ tPToBydwjBOnqzqZbE2hR/6beOAxQL9C0IievEXrtoXnD7OLHrs+mw4qdejaM5wSDTBG
+ CLcmLzUkYxfz+AnyQw1a3fC24z9cyNuDzmexwu9/Vwo51eK0W41TqSuxRFIfI2j01xBW
+ DEqV6PRuN1jntSaDch6yJtQ7xCLE2uy+3Qyb/9VHu5rjoydFOH4Z58/u51fOvqzFhMYL
+ sMtccU1vG5n+dLZNpMs8j3+b+FZeurJ4Z/i7iuWdfllKkf2Nfa+X+aY1k8GFk6VTvSZL
+ KCEA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=r1vy7DnzNlW7BikrT1aYtCzomLZ4jnCb1JSwMR9zHaI=;
- b=NQ+K4IHrggJl0fAdczer/GwqQGm62JeNRI1OSnnXNe05JRamizd1jMEzr8XnzmpffR
- X1m62ZMAd5q21lFu6XGmKJ+9Oruu+LmD/aMGBpcT+XXXCqcbWVupfarjWb/99kPYr/Ji
- gAeiSSf4IQbiVN06J5QQVigjrLDkEpBlnyXp88O7cDYNOAwqQHZ9QYVrkpafdQQxrr/k
- GddmFk4mZSvL+8kyoQ4zU/0yAJ2Smo0x3zWZ5v0DfX+fIFf1sw4l86awZsNCaWzRIKb3
- +ZXOL3amvTWPiP4pUyTJxLfIqA2LNyycWdkG8U09vWX2U+zptpSeOPGWQ+huHV2wcqQo
- OIkA==
-X-Gm-Message-State: APjAAAUVkYpMIBjGp2/m15HLGcevCkKoDUfLnXkcaV4Y10NNKEJ2khfS
- SGdXGYrTktpUty1/NVqa4H8=
-X-Google-Smtp-Source: APXvYqxALl3rWY5oZWGDTc9ogW7qCDR1OKax63JMlYMjuaLbW+O6IMlBZCCBpt/Bp4dU5/yrELe38g==
-X-Received: by 2002:a17:90a:fa07:: with SMTP id
- cm7mr6526915pjb.115.1560443233237; 
- Thu, 13 Jun 2019 09:27:13 -0700 (PDT)
+ bh=4q0HVXuQG17ks872jOkTIKAqD21+aLHXoXWPegnJvdQ=;
+ b=GJj54S30X6HnYqg99tP5WXdCDPgjRDmbql6NkYu3IZaJ/auoXKxau7OHmdXQCpWQjh
+ 7zMrII9/dScR7B/FRVUl0dev+rpvPigDcAl+9HBbQI7UxtPK7rthubMEjaA59yTMwmam
+ sBu8FU24svESzSS1VIEtoCJh8sdkQcPMjSENVj/95ypeWvgWEGVysek4mksHv92nU7hB
+ bMtPtnPC12BzOrayDNeehY/CEfMfbc573l8kZrFQitBeEoEK/mx6X5Y858mFtssyMlft
+ ig8rshA8QAn2pe8xrgSvJ2vYcHY9FFU2LQ/cudO2UoE/oHFVgQ/vfw/XQBFsuuknOJSd
+ zjNQ==
+X-Gm-Message-State: APjAAAVy8BmqwX8dChk42WOpvO3tGrA4OP36xZgyd9Vc3zox+mpt1UtW
+ zSCG8LicvNEwbN7e4qM6I7E=
+X-Google-Smtp-Source: APXvYqxaBMg5bVhjUDBZsPXeyp3WVLYyOR0fUzELSMvjn8ql2xGJ98zarH9fUind6w2w+LFWAAHJSg==
+X-Received: by 2002:a17:90a:216f:: with SMTP id
+ a102mr6573720pje.29.1560443236390; 
+ Thu, 13 Jun 2019 09:27:16 -0700 (PDT)
 Received: from localhost (68.168.130.77.16clouds.com. [68.168.130.77])
- by smtp.gmail.com with ESMTPSA id v9sm169586pfm.34.2019.06.13.09.27.12
+ by smtp.gmail.com with ESMTPSA id n127sm282319pga.57.2019.06.13.09.27.15
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 13 Jun 2019 09:27:12 -0700 (PDT)
+ Thu, 13 Jun 2019 09:27:15 -0700 (PDT)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: joro@8bytes.org, m.szyprowski@samsung.com, kgene@kernel.org,
  krzk@kernel.org, will.deacon@arm.com, robin.murphy@arm.com,
  agross@kernel.org, david.brown@linaro.org, robdclark@gmail.com,
  heiko@sntech.de, thierry.reding@gmail.com, jonathanh@nvidia.com
-Subject: [PATCH 02/10] iommu/io-pgtable: convert to SPDX license tags
-Date: Thu, 13 Jun 2019 12:26:55 -0400
-Message-Id: <20190613162703.986-2-tiny.windzz@gmail.com>
+Subject: [PATCH 03/10] iommu/omap: convert to SPDX license tags
+Date: Thu, 13 Jun 2019 12:26:56 -0400
+Message-Id: <20190613162703.986-3-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.0
 In-Reply-To: <20190613162703.986-1-tiny.windzz@gmail.com>
 References: <20190613162703.986-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_092713_622166_27F81735 
-X-CRM114-Status: GOOD (  11.09  )
+X-CRM114-CacheID: sfid-20190613_092717_045309_988EB9B6 
+X-CRM114-Status: UNSURE (   9.06  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -114,33 +115,89 @@ Updates license to use SPDX-License-Identifier.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- drivers/iommu/io-pgtable.c | 13 +------------
- 1 file changed, 1 insertion(+), 12 deletions(-)
+ drivers/iommu/omap-iommu-debug.c | 5 +----
+ drivers/iommu/omap-iommu.c       | 5 +----
+ drivers/iommu/omap-iommu.h       | 5 +----
+ drivers/iommu/omap-iopgtable.h   | 5 +----
+ 4 files changed, 4 insertions(+), 16 deletions(-)
 
-diff --git a/drivers/iommu/io-pgtable.c b/drivers/iommu/io-pgtable.c
-index 5227cfdbb65b..3c84ff1901ea 100644
---- a/drivers/iommu/io-pgtable.c
-+++ b/drivers/iommu/io-pgtable.c
-@@ -1,18 +1,7 @@
+diff --git a/drivers/iommu/omap-iommu-debug.c b/drivers/iommu/omap-iommu-debug.c
+index 4abc0ef522a8..55ec67a45101 100644
+--- a/drivers/iommu/omap-iommu-debug.c
++++ b/drivers/iommu/omap-iommu-debug.c
+@@ -1,13 +1,10 @@
 +// SPDX-License-Identifier: GPL-2.0
  /*
-  * Generic page table allocator for IOMMUs.
+  * omap iommu: debugfs interface
   *
+  * Copyright (C) 2008-2009 Nokia Corporation
+  *
+  * Written by Hiroshi DOYU <Hiroshi.DOYU@nokia.com>
+- *
 - * This program is free software; you can redistribute it and/or modify
 - * it under the terms of the GNU General Public License version 2 as
 - * published by the Free Software Foundation.
-- *
-- * This program is distributed in the hope that it will be useful,
-- * but WITHOUT ANY WARRANTY; without even the implied warranty of
-- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- * GNU General Public License for more details.
-- *
-- * You should have received a copy of the GNU General Public License
-- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-- *
-  * Copyright (C) 2014 ARM Limited
+  */
+ 
+ #include <linux/err.h>
+diff --git a/drivers/iommu/omap-iommu.c b/drivers/iommu/omap-iommu.c
+index d2fb347aa4ff..e6442876913f 100644
+--- a/drivers/iommu/omap-iommu.c
++++ b/drivers/iommu/omap-iommu.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  * omap iommu: tlb and pagetable primitives
   *
-  * Author: Will Deacon <will.deacon@arm.com>
+@@ -6,10 +7,6 @@
+  *
+  * Written by Hiroshi DOYU <Hiroshi.DOYU@nokia.com>,
+  *		Paul Mundt and Toshihiro Kobayashi
+- *
+- * This program is free software; you can redistribute it and/or modify
+- * it under the terms of the GNU General Public License version 2 as
+- * published by the Free Software Foundation.
+  */
+ 
+ #include <linux/dma-mapping.h>
+diff --git a/drivers/iommu/omap-iommu.h b/drivers/iommu/omap-iommu.h
+index 1703159ef5af..5256e17d86a7 100644
+--- a/drivers/iommu/omap-iommu.h
++++ b/drivers/iommu/omap-iommu.h
+@@ -1,13 +1,10 @@
++/* SPDX-License-Identifier: GPL-2.0 */
+ /*
+  * omap iommu: main structures
+  *
+  * Copyright (C) 2008-2009 Nokia Corporation
+  *
+  * Written by Hiroshi DOYU <Hiroshi.DOYU@nokia.com>
+- *
+- * This program is free software; you can redistribute it and/or modify
+- * it under the terms of the GNU General Public License version 2 as
+- * published by the Free Software Foundation.
+  */
+ 
+ #ifndef _OMAP_IOMMU_H
+diff --git a/drivers/iommu/omap-iopgtable.h b/drivers/iommu/omap-iopgtable.h
+index 01a315227bf0..871c2a38f453 100644
+--- a/drivers/iommu/omap-iopgtable.h
++++ b/drivers/iommu/omap-iopgtable.h
+@@ -1,13 +1,10 @@
++/* SPDX-License-Identifier: GPL-2.0 */
+ /*
+  * omap iommu: pagetable definitions
+  *
+  * Copyright (C) 2008-2010 Nokia Corporation
+  *
+  * Written by Hiroshi DOYU <Hiroshi.DOYU@nokia.com>
+- *
+- * This program is free software; you can redistribute it and/or modify
+- * it under the terms of the GNU General Public License version 2 as
+- * published by the Free Software Foundation.
+  */
+ 
+ #ifndef _OMAP_IOPGTABLE_H
 -- 
 2.17.0
 
