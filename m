@@ -2,71 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8286744C3D
-	for <lists+linux-rockchip@lfdr.de>; Thu, 13 Jun 2019 21:36:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DD8544F58
+	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 00:40:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w7ibMyt4w9GFtd2VkMYzhdiAtQtrjlBmXLK/yCxvJgc=; b=aP/YNMzwrzU3ir
-	wTYmSoOVdtLXgmttmOxYoq0yBXGQHxTYhYWF64LFASDXYSSunw4lckc7KErqnToCWFCbxQOXvcDEN
-	As5qg8qXQWNaN//7S5NkT1e7VsgE0xVDrkJIkXRaaxwxrND5heKAsdAP3PjN42yNfU6tw3+S4uMbD
-	nvHsfG2uri551VoewMz/9YYtPz9k8WxuOTH/ZqfxU04mRaO302zQh2YmrvRzc6eN++Gc8gX3KeBBM
-	j0x87gJZ+PCP/+F7HXJfCNg2SKHpSYuBJuNHydU/CYYV6Dzy654H4fbIAkFg2ZM3LdKu3CqJj0JgR
-	zuwEzvIVzd0pVFRfhO9Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Re2aHIdwUM+825kjP9lQzDgmwUSLazgk0HQGlLxYQrU=; b=CQlxjV682BORfd
+	kHgkgKmMPbNUnLTOUY08FeIL2feI2mvqb5KgGu9RCOaggtMGN0MYW8XwIWb5VSV0rzb/hbHlMDAqf
+	8VE7863AnoQ65iD9QGVSh4hjEfO/BiqhGHpVnyVAYNOpXBSOlv9BxkVH4tu2DFecUfQQm5jrOYPvl
+	Nz5quESKuvSotoCbNW9QJ1eFNByhMmzPrYJLRuwYdZgSqCP2vYP4aZ6IOIbvvdFZ7pK2yBuvyRLm2
+	ARrhF8iduF7/VpiwkFmb5NvdEZ2Nyt9kZhqjA5pm27fIr7CV3qk5yTE1ZN9gqy3xqTowgxhhrQtZF
+	JKg76A4ZPs4sd1z6MduQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbVWi-0004W2-Eh; Thu, 13 Jun 2019 19:36:48 +0000
-Received: from mail-vs1-f66.google.com ([209.85.217.66])
+	id 1hbYNz-0002oZ-VW; Thu, 13 Jun 2019 22:39:59 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbVWe-0004Va-JK
- for linux-rockchip@lists.infradead.org; Thu, 13 Jun 2019 19:36:46 +0000
-Received: by mail-vs1-f66.google.com with SMTP id a186so204085vsd.7
- for <linux-rockchip@lists.infradead.org>; Thu, 13 Jun 2019 12:36:44 -0700 (PDT)
+ id 1hbYNP-0002N6-Jg
+ for linux-rockchip@lists.infradead.org; Thu, 13 Jun 2019 22:39:27 +0000
+Received: by mail-ed1-x543.google.com with SMTP id k8so461229edr.11
+ for <linux-rockchip@lists.infradead.org>; Thu, 13 Jun 2019 15:39:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=tcd-ie.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=EcPKIz/cx9BuSCY4h5Jds9dddvg3WP5b4PjiRQaCMNk=;
+ b=Q7YqbkWKog9myMLVKuEgSGV/QhFlPY8pqvqD3ElQJa5O+VupGahQ/2KWdmD42UChZU
+ wPmlxSspSryqNb5xCB8JLtGZX6vRCzXM8xY7AmfA6QICBXISxNprKepOzIgPRJ0PmKvq
+ lwOf3L9Aeaw9au+GkaXXU5HxIJQ1vxFfownqyJtqMjhF5SRbY4FdMVVh7ZLQ7hbQYj3Q
+ iidXZkXXf0qlsVYk9WxwAFcMHH4IP3leZkOYhpAmRlGBv4K+6lmx2ZeQRojQOmlcq9FK
+ mitiCFQNPcpZ74hbmAblxvrrqQFu7g6p6HGZuZiNBMXyyAAw52tc7SZA4bY0a5yZBSlR
+ Rxmg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=o+i+eiasTkfYEcrQ2dOj0ucttuZAxRNcehcSsjgb96s=;
- b=uT05k1ExxIUJbVnWgLezuHW7sEhSeLOSEAp35NJeNjSzxVhuxMDdsXofBNTLYf3vs7
- eYtJ6JyDWcEXgXPGvIbykLr3mzbkyIFRNAnTcRa5Cz8yYv2wBbzAskz14hUfAczp0uEK
- xEA5nv1IzGCN8rLDyB1TV3iKX6tgoCXCitOdrLpX/6IYU51YaMDQVGIZV6XzG9CQle86
- 4FktB2wnd5nUUL479xe8pSVirGE0XiLTUG7s7a59zX+7jY9IMRvrmqdHBJX7JkIse6+r
- 7H8mAHfGfJBRQYX4+UvS8j7ckjrsmfibRgs4eVHIgkWkZ7Udg8F+sZetBCyMCy9h36NR
- aLUw==
-X-Gm-Message-State: APjAAAUWDnQlFnDuIOYdL9K/GO63JuwvTqfi7CyhM4YTuJWyyc6XhyaY
- ntI+gobcmfG4g9jYhR5NK/bAFdTG7svvmJ8ZVdc=
-X-Google-Smtp-Source: APXvYqxeeMtqe7NcF5oHjInGzrCJEEiYq7W7Xoy2Y3UhZeJeSsPQSLGyNN0HDvz7tp1wj1nJ2OakxecrX5T6GP4Hd2k=
-X-Received: by 2002:a67:ea42:: with SMTP id r2mr39029274vso.207.1560454603137; 
- Thu, 13 Jun 2019 12:36:43 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=EcPKIz/cx9BuSCY4h5Jds9dddvg3WP5b4PjiRQaCMNk=;
+ b=puzOSsEx732qOtLJKwqYVhY263OPB5Bbrgc3frfC/gQEA5TumVj+m6BQEkCebzGla4
+ VF/Vhmc2svaGpMdz4CbB7d6i/ApJCEN9STlX5iRTEpgae+Z38l4XzSiPmdLoiwI5rGnj
+ vYYOezYet2nZ3Nw4XRHcqmUhY5c8WkPe1sXDO1npGJ7FwJu48tP7If/lDK20P/Pv55vx
+ p6q7udrqtL+jfvFUYVb3hE7l+vkesJWohJJBB40wzmJkst+xl1yT0ybshGIt5yRX/zxQ
+ +++QMj+yrubZR/cIdbVaVibPx1J6YHQ8NDbXFR9PDT6r6CFPe8ZkNXe6q+HNh3nkDlxi
+ MS/Q==
+X-Gm-Message-State: APjAAAUU9Pa5deZ7YpcrqCxuvHuvb3N8MZ2e2UeO9soC3alGokFPSLzI
+ TuUu4lcy5l5nvMEoBx/eLQ8MQw==
+X-Google-Smtp-Source: APXvYqznp1hHyw5PYwIoh2oTLD6q+OMGquaY21fb63SmdivVnsFdvFIZnOzRxPqoidZqkL4RdKrnQw==
+X-Received: by 2002:a50:bdc2:: with SMTP id z2mr97240407edh.245.1560465555952; 
+ Thu, 13 Jun 2019 15:39:15 -0700 (PDT)
+Received: from localhost.localdomain ([2a02:8084:a0:bc00:8042:d435:a754:1f22])
+ by smtp.googlemail.com with ESMTPSA id
+ s16sm216522eji.27.2019.06.13.15.39.13
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 13 Jun 2019 15:39:14 -0700 (PDT)
+From: Tom Murphy <murphyt7@tcd.ie>
+To: iommu@lists.linux-foundation.org
+Subject: [PATCH v4 0/5] iommu/amd: Convert the AMD iommu driver to the
+ dma-iommu api
+Date: Thu, 13 Jun 2019 23:38:55 +0100
+Message-Id: <20190613223901.9523-1-murphyt7@tcd.ie>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20190613192244.5447-1-ezequiel@collabora.com>
-In-Reply-To: <20190613192244.5447-1-ezequiel@collabora.com>
-From: Ilia Mirkin <imirkin@alum.mit.edu>
-Date: Thu, 13 Jun 2019 15:36:32 -0400
-Message-ID: <CAKb7UvhxnysEPrw2javE=OK8qop=3LPuRphbu_WQKvgCJYU6Kg@mail.gmail.com>
-Subject: Re: [RFC/WIP] drm/rockchip: Support CRTC gamma LUT
-To: Ezequiel Garcia <ezequiel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_123644_644763_6E92D712 
-X-CRM114-Status: GOOD (  21.15  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190613_153923_645388_9B9834FB 
+X-CRM114-Status: GOOD (  11.88  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.217.66 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (ibmirkin[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,263 +93,78 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Douglas Anderson <dianders@chromium.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Sean Paul <seanpaul@chromium.org>, kernel@collabora.com
+Cc: Heiko Stuebner <heiko@sntech.de>, Will Deacon <will.deacon@arm.com>,
+ virtualization@lists.linux-foundation.org,
+ David Brown <david.brown@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, linux-s390@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org,
+ Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
+ Joerg Roedel <joro@8bytes.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, linux-rockchip@lists.infradead.org,
+ Andy Gross <agross@kernel.org>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-tegra@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Robin Murphy <robin.murphy@arm.com>,
+ linux-kernel@vger.kernel.org, Tom Murphy <murphyt7@tcd.ie>,
+ Rob Clark <robdclark@gmail.com>, Kukjin Kim <kgene@kernel.org>,
+ David Woodhouse <dwmw2@infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Note that userspace may provide any size of gamma lut. Have a look at
-i915/intel_color.c:intel_color_check which filters out only the
-allowed sizes. Consider having a special allowance for 256-sized LUTs
-since that's what most legacy userspace will set, and it seems like a
-waste to create a 10-bit LUT for RGBA8 color.
+Convert the AMD iommu driver to the dma-iommu api. Remove the iova
+handling and reserve region code from the AMD iommu driver.
 
-  -ilia
+Change-log:
+V4:
+-Rebase on top of linux-next
+-Split the removing of the unnecessary locking in the amd iommu driver into a seperate patch
+-refactor the "iommu/dma-iommu: Handle deferred devices" patch and address comments
+v3:
+-rename dma_limit to dma_mask
+-exit handle_deferred_device early if (!is_kdump_kernel())
+-remove pointless calls to handle_deferred_device
+v2:
+-Rebase on top of this series:
+ http://git.infradead.org/users/hch/misc.git/shortlog/refs/heads/dma-iommu-ops.3
+-Add a gfp_t parameter to the iommu_ops::map function.
+-Made use of the reserve region code inside the dma-iommu api
 
-On Thu, Jun 13, 2019 at 3:23 PM Ezequiel Garcia <ezequiel@collabora.com> wrote:
->
-> Add CRTC gamma LUT configuration on RK3288 and RK3399.
->
-> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-> ---
-> This patch seems to work well on RK3288, but produces
-> a distorted output on RK3399. I was hoping
-> someone could have any idea, so we can support both
-> platforms.
->
->  drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 87 +++++++++++++++++++++
->  drivers/gpu/drm/rockchip/rockchip_drm_vop.h |  2 +
->  drivers/gpu/drm/rockchip/rockchip_vop_reg.c |  4 +
->  drivers/gpu/drm/rockchip/rockchip_vop_reg.h |  1 +
->  4 files changed, 94 insertions(+)
->
-> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> index 12ed5265a90b..8381679c1045 100644
-> --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> @@ -38,6 +38,8 @@
->  #include "rockchip_drm_vop.h"
->  #include "rockchip_rgb.h"
->
-> +#define VOP_GAMMA_LUT_SIZE 1024
-> +
->  #define VOP_WIN_SET(vop, win, name, v) \
->                 vop_reg_set(vop, &win->phy->name, win->base, ~0, v, #name)
->  #define VOP_SCL_SET(vop, win, name, v) \
-> @@ -137,6 +139,7 @@ struct vop {
->
->         uint32_t *regsbak;
->         void __iomem *regs;
-> +       void __iomem *lut_regs;
->
->         /* physical map length of vop register */
->         uint32_t len;
-> @@ -1153,6 +1156,46 @@ static void vop_wait_for_irq_handler(struct vop *vop)
->         synchronize_irq(vop->irq);
->  }
->
-> +static bool vop_dsp_lut_is_enable(struct vop *vop)
-> +{
-> +       return vop_read_reg(vop, 0, &vop->data->common->dsp_lut_en);
-> +}
-> +
-> +static void vop_crtc_gamma_set(struct vop *vop, struct drm_crtc *crtc,
-> +                              struct drm_crtc_state *state)
-> +{
-> +       struct drm_color_lut *lut;
-> +       int i, idle, ret;
-> +
-> +       if (!state->gamma_lut)
-> +               return;
-> +       lut = state->gamma_lut->data;
-> +
-> +       spin_lock(&vop->reg_lock);
-> +       VOP_REG_SET(vop, common, dsp_lut_en, 0);
-> +       vop_cfg_done(vop);
-> +       spin_unlock(&vop->reg_lock);
-> +
-> +       ret = readx_poll_timeout(vop_dsp_lut_is_enable, vop,
-> +                          idle, !idle, 5, 10 * 30000);
-> +       if (ret)
-> +               return;
-> +
-> +       spin_lock(&vop->reg_lock);
-> +       for (i = 0; i < crtc->gamma_size; i++) {
-> +               u32 word;
-> +
-> +               word = (drm_color_lut_extract(lut[i].red, 10) << 20) |
-> +                      (drm_color_lut_extract(lut[i].green, 10) << 10) |
-> +                       drm_color_lut_extract(lut[i].blue, 10);
-> +               writel(word, vop->lut_regs + i * 4);
-> +       }
-> +
-> +       VOP_REG_SET(vop, common, dsp_lut_en, 1);
-> +       vop_cfg_done(vop);
-> +       spin_unlock(&vop->reg_lock);
-> +}
-> +
->  static void vop_crtc_atomic_flush(struct drm_crtc *crtc,
->                                   struct drm_crtc_state *old_crtc_state)
->  {
-> @@ -1201,6 +1244,9 @@ static void vop_crtc_atomic_flush(struct drm_crtc *crtc,
->                 drm_flip_work_queue(&vop->fb_unref_work, old_plane_state->fb);
->                 set_bit(VOP_PENDING_FB_UNREF, &vop->pending);
->         }
-> +
-> +       if (vop->lut_regs && crtc->state->color_mgmt_changed)
-> +               vop_crtc_gamma_set(vop, crtc, crtc->state);
->  }
->
->  static const struct drm_crtc_helper_funcs vop_crtc_helper_funcs = {
-> @@ -1323,6 +1369,7 @@ static const struct drm_crtc_funcs vop_crtc_funcs = {
->         .disable_vblank = vop_crtc_disable_vblank,
->         .set_crc_source = vop_crtc_set_crc_source,
->         .verify_crc_source = vop_crtc_verify_crc_source,
-> +       .gamma_set = drm_atomic_helper_legacy_gamma_set,
->  };
->
->  static void vop_fb_unref_worker(struct drm_flip_work *work, void *val)
-> @@ -1480,6 +1527,8 @@ static int vop_create_crtc(struct vop *vop)
->                 goto err_cleanup_planes;
->
->         drm_crtc_helper_add(crtc, &vop_crtc_helper_funcs);
-> +       drm_mode_crtc_set_gamma_size(crtc, VOP_GAMMA_LUT_SIZE);
-> +       drm_crtc_enable_color_mgmt(crtc, 0, false, VOP_GAMMA_LUT_SIZE);
->
->         /*
->          * Create drm_planes for overlay windows with possible_crtcs restricted
-> @@ -1744,6 +1793,41 @@ int rockchip_drm_wait_vact_end(struct drm_crtc *crtc, unsigned int mstimeout)
->  }
->  EXPORT_SYMBOL(rockchip_drm_wait_vact_end);
->
-> +static int vop_gamma_lut_request(struct device *dev,
-> +                                struct resource *res, struct vop *vop)
-> +{
-> +       resource_size_t offset = vop->data->gamma_lut_addr_off;
-> +       resource_size_t size = VOP_GAMMA_LUT_SIZE * 4;
-> +
-> +       /*
-> +        * Some SoCs (e.g. RK3288) have the gamma LUT address after
-> +        * the MMU registers, which means we can't request and ioremap
-> +        * the entire register set. Other (e.g. RK3399) have gamma LUT
-> +        * address before MMU.
-> +        *
-> +        * Therefore, we need to request and ioremap those that haven't
-> +        * been already.
-> +        */
-> +       if (vop->len >= (offset + size)) {
-> +               vop->lut_regs = vop->regs + offset;
-> +               return 0;
-> +       }
-> +
-> +       if (!devm_request_mem_region(dev, res->start + offset,
-> +                                    size, dev_name(dev))) {
-> +               dev_warn(dev, "can't request gamma lut region\n");
-> +               return -EBUSY;
-> +       }
-> +
-> +       vop->lut_regs = devm_ioremap(dev, res->start + offset, size);
-> +       if (!vop->lut_regs) {
-> +               dev_err(dev, "can't ioremap gamma lut address\n");
-> +               devm_release_mem_region(dev, res->start + offset, size);
-> +               return -ENOMEM;
-> +       }
-> +       return 0;
-> +}
-> +
->  static int vop_bind(struct device *dev, struct device *master, void *data)
->  {
->         struct platform_device *pdev = to_platform_device(dev);
-> @@ -1776,6 +1860,9 @@ static int vop_bind(struct device *dev, struct device *master, void *data)
->         if (IS_ERR(vop->regs))
->                 return PTR_ERR(vop->regs);
->
-> +       if (vop->data->gamma_lut_addr_off)
-> +               vop_gamma_lut_request(dev, res, vop);
-> +
->         vop->regsbak = devm_kzalloc(dev, vop->len, GFP_KERNEL);
->         if (!vop->regsbak)
->                 return -ENOMEM;
-> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
-> index 2149a889c29d..12d5bde0d0bc 100644
-> --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
-> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
-> @@ -67,6 +67,7 @@ struct vop_common {
->         struct vop_reg dither_down_mode;
->         struct vop_reg dither_down_en;
->         struct vop_reg dither_up;
-> +       struct vop_reg dsp_lut_en;
->         struct vop_reg gate_en;
->         struct vop_reg mmu_en;
->         struct vop_reg out_mode;
-> @@ -170,6 +171,7 @@ struct vop_data {
->         const struct vop_win_yuv2yuv_data *win_yuv2yuv;
->         const struct vop_win_data *win;
->         unsigned int win_size;
-> +       off_t gamma_lut_addr_off;
->
->  #define VOP_FEATURE_OUTPUT_RGB10       BIT(0)
->  #define VOP_FEATURE_INTERNAL_RGB       BIT(1)
-> diff --git a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
-> index 7b9c74750f6d..63fbb384893b 100644
-> --- a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
-> +++ b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
-> @@ -593,6 +593,7 @@ static const struct vop_common rk3288_common = {
->         .dither_down_en = VOP_REG(RK3288_DSP_CTRL1, 0x1, 2),
->         .pre_dither_down = VOP_REG(RK3288_DSP_CTRL1, 0x1, 1),
->         .dither_up = VOP_REG(RK3288_DSP_CTRL1, 0x1, 6),
-> +       .dsp_lut_en = VOP_REG(RK3288_DSP_CTRL1, 0x1, 0),
->         .data_blank = VOP_REG(RK3288_DSP_CTRL0, 0x1, 19),
->         .dsp_blank = VOP_REG(RK3288_DSP_CTRL0, 0x3, 18),
->         .out_mode = VOP_REG(RK3288_DSP_CTRL0, 0xf, 0),
-> @@ -641,6 +642,7 @@ static const struct vop_data rk3288_vop = {
->         .output = &rk3288_output,
->         .win = rk3288_vop_win_data,
->         .win_size = ARRAY_SIZE(rk3288_vop_win_data),
-> +       .gamma_lut_addr_off = RK3288_GAMMA_LUT_ADDR,
->  };
->
->  static const int rk3368_vop_intrs[] = {
-> @@ -811,6 +813,7 @@ static const struct vop_data rk3399_vop_big = {
->         .win = rk3368_vop_win_data,
->         .win_size = ARRAY_SIZE(rk3368_vop_win_data),
->         .win_yuv2yuv = rk3399_vop_big_win_yuv2yuv_data,
-> +       .gamma_lut_addr_off = RK3399_GAMMA_LUT_ADDR,
->  };
->
->  static const struct vop_win_data rk3399_vop_lit_win_data[] = {
-> @@ -836,6 +839,7 @@ static const struct vop_data rk3399_vop_lit = {
->         .win = rk3399_vop_lit_win_data,
->         .win_size = ARRAY_SIZE(rk3399_vop_lit_win_data),
->         .win_yuv2yuv = rk3399_vop_lit_win_yuv2yuv_data,
-> +       .gamma_lut_addr_off = RK3399_GAMMA_LUT_ADDR,
->  };
->
->  static const struct vop_win_data rk3228_vop_win_data[] = {
-> diff --git a/drivers/gpu/drm/rockchip/rockchip_vop_reg.h b/drivers/gpu/drm/rockchip/rockchip_vop_reg.h
-> index 6e9fa5815d4d..490318382f74 100644
-> --- a/drivers/gpu/drm/rockchip/rockchip_vop_reg.h
-> +++ b/drivers/gpu/drm/rockchip/rockchip_vop_reg.h
-> @@ -113,6 +113,7 @@
->  #define RK3288_DSP_VACT_ST_END                 0x0194
->  #define RK3288_DSP_VS_ST_END_F1                        0x0198
->  #define RK3288_DSP_VACT_ST_END_F1              0x019c
-> +#define RK3288_GAMMA_LUT_ADDR                  0x1000
->  /* register definition end */
->
->  /* rk3368 register definition */
-> --
-> 2.20.1
->
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+Tom Murphy (5):
+  iommu/amd: Remove unnecessary locking from AMD iommu driver
+  iommu: Add gfp parameter to iommu_ops::map
+  iommu/dma-iommu: Handle deferred devices
+  iommu/dma-iommu: Use the dev->coherent_dma_mask
+  iommu/amd: Convert AMD iommu driver to the dma-iommu api
+
+ drivers/iommu/Kconfig           |   1 +
+ drivers/iommu/amd_iommu.c       | 690 ++++----------------------------
+ drivers/iommu/amd_iommu_types.h |   1 -
+ drivers/iommu/arm-smmu-v3.c     |   2 +-
+ drivers/iommu/arm-smmu.c        |   2 +-
+ drivers/iommu/dma-iommu.c       |  45 ++-
+ drivers/iommu/exynos-iommu.c    |   2 +-
+ drivers/iommu/intel-iommu.c     |   2 +-
+ drivers/iommu/iommu.c           |  43 +-
+ drivers/iommu/ipmmu-vmsa.c      |   2 +-
+ drivers/iommu/msm_iommu.c       |   2 +-
+ drivers/iommu/mtk_iommu.c       |   2 +-
+ drivers/iommu/mtk_iommu_v1.c    |   2 +-
+ drivers/iommu/omap-iommu.c      |   2 +-
+ drivers/iommu/qcom_iommu.c      |   2 +-
+ drivers/iommu/rockchip-iommu.c  |   2 +-
+ drivers/iommu/s390-iommu.c      |   2 +-
+ drivers/iommu/tegra-gart.c      |   2 +-
+ drivers/iommu/tegra-smmu.c      |   2 +-
+ drivers/iommu/virtio-iommu.c    |   2 +-
+ include/linux/iommu.h           |  21 +-
+ 21 files changed, 179 insertions(+), 652 deletions(-)
+
+-- 
+2.20.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
