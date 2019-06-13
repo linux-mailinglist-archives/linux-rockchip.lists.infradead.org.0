@@ -2,92 +2,49 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A27C44391
-	for <lists+linux-rockchip@lfdr.de>; Thu, 13 Jun 2019 18:31:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D5A244394
+	for <lists+linux-rockchip@lfdr.de>; Thu, 13 Jun 2019 18:31:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=lUxb5uJzcU5cdOq76Ie192oKeh8aSRMaz7idKMMLm90=; b=N6ZnklLlEDmjeAvO2MlDHe0rVY
-	PGuVf7fYss3Vc+0VFzwa20oRR9rt+LeEzJGL8ZSrfllVVphcDOAXXyg5PXqg006q19NFwP/meu9xj
-	EO+3E5QT7Y9WtjEcwjeWreWoC/Dq8EWKiOrMexKPREk5EYa9eQ8veeZwACWcbrAiTdmiaekg7jht1
-	+ljhsbya6QtH/4JUfF9RLM4s1bZRLrh8qEawpdrIRiexJd7ShuH68WwBu4BAv63DwLAvrDPH9HyWq
-	PxOLMfLZ6aDV59ka8zAcqfsunzGY3vhL8qPeG28TMxaNPbno1VRH9gx4uafyi+J+CMZxGtlvdgBNf
-	i8tfZ6ng==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=odYkOsnu920txUj6h4cFpCtHiV+glFQJlG7u4y23dsE=; b=lM6U+QMlH95QK1
+	NgSDVt8BJ+gEIL/FGYG5wCo/Z2X0g+EOHZEf16zGClb65vZPHLvC5UtkRmVX2Ocn8N8z03XNDTg+6
+	6fdvOhr9QIdZKD3Ab3Dcb6Sj6xFpWVQJr+gxwVxVZw6D015lluEgRvLC2ew0s/I2Rqv1Dz+oKAu3G
+	EeiBxffv5NLAyAPD16b+lALRx/ugydos6quyq9RKB2abIaAOoCilNqxFyqLs7Sh+mLRWlcffN8skv
+	r/y9RwzH+aZk/4wl6a84VxmQGOvlgRN+p1AZtUOlGNXdo1v+2sLeyshYxttVx6dOp7jF4pRlwviz3
+	n6QTsZPeSShDLWhk0+oQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbSct-0007QI-Go; Thu, 13 Jun 2019 16:30:59 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hbSdc-0008Rj-Ni; Thu, 13 Jun 2019 16:31:44 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbSZg-0002uT-IS; Thu, 13 Jun 2019 16:27:42 +0000
-Received: by mail-pf1-x443.google.com with SMTP id j2so12166388pfe.6;
- Thu, 13 Jun 2019 09:27:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=/p2hCYDhKAJ230l1zBzHnYZFs3VHjVr39XvOIKP4Pys=;
- b=VEgX2ZhFSzG3BImEi4GH9MUQbh4LnQqPx0JppfXi7XYfJJvmRAB0Db/QKVQQl8qM10
- SoKlDlc0SaxSrTEDHUtMYjOT11a0Lj5yq8ULKEndaWGWOkhNMNutP6XCaT2Ffliy6EBJ
- 5jQ1g8Pajofj88UF7QvL1nK1FAEH7NLyg8e9QWEleD0lUPmjBavBQJY0q78qlAGQNurb
- 9dqruWp+dSmlVS3sT1CIfM6Oi8H7XanvMOQZ6mbabOL0lGwx8q36/3mrMkLEV/gxHbiY
- un+NlmZxMI15zJRk9HnXmJzI1lKBdlQNldk07QrTBkVVnjybOiiPxyeHYi4kTRL37lCi
- W8Fw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=/p2hCYDhKAJ230l1zBzHnYZFs3VHjVr39XvOIKP4Pys=;
- b=MdPC6YYD/FoSk0nFWWm+lXH+cSLVwF3DR5a/reOOnif2dLWea9SQLIiSJSjwaa4DhT
- Ys+PXY6TXefTe4L0fxuWvsJCAnRB9qs7Ry2Jc8jt6K30tLVWIi0O+zFPqJnH40GRd9h5
- /vOR9+cjVw+A+Sb9ng9r1KVXsmwQLFG6to4P0gGQ5HeEMrH3TTlSvp1E1v6fa0zXff1S
- 83jftkoDd+8Q8TfGRwSGgdNMv8l4eBzR5ZpwJ1mheOLORwAIwqAwrNIeAPxGACUwNjBp
- mBx9OSWkP2Bfe7BTEfuGOcmTTpYzTT8NmoeEoHeXgvEduvB4bdkwE/8bjt1SfdHxWZ90
- WLfA==
-X-Gm-Message-State: APjAAAUYAvWx/IBzoG1I/EX9wo1tCHJD4Uue77BBCOH7kNYQK5r3RsJC
- cChLlYAlDu6gL4AZkwDxPDM=
-X-Google-Smtp-Source: APXvYqwn2Bb5s9dHHXGu4kP/PrmweWqq9r8gaJuQTaAylLqdC9JMoO2D+zXiDQevAsqwN3NWgk6q+A==
-X-Received: by 2002:a65:60d2:: with SMTP id r18mr31309788pgv.217.1560443259298; 
- Thu, 13 Jun 2019 09:27:39 -0700 (PDT)
-Received: from localhost (68.168.130.77.16clouds.com. [68.168.130.77])
- by smtp.gmail.com with ESMTPSA id j2sm310930pgq.13.2019.06.13.09.27.38
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 13 Jun 2019 09:27:38 -0700 (PDT)
-From: Yangtao Li <tiny.windzz@gmail.com>
-To: joro@8bytes.org, m.szyprowski@samsung.com, kgene@kernel.org,
- krzk@kernel.org, will.deacon@arm.com, robin.murphy@arm.com,
- agross@kernel.org, david.brown@linaro.org, robdclark@gmail.com,
- heiko@sntech.de, thierry.reding@gmail.com, jonathanh@nvidia.com
-Subject: [PATCH 10/10] iommu/tegra-smmu: convert to SPDX license tags
-Date: Thu, 13 Jun 2019 12:27:03 -0400
-Message-Id: <20190613162703.986-10-tiny.windzz@gmail.com>
-X-Mailer: git-send-email 2.17.0
-In-Reply-To: <20190613162703.986-1-tiny.windzz@gmail.com>
-References: <20190613162703.986-1-tiny.windzz@gmail.com>
+ id 1hbSZw-00036Y-Gr; Thu, 13 Jun 2019 16:27:58 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 2E34F27D7A1
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+To: devicetree@vger.kernel.org
+Subject: [PATCH] arm64: dts: rockchip: Update DWC3 modules on RK3399 SoCs
+Date: Thu, 13 Jun 2019 18:27:45 +0200
+Message-Id: <20190613162745.12195-1-enric.balletbo@collabora.com>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_092740_634760_D314E6EF 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190613_092756_843034_D5C41B2D 
+X-CRM114-Status: GOOD (  10.09  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,40 +57,77 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, Yangtao Li <tiny.windzz@gmail.com>,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, iommu@lists.linux-foundation.org,
- linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Felipe Balbi <felipe.balbi@linux.intel.com>,
+ linux-rockchip@lists.infradead.org, Tony Xie <tony.xie@rock-chips.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Randy Li <ayaka@soulik.info>,
+ linux-kernel@vger.kernel.org, Vicente Bergas <vicencb@gmail.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Klaus Goger <klaus.goger@theobroma-systems.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Christoph Muellner <christoph.muellner@theobroma-systems.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Updates license to use SPDX-License-Identifier.
+As per binding documentation [1], the DWC3 core should have the "ref",
+"bus_early" and "suspend" clocks. As explained in the binding, those
+clocks are required for new platforms but not for existing platforms
+before commit fe8abf332b8f ("usb: dwc3: support clocks and resets for
+DWC3 core").
 
-Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+However, as those clocks are really treated as required, this ends with
+having some annoying messages when the "rockchip,rk3399-dwc3" is used:
+
+[    1.724107] dwc3 fe800000.dwc3: Failed to get clk 'ref': -2
+[    1.731893] dwc3 fe900000.dwc3: Failed to get clk 'ref': -2
+[    2.495937] dwc3 fe800000.dwc3: Failed to get clk 'ref': -2
+[    2.647239] dwc3 fe900000.dwc3: Failed to get clk 'ref': -2
+
+In order to remove those annoying messages, update the DWC3 hardware
+module node and add all the required clocks. With this change, both, the
+glue node and the DWC3 core node, have the clocks defined, but that's
+not really a problem and there isn't a side effect on do this. So, we
+can get rid of the annoying get clk error messages.
+
+[1] Documentation/devicetree/bindings/usb/dwc3.txt
+
+Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 ---
- drivers/iommu/tegra-smmu.c | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
 
-diff --git a/drivers/iommu/tegra-smmu.c b/drivers/iommu/tegra-smmu.c
-index 463ee08f7d3a..9a50ca4ec65c 100644
---- a/drivers/iommu/tegra-smmu.c
-+++ b/drivers/iommu/tegra-smmu.c
-@@ -1,9 +1,6 @@
-+// SPDX-License-Identifier: GPL-2.0
- /*
-  * Copyright (C) 2011-2014 NVIDIA CORPORATION.  All rights reserved.
-- *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License version 2 as
-- * published by the Free Software Foundation.
-  */
- 
- #include <linux/bitops.h>
+ arch/arm64/boot/dts/rockchip/rk3399.dtsi | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+index 196ac9b78076..a15348d185ce 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+@@ -414,6 +414,9 @@
+ 			compatible = "snps,dwc3";
+ 			reg = <0x0 0xfe800000 0x0 0x100000>;
+ 			interrupts = <GIC_SPI 105 IRQ_TYPE_LEVEL_HIGH 0>;
++			clocks = <&cru SCLK_USB3OTG0_REF>, <&cru ACLK_USB3OTG0>,
++				 <&cru SCLK_USB3OTG0_SUSPEND>;
++			clock-names = "ref", "bus_early", "suspend";
+ 			dr_mode = "otg";
+ 			phys = <&u2phy0_otg>, <&tcphy0_usb3>;
+ 			phy-names = "usb2-phy", "usb3-phy";
+@@ -447,6 +450,9 @@
+ 			compatible = "snps,dwc3";
+ 			reg = <0x0 0xfe900000 0x0 0x100000>;
+ 			interrupts = <GIC_SPI 110 IRQ_TYPE_LEVEL_HIGH 0>;
++			clocks = <&cru SCLK_USB3OTG1_REF>, <&cru ACLK_USB3OTG1>,
++				 <&cru SCLK_USB3OTG1_SUSPEND>;
++			clock-names = "ref", "bus_early", "suspend";
+ 			dr_mode = "otg";
+ 			phys = <&u2phy1_otg>, <&tcphy1_usb3>;
+ 			phy-names = "usb2-phy", "usb3-phy";
 -- 
-2.17.0
+2.20.1
 
 
 _______________________________________________
