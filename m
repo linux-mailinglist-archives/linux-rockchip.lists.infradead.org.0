@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 266F944305
-	for <lists+linux-rockchip@lfdr.de>; Thu, 13 Jun 2019 18:29:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E85544308
+	for <lists+linux-rockchip@lfdr.de>; Thu, 13 Jun 2019 18:29:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=H3Oy5x2DA40HCHffgY1bUtAOuXjFCGZt+ZQlnbS96cc=; b=CM/OVPaY5DQ1BX3EKwZ4NeTnXT
-	2W/kpnUXCD5KvjenvLnEX41Y+fdgWs2ATSyLBYSmue2p0y38X6JdZDM1IbSOjFHAG2I0tWbuE3sqs
-	dFB1IvOS4R9IcPARLxK3wlKUKFLQeFVVoUNZ4EfgmQjBQi7c+r5y1OpAI+TjlOLSZ6ufpg7r9JX+7
-	Y8hvivkbgUyG/UaRdiMzUaJhPvfuMbkKcdmcO0x8FhKQx1ghD/Nx0q5T86aYKGVxxk2RV1yKReiw/
-	0ASKEmIB1CFNqUgu6KbqVGHQRaoeMKy0SPVUWZ8OYizGmDCCyT46O3V7tKTPLBxkCZCeVMy9VEXIn
-	cRBFVonQ==;
+	bh=Z+RDGiDVmQz2s8TLd0reumtD+iAsoXbIBm+uWSFNYMk=; b=Ydpn+F4xavwvru5Fr/C5wVMeNK
+	CMNVC7s+fJI6NMgvciraSTO03hzxEDljDMgX7P6cD9De/CQCJE/f4sBv0XDanRqB61ajPTbXIiPcx
+	yLOjEtiQzbDYpGUBH29FCICH9QLUjTq25KqD6WmoizJfUlnD+ImpYYcWN0XG4QKXmm8T2Wqjz1dP9
+	YLUxlsi/wjxEv4TUCLl0wmKiRB6eRz6zNzT0G1PMPgsHXQ3BDTp9xkfxCsuxTmBlSwJCUX7z//pGk
+	vMgeTpWHA6K1kikU0yQUmQJ1Olv2ga2zS3xEi0LHwSkVd4bF2TO2EDDFpz8CSihlirrSr2cXdmWa4
+	sbCXCrvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbSb8-0004FI-Dy; Thu, 13 Jun 2019 16:29:10 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hbSbS-0004Xx-TI; Thu, 13 Jun 2019 16:29:30 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbSZS-0002hT-Vw; Thu, 13 Jun 2019 16:27:29 +0000
-Received: by mail-pl1-x641.google.com with SMTP id b7so3329889pls.6;
- Thu, 13 Jun 2019 09:27:25 -0700 (PDT)
+ id 1hbSZV-0002k4-4c; Thu, 13 Jun 2019 16:27:32 +0000
+Received: by mail-pl1-x642.google.com with SMTP id s24so8351862plr.8;
+ Thu, 13 Jun 2019 09:27:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=+uAxJSSMcJzrTyyAujU7IWsabWssr7wxWhZR9Nz/dEI=;
- b=mjcoCpLnewM+pZoDokMZAPSV/jh4geTMwUOmHG9y9n54CNHb+seQlWHkRh0LfXU2kG
- M1bsOCW/Q8ZWGhyjhg1kB3VBXcLp+4k4lw277HOODN6TQANWjdBZitLqtft7IXpYjzWU
- tW4N8VKEUAmCfU8OH+FofeI05RRXIbdjpYotmNG0fBWxgmI6hlFoXiDqqGgsDf5B0RDP
- rYQDO2dXDZuenFNvBQyAgl+nk/uhYYstKsah2kuVTFsx/opMo45b4su+X1i9d8e2MWUR
- oZZCcvQjSr6X6cHRWBCXBWMcPUS1VRdRpS2vkFXSSrPAnO/WpIvBScWt/ygIZ2ar4x+I
- pgcA==
+ bh=jzRIWp8sjvta+E1GyPP4P8N5byAmizxIfWuhxK6cbfw=;
+ b=Hu385w6EtH5CYuRhgbP11gNSmmeNm2mqhecXis7zbgcdfqeJgxUK2+mvXCRVvaGiNz
+ Z7j2bS5kQHHqOpwmcjBC/t4hjw1Pz0VPYlDDRwL4k24b03dOHX89NXThVUV4wZB0LX9I
+ TlT1LPFkT+Kix2FJQVJXSStbnFVm6Y6TAgpTQEzoA1YrP2hkSxgTxJUbVXz2ojngVaEt
+ +lsGxMtUQO8XxgYNwBAd6NNqiECPxDt0h2jaRoMlmXdrMA/EJipXhCA9b+Q5dktea4dx
+ s8qHZQu3bov7P+YH8mhwdO0kdFM5f51VyKWG4lZOkXqRnZst+OrCWDHWzbD441dKvF3Z
+ 0Zdg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=+uAxJSSMcJzrTyyAujU7IWsabWssr7wxWhZR9Nz/dEI=;
- b=b9hh6cMXap+tzw1tKoSzmbpPrs0T+zYX5xtLW6z7ojxmNJ6A9sHupz2yhNx9DaNKjo
- nwhhEz4id8HDZrH8vE6LuzxZSLXDhlydfva5zfh8ddZEgK7LaHDlRn1D6Nj62T2snMMH
- LHIa78VekMwgbHJnMSo8t9Yiy9zTU+2CLmmn+U5rfmyo9AAEwk4kuksl+zWmCd1KD4U8
- 8D1brhjERwjkg7TN57nYNOOS04D5+cRsCDBAit8wWHdUYjBfH4eTHPBQc/Eqw6QOvyKw
- HYmYWnEIinzFlzMUeWI2Z3xtjWlJRYSZUqOSuwofgcwSrTOE/N/+bGtjLzafx4KL1Z6D
- zLMA==
-X-Gm-Message-State: APjAAAWCmBcg9jxp722aQ+FCnAHLX4Q6NAJocNxuye0sz0AmGJyWFDpT
- u37tVPxFvBwKBCLxnrWV0Xk=
-X-Google-Smtp-Source: APXvYqxkQlemuxcSLQHtMtBC5Ri9a3BRMGjgpcVRFo4X60vYKhFABWujvq+0K3YJ88vz/VdAg59zEw==
-X-Received: by 2002:a17:902:860c:: with SMTP id
- f12mr89128629plo.127.1560443244418; 
- Thu, 13 Jun 2019 09:27:24 -0700 (PDT)
+ bh=jzRIWp8sjvta+E1GyPP4P8N5byAmizxIfWuhxK6cbfw=;
+ b=jpokBem16YE0VuYyK4/rnwfuMycE9e+ydB2bTYLa6iB9FnLRA0z6iUQ9AbAzKxJ2Rm
+ 0k/B5nDNzf0og26kSQncM43q8xofU4lWOIuqD0JuBJmO70PkNHR5HS+Epttb/H1W5K1L
+ 1G6eaxmU/f5D+P0/5qCCsqECdOqerXkqJKQ6ogVs6OSlSlRgNgYJZUghKquBZp5bpE1g
+ sTO+GFw/PgKnl+86cWietQG8zk8EFjakOzmPUnQGH7QVjH7xOXwxWvsDVA8MNOTpHjOX
+ 8vG/oa4b0sxzfdQHpZ/gmx1H7PWCyCLPSSUnrFbnb8EOlP2svCXHV7ZApb1qiDaTd/9F
+ BiuQ==
+X-Gm-Message-State: APjAAAUvz0Cp5Hy0OcYkupDIHsWyYMLx5vRJA9ahVOOJ7GQMAN9RL/wx
+ 2vUoqQfZ0Dbuwctd7szCUwc=
+X-Google-Smtp-Source: APXvYqyWo/fan+upwuWjeJEQ+9bFsdtSKc6ZRW1lB3ZdlcdwZgQYZ6AcEoo3rKRnpeNvJsgWS9Wpww==
+X-Received: by 2002:a17:902:54d:: with SMTP id
+ 71mr86570437plf.140.1560443247944; 
+ Thu, 13 Jun 2019 09:27:27 -0700 (PDT)
 Received: from localhost (68.168.130.77.16clouds.com. [68.168.130.77])
- by smtp.gmail.com with ESMTPSA id 128sm170411pfd.66.2019.06.13.09.27.23
+ by smtp.gmail.com with ESMTPSA id w1sm177958pfg.51.2019.06.13.09.27.27
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 13 Jun 2019 09:27:23 -0700 (PDT)
+ Thu, 13 Jun 2019 09:27:27 -0700 (PDT)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: joro@8bytes.org, m.szyprowski@samsung.com, kgene@kernel.org,
  krzk@kernel.org, will.deacon@arm.com, robin.murphy@arm.com,
  agross@kernel.org, david.brown@linaro.org, robdclark@gmail.com,
  heiko@sntech.de, thierry.reding@gmail.com, jonathanh@nvidia.com
-Subject: [PATCH 05/10] iommu/dma-iommu: convert to SPDX license tags
-Date: Thu, 13 Jun 2019 12:26:58 -0400
-Message-Id: <20190613162703.986-5-tiny.windzz@gmail.com>
+Subject: [PATCH 06/10] iommu/io-pgtable-arm-v7s: convert to SPDX license tags
+Date: Thu, 13 Jun 2019 12:26:59 -0400
+Message-Id: <20190613162703.986-6-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.0
 In-Reply-To: <20190613162703.986-1-tiny.windzz@gmail.com>
 References: <20190613162703.986-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_092727_099018_51177A53 
-X-CRM114-Status: GOOD (  11.03  )
+X-CRM114-CacheID: sfid-20190613_092729_298446_BF061C22 
+X-CRM114-Status: GOOD (  10.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -114,23 +114,22 @@ Updates license to use SPDX-License-Identifier.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- drivers/iommu/dma-iommu.c | 13 +------------
+ drivers/iommu/io-pgtable-arm-v7s.c | 13 +------------
  1 file changed, 1 insertion(+), 12 deletions(-)
 
-diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
-index 129c4badf9ae..2d76bac43b82 100644
---- a/drivers/iommu/dma-iommu.c
-+++ b/drivers/iommu/dma-iommu.c
+diff --git a/drivers/iommu/io-pgtable-arm-v7s.c b/drivers/iommu/io-pgtable-arm-v7s.c
+index 9a8a8870e267..fd0c8f2def45 100644
+--- a/drivers/iommu/io-pgtable-arm-v7s.c
++++ b/drivers/iommu/io-pgtable-arm-v7s.c
 @@ -1,3 +1,4 @@
 +// SPDX-License-Identifier: GPL-2.0
  /*
-  * A fairly generic DMA-API to IOMMU-API glue layer.
+  * CPU-agnostic ARM page table allocator.
   *
-@@ -5,18 +6,6 @@
+@@ -14,18 +15,6 @@
+  * - PXN
+  * - Domains
   *
-  * based in part on arch/arm/mm/dma-mapping.c:
-  * Copyright (C) 2000-2004 Russell King
-- *
 - * This program is free software; you can redistribute it and/or modify
 - * it under the terms of the GNU General Public License version 2 as
 - * published by the Free Software Foundation.
@@ -142,9 +141,10 @@ index 129c4badf9ae..2d76bac43b82 100644
 - *
 - * You should have received a copy of the GNU General Public License
 - * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+- *
+  * Copyright (C) 2014-2015 ARM Limited
+  * Copyright (c) 2014-2015 MediaTek Inc.
   */
- 
- #include <linux/acpi_iort.h>
 -- 
 2.17.0
 
