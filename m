@@ -2,81 +2,89 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5454C44FD1
-	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 01:06:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F86A45027
+	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 01:42:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fg3MWe8OZZeP+wj1vVMPqtfKr+LflJYZjzaoLg1kp/A=; b=Ziy+D1in2ib5lX
-	x248PoiuGS/vKF44g64MAtv+N2IOLPZScovMlEla2KZRgoS2wetunRoodWj7X7QvIegB5LE3Hnwts
-	MD8zk+di/s29sapZXpPapibCGLSXMTeNDLb6sQ5AHr+1IIkvuv1ASDhrpFgd4PUNjwHM0Z5kmd1sK
-	0WsrSCBWYKOO/g60QMUzeCqh/fgCRKSQMX71o9Oy4DoahOBgvE8ibOd/aqGmswT5DT+jfw2xX5Rnv
-	owSUea5KMw2/aXcX0NQnNRqwK3/WcFSxOehV8uUJh3XDr/KGAA39hsGHPGCLC1ZmNgMmKgMdONoP4
-	QRJOgKU5U+nGi3QNdhjA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8IMLcyB91w956l4CPp+ANCGK1kO6738ZJBDfHxTcF/w=; b=ShIqE4Yf9GVRJC
+	fZyzEyKnxOkAucKekTuftkYYQGTUKQrnd0jV3JuTX59LaH8lq+su9QYLPxDCf0bvz4xHwHZdiIsRB
+	dQfw0iVCsFcqRiXLfS2GIodkMuXySrJPN0NzI90e2l2X6gR0RADEwcptmvy/wF8lI83XevD9mr9Ts
+	92dvy9r18X3++Cws/8+RZcFfJ8Es6hKq4rnNsWd2Hwsr8DZbVPpf3smS3UHCnNGVP5F5L+MtFQTGH
+	KphQlvO3kEET8H3ae0kjZ18+4pdkpturx+my7Cdi3fWZcU0zFpCMoKZYnlRgYEpsgbbYSvnhLNr91
+	Zkdw0yeNxnPjQU1n12Fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbYnN-0008Ua-C8; Thu, 13 Jun 2019 23:06:13 +0000
-Received: from mail-qt1-f195.google.com ([209.85.160.195])
+	id 1hbZMC-0004ej-HI; Thu, 13 Jun 2019 23:42:12 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbYnK-0008U9-F3
- for linux-rockchip@lists.infradead.org; Thu, 13 Jun 2019 23:06:12 +0000
-Received: by mail-qt1-f195.google.com with SMTP id z24so363204qtj.10
- for <linux-rockchip@lists.infradead.org>; Thu, 13 Jun 2019 16:06:09 -0700 (PDT)
+ id 1hbZM9-0004dZ-42
+ for linux-rockchip@lists.infradead.org; Thu, 13 Jun 2019 23:42:11 +0000
+Received: by mail-pl1-x642.google.com with SMTP id i2so190973plt.1
+ for <linux-rockchip@lists.infradead.org>; Thu, 13 Jun 2019 16:42:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=qJQX+GLD4fwd+GCBrIWjKsA+IAvGAyQwTSeSX2BSMJY=;
+ b=LxynRClHhe6x/JL/spDHqC1iBz5ugcvqw4xyZsmxiWuMKvrTOMnUdqDKFM09vDQEXk
+ g8D28Mk39C+APeBjMzbC1os4SM6ZMn7qrCbrNb3T3fGmWaX7RMSCe+s43sy4YLrsZYAK
+ USjKgfZYVdMtiNjE5ywU7CUZvHRcPUBbocn+o=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=0WB7++WgXsHSMQU/iyYHt1wyyCBYlEx8/DL9NzTbRRs=;
- b=Dcv2ywXK/ZyB8d0UNG/XSqpsuj/lW8twWrUOR3OXKFVE8hhrkYSl38fIcLyslqvvQV
- naXUSMdNv2DZ9TNXEBLvfIQpl6ZPBUWh7TgjZ1D0LmtO70oaPBs5lvextX0EA67arhDc
- aT6YC/Ds2TbEohByhTODG/dCFIlywwww5xVjkRiiogm9C2hewHJeFuDU0kNla1PuNeZI
- VuhbnK7EBHyxx1C53pcpKclvYtT1w/iqtazm2Zm4+XO/2HBaWhfppzGHLA788XBVa9zb
- k37r09SU24dkQ4/TuAKUoNCMSFHWNwHftSmSbVgbJubfCuSdP6Pb5nI+hQqLbFSqWVkG
- SEXA==
-X-Gm-Message-State: APjAAAWhktbkfVW+mYfitO8PQha9cW9kqRr1izH/V6xVy3aKXQMUjJnb
- 569u1p+z5A0H6f7qkXO0rg==
-X-Google-Smtp-Source: APXvYqx+14G87vSF1DTU9nLxwM7+unwwEu2UUz11EbKZ7aTXFmfrxUUj04BpoYDxl/NFoTvXCrZb5A==
-X-Received: by 2002:ac8:3301:: with SMTP id t1mr72629681qta.209.1560467169096; 
- Thu, 13 Jun 2019 16:06:09 -0700 (PDT)
-Received: from localhost ([64.188.179.243])
- by smtp.gmail.com with ESMTPSA id y16sm404646qkf.93.2019.06.13.16.06.08
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=qJQX+GLD4fwd+GCBrIWjKsA+IAvGAyQwTSeSX2BSMJY=;
+ b=RGgPfOtxZDw5z9OspIYqfq8nHx8lMO/dPqvfqqSbV4IB5zy+gyN6G6/FDmMnmtas0N
+ Wq0GPNaluFRZuue7XvjkUMjyCbzGQmgW5xf1fLPzvaJ8DSZjwLqBH/7dTqy8aVAcTGSj
+ fIUoXg0fQCCbEZlJ3Gq2G0fESvVK3KMJ+b8k32HTF4uWcRJ7x0SLbLX16+Wio3Oi1/Wb
+ 6XCBtvJMGX3BIMv3+AUlLom+2cRqocyiuoYMV99SBfLd33b+jnUs/DSEKi5hUHSESYuf
+ naefm5+HWknDDh8dAeydmFtZ7jZULTKkOa/UQv3wB2EwEyfma/Jogm75cmo6HGYpB1Mn
+ 9KZQ==
+X-Gm-Message-State: APjAAAWmqKWTvZoNnIxfkgiMZz8zfvK2JG0bqUxjQEHZ7+1rqNrHL0eP
+ AXiU9SjoSO41BuHjgJoDNlhmjA==
+X-Google-Smtp-Source: APXvYqyHvmG/55d6riqeb8uT5XjZFjeg3M6IzV8m9M1TGxU2K10/XPwKK4EKmj4io0cDJZmrlM1FDg==
+X-Received: by 2002:a17:902:2a26:: with SMTP id
+ i35mr51358780plb.315.1560469328377; 
+ Thu, 13 Jun 2019 16:42:08 -0700 (PDT)
+Received: from tictac2.mtv.corp.google.com
+ ([2620:15c:202:1:24fa:e766:52c9:e3b2])
+ by smtp.gmail.com with ESMTPSA id p7sm781088pfp.131.2019.06.13.16.42.07
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 13 Jun 2019 16:06:08 -0700 (PDT)
-Date: Thu, 13 Jun 2019 17:06:07 -0600
-From: Rob Herring <robh@kernel.org>
-To: Douglas Anderson <dianders@chromium.org>
-Subject: Re: [PATCH v3 1/3] Documentation: dt-bindings: Add
- snps,need-phy-for-wake for dwc2 USB
-Message-ID: <20190613230607.GA10347@bogus>
-References: <20190520175605.2405-1-dianders@chromium.org>
- <20190520175605.2405-2-dianders@chromium.org>
+ Thu, 13 Jun 2019 16:42:07 -0700 (PDT)
+From: Douglas Anderson <dianders@chromium.org>
+To: Ulf Hansson <ulf.hansson@linaro.org>, Kalle Valo <kvalo@codeaurora.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Arend van Spriel <arend.vanspriel@broadcom.com>
+Subject: [PATCH v4 0/5] brcmfmac: sdio: Deal better w/ transmission errors
+ related to idle
+Date: Thu, 13 Jun 2019 16:41:48 -0700
+Message-Id: <20190613234153.59309-1-dianders@chromium.org>
+X-Mailer: git-send-email 2.22.0.rc2.383.gf4fbbf30c2-goog
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190520175605.2405-2-dianders@chromium.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_160610_502548_791DBA4B 
-X-CRM114-Status: GOOD (  19.03  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190613_164209_193794_BB71E48E 
+X-CRM114-Status: GOOD (  14.91  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.195 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,71 +97,95 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Amelie Delaunay <amelie.delaunay@st.com>, heiko@sntech.de,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, zyw@rock-chips.com,
- Stefan Wahren <stefan.wahren@i2se.com>, linux-rockchip@lists.infradead.org,
- mka@chromium.org, Alan Stern <stern@rowland.harvard.edu>,
- Artur Petrosyan <Arthur.Petrosyan@synopsys.com>,
- Elaine Zhang <zhangqing@rock-chips.com>, amstan@chromium.org,
- Felipe Balbi <felipe.balbi@linux.intel.com>, Randy Li <ayaka@soulik.info>,
- Minas Harutyunyan <hminas@synopsys.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>, ryandcase@chromium.org,
- William Wu <william.wu@rock-chips.com>, jwerner@chromium.org
+Cc: Ondrej Jirman <megous@megous.com>, linux-mmc@vger.kernel.org,
+ Chi-Hsien Lin <chi-hsien.lin@cypress.com>, linux-kernel@vger.kernel.org,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ brcm80211-dev-list@cypress.com, Ritesh Harjani <riteshh@codeaurora.org>,
+ briannorris@chromium.org, YueHaibing <yuehaibing@huawei.com>,
+ linux-rockchip@lists.infradead.org, mka@chromium.org,
+ Naveen Gupta <naveen.gupta@cypress.com>, Shawn Lin <shawn.lin@rock-chips.com>,
+ Madhan Mohan R <MadhanMohan.R@cypress.com>,
+ Hante Meuleman <hante.meuleman@broadcom.com>,
+ Double Lo <double.lo@cypress.com>, Hans de Goede <hdegoede@redhat.com>,
+ Wright Feng <wright.feng@cypress.com>, Jiong Wu <lohengrin1024@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
+ Franky Lin <franky.lin@broadcom.com>, brcm80211-dev-list.pdl@broadcom.com,
+ Avri Altman <avri.altman@wdc.com>, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, 20 May 2019 10:56:03 -0700, Douglas Anderson wrote:
-> Some SoCs with a dwc2 USB controller may need to keep the PHY on to
-> support remote wakeup.  Allow specifying this as a device tree
-> property.
-> 
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> ---
-> For relevant prior discussion on this patch, see:
-> 
-> https://lkml.kernel.org/r/1435017144-2971-3-git-send-email-dianders@chromium.org
-> 
-> I didn't make any changes from the prior version since I never found
-> out what Rob thought of my previous arguments.  If folks want a
-> change, perhaps they could choose from these options:
-> 
-> 1. Assume that all dwc2 hosts would like to keep their PHY on for
->    suspend if there's a USB wakeup enabled, thus we totally drop this
->    binding.  This doesn't seem super great to me since I'd bet that
->    many devices that use dwc2 weren't designed for USB wakeup (they
->    may not keep enough clocks or rails on) so we might be wasting
->    power for nothing.
-> 2. Rename this property to "snps,wakeup-from-suspend-with-phy" to make
->    it more obvious that this property is intended both to document
->    that wakeup from suspend is possible and that we need the PHY for
->    said wakeup.
-> 3. Rename this property to "snps,can-wakeup-from-suspend" and assume
->    it's implicit that if we can wakeup from suspend that we need to
->    keep the PHY on.  If/when someone shows that a device exists using
->    dwc2 where we can wakeup from suspend without the PHY they can add
->    a new property.
-> 
-> NOTE FOR REPOST:
-> - In v2 Rob said [1] he'd prefer something based on the SoC
->   compatibility string, but that doesn't work because not all boards
->   will have the regulator setup / board design / suspend logic
->   necessary to make this work.
-> 
-> [1] https://lkml.kernel.org/r/20190430012328.GA25660@bogus
-> 
-> 
-> Changes in v3: None
-> Changes in v2: None
-> 
->  Documentation/devicetree/bindings/usb/dwc2.txt | 3 +++
->  1 file changed, 3 insertions(+)
-> 
+This series attempts to deal better with the expected transmission
+errors related to the idle states (handled by the Always-On-Subsystem
+or AOS) on the SDIO-based WiFi on rk3288-veyron-minnie,
+rk3288-veyron-speedy, and rk3288-veyron-mickey.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Some details about those errors can be found in
+<https://crbug.com/960222>, but to summarize it here: if we try to
+send the wakeup command to the WiFi card at the same time it has
+decided to wake up itself then it will behave badly on the SDIO bus.
+This can cause timeouts or CRC errors.
+
+When I tested on 4.19 and 4.20 these CRC errors can be seen to cause
+re-tuning.  Since I am currently developing on 4.19 this was the
+original problem I attempted to solve.
+
+On mainline it turns out that you don't see the retuning errors but
+you see tons of spam about timeouts trying to wakeup from sleep.  I
+tracked down the commit that was causing that and have partially
+reverted it here.  I have no real knowledge about Broadcom WiFi, but
+the commit that was causing problems sounds (from the descriptioin) to
+be a hack commit penalizing all Broadcom WiFi users because of a bug
+in a Cypress SD controller.  I will let others comment if this is
+truly the case and, if so, what the right solution should be.
+
+For v3 of this series I have added 2 patches to the end of the series
+to address errors that would show up on systems with these same SDIO
+WiFi cards when used on controllers that do periodic retuning.  These
+systems need an extra fix to prevent the retuning from happening when
+the card is asleep.
+
+Changes in v4:
+- Moved to SDIO API only (Adrian, Ulf).
+- Renamed to make it less generic, now retune_crc_disable (Ulf).
+- Function header makes it clear host must be claimed (Ulf).
+- No more WARN_ON (Ulf).
+- Adjust to API rename (Adrian, Ulf).
+- Moved retune hold/release to SDIO API (Adrian).
+- Adjust to API rename (Adrian).
+
+Changes in v3:
+- Took out the spinlock since I believe this is all in one context.
+- Expect errors for all of brcmf_sdio_kso_control() (Adrian).
+- ("mmc: core: Export mmc_retune_hold_now() mmc_retune_release()") new for v3.
+- ("brcmfmac: sdio: Don't tune while the card is off") new for v3.
+
+Changes in v2:
+- A full revert, not just a partial one (Arend).  ...with explicit Cc.
+- Updated commit message to clarify based on discussion of v1.
+
+Douglas Anderson (5):
+  Revert "brcmfmac: disable command decode in sdio_aos"
+  mmc: core: API to temporarily disable retuning for SDIO CRC errors
+  brcmfmac: sdio: Disable auto-tuning around commands expected to fail
+  mmc: core: Add sdio_retune_hold_now() and sdio_retune_release()
+  brcmfmac: sdio: Don't tune while the card is off
+
+ drivers/mmc/core/core.c                       |  5 +-
+ drivers/mmc/core/sdio_io.c                    | 76 +++++++++++++++++++
+ .../broadcom/brcm80211/brcmfmac/sdio.c        | 17 +++--
+ include/linux/mmc/core.h                      |  2 +
+ include/linux/mmc/host.h                      |  1 +
+ include/linux/mmc/sdio_func.h                 |  6 ++
+ 6 files changed, 100 insertions(+), 7 deletions(-)
+
+-- 
+2.22.0.rc2.383.gf4fbbf30c2-goog
+
 
 _______________________________________________
 Linux-rockchip mailing list
