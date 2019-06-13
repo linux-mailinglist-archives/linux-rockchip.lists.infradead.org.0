@@ -2,90 +2,84 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A33A1434F4
-	for <lists+linux-rockchip@lfdr.de>; Thu, 13 Jun 2019 11:49:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4421F43530
+	for <lists+linux-rockchip@lfdr.de>; Thu, 13 Jun 2019 12:18:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TSrZ4YRM7lxv1XMQ/zN8BT2qg2XLdSVgY/oTSf0xJ5s=; b=s+zWbwWb5aXfJS
-	vo2BX5kK+PP5Z6F2c3qk+Nz5XJyQkQ97sCYKcv7imq3IY/AWyiOFKs7JM5wgv6Bixid+D/i8ONaOJ
-	rf9F+q5UPtVpcmGGcQAGALc36UEYDz1J2v/01Oi7UggcoNw+mxBmuFEFqe+Gd/kbzO41XxMn8/x+k
-	PasYCcYi+NCeWVQ2KNBG/gzGw3P3CKS45nqkZsfPEsfhceKsMrJgz8k1b4TuN0stx2jaGwv1BHZqm
-	26rZgDmJneRnAsULnm+0hcDYYWpGcA6ZIdKhqRwsyU7sJIxt02W/TF5MPO379RQWj577HK/Q1MkYk
-	3jW677gFDpZRBrsLIgMw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=gQ9qUb0ZVxRJv1TzaLmh98O6ILxhiKSVQIVfoXbCLXo=; b=VHJ
+	KoiXMxK/cWSxp4zHMOgscbOUxEyP4ES10YvQz2V3/iEOG9FHJaEj/doA7dv5WTj/QkyOSAHKX3uhe
+	66HyNGu+utLsp01eCzS15HrryIccjWbQGfX1v4mPJt4NZwYJIXHGsspHwbRzUYKmuyhQCmdrj9UZ8
+	yY23SEjRdHlk0QwU4q7Zm/847nPr5tsqYyZto4WeS9KfXJIWSxaWuUA5xPty+VxdwdpADlQakLhs5
+	0/lRfK0KxeoFs8dhcvBTK5jzVRhlDLfYTKZymIsSxVRFnOkH38mDkNSr2Dzgu8VfGjzk7jg4wiK2h
+	WnfxD8Pxn/cmyuC4tOzG9vsCekfbTZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbMMJ-0004WY-TP; Thu, 13 Jun 2019 09:49:27 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1hbMnr-0003Ev-4d; Thu, 13 Jun 2019 10:17:55 +0000
+Received: from outgoing2.flk.host-h.net ([188.40.0.84])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbMMF-0004Vr-B1
- for linux-rockchip@lists.infradead.org; Thu, 13 Jun 2019 09:49:24 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id q64so12229083vsd.1
- for <linux-rockchip@lists.infradead.org>; Thu, 13 Jun 2019 02:49:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NdS6xN6Z4DlPhoXqfSjLt1MlPeGtM/DFz1IwvW9UGoo=;
- b=gRY3cBMoBbyhUq/TwCPef50CCDKrv4iYze6tdunxTeCUZpRTxfdIbcrZIu3rL9nBmA
- IKu5OYITIeL6ltUdiFp9D/dQv5KZKcAv6V+fmHeGkWIe6jriJiht2zz2XO9FjHTjfRib
- NIvsg+FMfLXlxWpsnz2tVCHJTpT0XY2bvwC63A4K1b6VMqRrNgGbsb2LGvdXDeeBaEPZ
- m4z3ddfPasyoIKb3AqQ46OdJR6zCS6DXa7xNtmQomcyAaTessCVDKoSiccxpgKSHLEJM
- v8OJqfkxY2CdFdgcNZGppzV0c9uPWuWj07PpFzImXtu18YgRdm3Z/Qdd3ycwG99TvFSh
- 91pQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=NdS6xN6Z4DlPhoXqfSjLt1MlPeGtM/DFz1IwvW9UGoo=;
- b=LQZNU195LPHFEXSHY+vT1qkVYrB4yaGA95gDzYrBW7GgEylxvQLf9fRWL+eTHXIRDh
- 37EUtO535/xmxIskJG9qVrJF3QLNj+M410kUofg4u5BAj1Ky6nKv+ycSNyabMAXZTu4C
- kTkVZwwtGw1UH8jDd8qV6+bzTboS19UXT9B8ri59MxUSJeUDq/XcOp5vWrStWg5TZu9I
- LWC41TPzRm6uT3PDjgqHkr+6kouOzjau96X8MeXeMyQ+ZjpH4vV0enSyNTz+fTLsGvE+
- Jb4yAWOhDqqW1ivOAZVlrJA41y3h+iyYvtA3tdHtq5BPlt21N9x1ricIgGvq4YfJz9+Q
- 6iCQ==
-X-Gm-Message-State: APjAAAXTq6+1PKLXj5dwCDmUHNKhahyCauZCHeoKb5pLsz0tXvjK/4by
- lOKNUMlygAazAlRLCxHO53nLmQaoOxIpebH5uc5YJQ==
-X-Google-Smtp-Source: APXvYqzWpA6aPKAyHaL8W3hPhJ3CXshgo14ktsq5uXw9v4wanH5DWggs2K573LXj7uMjFiRLQrDiZGsE/zNplvlP1QY=
-X-Received: by 2002:a67:ed8b:: with SMTP id d11mr48182216vsp.35.1560419357888; 
- Thu, 13 Jun 2019 02:49:17 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190607223716.119277-1-dianders@chromium.org>
- <20190607223716.119277-4-dianders@chromium.org>
- <363DA0ED52042842948283D2FC38E4649C52F8A0@IRSMSX106.ger.corp.intel.com>
- <CAD=FV=U8eo78Ee9xjhGXJMv=8YF9o89KLX024GH3iBRnRjCRvQ@mail.gmail.com>
- <CAPDyKFo=QMRTkNYUVSE2AqiZgytkTVRXF0Mvznn6trVT4-cR=Q@mail.gmail.com>
- <c7c6d3f4-ebb1-8964-0616-973fae1ab47d@broadcom.com>
- <CAPDyKFpM0+FfvoMo8Z_hxM9rzSjeQZHCsA2SPa8WP+SRDhhsPA@mail.gmail.com>
- <16b4bfb39e0.2764.9b12b7fc0a3841636cfb5e919b41b954@broadcom.com>
-In-Reply-To: <16b4bfb39e0.2764.9b12b7fc0a3841636cfb5e919b41b954@broadcom.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 13 Jun 2019 11:48:41 +0200
-Message-ID: <CAPDyKFr+nzy4JrtSrudORfOkFvPa==UtgaokQwigo8+c1L9wbQ@mail.gmail.com>
-Subject: Re: [PATCH v3 3/5] brcmfmac: sdio: Disable auto-tuning around
- commands expected to fail
-To: Arend Van Spriel <arend.vanspriel@broadcom.com>
+ id 1hbMnj-00033u-Fn; Thu, 13 Jun 2019 10:17:50 +0000
+Received: from www31.flk1.host-h.net ([188.40.1.173])
+ by antispam3-flk1.host-h.net with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.89)
+ (envelope-from <justin.swartz@risingedge.co.za>)
+ id 1hbMnb-0004gv-Eh; Thu, 13 Jun 2019 12:17:40 +0200
+Received: from [130.255.73.16] (helo=v01.28459.vpscontrol.net)
+ by www31.flk1.host-h.net with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.84_2)
+ (envelope-from <justin.swartz@risingedge.co.za>)
+ id 1hbMna-0003Pi-J5; Thu, 13 Jun 2019 12:17:38 +0200
+From: Justin Swartz <justin.swartz@risingedge.co.za>
+To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH] ARM: dts: rockchip: add display nodes for rk322x
+Date: Thu, 13 Jun 2019 10:13:04 +0000
+Message-Id: <20190613101305.30491-1-justin.swartz@risingedge.co.za>
+X-Mailer: git-send-email 2.11.0
+X-Authenticated-Sender: justin.swartz@risingedge.co.za
+X-Virus-Scanned: Clear (ClamAV 0.100.3/25478/Wed Jun 12 10:14:54 2019)
+X-Originating-IP: 188.40.1.173
+X-SpamExperts-Domain: risingedge.co.za
+X-SpamExperts-Username: 
+Authentication-Results: host-h.net;
+ auth=pass (login) smtp.auth=@risingedge.co.za
+X-SpamExperts-Outgoing-Class: ham
+X-SpamExperts-Outgoing-Evidence: SB/global_tokens (0.0014064279395)
+X-Recommended-Action: accept
+X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0aEcKiGOen0TgGQo14QTNxSpSDasLI4SayDByyq9LIhVm8Lp0RDH9p9e
+ zSXjVPBY3UTNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3K7uDjV/sFUXQr+CDrNQuIHgQg
+ mAX8Bxy/iUu0ThNZg0jxJtcVJProrT987X1VDPOqN+OoDzRTdku7DidYUZdNf38Sp7Of4wP429AA
+ f49baR+f3He7jw4SoVhmTJ/3eP9ORQWVx8ds1M4qmk3/bYr2p8zbg4Paoa3pNVQ0zl7t/+UfQLYB
+ qEPnp1U88kqVD8AM2G81dFO0E3gi+MOI1foZYzDggRXhpvoPtF3cVkniFXU3qJSqpdJudO6+rkiw
+ E5i8Wl78Q18OeOfsy4h7jF1Uv9lnibl3vcBqVmvQB4A18aeE+j/fKO/vV3jpic9houk2mH6eQvWp
+ DWTULXV1jJ5bfceEJeNruLKdflVX7oFNsdHVhnpudkCyIg6Nob+f0OfCg2lBMt3xu9nbye2CdJLN
+ jSo1M+TSg3TNDI3/M5s9/ot3ko3rrae7IifWc6pL546YUVQwaYLh3di89W/ji5iahyCgJgyv93tC
+ 61cbiLYl3RCqADG/Ryndzp4OfbK7c6EqHwlqvaI+zok/BsKQK4gft4+8sY8CNaDDoRMm0CGce/fp
+ WUXurEbGCiZ0ePvZjCuJdbYb9IXfYGRpVS/0hA4Mwkg/wxsjmSXwdCAtc5U5IMGqr3wBwEeX6Ai5
+ 5FPRpzhbYqsuNEW45+y/2kiUpWy9c957+6R4kroQiAThpzOdFqFvbdRuq0FZjQOwDKXnhaC6dkwF
+ 9ybSMhHO+IPM0C985aNe1vwE2plJLdOGZ2rsAWflnmUXwJv1R9bnj+xoJG4VhUotTJ0/e5GmrorL
+ FK/ZMMaOhB24kmiXsKh2uc6NbILRjdK3JtbOY4V5u4SqNrbdxyGLEIoLEuuC4P/fyEEgA3CnflZn
+ bjDB2+RGRgaXth2/9YEbMsGSn6owqJN0kS7MUpAEhFoAxikOdx3ALFboD0vMokt+4lO8Qp33tUy6
+ u+yS6WEpzRkYYh+Rxc/2mS1yCppcnKmI4dLjaezH/hFXJzwJWw42swm4bO6gacpMpzJ5RNWFoIkg
+ vLC7uMZSLKkLPlzqsPnNmrTFfBI+gCHkFgyh9jAE9PwtDurXCCybWAnihjA708Lg3Y2gXyaf+rIt
+ vvthbyiMZOAfvJjwL84MO4Vozqbzv/NmqBexmg1oMlu3UCyNNO7qENlLqkRemjF1A1q3g0ZrubFa
+ n/xi+AGXOIO97ttnHrPmGyC6rR21+9c=
+X-Report-Abuse-To: spam@antispammaster.host-h.net
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_024923_395863_96B0E201 
-X-CRM114-Status: GOOD (  16.98  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190613_031747_660329_65635382 
+X-CRM114-Status: GOOD (  12.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
- [list.dnswl.org]
+ no trust [188.40.0.84 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,83 +92,155 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Madhan Mohan R <madhanmohan.r@cypress.com>,
- brcm80211-dev-list.pdl@broadcom.com, YueHaibing <yuehaibing@huawei.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Hante Meuleman <hante.meuleman@broadcom.com>,
- "David S. Miller" <davem@davemloft.net>, netdev@vger.kernel.org,
- Chi-Hsien Lin <chi-hsien.lin@cypress.com>,
- Brian Norris <briannorris@chromium.org>,
- linux-wireless <linux-wireless@vger.kernel.org>,
- Double Lo <double.lo@cypress.com>, Doug Anderson <dianders@chromium.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Matthias Kaehlcke <mka@chromium.org>, Naveen Gupta <naveen.gupta@cypress.com>,
- Wright Feng <wright.feng@cypress.com>, "Hunter,
- Adrian" <adrian.hunter@intel.com>, brcm80211-dev-list@cypress.com,
- Kalle Valo <kvalo@codeaurora.org>, Franky Lin <franky.lin@broadcom.com>
+Cc: linux-rockchip@lists.infradead.org,
+ Justin Swartz <justin.swartz@risingedge.co.za>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, 12 Jun 2019 at 15:58, Arend Van Spriel
-<arend.vanspriel@broadcom.com> wrote:
->
->
-> On 6/12/2019 1:48 PM, Ulf Hansson wrote:
-> > On Wed, 12 Jun 2019 at 13:11, Arend Van Spriel
-> > <arend.vanspriel@broadcom.com> wrote:
-> >>
-> >> On 6/12/2019 12:10 PM, Ulf Hansson wrote:
-> >>>> drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c:
-> >>>>     mmc_set_data_timeout(md, func->card);
-> >>>>     mmc_wait_for_req(func->card->host, mr);
-> >>> These are not okay, none of these things calls should really be done
-> >>> from an SDIO func driver.
-> >>>
-> >>> It tells me that the func driver is a doing workaround for something
-> >>> that should be managed in a common way.
-> >>
-> >> We are using some low-level functions passing chain of skbuff to the
-> >> device using CMD53 with scatterlist. If I recall correctly Marvell made
-> >> an attempt to have a similar function for it in the mmc stack. Not sure
-> >> if that ever made it in. If so I can rework our driver using that API.
-> >> If not, I can make a new attempt.
-> >
-> > I recall there were some patches, but not sure why we didn't merge them.
-> >
-> > Anyway, if you want to move this forward, that would be awesome!
->
-> Let's scope it before moving forward. Our use-case is to transfer a
-> chain of skbuff's. I am pretty sure that is not something we want to
-> deal with in mmc stack api. So I suppose passing a scatterlist is more
-> sensible, right? Maybe on sdio layer of the stack we could consider
-> dealing with skbuff's for network func drivers?
+Add display_subsystem, hdmi_phy, vop, and hdmi device nodes plus
+a few hdmi pinctrl entries to allow for HDMI output.
 
-Passing a scatter gather list seems reasonable. Ideally we should be
-highly influenced with how buffers and dealt with for mmc block
-requests.
+Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
+---
+ arch/arm/boot/dts/rk322x.dtsi | 83 ++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 82 insertions(+), 1 deletion(-)
 
-Some information that may be needed by upper SDIO layers is the
-segment/block constraints set by the MMC/SDIO host controller/driver.
-The below is what we have today (see include/linux/mmc/host.h):
+diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
+index da102fff96a2..7eb883eec126 100644
+--- a/arch/arm/boot/dts/rk322x.dtsi
++++ b/arch/arm/boot/dts/rk322x.dtsi
+@@ -143,6 +143,11 @@
+ 		#clock-cells = <0>;
+ 	};
+ 
++	display_subsystem: display-subsystem {
++		compatible = "rockchip,display-subsystem";
++		ports = <&vop_out>;
++	};
++
+ 	i2s1: i2s1@100b0000 {
+ 		compatible = "rockchip,rk3228-i2s", "rockchip,rk3066-i2s";
+ 		reg = <0x100b0000 0x4000>;
+@@ -529,6 +534,17 @@
+ 		status = "disabled";
+ 	};
+ 
++	hdmi_phy: hdmi-phy@12030000 {
++		compatible = "rockchip,rk3228-hdmi-phy";
++		reg = <0x12030000 0x10000>;
++		clocks = <&cru PCLK_HDMI_PHY>, <&xin24m>, <&cru DCLK_HDMI_PHY>;
++		clock-names = "sysclk", "refoclk", "refpclk";
++		#clock-cells = <0>;
++		clock-output-names = "hdmiphy_phy";
++		#phy-cells = <0>;
++		status = "disabled";
++	};
++
+ 	gpu: gpu@20000000 {
+ 		compatible = "rockchip,rk3228-mali", "arm,mali-400";
+ 		reg = <0x20000000 0x10000>;
+@@ -572,6 +588,28 @@
+ 		status = "disabled";
+ 	};
+ 
++	vop: vop@20050000 {
++		compatible = "rockchip,rk3228-vop";
++		reg = <0x20050000 0x1ffc>;
++		interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&cru ACLK_VOP>, <&cru DCLK_VOP>, <&cru HCLK_VOP>;
++		clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
++		resets = <&cru SRST_VOP_A>, <&cru SRST_VOP_H>, <&cru SRST_VOP_D>;
++		reset-names = "axi", "ahb", "dclk";
++		iommus = <&vop_mmu>;
++		status = "disabled";
++
++		vop_out: port {
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			vop_out_hdmi: endpoint@0 {
++				reg = <0>;
++				remote-endpoint = <&hdmi_in_vop>;
++			};
++		};
++	};
++
+ 	vop_mmu: iommu@20053f00 {
+ 		compatible = "rockchip,iommu";
+ 		reg = <0x20053f00 0x100>;
+@@ -579,7 +617,7 @@
+ 		interrupt-names = "vop_mmu";
+ 		clocks = <&cru ACLK_VOP>, <&cru HCLK_VOP>;
+ 		clock-names = "aclk", "iface";
+-		iommu-cells = <0>;
++		#iommu-cells = <0>;
+ 		status = "disabled";
+ 	};
+ 
+@@ -594,6 +632,34 @@
+ 		status = "disabled";
+ 	};
+ 
++	hdmi: hdmi@200a0000 {
++		compatible = "rockchip,rk3228-dw-hdmi";
++		reg = <0x200a0000 0x20000>;
++		reg-io-width = <4>;
++		interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&cru SCLK_HDMI_HDCP>, <&cru PCLK_HDMI_CTRL>, <&cru SCLK_HDMI_CEC>;
++		clock-names = "isfr", "iahb", "cec";
++		pinctrl-names = "default";
++		pinctrl-0 = <&hdmii2c_xfer &hdmi_hpd &hdmi_cec>;
++		resets = <&cru SRST_HDMI_P>;
++		reset-names = "hdmi";
++		phys = <&hdmi_phy>;
++		phy-names = "hdmi";
++		rockchip,grf = <&grf>;
++		status = "disabled";
++
++		ports {
++			hdmi_in: port {
++				#address-cells = <1>;
++				#size-cells = <0>;
++				hdmi_in_vop: endpoint@0 {
++					reg = <0>;
++					remote-endpoint = <&vop_out_hdmi>;
++				};
++			};
++		};
++	};
++
+ 	sdmmc: dwmmc@30000000 {
+ 		compatible = "rockchip,rk3228-dw-mshc", "rockchip,rk3288-dw-mshc";
+ 		reg = <0x30000000 0x4000>;
+@@ -922,6 +988,21 @@
+ 			};
+ 		};
+ 
++		hdmi {
++			hdmi_hpd: hdmi-hpd {
++				rockchip,pins = <0 RK_PB7 1 &pcfg_pull_down>;
++			};
++
++			hdmii2c_xfer: hdmii2c-xfer {
++				rockchip,pins = <0 RK_PA6 2 &pcfg_pull_none>,
++						<0 RK_PA7 2 &pcfg_pull_none>;
++			};
++
++			hdmi_cec: hdmi-cec {
++				rockchip,pins = <0 RK_PC4 1 &pcfg_pull_none>;
++			};
++		};
++
+ 		i2c0 {
+ 			i2c0_xfer: i2c0-xfer {
+ 				rockchip,pins = <0 RK_PA0 1 &pcfg_pull_none>,
+-- 
+2.11.0
 
-max_seg_size;   /* see blk_queue_max_segment_size */
-max_segs;       /* see blk_queue_max_segments */
-max_req_size;   /* maximum number of bytes in one req */
-max_blk_size;   /* maximum size of one mmc block */
-max_blk_count;  /* maximum number of blocks in one req */
-
-Ideally we don't want SDIO func drivers to access these directly from
-the ->host pointer, but rather via new SDIO func APIs.
-
->
-> Let me see if I can find those Marvell patches. Might be a good start.
-
-Great! Thanks!
-
-Kind regards
-Uffe
 
 _______________________________________________
 Linux-rockchip mailing list
