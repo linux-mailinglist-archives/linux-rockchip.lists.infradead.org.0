@@ -2,73 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E315452FC
-	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 05:31:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF01D454B6
+	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 08:29:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=068Cr8R8prdzfcqc4GmI3UR//Pm+AhOKuNRauwRf0K0=; b=NvnffnuMrQn4a3zQHB7qKULrxd
-	a+W0bggwQZVfh+Q//Xx3DrbyEwgrNxEkhlINVo8CZDSX7qWlzv/T2SavjdlmU4UlLmzlQD/29YYT+
-	y+jh0ysqiwIb/vRQDLF/uplHYWvsN1Vu+63qiXd6y6lEe125AhvKr4ycB6uG+sYfkEtLZngObt2Nn
-	js4gkGBOb2M7YeRNhSNbmIi7ZZqLmq7GASBWnXTsyEPi9OfgC1RL+kneYt3QPrHHBqk8Y6pGspOnu
-	XzGwgBPWQxD+Sodx54d0yHnfz7fuRfJLDcelLOR2tR3Fqdp8Uu58vZEJx7cmJwSR0TJBHj+SM/cxA
-	yoeZcJBQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ONIqB8eBnVomnLnPlA36CljrCSqmWLq1Y153iHvv8qo=; b=N9DQD/0mfhM6cK
+	DlE4vKAFOtO1k+MLQ8q3hgsm0st6NHaH3mhWlaeqScLYKo5ZzPWdnc+Q/cgUCtYonxHZdHyo8gGIx
+	+bJ4DAqCK5II7XgRH/3MmWGsYC8CpR7qOMlEIf8CKmkFpv8ZL9cYeb3na2fZnx20dqxZr76wnE8Ay
+	JZvCQLuB45ZnfQ2CuZdLV2nTatYSQgwUIb3PlUzte1SXFLzvXAT9c0YBAfVtIYc8E5mLOJKQi2uO4
+	+Dz0ftqoA0SIrlb1GN4QlVrDn/YhHCkNX3AvLDmVLOK1sCndbbCmrRWtJeo8WrfFMtoJCTTHfW2+A
+	acVxkNBoOISuf/KW4o/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbcvb-0003eT-K4; Fri, 14 Jun 2019 03:30:59 +0000
-Received: from lucky1.263xmail.com ([211.157.147.132])
+	id 1hbfi0-0007Zd-Ul; Fri, 14 Jun 2019 06:29:08 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbcin-00067v-Iq; Fri, 14 Jun 2019 03:17:49 +0000
-Received: from tony.xie?rock-chips.com (unknown [192.168.167.152])
- by lucky1.263xmail.com (Postfix) with ESMTP id 28D7C54DEB;
- Fri, 14 Jun 2019 11:17:43 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 1
-X-MAIL-DELIVERY: 0
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P20303T139952891324160S1560482259794024_; 
- Fri, 14 Jun 2019 11:17:41 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <253e62f960b9431d8ca182157cc282f4>
-X-RL-SENDER: tony.xie@rock-chips.com
-X-SENDER: xxx@rock-chips.com
-X-LOGIN-NAME: tony.xie@rock-chips.com
-X-FST-TO: heiko@sntech.de
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-From: Tony Xie <tony.xie@rock-chips.com>
-To: heiko@sntech.de
-Subject: [PATCH v9 6/6] clk: RK808: add RK809 and RK817 support.
-Date: Thu, 13 Jun 2019 23:17:38 -0400
-Message-Id: <20190614031738.15909-1-tony.xie@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190614031425.15741-1-tony.xie@rock-chips.com>
-References: <20190614031425.15741-1-tony.xie@rock-chips.com>
+ id 1hbfhr-0007Rw-J5; Fri, 14 Jun 2019 06:29:01 +0000
+Received: from mail-lf1-f45.google.com (mail-lf1-f45.google.com
+ [209.85.167.45])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E52B020850;
+ Fri, 14 Jun 2019 06:28:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560493735;
+ bh=o6p9lVc+DYilRKtF9pajKsHYMRF8rkewSFkOlAnBRH8=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=JozXoOb8Ksc6M/jxRWxNQoCuZPK/5IvFkxh+M4O9zoywYnsSjvXltT2rFIopAZGVa
+ 8ZxAp9Gd4x/1rIddNzEm4o7sHNxGxeZPGt16LcX6QGhYmPS2av/K81y5kESJTLL6Kb
+ 6WEfM0zrV0/lz+O9Drbq/GrlfjzYye/Smlmr/ypM=
+Received: by mail-lf1-f45.google.com with SMTP id z15so870887lfh.13;
+ Thu, 13 Jun 2019 23:28:54 -0700 (PDT)
+X-Gm-Message-State: APjAAAUJBaW5UNI119k1tR5/GZ1lMEQYeHun286ZTZjHOlrf3Ue8YNBf
+ zu4/FKfe3zUVr4X1B9dYnOPkg7AvBFABEmpRn8I=
+X-Google-Smtp-Source: APXvYqzRXJBwqzBDJLXSnR6wciv/RpnSmt3qlpvlkhRIjxzRerMzGffvz309DswL+/k+vyTpR7UVS0Do0UtSVtBB5qM=
+X-Received: by 2002:ac2:4d1c:: with SMTP id r28mr8998948lfi.159.1560493733233; 
+ Thu, 13 Jun 2019 23:28:53 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190613162703.986-1-tiny.windzz@gmail.com>
+In-Reply-To: <20190613162703.986-1-tiny.windzz@gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Fri, 14 Jun 2019 08:28:42 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPfU+nB-_K3ZP9XBFp5bfk-ZvbfSEW96LD4MbtkyWfQZHg@mail.gmail.com>
+Message-ID: <CAJKOXPfU+nB-_K3ZP9XBFp5bfk-ZvbfSEW96LD4MbtkyWfQZHg@mail.gmail.com>
+Subject: Re: [PATCH 01/10] iommu/exynos: convert to SPDX license tags
+To: Yangtao Li <tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_201745_956353_DB69374E 
-X-CRM114-Status: GOOD (  15.59  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190613_232859_648971_8C46707A 
+X-CRM114-Status: UNSURE (   9.69  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.132 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,139 +84,34 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, a.zummo@towertech.it, alexandre.belloni@bootlin.com,
- tony.xie@rock-chips.com, huangtao@rock-chips.com, devicetree@vger.kernel.org,
- sboyd@kernel.org, zhangqing@rock-chips.com, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, xsf@rock-chips.com, linux-rockchip@lists.infradead.org,
- broonie@kernel.org, chenjh@rock-chips.com, lee.jones@linaro.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rtc@vger.kernel.org
-MIME-Version: 1.0
+Cc: "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ heiko@sntech.de, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, joro@8bytes.org, will.deacon@arm.com,
+ agross@kernel.org, iommu@lists.linux-foundation.org, jonathanh@nvidia.com,
+ david.brown@linaro.org, robdclark@gmail.com, kgene@kernel.org,
+ thierry.reding@gmail.com, linux-arm-msm@vger.kernel.org,
+ linux-tegra@vger.kernel.org, robin.murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-RK809 and RK817 are power management IC chips for multimedia products.
-most of their functions and registers are same, including the clkout
-funciton.
+On Thu, 13 Jun 2019 at 18:27, Yangtao Li <tiny.windzz@gmail.com> wrote:
+>
+> Updates license to use SPDX-License-Identifier.
+>
+> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+> ---
+>  drivers/iommu/exynos-iommu.c | 5 +----
+>  1 file changed, 1 insertion(+), 4 deletions(-)
 
-Signed-off-by: Tony Xie <tony.xie@rock-chips.com>
-Acked-by: Stephen Boyd <sboyd@kernel.org>
----
- drivers/clk/Kconfig     |  9 +++---
- drivers/clk/clk-rk808.c | 64 ++++++++++++++++++++++++++++++++++++++++-
- 2 files changed, 67 insertions(+), 6 deletions(-)
+Splitting this per driver is too much... it is not necessary. Such
+changes should be done in one patch per subsystem.
 
-diff --git a/drivers/clk/Kconfig b/drivers/clk/Kconfig
-index e5b2fe80eab4..532ab112fa8a 100644
---- a/drivers/clk/Kconfig
-+++ b/drivers/clk/Kconfig
-@@ -52,13 +52,12 @@ config COMMON_CLK_MAX9485
- 	  This driver supports Maxim 9485 Programmable Audio Clock Generator
- 
- config COMMON_CLK_RK808
--	tristate "Clock driver for RK805/RK808/RK818"
-+	tristate "Clock driver for RK805/RK808/RK809/RK817/RK818"
- 	depends on MFD_RK808
- 	---help---
--	  This driver supports RK805, RK808 and RK818 crystal oscillator clock. These
--	  multi-function devices have two fixed-rate oscillators,
--	  clocked at 32KHz each. Clkout1 is always on, Clkout2 can off
--	  by control register.
-+	  This driver supports RK805, RK809 and RK817, RK808 and RK818 crystal oscillator clock.
-+	  These multi-function devices have two fixed-rate oscillators, clocked at 32KHz each.
-+	  Clkout1 is always on, Clkout2 can off by control register.
- 
- config COMMON_CLK_HI655X
- 	tristate "Clock driver for Hi655x" if EXPERT
-diff --git a/drivers/clk/clk-rk808.c b/drivers/clk/clk-rk808.c
-index 8d90bdf5b946..75f2cf0dfc9f 100644
---- a/drivers/clk/clk-rk808.c
-+++ b/drivers/clk/clk-rk808.c
-@@ -96,6 +96,68 @@ of_clk_rk808_get(struct of_phandle_args *clkspec, void *data)
- 	return idx ? &rk808_clkout->clkout2_hw : &rk808_clkout->clkout1_hw;
- }
- 
-+static int rk817_clkout2_enable(struct clk_hw *hw, bool enable)
-+{
-+	struct rk808_clkout *rk808_clkout = container_of(hw,
-+							 struct rk808_clkout,
-+							 clkout2_hw);
-+	struct rk808 *rk808 = rk808_clkout->rk808;
-+
-+	return regmap_update_bits(rk808->regmap, RK817_SYS_CFG(1),
-+				  RK817_CLK32KOUT2_EN,
-+				  enable ? RK817_CLK32KOUT2_EN : 0);
-+}
-+
-+static int rk817_clkout2_prepare(struct clk_hw *hw)
-+{
-+	return rk817_clkout2_enable(hw, true);
-+}
-+
-+static void rk817_clkout2_unprepare(struct clk_hw *hw)
-+{
-+	rk817_clkout2_enable(hw, false);
-+}
-+
-+static int rk817_clkout2_is_prepared(struct clk_hw *hw)
-+{
-+	struct rk808_clkout *rk808_clkout = container_of(hw,
-+							 struct rk808_clkout,
-+							 clkout2_hw);
-+	struct rk808 *rk808 = rk808_clkout->rk808;
-+	unsigned int val;
-+
-+	int ret = regmap_read(rk808->regmap, RK817_SYS_CFG(1), &val);
-+
-+	if (ret < 0)
-+		return 0;
-+
-+	return (val & RK817_CLK32KOUT2_EN) ? 1 : 0;
-+}
-+
-+static const struct clk_ops rk817_clkout2_ops = {
-+	.prepare = rk817_clkout2_prepare,
-+	.unprepare = rk817_clkout2_unprepare,
-+	.is_prepared = rk817_clkout2_is_prepared,
-+	.recalc_rate = rk808_clkout_recalc_rate,
-+};
-+
-+static const struct clk_ops *rkpmic_get_ops(long variant)
-+{
-+	switch (variant) {
-+	case RK809_ID:
-+	case RK817_ID:
-+		return &rk817_clkout2_ops;
-+	/*
-+	 * For the default case, it match the following PMIC type.
-+	 * RK805_ID
-+	 * RK808_ID
-+	 * RK818_ID
-+	 */
-+	default:
-+		return &rk808_clkout2_ops;
-+	}
-+}
-+
- static int rk808_clkout_probe(struct platform_device *pdev)
- {
- 	struct rk808 *rk808 = dev_get_drvdata(pdev->dev.parent);
-@@ -127,7 +189,7 @@ static int rk808_clkout_probe(struct platform_device *pdev)
- 		return ret;
- 
- 	init.name = "rk808-clkout2";
--	init.ops = &rk808_clkout2_ops;
-+	init.ops = rkpmic_get_ops(rk808->variant);
- 	rk808_clkout->clkout2_hw.init = &init;
- 
- 	/* optional override of the clockname */
--- 
-2.17.1
-
-
-
+Best regards,
+Krzysztof
 
 _______________________________________________
 Linux-rockchip mailing list
