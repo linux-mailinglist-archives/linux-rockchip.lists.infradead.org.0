@@ -2,43 +2,43 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8089045944
-	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 11:50:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22AA545953
+	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 11:52:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cUaAZtlBJenSlRuTAOKDmqTE1czXBHZQmreYJhdmB/c=; b=aPCDYur3uZboCc
-	usgJuL4ynbTMotBl8KLkO2qIeYFha08GIGpmwF44Bi1Xs1yXKDfZt4VSlFPPOfzAPbLRD2b7XhJJo
-	3s8wIgEnNaP6RJuJVSLB4N6b9EOiVt7wDSCNCgHRvwBPe02ZKJ+Zy5lOWyfr4XlRDiTnOLB136+3k
-	+fNmRNT6MBBSSQtq5/0C/vnhQ0bqOzoQeNuXoO/WB/uxM2mRtkd3Agm7I60OqF5sWieqnPs4cJghh
-	OdN6S4Mk6yOU/FhuZlaMCdRRH0trAcbQYRP5LKyX3VRblDjPI8awa7hZRrGfG4HjNdLyQy/dIuXUO
-	1grEX0GqXwKGbVo/My+A==;
+	List-Owner; bh=5tQAaGQQYjLDi7vT7tcZT6inxsJbAZpAS0YqQ4JXjUc=; b=eW60Tdl0OjkO1q
+	h/edMCmUW+UbfYvspAU4x5LNIJLMiMUbHJ/+BqM/RuzG4xey2uuNbgKiBXGgSgVYf9oqul35z0rpG
+	RrjdlkbcoAj3eRg/seC/ANTR7AEc8LJ80nGRDktmNAYX6OviobCnvw1M3tUyaG7F7dMD2oYi7ZKm0
+	ixfGR4fBM7ZquDKEHh2Z/2w0KhnNhO2hAyk0+lMHfZCk7C3MwqLcijBkngeo+dWXg7LUiIp4qriQK
+	StPNO8ZUsmfXB45ltToAYBc5p0jIg0EDq+X9Ev0iudZRaTfXh32/LydORYTDwdCI7gEEN27mHDJD6
+	XDjNnDsClAzBJui5X4EA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbirB-0008Lp-9Y; Fri, 14 Jun 2019 09:50:49 +0000
+	id 1hbisr-0000Lj-SO; Fri, 14 Jun 2019 09:52:33 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbiqp-00089L-VQ; Fri, 14 Jun 2019 09:50:29 +0000
+ id 1hbiso-0000LG-0I; Fri, 14 Jun 2019 09:52:31 +0000
 Received: from we0305.dip.tu-dresden.de ([141.76.177.49] helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hbiqn-0004Fn-2b; Fri, 14 Jun 2019 11:50:25 +0200
+ id 1hbisk-0004H9-GQ; Fri, 14 Jun 2019 11:52:26 +0200
 From: Heiko Stuebner <heiko@sntech.de>
-To: "Leonidas P. Papadakos" <papadakospan@gmail.com>
-Subject: Re: [PATCH 1/2] clk: rockchip: add clock for the watchdog pclk on
- rk3328
-Date: Fri, 14 Jun 2019 11:50:24 +0200
-Message-ID: <5657669.4RvfzeBcXs@phil>
-In-Reply-To: <1559821340.1384.0@gmail.com>
-References: <20190605235714.22432-1-papadakospan@gmail.com>
- <3485393.4UdOu2YNQE@phil> <1559821340.1384.0@gmail.com>
+To: Jianqun Xu <jay.xu@rock-chips.com>
+Subject: Re: [PATCH v3 1/1] arm64: dts: rockchip: add core dtsi file for
+ RK3399Pro SoCs
+Date: Fri, 14 Jun 2019 11:52:25 +0200
+Message-ID: <3309819.J5kelTtX6q@phil>
+In-Reply-To: <20190530000848.28106-1-jay.xu@rock-chips.com>
+References: <20190529074752.19388-1-jay.xu@rock-chips.com>
+ <20190530000848.28106-1-jay.xu@rock-chips.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_025028_170696_E75476BD 
-X-CRM114-Status: GOOD (  24.69  )
+X-CRM114-CacheID: sfid-20190614_025230_196789_04890A08 
+X-CRM114-Status: GOOD (  14.87  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,127 +58,68 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- itdaniher@gmail.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, zhangzj@rock-chips.com,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ manivannan.sadhasivam@linaro.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Jianqun,
 
-Am Donnerstag, 6. Juni 2019, 13:42:20 CEST schrieb Leonidas P. Papadakos:
+Am Donnerstag, 30. Mai 2019, 02:08:48 CEST schrieb Jianqun Xu:
+> This patch adds core dtsi file for Rockchip RK3399Pro SoCs,
+> include rk3399.dtsi. Also enable pciei0/pcie_phy for AP to
+> talk to NPU part inside SoC.
 > 
-> Hi,
-> > 
-> > Am Donnerstag, 6. Juni 2019, 01:57:13 CEST schrieb Leonidas P. 
-> > Papadakos:
-> >>  From: <itdaniher@gmail.com>
-> > 
-> > Why is the From different from the Signed-off-by? Would also need a 
-> > full name.
-> > If the patch is from you, please just use the same From as for the 
-> > Signed-off-by.
-> > 
-> 
-> I mistakenly though this was the way to credit someone for a patch, but 
-> it seems to be different.
-> I'll Cc: the author of this patch
+> Signed-off-by: Jianqun Xu <jay.xu@rock-chips.com>
 
-Were you able yet to take a look at the clock-patches I Cc'ed you on
-and look at reworking your patch accrodingly?
-
+could you add the necessary pinctrl entry, as suggested by Manivannan?
 
 Thanks
 Heiko
 
+> ---
+> changes since v2:
+> - only enable pcie0 and pcie_phy nodes, thanks for Heiko and manivannan
 > 
-> >> 
-> >>  Following the discussion here:
-> >>  https://github.com/rockchip-linux/kernel/issues/123
-> >> 
-> >>  it can be seen that these are the changes needed to enable the use 
-> >> of the hardware watchdog in the rk3328 SoC.
-> >> 
-> >>  This is in line with past changes for the rk3288:
-> >>  
-> >> http://lists.infradead.org/pipermail/linux-rockchip/2015-January/002314.html
-> >> 
-> >>  Signed-off-by: Leonidas P. Papadakos <papadakospan@gmail.com>
-> >>  ---
-> >>   drivers/clk/rockchip/clk-rk3328.c      | 9 +++++++++
-> >>   include/dt-bindings/clock/rk3328-cru.h | 1 +
-> >>   2 files changed, 10 insertions(+)
-> >> 
-> >>  diff --git a/drivers/clk/rockchip/clk-rk3328.c 
-> >> b/drivers/clk/rockchip/clk-rk3328.c
-> >>  index 076b9777a..546ee0ab7 100644
-> >>  --- a/drivers/clk/rockchip/clk-rk3328.c
-> >>  +++ b/drivers/clk/rockchip/clk-rk3328.c
-> >>  @@ -876,6 +876,8 @@ static const char *const 
-> >> rk3328_critical_clocks[] __initconst = {
-> >> 
-> >>   static void __init rk3328_clk_init(struct device_node *np)
-> >>   {
-> >>  +	struct clk *clk;
-> >>  +
-> >>   	struct rockchip_clk_provider *ctx;
-> >>   	void __iomem *reg_base;
-> >> 
-> >>  @@ -892,6 +894,13 @@ static void __init rk3328_clk_init(struct 
-> >> device_node *np)
-> >>   		return;
-> >>   	}
-> >> 
-> >>  +	clk = clk_register_fixed_factor(NULL, "pclk_wdt", "pclk_bus", 0, 
-> >> 1, 1);
-> >>  +	if (IS_ERR(clk))
-> >>  +		pr_warn("%s: could not register clock pclk_wdt: %ld\n",
-> >>  +			__func__, PTR_ERR(clk));
-> >>  +	else
-> >>  +		rockchip_clk_add_lookup(ctx, clk, PCLK_WDT);
-> >>  +
-> > 
-> > I've just Cc'ed you on 2 patches adding a SGRF_GATE clock-type. Please
-> > use that as base for you rk3328-wdt-clock, so that we don't introduce 
-> > more
-> > boilderplate code.
-> > 
-> > 
-> >>   	rockchip_clk_register_plls(ctx, rk3328_pll_clks,
-> >>   				   ARRAY_SIZE(rk3328_pll_clks),
-> >>   				   RK3328_GRF_SOC_STATUS0);
-> > 
-> >>  diff --git a/include/dt-bindings/clock/rk3328-cru.h 
-> >> b/include/dt-bindings/clock/rk3328-cru.h
-> >>  index afb811340..555b4ff66 100644
-> >>  --- a/include/dt-bindings/clock/rk3328-cru.h
-> >>  +++ b/include/dt-bindings/clock/rk3328-cru.h
-> >>  @@ -164,6 +164,7 @@
-> >>   #define PCLK_DCF		233
-> >>   #define PCLK_SARADC		234
-> >>   #define PCLK_ACODECPHY		235
-> >>  +#define PCLK_WDT		236
-> >> 
-> >>   /* hclk gates */
-> >>   #define HCLK_PERI		308
-> > 
-> > please split the addition of the clock-id into a separate patch only 
-> > adding
-> > said id.
-> > 
-> > 
-> > Thanks
-> > Heiko
-> > 
+> changes since v1:
+> - remove dfi and dmc
 > 
-> I know less than him on this, but I want the feedback to be visible in 
-> the Cc:
+>  arch/arm64/boot/dts/rockchip/rk3399pro.dtsi | 22 +++++++++++++++++++++
+>  1 file changed, 22 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
 > 
-> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi b/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
+> new file mode 100644
+> index 000000000000..bb5ebf6608b9
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
+> @@ -0,0 +1,22 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +// Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd.
+> +
+> +#include "rk3399.dtsi"
+> +
+> +/ {
+> +	compatible = "rockchip,rk3399pro";
+> +};
+> +
+> +/* Default to enabled since AP talk to NPU part over pcie */
+> +&pcie_phy {
+> +	status = "okay";
+> +};
+> +
+> +/* Default to enabled since AP talk to NPU part over pcie */
+> +&pcie0 {
+> +	ep-gpios = <&gpio0 RK_PB4 GPIO_ACTIVE_HIGH>;
+> +	num-lanes = <4>;
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pcie_clkreqn_cpm>;
+> +	status = "okay";
+> +};
 > 
 
 
