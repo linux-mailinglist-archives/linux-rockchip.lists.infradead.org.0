@@ -2,42 +2,44 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BED8745ABE
-	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 12:42:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2545D45AD3
+	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 12:44:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/PRPswOtcWCBk33ad6637hrJgvEaOEkKCmmK9n+yPoU=; b=MPCn6uL88CPNL8
-	T8rTHXISNJBEW4N9fIG2C5fwsJWFl0361OHQkNXPaJFxCoxJiwvbSkpfj8xQqTsYgrru6ixRqdsJN
-	X5sdbw5Lvfjm71YPB1aj5mpfHrXvhJseiOU18EErd7xnG//HSONuTgGXMfzuG+L85GgoBrtLKUUbb
-	Laqhcs3RkNlkO2M8TWP3LH2IZhnp+VeBFEbd4P+zaOR27AgJ3xtjfjuimpVt4UQTVbROV9vJCN3at
-	0OF3IY3CrzRRPglPzjJi8jvlBhCUEFGuLFysvAJ6HN+fplAlJum2DMc1RY2TvzxvAT+w4PMR9NAyn
-	OkCNc6IjE6vzZpgsXYHA==;
+	List-Owner; bh=q5fBc7BcAP3hKZ4+Y4mkHIspiaV6g24KX/tuZHZVDWg=; b=PT+5JnEMJ9CscA
+	B56TUzYMEL5VqcPsaWD87kAUAYw1owDG/X8CPf4LcOVCYUKwxxMJl4PlyYZ/Up0jQmAYfm2Wue3Mf
+	ezAtrIpgI5zDDyd8YbDPb/WAO1qKoKuxzcf2Cqcsl6gzgEYyYBcLQ4Np0ExymuzdOYVRgZ9lYopPz
+	zJa6uCAEhR2+4KxltCKcvkJPcgvJQaCJnAYJWzJKvMks1B2veVyb3J2p9qkGjJizwKpgSNw+8idk8
+	/E2rXPq3jSYTMFrv4MWEbhBX/QVwZh83YNF0+zyFpaLP32+RkPs85MoxDjOYWaT8IcfC1NJ9wejnJ
+	l9tOlK7SmeEPGAPH3Ufg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbjeg-0000Fb-2z; Fri, 14 Jun 2019 10:41:58 +0000
+	id 1hbjh3-0001l9-VP; Fri, 14 Jun 2019 10:44:25 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbjcV-0005w9-Ph; Fri, 14 Jun 2019 10:39:48 +0000
+ id 1hbjgl-0001ab-Ho; Fri, 14 Jun 2019 10:44:08 +0000
 Received: from we0305.dip.tu-dresden.de ([141.76.177.49] helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hbjcK-0004XL-Mp; Fri, 14 Jun 2019 12:39:32 +0200
+ id 1hbjgh-0004ac-50; Fri, 14 Jun 2019 12:44:03 +0200
 From: Heiko Stuebner <heiko@sntech.de>
-To: Douglas Anderson <dianders@chromium.org>,
- Thierry Reding <thierry.reding@gmail.com>
-Subject: Re: [PATCH v5 0/7] drm/panel: simple: Add mode support to devicetree
-Date: Fri, 14 Jun 2019 12:39:31 +0200
-Message-ID: <1584725.WvTV0KElQL@phil>
-In-Reply-To: <20190401171724.215780-1-dianders@chromium.org>
-References: <20190401171724.215780-1-dianders@chromium.org>
+To: Elaine Zhang <zhangqing@rock-chips.com>
+Subject: Re: [PATCH v2 3/6] clk: rockchip: add a COMPOSITE_DIV_OFFSET
+ clock-type
+Date: Fri, 14 Jun 2019 12:44:02 +0200
+Message-ID: <130046083.dVx6RxQuTH@phil>
+In-Reply-To: <1557991736-13580-4-git-send-email-zhangqing@rock-chips.com>
+References: <1557991736-13580-1-git-send-email-zhangqing@rock-chips.com>
+ <1557991736-13580-4-git-send-email-zhangqing@rock-chips.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_033944_020460_F994FC8A 
-X-CRM114-Status: GOOD (  23.65  )
+X-CRM114-CacheID: sfid-20190614_034407_774233_42B1B9D6 
+X-CRM114-Status: UNSURE (   8.92  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -57,113 +59,29 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- David Airlie <airlied@linux.ie>, Viresh Kumar <viresh.kumar@linaro.org>,
- Brian Norris <briannorris@chromium.org>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Sean Paul <seanpaul@chromium.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>,
- Enric =?ISO-8859-1?Q?Balletb=F2?= <enric.balletbo@collabora.com>,
- Klaus Goger <klaus.goger@theobroma-systems.com>,
- Ezequiel Garcia <ezequiel@collabora.com>, mka@chromium.org,
- linux-arm-kernel@lists.infradead.org
+Cc: huangtao@rock-chips.com, xxx@rock-chips.com, xf@rock-chips.com,
+ sboyd@kernel.org, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Finley Xiao <finley.xiao@rock-chips.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Montag, 1. April 2019, 19:17:17 CEST schrieb Douglas Anderson:
-> I'm reviving Sean Paul's old patchset to get mode support in device
-> tree.  The cover letter for his v3 is at:
-> https://lists.freedesktop.org/archives/dri-devel/2018-February/165162.html
+Am Donnerstag, 16. Mai 2019, 09:28:53 CEST schrieb Elaine Zhang:
+> From: Finley Xiao <finley.xiao@rock-chips.com>
 > 
-> No code is different between v4 and v5, just commit messages and text
-> in the bindings.
+> The div offset of some clocks are different from their mux offset
+> and the COMPOSITE clock-type require that div and mux offset are
+> the same, so add a new COMPOSITE_DIV_OFFSET clock-type to handle that.
 > 
-> I've pulled together the patches that didn't land in v3, addressed
-> outstanding feedback, and reposted.  Atop them I've added patches for
-> rk3288-veyron-chromebook (used for jaq, jerry, mighty, speedy) and
-> rk3288-veryon-minnie.
-> 
-> Please let me know how they look.
-> 
-> In general I have added people to the whole series who I think would
-> like the whole series and then let get_maintainer pick extra people it
-> thinks are relevant to each individual patch.  If I see you respond to
-> any of the patches in the series, though, I'll add you to the whole
-> series Cc list next time.
+> Signed-off-by: Finley Xiao <finley.xiao@rock-chips.com>
+> Signed-off-by: Elaine Zhang <zhangqing@rock-chips.com>
 
-sadly it looks like the panel-simple parts haven't made it into
-drm-misc yet and the conversation on patch 1/7 seems to have stalled
-after Doug's replies.
-
-Thierry, do you have an opinion on these?
+already applied that one from the v1 series.
 
 
-Thanks
 Heiko
-
-> Changes in v5:
-> - Removed bit about OS may ignore (Rob/Ezequiel)
-> - Added Heiko's Tested-by
-> - It's not just jerry, it's most rk3288 Chromebooks (Heiko)
-> 
-> Changes in v4:
-> - Simplify desc. for when override should be used (Thierry/Laurent)
-> - Removed Rob H review since it's been a year and wording changed
-> - Don't add mode from timing if override was specified (Thierry)
-> - Add warning if timing and fixed mode was specified (Thierry)
-> - Don't add fixed mode if timing was specified (Thierry)
-> - Refactor/rename a bit to avoid extra indentation from "if" tests
-> - i should be unsigned (Thierry)
-> - Add annoying WARN_ONs for some cases (Thierry)
-> - Simplify 'No display_timing found' handling (Thierry)
-> - Rename to panel_simple_parse_override_mode() (Thierry)
-> - Rebase to top of Heiko's tree
-> - Converted changelog to after-the-cut for non-DRM change.
-> - display_timing for Innolux n116bge new for v4.
-> - display_timing for AUO b101ean01 new for v4.
-> - rk3288-veyron-jerry patch new for v4.
-> - rk3288-veyron-minnie patch new for v4.
-> 
-> Changes in v3:
-> - Go back to using the timing subnode directly, but rename to
->   panel-timing (Rob)
-> - No longer parse display-timings subnode, use panel-timing (Rob)
-> - Unwrap the timing from display-timings and rename panel-timing (Rob)
-> 
-> Changes in v2:
-> - Split out the binding into a new patch (Rob)
-> - display-timings is a new section (Rob)
-> - Use the full display-timings subnode instead of picking the timing
->   out (Rob/Thierry)
-> - Parse the full display-timings node (using the native-mode) (Rob)
-> - Wrap the timing in display-timings node to match binding (Rob/Thierry)
-> 
-> Douglas Anderson (4):
->   drm/panel: simple: Use display_timing for Innolux n116bge
->   drm/panel: simple: Use display_timing for AUO b101ean01
->   ARM: dts: rockchip: Specify rk3288-veyron-chromebook's display timings
->   ARM: dts: rockchip: Specify rk3288-veyron-minnie's display timings
-> 
-> Sean Paul (3):
->   dt-bindings: Add panel-timing subnode to simple-panel
->   drm/panel: simple: Add ability to override typical timing
->   arm64: dts: rockchip: Specify override mode for kevin panel
-> 
->  .../bindings/display/panel/simple-panel.txt   |  22 +++
->  .../boot/dts/rk3288-veyron-chromebook.dtsi    |  14 ++
->  arch/arm/boot/dts/rk3288-veyron-minnie.dts    |  14 ++
->  .../boot/dts/rockchip/rk3399-gru-kevin.dts    |  14 ++
->  drivers/gpu/drm/panel/panel-simple.c          | 171 ++++++++++++++----
->  5 files changed, 203 insertions(+), 32 deletions(-)
-> 
-> 
-
-
 
 
 
