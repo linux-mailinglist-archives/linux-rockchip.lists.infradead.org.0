@@ -2,71 +2,90 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47223469EE
-	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 22:36:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E36E46B2E
+	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 22:43:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xJnXY8SiYvflgmt4dG82WnYuIUC3AMG1gvj6vFc5zy4=; b=guixKrS9ELgLvT
-	ahNSFCNaWLi6XsQtxTkOuALcPmf/SJsvJlI1iLLMkfdkufud3j3qP+Ley1n+1B/y2PxyqJcCBYNmO
-	/0G53qg7vVK09GhCoF7xFeLmzctq2s5lA+kWUiy1c9NsB4KtfjJmZuCo1BJ5ALcc7DC3Tof62Mv5H
-	+TbESp4rNJE/T1MXoUWjXLWSuXrcSvmAMPTr0DHZiffBzw4rp2CVRzNReuNMwl54eFZ/2z2zDx/YU
-	irzTOmujB/K0GFSOAixvwWkzoE2+XU5JpufAgOdC+dt5lMLEQOi5AVuCKcaKuCX1hBIfvCQEHXy/b
-	fLZxmMbilH+Uf5EiYwSg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=F9GgLZf4zYvQtQL/r5O2y4uiJ/rFZGquP2q1tBFN6y8=; b=oFGVi+FIjELyhdhRW/izZbXoT
+	eirOnYVN8YBzV3KlzrrIs06/CXnAF/jxKv1lsYjg3RTKTcAhxZaDwI01sjRSynvOatYsIj6nGLG/4
+	ksrudMLPrveYCzO3ZyPLnSCYoQbp6XsJScYn+ht/VBo1W3f3MtFoaOvUX2eNL6cCgCk25xb6w6ULZ
+	Cr5AVg/nOi8JQr5TJ6S1Xx5snVADO7JKixvfiYJlR6HGegdxq0Xzw5a6KdMv5psSORR5TLXM9GHcv
+	U8gKGAAlSCkXBDPfFdJGjrPinqsrdvAS7ZN9VJhEpFCE35coty3dnzhaTlStMG0MVYz2h/Uo3fOvB
+	DXK3B3C8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbsvv-0003XM-EG; Fri, 14 Jun 2019 20:36:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hbt2r-0002gf-1I; Fri, 14 Jun 2019 20:43:33 +0000
+Received: from outgoing2.flk.host-h.net ([188.40.0.84])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbsvj-0003MT-6h; Fri, 14 Jun 2019 20:36:12 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 959DA217F9;
- Fri, 14 Jun 2019 20:36:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560544570;
- bh=RQFeY7ClB3qfZKUqanGUTFvCrvIQv9xp/N5O5ZqmrGM=;
- h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
- b=fr/TmeQBEPKbLUgkDfSTEhkYS/y4YHrr57CLOtIcGW9sNuajAET5wxTQr07bnOLMh
- 7hE0zaI6D/yrtKuLXwSnBM8hQhS5xdVHThZ7fMOEmZ7C8C+zVH7d80njyK4SeX5nv0
- p/a54K9i3XcPK0xQHnK47DZ6q/7T0QjynQ0+X/6Q=
+ id 1hbsxt-00054W-47; Fri, 14 Jun 2019 20:38:28 +0000
+Received: from www31.flk1.host-h.net ([188.40.1.173])
+ by antispam3-flk1.host-h.net with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.89)
+ (envelope-from <justin.swartz@risingedge.co.za>)
+ id 1hbsxl-0002tg-2j; Fri, 14 Jun 2019 22:38:18 +0200
+Received: from roundcubeweb1.flk1.host-h.net ([138.201.244.33]
+ helo=webmail9.konsoleh.co.za)
+ by www31.flk1.host-h.net with esmtpa (Exim 4.84_2)
+ (envelope-from <justin.swartz@risingedge.co.za>)
+ id 1hbsxj-0003P9-PP; Fri, 14 Jun 2019 22:38:15 +0200
 MIME-Version: 1.0
-In-Reply-To: <13456600.FWPkgmLa5g@phil>
+Date: Fri, 14 Jun 2019 22:38:15 +0200
+From: Justin Swartz <justin.swartz@risingedge.co.za>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: Re: [PATCH 1/4] clk: rockchip: add clock id for hdmi_phy special clock
+Organization: Rising Edge Consulting (Pty) Ltd.
+In-Reply-To: <20190614165454.13743-2-heiko@sntech.de>
 References: <20190614165454.13743-1-heiko@sntech.de>
- <20190614174526.6F805217D6@mail.kernel.org>
- <19cea8f7c279ef6efb12d1ec0822767d@risingedge.co.za>
- <13456600.FWPkgmLa5g@phil>
-To: Heiko Stuebner <heiko@sntech.de>,
- Justin Swartz <justin.swartz@risingedge.co.za>
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH 3/4] ARM: dts: rockchip: add display nodes for rk322x
-User-Agent: alot/0.8.1
-Date: Fri, 14 Jun 2019 13:36:09 -0700
-Message-Id: <20190614203610.959DA217F9@mail.kernel.org>
+ <20190614165454.13743-2-heiko@sntech.de>
+Message-ID: <382c742ddf06f45279dfef7caab75a5a@risingedge.co.za>
+X-Sender: justin.swartz@risingedge.co.za
+User-Agent: Roundcube Webmail/1.2.3
+X-Authenticated-Sender: justin.swartz@risingedge.co.za
+X-Virus-Scanned: Clear (ClamAV 0.100.3/25480/Fri Jun 14 10:12:45 2019)
+X-Originating-IP: 188.40.1.173
+X-SpamExperts-Domain: risingedge.co.za
+X-SpamExperts-Username: 
+Authentication-Results: host-h.net;
+ auth=pass (login) smtp.auth=@risingedge.co.za
+X-SpamExperts-Outgoing-Class: ham
+X-SpamExperts-Outgoing-Evidence: Combined (0.05)
+X-Recommended-Action: accept
+X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0aEcKiGOen0TgGQo14QTNxSpSDasLI4SayDByyq9LIhV5Xj/ft6p+kKI
+ sYYhw0QvmkTNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3KUmcp6GNCANpsOs1pLsoiy8vk
+ Yif9Y8QwQxoiDkyGuSBq6drjOd8RXU9rpWUqbLsd7dmzP4jIMp4tG+X3m7xUc4cjODdb62TNhfI9
+ kPxcyjsNhcVYBO0pL7VisZIMkjhNLkID7ke+4Wh/LXVgR18bX3dXPd2mu86jxvGTfZNouT6f3He7
+ jw4SoVhmTJ/3eP9OQPY+jLdevqH2zzNl+60f1DamaseVH/LT3GKzQlTd4mk8fFolEmEBOeC5esPv
+ yahzWl78Q18OeOfsy4h7jF1Uv9lnibl3vcBqVmvQB4A18acPHDPH9uRldjHvRJlDjprKmH6eQvWp
+ DWTULXV1jJ5bfceEJeNruLKdflVX7oFNsdHVhnpudkCyIg6Nob+f0OfCg2lBMt3xu9nbye2CdJLN
+ jSo1M+TSg3TNDI3/M5s9/ot3ko3rrae7IifWc6pL546YUVQwaYLh3di89W/ji5iahyCgJgyv93tC
+ 61cbiLYl3RCqADG/Ryndzp4OfbK7c6EqHwlqvaI+zok/BsKQK4gft4+8sY8CNaDDoRMm0CGce/eR
+ NtlfJySsZ2eS9qGTagUdlCnL4IjEaJi/Te03jgZkriNJs+0XIAXn1Ie+HcHl8lOi8gnN+VQO0b1v
+ xxohqsS9Q4vjfJZCa/7ru+hcV3qy2r6xT6/ToAAJ7pkQGcMvuOIaxlHt0+FCc1pvcmHgLAF+EhY3
+ a9HVLrEqCQymRpkPmbqFsDBc6VdTgr76BrtpImWjsA4Z+r84QcqrGrinA6acvW9Z8Onxsgw0uEaI
+ mvOM0hpiAOoh+1qN2rbgvDZlJzPY/RdmiK0Zdwcq7WqJxp4Gp2qnVW06BkjrfxpqPrbH09M+m4Wp
+ RRDP6YzwkAPgQJbWosiwuQOYUcnYOSO7mW1OBrz96gclqEeyvm/wFZzBrz5TU93rptoErgu95Z0s
+ mAbksdfC7bnGrSHMbqCXqyR2ZuM7jUXIESohoO51xWmU8epLuQ6AlI64+tPy8xM9qWPEX9Stl4rj
+ MDcWV8dcwmItP+eLAc3RVz4KjqXB2lFLCYn9TDvfbJbimDcSbTO4QszeNHk15VolAGHS5rCXQKDy
+ G9IFICpfYwbtmVFtzX/1jFBp21i62SsUn3KsaNY+4eSGHfTOXf670dxTbCnoHvieMS+4ayUpOtEh
+ dxekWDmK9g==
+X-Report-Abuse-To: spam@antispammaster.host-h.net
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_133611_261246_6ADA0B51 
-X-CRM114-Status: GOOD (  18.21  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190614_133825_173212_DAEE1E8F 
+X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [188.40.0.84 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,64 +98,38 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, mturquette@baylibre.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-clk@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: sboyd@kernel.org, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Quoting Heiko Stuebner (2019-06-14 12:33:12)
-> Am Freitag, 14. Juni 2019, 20:32:35 CEST schrieb Justin Swartz:
-> > On 2019-06-14 19:45, Stephen Boyd wrote:
-> > >> diff --git a/arch/arm/boot/dts/rk322x.dtsi 
-> > >> b/arch/arm/boot/dts/rk322x.dtsi
-> > >> index da102fff96a2..148f9b5157ea 100644
-> > >> --- a/arch/arm/boot/dts/rk322x.dtsi
-> > >> +++ b/arch/arm/boot/dts/rk322x.dtsi
-> > >> @@ -143,6 +143,11 @@
-> > >> #clock-cells = <0>;
-> > >> };
-> > >> 
-> > >> +       display_subsystem: display-subsystem {
-> > >> +               compatible = "rockchip,display-subsystem";
-> > >> +               ports = <&vop_out>;
-> > >> +       };
-> > >> +
-> > > 
-> > > What is this? It doesn't have a reg property so it looks like a virtual
-> > > device. Why is it in DT?
-> > 
-> > This is a virtual device.
-> > 
-> > I assumed it would be acceptable to it find in a device tree due to 
-> > binding documentation, 
-> > "Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt, 
-> > which states:
-> > 
-> > <quote>
-> > The Rockchip DRM master device is a virtual device needed to list all
-> > vop devices or other display interface nodes that comprise the
-> > graphics subsystem.
-> > </quote>
-> > 
-> > Without the "display_subsystem" device node, the HDMI PHY and 
-> > rockchipdrmfb frame buffer device are not initialized.
-> > 
-> > Perhaps I should have included this in my commit message? :)
-> 
-> As Justin said, that is very much common as the root of the components
-> that make up the drm device and pretty much common in a lot of devicetrees
-> for the last 5 years and longer ;-) .
-> 
-> Also gpio-keys also don't have a reg property ;-) .
-> 
+On 2019-06-14 18:54, Heiko Stuebner wrote:
 
-Do you have a SoC node? If so, this virtual device should live in the
-root, away from the nodes that have reg properties and are thus in the
-SoC node.
+> Add the needed clock id to enable clock settings from devicetree.
+> 
+> Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+> ---
+> include/dt-bindings/clock/rk3228-cru.h | 1 +
+> 1 file changed, 1 insertion(+)
+> 
+> diff --git a/include/dt-bindings/clock/rk3228-cru.h 
+> b/include/dt-bindings/clock/rk3228-cru.h
+> index 3b245e3df8da..de550ea56eeb 100644
+> --- a/include/dt-bindings/clock/rk3228-cru.h
+> +++ b/include/dt-bindings/clock/rk3228-cru.h
+> @@ -64,6 +64,7 @@
+> #define SCLK_WIFI        141
+> #define SCLK_OTGPHY0        142
+> #define SCLK_OTGPHY1        143
+> +#define SCLK_HDMI_PHY        144
+> 
+> /* dclk gates */
+> #define DCLK_VOP        190
 
+Tested-by: Justin Swartz <justin.swartz@risingedge.co.za>
 
 _______________________________________________
 Linux-rockchip mailing list
