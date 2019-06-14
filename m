@@ -2,74 +2,146 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08EE845C34
-	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 14:10:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC69845D69
+	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 15:04:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t1cch7A+Szb+0PlOVLBdUUPbxN7z26P/XfukLB6fbUM=; b=Qpm/JIqJLHcqnb
-	dnT17YXWBUdayJasrJpxsDFN6xEMDJnRcFiz2+Kbea9q1z/0ua9OK+C2+jst1usgSmqhR6VGHfPxb
-	J75ECsteiLsUvF2UynvWWBSuvFTCPDh6dLaZOlR+J04tq3iBwJnVfojUmLJm2s7VNJ/gV4vtSPzwD
-	JPvJ2M2ZJczk9TtH2mkN0D3FJiw0YfUCODccj2xs3tn1Yy9tiwC+1r0QCo1vF92mK7tSZrz+kF8Ik
-	ooK3nobExOGjHARs4WrbA0ZHxoVAQpym67bOdxEs7mnhp1wXuBghII4sn8XJidTJ0Uxrs6PMykCLg
-	/LAQ5l8wI4W/dtmrREJg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Du6iVXOPkVObCx+wYI4rSqtBTnQ6Irr8hKdLLG8iNg0=; b=PkdLKrwNRxwwQs
+	5Sxd1l7Vdap2/XrX7ECfvwFT8w/426GzHvNOyht1ew6Usc0S7odx3msrC44hdDwcj0+6fKz4GKODG
+	FRVEC/LNFMFGWPyJK0NDQK8ofnhVkBC9JDRuR7kPIQ/Dt/NwEDSVqgpdIeXGIkxblPq0MkvK61ze5
+	M/i3NivZXx3aBBfZRok0M5bUUx2YUMk0ZoDT3Gl2NvvicJdZFNsEdsmloEduMiozGHoJHsclPg3xI
+	3mZ8XFKG8no0wR171Emm9u7hzz9Ggq/amHIeo2VnUreUNQCvKU3+e/bSLQuYgdCf18CYr1kco6IaQ
+	OrH9hvz+MGqhz5hkPFHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbl2I-0002SR-Gl; Fri, 14 Jun 2019 12:10:26 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1hbls9-0007kw-CP; Fri, 14 Jun 2019 13:04:01 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbl2F-0002Rl-A1
- for linux-rockchip@lists.infradead.org; Fri, 14 Jun 2019 12:10:24 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id n2so1605918vso.6
- for <linux-rockchip@lists.infradead.org>; Fri, 14 Jun 2019 05:10:23 -0700 (PDT)
+ id 1hbls4-0007kD-Ru
+ for linux-rockchip@lists.infradead.org; Fri, 14 Jun 2019 13:03:58 +0000
+Received: by mail-wr1-x441.google.com with SMTP id x4so2463124wrt.6
+ for <linux-rockchip@lists.infradead.org>; Fri, 14 Jun 2019 06:03:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=F5D+HakwAE2WgxfHyzl83ZwTB437sX3wIDlJ8qrfryI=;
- b=igk9dt/vAQdzxT8QzdZI/Ievysa9xK3WPDJK4vcC3mDYTCNmuMk9blJgU6OL9Yc0dK
- Tio9BFMzxl///10xMQOIVDRbhF/nM/Hlu2UzObSKzWbdltAQYn565CyrftqwwoLEd33B
- Cr7ROv4Q0dHUiigBi2fHNGkoZUZUg1UIePaijaE5FoQNP4Rj7BRVnnrvi3b8R3WX/hJu
- CM8fh8LGVg8luPx2wjcpony8vE0jjzt/t5njqGuSo/mVk/E4Zw+RG33ExdPs2KeVtCjq
- cOiCldbH6KD71Pzci41unZHGuT1+Ngh7l43T59JmGfcQNXWayyQYrKADlRuNeU7nV5CB
- 2Apg==
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=LsSlDp/7P2gKHSobW4kAiT5KQveExkz9spvrJMOu8vo=;
+ b=FIaY2gVV7TlZhW/J9D5Zo1kBIjh9a5ex2aH7GX315wkyNDa5ADeR6rzNKa9mRQt8OS
+ VjDK3t0Gkd7WPkERvxQLhLYOki1P6BKM9stQH7prGv1jEp8n1TKDND2p4vi6qldeVCPo
+ OEOr5nh2VFBKYhSPWU3ZWFxPMJ3y8ZM0BiRpqZLJ94qqpT2//TgvD151/XByxHlwHwkQ
+ pp+7MlBJDG3lBf6iGkKD/5gBr1FphR02senAcSGmT+WLzpJF+NhoMfZ1VJFGP5gifleS
+ iy1SFLKF1peS3roohAO269sXUZj/4p1wHU+C1Bdg5cSJOty5GXzgSGhr91bZT8tdXpEt
+ 9VPg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=F5D+HakwAE2WgxfHyzl83ZwTB437sX3wIDlJ8qrfryI=;
- b=Mcait6OkhPY0Xbjb83/7G3Y+nJ79PotLcmRdkdo1PoyvNCk1v9F176IgPdX7+fD2+l
- fk948C5muA2g0RGZKQNxPo+UGyWolDro2E5ImVD7BhHEZ5ju0XPWsIBaGY1w0540PRrY
- 0m3034EobIqUQAgm27nFnxIKDm5VRiB62YcUVR3Tl0xK4U7KAEL8RUI0mzFvEN4NXUhx
- LxkYI4wtTWGzZ39S4vKNA5843OtSPok5QSUJmd6lwaz4lAZfOTYXeE39wd00xPXEmoDf
- I7XWCo7t7aMcAchtobNWGKq4LXkfowKzDwVrhPyKRu63tAuvmlrYkJ1RkUv+k/Q0lqOg
- nr+g==
-X-Gm-Message-State: APjAAAWh4WeNNTrMx6ag5gpygjuM7hqQVO/twKqFbMxWJ/B7DfhbyIiE
- dE7/EBPV3WSegrmM6qeXRLav5r7y4hjj4MCYEMQCFg==
-X-Google-Smtp-Source: APXvYqydln8EpljbWUJIef2R+juyAWV3U5n+26y/5MI0AqXoz3GwtqMW3kyvstIYiC/7nRtirT+2WiUXP5SR66PbMWA=
-X-Received: by 2002:a67:ed8b:: with SMTP id d11mr52752594vsp.35.1560514222446; 
- Fri, 14 Jun 2019 05:10:22 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=LsSlDp/7P2gKHSobW4kAiT5KQveExkz9spvrJMOu8vo=;
+ b=pUTJ5mlFDfUja+NuxBw2QT6+qeBawrm9rb4Nvq1ifMJhKCetcYokV3n70JLtgzVXJa
+ wt4K6i1sx2Pka0ujh0fz9QG3qNkDiZvV8iwZl9IRfje8GXELg2W8V2pPH04v6LtkniVC
+ +RmZBIe4kUHiZX2hZKlpndH4kf2lOB95PEchdPyrE/+H94QfUviDz6E6FPdJgkPUn505
+ MtUnVdMpb/D1ZHXoG43TzP03o2fZAbir3Y/utSdBL0MY0xCGtyay+tvpKyfcUTcdRqmz
+ gbcmjwrfDM8o5F045h8Ugrgft0TBN+ZnLUUIXRqaTMdKrjSNZ84JY0NvpKq/mdtHWjeU
+ KIIw==
+X-Gm-Message-State: APjAAAWwj7sjG7HTUdwa/OtXt/1e5cdb4ldixxktTP2DMGR+Sywz+ARr
+ nhmS4BivK5wuxNCRRiBxqXTBpWxbM2Q=
+X-Google-Smtp-Source: APXvYqzVJZpzCns4PqkC9Ov5lZR6QhtdqSO6rCsOx+so4AeGO/eIwtWZjCVz6K1K/sXiogq5T3uHwQ==
+X-Received: by 2002:a5d:6ad2:: with SMTP id u18mr14244915wrw.63.1560517435052; 
+ Fri, 14 Jun 2019 06:03:55 -0700 (PDT)
+Received: from [192.168.0.41] (sju31-1-78-210-255-2.fbx.proxad.net.
+ [78.210.255.2])
+ by smtp.googlemail.com with ESMTPSA id h90sm7424557wrh.15.2019.06.14.06.03.53
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 14 Jun 2019 06:03:54 -0700 (PDT)
+Subject: Re: [PATCH 1/2] arm64: dts: rockchip: Fix multiple thermal zones
+ conflict in rk3399.dtsi
+To: Heiko Stuebner <heiko@sntech.de>
+References: <20190604165802.7338-1-daniel.lezcano@linaro.org>
+ <5188064.YWmxIpmbGp@phil>
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+Openpgp: preference=signencrypt
+Autocrypt: addr=daniel.lezcano@linaro.org; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <55b9018e-672e-522b-d0a0-c5655be0f353@linaro.org>
+Date: Fri, 14 Jun 2019 15:03:52 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <20190613234153.59309-1-dianders@chromium.org>
- <20190613234153.59309-5-dianders@chromium.org>
-In-Reply-To: <20190613234153.59309-5-dianders@chromium.org>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Fri, 14 Jun 2019 14:09:45 +0200
-Message-ID: <CAPDyKFrJ4+zn7Ak0tYHkBfXUtH3N7erb5R7Q+hgugchZmCRGrw@mail.gmail.com>
-Subject: Re: [PATCH v4 4/5] mmc: core: Add sdio_retune_hold_now() and
- sdio_retune_release()
-To: Douglas Anderson <dianders@chromium.org>
+In-Reply-To: <5188064.YWmxIpmbGp@phil>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_051023_352983_A135CEFB 
-X-CRM114-Status: GOOD (  19.43  )
+X-CRM114-CacheID: sfid-20190614_060356_914556_84BACEED 
+X-CRM114-Status: GOOD (  19.29  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -92,133 +164,73 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Madhan Mohan R <madhanmohan.r@cypress.com>,
- brcm80211-dev-list.pdl@broadcom.com,
- Arend van Spriel <arend.vanspriel@broadcom.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Avri Altman <avri.altman@wdc.com>, netdev@vger.kernel.org,
- Chi-Hsien Lin <chi-hsien.lin@cypress.com>,
- Brian Norris <briannorris@chromium.org>,
- linux-wireless <linux-wireless@vger.kernel.org>,
- Double Lo <double.lo@cypress.com>, Adrian Hunter <adrian.hunter@intel.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Matthias Kaehlcke <mka@chromium.org>, Naveen Gupta <naveen.gupta@cypress.com>,
- Wright Feng <wright.feng@cypress.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, brcm80211-dev-list@cypress.com,
- Kalle Valo <kvalo@codeaurora.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Emil Renner Berthing <kernel@esmil.dk>,
+ "open list:ARM/Rockchip SoC support" <linux-rockchip@lists.infradead.org>,
+ Tony Xie <tony.xie@rock-chips.com>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Randy Li <ayaka@soulik.info>, linux-kernel@vger.kernel.org,
+ Vicente Bergas <vicencb@gmail.com>, dianders@chromium.org, edubezval@gmail.com,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Klaus Goger <klaus.goger@theobroma-systems.com>,
+ manivannan.sadhasivam@linaro.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>, robin.murphy@arm.com,
+ "moderated list:ARM/Rockchip SoC support"
+ <linux-arm-kernel@lists.infradead.org>,
+ Christoph Muellner <christoph.muellner@theobroma-systems.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, 14 Jun 2019 at 01:42, Douglas Anderson <dianders@chromium.org> wrote:
->
-> We want SDIO drivers to be able to temporarily stop retuning when the
-> driver knows that the SDIO card is not in a state where retuning will
-> work (maybe because the card is asleep).  We'll move the relevant
-> functions to a place where drivers can call them.
->
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
-
-This looks good to me.
-
-BTW, seems like this series is best funneled via my mmc tree, no? In
-such case, I need acks for the brcmfmac driver patches.
-
-Kind regards
-Uffe
-
-
-
-
-> ---
->
-> Changes in v4:
-> - Moved retune hold/release to SDIO API (Adrian).
->
-> Changes in v3:
-> - ("mmc: core: Export mmc_retune_hold_now() mmc_retune_release()") new for v3.
->
-> Changes in v2: None
->
->  drivers/mmc/core/sdio_io.c    | 40 +++++++++++++++++++++++++++++++++++
->  include/linux/mmc/sdio_func.h |  3 +++
->  2 files changed, 43 insertions(+)
->
-> diff --git a/drivers/mmc/core/sdio_io.c b/drivers/mmc/core/sdio_io.c
-> index f822a9630b0e..1b6fe737bd72 100644
-> --- a/drivers/mmc/core/sdio_io.c
-> +++ b/drivers/mmc/core/sdio_io.c
-> @@ -15,6 +15,7 @@
->  #include "sdio_ops.h"
->  #include "core.h"
->  #include "card.h"
-> +#include "host.h"
->
->  /**
->   *     sdio_claim_host - exclusively claim a bus for a certain SDIO function
-> @@ -770,3 +771,42 @@ void sdio_retune_crc_enable(struct sdio_func *func)
->         func->card->host->retune_crc_disable = false;
->  }
->  EXPORT_SYMBOL_GPL(sdio_retune_crc_enable);
-> +
-> +/**
-> + *     sdio_retune_hold_now - start deferring retuning requests till release
-> + *     @func: SDIO function attached to host
-> + *
-> + *     This function can be called if it's currently a bad time to do
-> + *     a retune of the SDIO card.  Retune requests made during this time
-> + *     will be held and we'll actually do the retune sometime after the
-> + *     release.
-> + *
-> + *     This function could be useful if an SDIO card is in a power state
-> + *     where it can respond to a small subset of commands that doesn't
-> + *     include the retuning command.  Care should be taken when using
-> + *     this function since (presumably) the retuning request we might be
-> + *     deferring was made for a good reason.
-> + *
-> + *     This function should be called while the host is claimed.
-> + */
-> +void sdio_retune_hold_now(struct sdio_func *func)
-> +{
-> +       mmc_retune_hold_now(func->card->host);
-> +}
-> +EXPORT_SYMBOL_GPL(sdio_retune_hold_now);
-> +
-> +/**
-> + *     sdio_retune_release - signal that it's OK to retune now
-> + *     @func: SDIO function attached to host
-> + *
-> + *     This is the complement to sdio_retune_hold_now().  Calling this
-> + *     function won't make a retune happen right away but will allow
-> + *     them to be scheduled normally.
-> + *
-> + *     This function should be called while the host is claimed.
-> + */
-> +void sdio_retune_release(struct sdio_func *func)
-> +{
-> +       mmc_retune_release(func->card->host);
-> +}
-> +EXPORT_SYMBOL_GPL(sdio_retune_release);
-> diff --git a/include/linux/mmc/sdio_func.h b/include/linux/mmc/sdio_func.h
-> index 4820e6d09dac..5a177f7a83c3 100644
-> --- a/include/linux/mmc/sdio_func.h
-> +++ b/include/linux/mmc/sdio_func.h
-> @@ -170,4 +170,7 @@ extern int sdio_set_host_pm_flags(struct sdio_func *func, mmc_pm_flag_t flags);
->  extern void sdio_retune_crc_disable(struct sdio_func *func);
->  extern void sdio_retune_crc_enable(struct sdio_func *func);
->
-> +extern void sdio_retune_hold_now(struct sdio_func *func);
-> +extern void sdio_retune_release(struct sdio_func *func);
-> +
->  #endif /* LINUX_MMC_SDIO_FUNC_H */
-> --
-> 2.22.0.rc2.383.gf4fbbf30c2-goog
->
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gMTQvMDYvMjAxOSAxMTozNSwgSGVpa28gU3R1ZWJuZXIgd3JvdGU6Cj4gSGkgRGFuaWVsLAo+
+IAo+IEFtIERpZW5zdGFnLCA0LiBKdW5pIDIwMTksIDE4OjU3OjU3IENFU1Qgc2NocmllYiBEYW5p
+ZWwgTGV6Y2FubzoKPj4gQ3VycmVudGx5IHRoZSBjb21tb24gdGhlcm1hbCB6b25lcyBkZWZpbml0
+aW9ucyBmb3IgdGhlIHJrMzM5OSBhc3N1bWVzCj4+IG11bHRpcGxlIHRoZXJtYWwgem9uZXMgYXJl
+IHN1cHBvcnRlZCBieSB0aGUgZ292ZXJub3JzLiBUaGlzIGlzIG5vdCB0aGUKPj4gY2FzZSBhbmQg
+ZWFjaCB0aGVybWFsIHpvbmUgaGFzIGl0cyBvd24gZ292ZXJub3IgaW5zdGFuY2UgYWN0aW5nCj4+
+IGluZGl2aWR1YWxseSB3aXRob3V0IGNvbGxhYm9yYXRpb24gd2l0aCBvdGhlciBnb3Zlcm5vcnMu
+Cj4+Cj4+IEFzIHRoZSBjb29saW5nIGRldmljZSBmb3IgdGhlIENQVSBhbmQgdGhlIEdQVSB0aGVy
+bWFsIHpvbmVzIGlzIHRoZQo+PiBzYW1lLCBlYWNoIGdvdmVybm9ycyB0YWtlIGRpZmZlcmVudCBk
+ZWNpc2lvbnMgZm9yIHRoZSBzYW1lIGNvb2xpbmcKPj4gZGV2aWNlIGxlYWRpbmcgdG8gY29uZmxp
+Y3RpbmcgaW5zdHJ1Y3Rpb25zIGFuZCBhbiBlcnJhdGljIGJlaGF2aW9yLgo+Pgo+PiBBcyB0aGUg
+Y29vbGluZy1tYXBzIGlzIGFib3V0IHRvIGJlY29tZSBhbiBvcHRpb25hbCBwcm9wZXJ0eSwgbGV0
+J3MKPj4gcmVtb3ZlIHRoZSBjcHUgY29vbGluZyBkZXZpY2UgbWFwIGZyb20gdGhlIEdQVSB0aGVy
+bWFsIHpvbmUuCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IERhbmllbCBMZXpjYW5vIDxkYW5pZWwubGV6
+Y2Fub0BsaW5hcm8ub3JnPgo+PiAtLS0KPj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAv
+cmszMzk5LmR0c2kgfCA5IC0tLS0tLS0tLQo+PiAgMSBmaWxlIGNoYW5nZWQsIDkgZGVsZXRpb25z
+KC0pCj4+Cj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5
+OS5kdHNpIGIvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzOTkuZHRzaQo+PiBpbmRl
+eCAxOTZhYzliNzgwNzYuLmUxMzU3ZTBmNjBmNyAxMDA2NDQKPj4gLS0tIGEvYXJjaC9hcm02NC9i
+b290L2R0cy9yb2NrY2hpcC9yazMzOTkuZHRzaQo+PiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRz
+L3JvY2tjaGlwL3JrMzM5OS5kdHNpCj4+IEBAIC04MjEsMTUgKzgyMSw2IEBACj4+ICAJCQkJCXR5
+cGUgPSAiY3JpdGljYWwiOwo+PiAgCQkJCX07Cj4+ICAJCQl9Owo+PiAtCj4+IC0JCQljb29saW5n
+LW1hcHMgewo+PiAtCQkJCW1hcDAgewo+PiAtCQkJCQl0cmlwID0gPCZncHVfYWxlcnQwPjsKPj4g
+LQkJCQkJY29vbGluZy1kZXZpY2UgPQo+PiAtCQkJCQkJPCZjcHVfYjAgVEhFUk1BTF9OT19MSU1J
+VCBUSEVSTUFMX05PX0xJTUlUPiwKPj4gLQkJCQkJCTwmY3B1X2IxIFRIRVJNQUxfTk9fTElNSVQg
+VEhFUk1BTF9OT19MSU1JVD47Cj4+IC0JCQkJfTsKPj4gLQkJCX07Cj4+ICAJCX07Cj4+ICAJfTsK
+PiAKPiBteSBrbm93bGVkZ2Ugb2YgdGhlIHRoZXJtYWwgZnJhbWV3b3JrIGlzIG5vdCB0aGF0IGJp
+ZywgYnV0IHdoYXQgYWJvdXQgdGhlCj4gcmszMzk5LWRldmljZXMgd2hpY2ggZnVydGhlciBkZXRh
+aWwgdGhlIGNvb2xpbmctbWFwcyBsaWtlIHJrMzM5OS1ncnUta2V2aW4KPiBhbmQgdGhlIHJrMzM5
+OS1uYW5vcGMtdDQgd2l0aCBpdHMgZmFuLWhhbmRsaW5nIGluIHRoZSBjb29saW5nLW1hcHM/CgpU
+aGUgcmszMzk5LWdydS1rZXZpbiBpcyBjb3JyZWN0LgoKVGhlIHJrMzM5OS1uYW5vcGMtdDQgaXMg
+bm90IGNvcnJlY3QgYmVjYXVzZSB0aGUgY3B1IGFuZCB0aGUgZ3B1IGFyZQpzaGFyaW5nIHRoZSBz
+YW1lIGNvb2xpbmcgZGV2aWNlICh0aGUgZmFuKS4gVGhlcmUgYXJlIGRpZmZlcmVudApjb25maWd1
+cmF0aW9uczoKCjEuIFRoZSBjcHUgY29vbGluZyBkZXZpY2UgZm9yIHRoZSBDUFUgYW5kIHRoZSBm
+YW4gZm9yIHRoZSBHUFUKCjIuIERpZmZlcmVudCB0cmlwIHBvaW50cyBvbiB0aGUgQ1BVIHRoZXJt
+YWwgem9uZSwgZWcuIG9uZSB0byBmb3IgdGhlIENQVQpjb29saW5nIGRldmljZSBhbmQgYW5vdGhl
+ciBvbmUgZm9yIHRoZSBmYW4uCgpUaGVyZSBhcmUgc29tZSB2YXJpYW50IGZvciB0aGUgYWJvdmUu
+IElmIHRoaXMgYm9hcmQgaXMgbm90IG9uIGJhdHRlcnksCnlvdSBtYXkgd2FudCB0byBnaXZlIHBy
+aW9yaXR5IHRvIHRoZSB0aHJvdWdocHV0LCBzbyBhY3RpdmF0ZSB0aGUgZmFuCmZpcnN0IGFuZCB0
+aGVuIGNvb2wgZG93biB0aGUgQ1BVLiBPciBpZiB5b3UgYXJlIG9uIGJhdHRlcnksIHlvdSBtYXkg
+d2FudAp0byBpbnZlcnQgdGhlIHRyaXAgcG9pbnRzLgoKSW4gYW55IGNhc2UsIGl0IGlzIG5vdCBw
+b3NzaWJsZSB0byBzaGFyZSB0aGUgc2FtZSBjb29saW5nIGRldmljZSBmb3IKZGlmZmVyZW50IHRo
+ZXJtYWwgem9uZXMuCgoKLS0gCiA8aHR0cDovL3d3dy5saW5hcm8ub3JnLz4gTGluYXJvLm9yZyDi
+lIIgT3BlbiBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCgpGb2xsb3cgTGluYXJvOiAgPGh0
+dHA6Ly93d3cuZmFjZWJvb2suY29tL3BhZ2VzL0xpbmFybz4gRmFjZWJvb2sgfAo8aHR0cDovL3R3
+aXR0ZXIuY29tLyMhL2xpbmFyb29yZz4gVHdpdHRlciB8CjxodHRwOi8vd3d3LmxpbmFyby5vcmcv
+bGluYXJvLWJsb2cvPiBCbG9nCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1yb2NrY2hpcAo=
