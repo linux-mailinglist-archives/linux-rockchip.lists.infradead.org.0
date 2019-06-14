@@ -2,41 +2,41 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEAA345864
-	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 11:16:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AB1345870
+	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 11:18:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fqejOTFidps8PcuavxQ3yYZyb+vkQAtIYcKz5spEtpA=; b=pLQvcYNcsC/gVh
-	jiqc6Lh5ax1gbvFWXkAPrdMUZ66klSjhqb8R0rylVFz/RDEikJ1MNUqINF8uSYLibLcCtudsPg2WJ
-	DrULWTOtEPSCT90+ijvtyVlcu/QH/CqiIsyRQw2dJ3kx9z1W3wL9N0hRijgBRu4gdVC8QpLgDp4uC
-	+qP9X3vpFuNgFB/ao89L2O2L0EYtb3u0yj8NTOEt4O/wRQ3Y20/bBGtfx6CopmfFHxW2GzFmyeqTn
-	uh041g293aHxucCl/iWnrp8b+aRyN/WhjfxTK+9xo6GMV2KeP+59jwF9+t+rW/nXvpT93ZyA5v1hQ
-	VOqcAFYBo+FlxbMIIGkQ==;
+	List-Owner; bh=DyJ3hUCclxExMji+o9VBjE5TMC9sZJvBxrJL8NWY34U=; b=ncw8W0mLjhlOmO
+	+eNmpt5wV9sI4X7ZtgFzy8tbSZ3lSdA7xyeJOnyzNxzwayk5zM+5/0riOxXZ+ZCT3EamWfhAo7rK9
+	yLlkU3yJmy59E+eI2DY+wNDxpodDNG3DKfOH4+pE+W5qWEZy6PVYsJWKJTAZNOnErMvZ9PWze9x6w
+	vcxtMVAoGsV1CVzsVZxK5S3WFegF2evr+ll1KAfKD3CiubiFCYpdpNwOeVN4r3IFlNc5rmOMrs7QP
+	Lj+MCgumIlbk428PQIu4ufTWH/PoSKyQlCgPTr4tPRI05hP4GeJcEkly4Z+t+34/Cfgq1TiANnH7m
+	HjXHAuvpNTR3ho6UCAyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbiJS-0004yR-Fo; Fri, 14 Jun 2019 09:15:58 +0000
+	id 1hbiM3-0005tP-Su; Fri, 14 Jun 2019 09:18:40 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbiJ8-0004m2-Cr; Fri, 14 Jun 2019 09:15:40 +0000
+ id 1hbiLc-0005fK-22; Fri, 14 Jun 2019 09:18:13 +0000
 Received: from we0305.dip.tu-dresden.de ([141.76.177.49] helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hbiJ0-00040c-GM; Fri, 14 Jun 2019 11:15:30 +0200
+ id 1hbiLY-00041V-D9; Fri, 14 Jun 2019 11:18:08 +0200
 From: Heiko Stuebner <heiko@sntech.de>
 To: Justin Swartz <justin.swartz@risingedge.co.za>
-Subject: Re: [PATCH] ARM: dts: rockchip: add display nodes for rk322x
-Date: Fri, 14 Jun 2019 11:15:29 +0200
-Message-ID: <1854794.0zkvb3x0FP@phil>
-In-Reply-To: <20190613101305.30491-1-justin.swartz@risingedge.co.za>
-References: <20190613101305.30491-1-justin.swartz@risingedge.co.za>
+Subject: Re: [PATCH] clk: rockchip: select hdmiphy clock source for rk3228
+Date: Fri, 14 Jun 2019 11:18:07 +0200
+Message-ID: <4689860.tqrvb1PrOO@phil>
+In-Reply-To: <20190612133343.28309-1-justin.swartz@risingedge.co.za>
+References: <20190612133343.28309-1-justin.swartz@risingedge.co.za>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_021538_592786_6A8605E6 
-X-CRM114-Status: GOOD (  18.30  )
+X-CRM114-CacheID: sfid-20190614_021812_250626_54E21C3F 
+X-CRM114-Status: GOOD (  15.26  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -56,176 +56,52 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Justin,
+Hi,
 
-Am Donnerstag, 13. Juni 2019, 12:13:04 CEST schrieb Justin Swartz:
-> Add display_subsystem, hdmi_phy, vop, and hdmi device nodes plus
-> a few hdmi pinctrl entries to allow for HDMI output.
+Am Mittwoch, 12. Juni 2019, 15:33:43 CEST schrieb Justin Swartz:
+> Unless explictly configured by a bootloader, the hdmiphy clock parent
+> defaults to the xin24m clock source. This configuration does not yield
+> any HDMI video output, so let hdmiphy_phy (the HDMI PHY output clock)
+> be the parent instead.
 > 
 > Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
 
-Overall looks good, but in combination with the clock-patch you posted,
-I'd really prefer if we could try a slightly different approach.
+Mainly for having breadcrumbs for people skimming the lists,
+I've adapted this to use assigned-clocks instead of hardcoding.
 
-Hard register-level settings in the clock driver look bad and tend to
-cause problems later on, so I've adapted things a bit in [0] (untested)
-and would be glad if you could give it a try on actual hardware.
+See the dts-thread for further infos:
+https://lore.kernel.org/linux-arm-kernel/1854794.0zkvb3x0FP@phil/T/#mf86ab45e07442ab2b25c67f423ebc4130259f6b0
 
-The hdmiphy itself is a clock-provider for its pll and therefore the
-assigned-clock* properties into the hdmi controller, as the phy needs
-to probe before trying to set clocks.
-But in theory this should achieve the same result of reparenting the
-system's hdmiphy clock to the actual output of the phy-pll.
-
-I've also moved the iommu-cells fix to a separate commit.
-
-Please test, thanks
 Heiko
 
 
-[0] https://github.com/mmind/linux-rockchip/commits/wip/rk3229-hdmi
-
 > ---
->  arch/arm/boot/dts/rk322x.dtsi | 83 ++++++++++++++++++++++++++++++++++++++++++-
->  1 file changed, 82 insertions(+), 1 deletion(-)
+>  drivers/clk/rockchip/clk-rk3228.c | 3 +++
+>  1 file changed, 3 insertions(+)
 > 
-> diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
-> index da102fff96a2..7eb883eec126 100644
-> --- a/arch/arm/boot/dts/rk322x.dtsi
-> +++ b/arch/arm/boot/dts/rk322x.dtsi
-> @@ -143,6 +143,11 @@
->  		#clock-cells = <0>;
->  	};
+> diff --git a/drivers/clk/rockchip/clk-rk3228.c b/drivers/clk/rockchip/clk-rk3228.c
+> index 1c5267d134ee..00a195e6c014 100644
+> --- a/drivers/clk/rockchip/clk-rk3228.c
+> +++ b/drivers/clk/rockchip/clk-rk3228.c
+> @@ -699,6 +699,9 @@ static void __init rk3228_clk_init(struct device_node *np)
+>  		return;
+>  	}
 >  
-> +	display_subsystem: display-subsystem {
-> +		compatible = "rockchip,display-subsystem";
-> +		ports = <&vop_out>;
-> +	};
+> +	/* Let hdmiphy_phy be the parent of the hdmiphy clock. */
+> +	writel_relaxed(HIWORD_UPDATE(0, 1, 13), reg_base + RK2928_MISC_CON);
 > +
->  	i2s1: i2s1@100b0000 {
->  		compatible = "rockchip,rk3228-i2s", "rockchip,rk3066-i2s";
->  		reg = <0x100b0000 0x4000>;
-> @@ -529,6 +534,17 @@
->  		status = "disabled";
->  	};
->  
-> +	hdmi_phy: hdmi-phy@12030000 {
-> +		compatible = "rockchip,rk3228-hdmi-phy";
-> +		reg = <0x12030000 0x10000>;
-> +		clocks = <&cru PCLK_HDMI_PHY>, <&xin24m>, <&cru DCLK_HDMI_PHY>;
-> +		clock-names = "sysclk", "refoclk", "refpclk";
-> +		#clock-cells = <0>;
-> +		clock-output-names = "hdmiphy_phy";
-> +		#phy-cells = <0>;
-> +		status = "disabled";
-> +	};
-> +
->  	gpu: gpu@20000000 {
->  		compatible = "rockchip,rk3228-mali", "arm,mali-400";
->  		reg = <0x20000000 0x10000>;
-> @@ -572,6 +588,28 @@
->  		status = "disabled";
->  	};
->  
-> +	vop: vop@20050000 {
-> +		compatible = "rockchip,rk3228-vop";
-> +		reg = <0x20050000 0x1ffc>;
-> +		interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
-> +		clocks = <&cru ACLK_VOP>, <&cru DCLK_VOP>, <&cru HCLK_VOP>;
-> +		clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
-> +		resets = <&cru SRST_VOP_A>, <&cru SRST_VOP_H>, <&cru SRST_VOP_D>;
-> +		reset-names = "axi", "ahb", "dclk";
-> +		iommus = <&vop_mmu>;
-> +		status = "disabled";
-> +
-> +		vop_out: port {
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +
-> +			vop_out_hdmi: endpoint@0 {
-> +				reg = <0>;
-> +				remote-endpoint = <&hdmi_in_vop>;
-> +			};
-> +		};
-> +	};
-> +
->  	vop_mmu: iommu@20053f00 {
->  		compatible = "rockchip,iommu";
->  		reg = <0x20053f00 0x100>;
-> @@ -579,7 +617,7 @@
->  		interrupt-names = "vop_mmu";
->  		clocks = <&cru ACLK_VOP>, <&cru HCLK_VOP>;
->  		clock-names = "aclk", "iface";
-> -		iommu-cells = <0>;
-> +		#iommu-cells = <0>;
->  		status = "disabled";
->  	};
->  
-> @@ -594,6 +632,34 @@
->  		status = "disabled";
->  	};
->  
-> +	hdmi: hdmi@200a0000 {
-> +		compatible = "rockchip,rk3228-dw-hdmi";
-> +		reg = <0x200a0000 0x20000>;
-> +		reg-io-width = <4>;
-> +		interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
-> +		clocks = <&cru SCLK_HDMI_HDCP>, <&cru PCLK_HDMI_CTRL>, <&cru SCLK_HDMI_CEC>;
-> +		clock-names = "isfr", "iahb", "cec";
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&hdmii2c_xfer &hdmi_hpd &hdmi_cec>;
-> +		resets = <&cru SRST_HDMI_P>;
-> +		reset-names = "hdmi";
-> +		phys = <&hdmi_phy>;
-> +		phy-names = "hdmi";
-> +		rockchip,grf = <&grf>;
-> +		status = "disabled";
-> +
-> +		ports {
-> +			hdmi_in: port {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +				hdmi_in_vop: endpoint@0 {
-> +					reg = <0>;
-> +					remote-endpoint = <&vop_out_hdmi>;
-> +				};
-> +			};
-> +		};
-> +	};
-> +
->  	sdmmc: dwmmc@30000000 {
->  		compatible = "rockchip,rk3228-dw-mshc", "rockchip,rk3288-dw-mshc";
->  		reg = <0x30000000 0x4000>;
-> @@ -922,6 +988,21 @@
->  			};
->  		};
->  
-> +		hdmi {
-> +			hdmi_hpd: hdmi-hpd {
-> +				rockchip,pins = <0 RK_PB7 1 &pcfg_pull_down>;
-> +			};
-> +
-> +			hdmii2c_xfer: hdmii2c-xfer {
-> +				rockchip,pins = <0 RK_PA6 2 &pcfg_pull_none>,
-> +						<0 RK_PA7 2 &pcfg_pull_none>;
-> +			};
-> +
-> +			hdmi_cec: hdmi-cec {
-> +				rockchip,pins = <0 RK_PC4 1 &pcfg_pull_none>;
-> +			};
-> +		};
-> +
->  		i2c0 {
->  			i2c0_xfer: i2c0-xfer {
->  				rockchip,pins = <0 RK_PA0 1 &pcfg_pull_none>,
+>  	ctx = rockchip_clk_init(np, reg_base, CLK_NR_CLKS);
+>  	if (IS_ERR(ctx)) {
+>  		pr_err("%s: rockchip clk init failed\n", __func__);
 > 
 
 
