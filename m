@@ -2,75 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7646D46C86
-	for <lists+linux-rockchip@lfdr.de>; Sat, 15 Jun 2019 00:48:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90ED946C8A
+	for <lists+linux-rockchip@lfdr.de>; Sat, 15 Jun 2019 00:48:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=B+mZhZ5dwFCs9iEcx9WQNOg6uObEZVyVFA8rO9UITa8=; b=YpN2lGB710khaf
-	l5qfbhRw38LvnMGd7J2PqCrxRm3km867d93Eq9SbUZ5i+lARVFgGcLIS6b/cnBTB0vzpiWEB4j2NM
-	uKrUlYubcskDJ7BJgiBayNhQVixxDbD/t86K0ou0w9319CZ6tBYxM+RtnZY8Ax0LzA/jG1kLItk6Y
-	7UK8H0eM03oao4JayK90en0KlnwNXFJ+gKobFpQ9mtvpXAdB3ptuSFUYVlViFvkNkZswyS2dFahdN
-	vCxq0QN5KWAfix77kQdmfDteMu7NDt0vmQRipb8xPFkUIHWE/rdtfQWXPYRECxUA8cmOb8/biDkDo
-	Tof5qPLhsKwJjmXv5fcA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=G1mU0Y6ybmWAizUqSbTrm2dXLzFo7KsxHKd9rVFIiB8=; b=HL0SzJedAsVAzR
+	wGNOAi2eN1sAeNfrzJrm8RAEcCBPwP/hQdEMgJ4Hx3lwcAP0cyITsaMvCAdFZMllFoiSdJq+XGdRb
+	erMSf088ZXWeXm2+/72hm77cVk3mdIeJ6yxsGai0sWESqt1AGjQEgIKHWniJB88gmlBkaCLm/TE2X
+	3RPhEGc8PRbqxpxSmGbemfzhhuKjx8pxu7A63wh58b5Jrr2zZfSGpmKngM1BZu/YjYbUVoeC0pQAb
+	Je9BzFDgZ+ww2Q+2Aqk5YyaJCEkUbhXKx0wAHSHMrLQQFAMCuofl63aQBs0T1d66/DPQD4FCrhb0A
+	C/yFi141KMwMTAroU1YA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbuzH-0002bg-FP; Fri, 14 Jun 2019 22:47:59 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hbuzU-0002me-8O; Fri, 14 Jun 2019 22:48:12 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbuzD-0002aX-Vz
- for linux-rockchip@lists.infradead.org; Fri, 14 Jun 2019 22:47:57 +0000
-Received: by mail-pf1-x442.google.com with SMTP id m30so2231655pff.8
- for <linux-rockchip@lists.infradead.org>; Fri, 14 Jun 2019 15:47:55 -0700 (PDT)
+ id 1hbuzE-0002ay-Gf
+ for linux-rockchip@lists.infradead.org; Fri, 14 Jun 2019 22:47:58 +0000
+Received: by mail-pf1-x441.google.com with SMTP id x15so2254114pfq.0
+ for <linux-rockchip@lists.infradead.org>; Fri, 14 Jun 2019 15:47:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=B/paYYaNElnUhrLCMfr9aofzvSpDY7fIjtUGwDwrL/w=;
- b=ApCzoYVFWJ+gmiLTLvrC4zRCv/sxTzAUuGigYReuCPkwv8+JbQtTQ1ujJvy8eXWLqB
- +IQTzppqRJKhqe+8V7UEuUHo4bd+AM07L3HjWFZQQdGpjnep077mDCdlHdC1RIk2DgQq
- 5mJV4O++xveG92zkhvhU6kYaRMIla/IEBvu+I=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=0MclKa4ww/GU4h0ModhXTnU03GxDuW7aam4X/xA5H20=;
+ b=ZHrf0zetXblEGMrSWzFuV+TI9faYuEa+jhfVW9V/m0B9O+jKxO4+WjenDITlg+aFYZ
+ rwkn7i/eEJwwpQKHMiEq0zlBvGsHMIF45Uf+FNPktBaKA1e7aETQITS6pxCwjG88fhY0
+ xNrhAWXlbmUSTAcnqo9tAd0ptVAPAcMc7dGLQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=B/paYYaNElnUhrLCMfr9aofzvSpDY7fIjtUGwDwrL/w=;
- b=tE4BRyvI+cdTvil2qNJJKfE7r+1ILDyegM8wFwKfotVk7RvWxRkuBFZVcYcVmyQs0s
- dPC6OtQ7zIJVx/yGFhAIdhgjSQ2UluHS72ANBuFxmUvIiyTgd1hDnN92YBVxGC/cXI6V
- uS2jpb62KlhdmQnCPf2DaY3MkX5mk1t8qhlLd4SespRdxCOZHOIL6bS8pb2vqzX1Hi2t
- tEvoDAmY7ilPbFhyRcsUaykWt6Jpu2Zrjm6DmVPe8JM2OxV36P8YluFgjexGRBkgEV0v
- U6bm/CNWMU1LUKGUfdYQsR0/hIqX+AQ32CeE9FAhBhLXWmHPBsojCGhA2YU4kmiIcHw1
- OqjA==
-X-Gm-Message-State: APjAAAUW9KerqmEArSBUtYHiCnSfjWnvAOGpSj8nZX2EajDaDIkjKruf
- lPuW0Lm4T18gSD38g65sMDjsOw==
-X-Google-Smtp-Source: APXvYqwCFm4zexZwb/yHk0T7k2vyRVj2XJif4vKx4gUkaC3e6ysgiT29t7k5lmVupIUZSX9ZhqMjSw==
-X-Received: by 2002:a63:441c:: with SMTP id r28mr37978657pga.255.1560552475017; 
- Fri, 14 Jun 2019 15:47:55 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=0MclKa4ww/GU4h0ModhXTnU03GxDuW7aam4X/xA5H20=;
+ b=O5T1SwT2En/AV+JIlshMi/NS44XL/qtG+Wx6h8AHzPtV28GRi9mJLEDWj+O5Hr1HiT
+ hG7BUovjq2ZVzzh0siAG/xuL7KTXzUkutMSdwJAY+6RnBCm4Scyu0QlmHL80od6I85af
+ BIhidwvYPmX3Zglgj34UnVcwwEPw+NqgCSe9LdKReHSFRRDqcObhGkexDev39MhfNmsF
+ 3ssUITmvjtTkbzsDH7AuY+sOWqqjc49i+NMr8TV5dLNcp4JdWQ9slb1vIjQFlDSChBLm
+ GvIU3uGf7+IbpeOCPBzFFsgc8i2QjsEfFdvFHKimGMJHYAj3W1Y0JDzTPr1ln5knk1tq
+ mYAQ==
+X-Gm-Message-State: APjAAAWBOSJ2iz9pf8IRc44IoCI8ceCEi1nJRKiDZkp++r4XwGb4pcpo
+ fB01Plvqy1A/2dFc33MlsJBVej1YjeI=
+X-Google-Smtp-Source: APXvYqzZ+CMlOlPiOf2LQv6uMUwI93prqIodMDLjqSqBeZ5oaQMYW0ftolCisN3PIf4q8UD0Rzr7Vg==
+X-Received: by 2002:a17:90a:25af:: with SMTP id
+ k44mr13019616pje.122.1560552476071; 
+ Fri, 14 Jun 2019 15:47:56 -0700 (PDT)
 Received: from tictac2.mtv.corp.google.com
  ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id x7sm3706087pfm.82.2019.06.14.15.47.54
+ by smtp.gmail.com with ESMTPSA id x7sm3706087pfm.82.2019.06.14.15.47.55
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 14 Jun 2019 15:47:54 -0700 (PDT)
+ Fri, 14 Jun 2019 15:47:55 -0700 (PDT)
 From: Douglas Anderson <dianders@chromium.org>
 To: Sandy Huang <hjc@rock-chips.com>, heiko@sntech.de, seanpaul@chromium.org
-Subject: [PATCH 1/2] drm/rockchip: Properly adjust to a true clock in
- adjusted_mode
-Date: Fri, 14 Jun 2019 15:47:29 -0700
-Message-Id: <20190614224730.98622-1-dianders@chromium.org>
+Subject: [PATCH 2/2] drm/rockchip: Base adjustments of the mode based on prev
+ adjustments
+Date: Fri, 14 Jun 2019 15:47:30 -0700
+Message-Id: <20190614224730.98622-2-dianders@chromium.org>
 X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
+In-Reply-To: <20190614224730.98622-1-dianders@chromium.org>
+References: <20190614224730.98622-1-dianders@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_154756_022608_5ADC37C1 
-X-CRM114-Status: GOOD (  10.19  )
+X-CRM114-CacheID: sfid-20190614_154756_551964_159909B5 
+X-CRM114-Status: GOOD (  10.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -97,48 +100,45 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
 Cc: David Airlie <airlied@linux.ie>, Douglas Anderson <dianders@chromium.org>,
  dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  urjaman@gmail.com, linux-rockchip@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, Yakir Yang <ykk@rock-chips.com>,
- linux-arm-kernel@lists.infradead.org
+ Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-When fixing up the clock in vop_crtc_mode_fixup() we're not doing it
-quite correctly.  Specifically if we've got the true clock 266666667 Hz,
-we'll perform this calculation:
-   266666667 / 1000 => 266666
+In vop_crtc_mode_fixup() we fixup the mode to show what we actually
+will be able to achieve.  However we should base our adjustments on
+any previous adjustments that were made.
 
-Later when we try to set the clock we'll do clk_set_rate(266666 *
-1000).  The common clock framework won't actually pick the proper clock
-in this case since it always wants clocks <= the specified one.
+As an example, the dw_hdmi driver may wish to make some small
+adjustments to clock rates in its atomic_check() function.  If it
+does, it will update the adjusted_mode.  We shouldn't throw away those
+adjustments.
 
-Let's solve this by using DIV_ROUND_UP.
+NOTE: the version of the dw_hdmi driver upstream doesn't _actually_
+make such adjustments, but downstream in Chrome OS it does.  It is
+plausible that one day we'll figure out how to cleanly make that
+happen in an upstream-friendly way, so we should prepare by using the
+right mode.
 
-Fixes: b59b8de31497 ("drm/rockchip: return a true clock rate to adjusted_mode")
 Signed-off-by: Douglas Anderson <dianders@chromium.org>
-Signed-off-by: Sean Paul <seanpaul@chromium.org>
-Reviewed-by: Yakir Yang <ykk@rock-chips.com>
 ---
-Back in 2016 Mark Yao said he applied this to his drm fixes [1], but it's
-2019 and it's still missing so I'm posting again.
 
-[1] https://patchwork.freedesktop.org/patch/103872/
-
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-index e4580d8f21e1..d124f34ab9fc 100644
+index d124f34ab9fc..09a790c2f3a1 100644
 --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
 +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-@@ -1006,7 +1006,8 @@ static bool vop_crtc_mode_fixup(struct drm_crtc *crtc,
+@@ -1006,8 +1006,8 @@ static bool vop_crtc_mode_fixup(struct drm_crtc *crtc,
  	struct vop *vop = to_vop(crtc);
  
  	adjusted_mode->clock =
--		clk_round_rate(vop->dclk, mode->clock * 1000) / 1000;
-+		DIV_ROUND_UP(clk_round_rate(vop->dclk, mode->clock * 1000),
-+			     1000);
+-		DIV_ROUND_UP(clk_round_rate(vop->dclk, mode->clock * 1000),
+-			     1000);
++		DIV_ROUND_UP(clk_round_rate(vop->dclk,
++					    adjusted_mode->clock * 1000), 1000);
  
  	return true;
  }
