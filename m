@@ -2,50 +2,92 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22AA545953
-	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 11:52:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73F7E4598C
+	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 11:55:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5tQAaGQQYjLDi7vT7tcZT6inxsJbAZpAS0YqQ4JXjUc=; b=eW60Tdl0OjkO1q
-	h/edMCmUW+UbfYvspAU4x5LNIJLMiMUbHJ/+BqM/RuzG4xey2uuNbgKiBXGgSgVYf9oqul35z0rpG
-	RrjdlkbcoAj3eRg/seC/ANTR7AEc8LJ80nGRDktmNAYX6OviobCnvw1M3tUyaG7F7dMD2oYi7ZKm0
-	ixfGR4fBM7ZquDKEHh2Z/2w0KhnNhO2hAyk0+lMHfZCk7C3MwqLcijBkngeo+dWXg7LUiIp4qriQK
-	StPNO8ZUsmfXB45ltToAYBc5p0jIg0EDq+X9Ev0iudZRaTfXh32/LydORYTDwdCI7gEEN27mHDJD6
-	XDjNnDsClAzBJui5X4EA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:To:
+	Subject:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=te/3sPo+8OMoB2/TyomUARN/UCOcAljzEwvWGoWCp6M=; b=IIvg0E4Kes9R5QmJCDk/K3TeW
+	mzxPSsA+ZpX9fZJklTzUnGqERnQc772OLwgS/WdKnqpGaJ9oGPSySSDN84sws+ofm61PWxYP18iyt
+	wpfXM6+aTCLv+r/GH4iWwVSRzk29ZZNlFxKQAOmsjeP5fvXMjGio6LZZymly1YV7Mec0iH46oQNY2
+	2VXr2S+mxa00mOfElv5CHNJLBd87+e2w29XA5cqyXK+3cKsZ0qPdbiOLMW4zEb012qJlkTM8g5FxJ
+	xM5xq8sUbU4nq3/6GdIFHThhq8L805X1dQOPG03dgoBomUMbDJmzUTRXo8isRM8ElIH1o7jCt0T2x
+	EfoUbd8Ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbisr-0000Lj-SO; Fri, 14 Jun 2019 09:52:33 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1hbivH-0001R4-BA; Fri, 14 Jun 2019 09:55:03 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbiso-0000LG-0I; Fri, 14 Jun 2019 09:52:31 +0000
-Received: from we0305.dip.tu-dresden.de ([141.76.177.49] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hbisk-0004H9-GQ; Fri, 14 Jun 2019 11:52:26 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Jianqun Xu <jay.xu@rock-chips.com>
-Subject: Re: [PATCH v3 1/1] arm64: dts: rockchip: add core dtsi file for
- RK3399Pro SoCs
-Date: Fri, 14 Jun 2019 11:52:25 +0200
-Message-ID: <3309819.J5kelTtX6q@phil>
-In-Reply-To: <20190530000848.28106-1-jay.xu@rock-chips.com>
-References: <20190529074752.19388-1-jay.xu@rock-chips.com>
- <20190530000848.28106-1-jay.xu@rock-chips.com>
+ id 1hbiud-0000qD-EI; Fri, 14 Jun 2019 09:54:24 +0000
+Received: by mail-wr1-x443.google.com with SMTP id x4so1837760wrt.6;
+ Fri, 14 Jun 2019 02:54:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:subject:to:cc:message-id:in-reply-to:references
+ :mime-version; bh=LWEB8ckSGavXUOifK/FNIHz754vMT8jwdxRqtMwH6kE=;
+ b=G7LRvmk3POU+NfRGqqYuCSJMz3UH106Tx4DzVHDT00eqoT1JMmhdt419m+q4PA4cWA
+ GqS1td5Y02NnWmca3NBhGZ5RBdkUD+ftxMiA9ng1vLPGpejuSv9CL3XQd33bCsAaSHNJ
+ GKYUb/ViSQxYFVPB3UYyAgTmuWyXk2zxoMZDwM40Xh6np86G664ZmIzHrfKP2ZdGc1/c
+ /OeckQtPvyK2glURjFGggu9hCmnZqO5K8PgMK9VwNdO0QevYdQjgZ54kMy/kFwEgnDRJ
+ 6O95dLwZSw6adB/ygzgxQJ2XGUMzjxktFd5atTerYJWKce7h6hL1A7DcdxzcOwhgPg5U
+ 8Z4Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:subject:to:cc:message-id:in-reply-to
+ :references:mime-version;
+ bh=LWEB8ckSGavXUOifK/FNIHz754vMT8jwdxRqtMwH6kE=;
+ b=HsAiL7mm05MfOqU0jqmTX4GeFcFI5MEcr21By6pqDvWoCNSDGnWc1Mh7/6wxYVphv/
+ k8lteCjsMZJUmcqQFmfl5FXubHRx7bnlc01mNxWdB28qJ5mlnzJWojezpCALCVTNFSPK
+ h3wE9xvJPsYpKNGQfOXhS3ei2IvoQBbBc9s2LyC3t5fetlQ5Qlx+jeMRwCprYWg6J7dG
+ d4IVqH0+uZR8Qvo1EN9rwElw4qJ64yOkVfD6M5FP2FR1OMvUFtYiq44Wg80lamyJjucv
+ HfnFyl8KpuiI08JlrSbcmmlGyPKuEigkGUWaKojaRr4pEXIs58x1BWfRt0n8EJcqs/cm
+ VHxg==
+X-Gm-Message-State: APjAAAX8fajFBCiLSuYHvTWc2HPIh7YpU4gc65WcH8PiOh9mKIHDfSCC
+ gJYpmn0Qd0nxTEOxlAAguTs=
+X-Google-Smtp-Source: APXvYqzB7aNgd0DaRCc0E3obAyX4lpX8BdOe5J7ACbuWSLX34+034VaK+l8Z/815LR4vBxwXv2kD4w==
+X-Received: by 2002:adf:f3c7:: with SMTP id g7mr62795063wrp.133.1560506061675; 
+ Fri, 14 Jun 2019 02:54:21 -0700 (PDT)
+Received: from X555LD ([2a02:85f:51e:5d00:f1ab:2da6:d378:d0de])
+ by smtp.gmail.com with ESMTPSA id h84sm3825923wmf.43.2019.06.14.02.54.17
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Fri, 14 Jun 2019 02:54:21 -0700 (PDT)
+Date: Fri, 14 Jun 2019 12:54:14 +0300
+From: "Leonidas P. Papadakos" <papadakospan@gmail.com>
+Subject: Re: [PATCH 1/2] clk: rockchip: add clock for the watchdog pclk on
+ rk3328
+To: Heiko Stuebner <heiko@sntech.de>
+Message-Id: <1560506054.1367.0@gmail.com>
+In-Reply-To: <5657669.4RvfzeBcXs@phil>
+References: <20190605235714.22432-1-papadakospan@gmail.com>
+ <3485393.4UdOu2YNQE@phil> <1559821340.1384.0@gmail.com>
+ <5657669.4RvfzeBcXs@phil>
+X-Mailer: geary/3.32.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_025230_196789_04890A08 
-X-CRM114-Status: GOOD (  14.87  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190614_025423_533279_742BBD63 
+X-CRM114-Status: UNSURE (   7.64  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (papadakospan[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,71 +100,27 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, zhangzj@rock-chips.com,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- manivannan.sadhasivam@linaro.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
+ itdaniher@gmail.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Jianqun,
 
-Am Donnerstag, 30. Mai 2019, 02:08:48 CEST schrieb Jianqun Xu:
-> This patch adds core dtsi file for Rockchip RK3399Pro SoCs,
-> include rk3399.dtsi. Also enable pciei0/pcie_phy for AP to
-> talk to NPU part inside SoC.
+> Were you able yet to take a look at the clock-patches I Cc'ed you on
+> and look at reworking your patch accrodingly?
 > 
-> Signed-off-by: Jianqun Xu <jay.xu@rock-chips.com>
-
-could you add the necessary pinctrl entry, as suggested by Manivannan?
-
-Thanks
-Heiko
-
-> ---
-> changes since v2:
-> - only enable pcie0 and pcie_phy nodes, thanks for Heiko and manivannan
 > 
-> changes since v1:
-> - remove dfi and dmc
+> Thanks
+> Heiko
 > 
->  arch/arm64/boot/dts/rockchip/rk3399pro.dtsi | 22 +++++++++++++++++++++
->  1 file changed, 22 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
-> 
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi b/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
-> new file mode 100644
-> index 000000000000..bb5ebf6608b9
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
-> @@ -0,0 +1,22 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +// Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd.
-> +
-> +#include "rk3399.dtsi"
-> +
-> +/ {
-> +	compatible = "rockchip,rk3399pro";
-> +};
-> +
-> +/* Default to enabled since AP talk to NPU part over pcie */
-> +&pcie_phy {
-> +	status = "okay";
-> +};
-> +
-> +/* Default to enabled since AP talk to NPU part over pcie */
-> +&pcie0 {
-> +	ep-gpios = <&gpio0 RK_PB4 GPIO_ACTIVE_HIGH>;
-> +	num-lanes = <4>;
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pcie_clkreqn_cpm>;
-> +	status = "okay";
-> +};
-> 
-
-
+My time is limited due to exams, and I have no knowledge on how the clk 
+stuff works, but I'll read up when I have the time. The patched you 
+CCed me on is certainly helpful in this regard
 
 
 
