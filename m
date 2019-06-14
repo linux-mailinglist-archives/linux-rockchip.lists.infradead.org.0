@@ -2,43 +2,44 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E191C458E3
-	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 11:38:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CB10458EE
+	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 11:40:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=awUgEOpywF4Q5TuvowfN57Rr4cNGfTlTKq9jwTZrWto=; b=fBczZj+l7hnGrH
-	Qd3nelKOndzw7Huw+hVtwbkbJtMNJz8gdpMlbkHU4wC4OhkY657gdksjso0fCfebnJiAcdIKeRcIB
-	yjyk5K+mGm/ZTY3/PptDOntnbQZnUMuzWUaJRr4nnm1bvGm+0fgMibqUzcFmybIIThGBji+a4BJJj
-	YZL4n/PVaPg69VuzYTvjHggxOlYfv3EkBYTFqKjeGXtgrCOOW+KECGdOQ88mxRmzEuKyV6yM45bkM
-	XfAGCWITu3BalwEkWurNYpEHBiemdHJ03cEYPRxYmRncm4560AQAHg6CKtJLxG0gRDWBrQFv+hQAq
-	Y4QiuB+N5mWsNu9mjlJg==;
+	List-Owner; bh=5dlsoujC8lRqxoFmLDRnu88qoxoTnJv5s7NTLkgGenM=; b=Qbxt+dwABspIZC
+	54k+45T3aGqUkc5SLYCxZxAB08QrmSg64vphueWe0vz4scBB4xJuVUGf4qd9uaTqyzWDSdJwlpall
+	DvVwS+WvPkIVMS0Vs5U2k/dDJrRuKw2/pLoGkAj+JEdpX0dZnWABdZM1P+wWHDQkDhkNiJr26ydmc
+	x3rljnNftS9XkKlkq4nzXtf122TJBTJ5SbcYC7akvHe41VT9eux1xwudc3APbDuMYTs2ySW65tvvj
+	VUoJb6MzfZ0hbGo2ilYlbVvWRIWNUyydlJ81H/QWrA/14yQyxxDc1PDyZllL2+gEmvSOl96ZYJLhC
+	iPaw/tRKuNbDxHzcBvtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbifA-0001I2-9u; Fri, 14 Jun 2019 09:38:24 +0000
+	id 1hbigm-0001fU-Ns; Fri, 14 Jun 2019 09:40:04 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbies-0000zw-0f; Fri, 14 Jun 2019 09:38:07 +0000
+ id 1hbigj-0001Uf-42; Fri, 14 Jun 2019 09:40:02 +0000
 Received: from we0305.dip.tu-dresden.de ([141.76.177.49] helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hbiep-00049y-Ms; Fri, 14 Jun 2019 11:38:03 +0200
+ id 1hbige-0004BS-1j; Fri, 14 Jun 2019 11:39:56 +0200
 From: Heiko Stuebner <heiko@sntech.de>
-To: Matthias Kaehlcke <mka@chromium.org>
-Subject: Re: [PATCH v2] ARM: dts: rockchip: Configure BT_HOST_WAKE as wake-up
- signal on veyron
-Date: Fri, 14 Jun 2019 11:38:03 +0200
-Message-ID: <8216847.YA7l6QMt1s@phil>
-In-Reply-To: <20190610235144.34261-1-mka@chromium.org>
-References: <20190610235144.34261-1-mka@chromium.org>
+To: Peter Geis <pgwipeout@gmail.com>
+Subject: Re: [PATCH] arm64: dts: rockchip: improve rk3328-roc-cc rgmii
+ performance.
+Date: Fri, 14 Jun 2019 11:39:55 +0200
+Message-ID: <4025583.lUYsg5j2zl@phil>
+In-Reply-To: <CAMdYzYorvWr1YhmFKaMQUCditjop5AZp4d1tO79XsVr7m7HrMw@mail.gmail.com>
+References: <20190607123731.8737-1-pgwipeout@gmail.com>
+ <1559912295.22520.0@gmail.com>
+ <CAMdYzYorvWr1YhmFKaMQUCditjop5AZp4d1tO79XsVr7m7HrMw@mail.gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_023806_204686_AAEEFBE8 
-X-CRM114-Status: UNSURE (   9.89  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190614_024001_315157_EE60CDB6 
+X-CRM114-Status: GOOD (  14.16  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,29 +59,42 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Brian Norris <briannorris@chromium.org>, linux-kernel@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Jose Abreu <jose.abreu@synopsys.com>, devicetree@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Robin Murphy <robin.murphy@arm.com>,
+ "Leonidas P. Papadakos" <papadakospan@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Dienstag, 11. Juni 2019, 01:51:44 CEST schrieb Matthias Kaehlcke:
-> From: Doug Anderson <dianders@chromium.org>
+Am Samstag, 8. Juni 2019, 01:07:48 CEST schrieb Peter Geis:
+> On Fri, Jun 7, 2019 at 8:58 AM Leonidas P. Papadakos
+> <papadakospan@gmail.com> wrote:
+> >
+> >
+> > I'll test on my board, but if in the end it does end up being a change
+> > to both tx and rxpbl then we can replce the 2 tx/rxpbl options with
+> > one, as far as I know:
+> >
+> > snps,pbl = <0x4>;
+> >
+> >
 > 
-> This enables wake up on Bluetooth activity when the device is
-> suspended. The BT_HOST_WAKE signal is only connected on devices
-> with BT module that are connected through UART.
+> The big change was actually snps,aal.
+> As per the TRM, DMA channels not address aligned have severe
+> limitations, if they work at all.
 > 
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+> Setting the DMA ops as address aligned fixed my 30mbps TX issue when
+> combined with your snps,txpbl = <0x4>.
 
-applied for 5.3
+same as with the other patch: I've lost track of what matters,
+so please resend the ones that matter with appropriate
+Tested-by, Reviewed-by tags by involved people.
 
 Thanks
 Heiko
+
 
 
 
