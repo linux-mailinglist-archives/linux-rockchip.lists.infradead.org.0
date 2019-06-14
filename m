@@ -2,91 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F269B46893
-	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 22:05:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 192174694B
+	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 22:33:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6WgpCRaytiD58Hz7OOI7SuD+3+Fc1Q9xPaGWt3qExSU=; b=PUB/xh3N9DNUdb
-	y356UbsoRBkX8baz/2Z33LdOe8TT7qw4YMSLcoz6cEUTJMGZvMp887fn8vyxq3OVWRbe2dz0zCXqP
-	cidG5FIURRA2uKkK++ByNOZ9c3g2+lP5VhMcHLh6F8nWb3rbqXxfNTGcREaX0UZg7KYm/jR3NrxkA
-	hRkfwg8tZkYDeJ6//D7L4cSxBQOmuP40gakcXP3Do2gp+7jVTCVUuj7FbOkvp+/yKri3Psi1R5ELM
-	f2StuAIFwOMn2qg5Z8669AtbNB4wJUlmeik9oOtQoLLwmIzxpSI8sd60KmUNnMyhT+R2awWsMU9ku
-	N0IbSLPhtx2csRzkrJyg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=H1/gdQRGdiy2Y9rgSyrHGyzasLDeqmfcKl4zktRdRtg=; b=KbErq//Fd426r63FqeBo/xs26
+	RGNtvXSgdIz2jYSKA4Rh4chK/+CiKddkl6TW07GN8tse+AqPv6Uid8DDcczAs/soWpQqAThwwgGI5
+	VLuOQa/U7vwBZON+jkBhGcQDal8MiqJ0UtQHZzdmgYtodZBFv3CpGlJoygoFqX37X62v6Yo9iSsE7
+	msckhkWAt/WrMMEqURCfu4LuAHCQIguC0r67upig4wLkpbXYuLSSBgmUqpUFg7gcNKHDmlsdd9m96
+	fSk58i9xIssySjxZix3MMyV2Y4TJ1PVvj0gXpTnkUrcA8+ZQY16BarG4uIdNxPj49GGT2KKss/QhK
+	+h5de/iQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbsSP-0006Aa-75; Fri, 14 Jun 2019 20:05:53 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbsSL-0006A5-SF
- for linux-rockchip@lists.infradead.org; Fri, 14 Jun 2019 20:05:51 +0000
-Received: by mail-io1-xd43.google.com with SMTP id m24so8510477ioo.2
- for <linux-rockchip@lists.infradead.org>; Fri, 14 Jun 2019 13:05:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=5C43wu3L3N5pzf6np2Tk2w1tK+vx4ydRwvLJgDPv+o8=;
- b=AMP0YfPOb2jb7VFloRLdhNb04ngviheKaydxfNhvw9H6hfzRLPrkjGU9PEg9BUCkmd
- NZznbE9H/0ARo631Xkw0pUVxmRat8rBYqVXXl8UxFcQSKChFr8yLA14KEfCWjcSoZ1CY
- htcdN+RI4rTg3dbZfxOYq0AXi8Nxf/W/kQjZM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=5C43wu3L3N5pzf6np2Tk2w1tK+vx4ydRwvLJgDPv+o8=;
- b=TkFvJCboKLdca5udV9iljxv5uTuY/NbKNfW67yxEDTmIoNl4lxDTQZ2dehUNBlKH3p
- Tlqzg7CPvCC4wvG0Ji1USnrqDMbZLBrITQbX3tEtD2cHRnExt2sCGueGMyEU83vvKq+r
- GqPSV19D9NmXxqUiN/RtiOJdF1xhea4pFpdyV+ifgER48kZ3lxc7ShwQ3pFctMiwL+z4
- GHcUi5ODqpVw47YptPCJW9kreXvCO14l96+dslDOiMV9qZWDdmW5HOal3S/GMmLJqiHc
- hzvpRyR19cGr9XdIFduXgf6CA4/KEpUQF0AaFOdv1Tx6mqYb57nhmy7Y7pErekpmio3V
- wEgg==
-X-Gm-Message-State: APjAAAVMaOl36yUP8+NqkRP7WfdEvEjFyQJrYi9Nh2UmS0ekeoW/hGwH
- CbNMfsa4717BJNFqIlJGKPLK8womxdI=
-X-Google-Smtp-Source: APXvYqzpzAv6UCZlXh/4RVTiAIotkVX3+ywVYVlTJcG9T9ZVb+8drpU8a9Caxvt9W3hf+8+nKuGSLQ==
-X-Received: by 2002:a5e:8508:: with SMTP id i8mr8554393ioj.108.1560542748347; 
- Fri, 14 Jun 2019 13:05:48 -0700 (PDT)
-Received: from mail-io1-f51.google.com (mail-io1-f51.google.com.
- [209.85.166.51])
- by smtp.gmail.com with ESMTPSA id w23sm5948348ioa.51.2019.06.14.13.05.47
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Fri, 14 Jun 2019 13:05:47 -0700 (PDT)
-Received: by mail-io1-f51.google.com with SMTP id m24so8510299ioo.2
- for <linux-rockchip@lists.infradead.org>; Fri, 14 Jun 2019 13:05:47 -0700 (PDT)
-X-Received: by 2002:a5d:8ccc:: with SMTP id k12mr4025420iot.141.1560542746773; 
- Fri, 14 Jun 2019 13:05:46 -0700 (PDT)
+	id 1hbssc-0000wi-52; Fri, 14 Jun 2019 20:32:58 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbssY-0000uM-4f
+ for linux-rockchip@lists.infradead.org; Fri, 14 Jun 2019 20:32:56 +0000
+Received: from localhost (p5486CF81.dip0.t-ipconnect.de [84.134.207.129])
+ by pokefinder.org (Postfix) with ESMTPSA id 1BFB72CF690;
+ Fri, 14 Jun 2019 22:32:44 +0200 (CEST)
+Date: Fri, 14 Jun 2019 22:32:43 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH v2 17/28] drivers: Introduce bus_find_device_by_of_node()
+ helper
+Message-ID: <20190614203243.GC7991@kunai>
+References: <1560534863-15115-1-git-send-email-suzuki.poulose@arm.com>
+ <1560534863-15115-18-git-send-email-suzuki.poulose@arm.com>
 MIME-Version: 1.0
-References: <20190613192244.5447-1-ezequiel@collabora.com>
-In-Reply-To: <20190613192244.5447-1-ezequiel@collabora.com>
-From: Doug Anderson <dianders@chromium.org>
-Date: Fri, 14 Jun 2019 13:05:33 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=U84U0TaC=VUXeggCDJJNkPOJYmOL0JNT1Lf7Gecv-5Aw@mail.gmail.com>
-Message-ID: <CAD=FV=U84U0TaC=VUXeggCDJJNkPOJYmOL0JNT1Lf7Gecv-5Aw@mail.gmail.com>
-Subject: Re: [RFC/WIP] drm/rockchip: Support CRTC gamma LUT
-To: Ezequiel Garcia <ezequiel@collabora.com>
+In-Reply-To: <1560534863-15115-18-git-send-email-suzuki.poulose@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_130549_939960_C69EF5EB 
-X-CRM114-Status: GOOD (  14.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190614_133254_328704_997A177D 
+X-CRM114-Status: UNSURE (   8.91  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
+ no trust [88.99.104.3 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,87 +62,97 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
- Sandy Huang <hjc@rock-chips.com>, dri-devel <dri-devel@lists.freedesktop.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Sean Paul <seanpaul@chromium.org>, kernel@collabora.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Heiko Stuebner <heiko@sntech.de>, Mathieu Poirier <mathieu.poirier@linaro.org>,
+ rafael@kernel.org, Maxime Ripard <maxime.ripard@bootlin.com>,
+ gregkh@linuxfoundation.org, Takashi Iwai <tiwai@suse.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Liam Girdwood <lgirdwood@gmail.com>, David Airlie <airlied@linux.ie>,
+ Rob Herring <robh+dt@kernel.org>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ linux-i2c@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ linux-rockchip@lists.infradead.org, linux-spi@vger.kernel.org,
+ Frank Rowand <frowand.list@gmail.com>
+Content-Type: multipart/mixed; boundary="===============1330089391523916351=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
 
-On Thu, Jun 13, 2019 at 12:23 PM Ezequiel Garcia <ezequiel@collabora.com> wrote:
->
-> @@ -1744,6 +1793,41 @@ int rockchip_drm_wait_vact_end(struct drm_crtc *crtc, unsigned int mstimeout)
->  }
->  EXPORT_SYMBOL(rockchip_drm_wait_vact_end);
->
-> +static int vop_gamma_lut_request(struct device *dev,
-> +                                struct resource *res, struct vop *vop)
-> +{
-> +       resource_size_t offset = vop->data->gamma_lut_addr_off;
-> +       resource_size_t size = VOP_GAMMA_LUT_SIZE * 4;
-> +
-> +       /*
-> +        * Some SoCs (e.g. RK3288) have the gamma LUT address after
-> +        * the MMU registers, which means we can't request and ioremap
-> +        * the entire register set. Other (e.g. RK3399) have gamma LUT
-> +        * address before MMU.
-> +        *
-> +        * Therefore, we need to request and ioremap those that haven't
-> +        * been already.
-> +        */
-> +       if (vop->len >= (offset + size)) {
-> +               vop->lut_regs = vop->regs + offset;
-> +               return 0;
-> +       }
-> +
-> +       if (!devm_request_mem_region(dev, res->start + offset,
-> +                                    size, dev_name(dev))) {
-> +               dev_warn(dev, "can't request gamma lut region\n");
-> +               return -EBUSY;
-> +       }
-> +
-> +       vop->lut_regs = devm_ioremap(dev, res->start + offset, size);
-> +       if (!vop->lut_regs) {
-> +               dev_err(dev, "can't ioremap gamma lut address\n");
-> +               devm_release_mem_region(dev, res->start + offset, size);
-> +               return -ENOMEM;
-> +       }
+--===============1330089391523916351==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="8NvZYKFJsRX2Djef"
+Content-Disposition: inline
 
-I'm curious here.  I was always under the impression that you were
-supposed to specify all of your memory regions in the device tree.
-...but here the device tree on rk3288 says:
 
-vopb: vop@ff930000 {
-    compatible = "rockchip,rk3288-vop";
-    reg = <0x0 0xff930000 0x0 0x19c>;
-    ...
-};
+--8NvZYKFJsRX2Djef
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-...and we're now mapping 4096 bytes starting at 0xff931000.  Is that
-really legit?  Wouldn't it be better to put this extra memory range in
-the dts?
+On Fri, Jun 14, 2019 at 06:54:12PM +0100, Suzuki K Poulose wrote:
+> Add a wrapper to bus_find_device() to search for a device
+> by the of_node pointer, reusing the generic match function.
+> Also convert the existing users to make use of the new helper.
+>=20
+> Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+> Cc: Maxime Ripard <maxime.ripard@bootlin.com>
+> Cc: dri-devel@lists.freedesktop.org
+> Cc: David Airlie <airlied@linux.ie>
+> Cc: Daniel Vetter <daniel@ffwll.ch>
+> Cc: devicetree@vger.kernel.org
+> Cc: Florian Fainelli <f.fainelli@gmail.com>
+> Cc: Frank Rowand <frowand.list@gmail.com>
+> Cc: Heiko Stuebner <heiko@sntech.de>
+> Cc: Liam Girdwood <lgirdwood@gmail.com>
+> Cc: linux-i2c@vger.kernel.org
+> Cc: linux-rockchip@lists.infradead.org
+> Cc: linux-spi@vger.kernel.org
+> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Cc: Rob Herring <robh+dt@kernel.org>
+> Cc: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+> Cc: Takashi Iwai <tiwai@suse.com>
+> Cc: Wolfram Sang <wsa@the-dreams.de>
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Cc: "Rafael J. Wysocki" <rafael@kernel.org>
+> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-Hrm, but then I guess you need to figure out what to do about older
-device trees.  Do you disable the gamma LUT feature?  ...or do you do
-exactly what the code here is doing and just map it anyway?  I guess
-you could just keep the code here (and it'll work fine), but maybe in
-parallel we should add it to the .dts file and bindings?
+Acked-by: Wolfram Sang <wsa@the-dreams.de> # for the I2C parts
 
----
 
-I will say that, though I don't know much (anything?) about gamma
-LUTs, I ran the Chrome OS "gamma_test" program and saw a pretty RGB
-gradient on the both the internal screen and HDMI monitor on my
-rk3288-veyron-jerry.  Thus:
+--8NvZYKFJsRX2Djef
+Content-Type: application/pgp-signature; name="signature.asc"
 
-Tested-by: Douglas Anderson <dianders@chromium.org>
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl0EBGsACgkQFA3kzBSg
+KbZ+QhAAhP0RWmmLpy5mMKDwba8oyF5FX1jQZTj4zTukyeAJ5dFtxhQ8mANYEYOf
+2rnnAm42pcb0kyDIvP6xMF+yg+UK2lyd12Ud6k5TD3y+7Ochwlkcyu1JJessZZir
+YbDlY/eFeIyOzINxAx8yLLfYWncpANpAguyo321TmSXyoCFW1JbRlffuTxGKcXFt
+qYFrLQdwosCtFQV33gLalIQ69zBhN5c7Jgf0pVhiUjH8NF73yF0hgOkl9ptdzROX
+4Bzkw5RdlXV9N5yqy3lRa1iNzQ1BJlvFfOxphlHmUEvjXNlvvvHjKyInyFtsbpBR
+tKeUTjeWeVEfwOidPkEmiB8G3+k1LuGX9yOXZmnvVcSqy0xel3CyzjhZWDn6sGdB
+XgbvqJtd78g/Eaqr+y1WhaP5r8N8G/PzJODTtUkeisF06tocDxtLHLLhUjOhenDB
+6eCpKAP3dL7wxniDPMG0xzckpCWeIlCMlM/2BN+OyX16P1jy10HreRmCiIug7/5V
+6AFQji0dWbEwTtnTC6kYQsHXE3XRVILTHKJmWDE1R/Sosp08HOv128fw4G3a/5GK
+Rx6tVLYgs75/X6kc20Cyy51wgJiteoV3CvSXmq8mGhdA4XP5v8TLtKVKWMj+UMOx
+s+Q5PgkjDnvMXp7+HAGpHTlLe0tifUY2nZYtttsZKHraj4bgHoY=
+=val9
+-----END PGP SIGNATURE-----
+
+--8NvZYKFJsRX2Djef--
+
+
+--===============1330089391523916351==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============1330089391523916351==--
+
