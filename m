@@ -2,55 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B806645FE0
-	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 16:02:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D10B45FF2
+	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Jun 2019 16:03:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=K9qsZDSfYsPuV4dn9i6r/6Q/K8iJgYQRdJzHKTlsHHU=; b=ZTVA5huIRGMxPz/Z2J2BBTOHr
-	mQJbEfaNzoi2ZFiT+IkuzXB9FBevKNvRyPyfCuUPONZKZYZm4D0eOdIMih5XH5l1jfWKPmSdZrH58
-	gDG32k35/RLLswDUO6mw45CZoouHdxQifJUsKVBQHYKl7tGHIrzKiPD9MYDBUC+iTH8BIjMR93SUv
-	QfFHGxxGp9+ZNeUzREhN/XwpLPPFGXiQ7uSNLKHho4aHskIPhkGgqFIx004u8M4lmDZkt5vLH92O4
-	ATBn5sjCzrHWhSl2Sg+BX1m5BQj/AFXObPXanr9beq8eoPSWpvI9hjLOJeqDT3jymG9O/S7fvN5Yy
-	vYX8WZGJw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zDItNQMTokt68EzoqYNPIX4nyo1c0I+DotVGcYdvUOs=; b=Qa4nQJTS9Q1nA3
+	etO5AMVClRk3JCe8Li3yhu82gaaWj0GG0v0xFFSFjWWpCALTdXJut/aMuaJXu8aDqcPxc+/uCsUdo
+	5EKrgcUWi+eeUBu2n/L0VzBJw3igb7ogCvquVoE60Z6XvT8qPFcFQvg8vDNomzUwgB9hUwnFFrK+T
+	f8TWzVAMFg9HHIjf478tdMkI5FjXoAE6gnewUm1Ic1+gD+6LDE4tGGFBclHU94JQdRa5qparncN3l
+	ySQcxok1LAMsuVHzPqYDvFJ+Qnkuu0Tr50g45ShqeGkKImMaVbQelX/ODqCvREDedYiSPFPZs0uTk
+	E+OFa+4WWWUwvTTlO7RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbmmt-0007Lf-3m; Fri, 14 Jun 2019 14:02:39 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbmmb-0006uS-O5; Fri, 14 Jun 2019 14:02:23 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 59C9728;
- Fri, 14 Jun 2019 07:02:20 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C8EFF3F718;
- Fri, 14 Jun 2019 07:02:17 -0700 (PDT)
-Subject: Re: [PATCH 1/2] arm64: dts: rockchip: Fix multiple thermal zones
- conflict in rk3399.dtsi
-To: Daniel Lezcano <daniel.lezcano@linaro.org>,
- Heiko Stuebner <heiko@sntech.de>
-References: <20190604165802.7338-1-daniel.lezcano@linaro.org>
- <5188064.YWmxIpmbGp@phil> <55b9018e-672e-522b-d0a0-c5655be0f353@linaro.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <e5a4f850-27e0-cad3-04bd-6c004fca2b81@arm.com>
-Date: Fri, 14 Jun 2019 15:02:16 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hbmno-00009E-E4; Fri, 14 Jun 2019 14:03:36 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbmnl-00008Y-DI
+ for linux-rockchip@lists.infradead.org; Fri, 14 Jun 2019 14:03:34 +0000
+Received: from ip5f5a6320.dynamic.kabel-deutschland.de ([95.90.99.32]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hbmnh-0005bS-8g; Fri, 14 Jun 2019 16:03:29 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Boris Brezillon <boris.brezillon@collabora.com>
+Subject: Re: [RFC/WIP] drm/rockchip: Support CRTC gamma LUT
+Date: Fri, 14 Jun 2019 16:03:28 +0200
+Message-ID: <4034618.A4UzVy7svI@diego>
+In-Reply-To: <20190614155320.348d42af@collabora.com>
+References: <20190613192244.5447-1-ezequiel@collabora.com>
+ <20190614155320.348d42af@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <55b9018e-672e-522b-d0a0-c5655be0f353@linaro.org>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_070221_881037_7F701E78 
-X-CRM114-Status: GOOD (  22.88  )
+X-CRM114-CacheID: sfid-20190614_070333_594801_88DCA7CA 
+X-CRM114-Status: GOOD (  11.54  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -64,100 +59,65 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Emil Renner Berthing <kernel@esmil.dk>,
- "open list:ARM/Rockchip SoC support" <linux-rockchip@lists.infradead.org>,
- Tony Xie <tony.xie@rock-chips.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Randy Li <ayaka@soulik.info>, linux-kernel@vger.kernel.org,
- Vicente Bergas <vicencb@gmail.com>, dianders@chromium.org, edubezval@gmail.com,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Rob Herring <robh+dt@kernel.org>,
- Klaus Goger <klaus.goger@theobroma-systems.com>,
- manivannan.sadhasivam@linaro.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- "moderated list:ARM/Rockchip SoC support"
- <linux-arm-kernel@lists.infradead.org>,
- Christoph Muellner <christoph.muellner@theobroma-systems.com>
+Cc: Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
+ Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
+ Sean Paul <seanpaul@chromium.org>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 14/06/2019 14:03, Daniel Lezcano wrote:
-> On 14/06/2019 11:35, Heiko Stuebner wrote:
->> Hi Daniel,
->>
->> Am Dienstag, 4. Juni 2019, 18:57:57 CEST schrieb Daniel Lezcano:
->>> Currently the common thermal zones definitions for the rk3399 assumes
->>> multiple thermal zones are supported by the governors. This is not the
->>> case and each thermal zone has its own governor instance acting
->>> individually without collaboration with other governors.
->>>
->>> As the cooling device for the CPU and the GPU thermal zones is the
->>> same, each governors take different decisions for the same cooling
->>> device leading to conflicting instructions and an erratic behavior.
->>>
->>> As the cooling-maps is about to become an optional property, let's
->>> remove the cpu cooling device map from the GPU thermal zone.
->>>
->>> Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
->>> ---
->>>   arch/arm64/boot/dts/rockchip/rk3399.dtsi | 9 ---------
->>>   1 file changed, 9 deletions(-)
->>>
->>> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
->>> index 196ac9b78076..e1357e0f60f7 100644
->>> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
->>> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
->>> @@ -821,15 +821,6 @@
->>>   					type = "critical";
->>>   				};
->>>   			};
->>> -
->>> -			cooling-maps {
->>> -				map0 {
->>> -					trip = <&gpu_alert0>;
->>> -					cooling-device =
->>> -						<&cpu_b0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
->>> -						<&cpu_b1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
->>> -				};
->>> -			};
->>>   		};
->>>   	};
->>
->> my knowledge of the thermal framework is not that big, but what about the
->> rk3399-devices which further detail the cooling-maps like rk3399-gru-kevin
->> and the rk3399-nanopc-t4 with its fan-handling in the cooling-maps?
-> 
-> The rk3399-gru-kevin is correct.
-> 
-> The rk3399-nanopc-t4 is not correct because the cpu and the gpu are
-> sharing the same cooling device (the fan). There are different
-> configurations:
-> 
-> 1. The cpu cooling device for the CPU and the fan for the GPU
-> 
-> 2. Different trip points on the CPU thermal zone, eg. one to for the CPU
-> cooling device and another one for the fan.
-> 
-> There are some variant for the above. If this board is not on battery,
-> you may want to give priority to the throughput, so activate the fan
-> first and then cool down the CPU. Or if you are on battery, you may want
-> to invert the trip points.
-> 
-> In any case, it is not possible to share the same cooling device for
-> different thermal zones.
+Hi Boris,
 
-OK, thanks for the clarification. I'll get my board set up again to 
-figure out the best fix for rk3399-nanopc-t4 (FWIW most users are 
-probably just using passive cooling or a plain DC fan anyway). You might 
-want to raise this issue with the maintainers of 
-arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi, since the 
-everything-shared-by-everything approach in there was what I used as a 
-reference.
+Am Freitag, 14. Juni 2019, 15:53:20 CEST schrieb Boris Brezillon:
+> On Thu, 13 Jun 2019 16:22:44 -0300
+> Ezequiel Garcia <ezequiel@collabora.com> wrote:
+> 
+> 
+> > +static int vop_gamma_lut_request(struct device *dev,
+> > +				 struct resource *res, struct vop *vop)
+> > +{
+> > +	resource_size_t offset = vop->data->gamma_lut_addr_off;
+> > +	resource_size_t size = VOP_GAMMA_LUT_SIZE * 4;
+> > +
+> > +	/*
+> > +	 * Some SoCs (e.g. RK3288) have the gamma LUT address after
+> > +	 * the MMU registers, which means we can't request and ioremap
+> > +	 * the entire register set. Other (e.g. RK3399) have gamma LUT
+> > +	 * address before MMU.
+> > +	 *
+> > +	 * Therefore, we need to request and ioremap those that haven't
+> > +	 * been already.
+> > +	 */
+> > +	if (vop->len >= (offset + size)) {
+> > +		vop->lut_regs = vop->regs + offset;
+> > +		return 0;
+> > +	}
+> > +
+> > +	if (!devm_request_mem_region(dev, res->start + offset,
+> > +				     size, dev_name(dev))) {
+> > +		dev_warn(dev, "can't request gamma lut region\n");
+> > +		return -EBUSY;
+> > +	}
+> > +
+> > +	vop->lut_regs = devm_ioremap(dev, res->start + offset, size);
+> > +	if (!vop->lut_regs) {
+> > +		dev_err(dev, "can't ioremap gamma lut address\n");
+> > +		devm_release_mem_region(dev, res->start + offset, size);
+> > +		return -ENOMEM;
+> > +	}
+> 
+> Can't we patch the resource just after calling plaform_get_resource()
+> (and before calling devm_ioremap_resource()) so we don't have to add
+> these devm_request_mem_region()+devm_ioremap() calls here?
 
-Robin.
+The issue is that on the older rk3288 socs the vops memory map has
+the mmu registers (which get mapped separately) in between the core
+and lut registers.
+
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
