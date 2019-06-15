@@ -2,95 +2,99 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE53D46FE5
-	for <lists+linux-rockchip@lfdr.de>; Sat, 15 Jun 2019 14:27:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A22FA47030
+	for <lists+linux-rockchip@lfdr.de>; Sat, 15 Jun 2019 15:32:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Q0v7YLkR6X3kduPt+V+YZnD3xxGOIQnLEcZZm3HqHxY=; b=e7uwD3wDg+VTPnEiXm/blwc8d
-	yuNukQ66VvdxcD542bK1NdGNkqd9W/hHnw9rd1sdwIs1mru2Tut31gW4nGW4H5oC/HYPWl4KWr5XH
-	C3CFR31zHa+3KZfAjFtLDwTKLKZHqtFvw/79tHnz2aEozROnfMypIsoxmutiz2kT6UPb7hOHSEWaV
-	1SGqqwxBFgKkAVhWtohARkCvfUTp2GnAaOZI9vGnFE+fbQ88R1iw2Tadv4x7ZhjId09SufJ0PFQC0
-	6Q6FbJXpeRsRxXcW2oYrl7z3xDw5i3wigomH3PlF5fQpO6zIXQHJgmiGNsP9j9HYsqosgc7bsz6wv
-	dqqau1EoA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nAXVmULUSV3wDxoEM6Cxp18yYHAhL2M7evuQ3tORFJw=; b=pQgjaF2JEurxIp
+	fo2LmZ60aaDCdjW29c1+jTvVPw68Ise6WogYVGcDQoqs8X5KZv7wzjYgCIFbhc9yFIh+Mtt7ttU1a
+	QkCvOiWVLMwRbTQ/L3RUmxTtX6HslkkXE3eJxZaVxmmuRtLYaYTjijLnNXeKkACZQ+8/Xk+6/e/aJ
+	HCAk7BMprUeKyjuOwzMg9niKcnv9EDOxcO/IkKJpBTjiq0S4Aam/mtLmKd/6cU1dOPaq3GwwyyDjd
+	xGA4iPmXUu8G+PxnFKqs6dT5EvmMwX3TgiPcSJZXn/S50foDwCXN/xzQEQui6ItY7pDD7f8d5l6rk
+	mGyCyOJZJFbYNyy+3JMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hc7mj-00062D-61; Sat, 15 Jun 2019 12:27:53 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1hc8nH-0004CT-V4; Sat, 15 Jun 2019 13:32:31 +0000
+Received: from mail-oln040092066094.outbound.protection.outlook.com
+ ([40.92.66.94] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hc7mg-00061l-Ji; Sat, 15 Jun 2019 12:27:52 +0000
-Received: by mail-qt1-x841.google.com with SMTP id i34so365075qta.6;
- Sat, 15 Jun 2019 05:27:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=QUdqxVBPq9imgdnJQFYvha+M4qxrrCavKMcvFwAngs0=;
- b=UDpts2Za5LSrbJ/yfgjWjZhBeaGNbJ1yfqFAGTWkQ1DigQwdh9DGMeM9GU7DWUrbzq
- QAyru1WMZHQbpkmrJm0umxi1tiwp/kDh+JCmKedyXKKX5A3cyohbGF68U26bTm2S7APh
- YoY/miuENg9XcmcP7XlownN58xlST9RI8Nj7n74y9FNy2jugYHkDY8LRwgd131vR1Cxe
- 0kduedLzbzsVRNFl/ZNJWbe6keStlaR+fJWvKIS48Yy7AOZ+D0IiYCj6zJ848cFI/1mG
- Cc5hRAgoM6xQGq60CyyDJm2Iwph6nU9v7y1ARG+vNCiwF6z0xr0z3CktK0VHFFTd6S7t
- tAXw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=QUdqxVBPq9imgdnJQFYvha+M4qxrrCavKMcvFwAngs0=;
- b=gHxxCbXmNwZ3wkELGZWnuBCv9yO+gKDJ+5Q+oUxcM6GsB308SfZ/tXx2CxOrEZRAL9
- 4nyJ1KG8fLnePKhZ80N1p+4kzguMpAyGTAEFafVEwQ/G+N/k0IfhFQeRQD2t5tP5qn9m
- vkYltfbuga/3eubiYNmyfjhy7fweF0tx5p8NyJwcckK/1X85NeQIGqz5ZGdtkNddY+TV
- nuZuCwkyDZRLj1+J6C15FzqjRmuJrdgVG7I9hxVtEWbWS1rNgwKJzYUvCZZfcXv5BEWO
- fygwSduVpZveurVgJylS1VOWhUFE7rYY1s3DTBj/ySMZzIrNUd8YpIdPBw7diVLb5HJl
- jckw==
-X-Gm-Message-State: APjAAAU5aYXSllZkCg8jPgSYGo5vtndg2U5+hjTDrL9VmPxDIwiTrKJg
- DhNQQMDLAaZxqFwgzpjjSRaL7xRSE4MZeA==
-X-Google-Smtp-Source: APXvYqxwct+cSu4cP4kyX4tb45S7fuhMl4vL0jeGlfeQbusi3lOjRa5CzRWC9r6WbJm1Rs2CmtOzAw==
-X-Received: by 2002:ac8:3637:: with SMTP id m52mr71369587qtb.238.1560601666518; 
- Sat, 15 Jun 2019 05:27:46 -0700 (PDT)
-Received: from ?IPv6:2601:153:900:ebb:d1e6:5a48:e4d5:c6a6?
- ([2601:153:900:ebb:d1e6:5a48:e4d5:c6a6])
- by smtp.gmail.com with ESMTPSA id t197sm2776531qke.2.2019.06.15.05.27.45
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 15 Jun 2019 05:27:46 -0700 (PDT)
-Subject: Re: [PATCH] arm64: dts: rockchip: set TX PBL for rk3328-roc-cc gmac
-To: Heiko Stuebner <heiko@sntech.de>
-References: <20190417210059.26262-1-papadakospan@gmail.com>
- <1555938803.1241.1@gmail.com>
- <8ded737d-1fd5-3609-ca2e-cfeba63b2d95@gmail.com> <1619091.6MGD9gV0do@phil>
-From: Peter Geis <pgwipeout@gmail.com>
-Message-ID: <4210ab8d-291c-8c44-3c39-6a1849a73874@gmail.com>
-Date: Sat, 15 Jun 2019 08:27:47 -0400
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <1619091.6MGD9gV0do@phil>
+ id 1hc8n3-00043q-8J; Sat, 15 Jun 2019 13:32:19 +0000
+Received: from HE1EUR01FT047.eop-EUR01.prod.protection.outlook.com
+ (10.152.0.60) by HE1EUR01HT230.eop-EUR01.prod.protection.outlook.com
+ (10.152.0.114) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1987.11; Sat, 15 Jun
+ 2019 13:32:12 +0000
+Received: from VI1PR03MB4206.eurprd03.prod.outlook.com (10.152.0.56) by
+ HE1EUR01FT047.mail.protection.outlook.com (10.152.1.5) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1987.11 via Frontend Transport; Sat, 15 Jun 2019 13:32:11 +0000
+Received: from VI1PR03MB4206.eurprd03.prod.outlook.com
+ ([fe80::fdae:4944:7c73:c26a]) by VI1PR03MB4206.eurprd03.prod.outlook.com
+ ([fe80::fdae:4944:7c73:c26a%6]) with mapi id 15.20.1987.013; Sat, 15 Jun 2019
+ 13:32:11 +0000
+From: Jonas Karlman <jonas@kwiboo.se>
+To: Peter Geis <pgwipeout@gmail.com>, "Leonidas P. Papadakos"
+ <papadakospan@gmail.com>
+Subject: Re: [PATCH] arm64: dts: rockchip: improve rk3328-roc-cc rgmii
+ performance.
+Thread-Topic: [PATCH] arm64: dts: rockchip: improve rk3328-roc-cc rgmii
+ performance.
+Thread-Index: AQHVHS3xSW3k3OH4HkS23g+pNq5rrKaQJvuAgACqTgCACuQ1gIAA92IAgAAWOQA=
+Date: Sat, 15 Jun 2019 13:32:11 +0000
+Message-ID: <VI1PR03MB420672DCCFF8BE2161F67A88ACE90@VI1PR03MB4206.eurprd03.prod.outlook.com>
+References: <20190607123731.8737-1-pgwipeout@gmail.com>
+ <1559912295.22520.0@gmail.com>
+ <CAMdYzYorvWr1YhmFKaMQUCditjop5AZp4d1tO79XsVr7m7HrMw@mail.gmail.com>
+ <1560547631.1367.4@gmail.com>
+ <71dc10a5-1024-d849-336e-476d183e5f46@gmail.com>
+In-Reply-To: <71dc10a5-1024-d849-336e-476d183e5f46@gmail.com>
+Accept-Language: sv-SE, en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: HE1PR0502CA0012.eurprd05.prod.outlook.com
+ (2603:10a6:3:e3::22) To VI1PR03MB4206.eurprd03.prod.outlook.com
+ (2603:10a6:803:51::23)
+x-incomingtopheadermarker: OriginalChecksum:573E1ADEE52DFC612CA64EE6F6E5BA166805CFE4A4FD04A45DC3F979C6C491AC;
+ UpperCasedChecksum:FA724A734FF6C722AB376478982D028B78929CE10C655297378604D28AA5DE82;
+ SizeAsReceived:7990; Count:49
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tmn: [Twh0QfI+6+pk+T4rm4or7IAJZd+ZObJ8]
+x-microsoft-original-message-id: <e5800844-626e-0e17-aff2-913e56c3f265@kwiboo.se>
+x-ms-publictraffictype: Email
+x-incomingheadercount: 49
+x-eopattributedmessage: 0
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031323274)(2017031324274)(2017031322404)(1601125500)(1603101475)(1701031045);
+ SRVR:HE1EUR01HT230; 
+x-ms-traffictypediagnostic: HE1EUR01HT230:
+x-microsoft-antispam-message-info: t3s+Xi7LVBriJtTkKiXuLbeTRxtdK1GNgeOIp9N8Ja5CDMHEZBeshbBFft09As4RD/tpMw0wkgVKD/2selqNbxWE7BAlcXdFfJtRC85C0qI7rZ2q49joFWEMb2RyQ0Rwfu2LxRfhzkS35QND0yBCy0uRoduCIiq/jJRiy240Pp6NhHtP3g3FjYKDlYh0sX5C
+Content-ID: <AC1B4905A1B48D4C8A4666AF55652EB0@eurprd03.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 252744fa-1993-4c2b-5f81-08d6f195dee4
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Jun 2019 13:32:11.8379 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1EUR01HT230
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190615_052750_700438_35FEA60D 
-X-CRM114-Status: GOOD (  18.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190615_063217_301027_D8C7716B 
+X-CRM114-Status: GOOD (  17.14  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pgwipeout[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.92.66.94 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,78 +107,65 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <jose.abreu@synopsys.com>, devicetree@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- "Leonidas P. Papadakos" <papadakospan@gmail.com>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Jose Abreu <jose.abreu@synopsys.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 6/14/2019 5:26 AM, Heiko Stuebner wrote:
-> Hi,
-> 
-> Am Donnerstag, 23. Mai 2019, 02:00:27 CEST schrieb Peter Geis:
+On 2019-06-15 14:12, Peter Geis wrote:
+>
+> On 6/14/2019 5:27 PM, Leonidas P. Papadakos wrote:
 >>
->> On 4/22/2019 9:13 AM, Leonidas P. Papadakos wrote:
+>>> The big change was actually snps,aal.
+>>> As per the TRM, DMA channels not address aligned have severe
+>>> limitations, if they work at all.
 >>>
->>> Indeed, at least with that first patch users won't have a crappy
->>> experience by default (ssh lags and the like)
->>>
->>>
+>>> Setting the DMA ops as address aligned fixed my 30mbps TX issue when
+>>> combined with your snps,txpbl = <0x4>.
+>> Honestly, I don't notice any difference either way with aal. So what 
+>> happens without it? If You only use the 0x4 txpbl and having removed 
+>> thresh dma mode, (2 things then) do you get bad tx?
 >>
->> I apologize for taking so long at this, but I wanted to make sure I had
->> it right.
 >>
->> So far I've found a few things that seem to help, and would like y'all
->> to test them when you get the chance.
->>
->> Adding snps,aal (configures DMA for address alignment) appears to make a
->> massive improvement to stability, although the the snps,txpbl = <0x4> is
->> still necessary for this to work.
->>
->> Second, I added snps,rxpbl = <0x4> as well, which seems to help with my
->> RX issues a bit.
->> The biggest improvement with these two settings is more stable transmit
->> and receive.
->> Currently I'm getting about 800mbps on tx and 400 mbps on rx.
->>
->> Please test when you get the chance and provide feedback.
-> 
-> I have to confess I lost track of the multitude of patches touching
-> the gmac on rk3328 and their long mail threads in terms of which
-> to pick up and which are considered superseeded.
-> 
-> So I'd really appreciate if you could resend the patches that matter
-> and provide relevant Tested-by, Reviewed-by, etc tags from involved
-> people that actually were able to test patches
-> 
-> Thanks
-> Heiko
-> 
-> 
+> I'm unsure why, but I think there might be small variations in the 
+> different boards (Firefly, Libre).
+> On my board (Libre) with just 0x4 txpbl and thresh dma removed I get a 
+> whopping 30mbps.
+>
+> Adding aal brought it up to 900 mbps.
+>
+> I also had stability issues on rx, where it would bounce between 200 and 
+> 400 mbps, which adding 0x4 rxpbl helped.
+> I still haven't been able to get rx above 400mpbs though.
+>
+> It's definitely the MTU issue, since setting the max mtu to 1496 fixes 
+> most problems.
+>
+> I have to wonder if the pl330 in the rk3328 is bugged, since all of the 
+> hardware that misbehaves (usb3, mmc, rgmii) require the dma engine.
+>
+> If this works as a valid replacement for thresh dma mode, then I can 
+> submit it for merging.
+> I would like a few more people to test it first.
+>
+> Anyone else with a rk3328-roc-cc board that can test this patch?
+>
 
-Good Morning Heiko,
+I will try to run some tests using this patch on my different rk3328 devices tomorrow.
+One thing I have noticed is that when vdd_logic is less then 1.05v the network connection gets super slow.
 
-Here's a quick catch-up for you:
-Currently we use thresh dma mode to allow rgmii to work, but this has 
-performance limitations.
-Leonidas submitted the txpbl 0x4 patch, which works well for his board 
-but my board has very poor performance with.
-I submitted a new patch that combined txpbl 0x4 with aal dma mode, which 
-fixes my issue and seems to work well for Leonidas.
+Earlier I tried to use devfreq and an opp table for gpu, but that caused vdd_logic to use lower voltage.
+I have since then run gpu driver without devfreq/opp table and vdd_logic is using default 1.1v.
+My board seems much more stable using default 1.1v for vdd_logic.
 
-That patch is under [PATCH] arm64: dts: rockchip: improve rk3328-roc-cc 
-rgmii performance.
-I'd like more people to test it prior to submitting it to replace thresh 
-dma mode.
-
-If we get a few more tests without regression, I'll resubmit it with 
-Tested-by tags for inclusion.
-
-Thanks,
-Peter
+Regards,
+Jonas
 
 _______________________________________________
 Linux-rockchip mailing list
