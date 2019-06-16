@@ -2,49 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D44A4752A
-	for <lists+linux-rockchip@lfdr.de>; Sun, 16 Jun 2019 16:26:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1C5B47594
+	for <lists+linux-rockchip@lfdr.de>; Sun, 16 Jun 2019 17:42:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GDCcamcHbVWdhUqSUXBkvKkT7/suzl2SQftwSAZn4kE=; b=kSugIbXmBabqKd
-	T7ASX6MTHTCbryDR4J9G7YXhvnbH03EVzsFwa4sq5KvFXd2Xm8jgTjDVDkm21tplK/02+z3dn2CFo
-	YxUV6sIRozvUTRbF9Dj1xuFpgRMORN6soxbXSnAgf14KkCRkRmYir5hKnjD0dKRhFUnMTRqn3QAGC
-	btr4w5PQN2mMuAwF3YXu2C4sZ+98ZfHhc2kJsNiKnm0hWaCch4BMkXTdQ4VSCUTEnt1h7O6Pj8meA
-	r3hRFLBA33jnSPaHDafq0Fp+NT2EMQ0QSDzpOmf7PsZ3GRoKu2gE1/bGC1r7tsTJg1a69RNQGisPE
-	eOxgqq9GA/vnknX8XUdQ==;
+	List-Owner; bh=qCP2Wh5IaQyqUvZqV8HvBt5c7pND2YgOuJffCQQbQEQ=; b=PxlRZk6AluRwWU
+	HtcKdkeGcRW2L0yGsGLKrfPXNOnPA68RTwvw44hP4Q8X3kc8XtGZHj8tUDTH28K9eoq5NaXcpunYn
+	yMsmtK7Yppa2g19mC/itV191Vzt/P37UUXa6Rp4GoGV9sPcMqm5CY429S8osFEqbtq+18MGR0Mv8L
+	vxnG3pITI8LFJGYItz0GJn2lQyNH70zwUiY5wb1qAr6pqB0ngGeyxMm6sQcqJP/AwZ/CKCjlEFWrG
+	mSP+2sjyPVMvr7KW+QtgSW2ws41Xg5l/wDba/JMwd/49qZU+FUNLK+FGtyPo67YZrUx8jSIg1vlFT
+	0uGLuDyAjWLhP6x9Qa6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcW6Y-0008Td-RD; Sun, 16 Jun 2019 14:25:58 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1hcXIQ-0003iw-6t; Sun, 16 Jun 2019 15:42:18 +0000
+Received: from atrey.karlin.mff.cuni.cz ([195.113.26.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcW6U-0008Sm-8a; Sun, 16 Jun 2019 14:25:56 +0000
-Received: from ip5f5a6320.dynamic.kabel-deutschland.de ([95.90.99.32]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hcW6A-0006Xe-U6; Sun, 16 Jun 2019 16:25:34 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: Update DWC3 modules on RK3399 SoCs
-Date: Sun, 16 Jun 2019 16:25:34 +0200
-Message-ID: <1624608.ah9ZKqicGs@diego>
-In-Reply-To: <a3050da7-9b99-c6fd-ee06-f65503f1ae87@arm.com>
-References: <20190613162745.12195-1-enric.balletbo@collabora.com>
- <a685fef9-8f45-700c-17d6-59d792fca092@collabora.com>
- <a3050da7-9b99-c6fd-ee06-f65503f1ae87@arm.com>
+ id 1hcXI9-0003XQ-Ji; Sun, 16 Jun 2019 15:42:03 +0000
+Received: by atrey.karlin.mff.cuni.cz (Postfix, from userid 512)
+ id 82D3D801F5; Sun, 16 Jun 2019 17:41:43 +0200 (CEST)
+Date: Sun, 16 Jun 2019 17:41:43 +0200
+From: Pavel Machek <pavel@ucw.cz>
+To: Matthias Kaehlcke <mka@chromium.org>
+Subject: Re: [PATCH] Revert "ARM: dts: rockchip: set PWM delay backlight
+ settings for Minnie"
+Message-ID: <20190616154143.GA28583@atrey.karlin.mff.cuni.cz>
+References: <20190614224533.169881-1-mka@chromium.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190614224533.169881-1-mka@chromium.org>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190616_072554_459324_7DC90359 
-X-CRM114-Status: GOOD (  25.49  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190616_084201_807740_FE8ED504 
+X-CRM114-Status: GOOD (  11.16  )
+X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.113.26.193 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -60,148 +62,42 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Felipe Balbi <felipe.balbi@linux.intel.com>,
- linux-rockchip@lists.infradead.org, Viresh Kumar <viresh.kumar@linaro.org>,
- Randy Li <ayaka@soulik.info>, linux-kernel@vger.kernel.org,
- Vicente Bergas <vicencb@gmail.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Tony Xie <tony.xie@rock-chips.com>,
- Klaus Goger <klaus.goger@theobroma-systems.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
+ Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>,
  Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Collabora Kernel ML <kernel@collabora.com>,
- linux-arm-kernel@lists.infradead.org,
- Christoph Muellner <christoph.muellner@theobroma-systems.com>
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Donnerstag, 13. Juni 2019, 19:44:43 CEST schrieb Robin Murphy:
-> On 13/06/2019 18:20, Enric Balletbo i Serra wrote:
-> > Hi Robin,
-> > 
-> > On 13/6/19 18:56, Robin Murphy wrote:
-> >> On 13/06/2019 17:27, Enric Balletbo i Serra wrote:
-> >>> As per binding documentation [1], the DWC3 core should have the "ref",
-> >>> "bus_early" and "suspend" clocks. As explained in the binding, those
-> >>> clocks are required for new platforms but not for existing platforms
-> >>> before commit fe8abf332b8f ("usb: dwc3: support clocks and resets for
-> >>> DWC3 core").
-> >>>
-> >>> However, as those clocks are really treated as required, this ends with
-> >>> having some annoying messages when the "rockchip,rk3399-dwc3" is used:
-> >>>
-> >>> [    1.724107] dwc3 fe800000.dwc3: Failed to get clk 'ref': -2
-> >>> [    1.731893] dwc3 fe900000.dwc3: Failed to get clk 'ref': -2
-> >>> [    2.495937] dwc3 fe800000.dwc3: Failed to get clk 'ref': -2
-> >>> [    2.647239] dwc3 fe900000.dwc3: Failed to get clk 'ref': -2
-> >>>
-> >>> In order to remove those annoying messages, update the DWC3 hardware
-> >>> module node and add all the required clocks. With this change, both, the
-> >>> glue node and the DWC3 core node, have the clocks defined, but that's
-> >>> not really a problem and there isn't a side effect on do this. So, we
-> >>> can get rid of the annoying get clk error messages.
-> >>
-> >> Can we not just move these clocks entirely from the glue layer to the core
-> >> layer? That didn't seem to break when I tried it, although I'll admit my
-> >> 'testing' was no more than booting and mounting a USB 3.0 flash drive, no
-> >> suspend or anything fancy.
-> >>
-> > 
-> > AFAICT usb doesn't break, but we won't break backward compability then? (/me
-> > still doesn't know when backward compability is really important or not)
+Hi!
+
+> This reverts commit 288ceb85b505c19abe1895df068dda5ed20cf482.
 > 
-> Ah, fair point - I was imagining the glue layer's heavy-handed "turn 
-> everything on" approach potentially interfering with the core layer's 
-> ability to exert finer-grained control of the clocks it knows more 
-> about, but the "old kernel, new DT" situation might indeed be a problem. 
-> I guess that's Heiko's call in the end.
-
-I really try to stay with the "backwards-compatible" philosophy
-(at least with the old dt with new kernel variant) and so far that worked
-surprisingly well ;-) .
-
-Personally I don't believe in the other direction, old kernel with new dt,
-as we're always adding features, so updating the devicetree without
-updating the kernel doesn't look like it would make very much sense.
-
-So if you just keep the old-dt+new-kernel variant intact, I'll be happy.
-
-
-Heiko
-
-
-
-> Plus I'm no CCF expert so my 
-> concern might be unfounded anyway.
+> According to the commit message the AUO B101EAN01 panel on minnie
+> requires a PWM delay of 200 ms, however this is not what the
+> datasheet says. The datasheet mentions a *max* delay of 200 ms
+> for T2 ("delay from LCDVDD to black video generation") and T3
+> ("delay from LCDVDD to HPD high"), which aren't related to the
+> PWM. The backlight power sequence does not specify min/max
+> constraints for T15 (time from PWM on to BL enable) or T16
+> (time from BL disable to PWM off).
 > 
-> >> My own attempt to shut up these errors got sidetracked into c0c61471ef86 ("usb:
-> >> dwc3: of-simple: Convert to bulk clk API"), then apparently stalled :)
-> >>
-> > 
-> > There was any off the record discussion and stalled or simply you didn't get
-> > feedback?
-> 
-> More that the 3399 board got put away in a freak "tidying the kitchen" 
-> incident, and I've just had too many other things on the go since :)
-> 
-> Robin.
-> 
-> > 
-> > I'll take a look.
-> > 
-> > Thanks,
-> > ~ Enric
-> > 
-> >> Robin.
-> >>
-> >>>
-> >>> [1] Documentation/devicetree/bindings/usb/dwc3.txt
-> >>>
-> >>> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-> >>> ---
-> >>>
-> >>>    arch/arm64/boot/dts/rockchip/rk3399.dtsi | 6 ++++++
-> >>>    1 file changed, 6 insertions(+)
-> >>>
-> >>> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-> >>> b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-> >>> index 196ac9b78076..a15348d185ce 100644
-> >>> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-> >>> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-> >>> @@ -414,6 +414,9 @@
-> >>>                compatible = "snps,dwc3";
-> >>>                reg = <0x0 0xfe800000 0x0 0x100000>;
-> >>>                interrupts = <GIC_SPI 105 IRQ_TYPE_LEVEL_HIGH 0>;
-> >>> +            clocks = <&cru SCLK_USB3OTG0_REF>, <&cru ACLK_USB3OTG0>,
-> >>> +                 <&cru SCLK_USB3OTG0_SUSPEND>;
-> >>> +            clock-names = "ref", "bus_early", "suspend";
-> >>>                dr_mode = "otg";
-> >>>                phys = <&u2phy0_otg>, <&tcphy0_usb3>;
-> >>>                phy-names = "usb2-phy", "usb3-phy";
-> >>> @@ -447,6 +450,9 @@
-> >>>                compatible = "snps,dwc3";
-> >>>                reg = <0x0 0xfe900000 0x0 0x100000>;
-> >>>                interrupts = <GIC_SPI 110 IRQ_TYPE_LEVEL_HIGH 0>;
-> >>> +            clocks = <&cru SCLK_USB3OTG1_REF>, <&cru ACLK_USB3OTG1>,
-> >>> +                 <&cru SCLK_USB3OTG1_SUSPEND>;
-> >>> +            clock-names = "ref", "bus_early", "suspend";
-> >>>                dr_mode = "otg";
-> >>>                phys = <&u2phy1_otg>, <&tcphy1_usb3>;
-> >>>                phy-names = "usb2-phy", "usb3-phy";
-> >>>
-> > 
-> > _______________________________________________
-> > linux-arm-kernel mailing list
-> > linux-arm-kernel@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> > 
-> 
+> Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+> ---
+> Enric, if you think I misinterpreted the datasheet please holler!
 
+Was this tested? Was previous patch tested?
 
+Does patch being reverted actually break anything? If so, cc stable?
 
-
+								Pavel
+								
+-- 
+(english) http://www.livejournal.com/~pavelmachek
+(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blog.html
 
 _______________________________________________
 Linux-rockchip mailing list
