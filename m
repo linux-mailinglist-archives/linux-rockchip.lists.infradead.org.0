@@ -2,72 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE8AF47B70
-	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:40:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB32347B71
+	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:40:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ehha+7BEApJnP0crSupd3MsFa2PbxmQCvdxM7EZkDfg=; b=KhlYgAbnovUok3
-	sWKckYFMKRIIIc+wOfh0TeQu6Kdf3Aihpi84Q7zw7vimBJ+06EbMFzojF1iTVKR1vqa2OsXG+A2u4
-	3qwXyKtneQAjprEctCpBKfzgGuoriKTA0H6boXXprF87rc3LE2lgbpfQvSMZ8G/SBycUqKlPWN81c
-	Cxn1Ehs+LoCg8lbjBp+MpbrhdxqKkjGqhz8YZ31LjEb5P71xGUX9mQX1Q107VrbSIXxbRC6nAhABQ
-	kdFIuDxXYjH6/Me/E8EAJE1Atj2/hAxbZlaoiTHVXpnc2IMv+tsB8b5HSUE+3mbiQb45DbNLZsb50
-	bzWMj/VGoFf2HkjhfQ1g==;
+	List-Owner; bh=N2wX6+1WuH9NE60FV0MnzyM+SdzMoydhXiKwLrZLSMc=; b=HZS70XvMLi7jwI
+	aqf4BAv8QxOTvZ+ovWETVDrhW13dWjx6ADd0IcBz6se+bQVqN+JAxTFx9cmcAebIQ8TKCHKrNpFHy
+	fMvK9SYECUguBpGXOVLuU6J/z+8Dhqxx67aXphly+l0tJQFT/n1PbKmBEG8zSRfc1l8HN/zKJ8M13
+	iQ/frW0C2K1I2soLEDEvGHqeEAae0t9g2HoUjQX4eRmXbWP+MKs+haljC+chI3l16N6/uSCQdXO8T
+	LM6NkLlB7lQ/t6uc6dysVdCx8C6a8qOLfaX/oon0oI78Gq8ay9LvpDJFgE09ncIcE8Ks14NzvEQxA
+	MbjCpVXIjSRiWzqYRhKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcmG3-0001fz-9i; Mon, 17 Jun 2019 07:40:51 +0000
+	id 1hcmG7-0001ix-PG; Mon, 17 Jun 2019 07:40:55 +0000
 Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcmFz-0001dH-9F
- for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:40:48 +0000
-Received: by mail-pg1-x544.google.com with SMTP id v9so5290097pgr.13
- for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:40:47 -0700 (PDT)
+ id 1hcmG2-0001gV-IR
+ for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:40:52 +0000
+Received: by mail-pg1-x544.google.com with SMTP id n65so855831pga.4
+ for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:40:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=JHJEi1B9BWCNPdGxI/VcOYj0TnW0NM3sy1W63Kvi/ww=;
- b=Ws5nm6wF/HezLCnyGDus0Mtrj3T/t75dGE7fsmY4ZjwxoL4jsW96b9SpRJiC6eIWoF
- RmjPDUcXt9aJNyGOXsyIASNWooST9aSYT+WgKOZNJlSN8YIZfsZ2uRGCvHlB1/6gFJYI
- ietXAPm1I+KvauSvtXXvLf+ewludlHk20LWQI=
+ bh=5ZvAC+l3x0po8psNwv8zcgjebp2Xr4SvK0wKkKf1BIo=;
+ b=d7ng15FLSCGXV9k1NsAt/0gGC9Nz4lFZ7ZBl/ure9XAAkuCmRq0H+6tOG01jzPF4sf
+ NaRUgH/OdvUQYuVAaKWNlWyLCk4QlqEYRT1HSjsSdHw3v2yor2oTThy3ly8LaDFljzsI
+ UNv+Gmj5Kf2PYi0eoX+HZDvzkGaNnB8bzaqiI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=JHJEi1B9BWCNPdGxI/VcOYj0TnW0NM3sy1W63Kvi/ww=;
- b=WgTOXgZfINUG2Vrpb8soWo5sjdgBF6IiJyhepel/7UfVv4CVMGp7gR1YG8foU1smVn
- anOIIDozsvKphBYjS6a73mdEJ87zepjdYmlmNfR+sctRHMfS3bhrDTL8gjddo3ypo2MF
- Kfll/IrobbA7fFXaSAsfGtxGh9oep44OSFyvgKxZcxNua+wW08dSiuW7bCQHpR0Wq19g
- UavE7ej8NOd++xkUp1Yp+SDHT8Bj/xYGdvWungsYnkh1oSn+Q5Mucz6eGdbQWeYmg+9I
- G1rTAtNpwVABheWJ6oqBwoDPBRd880W56djQjSZFu9wD1d1GGMjUbMtizxu7YL0fPw8N
- 5jGQ==
-X-Gm-Message-State: APjAAAXzC0k94NY1wJm6z4gj+IRzPt6jMyIveaUC3pX6kOzwYVywdOnV
- +osC8E0x9jKzRyk5yRFlxwUGlg==
-X-Google-Smtp-Source: APXvYqwJce5AhmBozDjt1YxX8QBI/JsUE/Wsm7ocd5xSvFatTEXT9uQLXT/i2iCYb4MLeC87si9AqQ==
-X-Received: by 2002:a63:2159:: with SMTP id s25mr46043225pgm.234.1560757246726; 
- Mon, 17 Jun 2019 00:40:46 -0700 (PDT)
+ bh=5ZvAC+l3x0po8psNwv8zcgjebp2Xr4SvK0wKkKf1BIo=;
+ b=QOvnmCyGdiOggC8V99JUHWoel55OXXNhHCNQu1A0AJLyJZyPtCwrfGAHug6tFXHyBX
+ AUT2E1t5IWITSAxecKQeoLhOqllo6SXR5FBO0AO5SosGO4yg9gLFi37SjN4gl0zZkx6Q
+ MbLYuV++y6yN72pYTmxyi5ED0WNHYGWA08PF+fLuc8/qeqC+Fn2eEq6wl8gMHIlF/rHZ
+ eSXZ+sVBcILywGVCp3LuOUOdCU0Ll/Wsu1F6CTEPO40QpIhZHTqKEBvzuhaUGQS29BbB
+ Cs4qugxJkb+haD8lce2dgZDYKgSKRASLR6CjK/LFPuH3LYbaYWgaM9fMm6b2BP9iRVy6
+ TwAw==
+X-Gm-Message-State: APjAAAVexOXVWBFr3HhU2kIztqfvPy/L+kxnxOuoetjcZ9KTL7U/P/o0
+ EN6x8UdUubEOJVM0fQ2oLONpRw==
+X-Google-Smtp-Source: APXvYqw8dOH6qOC4WfRZF7Hhv2YX8uXtk/ss1l+Du+xvBJD/Pr9b6W1p9yhXCVMgQWKrfDCgq3jTOQ==
+X-Received: by 2002:a65:4c44:: with SMTP id l4mr3158197pgr.62.1560757249930;
+ Mon, 17 Jun 2019 00:40:49 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.203.245])
- by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.40.43
+ by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.40.47
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 17 Jun 2019 00:40:46 -0700 (PDT)
+ Mon, 17 Jun 2019 00:40:49 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH v2 80/99] ram: rk3399: Simplify data training first argument
-Date: Mon, 17 Jun 2019 13:02:33 +0530
-Message-Id: <20190617073252.27810-81-jagan@amarulasolutions.com>
+Subject: [PATCH v2 81/99] ram: rk3399: Handle data training via ops
+Date: Mon, 17 Jun 2019 13:02:34 +0530
+Message-Id: <20190617073252.27810-82-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190617073252.27810-1-jagan@amarulasolutions.com>
 References: <20190617073252.27810-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_004047_387847_2B465F63 
-X-CRM114-Status: GOOD (  11.89  )
+X-CRM114-CacheID: sfid-20190617_004050_727426_D68BF199 
+X-CRM114-Status: GOOD (  14.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -105,57 +105,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-data training is using chan_info as first argument with
-channel number as second argument instead of that use
-dram_info as first argument so-that we can get the
-chan_info at data training definition.
+data training can be even required for lpddr4 and we
+need to keep the lpddr4 code to compile only for relevant
+boards which do support lpddr4.
 
-This was the argument handling is meaningful, readable
-and it would help to add similar data training for
-lpddr4 in future.
+For this requirement, and for code readability handle
+data training via sdram_rk3399_ops and same will update
+in future while supporting lpddr4 code.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- drivers/ram/rockchip/sdram_rk3399.c | 9 ++++-----
- 1 file changed, 4 insertions(+), 5 deletions(-)
+ drivers/ram/rockchip/sdram_rk3399.c | 43 ++++++++++++++++++++++-------
+ 1 file changed, 33 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index e3180d0ef2..927c7cced3 100644
+index 927c7cced3..e2b311193d 100644
 --- a/drivers/ram/rockchip/sdram_rk3399.c
 +++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -1286,10 +1286,11 @@ static int data_training_wdql(const struct chan_info *chan, u32 channel,
- 	return 0;
+@@ -65,11 +65,17 @@ struct dram_info {
+ 	struct rk3399_pmucru *pmucru;
+ 	struct rk3399_pmusgrf_regs *pmusgrf;
+ 	struct rk3399_ddr_cic_regs *cic;
++	const struct sdram_rk3399_ops *ops;
+ #endif
+ 	struct ram_info info;
+ 	struct rk3399_pmugrf_regs *pmugrf;
+ };
+ 
++struct sdram_rk3399_ops {
++	int (*data_training)(struct dram_info *dram, u32 channel, u8 rank,
++			     struct rk3399_sdram_params *sdram);
++};
++
+ #if defined(CONFIG_TPL_BUILD) || \
+ 	(!defined(CONFIG_TPL) && defined(CONFIG_SPL_BUILD))
+ 
+@@ -1465,6 +1471,23 @@ static void dram_all_config(struct dram_info *dram,
+ 	clrsetbits_le32(&dram->cru->glb_rst_con, 0x3, 0x3);
  }
  
--static int data_training(const struct chan_info *chan, u32 channel,
-+static int data_training(struct dram_info *dram, u32 channel,
- 			 const struct rk3399_sdram_params *params,
- 			 u32 training_flag)
++static int default_data_training(struct dram_info *dram, u32 channel, u8 rank,
++				 struct rk3399_sdram_params *params)
++{
++	u8 training_flag = PI_READ_GATE_TRAINING;
++
++	/*
++	 * LPDDR3 CA training msut be trigger before
++	 * other training.
++	 * DDR3 is not have CA training.
++	 */
++
++	if (params->base.dramtype == LPDDR3)
++		training_flag |= PI_CA_TRAINING;
++
++	return data_training(dram, channel, params, training_flag);
++}
++
+ static int switch_to_phy_index1(struct dram_info *dram,
+ 				const struct rk3399_sdram_params *params)
  {
-+	struct chan_info *chan = &dram->chan[channel];
- 	u32 *denali_phy = chan->publ->denali_phy;
+@@ -1627,7 +1650,6 @@ static int sdram_init(struct dram_info *dram,
+ {
+ 	unsigned char dramtype = params->base.dramtype;
+ 	unsigned int ddr_freq = params->base.ddr_freq;
+-	u32 training_flag = PI_READ_GATE_TRAINING;
+ 	int channel, ch, rank;
  	int ret;
  
-@@ -1499,8 +1500,7 @@ static int switch_to_phy_index1(struct dram_info *dram,
- 	for (channel = 0; channel < ch_count; channel++) {
- 		denali_phy = dram->chan[channel].publ->denali_phy;
- 		clrsetbits_le32(&denali_phy[896], (0x3 << 8) | 1, 1 << 8);
--		ret = data_training(&dram->chan[channel], channel,
--				    params, PI_FULL_TRAINING);
-+		ret = data_training(dram, channel, params, PI_FULL_TRAINING);
- 		if (ret < 0) {
- 			debug("index1 training failed\n");
- 			return ret;
-@@ -1663,8 +1663,7 @@ static int sdram_init(struct dram_info *dram,
- 			if (params->base.dramtype == LPDDR3)
- 				training_flag |= PI_CA_TRAINING;
+@@ -1655,16 +1677,12 @@ static int sdram_init(struct dram_info *dram,
  
--			if (!(data_training(&dram->chan[ch], ch,
--					    params, training_flag)))
-+			if (!(data_training(dram, ch, params, training_flag)))
+ 			params->ch[ch].cap_info.rank = rank;
+ 
+-			/*
+-			 * LPDDR3 CA training msut be trigger before
+-			 * other training.
+-			 * DDR3 is not have CA training.
+-			 */
+-			if (params->base.dramtype == LPDDR3)
+-				training_flag |= PI_CA_TRAINING;
+-
+-			if (!(data_training(dram, ch, params, training_flag)))
++			ret = dram->ops->data_training(dram, ch, rank, params);
++			if (!ret) {
++				debug("%s: data trained for rank %d, ch %d\n",
++				      __func__, rank, ch);
  				break;
++			}
  		}
  		/* Computed rank with associated channel number */
+ 		params->ch[ch].cap_info.rank = rank;
+@@ -1744,6 +1762,10 @@ static int conv_of_platdata(struct udevice *dev)
+ }
+ #endif
+ 
++static const struct sdram_rk3399_ops rk3399_ops = {
++	.data_training = default_data_training,
++};
++
+ static int rk3399_dmc_init(struct udevice *dev)
+ {
+ 	struct dram_info *priv = dev_get_priv(dev);
+@@ -1761,6 +1783,7 @@ static int rk3399_dmc_init(struct udevice *dev)
+ 		return ret;
+ #endif
+ 
++	priv->ops = &rk3399_ops;
+ 	priv->cic = syscon_get_first_range(ROCKCHIP_SYSCON_CIC);
+ 	priv->grf = syscon_get_first_range(ROCKCHIP_SYSCON_GRF);
+ 	priv->pmugrf = syscon_get_first_range(ROCKCHIP_SYSCON_PMUGRF);
 -- 
 2.18.0.321.gffc6fa0e3
 
