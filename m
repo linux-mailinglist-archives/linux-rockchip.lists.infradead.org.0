@@ -2,80 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AAE147B4C
-	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:39:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF15047B4D
+	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:39:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DsYTBx/L5vYAXBPrc+oQZ3ooRCrRMNBlPVOPFWfVMr0=; b=TIzDQVBWgpIrw4
-	KuMo6bf/ta4dnPeu+dOgd7fH63lF2MN9sulFMGgNIEzBxJw7GfAVGBVIsbsehXMKe6bsAt5qeUN3J
-	jD/Z1t1yMJaff/lx/9l1FPcyCiZz+qhfmDDs1TsFpT29F4uTwBsf3N0QAazjlPYgQCEUkEB9/UDMR
-	+eyrQ2j+f9DLY4/v6Z3mpdtULiIhgB5FsrRV0JU2K/+MxbajnfuoH+upc52O/aSveXLNhOiOknTar
-	t7t/oK5ethDtP1uGUpZoLhwElIyewJ4MDL9/1+6k/YzGFdgil+NE2Sbc/hm8MDGG2hGQkuzmsSiL+
-	joGu9LTfKtVPjiPBtEwA==;
+	List-Owner; bh=64tEnidJ2V0q/Rq8UOztah5BW6GLQzLUG0oJsmYYHXo=; b=DfRevP8DfZzRdL
+	qKlww22NOQNc06P3IeLw7ZxHLOeI3E50Ijt1UJNsWrCqijpTBbD2RbWdpb+hThtI9vovNnIiGcA/L
+	cbWMpjlhklk/YPaeDttWahindA+aMYeIKVv7jWCHsuEXbdvPb0YNbi+C3pn0TS4Ewj1b+X9fyMhAA
+	q5RkA2B9JKZmJoJlNoq3CnCykod0+aL4RHgBNfcYoDU3ICFlsjm2IL5odo1gjEc0xFByyOI3ngXHg
+	kj8OIoSEySRTQCQ7Y06j8jblTrMk0LPOGWdIfKo7YiuoOYiM6o+qy9M9JDymjNrxTI4GCtRLVjuHq
+	ZuqIm8B3g/PlLTIMt8zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcmEN-0007Wh-6A; Mon, 17 Jun 2019 07:39:07 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hcmEQ-0007Ys-3e; Mon, 17 Jun 2019 07:39:10 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcmEE-0007QP-Gw
- for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:39:00 +0000
-Received: by mail-pf1-x442.google.com with SMTP id p184so5186072pfp.7
- for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:38:58 -0700 (PDT)
+ id 1hcmEH-0007TX-S9
+ for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:39:03 +0000
+Received: by mail-pg1-x543.google.com with SMTP id s27so5320016pgl.2
+ for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:39:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=kw/++CuXx6mQuiTZ6aAWPkhA635XZSGQPzWMsqf+2Gk=;
- b=QUl2SnuPlG7sOEe4jY4XNp5KdEZP4fyc2bIWI122nb1ZsM4vUH2UX0+2uHRh88llj3
- VWTCuj9XDvMXS1Zfib0RruYNw+DHrx/y8gW0F9QON3kgy/+JJTPofXCqN1Z+HT9EjhEK
- JGPf9ELYw2YHy16G4SgeBhiTUKAQ1tGyA7cMw=
+ bh=HWBj/1uRsL5ErEedEXzfm03DRp+F6MGfVh41KQF2PFU=;
+ b=Jpmge8Zxgtxj0ZfNaEMAjRiV0GBqz9QfMNtqfQrBB30mKOrocIkzbc/TwohIdrxzNz
+ ZGA0LSR3jfutiupoNsbzA4x4MuTbRFgVshNkk8erq95lYPSPsmwjPWP1X+toEFcuPrGl
+ NgUa6SgTCv99pDug8XXguHwFDc+PkGdcjOt4A=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=kw/++CuXx6mQuiTZ6aAWPkhA635XZSGQPzWMsqf+2Gk=;
- b=nvULvfc/REtdIfRNzpsDtOrWYZH3Jn1089HQSvyT58n6kjU+31lxlZcZS8cDELC5Uv
- jT9oac+HFQ22D2Mr9YVmCV5OYO308bdFgfwIVdfH3KlxYOFgn4WHjUOScmblw5nWYOlj
- aTjJfMKe9BXIxK5U/W0+FCnEqOS39lfLPIplhvQCCTUvm/vTyDxR1LtVQR3h3nJdDsxm
- AeB7bZxcPzXa2V434ZbqjPMAO8kZc1EvICF0NKNko+d99FZOcoQDJLUy1S5QqNvHaeUv
- pSTLTlGDJOCbOaJmq+eT3vpoyP+qq6uWQaZ7sYbAqHITNfyU7GpbXVzz9xDECG5uaClM
- q2CA==
-X-Gm-Message-State: APjAAAVWoIGUn/cTZtR/bhKDf/yf6dN7u0bEOPCkoofowRLvvNsIuMwi
- ju56PGMwVwSN5toZISAGezjhbg==
-X-Google-Smtp-Source: APXvYqzIap2VV9ADQX9qbccaj6gg+IFNgd9gPVXajyvmcBQ31W7ROjZscw9za6ctZ7E+WqBlxtJNnQ==
-X-Received: by 2002:a63:26c7:: with SMTP id
- m190mr48786614pgm.141.1560757137893; 
- Mon, 17 Jun 2019 00:38:57 -0700 (PDT)
+ bh=HWBj/1uRsL5ErEedEXzfm03DRp+F6MGfVh41KQF2PFU=;
+ b=B3jX85bH3RMqz5KHBxcEwChGUjhwO+eK1CPzGAJJ1eapQlJC/z+LiPw7cD/fCm01lF
+ 1nh9Llh0jxjDk8x4QWXHMBaKefaa2H//QnymZB5YNIeZlxFKr5TSLVNEFfJdTGm87gm2
+ cuRkXxs4wd4npZiwAeVsgUZ8AAfU4Qt5MdMWlXLblJLmpMUgfOCRs9m5Ob25smbtaxW1
+ 1FxgGWW88o4fqDhpK7aYn8G2gmEfdB7MSR8eP9xxy80qy4EgML4KVJf1DSbWz/5OtT3l
+ Qp+9I38DT0/pVunN755Tu9naBAVSfnCdY4d4m/WaduFNSy7wjtLuTwZu5A+i0K63VVdw
+ RPcg==
+X-Gm-Message-State: APjAAAUXItQ2mV4XwjslB1YMKdznmjqVILlnvNNvU84mIMoOZd08nFVd
+ ATCsoMEUVvQygOIKrnjTfNmuQw==
+X-Google-Smtp-Source: APXvYqwmKrbbiCpLbh7cUok+uJNGhlu6zeg8a0s7Zyhu1UTfzn1z1e+NRKT01cBDS7GS5svXQMlyJw==
+X-Received: by 2002:a65:5004:: with SMTP id f4mr49149352pgo.268.1560757141220; 
+ Mon, 17 Jun 2019 00:39:01 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.203.245])
- by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.38.54
+ by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.38.58
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 17 Jun 2019 00:38:57 -0700 (PDT)
+ Mon, 17 Jun 2019 00:39:00 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH v2 47/99] ram: rockchip: debug: Get the cs capacity
-Date: Mon, 17 Jun 2019 13:02:00 +0530
-Message-Id: <20190617073252.27810-48-jagan@amarulasolutions.com>
+Subject: [PATCH v2 48/99] ram: rk3399: debug: Add sdram_print_stride
+Date: Mon, 17 Jun 2019 13:02:01 +0530
+Message-Id: <20190617073252.27810-49-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190617073252.27810-1-jagan@amarulasolutions.com>
 References: <20190617073252.27810-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_003858_646176_93DBE82B 
-X-CRM114-Status: GOOD (  11.55  )
+X-CRM114-CacheID: sfid-20190617_003902_193744_C731A0DB 
+X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,83 +106,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add code to get the channel capacity, this would help to
-print the capacity of specific channel.
+Add code to print the channel stride, this would help to
+print the stride of associated channel.
 
-Here is sample print on LPDDR4, 50MHz channel 0
-BW=32 Col=10 Bk=8 CS0 Row=15 CS1 Row=15 CS=2 Die BW=16 Size=2048MB
+Here is sample print on LPDDR4, 50MHz.
+256B stride
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 Signed-off-by: YouMin Chen <cym@rock-chips.com>
 ---
- drivers/ram/rockchip/sdram_debug.c | 46 +++++++++++++++++++++++++++++-
- 1 file changed, 45 insertions(+), 1 deletion(-)
+ .../include/asm/arch-rockchip/sdram_common.h  |  5 ++++
+ drivers/ram/rockchip/sdram_debug.c            | 29 +++++++++++++++++++
+ 2 files changed, 34 insertions(+)
 
+diff --git a/arch/arm/include/asm/arch-rockchip/sdram_common.h b/arch/arm/include/asm/arch-rockchip/sdram_common.h
+index 7d1372f033..8027b53636 100644
+--- a/arch/arm/include/asm/arch-rockchip/sdram_common.h
++++ b/arch/arm/include/asm/arch-rockchip/sdram_common.h
+@@ -133,10 +133,15 @@ inline void sdram_print_ddr_info(struct sdram_cap_info *cap_info,
+ 				 struct sdram_base_params *base)
+ {
+ }
++
++inline void sdram_print_stride(unsigned int stride)
++{
++}
+ #else
+ void sdram_print_dram_type(unsigned char dramtype);
+ void sdram_print_ddr_info(struct sdram_cap_info *cap_info,
+ 			  struct sdram_base_params *base);
++void sdram_print_stride(unsigned int stride);
+ #endif /* CONFIG_RAM_ROCKCHIP_DEBUG */
+ 
+ #endif
 diff --git a/drivers/ram/rockchip/sdram_debug.c b/drivers/ram/rockchip/sdram_debug.c
-index 69a6f94a73..19e9225c12 100644
+index 19e9225c12..9cf662675b 100644
 --- a/drivers/ram/rockchip/sdram_debug.c
 +++ b/drivers/ram/rockchip/sdram_debug.c
-@@ -33,10 +33,46 @@ void sdram_print_dram_type(unsigned char dramtype)
- 	}
+@@ -116,3 +116,32 @@ void sdram_print_ddr_info(struct sdram_cap_info *cap_info,
+ 	printdec(cap >> 20);
+ 	printascii("MB\n");
  }
- 
-+/**
-+ * cs  = 0, cs0
-+ * cs  = 1, cs1
-+ * cs => 2, cs0+cs1
-+ * note: it didn't consider about row_3_4
-+ */
-+u64 sdram_get_cs_cap(struct sdram_cap_info *cap_info, u32 cs, u32 dram_type)
++
++void sdram_print_stride(unsigned int stride)
 +{
-+	u32 bg;
-+	u64 cap[2];
-+
-+	if (dram_type == DDR4)
-+		/* DDR4 8bit dram BG = 2(4bank groups),
-+		 * 16bit dram BG = 1 (2 bank groups)
-+		 */
-+		bg = (cap_info->dbw == 0) ? 2 : 1;
-+	else
-+		bg = 0;
-+
-+	cap[0] = 1llu << (cap_info->bw + cap_info->col +
-+		 bg + cap_info->bk + cap_info->cs0_row);
-+
-+	if (cap_info->rank == 2)
-+		cap[1] = 1llu << (cap_info->bw + cap_info->col +
-+			 bg + cap_info->bk + cap_info->cs1_row);
-+	else
-+		cap[1] = 0;
-+
-+	if (cs == 0)
-+		return cap[0];
-+	else if (cs == 1)
-+		return cap[1];
-+	else
-+		return (cap[0] + cap[1]);
++	switch (stride) {
++	case 0xc:
++		printf("128B stride\n");
++		break;
++	case 5:
++	case 9:
++	case 0xd:
++	case 0x11:
++	case 0x19:
++		printf("256B stride\n");
++		break;
++	case 0xa:
++	case 0xe:
++	case 0x12:
++		printf("512B stride\n");
++		break;
++	case 0xf:
++		printf("4K stride\n");
++		break;
++	case 0x1f:
++		printf("32MB + 256B stride\n");
++		break;
++	default:
++		printf("no stride\n");
++	}
 +}
-+
- void sdram_print_ddr_info(struct sdram_cap_info *cap_info,
- 			  struct sdram_base_params *base)
- {
--	u32 bg;
-+	u32 bg, cap;
- 
- 	bg = (cap_info->dbw == 0) ? 2 : 1;
- 
-@@ -71,4 +107,12 @@ void sdram_print_ddr_info(struct sdram_cap_info *cap_info,
- 
- 	printascii(" Die BW=");
- 	printdec(8 << cap_info->dbw);
-+
-+	cap = sdram_get_cs_cap(cap_info, 3, base->dramtype);
-+	if (cap_info->row_3_4)
-+		cap = cap * 3 / 4;
-+
-+	printascii(" Size=");
-+	printdec(cap >> 20);
-+	printascii("MB\n");
- }
 -- 
 2.18.0.321.gffc6fa0e3
 
