@@ -2,72 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0954047B55
-	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:39:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6307E47B56
+	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:39:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OMN7aJwXW5Lo/sytI8kJVCJ7BEGFw4F/a3GWWy/EhdE=; b=ZR3L/SlfJYdijm
-	13DzJfASB25jV9RTLPsivt4oaxVZ7G+fbkJeshfad4G5GIzB5aQ88Ws2X92Ev+H/fgfhQpqXbBoj8
-	X7RlgpyVvn5IZzbapsNP4snY/kSy1NGfxcxRj4fSZp7JVJzt4BMccisQYtEyf/VDhWmhPd7zat5j0
-	F7LPEAVR/Jf5p0GfqqHhRdNlf+lKsV6HqqUnzXX0q5cbsTtgnIrDLjQIoXXJBwP5ocjIYBARFujhm
-	IXks/OPJoW1Okz5L+ILM93psXSCDCz/LHf0kyN993o2JsKYKujaa6YEIgegjnER25DlK/UshxicOg
-	575RpWK5TN9qy5QzGZTw==;
+	List-Owner; bh=kOwfO7ifVw/U2CwHO1OFrtR5dQjjSzfzPqE+0uF2tjQ=; b=gyCnYaes0PiPLT
+	voDQaASufYj+MLN0LlJ7RXt6BREmmRDRSkP0k7h+YJIJI73hCKOqNk5TyaEcnc9ToWAET3a4PViDl
+	+4ReaztxHRFAqS0ilLi/c6bEJ6A7VbuMlipsttk1cqSBRYjq+0QdFOSgG2yCCB8i/9/IZYNuSItL+
+	/YBsa+60cubXuCB6N1MZ1nTu3KrXog+CxHnOXUhVfnJuq2p3CbzoD//V+pLwBVP5V2KkGclqh/5Up
+	gxgshXt6Yjdvq+OlJ3sQ1eofQgo2sbvpwh6HsEDdj0eiSDvWhmvML8evNMCLvOzxPxubdvlfM0e4r
+	JMOl/K1JGzitDjJ4EKgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcmEm-0007ul-Ty; Mon, 17 Jun 2019 07:39:33 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hcmEp-0007x9-K1; Mon, 17 Jun 2019 07:39:35 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcmEi-0007sK-CD
- for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:39:29 +0000
-Received: by mail-pf1-x441.google.com with SMTP id t16so5180168pfe.11
- for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:39:28 -0700 (PDT)
+ id 1hcmEl-0007uu-Kh
+ for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:39:32 +0000
+Received: by mail-pg1-x543.google.com with SMTP id w10so665088pgj.7
+ for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:39:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=VZZq8s/MFgMQ4+KCax6f04xB7tKYUG01ZRKiMSlIBrI=;
- b=R/52bWpHQs7mRiz5hYuoG0KDFxd8ttk8zaPNfZB3ZONCv+Bj4zTBneKe8mXt2xR23K
- 1CfFx6TH0IOpW/MqGF23vntdyI8dxopuGoMvYS0jmefqdKeAo0VDC1Q1Y3y7de73iuza
- weu/NyPgIiJee/ncH9p4lFOBYlTGsG0XAI8VY=
+ bh=O0s9gY545rQE+eRXA2L0WFk2dLSzIqdwMsv4WUxYvwE=;
+ b=kFcvSOtuBv/IypE1pkxYVE8qumP6BIb8ZMwUfXSiYf+5ElvNA9nufYaeh0hcaRNSoi
+ WTLs3OZivF0Pgp7MMreLlS7hJ3e5cwuUEKpe3NnZeLk1h3zu2mWtfyNASVHYgpS8cQtb
+ Z2q4QUKjJvz6gfPrWxkal8MOdH1I7ZXdnt7hY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=VZZq8s/MFgMQ4+KCax6f04xB7tKYUG01ZRKiMSlIBrI=;
- b=W1LmbwlOlQ/4x3t4pQ5ozyqQATDYTEtkRXW99NpHcJHupzNoHDJGtQd24c3njdf0u5
- ethdAa2WMVAP4+dW36fvT0QPOSKKIc7mgCrzCizP/PSya0P2OvU6pWoQicGy9qzQJZS2
- vkajJ/yCpKQLXEKRMxNKztUhpfiJXgHiuM3mcr854Hfx5ljXUlEIsS7f98/bEz7+InJG
- tOl2m1kEudEQOEE4S5j+kMm61ZwIZOnwYLmMI0FSL0njnP/bX3EwUO6abWV3uRK68oDD
- FH/jM77D8Bk84+Vkq776neVER8W4gVslAFhB1UaqrcvEFVYaxR9FM+eGM+BoM6SIl6Wr
- 34fA==
-X-Gm-Message-State: APjAAAWPm2ZWNS63kv8Wc1FqLqgU85CAcodElItiYQECD2kussW7Pc+P
- DqOl+x+MpLLUBPDxRqxGkZ4c1w==
-X-Google-Smtp-Source: APXvYqytb6l373r7MFb2zkKn2DsUyH+YJqmmWfOM9y11biMDtDywiLUVVpQz6sCMou4shOQVdCEPEw==
-X-Received: by 2002:a63:1b07:: with SMTP id b7mr19613058pgb.133.1560757167795; 
- Mon, 17 Jun 2019 00:39:27 -0700 (PDT)
+ bh=O0s9gY545rQE+eRXA2L0WFk2dLSzIqdwMsv4WUxYvwE=;
+ b=Xn53nv7LNWy9GomEujXLe1G0MQKWK2TycG8VMzParVXNMJuZSEcJEyU9305Uq0OB6n
+ kyjYq8o7ABY54xtlUNpt4R5/nz9zdF2GqcgLvpqeGfPU2L/HTqg0VDWR9M73cqYq2jy0
+ rU8NHdzaF30MFp/0vIYHbNyBm7O9CUXq9fusNzUMlE7qHcEUNSt8+KdyaaVBUext9Iwh
+ C+zY4IOywqCOk1b3/RJObhJ+8UPyg2JwifaQlej4qIuT3IrIiJxk3P0Nuswd4E+O5ows
+ wTNvV3s4eP37jF42wdOcAkDcXBytaySr0Ghk5rli2XaZ0FWzX0XJEPPtpF37zOPZOD1c
+ 1PZQ==
+X-Gm-Message-State: APjAAAUmDAY29f7Vz1pFkOfKLO1VCQ7jFIb0Edg+hmedUK45eQS+jZin
+ P7BncgvcoU8w/9erlvYuN/B0EQ==
+X-Google-Smtp-Source: APXvYqxRgyNm+rE7GJXvWj9ZLZHihYJNcPN/LmzZpRIxkKiaXkqAzW1FEfP1V2RgZ0zXa1qIv5c6fQ==
+X-Received: by 2002:a62:4c5:: with SMTP id 188mr112022690pfe.19.1560757171097; 
+ Mon, 17 Jun 2019 00:39:31 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.203.245])
- by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.39.24
+ by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.39.28
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 17 Jun 2019 00:39:27 -0700 (PDT)
+ Mon, 17 Jun 2019 00:39:30 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH v2 56/99] clk: rockchip: rk3399: Set 400MHz ddr clock
-Date: Mon, 17 Jun 2019 13:02:09 +0530
-Message-Id: <20190617073252.27810-57-jagan@amarulasolutions.com>
+Subject: [PATCH v2 57/99] ram: rk3399: Add spaces in pctl_cfg
+Date: Mon, 17 Jun 2019 13:02:10 +0530
+Message-Id: <20190617073252.27810-58-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190617073252.27810-1-jagan@amarulasolutions.com>
 References: <20190617073252.27810-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_003928_557078_973D0F38 
-X-CRM114-Status: UNSURE (   8.69  )
+X-CRM114-CacheID: sfid-20190617_003931_806951_7E9DF3FB 
+X-CRM114-Status: UNSURE (   8.95  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,29 +106,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add support for setting 400MHz ddr clock.
+Trivial patch, add proper spaces in pctl_cfg.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-Signed-off-by: YouMin Chen <cym@rock-chips.com>
 ---
- drivers/clk/rockchip/clk_rk3399.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/ram/rockchip/sdram_rk3399.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/clk/rockchip/clk_rk3399.c b/drivers/clk/rockchip/clk_rk3399.c
-index 1de21c9f3e..79007b8682 100644
---- a/drivers/clk/rockchip/clk_rk3399.c
-+++ b/drivers/clk/rockchip/clk_rk3399.c
-@@ -839,6 +839,10 @@ static ulong rk3399_ddr_set_clk(struct rk3399_cru *cru,
- 		dpll_cfg = (struct pll_div)
- 		{.refdiv = 2, .fbdiv = 100, .postdiv1 = 4, .postdiv2 = 1};
- 		break;
-+	case 400 * MHz:
-+		dpll_cfg = (struct pll_div)
-+		{.refdiv = 1, .fbdiv = 50, .postdiv1 = 3, .postdiv2 = 1};
-+		break;
- 	case 666 * MHz:
- 		dpll_cfg = (struct pll_div)
- 		{.refdiv = 2, .fbdiv = 111, .postdiv1 = 2, .postdiv2 = 1};
+diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
+index ae9ba625bd..d5ff17ad4f 100644
+--- a/drivers/ram/rockchip/sdram_rk3399.c
++++ b/drivers/ram/rockchip/sdram_rk3399.c
+@@ -554,8 +554,10 @@ static int pctl_cfg(struct dram_info *dram, const struct chan_info *chan,
+ 	copy_to_reg(&denali_ctl[1], &params_ctl[1],
+ 		    sizeof(struct rk3399_ddr_pctl_regs) - 4);
+ 	writel(params_ctl[0], &denali_ctl[0]);
++
+ 	copy_to_reg(denali_pi, &params->pi_regs.denali_pi[0],
+ 		    sizeof(struct rk3399_ddr_pi_regs));
++
+ 	/* rank count need to set for init */
+ 	set_memory_map(chan, channel, params);
+ 
 -- 
 2.18.0.321.gffc6fa0e3
 
