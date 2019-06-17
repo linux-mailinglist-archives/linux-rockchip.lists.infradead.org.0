@@ -2,68 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E754048027
-	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 13:04:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E2EA48374
+	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 15:06:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=I+Oi+FC8vVOjr/0lF/gTqn2LVaS2AefxPlJhrKrANhs=; b=C0iyR/Mnw04l7m
-	pKHuucJHO0clWX6YmhrH4VLvHmNg+omSR7htm4H1AKsd+gVByR3FG6xYK9RR8Qixnjs3f33dOUNM2
-	4GC/Ts2XKBZjdnrJtdImH9ZsI4VabK8JPHP++hZEgyKG3g1tLowy+fkXFRBFunQiZP5HiA4cgwWKm
-	sxzRv3OG9HZGn6VhO06kU0SAtC6c8zzD7lKfkDXt+MHlzge3eEsODwd1//GMYY4t+tb17fs7uezuV
-	2fAgogL6qxN4BW/VsJ6QC2K2l6e2Iumo7Df9ivu6K7Y0e4RmS5KVfmPJw0HykmTCoA20fUCXJMhMB
-	DmVa22eiBasOSgAh20+Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=crQQ6kgshvO59Zwh0wHKRDzyho+nL9133ppbbn1vX2I=; b=gbrZHDqpH8gNR2
+	M6uqpnIEStxIcZK+wCpG1LrDaleoYct+bFHmtAJXoObwqsPheTGpJMnm8CFiZ0oHysSSASl4wTRJG
+	gtpnsasOs/KjtOFa1RMck8BJlmV1rDNW66qB/139QeTgWE87CjVFZMUFlKYGrGiS4QQptCQ9AYqt1
+	FwRvN0JvZyq0W2+0QhN7BtZUkecMZ6Vga+gGGEyJrmo7BJPYT9tIAsf+lxVKvJrNEfOdS8AgcZeO6
+	XXT4OhO8TEBo9KldTozSDCzwxG/Ly07RdiJtLwYtsnrg9rYKKRM2zpY6p7yjjYjYIPAwy72KP3IZz
+	VSUbjX6Hc4UFDyKd19cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcpRK-00084E-T9; Mon, 17 Jun 2019 11:04:42 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1hcrKo-0005KH-II; Mon, 17 Jun 2019 13:06:06 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcpRC-0007tV-4M; Mon, 17 Jun 2019 11:04:35 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue109 [212.227.15.145]) with ESMTPA (Nemesis) id
- 1Mj8eB-1iFAr734RJ-00fBNP; Mon, 17 Jun 2019 13:04:24 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: Mark Brown <broonie@kernel.org>
-Subject: [PATCH] ASoC: rockchip: pdm: select CONFIG_RATIONAL
-Date: Mon, 17 Jun 2019 13:03:51 +0200
-Message-Id: <20190617110415.2084205-1-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
+ id 1hcrK9-0004gD-4X
+ for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 13:05:26 +0000
+Received: by mail-lj1-x241.google.com with SMTP id 131so9235504ljf.4
+ for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 06:05:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=6+a6LzOkznKqnUaLZCO2aGdfchIFnCvw96EhVNt76fQ=;
+ b=XouSp0zb13XJfEwjwDOFYMOLvCaplpCbR1EhLP7aU/UoM67o6jZ3XIV7sh7e4ZCHho
+ L5zhC+BnqVXvIAGw4zfZQY09niJE8jWW5KeiIRnnt5xqMSQAFJ1pTRKjPpkbnpBBKLFz
+ OWefyFJbk/3yzefUCuIO5fAEs3aMF7Xq6/kagrKChXsG8YRTTd4MAuNfbscKLa2gWRWc
+ 7Op6JWSZ0205sSAYr7nuqZruqP+LYELqeh4lZPql1urcgeQaU5LonxEzuHyOGWG1FmEt
+ sHzLVyWo4fKe/d1EKDbo4Lzx8ih2rWQPO6lgpQh0WJKAJbM2HjmQwrqUMsbB2aTMgUEw
+ 7xGA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=6+a6LzOkznKqnUaLZCO2aGdfchIFnCvw96EhVNt76fQ=;
+ b=TR7A85MboI833d57mr29oDEQSpbq+PZrgIEE8RNpnClWM5KvahaEV4Xuq2CzrzXtM0
+ BFPJtIz5iJINRcV1XBVgEUVYdCuGBshqLjjTsuamDU0I97S3YRngol/cMfFnxBXKSLSm
+ UyHQfpjgJH2ciAaV+vAA4G8/fABuvw+QrTM7AatdtepkpGOhJzev9Ue7GAUbBV+tnHqP
+ +nYREUoHQ5PBCiAbyEzYjChh7xK5CHSYuZ0VR1GISKVFPALyK70QYCFpHuTogj/p19+E
+ 0gQbNT83om1ReStIbmc007JCh0fDvmzRHR0DWSXYbbRYT0vTtmiVT9IBo8xxN5IyLoSR
+ WeFQ==
+X-Gm-Message-State: APjAAAUNwHWeTD8uzk0+F6Rl2sHro5ZOck4sKjqvjIWfLkFSYdDeuBhg
+ 9c2Ng1pClRkjtigvYQIbsy93E9qOB23DRw==
+X-Google-Smtp-Source: APXvYqygeZJwXbO27VNFJ5qUrcVWv9722IrZCLpcNBOACLZWz4kqEAtrLWQANhOhucMBMaw0qIMa8g==
+X-Received: by 2002:a2e:89ca:: with SMTP id c10mr477133ljk.106.1560776723409; 
+ Mon, 17 Jun 2019 06:05:23 -0700 (PDT)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id h13sm2105823ljb.10.2019.06.17.06.05.21
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 17 Jun 2019 06:05:21 -0700 (PDT)
+Date: Mon, 17 Jun 2019 05:14:40 -0700
+From: Olof Johansson <olof@lixom.net>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: Re: [GIT PULL 3/3] Rockchip soc32 updates for 5.3 round 1
+Message-ID: <20190617121440.hafvcek4m34m6cwd@localhost>
+References: <3004130.oi6ZuZy1Zf@phil>
+ <6757963.JBp9oB5bj2@phil>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:RQUeaFNGGn1EAUOJ+4Zq3U9Xg93dFdoGITN3ZKm3Mt4YbKTsksr
- /Nb5nKnunoTBlLqFGpZWA9oXu9HPZ4ooTs1PKfIUNNUH5c8OdpM9y5ix03RPi90uP8mhFUV
- 9sef2XlRxJsu4Em1+4Jl7xTmRcNS727kWov9tH/9ugCaLfPF+pyKE/2opwfYI1/uTAULabq
- C5OfVG/T7vycW0msxCGig==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:TgeddKwT1bQ=:+0nAmfdfN0DrHy0szFSDxd
- E97/qsS1VXgSEQ9Kd9UM8LUmS2rDvT8u8ENSePmCM8L5TPoigst9b5PpOt5gQXY4w/6/k2vdi
- GPlMTAQjWQxxHAqcUyyrFwNr0A7jljiNSZ4XPoTUTSHp4P8mYysAR4i4kVQrTuWSqtpcshFAx
- frleG1h6TqhiR3kn/x6UQhrQlpJwKeiXqQSjicC5pldL/n3LULCpGxPuwoGnz9UHMLHA8u8vY
- /K1ftN31dtrN73VQ+S7TsxRcjiD5c1JRn93SdwhuFs0cAF0BS2xmBdzcX+M5Y3QH5t4hau+ug
- RnKA/CzG9cS1KOVvA/sfahClyagQHFGXk9ZKHark+8g/7E0EJ5lQSsbRlUL1np++MmiwP6Z90
- eTezWa9VSrMf1PzATR8+/V7X/OmPlwDjJxbSh4hwYKXbhIKWgAsF2Dx0Himn6AUOdBVaAPTkC
- agTTz1y0ppeyET6Vd5JHfjc9a8SnYJph9o0Y+mLvjyxp6VMvemow0EMxGeIR4C1wdpwI4WC4w
- 7ADR9bijyRaq4WT/0OLwqdeFQ7M2uVHMqd3e4J9B9q1E5dH3gHnPV09SAmC++ybSYOjA9MIIL
- tdG8aPKFXJDyEnH9SiUWWzlu1rixOSpRQo8e2fseE6D8GmQVz6CnJJCmJRHnDwE16yfU4dJX7
- JKGaLRDElTyJ/ehi37iXnQAULGay4vAx+KpY2/tvxZH+wixT05wCB93gM6RfdxNk2/+c3sgdC
- ikEUF7R9U1+VpjOcGVmdFJ579sUlQGHYws5bFQ==
+Content-Disposition: inline
+In-Reply-To: <6757963.JBp9oB5bj2@phil>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_040434_476101_673A55A4 
-X-CRM114-Status: UNSURE (   9.11  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190617_060525_202119_0C605D63 
+X-CRM114-Status: GOOD (  10.59  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,41 +95,33 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, Heiko Stuebner <heiko@sntech.de>,
- Arnd Bergmann <arnd@arndb.de>, Liam Girdwood <lgirdwood@gmail.com>,
- linux-kernel@vger.kernel.org, Sugar Zhang <sugar.zhang@rock-chips.com>,
- linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-rockchip@lists.infradead.org, arm@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Without this, we get a link error:
+On Tue, Jun 11, 2019 at 10:55:28AM +0200, Heiko Stuebner wrote:
+> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+> 
+>   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.3-rockchip-soc32-1
+> 
+> for you to fetch changes up to c2af88f1a0cdf4cbe94b51fd93e52a3f55606a13:
+> 
+>   ARM: rockchip: fix missing of_node_put calls in smp code (2019-05-20 01:00:41 +0200)
+> 
+> ----------------------------------------------------------------
+> Another missing of_node_put
 
-sound/soc/rockchip/rockchip_pdm.o: In function `rockchip_pdm_hw_params':
-rockchip_pdm.c:(.text+0x754): undefined reference to `rational_best_approximation'
+Merged, thanks!
 
-Fixes: 624e8e00acaf ("ASoC: rockchip: pdm: fixup pdm fractional div")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- sound/soc/rockchip/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
 
-diff --git a/sound/soc/rockchip/Kconfig b/sound/soc/rockchip/Kconfig
-index 28a80c1cb41d..b43657e6e655 100644
---- a/sound/soc/rockchip/Kconfig
-+++ b/sound/soc/rockchip/Kconfig
-@@ -20,6 +20,7 @@ config SND_SOC_ROCKCHIP_PDM
- 	tristate "Rockchip PDM Controller Driver"
- 	depends on CLKDEV_LOOKUP && SND_SOC_ROCKCHIP
- 	select SND_SOC_GENERIC_DMAENGINE_PCM
-+	select RATIONAL
- 	help
- 	  Say Y or M if you want to add support for PDM driver for
- 	  Rockchip PDM Controller. The Controller supports up to maximum of
--- 
-2.20.0
-
+-Olof
 
 _______________________________________________
 Linux-rockchip mailing list
