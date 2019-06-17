@@ -2,79 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5146647B0D
-	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:36:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D489747B0E
+	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:36:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D/lQTwGOdAQw24aziHNMHC8MsnWaYtXar/6g4VkidYk=; b=JIL4XU0IOmfT5L
-	UJXJEgfkn6O1bSgRaGy60MToAifZk2RhOZQgt6fOh+T3eSZzWdzsCNkpHNU31aaow3vVUL7QMCyO1
-	TFtcb0IaU9GbdZxhKcil7Vsvvt8WZizJSQvCVIkyqfFhN8jBqbgmHkSRxNXd6LdvA4PTBYk66Zoa5
-	ieHg12CzZyaHtKiDAL8WFyGJCMCIJwHkUC+LFPHfa8g6JXNV9Oywemg0EefxNVdO8hQB9BE/PHITk
-	Vya5BvvzCCWCLIN+XOTxUAlKr6w40OZzfOig5PdrGzpQerUPMAGNtebJgIOXUtIE8AQTqB0K9E+yj
-	eo3EETObAGDjZJkIq5pQ==;
+	List-Owner; bh=ezDxSjMeTYM3GS92H4+Bouw7vhOzacry/W/YYwPWbo0=; b=jUyrrLPOoz/0+c
+	zeYjuOQvU37Zehj8kPaeh0NcaZB6QhcYraP0n+ZDIpic7GOQWFngtLXJbSrkEBFmoecra+2i8SZOz
+	vVV2PT9EgWcmwceKXmmN9lOzsV/6yaEtlF7vhow0WwN2VYuqQygPQEYOMoc1xMihuVyJfpFG1Ucv+
+	Oh+CPXxtcNkoAjwrWxjpOjqi33fCOPtZHyHT6wuObicWZxkCkGZ5K+bMYkfivXur9R1FvE5WHKnvA
+	rvLB8ggNSHMvrfv/DJTCMu93hJbDn0UNQ2ihywllxkg8hp0trQYA8ya75v/fWbBFj+UkDkS8bB3+8
+	SSYyq3GmXdtgf+PIAaSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcmBv-00057W-8q; Mon, 17 Jun 2019 07:36:35 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hcmBz-0005C4-Lq; Mon, 17 Jun 2019 07:36:39 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcmBq-00054x-DP
- for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:36:32 +0000
-Received: by mail-pg1-x544.google.com with SMTP id v11so5304475pgl.5
- for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:36:30 -0700 (PDT)
+ id 1hcmBu-00058D-FL
+ for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:36:36 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 19so5194048pfa.4
+ for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:36:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=7hEbN4PwZywNJrm+qGPj+Jg8NZT6WGoxWgkH1ZzDnjc=;
- b=Ww300Cmq/bgDkJoncgQJALrIwQ065+iPZKC81WhfCetZh/KaTbsYhnvqJwJxkoMAtn
- dllgV9s1dYh0amZz4WWRxsJMdvzQmbqFVyVTjeX+SNrSt0dBVZzgJ0CO1Q/b+cUCZa8m
- Id5fuIvED5NkH/CKC0CKCT8cGmrIuLf+16F+E=
+ bh=o1firlkSDCDrRUP1sag0BeW+fuut4BTojrnELghdmxY=;
+ b=ObDhJrcEMLhAgP1UznlgLazK5kuIb1QvuKjmzkX6mDOfSa3kUk0DlHCMTUghWWKC12
+ k7maiLmBR4J2dhbI8WzpQS59f606LXHFpT0W09+2cVIISnfmHOE8Z8+m786yep2lFPt8
+ R2LMYhbIPfBV2b8If/vHjxsTbHV7Isp/OxAMo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=7hEbN4PwZywNJrm+qGPj+Jg8NZT6WGoxWgkH1ZzDnjc=;
- b=Rdv8DgcDeMG2ZYZpWfW5tdcGv8ff0OD7fxI7jSfDVFK06qGqQ7NdFDQZz8l2D9zs4W
- sLd4inLkjaQ5XkE221P/5nB/19v8+6nZ7XQlConQKmibIZmRE+ng9frYhMn/n38zcBiy
- R0IKaFAu8FIvZj8jQNI2qmCXP9Jeq6FJvoU3V63Bhw7T4+2iISBHSvmqqsd+JIIXfKjd
- k/AO/0Nn6B3QCGUAkOT33E/+jZraadU63FCpugp8nt0fmVeIa9IfFeSgI7Ol0/cilIW+
- yhY+FPWzHehqvdFkIGDiOgfXTXoITxzP6A4CidqeQP8W96H2k8ZBMjFa5L/BIH0exeCp
- VlCg==
-X-Gm-Message-State: APjAAAU04PMsxSLxtA07Pa7QCCCJb+EXQvYZI+vlTSW0WQtzOZQQyBZ2
- pdQWgM/eF1uD5/VdKIs46MssDg==
-X-Google-Smtp-Source: APXvYqxKRxpGqWGh5ILkB2iKJ/0aQo+hXXdRcHdzUfLwQ/2ndbCx1ZBUvqUR5Aja1eqyjMvPhvs57A==
-X-Received: by 2002:a63:1b07:: with SMTP id b7mr19604283pgb.133.1560756989669; 
- Mon, 17 Jun 2019 00:36:29 -0700 (PDT)
+ bh=o1firlkSDCDrRUP1sag0BeW+fuut4BTojrnELghdmxY=;
+ b=QmQqfb8hgMrm5wWhPB2J2Z+2T2E0n8l/zWrNtEHqG8RifCm8Bk0VUVvpBHk0sBQp7y
+ UC2zxR28gEGjSPC11bTh3zB8rxEMVAGmdFadjwJ6Vrij8JeAqSqdAMS1SMJZpKqItChC
+ XLfWfGSdNJ86xfbwlQ3OOd8XhpynToDIZ96IzjvCxfmPabu2YzKt9nWkvfK9z94NOScG
+ 1eLnYioBv7xZOOOgtkSDwp0brNPzr+ml5S54DxJlSuegR1HjSGhkv/ysAUjebPPFYmd4
+ ikeK2vAdLXCLj9FXQOwl1OKqorzGcA/XeGVcZgvXNtgCf9pYT6TVT1ZPswjNuO5pu6ps
+ a2Dw==
+X-Gm-Message-State: APjAAAVR9C98dL8czbAGt4kN08kleUmLWIVzXe37If5gFBxkGKtyVzM4
+ cAGQ4KTEQcILwLy26t5IaEWqyQ==
+X-Google-Smtp-Source: APXvYqwvtrJjEU3NT2i6jubz0apTDeIlPn2QHBi0xDUVVaQT/vPUiHfWVQvIgaenmLZf5V1xLaZQeA==
+X-Received: by 2002:a62:b517:: with SMTP id
+ y23mr116512596pfe.182.1560756993229; 
+ Mon, 17 Jun 2019 00:36:33 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.203.245])
- by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.36.26
+ by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.36.30
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 17 Jun 2019 00:36:29 -0700 (PDT)
+ Mon, 17 Jun 2019 00:36:32 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH v2 03/99] ram: rk3399: Add proper spaces in code
-Date: Mon, 17 Jun 2019 13:01:16 +0530
-Message-Id: <20190617073252.27810-4-jagan@amarulasolutions.com>
+Subject: [PATCH v2 04/99] ram: rk3399: s/sdram_params/params
+Date: Mon, 17 Jun 2019 13:01:17 +0530
+Message-Id: <20190617073252.27810-5-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190617073252.27810-1-jagan@amarulasolutions.com>
 References: <20190617073252.27810-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_003630_510447_F27F772C 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20190617_003634_521501_FF6486B0 
+X-CRM114-Status: GOOD (  13.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,168 +106,490 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add proper spaces in the code of
-- data training functions
-- rk3399_dmc_init
+Rename variable name of struct rk3399_sdram_params
+from sdram_params with params for more code readability.
 
 No functionality change.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- drivers/ram/rockchip/sdram_rk3399.c | 24 ++++++++++++++++++++++++
- 1 file changed, 24 insertions(+)
+ drivers/ram/rockchip/sdram_rk3399.c | 160 ++++++++++++++--------------
+ 1 file changed, 78 insertions(+), 82 deletions(-)
 
 diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index 8191ab6176..b8962d68f2 100644
+index b8962d68f2..4c09009b7a 100644
 --- a/drivers/ram/rockchip/sdram_rk3399.c
 +++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -620,8 +620,10 @@ static int data_training_ca(const struct chan_info *chan, u32 channel,
+@@ -111,10 +111,9 @@ static void phy_dll_bypass_set(struct rk3399_ddr_publ_regs *ddr_publ_regs,
+ }
+ 
+ static void set_memory_map(const struct chan_info *chan, u32 channel,
+-			   const struct rk3399_sdram_params *sdram_params)
++			   const struct rk3399_sdram_params *params)
+ {
+-	const struct rk3399_sdram_channel *sdram_ch =
+-		&sdram_params->ch[channel];
++	const struct rk3399_sdram_channel *sdram_ch = &params->ch[channel];
+ 	u32 *denali_ctl = chan->pctl->denali_ctl;
+ 	u32 *denali_pi = chan->pi->denali_pi;
+ 	u32 cs_map;
+@@ -150,12 +149,12 @@ static void set_memory_map(const struct chan_info *chan, u32 channel,
+ 			((16 - row) << 24));
+ 	/* PI_41 PI_CS_MAP:RW:24:4 */
+ 	clrsetbits_le32(&denali_pi[41], 0xf << 24, cs_map << 24);
+-	if (sdram_ch->rank == 1 && sdram_params->base.dramtype == DDR3)
++	if (sdram_ch->rank == 1 && params->base.dramtype == DDR3)
+ 		writel(0x2EC7FFFF, &denali_pi[34]);
+ }
+ 
+ static void set_ds_odt(const struct chan_info *chan,
+-		       const struct rk3399_sdram_params *sdram_params)
++		       const struct rk3399_sdram_params *params)
+ {
+ 	u32 *denali_phy = chan->publ->denali_phy;
+ 
+@@ -165,7 +164,7 @@ static void set_ds_odt(const struct chan_info *chan,
+ 	u32 tsel_idle_select_n, tsel_wr_select_n, tsel_rd_select_n;
+ 	u32 reg_value;
+ 
+-	if (sdram_params->base.dramtype == LPDDR4) {
++	if (params->base.dramtype == LPDDR4) {
+ 		tsel_rd_select_p = PHY_DRV_ODT_HI_Z;
+ 		tsel_wr_select_p = PHY_DRV_ODT_40;
+ 		ca_tsel_wr_select_p = PHY_DRV_ODT_40;
+@@ -175,7 +174,7 @@ static void set_ds_odt(const struct chan_info *chan,
+ 		tsel_wr_select_n = PHY_DRV_ODT_40;
+ 		ca_tsel_wr_select_n = PHY_DRV_ODT_40;
+ 		tsel_idle_select_n = PHY_DRV_ODT_240;
+-	} else if (sdram_params->base.dramtype == LPDDR3) {
++	} else if (params->base.dramtype == LPDDR3) {
+ 		tsel_rd_select_p = PHY_DRV_ODT_240;
+ 		tsel_wr_select_p = PHY_DRV_ODT_34_3;
+ 		ca_tsel_wr_select_p = PHY_DRV_ODT_48;
+@@ -197,7 +196,7 @@ static void set_ds_odt(const struct chan_info *chan,
+ 		tsel_idle_select_n = PHY_DRV_ODT_240;
+ 	}
+ 
+-	if (sdram_params->base.odt == 1)
++	if (params->base.odt == 1)
+ 		tsel_rd_en = 1;
+ 	else
+ 		tsel_rd_en = 0;
+@@ -294,7 +293,7 @@ static void set_ds_odt(const struct chan_info *chan,
+ }
+ 
+ static int phy_io_config(const struct chan_info *chan,
+-			 const struct rk3399_sdram_params *sdram_params)
++			 const struct rk3399_sdram_params *params)
+ {
+ 	u32 *denali_phy = chan->publ->denali_phy;
+ 	u32 vref_mode_dq, vref_value_dq, vref_mode_ac, vref_value_ac;
+@@ -304,14 +303,14 @@ static int phy_io_config(const struct chan_info *chan,
+ 	u32 speed;
+ 
+ 	/* vref setting */
+-	if (sdram_params->base.dramtype == LPDDR4) {
++	if (params->base.dramtype == LPDDR4) {
+ 		/* LPDDR4 */
+ 		vref_mode_dq = 0x6;
+ 		vref_value_dq = 0x1f;
+ 		vref_mode_ac = 0x6;
+ 		vref_value_ac = 0x1f;
+-	} else if (sdram_params->base.dramtype == LPDDR3) {
+-		if (sdram_params->base.odt == 1) {
++	} else if (params->base.dramtype == LPDDR3) {
++		if (params->base.odt == 1) {
+ 			vref_mode_dq = 0x5;  /* LPDDR3 ODT */
+ 			drv_value = (readl(&denali_phy[6]) >> 12) & 0xf;
+ 			odt_value = (readl(&denali_phy[6]) >> 4) & 0xf;
+@@ -370,7 +369,7 @@ static int phy_io_config(const struct chan_info *chan,
+ 		}
+ 		vref_mode_ac = 0x2;
+ 		vref_value_ac = 0x1f;
+-	} else if (sdram_params->base.dramtype == DDR3) {
++	} else if (params->base.dramtype == DDR3) {
+ 		/* DDR3L */
+ 		vref_mode_dq = 0x1;
+ 		vref_value_dq = 0x1f;
+@@ -397,11 +396,11 @@ static int phy_io_config(const struct chan_info *chan,
+ 	/* PHY_915 PHY_PAD_VREF_CTRL_AC 12bits offset_16 */
+ 	clrsetbits_le32(&denali_phy[915], 0xfff << 16, reg_value << 16);
+ 
+-	if (sdram_params->base.dramtype == LPDDR4)
++	if (params->base.dramtype == LPDDR4)
+ 		mode_sel = 0x6;
+-	else if (sdram_params->base.dramtype == LPDDR3)
++	else if (params->base.dramtype == LPDDR3)
+ 		mode_sel = 0x0;
+-	else if (sdram_params->base.dramtype == DDR3)
++	else if (params->base.dramtype == DDR3)
+ 		mode_sel = 0x1;
+ 	else
+ 		return -EINVAL;
+@@ -424,11 +423,11 @@ static int phy_io_config(const struct chan_info *chan,
+ 	clrsetbits_le32(&denali_phy[939], 0x7 << 14, mode_sel << 14);
+ 
+ 	/* speed setting */
+-	if (sdram_params->base.ddr_freq < 400)
++	if (params->base.ddr_freq < 400)
+ 		speed = 0x0;
+-	else if (sdram_params->base.ddr_freq < 800)
++	else if (params->base.ddr_freq < 800)
+ 		speed = 0x1;
+-	else if (sdram_params->base.ddr_freq < 1200)
++	else if (params->base.ddr_freq < 1200)
+ 		speed = 0x2;
+ 	else
+ 		speed = 0x3;
+@@ -454,13 +453,13 @@ static int phy_io_config(const struct chan_info *chan,
+ }
+ 
+ static int pctl_cfg(const struct chan_info *chan, u32 channel,
+-		    const struct rk3399_sdram_params *sdram_params)
++		    const struct rk3399_sdram_params *params)
+ {
+ 	u32 *denali_ctl = chan->pctl->denali_ctl;
+ 	u32 *denali_pi = chan->pi->denali_pi;
+ 	u32 *denali_phy = chan->publ->denali_phy;
+-	const u32 *params_ctl = sdram_params->pctl_regs.denali_ctl;
+-	const u32 *params_phy = sdram_params->phy_regs.denali_phy;
++	const u32 *params_ctl = params->pctl_regs.denali_ctl;
++	const u32 *params_phy = params->phy_regs.denali_phy;
+ 	u32 tmp, tmp1, tmp2;
+ 	u32 pwrup_srefresh_exit;
+ 	int ret;
+@@ -473,14 +472,14 @@ static int pctl_cfg(const struct chan_info *chan, u32 channel,
+ 	copy_to_reg(&denali_ctl[1], &params_ctl[1],
+ 		    sizeof(struct rk3399_ddr_pctl_regs) - 4);
+ 	writel(params_ctl[0], &denali_ctl[0]);
+-	copy_to_reg(denali_pi, &sdram_params->pi_regs.denali_pi[0],
++	copy_to_reg(denali_pi, &params->pi_regs.denali_pi[0],
+ 		    sizeof(struct rk3399_ddr_pi_regs));
+ 	/* rank count need to set for init */
+-	set_memory_map(chan, channel, sdram_params);
++	set_memory_map(chan, channel, params);
+ 
+-	writel(sdram_params->phy_regs.denali_phy[910], &denali_phy[910]);
+-	writel(sdram_params->phy_regs.denali_phy[911], &denali_phy[911]);
+-	writel(sdram_params->phy_regs.denali_phy[912], &denali_phy[912]);
++	writel(params->phy_regs.denali_phy[910], &denali_phy[910]);
++	writel(params->phy_regs.denali_phy[911], &denali_phy[911]);
++	writel(params->phy_regs.denali_phy[912], &denali_phy[912]);
+ 
+ 	pwrup_srefresh_exit = readl(&denali_ctl[68]) & PWRUP_SREFRESH_EXIT;
+ 	clrbits_le32(&denali_ctl[68], PWRUP_SREFRESH_EXIT);
+@@ -511,7 +510,7 @@ static int pctl_cfg(const struct chan_info *chan, u32 channel,
+ 	copy_to_reg(&denali_phy[512], &params_phy[512], (549 - 512 + 1) * 4);
+ 	copy_to_reg(&denali_phy[640], &params_phy[640], (677 - 640 + 1) * 4);
+ 	copy_to_reg(&denali_phy[768], &params_phy[768], (805 - 768 + 1) * 4);
+-	set_ds_odt(chan, sdram_params);
++	set_ds_odt(chan, params);
+ 
+ 	/*
+ 	 * phy_dqs_tsel_wr_timing_X 8bits DENALI_PHY_84/212/340/468 offset_8
+@@ -539,7 +538,7 @@ static int pctl_cfg(const struct chan_info *chan, u32 channel,
+ 	tmp = (readl(&denali_phy[467]) >> 16) & 0xff;
+ 	clrsetbits_le32(&denali_phy[467], 0xff << 16, (tmp + 0x10) << 16);
+ 
+-	ret = phy_io_config(chan, sdram_params);
++	ret = phy_io_config(chan, params);
+ 	if (ret)
+ 		return ret;
+ 
+@@ -610,13 +609,13 @@ static void override_write_leveling_value(const struct chan_info *chan)
+ }
+ 
+ static int data_training_ca(const struct chan_info *chan, u32 channel,
+-			    const struct rk3399_sdram_params *sdram_params)
++			    const struct rk3399_sdram_params *params)
+ {
+ 	u32 *denali_pi = chan->pi->denali_pi;
+ 	u32 *denali_phy = chan->publ->denali_phy;
+ 	u32 i, tmp;
+ 	u32 obs_0, obs_1, obs_2, obs_err = 0;
+-	u32 rank = sdram_params->ch[channel].rank;
++	u32 rank = params->ch[channel].rank;
  
  	for (i = 0; i < rank; i++) {
  		select_per_cs_training_index(chan, i);
-+
- 		/* PI_100 PI_CALVL_EN:RW:8:2 */
- 		clrsetbits_le32(&denali_pi[100], 0x3 << 8, 0x2 << 8);
-+
- 		/* PI_92 PI_CALVL_REQ:WR:16:1,PI_CALVL_CS:RW:24:2 */
- 		clrsetbits_le32(&denali_pi[92],
- 				(0x1 << 16) | (0x3 << 24),
-@@ -651,9 +653,11 @@ static int data_training_ca(const struct chan_info *chan, u32 channel,
- 				 (obs_err == 1))
- 				return -EIO;
- 		}
-+
- 		/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
- 		writel(0x00003f7c, (&denali_pi[175]));
- 	}
-+
- 	clrbits_le32(&denali_pi[100], 0x3 << 8);
+@@ -664,13 +663,13 @@ static int data_training_ca(const struct chan_info *chan, u32 channel,
+ }
  
- 	return 0;
-@@ -670,8 +674,10 @@ static int data_training_wl(const struct chan_info *chan, u32 channel,
+ static int data_training_wl(const struct chan_info *chan, u32 channel,
+-			    const struct rk3399_sdram_params *sdram_params)
++			    const struct rk3399_sdram_params *params)
+ {
+ 	u32 *denali_pi = chan->pi->denali_pi;
+ 	u32 *denali_phy = chan->publ->denali_phy;
+ 	u32 i, tmp;
+ 	u32 obs_0, obs_1, obs_2, obs_3, obs_err = 0;
+-	u32 rank = sdram_params->ch[channel].rank;
++	u32 rank = params->ch[channel].rank;
  
  	for (i = 0; i < rank; i++) {
  		select_per_cs_training_index(chan, i);
-+
- 		/* PI_60 PI_WRLVL_EN:RW:8:2 */
- 		clrsetbits_le32(&denali_pi[60], 0x3 << 8, 0x2 << 8);
-+
- 		/* PI_59 PI_WRLVL_REQ:WR:8:1,PI_WRLVL_CS:RW:16:2 */
- 		clrsetbits_le32(&denali_pi[59],
- 				(0x1 << 8) | (0x3 << 16),
-@@ -705,6 +711,7 @@ static int data_training_wl(const struct chan_info *chan, u32 channel,
- 				 (obs_err == 1))
- 				return -EIO;
- 		}
-+
- 		/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
- 		writel(0x00003f7c, (&denali_pi[175]));
- 	}
-@@ -726,8 +733,10 @@ static int data_training_rg(const struct chan_info *chan, u32 channel,
+@@ -723,13 +722,13 @@ static int data_training_wl(const struct chan_info *chan, u32 channel,
+ }
+ 
+ static int data_training_rg(const struct chan_info *chan, u32 channel,
+-			    const struct rk3399_sdram_params *sdram_params)
++			    const struct rk3399_sdram_params *params)
+ {
+ 	u32 *denali_pi = chan->pi->denali_pi;
+ 	u32 *denali_phy = chan->publ->denali_phy;
+ 	u32 i, tmp;
+ 	u32 obs_0, obs_1, obs_2, obs_3, obs_err = 0;
+-	u32 rank = sdram_params->ch[channel].rank;
++	u32 rank = params->ch[channel].rank;
  
  	for (i = 0; i < rank; i++) {
  		select_per_cs_training_index(chan, i);
-+
- 		/* PI_80 PI_RDLVL_GATE_EN:RW:24:2 */
- 		clrsetbits_le32(&denali_pi[80], 0x3 << 24, 0x2 << 24);
-+
- 		/*
- 		 * PI_74 PI_RDLVL_GATE_REQ:WR:16:1
- 		 * PI_RDLVL_CS:RW:24:2
-@@ -764,9 +773,11 @@ static int data_training_rg(const struct chan_info *chan, u32 channel,
- 				 (obs_err == 1))
- 				return -EIO;
- 		}
-+
- 		/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
- 		writel(0x00003f7c, (&denali_pi[175]));
- 	}
-+
- 	clrbits_le32(&denali_pi[80], 0x3 << 24);
+@@ -784,11 +783,11 @@ static int data_training_rg(const struct chan_info *chan, u32 channel,
+ }
  
- 	return 0;
-@@ -781,8 +792,10 @@ static int data_training_rl(const struct chan_info *chan, u32 channel,
+ static int data_training_rl(const struct chan_info *chan, u32 channel,
+-			    const struct rk3399_sdram_params *sdram_params)
++			    const struct rk3399_sdram_params *params)
+ {
+ 	u32 *denali_pi = chan->pi->denali_pi;
+ 	u32 i, tmp;
+-	u32 rank = sdram_params->ch[channel].rank;
++	u32 rank = params->ch[channel].rank;
  
  	for (i = 0; i < rank; i++) {
  		select_per_cs_training_index(chan, i);
-+
- 		/* PI_80 PI_RDLVL_EN:RW:16:2 */
- 		clrsetbits_le32(&denali_pi[80], 0x3 << 16, 0x2 << 16);
-+
- 		/* PI_74 PI_RDLVL_REQ:WR:8:1,PI_RDLVL_CS:RW:24:2 */
- 		clrsetbits_le32(&denali_pi[74],
- 				(0x1 << 8) | (0x3 << 24),
-@@ -805,9 +818,11 @@ static int data_training_rl(const struct chan_info *chan, u32 channel,
- 			else if (((tmp >> 2) & 0x1) == 0x1)
- 				return -EIO;
- 		}
-+
- 		/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
- 		writel(0x00003f7c, (&denali_pi[175]));
- 	}
-+
- 	clrbits_le32(&denali_pi[80], 0x3 << 16);
+@@ -829,11 +828,11 @@ static int data_training_rl(const struct chan_info *chan, u32 channel,
+ }
  
- 	return 0;
-@@ -822,13 +837,16 @@ static int data_training_wdql(const struct chan_info *chan, u32 channel,
+ static int data_training_wdql(const struct chan_info *chan, u32 channel,
+-			      const struct rk3399_sdram_params *sdram_params)
++			      const struct rk3399_sdram_params *params)
+ {
+ 	u32 *denali_pi = chan->pi->denali_pi;
+ 	u32 i, tmp;
+-	u32 rank = sdram_params->ch[channel].rank;
++	u32 rank = params->ch[channel].rank;
  
  	for (i = 0; i < rank; i++) {
  		select_per_cs_training_index(chan, i);
-+
- 		/*
- 		 * disable PI_WDQLVL_VREF_EN before wdq leveling?
- 		 * PI_181 PI_WDQLVL_VREF_EN:RW:8:1
- 		 */
- 		clrbits_le32(&denali_pi[181], 0x1 << 8);
-+
- 		/* PI_124 PI_WDQLVL_EN:RW:16:2 */
- 		clrsetbits_le32(&denali_pi[124], 0x3 << 16, 0x2 << 16);
-+
- 		/* PI_121 PI_WDQLVL_REQ:WR:8:1,PI_WDQLVL_CS:RW:16:2 */
- 		clrsetbits_le32(&denali_pi[121],
- 				(0x1 << 8) | (0x3 << 16),
-@@ -845,9 +863,11 @@ static int data_training_wdql(const struct chan_info *chan, u32 channel,
- 			else if (((tmp >> 6) & 0x1) == 0x1)
- 				return -EIO;
- 		}
-+
- 		/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
- 		writel(0x00003f7c, (&denali_pi[175]));
- 	}
-+
- 	clrbits_le32(&denali_pi[124], 0x3 << 16);
+@@ -874,7 +873,7 @@ static int data_training_wdql(const struct chan_info *chan, u32 channel,
+ }
  
- 	return 0;
-@@ -938,6 +958,7 @@ static void dram_all_config(struct dram_info *dram,
- 	sys_reg |= sdram_params->base.dramtype << SYS_REG_DDRTYPE_SHIFT;
- 	sys_reg |= (sdram_params->base.num_channels - 1)
- 		    << SYS_REG_NUM_CH_SHIFT;
-+
+ static int data_training(const struct chan_info *chan, u32 channel,
+-			 const struct rk3399_sdram_params *sdram_params,
++			 const struct rk3399_sdram_params *params,
+ 			 u32 training_flag)
+ {
+ 	u32 *denali_phy = chan->publ->denali_phy;
+@@ -883,14 +882,14 @@ static int data_training(const struct chan_info *chan, u32 channel,
+ 	setbits_le32(&denali_phy[927], (1 << 22));
+ 
+ 	if (training_flag == PI_FULL_TRAINING) {
+-		if (sdram_params->base.dramtype == LPDDR4) {
++		if (params->base.dramtype == LPDDR4) {
+ 			training_flag = PI_CA_TRAINING | PI_WRITE_LEVELING |
+ 					PI_READ_GATE_TRAINING |
+ 					PI_READ_LEVELING | PI_WDQ_LEVELING;
+-		} else if (sdram_params->base.dramtype == LPDDR3) {
++		} else if (params->base.dramtype == LPDDR3) {
+ 			training_flag = PI_CA_TRAINING | PI_WRITE_LEVELING |
+ 					PI_READ_GATE_TRAINING;
+-		} else if (sdram_params->base.dramtype == DDR3) {
++		} else if (params->base.dramtype == DDR3) {
+ 			training_flag = PI_WRITE_LEVELING |
+ 					PI_READ_GATE_TRAINING |
+ 					PI_READ_LEVELING;
+@@ -899,23 +898,23 @@ static int data_training(const struct chan_info *chan, u32 channel,
+ 
+ 	/* ca training(LPDDR4,LPDDR3 support) */
+ 	if ((training_flag & PI_CA_TRAINING) == PI_CA_TRAINING)
+-		data_training_ca(chan, channel, sdram_params);
++		data_training_ca(chan, channel, params);
+ 
+ 	/* write leveling(LPDDR4,LPDDR3,DDR3 support) */
+ 	if ((training_flag & PI_WRITE_LEVELING) == PI_WRITE_LEVELING)
+-		data_training_wl(chan, channel, sdram_params);
++		data_training_wl(chan, channel, params);
+ 
+ 	/* read gate training(LPDDR4,LPDDR3,DDR3 support) */
+ 	if ((training_flag & PI_READ_GATE_TRAINING) == PI_READ_GATE_TRAINING)
+-		data_training_rg(chan, channel, sdram_params);
++		data_training_rg(chan, channel, params);
+ 
+ 	/* read leveling(LPDDR4,LPDDR3,DDR3 support) */
+ 	if ((training_flag & PI_READ_LEVELING) == PI_READ_LEVELING)
+-		data_training_rl(chan, channel, sdram_params);
++		data_training_rl(chan, channel, params);
+ 
+ 	/* wdq leveling(LPDDR4 support) */
+ 	if ((training_flag & PI_WDQ_LEVELING) == PI_WDQ_LEVELING)
+-		data_training_wdql(chan, channel, sdram_params);
++		data_training_wdql(chan, channel, params);
+ 
+ 	/* PHY_927 PHY_PAD_DQS_DRIVE  RPULL offset_22 */
+ 	clrbits_le32(&denali_phy[927], (1 << 22));
+@@ -924,7 +923,7 @@ static int data_training(const struct chan_info *chan, u32 channel,
+ }
+ 
+ static void set_ddrconfig(const struct chan_info *chan,
+-			  const struct rk3399_sdram_params *sdram_params,
++			  const struct rk3399_sdram_params *params,
+ 			  unsigned char channel, u32 ddrconfig)
+ {
+ 	/* only need to set ddrconfig */
+@@ -932,14 +931,14 @@ static void set_ddrconfig(const struct chan_info *chan,
+ 	unsigned int cs0_cap = 0;
+ 	unsigned int cs1_cap = 0;
+ 
+-	cs0_cap = (1 << (sdram_params->ch[channel].cs0_row
+-			+ sdram_params->ch[channel].col
+-			+ sdram_params->ch[channel].bk
+-			+ sdram_params->ch[channel].bw - 20));
+-	if (sdram_params->ch[channel].rank > 1)
+-		cs1_cap = cs0_cap >> (sdram_params->ch[channel].cs0_row
+-				- sdram_params->ch[channel].cs1_row);
+-	if (sdram_params->ch[channel].row_3_4) {
++	cs0_cap = (1 << (params->ch[channel].cs0_row
++			+ params->ch[channel].col
++			+ params->ch[channel].bk
++			+ params->ch[channel].bw - 20));
++	if (params->ch[channel].rank > 1)
++		cs1_cap = cs0_cap >> (params->ch[channel].cs0_row
++				- params->ch[channel].cs1_row);
++	if (params->ch[channel].row_3_4) {
+ 		cs0_cap = cs0_cap * 3 / 4;
+ 		cs1_cap = cs1_cap * 3 / 4;
+ 	}
+@@ -950,24 +949,22 @@ static void set_ddrconfig(const struct chan_info *chan,
+ }
+ 
+ static void dram_all_config(struct dram_info *dram,
+-			    const struct rk3399_sdram_params *sdram_params)
++			    const struct rk3399_sdram_params *params)
+ {
+ 	u32 sys_reg = 0;
+ 	unsigned int channel, idx;
+ 
+-	sys_reg |= sdram_params->base.dramtype << SYS_REG_DDRTYPE_SHIFT;
+-	sys_reg |= (sdram_params->base.num_channels - 1)
+-		    << SYS_REG_NUM_CH_SHIFT;
++	sys_reg |= params->base.dramtype << SYS_REG_DDRTYPE_SHIFT;
++	sys_reg |= (params->base.num_channels - 1) << SYS_REG_NUM_CH_SHIFT;
+ 
  	for (channel = 0, idx = 0;
- 	     (idx < sdram_params->base.num_channels) && (channel < 2);
+-	     (idx < sdram_params->base.num_channels) && (channel < 2);
++	     (idx < params->base.num_channels) && (channel < 2);
  	     channel++) {
-@@ -1164,6 +1185,7 @@ static int rk3399_dmc_init(struct udevice *dev)
- 	      priv->chan[1].publ, priv->chan[1].msch);
- 	debug("cru %p, cic %p, grf %p, sgrf %p, pmucru %p\n", priv->cru,
- 	      priv->cic, priv->pmugrf, priv->pmusgrf, priv->pmucru);
-+
- #if CONFIG_IS_ENABLED(OF_PLATDATA)
- 	ret = clk_get_by_index_platdata(dev, 0, dtplat->clocks, &priv->ddr_clk);
- #else
-@@ -1173,11 +1195,13 @@ static int rk3399_dmc_init(struct udevice *dev)
- 		printf("%s clk get failed %d\n", __func__, ret);
- 		return ret;
+-		const struct rk3399_sdram_channel *info =
+-			&sdram_params->ch[channel];
++		const struct rk3399_sdram_channel *info = &params->ch[channel];
+ 		struct rk3399_msch_regs *ddr_msch_regs;
+ 		const struct rk3399_msch_timings *noc_timing;
+ 
+-		if (sdram_params->ch[channel].col == 0)
++		if (params->ch[channel].col == 0)
+ 			continue;
+ 		idx++;
+ 		sys_reg |= info->row_3_4 << SYS_REG_ROW_3_4_SHIFT(channel);
+@@ -983,7 +980,7 @@ static void dram_all_config(struct dram_info *dram,
+ 		sys_reg |= (2 >> info->dbw) << SYS_REG_DBW_SHIFT(channel);
+ 
+ 		ddr_msch_regs = dram->chan[channel].msch;
+-		noc_timing = &sdram_params->ch[channel].noc_timings;
++		noc_timing = &params->ch[channel].noc_timings;
+ 		writel(noc_timing->ddrtiminga0,
+ 		       &ddr_msch_regs->ddrtiminga0);
+ 		writel(noc_timing->ddrtimingb0,
+@@ -996,14 +993,14 @@ static void dram_all_config(struct dram_info *dram,
+ 		       &ddr_msch_regs->ddrmode);
+ 
+ 		/* rank 1 memory clock disable (dfi_dram_clk_disable = 1) */
+-		if (sdram_params->ch[channel].rank == 1)
++		if (params->ch[channel].rank == 1)
+ 			setbits_le32(&dram->chan[channel].pctl->denali_ctl[276],
+ 				     1 << 17);
  	}
-+
- 	ret = clk_set_rate(&priv->ddr_clk, params->base.ddr_freq * MHz);
- 	if (ret < 0) {
- 		printf("%s clk set failed %d\n", __func__, ret);
- 		return ret;
+ 
+ 	writel(sys_reg, &dram->pmugrf->os_reg2);
+ 	rk_clrsetreg(&dram->pmusgrf->soc_con4, 0x1f << 10,
+-		     sdram_params->base.stride << 10);
++		     params->base.stride << 10);
+ 
+ 	/* reboot hold register set */
+ 	writel(PRESET_SGRF_HOLD(0) | PRESET_GPIO0_HOLD(1) |
+@@ -1013,11 +1010,11 @@ static void dram_all_config(struct dram_info *dram,
+ }
+ 
+ static int switch_to_phy_index1(struct dram_info *dram,
+-				const struct rk3399_sdram_params *sdram_params)
++				const struct rk3399_sdram_params *params)
+ {
+ 	u32 channel;
+ 	u32 *denali_phy;
+-	u32 ch_count = sdram_params->base.num_channels;
++	u32 ch_count = params->base.num_channels;
+ 	int ret;
+ 	int i = 0;
+ 
+@@ -1048,7 +1045,7 @@ static int switch_to_phy_index1(struct dram_info *dram,
+ 		denali_phy = dram->chan[channel].publ->denali_phy;
+ 		clrsetbits_le32(&denali_phy[896], (0x3 << 8) | 1, 1 << 8);
+ 		ret = data_training(&dram->chan[channel], channel,
+-				    sdram_params, PI_FULL_TRAINING);
++				    params, PI_FULL_TRAINING);
+ 		if (ret) {
+ 			debug("index1 training failed\n");
+ 			return ret;
+@@ -1059,10 +1056,10 @@ static int switch_to_phy_index1(struct dram_info *dram,
+ }
+ 
+ static int sdram_init(struct dram_info *dram,
+-		      const struct rk3399_sdram_params *sdram_params)
++		      const struct rk3399_sdram_params *params)
+ {
+-	unsigned char dramtype = sdram_params->base.dramtype;
+-	unsigned int ddr_freq = sdram_params->base.ddr_freq;
++	unsigned char dramtype = params->base.dramtype;
++	unsigned int ddr_freq = params->base.ddr_freq;
+ 	int channel;
+ 
+ 	debug("Starting SDRAM initialization...\n");
+@@ -1080,10 +1077,10 @@ static int sdram_init(struct dram_info *dram,
+ 
+ 		phy_dll_bypass_set(publ, ddr_freq);
+ 
+-		if (channel >= sdram_params->base.num_channels)
++		if (channel >= params->base.num_channels)
+ 			continue;
+ 
+-		if (pctl_cfg(chan, channel, sdram_params) != 0) {
++		if (pctl_cfg(chan, channel, params) != 0) {
+ 			printf("pctl_cfg fail, reset\n");
+ 			return -EIO;
+ 		}
+@@ -1092,17 +1089,16 @@ static int sdram_init(struct dram_info *dram,
+ 		if (dramtype == LPDDR3)
+ 			udelay(10);
+ 
+-		if (data_training(chan, channel,
+-				  sdram_params, PI_FULL_TRAINING)) {
++		if (data_training(chan, channel, params, PI_FULL_TRAINING)) {
+ 			printf("SDRAM initialization failed, reset\n");
+ 			return -EIO;
+ 		}
+ 
+-		set_ddrconfig(chan, sdram_params, channel,
+-			      sdram_params->ch[channel].ddrconfig);
++		set_ddrconfig(chan, params, channel,
++			      params->ch[channel].ddrconfig);
  	}
-+
- 	ret = sdram_init(priv, params);
- 	if (ret < 0) {
- 		printf("%s DRAM init failed %d\n", __func__, ret);
+-	dram_all_config(dram, sdram_params);
+-	switch_to_phy_index1(dram, sdram_params);
++	dram_all_config(dram, params);
++	switch_to_phy_index1(dram, params);
+ 
+ 	debug("Finish SDRAM initialization...\n");
+ 	return 0;
 -- 
 2.18.0.321.gffc6fa0e3
 
