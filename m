@@ -2,86 +2,64 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24E1847BB3
-	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:54:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA83347D12
+	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 10:30:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7HeQK2MjXCYRulQbMkps0BKxuZcjSjxeNmDVDwpXVns=; b=XlNnWsOCgktIIu
-	kq1yD48QaedUGpmyWySFEvwBLsmJSE60OXoyV6EtObK7+GU3uP0q5rouPYgBa3QPC+MeYJIYH4hQD
-	7r1lWwHDE9PywFktP2YkCDT7JytxToKV6pwHhQ21JUDY1f8kuMvif3/PSc9C3SWCFI7T5s2CSUb0W
-	KiJfoNDLryJCycfwpaGKGQ+sjn0ZbhqQbeGjOY6lK4tsxm2MOlwFigEhJabEKpkyqIj2diICAMssY
-	55ADZOC4lxU4YW9wRWi5wLpqKRvZdFDMsitD6WnehC0rCx8RbBsVrdBgMXmok1Okji9rqNbFxSq1B
-	M74pfS4wTqXYKeCfsn8g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=X1NwmtiJgEiYAs3Eve5G8wNLX4HLMExETSZFSnzjPXo=; b=EpMomjLhoiGieu
+	PI3klbiMjO5DO0LK68A/wLz3XjarxdGNV55wajy4OILwe/IHOeafvJzaEkvPs04I3thev6gPTShFX
+	KZqDtuXhhPtl8udWZAX3GQYzL5l+SoFjIVeRUShUFLbj6hvzHHesS514850sz6+plyTVEwpOCaB5u
+	OPOXh3er81xqVJ6bf9PDYJCAz+4qZ3fq2un6t/HZoBcGFh4d9kBD1HMQoW93mTnt/bXPYOMm3XOdH
+	1I75JZlKFnzfyebmU5xsTtobX2HFjMmV5rtbOLYzE+DrSFmR3uL+cKyhotXdw63dTMNrCKj2GaBoH
+	boxQWJBYuYHO29nO5uXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcmSp-0007qJ-7O; Mon, 17 Jun 2019 07:54:03 +0000
-Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
+	id 1hcn1X-0008Ue-Ns; Mon, 17 Jun 2019 08:29:55 +0000
+Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcmSl-0007pm-IO
- for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:54:00 +0000
-Received: by mail-ua1-x943.google.com with SMTP id v18so3091345uad.12
- for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:53:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tRW1fNYqfwgQBy9THQpXCwuo5cDKvcErh5obSg7YYNc=;
- b=rF1z+kGx4xXL8zfFmisXiiKRC1ok9357niHWA7JwibX0ET3Sg2Vx/C91G3nrLc+Xhe
- BPK1VcVetMEFD5keUYeTb5W3hxqOdM34b/M9bruL5im6NuFkKRqVC7jsMPkebP2tAn6Y
- D94jWFD4CUzmB3wQv0vDlpQdduzhIvtbUwbiHXA/jfeOFu2cvoIcibGdp+E+Bd3gGBoy
- 3gl7atT4pvqbvXUtPRwvJqQds1zAPHerPuoQw/wouC1cnIz0xBuv7d33qJEKP6bN2kwZ
- CNzBAvYinLErfw6BiZX1TKiSPZVm6+weN+Ve92dW+5Ee4stiJZG0x7ywBtwPHFq7QAAV
- g3Kw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=tRW1fNYqfwgQBy9THQpXCwuo5cDKvcErh5obSg7YYNc=;
- b=OhRR+Bq7DcTtE7FNImwfHbJu9tK2gd7lbdZpOe+5xgeYednUOHGZvP6GKgdlYIY0OG
- O156euolzynizUswKixFh9B9qjVm6uSyTTU/s+SENsa9F7BbX2fR9TRUtI10fUgKwfEY
- 3rY/9TE/+KG+9gvGHj1JdztjGdTnr6enzZj7g6+4Nuu4KIh0ZfM9eKoMXpqVNVyFx091
- TxSJo/eqMfEKekHlhpHLCkl6+m5eyNzf41cgINe/wuamYestPPupvB/zdhCY9ChX2yQ1
- kPFF5jThddX1zQhm83+Lti1ZHpD2Rrl2iuWkYoXI7McmHObFr1tJ4k0NoJdnX4BoTs6X
- uXig==
-X-Gm-Message-State: APjAAAVTlmEg0dKxv/ITrNs7SlFLbLBn0ZgrtjYJMxbxqfF+ujCVxQTK
- dte1KyrbbiTA68jOoROaN7MMLH+9ZbRHDOpsdAty9g==
-X-Google-Smtp-Source: APXvYqyhLV0eZUsbwyc8+v3TnW8XR69RoxoH9782ZqeCtf+IvVa1gMZ7SgjScvGxko8mmZpldj50C+TaD9ZWqmsljgk=
-X-Received: by 2002:a9f:31a2:: with SMTP id v31mr6656078uad.15.1560758038323; 
- Mon, 17 Jun 2019 00:53:58 -0700 (PDT)
-MIME-Version: 1.0
+ id 1hcn1B-00087R-Ai
+ for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 08:29:36 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga008.fm.intel.com ([10.253.24.58])
+ by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 17 Jun 2019 01:29:31 -0700
+X-ExtLoop1: 1
+Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.198])
+ ([10.237.72.198])
+ by fmsmga008.fm.intel.com with ESMTP; 17 Jun 2019 01:29:27 -0700
+Subject: Re: [PATCH v4 5/5] brcmfmac: sdio: Don't tune while the card is off
+To: Douglas Anderson <dianders@chromium.org>,
+ Ulf Hansson <ulf.hansson@linaro.org>, Kalle Valo <kvalo@codeaurora.org>,
+ Arend van Spriel <arend.vanspriel@broadcom.com>
 References: <20190613234153.59309-1-dianders@chromium.org>
- <20190613234153.59309-3-dianders@chromium.org>
- <CAPDyKFrgXGf_9=H7G40fiUQj=da5WWRys_oim2azgL4FEOeUVA@mail.gmail.com>
- <CAD=FV=UA9i1eEi3Mx0WF-DnCnr4O4-MfOxa=axZOJtXzxbV7Tw@mail.gmail.com>
-In-Reply-To: <CAD=FV=UA9i1eEi3Mx0WF-DnCnr4O4-MfOxa=axZOJtXzxbV7Tw@mail.gmail.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 17 Jun 2019 09:53:20 +0200
-Message-ID: <CAPDyKFqNUJospyV05ZC7Y894QB6a9LQ8cjdT+zrD9EQvm_OWRg@mail.gmail.com>
-Subject: Re: [PATCH v4 2/5] mmc: core: API to temporarily disable retuning for
- SDIO CRC errors
-To: Doug Anderson <dianders@chromium.org>
+ <20190613234153.59309-6-dianders@chromium.org>
+From: Adrian Hunter <adrian.hunter@intel.com>
+Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
+ Business Identity Code: 0357606 - 4, Domiciled in Helsinki
+Message-ID: <dac34482-cf74-5db9-ec0f-124af0ace811@intel.com>
+Date: Mon, 17 Jun 2019 11:28:10 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
+MIME-Version: 1.0
+In-Reply-To: <20190613234153.59309-6-dianders@chromium.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_005359_668059_3447FF0E 
-X-CRM114-Status: GOOD (  11.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190617_012933_508166_674D3C07 
+X-CRM114-Status: GOOD (  24.69  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.88 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,63 +72,102 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Chi-Hsien Lin <chi-hsien.lin@cypress.com>,
- Adrian Hunter <adrian.hunter@intel.com>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- brcm80211-dev-list <brcm80211-dev-list@cypress.com>,
- Ritesh Harjani <riteshh@codeaurora.org>,
- Brian Norris <briannorris@chromium.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Matthias Kaehlcke <mka@chromium.org>, Naveen Gupta <naveen.gupta@cypress.com>,
- Shawn Lin <shawn.lin@rock-chips.com>,
- Madhan Mohan R <madhanmohan.r@cypress.com>,
- Arend van Spriel <arend.vanspriel@broadcom.com>,
- Double Lo <double.lo@cypress.com>, Avri Altman <avri.altman@wdc.com>,
- Wright Feng <wright.feng@cypress.com>, Jiong Wu <lohengrin1024@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
- brcm80211-dev-list.pdl@broadcom.com,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-wireless <linux-wireless@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Kalle Valo <kvalo@codeaurora.org>, netdev <netdev@vger.kernel.org>
+Cc: Madhan Mohan R <madhanmohan.r@cypress.com>,
+ brcm80211-dev-list.pdl@broadcom.com, YueHaibing <yuehaibing@huawei.com>,
+ Hante Meuleman <hante.meuleman@broadcom.com>,
+ "David S. Miller" <davem@davemloft.net>, netdev@vger.kernel.org,
+ Chi-Hsien Lin <chi-hsien.lin@cypress.com>, briannorris@chromium.org,
+ linux-wireless@vger.kernel.org, Double Lo <double.lo@cypress.com>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ mka@chromium.org, Wright Feng <wright.feng@cypress.com>,
+ brcm80211-dev-list@cypress.com, Naveen Gupta <naveen.gupta@cypress.com>,
+ Franky Lin <franky.lin@broadcom.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-[...]
+On 14/06/19 2:41 AM, Douglas Anderson wrote:
+> When Broadcom SDIO cards are idled they go to sleep and a whole
+> separate subsystem takes over their SDIO communication.  This is the
+> Always-On-Subsystem (AOS) and it can't handle tuning requests.
+> 
+> Specifically, as tested on rk3288-veyron-minnie (which reports having
+> BCM4354/1 in dmesg), if I force a retune in brcmf_sdio_kso_control()
+> when "on = 1" (aka we're transition from sleep to wake) by whacking:
+>   bus->sdiodev->func1->card->host->need_retune = 1
+> ...then I can often see tuning fail.  In this case dw_mmc reports "All
+> phases bad!").  Note that I don't get 100% failure, presumably because
+> sometimes the card itself has already transitioned away from the AOS
+> itself by the time we try to wake it up.  If I force retuning when "on
+> = 0" (AKA force retuning right before sending the command to go to
+> sleep) then retuning is always OK.
+> 
+> NOTE: we need _both_ this patch and the patch to avoid triggering
+> tuning due to CRC errors in the sleep/wake transition, AKA ("brcmfmac:
+> sdio: Disable auto-tuning around commands expected to fail").  Though
+> both patches handle issues with Broadcom's AOS, the problems are
+> distinct:
+> 1. We want to defer (but not ignore) asynchronous (like
+>    timer-requested) tuning requests till the card is awake.  However,
+>    we want to ignore CRC errors during the transition, we don't want
+>    to queue deferred tuning request.
+> 2. You could imagine that the AOS could implement retuning but we
+>    could still get errors while transitioning in and out of the AOS.
+>    Similarly you could imagine a seamless transition into and out of
+>    the AOS (with no CRC errors) even if the AOS couldn't handle
+>    tuning.
+> 
+> ALSO NOTE: presumably there is never a desperate need to retune in
+> order to wake up the card, since doing so is impossible.  Luckily the
+> only way the card can get into sleep state is if we had a good enough
+> tuning to send it a sleep command, so presumably that "good enough"
+> tuning is enough to wake us up, at least with a few retries.
+> 
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
 
-> > > --- a/include/linux/mmc/sdio_func.h
-> > > +++ b/include/linux/mmc/sdio_func.h
-> > > @@ -167,4 +167,7 @@ extern void sdio_f0_writeb(struct sdio_func *func, unsigned char b,
-> > >  extern mmc_pm_flag_t sdio_get_host_pm_caps(struct sdio_func *func);
-> > >  extern int sdio_set_host_pm_flags(struct sdio_func *func, mmc_pm_flag_t flags);
-> > >
-> > > +extern void sdio_retune_crc_disable(struct sdio_func *func);
-> > > +extern void sdio_retune_crc_enable(struct sdio_func *func);
-> > > +
-> > >  #endif /* LINUX_MMC_SDIO_FUNC_H */
-> > > --
-> > > 2.22.0.rc2.383.gf4fbbf30c2-goog
-> > >
-> >
-> > Besides the minor comments, this looks good to me.
->
-> Thank you for the reviews!
->
-> I'll plan to send a v5 on my Monday with the fixes assuming no new
-> heated discussion starts up.  If it's less work for you, I'm also
-> happy if you just want to make the trivial fixes yourself when
-> applying.
+Acked-by: Adrian Hunter <adrian.hunter@intel.com>
 
-It really doesn't matter to me, feel free to pick the option you
-prefer. At this point I am just awaiting acks for the broadcom patces
-and some clarity of what stable releases we should target for
-non-tagged patches.
+> ---
+> 
+> Changes in v4:
+> - Adjust to API rename (Adrian).
+> 
+> Changes in v3:
+> - ("brcmfmac: sdio: Don't tune while the card is off") new for v3.
+> 
+> Changes in v2: None
+> 
+>  drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c | 7 +++++++
+>  1 file changed, 7 insertions(+)
+> 
+> diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
+> index ee76593259a7..629140b6d7e2 100644
+> --- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
+> +++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
+> @@ -669,6 +669,10 @@ brcmf_sdio_kso_control(struct brcmf_sdio *bus, bool on)
+>  
+>  	sdio_retune_crc_disable(bus->sdiodev->func1);
+>  
+> +	/* Cannot re-tune if device is asleep; defer till we're awake */
+> +	if (on)
+> +		sdio_retune_hold_now(bus->sdiodev->func1);
+> +
+>  	wr_val = (on << SBSDIO_FUNC1_SLEEPCSR_KSO_SHIFT);
+>  	/* 1st KSO write goes to AOS wake up core if device is asleep  */
+>  	brcmf_sdiod_writeb(bus->sdiodev, SBSDIO_FUNC1_SLEEPCSR, wr_val, &err);
+> @@ -729,6 +733,9 @@ brcmf_sdio_kso_control(struct brcmf_sdio *bus, bool on)
+>  	if (try_cnt > MAX_KSO_ATTEMPTS)
+>  		brcmf_err("max tries: rd_val=0x%x err=%d\n", rd_val, err);
+>  
+> +	if (on)
+> +		sdio_retune_release(bus->sdiodev->func1);
+> +
+>  	sdio_retune_crc_enable(bus->sdiodev->func1);
+>  
+>  	return err;
+> 
 
-Kind regards
-Uffe
 
 _______________________________________________
 Linux-rockchip mailing list
