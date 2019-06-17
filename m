@@ -2,80 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A7D947B15
-	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:37:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4C9047B16
+	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:37:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FiGHsrGSbgmjCPIvBUqV8F1mFpVopYogT3RS21HyThM=; b=FuHYu4rlxwkIIZ
-	+ELpDyfv2fqXF0SXkcqOXj0BP9U7MiTwPqpLOMH5p7+H43U99VDxH+Yc/+ZD8ePVV+ZzsPd56zAGu
-	aKXwfACFNrC2xR28NBwe60T/2cuevCV5ENN9Fopc/oNq7/8W2DVvRKKu+5bZbdOD3Y3e/EclZ/WB5
-	1EWrakftxIR8XwX5tR/S30k4LAWaM1mOxpy2fyqazvW/Jqi/vHntrs99rcV8BouS7eXpduz+wO7tT
-	wxX41E7BJI9lzLDyfoTrC8EdbveYWC05q9vJljfbYNfg6y7iGxJNA4AHCRDin26CGn9R75go2LaFd
-	rrhsvfyBLu67kL0OddlA==;
+	List-Owner; bh=gBUWeQPlk4saF/xtxP83HG8n7KhIXzYkW8ACWxtg6wA=; b=mgjlHrjZ7Fz8gX
+	2aRG2DyzBlpKStqqpkInRHDqlKeFA63o2qcFNGWNThDGvUZFwk/a/EWqgmmiaRWxuOgaSlarWi5Rc
+	YqhRuxYd4zZyP9BoCvVCVWV7ZslAGk56OCJilSrOyKhC13GZMwo1qQGNLvLE3vT+pLbsHnc0DzxD9
+	PwJ7te0zGFmq2ntj6j7GOrMYOJI6kuF+cEPVR9ClBiiBqAf1jzVeN0AqQFAw52yUL6HfbTaHsEhSF
+	2R24xlRcH1zUcEBRYSXmmeE2E7nDnDgnfp5qEu2AsQZY/PA8KQu+0SCq9T9iy/+Ox4enImeUnd//Z
+	d6waCXVYAJsQWQVXElfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcmCJ-0005RX-Ks; Mon, 17 Jun 2019 07:36:59 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hcmCL-0005U2-Rp; Mon, 17 Jun 2019 07:37:01 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcmCE-0005P3-WA
- for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:36:56 +0000
-Received: by mail-pl1-x641.google.com with SMTP id b7so3725347pls.6
- for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:36:54 -0700 (PDT)
+ id 1hcmCI-0005RD-Ag
+ for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:36:59 +0000
+Received: by mail-pg1-x543.google.com with SMTP id n2so5294488pgp.11
+ for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:36:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=jjOaByF6DG4Wi5iXKaE8Y5nHQba8rk25ZozVxH6G5Gc=;
- b=Gly4A/0cg4o7IaH8fuy6owEvk8dgaeN2/JWkXmVEY34Rn4ZkOKOFa70uSFuBXcV9bF
- ouFrxfIcyCTK2s7RhyFi/jIKTg9hhHbZEZzdFP/FlB51X2jeyXfwlpJu5daesmDr7H2G
- sHGvOeSBuv/8tCBgfHvRRkDPF+hXGMFtW/d5I=
+ bh=jFjZk68JD5eV1E2NZretcWQElvukX2N3SxgJAGBUBhA=;
+ b=GLS3R3lzMF3Qdg4wcAkDi4F8L8/xqRv/759g4PBpVhCH4nUfP+ilFsMKfcKYD7YZgG
+ a2xjado4MP5+JVlmnWb9AxvP1ZnH1OvoHhqnn98XEdAV3+lBOOy+v3nbhwlbH3XzCfkC
+ RmhbrUSH6oJoVUuIzG2QzNi1gnNjexY1Z7POQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=jjOaByF6DG4Wi5iXKaE8Y5nHQba8rk25ZozVxH6G5Gc=;
- b=iF5oF3EwDZKizeeqVBabnONPuDJP4u/+znUrJwkHjTM8PAnCDyC9TfO1HHcQzkFCF/
- DgtYB1CtyFWyg8DzQsQkIr4mqWvWVyvUSJ0AGgtuuOX0/yl8s6wI8K+N3zINLewPtp8Y
- JpiECweQWRUpnDSoU3P9w4h4VnPP/FKMH17S4FrXGeUEdNrWL4mMSWHHtkis0O7eu/iy
- 6zJ5g9T/cj5y9eu1D7fW+1fWXQ+KT5urvpEIINe/5Ay16CJTtXfbRKSpoRX2XQvpTXxo
- EAfEYuynmr67wnpzYR8EFPdgho3mdEBfqDg60xjAXCBjHkCl93a3zxwgQZF2o12R8bBR
- 3qeg==
-X-Gm-Message-State: APjAAAXLGypgMayUr0lNSvlwcWMJb5hlws8MQ3nqrW1kMBzb3M38QdV8
- iQAJqIw2CDlnJwjV5EG2EazSBg==
-X-Google-Smtp-Source: APXvYqweP9bto1cpPyrzfMKzoSoIzeF3+UNXmQerrltUYP1wRQbdzyQaofrQVz5C8EjJET5oWnAa2g==
-X-Received: by 2002:a17:902:6ac6:: with SMTP id
- i6mr92870588plt.233.1560757014113; 
- Mon, 17 Jun 2019 00:36:54 -0700 (PDT)
+ bh=jFjZk68JD5eV1E2NZretcWQElvukX2N3SxgJAGBUBhA=;
+ b=udr7HZIqsYKINnRD7xjC1EJS0m3OLuCMZfdNF+PtKi6qjUvB1kPLQEjpTjtCGPwVBR
+ +tUt2Nk1+4U1nXrvHDGEvPj97LbrA3r3DcuIYhxYzGZ82LZfM/GtK22oehvXYcBPtIEI
+ 6xa448FbL4CE8KHugpSfxhJP//c/4YulLMnM/5y/aSZlEZdDOIvQupLAWhauWALcyuHh
+ hY8PNviLupWMI3g8TeSE7bSkxDYdakLKdcTfRygPub8L46ibVjA9jETgxqIaKTjpY+K1
+ pBK/TJ+1XI+Wx155nAf7CmG9baIETZQsjJ0PDQQC2zhXTQ1XYiLLmGhRVNFHeBJ4vTLz
+ 3ujw==
+X-Gm-Message-State: APjAAAW+NvbkGp/l+WySs0uQ0D/8UdC2wfsKvNNoYzWHnbQE3pSVIwRh
+ id3dNJzdx90/K5DFAYsGx0bG9g==
+X-Google-Smtp-Source: APXvYqzAZWgShhJzjayThqgbn8JvesZRitsiE1nVzvv5JM7S4tpj2f5+naZhDs1zEpstctrLBcehuA==
+X-Received: by 2002:a63:26c7:: with SMTP id
+ m190mr48780379pgm.141.1560757017365; 
+ Mon, 17 Jun 2019 00:36:57 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.203.245])
- by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.36.51
+ by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.36.54
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 17 Jun 2019 00:36:53 -0700 (PDT)
+ Mon, 17 Jun 2019 00:36:56 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH v2 10/99] ram: rk3399: Use rank mask in wdql data training
-Date: Mon, 17 Jun 2019 13:01:23 +0530
-Message-Id: <20190617073252.27810-11-jagan@amarulasolutions.com>
+Subject: [PATCH v2 11/99] ram: rk3399: Add ddrtype enc macro
+Date: Mon, 17 Jun 2019 13:01:24 +0530
+Message-Id: <20190617073252.27810-12-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190617073252.27810-1-jagan@amarulasolutions.com>
 References: <20190617073252.27810-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_003655_148661_6F417F69 
-X-CRM114-Status: GOOD (  10.54  )
+X-CRM114-CacheID: sfid-20190617_003658_370450_35310A26 
+X-CRM114-Status: GOOD (  11.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,39 +106,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add rank_mask based on the rank number, this would keep
-the wdql data training loop based on the desired rank mask
-value instead of looping for all values.
+Add simplified and meaningful macro for ddrtype macro.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 Signed-off-by: YouMin Chen <cym@rock-chips.com>
 ---
- drivers/ram/rockchip/sdram_rk3399.c | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+ arch/arm/include/asm/arch-rockchip/sdram_common.h | 1 +
+ drivers/ram/rockchip/sdram_rk3399.c               | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 
+diff --git a/arch/arm/include/asm/arch-rockchip/sdram_common.h b/arch/arm/include/asm/arch-rockchip/sdram_common.h
+index 671c318d50..ce1b62982c 100644
+--- a/arch/arm/include/asm/arch-rockchip/sdram_common.h
++++ b/arch/arm/include/asm/arch-rockchip/sdram_common.h
+@@ -34,6 +34,7 @@
+ #define SYS_REG_ROW_3_4_SHIFT(ch)	(30 + (ch))
+ #define SYS_REG_ROW_3_4_MASK		1
+ #define SYS_REG_CHINFO_SHIFT(ch)	(28 + (ch))
++#define SYS_REG_ENC_DDRTYPE(n)		((n) << SYS_REG_DDRTYPE_SHIFT)
+ #define SYS_REG_RANK_SHIFT(ch)		(11 + (ch) * 16)
+ #define SYS_REG_RANK_MASK		1
+ #define SYS_REG_COL_SHIFT(ch)		(9 + (ch) * 16)
 diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index 76d6440f9a..32fc7771b3 100644
+index 32fc7771b3..28178f4ee9 100644
 --- a/drivers/ram/rockchip/sdram_rk3399.c
 +++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -851,11 +851,17 @@ static int data_training_wdql(const struct chan_info *chan, u32 channel,
- 	u32 *denali_pi = chan->pi->denali_pi;
- 	u32 i, tmp;
- 	u32 rank = params->ch[channel].rank;
-+	u32 rank_mask;
+@@ -1007,7 +1007,7 @@ static void dram_all_config(struct dram_info *dram,
+ 	u32 sys_reg = 0;
+ 	unsigned int channel, idx;
  
- 	/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
- 	writel(0x00003f7c, (&denali_pi[175]));
+-	sys_reg |= params->base.dramtype << SYS_REG_DDRTYPE_SHIFT;
++	sys_reg |= SYS_REG_ENC_DDRTYPE(params->base.dramtype);
+ 	sys_reg |= (params->base.num_channels - 1) << SYS_REG_NUM_CH_SHIFT;
  
--	for (i = 0; i < rank; i++) {
-+	rank_mask = (rank == 1) ? 0x1 : 0x3;
-+
-+	for (i = 0; i < 4; i++) {
-+		if (!(rank_mask & (1 << i)))
-+			continue;
-+
- 		select_per_cs_training_index(chan, i);
- 
- 		/*
+ 	for (channel = 0, idx = 0;
 -- 
 2.18.0.321.gffc6fa0e3
 
