@@ -2,73 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6077547B7D
-	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:41:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BDD847B7E
+	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:41:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zkJzN4WYJe7LBZ+2TV5K6k92h89SnsaMOnyPe2kDBLs=; b=CvuIYDT3fe6Niy
-	EJWxbd2fCLs7VHfQIpDOhL2IOCReeQy/mt8QdCKh596Av69KU+TxKcvtgdH8mMhspBWJoKAUt/x2H
-	rXppcFdS8EO3P9aU2fA70d13QjB5aaGFEp9GxZ5pHoQ4DN29A+9iuL6W8s/rucAW09TPDVGmPLi7u
-	n32+4LoXv+c0TAs/0AUekkfwypCNd1kOhJEw+buNIHjmvvgale540eidWyjgoTyfzl2WI/copiQ+w
-	yAjE/ZyKAtGs6L0s8y8kh34MkBZlLU9wZz7uuazDWFtmeglLs0hc9dAAeYkPGt0/hQndPlNwh35HK
-	ZmY+4MBuQMqPmeGabw1A==;
+	List-Owner; bh=dJnKS1+8BaBlwtHA6fNiBt12AG4zzGZIvdD8AY860xA=; b=WQH6MP5FO11d+I
+	cVF8+3YxpYbUnNsnuzihdmszvDjFyB5kIE8cVFeYdAnDgurBWJCticYAfpRj/b+vub1q3EFp6L67I
+	Pmeg8rcPVQtPweSn+/4JESeuKuBqETtSsPgIMdJSqqX1z1tluVjMxssnqRBMOIWFwTIz2uF7mtE2g
+	WwDo/g5ZbmEBeDOfMlb6NMVN8xwJB6miFMMifZqgjaVQjU5XEiXjzT+p6kAtYEAEFOl0FKlHFVcOI
+	amM8+3OdidJNGKul8PCvwi4ECEkNo6+kC230vRI19bQXNoDMBeg/0CP9mSX1iXytCn9qI0G+YLior
+	qWPN8vzf9z8wcEGxgcRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcmGl-0002EG-7c; Mon, 17 Jun 2019 07:41:35 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hcmGn-0002H7-SQ; Mon, 17 Jun 2019 07:41:37 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcmGg-0002An-15
- for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:41:31 +0000
-Received: by mail-pl1-x641.google.com with SMTP id bh12so3737585plb.4
- for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:41:30 -0700 (PDT)
+ id 1hcmGj-0002Dr-6O
+ for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:41:34 +0000
+Received: by mail-pf1-x441.google.com with SMTP id i189so5186577pfg.10
+ for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:41:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=PQWH9ukfTdjRbywMISY+qcE2oqHuZ5y3usrU2Fjsdo0=;
- b=cVKhqc6inWMZaMgvi488GvIJaknwVg7p00Yeuw9X1t/kIeGPhdk+dXsedjAaPTBegN
- pEzawXrPMxyRwWwrEmcuOEFJc/XL2ixIAF1W6NtyO0LemJhOTZY/MH8gq16h6TkHT49I
- givx/D59wy5h7l63rC9IUR1pIQnug7yu5BCL8=
+ bh=LOUCfFdXWrjphb66D3/vfNzximgRchN1Tu2BsPCYwUI=;
+ b=W0f4Wclb92R5BKuq8sDrffRAlKrx7P3Da8rUg0YsM06Z/hFz9fFhOca2XBVTBZlPZ5
+ 5MzuQDX5N/SSbvxsdGy3yYAvq3gNCyr3+z1JvF0M/6U4iOOCGjfolGqZKtSnYUHvkBMd
+ A4ArFNkdxmvNB4LNkskiNkuWrPCcJY/Q4hq3c=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=PQWH9ukfTdjRbywMISY+qcE2oqHuZ5y3usrU2Fjsdo0=;
- b=V0uN6Sj5rTX6h6J8PNAfdjTfKwkNQ2vwVCqYBgTNBHOt1xRgDVd20hdWUikS6ZcSXs
- zxXGkRgMTa4euHxo19PweD+oQKhPkLrVcS2iurmK1VKsqzVVPdDNr7v8WNJA8GhX7vmD
- wkNVH6Sb9EPVNfmcIsAxOWW/KbpezVpq99pIt5ur6xjG0JmbBQfLipg5grFb3uqvgpVp
- oRiHEBcb82EIz901WXtInAu5ON6SUZmCtOtJx//TinIAl00pNonMwMNRk8vHluTVuhiZ
- tb9Xh7Alpepg10B3iMDuSqeH3gFZrnJtKnQTkCuxS7qpCyNBZRVDYCzew5Mv1chnVrFm
- e9EA==
-X-Gm-Message-State: APjAAAWpOUoj00bB3JPtz/IyoYFAYho9poNvC2hTv9dYk/NLmHPqLuVF
- jfovYrfXFmOrGd6Ay03YxWRCsA==
-X-Google-Smtp-Source: APXvYqwmjninpGLyG1QVOunpII0MvzeE/cmj8rufJZvHtgeOYIcNqieQS9Zhs53A7N1WfFWaPc++vw==
-X-Received: by 2002:a17:902:27a8:: with SMTP id
- d37mr107115254plb.150.1560757289513; 
- Mon, 17 Jun 2019 00:41:29 -0700 (PDT)
+ bh=LOUCfFdXWrjphb66D3/vfNzximgRchN1Tu2BsPCYwUI=;
+ b=Xv1t9XOS7T1pY+OO/KIE6f4RyG09p9XKo1d8VKv/rwFjArqN6xvfhlxEzTMeoKKxoF
+ t4snyp0p2R+xpmd9CaFgln80jyGHKTjRVbVORq7gnlG+xN5S/64dX7eSJf1m8OaLduJ+
+ 2YsOW7AjI6K4q7hfOUZCUbZKHiPX5n6t3DkZJnio67umTjocFQZ0t7hNoR08eg3NeZpt
+ jqwkmOoNTsf0Gp0v2sx9Mv0L4j9YTfuQkWfhkJyCxjUcVyBZFjsz0U2Jxk2sQXLVkIRN
+ NMJCwVVm9MgyUfC4WgN/RDUVDExcX5npi5osMfN8l9Ci49A3yMihKGfjp0s3IhtoPJUZ
+ KfYw==
+X-Gm-Message-State: APjAAAUfUdFkgvlT99EeUkKLwcWtKUMpvWGbY99x3dZRgdA0xHszVfp7
+ H7D/PMtGpRMD1V5G1dgA+JjzAw==
+X-Google-Smtp-Source: APXvYqwDE4taMWb70OZRQGGv6BHpQTvbZrwmJG6XCQKXNjx/tNsDofZuXi14Gwzrx14qplyruRMnyw==
+X-Received: by 2002:aa7:9197:: with SMTP id x23mr77174311pfa.161.1560757292682; 
+ Mon, 17 Jun 2019 00:41:32 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.203.245])
- by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.41.26
+ by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.41.29
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 17 Jun 2019 00:41:29 -0700 (PDT)
+ Mon, 17 Jun 2019 00:41:32 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH v2 93/99] ram: rk3399: Set lpddr4 MR12
-Date: Mon, 17 Jun 2019 13:02:46 +0530
-Message-Id: <20190617073252.27810-94-jagan@amarulasolutions.com>
+Subject: [PATCH v2 94/99] ram: rk3399: Set lpddr4 MR14
+Date: Mon, 17 Jun 2019 13:02:47 +0530
+Message-Id: <20190617073252.27810-95-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190617073252.27810-1-jagan@amarulasolutions.com>
 References: <20190617073252.27810-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_004130_089913_DB3C4806 
-X-CRM114-Status: UNSURE (   8.64  )
+X-CRM114-CacheID: sfid-20190617_004133_289926_E526BB1A 
+X-CRM114-Status: UNSURE (   8.68  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,7 +106,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Set MR12 based identified controller in lpddr4
+Set MR14 based identified controller in lpddr4
 as part of LPDDR set rate initialization phase.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
@@ -117,14 +116,14 @@ Signed-off-by: YouMin Chen <cym@rock-chips.com>
  1 file changed, 50 insertions(+)
 
 diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index 61b886ba68..5c0914f40d 100644
+index 5c0914f40d..e009113d45 100644
 --- a/drivers/ram/rockchip/sdram_rk3399.c
 +++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -1940,6 +1940,55 @@ static void set_lpddr4_MR3(const struct chan_info *chan,
+@@ -1989,6 +1989,55 @@ static void set_lpddr4_MR12(const struct chan_info *chan,
  	}
  }
  
-+static void set_lpddr4_MR12(const struct chan_info *chan,
++static void set_lpddr4_MR14(const struct chan_info *chan,
 +			    struct rk3399_sdram_params *params, u32 ctl,
 +			    bool ctl_phy_reg, u32 mr5)
 +{
@@ -135,40 +134,40 @@ index 61b886ba68..5c0914f40d 100644
 +
 +	io = lpddr4_get_io_settings(params, mr5);
 +
-+	reg_value = io->ca_vref;
++	reg_value = io->dq_vref;
 +
 +	switch (ctl) {
 +	case 0:
-+		clrsetbits_le32(&denali_ctl[140], 0xFFFF << 16,
++		clrsetbits_le32(&denali_ctl[142], 0xFFFF << 16,
 +				reg_value << 16);
-+		clrsetbits_le32(&denali_ctl[154], 0xFFFF << 16,
++		clrsetbits_le32(&denali_ctl[156], 0xFFFF << 16,
 +				reg_value << 16);
 +
-+		clrsetbits_le32(&denali_pi[132], 0xFF << 8, reg_value << 8);
-+		clrsetbits_le32(&denali_pi[139], 0xFF << 24, reg_value << 24);
-+		clrsetbits_le32(&denali_pi[147], 0xFF << 8, reg_value << 8);
-+		clrsetbits_le32(&denali_pi[154], 0xFF << 24, reg_value << 24);
++		clrsetbits_le32(&denali_pi[132], 0xFF << 16, reg_value << 16);
++		clrsetbits_le32(&denali_pi[140], 0xFF << 0, reg_value << 0);
++		clrsetbits_le32(&denali_pi[147], 0xFF << 16, reg_value << 16);
++		clrsetbits_le32(&denali_pi[155], 0xFF << 0, reg_value << 0);
 +		break;
 +	case 1:
-+		clrsetbits_le32(&denali_ctl[141], 0xFFFF, reg_value);
-+		clrsetbits_le32(&denali_ctl[155], 0xFFFF, reg_value);
++		clrsetbits_le32(&denali_ctl[143], 0xFFFF, reg_value);
++		clrsetbits_le32(&denali_ctl[157], 0xFFFF, reg_value);
 +
-+		clrsetbits_le32(&denali_pi[129], 0xFF << 24, reg_value << 24);
-+		clrsetbits_le32(&denali_pi[137], 0xFF << 8, reg_value << 8);
-+		clrsetbits_le32(&denali_pi[144], 0xFF << 24, reg_value << 24);
-+		clrsetbits_le32(&denali_pi[152], 0xFF << 8, reg_value << 8);
++		clrsetbits_le32(&denali_pi[130], 0xFF << 0, reg_value << 0);
++		clrsetbits_le32(&denali_pi[137], 0xFF << 16, reg_value << 16);
++		clrsetbits_le32(&denali_pi[145], 0xFF << 0, reg_value << 0);
++		clrsetbits_le32(&denali_pi[152], 0xFF << 16, reg_value << 16);
 +		break;
 +	case 2:
 +	default:
-+		clrsetbits_le32(&denali_ctl[141], 0xFFFF << 16,
++		clrsetbits_le32(&denali_ctl[143], 0xFFFF << 16,
 +				reg_value << 16);
-+		clrsetbits_le32(&denali_ctl[155], 0xFFFF << 16,
++		clrsetbits_le32(&denali_ctl[157], 0xFFFF << 16,
 +				reg_value << 16);
 +
-+		clrsetbits_le32(&denali_pi[127], 0xFF << 8, reg_value << 8);
-+		clrsetbits_le32(&denali_pi[134], 0xFF << 24, reg_value << 24);
-+		clrsetbits_le32(&denali_pi[142], 0xFF << 8, reg_value << 8);
-+		clrsetbits_le32(&denali_pi[149], 0xFF << 24, reg_value << 24);
++		clrsetbits_le32(&denali_pi[127], 0xFF << 16, reg_value << 16);
++		clrsetbits_le32(&denali_pi[135], 0xFF << 0, reg_value << 0);
++		clrsetbits_le32(&denali_pi[142], 0xFF << 16, reg_value << 16);
++		clrsetbits_le32(&denali_pi[150], 0xFF << 0, reg_value << 0);
 +		break;
 +	}
 +}
@@ -176,11 +175,11 @@ index 61b886ba68..5c0914f40d 100644
  static void lpddr4_copy_phy(struct dram_info *dram,
  			    struct rk3399_sdram_params *params, u32 phy,
  			    struct rk3399_sdram_params *timings,
-@@ -2189,6 +2238,7 @@ static void lpddr4_copy_phy(struct dram_info *dram,
- 	set_lpddr4_dq_odt(&dram->chan[channel], timings, ctl, true, true, mr5);
+@@ -2239,6 +2288,7 @@ static void lpddr4_copy_phy(struct dram_info *dram,
  	set_lpddr4_ca_odt(&dram->chan[channel], timings, ctl, true, true, mr5);
  	set_lpddr4_MR3(&dram->chan[channel], timings, ctl, true, mr5);
-+	set_lpddr4_MR12(&dram->chan[channel], timings, ctl, true, mr5);
+ 	set_lpddr4_MR12(&dram->chan[channel], timings, ctl, true, mr5);
++	set_lpddr4_MR14(&dram->chan[channel], timings, ctl, true, mr5);
  
  	/*
  	 * if phy_sw_master_mode_x not bypass mode,
