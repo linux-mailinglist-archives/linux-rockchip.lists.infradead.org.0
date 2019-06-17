@@ -2,72 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E78BB47B59
-	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:39:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43AAC47B5A
+	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:39:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+MdTF+EtXsjyoYdU2chaC0lDgSQkYM9ei6tL28UKzcU=; b=prNVPPR45uR4tZ
-	8Ax0oYxy5wjQd+gJ9JDL9Su2hiHxBA2swi5QdkrAloKfpL4JpwjBaWn9d08IwQSbIQBu1HvxxTe3W
-	+ng6U9SFEk50F+ZNa5NzWuCbF09N9tyxm1xNqXQ7Rpot/ow6u/fgCpgtPdW7v1hCt1r7Z90EWmZoh
-	XXBxm/rebpJ8DT1Cq1eMBiGmR3o6TD3jpkvayke8lJqcnTpIudVlUhJB4yqlo+a94iISrxCPyH6/L
-	8cPyxPLm+BvaFot5PGz7TMBVq99gPkv7E2RCNTuKnF7NJEnyn39XUswa6DG+DvNGZiX+8d8ag6ACD
-	+BCG7y7Uf6Sy2asR+YmQ==;
+	List-Owner; bh=WkLFys+ucUlRW2LvB8zkJ2pZ5D3cpZexB1dUZ4Eb8zQ=; b=tXFBxxTzvFm9Sq
+	pVCJf/LNaGE4vKymJYZzuQuJ8I0EAYpuRprkAFwk/OIoJPR5ngoa2ixVvHaDiXrR5dO3I8NZwoqif
+	Rw48NgfrHJb9LomzmUZP/2iJPbvE/Jp2lqqStekHhCLDwFR/u9e64FOruG/PPQ8JjEDFgC/GKZSys
+	2fK5jyRWHO3XEzUm/JTqrjDLq6nlV3Z5/6KX/Ss+dbnhKL14Z48d71PpglNweChB43bWu3YgYGG0b
+	f9CvnQHxHFBlz0AMTdJ7tepbWk1+iNSvNdHE2s4nXQxGdQQflc7cTydVq2KYxACsREGevSfgI2df+
+	UPwR5FNwDNJdQywx9McQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcmEz-00085Q-PG; Mon, 17 Jun 2019 07:39:45 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hcmF2-00087q-Bv; Mon, 17 Jun 2019 07:39:48 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcmEv-000834-NW
- for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:39:42 +0000
-Received: by mail-pg1-x543.google.com with SMTP id v9so5288507pgr.13
- for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:39:41 -0700 (PDT)
+ id 1hcmEy-000862-Tt
+ for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:39:46 +0000
+Received: by mail-pf1-x443.google.com with SMTP id p184so5187202pfp.7
+ for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:39:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ZL2J5s41uHSjPxOrpRc48hqHZUSqQoN6TBo3Y+1rohE=;
- b=cqoxf4GI53ncdSE3hXZzypaZRWsjx+jkgV7AYr+dym8A/s0G3fQa0usjGiZhR7IGzM
- xPy6mLH+PJbEhT3GcSu8qDcg78+GJYkqijZF8R3a5TP+CcDxyXsxy7bI9A4GwnGIYfYd
- RyqJ9tSGfgQALKoWNR4N/FPuA1IanU83sRQ1M=
+ bh=0dBKJAw/OqEa6SfO5qnRhxLrvR7EKsvthsOfsjyIDWk=;
+ b=q8ylcSA4bX5cXuMTQCexyV29NrLRTAO2h9d4vi5+TNNvxYT1gMjrJ7XXr+rRTW/Tdo
+ EggE8aMg3MZ6XDh1gNCPbGfdHa0oxXWf7Yta7PbXRohaH6e/B8QM7oUOfbRmRqygfDLa
+ llVhK2NaKfTK1cfgfOJ+1yQnm6PR+nG1j1k4g=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ZL2J5s41uHSjPxOrpRc48hqHZUSqQoN6TBo3Y+1rohE=;
- b=btlJHPnIfHwRhLJ25fvdWUswQNmNiUTH8Z8T1ubVXxGED2NSUA/7p881uGAIZHTnF2
- TLSFCbGOCXv3B+iM1JGKj4kPBbnXdjMmoredMD6HAe0Tev24tmhF1B8mczMGzMWXUbBB
- vBcHoDuS76Vx/FAPhRxzSwB320rxEK7WHedMfHF6OezakiSq7vqYxqfftgah3ZYaB+Zh
- 3k7oz8pQVo/c+Q7tE5dFbuWZ9Nu/5Eh814CsbwF8HS2bCJwJGn+E163PN7XZxykJ8f7R
- LKuCHqcpT0C02oBZreidiprqXnpflA5mqyy340pAjxvZz+z6P8QP3cGdp/L9ZBcQnUM4
- cTPA==
-X-Gm-Message-State: APjAAAXrV47rRoLT7iPt3ODxz2GXfwG0zm+zCTj8rulpSjTNk6q8JCd9
- m547+zcI2XKpYR56P012x7sjkA==
-X-Google-Smtp-Source: APXvYqyK4Dl7tm9n1YGUrY9tGVP64Fv5we8SrwserTt0x4iEEKAoZYGbr6uNavgKVJTlpx0nQcEmkA==
-X-Received: by 2002:a17:90a:20a2:: with SMTP id
- f31mr22770653pjg.90.1560757181262; 
- Mon, 17 Jun 2019 00:39:41 -0700 (PDT)
+ bh=0dBKJAw/OqEa6SfO5qnRhxLrvR7EKsvthsOfsjyIDWk=;
+ b=rQW9dHV0Ddn+07YFh92XqFatkzE3QVFxpym619KaV27LNykKC+H++PGGjOcO0DHqBR
+ Oq0+jDpX8Epfk3eHVVerkS2HD+7GLcELJHCPMN//E77UleCCkF1ECBNGAEvYbE3Huqrr
+ +pJSivmpkbrydLwWsidB4sWSsSjmuV5mp2IkwDQ31ASXGF7M1+WggYVXObAO14C3jUtU
+ kHF7apC4k+ow37nLikkiM3hu2Sh5H5dJDxYwP91fVO06vF+XaHE0R43bLlcWumjcfz1w
+ ItuYFAx6NLR7sdAOCsQIzFVN/ndxyXJhO4Z4m9LXSDkpg8k/kRqOraQ4yFqG1gJhWAZR
+ 0cXQ==
+X-Gm-Message-State: APjAAAWqoe8gRIGve2KCmP6mEgJ2JlNxUdzM907DAlQObxr0fvGJfLUH
+ gcvXeOtT6cF1iiLfm3pX4G+7Wg==
+X-Google-Smtp-Source: APXvYqyI/TXqWXcn1EGKTATKaAEF96RyhcygZcp+rOn3QTJdoQOgYp2eWm6VikGYx1DtkN7indH13Q==
+X-Received: by 2002:a17:90a:3787:: with SMTP id
+ v7mr24903327pjb.33.1560757184453; 
+ Mon, 17 Jun 2019 00:39:44 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.203.245])
- by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.39.38
+ by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.39.41
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 17 Jun 2019 00:39:40 -0700 (PDT)
+ Mon, 17 Jun 2019 00:39:44 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH v2 60/99] ram: rk3399: Add lpddr4 rank mask for ca training
-Date: Mon, 17 Jun 2019 13:02:13 +0530
-Message-Id: <20190617073252.27810-61-jagan@amarulasolutions.com>
+Subject: [PATCH v2 61/99] ram: rk3399: Add lpddr4 rank mask for wdql training
+Date: Mon, 17 Jun 2019 13:02:14 +0530
+Message-Id: <20190617073252.27810-62-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190617073252.27810-1-jagan@amarulasolutions.com>
 References: <20190617073252.27810-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_003941_807335_07F44127 
+X-CRM114-CacheID: sfid-20190617_003945_096045_05AC1AB1 
 X-CRM114-Status: GOOD (  10.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,7 +108,7 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 Add rank_mask based on the rank number for lpddr4.
 
-This would keep the ca data training loop based on the
+This would keep the wdql data training loop based on the
 desired rank mask value instead of looping for all values.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
@@ -118,10 +118,10 @@ Signed-off-by: YouMin Chen <cym@rock-chips.com>
  1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index 7f01681a01..d967a602bc 100644
+index d967a602bc..935e3c495e 100644
 --- a/drivers/ram/rockchip/sdram_rk3399.c
 +++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -687,7 +687,10 @@ static int data_training_ca(const struct chan_info *chan, u32 channel,
+@@ -925,7 +925,10 @@ static int data_training_wdql(const struct chan_info *chan, u32 channel,
  	/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
  	writel(0x00003f7c, (&denali_pi[175]));
  
