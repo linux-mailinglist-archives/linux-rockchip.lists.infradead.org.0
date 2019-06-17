@@ -2,79 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 298D247B61
-	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:40:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7709447B63
+	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:40:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/1LR6xtzW0EPRdV6bXLSlaJrgCLJLX3fNg85NvxVoeo=; b=nrQFq3gygjs/Sd
-	0AMkX0BLFxXWFoW5ZnsWX/tbM9gyCEP4SDucc/J9fD5G1kAaK9Bg380GlF/edY8v+uSwmOA5GGtcH
-	X9yqkusKLrl4MaEIyCNySSQhF3z7PEZaqzW9njtuAmULvH1cYjezHoUam3+0sLgvt/VmPCjeibNQj
-	WkMcCpBS65NSqKR6jtbK+Fs2pHS2fQIOLPXtbuSmzN0vUmPeBBatvSZrxA9wzXgo+7i/CY1wKaxty
-	KSx6mL27/6rK/ZrKo4kBsn/P3Wcvsfg9/0XIhg1n+dHZHDa8nOQqCz1x0+uEkmiHqxe7CcpAm/R3c
-	vJ7UYcJpbw6eV4V4s1yg==;
+	List-Owner; bh=8idIaAIw0iQgZHcJl7iFReuVCWb6Oz6KAxSVPHZ66Pc=; b=clyoaQOqSZETt2
+	VV+151ElUGG8CASYEdXwkAxJmgWgkQTLUibq5e8H+0JYvIXHNR+ZhNz92H0wHV7Dx8hMJpST50q1G
+	nS4OWfzeEx9wCKO4LC8PwAIwfnqLgP532e92D16Nk5TzyBndx5ryTAw9SjPFE8PAnipRRRaxeGjon
+	3symz3iQ1DXqD3srbd2IcXHC/fwIkQP8u8iwK5aaXJvOEPEdxt8ouKg3dVlRLFs7KxPd7xtzRaVJ4
+	RT8rOZ5ve9KZbBrLX+MK6zoYokFbPG4eQieeDMMngkzkDcZD505u+phFdgRnof9IURlOdJ2V1O8ik
+	ANQPqw+G3faXio3wVm/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcmFO-0000Vr-08; Mon, 17 Jun 2019 07:40:10 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hcmFR-00015y-GL; Mon, 17 Jun 2019 07:40:13 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcmFI-000086-5X
- for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:40:05 +0000
-Received: by mail-pf1-x443.google.com with SMTP id p184so5187684pfp.7
- for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:40:04 -0700 (PDT)
+ id 1hcmFM-0000Xh-4p
+ for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:40:09 +0000
+Received: by mail-pl1-x644.google.com with SMTP id c14so3745365plo.0
+ for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:40:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=96+0eIJ4QyaYXyetw8OMd8Oza7DXdDd/yI8CG/WtMOQ=;
- b=g5FcRECUVMKAgyQLZnzDfvdogSkbP7FLmOsuSWcUN2Ili9oE6avNooct0SJrQwaJfo
- BqZCCIUyloU6v8Os7JfgutDQkWavHy+hYIBm7zVlbw+G+wWemAheQeyBx7c8jB+fJu7a
- +vuL5rRdchZXSEug9hxqKY+Sh7ziFCJnpviQk=
+ bh=YPTBQZOeQmGhkN9z1YFaXG9uLnxmKsFQmtWC+Mse/M8=;
+ b=RbuRTpauM6pSEDOXKsMAZIQPDaljRAaohFpc3JY8g0KGRn0eH3wjutQN1HQ+eRUrH+
+ qOfBVBqfIp895de5Uf2aL+cL81O0P0StUlSJm8Ynw5ZnxTPcx7CrYlXcAuZcKHrVSfTO
+ CsbyfQwgPtC4+7cPaVj71WWgQCJz8Gi47p46A=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=96+0eIJ4QyaYXyetw8OMd8Oza7DXdDd/yI8CG/WtMOQ=;
- b=T6dgC3ULNLYhgxupT4wSVytLVq/9uSPrDBGPbgMDVCk3NqqkMX9Z2vVtup3aL1LlMI
- Y8rStodPG0u0iCp/YX0E5YFz5+MOJSQ3BPE/P6OjUPxf6aG056tk5/7SBsDiai2tl7L4
- bpOxt+WWJzKYr1kOd1hIYncOy5mc/EWlJQiea0k7GeqBFQ8VqImS+H77csmj4HcVrziH
- PSEvgXE3QzagKi6XoxbWvJUuMTEfVd31y6EPp13GmDXHs/BSlKeUqzfGu2+94MH63Dfg
- 3rjDJi/eMfI4dtS3N1OaStsMRSZ6O0SuY0F9Fjxjp2F6gq9s+yknhlC90WFcmpgLDqJG
- rCCQ==
-X-Gm-Message-State: APjAAAXAOuGyONZ4a+iUG8ppyOaEKCt8BRTl6MocajxpCSY9NfZi21oJ
- 46UFNZV5/nt6+3e6wQDo/uJTAg==
-X-Google-Smtp-Source: APXvYqwbzttDtmy6pWpaJrs7g1ARuy3VZVuCB6FyNsgY5LSj2ZHkI303o5iap5DQ5kkRV0v+4tYwDw==
-X-Received: by 2002:a63:2147:: with SMTP id s7mr42065845pgm.283.1560757203498; 
- Mon, 17 Jun 2019 00:40:03 -0700 (PDT)
+ bh=YPTBQZOeQmGhkN9z1YFaXG9uLnxmKsFQmtWC+Mse/M8=;
+ b=GsrT1oAUT1b4xWQcfWfQ/z5z3S8uqT7je1qD+Cze84nvX+AGTy5c0dJ1JZ3JN+FIya
+ 1YKDnufeONTnuiCqOc1ln0zPwx+q4jfif2StIVLtqfvgYs0QcDa+PgnCp7CuuT+42N7V
+ G0WvQqs8f7LERxvCuVT7uHCRhA/pfPze7dZzU0++ZmzBItYfiaRVloOziBEMXHpczK/K
+ x7MvNz0YOnkta5w5odAUy7tXuizUbHv594IKKOCGJcFpGnZtEu0PKldlOZkaVMa4iUx2
+ 33h8r8SKtC1rlGUy5lHS0veV3IWHmmpgs7Kik48tIXCi0SHj9AwYRqf6wOjCgy2ZHejh
+ 2lvg==
+X-Gm-Message-State: APjAAAWYlycjNlU5h+fyGM/wIqniFOtwTUZ2TwDGCJv+r94xhHNkJirG
+ 4OoFIxq5vvBOI/IRI1rtLTHOWQ==
+X-Google-Smtp-Source: APXvYqyvnFm0hiGwz2wIXMpyPgH747CMwqRooOebgyXlK8Bo/xq8+xCj/SXU6ylwYFiwx8fuk5LtXw==
+X-Received: by 2002:a17:902:29a7:: with SMTP id
+ h36mr55287395plb.158.1560757207411; 
+ Mon, 17 Jun 2019 00:40:07 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.203.245])
- by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.40.00
+ by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.40.03
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 17 Jun 2019 00:40:03 -0700 (PDT)
+ Mon, 17 Jun 2019 00:40:06 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH v2 67/99] ram: rk3399: Configure SLEWP_EN, SLEWN_EN for lpddr4
-Date: Mon, 17 Jun 2019 13:02:20 +0530
-Message-Id: <20190617073252.27810-68-jagan@amarulasolutions.com>
+Subject: [PATCH v2 68/99] ram: rk3399: Configure PHY RX_CM_INPUT for lpddr4
+Date: Mon, 17 Jun 2019 13:02:21 +0530
+Message-Id: <20190617073252.27810-69-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190617073252.27810-1-jagan@amarulasolutions.com>
 References: <20190617073252.27810-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_004004_260508_B15664CB 
-X-CRM114-Status: GOOD (  10.02  )
+X-CRM114-CacheID: sfid-20190617_004008_243866_AC707F54 
+X-CRM114-Status: GOOD (  10.77  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,53 +106,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Configure SLEWP_EN, SLEWN_EN for lpddr4 during phy IO config.
+Configure PHY RX_CM_INPUT for lpddr4 during phy IO config.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 Signed-off-by: YouMin Chen <cym@rock-chips.com>
 ---
- drivers/ram/rockchip/sdram_rk3399.c | 21 +++++++++++++++++++++
- 1 file changed, 21 insertions(+)
+ drivers/ram/rockchip/sdram_rk3399.c | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
 
 diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index 1a5546189b..1d2c2385f1 100644
+index 1d2c2385f1..ae227b958f 100644
 --- a/drivers/ram/rockchip/sdram_rk3399.c
 +++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -37,6 +37,8 @@
- 
- #define PHY_BOOSTP_EN		0x1
+@@ -39,6 +39,7 @@
  #define PHY_BOOSTN_EN		0x1
-+#define PHY_SLEWP_EN		0x1
-+#define PHY_SLEWN_EN		0x1
+ #define PHY_SLEWP_EN		0x1
+ #define PHY_SLEWN_EN		0x1
++#define PHY_RX_CM_INPUT		0x1
  
  #define CRU_SFTRST_DDR_CTRL(ch, n)	((0x1 << (8 + 16 + (ch) * 4)) | \
  					((n) << (8 + (ch) * 4)))
-@@ -334,6 +336,25 @@ static int phy_io_config(const struct chan_info *chan,
- 		clrsetbits_le32(&denali_phy[937], 0xff << 20, reg_value << 20);
- 		/* PHY_939 PHY_PAD_CS_DRIVE */
- 		clrsetbits_le32(&denali_phy[939], 0xff << 20, reg_value << 20);
-+
-+		/* SLEWP_EN & SLEWN_EN */
-+		reg_value = ((PHY_SLEWP_EN << 3) | PHY_SLEWN_EN);
-+		/* PHY_924 PHY_PAD_FDBK_DRIVE */
-+		clrsetbits_le32(&denali_phy[924], 0x3f << 8, reg_value << 8);
-+		/* PHY_926 PHY_PAD_DATA_DRIVE */
-+		clrsetbits_le32(&denali_phy[926], 0x3f, reg_value);
-+		/* PHY_927 PHY_PAD_DQS_DRIVE */
-+		clrsetbits_le32(&denali_phy[927], 0x3f, reg_value);
-+		/* PHY_928 PHY_PAD_ADDR_DRIVE */
-+		clrsetbits_le32(&denali_phy[928], 0x3f << 8, reg_value << 8);
-+		/* PHY_929 PHY_PAD_CLK_DRIVE */
-+		clrsetbits_le32(&denali_phy[929], 0x3f << 8, reg_value << 8);
-+		/* PHY_935 PHY_PAD_CKE_DRIVE */
-+		clrsetbits_le32(&denali_phy[935], 0x3f << 8, reg_value << 8);
-+		/* PHY_937 PHY_PAD_RST_DRIVE */
-+		clrsetbits_le32(&denali_phy[937], 0x3f << 8, reg_value << 8);
-+		/* PHY_939 PHY_PAD_CS_DRIVE */
-+		clrsetbits_le32(&denali_phy[939], 0x3f << 8, reg_value << 8);
- 	}
+@@ -384,6 +385,27 @@ static int phy_io_config(const struct chan_info *chan,
+ 	/* PHY_939 PHY_PAD_CS_DRIVE */
+ 	clrsetbits_le32(&denali_phy[939], 0x3 << 17, speed << 17);
  
- 	/* speed setting */
++	if (IS_ENABLED(CONFIG_RAM_RK3399_LPDDR4)) {
++		/* RX_CM_INPUT */
++		reg_value = PHY_RX_CM_INPUT;
++		/* PHY_924 PHY_PAD_FDBK_DRIVE */
++		clrsetbits_le32(&denali_phy[924], 0x1 << 14, reg_value << 14);
++		/* PHY_926 PHY_PAD_DATA_DRIVE */
++		clrsetbits_le32(&denali_phy[926], 0x1 << 11, reg_value << 11);
++		/* PHY_927 PHY_PAD_DQS_DRIVE */
++		clrsetbits_le32(&denali_phy[927], 0x1 << 13, reg_value << 13);
++		/* PHY_928 PHY_PAD_ADDR_DRIVE */
++		clrsetbits_le32(&denali_phy[928], 0x1 << 19, reg_value << 19);
++		/* PHY_929 PHY_PAD_CLK_DRIVE */
++		clrsetbits_le32(&denali_phy[929], 0x1 << 21, reg_value << 21);
++		/* PHY_935 PHY_PAD_CKE_DRIVE */
++		clrsetbits_le32(&denali_phy[935], 0x1 << 19, reg_value << 19);
++		/* PHY_937 PHY_PAD_RST_DRIVE */
++		clrsetbits_le32(&denali_phy[937], 0x1 << 19, reg_value << 19);
++		/* PHY_939 PHY_PAD_CS_DRIVE */
++		clrsetbits_le32(&denali_phy[939], 0x1 << 19, reg_value << 19);
++	}
++
+ 	return 0;
+ }
+ 
 -- 
 2.18.0.321.gffc6fa0e3
 
