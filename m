@@ -2,55 +2,93 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9ADC847F4E
-	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 12:08:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E37647FCE
+	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 12:36:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6i7GliGTERTmvFKAXQVY1Y3BHGESRDr6iGBpkijNVrw=; b=Z6ipvhCrWpBSXn
-	uvbrBAfoWKetem0P3rF5xYAT81CarNrus2kPf/0YuK4Eqsy2oB6ackU8k/0QKM1o6R85dbq6oyxhT
-	2W9opYTRrGf4vYMVm6kNIfjmTBs3OOhZUp/g1qKtBSqqiqOonqkAbmYFzvRQ/9x6SucHjIR+HfD5O
-	OUTJNVmL8hTSR+9bKnUtEyscZgCXz/Uwkbqt/RiAMxqUDYky1vpMNI13EsccgrrvTZFX95vIhNNOO
-	CcZz5zmcfXyDxPEErz7bLW6VofAy17vDJn1EW2jVmHEESGAoKxVixRza/9oOqLQ9wpcUFYPIrhbxX
-	4DFFsmXi1REHvF5TpScQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RHMtB9GL3qOseL2Cr5nmXUEfBWBs1dt7D0YhieWKK7I=; b=u5whg4G/Mfo4E5ppIAilDpXlk
+	d3n9ANSTE4GoKUT+n9TCpA1n+uksnCGU+vhnEAK2ZOil7JlbsjyUCo5sH2Rs97aeZzuLe8hh4aaWX
+	gq5kA9nIvexb1uDeWSWdx1D6kAB7fqdG4/8eKiv6qkeCvBP1sSwbyrvqs/JJsLo6wPqj645HspjZy
+	PMDL+u6Lbe2rkz4et5dK22O7yXw+UBY+OLHpnKmWt+MnsWdlKrNHNgYprbJTnOBjNpQ3NDqIhllXA
+	qUOYQ2zXf2f60PJezy6oVEH02VxunIANWFpckONLm5XdaUKoK7gtItCBOSFz69Y5QWhHCyWByYQ3x
+	fCfJWVNfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcoZF-00073z-3g; Mon, 17 Jun 2019 10:08:49 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hcozV-0005XV-1S; Mon, 17 Jun 2019 10:35:57 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcoYx-0006na-RB; Mon, 17 Jun 2019 10:08:33 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: eballetbo) with ESMTPSA id 5D84F263992
-Subject: Re: [PATCH] Revert "ARM: dts: rockchip: set PWM delay backlight
- settings for Minnie"
-To: Pavel Machek <pavel@ucw.cz>, Matthias Kaehlcke <mka@chromium.org>
-References: <20190614224533.169881-1-mka@chromium.org>
- <20190616154143.GA28583@atrey.karlin.mff.cuni.cz>
-From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Message-ID: <c88619de-45f4-9ba7-cfdc-0cedb764f6f4@collabora.com>
-Date: Mon, 17 Jun 2019 12:08:25 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ id 1hcozS-0005Wy-6G
+ for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 10:35:55 +0000
+Received: by mail-wr1-x444.google.com with SMTP id n9so9392356wru.0
+ for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 03:35:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=LdLD6/GLnt8m3EwyYjIGs7rafDrtX5c/RGMl/GKKl8o=;
+ b=LbaodTzMAL8u12y2crGYXzc5LcEcD4olP+PnKNNkq1Ry/FFWYTKTvPDF4uTM6VXEOO
+ Ok3b/58sc2ip+falSZ1Temq/KsMze8wnfJQLOklfCX2iBleXVj0ObJ1h1Mgls5NXnna/
+ SQSig9XOK4T0+hyMOxF8Xhmr/+4C1XqzOEM24=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=LdLD6/GLnt8m3EwyYjIGs7rafDrtX5c/RGMl/GKKl8o=;
+ b=DcYL4IYiqtPPbyapYKuFh/1wxtSZMVUMrutzjMtQF6EF5iBQ/23899Hy+mLI9qe8kB
+ M9W82h1HwQY7HPk2gfGPVltCSgpX0nLRAKZqMhpedjVkLL1bsry9dXbz/vvLtoij2m83
+ Eexf4c+1vRKrdsemDhP4sgSbmWODXpvYHpZBgDj0X/kTYYJA/DbNxZOKrsYbhcGziT0M
+ PP+59WKHheAfJiHOcr68SvmnUqRYZqCyp/XsUhhFZNwpCwWS6w8kE8CcW7JrKClKa6pj
+ gseUImpevv5sNVr1FeqOQA63ZQrMTI+oWTcMXyFwFFXZmbjvC2WlsYtvLfpnsbBViepd
+ fBQQ==
+X-Gm-Message-State: APjAAAVyUKLiJIwSSPh/WYNKlYKyqwsvA6iyPlDKGmPKWTqTczucaJdm
+ 6FkWr+x9D6sQRe9drS2GuzBKgA==
+X-Google-Smtp-Source: APXvYqzFFb4lC949Z60IWxorsffQZyTfPYve5pAYlHt07baOm8aNcHW8hBKNaqDa+JDSAIdRNBcnyw==
+X-Received: by 2002:adf:f84f:: with SMTP id d15mr75042119wrq.53.1560767752500; 
+ Mon, 17 Jun 2019 03:35:52 -0700 (PDT)
+Received: from [10.176.68.244] ([192.19.248.250])
+ by smtp.gmail.com with ESMTPSA id p140sm3887001wme.31.2019.06.17.03.35.51
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 17 Jun 2019 03:35:51 -0700 (PDT)
+Subject: Re: [PATCH v4 3/5] brcmfmac: sdio: Disable auto-tuning around
+ commands expected to fail
+To: Douglas Anderson <dianders@chromium.org>,
+ Ulf Hansson <ulf.hansson@linaro.org>, Kalle Valo <kvalo@codeaurora.org>,
+ Adrian Hunter <adrian.hunter@intel.com>
+References: <20190613234153.59309-1-dianders@chromium.org>
+ <20190613234153.59309-4-dianders@chromium.org>
+From: Arend Van Spriel <arend.vanspriel@broadcom.com>
+Message-ID: <be97a37a-d81b-5756-7a97-418d9b36a381@broadcom.com>
+Date: Mon, 17 Jun 2019 12:35:50 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.1
 MIME-Version: 1.0
-In-Reply-To: <20190616154143.GA28583@atrey.karlin.mff.cuni.cz>
-Content-Language: en-GB
+In-Reply-To: <20190613234153.59309-4-dianders@chromium.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_030832_010444_04C25EBC 
-X-CRM114-Status: GOOD (  14.77  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190617_033554_233469_C1B2C49E 
+X-CRM114-Status: GOOD (  12.07  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,68 +101,40 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: "David S. Miller" <davem@davemloft.net>,
+ Madhan Mohan R <madhanmohan.r@cypress.com>,
+ brcm80211-dev-list.pdl@broadcom.com, YueHaibing <yuehaibing@huawei.com>,
+ Hante Meuleman <hante.meuleman@broadcom.com>,
+ Hans de Goede <hdegoede@redhat.com>, netdev@vger.kernel.org,
+ Chi-Hsien Lin <chi-hsien.lin@cypress.com>, briannorris@chromium.org,
+ linux-wireless@vger.kernel.org, Double Lo <double.lo@cypress.com>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ mka@chromium.org, Wright Feng <wright.feng@cypress.com>,
+ brcm80211-dev-list@cypress.com, Naveen Gupta <naveen.gupta@cypress.com>,
+ Franky Lin <franky.lin@broadcom.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 16/6/19 17:41, Pavel Machek wrote:
-> Hi!
+On 6/14/2019 1:41 AM, Douglas Anderson wrote:
+> There are certain cases, notably when transitioning between sleep and
+> active state, when Broadcom SDIO WiFi cards will produce errors on the
+> SDIO bus.  This is evident from the source code where you can see that
+> we try commands in a loop until we either get success or we've tried
+> too many times.  The comment in the code reinforces this by saying
+> "just one write attempt may fail"
 > 
->> This reverts commit 288ceb85b505c19abe1895df068dda5ed20cf482.
->>
->> According to the commit message the AUO B101EAN01 panel on minnie
->> requires a PWM delay of 200 ms, however this is not what the
->> datasheet says. The datasheet mentions a *max* delay of 200 ms
->> for T2 ("delay from LCDVDD to black video generation") and T3
->> ("delay from LCDVDD to HPD high"), which aren't related to the
->> PWM. The backlight power sequence does not specify min/max
->> constraints for T15 (time from PWM on to BL enable) or T16
->> (time from BL disable to PWM off).
->>
-
-Hmm, clearly we are not looking at the same datasheet, because in the one I have
-I don't see any reference to T15/T16 or LCDVDD. And, I assume I am probably
-wrong because you might have better access to the specific panel specs for minnie.
-
-I looked at my archive and the datasheet I have is similar to this [1]. In page
-21, Section 6.5 Power ON/OFF Sequence, there are two delays T3 and T4, it is
-*min* time between the pwm signal and the bl_en and it is 200 ms. That's the
-delay the patch was adding.
-
-[1] http://www.yslcd.com.tw/docs/product/B101EAN01.1.pdf
-
->> Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
->> ---
->> Enric, if you think I misinterpreted the datasheet please holler!
+> Unfortunately these failures sometimes end up causing an "-EILSEQ"
+> back to the core which triggers a retuning of the SDIO card and that
+> blocks all traffic to the card until it's done.
 > 
-> Was this tested? Was previous patch tested?
+> Let's disable retuning around the commands we expect might fail.
 > 
+> Fixes: bd11e8bd03ca ("mmc: core: Flag re-tuning is needed on CRC errors")
 
-IIRC, It was tested measuring the backlight power on timing (although I am not
-sure if I tested this on minnie or another board with better access to the pins)
-
-> Does patch being reverted actually break anything? If so, cc stable?
-> 
-> 								Pavel
-> 								
-> 
-
-Probably will not break anything, I don't remember the reverted patch as a fix
-of any specific issue. IIRC it was more a fear to be out of specs but I'll not
-be surprised if the datasheet lies and this delay is not needed at all.
-
-Matthias, are you reverting this to solve any problem? Could you share your
-datasheet?
-
-Thanks,
-~Enric
+Reviewed-by: Arend van Spriel <arend.vanspriel@broadcom.com>
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
 
 _______________________________________________
 Linux-rockchip mailing list
