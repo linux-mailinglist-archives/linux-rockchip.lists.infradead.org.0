@@ -2,81 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41F5E47B69
-	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:40:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1C1C47B6A
+	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:40:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vAjf4R1lz+MeG4X+Q1ViWyUemqyD3I/OwJHkmEQc9TI=; b=Wh8iYLETXYJIuL
-	DF+6Rpq7bk0kkuErwXh8aVxUwmZTbPjNEQqMhCToB/ztEvN1PYLB1xe1DDaK07cYpBZQ1uOrdhiDp
-	OnSuQEV0urDoPi8GWLzCjKTSxgn3TKychQhnwowh4ingMv/6KqOPe+KEZ9jWqvsKwjMAD5YU1/NVn
-	J1HkNAeEAZAr5T2vQeb9ctp0UAg056VW6IUEK3J9qONtJkQYIgVqXJUn006UBuromVGyYfeKcg/iM
-	ajxzKbkweON/bkb9aqDHrUU03ErahtlQI+nR9NSDBW5nFvYSZrHekGnQLXPSiJ+n2hVnp5TK6lLgc
-	nmxB6aKcKCg5zEREIuwA==;
+	List-Owner; bh=AnM+7SD7NzTSmaoEfhrvWgMG7g45Tubjb1zJWrk4cEY=; b=ovli3pcQ/qQsG0
+	73puoMrgAIoVInofDlrtTu7Z8HwYjlF4Oh0vWiVG+CI5/JllTrfwrSKkFe8MIttd6WvL8J7fpCVQY
+	SsXc9Md4TW6hWUUGNneBKlabEit2yDqUsNh4ybC6w50hg4I9WNDJfNmhmr3VpaFv04XJwJgSmM5TB
+	CjeJzuatEUHOmcGkCuF52oUIXwdVxH4rTNZFmI0zHxNWttENAS4DxyDa648yeXtIhYMUEFG66KrqG
+	rVj1qm4vfisTpnIyVvXJnz4sMbVYKbKTy9ASnNBZ4+UDHNu8KvhEh/z3rXW5+Yw1TEc3wMbNaslbI
+	Ws65IeHMwj+f/5cDQFOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcmFg-0001NI-90; Mon, 17 Jun 2019 07:40:28 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hcmFj-0001Q7-LW; Mon, 17 Jun 2019 07:40:31 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcmFb-0001Kq-Pp
- for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:40:25 +0000
-Received: by mail-pf1-x444.google.com with SMTP id t16so5181490pfe.11
- for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:40:23 -0700 (PDT)
+ id 1hcmFf-0001O1-JP
+ for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:40:29 +0000
+Received: by mail-pg1-x542.google.com with SMTP id v11so5310390pgl.5
+ for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:40:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=t8d2qnZ3kav7gpkrZS6dlrZ+F/FMvW3L+8hK+xgO7jQ=;
- b=LUX5HCfCqKsiKUg+7MDKKQsXg3fyx99MlPuCpVzeLNyaGuS2hJ8JApE7wOrkZFniss
- uUjyCc1IViyDWhPA3pA3KSxV2E0C2zV2vfkQn3oxZQYvNLbIn/LEVzqnIjHop7Udo13f
- pERZdBku09uPAnjaSnN+NL0PPzWWCMOcL/c+c=
+ bh=I8k1428OrKZlOFrLY3vjmLkceYCA5xz8iJB5tOTiA78=;
+ b=TFnHI2pvMEtmTmEX6aRU/Ve8fbxYHl8V17YRtoWhai72dt2vkblsU/jb8YMogLnD7c
+ /VOw+R5Isznh+Bw4+IKoYMMI9ZPxO5kTSw+t8KwIL7pmZBP7ucgjYNapLBF/9Hm0/rZa
+ w30E/pM/pLKKOIyyJjI9+2V8LsjBG+P3rLuz4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=t8d2qnZ3kav7gpkrZS6dlrZ+F/FMvW3L+8hK+xgO7jQ=;
- b=qRqYte8txXshBBDuXgch5Va8I28rnjlHFTVwwks5Jle/+Kt1QM5rCxEEQaG3X2XrZI
- hONZwt3xZQkIv9l6Ki/YpesLR4vIt1mc2VnLH70+E+/AWERPwmnF0rqWiDqRt1h7Lc4l
- ksG6i9zHKza8Ur/b/cL5iCwF7nZANZrzftbAy7+4KrSEeFRRwUeGXuRKKHtun54Sb2PR
- /HzlCHeV4fX0kpJn/2CZYqcc3iWH7V9xxgmHNpiyhUqBb8ksrIvE/FBDgvpmfVbyy4vy
- fiKf2VVXJ/dUOp73xln22k1BiYgLX5m01UlSvfP/v9SdiCdrtKcquIOsyOvgc7y8E99a
- seDQ==
-X-Gm-Message-State: APjAAAVg03RSoHno6IZ+KhvozZCe70wzGKoGt5bwUQxKHx7iOaL4mMh/
- RjaLgM9b1+oALz3ITAGvxiToVQ==
-X-Google-Smtp-Source: APXvYqxQEXDM7w8E1LFjL1GZkHbOJbGJ3UuB1mdpykWL4V6O6ntbQev+2SyFt7NMEvaZGmxnZ6xC/Q==
-X-Received: by 2002:a17:90a:ab0b:: with SMTP id
- m11mr3432830pjq.73.1560757223299; 
- Mon, 17 Jun 2019 00:40:23 -0700 (PDT)
+ bh=I8k1428OrKZlOFrLY3vjmLkceYCA5xz8iJB5tOTiA78=;
+ b=pynapyxEM6Q+omDFBD512Gt3jIkEpk3l82xB6APyQJYW1pqmzXLtN1QmoMgo1ZkX+f
+ CgnzZempAf4Wte2TjPYk06rnoIvM6miBqsOn+GUjcISrI5HfkxN1+6uvBIScGk7as9ZJ
+ TdnD4pLbrm+aK7WdAaO2WqRuUHGJWPFEOkT/nvGHNH+/xO2bT2FwhEd95gN+kf4Tf52u
+ kwcZVwjpOllCKRXmuSH551G4BzSVNpGqUQ9boWM6e7qLq2hBmxGmbcO5PDW0nvvaYAw4
+ z7eXav69oJaRBRhpYjQNoMv3EfUFaHyQKbok9Gi3ik1vXTEhMe2AXx6kqbYUmv6I6UB/
+ 0eiw==
+X-Gm-Message-State: APjAAAULsdxIKTx16FiX4q9DO/JFtmmkbPD+p6UhB1qRQLPBgYnQiGch
+ tvdc2i/L9Gb0grW7Ym1nEBeXwQ==
+X-Google-Smtp-Source: APXvYqyKhQUJgB2GEvV73tOqp/3x8gvgp0nQZX8QNadOY+PGbDV8VsVuLt5tg5eOc+EL7lVRYZ1CTQ==
+X-Received: by 2002:a63:2e02:: with SMTP id u2mr154312pgu.112.1560757226987;
+ Mon, 17 Jun 2019 00:40:26 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.203.245])
- by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.40.20
+ by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.40.23
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 17 Jun 2019 00:40:22 -0700 (PDT)
+ Mon, 17 Jun 2019 00:40:26 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH v2 73/99] ram: sdram: Configure lpddr4 tsel rd,
- wr based on IO settings
-Date: Mon, 17 Jun 2019 13:02:26 +0530
-Message-Id: <20190617073252.27810-74-jagan@amarulasolutions.com>
+Subject: [PATCH v2 74/99] ram: rk3399: Add tsel control clock drive
+Date: Mon, 17 Jun 2019 13:02:27 +0530
+Message-Id: <20190617073252.27810-75-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190617073252.27810-1-jagan@amarulasolutions.com>
 References: <20190617073252.27810-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_004023_834144_5B5DA56A 
-X-CRM114-Status: GOOD (  12.42  )
+X-CRM114-CacheID: sfid-20190617_004027_687425_E05F88B3 
+X-CRM114-Status: GOOD (  11.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,107 +105,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Now we have IO settings available for all supported sdram
-frequencies, so retrieve these IO settings and make used
-for LPDDR4 ds odt configuration.
+tsel contrl clock drives are required to configure PHY
+929, 939 controls drive settings.
+
+Add support for these control clock for all dramtype
+sdrams.
+
+Thse control clock drives are configure via tsel_ckcs_select_p
+and tsel_ckcs_select_n variables.
+
+tsel_ckcs_select_n is PHY_DRV_ODT_34_3 value where as
+tsel_ckcs_select_p is retrived from IO settings for lpddr4
+and rest uses PHY_DRV_ODT_34_3.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 Signed-off-by: YouMin Chen <cym@rock-chips.com>
 ---
- drivers/ram/rockchip/sdram_rk3399.c | 42 ++++++++++++++++++++++++-----
- 1 file changed, 36 insertions(+), 6 deletions(-)
+ drivers/ram/rockchip/sdram_rk3399.c | 16 ++++++++++++++--
+ 1 file changed, 14 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index 4de5a208f5..22c1a66185 100644
+index 22c1a66185..caf8180018 100644
 --- a/drivers/ram/rockchip/sdram_rk3399.c
 +++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -184,6 +184,33 @@ struct io_setting {
- 	},
- };
- 
-+/**
-+ * phy = 0, PHY boot freq
-+ * phy = 1, PHY index 0
-+ * phy = 2, PHY index 1
-+ */
-+static struct io_setting *
-+lpddr4_get_io_settings(const struct rk3399_sdram_params *params, u32 mr5)
-+{
-+	struct io_setting *io = NULL;
-+	u32 n;
-+
-+	for (n = 0; n < ARRAY_SIZE(lpddr4_io_setting); n++) {
-+		io = &lpddr4_io_setting[n];
-+
-+		if (io->mr5 != 0) {
-+			if (io->mhz >= params->base.ddr_freq &&
-+			    io->mr5 == mr5)
-+				break;
-+		} else {
-+			if (io->mhz >= params->base.ddr_freq)
-+				break;
-+		}
-+	}
-+
-+	return io;
-+}
-+
- static void *get_ddrc0_con(struct dram_info *dram, u8 channel)
- {
- 	return (channel == 0) ? &dram->grf->ddrc0_con0 : &dram->grf->ddrc0_con1;
-@@ -524,7 +551,7 @@ static int phy_io_config(const struct chan_info *chan,
- }
- 
- static void set_ds_odt(const struct chan_info *chan,
--		       const struct rk3399_sdram_params *params)
-+		       const struct rk3399_sdram_params *params, u32 mr5)
- {
- 	u32 *denali_phy = chan->publ->denali_phy;
- 
-@@ -533,19 +560,22 @@ static void set_ds_odt(const struct chan_info *chan,
+@@ -560,6 +560,7 @@ static void set_ds_odt(const struct chan_info *chan,
  	u32 tsel_idle_select_n, tsel_rd_select_n;
  	u32 tsel_wr_select_dq_p, tsel_wr_select_ca_p;
  	u32 tsel_wr_select_dq_n, tsel_wr_select_ca_n;
-+	struct io_setting *io = NULL;
++	u32 tsel_ckcs_select_p, tsel_ckcs_select_n;
+ 	struct io_setting *io = NULL;
  	u32 reg_value;
  
- 	if (params->base.dramtype == LPDDR4) {
-+		io = lpddr4_get_io_settings(params, mr5);
-+
- 		tsel_rd_select_p = PHY_DRV_ODT_HI_Z;
--		tsel_rd_select_n = PHY_DRV_ODT_240;
-+		tsel_rd_select_n = io->rd_odt;
+@@ -577,6 +578,9 @@ static void set_ds_odt(const struct chan_info *chan,
  
- 		tsel_idle_select_p = PHY_DRV_ODT_HI_Z;
- 		tsel_idle_select_n = PHY_DRV_ODT_240;
- 
--		tsel_wr_select_dq_p = PHY_DRV_ODT_40;
-+		tsel_wr_select_dq_p = io->wr_dq_drv;
- 		tsel_wr_select_dq_n = PHY_DRV_ODT_40;
- 
--		tsel_wr_select_ca_p = PHY_DRV_ODT_40;
-+		tsel_wr_select_ca_p = io->wr_ca_drv;
+ 		tsel_wr_select_ca_p = io->wr_ca_drv;
  		tsel_wr_select_ca_n = PHY_DRV_ODT_40;
++
++		tsel_ckcs_select_p = io->wr_ckcs_drv;
++		tsel_ckcs_select_n = PHY_DRV_ODT_34_3;
  	} else if (params->base.dramtype == LPDDR3) {
  		tsel_rd_select_p = PHY_DRV_ODT_240;
-@@ -723,7 +753,7 @@ static void pctl_start(struct dram_info *dram, u8 channel)
- }
+ 		tsel_rd_select_n = PHY_DRV_ODT_HI_Z;
+@@ -589,6 +593,9 @@ static void set_ds_odt(const struct chan_info *chan,
  
- static int pctl_cfg(struct dram_info *dram, const struct chan_info *chan,
--		    u32 channel, const struct rk3399_sdram_params *params)
-+		    u32 channel, struct rk3399_sdram_params *params)
- {
- 	u32 *denali_ctl = chan->pctl->denali_ctl;
- 	u32 *denali_pi = chan->pi->denali_pi;
-@@ -805,7 +835,7 @@ static int pctl_cfg(struct dram_info *dram, const struct chan_info *chan,
- 	copy_to_reg(&denali_phy[512], &params_phy[512], (549 - 512 + 1) * 4);
- 	copy_to_reg(&denali_phy[640], &params_phy[640], (677 - 640 + 1) * 4);
- 	copy_to_reg(&denali_phy[768], &params_phy[768], (805 - 768 + 1) * 4);
--	set_ds_odt(chan, params);
-+	set_ds_odt(chan, params, 0);
+ 		tsel_wr_select_ca_p = PHY_DRV_ODT_48;
+ 		tsel_wr_select_ca_n = PHY_DRV_ODT_48;
++
++		tsel_ckcs_select_p = PHY_DRV_ODT_34_3;
++		tsel_ckcs_select_n = PHY_DRV_ODT_34_3;
+ 	} else {
+ 		tsel_rd_select_p = PHY_DRV_ODT_240;
+ 		tsel_rd_select_n = PHY_DRV_ODT_240;
+@@ -601,6 +608,9 @@ static void set_ds_odt(const struct chan_info *chan,
  
- 	/*
- 	 * phy_dqs_tsel_wr_timing_X 8bits DENALI_PHY_84/212/340/468 offset_8
+ 		tsel_wr_select_ca_p = PHY_DRV_ODT_34_3;
+ 		tsel_wr_select_ca_n = PHY_DRV_ODT_34_3;
++
++		tsel_ckcs_select_p = PHY_DRV_ODT_34_3;
++		tsel_ckcs_select_n = PHY_DRV_ODT_34_3;
+ 	}
+ 
+ 	if (params->base.odt == 1)
+@@ -659,10 +669,12 @@ static void set_ds_odt(const struct chan_info *chan,
+ 	clrsetbits_le32(&denali_phy[935], 0xff, reg_value);
+ 
+ 	/* phy_pad_cs_drive 8bits DENALI_PHY_939 offset_0 */
+-	clrsetbits_le32(&denali_phy[939], 0xff, reg_value);
++	clrsetbits_le32(&denali_phy[939], 0xff,
++			tsel_ckcs_select_n | (tsel_ckcs_select_p << 0x4));
+ 
+ 	/* phy_pad_clk_drive 8bits DENALI_PHY_929 offset_0 */
+-	clrsetbits_le32(&denali_phy[929], 0xff, reg_value);
++	clrsetbits_le32(&denali_phy[929], 0xff,
++			tsel_ckcs_select_n | (tsel_ckcs_select_p << 0x4));
+ 
+ 	/* phy_pad_fdbk_drive 23bit DENALI_PHY_924/925 */
+ 	clrsetbits_le32(&denali_phy[924], 0xff,
 -- 
 2.18.0.321.gffc6fa0e3
 
