@@ -2,80 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FE2047B3E
-	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:38:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A2FA47B3F
+	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:38:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5jSdOAlFdTA+N1QulTUKnK2ztcxUW+vF3A2mcLg26q0=; b=sIwAvwzQQnlAXc
-	EJdk8bFOPeuyR/vHrIQj9Gx/fRloCTncVtw/QxI4rgby1qRUckVfbxTRptRHyhQ1qTGC3ssnIQAC0
-	WBOO5Mo06xHtca7pvMTAxr2hevhGOly9UdXLqaQ13VbKPe3EKatR2uGW5ZUjebOt6Dc45hknilADW
-	QOtRAHaL0KkY9x1G2RrRlvRYNdiQfZRe6vQ5LyKT3l6HCNwgz4ccWETNgNLlxn4ij1o/NKG3uc1kL
-	bWaczlplOzklE6TI9Hq+vUeLa81xt500++GR6TLfNmO/u/Yt3usbe2omRr+9kiACiYdd8cqqu7LQ6
-	0v3eRSRncC2thY5C+AfA==;
+	List-Owner; bh=YoF68pnLoyOXcrnho0R4Tfp8CKdvIgI4MrebIMJiGHM=; b=GArNKtHoq5tW8G
+	6EyuDrmTl1+o2I+sOswK6Zf6SPbpuHAuGSg30u7SFLyp3/dHp54lKHoyTWKt3wikIsGtt2H6jNvK/
+	MmFPTN/takW6b6rsJRDm9EZ+jmzGuPi/2PUiPJ8caXaGvzhCJVhvM74WEyKYV6zh8BOsrr6kD+kl8
+	EWYNFzu8ZLcMQyBXvvsOqI+a2ikAKNWLGDWktz3ekAna3rCW54BlmpUWXitmzVRVtJvHerz+cx3f4
+	nAT8fx81f2q42LMveD35bbQYGy7dFaYS0Bm5DM028n6H8L+Kbj6HibWDHbjLQ1VaogRIlW59Jqmz4
+	7yG55x9f5aqE5ON5b+uQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcmDo-0006n1-AN; Mon, 17 Jun 2019 07:38:32 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hcmDq-0006oz-5I; Mon, 17 Jun 2019 07:38:34 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcmDh-0006iG-Hd
- for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:38:27 +0000
-Received: by mail-pl1-x642.google.com with SMTP id c14so3743605plo.0
- for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:38:25 -0700 (PDT)
+ id 1hcmDk-0006lQ-Is
+ for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:38:30 +0000
+Received: by mail-pg1-x542.google.com with SMTP id 196so5311538pgc.6
+ for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:38:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Xb2pOTLgQhBL1cgKGDlEAadOnQeynEPmgv+jvwrG8sA=;
- b=qRix57kbxvuwUsl3DNFqr/1fwsxZH3kZlGXmN1dnQpGHvkUiHI6SCTurIjZEgEbIHh
- SjHhrtJP2YUq51dZJD2opEgNnq1mwSDdG6yWbDjvyHBu2YWT+IJv4ixh3uh+3LpeqEg2
- 61z02+jJCGYm5xvu4kuvZIb38y08EuF13k95M=
+ bh=7OIbEVJNgzQsV3cs0gxMDrL21oIqBVY0iTRPqRzNyEQ=;
+ b=phvcRzQWMuDbfBtRHy6M9tiEMYSlRsXAZP4fI9cl6XMcXUziJbptie3Qb2Z2gVmGMF
+ gVm30ZTKWkYcy/N/GVqRVkDFrSMySN0l58+9f4Q9l/ygxvfcMxU25BFHkSbde3vbbQQ9
+ z2BSTYqVCVonwmAFPBycNSupuwWrRXUi4Qx3o=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Xb2pOTLgQhBL1cgKGDlEAadOnQeynEPmgv+jvwrG8sA=;
- b=OACRgl8vzcLM/Bae/6yRsteuHyG5f6SCF5sZDagsqpWwQ9iNB5KzYANx6JUBecv0ar
- fPwjfWa/wcgfm94ko0xk2YVQf7JpAzIVRnrY9FfDJWyn8RPq4vzoY5r3COCbsLkapXyL
- M7j3C3nG24SJVBYjRQO8YylxEc0jQp9q+LmuOyqPHwejwyXP8jfUWzcUxTN2T1ZU3DJR
- 0gOVprm+TDP9sjxjYP49p2Zq4RI3si6MugtC1V/4TCf5TRv/ddY6aLrolyWuw+18+Gqk
- RNbdVT+tYdigcJltBb3cms49/CMC4QifW2qnvvqilNxksbubBhYhLAdNs8hQDTHpmD7+
- x+Ew==
-X-Gm-Message-State: APjAAAW6CZDLcQEjaqf8uKNfoSKHCoK0Zjc41WO1/yx2i/hgGxqvdFMQ
- fUBDAQWnW/dW9Hu4SGuNLVS27Q==
-X-Google-Smtp-Source: APXvYqzOfZQ05vLXFcERg75hhbSi7Jyp4RzA9WrT+Ta8zmGcdbu3E/OQOJOksUOuT0nkWbWBh8H59g==
-X-Received: by 2002:a17:902:7c90:: with SMTP id
- y16mr17001663pll.238.1560757104846; 
- Mon, 17 Jun 2019 00:38:24 -0700 (PDT)
+ bh=7OIbEVJNgzQsV3cs0gxMDrL21oIqBVY0iTRPqRzNyEQ=;
+ b=fAg4WOvkAxU3OptZaQQWHbC2DlIIB7C5pu18vlAFs7GnGO5BdecFWN2YsCBcm0QYsV
+ nNeRPMlvzGFIMgDFgjF2DUvU2q6X4dpUyzS3eolzJrfMxwY54bvMuOpXjRrUzQe2niyG
+ OypW9Wj8K2wHv1Xdt4D/9QBTwpaXMeGnV5jI9mVMm5TbWEg/EDwzNnwLpEl6v076J+yy
+ I5HN069MKA/9C2oPDGjVhuA9vR8Oc63RodPZHGxAXJSJsGdf3IqKo95pCMTuihVe4V7U
+ SXXXcuF1qd6550JdrbBa3OQU5KKStCY2OGBbz9cPYGbtSTAG1gntDdAdbosIQEPpaH5o
+ oybg==
+X-Gm-Message-State: APjAAAUiQ0xbs9IZs7Hz3YsLnnFZ8kreR+YHQtHUxbxR8mLBNyU7rGfj
+ Ght+rdOrDTDxhDbZMt7c708P4A==
+X-Google-Smtp-Source: APXvYqz2Iiw1UAiSNmGNFF2tq7+ouWmbAjwO23T6IO5VoyPW4w8z2Zev+wTNPRA8/m3l5IAhAQrizA==
+X-Received: by 2002:a62:3283:: with SMTP id y125mr62916159pfy.83.1560757108055; 
+ Mon, 17 Jun 2019 00:38:28 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.203.245])
- by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.38.21
+ by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.38.25
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 17 Jun 2019 00:38:24 -0700 (PDT)
+ Mon, 17 Jun 2019 00:38:27 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH v2 37/99] ram: rk3399: Add pctl start support
-Date: Mon, 17 Jun 2019 13:01:50 +0530
-Message-Id: <20190617073252.27810-38-jagan@amarulasolutions.com>
+Subject: [PATCH v2 38/99] ram: rockchip: rk3399: Add cap_info structure
+Date: Mon, 17 Jun 2019 13:01:51 +0530
+Message-Id: <20190617073252.27810-39-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190617073252.27810-1-jagan@amarulasolutions.com>
 References: <20190617073252.27810-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_003826_048985_79F26FE0 
-X-CRM114-Status: GOOD (  16.37  )
+X-CRM114-CacheID: sfid-20190617_003828_719848_67B4D174 
+X-CRM114-Status: GOOD (  14.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,156 +105,220 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add support for pctl start for both channel 0, 1 control
-and phy registers.
+Group common ddr attributes like
+- rank
+- col
+- bk
+- bw
+- dbw
+- row_3_4
+- cs0_row
+- cs1_row
+- ddrconfig
 
-This would also handle pwrup_srefresh_exit init based
-on the channel number.
+into a common cap_info structure for more code readability and extend
+if possible based on the new features.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-Signed-off-by: YouMin Chen <cym@rock-chips.com>
 ---
- drivers/ram/rockchip/sdram_rk3399.c | 75 +++++++++++++++++++++--------
- 1 file changed, 55 insertions(+), 20 deletions(-)
+ .../include/asm/arch-rockchip/sdram_rk3399.h  |  6 +-
+ drivers/ram/rockchip/sdram_rk3399.c           | 71 ++++++++++---------
+ 2 files changed, 41 insertions(+), 36 deletions(-)
 
-diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index 1362a5bf2d..6c3a2b5453 100644
---- a/drivers/ram/rockchip/sdram_rk3399.c
-+++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -49,10 +49,11 @@ struct chan_info {
- struct dram_info {
- #if defined(CONFIG_TPL_BUILD) || \
- 	(!defined(CONFIG_TPL) && defined(CONFIG_SPL_BUILD))
--	u32 pwrup_srefresh_exit;
-+	u32 pwrup_srefresh_exit[2];
- 	struct chan_info chan[2];
- 	struct clk ddr_clk;
- 	struct rk3399_cru *cru;
-+	struct rk3399_grf_regs *grf;
- 	struct rk3399_pmucru *pmucru;
- 	struct rk3399_pmusgrf_regs *pmusgrf;
- 	struct rk3399_ddr_cic_regs *cic;
-@@ -73,6 +74,11 @@ struct rockchip_dmc_plat {
- 	struct regmap *map;
+diff --git a/arch/arm/include/asm/arch-rockchip/sdram_rk3399.h b/arch/arm/include/asm/arch-rockchip/sdram_rk3399.h
+index a191d242f8..67044f53e5 100644
+--- a/arch/arm/include/asm/arch-rockchip/sdram_rk3399.h
++++ b/arch/arm/include/asm/arch-rockchip/sdram_rk3399.h
+@@ -96,7 +96,7 @@ struct rk3399_ddr_cic_regs {
+ /* DENALI_CTL_274 */
+ #define MEM_RST_VALID	1
+ 
+-struct rk3399_sdram_channel {
++struct sdram_cap_info {
+ 	unsigned int rank;
+ 	/* dram column number, 0 means this channel is invalid */
+ 	unsigned int col;
+@@ -114,6 +114,10 @@ struct rk3399_sdram_channel {
+ 	unsigned int cs0_row;
+ 	unsigned int cs1_row;
+ 	unsigned int ddrconfig;
++};
++
++struct rk3399_sdram_channel {
++	struct sdram_cap_info cap_info;
+ 	struct rk3399_msch_timings noc_timings;
  };
  
-+static void *get_ddrc0_con(struct dram_info *dram, u8 channel)
-+{
-+	return (channel == 0) ? &dram->grf->ddrc0_con0 : &dram->grf->ddrc0_con1;
-+}
-+
- static void copy_to_reg(u32 *dest, const u32 *src, u32 n)
- {
- 	int i;
-@@ -327,6 +333,48 @@ static void set_ds_odt(const struct chan_info *chan,
- 	clrsetbits_le32(&denali_phy[930], 0x1 << 17, reg_value);
+diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
+index 6c3a2b5453..231f69b173 100644
+--- a/drivers/ram/rockchip/sdram_rk3399.c
++++ b/drivers/ram/rockchip/sdram_rk3399.c
+@@ -155,35 +155,36 @@ static void set_memory_map(const struct chan_info *chan, u32 channel,
+ 	u32 row;
+ 
+ 	/* Get row number from ddrconfig setting */
+-	if (sdram_ch->ddrconfig < 2 || sdram_ch->ddrconfig == 4)
++	if (sdram_ch->cap_info.ddrconfig < 2 ||
++	    sdram_ch->cap_info.ddrconfig == 4)
+ 		row = 16;
+-	else if (sdram_ch->ddrconfig == 3)
++	else if (sdram_ch->cap_info.ddrconfig == 3)
+ 		row = 14;
+ 	else
+ 		row = 15;
+ 
+-	cs_map = (sdram_ch->rank > 1) ? 3 : 1;
+-	reduc = (sdram_ch->bw == 2) ? 0 : 1;
++	cs_map = (sdram_ch->cap_info.rank > 1) ? 3 : 1;
++	reduc = (sdram_ch->cap_info.bw == 2) ? 0 : 1;
+ 
+ 	/* Set the dram configuration to ctrl */
+-	clrsetbits_le32(&denali_ctl[191], 0xF, (12 - sdram_ch->col));
++	clrsetbits_le32(&denali_ctl[191], 0xF, (12 - sdram_ch->cap_info.col));
+ 	clrsetbits_le32(&denali_ctl[190], (0x3 << 16) | (0x7 << 24),
+-			((3 - sdram_ch->bk) << 16) |
++			((3 - sdram_ch->cap_info.bk) << 16) |
+ 			((16 - row) << 24));
+ 
+ 	clrsetbits_le32(&denali_ctl[196], 0x3 | (1 << 16),
+ 			cs_map | (reduc << 16));
+ 
+ 	/* PI_199 PI_COL_DIFF:RW:0:4 */
+-	clrsetbits_le32(&denali_pi[199], 0xF, (12 - sdram_ch->col));
++	clrsetbits_le32(&denali_pi[199], 0xF, (12 - sdram_ch->cap_info.col));
+ 
+ 	/* PI_155 PI_ROW_DIFF:RW:24:3 PI_BANK_DIFF:RW:16:2 */
+ 	clrsetbits_le32(&denali_pi[155], (0x3 << 16) | (0x7 << 24),
+-			((3 - sdram_ch->bk) << 16) |
++			((3 - sdram_ch->cap_info.bk) << 16) |
+ 			((16 - row) << 24));
+ 	/* PI_41 PI_CS_MAP:RW:24:4 */
+ 	clrsetbits_le32(&denali_pi[41], 0xf << 24, cs_map << 24);
+-	if (sdram_ch->rank == 1 && params->base.dramtype == DDR3)
++	if (sdram_ch->cap_info.rank == 1 && params->base.dramtype == DDR3)
+ 		writel(0x2EC7FFFF, &denali_pi[34]);
  }
  
-+static void pctl_start(struct dram_info *dram, u8 channel)
-+{
-+	const struct chan_info *chan = &dram->chan[channel];
-+	u32 *denali_ctl = chan->pctl->denali_ctl;
-+	u32 *denali_phy = chan->publ->denali_phy;
-+	u32 *ddrc0_con = get_ddrc0_con(dram, channel);
-+	u32 count = 0;
-+	u32 byte, tmp;
-+
-+	writel(0x01000000, &ddrc0_con);
-+
-+	clrsetbits_le32(&denali_phy[957], 0x3 << 24, 0x2 << 24);
-+
-+	while (!(readl(&denali_ctl[203]) & (1 << 3))) {
-+		if (count > 1000) {
-+			printf("%s: Failed to init pctl for channel %d\n",
-+			       __func__, channel);
-+			while (1)
-+				;
-+		}
-+
-+		udelay(1);
-+		count++;
-+	}
-+
-+	writel(0x01000100, &ddrc0_con);
-+
-+	for (byte = 0; byte < 4; byte++) {
-+		tmp = 0x820;
-+		writel((tmp << 16) | tmp, &denali_phy[53 + (128 * byte)]);
-+		writel((tmp << 16) | tmp, &denali_phy[54 + (128 * byte)]);
-+		writel((tmp << 16) | tmp, &denali_phy[55 + (128 * byte)]);
-+		writel((tmp << 16) | tmp, &denali_phy[56 + (128 * byte)]);
-+		writel((tmp << 16) | tmp, &denali_phy[57 + (128 * byte)]);
-+
-+		clrsetbits_le32(&denali_phy[58 + (128 * byte)], 0xffff, tmp);
-+	}
-+
-+	clrsetbits_le32(&denali_ctl[68], PWRUP_SREFRESH_EXIT,
-+			dram->pwrup_srefresh_exit[channel]);
-+}
-+
- static int phy_io_config(const struct chan_info *chan,
- 			 const struct rk3399_sdram_params *params)
+@@ -681,7 +682,7 @@ static int data_training_ca(const struct chan_info *chan, u32 channel,
+ 	u32 *denali_phy = chan->publ->denali_phy;
+ 	u32 i, tmp;
+ 	u32 obs_0, obs_1, obs_2, obs_err = 0;
+-	u32 rank = params->ch[channel].rank;
++	u32 rank = params->ch[channel].cap_info.rank;
+ 	u32 rank_mask;
+ 
+ 	/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
+@@ -744,7 +745,7 @@ static int data_training_wl(const struct chan_info *chan, u32 channel,
+ 	u32 *denali_phy = chan->publ->denali_phy;
+ 	u32 i, tmp;
+ 	u32 obs_0, obs_1, obs_2, obs_3, obs_err = 0;
+-	u32 rank = params->ch[channel].rank;
++	u32 rank = params->ch[channel].cap_info.rank;
+ 
+ 	/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
+ 	writel(0x00003f7c, (&denali_pi[175]));
+@@ -806,7 +807,7 @@ static int data_training_rg(const struct chan_info *chan, u32 channel,
+ 	u32 *denali_phy = chan->publ->denali_phy;
+ 	u32 i, tmp;
+ 	u32 obs_0, obs_1, obs_2, obs_3, obs_err = 0;
+-	u32 rank = params->ch[channel].rank;
++	u32 rank = params->ch[channel].cap_info.rank;
+ 
+ 	/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
+ 	writel(0x00003f7c, (&denali_pi[175]));
+@@ -868,7 +869,7 @@ static int data_training_rl(const struct chan_info *chan, u32 channel,
  {
-@@ -497,7 +545,6 @@ static int pctl_cfg(struct dram_info *dram, const struct chan_info *chan,
- 	const u32 *params_phy = params->phy_regs.denali_phy;
- 	u32 tmp, tmp1, tmp2;
- 	int ret;
--	const ulong timeout_ms = 200;
+ 	u32 *denali_pi = chan->pi->denali_pi;
+ 	u32 i, tmp;
+-	u32 rank = params->ch[channel].rank;
++	u32 rank = params->ch[channel].cap_info.rank;
  
- 	/*
- 	 * work around controller bug:
-@@ -515,8 +562,8 @@ static int pctl_cfg(struct dram_info *dram, const struct chan_info *chan,
- 	writel(params->phy_regs.denali_phy[911], &denali_phy[911]);
- 	writel(params->phy_regs.denali_phy[912], &denali_phy[912]);
+ 	/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
+ 	writel(0x00003f7c, (&denali_pi[175]));
+@@ -916,7 +917,7 @@ static int data_training_wdql(const struct chan_info *chan, u32 channel,
+ {
+ 	u32 *denali_pi = chan->pi->denali_pi;
+ 	u32 i, tmp;
+-	u32 rank = params->ch[channel].rank;
++	u32 rank = params->ch[channel].cap_info.rank;
+ 	u32 rank_mask;
  
--	dram->pwrup_srefresh_exit = readl(&denali_ctl[68]) &
--				    PWRUP_SREFRESH_EXIT;
-+	dram->pwrup_srefresh_exit[channel] = readl(&denali_ctl[68]) &
-+					     PWRUP_SREFRESH_EXIT;
- 	clrbits_le32(&denali_ctl[68], PWRUP_SREFRESH_EXIT);
+ 	/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
+@@ -1050,14 +1051,14 @@ static void set_ddrconfig(const struct chan_info *chan,
+ 	unsigned int cs0_cap = 0;
+ 	unsigned int cs1_cap = 0;
  
- 	/* PHY_DLL_RST_EN */
-@@ -577,22 +624,6 @@ static int pctl_cfg(struct dram_info *dram, const struct chan_info *chan,
- 	if (ret)
- 		return ret;
+-	cs0_cap = (1 << (params->ch[channel].cs0_row
+-			+ params->ch[channel].col
+-			+ params->ch[channel].bk
+-			+ params->ch[channel].bw - 20));
+-	if (params->ch[channel].rank > 1)
+-		cs1_cap = cs0_cap >> (params->ch[channel].cs0_row
+-				- params->ch[channel].cs1_row);
+-	if (params->ch[channel].row_3_4) {
++	cs0_cap = (1 << (params->ch[channel].cap_info.cs0_row
++			+ params->ch[channel].cap_info.col
++			+ params->ch[channel].cap_info.bk
++			+ params->ch[channel].cap_info.bw - 20));
++	if (params->ch[channel].cap_info.rank > 1)
++		cs1_cap = cs0_cap >> (params->ch[channel].cap_info.cs0_row
++				- params->ch[channel].cap_info.cs1_row);
++	if (params->ch[channel].cap_info.row_3_4) {
+ 		cs0_cap = cs0_cap * 3 / 4;
+ 		cs1_cap = cs1_cap * 3 / 4;
+ 	}
+@@ -1084,22 +1085,22 @@ static void dram_all_config(struct dram_info *dram,
+ 		struct rk3399_msch_regs *ddr_msch_regs;
+ 		const struct rk3399_msch_timings *noc_timing;
  
--	/* PHY_DLL_RST_EN */
--	clrsetbits_le32(&denali_phy[957], 0x3 << 24, 0x2 << 24);
--
--	/* Waiting for PHY and DRAM init complete */
--	tmp = get_timer(0);
--	do {
--		if (get_timer(tmp) > timeout_ms) {
--			pr_err("DRAM (%s): phy failed to lock within  %ld ms\n",
--			       __func__, timeout_ms);
--			return -ETIME;
--		}
--	} while (!(readl(&denali_ctl[203]) & (1 << 3)));
--	debug("DRAM (%s): phy locked after %ld ms\n", __func__, get_timer(tmp));
--
--	clrsetbits_le32(&denali_ctl[68], PWRUP_SREFRESH_EXIT,
--			dram->pwrup_srefresh_exit);
- 	return 0;
- }
+-		if (params->ch[channel].col == 0)
++		if (params->ch[channel].cap_info.col == 0)
+ 			continue;
+ 		idx++;
+-		sys_reg2 |= SYS_REG_ENC_ROW_3_4(info->row_3_4, channel);
++		sys_reg2 |= SYS_REG_ENC_ROW_3_4(info->cap_info.row_3_4, channel);
+ 		sys_reg2 |= SYS_REG_ENC_CHINFO(channel);
+-		sys_reg2 |= SYS_REG_ENC_RANK(info->rank, channel);
+-		sys_reg2 |= SYS_REG_ENC_COL(info->col, channel);
+-		sys_reg2 |= SYS_REG_ENC_BK(info->bk, channel);
+-		sys_reg2 |= SYS_REG_ENC_BW(info->bw, channel);
+-		sys_reg2 |= SYS_REG_ENC_DBW(info->dbw, channel);
+-		SYS_REG_ENC_CS0_ROW(info->cs0_row, sys_reg2, sys_reg3, channel);
+-		if (info->cs1_row)
+-			SYS_REG_ENC_CS1_ROW(info->cs1_row, sys_reg2,
++		sys_reg2 |= SYS_REG_ENC_RANK(info->cap_info.rank, channel);
++		sys_reg2 |= SYS_REG_ENC_COL(info->cap_info.col, channel);
++		sys_reg2 |= SYS_REG_ENC_BK(info->cap_info.bk, channel);
++		sys_reg2 |= SYS_REG_ENC_BW(info->cap_info.bw, channel);
++		sys_reg2 |= SYS_REG_ENC_DBW(info->cap_info.dbw, channel);
++		SYS_REG_ENC_CS0_ROW(info->cap_info.cs0_row, sys_reg2, sys_reg3, channel);
++		if (info->cap_info.cs1_row)
++			SYS_REG_ENC_CS1_ROW(info->cap_info.cs1_row, sys_reg2,
+ 					    sys_reg3, channel);
  
-@@ -1182,6 +1213,9 @@ static int sdram_init(struct dram_info *dram,
- 			return ret;
+-		sys_reg3 |= SYS_REG_ENC_CS1_COL(info->col, channel);
++		sys_reg3 |= SYS_REG_ENC_CS1_COL(info->cap_info.col, channel);
+ 		sys_reg3 |= SYS_REG_ENC_VERSION(DDR_SYS_REG_VERSION);
+ 
+ 		ddr_msch_regs = dram->chan[channel].msch;
+@@ -1116,7 +1117,7 @@ static void dram_all_config(struct dram_info *dram,
+ 		       &ddr_msch_regs->ddrmode);
+ 
+ 		/* rank 1 memory clock disable (dfi_dram_clk_disable = 1) */
+-		if (params->ch[channel].rank == 1)
++		if (params->ch[channel].cap_info.rank == 1)
+ 			setbits_le32(&dram->chan[channel].pctl->denali_ctl[276],
+ 				     1 << 17);
+ 	}
+@@ -1226,7 +1227,7 @@ static int sdram_init(struct dram_info *dram,
  		}
  
-+		/* start to trigger initialization */
-+		pctl_start(dram, channel);
-+
- 		/* LPDDR2/LPDDR3 need to wait DAI complete, max 10us */
- 		if (dramtype == LPDDR3)
- 			udelay(10);
-@@ -1258,6 +1292,7 @@ static int rk3399_dmc_init(struct udevice *dev)
- #endif
- 
- 	priv->cic = syscon_get_first_range(ROCKCHIP_SYSCON_CIC);
-+	priv->grf = syscon_get_first_range(ROCKCHIP_SYSCON_GRF);
- 	priv->pmugrf = syscon_get_first_range(ROCKCHIP_SYSCON_PMUGRF);
- 	priv->pmusgrf = syscon_get_first_range(ROCKCHIP_SYSCON_PMUSGRF);
- 	priv->pmucru = rockchip_get_pmucru();
+ 		set_ddrconfig(chan, params, channel,
+-			      params->ch[channel].ddrconfig);
++			      params->ch[channel].cap_info.ddrconfig);
+ 	}
+ 	dram_all_config(dram, params);
+ 	switch_to_phy_index1(dram, params);
 -- 
 2.18.0.321.gffc6fa0e3
 
