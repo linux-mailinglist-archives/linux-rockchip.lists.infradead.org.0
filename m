@@ -2,81 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DF4B47B85
-	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:41:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24E1847BB3
+	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:54:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NEdK0YhzWm3FIYeoxGZvGeZWfKmBFGhoxGsJRo9l3yw=; b=SRrTqcsljiQ/0x
-	h8deJsfBMqnVk0n8D09TaiA9VYhlHat514XT8q5icMee6kqhm44wCvpZkDCSWsvf4JphHY6B9J3T3
-	2oDpKJcnIbDEtDXi/169lM5QAq/ikSWj1DCqmsU+mYIX7TwLrSS4V0KbsOY2H0+X55+g5G8g+hxNH
-	LHboQNAX5nM2A9EkAnQ2V1AFoVwvN66cQVsFaA3SRfnogNIZR3JuI3AdvY+Xl2SbYNz0mD1HJ/9TF
-	vsCYWtv0RTLK4yHjvbHHMW7KdGsefNRDzjINtm7UyvYYdh8fi/JwTsTMATZaPiPPdtnLP3mg863sV
-	B6IPp0hfDE6Owe6W+u4g==;
+	List-Owner; bh=7HeQK2MjXCYRulQbMkps0BKxuZcjSjxeNmDVDwpXVns=; b=XlNnWsOCgktIIu
+	kq1yD48QaedUGpmyWySFEvwBLsmJSE60OXoyV6EtObK7+GU3uP0q5rouPYgBa3QPC+MeYJIYH4hQD
+	7r1lWwHDE9PywFktP2YkCDT7JytxToKV6pwHhQ21JUDY1f8kuMvif3/PSc9C3SWCFI7T5s2CSUb0W
+	KiJfoNDLryJCycfwpaGKGQ+sjn0ZbhqQbeGjOY6lK4tsxm2MOlwFigEhJabEKpkyqIj2diICAMssY
+	55ADZOC4lxU4YW9wRWi5wLpqKRvZdFDMsitD6WnehC0rCx8RbBsVrdBgMXmok1Okji9rqNbFxSq1B
+	M74pfS4wTqXYKeCfsn8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcmH3-0002Tt-US; Mon, 17 Jun 2019 07:41:54 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hcmSp-0007qJ-7O; Mon, 17 Jun 2019 07:54:03 +0000
+Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcmGz-0002RW-6o
- for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:41:50 +0000
-Received: by mail-pf1-x441.google.com with SMTP id r1so5183152pfq.12
- for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:41:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=eSiNIdWprSTtLeb4eEp8uQJ8QGoY6tivwLSGPJNvRoA=;
- b=MuIotMc+dRKLX3XNz9Fd6e2LfD9GGTvb3ESUBz2IyVNFx9XrqK4kUGiWUYy5YA3d0M
- Lj9IMWcjdp9DZ3uFZRmnpKyRywjtMTpKw9hgtZesvX5szMMPqfV3oSZenGOFnYNqvIgd
- +uT69Wf4tX9AlaP6MFXkaCPyL/lTObBX52KrM=
+ id 1hcmSl-0007pm-IO
+ for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:54:00 +0000
+Received: by mail-ua1-x943.google.com with SMTP id v18so3091345uad.12
+ for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:53:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=tRW1fNYqfwgQBy9THQpXCwuo5cDKvcErh5obSg7YYNc=;
+ b=rF1z+kGx4xXL8zfFmisXiiKRC1ok9357niHWA7JwibX0ET3Sg2Vx/C91G3nrLc+Xhe
+ BPK1VcVetMEFD5keUYeTb5W3hxqOdM34b/M9bruL5im6NuFkKRqVC7jsMPkebP2tAn6Y
+ D94jWFD4CUzmB3wQv0vDlpQdduzhIvtbUwbiHXA/jfeOFu2cvoIcibGdp+E+Bd3gGBoy
+ 3gl7atT4pvqbvXUtPRwvJqQds1zAPHerPuoQw/wouC1cnIz0xBuv7d33qJEKP6bN2kwZ
+ CNzBAvYinLErfw6BiZX1TKiSPZVm6+weN+Ve92dW+5Ee4stiJZG0x7ywBtwPHFq7QAAV
+ g3Kw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=eSiNIdWprSTtLeb4eEp8uQJ8QGoY6tivwLSGPJNvRoA=;
- b=tnmZEgVFv/+nyeoGqtYlEX4rR82QxdkOPR1sK5M9jRmuHLjl6iVyoNcdg0NOgCIlKa
- PiYRUn4wjyE9h2wSdnlivlD9bOv799qFYwGJp9w++i4SDI6md6NcTLe3TClo0twLDS+O
- jW7sUIrueV5xyX+AStUh5QqVKR6QUN2oy7ySNA6FFGMLI1ccKzaiqCJcQPm9VmMfa3pY
- uzQ0pYcBeNii/u2VWVpGy9Av5RPtRQ+YB4w3ynG0dKdYvYanWvl9Mu2UtJMRkcmG2+ne
- WcZjxYqKUXEGuayf3W3e9kXqhoIggnNFOEKTyXryqZJGdLAs3k67pzq9ILsNYOVWZLpF
- TBDg==
-X-Gm-Message-State: APjAAAWGXKMvP8EUM9vl9KFUtUq6MZatb2VYwk8ebWogXy20OF1RbxqN
- qSs018oEE4Wy41JBMCZjX/8Nfg==
-X-Google-Smtp-Source: APXvYqyht//TSpQPytJZKuecZguSiBSHc9eVX6jI4WqcbKO3uaw2lMcJR2fV+mLO9E91uLbLUrHNpg==
-X-Received: by 2002:a17:90a:25af:: with SMTP id
- k44mr24178745pje.122.1560757308724; 
- Mon, 17 Jun 2019 00:41:48 -0700 (PDT)
-Received: from localhost.localdomain ([49.206.203.245])
- by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.41.45
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 17 Jun 2019 00:41:48 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
- u-boot@lists.denx.de
-Subject: [PATCH v2 99/99] rockchip: dts: rk3399: rock-pi-4: Use LPDDR4-100 dtsi
-Date: Mon, 17 Jun 2019 13:02:52 +0530
-Message-Id: <20190617073252.27810-100-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
-In-Reply-To: <20190617073252.27810-1-jagan@amarulasolutions.com>
-References: <20190617073252.27810-1-jagan@amarulasolutions.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=tRW1fNYqfwgQBy9THQpXCwuo5cDKvcErh5obSg7YYNc=;
+ b=OhRR+Bq7DcTtE7FNImwfHbJu9tK2gd7lbdZpOe+5xgeYednUOHGZvP6GKgdlYIY0OG
+ O156euolzynizUswKixFh9B9qjVm6uSyTTU/s+SENsa9F7BbX2fR9TRUtI10fUgKwfEY
+ 3rY/9TE/+KG+9gvGHj1JdztjGdTnr6enzZj7g6+4Nuu4KIh0ZfM9eKoMXpqVNVyFx091
+ TxSJo/eqMfEKekHlhpHLCkl6+m5eyNzf41cgINe/wuamYestPPupvB/zdhCY9ChX2yQ1
+ kPFF5jThddX1zQhm83+Lti1ZHpD2Rrl2iuWkYoXI7McmHObFr1tJ4k0NoJdnX4BoTs6X
+ uXig==
+X-Gm-Message-State: APjAAAVTlmEg0dKxv/ITrNs7SlFLbLBn0ZgrtjYJMxbxqfF+ujCVxQTK
+ dte1KyrbbiTA68jOoROaN7MMLH+9ZbRHDOpsdAty9g==
+X-Google-Smtp-Source: APXvYqyhLV0eZUsbwyc8+v3TnW8XR69RoxoH9782ZqeCtf+IvVa1gMZ7SgjScvGxko8mmZpldj50C+TaD9ZWqmsljgk=
+X-Received: by 2002:a9f:31a2:: with SMTP id v31mr6656078uad.15.1560758038323; 
+ Mon, 17 Jun 2019 00:53:58 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190613234153.59309-1-dianders@chromium.org>
+ <20190613234153.59309-3-dianders@chromium.org>
+ <CAPDyKFrgXGf_9=H7G40fiUQj=da5WWRys_oim2azgL4FEOeUVA@mail.gmail.com>
+ <CAD=FV=UA9i1eEi3Mx0WF-DnCnr4O4-MfOxa=axZOJtXzxbV7Tw@mail.gmail.com>
+In-Reply-To: <CAD=FV=UA9i1eEi3Mx0WF-DnCnr4O4-MfOxa=axZOJtXzxbV7Tw@mail.gmail.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Mon, 17 Jun 2019 09:53:20 +0200
+Message-ID: <CAPDyKFqNUJospyV05ZC7Y894QB6a9LQ8cjdT+zrD9EQvm_OWRg@mail.gmail.com>
+Subject: Re: [PATCH v4 2/5] mmc: core: API to temporarily disable retuning for
+ SDIO CRC errors
+To: Doug Anderson <dianders@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_004149_316382_602CC092 
-X-CRM114-Status: UNSURE (   9.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190617_005359_668059_3447FF0E 
+X-CRM114-Status: GOOD (  11.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -99,43 +94,63 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, gajjar04akash@gmail.com,
- linux-amarula@amarulasolutions.com, Jagan Teki <jagan@amarulasolutions.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Cc: "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Chi-Hsien Lin <chi-hsien.lin@cypress.com>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ brcm80211-dev-list <brcm80211-dev-list@cypress.com>,
+ Ritesh Harjani <riteshh@codeaurora.org>,
+ Brian Norris <briannorris@chromium.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Matthias Kaehlcke <mka@chromium.org>, Naveen Gupta <naveen.gupta@cypress.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>,
+ Madhan Mohan R <madhanmohan.r@cypress.com>,
+ Arend van Spriel <arend.vanspriel@broadcom.com>,
+ Double Lo <double.lo@cypress.com>, Avri Altman <avri.altman@wdc.com>,
+ Wright Feng <wright.feng@cypress.com>, Jiong Wu <lohengrin1024@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
+ brcm80211-dev-list.pdl@broadcom.com,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-wireless <linux-wireless@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Kalle Valo <kvalo@codeaurora.org>, netdev <netdev@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Use LPDDR4-100 sdram timings dtsi for RockPI-4 board.
+[...]
 
-All these timings are processed during TPL stage of rock-pi-4 board,
-bootchain. This make TPL would replace rockchip in house rkbin in
-current bootchain.
+> > > --- a/include/linux/mmc/sdio_func.h
+> > > +++ b/include/linux/mmc/sdio_func.h
+> > > @@ -167,4 +167,7 @@ extern void sdio_f0_writeb(struct sdio_func *func, unsigned char b,
+> > >  extern mmc_pm_flag_t sdio_get_host_pm_caps(struct sdio_func *func);
+> > >  extern int sdio_set_host_pm_flags(struct sdio_func *func, mmc_pm_flag_t flags);
+> > >
+> > > +extern void sdio_retune_crc_disable(struct sdio_func *func);
+> > > +extern void sdio_retune_crc_enable(struct sdio_func *func);
+> > > +
+> > >  #endif /* LINUX_MMC_SDIO_FUNC_H */
+> > > --
+> > > 2.22.0.rc2.383.gf4fbbf30c2-goog
+> > >
+> >
+> > Besides the minor comments, this looks good to me.
+>
+> Thank you for the reviews!
+>
+> I'll plan to send a v5 on my Monday with the fixes assuming no new
+> heated discussion starts up.  If it's less work for you, I'm also
+> happy if you just want to make the trivial fixes yourself when
+> applying.
 
-Bootchain after and before this change:
+It really doesn't matter to me, feel free to pick the option you
+prefer. At this point I am just awaiting acks for the broadcom patces
+and some clarity of what stable releases we should target for
+non-tagged patches.
 
-   TPL -> SPL -> U-Boot proper
-
- rkbin -> SPL -> U-Boot proper
-
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi b/arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi
-index 7bddc3acdb..dbfa4ba9f8 100644
---- a/arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi
-+++ b/arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi
-@@ -4,3 +4,4 @@
-  */
- 
- #include "rk3399-u-boot.dtsi"
-+#include "rk3399-sdram-lpddr4-100.dtsi"
--- 
-2.18.0.321.gffc6fa0e3
-
+Kind regards
+Uffe
 
 _______________________________________________
 Linux-rockchip mailing list
