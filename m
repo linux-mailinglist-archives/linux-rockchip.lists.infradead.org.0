@@ -2,80 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F89447B13
-	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:36:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A7D947B15
+	for <lists+linux-rockchip@lfdr.de>; Mon, 17 Jun 2019 09:37:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pCR+P+MHOpXatnUh3PcKa0j4J/19oDtWaoQ/+XizSZE=; b=FxY/u4dsZTCifv
-	N0d9LjsuTlGjk4psJNiDFv/u1qUYeHwFHpLhl5zf7ijnUoJWk5TYtiBZLpBtLfUxIw/Yzbqv41kjH
-	349q0T4FT+KL/fAy8Qsd21sosDgZ+jIe6mL+rP9Y6sO//DriRNvxHwb3KLXFRQ6FtrlYZGX+MjLJn
-	d/JPsk6Gq2yjDTtpPsT84txwuWfliK3cX069NCtWT8LkWrNauxJbwvC1zNhbeD6WkNHQbpXU/WHzd
-	QSZOU40Q0KvOY/e3hvMXXZIUMSBtf2JsSm6rQn8ZQ3HKThQFd31yNykNPGdxFO4LhvatO7fJ/AjWa
-	1S1cY4yasH4Ryg6i1KaQ==;
+	List-Owner; bh=FiGHsrGSbgmjCPIvBUqV8F1mFpVopYogT3RS21HyThM=; b=FuHYu4rlxwkIIZ
+	+ELpDyfv2fqXF0SXkcqOXj0BP9U7MiTwPqpLOMH5p7+H43U99VDxH+Yc/+ZD8ePVV+ZzsPd56zAGu
+	aKXwfACFNrC2xR28NBwe60T/2cuevCV5ENN9Fopc/oNq7/8W2DVvRKKu+5bZbdOD3Y3e/EclZ/WB5
+	1EWrakftxIR8XwX5tR/S30k4LAWaM1mOxpy2fyqazvW/Jqi/vHntrs99rcV8BouS7eXpduz+wO7tT
+	wxX41E7BJI9lzLDyfoTrC8EdbveYWC05q9vJljfbYNfg6y7iGxJNA4AHCRDin26CGn9R75go2LaFd
+	rrhsvfyBLu67kL0OddlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcmCF-0005OM-7Q; Mon, 17 Jun 2019 07:36:55 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hcmCJ-0005RX-Ks; Mon, 17 Jun 2019 07:36:59 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcmCB-0005Ls-Fd
- for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:36:52 +0000
-Received: by mail-pl1-x642.google.com with SMTP id e5so3709323pls.13
- for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:36:51 -0700 (PDT)
+ id 1hcmCE-0005P3-WA
+ for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 07:36:56 +0000
+Received: by mail-pl1-x641.google.com with SMTP id b7so3725347pls.6
+ for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 00:36:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=nC9utFX1vjOeZbcwhD/GIiCBQyEPpB/2j7MOLoKj7SM=;
- b=gWQaAEoakVJsOEvM8Zj9KoxY15dqERG0PkVG73THPA8M/vpZ0uvplOflJqcZ41ZZYR
- W8yxVhn+xVIg2iX9NiqBu3fYbwmewRZRoMLxOkySxfWUd6Avn9A/636WZQXsd/Eo+Fm4
- I5i7iG991j/GVSg+PBMYwaR3Mz68c6PHQ8Bhs=
+ bh=jjOaByF6DG4Wi5iXKaE8Y5nHQba8rk25ZozVxH6G5Gc=;
+ b=Gly4A/0cg4o7IaH8fuy6owEvk8dgaeN2/JWkXmVEY34Rn4ZkOKOFa70uSFuBXcV9bF
+ ouFrxfIcyCTK2s7RhyFi/jIKTg9hhHbZEZzdFP/FlB51X2jeyXfwlpJu5daesmDr7H2G
+ sHGvOeSBuv/8tCBgfHvRRkDPF+hXGMFtW/d5I=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=nC9utFX1vjOeZbcwhD/GIiCBQyEPpB/2j7MOLoKj7SM=;
- b=d1DX/T0Gs/nJCRwOVeygL1hgaYLOv4Ozr4ybjLUEnc/kTNYGp8Slcje/hFg78Ynge9
- VVNQjINeCPAX8+hm7CuWCod435abfmbKElwZsEP/Kwfy7LAFmYga/YhJ7tmpWJ7qFeix
- 7SJexdC5MSvPS9t6Zqn1gOUsVcWtLFhNUUv7zFb44tMq2lqBaC/yOhT5NjsxITtGRin3
- +Hb4wuPdc12aKS0Lwoq6kKvqLpAk21NhfjJ3DvW5VAKSC/677exb2Kb8ZMlRfRgth5a1
- 729tMvdwXwjn+MLAPdL2/8ijsoBFXJD6pkD/zvrV+PF96fu6GUPFi39lSzyH9GRA6HVf
- eHEg==
-X-Gm-Message-State: APjAAAVK8vUxLA2pBOcwwE2ISnJpDTPLw+kDl6xi8E4kMzX9Oo3lHjNe
- oEXHEBiD+A/AOoVoocDc2kkoqA==
-X-Google-Smtp-Source: APXvYqyszuoVbPhc/qAWjIYAqkFNZvFgh+/4Zr9Yqmjkh3GeWzayUxySj8npDuM0nPWQ93FcuoKfRA==
-X-Received: by 2002:a17:902:2884:: with SMTP id
- f4mr19883748plb.286.1560757010822; 
- Mon, 17 Jun 2019 00:36:50 -0700 (PDT)
+ bh=jjOaByF6DG4Wi5iXKaE8Y5nHQba8rk25ZozVxH6G5Gc=;
+ b=iF5oF3EwDZKizeeqVBabnONPuDJP4u/+znUrJwkHjTM8PAnCDyC9TfO1HHcQzkFCF/
+ DgtYB1CtyFWyg8DzQsQkIr4mqWvWVyvUSJ0AGgtuuOX0/yl8s6wI8K+N3zINLewPtp8Y
+ JpiECweQWRUpnDSoU3P9w4h4VnPP/FKMH17S4FrXGeUEdNrWL4mMSWHHtkis0O7eu/iy
+ 6zJ5g9T/cj5y9eu1D7fW+1fWXQ+KT5urvpEIINe/5Ay16CJTtXfbRKSpoRX2XQvpTXxo
+ EAfEYuynmr67wnpzYR8EFPdgho3mdEBfqDg60xjAXCBjHkCl93a3zxwgQZF2o12R8bBR
+ 3qeg==
+X-Gm-Message-State: APjAAAXLGypgMayUr0lNSvlwcWMJb5hlws8MQ3nqrW1kMBzb3M38QdV8
+ iQAJqIw2CDlnJwjV5EG2EazSBg==
+X-Google-Smtp-Source: APXvYqweP9bto1cpPyrzfMKzoSoIzeF3+UNXmQerrltUYP1wRQbdzyQaofrQVz5C8EjJET5oWnAa2g==
+X-Received: by 2002:a17:902:6ac6:: with SMTP id
+ i6mr92870588plt.233.1560757014113; 
+ Mon, 17 Jun 2019 00:36:54 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.203.245])
- by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.36.47
+ by smtp.gmail.com with ESMTPSA id m41sm15205998pje.18.2019.06.17.00.36.51
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 17 Jun 2019 00:36:50 -0700 (PDT)
+ Mon, 17 Jun 2019 00:36:53 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH v2 09/99] ram: rk3399: Use rank mask in ca data training
-Date: Mon, 17 Jun 2019 13:01:22 +0530
-Message-Id: <20190617073252.27810-10-jagan@amarulasolutions.com>
+Subject: [PATCH v2 10/99] ram: rk3399: Use rank mask in wdql data training
+Date: Mon, 17 Jun 2019 13:01:23 +0530
+Message-Id: <20190617073252.27810-11-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190617073252.27810-1-jagan@amarulasolutions.com>
 References: <20190617073252.27810-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_003651_666779_84F15D35 
-X-CRM114-Status: GOOD (  10.47  )
+X-CRM114-CacheID: sfid-20190617_003655_148661_6F417F69 
+X-CRM114-Status: GOOD (  10.54  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,7 +107,7 @@ Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
 Add rank_mask based on the rank number, this would keep
-the ca data training loop based on the desired rank mask
+the wdql data training loop based on the desired rank mask
 value instead of looping for all values.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
@@ -117,12 +117,12 @@ Signed-off-by: YouMin Chen <cym@rock-chips.com>
  1 file changed, 7 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index 1898466b4c..76d6440f9a 100644
+index 76d6440f9a..32fc7771b3 100644
 --- a/drivers/ram/rockchip/sdram_rk3399.c
 +++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -616,11 +616,17 @@ static int data_training_ca(const struct chan_info *chan, u32 channel,
+@@ -851,11 +851,17 @@ static int data_training_wdql(const struct chan_info *chan, u32 channel,
+ 	u32 *denali_pi = chan->pi->denali_pi;
  	u32 i, tmp;
- 	u32 obs_0, obs_1, obs_2, obs_err = 0;
  	u32 rank = params->ch[channel].rank;
 +	u32 rank_mask;
  
@@ -138,7 +138,7 @@ index 1898466b4c..76d6440f9a 100644
 +
  		select_per_cs_training_index(chan, i);
  
- 		/* PI_100 PI_CALVL_EN:RW:8:2 */
+ 		/*
 -- 
 2.18.0.321.gffc6fa0e3
 
