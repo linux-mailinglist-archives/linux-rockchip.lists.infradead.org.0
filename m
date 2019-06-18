@@ -2,61 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19DC74A11E
-	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Jun 2019 14:48:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7FD8C4A25F
+	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Jun 2019 15:36:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HFdaVrWKwdNsicxX92sjBApHvVTiSxIe2Zv1z3m+GNg=; b=Op4GYqRR+a4QBr
-	QtqNHHFGk7L9k/+OqLDIymaIpo5q7fRKsSUWxmrkRO7XU41lEOb2+pPOGOIk7a1+wKKjfGScXLpXR
-	2OlqtG/e9u8FqM5QDPsizr/yNuwQbPxyK4adAUyAipgD+NYUUf30Y28c/EP8NOPRxZ94is6e9DVzF
-	JjHGrRCW+DTr7OqRBMkPuYnLKsQ4sErK/mKPj6jJABPX6GZ4DBqBc9AbWZIROG911PUqHTe15R1fq
-	HtZ9Zii2FoIAhCd5zUhItrywNC+YB5Og7weuOrlwtXb4nJ/qsLRjDz0PZxrRVsxbpL4xLntIlKQXu
-	vjkwfYGp41uErtq536eQ==;
+	List-Owner; bh=f6fDrSGqDHrt5mTp/cV4DYbIlppk718F2c/uWes93Zg=; b=Glvq6leIHC8H3e
+	+ZGiNPsJnoOCHqvbNDyBz1tAHwzSKtrIW9urk7C1Z81nYgDXkbszaKMngF+AJGPwQqOQqcS0vF6ST
+	Gby4c1Nj3Be5+b390DbI85GbCz9qa2IHVEVuou1RygvDARHsDiJHDoTUBl9RIdw7iEZWI27WW4tlm
+	YPQzq16s/uN4BieZQkr4PVjzfyr+pdiPDgWk7PzWOr2R/SZXWihLD+TYK/s5FPGhxdPYjMKN5Im9X
+	ra7NtUnj+IHKo9fNa3MC/jgG9tmGs+55zov30EaabYqzqaK8O6suVu8ieTTOH9BqXg/Qe+giXQLPv
+	4hFb9vcM45AOyVWIE/5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdDXZ-0007dW-Lw; Tue, 18 Jun 2019 12:48:45 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1hdEHc-0000XI-7d; Tue, 18 Jun 2019 13:36:20 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdDWd-00074U-4e
- for linux-rockchip@lists.infradead.org; Tue, 18 Jun 2019 12:47:49 +0000
-X-Originating-IP: 90.88.23.150
-Received: from aptenodytes (aaubervilliers-681-1-81-150.w90-88.abo.wanadoo.fr
- [90.88.23.150]) (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 70235E0009;
- Tue, 18 Jun 2019 12:47:34 +0000 (UTC)
-Message-ID: <ae83ac682e9013699e602d0b1856ec02805a6fd3.camel@bootlin.com>
-Subject: Re: [PATCH v2] arm64: dts: rockchip: Add support for Khadas
- Edge/Edge-V/Captain boards
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Kever Yang <kever.yang@rock-chips.com>, Jagan Teki
- <jagan@amarulasolutions.com>
-Date: Tue, 18 Jun 2019 14:47:33 +0200
-In-Reply-To: <72551f4c-f7a3-1afa-a214-66bc9c5cf48d@rock-chips.com>
-References: <1558696796-10745-1-git-send-email-xieqinick@gmail.com>
- <1560756277-5928-1-git-send-email-xieqinick@gmail.com>
- <5ad4d842c462a19e6241fe620705381169d48318.camel@bootlin.com>
- <CAMty3ZA-wf7tRE=+38SujjXXNGC-pb-m9RzgxFBops6w5n9qzQ@mail.gmail.com>
- <196aa8982a2d9bc2fec5408fe4d84615bbfb2c2b.camel@bootlin.com>
- <72551f4c-f7a3-1afa-a214-66bc9c5cf48d@rock-chips.com>
-Organization: Bootlin
-User-Agent: Evolution 3.32.2 
+ id 1hdEHU-0000WI-GB
+ for linux-rockchip@lists.infradead.org; Tue, 18 Jun 2019 13:36:14 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 08E42263B04
+Message-ID: <6b0519240580229d1cc4ce6d2c98326f2ef7f97c.camel@collabora.com>
+Subject: Re: [RFC/WIP] drm/rockchip: Support CRTC gamma LUT
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Ilia Mirkin <imirkin@alum.mit.edu>
+Date: Tue, 18 Jun 2019 10:36:01 -0300
+In-Reply-To: <CAKb7UvhxnysEPrw2javE=OK8qop=3LPuRphbu_WQKvgCJYU6Kg@mail.gmail.com>
+References: <20190613192244.5447-1-ezequiel@collabora.com>
+ <CAKb7UvhxnysEPrw2javE=OK8qop=3LPuRphbu_WQKvgCJYU6Kg@mail.gmail.com>
+Organization: Collabora
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_054747_774722_1AB6C8A8 
-X-CRM114-Status: GOOD (  33.31  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190618_063612_807188_B61A5312 
+X-CRM114-Status: GOOD (  24.00  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,141 +62,275 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: U-Boot-Denx <u-boot@lists.denx.de>, Simon Glass <sjg@chromium.org>,
- "open list:ARM/Rockchip
- SoC..." <linux-rockchip@lists.infradead.org>, nick@khadas.com,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- Nick Xie <xieqinick@gmail.com>
+Cc: Douglas Anderson <dianders@chromium.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Sean Paul <seanpaul@chromium.org>, kernel@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Kever,
-
-On Tue, 2019-06-18 at 18:08 +0800, Kever Yang wrote:
-> Hi Paul,
+On Thu, 2019-06-13 at 15:36 -0400, Ilia Mirkin wrote:
+> Note that userspace may provide any size of gamma lut. Have a look at
+> i915/intel_color.c:intel_color_check which filters out only the
+> allowed sizes. Consider having a special allowance for 256-sized LUTs
+> since that's what most legacy userspace will set, and it seems like a
+> waste to create a 10-bit LUT for RGBA8 color.
 > 
+
+Right. I will add a check for the gamma lut size.
+
+Unfortunately, this hardware seems to only support 10-bit, 1024-sized LUTs.
+
+The spec does mention a support 8-bit, 256-entries, but it's not at all
+clear how configure that.
+
+Thanks for the feedback,
+Ezequiel
+
+>   -ilia
 > 
-> On 06/18/2019 05:03 PM, Paul Kocialkowski wrote:
-> > Hi,
+> On Thu, Jun 13, 2019 at 3:23 PM Ezequiel Garcia <ezequiel@collabora.com> wrote:
+> > Add CRTC gamma LUT configuration on RK3288 and RK3399.
 > > 
-> > On Tue, 2019-06-18 at 14:27 +0530, Jagan Teki wrote:
-> > > On Tue, Jun 18, 2019 at 1:55 PM Paul Kocialkowski
-> > > <paul.kocialkowski@bootlin.com> wrote:
-> > > > Hi,
-> > > > 
-> > > > On Mon, 2019-06-17 at 15:24 +0800, xieqinick@gmail.com wrote:
-> > > > > From: Nick Xie <nick@khadas.com>
-> > > > Was this tested with SPL support? I don't see DRAM configuration here
-> > > > so it seems that it relies on the non-free rockchip loader.
-> > > > 
-> > > > If that is the case, could you please indicate that in the commit
-> > > > message?
-> > > > 
-> > > > To maintainers: please do not merge this series before DRAM init and
-> > > > SPL support is available for these boards.
-> > > > 
-> > > > It seems that other RK3399 boards were merged without SPL support and
-> > > > sofar, I have the feeling that nobody cared to explain how we got into
-> > > > this broken situation. Please don't merge any more such board.
-> > > fyi: no rk3399 boards were merged w/o SPL. lpddr4 boards were merged
-> > > with TPL-enabled (which was discussed on the threads, if you remember)
-> > > with below boot chain.
-> > > 
-> > > rkbin (TPL) -> SPL -> U-Boot proper
-> > > 
-> > > Same case for this board as well.
-> > Here is a quote from Philipp Tomsich on the thread we discussed this:
+> > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+> > ---
+> > This patch seems to work well on RK3288, but produces
+> > a distorted output on RK3399. I was hoping
+> > someone could have any idea, so we can support both
+> > platforms.
 > > 
-> > " On some boards, there will be no TPL and only a SPL stage that will
-> > initialise DRAM (as the move to having TPL on the RK3399 is optional).
+> >  drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 87 +++++++++++++++++++++
+> >  drivers/gpu/drm/rockchip/rockchip_drm_vop.h |  2 +
+> >  drivers/gpu/drm/rockchip/rockchip_vop_reg.c |  4 +
+> >  drivers/gpu/drm/rockchip/rockchip_vop_reg.h |  1 +
+> >  4 files changed, 94 insertions(+)
 > > 
-> > I agree with Paul that the DRAM init should be part of U-Boot whenever
-> > we add new boards and make an open DRAM init a prerequisite. "
+> > diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+> > index 12ed5265a90b..8381679c1045 100644
+> > --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+> > +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+> > @@ -38,6 +38,8 @@
+> >  #include "rockchip_drm_vop.h"
+> >  #include "rockchip_rgb.h"
 > > 
-> > So even if I frequently confuse SPL and TPL, it doesn't change the fact
-> > that no board should be merged without proper DRAM init.
+> > +#define VOP_GAMMA_LUT_SIZE 1024
+> > +
+> >  #define VOP_WIN_SET(vop, win, name, v) \
+> >                 vop_reg_set(vop, &win->phy->name, win->base, ~0, v, #name)
+> >  #define VOP_SCL_SET(vop, win, name, v) \
+> > @@ -137,6 +139,7 @@ struct vop {
 > > 
-> > Please stop pushing for merging these boards. I'm not sure what we
-> > should do about the boards that were merged already without DRAM init,
-> > but maybe they should be reverted.
->
-> I don't think we have to have full DRAM init source code for each
-> board before we can merge it, I believe most of the board on U-Boot
-> mainline need to removed due to this rule. There are so many boards
-> from different vendor need a binary loader before U-Boot, and I can
-> see only very few drivers for dram at driver/ram/, and I believe rockchip
-> is already the most open vendor on this area.
+> >         uint32_t *regsbak;
+> >         void __iomem *regs;
+> > +       void __iomem *lut_regs;
+> > 
+> >         /* physical map length of vop register */
+> >         uint32_t len;
+> > @@ -1153,6 +1156,46 @@ static void vop_wait_for_irq_handler(struct vop *vop)
+> >         synchronize_irq(vop->irq);
+> >  }
+> > 
+> > +static bool vop_dsp_lut_is_enable(struct vop *vop)
+> > +{
+> > +       return vop_read_reg(vop, 0, &vop->data->common->dsp_lut_en);
+> > +}
+> > +
+> > +static void vop_crtc_gamma_set(struct vop *vop, struct drm_crtc *crtc,
+> > +                              struct drm_crtc_state *state)
+> > +{
+> > +       struct drm_color_lut *lut;
+> > +       int i, idle, ret;
+> > +
+> > +       if (!state->gamma_lut)
+> > +               return;
+> > +       lut = state->gamma_lut->data;
+> > +
+> > +       spin_lock(&vop->reg_lock);
+> > +       VOP_REG_SET(vop, common, dsp_lut_en, 0);
+> > +       vop_cfg_done(vop);
+> > +       spin_unlock(&vop->reg_lock);
+> > +
+> > +       ret = readx_poll_timeout(vop_dsp_lut_is_enable, vop,
+> > +                          idle, !idle, 5, 10 * 30000);
+> > +       if (ret)
+> > +               return;
+> > +
+> > +       spin_lock(&vop->reg_lock);
+> > +       for (i = 0; i < crtc->gamma_size; i++) {
+> > +               u32 word;
+> > +
+> > +               word = (drm_color_lut_extract(lut[i].red, 10) << 20) |
+> > +                      (drm_color_lut_extract(lut[i].green, 10) << 10) |
+> > +                       drm_color_lut_extract(lut[i].blue, 10);
+> > +               writel(word, vop->lut_regs + i * 4);
+> > +       }
+> > +
+> > +       VOP_REG_SET(vop, common, dsp_lut_en, 1);
+> > +       vop_cfg_done(vop);
+> > +       spin_unlock(&vop->reg_lock);
+> > +}
+> > +
+> >  static void vop_crtc_atomic_flush(struct drm_crtc *crtc,
+> >                                   struct drm_crtc_state *old_crtc_state)
+> >  {
+> > @@ -1201,6 +1244,9 @@ static void vop_crtc_atomic_flush(struct drm_crtc *crtc,
+> >                 drm_flip_work_queue(&vop->fb_unref_work, old_plane_state->fb);
+> >                 set_bit(VOP_PENDING_FB_UNREF, &vop->pending);
+> >         }
+> > +
+> > +       if (vop->lut_regs && crtc->state->color_mgmt_changed)
+> > +               vop_crtc_gamma_set(vop, crtc, crtc->state);
+> >  }
+> > 
+> >  static const struct drm_crtc_helper_funcs vop_crtc_helper_funcs = {
+> > @@ -1323,6 +1369,7 @@ static const struct drm_crtc_funcs vop_crtc_funcs = {
+> >         .disable_vblank = vop_crtc_disable_vblank,
+> >         .set_crc_source = vop_crtc_set_crc_source,
+> >         .verify_crc_source = vop_crtc_verify_crc_source,
+> > +       .gamma_set = drm_atomic_helper_legacy_gamma_set,
+> >  };
+> > 
+> >  static void vop_fb_unref_worker(struct drm_flip_work *work, void *val)
+> > @@ -1480,6 +1527,8 @@ static int vop_create_crtc(struct vop *vop)
+> >                 goto err_cleanup_planes;
+> > 
+> >         drm_crtc_helper_add(crtc, &vop_crtc_helper_funcs);
+> > +       drm_mode_crtc_set_gamma_size(crtc, VOP_GAMMA_LUT_SIZE);
+> > +       drm_crtc_enable_color_mgmt(crtc, 0, false, VOP_GAMMA_LUT_SIZE);
+> > 
+> >         /*
+> >          * Create drm_planes for overlay windows with possible_crtcs restricted
+> > @@ -1744,6 +1793,41 @@ int rockchip_drm_wait_vact_end(struct drm_crtc *crtc, unsigned int mstimeout)
+> >  }
+> >  EXPORT_SYMBOL(rockchip_drm_wait_vact_end);
+> > 
+> > +static int vop_gamma_lut_request(struct device *dev,
+> > +                                struct resource *res, struct vop *vop)
+> > +{
+> > +       resource_size_t offset = vop->data->gamma_lut_addr_off;
+> > +       resource_size_t size = VOP_GAMMA_LUT_SIZE * 4;
+> > +
+> > +       /*
+> > +        * Some SoCs (e.g. RK3288) have the gamma LUT address after
+> > +        * the MMU registers, which means we can't request and ioremap
+> > +        * the entire register set. Other (e.g. RK3399) have gamma LUT
+> > +        * address before MMU.
+> > +        *
+> > +        * Therefore, we need to request and ioremap those that haven't
+> > +        * been already.
+> > +        */
+> > +       if (vop->len >= (offset + size)) {
+> > +               vop->lut_regs = vop->regs + offset;
+> > +               return 0;
+> > +       }
+> > +
+> > +       if (!devm_request_mem_region(dev, res->start + offset,
+> > +                                    size, dev_name(dev))) {
+> > +               dev_warn(dev, "can't request gamma lut region\n");
+> > +               return -EBUSY;
+> > +       }
+> > +
+> > +       vop->lut_regs = devm_ioremap(dev, res->start + offset, size);
+> > +       if (!vop->lut_regs) {
+> > +               dev_err(dev, "can't ioremap gamma lut address\n");
+> > +               devm_release_mem_region(dev, res->start + offset, size);
+> > +               return -ENOMEM;
+> > +       }
+> > +       return 0;
+> > +}
+> > +
+> >  static int vop_bind(struct device *dev, struct device *master, void *data)
+> >  {
+> >         struct platform_device *pdev = to_platform_device(dev);
+> > @@ -1776,6 +1860,9 @@ static int vop_bind(struct device *dev, struct device *master, void *data)
+> >         if (IS_ERR(vop->regs))
+> >                 return PTR_ERR(vop->regs);
+> > 
+> > +       if (vop->data->gamma_lut_addr_off)
+> > +               vop_gamma_lut_request(dev, res, vop);
+> > +
+> >         vop->regsbak = devm_kzalloc(dev, vop->len, GFP_KERNEL);
+> >         if (!vop->regsbak)
+> >                 return -ENOMEM;
+> > diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
+> > index 2149a889c29d..12d5bde0d0bc 100644
+> > --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
+> > +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
+> > @@ -67,6 +67,7 @@ struct vop_common {
+> >         struct vop_reg dither_down_mode;
+> >         struct vop_reg dither_down_en;
+> >         struct vop_reg dither_up;
+> > +       struct vop_reg dsp_lut_en;
+> >         struct vop_reg gate_en;
+> >         struct vop_reg mmu_en;
+> >         struct vop_reg out_mode;
+> > @@ -170,6 +171,7 @@ struct vop_data {
+> >         const struct vop_win_yuv2yuv_data *win_yuv2yuv;
+> >         const struct vop_win_data *win;
+> >         unsigned int win_size;
+> > +       off_t gamma_lut_addr_off;
+> > 
+> >  #define VOP_FEATURE_OUTPUT_RGB10       BIT(0)
+> >  #define VOP_FEATURE_INTERNAL_RGB       BIT(1)
+> > diff --git a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
+> > index 7b9c74750f6d..63fbb384893b 100644
+> > --- a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
+> > +++ b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
+> > @@ -593,6 +593,7 @@ static const struct vop_common rk3288_common = {
+> >         .dither_down_en = VOP_REG(RK3288_DSP_CTRL1, 0x1, 2),
+> >         .pre_dither_down = VOP_REG(RK3288_DSP_CTRL1, 0x1, 1),
+> >         .dither_up = VOP_REG(RK3288_DSP_CTRL1, 0x1, 6),
+> > +       .dsp_lut_en = VOP_REG(RK3288_DSP_CTRL1, 0x1, 0),
+> >         .data_blank = VOP_REG(RK3288_DSP_CTRL0, 0x1, 19),
+> >         .dsp_blank = VOP_REG(RK3288_DSP_CTRL0, 0x3, 18),
+> >         .out_mode = VOP_REG(RK3288_DSP_CTRL0, 0xf, 0),
+> > @@ -641,6 +642,7 @@ static const struct vop_data rk3288_vop = {
+> >         .output = &rk3288_output,
+> >         .win = rk3288_vop_win_data,
+> >         .win_size = ARRAY_SIZE(rk3288_vop_win_data),
+> > +       .gamma_lut_addr_off = RK3288_GAMMA_LUT_ADDR,
+> >  };
+> > 
+> >  static const int rk3368_vop_intrs[] = {
+> > @@ -811,6 +813,7 @@ static const struct vop_data rk3399_vop_big = {
+> >         .win = rk3368_vop_win_data,
+> >         .win_size = ARRAY_SIZE(rk3368_vop_win_data),
+> >         .win_yuv2yuv = rk3399_vop_big_win_yuv2yuv_data,
+> > +       .gamma_lut_addr_off = RK3399_GAMMA_LUT_ADDR,
+> >  };
+> > 
+> >  static const struct vop_win_data rk3399_vop_lit_win_data[] = {
+> > @@ -836,6 +839,7 @@ static const struct vop_data rk3399_vop_lit = {
+> >         .win = rk3399_vop_lit_win_data,
+> >         .win_size = ARRAY_SIZE(rk3399_vop_lit_win_data),
+> >         .win_yuv2yuv = rk3399_vop_lit_win_yuv2yuv_data,
+> > +       .gamma_lut_addr_off = RK3399_GAMMA_LUT_ADDR,
+> >  };
+> > 
+> >  static const struct vop_win_data rk3228_vop_win_data[] = {
+> > diff --git a/drivers/gpu/drm/rockchip/rockchip_vop_reg.h b/drivers/gpu/drm/rockchip/rockchip_vop_reg.h
+> > index 6e9fa5815d4d..490318382f74 100644
+> > --- a/drivers/gpu/drm/rockchip/rockchip_vop_reg.h
+> > +++ b/drivers/gpu/drm/rockchip/rockchip_vop_reg.h
+> > @@ -113,6 +113,7 @@
+> >  #define RK3288_DSP_VACT_ST_END                 0x0194
+> >  #define RK3288_DSP_VS_ST_END_F1                        0x0198
+> >  #define RK3288_DSP_VACT_ST_END_F1              0x019c
+> > +#define RK3288_GAMMA_LUT_ADDR                  0x1000
+> >  /* register definition end */
+> > 
+> >  /* rk3368 register definition */
+> > --
+> > 2.20.1
+> > 
+> > _______________________________________________
+> > dri-devel mailing list
+> > dri-devel@lists.freedesktop.org
+> > https://lists.freedesktop.org/mailman/listinfo/dri-devel
 
-Well, I am not talking about full DRAM init source code as in dynamic
-link training. I am talking about having at least static DRAM register
-configuration values, which is present for a good number of rockchip
-boards.
-
-Of course, it would be best if Rockchip would consider releasing this
-source code, which would be the easiest and friendliest solution
-towards the community here. Are there internal discussions ongoing
-about this? If not, it would be greatly appreciated to start such
-discussions and clearly identify what the blocking points are.
-
-> I won't use this rule to stop developers contribute there source code,
-
-This is really sad and I think that Philipp was, like me, inclined to
-go towards the other direction.
-
-> for a board support, we only need the board to have the full documentation
-> about how to setup and boot with upstream U-Boot. and I think the
-> most of people cares more about features in U-Boot proper. Everything
-> before U-Boot proper, you can use TPL/SPL or alternative to use binary
-> from vendor, as you can see all over the U-Boot mainline now, although
-> we encourage people to use full open source TPL/SPL.
-> Specifically for U-Boot Rockchip platform, I would like people to
-> support not only U-Boot
-> proper, but also for full SPL(ATF, OP-TEE support, itb image and other
-> features)
-> support. And for DRAM init,
-> - if this belongs to SPL for this board, you must implement it or else
-> SPL won't work;
-> - if this does not belong to SPL for this board, you need implement full
-> function SPL;
->     and you can either to have full function TPL with DRAM init(which is
-> prefered)
->     or alternatively use binary loader from vendor.
-
-This is not really a technical argument here, more of a policy argument
-that ensures we have full free software support for the boards we
-support, and not only half-cooked support (that will most likely never
-be completed as soon as something that works gets merged). So it is a
-strategical decision, not a strictly pragmatic one.
-
-I think reverting patches adding support for boards with no DRAM
-configuration at all would send a message in the right direction here.
-
-> I'm not sure if you have write a new dram driver for a board, but I know
-> even the board vendor may not have the capability to write the DRAM
-> driver, so this should not stop developers contribute to all other 99%
-> features on U-Boot.
-
-What they can do is run the non-free blob, dump the registers
-afterwards and then use that in the DRAM configuration dtsi. Perhaps
-one could write up a tool to ease the process if they think the process
-is too much for a regular bringup.
-
-Most of the time, the DRAM chips are soldered so the calibrated values
-have about no reason to change over time and can just be kept as-is.
-
-What do you think?
-
-Cheers,
-
-Paul
-
--- 
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
 
 
 _______________________________________________
