@@ -2,50 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FD8C4A25F
-	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Jun 2019 15:36:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BB664A277
+	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Jun 2019 15:38:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f6fDrSGqDHrt5mTp/cV4DYbIlppk718F2c/uWes93Zg=; b=Glvq6leIHC8H3e
-	+ZGiNPsJnoOCHqvbNDyBz1tAHwzSKtrIW9urk7C1Z81nYgDXkbszaKMngF+AJGPwQqOQqcS0vF6ST
-	Gby4c1Nj3Be5+b390DbI85GbCz9qa2IHVEVuou1RygvDARHsDiJHDoTUBl9RIdw7iEZWI27WW4tlm
-	YPQzq16s/uN4BieZQkr4PVjzfyr+pdiPDgWk7PzWOr2R/SZXWihLD+TYK/s5FPGhxdPYjMKN5Im9X
-	ra7NtUnj+IHKo9fNa3MC/jgG9tmGs+55zov30EaabYqzqaK8O6suVu8ieTTOH9BqXg/Qe+giXQLPv
-	4hFb9vcM45AOyVWIE/5w==;
+	List-Owner; bh=w0z73jig7WZC/Svvhe0n9WuJd/etEMH8FcEPXRNxk7I=; b=VWbWzNHoRhhQeX
+	uvPCQ3CCVAo3cIVgk/DQCg52eyqnOHB2JkJlkNUETk4z8AGI0T5dMynn3D/3KVpScwEp7CLsV1YlZ
+	uNO8YInNfZJ4WD+OOQgx+NFhs2QAS77L2RsEIKXiYAy2bN+uR7vYVGMyVKcba8gm5nm7Vv2FRH4X5
+	dgXAzunqOfXQviZFAflBIob0dyNh4G4YYL/PZRf3XaNnljfnEllEjBlG9cGqWSEBa/Cta/GGFyxZs
+	yRYNMNHGgRM3Uo6mRlt1RUBLPus1U6DY2/Gd4xMvG61q9GCxB5NXkw61wjzCjSO8CP0tZMCGA7cPu
+	HzLiX2bqrXNj+wXJIpHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdEHc-0000XI-7d; Tue, 18 Jun 2019 13:36:20 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hdEJb-0000jv-Vk; Tue, 18 Jun 2019 13:38:23 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdEHU-0000WI-GB
- for linux-rockchip@lists.infradead.org; Tue, 18 Jun 2019 13:36:14 +0000
+ id 1hdEJY-0000ja-DG
+ for linux-rockchip@lists.infradead.org; Tue, 18 Jun 2019 13:38:22 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 08E42263B04
-Message-ID: <6b0519240580229d1cc4ce6d2c98326f2ef7f97c.camel@collabora.com>
+ (Authenticated sender: ezequiel) with ESMTPSA id 8A3DD263ABB
+Message-ID: <1560aa16c5655f7eeab7c8e900b8e0be391e7976.camel@collabora.com>
 Subject: Re: [RFC/WIP] drm/rockchip: Support CRTC gamma LUT
 From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Ilia Mirkin <imirkin@alum.mit.edu>
-Date: Tue, 18 Jun 2019 10:36:01 -0300
-In-Reply-To: <CAKb7UvhxnysEPrw2javE=OK8qop=3LPuRphbu_WQKvgCJYU6Kg@mail.gmail.com>
+To: Doug Anderson <dianders@chromium.org>
+Date: Tue, 18 Jun 2019 10:38:10 -0300
+In-Reply-To: <CAD=FV=U84U0TaC=VUXeggCDJJNkPOJYmOL0JNT1Lf7Gecv-5Aw@mail.gmail.com>
 References: <20190613192244.5447-1-ezequiel@collabora.com>
- <CAKb7UvhxnysEPrw2javE=OK8qop=3LPuRphbu_WQKvgCJYU6Kg@mail.gmail.com>
+ <CAD=FV=U84U0TaC=VUXeggCDJJNkPOJYmOL0JNT1Lf7Gecv-5Aw@mail.gmail.com>
 Organization: Collabora
 User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_063612_807188_B61A5312 
-X-CRM114-Status: GOOD (  24.00  )
+X-CRM114-CacheID: sfid-20190618_063820_721133_7F45B034 
+X-CRM114-Status: GOOD (  18.58  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -62,9 +60,10 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Douglas Anderson <dianders@chromium.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- linux-rockchip@lists.infradead.org,
+Cc: JacopoMondi <jacopo@jmondi.org>,
+ Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
+ Sandy Huang <hjc@rock-chips.com>, dri-devel <dri-devel@lists.freedesktop.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
  Boris Brezillon <boris.brezillon@collabora.com>,
  Sean Paul <seanpaul@chromium.org>, kernel@collabora.com
 Content-Type: text/plain; charset="us-ascii"
@@ -72,137 +71,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, 2019-06-13 at 15:36 -0400, Ilia Mirkin wrote:
-> Note that userspace may provide any size of gamma lut. Have a look at
-> i915/intel_color.c:intel_color_check which filters out only the
-> allowed sizes. Consider having a special allowance for 256-sized LUTs
-> since that's what most legacy userspace will set, and it seems like a
-> waste to create a 10-bit LUT for RGBA8 color.
+On Fri, 2019-06-14 at 13:05 -0700, Doug Anderson wrote:
+> Hi,
 > 
-
-Right. I will add a check for the gamma lut size.
-
-Unfortunately, this hardware seems to only support 10-bit, 1024-sized LUTs.
-
-The spec does mention a support 8-bit, 256-entries, but it's not at all
-clear how configure that.
-
-Thanks for the feedback,
-Ezequiel
-
->   -ilia
-> 
-> On Thu, Jun 13, 2019 at 3:23 PM Ezequiel Garcia <ezequiel@collabora.com> wrote:
-> > Add CRTC gamma LUT configuration on RK3288 and RK3399.
-> > 
-> > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-> > ---
-> > This patch seems to work well on RK3288, but produces
-> > a distorted output on RK3399. I was hoping
-> > someone could have any idea, so we can support both
-> > platforms.
-> > 
-> >  drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 87 +++++++++++++++++++++
-> >  drivers/gpu/drm/rockchip/rockchip_drm_vop.h |  2 +
-> >  drivers/gpu/drm/rockchip/rockchip_vop_reg.c |  4 +
-> >  drivers/gpu/drm/rockchip/rockchip_vop_reg.h |  1 +
-> >  4 files changed, 94 insertions(+)
-> > 
-> > diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> > index 12ed5265a90b..8381679c1045 100644
-> > --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> > +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> > @@ -38,6 +38,8 @@
-> >  #include "rockchip_drm_vop.h"
-> >  #include "rockchip_rgb.h"
-> > 
-> > +#define VOP_GAMMA_LUT_SIZE 1024
-> > +
-> >  #define VOP_WIN_SET(vop, win, name, v) \
-> >                 vop_reg_set(vop, &win->phy->name, win->base, ~0, v, #name)
-> >  #define VOP_SCL_SET(vop, win, name, v) \
-> > @@ -137,6 +139,7 @@ struct vop {
-> > 
-> >         uint32_t *regsbak;
-> >         void __iomem *regs;
-> > +       void __iomem *lut_regs;
-> > 
-> >         /* physical map length of vop register */
-> >         uint32_t len;
-> > @@ -1153,6 +1156,46 @@ static void vop_wait_for_irq_handler(struct vop *vop)
-> >         synchronize_irq(vop->irq);
-> >  }
-> > 
-> > +static bool vop_dsp_lut_is_enable(struct vop *vop)
-> > +{
-> > +       return vop_read_reg(vop, 0, &vop->data->common->dsp_lut_en);
-> > +}
-> > +
-> > +static void vop_crtc_gamma_set(struct vop *vop, struct drm_crtc *crtc,
-> > +                              struct drm_crtc_state *state)
-> > +{
-> > +       struct drm_color_lut *lut;
-> > +       int i, idle, ret;
-> > +
-> > +       if (!state->gamma_lut)
-> > +               return;
-> > +       lut = state->gamma_lut->data;
-> > +
-> > +       spin_lock(&vop->reg_lock);
-> > +       VOP_REG_SET(vop, common, dsp_lut_en, 0);
-> > +       vop_cfg_done(vop);
-> > +       spin_unlock(&vop->reg_lock);
-> > +
-> > +       ret = readx_poll_timeout(vop_dsp_lut_is_enable, vop,
-> > +                          idle, !idle, 5, 10 * 30000);
-> > +       if (ret)
-> > +               return;
-> > +
-> > +       spin_lock(&vop->reg_lock);
-> > +       for (i = 0; i < crtc->gamma_size; i++) {
-> > +               u32 word;
-> > +
-> > +               word = (drm_color_lut_extract(lut[i].red, 10) << 20) |
-> > +                      (drm_color_lut_extract(lut[i].green, 10) << 10) |
-> > +                       drm_color_lut_extract(lut[i].blue, 10);
-> > +               writel(word, vop->lut_regs + i * 4);
-> > +       }
-> > +
-> > +       VOP_REG_SET(vop, common, dsp_lut_en, 1);
-> > +       vop_cfg_done(vop);
-> > +       spin_unlock(&vop->reg_lock);
-> > +}
-> > +
-> >  static void vop_crtc_atomic_flush(struct drm_crtc *crtc,
-> >                                   struct drm_crtc_state *old_crtc_state)
-> >  {
-> > @@ -1201,6 +1244,9 @@ static void vop_crtc_atomic_flush(struct drm_crtc *crtc,
-> >                 drm_flip_work_queue(&vop->fb_unref_work, old_plane_state->fb);
-> >                 set_bit(VOP_PENDING_FB_UNREF, &vop->pending);
-> >         }
-> > +
-> > +       if (vop->lut_regs && crtc->state->color_mgmt_changed)
-> > +               vop_crtc_gamma_set(vop, crtc, crtc->state);
-> >  }
-> > 
-> >  static const struct drm_crtc_helper_funcs vop_crtc_helper_funcs = {
-> > @@ -1323,6 +1369,7 @@ static const struct drm_crtc_funcs vop_crtc_funcs = {
-> >         .disable_vblank = vop_crtc_disable_vblank,
-> >         .set_crc_source = vop_crtc_set_crc_source,
-> >         .verify_crc_source = vop_crtc_verify_crc_source,
-> > +       .gamma_set = drm_atomic_helper_legacy_gamma_set,
-> >  };
-> > 
-> >  static void vop_fb_unref_worker(struct drm_flip_work *work, void *val)
-> > @@ -1480,6 +1527,8 @@ static int vop_create_crtc(struct vop *vop)
-> >                 goto err_cleanup_planes;
-> > 
-> >         drm_crtc_helper_add(crtc, &vop_crtc_helper_funcs);
-> > +       drm_mode_crtc_set_gamma_size(crtc, VOP_GAMMA_LUT_SIZE);
-> > +       drm_crtc_enable_color_mgmt(crtc, 0, false, VOP_GAMMA_LUT_SIZE);
-> > 
-> >         /*
-> >          * Create drm_planes for overlay windows with possible_crtcs restricted
+> On Thu, Jun 13, 2019 at 12:23 PM Ezequiel Garcia <ezequiel@collabora.com> wrote:
 > > @@ -1744,6 +1793,41 @@ int rockchip_drm_wait_vact_end(struct drm_crtc *crtc, unsigned int mstimeout)
 > >  }
 > >  EXPORT_SYMBOL(rockchip_drm_wait_vact_end);
@@ -239,98 +111,46 @@ Ezequiel
 > > +               devm_release_mem_region(dev, res->start + offset, size);
 > > +               return -ENOMEM;
 > > +       }
-> > +       return 0;
-> > +}
-> > +
-> >  static int vop_bind(struct device *dev, struct device *master, void *data)
-> >  {
-> >         struct platform_device *pdev = to_platform_device(dev);
-> > @@ -1776,6 +1860,9 @@ static int vop_bind(struct device *dev, struct device *master, void *data)
-> >         if (IS_ERR(vop->regs))
-> >                 return PTR_ERR(vop->regs);
-> > 
-> > +       if (vop->data->gamma_lut_addr_off)
-> > +               vop_gamma_lut_request(dev, res, vop);
-> > +
-> >         vop->regsbak = devm_kzalloc(dev, vop->len, GFP_KERNEL);
-> >         if (!vop->regsbak)
-> >                 return -ENOMEM;
-> > diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
-> > index 2149a889c29d..12d5bde0d0bc 100644
-> > --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
-> > +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
-> > @@ -67,6 +67,7 @@ struct vop_common {
-> >         struct vop_reg dither_down_mode;
-> >         struct vop_reg dither_down_en;
-> >         struct vop_reg dither_up;
-> > +       struct vop_reg dsp_lut_en;
-> >         struct vop_reg gate_en;
-> >         struct vop_reg mmu_en;
-> >         struct vop_reg out_mode;
-> > @@ -170,6 +171,7 @@ struct vop_data {
-> >         const struct vop_win_yuv2yuv_data *win_yuv2yuv;
-> >         const struct vop_win_data *win;
-> >         unsigned int win_size;
-> > +       off_t gamma_lut_addr_off;
-> > 
-> >  #define VOP_FEATURE_OUTPUT_RGB10       BIT(0)
-> >  #define VOP_FEATURE_INTERNAL_RGB       BIT(1)
-> > diff --git a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
-> > index 7b9c74750f6d..63fbb384893b 100644
-> > --- a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
-> > +++ b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
-> > @@ -593,6 +593,7 @@ static const struct vop_common rk3288_common = {
-> >         .dither_down_en = VOP_REG(RK3288_DSP_CTRL1, 0x1, 2),
-> >         .pre_dither_down = VOP_REG(RK3288_DSP_CTRL1, 0x1, 1),
-> >         .dither_up = VOP_REG(RK3288_DSP_CTRL1, 0x1, 6),
-> > +       .dsp_lut_en = VOP_REG(RK3288_DSP_CTRL1, 0x1, 0),
-> >         .data_blank = VOP_REG(RK3288_DSP_CTRL0, 0x1, 19),
-> >         .dsp_blank = VOP_REG(RK3288_DSP_CTRL0, 0x3, 18),
-> >         .out_mode = VOP_REG(RK3288_DSP_CTRL0, 0xf, 0),
-> > @@ -641,6 +642,7 @@ static const struct vop_data rk3288_vop = {
-> >         .output = &rk3288_output,
-> >         .win = rk3288_vop_win_data,
-> >         .win_size = ARRAY_SIZE(rk3288_vop_win_data),
-> > +       .gamma_lut_addr_off = RK3288_GAMMA_LUT_ADDR,
-> >  };
-> > 
-> >  static const int rk3368_vop_intrs[] = {
-> > @@ -811,6 +813,7 @@ static const struct vop_data rk3399_vop_big = {
-> >         .win = rk3368_vop_win_data,
-> >         .win_size = ARRAY_SIZE(rk3368_vop_win_data),
-> >         .win_yuv2yuv = rk3399_vop_big_win_yuv2yuv_data,
-> > +       .gamma_lut_addr_off = RK3399_GAMMA_LUT_ADDR,
-> >  };
-> > 
-> >  static const struct vop_win_data rk3399_vop_lit_win_data[] = {
-> > @@ -836,6 +839,7 @@ static const struct vop_data rk3399_vop_lit = {
-> >         .win = rk3399_vop_lit_win_data,
-> >         .win_size = ARRAY_SIZE(rk3399_vop_lit_win_data),
-> >         .win_yuv2yuv = rk3399_vop_lit_win_yuv2yuv_data,
-> > +       .gamma_lut_addr_off = RK3399_GAMMA_LUT_ADDR,
-> >  };
-> > 
-> >  static const struct vop_win_data rk3228_vop_win_data[] = {
-> > diff --git a/drivers/gpu/drm/rockchip/rockchip_vop_reg.h b/drivers/gpu/drm/rockchip/rockchip_vop_reg.h
-> > index 6e9fa5815d4d..490318382f74 100644
-> > --- a/drivers/gpu/drm/rockchip/rockchip_vop_reg.h
-> > +++ b/drivers/gpu/drm/rockchip/rockchip_vop_reg.h
-> > @@ -113,6 +113,7 @@
-> >  #define RK3288_DSP_VACT_ST_END                 0x0194
-> >  #define RK3288_DSP_VS_ST_END_F1                        0x0198
-> >  #define RK3288_DSP_VACT_ST_END_F1              0x019c
-> > +#define RK3288_GAMMA_LUT_ADDR                  0x1000
-> >  /* register definition end */
-> > 
-> >  /* rk3368 register definition */
-> > --
-> > 2.20.1
-> > 
-> > _______________________________________________
-> > dri-devel mailing list
-> > dri-devel@lists.freedesktop.org
-> > https://lists.freedesktop.org/mailman/listinfo/dri-devel
+> 
+> I'm curious here.  I was always under the impression that you were
+> supposed to specify all of your memory regions in the device tree.
+> ...but here the device tree on rk3288 says:
+> 
+> vopb: vop@ff930000 {
+>     compatible = "rockchip,rk3288-vop";
+>     reg = <0x0 0xff930000 0x0 0x19c>;
+>     ...
+> };
+> 
+> ...and we're now mapping 4096 bytes starting at 0xff931000.  Is that
+> really legit?  Wouldn't it be better to put this extra memory range in
+> the dts?
+> 
+> Hrm, but then I guess you need to figure out what to do about older
+> device trees.  Do you disable the gamma LUT feature?  ...or do you do
+> exactly what the code here is doing and just map it anyway?  I guess
+> you could just keep the code here (and it'll work fine), but maybe in
+> parallel we should add it to the .dts file and bindings?
+> 
 
+Maybe we can see how it would look adding the LUT as a separate
+(optional) resource in the devicetree, and dropping support for RK3399,
+which doesn't seem to work.
+
+I'm taking a look at Jacopo's question on atomic_flush vs.
+atomic_commit_tail, and will prepare a v2.
+
+> ---
+> 
+> I will say that, though I don't know much (anything?) about gamma
+> LUTs, I ran the Chrome OS "gamma_test" program and saw a pretty RGB
+> gradient on the both the internal screen and HDMI monitor on my
+> rk3288-veyron-jerry.  Thus:
+> 
+> Tested-by: Douglas Anderson <dianders@chromium.org>
+
+Thanks,
+Ezequiel
 
 
 _______________________________________________
