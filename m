@@ -2,89 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 407AB4A9FC
-	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Jun 2019 20:35:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BB6E4AA0C
+	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Jun 2019 20:38:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZUn184k0THPFP/IP59p9f5cp07/oq359JD7T3FNMnek=; b=VNM3T/T0oeJmOE
-	sne3fJNutD4cCjTg2cp40Bd1YrJDEIhck1dXKon/8Vu1a/XTN2kvfN//cXQOJijLhD2lnKPviMYjz
-	0Wercz8Uz4Ttgk7oCYoE9CcbdZe1Pd7gQ5Fh+IXzalUHkWVn7FoIGi8BsTpTO5zy9Idm2s7gomL/m
-	dYJIwTqMucTP7TD5A9S1kvTlnFRXLo7x9QXVyk1DURd/MLTr8cuJkVol7YeK1OGHhQcALBydTWcVr
-	aIXJICH+re6PJO5tq3EtV+b6M9idjTR0JQcUDNIFt22XTV0ubuFYtVESFvjH7sq91ofJMDDhVs4gG
-	wNIT3JnBmzr092fwYjpA==;
+	List-Owner; bh=Y5vSYiv+QMcNoXif15Em4V71K5DpUm+usuVJHEjzMjg=; b=io37eJjxn8RRgt
+	KHwnwUbixvRYMH0zWgNgXU4Ks7S7BL/hFPzJEhSeSLXzQZzwsLN1UE5UbkBpv0vi5iqLb2wsUE1/P
+	s3LbkKYkiVeT9CK+KJT/ez9YNnYvSuby0w9zI5QccuG9gKm4xTO/XkdGzlFZJKQygeBTwiDQldTO/
+	VF1zF9kEqbsfyYBPMaaCa6pYQP0nlXfJphTRTj4nO4wYg1YpHbtLYPv6cpUcOEpW9OksxGmhDZzgQ
+	M4O6txeuR6821HTr7BNI1uZn0Gj2vRdUhgdz3OxINIiNKV3m+QjFMdyvQ+w+4NfXll2VpTjX6354K
+	6PUh8zs/s288GziprkvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdIwh-0007wW-KU; Tue, 18 Jun 2019 18:35:03 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hdIzg-0001EL-TM; Tue, 18 Jun 2019 18:38:08 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdIwd-0007jd-QZ
- for linux-rockchip@lists.infradead.org; Tue, 18 Jun 2019 18:35:01 +0000
-Received: by mail-pf1-x444.google.com with SMTP id r7so8154226pfl.3
- for <linux-rockchip@lists.infradead.org>; Tue, 18 Jun 2019 11:34:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=6kNZlMyc+BT+bVh0V15w4cgbur+weciC7/ZsAv2IV7U=;
- b=bm7i7c5f2/GAPKW27PQz1CiDRmYmVVba0JO3/GX7R8G+fkjmqzIIjlSd4nI38HMNiO
- JG+isnGj0iq6Ofd/6L/6Az0kLFKN3KBe+DUwfNJZrmXGBX8SDqz9yFi5xBVYZhRXZvx8
- pJQsKXZRSuhhm6WH3KSC1QPvrSbAjRWmtJKOA=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=6kNZlMyc+BT+bVh0V15w4cgbur+weciC7/ZsAv2IV7U=;
- b=PKcNkwXCLh4JEbkLxWbaGmOEhB/fwP1zwJWtItBXG0P7VYt0UOiCNkermegDqmOfnp
- j9Lb262NzAuiMnfOlF3PefQZY3WYqfcC2371va/jY35ydUbYTyezLNDBvJ5mg2SOgz+A
- B5opfNo5pMf4tIyW5UzVwQdcAxJmzPQNH/7UsAfx2MZU/qK1wcb+ct9N3kUOY8fe0FQl
- 2d6zFfeT2VoXFkKRuJWyHUhLVLOm2OW3ihT7dFFqTESfPUSmI5B3e0yDwO2oYa7tgaac
- zeYVKh1caGa+M5/2IpmqYiUIu8Oc7/ydKeAyXYnXmoFR9j+4a9311GldivUddqx20NEN
- sahA==
-X-Gm-Message-State: APjAAAWbewTNjpa72UL0OpyBdorvcsG61PNDdS+MnaQvYcS+VwjRfe7k
- h/A6g1Bt7sbWtEHkK2RmE4kthA==
-X-Google-Smtp-Source: APXvYqy+QvRjs4Drmi2FUQIv8wv4fenqIqrDebMofryze6kGt+JsmRV9NB16VTZPs4PMvqJusTHJsA==
-X-Received: by 2002:a65:654f:: with SMTP id a15mr3860571pgw.73.1560882898990; 
- Tue, 18 Jun 2019 11:34:58 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id e16sm22768169pga.11.2019.06.18.11.34.58
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 18 Jun 2019 11:34:58 -0700 (PDT)
-Date: Tue, 18 Jun 2019 11:34:55 -0700
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Subject: Re: [PATCH] Revert "ARM: dts: rockchip: set PWM delay backlight
- settings for Minnie"
-Message-ID: <20190618183455.GU137143@google.com>
-References: <20190614224533.169881-1-mka@chromium.org>
- <45f94c6a-5bd7-92b0-d23f-ae7e0481935f@collabora.com>
+ id 1hdIzb-00018H-6I
+ for linux-rockchip@lists.infradead.org; Tue, 18 Jun 2019 18:38:05 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 89897261136
+Message-ID: <e46f85d324773668c2576c51395bfeb4e5f2c4f3.camel@collabora.com>
+Subject: Re: [RFC/WIP] drm/rockchip: Support CRTC gamma LUT
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Jacopo Mondi <jacopo@jmondi.org>
+Date: Tue, 18 Jun 2019 15:37:52 -0300
+In-Reply-To: <5d2391b3a1e718933c17be60d3b8e84d4bfa1a94.camel@collabora.com>
+References: <20190613192244.5447-1-ezequiel@collabora.com>
+ <20190617100600.y6ytaueego6eelxz@uno.localdomain>
+ <5d2391b3a1e718933c17be60d3b8e84d4bfa1a94.camel@collabora.com>
+Organization: Collabora
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <45f94c6a-5bd7-92b0-d23f-ae7e0481935f@collabora.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_113459_878775_4A283D44 
-X-CRM114-Status: GOOD (  13.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190618_113803_622434_599E8FF3 
+X-CRM114-Status: GOOD (  25.79  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,46 +63,149 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Pavel Machek <pavel@ucw.cz>,
- linux-arm-kernel@lists.infradead.org
+Cc: Douglas Anderson <dianders@chromium.org>, dri-devel@lists.freedesktop.org,
+ linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Sean Paul <seanpaul@chromium.org>, kernel@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Enric,
-
-On Tue, Jun 18, 2019 at 10:21:52AM +0200, Enric Balletbo i Serra wrote:
-> Hi Matthias,
-> 
-> On 15/6/19 0:45, Matthias Kaehlcke wrote:
-> > This reverts commit 288ceb85b505c19abe1895df068dda5ed20cf482.
+On Tue, 2019-06-18 at 02:15 -0300, Ezequiel Garcia wrote:
+> On Mon, 2019-06-17 at 12:06 +0200, Jacopo Mondi wrote:
+> > Hi Ezequiel,
+> >    one small question, as I'm working on supporting gamma LUT for
+> > rcar-du as well, and there's one point not totally clear to me
 > > 
-> > According to the commit message the AUO B101EAN01 panel on minnie
-> > requires a PWM delay of 200 ms, however this is not what the
-> > datasheet says. The datasheet mentions a *max* delay of 200 ms
-> > for T2 ("delay from LCDVDD to black video generation") and T3
-> > ("delay from LCDVDD to HPD high"), which aren't related to the
-> > PWM. The backlight power sequence does not specify min/max
-> > constraints for T15 (time from PWM on to BL enable) or T16
-> > (time from BL disable to PWM off).
+> > 
+> > On Thu, Jun 13, 2019 at 04:22:44PM -0300, Ezequiel Garcia wrote:
+> > > Add CRTC gamma LUT configuration on RK3288 and RK3399.
+> > > 
+> > > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+> > > ---
+> > > This patch seems to work well on RK3288, but produces
+> > > a distorted output on RK3399. I was hoping
+> > > someone could have any idea, so we can support both
+> > > platforms.
+> > > 
+> > >  drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 87 +++++++++++++++++++++
+> > >  drivers/gpu/drm/rockchip/rockchip_drm_vop.h |  2 +
+> > >  drivers/gpu/drm/rockchip/rockchip_vop_reg.c |  4 +
+> > >  drivers/gpu/drm/rockchip/rockchip_vop_reg.h |  1 +
+> > >  4 files changed, 94 insertions(+)
+> > > 
+> > > diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+> > > index 12ed5265a90b..8381679c1045 100644
+> > > --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+> > > +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+> > > @@ -38,6 +38,8 @@
+> > >  #include "rockchip_drm_vop.h"
+> > >  #include "rockchip_rgb.h"
+> > > 
+> > > +#define VOP_GAMMA_LUT_SIZE 1024
+> > > +
+> > >  #define VOP_WIN_SET(vop, win, name, v) \
+> > >  		vop_reg_set(vop, &win->phy->name, win->base, ~0, v, #name)
+> > >  #define VOP_SCL_SET(vop, win, name, v) \
+> > > @@ -137,6 +139,7 @@ struct vop {
+> > > 
+> > >  	uint32_t *regsbak;
+> > >  	void __iomem *regs;
+> > > +	void __iomem *lut_regs;
+> > > 
+> > >  	/* physical map length of vop register */
+> > >  	uint32_t len;
+> > > @@ -1153,6 +1156,46 @@ static void vop_wait_for_irq_handler(struct vop *vop)
+> > >  	synchronize_irq(vop->irq);
+> > >  }
+> > > 
+> > > +static bool vop_dsp_lut_is_enable(struct vop *vop)
+> > > +{
+> > > +	return vop_read_reg(vop, 0, &vop->data->common->dsp_lut_en);
+> > > +}
+> > > +
+> > > +static void vop_crtc_gamma_set(struct vop *vop, struct drm_crtc *crtc,
+> > > +			       struct drm_crtc_state *state)
+> > > +{
+> > > +	struct drm_color_lut *lut;
+> > > +	int i, idle, ret;
+> > > +
+> > > +	if (!state->gamma_lut)
+> > > +		return;
+> > > +	lut = state->gamma_lut->data;
+> > > +
+> > > +	spin_lock(&vop->reg_lock);
+> > > +	VOP_REG_SET(vop, common, dsp_lut_en, 0);
+> > > +	vop_cfg_done(vop);
+> > > +	spin_unlock(&vop->reg_lock);
+> > > +
+> > > +	ret = readx_poll_timeout(vop_dsp_lut_is_enable, vop,
+> > > +			   idle, !idle, 5, 10 * 30000);
+> > > +	if (ret)
+> > > +		return;
+> > > +
+> > > +	spin_lock(&vop->reg_lock);
+> > > +	for (i = 0; i < crtc->gamma_size; i++) {
+> > > +		u32 word;
+> > > +
+> > > +		word = (drm_color_lut_extract(lut[i].red, 10) << 20) |
+> > > +		       (drm_color_lut_extract(lut[i].green, 10) << 10) |
+> > > +			drm_color_lut_extract(lut[i].blue, 10);
+> > > +		writel(word, vop->lut_regs + i * 4);
+> > > +	}
+> > > +
+> > > +	VOP_REG_SET(vop, common, dsp_lut_en, 1);
+> > > +	vop_cfg_done(vop);
+> > > +	spin_unlock(&vop->reg_lock);
+> > > +}
+> > > +
+> > >  static void vop_crtc_atomic_flush(struct drm_crtc *crtc,
+> > >  				  struct drm_crtc_state *old_crtc_state)
+> > >  {
+> > > @@ -1201,6 +1244,9 @@ static void vop_crtc_atomic_flush(struct drm_crtc *crtc,
+> > >  		drm_flip_work_queue(&vop->fb_unref_work, old_plane_state->fb);
+> > >  		set_bit(VOP_PENDING_FB_UNREF, &vop->pending);
+> > >  	}
+> > > +
+> > > +	if (vop->lut_regs && crtc->state->color_mgmt_changed)
+> > > +		vop_crtc_gamma_set(vop, crtc, crtc->state);
+> > 
+> > Which one is the right point when to call LUT update functions?
+> > 
+> > I initially added my callback in atomic_flush as you did here, mostly
+> > because I've found examples in other drivers in drm and went in
+> > cargo cult mode. I've been then suggested by Laurent that atomic_flush()
+> > might not be the right place where to do so, as it gets called after
+> > the plane updates (iirc, the DRM atomic API is not something I'm that
+> > familiar with yet).
+> > 
+> > So I moved my LUT update function in the atomic_commit_tail callback,
+> > which is meant to actually commit a CRTC to the hw.
+> > 
+> > What's your opinion on this?
 > > 
 > 
-> Could you point from where the confusion comes from? I think will be helpful for
-> the record. B101EAN01.8 vs B101EAN01.1
-
-sounds good
-
-> > Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+> I have to admit this is not exactly clear to me either.
 > 
-> With the above added:
+> Let me make sure I understand the issue. You are concerned about
+> getting some tearing if the CRTC gamma LUT is affected
+> in the atomic_flush?
 > 
-> Reviewed-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+> If that's the case, it shouldn't be too hard to confirm (I think).
+> 
 
-Thanks!
+As we suspected, indeed setting the gamma lut in atomic_flush
+is exposed to tearing, if the atomic API is used.
+
+As Laurent suggested you, setting from atomic_commit_tail seems correct,
+as an example you can see the malidp driver.
+
+I'm preparing a v2 patch.
+
+Thanks,
+Ezequiel
+
 
 _______________________________________________
 Linux-rockchip mailing list
