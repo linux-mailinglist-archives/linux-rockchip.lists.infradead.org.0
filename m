@@ -2,73 +2,64 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 830044A7BA
-	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Jun 2019 18:57:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B0604A836
+	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Jun 2019 19:23:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r8EwjVgsuBXbxsZpBw7bCaPhxabaKoF11v7TOkzas6I=; b=EaJx9ebB+oxL8D
-	cj2Eoc5GrCpxFk9phHPW9zmqA9T5OSlfkNq9SDmCr5csnzYAk/thfHgbikLz2Gm8N/v7j9D0HFcxF
-	icTdvRoORQyvtNJlhLP5iGUFrUqYehFeqAwrNt91a8mB1BjMV5aeWl88IHW3NoU+zzfSOAcRQz6Rd
-	Obi6GMEBT8Z54e7gOCDuWdfFAHXS+aXOQaV4proMxvpniUDIgITFyt2ewQndTUC60G8SDtkjrcdg7
-	rwabSyMf6hbvtfHzsyUAHjjYqrjvb688sKTbCOs86hNnlQwKRx/u+rNqmDgt+ZX4soplTUTMLYrh8
-	7faefc5uzNEcPqna8rcg==;
+	List-Owner; bh=gLWSCSuR++rk/d8UifwgUqE8aV7LC9fMmsRhZ2PxjS8=; b=dyJyzyC9Hd6Ec0
+	IL3/sjI6syyoLYOqhITxIPLizx9FYunqVDvvTxK8OrN03pUeAMfMASKFMyW/xXLyajKR5VehtQxz0
+	k7JSp/dXL2q6G0j7l3z3I5Hekrzth6UkvHOyUwbSfPy4QhXq+KUTmty44FvfW18VOUFP05O0Xiarb
+	iZwaDmKphbPbHmiosLIEdnOHpBE1ShlXtWbzoG5gW09qb7vHa+d11UvnZ9cvDxe2/QOPk3y6Un11v
+	+j0bc/CcCWgyNe5N7omM0mL1nlEK1MPMAVVpvw+hMTsZ2E0mriafUsq2iNBFUbaRVUcRrWFE1NVip
+	cbiFNioYX1Oy3cxqVx0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdHQX-0003Q7-3L; Tue, 18 Jun 2019 16:57:45 +0000
-Received: from mail-ua1-f51.google.com ([209.85.222.51])
+	id 1hdHpb-0006hX-V2; Tue, 18 Jun 2019 17:23:39 +0000
+Received: from mailoutvs63.siol.net ([185.57.226.254] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdHQP-0003Jj-J7
- for linux-rockchip@lists.infradead.org; Tue, 18 Jun 2019 16:57:39 +0000
-Received: by mail-ua1-f51.google.com with SMTP id v20so1378073uao.3
- for <linux-rockchip@lists.infradead.org>; Tue, 18 Jun 2019 09:57:36 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yo2+hP1hmPeY+E4/cOlfBNumtIf57Ixxbx1NkiGuAs0=;
- b=q20ms9ya7UwfA4d8Xb9J3SlQOzyYP2MYS6fJF4YpAr0Jr9trCTRei3IXUftyJjRiMb
- 0a8CDSMnvfAaqXZPn7eToTHVYnAhYLzGuNS07bDiCDV2oBVqk9yee7fIl+2fNy9d52+0
- pIxoPT2i4CR1hLrh9D7sHoqrdt6W0d9rLmsLHCF4vv20XhgBn6mpT4cB2b8K8XlcsPeK
- 7tTmab9zRTc6e9cyuRgYkCtmMotq5nFpP4CNB4FWBqIOuYWqWw5qeD+gkJKNBHrJawEN
- 6D+A8cjE+y0P15WVFPT2/KqeDHX5hxplOWbjWDF2iQshWiIIALjh/nZzXg5jfVBk8vG6
- /+mg==
-X-Gm-Message-State: APjAAAWy1PAWC6pN7C2/v+eVeYgwXCchxW+x4edyWQGM4tUMB/0qb5n2
- Nxk1CfYnAINI5ORYVu2aeJT26fqlmBx6zpsnrKbl+A==
-X-Google-Smtp-Source: APXvYqya/Im8N5Rkn3gJLwxn/tZrop0eZUP4okntGtk4A3/PbPyQ8ofkt5nndC/nVnQi4JD/GNfCrLwpFrBScdM3tMU=
-X-Received: by 2002:a67:ecd4:: with SMTP id i20mr35616638vsp.210.1560877055649; 
- Tue, 18 Jun 2019 09:57:35 -0700 (PDT)
+ id 1hdHpX-0006Kf-8E
+ for linux-rockchip@lists.infradead.org; Tue, 18 Jun 2019 17:23:37 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Zimbra) with ESMTP id 1EA4E5203EB;
+ Tue, 18 Jun 2019 19:23:22 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at psrvmta12.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta12.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id SvDg82OCXHri; Tue, 18 Jun 2019 19:23:21 +0200 (CEST)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Zimbra) with ESMTPS id A4E9F5223EF;
+ Tue, 18 Jun 2019 19:23:21 +0200 (CEST)
+Received: from jernej-laptop.localnet (cpe-86-58-52-202.static.triera.net
+ [86.58.52.202]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Zimbra) with ESMTPA id 76FF65203EB;
+ Tue, 18 Jun 2019 19:23:18 +0200 (CEST)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: Douglas Anderson <dianders@chromium.org>
+Subject: Re: [PATCH] drm/bridge/synopsys: dw-hdmi: Handle audio for more clock
+ rates
+Date: Tue, 18 Jun 2019 19:23:18 +0200
+Message-ID: <6219398.I55JWXAmVF@jernej-laptop>
+In-Reply-To: <20190617235558.64571-1-dianders@chromium.org>
+References: <20190617235558.64571-1-dianders@chromium.org>
 MIME-Version: 1.0
-References: <20190613192244.5447-1-ezequiel@collabora.com>
- <CAKb7UvhxnysEPrw2javE=OK8qop=3LPuRphbu_WQKvgCJYU6Kg@mail.gmail.com>
- <6b0519240580229d1cc4ce6d2c98326f2ef7f97c.camel@collabora.com>
-In-Reply-To: <6b0519240580229d1cc4ce6d2c98326f2ef7f97c.camel@collabora.com>
-From: Ilia Mirkin <imirkin@alum.mit.edu>
-Date: Tue, 18 Jun 2019 12:57:24 -0400
-Message-ID: <CAKb7Uvg1gfHdVv69sXFs8rgOP-bGkDuMXvikDMYdJO8EC1zxiQ@mail.gmail.com>
-Subject: Re: [RFC/WIP] drm/rockchip: Support CRTC gamma LUT
-To: Ezequiel Garcia <ezequiel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_095737_649676_DCABB68D 
-X-CRM114-Status: GOOD (  11.12  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190618_102335_460856_FD982410 
+X-CRM114-Status: GOOD (  12.84  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.51 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (ibmirkin[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.254 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,42 +72,65 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Douglas Anderson <dianders@chromium.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Sean Paul <seanpaul@chromium.org>, kernel@collabora.com
+Cc: heiko@sntech.de, linux-rockchip@lists.infradead.org,
+ David Airlie <airlied@linux.ie>, jonas@kwiboo.se, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, narmstrong@baylibre.com,
+ Andrzej Hajda <a.hajda@samsung.com>, seanpaul@chromium.org,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, dgreid@chromium.org,
+ Zheng Yang <zhengyang@rock-chips.com>, Sam Ravnborg <sam@ravnborg.org>,
+ Thomas Gleixner <tglx@linutronix.de>, cychiang@chromium.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Jun 18, 2019 at 9:36 AM Ezequiel Garcia <ezequiel@collabora.com> wrote:
->
-> On Thu, 2019-06-13 at 15:36 -0400, Ilia Mirkin wrote:
-> > Note that userspace may provide any size of gamma lut. Have a look at
-> > i915/intel_color.c:intel_color_check which filters out only the
-> > allowed sizes. Consider having a special allowance for 256-sized LUTs
-> > since that's what most legacy userspace will set, and it seems like a
-> > waste to create a 10-bit LUT for RGBA8 color.
-> >
->
-> Right. I will add a check for the gamma lut size.
->
-> Unfortunately, this hardware seems to only support 10-bit, 1024-sized LUTs.
->
-> The spec does mention a support 8-bit, 256-entries, but it's not at all
-> clear how configure that.
+Hi!
 
-It's up to you, and the more experienced drm reviewers, but even if
-you can't figure out how to bend the hardware to your will (which is
-worth a bit of exploration), you can still emulate it by just
-repeating all the values 4x. IMHO 256-sized LUTs are worth supporting
-when possible.
+Dne torek, 18. junij 2019 ob 01:55:58 CEST je Douglas Anderson napisal(a):
+> Let's add some better support for HDMI audio to dw_hdmi.
+> Specifically:
+> 
+> 1. For 44.1 kHz audio the old code made the assumption that an N of
+> 6272 was right most of the time.  That wasn't true and the new table
+> should give better 44.1 kHz audio for many more rates.
+> 
+> 2. The new table has values from the HDMI spec for 297 MHz and 594
+> MHz.
+> 
+> 3. There is now code to try to come up with a more idea N/CTS for
+> clock rates that aren't in the table.  This code is a bit slow because
+> it iterates over every possible value of N and picks the best one, but
+> it should make a good fallback.
+> 
+> 4. The new code allows for platforms that know they make a clock rate
+> slightly differently to pick different N/CTS values.  For instance on
+> rk3288 we can make 25,176,471 Hz instead of 25,174,825.1748... Hz
+> (25.2 MHz / 1.001).  A future patch to the rk3288 platform code could
+> enable support for this clock rate and specify the N/CTS that would be
+> ideal.
+> 
+> NOTE: the oddest part of this patch comes about because computing the
+> ideal N/CTS means knowing the _exact_ clock rate, not a rounded
+> version of it.  The drm framework makes this harder by rounding rates
+> to kHz, but even if it didn't there might be cases where the ideal
+> rate could only be calculated if we knew the real (non-integral) rate.
+> This means that in cases where we know (or believe) that the true rate
+> is something other than the rate we are told by drm.
+> 
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
 
-Cheers,
+Which bus is used for audio transfer on your device? If it is I2S, which is 
+commonly used, then please be aware of this patch:
+https://lists.freedesktop.org/archives/dri-devel/2019-June/221539.html
 
-  -ilia
+It avoids exact N/CTS calculation by enabling auto detection. It is well 
+tested on multiple SoCs from Allwinner, Amlogic and Rockchip.
+
+Best regards,
+Jernej
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
