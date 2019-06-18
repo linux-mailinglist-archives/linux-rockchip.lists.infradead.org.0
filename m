@@ -2,58 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A28849C92
-	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Jun 2019 11:04:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE2B449CBC
+	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Jun 2019 11:12:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aIyzamOqNGYXGUvkqmcA7Q+BPDYXMKBmI75ftfQyUD4=; b=tOT6IA9b+zmWQP
-	zNyVphe/kPuZCbFxNVpytick3hM0ibt/CPuwMvgxh54TCmoyZywlnqOkihfQ4lQ/0xsmwEFqM7xtx
-	3wE+/A4kLHScrZjVSeh+4CIDEUe+tvyU+R7WQMgpndcpWIFjOqrVDoT5L1ak2cqWDngOC6aubKZ+S
-	n5FjQk5dng9m2iGDJN0qYyq43ygfaz52+0eHSyeuPvRgzue34Km9hCKXuglHn5jB2vdH0m7lue65J
-	qJ/1Y6Y5nrIoqg8rO1uzzhKZPKYuoxcedfaIr3mhZsopxcNcyUp1qv7oQckcnGcAbUbBGeCoGNxfo
-	ordzGmvup5OqRqr0rUzA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Sv7dXDX0oZfy6BnOV0rsgRLcq/1P4fi+l+fjVVfPOUk=; b=mZ08e3uYPa2nrM
+	tG0kJlWiMq53qSOPagK9wfaz53Ltp1fTZNV4lwgDwuvft9X9OL+YA1ADDdhG47RsYrIG6fTfGoCwS
+	LXPu6BC7HEgBgmp6YlLLT8NGK0h8HdR3ZS0ajoH7tJoxAw/gz7Fc3dHaecSE6/K06LWYggswFKgMS
+	OjFIrpQr4XtDTk6Kn6SeioRYZ7KUPnuXB1xgIb0mgNyCRnbGAvRFo0qbu76gGW5zHIVbqnvkTlElc
+	/szfbULbAOrjf/oK4toGaPiTXYaWBZIDqm5yUc9noaMss9rxAtWBtfHnCoUqfHoO5N9MiqqkqA2tE
+	Z4vb7Edy3cgYoC9wcowg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdA26-0000Ww-PE; Tue, 18 Jun 2019 09:04:02 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+	id 1hdA9q-0004bz-9V; Tue, 18 Jun 2019 09:12:02 +0000
+Received: from regular1.263xmail.com ([211.150.70.204])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdA23-0000WP-QB
- for linux-rockchip@lists.infradead.org; Tue, 18 Jun 2019 09:04:01 +0000
-X-Originating-IP: 90.88.23.150
-Received: from aptenodytes (aaubervilliers-681-1-81-150.w90-88.abo.wanadoo.fr
- [90.88.23.150]) (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 3158740012;
- Tue, 18 Jun 2019 09:03:52 +0000 (UTC)
-Message-ID: <196aa8982a2d9bc2fec5408fe4d84615bbfb2c2b.camel@bootlin.com>
-Subject: Re: [PATCH v2] arm64: dts: rockchip: Add support for Khadas
- Edge/Edge-V/Captain boards
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+ id 1hdA9l-0004bK-Ev
+ for linux-rockchip@lists.infradead.org; Tue, 18 Jun 2019 09:11:59 +0000
+Received: from kever.yang?rock-chips.com (unknown [192.168.165.252])
+ by regular1.263xmail.com (Postfix) with ESMTP id 38E662E2;
+ Tue, 18 Jun 2019 17:11:52 +0800 (CST)
+X-263anti-spam: KSV:0;BIG:0;
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-KSVirus-check: 0
+X-ADDR-CHECKED4: 1
+X-ABS-CHECKED: 1
+X-SKE-CHECKED: 1
+X-ANTISPAM-LEVEL: 2
+Received: from [192.168.60.65] (unknown [103.29.142.67])
+ by smtp.263.net (postfix) whith ESMTP id
+ P15535T140569235941120S1560849107619169_; 
+ Tue, 18 Jun 2019 17:11:49 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <a7219ee6d83f44410609380a8e499b8d>
+X-RL-SENDER: kever.yang@rock-chips.com
+X-SENDER: yk@rock-chips.com
+X-LOGIN-NAME: kever.yang@rock-chips.com
+X-FST-TO: u-boot@lists.denx.de
+X-SENDER-IP: 103.29.142.67
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+Subject: =?UTF-8?Q?Re:_[PATCH_v3_0/6]_rockchip:_rk3399:_Make_u-boot.itb_as_B?=
+ =?UTF-8?B?VUlMRF9UQVJHRVTjgJDor7fms6jmhI/vvIzpgq7ku7bnlLFsaW51eC1yb2NrY2hp?=
+ =?UTF-8?Q?p-bounces+kever.yang=3drock-chips.com@lists.infradead.org?=
+ =?UTF-8?B?5Luj5Y+R44CR?=
 To: Jagan Teki <jagan@amarulasolutions.com>
-Date: Tue, 18 Jun 2019 11:03:52 +0200
-In-Reply-To: <CAMty3ZA-wf7tRE=+38SujjXXNGC-pb-m9RzgxFBops6w5n9qzQ@mail.gmail.com>
-References: <1558696796-10745-1-git-send-email-xieqinick@gmail.com>
- <1560756277-5928-1-git-send-email-xieqinick@gmail.com>
- <5ad4d842c462a19e6241fe620705381169d48318.camel@bootlin.com>
- <CAMty3ZA-wf7tRE=+38SujjXXNGC-pb-m9RzgxFBops6w5n9qzQ@mail.gmail.com>
-Organization: Bootlin
-User-Agent: Evolution 3.32.2 
+References: <20190507185215.15441-1-jagan@amarulasolutions.com>
+ <CAMty3ZB4KBKnrhxSG2EsQDg1fAaEDQ_T1swVnZiaKcbtkKc=OA@mail.gmail.com>
+ <853f6ec1-a818-ae69-35b5-ef36fadc9ca1@rock-chips.com>
+ <CAMty3ZA7W5eqx08NPgaJwq32vDWuafcqtKWg59XZEzi77QYSmA@mail.gmail.com>
+From: Kever Yang <kever.yang@rock-chips.com>
+Message-ID: <4fc00068-cedb-3ca6-7ed1-c5bdbbb081d3@rock-chips.com>
+Date: Tue, 18 Jun 2019 17:11:48 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.6.0
 MIME-Version: 1.0
+In-Reply-To: <CAMty3ZA7W5eqx08NPgaJwq32vDWuafcqtKWg59XZEzi77QYSmA@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_020400_013277_B1BD1627 
-X-CRM114-Status: GOOD (  14.78  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190618_021157_853478_7683E679 
+X-CRM114-Status: GOOD (  13.06  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [211.150.70.204 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,71 +88,74 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: U-Boot-Denx <u-boot@lists.denx.de>, Simon Glass <sjg@chromium.org>,
- Kever Yang <kever.yang@rock-chips.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- nick@khadas.com, Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Simon Glass <sjg@chromium.org>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  linux-amarula <linux-amarula@amarulasolutions.com>,
- Nick Xie <xieqinick@gmail.com>
+ U-Boot-Denx <u-boot@lists.denx.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
 
-On Tue, 2019-06-18 at 14:27 +0530, Jagan Teki wrote:
-> On Tue, Jun 18, 2019 at 1:55 PM Paul Kocialkowski
-> <paul.kocialkowski@bootlin.com> wrote:
-> > Hi,
-> > 
-> > On Mon, 2019-06-17 at 15:24 +0800, xieqinick@gmail.com wrote:
-> > > From: Nick Xie <nick@khadas.com>
-> > 
-> > Was this tested with SPL support? I don't see DRAM configuration here
-> > so it seems that it relies on the non-free rockchip loader.
-> > 
-> > If that is the case, could you please indicate that in the commit
-> > message?
-> > 
-> > To maintainers: please do not merge this series before DRAM init and
-> > SPL support is available for these boards.
-> > 
-> > It seems that other RK3399 boards were merged without SPL support and
-> > sofar, I have the feeling that nobody cared to explain how we got into
-> > this broken situation. Please don't merge any more such board.
-> 
-> fyi: no rk3399 boards were merged w/o SPL. lpddr4 boards were merged
-> with TPL-enabled (which was discussed on the threads, if you remember)
-> with below boot chain.
-> 
-> rkbin (TPL) -> SPL -> U-Boot proper
-> 
-> Same case for this board as well.
 
-Here is a quote from Philipp Tomsich on the thread we discussed this:
+On 06/18/2019 03:16 PM, Jagan Teki wrote:
+> On Tue, Jun 18, 2019 at 12:40 PM Kever Yang <kever.yang@rock-chips.com> wrote:
+>> Hi Jagan,
+>>
+>>
+>> On 06/13/2019 02:53 PM, Jagan Teki wrote:
+>>> Hi Kever,
+>>>
+>>> On Wed, May 8, 2019 at 12:23 AM Jagan Teki <jagan@amarulasolutions.com> wrote:
+>>>> RK3399 TPL changes are merged recently which I was thinking
+>>>> of waiting for next MW. so this series skip binman changes
+>>>> from previous version[1] and have only BUILD_TARGET changes.
+>>>>
+>>>> BINMAN changes would need another rework, where we need to consider
+>>>> the TPL image as well and that would send separately.
+>>>>
+>>>> CHanges for v3:
+>>>> - skip binman changes
+>>>> - rebase on u-boot-rockchip/master
+>>>>
+>>>> [1] https://patchwork.ozlabs.org/cover/1092198/
+>>>>
+>>>> Jagan Teki (6):
+>>>>   Makefile: clean image.map
+>>>>   Makefile: clean bl31_*.bin
+>>>>   travis.yml: Add pyelftools install entry
+>>>>   rockchip: rk3399: Get bl31.elf via BL31
+>>>>   board: puma: Get bl31.bin via BL31 and rk3399m0.bin via PMUM0
+>>>>   Kconfig: Add u-boot.itb BUILD_TARGET for Rockchip
+>>> I think you hold for this with puma changes? any further comments
+>>> please let me know.
+>>>
+>> Yes, one reason is not get response from puma board.
+>> And I think this does not break the board support but maybe
+>> break the build process if not all the environment has export as expected?
+> It can't break the build, for not exporting cases the script will
+> create dummy bl31 elf
+Could you create dummy bl31.elf after check if there is one already there,
+which is what we used to do instead of use BL31 env, and then this won't
+break anything and we can migrate to use BL31 smoothly.
 
-" On some boards, there will be no TPL and only a SPL stage that will
-initialise DRAM (as the move to having TPL on the RK3399 is optional).
+Thanks,
+- Kever
+>  and the bl31 variable assign it and finally
+> trigger warning. fyi, the else statement on this patch [1] does what I
+> mentioned.
+>
+> [1] https://patchwork.ozlabs.org/patch/1096505/
+>
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+>
 
-I agree with Paul that the DRAM init should be part of U-Boot whenever
-we add new boards and make an open DRAM init a prerequisite. "
 
-So even if I frequently confuse SPL and TPL, it doesn't change the fact
-that no board should be merged without proper DRAM init.
-
-Please stop pushing for merging these boards. I'm not sure what we
-should do about the boards that were merged already without DRAM init,
-but maybe they should be reverted.
-
-Cheers,
-
-Paul
-
--- 
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
 
 
 _______________________________________________
