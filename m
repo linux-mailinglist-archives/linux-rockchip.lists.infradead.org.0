@@ -2,80 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FE2249621
-	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Jun 2019 01:56:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 088A449892
+	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Jun 2019 07:11:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XqEa1GnhWoetdRgvbX/wu8mkyGFIhPW+tO6aaALJudg=; b=e4zvsGNmRALeMp
-	Uo9aqD3ob7m16+5K7LCfWRsYvz5mOfBOFIDhimpA6rPfPpGSMBq5UM+4pY4YUX0kyJvQNvW4bNsDI
-	KmLfv2NNTdTGhtkPIciWFEB0oEh19gv0rLL6Yucx3+boTlfs29hYlO/0O+Jwuhs2Ds0aYFw5K9aO9
-	3AsfRZwz8iH40hSQEGzXXGLmh2RGiKVgOv5HoTwd5fni46kMNOOZdL2r0vfk+SUrXj8lXcBLErZYX
-	0XMZCyoKt0PYuwLtxsLnBB940zIUP0DtCV2p8hV0Pybdfsuz/iyl7zRw4DD3ZbZtVkeGi6pR6APAp
-	3owwyUL3w4bixtiW34SA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=yKKqjVh+itjmY3yFdTa3B3FN9qSLSOwjX1CMoNPKuto=; b=U29
+	eMnIThEz3y7SAuSKW8pB2+VRDqTwIF7sWv83tvSk1mRfV/FVjpoOfWp6Gt53npkvafS2cxeZQb/5u
+	xzj8LWmEG3klednXkXf2q0Wl2Si2A7xEdXABMDOTJrq9lpVju43qm3L7S22JzwGp1nPkCDhE9KRsX
+	MPvBTxx5QniYdq/r8NgCFhkYRSi7KAExCkJKx5TeNAI77fqNVfUXLSlEodL+7f0r2IxOqTb8S0529
+	+F5YPEMlOnZqAmxsqDq029+lqBoFtwLAE1JOeVJb58cZq1XFqxGRorIg/OctZJP9CXnP5dXU4aUTF
+	D9eXLtN87XCta8BQf2DgfgLXPoVYteg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hd1U0-0002IO-3u; Mon, 17 Jun 2019 23:56:16 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hd6Om-00012B-Ce; Tue, 18 Jun 2019 05:11:12 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hd1Tx-0002I4-0R
- for linux-rockchip@lists.infradead.org; Mon, 17 Jun 2019 23:56:14 +0000
-Received: by mail-pl1-x642.google.com with SMTP id e5so4854452pls.13
- for <linux-rockchip@lists.infradead.org>; Mon, 17 Jun 2019 16:56:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=dKg8IWpKy6c+Mmm1x/ABv30wGFR4GljyNfxBcgFg2Pw=;
- b=HNkEd08n0fBuvBSUwxcbRfbKKjX+xSbWeqKu4ot+NY2JjAFNZCJ4VapUFaJvf+fMvT
- tqY2DPwXtRBKhQhqcmAzjW4Kc1FuGRWI5p4BuK7xaR1ep2WDotDuthkf2H1DcFzAkg78
- sZu82XOcZnOo7nkSOVbc25g0UmjqDnGri30f0=
+ id 1hd6Oh-00011Y-V8; Tue, 18 Jun 2019 05:11:10 +0000
+Received: by mail-qt1-x841.google.com with SMTP id d17so8804241qtj.8;
+ Mon, 17 Jun 2019 22:11:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=fDMh3a2w1cwfSAE7oiWV6Dqc2Kquaf5Nekn2KuD2Y8Y=;
+ b=qw/h7ZpRtljjXP8Gbeg8qkDlYksSmeaYRDHWy1cOhAwCS3tlNYLSvdV/rPXToY4Buc
+ CwGvLrD0++tNHPgaP+buLfopSdl6BrFdSJAG1PciYuElDQu0KS21F3tuEfxwWQ2xS3H8
+ Q4yryTyvCdAhq4L7SB7+uRumd/RFM5Ri4B+0WeoXCeFY1XXG4x0nuzXs4wjmGZjlsVxo
+ SwB2ZTEEIJEWAW2n6O74hJCxznUDkojxkvU/UCSi8BZ7+nHVTD2GeBEHj4vOHsHMDQBE
+ BpZlfeebECKTzwpVuzFla8+cdQ2I+s7xrC3AcTs3hvCKeffxvNxXfPyb+we2o5b4SJRC
+ DHCg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=dKg8IWpKy6c+Mmm1x/ABv30wGFR4GljyNfxBcgFg2Pw=;
- b=L1+VuwJ7c9D3OJDjL3nqPx4SrlOWe4sxM7yUYkmyI1RvcqQrLRsXLSV+SCmNk9okQj
- /m5v4uUvxO56NYaqtIdH78fDsGKHOjOAQi2Mtdl++38QyXmY6gOxcRye5zWotJTPYxZw
- kAkLuw4t2H8/puRCgREYPJPfRJydQopYvgmMBMb93M6UvwewFEB5cL5QuMo4UquAPV7X
- KuBfsOnT0Mky0wUF2FEE5XjwmIpSOlrDosITF3JTlXE/w7mK983C4/Xq5Yno1MM+hIu9
- SsDkLlHovZFN8aZt2wXOYCLEn7rZLjFf+FMRlOUjgd4rEm9uw0aJ/JgmYzkAuSm2pwDl
- QWEg==
-X-Gm-Message-State: APjAAAXGMEemCuibSFl+6BvXcUBLE+3Zzmrs1EAa3Shd2jrrCZUw51TS
- /I9OZiltbO7RosMAux26UTY+jw==
-X-Google-Smtp-Source: APXvYqwTeHKWWT81BsAjxR2wreRo/dxEMF8gYczQSvkIo0doGPaqaqO4KFYbKGwqMQRYkmwUzOrLlw==
-X-Received: by 2002:a17:902:44a4:: with SMTP id
- l33mr31117002pld.174.1560815771850; 
- Mon, 17 Jun 2019 16:56:11 -0700 (PDT)
-Received: from tictac2.mtv.corp.google.com
- ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id k16sm12661878pfa.87.2019.06.17.16.56.10
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=fDMh3a2w1cwfSAE7oiWV6Dqc2Kquaf5Nekn2KuD2Y8Y=;
+ b=hVGPtLd4dDDl2zoM3esYbohO5wpl5/u23a12R5L+SN2sHXvOVCuMv6Ou14ped5o7hc
+ a+Vkwkg/KmarC3WMfJOkd/XXoRjeXa6oynND5BVm5npLeWXXdNRn74PaJYp6lNUiURBx
+ +I0Wb7GpssJ2gaBODJkLYQtpyxPV7lx2P+cfZXbBGJUnXoU8fYXJZ+Y4cZ87r1l9Rj39
+ zK+ngs3fYOI6Kp7GqFBBJjiLVi4npDaz6neV8024QUsTk6SqEz1QAhz3rYkAp0eSwqI9
+ zCzpewvIhuKWiCP0sby34rRIt1FL/4lkulmZGcKaBNYrQqjduvK+gmpNz+BEyZdjdQYl
+ t0Rg==
+X-Gm-Message-State: APjAAAUl8plByWF1vwp49YDoHGHkZ69s0l/t5X1FchjnWhN1gNI/qfkD
+ HchMx9TyqDvmmEQwS3FJa6I=
+X-Google-Smtp-Source: APXvYqxbmmkbcLUWt0fVxPV6fwp19a3T5kuaYbeDXueITgGFNTcUegqNfTNbkPO9oQVhzWZJgW46jw==
+X-Received: by 2002:aed:3fc5:: with SMTP id w5mr81956468qth.317.1560834665933; 
+ Mon, 17 Jun 2019 22:11:05 -0700 (PDT)
+Received: from localhost.localdomain (ool-18b82048.dyn.optonline.net.
+ [24.184.32.72])
+ by smtp.googlemail.com with ESMTPSA id m4sm6523327qka.70.2019.06.17.22.11.04
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 17 Jun 2019 16:56:11 -0700 (PDT)
-From: Douglas Anderson <dianders@chromium.org>
-To: Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, seanpaul@chromium.org
-Subject: [PATCH] drm/bridge/synopsys: dw-hdmi: Handle audio for more clock
- rates
-Date: Mon, 17 Jun 2019 16:55:58 -0700
-Message-Id: <20190617235558.64571-1-dianders@chromium.org>
-X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
-MIME-Version: 1.0
+ Mon, 17 Jun 2019 22:11:05 -0700 (PDT)
+From: Vivek Unune <npcomplete13@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] arm64: dts: rockchip: Add support for SkyKirin X99 TV Box
+Date: Tue, 18 Jun 2019 01:10:25 -0400
+Message-Id: <20190618051025.458-1-npcomplete13@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_165613_081976_48042673 
-X-CRM114-Status: GOOD (  23.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190617_221108_036941_A40902C3 
+X-CRM114-Status: GOOD (  14.40  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (npcomplete13[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (npcomplete13[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -83,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,330 +95,821 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: jernej.skrabec@siol.net, heiko@sntech.de, narmstrong@baylibre.com,
- David Airlie <airlied@linux.ie>, jonas@kwiboo.se,
- Douglas Anderson <dianders@chromium.org>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, dgreid@chromium.org,
- Zheng Yang <zhengyang@rock-chips.com>, Sam Ravnborg <sam@ravnborg.org>,
- Thomas Gleixner <tglx@linutronix.de>, cychiang@chromium.org
+Cc: linux-rockchip@lists.infradead.org, Vivek Unune <npcomplete13@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Let's add some better support for HDMI audio to dw_hdmi.
-Specifically:
+Add devicetree support for SkyKirin X99 TV Box based on RK3999
 
-1. For 44.1 kHz audio the old code made the assumption that an N of
-6272 was right most of the time.  That wasn't true and the new table
-should give better 44.1 kHz audio for many more rates.
+Following peripherals tested and work:
 
-2. The new table has values from the HDMI spec for 297 MHz and 594
-MHz.
+Peripheral works:
+- UART2 debug
+- eMMC
+- USB 3.0 port
+- USB 2.0 port
+- sdio, sd-card
+- HDMI
+- Ethernet
+- WiFi/BT
 
-3. There is now code to try to come up with a more idea N/CTS for
-clock rates that aren't in the table.  This code is a bit slow because
-it iterates over every possible value of N and picks the best one, but
-it should make a good fallback.
-
-4. The new code allows for platforms that know they make a clock rate
-slightly differently to pick different N/CTS values.  For instance on
-rk3288 we can make 25,176,471 Hz instead of 25,174,825.1748... Hz
-(25.2 MHz / 1.001).  A future patch to the rk3288 platform code could
-enable support for this clock rate and specify the N/CTS that would be
-ideal.
-
-NOTE: the oddest part of this patch comes about because computing the
-ideal N/CTS means knowing the _exact_ clock rate, not a rounded
-version of it.  The drm framework makes this harder by rounding rates
-to kHz, but even if it didn't there might be cases where the ideal
-rate could only be calculated if we knew the real (non-integral) rate.
-This means that in cases where we know (or believe) that the true rate
-is something other than the rate we are told by drm.
-
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
+Not tested:
+- Type-C port
+- OPTICAL
+- IR
+Signed-off-by: Vivek Unune <npcomplete13@gmail.com>
 ---
+ .../devicetree/bindings/arm/rockchip.yaml     |   5 +
+ arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+ .../boot/dts/rockchip/rk3399-skykirinx-99.dts | 748 ++++++++++++++++++
+ 3 files changed, 903 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-skykirinx-99.dts
 
- drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 208 +++++++++++++++++-----
- include/drm/bridge/dw_hdmi.h              |   8 +
- 2 files changed, 175 insertions(+), 41 deletions(-)
-
-diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-index c6490949d9db..edede21e85e4 100644
---- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-+++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-@@ -60,6 +60,75 @@ enum hdmi_datamap {
- 	YCbCr422_12B = 0x12,
- };
+diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+index 5c6bbf10abc9..1cff15490da8 100644
+--- a/Documentation/devicetree/bindings/arm/rockchip.yaml
++++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+@@ -446,6 +446,11 @@ properties:
+           - const: rockchip,rv1108-evb
+           - const: rockchip,rv1108
  
-+/*
-+ * Unless otherwise noted, entries in this table are 100% optimization.
-+ * Values can be obtained from hdmi_compute_n() but that function is
-+ * slow so we pre-compute values we expect to see.
-+ *
-+ * All 32k and 48k values are expected to be the same (due to the way
-+ * the math works) for any rate that's an exact kHz.
-+ *
-+ * If a particular platform knows that it makes a rate slightly
-+ * differently then it should add a platform-specific match.
-+ */
-+static const struct dw_hdmi_audio_tmds_n common_tmds_n_table[] = {
-+	/* Doesn't match computations, assumes real clock = 25.2 MHz / 1.001 */
-+	{ .tmds = 25175000, .n_32k = 4576, .n_44k1 = 7007, .n_48k = 6864, },
++      - description: SkyKirin RK3399 TV Box
++        items:
++          - const: rockchip,rk3399-skykirin-x99
++          - const: rockchip,rk3399
 +
-+	{ .tmds = 25200000, .n_32k = 4096, .n_44k1 = 5656, .n_48k = 6144, },
-+	{ .tmds = 27000000, .n_32k = 4096, .n_44k1 = 5488, .n_48k = 6144, },
-+	{ .tmds = 27027000, .n_32k = 4096, .n_44k1 = 6272, .n_48k = 6144, },
-+	{ .tmds = 28320000, .n_32k = 4096, .n_44k1 = 5586, .n_48k = 6144, },
-+	{ .tmds = 30240000, .n_32k = 4096, .n_44k1 = 5642, .n_48k = 6144, },
-+	{ .tmds = 31500000, .n_32k = 4096, .n_44k1 = 5600, .n_48k = 6144, },
-+	{ .tmds = 32000000, .n_32k = 4096, .n_44k1 = 5733, .n_48k = 6144, },
-+	{ .tmds = 33750000, .n_32k = 4096, .n_44k1 = 6272, .n_48k = 6144, },
-+	{ .tmds = 36000000, .n_32k = 4096, .n_44k1 = 5684, .n_48k = 6144, },
-+	{ .tmds = 40000000, .n_32k = 4096, .n_44k1 = 5733, .n_48k = 6144, },
-+	{ .tmds = 49500000, .n_32k = 4096, .n_44k1 = 5488, .n_48k = 6144, },
-+	{ .tmds = 50000000, .n_32k = 4096, .n_44k1 = 5292, .n_48k = 6144, },
-+	{ .tmds = 54000000, .n_32k = 4096, .n_44k1 = 5684, .n_48k = 6144, },
-+	{ .tmds = 65000000, .n_32k = 4096, .n_44k1 = 7056, .n_48k = 6144, },
-+	{ .tmds = 68250000, .n_32k = 4096, .n_44k1 = 5376, .n_48k = 6144, },
-+	{ .tmds = 71000000, .n_32k = 4096, .n_44k1 = 7056, .n_48k = 6144, },
-+	{ .tmds = 72000000, .n_32k = 4096, .n_44k1 = 5635, .n_48k = 6144, },
-+	{ .tmds = 73250000, .n_32k = 4096, .n_44k1 = 14112, .n_48k = 6144, },
+       - description: Theobroma Systems RK3368-uQ7 with Haikou baseboard
+         items:
+           - const: tsd,rk3368-uq7-haikou
+diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
+index 5f2687acbf94..dc5fbf865012 100644
+--- a/arch/arm64/boot/dts/rockchip/Makefile
++++ b/arch/arm64/boot/dts/rockchip/Makefile
+@@ -27,3 +27,4 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock960.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rockpro64.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire-excavator.dtb
++dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-skykirin-x99.dtb
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-skykirin-x99.dts b/arch/arm64/boot/dts/rockchip/rk3399-skykirin-x99.dts
+new file mode 100644
+index 000000000000..4b6af66eb085
+--- /dev/null
++++ b/arch/arm64/boot/dts/rockchip/rk3399-skykirin-x99.dts
+@@ -0,0 +1,748 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/dts-v1/;
++#include <dt-bindings/pwm/pwm.h>
++#include <dt-bindings/input/input.h>
++#include "rk3399.dtsi"
++#include "rk3399-opp.dtsi"
 +
-+	/* Doesn't match computations, assumes real clock = 74.25 MHz / 1.001 */
-+	{ .tmds = 74176000, .n_32k = 11648, .n_44k1 = 17836, .n_48k = 11648, },
++/ {
++	model = "SkyKirin X99 TV BOX";
++	compatible = "rockchip,rk3399-skykirin-x99", "rockchip,rk3399";
 +
-+	{ .tmds = 74250000, .n_32k = 4096, .n_44k1 = 6272, .n_48k = 6144, },
-+	{ .tmds = 75000000, .n_32k = 4096, .n_44k1 = 5880, .n_48k = 6144, },
-+	{ .tmds = 78750000, .n_32k = 4096, .n_44k1 = 5600, .n_48k = 6144, },
-+	{ .tmds = 78800000, .n_32k = 4096, .n_44k1 = 5292, .n_48k = 6144, },
-+	{ .tmds = 79500000, .n_32k = 4096, .n_44k1 = 4704, .n_48k = 6144, },
-+	{ .tmds = 83500000, .n_32k = 4096, .n_44k1 = 7056, .n_48k = 6144, },
-+	{ .tmds = 85500000, .n_32k = 4096, .n_44k1 = 5488, .n_48k = 6144, },
-+	{ .tmds = 88750000, .n_32k = 4096, .n_44k1 = 14112, .n_48k = 6144, },
-+	{ .tmds = 97750000, .n_32k = 4096, .n_44k1 = 14112, .n_48k = 6144, },
-+	{ .tmds = 101000000, .n_32k = 4096, .n_44k1 = 7056, .n_48k = 6144, },
-+	{ .tmds = 106500000, .n_32k = 4096, .n_44k1 = 4704, .n_48k = 6144, },
-+	{ .tmds = 108000000, .n_32k = 4096, .n_44k1 = 5684, .n_48k = 6144, },
-+	{ .tmds = 115500000, .n_32k = 4096, .n_44k1 = 5712, .n_48k = 6144, },
-+	{ .tmds = 119000000, .n_32k = 4096, .n_44k1 = 5544, .n_48k = 6144, },
-+	{ .tmds = 135000000, .n_32k = 4096, .n_44k1 = 5488, .n_48k = 6144, },
-+	{ .tmds = 146250000, .n_32k = 4096, .n_44k1 = 6272, .n_48k = 6144, },
++	chosen {
++		stdout-path = "serial2:1500000n8";
++	};
 +
-+	/* Doesn't match computations, assumes real clock = 148.5 MHz / 1.001 */
-+	{ .tmds = 148352000, .n_32k = 11648, .n_44k1 = 8918, .n_48k = 5824, },
++	clkin_gmac: external-gmac-clock {
++		compatible = "fixed-clock";
++		clock-frequency = <125000000>;
++		clock-output-names = "clkin_gmac";
++		#clock-cells = <0>;
++	};
 +
-+	{ .tmds = 148500000, .n_32k = 4096, .n_44k1 = 5488, .n_48k = 6144, },
-+	{ .tmds = 154000000, .n_32k = 4096, .n_44k1 = 5544, .n_48k = 6144, },
-+	{ .tmds = 162000000, .n_32k = 4096, .n_44k1 = 5684, .n_48k = 6144, },
++	dc_5v: dc-5v {
++		compatible = "regulator-fixed";
++		regulator-name = "dc_5v";
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++	};
 +
-+	/* For 297 MHz+ HDMI spec has some other rule for setting N */
-+	{ .tmds = 297000000, .n_32k = 3073, .n_44k1 = 4704, .n_48k = 5120, },
-+	{ .tmds = 594000000, .n_32k = 3073, .n_44k1 = 9408, .n_48k = 10240, },
++	vcc1v8_s0: vcc1v8-s0 {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc1v8_s0";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++		regulator-always-on;
++	};
 +
-+	/* End of table */
-+	{ .tmds = 0,         .n_32k = 0,    .n_44k1 = 0,    .n_48k = 0, },
++	vcc_sys: vcc-sys {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc_sys";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		regulator-always-on;
++		vin-supply = <&dc_5v>;
++	};
++
++	vcc_phy: vcc-phy-regulator {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc_phy";
++		regulator-always-on;
++		regulator-boot-on;
++	};
++
++	vcc3v3_sys: vcc3v3-sys {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc3v3_sys";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		regulator-always-on;
++		vin-supply = <&vcc_sys>;
++	};
++
++	vcc5v0_host: vcc5v0-host-regulator {
++		compatible = "regulator-fixed";
++		enable-active-high;
++		gpio = <&gpio4 RK_PD2 GPIO_ACTIVE_HIGH>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&host_vbus_drv>;
++		regulator-name = "vcc5v0_host";
++		regulator-always-on;
++	};
++
++	vcc5v0_typec: vcc5v0-typec-regulator {
++		compatible = "regulator-fixed";
++		enable-active-high;
++		gpio = <&gpio1 RK_PA3 GPIO_ACTIVE_HIGH>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&vcc5v0_typec_en>;
++		regulator-name = "vcc5v0_typec";
++		regulator-always-on;
++		vin-supply = <&vcc5v0_usb>;
++	};
++
++	vcc5v0_usb: vcc5v0-usb {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc5v0_usb";
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		vin-supply = <&dc_5v>;
++	};
++
++	vdd_log: vdd-log {
++		compatible = "pwm-regulator";
++		pwms = <&pwm2 0 25000 1>;
++		pwm-supply = <&vcc_sys>;
++		regulator-name = "vdd_log";
++		regulator-min-microvolt = <800000>;
++		regulator-max-microvolt = <1400000>;
++		regulator-always-on;
++		regulator-boot-on;
++
++		/* for rockchip boot on */
++		rockchip,pwm_id= <2>;
++		rockchip,pwm_voltage = <900000>;
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		power-led {
++			gpios = <&gpio4 RK_PC2 GPIO_ACTIVE_HIGH>;
++			linux,default-trigger = "power";
++		};
++	};
++
++	sdio_pwrseq: sdio-pwrseq {
++		compatible = "mmc-pwrseq-simple";
++		clocks = <&rk808 1>;
++		clock-names = "ext_clock";
++		pinctrl-names = "default";
++		pinctrl-0 = <&wifi_reg_on_h>;
++		reset-gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
++	};
++
 +};
 +
- static const u16 csc_coeff_default[3][4] = {
- 	{ 0x2000, 0x0000, 0x0000, 0x0000 },
- 	{ 0x0000, 0x2000, 0x0000, 0x0000 },
-@@ -518,60 +587,117 @@ static void hdmi_set_cts_n(struct dw_hdmi *hdmi, unsigned int cts,
- 	hdmi_writeb(hdmi, n & 0xff, HDMI_AUD_N1);
- }
- 
--static unsigned int hdmi_compute_n(unsigned int freq, unsigned long pixel_clk)
-+static int hdmi_match_tmds_n_table(struct dw_hdmi *hdmi, unsigned int freq,
-+				   unsigned long pixel_clk)
- {
--	unsigned int n = (128 * freq) / 1000;
--	unsigned int mult = 1;
-+	const struct dw_hdmi_plat_data *plat_data = hdmi->plat_data;
-+	const struct dw_hdmi_audio_tmds_n *tmds_n = NULL;
-+	int mult = 1;
-+	int i;
- 
- 	while (freq > 48000) {
- 		mult *= 2;
- 		freq /= 2;
- 	}
- 
-+	if (plat_data->tmds_n_table) {
-+		for (i = 0; plat_data->tmds_n_table[i].tmds != 0; i++) {
-+			if (pixel_clk == plat_data->tmds_n_table[i].tmds) {
-+				tmds_n = &plat_data->tmds_n_table[i];
-+				break;
-+			}
-+		}
-+	}
-+
-+	if (tmds_n == NULL) {
-+		for (i = 0; common_tmds_n_table[i].tmds != 0; i++) {
-+			if (pixel_clk == common_tmds_n_table[i].tmds) {
-+				tmds_n = &common_tmds_n_table[i];
-+				break;
-+			}
-+		}
-+	}
-+
-+	if (tmds_n == NULL)
-+		return -ENOENT;
-+
- 	switch (freq) {
- 	case 32000:
--		if (pixel_clk == 25175000)
--			n = 4576;
--		else if (pixel_clk == 27027000)
--			n = 4096;
--		else if (pixel_clk == 74176000 || pixel_clk == 148352000)
--			n = 11648;
--		else
--			n = 4096;
--		n *= mult;
--		break;
--
-+		return tmds_n->n_32k * mult;
- 	case 44100:
--		if (pixel_clk == 25175000)
--			n = 7007;
--		else if (pixel_clk == 74176000)
--			n = 17836;
--		else if (pixel_clk == 148352000)
--			n = 8918;
--		else
--			n = 6272;
--		n *= mult;
--		break;
--
-+		return tmds_n->n_44k1 * mult;
- 	case 48000:
--		if (pixel_clk == 25175000)
--			n = 6864;
--		else if (pixel_clk == 27027000)
--			n = 6144;
--		else if (pixel_clk == 74176000)
--			n = 11648;
--		else if (pixel_clk == 148352000)
--			n = 5824;
--		else
--			n = 6144;
--		n *= mult;
--		break;
--
-+		return tmds_n->n_48k * mult;
- 	default:
--		break;
-+		return -ENOENT;
- 	}
-+}
-+
-+static u64 hdmi_audio_math_diff(unsigned int freq, unsigned int n,
-+				unsigned int pixel_clk)
-+{
-+	u64 final, diff;
-+	u64 cts;
-+
-+	final = (u64)pixel_clk * n;
-+
-+	cts = final;
-+	do_div(cts, 128 * freq);
-+
-+	diff = final - (u64)cts * (128 * freq);
-+
-+	return diff;
-+}
-+
-+static unsigned int hdmi_compute_n(struct dw_hdmi *hdmi, unsigned int freq,
-+				   unsigned long pixel_clk)
-+{
-+	unsigned int min_n = DIV_ROUND_UP((128 * freq), 1500);
-+	unsigned int max_n = (128 * freq) / 300;
-+	unsigned int ideal_n = (128 * freq) / 1000;
-+	unsigned int best_n_distance = ideal_n;
-+	unsigned int best_n = 0;
-+	u64 best_diff = U64_MAX;
-+	int n;
-+
-+	/* If the ideal N could satisfy the audio math, then just take it */
-+	if (hdmi_audio_math_diff(freq, ideal_n, pixel_clk) == 0)
-+		return ideal_n;
-+
-+	for (n = min_n; n <= max_n; n++) {
-+		u64 diff = hdmi_audio_math_diff(freq, n, pixel_clk);
-+
-+		if (diff < best_diff || (diff == best_diff &&
-+		    abs(n - ideal_n) < best_n_distance)) {
-+			best_n = n;
-+			best_diff = diff;
-+			best_n_distance = abs(best_n - ideal_n);
-+		}
-+
-+		/*
-+		 * The best N already satisfy the audio math, and also be
-+		 * the closest value to ideal N, so just cut the loop.
-+		 */
-+		if ((best_diff == 0) && (abs(n - ideal_n) > best_n_distance))
-+			break;
-+	}
-+
-+	return best_n;
-+}
-+
-+static unsigned int hdmi_find_n(struct dw_hdmi *hdmi, unsigned int freq,
-+				unsigned long pixel_clk)
-+{
-+	int n;
-+
-+	n = hdmi_match_tmds_n_table(hdmi, freq, pixel_clk);
-+	if (n > 0)
-+		return n;
-+
-+	dev_warn(hdmi->dev, "Rate %lu missing; compute N dynamically\n",
-+		 pixel_clk);
- 
--	return n;
-+	return hdmi_compute_n(hdmi, freq, pixel_clk);
- }
- 
- static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
-@@ -581,7 +707,7 @@ static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
- 	unsigned int n, cts;
- 	u64 tmp;
- 
--	n = hdmi_compute_n(sample_rate, pixel_clk);
-+	n = hdmi_find_n(hdmi, sample_rate, pixel_clk);
- 
- 	/*
- 	 * Compute the CTS value from the N value.  Note that CTS and N
-diff --git a/include/drm/bridge/dw_hdmi.h b/include/drm/bridge/dw_hdmi.h
-index c402364aec0d..5ee6b0a127aa 100644
---- a/include/drm/bridge/dw_hdmi.h
-+++ b/include/drm/bridge/dw_hdmi.h
-@@ -90,6 +90,13 @@ enum dw_hdmi_phy_type {
- 	DW_HDMI_PHY_VENDOR_PHY = 0xfe,
- };
- 
-+struct dw_hdmi_audio_tmds_n {
-+	unsigned long tmds;
-+	unsigned int n_32k;
-+	unsigned int n_44k1;
-+	unsigned int n_48k;
++&cpu_l0 {
++	cpu-supply = <&vdd_cpu_l>;
 +};
 +
- struct dw_hdmi_mpll_config {
- 	unsigned long mpixelclock;
- 	struct {
-@@ -137,6 +144,7 @@ struct dw_hdmi_plat_data {
- 	const struct dw_hdmi_mpll_config *mpll_cfg;
- 	const struct dw_hdmi_curr_ctrl *cur_ctr;
- 	const struct dw_hdmi_phy_config *phy_config;
-+	const struct dw_hdmi_audio_tmds_n *tmds_n_table;
- 	int (*configure_phy)(struct dw_hdmi *hdmi,
- 			     const struct dw_hdmi_plat_data *pdata,
- 			     unsigned long mpixelclock);
++&cpu_l1 {
++	cpu-supply = <&vdd_cpu_l>;
++};
++
++&cpu_l2 {
++	cpu-supply = <&vdd_cpu_l>;
++};
++
++&cpu_l3 {
++	cpu-supply = <&vdd_cpu_l>;
++};
++
++&cpu_b0 {
++	cpu-supply = <&vdd_cpu_b>;
++};
++
++&cpu_b1 {
++	cpu-supply = <&vdd_cpu_b>;
++};
++
++&emmc_phy {
++	status = "okay";
++};
++
++&i2c0 {
++	status = "okay";
++	i2c-scl-rising-time-ns = <180>;
++	i2c-scl-falling-time-ns = <30>;
++	clock-frequency = <400000>;
++
++	vdd_cpu_b: syr827@40 {
++		compatible = "silergy,syr827";
++		reg = <0x40>;
++		regulator-compatible = "fan53555-reg";
++		pinctrl-0 = <&vsel1_gpio>;
++		vsel-gpios = <&gpio1 RK_PC1 GPIO_ACTIVE_HIGH>;
++		regulator-name = "vdd_cpu_b";
++		regulator-min-microvolt = <712500>;
++		regulator-max-microvolt = <1500000>;
++		regulator-ramp-delay = <1000>;
++		fcs,suspend-voltage-selector = <1>;
++		regulator-always-on;
++		regulator-boot-on;
++		vin-supply = <&vcc_sys>;
++		regulator-state-mem {
++			regulator-off-in-suspend;
++		};
++	};
++
++	vdd_gpu: syr828@41 {
++		compatible = "silergy,syr828";
++		reg = <0x41>;
++		regulator-compatible = "fan53555-reg";
++		pinctrl-0 = <&vsel2_gpio>;
++		vsel-gpios = <&gpio1 RK_PB6 GPIO_ACTIVE_HIGH>;
++		regulator-name = "vdd_gpu";
++		regulator-min-microvolt = <712500>;
++		regulator-max-microvolt = <1500000>;
++		regulator-ramp-delay = <1000>;
++		fcs,suspend-voltage-selector = <1>;
++		regulator-always-on;
++		regulator-boot-on;
++		vin-supply = <&vcc_sys>;
++		regulator-initial-mode = <1>; /* 1:force PWM 2:auto */
++		regulator-state-mem {
++			regulator-off-in-suspend;
++		};
++	};
++
++	rk808: pmic@1b {
++		compatible = "rockchip,rk808";
++		reg = <0x1b>;
++		interrupt-parent = <&gpio1>;
++		interrupts = <21 IRQ_TYPE_LEVEL_LOW>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&pmic_int_l>;
++		rockchip,system-power-controller;
++		wakeup-source;
++		#clock-cells = <1>;
++		clock-output-names = "xin32k", "rtc_clko_wifi";
++
++		vcc1-supply = <&vcc_sys>;
++		vcc2-supply = <&vcc_sys>;
++		vcc3-supply = <&vcc_sys>;
++		vcc4-supply = <&vcc_sys>;
++		vcc6-supply = <&vcc_sys>;
++		vcc7-supply = <&vcc_sys>;
++		vcc8-supply = <&vcc3v3_sys>;
++		vcc9-supply = <&vcc_sys>;
++		vcc10-supply = <&vcc_sys>;
++		vcc11-supply = <&vcc_sys>;
++		vcc12-supply = <&vcc3v3_sys>;
++		vddio-supply = <&vcc_1v8>;
++
++		regulators {
++			vdd_center: DCDC_REG1 {
++				regulator-name = "vdd_center";
++				regulator-min-microvolt = <900000>;
++				regulator-max-microvolt = <900000>;
++				regulator-ramp-delay = <6001>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
++			};
++
++			vdd_cpu_l: DCDC_REG2 {
++				regulator-name = "vdd_cpu_l";
++				regulator-min-microvolt = <750000>;
++				regulator-max-microvolt = <1350000>;
++				regulator-ramp-delay = <6001>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
++			};
++
++			vcc_ddr: DCDC_REG3 {
++				regulator-name = "vcc_ddr";
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++				};
++			};
++
++			vcc_1v8: DCDC_REG4 {
++				regulator-name = "vcc_1v8";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <1800000>;
++				};
++			};
++
++			vcc1v8_dvp: LDO_REG1 {
++				regulator-name = "vcc1v8_dvp";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <1800000>;
++				};
++			};
++
++			vcca1v8_hdmi: LDO_REG2 {
++				regulator-name = "vcca1v8_hdmi";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <1800000>;
++				};
++			};
++
++			vcca_1v8: LDO_REG3 {
++				regulator-name = "vcca_1v8";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <1800000>;
++				};
++			};
++
++			vcc_sd: LDO_REG4 {
++				regulator-name = "vcc_sd";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <3300000>;
++				};
++			};
++
++			vcc3v0_sd: LDO_REG5 {
++				regulator-name = "vcc3v0_sd";
++				regulator-min-microvolt = <3000000>;
++				regulator-max-microvolt = <3000000>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <3000000>;
++				};
++			};
++
++			vcc_1v5: LDO_REG6 {
++				regulator-name = "vcc_1v5";
++				regulator-min-microvolt = <1500000>;
++				regulator-max-microvolt = <1500000>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <1500000>;
++				};
++			};
++
++			vcca0v9_hdmi: LDO_REG7 {
++				regulator-name = "vcca0v9_hdmi";
++				regulator-min-microvolt = <900000>;
++				regulator-max-microvolt = <900000>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <900000>;
++				};
++			};
++
++			vcc_3v0: LDO_REG8 {
++				regulator-name = "vcc_3v0";
++				regulator-min-microvolt = <3000000>;
++				regulator-max-microvolt = <3000000>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <3000000>;
++				};
++			};
++
++			vcc3v3_s3: SWITCH_REG1 {
++				regulator-name = "vcc3v3_s3";
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++				};
++			};
++
++			vcc3v3_s0: SWITCH_REG2 {
++				regulator-name = "vcc3v3_s0";
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++				};
++			};
++		};
++	};
++};
++
++&i2c1 {
++	i2c-scl-rising-time-ns = <300>;
++	i2c-scl-falling-time-ns = <15>;
++	status = "okay";
++};
++
++&i2c3 {
++	i2c-scl-rising-time-ns = <450>;
++	i2c-scl-falling-time-ns = <15>;
++	status = "okay";
++};
++
++&i2c4 {
++	i2c-scl-rising-time-ns = <600>;
++	i2c-scl-falling-time-ns = <40>;
++	status = "okay";
++
++	fusb0: typec-portc@22 {
++		compatible = "fcs,fusb302";
++		reg = <0x22>;
++		interrupt-parent = <&gpio1>;
++		interrupts = <RK_PA2 IRQ_TYPE_LEVEL_LOW>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&fusb0_int>;
++		vbus-supply = <&vcc5v0_typec>;
++		status = "okay";
++	};
++};
++
++&i2s0 {
++	rockchip,playback-channels = <8>;
++	rockchip,capture-channels = <8>;
++	status = "okay";
++};
++
++&i2s1 {
++	rockchip,playback-channels = <2>;
++	rockchip,capture-channels = <2>;
++	status = "okay";
++};
++
++&i2s2 {
++	status = "okay";
++};
++
++&gmac {
++	assigned-clocks = <&cru SCLK_RMII_SRC>;
++	assigned-clock-parents = <&clkin_gmac>;
++	clock_in_out = "input";
++	phy-supply = <&vcc_phy>;
++	phy-mode = "rgmii";
++	pinctrl-names = "default";
++	pinctrl-0 = <&rgmii_pins>;
++	snps,reset-gpio = <&gpio3 RK_PB7 GPIO_ACTIVE_LOW>;
++	snps,reset-active-low;
++	snps,reset-delays-us = <0 10000 50000>;
++	tx_delay = <0x28>;
++	rx_delay = <0x11>;
++	status = "okay";
++};
++
++&gpu {
++	status = "okay";
++	mali-supply = <&vdd_gpu>;
++};
++
++&hdmi {
++	ddc-i2c-bus = <&i2c3>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&hdmi_cec>;
++	status = "okay";
++};
++
++&hdmi_sound {
++	status = "okay";
++};
++
++&io_domains {
++	status = "okay";
++
++	bt656-supply = <&vcc1v8_s0>; /* bt656_gpio2ab_ms */
++	audio-supply = <&vcc1v8_s0>; /* audio_gpio3d4a_ms */
++	sdmmc-supply = <&vcc_sd>; /* sdmmc_gpio4b_ms */
++	gpio1830-supply = <&vcc_3v0>; /* gpio1833_gpio4cd_ms */
++};
++
++&pmu_io_domains {
++	status = "okay";
++	pmu1830-supply = <&vcc_1v8>;
++};
++
++&pinctrl {
++	fusb30x {
++		fusb0_int: fusb0-int {
++			rockchip,pins =
++				<1 RK_PA2 RK_FUNC_GPIO &pcfg_pull_up>;
++		};
++	};
++
++	gmac {
++		rgmii_sleep_pins: rgmii-sleep-pins {
++			rockchip,pins =
++				<3 RK_PB7 RK_FUNC_GPIO &pcfg_output_low>;
++		};
++	};
++
++
++	pmic {
++		pmic_int_l: pmic-int-l {
++			rockchip,pins =
++				<1 RK_PC5 RK_FUNC_GPIO &pcfg_pull_up>;
++		};
++
++		vsel1_gpio: vsel1-gpio {
++			rockchip,pins =
++				<1 RK_PC1 RK_FUNC_GPIO &pcfg_pull_down>;
++		};
++
++		vsel2_gpio: vsel2-gpio {
++			rockchip,pins =
++				<1 RK_PB6 RK_FUNC_GPIO &pcfg_pull_down>;
++		};
++	};
++
++	usb-typec {
++		vcc5v0_typec_en: vcc5v0_typec_en {
++			rockchip,pins = <1 RK_PA3 RK_FUNC_GPIO &pcfg_pull_up>;
++		};
++	};
++
++	sdio {
++		bt_host_wake_l: bt-host-wake-l {
++			rockchip,pins = <0 RK_PA4 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++
++		bt_reg_on_h: bt-reg-on-h {
++			/* external pullup to VCC1V8_PMUPLL */
++			rockchip,pins = <0 RK_PB1 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++
++		bt_wake_l: bt-wake-l {
++			rockchip,pins = <2 RK_PD2 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++
++		wifi_reg_on_h: wifi-reg_on-h {
++			rockchip,pins = <0 RK_PB2 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++
++	wifi {
++		wifi_host_wake_l: wifi-host-wake-l {
++			rockchip,pins = <0 RK_PA3 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++
++	usb2 {
++		host_vbus_drv: host-vbus-drv {
++			rockchip,pins =
++				<4 RK_PD2 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++
++};
++
++&pwm0 {
++	status = "okay";
++};
++
++&pwm2 {
++	status = "okay";
++	pinctrl-0 = <&pwm2_pin_pull_down>;
++};
++
++&saradc {
++	vref-supply = <&vcc1v8_s0>;
++	status = "okay";
++};
++
++&sdmmc {
++	clock-frequency = <150000000>;
++	clock-freq-min-max = <200000 150000000>;
++	supports-sd;
++	bus-width = <4>;
++	cap-mmc-highspeed;
++	cap-sd-highspeed;
++	disable-wp;
++	num-slots = <1>;
++	vqmmc-supply = <&vcc_sd>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd &sdmmc_bus4>;
++	card-detect-delay = <800>;
++	status = "okay";
++};
++
++&sdhci {
++	bus-width = <8>;
++	mmc-hs400-1_8v;
++	mmc-hs400-enhanced-strobe;
++	supports-emmc;
++	non-removable;
++	keep-power-in-suspend;
++	status = "okay";
++};
++
++&sdio0 {
++	bus-width = <4>;
++	clock-frequency = <50000000>;
++	cap-sdio-irq;
++	cap-sd-highspeed;
++	keep-power-in-suspend;
++	mmc-pwrseq = <&sdio_pwrseq>;
++	non-removable;
++	pinctrl-names = "default";
++	pinctrl-0 = <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
++	sd-uhs-sdr104;
++	#address-cells = <1>;
++	#size-cells = <0>;
++	status = "okay";
++
++	brcmf: wifi@1 {
++		compatible = "brcm,bcm4329-fmac";
++		reg = <1>;
++		interrupt-parent = <&gpio0>;
++		interrupts = <RK_PA3 GPIO_ACTIVE_HIGH>;
++		interrupt-names = "host-wake";
++		pinctrl-names = "default";
++		pinctrl-0 = <&wifi_host_wake_l>;
++	};
++};
++
++&spdif {
++	status = "okay";
++	pinctrl-0 = <&spdif_bus_1>;
++	#sound-dai-cells = <0>;
++};
++
++&spi1 {
++	status = "okay";
++	max-freq = <10000000>;
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		#address-cells = <1>;
++		#size-cells = <1>;
++		reg = <0>;
++		spi-max-frequency = <10000000>;
++	};
++};
++
++&tcphy0 {
++	status = "okay";
++};
++
++&tcphy1 {
++	status = "okay";
++};
++
++&tsadc {
++	/* tshut mode 0:CRU 1:GPIO */
++	rockchip,hw-tshut-mode = <1>;
++	/* tshut polarity 0:LOW 1:HIGH */
++	rockchip,hw-tshut-polarity = <1>;
++	rockchip,hw-tshut-temp = <110000>;
++	status = "okay";
++};
++
++&u2phy0 {
++	status = "okay";
++
++	u2phy0_otg: otg-port {
++		status = "okay";
++	};
++
++	u2phy0_host: host-port {
++		phy-supply = <&vcc5v0_host>;
++		status = "okay";
++	};
++};
++
++&u2phy1 {
++	status = "okay";
++
++	u2phy1_otg: otg-port {
++		status = "okay";
++	};
++
++	u2phy1_host: host-port {
++		phy-supply = <&vcc5v0_host>;
++		status = "okay";
++	};
++};
++
++&uart0 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart0_xfer &uart0_rts &uart0_cts>;
++	status = "okay";
++
++	bluetooth {
++		compatible = "brcm,bcm43438-bt";
++		clocks = <&rk808 1>;
++		clock-names = "lpo";
++		device-wakeup-gpios = <&gpio2 RK_PD2 GPIO_ACTIVE_HIGH>;
++		host-wakeup-gpios = <&gpio0 RK_PA4 GPIO_ACTIVE_HIGH>;
++		shutdown-gpios = <&gpio0 RK_PB1 GPIO_ACTIVE_HIGH>;
++		max-speed = <4000000>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&bt_reg_on_h &bt_host_wake_l &bt_wake_l>;
++		vbat-supply = <&vcc3v3_sys>;
++		vddio-supply = <&vcc_1v8>;
++	};
++};
++
++&uart2 {
++	status = "okay";
++};
++
++&usb_host0_ehci {
++	status = "okay";
++};
++
++&usb_host0_ohci {
++	status = "okay";
++};
++
++&usb_host1_ehci {
++	status = "okay";
++};
++
++&usb_host1_ohci {
++	status = "okay";
++};
++
++&usbdrd3_0 {
++	status = "okay";
++};
++
++&usbdrd_dwc3_0 {
++	status = "okay";
++	dr_mode = "otg";
++};
++
++&usbdrd3_1 {
++	status = "okay";
++};
++
++&usbdrd_dwc3_1 {
++	status = "okay";
++	dr_mode = "host";
++};
++
++&vopb {
++	status = "okay";
++};
++
++&vopb_mmu {
++	status = "okay";
++};
 -- 
-2.22.0.410.gd8fdbe21b5-goog
+2.17.1
 
 
 _______________________________________________
