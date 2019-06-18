@@ -2,64 +2,89 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B0604A836
-	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Jun 2019 19:23:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 407AB4A9FC
+	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Jun 2019 20:35:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gLWSCSuR++rk/d8UifwgUqE8aV7LC9fMmsRhZ2PxjS8=; b=dyJyzyC9Hd6Ec0
-	IL3/sjI6syyoLYOqhITxIPLizx9FYunqVDvvTxK8OrN03pUeAMfMASKFMyW/xXLyajKR5VehtQxz0
-	k7JSp/dXL2q6G0j7l3z3I5Hekrzth6UkvHOyUwbSfPy4QhXq+KUTmty44FvfW18VOUFP05O0Xiarb
-	iZwaDmKphbPbHmiosLIEdnOHpBE1ShlXtWbzoG5gW09qb7vHa+d11UvnZ9cvDxe2/QOPk3y6Un11v
-	+j0bc/CcCWgyNe5N7omM0mL1nlEK1MPMAVVpvw+hMTsZ2E0mriafUsq2iNBFUbaRVUcRrWFE1NVip
-	cbiFNioYX1Oy3cxqVx0g==;
+	List-Owner; bh=ZUn184k0THPFP/IP59p9f5cp07/oq359JD7T3FNMnek=; b=VNM3T/T0oeJmOE
+	sne3fJNutD4cCjTg2cp40Bd1YrJDEIhck1dXKon/8Vu1a/XTN2kvfN//cXQOJijLhD2lnKPviMYjz
+	0Wercz8Uz4Ttgk7oCYoE9CcbdZe1Pd7gQ5Fh+IXzalUHkWVn7FoIGi8BsTpTO5zy9Idm2s7gomL/m
+	dYJIwTqMucTP7TD5A9S1kvTlnFRXLo7x9QXVyk1DURd/MLTr8cuJkVol7YeK1OGHhQcALBydTWcVr
+	aIXJICH+re6PJO5tq3EtV+b6M9idjTR0JQcUDNIFt22XTV0ubuFYtVESFvjH7sq91ofJMDDhVs4gG
+	wNIT3JnBmzr092fwYjpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdHpb-0006hX-V2; Tue, 18 Jun 2019 17:23:39 +0000
-Received: from mailoutvs63.siol.net ([185.57.226.254] helo=mail.siol.net)
+	id 1hdIwh-0007wW-KU; Tue, 18 Jun 2019 18:35:03 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdHpX-0006Kf-8E
- for linux-rockchip@lists.infradead.org; Tue, 18 Jun 2019 17:23:37 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTP id 1EA4E5203EB;
- Tue, 18 Jun 2019 19:23:22 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at psrvmta12.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta12.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id SvDg82OCXHri; Tue, 18 Jun 2019 19:23:21 +0200 (CEST)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTPS id A4E9F5223EF;
- Tue, 18 Jun 2019 19:23:21 +0200 (CEST)
-Received: from jernej-laptop.localnet (cpe-86-58-52-202.static.triera.net
- [86.58.52.202]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Zimbra) with ESMTPA id 76FF65203EB;
- Tue, 18 Jun 2019 19:23:18 +0200 (CEST)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: Douglas Anderson <dianders@chromium.org>
-Subject: Re: [PATCH] drm/bridge/synopsys: dw-hdmi: Handle audio for more clock
- rates
-Date: Tue, 18 Jun 2019 19:23:18 +0200
-Message-ID: <6219398.I55JWXAmVF@jernej-laptop>
-In-Reply-To: <20190617235558.64571-1-dianders@chromium.org>
-References: <20190617235558.64571-1-dianders@chromium.org>
+ id 1hdIwd-0007jd-QZ
+ for linux-rockchip@lists.infradead.org; Tue, 18 Jun 2019 18:35:01 +0000
+Received: by mail-pf1-x444.google.com with SMTP id r7so8154226pfl.3
+ for <linux-rockchip@lists.infradead.org>; Tue, 18 Jun 2019 11:34:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=6kNZlMyc+BT+bVh0V15w4cgbur+weciC7/ZsAv2IV7U=;
+ b=bm7i7c5f2/GAPKW27PQz1CiDRmYmVVba0JO3/GX7R8G+fkjmqzIIjlSd4nI38HMNiO
+ JG+isnGj0iq6Ofd/6L/6Az0kLFKN3KBe+DUwfNJZrmXGBX8SDqz9yFi5xBVYZhRXZvx8
+ pJQsKXZRSuhhm6WH3KSC1QPvrSbAjRWmtJKOA=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=6kNZlMyc+BT+bVh0V15w4cgbur+weciC7/ZsAv2IV7U=;
+ b=PKcNkwXCLh4JEbkLxWbaGmOEhB/fwP1zwJWtItBXG0P7VYt0UOiCNkermegDqmOfnp
+ j9Lb262NzAuiMnfOlF3PefQZY3WYqfcC2371va/jY35ydUbYTyezLNDBvJ5mg2SOgz+A
+ B5opfNo5pMf4tIyW5UzVwQdcAxJmzPQNH/7UsAfx2MZU/qK1wcb+ct9N3kUOY8fe0FQl
+ 2d6zFfeT2VoXFkKRuJWyHUhLVLOm2OW3ihT7dFFqTESfPUSmI5B3e0yDwO2oYa7tgaac
+ zeYVKh1caGa+M5/2IpmqYiUIu8Oc7/ydKeAyXYnXmoFR9j+4a9311GldivUddqx20NEN
+ sahA==
+X-Gm-Message-State: APjAAAWbewTNjpa72UL0OpyBdorvcsG61PNDdS+MnaQvYcS+VwjRfe7k
+ h/A6g1Bt7sbWtEHkK2RmE4kthA==
+X-Google-Smtp-Source: APXvYqy+QvRjs4Drmi2FUQIv8wv4fenqIqrDebMofryze6kGt+JsmRV9NB16VTZPs4PMvqJusTHJsA==
+X-Received: by 2002:a65:654f:: with SMTP id a15mr3860571pgw.73.1560882898990; 
+ Tue, 18 Jun 2019 11:34:58 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
+ by smtp.gmail.com with ESMTPSA id e16sm22768169pga.11.2019.06.18.11.34.58
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 18 Jun 2019 11:34:58 -0700 (PDT)
+Date: Tue, 18 Jun 2019 11:34:55 -0700
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Subject: Re: [PATCH] Revert "ARM: dts: rockchip: set PWM delay backlight
+ settings for Minnie"
+Message-ID: <20190618183455.GU137143@google.com>
+References: <20190614224533.169881-1-mka@chromium.org>
+ <45f94c6a-5bd7-92b0-d23f-ae7e0481935f@collabora.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <45f94c6a-5bd7-92b0-d23f-ae7e0481935f@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_102335_460856_FD982410 
-X-CRM114-Status: GOOD (  12.84  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190618_113459_878775_4A283D44 
+X-CRM114-Status: GOOD (  13.68  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.254 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,65 +97,46 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: heiko@sntech.de, linux-rockchip@lists.infradead.org,
- David Airlie <airlied@linux.ie>, jonas@kwiboo.se, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, narmstrong@baylibre.com,
- Andrzej Hajda <a.hajda@samsung.com>, seanpaul@chromium.org,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, dgreid@chromium.org,
- Zheng Yang <zhengyang@rock-chips.com>, Sam Ravnborg <sam@ravnborg.org>,
- Thomas Gleixner <tglx@linutronix.de>, cychiang@chromium.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, Pavel Machek <pavel@ucw.cz>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi!
+Hi Enric,
 
-Dne torek, 18. junij 2019 ob 01:55:58 CEST je Douglas Anderson napisal(a):
-> Let's add some better support for HDMI audio to dw_hdmi.
-> Specifically:
+On Tue, Jun 18, 2019 at 10:21:52AM +0200, Enric Balletbo i Serra wrote:
+> Hi Matthias,
 > 
-> 1. For 44.1 kHz audio the old code made the assumption that an N of
-> 6272 was right most of the time.  That wasn't true and the new table
-> should give better 44.1 kHz audio for many more rates.
+> On 15/6/19 0:45, Matthias Kaehlcke wrote:
+> > This reverts commit 288ceb85b505c19abe1895df068dda5ed20cf482.
+> > 
+> > According to the commit message the AUO B101EAN01 panel on minnie
+> > requires a PWM delay of 200 ms, however this is not what the
+> > datasheet says. The datasheet mentions a *max* delay of 200 ms
+> > for T2 ("delay from LCDVDD to black video generation") and T3
+> > ("delay from LCDVDD to HPD high"), which aren't related to the
+> > PWM. The backlight power sequence does not specify min/max
+> > constraints for T15 (time from PWM on to BL enable) or T16
+> > (time from BL disable to PWM off).
+> > 
 > 
-> 2. The new table has values from the HDMI spec for 297 MHz and 594
-> MHz.
-> 
-> 3. There is now code to try to come up with a more idea N/CTS for
-> clock rates that aren't in the table.  This code is a bit slow because
-> it iterates over every possible value of N and picks the best one, but
-> it should make a good fallback.
-> 
-> 4. The new code allows for platforms that know they make a clock rate
-> slightly differently to pick different N/CTS values.  For instance on
-> rk3288 we can make 25,176,471 Hz instead of 25,174,825.1748... Hz
-> (25.2 MHz / 1.001).  A future patch to the rk3288 platform code could
-> enable support for this clock rate and specify the N/CTS that would be
-> ideal.
-> 
-> NOTE: the oddest part of this patch comes about because computing the
-> ideal N/CTS means knowing the _exact_ clock rate, not a rounded
-> version of it.  The drm framework makes this harder by rounding rates
-> to kHz, but even if it didn't there might be cases where the ideal
-> rate could only be calculated if we knew the real (non-integral) rate.
-> This means that in cases where we know (or believe) that the true rate
-> is something other than the rate we are told by drm.
-> 
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
+> Could you point from where the confusion comes from? I think will be helpful for
+> the record. B101EAN01.8 vs B101EAN01.1
 
-Which bus is used for audio transfer on your device? If it is I2S, which is 
-commonly used, then please be aware of this patch:
-https://lists.freedesktop.org/archives/dri-devel/2019-June/221539.html
+sounds good
 
-It avoids exact N/CTS calculation by enabling auto detection. It is well 
-tested on multiple SoCs from Allwinner, Amlogic and Rockchip.
+> > Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+> 
+> With the above added:
+> 
+> Reviewed-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 
-Best regards,
-Jernej
-
-
+Thanks!
 
 _______________________________________________
 Linux-rockchip mailing list
