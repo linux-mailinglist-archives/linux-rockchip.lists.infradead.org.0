@@ -2,78 +2,84 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E1FC4C2C9
-	for <lists+linux-rockchip@lfdr.de>; Wed, 19 Jun 2019 23:11:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10D0B4C2CC
+	for <lists+linux-rockchip@lfdr.de>; Wed, 19 Jun 2019 23:12:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t8hs5deDqYRzg8WHE2uJVKK+FBmja51O+RRDi4HEGK8=; b=LoV0R9ZjHUZfqE
-	eVR73iOcgMvEHNNvobXI8/c2Cgcg2A2tg7//aeqc7o6iJMUj99Ari9YOvOhBPAm5+4XmL5khhL4Rw
-	finPP2ttV0LyMPhULNYn+CFRi/8QwSXz8p1ALbyPOQm/dl+hEjOnf31dkAMrJ+LyQ3T+nYALZ4Jzp
-	Kb+4Hqr/C7pVWOhdafd7ZOhKydYTHa/FehjG+js5uTiww3+5riUKYHFdi8X/4mpC3zRWI4WRit4Lp
-	4CjvxruaZuBD+Tg6l++JAOhvuX1NWfjUccKt7tSm9qjmge3LCJEHLtVCO2/1ZmxYJ/w6sWQq1bf5A
-	XQGimORRfpme+TNDTt6A==;
+	List-Owner; bh=rvjwbfWqDATNQGB8jDHzxPwWl2bKVuMLJfFd4Yh+ub4=; b=br2W8JIbZQCwwp
+	47WTAF5A5bEWT+agWjuZ5Gpqvubr7MS8WDDJp1riwjpgfQCNft8YJBqbxAZ1V3EqexeaZCQZifaqb
+	5lT2wn4vmIp3Glrq2MLL9yZDkdsFT5Pnf8Z0BQ1bBZ8FCKWSEtf/c/QYRNxKGC3DmBtAoHoQualS2
+	zNZ5n3QEoKzsD6QWOogeI3yRgREisuEmjs/CzoeBZz5MKeLWv9jZ2TbnMsvcudPNL2DvcSdEUIOS6
+	/SMTevRSoWH9yMjyx1Hb6PYdDzJCJ88OX4cefxZIhuazquh/hdwg2qd2s3K6wJsp7bK7h9QpHGS/g
+	b5tgQwH+OMmukTRGKVYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdhs2-0006bp-9k; Wed, 19 Jun 2019 21:11:54 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hdhsA-0006gQ-51; Wed, 19 Jun 2019 21:12:02 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdhrz-0006aX-6C
- for linux-rockchip@lists.infradead.org; Wed, 19 Jun 2019 21:11:52 +0000
-Received: by mail-pf1-x442.google.com with SMTP id a186so319041pfa.5
- for <linux-rockchip@lists.infradead.org>; Wed, 19 Jun 2019 14:11:49 -0700 (PDT)
+ id 1hdhs6-0006ej-Cj
+ for linux-rockchip@lists.infradead.org; Wed, 19 Jun 2019 21:12:00 +0000
+Received: by mail-io1-xd41.google.com with SMTP id u13so1032286iop.0
+ for <linux-rockchip@lists.infradead.org>; Wed, 19 Jun 2019 14:11:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Hy05C9mn0/yIf2WjCYd8ymGDA+P844rg5bgddBHlUN8=;
- b=KGpaeoheFWBtMSk4WBMgOkawtt9gRWlcsmiS6qSo8xgzQC0X5za9DjD3rUH7b2a0re
- Tfg2n0jZMP+ZXKpDk2U9LapSmaxrigwOaUBbPePTSX7TI28dHCYv/th/bDTLjH3Bs2tJ
- dt8drzYooa55fn0wXwevkiH+aWBOLbRRBPZMs=
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=XY7aJ7dmXPxqNPvIOXdraSG/mXJqcFutpgqcMN/Km28=;
+ b=VNslJ7mhNRCKEXVbWHWhBbcjyZQQnZuTLynWJkzRy6HJWCzrYxgAE2HhkW/VSd5Pz9
+ SHfFCPP+ICxn6nicRTh1QtGs0tabSVxS4XDWpZ26c2/+NvIS9qM5t7B+rePUZMndCsUY
+ d/Xt1q1xsTgqaK/ACYSjZ3NODpHgZdE4uqn5I=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Hy05C9mn0/yIf2WjCYd8ymGDA+P844rg5bgddBHlUN8=;
- b=iN73DYSvC/BYc6Zv1LL4dsmaCKgxDmdVVrPNsyFMuo8B/OjHHd1YsvReCKGwOQpZor
- a8gIt/2krl0F+1kNVAiw59N/2MYW85VW6aK7IsisoM6g9VfpbOOJpqU49DCjhbSaIXoW
- ut3xplQ4gXBk4/ar7731TwpgTPKmvID48ucF4M/NQJVCxshHiPDdnidGfan/c70c6ydw
- B0xrbTqR2E3aUaWOX8+MX7w3poOxQRoL9s15yKy61cFQ3be9KACfxpYHc2TB1UP2CGRi
- z+42CJ9JiuJH06am1MQaPTkO4xE5Qk/TJmelbJdNibF9oEPBmDMpGWRZiJaiRMKxA1Ou
- xQPw==
-X-Gm-Message-State: APjAAAWHszX3Np+BoT8dbVi0k1OWNzumm1MNz/VMr8jvr3202miN9xsi
- LOLtjk3r8iq8zJXstAi5EmpU+A==
-X-Google-Smtp-Source: APXvYqwXqPl24uyJF3v+5dkgkWEhaRF4Tfy/+nmYhsNEFIVfi0rh/PxJeKfAiWOS6/1USM4Ra2YThw==
-X-Received: by 2002:a63:6b46:: with SMTP id g67mr1788869pgc.45.1560978708910; 
- Wed, 19 Jun 2019 14:11:48 -0700 (PDT)
-Received: from tictac2.mtv.corp.google.com
- ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id p7sm35319117pfp.131.2019.06.19.14.11.47
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 19 Jun 2019 14:11:48 -0700 (PDT)
-From: Douglas Anderson <dianders@chromium.org>
-To: Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, seanpaul@chromium.org
-Subject: [PATCH v2 2/2] drm/bridge/synopsys: dw-hdmi: Allow platforms to
- provide custom audio tables
-Date: Wed, 19 Jun 2019 14:07:18 -0700
-Message-Id: <20190619210718.134951-2-dianders@chromium.org>
-X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
-In-Reply-To: <20190619210718.134951-1-dianders@chromium.org>
-References: <20190619210718.134951-1-dianders@chromium.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=XY7aJ7dmXPxqNPvIOXdraSG/mXJqcFutpgqcMN/Km28=;
+ b=WTgnu2RJ8xTWQS/lYa7nin8VHbk6+RocXEy82YMyAkIKs+s5R/jc5GU621BDpfAywi
+ xEZPvK4MwF289vjRbxLC7j9s4MFxTHlQhf21NWestLCsthJNjx1Br9zLTwK8EHjg/k8S
+ hnOv4Al9gnFb42o0iKqosBIiM7zgwf214lkXCqXRB+CoRO/wt1RUqed5ezsh/pCP9lKt
+ fiV644DByfApfrw6JG0yBwBAXBWKDO/z+hwIbp0tGVoi35W8Tj4ICbhTD9EWUYZB3jDB
+ XChlwog/wZm94ABMhHoGGujqIkKYxTYU/USohUNqJv1hhEodOYw4z6E/BXDSwmPXy01l
+ Qprg==
+X-Gm-Message-State: APjAAAWaSZeGqSGtqRG1hF9B2rMdnYR8w70G/3N+hKoenDRCgUiifKAD
+ JnnNIIamlHjkW/1taXRglzs9snHugDw=
+X-Google-Smtp-Source: APXvYqyiYfumKuUnGFaxY0Qe24g4inr8Dw1FnsTyn29duKexA/M+KcAGdtubqyblwYlKbRaiUDS3eA==
+X-Received: by 2002:a5e:9308:: with SMTP id k8mr13854482iom.143.1560978717343; 
+ Wed, 19 Jun 2019 14:11:57 -0700 (PDT)
+Received: from mail-io1-f50.google.com (mail-io1-f50.google.com.
+ [209.85.166.50])
+ by smtp.gmail.com with ESMTPSA id c11sm24780346ioi.72.2019.06.19.14.11.55
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Wed, 19 Jun 2019 14:11:55 -0700 (PDT)
+Received: by mail-io1-f50.google.com with SMTP id i10so1711206iol.13
+ for <linux-rockchip@lists.infradead.org>; Wed, 19 Jun 2019 14:11:55 -0700 (PDT)
+X-Received: by 2002:a02:5b05:: with SMTP id g5mr93849116jab.114.1560978714620; 
+ Wed, 19 Jun 2019 14:11:54 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190617235558.64571-1-dianders@chromium.org>
+ <6219398.I55JWXAmVF@jernej-laptop>
+ <9bba43cb-7070-8b2a-cfc6-f601fd22a315@baylibre.com>
+In-Reply-To: <9bba43cb-7070-8b2a-cfc6-f601fd22a315@baylibre.com>
+From: Doug Anderson <dianders@chromium.org>
+Date: Wed, 19 Jun 2019 14:11:41 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=V_xg3VfWDMfjJp158ELUQm5xJQCRn85H4mx_-YfjfWTg@mail.gmail.com>
+Message-ID: <CAD=FV=V_xg3VfWDMfjJp158ELUQm5xJQCRn85H4mx_-YfjfWTg@mail.gmail.com>
+Subject: Re: [PATCH] drm/bridge/synopsys: dw-hdmi: Handle audio for more clock
+ rates
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_141151_255870_30E4A509 
-X-CRM114-Status: GOOD (  16.83  )
+X-CRM114-CacheID: sfid-20190619_141158_436728_4655299A 
+X-CRM114-Status: GOOD (  24.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -97,123 +103,79 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: jernej.skrabec@siol.net, heiko@sntech.de, narmstrong@baylibre.com,
- maxime.ripard@bootlin.com, linux-kernel@vger.kernel.org,
- David Airlie <airlied@linux.ie>, jonas@kwiboo.se,
- Douglas Anderson <dianders@chromium.org>, dri-devel@lists.freedesktop.org,
- Zheng Yang <zhengyang@rock-chips.com>, linux-rockchip@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, dgreid@chromium.org, jbrunet@baylibre.com,
+Cc: =?UTF-8?Q?Jernej_=C5=A0krabec?= <jernej.skrabec@siol.net>,
+ =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
+ Jonas Karlman <jonas@kwiboo.se>, David Airlie <airlied@linux.ie>,
+ LKML <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, Sean Paul <seanpaul@chromium.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Dylan Reid <dgreid@chromium.org>, Zheng Yang <zhengyang@rock-chips.com>,
  Sam Ravnborg <sam@ravnborg.org>, Thomas Gleixner <tglx@linutronix.de>,
- cychiang@chromium.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Cheng-Yi Chiang <cychiang@chromium.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On some platforms using dw_hdmi it may not be possible to make an HDMI
-pixel clock exactly, but it may be possible to make a rate that is
-close enough to be within spec.  For instance on rk3288 we can make
-25,176,471 Hz instead of 25,174,825.1748... Hz (25.2 MHz / 1.001).  A
-future patch to the rk3288 platform code could enable support for this
-clock rate and specify the N/CTS that would be ideal.
-
-NOTE: I haven't yet posted said patch due to complexities with knowing
-whether dw_hdmi can control the dynamic PLL on rk3288.  Thus for now
-there are no users of this feature yet.
-
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
----
-
-Changes in v2:
-- Split out the ability of a platform to provide custom tables.
-
- drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 27 ++++++++++++++---------
- include/drm/bridge/dw_hdmi.h              |  8 +++++++
- 2 files changed, 24 insertions(+), 11 deletions(-)
-
-diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-index 7cdffebcc7cb..b6027edf2942 100644
---- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-+++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-@@ -60,13 +60,6 @@ enum hdmi_datamap {
- 	YCbCr422_12B = 0x12,
- };
- 
--struct dw_hdmi_audio_tmds_n {
--	unsigned long tmds;
--	unsigned int n_32k;
--	unsigned int n_44k1;
--	unsigned int n_48k;
--};
--
- /*
-  * Unless otherwise noted, entries in this table are 100% optimization.
-  * Values can be obtained from hdmi_compute_n() but that function is
-@@ -603,6 +596,7 @@ static void hdmi_set_cts_n(struct dw_hdmi *hdmi, unsigned int cts,
- static int hdmi_match_tmds_n_table(struct dw_hdmi *hdmi, unsigned int freq,
- 				   unsigned long pixel_clk)
- {
-+	const struct dw_hdmi_plat_data *plat_data = hdmi->plat_data;
- 	const struct dw_hdmi_audio_tmds_n *tmds_n = NULL;
- 	int mult = 1;
- 	int i;
-@@ -612,10 +606,21 @@ static int hdmi_match_tmds_n_table(struct dw_hdmi *hdmi, unsigned int freq,
- 		freq /= 2;
- 	}
- 
--	for (i = 0; common_tmds_n_table[i].tmds != 0; i++) {
--		if (pixel_clk == common_tmds_n_table[i].tmds) {
--			tmds_n = &common_tmds_n_table[i];
--			break;
-+	if (plat_data->tmds_n_table) {
-+		for (i = 0; plat_data->tmds_n_table[i].tmds != 0; i++) {
-+			if (pixel_clk == plat_data->tmds_n_table[i].tmds) {
-+				tmds_n = &plat_data->tmds_n_table[i];
-+				break;
-+			}
-+		}
-+	}
-+
-+	if (tmds_n == NULL) {
-+		for (i = 0; common_tmds_n_table[i].tmds != 0; i++) {
-+			if (pixel_clk == common_tmds_n_table[i].tmds) {
-+				tmds_n = &common_tmds_n_table[i];
-+				break;
-+			}
- 		}
- 	}
- 
-diff --git a/include/drm/bridge/dw_hdmi.h b/include/drm/bridge/dw_hdmi.h
-index c402364aec0d..5ee6b0a127aa 100644
---- a/include/drm/bridge/dw_hdmi.h
-+++ b/include/drm/bridge/dw_hdmi.h
-@@ -90,6 +90,13 @@ enum dw_hdmi_phy_type {
- 	DW_HDMI_PHY_VENDOR_PHY = 0xfe,
- };
- 
-+struct dw_hdmi_audio_tmds_n {
-+	unsigned long tmds;
-+	unsigned int n_32k;
-+	unsigned int n_44k1;
-+	unsigned int n_48k;
-+};
-+
- struct dw_hdmi_mpll_config {
- 	unsigned long mpixelclock;
- 	struct {
-@@ -137,6 +144,7 @@ struct dw_hdmi_plat_data {
- 	const struct dw_hdmi_mpll_config *mpll_cfg;
- 	const struct dw_hdmi_curr_ctrl *cur_ctr;
- 	const struct dw_hdmi_phy_config *phy_config;
-+	const struct dw_hdmi_audio_tmds_n *tmds_n_table;
- 	int (*configure_phy)(struct dw_hdmi *hdmi,
- 			     const struct dw_hdmi_plat_data *pdata,
- 			     unsigned long mpixelclock);
--- 
-2.22.0.410.gd8fdbe21b5-goog
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGksCgpPbiBXZWQsIEp1biAxOSwgMjAxOSBhdCA4OjIzIEFNIE5laWwgQXJtc3Ryb25nIDxuYXJt
+c3Ryb25nQGJheWxpYnJlLmNvbT4gd3JvdGU6Cj4KPiBPbiAxOC8wNi8yMDE5IDE5OjIzLCBKZXJu
+ZWogxaBrcmFiZWMgd3JvdGU6Cj4gPiBIaSEKPiA+Cj4gPiBEbmUgdG9yZWssIDE4LiBqdW5paiAy
+MDE5IG9iIDAxOjU1OjU4IENFU1QgamUgRG91Z2xhcyBBbmRlcnNvbiBuYXBpc2FsKGEpOgo+ID4+
+IExldCdzIGFkZCBzb21lIGJldHRlciBzdXBwb3J0IGZvciBIRE1JIGF1ZGlvIHRvIGR3X2hkbWku
+Cj4gPj4gU3BlY2lmaWNhbGx5Ogo+ID4+Cj4gPj4gMS4gRm9yIDQ0LjEga0h6IGF1ZGlvIHRoZSBv
+bGQgY29kZSBtYWRlIHRoZSBhc3N1bXB0aW9uIHRoYXQgYW4gTiBvZgo+ID4+IDYyNzIgd2FzIHJp
+Z2h0IG1vc3Qgb2YgdGhlIHRpbWUuICBUaGF0IHdhc24ndCB0cnVlIGFuZCB0aGUgbmV3IHRhYmxl
+Cj4gPj4gc2hvdWxkIGdpdmUgYmV0dGVyIDQ0LjEga0h6IGF1ZGlvIGZvciBtYW55IG1vcmUgcmF0
+ZXMuCj4gPj4KPiA+PiAyLiBUaGUgbmV3IHRhYmxlIGhhcyB2YWx1ZXMgZnJvbSB0aGUgSERNSSBz
+cGVjIGZvciAyOTcgTUh6IGFuZCA1OTQKPiA+PiBNSHouCj4gPj4KPiA+PiAzLiBUaGVyZSBpcyBu
+b3cgY29kZSB0byB0cnkgdG8gY29tZSB1cCB3aXRoIGEgbW9yZSBpZGVhIE4vQ1RTIGZvcgo+ID4+
+IGNsb2NrIHJhdGVzIHRoYXQgYXJlbid0IGluIHRoZSB0YWJsZS4gIFRoaXMgY29kZSBpcyBhIGJp
+dCBzbG93IGJlY2F1c2UKPiA+PiBpdCBpdGVyYXRlcyBvdmVyIGV2ZXJ5IHBvc3NpYmxlIHZhbHVl
+IG9mIE4gYW5kIHBpY2tzIHRoZSBiZXN0IG9uZSwgYnV0Cj4gPj4gaXQgc2hvdWxkIG1ha2UgYSBn
+b29kIGZhbGxiYWNrLgo+ID4+Cj4gPj4gNC4gVGhlIG5ldyBjb2RlIGFsbG93cyBmb3IgcGxhdGZv
+cm1zIHRoYXQga25vdyB0aGV5IG1ha2UgYSBjbG9jayByYXRlCj4gPj4gc2xpZ2h0bHkgZGlmZmVy
+ZW50bHkgdG8gcGljayBkaWZmZXJlbnQgTi9DVFMgdmFsdWVzLiAgRm9yIGluc3RhbmNlIG9uCj4g
+Pj4gcmszMjg4IHdlIGNhbiBtYWtlIDI1LDE3Niw0NzEgSHogaW5zdGVhZCBvZiAyNSwxNzQsODI1
+LjE3NDguLi4gSHoKPiA+PiAoMjUuMiBNSHogLyAxLjAwMSkuICBBIGZ1dHVyZSBwYXRjaCB0byB0
+aGUgcmszMjg4IHBsYXRmb3JtIGNvZGUgY291bGQKPiA+PiBlbmFibGUgc3VwcG9ydCBmb3IgdGhp
+cyBjbG9jayByYXRlIGFuZCBzcGVjaWZ5IHRoZSBOL0NUUyB0aGF0IHdvdWxkIGJlCj4gPj4gaWRl
+YWwuCj4gPj4KPiA+PiBOT1RFOiB0aGUgb2RkZXN0IHBhcnQgb2YgdGhpcyBwYXRjaCBjb21lcyBh
+Ym91dCBiZWNhdXNlIGNvbXB1dGluZyB0aGUKPiA+PiBpZGVhbCBOL0NUUyBtZWFucyBrbm93aW5n
+IHRoZSBfZXhhY3RfIGNsb2NrIHJhdGUsIG5vdCBhIHJvdW5kZWQKPiA+PiB2ZXJzaW9uIG9mIGl0
+LiAgVGhlIGRybSBmcmFtZXdvcmsgbWFrZXMgdGhpcyBoYXJkZXIgYnkgcm91bmRpbmcgcmF0ZXMK
+PiA+PiB0byBrSHosIGJ1dCBldmVuIGlmIGl0IGRpZG4ndCB0aGVyZSBtaWdodCBiZSBjYXNlcyB3
+aGVyZSB0aGUgaWRlYWwKPiA+PiByYXRlIGNvdWxkIG9ubHkgYmUgY2FsY3VsYXRlZCBpZiB3ZSBr
+bmV3IHRoZSByZWFsIChub24taW50ZWdyYWwpIHJhdGUuCj4gPj4gVGhpcyBtZWFucyB0aGF0IGlu
+IGNhc2VzIHdoZXJlIHdlIGtub3cgKG9yIGJlbGlldmUpIHRoYXQgdGhlIHRydWUgcmF0ZQo+ID4+
+IGlzIHNvbWV0aGluZyBvdGhlciB0aGFuIHRoZSByYXRlIHdlIGFyZSB0b2xkIGJ5IGRybS4KPiA+
+Pgo+ID4+IFNpZ25lZC1vZmYtYnk6IERvdWdsYXMgQW5kZXJzb24gPGRpYW5kZXJzQGNocm9taXVt
+Lm9yZz4KPiA+Cj4gPiBXaGljaCBidXMgaXMgdXNlZCBmb3IgYXVkaW8gdHJhbnNmZXIgb24geW91
+ciBkZXZpY2U/IElmIGl0IGlzIEkyUywgd2hpY2ggaXMKPiA+IGNvbW1vbmx5IHVzZWQsIHRoZW4g
+cGxlYXNlIGJlIGF3YXJlIG9mIHRoaXMgcGF0Y2g6Cj4gPiBodHRwczovL2xpc3RzLmZyZWVkZXNr
+dG9wLm9yZy9hcmNoaXZlcy9kcmktZGV2ZWwvMjAxOS1KdW5lLzIyMTUzOS5odG1sCj4gPgo+ID4g
+SXQgYXZvaWRzIGV4YWN0IE4vQ1RTIGNhbGN1bGF0aW9uIGJ5IGVuYWJsaW5nIGF1dG8gZGV0ZWN0
+aW9uLiBJdCBpcyB3ZWxsCj4gPiB0ZXN0ZWQgb24gbXVsdGlwbGUgU29DcyBmcm9tIEFsbHdpbm5l
+ciwgQW1sb2dpYyBhbmQgUm9ja2NoaXAuCj4gPgo+ID4gQmVzdCByZWdhcmRzLAo+ID4gSmVybmVq
+Cj4gPgo+ID4KPiBIaSBEb3VnbGFzLAo+Cj4gVGhhbmtzIGZvciB5b3VyIHdvcmsgIQo+Cj4gSWYg
+eW91IGNvdWxkIHJlYmFzZSBvbiB0b3Agb2YgaHR0cHM6Ly9saXN0cy5mcmVlZGVza3RvcC5vcmcv
+YXJjaGl2ZXMvZHJpLWRldmVsLzIwMTktSnVuZS8yMjE1MzkuaHRtbAo+IHNvIHdlIGNhbiBtYWtl
+IHVzZSBvZiB5b3VyIGV4dGVuZGVkIE4gdGFibGUgd2l0aCBhdXRvbWF0aWMgQ1RTIEhXIGNhbGN1
+bGF0aW9uLCBpdCB3b3VsZCBiZSBncmVhdCAhCgpUaGFua3MgdG8geW91IGFuZCBKZXJuZWogZm9y
+IHBvaW50aW5nIG1lIGF0IHRoaXMuICBJdCBzZWVtcyBsaWtlbHkKdGhhdCBwYXRjaCBieSBpdHNl
+bGYgd291bGQgc29sdmUgcHJvYmxlbXMgd2UgZm91bmQgYW5kIEknbGwgcGljayB0aGF0CmludG8g
+bXkgdHJlZS4KClByb2JhYmx5IG15IHBhdGNoIGlzIG5vIGxvbmdlciBxdWl0ZSBhcyB1c2VmdWwg
+YXRvcCB5b3VycywgYnV0IEknbGwKc3RpbGwgcG9zdCBhIHYyIHNpbmNlIChpbiB0aGVvcnkpIGZv
+bGtzIHRoYXQgYXJlbid0IHVzaW5nIEkyUyBtaWdodApmaW5kIGl0IHVzZWZ1bC4gIEkgZ3Vlc3Mg
+aXQncyBhbHNvIHBvc3NpYmxlICg/KSB0aGF0IHBpY2tpbmcgYW4gTgp3aGVyZSBDVFMgd291bGQg
+YmUgYWJsZSB0byBiZSBpbnRlZ3JhbCBoYXMgc29tZSB0eXBlIG9mIGFkdmFudGFnZSwKZXZlbiB3
+aXRoIGF1dG8gQ1RTPwoKCj4gRmluYWxseSBjb3VsZCB5b3UgYWRkIHRoZSBwbGF0X2RhdGEgdG1k
+cyB0YWJsZSBhcyBhIHNlcGFyYXRlIHBhdGNoIHRvIHNpbXBsaWZ5IHJldmlldyA/CgpTdXJlLiAg
+SSdtIHByb2JhYmx5IG5vdCBnb2luZyB0byBiZSBhYmxlIHRvIHBvc3QgdGhlIHBhdGNoIHRvIGFj
+dHVhbGx5CnVzZSBpdCwgc28gSSBndWVzcyB3ZSBjb3VsZCBqdXN0IG5vdCBib3RoZXIgYXBwbHlp
+bmcgdGhlIDJuZCBwYXRjaAp1bmxlc3Mgc29tZW9uZSBldmVyIG5lZWRzIGl0LgoKLURvdWcKCl9f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tj
+aGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
