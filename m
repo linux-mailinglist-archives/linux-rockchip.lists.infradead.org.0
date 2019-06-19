@@ -2,80 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DE614BA36
-	for <lists+linux-rockchip@lfdr.de>; Wed, 19 Jun 2019 15:40:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29DC84BA3B
+	for <lists+linux-rockchip@lfdr.de>; Wed, 19 Jun 2019 15:40:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dd1XCpgIlK7Wqfkkm2iZSwEvfcxTH8vjCGRTBmdd2wo=; b=BnmgAc5jcM1UGU
-	zDE3I8AYCQlrtKObfQalzFtPgLMbTqIE2OuOl7+DiV/mJQH3bZ+UrL3btVgwbFCdG/Tvnnz2oBjNH
-	OLcClcMm9G5RnQaTdDPfCNUAfzoChkrSOfmIke9VJzuozYOgSMX4GsHIXSu27+Z9Yl93UPDgwgUHK
-	BGLSltt11iwHq2DQKBSrgKl7dAS4vTS1whsFAV+YCh0cSp/c1BphL2rAD9j/RxiV/GZzQdoP41OSU
-	+Oj2jOB+CBR1BG8FtjFoCj4/PtWc/g0bUIZEtZ/Zb6wJhrNQYWl0Ae0Ft/iPE0NGIeoK0zu0RdDK/
-	w1AQkzlai+6sEQaF/zmg==;
+	List-Owner; bh=WQsDqNA7V+NyxC4iOpIn3ne8uQXFrUYHsCYVJNnFau4=; b=eJdd/bVpCk6kzd
+	iFJN9l/o6oSTDu7VgD76srvGPIkTnOZpTtMkBDdrq1y/e+FL3diA3Fq7d6BH6Pot+cpldk2cHKCUP
+	wjhi2iKYr6XMZnkSZ1q9XJg7pwU8RgZbJcTo6nYmqa7va3Zq8vY6QT28sEXxn1n2zL8F5epljkLG/
+	vjHmSof7juUib5hCx5haL9qPvWST7cuTvZautTZ1njL80rEatII5956cs7+2KcNxbNSXuRuC9TIUF
+	/iyV/YfsCno/esz+/xEE1ZGt5iQQY8klBy05Lh40tjHelLP9HlELD087yvxv/bYeHvwRDJq2J1/4r
+	0HD0yTslBaxAGZnDTLbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdaob-00084s-L1; Wed, 19 Jun 2019 13:39:53 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1hdapT-0001YL-2S; Wed, 19 Jun 2019 13:40:47 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdans-0007UK-HV
- for linux-rockchip@lists.infradead.org; Wed, 19 Jun 2019 13:39:10 +0000
-Received: by mail-lj1-x242.google.com with SMTP id a21so3296512ljh.7
- for <linux-rockchip@lists.infradead.org>; Wed, 19 Jun 2019 06:39:08 -0700 (PDT)
+ id 1hdanv-0007Wi-1U
+ for linux-rockchip@lists.infradead.org; Wed, 19 Jun 2019 13:39:12 +0000
+Received: by mail-lj1-x241.google.com with SMTP id 16so3269547ljv.10
+ for <linux-rockchip@lists.infradead.org>; Wed, 19 Jun 2019 06:39:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=V/dJt5z6+5T//xP2hKbohs+3zSN9ia0YmaVD5Mooj8E=;
- b=lj5c+ibuvHjzPCsX17q7Y3KoKZXmXf5as2msSVeteaF3EfyUZ1XdmZG0xCnTq00iXG
- RQA6DK9heaHTpK0RpC6vqWXZBYQbYUxRr1+Ajaqs3oPKRfcqt+pdqOGUyOIpBbrHYJqs
- J15lDIPbZGmMOgMHv7cUibzQId9y+kIUb5rJvJ+zAx8P52qthYXna2XybyzB7uIevjtM
- dJscLdIsD3ay7ZUxWF95HsbwXXvXwkmUiFbIji2YwJCIQYFdK33ilKKYFUpFrZS95nAt
- y4Lq7AfPoj00B9g2LhecPs00Y7Lf0Ewj87dyr/iDRkuci96wPiMRcPdO3vrHvu/EbIWM
- hOAg==
+ bh=0dUQ9/3b9odyRxgQJsR3xoQ/n0Lj8RP2bd1/DWJVMZA=;
+ b=M3qN68zee2KuMOiOFa8Tw5tFjSazr85U5Kfp2bLT7BximL6K0SeMvvzN2g3E2UMrS/
+ fAzgrNwWe9klaWSyFKn6wrEy9Dlp2os69OK16pvTgD4OLX4fpbAihGh/qaMAT2lbdsU3
+ KQEF3Xrg7B1w61oem45lR9sqD7yX4EvzuxOjkTt/O0j4MYF3ZTcnrdS60gP6hBowUPmQ
+ kEkPKBNWnrM6zTrncWOONxfX2osizWj9m+owKSkil94+c8Pootwyq8fHPqTStA2Hdkx3
+ Vp3z0J2LxJgnjtrkMMw1Z+wfHBDJqJpSi+71SETlcbvRXJb8WFTFU1t4mX1Q5YHSh3oe
+ MoVw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=V/dJt5z6+5T//xP2hKbohs+3zSN9ia0YmaVD5Mooj8E=;
- b=pJVfO0MG/FzpvoBf/B7O10WUwii9w+Zcpu3LHjOTAQxpQLd+BcZsEJ87QpphHX74kV
- 4MeQukGEJXKbm9Cu5ncofpxlXDP+d1/U81eCyjg7epXJLSoRAMYSLuHTgLhT23jvNqzi
- Do5vbXieC0WD13IznKkTlyy/ClBVkeL885lnElF/RYdivBf3gLHhLhgtNVD4OL4ZXN0j
- x3UKIsqYdmm0oOeOrlPLYWaFW9+bQzoI96k+xdlGPzgn2L0VV1TbbraC69MsSKYvBBvB
- 2/cSPnP9kr6lHoiy+KeL3jnOoC4oSUB8IA3so2doCr62Tz/FQIfp0bXhCUM5ESziGMLE
- NDOw==
-X-Gm-Message-State: APjAAAVLTQ3jmCz6N33Z/qdbDX7nHbk69eCgjkg/jqUeeZVhujj/ZEtv
- dea7oOPnJ9OqXjNHEG/b69zxl87B9NeayA==
-X-Google-Smtp-Source: APXvYqz9Pqwc6YGEtZLEiTUBc3MEmc1JqRRYPRnRlHXUwmrREiZYu1GMABwkLUGU5cM2uP6ApfFTzQ==
-X-Received: by 2002:a2e:9a87:: with SMTP id p7mr18012946lji.133.1560951546825; 
- Wed, 19 Jun 2019 06:39:06 -0700 (PDT)
+ bh=0dUQ9/3b9odyRxgQJsR3xoQ/n0Lj8RP2bd1/DWJVMZA=;
+ b=YZd+I15zkQNtcFIHwfbQINNlmq8bl1cdxacKd4yr1VfXnm+q4iTLOGat6m6I7F5ZFM
+ S2p2a//igJWRLOfLEzFCaZd4MVSYCkBSejJNIZ17Wi/aXOVn7hP+5YsQ0OWx6Ga1CZ8E
+ q11Agd991l2fM8dcQie4RrpFW6u2DRt3s0lBax4Q/S9QxdEOaPCrkJTMlSBm2evZ51gm
+ YRABu/1tBMc4kjZO8z9kT1yc8l0q9RweRCe/syk34HPw91LEWIFwIFrF9NF/AQpyEQot
+ OfCgRsLFtfIBQVcWsB+4l1NgqJsF0mGpi4LmKhfXLv/xceN2zwfW3nZZQClLhXflLWO/
+ f6lQ==
+X-Gm-Message-State: APjAAAWi/gadwoYEXrm+ODF1gSBpHA5CX6FFFFNK+q9J0Cb0RaKJbda/
+ hEW7Mlgmp7K4v+yc3PlYK6EroQ==
+X-Google-Smtp-Source: APXvYqwJdtlC9irOpgc15X7VHEcOnrUzaLBzuPDbbCD7Eqs5jXcnDobd0BFMfvoZBXVnoOMTthgQZQ==
+X-Received: by 2002:a2e:5d1:: with SMTP id 200mr48306920ljf.10.1560951548935; 
+ Wed, 19 Jun 2019 06:39:08 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id q1sm2705335lfc.79.2019.06.19.06.39.05
+ by smtp.gmail.com with ESMTPSA id t23sm2361417ljd.98.2019.06.19.06.39.07
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 19 Jun 2019 06:39:05 -0700 (PDT)
-Date: Wed, 19 Jun 2019 06:22:31 -0700
+ Wed, 19 Jun 2019 06:39:07 -0700 (PDT)
+Date: Wed, 19 Jun 2019 06:22:57 -0700
 From: Olof Johansson <olof@lixom.net>
 To: Heiko Stuebner <heiko@sntech.de>
-Subject: Re: [GIT PULL 1/3] Rockchip dts32 updates for 5.3 round 1
-Message-ID: <20190619132231.6cr245e43utupl5j@localhost>
+Subject: Re: [GIT PULL 2/3] Rockchip dts64 updates for 5.3 round 1
+Message-ID: <20190619132257.shbh5z6yn44ludsb@localhost>
 References: <3004130.oi6ZuZy1Zf@phil>
+ <12386546.HbqOaVNIXM@phil>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <3004130.oi6ZuZy1Zf@phil>
+In-Reply-To: <12386546.HbqOaVNIXM@phil>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_063908_627185_02F42F9F 
-X-CRM114-Status: GOOD (  13.01  )
+X-CRM114-CacheID: sfid-20190619_063911_101021_86F64BF0 
+X-CRM114-Status: GOOD (  12.31  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -101,36 +102,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Jun 11, 2019 at 10:53:57AM +0200, Heiko Stuebner wrote:
-> Hi Arnd, Kevin, Olof,
-> 
-> please find below and in the replies round1 of Rockchip updates for armsoc.
-> 
-> As the tag implies this includes a lot of attention to the older rk3288-
-> based Veyron line of ChromeOS devices.
-> 
-> Please pull.
-> 
-> Thanks
-> Heiko
-> 
+On Tue, Jun 11, 2019 at 10:54:49AM +0200, Heiko Stuebner wrote:
 > The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 > 
 >   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
 > 
 > are available in the Git repository at:
 > 
->   git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.3-rockchip-dts32-1
+>   git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.3-rockchip-dts64-1
 > 
-> for you to fetch changes up to b8925b7c2f867df6ce3e20deb4b3e2b9b32b20ff:
+> for you to fetch changes up to 45fa7c3838715b34ccea661e4b7b261d91668b17:
 > 
->   ARM: dts: rockchip: Split GPIO keys for veyron into multiple devices (2019-06-06 12:41:04 +0200)
+>   arm64: dts: rockchip: add WiFi+BT support on ROCK Pi4 board (2019-06-04 15:38:54 +0200)
+> 
+> ----------------------------------------------------------------
+> PCIe for rockpro64, wifi+bt for Rock-PI4, spi for Rock960 family
+> and a fix for the yet unused isp-iommus.
+> 
+> ----------------------------------------------------------------
+> Akash Gajjar (1):
+>       arm64: dts: rockchip: add WiFi+BT support on ROCK Pi4 board
+> 
+> Helen Koike (1):
+>       arm64: dts: rockchip: fix isp iommu clocks and power domain
+> 
+> Katsuhiro Suzuki (1):
+>       arm64: dts: rockchip: add PCIe nodes on rk3399-rockpro64
+> 
+> Manivannan Sadhasivam (2):
+>       arm64: dts: rockchip: Enable SPI0 and SPI4 on Rock960
+>       arm64: dts: rockchip: Enable SPI1 on Ficus
 
 Merged, thanks!
 
 
 -Olof
-
 
 _______________________________________________
 Linux-rockchip mailing list
