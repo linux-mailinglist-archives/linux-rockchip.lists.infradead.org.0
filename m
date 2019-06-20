@@ -2,72 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47D2A4D9D8
-	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Jun 2019 20:55:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8B044D9D9
+	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Jun 2019 20:55:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0i4w4RMLVMNxUJHUgMFDNyg2aizus7iADCdTlqPk3mM=; b=V/6WdC2vjnBd+W
-	gxAfmCfGNVtcP2pI9SOfpGpsbdPWz6sAeXNUFskx/l89TJb903C/RlCRTbSzmYJFFGRxM7j+41pop
-	DitCQF6fb274PXPOz0xnvlFLtPbvLq0ZGNTMu4gdPAowMCFA57eOuLpJCjn1jYM1gEcHsNnZarttG
-	Pao2CpFAqgisjITCitoP7znSJyJZCGQSflIH9tby0h/XQ1Z+9ubWSJVRnhVQTIVWfg6mkS+VcWveD
-	pUdrhNVF5XgKR0VKzk5YY0pV9k9LkNpVo1W8T9IpkJJ0+VBdKVyOWnRu2f/7nlv7nD5JzMqate5/Q
-	My7i5XscaeLCHls6gSYA==;
+	List-Owner; bh=agIkykO8IdWUysoG3rRm3w1dhaJ40kX9k+OESD9Py3c=; b=mQpCgfjHLbKfk/
+	py8DOMUiE+IziyNr9v2KJxBtF5VK4utLnXVY0zad+u0ydJOsSQSwJ3+PlApenRw1+rd3tCXqZ2h+p
+	2tkuVxLk47dIgRQYE1JeMQDyN2P1SSZZPvA/4l8KDEa3GtlbrksDU32gtlRgMwnxBhu2bIYhQX6DX
+	T+RhvhVPEtq0ysKy3MwuXe0Oa8I9x7oY63RW5GwvEANnH/qFX6+VCprd4YDaDS+aleWUR2vfW+zzc
+	h3QepfPG9EI+ASH5/dZR9Bou1e3YGrUiUcR1VQAmeAL6xgWhctCyIs+x1I0yQcnFTjAZfyuqndO2v
+	4v9AaQ2alCeYZaq2llyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he2Dk-0002zx-Ad; Thu, 20 Jun 2019 18:55:40 +0000
+	id 1he2Dn-00032p-OW; Thu, 20 Jun 2019 18:55:43 +0000
 Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1he2Dg-0002xQ-64
- for linux-rockchip@lists.infradead.org; Thu, 20 Jun 2019 18:55:37 +0000
-Received: by mail-pl1-x641.google.com with SMTP id ay6so1736897plb.9
- for <linux-rockchip@lists.infradead.org>; Thu, 20 Jun 2019 11:55:36 -0700 (PDT)
+ id 1he2Dj-000302-A0
+ for linux-rockchip@lists.infradead.org; Thu, 20 Jun 2019 18:55:40 +0000
+Received: by mail-pl1-x641.google.com with SMTP id p1so1761406plo.2
+ for <linux-rockchip@lists.infradead.org>; Thu, 20 Jun 2019 11:55:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=IXklBQ6ai0O2AEMFHBbAi493eYh613acLhwbCyGgVi0=;
- b=GQc1ZbZLNzRrhUw1UDUak/4hlO4uo2VunMMv6KSdDDcUoPpAzv1w6KCcjpy7bIBUrj
- XD5Lu01xG7v7Q9WJI1uyaOjorNqqEMePc4MiQXJj/SJPgyKkxUN4gqfNaRapDSfu2z7D
- i7SVP6w62qfQQpnkTf2TkhzUfdJ8Xut1YkNrI=
+ bh=kD+oEPKanpwbUqT7qImxj7fv4DhkmQG/0AnVoyVwb8k=;
+ b=UYXRB88IRdD4LO1+UjCZMQoCTWH+rCo/z8yUb+7V9apqr/3fM7y1P8zCOZmiN1TMWr
+ l6wkeMUWdSJBf4f1bJD6hFJJtCSTAZrf5Rz6UvGfd10lupdcpOpNhCbq8Pfm34AjFOtm
+ PLE9QDxa5mJPr+T+L2nL8bqrQq+TcmcqVjcIc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=IXklBQ6ai0O2AEMFHBbAi493eYh613acLhwbCyGgVi0=;
- b=dCTS/jiVkWa3grEVlurm1OhM+sFQfQXQ/satjHr44XUGStEPLyXHh/qvdqE7dGJzyy
- sKaRgW9pBnzeHdV+/+AF2iz5h11W8enu0ugusVBX4s61XwyU5WgnDDq4EY8dwz4hgoUD
- duJdhfr9Wb6UX/rgkYDABgWOtdXMY1ihSRRJevrHbzlNKmn7/SC+fDyEZrbd3EL7fy9q
- bRbFcoUIqwVUA7DtEHIKwxK0zmPPIj8w2WsRv2Vj6xpCH0UKInrfdDDmEsMMo3SUW24F
- ICOU/+MsPQBLnuVj4l+vib3THqpamFAiyR4LHq/jRw71GFekCuGQ5YxL+MvaB/oIX2kq
- NCDw==
-X-Gm-Message-State: APjAAAV/HBRcWoOFLRJ3zkkwIxa/kbdelAcjS4IS0W3fcsri4vXjoCnj
- R7S/FHhuBifBlHNsxIcHPx1Ajoku7r8=
-X-Google-Smtp-Source: APXvYqzAmLSV3CpRpWZYcriyISJkD7of1RbSt1WgZchzbf+dJpvDUkpsRoL8nhX/2y7HEF+OhnVznA==
-X-Received: by 2002:a17:902:1e9:: with SMTP id
- b96mr80242148plb.277.1561056935646; 
- Thu, 20 Jun 2019 11:55:35 -0700 (PDT)
+ bh=kD+oEPKanpwbUqT7qImxj7fv4DhkmQG/0AnVoyVwb8k=;
+ b=s/WmUo4XukjcFhZZ3vCiU2MpAYsSa6DzYOFCLt3BRuI516NaoTad9jwGde5SjGQJkj
+ HPQesDZ6IGyYqeps+yHvq23KzXqjZKxAYXc/6ltl20I/wpzcGoT6hz2LeOUjCsSHvGLb
+ ZKWYqCJq/ZOKK1jAcH53aIx9ysJJBb+qa65tjNVA4yxvyGD2G0HI1pYsrqeD3QJ3sDQR
+ XgngaKh+ot8pJuNh/Xdn4CPLrNuT+pBsbb8CAbYhFwfPmdxTHDMuoZZUbDmhZSmwJuW2
+ DSTkbt5muM423OCcd+8Js4FLZJg7dnDI30W/0zZRhe/yFpSFoJh8RR7ZAOi18H80maph
+ KDPA==
+X-Gm-Message-State: APjAAAUgU4bJk1DzPzAQtNwG2Beb74W/yl/1BG1FnHR1eK4zrHn9EP4J
+ sAw9/xhs1CYSt1Pyh+jLDBbx2w==
+X-Google-Smtp-Source: APXvYqzsGSMpnbkvOOIY7YD/2WnkN9wt64TzUkMLxMgd0DtjuU9fwd5cedvLN6y59zeZeXHYAR9bTA==
+X-Received: by 2002:a17:902:6947:: with SMTP id
+ k7mr52379067plt.253.1561056938788; 
+ Thu, 20 Jun 2019 11:55:38 -0700 (PDT)
 Received: from localhost.localdomain ([183.82.225.128])
- by smtp.gmail.com with ESMTPSA id k3sm372183pju.27.2019.06.20.11.55.32
+ by smtp.gmail.com with ESMTPSA id k3sm372183pju.27.2019.06.20.11.55.35
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 20 Jun 2019 11:55:35 -0700 (PDT)
+ Thu, 20 Jun 2019 11:55:38 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, u-boot@lists.denx.de
-Subject: [PATCH v2 5/8] rockchip: rk3399: Enable SPL_BOARD_INIT
-Date: Fri, 21 Jun 2019 00:25:03 +0530
-Message-Id: <20190620185506.11449-6-jagan@amarulasolutions.com>
+Subject: [PATCH v2 6/8] rockchip: rk3399: tpl: Add spl_board_init
+Date: Fri, 21 Jun 2019 00:25:04 +0530
+Message-Id: <20190620185506.11449-7-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190620185506.11449-1-jagan@amarulasolutions.com>
 References: <20190620185506.11449-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_115536_226636_79A30B2D 
-X-CRM114-Status: GOOD (  11.20  )
+X-CRM114-CacheID: sfid-20190620_115539_372874_2923D923 
+X-CRM114-Status: UNSURE (   8.21  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -106,39 +107,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Enable SPL_BOARD_INIT globally to rk3399, this would
-help to print the SPL banner during bootup.
+Add spl_board_init for TPL, that have TPL banner will help
+to print tpl boot prints.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- arch/arm/mach-rockchip/Kconfig | 1 +
- configs/puma-rk3399_defconfig  | 1 -
- 2 files changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/mach-rockchip/rk3399-board-tpl.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-diff --git a/arch/arm/mach-rockchip/Kconfig b/arch/arm/mach-rockchip/Kconfig
-index c05e3c3f48..ce039022df 100644
---- a/arch/arm/mach-rockchip/Kconfig
-+++ b/arch/arm/mach-rockchip/Kconfig
-@@ -158,6 +158,7 @@ config ROCKCHIP_RK3399
- 	select SPL
- 	select SPL_ATF
- 	select SPL_ATF_NO_PLATFORM_PARAM if SPL_ATF
-+	select SPL_BOARD_INIT if SPL
- 	select SPL_LOAD_FIT
- 	select SPL_CLK if SPL
- 	select SPL_PINCTRL if SPL
-diff --git a/configs/puma-rk3399_defconfig b/configs/puma-rk3399_defconfig
-index ebc78fb216..5cb2273a15 100644
---- a/configs/puma-rk3399_defconfig
-+++ b/configs/puma-rk3399_defconfig
-@@ -21,7 +21,6 @@ CONFIG_MISC_INIT_R=y
- # CONFIG_DISPLAY_CPUINFO is not set
- CONFIG_DISPLAY_BOARDINFO_LATE=y
- CONFIG_SPL_TEXT_BASE=0xff8c2000
--CONFIG_SPL_BOARD_INIT=y
- # CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
- # CONFIG_SPL_LEGACY_IMAGE_SUPPORT is not set
- CONFIG_SPL_STACK_R=y
+diff --git a/arch/arm/mach-rockchip/rk3399-board-tpl.c b/arch/arm/mach-rockchip/rk3399-board-tpl.c
+index 86d3ffe97c..72d0dd914e 100644
+--- a/arch/arm/mach-rockchip/rk3399-board-tpl.c
++++ b/arch/arm/mach-rockchip/rk3399-board-tpl.c
+@@ -8,6 +8,7 @@
+ #include <dm.h>
+ #include <ram.h>
+ #include <spl.h>
++#include <version.h>
+ #include <asm/io.h>
+ #include <asm/arch-rockchip/bootrom.h>
+ 
+@@ -73,6 +74,12 @@ u32 spl_boot_device(void)
+ 	return BOOT_DEVICE_BOOTROM;
+ }
+ 
++void spl_board_init(void)
++{
++	puts("\nU-Boot TPL "  PLAIN_VERSION " (" U_BOOT_DATE " - "
++	     U_BOOT_TIME " " U_BOOT_TZ ")\n");
++}
++
+ #ifdef CONFIG_SPL_LOAD_FIT
+ int board_fit_config_name_match(const char *name)
+ {
 -- 
 2.18.0.321.gffc6fa0e3
 
