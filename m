@@ -2,78 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A26B74CB93
-	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Jun 2019 12:08:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4A4F4CC72
+	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Jun 2019 12:59:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zwj2wiKMtEliWx46xgbjPGhR9+8nMGZQV++++H+SI5s=; b=RPAhhyQcN/QQI/
-	8R0NdJSZWuNjnYSbfpeZHgUwAfI1y+cXgj4CtJ68rAOei2yUo97YcNcIiz5Wt2i0ofS5aVelN1a9t
-	esobLdho3QlnL9gSncMc4IZ9BlHvPwoHrLgN4zfzMVIBV1rBcNQD7X4V+91tO8Hn4dUe+1Z11UGz0
-	+VOlTisBi43JdTMH8G6WzJo5jyUa7sd0ZrfrjM83Ie352sEMeRXEiOB+cAuk/I0gRkyUUDACo8tpW
-	GqEsH8k65na2004+o/s1tpHVHiJ5wTC071vRU1B2EfD3ggtmadUlC8qiyOJe4jFqUe4OwYVRYeM7l
-	GUjUOHOFrRgcUlzwWypw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HTE/1Aoq1a8yq6vqyGsDImqDm1/iiDORBwdEdWSJLpE=; b=Qk8pi7B3NeXinf
+	TIkmwIABeJrGdeHoW+mA7fHdb2HsNfY/NCawCvDDL2d4xGV9DOu7RdiQPHr9f+rJ0LCKZiCczvZw/
+	C2YLW9JKkwN9Ymg248Dm35gkEKjTBlMAvnI/Cinpbe5uFlr13nJTzPryzbhzmXr8iiiDSbNvpghmh
+	wwe/Abfa8/Zdrczuz2jbk5ySyzTgfVwMrmlYGTXfmbf2A/18wb9AFV4/u8mNbQtWBU8M78w3t2Gg6
+	24OCElF9Km/zEwghJW6X1l/tGG0kR1JTXQnrSUmbrDJJLTVk91WsxTHiFODxbiu/FKfFjN1QfDogF
+	ohSCn+KlOGZW33HbRGzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdtzi-0006fp-QA; Thu, 20 Jun 2019 10:08:38 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hdun6-0000hq-N5; Thu, 20 Jun 2019 10:59:40 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdtzN-0006NZ-6G
- for linux-rockchip@lists.infradead.org; Thu, 20 Jun 2019 10:08:18 +0000
-Received: by mail-pg1-x541.google.com with SMTP id v9so1305298pgr.13
- for <linux-rockchip@lists.infradead.org>; Thu, 20 Jun 2019 03:08:17 -0700 (PDT)
+ id 1hdun2-0000hW-1F
+ for linux-rockchip@lists.infradead.org; Thu, 20 Jun 2019 10:59:37 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 19so1469740pfa.4
+ for <linux-rockchip@lists.infradead.org>; Thu, 20 Jun 2019 03:59:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=wVJfdIxX3AOWESls8BSNG7FiUmX2vaUpDqCE9rqexDM=;
- b=RURLjpaYtL2QTjx/+laxoYAEADu+g/OaAy5EcD+xAA6mJ2MhBO+yohTgMIJ8dkS8JY
- 3M/N8LsnWBxgSaxukAmTSyvkIV6gr3Z4osanm0m3ZXpsOtnQJyj1gLc763jhSDggmjMD
- vFI2sdlbuMxD6fu8zDW7eLXFgR4tXyPvIO55I=
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=VTYVwBjgCKNY/FlJSycuMhAtBvrPKNheYq1n4TGKvPs=;
+ b=MYt/ZFt/JgMf/ATRwzinwAG8Ey1it8gB2Brt44SNBAsD9v0tDt41QzKp4UahFTd9qt
+ zg+AgevEDVRg8phOrjQYtPcUe3fIp+41vnpuVx1thfIeYb+WfnjwV4ab4rK3ufM80RVp
+ zPfNVJ9UO6yv4qEn9RhOUt+pVP4KY58kOmrBE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=wVJfdIxX3AOWESls8BSNG7FiUmX2vaUpDqCE9rqexDM=;
- b=PWi/cnSq6+WXlBZOO1P75Vew8FgFtDo717thDvRWCzpJPzixx5g4FB/BX1P/yGEn0C
- 81jxby5yU+866V902BtBq50LvwpBpegdcocU05cSuAK0ZkUmEhxdNdf3epvBl8LUI2DP
- G+K1eDusjjT8KMT8RI4qXL6fvrvVW4YBJy5uRsiD3z1YpvORpVVPii7nThp664zP9R0U
- vc0PmSP+n6cTM1Q92VM3vAN5gFTGuLrDqO/1rkKj/iMUePPYVE05N7kbyHumLp5TVaS1
- LRQZS3HzdBZ+hfJJ2OJTHywGkuGficdbFr03GgmnfqT1y2hkHZNmQdToihn4iQKWhao9
- 7jjQ==
-X-Gm-Message-State: APjAAAVparCvHEokGrpRzLDNbrSBXTgfsSi/pN22OQWBLVLLqIJfylDK
- W5ZZgAHjXK5JXblIgVcswTxwgg==
-X-Google-Smtp-Source: APXvYqx0A5Wu59pMhfcFmJirFVvQ9/4zOUcFaD93VkaWY/WC2l+H1B0kscaPEn1o7OihPTmzkcPe1Q==
-X-Received: by 2002:a63:1723:: with SMTP id x35mr7776901pgl.233.1561025296366; 
- Thu, 20 Jun 2019 03:08:16 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=VTYVwBjgCKNY/FlJSycuMhAtBvrPKNheYq1n4TGKvPs=;
+ b=a5Jpk16De7Tc7emdJ3VPpyNh34mpoa1Lj0XevVepI91/nlXsz4yVUw+ndTjug5rncg
+ oeMIh8zMocqWYzpOKzMGWml70tK3SvtUJZqaNsaYBnJkh+ZAn0W2QmsGgED+W8AGOzAl
+ vc9sGhOpbocragIEvMqr1ZeHTZvilXy33KU049ujxkWtCdYsDQVc+zakTqZrpqG7FKlc
+ Ls4mWWvnszy5RwkiLIJLJrrIDJhfbIswfxQyw4mDTfr9tdEC7yLiH1ZR8RJ0YYu6+IaR
+ aBoINwz7JYvfMJTveNHdH1VORViXSwd7r5yq5U0HPpnR8LHelNRUmWIzmZX7/UT1aPlD
+ 31RQ==
+X-Gm-Message-State: APjAAAVWvIGUShNH2x52Jho08yp1srdv2R/Q6yfyW+SkmuODHycN5c1D
+ i2XmdIFwzQ9dkPHzAsUZsW7L1A==
+X-Google-Smtp-Source: APXvYqwyv4p8EdoQU2Qg8ZYyxJnUjSpqhetbQ/hDzmNw6y6goSdEWENifX0ToJMNdFdODpZsoAc8Sg==
+X-Received: by 2002:a63:8d4c:: with SMTP id z73mr6426521pgd.95.1561028375258; 
+ Thu, 20 Jun 2019 03:59:35 -0700 (PDT)
 Received: from localhost.localdomain ([183.82.229.140])
- by smtp.gmail.com with ESMTPSA id x129sm21731387pfb.29.2019.06.20.03.08.13
+ by smtp.gmail.com with ESMTPSA id r15sm31306524pfc.162.2019.06.20.03.59.31
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 20 Jun 2019 03:08:15 -0700 (PDT)
+ Thu, 20 Jun 2019 03:59:34 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, u-boot@lists.denx.de
-Subject: [PATCH v4 6/6] Kconfig: Add u-boot.itb BUILD_TARGET for Rockchip
-Date: Thu, 20 Jun 2019 15:37:40 +0530
-Message-Id: <20190620100740.6560-7-jagan@amarulasolutions.com>
+Subject: [PATCH v4.1 4/6] rockchip: rk3399: Get bl31.elf via BL31
+Date: Thu, 20 Jun 2019 16:29:22 +0530
+Message-Id: <20190620105922.484-1-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
-In-Reply-To: <20190620100740.6560-1-jagan@amarulasolutions.com>
-References: <20190620100740.6560-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_030817_262959_72BD1633 
-X-CRM114-Status: GOOD (  11.63  )
+X-CRM114-CacheID: sfid-20190620_035936_590056_507BBCB2 
+X-CRM114-Status: GOOD (  11.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,79 +101,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add u-boot.itb BUILD_TARGET for Rockchip platform when SPL_LOAD_FIT
-is being used.
+Right now rockchip platform need to copy bl31.elf into u-boot
+source directory to make use of building u-boot.itb.
 
-This can get rid of building itb explicitly with 'make u-boot.itb'
-so, from now all required images will build just by make.
+So, add environment variable BL31 like Allwinner SoC so-that the
+bl31.elf would available via BL31.
+
+If the builds are not exporting BL31 env, the make_fit_atf.py
+explicitly create dummy bl31.elf in u-boot root directory to
+satisfy travis builds and it will show the warning on console as
+
+ WARNING: BL31 file bl31.elf NOT found, resulting binary is non-functional
+ WARNING: Please read Building section in doc/README.rockchip
+
+Note, that the dummy bl31 files were created during not exporting
+BL31 case would be removed via clean target in Makefile.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
 ---
- Kconfig                                    | 2 +-
- board/theobroma-systems/puma_rk3399/README | 2 +-
- board/vamrs/rock960_rk3399/README          | 1 -
- doc/README.rockchip                        | 2 --
- 4 files changed, 2 insertions(+), 5 deletions(-)
+Changes for v4.1:
+- Check BL31 env first instead of bl31.elf PWD.
 
-diff --git a/Kconfig b/Kconfig
-index 6b44256538..df8f2946c5 100644
---- a/Kconfig
-+++ b/Kconfig
-@@ -250,7 +250,7 @@ config BUILD_TARGET
- 	default "u-boot-with-spl.sfp" if TARGET_SOCFPGA_GEN5
- 	default "u-boot-spl.kwb" if ARCH_MVEBU && SPL
- 	default "u-boot-elf.srec" if RCAR_GEN3
--	default "u-boot.itb" if SPL_LOAD_FIT && ARCH_SUNXI
-+	default "u-boot.itb" if SPL_LOAD_FIT && (ROCKCHIP_RK3399 || ARCH_SUNXI)
- 	default "u-boot.kwb" if KIRKWOOD
- 	default "u-boot-with-spl.bin" if ARCH_AT91 && SPL_NAND_SUPPORT
- 	help
-diff --git a/board/theobroma-systems/puma_rk3399/README b/board/theobroma-systems/puma_rk3399/README
-index f67dfb451f..9b31b0b379 100644
---- a/board/theobroma-systems/puma_rk3399/README
-+++ b/board/theobroma-systems/puma_rk3399/README
-@@ -60,7 +60,7 @@ Creating a SPL image for SD-Card/eMMC
- Creating a SPL image for SPI-NOR
-   > tools/mkimage -n rk3399 -T rkspi -d spl/u-boot-spl.bin spl_nor.img
- Create the FIT image containing U-Boot proper, ATF, M0 Firmware, devicetree
--  > make CROSS_COMPILE=aarch64-linux-gnu- u-boot.itb
-+  > make CROSS_COMPILE=aarch64-linux-gnu-
+ Makefile                               |  2 +-
+ arch/arm/mach-rockchip/make_fit_atf.py | 19 +++++++++++++++++--
+ doc/README.rockchip                    |  4 ++--
+ 3 files changed, 20 insertions(+), 5 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index a503ab9fc1..3ede10ff68 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1848,7 +1848,7 @@ clean: $(clean-dirs)
+ 		-o -name 'dsdt.aml' -o -name 'dsdt.asl.tmp' -o -name 'dsdt.c' \
+ 		-o -name '*.efi' -o -name '*.gcno' -o -name '*.so' \) \
+ 		-type f -print | xargs rm -f \
+-		bl31_*.bin image.map
++		bl31.c bl31.elf bl31_*.bin image.map
  
- Flash the image
- ===============
-diff --git a/board/vamrs/rock960_rk3399/README b/board/vamrs/rock960_rk3399/README
-index d14399090e..c5c675c4ea 100644
---- a/board/vamrs/rock960_rk3399/README
-+++ b/board/vamrs/rock960_rk3399/README
-@@ -61,7 +61,6 @@ Compile the U-Boot
-   > export CROSS_COMPILE=aarch64-linux-gnu-
-   > make rock960-rk3399_defconfig
-   > make
--  > make u-boot.itb
+ # mrproper - Delete all generated files, including .config
+ #
+diff --git a/arch/arm/mach-rockchip/make_fit_atf.py b/arch/arm/mach-rockchip/make_fit_atf.py
+index 212bd0a854..45ec105887 100755
+--- a/arch/arm/mach-rockchip/make_fit_atf.py
++++ b/arch/arm/mach-rockchip/make_fit_atf.py
+@@ -12,6 +12,7 @@
+ import os
+ import sys
+ import getopt
++import logging
  
- Compile the rkdeveloptool
- =========================
+ # pip install pyelftools
+ from elftools.elf.elffile import ELFFile
+@@ -89,13 +90,17 @@ def append_conf_section(file, cnt, dtname, segments):
+     file.write('\t\tconfig_%d {\n' % cnt)
+     file.write('\t\t\tdescription = "%s";\n' % dtname)
+     file.write('\t\t\tfirmware = "atf_1";\n')
+-    file.write('\t\t\tloadables = "uboot",')
++    file.write('\t\t\tloadables = "uboot"')
++    if segments != 0:
++        file.write(',')
+     for i in range(1, segments):
+         file.write('"atf_%d"' % (i))
+         if i != (segments - 1):
+             file.write(',')
+         else:
+             file.write(';\n')
++    if segments == 0:
++        file.write(';\n')
+     file.write('\t\t\tfdt = "fdt_1";\n')
+     file.write('\t\t};\n')
+     file.write('\n')
+@@ -171,8 +176,18 @@ def generate_atf_binary(bl31_file_name):
+ 
+ def main():
+     uboot_elf = "./u-boot"
+-    bl31_elf = "./bl31.elf"
+     fit_its = sys.stdout
++    if "BL31" in os.environ:
++        bl31_elf=os.getenv("BL31");
++    elif os.path.isfile("./bl31.elf"):
++        bl31_elf = "./bl31.elf"
++    else:
++        os.system("echo 'int main(){}' > bl31.c")
++        os.system("${CROSS_COMPILE}gcc -c bl31.c -o bl31.elf")
++        bl31_elf = "./bl31.elf"
++        logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
++        logging.warning(' BL31 file bl31.elf NOT found, resulting binary is non-functional')
++        logging.warning(' Please read Building section in doc/README.rockchip')
+ 
+     opts, args = getopt.getopt(sys.argv[1:], "o:u:b:h")
+     for opt, val in opts:
 diff --git a/doc/README.rockchip b/doc/README.rockchip
-index 0ee54cd00e..fac87ade2c 100644
+index 264f7e4994..5680c075fa 100644
 --- a/doc/README.rockchip
 +++ b/doc/README.rockchip
-@@ -103,7 +103,6 @@ For example:
-      => cd /path/to/u-boot
-      => make nanopi-neo4-rk3399_defconfig
-      => make
--     => make u-boot.itb
+@@ -149,8 +149,8 @@ For example:
+ 	=> make realclean
+ 	=> make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399
  
-    - Get the rkbin
+-	(copy bl31.elf into U-Boot root dir)
+-	=> cp build/rk3399/release/bl31/bl31.elf /path/to/u-boot
++	(export bl31.elf)
++	=> export BL31=/path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf
  
-@@ -170,7 +169,6 @@ For example:
-      => cd /path/to/u-boot
-      => make orangepi-rk3399_defconfig
-      => make
--     => make u-boot.itb
+    - Compile PMU M0 firmware
  
-      (Get spl/u-boot-spl-dtb.bin, u-boot.itb images and some boards would get
-       spl/u-boot-spl.bin since it doesn't enable CONFIG_SPL_OF_CONTROL
 -- 
 2.18.0.321.gffc6fa0e3
 
