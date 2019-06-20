@@ -2,82 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F22924D9D3
+	by mail.lfdr.de (Postfix) with ESMTPS id F2B454D9D4
 	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Jun 2019 20:55:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SIqQgSSgANb/QlBUT8X3TSKq9ZvdbEF799++uO3j7+k=; b=XIC621QWpKDt4R
-	PGsCv5OYnJszxfyhMnk7VvESYXF/V0LWekXnlJUdrxXUVZtvRcvwDqxe+6qmhNN9Az6BAOG4pEosn
-	ybt/DmdqQ+BD7e0AIJ1wxkz7UZnBx8UX9JcwMrQIg0Ult31mTQ+uXlqRMl4BsLbOgLMUTyw25dJ0f
-	V+205yRGwzic7ofNs/9kYnx3JkICMkS6vH33GSMFsFIZ6v448dUNyKE12r+wc/90QOGazQMqUkeU1
-	xRpYH1M/+m9uttmfOvD3ZAcQWxnTXhQzIMedYhPND20/kCBSzUX3kL5Tk9QZxrkVt2xsGI7gxT4P/
-	nZtV19BMGxvq0bNeydUQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/QQnm6VbvHW3envSjTajgqFVk27XeA5vaC/xUVCJspM=; b=Qx7Y737BPQ9bIC
+	MZrntsK1+oT6NaNQxeWaKjEn1YlQ0WYGyzoPEC4DFPby66V59cNnuHUIY/V+dGHmQERQ4fHnQsjZa
+	ObkGotItWYiyin8j5xg+FBKVvqeCqRKt5x/l+j68vCUf5WS4jwv61n0CXV4A6rvtXqrcW4eUbdTf1
+	mi459s+0B5YHF8+g0TG+el/msUNovKL+IesWrU2svw3wq6tXnebLu/Ygqghoic3YLvF5VZr64CgH/
+	Rd7eU6+Yl+oVVaV8Wzc54d1NZNUr2sN5+Xarxb8A71G5btyAFiczT6Kld3yN0up75irB1BgfNEfDL
+	2luikd4/DBSPBVowt43w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he2DU-0002nN-4d; Thu, 20 Jun 2019 18:55:24 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1he2DX-0002ox-9h; Thu, 20 Jun 2019 18:55:27 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1he2DQ-0002mf-QK
- for linux-rockchip@lists.infradead.org; Thu, 20 Jun 2019 18:55:22 +0000
-Received: by mail-pg1-x544.google.com with SMTP id l19so2032190pgh.9
- for <linux-rockchip@lists.infradead.org>; Thu, 20 Jun 2019 11:55:20 -0700 (PDT)
+ id 1he2DT-0002n6-CQ
+ for linux-rockchip@lists.infradead.org; Thu, 20 Jun 2019 18:55:24 +0000
+Received: by mail-pf1-x444.google.com with SMTP id 81so2150343pfy.13
+ for <linux-rockchip@lists.infradead.org>; Thu, 20 Jun 2019 11:55:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=dliYcFtfFRKcruaQ18nkUGrUM1yrABrfWlip8Ygjlfg=;
- b=XXAFy64wkrwMZaTTOKb/dQAIgfy4KLu2baqWj/BUqvTAlDxSMUrfhhU/xmXqDqm+G/
- 6RWD2JyCoQ7q/huhm2o6V/LzKTrUTvh/7RwASieiDc641+A+Pz/TBZXAWtZ6gPDPtDnX
- gNwYhLPAJxcKvucVYJEh5gl5PAgmEC+405ZDo=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=iJdc+LE+goLm9GBcZ8RQa+EHlJZSHEiVDu4uCr02hoI=;
+ b=lh5IPRX3X/If/l6Bn0jHcl1AZh8H6eMoqpNQ8klq8sWjj65UuOWbrhk4eLr2pueJ3G
+ A7S4pyPPy68tX/J7sO+29bFRe5fVbbZI0ANfnsZuNqKhdhoDb3xeXWDfhKX7YpZUbati
+ Il//sfBH8CXVAk7+F+sJPWF3xoEmKmnSGN7Ic=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=dliYcFtfFRKcruaQ18nkUGrUM1yrABrfWlip8Ygjlfg=;
- b=qCduezrZ8ryr0nRBy7G173MdF9HrEJpjsb7M8m8IxuVoomfZ8pI2ClkL0srci+STff
- oJjd8nyrN+muR02HQC13df/Jea0jDvxxfE3COG4NVtXZTcrtuIx4Q95dkduEPqEpU+BT
- AJFlMk4stq+qfCQklXrA58OWq504g3EIc3rZW12WhCbYJKqA0quhRT58HS/eH1S/jwr0
- 0HZVFIOU8kq1wy08prrLJNIKcUqzFqJiGAlgKEh7U+tQ3D4sFcxU9YF4x/ruZV2/Y8TE
- qLvaQLNmgacJS+/f5FrS3uBH6rsfEa5iQauS/wu/0wrfYEz1MOpKKsTiabNsVbHhGGmd
- K+Mg==
-X-Gm-Message-State: APjAAAU1fsYAuyQg1I1dQsJlXV0SHEBOTGMN2bbqCl2SjL5VhyUsCY1D
- X0YurUSA7NIGnchT2a/+NFgR/g==
-X-Google-Smtp-Source: APXvYqywK7zeTR3T/3D+OBgSp1OUfPkOaUGzNwmBkzh1l0ukiwhZgBud2mRK8NcDYInGBQSwhoyhIQ==
-X-Received: by 2002:a63:35c7:: with SMTP id c190mr7972977pga.445.1561056919652; 
- Thu, 20 Jun 2019 11:55:19 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=iJdc+LE+goLm9GBcZ8RQa+EHlJZSHEiVDu4uCr02hoI=;
+ b=T+6OzMiSEm5KNbzEV92aJda9eA4okaGIr3+W/LDW5Si7714d0jVc+44eZygV9TyQLt
+ Op7sY3cuqUz0mifuNvCAym+JQmr6Yhf9URo9T3SJtpc4tMxs+V3nJDnhTeXcNsQES24d
+ XTOC13CMYlvjiD89chHglFXIS5Gfm5pEudS7sHzCeXMPlEpqM1T27c0FG9gdPm8j9QoG
+ z4UEa2Kdkh2y764OxZoHoOFejLLXvEmnXB40oe00RnMad4FlrHhC4OMeELV4ov6qM4Ub
+ VlXbvsl5JdNzEvXcMdbB6w4d8kzJ27fSGeiiR5/46UXXywKN0oIvtxCoAJLUrmAc/fd6
+ 2X3w==
+X-Gm-Message-State: APjAAAU0KVHIFOIO6mNqIlNgHAS3q+7GvWZ0pu+xw/ksHGlpaoL5msS8
+ vg1qWj+uQKGi/syjQUUNBRhygA==
+X-Google-Smtp-Source: APXvYqz+L1k6UWHqeqYARj8hU6pjivJYV5tKYRdwW4tW/a+jLsSTR2ca+ylh6UybN8EgNjgyO3sr5A==
+X-Received: by 2002:a17:90a:ad93:: with SMTP id
+ s19mr1184079pjq.36.1561056922773; 
+ Thu, 20 Jun 2019 11:55:22 -0700 (PDT)
 Received: from localhost.localdomain ([183.82.225.128])
- by smtp.gmail.com with ESMTPSA id k3sm372183pju.27.2019.06.20.11.55.16
+ by smtp.gmail.com with ESMTPSA id k3sm372183pju.27.2019.06.20.11.55.19
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 20 Jun 2019 11:55:19 -0700 (PDT)
+ Thu, 20 Jun 2019 11:55:22 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, u-boot@lists.denx.de
-Subject: [PATCH v2 0/8] rockchip: rk3399: Use spl_board_init in SPL, TPL
-Date: Fri, 21 Jun 2019 00:24:58 +0530
-Message-Id: <20190620185506.11449-1-jagan@amarulasolutions.com>
+Subject: [PATCH v2 1/8] board: rk3399: Drop explicit uart enablement in
+ spl_board_init
+Date: Fri, 21 Jun 2019 00:24:59 +0530
+Message-Id: <20190620185506.11449-2-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
+In-Reply-To: <20190620185506.11449-1-jagan@amarulasolutions.com>
+References: <20190620185506.11449-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_115520_862221_C5AB9F98 
-X-CRM114-Status: UNSURE (   8.46  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190620_115523_422519_3B72CAAC 
+X-CRM114-Status: GOOD (  12.03  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [183.82.225.128 listed in dnsbl.sorbs.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [183.82.225.128 listed in dnsbl.sorbs.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -104,90 +107,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This is v2 set for previous v1. No much diff, except the
-latest rebase.
+preloader_console_init is used for printing SPL boot banner that
+usually called from spl_board_init.
 
-Usually spl_board_init has preloader_console_init which
-would help to print boot up banner during SPL and TPL.
+The current spl_board_init in evb and rock960 is enabling explicit
+pinctrl, debug uart prior to calling preloader_console_init which
+eventually not required since board_init_f is already enabled
+debug uart.
 
-The current rk3399 lacking that in few of the boards, 
-this series make reuse of spl_board_init in SPL and TPL stages.
+So, drop those explicit enablement calls from  spl_board_init of
+evb, rock960.
 
-with this series:
-================
+Tested this by enabling CONFIG_SPL_BOARD_INIT and adding
+u-boot,dm-pre-reloc property for uart node.
 
-U-Boot TPL 2019.07-rc1-00243-g3f0cad6bd2 (May 08 2019 - 11:29:32 +0530)
-Trying to boot from BOOTROM
-Returning to boot ROM...
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ board/rockchip/evb_rk3399/evb-rk3399.c      | 23 +------------------
+ board/vamrs/rock960_rk3399/rock960-rk3399.c | 25 +--------------------
+ 2 files changed, 2 insertions(+), 46 deletions(-)
 
-U-Boot SPL 2019.07-rc1-00243-g3f0cad6bd2 (May 08 2019 - 11:29:32 +0530)
-Trying to boot from MMC1
-
-
-U-Boot 2019.07-rc1-00243-g3f0cad6bd2 (May 08 2019 - 11:29:32 +0530)
-
-Model: FriendlyElec NanoPC-T4
-DRAM:  3.9 GiB
-MMC:   dwmmc@fe310000: 2, dwmmc@fe320000: 1, sdhci@fe330000: 0
-Loading Environment from MMC... *** Warning - bad CRC, using default environment
-
-In:    serial@ff1a0000
-Out:   serial@ff1a0000
-Err:   serial@ff1a0000
-Model: FriendlyElec NanoPC-T4
-Net:   eth0: ethernet@fe300000
-Hit any key to stop autoboot:  0 
-=>
-
-without this series:
-===================
-
-U-Boot TPL board init
-Trying to boot from BOOTROM
-Returning to boot ROM...
-U-Boot SPL board init
-Trying to boot from MMC1
-
-U-Boot 2019.07-rc1-00243-g3f0cad6bd2 (May 08 2019 - 11:29:32 +0530)
-
-Model: FriendlyElec NanoPC-T4
-DRAM:  3.9 GiB
-MMC:   dwmmc@fe310000: 2, dwmmc@fe320000: 1, sdhci@fe330000: 0
-Loading Environment from MMC... *** Warning - bad CRC, using default environment
-
-In:    serial@ff1a0000
-Out:   serial@ff1a0000
-Err:   serial@ff1a0000
-Model: FriendlyElec NanoPC-T4
-Net:   eth0: ethernet@fe300000
-Hit any key to stop autoboot:  0 
-=>
-
-Any inputs?
-Jagan.
-
-Jagan Teki (8):
-  board: rk3399: Drop explicit uart enablement in spl_board_init
-  rockchip: rk3399: Support common spl_board_init
-  rockchip: rk3399: spl: Mark printascii into debug
-  rockchip: rk3399: Move u-boot, dm-pre-reloc of uart0, uart2
-  rockchip: rk3399: Enable SPL_BOARD_INIT
-  rockchip: rk3399: tpl: Add spl_board_init
-  rockchip: rk3399: tpl: Mark printascii into debug
-  rockchip: rk3399: Enable TPL_BOARD_INIT
-
- arch/arm/dts/rk3399-gru.dtsi                  |  1 -
- arch/arm/dts/rk3399-puma.dtsi                 |  1 -
- arch/arm/dts/rk3399-u-boot.dtsi               |  8 +++
- arch/arm/mach-rockchip/Kconfig                |  2 +
- arch/arm/mach-rockchip/rk3399-board-spl.c     | 65 ++++++++++++++++++-
- arch/arm/mach-rockchip/rk3399-board-tpl.c     |  9 ++-
- board/rockchip/evb_rk3399/evb-rk3399.c        | 29 ---------
- .../puma_rk3399/puma-rk3399.c                 | 58 -----------------
- board/vamrs/rock960_rk3399/rock960-rk3399.c   | 31 ---------
- configs/puma-rk3399_defconfig                 |  1 -
- 10 files changed, 82 insertions(+), 123 deletions(-)
-
+diff --git a/board/rockchip/evb_rk3399/evb-rk3399.c b/board/rockchip/evb_rk3399/evb-rk3399.c
+index bf2ad98c47..769b5d146f 100644
+--- a/board/rockchip/evb_rk3399/evb-rk3399.c
++++ b/board/rockchip/evb_rk3399/evb-rk3399.c
+@@ -6,7 +6,6 @@
+ #include <common.h>
+ #include <dm.h>
+ #include <dm/pinctrl.h>
+-#include <dm/uclass-internal.h>
+ #include <asm/arch-rockchip/periph.h>
+ #include <power/regulator.h>
+ #include <spl.h>
+@@ -68,27 +67,7 @@ out:
+ 
+ void spl_board_init(void)
+ {
+-	struct udevice *pinctrl;
+-	int ret;
+-
+-	ret = uclass_get_device(UCLASS_PINCTRL, 0, &pinctrl);
+-	if (ret) {
+-		debug("%s: Cannot find pinctrl device\n", __func__);
+-		goto err;
+-	}
+-
+-	/* Enable debug UART */
+-	ret = pinctrl_request_noflags(pinctrl, PERIPH_ID_UART_DBG);
+-	if (ret) {
+-		debug("%s: Failed to set up console UART\n", __func__);
+-		goto err;
+-	}
+-
+ 	preloader_console_init();
+-	return;
+-err:
+-	printf("%s: Error %d\n", __func__, ret);
+ 
+-	/* No way to report error here */
+-	hang();
++	return;
+ }
+diff --git a/board/vamrs/rock960_rk3399/rock960-rk3399.c b/board/vamrs/rock960_rk3399/rock960-rk3399.c
+index 0f5ef3a09a..018e4b55b8 100644
+--- a/board/vamrs/rock960_rk3399/rock960-rk3399.c
++++ b/board/vamrs/rock960_rk3399/rock960-rk3399.c
+@@ -5,9 +5,6 @@
+ 
+ #include <common.h>
+ #include <dm.h>
+-#include <dm/pinctrl.h>
+-#include <dm/uclass-internal.h>
+-#include <asm/arch-rockchip/periph.h>
+ #include <power/regulator.h>
+ #include <spl.h>
+ 
+@@ -24,27 +21,7 @@ int board_init(void)
+ 
+ void spl_board_init(void)
+ {
+-	struct udevice *pinctrl;
+-	int ret;
+-
+-	ret = uclass_get_device(UCLASS_PINCTRL, 0, &pinctrl);
+-	if (ret) {
+-		debug("%s: Cannot find pinctrl device\n", __func__);
+-		goto err;
+-	}
+-
+-	/* Enable debug UART */
+-	ret = pinctrl_request_noflags(pinctrl, PERIPH_ID_UART_DBG);
+-	if (ret) {
+-		debug("%s: Failed to set up console UART\n", __func__);
+-		goto err;
+-	}
+-
+ 	preloader_console_init();
+-	return;
+-err:
+-	printf("%s: Error %d\n", __func__, ret);
+ 
+-	/* No way to report error here */
+-	hang();
++	return;
+ }
 -- 
 2.18.0.321.gffc6fa0e3
 
