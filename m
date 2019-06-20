@@ -2,85 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B612F4C5C3
-	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Jun 2019 05:25:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBF3C4C5EB
+	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Jun 2019 05:47:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S3e7rg75fIpJmJZrCCHqQflBeM+M6CYjE2np4STT1wo=; b=UEVkXd3ppUK+SP
-	ESSR3uTZB2Fn6wdDrDhRQGbzJYFg63bVoFrF59gDWSi0KnbKO7UNsvVcoex4H62/9Fnx6H1BwnGwQ
-	jNMK1ANORkcO5KrHsPjcQ0XEvPLmHfo2lxCsF0NsVuwDkKpRorM4yKdGRKPszVs8ImEl+DLm1Uvts
-	6+OySoR+pRcVnQzwY7zVi7dee1URz30OcDu1FlXweUZBvcUr2rh7DhhQDEiFjB3Yz038tCdciQ5h3
-	KicZVVnHZZL6XGOTkfnLgkRvsNNBwH2fWGycLOq4cBTs6V+t2l9f/gRNJTE1N0gx6Lw7xcXigveUw
-	cJvquK1rBadWdCWdb2Yw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=T3IcvbwjfKJOWR9TimnivKNmwIw0xudaT/nTqGATpck=; b=Bv3okcFt8/jdS2
+	ItJX29xWq2Pv9x/lFoKKyHs2curx7iygR/PbDx/Vrb3YbV3p0lJF/5cezQkqrxzDpeSuHgSfGr/u4
+	5StEpoSTNAS5KyrJJ6FCgJV6SfpeVFdASJLAAYkpJOwcxoY7uAV+nJSC4ltPL3JnP440G6eKRFNIr
+	kiBtqKEaXKrdcv/McAZEfZwuPUyAUWilQRCb1R9nLgQuE33YUCDh4NRswLsTlTm5OUCTaehV5yCF3
+	Cqw1ycveEqAEeQv0f+0CKOoqR8lZGHSIzD3Co7/mp3CpuInA5RoH9vD8n9Llrm0ykblWoqu/ffAw1
+	PXtM/4ROTzDbLyGjCCkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdnh5-00083p-0J; Thu, 20 Jun 2019 03:24:59 +0000
-Received: from regular1.263xmail.com ([211.150.70.195])
+	id 1hdo2Y-00085g-QS; Thu, 20 Jun 2019 03:47:10 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdngz-00082f-6A
- for linux-rockchip@lists.infradead.org; Thu, 20 Jun 2019 03:24:57 +0000
-Received: from kever.yang?rock-chips.com (unknown [192.168.165.141])
- by regular1.263xmail.com (Postfix) with ESMTP id 106E29B8;
- Thu, 20 Jun 2019 11:24:44 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from [192.168.60.65] (unknown [103.29.142.67])
- by smtp.263.net (postfix) whith ESMTP id
- P13026T139963951339264S1561001073773330_; 
- Thu, 20 Jun 2019 11:24:41 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <94359041cc3f3a805b5b9c2ac61c56bc>
-X-RL-SENDER: kever.yang@rock-chips.com
-X-SENDER: yk@rock-chips.com
-X-LOGIN-NAME: kever.yang@rock-chips.com
-X-FST-TO: maxime.ripard@bootlin.com
-X-SENDER-IP: 103.29.142.67
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-Subject: Re: [U-Boot] [PATCH v2] arm64: dts: rockchip: Add support for Khadas
- Edge/Edge-V/Captain boards
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Mark Kettenis <mark.kettenis@xs4all.nl>
-References: <1558696796-10745-1-git-send-email-xieqinick@gmail.com>
- <1560756277-5928-1-git-send-email-xieqinick@gmail.com>
- <5ad4d842c462a19e6241fe620705381169d48318.camel@bootlin.com>
- <CAMty3ZA-wf7tRE=+38SujjXXNGC-pb-m9RzgxFBops6w5n9qzQ@mail.gmail.com>
- <196aa8982a2d9bc2fec5408fe4d84615bbfb2c2b.camel@bootlin.com>
- <72551f4c-f7a3-1afa-a214-66bc9c5cf48d@rock-chips.com>
- <ae83ac682e9013699e602d0b1856ec02805a6fd3.camel@bootlin.com>
- <54387600d5a68bf0@bloch.sibelius.xs4all.nl>
- <fd10e649-0bd8-03e0-5b95-0313de6b59a8@rock-chips.com>
- <df4fe202b5d59e37ef28af1e1106d0a92d6c5038.camel@bootlin.com>
-From: Kever Yang <kever.yang@rock-chips.com>
-Message-ID: <88b913b4-5bb7-58fb-650b-b3e4e74ff66a@rock-chips.com>
-Date: Thu, 20 Jun 2019 11:24:32 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.6.0
+ id 1hdo2V-00085G-2U
+ for linux-rockchip@lists.infradead.org; Thu, 20 Jun 2019 03:47:09 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 5693C260E5C
+Message-ID: <8ed2e1c55445b5d2ee1f99d773a1314c964bb636.camel@collabora.com>
+Subject: Re: [PATCH 1/2] media: uapi: Add VP8 stateless decoder API
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Boris Brezillon <boris.brezillon@collabora.com>
+Date: Thu, 20 Jun 2019 00:46:54 -0300
+In-Reply-To: <20190617152310.299d60e8@collabora.com>
+References: <20190613151040.8971-1-ezequiel@collabora.com>
+ <20190613151040.8971-2-ezequiel@collabora.com>
+ <20190617152310.299d60e8@collabora.com>
+Organization: Collabora
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-In-Reply-To: <df4fe202b5d59e37ef28af1e1106d0a92d6c5038.camel@bootlin.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_202453_588136_2694D8F5 
-X-CRM114-Status: GOOD (  51.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190619_204707_381121_76F0C04F 
+X-CRM114-Status: GOOD (  28.96  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.195 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,239 +61,276 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org,
- Maxime Ripard <maxime.ripard@bootlin.com>, u-boot@lists.denx.de,
- jagan@amarulasolutions.com, nick@khadas.com,
- linux-amarula@amarulasolutions.com, xieqinick@gmail.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: kernel@collabora.com, Heiko Stuebner <heiko@sntech.de>,
+ Jonas Karlman <jonas@kwiboo.se>, Tomasz Figa <tfiga@chromium.org>,
+ linux-rockchip@lists.infradead.org, Hans Verkuil <hans.verkuil@cisco.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Nicolas Dufresne <nicolas.dufresne@collabora.com>,
+ Pawel Osciak <posciak@chromium.org>, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgUGF1bCwKCgpPbiAwNi8yMC8yMDE5IDEyOjU0IEFNLCBQYXVsIEtvY2lhbGtvd3NraSB3cm90
-ZToKPiBIaSBLZXZlciwKPgo+IExlIG1lcmNyZWRpIDE5IGp1aW4gMjAxOSDDoCAwOTo0MiArMDgw
-MCwgS2V2ZXIgWWFuZyBhIMOpY3JpdCA6Cj4+IEhpIFBhdWwsCj4+Cj4+Cj4+IE9uIDA2LzE5LzIw
-MTkgMTI6MTIgQU0sIE1hcmsgS2V0dGVuaXMgd3JvdGU6Cj4+Pj4gRnJvbTogUGF1bCBLb2NpYWxr
-b3dza2kgPHBhdWwua29jaWFsa293c2tpQGJvb3RsaW4uY29tPgo+Pj4+IERhdGU6IFR1ZSwgMTgg
-SnVuIDIwMTkgMTQ6NDc6MzMgKzAyMDAKPj4+Pgo+Pj4+IEhpIEtldmVyLAo+Pj4+Cj4+Pj4gT24g
-VHVlLCAyMDE5LTA2LTE4IGF0IDE4OjA4ICswODAwLCBLZXZlciBZYW5nIHdyb3RlOgo+Pj4+PiBI
-aSBQYXVsLAo+Pj4+Pgo+Pj4+Pgo+Pj4+PiBPbiAwNi8xOC8yMDE5IDA1OjAzIFBNLCBQYXVsIEtv
-Y2lhbGtvd3NraSB3cm90ZToKPj4+Pj4+IEhpLAo+Pj4+Pj4KPj4+Pj4+IE9uIFR1ZSwgMjAxOS0w
-Ni0xOCBhdCAxNDoyNyArMDUzMCwgSmFnYW4gVGVraSB3cm90ZToKPj4+Pj4+PiBPbiBUdWUsIEp1
-biAxOCwgMjAxOSBhdCAxOjU1IFBNIFBhdWwgS29jaWFsa293c2tpCj4+Pj4+Pj4gPHBhdWwua29j
-aWFsa293c2tpQGJvb3RsaW4uY29tPiB3cm90ZToKPj4+Pj4+Pj4gSGksCj4+Pj4+Pj4+Cj4+Pj4+
-Pj4+IE9uIE1vbiwgMjAxOS0wNi0xNyBhdCAxNToyNCArMDgwMCwgeGllcWluaWNrQGdtYWlsLmNv
-bSB3cm90ZToKPj4+Pj4+Pj4+IEZyb206IE5pY2sgWGllIDxuaWNrQGtoYWRhcy5jb20+Cj4+Pj4+
-Pj4+IFdhcyB0aGlzIHRlc3RlZCB3aXRoIFNQTCBzdXBwb3J0PyBJIGRvbid0IHNlZSBEUkFNIGNv
-bmZpZ3VyYXRpb24gaGVyZQo+Pj4+Pj4+PiBzbyBpdCBzZWVtcyB0aGF0IGl0IHJlbGllcyBvbiB0
-aGUgbm9uLWZyZWUgcm9ja2NoaXAgbG9hZGVyLgo+Pj4+Pj4+Pgo+Pj4+Pj4+PiBJZiB0aGF0IGlz
-IHRoZSBjYXNlLCBjb3VsZCB5b3UgcGxlYXNlIGluZGljYXRlIHRoYXQgaW4gdGhlIGNvbW1pdAo+
-Pj4+Pj4+PiBtZXNzYWdlPwo+Pj4+Pj4+Pgo+Pj4+Pj4+PiBUbyBtYWludGFpbmVyczogcGxlYXNl
-IGRvIG5vdCBtZXJnZSB0aGlzIHNlcmllcyBiZWZvcmUgRFJBTSBpbml0IGFuZAo+Pj4+Pj4+PiBT
-UEwgc3VwcG9ydCBpcyBhdmFpbGFibGUgZm9yIHRoZXNlIGJvYXJkcy4KPj4+Pj4+Pj4KPj4+Pj4+
-Pj4gSXQgc2VlbXMgdGhhdCBvdGhlciBSSzMzOTkgYm9hcmRzIHdlcmUgbWVyZ2VkIHdpdGhvdXQg
-U1BMIHN1cHBvcnQgYW5kCj4+Pj4+Pj4+IHNvZmFyLCBJIGhhdmUgdGhlIGZlZWxpbmcgdGhhdCBu
-b2JvZHkgY2FyZWQgdG8gZXhwbGFpbiBob3cgd2UgZ290IGludG8KPj4+Pj4+Pj4gdGhpcyBicm9r
-ZW4gc2l0dWF0aW9uLiBQbGVhc2UgZG9uJ3QgbWVyZ2UgYW55IG1vcmUgc3VjaCBib2FyZC4KPj4+
-Pj4+PiBmeWk6IG5vIHJrMzM5OSBib2FyZHMgd2VyZSBtZXJnZWQgdy9vIFNQTC4gbHBkZHI0IGJv
-YXJkcyB3ZXJlIG1lcmdlZAo+Pj4+Pj4+IHdpdGggVFBMLWVuYWJsZWQgKHdoaWNoIHdhcyBkaXNj
-dXNzZWQgb24gdGhlIHRocmVhZHMsIGlmIHlvdSByZW1lbWJlcikKPj4+Pj4+PiB3aXRoIGJlbG93
-IGJvb3QgY2hhaW4uCj4+Pj4+Pj4KPj4+Pj4+PiBya2JpbiAoVFBMKSAtPiBTUEwgLT4gVS1Cb290
-IHByb3Blcgo+Pj4+Pj4+Cj4+Pj4+Pj4gU2FtZSBjYXNlIGZvciB0aGlzIGJvYXJkIGFzIHdlbGwu
-Cj4+Pj4+PiBIZXJlIGlzIGEgcXVvdGUgZnJvbSBQaGlsaXBwIFRvbXNpY2ggb24gdGhlIHRocmVh
-ZCB3ZSBkaXNjdXNzZWQgdGhpczoKPj4+Pj4+Cj4+Pj4+PiAiIE9uIHNvbWUgYm9hcmRzLCB0aGVy
-ZSB3aWxsIGJlIG5vIFRQTCBhbmQgb25seSBhIFNQTCBzdGFnZSB0aGF0IHdpbGwKPj4+Pj4+IGlu
-aXRpYWxpc2UgRFJBTSAoYXMgdGhlIG1vdmUgdG8gaGF2aW5nIFRQTCBvbiB0aGUgUkszMzk5IGlz
-IG9wdGlvbmFsKS4KPj4+Pj4+Cj4+Pj4+PiBJIGFncmVlIHdpdGggUGF1bCB0aGF0IHRoZSBEUkFN
-IGluaXQgc2hvdWxkIGJlIHBhcnQgb2YgVS1Cb290IHdoZW5ldmVyCj4+Pj4+PiB3ZSBhZGQgbmV3
-IGJvYXJkcyBhbmQgbWFrZSBhbiBvcGVuIERSQU0gaW5pdCBhIHByZXJlcXVpc2l0ZS4gIgo+Pj4+
-Pj4KPj4+Pj4+IFNvIGV2ZW4gaWYgSSBmcmVxdWVudGx5IGNvbmZ1c2UgU1BMIGFuZCBUUEwsIGl0
-IGRvZXNuJ3QgY2hhbmdlIHRoZSBmYWN0Cj4+Pj4+PiB0aGF0IG5vIGJvYXJkIHNob3VsZCBiZSBt
-ZXJnZWQgd2l0aG91dCBwcm9wZXIgRFJBTSBpbml0Lgo+Pj4+Pj4KPj4+Pj4+IFBsZWFzZSBzdG9w
-IHB1c2hpbmcgZm9yIG1lcmdpbmcgdGhlc2UgYm9hcmRzLiBJJ20gbm90IHN1cmUgd2hhdCB3ZQo+
-Pj4+Pj4gc2hvdWxkIGRvIGFib3V0IHRoZSBib2FyZHMgdGhhdCB3ZXJlIG1lcmdlZCBhbHJlYWR5
-IHdpdGhvdXQgRFJBTSBpbml0LAo+Pj4+Pj4gYnV0IG1heWJlIHRoZXkgc2hvdWxkIGJlIHJldmVy
-dGVkLgo+Pj4+PiBJIGRvbid0IHRoaW5rIHdlIGhhdmUgdG8gaGF2ZSBmdWxsIERSQU0gaW5pdCBz
-b3VyY2UgY29kZSBmb3IgZWFjaAo+Pj4+PiBib2FyZCBiZWZvcmUgd2UgY2FuIG1lcmdlIGl0LCBJ
-IGJlbGlldmUgbW9zdCBvZiB0aGUgYm9hcmQgb24gVS1Cb290Cj4+Pj4+IG1haW5saW5lIG5lZWQg
-dG8gcmVtb3ZlZCBkdWUgdG8gdGhpcyBydWxlLiBUaGVyZSBhcmUgc28gbWFueSBib2FyZHMKPj4+
-Pj4gZnJvbSBkaWZmZXJlbnQgdmVuZG9yIG5lZWQgYSBiaW5hcnkgbG9hZGVyIGJlZm9yZSBVLUJv
-b3QsIGFuZCBJIGNhbgo+Pj4+PiBzZWUgb25seSB2ZXJ5IGZldyBkcml2ZXJzIGZvciBkcmFtIGF0
-IGRyaXZlci9yYW0vLCBhbmQgSSBiZWxpZXZlIHJvY2tjaGlwCj4+Pj4+IGlzIGFscmVhZHkgdGhl
-IG1vc3Qgb3BlbiB2ZW5kb3Igb24gdGhpcyBhcmVhLgo+Pj4+IFdlbGwsIEkgYW0gbm90IHRhbGtp
-bmcgYWJvdXQgZnVsbCBEUkFNIGluaXQgc291cmNlIGNvZGUgYXMgaW4gZHluYW1pYwo+Pj4+IGxp
-bmsgdHJhaW5pbmcuIEkgYW0gdGFsa2luZyBhYm91dCBoYXZpbmcgYXQgbGVhc3Qgc3RhdGljIERS
-QU0gcmVnaXN0ZXIKPj4+PiBjb25maWd1cmF0aW9uIHZhbHVlcywgCj4+IEkgY2FuIHRlbGwgeW91
-IHRoYXQgdGhpcyBpcyBubyB3b3JrIGZvciBhbGwgdGhlIGJvYXJkcywgeW91IGNhbiBzZWUgaG93
-Cj4+IHJvY2tjaGlwIGxwZGRyNChXSVAsIHNlbmQgYnkgSmFnYW4pIGRyaXZlciB3b3Jrcy4KPiBJ
-IHRob3VnaHQgdGhhdCBMUEREUjQgd29ya3MgdGhlIHNhbWUgYXMgb3RoZXIgdHlwZXMgb2YgRFJB
-TSB3aGVyZSB3ZQo+IGhhdmUgYSBkdHNpIGFycmF5IHdpdGggdGltaW5ncyBjb25maWd1cmF0aW9u
-LiBPZiBjb3Vyc2UsIHNvbWUgbW9yZQo+IHJlZ2lzdGVycyBuZWVkIHRvIGJlIHNldCB1cCwgYnV0
-IHdlIGFscmVhZHkgaGF2ZSBzdXBwb3J0IGZvciB0aGF0IG9yCj4gaXQncyBxdWl0ZSBjbG9zZSAo
-Zm9yIExQRERSNCkuCj4KPj4+PiB3aGljaCBpcyBwcmVzZW50IGZvciBhIGdvb2QgbnVtYmVyIG9m
-IHJvY2tjaGlwCj4+Pj4gYm9hcmRzLgo+PiBObywgdGhlcmUgaXMgbm8gcm9ja2NoaXAgYm9hcmQg
-b25seSBoYXZlIHN0YXRpYyBEUkFNIHJlZ2lzdGVyCj4+IGNvbmZpZ3VyYXRpb24gdmFsdWVzLCB0
-aGF0IG1heWJlIGhhcHBlbnMgaW4gb3RoZXIgdmVuZG9yLgo+IEkgd2FzIGltcGx5aW5nIHRoYXQs
-IGFzIGZhciBhcyBJIGtub3csIGl0IGlzIHRoZSBjYXNlIGZvciBEUkFNIHRpbWluZ3MKPiBvbiBS
-b2NrY2hpcCBhcyB3ZWxsIGFzIG1vc3Qgb2YgdGhlIHBsYXRmb3JtcyB0aGF0IEkga25vdyBvZi4g
-SW4gdGhlCj4gZW5kLCBhbnkgY29kZSBoYW5kbGluZyBEUkFNIHdpbGwgZW5kIHVwIHdyaXRpbmcg
-dGltaW5ncyB0byB0aGUKPiBjb250cm9sbGVyJ3MgcmVnaXN0ZXJzLiBJZiB0aGUgRFJBTSBpcyBw
-YXJ0IG9mIHRoZSBQQ0IgYW5kIGRvZXNuJ3QKPiBjaGFuZ2UvbW92ZSwgdGhlbiB0aGUgdGltaW5n
-cyBkb24ndCBjaGFuZ2UgaW4gcGFydGljdWxhci4KPgo+IElzIHRoZXJlIHNvbWV0aGluZyBzcGVj
-aWZpYyBhYm91dCBSb2NrY2hpcCB0aGF0IG1ha2VzIGl0IHJlcXVpcmUKPiBkaWZmZXJlbnQgRFJB
-TSB0aW1pbmdzIGF0IGVhY2ggYm9vdD8KPgo+Pj4+IE9mIGNvdXJzZSwgaXQgd291bGQgYmUgYmVz
-dCBpZiBSb2NrY2hpcCB3b3VsZCBjb25zaWRlciByZWxlYXNpbmcgdGhpcwo+Pj4+IHNvdXJjZSBj
-b2RlLCAKPj4gUm9ja2NoaXAgYWxyZWFkeSByZWxlYXNlIGFsbCB0aGUgRFJBTSBpbml0IHNvdXJj
-ZSBjb2RlLCBpbmNsdWRpbmcgRERSMyAsCj4+IExQRERSMywKPj4gYW5kIExQRERSNCh3aXApLiBZ
-b3UgY2FuIHNlZSB0aGUgZHJpdmVyIGF0IGRyaXZlci9yYW0vcm9ja2NoaXAvIGZvcgo+PiBldmVy
-eXRoaW5nLAo+PiB3aGljaCBpcyBub3Qgb25seSBzdGF0aWMgcmVnaXN0ZXIgY29uZmlndXJhdGlv
-bi4KPj4gQXMgSSBoYXZlIHNhaWQsIHJvY2tjaGlwIGlzIGFscmVhZHkgdGhlIG1vc3Qgb3BlbiB2
-ZW5kb3IgaW4gdGhpcyBhcmVhCj4+IHRpbGwgbm93LCBJIGRvbid0IGtub3cKPj4gaWYgeW91IGhh
-dmUgd29ya2luZyBvbiByb2NrY2hpcCBTb0MgYmFzZWQgYm9hcmRzLgo+IFlvdSBhcmUgcXVpdGUg
-cmlnaHQgYWJvdXQgdGhhdCwgYnV0IEkgd2FzIHRoaW5raW5nIGFib3V0IHRoZSBjb2RlIHRvCj4g
-Y2FsY3VsYXRlIERSQU0gdGltaW5ncyAod2l0aCBsaW5rLXRyYWluaW5nIGFuZCBzdWNoKSB3aGlj
-aCBpcyBvZnRlbiBub3QKPiBhdmFpbGFibGUgYXMgZnJlZSBzb2Z0d2FyZSwgYW5kIEkgYW0gbm90
-IGF3YXJlIG9mIFJvY2tjaGlwIGhhdmluZwo+IHJlbGVhc2VkIHRoYXQgY29kZSAoYnV0IGZlZWwg
-ZnJlZSB0byBjb3JyZWN0IG1lIGlmIEknbSB3cm9uZykuCj4KPj4+PiB3aGljaCB3b3VsZCBiZSB0
-aGUgZWFzaWVzdCBhbmQgZnJpZW5kbGllc3Qgc29sdXRpb24KPj4+PiB0b3dhcmRzIHRoZSBjb21t
-dW5pdHkgaGVyZS4gQXJlIHRoZXJlIGludGVybmFsIGRpc2N1c3Npb25zIG9uZ29pbmcKPj4+PiBh
-Ym91dCB0aGlzPyBJZiBub3QsIGl0IHdvdWxkIGJlIGdyZWF0bHkgYXBwcmVjaWF0ZWQgdG8gc3Rh
-cnQgc3VjaAo+Pj4+IGRpc2N1c3Npb25zIGFuZCBjbGVhcmx5IGlkZW50aWZ5IHdoYXQgdGhlIGJs
-b2NraW5nIHBvaW50cyBhcmUuCj4+Pj4KPj4+Pj4gSSB3b24ndCB1c2UgdGhpcyBydWxlIHRvIHN0
-b3AgZGV2ZWxvcGVycyBjb250cmlidXRlIHRoZXJlIHNvdXJjZSBjb2RlLAo+Pj4+IFRoaXMgaXMg
-cmVhbGx5IHNhZCBhbmQgSSB0aGluayB0aGF0IFBoaWxpcHAgd2FzLCBsaWtlIG1lLCBpbmNsaW5l
-ZCB0bwo+Pj4+IGdvIHRvd2FyZHMgdGhlIG90aGVyIGRpcmVjdGlvbi4KPj4+Pgo+Pj4+PiBmb3Ig
-YSBib2FyZCBzdXBwb3J0LCB3ZSBvbmx5IG5lZWQgdGhlIGJvYXJkIHRvIGhhdmUgdGhlIGZ1bGwg
-ZG9jdW1lbnRhdGlvbgo+Pj4+PiBhYm91dCBob3cgdG8gc2V0dXAgYW5kIGJvb3Qgd2l0aCB1cHN0
-cmVhbSBVLUJvb3QuIGFuZCBJIHRoaW5rIHRoZQo+Pj4+PiBtb3N0IG9mIHBlb3BsZSBjYXJlcyBt
-b3JlIGFib3V0IGZlYXR1cmVzIGluIFUtQm9vdCBwcm9wZXIuIEV2ZXJ5dGhpbmcKPj4+Pj4gYmVm
-b3JlIFUtQm9vdCBwcm9wZXIsIHlvdSBjYW4gdXNlIFRQTC9TUEwgb3IgYWx0ZXJuYXRpdmUgdG8g
-dXNlIGJpbmFyeQo+Pj4+PiBmcm9tIHZlbmRvciwgYXMgeW91IGNhbiBzZWUgYWxsIG92ZXIgdGhl
-IFUtQm9vdCBtYWlubGluZSBub3csIGFsdGhvdWdoCj4+Pj4+IHdlIGVuY291cmFnZSBwZW9wbGUg
-dG8gdXNlIGZ1bGwgb3BlbiBzb3VyY2UgVFBML1NQTC4KPj4+Pj4gU3BlY2lmaWNhbGx5IGZvciBV
-LUJvb3QgUm9ja2NoaXAgcGxhdGZvcm0sIEkgd291bGQgbGlrZSBwZW9wbGUgdG8KPj4+Pj4gc3Vw
-cG9ydCBub3Qgb25seSBVLUJvb3QKPj4+Pj4gcHJvcGVyLCBidXQgYWxzbyBmb3IgZnVsbCBTUEwo
-QVRGLCBPUC1URUUgc3VwcG9ydCwgaXRiIGltYWdlIGFuZCBvdGhlcgo+Pj4+PiBmZWF0dXJlcykK
-Pj4+Pj4gc3VwcG9ydC4gQW5kIGZvciBEUkFNIGluaXQsCj4+Pj4+IC0gaWYgdGhpcyBiZWxvbmdz
-IHRvIFNQTCBmb3IgdGhpcyBib2FyZCwgeW91IG11c3QgaW1wbGVtZW50IGl0IG9yIGVsc2UKPj4+
-Pj4gU1BMIHdvbid0IHdvcms7Cj4+Pj4+IC0gaWYgdGhpcyBkb2VzIG5vdCBiZWxvbmcgdG8gU1BM
-IGZvciB0aGlzIGJvYXJkLCB5b3UgbmVlZCBpbXBsZW1lbnQgZnVsbAo+Pj4+PiBmdW5jdGlvbiBT
-UEw7Cj4+Pj4+ICAgICBhbmQgeW91IGNhbiBlaXRoZXIgdG8gaGF2ZSBmdWxsIGZ1bmN0aW9uIFRQ
-TCB3aXRoIERSQU0gaW5pdCh3aGljaCBpcwo+Pj4+PiBwcmVmZXJlZCkKPj4+Pj4gICAgIG9yIGFs
-dGVybmF0aXZlbHkgdXNlIGJpbmFyeSBsb2FkZXIgZnJvbSB2ZW5kb3IuCj4+Pj4gVGhpcyBpcyBu
-b3QgcmVhbGx5IGEgdGVjaG5pY2FsIGFyZ3VtZW50IGhlcmUsIG1vcmUgb2YgYSBwb2xpY3kgYXJn
-dW1lbnQKPj4+PiB0aGF0IGVuc3VyZXMgd2UgaGF2ZSBmdWxsIGZyZWUgc29mdHdhcmUgc3VwcG9y
-dCBmb3IgdGhlIGJvYXJkcyB3ZQo+Pj4+IHN1cHBvcnQsIGFuZCBub3Qgb25seSBoYWxmLWNvb2tl
-ZCBzdXBwb3J0ICh0aGF0IHdpbGwgbW9zdCBsaWtlbHkgbmV2ZXIKPj4+PiBiZSBjb21wbGV0ZWQg
-YXMgc29vbiBhcyBzb21ldGhpbmcgdGhhdCB3b3JrcyBnZXRzIG1lcmdlZCkuIFNvIGl0IGlzIGEK
-Pj4+PiBzdHJhdGVnaWNhbCBkZWNpc2lvbiwgbm90IGEgc3RyaWN0bHkgcHJhZ21hdGljIG9uZS4K
-Pj4+IFdoaWxlIGhhdmluZyBmdWxsIG9wZW4gc291cmNlIHNvZnR3YXJlIHN1cHBvcnQgZm9yIGJv
-YXJkcyBpcyBhIG5vYmxlCj4+PiBnb2FsLCBJIHRoaW5rIHRoZXJlIHNob3VsZCBiZSBzb21lIHJv
-b20gZm9yIHByYWdtYXRpc20gaGVyZS4gIEEKPj4+IHNpZ25pZmljYW50IG51bWJlciBvZiB1X2Jv
-b3QgdGFyZ2V0cyByZWx5IG9uIGNsb3NlZCBzb3VyY2UgY29tcG9uZW50cy4KPj4+IEluIHRoZSBw
-YXJ0aWN1bGFyIGNhc2Ugb2YgUkszMzk5IHRoZSBzaXR1YXRpb24gaXMgYmV0dGVyIHRoYW4gZm9y
-Cj4+PiBvdGhlciBib2FyZHMgc2luY2UgeW91IGNhbiBjb21iaW5lIHRoZSBiaW5hcnkgbG9hZGVy
-IGZyb20gdGhlIHZlbmRvcgo+Pj4gd2l0aCBtYWlubGluZSBVLUJvb3QgYW5kIG1haW5saW5lIEFU
-RiB0byBjcmVhdGUgYSBmaXJtd2FyZSB3aGVyZSAoYXMKPj4+IGZhciBhcyB3ZSBjYW4gdGVsbCkg
-bm8gY2xvc2VkIHNvdXJlIGNvbXBvbmVudCByZW1haW5zIGFjdGl2ZSBhZnRlcgo+Pj4gVS1Cb290
-IGFuZCBBVEYgdGFrZSBvdmVyIGNvbnRyb2wuCj4+Pgo+Pj4+IEkgdGhpbmsgcmV2ZXJ0aW5nIHBh
-dGNoZXMgYWRkaW5nIHN1cHBvcnQgZm9yIGJvYXJkcyB3aXRoIG5vIERSQU0KPj4+PiBjb25maWd1
-cmF0aW9uIGF0IGFsbCB3b3VsZCBzZW5kIGEgbWVzc2FnZSBpbiB0aGUgcmlnaHQgZGlyZWN0aW9u
-IGhlcmUuCj4+IEFzIGEgZGV2ZWxvcGVyLCBJIGFncmVlIG9uIHRoaXMsIGJ1dCBhcyBhIG1haW50
-YWluZXIsIEkga25vdyB0b28gbWFueQo+PiBkZXZlbG9wZXJzIG5vdCBhYmxlIHRvIGRvIGl0IGFu
-ZCB3aGF0IG1vc3Qgb2YgZGV2ZWxvcGVycyBuZWVkIGlzIG90aGVyCj4+IGZlYXR1cmVzIGluIFUt
-Qm9vdCBvciBTUEwsIGFuZCBJIHdvdWxkIGxpa2UgdGhlIFUtQm9vdCBtYWlubGluZSBpcyBtb3Jl
-Cj4+IGFjdGl2ZSB3aXRoIG1vcmUgYW5kIG1vcmUgZGV2ZWxvcGVycy4gU28gSSdtIGFmcmFpZCBJ
-IGFncmVlIHdpdGggTWFyawo+PiBhdCB0aGlzIHRpbWUgZm9yIHRoZSBwb2xpY3kuCj4gTWF5YmUg
-d2UgbmVlZCB0byBwcm92aWRlIHRvb2xzIG90IG1ha2UgdGhhdCBwcm9jZXNzIGVhc2llciBmb3Ig
-ZXZlcnlvbmUKPiBpZiBpdCBpcyByZWFsbHkgdGhhdCBoYXJkLiBJIGRvbid0IHJlYWxseSBzZWUg
-d2hhdCBpcyBzbyBzcGVjaWFsIGFib3V0Cj4gRFJBTSB0aW1pbmdzIHRoYXQgd291bGQgaW1wbHkg
-dGhhdCBhIHJlZ3VsYXIgZGV2ZWxvcGVyIGRvaW5nIGEgVS1Cb290Cj4gYnJpbmd1cCBjb3VsZG4n
-dCBmaWd1cmUgdGhpbmdzIG91dCwgYXNpZGUgZnJvbSB0aGUgYWJpbGl0eSB0byBkdW1wIHNhaWQK
-PiB0aW1pbmdzLgo+Cj4+IElmIGFsbCB0aGUgb3RoZXIgU29DIHBsYXRmb3JtcyBjYW4gaGF2ZSB0
-aGUgc2FtZSBydWxlIGZvciBEUkFNIGluaXQgZHJpdmVyCj4+IGlzIGEgbWFuZGF0b3J5IGluc3Rl
-YWQgb2Ygb3B0aW9uLCBlZy4gYnJjb20sIHFjb20sIG10aywgb21hcCwgdGVncmEsIHN0bSwKPj4g
-aW14LCBhbWwsIGFuZCBhbGwgb3RoZXJzLCB0aGVuIEkgd291bGQgdmVyeSBoYXBweSB0byBmb2xs
-b3cgdGhlIHJ1bGUuCj4+IFJvY2tjaGlwIGlzIG9wZW4gZm9yIG9wZW4gc291cmNlIHRoZSBEUkFN
-IGRyaXZlciwgeW91IGhhdmUgdG8ga25vdyB0aGlzCj4+IGlzIHRoZSBkZWNpc2lvbiBieSB0aGUg
-dmVuZG9yLCBidXQgbm90IGFueSBvZiBkZXZlbG9wZXJzLgo+PiBPbiByb2NrY2hpcCBwbGF0Zm9y
-bSwgZGV2ZWxvcGVycyBubyBuZWVkIHRvIGNvbmNlcm4gYWJvdXQgdGhlIERSQU0KPj4gZHJpdmVy
-KHdoaWNoIGlzIHByZXR0eSBoYXJkIGZvciBtb3N0IGRldmVsb3BlcnMpIGJlY2F1c2Ugcm9ja2No
-aXAKPj4gYWxyZWFkeSBjb250cmlidXRlIGl0Lgo+IFJvY2tjaGlwIGlzIGluZGVlZCBpbiBhIGJl
-dHRlciBwb3NpdGlvbiB0aGFuIG90aGVyIHZlbmRvcnMgd2hlcmUgRFJBTQo+IGluaXQgbWF5IG5v
-dCBiZSBhdmFpbGFibGUgKG9yIHdoZW4gaXQncyBpbXBvc3NpYmxlIHRvIHJ1biBVLUJvb3Qgcmln
-aHQKPiBhZnRlciB0aGUgYm9vdHJvbSBhbmQgZG8gdGhlIERSQU0gaW5pdCBpdHNlbGYgYmVjYXVz
-ZSBvZiBlLmcuIGFidXNpdmUKPiBzaWduYXR1cmUgdmVyaWZpY2F0aW9uIG9yIGxhY2sgb2YgZG9j
-dW1lbnRhdGlvbikuCj4KPiBTaW5jZSB0aGVyZSBpcyBnb29kIERSQU0gc3VwcG9ydCBmb3IgUm9j
-a2NoaXAgaW4gcGxhY2UsIHdlIGhhdmUgYW4KPiBvcHBvcnR1bml0eSB0byBwdXNoIGRldmVsb3Bl
-cnMgdG8gZG8gdGhlIHJpZ2h0IHRoaW5nIGFuZCBjb250cmlidXRlCj4gZnVsbCBzdXBwb3J0IGZv
-ciB0aGUgYm9hcmQuIFRvIG1lIGl0IGlzIHNpbXBseSBhIG1hdHRlciBvZgo+IGFja25vd2xlZGdp
-bmcgdGhhdCBib290bG9hZGVyIHN1cHBvcnQgZm9yIGEgYm9hcmQgd2l0aG91dCBEUkFNIGluaXQg
-aXMKPiBub3QgdXNlZnVsIGJvb3Rsb2FkZXIgc3VwcG9ydC4gU2luY2Ugd2UgaGF2ZSB0aGUgY29k
-ZSBpbiBwbGFjZSB0bwo+IHN1cHBvcnQgdGhhdCwgd2UgY2FuIHRha2UgdGhlIGV4dHJhIHN0ZXAg
-YW5kIHJlcXVpcmUgdGhhdCBlYWNoIGJvYXJkCj4gY29udHJpYnV0aW9uIGJlIHVzZWZ1bCBpbiB0
-aGF0IGFzcGVjdC4KPgo+PiBGb3IgdGhlIHRpbWUgbm93LCBJIGtub3cgdGhlcmUgd2lsbCBiZSBm
-dWxsIERSQU0gZHJpdmVyIGZvciByb2NrY2hpcCBTb0MsCj4+IHNvIHRoZSBTb0MvYm9hcmQgc3Vw
-cG9ydCBjb3VsZCBiZSBzdGVwIGJ5IHN0ZXA6Cj4+IFUtQm9vdCBwcm9wZXIgLT4gVS1Cb290ICsg
-U1BMKG5vIERSQU0gaW5pdCkgLT5VLUJvb3QgKyBTUEwgKyBUUEwuCj4+Cj4+IEFzIHlvdSBjYW4g
-c2VlIHRoZSByb2NrY2hpcCBMUEREUjQgZHJpdmVyIHNlbmQgYnkgSmFnYW4sIGhhcyA5OSBwYXRj
-aGVzCj4+IGluIFYyLCB5b3UgY2FuJ3QgdXNlIHN0YXRpYyByZWdpc3RlciBjb25maWd1cmF0aW9u
-IHRvIGRvIHRoaXMsIGFuZCBtYXliZSB5b3UKPj4gY2FuJ3QgaGF2ZSBhIHdvcmthYmxlIHZlcnNp
-b24gaWYgcm9ja2NoaXAgZG9uJ3QgcmVsZWFzZSBpdCwgYnV0IEkgZG9uJ3QKPj4gdGhpbmsgaXQn
-cwo+PiBjb3JyZWN0IHRvIG1ha2UgYWxsIHRob3NlIGJvYXJkcyB3aXRoIGxwZGRyNCBmbG9hdCBv
-dXRzaWRlIHRoZSBtYWlubGluZQo+PiBzdXBwb3J0Cj4+IGJlY2F1c2UgbWFueSBkZXZlbG9wZXJz
-IGFyZSB1c2luZyB0aGUgYm9hcmRzLCB0aGV5IGNhbiBvbmx5IHVzZSB2ZW5kb3IKPj4gYnJhbmNo
-Cj4+IGlmIHRoZSBib2FyZCBub3Qgc3VwcG9ydCBieSBtYWlubGluZS4KPiBJZiBtYWlubGluZSBV
-LUJvb3QgY2FuJ3Qgc3VwcG9ydCBiYXNpYyBib290bG9hZGVyIGZlYXR1cmVzIHN1Y2ggYXMgRFJB
-TQo+IGluaXRpYWxpemF0aW9uIGZvciB0aGVzZSBib2FyZHMsIEkgZG9uJ3Qgc2VlIHRoZSBwb2lu
-dCBpbiBhY2NlcHRpbmcKPiBzdXBwb3J0IGZvciB0aGVtLgo+Cj4gSXQgd291bGQgYmUgbGlrZSBz
-dWJtaXR0aW5nIHN1cHBvcnQgZm9yIGEgYm9hcmQgaW4gTGludXggd2l0aCBhIG5ldyBDUFUKPiB0
-aGF0IGlzIG5vdCBzdXBwb3J0ZWQgYW5kIGFza2luZyB0byBib290IExpbnV4IHZpYSBhIG5vbi1m
-cmVlIHNoaW0KPiBiZWZvcmUgTGludXggdG8gcHV0IHRoZSBDUFUgaW4gYSBsZWdhY3kgc3RhdGUg
-dGhhdCBMaW51eCBjYW4gc3VwcG9ydC4KPiBUaGlzIHdvdWxkIGRlZmluaXRlbHkgbm90IGJlIG9r
-YXkgYW5kIEkgZG9uJ3Qgc2VlIHdoeSB0aGUgc2FtZQo+IHNob3VsZG4ndCBhcHBseSB0byBVLUJv
-b3QuCgpMaW51eCBidWlsZCB0YXJnZXQgaXMgSW1hZ2UvekltYWdlLCBpZiB0aGlzIEltYWdlIG5v
-dCB3b3JrIHdpdGggdGhlIGJvYXJkLAplZy4gaGFuZyBzb21ld2hlcmUgZHVyaW5nIGJvb3QsIHRo
-ZW4gd2Ugc2F5IHRoZSBib2FyZCBzdXBwb3J0IGlzIGJyb2tlbgphbmQgcmVzdWx0IGluIG5vbi1m
-dW5jdGlvbmFsIGJvb3QuIEFuZCB0aGVyZSBhbHdheXMgc29tZSBrZXJuZWwgZmVhdHVyZXMKZGVw
-ZW5kcyBvbiBib290bG9hZGVyIHNldHRpbmcsIGluY2x1ZGluZyBzZWN1cml0eSBzZXR0aW5nLCBz
-b21lIGNsb2NrIGluaXQsCnNvbWUgcG93ZXIgc3VwcGx5IGFuZCBldGMuCgo+Cj4+IFNvIEkgdGhp
-bmsgbWVyZ2UgdGhvc2UgcGF0Y2hlcyBhbHJlYWR5IG1ha2UgYm9hcmQgd29yayBvbiBtYWlubGlu
-ZSBVLUJvb3QKPj4gaXMgcHJldHR5IGltcG9ydGFudCBmb3Igb3BlbiBzb3VyY2UgY29tbXVuaXR5
-Lgo+IEkgZG9uJ3QgdGhpbmsgdGhlIHBhdGNoZXMgbWFrZSB0aGUgYm9hcmRzIHdvcmsgb24gbWFp
-bmxpbmUgVS1Cb290IHNpbmNlCj4gYnVpbGRpbmcgYW5kIGluc3RhbGxpbmcgdGhlIHJlc3VsdGlu
-ZyBVLUJvb3QgYmluYXJpZXMgd2lsbCByZXN1bHQgaW4gYQo+IG5vbi1mdW5jdGlvbmFsIGJvb3Qg
-Y2hhaW4gYW5kIGJyaWNrIHRoZSBkZXZpY2UuIEkgZG9uJ3QgdGhpbmsgdGhpcyBpcyBhCj4gZ29v
-ZCBvciBzYWZlIGlkZWEuCgpJbiBVLUJvb3QsIHRoZXJlIGFyZSAyIG9yIDMgc3RhbmRhbG9uZSBz
-dWJzeXN0ZW06IFUtQm9vdCBwcm9wZXIsClNQTCwgYW5kIFRQTCwgYW5kIGJ1aWxkIHRhcmdldCBp
-cyB1LWJvb3QuYmluLCB1LWJvb3Qtc3BsLmJpbiwgYW5kCnUtYm9vdC10cGwuYmluLgpJZiB0aGUg
-c3RhbmRhbG9uZSB1LWJvb3QuYmluIG9yIHUtYm9vdC1zcGwuYmluIHdvcmtzIGdvb2Qgd2l0aCBh
-IGJvYXJkIGFuZAphYmxlIHRvIGJvb3QgaW50byBuZXh0IHN0YWdlIGNvcnJlY3RseSwgSSBkb24n
-dCB0aGluayB0aGVzZSBwYXRjaGVzIGNhbgpiZSBjb25zaWRlcgphcyAibm9uLWZ1bmN0aW9uYWwg
-Ym9vdCBjaGFpbiBhbmQgYnJpY2sgdGhlIGRldmljZSIuIEFuZCBmb3IgZXhhbXBsZSBmb3IKYXJt
-djgsClUtQm9vdCBpcyBhbHdheXMgYXMgcGFydCBvZiB0aGUgYm9vdCBjaGFpbi4KClRoYW5rcywK
-LSBLZXZlcgo+Cj4gQ2hlZXJzLAo+Cj4gUGF1bAo+Cj4+IFRoYW5rcywKPj4gLSBLZXZlcgo+Pj4g
-RnJhbmtseSwgSSBkb24ndCB0aGluayB0aGF0IHdvdWxkIGhlbHAuICBJdCB3b3VsZCBqdXN0IGRy
-aXZlIG1vcmUKPj4+IHBlb3BsZSB0byB0aGUgdmVuZG9yIFUtQm9vdCB0aGF0IGhhcyBtb3JlIGJ1
-Z3MgYW5kIGluY2x1ZGVzIGEgdmVuZG9yCj4+PiBzdXBwbGllZCBBVEYgYmluYXJ5Lgo+Pj4KPj4+
-Pj4gSSdtIG5vdCBzdXJlIGlmIHlvdSBoYXZlIHdyaXRlIGEgbmV3IGRyYW0gZHJpdmVyIGZvciBh
-IGJvYXJkLCBidXQgSSBrbm93Cj4+Pj4+IGV2ZW4gdGhlIGJvYXJkIHZlbmRvciBtYXkgbm90IGhh
-dmUgdGhlIGNhcGFiaWxpdHkgdG8gd3JpdGUgdGhlIERSQU0KPj4+Pj4gZHJpdmVyLCBzbyB0aGlz
-IHNob3VsZCBub3Qgc3RvcCBkZXZlbG9wZXJzIGNvbnRyaWJ1dGUgdG8gYWxsIG90aGVyIDk5JQo+
-Pj4+PiBmZWF0dXJlcyBvbiBVLUJvb3QuCj4+Pj4gV2hhdCB0aGV5IGNhbiBkbyBpcyBydW4gdGhl
-IG5vbi1mcmVlIGJsb2IsIGR1bXAgdGhlIHJlZ2lzdGVycwo+Pj4+IGFmdGVyd2FyZHMgYW5kIHRo
-ZW4gdXNlIHRoYXQgaW4gdGhlIERSQU0gY29uZmlndXJhdGlvbiBkdHNpLiBQZXJoYXBzCj4+Pj4g
-b25lIGNvdWxkIHdyaXRlIHVwIGEgdG9vbCB0byBlYXNlIHRoZSBwcm9jZXNzIGlmIHRoZXkgdGhp
-bmsgdGhlIHByb2Nlc3MKPj4+PiBpcyB0b28gbXVjaCBmb3IgYSByZWd1bGFyIGJyaW5ndXAuCj4+
-Pj4KPj4+PiBNb3N0IG9mIHRoZSB0aW1lLCB0aGUgRFJBTSBjaGlwcyBhcmUgc29sZGVyZWQgc28g
-dGhlIGNhbGlicmF0ZWQgdmFsdWVzCj4+Pj4gaGF2ZSBhYm91dCBubyByZWFzb24gdG8gY2hhbmdl
-IG92ZXIgdGltZSBhbmQgY2FuIGp1c3QgYmUga2VwdCBhcy1pcy4KPj4+Pgo+Pj4+IFdoYXQgZG8g
-eW91IHRoaW5rPwo+Pj4gSG9wZWZ1bGx5IHRoZSBwZW5kaW5nIGRpZmYgdG8gYWRkIHN1cHBvcnQg
-Zm9yIG90aGVyIERSQU0gdHlwZXMgYmV5b25kCj4+PiB0aG9zZSB0aGF0IGFyZSBhbHJlYWR5IHN1
-cHBvcnRlZCB3b3VsZCBtYWtlIGJyaW5nIHVzIGEgbG9uZyB3YXkgaW4KPj4+IHRoYXQgZGlyZWN0
-aW9uLiAgTWF5YmUgb25lIG9mIHRoZSBleGlzdGluZyB0aW1pbmdzIHdpbGwgYWxyZWFkeSB3b3Jr
-Cj4+PiBmb3IgdGhlIGJvYXJkcyB0aGF0IGFyZSBiZWluZyBkaXNjdXNzZWQgaGVyZS4KPj4+Cj4+
-Cj4KCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxp
-bnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9j
-a2NoaXAK
+Hi Boris,
+
+Thanks for the review.
+
+On Mon, 2019-06-17 at 15:23 +0200, Boris Brezillon wrote:
+> On Thu, 13 Jun 2019 12:10:39 -0300
+> Ezequiel Garcia <ezequiel@collabora.com> wrote:
+> 
+> > From: Pawel Osciak <posciak@chromium.org>
+> > 
+> > Add the parsed VP8 frame pixel format and controls, to be used
+> > with the new stateless decoder API for VP8 to provide parameters
+> > for accelerator (aka stateless) codecs.
+> > 
+> > Signed-off-by: Pawel Osciak <posciak@chromium.org>
+> > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+> > --
+> > Changes from RFC:
+> > * Make sure the uAPI has the same size on x86, x86_64, arm and arm64.
+> > * Move entropy coder state fields to a struct.
+> > * Move key_frame field to the flags.
+> > * Remove unneeded first_part_offset field.
+> > * Add documentation.
+> > ---
+> >  Documentation/media/uapi/v4l/biblio.rst       |  10 +
+> >  .../media/uapi/v4l/ext-ctrls-codec.rst        | 311 ++++++++++++++++++
+> >  .../media/uapi/v4l/pixfmt-compressed.rst      |  20 ++
+> >  drivers/media/v4l2-core/v4l2-ctrls.c          |   8 +
+> >  drivers/media/v4l2-core/v4l2-ioctl.c          |   1 +
+> >  include/media/v4l2-ctrls.h                    |   3 +
+> >  include/media/vp8-ctrls.h                     | 110 +++++++
+> >  7 files changed, 463 insertions(+)
+> >  create mode 100644 include/media/vp8-ctrls.h
+> > 
+> > diff --git a/Documentation/media/uapi/v4l/biblio.rst b/Documentation/media/uapi/v4l/biblio.rst
+> > index 8f4eb8823d82..ad2ff258afa8 100644
+> > --- a/Documentation/media/uapi/v4l/biblio.rst
+> > +++ b/Documentation/media/uapi/v4l/biblio.rst
+> > @@ -395,3 +395,13 @@ colimg
+> >  :title:     Color Imaging: Fundamentals and Applications
+> >  
+> >  :author:    Erik Reinhard et al.
+> > +
+> > +.. _vp8:
+> > +
+> > +VP8
+> > +===
+> > +
+> > +
+> > +:title:     RFC 6386: "VP8 Data Format and Decoding Guide"
+> > +
+> > +:author:    J. Bankoski et al.
+> > diff --git a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+> > index d6ea2ffd65c5..7a1947f5be96 100644
+> > --- a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+> > +++ b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+> > @@ -2234,6 +2234,317 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
+> >      Quantization parameter for a P frame for FWHT. Valid range: from 1
+> >      to 31.
+> >  
+> > +.. _v4l2-mpeg-vp8:
+> > +
+> > +``V4L2_CID_MPEG_VIDEO_VP8_FRAME_HDR (struct)``
+> > +    Specifies the frame parameters for the associated VP8 parsed frame data.
+> > +    This includes the necessary parameters for
+> > +    configuring a stateless hardware decoding pipeline for VP8.
+> > +    The bitstream parameters are defined according to :ref:`vp8`.
+> > +
+> > +    .. note::
+> > +
+> > +       This compound control is not yet part of the public kernel API and
+> > +       it is expected to change.
+> > +
+> > +.. c:type:: v4l2_ctrl_vp8_frame_header
+> > +
+> > +.. cssclass:: longtable
+> > +
+> > +.. tabularcolumns:: |p{5.8cm}|p{4.8cm}|p{6.6cm}|
+> > +
+> > +.. flat-table:: struct v4l2_ctrl_vp8_frame_header
+> > +    :header-rows:  0
+> > +    :stub-columns: 0
+> > +    :widths:       1 1 2
+> > +
+> > +    * - __u8
+> > +      - ``version``
+> > +      - Bitstream version.
+> > +    * - __u16
+> > +      - ``width``
+> > +      - The width of the frame
+> 
+> Nit: sometimes you finish your description with a final dot sometimes
+> not. It's probably better to make that consistent.
+> 
+> 
+
+Yes, this is an overlook on my side. I'll fix this.
+
+> [...]
+> 
+> > diff --git a/include/media/vp8-ctrls.h b/include/media/vp8-ctrls.h
+> > new file mode 100644
+> > index 000000000000..3b0dcc125e25
+> > --- /dev/null
+> > +++ b/include/media/vp8-ctrls.h
+> > @@ -0,0 +1,110 @@
+> > +/* SPDX-License-Identifier: GPL-2.0 */
+> > +/*
+> > + * These are the VP8 state controls for use with stateless VP8
+> > + * codec drivers.
+> > + *
+> > + * It turns out that these structs are not stable yet and will undergo
+> > + * more changes. So keep them private until they are stable and ready to
+> > + * become part of the official public API.
+> > + */
+> > +
+> > +#ifndef _VP8_CTRLS_H_
+> > +#define _VP8_CTRLS_H_
+> > +
+> > +#include <linux/v4l2-controls.h>
+> > +
+> > +#define V4L2_PIX_FMT_VP8_FRAME v4l2_fourcc('V', 'P', '8', 'F') /* VP8 parsed frames */
+> > +
+> > +#define V4L2_CID_MPEG_VIDEO_VP8_FRAME_HDR (V4L2_CID_MPEG_BASE + 2000)
+> > +#define V4L2_CTRL_TYPE_VP8_FRAME_HDR 0x301
+> > +
+> > +#define V4L2_VP8_SEGMNT_HDR_FLAG_ENABLED              0x01
+> > +#define V4L2_VP8_SEGMNT_HDR_FLAG_UPDATE_MAP           0x02
+> > +#define V4L2_VP8_SEGMNT_HDR_FLAG_UPDATE_FEATURE_DATA  0x04
+> > +
+> > +struct v4l2_vp8_segment_header {
+> > +	__u8 segment_feature_mode;
+> > +	__s8 quant_update[4];
+> > +	__s8 lf_update[4];
+> > +	__u8 segment_probs[3];
+> > +	__u32 flags;
+> > +};
+> > +
+> > +#define V4L2_VP8_LF_HDR_ADJ_ENABLE	0x01
+> > +#define V4L2_VP8_LF_HDR_DELTA_UPDATE	0x02
+> > +struct v4l2_vp8_loopfilter_header {
+> > +	__u16 type;
+> > +	__u8 level;
+> > +	__u8 sharpness_level;
+> > +	__s8 ref_frm_delta_magnitude[4];
+> > +	__s8 mb_mode_delta_magnitude[4];
+> > +	__u16 flags;
+> > +};
+> > +
+> > +struct v4l2_vp8_quantization_header {
+> > +	__u8 y_ac_qi;
+> > +	__s8 y_dc_delta;
+> > +	__s8 y2_dc_delta;
+> > +	__s8 y2_ac_delta;
+> > +	__s8 uv_dc_delta;
+> > +	__s8 uv_ac_delta;
+> 
+> Don't know what the policy in V4L, but it's usually a good thing to
+> have structs used to exchange data with userspace aligned on 64-bits.
+> Maybe you can add 2 padding bytes here. Note that the compiler might
+> anyway add padding to align struct fields to their natural alignment in
+> v4l2_ctrl_vp8_frame_header, so it's probably better to have these
+> padding bytes explicitly defined and mandate that they be set to 0 so
+> we can check them and complain when they're not 0.
+> 
+
+AFAIK, there is no such requirement. There is however the requirement
+of making sure the structs layout is the same on 32 and 64 architectures [1].
+
+This is confirmed by these [2] tests which are based in Maxime's work.
+
+[1] http://lkml.iu.edu/hypermail/linux/kernel/1806.1/05059.html
+[2] https://gitlab.collabora.com/ezequiel/v4l2-ctrl-abi-check
+
+> > 
+> > +	__u16 dequant_factors[4][3][2];
+> > +};
+> > +
+> > +struct v4l2_vp8_entropy_header {
+> > +	__u8 coeff_probs[4][8][3][11];
+> > +	__u8 y_mode_probs[4];
+> > +	__u8 uv_mode_probs[3];
+> > +	__u8 mv_probs[2][19];
+> 
+> Same here
+> 
+> > +};
+> > +
+> > +struct v4l2_vp8_entropy_coder_state {
+> > +	__u8 range;
+> > +	__u8 value;
+> > +	__u8 bit_count;
+> 
+> and here.
+> 
+> > +};
+> > +
+> > +#define V4L2_VP8_FRAME_HDR_FLAG_KEY_FRAME		0x01
+> > +#define V4L2_VP8_FRAME_HDR_FLAG_EXPERIMENTAL		0x02
+> > +#define V4L2_VP8_FRAME_HDR_FLAG_SHOW_FRAME		0x04
+> > +#define V4L2_VP8_FRAME_HDR_FLAG_MB_NO_SKIP_COEFF	0x08
+> > +
+> > +#define VP8_FRAME_IS_KEY_FRAME(hdr) (!!(hdr->flags & V4L2_VP8_FRAME_HDR_FLAG_KEY_FRAME))
+> > +
+> > +struct v4l2_ctrl_vp8_frame_header {
+> > +	__u8 version;
+> > +
+> 
+> Maybe we should try to pack things so that the compiler does not
+> implicitly add extra padding bytes. That implies trying to group u8
+> fields by 2, 4 or 8 depending on what the next field natural alignment
+> is.
+> 
+
+Yes, I guess it makes sense to avoid implicit padding if possible.
+
+> > +	/* Populated also if not a key frame */
+
+Note to self, this comment should be dropped and moved to the documentation.
+
+> > +	__u16 width;
+> > +	__u16 height;
+> > +	__u8 horizontal_scale;
+> > +	__u8 vertical_scale;
+> > +
+> > +	struct v4l2_vp8_segment_header segment_header;
+> > +	struct v4l2_vp8_loopfilter_header lf_header;
+> > +	struct v4l2_vp8_quantization_header quant_header;
+> > +	struct v4l2_vp8_entropy_header entropy_header;
+> > +
+> > +	__u16 sign_bias_golden;
+> > +	__u16 sign_bias_alternate;
+> > +
+> > +	__u8 prob_skip_false;
+> > +	__u8 prob_intra;
+> > +	__u8 prob_last;
+> > +	__u8 prob_gf;
+> > +
+> > +	__u32 first_part_size;
+> > +	__u32 macroblock_bit_offset;
+> > +	__u32 dct_part_sizes[8];
+> > +	__u8 num_dct_parts;
+> > +
+> > +	struct v4l2_vp8_entropy_coder_state coder_state;
+> > +
+> > +	__u64 last_frame_ts;
+> > +	__u64 golden_frame_ts;
+> > +	__u64 alt_frame_ts;
+> > +
+> > +	__u64 flags;
+> > +};
+> > +
+> > +#endif
+
+Thanks,
+Ezequiel
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
