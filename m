@@ -2,81 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AC054D9DB
-	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Jun 2019 20:55:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0F744DB41
+	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Jun 2019 22:31:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WfirHFEWfd/wxgE1Gv2980BoNlxJ+wTWMCagYNP0Wn0=; b=H/Ru3HcHwiFyDn
-	qDRTMEZTLBO6mVTJma05yiu13zrb9d3+AjVMuMeqtXRltdo5PHEK7IILpQc3T0lrRi7TKmHpPYCnY
-	tbGdIo9P7Ls57bg6Rb1x1MUROS2n6mHcrO0IoE3wdUhsc6LO2RE6cY3ISuB7NmHVTkz6FpQmCI9wU
-	UA6cVmx3WWK8qagmX2v6rMr8EdhVZzQy893h4BSFcWMvaJldVvv7CtUwfaPXlRANk3l307EdkhHZj
-	J3zkza2jD4NQyIN2jYdcXwnc3Oom84ZEYCDsqO8HIVUT6uFKSQ0/GqaFjMse4bx8ZKLVjE/weVQeK
-	YH9X+Rxma62We3Q0bK1A==;
+	List-Owner; bh=HEqPduXAvch3vqruP7w4bicDHZ98bISnv5h3F4bA8Sg=; b=JxP+P5VdfoHLav
+	OSEkt9Rfvy5hbP8NgULy21zKAw+iu33mjTOg5vOBWnCzGMlLw6Ga5FNqKK/XnC7v+v/6eV8g19lYq
+	l6SLXacb9UfrCbjc4Ajy16KdE5Mz67noaylXg210ejNjUqmmyz+p+hWQAzy8CychygVophVC/FfuG
+	r8gD8oSJmOugIH88Zao30ehwCQ8XCgfdaf0uIulTB3i288PeEIovqvrhM2jhfab4chHjZBQ4HqfrB
+	M9w3gGLyQmvteI3FpNwHEDMKLqZQ65XEWXfjCJheKWaViAzWIzairkuh0fDOtDmxD1auz7PJXXFzT
+	HnQsrbJmt1Y+ZyPX3FTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he2Du-00038J-7C; Thu, 20 Jun 2019 18:55:50 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1he3iT-0004Gi-Hj; Thu, 20 Jun 2019 20:31:29 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1he2Dp-00035x-Sd
- for linux-rockchip@lists.infradead.org; Thu, 20 Jun 2019 18:55:47 +0000
-Received: by mail-pf1-x442.google.com with SMTP id t16so2156067pfe.11
- for <linux-rockchip@lists.infradead.org>; Thu, 20 Jun 2019 11:55:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=YAVX44TjixlyUBQzD0G7+JGPLwAIIoO4XVm2kwePVsI=;
- b=J3Co9Iqj/Uahf9I/LYllSovtu5292resySUkJhy2CATyEb8fHSHvLG27AeV3mSLuC3
- bYqqNUW4qiPBQtF7MgaonpEhUgoFUsqDztBLotnkJUYZ0p6qJhJq4kFmL6FxiORyV3ab
- 3egxW90u3IlKkRfUrTX/uXSD5GbkCXtuUDe6M=
+ id 1he3iQ-0004FX-1C
+ for linux-rockchip@lists.infradead.org; Thu, 20 Jun 2019 20:31:27 +0000
+Received: by mail-io1-xd42.google.com with SMTP id w25so1701489ioc.8
+ for <linux-rockchip@lists.infradead.org>; Thu, 20 Jun 2019 13:31:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=/RIT3PGSIDktw6riBTCLlesL4b2Jegy8h8HP+jn0p40=;
+ b=Iz+3qSD6WbRhUE+tFCZqsR6W+T43RQqlhJuaueVgnsR+UHXqI6yGDiXDmoAN2KQV+J
+ K7hg/B5bhJJNeAfOcSvC9amZalXql2GlhpAuSC3SORlAuoH0aFCsWHNWnVuqQGKr3bWe
+ AvfJ6cVBI86oXbCiPbIGzMw+OcyhdOGqhwB0E=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=YAVX44TjixlyUBQzD0G7+JGPLwAIIoO4XVm2kwePVsI=;
- b=NoxI0H+iXi5j6Yp+kRyD0uA26gyWIj5p1J4/GgyENGu43fVR0PR/MSYbmR0qDqu2KD
- YE+qghRWF09CfGcuA+4KQdtNZAWwgGwEmwc/e6ZaJMxNt/ubu7BKm+5ZticPbLQgkpjk
- r7VbbQnxdF0J2SIBZkWpE77xH5DuZgqiKGDfM2eQx0Bv3z8x4vwpuZe/siOeXhLCgIlr
- ede2kzTwm1gTa+/bowtJ+VUPnzWXmkAZ2k3vCu0ZilK82EoevGndYuAzdMlFney8PN1M
- KUV0K1B2EdLzPQfX5LPGwfysQGscClUg4II1oZYk5IAv0jURg8zRwE7aql03aGBF9L8/
- 1gHA==
-X-Gm-Message-State: APjAAAX1SVqG0dUk7Y62KxwIBixQLvUIbNq2Cymz9PWkpaNCwXkY7UqU
- 9AmiIJCZdK3eIS8pDlxm565XzA==
-X-Google-Smtp-Source: APXvYqx2KN4/aWVpMa6gmNLJWrp8NXPCOSnQnsYaSPsMQWxhCnvD2Gd3y4f9p+aaAHxuiX/0z/FKPg==
-X-Received: by 2002:a63:4c14:: with SMTP id z20mr14096286pga.360.1561056945317; 
- Thu, 20 Jun 2019 11:55:45 -0700 (PDT)
-Received: from localhost.localdomain ([183.82.225.128])
- by smtp.gmail.com with ESMTPSA id k3sm372183pju.27.2019.06.20.11.55.42
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 20 Jun 2019 11:55:44 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- Kever Yang <kever.yang@rock-chips.com>, u-boot@lists.denx.de
-Subject: [PATCH v2 8/8] rockchip: rk3399: Enable TPL_BOARD_INIT
-Date: Fri, 21 Jun 2019 00:25:06 +0530
-Message-Id: <20190620185506.11449-9-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
-In-Reply-To: <20190620185506.11449-1-jagan@amarulasolutions.com>
-References: <20190620185506.11449-1-jagan@amarulasolutions.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=/RIT3PGSIDktw6riBTCLlesL4b2Jegy8h8HP+jn0p40=;
+ b=MkS05UB1osXO+hIOzt/5U5cSsnNOjk+MzRZwjdVwP2DmERc/wzmH7+FfgOnY9vPlo7
+ hW/E3PR/wOZh2dCgsVa33DUjiycPc1F7tUFjqA6eM6Wxh9J5vOMEPdkVUgpnhwOXlMuk
+ B5/OiQiwL5DGw0oJytzd1uxF/fcMzWDcPACKECbpUcYnEVTghWJoHbC/RZR0sRGJof+S
+ 94PCeFA9hgfx2JXZ/d5yzTSjM9+Tc4yq2a/uUggOe+7Qc4cxUQrA3cmtUEevwVMm3B39
+ i61j9UIoX7x02zjofkkEkCPF6STnMoU3gPNFlvJTldUGwYGltrMD3tiIMHS+SGAG8aWn
+ ngzg==
+X-Gm-Message-State: APjAAAV4ns20w14otYv5vHReg+lveis5TJm1fsGnKPS9TAr28ENsn57j
+ xLgjqK7qPb+zE9bHCY0CuULv6LqJjBc=
+X-Google-Smtp-Source: APXvYqwNXtPdPowDeMG6ECMBcrks12TB+220e1bzOKVY7xjqfhOpXh4DSwmWAKW+dOM4sI7avMirkg==
+X-Received: by 2002:a02:ca57:: with SMTP id i23mr22575910jal.25.1561062684107; 
+ Thu, 20 Jun 2019 13:31:24 -0700 (PDT)
+Received: from mail-io1-f50.google.com (mail-io1-f50.google.com.
+ [209.85.166.50])
+ by smtp.gmail.com with ESMTPSA id c23sm1176681iod.11.2019.06.20.13.31.23
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Thu, 20 Jun 2019 13:31:23 -0700 (PDT)
+Received: by mail-io1-f50.google.com with SMTP id r185so7050359iod.6
+ for <linux-rockchip@lists.infradead.org>; Thu, 20 Jun 2019 13:31:23 -0700 (PDT)
+X-Received: by 2002:a5d:8ccc:: with SMTP id k12mr9824185iot.141.1561062682954; 
+ Thu, 20 Jun 2019 13:31:22 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190620182056.61552-1-dianders@chromium.org>
+In-Reply-To: <20190620182056.61552-1-dianders@chromium.org>
+From: Doug Anderson <dianders@chromium.org>
+Date: Thu, 20 Jun 2019 13:31:09 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=Wi21Emjg7CpCJfSRiKr_EisR20UO1tbPjAeJzdJNbSVw@mail.gmail.com>
+Message-ID: <CAD=FV=Wi21Emjg7CpCJfSRiKr_EisR20UO1tbPjAeJzdJNbSVw@mail.gmail.com>
+Subject: Re: [PATCH] Revert "ARM: dts: rockchip: add startup delay to
+ rk3288-veyron panel-regulators"
+To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_115545_949288_B4C87255 
-X-CRM114-Status: UNSURE (   8.85  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20190620_133126_105223_C1C5BC6B 
+X-CRM114-Status: GOOD (  11.52  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [183.82.225.128 listed in dnsbl.sorbs.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -87,6 +87,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,36 +100,55 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
- Jagan Teki <jagan@amarulasolutions.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Matthias Kaehlcke <mka@chromium.org>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Enable TPL_BOARD_INIT, this would help us to show
-TPL boot prints.
+Hi,
 
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- arch/arm/mach-rockchip/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
+On Thu, Jun 20, 2019 at 11:21 AM Douglas Anderson <dianders@chromium.org> wrote:
+>
+> This reverts commit 1f45e8c6d0161f044d679f242fe7514e2625af4a.
+>
+> This 100 ms mystery delay is not on downstream kernels and no longer
+> seems needed on upstream kernels either [1].  Presumably something in the
+> meantime has made things better.  A few possibilities for patches that
+> have landed in the meantime that could have made this better are
+> commit 3157694d8c7f ("pwm-backlight: Add support for PWM delays
+> proprieties."), commit 5fb5caee92ba ("pwm-backlight: Enable/disable
+> the PWM before/after LCD enable toggle."), and commit 6d5922dd0d60
+> ("ARM: dts: rockchip: set PWM delay backlight settings for Veyron")
+>
+> Let's revert and get our 100 ms back.
+>
+> [1] https://lkml.kernel.org/r/2226970.BAPq4liE1j@diego
+>
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
+> ---
+>
+>  arch/arm/boot/dts/rk3288-veyron-jaq.dts    | 1 -
+>  arch/arm/boot/dts/rk3288-veyron-jerry.dts  | 1 -
+>  arch/arm/boot/dts/rk3288-veyron-minnie.dts | 1 -
+>  arch/arm/boot/dts/rk3288-veyron-speedy.dts | 1 -
+>  4 files changed, 4 deletions(-)
 
-diff --git a/arch/arm/mach-rockchip/Kconfig b/arch/arm/mach-rockchip/Kconfig
-index ce039022df..1d483be8b9 100644
---- a/arch/arm/mach-rockchip/Kconfig
-+++ b/arch/arm/mach-rockchip/Kconfig
-@@ -184,6 +184,7 @@ config ROCKCHIP_RK3399
- 	imply TPL_LIBCOMMON_SUPPORT
- 	imply TPL_LIBGENERIC_SUPPORT
- 	imply TPL_SYS_MALLOC_SIMPLE
-+	imply TPL_BOARD_INIT
- 	imply TPL_BOOTROM_SUPPORT
- 	imply TPL_DRIVERS_MISC_SUPPORT
- 	imply TPL_OF_CONTROL
--- 
-2.18.0.321.gffc6fa0e3
+Maybe wait before applying.  I've been running reboot tests now with
+this patch applied (among others) and with enough reboots I managed to
+see:
 
+[    5.682418] rockchip-dp ff970000.dp: eDP link training failed (-5)
+
+I'll see if I can confirm that it's this patch and why things are
+different compared to downstream.
+
+-Doug
 
 _______________________________________________
 Linux-rockchip mailing list
