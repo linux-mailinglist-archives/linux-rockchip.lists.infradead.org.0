@@ -2,86 +2,52 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4A4F4CC72
-	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Jun 2019 12:59:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DCA0B4CDB6
+	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Jun 2019 14:28:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HTE/1Aoq1a8yq6vqyGsDImqDm1/iiDORBwdEdWSJLpE=; b=Qk8pi7B3NeXinf
-	TIkmwIABeJrGdeHoW+mA7fHdb2HsNfY/NCawCvDDL2d4xGV9DOu7RdiQPHr9f+rJ0LCKZiCczvZw/
-	C2YLW9JKkwN9Ymg248Dm35gkEKjTBlMAvnI/Cinpbe5uFlr13nJTzPryzbhzmXr8iiiDSbNvpghmh
-	wwe/Abfa8/Zdrczuz2jbk5ySyzTgfVwMrmlYGTXfmbf2A/18wb9AFV4/u8mNbQtWBU8M78w3t2Gg6
-	24OCElF9Km/zEwghJW6X1l/tGG0kR1JTXQnrSUmbrDJJLTVk91WsxTHiFODxbiu/FKfFjN1QfDogF
-	ohSCn+KlOGZW33HbRGzA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DeSfUMpyOy2NXpp3bH0gY3LwGXm21wqin54Bcb9Pvr8=; b=X+6vneb7UhOH2l
+	d2E2PDjiwKl1CKsTPKxv9109fap0+lvIsM85TYSH7tq1MhUr7BqfaedtbtwyDq3Xy0BmaG5qON+pn
+	ZGJ+wDYoA7qmQjgi0/G+pNd/lC83gWWw6goMFXlZ60Cw47TXhj1T7dN47AwFFJxGKp49/OjgPOa6+
+	LKNoYBJYk0/ApmPIMtQ8l2NHmX3wLnUk44NDy7Q97drlqAixA8mvSMBuktiXgZZTtY46pjp+D5Cbw
+	8Ouk316Z9AmMphLWylv4ypFnmRumscYj60VwLLMJTs8/1LPUD1UYUZELpPQjK2B3IRNKkp7PHZPXE
+	T2+CZvD4c9BXVSf9w1GA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdun6-0000hq-N5; Thu, 20 Jun 2019 10:59:40 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hdwB0-00011z-3E; Thu, 20 Jun 2019 12:28:26 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdun2-0000hW-1F
- for linux-rockchip@lists.infradead.org; Thu, 20 Jun 2019 10:59:37 +0000
-Received: by mail-pf1-x443.google.com with SMTP id 19so1469740pfa.4
- for <linux-rockchip@lists.infradead.org>; Thu, 20 Jun 2019 03:59:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=VTYVwBjgCKNY/FlJSycuMhAtBvrPKNheYq1n4TGKvPs=;
- b=MYt/ZFt/JgMf/ATRwzinwAG8Ey1it8gB2Brt44SNBAsD9v0tDt41QzKp4UahFTd9qt
- zg+AgevEDVRg8phOrjQYtPcUe3fIp+41vnpuVx1thfIeYb+WfnjwV4ab4rK3ufM80RVp
- zPfNVJ9UO6yv4qEn9RhOUt+pVP4KY58kOmrBE=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=VTYVwBjgCKNY/FlJSycuMhAtBvrPKNheYq1n4TGKvPs=;
- b=a5Jpk16De7Tc7emdJ3VPpyNh34mpoa1Lj0XevVepI91/nlXsz4yVUw+ndTjug5rncg
- oeMIh8zMocqWYzpOKzMGWml70tK3SvtUJZqaNsaYBnJkh+ZAn0W2QmsGgED+W8AGOzAl
- vc9sGhOpbocragIEvMqr1ZeHTZvilXy33KU049ujxkWtCdYsDQVc+zakTqZrpqG7FKlc
- Ls4mWWvnszy5RwkiLIJLJrrIDJhfbIswfxQyw4mDTfr9tdEC7yLiH1ZR8RJ0YYu6+IaR
- aBoINwz7JYvfMJTveNHdH1VORViXSwd7r5yq5U0HPpnR8LHelNRUmWIzmZX7/UT1aPlD
- 31RQ==
-X-Gm-Message-State: APjAAAVWvIGUShNH2x52Jho08yp1srdv2R/Q6yfyW+SkmuODHycN5c1D
- i2XmdIFwzQ9dkPHzAsUZsW7L1A==
-X-Google-Smtp-Source: APXvYqwyv4p8EdoQU2Qg8ZYyxJnUjSpqhetbQ/hDzmNw6y6goSdEWENifX0ToJMNdFdODpZsoAc8Sg==
-X-Received: by 2002:a63:8d4c:: with SMTP id z73mr6426521pgd.95.1561028375258; 
- Thu, 20 Jun 2019 03:59:35 -0700 (PDT)
-Received: from localhost.localdomain ([183.82.229.140])
- by smtp.gmail.com with ESMTPSA id r15sm31306524pfc.162.2019.06.20.03.59.31
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 20 Jun 2019 03:59:34 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- Kever Yang <kever.yang@rock-chips.com>, u-boot@lists.denx.de
-Subject: [PATCH v4.1 4/6] rockchip: rk3399: Get bl31.elf via BL31
-Date: Thu, 20 Jun 2019 16:29:22 +0530
-Message-Id: <20190620105922.484-1-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
+ id 1hdwAx-00011T-0T; Thu, 20 Jun 2019 12:28:24 +0000
+Received: from ip5f5a6320.dynamic.kabel-deutschland.de ([95.90.99.32]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hdwAp-0003Td-BK; Thu, 20 Jun 2019 14:28:15 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Doug Anderson <dianders@chromium.org>
+Subject: Re: [PATCH 04/10] ARM: dts: rockchip: add startup delay to
+ rk3288-veyron panel-regulators
+Date: Thu, 20 Jun 2019 14:28:14 +0200
+Message-ID: <2226970.BAPq4liE1j@diego>
+In-Reply-To: <CAD=FV=U23+5pcze=6zDTx0dAYF8HTmbR8s8zem93VhgYgaZeGQ@mail.gmail.com>
+References: <1458265206-15733-1-git-send-email-heiko@sntech.de>
+ <1458265206-15733-5-git-send-email-heiko@sntech.de>
+ <CAD=FV=U23+5pcze=6zDTx0dAYF8HTmbR8s8zem93VhgYgaZeGQ@mail.gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_035936_590056_507BBCB2 
-X-CRM114-Status: GOOD (  11.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190620_052823_205903_DDA1DF20 
+X-CRM114-Status: GOOD (  19.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,120 +60,55 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
- Jagan Teki <jagan@amarulasolutions.com>
+Cc: LKML <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Matthias Kaehlcke <mka@chromium.org>, Yakir Yang <ykk@rock-chips.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Right now rockchip platform need to copy bl31.elf into u-boot
-source directory to make use of building u-boot.itb.
+Hi Doug,
 
-So, add environment variable BL31 like Allwinner SoC so-that the
-bl31.elf would available via BL31.
+Am Donnerstag, 20. Juni 2019, 03:27:55 CEST schrieb Doug Anderson:
+> On Wed, Fri, 18 Mar 2016 Heiko Stuebner <heiko@sntech.de> wrote:
+> >
+> > The panels need a bit of time to actually turn on. If this isn't
+> > observed, this results in problems when trying talk to the panels
+> > and thus produces detection errors. 100ms seem to be a safe value
+> > for the time being.
+> >
+> > Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+> > ---
+> >  arch/arm/boot/dts/rk3288-veyron-jaq.dts    | 1 +
+> >  arch/arm/boot/dts/rk3288-veyron-jerry.dts  | 1 +
+> >  arch/arm/boot/dts/rk3288-veyron-minnie.dts | 1 +
+> >  arch/arm/boot/dts/rk3288-veyron-speedy.dts | 1 +
+> >  4 files changed, 4 insertions(+)
+> 
+> I know it was 3 years ago, but any idea how to reproduce the problems
+> you were seeing without this patch?  I believe the downstream kernel
+> never had any delay like this and I'm not aware of any issues.
+>
+> I wonder if the need for this extra 100 ms delay is no longer there
+> now that we have:
+> 
+> 3157694d8c7f pwm-backlight: Add support for PWM delays proprieties.
+> 5fb5caee92ba pwm-backlight: Enable/disable the PWM before/after LCD
+> enable toggle.
+> 6d5922dd0d60 ARM: dts: rockchip: set PWM delay backlight settings for Veyron
 
-If the builds are not exporting BL31 env, the make_fit_atf.py
-explicitly create dummy bl31.elf in u-boot root directory to
-satisfy travis builds and it will show the warning on console as
+I just did a non-scientific test on my jerry+minnie and yes, simply
+reverting that patch does not seem to affect display bringup and I still
+get a prompt.
 
- WARNING: BL31 file bl31.elf NOT found, resulting binary is non-functional
- WARNING: Please read Building section in doc/README.rockchip
+So I guess we could just revert that patch in light of the changes.
+[patches welcome ;-) ]
 
-Note, that the dummy bl31 files were created during not exporting
-BL31 case would be removed via clean target in Makefile.
+Heiko
 
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
-Changes for v4.1:
-- Check BL31 env first instead of bl31.elf PWD.
-
- Makefile                               |  2 +-
- arch/arm/mach-rockchip/make_fit_atf.py | 19 +++++++++++++++++--
- doc/README.rockchip                    |  4 ++--
- 3 files changed, 20 insertions(+), 5 deletions(-)
-
-diff --git a/Makefile b/Makefile
-index a503ab9fc1..3ede10ff68 100644
---- a/Makefile
-+++ b/Makefile
-@@ -1848,7 +1848,7 @@ clean: $(clean-dirs)
- 		-o -name 'dsdt.aml' -o -name 'dsdt.asl.tmp' -o -name 'dsdt.c' \
- 		-o -name '*.efi' -o -name '*.gcno' -o -name '*.so' \) \
- 		-type f -print | xargs rm -f \
--		bl31_*.bin image.map
-+		bl31.c bl31.elf bl31_*.bin image.map
- 
- # mrproper - Delete all generated files, including .config
- #
-diff --git a/arch/arm/mach-rockchip/make_fit_atf.py b/arch/arm/mach-rockchip/make_fit_atf.py
-index 212bd0a854..45ec105887 100755
---- a/arch/arm/mach-rockchip/make_fit_atf.py
-+++ b/arch/arm/mach-rockchip/make_fit_atf.py
-@@ -12,6 +12,7 @@
- import os
- import sys
- import getopt
-+import logging
- 
- # pip install pyelftools
- from elftools.elf.elffile import ELFFile
-@@ -89,13 +90,17 @@ def append_conf_section(file, cnt, dtname, segments):
-     file.write('\t\tconfig_%d {\n' % cnt)
-     file.write('\t\t\tdescription = "%s";\n' % dtname)
-     file.write('\t\t\tfirmware = "atf_1";\n')
--    file.write('\t\t\tloadables = "uboot",')
-+    file.write('\t\t\tloadables = "uboot"')
-+    if segments != 0:
-+        file.write(',')
-     for i in range(1, segments):
-         file.write('"atf_%d"' % (i))
-         if i != (segments - 1):
-             file.write(',')
-         else:
-             file.write(';\n')
-+    if segments == 0:
-+        file.write(';\n')
-     file.write('\t\t\tfdt = "fdt_1";\n')
-     file.write('\t\t};\n')
-     file.write('\n')
-@@ -171,8 +176,18 @@ def generate_atf_binary(bl31_file_name):
- 
- def main():
-     uboot_elf = "./u-boot"
--    bl31_elf = "./bl31.elf"
-     fit_its = sys.stdout
-+    if "BL31" in os.environ:
-+        bl31_elf=os.getenv("BL31");
-+    elif os.path.isfile("./bl31.elf"):
-+        bl31_elf = "./bl31.elf"
-+    else:
-+        os.system("echo 'int main(){}' > bl31.c")
-+        os.system("${CROSS_COMPILE}gcc -c bl31.c -o bl31.elf")
-+        bl31_elf = "./bl31.elf"
-+        logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
-+        logging.warning(' BL31 file bl31.elf NOT found, resulting binary is non-functional')
-+        logging.warning(' Please read Building section in doc/README.rockchip')
- 
-     opts, args = getopt.getopt(sys.argv[1:], "o:u:b:h")
-     for opt, val in opts:
-diff --git a/doc/README.rockchip b/doc/README.rockchip
-index 264f7e4994..5680c075fa 100644
---- a/doc/README.rockchip
-+++ b/doc/README.rockchip
-@@ -149,8 +149,8 @@ For example:
- 	=> make realclean
- 	=> make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399
- 
--	(copy bl31.elf into U-Boot root dir)
--	=> cp build/rk3399/release/bl31/bl31.elf /path/to/u-boot
-+	(export bl31.elf)
-+	=> export BL31=/path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf
- 
-    - Compile PMU M0 firmware
- 
--- 
-2.18.0.321.gffc6fa0e3
 
 
 _______________________________________________
