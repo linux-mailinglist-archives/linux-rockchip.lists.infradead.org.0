@@ -2,76 +2,108 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E2D64E501
-	for <lists+linux-rockchip@lfdr.de>; Fri, 21 Jun 2019 11:54:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C31F94E562
+	for <lists+linux-rockchip@lfdr.de>; Fri, 21 Jun 2019 12:06:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d0AgmvEiVBMF/vtb6cPiEPpS8fdkvGU/9mznLQGtf1A=; b=sXzYOBHjuTES1O
-	4ojEftEDNrY1Sfgb0Ze8OsgRpBB0z/1IiBaqVqLCdzs9Iuppw/wWzadHLtvOTa7GPCF/0cY/yAL/D
-	QwMAzEZcnd1e85HzBrryIDZTVOlfViCNGb1BmcpoFWbScX6cmW6bxB9y6bxlc2txeFdZGx5m5k5kG
-	tPCpRRvfbQxayWBmd8387gYyyTKvLgxGU9NIuQbYsAKgDgqAFQlnwzyI5to2lXWVF/F+4YEf1NxC4
-	6dGo7cMU/UxGxBkK0fjPN+pIDGA2WjdITxHjg83rzODbNZaIUPR4NknoRqfMmobUe8fJAFwovxuf2
-	rYaQr5TuCAgCI0fWVYCg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IipMfnqfMjRB1rUtozmijNfN4VrQLXHVmF0QV242GqQ=; b=MnLSmHvkNlMra6
+	21c+q/6XNJlemf7oUNIs8RytHx1KfbWgXgr6iBCtnjA8X4HMyq/W/RzgOHL3k9pJEhvJCQPTVtHDl
+	tMss/Ws2q7k4C3S/vc2Jw2zhpfGl97xr1sTx6rA2M5f+UwVaSJhwhYUZwqzL0qMGxqN5NVdLUusFe
+	kKuucKGgpa5iaLwix5vK+W7ytt9XdnIdsdghZldCHuyQ83bo0wsS+FIdTneqnL1dOvaTBVDqZWR8r
+	J7j1M03LAjq9+pZqKKCR607Ix3RWtgQHgYIJQR8wpMZkccYXk2cw7ndyxcYSabxKKRqOuXgjNg51i
+	WVAehajL4iCn8PUpN0SA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heGFn-0004ur-So; Fri, 21 Jun 2019 09:54:44 +0000
-Received: from regular1.263xmail.com ([211.150.70.203])
+	id 1heGQl-0001Pg-5c; Fri, 21 Jun 2019 10:06:03 +0000
+Received: from mail-vk1-xa41.google.com ([2607:f8b0:4864:20::a41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heG0j-0006cE-0Z
- for linux-rockchip@lists.infradead.org; Fri, 21 Jun 2019 09:39:12 +0000
-Received: from kever.yang?rock-chips.com (unknown [192.168.165.103])
- by regular1.263xmail.com (Postfix) with ESMTP id 84AEA39A;
- Fri, 21 Jun 2019 17:38:54 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from [192.168.60.65] (unknown [103.29.142.67])
- by smtp.263.net (postfix) whith ESMTP id
- P26442T139681813473024S1561109925843313_; 
- Fri, 21 Jun 2019 17:38:52 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <d60f5c74f4e1c7cb04abe4e650bc4a59>
-X-RL-SENDER: kever.yang@rock-chips.com
-X-SENDER: yk@rock-chips.com
-X-LOGIN-NAME: kever.yang@rock-chips.com
-X-FST-TO: linux-amarula@amarulasolutions.com
-X-SENDER-IP: 103.29.142.67
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-Subject: Re: [PATCH v4 4/6] rockchip: rk3399: Get bl31.elf via BL31
-To: Jagan Teki <jagan@amarulasolutions.com>, Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>, u-boot@lists.denx.de
-References: <20190620100740.6560-1-jagan@amarulasolutions.com>
- <20190620100740.6560-5-jagan@amarulasolutions.com>
-From: Kever Yang <kever.yang@rock-chips.com>
-Message-ID: <6d6c40af-1946-d338-9135-ee3ee8b6031b@rock-chips.com>
-Date: Fri, 21 Jun 2019 17:38:44 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.6.0
+ id 1heG1k-0008N3-R1
+ for linux-rockchip@lists.infradead.org; Fri, 21 Jun 2019 09:40:23 +0000
+Received: by mail-vk1-xa41.google.com with SMTP id y130so1170976vkc.0
+ for <linux-rockchip@lists.infradead.org>; Fri, 21 Jun 2019 02:40:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=8vCdcbqoZQ1U1i7mBxY4bPH1TOrRBXQaqjxbkNh/nbQ=;
+ b=aISYU0AuOWSMAGgxgMsNgcwyyCsQfgC0WTiJZVc6DjDjjnxMKUEageDY0FcrkMp5o7
+ ifs6RlrFO0OjnAJaxSecDeakh4ZBOJPZ3vTpXi66AbMzyFoXJ4nrLFwPI1pk8zMLyg1v
+ CuJnbc9bE0uzsi55qKLvlz/emOEVFfRxcBzaA=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=8vCdcbqoZQ1U1i7mBxY4bPH1TOrRBXQaqjxbkNh/nbQ=;
+ b=bjrGcFI90yGP8Ru7knrctJHHocVkRyTYCsfo4lav8Ka/a8PzKPE+Tx0w4KrIenWLSS
+ G7p1Vfynm1GSE8argladE4za8Gt4I5LESE2v4CEkDtNU5E6/GRwyB2aV9iqkHjUoYLHQ
+ 3cAA//WMG8GM47eETE2XgGNoJYoZAAIJtqk0W4djc9AgxLIi0+yvi/QKHI9YgjlskvDf
+ iR4wi5rgjmSZNpT6j1fPb8UTWfGhtLEgvLNGIdeZwrw1OcPMDE5wKNwRouyWtTdgESAH
+ BLKL/fO3m9gBkrKJHhEfEofb0OYNCb5WIB/oqBiv2wwilkdAc9GwFRFBLN3NKpvJk7gC
+ lSrQ==
+X-Gm-Message-State: APjAAAWhiKjO2R2nmWz+Ej/hYiP/dAiW62g3fWjmEkL5Mic96WPDjFci
+ bHg3dhwXgG3GfIYGTVoKvOwqaxDlB62w7RHPxUAnlw==
+X-Google-Smtp-Source: APXvYqzqmaV63/sDh2pA+DmjqQt0rIScMqSjGIjM8UgwlzzNNUo2pMiNP3RyCDxLsaSVfiTVd9xkzA40WBjyjKt8VfQ=
+X-Received: by 2002:a1f:3692:: with SMTP id d140mr9227965vka.88.1561110010447; 
+ Fri, 21 Jun 2019 02:40:10 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190620100740.6560-5-jagan@amarulasolutions.com>
-Content-Language: en-US
+References: <20190603080931.GG21222@phenom.ffwll.local>
+ <CAFv8Nw+1sB8i1d87vLeKxRricZOi4gnXFSgOzW9k0sa_Tzybjg@mail.gmail.com>
+ <20190604072411.GP21222@phenom.ffwll.local>
+ <CAFv8NwKL9ZL=gNpDmdRV+R9eq22+Da_1kzuYBv8kMMyV3Hq14g@mail.gmail.com>
+ <20190611123455.GD2458@phenom.ffwll.local>
+ <CAFv8NwJxs-R=ehgeqyx=e+T5OmUBsk3uWnUb2t0cC-LDPS7G5w@mail.gmail.com>
+ <20190618121220.GU12905@phenom.ffwll.local>
+ <CAFv8NwLci2ALi3V-e=8jjatciHWOoOj-FeajwNLWRpWRtqgBdg@mail.gmail.com>
+ <20190620092506.GP12905@phenom.ffwll.local>
+ <CAFv8NwLbS_f4cfeorzqtmRzQSY0u1tgM7fitAokg_QfViPvq=Q@mail.gmail.com>
+ <20190620211204.GW12905@phenom.ffwll.local>
+In-Reply-To: <20190620211204.GW12905@phenom.ffwll.local>
+From: Cheng-yi Chiang <cychiang@chromium.org>
+Date: Fri, 21 Jun 2019 17:39:43 +0800
+Message-ID: <CAFv8Nw+m-+pshD_cxKe4Nc_4wP3ttpAfDU7EFb-e+ZBcYNA51Q@mail.gmail.com>
+Subject: Re: [PATCH 1/7] video: add HDMI state notifier support
+To: Cheng-yi Chiang <cychiang@chromium.org>, Hans Verkuil <hverkuil@xs4all.nl>,
+ linux-kernel <linux-kernel@vger.kernel.org>, 
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, Mark Brown <broonie@kernel.org>, 
+ Liam Girdwood <lgirdwood@gmail.com>, Takashi Iwai <tiwai@suse.com>,
+ Jaroslav Kysela <perex@perex.cz>, 
+ Russell King <rmk+kernel@armlinux.org.uk>, Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ David Airlie <airlied@linux.ie>, 
+ Rob Herring <robh+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Doug Anderson <dianders@chromium.org>, Dylan Reid <dgreid@chromium.org>,
+ tzungbi@chromium.org, linux-media@vger.kernel.org, 
+ "moderated list:SOUND - SOC LAYER / DYNAMIC AUDIO POWER MANAGEM..."
+ <alsa-devel@alsa-project.org>, dri-devel@lists.freedesktop.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ devicetree@vger.kernel.org, Dariusz Marcinkiewicz <darekm@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_023909_560597_23F56DEB 
-X-CRM114-Status: GOOD (  16.69  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190621_024012_947698_671789A2 
+X-CRM114-Status: GOOD (  29.69  )
+X-Spam-Score: -7.4 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-7.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.203 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ no trust [2607:f8b0:4864:20:0:0:0:a41 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,127 +116,99 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com
+Cc: Daniel Vetter <daniel@ffwll.ch>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Jagan:
-
-
-On 06/20/2019 06:07 PM, Jagan Teki wrote:
-> Right now rockchip platform need to copy bl31.elf into u-boot
-> source directory to make use of building u-boot.itb.
+On Fri, Jun 21, 2019 at 5:12 AM Daniel Vetter <daniel@ffwll.ch> wrote:
 >
-> So, add environment variable BL31 like Allwinner SoC so-that the
-> bl31.elf would available via BL31.
+> Massively cutting this thread, since halfway through in my previous reply
+> I realized that maybe hdmi_codec is a much better starting point.
 >
-> If the builds are not exporting BL31 env, the make_fit_atf.py
-> explicitly create dummy bl31.elf in u-boot root directory to
-> satisfy travis builds and it will show the warning on console as
+ACK
+> On Thu, Jun 20, 2019 at 09:23:23PM +0800, Cheng-yi Chiang wrote:
+> > On Thu, Jun 20, 2019 at 5:25 PM Daniel Vetter <daniel@ffwll.ch> wrote:
+> > > Yeah fully agreeing that hdmi_audio_code is probably a better starting
+> > > point. Problem is that becuase hdmi_codec is built on top of platform
+> > > device it's quite a bit harder to extend with callbacks and things like
+> > > that, without breaking the driver model.
+> > >
+> > > I need to think about this more, but if all we need to look at is
+> > > hdmi_codec, then I think this becomes a lot easier. And we can ignore
+> > > drm_audio_component.h completely.
+> >
+> >
+> > It is surprising that you think this way.
+> > Maybe the original patch before hdmi-notifier was introduced is the
+> > better way to solve this issue, if we only need to look at hdmi_codec.
+> >
+> > The history of hdmi_codec driver is in this patch series:
+> >
+> > https://lore.kernel.org/patchwork/patch/539656/
 >
->  WARNING: BL31 file bl31.elf NOT found, resulting binary is non-functional
->  WARNING: Please read Building section in doc/README.rockchip
+> Hm, this doesn't seem to be the hdmi_codec driver I meant, but another,
+> new one. I was talking about SND_SOC_HDMI_CODEC.
 >
-> Note, that the dummy bl31 files were created during not exporting
-> BL31 case would be removed via clean target in Makefile.
+Yes you are right. They are different codec drivers.
+Sorry for the confusion. What I meant was that my use case on RK3288
+was using dw-hdmi-audio.c codec driver,
+which was later replaced by a more general version hdmi-codec.c.
+
+> > There was a callback mechanism implemented between dw-hdmi and hdmi
+> > codec driver.
+> > It was later consolidated by Doug in this patch for better jack status
+> > reporting:
+> >
+> > https://chromium-review.googlesource.com/c/chromiumos/third_party/kernel/+/303573/
 >
-> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> ---
->  Makefile                               |  2 +-
->  arch/arm/mach-rockchip/make_fit_atf.py | 20 ++++++++++++++++++--
->  doc/README.rockchip                    |  4 ++--
-
-Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
-
-Thanks,
-- Kever
->  3 files changed, 21 insertions(+), 5 deletions(-)
+> Hm that still seems entirely separate hdmi-codec specific to dw-hdmi only
+> ...
 >
-> diff --git a/Makefile b/Makefile
-> index a503ab9fc1..3ede10ff68 100644
-> --- a/Makefile
-> +++ b/Makefile
-> @@ -1848,7 +1848,7 @@ clean: $(clean-dirs)
->  		-o -name 'dsdt.aml' -o -name 'dsdt.asl.tmp' -o -name 'dsdt.c' \
->  		-o -name '*.efi' -o -name '*.gcno' -o -name '*.so' \) \
->  		-type f -print | xargs rm -f \
-> -		bl31_*.bin image.map
-> +		bl31.c bl31.elf bl31_*.bin image.map
->  
->  # mrproper - Delete all generated files, including .config
->  #
-> diff --git a/arch/arm/mach-rockchip/make_fit_atf.py b/arch/arm/mach-rockchip/make_fit_atf.py
-> index 212bd0a854..e7d3846a13 100755
-> --- a/arch/arm/mach-rockchip/make_fit_atf.py
-> +++ b/arch/arm/mach-rockchip/make_fit_atf.py
-> @@ -12,6 +12,7 @@
->  import os
->  import sys
->  import getopt
-> +import logging
->  
->  # pip install pyelftools
->  from elftools.elf.elffile import ELFFile
-> @@ -89,13 +90,17 @@ def append_conf_section(file, cnt, dtname, segments):
->      file.write('\t\tconfig_%d {\n' % cnt)
->      file.write('\t\t\tdescription = "%s";\n' % dtname)
->      file.write('\t\t\tfirmware = "atf_1";\n')
-> -    file.write('\t\t\tloadables = "uboot",')
-> +    file.write('\t\t\tloadables = "uboot"')
-> +    if segments != 0:
-> +        file.write(',')
->      for i in range(1, segments):
->          file.write('"atf_%d"' % (i))
->          if i != (segments - 1):
->              file.write(',')
->          else:
->              file.write(';\n')
-> +    if segments == 0:
-> +        file.write(';\n')
->      file.write('\t\t\tfdt = "fdt_1";\n')
->      file.write('\t\t};\n')
->      file.write('\n')
-> @@ -171,8 +176,19 @@ def generate_atf_binary(bl31_file_name):
->  
->  def main():
->      uboot_elf = "./u-boot"
-> -    bl31_elf = "./bl31.elf"
-> +    bl31_elf = os.path.isfile("./bl31.elf")
->      fit_its = sys.stdout
-> +    if bl31_elf:
-> +        bl31_elf = "./bl31.elf"
-> +    elif "BL31" in os.environ:
-> +        bl31_elf=os.getenv("BL31");
-> +    else:
-> +        os.system("echo 'int main(){}' > bl31.c")
-> +        os.system("${CROSS_COMPILE}gcc -c bl31.c -o bl31.elf")
-> +        bl31_elf = "./bl31.elf"
-> +        logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
-> +        logging.warning(' BL31 file bl31.elf NOT found, resulting binary is non-functional')
-> +        logging.warning(' Please read Building section in doc/README.rockchip')
->  
->      opts, args = getopt.getopt(sys.argv[1:], "o:u:b:h")
->      for opt, val in opts:
-> diff --git a/doc/README.rockchip b/doc/README.rockchip
-> index 264f7e4994..5680c075fa 100644
-> --- a/doc/README.rockchip
-> +++ b/doc/README.rockchip
-> @@ -149,8 +149,8 @@ For example:
->  	=> make realclean
->  	=> make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399
->  
-> -	(copy bl31.elf into U-Boot root dir)
-> -	=> cp build/rk3399/release/bl31/bl31.elf /path/to/u-boot
-> +	(export bl31.elf)
-> +	=> export BL31=/path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf
->  
->     - Compile PMU M0 firmware
->  
+Again you are right. Sorry for the confusion. What I meant is that
+this callback mechanism should work on hdmi-codec.c driver as well.
 
+> > I am not sure why the original patch series did not get fully accepted
+> > in the upstream.
+> > It was quite long time ago.
+> >
+> > But if you think this might be the right way to do, then it is even
+> > better for us because the patch series and Doug's patch had been quite
+> > stable
+> > on our RK3288 products for about four years with plenty of users, so
+> > we have much higher confidence in them.
+> > I can rebase and clean up them and post another patch for review.
+> >
+> > Please let me know what approach you feel is better.
+> > Thanks again!
+>
+> Not sure we're talking about the same. What I had in mind is to add jack
+> status to the hdmi-codec.c stuff, which is used by multiple soc drm
+> display drivers already. Looking at git grep output, there seems to be
+> already some support for dw-hdmi synopsys drm_bridge driver. I thought of
+> extending that. Does that not work for you?
+>
+I think extending current interface will work.
+There is a struct hdmi_codec_pdata to let ALSA codec driver access
+some ops through platform data.
+And after this patch
 
+https://lore.kernel.org/patchwork/patch/692324/
 
+ALSA codec driver can get access to the struct on DRM side.
+Based on this I can add a new ops to register callback function for jack status.
+It will be similar to Doug's chromium patch above.
+I think that is quite a feasible way, and can benefit all boards using
+hdmi-codec.c.
+
+Thanks a lot!!
+
+> Thanks, Daniel
+> --
+> Daniel Vetter
+> Software Engineer, Intel Corporation
+> http://blog.ffwll.ch
 
 _______________________________________________
 Linux-rockchip mailing list
