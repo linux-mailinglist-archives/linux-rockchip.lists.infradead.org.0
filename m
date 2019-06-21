@@ -2,88 +2,91 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AC484EBE6
-	for <lists+linux-rockchip@lfdr.de>; Fri, 21 Jun 2019 17:24:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34BCB4EC89
+	for <lists+linux-rockchip@lfdr.de>; Fri, 21 Jun 2019 17:51:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=43V++1Z6kyzMrLnzgbXLaOCk1dC8esbRAQkZWeMMNjA=; b=GUD2EL6VVqdDfL
-	qCNHzFzi3oZqT2fjqvHo4vhYH5xnT/gkOVV3E5QBGQoRwPxr9TfwYSGrDPcpKLuVpVHBd48zImAaU
-	jvX7O2tYomZwZzgG/2GGbxS+leq+XlApNBVWrQGvFNfz/7R+qAWINbhWvTlBvVkX8/x/CYvXUbHll
-	q32mDUdS6JVQl+87AiK6+ZAiE5WV8cXw1iD/xfttS5iCFce0zhYInxMBs1b3kEbo96yJPEMpmSlL+
-	YDPPShNH+3ceO3M1BMZNWKP8HzRlPMH17FZb/NNvlnzSLlLqWtVtPGwFjSDKi3s0D5lVbfgu4msc5
-	Rmh5r2JijU8Dkyv91V8A==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:Subject:References:To:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=mh/iz6kULScd9GnuP8mhw7vWHoewfRr1frSC+JTwVFc=; b=EQxjTKQyp8xff4pGUxOieA51jS
+	7FcRFPyMbr0mxfI1LWtXrs9IWqi08YyBpiCvcfqcZw5pdDDpguaGD61qEO5UhJkh6Ug3M2q84oa6E
+	xavA+Sv+EI7yBMjUIKLHU7p9JEpKBQ+Jzz3jYZyzK28mh6nwzRcdvuafRKmDDz0z6UmIeaDoJHtDD
+	1wvhljuB9NXzKfeFjeVYSCwbiYSl5oJ9XM5dG6pAdEROcQEZ8CLBsupiL4qqYo6hyCQteTIk5AXx0
+	SBUZU8g6tiMxoF0wdMqAEp8SFGL7Q6n5lZ2Edfb8hSL2Iw64IyRKYaI3oN6YogTAsbqUZZKxX0r4L
+	3NjCJ6fQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heLOV-0004VR-PI; Fri, 21 Jun 2019 15:24:03 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1heLov-00030I-JL; Fri, 21 Jun 2019 15:51:21 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heLOT-0004Ur-3g; Fri, 21 Jun 2019 15:24:02 +0000
-Received: by mail-qk1-x743.google.com with SMTP id b18so4673443qkc.9;
- Fri, 21 Jun 2019 08:24:00 -0700 (PDT)
+ id 1heLoo-0002tP-2M
+ for linux-rockchip@lists.infradead.org; Fri, 21 Jun 2019 15:51:15 +0000
+Received: by mail-ed1-x543.google.com with SMTP id w20so3133659edd.2
+ for <linux-rockchip@lists.infradead.org>; Fri, 21 Jun 2019 08:51:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=/6B5uybL/vQOh7w8hweF75PWuFBXAaXmKLIlmiYqweg=;
- b=g0pqzczqGaVMaTZuZJeMymSTykrdujS2tAjfaNFFWLMkC/jEKcq2X+4DUkCTSiw785
- 5grPt95cpg2/4gapBk+7Y6G/j8akoUl9Jihm9TukMh1OjVN08v67LpXJS2ykJC880QLK
- 7GCjhqPWjkEfvtlklmrAGzHyNnd7Eo7jIsyESfSBbhV7HHQNj/nHkZQD3rbq3iz0jFjc
- OPJV11qdzzV+jpVVNLCSmnIR6saHkkm59p63wVfhAsOpyk7hmK6CPLgtZdbLgbtuDQVT
- 0umQw9nk0PgzL9ODZ9wzFM5y+GXTbwF4w4Udey3EuEZjmNmd/ARY4x2zBg2uY+4nvOvq
- w4YA==
+ h=to:references:subject:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=Vos6m/wcPEIr2mAbgorLsgKVTH5Q9DYwvSUa4XEOPt0=;
+ b=KRKpZvwWQy01+q+yBPHxxe9dY5GY8VXYzNjaQ0diJMCTFVUwaNdmyNT8XxOvd38lPT
+ LJrX+zjtbCjsGTfoCw1k8DO0KH1A2vLp8GH6HoqIYhT5CyRphL1XZdNcAbfkXPioOwC/
+ 8QmElCRaPDl4CYRt4pFQeTTYwKB7Ei6p2Ecyh/W7YFdYS63TnD88Z6d+MnxSg8WpZgDr
+ Qn8uH7euOqdLjzr6il/ojBzdCd0A0jEdmEk7hAjM2WoNFdJqs7RHqBjg8P3FEpA2S6+3
+ G1mwWAeDCOH01bRGbOymGvXc7DQxBiLOB+wiCTJzM0QE2H8fua5hcf76Evg5ht6U3Qhd
+ 6Q3A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/6B5uybL/vQOh7w8hweF75PWuFBXAaXmKLIlmiYqweg=;
- b=G+48knEv7XXtHIWWDGNq6r5PslH80sATuik+AqNdw9rvfwNcZ7O5VKeD3CwIGJaBz3
- mS1hRcLfIouBVv21LxsdYyuiR8j+Pn74c3IMFrX7k3vtN45YPRQvwQuI3Szch8QeDkSU
- xY798JVRsybFV+TeCDKiFvMWVztnxQtX4S7VzV2AZ/POnrgKkn0Dxtibd+kkI8nYpJhi
- DImEv0toke0dVFgqeVjojc363rjSmBWMUCIAm+DDmW8PSHaV7tWWqgAQtTy/onS7Fzp8
- PbfYBJZT63jLfEJs7KzIiolFqxtLOqQkCGm41qXv1YZokViRpCeGwdUJsZHZnCsDeguB
- WoCg==
-X-Gm-Message-State: APjAAAUAmib+irxLT18GYBYzxkChKlHQ+CmTlEDpWV2xghut3OfHiQrj
- m/tzNaxM41EDrYIo8mLJgqY=
-X-Google-Smtp-Source: APXvYqyBh9OcvZBK+oCI8iXmztevd3t+ZZMXFFIpU7nhEYNgk9EMn749PuLBYmOO/b3CptX6ggx2LA==
-X-Received: by 2002:a37:4e8f:: with SMTP id
- c137mr75046030qkb.127.1561130639395; 
- Fri, 21 Jun 2019 08:23:59 -0700 (PDT)
-Received: from ubuntu (ool-18b82048.dyn.optonline.net. [24.184.32.72])
- by smtp.gmail.com with ESMTPSA id g2sm1660017qkb.80.2019.06.21.08.23.57
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 21 Jun 2019 08:23:58 -0700 (PDT)
-Date: Fri, 21 Jun 2019 11:23:55 -0400
-From: Vivek Unune <npcomplete13@gmail.com>
-To: Heiko Stuebner <heiko@sntech.de>
-Subject: Re: [PATCH] arm64: dts: rockchip: Add support for SkyKirin X99 TV Box
-Message-ID: <20190621152355.GA88160@ubuntu>
-References: <20190618051025.458-1-npcomplete13@gmail.com>
- <2273961.GTPgWWlV5T@phil>
+ h=x-gm-message-state:to:references:subject:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Vos6m/wcPEIr2mAbgorLsgKVTH5Q9DYwvSUa4XEOPt0=;
+ b=rD2+smkOLisQQpZtObBXoh4pGpBEBi52ybdLsGInd+1iO7L6Fgh/2ml3XaSEdU6UuA
+ TwwVVOhnEFtAo7v5S6t6dLtrihjnFkW7KgRpnZ7Ymv2pn0SWrepTGDeEpwBmpmc/0dIm
+ JbmvgRq2UlQMt3F4E9O7XJB7nRHah2Fr/BBrzE3Qc2tb1XuDHOdt8ERp5e4H58PbP2qf
+ hLhX6tjK+692uVh5cEwdhgEyCkeDzrpyYtHOhBIuuzlBLDylDu0MWhn8lWJw3V3oEdCB
+ kmi0xEhvKo7Gkopc9pCB/UPIvi3Rs085y4GBwpA/FfbaY1yGxjEQ1OwpysOTBFylwtkz
+ DD/A==
+X-Gm-Message-State: APjAAAUeLELP5mLqFtn7O0MvNtvOyTc7gbgYthnokvRLLAM3E3fY6fPo
+ Zxg/6pkJSiWL7Q0Jjh9lpZOGyYTl
+X-Google-Smtp-Source: APXvYqzpUolzLVS7jFpzCbxVmikAuwaDgornioF0MCn6mT5F5lQXhk//1PnJvjxI0eRVusih9yYoCQ==
+X-Received: by 2002:a17:906:6ac1:: with SMTP id
+ q1mr51534913ejs.13.1561132270821; 
+ Fri, 21 Jun 2019 08:51:10 -0700 (PDT)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id z40sm965973edb.61.2019.06.21.08.51.10
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 21 Jun 2019 08:51:10 -0700 (PDT)
+To: linux-rockchip@lists.infradead.org
+References: <1854794.0zkvb3x0FP@phil>
+Subject: Re: Re: [PATCH] ARM: dts: rockchip: add display nodes for rk322x
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <1066dc84-f438-78a7-59fb-1ff0c44e3432@gmail.com>
+Date: Fri, 21 Jun 2019 17:51:08 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2273961.GTPgWWlV5T@phil>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1854794.0zkvb3x0FP@phil>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_082401_433727_05518453 
-X-CRM114-Status: UNSURE (   8.60  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190621_085114_159050_5A1D144A 
+X-CRM114-Status: GOOD (  11.85  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (npcomplete13[at]gmail.com)
+ in digit (jbx6244[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (npcomplete13[at]gmail.com)
+ provider (jbx6244[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -103,28 +106,59 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, Jun 21, 2019 at 03:31:51PM +0200, Heiko Stuebner wrote:
-> Hi Vivek,
-> 
-> > +	disable-wp;
-> > +	num-slots = <1>;
-> 
-> drop num-slots
-> 
-> 
-> Thanks
-> Heiko
-> 
-> 
+Hi Justin, Heiko,
 
-Thanks feedback Heiko, I'll revert with updated patch as suggested.
+How about hdmi_out?
+See rk3066a.dtsi rk3066a-mk808.dts
+
+> +	hdmi: hdmi at 200a0000 {
+> +		compatible = "rockchip,rk3228-dw-hdmi";
+> +		reg = <0x200a0000 0x20000>;
+> +		reg-io-width = <4>;
+> +		interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
+> +		clocks = <&cru SCLK_HDMI_HDCP>, <&cru PCLK_HDMI_CTRL>, <&cru
+SCLK_HDMI_CEC>;
+> +		clock-names = "isfr", "iahb", "cec";
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&hdmii2c_xfer &hdmi_hpd &hdmi_cec>;
+> +		resets = <&cru SRST_HDMI_P>;
+> +		reset-names = "hdmi";
+> +		phys = <&hdmi_phy>;
+> +		phy-names = "hdmi";
+> +		rockchip,grf = <&grf>;
+> +		status = "disabled";
+> +
+> +		ports {
+
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+> +			hdmi_in: port {
+
+			hdmi_in: port@0 {
+				reg = <0>;
+
+> +				#address-cells = <1>;
+> +				#size-cells = <0>;
+> +				hdmi_in_vop: endpoint at 0 {
+> +					reg = <0>;
+> +					remote-endpoint = <&vop_out_hdmi>;
+> +				};
+> +			};
+
+			hdmi_out: port@1 {
+				reg = <1>;
+			};
+
+
+> +		};
+> +	};
+> +
 
 _______________________________________________
 Linux-rockchip mailing list
