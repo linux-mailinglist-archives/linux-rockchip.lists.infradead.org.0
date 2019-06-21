@@ -2,39 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB4A14F051
-	for <lists+linux-rockchip@lfdr.de>; Fri, 21 Jun 2019 23:14:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E330B4F052
+	for <lists+linux-rockchip@lfdr.de>; Fri, 21 Jun 2019 23:14:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Xdu+T5JHnjzZoPPdqPMIWMUbv4E9QH0tUJazMLQmBTw=; b=tJ8mR+J814ny3V
-	3dwWcID3YUzwJZombwAkAf7nfTjQfeib5GTtcb1NUt34M2gmWDrjZZsLaoO9Cr3C64RjXYKIMvI7e
-	Jh26CkXlz2f5PdcpiR3hDPgzoEq+iYPDrMlwQJBpu6pQoSvz77KO8uTwTKrlqO6W/amDryPtYn9k+
-	aKtTnv9NBqGO551h2dSpxhY/UGbCK4XQ/QOr2zsbV6+DqQzGVrEfwERADJGWRqymkOMv+S4t3djGh
-	cmw8mPI2DT42N89ZrQe1XMiZW20IYE1iXVVpCLsligqc2JaGSicDSHJHcMTsICJG+IjTNGEtQTKrK
-	3nR4I00jjtvPvA70RDMQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nDXpDUWIKEv2sNlx4EUiVhap99kkWHTqYc7hhaScqkc=; b=oXUyA7Tf2i1dfG
+	+X8scsEflDf6iXjvRgu5fbJz6nicWTRS2uNqlw1TqqE1FqR4U+PaOeirdl9Yxsb9K7vnpINI1mr6j
+	Os6tXJNnfe8malYeEydocdMAHQeqODpn+G2s6aop+A3cQyn7awqesH58v6mAz3EUCiuXRVi/zpzHP
+	wHILOHwGqyeuOSW0Ui0XmAbVB3v3X6bzY1iiVIDTVlEShuLQ+Wvl4WL/Hkx66mKs6MJknjAlqOJxf
+	PhWkNaa6v1JHF8Xjx2oWMeW2A9AQI+ViHJn3i3IHWD/RNVQXsgG6aZ0pnP88HfYZzE6ljBwMS/gq4
+	RyceooSiBNM1oYNF3AHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heQrE-00078d-8W; Fri, 21 Jun 2019 21:14:04 +0000
+	id 1heQrI-0007Ao-57; Fri, 21 Jun 2019 21:14:08 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heQrA-000784-M5
- for linux-rockchip@lists.infradead.org; Fri, 21 Jun 2019 21:14:02 +0000
+ id 1heQrE-00078c-3p
+ for linux-rockchip@lists.infradead.org; Fri, 21 Jun 2019 21:14:05 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 13480260195
+ (Authenticated sender: ezequiel) with ESMTPSA id 3F71428623B
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v2 0/3] RK3288 Gamma LUT
-Date: Fri, 21 Jun 2019 18:13:43 -0300
-Message-Id: <20190621211346.1324-1-ezequiel@collabora.com>
+Subject: [PATCH v2 1/3] dt-bindings: display: rockchip: document VOP gamma LUT
+ address
+Date: Fri, 21 Jun 2019 18:13:44 -0300
+Message-Id: <20190621211346.1324-2-ezequiel@collabora.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190621211346.1324-1-ezequiel@collabora.com>
+References: <20190621211346.1324-1-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_141400_858052_86EB9545 
-X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-CacheID: sfid-20190621_141404_374100_324DBFC1 
+X-CRM114-Status: UNSURE (   8.72  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -73,58 +76,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Let's support Gamma LUT configuration on RK3288 SoCs.
+Add the register specifier description for an
+optional gamma LUT address.
 
-In order to do so, this series adds a new and optional
-address resource.
-    
-A separate address resource is required because on this RK3288,
-the LUT address is after the MMU address, which is requested
-by the iommu driver. This prevents the DRM driver
-from requesting an entire register space.
-
-The current implementation works for RGB 10-bit tables, as that
-is what seems to work on RK3288.
-
-This has been tested on a Rock2 Square board, using
-a hacked 'modetest' tool, with legacy and atomic APIs. 
-
-Thanks,
-Eze
-
+Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+---
 Changes from v1:
-* drop explicit linear LUT after finding a proper
-  way to disable gamma correction.
-* avoid setting gamma is the CRTC is not active.
-* s/int/unsigned int as suggested by Jacopo.
-* only enable color management and set gamma size
-  if gamma LUT is supported, suggested by Doug.
-* drop the reg-names usage, and instead just use indexed reg
-  specifiers, suggested by Doug.
+* Drop reg-names, suggested by Doug.
+---
+ .../devicetree/bindings/display/rockchip/rockchip-vop.txt   | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
-Changes from RFC:
-* Request (an optional) address resource for the LUT.
-* Add devicetree changes.
-* Drop support for RK3399, which doesn't seem to work
-  out of the box and needs more research.
-* Support pass-thru setting when GAMMA_LUT is NULL.
-* Add a check for the gamma size, as suggested by Ilia.
-* Move gamma setting to atomic_commit_tail, as pointed
-  out by Jacopo/Laurent, is the correct way.
-
-Ezequiel Garcia (3):
-  dt-bindings: display: rockchip: document VOP gamma LUT address
-  drm/rockchip: Add optional support for CRTC gamma LUT
-  ARM: dts: rockchip: Add RK3288 VOP gamma LUT address
-
- .../display/rockchip/rockchip-vop.txt         |   6 +-
- arch/arm/boot/dts/rk3288.dtsi                 |   4 +-
- drivers/gpu/drm/rockchip/rockchip_drm_fb.c    |   3 +
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c   | 114 ++++++++++++++++++
- drivers/gpu/drm/rockchip/rockchip_drm_vop.h   |   7 ++
- drivers/gpu/drm/rockchip/rockchip_vop_reg.c   |   2 +
- 6 files changed, 133 insertions(+), 3 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+index 4f58c5a2d195..8b3a5f514205 100644
+--- a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
++++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+@@ -20,6 +20,10 @@ Required properties:
+ 		"rockchip,rk3228-vop";
+ 		"rockchip,rk3328-vop";
+ 
++- reg: Must contain one entry corresponding to the base address and length
++	of the register space. Can optionally contain a second entry
++	corresponding to the CRTC gamma LUT address.
++
+ - interrupts: should contain a list of all VOP IP block interrupts in the
+ 		 order: VSYNC, LCD_SYSTEM. The interrupt specifier
+ 		 format depends on the interrupt controller used.
+@@ -48,7 +52,7 @@ Example:
+ SoC specific DT entry:
+ 	vopb: vopb@ff930000 {
+ 		compatible = "rockchip,rk3288-vop";
+-		reg = <0xff930000 0x19c>;
++		reg = <0x0 0xff930000 0x0 0x19c>, <0x0 0xff931000 0x0 0x1000>;
+ 		interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru ACLK_VOP0>, <&cru DCLK_VOP0>, <&cru HCLK_VOP0>;
+ 		clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
 -- 
 2.20.1
 
