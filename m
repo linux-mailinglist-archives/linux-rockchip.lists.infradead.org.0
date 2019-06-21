@@ -2,85 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F83B4DE0D
-	for <lists+linux-rockchip@lfdr.de>; Fri, 21 Jun 2019 02:28:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3B6A4E1CF
+	for <lists+linux-rockchip@lfdr.de>; Fri, 21 Jun 2019 10:21:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jIqULVDbSw+/LABo9IWrRLxS0hBvBmw0ZbMZmTfXozM=; b=nfCJcU0zWuLmWN
-	xwAfeJ/GIBY8aiUIZOaWLeYJyPTzbYR3/gCx3X6JEyWG1vt2Y8TszUCTzH1QJTL8qWRRrtb1qULDK
-	2LtnkErwlcMYy7sKPXuv0kIFYkwCkyecY0+vqu9mLQW9kazWZZ1XwdWtiaiIzC8PhTaRNPJb4FB+v
-	3MS6u/bPLX9xeXynpDEIodbGIrscNobHB4JHgl8I+4ZjFUzUj9U8kLiRrSmVsgiPcAQKFKO/sJtue
-	kFl71kw1OU/FxgMkeJ8IoLBcQlBLpt/lcpsoqAtyr9ZSGg5rswNCBkdkg/tALa6tql5n0khVyZu9I
-	cskemofwfermJnyabCNA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zqnQqWkORmY5udrUUalcnSWBLanrMMQITwb8HtA2Cyc=; b=P8oq7fQDBkR3DNDSlVAoSvTFk
+	CRPjCHB3fDv3fSAVSW6QNBr3CKcGx5PGW8oAX/OKIZoGnTeW/1MaUWAEZKA5vABKr1vb/0Z2xKOSK
+	3KlWMBASliaonVUZFAq9S4FJ1Vbgah7eOZv67bnNTSBIbQmWx7hj03nqzShnH0Nx+MxyrUx015y0V
+	UcPV3PmngcpkISNgA49s8oELkAcXjTWEzxQ78ULCJ2tQjp55ZqcygDcWgKpENrknodgwXNIsLy+pM
+	jp6hGeHoovRGtUla0akv7lQ0xmF/QvipckPEdtiEAAJXScAKH/LJmaytz8tL8XtKdsAhBuyFVCZa4
+	y11B+gkCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he7Q2-0005TM-VE; Fri, 21 Jun 2019 00:28:42 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1heEnU-00029I-LM; Fri, 21 Jun 2019 08:21:24 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1he7Py-0005T0-VK
- for linux-rockchip@lists.infradead.org; Fri, 21 Jun 2019 00:28:41 +0000
-Received: by mail-oi1-x243.google.com with SMTP id g7so3475965oia.8
- for <linux-rockchip@lists.infradead.org>; Thu, 20 Jun 2019 17:28:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=l3tZoS/pZGHcKmp/Xqz7PtWMj+DtiNL0iaPkFKOitKA=;
- b=jNw4gV2VJxyia8Acpz+EcJDEffwa3WtVV872wuRvy7bpurSO0L5qlD2A+AiRRjCS/b
- KKJWpqDMiD5UlWpvdVPb6kHBTV8efIG2NMlDYGsZ9Or2CGh3Q+FqzR7XKnaTppw21kri
- ZwE1gTGPLZc7za79zK9YLq/soBArxQQsbm7QcaNuf5r/3Z4pfY90ONKzWB4awKtZcN2h
- 5CUlc7xKpSdqkmkfesuYDg23Fb5YJzaB2NZdYBr7/FewxDeW3bstmjrf43e5TebGkC6M
- 5mp7iZCK2Fo7aH7/GpNirm1Nk8WQsJYiUPF6OnShtvZf0FYVjjVe1+0hbgdJVId7Lp7i
- MpnQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=l3tZoS/pZGHcKmp/Xqz7PtWMj+DtiNL0iaPkFKOitKA=;
- b=l3bk4Mwne4nqp0yc+dXUKXIGhta6/paoX1bUDLL3quyRpHHMoAeuvwZ4vnCM/TS5wc
- YCsk99Qz5FIObZkVBC5aOVwNCXOTZCHyWEqEvtU+vSPk7Yzf7gK8Guv09NV6xiWYTCpj
- yH1n6GkeXOk02cM8KuVaZ8eEP9Bv3XrD/6Cn58swIa0Tt2dqUlF8qR59kg+I8rMcsf+1
- QPqgnOhKsI+NnvCuS2Jd4yzLwXY7F2jhaOZe6bLV1DiIQvNoPa+i+4OH36WmtBGeclBx
- vnhm7hZLi+iIyFT009NQaY7xuyM6ks6A3ottqa+dzprq1/3LKGKRduN8W9cO40QvzcmN
- sw9w==
-X-Gm-Message-State: APjAAAW+617nx9b1imbTbsoUyI4F31TnADlvn5OFXMN/OhSIioY00bZn
- x+7Hig5ReYWbwWeWs20led75rQmEWz8daGHSvbU=
-X-Google-Smtp-Source: APXvYqwTlRKTFn2N9DsJayXUePA+wzHZqgCmi3SBW+Zit7697hXzYYZERO05Q4gDxhq4HZ/IUJQmTeq/VBOOEQEQ9tQ=
-X-Received: by 2002:a05:6808:8c2:: with SMTP id
- k2mr1030158oij.98.1561076916038; 
- Thu, 20 Jun 2019 17:28:36 -0700 (PDT)
+ id 1heEnO-000282-S0
+ for linux-rockchip@lists.infradead.org; Fri, 21 Jun 2019 08:21:21 +0000
+X-Originating-IP: 2.224.242.101
+Received: from uno.localdomain (2-224-242-101.ip172.fastwebnet.it
+ [2.224.242.101]) (Authenticated sender: jacopo@jmondi.org)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 60E4A1C0006;
+ Fri, 21 Jun 2019 08:21:07 +0000 (UTC)
+Date: Fri, 21 Jun 2019 10:22:22 +0200
+From: Jacopo Mondi <jacopo@jmondi.org>
+To: Ezequiel Garcia <ezequiel@collabora.com>
+Subject: Re: [PATCH 2/3] drm/rockchip: Add optional support for CRTC gamma LUT
+Message-ID: <20190621082222.4j3oghm7oevgt32n@uno.localdomain>
+References: <20190618213406.7667-1-ezequiel@collabora.com>
+ <20190618213406.7667-3-ezequiel@collabora.com>
 MIME-Version: 1.0
-References: <20190617073252.27810-1-jagan@amarulasolutions.com>
-In-Reply-To: <20190617073252.27810-1-jagan@amarulasolutions.com>
-From: Vasily Khoruzhick <anarsoul@gmail.com>
-Date: Thu, 20 Jun 2019 17:28:19 -0700
-Message-ID: <CA+E=qVfuy-UYUWujYC8fG+Os4tefPdYzFECkZZdoctvmiSMzcA@mail.gmail.com>
-Subject: Re: [U-Boot] [PATCH v2 00/99] ram: rk3399: Add LPDDR4 support
-To: Jagan Teki <jagan@amarulasolutions.com>
+In-Reply-To: <20190618213406.7667-3-ezequiel@collabora.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_172839_040943_F95511F8 
-X-CRM114-Status: GOOD (  18.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190621_012119_222784_1D5096AE 
+X-CRM114-Status: GOOD (  30.70  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.197 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (anarsoul[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,222 +62,362 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: YouMin Chen <cym@rock-chips.com>,
- U-Boot Mailing List <u-boot@lists.denx.de>, Simon Glass <sjg@chromium.org>,
- gajjar04akash@gmail.com, Kever Yang <kever.yang@rock-chips.com>,
- linux-rockchip@lists.infradead.org,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- linux-amarula@amarulasolutions.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko =?utf-8?Q?St=C3=BCbner?= <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
+ Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Sean Paul <seanpaul@chromium.org>, Rob Herring <robh+dt@kernel.org>,
+ kernel@collabora.com, Ilia Mirkin <imirkin@alum.mit.edu>
+Content-Type: multipart/mixed; boundary="===============0298350629771209474=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Jun 17, 2019 at 12:37 AM Jagan Teki <jagan@amarulasolutions.com> wrote:
->
-> This is the v2 set for supporting LPDDR4 with associated
-> features, wrt to previous series[1].
->
-> Thanks to
-> - YouMin Chen
-> - Akash Gajjar
-> - Kever Yang
-> for supporting all the help on this work.
->
-> On summary this series support
-> - Code warning and fixes
-> - rank detection, this would required to probe single channel
->   sdram configured in NanoPI-NEO4
-> - LPDDR4 support, tested in Rockpro64 and Rock-PI-4
->
-> Changes for v2:
-> - handle LPDDR4 code as part of CONFIG_RAM_RK3399_LPDDR4
-> - support data_training and set_rate via sdram_rk3399_ops
-> - add proper sys_reg_enc macros
-> - add new patch to rename variable sdram_params with params
-> - fix few commit messages
->
-> patch 0001 - 0034: fix code warnings, prints, new macros
->
-> patch 0035 - 0052: rank detection, sdram debug code
->
-> patch 0053: use DDR3-1800 on NanoPI-NEO4
->
-> patch 0054 - 0094: lpddr4 support
->
-> patch 0095: enable lpddr4 in Rockpro64
->
-> patch 0096: enable lpddr4 in Rock-PI-4
->
-> patch 0097: LPDDR4-100 timings
->
-> patch 0098: Use LPDDR4-100 on Rockpro64
->
-> patch 0099: Use LPDDR4-100 on Rock-PI 4
->
-> Size (increased to ~3KiB ):
-> - Puma RK3399 (u-boot-spl-dtb.bin):
->   before: 115644 after: 118744
-> - NanoPI M4 (u-boot-tpl-dtb.bin)
->   before: 41873 after: 44909
->
-> Travis-CI:
-> https://travis-ci.org/openedev/u-boot-amarula/builds/546597944
->
-> Repo:
-> https://github.com/openedev/u-boot-amarula/tree/rk3399-lpddr4
->
-> [1] https://patchwork.ozlabs.org/cover/1113893/
->
-> Any inputs?
 
-Was it absolutely necessary to split these changes into 99 commits? I
-believe at least some of them can be squashed. Reviewing 99 patches
-isn't feasible.
+--===============0298350629771209474==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="idwq5rt32qaze3qf"
+Content-Disposition: inline
 
-> Jagan.
+
+--idwq5rt32qaze3qf
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+
+Hi Ezequiel,
+   just a few minor comments. Thanks for this new iteration.
+
+On Tue, Jun 18, 2019 at 06:34:05PM -0300, Ezequiel Garcia wrote:
+> Add an optional CRTC gamma LUT support, and enable it on RK3288.
+> This is currently enabled via a separate address resource,
+> which needs to be specified in the devicetree.
 >
-> Jagan Teki (99):
->   ram: rk3399: Fix code warnings
->   ram: rk3399: Add space between string with format specifier
->   ram: rk3399: Add proper spaces in code
->   ram: rk3399: s/sdram_params/params
->   ram: rk3399: Handle data training return types
->   ram: rk3399: Order include files
->   ram: rk3399: Move macro after include files
->   ram: rk3399: Clear PI_175 interrupts in data training
->   ram: rk3399: Use rank mask in ca data training
->   ram: rk3399: Use rank mask in wdql data training
->   ram: rk3399: Add ddrtype enc macro
->   ram: rk3399: Add channel number encoder macro
->   ram: rk3399: Add row_3_4 enc macro
->   ram: rk3399: Add chipinfo macro
->   ram: rk3399: Add rank enc macro
->   ram: rk3399: Add column enc macro
->   ram: rk3399: Add bk enc macro
->   ram: rk3399: Add dbw enc macro
->   ram: rk3399: Add cs0_rw macro
->   ram: rk3399: Add cs1_rw macro
->   ram: rk3399: Add bw enc macro
->   ram: rk3399: Rename sys_reg with sys_reg2
->   ram: rk3399: Update cs0_row to use sys_reg3
->   ram: rk3399: Update cs1_row to use sys_reg3
->   ram: rk3399: Add cs1_col enc macro
->   ram: rk3399: Add ddr version enc macro
->   ram: rk3399: Add ddrtimingC0
->   ram: rk3399: Add DdrMode
->   ram: rk3399: Handle pctl_cfg return type
->   ram: rk3399: s/tsel_wr_select_n/tsel_wr_select_dq_n
->   ram: rk3399: s/tsel_wr_select_p/tsel_wr_select_dq_p
->   ram: rk3399: s/ca_tsel_wr_select_n/tsel_wr_select_ca_n
->   ram: rk3399: s/ca_tsel_wr_select_p/tsel_wr_select_ca_p
->   ram: rk3399: Order tsel variables
->   ram: rk3399: Add phy pctrl reset support
->   ram: rk3399: Move pwrup_srefresh_exit to dram_info
->   ram: rk3399: Add pctl start support
->   ram: rockchip: rk3399: Add cap_info structure
->   ram: rk3399: s/rk3399_base_params/sdram_base_params
->   ram: rk3399: Move common sdram structures in common header
->   arm: include: rockchip: Move dramtypes to common header
->   arm: include: rockchip: Add DDR4 enum
->   ram: rockchip: Add initial Kconfig
->   debug_uart: Add printdec
->   ram: rockchip: Add debug sdram driver
->   ram: rockchip: debug: Add sdram_print_ddr_info
->   ram: rockchip: debug: Get the cs capacity
->   ram: rk3399: debug: Add sdram_print_stride
->   ram: rk3399: Compute stride for 2 channels
->   ram: rk3399: Compute stride for 1 channel a
->   ram: rk3399: Add rank detection support
->   ram: rk3399: Enable sdram debug functions
->   rockchip: dts: rk3399: nanopi-neo4: Use DDR3-1866 dtsi
->   clk: rockchip: rk3399: Fix check patch warnings and checks
->   clk: rockchip: rk3399: Set 50MHz ddr clock
->   clk: rockchip: rk3399: Set 400MHz ddr clock
->   ram: rk3399: Add spaces in pctl_cfg
->   ram: rk3399: Configure phy IO in ds odt
->   ram: rockchip: Kconfig: Add RK3399 LPDDR4 entry
->   ram: rk3399: Add lpddr4 rank mask for ca training
->   ram: rk3399: Add lpddr4 rank mask for wdql training
->   ram: rk3399: Move mode_sel assignment
->   ram: rk3399: Don't wait for PLL lock in lpddr4
->   ram: rk3399: Avoid two channel ZQ Cal Start at the same time
->   ram: rk3399: Configure PHY_898, PHY_919 for lpddr4
->   ram: rk3399: Configure BOOSTP_EN, BOOSTN_EN for lpddr4
->   ram: rk3399: Configure SLEWP_EN, SLEWN_EN for lpddr4
->   ram: rk3399: Configure PHY RX_CM_INPUT for lpddr4
->   ram: rk3399: Map chipselect for lpddr4
->   ram: rk3399: Configure tsel write ca for lpddr4
->   ram: rk3399: Don't disable dfi dram clk for lpddr4, rank 1
->   ram: rk3399: Add IO settings
->   ram: sdram: Configure lpddr4 tsel rd, wr based on IO settings
->   ram: rk3399: Add tsel control clock drive
->   ram: rk3399: Configure soc odt support
->   ram: rk3399: Get lpddr4 tsel_rd_en from io settings
->   ram: rk3399: Update lpddr4 vref based on io settings
->   ram: rk3399: Update lpddr4 mode_sel based on io settings
->   ram: rk3399: Update lpddr4 vref_mode_ac
->   ram: rk3399: Simplify data training first argument
->   ram: rk3399: Handle data training via ops
->   ram: rk3399: Add LPPDR4 mr detection
->   arm: include: rockchip: Add rk3399 pmu file
->   rockchip: rk3399: syscon: Add pmu support
->   rockchip: dts: rk3399: Add u-boot,dm-pre-reloc for pmu
->   ram: rk3399: Add LPPDDR4-400 timings inc
->   ram: rk3399: Add LPPDDR4-800 timings inc
->   ram: rk3399: Add set_rate sdram rk3399 ops
->   ram: rk3399: Add lpddr4 set rate support
->   ram: rk3399: Set lpddr4 dq odt
->   ram: rk3399: Set lpddr4 ca odt
->   ram: rk3399: Set lpddr4 MR3
->   ram: rk3399: Set lpddr4 MR12
->   ram: rk3399: Set lpddr4 MR14
->   configs: rockpro64: Enable LPDDR4 support
->   configs: rock-pi-4: Enable LPDDR4 support
->   rockchip: dts: rk3399: Add LPDDR4-100 timings
->   rockchip: dts: rk3399: rockpro64: Use LPDDR4-100 dtsi
->   rockchip: dts: rk3399: rock-pi-4: Use LPDDR4-100 dtsi
+> The address resource is required because on some SoCs, such as
+> RK3288, the LUT address is after the MMU address, and the latter
+> is supported by a different driver. This prevents the DRM driver
+> from requesting an entire register space.
 >
->  arch/arm/dts/rk3399-nanopi-neo4-u-boot.dtsi   |    1 +
->  arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi     |    1 +
->  arch/arm/dts/rk3399-rockpro64-u-boot.dtsi     |    1 +
->  arch/arm/dts/rk3399-sdram-lpddr4-100.dtsi     | 1537 +++++++++++
->  arch/arm/dts/rk3399-u-boot.dtsi               |    4 +
->  .../include/asm/arch-rockchip/pmu_rk3399.h    |   72 +
->  arch/arm/include/asm/arch-rockchip/sdram.h    |    6 -
->  .../include/asm/arch-rockchip/sdram_common.h  |   90 +
->  .../include/asm/arch-rockchip/sdram_rk322x.h  |    7 -
->  .../include/asm/arch-rockchip/sdram_rk3399.h  |   65 +-
->  arch/arm/mach-rockchip/rk3399/syscon_rk3399.c |    8 +
->  configs/rock-pi-4-rk3399_defconfig            |    1 +
->  configs/rockpro64-rk3399_defconfig            |    1 +
->  drivers/clk/rockchip/clk_rk3399.c             |   76 +-
->  drivers/ram/Kconfig                           |    1 +
->  drivers/ram/rockchip/Kconfig                  |   33 +
->  drivers/ram/rockchip/Makefile                 |    3 +-
->  .../ram/rockchip/sdram-rk3399-lpddr4-400.inc  | 1570 +++++++++++
->  .../ram/rockchip/sdram-rk3399-lpddr4-800.inc  | 1570 +++++++++++
->  drivers/ram/rockchip/sdram_debug.c            |  147 ++
->  drivers/ram/rockchip/sdram_rk3399.c           | 2289 ++++++++++++++---
->  include/debug_uart.h                          |   19 +
->  22 files changed, 7035 insertions(+), 467 deletions(-)
->  create mode 100644 arch/arm/dts/rk3399-sdram-lpddr4-100.dtsi
->  create mode 100644 arch/arm/include/asm/arch-rockchip/pmu_rk3399.h
->  create mode 100644 drivers/ram/rockchip/Kconfig
->  create mode 100644 drivers/ram/rockchip/sdram-rk3399-lpddr4-400.inc
->  create mode 100644 drivers/ram/rockchip/sdram-rk3399-lpddr4-800.inc
->  create mode 100644 drivers/ram/rockchip/sdram_debug.c
+> The current implementation works for RGB 10-bit tables, as that
+> is what seems to work on RK3288.
 >
+> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+> ---
+> Changes from RFC:
+> * Request (an optional) address resource for the LUT.
+> * Drop support for RK3399, which doesn't seem to work
+>   out of the box and needs more research.
+> * Support pass-thru setting when GAMMA_LUT is NULL.
+> * Add a check for the gamma size, as suggested by Ilia.
+> * Move gamma setting to atomic_commit_tail, as pointed
+>   out by Jacopo/Laurent, is the correct way.
+> ---
+>  drivers/gpu/drm/rockchip/rockchip_drm_fb.c  |   3 +
+>  drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 106 ++++++++++++++++++++
+>  drivers/gpu/drm/rockchip/rockchip_drm_vop.h |   7 ++
+>  drivers/gpu/drm/rockchip/rockchip_vop_reg.c |   2 +
+>  4 files changed, 118 insertions(+)
+>
+> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
+> index 1c69066b6894..bf9ad6240971 100644
+> --- a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
+> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
+> @@ -16,6 +16,7 @@
+>  #include "rockchip_drm_fb.h"
+>  #include "rockchip_drm_gem.h"
+>  #include "rockchip_drm_psr.h"
+> +#include "rockchip_drm_vop.h"
+>
+>  static int rockchip_drm_fb_dirty(struct drm_framebuffer *fb,
+>  				 struct drm_file *file,
+> @@ -128,6 +129,8 @@ rockchip_atomic_helper_commit_tail_rpm(struct drm_atomic_state *old_state)
+>
+>  	drm_atomic_helper_commit_modeset_disables(dev, old_state);
+>
+> +	rockchip_drm_vop_gamma_set(old_state);
+> +
+>  	drm_atomic_helper_commit_modeset_enables(dev, old_state);
+>
+>  	drm_atomic_helper_commit_planes(dev, old_state,
+> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+> index 12ed5265a90b..5b6edbe2673f 100644
+> --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+> @@ -137,6 +137,7 @@ struct vop {
+>
+>  	uint32_t *regsbak;
+>  	void __iomem *regs;
+> +	void __iomem *lut_regs;
+>
+>  	/* physical map length of vop register */
+>  	uint32_t len;
+> @@ -1153,6 +1154,94 @@ static void vop_wait_for_irq_handler(struct vop *vop)
+>  	synchronize_irq(vop->irq);
+>  }
+>
+> +static bool vop_dsp_lut_is_enable(struct vop *vop)
+> +{
+> +	return vop_read_reg(vop, 0, &vop->data->common->dsp_lut_en);
+> +}
+> +
+> +static void vop_crtc_write_gamma_lut(struct vop *vop, struct drm_crtc *crtc)
+> +{
+> +	struct drm_color_lut *lut = crtc->state->gamma_lut->data;
+> +	int i;
+
+unsigned i
+
+> +
+> +	for (i = 0; i < crtc->gamma_size; i++) {
+> +		u32 word;
+
+here and below you could declare and initialize in one line. Matter of
+tastes, up to you.
+
+> +
+> +		word = (drm_color_lut_extract(lut[i].red, 10) << 20) |
+> +		       (drm_color_lut_extract(lut[i].green, 10) << 10) |
+> +			drm_color_lut_extract(lut[i].blue, 10);
+> +		writel(word, vop->lut_regs + i * 4);
+> +	}
+> +}
+> +
+> +static void vop_crtc_gamma_set(struct vop *vop, struct drm_crtc *crtc,
+> +			       struct drm_crtc_state *old_state)
+> +{
+> +	int idle, ret, i;
+
+idle and i could be unsigned
+
+> +
+> +	spin_lock(&vop->reg_lock);
+> +	VOP_REG_SET(vop, common, dsp_lut_en, 0);
+> +	vop_cfg_done(vop);
+> +	spin_unlock(&vop->reg_lock);
+> +
+> +	ret = readx_poll_timeout(vop_dsp_lut_is_enable, vop,
+> +			   idle, !idle, 5, 30 * 1000);
+> +	if (ret)
+> +		return;
+> +
+> +	spin_lock(&vop->reg_lock);
+> +
+> +	if (crtc->state->gamma_lut) {
+> +		if (!old_state->gamma_lut || (crtc->state->gamma_lut->base.id !=
+> +					      old_state->gamma_lut->base.id))
+> +			vop_crtc_write_gamma_lut(vop, crtc);
+> +	} else {
+
+i could also be declared here...
+
+> +		for (i = 0; i < crtc->gamma_size; i++) {
+> +			u32 word;
+> +
+> +			word = (i << 20) | (i << 10) | i;
+> +			writel(word, vop->lut_regs + i * 4);
+> +		}
+
+I might be confused, but are you here configuring a linear LUT table?
+Isn't this equivalent to have it disabled?
+
+> +	}
+> +
+> +	VOP_REG_SET(vop, common, dsp_lut_en, 1);
+> +	vop_cfg_done(vop);
+> +	spin_unlock(&vop->reg_lock);
+> +}
+> +
+> +static int vop_crtc_atomic_check(struct drm_crtc *crtc,
+> +				   struct drm_crtc_state *crtc_state)
+> +{
+> +	struct vop *vop = to_vop(crtc);
+> +
+> +	if (vop->lut_regs && crtc_state->color_mgmt_changed &&
+> +	    crtc_state->gamma_lut) {
+> +		int len;
+> +
+> +		len = drm_color_lut_size(crtc_state->gamma_lut);
+> +		if (len != crtc->gamma_size) {
+
+Don't you accept LUT tables whose size is < that the maximum
+crtc->gamma_size ?
+
+> +			DRM_DEBUG_KMS("Invalid LUT size; got %d, expected %d\n",
+> +				      len, crtc->gamma_size);
+> +			return -EINVAL;
+> +		}
+> +	}
+
+Most (but not all) functions in this file have an empty line before the
+return closing the function.
+
+> +	return 0;
+> +}
+> +
+> +void rockchip_drm_vop_gamma_set(struct drm_atomic_state *state)
+> +{
+> +	struct drm_crtc_state *old_crtc_state;
+> +	struct drm_crtc *crtc;
+> +	int i;
+
+unsigned i ?
+
+I'm glad you've been able to verify atomic_flush was not the right
+place where to update the LUT tables, as my testing is limited to
+run kms++ tests and I didn't notice any particular artifact. Thanks
+for checking!
+
+
+> +
+> +	for_each_old_crtc_in_state(state, crtc, old_crtc_state, i) {
+> +		struct vop *vop = to_vop(crtc);
+> +
+> +		if (vop->lut_regs && crtc->state->color_mgmt_changed)
+> +			vop_crtc_gamma_set(vop, crtc, old_crtc_state);
+> +	}
+> +}
+> +
+>  static void vop_crtc_atomic_flush(struct drm_crtc *crtc,
+>  				  struct drm_crtc_state *old_crtc_state)
+>  {
+> @@ -1205,6 +1294,7 @@ static void vop_crtc_atomic_flush(struct drm_crtc *crtc,
+>
+>  static const struct drm_crtc_helper_funcs vop_crtc_helper_funcs = {
+>  	.mode_fixup = vop_crtc_mode_fixup,
+> +	.atomic_check = vop_crtc_atomic_check,
+>  	.atomic_flush = vop_crtc_atomic_flush,
+>  	.atomic_enable = vop_crtc_atomic_enable,
+>  	.atomic_disable = vop_crtc_atomic_disable,
+> @@ -1323,6 +1413,7 @@ static const struct drm_crtc_funcs vop_crtc_funcs = {
+>  	.disable_vblank = vop_crtc_disable_vblank,
+>  	.set_crc_source = vop_crtc_set_crc_source,
+>  	.verify_crc_source = vop_crtc_verify_crc_source,
+> +	.gamma_set = drm_atomic_helper_legacy_gamma_set,
+>  };
+>
+>  static void vop_fb_unref_worker(struct drm_flip_work *work, void *val)
+> @@ -1480,6 +1571,10 @@ static int vop_create_crtc(struct vop *vop)
+>  		goto err_cleanup_planes;
+>
+>  	drm_crtc_helper_add(crtc, &vop_crtc_helper_funcs);
+> +	if (vop_data->lut_size) {
+> +		drm_mode_crtc_set_gamma_size(crtc, vop_data->lut_size);
+> +		drm_crtc_enable_color_mgmt(crtc, 0, false, vop_data->lut_size);
+> +	}
+>
+>  	/*
+>  	 * Create drm_planes for overlay windows with possible_crtcs restricted
+> @@ -1776,6 +1871,17 @@ static int vop_bind(struct device *dev, struct device *master, void *data)
+>  	if (IS_ERR(vop->regs))
+>  		return PTR_ERR(vop->regs);
+>
+> +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "lut");
+> +	if (res) {
+> +		if (!vop_data->lut_size) {
+> +			DRM_DEV_ERROR(dev, "no gamma LUT size defined\n");
+> +			return -EINVAL;
+> +		}
+> +		vop->lut_regs = devm_ioremap_resource(dev, res);
+> +		if (IS_ERR(vop->lut_regs))
+> +			return PTR_ERR(vop->lut_regs);
+> +	}
+> +
+>  	vop->regsbak = devm_kzalloc(dev, vop->len, GFP_KERNEL);
+>  	if (!vop->regsbak)
+>  		return -ENOMEM;
+> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
+> index 2149a889c29d..bd1bcd5a14e9 100644
+> --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
+> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
+> @@ -7,6 +7,8 @@
+>  #ifndef _ROCKCHIP_DRM_VOP_H
+>  #define _ROCKCHIP_DRM_VOP_H
+>
+> +#include <drm/drm_atomic.h>
+> +
+>  /*
+>   * major: IP major version, used for IP structure
+>   * minor: big feature change under same structure
+> @@ -67,6 +69,7 @@ struct vop_common {
+>  	struct vop_reg dither_down_mode;
+>  	struct vop_reg dither_down_en;
+>  	struct vop_reg dither_up;
+> +	struct vop_reg dsp_lut_en;
+>  	struct vop_reg gate_en;
+>  	struct vop_reg mmu_en;
+>  	struct vop_reg out_mode;
+> @@ -170,6 +173,7 @@ struct vop_data {
+>  	const struct vop_win_yuv2yuv_data *win_yuv2yuv;
+>  	const struct vop_win_data *win;
+>  	unsigned int win_size;
+> +	unsigned int lut_size;
+>
+>  #define VOP_FEATURE_OUTPUT_RGB10	BIT(0)
+>  #define VOP_FEATURE_INTERNAL_RGB	BIT(1)
+> @@ -373,4 +377,7 @@ static inline int scl_vop_cal_lb_mode(int width, bool is_yuv)
+>  }
+>
+>  extern const struct component_ops vop_component_ops;
+> +
+> +void rockchip_drm_vop_gamma_set(struct drm_atomic_state *state);
+> +
+>  #endif /* _ROCKCHIP_DRM_VOP_H */
+> diff --git a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
+> index 7b9c74750f6d..30d49eff3670 100644
+> --- a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
+> +++ b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
+> @@ -593,6 +593,7 @@ static const struct vop_common rk3288_common = {
+>  	.dither_down_en = VOP_REG(RK3288_DSP_CTRL1, 0x1, 2),
+>  	.pre_dither_down = VOP_REG(RK3288_DSP_CTRL1, 0x1, 1),
+>  	.dither_up = VOP_REG(RK3288_DSP_CTRL1, 0x1, 6),
+> +	.dsp_lut_en = VOP_REG(RK3288_DSP_CTRL1, 0x1, 0),
+>  	.data_blank = VOP_REG(RK3288_DSP_CTRL0, 0x1, 19),
+>  	.dsp_blank = VOP_REG(RK3288_DSP_CTRL0, 0x3, 18),
+>  	.out_mode = VOP_REG(RK3288_DSP_CTRL0, 0xf, 0),
+> @@ -641,6 +642,7 @@ static const struct vop_data rk3288_vop = {
+>  	.output = &rk3288_output,
+>  	.win = rk3288_vop_win_data,
+>  	.win_size = ARRAY_SIZE(rk3288_vop_win_data),
+> +	.lut_size = 1024,
+>  };
+>
+>  static const int rk3368_vop_intrs[] = {
 > --
-> 2.18.0.321.gffc6fa0e3
+> 2.20.1
 >
-> _______________________________________________
-> U-Boot mailing list
-> U-Boot@lists.denx.de
-> https://lists.denx.de/listinfo/u-boot
+
+--idwq5rt32qaze3qf
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEtcQ9SICaIIqPWDjAcjQGjxahVjwFAl0Mk74ACgkQcjQGjxah
+VjwF7xAArrs95MgtbrsJ7VWb0XwM5Mpw42oM+y34c7di9P06kR89XHy+Q/hXAx2z
+UIa7Hv9rT+Uj4EMO9VWsNpaLSHYIbJwtx/L2z71yTyisev9qgUog3U/aUU8iHihp
+gnrgZGj7Q+kIGEs0Sq0OL5q7l39znI1+/72fJT4GkecASAkgoX0WPZWnr/+fK+qQ
+iOUFCdpK2w0V4PHpC3tux/9fw+NL7BoB6yT/jZeoNp06LKpuTyr/3up4lOPLiKpj
+tYXmrD891EjZUAiOqb3vsLD26UOoPuYmKPXuAlK74cf/9RRkgys2cCoFI8MA/7Et
+zv3Z0UaADiPSbAQmXmThdcIOqC97gmBCRVYHpga9sfkIdHPe4PAwsqHHb1GWtmv1
+uFPqzSoXE41aPGP3vPwiKFtJ5q+QfmgOhsj65fx6YcC58j87n6ZAxKto84S29out
+jAnxkzPNeK0WnjfcvE8FiunZmbC1NGYuoPK/IHdw++2Cra1x6/3p7FKlFR0kDB8/
+4C+mlnHPayxdk85ZEEGby8FyVP9qB3gRtvmlABXMUEguprOOPxAvBJ7j/xVM+NWH
+cAxlsEUF23NH8ypFH7hWCx+BDlaCIpgpDLjvriRdlQsKrbdf9vyCFqL5Rj8fVGuO
+CYbd5FHEp0nDFjfMEfbzlttYOGVcdKGxbnZ4ndzjsge2dQJq3cw=
+=9VG0
+-----END PGP SIGNATURE-----
+
+--idwq5rt32qaze3qf--
+
+
+--===============0298350629771209474==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============0298350629771209474==--
+
