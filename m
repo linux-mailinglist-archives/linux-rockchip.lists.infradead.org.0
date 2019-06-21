@@ -2,98 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34BCB4EC89
-	for <lists+linux-rockchip@lfdr.de>; Fri, 21 Jun 2019 17:51:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F3D14EC92
+	for <lists+linux-rockchip@lfdr.de>; Fri, 21 Jun 2019 17:53:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:Subject:References:To:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mh/iz6kULScd9GnuP8mhw7vWHoewfRr1frSC+JTwVFc=; b=EQxjTKQyp8xff4pGUxOieA51jS
-	7FcRFPyMbr0mxfI1LWtXrs9IWqi08YyBpiCvcfqcZw5pdDDpguaGD61qEO5UhJkh6Ug3M2q84oa6E
-	xavA+Sv+EI7yBMjUIKLHU7p9JEpKBQ+Jzz3jYZyzK28mh6nwzRcdvuafRKmDDz0z6UmIeaDoJHtDD
-	1wvhljuB9NXzKfeFjeVYSCwbiYSl5oJ9XM5dG6pAdEROcQEZ8CLBsupiL4qqYo6hyCQteTIk5AXx0
-	SBUZU8g6tiMxoF0wdMqAEp8SFGL7Q6n5lZ2Edfb8hSL2Iw64IyRKYaI3oN6YogTAsbqUZZKxX0r4L
-	3NjCJ6fQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Q4fJFGrjwn7HCwwRaxXjwTGYfG3Y68PIoTSSrWu0IaE=; b=t0wR6xEA/SpmPd
+	hXoNBTdJRC2VfZVEmlUIjtueJyLpJj+41N1lEyhaP085Qde9gcAIWUFEOcB4G4rexC2G66MBftVFx
+	cicuOAd+hc+ixa5eDxccKy3N0TgQMH5ETdMsk0ss4YkFF5MC1mHnsB87fKj46vA8eda7POdJSZieU
+	dqX1KOyWq5ppstI2lBlJEyBzr21EtK6cekmGMq0bxFF7mtU+0bNM/j3OWUwIwoIZvHYWybRDljpq8
+	3ybr58hkZid2MUv5pZRjsdIGzAblHxbPJPGKcFQbTHumKlFUe2sNGlxC+wEw07igtymPhpYxcAoxW
+	F7gvp2LEzo51eA+jnvnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heLov-00030I-JL; Fri, 21 Jun 2019 15:51:21 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1heLqe-0003FS-Rs; Fri, 21 Jun 2019 15:53:08 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heLoo-0002tP-2M
- for linux-rockchip@lists.infradead.org; Fri, 21 Jun 2019 15:51:15 +0000
-Received: by mail-ed1-x543.google.com with SMTP id w20so3133659edd.2
- for <linux-rockchip@lists.infradead.org>; Fri, 21 Jun 2019 08:51:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:references:subject:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=Vos6m/wcPEIr2mAbgorLsgKVTH5Q9DYwvSUa4XEOPt0=;
- b=KRKpZvwWQy01+q+yBPHxxe9dY5GY8VXYzNjaQ0diJMCTFVUwaNdmyNT8XxOvd38lPT
- LJrX+zjtbCjsGTfoCw1k8DO0KH1A2vLp8GH6HoqIYhT5CyRphL1XZdNcAbfkXPioOwC/
- 8QmElCRaPDl4CYRt4pFQeTTYwKB7Ei6p2Ecyh/W7YFdYS63TnD88Z6d+MnxSg8WpZgDr
- Qn8uH7euOqdLjzr6il/ojBzdCd0A0jEdmEk7hAjM2WoNFdJqs7RHqBjg8P3FEpA2S6+3
- G1mwWAeDCOH01bRGbOymGvXc7DQxBiLOB+wiCTJzM0QE2H8fua5hcf76Evg5ht6U3Qhd
- 6Q3A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:to:references:subject:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Vos6m/wcPEIr2mAbgorLsgKVTH5Q9DYwvSUa4XEOPt0=;
- b=rD2+smkOLisQQpZtObBXoh4pGpBEBi52ybdLsGInd+1iO7L6Fgh/2ml3XaSEdU6UuA
- TwwVVOhnEFtAo7v5S6t6dLtrihjnFkW7KgRpnZ7Ymv2pn0SWrepTGDeEpwBmpmc/0dIm
- JbmvgRq2UlQMt3F4E9O7XJB7nRHah2Fr/BBrzE3Qc2tb1XuDHOdt8ERp5e4H58PbP2qf
- hLhX6tjK+692uVh5cEwdhgEyCkeDzrpyYtHOhBIuuzlBLDylDu0MWhn8lWJw3V3oEdCB
- kmi0xEhvKo7Gkopc9pCB/UPIvi3Rs085y4GBwpA/FfbaY1yGxjEQ1OwpysOTBFylwtkz
- DD/A==
-X-Gm-Message-State: APjAAAUeLELP5mLqFtn7O0MvNtvOyTc7gbgYthnokvRLLAM3E3fY6fPo
- Zxg/6pkJSiWL7Q0Jjh9lpZOGyYTl
-X-Google-Smtp-Source: APXvYqzpUolzLVS7jFpzCbxVmikAuwaDgornioF0MCn6mT5F5lQXhk//1PnJvjxI0eRVusih9yYoCQ==
-X-Received: by 2002:a17:906:6ac1:: with SMTP id
- q1mr51534913ejs.13.1561132270821; 
- Fri, 21 Jun 2019 08:51:10 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id z40sm965973edb.61.2019.06.21.08.51.10
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 21 Jun 2019 08:51:10 -0700 (PDT)
-To: linux-rockchip@lists.infradead.org
-References: <1854794.0zkvb3x0FP@phil>
-Subject: Re: Re: [PATCH] ARM: dts: rockchip: add display nodes for rk322x
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <1066dc84-f438-78a7-59fb-1ff0c44e3432@gmail.com>
-Date: Fri, 21 Jun 2019 17:51:08 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
+ id 1heLqZ-0003EH-W6
+ for linux-rockchip@lists.infradead.org; Fri, 21 Jun 2019 15:53:05 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id DBBF1270B16
+Message-ID: <33068f355edfaabb1c60d5e16a219a058a489531.camel@collabora.com>
+Subject: Re: [PATCH 2/3] drm/rockchip: Add optional support for CRTC gamma LUT
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Doug Anderson <dianders@chromium.org>
+Date: Fri, 21 Jun 2019 12:52:51 -0300
+In-Reply-To: <CAD=FV=XoKNA4aW2LT7g8K2t+ABwgt=QJGAyiet1-Gyz3CgWmvg@mail.gmail.com>
+References: <20190618213406.7667-1-ezequiel@collabora.com>
+ <20190618213406.7667-3-ezequiel@collabora.com>
+ <CAD=FV=XoKNA4aW2LT7g8K2t+ABwgt=QJGAyiet1-Gyz3CgWmvg@mail.gmail.com>
+Organization: Collabora
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-In-Reply-To: <1854794.0zkvb3x0FP@phil>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_085114_159050_5A1D144A 
-X-CRM114-Status: GOOD (  11.85  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190621_085304_303028_F5D86449 
+X-CRM114-Status: GOOD (  23.71  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jbx6244[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jbx6244[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,59 +63,136 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jacopo Mondi <jacopo@jmondi.org>,
+ Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
+ Sandy Huang <hjc@rock-chips.com>, dri-devel <dri-devel@lists.freedesktop.org>,
+ LKML <linux-kernel@vger.kernel.org>, "open list:ARM/Rockchip
+ SoC..." <linux-rockchip@lists.infradead.org>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Sean Paul <seanpaul@chromium.org>, Rob Herring <robh+dt@kernel.org>,
+ kernel@collabora.com, Ilia Mirkin <imirkin@alum.mit.edu>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Justin, Heiko,
+On Thu, 2019-06-20 at 10:25 -0700, Doug Anderson wrote:
+> Hi,
+> 
+> On Tue, Jun 18, 2019 at 2:43 PM Ezequiel Garcia <ezequiel@collabora.com> wrote:
+> > +static void vop_crtc_gamma_set(struct vop *vop, struct drm_crtc *crtc,
+> > +                              struct drm_crtc_state *old_state)
+> > +{
+> > +       int idle, ret, i;
+> > +
+> > +       spin_lock(&vop->reg_lock);
+> > +       VOP_REG_SET(vop, common, dsp_lut_en, 0);
+> > +       vop_cfg_done(vop);
+> > +       spin_unlock(&vop->reg_lock);
+> > +
+> > +       ret = readx_poll_timeout(vop_dsp_lut_is_enable, vop,
+> > +                          idle, !idle, 5, 30 * 1000);
+> > +       if (ret)
+> 
+> Worth an error message?
+> 
 
-How about hdmi_out?
-See rk3066a.dtsi rk3066a-mk808.dts
+Sure.
 
-> +	hdmi: hdmi at 200a0000 {
-> +		compatible = "rockchip,rk3228-dw-hdmi";
-> +		reg = <0x200a0000 0x20000>;
-> +		reg-io-width = <4>;
-> +		interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
-> +		clocks = <&cru SCLK_HDMI_HDCP>, <&cru PCLK_HDMI_CTRL>, <&cru
-SCLK_HDMI_CEC>;
-> +		clock-names = "isfr", "iahb", "cec";
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&hdmii2c_xfer &hdmi_hpd &hdmi_cec>;
-> +		resets = <&cru SRST_HDMI_P>;
-> +		reset-names = "hdmi";
-> +		phys = <&hdmi_phy>;
-> +		phy-names = "hdmi";
-> +		rockchip,grf = <&grf>;
-> +		status = "disabled";
-> +
-> +		ports {
+> 
+> > @@ -1205,6 +1294,7 @@ static void vop_crtc_atomic_flush(struct drm_crtc *crtc,
+> > 
+> >  static const struct drm_crtc_helper_funcs vop_crtc_helper_funcs = {
+> >         .mode_fixup = vop_crtc_mode_fixup,
+> > +       .atomic_check = vop_crtc_atomic_check,
+> 
+> At first I was worried that there was a bug here since in the context
+> of dw_hdmi (an encoder) adding ".atomic_check" caused ".mode_fixup" to
+> stop getting called as per mode_fixup() in
+> "drivers/gpu/drm/drm_atomic_helper.c".
+> 
+> ...but it seems like it's OK for CRTCs, so I think we're fine.
+> 
+> 
+> > @@ -1323,6 +1413,7 @@ static const struct drm_crtc_funcs vop_crtc_funcs = {
+> >         .disable_vblank = vop_crtc_disable_vblank,
+> >         .set_crc_source = vop_crtc_set_crc_source,
+> >         .verify_crc_source = vop_crtc_verify_crc_source,
+> > +       .gamma_set = drm_atomic_helper_legacy_gamma_set,
+> 
+> Are there any issues in adding this ".gamma_set" property even though
+> we may or may not actually have the ability to set the gamma
+> (depending on whether or not the LUT register range was provided in
+> the device tree)?  I am a DRM noob but
+> drm_atomic_helper_legacy_gamma_set() is not a trivial little function
+> and now we'll be running it in some cases where we don't actually have
+> gamma.
+> 
+> I also notice that there's at least one bit of code that seems to
+> check if ".gamma_set" is NULL.  ...and if it is, it'll return -ENOSYS
+> right away.  Do we still properly return -ENOSYS on devices that don't
+> have the register range?
+> 
+> It seems like the absolute safest would be to have two copies of this
+> struct: one used for VOPs that have the range and one for VOPs that
+> don't.
+> 
+> ...but possibly I'm just paranoid and as I've said I'm a clueless
+> noob.  If someone says it's fine to always provide the .gamma_set
+> property that's fine too.
+> 
 
-			#address-cells = <1>;
-			#size-cells = <0>;
+Provided we do the suggestion below (setting gamma_size and enabling
+color management) when lut_regs is set, then I think we are fine.
 
-> +			hdmi_in: port {
+Before this change:
 
-			hdmi_in: port@0 {
-				reg = <0>;
+* GAMMA_LUT property doesn't exist, and so can't be set.
+* DRM_IOCTL_MODE_SETGAMMA (legacy) return ENOSYS.
 
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +				hdmi_in_vop: endpoint at 0 {
-> +					reg = <0>;
-> +					remote-endpoint = <&vop_out_hdmi>;
-> +				};
-> +			};
+After this change, on platforms that doesn't support this:
 
-			hdmi_out: port@1 {
-				reg = <1>;
-			};
+* GAMMA_LUT property doesn't exist, and so can't be set.
+* DRM_IOCTL_MODE_SETGAMMA (legacy) return EINVAL.
 
+The only difference is the ENOSYS/EINVAL errno, which I doubt
+will regress anything.
 
-> +		};
-> +	};
-> +
+I don't think this difference deserves assigning (the legacy)
+.gamma_set hook conditionally, which would make the
+implementation too ugly.
+
+> 
+> >  static void vop_fb_unref_worker(struct drm_flip_work *work, void *val)
+> > @@ -1480,6 +1571,10 @@ static int vop_create_crtc(struct vop *vop)
+> >                 goto err_cleanup_planes;
+> > 
+> >         drm_crtc_helper_add(crtc, &vop_crtc_helper_funcs);
+> > +       if (vop_data->lut_size) {
+> > +               drm_mode_crtc_set_gamma_size(crtc, vop_data->lut_size);
+> > +               drm_crtc_enable_color_mgmt(crtc, 0, false, vop_data->lut_size);
+> 
+> Should we only do the above calls if we successfully mapped the resources?
+> 
+
+Yes, totally. See above.
+
+> 
+> > @@ -1776,6 +1871,17 @@ static int vop_bind(struct device *dev, struct device *master, void *data)
+> >         if (IS_ERR(vop->regs))
+> >                 return PTR_ERR(vop->regs);
+> > 
+> > +       res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "lut");
+> 
+> As per comments in the bindings, shouldn't use the name "lut" but
+> should just pick resource #1.
+
+Yes.
+
+Thanks a lot for the review,
+Ezequiel
+
 
 _______________________________________________
 Linux-rockchip mailing list
