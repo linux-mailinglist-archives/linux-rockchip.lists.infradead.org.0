@@ -2,30 +2,30 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA8454F602
-	for <lists+linux-rockchip@lfdr.de>; Sat, 22 Jun 2019 15:46:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5030B4F605
+	for <lists+linux-rockchip@lfdr.de>; Sat, 22 Jun 2019 15:47:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CzM7Xx69M7i+WNs2U0syZllKsI+4BZbS58lfP5dM/8Q=; b=cW541cNqn0kBF4
-	2S8qqF0AMAkWgyIuSpZ5Wsy6+HgMtjTJzT3rmlsK0MKL1u792WVeU5uG7vxrSFf7qQ4Wyu1lJMrnv
-	336q1qfjC2i3G3AeZetSi5OHJlD+VRJ9fTW7ujmqhAFNoDU+wxUtPT9wq4QILgimsoOLAiSSjYm9w
-	/rx6OXoVIjQveNFgIhwZs9tj2XNkzT5XrUhlaMTo2rekuSR8FBtpi6jGBpA1+ke2VoBZAfiHf1Kr7
-	9YIfhlMpqgHHzAFci/SL+8Gc/CUiTRlPjVamYEp4A5KYpx9k11CRNZpmlTmCsF3UZAeiRCofccGhk
-	R+7Kn/NomJAWOC45fzew==;
+	List-Owner; bh=z20AVlVhkIK/sAUKJ94epb7SxGM1F5xG/9v/e2mvj3U=; b=qvuvrXT8XbApb1
+	q19Jcxzr9HdFPJYhjg6hpLCCzHvNCPA180pR3tZz5EDxyAr1SfrOkXBr6PXZ4IPrj4SPmUQPt1oif
+	WpJJJdt8bTrlBIuL/ZU65LzrH37bwYtxu2joht1w+vsKGwdof7mekDQzSTnbfExu7zhe5+G4BAOfZ
+	3bqopqQS3cZGmfPCu/7rHOiornQgfPhODGhNmG/n9A8lzOUkUUH6xWiYyF2S013Rbo/avF7HeyZPb
+	bNyKNnCdPbnkX7S81OELEKhuuDrXWtsWAO6Zeh7a4F+5WTrkd+VP+YpJB9vOc/Bx+hzziPT0k5Ra9
+	TpI3LZ35fospmzoTWxMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hegLC-0005ws-Sg; Sat, 22 Jun 2019 13:46:02 +0000
-Received: from regular1.263xmail.com ([211.150.70.206])
+	id 1hegMO-00065k-Nt; Sat, 22 Jun 2019 13:47:16 +0000
+Received: from regular1.263xmail.com ([211.150.70.198])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hegL8-0005vZ-8j
- for linux-rockchip@lists.infradead.org; Sat, 22 Jun 2019 13:46:00 +0000
-Received: from kever.yang?rock-chips.com (unknown [192.168.167.228])
- by regular1.263xmail.com (Postfix) with ESMTP id DD0C4216;
- Sat, 22 Jun 2019 21:45:45 +0800 (CST)
+ id 1hegMK-00064t-Vb
+ for linux-rockchip@lists.infradead.org; Sat, 22 Jun 2019 13:47:15 +0000
+Received: from kever.yang?rock-chips.com (unknown [192.168.167.131])
+ by regular1.263xmail.com (Postfix) with ESMTP id 830FA20C;
+ Sat, 22 Jun 2019 21:47:07 +0800 (CST)
 X-263anti-spam: KSV:0;BIG:0;
 X-MAIL-GRAY: 0
 X-MAIL-DELIVERY: 1
@@ -36,10 +36,10 @@ X-SKE-CHECKED: 1
 X-ANTISPAM-LEVEL: 2
 Received: from [192.168.1.3] (unknown [110.125.168.244])
  by smtp.263.net (postfix) whith ESMTP id
- P14262T140501577893632S1561211146273552_; 
- Sat, 22 Jun 2019 21:45:47 +0800 (CST)
+ P6213T139888215189248S1561211226359334_; 
+ Sat, 22 Jun 2019 21:47:07 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <67ba2548c72b3eccffb3df973d29c094>
+X-UNIQUE-TAG: <1192df64b08accf0d247aa35e451cadb>
 X-RL-SENDER: kever.yang@rock-chips.com
 X-SENDER: yk@rock-chips.com
 X-LOGIN-NAME: kever.yang@rock-chips.com
@@ -47,30 +47,29 @@ X-FST-TO: linux-amarula@amarulasolutions.com
 X-SENDER-IP: 110.125.168.244
 X-ATTACHMENT-NUM: 0
 X-DNS-TYPE: 0
-Subject: Re: [PATCH v2 1/8] board: rk3399: Drop explicit uart enablement in
- spl_board_init
+Subject: Re: [PATCH v2 2/8] rockchip: rk3399: Support common spl_board_init
 To: Jagan Teki <jagan@amarulasolutions.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>, u-boot@lists.denx.de
 References: <20190620185506.11449-1-jagan@amarulasolutions.com>
- <20190620185506.11449-2-jagan@amarulasolutions.com>
+ <20190620185506.11449-3-jagan@amarulasolutions.com>
 From: Kever Yang <kever.yang@rock-chips.com>
-Message-ID: <fc1a0515-5baa-e212-1028-66a7dacdd952@rock-chips.com>
-Date: Sat, 22 Jun 2019 21:45:43 +0800
+Message-ID: <7672d964-fc52-4d58-97f7-0a19d245990b@rock-chips.com>
+Date: Sat, 22 Jun 2019 21:47:06 +0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
  Thunderbird/52.6.0
 MIME-Version: 1.0
-In-Reply-To: <20190620185506.11449-2-jagan@amarulasolutions.com>
+In-Reply-To: <20190620185506.11449-3-jagan@amarulasolutions.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190622_064558_696455_37488D1A 
-X-CRM114-Status: GOOD (  15.89  )
+X-CRM114-CacheID: sfid-20190622_064713_378437_2442B433 
+X-CRM114-Status: GOOD (  22.38  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.206 listed in list.dnswl.org]
+ no trust [211.150.70.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -94,20 +93,13 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 Hi Jagan,
 
 
-On 06/21/2019 02:54 AM, Jagan Teki wrote:
-> preloader_console_init is used for printing SPL boot banner that
-> usually called from spl_board_init.
+On 06/21/2019 02:55 AM, Jagan Teki wrote:
+> Support common spl_board_init by moving code from puma
+> board file into, common rk3399-board-spl.c.
 >
-> The current spl_board_init in evb and rock960 is enabling explicit
-> pinctrl, debug uart prior to calling preloader_console_init which
-> eventually not required since board_init_f is already enabled
-> debug uart.
->
-> So, drop those explicit enablement calls from  spl_board_init of
-> evb, rock960.
->
-> Tested this by enabling CONFIG_SPL_BOARD_INIT and adding
-> u-boot,dm-pre-reloc property for uart node.
+> Part of the code has sysreset-gpio, regulators_enable_boot_on
+> but right now only puma board is using this with relevant
+> config options rest remains common for all targets.
 >
 > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 
@@ -116,94 +108,224 @@ Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
 Thanks,
 - Kever
 > ---
->  board/rockchip/evb_rk3399/evb-rk3399.c      | 23 +------------------
->  board/vamrs/rock960_rk3399/rock960-rk3399.c | 25 +--------------------
->  2 files changed, 2 insertions(+), 46 deletions(-)
+>  arch/arm/mach-rockchip/rk3399-board-spl.c     | 63 +++++++++++++++++++
+>  board/rockchip/evb_rk3399/evb-rk3399.c        |  8 ---
+>  .../puma_rk3399/puma-rk3399.c                 | 58 -----------------
+>  board/vamrs/rock960_rk3399/rock960-rk3399.c   |  8 ---
+>  4 files changed, 63 insertions(+), 74 deletions(-)
 >
+> diff --git a/arch/arm/mach-rockchip/rk3399-board-spl.c b/arch/arm/mach-rockchip/rk3399-board-spl.c
+> index 800ca80022..65c98b697d 100644
+> --- a/arch/arm/mach-rockchip/rk3399-board-spl.c
+> +++ b/arch/arm/mach-rockchip/rk3399-board-spl.c
+> @@ -11,13 +11,16 @@
+>  #include <spl.h>
+>  #include <spl_gpio.h>
+>  #include <syscon.h>
+> +#include <asm/gpio.h>
+>  #include <asm/io.h>
+>  #include <asm/arch-rockchip/bootrom.h>
+>  #include <asm/arch-rockchip/clock.h>
+> +#include <asm/arch-rockchip/cru_rk3399.h>
+>  #include <asm/arch-rockchip/grf_rk3399.h>
+>  #include <asm/arch-rockchip/hardware.h>
+>  #include <asm/arch-rockchip/periph.h>
+>  #include <asm/arch-rockchip/sys_proto.h>
+> +#include <power/regulator.h>
+>  #include <dm/pinctrl.h>
+>  
+>  void board_return_to_bootrom(void)
+> @@ -202,6 +205,66 @@ void board_init_f(ulong dummy)
+>  	}
+>  }
+>  
+> +#if defined(SPL_GPIO_SUPPORT)
+> +static void rk3399_force_power_on_reset(void)
+> +{
+> +	ofnode node;
+> +	struct gpio_desc sysreset_gpio;
+> +
+> +	debug("%s: trying to force a power-on reset\n", __func__);
+> +
+> +	node = ofnode_path("/config");
+> +	if (!ofnode_valid(node)) {
+> +		debug("%s: no /config node?\n", __func__);
+> +		return;
+> +	}
+> +
+> +	if (gpio_request_by_name_nodev(node, "sysreset-gpio", 0,
+> +				       &sysreset_gpio, GPIOD_IS_OUT)) {
+> +		debug("%s: could not find a /config/sysreset-gpio\n", __func__);
+> +		return;
+> +	}
+> +
+> +	dm_gpio_set_value(&sysreset_gpio, 1);
+> +}
+> +#endif
+> +
+> +void spl_board_init(void)
+> +{
+> +#if defined(SPL_GPIO_SUPPORT)
+> +	struct rk3399_cru *cru = rockchip_get_cru();
+> +
+> +	/*
+> +	 * The RK3399 resets only 'almost all logic' (see also in the TRM
+> +	 * "3.9.4 Global software reset"), when issuing a software reset.
+> +	 * This may cause issues during boot-up for some configurations of
+> +	 * the application software stack.
+> +	 *
+> +	 * To work around this, we test whether the last reset reason was
+> +	 * a power-on reset and (if not) issue an overtemp-reset to reset
+> +	 * the entire module.
+> +	 *
+> +	 * While this was previously fixed by modifying the various places
+> +	 * that could generate a software reset (e.g. U-Boot's sysreset
+> +	 * driver, the ATF or Linux), we now have it here to ensure that
+> +	 * we no longer have to track this through the various components.
+> +	 */
+> +	if (cru->glb_rst_st != 0)
+> +		rk3399_force_power_on_reset();
+> +#endif
+> +
+> +#if defined(SPL_DM_REGULATOR)
+> +	/*
+> +	 * Turning the eMMC and SPI back on (if disabled via the Qseven
+> +	 * BIOS_ENABLE) signal is done through a always-on regulator).
+> +	 */
+> +	if (regulators_enable_boot_on(false))
+> +		debug("%s: Cannot enable boot on regulator\n", __func__);
+> +#endif
+> +
+> +	preloader_console_init();
+> +}
+> +
+>  #ifdef CONFIG_SPL_LOAD_FIT
+>  int board_fit_config_name_match(const char *name)
+>  {
 > diff --git a/board/rockchip/evb_rk3399/evb-rk3399.c b/board/rockchip/evb_rk3399/evb-rk3399.c
-> index bf2ad98c47..769b5d146f 100644
+> index 769b5d146f..c600553ff6 100644
 > --- a/board/rockchip/evb_rk3399/evb-rk3399.c
 > +++ b/board/rockchip/evb_rk3399/evb-rk3399.c
+> @@ -8,7 +8,6 @@
+>  #include <dm/pinctrl.h>
+>  #include <asm/arch-rockchip/periph.h>
+>  #include <power/regulator.h>
+> -#include <spl.h>
+>  
+>  int board_init(void)
+>  {
+> @@ -64,10 +63,3 @@ int board_init(void)
+>  out:
+>  	return 0;
+>  }
+> -
+> -void spl_board_init(void)
+> -{
+> -	preloader_console_init();
+> -
+> -	return;
+> -}
+> diff --git a/board/theobroma-systems/puma_rk3399/puma-rk3399.c b/board/theobroma-systems/puma_rk3399/puma-rk3399.c
+> index c6b509c109..251cd2d566 100644
+> --- a/board/theobroma-systems/puma_rk3399/puma-rk3399.c
+> +++ b/board/theobroma-systems/puma_rk3399/puma-rk3399.c
+> @@ -13,10 +13,8 @@
+>  #include <dm/pinctrl.h>
+>  #include <dm/uclass-internal.h>
+>  #include <asm/io.h>
+> -#include <asm/gpio.h>
+>  #include <asm/setup.h>
+>  #include <asm/arch-rockchip/clock.h>
+> -#include <asm/arch-rockchip/cru_rk3399.h>
+>  #include <asm/arch-rockchip/hardware.h>
+>  #include <asm/arch-rockchip/grf_rk3399.h>
+>  #include <asm/arch-rockchip/periph.h>
+> @@ -38,62 +36,6 @@ int board_init(void)
+>  	return 0;
+>  }
+>  
+> -static void rk3399_force_power_on_reset(void)
+> -{
+> -	ofnode node;
+> -	struct gpio_desc sysreset_gpio;
+> -
+> -	debug("%s: trying to force a power-on reset\n", __func__);
+> -
+> -	node = ofnode_path("/config");
+> -	if (!ofnode_valid(node)) {
+> -		debug("%s: no /config node?\n", __func__);
+> -		return;
+> -	}
+> -
+> -	if (gpio_request_by_name_nodev(node, "sysreset-gpio", 0,
+> -				       &sysreset_gpio, GPIOD_IS_OUT)) {
+> -		debug("%s: could not find a /config/sysreset-gpio\n", __func__);
+> -		return;
+> -	}
+> -
+> -	dm_gpio_set_value(&sysreset_gpio, 1);
+> -}
+> -
+> -void spl_board_init(void)
+> -{
+> -	int  ret;
+> -	struct rk3399_cru *cru = rockchip_get_cru();
+> -
+> -	/*
+> -	 * The RK3399 resets only 'almost all logic' (see also in the TRM
+> -	 * "3.9.4 Global software reset"), when issuing a software reset.
+> -	 * This may cause issues during boot-up for some configurations of
+> -	 * the application software stack.
+> -	 *
+> -	 * To work around this, we test whether the last reset reason was
+> -	 * a power-on reset and (if not) issue an overtemp-reset to reset
+> -	 * the entire module.
+> -	 *
+> -	 * While this was previously fixed by modifying the various places
+> -	 * that could generate a software reset (e.g. U-Boot's sysreset
+> -	 * driver, the ATF or Linux), we now have it here to ensure that
+> -	 * we no longer have to track this through the various components.
+> -	 */
+> -	if (cru->glb_rst_st != 0)
+> -		rk3399_force_power_on_reset();
+> -
+> -	/*
+> -	 * Turning the eMMC and SPI back on (if disabled via the Qseven
+> -	 * BIOS_ENABLE) signal is done through a always-on regulator).
+> -	 */
+> -	ret = regulators_enable_boot_on(false);
+> -	if (ret)
+> -		debug("%s: Cannot enable boot on regulator\n", __func__);
+> -
+> -	preloader_console_init();
+> -}
+> -
+>  static void setup_macaddr(void)
+>  {
+>  #if CONFIG_IS_ENABLED(CMD_NET)
+> diff --git a/board/vamrs/rock960_rk3399/rock960-rk3399.c b/board/vamrs/rock960_rk3399/rock960-rk3399.c
+> index 018e4b55b8..2eb7120e84 100644
+> --- a/board/vamrs/rock960_rk3399/rock960-rk3399.c
+> +++ b/board/vamrs/rock960_rk3399/rock960-rk3399.c
 > @@ -6,7 +6,6 @@
 >  #include <common.h>
 >  #include <dm.h>
->  #include <dm/pinctrl.h>
-> -#include <dm/uclass-internal.h>
->  #include <asm/arch-rockchip/periph.h>
 >  #include <power/regulator.h>
->  #include <spl.h>
-> @@ -68,27 +67,7 @@ out:
+> -#include <spl.h>
 >  
->  void spl_board_init(void)
+>  int board_init(void)
 >  {
-> -	struct udevice *pinctrl;
-> -	int ret;
-> -
-> -	ret = uclass_get_device(UCLASS_PINCTRL, 0, &pinctrl);
-> -	if (ret) {
-> -		debug("%s: Cannot find pinctrl device\n", __func__);
-> -		goto err;
-> -	}
-> -
-> -	/* Enable debug UART */
-> -	ret = pinctrl_request_noflags(pinctrl, PERIPH_ID_UART_DBG);
-> -	if (ret) {
-> -		debug("%s: Failed to set up console UART\n", __func__);
-> -		goto err;
-> -	}
-> -
->  	preloader_console_init();
-> -	return;
-> -err:
-> -	printf("%s: Error %d\n", __func__, ret);
+> @@ -18,10 +17,3 @@ int board_init(void)
 >  
-> -	/* No way to report error here */
-> -	hang();
-> +	return;
+>  	return 0;
 >  }
-> diff --git a/board/vamrs/rock960_rk3399/rock960-rk3399.c b/board/vamrs/rock960_rk3399/rock960-rk3399.c
-> index 0f5ef3a09a..018e4b55b8 100644
-> --- a/board/vamrs/rock960_rk3399/rock960-rk3399.c
-> +++ b/board/vamrs/rock960_rk3399/rock960-rk3399.c
-> @@ -5,9 +5,6 @@
->  
->  #include <common.h>
->  #include <dm.h>
-> -#include <dm/pinctrl.h>
-> -#include <dm/uclass-internal.h>
-> -#include <asm/arch-rockchip/periph.h>
->  #include <power/regulator.h>
->  #include <spl.h>
->  
-> @@ -24,27 +21,7 @@ int board_init(void)
->  
->  void spl_board_init(void)
->  {
-> -	struct udevice *pinctrl;
-> -	int ret;
 > -
-> -	ret = uclass_get_device(UCLASS_PINCTRL, 0, &pinctrl);
-> -	if (ret) {
-> -		debug("%s: Cannot find pinctrl device\n", __func__);
-> -		goto err;
-> -	}
+> -void spl_board_init(void)
+> -{
+> -	preloader_console_init();
 > -
-> -	/* Enable debug UART */
-> -	ret = pinctrl_request_noflags(pinctrl, PERIPH_ID_UART_DBG);
-> -	if (ret) {
-> -		debug("%s: Failed to set up console UART\n", __func__);
-> -		goto err;
-> -	}
-> -
->  	preloader_console_init();
 > -	return;
-> -err:
-> -	printf("%s: Error %d\n", __func__, ret);
->  
-> -	/* No way to report error here */
-> -	hang();
-> +	return;
->  }
+> -}
 
 
 
