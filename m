@@ -2,55 +2,44 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 631014F64F
-	for <lists+linux-rockchip@lfdr.de>; Sat, 22 Jun 2019 16:50:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9478E4F672
+	for <lists+linux-rockchip@lfdr.de>; Sat, 22 Jun 2019 17:15:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Ql8CG2njyRUDtT4US9eh7or1rwtIeL3OtSYN39JP48k=; b=K1cfdO8BSZ1JWP/vWtUGyD3F4
-	EcxjbHZ7dnuSVgNWQm3ymqW2yUlXc1CLZIlKb0qcHPqoSZJ+bxLzcfU4/fG1yEW+CYgD+LtMig257
-	3xL6lEbU5u8y3K0aP+A0+kuC0n464kCRsg+LZWz+W7gINXomK0zKEMAwizO3mbkMi3Sxmi8FJyCR0
-	q4DceoTdbSX94fT8rh7lydnwmxlGF/euUyUbrzsIuXgW4mhBUoDzEPKf8+mUrbTTdcdUG0yWfkAmq
-	5QvKIYfSrvUru5HBFwis6zOumiJYnIpvyou4rQ9+mrLOhDlg/A1ycSoi9Fs3Mx2watiU14aPushxT
-	+XhuFjxAg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qQStLgM0GxnaqABV9xNBK6/6SD9jyUQNsFE4FDxsKLc=; b=mgFg3b5+TYAHxA
+	ngsp2KH23/svdkkkeY3VZbfxDZiEUX7sCZNPCaqRTz3bOZiFsYFc78ZUGNqoBvcfCiUhVE+Iu+ccw
+	TbvGlk8mXlsrRlMtZQTweq7S1iC6RqnLl0VyYMkoF0N4yWf7S/oUgjjL4AZvnwp8OSIuQodkEFZS/
+	8/zISfapj7zYnN7lrPzMIG9shNJNUftvJzvdUcX7Pf71fleM/ZcLy12rgRcsNpbFemV4oDFsc14qK
+	uTyqUhUXeW98KI6bKWHlmR8gIJPdF5WcBxDpO6d4ZtBn+WfT8frgRrXOmib+WRH4hpMyho3MZjCRt
+	pTeLNwC5uV/Mknj6QuNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hehLY-0000Jj-3R; Sat, 22 Jun 2019 14:50:28 +0000
-Received: from www1102.sakura.ne.jp ([219.94.129.142])
+	id 1hehjj-0008N4-Tz; Sat, 22 Jun 2019 15:15:27 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hehLK-0000BK-He; Sat, 22 Jun 2019 14:50:16 +0000
-Received: from fsav302.sakura.ne.jp (fsav302.sakura.ne.jp [153.120.85.133])
- by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id x5MEoBSI050936;
- Sat, 22 Jun 2019 23:50:11 +0900 (JST)
- (envelope-from katsuhiro@katsuster.net)
-Received: from www1102.sakura.ne.jp (219.94.129.142)
- by fsav302.sakura.ne.jp (F-Secure/fsigk_smtp/530/fsav302.sakura.ne.jp);
- Sat, 22 Jun 2019 23:50:10 +0900 (JST)
-X-Virus-Status: clean(F-Secure/fsigk_smtp/530/fsav302.sakura.ne.jp)
-Received: from [192.168.1.2] (118.153.231.153.ap.dti.ne.jp [153.231.153.118])
- (authenticated bits=0)
- by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id x5MEoAQH050929
- (version=TLSv1.2 cipher=AES256-SHA bits=256 verify=NO);
- Sat, 22 Jun 2019 23:50:10 +0900 (JST)
- (envelope-from katsuhiro@katsuster.net)
+ id 1hehjh-0008MO-Ac; Sat, 22 Jun 2019 15:15:26 +0000
+Received: from p508fd9dc.dip0.t-ipconnect.de ([80.143.217.220]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hehjc-00064g-TU; Sat, 22 Jun 2019 17:15:20 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Katsuhiro Suzuki <katsuhiro@katsuster.net>
 Subject: Re: [PATCH] ARM: dts: rockchip: add ethernet phy node for tinker board
-To: Heiko Stuebner <heiko@sntech.de>
+Date: Sat, 22 Jun 2019 17:15:20 +0200
+Message-ID: <1891431.W4duSCi9rW@phil>
+In-Reply-To: <ccf5ad2c-bd56-2d77-4728-d7906045e302@katsuster.net>
 References: <20190621180017.29646-1-katsuhiro@katsuster.net>
  <1871177.hjLhdHVgcu@phil>
-From: Katsuhiro Suzuki <katsuhiro@katsuster.net>
-Message-ID: <ccf5ad2c-bd56-2d77-4728-d7906045e302@katsuster.net>
-Date: Sat, 22 Jun 2019 23:50:10 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ <ccf5ad2c-bd56-2d77-4728-d7906045e302@katsuster.net>
 MIME-Version: 1.0
-In-Reply-To: <1871177.hjLhdHVgcu@phil>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190622_075014_807161_AB36DFE4 
-X-CRM114-Status: GOOD (  16.73  )
+X-CRM114-CacheID: sfid-20190622_081525_527158_0A108857 
+X-CRM114-Status: GOOD (  22.69  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,101 +61,116 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hello,
+Hi Katsuhiro,
 
-Current linux-next on my environment, 'ifconfig eth0 up' does not
-work correctly with following message...
+Am Samstag, 22. Juni 2019, 16:50:10 CEST schrieb Katsuhiro Suzuki:
+> Current linux-next on my environment, 'ifconfig eth0 up' does not
+> work correctly with following message...
+> 
+> -----
+> root@linaro-alip:~# ifconfig eth0 up
+> [  105.028916] rk_gmac-dwmac ff290000.ethernet eth0: stmmac_open: Cannot 
+> attach to PHY (error: -19)
+> SIOCSIFFLAGS: No such device
+> -----
+> 
+> I checked drivers/net/ethernet/stmicro/stmmac/stmmac_main.c and found
+> stmmac_init_phy() is going to fail if ethernet device node does not
+> have following property:
+>    - phy-handle
+>    - phy
+>    - phy-device
+> 
+> I salvaged old version of linux-next kernel (5.2.0-rc1-20190523),
+> network device of my Tinker Board worked correctly if use it.
+>
+> I have not bisect commit of root cause yet... Is it better to bisect
+> and find problem instead of sending this patch?
 
------
-root@linaro-alip:~# ifconfig eth0 up
-[  105.028916] rk_gmac-dwmac ff290000.ethernet eth0: stmmac_open: Cannot 
-attach to PHY (error: -19)
-SIOCSIFFLAGS: No such device
------
+That is clearly a regression (even recent) a newer kernel should
+not break old devicetrees and the mdio subnode creating a
+mdio bus is already marked as optional.
 
-I checked drivers/net/ethernet/stmicro/stmmac/stmmac_main.c and found
-stmmac_init_phy() is going to fail if ethernet device node does not
-have following property:
-   - phy-handle
-   - phy
-   - phy-device
+So this will likely affect a lot more boards than the tinker board.
 
-I salvaged old version of linux-next kernel (5.2.0-rc1-20190523),
-network device of my Tinker Board worked correctly if use it.
-
-I have not bisect commit of root cause yet... Is it better to bisect
-and find problem instead of sending this patch?
-
-Best Regards,
----
-Katsuhiro Suzuki
+So if you can find the time you could try to find the offending
+commit first, so that ideally the network maintainers can fix that
+up.
 
 
-On 2019/06/22 17:33, Heiko Stuebner wrote:
-> Hi,
+Thanks
+Heiko
+
+> On 2019/06/22 17:33, Heiko Stuebner wrote:
+> > Hi,
+> > 
+> > Am Freitag, 21. Juni 2019, 20:00:17 CEST schrieb Katsuhiro Suzuki:
+> >> This patch adds missing mdio and ethernet PHY nodes for rk3328 ASUS
+> >> tinker board.
+> >>
+> >> Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+> > 
+> > just for my understanding, which problem does this solve?
+> > Normally the gmac can establish connections just fine on
+> > the rk3288 by probing the phy in the automatic way.
+> > 
+> > And I also don't see any additional properties like phy
+> > interrupt line below.
+> > 
+> > 
+> > Thanks
+> > Heiko
+> > 
+> >> ---
+> >>   arch/arm/boot/dts/rk3288-tinker.dtsi | 12 ++++++++++++
+> >>   1 file changed, 12 insertions(+)
+> >>
+> >> diff --git a/arch/arm/boot/dts/rk3288-tinker.dtsi b/arch/arm/boot/dts/rk3288-tinker.dtsi
+> >> index 293576869546..3190817e8d5d 100644
+> >> --- a/arch/arm/boot/dts/rk3288-tinker.dtsi
+> >> +++ b/arch/arm/boot/dts/rk3288-tinker.dtsi
+> >> @@ -117,6 +117,7 @@
+> >>   	assigned-clocks = <&cru SCLK_MAC>;
+> >>   	assigned-clock-parents = <&ext_gmac>;
+> >>   	clock_in_out = "input";
+> >> +	phy-handle = <&phy0>;
+> >>   	phy-mode = "rgmii";
+> >>   	phy-supply = <&vcc33_lan>;
+> >>   	pinctrl-names = "default";
+> >> @@ -127,6 +128,17 @@
+> >>   	tx_delay = <0x30>;
+> >>   	rx_delay = <0x10>;
+> >>   	status = "ok";
+> >> +
+> >> +	mdio0 {
+> >> +		compatible = "snps,dwmac-mdio";
+> >> +		#address-cells = <1>;
+> >> +		#size-cells = <0>;
+> >> +
+> >> +		phy0: ethernet-phy@0 {
+> >> +			compatible = "ethernet-phy-ieee802.3-c22";
+> >> +			reg = <0>;
+> >> +		};
+> >> +	};
+> >>   };
+> >>   
+> >>   &gpu {
+> >>
+> > 
+> > 
+> > 
+> > 
+> > 
 > 
-> Am Freitag, 21. Juni 2019, 20:00:17 CEST schrieb Katsuhiro Suzuki:
->> This patch adds missing mdio and ethernet PHY nodes for rk3328 ASUS
->> tinker board.
->>
->> Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
 > 
-> just for my understanding, which problem does this solve?
-> Normally the gmac can establish connections just fine on
-> the rk3288 by probing the phy in the automatic way.
-> 
-> And I also don't see any additional properties like phy
-> interrupt line below.
-> 
-> 
-> Thanks
-> Heiko
-> 
->> ---
->>   arch/arm/boot/dts/rk3288-tinker.dtsi | 12 ++++++++++++
->>   1 file changed, 12 insertions(+)
->>
->> diff --git a/arch/arm/boot/dts/rk3288-tinker.dtsi b/arch/arm/boot/dts/rk3288-tinker.dtsi
->> index 293576869546..3190817e8d5d 100644
->> --- a/arch/arm/boot/dts/rk3288-tinker.dtsi
->> +++ b/arch/arm/boot/dts/rk3288-tinker.dtsi
->> @@ -117,6 +117,7 @@
->>   	assigned-clocks = <&cru SCLK_MAC>;
->>   	assigned-clock-parents = <&ext_gmac>;
->>   	clock_in_out = "input";
->> +	phy-handle = <&phy0>;
->>   	phy-mode = "rgmii";
->>   	phy-supply = <&vcc33_lan>;
->>   	pinctrl-names = "default";
->> @@ -127,6 +128,17 @@
->>   	tx_delay = <0x30>;
->>   	rx_delay = <0x10>;
->>   	status = "ok";
->> +
->> +	mdio0 {
->> +		compatible = "snps,dwmac-mdio";
->> +		#address-cells = <1>;
->> +		#size-cells = <0>;
->> +
->> +		phy0: ethernet-phy@0 {
->> +			compatible = "ethernet-phy-ieee802.3-c22";
->> +			reg = <0>;
->> +		};
->> +	};
->>   };
->>   
->>   &gpu {
->>
-> 
-> 
-> 
-> 
-> 
+
+
+
 
 
 _______________________________________________
