@@ -2,76 +2,75 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D894051B5D
-	for <lists+linux-rockchip@lfdr.de>; Mon, 24 Jun 2019 21:26:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F5D351BE6
+	for <lists+linux-rockchip@lfdr.de>; Mon, 24 Jun 2019 22:03:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WavdDAyi+LIiBZRIee/xtaTNvmi0W6LOZegxyaTg19U=; b=jpK/BjG/MULeQG
-	8wqi8/1e+qQZHYv7YYvroV7Jx1r+GOo7eGxmicspn4I82cpo3LuK6sVeukNiafK86XHda8T3xR6kF
-	NijzmqVqxL4F2QO8+qmWIi9VSTDCMgDphDdW2yMSqZ1rf1nGhgCzw2fmBmxOLpXF4wVolskO49HPJ
-	AIa/QtjQ6Yh1ZY5RMFsoipf3MCbyvaw/cuKsLxOs+WPzU1+rHxxc+jhYEi6m5VlZTJlvdAs3IRje4
-	csn1odspkgheQbeIju8qEjFs1OdnUzKRrBVAT+VgI1Rj1C7Ylv5Cls7d227k12DWJif0T0hD9d0Vi
-	ppARZmTql03ajC27iz2Q==;
+	List-Owner; bh=ntBUhTHPyoj11stZpBNZGEJ0HEQ68RQ04KeZy79iJN4=; b=kaoViuT7Tsf3S/
+	sEDiiKZYFrNSw3v9ZqBUQS0J86w/gERl7u9UY10cDW3k3cDyZq3g2lMp3/ThWI/6byIjwIxd/Xg1d
+	H2urfIjrrils1tlDGVwVPbqq6DTcFPrkjuAaIkTUQqla/rCqUlGnzCjZ75rJGMCfnnpUm2NiADGqU
+	EJEN+OvWrQYdkk6EbxTQiJXBwj1aTeXLSKaFJJPl8n60k69GFHGGnNUyZki/vXGFR/HEGwG1PoCQr
+	MxzgaxyqGdOCGO9naqhYfZnW6F9M/l66MM9mrOUwsSs3sWhQetwChA2qwVzHKzK09Ou9+/R4XO2ko
+	yujCuXInB6WShOY2D71Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfUbJ-0006p8-ER; Mon, 24 Jun 2019 19:26:01 +0000
+	id 1hfVBa-0003DB-6c; Mon, 24 Jun 2019 20:03:30 +0000
 Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfUbF-0006og-53
- for linux-rockchip@lists.infradead.org; Mon, 24 Jun 2019 19:25:58 +0000
-Received: by mail-io1-xd43.google.com with SMTP id e3so82762ioc.12
- for <linux-rockchip@lists.infradead.org>; Mon, 24 Jun 2019 12:25:52 -0700 (PDT)
+ id 1hfVBX-0003CW-3R
+ for linux-rockchip@lists.infradead.org; Mon, 24 Jun 2019 20:03:28 +0000
+Received: by mail-io1-xd43.google.com with SMTP id w25so4361094ioc.8
+ for <linux-rockchip@lists.infradead.org>; Mon, 24 Jun 2019 13:03:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=46YubdxCxrFPh8KrDchM0Ty2p47WTPPMVanoBQz+N5I=;
- b=WapHHi8N2f4HLGXe8Azqgnk2rXsYnSSwWeXoyTGoqptEniMQ7RI34LHdkfRxx+PTYJ
- 6q8PlKhv4L+QPsNZCCEMml8wD0fIpbl5OiXhrEU0oePfqE5PupxtN+Plt9pm45DyQEdT
- xLv0d4d/GDSlQZxVi/VWkz/v0k08TuKOrnfCQ=
+ :cc; bh=5G5TGMZ6AYi5gRQNnYnWdNq47kMogCEidAxRTjgan2s=;
+ b=XWtBPn9ibpqotN/2oTx9ERROro6K607uDjcBZubtfZ7AWCAdk2ckqc80ebr81hYsSI
+ ManUcxBZ7CpcbYP/eRkdTt7HCnpsIIeyh7Uo6Vn3wjXexTEfwL+8zXXVp43P6HvcPOaq
+ hP0kyexxzW11HpYpHOyzzIY/K7o6DbmZCV9D4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=46YubdxCxrFPh8KrDchM0Ty2p47WTPPMVanoBQz+N5I=;
- b=byBzFZmwBIKfWNefmU0lMoPBo/Bjsn7u2ykK/vEDKXHfkLD2809S7orWnZ551Lq2Uy
- 9bbqmQbf6zjejtPS3h1mM0R6a44/YKCQbqFEKzEEX2cql0Ok1UpbImYhj9lI86r2ot8N
- kuCHoUnIdHLorWpqe4bMrI+HgE7kYZqzi60+0Uumamp05XsEmwRBCuGb6P0DC2rbHki2
- rv6p1OOOFVuNkVTTWR9CGc9gSStn4r5YxMXMmqhDLeHoiMdU8eVE5uPGmPaTxDhpsHwZ
- M46EQe54e0JCuUYRMn0UvkrzonISzoDrpw1Z1RjRnJccI7nWtTWUaPKb5sfwK7meVvWv
- +LPA==
-X-Gm-Message-State: APjAAAXwswYipvgIyh+YieECw5esqBjnsvhLKO/h2eBUMm0rtTAV4hjE
- EHj8VoS+scmcInJd3lU003+pi99ZFzo=
-X-Google-Smtp-Source: APXvYqzPbOd98ZgUBxYxVR/fcJ3saARqwqncNxvxKZ5/eEDfleAELMz3/EDYuwnFBKp3d/HvScZOLQ==
-X-Received: by 2002:a5e:820a:: with SMTP id l10mr38932332iom.283.1561404351737; 
- Mon, 24 Jun 2019 12:25:51 -0700 (PDT)
-Received: from mail-io1-f50.google.com (mail-io1-f50.google.com.
- [209.85.166.50])
- by smtp.gmail.com with ESMTPSA id x22sm13612441iob.84.2019.06.24.12.25.49
+ bh=5G5TGMZ6AYi5gRQNnYnWdNq47kMogCEidAxRTjgan2s=;
+ b=HNgjz60l5w21dDyqhKiCIlqezKviKIL03rvEsxePMPycFHmjO+GGF5+XAs+jk1+rC3
+ 0A6GEU2qwyCcAjGc75jys4SgOLkpAREIyHbpWM4rf1YKmDYObWgk3/W0+/dnwV9/XJoR
+ JUO8K0LvU+IVJ89BXbpVsxt2NOqG4CpQEtoVGVCa2EGxaAjJDDA/S1wEIMi+puIfF9KO
+ R0cNRsEpyo5OktQ9YSw7hRUd2RYLZKZRVqD4sWCh/syJSLTTtvQtzMDJ6z1Z5q8X6JAD
+ 9AmjptlPdTSyyMc1Hd7iTHs7ojNR5J9xvuFK+rw6yKWBYiJiJX0z41mJcK+Unjw4103g
+ SSMQ==
+X-Gm-Message-State: APjAAAWcZnndcQUHAml/DAd6j7MCsFsihsJXtj3fBerVWvoOqp+iQhPN
+ WD5pPnJH87hYqjLATsXXlcPcKm5VnLY=
+X-Google-Smtp-Source: APXvYqyCoh+xJCsab8flt4uMlmdSfg3r6dESrr8dKxhRDYQoENyta670j1UFeOejesWZDIzg2uijjQ==
+X-Received: by 2002:a6b:c90c:: with SMTP id z12mr110288942iof.11.1561406606265; 
+ Mon, 24 Jun 2019 13:03:26 -0700 (PDT)
+Received: from mail-io1-f51.google.com (mail-io1-f51.google.com.
+ [209.85.166.51])
+ by smtp.gmail.com with ESMTPSA id c10sm12571987ioh.58.2019.06.24.13.03.24
  for <linux-rockchip@lists.infradead.org>
  (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Mon, 24 Jun 2019 12:25:50 -0700 (PDT)
-Received: by mail-io1-f50.google.com with SMTP id m24so862928ioo.2
- for <linux-rockchip@lists.infradead.org>; Mon, 24 Jun 2019 12:25:49 -0700 (PDT)
-X-Received: by 2002:a02:aa1d:: with SMTP id r29mr14713662jam.127.1561404342590; 
- Mon, 24 Jun 2019 12:25:42 -0700 (PDT)
+ Mon, 24 Jun 2019 13:03:25 -0700 (PDT)
+Received: by mail-io1-f51.google.com with SMTP id u13so402152iop.0
+ for <linux-rockchip@lists.infradead.org>; Mon, 24 Jun 2019 13:03:24 -0700 (PDT)
+X-Received: by 2002:a5d:8ccc:: with SMTP id k12mr30848489iot.141.1561406604290; 
+ Mon, 24 Jun 2019 13:03:24 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190621211346.1324-1-ezequiel@collabora.com>
- <20190621211346.1324-2-ezequiel@collabora.com>
-In-Reply-To: <20190621211346.1324-2-ezequiel@collabora.com>
+ <20190621211346.1324-3-ezequiel@collabora.com>
+In-Reply-To: <20190621211346.1324-3-ezequiel@collabora.com>
 From: Doug Anderson <dianders@chromium.org>
-Date: Mon, 24 Jun 2019 12:25:29 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=UO8S_MHPKvpu-Uc1pTAv2NN_hf+U6_HCntRU0hzGQtWw@mail.gmail.com>
-Message-ID: <CAD=FV=UO8S_MHPKvpu-Uc1pTAv2NN_hf+U6_HCntRU0hzGQtWw@mail.gmail.com>
-Subject: Re: [PATCH v2 1/3] dt-bindings: display: rockchip: document VOP gamma
- LUT address
+Date: Mon, 24 Jun 2019 13:03:12 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=V3dq0qS2Finw7gxbZqyRvuLqGv-573LHX+41odjBOTxA@mail.gmail.com>
+Message-ID: <CAD=FV=V3dq0qS2Finw7gxbZqyRvuLqGv-573LHX+41odjBOTxA@mail.gmail.com>
+Subject: Re: [PATCH v2 2/3] drm/rockchip: Add optional support for CRTC gamma
+ LUT
 To: Ezequiel Garcia <ezequiel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_122557_215929_DDD7F5A6 
-X-CRM114-Status: UNSURE (   8.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190624_130327_180161_0BA37D5F 
+X-CRM114-Status: GOOD (  19.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -120,18 +119,56 @@ Hi,
 
 On Fri, Jun 21, 2019 at 2:14 PM Ezequiel Garcia <ezequiel@collabora.com> wrote:
 >
-> Add the register specifier description for an
-> optional gamma LUT address.
+> Add an optional CRTC gamma LUT support, and enable it on RK3288.
+> This is currently enabled via a separate address resource,
+> which needs to be specified in the devicetree.
+>
+> The address resource is required because on some SoCs, such as
+> RK3288, the LUT address is after the MMU address, and the latter
+> is supported by a different driver. This prevents the DRM driver
+> from requesting an entire register space.
+>
+> The current implementation works for RGB 10-bit tables, as that
+> is what seems to work on RK3288.
 >
 > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
 > ---
 > Changes from v1:
-> * Drop reg-names, suggested by Doug.
+> * drop explicit linear LUT after finding a proper
+>   way to disable gamma correction.
+> * avoid setting gamma is the CRTC is not active.
+> * s/int/unsigned int as suggested by Jacopo.
+> * only enable color management and set gamma size
+>   if gamma LUT is supported, suggested by Doug.
+> * drop the reg-names usage, and instead just use indexed reg
+>   specifiers, suggested by Doug.
+>
+> Changes from RFC:
+> * Request (an optional) address resource for the LUT.
+> * Drop support for RK3399, which doesn't seem to work
+>   out of the box and needs more research.
+> * Support pass-thru setting when GAMMA_LUT is NULL.
+> * Add a check for the gamma size, as suggested by Ilia.
+> * Move gamma setting to atomic_commit_tail, as pointed
+>   out by Jacopo/Laurent, is the correct way.
 > ---
->  .../devicetree/bindings/display/rockchip/rockchip-vop.txt   | 6 +++++-
->  1 file changed, 5 insertions(+), 1 deletion(-)
+>  drivers/gpu/drm/rockchip/rockchip_drm_fb.c  |   3 +
+>  drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 114 ++++++++++++++++++++
+>  drivers/gpu/drm/rockchip/rockchip_drm_vop.h |   7 ++
+>  drivers/gpu/drm/rockchip/rockchip_vop_reg.c |   2 +
+>  4 files changed, 126 insertions(+)
+
+Looks happy to me now.  Since I'm not a DRM expert and almost
+certainly don't know much about gamma LUT, take this as you will:
 
 Reviewed-by: Douglas Anderson <dianders@chromium.org>
+
+I'm not in front of my veyron device at the moment, so I can't re-test
+exactly this patch so I won't add a Tested-by tag.  However, I'll note
+that earlier versions worked for the test app I was able to find in
+Chrome OS and I'd imagine this one does too.
+
+-Doug
 
 _______________________________________________
 Linux-rockchip mailing list
