@@ -2,81 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C264A55754
-	for <lists+linux-rockchip@lfdr.de>; Tue, 25 Jun 2019 20:42:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 102BD55B0F
+	for <lists+linux-rockchip@lfdr.de>; Wed, 26 Jun 2019 00:26:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m0ajIh4rbxwnRKQI9TB+T7BEOzdJr8xemAW9+g9X80s=; b=sumDhrmCn3BV8T
-	0Z9oGludGDaVbG+vbuN2uBFlh+ugynW7OshAHKE5BL/71VXmxdLFz3UwDwDAUZHbfFZt4dUCpmbZ4
-	TiBnUTjDU/a3r+WLK1POObpXbIS5Resy6dt2T8DzPD/soX/B4Q3s/ZBnVASgD8BO+f2Y5L65/VHpL
-	aZYD+lToaQ/B5Bzk5cj6tiXI4zLvnmgbr3IaC2R8vdEmXNgZiO6E6+M8n2h9285UITkBrEXadAUy8
-	zQl5y5CILmiMoiVxOHsGkKfhoDhQ6mMVzmXJc6oZVC+p2i2DijZh7NEYWqVrO9U5rRHG8ZVfTRQ5l
-	pujJmSn77cyAs5wutnWA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=w3V9hWaTLytpt6pL6YFAttxABK99Ldqbzs7ZhTZIY3o=; b=evZx9mSXTYRddZ
+	9hHS87PbXD1aOK8Z0yKd7tWNbirprWhYm3FHE7Y7bedcf/l9LxgikSFFKcv1hVC2uZECgLKpYyWvR
+	7j7lb3ccVCFFEchFEJ4bTJRx2S0rQnpS5C2YrTDWVdd7Amw0QYfSlb038C+ZYLwZLjLryNCVEpA2E
+	z1i7gjWOJ8ecwry27upZvLgRioGrrTbTczLBDTSR1yQmRs75jrPV9ThufLf4C1KfKgTSdg8DfnuM/
+	uxAXG66m2Bt9hPGzyNVmRLnKqBNdJ3zmPyVpdsdQEj5vo2bGLjiyChKelMfzIyBWsViZOTL713gtx
+	DDXvYufuVAjwJlaW+xVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfqOx-0006Gt-Rs; Tue, 25 Jun 2019 18:42:44 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1hfttm-00066R-Cq; Tue, 25 Jun 2019 22:26:46 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfqOr-0006GH-AH
- for linux-rockchip@lists.infradead.org; Tue, 25 Jun 2019 18:42:39 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id v129so11578705vsb.11
- for <linux-rockchip@lists.infradead.org>; Tue, 25 Jun 2019 11:42:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=vanguardiasur-com-ar.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=5Q+K9YNp3Zl3ryUS0ETgQtC7UHccnMAF9AMhMMm4j/A=;
- b=D09tLf5Hnba5BD4W0ni2MpyUyIy3NDKdMhO4lRlHKIqU68hMdS0zQC2pNmLQqpCFIY
- oqtnduFmv4qKzxsZdsi6G/Ot18yv4CYVQLRX8aoFDIeShy/ct/FslJircLLae7JgoD2z
- s39YsYRCTzAabBRmrk6/Q32Gm9a5jwJW+RSSVLBKJf1/XpPOU6OJmeUdGMf8oM6myhv7
- FoBWs6az2Vb0oVBg5UPLTn+qGyHkLXzntUJ6JJlzO8Wq77sh5PP++pSNTYNOAX5Q0dBd
- 6dYjRvisPdcMjmkHuonyc8rWRK4SgYripiB00JhyNeDKKjMo/A5GdiVJnMyl0E7z925p
- fYFg==
+ id 1hfttf-00064R-Dn
+ for linux-rockchip@lists.infradead.org; Tue, 25 Jun 2019 22:26:43 +0000
+Received: by mail-pl1-x644.google.com with SMTP id w24so216827plp.2
+ for <linux-rockchip@lists.infradead.org>; Tue, 25 Jun 2019 15:26:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=/anjFO55mIDYGOONoYDId7ZUSVlq71MD4cw6Fl8jb+0=;
+ b=RFI9Mh+Kqz56Ns4mk7izsnbRhsvzjgGefcqJT3jaFbmZpHUXxNsIwYhYSSPhnYKyCb
+ k1EuQgMOJdcuOXjMh3dJoFVhrUG24+0a+JHpgejc7YOdia4jS67JRBVEZQUimxTLtRGL
+ CCVp5hjAj9UAtnS3esAaX6jI81cQvtevlV2R4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=5Q+K9YNp3Zl3ryUS0ETgQtC7UHccnMAF9AMhMMm4j/A=;
- b=LFlSR+C4I5ZbWtyhUXHH3/eZ9H2RMQU+2qU3ttVXjmRywJbdu5BVX4s1syYeGGeRKM
- sRu+6W2CGb+QIvsESczIl+aFTg9Y5gQgQWjYAb0IKK/8/3jWhoV+NQGoScBrpxE5uMYI
- TugaEyWbbWrQBRy7cnlle1uMz7YyuScyteSyMDqZF34J4gK1iGI0Self7umZ+pjY2tgW
- ueRhyxbSEeTySnWLxx2qLvtbLpRnreyjt1Wltz5jkXaF0p2UAj08RA67uN0jZqRCYl9C
- 6GSPhTY14FNmZcs5A2h7yzpgcJS47ckVJ3i7Mx8UQGgDSOmM0SwRBAZSEGGGoJO7opkk
- fD3w==
-X-Gm-Message-State: APjAAAWSk6S6drQ9BSkPlCynDStEwV+2OxW2WIT8mXIZXt91p6dsPOBe
- 6cDr6Qoqs4CBbhHV3nOzV4Uouh+z3+5ecEHIj7nl8w==
-X-Google-Smtp-Source: APXvYqy7jR/R71HfJXWIgZ/96d8MHOxBg1xPlHKGLB/Hv23XEvmmDL+JO5E8uanl4mrxSIht7KdUHh16AldOhnuiTsI=
-X-Received: by 2002:a67:e244:: with SMTP id w4mr187366vse.176.1561488154406;
- Tue, 25 Jun 2019 11:42:34 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=/anjFO55mIDYGOONoYDId7ZUSVlq71MD4cw6Fl8jb+0=;
+ b=MJ2+XJvQYixjPHFWP9zNv9khufbtrpFKoqRkNh6gGNlAccHxL5IpkmKBxg1CU6MyEc
+ QM2watEeL8rby7ZNUHxzhGQCiBfDQwGrWPVw+PuYZ2TnAD3GP2NDh0Cg0+n/ufRXMo9b
+ 4ugkGUIAjXPDDMgp/IR2vWQZ/F9p6VlSm3xT6S+ZowZ7HqTV7Qo2H0+JBbso6GwMbiRQ
+ jFqEXs+7kq2sij8t4s7t157W+WzYo2OnC2YzdFNMHXbIV8J9RvpfBoS5qM5hxVIyMwRi
+ Iwa8ovlxlB0bBOQg04WV/2uJhPNBh71m9U9O5fIZKg17Z6W1H4eqagNnZZKlBBcm7a1S
+ KwMA==
+X-Gm-Message-State: APjAAAWqbPm7yHnV+Wxt3yvxXGrIKAV1CpPZcEFx4E6dliKRHDiutQBL
+ nAnT+sycV6kH3dgVkensLjqzMw==
+X-Google-Smtp-Source: APXvYqx9QmVp5rnU9LB4cE5tUvtQqaAJkWidUi6Vj7FDDnBSBfEQfRc1gxS350AJnjRpUthQZirivQ==
+X-Received: by 2002:a17:902:bcc4:: with SMTP id
+ o4mr1129061pls.90.1561501594294; 
+ Tue, 25 Jun 2019 15:26:34 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
+ by smtp.gmail.com with ESMTPSA id p26sm9124466pgd.76.2019.06.25.15.26.33
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 25 Jun 2019 15:26:33 -0700 (PDT)
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH 1/2] ARM: dts: rockchip: move rk3288-veryon display settings
+ into a separate file
+Date: Tue, 25 Jun 2019 15:26:28 -0700
+Message-Id: <20190625222629.154619-1-mka@chromium.org>
+X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
 MIME-Version: 1.0
-References: <20190617073252.27810-1-jagan@amarulasolutions.com>
- <CA+E=qVfuy-UYUWujYC8fG+Os4tefPdYzFECkZZdoctvmiSMzcA@mail.gmail.com>
- <CAMty3ZBr3oy1PxQ3C6fLQZAfPR3Dio7pX0m+y7LApAMQr5gbkA@mail.gmail.com>
-In-Reply-To: <CAMty3ZBr3oy1PxQ3C6fLQZAfPR3Dio7pX0m+y7LApAMQr5gbkA@mail.gmail.com>
-From: Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>
-Date: Tue, 25 Jun 2019 15:42:23 -0300
-Message-ID: <CAAEAJfAxgF2JqOUhjXLmn5RVGMLbM2-7JqsyZgXvfU6Q9ScK+A@mail.gmail.com>
-Subject: Re: [U-Boot] [PATCH v2 00/99] ram: rk3399: Add LPDDR4 support
-To: Jagan Teki <jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_114237_499478_377F8A0A 
-X-CRM114-Status: GOOD (  11.56  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190625_152641_538456_9157C3AB 
+X-CRM114-Status: GOOD (  14.09  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,58 +95,331 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: YouMin Chen <cym@rock-chips.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Akash Gajjar <gajjar04akash@gmail.com>, Vasily Khoruzhick <anarsoul@gmail.com>,
- U-Boot Mailing List <u-boot@lists.denx.de>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- linux-amarula <linux-amarula@amarulasolutions.com>
+Cc: linux-rockchip@lists.infradead.org, Matthias Kaehlcke <mka@chromium.org>,
+ Douglas Anderson <dianders@chromium.org>, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Jagan,
+The chromebook .dtsi file contains common settings for veyron
+Chromebooks with eDP displays. Some veyron devices with a display
+aren't Chromebooks (e.g. 'tiger' aka 'AOpen Chromebase Mini'), move
+display related bits from the chromebook .dtsi into a separate file
+to avoid redundant DT settings.
 
-Thanks for your hard work. I'm sure everyone in the Rockchip community
-is excited about finally having this support in U-Boot.
+The new file is included from the chromebook .dtsi and can be
+included by non-Chromebook devices with a display.
 
-On Tue, 25 Jun 2019 at 12:46, Jagan Teki <jagan@amarulasolutions.com> wrote:
-[..]
-> >
-> > Was it absolutely necessary to split these changes into 99 commits? I
-> > believe at least some of them can be squashed. Reviewing 99 patches
-> > isn't feasible.
->
-> Squashed, I'm not sure because the patches were created to satisfy the
-> bisectability and travis-ci, if you find any please feel to comment.
-> About the commit count, I have mentioned in v1, the idea of having
-> many commits in one series to have all lpddr4(-related) changes in one
-> place and also all the commit has incremental approach of supporting
-> rank detection and lpddr4. If require I'm open to sent next versions
-> as multiple series, no problem on that.
->
+Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+---
+This series is based on v5.3-armsoc/dts32 (f497ab6b4bb8 "ARM:
+dts: rockchip: Configure BT_HOST_WAKE as wake-up signal on
+veyron") plus the display timing patches from Doug:
 
-I strongly agree with Vasily, and I don't think multiple series makes it any
-better.
+https://lore.kernel.org/patchwork/patch/1057055/
+https://lore.kernel.org/patchwork/patch/1057053/
+---
+ .../boot/dts/rk3288-veyron-chromebook.dtsi    | 115 +---------------
+ arch/arm/boot/dts/rk3288-veyron-edp.dtsi      | 124 ++++++++++++++++++
+ 2 files changed, 125 insertions(+), 114 deletions(-)
+ create mode 100644 arch/arm/boot/dts/rk3288-veyron-edp.dtsi
 
-What's the reason for having two commits for:
+diff --git a/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi b/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi
+index 6568b5218dd0..3cb438ab5dd2 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi
++++ b/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi
+@@ -10,6 +10,7 @@
+ #include <dt-bindings/input/input.h>
+ #include "rk3288-veyron.dtsi"
+ #include "rk3288-veyron-analog-audio.dtsi"
++#include "rk3288-veyron-edp.dtsi"
+ #include "rk3288-veyron-sdmmc.dtsi"
+ 
+ / {
+@@ -18,50 +19,6 @@
+ 		i2c20 = &i2c_tunnel;
+ 	};
+ 
+-	backlight: backlight {
+-		compatible = "pwm-backlight";
+-		brightness-levels = <
+-			  0   1   2   3   4   5   6   7
+-			  8   9  10  11  12  13  14  15
+-			 16  17  18  19  20  21  22  23
+-			 24  25  26  27  28  29  30  31
+-			 32  33  34  35  36  37  38  39
+-			 40  41  42  43  44  45  46  47
+-			 48  49  50  51  52  53  54  55
+-			 56  57  58  59  60  61  62  63
+-			 64  65  66  67  68  69  70  71
+-			 72  73  74  75  76  77  78  79
+-			 80  81  82  83  84  85  86  87
+-			 88  89  90  91  92  93  94  95
+-			 96  97  98  99 100 101 102 103
+-			104 105 106 107 108 109 110 111
+-			112 113 114 115 116 117 118 119
+-			120 121 122 123 124 125 126 127
+-			128 129 130 131 132 133 134 135
+-			136 137 138 139 140 141 142 143
+-			144 145 146 147 148 149 150 151
+-			152 153 154 155 156 157 158 159
+-			160 161 162 163 164 165 166 167
+-			168 169 170 171 172 173 174 175
+-			176 177 178 179 180 181 182 183
+-			184 185 186 187 188 189 190 191
+-			192 193 194 195 196 197 198 199
+-			200 201 202 203 204 205 206 207
+-			208 209 210 211 212 213 214 215
+-			216 217 218 219 220 221 222 223
+-			224 225 226 227 228 229 230 231
+-			232 233 234 235 236 237 238 239
+-			240 241 242 243 244 245 246 247
+-			248 249 250 251 252 253 254 255>;
+-		default-brightness-level = <128>;
+-		enable-gpios = <&gpio7 RK_PA2 GPIO_ACTIVE_HIGH>;
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&bl_en>;
+-		pwms = <&pwm0 0 1000000 0>;
+-		post-pwm-on-delay-ms = <10>;
+-		pwm-off-delay-ms = <10>;
+-	};
+-
+ 	gpio-charger {
+ 		compatible = "gpio-charger";
+ 		charger-type = "mains";
+@@ -85,35 +42,6 @@
+ 		};
+ 	};
+ 
+-	panel: panel {
+-		compatible ="innolux,n116bge", "simple-panel";
+-		status = "okay";
+-		power-supply = <&vcc33_lcd>;
+-		backlight = <&backlight>;
+-
+-		panel-timing {
+-			clock-frequency = <74250000>;
+-			hactive = <1366>;
+-			hfront-porch = <136>;
+-			hback-porch = <60>;
+-			hsync-len = <30>;
+-			hsync-active = <0>;
+-			vactive = <768>;
+-			vfront-porch = <8>;
+-			vback-porch = <12>;
+-			vsync-len = <12>;
+-			vsync-active = <0>;
+-		};
+-
+-		ports {
+-			panel_in: port {
+-				panel_in_edp: endpoint {
+-					remote-endpoint = <&edp_out_panel>;
+-				};
+-			};
+-		};
+-	};
+-
+ 	/* A non-regulated voltage from power supply or battery */
+ 	vccsys: vccsys {
+ 		compatible = "regulator-fixed";
+@@ -155,33 +83,6 @@
+ 	};
+ };
+ 
+-&edp {
+-	status = "okay";
+-
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&edp_hpd>;
+-
+-	ports {
+-		edp_out: port@1 {
+-			reg = <1>;
+-			#address-cells = <1>;
+-			#size-cells = <0>;
+-			edp_out_panel: endpoint@0 {
+-				reg = <0>;
+-				remote-endpoint = <&panel_in_edp>;
+-			};
+-		};
+-	};
+-};
+-
+-&edp_phy {
+-	status = "okay";
+-};
+-
+-&pwm0 {
+-	status = "okay";
+-};
+-
+ &rk808 {
+ 	vcc11-supply = <&vcc_5v>;
+ 
+@@ -234,14 +135,6 @@
+ 	};
+ };
+ 
+-&vopl {
+-	status = "okay";
+-};
+-
+-&vopl_mmu {
+-	status = "okay";
+-};
+-
+ &pinctrl {
+ 	pinctrl-0 = <
+ 		/* Common for sleep and wake, but no owners */
+@@ -262,12 +155,6 @@
+ 		&suspend_l_sleep
+ 	>;
+ 
+-	backlight {
+-		bl_en: bl-en {
+-			rockchip,pins = <7 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
+-		};
+-	};
+-
+ 	buttons {
+ 		ap_lid_int_l: ap-lid-int-l {
+ 			rockchip,pins = <0 RK_PA6 RK_FUNC_GPIO &pcfg_pull_up>;
+diff --git a/arch/arm/boot/dts/rk3288-veyron-edp.dtsi b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
+new file mode 100644
+index 000000000000..5d812e9e78aa
+--- /dev/null
++++ b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
+@@ -0,0 +1,124 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Google Veyron (and derivatives) fragment for the edp displays
++ *
++ * Copyright 2019 Google LLC
++ */
++
++/ {
++	backlight: backlight {
++		compatible = "pwm-backlight";
++		brightness-levels = <
++			  0   1   2   3   4   5   6   7
++			  8   9  10  11  12  13  14  15
++			 16  17  18  19  20  21  22  23
++			 24  25  26  27  28  29  30  31
++			 32  33  34  35  36  37  38  39
++			 40  41  42  43  44  45  46  47
++			 48  49  50  51  52  53  54  55
++			 56  57  58  59  60  61  62  63
++			 64  65  66  67  68  69  70  71
++			 72  73  74  75  76  77  78  79
++			 80  81  82  83  84  85  86  87
++			 88  89  90  91  92  93  94  95
++			 96  97  98  99 100 101 102 103
++			104 105 106 107 108 109 110 111
++			112 113 114 115 116 117 118 119
++			120 121 122 123 124 125 126 127
++			128 129 130 131 132 133 134 135
++			136 137 138 139 140 141 142 143
++			144 145 146 147 148 149 150 151
++			152 153 154 155 156 157 158 159
++			160 161 162 163 164 165 166 167
++			168 169 170 171 172 173 174 175
++			176 177 178 179 180 181 182 183
++			184 185 186 187 188 189 190 191
++			192 193 194 195 196 197 198 199
++			200 201 202 203 204 205 206 207
++			208 209 210 211 212 213 214 215
++			216 217 218 219 220 221 222 223
++			224 225 226 227 228 229 230 231
++			232 233 234 235 236 237 238 239
++			240 241 242 243 244 245 246 247
++			248 249 250 251 252 253 254 255>;
++		default-brightness-level = <128>;
++		enable-gpios = <&gpio7 RK_PA2 GPIO_ACTIVE_HIGH>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&bl_en>;
++		pwms = <&pwm0 0 1000000 0>;
++		post-pwm-on-delay-ms = <10>;
++		pwm-off-delay-ms = <10>;
++	};
++
++	panel: panel {
++		compatible ="innolux,n116bge", "simple-panel";
++		status = "okay";
++		power-supply = <&vcc33_lcd>;
++		backlight = <&backlight>;
++
++		panel-timing {
++			clock-frequency = <74250000>;
++			hactive = <1366>;
++			hfront-porch = <136>;
++			hback-porch = <60>;
++			hsync-len = <30>;
++			hsync-active = <0>;
++			vactive = <768>;
++			vfront-porch = <8>;
++			vback-porch = <12>;
++			vsync-len = <12>;
++			vsync-active = <0>;
++		};
++
++		ports {
++			panel_in: port {
++				panel_in_edp: endpoint {
++					remote-endpoint = <&edp_out_panel>;
++				};
++			};
++		};
++	};
++};
++
++&edp {
++	status = "okay";
++
++	pinctrl-names = "default";
++	pinctrl-0 = <&edp_hpd>;
++
++	ports {
++		edp_out: port@1 {
++			reg = <1>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			edp_out_panel: endpoint@0 {
++				reg = <0>;
++				remote-endpoint = <&panel_in_edp>;
++			};
++		};
++	};
++};
++
++&edp_phy {
++	status = "okay";
++};
++
++&pinctrl {
++	backlight {
++		bl_en: bl-en {
++			rockchip,pins = <7 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++};
++
++&pwm0 {
++	status = "okay";
++};
++
++&vopl {
++	status = "okay";
++};
++
++&vopl_mmu {
++	status = "okay";
++};
+-- 
+2.22.0.410.gd8fdbe21b5-goog
 
-"ram: rk3399: Set lpddr4 MR3" and "ram: rk3399: Set lpddr4 MR12" ?
-
-Or splitting all the "ram: rk3399: Add ... macro" ?
-
-What do you loose if you merge the patches into one?
-
-I must confess I am very surprised, and don't really understand what do you
-gain with this excessive split. Normally, when we are adding a new feature,
-we normally don't need many patches, so it's the other way around, really.
-
-Bisectability is about not breaking existing support, but because the feature
-is new, normally this is easy.
-
-Thanks again!
-Eze
 
 _______________________________________________
 Linux-rockchip mailing list
