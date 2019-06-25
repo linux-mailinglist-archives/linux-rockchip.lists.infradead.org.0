@@ -2,94 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43CB955468
-	for <lists+linux-rockchip@lfdr.de>; Tue, 25 Jun 2019 18:26:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C264A55754
+	for <lists+linux-rockchip@lfdr.de>; Tue, 25 Jun 2019 20:42:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oGzwjF2XVHKMTTGPXxRVJe22Q636LhkplbVDXUywIk8=; b=fTnD7i30Br8D+e
-	BOny9aR1GPOYpJ7dmeNJbdDvQxbHvCiL6jz+s8ChINIDdLSthLkBuNo1s4CiPlVaI2gNXFDqA4nxH
-	kNKW7AekwL+Ot6Oqhg7hl91ip/U1CVQl2ZNUopSXUPD77UHdgGVs92P15ynf3IYlExRG4PEWcn4wa
-	HKGU8NycoRH2VQ9Sgu7CZBdV7qwNoAeIG6eNo9ZYJZV0jZfdD7ZD+Ke+fZ4Ln8mkVqIstXgIhWJ7Y
-	Fr49FbaCT2RDGWszf9BMzkB1+TfaBPFfT+tAhLU69RRYdg/qF+IOrXHNrRLwlXt36BE04r6U2EnNZ
-	BK1ymtMMjvX2x9e9KyrQ==;
+	List-Owner; bh=m0ajIh4rbxwnRKQI9TB+T7BEOzdJr8xemAW9+g9X80s=; b=sumDhrmCn3BV8T
+	0Z9oGludGDaVbG+vbuN2uBFlh+ugynW7OshAHKE5BL/71VXmxdLFz3UwDwDAUZHbfFZt4dUCpmbZ4
+	TiBnUTjDU/a3r+WLK1POObpXbIS5Resy6dt2T8DzPD/soX/B4Q3s/ZBnVASgD8BO+f2Y5L65/VHpL
+	aZYD+lToaQ/B5Bzk5cj6tiXI4zLvnmgbr3IaC2R8vdEmXNgZiO6E6+M8n2h9285UITkBrEXadAUy8
+	zQl5y5CILmiMoiVxOHsGkKfhoDhQ6mMVzmXJc6oZVC+p2i2DijZh7NEYWqVrO9U5rRHG8ZVfTRQ5l
+	pujJmSn77cyAs5wutnWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfoHR-0007w9-1w; Tue, 25 Jun 2019 16:26:49 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1hfqOx-0006Gt-Rs; Tue, 25 Jun 2019 18:42:44 +0000
+Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfoHN-0007vq-FI
- for linux-rockchip@lists.infradead.org; Tue, 25 Jun 2019 16:26:46 +0000
-Received: by mail-io1-xd43.google.com with SMTP id w25so199501ioc.8
- for <linux-rockchip@lists.infradead.org>; Tue, 25 Jun 2019 09:26:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ id 1hfqOr-0006GH-AH
+ for linux-rockchip@lists.infradead.org; Tue, 25 Jun 2019 18:42:39 +0000
+Received: by mail-vs1-xe42.google.com with SMTP id v129so11578705vsb.11
+ for <linux-rockchip@lists.infradead.org>; Tue, 25 Jun 2019 11:42:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=vanguardiasur-com-ar.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=gwY+oa4CU+2jLrCTvWh4nbvrkKnM/pKWMZeBvxC7ZU0=;
- b=UnAYvApESHYhIZR/6fC9tpaOr5kt+ZnKyBE9mrQhqGpqI2byLeJRHdhAOAAgquPl1T
- HbDW11YvB3zM5qCXzEXKmtW4ZCBN6EK+1UjFx+KwSt8v0elkLfQ0eK3KSju0odSDKVlW
- bKPaxgduKYKyR8eFnQWp8Tn2593l1UvURVSt8=
+ :cc; bh=5Q+K9YNp3Zl3ryUS0ETgQtC7UHccnMAF9AMhMMm4j/A=;
+ b=D09tLf5Hnba5BD4W0ni2MpyUyIy3NDKdMhO4lRlHKIqU68hMdS0zQC2pNmLQqpCFIY
+ oqtnduFmv4qKzxsZdsi6G/Ot18yv4CYVQLRX8aoFDIeShy/ct/FslJircLLae7JgoD2z
+ s39YsYRCTzAabBRmrk6/Q32Gm9a5jwJW+RSSVLBKJf1/XpPOU6OJmeUdGMf8oM6myhv7
+ FoBWs6az2Vb0oVBg5UPLTn+qGyHkLXzntUJ6JJlzO8Wq77sh5PP++pSNTYNOAX5Q0dBd
+ 6dYjRvisPdcMjmkHuonyc8rWRK4SgYripiB00JhyNeDKKjMo/A5GdiVJnMyl0E7z925p
+ fYFg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=gwY+oa4CU+2jLrCTvWh4nbvrkKnM/pKWMZeBvxC7ZU0=;
- b=gXzGEPw7gzinyBavfi8LOwMCT21TyT34g9HbYKl0rMfAYJVvqLCTOK02nzmxZJPFrI
- r/+h7qcOyHR7amka+2+w+AFEpN4e0wERPfczSLhDOtnmR/t5cbVKnczY/cbCNafSeK5S
- poruceUbnudIZNrCT2gOKiCtijNjj7RVrOSwT9s8v6dmprUAiQJAZffN8oZs48B9xNZj
- x+6rpvvNKjJp0MA5Y7hEeSfbxZ730+h8O0b3asjlTyLp3sb+kqv75xMqXl/fEG0sWCzF
- naGryCqhI9RP5vsi/C4SzaOUEP6fGHgzi3+YurvYvNBHQ5eiZJ/8hzZtNw7oKFBih39e
- /7fg==
-X-Gm-Message-State: APjAAAUz+WkyXw7EnugWlJ/sncJ8sbb+PTpajqqJBYs0RprTQsTAq4+f
- Mt8SDucugjXsfB2Iqc0FpA6d9M7KJKY=
-X-Google-Smtp-Source: APXvYqyJMkAndgOwoB6HjD+B2z31XquDl3swrEFt1NVfYjxl6xqjsoA81ILPYIRQNzEJLFBa33qDkg==
-X-Received: by 2002:a6b:7606:: with SMTP id g6mr7642784iom.288.1561480004358; 
- Tue, 25 Jun 2019 09:26:44 -0700 (PDT)
-Received: from mail-io1-f45.google.com (mail-io1-f45.google.com.
- [209.85.166.45])
- by smtp.gmail.com with ESMTPSA id w23sm21529271ioa.51.2019.06.25.09.26.43
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Tue, 25 Jun 2019 09:26:43 -0700 (PDT)
-Received: by mail-io1-f45.google.com with SMTP id w25so199331ioc.8
- for <linux-rockchip@lists.infradead.org>; Tue, 25 Jun 2019 09:26:43 -0700 (PDT)
-X-Received: by 2002:a6b:5103:: with SMTP id f3mr7084335iob.142.1561480003100; 
- Tue, 25 Jun 2019 09:26:43 -0700 (PDT)
+ bh=5Q+K9YNp3Zl3ryUS0ETgQtC7UHccnMAF9AMhMMm4j/A=;
+ b=LFlSR+C4I5ZbWtyhUXHH3/eZ9H2RMQU+2qU3ttVXjmRywJbdu5BVX4s1syYeGGeRKM
+ sRu+6W2CGb+QIvsESczIl+aFTg9Y5gQgQWjYAb0IKK/8/3jWhoV+NQGoScBrpxE5uMYI
+ TugaEyWbbWrQBRy7cnlle1uMz7YyuScyteSyMDqZF34J4gK1iGI0Self7umZ+pjY2tgW
+ ueRhyxbSEeTySnWLxx2qLvtbLpRnreyjt1Wltz5jkXaF0p2UAj08RA67uN0jZqRCYl9C
+ 6GSPhTY14FNmZcs5A2h7yzpgcJS47ckVJ3i7Mx8UQGgDSOmM0SwRBAZSEGGGoJO7opkk
+ fD3w==
+X-Gm-Message-State: APjAAAWSk6S6drQ9BSkPlCynDStEwV+2OxW2WIT8mXIZXt91p6dsPOBe
+ 6cDr6Qoqs4CBbhHV3nOzV4Uouh+z3+5ecEHIj7nl8w==
+X-Google-Smtp-Source: APXvYqy7jR/R71HfJXWIgZ/96d8MHOxBg1xPlHKGLB/Hv23XEvmmDL+JO5E8uanl4mrxSIht7KdUHh16AldOhnuiTsI=
+X-Received: by 2002:a67:e244:: with SMTP id w4mr187366vse.176.1561488154406;
+ Tue, 25 Jun 2019 11:42:34 -0700 (PDT)
 MIME-Version: 1.0
-References: <CGME20190619211151epcas3p4dbb163c034afa4063869c761b93e24b1@epcas3p4.samsung.com>
- <20190619210718.134951-1-dianders@chromium.org>
- <bec87373-48cc-0c55-9662-a74a7d2a47a0@samsung.com>
-In-Reply-To: <bec87373-48cc-0c55-9662-a74a7d2a47a0@samsung.com>
-From: Doug Anderson <dianders@chromium.org>
-Date: Tue, 25 Jun 2019 09:26:28 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=WJBkYfRznh6aAyvgKgHb8-AG0hMORdKA0BXCL89wG_7w@mail.gmail.com>
-Message-ID: <CAD=FV=WJBkYfRznh6aAyvgKgHb8-AG0hMORdKA0BXCL89wG_7w@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] drm/bridge/synopsys: dw-hdmi: Handle audio for
- more clock rates
-To: Andrzej Hajda <a.hajda@samsung.com>
+References: <20190617073252.27810-1-jagan@amarulasolutions.com>
+ <CA+E=qVfuy-UYUWujYC8fG+Os4tefPdYzFECkZZdoctvmiSMzcA@mail.gmail.com>
+ <CAMty3ZBr3oy1PxQ3C6fLQZAfPR3Dio7pX0m+y7LApAMQr5gbkA@mail.gmail.com>
+In-Reply-To: <CAMty3ZBr3oy1PxQ3C6fLQZAfPR3Dio7pX0m+y7LApAMQr5gbkA@mail.gmail.com>
+From: Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>
+Date: Tue, 25 Jun 2019 15:42:23 -0300
+Message-ID: <CAAEAJfAxgF2JqOUhjXLmn5RVGMLbM2-7JqsyZgXvfU6Q9ScK+A@mail.gmail.com>
+Subject: Re: [U-Boot] [PATCH v2 00/99] ram: rk3399: Add LPDDR4 support
+To: Jagan Teki <jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_092645_539504_09E58A77 
-X-CRM114-Status: GOOD (  24.15  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190625_114237_499478_377F8A0A 
+X-CRM114-Status: GOOD (  11.56  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,95 +89,58 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Jernej Skrabec <jernej.skrabec@siol.net>,
- =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
- Jonas Karlman <jonas@kwiboo.se>, Maxime Ripard <maxime.ripard@bootlin.com>,
- David Airlie <airlied@linux.ie>, Neil Armstrong <narmstrong@baylibre.com>,
- LKML <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
+Cc: YouMin Chen <cym@rock-chips.com>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Sean Paul <seanpaul@chromium.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Dylan Reid <dgreid@chromium.org>,
- Jerome Brunet <jbrunet@baylibre.com>, Sam Ravnborg <sam@ravnborg.org>,
- Cheng-Yi Chiang <cychiang@chromium.org>
+ Akash Gajjar <gajjar04akash@gmail.com>, Vasily Khoruzhick <anarsoul@gmail.com>,
+ U-Boot Mailing List <u-boot@lists.denx.de>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-amarula <linux-amarula@amarulasolutions.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Jagan,
 
+Thanks for your hard work. I'm sure everyone in the Rockchip community
+is excited about finally having this support in U-Boot.
 
-On Tue, Jun 25, 2019 at 9:07 AM Andrzej Hajda <a.hajda@samsung.com> wrote:
->
-> On 19.06.2019 23:07, Douglas Anderson wrote:
-> > Let's add some better support for HDMI audio to dw_hdmi.
-> > Specifically:
+On Tue, 25 Jun 2019 at 12:46, Jagan Teki <jagan@amarulasolutions.com> wrote:
+[..]
 > >
-> > 1. For 44.1 kHz audio the old code made the assumption that an N of
-> > 6272 was right most of the time.  That wasn't true and the new table
-> > should pick a more ideal value.
+> > Was it absolutely necessary to split these changes into 99 commits? I
+> > believe at least some of them can be squashed. Reviewing 99 patches
+> > isn't feasible.
 >
+> Squashed, I'm not sure because the patches were created to satisfy the
+> bisectability and travis-ci, if you find any please feel to comment.
+> About the commit count, I have mentioned in v1, the idea of having
+> many commits in one series to have all lpddr4(-related) changes in one
+> place and also all the commit has incremental approach of supporting
+> rank detection and lpddr4. If require I'm open to sent next versions
+> as multiple series, no problem on that.
 >
-> Why? I ask because it is against recommendation from HDMI specs.
 
-The place where it does matter (and why I originally did this work) is
-when you don't have auto-CTS.  In such a case you really need "N" and
-"CTS" to make the math work and both be integral.  This makes sure
-that you don't slowly accumulate offsets.  I'm hoping that this point
-should be non-controversial so I won't argue it more.
+I strongly agree with Vasily, and I don't think multiple series makes it any
+better.
 
-I am an admitted non-expert, but I have a feeling that with Auto-CTS
-either the old number or the new numbers would produce pretty much the
-same experience.  AKA: anyone using auto-CTS won't notice any change
-at all.  I guess the question is: with Auto-CTS should you pick the
-"ideal" 6272 or a value that allows CTS to be the closest to integral
-as possible.  By reading between the lines of the spec, I decided that
-it was slightly more important to allow for an integral CTS.  If
-achieving an integral CTS wasn't a goal then the spec wouldn't even
-have listed special cases for any of the clock rates.  We would just
-be using the ideal N and Auto-CTS and be done with it.  The whole
-point of the tables they list is to make CTS integral.
+What's the reason for having two commits for:
 
+"ram: rk3399: Set lpddr4 MR3" and "ram: rk3399: Set lpddr4 MR12" ?
 
-> > 2. The new table has values from the HDMI spec for 297 MHz and 594
-> > MHz.
-> >
-> > 3. There is now code to try to come up with a more idea N/CTS for
-> > clock rates that aren't in the table.  This code is a bit slow because
-> > it iterates over every possible value of N and picks the best one, but
-> > it should make a good fallback.
-> >
-> > NOTES:
-> > - The oddest part of this patch comes about because computing the
-> >   ideal N/CTS means knowing the _exact_ clock rate, not a rounded
-> >   version of it.  The drm framework makes this harder by rounding
-> >   rates to kHz, but even if it didn't there might be cases where the
-> >   ideal rate could only be calculated if we knew the real
-> >   (non-integral) rate.  This means that in cases where we know (or
-> >   believe) that the true rate is something other than the rate we are
-> >   told by drm.
-> > - This patch makes much less of a difference after the patch
-> >   ("drm/bridge: dw-hdmi: Use automatic CTS generation mode when using
-> >   non-AHB audio"), at least if you're using I2S audio.  The main goal
-> >   of picking a good N is to make it possible to get a nice integral
-> >   CTS value, but if CTS is automatic then that's much less critical.
->
->
-> As I said above HDMI recommendations are different from those from your
-> patch. Please elaborate why?
->
-> Btw I've seen your old patches introducing recommended N/CTS calculation
-> helpers in HDMI framework, unfortunately abandoned due to lack of interest.
->
-> Maybe resurrecting them would be a good idea, with assumption there will
-> be users :)
+Or splitting all the "ram: rk3399: Add ... macro" ?
 
-I have old patches introducing this into the HDMI framework?  I don't
-remember them / can't find them.  Can you provide a pointer?
+What do you loose if you merge the patches into one?
 
--Doug
+I must confess I am very surprised, and don't really understand what do you
+gain with this excessive split. Normally, when we are adding a new feature,
+we normally don't need many patches, so it's the other way around, really.
+
+Bisectability is about not breaking existing support, but because the feature
+is new, normally this is easy.
+
+Thanks again!
+Eze
 
 _______________________________________________
 Linux-rockchip mailing list
