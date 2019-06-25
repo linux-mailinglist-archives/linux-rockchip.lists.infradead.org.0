@@ -2,125 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A7E2553FE
-	for <lists+linux-rockchip@lfdr.de>; Tue, 25 Jun 2019 18:08:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43CB955468
+	for <lists+linux-rockchip@lfdr.de>; Tue, 25 Jun 2019 18:26:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V2j62vq9LQtQ9wP1MiZT5M08cbX8wNztjH0x/QmX5Yo=; b=se06evPwWCWkYQ
-	O5lunXw2p+XcfgwiZFMTDvkSj9tDl3L2ewGbDK506xZYkC9MklE7hrTFW4zF63n08nOho1+HUZ/No
-	rOgqyilik3yS9S9OGC5yQhCaSOhFcVO4SohHvtgWIp8415Qch7rA0O1H3BBTKzpMTzMhILYR6ochw
-	9uKFtTqS5GMBvFKYU03iXPch5SLpFPHFOeXj6dhg/YcrKoqrc0PmPJvIMDXx26ffuiEortoKE1Az2
-	/EyI+vfERlxGXKJJTe67dQO06ipJO5sl/2naDLQ//sa8qvK4l16wpq6kOeyIuTPNxAu2eoXx96ebK
-	alQUDAfbAjzKPYgIASMw==;
+	List-Owner; bh=oGzwjF2XVHKMTTGPXxRVJe22Q636LhkplbVDXUywIk8=; b=fTnD7i30Br8D+e
+	BOny9aR1GPOYpJ7dmeNJbdDvQxbHvCiL6jz+s8ChINIDdLSthLkBuNo1s4CiPlVaI2gNXFDqA4nxH
+	kNKW7AekwL+Ot6Oqhg7hl91ip/U1CVQl2ZNUopSXUPD77UHdgGVs92P15ynf3IYlExRG4PEWcn4wa
+	HKGU8NycoRH2VQ9Sgu7CZBdV7qwNoAeIG6eNo9ZYJZV0jZfdD7ZD+Ke+fZ4Ln8mkVqIstXgIhWJ7Y
+	Fr49FbaCT2RDGWszf9BMzkB1+TfaBPFfT+tAhLU69RRYdg/qF+IOrXHNrRLwlXt36BE04r6U2EnNZ
+	BK1ymtMMjvX2x9e9KyrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfnzJ-0000OV-0m; Tue, 25 Jun 2019 16:08:05 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1hfoHR-0007w9-1w; Tue, 25 Jun 2019 16:26:49 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfnzC-0000MK-2r
- for linux-rockchip@lists.infradead.org; Tue, 25 Jun 2019 16:08:02 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190625160752euoutp023ace4c35a0fcb99e8959d5f4d12eff19~rfMLrSXI_0428104281euoutp02b
- for <linux-rockchip@lists.infradead.org>; Tue, 25 Jun 2019 16:07:52 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20190625160752euoutp023ace4c35a0fcb99e8959d5f4d12eff19~rfMLrSXI_0428104281euoutp02b
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1561478872;
- bh=fre5zIWNZHt31JozVg5a9l18ipF4snQePDt6EgEKEes=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=Tv9AfZHnnOPBa/4Ubpa+kj/nq1VixztsSuB9xc/442AguGbaQ31npEpicT6mvY0iH
- 1hLRpW4wyA8Z2F3ys3mJVsW4Fst04gHXcyjcV8BKUviTVwBLJO659LK86YXfceEFhz
- NBjDa1K0+/1BiYsDQOcXNMuADQ2XT9yjZhsAZbhI=
-Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20190625160751eucas1p14b0561a6ac0cbd25c69e238d7d1de358~rfMK2Q0Wb0882608826eucas1p1F;
- Tue, 25 Jun 2019 16:07:51 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges2new.samsung.com (EUCPMTA) with SMTP id D1.4E.04377.7D6421D5; Tue, 25
- Jun 2019 17:07:51 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20190625160750eucas1p1d8c9f283ac7d7d843d6ec8900d894bbe~rfMJmns_W0882608826eucas1p1E;
- Tue, 25 Jun 2019 16:07:50 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190625160749eusmtrp168f275b3af637f17a4dfc60b8e87b6f1~rfMJYa5gf1029110291eusmtrp1S;
- Tue, 25 Jun 2019 16:07:49 +0000 (GMT)
-X-AuditID: cbfec7f4-113ff70000001119-a5-5d1246d7e2d9
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id FA.C3.04140.5D6421D5; Tue, 25
- Jun 2019 17:07:49 +0100 (BST)
-Received: from [106.120.51.74] (unknown [106.120.51.74]) by
- eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20190625160749eusmtip2210172925376a7599d9f78026677b5ca~rfMIpXUre2973029730eusmtip2q;
- Tue, 25 Jun 2019 16:07:49 +0000 (GMT)
-Subject: Re: [PATCH v2 1/2] drm/bridge/synopsys: dw-hdmi: Handle audio for
- more clock rates
-To: Douglas Anderson <dianders@chromium.org>, Laurent Pinchart
- <Laurent.pinchart@ideasonboard.com>, seanpaul@chromium.org
-From: Andrzej Hajda <a.hajda@samsung.com>
-Message-ID: <bec87373-48cc-0c55-9662-a74a7d2a47a0@samsung.com>
-Date: Tue, 25 Jun 2019 18:07:47 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hfoHN-0007vq-FI
+ for linux-rockchip@lists.infradead.org; Tue, 25 Jun 2019 16:26:46 +0000
+Received: by mail-io1-xd43.google.com with SMTP id w25so199501ioc.8
+ for <linux-rockchip@lists.infradead.org>; Tue, 25 Jun 2019 09:26:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=gwY+oa4CU+2jLrCTvWh4nbvrkKnM/pKWMZeBvxC7ZU0=;
+ b=UnAYvApESHYhIZR/6fC9tpaOr5kt+ZnKyBE9mrQhqGpqI2byLeJRHdhAOAAgquPl1T
+ HbDW11YvB3zM5qCXzEXKmtW4ZCBN6EK+1UjFx+KwSt8v0elkLfQ0eK3KSju0odSDKVlW
+ bKPaxgduKYKyR8eFnQWp8Tn2593l1UvURVSt8=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=gwY+oa4CU+2jLrCTvWh4nbvrkKnM/pKWMZeBvxC7ZU0=;
+ b=gXzGEPw7gzinyBavfi8LOwMCT21TyT34g9HbYKl0rMfAYJVvqLCTOK02nzmxZJPFrI
+ r/+h7qcOyHR7amka+2+w+AFEpN4e0wERPfczSLhDOtnmR/t5cbVKnczY/cbCNafSeK5S
+ poruceUbnudIZNrCT2gOKiCtijNjj7RVrOSwT9s8v6dmprUAiQJAZffN8oZs48B9xNZj
+ x+6rpvvNKjJp0MA5Y7hEeSfbxZ730+h8O0b3asjlTyLp3sb+kqv75xMqXl/fEG0sWCzF
+ naGryCqhI9RP5vsi/C4SzaOUEP6fGHgzi3+YurvYvNBHQ5eiZJ/8hzZtNw7oKFBih39e
+ /7fg==
+X-Gm-Message-State: APjAAAUz+WkyXw7EnugWlJ/sncJ8sbb+PTpajqqJBYs0RprTQsTAq4+f
+ Mt8SDucugjXsfB2Iqc0FpA6d9M7KJKY=
+X-Google-Smtp-Source: APXvYqyJMkAndgOwoB6HjD+B2z31XquDl3swrEFt1NVfYjxl6xqjsoA81ILPYIRQNzEJLFBa33qDkg==
+X-Received: by 2002:a6b:7606:: with SMTP id g6mr7642784iom.288.1561480004358; 
+ Tue, 25 Jun 2019 09:26:44 -0700 (PDT)
+Received: from mail-io1-f45.google.com (mail-io1-f45.google.com.
+ [209.85.166.45])
+ by smtp.gmail.com with ESMTPSA id w23sm21529271ioa.51.2019.06.25.09.26.43
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Tue, 25 Jun 2019 09:26:43 -0700 (PDT)
+Received: by mail-io1-f45.google.com with SMTP id w25so199331ioc.8
+ for <linux-rockchip@lists.infradead.org>; Tue, 25 Jun 2019 09:26:43 -0700 (PDT)
+X-Received: by 2002:a6b:5103:: with SMTP id f3mr7084335iob.142.1561480003100; 
+ Tue, 25 Jun 2019 09:26:43 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190619210718.134951-1-dianders@chromium.org>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA01Sa0hTYRju23d2PJNWn8diLxVFg35Y5I2Ij5Kh0eX0LyoiMquVJw11xeYl
- k3A/rEwzssTKTC00hwiZ5ryVl2Xq0JXLLDPCaYZUDiHnat2s7Rj573nf533e93k+Pg7zRnYZ
- d0KXLOp12kQ168+YuzzP17/ezseEPhteTPOeWWU0z/xARmfN+ZiW9gyz1Havg6UvZ6ZYOjv2
- WU4nxzoxHfz6EVPr5CBDL+aX+9GB5mKWfnHMYur42Iao5XI0NXnqEX1XY0ORAcLU0Dk/oaQ6
- Q7hltDPCY3cZI9zKvikXeq68kAkNbodcGMntlgl15ZlCeeEgK7TnXWOEhlclWJiuXblLecA/
- IlZMPJEq6kM0R/zjnd92nJrdd7rVbGWMyBOVgzgOyAYYvnMoB/lzPDEhMBVPyqXCheDCL4dM
- KqYRZOfV+OUghU9hbMvHElGJwPO5FUmFE8Hk05cy71QgiQFbjwt78RKSAW8/zPhWYXIOQ1fd
- cx/BkiD4VfeG9WIl0cCLu9N+XlMMWQNdnRu97aVkP7iaapE0EgDWm+OMFytIBEyU2n1STFZB
- g7MYS1gFw+OlvltAGjn43luCJNtboSXfPYcD4VP3w7k4K6D32iVGwpkwYsrCkjgbQX1NE5aI
- zfCk2y73msN/Td9vDpHaUdA3VC2XHnIRDDkDJA+L4Kr5OpbaSsg+z0vTq2HEVj+3UAUV/TPs
- FaQumpesaF6aonlpiv7fLUNMFVKJKYakONEQrhPTgg3aJEOKLi742MmkWvT3X/b+7nY1ouaf
- Ry2IcEi9UGlcxcfwcm2qIT3JgoDD6iXKCi2J4ZWx2vQzov7kYX1KomiwoOUco1YpMxY4onkS
- p00WE0TxlKj/x8o4xTIjivzUPrC4Lz3U7j5rjU8YICh39EeVfWPB9fPHT7sVIe9GTOWVodsK
- HrWHr9trTtkZ6grSHbytGU9lBtN2KyNW81W97ytzOx4X9q8ptRy98f2u2Nbpac5NLqjf0iKz
- kyBFcllHxfr+AadmYp8t8ep+DRvWqtqzKYxeGFVvyMya2KpmDPHasLVYb9D+AeaBy26TAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprMKsWRmVeSWpSXmKPExsVy+t/xe7pX3YRiDeb1Wlr0njvJZNG7bSOT
- xf9tE5kt5p+4xWZxdtlBNosrX9+zWfx/9JrV4s2jI8wWV7+/ZLY4+eYqi0XnxCXsFpd3zWGz
- +PTgP7PFg5f7GS0O9UVbrPi5ldHi7oazjA6CHu9vtLJ7zFtT7TG74SKLx95vC1g8ZnfMZPU4
- MeESk8f2bw9YPe53H2fy2Lyk3mPJtKtsHgd6J7N4bL82j9nj8ya5AN4oPZui/NKSVIWM/OIS
- W6VoQwsjPUNLCz0jE0s9Q2PzWCsjUyV9O5uU1JzMstQifbsEvYy3P9wL/odV7Nt2kqWB8adj
- FyMnh4SAiUTD/onMXYxcHEICSxklNpyaygqREJfYPf8tM4QtLPHnWhcbRNFrRon+9vtMIAlh
- gViJsye+gBWJCFRL/P17jhWkiFmglVni2OnrLCAJIYF+RonXByNAbDYBTYm/m2+ygdi8AnYS
- lxZ9Zu9i5OBgEVCVOHbEDCQsKhAhMXtXAwtEiaDEyZlPwGxOARuJ5/MvgrUyC6hL/Jl3iRnC
- lpfY/nYOlC0ucevJfKYJjEKzkLTPQtIyC0nLLCQtCxhZVjGKpJYW56bnFhvpFSfmFpfmpesl
- 5+duYgQmiG3Hfm7Zwdj1LvgQowAHoxIPb4O8UKwQa2JZcWXuIUYJDmYlEd6liQKxQrwpiZVV
- qUX58UWlOanFhxhNgX6byCwlmpwPTF55JfGGpobmFpaG5sbmxmYWSuK8HQIHY4QE0hNLUrNT
- UwtSi2D6mDg4pRoYr6ra3bM7qhYqEBuz4wz3JKvnM5gu8+2N6i5l3JRk+SX5xbFKprKatu7i
- 4/8+dB7WUfyy2W/rrz+7p5RUbBC7+4lVYfG0PT9F9I9vagqQFr9hULCtor7e54G55c4LxqJL
- cmYdlrNn/lCeeXmXaYD+pZdLFD6+fl0W4HZiNjfzdp+jwTzHtZvrlFiKMxINtZiLihMBiHVv
- 4SYDAAA=
-X-CMS-MailID: 20190625160750eucas1p1d8c9f283ac7d7d843d6ec8900d894bbe
-X-Msg-Generator: CA
-X-RootMTR: 20190619211151epcas3p4dbb163c034afa4063869c761b93e24b1
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190619211151epcas3p4dbb163c034afa4063869c761b93e24b1
 References: <CGME20190619211151epcas3p4dbb163c034afa4063869c761b93e24b1@epcas3p4.samsung.com>
  <20190619210718.134951-1-dianders@chromium.org>
+ <bec87373-48cc-0c55-9662-a74a7d2a47a0@samsung.com>
+In-Reply-To: <bec87373-48cc-0c55-9662-a74a7d2a47a0@samsung.com>
+From: Doug Anderson <dianders@chromium.org>
+Date: Tue, 25 Jun 2019 09:26:28 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=WJBkYfRznh6aAyvgKgHb8-AG0hMORdKA0BXCL89wG_7w@mail.gmail.com>
+Message-ID: <CAD=FV=WJBkYfRznh6aAyvgKgHb8-AG0hMORdKA0BXCL89wG_7w@mail.gmail.com>
+Subject: Re: [PATCH v2 1/2] drm/bridge/synopsys: dw-hdmi: Handle audio for
+ more clock rates
+To: Andrzej Hajda <a.hajda@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_090759_194224_D08E35B4 
-X-CRM114-Status: GOOD (  33.94  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190625_092645_539504_09E58A77 
+X-CRM114-Status: GOOD (  24.15  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -141,326 +102,95 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: jernej.skrabec@siol.net, heiko@sntech.de, narmstrong@baylibre.com,
- maxime.ripard@bootlin.com, David Airlie <airlied@linux.ie>, jonas@kwiboo.se,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-rockchip@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- dgreid@chromium.org, jbrunet@baylibre.com, Sam Ravnborg <sam@ravnborg.org>,
- cychiang@chromium.org
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>,
+ =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
+ Jonas Karlman <jonas@kwiboo.se>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ David Airlie <airlied@linux.ie>, Neil Armstrong <narmstrong@baylibre.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Sean Paul <seanpaul@chromium.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Dylan Reid <dgreid@chromium.org>,
+ Jerome Brunet <jbrunet@baylibre.com>, Sam Ravnborg <sam@ravnborg.org>,
+ Cheng-Yi Chiang <cychiang@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 19.06.2019 23:07, Douglas Anderson wrote:
-> Let's add some better support for HDMI audio to dw_hdmi.
-> Specifically:
+Hi,
+
+
+On Tue, Jun 25, 2019 at 9:07 AM Andrzej Hajda <a.hajda@samsung.com> wrote:
 >
-> 1. For 44.1 kHz audio the old code made the assumption that an N of
-> 6272 was right most of the time.  That wasn't true and the new table
-> should pick a more ideal value.
-
-
-Why? I ask because it is against recommendation from HDMI specs.
-
-
-
+> On 19.06.2019 23:07, Douglas Anderson wrote:
+> > Let's add some better support for HDMI audio to dw_hdmi.
+> > Specifically:
+> >
+> > 1. For 44.1 kHz audio the old code made the assumption that an N of
+> > 6272 was right most of the time.  That wasn't true and the new table
+> > should pick a more ideal value.
 >
-> 2. The new table has values from the HDMI spec for 297 MHz and 594
-> MHz.
 >
-> 3. There is now code to try to come up with a more idea N/CTS for
-> clock rates that aren't in the table.  This code is a bit slow because
-> it iterates over every possible value of N and picks the best one, but
-> it should make a good fallback.
+> Why? I ask because it is against recommendation from HDMI specs.
+
+The place where it does matter (and why I originally did this work) is
+when you don't have auto-CTS.  In such a case you really need "N" and
+"CTS" to make the math work and both be integral.  This makes sure
+that you don't slowly accumulate offsets.  I'm hoping that this point
+should be non-controversial so I won't argue it more.
+
+I am an admitted non-expert, but I have a feeling that with Auto-CTS
+either the old number or the new numbers would produce pretty much the
+same experience.  AKA: anyone using auto-CTS won't notice any change
+at all.  I guess the question is: with Auto-CTS should you pick the
+"ideal" 6272 or a value that allows CTS to be the closest to integral
+as possible.  By reading between the lines of the spec, I decided that
+it was slightly more important to allow for an integral CTS.  If
+achieving an integral CTS wasn't a goal then the spec wouldn't even
+have listed special cases for any of the clock rates.  We would just
+be using the ideal N and Auto-CTS and be done with it.  The whole
+point of the tables they list is to make CTS integral.
+
+
+> > 2. The new table has values from the HDMI spec for 297 MHz and 594
+> > MHz.
+> >
+> > 3. There is now code to try to come up with a more idea N/CTS for
+> > clock rates that aren't in the table.  This code is a bit slow because
+> > it iterates over every possible value of N and picks the best one, but
+> > it should make a good fallback.
+> >
+> > NOTES:
+> > - The oddest part of this patch comes about because computing the
+> >   ideal N/CTS means knowing the _exact_ clock rate, not a rounded
+> >   version of it.  The drm framework makes this harder by rounding
+> >   rates to kHz, but even if it didn't there might be cases where the
+> >   ideal rate could only be calculated if we knew the real
+> >   (non-integral) rate.  This means that in cases where we know (or
+> >   believe) that the true rate is something other than the rate we are
+> >   told by drm.
+> > - This patch makes much less of a difference after the patch
+> >   ("drm/bridge: dw-hdmi: Use automatic CTS generation mode when using
+> >   non-AHB audio"), at least if you're using I2S audio.  The main goal
+> >   of picking a good N is to make it possible to get a nice integral
+> >   CTS value, but if CTS is automatic then that's much less critical.
 >
-> NOTES:
-> - The oddest part of this patch comes about because computing the
->   ideal N/CTS means knowing the _exact_ clock rate, not a rounded
->   version of it.  The drm framework makes this harder by rounding
->   rates to kHz, but even if it didn't there might be cases where the
->   ideal rate could only be calculated if we knew the real
->   (non-integral) rate.  This means that in cases where we know (or
->   believe) that the true rate is something other than the rate we are
->   told by drm.
-> - This patch makes much less of a difference after the patch
->   ("drm/bridge: dw-hdmi: Use automatic CTS generation mode when using
->   non-AHB audio"), at least if you're using I2S audio.  The main goal
->   of picking a good N is to make it possible to get a nice integral
->   CTS value, but if CTS is automatic then that's much less critical.
-
-
-As I said above HDMI recommendations are different from those from your
-patch. Please elaborate why?
-
-Btw I've seen your old patches introducing recommended N/CTS calculation
-helpers in HDMI framework, unfortunately abandoned due to lack of interest.
-
-Maybe resurrecting them would be a good idea, with assumption there will
-be users :)
-
-
-Regards
-
-Andrzej
-
-
 >
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> ---
+> As I said above HDMI recommendations are different from those from your
+> patch. Please elaborate why?
 >
-> Changes in v2:
-> - Atop ("drm/bridge: dw-hdmi: Use automatic CTS generation mode when
->   using non-AHB audio").
-> - Split out the ability of a platform to provide custom tables.
+> Btw I've seen your old patches introducing recommended N/CTS calculation
+> helpers in HDMI framework, unfortunately abandoned due to lack of interest.
 >
->  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 203 +++++++++++++++++-----
->  1 file changed, 162 insertions(+), 41 deletions(-)
->
-> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> index de4c3669c83f..7cdffebcc7cb 100644
-> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> @@ -60,6 +60,82 @@ enum hdmi_datamap {
->  	YCbCr422_12B = 0x12,
->  };
->  
-> +struct dw_hdmi_audio_tmds_n {
-> +	unsigned long tmds;
-> +	unsigned int n_32k;
-> +	unsigned int n_44k1;
-> +	unsigned int n_48k;
-> +};
-> +
-> +/*
-> + * Unless otherwise noted, entries in this table are 100% optimization.
-> + * Values can be obtained from hdmi_compute_n() but that function is
-> + * slow so we pre-compute values we expect to see.
-> + *
-> + * All 32k and 48k values are expected to be the same (due to the way
-> + * the math works) for any rate that's an exact kHz.
-> + *
-> + * If a particular platform knows that it makes a rate slightly
-> + * differently then it should add a platform-specific match.
-> + */
-> +static const struct dw_hdmi_audio_tmds_n common_tmds_n_table[] = {
-> +	/* Doesn't match computations, assumes real clock = 25.2 MHz / 1.001 */
-> +	{ .tmds = 25175000, .n_32k = 4576, .n_44k1 = 7007, .n_48k = 6864, },
-> +
-> +	{ .tmds = 25200000, .n_32k = 4096, .n_44k1 = 5656, .n_48k = 6144, },
-> +	{ .tmds = 27000000, .n_32k = 4096, .n_44k1 = 5488, .n_48k = 6144, },
-> +	{ .tmds = 27027000, .n_32k = 4096, .n_44k1 = 6272, .n_48k = 6144, },
-> +	{ .tmds = 28320000, .n_32k = 4096, .n_44k1 = 5586, .n_48k = 6144, },
-> +	{ .tmds = 30240000, .n_32k = 4096, .n_44k1 = 5642, .n_48k = 6144, },
-> +	{ .tmds = 31500000, .n_32k = 4096, .n_44k1 = 5600, .n_48k = 6144, },
-> +	{ .tmds = 32000000, .n_32k = 4096, .n_44k1 = 5733, .n_48k = 6144, },
-> +	{ .tmds = 33750000, .n_32k = 4096, .n_44k1 = 6272, .n_48k = 6144, },
-> +	{ .tmds = 36000000, .n_32k = 4096, .n_44k1 = 5684, .n_48k = 6144, },
-> +	{ .tmds = 40000000, .n_32k = 4096, .n_44k1 = 5733, .n_48k = 6144, },
-> +	{ .tmds = 49500000, .n_32k = 4096, .n_44k1 = 5488, .n_48k = 6144, },
-> +	{ .tmds = 50000000, .n_32k = 4096, .n_44k1 = 5292, .n_48k = 6144, },
-> +	{ .tmds = 54000000, .n_32k = 4096, .n_44k1 = 5684, .n_48k = 6144, },
-> +	{ .tmds = 65000000, .n_32k = 4096, .n_44k1 = 7056, .n_48k = 6144, },
-> +	{ .tmds = 68250000, .n_32k = 4096, .n_44k1 = 5376, .n_48k = 6144, },
-> +	{ .tmds = 71000000, .n_32k = 4096, .n_44k1 = 7056, .n_48k = 6144, },
-> +	{ .tmds = 72000000, .n_32k = 4096, .n_44k1 = 5635, .n_48k = 6144, },
-> +	{ .tmds = 73250000, .n_32k = 4096, .n_44k1 = 14112, .n_48k = 6144, },
-> +
-> +	/* Doesn't match computations, assumes real clock = 74.25 MHz / 1.001 */
-> +	{ .tmds = 74176000, .n_32k = 11648, .n_44k1 = 17836, .n_48k = 11648, },
-> +
-> +	{ .tmds = 74250000, .n_32k = 4096, .n_44k1 = 6272, .n_48k = 6144, },
-> +	{ .tmds = 75000000, .n_32k = 4096, .n_44k1 = 5880, .n_48k = 6144, },
-> +	{ .tmds = 78750000, .n_32k = 4096, .n_44k1 = 5600, .n_48k = 6144, },
-> +	{ .tmds = 78800000, .n_32k = 4096, .n_44k1 = 5292, .n_48k = 6144, },
-> +	{ .tmds = 79500000, .n_32k = 4096, .n_44k1 = 4704, .n_48k = 6144, },
-> +	{ .tmds = 83500000, .n_32k = 4096, .n_44k1 = 7056, .n_48k = 6144, },
-> +	{ .tmds = 85500000, .n_32k = 4096, .n_44k1 = 5488, .n_48k = 6144, },
-> +	{ .tmds = 88750000, .n_32k = 4096, .n_44k1 = 14112, .n_48k = 6144, },
-> +	{ .tmds = 97750000, .n_32k = 4096, .n_44k1 = 14112, .n_48k = 6144, },
-> +	{ .tmds = 101000000, .n_32k = 4096, .n_44k1 = 7056, .n_48k = 6144, },
-> +	{ .tmds = 106500000, .n_32k = 4096, .n_44k1 = 4704, .n_48k = 6144, },
-> +	{ .tmds = 108000000, .n_32k = 4096, .n_44k1 = 5684, .n_48k = 6144, },
-> +	{ .tmds = 115500000, .n_32k = 4096, .n_44k1 = 5712, .n_48k = 6144, },
-> +	{ .tmds = 119000000, .n_32k = 4096, .n_44k1 = 5544, .n_48k = 6144, },
-> +	{ .tmds = 135000000, .n_32k = 4096, .n_44k1 = 5488, .n_48k = 6144, },
-> +	{ .tmds = 146250000, .n_32k = 4096, .n_44k1 = 6272, .n_48k = 6144, },
-> +
-> +	/* Doesn't match computations, assumes real clock = 148.5 MHz / 1.001 */
-> +	{ .tmds = 148352000, .n_32k = 11648, .n_44k1 = 8918, .n_48k = 5824, },
-> +
-> +	{ .tmds = 148500000, .n_32k = 4096, .n_44k1 = 5488, .n_48k = 6144, },
-> +	{ .tmds = 154000000, .n_32k = 4096, .n_44k1 = 5544, .n_48k = 6144, },
-> +	{ .tmds = 162000000, .n_32k = 4096, .n_44k1 = 5684, .n_48k = 6144, },
-> +
-> +	/* For 297 MHz+ HDMI spec has some other rule for setting N */
-> +	{ .tmds = 297000000, .n_32k = 3073, .n_44k1 = 4704, .n_48k = 5120, },
-> +	{ .tmds = 594000000, .n_32k = 3073, .n_44k1 = 9408, .n_48k = 10240, },
-> +
-> +	/* End of table */
-> +	{ .tmds = 0,         .n_32k = 0,    .n_44k1 = 0,    .n_48k = 0, },
-> +};
-> +
->  static const u16 csc_coeff_default[3][4] = {
->  	{ 0x2000, 0x0000, 0x0000, 0x0000 },
->  	{ 0x0000, 0x2000, 0x0000, 0x0000 },
-> @@ -524,60 +600,105 @@ static void hdmi_set_cts_n(struct dw_hdmi *hdmi, unsigned int cts,
->  	hdmi_writeb(hdmi, n & 0xff, HDMI_AUD_N1);
->  }
->  
-> -static unsigned int hdmi_compute_n(unsigned int freq, unsigned long pixel_clk)
-> +static int hdmi_match_tmds_n_table(struct dw_hdmi *hdmi, unsigned int freq,
-> +				   unsigned long pixel_clk)
->  {
-> -	unsigned int n = (128 * freq) / 1000;
-> -	unsigned int mult = 1;
-> +	const struct dw_hdmi_audio_tmds_n *tmds_n = NULL;
-> +	int mult = 1;
-> +	int i;
->  
->  	while (freq > 48000) {
->  		mult *= 2;
->  		freq /= 2;
->  	}
->  
-> +	for (i = 0; common_tmds_n_table[i].tmds != 0; i++) {
-> +		if (pixel_clk == common_tmds_n_table[i].tmds) {
-> +			tmds_n = &common_tmds_n_table[i];
-> +			break;
-> +		}
-> +	}
-> +
-> +	if (tmds_n == NULL)
-> +		return -ENOENT;
-> +
->  	switch (freq) {
->  	case 32000:
-> -		if (pixel_clk == 25175000)
-> -			n = 4576;
-> -		else if (pixel_clk == 27027000)
-> -			n = 4096;
-> -		else if (pixel_clk == 74176000 || pixel_clk == 148352000)
-> -			n = 11648;
-> -		else
-> -			n = 4096;
-> -		n *= mult;
-> -		break;
-> -
-> +		return tmds_n->n_32k * mult;
->  	case 44100:
-> -		if (pixel_clk == 25175000)
-> -			n = 7007;
-> -		else if (pixel_clk == 74176000)
-> -			n = 17836;
-> -		else if (pixel_clk == 148352000)
-> -			n = 8918;
-> -		else
-> -			n = 6272;
-> -		n *= mult;
-> -		break;
-> -
-> +		return tmds_n->n_44k1 * mult;
->  	case 48000:
-> -		if (pixel_clk == 25175000)
-> -			n = 6864;
-> -		else if (pixel_clk == 27027000)
-> -			n = 6144;
-> -		else if (pixel_clk == 74176000)
-> -			n = 11648;
-> -		else if (pixel_clk == 148352000)
-> -			n = 5824;
-> -		else
-> -			n = 6144;
-> -		n *= mult;
-> -		break;
-> -
-> +		return tmds_n->n_48k * mult;
->  	default:
-> -		break;
-> +		return -ENOENT;
-> +	}
-> +}
-> +
-> +static u64 hdmi_audio_math_diff(unsigned int freq, unsigned int n,
-> +				unsigned int pixel_clk)
-> +{
-> +	u64 final, diff;
-> +	u64 cts;
-> +
-> +	final = (u64)pixel_clk * n;
-> +
-> +	cts = final;
-> +	do_div(cts, 128 * freq);
-> +
-> +	diff = final - (u64)cts * (128 * freq);
-> +
-> +	return diff;
-> +}
-> +
-> +static unsigned int hdmi_compute_n(struct dw_hdmi *hdmi, unsigned int freq,
-> +				   unsigned long pixel_clk)
-> +{
-> +	unsigned int min_n = DIV_ROUND_UP((128 * freq), 1500);
-> +	unsigned int max_n = (128 * freq) / 300;
-> +	unsigned int ideal_n = (128 * freq) / 1000;
-> +	unsigned int best_n_distance = ideal_n;
-> +	unsigned int best_n = 0;
-> +	u64 best_diff = U64_MAX;
-> +	int n;
-> +
-> +	/* If the ideal N could satisfy the audio math, then just take it */
-> +	if (hdmi_audio_math_diff(freq, ideal_n, pixel_clk) == 0)
-> +		return ideal_n;
-> +
-> +	for (n = min_n; n <= max_n; n++) {
-> +		u64 diff = hdmi_audio_math_diff(freq, n, pixel_clk);
-> +
-> +		if (diff < best_diff || (diff == best_diff &&
-> +		    abs(n - ideal_n) < best_n_distance)) {
-> +			best_n = n;
-> +			best_diff = diff;
-> +			best_n_distance = abs(best_n - ideal_n);
-> +		}
-> +
-> +		/*
-> +		 * The best N already satisfy the audio math, and also be
-> +		 * the closest value to ideal N, so just cut the loop.
-> +		 */
-> +		if ((best_diff == 0) && (abs(n - ideal_n) > best_n_distance))
-> +			break;
->  	}
->  
-> -	return n;
-> +	return best_n;
-> +}
-> +
-> +static unsigned int hdmi_find_n(struct dw_hdmi *hdmi, unsigned int freq,
-> +				unsigned long pixel_clk)
-> +{
-> +	int n;
-> +
-> +	n = hdmi_match_tmds_n_table(hdmi, freq, pixel_clk);
-> +	if (n > 0)
-> +		return n;
-> +
-> +	dev_warn(hdmi->dev, "Rate %lu missing; compute N dynamically\n",
-> +		 pixel_clk);
-> +
-> +	return hdmi_compute_n(hdmi, freq, pixel_clk);
->  }
->  
->  static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
-> @@ -588,7 +709,7 @@ static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
->  	u8 config3;
->  	u64 tmp;
->  
-> -	n = hdmi_compute_n(sample_rate, pixel_clk);
-> +	n = hdmi_find_n(hdmi, sample_rate, pixel_clk);
->  
->  	config3 = hdmi_readb(hdmi, HDMI_CONFIG3_ID);
->  
+> Maybe resurrecting them would be a good idea, with assumption there will
+> be users :)
 
+I have old patches introducing this into the HDMI framework?  I don't
+remember them / can't find them.  Can you provide a pointer?
 
+-Doug
 
 _______________________________________________
 Linux-rockchip mailing list
