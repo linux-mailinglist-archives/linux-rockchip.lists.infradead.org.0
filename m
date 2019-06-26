@@ -2,73 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1DB756695
-	for <lists+linux-rockchip@lfdr.de>; Wed, 26 Jun 2019 12:23:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C22CB567F9
+	for <lists+linux-rockchip@lfdr.de>; Wed, 26 Jun 2019 13:53:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mto1oJNourLM8umJwYGh+b9kcgO/Cs4Hf/HoA4t79FE=; b=fPVlNWZ9XdgicM
-	UjVTPxZ2QI78ftndwMGeceqaX5/GVoEUcCHZ1RFa42z2yzbh3zflu5C9Uzl93alG/TL5S3+EDJjk/
-	qSFQidWYdGtCqYqo5iI4rDF2/H9GmoJEc9y1+GRgtaV6V84l0O3jPKqKhSQXMjhAGiqcSUYFuXolN
-	9ORZyaLl83F39VNPrT2Q6lHOtlsSXhjP6ZY7tFJDihycPu7zSpqnzYJWGq1FWRe5AxQok/aXiURIF
-	HtT3S20vKVr9TNJOSnWJECcSnn4L+n3U1Cxn9vwISPkBytEq+TWNnFKMe/0CXQ4g6d7WS6PVVj/eg
-	nFZrOnjHFkzJaaqhja0w==;
+	List-Owner; bh=AD7df1ZEqOZg7Z9Vu5Z9vCKXyDJFvn4XDzFBAwcU0M0=; b=sby71jTqWR0RQC
+	CzTN3chAx37Jho87rAjFo5JnVYCS/E+GdTlYiGXrjj8s85Fkq83KVmk1g6WySkpVw7PHKir9nuTBZ
+	evUirfDmZvIkbsVxGSYE6kyjlwRswnzPEuHKjVeEe+hZLN7ka8XrE1iXrjFrcNSi2Sr+JJUAT+335
+	aVZuEJsRT/i3Ry7PhjMbAuvsITEuF4zCmy4T747cRS/6Mlm0hIi+lZG+DtTQua6zaMtpireVlk2ar
+	NINV+FCvZ4rzaKh1w1F6ExpU1uT2WLLpdtWArExq7BLUegi8FuwcCC7CxKVaaW0T/zan7Uq1oEcuB
+	AAJWtynHw0eHKbyth/Xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg54v-0004DM-UA; Wed, 26 Jun 2019 10:23:02 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1hg6UT-0004lg-Jr; Wed, 26 Jun 2019 11:53:29 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg54q-0004Cd-SX
- for linux-rockchip@lists.infradead.org; Wed, 26 Jun 2019 10:23:00 +0000
-Received: by mail-io1-xd41.google.com with SMTP id k8so633916iot.1
- for <linux-rockchip@lists.infradead.org>; Wed, 26 Jun 2019 03:22:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=GlBLEloN/TINX4HWZebfBk6ZSKRC/jfNfSiqh209Pys=;
- b=k/f0Q9wNANmy/1Mt+2sKUyxhMl07MagCH9OjCt0dvV3v6ZdcPIaVTXfv1dMLi9x3aJ
- 9vk3FMb+eFR7VUVv0GuYUh4l/5B4PdA9o4kpFcbv1tdQ1OWxeUP5FuNF02190/gSfFOd
- O9pUL18131VinqiyloVHYT/H4ugtb4pf4kptw=
+ id 1hg6Tv-0004Yv-Mq
+ for linux-rockchip@lists.infradead.org; Wed, 26 Jun 2019 11:52:57 +0000
+Received: by mail-wr1-x442.google.com with SMTP id d18so2390632wrs.5
+ for <linux-rockchip@lists.infradead.org>; Wed, 26 Jun 2019 04:52:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=pno/4ff/EmVlLZf+cwJB7HjSbJVtgJvFvXzyjJWjZww=;
+ b=FrNk6Np4dKzBgiOqvrCZ9v1nd+0v7nIXo4/H33U5FzHgCYLYA7hOtdyTBWOdQOfNX+
+ HHHdIpZFYCq/JEgJAPOlqWgVVH5FH0Htlv97hysKhCBtqAImccVHJyM7hmvvjtmBlO5J
+ 1XrPbvBR/SNIwt+CNPfox7kegKCZVc0GtF0J9p9QlRplCJktwjufwGWfa1a0VOvBluan
+ vijqvZns8aBq6RG8cqZbQpEwGAu65ZB7lPyhQSdpj6KETAVoirRV21LbJLw6qB5yfcnG
+ WbNKGD5apEUUHpkgiva3bhaZ4xPkax61wvAsSwaGPOyQM22WpthkyWzvdDCKu2I5kXfl
+ f0Fw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=GlBLEloN/TINX4HWZebfBk6ZSKRC/jfNfSiqh209Pys=;
- b=Sk6iGm6rC25Xdn6TxoMn2rg/5MutFDoVoXi3zJjZXFUN+axHdWQA6f9in04hgHv4oz
- aKboj6UHd5Ave6/rZGNK2NMCbHOgQV6GTUnQbusFQEGRijd19Q4vK78PcFRXT0OqTJdV
- A4N8TEUEa9MjISSoMjHZ7QkljEDlMtWZW4eM9kV1FsbtQVL7coz8EvWBtE7fFdYcpm0D
- If/MvkDkaheW8CHLkBCUwbvtLOWW/9+kEAfbOL1xLUgLuaijE48ftX3mZYC8pW+AHZXS
- njJKb5HtW9QQFwijgDKC04+J8lnkMKRZ9CgMfAuX2Jpt+se1XUOSzSl6dp5dKt5cqWhZ
- 7GlA==
-X-Gm-Message-State: APjAAAUUY2mUs6Zih5Mt/XVDOBvL5YaopaTKV5hrTTpE24HABKep4rdV
- sEXUBzNIfGjchGltYN/otcXvFPd1q6MuO4IUcpHPDw==
-X-Google-Smtp-Source: APXvYqwuvhwKOJscIvXT1ZhdMjD2UEOkRrMU97vaahOZFqep2jzEvkm85XS0RVS3lm7r+jyiw2IZORl/AoduNBBaBJU=
-X-Received: by 2002:a5d:9ad6:: with SMTP id x22mr4116878ion.136.1561544575506; 
- Wed, 26 Jun 2019 03:22:55 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=pno/4ff/EmVlLZf+cwJB7HjSbJVtgJvFvXzyjJWjZww=;
+ b=EzQ3xHRONhLiQOx4fD0vHa/YJIgomstKwiJ3Pj6AgaDuuUiTe1hU2yfcw6QvYlNdIs
+ U+el9Bi9lA+Qz6SywokJe/jQ49wZnyfeIv3IRU+03H2oMY4MF8Vxra4eA9k/iKSwrmL6
+ 750tHfykHeqC3nmgx6SGN/DLmeKVXHqCh3lnba7kAN/mcw8Ska8q2fyl5tFpzoEdoSkQ
+ k0DT5B50CqCVlhqT5nAKzW1EWi0h/UJEsyFO63n1fQ7DsEB1c6jLQ6XatVF57z854TIc
+ x+iOCWXbdN5nGaWmYjUtqRYht0OpglWP/bqZfUhQb0MfoeeEiB6F2WtspS4ZgOF4h4pp
+ QYLA==
+X-Gm-Message-State: APjAAAUIFk33FtUHEWXab2Guw2QE6Cp2rqGY10wH7TVBXJib1aeQmVzx
+ J84sZjFRfal9LU+BVr7gtJe8jw==
+X-Google-Smtp-Source: APXvYqzkue4b4T2/iz5KX/SFk9Swrlx2jlSbM8pLLMgMOTqmDRsgOwIKUpjFoXL5NkloPNPI8a1GxQ==
+X-Received: by 2002:a5d:53c2:: with SMTP id a2mr3508180wrw.8.1561549973997;
+ Wed, 26 Jun 2019 04:52:53 -0700 (PDT)
+Received: from dell ([2.27.35.164])
+ by smtp.gmail.com with ESMTPSA id y2sm14535504wrl.4.2019.06.26.04.52.52
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 26 Jun 2019 04:52:53 -0700 (PDT)
+Date: Wed, 26 Jun 2019 12:52:51 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Tony Xie <tony.xie@rock-chips.com>
+Subject: Re: [PATCH v10 0/6] support a new type of PMIC,including two
+ chips(rk817 and rk809)
+Message-ID: <20190626115251.GR21119@dell>
+References: <20190621103258.8154-1-tony.xie@rock-chips.com>
 MIME-Version: 1.0
-References: <20190617073252.27810-1-jagan@amarulasolutions.com>
- <CA+E=qVfuy-UYUWujYC8fG+Os4tefPdYzFECkZZdoctvmiSMzcA@mail.gmail.com>
- <CAMty3ZBr3oy1PxQ3C6fLQZAfPR3Dio7pX0m+y7LApAMQr5gbkA@mail.gmail.com>
- <CAAEAJfAxgF2JqOUhjXLmn5RVGMLbM2-7JqsyZgXvfU6Q9ScK+A@mail.gmail.com>
-In-Reply-To: <CAAEAJfAxgF2JqOUhjXLmn5RVGMLbM2-7JqsyZgXvfU6Q9ScK+A@mail.gmail.com>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Wed, 26 Jun 2019 15:52:44 +0530
-Message-ID: <CAMty3ZA9HRYx4tYDWAFoG5geQeyB1VPkofdU-4jSDNHY0ZEHdA@mail.gmail.com>
-Subject: Re: [U-Boot] [PATCH v2 00/99] ram: rk3399: Add LPDDR4 support
-To: Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>
+Content-Disposition: inline
+In-Reply-To: <20190621103258.8154-1-tony.xie@rock-chips.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_032257_866853_F730107A 
-X-CRM114-Status: GOOD (  17.40  )
+X-CRM114-CacheID: sfid-20190626_045255_824010_66AA375D 
+X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,76 +100,30 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: YouMin Chen <cym@rock-chips.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Akash Gajjar <gajjar04akash@gmail.com>, Vasily Khoruzhick <anarsoul@gmail.com>,
- U-Boot Mailing List <u-boot@lists.denx.de>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- linux-amarula <linux-amarula@amarulasolutions.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, a.zummo@towertech.it, alexandre.belloni@bootlin.com,
+ huangtao@rock-chips.com, heiko@sntech.de, devicetree@vger.kernel.org,
+ sboyd@kernel.org, zhangqing@rock-chips.com, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, xsf@rock-chips.com, linux-rockchip@lists.infradead.org,
+ broonie@kernel.org, chenjh@rock-chips.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rtc@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Jun 26, 2019 at 12:12 AM Ezequiel Garcia
-<ezequiel@vanguardiasur.com.ar> wrote:
->
-> Hi Jagan,
->
-> Thanks for your hard work. I'm sure everyone in the Rockchip community
-> is excited about finally having this support in U-Boot.
->
-> On Tue, 25 Jun 2019 at 12:46, Jagan Teki <jagan@amarulasolutions.com> wrote:
-> [..]
-> > >
-> > > Was it absolutely necessary to split these changes into 99 commits? I
-> > > believe at least some of them can be squashed. Reviewing 99 patches
-> > > isn't feasible.
-> >
-> > Squashed, I'm not sure because the patches were created to satisfy the
-> > bisectability and travis-ci, if you find any please feel to comment.
-> > About the commit count, I have mentioned in v1, the idea of having
-> > many commits in one series to have all lpddr4(-related) changes in one
-> > place and also all the commit has incremental approach of supporting
-> > rank detection and lpddr4. If require I'm open to sent next versions
-> > as multiple series, no problem on that.
-> >
->
-> I strongly agree with Vasily, and I don't think multiple series makes it any
-> better.
->
-> What's the reason for having two commits for:
->
-> "ram: rk3399: Set lpddr4 MR3" and "ram: rk3399: Set lpddr4 MR12" ?
-
-These are individual lpddr4 set rate registers to support, each one is
-independent on it' own initialization and more over on the whole, it
-is critical to review.
-
->
-> Or splitting all the "ram: rk3399: Add ... macro" ?
-
-You mean the patches 13 to 20 same like above each one has it's own
-meaning. It is not meaningful to squash them all.
-
->
-> What do you loose if you merge the patches into one?
->
-> I must confess I am very surprised, and don't really understand what do you
-> gain with this excessive split. Normally, when we are adding a new feature,
-> we normally don't need many patches, so it's the other way around, really.
->
-> Bisectability is about not breaking existing support, but because the feature
-> is new, normally this is easy.
-
-Look, like the whole confusion seems to be because of more patches in
-one series and the cover-letter states that it support lpddr4. I
-understand it now, will send the relevant changes in next version
-accordingly, if require I will squash if any.
-
-Jagan.
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gRnJpLCAyMSBKdW4gMjAxOSwgVG9ueSBYaWUgd3JvdGU6Cgo+IE1vc3Qgb2YgZnVuY3Rpb25z
+IGFuZCByZWdpc3RlcnMgb2YgdGhlIHJrODE3IGFuZCByazgwOCBhcmUgdGhlIHNhbWUsCj4gc28g
+dGhleSBjYW4gc2hhcmUgYWxsbW9zdCBhbGwgY29kZXMuCj4gCj4gVGhlaXIgc3BlY2lmaWNhdGlv
+bnMgYXJlIGFzIGZvbGxvd3M6Cj4gICAxKSBUaGUgUks4MDkgYW5kIFJLODA5IGNvbnNpc3Qgb2Yg
+NSBEQ0RDcywgOSBMRE9zIGFuZCBoYXZlIHRoZSBzYW1lCj4gcmVnaXN0ZXJzCj4gICAgICBmb3Ig
+dGhlc2UgY29tcG9uZW50cyBleGNlcHQgZGNkYzUuCj4gICAyKSBUaGUgZGNkYzUgaXMgYSBib29z
+dCBkY2RjIGZvciBSSzgxNyBhbmQgaXMgYSBidWNrIGZvciBSSzgwOS4KPiAgIDMpIFRoZSBSSzgx
+NyBoYXMgb25lIHN3aXRjaCBidXQgVGhlIFJrODA5IGhhcyB0d28uCgpKdXN0IHRyaWVkIHRvIGFw
+cGx5IHRoaXMgc2V0IHRvIGEgdjUuMi1yYzEgYmFzZSwgYnV0IGl0IGRvZXNuJ3Qgc2VlbQp0byBk
+byBzbyBjbGVhbmx5LiAgV291bGQgeW91IGJlIGFibGUgdG8gcmViYXNlIGFuZCByZXNlbmQgcGxl
+YXNlPwoKLS0gCkxlZSBKb25lcyBb5p2O55C85pavXQpMaW5hcm8gU2VydmljZXMgVGVjaG5pY2Fs
+IExlYWQKTGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCkZv
+bGxvdyBMaW5hcm86IEZhY2Vib29rIHwgVHdpdHRlciB8IEJsb2cKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlz
+dApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
+YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
