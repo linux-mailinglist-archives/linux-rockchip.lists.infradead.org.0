@@ -2,82 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 721355A7C7
-	for <lists+linux-rockchip@lfdr.de>; Sat, 29 Jun 2019 01:50:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 545AE5A7CA
+	for <lists+linux-rockchip@lfdr.de>; Sat, 29 Jun 2019 01:51:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+X7/jMJ2HQJx3BNvaNRJdGAr1O/nTKGggwWArAOPpjE=; b=b42EyXOm3QWqLzo5o3JRevQM5
-	F0EDhcPy5C8ebZrn4/Z1kdiBpThTZC8q39kONTu+sv1JajR9TnJjDlQe2Y8oIMXY4rnXR8bOpaiMC
-	2xEkcOUe1XTVvwhLqs8gBborbAoclHvq+hgcsybUgfyMgP2U2yUa/i+gpJEPoRBt5V+f0jKBF20tC
-	2vaMxfT/5xTUxMgAKMEElRgPY+CAevr9JFeUNcS2e7v7tLU8ZpqLwg4XA7FsrcNgqheUg5P05c6WM
-	sXnm4C0QePOxuA1i56W+0Z6g3sItdsrgCZM/EGMbFv3bJoYQ7UZYqnkCPyBd6upuFktGdp4TCSywq
-	p3NN43+Ig==;
+	 bh=Urlxgw4x3h53FhWFzkUWvDiBXrIvrPm3Hk08TaLG7dQ=; b=OFMujlQQ1vXbwJnpx8AWSEwKJ
+	fSns1N4qKKYccZzGiRx5MxJlpLC6H23PnAnyP50bKJ+zl9VOEzhLgAWo5qcLgExC0qLgwJpzXUv1g
+	S/r2v3A++ygTpabxpR0nMuRaUc2tlbkNp/0lzOAx8mSfKPpQjQPI9qOgGhy0AKOqt7SlxgkgYZkgC
+	HHJvDhKXssYaBBtphAWxSEQTtzrlae+hwLE06avFBpUb39uL56Kmp5pUwFvO0aZbF5ipUpRzf5SWv
+	fSDeFvW60LldXtMRySjfWjZDi9XZA/noxQgVmoD6HkjG4a/avDnEPHqRzbdmucd6hZKS6jE0EMkpq
+	ocj0Wkdzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hh0dY-00077W-Fr; Fri, 28 Jun 2019 23:50:36 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1hh0e0-0007BP-4x; Fri, 28 Jun 2019 23:51:04 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hh0dV-000770-Gh
- for linux-rockchip@lists.infradead.org; Fri, 28 Jun 2019 23:50:34 +0000
-Received: by mail-wr1-x442.google.com with SMTP id r16so5979764wrl.11
- for <linux-rockchip@lists.infradead.org>; Fri, 28 Jun 2019 16:50:31 -0700 (PDT)
+ id 1hh0dw-0007As-OJ
+ for linux-rockchip@lists.infradead.org; Fri, 28 Jun 2019 23:51:01 +0000
+Received: by mail-wm1-x341.google.com with SMTP id x15so10595346wmj.3
+ for <linux-rockchip@lists.infradead.org>; Fri, 28 Jun 2019 16:50:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=aNV4HFwYEt0yMBPXIayN1RSWc1G6NoGgFBBw4GTp5vk=;
- b=ntcAz/iX3Za+9ICjms1KoX9O6oWxXHxtQyDQwCbgMtkqPtk18/HptKLGS6omz63608
- bJU9/zeMqmKOPtdM+RoyfYd/q8NZtn+hlFteOxVYWQ0baUiHP/Dp7qn1LHLcwe1/NQTF
- n58RcsjDnxlmuKe688QDphz0tSXV7FlLD0WGnmmEK08j/NRUNmJCIhyDnpiZzzGeqGi1
- azbIwGfNPGLKNPk0FUf+HxtcM5FpYTc48xjxV6euLmPHk0U7vh2n2FD25akO0letVvPY
- m4XD1MGVns6LUmGSq736lCwKlUDkxZFJenjANpe2th+KMb8U6FD3xp3Jc38BO7m5keTh
- x+wg==
+ bh=E/8G2PjZazjY+3koArK1GNsdz2h0E+2RlYWcCl/197M=;
+ b=O3DDTJZYIWWPfnAp3HyoJ+2BKJJYwV9YAcHXhNbab8OkXYmj7TCDn6L1ciJ5mH1KO2
+ xHOPWC7xq8XznaLHUGH79kWjTEul8jEn7/tJpqaFaRNmyDHm3Jkly+sfvdNAt+0SJC+c
+ vIKNnCau9BWNg8JNN5Z5Hd4/aTnl00+f74nhzJSJ7Mrzw3lNFTsw+zvGB7Boe6M2PKzX
+ y6wyI6YsWiJAO8E+8XyelBuZkOklteNg6eBGOUyP2bbZIb5FeZ6LQpQMQIb8nnywub2k
+ EatzrG99+rp2SHBrvEFe5kCeu6Lrz0T+8z2fIkHTmPp6Vq+5hNQUVqFhjW/cwapYHIwV
+ FC7Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=aNV4HFwYEt0yMBPXIayN1RSWc1G6NoGgFBBw4GTp5vk=;
- b=PXnxugWvA6KWwPskrOyQqWW+8qJbSinpoNGBl0xq3am5Z9Tlioqzw2IOw8qWqroaIv
- tFo65mDY6JZbYuvzGXZ+j/U04T6tDTQzI1320tGzFieAdQIAMmjatP0d5SPQkQ1xtUY9
- v/o+KBwZPZtaNiY34u3x+fwJugyAvjRInpcoJrX2NL5oDeZrLNak4CcRwwcjls30VIlI
- OL1ucR5BbYobQtTt2EZqKOl7dCElN+S0qHchY6ovviqwB4zwbCp4eoGNnBMINXhRwIY2
- 8xJH+raTJQIq6kxVICYnAzIFMpd3yTTLXehgNagipSrg6NFhg68ZYKgORzmWamxTmvPN
- kZGw==
-X-Gm-Message-State: APjAAAVFpF/Kwa/C9DuSQ+qZeyJ54SUAX7q6w4rLzVlhEyar1+S9rMyb
- WsgjZbO+PgiCXR9SuEyWjGo=
-X-Google-Smtp-Source: APXvYqwqZ6SOsptqFa/q0p+yLVXdp/0KY0BruP6v8sEZ6TBSCu0PSTL3/w4chYZ3COstYSLzG9RhTw==
-X-Received: by 2002:adf:de90:: with SMTP id w16mr9322571wrl.217.1561765830682; 
- Fri, 28 Jun 2019 16:50:30 -0700 (PDT)
+ bh=E/8G2PjZazjY+3koArK1GNsdz2h0E+2RlYWcCl/197M=;
+ b=jJNF/ofn+t6QpVoiS85XpqB2reNDl5sR0Mpy73fnTryxWh12Ent/qMH9QsJ7sfSPYw
+ J14YqAU3tqzqRcQ5C0Ue+Ri2hzaqPCOYGCu8TD8fEeOTmv8F3nzPAzsa7pPseeQ3pBXp
+ ccABTkykeLWw+SkIVDu2aHCY9oZoQ6wjNx2GkdS6Gr3Tx6qKJBEb6oufKuF+OO43jch7
+ j2ULhzlf8JJqF/AbvzvmuKQEnsvM6BPTuB4jtsjY9Y2maS2rlu61kf9s790LdMczK+oJ
+ Z7IjlUdzmx+u6OjEAU+dsckk0143bnkqgkbdlooDlj3A/T0JGUTJAxVy5A1ErDIoc8jq
+ ns5A==
+X-Gm-Message-State: APjAAAWI/wbrOIrku2msneGlLBnRi3WVPFL9EYD5wcmi4FjXPqZzEpqB
+ 1MIpM0lS2HEjEuE2lyvoEN8=
+X-Google-Smtp-Source: APXvYqwwYIGX0BKFhNZzNRBY6/lBKez08qsNZRlKhSbmT7GM7lr64gjllaB0S3ROfyfooX0EEFWCOg==
+X-Received: by 2002:a1c:9ac9:: with SMTP id c192mr9275089wme.0.1561765858237; 
+ Fri, 28 Jun 2019 16:50:58 -0700 (PDT)
 Received: from localhost
  (p200300E41F2AB200021F3CFFFE37B91B.dip0.t-ipconnect.de.
  [2003:e4:1f2a:b200:21f:3cff:fe37:b91b])
- by smtp.gmail.com with ESMTPSA id n2sm423403wmi.38.2019.06.28.16.50.29
+ by smtp.gmail.com with ESMTPSA id t14sm3634009wrr.33.2019.06.28.16.50.57
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 28 Jun 2019 16:50:29 -0700 (PDT)
-Date: Sat, 29 Jun 2019 01:50:28 +0200
+ Fri, 28 Jun 2019 16:50:57 -0700 (PDT)
+Date: Sat, 29 Jun 2019 01:50:56 +0200
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Douglas Anderson <dianders@chromium.org>
-Subject: Re: [PATCH v5 4/7] drm/panel: simple: Use display_timing for Innolux
- n116bge
-Message-ID: <20190628235028.GC1189@mithrandir>
+Subject: Re: [PATCH v5 5/7] drm/panel: simple: Use display_timing for AUO
+ b101ean01
+Message-ID: <20190628235056.GD1189@mithrandir>
 References: <20190401171724.215780-1-dianders@chromium.org>
- <20190401171724.215780-5-dianders@chromium.org>
+ <20190401171724.215780-6-dianders@chromium.org>
 MIME-Version: 1.0
-In-Reply-To: <20190401171724.215780-5-dianders@chromium.org>
+In-Reply-To: <20190401171724.215780-6-dianders@chromium.org>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_165033_562722_081C8C34 
-X-CRM114-Status: GOOD (  18.77  )
+X-CRM114-CacheID: sfid-20190628_165100_792215_8BBE4013 
+X-CRM114-Status: GOOD (  13.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (thierry.reding[at]gmail.com)
@@ -112,88 +112,70 @@ Cc: Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
  Enric =?utf-8?B?QmFsbGV0YsOy?= <enric.balletbo@collabora.com>,
  Rob Herring <robh+dt@kernel.org>, Ezequiel Garcia <ezequiel@collabora.com>,
  mka@chromium.org
-Content-Type: multipart/mixed; boundary="===============9074527090531232231=="
+Content-Type: multipart/mixed; boundary="===============0574674649706860818=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
 
---===============9074527090531232231==
+--===============0574674649706860818==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="Fig2xvG2VGoz8o/s"
+	protocol="application/pgp-signature"; boundary="llIrKcgUOe3dCx0c"
 Content-Disposition: inline
 
 
---Fig2xvG2VGoz8o/s
+--llIrKcgUOe3dCx0c
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Mon, Apr 01, 2019 at 10:17:21AM -0700, Douglas Anderson wrote:
-> Convert the Innolux n116bge from using a fixed mode to specifying a
+On Mon, Apr 01, 2019 at 10:17:22AM -0700, Douglas Anderson wrote:
+> Convert the AUO b101ean01 from using a fixed mode to specifying a
 > display timing with min/typ/max values.
 >=20
-> Note that the n116bge's datasheet doesn't fit too well into DRM's way
-> of specifying things.  Specifically the panel's datasheet just
-> specifies the vertical blanking period and horizontal blanking period
-> and doesn't break things out.  For now we'll leave everything as a
-> fixed value but just allow adjusting the pixel clock.  I've added a
-> comment on what the datasheet claims so someone could later expand
-> things to fit their needs if they wanted to test other blanking
-> periods.
+> The AUO b101ean01's datasheet says:
+> * Vertical blanking min is 12
+> * Horizontal blanking min is 60
+> * Pixel clock is between 65.3 MHz and 75 MHz
 >=20
-> The goal here is to be able to specify the panel timings in the device
-> tree for several rk3288 Chromebooks (like rk3288-veryon-jerry).  These
-> Chromebooks have all been running in the downstream kernel with the
-> standard porches and sync lengths but just with a slightly slower
-> pixel clock because the 76.42 MHz clock is not achievable from the
-> fixed PLL that was available.  These Chromebooks only achieve a
-> refresh rate of ~58 Hz.  While it's probable that we could adjust the
-> timings to achieve 60 Hz it's probably wisest to match what's been
-> running on these devices all these years.
->=20
-> I'll note that though the upstream kernel has always tried to achieve
-> 76.42 MHz, it has actually been running at 74.25 MHz also since the
-> video processor is parented off the same fixed PLL.
+> The goal here is to be able to specify the proper timing in device
+> tree to use on rk3288-veyron-minnie to match what the downstream
+> kernel is using so that it can used the fixed PLL.
 >=20
 > Changes in v4:
->  - display_timing for Innolux n116bge new for v4.
->=20
-> Changes in v5:
->  - Added Heiko's Tested-by
+>  - display_timing for AUO b101ean01 new for v4.
 >=20
 > Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> Tested-by: Heiko Stuebner <heiko@sntech.de>
 > ---
 >=20
->  drivers/gpu/drm/panel/panel-simple.c | 37 +++++++++++++++++-----------
->  1 file changed, 23 insertions(+), 14 deletions(-)
+>  drivers/gpu/drm/panel/panel-simple.c | 25 ++++++++++++-------------
+>  1 file changed, 12 insertions(+), 13 deletions(-)
 
 Acked-by: Thierry Reding <thierry.reding@gmail.com>
 
---Fig2xvG2VGoz8o/s
+--llIrKcgUOe3dCx0c
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl0Wp8QACgkQ3SOs138+
-s6EONRAAnI/lLg3nbvC+NPG+zh2EdypmFBjJwDAq/ZiG0VNTPe0pgjIbyg+vVcKD
-TS4SdyIlPL3I043HPwObBM/Y+O1MOcWwuEMxlnTSN0+R0pgyifAawX55sCE14MW0
-gf0GUEJcysayA0957o8Zfrvlh74nTmNOPyfp0MlpIXMoKZ7Zh3TMD7i0e4J7rfxM
-39xPhrNSLUYM0+fiTAYO3hcy3KGZ01CpLP17+djBgsDDjV+0uDXl6I6FNm9oHvNa
-bgbwx2urFytaX9PkFc/DfYYf6o/olkB1XZHxRRJfMZuys2L1cjQB+5zy6PjQ8GIM
-mScJALEwkxAKaidmyZ9lPm+a4CsMJF/s+XeG5MpVp6J63w8RdRCyqPRYQFcJkExR
-FyxI76LaRZ/wntJOBPgayCa19n3eNyL8KzEy259zNvOhluuzYpKQA+rqjGk2iXy/
-hQPgNnKtbu9x2Gh3AnzfxDwqalLX7/+ksHbTDXoXnuxa9HMlBDXuwbw721MMmzea
-k4MfVF5pUkQAFp5OODbhg5tlZH4zV0RIZdMvHR2/elsSP23+27kgvxqS7tDor493
-jUnLz3GuOGarkedkx9ywBbiNZJOlr6xAJlxW6jgr/hUNmaZ5Da4JwJr8S/3MCUyD
-xxMPQvzI/Sacn0JL2kD9cE1ojFOJOxLskiTWEv0tZtChQR2hoXk=
-=ZuxI
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl0Wp+AACgkQ3SOs138+
+s6EvcQ//Tbw0f5ozO/fe70CrFitDkI3rMEe8H/oX9vrS8glGIG4EjzpDwgvGTK2Q
+D/DP0Y3lmDH7qbvuGkMI2PEOqpraUK6utBFaN1SFu5ZtnSHi44GsqRP8y8lnaRNi
+1qsxORATUYK+CpxTPW0/YMCDse/fXHGoMAV7yN4Ml4ufhYL/08XR95rEc/doFZyc
+QcERscJUhv5lMegiv+y+aCmRqnvkHWvWonxhE6yCzh54KnfpJeUNI3A2zsZMTw0W
+/HUt0DEu2qi9OkoDOG2YCji4yfGjMLsHG1oLTvSZxDmDUOc7C4k12XV25RswW8if
+EpckvCxfI+4/JWuK53ofikg5s172SFvDZTLpgMM1M94R/36fp86pX6phZ+CV2Q4H
+vARuHnLEFIgs9J5p33EDhRG5pH4xToEzme7wAaJuSpXv24LdsrMp4ewVm17tJ4Ki
+koosRochNUaH85RqSs7H1gi5GqWlONIZCj4hG91IvDYDoHbQNzTFWknx85Yge4hG
+K8tKn5JpKJg9kKsQQuQbHXO9ziJDta1lmrhykCv8dYENNncEwpK3vwrZaOEmweqQ
+w5GZyH7U/gXwhUaSNPeTefo6jZH6185HouIBfPj+BQ0ZKgzSnYN9yEgYxcpWHnaw
+4jM6jsv4tpohTfiGOXlbQU5Poz23azF0Q7Jl8Cm7KSgit41OMzY=
+=5nXl
 -----END PGP SIGNATURE-----
 
---Fig2xvG2VGoz8o/s--
+--llIrKcgUOe3dCx0c--
 
 
---===============9074527090531232231==
+--===============0574674649706860818==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -204,5 +186,5 @@ Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
---===============9074527090531232231==--
+--===============0574674649706860818==--
 
