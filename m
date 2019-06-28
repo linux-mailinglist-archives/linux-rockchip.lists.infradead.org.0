@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA67D5A053
-	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Jun 2019 18:06:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 635D75A055
+	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Jun 2019 18:06:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,26 +11,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=xVRQ5DaXNIrKY0UI220YZeG7KeYW+VcAOKM9fRrZTAY=; b=TJ+W5t7FZfINLIGpHAHqi13YPl
-	uDlWa9xfTvSR/5CZlZnVjtRt9+hee/s/mfkkYkbenrJFLypnNrXpKrpqKbGtjkgEL0wFbUzBodveU
-	jREparGhLT5nHuVXTn02Mf4XR8hEeEWFaVTkkJUO6s5ye5bkNFF3Dt+2BvrIGoVg7Wxy+qOX77lUH
-	GUakp1FXrcMWpSZ4iVg+Md3XKXD04ovYTscrm6zlyEvHmIC3WJticPhjkHmISbiYHDw1oL16WfMk8
-	8frXUKEZzw38dOX20N8t/Cx8qyeiQWbPPYA4FAfvTF9AqgVQiYQ6zE/3uZe6FuD3xoobliy5opkve
-	mNNZm1Wg==;
+	bh=cv+zrJ2HZtiITfZB3VGPGLFgL+ZY1GZ+b8RMMy1ubnk=; b=CWBPk5uSqOZkhhNWLYKuP4DKMz
+	FxmGq4yl2E68WIHI9qBXES5aCSU0U2VfS/14AH7PSke7n0FuERfDVTGsihqW1VSYGJDEu9nJykT0h
+	laxa0pdqUhZhdOYW/DZ9Hg+YIF7sNbk0oWC01Q7JUWF+Ij0hNDuN+cJY1OPEeBwO+mX4xgu8QiEd7
+	G5DiVZRu4dutzRjpH5zVmIXR2qvZpBBqNdwZvmO0KjS4rrI5j7rdN/33DhfRItZMEzISivP7sbopq
+	DXYZp+nUMNBLwF8y+KCDQKAQuf4nOKnchA/oq8vjnNIN3WRnOyFU+2t72JkVuShsDfqZYEXan0L2K
+	jfYLmG3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgtOe-0001W3-1A; Fri, 28 Jun 2019 16:06:44 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hgtOo-0001b8-GI; Fri, 28 Jun 2019 16:06:54 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgtOY-0001Ta-Pg; Fri, 28 Jun 2019 16:06:40 +0000
+ id 1hgtOj-0001Yq-D1; Fri, 28 Jun 2019 16:06:50 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 5C436289CF0
+ (Authenticated sender: andrzej.p) with ESMTPSA id 51B34289CF1
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v3 13/22] drm: zte: Provide ddc symlink in vga connector sysfs
+Subject: [PATCH v3 14/22] drm/tilcdc: Provide ddc symlink in connector sysfs
  directory
-Date: Fri, 28 Jun 2019 18:01:27 +0200
-Message-Id: <f418bce1006655a581a86e2cd93d767d1f975dd1.1561735433.git.andrzej.p@collabora.com>
+Date: Fri, 28 Jun 2019 18:01:28 +0200
+Message-Id: <abd8ac420d759781724396af263d9d2dbcdd0808.1561735433.git.andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1561735433.git.andrzej.p@collabora.com>
 References: <3fb19371-db7d-f9dc-31a7-1ccd126f6784@collabora.com>
@@ -38,15 +38,13 @@ References: <3fb19371-db7d-f9dc-31a7-1ccd126f6784@collabora.com>
 In-Reply-To: <cover.1561735433.git.andrzej.p@collabora.com>
 References: <cover.1561735433.git.andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_090639_090067_53D78891 
-X-CRM114-Status: GOOD (  14.64  )
+X-CRM114-CacheID: sfid-20190628_090649_573057_6032EB8D 
+X-CRM114-Status: GOOD (  10.86  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -82,8 +80,8 @@ Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
  NXP Linux Team <linux-imx@nxp.com>, CK Hu <ck.hu@mediatek.com>,
  Dave Airlie <airlied@redhat.com>, freedreno@lists.freedesktop.org,
  linux-tegra@vger.kernel.org, Pengutronix Kernel Team <kernel@pengutronix.de>,
- Jonas Karlman <jonas@kwiboo.se>, Jani Nikula <jani.nikula@intel.com>,
- linux-arm-msm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Jyri Sarha <jsarha@ti.com>, Inki Dae <inki.dae@samsung.com>,
  Alexios Zavras <alexios.zavras@intel.com>,
@@ -110,84 +108,21 @@ Use the ddc pointer provided by the generic connector.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- drivers/gpu/drm/zte/zx_vga.c | 25 +++++++++----------------
- 1 file changed, 9 insertions(+), 16 deletions(-)
+ drivers/gpu/drm/tilcdc/tilcdc_tfp410.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/gpu/drm/zte/zx_vga.c b/drivers/gpu/drm/zte/zx_vga.c
-index 1634a08707fb..a3a4d6982888 100644
---- a/drivers/gpu/drm/zte/zx_vga.c
-+++ b/drivers/gpu/drm/zte/zx_vga.c
-@@ -23,15 +23,11 @@ struct zx_vga_pwrctrl {
- 	u32 mask;
- };
+diff --git a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c b/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
+index 62d014c20988..c373edb95666 100644
+--- a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
++++ b/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
+@@ -219,6 +219,7 @@ static struct drm_connector *tfp410_connector_create(struct drm_device *dev,
+ 	tfp410_connector->mod = mod;
  
--struct zx_vga_i2c {
--	struct i2c_adapter adap;
--	struct mutex lock;
--};
--
- struct zx_vga {
- 	struct drm_connector connector;
- 	struct drm_encoder encoder;
--	struct zx_vga_i2c *ddc;
-+	/* protects ddc access */
-+	struct mutex ddc_lock;
- 	struct device *dev;
- 	void __iomem *mmio;
- 	struct clk *i2c_wclk;
-@@ -86,7 +82,7 @@ static int zx_vga_connector_get_modes(struct drm_connector *connector)
- 	 */
- 	zx_writel(vga->mmio + VGA_AUTO_DETECT_SEL, 0);
+ 	connector = &tfp410_connector->base;
++	connector->ddc = mod->i2c;
  
--	edid = drm_get_edid(connector, &vga->ddc->adap);
-+	edid = drm_get_edid(connector, connector->ddc);
- 	if (!edid) {
- 		/*
- 		 * If EDID reading fails, we set the device state into
-@@ -282,11 +278,10 @@ static int zx_vga_i2c_xfer(struct i2c_adapter *adap, struct i2c_msg *msgs,
- 			   int num)
- {
- 	struct zx_vga *vga = i2c_get_adapdata(adap);
--	struct zx_vga_i2c *ddc = vga->ddc;
- 	int ret = 0;
- 	int i;
- 
--	mutex_lock(&ddc->lock);
-+	mutex_lock(&vga->ddc_lock);
- 
- 	for (i = 0; i < num; i++) {
- 		if (msgs[i].flags & I2C_M_RD)
-@@ -301,7 +296,7 @@ static int zx_vga_i2c_xfer(struct i2c_adapter *adap, struct i2c_msg *msgs,
- 	if (!ret)
- 		ret = num;
- 
--	mutex_unlock(&ddc->lock);
-+	mutex_unlock(&vga->ddc_lock);
- 
- 	return ret;
- }
-@@ -320,17 +315,15 @@ static int zx_vga_ddc_register(struct zx_vga *vga)
- {
- 	struct device *dev = vga->dev;
- 	struct i2c_adapter *adap;
--	struct zx_vga_i2c *ddc;
- 	int ret;
- 
--	ddc = devm_kzalloc(dev, sizeof(*ddc), GFP_KERNEL);
--	if (!ddc)
-+	adap = devm_kzalloc(dev, sizeof(*adap), GFP_KERNEL);
-+	if (!adap)
- 		return -ENOMEM;
- 
--	vga->ddc = ddc;
--	mutex_init(&ddc->lock);
-+	vga->connector.ddc = adap;
-+	mutex_init(&vga->ddc_lock);
- 
--	adap = &ddc->adap;
- 	adap->owner = THIS_MODULE;
- 	adap->class = I2C_CLASS_DDC;
- 	adap->dev.parent = dev;
+ 	drm_connector_init(dev, connector, &tfp410_connector_funcs,
+ 			DRM_MODE_CONNECTOR_DVID);
 -- 
 2.17.1
 
