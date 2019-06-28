@@ -2,53 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BC395A068
-	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Jun 2019 18:08:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 718AC5A076
+	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Jun 2019 18:10:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mu6uJVQEu6FTai+dvdl0lCed3DOcOYZDQYLKdDIFMME=; b=rW9992EswOJ2FFaC2nm3x60Xr2
-	97RFf6pbfwAjV234Mn9NCNSqWfmsS5rGz+tCUvhjT2m5CnVTjDTRkdUGCNRJBnsMh6i2kbexZnJ2e
-	4zZ0t5xzu3U3HPZtA3g0yRcAoVH5Kg1GxBZDCHVtXqxfhqqAJ5RrqXpwi5ZqmhIWMIQnkmMX0631e
-	8EZ9aKgycb24biwTsP/4PsNQzePjplaEHrEtN8qMtRk7zzdLCAhb0GEZZZ74EcLaQ5tLhsqyca2L+
-	bbb44E8HJ+M+aVwIudLEaWR8dkSoQn/X5WaNgulEpFapaLJICie3f4jsqNjZM1onpeX2/4V1B5ph9
-	5ciPobNA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TLmuZdASd+GW5Pkyg40j1Cg+IEYsXY/3uVxy/dEMdNY=; b=nWpnYUvag2vMyu
+	neGjQuDgyUP48OxQjqLefmBHvyUv4Sh2QXR2XHTC5Q2GVwENYuCwbOWMKt7x0IeN0eCPF4pc6XZyb
+	hBLOY11X5LNSeowC770KpOOBZu3yMGu6FmIQjHHrBAX0bn0e85OfZXXPtCx3w2eFXsjXGJdKHYY1u
+	OscTPpaa3tCG2C4937DL2X/WOPMnHmvzQOgxfdiPgVJOTVMnfVIjHuKdo9+ThiyDwVTraPwbQTD/a
+	czk4heFWoFCAgmX6m5eefjrAb9Ho43tSbNbeOkDEsovji8uuXtQcz3v8ji2+1zYDn33RZgm18ZBpC
+	lnXXuE0c3VWolgWK+PbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgtQG-0002Ll-T1; Fri, 28 Jun 2019 16:08:25 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hgtSQ-0003tG-8Y; Fri, 28 Jun 2019 16:10:38 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgtQA-0002Ih-Hg; Fri, 28 Jun 2019 16:08:20 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 59BCF28957D
-From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v3 22/22] drm/radeon: Provide ddc symlink in connector sysfs
- directory
-Date: Fri, 28 Jun 2019 18:01:36 +0200
-Message-Id: <dd1312ee84adef0161ebeaaf3c0448b1a1371919.1561735433.git.andrzej.p@collabora.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1561735433.git.andrzej.p@collabora.com>
-References: <3fb19371-db7d-f9dc-31a7-1ccd126f6784@collabora.com>
- <cover.1561735433.git.andrzej.p@collabora.com>
-In-Reply-To: <cover.1561735433.git.andrzej.p@collabora.com>
-References: <cover.1561735433.git.andrzej.p@collabora.com>
+ id 1hgtSA-0003je-Hb; Fri, 28 Jun 2019 16:10:24 +0000
+Received: from mail-qk1-f174.google.com (mail-qk1-f174.google.com
+ [209.85.222.174])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D6FB5216E3;
+ Fri, 28 Jun 2019 16:10:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561738222;
+ bh=JT2+LjdeGYwAzgiQO03rJyeR6d1ItE4i/2D95RggsE0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=2jPfie8PRDa4umctnjlAEeWpw3BkCmoC0WH18fW0TkvsFQ7RsdkA1hCqoVP0ei99p
+ DiYQXIXkyt2+Mt+6ZLrCD09gMxB2R29SmABRJMeRvyvKaERRxanck59+m1nOVipH+B
+ x6rjzkLBBU1UFtKGMM5ebhZp3sbY2dzzZoPP7kl4=
+Received: by mail-qk1-f174.google.com with SMTP id m14so5252195qka.10;
+ Fri, 28 Jun 2019 09:10:21 -0700 (PDT)
+X-Gm-Message-State: APjAAAVXGewvnOicTBklYzLtKCroBiZFx5UmOC9Mnpma7kUn8n03eABB
+ AllNadmALLvyRUHP13gYp0vDtRsYpit6OsYY2A==
+X-Google-Smtp-Source: APXvYqyWvAhqS9/ekWTKjDusvBvbzTg0jA8Pn2h4OITXjwQUgHtqy5AWS+DPlCXsn23dZ+IMB0pxlEQeYQRMQrLcvXU=
+X-Received: by 2002:a05:620a:1447:: with SMTP id
+ i7mr9535724qkl.254.1561738221012; 
+ Fri, 28 Jun 2019 09:10:21 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190401171724.215780-1-dianders@chromium.org>
+ <20190626130007.GE23428@ravnborg.org>
+ <CAD=FV=U4UU8q+CS76uuuGUP=EVnE6+BTUf8U=j7uwfczNgkrZw@mail.gmail.com>
+ <CAD=FV=Vi2C7s2oWBDD0n+HK=_SuBYhRM9saMK-y6Qa0+k-g17w@mail.gmail.com>
+In-Reply-To: <CAD=FV=Vi2C7s2oWBDD0n+HK=_SuBYhRM9saMK-y6Qa0+k-g17w@mail.gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Fri, 28 Jun 2019 10:10:09 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJGtUTpJL+SDEKi09aDT4yDzY4x9KwYmz08NaZcn=nHfA@mail.gmail.com>
+Message-ID: <CAL_JsqJGtUTpJL+SDEKi09aDT4yDzY4x9KwYmz08NaZcn=nHfA@mail.gmail.com>
+Subject: Re: [PATCH v5 0/7] drm/panel: simple: Add mode support to devicetree
+To: Doug Anderson <dianders@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_090818_844398_834F7A2D 
-X-CRM114-Status: GOOD (  12.62  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190628_091022_615714_CD1429C6 
+X-CRM114-Status: GOOD (  26.96  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,240 +87,95 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
- =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- Sam Ravnborg <sam@ravnborg.org>, Neil Armstrong <narmstrong@baylibre.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Douglas Anderson <dianders@chromium.org>, Andrzej Hajda <a.hajda@samsung.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>, kernel@collabora.com,
- Fabio Estevam <festevam@gmail.com>,
- =?UTF-8?q?Ville=20Syrj=C3=A4l=C3=A4?= <ville.syrjala@linux.intel.com>,
- "David \(ChunMing\) Zhou" <David1.Zhou@amd.com>,
- linux-samsung-soc@vger.kernel.org, Joonyoung Shim <jy0922.shim@samsung.com>,
- linux-rockchip@lists.infradead.org, Vincent Abriou <vincent.abriou@st.com>,
- Rob Clark <robdclark@gmail.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
- Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, CK Hu <ck.hu@mediatek.com>,
- Dave Airlie <airlied@redhat.com>, freedreno@lists.freedesktop.org,
- linux-tegra@vger.kernel.org, Pengutronix Kernel Team <kernel@pengutronix.de>,
- Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Jyri Sarha <jsarha@ti.com>, Inki Dae <inki.dae@samsung.com>,
- Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
- Rodrigo Vivi <rodrigo.vivi@intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org, amd-gfx@lists.freedesktop.org,
- Tomi Valkeinen <tomi.valkeinen@ti.com>, Eric Anholt <eric@anholt.net>,
- Thomas Zimmermann <tzimmermann@suse.de>,
- Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
- linux-kernel@vger.kernel.org, Todor Tomov <todor.tomov@linaro.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
- =?UTF-8?q?Christian=20K=C3=B6nig?= <christian.koenig@amd.com>,
- Gerd Hoffmann <kraxel@redhat.com>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Brian Norris <briannorris@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
+ David Airlie <airlied@linux.ie>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Sean Paul <seanpaul@chromium.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ =?UTF-8?Q?Enric_Balletb=C3=B2?= <enric.balletbo@collabora.com>,
+ Klaus Goger <klaus.goger@theobroma-systems.com>,
+ Sam Ravnborg <sam@ravnborg.org>, Matthias Kaehlcke <mka@chromium.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Use the ddc pointer provided by the generic connector.
+On Fri, Jun 28, 2019 at 9:55 AM Doug Anderson <dianders@chromium.org> wrote:
+>
+> Hi,
+>
+> On Wed, Jun 26, 2019 at 7:41 AM Doug Anderson <dianders@chromium.org> wrote:
+> >
+> > Hi,
+> >
+> > On Wed, Jun 26, 2019 at 6:00 AM Sam Ravnborg <sam@ravnborg.org> wrote:
+> > >
+> > > Hi Douglas.
+> > >
+> > > On Mon, Apr 01, 2019 at 10:17:17AM -0700, Douglas Anderson wrote:
+> > > > I'm reviving Sean Paul's old patchset to get mode support in device
+> > > > tree.  The cover letter for his v3 is at:
+> > > > https://lists.freedesktop.org/archives/dri-devel/2018-February/165162.html
+> > > >
+> > > > No code is different between v4 and v5, just commit messages and text
+> > > > in the bindings.
+> > > >
+> > > > I've pulled together the patches that didn't land in v3, addressed
+> > > > outstanding feedback, and reposted.  Atop them I've added patches for
+> > > > rk3288-veyron-chromebook (used for jaq, jerry, mighty, speedy) and
+> > > > rk3288-veryon-minnie.
+> > > >
+> > > > Please let me know how they look.
+> > > >
+> > > > In general I have added people to the whole series who I think would
+> > > > like the whole series and then let get_maintainer pick extra people it
+> > > > thinks are relevant to each individual patch.  If I see you respond to
+> > > > any of the patches in the series, though, I'll add you to the whole
+> > > > series Cc list next time.
+> > > >
+> > > > Changes in v5:
+> > > > - Removed bit about OS may ignore (Rob/Ezequiel)
+> > > > - Added Heiko's Tested-by
+> > > > - It's not just jerry, it's most rk3288 Chromebooks (Heiko)
+> > >
+> > > What are the plans to move forward with this?
+> > > Or did you drop the whole idea again?
+> >
+> > At the moment I'm blocked on Thierry responding, either taking the
+> > patch or telling me what I need to do to fix it.  I saw Sean Paul ping
+> > Thierry on IRC on June 3rd and as far as I could tell there was no
+> > response.
+> >
+> > https://people.freedesktop.org/~cbrill/dri-log/?channel=dri-devel&highlight_names=&date=2019-06-03&show_html=true
+> >
+> > ...and as you can see Heiko pinged this thread on June 14th.
+> >
+> > Thierry: can you help give us some direction?  Are you uninterested in
+> > reviewing them and would prefer that I find someone to land them in
+> > drm-misc directly?
+>
+> Sam: Oh!  I hadn't noticed that you've been added as a panel
+> maintainer in commit ef0db94f94a0 ("MAINTAINERS: Add Sam as reviewer
+> for drm/panel").  Does that mean you are able to provide some advice
+> for how to land this series?  As far as I know everything is in order
+> for it to land, but if you are aware of something I need to do to spin
+> it then please let me know!
 
-Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
----
- drivers/gpu/drm/radeon/radeon_connectors.c | 82 +++++++++++++++++-----
- 1 file changed, 63 insertions(+), 19 deletions(-)
+BTW, at least for the binding, this will get implicitly supported in
+the schema conversion[1] as simple-panel as a binding is gone and
+panel-common already had timing node defined. A schema for the timing
+node is still needed though (hint :) ).
 
-diff --git a/drivers/gpu/drm/radeon/radeon_connectors.c b/drivers/gpu/drm/radeon/radeon_connectors.c
-index c60d1a44d22a..a876e51d275a 100644
---- a/drivers/gpu/drm/radeon/radeon_connectors.c
-+++ b/drivers/gpu/drm/radeon/radeon_connectors.c
-@@ -1946,11 +1946,15 @@ radeon_add_atom_connector(struct drm_device *dev,
- 		radeon_dig_connector->igp_lane_info = igp_lane_info;
- 		radeon_connector->con_priv = radeon_dig_connector;
- 		if (i2c_bus->valid) {
--			radeon_connector->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
--			if (radeon_connector->ddc_bus)
-+			struct radeon_connector *rcn = radeon_connector;
-+
-+			rcn->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
-+			if (rcn->ddc_bus) {
- 				has_aux = true;
--			else
-+				connector->ddc = &rcn->ddc_bus->adapter;
-+			} else {
- 				DRM_ERROR("DP: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+			}
- 		}
- 		switch (connector_type) {
- 		case DRM_MODE_CONNECTOR_VGA:
-@@ -2045,9 +2049,13 @@ radeon_add_atom_connector(struct drm_device *dev,
- 			drm_connector_init(dev, &radeon_connector->base, &radeon_vga_connector_funcs, connector_type);
- 			drm_connector_helper_add(&radeon_connector->base, &radeon_vga_connector_helper_funcs);
- 			if (i2c_bus->valid) {
--				radeon_connector->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
--				if (!radeon_connector->ddc_bus)
-+				struct radeon_connector *rcn = radeon_connector;
-+
-+				rcn->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
-+				if (!rcn->ddc_bus)
- 					DRM_ERROR("VGA: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+				else
-+					connector->ddc = &rcn->ddc_bus->adapter;
- 			}
- 			radeon_connector->dac_load_detect = true;
- 			drm_object_attach_property(&radeon_connector->base.base,
-@@ -2070,9 +2078,13 @@ radeon_add_atom_connector(struct drm_device *dev,
- 			drm_connector_init(dev, &radeon_connector->base, &radeon_vga_connector_funcs, connector_type);
- 			drm_connector_helper_add(&radeon_connector->base, &radeon_vga_connector_helper_funcs);
- 			if (i2c_bus->valid) {
--				radeon_connector->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
--				if (!radeon_connector->ddc_bus)
-+				struct radeon_connector *rcn = radeon_connector;
-+
-+				rcn->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
-+				if (!rcn->ddc_bus)
- 					DRM_ERROR("DVIA: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+				else
-+					connector->ddc = &rcn->ddc_bus->adapter;
- 			}
- 			radeon_connector->dac_load_detect = true;
- 			drm_object_attach_property(&radeon_connector->base.base,
-@@ -2101,9 +2113,13 @@ radeon_add_atom_connector(struct drm_device *dev,
- 			drm_connector_init(dev, &radeon_connector->base, &radeon_dvi_connector_funcs, connector_type);
- 			drm_connector_helper_add(&radeon_connector->base, &radeon_dvi_connector_helper_funcs);
- 			if (i2c_bus->valid) {
--				radeon_connector->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
--				if (!radeon_connector->ddc_bus)
-+				struct radeon_connector *rcn = radeon_connector;
-+
-+				rcn->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
-+				if (!rcn->ddc_bus)
- 					DRM_ERROR("DVI: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+				else
-+					connector->ddc = &rcn->ddc_bus->adapter;
- 			}
- 			subpixel_order = SubPixelHorizontalRGB;
- 			drm_object_attach_property(&radeon_connector->base.base,
-@@ -2158,9 +2174,13 @@ radeon_add_atom_connector(struct drm_device *dev,
- 			drm_connector_init(dev, &radeon_connector->base, &radeon_dvi_connector_funcs, connector_type);
- 			drm_connector_helper_add(&radeon_connector->base, &radeon_dvi_connector_helper_funcs);
- 			if (i2c_bus->valid) {
--				radeon_connector->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
--				if (!radeon_connector->ddc_bus)
-+				struct radeon_connector *rcn = radeon_connector;
-+
-+				rcn->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
-+				if (!rcn->ddc_bus)
- 					DRM_ERROR("HDMI: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+				else
-+					connector->ddc = &rcn->ddc_bus->adapter;
- 			}
- 			drm_object_attach_property(&radeon_connector->base.base,
- 						      rdev->mode_info.coherent_mode_property,
-@@ -2208,11 +2228,15 @@ radeon_add_atom_connector(struct drm_device *dev,
- 			drm_connector_init(dev, &radeon_connector->base, &radeon_dp_connector_funcs, connector_type);
- 			drm_connector_helper_add(&radeon_connector->base, &radeon_dp_connector_helper_funcs);
- 			if (i2c_bus->valid) {
--				radeon_connector->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
--				if (radeon_connector->ddc_bus)
-+				struct radeon_connector *rcn = radeon_connector;
-+
-+				rcn->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
-+				if (rcn->ddc_bus) {
- 					has_aux = true;
--				else
-+					connector->ddc = &rcn->ddc_bus->adapter;
-+				} else {
- 					DRM_ERROR("DP: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+				}
- 			}
- 			subpixel_order = SubPixelHorizontalRGB;
- 			drm_object_attach_property(&radeon_connector->base.base,
-@@ -2258,11 +2282,15 @@ radeon_add_atom_connector(struct drm_device *dev,
- 			drm_connector_init(dev, &radeon_connector->base, &radeon_edp_connector_funcs, connector_type);
- 			drm_connector_helper_add(&radeon_connector->base, &radeon_dp_connector_helper_funcs);
- 			if (i2c_bus->valid) {
--				radeon_connector->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
--				if (radeon_connector->ddc_bus)
-+				struct radeon_connector *rcn = radeon_connector;
-+
-+				rcn->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
-+				if (rcn->ddc_bus) {
- 					has_aux = true;
--				else
-+					connector->ddc = &rcn->ddc_bus->adapter;
-+				} else {
- 					DRM_ERROR("DP: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+				}
- 			}
- 			drm_object_attach_property(&radeon_connector->base.base,
- 						      dev->mode_config.scaling_mode_property,
-@@ -2297,9 +2325,13 @@ radeon_add_atom_connector(struct drm_device *dev,
- 			drm_connector_init(dev, &radeon_connector->base, &radeon_lvds_connector_funcs, connector_type);
- 			drm_connector_helper_add(&radeon_connector->base, &radeon_lvds_connector_helper_funcs);
- 			if (i2c_bus->valid) {
--				radeon_connector->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
--				if (!radeon_connector->ddc_bus)
-+				struct radeon_connector *rcn = radeon_connector;
-+
-+				rcn->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
-+				if (!rcn->ddc_bus)
- 					DRM_ERROR("LVDS: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+				else
-+					connector->ddc = &rcn->ddc_bus->adapter;
- 			}
- 			drm_object_attach_property(&radeon_connector->base.base,
- 						      dev->mode_config.scaling_mode_property,
-@@ -2384,6 +2416,9 @@ radeon_add_legacy_connector(struct drm_device *dev,
- 			radeon_connector->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
- 			if (!radeon_connector->ddc_bus)
- 				DRM_ERROR("VGA: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+			else
-+				connector->ddc =
-+					&radeon_connector->ddc_bus->adapter;
- 		}
- 		radeon_connector->dac_load_detect = true;
- 		drm_object_attach_property(&radeon_connector->base.base,
-@@ -2401,6 +2436,9 @@ radeon_add_legacy_connector(struct drm_device *dev,
- 			radeon_connector->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
- 			if (!radeon_connector->ddc_bus)
- 				DRM_ERROR("DVIA: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+			else
-+				connector->ddc =
-+					&radeon_connector->ddc_bus->adapter;
- 		}
- 		radeon_connector->dac_load_detect = true;
- 		drm_object_attach_property(&radeon_connector->base.base,
-@@ -2419,6 +2457,9 @@ radeon_add_legacy_connector(struct drm_device *dev,
- 			radeon_connector->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
- 			if (!radeon_connector->ddc_bus)
- 				DRM_ERROR("DVI: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+			else
-+				connector->ddc =
-+					&radeon_connector->ddc_bus->adapter;
- 		}
- 		if (connector_type == DRM_MODE_CONNECTOR_DVII) {
- 			radeon_connector->dac_load_detect = true;
-@@ -2464,6 +2505,9 @@ radeon_add_legacy_connector(struct drm_device *dev,
- 			radeon_connector->ddc_bus = radeon_i2c_lookup(rdev, i2c_bus);
- 			if (!radeon_connector->ddc_bus)
- 				DRM_ERROR("LVDS: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+			else
-+				connector->ddc =
-+					&radeon_connector->ddc_bus->adapter;
- 		}
- 		drm_object_attach_property(&radeon_connector->base.base,
- 					      dev->mode_config.scaling_mode_property,
--- 
-2.17.1
+Rob
 
+[1] https://patchwork.ozlabs.org/patch/1121538/
 
 _______________________________________________
 Linux-rockchip mailing list
