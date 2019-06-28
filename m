@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A6545A03D
-	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Jun 2019 18:05:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 812545A03F
+	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Jun 2019 18:05:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,26 +11,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=0qGWxZKsZCrdOiWxC+kJa73GwNhYoI+9q2YOdvWckrU=; b=eHzVRM0Hnj3Fpo1HCLPVb42+9M
-	KKEhIw947WNa8+L2KIxqqOaGyRGLnTrdBWaYbxb1Vv8eGxRHLUZ2e3skXK5wk9UIh1/ucm7ZjCAkG
-	g5/ruHDws2szatfIS/+V6KQ+p37U+/XLhBtIql/t+EKCQ+QEp5gCGB0QNOZ0VSC1KTN+JqQlxNiIR
-	tPz8Yb0inKGWD0MhI1FKNIyWLEw29lPuRap0cQ/4EZz+oEs8hXh9Z2m9/394DMSXt4S4F+P22ZM9L
-	w+kcT2/kFE9wacGSKkiE+m/pYbYmNKHQoBURAO5967Fz53+ccL5n0AXv1sn32DLTwEa6YGfZ6jInN
-	IHdXoyug==;
+	bh=0/nd2Um2L1FKi3CtnuartIctX99hw6Tc5pNd0ExSYXs=; b=V++1mfUK17Avhro+y+7VmgkFBi
+	8m/qGrUKPQuf08yf/+EjpbYkk4xD1G86qZHt3jfi/WSz26+akmDfiWwxg0GCzKaWc3ZghNOid13PX
+	r1m0RLUsxYXraPko8sCie3ztX5A3NYX/bt2meOerdC+4ShIzXMBAiFPNZDK28bJfGU4Audvmfnx/h
+	Oi+E+3duGXEmBbwc+v7xsxN4HO/5iz1TpfavrdqgQWyajUcO3AcdQk+FhDhBszeY26qCPnJOBgRpi
+	RK61LmSdPffgJyks0xIFLeOXyM7aqJ72UZEBMbFjFWZdZgLiOc8/uqiI2UupG/sIYCwAw8PEC+EVa
+	oFxDtmvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgtND-0000UH-1c; Fri, 28 Jun 2019 16:05:15 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hgtNO-0000ab-Kq; Fri, 28 Jun 2019 16:05:26 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgtN7-0008Vr-VA; Fri, 28 Jun 2019 16:05:11 +0000
+ id 1hgtNI-0000YL-RI; Fri, 28 Jun 2019 16:05:22 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id C4143289CE4
+ (Authenticated sender: andrzej.p) with ESMTPSA id AEAAC289CE5
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v3 05/22] drm/msm/hdmi: Provide ddc symlink in hdmi connector
- sysfs directory
-Date: Fri, 28 Jun 2019 18:01:19 +0200
-Message-Id: <bd9099df90bc6df4e5fd674fbb020afcbdb28e07.1561735433.git.andrzej.p@collabora.com>
+Subject: [PATCH v3 06/22] drm/sun4i: hdmi: Provide ddc symlink in sun4i hdmi
+ connector sysfs directory
+Date: Fri, 28 Jun 2019 18:01:20 +0200
+Message-Id: <4fa046adb68a57c0ee63f5d31da8af2ed8de2c57.1561735433.git.andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1561735433.git.andrzej.p@collabora.com>
 References: <3fb19371-db7d-f9dc-31a7-1ccd126f6784@collabora.com>
@@ -38,13 +38,15 @@ References: <3fb19371-db7d-f9dc-31a7-1ccd126f6784@collabora.com>
 In-Reply-To: <cover.1561735433.git.andrzej.p@collabora.com>
 References: <cover.1561735433.git.andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_090510_154295_5D54E98E 
-X-CRM114-Status: GOOD (  11.28  )
+X-CRM114-CacheID: sfid-20190628_090521_152917_70DAAE90 
+X-CRM114-Status: GOOD (  14.84  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -80,16 +82,17 @@ Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
  NXP Linux Team <linux-imx@nxp.com>, CK Hu <ck.hu@mediatek.com>,
  Dave Airlie <airlied@redhat.com>, freedreno@lists.freedesktop.org,
  linux-tegra@vger.kernel.org, Pengutronix Kernel Team <kernel@pengutronix.de>,
- Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>,
+ Jonas Karlman <jonas@kwiboo.se>, Jani Nikula <jani.nikula@intel.com>,
+ linux-arm-msm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Jyri Sarha <jsarha@ti.com>, Inki Dae <inki.dae@samsung.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
  Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
  Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
  Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org, Enrico Weigelt <info@metux.net>,
- amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
- Eric Anholt <eric@anholt.net>, Thomas Zimmermann <tzimmermann@suse.de>,
+ linux-arm-kernel@lists.infradead.org, amd-gfx@lists.freedesktop.org,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, Eric Anholt <eric@anholt.net>,
+ Thomas Zimmermann <tzimmermann@suse.de>,
  Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
  linux-kernel@vger.kernel.org, Todor Tomov <todor.tomov@linaro.org>,
  Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
@@ -107,20 +110,68 @@ Use the ddc pointer provided by the generic connector.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- drivers/gpu/drm/msm/hdmi/hdmi_connector.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/gpu/drm/sun4i/sun4i_hdmi.h     |  1 -
+ drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c | 14 +++++++-------
+ 2 files changed, 7 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/gpu/drm/msm/hdmi/hdmi_connector.c b/drivers/gpu/drm/msm/hdmi/hdmi_connector.c
-index 07b4cb877d82..4979e3362687 100644
---- a/drivers/gpu/drm/msm/hdmi/hdmi_connector.c
-+++ b/drivers/gpu/drm/msm/hdmi/hdmi_connector.c
-@@ -461,6 +461,7 @@ struct drm_connector *msm_hdmi_connector_init(struct hdmi *hdmi)
- 	connector->doublescan_allowed = 0;
+diff --git a/drivers/gpu/drm/sun4i/sun4i_hdmi.h b/drivers/gpu/drm/sun4i/sun4i_hdmi.h
+index 7ad3f06c127e..1649273b1493 100644
+--- a/drivers/gpu/drm/sun4i/sun4i_hdmi.h
++++ b/drivers/gpu/drm/sun4i/sun4i_hdmi.h
+@@ -265,7 +265,6 @@ struct sun4i_hdmi {
+ 	struct clk		*tmds_clk;
  
- 	drm_connector_attach_encoder(connector, hdmi->encoder);
-+	connector->ddc = hdmi->i2c;
+ 	struct i2c_adapter	*i2c;
+-	struct i2c_adapter	*ddc_i2c;
  
- 	return connector;
+ 	/* Regmap fields for I2C adapter */
+ 	struct regmap_field	*field_ddc_en;
+diff --git a/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c b/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c
+index 9c3f99339b82..250bec00dc35 100644
+--- a/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c
++++ b/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c
+@@ -213,7 +213,7 @@ static int sun4i_hdmi_get_modes(struct drm_connector *connector)
+ 	struct edid *edid;
+ 	int ret;
+ 
+-	edid = drm_get_edid(connector, hdmi->ddc_i2c ?: hdmi->i2c);
++	edid = drm_get_edid(connector, connector->ddc ?: hdmi->i2c);
+ 	if (!edid)
+ 		return 0;
+ 
+@@ -598,11 +598,11 @@ static int sun4i_hdmi_bind(struct device *dev, struct device *master,
+ 		goto err_disable_mod_clk;
+ 	}
+ 
+-	hdmi->ddc_i2c = sun4i_hdmi_get_ddc(dev);
+-	if (IS_ERR(hdmi->ddc_i2c)) {
+-		ret = PTR_ERR(hdmi->ddc_i2c);
++	hdmi->connector.ddc = sun4i_hdmi_get_ddc(dev);
++	if (IS_ERR(hdmi->connector.ddc)) {
++		ret = PTR_ERR(hdmi->connector.ddc);
+ 		if (ret == -ENODEV)
+-			hdmi->ddc_i2c = NULL;
++			hdmi->connector.ddc = NULL;
+ 		else
+ 			goto err_del_i2c_adapter;
+ 	}
+@@ -663,7 +663,7 @@ static int sun4i_hdmi_bind(struct device *dev, struct device *master,
+ 	cec_delete_adapter(hdmi->cec_adap);
+ 	drm_encoder_cleanup(&hdmi->encoder);
+ err_put_ddc_i2c:
+-	i2c_put_adapter(hdmi->ddc_i2c);
++	i2c_put_adapter(hdmi->connector.ddc);
+ err_del_i2c_adapter:
+ 	i2c_del_adapter(hdmi->i2c);
+ err_disable_mod_clk:
+@@ -684,7 +684,7 @@ static void sun4i_hdmi_unbind(struct device *dev, struct device *master,
+ 	drm_connector_cleanup(&hdmi->connector);
+ 	drm_encoder_cleanup(&hdmi->encoder);
+ 	i2c_del_adapter(hdmi->i2c);
+-	i2c_put_adapter(hdmi->ddc_i2c);
++	i2c_put_adapter(hdmi->connector.ddc);
+ 	clk_disable_unprepare(hdmi->mod_clk);
+ 	clk_disable_unprepare(hdmi->bus_clk);
  }
 -- 
 2.17.1
