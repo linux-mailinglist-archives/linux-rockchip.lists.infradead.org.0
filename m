@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2721A5A059
-	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Jun 2019 18:07:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E8265A05B
+	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Jun 2019 18:07:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,26 +11,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=88gD6CvwgvuUzUgpGM5jCR4DcZ9szW2N1Mr07xZ3N8k=; b=DXEoVhLLu7NpW3YfAvC0htMmkT
-	ZJt7SJpNe+Gwr2wfEcScozdzpTnim7xWjfGLxFXViFfkCI7beYqgzgNgJ3qiaxrFaDK5npU7u4sze
-	9l/C63bBMID9tXpw5YYkzUXHvOtpOFPqHlGwtMBfhj8Mo3NRcrZx45YOg/rJdh6xUVTCFyn8jyE9A
-	QwIn+gjR5J4yKlL3PrabmDZazwONF/71WYIy/ClnXpibp0TzVO0kojnHQC/af4sNb8UGn2KlzbMv1
-	36Ik/1BOGkRxJEt5xyE9HpPIoDCc8snRZMru3XWHv64rvwg7F1SJ+BGobNT/eyr/o51JmCAPiNns1
-	G+M3EZWg==;
+	bh=QrkKk3p5nJiGp82ymc1JWlQ197BSucBuoLbqP2r2wBo=; b=dhp8IQDzZVpbr/fVS/hVyj3A7p
+	F68P7qhEZfbjiMtbhfoyhNg9gbqQlQfwlxT3iXtAZ74rvtbvvl4kMls/jb5Dfyn5VL+3BrxqQQJV7
+	jVNsNLyv9d8Nn2jnvzXlvcQ7Wmy0UwGnMCrfvjeevgtRhJAptdx2IdthtoSLvbDcW0j4oHEVMsXoE
+	uxtvVU29mftQmvMMjMCMjTo5nExguaymQxjuLkkzL9DwD2cRrmDIhyVpUm4KReJ2QlWmggGDn5pOu
+	vs96wMyQ/1HUfg0JGCEcfYHr3Pfpc1BF2k3dcpjewpxb9e2gZ4x4LDwdxXjHcbNlAi+am+Y1igNvG
+	7ckLgJag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgtPA-0001mx-8P; Fri, 28 Jun 2019 16:07:16 +0000
+	id 1hgtPL-0001sT-Gf; Fri, 28 Jun 2019 16:07:27 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgtP5-0001kd-A3; Fri, 28 Jun 2019 16:07:12 +0000
+ id 1hgtPG-0001py-Ae; Fri, 28 Jun 2019 16:07:23 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 3082B289CF3
+ (Authenticated sender: andrzej.p) with ESMTPSA id 40EC0289CF8
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v3 16/22] drm/mgag200: Provide ddc symlink in connector sysfs
+Subject: [PATCH v3 17/22] drm/ast: Provide ddc symlink in connector sysfs
  directory
-Date: Fri, 28 Jun 2019 18:01:30 +0200
-Message-Id: <e3144c9c1cba74e0fe12f281218dcc68061cca48.1561735433.git.andrzej.p@collabora.com>
+Date: Fri, 28 Jun 2019 18:01:31 +0200
+Message-Id: <933656a2069cab7723bfbd066d7fd6fc73ea23cb.1561735433.git.andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1561735433.git.andrzej.p@collabora.com>
 References: <3fb19371-db7d-f9dc-31a7-1ccd126f6784@collabora.com>
@@ -38,8 +38,8 @@ References: <3fb19371-db7d-f9dc-31a7-1ccd126f6784@collabora.com>
 In-Reply-To: <cover.1561735433.git.andrzej.p@collabora.com>
 References: <cover.1561735433.git.andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_090711_479788_0636DA0A 
-X-CRM114-Status: GOOD (  11.23  )
+X-CRM114-CacheID: sfid-20190628_090722_494579_53025711 
+X-CRM114-Status: GOOD (  11.54  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -84,7 +84,6 @@ Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
  Sascha Hauer <s.hauer@pengutronix.de>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Jyri Sarha <jsarha@ti.com>, Inki Dae <inki.dae@samsung.com>,
- Alexios Zavras <alexios.zavras@intel.com>,
  Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
  Rodrigo Vivi <rodrigo.vivi@intel.com>,
  Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
@@ -109,20 +108,20 @@ Use the ddc pointer provided by the generic connector.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- drivers/gpu/drm/mgag200/mgag200_mode.c | 1 +
+ drivers/gpu/drm/ast/ast_mode.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/drivers/gpu/drm/mgag200/mgag200_mode.c b/drivers/gpu/drm/mgag200/mgag200_mode.c
-index a25054015e8c..a22dbecd4d35 100644
---- a/drivers/gpu/drm/mgag200/mgag200_mode.c
-+++ b/drivers/gpu/drm/mgag200/mgag200_mode.c
-@@ -1712,6 +1712,7 @@ static struct drm_connector *mga_vga_init(struct drm_device *dev)
- 	drm_connector_register(connector);
+diff --git a/drivers/gpu/drm/ast/ast_mode.c b/drivers/gpu/drm/ast/ast_mode.c
+index ffccbef962a4..155c3487a1a7 100644
+--- a/drivers/gpu/drm/ast/ast_mode.c
++++ b/drivers/gpu/drm/ast/ast_mode.c
+@@ -905,6 +905,7 @@ static int ast_connector_init(struct drm_device *dev)
+ 	drm_connector_attach_encoder(connector, encoder);
  
- 	mga_connector->i2c = mgag200_i2c_create(dev);
-+	connector->ddc = &mga_connector->i2c->adapter;
- 	if (!mga_connector->i2c)
- 		DRM_ERROR("failed to add ddc bus\n");
+ 	ast_connector->i2c = ast_i2c_create(dev);
++	connector->ddc = &ast_connector->i2c->adapter;
+ 	if (!ast_connector->i2c)
+ 		DRM_ERROR("failed to add ddc bus for connector\n");
  
 -- 
 2.17.1
