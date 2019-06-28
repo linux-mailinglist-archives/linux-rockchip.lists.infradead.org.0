@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E11615A05E
-	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Jun 2019 18:07:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08DDC5A060
+	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Jun 2019 18:07:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,26 +11,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=fB9AI98u7mWYPWry9Z6n6N6A/Wx6ObhPrKCWm488HZQ=; b=NhG070H8YUnZU7DK6kjipYQEAJ
-	bxmUcPNIlKa4ig8gMpMRTVWGccT5uBHKhduwLqCF3lMTw3XVf8fJZzdcegV2c+Sg7XVdOOsPZUGku
-	vuX9wmwOYfr/IMjPC+GPcjnNKFdbM1aBVISNuDPV4HGkNASw7L6BHyXS5rbuQUSbG/2Uddpb79jbS
-	98F0XnUF5WOR9L1tgaJlOxrmJklEBWlEuCzjP0Mxo+nI/pV6BzeiYum0lsnlDdXifNaLSUnkWqrk8
-	+zw0zfZHs4/7O0HH10nzoOgMUYvki7dJjyomoIIBWSNsYn1vlsZWz/fgda2CF80zJGR1OXfP+JlF8
-	COm7vFrQ==;
+	bh=u6q9GR6nEHkFL0GJszJO6Rb/sT/F9xbHQNq8w2u6FMA=; b=jBMrwcIzAqGI0aKIfgxVSbZvbB
+	MMu7s9kc1E33eKnTcb4DFvLU+3fFzWNigjTKun3Eo5INXQExy/MDr++nqMYYBnKpkQFLjL39KUP6/
+	EZjp/gSI/Hc0Hp1HyeIARKbjW88K2LekFt2H/tjIgSRqGgyF1uNc0voNj4R6F2A3eLdvnkPtIUNEP
+	zBgTgXr5KpuEDSOxJQahABrClN3wravyXNGRNxgLF26WNqTvOGBTxLv4n1rN5pqmtjV2gfpZlQfGW
+	tSMWu1Y6lb0oJ0V1V8xYplUExy1aKUL3j1FzBp6+AXE+t0YIIfJ4tNLA/p5NVohnCz45xvTix/mml
+	Vr0b0aQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgtPW-0001yA-US; Fri, 28 Jun 2019 16:07:38 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hgtPh-00023g-6w; Fri, 28 Jun 2019 16:07:49 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgtPR-0001vk-Ab; Fri, 28 Jun 2019 16:07:34 +0000
+ id 1hgtPc-00020m-DA; Fri, 28 Jun 2019 16:07:46 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 37875289CFB
+ (Authenticated sender: andrzej.p) with ESMTPSA id 37A8A289CFC
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v3 18/22] drm/bridge: dumb-vga-dac: Provide ddc symlink in
+Subject: [PATCH v3 19/22] drm/bridge: dw-hdmi: Provide ddc symlink in
  connector sysfs directory
-Date: Fri, 28 Jun 2019 18:01:32 +0200
-Message-Id: <33d98ef0c2a6e402515dc3ed5d100959dcb3233c.1561735433.git.andrzej.p@collabora.com>
+Date: Fri, 28 Jun 2019 18:01:33 +0200
+Message-Id: <c2dc5ba93148ff034bf42cceb02a807674731c84.1561735433.git.andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1561735433.git.andrzej.p@collabora.com>
 References: <3fb19371-db7d-f9dc-31a7-1ccd126f6784@collabora.com>
@@ -38,13 +38,15 @@ References: <3fb19371-db7d-f9dc-31a7-1ccd126f6784@collabora.com>
 In-Reply-To: <cover.1561735433.git.andrzej.p@collabora.com>
 References: <cover.1561735433.git.andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_090733_624904_D26DA32E 
-X-CRM114-Status: GOOD (  14.81  )
+X-CRM114-CacheID: sfid-20190628_090744_712963_09B9B427 
+X-CRM114-Status: GOOD (  18.10  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -85,11 +87,13 @@ Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Jyri Sarha <jsarha@ti.com>, Inki Dae <inki.dae@samsung.com>,
  Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>,
  Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
  Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
  linux-arm-kernel@lists.infradead.org, Enrico Weigelt <info@metux.net>,
- amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
- Eric Anholt <eric@anholt.net>, Thomas Zimmermann <tzimmermann@suse.de>,
+ Jernej Skrabec <jernej.skrabec@siol.net>, amd-gfx@lists.freedesktop.org,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, Eric Anholt <eric@anholt.net>,
+ Thomas Zimmermann <tzimmermann@suse.de>,
  Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
  linux-kernel@vger.kernel.org, Todor Tomov <todor.tomov@linaro.org>,
  Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
@@ -107,73 +111,152 @@ Use the ddc pointer provided by the generic connector.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- drivers/gpu/drm/bridge/dumb-vga-dac.c | 19 +++++++++----------
- 1 file changed, 9 insertions(+), 10 deletions(-)
+ drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 40 +++++++++++------------
+ 1 file changed, 20 insertions(+), 20 deletions(-)
 
-diff --git a/drivers/gpu/drm/bridge/dumb-vga-dac.c b/drivers/gpu/drm/bridge/dumb-vga-dac.c
-index d32885b906ae..b4cc3238400a 100644
---- a/drivers/gpu/drm/bridge/dumb-vga-dac.c
-+++ b/drivers/gpu/drm/bridge/dumb-vga-dac.c
-@@ -20,7 +20,6 @@ struct dumb_vga {
- 	struct drm_bridge	bridge;
- 	struct drm_connector	connector;
+diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+index c6490949d9db..0b9c9f2619da 100644
+--- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
++++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+@@ -161,7 +161,6 @@ struct dw_hdmi {
  
--	struct i2c_adapter	*ddc;
- 	struct regulator	*vdd;
- };
+ 	struct drm_display_mode previous_mode;
  
-@@ -42,10 +41,10 @@ static int dumb_vga_get_modes(struct drm_connector *connector)
- 	struct edid *edid;
- 	int ret;
+-	struct i2c_adapter *ddc;
+ 	void __iomem *regs;
+ 	bool sink_is_hdmi;
+ 	bool sink_has_audio;
+@@ -1118,7 +1117,7 @@ static bool dw_hdmi_support_scdc(struct dw_hdmi *hdmi)
+ 		return false;
  
--	if (IS_ERR(vga->ddc))
-+	if (IS_ERR(vga->connector.ddc))
- 		goto fallback;
+ 	/* Disable if no DDC bus */
+-	if (!hdmi->ddc)
++	if (!hdmi->connector.ddc)
+ 		return false;
  
--	edid = drm_get_edid(connector, vga->ddc);
-+	edid = drm_get_edid(connector, vga->connector.ddc);
- 	if (!edid) {
- 		DRM_INFO("EDID readout failed, falling back to standard modes\n");
- 		goto fallback;
-@@ -84,7 +83,7 @@ dumb_vga_connector_detect(struct drm_connector *connector, bool force)
- 	 * wire the DDC pins, or the I2C bus might not be working at
- 	 * all.
- 	 */
--	if (!IS_ERR(vga->ddc) && drm_probe_ddc(vga->ddc))
-+	if (!IS_ERR(vga->connector.ddc) && drm_probe_ddc(vga->connector.ddc))
- 		return connector_status_connected;
+ 	/* Disable if SCDC is not supported, or if an HF-VSDB block is absent */
+@@ -1156,10 +1155,11 @@ void dw_hdmi_set_high_tmds_clock_ratio(struct dw_hdmi *hdmi)
  
- 	return connector_status_unknown;
-@@ -190,14 +189,14 @@ static int dumb_vga_probe(struct platform_device *pdev)
- 		dev_dbg(&pdev->dev, "No vdd regulator found: %d\n", ret);
+ 	/* Control for TMDS Bit Period/TMDS Clock-Period Ratio */
+ 	if (dw_hdmi_support_scdc(hdmi)) {
++		struct i2c_adapter *ddc = hdmi->connector.ddc;
+ 		if (mtmdsclock > HDMI14_MAX_TMDSCLK)
+-			drm_scdc_set_high_tmds_clock_ratio(hdmi->ddc, 1);
++			drm_scdc_set_high_tmds_clock_ratio(ddc, 1);
+ 		else
+-			drm_scdc_set_high_tmds_clock_ratio(hdmi->ddc, 0);
++			drm_scdc_set_high_tmds_clock_ratio(ddc, 0);
  	}
+ }
+ EXPORT_SYMBOL_GPL(dw_hdmi_set_high_tmds_clock_ratio);
+@@ -1750,6 +1750,7 @@ static void hdmi_av_composer(struct dw_hdmi *hdmi,
+ 	if (dw_hdmi_support_scdc(hdmi)) {
+ 		if (vmode->mtmdsclock > HDMI14_MAX_TMDSCLK ||
+ 		    hdmi_info->scdc.scrambling.low_rates) {
++			struct i2c_adapter *ddc = hdmi->connector.ddc;
+ 			/*
+ 			 * HDMI2.0 Specifies the following procedure:
+ 			 * After the Source Device has determined that
+@@ -1759,13 +1760,12 @@ static void hdmi_av_composer(struct dw_hdmi *hdmi,
+ 			 * Source Devices compliant shall set the
+ 			 * Source Version = 1.
+ 			 */
+-			drm_scdc_readb(hdmi->ddc, SCDC_SINK_VERSION,
+-				       &bytes);
+-			drm_scdc_writeb(hdmi->ddc, SCDC_SOURCE_VERSION,
++			drm_scdc_readb(ddc, SCDC_SINK_VERSION, &bytes);
++			drm_scdc_writeb(ddc, SCDC_SOURCE_VERSION,
+ 				min_t(u8, bytes, SCDC_MIN_SOURCE_VERSION));
  
--	vga->ddc = dumb_vga_retrieve_ddc(&pdev->dev);
--	if (IS_ERR(vga->ddc)) {
--		if (PTR_ERR(vga->ddc) == -ENODEV) {
-+	vga->connector.ddc = dumb_vga_retrieve_ddc(&pdev->dev);
-+	if (IS_ERR(vga->connector.ddc)) {
-+		if (PTR_ERR(vga->connector.ddc) == -ENODEV) {
- 			dev_dbg(&pdev->dev,
- 				"No i2c bus specified. Disabling EDID readout\n");
- 		} else {
- 			dev_err(&pdev->dev, "Couldn't retrieve i2c bus\n");
--			return PTR_ERR(vga->ddc);
-+			return PTR_ERR(vga->connector.ddc);
+ 			/* Enabled Scrambling in the Sink */
+-			drm_scdc_set_scrambling(hdmi->ddc, 1);
++			drm_scdc_set_scrambling(hdmi->connector.ddc, 1);
+ 
+ 			/*
+ 			 * To activate the scrambler feature, you must ensure
+@@ -1781,7 +1781,7 @@ static void hdmi_av_composer(struct dw_hdmi *hdmi,
+ 			hdmi_writeb(hdmi, 0, HDMI_FC_SCRAMBLER_CTRL);
+ 			hdmi_writeb(hdmi, (u8)~HDMI_MC_SWRSTZ_TMDSSWRST_REQ,
+ 				    HDMI_MC_SWRSTZ);
+-			drm_scdc_set_scrambling(hdmi->ddc, 0);
++			drm_scdc_set_scrambling(hdmi->connector.ddc, 0);
  		}
  	}
  
-@@ -216,8 +215,8 @@ static int dumb_vga_remove(struct platform_device *pdev)
+@@ -2127,10 +2127,10 @@ static int dw_hdmi_connector_get_modes(struct drm_connector *connector)
+ 	struct edid *edid;
+ 	int ret = 0;
  
- 	drm_bridge_remove(&vga->bridge);
+-	if (!hdmi->ddc)
++	if (!hdmi->connector.ddc)
+ 		return 0;
  
--	if (!IS_ERR(vga->ddc))
--		i2c_put_adapter(vga->ddc);
-+	if (!IS_ERR(vga->connector.ddc))
-+		i2c_put_adapter(vga->connector.ddc);
+-	edid = drm_get_edid(connector, hdmi->ddc);
++	edid = drm_get_edid(connector, hdmi->connector.ddc);
+ 	if (edid) {
+ 		dev_dbg(hdmi->dev, "got edid: width[%d] x height[%d]\n",
+ 			edid->width_cm, edid->height_cm);
+@@ -2548,9 +2548,9 @@ __dw_hdmi_probe(struct platform_device *pdev,
  
- 	return 0;
+ 	ddc_node = of_parse_phandle(np, "ddc-i2c-bus", 0);
+ 	if (ddc_node) {
+-		hdmi->ddc = of_get_i2c_adapter_by_node(ddc_node);
++		hdmi->connector.ddc = of_get_i2c_adapter_by_node(ddc_node);
+ 		of_node_put(ddc_node);
+-		if (!hdmi->ddc) {
++		if (!hdmi->connector.ddc) {
+ 			dev_dbg(hdmi->dev, "failed to read ddc node\n");
+ 			return ERR_PTR(-EPROBE_DEFER);
+ 		}
+@@ -2689,7 +2689,7 @@ __dw_hdmi_probe(struct platform_device *pdev,
+ 	hdmi_init_clk_regenerator(hdmi);
+ 
+ 	/* If DDC bus is not specified, try to register HDMI I2C bus */
+-	if (!hdmi->ddc) {
++	if (!hdmi->connector.ddc) {
+ 		/* Look for (optional) stuff related to unwedging */
+ 		hdmi->pinctrl = devm_pinctrl_get(dev);
+ 		if (!IS_ERR(hdmi->pinctrl)) {
+@@ -2708,9 +2708,9 @@ __dw_hdmi_probe(struct platform_device *pdev,
+ 			}
+ 		}
+ 
+-		hdmi->ddc = dw_hdmi_i2c_adapter(hdmi);
+-		if (IS_ERR(hdmi->ddc))
+-			hdmi->ddc = NULL;
++		hdmi->connector.ddc = dw_hdmi_i2c_adapter(hdmi);
++		if (IS_ERR(hdmi->connector.ddc))
++			hdmi->connector.ddc = NULL;
+ 	}
+ 
+ 	hdmi->bridge.driver_private = hdmi;
+@@ -2776,7 +2776,7 @@ __dw_hdmi_probe(struct platform_device *pdev,
+ err_iahb:
+ 	if (hdmi->i2c) {
+ 		i2c_del_adapter(&hdmi->i2c->adap);
+-		hdmi->ddc = NULL;
++		hdmi->connector.ddc = NULL;
+ 	}
+ 
+ 	if (hdmi->cec_notifier)
+@@ -2788,7 +2788,7 @@ __dw_hdmi_probe(struct platform_device *pdev,
+ err_isfr:
+ 	clk_disable_unprepare(hdmi->isfr_clk);
+ err_res:
+-	i2c_put_adapter(hdmi->ddc);
++	i2c_put_adapter(hdmi->connector.ddc);
+ 
+ 	return ERR_PTR(ret);
  }
+@@ -2814,7 +2814,7 @@ static void __dw_hdmi_remove(struct dw_hdmi *hdmi)
+ 	if (hdmi->i2c)
+ 		i2c_del_adapter(&hdmi->i2c->adap);
+ 	else
+-		i2c_put_adapter(hdmi->ddc);
++		i2c_put_adapter(hdmi->connector.ddc);
+ }
+ 
+ /* -----------------------------------------------------------------------------
 -- 
 2.17.1
 
