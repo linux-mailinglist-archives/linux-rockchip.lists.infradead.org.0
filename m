@@ -2,71 +2,60 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 718AC5A076
-	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Jun 2019 18:10:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 644B55A079
+	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Jun 2019 18:12:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TLmuZdASd+GW5Pkyg40j1Cg+IEYsXY/3uVxy/dEMdNY=; b=nWpnYUvag2vMyu
-	neGjQuDgyUP48OxQjqLefmBHvyUv4Sh2QXR2XHTC5Q2GVwENYuCwbOWMKt7x0IeN0eCPF4pc6XZyb
-	hBLOY11X5LNSeowC770KpOOBZu3yMGu6FmIQjHHrBAX0bn0e85OfZXXPtCx3w2eFXsjXGJdKHYY1u
-	OscTPpaa3tCG2C4937DL2X/WOPMnHmvzQOgxfdiPgVJOTVMnfVIjHuKdo9+ThiyDwVTraPwbQTD/a
-	czk4heFWoFCAgmX6m5eefjrAb9Ho43tSbNbeOkDEsovji8uuXtQcz3v8ji2+1zYDn33RZgm18ZBpC
-	lnXXuE0c3VWolgWK+PbQ==;
+	List-Owner; bh=90PF2wMjpgNj2Os2Ggs11u2MuCQxMpbCOAJ7sgjwwvI=; b=G1CqJwFJVtqIYV
+	qRBawe5nfWLODugTNu4zLHtpc7RCbmx6f2KEDhNAlN6Oy53oGTFY8NHP3RsuiALRFX4DamyIby0av
+	FOLHY9xw3ji9i8KAGGzP4Qb+h00sjM5r+Jw7rQWzwYcqq2temKVOydhcj3aV8Moe7HiG67+/Vv+q3
+	SPr9TPo6p+eIFOEV+M06bmPsGbzz4UqhY4N/uNlqUDJSV+dV9PTQlcD/GS3CXMFnuSi4fUIjhALq4
+	5wl8liFkVogCNGZ/5d3SwpXllqkISvDsUPwmvho9xd+juUPgTADShDriAJX2BQTOrlWuCgm9qVOVc
+	azz0GNfrSp3ko+kG4qkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgtSQ-0003tG-8Y; Fri, 28 Jun 2019 16:10:38 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hgtTx-00047V-Bb; Fri, 28 Jun 2019 16:12:13 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgtSA-0003je-Hb; Fri, 28 Jun 2019 16:10:24 +0000
-Received: from mail-qk1-f174.google.com (mail-qk1-f174.google.com
- [209.85.222.174])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D6FB5216E3;
- Fri, 28 Jun 2019 16:10:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561738222;
- bh=JT2+LjdeGYwAzgiQO03rJyeR6d1ItE4i/2D95RggsE0=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=2jPfie8PRDa4umctnjlAEeWpw3BkCmoC0WH18fW0TkvsFQ7RsdkA1hCqoVP0ei99p
- DiYQXIXkyt2+Mt+6ZLrCD09gMxB2R29SmABRJMeRvyvKaERRxanck59+m1nOVipH+B
- x6rjzkLBBU1UFtKGMM5ebhZp3sbY2dzzZoPP7kl4=
-Received: by mail-qk1-f174.google.com with SMTP id m14so5252195qka.10;
- Fri, 28 Jun 2019 09:10:21 -0700 (PDT)
-X-Gm-Message-State: APjAAAVXGewvnOicTBklYzLtKCroBiZFx5UmOC9Mnpma7kUn8n03eABB
- AllNadmALLvyRUHP13gYp0vDtRsYpit6OsYY2A==
-X-Google-Smtp-Source: APXvYqyWvAhqS9/ekWTKjDusvBvbzTg0jA8Pn2h4OITXjwQUgHtqy5AWS+DPlCXsn23dZ+IMB0pxlEQeYQRMQrLcvXU=
-X-Received: by 2002:a05:620a:1447:: with SMTP id
- i7mr9535724qkl.254.1561738221012; 
- Fri, 28 Jun 2019 09:10:21 -0700 (PDT)
+ id 1hgtTs-000457-Mh; Fri, 28 Jun 2019 16:12:10 +0000
+Received: from pendragon.ideasonboard.com
+ (dfj612yhrgyx302h3jwwy-3.rev.dnainternet.fi
+ [IPv6:2001:14ba:21f5:5b00:ce28:277f:58d7:3ca4])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 679A02C6;
+ Fri, 28 Jun 2019 18:11:56 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1561738316;
+ bh=mSOeRJ1wGePYLOMOW0PRGv70otvkJMFN8nmnuRRHa8s=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=T45j8X2x9MbzTWLkYgvI4lfZMJCNPNRrx0dXLCkVmGtsv1mmOcC1QJjMKXhJbeT6k
+ +W769DcVTcs8zRH2S/Ty7Ryk94n9002vHTe6m2VQXPOtaHbBM6JF1APjCaFnN4Kj3L
+ EMbuWECrrdf0OMphSda5s15W3KCRYs9pez1z40yo=
+Date: Fri, 28 Jun 2019 19:11:37 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Subject: Re: [PATCH v3 00/22] Associate ddc adapters with connectors
+Message-ID: <20190628161137.GH4779@pendragon.ideasonboard.com>
+References: <3fb19371-db7d-f9dc-31a7-1ccd126f6784@collabora.com>
+ <cover.1561735433.git.andrzej.p@collabora.com>
 MIME-Version: 1.0
-References: <20190401171724.215780-1-dianders@chromium.org>
- <20190626130007.GE23428@ravnborg.org>
- <CAD=FV=U4UU8q+CS76uuuGUP=EVnE6+BTUf8U=j7uwfczNgkrZw@mail.gmail.com>
- <CAD=FV=Vi2C7s2oWBDD0n+HK=_SuBYhRM9saMK-y6Qa0+k-g17w@mail.gmail.com>
-In-Reply-To: <CAD=FV=Vi2C7s2oWBDD0n+HK=_SuBYhRM9saMK-y6Qa0+k-g17w@mail.gmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 28 Jun 2019 10:10:09 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqJGtUTpJL+SDEKi09aDT4yDzY4x9KwYmz08NaZcn=nHfA@mail.gmail.com>
-Message-ID: <CAL_JsqJGtUTpJL+SDEKi09aDT4yDzY4x9KwYmz08NaZcn=nHfA@mail.gmail.com>
-Subject: Re: [PATCH v5 0/7] drm/panel: simple: Add mode support to devicetree
-To: Doug Anderson <dianders@chromium.org>
+Content-Disposition: inline
+In-Reply-To: <cover.1561735433.git.andrzej.p@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_091022_615714_CD1429C6 
-X-CRM114-Status: GOOD (  26.96  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190628_091209_043593_1B50374D 
+X-CRM114-Status: GOOD (  19.79  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -74,7 +63,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,95 +75,152 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Brian Norris <briannorris@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, Viresh Kumar <viresh.kumar@linaro.org>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- LKML <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Thierry Reding <thierry.reding@gmail.com>, Sean Paul <seanpaul@chromium.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- =?UTF-8?Q?Enric_Balletb=C3=B2?= <enric.balletbo@collabora.com>,
- Klaus Goger <klaus.goger@theobroma-systems.com>,
- Sam Ravnborg <sam@ravnborg.org>, Matthias Kaehlcke <mka@chromium.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
+ Heiko =?utf-8?Q?St=C3=BCbner?= <heiko@sntech.de>,
+ Sam Ravnborg <sam@ravnborg.org>, Neil Armstrong <narmstrong@baylibre.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, dri-devel@lists.freedesktop.org,
+ Douglas Anderson <dianders@chromium.org>, Andrzej Hajda <a.hajda@samsung.com>,
+ Thierry Reding <thierry.reding@gmail.com>, Gerd Hoffmann <kraxel@redhat.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>,
+ Ville =?utf-8?B?U3lyasOkbMOk?= <ville.syrjala@linux.intel.com>,
+ "David \(ChunMing\) Zhou" <David1.Zhou@amd.com>,
+ linux-samsung-soc@vger.kernel.org, Joonyoung Shim <jy0922.shim@samsung.com>,
+ linux-rockchip@lists.infradead.org, Vincent Abriou <vincent.abriou@st.com>,
+ Rob Clark <robdclark@gmail.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
+ Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, CK Hu <ck.hu@mediatek.com>,
+ Dave Airlie <airlied@redhat.com>, freedreno@lists.freedesktop.org,
+ linux-tegra@vger.kernel.org, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Jyri Sarha <jsarha@ti.com>, Inki Dae <inki.dae@samsung.com>,
+ Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
+ Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>, amd-gfx@lists.freedesktop.org,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, Eric Anholt <eric@anholt.net>,
+ Thomas Zimmermann <tzimmermann@suse.de>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
+ linux-kernel@vger.kernel.org, Todor Tomov <todor.tomov@linaro.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
+ Christian =?utf-8?B?S8O2bmln?= <christian.koenig@amd.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, Jun 28, 2019 at 9:55 AM Doug Anderson <dianders@chromium.org> wrote:
->
-> Hi,
->
-> On Wed, Jun 26, 2019 at 7:41 AM Doug Anderson <dianders@chromium.org> wrote:
-> >
-> > Hi,
-> >
-> > On Wed, Jun 26, 2019 at 6:00 AM Sam Ravnborg <sam@ravnborg.org> wrote:
-> > >
-> > > Hi Douglas.
-> > >
-> > > On Mon, Apr 01, 2019 at 10:17:17AM -0700, Douglas Anderson wrote:
-> > > > I'm reviving Sean Paul's old patchset to get mode support in device
-> > > > tree.  The cover letter for his v3 is at:
-> > > > https://lists.freedesktop.org/archives/dri-devel/2018-February/165162.html
-> > > >
-> > > > No code is different between v4 and v5, just commit messages and text
-> > > > in the bindings.
-> > > >
-> > > > I've pulled together the patches that didn't land in v3, addressed
-> > > > outstanding feedback, and reposted.  Atop them I've added patches for
-> > > > rk3288-veyron-chromebook (used for jaq, jerry, mighty, speedy) and
-> > > > rk3288-veryon-minnie.
-> > > >
-> > > > Please let me know how they look.
-> > > >
-> > > > In general I have added people to the whole series who I think would
-> > > > like the whole series and then let get_maintainer pick extra people it
-> > > > thinks are relevant to each individual patch.  If I see you respond to
-> > > > any of the patches in the series, though, I'll add you to the whole
-> > > > series Cc list next time.
-> > > >
-> > > > Changes in v5:
-> > > > - Removed bit about OS may ignore (Rob/Ezequiel)
-> > > > - Added Heiko's Tested-by
-> > > > - It's not just jerry, it's most rk3288 Chromebooks (Heiko)
-> > >
-> > > What are the plans to move forward with this?
-> > > Or did you drop the whole idea again?
-> >
-> > At the moment I'm blocked on Thierry responding, either taking the
-> > patch or telling me what I need to do to fix it.  I saw Sean Paul ping
-> > Thierry on IRC on June 3rd and as far as I could tell there was no
-> > response.
-> >
-> > https://people.freedesktop.org/~cbrill/dri-log/?channel=dri-devel&highlight_names=&date=2019-06-03&show_html=true
-> >
-> > ...and as you can see Heiko pinged this thread on June 14th.
-> >
-> > Thierry: can you help give us some direction?  Are you uninterested in
-> > reviewing them and would prefer that I find someone to land them in
-> > drm-misc directly?
->
-> Sam: Oh!  I hadn't noticed that you've been added as a panel
-> maintainer in commit ef0db94f94a0 ("MAINTAINERS: Add Sam as reviewer
-> for drm/panel").  Does that mean you are able to provide some advice
-> for how to land this series?  As far as I know everything is in order
-> for it to land, but if you are aware of something I need to do to spin
-> it then please let me know!
+Hi Andrzej,
 
-BTW, at least for the binding, this will get implicitly supported in
-the schema conversion[1] as simple-panel as a binding is gone and
-panel-common already had timing node defined. A schema for the timing
-node is still needed though (hint :) ).
+Just FYI, I have a patch series that reworks how bridges and connectors
+are handled, and it will heavily conflict with this. The purpose of the
+two series isn't the same, so both make sense. I will post the patches
+this weekend, and will then review this series in that context.
+Hopefully we'll get the best of both worlds :-)
 
-Rob
+On Fri, Jun 28, 2019 at 06:01:14PM +0200, Andrzej Pietrasiewicz wrote:
+> It is difficult for a user to know which of the i2c adapters is for which
+> drm connector. This series addresses this problem.
+> 
+> The idea is to have a symbolic link in connector's sysfs directory, e.g.:
+> 
+> ls -l /sys/class/drm/card0-HDMI-A-1/ddc
+> lrwxrwxrwx 1 root root 0 Jun 24 10:42 /sys/class/drm/card0-HDMI-A-1/ddc \
+> 	-> ../../../../soc/13880000.i2c/i2c-2
+> 
+> The user then knows that their card0-HDMI-A-1 uses i2c-2 and can e.g. run
+> ddcutil:
+> 
+> ddcutil -b 2 getvcp 0x10
+> VCP code 0x10 (Brightness                    ): current value =    90, max value =   100
+> 
+> The first patch in the series adds struct i2c_adapter pointer to struct
+> drm_connector. If the field is used by a particular driver, then an
+> appropriate symbolic link is created by the generic code, which is also added
+> by this patch.
+> 
+> The second patch is an example of how to convert a driver to this new scheme.
+> 
+> v1..v2:
+> 
+> - used fixed name "ddc" for the symbolic link in order to make it easy for
+> userspace to find the i2c adapter
+> 
+> v2..v3:
+> 
+> - converted as many drivers as possible.
+> 
+> PATCHES 3/22-22/22 SHOULD BE CONSIDERED RFC!
+> 
+> Andrzej Pietrasiewicz (22):
+>   drm: Include ddc adapter pointer in struct drm_connector
+>   drm/exynos: Provide ddc symlink in connector's sysfs
+>   drm: rockchip: Provide ddc symlink in rk3066_hdmi sysfs directory
+>   drm: rockchip: Provide ddc symlink in inno_hdmi sysfs directory
+>   drm/msm/hdmi: Provide ddc symlink in hdmi connector sysfs directory
+>   drm/sun4i: hdmi: Provide ddc symlink in sun4i hdmi connector sysfs
+>     directory
+>   drm/mediatek: Provide ddc symlink in hdmi connector sysfs directory
+>   drm/tegra: Provide ddc symlink in output connector sysfs directory
+>   drm/imx: imx-ldb: Provide ddc symlink in connector's sysfs
+>   drm/imx: imx-tve: Provide ddc symlink in connector's sysfs
+>   drm/vc4: Provide ddc symlink in connector sysfs directory
+>   drm: zte: Provide ddc symlink in hdmi connector sysfs directory
+>   drm: zte: Provide ddc symlink in vga connector sysfs directory
+>   drm/tilcdc: Provide ddc symlink in connector sysfs directory
+>   drm: sti: Provide ddc symlink in hdmi connector sysfs directory
+>   drm/mgag200: Provide ddc symlink in connector sysfs directory
+>   drm/ast: Provide ddc symlink in connector sysfs directory
+>   drm/bridge: dumb-vga-dac: Provide ddc symlink in connector sysfs
+>     directory
+>   drm/bridge: dw-hdmi: Provide ddc symlink in connector sysfs directory
+>   drm/bridge: ti-tfp410: Provide ddc symlink in connector sysfs
+>     directory
+>   drm/amdgpu: Provide ddc symlink in connector sysfs directory
+>   drm/radeon: Provide ddc symlink in connector sysfs directory
+> 
+>  .../gpu/drm/amd/amdgpu/amdgpu_connectors.c    | 70 +++++++++++-----
+>  drivers/gpu/drm/ast/ast_mode.c                |  1 +
+>  drivers/gpu/drm/bridge/dumb-vga-dac.c         | 19 ++---
+>  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c     | 40 ++++-----
+>  drivers/gpu/drm/bridge/ti-tfp410.c            | 19 ++---
+>  drivers/gpu/drm/drm_sysfs.c                   |  7 ++
+>  drivers/gpu/drm/exynos/exynos_hdmi.c          | 11 ++-
+>  drivers/gpu/drm/imx/imx-ldb.c                 | 13 ++-
+>  drivers/gpu/drm/imx/imx-tve.c                 |  8 +-
+>  drivers/gpu/drm/mediatek/mtk_hdmi.c           |  9 +-
+>  drivers/gpu/drm/mgag200/mgag200_mode.c        |  1 +
+>  drivers/gpu/drm/msm/hdmi/hdmi_connector.c     |  1 +
+>  drivers/gpu/drm/radeon/radeon_connectors.c    | 82 ++++++++++++++-----
+>  drivers/gpu/drm/rockchip/inno_hdmi.c          | 17 ++--
+>  drivers/gpu/drm/rockchip/rk3066_hdmi.c        | 17 ++--
+>  drivers/gpu/drm/sti/sti_hdmi.c                |  1 +
+>  drivers/gpu/drm/sun4i/sun4i_hdmi.h            |  1 -
+>  drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c        | 14 ++--
+>  drivers/gpu/drm/tegra/drm.h                   |  1 -
+>  drivers/gpu/drm/tegra/output.c                | 12 +--
+>  drivers/gpu/drm/tegra/sor.c                   |  6 +-
+>  drivers/gpu/drm/tilcdc/tilcdc_tfp410.c        |  1 +
+>  drivers/gpu/drm/vc4/vc4_hdmi.c                | 16 ++--
+>  drivers/gpu/drm/zte/zx_hdmi.c                 | 25 ++----
+>  drivers/gpu/drm/zte/zx_vga.c                  | 25 ++----
+>  include/drm/drm_connector.h                   | 11 +++
+>  26 files changed, 252 insertions(+), 176 deletions(-)
+> 
+> -- 
+> 2.17.1
+> 
 
-[1] https://patchwork.ozlabs.org/patch/1121538/
+-- 
+Regards,
+
+Laurent Pinchart
 
 _______________________________________________
 Linux-rockchip mailing list
