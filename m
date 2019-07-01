@@ -2,112 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D9285C29B
-	for <lists+linux-rockchip@lfdr.de>; Mon,  1 Jul 2019 20:06:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 683775C5A3
+	for <lists+linux-rockchip@lfdr.de>; Tue,  2 Jul 2019 00:24:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hL37+NEFgg4oxCK6tymGb5hsgSz8QdD0eQcEEtAVVNU=; b=hgiFqb2Fn1k6EM
-	NemgtTUaws6n76AzNjcPOjzqjTz+OuHhSVTWq6AMHgJ4Y54VmsYXnoZFjhdo/cGrcglYHUZuiuGFQ
-	MqQx/CCQ6bm35QgU1f8TXRxQWpWtbAsvYPV4oPv2HMYsTXSolOPqVeI2Tw3u3Rx9C13KLc5ZPaORo
-	zLQ0SkeItxpPqFv8DyOI/vKADeIjzz6gkVt2AqA+A/F8PTolWicM4l/CqVLGQW3kzxzLA1TikxNap
-	iLU8p0V6Iq9RbsTkfIdAEOX09+QFueGj7aePsKXhM+KJxYftLR+euhKX7JCgwrjIOXgn00Xzem3v3
-	4BD8OnNMFa208l4WyZRg==;
+	List-Owner; bh=TM72D27F9HCVXN2dv6NnyAJ8wYykaNCbn/51HoDxZhc=; b=D+aTFq5kZCATe+
+	0C9cGpYBq0FY+eQf1szzW/hVvUWD/J6c5G9rbVQwgKjh2Gn4CwvXoJbEItehhGi/RD39shDRX1PLi
+	gFQYSrOxGFbchQ3S0Ilj8Hm+A7GLUQOcQHjcWSGc9jE3RAigJgWYj0dU5b18pbVTNHMag+RxdCnNZ
+	ynDpngoFvqWVO+U4gS+VefHH/GnTN/DB/Zb5xoHBybyyYAvuTi0s9sSJV29n8jmjQy/+8g9DQd66U
+	AS4eYQqGNJshE9NQBFhM4jrlD4wVgyXaLijBsayylBTpVZyOdinmKbBTobEypUkFhs7SzFQm5jHIq
+	OUJY/JcYtARhh6TpsgtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hi0hF-0002yf-Hu; Mon, 01 Jul 2019 18:06:33 +0000
-Received: from mail-eopbgr700064.outbound.protection.outlook.com
- ([40.107.70.64] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
+	id 1hi4ig-00024v-Vw; Mon, 01 Jul 2019 22:24:18 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hi0h6-0002rC-W6; Mon, 01 Jul 2019 18:06:26 +0000
+ id 1hi4hZ-0001Q0-V0
+ for linux-rockchip@lists.infradead.org; Mon, 01 Jul 2019 22:23:11 +0000
+Received: by mail-lf1-x144.google.com with SMTP id d11so9888148lfb.4
+ for <linux-rockchip@lists.infradead.org>; Mon, 01 Jul 2019 15:23:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=A0GErOmXWvzZBnCzwVTs8ZusGUhRN06T0PRYmCTIm1o=;
- b=ny3tuhDW2/vwmiWWxY4oFGwJh/kMPU/7MT0GLNRWt4i8u+hRdqm8oR1VNHOCsfYybyslAEBBp3ksRW3WsQdPBxyknWcO0HxGd+r7BOSV7tw198DytbAueY0zmH6Hx6ogUy4cb/efQDiYAJ5rv2mlFVdR/4W2UTGvfnKeeziEl0E=
-Received: from BYAPR02MB5992.namprd02.prod.outlook.com (20.179.89.80) by
- BYAPR02MB5925.namprd02.prod.outlook.com (20.179.88.88) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2032.17; Mon, 1 Jul 2019 18:06:19 +0000
-Received: from BYAPR02MB5992.namprd02.prod.outlook.com
- ([fe80::7d51:4070:6fa5:ad63]) by BYAPR02MB5992.namprd02.prod.outlook.com
- ([fe80::7d51:4070:6fa5:ad63%6]) with mapi id 15.20.2032.019; Mon, 1 Jul 2019
- 18:06:19 +0000
-From: Jolly Shah <JOLLYS@xilinx.com>
-To: Manish Narani <MNARANI@xilinx.com>, "ulf.hansson@linaro.org"
- <ulf.hansson@linaro.org>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>, "heiko@sntech.de"
- <heiko@sntech.de>, Michal Simek <michals@xilinx.com>,
- "adrian.hunter@intel.com" <adrian.hunter@intel.com>,
- "christoph.muellner@theobroma-systems.com"
- <christoph.muellner@theobroma-systems.com>,
- "philipp.tomsich@theobroma-systems.com"
- <philipp.tomsich@theobroma-systems.com>, "viresh.kumar@linaro.org"
- <viresh.kumar@linaro.org>, "scott.branden@broadcom.com"
- <scott.branden@broadcom.com>, "ayaka@soulik.info" <ayaka@soulik.info>,
- "kernel@esmil.dk" <kernel@esmil.dk>, "tony.xie@rock-chips.com"
- <tony.xie@rock-chips.com>, Rajan Vaja <RAJANV@xilinx.com>, Nava kishore Manne
- <navam@xilinx.com>, "mdf@kernel.org" <mdf@kernel.org>, Manish Narani
- <MNARANI@xilinx.com>, "olof@lixom.net" <olof@lixom.net>
-Subject: RE: [PATCH v2 09/11] firmware: xilinx: Add SDIO Tap Delay APIs
-Thread-Topic: [PATCH v2 09/11] firmware: xilinx: Add SDIO Tap Delay APIs
-Thread-Index: AQHVL84JY2ud08ZOekGksOuZgwbNtaa2D3KQ
-Date: Mon, 1 Jul 2019 18:06:19 +0000
-Message-ID: <BYAPR02MB599224BA6280EDF56870E1D8B8F90@BYAPR02MB5992.namprd02.prod.outlook.com>
-References: <1561958991-21935-1-git-send-email-manish.narani@xilinx.com>
- <1561958991-21935-10-git-send-email-manish.narani@xilinx.com>
-In-Reply-To: <1561958991-21935-10-git-send-email-manish.narani@xilinx.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=JOLLYS@xilinx.com; 
-x-originating-ip: [149.199.62.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: ab625af0-dafc-46da-7bad-08d6fe4ed178
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:BYAPR02MB5925; 
-x-ms-traffictypediagnostic: BYAPR02MB5925:
-x-microsoft-antispam-prvs: <BYAPR02MB592513AE55DD28A437424BCBB8F90@BYAPR02MB5925.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4303;
-x-forefront-prvs: 00851CA28B
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(366004)(376002)(346002)(39860400002)(396003)(199004)(189003)(13464003)(73956011)(68736007)(316002)(14454004)(86362001)(446003)(14444005)(66946007)(2201001)(6246003)(76116006)(256004)(66476007)(66446008)(64756008)(66556008)(7696005)(71190400001)(486006)(66066001)(102836004)(476003)(11346002)(74316002)(305945005)(53546011)(81156014)(81166006)(6506007)(7736002)(2906002)(52536014)(8676002)(478600001)(99286004)(33656002)(229853002)(7416002)(53936002)(76176011)(186003)(5660300002)(55016002)(9686003)(26005)(4326008)(3846002)(2501003)(25786009)(6116002)(6436002)(8936002)(54906003)(110136005)(71200400001)(72206003)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR02MB5925;
- H:BYAPR02MB5992.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 4njsNdeEFYZIs3xM5jaOMl2Q0bqnmGl7nohzZQeljFBW9B+GMSlr+lMTwjjMRSC4MPm/2xFwnzr/nsZC3EmPDHVvRGrT2E/Eyu/80LpnCmVih47yUyv+ZhKlcOcgwn5QtKz7filXzUjwQtM/NdKP6b/yxyxvfXfgpKkh6mY2PCouIj/IGfkCa8BZqnfcxv94AJOAdPrs90hIc3zsiADhdCfqxewzoFJ+KSiHd8Wek1qzP+3VuuK9pXVR7nJCfrV33u/AU+SzW7qmzZnfmzH6hGS/gHCkZJPCHmP0dJJcI15HUMw6ZKkwPbcXdURc45qy09XAcCs9wP3DuB+SOzfHPR6jCR6n43mz9lpTEfDgHxE3JAYKfl5y3YwTqPk8QtL+vY5C0tQRjo/IL7evfBtEKXG4v2pB1+/9DozD64DNdsk=
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=Fbe7TmsgKhbmnEw0caEQhgkPX3EuX765bm6NJgTCrNg=;
+ b=wDEGwiH167sK/zruCQWkVlavCac1uR/NO9TtBq/Sqoo6WcqseUKWzNqerwLnTFKfWH
+ xURZHnwFMVhD1xSzMtyPQKSJTVnZiDnn4ESlNfw2M0X1UtWk0PHmHTvf14WEEK/VmtfU
+ NPKfO4h+n/33/UxOVLYShO5bsbld1il1hcjk09ELE6kCKkDUOTTxDUIMin2h3iBfkmvs
+ lCMshf8NkuNuixK9LLoufKw1vMyzCvHoQuThd4pQ2QKLN6lkD/a7oUPqOkipARTRwD8V
+ +4jAIwBumMso9UTGjBtyZgvK4P13NbOaTI3w5+O8xViOqWJHRZFGY3Oj8XF1ZAgh2Xfr
+ aR9A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Fbe7TmsgKhbmnEw0caEQhgkPX3EuX765bm6NJgTCrNg=;
+ b=TJP1Pl1Qu/Ehav1qSVZQDYmExfV419bE3OyUcxe2uv5fs2Dunk7K1mGezkGjbaT0Cy
+ UeJUTK4k2R19VdlmzNtsMdwJnXD0+jDGYnNz9R08R+oEuGB99HCXFzf6uwzZ8Q1v7bTS
+ A2HFxOrqg2+UhwFRO4KX1xNIMy+nPcFkniYXtdC67iunZCheeZuJlxPpWT+kd1WohstS
+ fxThzOARQ7J2pkGDP2m2pl81EoWcMT0gvb6DVNN07WBKyz0SeFmhuD2HOWy9lO7bUWcb
+ 0SCr2Y4ZmK0YSXYCLa5/Ue3mmnETYnLRsSbujReX/e7PrV2kIZ/WPpEqUK7YTAwL0gUW
+ E3NA==
+X-Gm-Message-State: APjAAAXg/Ghp3OJHwb4cA9FfXdbfMkLCatevHR53eAtWrSe23uSyzmzp
+ 0xBMfkjo0IUS3RjCgijcKZ4ZJw==
+X-Google-Smtp-Source: APXvYqxKzVIeKl8FYOyPQIt5SE6DrQDN3rxViA0xrYfu0jOVjbybTl4w+cgE0rVMZjYBZabf7n5TGQ==
+X-Received: by 2002:a19:7509:: with SMTP id y9mr1694202lfe.117.1562019788172; 
+ Mon, 01 Jul 2019 15:23:08 -0700 (PDT)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id k82sm3461240lje.30.2019.07.01.15.23.06
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 01 Jul 2019 15:23:07 -0700 (PDT)
+Date: Mon, 1 Jul 2019 15:15:43 -0700
+From: Olof Johansson <olof@lixom.net>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: Re: [GIT PULL 1/2] Rockchip dts32 updates for 5.3 round 2
+Message-ID: <20190701221543.mpr73ykx6khcgubm@localhost>
+References: <1883297.MJ2kjSRBWT@phil>
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ab625af0-dafc-46da-7bad-08d6fe4ed178
-X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Jul 2019 18:06:19.0874 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: jollys@xilinx.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB5925
+Content-Disposition: inline
+In-Reply-To: <1883297.MJ2kjSRBWT@phil>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_110625_091360_DA274680 
-X-CRM114-Status: GOOD (  16.68  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190701_152310_002624_2F614367 
+X-CRM114-Status: GOOD (  12.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.70.64 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -123,160 +94,39 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>
+Cc: linux-rockchip@lists.infradead.org, arm@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Manish,
+On Mon, Jul 01, 2019 at 11:33:34AM +0200, Heiko Stuebner wrote:
+> Hi Arnd, Kevin, Olof,
+> 
+> please find below and in the reply round2 of Rockchip updates for armsoc.
+> 
+> Please pull!
+> 
+> Thanks
+> Heiko
+> 
+> The following changes since commit b8925b7c2f867df6ce3e20deb4b3e2b9b32b20ff:
+> 
+>   ARM: dts: rockchip: Split GPIO keys for veyron into multiple devices (2019-06-06 12:41:04 +0200)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.3-rockchip-dts32-2
+> 
+> for you to fetch changes up to 519574e3259c8d7e5d78366ef513cfaaf650784f:
+> 
+>   ARM: dts: rockchip: add display nodes for rk322x (2019-06-27 11:57:20 +0200)
 
-> -----Original Message-----
-> From: Manish Narani <manish.narani@xilinx.com>
-> Sent: Sunday, June 30, 2019 10:30 PM
-> To: ulf.hansson@linaro.org; robh+dt@kernel.org; mark.rutland@arm.com;
-> heiko@sntech.de; Michal Simek <michals@xilinx.com>;
-> adrian.hunter@intel.com; christoph.muellner@theobroma-systems.com;
-> philipp.tomsich@theobroma-systems.com; viresh.kumar@linaro.org;
-> scott.branden@broadcom.com; ayaka@soulik.info; kernel@esmil.dk;
-> tony.xie@rock-chips.com; Rajan Vaja <RAJANV@xilinx.com>; Jolly Shah
-> <JOLLYS@xilinx.com>; Nava kishore Manne <navam@xilinx.com>;
-> mdf@kernel.org; Manish Narani <MNARANI@xilinx.com>; olof@lixom.net
-> Cc: linux-mmc@vger.kernel.org; devicetree@vger.kernel.org; linux-
-> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
-> rockchip@lists.infradead.org
-> Subject: [PATCH v2 09/11] firmware: xilinx: Add SDIO Tap Delay APIs
-> 
-> Add APIs for setting SDIO Tap Delays on ZynqMP platform.
-> 
-> Signed-off-by: Manish Narani <manish.narani@xilinx.com>
-> ---
->  drivers/firmware/xilinx/zynqmp.c     | 48
-> ++++++++++++++++++++++++++++++++++++
->  include/linux/firmware/xlnx-zynqmp.h | 15 ++++++++++-
->  2 files changed, 62 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/firmware/xilinx/zynqmp.c b/drivers/firmware/xilinx/zynqmp.c
-> index fd3d837..b81f1be 100644
-> --- a/drivers/firmware/xilinx/zynqmp.c
-> +++ b/drivers/firmware/xilinx/zynqmp.c
-> @@ -664,6 +664,52 @@ static int zynqmp_pm_set_requirement(const u32
-> node, const u32 capabilities,
->  				   qos, ack, NULL);
->  }
-> 
-> +/**
-> + * zynqmp_pm_sdio_out_setphase() - PM call to set clock output delays for SD
-> + * @device_id:		Device ID of the SD controller
-> + * @tap_delay:		Tap Delay value for output clock
-> + *
-> + * This API function is to be used for setting the clock output delays for SD
-> + * clock.
-> + *
-> + * Return: Returns status, either success or error+reason
-> + */
-> +static int zynqmp_pm_sdio_out_setphase(u32 device_id, u8 tap_delay)
-> +{
-> +	u32 node_id = (!device_id) ? NODE_SD_0 : NODE_SD_1;
-> +	int ret;
-> +
-> +	ret = zynqmp_pm_ioctl(node_id, IOCTL_SET_SD_TAPDELAY,
-> +			      PM_TAPDELAY_OUTPUT, tap_delay, NULL);
-> +	if (ret)
-> +		pr_err("Error setting Output Tap Delay\n");
-> +
-> +	return ret;
-> +}
-> +
-> +/**
-> + * zynqmp_pm_sdio_in_setphase() - PM call to set clock input delays for SD
-> + * @device_id:		Device ID of the SD controller
-> + * @tap_delay:		Tap Delay value for input clock
-> + *
-> + * This API function is to be used for setting the clock input delays for SD
-> + * clock.
-> + *
-> + * Return: Returns status, either success or error+reason
-> + */
-> +static int zynqmp_pm_sdio_in_setphase(u32 device_id, u8 tap_delay)
-> +{
-> +	u32 node_id = (!device_id) ? NODE_SD_0 : NODE_SD_1;
-> +	int ret;
-> +
-> +	ret = zynqmp_pm_ioctl(node_id, IOCTL_SET_SD_TAPDELAY,
-> +			      PM_TAPDELAY_INPUT, tap_delay, NULL);
-> +	if (ret)
-> +		pr_err("Error setting Input Tap Delay\n");
-> +
-> +	return ret;
-> +}
-> +
->  static const struct zynqmp_eemi_ops eemi_ops = {
->  	.get_api_version = zynqmp_pm_get_api_version,
->  	.get_chipid = zynqmp_pm_get_chipid,
-> @@ -687,6 +733,8 @@ static const struct zynqmp_eemi_ops eemi_ops = {
->  	.set_requirement = zynqmp_pm_set_requirement,
->  	.fpga_load = zynqmp_pm_fpga_load,
->  	.fpga_get_status = zynqmp_pm_fpga_get_status,
-> +	.sdio_out_setphase = zynqmp_pm_sdio_out_setphase,
-> +	.sdio_in_setphase = zynqmp_pm_sdio_in_setphase,
+Merged, thanks!
 
-Are these eemi APIs? You are using ioctl eemi api to set the delay.
 
-Thanks,
-Jolly Shah
-
->  };
-> 
->  /**
-> diff --git a/include/linux/firmware/xlnx-zynqmp.h b/include/linux/firmware/xlnx-
-> zynqmp.h
-> index 1262ea6..d9b53e5 100644
-> --- a/include/linux/firmware/xlnx-zynqmp.h
-> +++ b/include/linux/firmware/xlnx-zynqmp.h
-> @@ -92,7 +92,8 @@ enum pm_ret_status {
->  };
-> 
->  enum pm_ioctl_id {
-> -	IOCTL_SET_PLL_FRAC_MODE = 8,
-> +	IOCTL_SET_SD_TAPDELAY = 7,
-> +	IOCTL_SET_PLL_FRAC_MODE,
->  	IOCTL_GET_PLL_FRAC_MODE,
->  	IOCTL_SET_PLL_FRAC_DATA,
->  	IOCTL_GET_PLL_FRAC_DATA,
-> @@ -251,6 +252,16 @@ enum zynqmp_pm_request_ack {
->  	ZYNQMP_PM_REQUEST_ACK_NON_BLOCKING,
->  };
-> 
-> +enum pm_node_id {
-> +	NODE_SD_0 = 39,
-> +	NODE_SD_1,
-> +};
-> +
-> +enum tap_delay_type {
-> +	PM_TAPDELAY_INPUT = 0,
-> +	PM_TAPDELAY_OUTPUT,
-> +};
-> +
->  /**
->   * struct zynqmp_pm_query_data - PM query data
->   * @qid:	query ID
-> @@ -295,6 +306,8 @@ struct zynqmp_eemi_ops {
->  			       const u32 capabilities,
->  			       const u32 qos,
->  			       const enum zynqmp_pm_request_ack ack);
-> +	int (*sdio_out_setphase)(u32 device_id, u8 tap_delay);
-> +	int (*sdio_in_setphase)(u32 device_id, u8 tap_delay);
->  };
-> 
->  int zynqmp_pm_invoke_fn(u32 pm_api_id, u32 arg0, u32 arg1,
-> --
-> 2.1.1
-
+-Olof
 
 _______________________________________________
 Linux-rockchip mailing list
