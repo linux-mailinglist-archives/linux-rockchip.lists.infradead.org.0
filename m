@@ -2,51 +2,128 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C087A5CE5D
-	for <lists+linux-rockchip@lfdr.de>; Tue,  2 Jul 2019 13:26:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 979C35D268
+	for <lists+linux-rockchip@lfdr.de>; Tue,  2 Jul 2019 17:08:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u/PmFD8yjDibcIJ4ly97elXgp8155RiQfnuZIdwiIaE=; b=HUhOUM7y0/b2fy
-	tldkEeYRp1y9md9lh1n5Xlq5MavOYBfTGNuVBBD5PXA6LP05C/ZaE0zLax6fW4wr7/EZZrlhaJC/c
-	Oj55nPVNqr6ZSgzmTyJvZl69muYbmyimV/XyvJVB8CZ82fgMtgW+DDBHBdK04MI5UQGlta5Je21HI
-	G8rwn9BIRWeEmb4LDV3oqrK9vG5bOpEHStdFgfF7xRXtU+7yoF87Jp0Usgfeg9BfhL8merP7PWLsq
-	OA1SZu8YOu7FX9bpTxlzQSe5U7KSb5qPr23n0R2l3dyS0sxW3YOvygZYf75JmpVJUtI+CAQ/1ll6b
-	8R8fMUs2mGGqpkihGXxw==;
+	List-Owner; bh=B4s3EzkwfqqCcPQqyGJoImDlkP8jgMso/2g/ML9S/Os=; b=AbrEP6N2HgdkRp
+	PPWhLmyIgtO5Zxjlqw9t8LtMTgfsQu3lZ0fatKy73VyNbG7uQKCp89PFHv6J7KL0Kjio6pBHlVLq/
+	cRLncqnrw7EovYpmZKneEiqgpGy+ANiOzMG9yQ999d65NcqlKFjZJuKFv+kBfFaXl3CXcEj8JIwBN
+	V8nmHAzUeGhOyNderhVFZQ3Kw95o7/pZ56fx7IIkcGTyYChLamrVV3HvU9Ar8+mHC/Yb4Jk5u+gxf
+	u1rN5d2qBKFlcq37LYrtnC3FFVj6gWRROboc0KJf+fnhjTKXBhzug8qIEevwrHeQKlF3rWl99b5m5
+	/g25JFEkd6Hv0qNSfeFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiGvo-0007X1-MA; Tue, 02 Jul 2019 11:26:41 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hiKOS-0000lE-H9; Tue, 02 Jul 2019 15:08:28 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiGvl-0007Vs-7C
- for linux-rockchip@lists.infradead.org; Tue, 02 Jul 2019 11:26:38 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id B0A022852D9
-Message-ID: <3c68bf286d8b75ac339df0eab43d276667e073c2.camel@collabora.com>
-Subject: Re: [PATCH v2 0/3] RK3288 Gamma LUT
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-Date: Tue, 02 Jul 2019 08:26:22 -0300
-In-Reply-To: <20190621211346.1324-1-ezequiel@collabora.com>
-References: <20190621211346.1324-1-ezequiel@collabora.com>
-Organization: Collabora
-User-Agent: Evolution 3.30.5-1.1 
+ id 1hiKOK-0000jz-Gq; Tue, 02 Jul 2019 15:08:21 +0000
+Received: by mail-qk1-x741.google.com with SMTP id p144so14238051qke.11;
+ Tue, 02 Jul 2019 08:08:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=S9xA51zv/GRMu9EWqnEkCiUuTilo4EgcogHBD4UUys8=;
+ b=bw1pXEfKXRuMcifGGxJJy44p7S65Z/DS18lPEI1J6ea0G6qkun9SEXdtzDQL9oZmF3
+ lSzgzmc87lYTnHAc3cGFvKPCBqqkqbzrIJWf7inROni3k1QZP8b46mD8JFmrYv0nqpkH
+ D52mXnPBMPuamVS6nLaHjdMJf5IqDA8OTUShB/lIRSeIa0v6JLCFGd2le5e0BUTk2qJJ
+ gPzoYjmRnBjGjAIm2m1+UNTEOV9PUz93aF15wmRYojHF3tYG+ZwoMyMgeM9L7vMwcOQa
+ jJw/a1iSNCkKKYX9OW3gn3fMROR9O0CDp9ARPzoVRpDm4GMJu1ijmKuT2QxUDfxLi3jW
+ dj1g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=S9xA51zv/GRMu9EWqnEkCiUuTilo4EgcogHBD4UUys8=;
+ b=BZdkfid44/q9SINdKGDuOSdh+gOraK//8JgIVslWrIN8eZFMKdMSF8O9SqDuMb0Z3e
+ v8Xyk05qHVpQDr7lizVSmMlwMI63bJ5YU/ltVImxJBkuj6PSBzclE5V5lYpyyZH57XaU
+ GjXjQXMbZAf0L93EI/b1Hg1rjunMCgyZWw002NErdjPb9UX+xmy66/G6o2p4RNAarUY8
+ ztTy1Ax9i+dDhDOu/gPxJSoSeV38LigwAdigsHuEJ8JUEkrB8wlU00l4bXm8iAfgV1bE
+ Vyx7G4weCPJ2BAKHhevV+hxGSF7wJEJFBX+88b+Ie7iJMT5ZduuQki7xgTXc1MHzG9gW
+ yF9A==
+X-Gm-Message-State: APjAAAUPTXKsxGjS8sRJMmn3SGaa7VCytQlhRMk1Dl8qFJxb7W/jL1Rb
+ cq8rcPL8LEoYhk81i5hTQ0XSZ03GhL8au4kjOXQ=
+X-Google-Smtp-Source: APXvYqxVSrlATNlVbhJVg9/xnGfnuLiEbR8snekrKy78a7q1t5jecx7SD2PWaGuXLsIU2gvnvumFqEYUAlyES1OdfCI=
+X-Received: by 2002:ab0:2789:: with SMTP id t9mr17791002uap.69.1562080098556; 
+ Tue, 02 Jul 2019 08:08:18 -0700 (PDT)
 MIME-Version: 1.0
+References: <3fb19371-db7d-f9dc-31a7-1ccd126f6784@collabora.com>
+ <cover.1561735433.git.andrzej.p@collabora.com>
+ <20190628164514.GS12905@phenom.ffwll.local>
+In-Reply-To: <20190628164514.GS12905@phenom.ffwll.local>
+From: Emil Velikov <emil.l.velikov@gmail.com>
+Date: Tue, 2 Jul 2019 16:08:30 +0100
+Message-ID: <CACvgo502Yt90z9Tf+a8f_n3pgFa_NxFQ1LnEGmukT_jB2XaFzA@mail.gmail.com>
+Subject: Re: [PATCH v3 00/22] Associate ddc adapters with connectors
+To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
+ ML dri-devel <dri-devel@lists.freedesktop.org>, 
+ kernel@collabora.com, Alex Deucher <alexander.deucher@amd.com>, 
+ =?UTF-8?Q?Christian_K=C3=B6nig?= <christian.koenig@amd.com>, 
+ "David (ChunMing) Zhou" <David1.Zhou@amd.com>, David Airlie <airlied@linux.ie>,
+ Dave Airlie <airlied@redhat.com>, Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, 
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+ Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>, 
+ Inki Dae <inki.dae@samsung.com>, Joonyoung Shim <jy0922.shim@samsung.com>, 
+ Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, 
+ Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>, 
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, 
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ CK Hu <ck.hu@mediatek.com>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, Rob Clark <robdclark@gmail.com>, 
+ Sandy Huang <hjc@rock-chips.com>,
+ =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>, 
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Vincent Abriou <vincent.abriou@st.com>, 
+ Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>, 
+ Jonathan Hunter <jonathanh@nvidia.com>, Jyri Sarha <jsarha@ti.com>, 
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, Eric Anholt <eric@anholt.net>,
+ Sam Ravnborg <sam@ravnborg.org>, 
+ Neil Armstrong <narmstrong@baylibre.com>, Huang Rui <ray.huang@amd.com>, 
+ =?UTF-8?B?VmlsbGUgU3lyasOkbMOk?= <ville.syrjala@linux.intel.com>, 
+ Gerd Hoffmann <kraxel@redhat.com>, Thomas Zimmermann <tzimmermann@suse.de>, 
+ "Y.C. Chen" <yc_chen@aspeedtech.com>, Douglas Anderson <dianders@chromium.org>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@siol.net>, 
+ Thomas Gleixner <tglx@linutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Allison Randal <allison@lohutok.net>, Todor Tomov <todor.tomov@linaro.org>, 
+ Mamta Shukla <mamtashukla555@gmail.com>, 
+ amd-gfx mailing list <amd-gfx@lists.freedesktop.org>, 
+ "Linux-Kernel@Vger. Kernel. Org" <linux-kernel@vger.kernel.org>,
+ LAKML <linux-arm-kernel@lists.infradead.org>, 
+ "moderated list:ARM/S5P EXYNOS AR..." <linux-samsung-soc@vger.kernel.org>,
+ linux-mediatek@lists.infradead.org, 
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>, freedreno@lists.freedesktop.org,
+ linux-rockchip <linux-rockchip@lists.infradead.org>,
+ linux-tegra@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_042637_387167_CC5F10EE 
-X-CRM114-Status: GOOD (  17.02  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190702_080820_566236_C073211E 
+X-CRM114-Status: GOOD (  21.27  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (emil.l.velikov[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,82 +136,60 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jacopo Mondi <jacopo@jmondi.org>, Rob Herring <robh+dt@kernel.org>,
- linux-kernel@vger.kernel.org, Sandy Huang <hjc@rock-chips.com>,
- dri-devel@lists.freedesktop.org, Douglas Anderson <dianders@chromium.org>,
- linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Sean Paul <seanpaul@chromium.org>, kernel@collabora.com,
- Ilia Mirkin <imirkin@alum.mit.edu>
+Cc: Daniel Vetter <daniel@ffwll.ch>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Heiko,
+On Fri, 28 Jun 2019 at 17:45, Daniel Vetter <daniel@ffwll.ch> wrote:
+>
+> On Fri, Jun 28, 2019 at 06:01:14PM +0200, Andrzej Pietrasiewicz wrote:
+> > It is difficult for a user to know which of the i2c adapters is for which
+> > drm connector. This series addresses this problem.
+> >
+> > The idea is to have a symbolic link in connector's sysfs directory, e.g.:
+> >
+> > ls -l /sys/class/drm/card0-HDMI-A-1/ddc
+> > lrwxrwxrwx 1 root root 0 Jun 24 10:42 /sys/class/drm/card0-HDMI-A-1/ddc \
+> >       -> ../../../../soc/13880000.i2c/i2c-2
+> >
+> > The user then knows that their card0-HDMI-A-1 uses i2c-2 and can e.g. run
+> > ddcutil:
+> >
+> > ddcutil -b 2 getvcp 0x10
+> > VCP code 0x10 (Brightness                    ): current value =    90, max value =   100
+> >
+> > The first patch in the series adds struct i2c_adapter pointer to struct
+> > drm_connector. If the field is used by a particular driver, then an
+> > appropriate symbolic link is created by the generic code, which is also added
+> > by this patch.
+> >
+> > The second patch is an example of how to convert a driver to this new scheme.
+> >
+> > v1..v2:
+> >
+> > - used fixed name "ddc" for the symbolic link in order to make it easy for
+> > userspace to find the i2c adapter
+> >
+> > v2..v3:
+> >
+> > - converted as many drivers as possible.
+> >
+> > PATCHES 3/22-22/22 SHOULD BE CONSIDERED RFC!
+>
+> There's a lot more drivers than this I think (i915 is absent as an
+> example, but there should be tons more). Why are those not possible?
 
-On Fri, 2019-06-21 at 18:13 -0300, Ezequiel Garcia wrote:
-> Let's support Gamma LUT configuration on RK3288 SoCs.
-> 
-> In order to do so, this series adds a new and optional
-> address resource.
->     
-> A separate address resource is required because on this RK3288,
-> the LUT address is after the MMU address, which is requested
-> by the iommu driver. This prevents the DRM driver
-> from requesting an entire register space.
-> 
-> The current implementation works for RGB 10-bit tables, as that
-> is what seems to work on RK3288.
-> 
-> This has been tested on a Rock2 Square board, using
-> a hacked 'modetest' tool, with legacy and atomic APIs. 
-> 
-> Thanks,
-> Eze
-> 
-> Changes from v1:
-> * drop explicit linear LUT after finding a proper
->   way to disable gamma correction.
-> * avoid setting gamma is the CRTC is not active.
-> * s/int/unsigned int as suggested by Jacopo.
-> * only enable color management and set gamma size
->   if gamma LUT is supported, suggested by Doug.
-> * drop the reg-names usage, and instead just use indexed reg
->   specifiers, suggested by Doug.
-> 
-> Changes from RFC:
-> * Request (an optional) address resource for the LUT.
-> * Add devicetree changes.
-> * Drop support for RK3399, which doesn't seem to work
->   out of the box and needs more research.
-> * Support pass-thru setting when GAMMA_LUT is NULL.
-> * Add a check for the gamma size, as suggested by Ilia.
-> * Move gamma setting to atomic_commit_tail, as pointed
->   out by Jacopo/Laurent, is the correct way.
-> 
-> Ezequiel Garcia (3):
->   dt-bindings: display: rockchip: document VOP gamma LUT address
->   drm/rockchip: Add optional support for CRTC gamma LUT
->   ARM: dts: rockchip: Add RK3288 VOP gamma LUT address
-> 
->  .../display/rockchip/rockchip-vop.txt         |   6 +-
->  arch/arm/boot/dts/rk3288.dtsi                 |   4 +-
->  drivers/gpu/drm/rockchip/rockchip_drm_fb.c    |   3 +
->  drivers/gpu/drm/rockchip/rockchip_drm_vop.c   | 114 ++++++++++++++++++
->  drivers/gpu/drm/rockchip/rockchip_drm_vop.h   |   7 ++
->  drivers/gpu/drm/rockchip/rockchip_vop_reg.c   |   2 +
->  6 files changed, 133 insertions(+), 3 deletions(-)
-> 
+While I fully agree there are more drivers, at the same time I wonder.
+Is it a good idea to expect all of those to be fixed in one go and
+block patches addressing 15+ drivers?
 
-Any other feedback on this series? If you are happy with the approach now,
-I am wondering if you can take it or if it's way too late.
+Personally I think it's reasonable to have this, alongside a TODO
+entry for other drivers.
 
-Thanks,
-Eze
-
-
+HTH
+Emil
 
 _______________________________________________
 Linux-rockchip mailing list
