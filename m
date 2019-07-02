@@ -2,84 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 700905D746
-	for <lists+linux-rockchip@lfdr.de>; Tue,  2 Jul 2019 22:14:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 429115D7A6
+	for <lists+linux-rockchip@lfdr.de>; Tue,  2 Jul 2019 22:54:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GK3aUrUM/JXftAB8AROtIqufzbY0p0PhfX9NoP9aQEA=; b=NsQ6IltoSo0RoL
-	PW/GdmM6EPQWQ9RPu/NG4j3xo23WgdDQxFQ8fhJboSplH621jRWnLxkQvhRU5sztMFgbEPdSuWVwB
-	BQo8AhQWhl4tSIjhc8H8IXu2BSoanIGjDMFhIZgC064iyhNMnZzTs0sBqoLgH3Jt64uqLvQezD2Za
-	9+EPlx7vsqXXFf+Wdl+IaM0nYGtGrEwJDE7r+Z4H3VM5cO3Zy0BLPCY5kjgawXb6k0bENOtJpKs4u
-	Rrv1JzHN+c88Zeqq6z+aCRrjtcGoB4QTrDEQKd64M2kuGz6KMuk5QuEE2f8c00Dkj8ttrw2J8j85j
-	ZxQjGnGPOiZnYpXkr+7A==;
+	List-Owner; bh=kXJsepm8nUFoalHcqDtgMKgHoGGDcJpxk5I6Uikarg0=; b=ttGnkFkbnqv8JG
+	/R2x5rSbnGFdknt0hiURgkHS6qSGHWTqHD3jalYIyllY1jo+Z95be8ROGgHdeFwHKJc1iZwMk9WLC
+	G14JwWE11XU6QYg5UejOBlnX2qcn8ZgI/qM+sFiB1lLYi24jVCgMMFREwGXxEbnsaQc9fiXfdpGCk
+	eGbseuDWAbGH8of2iDj+MPVkZaKp1l8TD/Hu7//7W9e6xxXZfUFiZmvPElzj/48NG4fhLp/QDpz8R
+	sKXIkR1B27WohsitkiSNxpbNw4WrnwvqRfIayGmK+dcS5a1734RiUxVOxMh4dcbdYy/EEuI1tAKck
+	EYPUIHohg+UEAAd1FrQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiPAq-0001mN-9J; Tue, 02 Jul 2019 20:14:44 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1hiPnc-0005zF-0I; Tue, 02 Jul 2019 20:54:48 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiPAm-0001m0-U6
- for linux-rockchip@lists.infradead.org; Tue, 02 Jul 2019 20:14:42 +0000
-Received: by mail-io1-xd43.google.com with SMTP id i10so26317217iol.13
- for <linux-rockchip@lists.infradead.org>; Tue, 02 Jul 2019 13:14:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ id 1hiPnV-0005yb-T6; Tue, 02 Jul 2019 20:54:44 +0000
+Received: by mail-wr1-x444.google.com with SMTP id e3so219691wrs.11;
+ Tue, 02 Jul 2019 13:54:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6suCIUcpnxYWLx0u7rAt8YHu7DyHRein/0Ku8MDeQrw=;
- b=MyF13COg8Z9CREi9V7uwtNZ+RQgUSogpyqwer+wxMaRNlPvmTJ3LJUiyv1bRH2HNg4
- UdgEbOWphL591zLtGdaR5I4Nw4e1exGSG3CgmWGSsfGiRRfTC+NEd9mUTlTTIUs2/NJT
- WoMG2zeqsWqlC36tyRgV6MVFaOJ16SDyDjBSU=
+ :cc; bh=QThr26AToxrJCKM3k8avZvDMVqyrJ91dTaGLyhqbH20=;
+ b=CRhO9oD6SqNzMbupKcIulh5ZXIanNddF06TqDSNgfQPMYhR/s7zdDquxRJd8ci7C9p
+ ONyfD3Hu4BkgQVuHrwMohUMc4ZIJ51FSRKkpcw7fI29fFhM3UsLBBtx3v+4OrpjNN42O
+ iG47HRJK+YV8/5bD/0r2cyBmEwZF2CAwAWqwBDOXEtoV25x6wRQ3FcYj/azqIbT5oa9j
+ 6OJEDNKxtRhSkjyOv2Nj/a4FwZr/mNd3fT7vclIghrZACUmxwqKjT8whrAZ26Ao01r9s
+ XMlxTal8M8MXuQVU9QBeMjsHTI3wulZ695PnLc7iKaJZqun03bmx6azn+3R9TzccNsUl
+ vKcA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=6suCIUcpnxYWLx0u7rAt8YHu7DyHRein/0Ku8MDeQrw=;
- b=L7qlc9O4bgt8ET3BgfTF1fcu8qICfe+H+bq4NypF6uS7LZK2wqEYkE7PG6nGveJQzy
- 7aOv3zvbSDHPOOM5hHwfazA26YxMGGmMDAYTu6WOPuCNwFA8e8g4jZWpbjBOq41qRc7a
- XB8XLE5IAUzKgGdjri1+44qwm1CSoLlJuASVldeP0LRkKIuLbD2opQuOEOPp97J//P67
- xyKTpyMlic6hv7057rkiEanwraVVTiH0D59WYJwqfWvaJyLuOSx9FurO9ndC5TIoNMah
- pKgjYVwOxNLhGqvouoJCKyGMTkijD+IRzVpzNq4PVs40Spt3RiTph+Gsqq/h6tpVmMiE
- sZ/A==
-X-Gm-Message-State: APjAAAWgHIHC597/mo4+5SbXNPdkxgzdvm6zUQ7vCUq8m3leRFgDY7B9
- Tr6YQAsIkcfNxcyP1RaFxP+UCT2+jSw=
-X-Google-Smtp-Source: APXvYqyCYPOP/7bW9cp+fZP0v+TEle4Ho1GuxIsqqze/Lmwgy+SHGXmfz1uUa3enTmQFemaBZcS5jw==
-X-Received: by 2002:a02:a38d:: with SMTP id y13mr20618103jak.68.1562098479159; 
- Tue, 02 Jul 2019 13:14:39 -0700 (PDT)
-Received: from mail-io1-f49.google.com (mail-io1-f49.google.com.
- [209.85.166.49])
- by smtp.gmail.com with ESMTPSA id z1sm13574134ioh.52.2019.07.02.13.14.37
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Tue, 02 Jul 2019 13:14:38 -0700 (PDT)
-Received: by mail-io1-f49.google.com with SMTP id w25so40090478ioc.8
- for <linux-rockchip@lists.infradead.org>; Tue, 02 Jul 2019 13:14:37 -0700 (PDT)
-X-Received: by 2002:a02:aa1d:: with SMTP id r29mr15652512jam.127.1562098477589; 
- Tue, 02 Jul 2019 13:14:37 -0700 (PDT)
+ bh=QThr26AToxrJCKM3k8avZvDMVqyrJ91dTaGLyhqbH20=;
+ b=nDLdQ68jiAAgHQR53KSt4P0EKK9IlRutStIlTs75ZZXmBUzCkUc8Me+hG+xsAxT9v5
+ voITr6v5Yktd8305ByZFmBPE8m74v6XEV4aQ6/owT2Fi/WHzXECMAYxaLwgZhcs0cUnh
+ EMmTUc9QpOwrHX9gAgOeHtQLVh85+OXPkwu7Ht8glNKdpfUqZ97lMzfbgAPoLHu2cfZ8
+ rsqTrB/i88uckHhzTee4A9Gzr7z1bzvXVycm8XrJv+KL2V1LgC9lKOGsebS6QTOT9MBH
+ 85AMubKAWUTHc59TPYgW9h46PBGXP7s/3lNGT5Ge/V5072/C21x8r59Ksdlal9Xu/K3T
+ 1oLg==
+X-Gm-Message-State: APjAAAUXqTFvXW+h4p9MjUBDxhXHBKk1EKZhAeQxb3RzGOauL6Fdd1xy
+ 4BxQCh6sip9djJ1DxWFzkMtvftdVV1XZHclIhLo=
+X-Google-Smtp-Source: APXvYqya7jRjYrg2uPzpdGQeuQD5peq7b4+1sRG0DKgsrgmsdEWE+dBrpEeEgdlCiPx2pmUH5UtfGEnqygokrflWjn8=
+X-Received: by 2002:a5d:6b11:: with SMTP id v17mr11132568wrw.323.1562100878826; 
+ Tue, 02 Jul 2019 13:54:38 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190621211346.1324-1-ezequiel@collabora.com>
- <3c68bf286d8b75ac339df0eab43d276667e073c2.camel@collabora.com>
-In-Reply-To: <3c68bf286d8b75ac339df0eab43d276667e073c2.camel@collabora.com>
-From: Doug Anderson <dianders@chromium.org>
-Date: Tue, 2 Jul 2019 13:14:24 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=UK3bpyvvFQtsvUtWHun_bfxb25R0bLyg=WJz+yHz5kvg@mail.gmail.com>
-Message-ID: <CAD=FV=UK3bpyvvFQtsvUtWHun_bfxb25R0bLyg=WJz+yHz5kvg@mail.gmail.com>
-Subject: Re: [PATCH v2 0/3] RK3288 Gamma LUT
-To: Ezequiel Garcia <ezequiel@collabora.com>
+References: <3fb19371-db7d-f9dc-31a7-1ccd126f6784@collabora.com>
+ <cover.1561735433.git.andrzej.p@collabora.com>
+ <5e355b8bec8fb3907566a741db8cc3e356246a32.1561735433.git.andrzej.p@collabora.com>
+In-Reply-To: <5e355b8bec8fb3907566a741db8cc3e356246a32.1561735433.git.andrzej.p@collabora.com>
+From: Alex Deucher <alexdeucher@gmail.com>
+Date: Tue, 2 Jul 2019 16:54:25 -0400
+Message-ID: <CADnq5_MrVoScVFgj3TP2Z+Ky8_32k=Cou5jebuMT5gE1+GZ0cA@mail.gmail.com>
+Subject: Re: [PATCH v3 21/22] drm/amdgpu: Provide ddc symlink in connector
+ sysfs directory
+To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_131441_000151_660E541A 
-X-CRM114-Status: GOOD (  21.01  )
+X-CRM114-CacheID: sfid-20190702_135442_173549_6BCB206E 
+X-CRM114-Status: GOOD (  18.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (alexdeucher[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -87,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,84 +94,218 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jacopo Mondi <jacopo@jmondi.org>,
+Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
  =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
- Sandy Huang <hjc@rock-chips.com>, dri-devel <dri-devel@lists.freedesktop.org>,
- LKML <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Sean Paul <seanpaul@chromium.org>, Rob Herring <robh+dt@kernel.org>,
- kernel@collabora.com, Ilia Mirkin <imirkin@alum.mit.edu>
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Liviu Dudau <liviu.dudau@arm.com>,
+ Maling list - DRI developers <dri-devel@lists.freedesktop.org>,
+ Sandy Huang <hjc@rock-chips.com>, Andrzej Hajda <a.hajda@samsung.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Shawn Guo <shawnguo@kernel.org>, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>,
+ =?UTF-8?B?VmlsbGUgU3lyasOkbMOk?= <ville.syrjala@linux.intel.com>,
+ "David \(ChunMing\) Zhou" <David1.Zhou@amd.com>,
+ linux-samsung-soc@vger.kernel.org, Joonyoung Shim <jy0922.shim@samsung.com>,
+ Sam Ravnborg <sam@ravnborg.org>, Kyungmin Park <kyungmin.park@samsung.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
+ Kukjin Kim <kgene@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>, CK Hu <ck.hu@mediatek.com>,
+ Dave Airlie <airlied@redhat.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Daniel Vetter <daniel@ffwll.ch>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ David Airlie <airlied@linux.ie>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Jyri Sarha <jsarha@ti.com>, Inki Dae <inki.dae@samsung.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
+ linux-tegra@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
+ Vincent Abriou <vincent.abriou@st.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Sean Paul <sean@poorly.run>, amd-gfx list <amd-gfx@lists.freedesktop.org>,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, Eric Anholt <eric@anholt.net>,
+ Thomas Zimmermann <tzimmermann@suse.de>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Douglas Anderson <dianders@chromium.org>, LKML <linux-kernel@vger.kernel.org>,
+ Todor Tomov <todor.tomov@linaro.org>, Rob Clark <robdclark@gmail.com>,
+ Huang Rui <ray.huang@amd.com>, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Alex Deucher <alexander.deucher@amd.com>,
+ freedreno <freedreno@lists.freedesktop.org>,
+ =?UTF-8?Q?Christian_K=C3=B6nig?= <christian.koenig@amd.com>,
+ Gerd Hoffmann <kraxel@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Tue, Jul 2, 2019 at 4:26 AM Ezequiel Garcia <ezequiel@collabora.com> wrote:
+On Fri, Jun 28, 2019 at 12:31 PM Andrzej Pietrasiewicz
+<andrzej.p@collabora.com> wrote:
 >
-> Hi Heiko,
+> Use the ddc pointer provided by the generic connector.
 >
-> On Fri, 2019-06-21 at 18:13 -0300, Ezequiel Garcia wrote:
-> > Let's support Gamma LUT configuration on RK3288 SoCs.
-> >
-> > In order to do so, this series adds a new and optional
-> > address resource.
-> >
-> > A separate address resource is required because on this RK3288,
-> > the LUT address is after the MMU address, which is requested
-> > by the iommu driver. This prevents the DRM driver
-> > from requesting an entire register space.
-> >
-> > The current implementation works for RGB 10-bit tables, as that
-> > is what seems to work on RK3288.
-> >
-> > This has been tested on a Rock2 Square board, using
-> > a hacked 'modetest' tool, with legacy and atomic APIs.
-> >
-> > Thanks,
-> > Eze
-> >
-> > Changes from v1:
-> > * drop explicit linear LUT after finding a proper
-> >   way to disable gamma correction.
-> > * avoid setting gamma is the CRTC is not active.
-> > * s/int/unsigned int as suggested by Jacopo.
-> > * only enable color management and set gamma size
-> >   if gamma LUT is supported, suggested by Doug.
-> > * drop the reg-names usage, and instead just use indexed reg
-> >   specifiers, suggested by Doug.
-> >
-> > Changes from RFC:
-> > * Request (an optional) address resource for the LUT.
-> > * Add devicetree changes.
-> > * Drop support for RK3399, which doesn't seem to work
-> >   out of the box and needs more research.
-> > * Support pass-thru setting when GAMMA_LUT is NULL.
-> > * Add a check for the gamma size, as suggested by Ilia.
-> > * Move gamma setting to atomic_commit_tail, as pointed
-> >   out by Jacopo/Laurent, is the correct way.
-> >
-> > Ezequiel Garcia (3):
-> >   dt-bindings: display: rockchip: document VOP gamma LUT address
-> >   drm/rockchip: Add optional support for CRTC gamma LUT
-> >   ARM: dts: rockchip: Add RK3288 VOP gamma LUT address
-> >
-> >  .../display/rockchip/rockchip-vop.txt         |   6 +-
-> >  arch/arm/boot/dts/rk3288.dtsi                 |   4 +-
-> >  drivers/gpu/drm/rockchip/rockchip_drm_fb.c    |   3 +
-> >  drivers/gpu/drm/rockchip/rockchip_drm_vop.c   | 114 ++++++++++++++++++
-> >  drivers/gpu/drm/rockchip/rockchip_drm_vop.h   |   7 ++
-> >  drivers/gpu/drm/rockchip/rockchip_vop_reg.c   |   2 +
-> >  6 files changed, 133 insertions(+), 3 deletions(-)
+> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+> ---
+>  .../gpu/drm/amd/amdgpu/amdgpu_connectors.c    | 70 ++++++++++++++-----
+>  1 file changed, 51 insertions(+), 19 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_connectors.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_connectors.c
+> index 73b2ede773d3..5f8a7e3818b9 100644
+> --- a/drivers/gpu/drm/amd/amdgpu/amdgpu_connectors.c
+> +++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_connectors.c
+> @@ -1573,11 +1573,15 @@ amdgpu_connector_add(struct amdgpu_device *adev,
+>                         goto failed;
+>                 amdgpu_connector->con_priv = amdgpu_dig_connector;
+>                 if (i2c_bus->valid) {
+> -                       amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> -                       if (amdgpu_connector->ddc_bus)
+> +                       struct amdgpu_connector *acn = amdgpu_connector;
+> +
+> +                       acn->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> +                       if (acn->ddc_bus) {
 
-I will note that I can confirm that the "gamma_test" app present on
-Chrome OS can be shown to work with this series, both on eDP and HDMI.
-I see a nice shiny RGB pattern on the screen.  Thus:
+This hunk seems pointless unless I'm missing something.  Can you drop
+this hunk?  Same comment on each instance of this below.  This also
+only covers the legacy modesetting code which is not used by default
+on most chips.  The DC code in amd/display/ is probably more relevant.
 
-Tested-by: Douglas Anderson <dianders@chromium.org>
+Alex
+
+>                                 has_aux = true;
+> -                       else
+> +                               connector->ddc = &acn->ddc_bus->adapter;
+> +                       } else {
+>                                 DRM_ERROR("DP: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
+> +                       }
+>                 }
+>                 switch (connector_type) {
+>                 case DRM_MODE_CONNECTOR_VGA:
+> @@ -1662,9 +1666,13 @@ amdgpu_connector_add(struct amdgpu_device *adev,
+>                         drm_connector_init(dev, &amdgpu_connector->base, &amdgpu_connector_vga_funcs, connector_type);
+>                         drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_vga_helper_funcs);
+>                         if (i2c_bus->valid) {
+> -                               amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> -                               if (!amdgpu_connector->ddc_bus)
+> +                               struct amdgpu_connector *acn = amdgpu_connector;
+> +
+> +                               acn->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> +                               if (!acn->ddc_bus)
+>                                         DRM_ERROR("VGA: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
+> +                               else
+> +                                       connector->ddc = &acn->ddc_bus->adapter;
+>                         }
+>                         amdgpu_connector->dac_load_detect = true;
+>                         drm_object_attach_property(&amdgpu_connector->base.base,
+> @@ -1682,9 +1690,13 @@ amdgpu_connector_add(struct amdgpu_device *adev,
+>                         drm_connector_init(dev, &amdgpu_connector->base, &amdgpu_connector_vga_funcs, connector_type);
+>                         drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_vga_helper_funcs);
+>                         if (i2c_bus->valid) {
+> -                               amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> -                               if (!amdgpu_connector->ddc_bus)
+> +                               struct amdgpu_connector *acn = amdgpu_connector;
+> +
+> +                               acn->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> +                               if (!acn->ddc_bus)
+>                                         DRM_ERROR("DVIA: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
+> +                               else
+> +                                       connector->ddc = &acn->ddc_bus->adapter;
+>                         }
+>                         amdgpu_connector->dac_load_detect = true;
+>                         drm_object_attach_property(&amdgpu_connector->base.base,
+> @@ -1707,9 +1719,13 @@ amdgpu_connector_add(struct amdgpu_device *adev,
+>                         drm_connector_init(dev, &amdgpu_connector->base, &amdgpu_connector_dvi_funcs, connector_type);
+>                         drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_dvi_helper_funcs);
+>                         if (i2c_bus->valid) {
+> -                               amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> -                               if (!amdgpu_connector->ddc_bus)
+> +                               struct amdgpu_connector *acn = amdgpu_connector;
+> +
+> +                               acn->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> +                               if (!acn->ddc_bus)
+>                                         DRM_ERROR("DVI: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
+> +                               else
+> +                                       connector->ddc = &acn->ddc_bus->adapter;
+>                         }
+>                         subpixel_order = SubPixelHorizontalRGB;
+>                         drm_object_attach_property(&amdgpu_connector->base.base,
+> @@ -1757,9 +1773,13 @@ amdgpu_connector_add(struct amdgpu_device *adev,
+>                         drm_connector_init(dev, &amdgpu_connector->base, &amdgpu_connector_dvi_funcs, connector_type);
+>                         drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_dvi_helper_funcs);
+>                         if (i2c_bus->valid) {
+> -                               amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> -                               if (!amdgpu_connector->ddc_bus)
+> +                               struct amdgpu_connector *acn = amdgpu_connector;
+> +
+> +                               acn->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> +                               if (!acn->ddc_bus)
+>                                         DRM_ERROR("HDMI: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
+> +                               else
+> +                                       connector->ddc = &acn->ddc_bus->adapter;
+>                         }
+>                         drm_object_attach_property(&amdgpu_connector->base.base,
+>                                                       adev->mode_info.coherent_mode_property,
+> @@ -1799,11 +1819,15 @@ amdgpu_connector_add(struct amdgpu_device *adev,
+>                         drm_connector_init(dev, &amdgpu_connector->base, &amdgpu_connector_dp_funcs, connector_type);
+>                         drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_dp_helper_funcs);
+>                         if (i2c_bus->valid) {
+> -                               amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> -                               if (amdgpu_connector->ddc_bus)
+> +                               struct amdgpu_connector *acn = amdgpu_connector;
+> +
+> +                               acn->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> +                               if (acn->ddc_bus) {
+>                                         has_aux = true;
+> -                               else
+> +                                       connector->ddc = &acn->ddc_bus->adapter;
+> +                               } else {
+>                                         DRM_ERROR("DP: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
+> +                               }
+>                         }
+>                         subpixel_order = SubPixelHorizontalRGB;
+>                         drm_object_attach_property(&amdgpu_connector->base.base,
+> @@ -1841,11 +1865,15 @@ amdgpu_connector_add(struct amdgpu_device *adev,
+>                         drm_connector_init(dev, &amdgpu_connector->base, &amdgpu_connector_edp_funcs, connector_type);
+>                         drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_dp_helper_funcs);
+>                         if (i2c_bus->valid) {
+> -                               amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> -                               if (amdgpu_connector->ddc_bus)
+> +                               struct amdgpu_connector *acn = amdgpu_connector;
+> +
+> +                               acn->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> +                               if (acn->ddc_bus) {
+>                                         has_aux = true;
+> -                               else
+> +                                       connector->ddc = &acn->ddc_bus->adapter;
+> +                               } else {
+>                                         DRM_ERROR("DP: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
+> +                               }
+>                         }
+>                         drm_object_attach_property(&amdgpu_connector->base.base,
+>                                                       dev->mode_config.scaling_mode_property,
+> @@ -1862,9 +1890,13 @@ amdgpu_connector_add(struct amdgpu_device *adev,
+>                         drm_connector_init(dev, &amdgpu_connector->base, &amdgpu_connector_lvds_funcs, connector_type);
+>                         drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_lvds_helper_funcs);
+>                         if (i2c_bus->valid) {
+> -                               amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> -                               if (!amdgpu_connector->ddc_bus)
+> +                               struct amdgpu_connector *acn = amdgpu_connector;
+> +
+> +                               acn->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
+> +                               if (!acn->ddc_bus)
+>                                         DRM_ERROR("LVDS: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
+> +                               else
+> +                                       connector->ddc = &acn->ddc_bus->adapter;
+>                         }
+>                         drm_object_attach_property(&amdgpu_connector->base.base,
+>                                                       dev->mode_config.scaling_mode_property,
+> --
+> 2.17.1
+>
+> _______________________________________________
+> amd-gfx mailing list
+> amd-gfx@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/amd-gfx
 
 _______________________________________________
 Linux-rockchip mailing list
