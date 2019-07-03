@@ -2,40 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E92705EC97
-	for <lists+linux-rockchip@lfdr.de>; Wed,  3 Jul 2019 21:13:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3FE05EC99
+	for <lists+linux-rockchip@lfdr.de>; Wed,  3 Jul 2019 21:14:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6xX884FjYpSjMxKaTYPZInWdK7xBhD5nUlV6fiucw2w=; b=KK1pXZcI3RS8Sz
-	FZcAiMOhgFgk/SCbWACEADBdPtx3Do5PuCOpXeztCYXc3WPd2UVXNJ0ImqI2EETzHbUkO02sySWdD
-	ztrlm8SRI4kT+FuuS1EvPFkr7e0x90hLk88l8Ut/Yx/ynBYann3mMzPGxN2m4IIatiV+FCGTOOorh
-	nxyLcC0Iwp1UqSQRK4RoNQTq4mVyZ041HC3DSvnXHG3g/hBQKZx4nyNWd4QIWPf2iTCtARhLXVZjT
-	fRX+Uhhx1f/Z65lXiA2YzYd2hl50O8Pf7/VKiuosor6rvuDMpuq+9MP6dAkZVbtFMd6N8wruGDmMJ
-	nUhJPmFWgm8W5d9ajxsw==;
+	List-Owner; bh=ZYMJ1WppXAmRHTHmfPVg3IxMNJd2M702bMw6zZnqO9A=; b=KrkOuQZ02C4rcW
+	D3HkESY+IkLjfn2WPhI/n62c851TIxSYsL7yeiAfg/85AudFu0GyP+cKiDyryNI9YjxuKpxykE3bH
+	hbHuyh9ucuf+7LMmFOBINks6twsTe9bBMopv7PTvgk9FpGn7exwcNBayTGVaBJ1nixmEXEMwtrFLF
+	OFbQCezdrYiToPbOpSqCkH3iBsRH+AeKew2CwEeISU7+RwKHkEvTk643tCvGimuSy4RwB97tEuOUE
+	9faV5HsBsxn7VUk5CB4aBLcmfNjb/I50U8EwAb1SUzMHRwAoxD8hmXvLrq1u1kBbo5XwjP6G2AJji
+	lty2Nh3SqO1k0y/HZ7lQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hikhF-0006SZ-C8; Wed, 03 Jul 2019 19:13:37 +0000
+	id 1hikhf-0006oc-NK; Wed, 03 Jul 2019 19:14:03 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hikeM-00046D-6p; Wed, 03 Jul 2019 19:10:40 +0000
+ id 1hikeS-0004C6-Ac; Wed, 03 Jul 2019 19:10:47 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id D4D5128ABC9
+ (Authenticated sender: koike) with ESMTPSA id 8693828AB1F
 From: Helen Koike <helen.koike@collabora.com>
 To: linux-rockchip@lists.infradead.org
-Subject: [PATCH v7 10/14] dt-bindings: Document the Rockchip ISP1 bindings
-Date: Wed,  3 Jul 2019 16:09:06 -0300
-Message-Id: <20190703190910.32633-11-helen.koike@collabora.com>
+Subject: [PATCH v7 11/14] dt-bindings: Document the Rockchip MIPI RX D-PHY
+ bindings
+Date: Wed,  3 Jul 2019 16:09:07 -0300
+Message-Id: <20190703190910.32633-12-helen.koike@collabora.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190703190910.32633-1-helen.koike@collabora.com>
 References: <20190703190910.32633-1-helen.koike@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_121038_707286_F719B406 
-X-CRM114-Status: GOOD (  10.86  )
+X-CRM114-CacheID: sfid-20190703_121044_542291_FD051DF8 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -75,7 +77,7 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Jacob Chen <jacob2.chen@rock-chips.com>
 
-Add DT bindings documentation for Rockchip ISP1
+Add DT bindings documentation for Rockchip MIPI D-PHY RX
 
 Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
 Reviewed-by: Rob Herring <robh@kernel.org>
@@ -85,89 +87,56 @@ Signed-off-by: Helen Koike <helen.koike@collabora.com>
 ---
 
 Changes in v7:
-- update document with new design and tested example
+- updated doc with new design and tested example
 
- .../bindings/media/rockchip-isp1.txt          | 71 +++++++++++++++++++
- 1 file changed, 71 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/media/rockchip-isp1.txt
+ .../bindings/media/rockchip-mipi-dphy.txt     | 38 +++++++++++++++++++
+ 1 file changed, 38 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt
 
-diff --git a/Documentation/devicetree/bindings/media/rockchip-isp1.txt b/Documentation/devicetree/bindings/media/rockchip-isp1.txt
+diff --git a/Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt b/Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt
 new file mode 100644
-index 000000000000..a97fef0f189f
+index 000000000000..2305d44d92db
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/media/rockchip-isp1.txt
-@@ -0,0 +1,71 @@
-+Rockchip SoC Image Signal Processing unit v1
-+----------------------------------------------
-+
-+Rockchip ISP1 is the Camera interface for the Rockchip series of SoCs
-+which contains image processing, scaling, and compression funcitons.
++++ b/Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt
+@@ -0,0 +1,38 @@
++Rockchip SoC MIPI RX D-PHY
++-------------------------------------------------------------
 +
 +Required properties:
 +- compatible: value should be one of the following
-+	"rockchip,rk3288-cif-isp";
-+	"rockchip,rk3399-cif-isp";
-+- reg : offset and length of the register set for the device.
-+- interrupts: should contain ISP interrupt.
-+- clocks: phandle to the required clocks.
++	"rockchip,rk3288-mipi-dphy"
++	"rockchip,rk3399-mipi-dphy"
++- clocks : list of clock specifiers, corresponding to entries in
++	clock-names property;
 +- clock-names: required clock name.
-+- iommus: required a iommu node.
-+- phys: the phandle for the PHY port
-+- phy-names: must contain "dphy"
++- #phy-cells: Number of cells in a PHY specifier; Should be 0.
 +
-+port node
-+-------------------
++MIPI RX D-PHY use registers in "general register files", it
++should be a child of the GRF.
 +
-+The device node should contain one 'ports' child node, with children 'port'
-+with child 'endpoint'.
-+nodes, according to the bindings defined in Documentation/devicetree/bindings/
-+media/video-interfaces.txt.
-+
-+- endpoint(mipi):
-+	- remote-endpoint: Connecting to Rockchip MIPI-DPHY,
-+		which is defined in rockchip-mipi-dphy.txt.
-+
-+The port node must contain at least one endpoint, either parallel or mipi.
-+It could have multiple endpoints, but please note the hardware don't support
-+two sensors work at a time, they are supposed to work asynchronously.
++Optional properties:
++- reg: offset and length of the register set for the device.
++- rockchip,grf: MIPI TX1RX1 D-PHY not only has its own register but also
++		the GRF, so it is only necessary for MIPI TX1RX1 D-PHY.
 +
 +Device node example
 +-------------------
 +
-+	isp0: isp0@ff910000 {
-+		compatible = "rockchip,rk3399-cif-isp";
-+		reg = <0x0 0xff910000 0x0 0x4000>;
-+		interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH 0>;
-+		clocks = <&cru SCLK_ISP0>,
-+			 <&cru ACLK_ISP0>, <&cru ACLK_ISP0_WRAPPER>,
-+			 <&cru HCLK_ISP0>, <&cru HCLK_ISP0_WRAPPER>;
-+		clock-names = "clk_isp",
-+			      "aclk_isp", "aclk_isp_wrap",
-+			      "hclk_isp", "hclk_isp_wrap";
-+		power-domains = <&power RK3399_PD_ISP0>;
-+		iommus = <&isp0_mmu>;
-+		phys = <&dphy>;
-+		phy-names = "dphy";
++grf: syscon@ff770000 {
++	compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
 +
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
++...
 +
-+			port@0 {
-+				mipi_in_wcam: endpoint@0 {
-+					reg = <0>;
-+					remote-endpoint = <&wcam_out>;
-+					data-lanes = <1 2>;
-+				};
-+
-+				mipi_in_ucam: endpoint@1 {
-+					reg = <1>;
-+					remote-endpoint = <&ucam_out>;
-+					data-lanes = <1>;
-+				};
-+			};
-+		};
++	dphy: mipi-dphy {
++		compatible = "rockchip,rk3399-mipi-dphy";
++		clocks = <&cru SCLK_MIPIDPHY_REF>,
++			<&cru SCLK_DPHY_RX0_CFG>,
++			<&cru PCLK_VIO_GRF>;
++		clock-names = "dphy-ref", "dphy-cfg", "grf";
++		power-domains = <&power RK3399_PD_VIO>;
++		#phy-cells = <0>;
 +	};
++};
 -- 
 2.20.1
 
