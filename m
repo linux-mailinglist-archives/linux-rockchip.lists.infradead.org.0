@@ -2,58 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C3805F35A
-	for <lists+linux-rockchip@lfdr.de>; Thu,  4 Jul 2019 09:19:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AABF85F822
+	for <lists+linux-rockchip@lfdr.de>; Thu,  4 Jul 2019 14:32:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oej9EdZJtKt1Ov72eynTWfQ9eoRUXTacnE1/+ccoYDE=; b=ZYTXm3gBEiJRkZ
-	IkyDW9xqq88Tsw6zIdGFJJJS0ey4g0K6vIi9CkxF0cFtGFPR1DvTXQZY5nD9kjR4XIZw7odkUFzYN
-	/EZnx7Spd6oiYzyrEMXPGVJIB8Is+RlbQ2NcHoz7aYV/CqshTgt5yZsu6LNAbZ+piSuuKJTdFS8Lz
-	MMrAKUnBQAF+aeKfp0W7+56v8oDQ+T7joHlTMM+4cmXXRw8oWfL/lpsDQ6C7SGupzStQBe0sMbh/y
-	5Tk8HTWzTUzdnQg2pa57ptffcwHb5H2Ax8gsjOQu2bdL8U4ls5BuPVYLtLkbyb7IpuEfqNC8nMZ4I
-	e2F5Iydqw3LmA/mYyPmA==;
+	List-Owner; bh=rAlv16UhvSrdfQENVXrFw/lqM9CgomzF0b8FjP+uXow=; b=TGrsDsdjk4X5as
+	zRoPjUASeSkqYlmaLNwEfMRkWOyh9Ixzds0cp55/2r2Tp+++J1Ds+otLBWKig3Rz0gsWTxQpjqDu8
+	CLAsVEtg3da5Ac2GuslLF/4ZEJZ1CS5d8FQmUCEkMUvfJfW1OkoSW1UPgSrHrQlqsApt+OSpVuNqY
+	/jv8XkwbWIgWOGdwYHq2mMOJUguU1QpqqGPH4isNeqz4hTi9tSx2TVNX5GYmjOYXboD8+RBEMIcFc
+	789LD+lF2brqtF1R8mLnvjmXjSTtVpiZiiT3lgd41V8Vdq3ItRRjeKwKwgB0CNRrwmc+PIj1457an
+	bRoszFUrkUHmqVdmJ+hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiw1z-00030a-HP; Thu, 04 Jul 2019 07:19:47 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hj0uc-0007JR-7Q; Thu, 04 Jul 2019 12:32:30 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiw1t-0002zz-Tb
- for linux-rockchip@lists.infradead.org; Thu, 04 Jul 2019 07:19:43 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 5996328AC32;
- Thu,  4 Jul 2019 08:19:38 +0100 (BST)
-Date: Thu, 4 Jul 2019 09:19:34 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Philipp Zabel <p.zabel@pengutronix.de>, Kees Cook <keescook@chromium.org>
+ id 1hj0uX-0007IL-44
+ for linux-rockchip@lists.infradead.org; Thu, 04 Jul 2019 12:32:27 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 8568C28AA35
+Message-ID: <6d8569803312768ca7b60c7b33688e466a6d0fcc.camel@collabora.com>
 Subject: Re: [PATCH v2 2/2] media: hantro: Add support for VP8 decoding on
  rk3288
-Message-ID: <20190704091934.3524f019@collabora.com>
-In-Reply-To: <1562164006.4604.7.camel@pengutronix.de>
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Boris Brezillon <boris.brezillon@collabora.com>, Philipp Zabel
+ <p.zabel@pengutronix.de>, Kees Cook <keescook@chromium.org>
+Date: Thu, 04 Jul 2019 09:32:13 -0300
+In-Reply-To: <20190704091934.3524f019@collabora.com>
 References: <20190702170016.5210-1-ezequiel@collabora.com>
  <20190702170016.5210-3-ezequiel@collabora.com>
  <1562164006.4604.7.camel@pengutronix.de>
+ <20190704091934.3524f019@collabora.com>
 Organization: Collabora
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_001942_215275_7B558B51 
-X-CRM114-Status: GOOD (  23.73  )
+X-CRM114-CacheID: sfid-20190704_053225_434100_6C8A0E14 
+X-CRM114-Status: GOOD (  27.14  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,136 +64,168 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
+Cc: fbuergisser@chromium.org, kernel@collabora.com,
  Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
  Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
  Tomasz Figa <tfiga@chromium.org>,
  Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  linux-rockchip@lists.infradead.org, Hans Verkuil <hans.verkuil@cisco.com>,
- ZhiChao Yu <zhichao.yu@rock-chips.com>, kernel@collabora.com,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ ZhiChao Yu <zhichao.yu@rock-chips.com>,
+ Nicolas Dufresne <nicolas.dufresne@collabora.com>, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-K0tlZXMgZm9yIHRoZSBzYWZlLWFycmF5LWl0ZXJhdGlvIHF1ZXN0aW9uLgoKT24gV2VkLCAwMyBK
-dWwgMjAxOSAxNjoyNjo0NiArMDIwMApQaGlsaXBwIFphYmVsIDxwLnphYmVsQHBlbmd1dHJvbml4
-LmRlPiB3cm90ZToKCj4gSGkgRXplcXVpZWwKPiAKPiBPbiBUdWUsIDIwMTktMDctMDIgYXQgMTQ6
-MDAgLTAzMDAsIEV6ZXF1aWVsIEdhcmNpYSB3cm90ZToKPiA+IEZyb206IFpoaUNoYW8gWXUgPHpo
-aWNoYW8ueXVAcm9jay1jaGlwcy5jb20+Cj4gPiAKPiA+IEludHJvZHVjZSBWUDggZGVjb2Rpbmcg
-c3VwcG9ydCBpbiBSSzMyODguCj4gPiAKPiA+IFNpZ25lZC1vZmYtYnk6IFpoaUNoYW8gWXUgPHpo
-aWNoYW8ueXVAcm9jay1jaGlwcy5jb20+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBUb21hc3ogRmlnYSA8
-dGZpZ2FAY2hyb21pdW0ub3JnPgo+ID4gU2lnbmVkLW9mZi1ieTogQm9yaXMgQnJlemlsbG9uIDxi
-b3Jpcy5icmV6aWxsb25AY29sbGFib3JhLmNvbT4KPiA+IFNpZ25lZC1vZmYtYnk6IEV6ZXF1aWVs
-IEdhcmNpYSA8ZXplcXVpZWxAY29sbGFib3JhLmNvbT4gIAo+IAo+IEkgaGF2ZSBqdXN0IHRyaWVk
-IHRoaXMgKHdpdGggYnJva2VuIHVzZXJzcGFjZSkgYW5kIGdvdCBhIGNyYXNoIGluCj4gY2ZnX3Bh
-cnRzLCBzZWUgYmVsb3cgZm9yIGRldGFpbHM6Cj4gCj4gW8KgwqAxMTQuMzA4NzU3XSBVbmFibGUg
-dG8gaGFuZGxlIGtlcm5lbCBwYWdpbmcgcmVxdWVzdCBhdCB2aXJ0dWFsIGFkZHJlc3MgZmZmZjAw
-MDAxMTJiMDAwMgo+IFvCoMKgMTE0LjMxNjY5MV0gTWVtIGFib3J0IGluZm86Cj4gW8KgwqAxMTQu
-MzE5NTAzXcKgwqDCoEVTUiA9IDB4OTYwMDAwMjEKPiBbwqDCoDExNC4zMjI1NzZdwqDCoMKgRXhj
-ZXB0aW9uIGNsYXNzID0gREFCVCAoY3VycmVudCBFTCksIElMID0gMzIgYml0cwo+IFvCoMKgMTE0
-LjMyODUxM13CoMKgwqBTRVQgPSAwLCBGblYgPSAwCj4gW8KgwqAxMTQuMzMxNTg2XcKgwqDCoEVB
-ID0gMCwgUzFQVFcgPSAwCj4gW8KgwqAxMTQuMzM0NzQ0XSBEYXRhIGFib3J0IGluZm86Cj4gW8Kg
-wqAxMTQuMzM3NjI2XcKgwqDCoElTViA9IDAsIElTUyA9IDB4MDAwMDAwMjEKPiBbwqDCoDExNC4z
-NDE0NzldwqDCoMKgQ00gPSAwLCBXblIgPSAwCj4gW8KgwqAxMTQuMzQ0NDY2XSBzd2FwcGVyIHBn
-dGFibGU6IDRrIHBhZ2VzLCA0OC1iaXQgVkFzLCBwZ2RwPTAwMDAwMDAwNDBkNjEwMDAKPiBbwqDC
-oDExNC4zNTExODVdIFtmZmZmMDAwMDExMmIwMDAyXSBwZ2Q9MDAwMDAwMDBkZmZmZjAwMywgcHVk
-PTAwMDAwMDAwZGZmZmUwMDMsIHBtZD0wMDAwMDAwMGRiZjM2MDAzLCBwdGU9MDBlODAwMDAzODMw
-MDcwNwo+IFvCoMKgMTE0LjM2MTgyMl0gSW50ZXJuYWwgZXJyb3I6IE9vcHM6IDk2MDAwMDIxIFsj
-MV0gUFJFRU1QVCBTTVAKPiBbwqDCoDExNC4zNjczOTRdIE1vZHVsZXMgbGlua2VkIGluOiBjcmN0
-MTBkaWZfY2UgaGFudHJvX3ZwdShDKSB2aWRlb2J1ZjJfZG1hX2NvbnRpZyB2NGwyX21lbTJtZW0K
-PiBbwqDCoDExNC4zNzU3NDldIFByb2Nlc3MgZmZtcGVnIChwaWQ6IDE4NzEsIHN0YWNrIGxpbWl0
-ID0gMHgwMDAwMDAwMDU5ZDg0NmU0KQo+IFvCoMKgMTE0LjM4MjQ1MF0gQ1BVOiAxIFBJRDogMTg3
-MSBDb21tOiBmZm1wZWcgVGFpbnRlZDogR8KgwqDCoMKgwqDCoMKgwqDCoEPCoMKgwqDCoMKgwqDC
-oMKgNS4xLjE2LTIwMTkwNzAzLTEgIzIKPiBbwqDCoDExNC4zOTA3MTBdIEhhcmR3YXJlIG5hbWU6
-IE5YUCBpLk1YOE1RIEVWSyAoRFQpCj4gW8KgwqAxMTQuMzk1MjQwXSBwc3RhdGU6IDQwMDAwMDA1
-IChuWmN2IGRhaWYgLVBBTiAtVUFPKQo+IFvCoMKgMTE0LjQwMDA0Ml0gcGMgOiBoYW50cm9fZzFf
-dnA4X2RlY19ydW4rMHgxMTc4LzB4MThhMCBbaGFudHJvX3ZwdV0KPiBbwqDCoDExNC40MDYxMzld
-IGxyIDogaGFudHJvX2cxX3ZwOF9kZWNfcnVuKzB4MTE2MC8weDE4YTAgW2hhbnRyb192cHVdCj4g
-W8KgwqAxMTQuNDEyMjI5XSBzcCA6IGZmZmYwMDAwMTFhZTNjMTAKPiBbwqDCoDExNC40MTU1NDFd
-IHgyOTogZmZmZjAwMDAxMWFlM2MxMCB4Mjg6IGZmZmYwMDAwMDhhMTU0YzjCoAo+IFvCoMKgMTE0
-LjQyMDg1M10geDI3OiAwMDAwMDAwMDcwMzNiMDM5IHgyNjogZmZmZjAwMDAwOGExMzBmMMKgCj4g
-W8KgwqAxMTQuNDI2MTY0XSB4MjU6IDAwMDAwMDAwMDAwMDAwMGMgeDI0OiBmZmZmMDAwMDA4YTE1
-M2YwwqAKPiBbwqDCoDExNC40MzE0NzRdIHgyMzogZmZmZjgwMDA5OWEwZDg4MCB4MjI6IGZmZmYw
-MDAwMDhhMTMxNTDCoAo+IFvCoMKgMTE0LjQzNjc4NV0geDIxOiAwMDAwMDAwMDBjNWI4OGQwIHgy
-MDogZmZmZjgwMDA5YjdkNjVhMMKgCj4gW8KgwqAxMTQuNDQyMDk2XSB4MTk6IGZmZmY4MDAwOTli
-ZDM4MDAgeDE4OiAwMDAwMDAwMDAwMDAwMDEwwqAKPiBbwqDCoDExNC40NDc0MDddIHgxNzogMDAw
-MDAwMDAwMDAwMDAwMSB4MTY6IDAwMDAwMDAwMDAwMDAwMDfCoAo+IFvCoMKgMTE0LjQ1MjcxN10g
-eDE1OiBmZmZmZmZmZmZmZmZmZmZmIHgxNDogZmZmZjAwMDAxMGU4YzVjOMKgCj4gW8KgwqAxMTQu
-NDU4MDI4XSB4MTM6IGZmZmYwMDAwOTFhZTM5ODcgeDEyOiBmZmZmMDAwMDExMmIwMDAywqAKPiBb
-wqDCoDExNC40NjMzMzldIHgxMTogZmZmZjAwMDAxMGVhNDAwMCB4MTA6IGZmZmYwMDAwMTFhZTM5
-MTDCoAo+IFvCoMKgMTE0LjQ2ODY0OV0geDkgOiAwMDAwMDAwMGZmZmZmZmQwIHg4IDogMDAwMDAw
-MDBlZGNiODhkMMKgCj4gW8KgwqAxMTQuNDczOTYwXSB4NyA6IDAwMDAwMDAwMDAwMDAxMjUgeDYg
-OiBmZmZmMDAwMDEwZThjZDYwwqAKPiBbwqDCoDExNC40NzkyNzBdIHg1IDogZmZmZjAwMDAxMGU4
-YzAwMCB4NCA6IDAwMDAwMDAwMDAwMDAwMDDCoAo+IFvCoMKgMTE0LjQ4NDU4MF0geDMgOiAwMDAw
-MDAwMDAwMDAwMDAyIHgyIDogODEyN2QxNDBhMzE5NmQwMMKgCj4gW8KgwqAxMTQuNDg5ODkxXSB4
-MSA6IDAwMDAwMDAwMDAwMDAwMDAgeDAgOiAwMDAwMDAwMGUxNzAwMDAwwqAKPiBbwqDCoDExNC40
-OTUyMDFdIENhbGwgdHJhY2U6Cj4gW8KgwqAxMTQuNDk3NjUyXcKgwqBoYW50cm9fZzFfdnA4X2Rl
-Y19ydW4rMHgxMTc4LzB4MThhMCBbaGFudHJvX3ZwdV0KPiBbwqDCoDExNC41MDM0MDFdwqDCoGRl
-dmljZV9ydW4rMHhhYy8weGMwIFtoYW50cm9fdnB1XQo+IFvCoMKgMTE0LjUwNzg0OV3CoMKgdjRs
-Ml9tMm1fdHJ5X3J1bisweDljLzB4MTEwIFt2NGwyX21lbTJtZW1dCj4gW8KgwqAxMTQuNTEzMDc3
-XcKgwqB2NGwyX20ybV9yZXF1ZXN0X3F1ZXVlKzB4ZDQvMHgxMzAgW3Y0bDJfbWVtMm1lbV0KPiBb
-wqDCoDExNC41MTg4MjZdwqDCoG1lZGlhX3JlcXVlc3RfaW9jdGwrMHgxZTgvMHgyZDAKPiBbwqDC
-oDExNC41MjMwOTddwqDCoGRvX3Zmc19pb2N0bCsweGM0LzB4ODcwCj4gW8KgwqAxMTQuNTI2Njcx
-XcKgwqBrc3lzX2lvY3RsKzB4ODQvMHhjMAo+IFvCoMKgMTE0LjUyOTk4NV3CoMKgX19hcm02NF9z
-eXNfaW9jdGwrMHgyOC8weDQwCj4gW8KgwqAxMTQuNTMzOTA4XcKgwqBlbDBfc3ZjX2NvbW1vbi5j
-b25zdHByb3AuMCsweDk4LzB4MTcwCj4gW8KgwqAxMTQuNTM4Njk4XcKgwqBlbDBfc3ZjX2hhbmRs
-ZXIrMHgyYy8weDQwCj4gW8KgwqAxMTQuNTQyNDQ3XcKgwqBlbDBfc3ZjKzB4OC8weGMKPiBbwqDC
-oDExNC41NDUzMjhdIENvZGU6IDBiMTUwMDA4IGI5NDAwMmMzIDEyMWQ3MTA4IDhiMjM0MThjIChi
-OTQwMDE4YynCoAo+IFvCoMKgMTE0LjU1MTQyMV0gLS0tWyBlbmQgdHJhY2UgYjlhZDZiMGY3Mjkw
-MmJhNSBdLS0tCj4gCj4gPiAtLS0KPiA+IENoYW5nZXMgZnJvbSB2MToKPiA+ICogUGxhY2Ugb3Bl
-cmF0b3JzIGF0IHRoZSBlbmQgb2YgZWFjaCBsaW5lLgo+ID4gKiBVcGRhdGUgdG8gdUFQSSBjaGFu
-Z2VzLgo+ID4gLS0tCj4gPiAgZHJpdmVycy9zdGFnaW5nL21lZGlhL2hhbnRyby9NYWtlZmlsZSAg
-ICAgICAgIHwgICA0ICstCj4gPiAgZHJpdmVycy9zdGFnaW5nL21lZGlhL2hhbnRyby9oYW50cm8u
-aCAgICAgICAgIHwgICA1ICsKPiA+ICBkcml2ZXJzL3N0YWdpbmcvbWVkaWEvaGFudHJvL2hhbnRy
-b19kcnYuYyAgICAgfCAgIDYgKwo+ID4gIC4uLi9zdGFnaW5nL21lZGlhL2hhbnRyby9oYW50cm9f
-ZzFfdnA4X2RlYy5jICB8IDU1MiArKysrKysrKysrKysrKysrKysKPiA+ICBkcml2ZXJzL3N0YWdp
-bmcvbWVkaWEvaGFudHJvL2hhbnRyb19ody5oICAgICAgfCAgMTcgKwo+ID4gIGRyaXZlcnMvc3Rh
-Z2luZy9tZWRpYS9oYW50cm8vaGFudHJvX3Y0bDIuYyAgICB8ICAgMSArCj4gPiAgZHJpdmVycy9z
-dGFnaW5nL21lZGlhL2hhbnRyby9oYW50cm9fdnA4LmMgICAgIHwgMTg4ICsrKysrKwo+ID4gIGRy
-aXZlcnMvc3RhZ2luZy9tZWRpYS9oYW50cm8vcmszMjg4X3ZwdV9ody5jICB8ICAyMiArLQo+ID4g
-IDggZmlsZXMgY2hhbmdlZCwgNzkzIGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCj4gPiAg
-Y3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9oYW50cm8vaGFudHJvX2cx
-X3ZwOF9kZWMuYwo+ID4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL3N0YWdpbmcvbWVkaWEv
-aGFudHJvL2hhbnRyb192cDguYwo+ID4gICAKPiBbLi4uXQo+ID4gZGlmZiAtLWdpdCBhL2RyaXZl
-cnMvc3RhZ2luZy9tZWRpYS9oYW50cm8vaGFudHJvX2cxX3ZwOF9kZWMuYyBiL2RyaXZlcnMvc3Rh
-Z2luZy9tZWRpYS9oYW50cm8vaGFudHJvX2cxX3ZwOF9kZWMuYwo+ID4gbmV3IGZpbGUgbW9kZSAx
-MDA2NDQKPiA+IGluZGV4IDAwMDAwMDAwMDAwMC4uMzFkMzFmYWFlNGFhCj4gPiAtLS0gL2Rldi9u
-dWxsCj4gPiArKysgYi9kcml2ZXJzL3N0YWdpbmcvbWVkaWEvaGFudHJvL2hhbnRyb19nMV92cDhf
-ZGVjLmMKPiA+IEBAIC0wLDAgKzEsNTUyIEBAICAKPiBbLi4uXQo+ID4gKy8qIGRjdCBwYXJ0aXRp
-b24gYmFzZSBhZGRyZXNzIHJlZ3MgKi8KPiA+ICtzdGF0aWMgY29uc3Qgc3RydWN0IHZwOF9kZWNf
-cmVnIHZwOF9kZWNfZGN0X2Jhc2VbOF0gPSB7ICAKPiBbLi4uXQo+ID4gKy8qIGRjdCBwYXJ0aXRp
-b24gc3RhcnQgYml0cyByZWdzICovCj4gPiArc3RhdGljIGNvbnN0IHN0cnVjdCB2cDhfZGVjX3Jl
-ZyB2cDhfZGVjX2RjdF9zdGFydF9iaXRzWzhdID0geyAgCj4gCj4gU28gdGhlc2UgYXJyYXlzIGNh
-biBiZSBkaXJlY3RseSBpbmRleGVkIHdpdGggdmFsdWVzIHNtYWxsZXIgdGhhbiA4IC4uLgo+IAo+
-IFsuLi5dCj4gPiArc3RhdGljIHZvaWQgY2ZnX3BhcnRzKHN0cnVjdCBoYW50cm9fY3R4ICpjdHgs
-Cj4gPiArCQkgICAgICBjb25zdCBzdHJ1Y3QgdjRsMl9jdHJsX3ZwOF9mcmFtZV9oZWFkZXIgKmhk
-cikKPiA+ICt7ICAKPiBbLi4uXQo+ID4gKwkvKiBkY3QgcGFydGl0aW9ucyBiYXNlIGFkZHJlc3Mg
-Ki8KPiA+ICsJZm9yIChpID0gMDsgaSA8IGhkci0+bnVtX2RjdF9wYXJ0czsgaSsrKSB7Cj4gPiAr
-CQl1MzIgYnl0ZV9vZmZzZXQgPSBkY3RfcGFydF9vZmZzZXQgKyBkY3Rfc2l6ZV9wYXJ0X3NpemUg
-KyBjb3VudDsKPiA+ICsJCXUzMiBiYXNlX2FkZHIgPSBieXRlX29mZnNldCArIHNyY19kbWE7Cj4g
-PiArCj4gPiArCQl2cDhfZGVjX3JlZ193cml0ZSh2cHUsICZ2cDhfZGVjX2RjdF9iYXNlW2ldLAo+
-ID4gKwkJCQkgIGJhc2VfYWRkciAmICh+REVDXzgxOTBfQUxJR05fTUFTSykpOwo+ID4gKwo+ID4g
-KwkJdnA4X2RlY19yZWdfd3JpdGUodnB1LCAmdnA4X2RlY19kY3Rfc3RhcnRfYml0c1tpXSwKPiA+
-ICsJCQkJICAoYnl0ZV9vZmZzZXQgJiBERUNfODE5MF9BTElHTl9NQVNLKSAqIDgpOyAgCj4gCj4g
-Li4uIGFuZCBoZXJlIHRoZXkgYXJlIGluZGV4ZWQgd2l0aCBpLCB3aGljaCBpcyBvbmx5IGd1YXJh
-bnRlZWQgdG8gYmUKPiBzbWFsbGVyIHRoYW4gaGRyLT5udW1fZGN0X3BhcnRzLiBudW1fZGN0X3Bh
-cnRzIGlzIHBhc3NlZCBmcm9tIHVzZXJzcGFjZQo+IHZpYSB2NGwyLWN0cmwsIGl0IGNhbiBiZSBh
-cyBsYXJnZSBhcyAyNTUuCgpIbSwgSSBmZWFyIHdlIGhhdmUgdGhlIHNhbWUgcHJvYmxlbSBpbiBv
-dGhlciBwbGFjZXMgKGluY2x1ZGluZyB0aGUKcGF0Y2ggc2VyaWVzIGFkZGluZyBzdXBwb3J0IGZv
-ciBIMjY0KS4gS2VlcywgSSB3b25kZXIgaWYgdGhlcmUncyBzb21lCmtpbmQgb2Ygc2FmZSBhcnJh
-eSBpdGVyYXRvciBtYWNybywgc29tZXRoaW5nIGxpa2UKCiNkZWZpbmUgZm9yX2VhY2hfc3RhdGlj
-X2FycmF5X2VudHJ5X3NhZmUoX2FycmF5LCBfaXRlciwgX21heF91c2VyKSAJCVwKCV9tYXhfdXNl
-ciA9IG1pbl90KHR5cGVvZihfbWF4X3VzZXIpLCBfbWF4X3VzZXIsCUFSUkFZX1NJWkUoX2FycmF5
-KSk7CVwKCWZvciAoX2l0ZXIgPSAwOyBfaXRlciA8IF9tYXhfdXNlcjsgX2l0ZXIrKykKClRoZSBw
-cm9ibGVtIHdpdGggdGhpcyBhcHByb2FjaCBpcyB0aGF0IGl0J3MgcGFwZXJpbmcgb3ZlciB0aGUg
-cmVhbAppc3N1ZSwgd2hpY2ggaXMgdGhhdCBoZHItPm51bV9kY3RfcGFydHMgc2hvdWxkIGJlIGNo
-ZWNrZWQgYW5kIHRoZQpkcml2ZXIvY29yZSBzaG91bGQgcmV0dXJuIGFuIGVycm9yIHdoZW4gaXQn
-cyA+IDcgaW5zdGVhZCBvZiBzaWxlbnRseQppdGVyYXRpbmcgb3ZlciB0aGUgOCBlbnRyaWVzIG9m
-IHRoZSBkY3RbXSBhcnJheXMuIFN0YXRpYyBjb2RlIGFuYWx5c2lzCnRvb2xzIGNhbiBwcm9iYWJs
-eSBkZXRlY3Qgc3VjaCBpc3N1ZXMgdG9vLgoKQW55IGFkdmljZSBvbiBob3cgdG8gZGV0ZWN0IHN1
-Y2ggcHJvYmxlbXMgZWFybHkgb24/CgpUaGFua3MsCgpCb3JpcwoKCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlz
-dApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+On Thu, 2019-07-04 at 09:19 +0200, Boris Brezillon wrote:
+> +Kees for the safe-array-iteratio question.
+> 
+> On Wed, 03 Jul 2019 16:26:46 +0200
+> Philipp Zabel <p.zabel@pengutronix.de> wrote:
+> 
+> > Hi Ezequiel
+> > 
+> > On Tue, 2019-07-02 at 14:00 -0300, Ezequiel Garcia wrote:
+> > > From: ZhiChao Yu <zhichao.yu@rock-chips.com>
+> > > 
+> > > Introduce VP8 decoding support in RK3288.
+> > > 
+> > > Signed-off-by: ZhiChao Yu <zhichao.yu@rock-chips.com>
+> > > Signed-off-by: Tomasz Figa <tfiga@chromium.org>
+> > > Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+> > > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>  
+> > 
+> > I have just tried this (with broken userspace) and got a crash in
+> > cfg_parts, see below for details:
+> > 
+> > [  114.308757] Unable to handle kernel paging request at virtual address ffff0000112b0002
+> > [  114.316691] Mem abort info:
+> > [  114.319503]   ESR = 0x96000021
+> > [  114.322576]   Exception class = DABT (current EL), IL = 32 bits
+> > [  114.328513]   SET = 0, FnV = 0
+> > [  114.331586]   EA = 0, S1PTW = 0
+> > [  114.334744] Data abort info:
+> > [  114.337626]   ISV = 0, ISS = 0x00000021
+> > [  114.341479]   CM = 0, WnR = 0
+> > [  114.344466] swapper pgtable: 4k pages, 48-bit VAs, pgdp=0000000040d61000
+> > [  114.351185] [ffff0000112b0002] pgd=00000000dffff003, pud=00000000dfffe003, pmd=00000000dbf36003, pte=00e8000038300707
+> > [  114.361822] Internal error: Oops: 96000021 [#1] PREEMPT SMP
+> > [  114.367394] Modules linked in: crct10dif_ce hantro_vpu(C) videobuf2_dma_contig v4l2_mem2mem
+> > [  114.375749] Process ffmpeg (pid: 1871, stack limit = 0x0000000059d846e4)
+> > [  114.382450] CPU: 1 PID: 1871 Comm: ffmpeg Tainted: G         C        5.1.16-20190703-1 #2
+> > [  114.390710] Hardware name: NXP i.MX8MQ EVK (DT)
+> > [  114.395240] pstate: 40000005 (nZcv daif -PAN -UAO)
+> > [  114.400042] pc : hantro_g1_vp8_dec_run+0x1178/0x18a0 [hantro_vpu]
+> > [  114.406139] lr : hantro_g1_vp8_dec_run+0x1160/0x18a0 [hantro_vpu]
+> > [  114.412229] sp : ffff000011ae3c10
+> > [  114.415541] x29: ffff000011ae3c10 x28: ffff000008a154c8 
+> > [  114.420853] x27: 000000007033b039 x26: ffff000008a130f0 
+> > [  114.426164] x25: 000000000000000c x24: ffff000008a153f0 
+> > [  114.431474] x23: ffff800099a0d880 x22: ffff000008a13150 
+> > [  114.436785] x21: 000000000c5b88d0 x20: ffff80009b7d65a0 
+> > [  114.442096] x19: ffff800099bd3800 x18: 0000000000000010 
+> > [  114.447407] x17: 0000000000000001 x16: 0000000000000007 
+> > [  114.452717] x15: ffffffffffffffff x14: ffff000010e8c5c8 
+> > [  114.458028] x13: ffff000091ae3987 x12: ffff0000112b0002 
+> > [  114.463339] x11: ffff000010ea4000 x10: ffff000011ae3910 
+> > [  114.468649] x9 : 00000000ffffffd0 x8 : 00000000edcb88d0 
+> > [  114.473960] x7 : 0000000000000125 x6 : ffff000010e8cd60 
+> > [  114.479270] x5 : ffff000010e8c000 x4 : 0000000000000000 
+> > [  114.484580] x3 : 0000000000000002 x2 : 8127d140a3196d00 
+> > [  114.489891] x1 : 0000000000000000 x0 : 00000000e1700000 
+> > [  114.495201] Call trace:
+> > [  114.497652]  hantro_g1_vp8_dec_run+0x1178/0x18a0 [hantro_vpu]
+> > [  114.503401]  device_run+0xac/0xc0 [hantro_vpu]
+> > [  114.507849]  v4l2_m2m_try_run+0x9c/0x110 [v4l2_mem2mem]
+> > [  114.513077]  v4l2_m2m_request_queue+0xd4/0x130 [v4l2_mem2mem]
+> > [  114.518826]  media_request_ioctl+0x1e8/0x2d0
+> > [  114.523097]  do_vfs_ioctl+0xc4/0x870
+> > [  114.526671]  ksys_ioctl+0x84/0xc0
+> > [  114.529985]  __arm64_sys_ioctl+0x28/0x40
+> > [  114.533908]  el0_svc_common.constprop.0+0x98/0x170
+> > [  114.538698]  el0_svc_handler+0x2c/0x40
+> > [  114.542447]  el0_svc+0x8/0xc
+> > [  114.545328] Code: 0b150008 b94002c3 121d7108 8b23418c (b940018c) 
+> > [  114.551421] ---[ end trace b9ad6b0f72902ba5 ]---
+> > 
+> > > ---
+> > > Changes from v1:
+> > > * Place operators at the end of each line.
+> > > * Update to uAPI changes.
+> > > ---
+> > >  drivers/staging/media/hantro/Makefile         |   4 +-
+> > >  drivers/staging/media/hantro/hantro.h         |   5 +
+> > >  drivers/staging/media/hantro/hantro_drv.c     |   6 +
+> > >  .../staging/media/hantro/hantro_g1_vp8_dec.c  | 552 ++++++++++++++++++
+> > >  drivers/staging/media/hantro/hantro_hw.h      |  17 +
+> > >  drivers/staging/media/hantro/hantro_v4l2.c    |   1 +
+> > >  drivers/staging/media/hantro/hantro_vp8.c     | 188 ++++++
+> > >  drivers/staging/media/hantro/rk3288_vpu_hw.c  |  22 +-
+> > >  8 files changed, 793 insertions(+), 2 deletions(-)
+> > >  create mode 100644 drivers/staging/media/hantro/hantro_g1_vp8_dec.c
+> > >  create mode 100644 drivers/staging/media/hantro/hantro_vp8.c
+> > >   
+> > [...]
+> > > diff --git a/drivers/staging/media/hantro/hantro_g1_vp8_dec.c b/drivers/staging/media/hantro/hantro_g1_vp8_dec.c
+> > > new file mode 100644
+> > > index 000000000000..31d31faae4aa
+> > > --- /dev/null
+> > > +++ b/drivers/staging/media/hantro/hantro_g1_vp8_dec.c
+> > > @@ -0,0 +1,552 @@  
+> > [...]
+> > > +/* dct partition base address regs */
+> > > +static const struct vp8_dec_reg vp8_dec_dct_base[8] = {  
+> > [...]
+> > > +/* dct partition start bits regs */
+> > > +static const struct vp8_dec_reg vp8_dec_dct_start_bits[8] = {  
+> > 
+> > So these arrays can be directly indexed with values smaller than 8 ...
+> > 
+> > [...]
+> > > +static void cfg_parts(struct hantro_ctx *ctx,
+> > > +		      const struct v4l2_ctrl_vp8_frame_header *hdr)
+> > > +{  
+> > [...]
+> > > +	/* dct partitions base address */
+> > > +	for (i = 0; i < hdr->num_dct_parts; i++) {
+> > > +		u32 byte_offset = dct_part_offset + dct_size_part_size + count;
+> > > +		u32 base_addr = byte_offset + src_dma;
+> > > +
+> > > +		vp8_dec_reg_write(vpu, &vp8_dec_dct_base[i],
+> > > +				  base_addr & (~DEC_8190_ALIGN_MASK));
+> > > +
+> > > +		vp8_dec_reg_write(vpu, &vp8_dec_dct_start_bits[i],
+> > > +				  (byte_offset & DEC_8190_ALIGN_MASK) * 8);  
+> > 
+> > ... and here they are indexed with i, which is only guaranteed to be
+> > smaller than hdr->num_dct_parts. num_dct_parts is passed from userspace
+> > via v4l2-ctrl, it can be as large as 255.
+> 
+> Hm, I fear we have the same problem in other places (including the
+> patch series adding support for H264). Kees, I wonder if there's some
+> kind of safe array iterator macro, something like
+> 
+> #define for_each_static_array_entry_safe(_array, _iter, _max_user) 		\
+> 	_max_user = min_t(typeof(_max_user), _max_user,	ARRAY_SIZE(_array));	\
+> 	for (_iter = 0; _iter < _max_user; _iter++)
+> 
+> The problem with this approach is that it's papering over the real
+> issue, which is that hdr->num_dct_parts should be checked and the
+> driver/core should return an error when it's > 7 instead of silently
+> iterating over the 8 entries of the dct[] arrays. Static code analysis
+> tools can probably detect such issues too.
+> 
+
+It seems to me that drivers/media/v4l2-core/v4l2-ctrls.c:std_validate
+is the right place for these sanity checks.
+
+And so drivers can then assume safe values on the controls.
+
+Regards,
+Ezequiel
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
