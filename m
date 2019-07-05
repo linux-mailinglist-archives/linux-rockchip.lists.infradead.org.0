@@ -2,104 +2,97 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E51296078F
-	for <lists+linux-rockchip@lfdr.de>; Fri,  5 Jul 2019 16:13:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11C9A607C7
+	for <lists+linux-rockchip@lfdr.de>; Fri,  5 Jul 2019 16:25:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yWrBsV3ZJyoCzTeBseNyWHNpHFvWnTm2W+hs+mAv7tg=; b=up2V7HyYw4+Ksl
-	uX/mGqpByLM24YHyU98rr+t2WRlPIJfNpY/GEOziVAe+E6jr1sfVy3SjQQHmcelXbzIP/1fZuKOhb
-	6yUOv6DFYhqcoxPlLkG/HgOz6j+lEwTkmy9OjdnQaD+Oe8hQSX5qSJg5sZtK2Z3CydgEA2JC1p9NY
-	iyEGIhGDRtO0AwsdclkvradCpz5VTVjNV2ARO0/UPFDE96UKyXhBb4G6wJUja2f1iCPdpiOwcSdvQ
-	xHAo6PfYDH4bFRPGGgJ5Sgsk6HrXNVdvi0v7tJ1rWEDcWN+LhFy4aZ06G8NK+ZYIQkRKYFNNoJJss
-	nTrz3H6jj4YOMLom5Ojw==;
+	List-Owner; bh=qIbGRJ0PkhuqsFMYIX8HgmBjBEMTRnt013p0CObqmhU=; b=aoLVngjb5FIgKz
+	3iz7ITomVkSYqxmo7pm5r8fS1lG9nzPQUpNIdWlLe+SY7tzh0nJEzPzy7VAMCh/58DjihJtY4ReGl
+	0mWhMHHB3idmWxbShrsRcDYL6XXkYgD6kgsVsOJcTpJg+RxDkc52/LU+bKYoC/pPFv8SvLOGrUw4F
+	domqHK5iqXB2OjjLahCvuliKSEIlIGi1MLndhxEVjiuJh9HQTHqe4l+wKXre4jh0IdrkA/zQiSoZM
+	8b1bHJIRLED5DYZ+/XPWmmLd7iX/J7OIrdXi53CeVdwun5PYjeKOaoAl3s+WzjrTMmrke5Tj5OTwq
+	bKnxF+RaWnBEf8f46evA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjOxi-0006oV-Hb; Fri, 05 Jul 2019 14:13:18 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hjP8z-0007OF-4I; Fri, 05 Jul 2019 14:24:57 +0000
+Received: from mail-oln040092072037.outbound.protection.outlook.com
+ ([40.92.72.37] helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjOxh-0006oM-5p
- for linux-rockchip@bombadil.infradead.org; Fri, 05 Jul 2019 14:13:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Mt+OhzkdZXuABUeOm3oIQQxV+A0uMRzmq60uCRJmAJE=; b=moyaN+3hdSeOz55pQvQpMorrZh
- 76HS8vs3T+xA6ucLyhhDGRpMN7m1Ov+ehf38PjYha4lthP8hebo96kV8X5oVEvxM4AAGKC8v4vnVm
- XIiltUyJYl7JeR7lkITak1w4Lem3Bt4KVp8SfcBsoItNNoGGCyz+98aCQV9R0LsN9yQYSwtOhZa97
- Qcw31Ob5Ii57OSaZHGaloQKNTU7DcZaKY6Hvlz5+w7nGCpDmA+3ux4kHOhEqhAVZSWQzp7x940OiN
- yWBUu/CUOqeHn9s+BCX98FujYX55XI733C/AAIIMoMGXMaPAAd2IzZhkR83c6WskzwcJVopfOlR8H
- WgFHvDpg==;
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjFqQ-0006cX-IP
- for linux-rockchip@lists.infradead.org; Fri, 05 Jul 2019 04:29:12 +0000
-Received: by mail-pf1-x442.google.com with SMTP id t16so3711376pfe.11
- for <linux-rockchip@lists.infradead.org>; Thu, 04 Jul 2019 21:29:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Mt+OhzkdZXuABUeOm3oIQQxV+A0uMRzmq60uCRJmAJE=;
- b=Hbexc+aCBum/RZ12dI3r5/XyzyiK+MvJQgQ2XO3/HVioP3PM/nCddAlz1xrMohN7M1
- S0TUfchH1at/5Y1i17XhZAcSUqCKCip2aybO7YsuTVjIwJXSYImaa+d0n/+JHH0FYNkL
- NI0/aW8eXuQCvg6kpGPrNaIfIBqJ7QUDBMvFM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Mt+OhzkdZXuABUeOm3oIQQxV+A0uMRzmq60uCRJmAJE=;
- b=IZPBGq98WIGXbwbPJ+HDG4LgvEzz9EnJQAl/4Hj96XUV2hnsfp2Tt5LngV7oOjmFQu
- knHJ/jStrIXBh4hhbsTqT6xcBmQfjEyG/xwNwKYNe8J05KYSvE1iGwekNvhEOHgKkV0s
- VpNb/ycGE0VJ7cWXgQlHem81iIvF4xcsOxp+u9Gxvb3DvaulLxY7Jb74kfBlKWkU5vZm
- c+x7gmYZJjAqMoonWtoTJOJdPI3B0rq+IaJF68EtvlU8wz6BzgDtmYcDkOjnAnEqDUuT
- 11HjV9wGWjy5Lv91M+zlMCprKFFdgN+MnRJGIxtUtq1+fAZxSyOjOR4yDbNGu90etJ97
- ZAlg==
-X-Gm-Message-State: APjAAAUd2HscyTzAkGdVkRy3c1rcLYyZ1/rPR0hiFb5qKvS+NM4e0kdT
- HXJzzy+xFxDF6UDRjSEONP7gig==
-X-Google-Smtp-Source: APXvYqywd4tkamYO1Fai6BvXNjXkhsYojIRkBX4/rKYkl5GdlfV7TnbJIDpy2ZVfWAPldm8d1RwzHA==
-X-Received: by 2002:a17:90a:8d86:: with SMTP id
- d6mr2081909pjo.94.1562300823498; 
- Thu, 04 Jul 2019 21:27:03 -0700 (PDT)
-Received: from localhost ([2401:fa00:1:b:e688:dfd2:a1a7:2956])
- by smtp.gmail.com with ESMTPSA id t10sm6811920pjr.13.2019.07.04.21.27.00
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 04 Jul 2019 21:27:02 -0700 (PDT)
-From: Cheng-Yi Chiang <cychiang@chromium.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4/4] ASoC: rockchip_max98090: Add HDMI jack support
-Date: Fri,  5 Jul 2019 12:26:23 +0800
-Message-Id: <20190705042623.129541-5-cychiang@chromium.org>
-X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
-In-Reply-To: <20190705042623.129541-1-cychiang@chromium.org>
+ id 1hjP8p-0007GK-1U; Fri, 05 Jul 2019 14:24:49 +0000
+Received: from DB5EUR03FT059.eop-EUR03.prod.protection.outlook.com
+ (10.152.20.52) by DB5EUR03HT049.eop-EUR03.prod.protection.outlook.com
+ (10.152.20.232) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2052.18; Fri, 5 Jul
+ 2019 05:45:50 +0000
+Received: from VI1PR06MB4142.eurprd06.prod.outlook.com (10.152.20.54) by
+ DB5EUR03FT059.mail.protection.outlook.com (10.152.21.175) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.2052.18 via Frontend Transport; Fri, 5 Jul 2019 05:45:50 +0000
+Received: from VI1PR06MB4142.eurprd06.prod.outlook.com
+ ([fe80::c8ce:d86:2172:6b3]) by VI1PR06MB4142.eurprd06.prod.outlook.com
+ ([fe80::c8ce:d86:2172:6b3%7]) with mapi id 15.20.2052.010; Fri, 5 Jul 2019
+ 05:45:49 +0000
+From: Jonas Karlman <jonas@kwiboo.se>
+To: Cheng-Yi Chiang <cychiang@chromium.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: Re: [alsa-devel] [PATCH 2/4] drm: bridge: dw-hdmi: Report connector
+ status using callback
+Thread-Topic: [alsa-devel] [PATCH 2/4] drm: bridge: dw-hdmi: Report connector
+ status using callback
+Thread-Index: AQHVMvTmlQAxzmEkvEygINjZy8KRxw==
+Date: Fri, 5 Jul 2019 05:45:49 +0000
+Message-ID: <VI1PR06MB41425D1F24AC653F08AFA463ACF50@VI1PR06MB4142.eurprd06.prod.outlook.com>
 References: <20190705042623.129541-1-cychiang@chromium.org>
+ <20190705042623.129541-3-cychiang@chromium.org>
+In-Reply-To: <20190705042623.129541-3-cychiang@chromium.org>
+Accept-Language: sv-SE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: AM6PR06CA0035.eurprd06.prod.outlook.com
+ (2603:10a6:20b:14::48) To VI1PR06MB4142.eurprd06.prod.outlook.com
+ (2603:10a6:802:64::15)
+x-incomingtopheadermarker: OriginalChecksum:0DC5DDDF7A9E0FCEBD746EBE7A4A8744CC3AC11788CB69B54DE975C287CEF30A;
+ UpperCasedChecksum:0D77BD3918D7E91A876A73929B659EE11231D2D9B420C7202D8C83FF969E7833;
+ SizeAsReceived:8373; Count:49
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tmn: [Om7HmFmJ8b/vClwNRiGfx5UoHX0pbMJ6]
+x-microsoft-original-message-id: <20d7dcaf-656c-1606-e0cc-b0f22151ab47@kwiboo.se>
+x-ms-publictraffictype: Email
+x-incomingheadercount: 49
+x-eopattributedmessage: 0
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031322404)(2017031323274)(2017031324274)(1601125500)(1603101475)(1701031045);
+ SRVR:DB5EUR03HT049; 
+x-ms-traffictypediagnostic: DB5EUR03HT049:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-message-info: K38KIC56eJSxp+qeVO+APTMClRqjgiiQO2mJMa0eu8qAhjTXZVdyFGXNeQagxq/mGjA6KSJ4C15baX5B1klVjGcV5rCtwThh5KdabqoQZIBioSNiNx9ZAoQe7Bz1g8ErROc484YE6HOba8mFpszwnQiFIb6SyXpMzty9ODmJSRFTCpAd0IVPD5Fn72CdqdjV
+Content-ID: <07B9D3D23364E34B86C7B351E0C533CC@eurprd06.prod.outlook.com>
 MIME-Version: 1.0
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 09121cd1-0851-4151-e9c4-08d7010c0868
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Jul 2019 05:45:49.6718 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB5EUR03HT049
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190705_052910_625358_9AF48459 
-X-CRM114-Status: GOOD (  13.73  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.2 points, 5.0 required)
+X-CRM114-CacheID: sfid-20190705_072447_093808_858A2F41 
+X-CRM114-Status: GOOD (  18.91  )
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ no trust [40.92.72.37 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,76 +105,195 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, dianders@chromium.org,
- Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
- David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
- Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
- tzungbi@chromium.org, Jaroslav Kysela <perex@perex.cz>,
- Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
- Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, dgreid@chromium.org,
- linux-arm-kernel@lists.infradead.org, Cheng-Yi Chiang <cychiang@chromium.org>
+Cc: "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
+ "tzungbi@chromium.org" <tzungbi@chromium.org>,
+ Heiko Stuebner <heiko@sntech.de>, Liam Girdwood <lgirdwood@gmail.com>,
+ David Airlie <airlied@linux.ie>, Mark Brown <broonie@kernel.org>,
+ "dianders@chromium.org" <dianders@chromium.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>, Takashi
+ Iwai <tiwai@suse.com>, Hans Verkuil <hverkuil@xs4all.nl>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent
+ Pinchart <Laurent.pinchart@ideasonboard.com>, Daniel Vetter <daniel@ffwll.ch>,
+ "dgreid@chromium.org" <dgreid@chromium.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-In machine driver, create a jack and let hdmi-codec report jack status.
+On 2019-07-05 06:26, Cheng-Yi Chiang wrote:
+> Allow codec driver register callback function for plug event.
+>
+> The callback registration flow:
+> dw-hdmi <--- hw-hdmi-i2s-audio <--- hdmi-codec
+>
+> dw-hdmi-i2s-audio implements hook_plugged_cb op
+> so codec driver can register the callback.
+>
+> dw-hdmi implements set_plugged_cb op so platform device can register the
+> callback.
+>
+> When connector plug/unplug event happens, report this event using the
+> callback.
+>
+> Make sure that audio and drm are using the single source of truth for
+> connector status.
 
-Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
----
- sound/soc/rockchip/rockchip_max98090.c | 21 +++++++++++++++++++++
- 1 file changed, 21 insertions(+)
+I have a similar notification need for making a snd_ctl_notify() call from hdmi-codec when ELD changes,
+see [1] for work in progress patches (part of a dw-hdmi multi-channel lpcm series I am preparing).
 
-diff --git a/sound/soc/rockchip/rockchip_max98090.c b/sound/soc/rockchip/rockchip_max98090.c
-index 195309d1225a..c0e430ca4d12 100644
---- a/sound/soc/rockchip/rockchip_max98090.c
-+++ b/sound/soc/rockchip/rockchip_max98090.c
-@@ -15,6 +15,7 @@
- #include <sound/pcm.h>
- #include <sound/pcm_params.h>
- #include <sound/soc.h>
-+#include <sound/hdmi-codec.h>
- 
- #include "rockchip_i2s.h"
- #include "../codecs/ts3a227e.h"
-@@ -129,6 +130,25 @@ enum {
- 	DAILINK_HDMI,
- };
- 
-+static struct snd_soc_jack rk_hdmi_jack;
-+
-+static int rk_hdmi_init(struct snd_soc_pcm_runtime *runtime)
-+{
-+	struct snd_soc_card *card = runtime->card;
-+	struct snd_soc_component *component = runtime->codec_dai->component;
-+	int ret;
-+
-+	/* enable jack detection */
-+	ret = snd_soc_card_jack_new(card, "HDMI Jack", SND_JACK_LINEOUT,
-+				    &rk_hdmi_jack, NULL, 0);
-+	if (ret) {
-+		dev_err(card->dev, "Can't new HDMI Jack %d\n", ret);
-+		return ret;
-+	}
-+
-+	return hdmi_codec_set_jack_detect(component, &rk_hdmi_jack);
-+}
-+
- /* max98090 and HDMI codec dai_link */
- static struct snd_soc_dai_link rk_dailinks[] = {
- 	[DAILINK_MAX98090] = {
-@@ -146,6 +166,7 @@ static struct snd_soc_dai_link rk_dailinks[] = {
- 		.ops = &rk_aif1_ops,
- 		.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
- 			SND_SOC_DAIFMT_CBS_CFS,
-+		.init = rk_hdmi_init,
- 		SND_SOC_DAILINK_REG(hdmi),
- 	}
- };
--- 
-2.22.0.410.gd8fdbe21b5-goog
+Any suggestions on how to handle a ELD change notification?
+Should I use a similar pattern as in this series?
+(I lost track of the hdmi-notifier/drm_audio_component discussion)
+
+[1] https://github.com/Kwiboo/linux-rockchip/compare/54b40fdd264c7ed96017271eb6524cca4ff755ab...9c17284e8a8657e8b1da53a1c7ff056cbd8ce43c
+
+Best regards,
+Jonas
+
+>
+> Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+> ---
+>  .../gpu/drm/bridge/synopsys/dw-hdmi-audio.h   |  3 ++
+>  .../drm/bridge/synopsys/dw-hdmi-i2s-audio.c   | 10 ++++++
+>  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c     | 34 ++++++++++++++++++-
+>  3 files changed, 46 insertions(+), 1 deletion(-)
+>
+> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-audio.h b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-audio.h
+> index 63b5756f463b..f523c590984e 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-audio.h
+> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-audio.h
+> @@ -2,6 +2,8 @@
+>  #ifndef DW_HDMI_AUDIO_H
+>  #define DW_HDMI_AUDIO_H
+>  
+> +#include <sound/hdmi-codec.h>
+> +
+>  struct dw_hdmi;
+>  
+>  struct dw_hdmi_audio_data {
+> @@ -17,6 +19,7 @@ struct dw_hdmi_i2s_audio_data {
+>  
+>  	void (*write)(struct dw_hdmi *hdmi, u8 val, int offset);
+>  	u8 (*read)(struct dw_hdmi *hdmi, int offset);
+> +	int (*set_plugged_cb)(struct dw_hdmi *hdmi, hdmi_codec_plugged_cb fn);
+>  };
+>  
+>  #endif
+> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+> index 5cbb71a866d5..7b93cf05c985 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+> @@ -104,10 +104,20 @@ static int dw_hdmi_i2s_get_dai_id(struct snd_soc_component *component,
+>  	return -EINVAL;
+>  }
+>  
+> +static int dw_hdmi_i2s_hook_plugged_cb(struct device *dev, void *data,
+> +				       hdmi_codec_plugged_cb fn)
+> +{
+> +	struct dw_hdmi_i2s_audio_data *audio = data;
+> +	struct dw_hdmi *hdmi = audio->hdmi;
+> +
+> +	return audio->set_plugged_cb(hdmi, fn);
+> +}
+> +
+>  static struct hdmi_codec_ops dw_hdmi_i2s_ops = {
+>  	.hw_params	= dw_hdmi_i2s_hw_params,
+>  	.audio_shutdown	= dw_hdmi_i2s_audio_shutdown,
+>  	.get_dai_id	= dw_hdmi_i2s_get_dai_id,
+> +	.hook_plugged_cb = dw_hdmi_i2s_hook_plugged_cb,
+>  };
+>  
+>  static int snd_dw_hdmi_probe(struct platform_device *pdev)
+> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> index 045b1b13fd0e..c69a399fc7ca 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> @@ -26,6 +26,8 @@
+>  #include <drm/drm_probe_helper.h>
+>  #include <drm/bridge/dw_hdmi.h>
+>  
+> +#include <sound/hdmi-codec.h>
+> +
+>  #include <uapi/linux/media-bus-format.h>
+>  #include <uapi/linux/videodev2.h>
+>  
+> @@ -185,6 +187,9 @@ struct dw_hdmi {
+>  	void (*disable_audio)(struct dw_hdmi *hdmi);
+>  
+>  	struct cec_notifier *cec_notifier;
+> +
+> +	hdmi_codec_plugged_cb plugged_cb;
+> +	enum drm_connector_status last_connector_result;
+>  };
+>  
+>  #define HDMI_IH_PHY_STAT0_RX_SENSE \
+> @@ -209,6 +214,17 @@ static inline u8 hdmi_readb(struct dw_hdmi *hdmi, int offset)
+>  	return val;
+>  }
+>  
+> +static int hdmi_set_plugged_cb(struct dw_hdmi *hdmi, hdmi_codec_plugged_cb fn)
+> +{
+> +	mutex_lock(&hdmi->mutex);
+> +	hdmi->plugged_cb = fn;
+> +	if (hdmi->audio && !IS_ERR(hdmi->audio))
+> +		fn(hdmi->audio,
+> +		   hdmi->last_connector_result == connector_status_connected);
+> +	mutex_unlock(&hdmi->mutex);
+> +	return 0;
+> +}
+> +
+>  static void hdmi_modb(struct dw_hdmi *hdmi, u8 data, u8 mask, unsigned reg)
+>  {
+>  	regmap_update_bits(hdmi->regm, reg << hdmi->reg_shift, mask, data);
+> @@ -2044,6 +2060,7 @@ dw_hdmi_connector_detect(struct drm_connector *connector, bool force)
+>  {
+>  	struct dw_hdmi *hdmi = container_of(connector, struct dw_hdmi,
+>  					     connector);
+> +	enum drm_connector_status result;
+>  
+>  	mutex_lock(&hdmi->mutex);
+>  	hdmi->force = DRM_FORCE_UNSPECIFIED;
+> @@ -2051,7 +2068,20 @@ dw_hdmi_connector_detect(struct drm_connector *connector, bool force)
+>  	dw_hdmi_update_phy_mask(hdmi);
+>  	mutex_unlock(&hdmi->mutex);
+>  
+> -	return hdmi->phy.ops->read_hpd(hdmi, hdmi->phy.data);
+> +	result = hdmi->phy.ops->read_hpd(hdmi, hdmi->phy.data);
+> +
+> +	mutex_lock(&hdmi->mutex);
+> +	if (result != hdmi->last_connector_result) {
+> +		dev_dbg(hdmi->dev, "read_hpd result: %d", result);
+> +		if (hdmi->plugged_cb && hdmi->audio && !IS_ERR(hdmi->audio)) {
+> +			hdmi->plugged_cb(hdmi->audio,
+> +					 result == connector_status_connected);
+> +			hdmi->last_connector_result = result;
+> +		}
+> +	}
+> +	mutex_unlock(&hdmi->mutex);
+> +
+> +	return result;
+>  }
+>  
+>  static int dw_hdmi_connector_get_modes(struct drm_connector *connector)
+> @@ -2460,6 +2490,7 @@ __dw_hdmi_probe(struct platform_device *pdev,
+>  	hdmi->rxsense = true;
+>  	hdmi->phy_mask = (u8)~(HDMI_PHY_HPD | HDMI_PHY_RX_SENSE);
+>  	hdmi->mc_clkdis = 0x7f;
+> +	hdmi->last_connector_result = connector_status_disconnected;
+>  
+>  	mutex_init(&hdmi->mutex);
+>  	mutex_init(&hdmi->audio_mutex);
+> @@ -2653,6 +2684,7 @@ __dw_hdmi_probe(struct platform_device *pdev,
+>  		audio.hdmi	= hdmi;
+>  		audio.write	= hdmi_writeb;
+>  		audio.read	= hdmi_readb;
+> +		audio.set_plugged_cb = hdmi_set_plugged_cb;
+>  		hdmi->enable_audio = dw_hdmi_i2s_audio_enable;
+>  		hdmi->disable_audio = dw_hdmi_i2s_audio_disable;
+>  
 
 
 _______________________________________________
