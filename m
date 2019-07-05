@@ -2,74 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDCA960AD6
-	for <lists+linux-rockchip@lfdr.de>; Fri,  5 Jul 2019 19:16:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EA4C60AE2
+	for <lists+linux-rockchip@lfdr.de>; Fri,  5 Jul 2019 19:17:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=jLllLSfn4mzIsuf1YmDsN4fRXvSAOnpdjZbBz3J2wzg=; b=uJkiBjkaxFfPJ7sRElk70ZmT0
-	FHItEEjuMTj51xpnJcGart4RGK/2iIrVLsWwNUQ9dT+N2C/TqeG0SGhf89Qo0gU8nAQXkH5mEl1c/
-	KlwTpiVCMJ/qymTbN708OiIMA9y8LG9X0a4uQ53SmN7zR1K8M8Wzzrilf22ZZesQN8KuG6MMqAcu9
-	I1OCeEHvbABDyEmRPdX6B2S0S2B9lpMHlqh79fdp6MNkqajR8hrgwlgRxhzQdOuTBkoUT0H0ITA3f
-	pqiNphIvmSbZ/gcgAwTvdf/Cqgn241JLQ7oAHwhQn2hzqdd5666H+h7e/Sv40o7Cenx1AG0CxyElI
-	pjE2pJlyg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZI/cxolnOZb+zxJQXNSBuoNy5YIXaKqQeyS0DM4jztQ=; b=hShN+BoP1Nts0/
+	M13ceN7treb7rf6teoWWgO1HNQq5ZJKtjiRByUg3W6e5bhskJc1hvsT+dvEIu34+ZGoUgltUMrRUa
+	KDwZw77mtJWr3b19UNDt2GkOrjK+XHeo1kRq74PvtJ9wKGrv3iYxaTgS9uBMZCJ3R7oLfP0kNLscK
+	lSWEjlVfxRo/MHFFi7r5by5/wW8sOf8m+zTkvvxzBvQQ7yD7j7fjvp67FKHGX2PEHzdiON8aOwayS
+	KehubyjCfiHbJ4NIWBcUv4dcO4y+N94LObQCDGMCSuerJsy0uClJqabRIQsBVJEGaJtxKj69zmIH+
+	mh3t9KXGtoJbLrhLVIhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjRpF-000887-0V; Fri, 05 Jul 2019 17:16:45 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hjRpy-0008Kf-H4; Fri, 05 Jul 2019 17:17:30 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjRp3-00080L-BZ; Fri, 05 Jul 2019 17:16:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=HKEyNx+1XrxknoW82kLLhbqysgbib6tL6sBEaXoa+FI=; b=itGBlD/HeUPpNoN4qsN1uixLm
- 5X32bE/IGmQQdOgCnkMiPo9HFqoCesf3SYKUlSgC3ipJfsqtATXfgH7PXzc02kiKHWbJzoJ2VfyUq
- Wns8aGyFJFVoGcbTpZOYFd/9Nvcm7wcmJ/SSeg8Gt2ueIgE9wBd62k6dDPvJm++5xqVlE=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hjRop-0004YR-Ea; Fri, 05 Jul 2019 17:16:19 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id C902F2742A29; Fri,  5 Jul 2019 18:16:18 +0100 (BST)
-Date: Fri, 5 Jul 2019 18:16:18 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Cheng-yi Chiang <cychiang@chromium.org>
-Subject: Re: [alsa-devel] [PATCH 2/4] drm: bridge: dw-hdmi: Report connector
- status using callback
-Message-ID: <20190705171618.GA35842@sirena.org.uk>
-References: <20190705042623.129541-1-cychiang@chromium.org>
- <20190705042623.129541-3-cychiang@chromium.org>
- <VI1PR06MB41425D1F24AC653F08AFA463ACF50@VI1PR06MB4142.eurprd06.prod.outlook.com>
- <CAFv8NwJXbJo=z_NDj+JQHD9LOmnbfM8v_N1uHn4sdBzF-FZQfA@mail.gmail.com>
+ id 1hjRpr-0008J9-36
+ for linux-rockchip@lists.infradead.org; Fri, 05 Jul 2019 17:17:29 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id D0F9928B61B;
+ Fri,  5 Jul 2019 18:17:19 +0100 (BST)
+Date: Fri, 5 Jul 2019 19:17:16 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Ezequiel Garcia <ezequiel@collabora.com>
+Subject: Re: [PATCH 3/9] media: hantro: Constify the control array
+Message-ID: <20190705191716.41ea819e@collabora.com>
+In-Reply-To: <1fdb3115e6f5903b55a915c45bbfdec484842e83.camel@collabora.com>
+References: <20190619121540.29320-1-boris.brezillon@collabora.com>
+ <20190619121540.29320-4-boris.brezillon@collabora.com>
+ <1fdb3115e6f5903b55a915c45bbfdec484842e83.camel@collabora.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <CAFv8NwJXbJo=z_NDj+JQHD9LOmnbfM8v_N1uHn4sdBzF-FZQfA@mail.gmail.com>
-X-Cookie: Haste makes waste.
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190705_101633_549349_B62CA24B 
-X-CRM114-Status: GOOD (  10.39  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190705_101727_790518_37D2F6E8 
+X-CRM114-Status: GOOD (  16.01  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,78 +63,50 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "dianders@chromium.org" <dianders@chromium.org>,
- "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
- "tzungbi@chromium.org" <tzungbi@chromium.org>,
+Cc: Nicolas Dufresne <nicolas@ndufresne.ca>, kernel@collabora.com,
  Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
- David Airlie <airlied@linux.ie>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Liam Girdwood <lgirdwood@gmail.com>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- Takashi Iwai <tiwai@suse.com>, Hans Verkuil <hverkuil@xs4all.nl>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Russell King <rmk+kernel@armlinux.org.uk>, Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, "dgreid@chromium.org" <dgreid@chromium.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============2352243273967156755=="
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org, Sakari Ailus <sakari.ailus@iki.fi>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Hans Verkuil <hans.verkuil@cisco.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-
---===============2352243273967156755==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="AhhlLboLdkugWU4S"
-Content-Disposition: inline
-
-
---AhhlLboLdkugWU4S
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Fri, Jul 05, 2019 at 03:31:24PM +0800, Cheng-yi Chiang wrote:
-
-> It was a long discussion.
-> I think the conclusion was that if we are only talking about
-> hdmi-codec, then we just need to extend the ops exposed in hdmi-codec
-> and don't need to use
-> hdmi-notifier or drm_audio_component.
-
-What I'd picked up from the bits of that discussion that I
-followed was that there was some desire to come up with a unified
-approach to ELD notification rather than having to go through
-this discussion repeatedly?  That would certianly seem more
-sensible.  Admittedly it was a long thread with lots of enormous
-mails so I didn't follow the whole thing.
-
---AhhlLboLdkugWU4S
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl0fheEACgkQJNaLcl1U
-h9BXfgf8Djh9t+tRCpOZtbD0eqLrC0mbgK6xvHKXz2Asdi73S29NTI0EsIjf8oZ3
-Pz6/6L7lp75cOGU0EoQEzBtCuMIBCEXPI0gewu+FMjVlL3vhvV8svBfRuUZztzn9
-12ImYdI/oGK5DDKw7UkhuSxjjoEdnStnEA7qmB/XjH5eH05C2P4xQBYLATEo52oh
-jGMW1fSAh+dnQ8A3N9kAJLl9AF+f/eXzWfw3jfoelzQJPikX16xa5UE/U+ukQZ7F
-B79Nr4Lp2n9ORhA+GXIk6HVSsoBDqUTOpjH4+zjgDXe9nYK+BBSJ5AX8aZlxBY7C
-AP6VWjYU5x92p6hdgtNtqK0pmZ2SZA==
-=5Rc/
------END PGP SIGNATURE-----
-
---AhhlLboLdkugWU4S--
-
-
---===============2352243273967156755==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
---===============2352243273967156755==--
-
+T24gRnJpLCAwNSBKdWwgMjAxOSAxMzowNToxMCAtMDMwMApFemVxdWllbCBHYXJjaWEgPGV6ZXF1
+aWVsQGNvbGxhYm9yYS5jb20+IHdyb3RlOgoKPiBPbiBXZWQsIDIwMTktMDYtMTkgYXQgMTQ6MTUg
+KzAyMDAsIEJvcmlzIEJyZXppbGxvbiB3cm90ZToKPiA+IGNvbnRyb2xzW10gaXMgbm90IHN1cHBv
+c2VkIHRvIGJlIG1vZGlmaWVkIGF0IHJ1bnRpbWUsIGxldCdzIG1ha2UgaXQKPiA+IGV4cGxpY2l0
+IGJ5IGFkZGluZyBhIGNvbnN0IHNwZWNpZmllci4KPiA+IAo+ID4gU2lnbmVkLW9mZi1ieTogQm9y
+aXMgQnJlemlsbG9uIDxib3Jpcy5icmV6aWxsb25AY29sbGFib3JhLmNvbT4KPiA+IC0tLQo+ID4g
+IGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9oYW50cm8vaGFudHJvX2Rydi5jIHwgMiArLQo+ID4gIDEg
+ZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQo+ID4gCj4gPiBkaWZm
+IC0tZ2l0IGEvZHJpdmVycy9zdGFnaW5nL21lZGlhL2hhbnRyby9oYW50cm9fZHJ2LmMgYi9kcml2
+ZXJzL3N0YWdpbmcvbWVkaWEvaGFudHJvL2hhbnRyb19kcnYuYwo+ID4gaW5kZXggMjhiMGZlZDg5
+ZGNiLi5kYjQ5ZDY0M2RkYjcgMTAwNjQ0Cj4gPiAtLS0gYS9kcml2ZXJzL3N0YWdpbmcvbWVkaWEv
+aGFudHJvL2hhbnRyb19kcnYuYwo+ID4gKysrIGIvZHJpdmVycy9zdGFnaW5nL21lZGlhL2hhbnRy
+by9oYW50cm9fZHJ2LmMKPiA+IEBAIC0yNjQsNyArMjY0LDcgQEAgc3RhdGljIGNvbnN0IHN0cnVj
+dCB2NGwyX2N0cmxfb3BzIGhhbnRyb19jdHJsX29wcyA9IHsKPiA+ICAJLnNfY3RybCA9IGhhbnRy
+b19zX2N0cmwsCj4gPiAgfTsKPiA+ICAKPiA+IC1zdGF0aWMgc3RydWN0IGhhbnRyb19jdHJsIGNv
+bnRyb2xzW10gPSB7Cj4gPiArc3RhdGljIGNvbnN0IHN0cnVjdCBoYW50cm9fY3RybCBjb250cm9s
+c1tdID0gewo+ID4gIAl7Cj4gPiAgCQkuaWQgPSBWNEwyX0NJRF9KUEVHX0NPTVBSRVNTSU9OX1FV
+QUxJVFksCj4gPiAgCQkuY29kZWMgPSBIQU5UUk9fSlBFR19FTkNPREVSLCAgCj4gCj4gVGhpcyBw
+YXRjaCBoZXJlIGJyZWFrcyB0aGUgYnVpbGQ6Cj4gCj4gICBDQyBbTV0gIGRyaXZlcnMvc3RhZ2lu
+Zy9tZWRpYS9oYW50cm8vaGFudHJvX2Rydi5vCj4gL2hvbWUvemV0YS9yZXBvcy9saW51eC9tZWRp
+YV90cmVlL2RyaXZlcnMvc3RhZ2luZy9tZWRpYS9oYW50cm8vaGFudHJvX2Rydi5jOiBJbiBmdW5j
+dGlvbiDigJhoYW50cm9fY3RybHNfc2V0dXDigJk6Cj4gL2hvbWUvemV0YS9yZXBvcy9saW51eC9t
+ZWRpYV90cmVlL2RyaXZlcnMvc3RhZ2luZy9tZWRpYS9oYW50cm8vaGFudHJvX2Rydi5jOjMxOToy
+MzogZXJyb3I6IGFzc2lnbm1lbnQgb2YgbWVtYmVyIOKAmGlk4oCZIGluIHJlYWQtb25seSBvYmpl
+Y3QKPiAgICAgY29udHJvbHNbaV0uY2ZnLmlkID0gY29udHJvbHNbaV0uaWQ7Cj4gICAgICAgICAg
+ICAgICAgICAgICAgICBeCgpPb3BzLCBkaWRuJ3QgY2hlY2sgYmlzZWN0YWJpbGl0eS4KCj4gWW91
+IGNhbiBmaXggaXQgYnkgc2ltcGx5IG1vdmluZyBpdCBhZnRlcjoKPiAKPiBbUEFUQ0ggNC85XSBt
+ZWRpYTogaGFudHJvOiBTaW1wbGlmeSB0aGUgY29udHJvbHMgY3JlYXRpb24gbG9naWMKClllcCwg
+SSdsbCBkbyB0aGF0LgoKVGhhbmtzLAoKQm9yaXMKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1y
+b2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
