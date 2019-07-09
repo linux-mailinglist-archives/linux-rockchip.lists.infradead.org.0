@@ -2,88 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4DD163545
-	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jul 2019 13:59:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB46063933
+	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jul 2019 18:19:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZO+4nJmIeWpK9IfHhWocngHcvbNNZlCEQCuhShTVFts=; b=PoCo16lMIlj6yR
-	fAnOWaH6rk1lz4qan4Ssjp4hLJ2JbVzLcz0rtQH416/HCj446NetSyPY3pLKcvCALRQwcnxB1iq4z
-	sS6bB0KMY/GNwCMuzmtmmakKWnMCCUbnwVPSQ0E3PiIB24gcimT1cA/mi6XUouTcb/l7wAw/ERN1C
-	Tomg4uFMhXVdGUlK3edbwaVrGK/LHPN13RtD3RXj2P8ZUyaBQVVwdWcrVeLoCVMAuHKEBzUhHB7bS
-	27yVShjgoXzuvuZmf2xlj+927rv5dzkXnJWcyFbTCEreyNzGHLn9MNtVbn9D4ME+LHJQyt7vDJL9z
-	a3LYJHkdmNZYsxIKFrcg==;
+	List-Owner; bh=zypOmHOv171EE2a/3lXnZc8Yv2uh3JRic4wKDCWU8Jk=; b=MMgSPN7yjDqurt
+	uvBVKv+4G0x7M3vQmIBxIpS+D8ZJBCzUVSkR57lp0YKycUea/cyhPotNvKhucsiCHG5NFUIy5bMcP
+	Dh2naZvZSPIeqdoVx5xcrsvkaWsfPhYcqFe4abf9xgRw51X6PdgF0ijyeybc3XhKY61ZZDr8TrjRa
+	aaH9PFnLoPxZHc/IEgWVkOK1E93RwBWMWHiiNN+3so8AhPje2M+Z6oqOQjkNdcWyDyyWvU8ne6ti4
+	vT0QDQfacpfrreiG1s4QsgF9vOj21BKO7WUf5wgC0dD3uFoFt6MD2DIGxdr72vPO/1rMzZo+4P9q7
+	xcZB/m9o+BlIFB946S8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkomb-0004m6-Px; Tue, 09 Jul 2019 11:59:41 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1hksq2-0004P0-2z; Tue, 09 Jul 2019 16:19:30 +0000
+Received: from mail-io1-f66.google.com ([209.85.166.66])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkomL-0004aM-3r
- for linux-rockchip@lists.infradead.org; Tue, 09 Jul 2019 11:59:26 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id u124so10438042vsu.2
- for <linux-rockchip@lists.infradead.org>; Tue, 09 Jul 2019 04:59:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=RiTv9D9r+HWewv08+uDjzds8jJ160NpsMW3nG+2KdoY=;
- b=b6eUu3HOZ32VMVxihS1TEiZDDJGMWpTKkUmCzgDy0Wn1UIqQ2Hg/sRGYSq7RTss8Dt
- EUsDIbda6QYf9S42qsjMSo76RaQmk/AXAegCp/GvMR+GeNmoH1GewBpHbDxaucdsY43j
- Ic831T+DuHkmI1k4SYW5LLWcFpi0VyYWE6dxU=
+ id 1hkspy-0004O8-CM
+ for linux-rockchip@lists.infradead.org; Tue, 09 Jul 2019 16:19:27 +0000
+Received: by mail-io1-f66.google.com with SMTP id i10so44338935iol.13
+ for <linux-rockchip@lists.infradead.org>; Tue, 09 Jul 2019 09:19:24 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=RiTv9D9r+HWewv08+uDjzds8jJ160NpsMW3nG+2KdoY=;
- b=DwWbW4rCzP5KqjUlA/3QlZs+/I9YG3LevQ1dBfX+wXACmQZRFrrzlYPb1cZgqYC+uq
- uW3rOoRIhRIwZY81kMconaj7oVBb/Kn1P2KQdJc5+9uTr9t5pg9XVk4Vx/P9hWzxbVtg
- +3Ze3SUiWtp2N4Zj6Vo/XKBmv7Ag3jWtyFTrxN9rJTm3cx0LqvOeeO0Lg5F1BreMjmKq
- aI2SIlC+3Kehy/nVExek7uTtWIVed8MujsbpAcs19cmVM/SH9PxeSge98shA+i8K7SQy
- LrrZVmUhpvYHDf0sxksVNQmRW7rZjGjubHfpXeFGtOpg3DAxN/x2+3VZ5r7glMxj7Uc7
- oi/w==
-X-Gm-Message-State: APjAAAXJboz4B9UNQbDZrl7BsR4yrUt9HjmXIsXf6r5MODK+o2b6ccQo
- psxKoucuDFyYB0gLGFRuN5fUbb2QFI19ZT73y2J6lQ==
-X-Google-Smtp-Source: APXvYqyNbkbPQt5s+GfBLT3QI7iGlZiQWtRzOE3HxXG0lIDjqNAi3SYslwEYCGrQlbUmVYhU38as6OOl9n5yJb/dYW4=
-X-Received: by 2002:a67:d386:: with SMTP id b6mr14020005vsj.170.1562673563188; 
- Tue, 09 Jul 2019 04:59:23 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=7tAfXbTGjm8fRgQr1s7o3SHyobzROVcWesepsvUVeJ0=;
+ b=JIYNjz1T1i/8dOk0sb5aavCtWgAPcnUXuz1m26nhcoWU1ZSlXS/TXYpl328BSXcJ/9
+ 3gOJ6iiP7q06ayilVtYUjeJzOvX2VHN/vdORnlBF3DfTPp243PqvmNEXp/oo4nPIDlt/
+ KHuubMgr4lo9u+2rUW5rsmu2q8cVidQ2yoCYguVzKXQvzft9djB8jJSbBTJ7p8R6UXiC
+ o9RXSB1zaTPojXdgA4iRp97NlAW+ygE53UCP4c5CAF++kAYqDg6lnruD7rGOgGocbHP4
+ tGWjdBcx7hBcKDChEdL63RdHL+7u8t6c0sZ1C5EJAaf2ooVhxNwVdY5+Axindz3w5NoL
+ VCug==
+X-Gm-Message-State: APjAAAXASp3MsmSwc5GXp7DIyqanNNZ7YjwISbYfIiT9VeNa7/xu9XpH
+ TZZuQzx0A7m+abaEoK0Zbg==
+X-Google-Smtp-Source: APXvYqytUb4e1tTFkilBAmDnbfpUegwR/3+McS2ESVbZuIF2pcM4ypCPA270vJObgxVGw3SsHisGJg==
+X-Received: by 2002:a05:6638:191:: with SMTP id
+ a17mr24115446jaq.101.1562689163723; 
+ Tue, 09 Jul 2019 09:19:23 -0700 (PDT)
+Received: from localhost ([64.188.179.251])
+ by smtp.gmail.com with ESMTPSA id r5sm18036660iom.42.2019.07.09.09.19.22
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 09 Jul 2019 09:19:22 -0700 (PDT)
+Date: Tue, 9 Jul 2019 10:19:22 -0600
+From: Rob Herring <robh@kernel.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH v2 17/28] drivers: Introduce bus_find_device_by_of_node()
+ helper
+Message-ID: <20190709161922.GA1609@bogus>
+References: <1560534863-15115-1-git-send-email-suzuki.poulose@arm.com>
+ <1560534863-15115-18-git-send-email-suzuki.poulose@arm.com>
 MIME-Version: 1.0
-References: <20190705042623.129541-1-cychiang@chromium.org>
- <20190705042623.129541-2-cychiang@chromium.org>
- <CA+Px+wXtmf9dQQP7ywPLp7Qbbvqau=WnO3qhZ8+qmbJD1gjx+A@mail.gmail.com>
- <20190705121240.GA20625@sirena.org.uk>
- <CAFv8NwLP-hUBW8FZW5kooaggeNRG7LAEd2pd_-70YBrVMY-+CQ@mail.gmail.com>
-In-Reply-To: <CAFv8NwLP-hUBW8FZW5kooaggeNRG7LAEd2pd_-70YBrVMY-+CQ@mail.gmail.com>
-From: Cheng-yi Chiang <cychiang@chromium.org>
-Date: Tue, 9 Jul 2019 19:58:56 +0800
-Message-ID: <CAFv8NwJHpY+ptc+WbeRhsKB8wGnt08r38GG7WUYTrt=wZaGqqA@mail.gmail.com>
-Subject: Re: [PATCH 1/4] ASoC: hdmi-codec: Add an op to set callback function
- for plug event
-To: Mark Brown <broonie@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <1560534863-15115-18-git-send-email-suzuki.poulose@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_045925_163548_1FE9E959 
-X-CRM114-Status: GOOD (  15.03  )
-X-Spam-Score: -6.1 (------)
+X-CRM114-CacheID: sfid-20190709_091926_422965_1E06F21D 
+X-CRM114-Status: GOOD (  11.59  )
+X-Spam-Score: 2.0 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-6.1 points)
+ Content analysis details:   (2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ no trust [209.85.166.66 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
  1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,62 +91,63 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: ALSA development <alsa-devel@alsa-project.org>,
- Doug Anderson <dianders@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
+Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Heiko Stuebner <heiko@sntech.de>, Mathieu Poirier <mathieu.poirier@linaro.org>,
+ suzuki.poulose@arm.com, Maxime Ripard <maxime.ripard@bootlin.com>,
+ gregkh@linuxfoundation.org, rafael@kernel.org,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
  Liam Girdwood <lgirdwood@gmail.com>, David Airlie <airlied@linux.ie>,
- linux-kernel <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
- Takashi Iwai <tiwai@suse.com>, tzungbi@chromium.org,
- Jaroslav Kysela <perex@perex.cz>, Hans Verkuil <hverkuil@xs4all.nl>,
- Tzung-Bi Shih <tzungbi@google.com>, Russell King <rmk+kernel@armlinux.org.uk>,
- Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, linux-rockchip@lists.infradead.org,
- Dylan Reid <dgreid@chromium.org>, linux-arm-kernel@lists.infradead.org
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ linux-i2c@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ Wolfram Sang <wsa@the-dreams.de>, linux-rockchip@lists.infradead.org,
+ Takashi Iwai <tiwai@suse.com>, linux-spi@vger.kernel.org,
+ Frank Rowand <frowand.list@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Jul 8, 2019 at 1:03 PM Cheng-yi Chiang <cychiang@chromium.org> wrote:
->
-> On Fri, Jul 5, 2019 at 8:12 PM Mark Brown <broonie@kernel.org> wrote:
-> >
-> > On Fri, Jul 05, 2019 at 03:08:37PM +0800, Tzung-Bi Shih wrote:
-> > > On Fri, Jul 5, 2019 at 12:26 PM Cheng-Yi Chiang <cychiang@chromium.org> wrote:
-> >
-> > > > +typedef void (*hdmi_codec_plugged_cb)(struct platform_device *dev,
-> > > > +                                     bool plugged);
-> > > > +
-> >
-> > > The callback prototype is "weird" by struct platform_device.  Is it
-> > > possible to having snd_soc_component instead of platform_device?
-> >
-> > Or if it's got to be a device why not just a generic device so
-> > we're not tied to a particular bus here?
->
-> My intention was to invoke the call in dw-hdmi.c like this:
->
->     hdmi->plugged_cb(hdmi->audio,
->                                    result == connector_status_connected);
->
-> Here hdmi->audio is a platform_device.
-> I think dw-hdmi can not get  snd_soc_component easily.
-> I can use a generic device here so the ops is more general.
-> The calling will be like
->     hdmi->plugged_cb(&hdmi->audio->dev,
->                                    result == connector_status_connected);
-> I will update this in v2.
-> Thanks!
+On Fri, 14 Jun 2019 18:54:12 +0100, Suzuki K Poulose wrote:
+> Add a wrapper to bus_find_device() to search for a device
+> by the of_node pointer, reusing the generic match function.
+> Also convert the existing users to make use of the new helper.
+> 
+> Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+> Cc: Maxime Ripard <maxime.ripard@bootlin.com>
+> Cc: dri-devel@lists.freedesktop.org
+> Cc: David Airlie <airlied@linux.ie>
+> Cc: Daniel Vetter <daniel@ffwll.ch>
+> Cc: devicetree@vger.kernel.org
+> Cc: Florian Fainelli <f.fainelli@gmail.com>
+> Cc: Frank Rowand <frowand.list@gmail.com>
+> Cc: Heiko Stuebner <heiko@sntech.de>
+> Cc: Liam Girdwood <lgirdwood@gmail.com>
+> Cc: linux-i2c@vger.kernel.org
+> Cc: linux-rockchip@lists.infradead.org
+> Cc: linux-spi@vger.kernel.org
+> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Cc: Rob Herring <robh+dt@kernel.org>
+> Cc: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+> Cc: Takashi Iwai <tiwai@suse.com>
+> Cc: Wolfram Sang <wsa@the-dreams.de>
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Cc: "Rafael J. Wysocki" <rafael@kernel.org>
+> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> ---
+>  drivers/gpu/drm/drm_mipi_dsi.c             |  7 +------
+>  drivers/hwtracing/coresight/of_coresight.c | 11 ++---------
+>  drivers/i2c/i2c-core-of.c                  |  7 +------
+>  drivers/nvmem/core.c                       |  7 +------
+>  drivers/of/of_mdio.c                       |  8 +-------
+>  drivers/of/platform.c                      |  7 +------
+>  drivers/spi/spi.c                          |  9 ++-------
+>  include/linux/device.h                     | 12 ++++++++++++
+>  sound/soc/rockchip/rk3399_gru_sound.c      |  9 ++-------
+>  9 files changed, 23 insertions(+), 54 deletions(-)
+> 
 
-I have thought about this a bit more. And I think the more proper
-interface is to pass in a generic struct device* for codec.
-This way, the user of hdmi-codec driver on the DRM side is not limited
-to the relation chain of
-audio platform device -> codec platform device, which is just a
-special case in dw-hdmi driver.
-As long as DRM side can get hdmi-codec device pointer through
-drv_data, it can use this callback.
-Hope this makes the interface more generic.
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 Linux-rockchip mailing list
