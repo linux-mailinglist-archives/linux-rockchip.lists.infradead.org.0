@@ -2,79 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B0F963C5A
-	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jul 2019 22:01:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17F4363D87
+	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jul 2019 23:48:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JXISSvJ/IiL21YAQW0Pe+X3agnmwes2CNJYIBUIUClo=; b=UXhYWNlMqQyNyB
-	LHwKvfdMH8GFyZ4CpnTbhRWKqP0XiwsKwby/JDI6xGi1RRxvbbX/PZ/zD4XUxhinHUrvW76lYupqL
-	gaDosTGp63aAHbg8Qr+TheTviaAnNV0YJT0MlOXRvFJOQBpeRlZlZ9N8fbzJjsYAzjNf8RPScbaNl
-	JiMPgTNzve+qztSTuk3ecfz2YRk8IkqC7f4+/543Rvqn9ohIWTzNGXJ6uGg0fgxECvuBNBbkbhSGv
-	OBosWrfviJAiiN0Tmc0UZqFG4xLUyy577AfKiXcOv+UPqcuNh+GDRWhTw3do5M/2Wakcguk/QuE7G
-	N5vEHep1Qy1tY/FBGKIw==;
+	List-Owner; bh=EbmxQTNCkJMPBgmVsCizxtK+pk0w79RlyY2cVPtvFg4=; b=Gym5QtZDUPCLFN
+	C9r/riBZVqhUeL2KJek6w4qNOv8ZMZLQa2gP/VUEY9BFVoDYu97nS/fPi0QFCFcho3b4LB3H7WpZ+
+	XM54sgTCRn4X332fXOZwlxjB1/fOKIlBstqv2jlJflzkLnkVo3S2NlDO9TUn3CzZTYbWu9JlnQcG5
+	Trv1MFvvRmsL+2F2fwfPrGrkdnE18MXO4lPN+KL41a/RZCLXqn4U+K44CmAhmoPgONHCKE1BxsTO4
+	u2rkNWAZz0Vs60agnO9d5WEUmBM1Es44CY7idZRpn+fujmu/6rqR7Gt54e/Zml12t9K3VklIlASgb
+	uh054kJIaYyAxV2J8w1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkwJ4-0003cY-0V; Tue, 09 Jul 2019 20:01:42 +0000
-Received: from mail-io1-f65.google.com ([209.85.166.65])
+	id 1hkxyV-00089C-FI; Tue, 09 Jul 2019 21:48:35 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkwIm-0003Hj-Qs; Tue, 09 Jul 2019 20:01:26 +0000
-Received: by mail-io1-f65.google.com with SMTP id q22so24040377iog.4;
- Tue, 09 Jul 2019 13:01:24 -0700 (PDT)
+ id 1hkxyS-00088Z-Dt
+ for linux-rockchip@lists.infradead.org; Tue, 09 Jul 2019 21:48:34 +0000
+Received: by mail-qt1-x841.google.com with SMTP id h24so266750qto.0
+ for <linux-rockchip@lists.infradead.org>; Tue, 09 Jul 2019 14:48:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=pObonpCVhBSmmiSRgLF61Ki0eXVsuxi+cPBVrWAPOgE=;
+ b=WuGNttqWLWY2ZilDDq/cmXWwieqNlqYaoKgGTV0hs6MhLCzsar9IieghREaCh12pYO
+ mcSt3MXg/FQYOVdTIgRq0nWk69auT0nVFM8ENzugPJBpWwUvOlEc4qdUXsFnytl52WPD
+ fnyQQ34giXP4UTEt3hul2/BNMfkG9JnY9IOuYkleXLWm2gzUkV+4fti5PAkbjdTpmLHg
+ LSfhIRit46IAjUz16kYPCPSxwvr6J3u3V3sskmTndoVu+bktVyIuaQjEuURE5ivelgmw
+ wQsqDZ+0b+cILcmlUzAdcrWl+Chr4ij+F9O7xc33ez5NfLN4VxHvSftK6Pxlrk4JyX+z
+ GjtQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=B7/QcW7r5MQOGhPEoQO1LbngGWl8Cp/c3zBrZbGmskM=;
- b=oZZQwJ56okiBgLsO5L+Lo7GmDuaDdTF8dvuLO+2okSyiak2Ry7zwsr8WR+KgRvfq2g
- /81NMzmlZoFP8VA6PfdkBdnU06kTNg0FE4tPwtcM4HO0qSCQOHO5aIZrgBIbJQvTkuDJ
- 9dvBd1C8jRkcuzKGyJ6IHbMeFro1fPM4TEQsTxyHb3L23sK4BsZKunKDRGdknsH0ZO/9
- 29INDGb7NJhxQ7LDeK6RUiqCfaQ8Yubylsdh5Rmdyt7Fqmq+3WATYrxvmq2Z0/k8yOgq
- SqdXxCr6Uh6J0/MqFoU6jBynEnv4i2VTtdMnpb/fHgp0aLCTBaeVGjQM/QnUeovvNXKk
- s0aQ==
-X-Gm-Message-State: APjAAAVu8kQqoNcBZ5eAbFuQy33MCZREwEIr6fH1j5e1l+Ny0vWUGKSI
- OZ2/0aM5B5fADmYLwYmhbw==
-X-Google-Smtp-Source: APXvYqytSsRPVq3GTbSVDnVsku/qIgTDId3MOrt1dloK9TJz1SnYYCUTN2WCuwk38In8AaLhppOnLQ==
-X-Received: by 2002:a02:7f15:: with SMTP id r21mr31288185jac.120.1562702483721; 
- Tue, 09 Jul 2019 13:01:23 -0700 (PDT)
-Received: from localhost ([64.188.179.251])
- by smtp.gmail.com with ESMTPSA id s2sm15525321ioj.8.2019.07.09.13.01.22
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 09 Jul 2019 13:01:23 -0700 (PDT)
-Date: Tue, 9 Jul 2019 14:01:21 -0600
-From: Rob Herring <robh@kernel.org>
-To: Cheng-Yi Chiang <cychiang@chromium.org>
-Subject: Re: [PATCH 5/7] ASoC: rockchip: rockchip-max98090: Add node for HDMI
-Message-ID: <20190709200121.GA19118@bogus>
-References: <20190603043251.226549-1-cychiang@chromium.org>
- <20190603043251.226549-6-cychiang@chromium.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=pObonpCVhBSmmiSRgLF61Ki0eXVsuxi+cPBVrWAPOgE=;
+ b=VesteJw26PQAblHJ6GEyDUzgIgGWD1WNT0T8NXHOfGApXIlZmCJXjkMTq3wh5Wamqn
+ OFMg94iYHJ4Z/t3VwYmQvkQTpLT59Ay04pEkqeKkXcM3q8Hb5AEGVIPEkG68w5jWQzAX
+ XjmPxNmVOiMYMFsqV/PGlL8b+SN6+SAnR9a/d/ELSFPgvFQ7m8k5FJi0AGwmHwvWWVyc
+ QQbF8l9ZDdy0+a6Y3I7TtngIWoY3dL1h8g1OapL/5JosiAU0F03StxV8BfqtFSPX9ssB
+ zTChIGps4ra8sv9OsonIVdoMUztJEMaywjo/6NAqZdIKTB/iDT5JzG1dm7z7JKTEXej5
+ siAw==
+X-Gm-Message-State: APjAAAXHb+FgRK6ekppMzYVZRX7a41XZvPV5H7w8UBRwSOx3aHRKhDVg
+ nBwmTe8FVyA51M+63iaA4laTogvOKf/j1Yyb8sw=
+X-Google-Smtp-Source: APXvYqyywjCWmRSpegmDraZaGC6H19pvew0Xiws8Ie8gSnqctiNwYxTuBCPdVFk8g5+yZmE855EOfG09T0cwXg0mVKw=
+X-Received: by 2002:ac8:1c2d:: with SMTP id a42mr20603885qtk.311.1562708910876; 
+ Tue, 09 Jul 2019 14:48:30 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190603043251.226549-6-cychiang@chromium.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190708195613.205729-1-dianders@chromium.org>
+ <CAJKOXPf9OTPaheUdiZtaDGU0sE2vsdRiLx5nptMt_EVKU7GObA@mail.gmail.com>
+ <CAD=FV=WquwqKjUKh5=M6tbTrD3svVTGWLU3iSTzD-uXBX73YWA@mail.gmail.com>
+In-Reply-To: <CAD=FV=WquwqKjUKh5=M6tbTrD3svVTGWLU3iSTzD-uXBX73YWA@mail.gmail.com>
+From: Enric Balletbo Serra <eballetbo@gmail.com>
+Date: Tue, 9 Jul 2019 23:48:19 +0200
+Message-ID: <CAFqH_52Vhonb0ui5eXVHtyt+3td=_9pLZBWTBsHBgt34bX=H+Q@mail.gmail.com>
+Subject: Re: [PATCH] mmc: dw_mmc: Fix occasional hang after tuning on eMMC
+To: Doug Anderson <dianders@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_130124_874455_CA013D08 
-X-CRM114-Status: GOOD (  14.18  )
-X-Spam-Score: 2.0 (++)
+X-CRM114-CacheID: sfid-20190709_144832_471539_55826F17 
+X-CRM114-Status: GOOD (  28.50  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.0 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.65 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
+ provider (eballetbo[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -88,61 +95,113 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, Heiko Stuebner <heiko@sntech.de>,
- Liam Girdwood <lgirdwood@gmail.com>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, Takashi Iwai <tiwai@suse.com>,
- Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- linux-rockchip@lists.infradead.org, dgreid@chromium.org,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org, tzungbi@chromium.org,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, dianders@chromium.org,
- linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>
+Cc: Ulf Hansson <ulf.hansson@linaro.org>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ Brian Norris <briannorris@chromium.org>,
+ Linux MMC List <linux-mmc@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jaehoon Chung <jh80.chung@samsung.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Matthias Kaehlcke <mka@chromium.org>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Guenter Roeck <groeck@chromium.org>, Sonny Rao <sonnyrao@chromium.org>,
+ Alim Akhtar <alim.akhtar@gmail.com>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Jun 03, 2019 at 12:32:49PM +0800, Cheng-Yi Chiang wrote:
-> Let user specify HDMI node so machine driver can use it to let codec
-> driver register callback on correct hdmi-notifier.
-> 
-> Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
-> ---
->  Documentation/devicetree/bindings/sound/rockchip-max98090.txt | 2 ++
->  1 file changed, 2 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/sound/rockchip-max98090.txt b/Documentation/devicetree/bindings/sound/rockchip-max98090.txt
-> index a805aa99ad75..dae57c14864e 100644
-> --- a/Documentation/devicetree/bindings/sound/rockchip-max98090.txt
-> +++ b/Documentation/devicetree/bindings/sound/rockchip-max98090.txt
-> @@ -7,6 +7,7 @@ Required properties:
->    connected to the CODEC
->  - rockchip,audio-codec: The phandle of the MAX98090 audio codec
->  - rockchip,headset-codec: The phandle of Ext chip for jack detection
-> +- rockchip,hdmi: The phandle of HDMI node for HDMI jack detection
->  
->  Example:
->  
-> @@ -16,4 +17,5 @@ sound {
->  	rockchip,i2s-controller = <&i2s>;
->  	rockchip,audio-codec = <&max98090>;
->  	rockchip,headset-codec = <&headsetcodec>;
-> +	rockchip,hdmi= <&hdmi>;
+Hi,
 
-space                ^
+Missatge de Doug Anderson <dianders@chromium.org> del dia dt., 9 de
+jul. 2019 a les 18:38:
+>
+> Hi,
+>
+> On Tue, Jul 9, 2019 at 2:07 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+> >
+> > On Tue, 9 Jul 2019 at 00:48, Douglas Anderson <dianders@chromium.org> wrote:
+> > >
+> > > In commit 46d179525a1f ("mmc: dw_mmc: Wait for data transfer after
+> > > response errors.") we fixed a tuning-induced hang that I saw when
+> > > stress testing tuning on certain SD cards.  I won't re-hash that whole
+> > > commit, but the summary is that as a normal part of tuning you need to
+> > > deal with transfer errors and there were cases where these transfer
+> > > errors was putting my system into a bad state causing all future
+> > > transfers to fail.  That commit fixed handling of the transfer errors
+> > > for me.
+> > >
+> > > In downstream Chrome OS my fix landed and had the same behavior for
+> > > all SD/MMC commands.  However, it looks like when the commit landed
+> > > upstream we limited it to only SD tuning commands.  Presumably this
+> > > was to try to get around problems that Alim Akhtar reported on exynos
+> > > [1].
+> > >
+> > > Unfortunately while stress testing reboots (and suspend/resume) on
+> > > some rk3288-based Chromebooks I found the same problem on the eMMC on
+> > > some of my Chromebooks (the ones with Hynix eMMC).  Since the eMMC
+> > > tuning command is different (MMC_SEND_TUNING_BLOCK_HS200
+> > > vs. MMC_SEND_TUNING_BLOCK) we were basically getting back into the
+> > > same situation.
+> > >
+> > > I'm hoping that whatever problems exynos was having in the past are
+> > > somehow magically fixed now and we can make the behavior the same for
+> > > all commands.
+> > >
+> > > [1] https://lkml.kernel.org/r/CAGOxZ53WfNbaMe0_AM0qBqU47kAfgmPBVZC8K8Y-_J3mDMqW4A@mail.gmail.com
+> > >
+> > > Fixes: 46d179525a1f ("mmc: dw_mmc: Wait for data transfer after response errors.")
+> > > Signed-off-by: Douglas Anderson <dianders@chromium.org>
+> > > Cc: Marek Szyprowski <m.szyprowski@samsung.com>
+> > > Cc: Alim Akhtar <alim.akhtar@gmail.com>
+> > > Cc: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+> > > ---
+> > > Marek (or anyone else using exynos): is it easy for you to test this
+> > > and check if things are still broken when we land this patch?  If so,
+> > > I guess we could have a quirk to have different behavior for just
+> > > Rockchip SoCs but I'd rather avoid that if possible.
+> > >
+> > > NOTE: I'm not hoping totally in vain here.  It is possible that some
+> > > of the CTO/DTO timers that landed could be the magic that would get
+> > > exynos unstuck.
+> >
+> > I have eMMC module attached to Odroid U3 (Exynos4412,
+> > samsung,exynos4412-dw-mshc). What is the testing procedure? With your
+> > patch it boots fine:
+> > [    3.698637] mmc_host mmc1: Bus speed (slot 0) = 50000000Hz (slot
+> > req 52000000Hz, actual 50000000HZ div = 0)
+> > [    3.703900] mmc1: new DDR MMC card at address 0001
+> > [    3.728458] mmcblk1: mmc1:0001 008G92 7.28 GiB
+>
+> To really test it, it'd be nice to see some HS200 eMMC cards enumerate
+> OK.  Specifically the patch adjusts the error handling and the place
+> where that happens mostly is during tuning.
+>
+> I'll also try to find some time today to check a peach_pit or a
+> peach_pi.  I think I saw one in the pile near my desk so if it isn't
+> in too bad of a shape I can give mainline a shot on it.
+>
 
-With that,
+I did a normal boot on peach_pi [1] and odroidxu3 [2] with that patch
+applied, and the eMMC attached on both was detected as
 
-Acked-by: Rob Herring <robh@kernel.org>
+ [    2.294798] mmc0: new HS400 MMC card at address 0001
 
->  };
-> -- 
-> 2.22.0.rc1.257.g3120a18244-goog
-> 
+I can do some stress tests tomorrow on those boards if that helps.
+
+Cheers,
+~ Enric
+
+[1] https://storage.kernelci.org/chrome-platform/for-kernelci/ib-mfd-cros-v5.3-87-g0fe7e9d7d5a3/arm/multi_v7_defconfig/gcc-8/lab-collabora/boot-exynos5800-peach-pi.html
+[2] https://storage.kernelci.org/chrome-platform/for-kernelci/ib-mfd-cros-v5.3-87-g0fe7e9d7d5a3/arm/multi_v7_defconfig/gcc-8/lab-collabora/boot-exynos5422-odroidxu3.html
+
+> -Doug
+>
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
 _______________________________________________
 Linux-rockchip mailing list
