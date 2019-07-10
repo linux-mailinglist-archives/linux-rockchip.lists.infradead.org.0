@@ -2,85 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 080A864EBD
-	for <lists+linux-rockchip@lfdr.de>; Thu, 11 Jul 2019 00:40:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F63164F03
+	for <lists+linux-rockchip@lfdr.de>; Thu, 11 Jul 2019 00:57:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dr7mPTLJ6vLRgAqpljKb4HOVhFWSfhSw01YUpN9NiZc=; b=DDkk4fL08MEUuq
-	FqGItp0QUfJDDzHWGoPh1+bmxqnRgHSXPPFmQACpOVLYoS2VhCxiKysoNaoBRZUtGg0hq+F5Y5vWf
-	BZZHT1F8Q6K8EuOM8D32J7jZ3ks+HAZ4JnnzP5zcjYJu+/9WJ8qdIcgDds5wEOoh7Iw0yYk0P9Z4K
-	2KqrS4h/74ltgWuN+XsQh2UKuozXys5ZanVOpuXmdhEiJ8tuM7+yybNoaAOTOQG9z6XHszOLC00ze
-	5hFkGRnLGEXhtdEC9VktMQKsKW6hig4M3hI3RGMsLi/GjKYS/h1LWlaoZMa9z1uqYdQmBlawdf0UQ
-	80ZfpkVbsGiXftj0upAQ==;
+	List-Owner; bh=xxbcZcYqjpO+9eu2XxDydG7rS5Rvd4iEnNqdWXZtBw0=; b=pBnPB7eipdEM9U
+	LuOQZGs49NB8rtLeRzsZpmUuB6I7Aw5ZrECqxHJrBOWfubXHheQ9yyoaJEsDqbpGISx3j+pfq1+yf
+	Z6j8HW7EMAMNJV5AcWh1N6ZNyMir7GjaioaadP2bGGAitosxs4Now+W54M+q+PZC2REalq9t7MidQ
+	lLCOkuYgv9RiyA/tpkkFmqYfkt4FrcqbsOYJiL2/aTOdA+2OlVOzMlWgr6apRroXLTTYVeeJc+Vo/
+	+/7JtVzSeNbuio0g6BYO+FeAuB1btuXIJ20QjiiFJnWPgZtKFGgTDaDpDpJZ1vdMrC6stAQI/oHQs
+	mFgTrfAgcA7OkAjUzz+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlLG5-0002uh-1o; Wed, 10 Jul 2019 22:40:17 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1hlLWI-0007J4-5c; Wed, 10 Jul 2019 22:57:02 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlLFy-0002tq-0G
- for linux-rockchip@lists.infradead.org; Wed, 10 Jul 2019 22:40:11 +0000
-Received: by mail-io1-xd41.google.com with SMTP id j5so4089973ioj.8
- for <linux-rockchip@lists.infradead.org>; Wed, 10 Jul 2019 15:40:09 -0700 (PDT)
+ id 1hlLWD-0007I9-Kf
+ for linux-rockchip@lists.infradead.org; Wed, 10 Jul 2019 22:56:59 +0000
+Received: by mail-io1-xd43.google.com with SMTP id s7so8306508iob.11
+ for <linux-rockchip@lists.infradead.org>; Wed, 10 Jul 2019 15:56:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=h1QrIpFdh5rLkTKFlCHaduUWYuYcrWpgjVEeSTaTyVo=;
- b=i5KPrHovfkqkwkajM2OJwC/MI8IVo3lIvSf1xBkUaMHWuUyWkij1QldVl9kX/GMlE1
- DNsrFiTH/7r6LswYJlPb1030krcbMTp9icHuWypgydw+2C+kuV72UBpH6KFLdct9hP6R
- bfQOoNSN7axemJnh/3RbdCrrYZ6IDuOtjaP+w=
+ :cc; bh=wvZvVibciLuoN0XPHn1GQTPO0jZSmghihu4pRgb43gE=;
+ b=Hqkoo2XXLEooMC5VZ+gOGg3gxQkocTVvzTmDsnDANF3OvZLlo/WQja4ye0rFzpf83e
+ shsMhGUJvVUA4YU0xi/vv+i+XuO2LxUMqoRYnyGtJibDxbKwyeL16AR1P0KokEbKVpus
+ TtaPbc8kH0P9xgP/1HkX6qrifSz9Mm/YfZAik=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=h1QrIpFdh5rLkTKFlCHaduUWYuYcrWpgjVEeSTaTyVo=;
- b=XWtOEJjlF2MOMcXksCJiPuSht7Ma1D9BAkchi4SfRcnoq3pHSyST2lHmmUz/JgVJEP
- JklVuD15bGg24Y20tcOBqm+S8O0P2wU7ZhA9a2zwxP76cWtjj0DJaNcg4YMJVQ9XPCoC
- e5RRhrkdDpayR2diKWJ4Zt3ksz8gISZAfDOvKItYWTItR0MkeUt3rk9OAreOjxT6fT8x
- g/K9Uvbg67IKjq8E1mGunPtW/ZbmjMhD7kzl5ggzqMK9UEHxo8dlWvu1EyVPuadE54G8
- M1a8S3RVwSTediMmhIAlSETzWsC4zHyGxEYXQZVSJBDm1+DYPlFHvuz1Xd7D0n4AmB5q
- dNzg==
-X-Gm-Message-State: APjAAAXtouHFykoMJ1Ao0a8epkWy+IuD+PXTGEOGcmQ/tBwu0rEjJfSL
- P24gEXTJ1+3CSBo8UDCTgUwhy03JJLo=
-X-Google-Smtp-Source: APXvYqypDFsIMywP748/ViH7CzgDBYWaQzpUwD9lvQTHKuBHqnjzWk7eQyPDugD4RiUVoEzjwKLxHw==
-X-Received: by 2002:a6b:b593:: with SMTP id e141mr573861iof.203.1562798408446; 
- Wed, 10 Jul 2019 15:40:08 -0700 (PDT)
-Received: from mail-io1-f44.google.com (mail-io1-f44.google.com.
- [209.85.166.44])
- by smtp.gmail.com with ESMTPSA id h8sm3710155ioq.61.2019.07.10.15.40.05
+ bh=wvZvVibciLuoN0XPHn1GQTPO0jZSmghihu4pRgb43gE=;
+ b=a6OgOKZmAIy7z2Zorl5ekS1ydTzl081ht2ETIA2iVupGfY173wJxCsLWDww73oKepo
+ Hz8J5o7DzuZwSanoSUAQdsNWlC7wBHPUOgh9aleWWohizsanwtAMMXsufhz/gKP4hfkB
+ avWkKJbdaB/5Jod3itNOYPLdU9H9jpB7sfzeD+2vrJS/Jmx1xjtOB2qUALFdBm2Z3gaR
+ XqZ7vrbP1gKgPaDxKCmNOO64NsE0YWBrQNAeZUwMNGmZuyt4wqILns+/xPQOme0qWZXi
+ tKM04Y5b3izQT2tAGD+pHNBXDYzIYZWzdWSe3K1Rns2XR2ZWXisPv9TWHaylb+8NlvyR
+ Um1w==
+X-Gm-Message-State: APjAAAVbbMKJjqfdRUfnQRIY0IFw/y3LNqpkI6m6mTlHAiYXiIwN89z7
+ GzeCUn1s26EZb6pgZTNSnMacuiBDDQ0=
+X-Google-Smtp-Source: APXvYqyLOFSLHJzs4TaHB0pCsiZ2/0NUKusCu35J3GzW/qKh0NjCxp8VvAS8gQj6xm2XkEmahromEQ==
+X-Received: by 2002:a6b:6516:: with SMTP id z22mr644276iob.7.1562799414299;
+ Wed, 10 Jul 2019 15:56:54 -0700 (PDT)
+Received: from mail-io1-f49.google.com (mail-io1-f49.google.com.
+ [209.85.166.49])
+ by smtp.gmail.com with ESMTPSA id p3sm3959160iom.7.2019.07.10.15.56.51
  for <linux-rockchip@lists.infradead.org>
  (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Wed, 10 Jul 2019 15:40:05 -0700 (PDT)
-Received: by mail-io1-f44.google.com with SMTP id j5so4089677ioj.8
- for <linux-rockchip@lists.infradead.org>; Wed, 10 Jul 2019 15:40:05 -0700 (PDT)
-X-Received: by 2002:a02:c6a9:: with SMTP id o9mr688304jan.90.1562798405041;
- Wed, 10 Jul 2019 15:40:05 -0700 (PDT)
+ Wed, 10 Jul 2019 15:56:52 -0700 (PDT)
+Received: by mail-io1-f49.google.com with SMTP id q22so8388155iog.4
+ for <linux-rockchip@lists.infradead.org>; Wed, 10 Jul 2019 15:56:51 -0700 (PDT)
+X-Received: by 2002:a5e:c241:: with SMTP id w1mr670314iop.58.1562799411159;
+ Wed, 10 Jul 2019 15:56:51 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190401171724.215780-1-dianders@chromium.org>
  <20190401171724.215780-3-dianders@chromium.org>
  <20190630202246.GB15102@ravnborg.org>
- <CAD=FV=V_wTD1xpkXRe-z2HsZ8QXKq7jmq8CsfhMnFxi-5XDJjw@mail.gmail.com>
- <20190708175007.GA3511@ravnborg.org>
-In-Reply-To: <20190708175007.GA3511@ravnborg.org>
+ <20190630205514.GA17046@ravnborg.org>
+ <CAD=FV=WH4kmhQA0kbKcAUx=oOeqTZiQOFCXYpVWwq+mG7Y7ofA@mail.gmail.com>
+ <20190708175606.GB3511@ravnborg.org>
+In-Reply-To: <20190708175606.GB3511@ravnborg.org>
 From: Doug Anderson <dianders@chromium.org>
-Date: Wed, 10 Jul 2019 15:39:52 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=XnDTKkscdCwFE1137aX6pTtv=5zqXf=yqcnchpZpt5_Q@mail.gmail.com>
-Message-ID: <CAD=FV=XnDTKkscdCwFE1137aX6pTtv=5zqXf=yqcnchpZpt5_Q@mail.gmail.com>
+Date: Wed, 10 Jul 2019 15:56:39 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=VdkPLwyGhSnrHCcduQAPwby35Mqhk_r=O595bMoMT=6w@mail.gmail.com>
+Message-ID: <CAD=FV=VdkPLwyGhSnrHCcduQAPwby35Mqhk_r=O595bMoMT=6w@mail.gmail.com>
 Subject: Re: [PATCH v5 2/7] drm/panel: simple: Add ability to override typical
  timing
 To: Sam Ravnborg <sam@ravnborg.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_154010_075528_DAAD3A0E 
-X-CRM114-Status: GOOD (  23.64  )
+X-CRM114-CacheID: sfid-20190710_155657_704308_B72E288C 
+X-CRM114-Status: GOOD (  31.45  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,124 +106,111 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
+Cc: devicetree@vger.kernel.org,
+ =?UTF-8?Q?St=C3=A9phane_Marchesin?= <marcheu@chromium.org>,
  David Airlie <airlied@linux.ie>, Jeffy Chen <jeffy.chen@rock-chips.com>,
- LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Thierry Reding <thierry.reding@gmail.com>, Sean Paul <seanpaul@chromium.org>,
+ LKML <linux-kernel@vger.kernel.org>,
  dri-devel <dri-devel@lists.freedesktop.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Boris Brezillon <boris.brezillon@collabora.com>,
  =?UTF-8?Q?Enric_Balletb=C3=B2?= <enric.balletbo@collabora.com>,
- =?UTF-8?Q?St=C3=A9phane_Marchesin?= <marcheu@chromium.org>,
- Ezequiel Garcia <ezequiel@collabora.com>, Matthias Kaehlcke <mka@chromium.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+ Sean Paul <seanpaul@chromium.org>, Ezequiel Garcia <ezequiel@collabora.com>,
+ Matthias Kaehlcke <mka@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Sam,
+Hi,
 
-On Mon, Jul 8, 2019 at 10:50 AM Sam Ravnborg <sam@ravnborg.org> wrote:
+On Mon, Jul 8, 2019 at 10:56 AM Sam Ravnborg <sam@ravnborg.org> wrote:
 >
-> Hi Dough.
->
-> On Mon, Jul 01, 2019 at 09:39:24AM -0700, Doug Anderson wrote:
+> On Mon, Jul 01, 2019 at 09:39:06AM -0700, Doug Anderson wrote:
 > > Hi,
 > >
-> > On Sun, Jun 30, 2019 at 1:22 PM Sam Ravnborg <sam@ravnborg.org> wrote:
+> > On Sun, Jun 30, 2019 at 1:55 PM Sam Ravnborg <sam@ravnborg.org> wrote:
 > > >
-> > > > @@ -91,6 +92,8 @@ struct panel_simple {
-> > > >       struct i2c_adapter *ddc;
+> > > Hi Douglas.
+> > >
+> > > > > +
+> > > > > +   /* Only add timings if override was not there or failed to validate */
+> > > > > +   if (num == 0 && panel->desc->num_timings)
+> > > > > +           num = panel_simple_get_timings_modes(panel);
+> > > > > +
+> > > > > +   /*
+> > > > > +    * Only add fixed modes if timings/override added no mode.
 > > > >
-> > > >       struct gpio_desc *enable_gpio;
-> > > > +
-> > > > +     struct drm_display_mode override_mode;
-> > > I fail to see where this poiter is assigned.
+> > > > This part I fail to understand.
+> > > > If we have a panel where we in panel-simple have specified the timings,
+> > > > and done so using display_timing so with proper {min, typ, max} then it
+> > > > should be perfectly legal to specify a more precise variant in the DT
+> > > > file.
+> > > > Or what did I miss here?
+> > >
+> > > Got it now.
+> > > If display_mode is used for timings this is what you call "fixed mode".
+> > > Hmm, if I got confused someone else may also be confused by this naming.
 > >
-> > In panel_simple_parse_override_mode().  Specifically:
+> > The name "fixed mode" comes from the old code, though I guess in the
+> > old code it used to refer to a mode that came from either the
+> > display_timing or the display_mode.
 > >
-> > drm_display_mode_from_videomode(&vm, &panel->override_mode);
+> > How about if I call it "panel_simple_get_from_fixed_display_mode"?
+> > ...or if you have another suggestion feel free to chime in.
+> What we really want to distingush here is the use of display_mode
+> and display_timings (if I got the names right).
+> That display_mode specify a fixed timing and display_timing specify
+> a valid range is something in the semantics of the two types.
+> So naming that refer to display_mode versus display_timing will make the
+> code simpler to understand. and then a nice comment that when
+> display_mode
+> is used one looses the possibility to use override_mode.
+> That would be fine to have in the struct in the driver.
+
+OK, I can change the names here and try to find a good place to add a comment.
+
+
+> > NOTE: Since this feedback is minor and this patch has been outstanding
+> > for a while (and is blocking other work), I am assuming that the best
+> > path forward is for Heiko to land this patch with Thierry's Ack and
+> > I'll send a follow-up.  Please yell if you disagree.
+> Let's give the patches a spin more as we have passed the possibility for
+> the current merge window.
+
+Any way I can convince you to change your mind here?  There are no
+functional changes requested so far in your feedback and no bugs--it's
+just a few variable names and comments.  By landing the existing
+patches as-is:
+
+1. We stop spamming all the people CCed on this whole series (which
+includes device tree patches) that might be interested in the series
+as a whole but aren't interested in details.
+
+2. We can debate the bikeshed-type issues on their own merit and I
+don't have to debate removing existing Acks / Reviewed-by / Tested-by
+tags as I make changes.
+
+3. Even if it's not a good time to land the patches right now we know
+that these patches will be ready to land as soon as the window opens.
+As I mentioned earlier these patches are blocking other work [1] and
+landing that patch is actually preventing Matthias from submitting
+another series of patches to add support for rk3288-veyron-tiger and
+rk3288-veyron-fievel.  Certainly I know that upstream doesn't make a
+policy of landing things just to suit the timelines of a downstream
+project, but in this case there seems very little downsides to landing
+the existing patches and taking a later cleanup patch.
+
+
+> I am on vacation at the moment and thus slow in responses, but will be back
+> at the home office next week and will be more responsive again.
 >
-> The above code-snippet is only called in the panel has specified display
-> timings using display_timings - it is not called when display_mode is
-> used.
-> So override_mode is only assigned in some cases and not all cases.
-> This needs to be fixed so we do not reference override_mode unless
-> it is set.
+>         Sam - who is enjoying the alps in Austria
 
-I'm afraid I'm not following you here.
+Hope you have had a great vacation!
 
-* override_mode is a structure that's directly part of "struct panel_simple".
-
-* The panel is allocated in panel_simple_probe() with devm_kzalloc().
-
-* The "z" in kzalloc means that this memory will be zero-initialized.
-
-From the points above, "override_mode" will always be set to
-something.  If we didn't run "drm_display_mode_from_videomode(&vm,
-&panel->override_mode);" then we know the entire override_mode
-structure will be zero.
-
-While it took a while for me to get used to it, the kernel convention
-is to rely on zero-initialization and not to explicitly init things to
-zero.  As an example of this being codified in the source, you can see
-that "checkpatch.pl" will yell at you for a similar thing: "do not
-initialise globals to 0".
-
-
-> > > @@ -152,6 +162,44 @@ static int panel_simple_get_fixed_modes(struct panel_simple *panel)
-> > > >               num++;
-> > > >       }
-> > > >
-> > > > +     return num;
-> > > > +}
-> > > > +
-> > > > +static int panel_simple_get_non_edid_modes(struct panel_simple *panel)
-> > > > +{
-> > > > +     struct drm_connector *connector = panel->base.connector;
-> > > > +     struct drm_device *drm = panel->base.drm;
-> > > > +     struct drm_display_mode *mode;
-> > > > +     bool has_override = panel->override_mode.type;
-> > > This looks suspicious.
-> > > panel->override_mode.type is an unsigned int that may have a number of
-> > > bits set.
-> > > So the above code implicitly convert a .type != 0 to a true.
-> > > This can be expressed in a much more reader friendly way.
-> >
-> > You would suggest that I add a boolean field to a structure to
-> > indicate whether an override mode is present?
-> A simple  bool has_override = panel->override_mode.type != 0;
-> would do the trick here.
-> Then there is no hidden conversion from int to a bool.
-
-I will change this to "panel->override_mode.type != 0" if you're
-really sure, but this seems both against the general Linux style
-feedback I've received over the years (though there is definitely not
-100% consistency) and also against the local convention in this file.
-Examples in this file of treating ints as bools without an explicit
-"!= 0":
-
-* panel_simple_get_fixed_modes checks "if (panel->desc->bus_format)"
-* panel_simple_disable checks "if (p->desc->delay.disable)"
-* panel_simple_unprepare checks "if (p->desc->delay.unprepare)"
-* panel_simple_prepare checks "if (delay)"
-* panel_simple_enable checks "if (p->desc->delay.enable)"
-
-...and, although slightly different, pointers in this file are checked
-for NULL vs. non-NULL without an explicit "== NULL".
-
-Of course just because all the other examples in the file do it one
-way doesn't mean that new code has to do it another way, but I wanted
-to be really sure you wanted me to go against the existing convention
-before changing this.
-
-
-> But as override_mode can be NULL something more needs to be done.
-
-I'm afraid I don't understand how override_mode can be NULL since it's
-not a pointer.  Can you clarify?
-
+[1] https://lkml.kernel.org/r/20190625222629.154619-1-mka@chromium.org
 
 -Doug
 
