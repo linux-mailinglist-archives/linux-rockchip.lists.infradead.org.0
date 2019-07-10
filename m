@@ -2,87 +2,68 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50CEE641B9
-	for <lists+linux-rockchip@lfdr.de>; Wed, 10 Jul 2019 09:10:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6D17645D6
+	for <lists+linux-rockchip@lfdr.de>; Wed, 10 Jul 2019 13:35:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3KmUrm1ldehq2szUTGf6tKdHPJEvjyUQIoV4ya4Lj20=; b=gL6pwfvm/SMz6M
-	w36ArW1UCeB+PI+eiDTponNL7v7ji1U9MrSp/xWms9fpG0HCR3X+TQdOR8HkCdwctiAa/7tDMvJdh
-	48SeAcZd0VYYCBY6lYbBPG/B/oSeA8TOGkx9akDD25L6DHFM9XwPKNp7RhEzP0OwL6MzKuqx/3mUx
-	MHqmA7UO1hdqHOGPr+qjQmTVqbhdNiYmH3HI03hOpYx5J1p/2PXMORcPW+6mqn634sKYQA/Pv9KQg
-	5zXQP8eoFUZruDtdEcebagkIYqMYv8cWi04fk0ynDPQ1QKIdof2Lgbv9mUHzExVd7ZU76VEuXNZGc
-	FHfZ9GnJDpL1xvykkLDQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WGXCSj67bcd6ZA2Cs2C2igCGzRuINlXhK1KJ48z7+FI=; b=kC6Na+/ePWaVAu
+	y7EScoMvv8qwMoqMocDwMSeqoWbrmqSF4cRHA+DAvqdezxBV1G//f/pYo9ih/J94tV57/EzY5CP9h
+	8WrUDonu7BJuV3Cs+eMJ0wajT+8p5Os5GmskBS34ouzh0PcryYU4Qw57F/SVMh95AJPv17XwzKE+E
+	q1eLekVL0diJrfALxz0iB5FQKLa6Tz90o1srNSiV9xGKHzYsaqYnihxmIENPeY+dNuCMV5ov1+OZ8
+	BQS2dgBiGxFP5lmAnIyTMw1xI3D2fgQI+BsAnylLA/Zf2h9hmLMahLwHM29hM0UAgdZQP/QceL/An
+	poJ67Gbt+tHucOF40tSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hl6jw-0006Ot-Iz; Wed, 10 Jul 2019 07:10:08 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hlAsb-0004Rk-7B; Wed, 10 Jul 2019 11:35:21 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hl6ij-0005Wu-4G
- for linux-rockchip@lists.infradead.org; Wed, 10 Jul 2019 07:08:56 +0000
-Received: by mail-pf1-x444.google.com with SMTP id c73so626711pfb.13
- for <linux-rockchip@lists.infradead.org>; Wed, 10 Jul 2019 00:08:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=opTBgfSTSFi3V1ce9YlYEnYQO/1kKdgFofPaGYJTBOY=;
- b=RjICyuOquidt6LyqOASElFqobDNn4mo6EWt1hQsD6iwRx26+bMSTRwY0lCmMrVaHSG
- 6a47JWfUcXiJfqoCtNQ7lq7rjKXQcz2UUkE2pHMU2JgLeyFB7HyoZ+a4e8q03awEvrPl
- 4wQTV2TDpVxnBFrbqJ7OGM83LJNpTu4ZxCalU=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=opTBgfSTSFi3V1ce9YlYEnYQO/1kKdgFofPaGYJTBOY=;
- b=F9Qt7ktlpDbfXltdzUlqA3YgJHXIuiYL9WtGc2KBpADl66QAIZMxXrg7V+SvqAwQsI
- n4PHZgGSyo26lxkI7fyr4MaaP+e+6OjPVMI4zjNuWTgMC1Lq5oivNdTrOA+U85P6Mj3e
- PGbsInYWWkbASXcMr/n/yMbY+6bfNpvRTZ9+9p0yo6c0Bgybu8MicmtWnGdbmGntCacp
- LPM0c3PLJbBYnUYs33mYbtWQgFXuLTBH/uljLZqpXGo2HaLCP/rIcdEQhxm1ZHvrfcX8
- FHOT44OSM74PtLsd9Zy/a2OBTJuB+qQKBtLXoWlqVIUdo+K3ck/+gd7DKi0/HacUEd49
- Wrqg==
-X-Gm-Message-State: APjAAAWoIZbHc3mF0iKJa/nxtwsJI41hl4Q3fsrxTgVo/92jqv7SrCe1
- 4cbyQVGFDMoXXzKsWkfHu6dFxQ==
-X-Google-Smtp-Source: APXvYqyla6Le8Sl5C5IFq+BMbhDM8PgxLabMwmqWmWurGv0zA2QcXauHAgdORrx2hOafDqZMEhT1zA==
-X-Received: by 2002:a65:4045:: with SMTP id h5mr36503650pgp.247.1562742532604; 
- Wed, 10 Jul 2019 00:08:52 -0700 (PDT)
-Received: from localhost ([2401:fa00:1:b:e688:dfd2:a1a7:2956])
- by smtp.gmail.com with ESMTPSA id b36sm3319370pjc.16.2019.07.10.00.08.49
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 10 Jul 2019 00:08:52 -0700 (PDT)
-From: Cheng-Yi Chiang <cychiang@chromium.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 4/4] ASoC: rockchip_max98090: Add HDMI jack support
-Date: Wed, 10 Jul 2019 15:07:51 +0800
-Message-Id: <20190710070751.260061-5-cychiang@chromium.org>
-X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
-In-Reply-To: <20190710070751.260061-1-cychiang@chromium.org>
-References: <20190710070751.260061-1-cychiang@chromium.org>
+ id 1hlAsS-0004KM-NQ; Wed, 10 Jul 2019 11:35:14 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+ by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 10 Jul 2019 04:35:11 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.63,474,1557212400"; d="scan'208";a="189143865"
+Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.122])
+ ([10.237.72.122])
+ by fmsmga004.fm.intel.com with ESMTP; 10 Jul 2019 04:35:05 -0700
+Subject: Re: [PATCH v2 00/11] Arasan SDHCI enhancements and ZynqMP Tap Delays
+ Handling
+To: Manish Narani <manish.narani@xilinx.com>, ulf.hansson@linaro.org,
+ robh+dt@kernel.org, mark.rutland@arm.com, heiko@sntech.de,
+ michal.simek@xilinx.com, christoph.muellner@theobroma-systems.com,
+ philipp.tomsich@theobroma-systems.com, viresh.kumar@linaro.org,
+ scott.branden@broadcom.com, ayaka@soulik.info, kernel@esmil.dk,
+ tony.xie@rock-chips.com, rajan.vaja@xilinx.com, jolly.shah@xilinx.com,
+ nava.manne@xilinx.com, mdf@kernel.org, olof@lixom.net
+References: <1561958991-21935-1-git-send-email-manish.narani@xilinx.com>
+From: Adrian Hunter <adrian.hunter@intel.com>
+Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
+ Business Identity Code: 0357606 - 4, Domiciled in Helsinki
+Message-ID: <d4a733c4-9760-a790-5752-be3f14c53bec@intel.com>
+Date: Wed, 10 Jul 2019 14:33:54 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
+In-Reply-To: <1561958991-21935-1-git-send-email-manish.narani@xilinx.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_000853_214152_4E239916 
-X-CRM114-Status: GOOD (  10.91  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20190710_043512_807309_0F59BEDF 
+X-CRM114-Status: GOOD (  20.49  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.31 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,77 +76,58 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, dianders@chromium.org,
- Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
- David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
- Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
- tzungbi@chromium.org, Jaroslav Kysela <perex@perex.cz>,
- Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
- Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, dgreid@chromium.org,
- linux-arm-kernel@lists.infradead.org, Cheng-Yi Chiang <cychiang@chromium.org>
+Cc: devicetree@vger.kernel.org, linux-mmc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-In machine driver, create a jack and let hdmi-codec report jack status.
+On 1/07/19 8:29 AM, Manish Narani wrote:
+> This patch series does the following:
+>  - Reorganize the Clock Handling in Arasan SD driver
+>  - Adds new sampling clock in Arasan SD driver
+>  - Adds support to set Clock Delays in SD Arasan Driver
+>  - Add SDIO Tap Delay handling in ZynqMP firmware driver
+>  - Add support for ZynqMP Tap Delays setting in Arasan SD driver
+> 
+> Changes in v2:
+> 	- Replaced the deprecated calls to clock framework APIs
+> 	- Added support for dev_clk_get() call to work for SD card clock
+> 	- Separated the clock data struct
+> 	- Fragmented the patch series in smaller patches to make it more
+> 	  readable
+> 
+> This patch series contains a DT patch, which I think should be there to
+> maintain the order of commits.
+> 
+> Manish Narani (11):
+>   dt-bindings: mmc: arasan: Update documentation for SD Card Clock
+>   arm64: dts: rockchip: Add optional clock property indicating sdcard
+>     clock
+>   mmc: sdhci-of-arasan: Replace deprecated clk API calls
+>   mmc: sdhci-of-arasan: Separate out clk related data to another
+>     structure
+>   dt-bindings: mmc: arasan: Update Documentation for the input clock
+>   mmc: sdhci-of-arasan: Add sampling clock for a phy to use
+>   dt-bindings: mmc: arasan: Add optional properties for Arasan SDHCI
+>   mmc: sdhci-of-arasan: Add support to set clock phase delays for SD
+>   firmware: xilinx: Add SDIO Tap Delay APIs
+>   dt-bindings: mmc: arasan: Document 'xlnx,zynqmp-8.9a' controller
+>   mmc: sdhci-of-arasan: Add support for ZynqMP Platform Tap Delays Setup
+> 
+>  .../devicetree/bindings/mmc/arasan,sdhci.txt       |  49 ++-
+>  arch/arm64/boot/dts/rockchip/rk3399.dtsi           |   4 +-
+>  drivers/firmware/xilinx/zynqmp.c                   |  48 +++
+>  drivers/mmc/host/sdhci-of-arasan.c                 | 453 ++++++++++++++++++++-
+>  include/linux/firmware/xlnx-zynqmp.h               |  15 +-
+>  5 files changed, 540 insertions(+), 29 deletions(-)
+> 
 
-Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
----
- sound/soc/rockchip/rockchip_max98090.c | 21 +++++++++++++++++++++
- 1 file changed, 21 insertions(+)
+For SDHCI:
 
-diff --git a/sound/soc/rockchip/rockchip_max98090.c b/sound/soc/rockchip/rockchip_max98090.c
-index 3617012692ea..177c8a7ec8de 100644
---- a/sound/soc/rockchip/rockchip_max98090.c
-+++ b/sound/soc/rockchip/rockchip_max98090.c
-@@ -15,6 +15,7 @@
- #include <sound/pcm.h>
- #include <sound/pcm_params.h>
- #include <sound/soc.h>
-+#include <sound/hdmi-codec.h>
- 
- #include "rockchip_i2s.h"
- #include "../codecs/ts3a227e.h"
-@@ -133,6 +134,25 @@ enum {
- 	DAILINK_HDMI,
- };
- 
-+static struct snd_soc_jack rk_hdmi_jack;
-+
-+static int rk_hdmi_init(struct snd_soc_pcm_runtime *runtime)
-+{
-+	struct snd_soc_card *card = runtime->card;
-+	struct snd_soc_component *component = runtime->codec_dai->component;
-+	int ret;
-+
-+	/* enable jack detection */
-+	ret = snd_soc_card_jack_new(card, "HDMI Jack", SND_JACK_LINEOUT,
-+				    &rk_hdmi_jack, NULL, 0);
-+	if (ret) {
-+		dev_err(card->dev, "Can't new HDMI Jack %d\n", ret);
-+		return ret;
-+	}
-+
-+	return hdmi_codec_set_jack_detect(component, &rk_hdmi_jack);
-+}
-+
- /* max98090 and HDMI codec dai_link */
- static struct snd_soc_dai_link rk_dailinks[] = {
- 	[DAILINK_MAX98090] = {
-@@ -150,6 +170,7 @@ static struct snd_soc_dai_link rk_dailinks[] = {
- 		.ops = &rk_aif1_ops,
- 		.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
- 			SND_SOC_DAIFMT_CBS_CFS,
-+		.init = rk_hdmi_init,
- 		SND_SOC_DAILINK_REG(hdmi),
- 	}
- };
--- 
-2.22.0.410.gd8fdbe21b5-goog
-
+Acked-by: Adrian Hunter <adrian.hunter@intel.com>
 
 _______________________________________________
 Linux-rockchip mailing list
