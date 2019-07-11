@@ -2,78 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBAAD660D1
-	for <lists+linux-rockchip@lfdr.de>; Thu, 11 Jul 2019 22:45:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F9B5660D2
+	for <lists+linux-rockchip@lfdr.de>; Thu, 11 Jul 2019 22:45:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F7uCzFCMfZhzwswAB5iaFCmaFIcCJmivPy4+AwTTHFc=; b=iu/4joMP9NCay8
-	GbH5nYdlvBE4kj0qFgHtx7bhwiB50xjND6vYpKDu9icJmwd4UxPPon9kdJLwR8I/ymd/cPcOcpIfY
-	sOflIwUha9WdG+4ZQ0OC0LB73Ikmj/eRdMyr9GCU05rh2cTlPWvLpzcp5QoGeEtM3qWhIv43ER/dY
-	POygcChVsjH2/j42AE5QR5eaN0OW+E9Kq7yC0TD7p3zMosmPvSSY5di4xbuOYdDyY3N98n8+NGviO
-	pWAJA1yfO+mcUk988LwHNDZM1IxZ2kHVoviYwgzVn3CmS2TbtdsA+KZyUAiW0o48UJVG7JGxJqkqf
-	hzE49zLeuPJQb0zJySdg==;
+	List-Owner; bh=5ZwK7CYGH3T0mO4DkWQbodlPEXSJSUvW6qR0oz5uh+8=; b=U6KhPmIZ1sxkzr
+	7L/FP1sy6gQM134l4fnvV+C3ToAWlC7o2rsRl5HPgl4LCBsK9hymTU9KerxAQGtq6+E5gD90p2kgh
+	XxwVm4nj9F84V3GzpZhg2zJUopxbpd1nJVyD2rtNt1lK+HH2OWIi76SaS25JNdBFVfC+Uuf1JjscZ
+	qFtKcjb9+GxESoYNMtU1kCbp4FNaT5BjpGHrabFKqHuenauccjt5VJBhw64AjfRxf/OmljeiSVcAZ
+	CT+HKcp4nbb9yQ7RyGXTU91wD4OXaPAAZeskkq1g++OxwiBtGxYzOJ30WhgrWnjOEIBrm6W69S5Lx
+	QloyLsI2Nzci1yPVajUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlfwF-0007tj-Bt; Thu, 11 Jul 2019 20:45:11 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hlfwH-0008BW-80; Thu, 11 Jul 2019 20:45:13 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlfw8-000756-0g
+ id 1hlfw8-0007Gp-Nb
  for linux-rockchip@lists.infradead.org; Thu, 11 Jul 2019 20:45:06 +0000
-Received: by mail-pf1-x444.google.com with SMTP id r1so3276211pfq.12
- for <linux-rockchip@lists.infradead.org>; Thu, 11 Jul 2019 13:45:02 -0700 (PDT)
+Received: by mail-pg1-x541.google.com with SMTP id m4so3503116pgk.0
+ for <linux-rockchip@lists.infradead.org>; Thu, 11 Jul 2019 13:45:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=VfaHreQJcWraasyrZf5GYXDtQSYM018DK4KSurxUpUw=;
- b=hvexTuQKGLRO3Fn84YVxKLHAYdxljfkDhao9Vd9ieD5AWFmbNzn5IV1OyNsN6HXeL2
- r0ogXqxfy5s8dSmINinMnqm8OpLpSh+KQ4R1GQEoWtqjEPFgFzIqMhWsQLQUIJRkgHrB
- CsDqKbgM6S7ob7Hg0g1fTJloOZdwYjJZ36+3Q=
+ bh=MLdzftGH/gFul7iiOHMklLGxy/NCS/NGh67QDWN64SU=;
+ b=MhB4/1cUL+NhY0J5GWsbsrd3eTLDSU+tbUVIlifszTmidPxecNapqdD0z5bq8OPmcV
+ BD68gn+Iz22nEW6WBNmOGATWc/CmyRFYE6uwNsJd4YRbbIoj+oXWV9pGjQI8zCvdS4eS
+ GRdqJ9Y1/ZJi4k0YQnQV7MG0weCWBo9tc0g6A=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=VfaHreQJcWraasyrZf5GYXDtQSYM018DK4KSurxUpUw=;
- b=niutMcc4n2gMnIo91FOu0OLbTaUfCQ/r8sEpdRMrtdn20PeVHCmFmrGGMnHp34rlyB
- CLcN2EUOxRY99V3DCQTisHYXKRPqdr7v5k/ytRKPa5eVfwH9FwTK+i7GuY6rkJ5IuShK
- PYD+uDz1ST1ij07kKE/z3w8qH5KynD3Lrn8issJeaHP31QiJy45Tqk2U3x3+2+Aart8G
- 5G4YE2ooDjKv+SNU+oFhfZEGTjphtdGSMcimPsVQQiuwQyJyZlY7NKO6vjTnVfH4MpH8
- xXQfZz9uLxZ6IMASZZ5G/EgMM/dcj5Rj3f1gso7bGxtAjgcmBlpBT4hPzpu/mp+AHar+
- I+sg==
-X-Gm-Message-State: APjAAAVlrZDYQV5q954ryfiaSgt5OLP3VGauUhuvaowt8BOZt0SCWWER
- A5Rs9iBEBzd1G3RVkhKFQ8xkAw==
-X-Google-Smtp-Source: APXvYqxOY3wTdInDeKC1jqap/V+JnRXP3q+NQTckRaGJIqycyvEMdNoUrVlPSb+qVZy4DvPgTChwZA==
-X-Received: by 2002:a63:5823:: with SMTP id m35mr6509315pgb.329.1562877902320; 
- Thu, 11 Jul 2019 13:45:02 -0700 (PDT)
+ bh=MLdzftGH/gFul7iiOHMklLGxy/NCS/NGh67QDWN64SU=;
+ b=EPlnNtfHQS/PKOMo9hfWIChuAR/DuxN51yPD2j/sSvpllFleoT/SlFH4nxVSHsW8gQ
+ z01vNiNtUf0mA1SIf92GRLfaIobaNG4Uw401bvUEfD09eIJk76acM7x4hMI/vvyQ2BzB
+ 5zNv3ht3qDnjaPpYw2quEQtLnhxVtFsF30gOeOX4DYtLFu3+CUEUZXjxcVhKc0GP2ADf
+ BzLBCQpIkAPLj+5WK74PuTWnHAd4v5jPmfdAY7MHm2QPZBJC8EgbnR6U24cZ+idQcPT+
+ vLOkzIESCiEH+yg73KdRKYInz5XXGWlcu4YU6kHUqEPeDnkIRS5slyf6IjET+Ax4vKXX
+ AxTg==
+X-Gm-Message-State: APjAAAXxbyEsN0JcZxP2VRU8O2EQVo1zadoCQNHNe7QPlGSAZ9CXOvQg
+ pXamG31M8Qf5pLSKXJDSDmbdug==
+X-Google-Smtp-Source: APXvYqwroM5R2J8TNfLYHSWaQlIk+XkN1UktVue3p11E50fR61dSB3pcJ91/MyRyFDfLxvoJmMQjww==
+X-Received: by 2002:a63:c20e:: with SMTP id b14mr6295215pgd.96.1562877903778; 
+ Thu, 11 Jul 2019 13:45:03 -0700 (PDT)
 Received: from tictac2.mtv.corp.google.com
  ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id f17sm5320110pgv.16.2019.07.11.13.45.01
+ by smtp.gmail.com with ESMTPSA id f17sm5320110pgv.16.2019.07.11.13.45.02
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 11 Jul 2019 13:45:01 -0700 (PDT)
+ Thu, 11 Jul 2019 13:45:03 -0700 (PDT)
 From: Douglas Anderson <dianders@chromium.org>
 To: Thierry Reding <thierry.reding@gmail.com>,
  Heiko Stuebner <heiko@sntech.de>, Sean Paul <seanpaul@chromium.org>
-Subject: [PATCH v6 2/3] drm/panel: simple: Use display_timing for Innolux
- n116bge
-Date: Thu, 11 Jul 2019 13:34:54 -0700
-Message-Id: <20190711203455.125667-3-dianders@chromium.org>
+Subject: [PATCH v6 3/3] drm/panel: simple: Use display_timing for AUO b101ean01
+Date: Thu, 11 Jul 2019 13:34:55 -0700
+Message-Id: <20190711203455.125667-4-dianders@chromium.org>
 X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
 In-Reply-To: <20190711203455.125667-1-dianders@chromium.org>
 References: <20190711203455.125667-1-dianders@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_134504_118937_C34A233E 
-X-CRM114-Status: GOOD (  17.07  )
+X-CRM114-CacheID: sfid-20190711_134504_797516_9B8BA02E 
+X-CRM114-Status: GOOD (  12.23  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -112,99 +111,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Convert the Innolux n116bge from using a fixed mode to specifying a
+Convert the AUO b101ean01 from using a fixed mode to specifying a
 display timing with min/typ/max values.
 
-Note that the n116bge's datasheet doesn't fit too well into DRM's way
-of specifying things.  Specifically the panel's datasheet just
-specifies the vertical blanking period and horizontal blanking period
-and doesn't break things out.  For now we'll leave everything as a
-fixed value but just allow adjusting the pixel clock.  I've added a
-comment on what the datasheet claims so someone could later expand
-things to fit their needs if they wanted to test other blanking
-periods.
+The AUO b101ean01's datasheet says:
+* Vertical blanking min is 12
+* Horizontal blanking min is 60
+* Pixel clock is between 65.3 MHz and 75 MHz
 
-The goal here is to be able to specify the panel timings in the device
-tree for several rk3288 Chromebooks (like rk3288-veryon-jerry).  These
-Chromebooks have all been running in the downstream kernel with the
-standard porches and sync lengths but just with a slightly slower
-pixel clock because the 76.42 MHz clock is not achievable from the
-fixed PLL that was available.  These Chromebooks only achieve a
-refresh rate of ~58 Hz.  While it's probable that we could adjust the
-timings to achieve 60 Hz it's probably wisest to match what's been
-running on these devices all these years.
-
-I'll note that though the upstream kernel has always tried to achieve
-76.42 MHz, it has actually been running at 74.25 MHz also since the
-video processor is parented off the same fixed PLL.
+The goal here is to be able to specify the proper timing in device
+tree to use on rk3288-veyron-minnie to match what the downstream
+kernel is using so that it can used the fixed PLL.
 
 Changes in v4:
- - display_timing for Innolux n116bge new for v4.
-Changes in v5:
- - Added Heiko's Tested-by
+ - display_timing for AUO b101ean01 new for v4.
 Changes in v6:
  - Rebased to drm-misc next
  - Added tags
 
 Signed-off-by: Douglas Anderson <dianders@chromium.org>
-Tested-by: Heiko Stuebner <heiko@sntech.de>
 Acked-by: Thierry Reding <thierry.reding@gmail.com>
 ---
 
- drivers/gpu/drm/panel/panel-simple.c | 37 +++++++++++++++++-----------
- 1 file changed, 23 insertions(+), 14 deletions(-)
+ drivers/gpu/drm/panel/panel-simple.c | 25 ++++++++++++-------------
+ 1 file changed, 12 insertions(+), 13 deletions(-)
 
 diff --git a/drivers/gpu/drm/panel/panel-simple.c b/drivers/gpu/drm/panel/panel-simple.c
-index 1bee197821ef..602809f6da6a 100644
+index 602809f6da6a..226f068fb679 100644
 --- a/drivers/gpu/drm/panel/panel-simple.c
 +++ b/drivers/gpu/drm/panel/panel-simple.c
-@@ -1702,23 +1702,32 @@ static const struct panel_desc innolux_g121x1_l03 = {
+@@ -595,22 +595,21 @@ static const struct panel_desc auo_b101aw03 = {
  	},
  };
  
--static const struct drm_display_mode innolux_n116bge_mode = {
--	.clock = 76420,
--	.hdisplay = 1366,
--	.hsync_start = 1366 + 136,
--	.hsync_end = 1366 + 136 + 30,
--	.htotal = 1366 + 136 + 30 + 60,
--	.vdisplay = 768,
--	.vsync_start = 768 + 8,
--	.vsync_end = 768 + 8 + 12,
--	.vtotal = 768 + 8 + 12 + 12,
+-static const struct drm_display_mode auo_b101ean01_mode = {
+-	.clock = 72500,
+-	.hdisplay = 1280,
+-	.hsync_start = 1280 + 119,
+-	.hsync_end = 1280 + 119 + 32,
+-	.htotal = 1280 + 119 + 32 + 21,
+-	.vdisplay = 800,
+-	.vsync_start = 800 + 4,
+-	.vsync_end = 800 + 4 + 20,
+-	.vtotal = 800 + 4 + 20 + 8,
 -	.vrefresh = 60,
--	.flags = DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC,
-+/*
-+ * Datasheet specifies that at 60 Hz refresh rate:
-+ * - total horizontal time: { 1506, 1592, 1716 }
-+ * - total vertical time: { 788, 800, 868 }
-+ *
-+ * ...but doesn't go into exactly how that should be split into a front
-+ * porch, back porch, or sync length.  For now we'll leave a single setting
-+ * here which allows a bit of tweaking of the pixel clock at the expense of
-+ * refresh rate.
-+ */
-+static const struct display_timing innolux_n116bge_timing = {
-+	.pixelclock = { 72600000, 76420000, 80240000 },
-+	.hactive = { 1366, 1366, 1366 },
-+	.hfront_porch = { 136, 136, 136 },
-+	.hback_porch = { 60, 60, 60 },
-+	.hsync_len = { 30, 30, 30 },
-+	.vactive = { 768, 768, 768 },
-+	.vfront_porch = { 8, 8, 8 },
-+	.vback_porch = { 12, 12, 12 },
-+	.vsync_len = { 12, 12, 12 },
-+	.flags = DISPLAY_FLAGS_VSYNC_LOW | DISPLAY_FLAGS_HSYNC_LOW,
++static const struct display_timing auo_b101ean01_timing = {
++	.pixelclock = { 65300000, 72500000, 75000000 },
++	.hactive = { 1280, 1280, 1280 },
++	.hfront_porch = { 18, 119, 119 },
++	.hback_porch = { 21, 21, 21 },
++	.hsync_len = { 32, 32, 32 },
++	.vactive = { 800, 800, 800 },
++	.vfront_porch = { 4, 4, 4 },
++	.vback_porch = { 8, 8, 8 },
++	.vsync_len = { 18, 20, 20 },
  };
  
- static const struct panel_desc innolux_n116bge = {
--	.modes = &innolux_n116bge_mode,
+ static const struct panel_desc auo_b101ean01 = {
+-	.modes = &auo_b101ean01_mode,
 -	.num_modes = 1,
-+	.timings = &innolux_n116bge_timing,
++	.timings = &auo_b101ean01_timing,
 +	.num_timings = 1,
  	.bpc = 6,
  	.size = {
- 		.width = 256,
+ 		.width = 217,
 -- 
 2.22.0.410.gd8fdbe21b5-goog
 
