@@ -2,78 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB59B660D0
-	for <lists+linux-rockchip@lfdr.de>; Thu, 11 Jul 2019 22:45:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBAAD660D1
+	for <lists+linux-rockchip@lfdr.de>; Thu, 11 Jul 2019 22:45:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VHhDcFXbwKBUapB4L81buON1OO9vDgmCiRF+p+dlXDU=; b=VdnNcb9A6LrVBW
-	e/05nxD2zWyxdu72lQxALBgmteyz1ouNDSk2xFneUbt4WAlcsQ+iqjTOh5POqZdEAZXikGc1Ov7aC
-	IFUMYPSVQBgCEzwrAvLU9Q3JF4r3f44dWDubSDcVg70L/mgAQHljyAyBDhRWiThxBzj30AKF/Ibve
-	U8Ocl2Vp0weKME19g2wdlOaZXfG5ABf/+9yKGYX47ypsgM9cQufnAd927Bl/3pXmSgmmIvnhdJLpJ
-	8MDYm+mDzUCaQeAg/T0ClmzmtU6RXyS23MUXVfMzhs5TdOLSv5F3NXoJsUAw82bGTFmjKAntMagPx
-	NQVi2lnryOpJ5tSd5vwA==;
+	List-Owner; bh=F7uCzFCMfZhzwswAB5iaFCmaFIcCJmivPy4+AwTTHFc=; b=iu/4joMP9NCay8
+	GbH5nYdlvBE4kj0qFgHtx7bhwiB50xjND6vYpKDu9icJmwd4UxPPon9kdJLwR8I/ymd/cPcOcpIfY
+	sOflIwUha9WdG+4ZQ0OC0LB73Ikmj/eRdMyr9GCU05rh2cTlPWvLpzcp5QoGeEtM3qWhIv43ER/dY
+	POygcChVsjH2/j42AE5QR5eaN0OW+E9Kq7yC0TD7p3zMosmPvSSY5di4xbuOYdDyY3N98n8+NGviO
+	pWAJA1yfO+mcUk988LwHNDZM1IxZ2kHVoviYwgzVn3CmS2TbtdsA+KZyUAiW0o48UJVG7JGxJqkqf
+	hzE49zLeuPJQb0zJySdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlfwD-0007Wz-3E; Thu, 11 Jul 2019 20:45:09 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hlfwF-0007tj-Bt; Thu, 11 Jul 2019 20:45:11 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlfw6-0006uU-0G
- for linux-rockchip@lists.infradead.org; Thu, 11 Jul 2019 20:45:03 +0000
-Received: by mail-pf1-x443.google.com with SMTP id t16so3281381pfe.11
- for <linux-rockchip@lists.infradead.org>; Thu, 11 Jul 2019 13:45:01 -0700 (PDT)
+ id 1hlfw8-000756-0g
+ for linux-rockchip@lists.infradead.org; Thu, 11 Jul 2019 20:45:06 +0000
+Received: by mail-pf1-x444.google.com with SMTP id r1so3276211pfq.12
+ for <linux-rockchip@lists.infradead.org>; Thu, 11 Jul 2019 13:45:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=aElOUa28IDV+Ms9r3bfrgzJICeP4nyAIWqfUYkJpGGU=;
- b=KfICzL+zhG+iFMQSO5h96qlDv0Q4R/M/HLlUjjPtDF9xvFcNiGBvMnMsRpT42iQc5+
- VS+bdk6ElH393b/7aREvh0oD+MbpUJc8/K8fBwW0gyrE4dwHL9SJyrTnP8s6ZkA7Fozg
- oeo+8/OoXqIFNmDvQ3vDWDTuEVHa3i+PzTU9M=
+ bh=VfaHreQJcWraasyrZf5GYXDtQSYM018DK4KSurxUpUw=;
+ b=hvexTuQKGLRO3Fn84YVxKLHAYdxljfkDhao9Vd9ieD5AWFmbNzn5IV1OyNsN6HXeL2
+ r0ogXqxfy5s8dSmINinMnqm8OpLpSh+KQ4R1GQEoWtqjEPFgFzIqMhWsQLQUIJRkgHrB
+ CsDqKbgM6S7ob7Hg0g1fTJloOZdwYjJZ36+3Q=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=aElOUa28IDV+Ms9r3bfrgzJICeP4nyAIWqfUYkJpGGU=;
- b=eAHJ8BUqRm8PXbBRkwRSxhKckNJMc2UE6xo+TAQMPAptUuADXyDVPzR/MtsaRLH6od
- Sh+Rxzqnwxw1BgYhhJO8cIozxHRbKWUVsRzmCWByuU4wQiQkGqZmJS4Zolh4mKeFPgrH
- EilDblTztn3rbBBdhu0XiFs16OcOFeTgQW0tpOrpjZJaqmS7ygI1fAgI1uvEY/Bg+GdN
- ocBcRzxq5+6RxwGldR9bLP2ZWN+e60BW0mhUJ/lpQQl6GN7oZ7m8yBKnTjc31FuPz7oP
- WanrkN31KwsKjtvOQyBMtf9wvuAnxRGKkhq1rx6wnh1fyjwfgrrO5sME4CzBHmvmkb6k
- pDvg==
-X-Gm-Message-State: APjAAAUNoldXDP+O9tIWqblvIaWnkoE/xyWi+mP0ahTETGP53Jwme5fa
- dhB5XnLPqxbBlWwu+GX64m49Zw==
-X-Google-Smtp-Source: APXvYqxWtmbfQ6xXRJMgZcr6q9t9MQEgBglf68LAJcm3jnErkAO8JgOtdlvX+3xb7vGMLCQ/B1BfZQ==
-X-Received: by 2002:a63:e010:: with SMTP id e16mr2005549pgh.285.1562877901085; 
- Thu, 11 Jul 2019 13:45:01 -0700 (PDT)
+ bh=VfaHreQJcWraasyrZf5GYXDtQSYM018DK4KSurxUpUw=;
+ b=niutMcc4n2gMnIo91FOu0OLbTaUfCQ/r8sEpdRMrtdn20PeVHCmFmrGGMnHp34rlyB
+ CLcN2EUOxRY99V3DCQTisHYXKRPqdr7v5k/ytRKPa5eVfwH9FwTK+i7GuY6rkJ5IuShK
+ PYD+uDz1ST1ij07kKE/z3w8qH5KynD3Lrn8issJeaHP31QiJy45Tqk2U3x3+2+Aart8G
+ 5G4YE2ooDjKv+SNU+oFhfZEGTjphtdGSMcimPsVQQiuwQyJyZlY7NKO6vjTnVfH4MpH8
+ xXQfZz9uLxZ6IMASZZ5G/EgMM/dcj5Rj3f1gso7bGxtAjgcmBlpBT4hPzpu/mp+AHar+
+ I+sg==
+X-Gm-Message-State: APjAAAVlrZDYQV5q954ryfiaSgt5OLP3VGauUhuvaowt8BOZt0SCWWER
+ A5Rs9iBEBzd1G3RVkhKFQ8xkAw==
+X-Google-Smtp-Source: APXvYqxOY3wTdInDeKC1jqap/V+JnRXP3q+NQTckRaGJIqycyvEMdNoUrVlPSb+qVZy4DvPgTChwZA==
+X-Received: by 2002:a63:5823:: with SMTP id m35mr6509315pgb.329.1562877902320; 
+ Thu, 11 Jul 2019 13:45:02 -0700 (PDT)
 Received: from tictac2.mtv.corp.google.com
  ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id f17sm5320110pgv.16.2019.07.11.13.45.00
+ by smtp.gmail.com with ESMTPSA id f17sm5320110pgv.16.2019.07.11.13.45.01
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 11 Jul 2019 13:45:00 -0700 (PDT)
+ Thu, 11 Jul 2019 13:45:01 -0700 (PDT)
 From: Douglas Anderson <dianders@chromium.org>
 To: Thierry Reding <thierry.reding@gmail.com>,
  Heiko Stuebner <heiko@sntech.de>, Sean Paul <seanpaul@chromium.org>
-Subject: [PATCH v6 1/3] drm/panel: simple: Add ability to override typical
- timing
-Date: Thu, 11 Jul 2019 13:34:53 -0700
-Message-Id: <20190711203455.125667-2-dianders@chromium.org>
+Subject: [PATCH v6 2/3] drm/panel: simple: Use display_timing for Innolux
+ n116bge
+Date: Thu, 11 Jul 2019 13:34:54 -0700
+Message-Id: <20190711203455.125667-3-dianders@chromium.org>
 X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
 In-Reply-To: <20190711203455.125667-1-dianders@chromium.org>
 References: <20190711203455.125667-1-dianders@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_134502_055396_56CD9361 
-X-CRM114-Status: GOOD (  20.96  )
+X-CRM114-CacheID: sfid-20190711_134504_118937_C34A233E 
+X-CRM114-Status: GOOD (  17.07  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -98,160 +98,118 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Eric Anholt <eric@anholt.net>, David Airlie <airlied@linux.ie>,
- Sam Ravnborg <sam@ravnborg.org>, Jeffy Chen <jeffy.chen@rock-chips.com>,
- Doug Anderson <dianders@chromium.org>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+Cc: Rob Herring <robh+dt@kernel.org>, David Airlie <airlied@linux.ie>,
+ Sam Ravnborg <sam@ravnborg.org>, Douglas Anderson <dianders@chromium.org>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org,
  Boris Brezillon <boris.brezillon@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Daniel Vetter <daniel@ffwll.ch>,
  Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- =?UTF-8?q?St=C3=A9phane=20Marchesin?= <marcheu@chromium.org>,
  Ezequiel Garcia <ezequiel@collabora.com>, mka@chromium.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-RnJvbTogU2VhbiBQYXVsIDxzZWFucGF1bEBjaHJvbWl1bS5vcmc+CgpUaGlzIHBhdGNoIGFkZHMg
-dGhlIGFiaWxpdHkgdG8gb3ZlcnJpZGUgdGhlIHR5cGljYWwgZGlzcGxheSB0aW1pbmcgZm9yIGEK
-Z2l2ZW4gcGFuZWwuIFRoaXMgaXMgdXNlZnVsIGZvciBkZXZpY2VzIHdoaWNoIGhhdmUgdGltaW5n
-IGNvbnN0cmFpbnRzCnRoYXQgZG8gbm90IGFwcGx5IGFjcm9zcyB0aGUgZW50aXJlIGRpc3BsYXkg
-ZHJpdmVyIChlZzogdG8gYXZvaWQKY3Jvc3N0YWxrIGJldHdlZW4gcGFuZWwgYW5kIGRpZ2l0aXpl
-ciBvbiBjZXJ0YWluIGxhcHRvcHMpLiBUaGUgcnVsZXMgYXJlCmFzIGZvbGxvd3M6CgotIHBhbmVs
-IG11c3Qgbm90IHNwZWNpZnkgZml4ZWQgbW9kZSAoc2luY2UgdGhlIG92ZXJyaWRlIG1vZGUgd2ls
-bAogIGVpdGhlciBiZSB0aGUgc2FtZSBhcyB0aGUgZml4ZWQgbW9kZSwgb3Igd2UnbGwgYmUgdW5h
-YmxlIHRvCiAgY2hlY2sgdGhlIGJvdW5kcyBvZiB0aGUgb3ZlcnJpZWQpCi0gcGFuZWwgbXVzdCBz
-cGVjaWZ5IGF0IGxlYXN0IG9uZSBkaXNwbGF5X3RpbWluZyByYW5nZSB3aGljaCB3aWxsIGJlCiAg
-dXNlZCB0byBlbnN1cmUgdGhlIG92ZXJyaWRlIG1vZGUgZml0cyB3aXRoaW4gaXRzIGJvdW5kcwoK
-Q2hhbmdlcyBpbiB2MjoKIC0gUGFyc2UgdGhlIGZ1bGwgZGlzcGxheS10aW1pbmdzIG5vZGUgKHVz
-aW5nIHRoZSBuYXRpdmUtbW9kZSkgKFJvYikKQ2hhbmdlcyBpbiB2MzoKIC0gTm8gbG9uZ2VyIHBh
-cnNlIGRpc3BsYXktdGltaW5ncyBzdWJub2RlLCB1c2UgcGFuZWwtdGltaW5nIChSb2IpCkNoYW5n
-ZXMgaW4gdjQ6CiAtIERvbid0IGFkZCBtb2RlIGZyb20gdGltaW5nIGlmIG92ZXJyaWRlIHdhcyBz
-cGVjaWZpZWQgKFRoaWVycnkpCiAtIEFkZCB3YXJuaW5nIGlmIHRpbWluZyBhbmQgZml4ZWQgbW9k
-ZSB3YXMgc3BlY2lmaWVkIChUaGllcnJ5KQogLSBEb24ndCBhZGQgZml4ZWQgbW9kZSBpZiB0aW1p
-bmcgd2FzIHNwZWNpZmllZCAoVGhpZXJyeSkKIC0gUmVmYWN0b3IvcmVuYW1lIGEgYml0IHRvIGF2
-b2lkIGV4dHJhIGluZGVudGF0aW9uIGZyb20gImlmIiB0ZXN0cwogLSBpIHNob3VsZCBiZSB1bnNp
-Z25lZCAoVGhpZXJyeSkKIC0gQWRkIGFubm95aW5nIFdBUk5fT05zIGZvciBzb21lIGNhc2VzIChU
-aGllcnJ5KQogLSBTaW1wbGlmeSAnTm8gZGlzcGxheV90aW1pbmcgZm91bmQnIGhhbmRsaW5nIChU
-aGllcnJ5KQogLSBSZW5hbWUgdG8gcGFuZWxfc2ltcGxlX3BhcnNlX292ZXJyaWRlX21vZGUoKSAo
-VGhpZXJyeSkKQ2hhbmdlcyBpbiB2NToKIC0gQWRkZWQgSGVpa28ncyBUZXN0ZWQtYnkKQ2hhbmdl
-cyBpbiB2NjoKIC0gUmViYXNlZCB0byBkcm0tbWlzYyBuZXh0CiAtIEFkZGVkIHRhZ3MKCkNjOiBE
-b3VnIEFuZGVyc29uIDxkaWFuZGVyc0BjaHJvbWl1bS5vcmc+CkNjOiBFcmljIEFuaG9sdCA8ZXJp
-Y0BhbmhvbHQubmV0PgpDYzogSGVpa28gU3R1ZWJuZXIgPGhlaWtvQHNudGVjaC5kZT4KQ2M6IEpl
-ZmZ5IENoZW4gPGplZmZ5LmNoZW5Acm9jay1jaGlwcy5jb20+CkNjOiBSb2IgSGVycmluZyA8cm9i
-aCtkdEBrZXJuZWwub3JnPgpDYzogU3TDqXBoYW5lIE1hcmNoZXNpbiA8bWFyY2hldUBjaHJvbWl1
-bS5vcmc+CkNjOiBUaGllcnJ5IFJlZGluZyA8dGhpZXJyeS5yZWRpbmdAZ21haWwuY29tPgpDYzog
-ZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmcKQ2M6IGRyaS1kZXZlbEBsaXN0cy5mcmVlZGVza3Rv
-cC5vcmcKU2lnbmVkLW9mZi1ieTogU2VhbiBQYXVsIDxzZWFucGF1bEBjaHJvbWl1bS5vcmc+ClRl
-c3RlZC1ieTogRW5yaWMgQmFsbGV0Ym8gaSBTZXJyYSA8ZW5yaWMuYmFsbGV0Ym9AY29sbGFib3Jh
-LmNvbT4KU2lnbmVkLW9mZi1ieTogRG91Z2xhcyBBbmRlcnNvbiA8ZGlhbmRlcnNAY2hyb21pdW0u
-b3JnPgpUZXN0ZWQtYnk6IEhlaWtvIFN0dWVibmVyIDxoZWlrb0BzbnRlY2guZGU+ClJldmlld2Vk
-LWJ5OiBCb3JpcyBCcmV6aWxsb24gPGJvcmlzLmJyZXppbGxvbkBjb2xsYWJvcmEuY29tPgpBY2tl
-ZC1ieTogVGhpZXJyeSBSZWRpbmcgPHRoaWVycnkucmVkaW5nQGdtYWlsLmNvbT4KLS0tCgogZHJp
-dmVycy9ncHUvZHJtL3BhbmVsL3BhbmVsLXNpbXBsZS5jIHwgMTA5ICsrKysrKysrKysrKysrKysr
-KysrKysrKystLQogMSBmaWxlIGNoYW5nZWQsIDEwNCBpbnNlcnRpb25zKCspLCA1IGRlbGV0aW9u
-cygtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9wYW5lbC9wYW5lbC1zaW1wbGUuYyBi
-L2RyaXZlcnMvZ3B1L2RybS9wYW5lbC9wYW5lbC1zaW1wbGUuYwppbmRleCBhZjZiZjU2MTFiNGUu
-LjFiZWUxOTc4MjFlZiAxMDA2NDQKLS0tIGEvZHJpdmVycy9ncHUvZHJtL3BhbmVsL3BhbmVsLXNp
-bXBsZS5jCisrKyBiL2RyaXZlcnMvZ3B1L2RybS9wYW5lbC9wYW5lbC1zaW1wbGUuYwpAQCAtMzAs
-NiArMzAsNyBAQAogI2luY2x1ZGUgPGxpbnV4L3JlZ3VsYXRvci9jb25zdW1lci5oPgogCiAjaW5j
-bHVkZSA8dmlkZW8vZGlzcGxheV90aW1pbmcuaD4KKyNpbmNsdWRlIDx2aWRlby9vZl9kaXNwbGF5
-X3RpbWluZy5oPgogI2luY2x1ZGUgPHZpZGVvL3ZpZGVvbW9kZS5oPgogCiAjaW5jbHVkZSA8ZHJt
-L2RybV9jcnRjLmg+CkBAIC05Miw2ICs5Myw4IEBAIHN0cnVjdCBwYW5lbF9zaW1wbGUgewogCXN0
-cnVjdCBpMmNfYWRhcHRlciAqZGRjOwogCiAJc3RydWN0IGdwaW9fZGVzYyAqZW5hYmxlX2dwaW87
-CisKKwlzdHJ1Y3QgZHJtX2Rpc3BsYXlfbW9kZSBvdmVycmlkZV9tb2RlOwogfTsKIAogc3RhdGlj
-IGlubGluZSBzdHJ1Y3QgcGFuZWxfc2ltcGxlICp0b19wYW5lbF9zaW1wbGUoc3RydWN0IGRybV9w
-YW5lbCAqcGFuZWwpCkBAIC05OSwxNiArMTAyLDEzIEBAIHN0YXRpYyBpbmxpbmUgc3RydWN0IHBh
-bmVsX3NpbXBsZSAqdG9fcGFuZWxfc2ltcGxlKHN0cnVjdCBkcm1fcGFuZWwgKnBhbmVsKQogCXJl
-dHVybiBjb250YWluZXJfb2YocGFuZWwsIHN0cnVjdCBwYW5lbF9zaW1wbGUsIGJhc2UpOwogfQog
-Ci1zdGF0aWMgaW50IHBhbmVsX3NpbXBsZV9nZXRfZml4ZWRfbW9kZXMoc3RydWN0IHBhbmVsX3Np
-bXBsZSAqcGFuZWwpCitzdGF0aWMgdW5zaWduZWQgaW50IHBhbmVsX3NpbXBsZV9nZXRfdGltaW5n
-c19tb2RlcyhzdHJ1Y3QgcGFuZWxfc2ltcGxlICpwYW5lbCkKIHsKIAlzdHJ1Y3QgZHJtX2Nvbm5l
-Y3RvciAqY29ubmVjdG9yID0gcGFuZWwtPmJhc2UuY29ubmVjdG9yOwogCXN0cnVjdCBkcm1fZGV2
-aWNlICpkcm0gPSBwYW5lbC0+YmFzZS5kcm07CiAJc3RydWN0IGRybV9kaXNwbGF5X21vZGUgKm1v
-ZGU7CiAJdW5zaWduZWQgaW50IGksIG51bSA9IDA7CiAKLQlpZiAoIXBhbmVsLT5kZXNjKQotCQly
-ZXR1cm4gMDsKLQogCWZvciAoaSA9IDA7IGkgPCBwYW5lbC0+ZGVzYy0+bnVtX3RpbWluZ3M7IGkr
-KykgewogCQljb25zdCBzdHJ1Y3QgZGlzcGxheV90aW1pbmcgKmR0ID0gJnBhbmVsLT5kZXNjLT50
-aW1pbmdzW2ldOwogCQlzdHJ1Y3QgdmlkZW9tb2RlIHZtOwpAQCAtMTMyLDYgKzEzMiwxNiBAQCBz
-dGF0aWMgaW50IHBhbmVsX3NpbXBsZV9nZXRfZml4ZWRfbW9kZXMoc3RydWN0IHBhbmVsX3NpbXBs
-ZSAqcGFuZWwpCiAJCW51bSsrOwogCX0KIAorCXJldHVybiBudW07Cit9CisKK3N0YXRpYyB1bnNp
-Z25lZCBpbnQgcGFuZWxfc2ltcGxlX2dldF9maXhlZF9tb2RlcyhzdHJ1Y3QgcGFuZWxfc2ltcGxl
-ICpwYW5lbCkKK3sKKwlzdHJ1Y3QgZHJtX2Nvbm5lY3RvciAqY29ubmVjdG9yID0gcGFuZWwtPmJh
-c2UuY29ubmVjdG9yOworCXN0cnVjdCBkcm1fZGV2aWNlICpkcm0gPSBwYW5lbC0+YmFzZS5kcm07
-CisJc3RydWN0IGRybV9kaXNwbGF5X21vZGUgKm1vZGU7CisJdW5zaWduZWQgaW50IGksIG51bSA9
-IDA7CisKIAlmb3IgKGkgPSAwOyBpIDwgcGFuZWwtPmRlc2MtPm51bV9tb2RlczsgaSsrKSB7CiAJ
-CWNvbnN0IHN0cnVjdCBkcm1fZGlzcGxheV9tb2RlICptID0gJnBhbmVsLT5kZXNjLT5tb2Rlc1tp
-XTsKIApAQCAtMTUzLDYgKzE2Myw0NCBAQCBzdGF0aWMgaW50IHBhbmVsX3NpbXBsZV9nZXRfZml4
-ZWRfbW9kZXMoc3RydWN0IHBhbmVsX3NpbXBsZSAqcGFuZWwpCiAJCW51bSsrOwogCX0KIAorCXJl
-dHVybiBudW07Cit9CisKK3N0YXRpYyBpbnQgcGFuZWxfc2ltcGxlX2dldF9ub25fZWRpZF9tb2Rl
-cyhzdHJ1Y3QgcGFuZWxfc2ltcGxlICpwYW5lbCkKK3sKKwlzdHJ1Y3QgZHJtX2Nvbm5lY3RvciAq
-Y29ubmVjdG9yID0gcGFuZWwtPmJhc2UuY29ubmVjdG9yOworCXN0cnVjdCBkcm1fZGV2aWNlICpk
-cm0gPSBwYW5lbC0+YmFzZS5kcm07CisJc3RydWN0IGRybV9kaXNwbGF5X21vZGUgKm1vZGU7CisJ
-Ym9vbCBoYXNfb3ZlcnJpZGUgPSBwYW5lbC0+b3ZlcnJpZGVfbW9kZS50eXBlOworCXVuc2lnbmVk
-IGludCBudW0gPSAwOworCisJaWYgKCFwYW5lbC0+ZGVzYykKKwkJcmV0dXJuIDA7CisKKwlpZiAo
-aGFzX292ZXJyaWRlKSB7CisJCW1vZGUgPSBkcm1fbW9kZV9kdXBsaWNhdGUoZHJtLCAmcGFuZWwt
-Pm92ZXJyaWRlX21vZGUpOworCQlpZiAobW9kZSkgeworCQkJZHJtX21vZGVfcHJvYmVkX2FkZChj
-b25uZWN0b3IsIG1vZGUpOworCQkJbnVtID0gMTsKKwkJfSBlbHNlIHsKKwkJCWRldl9lcnIoZHJt
-LT5kZXYsICJmYWlsZWQgdG8gYWRkIG92ZXJyaWRlIG1vZGVcbiIpOworCQl9CisJfQorCisJLyog
-T25seSBhZGQgdGltaW5ncyBpZiBvdmVycmlkZSB3YXMgbm90IHRoZXJlIG9yIGZhaWxlZCB0byB2
-YWxpZGF0ZSAqLworCWlmIChudW0gPT0gMCAmJiBwYW5lbC0+ZGVzYy0+bnVtX3RpbWluZ3MpCisJ
-CW51bSA9IHBhbmVsX3NpbXBsZV9nZXRfdGltaW5nc19tb2RlcyhwYW5lbCk7CisKKwkvKgorCSAq
-IE9ubHkgYWRkIGZpeGVkIG1vZGVzIGlmIHRpbWluZ3Mvb3ZlcnJpZGUgYWRkZWQgbm8gbW9kZS4K
-KwkgKgorCSAqIFdlIHNob3VsZCBvbmx5IGV2ZXIgaGF2ZSBlaXRoZXIgdGhlIGRpc3BsYXkgdGlt
-aW5ncyBzcGVjaWZpZWQKKwkgKiBvciBhIGZpeGVkIG1vZGUuIEFueXRoaW5nIGVsc2UgaXMgcmF0
-aGVyIGJvZ3VzLgorCSAqLworCVdBUk5fT04ocGFuZWwtPmRlc2MtPm51bV90aW1pbmdzICYmIHBh
-bmVsLT5kZXNjLT5udW1fbW9kZXMpOworCWlmIChudW0gPT0gMCkKKwkJbnVtID0gcGFuZWxfc2lt
-cGxlX2dldF9maXhlZF9tb2RlcyhwYW5lbCk7CisKIAljb25uZWN0b3ItPmRpc3BsYXlfaW5mby5i
-cGMgPSBwYW5lbC0+ZGVzYy0+YnBjOwogCWNvbm5lY3Rvci0+ZGlzcGxheV9pbmZvLndpZHRoX21t
-ID0gcGFuZWwtPmRlc2MtPnNpemUud2lkdGg7CiAJY29ubmVjdG9yLT5kaXNwbGF5X2luZm8uaGVp
-Z2h0X21tID0gcGFuZWwtPmRlc2MtPnNpemUuaGVpZ2h0OwpAQCAtMjY5LDcgKzMxNyw3IEBAIHN0
-YXRpYyBpbnQgcGFuZWxfc2ltcGxlX2dldF9tb2RlcyhzdHJ1Y3QgZHJtX3BhbmVsICpwYW5lbCkK
-IAl9CiAKIAkvKiBhZGQgaGFyZC1jb2RlZCBwYW5lbCBtb2RlcyAqLwotCW51bSArPSBwYW5lbF9z
-aW1wbGVfZ2V0X2ZpeGVkX21vZGVzKHApOworCW51bSArPSBwYW5lbF9zaW1wbGVfZ2V0X25vbl9l
-ZGlkX21vZGVzKHApOwogCiAJcmV0dXJuIG51bTsKIH0KQEAgLTMwMCwxMCArMzQ4LDU4IEBAIHN0
-YXRpYyBjb25zdCBzdHJ1Y3QgZHJtX3BhbmVsX2Z1bmNzIHBhbmVsX3NpbXBsZV9mdW5jcyA9IHsK
-IAkuZ2V0X3RpbWluZ3MgPSBwYW5lbF9zaW1wbGVfZ2V0X3RpbWluZ3MsCiB9OwogCisjZGVmaW5l
-IFBBTkVMX1NJTVBMRV9CT1VORFNfQ0hFQ0sodG9fY2hlY2ssIGJvdW5kcywgZmllbGQpIFwKKwko
-dG9fY2hlY2stPmZpZWxkLnR5cCA+PSBib3VuZHMtPmZpZWxkLm1pbiAmJiBcCisJIHRvX2NoZWNr
-LT5maWVsZC50eXAgPD0gYm91bmRzLT5maWVsZC5tYXgpCitzdGF0aWMgdm9pZCBwYW5lbF9zaW1w
-bGVfcGFyc2Vfb3ZlcnJpZGVfbW9kZShzdHJ1Y3QgZGV2aWNlICpkZXYsCisJCQkJCSAgICAgc3Ry
-dWN0IHBhbmVsX3NpbXBsZSAqcGFuZWwsCisJCQkJCSAgICAgY29uc3Qgc3RydWN0IGRpc3BsYXlf
-dGltaW5nICpvdCkKK3sKKwljb25zdCBzdHJ1Y3QgcGFuZWxfZGVzYyAqZGVzYyA9IHBhbmVsLT5k
-ZXNjOworCXN0cnVjdCB2aWRlb21vZGUgdm07CisJdW5zaWduZWQgaW50IGk7CisKKwlpZiAoV0FS
-Tl9PTihkZXNjLT5udW1fbW9kZXMpKSB7CisJCWRldl9lcnIoZGV2LCAiUmVqZWN0IG92ZXJyaWRl
-IG1vZGU6IHBhbmVsIGhhcyBhIGZpeGVkIG1vZGVcbiIpOworCQlyZXR1cm47CisJfQorCWlmIChX
-QVJOX09OKCFkZXNjLT5udW1fdGltaW5ncykpIHsKKwkJZGV2X2VycihkZXYsICJSZWplY3Qgb3Zl
-cnJpZGUgbW9kZTogbm8gdGltaW5ncyBzcGVjaWZpZWRcbiIpOworCQlyZXR1cm47CisJfQorCisJ
-Zm9yIChpID0gMDsgaSA8IHBhbmVsLT5kZXNjLT5udW1fdGltaW5nczsgaSsrKSB7CisJCWNvbnN0
-IHN0cnVjdCBkaXNwbGF5X3RpbWluZyAqZHQgPSAmcGFuZWwtPmRlc2MtPnRpbWluZ3NbaV07CisK
-KwkJaWYgKCFQQU5FTF9TSU1QTEVfQk9VTkRTX0NIRUNLKG90LCBkdCwgaGFjdGl2ZSkgfHwKKwkJ
-ICAgICFQQU5FTF9TSU1QTEVfQk9VTkRTX0NIRUNLKG90LCBkdCwgaGZyb250X3BvcmNoKSB8fAor
-CQkgICAgIVBBTkVMX1NJTVBMRV9CT1VORFNfQ0hFQ0sob3QsIGR0LCBoYmFja19wb3JjaCkgfHwK
-KwkJICAgICFQQU5FTF9TSU1QTEVfQk9VTkRTX0NIRUNLKG90LCBkdCwgaHN5bmNfbGVuKSB8fAor
-CQkgICAgIVBBTkVMX1NJTVBMRV9CT1VORFNfQ0hFQ0sob3QsIGR0LCB2YWN0aXZlKSB8fAorCQkg
-ICAgIVBBTkVMX1NJTVBMRV9CT1VORFNfQ0hFQ0sob3QsIGR0LCB2ZnJvbnRfcG9yY2gpIHx8CisJ
-CSAgICAhUEFORUxfU0lNUExFX0JPVU5EU19DSEVDSyhvdCwgZHQsIHZiYWNrX3BvcmNoKSB8fAor
-CQkgICAgIVBBTkVMX1NJTVBMRV9CT1VORFNfQ0hFQ0sob3QsIGR0LCB2c3luY19sZW4pKQorCQkJ
-Y29udGludWU7CisKKwkJaWYgKG90LT5mbGFncyAhPSBkdC0+ZmxhZ3MpCisJCQljb250aW51ZTsK
-KworCQl2aWRlb21vZGVfZnJvbV90aW1pbmcob3QsICZ2bSk7CisJCWRybV9kaXNwbGF5X21vZGVf
-ZnJvbV92aWRlb21vZGUoJnZtLCAmcGFuZWwtPm92ZXJyaWRlX21vZGUpOworCQlwYW5lbC0+b3Zl
-cnJpZGVfbW9kZS50eXBlIHw9IERSTV9NT0RFX1RZUEVfRFJJVkVSIHwKKwkJCQkJICAgICBEUk1f
-TU9ERV9UWVBFX1BSRUZFUlJFRDsKKwkJYnJlYWs7CisJfQorCisJaWYgKFdBUk5fT04oIXBhbmVs
-LT5vdmVycmlkZV9tb2RlLnR5cGUpKQorCQlkZXZfZXJyKGRldiwgIlJlamVjdCBvdmVycmlkZSBt
-b2RlOiBObyBkaXNwbGF5X3RpbWluZyBmb3VuZFxuIik7Cit9CisKIHN0YXRpYyBpbnQgcGFuZWxf
-c2ltcGxlX3Byb2JlKHN0cnVjdCBkZXZpY2UgKmRldiwgY29uc3Qgc3RydWN0IHBhbmVsX2Rlc2Mg
-KmRlc2MpCiB7CiAJc3RydWN0IGRldmljZV9ub2RlICpiYWNrbGlnaHQsICpkZGM7CiAJc3RydWN0
-IHBhbmVsX3NpbXBsZSAqcGFuZWw7CisJc3RydWN0IGRpc3BsYXlfdGltaW5nIGR0OwogCWludCBl
-cnI7CiAKIAlwYW5lbCA9IGRldm1fa3phbGxvYyhkZXYsIHNpemVvZigqcGFuZWwpLCBHRlBfS0VS
-TkVMKTsKQEAgLTM0OSw2ICs0NDUsOSBAQCBzdGF0aWMgaW50IHBhbmVsX3NpbXBsZV9wcm9iZShz
-dHJ1Y3QgZGV2aWNlICpkZXYsIGNvbnN0IHN0cnVjdCBwYW5lbF9kZXNjICpkZXNjKQogCQl9CiAJ
-fQogCisJaWYgKCFvZl9nZXRfZGlzcGxheV90aW1pbmcoZGV2LT5vZl9ub2RlLCAicGFuZWwtdGlt
-aW5nIiwgJmR0KSkKKwkJcGFuZWxfc2ltcGxlX3BhcnNlX292ZXJyaWRlX21vZGUoZGV2LCBwYW5l
-bCwgJmR0KTsKKwogCWRybV9wYW5lbF9pbml0KCZwYW5lbC0+YmFzZSk7CiAJcGFuZWwtPmJhc2Uu
-ZGV2ID0gZGV2OwogCXBhbmVsLT5iYXNlLmZ1bmNzID0gJnBhbmVsX3NpbXBsZV9mdW5jczsKLS0g
-CjIuMjIuMC40MTAuZ2Q4ZmRiZTIxYjUtZ29vZwoKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1y
-b2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+Convert the Innolux n116bge from using a fixed mode to specifying a
+display timing with min/typ/max values.
+
+Note that the n116bge's datasheet doesn't fit too well into DRM's way
+of specifying things.  Specifically the panel's datasheet just
+specifies the vertical blanking period and horizontal blanking period
+and doesn't break things out.  For now we'll leave everything as a
+fixed value but just allow adjusting the pixel clock.  I've added a
+comment on what the datasheet claims so someone could later expand
+things to fit their needs if they wanted to test other blanking
+periods.
+
+The goal here is to be able to specify the panel timings in the device
+tree for several rk3288 Chromebooks (like rk3288-veryon-jerry).  These
+Chromebooks have all been running in the downstream kernel with the
+standard porches and sync lengths but just with a slightly slower
+pixel clock because the 76.42 MHz clock is not achievable from the
+fixed PLL that was available.  These Chromebooks only achieve a
+refresh rate of ~58 Hz.  While it's probable that we could adjust the
+timings to achieve 60 Hz it's probably wisest to match what's been
+running on these devices all these years.
+
+I'll note that though the upstream kernel has always tried to achieve
+76.42 MHz, it has actually been running at 74.25 MHz also since the
+video processor is parented off the same fixed PLL.
+
+Changes in v4:
+ - display_timing for Innolux n116bge new for v4.
+Changes in v5:
+ - Added Heiko's Tested-by
+Changes in v6:
+ - Rebased to drm-misc next
+ - Added tags
+
+Signed-off-by: Douglas Anderson <dianders@chromium.org>
+Tested-by: Heiko Stuebner <heiko@sntech.de>
+Acked-by: Thierry Reding <thierry.reding@gmail.com>
+---
+
+ drivers/gpu/drm/panel/panel-simple.c | 37 +++++++++++++++++-----------
+ 1 file changed, 23 insertions(+), 14 deletions(-)
+
+diff --git a/drivers/gpu/drm/panel/panel-simple.c b/drivers/gpu/drm/panel/panel-simple.c
+index 1bee197821ef..602809f6da6a 100644
+--- a/drivers/gpu/drm/panel/panel-simple.c
++++ b/drivers/gpu/drm/panel/panel-simple.c
+@@ -1702,23 +1702,32 @@ static const struct panel_desc innolux_g121x1_l03 = {
+ 	},
+ };
+ 
+-static const struct drm_display_mode innolux_n116bge_mode = {
+-	.clock = 76420,
+-	.hdisplay = 1366,
+-	.hsync_start = 1366 + 136,
+-	.hsync_end = 1366 + 136 + 30,
+-	.htotal = 1366 + 136 + 30 + 60,
+-	.vdisplay = 768,
+-	.vsync_start = 768 + 8,
+-	.vsync_end = 768 + 8 + 12,
+-	.vtotal = 768 + 8 + 12 + 12,
+-	.vrefresh = 60,
+-	.flags = DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC,
++/*
++ * Datasheet specifies that at 60 Hz refresh rate:
++ * - total horizontal time: { 1506, 1592, 1716 }
++ * - total vertical time: { 788, 800, 868 }
++ *
++ * ...but doesn't go into exactly how that should be split into a front
++ * porch, back porch, or sync length.  For now we'll leave a single setting
++ * here which allows a bit of tweaking of the pixel clock at the expense of
++ * refresh rate.
++ */
++static const struct display_timing innolux_n116bge_timing = {
++	.pixelclock = { 72600000, 76420000, 80240000 },
++	.hactive = { 1366, 1366, 1366 },
++	.hfront_porch = { 136, 136, 136 },
++	.hback_porch = { 60, 60, 60 },
++	.hsync_len = { 30, 30, 30 },
++	.vactive = { 768, 768, 768 },
++	.vfront_porch = { 8, 8, 8 },
++	.vback_porch = { 12, 12, 12 },
++	.vsync_len = { 12, 12, 12 },
++	.flags = DISPLAY_FLAGS_VSYNC_LOW | DISPLAY_FLAGS_HSYNC_LOW,
+ };
+ 
+ static const struct panel_desc innolux_n116bge = {
+-	.modes = &innolux_n116bge_mode,
+-	.num_modes = 1,
++	.timings = &innolux_n116bge_timing,
++	.num_timings = 1,
+ 	.bpc = 6,
+ 	.size = {
+ 		.width = 256,
+-- 
+2.22.0.410.gd8fdbe21b5-goog
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
