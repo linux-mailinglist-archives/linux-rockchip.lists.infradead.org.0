@@ -2,72 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D81E765014
-	for <lists+linux-rockchip@lfdr.de>; Thu, 11 Jul 2019 04:13:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F5DF6552C
+	for <lists+linux-rockchip@lfdr.de>; Thu, 11 Jul 2019 13:27:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=GOKr9rbYLO8q6jqqhlzWWilCq1nDlQK+qH4hqd8YxC4=; b=UOn
-	nPCfViQOsrFivFvn/D5BJ5Rn6yjrmZQr+EI+k+BU4yvQ3OXF5PTkgLPsZd62clF5kELwohpMwHClC
-	6Fo/EOtq+WASQzE11RVs0KUiZS1SqH2EbVYAooAgRl6nAnDtKKJysod71d8qWLFsGys25PV73NVpn
-	wph25+0H27OGkv3Vlogb/d2Oi1Th0VmkP2eVTdLtX1O+OxIdi3YhA6e9q8nmC0YIrFnLfuNmAW2ic
-	oYlmB1LfU16PgVnwY6z7uCqwTR+R34K72M8FhkmfQRWz+XIoWo+uICGsQ6RX5qIXp8bh9rDW+pHQc
-	2eCii+f2bSnelHmkt6h99l6ZilrKz1A==;
+	References:List-Owner; bh=Eq7fnWU3FyStdRzQAKwoHcq5Z+PNE7OZ693c52f39ck=; b=lIh
+	NjPVXLMsSMeSq1G7nopXOk28thTRPUeabJeG4yrpLp3+0sJgBg96sUlHlJqJBXnCkFZ2l1ljNPFuo
+	GKOGcM3XKyT2xrT1AmP9hkUiE6KcNilCwmBqhitBUH4ppE/6dpJGV46y3e8AzGFaNx9rzv0B8kMjt
+	UaFJeppgu/5xJYY7RXC7wZrFuk0oHqQEwBnMGZdkScpXSx/jNI5SuxruG3qWWPXXAwSFDzklNcljZ
+	wYYu+uCcHXDXrHTCmzohJJYxiztz9Wc62rv7ZT/dn+p61YcSMITjwkwWorj5ymZTUD6GL6Sp0eH7B
+	TymEDsj+kGtEEDbnAv+zkLaPay0xmFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlOaA-00071y-OS; Thu, 11 Jul 2019 02:13:15 +0000
-Received: from regular1.263xmail.com ([211.150.70.206])
+	id 1hlXEM-0005Lf-Bs; Thu, 11 Jul 2019 11:27:18 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlOZt-0006uI-7I; Thu, 11 Jul 2019 02:12:59 +0000
-Received: from zhangzj?rock-chips.com (unknown [192.168.167.158])
- by regular1.263xmail.com (Postfix) with ESMTP id 578DD25F;
- Thu, 11 Jul 2019 10:12:43 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P17295T139859222501120S1562811161454565_; 
- Thu, 11 Jul 2019 10:12:42 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <4fc1a89d2a0f1bfeced24737ded1a791>
-X-RL-SENDER: zhangzj@rock-chips.com
-X-SENDER: zhangzj@rock-chips.com
-X-LOGIN-NAME: zhangzj@rock-chips.com
-X-FST-TO: heiko@sntech.de
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-From: Elon Zhang <zhangzj@rock-chips.com>
-To: heiko@sntech.de,
-	mark.rutland@arm.com,
-	robh+dt@kernel.org
-Subject: [PATCH v1 1/1] arm64: dts: rockchip: Add support for TB-96AI board
-Date: Thu, 11 Jul 2019 10:12:09 +0800
-Message-Id: <20190711021209.32529-1-zhangzj@rock-chips.com>
+ id 1hlXEI-0005KX-BQ; Thu, 11 Jul 2019 11:27:16 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 8925A28B554
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+To: dri-devel@lists.freedesktop.org
+Subject: [PATCH v4 00/23] Associate ddc adapters with connectors
+Date: Thu, 11 Jul 2019 13:26:27 +0200
+Message-Id: <cover.1562843413.git.andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_191257_615724_7C4F87EB 
-X-CRM114-Status: GOOD (  10.98  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190711_042714_654770_89E74700 
+X-CRM114-Status: GOOD (  14.66  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.206 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,679 +56,158 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Elon Zhang <zhangzj@rock-chips.com>, linux-rockchip@lists.infradead.org,
- manivannan.sadhasivam@linaro.org, linux-arm-kernel@lists.infradead.org
+Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
+ =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ Sam Ravnborg <sam@ravnborg.org>, Neil Armstrong <narmstrong@baylibre.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Ramalingam C <ramalingam.c@intel.com>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ Douglas Anderson <dianders@chromium.org>, Andrzej Hajda <a.hajda@samsung.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ linux-rockchip@lists.infradead.org, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>,
+ =?UTF-8?q?Ville=20Syrj=C3=A4l=C3=A4?= <ville.syrjala@linux.intel.com>,
+ "David \(ChunMing\) Zhou" <David1.Zhou@amd.com>,
+ linux-samsung-soc@vger.kernel.org, Joonyoung Shim <jy0922.shim@samsung.com>,
+ Oleksandr Andrushchenko <oleksandr_andrushchenko@epam.com>,
+ Vincent Abriou <vincent.abriou@st.com>, Rob Clark <robdclark@gmail.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ David Airlie <airlied@linux.ie>, Chen-Yu Tsai <wens@csie.org>,
+ Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ CK Hu <ck.hu@mediatek.com>, Dave Airlie <airlied@redhat.com>,
+ Harry Wentland <harry.wentland@amd.com>, intel-gfx@lists.freedesktop.org,
+ Shashank Sharma <shashank.sharma@intel.com>, freedreno@lists.freedesktop.org,
+ linux-tegra@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Jani Nikula <jani.nikula@linux.intel.com>, Inki Dae <inki.dae@samsung.com>,
+ Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
+ Jyri Sarha <jsarha@ti.com>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Chris Wilson <chris@chris-wilson.co.uk>,
+ Sean Paul <sean@poorly.run>, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Eric Anholt <eric@anholt.net>, Thomas Zimmermann <tzimmermann@suse.de>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
+ linux-kernel@vger.kernel.org, Todor Tomov <todor.tomov@linaro.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
+ =?UTF-8?q?Christian=20K=C3=B6nig?= <christian.koenig@amd.com>,
+ Gerd Hoffmann <kraxel@redhat.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add devicetree support for RK3399Pro TB-96AI board, one of
-the 96Boards family.
+It is difficult for a user to know which of the i2c adapters is for which
+drm connector. This series addresses this problem.
 
-The TB-96AI board is a 96Boards Compute SOM design, launched
-by Linaro, Rockchip and Beiqicloud.
+The idea is to have a symbolic link in connector's sysfs directory, e.g.:
 
-More information can be obtained from the following websites:
-1.https://www.96boards.org/product/tb-96ai/
-2.http://t.rock-chips.com/
-3.http://www.beiqicloud.com/
+ls -l /sys/class/drm/card0-HDMI-A-1/ddc
+lrwxrwxrwx 1 root root 0 Jun 24 10:42 /sys/class/drm/card0-HDMI-A-1/ddc \
+	-> ../../../../soc/13880000.i2c/i2c-2
 
-This patch add basic node for the board and support booting up
-to Fedora.
+The user then knows that their card0-HDMI-A-1 uses i2c-2 and can e.g. run
+ddcutil:
 
-Signed-off-by: Elon Zhang <zhangzj@rock-chips.com>
+ddcutil -b 2 getvcp 0x10
+VCP code 0x10 (Brightness                    ): current value =    90, max value =   100
 
-diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
-index 5f2687acbf94..3d6c8d4363b5 100644
---- a/arch/arm64/boot/dts/rockchip/Makefile
-+++ b/arch/arm64/boot/dts/rockchip/Makefile
-@@ -27,3 +27,4 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock960.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rockpro64.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire-excavator.dtb
-+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399pro-tb-96ai.dtb
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro-tb-96ai.dts b/arch/arm64/boot/dts/rockchip/rk3399pro-tb-96ai.dts
-new file mode 100644
-index 000000000000..1935df99065d
---- /dev/null
-+++ b/arch/arm64/boot/dts/rockchip/rk3399pro-tb-96ai.dts
-@@ -0,0 +1,629 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd.
-+ */
-+
-+/dts-v1/;
-+#include "rk3399pro.dtsi"
-+#include "rk3399-opp.dtsi"
-+
-+/ {
-+	compatible = "rockchip,rk3399pro-tb-96ai", "rockchip,rk3399pro";
-+
-+	chosen {
-+		stdout-path = "serial2:1500000n8";
-+	};
-+
-+	xin32k: xin32k {
-+		compatible = "fixed-clock";
-+		clock-frequency = <32768>;
-+		clock-output-names = "xin32k";
-+		#clock-cells = <0>;
-+	};
-+
-+	vcc_phy: vcc-phy-regulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc_phy";
-+		regulator-always-on;
-+		regulator-boot-on;
-+	};
-+
-+	vcc5v0_sys: vccsys {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc5v0_sys";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+	};
-+
-+	vdd_log: vdd_log {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vdd_log";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <900000>;
-+		regulator-max-microvolt = <900000>;
-+	};
-+
-+	leds: gpio-leds {
-+		compatible = "gpio-leds";
-+		pinctrl-names = "default";
-+		pinctrl-0 =<&leds_gpio>;
-+
-+		led@1 {
-+			gpios = <&gpio2 5 GPIO_ACTIVE_HIGH>;
-+			label = "system_work_led1";
-+			retain-state-suspended;
-+		};
-+
-+		led@2 {
-+			gpios = <&gpio2 4 GPIO_ACTIVE_HIGH>;
-+			label = "system_work_led2";
-+			retain-state-suspended;
-+		};
-+
-+		led@3 {
-+			gpios = <&gpio2 3 GPIO_ACTIVE_HIGH>;
-+			label = "system_work_led3";
-+			retain-state-suspended;
-+		};
-+	};
-+};
-+
-+&cpu_l0 {
-+	cpu-supply = <&vdd_cpu_l>;
-+};
-+
-+&cpu_l1 {
-+	cpu-supply = <&vdd_cpu_l>;
-+};
-+
-+&cpu_l2 {
-+	cpu-supply = <&vdd_cpu_l>;
-+};
-+
-+&cpu_l3 {
-+	cpu-supply = <&vdd_cpu_l>;
-+};
-+
-+&cpu_b0 {
-+	cpu-supply = <&vdd_cpu_b>;
-+};
-+
-+&cpu_b1 {
-+	cpu-supply = <&vdd_cpu_b>;
-+};
-+
-+&emmc_phy {
-+	status = "okay";
-+};
-+
-+&i2c0 {
-+	status = "okay";
-+	i2c-scl-rising-time-ns = <180>;
-+	i2c-scl-falling-time-ns = <30>;
-+	clock-frequency = <400000>;
-+
-+	rk809: pmic@20 {
-+		compatible = "rockchip,rk809";
-+		reg = <0x20>;
-+		interrupt-parent = <&gpio1>;
-+		interrupts = <RK_PC2 IRQ_TYPE_LEVEL_LOW>;
-+		pinctrl-names = "default", "pmic-sleep",
-+				"pmic-power-off", "pmic-reset";
-+		pinctrl-0 = <&pmic_int_l>;
-+		pinctrl-1 = <&soc_slppin_slp>, <&rk809_slppin_slp>;
-+		pinctrl-2 = <&soc_slppin_gpio>, <&rk809_slppin_pwrdn>;
-+		pinctrl-3 = <&soc_slppin_gpio>,<&rk809_slppin_null>;
-+		rockchip,system-power-controller;
-+		pmic-reset-func = <1>;
-+		wakeup-source;
-+		#clock-cells = <1>;
-+		clock-output-names = "rk808-clkout1", "rk808-clkout2";
-+
-+		vcc1-supply = <&vcc5v0_sys>;
-+		vcc2-supply = <&vcc5v0_sys>;
-+		vcc3-supply = <&vcc5v0_sys>;
-+		vcc4-supply = <&vcc5v0_sys>;
-+		vcc5-supply = <&vcc_buck5>;
-+		vcc6-supply = <&vcc_buck5>;
-+		vcc7-supply = <&vcc3v3_sys>;
-+		vcc8-supply = <&vcc3v3_sys>;
-+		vcc9-supply = <&vcc5v0_sys>;
-+
-+		pwrkey {
-+			status = "okay";
-+		};
-+
-+		rtc {
-+			status = "okay";
-+		};
-+
-+		pinctrl_rk8xx: pinctrl_rk8xx {
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+
-+			rk809_slppin_null: rk809_slppin_null {
-+				pins = "gpio_slp";
-+				function = "pin_fun0";
-+			};
-+
-+			rk809_slppin_slp: rk809_slppin_slp {
-+				pins = "gpio_slp";
-+				function = "pin_fun1";
-+			};
-+
-+			rk809_slppin_pwrdn: rk809_slppin_pwrdn {
-+				pins = "gpio_slp";
-+				function = "pin_fun2";
-+			};
-+
-+			rk809_slppin_rst: rk809_slppin_rst {
-+				pins = "gpio_slp";
-+				function = "pin_fun3";
-+			};
-+		};
-+
-+		regulators {
-+			vdd_center: DCDC_REG1 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <750000>;
-+				regulator-max-microvolt = <1350000>;
-+				regulator-initial-mode = <0x2>;
-+				regulator-name = "vdd_center";
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <900000>;
-+				};
-+			};
-+
-+			vdd_cpu_l: DCDC_REG2 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <750000>;
-+				regulator-max-microvolt = <1350000>;
-+				regulator-ramp-delay = <6001>;
-+				regulator-initial-mode = <0x2>;
-+				regulator-name = "vdd_cpu_l";
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vcc_ddr: DCDC_REG3 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-name = "vcc_ddr";
-+				regulator-initial-mode = <0x2>;
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+				};
-+			};
-+
-+			vcc3v3_sys: DCDC_REG4 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <3300000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-initial-mode = <0x2>;
-+				regulator-name = "vcc3v3_sys";
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <3300000>;
-+				};
-+			};
-+
-+			vcc_buck5: DCDC_REG5 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <2200000>;
-+				regulator-max-microvolt = <2200000>;
-+				regulator-name = "vcc_buck5";
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <2200000>;
-+				};
-+			};
-+
-+			vcca_0v9: LDO_REG1 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <900000>;
-+				regulator-max-microvolt = <900000>;
-+				regulator-name = "vcca_0v9";
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vcc_1v8: LDO_REG2 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+
-+				regulator-name = "vcc_1v8";
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <1800000>;
-+				};
-+			};
-+
-+			vcc0v9_soc: LDO_REG3 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <900000>;
-+				regulator-max-microvolt = <900000>;
-+
-+				regulator-name = "vcc0v9_soc";
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <900000>;
-+				};
-+			};
-+
-+			vcca_1v8: LDO_REG4 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+
-+				regulator-name = "vcca_1v8";
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vdd1v5_dvp: LDO_REG5 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1500000>;
-+				regulator-max-microvolt = <1500000>;
-+
-+				regulator-name = "vdd1v5_dvp";
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vcc_1v5: LDO_REG6 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1500000>;
-+				regulator-max-microvolt = <1500000>;
-+
-+				regulator-name = "vcc_1v5";
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vcc_3v0: LDO_REG7 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <3000000>;
-+				regulator-max-microvolt = <3000000>;
-+
-+				regulator-name = "vcc_3v0";
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vccio_sd: LDO_REG8 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <3300000>;
-+
-+				regulator-name = "vccio_sd";
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <3300000>;
-+				};
-+			};
-+
-+			vcc_sd: LDO_REG9 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <3300000>;
-+				regulator-max-microvolt = <3300000>;
-+
-+				regulator-name = "vcc_sd";
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <3300000>;
-+				};
-+			};
-+
-+			vcc5v0_usb: SWITCH_REG1 {
-+				regulator-min-microvolt = <5000000>;
-+				regulator-max-microvolt = <5000000>;
-+
-+				regulator-name = "vcc5v0_usb";
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vccio_3v3: SWITCH_REG2 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <3300000>;
-+				regulator-max-microvolt = <3300000>;
-+
-+				regulator-name = "vccio_3v3";
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+		};
-+	};
-+
-+	vdd_cpu_b: tcs452x@1c {
-+		compatible = "tcs,tcs452x";
-+		reg = <0x1c>;
-+		vin-supply = <&vcc5v0_sys>;
-+		regulator-compatible = "fan53555-reg";
-+		pinctrl-0 = <&vsel1_gpio>;
-+		vsel-gpios = <&gpio1 RK_PC1 GPIO_ACTIVE_HIGH>;
-+		regulator-name = "vdd_cpu_b";
-+		regulator-min-microvolt = <712500>;
-+		regulator-max-microvolt = <1500000>;
-+		regulator-ramp-delay = <2300>;
-+		fcs,suspend-voltage-selector = <1>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-initial-state = <3>;
-+		regulator-state-mem {
-+			regulator-off-in-suspend;
-+		};
-+	};
-+
-+	vdd_gpu: tcs452x@10 {
-+		compatible = "tcs,tcs452x";
-+		status = "okay";
-+		reg = <0x10>;
-+		vin-supply = <&vcc5v0_sys>;
-+		regulator-compatible = "fan53555-reg";
-+		pinctrl-0 = <&vsel2_gpio>;
-+		vsel-gpios = <&gpio1 RK_PB6 GPIO_ACTIVE_HIGH>;
-+		regulator-name = "vdd_gpu";
-+		regulator-min-microvolt = <735000>;
-+		regulator-max-microvolt = <1400000>;
-+		regulator-ramp-delay = <2300>;
-+		fcs,suspend-voltage-selector = <1>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-state-mem {
-+			regulator-off-in-suspend;
-+		};
-+	};
-+
-+};
-+
-+&i2c8 {
-+	status = "okay";
-+	i2c-scl-rising-time-ns = <345>;
-+	i2c-scl-falling-time-ns = <11>;
-+	clock-frequency = <100000>;
-+
-+	fusb0: fusb30x@22 {
-+		compatible = "fairchild,fusb302";
-+		reg = <0x22>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&fusb0_int>;
-+		int-n-gpios = <&gpio1 RK_PA2 GPIO_ACTIVE_HIGH>;
-+		vbus-5v-gpios = <&gpio0 RK_PA1 GPIO_ACTIVE_LOW>;
-+		status = "okay";
-+	};
-+
-+};
-+
-+&io_domains {
-+	status = "okay";
-+	bt656-supply = <&vcca_1v8>; /* APIO2_VDD */
-+	audio-supply = <&vcca_1v8>; /* APIO5_VDD */
-+	sdmmc-supply = <&vccio_sd>; /* SDMMC0_VDD */
-+	gpio1830-supply = <&vcc_1v8>; /* APIO4_VDD */
-+};
-+
-+&pinctrl {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&npu_ref_clk>;
-+
-+	fusb30x {
-+		fusb0_int: fusb0-int {
-+			rockchip,pins =
-+				<1 RK_PA2 0 &pcfg_pull_up>;
-+		};
-+	};
-+
-+	gpio-leds {
-+		leds_gpio: leds-gpio {
-+			rockchip,pins =
-+				<2 5 RK_FUNC_GPIO &pcfg_pull_up>,
-+				<2 4 RK_FUNC_GPIO &pcfg_pull_up>,
-+				<2 3 RK_FUNC_GPIO &pcfg_pull_up>;
-+		};
-+	};
-+
-+	npu_clk {
-+		npu_ref_clk: npu-ref-clk {
-+			rockchip,pins =
-+				<0 RK_PA2 1 &pcfg_pull_none>;
-+		};
-+	};
-+
-+	pmic {
-+		pmic_int_l: pmic-int-l {
-+			rockchip,pins =
-+				<1 RK_PC2 0 &pcfg_pull_up>;
-+		};
-+
-+		soc_slppin_gpio: soc-slppin-gpio {
-+			rockchip,pins =
-+				<1 RK_PA5 0 &pcfg_output_low>;
-+		};
-+
-+		soc_slppin_slp: soc-slppin-slp {
-+			rockchip,pins =
-+				<1 RK_PA5 1 &pcfg_pull_down>;
-+		};
-+
-+		vsel1_gpio: vsel1-gpio {
-+			rockchip,pins =
-+				<1 RK_PC1 0 &pcfg_pull_down>;
-+		};
-+
-+		vsel2_gpio: vsel2-gpio {
-+			rockchip,pins =
-+				<1 RK_PB6 0 &pcfg_pull_down>;
-+		};
-+	};
-+
-+	usb3 {
-+		usb3_host_en: usb3-host-en {
-+			rockchip,pins =
-+				<2 RK_PA2 RK_FUNC_GPIO &pcfg_output_high>;
-+		};
-+	};
-+};
-+
-+&pmu_io_domains {
-+	status = "okay";
-+	pmu1830-supply = <&vcc_1v8>;
-+};
-+
-+&pwm0 {
-+	status = "okay";
-+};
-+
-+&pwm2 {
-+	status = "okay";
-+};
-+
-+&saradc {
-+	status = "okay";
-+	vref-supply = <&vcc_1v8>;
-+};
-+
-+&sdhci {
-+	bus-width = <8>;
-+	mmc-hs400-1_8v;
-+	supports-emmc;
-+	non-removable;
-+	keep-power-in-suspend;
-+	mmc-hs400-enhanced-strobe;
-+	status = "okay";
-+};
-+
-+&sdmmc {
-+	clock-frequency = <150000000>;
-+	clock-freq-min-max = <400000 150000000>;
-+	supports-sd;
-+	bus-width = <4>;
-+	cap-mmc-highspeed;
-+	cap-sd-highspeed;
-+	disable-wp;
-+	num-slots = <1>;
-+	vqmmc-supply = <&vccio_sd>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd &sdmmc_bus4>;
-+	status = "okay";
-+};
-+
-+&tcphy0 {
-+	extcon = <&fusb0>;
-+	status = "okay";
-+};
-+
-+&tcphy1 {
-+	status = "okay";
-+};
-+
-+&tsadc {
-+	rockchip,hw-tshut-mode = <1>; /* tshut mode 0:CRU 1:GPIO */
-+	rockchip,hw-tshut-polarity = <1>; /* tshut polarity 0:LOW 1:HIGH */
-+	status = "okay";
-+};
-+
-+&u2phy0 {
-+	status = "okay";
-+	extcon = <&fusb0>;
-+
-+	u2phy0_otg: otg-port {
-+		status = "okay";
-+	};
-+
-+	u2phy0_host: host-port {
-+		phy-supply = <&vcc5v0_usb>;
-+		status = "okay";
-+	};
-+};
-+
-+&u2phy1 {
-+	status = "okay";
-+
-+	u2phy1_otg: otg-port {
-+		status = "okay";
-+	};
-+
-+	u2phy1_host: host-port {
-+		phy-supply = <&vcc5v0_usb>;
-+		status = "okay";
-+	};
-+};
-+
-+&uart0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart0_xfer &uart0_cts>;
-+	status = "okay";
-+};
-+
-+&uart2 {
-+	status = "okay";
-+};
-+
-+&uart4 {
-+	status = "okay";
-+};
-+
-+&usb_host0_ehci {
-+	status = "okay";
-+};
-+
-+&usb_host1_ehci {
-+	status = "okay";
-+};
-+
-+&usb_host0_ohci {
-+	status = "okay";
-+};
-+
-+&usb_host1_ohci {
-+	status = "okay";
-+};
-+
-+&usbdrd3_0 {
-+	extcon = <&fusb0>;
-+	status = "okay";
-+};
-+
-+&usbdrd3_1 {
-+	status = "okay";
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&usb3_host_en>;
-+};
-+
-+&usbdrd_dwc3_0 {
-+	status = "okay";
-+};
-+
-+&usbdrd_dwc3_1 {
-+	snps,dis-u3-autosuspend-quirk;
-+	status = "okay";
-+};
-+
+The first patch in the series adds struct i2c_adapter pointer to struct
+drm_connector. If the field is used by a particular driver, then an
+appropriate symbolic link is created by the generic code, which is also added
+by this patch.
+
+The next 22 patches is an example of how to convert a driver to this new scheme.
+
+v1..v2:
+
+- used fixed name "ddc" for the symbolic link in order to make it easy for
+userspace to find the i2c adapter
+
+v2..v3:
+
+- converted as many drivers as possible.
+
+v3..v4:
+
+- added Reviewed-by for patch 01/23
+- moved "ddc" field assignment to before drm_connector_init() is called
+in msm, vc4, sti, mgag200, ast, amdgpu, radeon
+- simplified the code in amdgpu and radeon at the expense of some lines
+exceeding 80 characters as per Alex Deucher's suggestion
+- added i915
+
+TODO: nouveau, gma500, omapdrm, panel-simple - if applicable.
+Other drivers are either already converted or don't mention neither
+"ddc" nor "i2c_adapter".
+
+Andrzej Pietrasiewicz (23):
+  drm: Include ddc adapter pointer in struct drm_connector
+  drm/exynos: Provide ddc symlink in connector's sysfs
+  drm: rockchip: Provide ddc symlink in rk3066_hdmi sysfs directory
+  drm: rockchip: Provide ddc symlink in inno_hdmi sysfs directory
+  drm/msm/hdmi: Provide ddc symlink in hdmi connector sysfs directory
+  drm/sun4i: hdmi: Provide ddc symlink in sun4i hdmi connector sysfs
+    directory
+  drm/mediatek: Provide ddc symlink in hdmi connector sysfs directory
+  drm/tegra: Provide ddc symlink in output connector sysfs directory
+  drm/imx: imx-ldb: Provide ddc symlink in connector's sysfs
+  drm/imx: imx-tve: Provide ddc symlink in connector's sysfs
+  drm/vc4: Provide ddc symlink in connector sysfs directory
+  drm: zte: Provide ddc symlink in hdmi connector sysfs directory
+  drm: zte: Provide ddc symlink in vga connector sysfs directory
+  drm/tilcdc: Provide ddc symlink in connector sysfs directory
+  drm: sti: Provide ddc symlink in hdmi connector sysfs directory
+  drm/mgag200: Provide ddc symlink in connector sysfs directory
+  drm/ast: Provide ddc symlink in connector sysfs directory
+  drm/bridge: dumb-vga-dac: Provide ddc symlink in connector sysfs
+    directory
+  drm/bridge: dw-hdmi: Provide ddc symlink in connector sysfs directory
+  drm/bridge: ti-tfp410: Provide ddc symlink in connector sysfs
+    directory
+  drm/amdgpu: Provide ddc symlink in connector sysfs directory
+  drm/radeon: Provide ddc symlink in connector sysfs directory
+  drm/i915: Provide ddc symlink in hdmi connector sysfs directory
+
+ .../gpu/drm/amd/amdgpu/amdgpu_connectors.c    | 56 ++++++++-----
+ drivers/gpu/drm/ast/ast_mode.c                |  9 ++-
+ drivers/gpu/drm/bridge/dumb-vga-dac.c         | 19 +++--
+ drivers/gpu/drm/bridge/synopsys/dw-hdmi.c     | 40 +++++-----
+ drivers/gpu/drm/bridge/ti-tfp410.c            | 19 +++--
+ drivers/gpu/drm/drm_sysfs.c                   |  7 ++
+ drivers/gpu/drm/exynos/exynos_hdmi.c          | 11 ++-
+ drivers/gpu/drm/i915/display/intel_hdmi.c     |  5 +-
+ drivers/gpu/drm/imx/imx-ldb.c                 | 13 ++-
+ drivers/gpu/drm/imx/imx-tve.c                 |  8 +-
+ drivers/gpu/drm/mediatek/mtk_hdmi.c           |  9 +--
+ drivers/gpu/drm/mgag200/mgag200_mode.c        |  9 ++-
+ drivers/gpu/drm/msm/hdmi/hdmi_connector.c     |  1 +
+ drivers/gpu/drm/radeon/radeon_connectors.c    | 80 ++++++++++++-------
+ drivers/gpu/drm/rockchip/inno_hdmi.c          | 17 ++--
+ drivers/gpu/drm/rockchip/rk3066_hdmi.c        | 17 ++--
+ drivers/gpu/drm/sti/sti_hdmi.c                |  1 +
+ drivers/gpu/drm/sun4i/sun4i_hdmi.h            |  1 -
+ drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c        | 14 ++--
+ drivers/gpu/drm/tegra/drm.h                   |  1 -
+ drivers/gpu/drm/tegra/output.c                | 12 +--
+ drivers/gpu/drm/tegra/sor.c                   |  6 +-
+ drivers/gpu/drm/tilcdc/tilcdc_tfp410.c        |  1 +
+ drivers/gpu/drm/vc4/vc4_hdmi.c                | 21 ++---
+ drivers/gpu/drm/zte/zx_hdmi.c                 | 25 +++---
+ drivers/gpu/drm/zte/zx_vga.c                  | 25 +++---
+ include/drm/drm_connector.h                   | 11 +++
+ 27 files changed, 240 insertions(+), 198 deletions(-)
+
 -- 
 2.17.1
-
-
 
 
 _______________________________________________
