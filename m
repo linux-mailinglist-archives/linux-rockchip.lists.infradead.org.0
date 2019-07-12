@@ -2,71 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F833672AD
-	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jul 2019 17:45:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A36067342
+	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jul 2019 18:27:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7BMj7qy/2FdFnY1um7F4QiDMdfKiMicJCjq2WnFLcno=; b=LBLYe4ecNRpfHZ
-	ditON5+Qtb9i62e4QEyj4X/jJulZKv8scjR8K+5Tu06FWsk56s25zkEJT8qYXwWhw8xu610ByG0Ep
-	AdSF4VDQFhQuxN2UitCZ/yuEO2x8ZnjUc5XylHtIgp41iAgBcmNW8d/VtRGP4ltIAypffQeUl8WkL
-	UpUHjcLE4IvVx3NSI++A7fy76k4o1AwwvACgsm0AJjyDVfR2om+8UVgbKfCWBM2a9B8/jnu5zr0PK
-	KI4jrJaE2o2jOOQUX2dcmwFO4jBPk/dSL3dogb4HXwmH1FEAh/1Z15UPecYtSHwHnvKTfWyZuNLGc
-	hXwg54L2KiLVsToEcVAw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ZdfAARwWx+1ZrO4CzqFMdzpuvTzBqv5OYoqBPiwgjXs=; b=iwPkCIqRXj/WWPEUEqP/zi4D8
+	olBeM4rQwV5EXAEyHPVz6cEYU+0Z+L7gOKAKXNGaVy1z2TAAZqTZ4rNvaLtDFXX+5h88tqRKXpOc8
+	lvAa9EAs86Xfvc27qV2SQT3aDlVfyfsgfTUb5MF2aSgjQ/StNmuWjwcXQqFygdAyJRgT6P5XSWuKR
+	56nIY85JJO5m8OemV6QEXcJcuP8Szcju1ubL+nQmZsDxQgYF4gxA6z4HqIpwzX0se+j/DLq9H1tAj
+	m0VWxlVnMNukw3fH3TUpWmnyS5tFKXsZFymkfvuamWUa6cVGj0ynFGdcfsTqkBW/tLmgYf+bcVemm
+	8ox7JfETQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlxjX-0003aO-Tq; Fri, 12 Jul 2019 15:45:15 +0000
-Received: from mail-io1-f66.google.com ([209.85.166.66])
+	id 1hlyOU-0001mO-FO; Fri, 12 Jul 2019 16:27:34 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlxjC-000290-9B; Fri, 12 Jul 2019 15:44:55 +0000
-Received: by mail-io1-f66.google.com with SMTP id g20so21222813ioc.12;
- Fri, 12 Jul 2019 08:44:53 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Flz2lLRzUd8jYEWKtYpt6MQ7g5ki02yJxXMItOlTOZg=;
- b=We2rkLzx/ASt73n98R57oE/KK+m1QlgqKnjBHXLE5pWOjQ+6JNQlG4DKnpsaVAQa8m
- 9AJO8HBPe6MYvx1D7tHKta9GNTGody33mGk1W2TWh0iTiphcW1JzJQrEOArZwEH1kmfp
- 7gInPAgGR1MRuFIyJKP2e0lJz9b8Na3AWnBW0vIUyPiEnndFBykHRjbHh5I0RGgU6x47
- 2EvXdTIq+YQGNl9v1FAl+3mwIrT+KZkK+/FN7CaQXLiRbe2z56ldqnypFLzBty/aoKks
- AE4qFEPoQWmDR31bal5pV+HpBUult2vqKExhrVCFk2n5747CTBKeRca6TQiKCUi0+uZF
- rzqg==
-X-Gm-Message-State: APjAAAWvbg/ayOWoOCSnrobn4WJTXdC8GmVDdfOH+eam+8LIFubrXKM7
- dXfx33PqcG9y5sxnDLvRUIOAXctqmBvbgCz20vs83EBi
-X-Google-Smtp-Source: APXvYqxN8RQNuZM9vdEm/CAl+zuh4AN5lTPTDyHWochsrNu0wOHqh5l7I2dOMKuVQTeQcmrFPVSCkwj2CtRyhmmnvW8=
-X-Received: by 2002:a6b:e60b:: with SMTP id g11mr11691332ioh.9.1562946293139; 
- Fri, 12 Jul 2019 08:44:53 -0700 (PDT)
-MIME-Version: 1.0
-References: <59042b09-7651-be1d-347f-0dc4aa02a91b@gmx.co.uk>
-In-Reply-To: <59042b09-7651-be1d-347f-0dc4aa02a91b@gmx.co.uk>
-From: Emil Renner Berthing <kernel@esmil.dk>
-Date: Fri, 12 Jul 2019 17:44:40 +0200
-Message-ID: <CANBLGcyO5wAHgSVjYFB+hcp+SzaKY9d0QJm-hxqnSYbZ4Yv97g@mail.gmail.com>
+ id 1hlyOR-0001lp-Px; Fri, 12 Jul 2019 16:27:33 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1562948844;
+ bh=Nrxdsq4Qz0JpkUNEaKvb3REo5DtrYOkqiocoF0y/Nw8=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=YGIlTbL3QWOJ/ZGD1VUgkTH0g6QZvyDu5GV2gPz04VZXuU5oXg6w0TrKSSIkejggX
+ yn5reGhglGnP3DR+uyJhQdH4JOUlh7qozebmhWIoMPeic3iua7StC/wzRGtQp+UWfO
+ rGUpcFvbAFHhUHZkuDU64h/J7u9dslnqt60PT0KI=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.0.18] ([82.19.195.159]) by mail.gmx.com (mrgmx001
+ [212.227.17.184]) with ESMTPSA (Nemesis) id 0MAhWl-1hbmAi3LrP-00BvRI; Fri, 12
+ Jul 2019 18:27:23 +0200
 Subject: Re: Asus C101P Chromeboot fails to boot with Linux 5.2
-To: Alex Dewar <alex.dewar@gmx.co.uk>
+To: Emil Renner Berthing <kernel@esmil.dk>
+References: <59042b09-7651-be1d-347f-0dc4aa02a91b@gmx.co.uk>
+ <CANBLGcyO5wAHgSVjYFB+hcp+SzaKY9d0QJm-hxqnSYbZ4Yv97g@mail.gmail.com>
+From: Alex Dewar <alex.dewar@gmx.co.uk>
+Message-ID: <862e98f3-8a89-a05e-1e85-e6f6004da32b@gmx.co.uk>
+Date: Fri, 12 Jul 2019 17:27:22 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
+MIME-Version: 1.0
+In-Reply-To: <CANBLGcyO5wAHgSVjYFB+hcp+SzaKY9d0QJm-hxqnSYbZ4Yv97g@mail.gmail.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:VKCQbKmJn1u/4Hr5rr8Okbv4QiPFlB4+uWWdIip/BmbgmpbvHQu
+ IXhflMR1Z138nShCwQEIKRXFIHzPb2fzwPMlv7CLPGwp3D24IM8ev/dE6BHV97MF2EHM6Nx
+ 4kA0oTryaMTtWPDuRJgC8MbGO5Lo74d2hyQdXRFwrlQpbUAPbtPimAYXeNDDyhu/gbxD9hq
+ KQ48goZm2o9MfgiRHbffQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:t0mzbLbiGS4=:9sL3a9qUnFKP57KYZ+ddiq
+ UbbiPOt9hGGz21cb7eGb0zVPAmlbbx++CGeHH4SRKMcdlwtF3Kqz6WVr9jkhFhfR3XRzIdd94
+ iImgCr0dumgILni2v474de/WHj8R+4XNDHWeCESt/vhb7DO+J87DMMaz9cBDogsWsWqw0/1A6
+ rRNMSUUEfWM8tJjYkW84WsSgMR0/zqzlCpEdwMBwmcDi1TQAY37QE/ucnvQkRF2Z4c6fQJKvP
+ NX+4qm9c5atEHFSgY/G0asX5ZLxb6q8s9ptB9iD8s/9vooiZ/F9K25guDJpZ59t5PhnpVHTfB
+ 1lKpvZS2/ghcXotFNuODn/KTl3d+TKBlP48ho23Mn3E0hhKCm0AWlU3Vq/zuxd5rFgakuG64Z
+ w9SfS4Czj/9SZYmaqa5Tv+NMa/kLhB4I5rPxXkSefA/aaUb8AnTSw41yees9AVyaE7Wwg7113
+ mlGfMMfO1CI0F0nFuc+xnbWlcZXGQ+q5ZqJj5DBMviCn+pq8HEIoxLH06W4M/xqVIjchISl+Y
+ PtxOZ7bCdt/4iKmiUoIhRMdoezAzs0wJSvy48Kt4VZ7TSiRURP3+sf96AOGrfXhS0Hkan7+Pd
+ NCq4GyKLYFMZY6IxW/rcEnLBQofEcevsj3BKlQXEtTwZ6GMeTkSRZFUAD0H2F8phgE7IKxoqz
+ i42aJy89zqR3+cvwYcr2oov/GbT0pXH9z/V/SFqjGwgob0gUDMZs62CGn9/Hegp3J/8c/Ji45
+ jlBtoCabalf4yQIvuzUL3+moTBARFtHuDTAVWcn9ER9Hq9Kpi3EidNM5p+dH718kLBBY6fHMg
+ IfFHM/dcW5RdPOCKlCntmExS+xyqeanWGmC7v5dm7uv9sneXrnZ556l4k1oIZSebVKkI7gwKK
+ cYqNHMmC3wb9kCnEOU1EzIFKvYKOQbgY3mbiSaDHG8kfb5BBMN2qFkr7GPfyvh3cC9TtSTemO
+ wAc5vG/VSThMRziZ07zo50gO0IlLgewOhcl7McWzsVr9UM9of9Vkb9RLh2YTxmUZvLJV8a/DZ
+ XWQMoBVRO7I4EXlrrhIT7nG17eAZbwJUquFJYyEBY0J/cCiDh5lGBEyIKmt+ao3b0lqtinWjy
+ eYvH0p38406BpkaBJg0eKdFpkrBqsMER4Lp
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_084454_319165_36DB4FC5 
-X-CRM114-Status: UNSURE (   7.28  )
+X-CRM114-CacheID: sfid-20190712_092732_177698_8895FA0D 
+X-CRM114-Status: UNSURE (   8.74  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.5 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.66 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (emil.renner.berthing[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [212.227.15.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,23 +99,28 @@ Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
  Heiko Stuebner <heiko@sntech.de>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Alex,
+Hi Emil,
 
-On Fri, 12 Jul 2019 at 17:02, Alex Dewar <alex.dewar@gmx.co.uk> wrote:
-> When I try to boot the screen just gets flooded with messages like this:
-> http://users.sussex.ac.uk/~ad374/boot_fail.jpg
+I've tried booting with: audit=0 console=tty0 console=ttyS2,115200n8
+earlyprintk=ttyS2,115200n8 init=/sbin/init root=PARTUUID=%U/PARTNROFF=1
+rootwait rw noinitrd
 
-Those seem to be only audit messages. You can try booting with audit=0
-on the kernel command line to get rid of those messages, so you have a
-better chance of catching the real issue. (Or conclude that audit is
-what is broken.)
+Now I don't get the audit messages, but no other message is displayed
+either. It just alternates between a flashing cursor and a multicoloured
+square in the middle of the screen. The system isn't totally
+unresponsive though. If I press the power button it still shuts down
+properly.
 
-/Emil
+I've just tested it again and confirmed that it does boot with the
+v5.1.11 kernel.
+
+Best,
+Alex
 
 _______________________________________________
 Linux-rockchip mailing list
