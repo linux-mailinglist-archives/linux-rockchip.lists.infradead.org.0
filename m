@@ -2,90 +2,61 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A225661D2
-	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jul 2019 00:36:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C123D666BF
+	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jul 2019 08:08:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ciQmlZJjfMPLjxI8XeNBmBqDdjR+Wwzs02BNNNilQ7A=; b=HkrW+46c1u438i
-	ov2Bpli0Hha7wF91srZkSuD/VScbYOhfcuvaK01+9e3c1ZiQwCHvdggRD7ia+K5pHrGPjds4oHaI7
-	bIvVrzDnuuekQLI/MI2zPhMhInzxbOvyYBb464572hcA7y5d454Im34IPS5Jl53dLuF8oFNxmQ3SH
-	WJ60GheC72wrQ69AqD1lL/l+J9ERCWnKfQbbxOzhawGqbCorVW2GfUNlGjXKIJHvD0wx3QWBZGt04
-	vm4ZCHzsWgfCa9ptokonpwj0ZbckH7bixFOaUE9TFPQkNvYhPm/YHTg62DEcr1PAc5OhQXwuRBDd1
-	myP/0KglruSjpWqF+qoQ==;
+	List-Owner; bh=3pU5ib+e7gmamlfdp4dgHoIMiuTPpOVXsvy1J3qIldU=; b=BONvFfvU0QhZ5n
+	ggGW32wtEv6dXT6ySLsDaK5t1PMXAqNe9TuuK58OyMjOcZpkaftOL52Im+rGhI0uHwb8vHh2jlNqO
+	m5iRzH5yYtRz0o85MFK4qayzpAh9T+FPJBOgMdMkeMQYy3/jTXW29s675jvHfoTYGrlTADSovzyAh
+	eSWOHcVAjdvBGS2Vzkwl0XZqt1XW5liEG24V3BRE2Vn5oucbXyOCbuLDW0f/gWCBGCvei2rxTr3Ps
+	nVjTftsMrKbrSewjJl3UsxUQrF0nUDUTFX8m/nRh5mavrw1ycBAT8bd9gwECKAgKoI5D9jtIVKmmC
+	/36ftzEylZbNDy/IfzKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlhfV-0003JJ-5Y; Thu, 11 Jul 2019 22:36:01 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hloj1-0006uT-Gb; Fri, 12 Jul 2019 06:08:07 +0000
+Received: from asavdk4.altibox.net ([109.247.116.15])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlhes-0002qU-6U
- for linux-rockchip@lists.infradead.org; Thu, 11 Jul 2019 22:35:24 +0000
-Received: by mail-pl1-x643.google.com with SMTP id k8so3769807plt.3
- for <linux-rockchip@lists.infradead.org>; Thu, 11 Jul 2019 15:35:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Dz0KnHgWpyKz8NfSR138KX/PtrwhvrlzsrqJp04ekYY=;
- b=lka+F9IslSN3mtvNCCSePgEMXyqpd/Ck10y50EErd3zK1yLIYMicqvXvZV+663GQZL
- TR/2+07Fy8SK4hLNzWAn6hhgBzRyFPFuyOVpXek/mVIx9QNlsy4akPcHjVJyGC2cM8oI
- mc06eXt5qv3rJO+RtwS9xWIrDWGmqIsrIwByQ=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Dz0KnHgWpyKz8NfSR138KX/PtrwhvrlzsrqJp04ekYY=;
- b=pZlntueP/Itx8md1dwCGpLys5z77hpHLV/AHTxfrko1dkMm8UuNRNl/RjrUCD+Bqas
- FJFoxFvZwPcrVqNCPQlXYjAjZJBBexnFWrBM1bblBxpRq3v8fd3UWhzdNSptzytj1+b3
- AcHWGR10ZvQ3gfjARAYLsRCvNCfvr0Ja0tC2SIiX+WZNEsISBC7Z8B1E4lDC1P2gwFDi
- enFhOkvGpwS7++xssreX1ek6dcfU3OifXY9AWX0YIxsn4Unvmy1IPsgXejQxhEcJpxnY
- qzZ3apQMXTVpXhp0Od1Afg+2+iBPixrT6FPnG4ISF7s0QZmVp93B2IDQYsU3oQ/tqSS6
- LiNg==
-X-Gm-Message-State: APjAAAXaJ5sGi32CrpW04S/QJrUXRTb9h4xDXRxwApJ78NEF2+CT+A5C
- zHFu+6cnvigSZnHlxhtmHTforA==
-X-Google-Smtp-Source: APXvYqywkD2qW/nNSCx42LT9JWEmpwfeT9s7L6iB8oof9B5AyJgOsF2cBXbEwe3JRA5ZnKZ4oKSYjA==
-X-Received: by 2002:a17:902:7781:: with SMTP id
- o1mr7320713pll.205.1562884521192; 
- Thu, 11 Jul 2019 15:35:21 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id i14sm12003623pfk.0.2019.07.11.15.35.20
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 11 Jul 2019 15:35:20 -0700 (PDT)
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 2/2] ARM: dts: rockchip: consolidate veyron panel and
- backlight settings
-Date: Thu, 11 Jul 2019 15:34:55 -0700
-Message-Id: <20190711223455.12210-2-mka@chromium.org>
-X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
-In-Reply-To: <20190711223455.12210-1-mka@chromium.org>
-References: <20190711223455.12210-1-mka@chromium.org>
+ id 1hloil-0006l2-8p
+ for linux-rockchip@lists.infradead.org; Fri, 12 Jul 2019 06:07:54 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk4.altibox.net (Postfix) with ESMTPS id C2829803AE;
+ Fri, 12 Jul 2019 08:07:43 +0200 (CEST)
+Date: Fri, 12 Jul 2019 08:07:37 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Douglas Anderson <dianders@chromium.org>
+Subject: Re: [PATCH v6 0/3] drm/panel: simple: Add mode support to devicetree
+Message-ID: <20190712060737.GA9569@ravnborg.org>
+References: <20190711203455.125667-1-dianders@chromium.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190711203455.125667-1-dianders@chromium.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=VcLZwmh9 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=e5mUnYsNAAAA:8
+ a=VwQbUJbxAAAA:8 a=pGLkceISAAAA:8 a=O475EGwODiYbJdBmdVwA:9
+ a=CjuIK1q_8ugA:10 a=PO69wPE_V6wA:10 a=Vxmtnl_E_bksehYqCbjh:22
+ a=AjGcO6oz07-iQ99wixmX:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_153522_246258_9C582D56 
-X-CRM114-Status: GOOD (  13.84  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20190711_230752_584972_A68AFA07 
+X-CRM114-Status: GOOD (  12.94  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [109.247.116.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,506 +69,54 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Matthias Kaehlcke <mka@chromium.org>,
- Douglas Anderson <dianders@chromium.org>, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org
+Cc: Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-rockchip@lists.infradead.org, Thierry Reding <thierry.reding@gmail.com>,
+ Sean Paul <seanpaul@chromium.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Rob Herring <robh+dt@kernel.org>, Ezequiel Garcia <ezequiel@collabora.com>,
+ mka@chromium.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-veyron jaq, jerry, minnie and speedy have mostly redundant regulator
-and pinctrl configurations for the panel/backlight. Consolidate these
-pieces in the eDP .dtsi.
+Hi Doug.
 
-Also change the default power supply for the panel to
-'panel_regulator', instead of overriding it in all the board files.
-pinky is the only device that uses 'vcc33_lcd' (the prior default),
-so overwrite it in this case. pinky doesn't have a complete display
-configuration, to keep things as they were delete the common nodes
-that didn't exist previously in pinky's board file.
+On Thu, Jul 11, 2019 at 01:34:52PM -0700, Douglas Anderson wrote:
+> I'm reviving Sean Paul's old patchset to get mode support in device
+> tree.  The cover letter for his v3 is at:
+> https://lists.freedesktop.org/archives/dri-devel/2018-February/165162.html
+> 
+> v6 of this patch is just a repost of the 3 DRM patches in v5 rebased
+> atop drm-misc.  A few notes:
+> - I've dropped the bindings patch.  Commit 821a1f7171ae ("dt-bindings:
+>   display: Convert common panel bindings to DT schema") has landed and
+>   Rob H said [1] that when that landed the bindings were implicitly
+>   supported.
+> - Since the bindings patch was dropped I am assuming that Heiko
+>   can just pick up the .dts patches from the v5 series.  I
+>   double-checked with him and he confirmed this is fine.  Thus I
+>   have left the device tree patches out of this version.
+> 
+> There were some coding style discussions on v5 of the path but it's
+> been agreed that we can land this series as-is and after it lands we
+> can address the minor style issues.
+> 
+> [1] https://lkml.kernel.org/r/CAL_JsqJGtUTpJL+SDEKi09aDT4yDzY4x9KwYmz08NaZcn=nHfA@mail.gmail.com
+> 
+> Changes in v6:
+> - Rebased to drm-misc next
+> - Added tags
+...
 
-Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
----
-Changes in v2:
-- rebased on v5.4-armsoc/dts32 (0d19541e3b45)
----
- arch/arm/boot/dts/rk3288-veyron-edp.dtsi   | 51 ++++++++++++++++++-
- arch/arm/boot/dts/rk3288-veyron-jaq.dts    | 55 --------------------
- arch/arm/boot/dts/rk3288-veyron-jerry.dts  | 58 ----------------------
- arch/arm/boot/dts/rk3288-veyron-minnie.dts | 51 -------------------
- arch/arm/boot/dts/rk3288-veyron-pinky.dts  | 17 +++++++
- arch/arm/boot/dts/rk3288-veyron-speedy.dts | 58 ----------------------
- 6 files changed, 67 insertions(+), 223 deletions(-)
+Thanks for your patience with this.
+Applied to drm-misc-next and pushed out.
 
-diff --git a/arch/arm/boot/dts/rk3288-veyron-edp.dtsi b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
-index 5d812e9e78aa..39f56d36a701 100644
---- a/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
-+++ b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
-@@ -6,6 +6,40 @@
-  */
- 
- / {
-+	backlight_regulator: backlight-regulator {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpio = <&gpio2 RK_PB4 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&bl_pwr_en>;
-+		regulator-name = "backlight_regulator";
-+		vin-supply = <&vcc33_sys>;
-+		startup-delay-us = <15000>;
-+	};
-+
-+	panel_regulator: panel-regulator {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpio = <&gpio7 RK_PB6 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&lcd_enable_h>;
-+		regulator-name = "panel_regulator";
-+		startup-delay-us = <100000>;
-+		vin-supply = <&vcc33_sys>;
-+	};
-+
-+	vcc18_lcd: vcc18-lcd {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpio = <&gpio2 RK_PB5 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&avdd_1v8_disp_en>;
-+		regulator-name = "vcc18_lcd";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		vin-supply = <&vcc18_wl>;
-+	};
-+
- 	backlight: backlight {
- 		compatible = "pwm-backlight";
- 		brightness-levels = <
-@@ -48,12 +82,13 @@
- 		pwms = <&pwm0 0 1000000 0>;
- 		post-pwm-on-delay-ms = <10>;
- 		pwm-off-delay-ms = <10>;
-+		power-supply = <&backlight_regulator>;
- 	};
- 
- 	panel: panel {
- 		compatible ="innolux,n116bge", "simple-panel";
- 		status = "okay";
--		power-supply = <&vcc33_lcd>;
-+		power-supply = <&panel_regulator>;
- 		backlight = <&backlight>;
- 
- 		panel-timing {
-@@ -105,10 +140,24 @@
- 
- &pinctrl {
- 	backlight {
-+		bl_pwr_en: bl_pwr_en {
-+			rockchip,pins = <2 RK_PB4 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+
- 		bl_en: bl-en {
- 			rockchip,pins = <7 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
- 	};
-+
-+	lcd {
-+		lcd_enable_h: lcd-en {
-+			rockchip,pins = <7 RK_PB6 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+
-+		avdd_1v8_disp_en: avdd-1v8-disp-en {
-+			rockchip,pins = <2 RK_PB5 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
- };
- 
- &pwm0 {
-diff --git a/arch/arm/boot/dts/rk3288-veyron-jaq.dts b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-index fcd119168cb6..80386203e85b 100644
---- a/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-@@ -16,40 +16,6 @@
- 		     "google,veyron-jaq-rev3", "google,veyron-jaq-rev2",
- 		     "google,veyron-jaq-rev1", "google,veyron-jaq",
- 		     "google,veyron", "rockchip,rk3288";
--
--	panel_regulator: panel-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio7 RK_PB6 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&lcd_enable_h>;
--		regulator-name = "panel_regulator";
--		startup-delay-us = <100000>;
--		vin-supply = <&vcc33_sys>;
--	};
--
--	vcc18_lcd: vcc18-lcd {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB5 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&avdd_1v8_disp_en>;
--		regulator-name = "vcc18_lcd";
--		regulator-always-on;
--		regulator-boot-on;
--		vin-supply = <&vcc18_wl>;
--	};
--
--	backlight_regulator: backlight-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB4 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&bl_pwr_en>;
--		regulator-name = "backlight_regulator";
--		vin-supply = <&vcc33_sys>;
--		startup-delay-us = <15000>;
--	};
- };
- 
- &backlight {
-@@ -87,11 +53,6 @@
- 		232 233 234 235 236 237 238 239
- 		240 241 242 243 244 245 246 247
- 		248 249 250 251 252 253 254 255>;
--	power-supply = <&backlight_regulator>;
--};
--
--&panel {
--	power-supply = <&panel_regulator>;
- };
- 
- &rk808 {
-@@ -343,12 +304,6 @@
- };
- 
- &pinctrl {
--	backlight {
--		bl_pwr_en: bl_pwr_en {
--			rockchip,pins = <2 RK_PB4 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	buck-5v {
- 		drv_5v: drv-5v {
- 			rockchip,pins = <7 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
-@@ -361,16 +316,6 @@
- 		};
- 	};
- 
--	lcd {
--		lcd_enable_h: lcd-en {
--			rockchip,pins = <7 RK_PB6 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--
--		avdd_1v8_disp_en: avdd-1v8-disp-en {
--			rockchip,pins = <2 RK_PB5 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	pmic {
- 		dvs_1: dvs-1 {
- 			rockchip,pins = <7 RK_PB4 RK_FUNC_GPIO &pcfg_pull_down>;
-diff --git a/arch/arm/boot/dts/rk3288-veyron-jerry.dts b/arch/arm/boot/dts/rk3288-veyron-jerry.dts
-index 164561f04c1d..a8f55aec09ee 100644
---- a/arch/arm/boot/dts/rk3288-veyron-jerry.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-jerry.dts
-@@ -18,48 +18,6 @@
- 		     "google,veyron-jerry-rev5", "google,veyron-jerry-rev4",
- 		     "google,veyron-jerry-rev3", "google,veyron-jerry",
- 		     "google,veyron", "rockchip,rk3288";
--
--	panel_regulator: panel-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio7 RK_PB6 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&lcd_enable_h>;
--		regulator-name = "panel_regulator";
--		startup-delay-us = <100000>;
--		vin-supply = <&vcc33_sys>;
--	};
--
--	vcc18_lcd: vcc18-lcd {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB5 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&avdd_1v8_disp_en>;
--		regulator-name = "vcc18_lcd";
--		regulator-always-on;
--		regulator-boot-on;
--		vin-supply = <&vcc18_wl>;
--	};
--
--	backlight_regulator: backlight-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB4 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&bl_pwr_en>;
--		regulator-name = "backlight_regulator";
--		vin-supply = <&vcc33_sys>;
--		startup-delay-us = <15000>;
--	};
--};
--
--&backlight {
--	power-supply = <&backlight_regulator>;
--};
--
--&panel {
--	power-supply= <&panel_regulator>;
- };
- 
- &rk808 {
-@@ -311,12 +269,6 @@
- };
- 
- &pinctrl {
--	backlight {
--		bl_pwr_en: bl_pwr_en {
--			rockchip,pins = <2 RK_PB4 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	buck-5v {
- 		drv_5v: drv-5v {
- 			rockchip,pins = <7 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
-@@ -329,16 +281,6 @@
- 		};
- 	};
- 
--	lcd {
--		lcd_enable_h: lcd-en {
--			rockchip,pins = <7 RK_PB6 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--
--		avdd_1v8_disp_en: avdd-1v8-disp-en {
--			rockchip,pins = <2 RK_PB5 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	pmic {
- 		dvs_1: dvs-1 {
- 			rockchip,pins = <7 RK_PB4 RK_FUNC_GPIO &pcfg_pull_down>;
-diff --git a/arch/arm/boot/dts/rk3288-veyron-minnie.dts b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-index 4cc7d3659484..2b0801a539c9 100644
---- a/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-@@ -15,40 +15,6 @@
- 		     "google,veyron-minnie-rev0", "google,veyron-minnie",
- 		     "google,veyron", "rockchip,rk3288";
- 
--	backlight_regulator: backlight-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB4 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&bl_pwr_en>;
--		regulator-name = "backlight_regulator";
--		vin-supply = <&vcc33_sys>;
--		startup-delay-us = <15000>;
--	};
--
--	panel_regulator: panel-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio7 RK_PB6 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&lcd_enable_h>;
--		regulator-name = "panel_regulator";
--		startup-delay-us = <100000>;
--		vin-supply = <&vcc33_sys>;
--	};
--
--	vcc18_lcd: vcc18-lcd {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB5 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&avdd_1v8_disp_en>;
--		regulator-name = "vcc18_lcd";
--		regulator-always-on;
--		regulator-boot-on;
--		vin-supply = <&vcc18_wl>;
--	};
--
- 	volume_buttons: volume-buttons {
- 		compatible = "gpio-keys";
- 		pinctrl-names = "default";
-@@ -137,7 +103,6 @@
- 
- &panel {
- 	compatible = "auo,b101ean01", "simple-panel";
--	power-supply= <&panel_regulator>;
- 
- 	/delete-node/ panel-timing;
- 
-@@ -411,12 +376,6 @@
- };
- 
- &pinctrl {
--	backlight {
--		bl_pwr_en: bl_pwr_en {
--			rockchip,pins = <2 RK_PB4 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	buck-5v {
- 		drv_5v: drv-5v {
- 			rockchip,pins = <7 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
-@@ -439,16 +398,6 @@
- 		};
- 	};
- 
--	lcd {
--		lcd_enable_h: lcd-en {
--			rockchip,pins = <7 RK_PB6 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--
--		avdd_1v8_disp_en: avdd-1v8-disp-en {
--			rockchip,pins = <2 RK_PB5 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	pmic {
- 		dvs_1: dvs-1 {
- 			rockchip,pins = <7 RK_PB4 RK_FUNC_GPIO &pcfg_pull_down>;
-diff --git a/arch/arm/boot/dts/rk3288-veyron-pinky.dts b/arch/arm/boot/dts/rk3288-veyron-pinky.dts
-index 9b6f4d9b03b6..06af58e37a4b 100644
---- a/arch/arm/boot/dts/rk3288-veyron-pinky.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-pinky.dts
-@@ -14,7 +14,14 @@
- 	compatible = "google,veyron-pinky-rev2", "google,veyron-pinky",
- 		     "google,veyron", "rockchip,rk3288";
- 
-+	/delete-node/backlight-regulator;
-+	/delete-node/panel-regulator;
- 	/delete-node/emmc-pwrseq;
-+	/delete-node/vcc18-lcd;
-+};
-+
-+&backlight {
-+	/delete-property/power-supply;
- };
- 
- &emmc {
-@@ -52,7 +59,17 @@
- 	i2c-scl-rising-time-ns = <300>;
- };
- 
-+&panel {
-+	power-supply= <&vcc33_lcd>;
-+};
-+
- &pinctrl {
-+	/delete-node/ lcd;
-+
-+	backlight {
-+		/delete-node/ bl_pwr_en;
-+	};
-+
- 	buttons {
- 		pwr_key_h: pwr-key-h {
- 			rockchip,pins = <0 RK_PA5 RK_FUNC_GPIO &pcfg_pull_none>;
-diff --git a/arch/arm/boot/dts/rk3288-veyron-speedy.dts b/arch/arm/boot/dts/rk3288-veyron-speedy.dts
-index 9b140db04456..2f2989bc3f9c 100644
---- a/arch/arm/boot/dts/rk3288-veyron-speedy.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-speedy.dts
-@@ -16,44 +16,6 @@
- 		     "google,veyron-speedy-rev5", "google,veyron-speedy-rev4",
- 		     "google,veyron-speedy-rev3", "google,veyron-speedy-rev2",
- 		     "google,veyron-speedy", "google,veyron", "rockchip,rk3288";
--
--	panel_regulator: panel-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio7 RK_PB6 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&lcd_enable_h>;
--		regulator-name = "panel_regulator";
--		startup-delay-us = <100000>;
--		vin-supply = <&vcc33_sys>;
--	};
--
--	vcc18_lcd: vcc18-lcd {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB5 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&avdd_1v8_disp_en>;
--		regulator-name = "vcc18_lcd";
--		regulator-always-on;
--		regulator-boot-on;
--		vin-supply = <&vcc18_wl>;
--	};
--
--	backlight_regulator: backlight-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB4 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&bl_pwr_en>;
--		regulator-name = "backlight_regulator";
--		vin-supply = <&vcc33_sys>;
--		startup-delay-us = <15000>;
--	};
--};
--
--&backlight {
--	power-supply = <&backlight_regulator>;
- };
- 
- &cpu_alert0 {
-@@ -83,10 +45,6 @@
- 	temperature = <90000>;
- };
- 
--&panel {
--	power-supply= <&panel_regulator>;
--};
--
- &rk808 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pmic_int_l>;
-@@ -321,12 +279,6 @@
- };
- 
- &pinctrl {
--	backlight {
--		bl_pwr_en: bl_pwr_en {
--			rockchip,pins = <2 RK_PB4 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	buck-5v {
- 		drv_5v: drv-5v {
- 			rockchip,pins = <7 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
-@@ -339,16 +291,6 @@
- 		};
- 	};
- 
--	lcd {
--		lcd_enable_h: lcd-en {
--			rockchip,pins = <7 RK_PB6 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--
--		avdd_1v8_disp_en: avdd-1v8-disp-en {
--			rockchip,pins = <2 RK_PB5 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	pmic {
- 		dvs_1: dvs-1 {
- 			rockchip,pins = <7 RK_PB4 RK_FUNC_GPIO &pcfg_pull_down>;
--- 
-2.22.0.410.gd8fdbe21b5-goog
-
+	Sam
 
 _______________________________________________
 Linux-rockchip mailing list
