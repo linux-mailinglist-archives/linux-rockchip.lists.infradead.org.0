@@ -2,83 +2,59 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02B5067371
-	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jul 2019 18:37:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B0CC67508
+	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jul 2019 20:13:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1E2Umehp+NAxzBul+I6+frAe+uZPiUp22zJ0vovSfJA=; b=dLqJPT3aase5gF
-	/vzIceF1HLeSVT5KNjeXbZEb08hTyvvOFS5Fj7gM7v+WlP8WA7IrF2Lv1QM0n9ilpXUuOdYUFYCCm
-	eTlglUeZz26pmMOVomSiGPrt8ghozr/A0Ozkd3qUIVqk68SPrkXWvS40JSK1No2VfC1pqVIP1AxZ4
-	slOMCALThS9IZ5EaWYsXc5cgT4u530gOcaTiGpZP3E5qkmqK/ZeYdsAN4dZWNcAlIDAoHYqAoe2bR
-	FRnSqBJfaPxJBy80PR6a1auUM/p1qBKCZQ1ZYIbU29HfO2HyaghiFoplirlzK0Cy/3oPqYn0nMZsT
-	pNRuW3ZvQskbSyv4a9zw==;
+	List-Owner; bh=2AeMsdxdT2TL+L873nRLX3sBdN3vH82zp5HiMKKS85U=; b=Ia9g/2cc3GKu2y
+	PMycrAaoquGCI8G0htvkCnhvHObrkagNumKUGUEaHGTlQefKCyDL1ohD8rnoCcMmD0Wzk80Sr1NaX
+	gT3xKsbTi27CY4BoMTlYMg07SCIedJRnaySrRFGcwCOIyiQwr9Thy04JXEFjgBYzX9wHg9ZXgm0QA
+	UYbcBRu175XOHktyFL/w384suQJ5p+NIaJdivwAPW4VJRc8KpeJsmHzunZzL0MavzxmsAiQkEqy9h
+	C7WfZovIKcSMLiuim5fTUtzBwRGhindEEcw52fVUXMjuK/JpTEMfu8zPiT7bT0lfjV4qo5xXQhcgH
+	ONAxaikHerba0j34YyNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlyYT-000656-HY; Fri, 12 Jul 2019 16:37:53 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1hm032-0007GU-E9; Fri, 12 Jul 2019 18:13:32 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlyYP-00064N-KS
- for linux-rockchip@lists.infradead.org; Fri, 12 Jul 2019 16:37:51 +0000
-Received: by mail-io1-xd41.google.com with SMTP id i10so21578951iol.13
- for <linux-rockchip@lists.infradead.org>; Fri, 12 Jul 2019 09:37:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1uamx4VkpAz7OTzGeRs+kr2OaHae670D3WH4tTrkzLk=;
- b=Ung3RKmkytToVTSIaF1K1EPHzaSzlQCF3R2XbQcAJRyz7bl1mtx5b1PJhTJ9UiIz+u
- nuYp5Vid428d8OLD/ZRfdS8NudBt+rNJ6fSN+7yt3pimr+f/ITICt1z3eTLFIAnaH+jm
- f7weMJmRsYu3sNIeBe88h9k5/qQOslWZNh+IU=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1uamx4VkpAz7OTzGeRs+kr2OaHae670D3WH4tTrkzLk=;
- b=SKeXSnAD0K6XSvD3s/xXdR1lceY1jd5a4B79v0DuEqKn+/6tjX8Lt5EQGrfSY1apKa
- uy41L1UgGwc4SpBywZ5HNcT5vhzOkHVaFLkyYQjHc7cuWg18f2OgrQGK3l6NbHm+1QxH
- e12vDKHr08GVTOSaLsQq2w0h2a1AXNqw3BPvusJRwPoehGPfngCF9jiAXup8nLtKIgHM
- YfzHkOqc1plBx/P0RLGJqYmEWrODWkZqi6fQi7uy+iYx2tmwY7mrDpQCl9UG0AplceTH
- gmvqDyuofDd7GQusYsAEoNHvQ9kw8zljtS1/H5zNSAhDiKzKxQ+HJ8UhP+IO+YyRwP18
- DK+Q==
-X-Gm-Message-State: APjAAAXcdtd36dk7xWHIwCgR6Wn+rzLbmlibjCqkfC1/3aFi/wCBdD1Y
- AKYcUs9gYJJOuAX01l0a2PYnVqhe5dE=
-X-Google-Smtp-Source: APXvYqxXt/kgdIhLaeu+r2IHUMIXd3dhZVf7Q/3Bi1vF27wdhpRf+car/2ytASgUikRW8aFPwFcpbg==
-X-Received: by 2002:a6b:b3c1:: with SMTP id
- c184mr10361234iof.222.1562949468279; 
- Fri, 12 Jul 2019 09:37:48 -0700 (PDT)
-Received: from mail-io1-f48.google.com (mail-io1-f48.google.com.
- [209.85.166.48])
- by smtp.gmail.com with ESMTPSA id n26sm6496568ioc.74.2019.07.12.09.37.46
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Fri, 12 Jul 2019 09:37:46 -0700 (PDT)
-Received: by mail-io1-f48.google.com with SMTP id h6so21630251iom.7
- for <linux-rockchip@lists.infradead.org>; Fri, 12 Jul 2019 09:37:46 -0700 (PDT)
-X-Received: by 2002:a5d:96d8:: with SMTP id r24mr11787238iol.269.1562949466057; 
- Fri, 12 Jul 2019 09:37:46 -0700 (PDT)
+ id 1hm02z-0007G8-Mw
+ for linux-rockchip@lists.infradead.org; Fri, 12 Jul 2019 18:13:30 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 46C4B205C9;
+ Fri, 12 Jul 2019 18:13:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1562955208;
+ bh=vy70ZCADAa8XqPLpwqzkVYFPc3I5xkZ7yX6y1hoW1hA=;
+ h=In-Reply-To:References:From:To:Cc:Subject:Date:From;
+ b=KSXgTFqlAJKChFysyzaafI5QOcT08gAcILu0tSKNujV+7YbVr3ODXyu+JA6GF8MsF
+ G7G+51uiIScsM6u42mHMjo5iap2eV0b0VeTy/bYcB3NR9Sf8KBmki2G6Gnmes8YkC5
+ 9QK6YhVUR3CXeO9Wkvy8uzm1hJx3/xFKbuiphFIA=
 MIME-Version: 1.0
-References: <20190711203455.125667-1-dianders@chromium.org>
- <20190712060737.GA9569@ravnborg.org>
-In-Reply-To: <20190712060737.GA9569@ravnborg.org>
-From: Doug Anderson <dianders@chromium.org>
-Date: Fri, 12 Jul 2019 09:37:33 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=WG7SbdFu+-Kpr9JDQpNhQW+nA6tbfT2inwgTYF0mgdpQ@mail.gmail.com>
-Message-ID: <CAD=FV=WG7SbdFu+-Kpr9JDQpNhQW+nA6tbfT2inwgTYF0mgdpQ@mail.gmail.com>
-Subject: Re: [PATCH v6 0/3] drm/panel: simple: Add mode support to devicetree
-To: Sam Ravnborg <sam@ravnborg.org>
+In-Reply-To: <3855405.N158XnxgeL@phil>
+References: <3855405.N158XnxgeL@phil>
+From: Stephen Boyd <sboyd@kernel.org>
+To: Heiko Stuebner <heiko@sntech.de>, mturquette@baylibre.com
+Subject: Re: [GIT PULL] Rockchip clock updates for 5.3
+User-Agent: alot/0.8.1
+Date: Fri, 12 Jul 2019 11:13:27 -0700
+Message-Id: <20190712181328.46C4B205C9@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_093749_670297_A172D0D1 
-X-CRM114-Status: GOOD (  15.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190712_111329_772926_D3A119E0 
+X-CRM114-Status: UNSURE (   4.87  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -101,65 +77,22 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
- LKML <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Thierry Reding <thierry.reding@gmail.com>, Sean Paul <seanpaul@chromium.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Rob Herring <robh+dt@kernel.org>, Ezequiel Garcia <ezequiel@collabora.com>,
- Matthias Kaehlcke <mka@chromium.org>
+Cc: linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+Quoting Heiko Stuebner (2019-07-01 02:36:17)
+> Hi Mike, Stephen,
+> 
+> please find below rockchip clock changes for 5.3
+> 
+> Please pull
+> 
+> Thanks
 
-On Thu, Jul 11, 2019 at 11:07 PM Sam Ravnborg <sam@ravnborg.org> wrote:
->
-> Hi Doug.
->
-> On Thu, Jul 11, 2019 at 01:34:52PM -0700, Douglas Anderson wrote:
-> > I'm reviving Sean Paul's old patchset to get mode support in device
-> > tree.  The cover letter for his v3 is at:
-> > https://lists.freedesktop.org/archives/dri-devel/2018-February/165162.html
-> >
-> > v6 of this patch is just a repost of the 3 DRM patches in v5 rebased
-> > atop drm-misc.  A few notes:
-> > - I've dropped the bindings patch.  Commit 821a1f7171ae ("dt-bindings:
-> >   display: Convert common panel bindings to DT schema") has landed and
-> >   Rob H said [1] that when that landed the bindings were implicitly
-> >   supported.
-> > - Since the bindings patch was dropped I am assuming that Heiko
-> >   can just pick up the .dts patches from the v5 series.  I
-> >   double-checked with him and he confirmed this is fine.  Thus I
-> >   have left the device tree patches out of this version.
-> >
-> > There were some coding style discussions on v5 of the path but it's
-> > been agreed that we can land this series as-is and after it lands we
-> > can address the minor style issues.
-> >
-> > [1] https://lkml.kernel.org/r/CAL_JsqJGtUTpJL+SDEKi09aDT4yDzY4x9KwYmz08NaZcn=nHfA@mail.gmail.com
-> >
-> > Changes in v6:
-> > - Rebased to drm-misc next
-> > - Added tags
-> ...
->
-> Thanks for your patience with this.
-> Applied to drm-misc-next and pushed out.
-
-As promised, posted the follow-up patch addressing the style concerns
-/ suggestions.  I didn't CC every last person here, but it's on LKML
-and I'm happy for anyone to review it that is interested:
-
-https://lkml.kernel.org/r/20190712163333.231884-1-dianders@chromium.org
-
--Doug
+Ok. Pulled into clk-next for 5.3.
 
 _______________________________________________
 Linux-rockchip mailing list
