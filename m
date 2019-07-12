@@ -2,85 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74CC2671E7
-	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jul 2019 17:02:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F833672AD
+	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jul 2019 17:45:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=mhDPgjrohdR/mdzQjxU78bCyej9zZG/InpL/zkqEtUY=; b=JrI+RJ6OXAk1KfR9YM+MUM1yxf
-	QrlaH9eWKaNCbu3P3G08WiEsKdTVZfbl0sLA/fF0UYwOmUTm8jr3vn+aWCylbEoWRhsKpleGGfZu/
-	zi2jISzBipQSUs0GBfJsOKTZ0EybugBiqPjbKT3YK4ofTW5fOfzMlgY0rOnVNJ5gYd8sYWCEsucxj
-	OLwWcXNM4mDVO9Q17iaKMIyuFyfcH7SO9ggP4JWD3Q50DW1/32ArgKR0BRE5XzEWJWgYg9drc0f1S
-	kEgKHd5hi2QrkuU/XCV81FazP/+36rzwUsTm8shA1aOBl+RSrs0ApzPhZK4Pah3FyhSRLfVMcsCUJ
-	oZRNB7+g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7BMj7qy/2FdFnY1um7F4QiDMdfKiMicJCjq2WnFLcno=; b=LBLYe4ecNRpfHZ
+	ditON5+Qtb9i62e4QEyj4X/jJulZKv8scjR8K+5Tu06FWsk56s25zkEJT8qYXwWhw8xu610ByG0Ep
+	AdSF4VDQFhQuxN2UitCZ/yuEO2x8ZnjUc5XylHtIgp41iAgBcmNW8d/VtRGP4ltIAypffQeUl8WkL
+	UpUHjcLE4IvVx3NSI++A7fy76k4o1AwwvACgsm0AJjyDVfR2om+8UVgbKfCWBM2a9B8/jnu5zr0PK
+	KI4jrJaE2o2jOOQUX2dcmwFO4jBPk/dSL3dogb4HXwmH1FEAh/1Z15UPecYtSHwHnvKTfWyZuNLGc
+	hXwg54L2KiLVsToEcVAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlx3Z-0002ow-LC; Fri, 12 Jul 2019 15:01:53 +0000
-Received: from mout.gmx.net ([212.227.17.22])
+	id 1hlxjX-0003aO-Tq; Fri, 12 Jul 2019 15:45:15 +0000
+Received: from mail-io1-f66.google.com ([209.85.166.66])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlx2C-0002VN-94; Fri, 12 Jul 2019 15:00:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1562943623;
- bh=E5cL1bdBi7a0hqmLo72Y0yY6avSwPZxLDmGyrFDF+rM=;
- h=X-UI-Sender-Class:To:Cc:From:Subject:Date;
- b=kcHASYf0slvMpNRcoLpgK8wnPGebUWVk81a0ULw8oRfRI83YS3AC0gCJcwEZfPvEh
- d69WCd8gyiASZNoEewlcq1JAZ7dnHS0R/Aj97/TQnNxAsa+b2jFzCDuDgmTa9jfhxx
- mAJhgyH/7Q0zhUmo1UsT02tvo8yAXKV+u2TZsN1I=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.0.18] ([82.19.195.159]) by mail.gmx.com (mrgmx102
- [212.227.17.174]) with ESMTPSA (Nemesis) id 0MfSrf-1i6fmf3S4B-00P8el; Fri, 12
- Jul 2019 17:00:23 +0200
-To: Heiko Stuebner <heiko@sntech.de>, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-From: Alex Dewar <alex.dewar@gmx.co.uk>
-Subject: Asus C101P Chromeboot fails to boot with Linux 5.2
-Message-ID: <59042b09-7651-be1d-347f-0dc4aa02a91b@gmx.co.uk>
-Date: Fri, 12 Jul 2019 16:00:21 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1hlxjC-000290-9B; Fri, 12 Jul 2019 15:44:55 +0000
+Received: by mail-io1-f66.google.com with SMTP id g20so21222813ioc.12;
+ Fri, 12 Jul 2019 08:44:53 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Flz2lLRzUd8jYEWKtYpt6MQ7g5ki02yJxXMItOlTOZg=;
+ b=We2rkLzx/ASt73n98R57oE/KK+m1QlgqKnjBHXLE5pWOjQ+6JNQlG4DKnpsaVAQa8m
+ 9AJO8HBPe6MYvx1D7tHKta9GNTGody33mGk1W2TWh0iTiphcW1JzJQrEOArZwEH1kmfp
+ 7gInPAgGR1MRuFIyJKP2e0lJz9b8Na3AWnBW0vIUyPiEnndFBykHRjbHh5I0RGgU6x47
+ 2EvXdTIq+YQGNl9v1FAl+3mwIrT+KZkK+/FN7CaQXLiRbe2z56ldqnypFLzBty/aoKks
+ AE4qFEPoQWmDR31bal5pV+HpBUult2vqKExhrVCFk2n5747CTBKeRca6TQiKCUi0+uZF
+ rzqg==
+X-Gm-Message-State: APjAAAWvbg/ayOWoOCSnrobn4WJTXdC8GmVDdfOH+eam+8LIFubrXKM7
+ dXfx33PqcG9y5sxnDLvRUIOAXctqmBvbgCz20vs83EBi
+X-Google-Smtp-Source: APXvYqxN8RQNuZM9vdEm/CAl+zuh4AN5lTPTDyHWochsrNu0wOHqh5l7I2dOMKuVQTeQcmrFPVSCkwj2CtRyhmmnvW8=
+X-Received: by 2002:a6b:e60b:: with SMTP id g11mr11691332ioh.9.1562946293139; 
+ Fri, 12 Jul 2019 08:44:53 -0700 (PDT)
 MIME-Version: 1.0
-Content-Language: en-US
-X-Provags-ID: V03:K1:0Ig0jVjRxe82w57gZlwVZDbQhcIXSbWNt1DJ4hbetT0Cc1lQvdN
- b8ALJ7W2IYaz46I3cf/12PmcWQ/7SGlAa0ShLyqFhBW67ahXPawI+LQZEhtnfU3cEhmlnOu
- opUytUCQnokiowehD30do+knYTo1+CobXIv9Y+N4tip4oLVxTWdelYH+LaOLPLgWwMRXq5w
- 8WvaCt9acPAHJv7e5Br3Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:iK463nS1Ddc=:SRGGTrQxn61hEBHrYiQOSa
- gKJtlJ0rvZ8QJtcIhOx2M62tukG3amv1jueXOZgdWX2vjNFT/f9s7nzZM4tXQ//Z24tMyRB1Q
- ADJuBxmIcSYB3rDQWLhk4z9DxOczCRwTQ4aJ2rZeP3cLxDbWrX3/VLYvNuJzIAwAtKvk4jAnc
- mjTI/tU12DFMC5cKPt/D/K6G+YkXBIkhCaYygZrphMoculRbnmQHwmlRGdtbzzy75YbAtT2jh
- pQIiRhIqFCBoMpKk76fGPfPzXp2GdIrMREuXDjX5K0bIdV/p833+lkUAz0fPv25Htxzc36k4+
- uElhJS0qIePhKAKgzSl9yeWzh268dcKLfAFbJ6rGuhQ7OBmHsIuThKXqhzSrVIqHdcwErrR93
- Ypkgcw0LzpGZSNN1lTI7BL8bdMiDWABtQblbt7n05c9NhV8cHMHW38eZXISDIgoukm0LFT/MM
- uwf43X1nx2YEY7mqwfuD9ZjTHQYFEn3vO6vDZV3c1t4g/BsO3kQXrcIUJn+xs0BPGLYodcGdf
- sXdxQg/KpzEkjGSGKeGg87O+QARGB53+JPjqI/TL/eBDxOa3xBklefJoSYCo5kMCoGwLOcvr1
- QHQCDty/elvvQ45z0cQLF1D8sTEXYTKX/gDFIpwxzBLJ9jBfR3d52msEV8f1b+7C33ncLuuow
- 7iBFCMkx/l84ZC1gWaPauKqE6t21ymeS+mE0pwIx36O42EEdlHmObJcTD7c0LyzCdr123jr3/
- O0kYtq9y2PnFBpO5iBYqhACuaKQ5eYhKeucSwbpXyev8pjdGllgJMWEhrA5ZOhDb8rRSPdCiv
- jOHcypjgYZ2wCjErC9c0oZp+OBxtjNfobZvsbrzMjet0fJtq18OPlzN9prqRD8pQw74o/IaGb
- Ut0pKBT4IzAKk1zW0qraIGM08jWlh8wChB0ccPHmi30s2DAmcgDsCKxR4WR7L+xVPnfGFOaxa
- DANqN69dgeeStiFdk1jwZ/Cqepf9dYDYPQdLs6GuCELiAoDNj6ds64CNhcgTyfVgYp4bA1v1N
- M0gx2sapfEMvBRz9fNE3hdL3iIm3G0A8Da+htGH9IlW73ilkH2fy27OgS2En5RiZHeIimr3wu
- 8ADicS0W2tHQ3KOQKvTgD/hoDe814ZSxiGg
+References: <59042b09-7651-be1d-347f-0dc4aa02a91b@gmx.co.uk>
+In-Reply-To: <59042b09-7651-be1d-347f-0dc4aa02a91b@gmx.co.uk>
+From: Emil Renner Berthing <kernel@esmil.dk>
+Date: Fri, 12 Jul 2019 17:44:40 +0200
+Message-ID: <CANBLGcyO5wAHgSVjYFB+hcp+SzaKY9d0QJm-hxqnSYbZ4Yv97g@mail.gmail.com>
+Subject: Re: Asus C101P Chromeboot fails to boot with Linux 5.2
+To: Alex Dewar <alex.dewar@gmx.co.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_080028_858850_ABDE8658 
-X-CRM114-Status: UNSURE (   7.98  )
+X-CRM114-CacheID: sfid-20190712_084454_319165_36DB4FC5 
+X-CRM114-Status: UNSURE (   7.28  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.66 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (emil.renner.berthing[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.22 listed in list.dnswl.org]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,27 +79,27 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org
+Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Heiko Stuebner <heiko@sntech.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi all,
+Hi Alex,
 
-Since upgrading to the 5.2 kernel, my Chromebook is failing to boot. The
-Asus C101P is based on the RK3399 SoC and uses the rk3399-gru-bob device
-tree. It used to boot with the 5.1 kernel and mostly worked, with the
-exception of broken suspend and resume.
+On Fri, 12 Jul 2019 at 17:02, Alex Dewar <alex.dewar@gmx.co.uk> wrote:
+> When I try to boot the screen just gets flooded with messages like this:
+> http://users.sussex.ac.uk/~ad374/boot_fail.jpg
 
-When I try to boot the screen just gets flooded with messages like this:
-http://users.sussex.ac.uk/~ad374/boot_fail.jpg
+Those seem to be only audit messages. You can try booting with audit=0
+on the kernel command line to get rid of those messages, so you have a
+better chance of catching the real issue. (Or conclude that audit is
+what is broken.)
 
-I'm using Arch Linux ARM's linux-aarch64 package, source here:
-https://archlinuxarm.org/packages/aarch64/linux-aarch64/files/PKGBUILD
-
-Best,
-Alex
+/Emil
 
 _______________________________________________
 Linux-rockchip mailing list
