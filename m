@@ -2,63 +2,63 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DC8166B14
-	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jul 2019 12:48:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5EF9666B2D
+	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jul 2019 12:58:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yvD4MHpWePrKWPKg2Mn7bE09FbCkNymoe5Bn1iL0qDU=; b=GG7D+QwvzcJKL6
-	/jK4DMS86u143aK3OScqlLqEP0Nsl4XPnQw3iOYAaQ/H1rjB4LuNCZsTk6mW8Mukccl4aXQ0DV/SR
-	BGYEGoU+NSE/DImwUrwDFdGZpQ8xf8pSzsMm4eKc4aI7E6RE5AnU41s75rsgbXS8X5iTh6ZMf/KWv
-	aihV+AJax6PgdH3h3KbdYNY66KZ6jCkEVG7dZtixqRn2jlg5z6u3nty4nDZk/4cPpUC6hNwhqx6rf
-	8CfAeBwMU24nB027c3V1FzAswoCMqaDexTnone2jbyCUKNJU2sBgY7ivyIHIgOBcNzzakWsCBig2x
-	Xa8DzCSKjOhn65Oa+eMA==;
+	List-Owner; bh=7JQOP5xjW9Xen7vwM+Oq3odaDTwKODYNheD9qrne1qI=; b=XZGypycAfRupNw
+	3VGT3hKvjKNwDbqtliVbEFMZ/0ymiZvh9F8UPRzZQ5ziz4pmLc9GWXPjvBLFvXl8CaMwGrM/cVLbK
+	cb/cYVkkEitQvp/Ug+SLQun7kELtYg+ZPzhAUGTDcq/9w4Qyk8M6fjKGxNdfWQdDe4Oc5dJg6f5yJ
+	0IYlxrptRWx12a6EifnJphkh3lWDGrYwXcXzZ0NBKDlUetEpGut7X3dcTA7nU3u+XDWxp2vBjjTrO
+	v1jAzbnO/3Yc7Fyfj+tpI3ewmcUvAiHPeklWY8MylMg5DFj2W2fl+71an56GxEf6oGg42EuyoSDrE
+	gwWrwj4rYgg7zkTteXBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlt6A-00023I-Rd; Fri, 12 Jul 2019 10:48:18 +0000
+	id 1hltFa-0006WV-Nn; Fri, 12 Jul 2019 10:58:02 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlt67-00021y-Kn; Fri, 12 Jul 2019 10:48:17 +0000
+ id 1hltFY-0006VN-9X; Fri, 12 Jul 2019 10:58:02 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Lzot1skSOlOTbBm7xK1JQoexdHkMmrM79kAyAnNcQlQ=; b=J8rE92gEEPn2uOL+Y361gE38j
- XzQeuEPCUGPwfHPnj7BdO/2csE6YOKoiSxLzgOk94VzCZoInY4/pEYAjH1oPKqbTbH1hvjc8WXLNw
- uRdQtTyheg4+8TzRu2Q4j31X33BH6Evsa3YIcuT3EuoKIJEO/b4l972IxqBLEr2onteG/9/qrROZ8
- qaVCHpNbjvCmUxbaTVJhMaimRNgY2MXVGnoE/XmA0fIZnZmVPezfivjgQTDwV4/4C5AoEM7nSx58q
- 1nYZ1wJJhUIvfvCOzFPRn1P3HdAVP3jVCMq1T4XAkRUftAQjqaNXCv1WKJoEn6amGrWKK5hrHqSVD
- BVfnA58sw==;
+ bh=u9dynlJ3OM9MALiJSBcSG7FKkftfyq54pHYRnzPQTFA=; b=Eyr0dtWhsmlK2Q6BhgmXpUOL/
+ qymgs31El0emqh8IFE4WI3vF53WCcBAaX6vLcGPJDEh30I33KI7G6wSoN0u+M/D/BCSA1udbJvErH
+ nIDPBlSdgUpnsnRPshqdgvBlwZh+rqeIGCWGpUc+DhpBYN0jaKp9LJpI4PlEv5yRZ/CSfY7Z8HyYq
+ tBBBAz5DaPhve6iZyWd/UAkz7y6uKCCXVnCCXr3uYXQZrhzPLLkpOn95j/IOhrviJVxEXV07j5CsA
+ RFU80czsdSVH3CRpvfIGSrY4m2mqkYq99uWagRqbIE8jqCXlSABqwIIgCGdgiZ7x8M2xRsZ2I9Q0c
+ 8ZwvU8lPQ==;
 Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:59374)
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:59462)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <linux@armlinux.org.uk>)
- id 1hlt5o-0001JS-RD; Fri, 12 Jul 2019 11:47:57 +0100
+ id 1hltFN-0001Mc-4Y; Fri, 12 Jul 2019 11:57:49 +0100
 Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
  (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hlt5g-0005bu-Aq; Fri, 12 Jul 2019 11:47:48 +0100
-Date: Fri, 12 Jul 2019 11:47:48 +0100
+ id 1hltFJ-0005c2-Nx; Fri, 12 Jul 2019 11:57:45 +0100
+Date: Fri, 12 Jul 2019 11:57:45 +0100
 From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 To: Cheng-Yi Chiang <cychiang@chromium.org>
-Subject: Re: [PATCH v3 2/5] drm: bridge: dw-hdmi: Report connector status
- using callback
-Message-ID: <20190712104748.zlgxgdjbtj2gw4yz@shell.armlinux.org.uk>
+Subject: Re: [PATCH v3 1/5] ASoC: hdmi-codec: Add an op to set callback
+ function for plug event
+Message-ID: <20190712105745.xr7jxc626lwoaajx@shell.armlinux.org.uk>
 References: <20190712100443.221322-1-cychiang@chromium.org>
- <20190712100443.221322-3-cychiang@chromium.org>
+ <20190712100443.221322-2-cychiang@chromium.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190712100443.221322-3-cychiang@chromium.org>
+In-Reply-To: <20190712100443.221322-2-cychiang@chromium.org>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_034815_962474_1646DD81 
-X-CRM114-Status: GOOD (  24.39  )
+X-CRM114-CacheID: sfid-20190712_035800_369548_D6AB9B11 
+X-CRM114-Status: GOOD (  14.35  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -103,210 +103,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, Jul 12, 2019 at 06:04:40PM +0800, Cheng-Yi Chiang wrote:
-> Allow codec driver register callback function for plug event.
+On Fri, Jul 12, 2019 at 06:04:39PM +0800, Cheng-Yi Chiang wrote:
+> Add an op in hdmi_codec_ops so codec driver can register callback
+> function to handle plug event.
 > 
-> The callback registration flow:
-> dw-hdmi <--- hw-hdmi-i2s-audio <--- hdmi-codec
-> 
-> dw-hdmi-i2s-audio implements hook_plugged_cb op
-> so codec driver can register the callback.
-> 
-> dw-hdmi implements set_plugged_cb op so platform device can register the
-> callback.
-> 
-> When connector plug/unplug event happens, report this event using the
-> callback.
-> 
-> Make sure that audio and drm are using the single source of truth for
-> connector status.
+> Driver in DRM can use this callback function to report connector status.
 > 
 > Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
 > ---
->  .../gpu/drm/bridge/synopsys/dw-hdmi-audio.h   |  3 +
->  .../drm/bridge/synopsys/dw-hdmi-i2s-audio.c   | 10 ++++
->  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c     | 55 ++++++++++++++++++-
->  3 files changed, 67 insertions(+), 1 deletion(-)
+>  include/sound/hdmi-codec.h    | 16 +++++++++++++
+>  sound/soc/codecs/hdmi-codec.c | 45 +++++++++++++++++++++++++++++++++++
+>  2 files changed, 61 insertions(+)
 > 
-> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-audio.h b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-audio.h
-> index 63b5756f463b..f523c590984e 100644
-> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-audio.h
-> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-audio.h
-> @@ -2,6 +2,8 @@
->  #ifndef DW_HDMI_AUDIO_H
->  #define DW_HDMI_AUDIO_H
->  
-> +#include <sound/hdmi-codec.h>
-> +
->  struct dw_hdmi;
->  
->  struct dw_hdmi_audio_data {
-> @@ -17,6 +19,7 @@ struct dw_hdmi_i2s_audio_data {
->  
->  	void (*write)(struct dw_hdmi *hdmi, u8 val, int offset);
->  	u8 (*read)(struct dw_hdmi *hdmi, int offset);
-> +	int (*set_plugged_cb)(struct dw_hdmi *hdmi, hdmi_codec_plugged_cb fn);
+> diff --git a/include/sound/hdmi-codec.h b/include/sound/hdmi-codec.h
+> index 7fea496f1f34..9a8661680256 100644
+> --- a/include/sound/hdmi-codec.h
+> +++ b/include/sound/hdmi-codec.h
+> @@ -47,6 +47,9 @@ struct hdmi_codec_params {
+>  	int channels;
 >  };
 >  
->  #endif
-> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> index 5cbb71a866d5..7b93cf05c985 100644
-> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> @@ -104,10 +104,20 @@ static int dw_hdmi_i2s_get_dai_id(struct snd_soc_component *component,
->  	return -EINVAL;
->  }
->  
-> +static int dw_hdmi_i2s_hook_plugged_cb(struct device *dev, void *data,
-> +				       hdmi_codec_plugged_cb fn)
-> +{
-> +	struct dw_hdmi_i2s_audio_data *audio = data;
-> +	struct dw_hdmi *hdmi = audio->hdmi;
+> +typedef void (*hdmi_codec_plugged_cb)(struct device *dev,
+> +				      bool plugged);
 > +
-> +	return audio->set_plugged_cb(hdmi, fn);
-> +}
-> +
->  static struct hdmi_codec_ops dw_hdmi_i2s_ops = {
->  	.hw_params	= dw_hdmi_i2s_hw_params,
->  	.audio_shutdown	= dw_hdmi_i2s_audio_shutdown,
->  	.get_dai_id	= dw_hdmi_i2s_get_dai_id,
-> +	.hook_plugged_cb = dw_hdmi_i2s_hook_plugged_cb,
->  };
->  
->  static int snd_dw_hdmi_probe(struct platform_device *pdev)
-> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> index 045b1b13fd0e..ce6646067472 100644
-> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> @@ -26,6 +26,8 @@
->  #include <drm/drm_probe_helper.h>
->  #include <drm/bridge/dw_hdmi.h>
->  
-> +#include <sound/hdmi-codec.h>
-> +
->  #include <uapi/linux/media-bus-format.h>
->  #include <uapi/linux/videodev2.h>
->  
-> @@ -185,6 +187,9 @@ struct dw_hdmi {
->  	void (*disable_audio)(struct dw_hdmi *hdmi);
->  
->  	struct cec_notifier *cec_notifier;
-> +
-> +	hdmi_codec_plugged_cb plugged_cb;
-> +	enum drm_connector_status last_connector_result;
->  };
->  
->  #define HDMI_IH_PHY_STAT0_RX_SENSE \
-> @@ -209,6 +214,40 @@ static inline u8 hdmi_readb(struct dw_hdmi *hdmi, int offset)
->  	return val;
->  }
->  
-> +static void handle_plugged_change(struct dw_hdmi *hdmi, bool plugged)
-> +{
-> +	struct platform_device *codec_pdev;
-> +
-> +	if (!hdmi->audio || IS_ERR(hdmi->audio))
-> +		return;
-> +	codec_pdev = platform_get_drvdata(hdmi->audio);
-> +	if (!codec_pdev || IS_ERR(codec_pdev))
-> +		return;
 
-This looks fragile to me, poking about in another device's driver data
-from another driver is really not a good design decision.  I think this
-can be simplified if the registration function took the function
-pointer and the struct device pointer, and then you only need one test
-below:
+I'd like to pose a question for people to think about.
 
-> +	if (!hdmi->plugged_cb)
-> +		return;
-> +
-> +	hdmi->plugged_cb(&codec_pdev->dev, plugged);
-> +}
-> +
-> +static int hdmi_set_plugged_cb(struct dw_hdmi *hdmi, hdmi_codec_plugged_cb fn)
-> +{
-> +	bool plugged;
-> +	struct platform_device *codec_pdev;
-> +
-> +	if (!hdmi->audio || IS_ERR(hdmi->audio))
-> +		return -EINVAL;
+Firstly, typedefs are generally shunned in the kernel.  However, for
+these cases it seems to make sense.
 
-Given the current code structure, how can this ever be true when the
-function is called?
+However, should the "pointer"-ness be part of the typedef or not?  To
+see what I mean, consider:
 
-> +	codec_pdev = platform_get_drvdata(hdmi->audio);
-> +	if (!codec_pdev || IS_ERR(codec_pdev))
-> +		return -EINVAL;
+	typedef void (*hdmi_foo)(void);
 
-This doesn't seem like a good idea as I've pointed out above.
+	int register_foo(hdmi_foo foo);
 
-> +
-> +	mutex_lock(&hdmi->mutex);
-> +	hdmi->plugged_cb = fn;
-> +	plugged = hdmi->last_connector_result == connector_status_connected;
-> +	handle_plugged_change(hdmi, plugged);
-> +	mutex_unlock(&hdmi->mutex);
+vs
 
-Should be a blank line here for readability.
+	typedef void hdmi_foo(void);
 
-> +	return 0;
-> +}
-> +
->  static void hdmi_modb(struct dw_hdmi *hdmi, u8 data, u8 mask, unsigned reg)
->  {
->  	regmap_update_bits(hdmi->regm, reg << hdmi->reg_shift, mask, data);
-> @@ -2044,6 +2083,7 @@ dw_hdmi_connector_detect(struct drm_connector *connector, bool force)
->  {
->  	struct dw_hdmi *hdmi = container_of(connector, struct dw_hdmi,
->  					     connector);
-> +	enum drm_connector_status result;
->  
->  	mutex_lock(&hdmi->mutex);
->  	hdmi->force = DRM_FORCE_UNSPECIFIED;
-> @@ -2051,7 +2091,18 @@ dw_hdmi_connector_detect(struct drm_connector *connector, bool force)
->  	dw_hdmi_update_phy_mask(hdmi);
->  	mutex_unlock(&hdmi->mutex);
->  
-> -	return hdmi->phy.ops->read_hpd(hdmi, hdmi->phy.data);
-> +	result = hdmi->phy.ops->read_hpd(hdmi, hdmi->phy.data);
-> +
-> +	mutex_lock(&hdmi->mutex);
-> +	if (result != hdmi->last_connector_result) {
-> +		dev_dbg(hdmi->dev, "read_hpd result: %d", result);
-> +		handle_plugged_change(hdmi,
-> +				      result == connector_status_connected);
-> +		hdmi->last_connector_result = result;
-> +	}
-> +	mutex_unlock(&hdmi->mutex);
-> +
-> +	return result;
->  }
->  
->  static int dw_hdmi_connector_get_modes(struct drm_connector *connector)
-> @@ -2460,6 +2511,7 @@ __dw_hdmi_probe(struct platform_device *pdev,
->  	hdmi->rxsense = true;
->  	hdmi->phy_mask = (u8)~(HDMI_PHY_HPD | HDMI_PHY_RX_SENSE);
->  	hdmi->mc_clkdis = 0x7f;
-> +	hdmi->last_connector_result = connector_status_disconnected;
->  
->  	mutex_init(&hdmi->mutex);
->  	mutex_init(&hdmi->audio_mutex);
-> @@ -2653,6 +2705,7 @@ __dw_hdmi_probe(struct platform_device *pdev,
->  		audio.hdmi	= hdmi;
->  		audio.write	= hdmi_writeb;
->  		audio.read	= hdmi_readb;
-> +		audio.set_plugged_cb = hdmi_set_plugged_cb;
+	int register_foo(hdmi_foo *foo);
 
-Why is this necessary?
+which is more in keeping with how we code non-typedef'd code - it's
+obvious that foo is a pointer while reading the code.
 
-The I2S audio driver already depends on the dw-hdmi module through its
-use of functions already exported.  Indirecting this through the
-platform data makes no sense.
+It seems to me that the latter better matches what is in the kernel's
+coding style, which states:
 
-Just rename hdmi_set_plugged_cb to dw_hdmi_set_plugged_cb() and export
-it for dw-hdmi-i2s-audio.c to use.
+  In general, a pointer, or a struct that has elements that can
+  reasonably be directly accessed should **never** be a typedef.
 
-Thanks.
+or maybe Documentation/process/coding-style.rst needs updating?
 
 -- 
 RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
