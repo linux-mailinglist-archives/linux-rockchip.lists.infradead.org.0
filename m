@@ -2,63 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E765A68E1C
-	for <lists+linux-rockchip@lfdr.de>; Mon, 15 Jul 2019 16:04:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A180698A1
+	for <lists+linux-rockchip@lfdr.de>; Mon, 15 Jul 2019 17:56:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ifDGpGRZsn32Nwzp4fJ0bDGah+N7DXXxpz6xB8jfX2s=; b=O7jBSzdk/2zGPT
-	sMkDnwIl9X2YPNUQHd3HKlRlP5OqaD4F2nm7ZdvvfXoK+CJITQ4KYMJJRVKM4k5oG6s2/PTkq92W4
-	SDaZuNfMWs0VZugVhNOI/nOQF0L95GthINpV2UKxduRD1GSZYitWC+uBMUdwAP2qK/UnlrE5R+F3a
-	4/rkWFg0ZFPYCtBYDUkL4AiDojhxmM+U3mTmEmhCeX11/Nh3TXCJRY8cVLkvz1KEyDxERVHA1ukPZ
-	Fkt6xCzQcx5OmutsAC0EKSUkYR5YQZuVm0uU6aCsBYRc/oSlWUEn/YMlmkDjlqPXbm1P2nC5X5qsf
-	Jo5QR0jK4HECOSfluqkQ==;
+	List-Owner; bh=UQ5LvEBPBhJiYW3L9owicjwEvqyF8vYbn3fm7JV8yi8=; b=XG7Exn/1jDqpJR
+	HWxM8IrmQkfIqdQNp8bhvWl+A/IMgZMyBKq99hzGtZBoy2fC87SfeuV8dI1382SmVSPRWzHPAudqv
+	/MZhqIiWhX6z/2G0ZEcuxyu8JSJAgCprueJqZB+DqfXD3zbLP2GlTw8yiWyjczI6MFn90G6f0CosQ
+	RQJ4D40hW6aXLlZkOAiKPh7c5zr1hDCxqetLax+gag5SNYC7sFGLXR6flhnUoER68r2gtdG7h9xvL
+	zD/l8s2EgTPJEnCd3Kpg5ryiyQr7re2qYDI5fpZoSSnDQh8vhEFKHG7ucGX3ZQMB8gEi09gCd2xbM
+	DASxOhcb6biowFNYcGKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn1aT-0002y8-Tf; Mon, 15 Jul 2019 14:04:17 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hn3LD-0006oJ-Ke; Mon, 15 Jul 2019 15:56:39 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn1aL-0002te-Rn
- for linux-rockchip@lists.infradead.org; Mon, 15 Jul 2019 14:04:11 +0000
-Received: from sasha-vm.mshome.net (unknown [73.61.17.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C5D6C2081C;
- Mon, 15 Jul 2019 14:04:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563199449;
- bh=mSly9/QB6NgeDVXk7wAa+JBqfFX3uXKExoFhgAGyqtg=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=XsoFL5OvGFAxQ8K18CCWHGKNKA9hIgLro0b+0bgEgWIygcaXDM0oJSFICG3RVf7iK
- HIMYUSUhqfV0N4Q63YonjpER0SohrKhs5YyxUn/ycDuwyr8XgZc2MqYO2vPl26jdc+
- LYmHGibWloIF9sGdm2WBZlOyJkNVznLdIb4V+YSs=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.1 007/219] spi: rockchip: turn down tx dma bursts
-Date: Mon, 15 Jul 2019 10:00:08 -0400
-Message-Id: <20190715140341.6443-7-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190715140341.6443-1-sashal@kernel.org>
-References: <20190715140341.6443-1-sashal@kernel.org>
+ id 1hn3LA-0006mu-Gn
+ for linux-rockchip@lists.infradead.org; Mon, 15 Jul 2019 15:56:37 +0000
+Received: by mail-ot1-x342.google.com with SMTP id y20so1583235otk.7
+ for <linux-rockchip@lists.infradead.org>; Mon, 15 Jul 2019 08:56:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=BxdnANqifDB1z1Ih8rPgPPFQ52+wPGcxB0Lct34ID5Q=;
+ b=SA30rmEvAAB/UeWM0cJpboyXWomGji7I7a5x3X8IC2z8RDCcu48fRpx3oXaTPieM78
+ hMUBvyfACXuvhVyl7122TsYzmlo3PSQz9JgHl3IzAfFzF4LUSFpBOVOTOS1B1L4yygl7
+ QOOGtMtHFpJt8B1LZKpTsfOdvejMLuCIDQCalifs34k7ukv+KzyMS3/rAXEkr2VMjwP1
+ SBtlOVlmpKFktDXSl32r68WJn6RZP964o2hS1wrBNhCu42BpzNeAZYsIqnpYlDH19pdT
+ IooGaAqomRnAwqqNrb8iHZz4u/RbyBz6uQU3gz+bKjgxr0xq0hFlSy/JRzbwLlHSQ+Nf
+ EO5w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=BxdnANqifDB1z1Ih8rPgPPFQ52+wPGcxB0Lct34ID5Q=;
+ b=FgLpn7Jo8REJmlq4zoiqhQQ9GWCV4m7bnnNEi/0bgfCgDzPFyyA0Ci98rIGKtNmV9u
+ j8qsoXsg2HcVdUvhIyj4pudsvDfA+rx//WiKvC9JHz0HH9h/lXQkGeUlsDpAGW2CpKQE
+ Ztw8jCVxKt0kIpNNjPJL/nVchjFp5rwCw3+qb6ZRr3ZNqMx5JZXiX1DT1LaGY2vAYn3b
+ LWxFgKVdxH7rWc80REv+EeRYFaeKC2QRwUxcP/+RxzngEE9z89CJYflG3kl6ACFxKrd1
+ jf2XIkK7ltUkrLeQnMpY4Ql8Kct/dxcrCNl3yBLAehmpZ6rZCa5CgfDXPvaPFS1Zan4z
+ DniA==
+X-Gm-Message-State: APjAAAWFqPb7pyjJZhUnmEH/uCyaKd1NMwTeNFBgSYg3LCUfbK7iB96r
+ 1wyqd5Wx+OOENt++cOEmA1YsfUgPkP5E89gCPexZHw==
+X-Google-Smtp-Source: APXvYqwsZvLcK5LidkOK7j4XvKdYHFQb2nVh/AtXUYin5kr5W0WlZFyIM9UGzPAW85pcfSoyZbDk7ZxnfK/q+cptnb0=
+X-Received: by 2002:a05:6830:1cd:: with SMTP id
+ r13mr8619272ota.99.1563206191242; 
+ Mon, 15 Jul 2019 08:56:31 -0700 (PDT)
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+References: <20190712100443.221322-1-cychiang@chromium.org>
+ <20190712100443.221322-2-cychiang@chromium.org>
+ <20190712105745.xr7jxc626lwoaajx@shell.armlinux.org.uk>
+In-Reply-To: <20190712105745.xr7jxc626lwoaajx@shell.armlinux.org.uk>
+From: Tzung-Bi Shih <tzungbi@google.com>
+Date: Mon, 15 Jul 2019 23:56:19 +0800
+Message-ID: <CA+Px+wWbmUemETY3OMk1T9XS2w8ZXvZUhVEGzw_w6AxtU8R0rw@mail.gmail.com>
+Subject: Re: [PATCH v3 1/5] ASoC: hdmi-codec: Add an op to set callback
+ function for plug event
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_070409_942587_C24B39D5 
-X-CRM114-Status: GOOD (  11.36  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190715_085636_590053_705A2546 
+X-CRM114-Status: GOOD (  18.22  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -66,7 +86,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,69 +100,83 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-rockchip@lists.infradead.org,
- Mark Brown <broonie@kernel.org>, Emil Renner Berthing <kernel@esmil.dk>,
- linux-spi@vger.kernel.org
+Cc: ALSA development <alsa-devel@alsa-project.org>, tzungbi@chromium.org,
+ Heiko Stuebner <heiko@sntech.de>, Liam Girdwood <lgirdwood@gmail.com>,
+ David Airlie <airlied@linux.ie>, Mark Brown <broonie@kernel.org>,
+ Takashi Iwai <tiwai@suse.com>, Douglas Anderson <dianders@chromium.org>,
+ dri-devel@lists.freedesktop.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>, linux-rockchip@lists.infradead.org,
+ Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, dgreid@chromium.org,
+ Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org,
+ Cheng-Yi Chiang <cychiang@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Emil Renner Berthing <kernel@esmil.dk>
+On Fri, Jul 12, 2019 at 6:58 PM Russell King - ARM Linux admin
+<linux@armlinux.org.uk> wrote:
+>
+> On Fri, Jul 12, 2019 at 06:04:39PM +0800, Cheng-Yi Chiang wrote:
+> > Add an op in hdmi_codec_ops so codec driver can register callback
+> > function to handle plug event.
+> >
+> > Driver in DRM can use this callback function to report connector status.
+> >
+> > Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+> > ---
+> >  include/sound/hdmi-codec.h    | 16 +++++++++++++
+> >  sound/soc/codecs/hdmi-codec.c | 45 +++++++++++++++++++++++++++++++++++
+> >  2 files changed, 61 insertions(+)
+> >
+> > diff --git a/include/sound/hdmi-codec.h b/include/sound/hdmi-codec.h
+> > index 7fea496f1f34..9a8661680256 100644
+> > --- a/include/sound/hdmi-codec.h
+> > +++ b/include/sound/hdmi-codec.h
+> > @@ -47,6 +47,9 @@ struct hdmi_codec_params {
+> >       int channels;
+> >  };
+> >
+> > +typedef void (*hdmi_codec_plugged_cb)(struct device *dev,
+> > +                                   bool plugged);
+> > +
+>
+> I'd like to pose a question for people to think about.
+>
+> Firstly, typedefs are generally shunned in the kernel.  However, for
+> these cases it seems to make sense.
+>
+> However, should the "pointer"-ness be part of the typedef or not?  To
+> see what I mean, consider:
+>
+>         typedef void (*hdmi_foo)(void);
+>
+>         int register_foo(hdmi_foo foo);
+>
+> vs
+>
+>         typedef void hdmi_foo(void);
+>
+>         int register_foo(hdmi_foo *foo);
+>
+> which is more in keeping with how we code non-typedef'd code - it's
+> obvious that foo is a pointer while reading the code.
+I have a different opinion.  Its suffix "_cb" self-described it is a
+callback function.  Since function and function pointer are equivalent
+in the language, I think we don't need to emphasize that it is a
+function "pointer".
 
-[ Upstream commit 47300728fb213486a830565d2af49da967c9d16a ]
 
-This fixes tx and bi-directional dma transfers on rk3399-gru-kevin.
-
-It seems the SPI fifo must have room for 2 bursts when the dma_tx_req
-signal is generated or it might skip some words. This in turn makes
-the rx dma channel never complete for bi-directional transfers.
-
-Fix it by setting tx burst length to fifo_len / 4 and the dma
-watermark to fifo_len / 2.
-
-However the rk3399 TRM says (sic):
-"DMAC support incrementing-address burst and fixed-address burst. But in
-the case of access SPI and UART at byte or halfword size, DMAC only
-support fixed-address burst and the address must be aligned to word."
-
-So this relies on fifo_len being a multiple of 16 such that the
-burst length (= fifo_len / 4) is a multiple of 4 and the addresses
-will be word-aligned.
-
-Fixes: dcfc861d24ec ("spi: rockchip: adjust dma watermark and burstlen")
-Signed-off-by: Emil Renner Berthing <kernel@esmil.dk>
-Signed-off-by: Mark Brown <broonie@kernel.org>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/spi/spi-rockchip.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/spi/spi-rockchip.c b/drivers/spi/spi-rockchip.c
-index 3912526ead66..19f6a76f1c07 100644
---- a/drivers/spi/spi-rockchip.c
-+++ b/drivers/spi/spi-rockchip.c
-@@ -425,7 +425,7 @@ static int rockchip_spi_prepare_dma(struct rockchip_spi *rs,
- 			.direction = DMA_MEM_TO_DEV,
- 			.dst_addr = rs->dma_addr_tx,
- 			.dst_addr_width = rs->n_bytes,
--			.dst_maxburst = rs->fifo_len / 2,
-+			.dst_maxburst = rs->fifo_len / 4,
- 		};
- 
- 		dmaengine_slave_config(master->dma_tx, &txconf);
-@@ -526,7 +526,7 @@ static void rockchip_spi_config(struct rockchip_spi *rs,
- 	else
- 		writel_relaxed(rs->fifo_len / 2 - 1, rs->regs + ROCKCHIP_SPI_RXFTLR);
- 
--	writel_relaxed(rs->fifo_len / 2 - 1, rs->regs + ROCKCHIP_SPI_DMATDLR);
-+	writel_relaxed(rs->fifo_len / 2, rs->regs + ROCKCHIP_SPI_DMATDLR);
- 	writel_relaxed(0, rs->regs + ROCKCHIP_SPI_DMARDLR);
- 	writel_relaxed(dmacr, rs->regs + ROCKCHIP_SPI_DMACR);
- 
--- 
-2.20.1
-
+> It seems to me that the latter better matches what is in the kernel's
+> coding style, which states:
+>
+>   In general, a pointer, or a struct that has elements that can
+>   reasonably be directly accessed should **never** be a typedef.
+>
+> or maybe Documentation/process/coding-style.rst needs updating?
 
 _______________________________________________
 Linux-rockchip mailing list
