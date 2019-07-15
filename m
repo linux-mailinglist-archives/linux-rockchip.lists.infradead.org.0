@@ -2,80 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC27A69ADE
-	for <lists+linux-rockchip@lfdr.de>; Mon, 15 Jul 2019 20:30:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E7DB69ADF
+	for <lists+linux-rockchip@lfdr.de>; Mon, 15 Jul 2019 20:30:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U5fMSIoXOec0YCqtuspt4vMdUbjGU63p4vaPmhWPx/Y=; b=cuUAmVKR3u7ZNI
-	FzUPQlNg63ZcFpL0mnzpbmSXgfxATXF2uQjmQWXY4HPkjS2uvYYklv7xFK5R14PqnvSOL2Dk+7G2D
-	owraYvubfnOHcoQQoBeq+yrCJmrOZ86B581WPfLUfhDzUL7S6jHUB5Ad9cJ48PME4GhuVtD1MxoXS
-	QGKJqpsaE9iUJ4dTMYS5LoGIYWQX7oWzF2XKX/yjudJiq++AJzgIkb70TCOXhx6or1vxCx2BQNxF5
-	gEWKvorao2J9OWN7RD3danjQOrCd+o2u8pLwDSbYEbUF/L1vGxvMq2h9UakaNfaeVMB9GOuYHWd/M
-	vlmDKHb6/Bc4L0uZRBnA==;
+	List-Owner; bh=IN2rDz136bW46/A3UlpPHmW+TCVFYIeH3Gp+WnOuTvM=; b=MWZyuII8Tlglhh
+	yvli6BA2D7PMXzDUD7Vh8TIlxB4Ye1ltlAn0ZLf7C/ys5JhELp/zJtLhcJlJHEE7edHMSOfjeYlbQ
+	agH/RDTt/+YhqM07olCSiEhAST/tMt4Hj6fHIm2PmhGss1cG7jERENZmaABol6KOeNvDm9r6hWhwa
+	nq/6SA+Q075y26+F+43RAyNgR5Ksg2RbjTJ1cr4HhOUvkfPk79IQ0SD7vnZDl2bsjtT02X+2f0Tiz
+	JaidZCb/NK8alR+SHfM6lIUIw37vtKfbyw6enG53KgsL0rTcTny0tdKRXf+TfMwfH2xHQ+ikwh75I
+	kescMoi/C1vufkPyFxsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn5jb-0001JI-My; Mon, 15 Jul 2019 18:29:59 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hn5jf-0001M4-36; Mon, 15 Jul 2019 18:30:03 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn5jW-0001FK-KU
- for linux-rockchip@lists.infradead.org; Mon, 15 Jul 2019 18:29:56 +0000
-Received: by mail-pg1-x541.google.com with SMTP id i8so8099839pgm.13
- for <linux-rockchip@lists.infradead.org>; Mon, 15 Jul 2019 11:29:54 -0700 (PDT)
+ id 1hn5ja-0001In-3y
+ for linux-rockchip@lists.infradead.org; Mon, 15 Jul 2019 18:29:59 +0000
+Received: by mail-pf1-x443.google.com with SMTP id b13so7819720pfo.1
+ for <linux-rockchip@lists.infradead.org>; Mon, 15 Jul 2019 11:29:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=pIDTnUfr0djUpkT1BNeINgQLdbC0j9OQ9/2h48Y8nMY=;
- b=P2AJyQUDnuNznXrP8Pz4e98HGmOa/ojChabMl2WigfgC2TiAOp0dx7mWRfX4m7DF21
- wmcTQwMVcyD6kES+cy8GqowGh+JfYOIRo6vBdQMnjaic3ybKZgSOg6MUVdw/Vf6jx8Z5
- EjtT8xx6ricfvASqn4b+qZLY7b8c+t6xz1/CU=
+ bh=AsLLPwLnBovdXkNi9P5ImLX7S8wEFQBRTIIMJmHhUWg=;
+ b=Coa1qETYaxDUm8uiAG14zdZbsHjqMda5bm2SHZgWGv/slXP9hsxR481YYp24tsSSc/
+ 7JBJ2eeyXDoRIsmMgkKWFJG0xN5XmYCOEnlgipbKuYak6TxxWPPg6cRndyfpNsPVNLV9
+ QaBciVXMCGlpZoa+IJp3g2CwmZhhjbCMuJBbA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=pIDTnUfr0djUpkT1BNeINgQLdbC0j9OQ9/2h48Y8nMY=;
- b=kDySZPUmsfCVKtfdpWDKyMFoKVl1yO2KBurVejMer5fNyknuEVgstPcOhNor0oglHn
- zKbBNfqldiZ57yMOXt5gEklrx4bRIClR4I6ZFqijfUkgVSkotWRvg4CXMNZ6mx53wzgc
- 2Y4GaJW72UJC3WvILGd4rB1nGCIwaHm8lgRrlrIZFPhmQLuizYKsEJQBYLAwNuURCHNc
- jc0B+OQNHbG7VWCp7ZQSsnE3j8uqmcdRV3tUYBI+w8BR9xKXBDa14kV572rYx1HPn3fu
- r3FCQSJrBuBqpRB9VAccmT7HyLPbWAGEt4eirAogz/k10ZUvNscV0LzO+i4z3+HcNI1x
- lSag==
-X-Gm-Message-State: APjAAAWtRfY6o3lZYImh1GkNUFfaftBc1tfcPRVV55fNjA5F7eHUrLtr
- gtogmtBzajCyFSaaDZ7nmxHN/w==
-X-Google-Smtp-Source: APXvYqwUHRsmreZ2GD5zTWUj3OnV25Jsn+WU20OiN/Q7Ps7+kiuytPuz6nWN7hDHrVOLKlU9HXD/dA==
-X-Received: by 2002:a63:f510:: with SMTP id w16mr28980694pgh.0.1563215393933; 
- Mon, 15 Jul 2019 11:29:53 -0700 (PDT)
+ bh=AsLLPwLnBovdXkNi9P5ImLX7S8wEFQBRTIIMJmHhUWg=;
+ b=QWSxugFc6hYqpnXSqPahxT6ZnV2keiX8mETgMofW+7FFlCxlpui5sQ76WLD/Zhi4Tl
+ dwT3HwHbeAA4xOKK6ffro1CWd49nSOYmeisGGg79oKoJbWT+Upd4pXIutLGvEq+SdeVe
+ jT81uETSmzxtT60NTc6wd1Q9WyTUL+gIKSDH+0CkGNjnZ1lD/Hfo09tnzKo88+O7fOYI
+ VfeTZ0v9dV4xNr53wvKn08pJdYwOEGcDyEvbqoxcNkED9QmPugoWKMls9Dh88+H6IotW
+ TtlhrxLyyPfedKaItuM9aC59RKJZn9upAeP7sXcfANbliM2VqTAenw23gk5wyqdHMXxH
+ EmIA==
+X-Gm-Message-State: APjAAAW7AER7Bk8rDXWgyLJETrAPWp0Y2WAtbzHb9j76se5RyDrbe8hI
+ awbgmbeV1+8waOGjqc3yKcqnng==
+X-Google-Smtp-Source: APXvYqyBRQMYorqyvfi6aIXugZxyrflH5vgQZzW3mnTdn64P9LtM1GYxU9JiH3WHsIbv3ZZoJ5/suQ==
+X-Received: by 2002:a63:4845:: with SMTP id x5mr27631710pgk.155.1563215397471; 
+ Mon, 15 Jul 2019 11:29:57 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.201.107])
- by smtp.gmail.com with ESMTPSA id y133sm20250075pfb.28.2019.07.15.11.29.50
+ by smtp.gmail.com with ESMTPSA id y133sm20250075pfb.28.2019.07.15.11.29.54
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 15 Jul 2019 11:29:53 -0700 (PDT)
+ Mon, 15 Jul 2019 11:29:57 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH v3 13/18] ram: rk3399: debug: Add sdram_print_stride
-Date: Mon, 15 Jul 2019 23:58:51 +0530
-Message-Id: <20190715182856.21688-14-jagan@amarulasolutions.com>
+Subject: [PATCH v3 14/18] ram: rk3399: Compute stride for 2 channels
+Date: Mon, 15 Jul 2019 23:58:52 +0530
+Message-Id: <20190715182856.21688-15-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190715182856.21688-1-jagan@amarulasolutions.com>
 References: <20190715182856.21688-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_112954_799824_64D09BDE 
-X-CRM114-Status: UNSURE (   9.60  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190715_112958_179843_339F2FEE 
+X-CRM114-Status: GOOD (  16.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,76 +105,120 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add code to print the channel stride, this would help to
-print the stride of associated channel.
+stride value from sdram timings can be computed dynamically
+based on the determined capacity for the given channel.
 
-Here is sample print on LPDDR4, 50MHz.
-256B stride
+Right now these stride values are taken as part of sdram timings
+via dtsi, but it possible to use same timings dtsi for given
+frequency even though the configured board sdram do support
+single channel with different size by dynamically detect the
+stride value.
+
+Example, NanoPi NEO4 do have DDR3-1866, but with single channel
+and 1GB size with dynamic stride detection it is possible to
+use existing rk3399-sdram-ddr3-1866.dtsi whose stride,
+number of channels and capacity it support is d efferent.
+
+So, add initial support to calculate the stride value for
+2 channels sdram, which is available by default on existing
+boards.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 Signed-off-by: YouMin Chen <cym@rock-chips.com>
 ---
- .../include/asm/arch-rockchip/sdram_common.h  |  5 ++++
- drivers/ram/rockchip/sdram_debug.c            | 29 +++++++++++++++++++
- 2 files changed, 34 insertions(+)
+ drivers/ram/rockchip/sdram_rk3399.c | 71 ++++++++++++++++++++++++++++-
+ 1 file changed, 70 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/include/asm/arch-rockchip/sdram_common.h b/arch/arm/include/asm/arch-rockchip/sdram_common.h
-index cfbb511843..b7549f5d8a 100644
---- a/arch/arm/include/asm/arch-rockchip/sdram_common.h
-+++ b/arch/arm/include/asm/arch-rockchip/sdram_common.h
-@@ -102,10 +102,15 @@ inline void sdram_print_ddr_info(struct sdram_cap_info *cap_info,
- 				 struct sdram_base_params *base)
- {
+diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
+index 084c949728..c626ef602c 100644
+--- a/drivers/ram/rockchip/sdram_rk3399.c
++++ b/drivers/ram/rockchip/sdram_rk3399.c
+@@ -1183,8 +1183,75 @@ static int switch_to_phy_index1(struct dram_info *dram,
+ 	return 0;
  }
-+
-+inline void sdram_print_stride(unsigned int stride)
-+{
-+}
- #else
- void sdram_print_dram_type(unsigned char dramtype);
- void sdram_print_ddr_info(struct sdram_cap_info *cap_info,
- 			  struct sdram_base_params *base);
-+void sdram_print_stride(unsigned int stride);
- #endif /* CONFIG_RAM_ROCKCHIP_DEBUG */
  
- #endif
-diff --git a/drivers/ram/rockchip/sdram_debug.c b/drivers/ram/rockchip/sdram_debug.c
-index 19e9225c12..9cf662675b 100644
---- a/drivers/ram/rockchip/sdram_debug.c
-+++ b/drivers/ram/rockchip/sdram_debug.c
-@@ -116,3 +116,32 @@ void sdram_print_ddr_info(struct sdram_cap_info *cap_info,
- 	printdec(cap >> 20);
- 	printascii("MB\n");
- }
-+
-+void sdram_print_stride(unsigned int stride)
++static unsigned char calculate_stride(struct rk3399_sdram_params *params)
 +{
-+	switch (stride) {
-+	case 0xc:
-+		printf("128B stride\n");
-+		break;
-+	case 5:
-+	case 9:
-+	case 0xd:
-+	case 0x11:
-+	case 0x19:
-+		printf("256B stride\n");
-+		break;
-+	case 0xa:
-+	case 0xe:
-+	case 0x12:
-+		printf("512B stride\n");
-+		break;
-+	case 0xf:
-+		printf("4K stride\n");
-+		break;
-+	case 0x1f:
-+		printf("32MB + 256B stride\n");
-+		break;
-+	default:
-+		printf("no stride\n");
++	unsigned int stride = params->base.stride;
++	unsigned int channel, chinfo = 0;
++	unsigned int ch_cap[2] = {0, 0};
++	u64 cap;
++
++	for (channel = 0; channel < 2; channel++) {
++		unsigned int cs0_cap = 0;
++		unsigned int cs1_cap = 0;
++		struct sdram_cap_info *cap_info = &params->ch[channel].cap_info;
++
++		if (cap_info->col == 0)
++			continue;
++
++		cs0_cap = (1 << (cap_info->cs0_row + cap_info->col +
++				 cap_info->bk + cap_info->bw - 20));
++		if (cap_info->rank > 1)
++			cs1_cap = cs0_cap >> (cap_info->cs0_row
++					      - cap_info->cs1_row);
++		if (cap_info->row_3_4) {
++			cs0_cap = cs0_cap * 3 / 4;
++			cs1_cap = cs1_cap * 3 / 4;
++		}
++		ch_cap[channel] = cs0_cap + cs1_cap;
++		chinfo |= 1 << channel;
 +	}
++
++	/* stride calculation for 2 channels, default gstride type is 256B */
++	if (ch_cap[0] == ch_cap[1]) {
++		cap = ch_cap[0] + ch_cap[1];
++		switch (cap) {
++		/* 512MB */
++		case 512:
++			stride = 0;
++			break;
++		/* 1GB */
++		case 1024:
++			stride = 0x5;
++			break;
++		/*
++		 * 768MB + 768MB same as total 2GB memory
++		 * useful space: 0-768MB 1GB-1792MB
++		 */
++		case 1536:
++		/* 2GB */
++		case 2048:
++			stride = 0x9;
++			break;
++		/* 1536MB + 1536MB */
++		case 3072:
++			stride = 0x11;
++			break;
++		/* 4GB */
++		case 4096:
++			stride = 0xD;
++			break;
++		default:
++			printf("%s: Unable to calculate stride for ", __func__);
++			print_size((cap * (1 << 20)), " capacity\n");
++			break;
++		}
++	}
++
++	return stride;
 +}
++
+ static int sdram_init(struct dram_info *dram,
+-		      const struct rk3399_sdram_params *params)
++		      struct rk3399_sdram_params *params)
+ {
+ 	unsigned char dramtype = params->base.dramtype;
+ 	unsigned int ddr_freq = params->base.ddr_freq;
+@@ -1232,6 +1299,8 @@ static int sdram_init(struct dram_info *dram,
+ 		set_ddrconfig(chan, params, channel,
+ 			      params->ch[channel].cap_info.ddrconfig);
+ 	}
++
++	params->base.stride = calculate_stride(params);
+ 	dram_all_config(dram, params);
+ 	switch_to_phy_index1(dram, params);
+ 
 -- 
 2.18.0.321.gffc6fa0e3
 
