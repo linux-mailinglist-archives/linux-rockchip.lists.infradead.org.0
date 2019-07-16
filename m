@@ -2,74 +2,74 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38A8E6AA64
-	for <lists+linux-rockchip@lfdr.de>; Tue, 16 Jul 2019 16:13:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E2A56AA72
+	for <lists+linux-rockchip@lfdr.de>; Tue, 16 Jul 2019 16:15:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RPw+ZshvyYTWdfviorlhq0VUMplnlbiqpTmOdUL0mqI=; b=bCAO+/YvU5U8o2
-	Gi4lWoHl85BF70MPskDeqgcRhGCgZJ0oDG8XusPyS6bk8BOyrconUq/8oDfcvjv8lrbMYuW9ez9b6
-	h3RVT8X69dgjjOu5inIdYZ6074YBMIvoH56h4WxYG6QyG1WvIKKabTOTAMeHSMTMHCPGBfgSyhwrV
-	/4SEuxwuArHpQszh/WPAPd+TNPhADAiUciSRoDbXYZrZgBufQUn5iYZTpMHiHbqMOra7mgyNuYFxj
-	heDBhCv26ZuqcxPktGd/yYk6WUi2Icti6471FoLKm57Xv+lmO91XAkYAB3siEz9t9jFKyuG3zK61R
-	Kl4uvmcRIrx2GDknOVoQ==;
+	List-Owner; bh=Uc88tQs+5UeqfQKwzA6pv/Fgt0XMS63khl4rN/tOjHw=; b=IHQ0LA7L8xQbyt
+	mgNxHMnhz02kXtMN48lQhNcdJ/BnbzYYJbfrCJmOX5pCYQ2tvtg1exGuQqi7cc4d4WVF9Y41h+XXL
+	0j2U/ugbgogd3BYUYJ+frUteEnYbjW8P7za5eEc7hMoreaLC0/1Wn2nzXhbUhlTtQwi1sVFxUU6io
+	sWOetKjaoBiiCk/Xuek9Lt4jJKlXI7De8eY8Sv2eUAIe7WLZdAS93nHMB1ByLXL6UIZn0wpKhLtv6
+	wy/y+fZgMXCPxhYrsf82PkjvGrj3h31p0unbVWU3q4acYwo+L6Qa5kn6sJkP5MwkgJ7m/N5hHfEvt
+	v37ksy7bcWaavY1m+RCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnOCK-0001JO-KB; Tue, 16 Jul 2019 14:12:52 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+	id 1hnOEZ-0002Sp-GW; Tue, 16 Jul 2019 14:15:11 +0000
+Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnOCF-0001Id-IX
- for linux-rockchip@lists.infradead.org; Tue, 16 Jul 2019 14:12:48 +0000
-Received: by mail-oi1-x244.google.com with SMTP id w196so15641234oie.7
- for <linux-rockchip@lists.infradead.org>; Tue, 16 Jul 2019 07:12:47 -0700 (PDT)
+ id 1hnOED-0001lj-O1
+ for linux-rockchip@lists.infradead.org; Tue, 16 Jul 2019 14:14:51 +0000
+Received: by mail-ot1-x341.google.com with SMTP id r21so15158690otq.6
+ for <linux-rockchip@lists.infradead.org>; Tue, 16 Jul 2019 07:14:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=h2XmDxxbJ7tU8jfvsRxWlaoaHsfnqizOFxorb/Xd+co=;
- b=Py5/obzLg1G6q0q9QNni2A4i6WspW9cxnxlS1QfRxEg9BRt1PWoOjwnaxWlw95wDhQ
- zk2XLC499vm6MTxijwxdPPDVhCQaRCFyw+qJHWt86AFA40hRMjwDOMZvCgKaj30892nR
- 3Y8vkOpVAnYdsAR5GQ+/ylt+8cSq9qlPxSumsex88ZyIHEBPsauTOuHf7FrJRJlSNJ0G
- xBmJ7n3Wiqq/pFgIxlIeJn3Ms4InCCNSdUmRXMfbYZ6pVE4XIRvI/r3dn+K84uxn5ttw
- 1GFLELKY4droqXKN0zwWh5as8vN/6BK+LpPAHSpEFtr3f0XWt77DBVSuhXUHhjHdb072
- ArzA==
+ :cc; bh=7p9kaWKWZ1RnK2eKn4KEJD3Gj9Xqk7kKd80amljZoBA=;
+ b=WY+b2MmneuNwICa5DrCLXAuS2Ym/kIa/8fMTCjzzSDHJaRASHD8bq7nmIJgrdweSsS
+ lW3jjoD5QcJJIyyvCHoMNUlIZNjTS3gwCcZw+OiFN7hXiOSyH9ADvlW2kxHCOuH2cxIu
+ tCPLZkrJeyPGTbnAW+q4j5QO0RReazYEWdOD+nCh71seMSMeaod6xltVYqgLck89i1vJ
+ ZZ1RfI48FJt7Kn9XZo+yb2BCK+6bo4ZICo6ZZy7vGtmqivPeeukvE1Lo2owGb9dXyase
+ pCjnZbOzTFcDjgWgJHPrhRewV2AbCD6W2rQ9OCijtmE14GAPIzcgj+hn06DV9EbJe+MC
+ MqwQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=h2XmDxxbJ7tU8jfvsRxWlaoaHsfnqizOFxorb/Xd+co=;
- b=OYZBb9TZ8JrgpTrsUeV+KIUKz9s8bUcgJpcYLQzLiRwy5FHSDH1DQ3t7oe/1dYsrlo
- 23vJNu44pcTbB5Z8WyrdmKDE69Uyxg3o1pm9zRTrZcZwvhOyzTXbJ0bttDaYTH4Qxqnp
- BU1jJyGz9LqtBrNJIlbFMoy6VkYslQ4EyzL3P+5YWUPXI+SMgAoH/FC7Tq7VeKTvP+sa
- Obsm1wLlVbx9yWjll2Mv4RAsvN4RWezvHpb1dq1xImw8dXI0/eo4FXEV/ITXGFYMX/WL
- ULMcmomg0uBG8Vs1P/d2U5zl4OXb8NMP+2+c/Sw29d9pdvkmR8fhBtnHTkhSK/R/p/ki
- 41OQ==
-X-Gm-Message-State: APjAAAVN6ENMl48aj8t82ywsudsOH0TNaMgKXP+4tdI0IalLxZalTOWV
- XVwnj1dbC4xLqqbI1r170UZUdtnopWdyHLZT3VPTZQ==
-X-Google-Smtp-Source: APXvYqwhUee7Js74E9R15ZB55hgPPsCjc9xmGxHsFteJRH0BqOq9zdyWRfoMvFTu0iFTMewZbXes9U0eh+oPZWTTRe8=
-X-Received: by 2002:aca:4d84:: with SMTP id a126mr17188257oib.23.1563286366223; 
- Tue, 16 Jul 2019 07:12:46 -0700 (PDT)
+ bh=7p9kaWKWZ1RnK2eKn4KEJD3Gj9Xqk7kKd80amljZoBA=;
+ b=gshqbjcb2q+jngqJ4KNj3zeRthgXILnHDxiiVk+pGGVyk0iDbVrBY1+p/lz7LeP/cO
+ 5K/RR2ekuxtHzQeX9LpVd6iNRsS2IwdKlaSg/Ej5bE+aY7lnrcjen7hoHBz55eMZyJJK
+ kVNSHuEfnK5YvRk/7UEFSxzjzdBPQgmDSKd1wXhrXk5z4AW6sxXnlpoY69KZ6PtIKjN7
+ dwVAqYmI5m6HkyojnsIDGIcrKimkJfxJ0hYkOfoddYwbn6JnZrdjTmi2nM7ELXCof41b
+ zntlaoJPgsuFqWn1AHZO0oKhbxgLOwT46CIUbIehGLmfDuDtIgpLS/RDf8m5XtkPI1cl
+ XwEQ==
+X-Gm-Message-State: APjAAAXSSIxu5+7RHlcokIvrZ2z5DWYOY9EOsX54H7Fl4QYxYgHt1dsq
+ lcPa3pg9NJLqMJcV0xdwqASF+BrYXRKD0F8sVOvynA==
+X-Google-Smtp-Source: APXvYqxrx8/ntAt3Zd7iJAcVEIJOpeAV8oT/asIVbOOvcJcHbUCdJVyQnJvUXuhuaUoA8KWwL8LQ+jY6q3iS71MyDVI=
+X-Received: by 2002:a9d:6195:: with SMTP id g21mr26395560otk.103.1563286487230; 
+ Tue, 16 Jul 2019 07:14:47 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190716115725.66558-1-cychiang@chromium.org>
- <20190716115725.66558-3-cychiang@chromium.org>
-In-Reply-To: <20190716115725.66558-3-cychiang@chromium.org>
+ <20190716115725.66558-5-cychiang@chromium.org>
+In-Reply-To: <20190716115725.66558-5-cychiang@chromium.org>
 From: Tzung-Bi Shih <tzungbi@google.com>
-Date: Tue, 16 Jul 2019 22:12:35 +0800
-Message-ID: <CA+Px+wWuCBvWra8+=szQOrvr3iv2YPMeoHHVtJ1vmaZWEEQ44A@mail.gmail.com>
-Subject: Re: [PATCH v4 2/5] drm: bridge: dw-hdmi: Report connector status
- using callback
+Date: Tue, 16 Jul 2019 22:14:36 +0800
+Message-ID: <CA+Px+wV6RSfv4GL8+EJzXGq2nqzKtH9p23VTo2s30h0To2rQtg@mail.gmail.com>
+Subject: Re: [PATCH v4 4/5] ASoC: rockchip_max98090: Add dai_link for HDMI
 To: Cheng-Yi Chiang <cychiang@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_071247_644227_5C7336CC 
-X-CRM114-Status: GOOD (  11.54  )
+X-CRM114-CacheID: sfid-20190716_071449_809313_0F402698 
+X-CRM114-Status: UNSURE (   9.48  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -114,36 +114,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Jul 16, 2019 at 7:57 PM Cheng-Yi Chiang <cychiang@chromium.org> wrote:
+On Tue, Jul 16, 2019 at 7:58 PM Cheng-Yi Chiang <cychiang@chromium.org> wrote:
 >
-> Change the Kconfig of DRM_DW_HDMI so it selects SND_SOC_HDMI_CODEC.
-> This is for the typedef of hdmi_codec_plugged_cb to be used in dw-hdmi.c.
-Not sure why you select SND_SOC_HDMI_CODEC in this patch.  To have
-definition of hdmi_codec_plugged_cb, include hdmi-codec.h should be
-sufficient.
-
->
-> diff --git a/drivers/gpu/drm/bridge/synopsys/Kconfig b/drivers/gpu/drm/bridge/synopsys/Kconfig
-> index 21a1be3ced0f..309da052db97 100644
-> --- a/drivers/gpu/drm/bridge/synopsys/Kconfig
-> +++ b/drivers/gpu/drm/bridge/synopsys/Kconfig
-> @@ -4,6 +4,7 @@ config DRM_DW_HDMI
->         select DRM_KMS_HELPER
->         select REGMAP_MMIO
->         select CEC_CORE if CEC_NOTIFIER
+> diff --git a/sound/soc/rockchip/Kconfig b/sound/soc/rockchip/Kconfig
+> index b43657e6e655..d610b553ea3b 100644
+> --- a/sound/soc/rockchip/Kconfig
+> +++ b/sound/soc/rockchip/Kconfig
+> @@ -40,9 +40,10 @@ config SND_SOC_ROCKCHIP_MAX98090
+>         select SND_SOC_ROCKCHIP_I2S
+>         select SND_SOC_MAX98090
+>         select SND_SOC_TS3A227E
 > +       select SND_SOC_HDMI_CODEC
-So that it is weird to select this option.
-
->
->  config DRM_DW_HDMI_AHB_AUDIO
->         tristate "Synopsys Designware AHB Audio interface"
-> @@ -20,7 +21,6 @@ config DRM_DW_HDMI_I2S_AUDIO
->         tristate "Synopsys Designware I2S Audio interface"
->         depends on SND_SOC
->         depends on DRM_DW_HDMI
-> -       select SND_SOC_HDMI_CODEC
-Also strange for deselecting the option.  Should be in another commit
-for another reason?
+>         help
+>           Say Y or M here if you want to add support for SoC audio on Rockchip
+> -         boards using the MAX98090 codec, such as Veyron.
+> +         boards using the MAX98090 codec and HDMI codec, such as Veyron.
+You should not need to select the option in this patch (but in next
+patch), because this patch does not depend on anything from
+hdmi-codec.c.
 
 _______________________________________________
 Linux-rockchip mailing list
