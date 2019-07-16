@@ -2,86 +2,88 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C297D6A373
-	for <lists+linux-rockchip@lfdr.de>; Tue, 16 Jul 2019 10:00:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 492126A7D7
+	for <lists+linux-rockchip@lfdr.de>; Tue, 16 Jul 2019 13:59:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z8WXNbgAdRc6jAnqb698sOMhNo8MaM1ogeRfqovvF6s=; b=cGdI4mpd9+7CLI
-	poBty32AE0TSXXwNYs6VE11CBKO7hYtr28nsdiZqVRxbYN3iCCogBAdLVHNnVZQpWBTewUdqSdPqY
-	5EpkwDm/g4O7Tl/8nXQ0Zlaj7X9RPPeMoI0bRc/SroqU06PbW5PR3wIkfh+k4hTZdPrw65srzEqUN
-	fmb3cypZaT8sukyqg+5IWEsFIy9Bxbwqe5woysc69AY1ogg4UYNZO4Oi1/cfdCnfa6O/IXx2pZrrJ
-	Fca+VsiBT+4Xadfzl1XuVEU+ZGyjujJogCZSiSuTorGEYsFQACZmQWSxHl2EE05U94VA3f/ERG9VV
-	tU0Gby/ffP+64842XXPw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1u3ZI14e1NxvxajoiSKBnG7NTDzPxtmhOkIfbGDp6pY=; b=Rw572zwFq93BR1
+	ZTkr/fq8xNwyebQk9TviXmhS8cmW2znUlk4R/eYGONv0rfooAZwQqsq1ICLFCRqa/Utzelf06aIqr
+	pcod3ASs5NoXG6URCi9SdciMdQhcDNtt+zqpy7AXtkYY62Xg1ZV2wPOtRe8APgmprSwIsdc988vdl
+	2KBk54QFhpG8NtT1BggdplZDwFv49lnqJ3bb8YZme8qxY5+ML5vxVFMuMGmQEB9cFwBjGpEESaik1
+	cCJ39a5cOY++wgKyLvpagg9vvKSsmc/QY/E4Q7iL2ptCcVBigmf5OVy4Ls0sfaeVEfsuYJ8SAjkvL
+	Hr637Mb08VkerYYxD8hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnINx-0006GX-KG; Tue, 16 Jul 2019 08:00:29 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1hnM6m-0004HS-0G; Tue, 16 Jul 2019 11:59:00 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnINd-0005M4-6d
- for linux-rockchip@lists.infradead.org; Tue, 16 Jul 2019 08:00:12 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id v129so13244405vsb.11
- for <linux-rockchip@lists.infradead.org>; Tue, 16 Jul 2019 01:00:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0k1aHf58/gxem57t+/HJk9SNpX74KfXqdFRssCgasHQ=;
- b=WkIXGD93vnc7/jgdUJCOyAhWfQWj4JwZxZhvfijDRISLuLx4yflZHTDWWSxx7WAFgi
- P/75eR1ocFjiim/HAtaQ/hHHMdj/AJhGCoGv3O1KDMwV3amytYQ+kgBq/LAKt+YymIQH
- cgPBdjhd4eTA/OcE54ml3PqvteVAcATrUZsBw=
+ id 1hnM5m-0003UP-Bv
+ for linux-rockchip@lists.infradead.org; Tue, 16 Jul 2019 11:58:01 +0000
+Received: by mail-pf1-x443.google.com with SMTP id r1so8992422pfq.12
+ for <linux-rockchip@lists.infradead.org>; Tue, 16 Jul 2019 04:57:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=iH5gCfl0OuGYiRTd2UB1cBM68KaQdhsCRty5hxYd3dY=;
+ b=V9cyzw4kFa/RZS43vz1q2ZotcgrBABA+mp6/ba1o+Kk2FT4QcZnLk9FD5kVaWihJ1d
+ EkaJ3iHPGcAmd7uTHYp7wsxpULujIUqJAsBqoC6K4sNVWjzf012KvGkJBHhu1lFq2p7q
+ z8PmUN/C1Wp4vdiP8fd9j8kbCFEkAWLZs6ai8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=0k1aHf58/gxem57t+/HJk9SNpX74KfXqdFRssCgasHQ=;
- b=A8HMQ0opqkm5fgG1I4NBs3LCr/b7AJKB8daebMt2SOkIjIH/+ZFKIytB4reY03lYAV
- n5iawAkqiZyvXRpMckbj36jHb8r5Zr0HGTAL968hcy0wloUFyX2raW2e4ByVCRX+RxEJ
- tRrFfHomW6J6zhv3PQk/eRB6lPDZFBmEHd1dWwPNLvbAI55fRpgETucbkfzO8TJ76xBT
- ajqa3PimOuAZuE7cbQ78b/lhyulzIU3kmT8AIkBIPchfA3fvrZJ2bR/Mlkqkm40qAMIv
- TURAN/Qu+XZReFOjMpgy0jiMwo3qV8D14kctSSxylUpd+egeOknPXb2y7Gcxcx2Vmttb
- UxcA==
-X-Gm-Message-State: APjAAAUb8UDjx9ZOyo96qcPY25axj906YskiCjatCpN59fdVUVm+1NFu
- sPD9YV6v+WwT7bucrKXEA3lyVOmNrcP3QF43XE4hew==
-X-Google-Smtp-Source: APXvYqz3UlcLWtTzFizosrgSxqzhf3bbaJZCfMhWBpiXfCrTTv26BLTLvewBhZnAiR6udq4k9bpOekTvU0tfbVw4RAQ=
-X-Received: by 2002:a67:ebcb:: with SMTP id y11mr9527514vso.138.1563264004214; 
- Tue, 16 Jul 2019 01:00:04 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=iH5gCfl0OuGYiRTd2UB1cBM68KaQdhsCRty5hxYd3dY=;
+ b=sEd33aSj/u19x6V1cPubgK6aMxYXvpWUiif/9dmut5bJjjlS90c2KI4BV2xuxSdsSB
+ TfDwOVTqbatzLpDJySwZ6BrvIB5fSPvMkCVJZ/YxYBE5w5CCMpGkyDQYPqhXuAcT2Bx1
+ 3fJYkgSJl4ZZ50ivsubynEEOj6ioTPWERq6IcM8D8M6YZoLlN2zAjFRHL+ERUbYWboLP
+ jesxYw9gxBiqLPQLPK8V9sKsC217O0lAayvAGBih7tarq1OtBPDwtCY47pLhaUQHGSMk
+ phWfJwClwnXp1QGQLaV2wdd6IWlfcLduMbwR+2EYiGPqE6qoV6hBWt2Wv/PwMARgF6Tb
+ qXXw==
+X-Gm-Message-State: APjAAAWJACTpVUBTEUzua/B7Hbc8IYOqrWupKD2xU9Iv3fAFgf+8yB96
+ ueZAflXU/KVHCQv8+jxflCiRTA==
+X-Google-Smtp-Source: APXvYqwEudRW4UCecmhqxDxNv8pqZvtVnV0Gb3zuBM6EJpnKYenUO/UU4YNjtBxRGQSmZ4apf6sa1A==
+X-Received: by 2002:a63:2cc7:: with SMTP id
+ s190mr21276476pgs.236.1563278276626; 
+ Tue, 16 Jul 2019 04:57:56 -0700 (PDT)
+Received: from localhost.localdomain ([49.206.201.107])
+ by smtp.gmail.com with ESMTPSA id z24sm36269566pfr.51.2019.07.16.04.57.53
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 16 Jul 2019 04:57:56 -0700 (PDT)
+From: Jagan Teki <jagan@amarulasolutions.com>
+To: Simon Glass <sjg@chromium.org>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
+ u-boot@lists.denx.de
+Subject: [PATCH v3 00/57] ram: rk3399: Add LPDDR4 support 
+Date: Tue, 16 Jul 2019 17:26:48 +0530
+Message-Id: <20190716115745.12585-1-jagan@amarulasolutions.com>
+X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 MIME-Version: 1.0
-References: <20190712100443.221322-1-cychiang@chromium.org>
- <20190712100443.221322-2-cychiang@chromium.org>
- <20190712105745.xr7jxc626lwoaajx@shell.armlinux.org.uk>
- <CA+Px+wWbmUemETY3OMk1T9XS2w8ZXvZUhVEGzw_w6AxtU8R0rw@mail.gmail.com>
-In-Reply-To: <CA+Px+wWbmUemETY3OMk1T9XS2w8ZXvZUhVEGzw_w6AxtU8R0rw@mail.gmail.com>
-From: Cheng-yi Chiang <cychiang@chromium.org>
-Date: Tue, 16 Jul 2019 15:59:36 +0800
-Message-ID: <CAFv8NwKwd8Yf4UmqUhcaP1pL2K_d_FSZm9JyY_Azy13017RWgg@mail.gmail.com>
-Subject: Re: [PATCH v3 1/5] ASoC: hdmi-codec: Add an op to set callback
- function for plug event
-To: Tzung-Bi Shih <tzungbi@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_010009_286256_49BA21A6 
-X-CRM114-Status: GOOD (  22.19  )
-X-Spam-Score: -7.4 (-------)
+X-CRM114-CacheID: sfid-20190716_045758_745361_6E87A395 
+X-CRM114-Status: GOOD (  10.45  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,104 +96,154 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: ALSA development <alsa-devel@alsa-project.org>, tzungbi@chromium.org,
- Heiko Stuebner <heiko@sntech.de>, Liam Girdwood <lgirdwood@gmail.com>,
- David Airlie <airlied@linux.ie>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Mark Brown <broonie@kernel.org>, Takashi Iwai <tiwai@suse.com>,
- Douglas Anderson <dianders@chromium.org>, dri-devel@lists.freedesktop.org,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Hans Verkuil <hverkuil@xs4all.nl>, linux-rockchip@lists.infradead.org,
- Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Dylan Reid <dgreid@chromium.org>,
- Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org
+Cc: linux-rockchip@lists.infradead.org, gajjar04akash@gmail.com,
+ linux-amarula@amarulasolutions.com, Jagan Teki <jagan@amarulasolutions.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Jul 15, 2019 at 11:56 PM Tzung-Bi Shih <tzungbi@google.com> wrote:
->
-> On Fri, Jul 12, 2019 at 6:58 PM Russell King - ARM Linux admin
-> <linux@armlinux.org.uk> wrote:
-> >
-> > On Fri, Jul 12, 2019 at 06:04:39PM +0800, Cheng-Yi Chiang wrote:
-> > > Add an op in hdmi_codec_ops so codec driver can register callback
-> > > function to handle plug event.
-> > >
-> > > Driver in DRM can use this callback function to report connector status.
-> > >
-> > > Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
-> > > ---
-> > >  include/sound/hdmi-codec.h    | 16 +++++++++++++
-> > >  sound/soc/codecs/hdmi-codec.c | 45 +++++++++++++++++++++++++++++++++++
-> > >  2 files changed, 61 insertions(+)
-> > >
-> > > diff --git a/include/sound/hdmi-codec.h b/include/sound/hdmi-codec.h
-> > > index 7fea496f1f34..9a8661680256 100644
-> > > --- a/include/sound/hdmi-codec.h
-> > > +++ b/include/sound/hdmi-codec.h
-> > > @@ -47,6 +47,9 @@ struct hdmi_codec_params {
-> > >       int channels;
-> > >  };
-> > >
-> > > +typedef void (*hdmi_codec_plugged_cb)(struct device *dev,
-> > > +                                   bool plugged);
-> > > +
-> >
-> > I'd like to pose a question for people to think about.
-> >
-> > Firstly, typedefs are generally shunned in the kernel.  However, for
-> > these cases it seems to make sense.
-> >
-> > However, should the "pointer"-ness be part of the typedef or not?  To
-> > see what I mean, consider:
-> >
-> >         typedef void (*hdmi_foo)(void);
-> >
-> >         int register_foo(hdmi_foo foo);
-> >
-> > vs
-> >
-> >         typedef void hdmi_foo(void);
-> >
-> >         int register_foo(hdmi_foo *foo);
-> >
-> > which is more in keeping with how we code non-typedef'd code - it's
-> > obvious that foo is a pointer while reading the code.
-> I have a different opinion.  Its suffix "_cb" self-described it is a
-> callback function.  Since function and function pointer are equivalent
-> in the language, I think we don't need to emphasize that it is a
-> function "pointer".
->
->
+This is next revison of lpddr4 support on rk3399 compared to
+previous set[1]. It has some changes based on the commit orders
+and squashing few patches together and rest is same.
 
-Hi Russell and Tzungbi, thank you for the review.
-Regarding this typedef of callback function, I found a thread
-discussing this very long time ago:
+Thanks to
+- YouMin Chen
+- Akash Gajjar
+- Kever Yang
+for supporting all the help on this work.
 
-https://yarchive.net/comp/linux/typedefs.html
+Changes for v3:
+- squash set_rate code in one patch
+- tested in Rockpro64 and Rock-PI-4
+- order them in proper way
+- rebase on master
+Changes for v2:
+- handle LPDDR4 code as part of CONFIG_RAM_RK3399_LPDDR4
+- support data_training and set_rate via sdram_rk3399_ops
+- add proper sys_reg_enc macros
+- add new patch to rename variable sdram_params with params
+- fix few commit messages.
 
-From that thread, Linus gave an example of using typedef for function
-pointer that is following to this pattern.
-I also looked around how other driver use it:
-$ git grep typedef | grep _cb | less | wc -l
-138
-$ git grep typedef | grep _cb | grep "(\*" | wc -l
-115
-Most of the typedef of callback function use this pattern.
-So I think this should be fine.
-Thanks!
+patch 0001 - 0018: add dram config enc macro
 
+patch 0019: configure phy IO in ds odt
 
-> > It seems to me that the latter better matches what is in the kernel's
-> > coding style, which states:
-> >
-> >   In general, a pointer, or a struct that has elements that can
-> >   reasonably be directly accessed should **never** be a typedef.
-> >
-> > or maybe Documentation/process/coding-style.rst needs updating?
+patch 0020: add LPDDR4 config 
+
+patch 0021 - 0043: lpddr4 data training changes
+
+patch 0044 - 0046: syscon pmu support
+
+patch 0047: set 50MHz ddr clock
+
+patch 0048: set 400MHz ddr clock
+
+patch 0049: LPDDR4-400 timings
+
+patch 0050: LPDDR4-800 timings
+
+patch 0051 - 0052: lpddr4 set rate
+
+patch 0053: enable lpddr4 support on Rockpro64
+
+patch 0054: enable lpddr4 support on Rock-PI 4
+
+patch 0055: add LPDDR-100 timings via dts
+
+patch 0056: use LPDDR-100 timings on Rockpro64
+
+patch 0057: use LPDDR-100 timings on Rock-PI 4
+
+[1] https://patchwork.ozlabs.org/cover/1116734/
+
+Any inputs?
+Jagan.
+
+Jagan Teki (57):
+  ram: rk3399: Add ddrtype enc macro
+  ram: rk3399: Add channel number encoder macro
+  ram: rk3399: Add row_3_4 enc macro
+  ram: rk3399: Add chipinfo macro
+  ram: rk3399: Add rank enc macro
+  ram: rk3399: Add column enc macro
+  ram: rk3399: Add bk enc macro
+  ram: rk3399: Add dbw enc macro
+  ram: rk3399: Add cs0_rw macro
+  ram: rk3399: Add cs1_rw macro
+  ram: rk3399: Add bw enc macro
+  ram: rk3399: Rename sys_reg with sys_reg2
+  ram: rk3399: Update cs0_row to use sys_reg3
+  ram: rk3399: Update cs1_row to use sys_reg3
+  ram: rk3399: Add cs1_col enc macro
+  ram: rk3399: Add ddr version enc macro
+  ram: rk3399: Add ddrtimingC0
+  ram: rk3399: Add DdrMode
+  ram: rk3399: Configure phy IO in ds odt
+  ram: rockchip: Kconfig: Add RK3399 LPDDR4 entry
+  ram: rk3399: Add lpddr4 rank mask for ca training
+  ram: rk3399: Add lpddr4 rank mask for wdql training
+  ram: rk3399: Move mode_sel assignment
+  ram: rk3399: Don't wait for PLL lock in lpddr4
+  ram: rk3399: Avoid two channel ZQ Cal Start at the same time
+  ram: rk3399: Configure PHY_898, PHY_919 for lpddr4
+  ram: rk3399: Configure BOOSTP_EN, BOOSTN_EN for lpddr4
+  ram: rk3399: Configure SLEWP_EN, SLEWN_EN for lpddr4
+  ram: rk3399: Configure PHY RX_CM_INPUT for lpddr4
+  ram: rk3399: Map chipselect for lpddr4
+  ram: rk3399: Configure tsel write ca for lpddr4
+  ram: rk3399: Don't disable dfi dram clk for lpddr4, rank 1
+  ram: rk3399: Add IO settings
+  ram: sdram: Configure lpddr4 tsel rd, wr based on IO settings
+  ram: rk3399: Add tsel control clock drive
+  ram: rk3399: Configure soc odt support
+  ram: rk3399: Get lpddr4 tsel_rd_en from io settings
+  ram: rk3399: Update lpddr4 vref based on io settings
+  ram: rk3399: Update lpddr4 mode_sel based on io settings
+  ram: rk3399: Update lpddr4 vref_mode_ac
+  ram: rk3399: Simplify data training first argument
+  ram: rk3399: Handle data training via ops
+  ram: rk3399: Add LPPDR4 mr detection
+  arm: include: rockchip: Add rk3399 pmu file
+  rockchip: rk3399: syscon: Add pmu support
+  rockchip: dts: rk3399: Add u-boot, dm-pre-reloc for pmu
+  clk: rockchip: rk3399: Set 50MHz ddr clock
+  clk: rockchip: rk3399: Set 400MHz ddr clock
+  ram: rk3399: Add LPPDDR4-400 timings inc
+  ram: rk3399: Add LPPDDR4-800 timings inc
+  ram: rk3399: Add set_rate sdram rk3399 ops
+  ram: rk3399: Add lpddr4 set rate support
+  configs: rockpro64: Enable LPDDR4 support
+  configs: rock-pi-4: Enable LPDDR4 support
+  rockchip: dts: rk3399: Add LPDDR4-100 timings
+  rockchip: dts: rk3399: rockpro64: Use LPDDR4-100 dtsi
+  rockchip: dts: rk3399: rock-pi-4: Use LPDDR4-100 dtsi
+
+ arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi     |    1 +
+ arch/arm/dts/rk3399-rockpro64-u-boot.dtsi     |    1 +
+ arch/arm/dts/rk3399-sdram-lpddr4-100.dtsi     | 1537 +++++++++++++++
+ arch/arm/dts/rk3399-u-boot.dtsi               |    4 +
+ .../include/asm/arch-rockchip/pmu_rk3399.h    |   72 +
+ .../include/asm/arch-rockchip/sdram_common.h  |   31 +
+ .../include/asm/arch-rockchip/sdram_rk3399.h  |   29 +-
+ arch/arm/mach-rockchip/rk3399/syscon_rk3399.c |    8 +
+ configs/rock-pi-4-rk3399_defconfig            |    1 +
+ configs/rockpro64-rk3399_defconfig            |    1 +
+ drivers/clk/rockchip/clk_rk3399.c             |    8 +
+ drivers/ram/rockchip/Kconfig                  |    7 +
+ .../ram/rockchip/sdram-rk3399-lpddr4-400.inc  | 1570 +++++++++++++++
+ .../ram/rockchip/sdram-rk3399-lpddr4-800.inc  | 1570 +++++++++++++++
+ drivers/ram/rockchip/sdram_rk3399.c           | 1726 ++++++++++++++---
+ 15 files changed, 6317 insertions(+), 249 deletions(-)
+ create mode 100644 arch/arm/dts/rk3399-sdram-lpddr4-100.dtsi
+ create mode 100644 arch/arm/include/asm/arch-rockchip/pmu_rk3399.h
+ create mode 100644 drivers/ram/rockchip/sdram-rk3399-lpddr4-400.inc
+ create mode 100644 drivers/ram/rockchip/sdram-rk3399-lpddr4-800.inc
+
+-- 
+2.18.0.321.gffc6fa0e3
+
 
 _______________________________________________
 Linux-rockchip mailing list
