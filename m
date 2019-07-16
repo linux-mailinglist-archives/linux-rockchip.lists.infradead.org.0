@@ -2,77 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F13636A340
-	for <lists+linux-rockchip@lfdr.de>; Tue, 16 Jul 2019 09:49:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C297D6A373
+	for <lists+linux-rockchip@lfdr.de>; Tue, 16 Jul 2019 10:00:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nZsQe8C0aeyJhcs/ccSI54NQ5cKy6DPUYhp7+zwf9K8=; b=O6PiHczoZ4Wv8ONmp51ZbiRNk
-	Co8Lexr5s+Ng+MHteqFvovgj+e2j68J3Aq+QcqnH/Gv5iTSA0kkfExig8W+eEUurN6Pg65g/nTJEd
-	p/kXdUMToQY7w2RU4dNETzZDOUM2hsnEoKcF5/0w26q3LrIE2xMdN/h56K07g+YdjnRF7sTFbyFJn
-	S9URce5arPgR2pgezeTmC9H1ncg5HEsgjBS5D/6UYoaOTkCR7PSg6xsDZX+ZGxgQ4LgsuRxt5NaVO
-	28X60Z4AYh2/GKwKI7FxtFHtiRe5xRZ3XDscjZuMRxhBdd7ITdLGlzoitYs0aHhQHU22LOSL0MxPj
-	xiCp41qEA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z8WXNbgAdRc6jAnqb698sOMhNo8MaM1ogeRfqovvF6s=; b=cGdI4mpd9+7CLI
+	poBty32AE0TSXXwNYs6VE11CBKO7hYtr28nsdiZqVRxbYN3iCCogBAdLVHNnVZQpWBTewUdqSdPqY
+	5EpkwDm/g4O7Tl/8nXQ0Zlaj7X9RPPeMoI0bRc/SroqU06PbW5PR3wIkfh+k4hTZdPrw65srzEqUN
+	fmb3cypZaT8sukyqg+5IWEsFIy9Bxbwqe5woysc69AY1ogg4UYNZO4Oi1/cfdCnfa6O/IXx2pZrrJ
+	Fca+VsiBT+4Xadfzl1XuVEU+ZGyjujJogCZSiSuTorGEYsFQACZmQWSxHl2EE05U94VA3f/ERG9VV
+	tU0Gby/ffP+64842XXPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnIDG-0001Io-T4; Tue, 16 Jul 2019 07:49:27 +0000
-Received: from regular1.263xmail.com ([211.150.70.203])
+	id 1hnINx-0006GX-KG; Tue, 16 Jul 2019 08:00:29 +0000
+Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnIDD-0001IR-Nx
- for linux-rockchip@lists.infradead.org; Tue, 16 Jul 2019 07:49:25 +0000
-Received: from kever.yang?rock-chips.com (unknown [192.168.165.141])
- by regular1.263xmail.com (Postfix) with ESMTP id D56AE394;
- Tue, 16 Jul 2019 15:49:21 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from [192.168.60.65] (unknown [103.29.142.67])
- by smtp.263.net (postfix) whith ESMTP id
- P28302T140709839501056S1563263345896673_; 
- Tue, 16 Jul 2019 15:49:15 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <aeb84af10e1b44f410d531697000b3f0>
-X-RL-SENDER: kever.yang@rock-chips.com
-X-SENDER: yk@rock-chips.com
-X-LOGIN-NAME: kever.yang@rock-chips.com
-X-FST-TO: linux-amarula@amarulasolutions.com
-X-SENDER-IP: 103.29.142.67
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-Subject: Re: [PATCH v3 17/18] ram: rk3399: Enable sdram debug functions
-To: Jagan Teki <jagan@amarulasolutions.com>, Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- YouMin Chen <cym@rock-chips.com>, u-boot@lists.denx.de
-References: <20190715182856.21688-1-jagan@amarulasolutions.com>
- <20190715182856.21688-18-jagan@amarulasolutions.com>
-From: Kever Yang <kever.yang@rock-chips.com>
-Message-ID: <3416c78d-b1c3-a556-5730-041337085b62@rock-chips.com>
-Date: Tue, 16 Jul 2019 15:49:06 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1hnINd-0005M4-6d
+ for linux-rockchip@lists.infradead.org; Tue, 16 Jul 2019 08:00:12 +0000
+Received: by mail-vs1-xe42.google.com with SMTP id v129so13244405vsb.11
+ for <linux-rockchip@lists.infradead.org>; Tue, 16 Jul 2019 01:00:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=0k1aHf58/gxem57t+/HJk9SNpX74KfXqdFRssCgasHQ=;
+ b=WkIXGD93vnc7/jgdUJCOyAhWfQWj4JwZxZhvfijDRISLuLx4yflZHTDWWSxx7WAFgi
+ P/75eR1ocFjiim/HAtaQ/hHHMdj/AJhGCoGv3O1KDMwV3amytYQ+kgBq/LAKt+YymIQH
+ cgPBdjhd4eTA/OcE54ml3PqvteVAcATrUZsBw=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=0k1aHf58/gxem57t+/HJk9SNpX74KfXqdFRssCgasHQ=;
+ b=A8HMQ0opqkm5fgG1I4NBs3LCr/b7AJKB8daebMt2SOkIjIH/+ZFKIytB4reY03lYAV
+ n5iawAkqiZyvXRpMckbj36jHb8r5Zr0HGTAL968hcy0wloUFyX2raW2e4ByVCRX+RxEJ
+ tRrFfHomW6J6zhv3PQk/eRB6lPDZFBmEHd1dWwPNLvbAI55fRpgETucbkfzO8TJ76xBT
+ ajqa3PimOuAZuE7cbQ78b/lhyulzIU3kmT8AIkBIPchfA3fvrZJ2bR/Mlkqkm40qAMIv
+ TURAN/Qu+XZReFOjMpgy0jiMwo3qV8D14kctSSxylUpd+egeOknPXb2y7Gcxcx2Vmttb
+ UxcA==
+X-Gm-Message-State: APjAAAUb8UDjx9ZOyo96qcPY25axj906YskiCjatCpN59fdVUVm+1NFu
+ sPD9YV6v+WwT7bucrKXEA3lyVOmNrcP3QF43XE4hew==
+X-Google-Smtp-Source: APXvYqz3UlcLWtTzFizosrgSxqzhf3bbaJZCfMhWBpiXfCrTTv26BLTLvewBhZnAiR6udq4k9bpOekTvU0tfbVw4RAQ=
+X-Received: by 2002:a67:ebcb:: with SMTP id y11mr9527514vso.138.1563264004214; 
+ Tue, 16 Jul 2019 01:00:04 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190715182856.21688-18-jagan@amarulasolutions.com>
-Content-Language: en-US
+References: <20190712100443.221322-1-cychiang@chromium.org>
+ <20190712100443.221322-2-cychiang@chromium.org>
+ <20190712105745.xr7jxc626lwoaajx@shell.armlinux.org.uk>
+ <CA+Px+wWbmUemETY3OMk1T9XS2w8ZXvZUhVEGzw_w6AxtU8R0rw@mail.gmail.com>
+In-Reply-To: <CA+Px+wWbmUemETY3OMk1T9XS2w8ZXvZUhVEGzw_w6AxtU8R0rw@mail.gmail.com>
+From: Cheng-yi Chiang <cychiang@chromium.org>
+Date: Tue, 16 Jul 2019 15:59:36 +0800
+Message-ID: <CAFv8NwKwd8Yf4UmqUhcaP1pL2K_d_FSZm9JyY_Azy13017RWgg@mail.gmail.com>
+Subject: Re: [PATCH v3 1/5] ASoC: hdmi-codec: Add an op to set callback
+ function for plug event
+To: Tzung-Bi Shih <tzungbi@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_004923_979663_7A4845E5 
-X-CRM114-Status: GOOD (  12.82  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190716_010009_286256_49BA21A6 
+X-CRM114-Status: GOOD (  22.19  )
+X-Spam-Score: -7.4 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-7.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.203 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,39 +94,106 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, gajjar04akash@gmail.com,
- linux-amarula@amarulasolutions.com,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: ALSA development <alsa-devel@alsa-project.org>, tzungbi@chromium.org,
+ Heiko Stuebner <heiko@sntech.de>, Liam Girdwood <lgirdwood@gmail.com>,
+ David Airlie <airlied@linux.ie>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Mark Brown <broonie@kernel.org>, Takashi Iwai <tiwai@suse.com>,
+ Douglas Anderson <dianders@chromium.org>, dri-devel@lists.freedesktop.org,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Hans Verkuil <hverkuil@xs4all.nl>, linux-rockchip@lists.infradead.org,
+ Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Dylan Reid <dgreid@chromium.org>,
+ Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Ck9uIDIwMTkvNy8xNiDkuIrljYgyOjI4LCBKYWdhbiBUZWtpIHdyb3RlOgo+IFRoaXMgd291bGQg
-aGVscCB0byBkZWJ1ZyB0aGUgc2RyYW0gYmFzZSBwYXJhbWV0ZXJzIHdoaWxlCj4gZGVidWdnaW5n
-IGV4aXN0aW5nIGNoaXAgb3Igd2hpbGUgc3VwcG9ydGluZyBuZXcgc2RyYW0gdHlwZS4KPgo+IEl0
-IHJlcXVpcmUgZXhwbGljaXQgZW5hYmxlbWVudCBvZiBDT05GSUdfUkFNX1JPQ0tDSElQX0RFQlVH
-Cj4gZm9yIHNob3dpbmcgdGhlIGRlYnVnIHByaW50cy4KPgo+IFNpZ25lZC1vZmYtYnk6IEphZ2Fu
-IFRla2kgPGphZ2FuQGFtYXJ1bGFzb2x1dGlvbnMuY29tPgoKUmV2aWV3ZWQtYnk6IEtldmVyIFlh
-bmcgPEtldmVyLnlhbmdAcm9jay1jaGlwcy5jb20+CgpUaGFua3MsCiDCoC0gS2V2ZXIKPiAtLS0K
-PiAgIGRyaXZlcnMvcmFtL3JvY2tjaGlwL3NkcmFtX3JrMzM5OS5jIHwgNSArKysrKwo+ICAgMSBm
-aWxlIGNoYW5nZWQsIDUgaW5zZXJ0aW9ucygrKQo+Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcmFt
-L3JvY2tjaGlwL3NkcmFtX3JrMzM5OS5jIGIvZHJpdmVycy9yYW0vcm9ja2NoaXAvc2RyYW1fcmsz
-Mzk5LmMKPiBpbmRleCBiODM5NTVmOTRlLi45YTYwYzI0MTM1IDEwMDY0NAo+IC0tLSBhL2RyaXZl
-cnMvcmFtL3JvY2tjaGlwL3NkcmFtX3JrMzM5OS5jCj4gKysrIGIvZHJpdmVycy9yYW0vcm9ja2No
-aXAvc2RyYW1fcmszMzk5LmMKPiBAQCAtMTI1MSw2ICsxMjUxLDggQEAgc3RhdGljIHVuc2lnbmVk
-IGNoYXIgY2FsY3VsYXRlX3N0cmlkZShzdHJ1Y3QgcmszMzk5X3NkcmFtX3BhcmFtcyAqcGFyYW1z
-KQo+ICAgCQl9Cj4gICAJfQo+ICAgCj4gKwlzZHJhbV9wcmludF9zdHJpZGUoc3RyaWRlKTsKPiAr
-Cj4gICAJcmV0dXJuIHN0cmlkZTsKPiAgIH0KPiAgIAo+IEBAIC0xMzU3LDExICsxMzU5LDE0IEBA
-IHN0YXRpYyBpbnQgc2RyYW1faW5pdChzdHJ1Y3QgZHJhbV9pbmZvICpkcmFtLAo+ICAgCQlkZWJ1
-ZygiQ2hhbm5lbCAiKTsKPiAgIAkJZGVidWcoY2hhbm5lbCA/ICIxOiAiIDogIjA6ICIpOwo+ICAg
-Cj4gKwkJc2RyYW1fcHJpbnRfZGRyX2luZm8oY2FwX2luZm8sICZwYXJhbXMtPmJhc2UpOwo+ICsK
-PiAgIAkJc2V0X2RkcmNvbmZpZyhjaGFuLCBwYXJhbXMsIGNoYW5uZWwsIGNhcF9pbmZvLT5kZHJj
-b25maWcpOwo+ICAgCX0KPiAgIAo+ICAgCWlmIChwYXJhbXMtPmJhc2UubnVtX2NoYW5uZWxzID09
-IDApIHsKPiAgIAkJcHJpbnRmKCIlczogIiwgX19mdW5jX18pOwo+ICsJCXNkcmFtX3ByaW50X2Ry
-YW1fdHlwZShwYXJhbXMtPmJhc2UuZHJhbXR5cGUpOwo+ICAgCQlwcmludGYoIiAtICVkTUh6IGZh
-aWxlZCFcbiIsIHBhcmFtcy0+YmFzZS5kZHJfZnJlcSk7Cj4gICAJCXJldHVybiAtRUlOVkFMOwo+
-ICAgCX0KCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-TGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1y
-b2NrY2hpcAo=
+On Mon, Jul 15, 2019 at 11:56 PM Tzung-Bi Shih <tzungbi@google.com> wrote:
+>
+> On Fri, Jul 12, 2019 at 6:58 PM Russell King - ARM Linux admin
+> <linux@armlinux.org.uk> wrote:
+> >
+> > On Fri, Jul 12, 2019 at 06:04:39PM +0800, Cheng-Yi Chiang wrote:
+> > > Add an op in hdmi_codec_ops so codec driver can register callback
+> > > function to handle plug event.
+> > >
+> > > Driver in DRM can use this callback function to report connector status.
+> > >
+> > > Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+> > > ---
+> > >  include/sound/hdmi-codec.h    | 16 +++++++++++++
+> > >  sound/soc/codecs/hdmi-codec.c | 45 +++++++++++++++++++++++++++++++++++
+> > >  2 files changed, 61 insertions(+)
+> > >
+> > > diff --git a/include/sound/hdmi-codec.h b/include/sound/hdmi-codec.h
+> > > index 7fea496f1f34..9a8661680256 100644
+> > > --- a/include/sound/hdmi-codec.h
+> > > +++ b/include/sound/hdmi-codec.h
+> > > @@ -47,6 +47,9 @@ struct hdmi_codec_params {
+> > >       int channels;
+> > >  };
+> > >
+> > > +typedef void (*hdmi_codec_plugged_cb)(struct device *dev,
+> > > +                                   bool plugged);
+> > > +
+> >
+> > I'd like to pose a question for people to think about.
+> >
+> > Firstly, typedefs are generally shunned in the kernel.  However, for
+> > these cases it seems to make sense.
+> >
+> > However, should the "pointer"-ness be part of the typedef or not?  To
+> > see what I mean, consider:
+> >
+> >         typedef void (*hdmi_foo)(void);
+> >
+> >         int register_foo(hdmi_foo foo);
+> >
+> > vs
+> >
+> >         typedef void hdmi_foo(void);
+> >
+> >         int register_foo(hdmi_foo *foo);
+> >
+> > which is more in keeping with how we code non-typedef'd code - it's
+> > obvious that foo is a pointer while reading the code.
+> I have a different opinion.  Its suffix "_cb" self-described it is a
+> callback function.  Since function and function pointer are equivalent
+> in the language, I think we don't need to emphasize that it is a
+> function "pointer".
+>
+>
+
+Hi Russell and Tzungbi, thank you for the review.
+Regarding this typedef of callback function, I found a thread
+discussing this very long time ago:
+
+https://yarchive.net/comp/linux/typedefs.html
+
+From that thread, Linus gave an example of using typedef for function
+pointer that is following to this pattern.
+I also looked around how other driver use it:
+$ git grep typedef | grep _cb | less | wc -l
+138
+$ git grep typedef | grep _cb | grep "(\*" | wc -l
+115
+Most of the typedef of callback function use this pattern.
+So I think this should be fine.
+Thanks!
+
+
+> > It seems to me that the latter better matches what is in the kernel's
+> > coding style, which states:
+> >
+> >   In general, a pointer, or a struct that has elements that can
+> >   reasonably be directly accessed should **never** be a typedef.
+> >
+> > or maybe Documentation/process/coding-style.rst needs updating?
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
