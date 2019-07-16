@@ -2,73 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 633F06A7FA
-	for <lists+linux-rockchip@lfdr.de>; Tue, 16 Jul 2019 14:01:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E5A76A7FB
+	for <lists+linux-rockchip@lfdr.de>; Tue, 16 Jul 2019 14:01:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MxCl44psIpcI1NvQTMkugztrQ6x58YGuf95uGtdg95g=; b=Ll3wmIRisBdcih
-	V1n1xfSVJviBw1yhw2c85M6LghhUG2c+cJ93Xbcw6Phg8SfmKJkDBRWLKP39J1uGBMnddNulHphPL
-	ROZeq/GEri7QRuIkvxtMhHoBINgDNslxxZBNqWmS8eBZkeqo19uhkD9n2vQi498o18FnUsmBP7yFu
-	BrikBrk+XPkNjkLjekAmivWltbxwrx2utPPD0Skzs06c6DFoh3/cnPeGvIV0aBW1cNqSqVS6Oyk4F
-	Lqct0jl71EjHWoatmjKrG2RCnvj7ZzdNTs95uTXGJ3yl7P60xwkARTSWcMhVSnsYDBki38tq6wTK2
-	mpYgBZKSTB1XofCYB0+g==;
+	List-Owner; bh=Mi8iNUTL76PahqbXzoWXxvehnGpUEqZLNBJORNDGjHE=; b=pm1PjTk2LX5iMC
+	y7OyRDA67G6a+I5GgQ9hOGMdLlyxsrhTdc3xBg0rsKQtxELLptIHhvc7hk+WTtvaJtMjwt5ADYE66
+	yD9NzXlZOu6kKo5WqXSn5zH42vFne70y78Q6usNN/bbajbAK2MJiWgFwq5iFi0+yXRxKDPbd55z2K
+	3ScUu3wlS2rFxLTu1Lf9Uumby0fn+zJ5QeJqc/vEnU+bfaGfbsjfPdepaAy4AG55tcY/LDuUGBbpa
+	MD+h26mo7G+IgY2MXWU4c1N/o70S3oGl1tM6I8O1/QjCuf2mmaH++gvjLbr6uMZbWMt4WVDYZ13tU
+	rpPKcccIY+PWXflwYQzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnM95-0007Q9-Sl; Tue, 16 Jul 2019 12:01:23 +0000
+	id 1hnM99-0007Xc-20; Tue, 16 Jul 2019 12:01:27 +0000
 Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnM6u-0004QV-E4
- for linux-rockchip@lists.infradead.org; Tue, 16 Jul 2019 11:59:10 +0000
-Received: by mail-pl1-x642.google.com with SMTP id az7so9996738plb.5
- for <linux-rockchip@lists.infradead.org>; Tue, 16 Jul 2019 04:59:07 -0700 (PDT)
+ id 1hnM6x-0004TZ-L1
+ for linux-rockchip@lists.infradead.org; Tue, 16 Jul 2019 11:59:13 +0000
+Received: by mail-pl1-x642.google.com with SMTP id 4so3043334pld.10
+ for <linux-rockchip@lists.infradead.org>; Tue, 16 Jul 2019 04:59:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=LGQ9bzA9T07Z4PCboB8dYXm0DbVJVBbSF3/XKR5AacI=;
- b=k94BfO4aB5u48sOTTGrtbDBtoJARtOIbwX0oONiQcA9666j9/k6fS1wHEb6O5ayrLB
- VB2ygVwJBeM5EYk848P5sg8qLC9CCoRS0jxrFggLSRIiCTPCnPSRseQ5QLjcN3lTwAgX
- W1H7MdiXSd+8Upplf6kSHyOUdKXyKMFGF9HXw=
+ bh=bflvW+JotwkqbODWpg7GKUWBSsmpB52BPlZ06Am3kg0=;
+ b=GNUk3RW49P35dCBPtlChDRN6NEusaps/svjS+IsTEDJXNdmTY0BuasA0VDEAztGgFv
+ Q3HJ9hLPMg7o702o9pfxg6BETBTJaza8P4hePWTIxFX+1nl1Lx1n5ohQrT6EUiaDkvNV
+ sBR/HSxLq/nv1CCFQO8BHsq4dxYsQYq+UfBqA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=LGQ9bzA9T07Z4PCboB8dYXm0DbVJVBbSF3/XKR5AacI=;
- b=R23P9JX45qL+JQrHIqGfMDV8/vwuBlrrkqoXV5VR54oeuvsh/HabmiNs/xo3k7OoKw
- rxne2zMJHlTkY7ZA95zY1vihh0qpdnOulrXq9RlKdK68LW3jwuytzvZ2WtsC50PKOdMX
- 9Ma1abjS8R1y9xikpCRf8MWBxW0zSuHiv5AzSSd5sNynsxsXVdSxd+G4Fp7W5QdHDHFK
- 8rXbYpR1G6GqokVL3uQ305+2jo256MI+Q04acYNWQJ77QYhDPGP6+Muxe+jeSROY4q0Q
- bM4a7hXX1oTbeP0d1lCYXLCfZhkNC/+5I7X4dQaHxHC/+TrkXD4i8mtXr6rByF7cD+/6
- Iyjg==
-X-Gm-Message-State: APjAAAXTuCDm/a4vU62FSG2BKUN5obuo0v0R6kzfmN0oFrPTu+hsqMaC
- s06COKBNug/RykGZvhzG5L7LsA==
-X-Google-Smtp-Source: APXvYqx8bx/JD3g+gbJCnCAaEiDqtJOVbmuRq4slGfPQYEKSu5CUdmzLgjfZWdCiTkGj1XqK/THynw==
-X-Received: by 2002:a17:902:b109:: with SMTP id
- q9mr24809641plr.176.1563278347493; 
- Tue, 16 Jul 2019 04:59:07 -0700 (PDT)
+ bh=bflvW+JotwkqbODWpg7GKUWBSsmpB52BPlZ06Am3kg0=;
+ b=LNPfcFpjg2MVlzpIOG4flG+28mhzTtkpoNlxyZGiE2ftGvsfphj18Yr1c98sDIxV0a
+ AhEm/1RLj6W+7VaaybeP8omdCV2nrIW1Bk3YKG+Jz82fGHbj5bLFnr3HP6uuJE0MgP99
+ N1vNYCdeUJAEKD2WksYPo6caMAFX8DkVYjAOoVr2YsfEm5jVs1AeUEOJcn24nnJFVIuK
+ wIZ3XPYq9PHtNV2jwBskNBu242052LRLVRFBmVXrVgPzQP9Nn71db3HxwwXGflYTuIiX
+ VC0y6KLl3cZCqI1RPY6OK/Kz8xjJyN4EyEB9P052tTmp34GD/FXUaY+L97WtHeN6I56i
+ HqQg==
+X-Gm-Message-State: APjAAAWR6oJpJpKeil2DfXyTPf3B+WBufIQEo8+txYBJR5QuTia+jQ8t
+ +uSCCw+bOh78p357lxpdqyZpKQ==
+X-Google-Smtp-Source: APXvYqwXHXXMzCJ+WKX1p3R1aci6VH/yS0RFHRTmKFov5ZMcVL9hHITGTv6CfZRWPC+WU5j8W5Tn7A==
+X-Received: by 2002:a17:902:2a29:: with SMTP id
+ i38mr35055086plb.46.1563278351007; 
+ Tue, 16 Jul 2019 04:59:11 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.201.107])
- by smtp.gmail.com with ESMTPSA id z24sm36269566pfr.51.2019.07.16.04.59.04
+ by smtp.gmail.com with ESMTPSA id z24sm36269566pfr.51.2019.07.16.04.59.07
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 16 Jul 2019 04:59:07 -0700 (PDT)
+ Tue, 16 Jul 2019 04:59:10 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH v3 20/57] ram: rockchip: Kconfig: Add RK3399 LPDDR4 entry
-Date: Tue, 16 Jul 2019 17:27:08 +0530
-Message-Id: <20190716115745.12585-21-jagan@amarulasolutions.com>
+Subject: [PATCH v3 21/57] ram: rk3399: Add lpddr4 rank mask for ca training
+Date: Tue, 16 Jul 2019 17:27:09 +0530
+Message-Id: <20190716115745.12585-22-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190716115745.12585-1-jagan@amarulasolutions.com>
 References: <20190716115745.12585-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_045908_506033_6E82076D 
-X-CRM114-Status: UNSURE (   8.64  )
+X-CRM114-CacheID: sfid-20190716_045911_799285_91AE37CA 
+X-CRM114-Status: UNSURE (   9.66  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -107,33 +107,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Supporting LPDDR4 code support in RK3399 would increases
-the size of SPL/TPL.
+Add rank_mask based on the rank number for lpddr4.
 
-So add kconfig entry for RK3399 LPDDR4 code so-that
-the boards have LPDDR4 can enable them via defconfig.
+This would keep the ca data training loop based on the
+desired rank mask value instead of looping for all values.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+Signed-off-by: YouMin Chen <cym@rock-chips.com>
 ---
- drivers/ram/rockchip/Kconfig | 7 +++++++
- 1 file changed, 7 insertions(+)
+ drivers/ram/rockchip/sdram_rk3399.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/ram/rockchip/Kconfig b/drivers/ram/rockchip/Kconfig
-index 151ffb684d..4f274e01b3 100644
---- a/drivers/ram/rockchip/Kconfig
-+++ b/drivers/ram/rockchip/Kconfig
-@@ -23,4 +23,11 @@ config RAM_RK3399
- 	  This enables ram drivers support for the platforms based on
- 	  Rockchip RK3399 SoC.
+diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
+index a49677285d..8ecc3a1b74 100644
+--- a/drivers/ram/rockchip/sdram_rk3399.c
++++ b/drivers/ram/rockchip/sdram_rk3399.c
+@@ -687,7 +687,10 @@ static int data_training_ca(const struct chan_info *chan, u32 channel,
+ 	/* clear interrupt,PI_175 PI_INT_ACK:WR:0:17 */
+ 	writel(0x00003f7c, (&denali_pi[175]));
  
-+config RAM_RK3399_LPDDR4
-+	bool "LPDDR4 support for Rockchip RK3399"
-+	depends on RAM_RK3399
-+	help
-+	  This enables LPDDR4 sdram code support for the platforms based
-+	  on Rockchip RK3399 SoC.
-+
- endif # RAM_ROCKCHIP
+-	rank_mask = (rank == 1) ? 0x1 : 0x3;
++	if (params->base.dramtype == LPDDR4)
++		rank_mask = (rank == 1) ? 0x5 : 0xf;
++	else
++		rank_mask = (rank == 1) ? 0x1 : 0x3;
+ 
+ 	for (i = 0; i < 4; i++) {
+ 		if (!(rank_mask & (1 << i)))
 -- 
 2.18.0.321.gffc6fa0e3
 
