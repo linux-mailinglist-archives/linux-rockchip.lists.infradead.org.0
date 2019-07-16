@@ -2,7 +2,7 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC93A6ACFB
+	by mail.lfdr.de (Postfix) with ESMTPS id D3C2D6ACFC
 	for <lists+linux-rockchip@lfdr.de>; Tue, 16 Jul 2019 18:43:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,73 +10,74 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6AjpEtCebxJYkG49fsBzpOdko4utFqQnDCuBSzkpWMI=; b=p5mDBnJI/G9zNr
-	3XADiIrODq2YidHqESbEASQcc7zS5m/Wl0zP1TZm8xaUUGsCHsOQClFkrEQv4qkgafZpjAUxg1ppQ
-	vgLmHUIT/ut3G9eJiZ7WgHNJP3pLuZ8G1k4sF03uWQW9Eb0MlbyNpXCD4bTH8WSDm5Uo3A7D3YqNw
-	AcrxCbcuzNfv4wF0m8UnXRuk+RZZ6kuzd1QWVW54cakXnk+/9+x3eEFiC+Twf20yQrCSzOqPc0p4j
-	LRZF8RqvLf8WfJQm/t02h1Bl2zoeYgat6JMSBxwhzQ0HM0xjrLkCb9vo1cQaFMoGA1uN8OZmhxyGb
-	em2/sGViKyP6kMmNefYg==;
+	List-Owner; bh=TRI8X1h3aauSJ8EftCUXnIfAYvntc1WRsy2n1Jks1O4=; b=UU8UC4dpBaYlu0
+	k25C7M6+wk/8RcAmefTNqHFM4bHRsRE3aiRbmXgB9dhPv6aJqRUZDLYgo2zMUEGmyFtDlVALAr0D8
+	+Gy0ztZo4PUy5AcCc4dVaL1xPFKmBaKbWBjlbjg1n9vnHOTuqQGrix8aQairR3Fzph4G1IXjKN4tB
+	WprJiCNU7Jp/e1s8lkJ9lmXCX5Ke9T9nqb8rPRTIfN3mFW6PABMkrrihomjXVqlXQm2SidC8Fb/d8
+	7gLPW5vabMlU4Y4j8PXzSD4NrLm+aOuBqrZJOpRLg5om8eurN3LFEmAFVS2zknZyLcs0oX7g+L/jx
+	Ptrj9WO0MeGEZhmNUTQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnQXY-0000ZR-Tu; Tue, 16 Jul 2019 16:42:56 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hnQXW-0000Xs-Ib; Tue, 16 Jul 2019 16:42:55 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnQXT-0000Vi-K7
- for linux-rockchip@lists.infradead.org; Tue, 16 Jul 2019 16:42:53 +0000
-Received: by mail-pf1-x443.google.com with SMTP id g2so9393267pfq.0
- for <linux-rockchip@lists.infradead.org>; Tue, 16 Jul 2019 09:42:45 -0700 (PDT)
+ id 1hnQXS-0000Vp-0M
+ for linux-rockchip@lists.infradead.org; Tue, 16 Jul 2019 16:42:51 +0000
+Received: by mail-pg1-x544.google.com with SMTP id f5so883473pgu.5
+ for <linux-rockchip@lists.infradead.org>; Tue, 16 Jul 2019 09:42:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=eGqYmSRY0aX5Z2gwVb+ocjilcWY5xD+m3PbgEthSu3s=;
- b=J+QejSTqpqmwqp1exIlt6u/JLWNu+5jOtwHjmNNPRjpvrQsfgqWuh28+D+4+nIPO5K
- YbLtPl8q8y20WuIoPv6idr4xciiwgkEKUNejLjjYgeC/+nVUXRcivwy4+8u+9Py3LNvI
- 6EqYtSULVOTa8A/l5H0GZBx0X5J2q5b6gRk8g=
+ bh=G0ynwreDQx55Cdn2k1+KVcd1p88/D0r6svcv1QlBO3o=;
+ b=irjFbOPzoCsmoIZq13YOds5hccWx9OiE071z79slMWaKwUnr0Gw8NqkCvXGuxofvkE
+ b2DbVQ8khrwbZ1fgtJzGUdLN3xC5o1VqML1rE0tFczdIs5fX+WoRn0m64ZSj09uLaKp8
+ W4JTJ5GuZwoocTLDXiTmbxT27wq8MYbdfM4/8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=eGqYmSRY0aX5Z2gwVb+ocjilcWY5xD+m3PbgEthSu3s=;
- b=hHkyKvnO4zjSEtn/FDLr3V8P2/2sMxzLxtq++H+QoFKErgK/5bdhGpbtyViaXE5Syn
- JrX/fBj4/cluWcnaLPYMF7uKUhM6xx6TeTZw31xiJabvdnyy2N68sVMbPB5NqZdJXrYl
- ozZU9Tgip69Wxqiwa2RilQ4FtnbNWG3exd9DWIm/CPLJBI7zcxOWkzdkiNZ1FgmvhKBo
- AoSVpoPJ33vJdwMetcwQ+nAtdEjVRcd0pJ/Clt/mMrUMh34FB3bmOqEYhDLnEIMlunSj
- 7H5P12P4kDu4D/MZB3ZVHwQbP3kNWQESx6/GF9rq4HqkNDhTioka44VNl/6xhGp4wgOG
- Pwnw==
-X-Gm-Message-State: APjAAAWevgvpfx4SiiTUGOQ//kXcDVzGWZOLMXMXnHzFpyLJwd4I+MiB
- uB9ozHyIZ105c83LMimgSniNQg==
-X-Google-Smtp-Source: APXvYqzTbFdUQvee1WuiqpQUi3ryRdKOs288mKrt4jpytT3apms/GB6jRwGHlDNmWOJfHARW1woJVg==
-X-Received: by 2002:a17:90a:2305:: with SMTP id
- f5mr39843967pje.128.1563295365190; 
- Tue, 16 Jul 2019 09:42:45 -0700 (PDT)
+ bh=G0ynwreDQx55Cdn2k1+KVcd1p88/D0r6svcv1QlBO3o=;
+ b=GcrWsdzh2YoM16X4PlxmDx+N1a77jBBjJpHV8/Pm6wO/1yw+0yNfnuB4GiUq/++hMF
+ GmOsXL3zg1/goKc2tbnJnnyo6eFH+UOxnyI2BxSa7trLez0Y1SXz9NeqYMY6nzczV9QD
+ y6LuIsh2YK/mVr0miU2JE6ZPalYJr/akFkIZiLAC5WYkS0ACSK/tjdgnoecDQ8pGPHNi
+ 49BFl1tcQL+H8yPmh88cU82iE3hz6SwZzNOIG2wegL0VC03LC4BRRyod+xawvU5dIa/H
+ nxJR6bGsKSQv/RLeLElFsOzL0zbx9Hb64jrj9D7t5fw/oU1XnQT3gkyoodWqQa3JH7OD
+ wevg==
+X-Gm-Message-State: APjAAAWKujprJRWzHOg46jQ3xDZjTLB6PEd+XI+buoxZeKqwQIRAiQ1Y
+ rRgqApAB4jN6dKsjKgNaErbGOg==
+X-Google-Smtp-Source: APXvYqxTvrAricfH4zSCJjfNseyILhC1mVPFZVt33bDXH1vSrEY0L19EpCl6w3rTFJO8Jdf66uAxVQ==
+X-Received: by 2002:a17:90a:cf8f:: with SMTP id
+ i15mr36366127pju.110.1563295366371; 
+ Tue, 16 Jul 2019 09:42:46 -0700 (PDT)
 Received: from tictac2.mtv.corp.google.com
  ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id r1sm25456468pfq.100.2019.07.16.09.42.44
+ by smtp.gmail.com with ESMTPSA id r1sm25456468pfq.100.2019.07.16.09.42.45
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 16 Jul 2019 09:42:44 -0700 (PDT)
+ Tue, 16 Jul 2019 09:42:45 -0700 (PDT)
 From: Douglas Anderson <dianders@chromium.org>
 To: Ulf Hansson <ulf.hansson@linaro.org>, Kalle Valo <kvalo@codeaurora.org>,
  Adrian Hunter <adrian.hunter@intel.com>
-Subject: [PATCH 1/2] mmc: core: Add sdio_trigger_replug() API
-Date: Tue, 16 Jul 2019 09:42:08 -0700
-Message-Id: <20190716164209.62320-2-dianders@chromium.org>
+Subject: [PATCH 2/2] mwifiex: Make use of the new sdio_trigger_replug() API to
+ reset
+Date: Tue, 16 Jul 2019 09:42:09 -0700
+Message-Id: <20190716164209.62320-3-dianders@chromium.org>
 X-Mailer: git-send-email 2.22.0.510.g264f2c817a-goog
 In-Reply-To: <20190716164209.62320-1-dianders@chromium.org>
 References: <20190716164209.62320-1-dianders@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_094251_657427_EFFC9EAD 
-X-CRM114-Status: GOOD (  22.48  )
+X-CRM114-CacheID: sfid-20190716_094250_063947_8C88D395 
+X-CRM114-Status: GOOD (  13.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -97,191 +98,71 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Ganapathi Bhat <gbhat@marvell.com>, Ritesh Harjani <riteshh@codeaurora.org>,
- linux-rockchip@lists.infradead.org, Xinming Hu <huxinming820@gmail.com>,
- netdev@vger.kernel.org, Brian Norris <briannorris@chromium.org>,
- linux-wireless@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
+Cc: Ganapathi Bhat <gbhat@marvell.com>, linux-rockchip@lists.infradead.org,
+ Xinming Hu <huxinming820@gmail.com>, netdev@vger.kernel.org,
+ Brian Norris <briannorris@chromium.org>, linux-wireless@vger.kernel.org,
+ Douglas Anderson <dianders@chromium.org>,
  Amitkumar Karwar <amitkarwar@gmail.com>, linux-kernel@vger.kernel.org,
  Wolfram Sang <wsa+renesas@sang-engineering.com>,
- Nishant Sarmukadam <nishants@marvell.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Avri Altman <avri.altman@wdc.com>, Jiong Wu <lohengrin1024@gmail.com>,
- linux-mmc@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
- =?UTF-8?q?Niklas=20S=C3=B6derlund?= <niklas.soderlund+renesas@ragnatech.se>,
- davem@davemloft.net
+ Nishant Sarmukadam <nishants@marvell.com>, Avri Altman <avri.altman@wdc.com>,
+ linux-mmc@vger.kernel.org, davem@davemloft.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-When using Marvell WiFi SDIO cards, it is not uncommon for Linux WiFi
-driver to fully lose the communication channel to the firmware running
-on the card.  Presumably the firmware on the card has a bug or two in
-it and occasionally crashes.
+As described in the patch ("mmc: core: Add sdio_trigger_replug()
+API"), the current mwifiex_sdio_card_reset() is broken in the cases
+where we're running Bluetooth on a second SDIO func on the same card
+as WiFi.  The problem goes away if we just use the
+sdio_trigger_replug() API call.
 
-The Marvell WiFi driver attempts to recover from this problem.
-Specifically the driver has the function mwifiex_sdio_card_reset()
-which is called when communcation problems are found.  That function
-attempts to reset the state of things by utilizing the mmc_hw_reset()
-function.
-
-The current solution is a bit complex because the Marvell WiFi driver
-needs to manually deinit and reinit the WiFi driver around the reset
-call.  This means it's going through a bunch of code paths that aren't
-normally tested.  However, complexity isn't our only problem.  The
-other (bigger) problem is that Marvell WiFi cards are often combo
-WiFi/Bluetooth cards and Bluetooth runs on a second SDIO func.  While
-the WiFi driver knows that it should re-init its own state around the
-mmc_hw_reset() call there is no good way to inform the Bluetooth
-driver.  That means that in Linux today when you reset the Marvell
-WiFi driver you lose all Bluetooth communication.  Doh!
-
-One way to fix the above problems is to leverage a more standard way
-to reset the Marvell WiFi card where we go through the same code paths
-as card unplug and the card plug.  In this patch we introduce a new
-API call for doing just that: sdio_trigger_replug().  This API call
-will trigger an unplug of the SDIO card followed by a plug of the
-card.  As part of this the card will be nicely reset.
+NOTE: Even though with this new solution there is less of a reason to
+do our work from a workqueue (the unplug / plug mechanism we're using
+is possible for a human to perform at any time so the stack is
+supposed to handle it without it needing to be called from a special
+context), we still need a workqueue because the Marvell reset function
+could called from a context where sleeping is invalid and thus we
+can't claim the host.  One example is Marvell's wakeup_timer_fn().
 
 Signed-off-by: Douglas Anderson <dianders@chromium.org>
 ---
 
- drivers/mmc/core/core.c       | 28 ++++++++++++++++++++++++++--
- drivers/mmc/core/sdio_io.c    | 20 ++++++++++++++++++++
- include/linux/mmc/host.h      | 15 ++++++++++++++-
- include/linux/mmc/sdio_func.h |  2 ++
- 4 files changed, 62 insertions(+), 3 deletions(-)
+ drivers/net/wireless/marvell/mwifiex/sdio.c | 14 +++-----------
+ 1 file changed, 3 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/mmc/core/core.c b/drivers/mmc/core/core.c
-index 9020cb2490f7..48a7d23aed26 100644
---- a/drivers/mmc/core/core.c
-+++ b/drivers/mmc/core/core.c
-@@ -2164,6 +2164,12 @@ int mmc_sw_reset(struct mmc_host *host)
- }
- EXPORT_SYMBOL(mmc_sw_reset);
- 
-+void mmc_trigger_replug(struct mmc_host *host)
-+{
-+	host->trigger_replug_state = MMC_REPLUG_STATE_UNPLUG;
-+	_mmc_detect_change(host, 0, false);
-+}
-+
- static int mmc_rescan_try_freq(struct mmc_host *host, unsigned freq)
+diff --git a/drivers/net/wireless/marvell/mwifiex/sdio.c b/drivers/net/wireless/marvell/mwifiex/sdio.c
+index 24c041dad9f6..f77ad2615f08 100644
+--- a/drivers/net/wireless/marvell/mwifiex/sdio.c
++++ b/drivers/net/wireless/marvell/mwifiex/sdio.c
+@@ -2218,14 +2218,6 @@ static void mwifiex_sdio_card_reset_work(struct mwifiex_adapter *adapter)
  {
- 	host->f_init = freq;
-@@ -2217,6 +2223,11 @@ int _mmc_detect_card_removed(struct mmc_host *host)
- 	if (!host->card || mmc_card_removed(host->card))
- 		return 1;
+ 	struct sdio_mmc_card *card = adapter->card;
+ 	struct sdio_func *func = card->func;
+-	int ret;
+-
+-	mwifiex_shutdown_sw(adapter);
+-
+-	/* power cycle the adapter */
+-	sdio_claim_host(func);
+-	mmc_hw_reset(func->card->host);
+-	sdio_release_host(func);
  
-+	if (host->trigger_replug_state == MMC_REPLUG_STATE_UNPLUG) {
-+		mmc_card_set_removed(host->card);
-+		return 1;
-+	}
-+
- 	ret = host->bus_ops->alive(host);
+ 	/* Previous save_adapter won't be valid after this. We will cancel
+ 	 * pending work requests.
+@@ -2233,9 +2225,9 @@ static void mwifiex_sdio_card_reset_work(struct mwifiex_adapter *adapter)
+ 	clear_bit(MWIFIEX_IFACE_WORK_DEVICE_DUMP, &card->work_flags);
+ 	clear_bit(MWIFIEX_IFACE_WORK_CARD_RESET, &card->work_flags);
  
- 	/*
-@@ -2329,8 +2340,21 @@ void mmc_rescan(struct work_struct *work)
- 	mmc_bus_put(host);
- 
- 	mmc_claim_host(host);
--	if (mmc_card_is_removable(host) && host->ops->get_cd &&
--			host->ops->get_cd(host) == 0) {
-+
-+	/*
-+	 * Move through the state machine if we're triggering an unplug
-+	 * followed by a re-plug.
-+	 */
-+	if (host->trigger_replug_state == MMC_REPLUG_STATE_UNPLUG) {
-+		host->trigger_replug_state = MMC_REPLUG_STATE_PLUG;
-+		_mmc_detect_change(host, 0, false);
-+	} else if (host->trigger_replug_state == MMC_REPLUG_STATE_PLUG) {
-+		host->trigger_replug_state = MMC_REPLUG_STATE_NONE;
-+	}
-+
-+	if (host->trigger_replug_state == MMC_REPLUG_STATE_PLUG ||
-+	    (mmc_card_is_removable(host) && host->ops->get_cd &&
-+			host->ops->get_cd(host) == 0)) {
- 		mmc_power_off(host);
- 		mmc_release_host(host);
- 		goto out;
-diff --git a/drivers/mmc/core/sdio_io.c b/drivers/mmc/core/sdio_io.c
-index 2ba00acf64e6..1c5c2a3ebe5e 100644
---- a/drivers/mmc/core/sdio_io.c
-+++ b/drivers/mmc/core/sdio_io.c
-@@ -811,3 +811,23 @@ void sdio_retune_release(struct sdio_func *func)
- 	mmc_retune_release(func->card->host);
- }
- EXPORT_SYMBOL_GPL(sdio_retune_release);
-+
-+/**
-+ *	sdio_trigger_replug - trigger an "unplug" + "plug" of the card
-+ *	@func: SDIO function attached to host
-+ *
-+ *	When you call this function we will schedule events that will
-+ *	make it look like the card contining the given SDIO func was
-+ *	unplugged and then re-plugged-in.  This is as close as possible
-+ *	to a full reset of the card that can be achieved.
-+ *
-+ *	NOTE: routnine will temporarily make the card look as if it is
-+ *	removable even if it is marked non-removable.
-+ *
-+ *	This function should be called while the host is claimed.
-+ */
-+void sdio_trigger_replug(struct sdio_func *func)
-+{
-+	mmc_trigger_replug(func->card->host);
-+}
-+EXPORT_SYMBOL(sdio_trigger_replug);
-diff --git a/include/linux/mmc/host.h b/include/linux/mmc/host.h
-index a9b12322c775..e0d41a1bcf17 100644
---- a/include/linux/mmc/host.h
-+++ b/include/linux/mmc/host.h
-@@ -410,6 +410,12 @@ struct mmc_host {
- 
- 	bool			trigger_card_event; /* card_event necessary */
- 
-+	/* state machine for triggering unplug/replug */
-+#define MMC_REPLUG_STATE_NONE	0		/* not doing unplug/replug */
-+#define MMC_REPLUG_STATE_UNPLUG	1		/* do unplug next */
-+#define MMC_REPLUG_STATE_PLUG	2		/* do plug next */
-+	u8			trigger_replug_state;
-+
- 	struct mmc_card		*card;		/* device attached to this host */
- 
- 	wait_queue_head_t	wq;
-@@ -530,7 +536,12 @@ int mmc_regulator_get_supply(struct mmc_host *mmc);
- 
- static inline int mmc_card_is_removable(struct mmc_host *host)
- {
--	return !(host->caps & MMC_CAP_NONREMOVABLE);
-+	/*
-+	 * A non-removable card briefly looks removable if code has forced
-+	 * a re-plug of the card.
-+	 */
-+	return host->trigger_replug_state != MMC_REPLUG_STATE_NONE ||
-+		!(host->caps & MMC_CAP_NONREMOVABLE);
+-	ret = mwifiex_reinit_sw(adapter);
+-	if (ret)
+-		dev_err(&func->dev, "reinit failed: %d\n", ret);
++	sdio_claim_host(func);
++	sdio_trigger_replug(func);
++	sdio_release_host(func);
  }
  
- static inline int mmc_card_keep_power(struct mmc_host *host)
-@@ -583,4 +594,6 @@ static inline enum dma_data_direction mmc_get_dma_dir(struct mmc_data *data)
- int mmc_send_tuning(struct mmc_host *host, u32 opcode, int *cmd_error);
- int mmc_abort_tuning(struct mmc_host *host, u32 opcode);
- 
-+void mmc_trigger_replug(struct mmc_host *host);
-+
- #endif /* LINUX_MMC_HOST_H */
-diff --git a/include/linux/mmc/sdio_func.h b/include/linux/mmc/sdio_func.h
-index 5a177f7a83c3..0d6c73768ae3 100644
---- a/include/linux/mmc/sdio_func.h
-+++ b/include/linux/mmc/sdio_func.h
-@@ -173,4 +173,6 @@ extern void sdio_retune_crc_enable(struct sdio_func *func);
- extern void sdio_retune_hold_now(struct sdio_func *func);
- extern void sdio_retune_release(struct sdio_func *func);
- 
-+extern void sdio_trigger_replug(struct sdio_func *func);
-+
- #endif /* LINUX_MMC_SDIO_FUNC_H */
+ /* This function read/write firmware */
 -- 
 2.22.0.510.g264f2c817a-goog
 
