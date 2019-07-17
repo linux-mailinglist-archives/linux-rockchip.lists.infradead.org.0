@@ -2,88 +2,59 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 174B46BA22
-	for <lists+linux-rockchip@lfdr.de>; Wed, 17 Jul 2019 12:28:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEAA76BAE2
+	for <lists+linux-rockchip@lfdr.de>; Wed, 17 Jul 2019 13:00:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k4/mV21s8lxxWAUWSjIdYBiljE/0deOHR5hCW/bDB8A=; b=ezMRlpX5i+Ss3J
-	3LAWTwc7nzPPSEXlBEyy6giyvo1i+8bGR6+WqQNxXIiHkQls490wKr/8FfkchmxQH5AlrJLth0uRe
-	C9wySUzlSdht5eQAozi9wxJJUV08NAO+LmXcpEjHw6qrN8LrxrYiGHjI4o6Ox2pZKk6ghQsh7BXLL
-	2lecZ3fk1aL+9lvvYc11v1/w6UVlMlB3VkCuZ266AH2YNSt2x/T2bCk9dEWCuXWIGZVtLI6qyX9T1
-	8pemUF9e7uDlaCnokZmA45vdK2sDiw3Jwoe+pFinuejqVqnObJA7QJ9GT1yrDCWenMzjKh2grA3MH
-	uhexBgdmHyoKY6N4Xs8g==;
+	List-Owner; bh=cr3kdGAqymX7n26QggLxsy4nQX5LI0IjEwwMLjMoaA8=; b=DqZ38kfLLaE250
+	U9I5qcQnWiWVhcen5yomrtYJTavCAhRvmQVDLw29T7uDw5MvLpAB8Ra2o3/oQdcRAMRk3b3cxt7nK
+	5S0hqtbYI4OYQu5e3bvgC9ikMSCXdACQP9VRgX18xZWash5oDe3W1uTS9/m0a6JaCgmTmIdeuEhoZ
+	bLnjIPnCZCKTcEUtnS3BFvs0SVpwICBlvVKApXaLiV8CBvWgCYsewsmnO3nfyoAouHhUunqPi4U3P
+	t+5/kz07u500E63JgeaHguLz+z13iJ/omi+RHlrqR20vvrGO0SH+bAfvNRllEgP7MmJJyLSHi0xZ4
+	jKw72KSn8ZP6TmJfrq0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnhAq-0000jy-TH; Wed, 17 Jul 2019 10:28:36 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+	id 1hnhfJ-0001zv-Ui; Wed, 17 Jul 2019 11:00:05 +0000
+Received: from asavdk4.altibox.net ([109.247.116.15])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnhAm-0000hy-TC
- for linux-rockchip@lists.infradead.org; Wed, 17 Jul 2019 10:28:34 +0000
-Received: by mail-oi1-x241.google.com with SMTP id a127so18083294oii.2
- for <linux-rockchip@lists.infradead.org>; Wed, 17 Jul 2019 03:28:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=3OqUE647HuitrzeN56x9jTuLb2Ydo4APiMUt/N1U1gk=;
- b=JDhYZ/XLSp5p+uzs8xtZ+lDFSxyDX6a3a83vp7yY0oH7QR/JUG3nl7G/bfr2BVUVVt
- AT9BWdwzjWgFGhHaPLqfM2IfAKu5tUziTQa2yq6iXjC1JXAIXDIL1bnk3A60xCcqM8v1
- iHXfabVCBA+o6US93D2wHx2oKFBhG9ostlX0XsIagP4+oak+j0c4An6AaDbPkN0LuELE
- sbSIgxgH+PAC7n3MJ4/wXWHhsuSGKXPdLnObSXx350+qAr5xmhsnP0WJC6CsTXqWdSD+
- HwOrD5rSZE1vq3fGbC6Ihq5Zkdwq7tmp9dJjt8JIhcj2TFk/S5P93TXmZQmTmaWwZ/NV
- JatA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=3OqUE647HuitrzeN56x9jTuLb2Ydo4APiMUt/N1U1gk=;
- b=XgRTkessFGie1ldywzUnW+/Y+bvEdsn3yRCgPP8G8aM8W7dCCKGBXYJzjY75tXDkrq
- ZvCZc+XNISJjmxk3ETdUtR80dIxxBocIrPUJnRIGmRD9Dg8UVTKzl3BnHDmMDZnxetn5
- hUrUOu5bmtyZb1m6K2lo+HRB4mWLCeitXveI87OgVhrZIBUEu5Dc3rr46jy4OghqkuSW
- bD1u2dMOdlHcywshesWbafizaLlWkLjyAFneTJD2FAYyg1q0XArXJicr7Yxi0ePVnKTn
- g1M3oJucUU33w/Cwj93GzZTOeSgcB6/mfIlR0liM3Q22/35oc6gQvBG+/UbRB5uui++R
- Zibw==
-X-Gm-Message-State: APjAAAWhv/uWUGgM5Ee5H7z6RmRnTYpIsNFutZrTw88JxvqhP7eVNccK
- vVHQ9yUh6nQ51ja0sed/kJYZVdBA3NS2uqL5O0p1QQ==
-X-Google-Smtp-Source: APXvYqwWwXVZ/BZHTjaG86aX6+cX+YF7cjf0miBCE15x0Nd7s4TeCOAZk+HlSzO1mf3x+jEgUAq8Br9lxzMLzaRz5tc=
-X-Received: by 2002:aca:544b:: with SMTP id i72mr20169753oib.174.1563359308762; 
- Wed, 17 Jul 2019 03:28:28 -0700 (PDT)
+ id 1hnhez-0001lB-Hj; Wed, 17 Jul 2019 10:59:47 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk4.altibox.net (Postfix) with ESMTPS id F142F8034E;
+ Wed, 17 Jul 2019 12:59:33 +0200 (CEST)
+Date: Wed, 17 Jul 2019 12:59:32 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v2 0/19] drm: drop use of drmp.h in drm-misc
+Message-ID: <20190717105932.GA5188@ravnborg.org>
+References: <20190716064220.18157-1-sam@ravnborg.org>
+ <20190716065022.GA18452@ravnborg.org>
 MIME-Version: 1.0
-References: <20190717083327.47646-1-cychiang@chromium.org>
-In-Reply-To: <20190717083327.47646-1-cychiang@chromium.org>
-From: Tzung-Bi Shih <tzungbi@google.com>
-Date: Wed, 17 Jul 2019 18:28:17 +0800
-Message-ID: <CA+Px+wX4gbntkd6y8NN8xwXpZLD4MH9rTeHcW9+Ndtw=3_mWBw@mail.gmail.com>
-Subject: Re: [PATCH v5 0/5] Add HDMI jack support on RK3288
-To: Cheng-Yi Chiang <cychiang@chromium.org>
+Content-Disposition: inline
+In-Reply-To: <20190716065022.GA18452@ravnborg.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=VcLZwmh9 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10
+ a=e1VmrhLkSVZGwi_aLusA:9 a=CjuIK1q_8ugA:10
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_032832_971849_F3893039 
-X-CRM114-Status: GOOD (  12.83  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190717_035945_768087_899047AB 
+X-CRM114-Status: GOOD (  18.23  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [109.247.116.15 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,50 +67,68 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: ALSA development <alsa-devel@alsa-project.org>,
- Douglas Anderson <dianders@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
- Liam Girdwood <lgirdwood@gmail.com>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, Takashi Iwai <tiwai@suse.com>,
- tzungbi@chromium.org, Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
- Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, linux-rockchip@lists.infradead.org,
- dgreid@chromium.org, Jaroslav Kysela <perex@perex.cz>,
- linux-arm-kernel@lists.infradead.org
+Cc: Maxime Jourdan <mjourdan@baylibre.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Alexandru-Cosmin Gheorghe <Alexandru-Cosmin.Gheorghe@arm.com>,
+ Jerome Brunet <jbrunet@baylibre.com>, Deepak Sharma <deepak.sharma@amd.com>,
+ Oleksandr Andrushchenko <oleksandr_andrushchenko@epam.com>,
+ Kevin Hilman <khilman@baylibre.com>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ NXP Linux Team <linux-imx@nxp.com>, linux-rockchip@lists.infradead.org,
+ Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>,
+ Dan Carpenter <dan.carpenter@oracle.com>,
+ Robert Tarasov <tutankhamen@chromium.org>, Emil Lundmark <lndmrk@chromium.org>,
+ Jani Nikula <jani.nikula@intel.com>, Jyri Sarha <jsarha@ti.com>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-amlogic@lists.infradead.org, Sean Paul <sean@poorly.run>,
+ linux-arm-kernel@lists.infradead.org, Thomas Zimmermann <tzimmermann@suse.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Alex Deucher <alexander.deucher@amd.com>,
+ Mikulas Patocka <mpatocka@redhat.com>, Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Jul 17, 2019 at 4:33 PM Cheng-Yi Chiang <cychiang@chromium.org> wrote:
->
-> This patch series supports HDMI jack reporting on RK3288, which uses
-> DRM dw-hdmi driver and hdmi-codec codec driver.
->
-> The previous discussion about reporting jack status using hdmi-notifier
-> and drm_audio_component is at
->
-> https://lore.kernel.org/patchwork/patch/1083027/
->
-> The new approach is to use a callback mechanism that is
-> specific to hdmi-codec.
->
-> Changes from v4 to v5:
-> - synopsys/Kconfig: Remove the incorrect dependency change in v4.
-> - rockchip/Kconfig: Add dependency of hdmi-codec when it is really need
->   for jack support.
->
-> Cheng-Yi Chiang (5):
->   ASoC: hdmi-codec: Add an op to set callback function for plug event
->   drm: bridge: dw-hdmi: Report connector status using callback
->   drm: dw-hdmi-i2s: Use fixed id for codec device
->   ASoC: rockchip_max98090: Add dai_link for HDMI
->   ASoC: rockchip_max98090: Add HDMI jack support
->
-LGTM.
+On Tue, Jul 16, 2019 at 08:50:22AM +0200, Sam Ravnborg wrote:
+> Copied all recipients on the cover letter.
+> As the list is long this mail may not hit the mailing lists.
+> 
+> 	Sam
+> 
+> On Tue, Jul 16, 2019 at 08:42:01AM +0200, Sam Ravnborg wrote:
+> > This patch set removes a far share of the remaining uses of drmP.h.
+> > Common for all patches are that the respective files are maintained
+> > in drm-misc.
+> > All patches are independent.
+> > 
+> > Patches have all been build tested with various configs and various
+> > architectures.
+> > There are likely introduced a few build issues that randconfig
+> > build will reveal, but for all configs I have used the build was OK.
+> > 
+> > This patchset does not conclude the quest to kill all uses
+> > of drmP.h, but it is a major step towards the goal.
+> > 
+> > Please review/ack.
+> > I plan to apply the patches to drm-misc, but feel free
+> > to do it yourself.
+> > 
+> > There will be conflicts with the ongoing work on ttm, gem etc.
+> > But let's deal with the conflicts when they hit us - it
+> > is simple conflicts in the list of include files.
+> > 
+> > v2:
+> > - Removed merged patches
+> > - Added ack from Emil Velikov to the full series
+> > - Rebased on top of drm-misc-next
+> > - Hand-edited the list of Cc: as get_maintainer.pl in some
+> >   cases looks up too much people, due to cross kernel commits
 
-Reviewed-by: Tzung-Bi Shih <tzungbi@google.com>
+I have collected the additional r-bs and acks and pushed out the full
+series. Thanks for feedback to everyone!
+
+	Sam
 
 _______________________________________________
 Linux-rockchip mailing list
