@@ -2,90 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A7806BF52
-	for <lists+linux-rockchip@lfdr.de>; Wed, 17 Jul 2019 17:49:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E1706C09F
+	for <lists+linux-rockchip@lfdr.de>; Wed, 17 Jul 2019 19:51:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5voHs0+YNRxMHPhSMZCCxdcVTr9E2OPtPbc1BWVhq+4=; b=ezXRJHymb+GPZT
-	mLiYnX2x4CincKnZtC8YP7JploFSL7OC75XojS5AAPgCV/ZeTpPc4ccSl2VQzMjZYLg0dIitCcBdI
-	bImZRC0/BgeRtCA/4jHNHYwLvuJ6aISVqHanGRWFKBZZ0vT0HBRp/JdwAKFhuOjwPmse5y2PhHts1
-	lotL3iSkGARA0yUQIzAzrX1aEGn8hlB4Jtnn9m0FWMmLWv/2Wjg4z8Ad9rpm/Un/STEJxP4nTLryu
-	fROvYGxWlIACVBGVUZe7Npic0g4g5dtLVtGBXVQuge/S/1mRLdq+uvbI16JPd/AaIyT5eD5chP5xs
-	vENTbq+sFBLXFGn9pzHw==;
+	List-Owner; bh=j1ZQmOYlLV4Yl986n6Pzed4DXX1M4P5PPJ90kIWjW7g=; b=qPX0XJzit2sXdT
+	jU5kxcLA0ZvO80OGfJNYCEQ1ZtOa+3a6HtWSK54qmfZ0pZbB1Mue2x+sljwn+jZarAZXXU+y+Ds5X
+	lF7agptyAMPpdQ5nNfFWMjAzSlCV6UZ10dUZmaD9jBndcbGA+R+8RBUZTbCyk8RN9shIo5BXgXMXz
+	AuMFG7flfyZo80+4oXu4Y4zxJz+xeeCis52x6rR1w4l9glm8TNZ5JqntTB0wC8Wz6+5lfeb57Wci2
+	JldMpQ9Dv4puPOTDkU0o24t6ZGp6incn7o7Cq4SxH5Gqrz+AryUCNuPecWTynPm1ohYX3CHfkzFIn
+	8kTSdmfQbH81HVG3qIOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnmBn-0002gF-0O; Wed, 17 Jul 2019 15:49:55 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hno5G-0001jn-38; Wed, 17 Jul 2019 17:51:18 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnmBX-0002dN-MF
- for linux-rockchip@lists.infradead.org; Wed, 17 Jul 2019 15:49:47 +0000
-Received: by mail-pg1-x544.google.com with SMTP id i18so11359898pgl.11
- for <linux-rockchip@lists.infradead.org>; Wed, 17 Jul 2019 08:49:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=Hb8N+mCFumP5UIT7Eh4a1labnAOOM9xbh6gKdDBYW5Q=;
- b=AIN+OtWZpALMA/6mVYgUvkuUZDCOq3PhN2fC8pFp3/k5xeMRxBM7ZiCfb1iF8cWQFc
- 1U/w1+DXHTA3ZzHg4IhWB1R96yhb6w6KHxbWkEVSgI3geYcKYqkZa9Ahe91uEAJZOg6j
- 73mLHvsm5bjqKIUm1zR0m+Id04TBdM36xskAD6TsV+ppbvwM1p1gmwzfarY2vDujtJCG
- nuOhY9f0HFecxpHt+HH9BHKEet6mgdTXHtrMIBRblbW0BHrw4OfPqkccDgwT+R34OU1j
- oMSXwgihNPlxGFsy5zBltFBhYyqTeZZIuGXpkt+yVhkOodjoo877cN95oHzS37zvRTz/
- uFgA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Hb8N+mCFumP5UIT7Eh4a1labnAOOM9xbh6gKdDBYW5Q=;
- b=oY/81pEq17DhgU4wK0RvWldT4mmWqM4p3nLoG+k0SgWCDESu2qXm74ZBhgkoZAlZeD
- F1cGis0gf0slpz6ro1LBX/jksujJLRKUpq05A1dvBcUoY3s8/B/AKDbdInlyysmDGTSl
- 77CCRs3KU+GetFuKKG5K4VfbGl85+mnKlikyr54nrxgf363541ROUjsXTUOiRAmp+iKA
- U8hmgCNuj44ZOHuXUkNaCcaWV+byzo+lEYtTyIq2/q66G6/nNXtVT5xcjt2IbI7a41QY
- 0/hTBRok5c0TWjSW2kbSZ105bVDJJGjWGDIxQybUiPm0fVeyNZOoeRRpgO86p2qtyJPn
- tSEg==
-X-Gm-Message-State: APjAAAVai5MK6Tfh/pQVAskzjtYkM+DIIG84IbYZdCcSAzhno9K+ajtK
- RsuWDZVcR+RjR4oOdW2AaxI4
-X-Google-Smtp-Source: APXvYqzGPfjSUgzu9EJS+jesGmyy7H6akD6VHPTEE1Z+a/z2iyglKTLJV3n/RgHTasYigT82Ospqmg==
-X-Received: by 2002:a63:460c:: with SMTP id t12mr41690337pga.69.1563378578573; 
- Wed, 17 Jul 2019 08:49:38 -0700 (PDT)
-Received: from Mani-XPS-13-9360 ([2405:204:7301:59e6:f493:40df:9c8a:5041])
- by smtp.gmail.com with ESMTPSA id r9sm34291161pjq.3.2019.07.17.08.49.32
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 17 Jul 2019 08:49:37 -0700 (PDT)
-Date: Wed, 17 Jul 2019 21:19:29 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Elon Zhang <zhangzj@rock-chips.com>
+ id 1hno57-0001Ve-V3; Wed, 17 Jul 2019 17:51:13 +0000
+Received: from ip5f5a6320.dynamic.kabel-deutschland.de ([95.90.99.32]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hno4y-0001oa-LI; Wed, 17 Jul 2019 19:51:00 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Subject: Re: [PATCH v1 1/1] arm64: dts: rockchip: Add support for TB-96AI board
-Message-ID: <20190717154929.GB13269@Mani-XPS-13-9360>
+Date: Wed, 17 Jul 2019 19:50:59 +0200
+Message-ID: <1742719.xClBtG7SZE@diego>
+In-Reply-To: <20190717154752.GA13269@Mani-XPS-13-9360>
 References: <20190711021209.32529-1-zhangzj@rock-chips.com>
  <20190717154752.GA13269@Mani-XPS-13-9360>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190717154752.GA13269@Mani-XPS-13-9360>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_084939_879362_5FEA9B51 
-X-CRM114-Status: GOOD (  29.23  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190717_105110_302267_B7712BB3 
+X-CRM114-Status: GOOD (  29.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,22 +58,26 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Elon Zhang <zhangzj@rock-chips.com>,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Jul 17, 2019 at 09:17:52PM +0530, Manivannan Sadhasivam wrote:
-> Hi Elon,
-> 
+Hi Elon,
+
+Am Mittwoch, 17. Juli 2019, 17:47:52 CEST schrieb Manivannan Sadhasivam:
 > Thanks for the patch. Overall, this patch needs a bit of cleanup. There
 > are many nodes added which are not available in mainline.
 > 
 > Please see comments inline.
-> 
+
+What Manivannan said, plus some additional things inline.
+
+
 > On Thu, Jul 11, 2019 at 10:12:09AM +0800, Elon Zhang wrote:
 > > Add devicetree support for RK3399Pro TB-96AI board, one of
 > > the 96Boards family.
@@ -163,9 +127,6 @@ On Wed, Jul 17, 2019 at 09:17:52PM +0530, Manivannan Sadhasivam wrote:
 > So, the compatible should be:
 > 
 > compatible = "beiqui,rk3399pro-tb-96ai", "rockchip,rk3399pro";
-
-s/beiqui/beiqi
-
 > 
 > And there should a separate patch to add the vendor prefix. You can refer
 > below patch:
@@ -189,7 +150,22 @@ s/beiqui/beiqi
 > > +		regulator-always-on;
 > > +		regulator-boot-on;
 > > +	};
-> > +
+
+please model a real power-tree following the board-schematics.
+This dangling unconnected vcc_phy regulator is a good
+indicator of things just being copied from the vendor bsp devicetree.
+
+So from a power-input down through the different converters
+that generate the subvoltages. And please also use the real
+voltage-rail-names used in the schematics.
+
+For reference just look at most rockchip arm64 boards
+(rk3399-rock960, rk3399-puma and a lot more)
+
+And if you look at regulator/regulator_summary in debugfs,
+it should create an actual tree structure ;-) .
+
+
 > > +	vcc5v0_sys: vccsys {
 > > +		compatible = "regulator-fixed";
 > > +		regulator-name = "vcc5v0_sys";
@@ -281,7 +257,13 @@ s/beiqui/beiqi
 > It looks like this driver is not present in mainline yet. I can see
 > some old patches in lkml archive but not sure about the status of those.
 > So, please remove this node and use dummy regulators where applicable.
-> 
+
+Actually the rk809 support went in just this merge-window some days ago.
+So we're good here.
+
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e444f6d68c07bc01a3a3d5905409dbe1ca391d26
+
+
 > > +		reg = <0x20>;
 > > +		interrupt-parent = <&gpio1>;
 > > +		interrupts = <RK_PC2 IRQ_TYPE_LEVEL_LOW>;
@@ -741,6 +723,14 @@ s/beiqui/beiqi
 > > +
 > > +&tcphy0 {
 > > +	extcon = <&fusb0>;
+
+this comes from the vendor kernel, which mimiks the old chrome-os
+of having a extcon and not using the newer type-c framework.
+So drop this please.
+
+
+Heiko
+
 > > +	status = "okay";
 > > +};
 > > +
@@ -836,11 +826,11 @@ s/beiqui/beiqi
 > > +	status = "okay";
 > > +};
 > > +
-> > -- 
-> > 2.17.1
-> > 
-> > 
-> > 
+> 
+
+
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
