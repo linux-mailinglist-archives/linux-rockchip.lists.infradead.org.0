@@ -2,71 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E89A6E7CC
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DC6C6E7CD
 	for <lists+linux-rockchip@lfdr.de>; Fri, 19 Jul 2019 17:10:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=i7Tyh+BXHeLJJD62+/uVf324ualTouZ9n+n6elLh18o=; b=fShfIah9GkC5js
-	YCln+rCg0g3QxF2gjte6WuzdL+Fgd/OvlsH/xbmmSFL8q171aK0sOlBnvYFSbsgWJhAzv4VN0wezr
-	Pv5+7nuSdokY7EUtyDyg6i83HtZFxz+I3Gi/R99Sttj56Uy8MRE8IBjb+3oSkcGAc2n0Vco7wJdiJ
-	f8FpL4FrCcgsdA6nqq5RBX4i/j3t6ge85aWNOKflvQw93lpdwRhGnbWgBIPlDxzh0wgYXMNDCgKiu
-	YavkHdcAxA6+4zlEHWQ+zrQTJsy7nAi879uN3xFSH0sM/iio4Y91icThYGwNqacS8Fo6IhopGsGb4
-	gNrMCftCA56kfhTpt7Gg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SUr7KqFQDqI56++xFVNE3alKOpO72P+k/yeruXKW6eU=; b=RPI+3QBsG/Uc8Z
+	QFcnWG+EtHG5ho6pzRwFECEQ/EQswgsnIX5w37Uqw2xQak8WtD3dYtZAjEOKDPjYgTHa9XQi9Tlbj
+	/LYB0TbFaBYoyMZ7j9xP+GaDc7Gnmag2SiwGhNot1isqy9MXwU/8aQv+g/7mTH+p5+5fJrUM6Fujr
+	nOPatOKAVtB25kU/Rvtonj3+Ppsb3y/sRIPVaYeg5zn/r0r2tgvuppzafF8xNn0x2dMC19pv3u4vU
+	474W/Ezw6HA2Pm9Ox7jmnI/CJDj0Ikcu89HtCAc926VHWLW7c0x15hsK6POHBdyPWnRfXUztOgzVr
+	fNFkMyuiSHLyWCiKblGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoUX4-00068w-3A; Fri, 19 Jul 2019 15:10:50 +0000
+	id 1hoUX6-00069x-Pq; Fri, 19 Jul 2019 15:10:52 +0000
 Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoUWy-00067c-H6
- for linux-rockchip@lists.infradead.org; Fri, 19 Jul 2019 15:10:46 +0000
-Received: by mail-pl1-x644.google.com with SMTP id ay6so15784182plb.9
- for <linux-rockchip@lists.infradead.org>; Fri, 19 Jul 2019 08:10:43 -0700 (PDT)
+ id 1hoUX1-00068c-S0
+ for linux-rockchip@lists.infradead.org; Fri, 19 Jul 2019 15:10:49 +0000
+Received: by mail-pl1-x644.google.com with SMTP id c14so15726091plo.0
+ for <linux-rockchip@lists.infradead.org>; Fri, 19 Jul 2019 08:10:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=NeLfIdfK7H9VA7YCSPes36VLCiljfy+v8RT7YHrSbrE=;
- b=YHoqQF7Nklf+4KWb+LOe8y4GuDpafZ9sVQep1breaULryrvfVdA2VAI9dMlNpNPtPj
- EfuPTe24gSlQ4Iy1bvWj7BejV7Ko9Kp5lIUiffsj46Pq80HopsmVY0j12fcFhfDgHrTw
- /NM2m450CS4BTXq1rgJsQdEDDVOhuyOJQvFYI=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=oY9kl1w2DP/q5AU0xWJ63UM0i2Vhho6KqnqpfROEftE=;
+ b=kS/xAv73k2MpU1stMm+pct5QH/oo6PDILZQS5OwhxPw/vH7PJffqQM43yHBtjOvKcr
+ hpVO2SrQAnZ14LmD6CNYRm7lB9PcMq20PQ+qY0VF+QlnC3qc4T1v1nD7rLXdfxjNI2Yf
+ B2/BEOdlKOG6QN1uUtnptdML61KtZU1DQaQoI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=NeLfIdfK7H9VA7YCSPes36VLCiljfy+v8RT7YHrSbrE=;
- b=J9cmsWuJOA6NSiSuDs3DAIHxvLftmstuyV0Atr7GWfWxvozU25HGrd1I/TjvRZNAgH
- KoU+/O+gE+Fwcvb0J6jbelceY+tpFr0j2OKWdgv3Qm0TA1ExQZqx/H4k7L3WjhALG8Dp
- JsMQj2xt4mG0lniFxWob9w300op7IupHgBiZQra+s1cYnsn/eebfbvsrUA/VaPLHPLEd
- 2CvFlFOyDwhL5bDZul+PE67PR3ioY3OG/gv+/CcLPbr104k04mY4Q7FK48bAws7uRAxJ
- BrVCr4R2xneMQQkPe80Xa+TO6/Ajmuq9Gb7jN/17fF2B42VKMUlOd9EwTVXN1oh89EnV
- yKgA==
-X-Gm-Message-State: APjAAAWOu78jI9/3Q9uiBHr3t9nci68UYtmMxbrdhiTFOlgzO68Wu7Ec
- Y99b+/2qVTa6WacDFYEFZ9TCpg==
-X-Google-Smtp-Source: APXvYqxtrRvslat83pypSb9jfUMsjzwsFfN+JWUGbZe3blpYpluPV5sWvAHL4L4gmAcK9rsmwULaHw==
-X-Received: by 2002:a17:902:b48f:: with SMTP id
- y15mr58454105plr.268.1563549043290; 
- Fri, 19 Jul 2019 08:10:43 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=oY9kl1w2DP/q5AU0xWJ63UM0i2Vhho6KqnqpfROEftE=;
+ b=BLhdVuLbTOy3iuCRuIptndqeSz1M79fOzu5K3elVNcm9O+/YaAEJJb+GyWjfIXzAYO
+ Rdcq3acvLbhznyZ7oSwoA0kUz3TjjnjWfM3tZvTPZ1sRlonJAd8uEFCMJJIWOjSgzkZc
+ 09hOd30M8Z1ds+D+RlrWodRfB2mNhlH650eGJmFOZ/ggiONFdl0QIIHtFeBzpIWDFxQX
+ yeug0GtfDqOfcCZhu99UspCipEy89VPwgghUZJPgL6AWATvWm0OhRxDi5u3gpI8+AL86
+ 9KH01jZfupBozti/Dzh/WIwTER0tSd3Wy4PvmXibg1WwnQ7bb24vvyFOUXuDp7goVCwt
+ qi1w==
+X-Gm-Message-State: APjAAAW/TC2XpLGfpiLSH/zI941mUNwRdWcZP1TmBncxL0YD4O0nCfpY
+ m99Ls90HZ2z/j9NFwv/T1dLABw==
+X-Google-Smtp-Source: APXvYqwpkxBH3YrGMW1sxHHSnczDkPrqF/EFb17AK4abXRBbYl0AT37MM6DZOc3AXiSrk5+qZP2Reg==
+X-Received: by 2002:a17:902:aa5:: with SMTP id
+ 34mr59500853plp.166.1563549047410; 
+ Fri, 19 Jul 2019 08:10:47 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.201.222])
- by smtp.gmail.com with ESMTPSA id b136sm30711299pfb.73.2019.07.19.08.10.38
+ by smtp.gmail.com with ESMTPSA id b136sm30711299pfb.73.2019.07.19.08.10.43
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 19 Jul 2019 08:10:42 -0700 (PDT)
+ Fri, 19 Jul 2019 08:10:47 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Kever Yang <kever.yang@rock-chips.com>, YouMin Chen <cym@rock-chips.com>,
  u-boot@lists.denx.de
-Subject: [PATCH v4 16/18] ram: rk3399: Add rank detection support
-Date: Fri, 19 Jul 2019 20:40:30 +0530
-Message-Id: <20190719151031.14684-1-jagan@amarulasolutions.com>
+Subject: [PATCH v4 17/18] ram: rk3399: Enable sdram debug functions
+Date: Fri, 19 Jul 2019 20:40:31 +0530
+Message-Id: <20190719151031.14684-2-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
+In-Reply-To: <20190719151031.14684-1-jagan@amarulasolutions.com>
+References: <20190719151031.14684-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190719_081044_997962_ACDDDAF9 
-X-CRM114-Status: GOOD (  19.21  )
+X-CRM114-CacheID: sfid-20190719_081047_906089_A6E9D275 
+X-CRM114-Status: GOOD (  10.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,207 +98,56 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: gajjar04akash@gmail.com, Kever Yang <Kever.yang@rock-chips.com>,
- linux-rockchip@lists.infradead.org, Jagan Teki <jagan@amarulasolutions.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- linux-amarula@amarulasolutions.com
+Cc: linux-rockchip@lists.infradead.org, gajjar04akash@gmail.com,
+ linux-amarula@amarulasolutions.com, Jagan Teki <jagan@amarulasolutions.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Right now the rk3399 sdram driver assume that the board
-has configured with 2 channels, so any possibility to
-enable single channel on the same driver will encounter
-channel #1 data training failure.
+This would help to debug the sdram base parameters while
+debugging existing chip or while supporting new sdram type.
 
-Log:
-U-Boot TPL board init
-sdram_init: data training failed
-rk3399_dmc_init DRAM init failed -5
-
-So, add an algorithm that can capable to compute the active
-or configured rank with associated channel like
-a) do rank loop to compute the active rank, with associated
-   channel numbers
-b) then, succeed the data training only for configured channel
-c) preserve the rank for given channel
-d) do channel loop for setting the active channel
-e) if given rank is zero or inactive on the specific channel,
-   clear the timings for the associated channel
-f) finally, return error if number of channels is zero
-
-Tested in NanoPI-NEO4 since it support single channel sdram
-configuration.
+It require explicit enablement of CONFIG_RAM_ROCKCHIP_DEBUG
+for showing the debug prints.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-Signed-off-by: YouMin Chen <cym@rock-chips.com>
-Reviewed-by: Kever Yang <Kever.yang@rock-chips.com>
-(add PI_READ_GATE_TRAINING for LPDDR3 to support rk3399-evb case)
-Signed-off-by: Kever Yang <Kever.yang@rock-chips.com>
 ---
 Changes for v4:
-- add PI_READ_GATE_TRAINING, PI_WRITE_LEVELING for LPDDR3
-  and PI_READ_GATE_TRAINING for other dram types. 
+- rebase on v4 16/18 patch
 
- drivers/ram/rockchip/sdram_rk3399.c | 122 +++++++++++++++++++++++-----
- 1 file changed, 100 insertions(+), 22 deletions(-)
+ drivers/ram/rockchip/sdram_rk3399.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index 8bbacb5275..9df2f840ab 100644
+index 9df2f840ab..c59c985c19 100644
 --- a/drivers/ram/rockchip/sdram_rk3399.c
 +++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -1254,13 +1254,52 @@ static unsigned char calculate_stride(struct rk3399_sdram_params *params)
+@@ -1251,6 +1251,8 @@ static unsigned char calculate_stride(struct rk3399_sdram_params *params)
+ 		}
+ 	}
+ 
++	sdram_print_stride(stride);
++
  	return stride;
  }
  
-+static void clear_channel_params(struct rk3399_sdram_params *params, u8 channel)
-+{
-+	params->ch[channel].cap_info.rank = 0;
-+	params->ch[channel].cap_info.col = 0;
-+	params->ch[channel].cap_info.bk = 0;
-+	params->ch[channel].cap_info.bw = 32;
-+	params->ch[channel].cap_info.dbw = 32;
-+	params->ch[channel].cap_info.row_3_4 = 0;
-+	params->ch[channel].cap_info.cs0_row = 0;
-+	params->ch[channel].cap_info.cs1_row = 0;
-+	params->ch[channel].cap_info.ddrconfig = 0;
-+}
-+
-+static int pctl_init(struct dram_info *dram, struct rk3399_sdram_params *params)
-+{
-+	int channel;
-+	int ret;
-+
-+	for (channel = 0; channel < 2; channel++) {
-+		const struct chan_info *chan = &dram->chan[channel];
-+		struct rk3399_cru *cru = dram->cru;
-+		struct rk3399_ddr_publ_regs *publ = chan->publ;
-+
-+		phy_pctrl_reset(cru, channel);
-+		phy_dll_bypass_set(publ, params->base.ddr_freq);
-+
-+		ret = pctl_cfg(dram, chan, channel, params);
-+		if (ret < 0) {
-+			printf("%s: pctl config failed\n", __func__);
-+			return ret;
-+		}
-+
-+		/* start to trigger initialization */
-+		pctl_start(dram, channel);
-+	}
-+
-+	return 0;
-+}
-+
- static int sdram_init(struct dram_info *dram,
- 		      struct rk3399_sdram_params *params)
- {
- 	unsigned char dramtype = params->base.dramtype;
- 	unsigned int ddr_freq = params->base.ddr_freq;
--	struct rk3399_cru *cru = dram->cru;
--	int channel;
-+	u32 training_flag = PI_READ_GATE_TRAINING;
-+	int channel, ch, rank;
- 	int ret;
- 
- 	debug("Starting SDRAM initialization...\n");
-@@ -1272,36 +1311,75 @@ static int sdram_init(struct dram_info *dram,
- 		return -E2BIG;
- 	}
- 
-+	for (ch = 0; ch < 2; ch++) {
-+		params->ch[ch].cap_info.rank = 2;
-+		for (rank = 2; rank != 0; rank--) {
-+			ret = pctl_init(dram, params);
-+			if (ret < 0) {
-+				printf("%s: pctl init failed\n", __func__);
-+				return ret;
-+			}
-+
-+			/* LPDDR2/LPDDR3 need to wait DAI complete, max 10us */
-+			if (dramtype == LPDDR3)
-+				udelay(10);
-+
-+			params->ch[ch].cap_info.rank = rank;
-+
-+			/*
-+			 * LPDDR3 CA training msut be trigger before
-+			 * other training.
-+			 * DDR3 is not have CA training.
-+			 */
-+			if (params->base.dramtype == LPDDR3)
-+				training_flag |= PI_CA_TRAINING;
-+
-+			if (!(data_training(&dram->chan[ch], ch,
-+					    params, training_flag)))
-+				break;
-+		}
-+		/* Computed rank with associated channel number */
-+		params->ch[ch].cap_info.rank = rank;
-+	}
-+
-+	params->base.num_channels = 0;
- 	for (channel = 0; channel < 2; channel++) {
- 		const struct chan_info *chan = &dram->chan[channel];
--		struct rk3399_ddr_publ_regs *publ = chan->publ;
--
--		phy_pctrl_reset(cru, channel);
--		phy_dll_bypass_set(publ, ddr_freq);
-+		struct sdram_cap_info *cap_info = &params->ch[channel].cap_info;
-+		u8 training_flag = PI_FULL_TRAINING;
- 
--		if (channel >= params->base.num_channels)
-+		if (cap_info->rank == 0) {
-+			clear_channel_params(params, channel);
- 			continue;
--
--		ret = pctl_cfg(dram, chan, channel, params);
--		if (ret < 0) {
--			printf("%s: pctl config failed\n", __func__);
--			return ret;
-+		} else {
-+			params->base.num_channels++;
+@@ -1373,11 +1375,14 @@ static int sdram_init(struct dram_info *dram,
+ 			}
  		}
  
--		/* start to trigger initialization */
--		pctl_start(dram, channel);
-+		debug("Channel ");
-+		debug(channel ? "1: " : "0: ");
- 
--		/* LPDDR2/LPDDR3 need to wait DAI complete, max 10us */
--		if (dramtype == LPDDR3)
--			udelay(10);
-+		/* LPDDR3 should have write and read gate training */
-+		if (params->base.dramtype == LPDDR3)
-+			training_flag = PI_WRITE_LEVELING |
-+					PI_READ_GATE_TRAINING;
- 
--		if (data_training(chan, channel, params, PI_FULL_TRAINING)) {
--			printf("%s: data training failed\n", __func__);
--			return -EIO;
-+		if (params->base.dramtype != LPDDR4) {
-+			ret = data_training(dram, channel, params,
-+					    training_flag);
-+			if (!ret) {
-+				debug("%s: data train failed for channel %d\n",
-+				      __func__, ret);
-+				continue;
-+			}
- 		}
- 
--		set_ddrconfig(chan, params, channel,
--			      params->ch[channel].cap_info.ddrconfig);
-+		set_ddrconfig(chan, params, channel, cap_info->ddrconfig);
-+	}
++		sdram_print_ddr_info(cap_info, &params->base);
 +
-+	if (params->base.num_channels == 0) {
-+		printf("%s: ", __func__);
-+		printf(" - %dMHz failed!\n", params->base.ddr_freq);
-+		return -EINVAL;
+ 		set_ddrconfig(chan, params, channel, cap_info->ddrconfig);
  	}
  
- 	params->base.stride = calculate_stride(params);
+ 	if (params->base.num_channels == 0) {
+ 		printf("%s: ", __func__);
++		sdram_print_dram_type(params->base.dramtype);
+ 		printf(" - %dMHz failed!\n", params->base.ddr_freq);
+ 		return -EINVAL;
+ 	}
 -- 
 2.18.0.321.gffc6fa0e3
 
