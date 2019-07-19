@@ -2,56 +2,57 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54DE46DA07
-	for <lists+linux-rockchip@lfdr.de>; Fri, 19 Jul 2019 05:59:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A77146DAFB
+	for <lists+linux-rockchip@lfdr.de>; Fri, 19 Jul 2019 06:05:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OwcYJO9b4KwWwOMfI7YSPBMJqoqUx2ximq7Tcx4vTRk=; b=InrhX+Dly3sXpN
-	cbo9ZeUz+IxOOBc29WfnXqtHzGjhwzelhg1auMqRsjcbNX0MZLN/l1dPgUgOHGVUcrDr9E71GOZub
-	wbYiphm76a8kAPt8nSe/se5VSxxIxpesBpip/Ws+oye2ZWvpihad+YAckyn1AfbsOUvY0iptG3G70
-	rMNswX98tIv4HW8slNvA05TzntifuAF915J2jLbfR47F0l7ASVt3XTPI7A7Wo+Y46DZ4W77rPiFlv
-	HPvEDvCHfcZYxrCj4DcvJhgaDhnHpDQjK6SJ01jlyEYoBAoDPNYVUbEtbrtA9WVur0lu8wPB5fiYm
-	uzbj6tb27RBtJAW8E33g==;
+	List-Owner; bh=eORn7VvpHswtCpsYtHHRd0Mb86ezNSjWrSD/r5lLFxU=; b=M/0S1hbB6/O8rB
+	QnxUPBXUuwiRg1pblzWliRZz5B3yl1Si5yXCwJdV6r86BvtFe7FYL1koPTYy9CT/jhQb/S1P376v1
+	lO6+GkSNX+bv74gJQaPJgO5xG6oT59f+5ImKdbl8ugcOKogntaNeJip/QFzC2R1etBKRTa9DpsoyX
+	Wm3fg5aKjtZcrAVEzMMdWMzo0BamKYPyZPQt84uVaI1kwPb1EAfjyQAGBf9+tvBonXIHWPrvqNcLT
+	wytav17JIaYk1rlw6O/US/OclQBZXFrl+XNLPo/PUGsJA8zsGNL/Sth2N4lmlmTi0xBg0n4wn51aa
+	dm6yIsR9s2K50fUjDwYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoK2z-0004j4-LG; Fri, 19 Jul 2019 03:59:05 +0000
+	id 1hoK9S-0002XP-KL; Fri, 19 Jul 2019 04:05:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoK2v-0004iF-EH
- for linux-rockchip@lists.infradead.org; Fri, 19 Jul 2019 03:59:02 +0000
+ id 1hoK6r-00081j-FB
+ for linux-rockchip@lists.infradead.org; Fri, 19 Jul 2019 04:03:11 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 408BC21855;
- Fri, 19 Jul 2019 03:59:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2E46C21850;
+ Fri, 19 Jul 2019 04:03:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563508741;
- bh=OL3m8w6JGxXEraNlHHkKWsgAzjb1zehLVVJ4wLcvjK4=;
+ s=default; t=1563508985;
+ bh=2cRbhK4sG1EWt8bmvhrSC8rBHoz0j9kKf4MkuRJTtwQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Noyvf9QcqpGUU9jPpQwgH1JpxRYb1KMQODZ14fH8cG9DbErhZm7nHSfrmlJi04l7q
- QIOTqmD8mz5Wr0Z9UQBsFwhscumvEAXGZ5LQxpK7YHFgecUNSHcTSkKSn8SY+qti2S
- t7KbtqZXPztLUDMl547ApaQ98+xVs9+mhBPCNATY=
+ b=bUt/uRtu0bPcWwh0XOOAE21/m492fYeuMjEp7yOkpJEOTxoHAJmkjNCSKvJlYuN8H
+ KODegTa0eyrtklxVMTJEedm4AJ8blZu2mDDC4wsJb1oMiU+Bs17TBYTTjruxm851cZ
+ gzbDlkbtUVKjV57PfpvizGo88Dn4BOEP+nnHrmKU=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.2 062/171] drm/rockchip: Properly adjust to a true
- clock in adjusted_mode
-Date: Thu, 18 Jul 2019 23:54:53 -0400
-Message-Id: <20190719035643.14300-62-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.1 010/141] pinctrl: rockchip: fix leaked of_node
+ references
+Date: Fri, 19 Jul 2019 00:00:35 -0400
+Message-Id: <20190719040246.15945-10-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190719035643.14300-1-sashal@kernel.org>
-References: <20190719035643.14300-1-sashal@kernel.org>
+In-Reply-To: <20190719040246.15945-1-sashal@kernel.org>
+References: <20190719040246.15945-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_205901_497950_C697ACBB 
-X-CRM114-Status: GOOD (  11.85  )
+X-CRM114-CacheID: sfid-20190718_210305_566780_38D460FB 
+X-CRM114-Status: UNSURE (   9.41  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,54 +83,49 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Sasha Levin <sashal@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Douglas Anderson <dianders@chromium.org>, dri-devel@lists.freedesktop.org,
- linux-rockchip@lists.infradead.org, Sean Paul <seanpaul@chromium.org>,
- Yakir Yang <ykk@rock-chips.com>
+ linux-gpio@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ linux-rockchip@lists.infradead.org, Wen Yang <wen.yang99@zte.com.cn>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Douglas Anderson <dianders@chromium.org>
+From: Wen Yang <wen.yang99@zte.com.cn>
 
-[ Upstream commit 99b9683f2142b20bad78e61f7f829e8714e45685 ]
+[ Upstream commit 3c89c70634bb0b6f48512de873e7a45c7e1fbaa5 ]
 
-When fixing up the clock in vop_crtc_mode_fixup() we're not doing it
-quite correctly.  Specifically if we've got the true clock 266666667 Hz,
-we'll perform this calculation:
-   266666667 / 1000 => 266666
+The call to of_parse_phandle returns a node pointer with refcount
+incremented thus it must be explicitly decremented after the last
+usage.
 
-Later when we try to set the clock we'll do clk_set_rate(266666 *
-1000).  The common clock framework won't actually pick the proper clock
-in this case since it always wants clocks <= the specified one.
+Detected by coccinelle with the following warnings:
+./drivers/pinctrl/pinctrl-rockchip.c:3221:2-8: ERROR: missing of_node_put; acquired a node pointer with refcount incremented on line 3196, but without a corresponding object release within this function.
+./drivers/pinctrl/pinctrl-rockchip.c:3223:1-7: ERROR: missing of_node_put; acquired a node pointer with refcount incremented on line 3196, but without a corresponding object release within this function.
 
-Let's solve this by using DIV_ROUND_UP.
-
-Fixes: b59b8de31497 ("drm/rockchip: return a true clock rate to adjusted_mode")
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
-Signed-off-by: Sean Paul <seanpaul@chromium.org>
-Reviewed-by: Yakir Yang <ykk@rock-chips.com>
-Signed-off-by: Heiko Stuebner <heiko@sntech.de>
-Link: https://patchwork.freedesktop.org/patch/msgid/20190614224730.98622-1-dianders@chromium.org
+Signed-off-by: Wen Yang <wen.yang99@zte.com.cn>
+Cc: Linus Walleij <linus.walleij@linaro.org>
+Cc: Heiko Stuebner <heiko@sntech.de>
+Cc: linux-gpio@vger.kernel.org
+Cc: linux-rockchip@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/pinctrl/pinctrl-rockchip.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-index 12ed5265a90b..09046135e720 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-@@ -1011,7 +1011,8 @@ static bool vop_crtc_mode_fixup(struct drm_crtc *crtc,
- 	struct vop *vop = to_vop(crtc);
+diff --git a/drivers/pinctrl/pinctrl-rockchip.c b/drivers/pinctrl/pinctrl-rockchip.c
+index 16bf21bf69a2..64363363fe27 100644
+--- a/drivers/pinctrl/pinctrl-rockchip.c
++++ b/drivers/pinctrl/pinctrl-rockchip.c
+@@ -3212,6 +3212,7 @@ static int rockchip_get_bank_data(struct rockchip_pin_bank *bank,
+ 						    base,
+ 						    &rockchip_regmap_config);
+ 		}
++		of_node_put(node);
+ 	}
  
- 	adjusted_mode->clock =
--		clk_round_rate(vop->dclk, mode->clock * 1000) / 1000;
-+		DIV_ROUND_UP(clk_round_rate(vop->dclk, mode->clock * 1000),
-+			     1000);
- 
- 	return true;
- }
+ 	bank->irq = irq_of_parse_and_map(bank->of_node, 0);
 -- 
 2.20.1
 
