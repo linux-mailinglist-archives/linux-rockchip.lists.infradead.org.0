@@ -2,66 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AECD76FF80
-	for <lists+linux-rockchip@lfdr.de>; Mon, 22 Jul 2019 14:23:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AD5670154
+	for <lists+linux-rockchip@lfdr.de>; Mon, 22 Jul 2019 15:43:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=WyyJWxt+qFYg8VszajTlBJE+MD3wY4c5QmWIzs0/pZA=; b=cvk
-	oRTV4q5uhqPNtSAiU3k4Gqs0pFjYDsxU8CJiJ3ndhDG6TiTkrylRrfXR/NxoaAKq7clSwnOBE2JaJ
-	bfa7/XV9UB6awGFoJeAav5aI3PySnZclx8CEC4KlO71BJHgGhbr6I6Y189bcHj6XsmB+6LCcEN3OU
-	twEvObfXLHgr/KRnUP7HzzI4U/s2749q7vlFCqS9rkQ7u1Wr7qMlonPdX7TewaN7wjS48S5PSUjmB
-	sauYG8mrLak1jcfc++L0mW5uGtRTC00hJfVlGpXgMLFsaAWFYc74zyUICPvYL2WyutuBcyz5gG/AF
-	iZdubM9uhVhhEWQNoqM5Ad6rNSS3pgA==;
+	List-Owner; bh=/oNKS8X9DPYptwe85O9zmvLuJEhVb+xooSP1/3A1PS8=; b=tXkopKWWX7Qpe0
+	VCfaxgKKVXTsT4/vQvG0Wqs2aC774JtDjQ6qs8rlUbEk6rcmwRo955G1GfKwsmbHn8K71rhePzuCN
+	5k+/J1aJ0Ps2P19LZY4Ju7ZjP2k5C9sYf9vsI5GMIt2vjdo/VUP2GB1Bos9vsFFqfBcay2qJkwUvi
+	2fkOuGQ4RUJgqmK/Zglm8TduxqH5NrmEMxzysEioMzK0wzSAWmeWKeV/YhAgm5uftAgViRjt7XEc3
+	+i+l/FhZqytUgagNzl4tetfm0H23Odhvbv+SNlG1O1q1AhdYUsXOryAqIpD58UcWS9DwAS4GFEhwn
+	n/LLpOWcLILF28ac7mgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpXM1-0006J6-Tv; Mon, 22 Jul 2019 12:23:47 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hpYaZ-0000Qc-3E; Mon, 22 Jul 2019 13:42:51 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpXKa-0005kz-8A; Mon, 22 Jul 2019 12:22:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
- List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=+TMbBa7jX8uUjOd/fKTs9EqZROGbLGEuI+x5vkFsDS0=; b=V/2VuKZT47Kh
- O+jYSXtZR1BrviwdbYuBXd1mQF0VUZH2JP3Z+jT3CZ6gMFbVN8syi62KcsbfETBfGrGFr2jUGdzO6
- kvds68WwxTjwoWLNdiVLThez58ITzVgDJjsxY+OsiRtFpXmV4bbYy8bK5vliEAd2jcPd/tvavX1e3
- ipIcE=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hpXKU-0007dq-JT; Mon, 22 Jul 2019 12:22:10 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 1A0462740463; Mon, 22 Jul 2019 13:22:10 +0100 (BST)
-From: Mark Brown <broonie@kernel.org>
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Subject: Applied "SoC: rockchip: rockchip_max98090: Enable MICBIAS for headset
- keypress detection" to the asoc tree
-In-Reply-To: <20190719173929.24065-1-enric.balletbo@collabora.com>
-X-Patchwork-Hint: ignore
-Message-Id: <20190722122210.1A0462740463@ypsilon.sirena.org.uk>
-Date: Mon, 22 Jul 2019 13:22:10 +0100 (BST)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ id 1hpYaE-000086-KH
+ for linux-rockchip@lists.infradead.org; Mon, 22 Jul 2019 13:42:32 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id u3so26085207vsh.6
+ for <linux-rockchip@lists.infradead.org>; Mon, 22 Jul 2019 06:42:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=qoQdDffqX8NBzaTkQfhvAHhztASiaANiufyf578HpGA=;
+ b=hlf36gHZhD/tS5G06dvQKalHNMkuU0cPoYxvqMowCMiM9+5PuvZs+04mLOqMz2VeuW
+ U8dAGoQv9k54c85MyxcwsDF2A+inBvqw62id8DJVpiPw7bvZbXA/njP/C0RrYsZMy3tG
+ wpjnT74c3n53mUIeMtdr+TaEKIMxUwRK6caFdudW0oLatFOWjv7hKp5H2M2hUTQi+BwB
+ ESp1bk+Fpi1F+8T/ue3qVOEWi4Oyjp7xADz8+qOfUpHdXJNxyfNoDoE/2S/6G4j2pOZ4
+ idBpfMzjfaoP3PkIyenxLmYvTqcyTF1J3Pool3TykdtIKk1c0OWr8xEPfoWWYVvviyqa
+ NPJg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=qoQdDffqX8NBzaTkQfhvAHhztASiaANiufyf578HpGA=;
+ b=tiihawLssoerxiz2vlvfZ+nQ4ty2QKJdfa6M3FHxUj1Kj0rQskkLDAT/Q8k57bBOk4
+ PqQpLTLB9VaNBGQOzcTPmhNiEkQZDlCfHLebWtlVJ1X+2fTCnVTZ7lCJ/26pIfFB7Ry/
+ WXrmfIvowajZSO+Zfsu8ssVAr3le+Ub9By1CWt0btzim7vWU0fmhvxg8viU9wBcupsfe
+ rbHdK2nlu69rSboWuvYukHBdTwKZdzbVegoo4tV0Io1vFLcWayG7xB4JBlG0yxvHqj1d
+ ZsgOrZbBiSk/ACKNuKnGKkUetxUyYb37b1NhsEyWkTWj7bZqOmaaAQNdV+2ywOuuHCsW
+ Uy4g==
+X-Gm-Message-State: APjAAAWvf2ermzjbYWtVvoJizi8YblStspKAxDQBG1cxbLjZZWWfINjw
+ cSXrp3xaYXkvA6D2GTIslzLA1TLGyG7AsGvxiN62EA==
+X-Google-Smtp-Source: APXvYqxbn8CFIXmBHNgvuCDDcp2KcviU5e69X/Dns7ukIv9wF0j92U/Jl2H0QImdSFYkQRQTfAnh2+VcAVwgZp1J98Y=
+X-Received: by 2002:a67:7a90:: with SMTP id
+ v138mr41898336vsc.200.1563802947659; 
+ Mon, 22 Jul 2019 06:42:27 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190708195613.205729-1-dianders@chromium.org>
+In-Reply-To: <20190708195613.205729-1-dianders@chromium.org>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Mon, 22 Jul 2019 15:41:51 +0200
+Message-ID: <CAPDyKFqcbFZWiMc3zLFP7cvkNG0hMB91rfy6T=dbrFks9EWMsQ@mail.gmail.com>
+Subject: Re: [PATCH] mmc: dw_mmc: Fix occasional hang after tuning on eMMC
+To: Douglas Anderson <dianders@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_052216_296610_74DC8D79 
-X-CRM114-Status: GOOD (  16.76  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190722_064230_687696_48A67965 
+X-CRM114-Status: GOOD (  24.72  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -78,134 +91,93 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, Heiko Stuebner <heiko@sntech.de>,
- Liam Girdwood <lgirdwood@gmail.com>, linux-kernel@vger.kernel.org,
- Takashi Iwai <tiwai@suse.com>, dianders@chromium.org,
- Jaroslav Kysela <perex@perex.cz>, linux-rockchip@lists.infradead.org,
- Mark Brown <broonie@kernel.org>, Collabora Kernel ML <kernel@collabora.com>,
- linux-arm-kernel@lists.infradead.org, cychiang@chromium.org
-MIME-Version: 1.0
+Cc: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Brian Norris <briannorris@chromium.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Jaehoon Chung <jh80.chung@samsung.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Matthias Kaehlcke <mka@chromium.org>, Guenter Roeck <groeck@chromium.org>,
+ Alim Akhtar <alim.akhtar@gmail.com>, Sonny Rao <sonnyrao@chromium.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The patch
+On Mon, 8 Jul 2019 at 21:56, Douglas Anderson <dianders@chromium.org> wrote:
+>
+> In commit 46d179525a1f ("mmc: dw_mmc: Wait for data transfer after
+> response errors.") we fixed a tuning-induced hang that I saw when
+> stress testing tuning on certain SD cards.  I won't re-hash that whole
+> commit, but the summary is that as a normal part of tuning you need to
+> deal with transfer errors and there were cases where these transfer
+> errors was putting my system into a bad state causing all future
+> transfers to fail.  That commit fixed handling of the transfer errors
+> for me.
+>
+> In downstream Chrome OS my fix landed and had the same behavior for
+> all SD/MMC commands.  However, it looks like when the commit landed
+> upstream we limited it to only SD tuning commands.  Presumably this
+> was to try to get around problems that Alim Akhtar reported on exynos
+> [1].
+>
+> Unfortunately while stress testing reboots (and suspend/resume) on
+> some rk3288-based Chromebooks I found the same problem on the eMMC on
+> some of my Chromebooks (the ones with Hynix eMMC).  Since the eMMC
+> tuning command is different (MMC_SEND_TUNING_BLOCK_HS200
+> vs. MMC_SEND_TUNING_BLOCK) we were basically getting back into the
+> same situation.
+>
+> I'm hoping that whatever problems exynos was having in the past are
+> somehow magically fixed now and we can make the behavior the same for
+> all commands.
+>
+> [1] https://lkml.kernel.org/r/CAGOxZ53WfNbaMe0_AM0qBqU47kAfgmPBVZC8K8Y-_J3mDMqW4A@mail.gmail.com
+>
+> Fixes: 46d179525a1f ("mmc: dw_mmc: Wait for data transfer after response errors.")
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
+> Cc: Marek Szyprowski <m.szyprowski@samsung.com>
+> Cc: Alim Akhtar <alim.akhtar@gmail.com>
+> Cc: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 
-   SoC: rockchip: rockchip_max98090: Enable MICBIAS for headset keypress detection
+Applied for fixes and by adding a stable tag, thanks!
 
-has been applied to the asoc tree at
+Kind regards
+Uffe
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.3
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
-From f86621cd6c6f54edfdd62da347b2bbb8d7fddc8d Mon Sep 17 00:00:00 2001
-From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Date: Fri, 19 Jul 2019 19:39:29 +0200
-Subject: [PATCH] SoC: rockchip: rockchip_max98090: Enable MICBIAS for headset
- keypress detection
-
-The TS3A227E says that the headset keypress detection needs the MICBIAS
-power in order to report the key events to ensure proper operation
-The headset keypress detection needs the MICBIAS power in order to report
-the key events all the time as long as MIC is present. So MICBIAS pin
-is forced on when a MICROPHONE is detected.
-
-On Veyron Minnie I observed that if the MICBIAS power is not present and
-the key press detection is activated (just because it is enabled when you
-insert a headset), it randomly reports a keypress on insert.
-E.g. (KEY_PLAYPAUSE)
-
- Event: (SW_HEADPHONE_INSERT), value 1
- Event: (SW_MICROPHONE_INSERT), value 1
- Event: -------------- SYN_REPORT ------------
- Event: (KEY_PLAYPAUSE), value 1
-
-Userspace thinks that KEY_PLAYPAUSE is pressed and produces the annoying
-effect that the media player starts a play/pause loop.
-
-Note that, although most of the time the key reported is the one
-associated with BTN_0, not always this is true. On my tests I also saw
-different keys reported
-
-Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Link: https://lore.kernel.org/r/20190719173929.24065-1-enric.balletbo@collabora.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- sound/soc/rockchip/rockchip_max98090.c | 32 ++++++++++++++++++++++++++
- 1 file changed, 32 insertions(+)
-
-diff --git a/sound/soc/rockchip/rockchip_max98090.c b/sound/soc/rockchip/rockchip_max98090.c
-index c5fc24675a33..782e534d4c0d 100644
---- a/sound/soc/rockchip/rockchip_max98090.c
-+++ b/sound/soc/rockchip/rockchip_max98090.c
-@@ -61,6 +61,37 @@ static const struct snd_kcontrol_new rk_mc_controls[] = {
- 	SOC_DAPM_PIN_SWITCH("Speaker"),
- };
- 
-+static int rk_jack_event(struct notifier_block *nb, unsigned long event,
-+			 void *data)
-+{
-+	struct snd_soc_jack *jack = (struct snd_soc_jack *)data;
-+	struct snd_soc_dapm_context *dapm = &jack->card->dapm;
-+
-+	if (event & SND_JACK_MICROPHONE)
-+		snd_soc_dapm_force_enable_pin(dapm, "MICBIAS");
-+	else
-+		snd_soc_dapm_disable_pin(dapm, "MICBIAS");
-+
-+	snd_soc_dapm_sync(dapm);
-+
-+	return 0;
-+}
-+
-+static struct notifier_block rk_jack_nb = {
-+	.notifier_call = rk_jack_event,
-+};
-+
-+static int rk_init(struct snd_soc_pcm_runtime *runtime)
-+{
-+	/*
-+	 * The jack has already been created in the rk_98090_headset_init()
-+	 * function.
-+	 */
-+	snd_soc_jack_notifier_register(&headset_jack, &rk_jack_nb);
-+
-+	return 0;
-+}
-+
- static int rk_aif1_hw_params(struct snd_pcm_substream *substream,
- 			     struct snd_pcm_hw_params *params)
- {
-@@ -119,6 +150,7 @@ SND_SOC_DAILINK_DEFS(hifi,
- static struct snd_soc_dai_link rk_dailink = {
- 	.name = "max98090",
- 	.stream_name = "Audio",
-+	.init = rk_init,
- 	.ops = &rk_aif1_ops,
- 	/* set max98090 as slave */
- 	.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
--- 
-2.20.1
-
+> ---
+> Marek (or anyone else using exynos): is it easy for you to test this
+> and check if things are still broken when we land this patch?  If so,
+> I guess we could have a quirk to have different behavior for just
+> Rockchip SoCs but I'd rather avoid that if possible.
+>
+> NOTE: I'm not hoping totally in vain here.  It is possible that some
+> of the CTO/DTO timers that landed could be the magic that would get
+> exynos unstuck.
+>
+>  drivers/mmc/host/dw_mmc.c | 3 +--
+>  1 file changed, 1 insertion(+), 2 deletions(-)
+>
+> diff --git a/drivers/mmc/host/dw_mmc.c b/drivers/mmc/host/dw_mmc.c
+> index b53b6b7d4dd4..60c3a06e3469 100644
+> --- a/drivers/mmc/host/dw_mmc.c
+> +++ b/drivers/mmc/host/dw_mmc.c
+> @@ -2034,8 +2034,7 @@ static void dw_mci_tasklet_func(unsigned long priv)
+>                                  * delayed. Allowing the transfer to take place
+>                                  * avoids races and keeps things simple.
+>                                  */
+> -                               if ((err != -ETIMEDOUT) &&
+> -                                   (cmd->opcode == MMC_SEND_TUNING_BLOCK)) {
+> +                               if (err != -ETIMEDOUT) {
+>                                         state = STATE_SENDING_DATA;
+>                                         continue;
+>                                 }
+> --
+> 2.22.0.410.gd8fdbe21b5-goog
+>
 
 _______________________________________________
 Linux-rockchip mailing list
