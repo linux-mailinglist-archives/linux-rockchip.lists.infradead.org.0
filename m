@@ -2,76 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AD5670154
-	for <lists+linux-rockchip@lfdr.de>; Mon, 22 Jul 2019 15:43:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C65E570262
+	for <lists+linux-rockchip@lfdr.de>; Mon, 22 Jul 2019 16:31:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/oNKS8X9DPYptwe85O9zmvLuJEhVb+xooSP1/3A1PS8=; b=tXkopKWWX7Qpe0
-	VCfaxgKKVXTsT4/vQvG0Wqs2aC774JtDjQ6qs8rlUbEk6rcmwRo955G1GfKwsmbHn8K71rhePzuCN
-	5k+/J1aJ0Ps2P19LZY4Ju7ZjP2k5C9sYf9vsI5GMIt2vjdo/VUP2GB1Bos9vsFFqfBcay2qJkwUvi
-	2fkOuGQ4RUJgqmK/Zglm8TduxqH5NrmEMxzysEioMzK0wzSAWmeWKeV/YhAgm5uftAgViRjt7XEc3
-	+i+l/FhZqytUgagNzl4tetfm0H23Odhvbv+SNlG1O1q1AhdYUsXOryAqIpD58UcWS9DwAS4GFEhwn
-	n/LLpOWcLILF28ac7mgw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:MIME-Version:Date:Subject:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=gkcnKRxO3AVIaeE8wt6FFcj6rL5QPs7vDjnTbAuBh6g=; b=BZWsAh84gsW6bwjbYtdGRgtqCb
+	iDFzutG+/0HIHVfZmrjOGgXiKb4VwHNZBZprgztJcDhTuzB7sI3E/Ek1EgrHfIWtgBkngUfmrM/xK
+	gsRl1o/qCGnhUqUJxRLzrqgLQIpiv1RDjJ7G6/uCc7lwAaRDrvgKEQPchavlLMrcMuaS+i3dF5u1t
+	x+uZaQVczSbl85qy+MbEPbltXgy4ihEyZ+GuwDRmruOc/WZ/PzMjUQI2imyFrV9CAtVfEqR9Ewm/C
+	47Ri6Cc+OmPTQ5srPc7raTfufWzC4qTgpy240MpX5Jt61LJeOD1fEhXN0586VKyaF+de8AiPcryUK
+	8EuOQi7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpYaZ-0000Qc-3E; Mon, 22 Jul 2019 13:42:51 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1hpZM0-0001qr-7X; Mon, 22 Jul 2019 14:31:52 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpYaE-000086-KH
- for linux-rockchip@lists.infradead.org; Mon, 22 Jul 2019 13:42:32 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id u3so26085207vsh.6
- for <linux-rockchip@lists.infradead.org>; Mon, 22 Jul 2019 06:42:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=qoQdDffqX8NBzaTkQfhvAHhztASiaANiufyf578HpGA=;
- b=hlf36gHZhD/tS5G06dvQKalHNMkuU0cPoYxvqMowCMiM9+5PuvZs+04mLOqMz2VeuW
- U8dAGoQv9k54c85MyxcwsDF2A+inBvqw62id8DJVpiPw7bvZbXA/njP/C0RrYsZMy3tG
- wpjnT74c3n53mUIeMtdr+TaEKIMxUwRK6caFdudW0oLatFOWjv7hKp5H2M2hUTQi+BwB
- ESp1bk+Fpi1F+8T/ue3qVOEWi4Oyjp7xADz8+qOfUpHdXJNxyfNoDoE/2S/6G4j2pOZ4
- idBpfMzjfaoP3PkIyenxLmYvTqcyTF1J3Pool3TykdtIKk1c0OWr8xEPfoWWYVvviyqa
- NPJg==
+ id 1hpZLh-0001eo-Vo; Mon, 22 Jul 2019 14:31:35 +0000
+Received: by mail-wm1-x343.google.com with SMTP id g67so31455269wme.1;
+ Mon, 22 Jul 2019 07:31:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:mime-version:message-id:user-agent
+ :content-transfer-encoding;
+ bh=NSmLZi5lG6CsQjeIDxBEpIDrtPjhGys1X42LIYXPceE=;
+ b=m+ZvukdfNBnfE71+9LxhZld0M5udugwH6mQsenVkkY/aoIRKNPmtCPwlkpLCpPU6gX
+ WnC1GzVa3M+0blnODMXb+Jm3BSMCPPFotk5/PBGwjoAZJfYGCvgV3A5LQCR34usSji5S
+ zWfXHKkwHxwJdYl+UK05R88xJjiV5mlb9114M3uzOLDCJ4Z9mF4SEttknbB2zGh6y0SS
+ vuooZTbVSK/6tzwQb9RosehV7Ed8I0OWgOJ0Q4SqbbEW7QWqazaLXPmaZek1bgJwNk1R
+ Ldr0mwGIQFPl9hp0m7VrOvMiVOaTwHaX9PIARox2tDQsYgyiOsHwr8XJBorpWNNVzqAD
+ br4w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=qoQdDffqX8NBzaTkQfhvAHhztASiaANiufyf578HpGA=;
- b=tiihawLssoerxiz2vlvfZ+nQ4ty2QKJdfa6M3FHxUj1Kj0rQskkLDAT/Q8k57bBOk4
- PqQpLTLB9VaNBGQOzcTPmhNiEkQZDlCfHLebWtlVJ1X+2fTCnVTZ7lCJ/26pIfFB7Ry/
- WXrmfIvowajZSO+Zfsu8ssVAr3le+Ub9By1CWt0btzim7vWU0fmhvxg8viU9wBcupsfe
- rbHdK2nlu69rSboWuvYukHBdTwKZdzbVegoo4tV0Io1vFLcWayG7xB4JBlG0yxvHqj1d
- ZsgOrZbBiSk/ACKNuKnGKkUetxUyYb37b1NhsEyWkTWj7bZqOmaaAQNdV+2ywOuuHCsW
- Uy4g==
-X-Gm-Message-State: APjAAAWvf2ermzjbYWtVvoJizi8YblStspKAxDQBG1cxbLjZZWWfINjw
- cSXrp3xaYXkvA6D2GTIslzLA1TLGyG7AsGvxiN62EA==
-X-Google-Smtp-Source: APXvYqxbn8CFIXmBHNgvuCDDcp2KcviU5e69X/Dns7ukIv9wF0j92U/Jl2H0QImdSFYkQRQTfAnh2+VcAVwgZp1J98Y=
-X-Received: by 2002:a67:7a90:: with SMTP id
- v138mr41898336vsc.200.1563802947659; 
- Mon, 22 Jul 2019 06:42:27 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
+ :user-agent:content-transfer-encoding;
+ bh=NSmLZi5lG6CsQjeIDxBEpIDrtPjhGys1X42LIYXPceE=;
+ b=YRQnTkzgzy04zSEwzylg03BH7dWISAdMqqy62Md+nolBNUjSBXH9FNwYyy6LucONHE
+ KcyeinHoDfdKIkroc0DjlwhwJkW5SIp6r/w3qSFtchrsiu45i4Fn4HgaIZyaHQWOGd/F
+ SJEcFfkjzx6Shorzda9nW+5WrfZBQNLNeChfTLL4SryZmRonyKcFeaeX3+pLA+THJxjI
+ 3VRd1Hwe7wKr2N02dlHPeXZL99k7JAKd9MVLaa8CTbOHxRZq/VqUMOPn7F56KyIl3CZc
+ sReL45ZIFLdmXyXA3Vekc9hqFNEYuZh6Y0HYDosJFeZ6T+McCl3DI88w8sBv7Ua7Iu9u
+ XtLA==
+X-Gm-Message-State: APjAAAU2/WjjQTh2yuG24accs/ZBSbiKRMmY9kG6NnXV6W3nHtMUhVAx
+ TxToRpdZLwsyThE6tRiFIAo7sNHGHa4=
+X-Google-Smtp-Source: APXvYqx/g6lDROMuc0NLOwaIDLXOVh57JABgY8fj2C3/AFxOOfZ/3B+Vru+dfU3AjxpLrCzPc0zctA==
+X-Received: by 2002:a7b:c455:: with SMTP id l21mr65124779wmi.114.1563805889294; 
+ Mon, 22 Jul 2019 07:31:29 -0700 (PDT)
+Received: from localhost ([92.59.185.54])
+ by smtp.gmail.com with ESMTPSA id 91sm84465351wrp.3.2019.07.22.07.31.27
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Mon, 22 Jul 2019 07:31:28 -0700 (PDT)
+From: Vicente Bergas <vicencb@gmail.com>
+To: <linux-arm-kernel@lists.infradead.org>
+Subject: kexec on rk3399
+Date: Mon, 22 Jul 2019 16:31:27 +0200
 MIME-Version: 1.0
-References: <20190708195613.205729-1-dianders@chromium.org>
-In-Reply-To: <20190708195613.205729-1-dianders@chromium.org>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 22 Jul 2019 15:41:51 +0200
-Message-ID: <CAPDyKFqcbFZWiMc3zLFP7cvkNG0hMB91rfy6T=dbrFks9EWMsQ@mail.gmail.com>
-Subject: Re: [PATCH] mmc: dw_mmc: Fix occasional hang after tuning on eMMC
-To: Douglas Anderson <dianders@chromium.org>
+Message-ID: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
+User-Agent: Trojita
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_064230_687696_48A67965 
-X-CRM114-Status: GOOD (  24.72  )
+X-CRM114-CacheID: sfid-20190722_073134_046466_871C65C6 
+X-CRM114-Status: UNSURE (   6.18  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (vicencb[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -91,95 +96,26 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Brian Norris <briannorris@chromium.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Jaehoon Chung <jh80.chung@samsung.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Matthias Kaehlcke <mka@chromium.org>, Guenter Roeck <groeck@chromium.org>,
- Alim Akhtar <alim.akhtar@gmail.com>, Sonny Rao <sonnyrao@chromium.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, 8 Jul 2019 at 21:56, Douglas Anderson <dianders@chromium.org> wrote:
->
-> In commit 46d179525a1f ("mmc: dw_mmc: Wait for data transfer after
-> response errors.") we fixed a tuning-induced hang that I saw when
-> stress testing tuning on certain SD cards.  I won't re-hash that whole
-> commit, but the summary is that as a normal part of tuning you need to
-> deal with transfer errors and there were cases where these transfer
-> errors was putting my system into a bad state causing all future
-> transfers to fail.  That commit fixed handling of the transfer errors
-> for me.
->
-> In downstream Chrome OS my fix landed and had the same behavior for
-> all SD/MMC commands.  However, it looks like when the commit landed
-> upstream we limited it to only SD tuning commands.  Presumably this
-> was to try to get around problems that Alim Akhtar reported on exynos
-> [1].
->
-> Unfortunately while stress testing reboots (and suspend/resume) on
-> some rk3288-based Chromebooks I found the same problem on the eMMC on
-> some of my Chromebooks (the ones with Hynix eMMC).  Since the eMMC
-> tuning command is different (MMC_SEND_TUNING_BLOCK_HS200
-> vs. MMC_SEND_TUNING_BLOCK) we were basically getting back into the
-> same situation.
->
-> I'm hoping that whatever problems exynos was having in the past are
-> somehow magically fixed now and we can make the behavior the same for
-> all commands.
->
-> [1] https://lkml.kernel.org/r/CAGOxZ53WfNbaMe0_AM0qBqU47kAfgmPBVZC8K8Y-_J3mDMqW4A@mail.gmail.com
->
-> Fixes: 46d179525a1f ("mmc: dw_mmc: Wait for data transfer after response errors.")
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> Cc: Marek Szyprowski <m.szyprowski@samsung.com>
-> Cc: Alim Akhtar <alim.akhtar@gmail.com>
-> Cc: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-
-Applied for fixes and by adding a stable tag, thanks!
-
-Kind regards
-Uffe
-
-
-> ---
-> Marek (or anyone else using exynos): is it easy for you to test this
-> and check if things are still broken when we land this patch?  If so,
-> I guess we could have a quirk to have different behavior for just
-> Rockchip SoCs but I'd rather avoid that if possible.
->
-> NOTE: I'm not hoping totally in vain here.  It is possible that some
-> of the CTO/DTO timers that landed could be the magic that would get
-> exynos unstuck.
->
->  drivers/mmc/host/dw_mmc.c | 3 +--
->  1 file changed, 1 insertion(+), 2 deletions(-)
->
-> diff --git a/drivers/mmc/host/dw_mmc.c b/drivers/mmc/host/dw_mmc.c
-> index b53b6b7d4dd4..60c3a06e3469 100644
-> --- a/drivers/mmc/host/dw_mmc.c
-> +++ b/drivers/mmc/host/dw_mmc.c
-> @@ -2034,8 +2034,7 @@ static void dw_mci_tasklet_func(unsigned long priv)
->                                  * delayed. Allowing the transfer to take place
->                                  * avoids races and keeps things simple.
->                                  */
-> -                               if ((err != -ETIMEDOUT) &&
-> -                                   (cmd->opcode == MMC_SEND_TUNING_BLOCK)) {
-> +                               if (err != -ETIMEDOUT) {
->                                         state = STATE_SENDING_DATA;
->                                         continue;
->                                 }
-> --
-> 2.22.0.410.gd8fdbe21b5-goog
->
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGksIGkgaGF2ZSBiZWVuIHJ1bm5pbmcgbGludXggb24gcmszMzk5IGJvb3RlZCB3aXRoIGtleGVj
+IGZpbmUgdW50aWwgNS4yCkZyb20gNS4yIG9ud2FyZHMsIHRoZXJlIGFyZSBtZW1vcnkgY29ycnVw
+dGlvbiBpc3N1ZXMgYXMgcmVwb3J0ZWQgaGVyZToKaHR0cDovL2xrbWwuaXUuZWR1L2h5cGVybWFp
+bC9saW51eC9rZXJuZWwvMTkwNi4yLzA3MjExLmh0bWwKa2V4ZWMgaGFzIGJlZW4gaWRlbnRpZmll
+ZCBhcyB0aGUgcHJpbmNpcGFsIHJlYXNvbiBmb3IgdGhlIGlzc3Vlcy4KCkl0IHR1cm5zIG91dCB0
+aGF0IGtleGVjIGhhcyBuZXZlciB3b3JrZWQgcmVsaWFibHkgb24gdGhpcyBwbGF0Zm9ybSwKaSB3
+YXMganVzdCBsdWNreSB1bnRpbCByZWNlbnRseS4KClBsZWFzZSwgY2FuIHlvdSBwcm92aWRlIHNv
+bWUgZGlyZWN0aW9ucyBvbiBob3cgdG8gZGVidWcgdGhlIGlzc3VlPwoKVGhlIGxhdGVzdCB0ZXN0
+IHBlcmZvcm1lZCBpczoKIDEuLSBCb290IHY1LjMtcmMxCiAyLi0gS2V4ZWMgaW50byB2NS4yLjIK
+IDMuLSBUaGUga2VybmVsIHJlcG9ydHMgbm90aGluZyAoZWFybHljb24gbm90IGVuYWJsZWQpIGFu
+ZCBkb2VzIG5vdCBib290LgpUaGUgc2FtZSBrZXJuZWwgdjUuMi4yIHdvcmtzIGZpbmUgd2hlbiBi
+b290ZWQgd2l0aG91dCBrZXhlYy4KClJlZ2FyZHMsCiAgVmljZW7Dpy4KCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5n
+IGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
