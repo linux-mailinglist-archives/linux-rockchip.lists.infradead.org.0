@@ -2,119 +2,98 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F32E702AE
-	for <lists+linux-rockchip@lfdr.de>; Mon, 22 Jul 2019 16:52:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3ACE5702BF
+	for <lists+linux-rockchip@lfdr.de>; Mon, 22 Jul 2019 16:55:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FksEaAgjiNXSdp9S0oxd8+okLkdLz8gvnSiodflsFZs=; b=WU7OYz7wF9UGtT
-	s8CkOVpOrkEJ0+z9KCl1I/TD0ssY4UfxIbWP4HSQAnrBBKHgun7HlYKXaPtf7vJsxwpxdKG/BFCX5
-	v4A0hN2CKCEpDDRKmPDcHP4zSq8+g2Gl3II6YhnBjdcyl/4Hpt5Bg6FuDH8zUTJBQaZ8+qQ/CnsBQ
-	42liTnJ7sxv1qJ2WvW4TrBLPD5RfM5+zEU5gOWvhbYkqjwQKQ6Ed6NO3cp+6R83k5OonE/FSYSD0w
-	uPH89HNrGX6TjacCheiSc4lsE6HqsY2cGuVYpy7YFr6jHYPgIb/6EYfEMOzGHwfU4enTn3AN4uFgZ
-	bjQuB2au76bod9sZKAJA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2Vtrhhx/Fzgw2CoRiTKNtP1/Y8TNnbWIN5EA5Ue0HTo=; b=Dxzz3gpRk5NlDG
+	DaucjrPG6cXZKm+ve8ItuNvkg3amwLRm0FTYQ4f8HH8c93PsMJmeE0e1Bjvi21ReNxu5TFNAZR9Hh
+	KvL+xPhkEXMdsSv9s4wBgiYDFJpHHKLQLCDD16gUxDRKvC2gKnoohRoWgq5UcDKQJQUaxtQn1shye
+	VY7FO7MHaaTsYCqSjKOqyyjt3n7K+sjLk38nrZBJSBO7hAtZso4efCgvA3Qoz0S6xJFcGKjEWFu/d
+	lvZwKVIMXZNCThR5bv70Prhszni6XtmkQSxKeSvLT8Fp758ftIIaoJfHGIAHtsdMT66fI2Jb59AaR
+	U7F6/kj4ne3XLIW8LH/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpZfv-00018k-7b; Mon, 22 Jul 2019 14:52:27 +0000
-Received: from m9a0001g.houston.softwaregrp.com ([15.124.64.66])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpZfr-00017S-1C; Mon, 22 Jul 2019 14:52:24 +0000
-Received: FROM m9a0001g.houston.softwaregrp.com (15.121.0.190) BY
- m9a0001g.houston.softwaregrp.com WITH ESMTP; 
- Mon, 22 Jul 2019 14:52:11 +0000
-Received: from M4W0334.microfocus.com (2002:f78:1192::f78:1192) by
- M9W0067.microfocus.com (2002:f79:be::f79:be) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
- 15.1.1591.10; Mon, 22 Jul 2019 14:47:53 +0000
-Received: from NAM01-BN3-obe.outbound.protection.outlook.com (15.124.8.11) by
- M4W0334.microfocus.com (15.120.17.146) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
- 15.1.1591.10 via Frontend Transport; Mon, 22 Jul 2019 14:47:53 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Dg3ixTgXt0AiMPByyCwA9XZF9r4Mh95ogZD3KBVRwgyevNfaCRSNskQu+7QXmZUeYgwEh9KVodnUXebkxdu4Z99A1Id4/WxNdonASPDjwcWlhjmkg7jefS9UO0Sy8ALp2qU6MTNINQddOKGsFcVIn46KTHby4uSqFWHdq0tkHJB0PNv6ed56bxwRfg0aeEw2S2fvtbaN2EZecpvcrIzTM5vpEZtgiLK6k1gynelaqbuMMZb8lJx9QwcBQZ+XiM11uQgyoaGbn46zkluGZoWHbW3BoNCEgaK4bkR9JlbfCrr+MEpegMs62EA3D3f58JvNip2wH9TEc4qSQhvWKQ2YPg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mFw1stYXCX1j8YiyInUmv9rEIASmg9MdbhcjqMcqRYg=;
- b=cSA5uVWHGMUrhvM4/KI3H1XQZSFf2AAymJdqj42k4pdiD7MOGiCN2SX0s3EAEtoxRSgYThjFn+2QozhOJyEjbaBVUQr+Ds6r3MV55daFyBwpuhveZ5OZlOzwP4HWHU0Ke5d1afkzJCwX7mTsHBI0FkVmuun6PbujyuQJVX9SSTakevGLf04VBiUdwcY5PNZJfJW3wPleyHzhHR49XVLTn6xetRDmMoZfsMRQVR7kXFZt72CbsQM20kbXS7S7QPzpFl1cewNDS2Fqn9Ft7VVgWmVCrHX5Z24plgku3GWjMRG5Ig7Ssu8g+zbdNoa4BO+K5jmg5Xj53L5r8aRfmrKwjQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=suse.com;dmarc=pass action=none header.from=suse.com;dkim=pass
- header.d=suse.com;arc=none
-Received: from CY4PR1801MB1909.namprd18.prod.outlook.com (10.171.255.24) by
- CY4PR1801MB1912.namprd18.prod.outlook.com (10.171.255.27) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2094.16; Mon, 22 Jul 2019 14:47:52 +0000
-Received: from CY4PR1801MB1909.namprd18.prod.outlook.com
- ([fe80::1d84:4a66:a3f4:97f8]) by CY4PR1801MB1909.namprd18.prod.outlook.com
- ([fe80::1d84:4a66:a3f4:97f8%3]) with mapi id 15.20.2094.013; Mon, 22 Jul 2019
- 14:47:52 +0000
-From: Matthias Brugger <mbrugger@suse.com>
-To: Vicente Bergas <vicencb@gmail.com>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
+	id 1hpZis-0003NO-HW; Mon, 22 Jul 2019 14:55:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpZiA-0001nv-30; Mon, 22 Jul 2019 14:54:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CDD38344;
+ Mon, 22 Jul 2019 07:54:44 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ C52C23F694; Mon, 22 Jul 2019 07:54:43 -0700 (PDT)
 Subject: Re: kexec on rk3399
-Thread-Topic: kexec on rk3399
-Thread-Index: AQHVQJxwdN7GpX+0ME6geK+6nhO37Q==
-Date: Mon, 22 Jul 2019 14:47:51 +0000
-Message-ID: <5167bdd7-6cdd-9214-582b-9c01342f2cb3@suse.com>
+To: Vicente Bergas <vicencb@gmail.com>, linux-arm-kernel@lists.infradead.org
 References: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
-In-Reply-To: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: LO2P265CA0197.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:9e::17) To CY4PR1801MB1909.namprd18.prod.outlook.com
- (2603:10b6:910:7a::24)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=mbrugger@suse.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [37.223.144.190]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: d55b302c-b6a4-406d-c340-08d70eb39293
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:CY4PR1801MB1912; 
-x-ms-traffictypediagnostic: CY4PR1801MB1912:
-x-ms-exchange-purlcount: 2
-x-microsoft-antispam-prvs: <CY4PR1801MB1912F99BF3FCB0E1DB491696BAC40@CY4PR1801MB1912.namprd18.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4303;
-x-forefront-prvs: 01068D0A20
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(39860400002)(366004)(396003)(346002)(136003)(376002)(189003)(199004)(66946007)(66556008)(81166006)(81156014)(5660300002)(66446008)(8676002)(8936002)(66476007)(14454004)(4326008)(64756008)(3846002)(68736007)(6246003)(6512007)(6306002)(71190400001)(71200400001)(53936002)(31696002)(6486002)(86362001)(229853002)(102836004)(305945005)(76176011)(966005)(2906002)(7736002)(110136005)(316002)(54906003)(66066001)(36756003)(2501003)(6436002)(256004)(446003)(31686004)(25786009)(11346002)(7116003)(6116002)(52116002)(26005)(486006)(53546011)(2616005)(186003)(99286004)(478600001)(476003)(6506007)(386003);
- DIR:OUT; SFP:1102; SCL:1; SRVR:CY4PR1801MB1912;
- H:CY4PR1801MB1909.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: suse.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: ZHrvKwGXMAB5HpZe5mylQuU4dzdpF0i+fyQjK3YwO+V2EdobhpekJEK8zECIrm1e4OZe//o+aqMzb0N7vl84Ufo1oqQum7I8lR1lyx3t9WkIMiDUakKe5lkGC2AaAwr6sSchtKfCOK42MtMBrTZfHyeCRII3u5etugVEH5yD5wbZ7xiXIIrpW7Y75eBmYsxBQdBuhPVMb9x0XdZWf8I+2SryZAqvRRp4Mxsy6onoBPXnAoxamCni6BAr+jHRQHJnWVCyGUOMUcQ2WwhFT3YD510z0BWcLGqh/YHydQfbyIwx0sZ0VPU7q6+KZFCv1gvr2/2dxUwP0sFqtO5mYRI2NV4i/bMp7i+gukTGkCnqRvsZu/q9kTocbOmFzt8i/Tl0T3p4m0UHiqBEwctp2vTYIlSkZYjutBhTivu24o4EwkE=
-Content-ID: <373EFE8577B33D44BC5F1CB21251F836@namprd18.prod.outlook.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ Z46HaNmN2hZS/oJ69c1DI5Rcww==
+Organization: ARM Ltd
+Message-ID: <91c53121-9041-e8a2-97a2-5b5626e24c6e@arm.com>
+Date: Mon, 22 Jul 2019 15:54:41 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: d55b302c-b6a4-406d-c340-08d70eb39293
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Jul 2019 14:47:52.1024 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 856b813c-16e5-49a5-85ec-6f081e13b527
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: mbrugger@suse.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR1801MB1912
-X-OriginatorOrg: suse.com
+In-Reply-To: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_075223_169213_2602304B 
-X-CRM114-Status: GOOD (  14.12  )
+X-CRM114-CacheID: sfid-20190722_075446_528196_5C439465 
+X-CRM114-Status: GOOD (  13.93  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [15.124.64.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,42 +106,48 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Heiko Stuebner <heiko@sntech.de>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ linux-rockchip@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-DQoNCk9uIDIyLzA3LzIwMTkgMTY6MzEsIFZpY2VudGUgQmVyZ2FzIHdyb3RlOg0KPiBIaSwgaSBo
-YXZlIGJlZW4gcnVubmluZyBsaW51eCBvbiByazMzOTkgYm9vdGVkIHdpdGgga2V4ZWMgZmluZSB1
-bnRpbCA1LjINCj4gRnJvbSA1LjIgb253YXJkcywgdGhlcmUgYXJlIG1lbW9yeSBjb3JydXB0aW9u
-IGlzc3VlcyBhcyByZXBvcnRlZCBoZXJlOg0KPiBodHRwOi8vbGttbC5pdS5lZHUvaHlwZXJtYWls
-L2xpbnV4L2tlcm5lbC8xOTA2LjIvMDcyMTEuaHRtbA0KPiBrZXhlYyBoYXMgYmVlbiBpZGVudGlm
-aWVkIGFzIHRoZSBwcmluY2lwYWwgcmVhc29uIGZvciB0aGUgaXNzdWVzLg0KPiANCj4gSXQgdHVy
-bnMgb3V0IHRoYXQga2V4ZWMgaGFzIG5ldmVyIHdvcmtlZCByZWxpYWJseSBvbiB0aGlzIHBsYXRm
-b3JtLA0KPiBpIHdhcyBqdXN0IGx1Y2t5IHVudGlsIHJlY2VudGx5Lg0KPiANCj4gUGxlYXNlLCBj
-YW4geW91IHByb3ZpZGUgc29tZSBkaXJlY3Rpb25zIG9uIGhvdyB0byBkZWJ1ZyB0aGUgaXNzdWU/
-DQo+IA0KPiBUaGUgbGF0ZXN0IHRlc3QgcGVyZm9ybWVkIGlzOg0KPiAxLi0gQm9vdCB2NS4zLXJj
-MQ0KPiAyLi0gS2V4ZWMgaW50byB2NS4yLjINCj4gMy4tIFRoZSBrZXJuZWwgcmVwb3J0cyBub3Ro
-aW5nIChlYXJseWNvbiBub3QgZW5hYmxlZCkgYW5kIGRvZXMgbm90IGJvb3QuDQo+IFRoZSBzYW1l
-IGtlcm5lbCB2NS4yLjIgd29ya3MgZmluZSB3aGVuIGJvb3RlZCB3aXRob3V0IGtleGVjLg0KDQpJ
-cyB0aGVyZSBhIGtub3duIGtlcm5lbCB3aGVyZSBrZXhlYyB3YXMgd29ya2luZyAodjUuMiBlLmcu
-KT8NCklmIHlvdSBjYW4gZmluZCBvbmUsIHlvdSBjYW4gcnVuIGdpdCBiaXNlY3QgdG8gZmluZCB0
-aGUgY29tbWl0IHRoYXQgYnJlYWtzIHRoaW5ncy4NCg0KQXBhcnQgZnJvbSB0aGF0IHlvdSBzaG91
-bGQgdHJ5IHRvIGVuYWJsZSBlYXJseWNvbiBvbiB5b3VyIGtlcm5lbCB5b3Ugd2FudCB0bw0Ka2V4
-ZWMgaW50bywgc28gYXQgbGVhc3QgeW91IGNhbiBzZWUgaWYgaXQgY3Jhc2hlcyBpbiB0aGUgbmV3
-IGtlcm5lbC4gSWYgeW91DQpzdGlsbCBkb24ndCBzZWUgYW55dGhpbmcgeW91IGNhbiB0cnkgdG8g
-dXNlIHBydWdhdG9yeSBwcmludGluZyAoaWYgeW91IHVzZQ0Ka2V4ZWNfbG9hZCBhbmQgbm90IGtl
-eGVjX2ZpbGVfbG9hZCkuIEkgaGF2ZSBhIHdvcmstaW4tcHJvZ3Jlc3MgcGF0Y2hlcyB0aGF0IEkN
-CmNhbiBzaGFyZSB3aXRoIHlvdSBpZiBuZWVkZWQuIEp1c3QgbGV0IG1lIGtub3cuDQoNClJlZ2Fy
-ZHMsDQpNYXR0aGlhcw0KDQoNCj4gDQo+IFJlZ2FyZHMsDQo+IMKgVmljZW7Dpy4NCj4gDQo+IA0K
-PiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXw0KPiBsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdA0KPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
-ZGVhZC5vcmcNCj4gaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1hcm0ta2VybmVsDQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXJvY2tjaGlwCg==
+On 22/07/2019 15:31, Vicente Bergas wrote:
+> Hi, i have been running linux on rk3399 booted with kexec fine until 5.2
+> From 5.2 onwards, there are memory corruption issues as reported here:
+> http://lkml.iu.edu/hypermail/linux/kernel/1906.2/07211.html
+> kexec has been identified as the principal reason for the issues.
+> 
+> It turns out that kexec has never worked reliably on this platform,
+> i was just lucky until recently.
+> 
+> Please, can you provide some directions on how to debug the issue?
+> 
+> The latest test performed is:
+>  1.- Boot v5.3-rc1
+
+Not the most trusted version, but hey, why not...
+
+>  2.- Kexec into v5.2.2
+>  3.- The kernel reports nothing (earlycon not enabled) and does not boot.
+> The same kernel v5.2.2 works fine when booted without kexec.
+
+Can you please enable earlycon and let us know how far it goes? Your
+previous reports hinting at runtime memory corruption, but this seems to
+be much more radical...
+
+FWIW, I was able to kexec using 5.2-rcx (for values of x around 6) on a
+NanoPC-T4, using a mainline u-boot and firmware.
+
+Thanks,
+
+	M.
+-- 
+Jazz is not dead. It just smells funny...
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
