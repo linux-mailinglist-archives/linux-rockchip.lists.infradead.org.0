@@ -2,68 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B70A470B8A
-	for <lists+linux-rockchip@lfdr.de>; Mon, 22 Jul 2019 23:35:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D642270BE7
+	for <lists+linux-rockchip@lfdr.de>; Mon, 22 Jul 2019 23:44:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:To:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=50dqb1dRebO9hf5ygAkfT8tIvWNQpoiL86oBzKF32qU=; b=DjIvlqoDsMXTWM
-	X0RuIVZDbpsxcsN7TH0Y83hePxucR7RkqQj4wr7PgJ7+RGXMW0ZbOfpz2mPt4qqH0fAIPC1ok6hlI
-	4lnsfVi4p79H0SWWYZrQzM6N7RQeNSu2Rn2aBD/pSNjgutVkQZkMgVodfKkgVRIy+OS/VmDvpI4vP
-	EVkE5xxHRtOheEaOAx1g+AP7nQEYa5VV58wum0+An8WWNhUVR+dLK8/9Kbhaj8Qh2/PWOBRt/eezq
-	1SYwiP+f4CxgI6mTuFSHipvLqU/ASurbbpNlKTHUxjBNGuQmOpMX5mMCWy2mdWeQC6onebdgrmlU4
-	iztC3VkWa5UcyCyYB4mw==;
+	List-Owner; bh=MTFcpvqtOu33yuzNodkd2VmmAvKdPCy/y/Q71UMny2A=; b=puta+qxDKC+M3t
+	MtZGC4MJ79IOpHU7uoM8jOBrLlQQIFhwSGVxcAKXdjZuIaBKev0Xd1nqdv/96dIxpiK060uk51loc
+	nLtB5Zl+IzDEdyOjU0MnuHUFgubjUD5hUI+lBzxkmC+qEvXkduK9W+A1XuXpCKeCTziKZPbNh6qza
+	ocUgTGEaK41300PP10jIMhclp8+nfMKfxmiclUXCquEl56gVjT051lSjZdE/d8P5T30bKELsg8HH6
+	oMEAcjStDVSAnM23yvtX6toKxoPru9Gg1w5GyXkWJpuC5grbW9CA++fdVch6u63CUzXW2K3y4wOs3
+	yLStfM7D2kSCo1zORLLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpfyG-0007gf-Cp; Mon, 22 Jul 2019 21:35:48 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hpg6v-0001vg-W7; Mon, 22 Jul 2019 21:44:46 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpfxn-0007PI-UX; Mon, 22 Jul 2019 21:35:21 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 910D321900;
- Mon, 22 Jul 2019 21:35:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563831319;
- bh=DvqIagaTKeWXpuKwat8d9RWOAli9dQa8fn58FFzhj2I=;
- h=In-Reply-To:References:Subject:To:Cc:From:Date:From;
- b=GAGVTPyolP5awe7fywjEGXSa+BDWuSSTnWBWAsVtU+GauWTmbacpuxNHMdreyY0QN
- EzQzfqEkaMrycQ3qhWZuX9MbqqicKiRXSufriuxCYMpk8r1iiXujFYdWxPoyQ9eL4f
- 9wYmo7SCdgmoiQUleXveC1Ek57aXrsPWQ/3sK3bs=
-MIME-Version: 1.0
-In-Reply-To: <20190627222220.89175-1-nhuck@google.com>
-References: <20190627222220.89175-1-nhuck@google.com>
+ id 1hpg6d-0001k3-Pk; Mon, 22 Jul 2019 21:44:29 +0000
+Received: from 084035110054.static.ipv4.infopact.nl ([84.35.110.54]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hpg6V-0001tM-PU; Mon, 22 Jul 2019 23:44:19 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Stephen Boyd <sboyd@kernel.org>
 Subject: Re: [PATCH] clk: rockchip: Fix -Wunused-const-variable
-To: Nathan Huckleberry <nhuck@google.com>, andy.yan@rock-chips.com,
- heiko@sntech.de, mturquette@baylibre.com, zhangqing@rock-chips.com
-From: Stephen Boyd <sboyd@kernel.org>
-User-Agent: alot/0.8.1
-Date: Mon, 22 Jul 2019 14:35:18 -0700
-Message-Id: <20190722213519.910D321900@mail.kernel.org>
+Date: Mon, 22 Jul 2019 23:44:18 +0200
+Message-ID: <19079299.fd1ZiCyHlL@phil>
+In-Reply-To: <20190722213519.910D321900@mail.kernel.org>
+References: <20190627222220.89175-1-nhuck@google.com>
+ <20190722213519.910D321900@mail.kernel.org>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_143520_456602_2FD8AD4B 
-X-CRM114-Status: GOOD (  10.18  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190722_144427_984035_8CCFCCCD 
+X-CRM114-Status: GOOD (  13.17  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,46 +58,59 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: clang-built-linux@googlegroups.com, linux-kernel@vger.kernel.org,
+Cc: clang-built-linux@googlegroups.com, mturquette@baylibre.com,
+ zhangqing@rock-chips.com, linux-kernel@vger.kernel.org,
  Nathan Huckleberry <nhuck@google.com>, linux-rockchip@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+ andy.yan@rock-chips.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Quoting Nathan Huckleberry (2019-06-27 15:22:20)
-> Clang produces the following warning
-> 
-> drivers/clk/rockchip/clk-rv1108.c:125:7: warning: unused variable
-> 'mux_pll_src_3plls_p' [-Wunused-const-variable]
-> PNAME(mux_pll_src_3plls_p)      = { "apll", "gpll", "dpll" };
-> 
-> Looks like this variable was never used. Deleting it to remove the
-> warning.
-> 
-> Cc: clang-built-linux@googlegroups.com
-> Link: https://github.com/ClangBuiltLinux/linux/issues/524
-> Signed-off-by: Nathan Huckleberry <nhuck@google.com>
-> ---
->  drivers/clk/rockchip/clk-rv1108.c | 1 -
->  1 file changed, 1 deletion(-)
+Hi Stephen,
 
-Heiko, can you pick this up? Looks like v5.4 material.
-
+Am Montag, 22. Juli 2019, 23:35:18 CEST schrieb Stephen Boyd:
+> Quoting Nathan Huckleberry (2019-06-27 15:22:20)
+> > Clang produces the following warning
+> > 
+> > drivers/clk/rockchip/clk-rv1108.c:125:7: warning: unused variable
+> > 'mux_pll_src_3plls_p' [-Wunused-const-variable]
+> > PNAME(mux_pll_src_3plls_p)      = { "apll", "gpll", "dpll" };
+> > 
+> > Looks like this variable was never used. Deleting it to remove the
+> > warning.
+> > 
+> > Cc: clang-built-linux@googlegroups.com
+> > Link: https://github.com/ClangBuiltLinux/linux/issues/524
+> > Signed-off-by: Nathan Huckleberry <nhuck@google.com>
+> > ---
+> >  drivers/clk/rockchip/clk-rv1108.c | 1 -
+> >  1 file changed, 1 deletion(-)
 > 
-> diff --git a/drivers/clk/rockchip/clk-rv1108.c b/drivers/clk/rockchip/clk-rv1108.c
-> index 96cc6af5632c..5947d3192866 100644
-> --- a/drivers/clk/rockchip/clk-rv1108.c
-> +++ b/drivers/clk/rockchip/clk-rv1108.c
-> @@ -122,7 +122,6 @@ PNAME(mux_usb480m_pre_p)    = { "usbphy", "xin24m" };
->  PNAME(mux_hdmiphy_phy_p)       = { "hdmiphy", "xin24m" };
->  PNAME(mux_dclk_hdmiphy_pre_p)  = { "dclk_hdmiphy_src_gpll", "dclk_hdmiphy_src_dpll" };
->  PNAME(mux_pll_src_4plls_p)     = { "dpll", "gpll", "hdmiphy", "usb480m" };
-> -PNAME(mux_pll_src_3plls_p)     = { "apll", "gpll", "dpll" };
->  PNAME(mux_pll_src_2plls_p)     = { "dpll", "gpll" };
->  PNAME(mux_pll_src_apll_gpll_p) = { "apll", "gpll" };
->  PNAME(mux_aclk_peri_src_p)     = { "aclk_peri_src_gpll", "aclk_peri_src_dpll" };
+> Heiko, can you pick this up? Looks like v5.4 material.
+
+yep ... I'm planning to do that :-)
+
+Heiko
+
+
+> > diff --git a/drivers/clk/rockchip/clk-rv1108.c b/drivers/clk/rockchip/clk-rv1108.c
+> > index 96cc6af5632c..5947d3192866 100644
+> > --- a/drivers/clk/rockchip/clk-rv1108.c
+> > +++ b/drivers/clk/rockchip/clk-rv1108.c
+> > @@ -122,7 +122,6 @@ PNAME(mux_usb480m_pre_p)    = { "usbphy", "xin24m" };
+> >  PNAME(mux_hdmiphy_phy_p)       = { "hdmiphy", "xin24m" };
+> >  PNAME(mux_dclk_hdmiphy_pre_p)  = { "dclk_hdmiphy_src_gpll", "dclk_hdmiphy_src_dpll" };
+> >  PNAME(mux_pll_src_4plls_p)     = { "dpll", "gpll", "hdmiphy", "usb480m" };
+> > -PNAME(mux_pll_src_3plls_p)     = { "apll", "gpll", "dpll" };
+> >  PNAME(mux_pll_src_2plls_p)     = { "dpll", "gpll" };
+> >  PNAME(mux_pll_src_apll_gpll_p) = { "apll", "gpll" };
+> >  PNAME(mux_aclk_peri_src_p)     = { "aclk_peri_src_gpll", "aclk_peri_src_dpll" };
+
+
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
