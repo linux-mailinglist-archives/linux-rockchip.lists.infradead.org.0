@@ -2,81 +2,61 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C65E570262
-	for <lists+linux-rockchip@lfdr.de>; Mon, 22 Jul 2019 16:31:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20C827029D
+	for <lists+linux-rockchip@lfdr.de>; Mon, 22 Jul 2019 16:47:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:MIME-Version:Date:Subject:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=gkcnKRxO3AVIaeE8wt6FFcj6rL5QPs7vDjnTbAuBh6g=; b=BZWsAh84gsW6bwjbYtdGRgtqCb
-	iDFzutG+/0HIHVfZmrjOGgXiKb4VwHNZBZprgztJcDhTuzB7sI3E/Ek1EgrHfIWtgBkngUfmrM/xK
-	gsRl1o/qCGnhUqUJxRLzrqgLQIpiv1RDjJ7G6/uCc7lwAaRDrvgKEQPchavlLMrcMuaS+i3dF5u1t
-	x+uZaQVczSbl85qy+MbEPbltXgy4ihEyZ+GuwDRmruOc/WZ/PzMjUQI2imyFrV9CAtVfEqR9Ewm/C
-	47Ri6Cc+OmPTQ5srPc7raTfufWzC4qTgpy240MpX5Jt61LJeOD1fEhXN0586VKyaF+de8AiPcryUK
-	8EuOQi7A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5PnSRUgOvsJHMMhAN3O57Ky6+KGcSicJPS3PJIMTLJw=; b=BzWvAodeIrJMUw
+	LjUsUYNaAw92ugTfDaoikkfZOcQcYi3vCfXMclf84wFGEcc8FQCtQbyLWIw1CadN5qf/xX315y7Ba
+	llgxvWHYKl3m2bv+a/wzrPB36lDyey80M7JF9+TLt2lhjRspVR3Kr2b0Xlh7+2x0ZclNicOnDG8zy
+	ZD3kJThSIuaciLLbGb5yzLa4YooG+8aY/HTz5m3+JckpnXxCJ70ANY1+r/TMs9phVIjQpngSp4JWV
+	BEUaTCZGZuYrQ6h64m/Erw7BwQmvJjVSBehqFOJdFav7AH1O7fIcDym0+HrM9B7AZ5vapww1h9YDJ
+	DUcO+pMxXCN3GzuAqKpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpZM0-0001qr-7X; Mon, 22 Jul 2019 14:31:52 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hpZah-0007lE-FB; Mon, 22 Jul 2019 14:47:03 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpZLh-0001eo-Vo; Mon, 22 Jul 2019 14:31:35 +0000
-Received: by mail-wm1-x343.google.com with SMTP id g67so31455269wme.1;
- Mon, 22 Jul 2019 07:31:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:mime-version:message-id:user-agent
- :content-transfer-encoding;
- bh=NSmLZi5lG6CsQjeIDxBEpIDrtPjhGys1X42LIYXPceE=;
- b=m+ZvukdfNBnfE71+9LxhZld0M5udugwH6mQsenVkkY/aoIRKNPmtCPwlkpLCpPU6gX
- WnC1GzVa3M+0blnODMXb+Jm3BSMCPPFotk5/PBGwjoAZJfYGCvgV3A5LQCR34usSji5S
- zWfXHKkwHxwJdYl+UK05R88xJjiV5mlb9114M3uzOLDCJ4Z9mF4SEttknbB2zGh6y0SS
- vuooZTbVSK/6tzwQb9RosehV7Ed8I0OWgOJ0Q4SqbbEW7QWqazaLXPmaZek1bgJwNk1R
- Ldr0mwGIQFPl9hp0m7VrOvMiVOaTwHaX9PIARox2tDQsYgyiOsHwr8XJBorpWNNVzqAD
- br4w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
- :user-agent:content-transfer-encoding;
- bh=NSmLZi5lG6CsQjeIDxBEpIDrtPjhGys1X42LIYXPceE=;
- b=YRQnTkzgzy04zSEwzylg03BH7dWISAdMqqy62Md+nolBNUjSBXH9FNwYyy6LucONHE
- KcyeinHoDfdKIkroc0DjlwhwJkW5SIp6r/w3qSFtchrsiu45i4Fn4HgaIZyaHQWOGd/F
- SJEcFfkjzx6Shorzda9nW+5WrfZBQNLNeChfTLL4SryZmRonyKcFeaeX3+pLA+THJxjI
- 3VRd1Hwe7wKr2N02dlHPeXZL99k7JAKd9MVLaa8CTbOHxRZq/VqUMOPn7F56KyIl3CZc
- sReL45ZIFLdmXyXA3Vekc9hqFNEYuZh6Y0HYDosJFeZ6T+McCl3DI88w8sBv7Ua7Iu9u
- XtLA==
-X-Gm-Message-State: APjAAAU2/WjjQTh2yuG24accs/ZBSbiKRMmY9kG6NnXV6W3nHtMUhVAx
- TxToRpdZLwsyThE6tRiFIAo7sNHGHa4=
-X-Google-Smtp-Source: APXvYqx/g6lDROMuc0NLOwaIDLXOVh57JABgY8fj2C3/AFxOOfZ/3B+Vru+dfU3AjxpLrCzPc0zctA==
-X-Received: by 2002:a7b:c455:: with SMTP id l21mr65124779wmi.114.1563805889294; 
- Mon, 22 Jul 2019 07:31:29 -0700 (PDT)
-Received: from localhost ([92.59.185.54])
- by smtp.gmail.com with ESMTPSA id 91sm84465351wrp.3.2019.07.22.07.31.27
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 22 Jul 2019 07:31:28 -0700 (PDT)
-From: Vicente Bergas <vicencb@gmail.com>
-To: <linux-arm-kernel@lists.infradead.org>
-Subject: kexec on rk3399
-Date: Mon, 22 Jul 2019 16:31:27 +0200
+ id 1hpZaL-0007aF-8h; Mon, 22 Jul 2019 14:46:42 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 96B672190D;
+ Mon, 22 Jul 2019 14:46:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563806800;
+ bh=aN96RqHhbFtraBsB4bpQicZmqqEyfnQJXn8t4OUjY4w=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=tyh1qOuD2zxIAHoQanGJSEjjKR+xzOAF2BvPz9mtGD8uktf4/NlJYADLSDTaEse1B
+ U0PoouZqx2ctRbcQjoroLaIuoa7G/k5+1Jkdio2T9uFfs+ufkuW3/1e3veTOzA7tLz
+ /jsIOgNadEzTef5znP5z8xVDabajM0LTUdCiiQl4=
+Date: Mon, 22 Jul 2019 15:46:36 +0100
+From: Will Deacon <will@kernel.org>
+To: Vicente Bergas <vicencb@gmail.com>
+Subject: Re: kexec on rk3399
+Message-ID: <20190722144636.x3bxq2ky7w2yfn3m@willie-the-truck>
+References: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
 MIME-Version: 1.0
-Message-ID: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
-User-Agent: Trojita
+Content-Disposition: inline
+In-Reply-To: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_073134_046466_871C65C6 
-X-CRM114-Status: UNSURE (   6.18  )
+X-CRM114-CacheID: sfid-20190722_074641_320546_976695B0 
+X-CRM114-Status: UNSURE (   8.27  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vicencb[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -84,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,26 +77,26 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <marc.zyngier@arm.com>,
+Cc: Heiko Stuebner <heiko@sntech.de>, Marc Zyngier <marc.zyngier@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+ linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGksIGkgaGF2ZSBiZWVuIHJ1bm5pbmcgbGludXggb24gcmszMzk5IGJvb3RlZCB3aXRoIGtleGVj
-IGZpbmUgdW50aWwgNS4yCkZyb20gNS4yIG9ud2FyZHMsIHRoZXJlIGFyZSBtZW1vcnkgY29ycnVw
-dGlvbiBpc3N1ZXMgYXMgcmVwb3J0ZWQgaGVyZToKaHR0cDovL2xrbWwuaXUuZWR1L2h5cGVybWFp
-bC9saW51eC9rZXJuZWwvMTkwNi4yLzA3MjExLmh0bWwKa2V4ZWMgaGFzIGJlZW4gaWRlbnRpZmll
-ZCBhcyB0aGUgcHJpbmNpcGFsIHJlYXNvbiBmb3IgdGhlIGlzc3Vlcy4KCkl0IHR1cm5zIG91dCB0
-aGF0IGtleGVjIGhhcyBuZXZlciB3b3JrZWQgcmVsaWFibHkgb24gdGhpcyBwbGF0Zm9ybSwKaSB3
-YXMganVzdCBsdWNreSB1bnRpbCByZWNlbnRseS4KClBsZWFzZSwgY2FuIHlvdSBwcm92aWRlIHNv
-bWUgZGlyZWN0aW9ucyBvbiBob3cgdG8gZGVidWcgdGhlIGlzc3VlPwoKVGhlIGxhdGVzdCB0ZXN0
-IHBlcmZvcm1lZCBpczoKIDEuLSBCb290IHY1LjMtcmMxCiAyLi0gS2V4ZWMgaW50byB2NS4yLjIK
-IDMuLSBUaGUga2VybmVsIHJlcG9ydHMgbm90aGluZyAoZWFybHljb24gbm90IGVuYWJsZWQpIGFu
-ZCBkb2VzIG5vdCBib290LgpUaGUgc2FtZSBrZXJuZWwgdjUuMi4yIHdvcmtzIGZpbmUgd2hlbiBi
-b290ZWQgd2l0aG91dCBrZXhlYy4KClJlZ2FyZHMsCiAgVmljZW7Dpy4KCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5n
-IGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
+On Mon, Jul 22, 2019 at 04:31:27PM +0200, Vicente Bergas wrote:
+> Hi, i have been running linux on rk3399 booted with kexec fine until 5.2
+> From 5.2 onwards, there are memory corruption issues as reported here:
+> http://lkml.iu.edu/hypermail/linux/kernel/1906.2/07211.html
+> kexec has been identified as the principal reason for the issues.
+
+I thought that you resolved this issue by upgrading u-boot. Did that not
+actually work?
+
+Will
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
