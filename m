@@ -2,60 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72996714B3
-	for <lists+linux-rockchip@lfdr.de>; Tue, 23 Jul 2019 11:10:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A52D47187B
+	for <lists+linux-rockchip@lfdr.de>; Tue, 23 Jul 2019 14:45:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ig+vQsbnSxpiYDq7Pc5S6Aee5bgSLSFopLiGvGq7IY4=; b=XKJCE2YZ5z3Jta
-	xaQJtRLyPk07NG5bao3l+VrQnm1bIj8N/HUihh7wqgziBokpYZCypj6+U05kHz/zfeuoIvQMVoiGA
-	P9I6x1l1QKey+8GQv8JSHARXXTT3vHltxOIGXMuS89//qCMGcHtRy7tpXnAQaMD1D2NdzcGDsNzZL
-	9SaoX2veoXEAvfV44SpBWknq1WgGgTEeKUap3t41YlLWV5+pHLtEx93obdwCNVNsyiizE8KzNX6Lh
-	Xq4+1/OjKNHkZ9mXxiIZWH0Eb0RbZRB7wlgq38I6y8uxmoBvT5vAl/c5DIYnMpgB2stju6R3SgENE
-	+wQLuHvvymYxNqlknauw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=48PgmFghCMaq+rC4JV4b4jxPUaFqdqnEHOZLlb5BtM0=; b=TSYH5Na6Kvs1+bfzMXm08vuL5
+	Gw7GM07V4wTyktJeq2+OeVFvcJPC5B3XhnIkVMLGW5PNIum+LB0voqTxJhAdJdWDSdx+I1LLWChcj
+	65bTDBiTBQe6bCwqAHJE44wRRlrHlgrgMNpDmW/7ELce6QginKlo1CMFfcwxonHxX8JBJvLhtrL74
+	0Gd5HSUygTFmkIWcm/bdC+XdVayEfMF2/LmEEyqrX1laBgYlcH4co03N2sgs72MPInOFuuQt+KuP/
+	XGXizOqmyJ9iof8zVdUGwrbapSSzWwmw0U5z50trzs7sdIGzfFB+q3EF9A3CYciL/tyanl2QPqswb
+	5C5D8NYyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpqo7-00068o-4d; Tue, 23 Jul 2019 09:10:03 +0000
-Received: from asavdk3.altibox.net ([109.247.116.14])
+	id 1hpuAb-000775-3j; Tue, 23 Jul 2019 12:45:29 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpqnG-0005Xr-E4; Tue, 23 Jul 2019 09:09:12 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id C8327200B4;
- Tue, 23 Jul 2019 11:09:05 +0200 (CEST)
-Date: Tue, 23 Jul 2019 11:09:04 +0200
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Subject: Re: [PATCH v4 17/23] drm/ast: Provide ddc symlink in connector sysfs
- directory
-Message-ID: <20190723090904.GC787@ravnborg.org>
+ id 1hpuA8-0005c5-RI; Tue, 23 Jul 2019 12:45:02 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 0B2192610F4
+Subject: Re: [PATCH v4 14/23] drm/tilcdc: Provide ddc symlink in connector
+ sysfs directory
+To: Sam Ravnborg <sam@ravnborg.org>
 References: <cover.1562843413.git.andrzej.p@collabora.com>
- <d3651bd2fd8ba69b8380304bca4c629a8c1da4e9.1562843413.git.andrzej.p@collabora.com>
+ <d1d415022c598fb7acd033f0f322dd67250adaa9.1562843413.git.andrzej.p@collabora.com>
+ <20190723090532.GA787@ravnborg.org>
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Message-ID: <3ad60be5-49cf-4017-4b74-53a2d6272deb@collabora.com>
+Date: Tue, 23 Jul 2019 14:44:50 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <d3651bd2fd8ba69b8380304bca4c629a8c1da4e9.1562843413.git.andrzej.p@collabora.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=dqr19Wo4 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=QX4gbG5DAAAA:8
- a=akpas9ZDeQi6sww-pK0A:9 a=CjuIK1q_8ugA:10 a=AbAUZ8qAyYyZVLSsDulk:22
+In-Reply-To: <20190723090532.GA787@ravnborg.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_020911_027449_E8C97EDE 
-X-CRM114-Status: GOOD (  15.43  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190723_054501_016935_27B1396D 
+X-CRM114-Status: GOOD (  16.50  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.14 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,69 +65,62 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Liviu Dudau <liviu.dudau@arm.com>,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, dri-devel@lists.freedesktop.org,
+ Douglas Anderson <dianders@chromium.org>, linux-tegra@vger.kernel.org,
  Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Shawn Guo <shawnguo@kernel.org>, kernel@collabora.com,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
  linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Sean Paul <sean@poorly.run>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Vincent Abriou <vincent.abriou@st.com>, Krzysztof Kozlowski <krzk@kernel.org>,
  Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
  Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
  NXP Linux Team <linux-imx@nxp.com>, Dave Airlie <airlied@redhat.com>,
- Thomas Zimmermann <tzimmermann@suse.de>, Jonas Karlman <jonas@kwiboo.se>,
- linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
- Jyri Sarha <jsarha@ti.com>, Alexios Zavras <alexios.zavras@intel.com>,
+ freedreno@lists.freedesktop.org,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
+ intel-gfx@lists.freedesktop.org, Jyri Sarha <jsarha@ti.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
  Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
- Rodrigo Vivi <rodrigo.vivi@intel.com>, linux-tegra@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, Vincent Abriou <vincent.abriou@st.com>,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
  linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
  amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
- Enrico Weigelt <info@metux.net>, Seung-Woo Kim <sw0312.kim@samsung.com>,
- Douglas Anderson <dianders@chromium.org>, Todor Tomov <todor.tomov@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>, linux-kernel@vger.kernel.org,
+ Todor Tomov <todor.tomov@linaro.org>,
  Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Alex Deucher <alexander.deucher@amd.com>, freedreno@lists.freedesktop.org,
- Christian =?iso-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>,
+ Thomas Zimmermann <tzimmermann@suse.de>,
+ Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
+ =?UTF-8?Q?Christian_K=c3=b6nig?= <christian.koenig@amd.com>,
  Gerd Hoffmann <kraxel@redhat.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Andrzej.
-
-On Thu, Jul 11, 2019 at 01:26:44PM +0200, Andrzej Pietrasiewicz wrote:
-> Use the ddc pointer provided by the generic connector.
-> 
-> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-> ---
->  drivers/gpu/drm/ast/ast_mode.c | 9 +++++----
->  1 file changed, 5 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/ast/ast_mode.c b/drivers/gpu/drm/ast/ast_mode.c
-> index ffccbef962a4..1ca9bc4aa3bb 100644
-> --- a/drivers/gpu/drm/ast/ast_mode.c
-> +++ b/drivers/gpu/drm/ast/ast_mode.c
-> @@ -890,6 +890,11 @@ static int ast_connector_init(struct drm_device *dev)
->  		return -ENOMEM;
->  
->  	connector = &ast_connector->base;
-> +	ast_connector->i2c = ast_i2c_create(dev);
-> +	if (!ast_connector->i2c)
-> +		DRM_ERROR("failed to add ddc bus for connector\n");
-> +
-> +	connector->ddc = &ast_connector->i2c->adapter;
->  	drm_connector_init(dev, connector, &ast_connector_funcs, DRM_MODE_CONNECTOR_VGA);
->  
->  	drm_connector_helper_add(connector, &ast_connector_helper_funcs);
-Again, assigning before drm_connector_init().
-I did not audit the remaining patches - you got the idea.
-
-	Sam
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgU2FtLAoKVyBkbml1IDIzLjA3LjIwMTkgb8KgMTE6MDUsIFNhbSBSYXZuYm9yZyBwaXN6ZToK
+PiBIaSBBbmRyemVqCj4gCj4gT24gVGh1LCBKdWwgMTEsIDIwMTkgYXQgMDE6MjY6NDFQTSArMDIw
+MCwgQW5kcnplaiBQaWV0cmFzaWV3aWN6IHdyb3RlOgo+PiBVc2UgdGhlIGRkYyBwb2ludGVyIHBy
+b3ZpZGVkIGJ5IHRoZSBnZW5lcmljIGNvbm5lY3Rvci4KPj4KPj4gU2lnbmVkLW9mZi1ieTogQW5k
+cnplaiBQaWV0cmFzaWV3aWN6IDxhbmRyemVqLnBAY29sbGFib3JhLmNvbT4KPj4gLS0tCj4+ICAg
+ZHJpdmVycy9ncHUvZHJtL3RpbGNkYy90aWxjZGNfdGZwNDEwLmMgfCAxICsKPj4gICAxIGZpbGUg
+Y2hhbmdlZCwgMSBpbnNlcnRpb24oKykKPj4KPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2Ry
+bS90aWxjZGMvdGlsY2RjX3RmcDQxMC5jIGIvZHJpdmVycy9ncHUvZHJtL3RpbGNkYy90aWxjZGNf
+dGZwNDEwLmMKPj4gaW5kZXggNjJkMDE0YzIwOTg4Li5jMzczZWRiOTU2NjYgMTAwNjQ0Cj4+IC0t
+LSBhL2RyaXZlcnMvZ3B1L2RybS90aWxjZGMvdGlsY2RjX3RmcDQxMC5jCj4+ICsrKyBiL2RyaXZl
+cnMvZ3B1L2RybS90aWxjZGMvdGlsY2RjX3RmcDQxMC5jCj4+IEBAIC0yMTksNiArMjE5LDcgQEAg
+c3RhdGljIHN0cnVjdCBkcm1fY29ubmVjdG9yICp0ZnA0MTBfY29ubmVjdG9yX2NyZWF0ZShzdHJ1
+Y3QgZHJtX2RldmljZSAqZGV2LAo+PiAgIAl0ZnA0MTBfY29ubmVjdG9yLT5tb2QgPSBtb2Q7Cj4+
+ICAgCj4+ICAgCWNvbm5lY3RvciA9ICZ0ZnA0MTBfY29ubmVjdG9yLT5iYXNlOwo+PiArCWNvbm5l
+Y3Rvci0+ZGRjID0gbW9kLT5pMmM7Cj4+ICAgCj4+ICAgCWRybV9jb25uZWN0b3JfaW5pdChkZXYs
+IGNvbm5lY3RvciwgJnRmcDQxMF9jb25uZWN0b3JfZnVuY3MsCj4+ICAgCQkJRFJNX01PREVfQ09O
+TkVDVE9SX0RWSUQpOwo+IAo+IFdoZW4gcmVhZGluZyB0aGlzIGNvZGUsIGl0IGxvb2tzIHN0cmFu
+Z2UgdGhhdCB3ZSBzZXQgY29ubmVjdG9yLT5kZGMKPiAqYmVmb3JlKiB0aGUgY2FsbCB0byBpbml0
+IHRoZSBjb25uZWN0b3IuCj4gT25lIGNvdWxkIHJpc2sgdGhhdCBkcm1fY29ubmVjdG9yX2luaXQo
+KSB1c2VkIG1lbXNldCguLikgdG8gY2xlYXIgYWxsCj4gZmllbGRzIG9yIHNvLCBhbmQgaXQgd291
+bGQgYnJlYWsgdGhpcyBvcmRlci4KCkkgdmVyaWZpZWQgdGhlIGNvZGUgb2YgZHJtX2Nvbm5lY3Rv
+cl9pbml0KCkgYW5kIGNhbm5vdCBmaW5kIGFueSBtZW1zZXQoKQppbnZvY2F0aW9ucyB0aGVyZS4g
+V2hhdCBpcyB5b3VyIGFjdHVhbCBjb25jZXJuPwoKQW5kcnplagoKX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0
+CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
