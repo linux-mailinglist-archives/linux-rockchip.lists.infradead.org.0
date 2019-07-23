@@ -2,52 +2,52 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B2F571181
-	for <lists+linux-rockchip@lfdr.de>; Tue, 23 Jul 2019 07:59:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B376971186
+	for <lists+linux-rockchip@lfdr.de>; Tue, 23 Jul 2019 07:59:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IhtCkFmt4xMS2TCciVxncPTIaXemc1OzbJwdDduqi24=; b=NN3ss/DP7aOxat
-	Rkd8AZrbPOSgBUWzSSxgT01VUbB5f7qvbsWLTz2B6JmOF1EnVZX6JbslGrr2BPmPVjAjXQFCcKmgD
-	8fBae2qx5nhX1oV1Q+1b7FjePOfqk1XMAzh4SkifSX9ElBhNxebOWDV/o8Gj96IEsTSTPjxzOGOLb
-	CRNHJFVrni5qw6wloyztoVo1nViJ7i9nXgfIq5UOJNx6yrXjETX9H8i9mzq1nURAvnRpbL7fBS7TN
-	sJDgjJe175MMnH3U62C7AqkqiKw2lHCPWVgDtdx0NqfAj9RcN1FtcX05RwP7nvVRChLde2Gf8Barf
-	74ift9LkoW6tf+j3o4Bw==;
+	List-Owner; bh=fPCxwONoqiow7jl3vEoq9ohyv21ELm3ne3jjT4JRZ+E=; b=KZZRqQE9dAL18i
+	EN+QaH0oXCfMu7VCP/MCM2oAlTNiUfShHcFIhDoi87Bgt6VjXBAzlURb6UPfA/nAxmNgJNgrexTpj
+	/A6Kh19+Y7cLTC5dOhq4ULEP+ijdjQWSg+MEbjNpzCEmzwkhxqM7LeMYI7/WaieLcLA6W0v3WFhmT
+	sop3hrYQdRIHZut691oJNOzY0WD+gvqp0wSaDe+Cy3FvGqaYSaG2Z6E8tfjoVpMs7u2HNT2d+PPx7
+	guHfjJe7O/mv66Vi15BqvLN0FUGm7cf/FIpAxiQZtFOjm7zAOpcndBzV11SjFZiFEB1N8CdUldXLc
+	+TZgJHwE9aAKU96XCIrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpnpQ-0006PX-Vf; Tue, 23 Jul 2019 05:59:13 +0000
+	id 1hpnq2-0006WC-Q1; Tue, 23 Jul 2019 05:59:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpnpC-0006Nq-2i; Tue, 23 Jul 2019 05:58:59 +0000
+ id 1hpnpw-0006Ud-CT; Tue, 23 Jul 2019 05:59:45 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3D4B52238E;
- Tue, 23 Jul 2019 05:58:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AEFD92239E;
+ Tue, 23 Jul 2019 05:59:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563861537;
- bh=Kr6/01JDa/v6ZtlnzoIlfsNhc5A2e5DicJmo9mS2sNU=;
+ s=default; t=1563861584;
+ bh=WXCUgCbLphkBBDiAXTlN2S4IeeJ15hJXwNnoniA16Ic=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Gv+14L8kGFdq4rxkPTZIYD8+70TWAlhXuuFNLITtBfRKqpT9+pJkUW+lKE+oY+sEl
- 7MuJ5jgBC+3x1lKOR0EZpbQduCUL8pC2B/Swj6MVWJGpw7Opu4VYXZx3TzCjAtjeDo
- n/bJKKnMiPuXI1fEC3H05E8cy/aW/FjvhgM0VUVQ=
-Date: Tue, 23 Jul 2019 13:58:08 +0800
+ b=LGJwiqqtNJhoOXE73HgeUcCUMf8en/oKC+lOhSHN2LFczVYleuZ4/dqA4Tj9tGSyv
+ NaSN3pIZAWHUEiEqkMoH7io44ZKlA9v0X45AUlf2GZAQAV4qAjaWPYlDzdVhyU0wtN
+ BOX97jqG+kNXSp0Fe6UIJWbPVWe3NvvaSHbsA12Q=
+Date: Tue, 23 Jul 2019 13:58:59 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Subject: Re: [PATCH v4 12/23] drm: zte: Provide ddc symlink in hdmi connector
+Subject: Re: [PATCH v4 13/23] drm: zte: Provide ddc symlink in vga connector
  sysfs directory
-Message-ID: <20190723055807.GQ3738@dragon>
+Message-ID: <20190723055858.GR3738@dragon>
 References: <cover.1562843413.git.andrzej.p@collabora.com>
- <4a9fb80b4dc328b420ca5d94ebc2810ab86f788c.1562843413.git.andrzej.p@collabora.com>
+ <9cdd2fc46dbcb6b596786e5a12b7176c77a38d78.1562843413.git.andrzej.p@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <4a9fb80b4dc328b420ca5d94ebc2810ab86f788c.1562843413.git.andrzej.p@collabora.com>
+In-Reply-To: <9cdd2fc46dbcb6b596786e5a12b7176c77a38d78.1562843413.git.andrzej.p@collabora.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_225858_153231_85306A55 
+X-CRM114-CacheID: sfid-20190722_225944_456007_7177D5DA 
 X-CRM114-Status: UNSURE (   9.21  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
@@ -85,8 +85,9 @@ Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
  Maxime Ripard <maxime.ripard@bootlin.com>,
  Ramalingam C <ramalingam.c@intel.com>,
  Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- dri-devel@lists.freedesktop.org, Douglas Anderson <dianders@chromium.org>,
- Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
+ Liviu Dudau <liviu.dudau@arm.com>, dri-devel@lists.freedesktop.org,
+ Douglas Anderson <dianders@chromium.org>, Andrzej Hajda <a.hajda@samsung.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
  Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
  Benjamin Gaignard <benjamin.gaignard@linaro.org>, kernel@collabora.com,
  Fabio Estevam <festevam@gmail.com>,
@@ -125,7 +126,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, Jul 11, 2019 at 01:26:39PM +0200, Andrzej Pietrasiewicz wrote:
+On Thu, Jul 11, 2019 at 01:26:40PM +0200, Andrzej Pietrasiewicz wrote:
 > Use the ddc pointer provided by the generic connector.
 > 
 > Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
