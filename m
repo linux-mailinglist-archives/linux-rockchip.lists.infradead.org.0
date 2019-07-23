@@ -2,56 +2,61 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8589171947
-	for <lists+linux-rockchip@lfdr.de>; Tue, 23 Jul 2019 15:32:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6EFC71B79
+	for <lists+linux-rockchip@lfdr.de>; Tue, 23 Jul 2019 17:20:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=X7hGEW3cZV5AqC34v3ZDYTJdr2q/WpPBssXBFOmXlAs=; b=KWN8j1v5t+1dQie0hmK7iWg+l
-	uBJbjMLxKT7BPc6MPDW/Dtjwa9Yu/0ewhGux6MUvGveXsRKXN4E3KF9Z5FC2qWAtj8Y/ELZXDJvHy
-	w3VWrhRkx4fwz4ufObVsue8KBwFsVJVVRNBK6z/j8uyLouBGsOwi4veKqA/MJdiZggg66kBATh8JR
-	YkwHYqFX/bl1bNyxVXCXo3OaZYijMHNXEYe7N0t01eGGego80+Laglk6lwZCvCuUNC4+iJPDzj7Ni
-	Y9I+O41vvSh6XbC3nyahpHzBNybJc7xzWEwGD9XnxyuuD8d6wph0AeyWb9R35kdrIKRMKj6ii0mgO
-	DEh2/sjhw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LwUyuDrmCgpBcBjwsFbdnPZKHBAWrgNkrE40qLF9pFA=; b=ndn2kcl6nfHNto
+	7SmlTGCkvn2lllcfkq/5G1vaY9+irJsVuxImylFuj/i2PreZV1yteXkWR38drsLI2IUesCXwOQmcX
+	QdANOjQacGDad5Drd4XqzQ5aaN6lGt3FrPyXj5x07p/fCBeygPMyq2Z3jxNcsGtcJ7OzrWYPHWHmW
+	l3zT0FU7G/Uq9f67gXylJH740dEmVppHaUCUMQ/jBLy4IO3FpTs2Wu8X4zUvIG9PORUwpgZqm9j7I
+	y2/DFaxfGzTtuV8/8y6duw+aXYTM8s1o7AkTySq2nXWHSCbckd4QzAgR+p5acSXd+wGe4dbbFGVu2
+	mROdksQJwBXlJ+GYC4cQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpuuB-0001Kp-GC; Tue, 23 Jul 2019 13:32:35 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hputo-00015c-0U; Tue, 23 Jul 2019 13:32:14 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 96EF228;
- Tue, 23 Jul 2019 06:32:11 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 927A93F71F;
- Tue, 23 Jul 2019 06:32:10 -0700 (PDT)
-Subject: Re: kexec on rk3399
-To: Vicente Bergas <vicencb@gmail.com>
-References: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
- <91c53121-9041-e8a2-97a2-5b5626e24c6e@arm.com>
- <d5959b93-40ce-455c-877e-c661a3f22351@gmail.com>
- <8f71e7de-7eaf-58c7-6471-c8eb01e656ce@arm.com>
- <e42e7e24-a616-4a11-8c4d-1f44146e0a19@gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <c83f2748-52a0-45c8-b906-288d329439c2@arm.com>
-Date: Tue, 23 Jul 2019 14:32:09 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hpwaQ-0005vN-TB; Tue, 23 Jul 2019 15:20:18 +0000
+Received: from asavdk3.altibox.net ([109.247.116.14])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpwZy-00041L-GU; Tue, 23 Jul 2019 15:19:52 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk3.altibox.net (Postfix) with ESMTPS id 54655200D5;
+ Tue, 23 Jul 2019 17:19:41 +0200 (CEST)
+Date: Tue, 23 Jul 2019 17:19:39 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Subject: Re: [PATCH v4 14/23] drm/tilcdc: Provide ddc symlink in connector
+ sysfs directory
+Message-ID: <20190723151939.GA13718@ravnborg.org>
+References: <cover.1562843413.git.andrzej.p@collabora.com>
+ <d1d415022c598fb7acd033f0f322dd67250adaa9.1562843413.git.andrzej.p@collabora.com>
+ <20190723090532.GA787@ravnborg.org>
+ <3ad60be5-49cf-4017-4b74-53a2d6272deb@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <e42e7e24-a616-4a11-8c4d-1f44146e0a19@gmail.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <3ad60be5-49cf-4017-4b74-53a2d6272deb@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=dqr19Wo4 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=8nJEP1OIZ-IA:10 a=QX4gbG5DAAAA:8
+ a=6mu-9OIm9KcVJ4iDVDwA:9 a=wPNLvfGTeEIA:10 a=AbAUZ8qAyYyZVLSsDulk:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_063212_139317_97052DE9 
-X-CRM114-Status: GOOD (  16.07  )
+X-CRM114-CacheID: sfid-20190723_081950_894590_03A25196 
+X-CRM114-Status: GOOD (  17.92  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [109.247.116.14 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -65,64 +70,90 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Matthias Brugger <mbrugger@suse.com>, Heiko Stuebner <heiko@sntech.de>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, linux-rockchip@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, dri-devel@lists.freedesktop.org,
+ Douglas Anderson <dianders@chromium.org>, linux-tegra@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
+ linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Vincent Abriou <vincent.abriou@st.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
+ Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Dave Airlie <airlied@redhat.com>,
+ freedreno@lists.freedesktop.org,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
+ intel-gfx@lists.freedesktop.org, Jyri Sarha <jsarha@ti.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
+ linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>, linux-kernel@vger.kernel.org,
+ Todor Tomov <todor.tomov@linaro.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
+ Thomas Zimmermann <tzimmermann@suse.de>,
+ Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
+ Christian =?iso-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>,
+ Gerd Hoffmann <kraxel@redhat.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 22/07/2019 19:53, Vicente Bergas wrote:
-> On Monday, July 22, 2019 7:35:01 PM CEST, Robin Murphy wrote:
->> On 22/07/2019 18:05, Vicente Bergas wrote:
->>> On Monday, July 22, 2019 4:54:41 PM CEST, Marc Zyngier wrote: ...
->>
->> The obvious culprit would be DMA devices left running by the first 
->> kernel scribbling over the second kernel's memory before it's had the 
->> chance to reset them. Since boot-time memory allocation patterns tend 
->> to be relatively repeatable for a given platform and kernel 
->> configuration, "random" may well look a lot less random than you might 
->> expect, and it wouldn't be unheard of for e.g. the second kernel to 
->> mostly allocate its dentry cache from the same area the first kernel 
->> was mostly putting a network Rx descriptor ring.
->>
->> Robin.
-> 
-> Here is another attempted test: on the first kernel disable:
-> # CONFIG_ZONE_DMA32 is not set
-> # CONFIG_DMADEVICES is not set
-> # CONFIG_PL330_DMA is not set
-> that is, all i could disable matching CONFIG_*DMA*=y, which is not much.
-> Still enabled are:
-> CONFIG_HAVE_DMA_CONTIGUOUS=y
-> CONFIG_DMA_SHARED_BUFFER=y
-> CONFIG_SCSI_DMA=y
-> CONFIG_IOMMU_DMA=y
-> CONFIG_HAS_DMA=y
-> CONFIG_NEED_SG_DMA_LENGTH=y
-> CONFIG_NEED_DMA_MAP_STATE=y
-> CONFIG_ARCH_DMA_ADDR_T_64BIT=y
-> CONFIG_DMA_DECLARE_COHERENT=y
-> CONFIG_ARCH_HAS_SETUP_DMA_OPS=y
-> CONFIG_ARCH_HAS_TEARDOWN_DMA_OPS=y
-> CONFIG_ARCH_HAS_SYNC_DMA_FOR_DEVICE=y
-> CONFIG_ARCH_HAS_SYNC_DMA_FOR_CPU=y
-> CONFIG_ARCH_HAS_DMA_PREP_COHERENT=y
-> CONFIG_ARCH_HAS_DMA_COHERENT_TO_PFN=y
-> CONFIG_ARCH_HAS_DMA_MMAP_PGPROT=y
-> CONFIG_DMA_REMAP=y
-> CONFIG_DMA_DIRECT_REMAP=y
-> 
-> Then the second kernel still fails with d_lookup errors.
+Hi Andrej.
 
-Yeah, none of those configs are particularly relevant - I'm thinking 
-more about the drivers for ethernet, wifi, USB, PCI devices, and any 
-other peripherals which may be set up to make DMA accesses based on 
-external stimuli and don't get shut down cleanly by a kexec.
+On Tue, Jul 23, 2019 at 02:44:50PM +0200, Andrzej Pietrasiewicz wrote:
+> Hi Sam,
+> =
 
-Robin.
+> W dniu 23.07.2019 o=A011:05, Sam Ravnborg pisze:
+> > Hi Andrzej
+> > =
+
+> > On Thu, Jul 11, 2019 at 01:26:41PM +0200, Andrzej Pietrasiewicz wrote:
+> > > Use the ddc pointer provided by the generic connector.
+> > > =
+
+> > > Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+> > > ---
+> > >   drivers/gpu/drm/tilcdc/tilcdc_tfp410.c | 1 +
+> > >   1 file changed, 1 insertion(+)
+> > > =
+
+> > > diff --git a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c b/drivers/gpu/drm=
+/tilcdc/tilcdc_tfp410.c
+> > > index 62d014c20988..c373edb95666 100644
+> > > --- a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
+> > > +++ b/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
+> > > @@ -219,6 +219,7 @@ static struct drm_connector *tfp410_connector_cre=
+ate(struct drm_device *dev,
+> > >   	tfp410_connector->mod =3D mod;
+> > >   	connector =3D &tfp410_connector->base;
+> > > +	connector->ddc =3D mod->i2c;
+> > >   	drm_connector_init(dev, connector, &tfp410_connector_funcs,
+> > >   			DRM_MODE_CONNECTOR_DVID);
+> > =
+
+> > When reading this code, it looks strange that we set connector->ddc
+> > *before* the call to init the connector.
+> > One could risk that drm_connector_init() used memset(..) to clear all
+> > fields or so, and it would break this order.
+> =
+
+> I verified the code of drm_connector_init() and cannot find any memset()
+> invocations there. What is your actual concern?
+My concern is that drm_connector_init() maybe sometime in the future
+will init all fileds in drm_connector, so we loose any assingments
+done to drm_connector from *before* we called the init function.
+
+Moving the assignment to after drm_connector_init() would not
+let us depend on the actual implmentation of drm_connector_init().
+
+	Sam
 
 _______________________________________________
 Linux-rockchip mailing list
