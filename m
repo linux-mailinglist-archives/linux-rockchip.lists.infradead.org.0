@@ -2,56 +2,57 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A52D47187B
-	for <lists+linux-rockchip@lfdr.de>; Tue, 23 Jul 2019 14:45:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8589171947
+	for <lists+linux-rockchip@lfdr.de>; Tue, 23 Jul 2019 15:32:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=48PgmFghCMaq+rC4JV4b4jxPUaFqdqnEHOZLlb5BtM0=; b=TSYH5Na6Kvs1+bfzMXm08vuL5
-	Gw7GM07V4wTyktJeq2+OeVFvcJPC5B3XhnIkVMLGW5PNIum+LB0voqTxJhAdJdWDSdx+I1LLWChcj
-	65bTDBiTBQe6bCwqAHJE44wRRlrHlgrgMNpDmW/7ELce6QginKlo1CMFfcwxonHxX8JBJvLhtrL74
-	0Gd5HSUygTFmkIWcm/bdC+XdVayEfMF2/LmEEyqrX1laBgYlcH4co03N2sgs72MPInOFuuQt+KuP/
-	XGXizOqmyJ9iof8zVdUGwrbapSSzWwmw0U5z50trzs7sdIGzfFB+q3EF9A3CYciL/tyanl2QPqswb
-	5C5D8NYyw==;
+	 bh=X7hGEW3cZV5AqC34v3ZDYTJdr2q/WpPBssXBFOmXlAs=; b=KWN8j1v5t+1dQie0hmK7iWg+l
+	uBJbjMLxKT7BPc6MPDW/Dtjwa9Yu/0ewhGux6MUvGveXsRKXN4E3KF9Z5FC2qWAtj8Y/ELZXDJvHy
+	w3VWrhRkx4fwz4ufObVsue8KBwFsVJVVRNBK6z/j8uyLouBGsOwi4veKqA/MJdiZggg66kBATh8JR
+	YkwHYqFX/bl1bNyxVXCXo3OaZYijMHNXEYe7N0t01eGGego80+Laglk6lwZCvCuUNC4+iJPDzj7Ni
+	Y9I+O41vvSh6XbC3nyahpHzBNybJc7xzWEwGD9XnxyuuD8d6wph0AeyWb9R35kdrIKRMKj6ii0mgO
+	DEh2/sjhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpuAb-000775-3j; Tue, 23 Jul 2019 12:45:29 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpuA8-0005c5-RI; Tue, 23 Jul 2019 12:45:02 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 0B2192610F4
-Subject: Re: [PATCH v4 14/23] drm/tilcdc: Provide ddc symlink in connector
- sysfs directory
-To: Sam Ravnborg <sam@ravnborg.org>
-References: <cover.1562843413.git.andrzej.p@collabora.com>
- <d1d415022c598fb7acd033f0f322dd67250adaa9.1562843413.git.andrzej.p@collabora.com>
- <20190723090532.GA787@ravnborg.org>
-From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Message-ID: <3ad60be5-49cf-4017-4b74-53a2d6272deb@collabora.com>
-Date: Tue, 23 Jul 2019 14:44:50 +0200
+	id 1hpuuB-0001Kp-GC; Tue, 23 Jul 2019 13:32:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hputo-00015c-0U; Tue, 23 Jul 2019 13:32:14 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 96EF228;
+ Tue, 23 Jul 2019 06:32:11 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 927A93F71F;
+ Tue, 23 Jul 2019 06:32:10 -0700 (PDT)
+Subject: Re: kexec on rk3399
+To: Vicente Bergas <vicencb@gmail.com>
+References: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
+ <91c53121-9041-e8a2-97a2-5b5626e24c6e@arm.com>
+ <d5959b93-40ce-455c-877e-c661a3f22351@gmail.com>
+ <8f71e7de-7eaf-58c7-6471-c8eb01e656ce@arm.com>
+ <e42e7e24-a616-4a11-8c4d-1f44146e0a19@gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <c83f2748-52a0-45c8-b906-288d329439c2@arm.com>
+Date: Tue, 23 Jul 2019 14:32:09 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190723090532.GA787@ravnborg.org>
-Content-Language: en-US
+In-Reply-To: <e42e7e24-a616-4a11-8c4d-1f44146e0a19@gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_054501_016935_27B1396D 
-X-CRM114-Status: GOOD (  16.50  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190723_063212_139317_97052DE9 
+X-CRM114-Status: GOOD (  16.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,63 +65,66 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, dri-devel@lists.freedesktop.org,
- Douglas Anderson <dianders@chromium.org>, linux-tegra@vger.kernel.org,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
- linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Vincent Abriou <vincent.abriou@st.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
- Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Dave Airlie <airlied@redhat.com>,
- freedreno@lists.freedesktop.org,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
- intel-gfx@lists.freedesktop.org, Jyri Sarha <jsarha@ti.com>,
- Alexios Zavras <alexios.zavras@intel.com>,
- Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
- Rodrigo Vivi <rodrigo.vivi@intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Seung-Woo Kim <sw0312.kim@samsung.com>, linux-kernel@vger.kernel.org,
- Todor Tomov <todor.tomov@linaro.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
- Thomas Zimmermann <tzimmermann@suse.de>,
- Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
- =?UTF-8?Q?Christian_K=c3=b6nig?= <christian.koenig@amd.com>,
- Gerd Hoffmann <kraxel@redhat.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Matthias Brugger <mbrugger@suse.com>, Heiko Stuebner <heiko@sntech.de>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, linux-rockchip@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgU2FtLAoKVyBkbml1IDIzLjA3LjIwMTkgb8KgMTE6MDUsIFNhbSBSYXZuYm9yZyBwaXN6ZToK
-PiBIaSBBbmRyemVqCj4gCj4gT24gVGh1LCBKdWwgMTEsIDIwMTkgYXQgMDE6MjY6NDFQTSArMDIw
-MCwgQW5kcnplaiBQaWV0cmFzaWV3aWN6IHdyb3RlOgo+PiBVc2UgdGhlIGRkYyBwb2ludGVyIHBy
-b3ZpZGVkIGJ5IHRoZSBnZW5lcmljIGNvbm5lY3Rvci4KPj4KPj4gU2lnbmVkLW9mZi1ieTogQW5k
-cnplaiBQaWV0cmFzaWV3aWN6IDxhbmRyemVqLnBAY29sbGFib3JhLmNvbT4KPj4gLS0tCj4+ICAg
-ZHJpdmVycy9ncHUvZHJtL3RpbGNkYy90aWxjZGNfdGZwNDEwLmMgfCAxICsKPj4gICAxIGZpbGUg
-Y2hhbmdlZCwgMSBpbnNlcnRpb24oKykKPj4KPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2Ry
-bS90aWxjZGMvdGlsY2RjX3RmcDQxMC5jIGIvZHJpdmVycy9ncHUvZHJtL3RpbGNkYy90aWxjZGNf
-dGZwNDEwLmMKPj4gaW5kZXggNjJkMDE0YzIwOTg4Li5jMzczZWRiOTU2NjYgMTAwNjQ0Cj4+IC0t
-LSBhL2RyaXZlcnMvZ3B1L2RybS90aWxjZGMvdGlsY2RjX3RmcDQxMC5jCj4+ICsrKyBiL2RyaXZl
-cnMvZ3B1L2RybS90aWxjZGMvdGlsY2RjX3RmcDQxMC5jCj4+IEBAIC0yMTksNiArMjE5LDcgQEAg
-c3RhdGljIHN0cnVjdCBkcm1fY29ubmVjdG9yICp0ZnA0MTBfY29ubmVjdG9yX2NyZWF0ZShzdHJ1
-Y3QgZHJtX2RldmljZSAqZGV2LAo+PiAgIAl0ZnA0MTBfY29ubmVjdG9yLT5tb2QgPSBtb2Q7Cj4+
-ICAgCj4+ICAgCWNvbm5lY3RvciA9ICZ0ZnA0MTBfY29ubmVjdG9yLT5iYXNlOwo+PiArCWNvbm5l
-Y3Rvci0+ZGRjID0gbW9kLT5pMmM7Cj4+ICAgCj4+ICAgCWRybV9jb25uZWN0b3JfaW5pdChkZXYs
-IGNvbm5lY3RvciwgJnRmcDQxMF9jb25uZWN0b3JfZnVuY3MsCj4+ICAgCQkJRFJNX01PREVfQ09O
-TkVDVE9SX0RWSUQpOwo+IAo+IFdoZW4gcmVhZGluZyB0aGlzIGNvZGUsIGl0IGxvb2tzIHN0cmFu
-Z2UgdGhhdCB3ZSBzZXQgY29ubmVjdG9yLT5kZGMKPiAqYmVmb3JlKiB0aGUgY2FsbCB0byBpbml0
-IHRoZSBjb25uZWN0b3IuCj4gT25lIGNvdWxkIHJpc2sgdGhhdCBkcm1fY29ubmVjdG9yX2luaXQo
-KSB1c2VkIG1lbXNldCguLikgdG8gY2xlYXIgYWxsCj4gZmllbGRzIG9yIHNvLCBhbmQgaXQgd291
-bGQgYnJlYWsgdGhpcyBvcmRlci4KCkkgdmVyaWZpZWQgdGhlIGNvZGUgb2YgZHJtX2Nvbm5lY3Rv
-cl9pbml0KCkgYW5kIGNhbm5vdCBmaW5kIGFueSBtZW1zZXQoKQppbnZvY2F0aW9ucyB0aGVyZS4g
-V2hhdCBpcyB5b3VyIGFjdHVhbCBjb25jZXJuPwoKQW5kcnplagoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0
-CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
+On 22/07/2019 19:53, Vicente Bergas wrote:
+> On Monday, July 22, 2019 7:35:01 PM CEST, Robin Murphy wrote:
+>> On 22/07/2019 18:05, Vicente Bergas wrote:
+>>> On Monday, July 22, 2019 4:54:41 PM CEST, Marc Zyngier wrote: ...
+>>
+>> The obvious culprit would be DMA devices left running by the first 
+>> kernel scribbling over the second kernel's memory before it's had the 
+>> chance to reset them. Since boot-time memory allocation patterns tend 
+>> to be relatively repeatable for a given platform and kernel 
+>> configuration, "random" may well look a lot less random than you might 
+>> expect, and it wouldn't be unheard of for e.g. the second kernel to 
+>> mostly allocate its dentry cache from the same area the first kernel 
+>> was mostly putting a network Rx descriptor ring.
+>>
+>> Robin.
+> 
+> Here is another attempted test: on the first kernel disable:
+> # CONFIG_ZONE_DMA32 is not set
+> # CONFIG_DMADEVICES is not set
+> # CONFIG_PL330_DMA is not set
+> that is, all i could disable matching CONFIG_*DMA*=y, which is not much.
+> Still enabled are:
+> CONFIG_HAVE_DMA_CONTIGUOUS=y
+> CONFIG_DMA_SHARED_BUFFER=y
+> CONFIG_SCSI_DMA=y
+> CONFIG_IOMMU_DMA=y
+> CONFIG_HAS_DMA=y
+> CONFIG_NEED_SG_DMA_LENGTH=y
+> CONFIG_NEED_DMA_MAP_STATE=y
+> CONFIG_ARCH_DMA_ADDR_T_64BIT=y
+> CONFIG_DMA_DECLARE_COHERENT=y
+> CONFIG_ARCH_HAS_SETUP_DMA_OPS=y
+> CONFIG_ARCH_HAS_TEARDOWN_DMA_OPS=y
+> CONFIG_ARCH_HAS_SYNC_DMA_FOR_DEVICE=y
+> CONFIG_ARCH_HAS_SYNC_DMA_FOR_CPU=y
+> CONFIG_ARCH_HAS_DMA_PREP_COHERENT=y
+> CONFIG_ARCH_HAS_DMA_COHERENT_TO_PFN=y
+> CONFIG_ARCH_HAS_DMA_MMAP_PGPROT=y
+> CONFIG_DMA_REMAP=y
+> CONFIG_DMA_DIRECT_REMAP=y
+> 
+> Then the second kernel still fails with d_lookup errors.
+
+Yeah, none of those configs are particularly relevant - I'm thinking 
+more about the drivers for ethernet, wifi, USB, PCI devices, and any 
+other peripherals which may be set up to make DMA accesses based on 
+external stimuli and don't get shut down cleanly by a kexec.
+
+Robin.
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
