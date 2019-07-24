@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 738BE730E8
-	for <lists+linux-rockchip@lfdr.de>; Wed, 24 Jul 2019 16:04:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB651730F6
+	for <lists+linux-rockchip@lfdr.de>; Wed, 24 Jul 2019 16:05:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,34 +11,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=mu3TNaIcbPHOlmWEvzWycyPVJ9NDYqKljQ3w2fo13Fo=; b=Jbu3Off3+UnY8FjNnV/yEArvmR
-	5NczLtFEXUUOR93LFGdSC9zr0Jg5rdH+h30WdNAvYEOnZL2g1dZxG81BBjcSkpPVTxxf03boc+p9a
-	qGR/5/0f/Galr9J3hxncKIAe5r2lGHDM9PhDv0HsADj3IWHr+bd/nZOiiPIe3dZn8hxqbvc4Lwvd6
-	1EA67dAIW//RIy8Nus2J7DcP7glv4/A/ISV+ytMMcbl7czTdShSYTz7J33EyWLCV13IMAVUPTw5mp
-	DSEAV+FyFaReXnfEU2jA5+j3/sNWRaaJHCcs1jefUti9L+TGL44zz8dvm2YV07dWaE6RdFLIrrrg8
-	/oRtXFuA==;
+	bh=3aULPIJdpMnarC67QBYAMRtOy0e1q4gP2HdOOziCqnI=; b=nOrz197QkGkWyUyqdxlrNfvKkz
+	yOVZBj8YsyeyOswQ/1/sE/CFnqp9EpKPcD0Zk2xPYa4TwIPI0grhXIqY8EJav2hlE1ZmnhWG/tRgC
+	/DuyIueh1XbRTzqJ4GfIOq7Er/i8i2TUmQGVDTTD5Nis+HLzngJnCnzzAZd1mLovwOt2GhE7wrpAC
+	6DMIOquDgmoT6yEOtqs7eZDempcynsy3CPX3XBCBbLm0pF3wQ00LlSIajo+y9E12M9RyApYnLa0p+
+	2gooeS9rTD42CKdDmrJEvTbEBN22dWFO3AmWBMAyVhwrl1k2VLE+FFERwMl19JeQRjJEK81DxPx0n
+	gTE3JDcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqHsk-0008QW-OP; Wed, 24 Jul 2019 14:04:38 +0000
+	id 1hqHtI-0001LX-M8; Wed, 24 Jul 2019 14:05:12 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqHsg-0008PD-IU; Wed, 24 Jul 2019 14:04:36 +0000
+ id 1hqHtE-00019Q-BB; Wed, 24 Jul 2019 14:05:09 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 909FE27FB86
+ (Authenticated sender: andrzej.p) with ESMTPSA id 0973527FB86
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v5 17/24] drm/mgag200: Provide ddc symlink in connector sysfs
- directory
-Date: Wed, 24 Jul 2019 15:59:39 +0200
-Message-Id: <f86dfa1ed6e84ab8b36a0b2c24df897bdb957294.1563960855.git.andrzej.p@collabora.com>
+Subject: [PATCH v5 19/24] drm/bridge: dumb-vga-dac: Provide ddc symlink in
+ connector sysfs directory
+Date: Wed, 24 Jul 2019 15:59:41 +0200
+Message-Id: <c8a09ecf0a72f2c5eb7141e291604ac2f398c436.1563960855.git.andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1563960855.git.andrzej.p@collabora.com>
 References: <cover.1563960855.git.andrzej.p@collabora.com>
 In-Reply-To: <cover.1563960855.git.andrzej.p@collabora.com>
 References: <cover.1563960855.git.andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_070434_884729_0C13F4EB 
-X-CRM114-Status: GOOD (  11.34  )
+X-CRM114-CacheID: sfid-20190724_070508_654920_73E6F909 
+X-CRM114-Status: GOOD (  14.88  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -67,8 +67,8 @@ Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
  Sam Ravnborg <sam@ravnborg.org>, Neil Armstrong <narmstrong@baylibre.com>,
  David Airlie <airlied@linux.ie>, Ramalingam C <ramalingam.c@intel.com>,
  Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- Douglas Anderson <dianders@chromium.org>, Andrzej Hajda <a.hajda@samsung.com>,
- Thierry Reding <thierry.reding@gmail.com>,
+ Liviu Dudau <liviu.dudau@arm.com>, Douglas Anderson <dianders@chromium.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
  Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
  Benjamin Gaignard <benjamin.gaignard@linaro.org>, kernel@collabora.com,
  Fabio Estevam <festevam@gmail.com>,
@@ -87,15 +87,15 @@ Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
  linux-arm-msm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Jani Nikula <jani.nikula@linux.intel.com>, Inki Dae <inki.dae@samsung.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
  Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
  Jyri Sarha <jsarha@ti.com>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
  Thomas Gleixner <tglx@linutronix.de>, Chris Wilson <chris@chris-wilson.co.uk>,
  Sean Paul <sean@poorly.run>, Pengutronix Kernel Team <kernel@pengutronix.de>,
- Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
- Jernej Skrabec <jernej.skrabec@siol.net>, amd-gfx@lists.freedesktop.org,
- Tomi Valkeinen <tomi.valkeinen@ti.com>, Eric Anholt <eric@anholt.net>,
- Thomas Zimmermann <tzimmermann@suse.de>,
+ linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Eric Anholt <eric@anholt.net>, Thomas Zimmermann <tzimmermann@suse.de>,
  Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
  linux-kernel@vger.kernel.org, Todor Tomov <todor.tomov@linaro.org>,
  Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
@@ -113,39 +113,86 @@ Use the ddc pointer provided by the generic connector.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- drivers/gpu/drm/mgag200/mgag200_mode.c | 13 +++++++------
- 1 file changed, 7 insertions(+), 6 deletions(-)
+ drivers/gpu/drm/bridge/dumb-vga-dac.c | 25 +++++++++++++------------
+ 1 file changed, 13 insertions(+), 12 deletions(-)
 
-diff --git a/drivers/gpu/drm/mgag200/mgag200_mode.c b/drivers/gpu/drm/mgag200/mgag200_mode.c
-index 822f2a13748f..5e778b5f1a10 100644
---- a/drivers/gpu/drm/mgag200/mgag200_mode.c
-+++ b/drivers/gpu/drm/mgag200/mgag200_mode.c
-@@ -1678,18 +1678,19 @@ static struct drm_connector *mga_vga_init(struct drm_device *dev)
- 		return NULL;
+diff --git a/drivers/gpu/drm/bridge/dumb-vga-dac.c b/drivers/gpu/drm/bridge/dumb-vga-dac.c
+index d32885b906ae..ec04402eca38 100644
+--- a/drivers/gpu/drm/bridge/dumb-vga-dac.c
++++ b/drivers/gpu/drm/bridge/dumb-vga-dac.c
+@@ -20,7 +20,6 @@ struct dumb_vga {
+ 	struct drm_bridge	bridge;
+ 	struct drm_connector	connector;
  
- 	connector = &mga_connector->base;
-+	mga_connector->i2c = mgag200_i2c_create(dev);
-+	if (!mga_connector->i2c)
-+		DRM_ERROR("failed to add ddc bus\n");
+-	struct i2c_adapter	*ddc;
+ 	struct regulator	*vdd;
+ };
  
--	drm_connector_init(dev, connector,
--			   &mga_vga_connector_funcs, DRM_MODE_CONNECTOR_VGA);
-+	drm_connector_init_with_ddc(dev, connector,
-+				    &mga_vga_connector_funcs,
-+				    DRM_MODE_CONNECTOR_VGA,
-+				    &mga_connector->i2c->adapter);
+@@ -42,10 +41,10 @@ static int dumb_vga_get_modes(struct drm_connector *connector)
+ 	struct edid *edid;
+ 	int ret;
  
- 	drm_connector_helper_add(connector, &mga_vga_connector_helper_funcs);
+-	if (IS_ERR(vga->ddc))
++	if (IS_ERR(vga->connector.ddc))
+ 		goto fallback;
  
- 	drm_connector_register(connector);
+-	edid = drm_get_edid(connector, vga->ddc);
++	edid = drm_get_edid(connector, vga->connector.ddc);
+ 	if (!edid) {
+ 		DRM_INFO("EDID readout failed, falling back to standard modes\n");
+ 		goto fallback;
+@@ -84,7 +83,7 @@ dumb_vga_connector_detect(struct drm_connector *connector, bool force)
+ 	 * wire the DDC pins, or the I2C bus might not be working at
+ 	 * all.
+ 	 */
+-	if (!IS_ERR(vga->ddc) && drm_probe_ddc(vga->ddc))
++	if (!IS_ERR(vga->connector.ddc) && drm_probe_ddc(vga->connector.ddc))
+ 		return connector_status_connected;
  
--	mga_connector->i2c = mgag200_i2c_create(dev);
--	if (!mga_connector->i2c)
--		DRM_ERROR("failed to add ddc bus\n");
--
- 	return connector;
+ 	return connector_status_unknown;
+@@ -111,8 +110,10 @@ static int dumb_vga_attach(struct drm_bridge *bridge)
+ 
+ 	drm_connector_helper_add(&vga->connector,
+ 				 &dumb_vga_con_helper_funcs);
+-	ret = drm_connector_init(bridge->dev, &vga->connector,
+-				 &dumb_vga_con_funcs, DRM_MODE_CONNECTOR_VGA);
++	ret = drm_connector_init_with_ddc(bridge->dev, &vga->connector,
++					  &dumb_vga_con_funcs,
++					  DRM_MODE_CONNECTOR_VGA,
++					  vga->connector.ddc);
+ 	if (ret) {
+ 		DRM_ERROR("Failed to initialize connector\n");
+ 		return ret;
+@@ -190,14 +191,14 @@ static int dumb_vga_probe(struct platform_device *pdev)
+ 		dev_dbg(&pdev->dev, "No vdd regulator found: %d\n", ret);
+ 	}
+ 
+-	vga->ddc = dumb_vga_retrieve_ddc(&pdev->dev);
+-	if (IS_ERR(vga->ddc)) {
+-		if (PTR_ERR(vga->ddc) == -ENODEV) {
++	vga->connector.ddc = dumb_vga_retrieve_ddc(&pdev->dev);
++	if (IS_ERR(vga->connector.ddc)) {
++		if (PTR_ERR(vga->connector.ddc) == -ENODEV) {
+ 			dev_dbg(&pdev->dev,
+ 				"No i2c bus specified. Disabling EDID readout\n");
+ 		} else {
+ 			dev_err(&pdev->dev, "Couldn't retrieve i2c bus\n");
+-			return PTR_ERR(vga->ddc);
++			return PTR_ERR(vga->connector.ddc);
+ 		}
+ 	}
+ 
+@@ -216,8 +217,8 @@ static int dumb_vga_remove(struct platform_device *pdev)
+ 
+ 	drm_bridge_remove(&vga->bridge);
+ 
+-	if (!IS_ERR(vga->ddc))
+-		i2c_put_adapter(vga->ddc);
++	if (!IS_ERR(vga->connector.ddc))
++		i2c_put_adapter(vga->connector.ddc);
+ 
+ 	return 0;
  }
- 
 -- 
 2.17.1
 
