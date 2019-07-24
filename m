@@ -2,76 +2,75 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC2EB73F2E
-	for <lists+linux-rockchip@lfdr.de>; Wed, 24 Jul 2019 22:30:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C70E5740C9
+	for <lists+linux-rockchip@lfdr.de>; Wed, 24 Jul 2019 23:20:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lM9fvb4yt9wEbjuL1xotgZLadRQaUsCyDGFHn8+4MCA=; b=ahBzQnTnedC9mD
-	HptYUNM8d406mgm/5HYwkXvqC32YHazl4qMaFJ2gmn/uiD8aTt827BfPAjOC8sy52H3yGkhP3F3/y
-	q/iUx3kjqm/skeziXFSHJPpxP+hxBuR0H+5XVjCT5M78RYBis/YGJGbyqSBdQUlGd2q+VcGr5Y8yU
-	zdGsmoGpoIFgySt1rYWxx7UYWMJ23UCAdyiBxhLCdlD+MSy//edt4fIpyD0ezlDlFQXo/mKXiUDbN
-	hUiyBZzseZ8+DTdc7FiUivH6UBm/do4A+rSdsjzwGqqZzSpPL8w1ntFwyTJzR44Y/hLFDvj7ByKw/
-	MxmitKALK6cQJHLydEPw==;
+	List-Owner; bh=Ckz3Bp8UbBceJW/ZT3AOkbxfaRje5HsE9hCSDXcvcXw=; b=LeMWGz1fpYgIxQ
+	pyaRg8fznL/fbWLF0y1tt9jLVidc05BfswNITmRcj+oy8y85KtCUCXxPKbDhjwbttS5iLOCkMWvYq
+	hMnQQO28paLmoZehGa8oZdpM3Z6oMZ7E/6UDV9UvPAAPcCQb2rBwA+XGN5iaDnHgkBatS8GIN/png
+	Lr7Idgue4gjqlBG/nXWlTQ6USByQcseIXB9gA93PsImbbq9TEEHvJeVX1ExBkBbR5YDLpmM7QKw/d
+	VNkhA/9UqrS8qYsGQZ9qEOpmHPwXocdbJIdRb9jzfkRtcSjw37DFj5aEupSy+kkKJhBXxFBGnjljr
+	XQQfaiE7jqzzHSRiiC1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqNuE-0004Gf-0M; Wed, 24 Jul 2019 20:30:34 +0000
+	id 1hqOge-0005dE-Bw; Wed, 24 Jul 2019 21:20:36 +0000
 Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqNuA-00048A-OG
- for linux-rockchip@lists.infradead.org; Wed, 24 Jul 2019 20:30:32 +0000
-Received: by mail-io1-xd44.google.com with SMTP id k20so92373633ios.10
- for <linux-rockchip@lists.infradead.org>; Wed, 24 Jul 2019 13:30:28 -0700 (PDT)
+ id 1hqOft-0004DN-Pv
+ for linux-rockchip@lists.infradead.org; Wed, 24 Jul 2019 21:19:51 +0000
+Received: by mail-io1-xd44.google.com with SMTP id m24so92740618ioo.2
+ for <linux-rockchip@lists.infradead.org>; Wed, 24 Jul 2019 14:19:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=W7b98j1DYhcpfb7OdCLFp27JFdB3a34V6jagTpBUbfA=;
- b=emPr0+o12gzDRDVdDGCZkDSc1awT8Sv7j4Y3PHnjX6+BEM8Ev916Ml6Ya5Ixn59rnj
- bYHRVD4vJpGgnK8uA8ZfT2527Pza1HUFVITP04fOwvVSTVtDbOhp0XyRD+J1U8RCZ7+q
- cQkjHaLlnu1CLlhPM31Ij364/ILIXnU5UveYQ=
+ :cc; bh=U42kawvbKkJEpel5zVan/ikF9rLZvUvs8OMQwcRg1UQ=;
+ b=Hj+vv5UDzb40nMOp/TYlwPPAC+V4UscPzE4W3bfNlI7Qb97uhVRuGULd4B00296MSj
+ EjBIE+XYJXv2DiYixI2xTEUG2Ph2XZ7Ubm85jxcyt/IVI4nCKYZpit8TBHwruNP9ATlo
+ bQ8Up4xTuUPB8AJubgG7inQlixBfoprr1mWVM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=W7b98j1DYhcpfb7OdCLFp27JFdB3a34V6jagTpBUbfA=;
- b=o1scFQuAd8LyjVeiW+4lmUZs7KmV6NfeFIMJ/4u4FYGpVdNRMcELB6+Uy2+98KaygX
- xanmtM1z3rMiW63sMuMYrEi9dc7VNEB9wEiyA/HOaQhRZFpuNW6OesksY3tQHNoG60zR
- G4JN+G3rh0RdhgxVJ51ks03mhRPoKdqrrB9Zdc1hpqy4XlcMQPrLcyOv0rWo11V36OXO
- Ucn+MhwGtUf8500CuP/YgFNoydwC1N9tdxcXDXZqONmpeKyzjFXls/4e+dWv9iW7cYbC
- FmwjedJeNTZULB85jk/JW1nokLhCeiroS2i1oWij1oXh04wIWG68uyobRGeCBeSvssCm
- Svwg==
-X-Gm-Message-State: APjAAAUE0ilVf/02u2y+aYs9J5H5b9KGlGnPYyZ3SFj6yGEPHFz5SgIC
- gfZu2HD4tWHvI8y4iTxqkzKMO/bAiM0=
-X-Google-Smtp-Source: APXvYqzTQK0Ugl00VbT0BVoHPFr2ujMa6n7YrXsB0JUBEapL7bkyKBrewGPdI0d/cINmTpdInUFqPA==
-X-Received: by 2002:a02:3093:: with SMTP id
- q141mr87806750jaq.128.1564000227598; 
- Wed, 24 Jul 2019 13:30:27 -0700 (PDT)
-Received: from mail-io1-f47.google.com (mail-io1-f47.google.com.
- [209.85.166.47])
- by smtp.gmail.com with ESMTPSA id y18sm46477114iob.64.2019.07.24.13.30.27
+ bh=U42kawvbKkJEpel5zVan/ikF9rLZvUvs8OMQwcRg1UQ=;
+ b=UEu5zITMCCekYkVaftZWEb+PlXVYczmznIh8/hvRszBzMJSM28ltIVVH+wgvhfPd9f
+ fgHOenGT7k0Sl+5JvYXEvFpw/9EsqOvqJaHO3/EvIPQodo7C5OFcDMVMWHLgQJpDWLkz
+ B8MkNse4SDh6JmwDd5tJNJbMhk8TlmUN/RzR1izrm7NqO4VUOJANBZm+wx2mG4rm+j3M
+ ILTbFzO8BmJm5W8cWASWAOQxZAlZkzQCX1jy9E1X8YNTzLnqupLFjHDMSIvFEOk8i+Av
+ Msqib0rOVf5uQLkOL/SzBmFBxnVvUJOj+djet0O3anXe76UaDRu1qLV/+RE8s0ui5n+X
+ JG4g==
+X-Gm-Message-State: APjAAAWQQo4drHpozZJjn7GbkehUkqxO0c57YhLD5AEL/DkuQZ/3YqDD
+ 9yuD4dcT4Ge4tnReAJHf1wEiwP4WDzI=
+X-Google-Smtp-Source: APXvYqy86nSCREekvjix2U40BKo3ynROAcvpSJTV9K0ISUCaMVP94J0A1q2DuK6q7Wd7IDx4qrdiUA==
+X-Received: by 2002:a05:6602:1d2:: with SMTP id
+ w18mr63618830iot.157.1564003188486; 
+ Wed, 24 Jul 2019 14:19:48 -0700 (PDT)
+Received: from mail-io1-f52.google.com (mail-io1-f52.google.com.
+ [209.85.166.52])
+ by smtp.gmail.com with ESMTPSA id w23sm42957025ioa.51.2019.07.24.14.19.47
  for <linux-rockchip@lists.infradead.org>
  (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Wed, 24 Jul 2019 13:30:27 -0700 (PDT)
-Received: by mail-io1-f47.google.com with SMTP id g20so92387558ioc.12
- for <linux-rockchip@lists.infradead.org>; Wed, 24 Jul 2019 13:30:27 -0700 (PDT)
-X-Received: by 2002:a5d:8ccc:: with SMTP id k12mr78564964iot.141.1563999754524; 
- Wed, 24 Jul 2019 13:22:34 -0700 (PDT)
+ Wed, 24 Jul 2019 14:19:48 -0700 (PDT)
+Received: by mail-io1-f52.google.com with SMTP id f4so92714382ioh.6
+ for <linux-rockchip@lists.infradead.org>; Wed, 24 Jul 2019 14:19:47 -0700 (PDT)
+X-Received: by 2002:a5e:c241:: with SMTP id w1mr73854059iop.58.1564003187386; 
+ Wed, 24 Jul 2019 14:19:47 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190722193939.125578-3-dianders@chromium.org>
- <20190724113508.47A356021C@smtp.codeaurora.org>
-In-Reply-To: <20190724113508.47A356021C@smtp.codeaurora.org>
+References: <20190711223455.12210-1-mka@chromium.org>
+In-Reply-To: <20190711223455.12210-1-mka@chromium.org>
 From: Doug Anderson <dianders@chromium.org>
-Date: Wed, 24 Jul 2019 13:22:22 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=WAsrBV9PzUz1qPzQru+AkOYZ5hsaWdhNYRTNqUfDeOmQ@mail.gmail.com>
-Message-ID: <CAD=FV=WAsrBV9PzUz1qPzQru+AkOYZ5hsaWdhNYRTNqUfDeOmQ@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] mwifiex: Make use of the new sdio_trigger_replug()
- API to reset
-To: Kalle Valo <kvalo@codeaurora.org>, Ulf Hansson <ulf.hansson@linaro.org>
+Date: Wed, 24 Jul 2019 14:19:35 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=U5Z4QqyjzJpERwhvJFPATS+khVWBCStnaJKZR0hHBWNQ@mail.gmail.com>
+Message-ID: <CAD=FV=U5Z4QqyjzJpERwhvJFPATS+khVWBCStnaJKZR0hHBWNQ@mail.gmail.com>
+Subject: Re: [PATCH v2 1/2] ARM: dts: rockchip: move rk3288-veryon display
+ settings into a separate file
+To: Matthias Kaehlcke <mka@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_133030_827554_7FAAA9BB 
-X-CRM114-Status: GOOD (  18.52  )
+X-CRM114-CacheID: sfid-20190724_141949_880667_FB21E2A3 
+X-CRM114-Status: GOOD (  11.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -102,16 +101,11 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Ganapathi Bhat <gbhat@marvell.com>, Brian Norris <briannorris@chromium.org>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- Xinming Hu <huxinming820@gmail.com>, netdev <netdev@vger.kernel.org>,
- Andreas Fenkart <afenkart@gmail.com>,
- linux-wireless <linux-wireless@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>,
- Amitkumar Karwar <amitkarwar@gmail.com>, LKML <linux-kernel@vger.kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Nishant Sarmukadam <nishants@marvell.com>, Avri Altman <avri.altman@wdc.com>,
- Linux MMC List <linux-mmc@vger.kernel.org>, David Miller <davem@davemloft.net>
+ Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
@@ -119,39 +113,34 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 Hi,
 
-On Wed, Jul 24, 2019 at 4:35 AM Kalle Valo <kvalo@codeaurora.org> wrote:
+On Thu, Jul 11, 2019 at 3:35 PM Matthias Kaehlcke <mka@chromium.org> wrote:
 >
-> Douglas Anderson <dianders@chromium.org> wrote:
->
-> > As described in the patch ("mmc: core: Add sdio_trigger_replug()
-> > API"), the current mwifiex_sdio_card_reset() is broken in the cases
-> > where we're running Bluetooth on a second SDIO func on the same card
-> > as WiFi.  The problem goes away if we just use the
-> > sdio_trigger_replug() API call.
-> >
-> > NOTE: Even though with this new solution there is less of a reason to
-> > do our work from a workqueue (the unplug / plug mechanism we're using
-> > is possible for a human to perform at any time so the stack is
-> > supposed to handle it without it needing to be called from a special
-> > context), we still need a workqueue because the Marvell reset function
-> > could called from a context where sleeping is invalid and thus we
-> > can't claim the host.  One example is Marvell's wakeup_timer_fn().
-> >
-> > Cc: Andreas Fenkart <afenkart@gmail.com>
-> > Cc: Brian Norris <briannorris@chromium.org>
-> > Fixes: b4336a282db8 ("mwifiex: sdio: reset adapter using mmc_hw_reset")
-> > Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> > Reviewed-by: Brian Norris <briannorris@chromium.org>
->
-> I assume this is going via some other tree so I'm dropping this from my
-> queue. If I should apply this please resend once the dependency is in
-> wireless-drivers-next.
->
-> Patch set to Not Applicable.
+> diff --git a/arch/arm/boot/dts/rk3288-veyron-edp.dtsi b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
+> new file mode 100644
+> index 000000000000..5d812e9e78aa
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
+> @@ -0,0 +1,124 @@
+> +// SPDX-License-Identifier: GPL-2.0
 
-Thanks.  For now I'll assume that Ulf will pick it up if/when he is
-happy with patch #1 in this series.  Would you be willing to provide
-your Ack on this patch to make it clear to Ulf you're OK with that?
+Please allow MIT license:
+
+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+
+
+> +&pinctrl {
+> +       backlight {
+> +               bl_en: bl-en {
+> +                       rockchip,pins = <7 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
+> +               };
+> +       };
+> +};
+
+nit: convention on Rockchip device tree files is that all pinctrl
+stuff is at the bottom.  Downstream I think I added comments about
+this but those didn't make it upstream.
+
+Also: why did you move "bl_en" here but not "edp_hpd"?
 
 -Doug
 
