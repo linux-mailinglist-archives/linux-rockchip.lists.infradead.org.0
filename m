@@ -2,89 +2,52 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DE6F7416B
-	for <lists+linux-rockchip@lfdr.de>; Thu, 25 Jul 2019 00:29:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E45F57418A
+	for <lists+linux-rockchip@lfdr.de>; Thu, 25 Jul 2019 00:38:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B3xl0IDHb5Hs342yql5H1ZjsRcsxHKm/o/irE0AvRDI=; b=VQmEUEAiZFovev
-	auAY2A48poii/LulTSLj7VkOQ3kF+mcWZv45RshfsKzxQuNhVblwYblyh9sAZH+Ak08c0pq1oMyXn
-	ru6OW5h/valVSutM1RDV5SlJfHOiRSwFETNKPjYbG6fAPdJDSWzxzD7DfpU4QsFtCIaoBacVtZsl/
-	arZWhySLNsXwVd3XWRNfVe5Po7WgPT3Aqh8TteBZmj2ALT717vXK4snPzA5L/3NOQyvzU/TDDYoGa
-	KDIGiHKm9SF+Cea29g3OCWrvmAXtCGjbGoyC5oHMZp2bOd1mLc13xR//n5i2eh4vqO5LfBcvOvyuH
-	mmak54YKAGZH4oorlFag==;
+	List-Owner; bh=bUeTd8rNFQ3IhFss+vEmJ0x0DiMB9g8T0vS+mcbsr9E=; b=i44A8JZfwG+lau
+	4WV5/tL4Aei+IFzd/N3TRneN0OYDPNhXr3DoWI8l7uXpsf065wpLIli6oi1Kr0j3XK+nDH30HC43R
+	rl0eM0l2jO4yXtboRTvzQ9J1dctyMnVuec/7ed0us7I0G7xTO09FehRaIzf3JpSkuP0Oh+8iZZgUp
+	k0fpA8XjdkU1ex52rNk5uDmq+NonkocAP3Uwgb0RD1ZK9KWvHbCGdAqFV5/SwZU7B7a/atZnryqkj
+	9Yt6LexoahPL4na+wvGel5raSVhjBLDr3TsLO7L5oif1fEYueBsDb8pUKoGj1uBt6H9jsOTfljTAp
+	Bxbhf1oABJqHRgBv9uGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqPlB-0003Qe-Rq; Wed, 24 Jul 2019 22:29:21 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hqPu6-0006eA-Ee; Wed, 24 Jul 2019 22:38:34 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqPks-0003Dz-OW
- for linux-rockchip@lists.infradead.org; Wed, 24 Jul 2019 22:29:04 +0000
-Received: by mail-pg1-x541.google.com with SMTP id f5so13087621pgu.5
- for <linux-rockchip@lists.infradead.org>; Wed, 24 Jul 2019 15:29:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=Fn+jt6MVuRg1+Q1VoeC7kF7YB1DWtgkKK5poDsavIDw=;
- b=fvrhMepM3MI9TPoODmOW5LyNT+V+Zv6zKDACGbQdZMFfJMEBeN532dTMY29v2KYnvK
- gv3SVwK1HLq9kXurmmQp5hZod9hm+25kRxxWLYwj5JHpfgjVhnJHigshI0hHcip0+RB3
- lwlIhZtlmEPh8a42feTA1c0HjjPpF6gs9us4A=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Fn+jt6MVuRg1+Q1VoeC7kF7YB1DWtgkKK5poDsavIDw=;
- b=ijJPnHrdpiV1ZSfsEdnw4IxTnRR43+4UKnJrVsl8oUeigspJYTRx5vVJQPujLkr1fR
- gjGKSBEoFBxS1rNLAFMA8Dqr5bAo93gvr0U3JaAd0g0f1QvUtFEp9qiN1AlDRqvcehSp
- aRQ4AUuB3xc5NYXvr9qJjhYSk9fkCHMOZwUSZK7ea42lnSaeL6XqNr39ODAl1lHdf5EK
- vIIBLytyTopkwTGddvqIFXT7Vy1pDpf/dbYDhMF5PYTNl7M/JPA6/rnMQVHVovzUOcDz
- jxqyGUV+8BLB9Vh4dSQhjXwkcqXywpAiZbbYBBRRKunmEAJQxxb5ajGKN5nQow5tBi9R
- 8zpA==
-X-Gm-Message-State: APjAAAVOvwI/agB+lEW2t2dmnhwmxCQKvEZ9P5YbU1tPh0dkGMlvbVZC
- HVuFgHjeaOfo0ya8Vn0dKCRpDBOBw0s=
-X-Google-Smtp-Source: APXvYqzJBNwoxjGzEN0XCKA/1hPnVeLk77TVQGr5Y2y9U+x1Ijy7VePf7vVAxC1GAayFqg6x2k1L5A==
-X-Received: by 2002:aa7:8383:: with SMTP id u3mr13506735pfm.175.1564007340007; 
- Wed, 24 Jul 2019 15:29:00 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id z24sm83683358pfr.51.2019.07.24.15.28.57
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 24 Jul 2019 15:28:57 -0700 (PDT)
-Date: Wed, 24 Jul 2019 15:28:53 -0700
-From: Matthias Kaehlcke <mka@chromium.org>
+ id 1hqPtl-0006RL-6m; Wed, 24 Jul 2019 22:38:14 +0000
+Received: from d57e23da.static.ziggozakelijk.nl ([213.126.35.218]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hqPte-0005Vm-0y; Thu, 25 Jul 2019 00:38:06 +0200
+From: Heiko Stuebner <heiko@sntech.de>
 To: Doug Anderson <dianders@chromium.org>
-Subject: Re: [PATCH v2 1/2] ARM: dts: rockchip: move rk3288-veryon display
- settings into a separate file
-Message-ID: <20190724222853.GB250418@google.com>
+Subject: Re: [PATCH v2 2/2] ARM: dts: rockchip: consolidate veyron panel and
+ backlight settings
+Date: Thu, 25 Jul 2019 00:38:05 +0200
+Message-ID: <1769449.YPoKHCOSj6@phil>
+In-Reply-To: <CAD=FV=Wj4Fei6t-STjY_FJkDKQYys5PcVquBJcdRE3wUN=y3Yg@mail.gmail.com>
 References: <20190711223455.12210-1-mka@chromium.org>
- <CAD=FV=U5Z4QqyjzJpERwhvJFPATS+khVWBCStnaJKZR0hHBWNQ@mail.gmail.com>
+ <20190711223455.12210-2-mka@chromium.org>
+ <CAD=FV=Wj4Fei6t-STjY_FJkDKQYys5PcVquBJcdRE3wUN=y3Yg@mail.gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAD=FV=U5Z4QqyjzJpERwhvJFPATS+khVWBCStnaJKZR0hHBWNQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_152902_830679_B79872F8 
-X-CRM114-Status: GOOD (  14.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190724_153813_401619_201F89C4 
+X-CRM114-Status: GOOD (  16.78  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,52 +61,133 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
  Rob Herring <robh+dt@kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Matthias Kaehlcke <mka@chromium.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Jul 24, 2019 at 02:19:35PM -0700, Doug Anderson wrote:
+Am Mittwoch, 24. Juli 2019, 23:46:30 CEST schrieb Doug Anderson:
 > Hi,
 > 
 > On Thu, Jul 11, 2019 at 3:35 PM Matthias Kaehlcke <mka@chromium.org> wrote:
 > >
-> > diff --git a/arch/arm/boot/dts/rk3288-veyron-edp.dtsi b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
-> > new file mode 100644
-> > index 000000000000..5d812e9e78aa
-> > --- /dev/null
-> > +++ b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
-> > @@ -0,0 +1,124 @@
-> > +// SPDX-License-Identifier: GPL-2.0
+> > diff --git a/arch/arm/boot/dts/rk3288-veyron-minnie.dts b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+> > index 4cc7d3659484..2b0801a539c9 100644
+> > --- a/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+> > +++ b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+> > @@ -15,40 +15,6 @@
+> >                      "google,veyron-minnie-rev0", "google,veyron-minnie",
+> >                      "google,veyron", "rockchip,rk3288";
+> >
+> > -       backlight_regulator: backlight-regulator {
+> > -               compatible = "regulator-fixed";
+> > -               enable-active-high;
+> > -               gpio = <&gpio2 RK_PB4 GPIO_ACTIVE_HIGH>;
+> > -               pinctrl-names = "default";
+> > -               pinctrl-0 = <&bl_pwr_en>;
+> > -               regulator-name = "backlight_regulator";
+> > -               vin-supply = <&vcc33_sys>;
+> > -               startup-delay-us = <15000>;
+> > -       };
+> > -
+> > -       panel_regulator: panel-regulator {
+> > -               compatible = "regulator-fixed";
+> > -               enable-active-high;
+> > -               gpio = <&gpio7 RK_PB6 GPIO_ACTIVE_HIGH>;
+> > -               pinctrl-names = "default";
+> > -               pinctrl-0 = <&lcd_enable_h>;
+> > -               regulator-name = "panel_regulator";
+> > -               startup-delay-us = <100000>;
+> > -               vin-supply = <&vcc33_sys>;
+> > -       };
+> > -
+> > -       vcc18_lcd: vcc18-lcd {
+> > -               compatible = "regulator-fixed";
+> > -               enable-active-high;
+> > -               gpio = <&gpio2 RK_PB5 GPIO_ACTIVE_HIGH>;
+> > -               pinctrl-names = "default";
+> > -               pinctrl-0 = <&avdd_1v8_disp_en>;
+> > -               regulator-name = "vcc18_lcd";
+> > -               regulator-always-on;
+> > -               regulator-boot-on;
+> > -               vin-supply = <&vcc18_wl>;
+> > -       };
+> > -
+> >         volume_buttons: volume-buttons {
+> >                 compatible = "gpio-keys";
+> >                 pinctrl-names = "default";
 > 
-> Please allow MIT license:
+> You forgot to remove the line:
 > 
-> // SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-
-ok
-
-> > +&pinctrl {
-> > +       backlight {
-> > +               bl_en: bl-en {
-> > +                       rockchip,pins = <7 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
-> > +               };
-> > +       };
+> power-supply = <&backlight_regulator>;
+> 
+> ...from minnie.
+> 
+> 
+> > diff --git a/arch/arm/boot/dts/rk3288-veyron-pinky.dts b/arch/arm/boot/dts/rk3288-veyron-pinky.dts
+> > index 9b6f4d9b03b6..06af58e37a4b 100644
+> > --- a/arch/arm/boot/dts/rk3288-veyron-pinky.dts
+> > +++ b/arch/arm/boot/dts/rk3288-veyron-pinky.dts
+> > @@ -14,7 +14,14 @@
+> >         compatible = "google,veyron-pinky-rev2", "google,veyron-pinky",
+> >                      "google,veyron", "rockchip,rk3288";
+> >
+> > +       /delete-node/backlight-regulator;
+> > +       /delete-node/panel-regulator;
+> >         /delete-node/emmc-pwrseq;
+> > +       /delete-node/vcc18-lcd;
 > > +};
+> > +
+> > +&backlight {
+> > +       /delete-property/power-supply;
+> >  };
+> >
+> >  &emmc {
+> > @@ -52,7 +59,17 @@
+> >         i2c-scl-rising-time-ns = <300>;
+> >  };
+> >
+> > +&panel {
+> > +       power-supply= <&vcc33_lcd>;
 > 
-> nit: convention on Rockchip device tree files is that all pinctrl
-> stuff is at the bottom.  Downstream I think I added comments about
-> this but those didn't make it upstream.
+> Might as well put a space before the "="?
+> 
+> 
+> >  &pinctrl {
+> > +       /delete-node/ lcd;
+> > +
+> > +       backlight {
+> > +               /delete-node/ bl_pwr_en;
+> > +       };
+> 
+> I general as the defender of "pinky", I'll let Heiko confirm he's OK
+> with the color of this bikeshed.  Sometimes a bit of repetition is
+> preferred over a bunch of confusing /delete-node/ statements since
+> those tend to make things harder to reason about in general.  In this
+> case I think things are cleaner after your patch but I won't say it's
+> 100% clear cut.
 
-I'll move it to the bottom
+going this way with the delete-nodes looks good to me :-) ... pinky is
+the "odd" one in that, so I think it can carry the burden ... especially
+as you said, this really only affects me and my boardfarm at all ;-) .
 
-> Also: why did you move "bl_en" here but not "edp_hpd"?
 
-'bl_en' is defined in rk3288-veyron-chromebook.dtsi, 'edp_hdp' in
-rk3288.dtsi of the SoC.
+Heiko
+
+> 
+> Other than nits I have double-checked this patch, so feel free to add
+> my Reviewed-by after nits are fixed.
+> 
+> -Doug
+> 
+
+
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
