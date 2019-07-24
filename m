@@ -2,90 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2ECE872DB9
-	for <lists+linux-rockchip@lfdr.de>; Wed, 24 Jul 2019 13:35:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85EE473093
+	for <lists+linux-rockchip@lfdr.de>; Wed, 24 Jul 2019 16:01:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JSjCxsOObgb2Eytd8HURI9it32zbHa2pgImKUo6at/o=; b=uX+Lv70jyfCwNe
-	lQ2cwYpvfZgqO48NBWawoh1xnAHKVlY9UOvLGPHk9bDNZn4/TfWZb0v1KVF0TjqbRr3Ct73AN/uED
-	BFe8v1M+9zUoTLmKeY2cjhaJel/KiGvIkRpuWiL+BboLaKDldVNTTnixeedFpax4sr6vPE1ZB2vds
-	rWd1aYzJ4jtNg7Njz+2DClkCPFkbTpbHoGZ1Rs4DVG9VQpB57yJQlhQFhKY6c2yiFg6+e/JqrmrPZ
-	6VhCwurMNK6mRFNnYnMyvxOJH78w5TjIms6OG7t+PcRCaqXRfHLLkcQYCwpRGd45ALr8RZLMLH04X
-	rHIvnZHu1Zdzxa3mb2Kw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=4BDGm6zidLD+M+DSetKZrdROzKnbUt6McIBJb9uZYLI=; b=AvkefYN2AJpHziZcOr5FRlypLa
+	8DQiBsOFDTs9HVgz54W1StP1IYCb4M0hYtMLNgPs/JgPtqVZCQEdVVPk8WWDYw6f5omoYEvu3rcmz
+	4bPRVWFWCoipplXpgOD3cEES1V/X/B7wHuKvCroOvw0GI3ASnQxPc1+aJvTItiY7n2eMV0TksrAqM
+	rO79lUSsNw+83cLf+UZFlHozo67btezbDuQ8yRX38cedBczg/q7BwRSNgiiPnYwlfhgj6fqtXMk8N
+	L/K5YZIj2L05RfxfOWV8vFlCCwZNKWesoMBAa7Yza1EWkrzyBoz0GGItJgGoNXdgJ2EFOY5A2UY/G
+	dAI9362g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqFY9-000314-Cv; Wed, 24 Jul 2019 11:35:13 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1hqHps-0007Du-RN; Wed, 24 Jul 2019 14:01:40 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqFY5-0002b8-FN
- for linux-rockchip@lists.infradead.org; Wed, 24 Jul 2019 11:35:11 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 982836043F; Wed, 24 Jul 2019 11:35:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1563968108;
- bh=PKsdsPRKMo4ZtbQ7Rcm2MFURdgVd1dXIYdcVeyVHotc=;
- h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
- b=bC3UndZkqc+u4v2XFJ7YL3IwOYqPiMYHKgQuOP7R4kPBEdcHeBfN52OYvnz7Bm2fs
- 0QEMG/P0HnIYso6zY8V/DQf0kxxBE3YO4j2IIlK4Id0+HRXsdpHHgTCDBaXDtiti9r
- WXGP0+znOw5nW9r73fqoDL2yQmaxADDcyO0aKvTU=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-0.8 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,MISSING_DATE,MISSING_MID,SPF_NONE autolearn=no
- autolearn_force=no version=3.4.0
-Received: from potku.adurom.net (88-114-240-156.elisa-laajakaista.fi
- [88.114.240.156])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: kvalo@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 2C2D060388;
- Wed, 24 Jul 2019 11:35:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1563968107;
- bh=PKsdsPRKMo4ZtbQ7Rcm2MFURdgVd1dXIYdcVeyVHotc=;
- h=Subject:From:In-Reply-To:References:To:Cc:From;
- b=VW56ttPu5ecy3DbKzYVN2m9H6Ds5rU81iJ5LRsA0SbMIR3Zu4oiMBXzoieih/B3HA
- b8jFymaNIe9Rb76bymHkxaEjfDiK0rVqzshUWmn07Rh+V6+BzSeYQrDXU2AZm4bjJU
- XETW08GgbpfVwI8pJ9rjTsAMQisVs1zWmkqA7epg=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 2C2D060388
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- spf=none smtp.mailfrom=kvalo@codeaurora.org
-MIME-Version: 1.0
-Subject: Re: [PATCH v2 2/2] mwifiex: Make use of the new sdio_trigger_replug()
- API to reset
-From: Kalle Valo <kvalo@codeaurora.org>
-In-Reply-To: <20190722193939.125578-3-dianders@chromium.org>
-References: <20190722193939.125578-3-dianders@chromium.org>
-To: Douglas Anderson <dianders@chromium.org>
-User-Agent: pwcli/0.0.0-git (https://github.com/kvalo/pwcli/) Python/2.7.12
-Message-Id: <20190724113508.982836043F@smtp.codeaurora.org>
-Date: Wed, 24 Jul 2019 11:35:08 +0000 (UTC)
+ id 1hqHpn-0007CZ-MX; Wed, 24 Jul 2019 14:01:37 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 024AB263B01
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+To: dri-devel@lists.freedesktop.org
+Subject: [PATCH v5 05/24] drm: rockchip: Provide ddc symlink in inno_hdmi
+ sysfs directory
+Date: Wed, 24 Jul 2019 15:59:27 +0200
+Message-Id: <401193c0294a42adf30724058a41340fc537a98f.1563960855.git.andrzej.p@collabora.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <cover.1563960855.git.andrzej.p@collabora.com>
+References: <cover.1563960855.git.andrzej.p@collabora.com>
+In-Reply-To: <cover.1563960855.git.andrzej.p@collabora.com>
+References: <cover.1563960855.git.andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_043509_557261_DEEC6700 
-X-CRM114-Status: GOOD (  13.12  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190724_070135_994136_27CEEEBF 
+X-CRM114-Status: GOOD (  14.49  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,53 +62,134 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Ganapathi Bhat <gbhat@marvell.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Brian Norris <briannorris@chromium.org>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- Xinming Hu <huxinming820@gmail.com>, netdev@vger.kernel.org,
- Andreas Fenkart <afenkart@gmail.com>, linux-wireless@vger.kernel.org,
- Adrian Hunter <adrian.hunter@intel.com>,
- Amitkumar Karwar <amitkarwar@gmail.com>,
- Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
- Nishant Sarmukadam <nishants@marvell.com>, Avri Altman <avri.altman@wdc.com>,
- linux-mmc@vger.kernel.org, davem@davemloft.net, linux-kernel@vger.kernel.org
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ "Y.C. Chen" <yc_chen@aspeedtech.com>,
+ =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ Sam Ravnborg <sam@ravnborg.org>, Neil Armstrong <narmstrong@baylibre.com>,
+ David Airlie <airlied@linux.ie>, Ramalingam C <ramalingam.c@intel.com>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ Douglas Anderson <dianders@chromium.org>, Andrzej Hajda <a.hajda@samsung.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>,
+ =?UTF-8?q?Ville=20Syrj=C3=A4l=C3=A4?= <ville.syrjala@linux.intel.com>,
+ "David \(ChunMing\) Zhou" <David1.Zhou@amd.com>,
+ linux-samsung-soc@vger.kernel.org, Joonyoung Shim <jy0922.shim@samsung.com>,
+ linux-rockchip@lists.infradead.org, Vincent Abriou <vincent.abriou@st.com>,
+ Rob Clark <robdclark@gmail.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ CK Hu <ck.hu@mediatek.com>, Dave Airlie <airlied@redhat.com>,
+ intel-gfx@lists.freedesktop.org, Shashank Sharma <shashank.sharma@intel.com>,
+ freedreno@lists.freedesktop.org, linux-tegra@vger.kernel.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-arm-msm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Jani Nikula <jani.nikula@linux.intel.com>, Inki Dae <inki.dae@samsung.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
+ Jyri Sarha <jsarha@ti.com>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Chris Wilson <chris@chris-wilson.co.uk>,
+ Sean Paul <sean@poorly.run>, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Eric Anholt <eric@anholt.net>, Thomas Zimmermann <tzimmermann@suse.de>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
+ linux-kernel@vger.kernel.org, Todor Tomov <todor.tomov@linaro.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Alex Deucher <alexander.deucher@amd.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ =?UTF-8?q?Christian=20K=C3=B6nig?= <christian.koenig@amd.com>,
+ Gerd Hoffmann <kraxel@redhat.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Douglas Anderson <dianders@chromium.org> wrote:
+Use the ddc pointer provided by the generic connector.
 
-> As described in the patch ("mmc: core: Add sdio_trigger_replug()
-> API"), the current mwifiex_sdio_card_reset() is broken in the cases
-> where we're running Bluetooth on a second SDIO func on the same card
-> as WiFi.  The problem goes away if we just use the
-> sdio_trigger_replug() API call.
-> 
-> NOTE: Even though with this new solution there is less of a reason to
-> do our work from a workqueue (the unplug / plug mechanism we're using
-> is possible for a human to perform at any time so the stack is
-> supposed to handle it without it needing to be called from a special
-> context), we still need a workqueue because the Marvell reset function
-> could called from a context where sleeping is invalid and thus we
-> can't claim the host.  One example is Marvell's wakeup_timer_fn().
-> 
-> Cc: Andreas Fenkart <afenkart@gmail.com>
-> Cc: Brian Norris <briannorris@chromium.org>
-> Fixes: b4336a282db8 ("mwifiex: sdio: reset adapter using mmc_hw_reset")
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> Reviewed-by: Brian Norris <briannorris@chromium.org>
+Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+---
+ drivers/gpu/drm/rockchip/inno_hdmi.c | 23 ++++++++++++-----------
+ 1 file changed, 12 insertions(+), 11 deletions(-)
 
-I assume this is going via some other tree so I'm dropping this from my
-queue. If I should apply this please resend once the dependency is in
-wireless-drivers-next.
-
-Patch set to Not Applicable.
-
+diff --git a/drivers/gpu/drm/rockchip/inno_hdmi.c b/drivers/gpu/drm/rockchip/inno_hdmi.c
+index ed344a795b4d..0f7ed664600f 100644
+--- a/drivers/gpu/drm/rockchip/inno_hdmi.c
++++ b/drivers/gpu/drm/rockchip/inno_hdmi.c
+@@ -58,7 +58,6 @@ struct inno_hdmi {
+ 	struct drm_encoder	encoder;
+ 
+ 	struct inno_hdmi_i2c *i2c;
+-	struct i2c_adapter *ddc;
+ 
+ 	unsigned int tmds_rate;
+ 
+@@ -551,10 +550,10 @@ static int inno_hdmi_connector_get_modes(struct drm_connector *connector)
+ 	struct edid *edid;
+ 	int ret = 0;
+ 
+-	if (!hdmi->ddc)
++	if (!hdmi->connector.ddc)
+ 		return 0;
+ 
+-	edid = drm_get_edid(connector, hdmi->ddc);
++	edid = drm_get_edid(connector, hdmi->connector.ddc);
+ 	if (edid) {
+ 		hdmi->hdmi_data.sink_is_hdmi = drm_detect_hdmi_monitor(edid);
+ 		hdmi->hdmi_data.sink_has_audio = drm_detect_monitor_audio(edid);
+@@ -624,8 +623,10 @@ static int inno_hdmi_register(struct drm_device *drm, struct inno_hdmi *hdmi)
+ 
+ 	drm_connector_helper_add(&hdmi->connector,
+ 				 &inno_hdmi_connector_helper_funcs);
+-	drm_connector_init(drm, &hdmi->connector, &inno_hdmi_connector_funcs,
+-			   DRM_MODE_CONNECTOR_HDMIA);
++	drm_connector_init_with_ddc(drm, &hdmi->connector,
++				    &inno_hdmi_connector_funcs,
++				    DRM_MODE_CONNECTOR_HDMIA,
++				    hdmi->connector.ddc);
+ 
+ 	drm_connector_attach_encoder(&hdmi->connector, encoder);
+ 
+@@ -849,10 +850,10 @@ static int inno_hdmi_bind(struct device *dev, struct device *master,
+ 
+ 	inno_hdmi_reset(hdmi);
+ 
+-	hdmi->ddc = inno_hdmi_i2c_adapter(hdmi);
+-	if (IS_ERR(hdmi->ddc)) {
+-		ret = PTR_ERR(hdmi->ddc);
+-		hdmi->ddc = NULL;
++	hdmi->connector.ddc = inno_hdmi_i2c_adapter(hdmi);
++	if (IS_ERR(hdmi->connector.ddc)) {
++		ret = PTR_ERR(hdmi->connector.ddc);
++		hdmi->connector.ddc = NULL;
+ 		goto err_disable_clk;
+ 	}
+ 
+@@ -885,7 +886,7 @@ static int inno_hdmi_bind(struct device *dev, struct device *master,
+ 	hdmi->connector.funcs->destroy(&hdmi->connector);
+ 	hdmi->encoder.funcs->destroy(&hdmi->encoder);
+ err_put_adapter:
+-	i2c_put_adapter(hdmi->ddc);
++	i2c_put_adapter(hdmi->connector.ddc);
+ err_disable_clk:
+ 	clk_disable_unprepare(hdmi->pclk);
+ 	return ret;
+@@ -899,7 +900,7 @@ static void inno_hdmi_unbind(struct device *dev, struct device *master,
+ 	hdmi->connector.funcs->destroy(&hdmi->connector);
+ 	hdmi->encoder.funcs->destroy(&hdmi->encoder);
+ 
+-	i2c_put_adapter(hdmi->ddc);
++	i2c_put_adapter(hdmi->connector.ddc);
+ 	clk_disable_unprepare(hdmi->pclk);
+ }
+ 
 -- 
-https://patchwork.kernel.org/patch/11053351/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+2.17.1
 
 
 _______________________________________________
