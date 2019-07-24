@@ -2,40 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89FAC73513
-	for <lists+linux-rockchip@lfdr.de>; Wed, 24 Jul 2019 19:18:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F56D73514
+	for <lists+linux-rockchip@lfdr.de>; Wed, 24 Jul 2019 19:18:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=jebw4unkh8mmbj1tVaxQ9NbiU4a7Yu9MvJZY/Gi/g14=; b=XaplTE2jgqeg0g
-	xFStojttFkfJggNKkQ0p7Xr+re1o45gkJAiF3LhB/7qELQdFEUIJTl4hvV3Y6+Fhzj6Qj5aZZ07/B
-	YAVIfbLJu/EQlfl/9IVaoqm5+JxngEY5gvE7yBZmXtagOA1wUoso70xQQZg/2k18M2I+2X+RIYn9I
-	C/37wDDP06MKiGKFzgRDrdvn+BJGDdA7xzQDsLeQLv3z1b0VGd5ujFzMcP91l4735gnZSC0GtJLI4
-	xKKWFsb+l7fqZmMT9Al7B78JVbuUE29D1UqCTOinaVavhjvCz8UVc3eo61icgDP9VA9hTp1JT4DiT
-	aUGB0+1RBKKTA79Jhr7g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lkzmkr0sVFwYQslNqipdfNBDGzWinQIwWmbquj35WhA=; b=GoYaNgcHCLw/IA
+	7kc96Y9l/M3UUccrWOKCEVbiU781KSbcAxWztSO9GsYFuSja/XIt18i7CA2S9uU1KlTQiQmoI7bgF
+	HVELy31fuYW2Ucz3+7UBGzABmzhqxoo7Ik9H2L4wxFUXg95bBHKWqvvix3GMq1JPs6gI6c1RW/m/M
+	14riAsFs8hNlrtZPTt2hM8qxCMfvlHM8F2CM/arEQ8Nb1eUW40/A0sO+BmYP1ZRlGwYyw20el2L2o
+	GD0JM/X6w3N/LrJrhTisIWQgtZPESY+YbBd+yL8IL0fK563PrUatOzye29ioHjS3Nkx1/NoFqMpyX
+	HOX9omoK+mkCwrwaohDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqKuc-0006Zq-Nm; Wed, 24 Jul 2019 17:18:46 +0000
+	id 1hqKuf-0006hX-Og; Wed, 24 Jul 2019 17:18:49 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqKtA-0003KU-VY
- for linux-rockchip@lists.infradead.org; Wed, 24 Jul 2019 17:17:18 +0000
+ id 1hqKtD-0003Wi-Vj
+ for linux-rockchip@lists.infradead.org; Wed, 24 Jul 2019 17:17:21 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 2CDFB28B603
+ (Authenticated sender: ezequiel) with ESMTPSA id A386028B608
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: linux-media@vger.kernel.org,
 	Hans Verkuil <hans.verkuil@cisco.com>
-Subject: [PATCH 0/7] hantro: Add RK3399 VP8 decoding support
-Date: Wed, 24 Jul 2019 14:16:55 -0300
-Message-Id: <20190724171702.9449-1-ezequiel@collabora.com>
+Subject: [PATCH 1/7] media: hantro: Set DMA max segment size
+Date: Wed, 24 Jul 2019 14:16:56 -0300
+Message-Id: <20190724171702.9449-2-ezequiel@collabora.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190724171702.9449-1-ezequiel@collabora.com>
+References: <20190724171702.9449-1-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_101717_164426_03BF2850 
-X-CRM114-Status: UNSURE (   7.33  )
+X-CRM114-CacheID: sfid-20190724_101720_236578_5F56CCF9 
+X-CRM114-Status: UNSURE (   8.11  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -63,7 +65,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
 Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
  Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
  Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>,
+ stable@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
  Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  linux-rockchip@lists.infradead.org,
  Boris Brezillon <boris.brezillon@collabora.com>,
@@ -74,48 +76,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This series adds VP8 decoding support on RK3399 SoC.
+From: Francois Buergisser <fbuergisser@chromium.org>
 
-I'm including a set of commits from Boris' recent H264 series [1].
-These commits add some helpers that are also useful for RK3399 VP8,
-and at the same time cleanup the driver nicely.
+The Hantro codec is typically used in platforms with an IOMMU,
+so we need to set a proper DMA segment size. Devices without an
+IOMMU will still fallback to default 64KiB segments.
 
-Finally, there's a fix by Francois Buergisser from Chromium team.
+Cc: stable@vger.kernel.org
+Fixes: 775fec69008d3 ("media: add Rockchip VPU JPEG encoder driver")
+Signed-off-by: Francois Buergisser <fbuergisser@chromium.org>
+Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+---
+ drivers/staging/media/hantro/hantro_drv.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-VP8 and MPEG-2 tested on RK3399 RockPi and RK3288 Rock2 boards.
-
-[1] https://patchwork.kernel.org/cover/11003971/
-
-Boris Brezillon (4):
-  media: hantro: Simplify the controls creation logic
-  media: hantro: Constify the control array
-  media: hantro: Add hantro_get_{src,dst}_buf() helpers
-  media: hantro: Add helpers to prepare/finish a run
-
-Ezequiel Garcia (1):
-  media: hantro: Move VP8 common code
-
-Francois Buergisser (1):
-  media: hantro: Set DMA max segment size
-
-Jeffy Chen (1):
-  media: hantro: Support RK3399 VP8 decoding
-
- drivers/staging/media/hantro/Makefile         |   1 +
- drivers/staging/media/hantro/hantro.h         |  15 +-
- drivers/staging/media/hantro/hantro_drv.c     |  53 +-
- .../media/hantro/hantro_g1_mpeg2_dec.c        |  14 +-
- .../staging/media/hantro/hantro_g1_vp8_dec.c  |  34 +-
- .../staging/media/hantro/hantro_h1_jpeg_enc.c |  11 +-
- drivers/staging/media/hantro/hantro_hw.h      |   7 +
- drivers/staging/media/hantro/hantro_vp8.c     |  15 +
- drivers/staging/media/hantro/rk3399_vpu_hw.c  |  22 +-
- .../media/hantro/rk3399_vpu_hw_jpeg_enc.c     |  12 +-
- .../media/hantro/rk3399_vpu_hw_mpeg2_dec.c    |  14 +-
- .../media/hantro/rk3399_vpu_hw_vp8_dec.c      | 597 ++++++++++++++++++
- 12 files changed, 711 insertions(+), 84 deletions(-)
- create mode 100644 drivers/staging/media/hantro/rk3399_vpu_hw_vp8_dec.c
-
+diff --git a/drivers/staging/media/hantro/hantro_drv.c b/drivers/staging/media/hantro/hantro_drv.c
+index b71a06e9159e..4eae1dbb1ac8 100644
+--- a/drivers/staging/media/hantro/hantro_drv.c
++++ b/drivers/staging/media/hantro/hantro_drv.c
+@@ -731,6 +731,7 @@ static int hantro_probe(struct platform_device *pdev)
+ 		dev_err(vpu->dev, "Could not set DMA coherent mask.\n");
+ 		return ret;
+ 	}
++	vb2_dma_contig_set_max_seg_size(&pdev->dev, DMA_BIT_MASK(32));
+ 
+ 	for (i = 0; i < vpu->variant->num_irqs; i++) {
+ 		const char *irq_name = vpu->variant->irqs[i].name;
 -- 
 2.22.0
 
