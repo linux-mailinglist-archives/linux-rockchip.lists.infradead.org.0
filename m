@@ -2,38 +2,94 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1FEA7543B
-	for <lists+linux-rockchip@lfdr.de>; Thu, 25 Jul 2019 18:39:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D399D7549A
+	for <lists+linux-rockchip@lfdr.de>; Thu, 25 Jul 2019 18:49:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jLBA4aiexp8Igiio2q0bEAXkXduyVGt68suPXEY/rw0=; b=gWwBVNyvagLuxL
-	nFS1vdZd1QilgMYUIWEsQb+48fViPRyjQqTZN1+kaUqRcpt5qCOfclczPWivUGJjpBu9PYZlLD9C0
-	5MkUSKVurgRjgKVlUouIdYQ8Sm7YYLhtGJIned4g2ap+BzNA3X65zahscwz2/ip7S6RJ+flN0Kul4
-	TLycLQGPiOhZ7rwr5uktc3iRQje6bmLWEWEpxJzXbSp1zg3sItfcE0Xg7ZQlQfOFcRaUjGJuB8dtD
-	7BMEYJe/s69iWnNk1wuBNQQzyEOzILrjqTv9HhqM86lvcUVn4gp8VcyGv59xWZymdMCVPFOeD8FAY
-	AjjggFtGBqbqJo/no0Og==;
+	List-Owner; bh=RQFp5PmUz7tYpGGT7Sion0kwwg/E5WdHj1XEXYhHuPw=; b=hiMqPqdKRx/HR0
+	qW5zdcfoPH+ELCwEPPhLrRBbpQGpU+9wJR3lMIdVQEA6cj8bMJrcDOGY//op8uzNBpBCXMEKhp7Ii
+	JjP5FO3OsKHlYFxxxorbdzHGdAdheXO/urzVa3lzzDzVGNZWRJkWMx4z1LCIW/K7d7stPj/g3pcvS
+	XcEmV6yXT0is3LFtybxH0NqCjdRzD+p7rTW8vuYOVGB/6pFhFwqtzlpTNncGRffgRFGzOsTfGFqmc
+	lQjV2STwDtiGpBWAI9px9tLg9A1rq1dqc0SXNA8wN5AKsV7MrdKT+klDtVvug87lYRNCqtshXNi+a
+	1eZ8J3PgJvDE+/eofbuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqgly-0001H1-4a; Thu, 25 Jul 2019 16:39:18 +0000
-Received: from [179.95.31.157] (helo=coco.lan)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hqgl7-0000nQ-CL; Thu, 25 Jul 2019 16:38:26 +0000
-Date: Thu, 25 Jul 2019 13:38:19 -0300
-From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-To: Ezequiel Garcia <ezequiel@collabora.com>
-Subject: Re: [PATCH v2 6/7] media: hantro: Move VP8 common code
-Message-ID: <20190725133819.16379d96@coco.lan>
-In-Reply-To: <92f197b5d45e5f250c001752b11749af2533f4c3.camel@collabora.com>
-References: <20190725141756.2518-1-ezequiel@collabora.com>
- <20190725141756.2518-7-ezequiel@collabora.com>
- <20190725132230.6e7f0c22@coco.lan>
- <92f197b5d45e5f250c001752b11749af2533f4c3.camel@collabora.com>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+	id 1hqgvk-00016F-Jt; Thu, 25 Jul 2019 16:49:24 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqgvH-0000pe-7i
+ for linux-rockchip@lists.infradead.org; Thu, 25 Jul 2019 16:48:57 +0000
+Received: by mail-io1-xd43.google.com with SMTP id j6so23508218ioa.5
+ for <linux-rockchip@lists.infradead.org>; Thu, 25 Jul 2019 09:48:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=y98fApz06JAWtv7lUwUx5g2Y+VKbfux7cYr11jtX85M=;
+ b=Oq3bWQYZfePc311A34AbLZpfdLSyWQ9zAmOxY8w/LT5D3Z7amPYgg7slXVnLbaYT5s
+ dApXuC+dvlXm4a7wKv0nZdbyayoNVDZ4t5PoK8tbVG3OE7LmMafdc1Ctd/dWKEzxKHln
+ xwxF9Q7T9eZPyvnh7tT9vMxAjquvbNlDsV/PY=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=y98fApz06JAWtv7lUwUx5g2Y+VKbfux7cYr11jtX85M=;
+ b=gbA8w1nAPnvWI4rjdvyHuU6F4uiYWJAQKBY3GrScElJBSdiRGZrCLh/op5yw7nYvom
+ G00YgGd9uGNQJ2OGpRxpzXnGqR/YO6owm6cjw6wsjb3EBA1P9wKpgePcpx6eqxNYhpoz
+ o03mJjppJ/S0vpmBOMBmX+fguCD9vw7eIc2Xf9FpisCoPbloh8x/swzZY+xVGQUahiZp
+ 98AbYPJVbQjiQFD/VktNdvPpHVHTpV1h+7BmCHfOTH/H2Qt8d5SSrHq4j5copYJiXHsw
+ N6+5GVrZuOMBswvF7PUI4EW2n/PZ6kOFGOKHrR2wny/0T/6UjjpTrAKvbB5ZmVDR+vHy
+ iSgw==
+X-Gm-Message-State: APjAAAXB2Q0RZ52It22MaJn3iQfrWiRYYYfQcg7uf5/c5cZh5dMFw+9f
+ IR6Sq/DKMMRu1efTtYag78f44nFmfW8=
+X-Google-Smtp-Source: APXvYqzpb3z3xamPpAO47onboOAoqMwJCVsU9fs9aGyhvfoiRX/Kd9P938FPw9JSGBl8rDcHsueCBw==
+X-Received: by 2002:a6b:8f93:: with SMTP id
+ r141mr85149957iod.145.1564073334116; 
+ Thu, 25 Jul 2019 09:48:54 -0700 (PDT)
+Received: from mail-io1-f44.google.com (mail-io1-f44.google.com.
+ [209.85.166.44])
+ by smtp.gmail.com with ESMTPSA id b20sm40120586ios.44.2019.07.25.09.48.52
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Thu, 25 Jul 2019 09:48:53 -0700 (PDT)
+Received: by mail-io1-f44.google.com with SMTP id j6so23507983ioa.5
+ for <linux-rockchip@lists.infradead.org>; Thu, 25 Jul 2019 09:48:52 -0700 (PDT)
+X-Received: by 2002:a02:ac03:: with SMTP id a3mr94891125jao.132.1564073332377; 
+ Thu, 25 Jul 2019 09:48:52 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190725162642.250709-1-mka@chromium.org>
+ <20190725162642.250709-2-mka@chromium.org>
+In-Reply-To: <20190725162642.250709-2-mka@chromium.org>
+From: Doug Anderson <dianders@chromium.org>
+Date: Thu, 25 Jul 2019 09:48:40 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=X85ACbN79foy_f4qQ=9a+8XFf0a3cE7S4BMn6pWvMmPA@mail.gmail.com>
+Message-ID: <CAD=FV=X85ACbN79foy_f4qQ=9a+8XFf0a3cE7S4BMn6pWvMmPA@mail.gmail.com>
+Subject: Re: [PATCH v3 1/5] ARM: dts: rockchip: move rk3288-veryon display
+ settings into a separate file
+To: Matthias Kaehlcke <mka@chromium.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190725_094855_481529_29C3067D 
+X-CRM114-Status: GOOD (  12.66  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -46,108 +102,43 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: fbuergisser@chromium.org, kernel@collabora.com,
- Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
- Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Hans Verkuil <hans.verkuil@cisco.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Nicolas Dufresne <nicolas.dufresne@collabora.com>, linux-media@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, LKML <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Em Thu, 25 Jul 2019 13:30:07 -0300
-Ezequiel Garcia <ezequiel@collabora.com> escreveu:
+Hi,
 
-> On Thu, 2019-07-25 at 13:22 -0300, Mauro Carvalho Chehab wrote:
-> > Em Thu, 25 Jul 2019 11:17:55 -0300
-> > Ezequiel Garcia <ezequiel@collabora.com> escreveu:
-> >   
-> > > In order to introduce support for RK3399 VP8 decoding,
-> > > move some common VP8 code. This will be reused by
-> > > the RK3399 implementation, reducing code duplication.
-> > > 
-> > > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-> > > ---
-> > >  .../staging/media/hantro/hantro_g1_vp8_dec.c    | 17 -----------------
-> > >  drivers/staging/media/hantro/hantro_hw.h        |  4 ++++
-> > >  drivers/staging/media/hantro/hantro_vp8.c       | 15 +++++++++++++++
-> > >  3 files changed, 19 insertions(+), 17 deletions(-)
-> > > 
-> > > diff --git a/drivers/staging/media/hantro/hantro_g1_vp8_dec.c b/drivers/staging/media/hantro/hantro_g1_vp8_dec.c
-> > > index cd1fbd3a0d5f..181e2f76d8cb 100644
-> > > --- a/drivers/staging/media/hantro/hantro_g1_vp8_dec.c
-> > > +++ b/drivers/staging/media/hantro/hantro_g1_vp8_dec.c
-> > > @@ -16,8 +16,6 @@
-> > >  #include "hantro.h"
-> > >  #include "hantro_g1_regs.h"
-> > >  
-> > > -#define DEC_8190_ALIGN_MASK	0x07U
-> > > -
-> > >  /* DCT partition base address regs */
-> > >  static const struct hantro_reg vp8_dec_dct_base[8] = {
-> > >  	{ G1_REG_ADDR_STR, 0, 0xffffffff },
-> > > @@ -131,21 +129,6 @@ static const struct hantro_reg vp8_dec_pred_bc_tap[8][4] = {
-> > >  	},
-> > >  };
-> > >  
-> > > -/*
-> > > - * filter taps taken to 7-bit precision,
-> > > - * reference RFC6386#Page-16, filters[8][6]
-> > > - */
-> > > -static const u32 vp8_dec_mc_filter[8][6] = {
-> > > -	{ 0, 0, 128, 0, 0, 0 },
-> > > -	{ 0, -6, 123, 12, -1, 0 },
-> > > -	{ 2, -11, 108, 36, -8, 1 },
-> > > -	{ 0, -9, 93, 50, -6, 0 },
-> > > -	{ 3, -16, 77, 77, -16, 3 },
-> > > -	{ 0, -6, 50, 93, -9, 0 },
-> > > -	{ 1, -8, 36, 108, -11, 2 },
-> > > -	{ 0, -1, 12, 123, -6, 0 }
-> > > -};
-> > > -
-> > >  /*
-> > >   * Set loop filters
-> > >   */
-> > > diff --git a/drivers/staging/media/hantro/hantro_hw.h b/drivers/staging/media/hantro/hantro_hw.h
-> > > index 34ef24e3a9ef..185e27d47e47 100644
-> > > --- a/drivers/staging/media/hantro/hantro_hw.h
-> > > +++ b/drivers/staging/media/hantro/hantro_hw.h
-> > > @@ -15,6 +15,8 @@
-> > >  #include <media/vp8-ctrls.h>
-> > >  #include <media/videobuf2-core.h>
-> > >  
-> > > +#define DEC_8190_ALIGN_MASK	0x07U
-> > > +
-> > >  struct hantro_dev;
-> > >  struct hantro_ctx;
-> > >  struct hantro_buf;
-> > > @@ -93,6 +95,8 @@ extern const struct hantro_variant rk3399_vpu_variant;
-> > >  extern const struct hantro_variant rk3328_vpu_variant;
-> > >  extern const struct hantro_variant rk3288_vpu_variant;
-> > >  
-> > > +extern const u32 vp8_dec_mc_filter[8][6];  
-> > 
-> > Please don't do that, as a symbol like that can easily cause
-> > namespace clashes in the future. For all exported symbols,
-> > please prepend the driver name, like:
-> > 
-> > 	hantro_vp8_dec_mc_filter
-> >   
-> 
-> Right. Would you be OK, with taking Hans' PR and accept a follow-up
-> patch fixing this?
+On Thu, Jul 25, 2019 at 9:26 AM Matthias Kaehlcke <mka@chromium.org> wrote:
+>
+> The chromebook .dtsi file contains common settings for veyron
+> Chromebooks with eDP displays. Some veyron devices with a display
+> aren't Chromebooks (e.g. 'tiger' aka 'AOpen Chromebase Mini'), move
+> display related bits from the chromebook .dtsi into a separate file
+> to avoid redundant DT settings.
+>
+> The new file is included from the chromebook .dtsi and can be
+> included by non-Chromebook devices with a display.
+>
+> Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+> ---
+> Changes in v3:
+> - allow MIT license
+> - move pinctrl section to the bottom
+>
+> Changes in v2:
+> - rebased on v5.4-armsoc/dts32 (0d19541e3b45)
+> ---
+>  .../boot/dts/rk3288-veyron-chromebook.dtsi    | 115 +---------------
+>  arch/arm/boot/dts/rk3288-veyron-edp.dtsi      | 124 ++++++++++++++++++
+>  2 files changed, 125 insertions(+), 114 deletions(-)
 
-No need. I went ahead and applied a fixup. Just remember about that
-next time, as we don't want to mess with Kernel export symbol
-namespace.
-
-Thanks,
-Mauro
+Reviewed-by: Douglas Anderson <dianders@chromium.org>
 
 _______________________________________________
 Linux-rockchip mailing list
