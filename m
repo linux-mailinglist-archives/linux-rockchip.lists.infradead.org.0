@@ -2,7 +2,7 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01EA5750C3
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CD9A750C4
 	for <lists+linux-rockchip@lfdr.de>; Thu, 25 Jul 2019 16:18:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,34 +10,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lkzmkr0sVFwYQslNqipdfNBDGzWinQIwWmbquj35WhA=; b=X4JAXZu5p1MaO9
-	V7fdM7JXgZw4lrP9waUbt58kNYfEibTV/2+FvjLrmPF1f8DsSwx9F7ZKZlCAjLcEt2l9gfKutU/7Q
-	+vD9BGPQU5fUZA4swxXtu17D258LauQCaTK9vNmoldJOLbZRYwbdkU+boqM/umP8+lXfwnsPQvM98
-	5brBlUHLMGYIlzMqBzpuJPTKB3YtpoJ1Gp9JP7PfdutR9noj5wf0Y4/SE25/srQkNcv3Xfqg47MG0
-	RifvDYqAXHGBZK0wgIAwDKY/AceAgJVjVLv78TBwliH7TiNlW+kzXAy+KnpYXFl6FhmYnvPpAXrLW
-	tc5nG+3kh2NT1nsUeX/A==;
+	List-Owner; bh=X4BqFZB/bligVjjqHc8dPIUL8esYv/Dm04KkIcl9aiA=; b=RL5qiYgxKqWkiE
+	FOFjOWOogAWOBTtYyla8EEOGtMBDhi9HYZ3uaIrfnalavGNSjo1j9LTbKodXWzv8Vo1k1g8D+/r2j
+	dc4eIrWcXaL7s6WESow/FJ1glyiKTvwQpx/Z23Rw2LpT7YEHYHb94v7r/4s4eZuWop3iLAeSgTOSX
+	lzXgjQNAxFZDXtQ0rLGhQ+BospT+q+QMVCQObZrygvnkTCJM7B16l3GioBxZ2SEnIWolntCIYi5o2
+	ZHKHkNfyLRsCremJPcWmfjaC/mCsFGAU4X+WtVASOpR+/uBXF60KW0fp+2Bzh9U2Un2J8yv1127Ok
+	uvp+FopK5d4DbyKobCqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqeZf-0007uU-PJ; Thu, 25 Jul 2019 14:18:27 +0000
+	id 1hqeZh-0007xD-9y; Thu, 25 Jul 2019 14:18:29 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqeZR-0007s8-CJ
- for linux-rockchip@lists.infradead.org; Thu, 25 Jul 2019 14:18:15 +0000
+ id 1hqeZV-0007sa-F3
+ for linux-rockchip@lists.infradead.org; Thu, 25 Jul 2019 14:18:19 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id DFBFE28B831
+ (Authenticated sender: ezequiel) with ESMTPSA id 7A3FF28B83C
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: linux-media@vger.kernel.org,
 	Hans Verkuil <hans.verkuil@cisco.com>
-Subject: [PATCH v2 1/7] media: hantro: Set DMA max segment size
-Date: Thu, 25 Jul 2019 11:17:50 -0300
-Message-Id: <20190725141756.2518-2-ezequiel@collabora.com>
+Subject: [PATCH v2 2/7] media: hantro: Simplify the controls creation logic
+Date: Thu, 25 Jul 2019 11:17:51 -0300
+Message-Id: <20190725141756.2518-3-ezequiel@collabora.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190725141756.2518-1-ezequiel@collabora.com>
 References: <20190725141756.2518-1-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_071813_985065_71EC1167 
-X-CRM114-Status: UNSURE (   8.22  )
+X-CRM114-CacheID: sfid-20190725_071817_967323_C2126ECF 
+X-CRM114-Status: UNSURE (   9.75  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -63,7 +63,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
 Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
  Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
  Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
+ Tomasz Figa <tfiga@chromium.org>,
  Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  linux-rockchip@lists.infradead.org,
  Boris Brezillon <boris.brezillon@collabora.com>,
@@ -74,32 +74,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Francois Buergisser <fbuergisser@chromium.org>
+From: Boris Brezillon <boris.brezillon@collabora.com>
 
-The Hantro codec is typically used in platforms with an IOMMU,
-so we need to set a proper DMA segment size. Devices without an
-IOMMU will still fallback to default 64KiB segments.
+v4l2_ctrl_new_custom() should work for any kind of control, including
+standard ones. With that change, we automatically get support for
+menu controls.
 
-Cc: stable@vger.kernel.org
-Fixes: 775fec69008d3 ("media: add Rockchip VPU JPEG encoder driver")
-Signed-off-by: Francois Buergisser <fbuergisser@chromium.org>
+Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
 Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
 ---
- drivers/staging/media/hantro/hantro_drv.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/staging/media/hantro/hantro.h     |  2 --
+ drivers/staging/media/hantro/hantro_drv.c | 28 +++++++----------------
+ 2 files changed, 8 insertions(+), 22 deletions(-)
 
+diff --git a/drivers/staging/media/hantro/hantro.h b/drivers/staging/media/hantro/hantro.h
+index 4d7cb7780bde..81e25dfc98b7 100644
+--- a/drivers/staging/media/hantro/hantro.h
++++ b/drivers/staging/media/hantro/hantro.h
+@@ -113,12 +113,10 @@ enum hantro_codec_mode {
+ 
+ /*
+  * struct hantro_ctrl - helper type to declare supported controls
+- * @id:		V4L2 control ID (V4L2_CID_xxx)
+  * @codec:	codec id this control belong to (HANTRO_JPEG_ENCODER, etc.)
+  * @cfg:	control configuration
+  */
+ struct hantro_ctrl {
+-	unsigned int id;
+ 	unsigned int codec;
+ 	struct v4l2_ctrl_config cfg;
+ };
 diff --git a/drivers/staging/media/hantro/hantro_drv.c b/drivers/staging/media/hantro/hantro_drv.c
-index b71a06e9159e..4eae1dbb1ac8 100644
+index 4eae1dbb1ac8..ff2dcbf43e81 100644
 --- a/drivers/staging/media/hantro/hantro_drv.c
 +++ b/drivers/staging/media/hantro/hantro_drv.c
-@@ -731,6 +731,7 @@ static int hantro_probe(struct platform_device *pdev)
- 		dev_err(vpu->dev, "Could not set DMA coherent mask.\n");
- 		return ret;
- 	}
-+	vb2_dma_contig_set_max_seg_size(&pdev->dev, DMA_BIT_MASK(32));
+@@ -264,31 +264,29 @@ static const struct v4l2_ctrl_ops hantro_ctrl_ops = {
  
- 	for (i = 0; i < vpu->variant->num_irqs; i++) {
- 		const char *irq_name = vpu->variant->irqs[i].name;
+ static struct hantro_ctrl controls[] = {
+ 	{
+-		.id = V4L2_CID_JPEG_COMPRESSION_QUALITY,
+ 		.codec = HANTRO_JPEG_ENCODER,
+ 		.cfg = {
++			.id = V4L2_CID_JPEG_COMPRESSION_QUALITY,
+ 			.min = 5,
+ 			.max = 100,
+ 			.step = 1,
+ 			.def = 50,
++			.ops = &hantro_ctrl_ops,
+ 		},
+ 	}, {
+-		.id = V4L2_CID_MPEG_VIDEO_MPEG2_SLICE_PARAMS,
+ 		.codec = HANTRO_MPEG2_DECODER,
+ 		.cfg = {
+-			.elem_size = sizeof(struct v4l2_ctrl_mpeg2_slice_params),
++			.id = V4L2_CID_MPEG_VIDEO_MPEG2_SLICE_PARAMS,
+ 		},
+ 	}, {
+-		.id = V4L2_CID_MPEG_VIDEO_MPEG2_QUANTIZATION,
+ 		.codec = HANTRO_MPEG2_DECODER,
+ 		.cfg = {
+-			.elem_size = sizeof(struct v4l2_ctrl_mpeg2_quantization),
++			.id = V4L2_CID_MPEG_VIDEO_MPEG2_QUANTIZATION,
+ 		},
+ 	}, {
+-		.id = V4L2_CID_MPEG_VIDEO_VP8_FRAME_HEADER,
+ 		.codec = HANTRO_VP8_DECODER,
+ 		.cfg = {
+-			.elem_size = sizeof(struct v4l2_ctrl_vp8_frame_header),
++			.id = V4L2_CID_MPEG_VIDEO_VP8_FRAME_HEADER,
+ 		},
+ 	},
+ };
+@@ -304,22 +302,12 @@ static int hantro_ctrls_setup(struct hantro_dev *vpu,
+ 	for (i = 0; i < num_ctrls; i++) {
+ 		if (!(allowed_codecs & controls[i].codec))
+ 			continue;
+-		if (!controls[i].cfg.elem_size) {
+-			v4l2_ctrl_new_std(&ctx->ctrl_handler,
+-					  &hantro_ctrl_ops,
+-					  controls[i].id, controls[i].cfg.min,
+-					  controls[i].cfg.max,
+-					  controls[i].cfg.step,
+-					  controls[i].cfg.def);
+-		} else {
+-			controls[i].cfg.id = controls[i].id;
+-			v4l2_ctrl_new_custom(&ctx->ctrl_handler,
+-					     &controls[i].cfg, NULL);
+-		}
+ 
++		v4l2_ctrl_new_custom(&ctx->ctrl_handler,
++				     &controls[i].cfg, NULL);
+ 		if (ctx->ctrl_handler.error) {
+ 			vpu_err("Adding control (%d) failed %d\n",
+-				controls[i].id,
++				controls[i].cfg.id,
+ 				ctx->ctrl_handler.error);
+ 			v4l2_ctrl_handler_free(&ctx->ctrl_handler);
+ 			return ctx->ctrl_handler.error;
 -- 
 2.22.0
 
