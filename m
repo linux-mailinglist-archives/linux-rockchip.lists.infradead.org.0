@@ -2,62 +2,89 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AEBF7606D
-	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 10:09:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F6367619C
+	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 11:15:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cNREPT/mDHQSzDil6FB88nAatFfTSOrfC8djhON9D5w=; b=gdyQczbPE/wMU1
-	VQZfhptbDoaJSpBzTJjCKjxcuOcHDf3AsXG2CQGlpNetTzdnAxvK3d1KBJ4y8lsnA3OHvb27jnyQF
-	NFgi32AvXa0uQ6Ofa7Nc97FmkZcvbmjLoU9A5RJK8WNPPTzzjpYTVWoAYuRS0GsPyjpgnxYA3MQ9R
-	ZLJAcHfx+Q79rg5WIDCd19HfQBr6gl67Op4Ys5xCxt+bbutrXmAhjhHOtMACU6u6BokiWhp+pH0o6
-	nHV/DX651VdmBJyZDnqZWPHfJF6o5CBzQNZoRnno/ecIjQBpc+8x5b73YOwD7+BPnus8hFmYkGAJG
-	anpQ1JPDOyihkY1vg39w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=KEcSq+7Gn94qA8TH7Hb1N1qdXO1LgPy1kghHKmQ9SYU=; b=PZFPhD0TOPLn8hD0QGbZRHQ4F
+	3IG4dfgtAJgt3moASeOLpD+ZXWV7l6KPQYquoaDuYFUkG1zgctz1QxGZuOpiOzj8L3CNLbneYwLaD
+	VzvTrOYZEMwyj17eyAt4w92QjhQMvtWVzAdDv7FDQpgyGO5MPyVgXJJP1bnCPugvSik0NMIZhKxp9
+	GYVzAXybUh3cBCWaHSFY9oDSoxqQV38IxoBfNLLpmOtB3hV525dUN2nxmRKeONB3a6P4E5apW5IY0
+	FxwK+ZpHoUTGYjBMhD0MFtf2eyzzKewUzSw5ZYsOXp4r6QOSg3dVRGGAJjSfHQUJ0Y5XrKVVeu4Zm
+	YEyUJcwYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqvI9-0008Ko-L4; Fri, 26 Jul 2019 08:09:29 +0000
-Received: from asavdk4.altibox.net ([109.247.116.15])
+	id 1hqwJf-0000ny-T7; Fri, 26 Jul 2019 09:15:08 +0000
+Received: from outgoing18.flk.host-h.net ([197.242.87.52])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqvHk-00085j-9k; Fri, 26 Jul 2019 08:09:06 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk4.altibox.net (Postfix) with ESMTPS id 1040C803BB;
- Fri, 26 Jul 2019 10:08:56 +0200 (CEST)
-Date: Fri, 26 Jul 2019 10:08:55 +0200
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Subject: Re: [PATCH v5 01/24] drm: Include ddc adapter pointer in struct
- drm_connector
-Message-ID: <20190726080855.GA9143@ravnborg.org>
-References: <cover.1563960855.git.andrzej.p@collabora.com>
- <e82d6aca4f8abc95834c8a36c101d153518bb1ac.1563960855.git.andrzej.p@collabora.com>
- <20190726063759.GB6443@ravnborg.org>
+ id 1hqwJa-000087-1b; Fri, 26 Jul 2019 09:15:04 +0000
+Received: from www31.flk1.host-h.net ([188.40.1.173])
+ by antispam5-flk1.host-h.net with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.89)
+ (envelope-from <justin.swartz@risingedge.co.za>)
+ id 1hqwJJ-0005sO-M7; Fri, 26 Jul 2019 11:14:47 +0200
+Received: from roundcubeweb1.flk1.host-h.net ([138.201.244.33]
+ helo=webmail9.konsoleh.co.za)
+ by www31.flk1.host-h.net with esmtpa (Exim 4.84_2)
+ (envelope-from <justin.swartz@risingedge.co.za>)
+ id 1hqwJI-0003iD-Ud; Fri, 26 Jul 2019 11:14:45 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190726063759.GB6443@ravnborg.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=VcLZwmh9 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=QX4gbG5DAAAA:8
- a=hD80L64hAAAA:8 a=e5mUnYsNAAAA:8 a=qxXKUbxsVWwuiIGZjhEA:9
- a=CjuIK1q_8ugA:10 a=AbAUZ8qAyYyZVLSsDulk:22 a=Vxmtnl_E_bksehYqCbjh:22
+Date: Fri, 26 Jul 2019 11:14:44 +0200
+From: Justin Swartz <justin.swartz@risingedge.co.za>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: Re: [PATCH] ARM: dts: add device tree for Mecer Xtreme Mini S6
+Organization: Rising Edge Consulting (Pty) Ltd.
+In-Reply-To: <1618985.EOrKlNyPW4@phil>
+References: <20190616204746.21001-1-justin.swartz@risingedge.co.za>
+ <1618985.EOrKlNyPW4@phil>
+Message-ID: <509782f4ece936f5ac7d0abffbd555fc@risingedge.co.za>
+X-Sender: justin.swartz@risingedge.co.za
+User-Agent: Roundcube Webmail/1.2.3
+X-Authenticated-Sender: justin.swartz@risingedge.co.za
+X-Virus-Scanned: Clear (ClamAV 0.100.3/25521/Thu Jul 25 10:12:55 2019)
+X-Originating-IP: 188.40.1.173
+X-SpamExperts-Domain: risingedge.co.za
+X-SpamExperts-Username: 
+Authentication-Results: host-h.net;
+ auth=pass (login) smtp.auth=@risingedge.co.za
+X-SpamExperts-Outgoing-Class: ham
+X-SpamExperts-Outgoing-Evidence: Combined (0.10)
+X-Recommended-Action: accept
+X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0QR3kh8pms4IGrDTloUGIkypSDasLI4SayDByyq9LIhVb87cW502DfY5
+ A3TFjr/Q/0TNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3Kf0cVcrGOWHuvhhsNFanSQ+63
+ p/UbUTcmIpuXtxg/CxkoU3DKFYUc83wlJ68apqUflsInmcmrhWKh5CGxWvoqRSom1N6/V6eFJqiY
+ 8AHI8ZE2UOjrQY19nYX/K9cXl+nRiJs637DFkSoL4pcNpzwOwYXt6ymoFHaG7BQtEYvFCSpHGdnf
+ o9UqdkwD4pFOnnu92G81dFO0E3gi+MOI1foZYzDggRXhpvoPtF3cVkniFXU3qJSqpdJudO6+rkiw
+ E5i8Wl78Q18OeOfsy4h7jF1Uv9lnibl3vcBqVmvQB4A18af5AwOH28jF9Eyby2LkU1c4AVXirbLu
+ Jjy3NtnGWLbnBGfrUBEXB2fYGLNieGQuoHtJvp0r29Rf3ZjFwL+MhHEWw/0qBlNDp8uABz3dkWV+
+ tgmYFaNu+2UDArzT1gq7P+ZTycYLFeAN4+MGwnsp7SkU6CLbyF0Zq4b1/7rjUzETJrWks4pbbQJq
+ 6gWopI3ep45X19ZysgQ+31LcAX8eoFXAhohfegXGH2GIVQVglJFbK771YV8YbC29CtmpcTqTfSIf
+ CWq9oj7OiT8GwpAriB+3/81I3rvR8KJ2fK9jiDYgijyqqY0rATpzHKGfmtNsYTr4SmDZ/bGW8xZC
+ RRs6ZD24UhFcZZEpLhnBCwImTQNvxaLyCc35VA7RvW/HGiGqxL09Cymermt8NAa/gGopT3kKfO4C
+ gvcKmV0o9jYzsFpuc43pp/LzIs3ornuRuAAdgrkq+6l7ZLNYJcf7Z6PCydDzoYZgInuDxgFOs7AZ
+ TwbwMWQbSR6Wmuan/Ls9Qsz9RDBQm36ApPA3w0769BEb21L838NrFoXSENXH6UXfnav35JPA4YfM
+ 6tBkXsqvKY6zoLLTPpuFqUUQz+mM8JAD4ECWNo09vb0YLIRnK477e9Xake5PIWKjIXX7qe2zOXoS
+ fowN9R0iqxX4tRGXU6pi4Whf0gC4y7e8G5gyWkWqMf9mIGbjO41FyBEqIaDudcVplPE6wCr6GXU1
+ lCw88ijyus1sGnWknJqS8gGhNQxpB5P3qu7c1xMljx2PG/R+pKBSKy8hXOgvE1zSS7XUhkYEQYeb
+ 3jR5NeVaJQBh0uawl0Cg8j+knAzOA9mmoJvkuhKHiekUuskYaI6ERCKp8gXWqnT9kLHhStr5fiGK
+ 7KncpWELuTEvuGslKTrRIXcXpFg5ivY=
+X-Report-Abuse-To: spam@antispammaster.host-h.net
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_010904_697420_612460AC 
-X-CRM114-Status: GOOD (  30.08  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190726_021502_128170_90283D2C 
+X-CRM114-Status: GOOD (  10.34  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.15 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [197.242.87.52 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,180 +97,50 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Rodrigo Vivi <rodrigo.vivi@intel.com>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Shawn Guo <shawnguo@kernel.org>, kernel@collabora.com,
- linux-samsung-soc@vger.kernel.org,
- Oleksandr Andrushchenko <oleksandr_andrushchenko@epam.com>,
- Sean Paul <sean@poorly.run>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
- Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, linux-rockchip@lists.infradead.org,
- Thomas Zimmermann <tzimmermann@suse.de>, Jonas Karlman <jonas@kwiboo.se>,
- linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
- Jyri Sarha <jsarha@ti.com>, Alexios Zavras <alexios.zavras@intel.com>,
- Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
- Dave Airlie <airlied@redhat.com>, linux-tegra@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, Vincent Abriou <vincent.abriou@st.com>,
- linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Seung-Woo Kim <sw0312.kim@samsung.com>,
- Douglas Anderson <dianders@chromium.org>, Todor Tomov <todor.tomov@linaro.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Alex Deucher <alexander.deucher@amd.com>, freedreno@lists.freedesktop.org,
- Christian =?iso-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>,
- Gerd Hoffmann <kraxel@redhat.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Andrzej.
+Hi Heiko,
 
-After reading through the series a few more comments.
+On 2019-07-26 00:19, Heiko Stuebner wrote:
 
-1) The subject of this patch could be improved.
-   Consider something like:
-   drm: add ddc link in sysfs created by drm_connector
+> please add an entry to 
+> Documentation/devicetree/bindings/arm/rockchip.yaml
+> for your board and if necessary also a vendor-prefix to
+> Documentation/devicetree/bindings/vendor-prefixes.(yaml?)
 
-   This spells out much better what the patch achieve.
+OK
 
+> please sort the &node-references alphabetically.
 
-2) The purpsoe of drm_connector.ddc is to provide drm_connector with
-   info to create the symlink.
-   Yet in many follow-up patches the drivers are changed so
-   drm_connector.ddc is their only reference to struct i2c_adapter.
+OK
 
-   But the ownership is not clear here.
-   Who owns the reference to i2c_adapter - and who has the
-   responsibility to call put() on the adapter.
-
-   Looking at the conversions done then some drivers are converted
-   so they only use drm_connector.ddc, and other drivers have their own
-   reference to i2c_adapter.
-   The latter looks like the correct solution as the ownership of the
-   reference belongs to the driver and not drm_connector.
-
-   In other words - a conversion where the drivers only assigned
-   drm_connector.ddc (using drm_connector_init_with_ddc()),
-   seems like a more clean design that does not mix up ownership.
-   This is at least how I see it.
-   I did not take this type of look at the patches before. Sorry
-   for providing feedback this late.
-
-	Sam
-
-On Fri, Jul 26, 2019 at 08:37:59AM +0200, Sam Ravnborg wrote:
-> Hi Andrzej.
+>> +&cpu0 {
+>> +    clock-frequency = <1464000000>;
 > 
-> Patch looks good, but one kernel-doc detail.
-> 
-> On Wed, Jul 24, 2019 at 03:59:23PM +0200, Andrzej Pietrasiewicz wrote:
-> > Add generic code which creates symbolic links in sysfs, pointing to ddc
-> > interface used by a particular video output. For example:
-> > 
-> > ls -l /sys/class/drm/card0-HDMI-A-1/ddc
-> > lrwxrwxrwx 1 root root 0 Jun 24 10:42 /sys/class/drm/card0-HDMI-A-1/ddc \
-> > 	-> ../../../../soc/13880000.i2c/i2c-2
-> > 
-> > This makes it easy for user to associate a display with its ddc adapter
-> > and use e.g. ddcutil to control the chosen monitor.
-> > 
-> > This patch adds an i2c_adapter pointer to struct drm_connector. Particular
-> > drivers can then use it instead of using their own private instance. If a
-> > connector contains a ddc, then create a symbolic link in sysfs.
-> > 
-> > Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-> > Acked-by: Daniel Vetter <daniel.vetter@ffwll.ch>
-> > Reviewed-by: Andrzej Hajda <a.hajda@samsung.com>
-> > ---
-> >  drivers/gpu/drm/drm_sysfs.c |  8 ++++++++
-> >  include/drm/drm_connector.h | 11 +++++++++++
-> >  2 files changed, 19 insertions(+)
-> > 
-> > diff --git a/drivers/gpu/drm/drm_sysfs.c b/drivers/gpu/drm/drm_sysfs.c
-> > index ad10810bc972..e962a9d45f7e 100644
-> > --- a/drivers/gpu/drm/drm_sysfs.c
-> > +++ b/drivers/gpu/drm/drm_sysfs.c
-> > @@ -14,6 +14,7 @@
-> >  #include <linux/err.h>
-> >  #include <linux/export.h>
-> >  #include <linux/gfp.h>
-> > +#include <linux/i2c.h>
-> >  #include <linux/kdev_t.h>
-> >  #include <linux/slab.h>
-> >  
-> > @@ -294,6 +295,9 @@ int drm_sysfs_connector_add(struct drm_connector *connector)
-> >  	/* Let userspace know we have a new connector */
-> >  	drm_sysfs_hotplug_event(dev);
-> >  
-> > +	if (connector->ddc)
-> > +		return sysfs_create_link(&connector->kdev->kobj,
-> > +				 &connector->ddc->dev.kobj, "ddc");
-> >  	return 0;
-> >  }
-> >  
-> > @@ -301,6 +305,10 @@ void drm_sysfs_connector_remove(struct drm_connector *connector)
-> >  {
-> >  	if (!connector->kdev)
-> >  		return;
-> > +
-> > +	if (connector->ddc)
-> > +		sysfs_remove_link(&connector->kdev->kobj, "ddc");
-> > +
-> >  	DRM_DEBUG("removing \"%s\" from sysfs\n",
-> >  		  connector->name);
-> >  
-> > diff --git a/include/drm/drm_connector.h b/include/drm/drm_connector.h
-> > index 4c30d751487a..33a6fff85fdb 100644
-> > --- a/include/drm/drm_connector.h
-> > +++ b/include/drm/drm_connector.h
-> > @@ -41,6 +41,7 @@ struct drm_property;
-> >  struct drm_property_blob;
-> >  struct drm_printer;
-> >  struct edid;
-> > +struct i2c_adapter;
-> >  
-> >  enum drm_connector_force {
-> >  	DRM_FORCE_UNSPECIFIED,
-> > @@ -1311,6 +1312,16 @@ struct drm_connector {
-> >  	 * [0]: progressive, [1]: interlaced
-> >  	 */
-> >  	int audio_latency[2];
-> > +
-> > +	/**
-> > +	 * @ddc: associated ddc adapter.
-> > +	 * A connector usually has its associated ddc adapter. If a driver uses
-> > +	 * this field, then an appropriate symbolic link is created in connector
-> > +	 * sysfs directory to make it easy for the user to tell which i2c
-> > +	 * adapter is for a particular display.
-> > +	 */
-> > +	struct i2c_adapter *ddc;
-> 
-> To help the reader could you add in the above a reference to
-> drm_connector_init_with_ddc() sp the reader is told how to init this
-> field.
-> 
-> Either add it in PATCH 2 - or merge patch 1 and 2.
-> 
-> 	Sam
-> 
-> > +
-> >  	/**
-> >  	 * @null_edid_counter: track sinks that give us all zeros for the EDID.
-> >  	 * Needed to workaround some HW bugs where we get all 0s
-> > -- 
-> > 2.17.1
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+> not sure I understand the reasoning here.
+> There seems to be a regulator defined, so the cpu cores should
+> have operating points defined to allow them to switch between
+> different frequencies as needed.
+
+I added the clock-frequency property to quell the following messages:
+
+[ 0.003273] /cpus/cpu@f00 missing clock-frequency property
+[ 0.003323] /cpus/cpu@f01 missing clock-frequency property
+[ 0.003352] /cpus/cpu@f02 missing clock-frequency property
+[ 0.003382] /cpus/cpu@f03 missing clock-frequency property
+
+I think they are from parse_dt_topology() in arch/arm/kernel/topology.c
+
+What do you suggest?
+
+Regards
+Justin
 
 _______________________________________________
 Linux-rockchip mailing list
