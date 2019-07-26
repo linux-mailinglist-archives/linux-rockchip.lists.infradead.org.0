@@ -2,55 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EBDD76872
-	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 15:44:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD80A7688C
+	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 15:45:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TIx0x0L7nqnfuD9XRssUXFIQE8K/AXp5jPkYG2FZIgA=; b=SThajTfAOyXbbz
-	t/R6AN8C0mX8CTGkWiaaXVh72bZBGNwZj55VGMbf+23A/7YZiAPpGOc/Iwl4hzC3rqHKmU4AYLTN/
-	r/gCdFhMPqZKpLpcNURpdKhWqzO64BkIS6rBssS3xV9ZH6iCXRT7KRDG1cgJSHBbRk2AnAy9X30+D
-	varxoTkzzRVWg359shBiod6e/e8r0Q5cIYRJxYIuA3eon1W0sSA3P4fxoqlqTfH8jgBv4Tqyml1r5
-	LuZdoR6Mbm4PymyC8vlv0Lcg70aRBgJT+seMDS+sjwuDO+tSCYkEVx+7WZzLxbwVaHTYy/gpwWeEz
-	iMnv9/a3T7riFv9X99SQ==;
+	List-Owner; bh=Qv+hft54gkqLUIB6oTEX7UmEjKqxbNh7rTjW+6JnFOE=; b=XjxEFx+yRJzZuD
+	FTul8mL0OysNs7Dx9qXZM7IqIEGu3n+aHPGXBOwKkWrZzUiTxSSi7QxMBHzALhgFpcdzOHTV1pJe/
+	O3ZUEiOZjKJFdYbwSX+OUMnC2lF9W6fvpdyGDuFRPlj1mJjgINyJfoQyUVpHY1NE08hoiBtH6sz3x
+	gcOBrr7Vk6THHeCqW6wp+xn9y5bF0W075YP0VXJovqsyL5hvk5JWk19XjP64GCjHNr5iAvsH7W28M
+	e6oYsdIdSkuCwmaQkwKG9hnjPerMbDlQ73PKfWizsWhq+i2fBncEV3wPkZh5tH2R5rxNcz/VkAbqQ
+	uGJW5Zitxvq7dLX1HP1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr0WZ-0001Ft-71; Fri, 26 Jul 2019 13:44:43 +0000
+	id 1hr0XJ-0002tS-Sy; Fri, 26 Jul 2019 13:45:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hr0WT-0001CM-SJ
- for linux-rockchip@lists.infradead.org; Fri, 26 Jul 2019 13:44:39 +0000
+ id 1hr0XF-0002st-Cj
+ for linux-rockchip@lists.infradead.org; Fri, 26 Jul 2019 13:45:27 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DD34A22CD0;
- Fri, 26 Jul 2019 13:44:36 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5E90B22CF6;
+ Fri, 26 Jul 2019 13:45:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564148677;
- bh=8HA8IjR33J2fJ3Pv+GKfU7B00lyYztzgYhQloIpGWUs=;
+ s=default; t=1564148725;
+ bh=yW7TGlrP4rOvaiUM/u3oVyJsef4Xl1+aBQt0r6KEkMg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=rkGhSE7BSR8usdfPLeEbw1HBDH26ENuAHmYjcM+wSCI6ni1XmvUE3N09W8F6XwGVp
- 384kyNMcICFrCTaKiunKzomikoRS9RWDRcMEzur5SdjS/VkMTiO7vHMhF1xLp4YhqB
- ivfcUrP9MVq8hNH1SUM0dzylx+Nje6k+EKmMbhic=
+ b=yIfrOwwxSynw2Cd0OhYCaw4+E9PeNW30DPhvs/VpxE8uwFpjtVC1r9vM+8moBZzSl
+ TwbKRcghxz+r05JE3Gmh+rvwEsxN/LC6U4Dd3OJlrEIZOMg1MMiDPnaAuphjmIdxdm
+ 4eiVHc/LK4c4qyOfWXFcaqz90CPcikb0hKJVP7dI=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 04/30] ARM: dts: rockchip: Mark that the rk3288
+Subject: [PATCH AUTOSEL 4.4 02/23] ARM: dts: rockchip: Mark that the rk3288
  timer might stop in suspend
-Date: Fri, 26 Jul 2019 09:44:06 -0400
-Message-Id: <20190726134432.12993-4-sashal@kernel.org>
+Date: Fri, 26 Jul 2019 09:45:01 -0400
+Message-Id: <20190726134522.13308-2-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190726134432.12993-1-sashal@kernel.org>
-References: <20190726134432.12993-1-sashal@kernel.org>
+In-Reply-To: <20190726134522.13308-1-sashal@kernel.org>
+References: <20190726134522.13308-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_064437_931577_17518FEC 
+X-CRM114-CacheID: sfid-20190726_064526_163809_AFBAE24C 
 X-CRM114-Status: GOOD (  10.33  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -120,10 +120,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
-index 17ec2e2d7a60..30f1384f619b 100644
+index 04ea209f1737..98abb053b7da 100644
 --- a/arch/arm/boot/dts/rk3288.dtsi
 +++ b/arch/arm/boot/dts/rk3288.dtsi
-@@ -210,6 +210,7 @@
+@@ -205,6 +205,7 @@
  			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>,
  			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>;
  		clock-frequency = <24000000>;
