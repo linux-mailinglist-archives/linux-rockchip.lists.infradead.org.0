@@ -2,79 +2,75 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B22C76489
-	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 13:31:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04F6976532
+	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 14:09:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zvA8Hoy5aPBgvak1nqBMJNUk6KoYN9zO5spo2XLViuY=; b=Hjcirn6XRuj5RA
-	McEgrAAb/EkG509S02JQDatJIFO1LF1t9WwSSzpEy8Vf1Vad6mKN9yFR1Bh+Yb7AexqHbLsBt+iVa
-	p/C8Z0ZHHsxR/BS3QhihiU8YjcLKq0Gj9vBSheD8ZT6+Q5HUYaMAmPi2s8EGCm0hC+nw6xIUTOxmf
-	nRirYR1C5y4WAq7gJknJOV7mtPC5JRthD4VyWjkC1Gnth0wFZ+D8I+mOUjHD6FsIue5hTO87PUcmM
-	I5p6nnuvify8pCjuyXMQn3z1gSJv8Dqa0SNB/hdlf1xape/bnvTIj/2MfhxaYAnTg5szNhMwO6aeA
-	9ojKfgWN1drBczQd0RsA==;
+	List-Owner; bh=RhULZub449L2vMrXzGZKLgRalEAEcE26P6bos5KU2QY=; b=NccyGnR23VhMnH
+	qKZgX5m3McSZipwkjt+4iaIlGCN5sH/4EpT2dCFEsjoViQLmetQ/8f9iv4I8qv5MkXVGxocVk54qC
+	SEJ1LBOL9LpmJOmmk4d84kVzr+fmsByTTZdmqPps6+sp8/apBK3x2ONyWDHmiaJyzusYdJ2kO0ihq
+	GV64Isk5qxcaLyHZNvKHsrN/g2RNT1fepbeHNN6fFdgEmpXoEH/s4CFEjaEk6Mm61YWXVVy/5GAIn
+	JBPt3c9sVfHCQbuHbNuI+Dipe+N5zlaYuSGJROD7D4Fp5slPqbl+WauEvn8j+KFGGOdKRBFeEF5UQ
+	094KnBXpOgO9F6xBa4Fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqyR5-0005Wi-O3; Fri, 26 Jul 2019 11:30:55 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1hqz1w-0003wP-DW; Fri, 26 Jul 2019 12:09:00 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqyOY-0002LM-84
- for linux-rockchip@lists.infradead.org; Fri, 26 Jul 2019 11:28:19 +0000
-Received: by mail-lf1-x144.google.com with SMTP id b17so36866253lff.7
- for <linux-rockchip@lists.infradead.org>; Fri, 26 Jul 2019 04:28:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ id 1hqz1e-0003jD-0m
+ for linux-rockchip@lists.infradead.org; Fri, 26 Jul 2019 12:08:43 +0000
+Received: by mail-pf1-x442.google.com with SMTP id g2so24444042pfq.0
+ for <linux-rockchip@lists.infradead.org>; Fri, 26 Jul 2019 05:08:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=yms7A0Dj/ss/bfob7fvSwoSoaN3YOnXapMDkDt2JkGk=;
- b=dI3W3+aYZkRhr2cVhzUptcUM2pwVVATteZ4VZ3NtR71AqBqGIYfrf8yrxzStuM+3nE
- tya5Wiu6pzLKkBX88Pc9jxDP11Kp2Nb7gJvFfjHY3wHbyJTa9MjgkhXMMSLglyktzkm3
- rtfP0GDsu4nDfg7oDxj6j5NfrKRKG9nFa1yKVgkG+vm4TleEGCA4h4MB8cJEZeWnFrVx
- 66ajVkJqxzTBxoq8QcMEGK7KzPudl9gdTSkKZ9JTKZKCDGv4Ao7DdYIPa5uPBiKKxwIV
- QUSwtaEwhzZ9sq1FGfEOxB2hVT7HFBdpqVMA8nbZVRahng8T1uE6i7OUfifFilHWGBbe
- be7w==
+ bh=Cbwmacy9vNq4B+n0PukpHrIPl4ScNgVEPcJ32HL8owE=;
+ b=AObi35zUYJig2WeybEddiDzaj/fnCxwM2Qj8U5BZrRxfR7DqT4XA6WSF7zyiUwBiqg
+ 7yBr/+X/fyFPhrst6RV5yT7Jak4QkmSzMlIGvboPQSv6DlB5VgLqLjkRyDrp1/cFZCE5
+ paPvLI+dXkBmqIhc5bCOvjWN7Fk+X7xb919Ck=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=yms7A0Dj/ss/bfob7fvSwoSoaN3YOnXapMDkDt2JkGk=;
- b=qADQ6JO+0T4lXzsK5Zh1fV1TXYTm7T9UJgg+BwgWao8iPK+qh+31bdXm7BwsdO+jwI
- cdro/0Lby5qnPxXdM0N9F2HLYPyU+rC4t/xr7EuMdeaH//hhuPZXLT7l6zxe88hLRAs+
- ldaH22uj+WQzi+bydLTWQ9B+Grjp4z+lfaEkZ743W/KCf8cW3PZUfHV9tPocULnrXkFQ
- eiEeTgSxqlaFpo9VzJktpty4sW91XtbhdFOou+/eWh+h1P6XZogAdwQbEI6EwQC2A6cH
- TMKGFQWvjbEX2EV9csOal9chHgRrk576y8aaiDggSX7fW5nQuLSNeKpiXH66/vJs33nS
- rTYA==
-X-Gm-Message-State: APjAAAXjGSm7U8y4QC/re4RL9SA0pwjdvpzjmrFEWg0WkKl4aXglLieo
- Dh0nZbwGW1A/BODLsjTSFpSoOw==
-X-Google-Smtp-Source: APXvYqx05CPqPaf24TqfXHUET5OwIsXvhc0hYDuun6wEBRgaKaaGpBp1xs/Z6Ozl1ehbTYYA+0UBew==
-X-Received: by 2002:a19:be03:: with SMTP id o3mr43992429lff.88.1564140496719; 
- Fri, 26 Jul 2019 04:28:16 -0700 (PDT)
-Received: from localhost (c-243c70d5.07-21-73746f28.bbcust.telenor.se.
- [213.112.60.36])
- by smtp.gmail.com with ESMTPSA id b27sm10020400ljb.11.2019.07.26.04.28.15
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 26 Jul 2019 04:28:16 -0700 (PDT)
-From: Anders Roxell <anders.roxell@linaro.org>
-To: linus.walleij@linaro.org,
-	heiko@sntech.de
-Subject: [PATCH 1/2] pinctrl: rockchip: Mark expected switch fall-through
-Date: Fri, 26 Jul 2019 13:28:12 +0200
-Message-Id: <20190726112812.19665-1-anders.roxell@linaro.org>
-X-Mailer: git-send-email 2.20.1
+ bh=Cbwmacy9vNq4B+n0PukpHrIPl4ScNgVEPcJ32HL8owE=;
+ b=AoN+3P5jzAniKdLa16W9ANT067aToZjAHFEhad+QgrFy8GVVwirwZwxpqubvXFoiiR
+ VOMPQMZQ3tExfnCIOK8qy6Tv2aNrJdd0wJAVUr9VufBjIVVdMqjgYW2bIWKXLteBL+6m
+ 2dn4Ux2nrB55zDnogtwVNGMaozVYJzFbVpPMGUEBNX/1dAS/N8VweFx7BPWydgMB16YD
+ wOf9XyMtdcNqxBv0mt0Tluk23rgzQZjVhE+vRs/voQrBq8Ud3TuhTiPf92qYH6+AzivM
+ wplSJe3oRm7JxlF7dNP3qX2qtM22UJ0pHj0OpS1AudDZ3H0w3J1IbjBGKb0+tlol3d23
+ ycHA==
+X-Gm-Message-State: APjAAAW28LBLLDDgB3bfJL5qfaeGeN2XyB9vBwsqartzj5gb65u7uJsq
+ 5bFUO4l7ccGOdkD3qh7fOIDF3A==
+X-Google-Smtp-Source: APXvYqz9ldY9m4MPhE5vPXUihPALYRe2GG7mFkrh7mMDn8k9KRoYh+ADGCd1vq8cRpZmJBcyhGuM9A==
+X-Received: by 2002:a17:90a:bc0c:: with SMTP id
+ w12mr65162344pjr.111.1564142920570; 
+ Fri, 26 Jul 2019 05:08:40 -0700 (PDT)
+Received: from localhost ([2401:fa00:1:b:e688:dfd2:a1a7:2956])
+ by smtp.gmail.com with ESMTPSA id m20sm54800981pff.79.2019.07.26.05.08.36
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 26 Jul 2019 05:08:39 -0700 (PDT)
+From: Cheng-Yi Chiang <cychiang@chromium.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v2] ASoC: rockchip: i2s: Revert "ASoC: rockchip: i2s: Support
+ mono capture"
+Date: Fri, 26 Jul 2019 20:08:33 +0800
+Message-Id: <20190726120833.186833-1-cychiang@chromium.org>
+X-Mailer: git-send-email 2.22.0.709.g102302147b-goog
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_042818_611373_1E581BA6 
-X-CRM114-Status: UNSURE (   8.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190726_050842_055872_E1604C33 
+X-CRM114-Status: GOOD (  10.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -85,6 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,38 +94,71 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Anders Roxell <anders.roxell@linaro.org>,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- bjorn.andersson@linaro.org, linux-gpio@vger.kernel.org, agross@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: alsa-devel@alsa-project.org, dianders@chromium.org,
+ Heiko Stuebner <heiko@sntech.de>, Liam Girdwood <lgirdwood@gmail.com>,
+ Takashi Iwai <tiwai@suse.com>, tzungbi@chromium.org,
+ Jaroslav Kysela <perex@perex.cz>, linux-rockchip@lists.infradead.org,
+ Mark Brown <broonie@kernel.org>, dgreid@chromium.org, mka@chromium.org,
+ linux-arm-kernel@lists.infradead.org, Cheng-Yi Chiang <cychiang@chromium.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-V2hlbiBmYWxsLXRocm91Z2ggd2FybmluZ3Mgd2FzIGVuYWJsZWQgYnkgZGVmYXVsdCB0aGUgZm9s
-bG93aW5nIHdhcm5pbmcKd2FzIHN0YXJ0aW5nIHRvIHNob3cgdXA6CgouLi9kcml2ZXJzL3BpbmN0
-cmwvcGluY3RybC1yb2NrY2hpcC5jOiBJbiBmdW5jdGlvbiDigJhyb2NrY2hpcF9ncGlvX3NldF9j
-b25maWfigJk6Ci4uL2RyaXZlcnMvcGluY3RybC9waW5jdHJsLXJvY2tjaGlwLmM6Mjc4MzozOiB3
-YXJuaW5nOiB0aGlzIHN0YXRlbWVudCBtYXkgZmFsbAogdGhyb3VnaCBbLVdpbXBsaWNpdC1mYWxs
-dGhyb3VnaD1dCiAgIHJvY2tjaGlwX2dwaW9fc2V0X2RlYm91bmNlKGdjLCBvZmZzZXQsIHRydWUp
-OwogICBefn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fgouLi9kcml2
-ZXJzL3BpbmN0cmwvcGluY3RybC1yb2NrY2hpcC5jOjI3OTU6Mjogbm90ZTogaGVyZQogIGRlZmF1
-bHQ6CiAgXn5+fn5+fgoKUmV3b3JrIHNvIHRoYXQgdGhlIGNvbXBpbGVyIGRvZXNuJ3Qgd2FybiBh
-Ym91dCBmYWxsLXRocm91Z2guIEFkZAoncmV0dXJuIC1FTk9UU1VQUDsnIHRvIG1hdGNoIHRoZSBj
-b21tZW50LgoKRml4ZXM6IGQ5MzUxMmVmMGYwZSAoIk1ha2VmaWxlOiBHbG9iYWxseSBlbmFibGUg
-ZmFsbC10aHJvdWdoIHdhcm5pbmciKQpTaWduZWQtb2ZmLWJ5OiBBbmRlcnMgUm94ZWxsIDxhbmRl
-cnMucm94ZWxsQGxpbmFyby5vcmc+Ci0tLQogZHJpdmVycy9waW5jdHJsL3BpbmN0cmwtcm9ja2No
-aXAuYyB8IDEgKwogMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspCgpkaWZmIC0tZ2l0IGEv
-ZHJpdmVycy9waW5jdHJsL3BpbmN0cmwtcm9ja2NoaXAuYyBiL2RyaXZlcnMvcGluY3RybC9waW5j
-dHJsLXJvY2tjaGlwLmMKaW5kZXggNjJhNjIyMTU5MDA2Li5kYzBiYmYxOThjYmMgMTAwNjQ0Ci0t
-LSBhL2RyaXZlcnMvcGluY3RybC9waW5jdHJsLXJvY2tjaGlwLmMKKysrIGIvZHJpdmVycy9waW5j
-dHJsL3BpbmN0cmwtcm9ja2NoaXAuYwpAQCAtMjc5Miw2ICsyNzkyLDcgQEAgc3RhdGljIGludCBy
-b2NrY2hpcF9ncGlvX3NldF9jb25maWcoc3RydWN0IGdwaW9fY2hpcCAqZ2MsIHVuc2lnbmVkIGlu
-dCBvZmZzZXQsCiAJCSAqIHN0aWxsIHJldHVybiAtRU5PVFNVUFAgYXMgYmVmb3JlLCB0byBtYWtl
-IHN1cmUgdGhlIGNhbGxlcgogCQkgKiBvZiBncGlvZF9zZXRfZGVib3VuY2Ugd29uJ3QgY2hhbmdl
-IGl0cyBiZWhhdmlvdXIuCiAJCSAqLworCQlyZXR1cm4gLUVOT1RTVVBQOwogCWRlZmF1bHQ6CiAJ
-CXJldHVybiAtRU5PVFNVUFA7CiAJfQotLSAKMi4yMC4xCgoKX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0Ckxp
-bnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
+This reverts commit db51707b9c9aeedd310ebce60f15d5bb006567e0.
+
+Commit db51707b9c9a ("ASoC: rockchip: i2s: Support mono capture")
+adds support of mono capture to rockchip_i2s_dai.
+
+However, I2S controller is still generating a 2-channel stream
+because it only supports even number of channels.
+When user space reads the data and assumes it is a mono stream,
+the rate will be slowed down.
+
+Revert the change so the DAI no longer claims that mono capture
+is supported.
+
+Fixes: db51707b9c9a ("ASoC: rockchip: i2s: Support mono capture")
+Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+---
+ sound/soc/rockchip/rockchip_i2s.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/sound/soc/rockchip/rockchip_i2s.c b/sound/soc/rockchip/rockchip_i2s.c
+index 0a34d0eb8dba..88ebaf6e1880 100644
+--- a/sound/soc/rockchip/rockchip_i2s.c
++++ b/sound/soc/rockchip/rockchip_i2s.c
+@@ -326,7 +326,6 @@ static int rockchip_i2s_hw_params(struct snd_pcm_substream *substream,
+ 		val |= I2S_CHN_4;
+ 		break;
+ 	case 2:
+-	case 1:
+ 		val |= I2S_CHN_2;
+ 		break;
+ 	default:
+@@ -459,7 +458,7 @@ static struct snd_soc_dai_driver rockchip_i2s_dai = {
+ 	},
+ 	.capture = {
+ 		.stream_name = "Capture",
+-		.channels_min = 1,
++		.channels_min = 2,
+ 		.channels_max = 2,
+ 		.rates = SNDRV_PCM_RATE_8000_192000,
+ 		.formats = (SNDRV_PCM_FMTBIT_S8 |
+@@ -659,7 +658,7 @@ static int rockchip_i2s_probe(struct platform_device *pdev)
+ 	}
+ 
+ 	if (!of_property_read_u32(node, "rockchip,capture-channels", &val)) {
+-		if (val >= 1 && val <= 8)
++		if (val >= 2 && val <= 8)
+ 			soc_dai->capture.channels_max = val;
+ 	}
+ 
+-- 
+2.22.0.709.g102302147b-goog
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
