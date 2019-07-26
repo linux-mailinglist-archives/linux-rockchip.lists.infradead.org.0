@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56FF07703C
-	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 19:28:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F2EC7704A
+	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 19:29:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,34 +11,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=R5AgDwDB/XyphFWeOzmcwXUXXYts2EOC47tBlD+nO/M=; b=g5jl+n1obqiJiJrIwdn9xhfRzb
-	ug8LMAv9nxC7AUN6TdRTsHTSsGj1EIi/IwiJJuMiJwiYOtjziZ2ognWrD37ouUYvkJ7jaFSTNmOyj
-	3QfR9ACweprcDB6s/AJtZYaNzHNeduXMANRK2vBmLLAOLbInYVonkek1Mu5zd//WcxuvUP5rrsu04
-	Gbjt7KNA8Pvp4zr/p3Muaa4zY1+lrG5NeRTmqghEaq1NCMKszVocAVf35HSeTDf7f1sKnvrIa3YE0
-	Rr5zf+NZvTovMOumGh9JY5udm6KHOjc13WhG5iIEfJxsDeRv7+Y7oJeMy9yg5rQ1HgbC3FhT4pL8s
-	LBaqIO4w==;
+	bh=f8FAiJrIu7TP6QszPZHSV6hasyX840vSXi1/DRXBZYI=; b=t1b412G8Vz2xJ1IubEmTi9ltBY
+	K8x1IEJmD0WB3Bw3fyUjOyj9QvbJCv7rqHAoq9xZkeVytuNaEibwrOsJ5s30qbybuiE11UBoKHaTz
+	9A74nFqKX3Bew1UospgdOlNu8JB9z+00Ih98MxDHKtI7py7lP5rlpsFns1ahmibhnEZVoxBBtt5oY
+	IYGTnbufp006WgvACEKfB6BBFk5Ocbb18KqDstBZWfcxISs17JjyK4OyX+isXIcVnys4md5Gtz7RD
+	ttlOvc635xjseDHOzxvwYkcFZn2IRG1rXUabhPA5FVADVzHFUxfmbLzCm4/2wnFdJJF2nrQS/+8UN
+	YsnSSqMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr41U-0004Hx-4x; Fri, 26 Jul 2019 17:28:52 +0000
+	id 1hr41s-0004jd-J9; Fri, 26 Jul 2019 17:29:16 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hr41O-0004DQ-1i; Fri, 26 Jul 2019 17:28:47 +0000
+ id 1hr41o-0004i9-9n; Fri, 26 Jul 2019 17:29:13 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id F175228C54F
+ (Authenticated sender: andrzej.p) with ESMTPSA id 30AA227EA8C
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v6 22/24] drm/amdgpu: Provide ddc symlink in connector sysfs
- directory
-Date: Fri, 26 Jul 2019 19:23:16 +0200
-Message-Id: <7fee0fa0d0f77af6595d283d5f3ae5d551475821.1564161140.git.andrzej.p@collabora.com>
+Subject: [PATCH v6 24/24] drm/i915: Provide ddc symlink in hdmi connector
+ sysfs directory
+Date: Fri, 26 Jul 2019 19:23:18 +0200
+Message-Id: <e2dd9c085e889f827ac281f9d9ce2a8916ae0200.1564161140.git.andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1564161140.git.andrzej.p@collabora.com>
 References: <cover.1564161140.git.andrzej.p@collabora.com>
 In-Reply-To: <cover.1564161140.git.andrzej.p@collabora.com>
 References: <cover.1564161140.git.andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_102846_349040_68517E29 
-X-CRM114-Status: GOOD (  12.06  )
+X-CRM114-CacheID: sfid-20190726_102912_602271_2FF3DBE4 
+X-CRM114-Status: GOOD (  11.38  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -87,20 +87,21 @@ Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
  Sascha Hauer <s.hauer@pengutronix.de>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Jani Nikula <jani.nikula@linux.intel.com>, Inki Dae <inki.dae@samsung.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
  Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
  Maxime Ripard <mripard@kernel.org>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
  Thomas Gleixner <tglx@linutronix.de>, Chris Wilson <chris@chris-wilson.co.uk>,
  Sean Paul <sean@poorly.run>, Pengutronix Kernel Team <kernel@pengutronix.de>,
- Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
- Jernej Skrabec <jernej.skrabec@siol.net>, amd-gfx@lists.freedesktop.org,
- Tomi Valkeinen <tomi.valkeinen@ti.com>, Eric Anholt <eric@anholt.net>,
- Thomas Zimmermann <tzimmermann@suse.de>,
+ linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Eric Anholt <eric@anholt.net>, Thomas Zimmermann <tzimmermann@suse.de>,
  Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
  linux-kernel@vger.kernel.org, Todor Tomov <todor.tomov@linaro.org>,
  Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
- Daniel Vetter <daniel@ffwll.ch>, Alex Deucher <alexander.deucher@amd.com>,
- Shawn Guo <shawnguo@kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
  =?UTF-8?q?Christian=20K=C3=B6nig?= <christian.koenig@amd.com>,
  Gerd Hoffmann <kraxel@redhat.com>
 MIME-Version: 1.0
@@ -113,228 +114,46 @@ Use the ddc pointer provided by the generic connector.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- .../gpu/drm/amd/amdgpu/amdgpu_connectors.c    | 96 ++++++++++++++-----
- 1 file changed, 70 insertions(+), 26 deletions(-)
+ drivers/gpu/drm/i915/display/intel_hdmi.c | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_connectors.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_connectors.c
-index 73b2ede773d3..ece55c8fa673 100644
---- a/drivers/gpu/drm/amd/amdgpu/amdgpu_connectors.c
-+++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_connectors.c
-@@ -1505,6 +1505,7 @@ amdgpu_connector_add(struct amdgpu_device *adev,
- 	struct amdgpu_connector_atom_dig *amdgpu_dig_connector;
- 	struct drm_encoder *encoder;
- 	struct amdgpu_encoder *amdgpu_encoder;
-+	struct i2c_adapter *ddc = NULL;
- 	uint32_t subpixel_order = SubPixelNone;
- 	bool shared_ddc = false;
- 	bool is_dp_bridge = false;
-@@ -1574,17 +1575,21 @@ amdgpu_connector_add(struct amdgpu_device *adev,
- 		amdgpu_connector->con_priv = amdgpu_dig_connector;
- 		if (i2c_bus->valid) {
- 			amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
--			if (amdgpu_connector->ddc_bus)
-+			if (amdgpu_connector->ddc_bus) {
- 				has_aux = true;
--			else
-+				ddc = &amdgpu_connector->ddc_bus->adapter;
-+			} else {
- 				DRM_ERROR("DP: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+			}
- 		}
- 		switch (connector_type) {
- 		case DRM_MODE_CONNECTOR_VGA:
- 		case DRM_MODE_CONNECTOR_DVIA:
- 		default:
--			drm_connector_init(dev, &amdgpu_connector->base,
--					   &amdgpu_connector_dp_funcs, connector_type);
-+			drm_connector_init_with_ddc(dev, &amdgpu_connector->base,
-+						    &amdgpu_connector_dp_funcs,
-+						    connector_type,
-+						    ddc);
- 			drm_connector_helper_add(&amdgpu_connector->base,
- 						 &amdgpu_connector_dp_helper_funcs);
- 			connector->interlace_allowed = true;
-@@ -1602,8 +1607,10 @@ amdgpu_connector_add(struct amdgpu_device *adev,
- 		case DRM_MODE_CONNECTOR_HDMIA:
- 		case DRM_MODE_CONNECTOR_HDMIB:
- 		case DRM_MODE_CONNECTOR_DisplayPort:
--			drm_connector_init(dev, &amdgpu_connector->base,
--					   &amdgpu_connector_dp_funcs, connector_type);
-+			drm_connector_init_with_ddc(dev, &amdgpu_connector->base,
-+						    &amdgpu_connector_dp_funcs,
-+						    connector_type,
-+						    ddc);
- 			drm_connector_helper_add(&amdgpu_connector->base,
- 						 &amdgpu_connector_dp_helper_funcs);
- 			drm_object_attach_property(&amdgpu_connector->base.base,
-@@ -1644,8 +1651,10 @@ amdgpu_connector_add(struct amdgpu_device *adev,
- 			break;
- 		case DRM_MODE_CONNECTOR_LVDS:
- 		case DRM_MODE_CONNECTOR_eDP:
--			drm_connector_init(dev, &amdgpu_connector->base,
--					   &amdgpu_connector_edp_funcs, connector_type);
-+			drm_connector_init_with_ddc(dev, &amdgpu_connector->base,
-+						    &amdgpu_connector_edp_funcs,
-+						    connector_type,
-+						    ddc);
- 			drm_connector_helper_add(&amdgpu_connector->base,
- 						 &amdgpu_connector_dp_helper_funcs);
- 			drm_object_attach_property(&amdgpu_connector->base.base,
-@@ -1659,13 +1668,18 @@ amdgpu_connector_add(struct amdgpu_device *adev,
- 	} else {
- 		switch (connector_type) {
- 		case DRM_MODE_CONNECTOR_VGA:
--			drm_connector_init(dev, &amdgpu_connector->base, &amdgpu_connector_vga_funcs, connector_type);
--			drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_vga_helper_funcs);
- 			if (i2c_bus->valid) {
- 				amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
- 				if (!amdgpu_connector->ddc_bus)
- 					DRM_ERROR("VGA: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+				else
-+					ddc = &amdgpu_connector->ddc_bus->adapter;
- 			}
-+			drm_connector_init_with_ddc(dev, &amdgpu_connector->base,
-+						    &amdgpu_connector_vga_funcs,
-+						    connector_type,
-+						    ddc);
-+			drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_vga_helper_funcs);
- 			amdgpu_connector->dac_load_detect = true;
- 			drm_object_attach_property(&amdgpu_connector->base.base,
- 						      adev->mode_info.load_detect_property,
-@@ -1679,13 +1693,18 @@ amdgpu_connector_add(struct amdgpu_device *adev,
- 			connector->doublescan_allowed = true;
- 			break;
- 		case DRM_MODE_CONNECTOR_DVIA:
--			drm_connector_init(dev, &amdgpu_connector->base, &amdgpu_connector_vga_funcs, connector_type);
--			drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_vga_helper_funcs);
- 			if (i2c_bus->valid) {
- 				amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
- 				if (!amdgpu_connector->ddc_bus)
- 					DRM_ERROR("DVIA: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+				else
-+					ddc = &amdgpu_connector->ddc_bus->adapter;
- 			}
-+			drm_connector_init_with_ddc(dev, &amdgpu_connector->base,
-+						    &amdgpu_connector_vga_funcs,
-+						    connector_type,
-+						    ddc);
-+			drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_vga_helper_funcs);
- 			amdgpu_connector->dac_load_detect = true;
- 			drm_object_attach_property(&amdgpu_connector->base.base,
- 						      adev->mode_info.load_detect_property,
-@@ -1704,13 +1723,18 @@ amdgpu_connector_add(struct amdgpu_device *adev,
- 			if (!amdgpu_dig_connector)
- 				goto failed;
- 			amdgpu_connector->con_priv = amdgpu_dig_connector;
--			drm_connector_init(dev, &amdgpu_connector->base, &amdgpu_connector_dvi_funcs, connector_type);
--			drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_dvi_helper_funcs);
- 			if (i2c_bus->valid) {
- 				amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
- 				if (!amdgpu_connector->ddc_bus)
- 					DRM_ERROR("DVI: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+				else
-+					ddc = &amdgpu_connector->ddc_bus->adapter;
- 			}
-+			drm_connector_init_with_ddc(dev, &amdgpu_connector->base,
-+						    &amdgpu_connector_dvi_funcs,
-+						    connector_type,
-+						    ddc);
-+			drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_dvi_helper_funcs);
- 			subpixel_order = SubPixelHorizontalRGB;
- 			drm_object_attach_property(&amdgpu_connector->base.base,
- 						      adev->mode_info.coherent_mode_property,
-@@ -1754,13 +1778,18 @@ amdgpu_connector_add(struct amdgpu_device *adev,
- 			if (!amdgpu_dig_connector)
- 				goto failed;
- 			amdgpu_connector->con_priv = amdgpu_dig_connector;
--			drm_connector_init(dev, &amdgpu_connector->base, &amdgpu_connector_dvi_funcs, connector_type);
--			drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_dvi_helper_funcs);
- 			if (i2c_bus->valid) {
- 				amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
- 				if (!amdgpu_connector->ddc_bus)
- 					DRM_ERROR("HDMI: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+				else
-+					ddc = &amdgpu_connector->ddc_bus->adapter;
- 			}
-+			drm_connector_init_with_ddc(dev, &amdgpu_connector->base,
-+						    &amdgpu_connector_dvi_funcs,
-+						    connector_type,
-+						    ddc);
-+			drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_dvi_helper_funcs);
- 			drm_object_attach_property(&amdgpu_connector->base.base,
- 						      adev->mode_info.coherent_mode_property,
- 						      1);
-@@ -1796,15 +1825,20 @@ amdgpu_connector_add(struct amdgpu_device *adev,
- 			if (!amdgpu_dig_connector)
- 				goto failed;
- 			amdgpu_connector->con_priv = amdgpu_dig_connector;
--			drm_connector_init(dev, &amdgpu_connector->base, &amdgpu_connector_dp_funcs, connector_type);
--			drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_dp_helper_funcs);
- 			if (i2c_bus->valid) {
- 				amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
--				if (amdgpu_connector->ddc_bus)
-+				if (amdgpu_connector->ddc_bus) {
- 					has_aux = true;
--				else
-+					ddc = &amdgpu_connector->ddc_bus->adapter;
-+				} else {
- 					DRM_ERROR("DP: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+				}
- 			}
-+			drm_connector_init_with_ddc(dev, &amdgpu_connector->base,
-+						    &amdgpu_connector_dp_funcs,
-+						    connector_type,
-+						    ddc);
-+			drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_dp_helper_funcs);
- 			subpixel_order = SubPixelHorizontalRGB;
- 			drm_object_attach_property(&amdgpu_connector->base.base,
- 						      adev->mode_info.coherent_mode_property,
-@@ -1838,15 +1872,20 @@ amdgpu_connector_add(struct amdgpu_device *adev,
- 			if (!amdgpu_dig_connector)
- 				goto failed;
- 			amdgpu_connector->con_priv = amdgpu_dig_connector;
--			drm_connector_init(dev, &amdgpu_connector->base, &amdgpu_connector_edp_funcs, connector_type);
--			drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_dp_helper_funcs);
- 			if (i2c_bus->valid) {
- 				amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
--				if (amdgpu_connector->ddc_bus)
-+				if (amdgpu_connector->ddc_bus) {
- 					has_aux = true;
--				else
-+					ddc = &amdgpu_connector->ddc_bus->adapter;
-+				} else {
- 					DRM_ERROR("DP: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+				}
- 			}
-+			drm_connector_init_with_ddc(dev, &amdgpu_connector->base,
-+						    &amdgpu_connector_edp_funcs,
-+						    connector_type,
-+						    ddc);
-+			drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_dp_helper_funcs);
- 			drm_object_attach_property(&amdgpu_connector->base.base,
- 						      dev->mode_config.scaling_mode_property,
- 						      DRM_MODE_SCALE_FULLSCREEN);
-@@ -1859,13 +1898,18 @@ amdgpu_connector_add(struct amdgpu_device *adev,
- 			if (!amdgpu_dig_connector)
- 				goto failed;
- 			amdgpu_connector->con_priv = amdgpu_dig_connector;
--			drm_connector_init(dev, &amdgpu_connector->base, &amdgpu_connector_lvds_funcs, connector_type);
--			drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_lvds_helper_funcs);
- 			if (i2c_bus->valid) {
- 				amdgpu_connector->ddc_bus = amdgpu_i2c_lookup(adev, i2c_bus);
- 				if (!amdgpu_connector->ddc_bus)
- 					DRM_ERROR("LVDS: Failed to assign ddc bus! Check dmesg for i2c errors.\n");
-+				else
-+					ddc = &amdgpu_connector->ddc_bus->adapter;
- 			}
-+			drm_connector_init_with_ddc(dev, &amdgpu_connector->base,
-+						    &amdgpu_connector_lvds_funcs,
-+						    connector_type,
-+						    ddc);
-+			drm_connector_helper_add(&amdgpu_connector->base, &amdgpu_connector_lvds_helper_funcs);
- 			drm_object_attach_property(&amdgpu_connector->base.base,
- 						      dev->mode_config.scaling_mode_property,
- 						      DRM_MODE_SCALE_FULLSCREEN);
+diff --git a/drivers/gpu/drm/i915/display/intel_hdmi.c b/drivers/gpu/drm/i915/display/intel_hdmi.c
+index 9bf28de10401..268f1bd20b99 100644
+--- a/drivers/gpu/drm/i915/display/intel_hdmi.c
++++ b/drivers/gpu/drm/i915/display/intel_hdmi.c
+@@ -3067,6 +3067,7 @@ void intel_hdmi_init_connector(struct intel_digital_port *intel_dig_port,
+ 	struct intel_encoder *intel_encoder = &intel_dig_port->base;
+ 	struct drm_device *dev = intel_encoder->base.dev;
+ 	struct drm_i915_private *dev_priv = to_i915(dev);
++	struct i2c_adapter *ddc;
+ 	enum port port = intel_encoder->port;
+ 
+ 	DRM_DEBUG_KMS("Adding HDMI connector on port %c\n",
+@@ -3077,8 +3078,13 @@ void intel_hdmi_init_connector(struct intel_digital_port *intel_dig_port,
+ 		 intel_dig_port->max_lanes, port_name(port)))
+ 		return;
+ 
+-	drm_connector_init(dev, connector, &intel_hdmi_connector_funcs,
+-			   DRM_MODE_CONNECTOR_HDMIA);
++	intel_hdmi->ddc_bus = intel_hdmi_ddc_pin(dev_priv, port);
++	ddc = intel_gmbus_get_adapter(dev_priv, intel_hdmi->ddc_bus);
++
++	drm_connector_init_with_ddc(dev, connector,
++				    &intel_hdmi_connector_funcs,
++				    DRM_MODE_CONNECTOR_HDMIA,
++				    ddc);
+ 	drm_connector_helper_add(connector, &intel_hdmi_connector_helper_funcs);
+ 
+ 	connector->interlace_allowed = 1;
+@@ -3088,8 +3094,6 @@ void intel_hdmi_init_connector(struct intel_digital_port *intel_dig_port,
+ 	if (INTEL_GEN(dev_priv) >= 10 || IS_GEMINILAKE(dev_priv))
+ 		connector->ycbcr_420_allowed = true;
+ 
+-	intel_hdmi->ddc_bus = intel_hdmi_ddc_pin(dev_priv, port);
+-
+ 	if (WARN_ON(port == PORT_A))
+ 		return;
+ 	intel_encoder->hpd_pin = intel_hpd_pin_default(dev_priv, port);
 -- 
 2.17.1
 
