@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B45F076FEF
-	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 19:26:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 573B376FFB
+	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 19:26:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,34 +11,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=9LHj3Y4w0gLrBz9C7uuEtVWjyPcy18ZMNMziIWf97Eg=; b=dK3Q/yBMJJ/2UYpjIv/RkYa2pO
-	uhjk128yKgr8ikfg/dvDD9F3AeYgD6PBl7cgDl8iULxI36By081lB+yi4JPdiMrG/dRlniqgyaf1W
-	a7Kj8ZP1CeLkQCISJ5cjzRhJP2mCq95QREtWKLSmHsikfkfd+CwviAD/ZCeMoD2yO02Vhohcyq3aA
-	yZ93MTn00k2j5ncGJMqY8X8JZ86j7sGNZUHNWCXDDYk9TcE77nShzmrDV/K8LH+z67FJIZkU1SItT
-	WoMM2ewhghFQUvvDQTbSKV+1HSJwh8hQB2BxBa0fwSS5WRgpxrnb0cRps1JWxm4ruYM3I9fHKCvuT
-	coE1ko0w==;
+	bh=wWadq2M1UShSfOjuLCTkV6+ggHdoqPPnF80hUDuxiwE=; b=hYEANmybYqxDU65AkbNeBj6WNy
+	ixEUE+WCBDMrWdtiQxrziihDmQxDQl18fENCcCAKk5e/lk9CDSio7/oZ2asw6WN4uNhvTqCea6YJi
+	ewHVcmig+YVgo3rzMcZFIbJOfk7WfkXqMntbliH8PQCWWNTi3Q9lODNg/v7iT9A1dx1c6rZmZv7tV
+	YJaCuALo8wKoHuHFGKx7yltMWq8QIZl7YggLuQx6W8k9DkqzB1jhZrG2hpdkYC0fMEPs/4Mq1wa+c
+	+RlqYsu1V9An0OFpYtTguefYe4zTVkLoMdvMcF8doXL9Xdyo9F8JlxJNxaYbMuJTxFYLQZR3KETTs
+	TwKNf5ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr3yj-0001hP-K4; Fri, 26 Jul 2019 17:26:01 +0000
+	id 1hr3z9-0002Bl-BG; Fri, 26 Jul 2019 17:26:27 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hr3ye-0001g8-T2; Fri, 26 Jul 2019 17:25:58 +0000
+ id 1hr3z4-0002AM-RV; Fri, 26 Jul 2019 17:26:24 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id C6A8927EA8C
+ (Authenticated sender: andrzej.p) with ESMTPSA id BACD328C54F
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v6 09/24] drm/tegra: Provide ddc symlink in output connector
- sysfs directory
-Date: Fri, 26 Jul 2019 19:23:03 +0200
-Message-Id: <e48025c100e419c4f467da764c79bfc92ca16449.1564161140.git.andrzej.p@collabora.com>
+Subject: [PATCH v6 11/24] drm/imx: imx-tve: Provide ddc symlink in connector's
+ sysfs
+Date: Fri, 26 Jul 2019 19:23:05 +0200
+Message-Id: <1c660776741760b8094484268b670a09da8a9042.1564161140.git.andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1564161140.git.andrzej.p@collabora.com>
 References: <cover.1564161140.git.andrzej.p@collabora.com>
 In-Reply-To: <cover.1564161140.git.andrzej.p@collabora.com>
 References: <cover.1564161140.git.andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_102557_195052_C1CBAAAA 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20190726_102623_157689_2AF92A86 
+X-CRM114-Status: GOOD (  11.30  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -80,13 +80,14 @@ Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
  Jonathan Hunter <jonathanh@nvidia.com>, linux-rockchip@lists.infradead.org,
  Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
  NXP Linux Team <linux-imx@nxp.com>, CK Hu <ck.hu@mediatek.com>,
- Dave Airlie <airlied@redhat.com>, intel-gfx@lists.freedesktop.org,
- Shashank Sharma <shashank.sharma@intel.com>, freedreno@lists.freedesktop.org,
- linux-tegra@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>,
- Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>,
+ Dave Airlie <airlied@redhat.com>, Harry Wentland <harry.wentland@amd.com>,
+ intel-gfx@lists.freedesktop.org, Shashank Sharma <shashank.sharma@intel.com>,
+ freedreno@lists.freedesktop.org, linux-tegra@vger.kernel.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-arm-msm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Jani Nikula <jani.nikula@linux.intel.com>, Inki Dae <inki.dae@samsung.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
  Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
  Maxime Ripard <mripard@kernel.org>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
@@ -98,9 +99,8 @@ Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
  Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
  linux-kernel@vger.kernel.org, Todor Tomov <todor.tomov@linaro.org>,
  Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
- Daniel Vetter <daniel@ffwll.ch>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Alex Deucher <alexander.deucher@amd.com>,
+ Shawn Guo <shawnguo@kernel.org>,
  =?UTF-8?q?Christian=20K=C3=B6nig?= <christian.koenig@amd.com>,
  Gerd Hoffmann <kraxel@redhat.com>
 MIME-Version: 1.0
@@ -113,46 +113,26 @@ Use the ddc pointer provided by the generic connector.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- drivers/gpu/drm/tegra/hdmi.c | 7 ++++---
- drivers/gpu/drm/tegra/sor.c  | 7 ++++---
- 2 files changed, 8 insertions(+), 6 deletions(-)
+ drivers/gpu/drm/imx/imx-tve.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpu/drm/tegra/hdmi.c b/drivers/gpu/drm/tegra/hdmi.c
-index 334c4d7d238b..416a2862a84b 100644
---- a/drivers/gpu/drm/tegra/hdmi.c
-+++ b/drivers/gpu/drm/tegra/hdmi.c
-@@ -1425,9 +1425,10 @@ static int tegra_hdmi_init(struct host1x_client *client)
+diff --git a/drivers/gpu/drm/imx/imx-tve.c b/drivers/gpu/drm/imx/imx-tve.c
+index 649515868f86..5bbfaa2cd0f4 100644
+--- a/drivers/gpu/drm/imx/imx-tve.c
++++ b/drivers/gpu/drm/imx/imx-tve.c
+@@ -484,8 +484,10 @@ static int imx_tve_register(struct drm_device *drm, struct imx_tve *tve)
  
- 	hdmi->output.dev = client->dev;
+ 	drm_connector_helper_add(&tve->connector,
+ 			&imx_tve_connector_helper_funcs);
+-	drm_connector_init(drm, &tve->connector, &imx_tve_connector_funcs,
+-			   DRM_MODE_CONNECTOR_VGA);
++	drm_connector_init_with_ddc(drm, &tve->connector,
++				    &imx_tve_connector_funcs,
++				    DRM_MODE_CONNECTOR_VGA,
++				    tve->ddc);
  
--	drm_connector_init(drm, &hdmi->output.connector,
--			   &tegra_hdmi_connector_funcs,
--			   DRM_MODE_CONNECTOR_HDMIA);
-+	drm_connector_init_with_ddc(drm, &hdmi->output.connector,
-+				    &tegra_hdmi_connector_funcs,
-+				    DRM_MODE_CONNECTOR_HDMIA,
-+				    hdmi->output.ddc);
- 	drm_connector_helper_add(&hdmi->output.connector,
- 				 &tegra_hdmi_connector_helper_funcs);
- 	hdmi->output.connector.dpms = DRM_MODE_DPMS_OFF;
-diff --git a/drivers/gpu/drm/tegra/sor.c b/drivers/gpu/drm/tegra/sor.c
-index 4ffe3794e6d3..3a69e387c62d 100644
---- a/drivers/gpu/drm/tegra/sor.c
-+++ b/drivers/gpu/drm/tegra/sor.c
-@@ -2832,9 +2832,10 @@ static int tegra_sor_init(struct host1x_client *client)
+ 	drm_connector_attach_encoder(&tve->connector, &tve->encoder);
  
- 	sor->output.dev = sor->dev;
- 
--	drm_connector_init(drm, &sor->output.connector,
--			   &tegra_sor_connector_funcs,
--			   connector);
-+	drm_connector_init_with_ddc(drm, &sor->output.connector,
-+				    &tegra_sor_connector_funcs,
-+				    connector,
-+				    sor->output.ddc);
- 	drm_connector_helper_add(&sor->output.connector,
- 				 &tegra_sor_connector_helper_funcs);
- 	sor->output.connector.dpms = DRM_MODE_DPMS_OFF;
 -- 
 2.17.1
 
