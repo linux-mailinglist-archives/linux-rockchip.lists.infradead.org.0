@@ -2,7 +2,7 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F6E3767BF
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C934767BD
 	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 15:39:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,39 +10,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w9QLmCPpyeZzmA78Xjh/RMQsEJy/FFuqSHJM6XdO+XE=; b=T3kPoJuQ/xPXF0
-	8vWcMuIhZvvGuuBKQSTnFqDPDC+ttYCRl9bTDjpMNdvTGAPuBiiWKxGhK41fEK/SjO66URMbJWZVo
-	REoVq6yiA8Y08z8BpoDrFGnLHZc0x5m74euDijjHKwdWIrysodIQOZ0kgb+QMnz74H0QlLfK4bVS5
-	KAHF+8/MrDiUATnhkKgn+qGzVHNNVZNIBxA25Wn3MqSTbLt1R6r43i4qFV83kq16QxQMi7YpEzKFr
-	r4kC2X3Js9VtQFzmPpcDHWVEu7yDgqRjv//RX2cSJrfNpmwlYTScfLEKVI18RX8t8kH3HfNBwBOWb
-	Ev5q2jiYb7RVcxQLFg5A==;
+	List-Owner; bh=5pxoX1bGntP8I23raKsIMo+XYSGz76E/DRkY/q1NNWE=; b=cfYLQ9nMqHGOSN
+	Fowt84LeZ1zaYZwGIIbbwxnpWTdvJ/FqsYRSk/HAj4CVgxpyNn+Ic9XeekZbWDnkhaCOBn6ZLsI5N
+	ZvBddax/pf6tD3SPozQ8Mmu9VynfALbA50ooIumc8UAdIdbh5jVmhLRatW0etEZQQAt/sqFkYVfBa
+	jJxBVMHg6ieF27/N1b4z5XZUxMAkuK8c4sp+3RhGlt1UrjnWbO10lr74tW4Cgj0Iyd54uH/Qhh+qo
+	KlpWK0P4pt3z3LCBcuZjAp6shX3dgERsmMGQwd3oJXyEB47vybDnR0RoXXgRBLIe+6FC9psuZT030
+	kAXCj8FvlqCAoISuR6hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr0Rj-00017L-Bo; Fri, 26 Jul 2019 13:39:43 +0000
+	id 1hr0Rj-00017j-Vl; Fri, 26 Jul 2019 13:39:43 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hr0Rf-00015q-K2
+ id 1hr0Rg-000162-6H
  for linux-rockchip@lists.infradead.org; Fri, 26 Jul 2019 13:39:41 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 19B4722BEF;
- Fri, 26 Jul 2019 13:39:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 342EF22BE8;
+ Fri, 26 Jul 2019 13:39:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564148378;
- bh=vNz5ZA4xgYaIQ+rZoEpIu5Ec75bCDhG5YgSO6984J2w=;
+ s=default; t=1564148379;
+ bh=Ko/+jmiMwx1Noz+1muVVeKU8VE+QI/+BKre3Eh07Cpw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=zuetk+Oi+8Lv7Mu9molHwZH1pLdeAilalto0jShWvGF5jlKcvCtbsOK7PbWNnuvWD
- 90mgnEl25OkeJvLFoHkRxdDMJTpMOJ7HD2LTNxwQ8xwT1paNE7r8Fd1/Eiz5aC9FMa
- zYBQOe98SeqG5ZDM3o+0b+7xLurzQHtxvSk24/jg=
+ b=FBJZiotZcMSfMEj0bztS64AmTbZRx0uMxnnoiOYD9Ee3SjrOjQBEpvOvUpR90Vajj
+ 5FvfV5jSMvHanXI/MVQ/x/MgfbqD+MjqVOfAuPa0TpwCfWH30mHCeeH1qD8X4febk/
+ v56Dq9ID1fZecBzF3BgFFx4LxIXMLEiILxtNQZl8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.2 02/85] ARM: dts: rockchip: Make
- rk3288-veyron-minnie run at hs200
-Date: Fri, 26 Jul 2019 09:38:12 -0400
-Message-Id: <20190726133936.11177-2-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.2 03/85] ARM: dts: rockchip: Make
+ rk3288-veyron-mickey's emmc work again
+Date: Fri, 26 Jul 2019 09:38:13 -0400
+Message-Id: <20190726133936.11177-3-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190726133936.11177-1-sashal@kernel.org>
 References: <20190726133936.11177-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_063939_680050_0D0C3019 
-X-CRM114-Status: UNSURE (   7.81  )
+X-CRM114-CacheID: sfid-20190726_063940_245400_DEF9E6EB 
+X-CRM114-Status: UNSURE (   8.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -92,55 +92,64 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Douglas Anderson <dianders@chromium.org>
 
-[ Upstream commit 1c0479023412ab7834f2e98b796eb0d8c627cd62 ]
+[ Upstream commit 99fa066710f75f18f4d9a5bc5f6a711968a581d5 ]
 
-As some point hs200 was failing on rk3288-veyron-minnie.  See commit
-984926781122 ("ARM: dts: rockchip: temporarily remove emmc hs200 speed
-from rk3288 minnie").  Although I didn't track down exactly when it
-started working, it seems to work OK now, so let's turn it back on.
+When I try to boot rk3288-veyron-mickey I totally fail to make the
+eMMC work.  Specifically my logs (on Chrome OS 4.19):
 
-To test this, I booted from SD card and then used this script to
-stress the enumeration process after fixing a memory leak [1]:
-  cd /sys/bus/platform/drivers/dwmmc_rockchip
-  for i in $(seq 1 3000); do
-    echo "========================" $i
-    echo ff0f0000.dwmmc > unbind
-    sleep .5
-    echo ff0f0000.dwmmc > bind
-    while true; do
-      if [ -e /dev/mmcblk2 ]; then
-        break;
-      fi
-      sleep .1
-    done
-  done
+  mmc_host mmc1: card is non-removable.
+  mmc_host mmc1: Bus speed (slot 0) = 400000Hz (slot req 400000Hz, actual 400000HZ div = 0)
+  mmc_host mmc1: Bus speed (slot 0) = 50000000Hz (slot req 52000000Hz, actual 50000000HZ div = 0)
+  mmc1: switch to bus width 8 failed
+  mmc1: switch to bus width 4 failed
+  mmc1: new high speed MMC card at address 0001
+  mmcblk1: mmc1:0001 HAG2e 14.7 GiB
+  mmcblk1boot0: mmc1:0001 HAG2e partition 1 4.00 MiB
+  mmcblk1boot1: mmc1:0001 HAG2e partition 2 4.00 MiB
+  mmcblk1rpmb: mmc1:0001 HAG2e partition 3 4.00 MiB, chardev (243:0)
+  mmc_host mmc1: Bus speed (slot 0) = 400000Hz (slot req 400000Hz, actual 400000HZ div = 0)
+  mmc_host mmc1: Bus speed (slot 0) = 50000000Hz (slot req 52000000Hz, actual 50000000HZ div = 0)
+  mmc1: switch to bus width 8 failed
+  mmc1: switch to bus width 4 failed
+  mmc1: tried to HW reset card, got error -110
+  mmcblk1: error -110 requesting status
+  mmcblk1: recovery failed!
+  print_req_error: I/O error, dev mmcblk1, sector 0
+  ...
 
-It worked fine.
+When I remove the '/delete-property/mmc-hs200-1_8v' then everything is
+hunky dory.
 
-[1] https://lkml.kernel.org/r/20190503233526.226272-1-dianders@chromium.org
+That line comes from the original submission of the mickey dts
+upstream, so presumably at the time the HS200 was failing and just
+enumerating things as a high speed device was fine.  ...or maybe it's
+just that some mickey devices work when enumerating at "high speed",
+just not mine?
+
+In any case, hs200 seems good now.  Let's turn it on.
 
 Signed-off-by: Douglas Anderson <dianders@chromium.org>
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/rk3288-veyron-minnie.dts | 4 ----
+ arch/arm/boot/dts/rk3288-veyron-mickey.dts | 4 ----
  1 file changed, 4 deletions(-)
 
-diff --git a/arch/arm/boot/dts/rk3288-veyron-minnie.dts b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-index 468a1818545d..ce57881625ec 100644
---- a/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-@@ -90,10 +90,6 @@
- 	pwm-off-delay-ms = <200>;
+diff --git a/arch/arm/boot/dts/rk3288-veyron-mickey.dts b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
+index e852594417b5..b13f87792e9f 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-mickey.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
+@@ -128,10 +128,6 @@
+ 	};
  };
  
 -&emmc {
 -	/delete-property/mmc-hs200-1_8v;
 -};
 -
- &gpio_keys {
- 	pinctrl-0 = <&pwr_key_l &ap_lid_int_l &volum_down_l &volum_up_l>;
- 
+ &i2c2 {
+ 	status = "disabled";
+ };
 -- 
 2.20.1
 
