@@ -2,92 +2,64 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BD0A75B46
-	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 01:36:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BDBE75BDD
+	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 02:05:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U7f52QuzZRKMk1GgyohcIACo4Nz5ROUEfbc1ZUtXywc=; b=dgT1Ds0x98FlzX
-	mFXL4xnKiuvkegJ7f+EIjSHBzFFid70P8X8RaNt2i61vAZak0BxxbkFaWqXMB+z/JyWYuLVAeSoTl
-	ZrwXlN8pmfciFXb4mn9sOGRfflhrvFZOdBNKiyTCOi4KiexaN29gMcHW2WfF4bWIoWi7zSmSKgSfy
-	sEXpALTeCFdvb3P3o56S2psYuWrnPVA45J4TLDZLQI6NI2rNAt485ey6B+J2O7TNuk0yoThpCt+gg
-	CnRgcDLpXIdismMqZCEUiBhdoFvBX/3NkF7c4GqmUrKYTtMkctv/GoPwZOclcq6vhJfcRnYkSQQqK
-	ccSGl3hOxEtbH3Iz/wuw==;
+	List-Owner; bh=G6P471BBfJMI/XNTPbMLbPl8AaFyVoPRDwPibpIWMMw=; b=IeNlXI7EQGUU8G
+	cPzKqADRjCVz4DG1df4V2f6nNwDYShMcatIe+3y8SW59vQDADxLvAMZH46YgIVLFT1dJv18QDsyaN
+	PnCVjd+9hz/A/7EfmNfBWwprUTjMJsLXY8ATPwisva693KPw0LdFLJK960vkvyiT6qgEycXVwDT8R
+	8xniMOyOnsFU4h4e4Th0a1hmIPLc1LmqYU0yswQY/zxkWmzNVcbTKFgwoMiq0lb7paCu81qk2hCPf
+	+tWv9jAO01UuAC+ZQnz+3GMDu/caRgk5sr+L6JjXrU/4yKma4AdNi9V0CuWzIaBX2e1m0QJ8R4JgA
+	QjSEi+9QfcqvXurE33jA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqnHB-0008UY-DR; Thu, 25 Jul 2019 23:35:57 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1hqnk8-0001wY-N9; Fri, 26 Jul 2019 00:05:52 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqnGj-0008HR-JN
- for linux-rockchip@lists.infradead.org; Thu, 25 Jul 2019 23:35:31 +0000
-Received: by mail-io1-xd44.google.com with SMTP id i10so100891613iol.13
- for <linux-rockchip@lists.infradead.org>; Thu, 25 Jul 2019 16:35:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=FkpQNBEJyUYlZ+foMWEjwOOmDuvJ1KqLXtHOKeziXTU=;
- b=P4GXONjnr2ejlxTjuq3SyzpJD9nBSLIDYncSudn+pYgmDEbwzBYfQ+s1k01XDE9c2T
- DWDFqDVeLm7azJLocwwU2rxApr+ds4l+E3vMIYAJrFqMV6T8SG8WKRbRQc0aHo5wFHLv
- B62GJTBtjmJUkYJ0CJ4UU2A+Bndr5O6Fytp6g=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=FkpQNBEJyUYlZ+foMWEjwOOmDuvJ1KqLXtHOKeziXTU=;
- b=Y7cmtJ5lYoIgfdwtIajCQWmlpCLkPcnbp+t2efZ2WF7xEVWCOWHnTIel3U/il/XOGZ
- F6mXzTcKL0+U6AUQ8NEQR2WOhF9I4aH3hb7nUi9euRXeUP92Dmm0snTJatiGdsaxl8VG
- vLByIAOHUX9Xxa42grQQlJZw+kzhGMlNKypFLkrf+PR0dhNtgh5GusQJXLQuXE7uuVHx
- KwQhkU7X2xJhPsRpPOmCsAcCM0AYQ+8L0DFSwDNEjslQNLHLWjX29m5tQlJoqGVQvYPR
- M3FasZg632CNkKWtSZ1gyH2QNQjpCZXl1Tkr43bH1T4QbpcPfZutlS3ugB6mQoJbwhjZ
- b+Jw==
-X-Gm-Message-State: APjAAAURIHBu3UVSnzreVzHGYTf3w9xxj3GqxJsfRc7O2uKgoYpGSbi7
- 8cYZXQIXdG2irv+zZvFnFRi5s01KlcQ=
-X-Google-Smtp-Source: APXvYqxLK9qrcmmUJUgsEPlCze4jyL1KAs7xIGG5FsaOt+GnJ7dKEoc8s9PrSk7TmngkXrV97OF/ng==
-X-Received: by 2002:a6b:621a:: with SMTP id f26mr75955724iog.127.1564097728090; 
- Thu, 25 Jul 2019 16:35:28 -0700 (PDT)
-Received: from mail-io1-f49.google.com (mail-io1-f49.google.com.
- [209.85.166.49])
- by smtp.gmail.com with ESMTPSA id l14sm46743257iob.1.2019.07.25.16.35.25
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Thu, 25 Jul 2019 16:35:26 -0700 (PDT)
-Received: by mail-io1-f49.google.com with SMTP id z3so101031285iog.0
- for <linux-rockchip@lists.infradead.org>; Thu, 25 Jul 2019 16:35:25 -0700 (PDT)
-X-Received: by 2002:a02:c6a9:: with SMTP id o9mr38028054jan.90.1564097725615; 
- Thu, 25 Jul 2019 16:35:25 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190620182056.61552-1-dianders@chromium.org>
- <CAD=FV=Wi21Emjg7CpCJfSRiKr_EisR20UO1tbPjAeJzdJNbSVw@mail.gmail.com>
- <CAD=FV=UhNfhVG422=huthFSptoV4FXED=xPtArO2KkyNb1U3Xw@mail.gmail.com>
- <3386344.sHu1S4gNag@phil>
-In-Reply-To: <3386344.sHu1S4gNag@phil>
-From: Doug Anderson <dianders@chromium.org>
-Date: Thu, 25 Jul 2019 16:35:12 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=XNSc+-a6ytx2fsUnh54g64i6FW+6WsHMFqwEMWbBPZ5Q@mail.gmail.com>
-Message-ID: <CAD=FV=XNSc+-a6ytx2fsUnh54g64i6FW+6WsHMFqwEMWbBPZ5Q@mail.gmail.com>
-Subject: Re: [PATCH] Revert "ARM: dts: rockchip: add startup delay to
- rk3288-veyron panel-regulators"
-To: Heiko Stuebner <heiko@sntech.de>
+ id 1hqnk5-0001w2-Vx
+ for linux-rockchip@lists.infradead.org; Fri, 26 Jul 2019 00:05:51 +0000
+Received: from localhost.localdomain (c-73-223-200-170.hsd1.ca.comcast.net
+ [73.223.200.170])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0D555229F9;
+ Fri, 26 Jul 2019 00:05:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564099548;
+ bh=ivU+Nk6TC3cNZvfii511FAGTl7zmUHp39Fzg2bYfiZA=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=p6kbI70FMfgTxXFJgRVShi5NbBfi+cvshWuJOFbw9ZX9vSBNoCraf+HR3yuja0sPf
+ up4aZ+bLi6Ewqt8pvll/XnShfDC0H4lmA4NWoFZG9lXmCRGaLnZJd/WU5sLbxIKv5s
+ 6oCC+w8bS9W9p060MQxWJg+ss7wrmpzBoDXCMH+Y=
+Date: Thu, 25 Jul 2019 17:05:47 -0700
+From: Andrew Morton <akpm@linux-foundation.org>
+To: Boris Brezillon <boris.brezillon@collabora.com>
+Subject: Re: [PATCH 1/9] lib/sort.c: implement sort() variant taking context
+ argument
+Message-Id: <20190725170547.a8a357dd76cc586f475b782d@linux-foundation.org>
+In-Reply-To: <20190619121540.29320-2-boris.brezillon@collabora.com>
+References: <20190619121540.29320-1-boris.brezillon@collabora.com>
+ <20190619121540.29320-2-boris.brezillon@collabora.com>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_163529_634317_D46980B6 
-X-CRM114-Status: GOOD (  30.20  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190725_170550_064794_D9BD4A9F 
+X-CRM114-Status: GOOD (  23.43  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
@@ -103,108 +75,136 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Matthias Kaehlcke <mka@chromium.org>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Nicolas Dufresne <nicolas@ndufresne.ca>, kernel@collabora.com,
+ Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org, Sakari Ailus <sakari.ailus@iki.fi>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Hans Verkuil <hans.verkuil@cisco.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+On Wed, 19 Jun 2019 14:15:32 +0200 Boris Brezillon <boris.brezillon@collabora.com> wrote:
 
-On Thu, Jul 25, 2019 at 2:33 PM Heiko Stuebner <heiko@sntech.de> wrote:
->
-> Am Mittwoch, 3. Juli 2019, 06:54:58 CEST schrieb Doug Anderson:
-> > Hi,
-> >
-> > On Thu, Jun 20, 2019 at 1:31 PM Doug Anderson <dianders@chromium.org> wrote:
-> > >
-> > > Hi,
-> > >
-> > > On Thu, Jun 20, 2019 at 11:21 AM Douglas Anderson <dianders@chromium.org> wrote:
-> > > >
-> > > > This reverts commit 1f45e8c6d0161f044d679f242fe7514e2625af4a.
-> > > >
-> > > > This 100 ms mystery delay is not on downstream kernels and no longer
-> > > > seems needed on upstream kernels either [1].  Presumably something in the
-> > > > meantime has made things better.  A few possibilities for patches that
-> > > > have landed in the meantime that could have made this better are
-> > > > commit 3157694d8c7f ("pwm-backlight: Add support for PWM delays
-> > > > proprieties."), commit 5fb5caee92ba ("pwm-backlight: Enable/disable
-> > > > the PWM before/after LCD enable toggle."), and commit 6d5922dd0d60
-> > > > ("ARM: dts: rockchip: set PWM delay backlight settings for Veyron")
-> > > >
-> > > > Let's revert and get our 100 ms back.
-> > > >
-> > > > [1] https://lkml.kernel.org/r/2226970.BAPq4liE1j@diego
-> > > >
-> > > > Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> > > > ---
-> > > >
-> > > >  arch/arm/boot/dts/rk3288-veyron-jaq.dts    | 1 -
-> > > >  arch/arm/boot/dts/rk3288-veyron-jerry.dts  | 1 -
-> > > >  arch/arm/boot/dts/rk3288-veyron-minnie.dts | 1 -
-> > > >  arch/arm/boot/dts/rk3288-veyron-speedy.dts | 1 -
-> > > >  4 files changed, 4 deletions(-)
-> > >
-> > > Maybe wait before applying.  I've been running reboot tests now with
-> > > this patch applied (among others) and with enough reboots I managed to
-> > > see:
-> > >
-> > > [    5.682418] rockchip-dp ff970000.dp: eDP link training failed (-5)
-> > >
-> > > I'll see if I can confirm that it's this patch and why things are
-> > > different compared to downstream.
-> >
-> > OK, I finally got back to this and confirmed:
-> >
-> > 1. The above error is actually somewhat harmless.  The eDP failure
-> > will be retried automatically despite the scary message.  Specifically
-> > see the loop in analogix_dp_bridge_enable().  I confirmed that after
-> > seeing the error the screen came up just fine (I looked at the screen
-> > in two actual instances but I believe it's pretty much always fine).
-> >
-> > 2. I haven't seen any evidence that the eDP link training happens any
-> > more often with this revert in place.  Specifically, I see the same
-> > message in the logs (at what appears to be the same rate) with or
-> > without this revert.
-> >
-> > 3. Probably the link-training failures here are the same ones we
-> > debugged for PSR for rk3399-gru-kevin that we fixed by making the eDP
-> > PCLK rate exactly 24 MHz.  See <https://crrev.com/c/433393> for
-> > details.  On rk3399-gru-kevin it was super important to resolve the
-> > root cause of these errors because we had PSR (which meant we were
-> > constantly taking to the eDP controller).  On rk3288-veyron devices
-> > with no PSR the retry should be a fine solution and it doesn't seem
-> > like a good idea to fully rejigger our clock plan to fix the root
-> > cause.
-> >
-> >
-> > NOTE: I saw _one_ case on rk3288-veyron-minnie where the screen looked
-> > wonky at bootup and I saw the eDP link training error in the logs.
-> > That's what originally made me cautious.  I haven't been able to
-> > reproduce this, but presumably I just got super unlucky in that one
-> > case.  I've left devices rebooting all day at work and haven't seen
-> > the wonky screen since then.
-> >
-> >
-> > Summary: I think this revert is just fine.
->
-> it looks like by picking Matthias' cleanups of the veyron displays
-> first I broke this patch. I guess we just need to remove the
->         startup-delay-us = <100000>;
-> from the panel_regulator in the new rk3288-veyron-edp.dtsi ?
+> From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+> 
+> Our list_sort() utility has always supported a context argument that
+> is passed through to the comparison routine. Now there's a use case
+> for the similar thing for sort().
+> 
+> This implements sort_r by simply extending the existing sort function
+> in the obvious way. To avoid code duplication, we want to implement
+> sort() in terms of sort_r(). The naive way to do that is
+> 
+> static int cmp_wrapper(const void *a, const void *b, const void *ctx)
+> {
+>   int (*real_cmp)(const void*, const void*) = ctx;
+>   return real_cmp(a, b);
+> }
+> 
+> sort(..., cmp) { sort_r(..., cmp_wrapper, cmp) }
+> 
+> but this would do two indirect calls for each comparison. Instead, do
+> as is done for the default swap functions - that only adds a cost of a
+> single easily predicted branch to each comparison call.
+> 
+> Aside from introducing support for the context argument, this also
+> serves as preparation for patches that will eliminate the indirect
+> comparison calls in common cases.
 
-Oops, I only checked Matthias's change against the current status of
-your for-next tree and forgot about this change.  Yes, the
-startup-delay should be removed there.  Do you want to resolve that
-when applying the patch or would you prefer a resend?
+Acked-by: Andrew Morton <akpm@linux-foundation.org>
 
--Doug
+> --- a/lib/sort.c
+> +++ b/lib/sort.c
+> @@ -144,6 +144,18 @@ static void do_swap(void *a, void *b, size_t size, swap_func_t swap_func)
+>  		swap_func(a, b, (int)size);
+>  }
+>  
+> +typedef int (*cmp_func_t)(const void *, const void *);
+> +typedef int (*cmp_r_func_t)(const void *, const void *, const void *);
+> +#define _CMP_WRAPPER ((cmp_r_func_t)0L)
+
+Although I can't say I'm a fan of _CMP_WRAPPER.  I don't understand
+what the name means.  Why not simply open-code NULL in the two sites?
+
+> +static int do_cmp(const void *a, const void *b,
+> +		  cmp_r_func_t cmp, const void *priv)
+> +{
+> +	if (cmp == _CMP_WRAPPER)
+> +		return ((cmp_func_t)(priv))(a, b);
+> +	return cmp(a, b, priv);
+> +}
+> +
+>  /**
+>   * parent - given the offset of the child, find the offset of the parent.
+>   * @i: the offset of the heap element whose parent is sought.  Non-zero.
+> @@ -171,12 +183,13 @@ static size_t parent(size_t i, unsigned int lsbit, size_t size)
+>  }
+>  
+>  /**
+> - * sort - sort an array of elements
+> + * sort_r - sort an array of elements
+>   * @base: pointer to data to sort
+>   * @num: number of elements
+>   * @size: size of each element
+>   * @cmp_func: pointer to comparison function
+>   * @swap_func: pointer to swap function or NULL
+> + * @priv: third argument passed to comparison function
+
+Passing priv==NULLis part of the interface and should be documented?
+
+>   *
+>   * This function does a heapsort on the given array.  You may provide
+>   * a swap_func function if you need to do something more than a memory
+> @@ -188,9 +201,10 @@ static size_t parent(size_t i, unsigned int lsbit, size_t size)
+>   * O(n*n) worst-case behavior and extra memory requirements that make
+>   * it less suitable for kernel use.
+>   */
+> -void sort(void *base, size_t num, size_t size,
+> -	  int (*cmp_func)(const void *, const void *),
+> -	  void (*swap_func)(void *, void *, int size))
+> +void sort_r(void *base, size_t num, size_t size,
+> +	    int (*cmp_func)(const void *, const void *, const void *),
+> +	    void (*swap_func)(void *, void *, int size),
+> +	    const void *priv)
+>  {
+>  	/* pre-scale counters for performance */
+>  	size_t n = num * size, a = (num/2) * size;
+> @@ -238,12 +252,12 @@ void sort(void *base, size_t num, size_t size,
+>  		 * average, 3/4 worst-case.)
+>  		 */
+>  		for (b = a; c = 2*b + size, (d = c + size) < n;)
+> -			b = cmp_func(base + c, base + d) >= 0 ? c : d;
+> +			b = do_cmp(base + c, base + d, cmp_func, priv) >= 0 ? c : d;
+>  		if (d == n)	/* Special case last leaf with no sibling */
+>  			b = c;
+>  
+>  		/* Now backtrack from "b" to the correct location for "a" */
+> -		while (b != a && cmp_func(base + a, base + b) >= 0)
+> +		while (b != a && do_cmp(base + a, base + b, cmp_func, priv) >= 0)
+>  			b = parent(b, lsbit, size);
+>  		c = b;			/* Where "a" belongs */
+>  		while (b != a) {	/* Shift it into place */
+> @@ -252,4 +266,12 @@ void sort(void *base, size_t num, size_t size,
+>  		}
+>  	}
+>  }
+> +EXPORT_SYMBOL(sort_r);
+> +
+> +void sort(void *base, size_t num, size_t size,
+> +	  int (*cmp_func)(const void *, const void *),
+> +	  void (*swap_func)(void *, void *, int size))
+> +{
+> +	return sort_r(base, num, size, _CMP_WRAPPER, swap_func, cmp_func);
+> +}
+>  EXPORT_SYMBOL(sort);
+
 
 _______________________________________________
 Linux-rockchip mailing list
