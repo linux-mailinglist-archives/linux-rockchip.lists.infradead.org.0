@@ -2,88 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F6367619C
-	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 11:15:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F083976327
+	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 12:07:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KEcSq+7Gn94qA8TH7Hb1N1qdXO1LgPy1kghHKmQ9SYU=; b=PZFPhD0TOPLn8hD0QGbZRHQ4F
-	3IG4dfgtAJgt3moASeOLpD+ZXWV7l6KPQYquoaDuYFUkG1zgctz1QxGZuOpiOzj8L3CNLbneYwLaD
-	VzvTrOYZEMwyj17eyAt4w92QjhQMvtWVzAdDv7FDQpgyGO5MPyVgXJJP1bnCPugvSik0NMIZhKxp9
-	GYVzAXybUh3cBCWaHSFY9oDSoxqQV38IxoBfNLLpmOtB3hV525dUN2nxmRKeONB3a6P4E5apW5IY0
-	FxwK+ZpHoUTGYjBMhD0MFtf2eyzzKewUzSw5ZYsOXp4r6QOSg3dVRGGAJjSfHQUJ0Y5XrKVVeu4Zm
-	YEyUJcwYw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=loZLSsx1MwAkLkK/q2wUSFOUjLWI15s+O9sn3jmPIts=; b=EtvFdi4O3MMo2q
+	T0yiVNtwjjmhFrZbvH0PrKOMuRPWV4vNSxZrUly0Xwf7ignXBnq55tGx1XBANxpx5xBSNeDOXiPl9
+	NhUK3TsGYXiEHCCvunoVAkZR9euE3sDUY/aY/r+AVdc1zeCqYC/Q5GGsYiphKIQ1LbN5uL9VXEzij
+	eGwmoSSh9OW12c4dZ8rVz7Rq6VdrLiuwNXm4Md8fXRDf/XyXwWxz/ZHKGqSxMi1XLPF/www2ac/Ka
+	VxrNXy3CIFNUQZ0Po7ntLhdcCXl9SfdcfVfILzCbTJp1fYGwo48klFM4tCBr0Xrl0xXhHQn8CGaJp
+	GZX7GlmBjp3Tmr4yKkyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqwJf-0000ny-T7; Fri, 26 Jul 2019 09:15:08 +0000
-Received: from outgoing18.flk.host-h.net ([197.242.87.52])
+	id 1hqx8L-0004xB-Rr; Fri, 26 Jul 2019 10:07:30 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqwJa-000087-1b; Fri, 26 Jul 2019 09:15:04 +0000
-Received: from www31.flk1.host-h.net ([188.40.1.173])
- by antispam5-flk1.host-h.net with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.89)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1hqwJJ-0005sO-M7; Fri, 26 Jul 2019 11:14:47 +0200
-Received: from roundcubeweb1.flk1.host-h.net ([138.201.244.33]
- helo=webmail9.konsoleh.co.za)
- by www31.flk1.host-h.net with esmtpa (Exim 4.84_2)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1hqwJI-0003iD-Ud; Fri, 26 Jul 2019 11:14:45 +0200
+ id 1hqx80-0004gW-Rx
+ for linux-rockchip@lists.infradead.org; Fri, 26 Jul 2019 10:07:11 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 8B85828BE70;
+ Fri, 26 Jul 2019 11:07:01 +0100 (BST)
+Date: Fri, 26 Jul 2019 12:06:58 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Subject: Re: [PATCH 7/9] media: hantro: Add core bits to support H264 decoding
+Message-ID: <20190726120658.53022c21@collabora.com>
+In-Reply-To: <25cc2826-fc8f-570a-07fa-8cbdb11830a7@rasmusvillemoes.dk>
+References: <20190619121540.29320-1-boris.brezillon@collabora.com>
+ <20190619121540.29320-8-boris.brezillon@collabora.com>
+ <25cc2826-fc8f-570a-07fa-8cbdb11830a7@rasmusvillemoes.dk>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-Date: Fri, 26 Jul 2019 11:14:44 +0200
-From: Justin Swartz <justin.swartz@risingedge.co.za>
-To: Heiko Stuebner <heiko@sntech.de>
-Subject: Re: [PATCH] ARM: dts: add device tree for Mecer Xtreme Mini S6
-Organization: Rising Edge Consulting (Pty) Ltd.
-In-Reply-To: <1618985.EOrKlNyPW4@phil>
-References: <20190616204746.21001-1-justin.swartz@risingedge.co.za>
- <1618985.EOrKlNyPW4@phil>
-Message-ID: <509782f4ece936f5ac7d0abffbd555fc@risingedge.co.za>
-X-Sender: justin.swartz@risingedge.co.za
-User-Agent: Roundcube Webmail/1.2.3
-X-Authenticated-Sender: justin.swartz@risingedge.co.za
-X-Virus-Scanned: Clear (ClamAV 0.100.3/25521/Thu Jul 25 10:12:55 2019)
-X-Originating-IP: 188.40.1.173
-X-SpamExperts-Domain: risingedge.co.za
-X-SpamExperts-Username: 
-Authentication-Results: host-h.net;
- auth=pass (login) smtp.auth=@risingedge.co.za
-X-SpamExperts-Outgoing-Class: ham
-X-SpamExperts-Outgoing-Evidence: Combined (0.10)
-X-Recommended-Action: accept
-X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0QR3kh8pms4IGrDTloUGIkypSDasLI4SayDByyq9LIhVb87cW502DfY5
- A3TFjr/Q/0TNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3Kf0cVcrGOWHuvhhsNFanSQ+63
- p/UbUTcmIpuXtxg/CxkoU3DKFYUc83wlJ68apqUflsInmcmrhWKh5CGxWvoqRSom1N6/V6eFJqiY
- 8AHI8ZE2UOjrQY19nYX/K9cXl+nRiJs637DFkSoL4pcNpzwOwYXt6ymoFHaG7BQtEYvFCSpHGdnf
- o9UqdkwD4pFOnnu92G81dFO0E3gi+MOI1foZYzDggRXhpvoPtF3cVkniFXU3qJSqpdJudO6+rkiw
- E5i8Wl78Q18OeOfsy4h7jF1Uv9lnibl3vcBqVmvQB4A18af5AwOH28jF9Eyby2LkU1c4AVXirbLu
- Jjy3NtnGWLbnBGfrUBEXB2fYGLNieGQuoHtJvp0r29Rf3ZjFwL+MhHEWw/0qBlNDp8uABz3dkWV+
- tgmYFaNu+2UDArzT1gq7P+ZTycYLFeAN4+MGwnsp7SkU6CLbyF0Zq4b1/7rjUzETJrWks4pbbQJq
- 6gWopI3ep45X19ZysgQ+31LcAX8eoFXAhohfegXGH2GIVQVglJFbK771YV8YbC29CtmpcTqTfSIf
- CWq9oj7OiT8GwpAriB+3/81I3rvR8KJ2fK9jiDYgijyqqY0rATpzHKGfmtNsYTr4SmDZ/bGW8xZC
- RRs6ZD24UhFcZZEpLhnBCwImTQNvxaLyCc35VA7RvW/HGiGqxL09Cymermt8NAa/gGopT3kKfO4C
- gvcKmV0o9jYzsFpuc43pp/LzIs3ornuRuAAdgrkq+6l7ZLNYJcf7Z6PCydDzoYZgInuDxgFOs7AZ
- TwbwMWQbSR6Wmuan/Ls9Qsz9RDBQm36ApPA3w0769BEb21L838NrFoXSENXH6UXfnav35JPA4YfM
- 6tBkXsqvKY6zoLLTPpuFqUUQz+mM8JAD4ECWNo09vb0YLIRnK477e9Xake5PIWKjIXX7qe2zOXoS
- fowN9R0iqxX4tRGXU6pi4Whf0gC4y7e8G5gyWkWqMf9mIGbjO41FyBEqIaDudcVplPE6wCr6GXU1
- lCw88ijyus1sGnWknJqS8gGhNQxpB5P3qu7c1xMljx2PG/R+pKBSKy8hXOgvE1zSS7XUhkYEQYeb
- 3jR5NeVaJQBh0uawl0Cg8j+knAzOA9mmoJvkuhKHiekUuskYaI6ERCKp8gXWqnT9kLHhStr5fiGK
- 7KncpWELuTEvuGslKTrRIXcXpFg5ivY=
-X-Report-Abuse-To: spam@antispammaster.host-h.net
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_021502_128170_90283D2C 
-X-CRM114-Status: GOOD (  10.34  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190726_030709_172947_6E467D6D 
+X-CRM114-Status: GOOD (  16.46  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [197.242.87.52 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -97,50 +63,102 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Nicolas Dufresne <nicolas@ndufresne.ca>, kernel@collabora.com,
+ Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-kernel@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org, Sakari Ailus <sakari.ailus@iki.fi>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Hertz Wong <hertz.wong@rock-chips.com>,
+ Hans Verkuil <hans.verkuil@cisco.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Heiko,
+On Thu, 25 Jul 2019 15:31:41 +0200
+Rasmus Villemoes <linux@rasmusvillemoes.dk> wrote:
 
-On 2019-07-26 00:19, Heiko Stuebner wrote:
-
-> please add an entry to 
-> Documentation/devicetree/bindings/arm/rockchip.yaml
-> for your board and if necessary also a vendor-prefix to
-> Documentation/devicetree/bindings/vendor-prefixes.(yaml?)
-
-OK
-
-> please sort the &node-references alphabetically.
-
-OK
-
->> +&cpu0 {
->> +    clock-frequency = <1464000000>;
+> On 19/06/2019 14.15, Boris Brezillon wrote:
+> > From: Hertz Wong <hertz.wong@rock-chips.com>
+> > 
+> > Add helpers and patch hantro_{drv,v4l2}.c to prepare addition of H264
+> > decoding support.
+> > 
+> > Signed-off-by: Hertz Wong <hertz.wong@rock-chips.com>
+> > Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+> > ---
+> > +
+> > +	/*
+> > +	 * Short term pics in descending pic num order, long term ones in
+> > +	 * ascending order.
+> > +	 */
+> > +	if (!(a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM))
+> > +		return b->frame_num - a->frame_num;
+> > +
+> > +	return a->pic_num - b->pic_num;
+> > +}  
 > 
-> not sure I understand the reasoning here.
-> There seems to be a regulator defined, so the cpu cores should
-> have operating points defined to allow them to switch between
-> different frequencies as needed.
+> Pet peeve: This works because ->frame_num and ->pic_num are u16, so
+> their difference is guaranteed to fit in an int.
+> 
+> > +static int b0_ref_list_cmp(const void *ptra, const void *ptrb, const void *data)
+> > +{
+> > +	const struct hantro_h264_reflist_builder *builder = data;
+> > +	const struct v4l2_h264_dpb_entry *a, *b;
+> > +	s32 poca, pocb;
+> > +	u8 idxa, idxb;
+> > +
+> > +	idxa = *((u8 *)ptra);
+> > +	idxb = *((u8 *)ptrb);
+> > +	a = &builder->dpb[idxa];
+> > +	b = &builder->dpb[idxb];
+> > +
+> > +	if ((a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM) !=
+> > +	    (b->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM)) {
+> > +		/* Short term pics firt. */
+> > +		if (!(a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM))
+> > +			return -1;
+> > +		else
+> > +			return 1;
+> > +	}
+> > +
+> > +	/* Long term pics in ascending pic num order. */
+> > +	if (a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM)
+> > +		return a->pic_num - b->pic_num;
+> > +
+> > +	poca = builder->pocs[idxa];
+> > +	pocb = builder->pocs[idxb];
+> > +
+> > +	/*
+> > +	 * Short term pics with POC < cur POC first in POC descending order
+> > +	 * followed by short term pics with POC > cur POC in POC ascending
+> > +	 * order.
+> > +	 */
+> > +	if ((poca < builder->curpoc) != (pocb < builder->curpoc))
+> > +		return poca - pocb;
+> > +	else if (poca < builder->curpoc)
+> > +		return pocb - poca;
+> > +
+> > +	return poca - pocb;
+> > +}  
+> 
+> Here, however, poca and pocb are ints. What guarantees that their values
+> are not more than 2^31 apart?
 
-I added the clock-frequency property to quell the following messages:
+Good question. Both should normally be >= 0, which I guess prevents the
+s32 overflow. This being said, it's something passed by userspace, and
+I don't think we check the value (yet).
 
-[ 0.003273] /cpus/cpu@f00 missing clock-frequency property
-[ 0.003323] /cpus/cpu@f01 missing clock-frequency property
-[ 0.003352] /cpus/cpu@f02 missing clock-frequency property
-[ 0.003382] /cpus/cpu@f03 missing clock-frequency property
+> I know absolutely nothing about this code
+> or what these numbers represent, so it may be obvious that they are
+> smallish.
 
-I think they are from parse_dt_topology() in arch/arm/kernel/topology.c
-
-What do you suggest?
-
-Regards
-Justin
+Well, a safe approach would be to replace those subtraction by a
+ternary operator.
 
 _______________________________________________
 Linux-rockchip mailing list
