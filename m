@@ -2,7 +2,7 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C934767BD
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B0DA767BE
 	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 15:39:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,39 +10,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5pxoX1bGntP8I23raKsIMo+XYSGz76E/DRkY/q1NNWE=; b=cfYLQ9nMqHGOSN
-	Fowt84LeZ1zaYZwGIIbbwxnpWTdvJ/FqsYRSk/HAj4CVgxpyNn+Ic9XeekZbWDnkhaCOBn6ZLsI5N
-	ZvBddax/pf6tD3SPozQ8Mmu9VynfALbA50ooIumc8UAdIdbh5jVmhLRatW0etEZQQAt/sqFkYVfBa
-	jJxBVMHg6ieF27/N1b4z5XZUxMAkuK8c4sp+3RhGlt1UrjnWbO10lr74tW4Cgj0Iyd54uH/Qhh+qo
-	KlpWK0P4pt3z3LCBcuZjAp6shX3dgERsmMGQwd3oJXyEB47vybDnR0RoXXgRBLIe+6FC9psuZT030
-	kAXCj8FvlqCAoISuR6hg==;
+	List-Owner; bh=IrY3NCyWrhRGoRdWbx6SB/cm2HUyS9YZ2HAHUwSMSfk=; b=f2YGNaI2HS1M9a
+	vobJdweFxXlemKHPgoq/VLOCs5M1E0qXut1OhaD02UCTn2CM1uicur9vn1jzL3HuG43I+UV8bnjwR
+	V0lFKk054h6nIK8LI4Oacldd9xZn9JnI0Ej1I2n99sZZ469ZipbJ6pPh1f/pz/6Q++AhlGdFtq4D0
+	QOWsLKa12I5GukKcz+YIFXRBL4dSaL6LKcIPy/F0fkuClZKc15p3mZ1wPRFpvZZmpFT185yEukDZx
+	rq8eSchR5TFDK8D2fT/ddIsuAEbjCMi3g1SHEPfhjtTBlQIeUJ+kHQUFHWC02iE6SHqCF77Lh6UA+
+	+nsEBEEInGtrSLnhfsmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr0Rj-00017j-Vl; Fri, 26 Jul 2019 13:39:43 +0000
+	id 1hr0Rn-0001AB-FL; Fri, 26 Jul 2019 13:39:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hr0Rg-000162-6H
- for linux-rockchip@lists.infradead.org; Fri, 26 Jul 2019 13:39:41 +0000
+ id 1hr0Ri-000170-Ek
+ for linux-rockchip@lists.infradead.org; Fri, 26 Jul 2019 13:39:43 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 342EF22BE8;
- Fri, 26 Jul 2019 13:39:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7605E22CB8;
+ Fri, 26 Jul 2019 13:39:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564148379;
- bh=Ko/+jmiMwx1Noz+1muVVeKU8VE+QI/+BKre3Eh07Cpw=;
+ s=default; t=1564148382;
+ bh=TebGSl2bOYacQCJa6t74f6F/azyuCegyKqwBZ5D9W+8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=FBJZiotZcMSfMEj0bztS64AmTbZRx0uMxnnoiOYD9Ee3SjrOjQBEpvOvUpR90Vajj
- 5FvfV5jSMvHanXI/MVQ/x/MgfbqD+MjqVOfAuPa0TpwCfWH30mHCeeH1qD8X4febk/
- v56Dq9ID1fZecBzF3BgFFx4LxIXMLEiILxtNQZl8=
+ b=CG73kuL8lbnNDYoOUUkCPGCXVh96Zo4t/D0ZVTqYzHIossXSB5Wwb8C0O0tSGW6G1
+ AwXq/mtKDqNS8aeIM0L/9ri+35iCDZu6oM+xBKoJ2k1HpRvDRXAxw1O+aDRwXynK7x
+ fRDaiDRkzDBeY2Dr20xqo/v2jxNc/uq8+V0sqaYQ=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.2 03/85] ARM: dts: rockchip: Make
- rk3288-veyron-mickey's emmc work again
-Date: Fri, 26 Jul 2019 09:38:13 -0400
-Message-Id: <20190726133936.11177-3-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.2 05/85] ARM: dts: rockchip: Mark that the rk3288
+ timer might stop in suspend
+Date: Fri, 26 Jul 2019 09:38:15 -0400
+Message-Id: <20190726133936.11177-5-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190726133936.11177-1-sashal@kernel.org>
 References: <20190726133936.11177-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_063940_245400_DEF9E6EB 
-X-CRM114-Status: UNSURE (   8.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190726_063942_508648_C413F2BC 
+X-CRM114-Status: GOOD (  10.33  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,64 +91,46 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Douglas Anderson <dianders@chromium.org>
 
-[ Upstream commit 99fa066710f75f18f4d9a5bc5f6a711968a581d5 ]
+[ Upstream commit 8ef1ba39a9fa53d2205e633bc9b21840a275908e ]
 
-When I try to boot rk3288-veyron-mickey I totally fail to make the
-eMMC work.  Specifically my logs (on Chrome OS 4.19):
+This is similar to commit e6186820a745 ("arm64: dts: rockchip: Arch
+counter doesn't tick in system suspend").  Specifically on the rk3288
+it can be seen that the timer stops ticking in suspend if we end up
+running through the "osc_disable" path in rk3288_slp_mode_set().  In
+that path the 24 MHz clock will turn off and the timer stops.
 
-  mmc_host mmc1: card is non-removable.
-  mmc_host mmc1: Bus speed (slot 0) = 400000Hz (slot req 400000Hz, actual 400000HZ div = 0)
-  mmc_host mmc1: Bus speed (slot 0) = 50000000Hz (slot req 52000000Hz, actual 50000000HZ div = 0)
-  mmc1: switch to bus width 8 failed
-  mmc1: switch to bus width 4 failed
-  mmc1: new high speed MMC card at address 0001
-  mmcblk1: mmc1:0001 HAG2e 14.7 GiB
-  mmcblk1boot0: mmc1:0001 HAG2e partition 1 4.00 MiB
-  mmcblk1boot1: mmc1:0001 HAG2e partition 2 4.00 MiB
-  mmcblk1rpmb: mmc1:0001 HAG2e partition 3 4.00 MiB, chardev (243:0)
-  mmc_host mmc1: Bus speed (slot 0) = 400000Hz (slot req 400000Hz, actual 400000HZ div = 0)
-  mmc_host mmc1: Bus speed (slot 0) = 50000000Hz (slot req 52000000Hz, actual 50000000HZ div = 0)
-  mmc1: switch to bus width 8 failed
-  mmc1: switch to bus width 4 failed
-  mmc1: tried to HW reset card, got error -110
-  mmcblk1: error -110 requesting status
-  mmcblk1: recovery failed!
-  print_req_error: I/O error, dev mmcblk1, sector 0
-  ...
+To test this, I ran this on a Chrome OS filesystem:
+  before=$(date); \
+  suspend_stress_test -c1 --suspend_min=30 --suspend_max=31; \
+  echo ${before}; date
 
-When I remove the '/delete-property/mmc-hs200-1_8v' then everything is
-hunky dory.
+...and I found that unless I plug in a device that requests USB wakeup
+to be active that the two calls to "date" would show that fewer than
+30 seconds passed.
 
-That line comes from the original submission of the mickey dts
-upstream, so presumably at the time the HS200 was failing and just
-enumerating things as a high speed device was fine.  ...or maybe it's
-just that some mickey devices work when enumerating at "high speed",
-just not mine?
-
-In any case, hs200 seems good now.  Let's turn it on.
+NOTE: deep suspend (where the 24 MHz clock gets disabled) isn't
+supported yet on upstream Linux so this was tested on a downstream
+kernel.
 
 Signed-off-by: Douglas Anderson <dianders@chromium.org>
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/rk3288-veyron-mickey.dts | 4 ----
- 1 file changed, 4 deletions(-)
+ arch/arm/boot/dts/rk3288.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/boot/dts/rk3288-veyron-mickey.dts b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
-index e852594417b5..b13f87792e9f 100644
---- a/arch/arm/boot/dts/rk3288-veyron-mickey.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
-@@ -128,10 +128,6 @@
+diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+index aa017abf4f42..f7bc886a4b51 100644
+--- a/arch/arm/boot/dts/rk3288.dtsi
++++ b/arch/arm/boot/dts/rk3288.dtsi
+@@ -231,6 +231,7 @@
+ 			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>,
+ 			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>;
+ 		clock-frequency = <24000000>;
++		arm,no-tick-in-suspend;
  	};
- };
  
--&emmc {
--	/delete-property/mmc-hs200-1_8v;
--};
--
- &i2c2 {
- 	status = "disabled";
- };
+ 	timer: timer@ff810000 {
 -- 
 2.20.1
 
