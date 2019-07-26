@@ -2,55 +2,70 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F083976327
-	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 12:07:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C04C76442
+	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 13:17:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=loZLSsx1MwAkLkK/q2wUSFOUjLWI15s+O9sn3jmPIts=; b=EtvFdi4O3MMo2q
-	T0yiVNtwjjmhFrZbvH0PrKOMuRPWV4vNSxZrUly0Xwf7ignXBnq55tGx1XBANxpx5xBSNeDOXiPl9
-	NhUK3TsGYXiEHCCvunoVAkZR9euE3sDUY/aY/r+AVdc1zeCqYC/Q5GGsYiphKIQ1LbN5uL9VXEzij
-	eGwmoSSh9OW12c4dZ8rVz7Rq6VdrLiuwNXm4Md8fXRDf/XyXwWxz/ZHKGqSxMi1XLPF/www2ac/Ka
-	VxrNXy3CIFNUQZ0Po7ntLhdcCXl9SfdcfVfILzCbTJp1fYGwo48klFM4tCBr0Xrl0xXhHQn8CGaJp
-	GZX7GlmBjp3Tmr4yKkyA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4shp/iXsYQFQ7TiwS5TolM2djTwOzNczqwcD+uU7IZw=; b=s8t9+pwvZ/i/oKdXiTpejQ7Wx
+	oXvB7ISHPeyfJOIPOMfrN/juxepGS8kVoZoymosZYLMx5/OZQt5hnJkliw1bovZlCOM+vktzuXJw2
+	6rVmovGJmwTiEg5bW8jRDHA/XHJxBZ/msg/UpXHWY1j6FxThRKbaXc1dmGlp1odv21pERnFwfkx7M
+	nZqY9Dx5+kVERLS8cS0Oa58q702Ii8N76A5+ZyQsaSTtekFXD2TNKL69+ippWyLT8QAf/MKqUw6yi
+	eilmHW6SPd6kBQj7Wr8deuswlVZAZPyKYu475pgECUDwGqqTcDjJHtOlhH888Xbk26oAhQHR6+Tlz
+	L5F67l26Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqx8L-0004xB-Rr; Fri, 26 Jul 2019 10:07:30 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hqyE9-0006n6-Hi; Fri, 26 Jul 2019 11:17:33 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqx80-0004gW-Rx
- for linux-rockchip@lists.infradead.org; Fri, 26 Jul 2019 10:07:11 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 8B85828BE70;
- Fri, 26 Jul 2019 11:07:01 +0100 (BST)
-Date: Fri, 26 Jul 2019 12:06:58 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-Subject: Re: [PATCH 7/9] media: hantro: Add core bits to support H264 decoding
-Message-ID: <20190726120658.53022c21@collabora.com>
-In-Reply-To: <25cc2826-fc8f-570a-07fa-8cbdb11830a7@rasmusvillemoes.dk>
-References: <20190619121540.29320-1-boris.brezillon@collabora.com>
- <20190619121540.29320-8-boris.brezillon@collabora.com>
- <25cc2826-fc8f-570a-07fa-8cbdb11830a7@rasmusvillemoes.dk>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1hqyE0-0006fo-AJ; Fri, 26 Jul 2019 11:17:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Jm4OpSGofOUA5dqIvnMduxBbq6NaNOEvIczSvNy1Q0U=; b=K2KQcfiPjs6rgnZatJ0kUxrdK
+ cpwlYJ5DdwUBS06TZWBTp08lIZAQLcwK5czEc/6yJdS+KIvG296bNLUjvfJSRQ2xgyn/zcp3DDFqZ
+ iGhVj8B8GaJfmuLs7bJRXPejoee46BgPX3HXB9ERe6C/fXfYDCvexHCGzH6jgLCataL4M=;
+Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hqyDv-0001I1-8I; Fri, 26 Jul 2019 11:17:19 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 13D6D2742B63; Fri, 26 Jul 2019 12:17:18 +0100 (BST)
+Date: Fri, 26 Jul 2019 12:17:17 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Cheng-Yi Chiang <cychiang@chromium.org>
+Subject: Re: [PATCH] Revert "ASoC: rockchip: i2s: Support mono capture"
+Message-ID: <20190726111717.GB4902@sirena.org.uk>
+References: <20190726044202.26866-1-cychiang@chromium.org>
 MIME-Version: 1.0
+In-Reply-To: <20190726044202.26866-1-cychiang@chromium.org>
+X-Cookie: List at least two alternate dates.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_030709_172947_6E467D6D 
-X-CRM114-Status: GOOD (  16.46  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190726_041724_367013_BA43CBFA 
+X-CRM114-Status: UNSURE (   9.08  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,104 +78,71 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Nicolas Dufresne <nicolas@ndufresne.ca>, kernel@collabora.com,
- Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
- linux-kernel@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org, Sakari Ailus <sakari.ailus@iki.fi>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Hertz Wong <hertz.wong@rock-chips.com>,
- Hans Verkuil <hans.verkuil@cisco.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: alsa-devel@alsa-project.org, tzungbi@chromium.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ Takashi Iwai <tiwai@suse.com>, dianders@chromium.org,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-rockchip@lists.infradead.org,
+ mka@chromium.org, dgreid@chromium.org, Jaroslav Kysela <perex@perex.cz>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6824083432343017779=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, 25 Jul 2019 15:31:41 +0200
-Rasmus Villemoes <linux@rasmusvillemoes.dk> wrote:
 
-> On 19/06/2019 14.15, Boris Brezillon wrote:
-> > From: Hertz Wong <hertz.wong@rock-chips.com>
-> > 
-> > Add helpers and patch hantro_{drv,v4l2}.c to prepare addition of H264
-> > decoding support.
-> > 
-> > Signed-off-by: Hertz Wong <hertz.wong@rock-chips.com>
-> > Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
-> > ---
-> > +
-> > +	/*
-> > +	 * Short term pics in descending pic num order, long term ones in
-> > +	 * ascending order.
-> > +	 */
-> > +	if (!(a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM))
-> > +		return b->frame_num - a->frame_num;
-> > +
-> > +	return a->pic_num - b->pic_num;
-> > +}  
-> 
-> Pet peeve: This works because ->frame_num and ->pic_num are u16, so
-> their difference is guaranteed to fit in an int.
-> 
-> > +static int b0_ref_list_cmp(const void *ptra, const void *ptrb, const void *data)
-> > +{
-> > +	const struct hantro_h264_reflist_builder *builder = data;
-> > +	const struct v4l2_h264_dpb_entry *a, *b;
-> > +	s32 poca, pocb;
-> > +	u8 idxa, idxb;
-> > +
-> > +	idxa = *((u8 *)ptra);
-> > +	idxb = *((u8 *)ptrb);
-> > +	a = &builder->dpb[idxa];
-> > +	b = &builder->dpb[idxb];
-> > +
-> > +	if ((a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM) !=
-> > +	    (b->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM)) {
-> > +		/* Short term pics firt. */
-> > +		if (!(a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM))
-> > +			return -1;
-> > +		else
-> > +			return 1;
-> > +	}
-> > +
-> > +	/* Long term pics in ascending pic num order. */
-> > +	if (a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM)
-> > +		return a->pic_num - b->pic_num;
-> > +
-> > +	poca = builder->pocs[idxa];
-> > +	pocb = builder->pocs[idxb];
-> > +
-> > +	/*
-> > +	 * Short term pics with POC < cur POC first in POC descending order
-> > +	 * followed by short term pics with POC > cur POC in POC ascending
-> > +	 * order.
-> > +	 */
-> > +	if ((poca < builder->curpoc) != (pocb < builder->curpoc))
-> > +		return poca - pocb;
-> > +	else if (poca < builder->curpoc)
-> > +		return pocb - poca;
-> > +
-> > +	return poca - pocb;
-> > +}  
-> 
-> Here, however, poca and pocb are ints. What guarantees that their values
-> are not more than 2^31 apart?
+--===============6824083432343017779==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="4bRzO86E/ozDv8r1"
+Content-Disposition: inline
 
-Good question. Both should normally be >= 0, which I guess prevents the
-s32 overflow. This being said, it's something passed by userspace, and
-I don't think we check the value (yet).
 
-> I know absolutely nothing about this code
-> or what these numbers represent, so it may be obvious that they are
-> smallish.
+--4bRzO86E/ozDv8r1
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Well, a safe approach would be to replace those subtraction by a
-ternary operator.
+On Fri, Jul 26, 2019 at 12:42:02PM +0800, Cheng-Yi Chiang wrote:
+> This reverts commit db51707b9c9aeedd310ebce60f15d5bb006567e0.
+>=20
+> Previous discussion in
+
+Please use subject lines matching the style for the subsystem.  This
+makes it easier for people to identify relevant patches.
+
+Please include human readable descriptions of things like commits and
+issues being discussed in e-mail in your mails, this makes them much
+easier for humans to read especially when they have no internet access.
+I do frequently catch up on my mail on flights or while otherwise
+travelling so this is even more pressing for me than just being about
+making things a bit easier to read.
+
+--4bRzO86E/ozDv8r1
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl064T0ACgkQJNaLcl1U
+h9DmAAf9FDy70YAEs1yPd9vLXET+RkMVfd/1yiLlweWPaqgu5WqZDjmBFBOQBj98
+CnVVDFj3X1Fv6bQs6Q/+jRMuP5ckxiGPCFO2n0dV70pXNj0m/iGUHtj4ly/zOqsH
+hwNNbmOpHphNoz87TaPFdPCj6XWPcNUOIa9b+mv/g8sxzR+9AdhzP0xLaDY7ixN9
+0sZ+5QRGFuPsu/WscetgXtdTlhxFnEYpm6HxgvmZIrdKW0hYKVM7rSj4wKxiaP9T
+ZyYlSmH/oA1OATb8LuDUPE3TTCEmMnyZUSyEAHeXAeWNFZzNn4bG0XYBeQoNZE8C
+HZeFqmHV3qj2cU3rejJ2g1P3zqrKyA==
+=4GTC
+-----END PGP SIGNATURE-----
+
+--4bRzO86E/ozDv8r1--
+
+
+--===============6824083432343017779==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============6824083432343017779==--
+
