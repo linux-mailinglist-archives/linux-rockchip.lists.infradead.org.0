@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 573B376FFB
-	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 19:26:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6890E77011
+	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 19:27:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,41 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=wWadq2M1UShSfOjuLCTkV6+ggHdoqPPnF80hUDuxiwE=; b=hYEANmybYqxDU65AkbNeBj6WNy
-	ixEUE+WCBDMrWdtiQxrziihDmQxDQl18fENCcCAKk5e/lk9CDSio7/oZ2asw6WN4uNhvTqCea6YJi
-	ewHVcmig+YVgo3rzMcZFIbJOfk7WfkXqMntbliH8PQCWWNTi3Q9lODNg/v7iT9A1dx1c6rZmZv7tV
-	YJaCuALo8wKoHuHFGKx7yltMWq8QIZl7YggLuQx6W8k9DkqzB1jhZrG2hpdkYC0fMEPs/4Mq1wa+c
-	+RlqYsu1V9An0OFpYtTguefYe4zTVkLoMdvMcF8doXL9Xdyo9F8JlxJNxaYbMuJTxFYLQZR3KETTs
-	TwKNf5ow==;
+	bh=SD22gpIVLbotPW95qFAyNaxhj4nXFWPz0qHKZjVvUwk=; b=FmRfkgYlm3Y79CkXsdEQpduLbq
+	H5bWg4tdnJlpAFkUXASiLvtaf412KgCmL26/U3xhnfRdMx0zw1SE9BLerUlZde+vAKbnxv7YlBvYk
+	YPMWpE/bA5l5ZyB810wcMUNbEYsNiWFd9eJOIToEmxhDl+LlbJtUKJNJ3mD9YcPJRBmwrKtQMLdDh
+	5CYWHW36C4KJ5jNlAOEh0TzjbAmQztdvzNsKoztXbA56AP1lWzstHCX7Ot0XffTPXcmBYSLW4AbWM
+	ETij2fQmaX7ubwdIK/JMwLFXRoFjuOBnOfWYGVz2ta0nOwOsy6E6cjvXuWTIeYTfHFejW8CeMbMsa
+	niOIENmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr3z9-0002Bl-BG; Fri, 26 Jul 2019 17:26:27 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hr3zz-0002yJ-4Q; Fri, 26 Jul 2019 17:27:19 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hr3z4-0002AM-RV; Fri, 26 Jul 2019 17:26:24 +0000
+ id 1hr3zu-0002n9-OF; Fri, 26 Jul 2019 17:27:16 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id BACD328C54F
+ (Authenticated sender: andrzej.p) with ESMTPSA id A35DA27EA8C
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v6 11/24] drm/imx: imx-tve: Provide ddc symlink in connector's
- sysfs
-Date: Fri, 26 Jul 2019 19:23:05 +0200
-Message-Id: <1c660776741760b8094484268b670a09da8a9042.1564161140.git.andrzej.p@collabora.com>
+Subject: [PATCH v6 15/24] drm/tilcdc: Provide ddc symlink in connector sysfs
+ directory
+Date: Fri, 26 Jul 2019 19:23:09 +0200
+Message-Id: <fab2ffcf95c2caa1674ddc6e762d53b0c0ce9c78.1564161140.git.andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1564161140.git.andrzej.p@collabora.com>
 References: <cover.1564161140.git.andrzej.p@collabora.com>
 In-Reply-To: <cover.1564161140.git.andrzej.p@collabora.com>
 References: <cover.1564161140.git.andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_102623_157689_2AF92A86 
-X-CRM114-Status: GOOD (  11.30  )
+X-CRM114-CacheID: sfid-20190726_102715_053900_15317C29 
+X-CRM114-Status: GOOD (  11.07  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -113,26 +111,26 @@ Use the ddc pointer provided by the generic connector.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- drivers/gpu/drm/imx/imx-tve.c | 6 ++++--
+ drivers/gpu/drm/tilcdc/tilcdc_tfp410.c | 6 ++++--
  1 file changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpu/drm/imx/imx-tve.c b/drivers/gpu/drm/imx/imx-tve.c
-index 649515868f86..5bbfaa2cd0f4 100644
---- a/drivers/gpu/drm/imx/imx-tve.c
-+++ b/drivers/gpu/drm/imx/imx-tve.c
-@@ -484,8 +484,10 @@ static int imx_tve_register(struct drm_device *drm, struct imx_tve *tve)
+diff --git a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c b/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
+index c6e4e52f32bc..d51776dd7a03 100644
+--- a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
++++ b/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
+@@ -222,8 +222,10 @@ static struct drm_connector *tfp410_connector_create(struct drm_device *dev,
  
- 	drm_connector_helper_add(&tve->connector,
- 			&imx_tve_connector_helper_funcs);
--	drm_connector_init(drm, &tve->connector, &imx_tve_connector_funcs,
--			   DRM_MODE_CONNECTOR_VGA);
-+	drm_connector_init_with_ddc(drm, &tve->connector,
-+				    &imx_tve_connector_funcs,
-+				    DRM_MODE_CONNECTOR_VGA,
-+				    tve->ddc);
+ 	connector = &tfp410_connector->base;
  
- 	drm_connector_attach_encoder(&tve->connector, &tve->encoder);
+-	drm_connector_init(dev, connector, &tfp410_connector_funcs,
+-			DRM_MODE_CONNECTOR_DVID);
++	drm_connector_init_with_ddc(dev, connector,
++				    &tfp410_connector_funcs,
++				    DRM_MODE_CONNECTOR_DVID,
++				    mod->i2c);
+ 	drm_connector_helper_add(connector, &tfp410_connector_helper_funcs);
  
+ 	connector->polled = DRM_CONNECTOR_POLL_CONNECT |
 -- 
 2.17.1
 
