@@ -2,87 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A35DF77282
-	for <lists+linux-rockchip@lfdr.de>; Fri, 26 Jul 2019 22:01:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07AAB7782E
+	for <lists+linux-rockchip@lfdr.de>; Sat, 27 Jul 2019 12:38:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ue40UtoRGLhXZtUNmGN3SVGZoWwBBXOqda18oh2Hlmk=; b=dGN8dRQKd5YbC4
-	7qYZPBW4W7wfcCgLrHRJUxGZydhVDnoKrxC4D3HpZoGocJHGeahI3rjcGrLK01hMDeMkwPHfZEhqF
-	7XR4fPMvUQcVPI3UYnhL5zk6ripQ8/Y4WrK91aV+6ylNrh9f940+37Znf81ZYi6e5PXJpojaF1nCt
-	LcYKqbQS5ROCF10txD1107oq1Tbi75brdKuMmVxnp1EN70u5X+qtKdR1tVo0/iaNyOgUow7ljUT8K
-	XiR09Vt3wCMKNIsO8MmdvnMdqfkGHIgCZZhSq35LyXF8yCfxTIA2S6LWb754EFm8mcNRDUuv/nYiI
-	RbuG6HhbFaawSm7Yrlhw==;
+	List-Owner; bh=ulPBl3lVqTPpm6i5AOjc0j5MTz6c9Xe9yVZ/NoZS+GM=; b=aGhbz9nIbpysR0
+	/v3YsQtg410mt5b0GqO4nX+4K8lTcnfn1WaDHxXcnbNURxNV1Q5KM4h++PwMO39PAQJn/c40DhLAJ
+	+d/Xep+xJPR7edL2jjOJgk9kRw29wgt+NeA4EiXwAq4B6/xTpsAeTIHbUFc4H12SaurHnZ4h8roZU
+	DlPU/GtmU94ur7qB9UKj96cEEhDxEYmf+bIpWYiqLp8ukmfPBuDJmmJUPiUkEPByrxNhD3DfYyKNs
+	ud1kSobJOIYMYWh8NLAR03vjjAPgsqfe0MTBQnEPgxHseT7HzU1gA2I6CUn6pnohhNaKHY2Uyh3mB
+	y8oLXZhJqZyk0x0jx8qA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr6P7-0007Jc-Qq; Fri, 26 Jul 2019 20:01:25 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hrK5Y-0002UM-1E; Sat, 27 Jul 2019 10:38:08 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hr6Ov-00079Y-EK; Fri, 26 Jul 2019 20:01:14 +0000
-Received: by mail-wr1-x444.google.com with SMTP id 31so55628587wrm.1;
- Fri, 26 Jul 2019 13:01:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=rfVjmU6zckNNoodvMSaWRWYTNnSyu1bvmT3h34KJDJs=;
- b=NA8IkunSglfLpeiY4HKXYERVf3hamv4cLI0On7Vvj+pha7RGhezryiHVGqhlB2OZLk
- nBbyynnjO2qBIzopg6liN5Xf2p89tf9HF0gyp73Mqun7/fbZF8op0DACICyOGSy6ra9G
- li70SIrDvhTzCTfJDaakdg8JsdpymTQ+Cd0rb8BFZSi1ckqT6pk3yBZrP1ZOWMvM+E1o
- d7OrPNjNIakYTUHRjpCTtxBC62pR+vygqSKsMLhDp0JMBYagmi2wzwSWCgfqWJPyWppi
- 7AhbY80grQ8K1whExlNf7oUIFl4W8KcsCH40g2qpfPgz0cDGt84D4BGCx/Z8UWA+9kTl
- zGnQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=rfVjmU6zckNNoodvMSaWRWYTNnSyu1bvmT3h34KJDJs=;
- b=YAOzY7cudD6OsXZbDHZsOluBtnxHN4J5dmUw5U8FhP5donZ7GRHoU6HUYwzT8Kxa/t
- Fy2hUOIkEWkOi9Q1EiY2V9tPE7sbA2HuyLZfyNSACTaXhuWnM6Lg7xsxkO/Ciy/Vat0z
- L5cH3XHrYnLmiGv6klWMJbgF0Tl+fPV6oocHp9nqNslr6jFg3Bami4xXOKcKghww7wnQ
- rHdLVxkGmP/0jZHNdBuBAkKKinIJdNjDYpCuosZMlSrs6kh0LORTas7a9uDhxUrUnfwW
- puLeac/npsO4TPnUgqBhhKhZ8KGG5CZIWDgkFLWt5Vh4fcF3+eQkBWMOdHt3Jn0guVh6
- LQeQ==
-X-Gm-Message-State: APjAAAWGavkc3WEnCdQspJbLgsK1IzWci7lMRCmhreFAqH00l8O7zmzj
- 8dFPT9KL7bxz9p8CrOu2T+p8CBFw11xd2RwrAVA=
-X-Google-Smtp-Source: APXvYqzYfN2e53VE31jTG/HV3K11OB5CIxcMbrH1977yWkwnWA0P8bUKkQTRD0rxecBJcxOJVlvSZpeba1SvC3LN1RY=
-X-Received: by 2002:adf:f94a:: with SMTP id q10mr78465380wrr.341.1564171271875; 
- Fri, 26 Jul 2019 13:01:11 -0700 (PDT)
-MIME-Version: 1.0
-References: <cover.1564161140.git.andrzej.p@collabora.com>
- <7fee0fa0d0f77af6595d283d5f3ae5d551475821.1564161140.git.andrzej.p@collabora.com>
- <CADnq5_O1B59Q+68fJgtf_bn_=WQ9yrVPq-V5tL1VQ3+vzgf1Zw@mail.gmail.com>
- <038809c7-e664-e365-a778-03bc11299193@collabora.com>
-In-Reply-To: <038809c7-e664-e365-a778-03bc11299193@collabora.com>
-From: Alex Deucher <alexdeucher@gmail.com>
-Date: Fri, 26 Jul 2019 16:00:59 -0400
-Message-ID: <CADnq5_PJj8_dtq0aJWECcRJ0_uC-XpG6Z6p9Gj3fV_fTLGwZBA@mail.gmail.com>
-Subject: Re: [PATCH v6 22/24] drm/amdgpu: Provide ddc symlink in connector
- sysfs directory
+ id 1hrK5T-0002TQ-B8; Sat, 27 Jul 2019 10:38:04 +0000
+Received: from localhost (lfbn-1-17239-195.w86-248.abo.wanadoo.fr
+ [86.248.61.195])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 60648206BA;
+ Sat, 27 Jul 2019 10:38:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564223881;
+ bh=t+DnJwCqt1ztDpiPIMnsCglNhd0On0wGZoxwWTQz5WE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Btng2+AEe/mchE7b3m1ljTY+N+EV1zmusfaGd6RNcJvNmV2IB8CpAHabaSX64Vn56
+ 1qcRuhIXkiM2bOR14XskOPQVpJZoC+nrAB3jyqyAFnfrayPNX9Ewq6XXlCtGe/7m8A
+ KLp7GIIxa+Y4A3pTxRnw9HpT5y3Q0W2fnbxRIRwY=
+Date: Sat, 27 Jul 2019 12:37:56 +0200
+From: Maxime Ripard <mripard@kernel.org>
 To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Subject: Re: [PATCH v6 07/24] drm/sun4i: hdmi: Provide ddc symlink in sun4i
+ hdmi connector sysfs directory
+Message-ID: <20190727103756.mow2d6mzhameue6h@flea.home>
+References: <cover.1564161140.git.andrzej.p@collabora.com>
+ <b5a8881b226a9af7d31eb6a57d7fe0fccdcb3a47.1564161140.git.andrzej.p@collabora.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <b5a8881b226a9af7d31eb6a57d7fe0fccdcb3a47.1564161140.git.andrzej.p@collabora.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_130113_503985_C578B4E8 
-X-CRM114-Status: GOOD (  13.24  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190727_033803_420950_FA7B5C32 
+X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (alexdeucher[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,79 +80,64 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Maling list - DRI developers <dri-devel@lists.freedesktop.org>,
- LKML <linux-kernel@vger.kernel.org>, linux-tegra@vger.kernel.org,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
- Sam Ravnborg <sam@ravnborg.org>, linux-samsung-soc@vger.kernel.org,
- Sean Paul <sean@poorly.run>, Allison Randal <allison@lohutok.net>,
+Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
+ Heiko =?utf-8?Q?St=C3=BCbner?= <heiko@sntech.de>,
+ Sam Ravnborg <sam@ravnborg.org>, Neil Armstrong <narmstrong@baylibre.com>,
+ David Airlie <airlied@linux.ie>, Ramalingam C <ramalingam.c@intel.com>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ dri-devel@lists.freedesktop.org, Douglas Anderson <dianders@chromium.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>,
+ Ville =?utf-8?B?U3lyasOkbMOk?= <ville.syrjala@linux.intel.com>,
+ "David \(ChunMing\) Zhou" <David1.Zhou@amd.com>,
+ linux-samsung-soc@vger.kernel.org, Joonyoung Shim <jy0922.shim@samsung.com>,
+ Vincent Abriou <vincent.abriou@st.com>, Rob Clark <robdclark@gmail.com>,
  Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
  linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
  Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Dave Airlie <airlied@redhat.com>, "Wentland, Harry" <Harry.Wentland@amd.com>,
- Thomas Zimmermann <tzimmermann@suse.de>, Jonas Karlman <jonas@kwiboo.se>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
- Maxime Ripard <mripard@kernel.org>, Mamta Shukla <mamtashukla555@gmail.com>,
- linux-mediatek@lists.infradead.org, Jyri Sarha <jsarha@ti.com>,
- Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ CK Hu <ck.hu@mediatek.com>, Dave Airlie <airlied@redhat.com>,
+ intel-gfx@lists.freedesktop.org, Shashank Sharma <shashank.sharma@intel.com>,
+ freedreno@lists.freedesktop.org, linux-tegra@vger.kernel.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-arm-msm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Jani Nikula <jani.nikula@linux.intel.com>, Inki Dae <inki.dae@samsung.com>,
+ Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
+ Jyri Sarha <jsarha@ti.com>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Vincent Abriou <vincent.abriou@st.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>,
- amd-gfx list <amd-gfx@lists.freedesktop.org>,
- Tomi Valkeinen <tomi.valkeinen@ti.com>,
- freedreno <freedreno@lists.freedesktop.org>,
- Seung-Woo Kim <sw0312.kim@samsung.com>,
- Douglas Anderson <dianders@chromium.org>, "Kazlauskas,
- Nicholas" <nicholas.kazlauskas@amd.com>, Todor Tomov <todor.tomov@linaro.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Chris Wilson <chris@chris-wilson.co.uk>,
+ Sean Paul <sean@poorly.run>, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Enrico Weigelt <info@metux.net>,
+ Jernej Skrabec <jernej.skrabec@siol.net>, amd-gfx@lists.freedesktop.org,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, Eric Anholt <eric@anholt.net>,
+ Thomas Zimmermann <tzimmermann@suse.de>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
+ linux-kernel@vger.kernel.org, Todor Tomov <todor.tomov@linaro.org>,
  Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
- =?UTF-8?Q?Christian_K=C3=B6nig?= <christian.koenig@amd.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Alex Deucher <alexander.deucher@amd.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ Christian =?utf-8?B?S8O2bmln?= <christian.koenig@amd.com>,
  Gerd Hoffmann <kraxel@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, Jul 26, 2019 at 3:42 PM Andrzej Pietrasiewicz
-<andrzej.p@collabora.com> wrote:
+On Fri, Jul 26, 2019 at 07:23:01PM +0200, Andrzej Pietrasiewicz wrote:
+> Use the ddc pointer provided by the generic connector.
 >
-> Hi Alex,
->
->
-> W dniu 26.07.2019 o 21:28, Alex Deucher pisze:
-> > On Fri, Jul 26, 2019 at 1:28 PM Andrzej Pietrasiewicz
-> > <andrzej.p@collabora.com> wrote:
-> >>
-> >> Use the ddc pointer provided by the generic connector.
-> >>
-> >> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-> >
-> > Note that this only covers the legacy display code.  The new DC
-> > display code also needs to be converted.  See:
-> > drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c
-> > drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm_mst_types.c
->
-> In amdgpu_dm_connector_init() the ddc is &i2c->base, is it?
+> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 
-Yes.
+Acked-by: Maxime Ripard <maxime.ripard@bootlin.com>
 
->
-> But it is not clear to me how can I find ddc pointer in
-> dm_dp_add_mst_connector()?
+Maxime
 
-+ Harry and Nick.
-
-hmmm, not sure about MST.  Maybe just skip them for now.
-
-Alex
-
->
-> Andrzej
->
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 Linux-rockchip mailing list
