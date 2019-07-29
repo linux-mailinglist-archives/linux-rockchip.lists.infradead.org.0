@@ -2,79 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E485786A3
-	for <lists+linux-rockchip@lfdr.de>; Mon, 29 Jul 2019 09:48:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5491786A4
+	for <lists+linux-rockchip@lfdr.de>; Mon, 29 Jul 2019 09:48:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dX2tnaGUDoTAVLinPlkir1B8VQPbPFHeQ0ty2eusUuk=; b=R8YcpeEYt9h6EH
-	XTTdFGXKX7ahEFq8XZD718xennM6lrBIduTqYf89o3Mut3HFCj2RXA2OMxjMijAF5N5vR8xtf91pV
-	lenbYSs+dcuvnM61VtVL3X58yCp0CVmgfBEiQc/mQ9szuK9ww+dDSdUVUJQWDbN0sQZAMvkqtIr+8
-	bTWOShtjXHtA4VIcwb6LXwIfctptmwQLNYCMd47VsokDzHUV6i7WaOoDJyLLpu9LQRzb96Wf7jek1
-	6WJK0CX/D7fr9SGsNut92aP1HSSZD5g0T5bZeNZHPqljEJDwO3GwBXUNGdtp9sbGg2C7MqgUxPsV1
-	JDwQVNo0lLncv4UQfpeA==;
+	List-Owner; bh=LfWEofBFJhIs1+ytpgKrIpQKdYkiZc2k6+jHDoAyrhM=; b=QFRZ2bSaTu0tiB
+	CQmTLb91qvXOP7vaItso1lFyhSxwZzBNGASCg6VOCTwdMtzSmr/WdULYpjGQTF/qLgy+/SirZK+wP
+	d2gGTZuptYCsE/3KFvKgfYs06dioTzZoG8XT+pr5hgXPFKT5FMAiezXVFxY/v9MQlyt5ZIXdCro0k
+	+2whiyNDRX/4fnzITO+0TwGvRlrK5YRrWoq9azQLvsW8/AADuVbi8A7z/K2FPZ931hFZNRkEwAfz9
+	UvbBMUcxHKehFrpIDrndZ0BVW8RSu2TTU+119oSHQNN4dAkEo/c5aPAEYGbVFmNhEPWkTo4z2xHmi
+	mTFaqWNNOdkId3cRNR6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs0OI-0002w1-8N; Mon, 29 Jul 2019 07:48:18 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hs0OL-00039V-Nr; Mon, 29 Jul 2019 07:48:21 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs0OE-0002nf-9p
- for linux-rockchip@lists.infradead.org; Mon, 29 Jul 2019 07:48:15 +0000
-Received: by mail-pf1-x444.google.com with SMTP id u14so27601410pfn.2
- for <linux-rockchip@lists.infradead.org>; Mon, 29 Jul 2019 00:48:14 -0700 (PDT)
+ id 1hs0OI-0002yY-3v
+ for linux-rockchip@lists.infradead.org; Mon, 29 Jul 2019 07:48:19 +0000
+Received: by mail-pg1-x544.google.com with SMTP id u17so27808424pgi.6
+ for <linux-rockchip@lists.infradead.org>; Mon, 29 Jul 2019 00:48:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=o7CIWIRFdW751SnjnqsVlk5xcbVjSz3RZofqr0wVIcY=;
- b=gmrxZe8jotnJVIJnHJbVvHrTpbhM04oGl4ZyWqB3xuf4LNTrnzZCDyPcI8dLQjud2G
- cc+bDjRM3IGuJT1z+xYPyDp6G2tqenoYmpU+BLyiMoTfS85qu/SC6Eeg6Cj4vP8aEKV5
- 5cibkyJCWACwyfIlEbqvKxJqQdlYBVLfIWZlU=
+ bh=u7szBjNEXUp4OiSeFnl8aPhRsuIeh4Tl0P1JrlmGS+4=;
+ b=c7WwARmCOMC1k9yY6B799HcEcsOa42QQyjFXyDCDvq+zZ3J9psjI3ti/tvw1qYvxu9
+ lnDGoCh4ONCjBZLb1ga8aUOjPN2EYJORN/iI5TlNAwIE17vqxefmcPO1UyIYWmzX8Fy5
+ fqbxnIrl/8vJqLFSsxJvcRJ+vJEFxZfA9WOrI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=o7CIWIRFdW751SnjnqsVlk5xcbVjSz3RZofqr0wVIcY=;
- b=NbDkjarpwjxXXWN9PAiOGHYA3yua8RB+mQ0K/bF1WGbLkC21xXt2drpkkzgGS/kvns
- fIGtq5ff6OC+UMjB6Y1W6sVCMl4b0o5qEpvroYT5K9cp/hs0ex8r/4pcUdtYv20SXLXj
- Z7JzhZgUcnrCSGYKmsG45jfoXwat5N0mfsNQm1Ge+Ot6qJhQ8/dsmeDjF5yHMqre37i4
- awxAuNimJCct7sAG0iNyyx6AD/AB9her7lmtNncAuYfvRI7tknFnUcFrlHyfWPH4I5/E
- sCbDSdESEzwbeIFwEIX5SY5BPSuXGXDFTIJZRvbS/9qsUu0oZdy3AWnfkXj+25k2lHf5
- YSWQ==
-X-Gm-Message-State: APjAAAVbAfXz46/WhiPfGUUYIQ2l+yM37jslcuuV41FGhCHLEME3u8So
- 4pxFu4qANrNhn1AZYi1CZZ3MqQ==
-X-Google-Smtp-Source: APXvYqw+t67A3+soEwfQa7CnwhZqhgfpcfBNXEJVKaR1hHQl3CsEaUzilc9zqidKcPYi4e+TuV/+8A==
-X-Received: by 2002:a17:90a:360c:: with SMTP id
- s12mr112293213pjb.30.1564386493822; 
- Mon, 29 Jul 2019 00:48:13 -0700 (PDT)
+ bh=u7szBjNEXUp4OiSeFnl8aPhRsuIeh4Tl0P1JrlmGS+4=;
+ b=GLamWbLQoDtS0iD5vxUcHqbaT02PqhsqHBIvenbz2oM7QXlvFXWMm8gc/O+PAWxGk7
+ dzyyiVGMOA45GIwH6g1lcjVO6cCNsTrHUyhfcQ1r9IJO8uUxJE671s4rmANV0y30iWKt
+ POH1cuG1cVe1ORr3Iyf+h/q+U++E3kGIYlQRqcPDh5bw1YHGr1TGasP9uJojGLgh55FK
+ EmjvAzJhuhM2DZOqkjhiGwUb65+zwXa0MSv+Hg41Ar8wBZsAfvXqsrydGFgEnQKEnP19
+ nfLG/gTDpXOzjFblvmNLE73kbjZF6hnL6X/8HDzzY77I6gqs8L2EtBwwvdhLkrmRDrSf
+ HK8w==
+X-Gm-Message-State: APjAAAWjMUsP0xw+J3R1sSSDa8UCw8PZt/pE3g6Eil65IVZsPJrmsbmH
+ fLSlXt/wwfrWeeY/942t+Uxr+Q==
+X-Google-Smtp-Source: APXvYqxd7DW4FUjd7e0VL24ANUFtT0eZc4uXh1C9cfD0resPdzxTBUOgEAXqeodlU+HMvAA4q8TzVQ==
+X-Received: by 2002:a65:5a44:: with SMTP id z4mr103285588pgs.41.1564386497542; 
+ Mon, 29 Jul 2019 00:48:17 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.203.41])
- by smtp.gmail.com with ESMTPSA id h14sm75723348pfq.22.2019.07.29.00.48.10
+ by smtp.gmail.com with ESMTPSA id h14sm75723348pfq.22.2019.07.29.00.48.14
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 29 Jul 2019 00:48:13 -0700 (PDT)
+ Mon, 29 Jul 2019 00:48:17 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [DO NOT MERGE] [PATCH 13/15] rk3399: rockpro64: Enable watchdog
-Date: Mon, 29 Jul 2019 13:17:09 +0530
-Message-Id: <20190729074711.16988-14-jagan@amarulasolutions.com>
+Subject: [PATCH 14/15] rockchip: rk3399: Add bootcount support
+Date: Mon, 29 Jul 2019 13:17:10 +0530
+Message-Id: <20190729074711.16988-15-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190729074711.16988-1-jagan@amarulasolutions.com>
 References: <20190729074711.16988-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_004814_433871_AEDDCBF4 
-X-CRM114-Status: UNSURE (   7.06  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190729_004818_184448_EAFD56DD 
+X-CRM114-Status: GOOD (  10.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,23 +103,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Enable watchdog in SPL and U-Boot proper for Rockpro64.
+Add bootcount support for Rockchip rk3399.
+
+The bootcount value is preserved in PMU_SYS_REG0 register,
+this would help to support redundent boot.
+
+Once the redundant boot triggers, the altboot command
+will look for extlinux-rollback.conf on particular
+bootable partition which supposed to be a recovery
+partition where redundant boot required.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- configs/rockpro64-rk3399_defconfig | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm/mach-rockchip/Kconfig        |  2 ++
+ arch/arm/mach-rockchip/rk3399/Kconfig | 10 ++++++++++
+ include/configs/rk3399_common.h       |  5 ++++-
+ 3 files changed, 16 insertions(+), 1 deletion(-)
 
-diff --git a/configs/rockpro64-rk3399_defconfig b/configs/rockpro64-rk3399_defconfig
-index 32d8415b23..f604ccc1ec 100644
---- a/configs/rockpro64-rk3399_defconfig
-+++ b/configs/rockpro64-rk3399_defconfig
-@@ -55,3 +55,5 @@ CONFIG_USB_ETHER_SMSC95XX=y
- CONFIG_USE_TINY_PRINTF=y
- CONFIG_SPL_TINY_MEMSET=y
- CONFIG_ERRNO_STR=y
-+CONFIG_WDT=y
-+CONFIG_SPL_WATCHDOG_SUPPORT=y
+diff --git a/arch/arm/mach-rockchip/Kconfig b/arch/arm/mach-rockchip/Kconfig
+index 17f31e89f3..dd5055ed69 100644
+--- a/arch/arm/mach-rockchip/Kconfig
++++ b/arch/arm/mach-rockchip/Kconfig
+@@ -184,6 +184,8 @@ config ROCKCHIP_RK3399
+ 	imply TPL_CLK
+ 	imply TPL_TINY_MEMSET
+ 	imply TPL_ROCKCHIP_COMMON_BOARD
++	imply SYS_BOOTCOUNT_SINGLEWORD if BOOTCOUNT_LIMIT
++	imply CMD_BOOTCOUNT if BOOTCOUNT_LIMIT
+ 	help
+ 	  The Rockchip RK3399 is a ARM-based SoC with a dual-core Cortex-A72
+ 	  and quad-core Cortex-A53.
+diff --git a/arch/arm/mach-rockchip/rk3399/Kconfig b/arch/arm/mach-rockchip/rk3399/Kconfig
+index 6660d05349..68ac913bcb 100644
+--- a/arch/arm/mach-rockchip/rk3399/Kconfig
++++ b/arch/arm/mach-rockchip/rk3399/Kconfig
+@@ -91,6 +91,16 @@ config TPL_STACK
+ config TPL_TEXT_BASE
+         default 0xff8c2000
+ 
++if BOOTCOUNT_LIMIT
++
++config BOOTCOUNT_BOOTLIMIT
++	default 3
++
++config SYS_BOOTCOUNT_ADDR
++	default 0xff3100f0	# PMU_SYS_REG0
++
++endif # BOOTCOUNT_LIMIT
++
+ source "board/rockchip/evb_rk3399/Kconfig"
+ source "board/theobroma-systems/puma_rk3399/Kconfig"
+ source "board/vamrs/rock960_rk3399/Kconfig"
+diff --git a/include/configs/rk3399_common.h b/include/configs/rk3399_common.h
+index 67b48e03ba..ace82928d1 100644
+--- a/include/configs/rk3399_common.h
++++ b/include/configs/rk3399_common.h
+@@ -70,7 +70,10 @@
+ 	"fdtfile=" CONFIG_DEFAULT_FDT_FILE "\0" \
+ 	"partitions=" PARTS_DEFAULT \
+ 	ROCKCHIP_DEVICE_SETTINGS \
+-	BOOTENV
++	BOOTENV \
++	"altbootcmd=" \
++		"setenv boot_syslinux_conf extlinux/extlinux-rollback.conf;" \
++		"run distro_bootcmd\0"
+ 
+ #endif
+ 
 -- 
 2.18.0.321.gffc6fa0e3
 
