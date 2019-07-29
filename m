@@ -2,59 +2,67 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CE6278840
-	for <lists+linux-rockchip@lfdr.de>; Mon, 29 Jul 2019 11:22:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8924E794C2
+	for <lists+linux-rockchip@lfdr.de>; Mon, 29 Jul 2019 21:35:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TlY/UVrgLmSl14Rsg9wyvjtvxg4IQaqZ238E9PSzPtw=; b=Tkkvt01lOXHLVG
-	XLcDpVIVOGU9A7E45bRwuufJ6uqfgD1iv2QeB2RHOLA1V+tCe0UgFL5dOnXxFv9nuOfmoBfgvPG+H
-	MLDanjEYzXbFxG9vbfBzrl7JbQqoks9J53EE41PwVKcKEVyyaac+eQsQ9gt896T1UIgdVDUoQV1ND
-	CGBT3yk0zmSFSe/VFZFC0JAgkI01RZWmU8MlWwP2Kq2aSpPQoNPISwfarB8jEhbzvxd9P03qr0QlG
-	kwr+sk2gudEQBASgIayh6uQNx0K/A0BFT+C/NpxP31yncjq6FZwgV+URFPYpvyY48CTn9L9ZcRduO
-	yhNWZw8Jg946FZC1OhFw==;
+	List-Owner; bh=nHP8/Pn90DumNLfH0yLH2JgWNAGnYYNsefXGvozBIy4=; b=Wg1IGba8WMl7Zc
+	1bYZno7Zagy/BGXgTJUw/gvPncQahnmtCvClD2JQIz9izyt/xLB42FzMy4EZbOdx9WOCo13aSN3i7
+	ezzHUJm573IgduRIt/8pG1jVJpICHq77k2SZrpGSLCwynEe5ieI/hLlV0Nm17//whPkxqSE/Fm7tb
+	duEweuKeA7PfmVH47ft8UgELEjve4DR3JvsLIvnAFPo90ioAOjCWUw/hs5Q3xkTAiGitnrOHAhHWH
+	QVf16GZsYGxJQnKtK2TnXEFU70fcxMB5SLyKqk0r3hZIPw9v1YWifn2TRU4DccFDhIKAHbUad8xOV
+	GONndEO9UH8qkBDCKJGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs1rI-0003G6-PM; Mon, 29 Jul 2019 09:22:20 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hsBQY-0002nL-Qk; Mon, 29 Jul 2019 19:35:22 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs1rG-0003FB-3Z
- for linux-rockchip@lists.infradead.org; Mon, 29 Jul 2019 09:22:19 +0000
-Received: from lupine.hi.pengutronix.de
- ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1hs1pu-0007nn-UP; Mon, 29 Jul 2019 11:20:54 +0200
-Message-ID: <1564392042.7633.1.camel@pengutronix.de>
-Subject: Re: [PATCH v6 11/24] drm/imx: imx-tve: Provide ddc symlink in
- connector's sysfs
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>, 
- dri-devel@lists.freedesktop.org
-Date: Mon, 29 Jul 2019 11:20:42 +0200
-In-Reply-To: <1c660776741760b8094484268b670a09da8a9042.1564161140.git.andrzej.p@collabora.com>
-References: <cover.1564161140.git.andrzej.p@collabora.com>
- <1c660776741760b8094484268b670a09da8a9042.1564161140.git.andrzej.p@collabora.com>
-X-Mailer: Evolution 3.22.6-1+deb9u2 
-Mime-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-rockchip@lists.infradead.org
+ id 1hsBQU-0002i4-FD
+ for linux-rockchip@lists.infradead.org; Mon, 29 Jul 2019 19:35:19 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A87912070B;
+ Mon, 29 Jul 2019 19:35:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564428918;
+ bh=XYN/qrYwQHRKz9KRB1CiZLD9OaTPu1tl4KBb3q3d40o=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=tdlKejRGSSA7euO2+D348JQukrnModNHb19+F8NDdGJGOLHrxkjHJZS+RqAdj7+X7
+ aHVcNiR2HUP67yXxywl4BY1Zkfh20faf5MZMDYp7QsXmfWkzp0eOBkcoJwyi/T4RKx
+ YwTJbQndqX7hDNy0x2XDqvbYjk+ss98a4D/+i1QY=
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 4.14 225/293] pinctrl: rockchip: fix leaked of_node references
+Date: Mon, 29 Jul 2019 21:21:56 +0200
+Message-Id: <20190729190841.727001383@linuxfoundation.org>
+X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190729190820.321094988@linuxfoundation.org>
+References: <20190729190820.321094988@linuxfoundation.org>
+User-Agent: quilt/0.66
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_022218_145850_6EC3B3D5 
-X-CRM114-Status: GOOD (  14.07  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190729_123518_530222_0E978B8A 
+X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,83 +75,55 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
- Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
- Sam Ravnborg <sam@ravnborg.org>, Neil Armstrong <narmstrong@baylibre.com>,
- David Airlie <airlied@linux.ie>, Ramalingam C <ramalingam.c@intel.com>,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- Douglas Anderson <dianders@chromium.org>, Andrzej Hajda <a.hajda@samsung.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>, kernel@collabora.com,
- Fabio Estevam <festevam@gmail.com>,
- Ville =?ISO-8859-1?Q?Syrj=E4l=E4?= <ville.syrjala@linux.intel.com>, "David
- \(ChunMing\) Zhou" <David1.Zhou@amd.com>, linux-samsung-soc@vger.kernel.org,
- Joonyoung Shim <jy0922.shim@samsung.com>, Jyri Sarha <jsarha@ti.com>,
- Vincent Abriou <vincent.abriou@st.com>, Rob Clark <robdclark@gmail.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
- Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- CK Hu <ck.hu@mediatek.com>, Dave Airlie <airlied@redhat.com>,
- Harry Wentland <harry.wentland@amd.com>, intel-gfx@lists.freedesktop.org,
- Shashank Sharma <shashank.sharma@intel.com>, freedreno@lists.freedesktop.org,
- linux-tegra@vger.kernel.org, Pengutronix Kernel Team <kernel@pengutronix.de>,
- Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Jani Nikula <jani.nikula@linux.intel.com>, Inki Dae <inki.dae@samsung.com>,
- Alexios Zavras <alexios.zavras@intel.com>,
- Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
- Maxime Ripard <mripard@kernel.org>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Chris Wilson <chris@chris-wilson.co.uk>,
- Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
- Jernej Skrabec <jernej.skrabec@siol.net>, amd-gfx@lists.freedesktop.org,
- Tomi Valkeinen <tomi.valkeinen@ti.com>, Eric Anholt <eric@anholt.net>,
- Thomas Zimmermann <tzimmermann@suse.de>,
- Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
- linux-kernel@vger.kernel.org, Todor Tomov <todor.tomov@linaro.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
- Daniel Vetter <daniel@ffwll.ch>, Alex Deucher <alexander.deucher@amd.com>,
- Shawn Guo <shawnguo@kernel.org>,
- Christian =?ISO-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>,
- Gerd Hoffmann <kraxel@redhat.com>
+Cc: Sasha Levin <sashal@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ linux-rockchip@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>, stable@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Wen Yang <wen.yang99@zte.com.cn>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, 2019-07-26 at 19:23 +0200, Andrzej Pietrasiewicz wrote:
-> Use the ddc pointer provided by the generic connector.
-> 
-> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+[ Upstream commit 3c89c70634bb0b6f48512de873e7a45c7e1fbaa5 ]
 
-Acked-by: Philipp Zabel <p.zabel@pengutronix.de>
+The call to of_parse_phandle returns a node pointer with refcount
+incremented thus it must be explicitly decremented after the last
+usage.
 
-regards
-Philipp
+Detected by coccinelle with the following warnings:
+./drivers/pinctrl/pinctrl-rockchip.c:3221:2-8: ERROR: missing of_node_put; acquired a node pointer with refcount incremented on line 3196, but without a corresponding object release within this function.
+./drivers/pinctrl/pinctrl-rockchip.c:3223:1-7: ERROR: missing of_node_put; acquired a node pointer with refcount incremented on line 3196, but without a corresponding object release within this function.
 
-> ---
->  drivers/gpu/drm/imx/imx-tve.c | 6 ++++--
->  1 file changed, 4 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/imx/imx-tve.c b/drivers/gpu/drm/imx/imx-tve.c
-> index 649515868f86..5bbfaa2cd0f4 100644
-> --- a/drivers/gpu/drm/imx/imx-tve.c
-> +++ b/drivers/gpu/drm/imx/imx-tve.c
-> @@ -484,8 +484,10 @@ static int imx_tve_register(struct drm_device *drm, struct imx_tve *tve)
->  
->  	drm_connector_helper_add(&tve->connector,
->  			&imx_tve_connector_helper_funcs);
-> -	drm_connector_init(drm, &tve->connector, &imx_tve_connector_funcs,
-> -			   DRM_MODE_CONNECTOR_VGA);
-> +	drm_connector_init_with_ddc(drm, &tve->connector,
-> +				    &imx_tve_connector_funcs,
-> +				    DRM_MODE_CONNECTOR_VGA,
-> +				    tve->ddc);
->  
->  	drm_connector_attach_encoder(&tve->connector, &tve->encoder);
->  
+Signed-off-by: Wen Yang <wen.yang99@zte.com.cn>
+Cc: Linus Walleij <linus.walleij@linaro.org>
+Cc: Heiko Stuebner <heiko@sntech.de>
+Cc: linux-gpio@vger.kernel.org
+Cc: linux-rockchip@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/pinctrl/pinctrl-rockchip.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/pinctrl/pinctrl-rockchip.c b/drivers/pinctrl/pinctrl-rockchip.c
+index a9bc1e01f982..5d6cf024ee9c 100644
+--- a/drivers/pinctrl/pinctrl-rockchip.c
++++ b/drivers/pinctrl/pinctrl-rockchip.c
+@@ -2941,6 +2941,7 @@ static int rockchip_get_bank_data(struct rockchip_pin_bank *bank,
+ 						    base,
+ 						    &rockchip_regmap_config);
+ 		}
++		of_node_put(node);
+ 	}
+ 
+ 	bank->irq = irq_of_parse_and_map(bank->of_node, 0);
+-- 
+2.20.1
+
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
