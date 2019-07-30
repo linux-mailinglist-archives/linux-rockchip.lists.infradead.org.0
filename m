@@ -2,80 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37F417B117
-	for <lists+linux-rockchip@lfdr.de>; Tue, 30 Jul 2019 20:02:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E6897B1AB
+	for <lists+linux-rockchip@lfdr.de>; Tue, 30 Jul 2019 20:19:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x6csxMVpK1Z7aAJehM8ERWm0oQF/Flg9fnddOixvzBg=; b=Na6JKQpuVP4I1L
-	wBQhhV+ceQJ240TAYbDUyBm7dyRCac8WNk4ASRrf3VKYR7gr4PFGuNDJRMgmTmrlYvK9Kanda5pwV
-	EMr8yDUBhcfcoi4pGuPlegn+faeQGGnw7Sag7fITwsrnlTLbV0K0WO/1v1Gmhc5w6zHulvxzVj9V3
-	UCcyQ4z78Bsx6Pvl1CwVw3AiJTiCy4quvdQ1gOsq0chwLHOINiTQh01SsawZxT0CwQTomXIn/9Us8
-	zBI3qhubq8gb+Kph840Qj1743YWZXsvlazJ7rG6N4rNfpXedfV5K1Vd02ARr/66mtfZSTNhE3aXGx
-	HaJMxMCuZollHXfcArkQ==;
+	List-Owner; bh=PhX6vnKGMQ08dYSUmzZUqzZ+rt1bIOTGRHfC4hiswtc=; b=itMWBQjrL9gLfk
+	HsNGpBbyYAF3bjNZB7vam0Y9ovZo6dRdUTL5o5EQ+Xm6vFEGla9T+9V/GJ7g9ZifllhPhrV6yjpIW
+	p4xObUl2wbj8gTqaHg/fktmczO9M4oKv3reU7i1jH9vTapbO1qveLTjMwo6bxslh5i3DxZTOorDTF
+	YHPsiK4+6TXQx3hyN04FsDNfZEbkfd2ydypM+SeydiaQyTxOq5zfYaEVM46jKb43tUXDUUo6sxA2s
+	YqkBReNLlBu/NFjfCsC2q6rkgwxAM+ZVH2/fG4G4fb5LTLPmDPFMrjtQ84ZU1sIpebkj15gq/yJhB
+	ZjpGldlSiK7AiH/WA6mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsWRl-0004R7-Kj; Tue, 30 Jul 2019 18:02:01 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1hsWii-0002t9-5j; Tue, 30 Jul 2019 18:19:32 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsWRi-0004QU-JO
- for linux-rockchip@lists.infradead.org; Tue, 30 Jul 2019 18:01:59 +0000
-Received: by mail-io1-xd41.google.com with SMTP id h6so5021915iom.7
- for <linux-rockchip@lists.infradead.org>; Tue, 30 Jul 2019 11:01:58 -0700 (PDT)
+ id 1hsWiV-0002i6-PX
+ for linux-rockchip@lists.infradead.org; Tue, 30 Jul 2019 18:19:21 +0000
+Received: by mail-pf1-x442.google.com with SMTP id q10so30251932pff.9
+ for <linux-rockchip@lists.infradead.org>; Tue, 30 Jul 2019 11:19:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NcAR3GqqxpAusQVog8Fhc1feuDH351bpfQTCcdx/nxs=;
- b=STnYbrirbKr1yAmc2nPF92sj0DFq3tq71Bs1c1x0ibWy4hdKDtZ8Tq4VPh1Kn85/6B
- w6lcKTR8uT01woEtqCg9jLmTWvC64bWHDataDtPgVlKtQQaaffkWMeVo4I/xwBfioTRL
- EcR2XKnbW3Nia+1xvzACV2DzMbUJEtS9EKIhY=
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=WYV3lJkZz1M8QFLTNcbisKstq4q45qxIoF6vMekR4Ik=;
+ b=mZqGk/cUp6ZNJEsrEHgluVspbQqD/bx8uYW6vGDU/FpCW5W4GoxK+4/b1HjJ4bSDCq
+ xyW3ZS0uf0DfYXzWcHQIeKMfCqgFrRDayoLgDTv4QOWbhe8Raxi6hVsR1bQ6j1+njf6I
+ kMOQ/nc0tCcPOfurVrxe/F1hJnYiinkBApcH4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=NcAR3GqqxpAusQVog8Fhc1feuDH351bpfQTCcdx/nxs=;
- b=CXd08/lr3GYj8k7p+yraolAaQQAF2cBIREUoP5G0SrSa5LY+EIVcG0gfwCYbXcd8py
- etThhTB8Ez8AGUj3zmG2/FGAZC3vw+L6j6CfwGKbqOF76QXzYBVeKHKN3jCJMGQjuTaz
- +jwn159JSDNjP2P5X1WG0gB/1/C1PkeQgbIn/fx5RnqDcl0dxivuHXHjB8itbgrZmOzf
- 9QOE/nbyizUEaoybg3MnuznszgicH6xgoGtP85hEh9YPpB0kGhugWxeEz2Sc6vpQTvi4
- EJ5vaK0RpVNnHfoCiGH9HXrCwQE6sn5DCgUwMajToyxT0xMCR12o/VYhPmCsMoL64Rq+
- ok/A==
-X-Gm-Message-State: APjAAAVUlKBezT805thU16RH3Q+1hSQ6jKqvFjgLoRhiKSbTq+zUCZ0t
- 1k6J691m/v3UM1eG0ljSIfj7+CTfoQ0=
-X-Google-Smtp-Source: APXvYqw5XiMG1OpDBcOzZW5Y+d62I7T/Nt0AGEogqzGw+tLH+bIJH4D09iYVRzAekEeoB2TL+kWwig==
-X-Received: by 2002:a6b:f90f:: with SMTP id j15mr101314672iog.43.1564509716252; 
- Tue, 30 Jul 2019 11:01:56 -0700 (PDT)
-Received: from mail-io1-f46.google.com (mail-io1-f46.google.com.
- [209.85.166.46])
- by smtp.gmail.com with ESMTPSA id b20sm51731033ios.44.2019.07.30.11.01.54
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Tue, 30 Jul 2019 11:01:55 -0700 (PDT)
-Received: by mail-io1-f46.google.com with SMTP id s7so130063572iob.11
- for <linux-rockchip@lists.infradead.org>; Tue, 30 Jul 2019 11:01:54 -0700 (PDT)
-X-Received: by 2002:a6b:5103:: with SMTP id f3mr103345503iob.142.1564509714317; 
- Tue, 30 Jul 2019 11:01:54 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190730173444.56741-1-mka@chromium.org>
-In-Reply-To: <20190730173444.56741-1-mka@chromium.org>
-From: Doug Anderson <dianders@chromium.org>
-Date: Tue, 30 Jul 2019 11:01:42 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=Wub9Wkc5t4iQRjBK8R_d_oh4PoHPwLHb4T5+Meij7sSg@mail.gmail.com>
-Message-ID: <CAD=FV=Wub9Wkc5t4iQRjBK8R_d_oh4PoHPwLHb4T5+Meij7sSg@mail.gmail.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=WYV3lJkZz1M8QFLTNcbisKstq4q45qxIoF6vMekR4Ik=;
+ b=odEsgmFlgmhewkkB+tJTiInudgUq3VvDPyN+jmTScHANNqemnC4OSwzBLp2Vu7vU4B
+ DJO/z6RfcnH3iGIrNA2SpgM/Nthvw8NY8K3gWu1vkVKoD4g6KoAi8VkLeNoBSQ/B6QP2
+ RrgnGlipABapF/ZUAsmL/KNYQWyDwxNgxO5WQKSzfB1Sm6/k7Zbfef1j5VrI2ATktCNw
+ mkFRRKJFEg+A6xQn8rjV9+Eapri0EsuDV/SmZbEOpS0auTty0YCgMSAKU+o8Q65uRuLL
+ cDU8R4ZjyKEq/1q6HqvdCDjd2ooNHR9r3Wq8uqwxr8Zj8YYPoaF1E3FjDp3ioTB4INPP
+ 6xxg==
+X-Gm-Message-State: APjAAAU1zoSqibblGJmBwtuxY8ar7/W6/vZxHEqRAcOgx+mov17LPaR9
+ 1OAtNH0Hsljjp+pCejG4A6clsw==
+X-Google-Smtp-Source: APXvYqw4/yqmb0Rlt+53Fv5Ar1d4LMo3nzvzPjOQ1bEXUP20GHFA0n4fefD4ezGXYZ/+3e25mhoUqg==
+X-Received: by 2002:a17:90a:360c:: with SMTP id
+ s12mr120028251pjb.30.1564510759254; 
+ Tue, 30 Jul 2019 11:19:19 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
+ by smtp.gmail.com with ESMTPSA id h12sm79833057pje.12.2019.07.30.11.19.18
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 30 Jul 2019 11:19:18 -0700 (PDT)
+Date: Tue, 30 Jul 2019 11:19:16 -0700
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Doug Anderson <dianders@chromium.org>
 Subject: Re: [PATCH] ARM: dts: rockchip: A few fixes for veyron-{fievel, tiger}
-To: Matthias Kaehlcke <mka@chromium.org>
+Message-ID: <20190730181916.GJ250418@google.com>
+References: <20190730173444.56741-1-mka@chromium.org>
+ <CAD=FV=Wub9Wkc5t4iQRjBK8R_d_oh4PoHPwLHb4T5+Meij7sSg@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAD=FV=Wub9Wkc5t4iQRjBK8R_d_oh4PoHPwLHb4T5+Meij7sSg@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_110158_635845_FAA2C60B 
-X-CRM114-Status: GOOD (  11.87  )
+X-CRM114-CacheID: sfid-20190730_111919_827782_CCFA6A3A 
+X-CRM114-Status: GOOD (  13.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,68 +107,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+On Tue, Jul 30, 2019 at 11:01:42AM -0700, Doug Anderson wrote:
+> Hi,
+> 
+> On Tue, Jul 30, 2019 at 10:34 AM Matthias Kaehlcke <mka@chromium.org> wrote:
+> >
+> > @@ -130,12 +138,13 @@
+> >                         regulator-max-microvolt = <1800000>;
+> >                         regulator-name = "vdd18_lcdt";
+> >                         regulator-state-mem {
+> > -                               regulator-on-in-suspend;
+> > +                               regulator-off-in-suspend;
+> >                                 regulator-suspend-microvolt = <1800000>;
+> 
+> Please remove "regulator-suspend-microvolt = <1800000>;" which doesn't
+> make sense once you have "regulator-off-in-suspend".
 
-On Tue, Jul 30, 2019 at 10:34 AM Matthias Kaehlcke <mka@chromium.org> wrote:
->
-> @@ -130,12 +138,13 @@
->                         regulator-max-microvolt = <1800000>;
->                         regulator-name = "vdd18_lcdt";
->                         regulator-state-mem {
-> -                               regulator-on-in-suspend;
-> +                               regulator-off-in-suspend;
->                                 regulator-suspend-microvolt = <1800000>;
+will remove all instances
 
-Please remove "regulator-suspend-microvolt = <1800000>;" which doesn't
-make sense once you have "regulator-off-in-suspend".
+> >                         };
+> >                 };
+> >
+> > -               /* This is not a pwren anymore, but the real power supply,
+> > +               /*
+> > +                * This is not a pwren anymore, but the real power supply,
+> >                  * vdd10_lcd for HDMI_AVDD_1V0
+> >                  */
+> >                 vdd10_lcd: LDO_REG7 {
+> > @@ -145,7 +154,7 @@
+> >                         regulator-max-microvolt = <1000000>;
+> >                         regulator-name = "vdd10_lcd";
+> >                         regulator-state-mem {
+> > -                               regulator-on-in-suspend;
+> > +                               regulator-off-in-suspend;
+> >                                 regulator-suspend-microvolt = <1000000>;
+> 
+> Please remove "regulator-suspend-microvolt = <1000000>;" which doesn't
+> make sense once you have "regulator-off-in-suspend".
+> 
+> 
+> >                         };
+> >
+> > @@ -159,7 +168,7 @@
+> >                         regulator-max-microvolt = <3300000>;
+> >                         regulator-name = "vcc33_ccd";
+> >                         regulator-state-mem {
+> > -                               regulator-on-in-suspend;
+> > +                               regulator-off-in-suspend;
+> >                                 regulator-suspend-microvolt = <3300000>;
+> 
+> Please remove "regulator-suspend-microvolt = <3300000>;" which doesn't
+> make sense once you have "regulator-off-in-suspend".
+> 
+> 
+> Other than those things, this patch looks good to me and feel free to
+> add my Reviewed-by.
 
+Thanks for your review!
 
->                         };
->                 };
->
-> -               /* This is not a pwren anymore, but the real power supply,
-> +               /*
-> +                * This is not a pwren anymore, but the real power supply,
->                  * vdd10_lcd for HDMI_AVDD_1V0
->                  */
->                 vdd10_lcd: LDO_REG7 {
-> @@ -145,7 +154,7 @@
->                         regulator-max-microvolt = <1000000>;
->                         regulator-name = "vdd10_lcd";
->                         regulator-state-mem {
-> -                               regulator-on-in-suspend;
-> +                               regulator-off-in-suspend;
->                                 regulator-suspend-microvolt = <1000000>;
+> NOTE: when I tried applying this to my tree git
+> complained and I had to apply manually.  Could you try sending this
+> patch atop Heiko's for-next tree?  The yell I got:
+> 
+> error: sha1 information is lacking or useless
+> (arch/arm/boot/dts/rk3288-veyron-fievel.dts).
+> error: could not build fake ancestor
 
-Please remove "regulator-suspend-microvolt = <1000000>;" which doesn't
-make sense once you have "regulator-off-in-suspend".
-
-
->                         };
->
-> @@ -159,7 +168,7 @@
->                         regulator-max-microvolt = <3300000>;
->                         regulator-name = "vcc33_ccd";
->                         regulator-state-mem {
-> -                               regulator-on-in-suspend;
-> +                               regulator-off-in-suspend;
->                                 regulator-suspend-microvolt = <3300000>;
-
-Please remove "regulator-suspend-microvolt = <3300000>;" which doesn't
-make sense once you have "regulator-off-in-suspend".
-
-
-Other than those things, this patch looks good to me and feel free to
-add my Reviewed-by.  NOTE: when I tried applying this to my tree git
-complained and I had to apply manually.  Could you try sending this
-patch atop Heiko's for-next tree?  The yell I got:
-
-error: sha1 information is lacking or useless
-(arch/arm/boot/dts/rk3288-veyron-fievel.dts).
-error: could not build fake ancestor
-
-
--Doug
+Ok, I'll rebase v2 on Heiko's for-next
 
 _______________________________________________
 Linux-rockchip mailing list
