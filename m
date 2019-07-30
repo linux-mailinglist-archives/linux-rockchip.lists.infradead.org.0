@@ -2,69 +2,69 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88A3F7A80D
-	for <lists+linux-rockchip@lfdr.de>; Tue, 30 Jul 2019 14:18:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 544727A860
+	for <lists+linux-rockchip@lfdr.de>; Tue, 30 Jul 2019 14:27:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aDXw8QOKCokNdf0zOqYxAD4/nRR5S8AUQ+tb5Bj1l9I=; b=mszlaS2/Fm3C1w
-	T6OcG1uAl1sfNHlFjbbXJE74L6GseMbtknKnPecx5KG+k8+0qGvyiVSMhzWzor/IhSLd7S1FZ6dgg
-	h4X55z4DBgB+LgduW0IclIun3ly1lmKMg/koLpxWFwW+Y1jdYjZrk23hQuSiQCHEc+Mx3lekBe8Bx
-	m1D8dn63D2Vsiarjf8KVtYR4UuSNISzLkB64X+SnbeEM1yhtmA23p9YnuJApTbC6rdf20OjPhxVmK
-	Miy0pyCvteeJ52ZBvlQk42WxsAbKvWviZYilZUbzgChbWkd1ToPOdyeBs4tAJUruSeiIzRW6CxG2e
-	JL2y5WmIWwQXqjoL9jxA==;
+	List-Owner; bh=YfbRvs5JSQJ0z80vtRBsUjtonqZUQLBem/Iuaq48eqs=; b=dwYJyaMXFtqoTp
+	hGOutZEUPjUC//mraFfmd0wqa/xIhuYa0ngsz8jK8FABs04tder2ZHVt4/YX9uaqXe816nPsVjpni
+	iQW2DYlDLLNSVV1dcRr1zfDWDw3930JISG6NqlIPTpXW6iDZ5bdmRrOFOetlPRtjUfUI+F4sSTjgk
+	dqbvNre74XAp9B6GUtAs8Rk1kHRHWZqe6O/FG3mfLHn3+YRHmjR7l6iQ5ZRwar/jjbrjlERgkldmU
+	9qQ5QMp3agWjyav3q23EV/Sbh+M0AJhXtZivMIp7Ch/V9a+LfmpecSf22viwEjAfGiuExEyIai84m
+	H5t1ZPuXX1RWrAMz3HVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsR50-0006yd-Lw; Tue, 30 Jul 2019 12:18:10 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hsRDh-00049U-2x; Tue, 30 Jul 2019 12:27:09 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsR4t-0006wa-Jz
- for linux-rockchip@lists.infradead.org; Tue, 30 Jul 2019 12:18:06 +0000
-Received: by mail-wr1-x441.google.com with SMTP id x4so12371110wrt.6
- for <linux-rockchip@lists.infradead.org>; Tue, 30 Jul 2019 05:18:03 -0700 (PDT)
+ id 1hsRC5-0002ld-8S
+ for linux-rockchip@lists.infradead.org; Tue, 30 Jul 2019 12:25:32 +0000
+Received: by mail-wr1-x442.google.com with SMTP id x1so15650694wrr.9
+ for <linux-rockchip@lists.infradead.org>; Tue, 30 Jul 2019 05:25:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=SDN0UgHxo2bhj//2P/WJDFxFPTg/cR4k5aetAPrYMbg=;
- b=lpR4/auaXiiChSvAkpqNj3u0nfb0dI44Kf62aFsgF5YzASXaFRrXwAhUyTm2Kt8hbp
- zJhTMAAnbZryLHbdRuZfoncN6zqfZAO+YyNfxheYF1HQQtNHpTiY5qXyzJ+0kAQMDSWx
- o6+OatQQfntiw9g7AooovvzEEDvgRrUnMF2sxv97MCFvW8hHvFdeUp+4BhBOjy0TyAJL
- uk7WGKUdZswxzMnx3CqsJ+x+N3BEsKiykL9zKcJSc1VfjTcB+j/dYzVG+k6udmbWJrsl
- uf1pwtYgKlZPZ2DyxsG4lLEfBVpu1z34WxNd3YuSo79zEapzNPTGz5ZbzGmGuQV7XkB0
- DxwA==
+ bh=G84T7i+hKahDIBaf3hntlyO7eSX4L7f7zIVJ/lz1sxw=;
+ b=dKxIer4V50Cr2UvVxXbeDXAxXMOPa7NzM8KWHlSXaaYDx4+Bb0NgH2TpYapRkygrCD
+ aPB4/tTyz5ispAJM2XoGNiGyGPr38cdbYF6Ra8gRVc9mwv9pliMVcq0ODIuKVizBFAs3
+ y6mok4JeCxVDq4y9B6ss4dZVbZ+3Dez2NA6VGsViCmz2tmYONTnKuRG2mfVv0rNRnicH
+ vMzlaICatjglXWuMt+IyFmL/ciX8Xpr2K5nkznhWlzFCNVjO0BlFDo2ugpOnrIOupwQK
+ UpIWMANCJt+aoQ2u/hT5s/twwHwujyKKKRp+rXGVN4GZSzKr9KyT4H2lq85orInc8Bw0
+ sBQA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=SDN0UgHxo2bhj//2P/WJDFxFPTg/cR4k5aetAPrYMbg=;
- b=FGQxn2g8FChFeFEPZl4jq7gYooHEZnxZvMkZK2eZpfArzjsEDsOG0VbVbSyj3jFlLg
- kZZtTq+hD01FiUBitYoupGAUqmCC1o8e5OZWIlybYZDSmRfflBshMFUN+p2AkLyclrPk
- vhD9udBfw7PWDhKFbXigNfrP5YeXvSOxRYJ5hefcz+d5G9o2xU5wbmPhDx3t1u0QWuYF
- z6OErFElO0cy23z1tRlkoCijowvAm9SMgOhN4F42akw37eZBiFe/CxmICxPawAGrLc7Y
- oaFQ5z5zOCSA9ehF10sZR+GBY9REyoB7YNFL21pUYP9QgEFHyN/WqSYq78SP2X9J5N4N
- hHsw==
-X-Gm-Message-State: APjAAAWOVaxrwchvFUy7P1rx9UYkx2ZY5VLHOhGeQA0wVwi9n9+STi73
- mWKSJqz0iSpkYuxw0azSP/s50w==
-X-Google-Smtp-Source: APXvYqwrZXHIdOjHqCaBtc/fxJ204upNIXdbZQ1XFcTuBMI9EYOOr5haFcmt0fyxegsJvYF8YPz9vQ==
-X-Received: by 2002:a5d:6709:: with SMTP id o9mr72093948wru.301.1564489081848; 
- Tue, 30 Jul 2019 05:18:01 -0700 (PDT)
+ bh=G84T7i+hKahDIBaf3hntlyO7eSX4L7f7zIVJ/lz1sxw=;
+ b=lIcr0jYCEW0GdogQbVfwbvwGnAzWqB2vJEJyx+fWc4KiDp2pwGYI1vRfnNG7cC1kfL
+ rdfAUxXQqtzH0apsxaLcbSJRuBo7dDum/VPK3/ki3GWB1qKmxaNdrsIT+V+8cjifhUfx
+ BeTslRP2WEKRcy3w37JoI3tQNf7JT8ggS1EIwuys/KwJ7d6/kWV9ZtOmxzrVWUYxcwi4
+ E9C5vbRWN9H4u4keW4s+Kgku0MtIruP9fbiF8tsPO8q/n5dg3azJxWHS9dpTYdeK30m9
+ T2tC6GajZCvaaCd5LGsA9wW1s8Brj64RHurBLVSHzvEmhADnjZoWyTKP/5kQjXyL9P03
+ T7fA==
+X-Gm-Message-State: APjAAAVI+qpGVOSc7hNhKO0S9UfWe8ZfAqwTGyygHHRro20cox+31XNh
+ UmL63AAUX2vNs6afNOEqixcjIw==
+X-Google-Smtp-Source: APXvYqzQH2i2sRnZ9oa4L3vFVyQCb0sUs0/25bYu02rPWjE6mSsQd53UMlPhy/48KXftSmPN5A0HbA==
+X-Received: by 2002:adf:e40e:: with SMTP id g14mr43472233wrm.161.1564489527656; 
+ Tue, 30 Jul 2019 05:25:27 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id 4sm146815432wro.78.2019.07.30.05.17.56
+ by smtp.gmail.com with ESMTPSA id g131sm46677829wmf.37.2019.07.30.05.25.25
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 30 Jul 2019 05:18:01 -0700 (PDT)
-Subject: Re: [PATCH v4 19/23] drm/bridge: dw-hdmi: Provide ddc symlink in
+ Tue, 30 Jul 2019 05:25:26 -0700 (PDT)
+Subject: Re: [PATCH v4 20/23] drm/bridge: ti-tfp410: Provide ddc symlink in
  connector sysfs directory
 To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
  dri-devel@lists.freedesktop.org
 References: <cover.1562843413.git.andrzej.p@collabora.com>
- <ec88a18feffa37eceb947bb83a6f9f51fb575566.1562843413.git.andrzej.p@collabora.com>
+ <c665d01c4eacc61417519c40c54d5060b0bbe105.1562843413.git.andrzej.p@collabora.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -117,23 +117,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <449b11e6-2386-4e5b-26f7-eb6046911f24@baylibre.com>
-Date: Tue, 30 Jul 2019 14:17:55 +0200
+Message-ID: <d3115692-26ed-a041-c37f-5748b1662c9b@baylibre.com>
+Date: Tue, 30 Jul 2019 14:25:25 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <ec88a18feffa37eceb947bb83a6f9f51fb575566.1562843413.git.andrzej.p@collabora.com>
+In-Reply-To: <c665d01c4eacc61417519c40c54d5060b0bbe105.1562843413.git.andrzej.p@collabora.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_051803_669971_69E8D492 
-X-CRM114-Status: GOOD (  25.41  )
+X-CRM114-CacheID: sfid-20190730_052529_429308_BB933ADF 
+X-CRM114-Status: GOOD (  20.80  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -170,11 +170,11 @@ Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
  Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
  Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
  NXP Linux Team <linux-imx@nxp.com>, CK Hu <ck.hu@mediatek.com>,
- Dave Airlie <airlied@redhat.com>, intel-gfx@lists.freedesktop.org,
- Shashank Sharma <shashank.sharma@intel.com>, freedreno@lists.freedesktop.org,
- linux-tegra@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>,
+ Dave Airlie <airlied@redhat.com>, Harry Wentland <harry.wentland@amd.com>,
+ intel-gfx@lists.freedesktop.org, Shashank Sharma <shashank.sharma@intel.com>,
+ freedreno@lists.freedesktop.org, linux-tegra@vger.kernel.org,
+ Daniel Vetter <daniel@ffwll.ch>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-arm-msm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Jani Nikula <jani.nikula@linux.intel.com>, Inki Dae <inki.dae@samsung.com>,
  Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
@@ -182,7 +182,8 @@ Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
  Thomas Gleixner <tglx@linutronix.de>, Chris Wilson <chris@chris-wilson.co.uk>,
  Sean Paul <sean@poorly.run>, Pengutronix Kernel Team <kernel@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org, amd-gfx@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, Enrico Weigelt <info@metux.net>,
+ Jernej Skrabec <jernej.skrabec@siol.net>, amd-gfx@lists.freedesktop.org,
  Tomi Valkeinen <tomi.valkeinen@ti.com>, Eric Anholt <eric@anholt.net>,
  Thomas Zimmermann <tzimmermann@suse.de>,
  Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
@@ -202,152 +203,76 @@ On 11/07/2019 13:26, Andrzej Pietrasiewicz wrote:
 > 
 > Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 > ---
->  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 40 +++++++++++------------
->  1 file changed, 20 insertions(+), 20 deletions(-)
+>  drivers/gpu/drm/bridge/ti-tfp410.c | 19 +++++++++----------
+>  1 file changed, 9 insertions(+), 10 deletions(-)
 > 
-> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> index c6490949d9db..0b9c9f2619da 100644
-> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> @@ -161,7 +161,6 @@ struct dw_hdmi {
+> diff --git a/drivers/gpu/drm/bridge/ti-tfp410.c b/drivers/gpu/drm/bridge/ti-tfp410.c
+> index dbf35c7bc85e..e55358f0a5ba 100644
+> --- a/drivers/gpu/drm/bridge/ti-tfp410.c
+> +++ b/drivers/gpu/drm/bridge/ti-tfp410.c
+> @@ -26,7 +26,6 @@ struct tfp410 {
+>  	unsigned int		connector_type;
 >  
->  	struct drm_display_mode previous_mode;
->  
-> -	struct i2c_adapter *ddc;
->  	void __iomem *regs;
->  	bool sink_is_hdmi;
->  	bool sink_has_audio;
-> @@ -1118,7 +1117,7 @@ static bool dw_hdmi_support_scdc(struct dw_hdmi *hdmi)
->  		return false;
->  
->  	/* Disable if no DDC bus */
-> -	if (!hdmi->ddc)
-> +	if (!hdmi->connector.ddc)
->  		return false;
->  
->  	/* Disable if SCDC is not supported, or if an HF-VSDB block is absent */
-> @@ -1156,10 +1155,11 @@ void dw_hdmi_set_high_tmds_clock_ratio(struct dw_hdmi *hdmi)
->  
->  	/* Control for TMDS Bit Period/TMDS Clock-Period Ratio */
->  	if (dw_hdmi_support_scdc(hdmi)) {
-> +		struct i2c_adapter *ddc = hdmi->connector.ddc;
->  		if (mtmdsclock > HDMI14_MAX_TMDSCLK)
-> -			drm_scdc_set_high_tmds_clock_ratio(hdmi->ddc, 1);
-> +			drm_scdc_set_high_tmds_clock_ratio(ddc, 1);
->  		else
-> -			drm_scdc_set_high_tmds_clock_ratio(hdmi->ddc, 0);
-> +			drm_scdc_set_high_tmds_clock_ratio(ddc, 0);
->  	}
->  }
->  EXPORT_SYMBOL_GPL(dw_hdmi_set_high_tmds_clock_ratio);
-> @@ -1750,6 +1750,7 @@ static void hdmi_av_composer(struct dw_hdmi *hdmi,
->  	if (dw_hdmi_support_scdc(hdmi)) {
->  		if (vmode->mtmdsclock > HDMI14_MAX_TMDSCLK ||
->  		    hdmi_info->scdc.scrambling.low_rates) {
-> +			struct i2c_adapter *ddc = hdmi->connector.ddc;
->  			/*
->  			 * HDMI2.0 Specifies the following procedure:
->  			 * After the Source Device has determined that
-> @@ -1759,13 +1760,12 @@ static void hdmi_av_composer(struct dw_hdmi *hdmi,
->  			 * Source Devices compliant shall set the
->  			 * Source Version = 1.
->  			 */
-> -			drm_scdc_readb(hdmi->ddc, SCDC_SINK_VERSION,
-> -				       &bytes);
-> -			drm_scdc_writeb(hdmi->ddc, SCDC_SOURCE_VERSION,
-> +			drm_scdc_readb(ddc, SCDC_SINK_VERSION, &bytes);
-> +			drm_scdc_writeb(ddc, SCDC_SOURCE_VERSION,
->  				min_t(u8, bytes, SCDC_MIN_SOURCE_VERSION));
->  
->  			/* Enabled Scrambling in the Sink */
-> -			drm_scdc_set_scrambling(hdmi->ddc, 1);
-> +			drm_scdc_set_scrambling(hdmi->connector.ddc, 1);
->  
->  			/*
->  			 * To activate the scrambler feature, you must ensure
-> @@ -1781,7 +1781,7 @@ static void hdmi_av_composer(struct dw_hdmi *hdmi,
->  			hdmi_writeb(hdmi, 0, HDMI_FC_SCRAMBLER_CTRL);
->  			hdmi_writeb(hdmi, (u8)~HDMI_MC_SWRSTZ_TMDSSWRST_REQ,
->  				    HDMI_MC_SWRSTZ);
-> -			drm_scdc_set_scrambling(hdmi->ddc, 0);
-> +			drm_scdc_set_scrambling(hdmi->connector.ddc, 0);
->  		}
->  	}
->  
-> @@ -2127,10 +2127,10 @@ static int dw_hdmi_connector_get_modes(struct drm_connector *connector)
+>  	u32			bus_format;
+> -	struct i2c_adapter	*ddc;
+>  	struct gpio_desc	*hpd;
+>  	int			hpd_irq;
+>  	struct delayed_work	hpd_work;
+> @@ -55,10 +54,10 @@ static int tfp410_get_modes(struct drm_connector *connector)
 >  	struct edid *edid;
->  	int ret = 0;
+>  	int ret;
 >  
-> -	if (!hdmi->ddc)
-> +	if (!hdmi->connector.ddc)
->  		return 0;
+> -	if (!dvi->ddc)
+> +	if (!dvi->connector.ddc)
+>  		goto fallback;
 >  
-> -	edid = drm_get_edid(connector, hdmi->ddc);
-> +	edid = drm_get_edid(connector, hdmi->connector.ddc);
->  	if (edid) {
->  		dev_dbg(hdmi->dev, "got edid: width[%d] x height[%d]\n",
->  			edid->width_cm, edid->height_cm);
-> @@ -2548,9 +2548,9 @@ __dw_hdmi_probe(struct platform_device *pdev,
->  
->  	ddc_node = of_parse_phandle(np, "ddc-i2c-bus", 0);
->  	if (ddc_node) {
-> -		hdmi->ddc = of_get_i2c_adapter_by_node(ddc_node);
-> +		hdmi->connector.ddc = of_get_i2c_adapter_by_node(ddc_node);
->  		of_node_put(ddc_node);
-> -		if (!hdmi->ddc) {
-> +		if (!hdmi->connector.ddc) {
->  			dev_dbg(hdmi->dev, "failed to read ddc node\n");
->  			return ERR_PTR(-EPROBE_DEFER);
->  		}
-> @@ -2689,7 +2689,7 @@ __dw_hdmi_probe(struct platform_device *pdev,
->  	hdmi_init_clk_regenerator(hdmi);
->  
->  	/* If DDC bus is not specified, try to register HDMI I2C bus */
-> -	if (!hdmi->ddc) {
-> +	if (!hdmi->connector.ddc) {
->  		/* Look for (optional) stuff related to unwedging */
->  		hdmi->pinctrl = devm_pinctrl_get(dev);
->  		if (!IS_ERR(hdmi->pinctrl)) {
-> @@ -2708,9 +2708,9 @@ __dw_hdmi_probe(struct platform_device *pdev,
->  			}
->  		}
->  
-> -		hdmi->ddc = dw_hdmi_i2c_adapter(hdmi);
-> -		if (IS_ERR(hdmi->ddc))
-> -			hdmi->ddc = NULL;
-> +		hdmi->connector.ddc = dw_hdmi_i2c_adapter(hdmi);
-> +		if (IS_ERR(hdmi->connector.ddc))
-> +			hdmi->connector.ddc = NULL;
+> -	edid = drm_get_edid(connector, dvi->ddc);
+> +	edid = drm_get_edid(connector, dvi->connector.ddc);
+>  	if (!edid) {
+>  		DRM_INFO("EDID read failed. Fallback to standard modes\n");
+>  		goto fallback;
+> @@ -98,8 +97,8 @@ tfp410_connector_detect(struct drm_connector *connector, bool force)
+>  			return connector_status_disconnected;
 >  	}
 >  
->  	hdmi->bridge.driver_private = hdmi;
-> @@ -2776,7 +2776,7 @@ __dw_hdmi_probe(struct platform_device *pdev,
->  err_iahb:
->  	if (hdmi->i2c) {
->  		i2c_del_adapter(&hdmi->i2c->adap);
-> -		hdmi->ddc = NULL;
-> +		hdmi->connector.ddc = NULL;
->  	}
+> -	if (dvi->ddc) {
+> -		if (drm_probe_ddc(dvi->ddc))
+> +	if (dvi->connector.ddc) {
+> +		if (drm_probe_ddc(dvi->connector.ddc))
+>  			return connector_status_connected;
+>  		else
+>  			return connector_status_disconnected;
+> @@ -297,8 +296,8 @@ static int tfp410_get_connector_properties(struct tfp410 *dvi)
+>  	if (!ddc_phandle)
+>  		goto fail;
 >  
->  	if (hdmi->cec_notifier)
-> @@ -2788,7 +2788,7 @@ __dw_hdmi_probe(struct platform_device *pdev,
->  err_isfr:
->  	clk_disable_unprepare(hdmi->isfr_clk);
->  err_res:
-> -	i2c_put_adapter(hdmi->ddc);
-> +	i2c_put_adapter(hdmi->connector.ddc);
->  
->  	return ERR_PTR(ret);
->  }
-> @@ -2814,7 +2814,7 @@ static void __dw_hdmi_remove(struct dw_hdmi *hdmi)
->  	if (hdmi->i2c)
->  		i2c_del_adapter(&hdmi->i2c->adap);
+> -	dvi->ddc = of_get_i2c_adapter_by_node(ddc_phandle);
+> -	if (dvi->ddc)
+> +	dvi->connector.ddc = of_get_i2c_adapter_by_node(ddc_phandle);
+> +	if (dvi->connector.ddc)
+>  		dev_info(dvi->dev, "Connector's ddc i2c bus found\n");
 >  	else
-> -		i2c_put_adapter(hdmi->ddc);
-> +		i2c_put_adapter(hdmi->connector.ddc);
->  }
+>  		ret = -EPROBE_DEFER;
+> @@ -367,7 +366,7 @@ static int tfp410_init(struct device *dev, bool i2c)
 >  
->  /* -----------------------------------------------------------------------------
+>  	return 0;
+>  fail:
+> -	i2c_put_adapter(dvi->ddc);
+> +	i2c_put_adapter(dvi->connector.ddc);
+>  	if (dvi->hpd)
+>  		gpiod_put(dvi->hpd);
+>  	return ret;
+> @@ -382,8 +381,8 @@ static int tfp410_fini(struct device *dev)
+>  
+>  	drm_bridge_remove(&dvi->bridge);
+>  
+> -	if (dvi->ddc)
+> -		i2c_put_adapter(dvi->ddc);
+> +	if (dvi->connector.ddc)
+> +		i2c_put_adapter(dvi->connector.ddc);
+>  	if (dvi->hpd)
+>  		gpiod_put(dvi->hpd);
+>  
 > 
 
 Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
