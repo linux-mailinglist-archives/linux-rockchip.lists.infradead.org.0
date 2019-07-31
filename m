@@ -2,44 +2,47 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4DBD7C9C7
-	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 19:02:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D1457CCFA
+	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 21:39:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ZLL7kOh2DmlMlzIApW0khbFRc5JxsDzn3HTDfD4aqcU=; b=aJ0TjJxBeJ4IK4No8ky5wdErwB
-	Clc7aDTPmJUIuCfVWBNeCJIe1elQ055w82MeSpzgajjyRCbzU77/hkx1hjzz81EOY8rR9sB/+FA63
-	cJjXj8cXbu4XigRn6nII9sitKKapVDQCBCAffRSU+X4sd+yl37WorlnYjyDm6I5eC8LYNeIqkiiRI
-	UodKVvuS6cffSx9r4Q+c4rou73Dtp1gakvxoaWOIdNFfQfYV2ngQo59Rx9cXDPxLZI18U73vdLL3q
-	LHcMwSiNuIKf7qLs8ZddRw4hUAa/yYDLEXjhiKqO0wKi4hMR9nWymDeQQhjjn5weaimR3ksOr7KK1
-	5uDwC5Rw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9BVN/p/a2VPNv1uUGfg3IWgDtZ0x80jzu6FQXe6UWP0=; b=AhCidYO395GOYx
+	vCtDm0GOGLXe4HWQ7ec5FA2JedDo21pTWaLRTgL6r25VSnyxfq83Vj8O9ZtW1z+szCtsULj4pqv70
+	B7JX6ikar36gDBhfBryvVNLE8uSN93vrbf1tc9f/ubDHR5Ricw1Cz1aVOxNRPvqsfmN4bwKgrNtqT
+	7i0vqvNE/rOprl8I4E807CgCSuJEbwrznJiknotx/9lOyk5TVlwpbkiN/14IoQmkxNt8ncullnfl6
+	wh/XlKJ1KnWB5miyFCY4hP3Eu5bF5EqCY1ucboev1vx8ATE+9nqN6MeAZLzqXaVLKeV8rWB6JO5bN
+	GUVMQePR2SX5Py3lbB2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrzT-0004ZH-3g; Wed, 31 Jul 2019 17:02:15 +0000
+	id 1hsuRw-00015y-W5; Wed, 31 Jul 2019 19:39:48 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrxv-0002M6-T1; Wed, 31 Jul 2019 17:00:43 +0000
+ id 1hsuRm-0000xA-Pv; Wed, 31 Jul 2019 19:39:40 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 1DAE328A758
-From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 13/13] drm/i915: Provide ddc symlink in hdmi connector sysfs
- directory
-Date: Wed, 31 Jul 2019 18:58:22 +0200
-Message-Id: <fcacfbfa9bbc1b721a630fec885782f98e84d356.1564591626.git.andrzej.p@collabora.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1564591626.git.andrzej.p@collabora.com>
-References: <65481afa-1104-4ee9-e53d-f2732a10d4b9@baylibre.com>
- <cover.1564591626.git.andrzej.p@collabora.com>
-In-Reply-To: <cover.1564591626.git.andrzej.p@collabora.com>
-References: <cover.1564591626.git.andrzej.p@collabora.com>
+ (Authenticated sender: ezequiel) with ESMTPSA id 1BF22289F21
+Message-ID: <869dd8b894883715378ba681c7dd26934284bdff.camel@collabora.com>
+Subject: Re: [PATCH v4 14/23] drm/tilcdc: Provide ddc symlink in connector
+ sysfs directory
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Thomas Zimmermann <tzimmermann@suse.de>, Andrzej Pietrasiewicz
+ <andrzej.p@collabora.com>, Sam Ravnborg <sam@ravnborg.org>
+Date: Wed, 31 Jul 2019 16:39:13 -0300
+In-Reply-To: <acfd895d-ab59-0190-e25c-1827bd8d214b@suse.de>
+References: <cover.1562843413.git.andrzej.p@collabora.com>
+ <d1d415022c598fb7acd033f0f322dd67250adaa9.1562843413.git.andrzej.p@collabora.com>
+ <20190723090532.GA787@ravnborg.org>
+ <3ad60be5-49cf-4017-4b74-53a2d6272deb@collabora.com>
+ <acfd895d-ab59-0190-e25c-1827bd8d214b@suse.de>
+Organization: Collabora
+User-Agent: Evolution 3.30.5-1.1 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_100040_655685_D4995F60 
-X-CRM114-Status: GOOD (  10.53  )
+X-CRM114-CacheID: sfid-20190731_123939_106003_5537FAE1 
+X-CRM114-Status: GOOD (  29.92  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -63,97 +66,232 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- Sam Ravnborg <sam@ravnborg.org>, David Airlie <airlied@linux.ie>,
- Ramalingam C <ramalingam.c@intel.com>,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- Chris Wilson <chris@chris-wilson.co.uk>,
- Bhawanpreet Lakha <Bhawanpreet.Lakha@amd.com>, Eric Anholt <eric@anholt.net>,
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, dri-devel@lists.freedesktop.org,
+ Douglas Anderson <dianders@chromium.org>, linux-tegra@vger.kernel.org,
  Thierry Reding <thierry.reding@gmail.com>,
- Mamta Shukla <mamtashukla555@gmail.com>, kernel@collabora.com,
- Anthony Koo <Anthony.Koo@amd.com>,
- =?UTF-8?q?Ville=20Syrj=C3=A4l=C3=A4?= <ville.syrjala@linux.intel.com>,
- "David \(ChunMing\) Zhou" <David1.Zhou@amd.com>,
- Mario Kleiner <mario.kleiner.de@gmail.com>, linux-samsung-soc@vger.kernel.org,
- Joonyoung Shim <jy0922.shim@samsung.com>,
- Tomi Valkeinen <tomi.valkeinen@ti.com>, David Francis <David.Francis@amd.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- linux-rockchip@lists.infradead.org, Kukjin Kim <kgene@kernel.org>,
- linux-arm-msm@vger.kernel.org, CK Hu <ck.hu@mediatek.com>,
- Harry Wentland <harry.wentland@amd.com>,
- Shashank Sharma <shashank.sharma@intel.com>, freedreno@lists.freedesktop.org,
- linux-tegra@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>,
- Leo Li <sunpeng.li@amd.com>, linux-kernel@vger.kernel.org,
- intel-gfx@lists.freedesktop.org,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Jani Nikula <jani.nikula@linux.intel.com>, Inki Dae <inki.dae@samsung.com>,
- linux-mediatek@lists.infradead.org, Jyri Sarha <jsarha@ti.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
+ linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Vincent Abriou <vincent.abriou@st.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
+ Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Dave Airlie <airlied@redhat.com>,
+ freedreno@lists.freedesktop.org, Jonas Karlman <jonas@kwiboo.se>,
+ linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
+ Jyri Sarha <jsarha@ti.com>, Alexios Zavras <alexios.zavras@intel.com>,
+ Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
  Rodrigo Vivi <rodrigo.vivi@intel.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
  Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org, Enrico Weigelt <info@metux.net>,
- amd-gfx@lists.freedesktop.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
- Nicholas Kazlauskas <nicholas.kazlauskas@amd.com>,
- Todor Tomov <todor.tomov@linaro.org>, Rob Clark <robdclark@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, Alex Deucher <alexander.deucher@amd.com>,
- Shawn Guo <shawnguo@kernel.org>,
- =?UTF-8?q?Christian=20K=C3=B6nig?= <christian.koenig@amd.com>
-MIME-Version: 1.0
+ linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>, linux-kernel@vger.kernel.org,
+ Todor Tomov <todor.tomov@linaro.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
+ Christian =?ISO-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>,
+ Gerd Hoffmann <kraxel@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Use the ddc pointer provided by the generic connector.
+Hi,
 
-Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Acked-by: Sam Ravnborg <sam@ravnborg.org>
-Reviewed-by: Emil Velikov <emil.velikov@collabora.com>
----
- drivers/gpu/drm/i915/display/intel_hdmi.c | 12 ++++++++----
- 1 file changed, 8 insertions(+), 4 deletions(-)
+I'm glad to see this work moving forward!
 
-diff --git a/drivers/gpu/drm/i915/display/intel_hdmi.c b/drivers/gpu/drm/i915/display/intel_hdmi.c
-index 0ebec69bbbfc..7e69e5782f6e 100644
---- a/drivers/gpu/drm/i915/display/intel_hdmi.c
-+++ b/drivers/gpu/drm/i915/display/intel_hdmi.c
-@@ -3084,6 +3084,7 @@ void intel_hdmi_init_connector(struct intel_digital_port *intel_dig_port,
- 	struct intel_encoder *intel_encoder = &intel_dig_port->base;
- 	struct drm_device *dev = intel_encoder->base.dev;
- 	struct drm_i915_private *dev_priv = to_i915(dev);
-+	struct i2c_adapter *ddc;
- 	enum port port = intel_encoder->port;
+On Wed, 2019-07-24 at 10:01 +0200, Thomas Zimmermann wrote:
+> Hi
+> 
+> Am 23.07.19 um 14:44 schrieb Andrzej Pietrasiewicz:
+> > Hi Sam,
+> > 
+> > W dniu 23.07.2019 o 11:05, Sam Ravnborg pisze:
+> > > Hi Andrzej
+> > > 
+> > > On Thu, Jul 11, 2019 at 01:26:41PM +0200, Andrzej Pietrasiewicz wrote:
+> > > > Use the ddc pointer provided by the generic connector.
+> > > > 
+> > > > Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+> > > > ---
+> > > >   drivers/gpu/drm/tilcdc/tilcdc_tfp410.c | 1 +
+> > > >   1 file changed, 1 insertion(+)
+> > > > 
+> > > > diff --git a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
+> > > > b/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
+> > > > index 62d014c20988..c373edb95666 100644
+> > > > --- a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
+> > > > +++ b/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
+> > > > @@ -219,6 +219,7 @@ static struct drm_connector
+> > > > *tfp410_connector_create(struct drm_device *dev,
+> > > >       tfp410_connector->mod = mod;
+> > > >         connector = &tfp410_connector->base;
+> > > > +    connector->ddc = mod->i2c;
+> > > >         drm_connector_init(dev, connector, &tfp410_connector_funcs,
+> > > >               DRM_MODE_CONNECTOR_DVID);
+> > > 
+> > > When reading this code, it looks strange that we set connector->ddc
+> > > *before* the call to init the connector.
+> > > One could risk that drm_connector_init() used memset(..) to clear all
+> > > fields or so, and it would break this order.
+> > 
+> > I verified the code of drm_connector_init() and cannot find any memset()
+> > invocations there. What is your actual concern?
+> 
+> I think this echoes my concern about the implicit order of operation. It
+> seems too easy to get this wrong. If you don't want to add an additional
+> interface for setting the ddc field, why not add a dedicated initializer
+> function that sets the ddc field? Something like this.
+> 
+> int drm_connector_init_with_ddc(connector, funcs, ..., ddc)
+> {
+> 	ret = drm_connector_init(connector, funcs, ...);
+> 	if (ret)
+> 		return ret;
+> 
+> 	if (!ddc)
+> 		return 0;
+> 
+> 	connector->ddc = ddc;
+> 	/* set up sysfs */
+> 
+
+I know this comment comes late to the party, but I'm a slightly
+suprised to see the above instead of implementing drm_connector_init
+in terms of drm_connector_init_with_ddc, as we typically do.
+
+Namely, something along these lines (code might not even build!):
+
+--------------------------------------8<-----------------------------
+diff --git a/drivers/gpu/drm/drm_connector.c b/drivers/gpu/drm/drm_connector.c
+index d49e19f3de3a..dbd095933175 100644
+--- a/drivers/gpu/drm/drm_connector.c
++++ b/drivers/gpu/drm/drm_connector.c
+@@ -179,11 +179,12 @@ void drm_connector_free_work_fn(struct work_struct *work)
+ }
  
- 	DRM_DEBUG_KMS("Adding HDMI connector on port %c\n",
-@@ -3094,8 +3095,13 @@ void intel_hdmi_init_connector(struct intel_digital_port *intel_dig_port,
- 		 intel_dig_port->max_lanes, port_name(port)))
- 		return;
+ /**
+- * drm_connector_init - Init a preallocated connector
++ * drm_connector_init_with_ddc - Init a preallocated connector
+  * @dev: DRM device
+  * @connector: the connector to init
+  * @funcs: callbacks for this connector
+  * @connector_type: user visible type of the connector
++ * @ddc: pointer to the associated ddc adapter (optional)
+  *
+  * Initialises a preallocated connector. Connectors should be
+  * subclassed as part of driver connector objects.
+@@ -191,10 +192,11 @@ void drm_connector_free_work_fn(struct work_struct *work)
+  * Returns:
+  * Zero on success, error code on failure.
+  */
+-int drm_connector_init(struct drm_device *dev,
+-		       struct drm_connector *connector,
+-		       const struct drm_connector_funcs *funcs,
+-		       int connector_type)
++int drm_connector_init_with_ddc(struct drm_device *dev,
++				struct drm_connector *connector,
++				const struct drm_connector_funcs *funcs,
++				int connector_type,
++				struct i2c_adapter *ddc)
+ {
+ 	struct drm_mode_config *config = &dev->mode_config;
+ 	int ret;
+@@ -215,6 +217,9 @@ int drm_connector_init(struct drm_device *dev,
+ 	connector->dev = dev;
+ 	connector->funcs = funcs;
  
--	drm_connector_init(dev, connector, &intel_hdmi_connector_funcs,
--			   DRM_MODE_CONNECTOR_HDMIA);
-+	intel_hdmi->ddc_bus = intel_hdmi_ddc_pin(dev_priv, port);
-+	ddc = intel_gmbus_get_adapter(dev_priv, intel_hdmi->ddc_bus);
++	/* provide ddc symlink in sysfs */
++	connector->ddc = ddc;
 +
-+	drm_connector_init_with_ddc(dev, connector,
-+				    &intel_hdmi_connector_funcs,
-+				    DRM_MODE_CONNECTOR_HDMIA,
-+				    ddc);
- 	drm_connector_helper_add(connector, &intel_hdmi_connector_helper_funcs);
+ 	/* connector index is used with 32bit bitmasks */
+ 	ret = ida_simple_get(&config->connector_ida, 0, 32, GFP_KERNEL);
+ 	if (ret < 0) {
+@@ -295,41 +300,6 @@ int drm_connector_init(struct drm_device *dev,
  
- 	connector->interlace_allowed = 1;
-@@ -3105,8 +3111,6 @@ void intel_hdmi_init_connector(struct intel_digital_port *intel_dig_port,
- 	if (INTEL_GEN(dev_priv) >= 10 || IS_GEMINILAKE(dev_priv))
- 		connector->ycbcr_420_allowed = true;
- 
--	intel_hdmi->ddc_bus = intel_hdmi_ddc_pin(dev_priv, port);
+ 	return ret;
+ }
+-EXPORT_SYMBOL(drm_connector_init);
 -
- 	if (WARN_ON(port == PORT_A))
- 		return;
- 	intel_encoder->hpd_pin = intel_hpd_pin_default(dev_priv, port);
--- 
-2.17.1
+-/**
+- * drm_connector_init_with_ddc - Init a preallocated connector
+- * @dev: DRM device
+- * @connector: the connector to init
+- * @funcs: callbacks for this connector
+- * @connector_type: user visible type of the connector
+- * @ddc: pointer to the associated ddc adapter
+- *
+- * Initialises a preallocated connector. Connectors should be
+- * subclassed as part of driver connector objects.
+- *
+- * Ensures that the ddc field of the connector is correctly set.
+- *
+- * Returns:
+- * Zero on success, error code on failure.
+- */
+-int drm_connector_init_with_ddc(struct drm_device *dev,
+-				struct drm_connector *connector,
+-				const struct drm_connector_funcs *funcs,
+-				int connector_type,
+-				struct i2c_adapter *ddc)
+-{
+-	int ret;
+-
+-	ret = drm_connector_init(dev, connector, funcs, connector_type);
+-	if (ret)
+-		return ret;
+-
+-	/* provide ddc symlink in sysfs */
+-	connector->ddc = ddc;
+-
+-	return ret;
+-}
+ EXPORT_SYMBOL(drm_connector_init_with_ddc);
+ 
+ /**
+diff --git a/include/drm/drm_connector.h b/include/drm/drm_connector.h
+index fc5d08438333..1884abf61a86 100644
+--- a/include/drm/drm_connector.h
++++ b/include/drm/drm_connector.h
+@@ -1408,10 +1408,6 @@ struct drm_connector {
+ 
+ #define obj_to_connector(x) container_of(x, struct drm_connector, base)
+ 
+-int drm_connector_init(struct drm_device *dev,
+-		       struct drm_connector *connector,
+-		       const struct drm_connector_funcs *funcs,
+-		       int connector_type);
+ int drm_connector_init_with_ddc(struct drm_device *dev,
+ 				struct drm_connector *connector,
+ 				const struct drm_connector_funcs *funcs,
+@@ -1425,6 +1421,16 @@ int drm_connector_attach_encoder(struct drm_connector *connector,
+ 
+ void drm_connector_cleanup(struct drm_connector *connector);
+ 
++static inline int
++drm_connector_init(struct drm_device *dev,
++		   struct drm_connector *connector,
++		   const struct drm_connector_funcs *funcs,
++		   int connector_type);
++{
++	return drm_connector_init_with_ddc(dev, connector, funcs,
++					   connector_type, NULL);
++}
++
+ static inline unsigned int drm_connector_index(const struct drm_connector *connector)
+ {
+ 	return connector->index;
+-------------------------------------->8-----------------------------
+
+This might be seen as bikeshed but it seems there's value keeping all the init
+code in the same place, as opposed to scattered.
+
+Unless there are reasons for the current code, that I'm missing?
+
+Thanks,
+Ezequiel
 
 
 _______________________________________________
