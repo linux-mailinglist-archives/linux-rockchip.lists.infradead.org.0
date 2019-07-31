@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06E247C9BE
-	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 19:02:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06EDE7C9C0
+	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 19:02:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,26 +11,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=9NsS5d31J/3dYS88Lz7KlGAmUOQqjY5IIzl1Pqyo5lc=; b=AznfFIlxSeMW5xiAmJ0DBk4xFf
-	agvCUm0gAs+4y7bUw8AVVsH3qs9Bh+aNi4JhGXdjRz2Z1CVxuHuUuxq8FZ37BT1JCtw8weSWgYDeD
-	kkdX3K1ZZ6i8fDp669PGQe7yPr117HFvFYUEKs5afRgyEp5qITEP64/IMG0woQl9JTrWwy2RltZw6
-	xlWJl/gw50541UczOwyoul7a5pCRjazx3vQDkvUHVYoPN9Boe4xfQnervBmVT/EHyJf3O2+wA6hcM
-	uotvgMkWE0moWqNuLk2SvbubS3BhMCmhy+nps1oHxdYsFpQLtuu8RddOXvHSRCwUhx1J3tkq3F06p
-	cxa2X1OQ==;
+	bh=r5VSGLhoZgeUNF3jlu6/OvSUoklmk8ZWjKeEumRx/7M=; b=jqai4Srpzifn+JnlYMzZkJXcpS
+	t1aAZOc/cP4wKXJKwpwRU9aTzUSRz09JkcQNnVtdOX0utIMH3b79/3LpXhKhS62FiRn8Cq/7QiemT
+	XSwzOk6ClCfZOzp3Il9+PaVZXnxQGugkjvJnA+2mVYdldm4M/Fxj6aJFpXFseJTGyNSNZCF1RvHzb
+	CujnzUDxJ8oVeBR1j5S+mvw9vDSQx0Lswk0COPzJmXXq88yutIGoyDd8DkznhlIJbnNOkRhaz4O92
+	7cBaPkjhsct66I/H8OOCLqMzXA9MhM19wdOnpXXpz0EgmUi0sWGbKoaAyekGTsijaNZrFFyEzFpnp
+	LIKOutwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrzH-00048i-Rr; Wed, 31 Jul 2019 17:02:03 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hsrzI-0004AA-Uq; Wed, 31 Jul 2019 17:02:04 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrxL-0000bm-4S; Wed, 31 Jul 2019 17:00:10 +0000
+ id 1hsrxU-0001eR-8g; Wed, 31 Jul 2019 17:00:14 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 5999628BF38
+ (Authenticated sender: andrzej.p) with ESMTPSA id 70DCB28BEFC
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 09/13] drm/vc4: Provide ddc symlink in connector sysfs
+Subject: [PATCH 10/13] drm: zte: Provide ddc symlink in hdmi connector sysfs
  directory
-Date: Wed, 31 Jul 2019 18:58:18 +0200
-Message-Id: <fb52b998016e0b4fb78f4c77d8528579354b6388.1564591626.git.andrzej.p@collabora.com>
+Date: Wed, 31 Jul 2019 18:58:19 +0200
+Message-Id: <a9a8278926506c1981b0f07c175fdefa583a155f.1564591626.git.andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1564591626.git.andrzej.p@collabora.com>
 References: <65481afa-1104-4ee9-e53d-f2732a10d4b9@baylibre.com>
@@ -38,15 +38,13 @@ References: <65481afa-1104-4ee9-e53d-f2732a10d4b9@baylibre.com>
 In-Reply-To: <cover.1564591626.git.andrzej.p@collabora.com>
 References: <cover.1564591626.git.andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_100003_826419_EC7CA64D 
-X-CRM114-Status: GOOD (  11.04  )
+X-CRM114-CacheID: sfid-20190731_100012_465543_EE4193CA 
+X-CRM114-Status: GOOD (  10.55  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -111,46 +109,26 @@ Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 Acked-by: Sam Ravnborg <sam@ravnborg.org>
 Reviewed-by: Emil Velikov <emil.velikov@collabora.com>
 ---
- drivers/gpu/drm/vc4/vc4_hdmi.c | 12 ++++++++----
- 1 file changed, 8 insertions(+), 4 deletions(-)
+ drivers/gpu/drm/zte/zx_hdmi.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.c b/drivers/gpu/drm/vc4/vc4_hdmi.c
-index ee7d4e7b0ee3..eb57c907a256 100644
---- a/drivers/gpu/drm/vc4/vc4_hdmi.c
-+++ b/drivers/gpu/drm/vc4/vc4_hdmi.c
-@@ -267,7 +267,8 @@ static const struct drm_connector_helper_funcs vc4_hdmi_connector_helper_funcs =
- };
+diff --git a/drivers/gpu/drm/zte/zx_hdmi.c b/drivers/gpu/drm/zte/zx_hdmi.c
+index a50f5a1f09b8..b98a1420dcd3 100644
+--- a/drivers/gpu/drm/zte/zx_hdmi.c
++++ b/drivers/gpu/drm/zte/zx_hdmi.c
+@@ -319,8 +319,10 @@ static int zx_hdmi_register(struct drm_device *drm, struct zx_hdmi *hdmi)
  
- static struct drm_connector *vc4_hdmi_connector_init(struct drm_device *dev,
--						     struct drm_encoder *encoder)
-+						     struct drm_encoder *encoder,
-+						     struct i2c_adapter *ddc)
- {
- 	struct drm_connector *connector;
- 	struct vc4_hdmi_connector *hdmi_connector;
-@@ -281,8 +282,10 @@ static struct drm_connector *vc4_hdmi_connector_init(struct drm_device *dev,
+ 	hdmi->connector.polled = DRM_CONNECTOR_POLL_HPD;
  
- 	hdmi_connector->encoder = encoder;
- 
--	drm_connector_init(dev, connector, &vc4_hdmi_connector_funcs,
+-	drm_connector_init(drm, &hdmi->connector, &zx_hdmi_connector_funcs,
 -			   DRM_MODE_CONNECTOR_HDMIA);
-+	drm_connector_init_with_ddc(dev, connector,
-+				    &vc4_hdmi_connector_funcs,
++	drm_connector_init_with_ddc(drm, &hdmi->connector,
++				    &zx_hdmi_connector_funcs,
 +				    DRM_MODE_CONNECTOR_HDMIA,
-+				    ddc);
- 	drm_connector_helper_add(connector, &vc4_hdmi_connector_helper_funcs);
++				    &hdmi->ddc->adap);
+ 	drm_connector_helper_add(&hdmi->connector,
+ 				 &zx_hdmi_connector_helper_funcs);
  
- 	/* Create and attach TV margin props to this connector. */
-@@ -1395,7 +1398,8 @@ static int vc4_hdmi_bind(struct device *dev, struct device *master, void *data)
- 			 DRM_MODE_ENCODER_TMDS, NULL);
- 	drm_encoder_helper_add(hdmi->encoder, &vc4_hdmi_encoder_helper_funcs);
- 
--	hdmi->connector = vc4_hdmi_connector_init(drm, hdmi->encoder);
-+	hdmi->connector =
-+		vc4_hdmi_connector_init(drm, hdmi->encoder, hdmi->ddc);
- 	if (IS_ERR(hdmi->connector)) {
- 		ret = PTR_ERR(hdmi->connector);
- 		goto err_destroy_encoder;
 -- 
 2.17.1
 
