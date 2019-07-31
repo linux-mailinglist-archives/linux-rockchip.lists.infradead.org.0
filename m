@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06EDE7C9C0
-	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 19:02:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A0837C9C2
+	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 19:02:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,26 +11,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=r5VSGLhoZgeUNF3jlu6/OvSUoklmk8ZWjKeEumRx/7M=; b=jqai4Srpzifn+JnlYMzZkJXcpS
-	t1aAZOc/cP4wKXJKwpwRU9aTzUSRz09JkcQNnVtdOX0utIMH3b79/3LpXhKhS62FiRn8Cq/7QiemT
-	XSwzOk6ClCfZOzp3Il9+PaVZXnxQGugkjvJnA+2mVYdldm4M/Fxj6aJFpXFseJTGyNSNZCF1RvHzb
-	CujnzUDxJ8oVeBR1j5S+mvw9vDSQx0Lswk0COPzJmXXq88yutIGoyDd8DkznhlIJbnNOkRhaz4O92
-	7cBaPkjhsct66I/H8OOCLqMzXA9MhM19wdOnpXXpz0EgmUi0sWGbKoaAyekGTsijaNZrFFyEzFpnp
-	LIKOutwQ==;
+	bh=42AnZRl35ROdhH+ci8r4juoXyEa2qDEYYknVTO8HqfY=; b=QvRTEc7ym4+262Qn9Zd+y6Al+3
+	kAjf+13ts8rBXTkNKqsXa7eiwB3JIQhYkwf/Jiqz4TjOX1ushfZDwrjXuMT3H8Esh/AZcMTa3qOeD
+	31ZIIbAHYtqpH9w8c9BDSW+pfhVICd2ACQv5zbN70YtmRQLzZ+JyDYT5ayDDHMzPV0NTO55uPHun2
+	ZiBryL/iVPiKaeBznVcDsYC+QT1cPVKTCJ1QdV16mtChTcFNGsa0Z+6YJmeDqZiO8NObidY3NsMNK
+	ADA4H8YowB5gf/qw6J7kwm4+BaGug+B5xWL6kThq0paxL2gwdAu3hLdn98Rg4iO1gG9ic0F3dNLCj
+	Fb/0Bg3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrzI-0004AA-Uq; Wed, 31 Jul 2019 17:02:04 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hsrzN-0004Jg-6E; Wed, 31 Jul 2019 17:02:09 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrxU-0001eR-8g; Wed, 31 Jul 2019 17:00:14 +0000
+ id 1hsrxd-00022A-EM; Wed, 31 Jul 2019 17:00:28 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 70DCB28BEFC
+ (Authenticated sender: andrzej.p) with ESMTPSA id A17C728A758
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 10/13] drm: zte: Provide ddc symlink in hdmi connector sysfs
+Subject: [PATCH 11/13] drm: zte: Provide ddc symlink in vga connector sysfs
  directory
-Date: Wed, 31 Jul 2019 18:58:19 +0200
-Message-Id: <a9a8278926506c1981b0f07c175fdefa583a155f.1564591626.git.andrzej.p@collabora.com>
+Date: Wed, 31 Jul 2019 18:58:20 +0200
+Message-Id: <7a2d8d0fd5709c7fe372e21a2cfc1abd7861557c.1564591626.git.andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1564591626.git.andrzej.p@collabora.com>
 References: <65481afa-1104-4ee9-e53d-f2732a10d4b9@baylibre.com>
@@ -38,13 +38,15 @@ References: <65481afa-1104-4ee9-e53d-f2732a10d4b9@baylibre.com>
 In-Reply-To: <cover.1564591626.git.andrzej.p@collabora.com>
 References: <cover.1564591626.git.andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_100012_465543_EE4193CA 
-X-CRM114-Status: GOOD (  10.55  )
+X-CRM114-CacheID: sfid-20190731_100021_672992_0D950EB0 
+X-CRM114-Status: GOOD (  10.91  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -62,7 +64,8 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, Ramalingam C <ramalingam.c@intel.com>,
+ Sam Ravnborg <sam@ravnborg.org>, David Airlie <airlied@linux.ie>,
+ Ramalingam C <ramalingam.c@intel.com>,
  Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
  Chris Wilson <chris@chris-wilson.co.uk>,
  Bhawanpreet Lakha <Bhawanpreet.Lakha@amd.com>, Eric Anholt <eric@anholt.net>,
@@ -77,8 +80,8 @@ Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
  Kyungmin Park <kyungmin.park@samsung.com>,
  Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
  linux-rockchip@lists.infradead.org, Kukjin Kim <kgene@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- CK Hu <ck.hu@mediatek.com>, Harry Wentland <harry.wentland@amd.com>,
+ linux-arm-msm@vger.kernel.org, CK Hu <ck.hu@mediatek.com>,
+ Harry Wentland <harry.wentland@amd.com>,
  Shashank Sharma <shashank.sharma@intel.com>, freedreno@lists.freedesktop.org,
  linux-tegra@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>,
  Leo Li <sunpeng.li@amd.com>, linux-kernel@vger.kernel.org,
@@ -89,7 +92,7 @@ Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
  Rodrigo Vivi <rodrigo.vivi@intel.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
  Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
- Allison Randal <allison@lohutok.net>, amd-gfx@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, amd-gfx@lists.freedesktop.org,
  Enrico Weigelt <info@metux.net>, Seung-Woo Kim <sw0312.kim@samsung.com>,
  Sandy Huang <hjc@rock-chips.com>,
  Nicholas Kazlauskas <nicholas.kazlauskas@amd.com>,
@@ -109,26 +112,26 @@ Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 Acked-by: Sam Ravnborg <sam@ravnborg.org>
 Reviewed-by: Emil Velikov <emil.velikov@collabora.com>
 ---
- drivers/gpu/drm/zte/zx_hdmi.c | 6 ++++--
+ drivers/gpu/drm/zte/zx_vga.c | 6 ++++--
  1 file changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpu/drm/zte/zx_hdmi.c b/drivers/gpu/drm/zte/zx_hdmi.c
-index a50f5a1f09b8..b98a1420dcd3 100644
---- a/drivers/gpu/drm/zte/zx_hdmi.c
-+++ b/drivers/gpu/drm/zte/zx_hdmi.c
-@@ -319,8 +319,10 @@ static int zx_hdmi_register(struct drm_device *drm, struct zx_hdmi *hdmi)
+diff --git a/drivers/gpu/drm/zte/zx_vga.c b/drivers/gpu/drm/zte/zx_vga.c
+index 9b67e419280c..c4fa3bbaba78 100644
+--- a/drivers/gpu/drm/zte/zx_vga.c
++++ b/drivers/gpu/drm/zte/zx_vga.c
+@@ -165,8 +165,10 @@ static int zx_vga_register(struct drm_device *drm, struct zx_vga *vga)
  
- 	hdmi->connector.polled = DRM_CONNECTOR_POLL_HPD;
+ 	vga->connector.polled = DRM_CONNECTOR_POLL_HPD;
  
--	drm_connector_init(drm, &hdmi->connector, &zx_hdmi_connector_funcs,
--			   DRM_MODE_CONNECTOR_HDMIA);
-+	drm_connector_init_with_ddc(drm, &hdmi->connector,
-+				    &zx_hdmi_connector_funcs,
-+				    DRM_MODE_CONNECTOR_HDMIA,
-+				    &hdmi->ddc->adap);
- 	drm_connector_helper_add(&hdmi->connector,
- 				 &zx_hdmi_connector_helper_funcs);
- 
+-	ret = drm_connector_init(drm, connector, &zx_vga_connector_funcs,
+-				 DRM_MODE_CONNECTOR_VGA);
++	ret = drm_connector_init_with_ddc(drm, connector,
++					  &zx_vga_connector_funcs,
++					  DRM_MODE_CONNECTOR_VGA,
++					  &vga->ddc->adap);
+ 	if (ret) {
+ 		DRM_DEV_ERROR(dev, "failed to init connector: %d\n", ret);
+ 		goto clean_encoder;
 -- 
 2.17.1
 
