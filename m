@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C20E17C9B9
-	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 19:02:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85E857C9BB
+	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 19:02:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,26 +11,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Mb8/nZbFjAb0o5TBiGkuzNZmj+/eHTExT25F3oLv064=; b=KVutkglI99gRyUwCFBgpVBm0Ju
-	XWK+4fAGp6uuF9WOswDRlIEq00gUep+FTLO4YVXjaMojFsTv68rpalwsFbXAZOOShFSZ70PBJuUBf
-	qKtDYBSqILGtDqhWP22WgFnNEGYlmt1vLV4FxuJuIl5h7Bag77ICDDW+RgDfEI1C13c7HzREdGE2Q
-	7BmVsD+kRtonAVHiheIvZr92jtSWR6H+U9yONvrQLpa+NtEfnSdtu3978fHnbk2fsu3J+hW9o0+AT
-	gnIEY4x+TLoVtwZmKnRnjVOi6ou3TzeDLKLwYdZxpMqrZRWG2H5m+xribUApJGZyMKRzuilF42zH1
-	osIadbFA==;
+	bh=C9Ke53OHqV1A8dU1wh/kg+i6hau3TBWpK7fkhphkd8k=; b=rGVYgGFxxQtXTwleh5t9vma0UZ
+	ms/fLjy8oHC8/rAp1xJrZgdBost09R2ucPRnIYPQlZ1rQzrozcS0rzvBCTgcZ3QdYoqFnEvGzv7bF
+	fCQ7zSZjH41QsH/Ies1Moswkoow9+jt1CcaTmcxPAzgKywQR8lx54YP3qBHoxPDl2uUrBccB9rfVY
+	4rG97xg7dRoUJoONlZO398k5jJWrQbrpGXytHdMoiYoXFZRq11tPROZM5P1mYTfQt8/entsBkLIQ1
+	9rdgrTZ9chOzhOwmPEdRLo6k02pE/S7FjBXV+usIl9vwhd0F1OmSlmt0kBjfZbpWr2ewncSuP8WFg
+	oLq2E/Tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrzC-0003yV-TD; Wed, 31 Jul 2019 17:01:58 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hsrzE-000422-IJ; Wed, 31 Jul 2019 17:02:00 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrx3-0000FK-2h; Wed, 31 Jul 2019 16:59:49 +0000
+ id 1hsrxC-0000RB-0v; Wed, 31 Jul 2019 16:59:56 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 136B128B7B7
+ (Authenticated sender: andrzej.p) with ESMTPSA id 2F7E928B7B7
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 07/13] drm/mediatek: Provide ddc symlink in hdmi connector
+Subject: [PATCH 08/13] drm/tegra: Provide ddc symlink in output connector
  sysfs directory
-Date: Wed, 31 Jul 2019 18:58:16 +0200
-Message-Id: <db323a3cdfd643cef65d796e959c16a14f105920.1564591626.git.andrzej.p@collabora.com>
+Date: Wed, 31 Jul 2019 18:58:17 +0200
+Message-Id: <da3269686a37100c1ead17026f92e31492ce4717.1564591626.git.andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1564591626.git.andrzej.p@collabora.com>
 References: <65481afa-1104-4ee9-e53d-f2732a10d4b9@baylibre.com>
@@ -38,15 +38,14 @@ References: <65481afa-1104-4ee9-e53d-f2732a10d4b9@baylibre.com>
 In-Reply-To: <cover.1564591626.git.andrzej.p@collabora.com>
 References: <cover.1564591626.git.andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_095945_397979_4E636B7D 
-X-CRM114-Status: GOOD (  10.74  )
+X-CRM114-CacheID: sfid-20190731_095954_365332_23340373 
+X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -64,7 +63,8 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, Ramalingam C <ramalingam.c@intel.com>,
+ Sam Ravnborg <sam@ravnborg.org>, David Airlie <airlied@linux.ie>,
+ Ramalingam C <ramalingam.c@intel.com>,
  Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
  Chris Wilson <chris@chris-wilson.co.uk>,
  Bhawanpreet Lakha <Bhawanpreet.Lakha@amd.com>, Eric Anholt <eric@anholt.net>,
@@ -111,27 +111,46 @@ Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 Acked-by: Sam Ravnborg <sam@ravnborg.org>
 Reviewed-by: Emil Velikov <emil.velikov@collabora.com>
 ---
- drivers/gpu/drm/mediatek/mtk_hdmi.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ drivers/gpu/drm/tegra/hdmi.c | 7 ++++---
+ drivers/gpu/drm/tegra/sor.c  | 7 ++++---
+ 2 files changed, 8 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
-index ce91b61364eb..f419765b7cc0 100644
---- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
-+++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
-@@ -1299,9 +1299,10 @@ static int mtk_hdmi_bridge_attach(struct drm_bridge *bridge)
- 	struct mtk_hdmi *hdmi = hdmi_ctx_from_bridge(bridge);
- 	int ret;
+diff --git a/drivers/gpu/drm/tegra/hdmi.c b/drivers/gpu/drm/tegra/hdmi.c
+index 334c4d7d238b..416a2862a84b 100644
+--- a/drivers/gpu/drm/tegra/hdmi.c
++++ b/drivers/gpu/drm/tegra/hdmi.c
+@@ -1425,9 +1425,10 @@ static int tegra_hdmi_init(struct host1x_client *client)
  
--	ret = drm_connector_init(bridge->encoder->dev, &hdmi->conn,
--				 &mtk_hdmi_connector_funcs,
--				 DRM_MODE_CONNECTOR_HDMIA);
-+	ret = drm_connector_init_with_ddc(bridge->encoder->dev, &hdmi->conn,
-+					  &mtk_hdmi_connector_funcs,
-+					  DRM_MODE_CONNECTOR_HDMIA,
-+					  hdmi->ddc_adpt);
- 	if (ret) {
- 		dev_err(hdmi->dev, "Failed to initialize connector: %d\n", ret);
- 		return ret;
+ 	hdmi->output.dev = client->dev;
+ 
+-	drm_connector_init(drm, &hdmi->output.connector,
+-			   &tegra_hdmi_connector_funcs,
+-			   DRM_MODE_CONNECTOR_HDMIA);
++	drm_connector_init_with_ddc(drm, &hdmi->output.connector,
++				    &tegra_hdmi_connector_funcs,
++				    DRM_MODE_CONNECTOR_HDMIA,
++				    hdmi->output.ddc);
+ 	drm_connector_helper_add(&hdmi->output.connector,
+ 				 &tegra_hdmi_connector_helper_funcs);
+ 	hdmi->output.connector.dpms = DRM_MODE_DPMS_OFF;
+diff --git a/drivers/gpu/drm/tegra/sor.c b/drivers/gpu/drm/tegra/sor.c
+index 4ffe3794e6d3..3a69e387c62d 100644
+--- a/drivers/gpu/drm/tegra/sor.c
++++ b/drivers/gpu/drm/tegra/sor.c
+@@ -2832,9 +2832,10 @@ static int tegra_sor_init(struct host1x_client *client)
+ 
+ 	sor->output.dev = sor->dev;
+ 
+-	drm_connector_init(drm, &sor->output.connector,
+-			   &tegra_sor_connector_funcs,
+-			   connector);
++	drm_connector_init_with_ddc(drm, &sor->output.connector,
++				    &tegra_sor_connector_funcs,
++				    connector,
++				    sor->output.ddc);
+ 	drm_connector_helper_add(&sor->output.connector,
+ 				 &tegra_sor_connector_helper_funcs);
+ 	sor->output.connector.dpms = DRM_MODE_DPMS_OFF;
 -- 
 2.17.1
 
