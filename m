@@ -2,146 +2,136 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E4817C4D1
-	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 16:22:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83C877C52F
+	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 16:43:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KKzRtw04+MrW7Pn8F/i2leob6Ue5BqLx88z1GY39534=; b=e0v112oy46exMy
-	zp+fWUpTKCJSkXavygqkhm3f1CcktUuX7p+qVgJ8coz25v4SLRHABLZ7HflAF7tnJeezEj/ePt9pX
-	ouOLXh0cAz8iq2eXSInkPUvoUPLo1//2rVzjB4zxa4W4Rx5obQ4DLEuII7yMiCAzXJBmtm8dQBEUz
-	19VQcxap6mzQ+l4GMdlBS3JprFxZrpg5tB+SRAMkhLna2XCaPDJjc1QDj7E2WsCreBzzKJbX8v2p8
-	/dPPBLTv/iEAOaRiXh3AKbeaF4VN7k4PZszo+cqkMt0D71YiQKTHJHkN7tIJn5Sc+5lNfUpco4BuA
-	zeAmvzYIpnxu4vaTOusg==;
+	List-Owner; bh=7cxe4VEYOc6ctAtTTQmCQiiVYHBSiHg98GMUdNroT3k=; b=B3TXSH9Jogeg12
+	cLZl9iulu+siMO4eLZ15spiN+kL5PWg5U2aF/O8aN0G5gnwWAe3mWl17EEeyv3o93+ObQcoEhnHZo
+	F09mjfSvya6e3rJ5oXUmO8n04G+V339qzU4rjJJDY28Zj5rIl/XIpEatKzF2B8ebiwdnovrOd4UcR
+	/ykFMsqcx3ICGMXGcRJWdEkVotjmm/jAq524wNlpykZEnHyPD/um9DzbsYHX7j6QWPMi3hjofgkUg
+	9VAeANAfYyr9RMtP1ZQV0F5fMbI+E2MBr9NP+FH77ymdQISLEhACSI2cYLxx2J8jvxf8m0x+6Sw2V
+	L0Tpcdb7/bBg9nuLVJzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hspVF-0005pl-W3; Wed, 31 Jul 2019 14:22:54 +0000
-Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
+	id 1hspoZ-0007MR-4W; Wed, 31 Jul 2019 14:42:51 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hspUx-0005DD-UO
- for linux-rockchip@lists.infradead.org; Wed, 31 Jul 2019 14:22:38 +0000
-Received: by mail-wr1-x42d.google.com with SMTP id g17so69905837wrr.5
- for <linux-rockchip@lists.infradead.org>; Wed, 31 Jul 2019 07:22:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=DgMcA6v/fzoyZ+8GMbMaZ4k0twZj3qquTJmJP5k3IO8=;
- b=l2hYYDt1ojhHhFewG4ODETJ0VwWUU/aoP1bXxKUHQQZLywJg6T1krxJdArKTDUzPRn
- qU9cbkvBt2yh1SpuAKfIUVk77hFycwF9T9aX63MTRCPatlNDj6rE6rqYG08Y05mQ83V6
- uUp1FaqYQmOn11+Uj30lmAdBEYfrOweqrbG3g/ezcvvUBIibjUqadseUFjgkClfwTo9L
- 3O4m0TwBb7NsDkhGn+Y/Q1qgOfEoQluGQz+GmbCFs7CEpupCaUEqey5d3jpjZtCW9O8b
- Er9U9ll0vpNxo95Y8dCk3Le9VP5lofbAnCJbwe+iGTugwc96hoywJLUhBR0perWhXl9b
- T08w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=DgMcA6v/fzoyZ+8GMbMaZ4k0twZj3qquTJmJP5k3IO8=;
- b=SBgZgZtORDu9FihGvZ8UUC8UznKt5wLo4GMox3cvWbV9P4z+EG8s4cG7Ee7fPvdaHK
- Ad1NtmxdDkmVfnYVmeYwW+HMzCe9oCItqq0rD9WgUij504k1U5QBvd2IW/yNFC0OB7iz
- uut7NLojDEZYkYX1GuvH7DYwcBSwblXi7WpI1YAxfP0iUPuzXEnt3z3YUHg2yB+HfMkc
- 7lWacJmacoFuPdzAqJvEbE26NlgyY9mr7ycNgn8Ct7PCE+MGWb3Xj1c88b5Etbec3aoX
- gyvsl2xTtZoosK5YH5e4nEdBZ4+MEsvlQOCnxW46Hb79o5B10+iNuyIsXHTDBt5EKJP5
- 9RoQ==
-X-Gm-Message-State: APjAAAUY+Db+wtqrUN9TcjN9NICr+LIfXdO2ni3EE+CHXHBY+g/u/WEs
- T0SlkEgiPSoy5utJ7gfzgahZZg==
-X-Google-Smtp-Source: APXvYqwSxDEav9/aVCpWxzYL7ljaCBlICL3RUZGxhvk2wEbRC7Iy9uxTFCR7vbDqYs9uXZoYUfDOLQ==
-X-Received: by 2002:adf:e541:: with SMTP id z1mr43294553wrm.48.1564582954231; 
- Wed, 31 Jul 2019 07:22:34 -0700 (PDT)
-Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id c7sm62001218wro.70.2019.07.31.07.22.30
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 31 Jul 2019 07:22:33 -0700 (PDT)
-Subject: Re: Review required [Was: Associate ddc adapters with connectors]
-To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- Sam Ravnborg <sam@ravnborg.org>
-References: <cover.1564161140.git.andrzej.p@collabora.com>
- <20190726183520.GA22572@ravnborg.org> <20190726185538.GD14981@ravnborg.org>
- <6560f93c-a48f-2a8c-afeb-d5e8e200480d@baylibre.com>
- <20190731104007.GA23138@ravnborg.org>
- <959cf323-c6b9-895b-592c-81c52aacae6e@collabora.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
+ id 1hspoP-0007Aj-1G; Wed, 31 Jul 2019 14:42:43 +0000
+Received: from [IPv6:2804:431:c7f1:f24e:905d:745e:bb84:a9f9] (unknown
+ [IPv6:2804:431:c7f1:f24e:905d:745e:bb84:a9f9])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: koike)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 953D828AE2B;
+ Wed, 31 Jul 2019 15:42:29 +0100 (BST)
+Subject: Re: [PATCH v8 00/14] Rockchip ISP1 Driver
+To: Hans Verkuil <hverkuil@xs4all.nl>, linux-rockchip@lists.infradead.org
+References: <20190730184256.30338-1-helen.koike@collabora.com>
+ <dbdfed3e-7bb6-bf1f-64b9-ab7298193e2d@xs4all.nl>
+ <41e7e574-2708-eb4c-ea30-e6a1ac9c073e@collabora.com>
+ <8ce532de-6c26-f8db-8754-c8dd1eb0764b@collabora.com>
+ <74bb0ba1-2859-39ff-d946-129a440ba150@xs4all.nl>
+ <fb1327fb-0903-ce62-4eea-94b81f599b62@xs4all.nl>
+ <13d89676-ae84-5904-7606-935501cb2d89@xs4all.nl>
+From: Helen Koike <helen.koike@collabora.com>
 Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <ce68a0df-1719-7b53-b0ed-89caa9afc4a0@baylibre.com>
-Date: Wed, 31 Jul 2019 16:22:30 +0200
+Autocrypt: addr=helen.koike@collabora.com; keydata=
+ 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
+Message-ID: <77968a89-eec0-bc2f-f996-ef3e21e9efd8@collabora.com>
+Date: Wed, 31 Jul 2019 11:42:26 -0300
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <959cf323-c6b9-895b-592c-81c52aacae6e@collabora.com>
+In-Reply-To: <13d89676-ae84-5904-7606-935501cb2d89@xs4all.nl>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_072236_022410_1FD9E875 
-X-CRM114-Status: GOOD (  12.91  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190731_074241_347553_A793FB00 
+X-CRM114-Status: GOOD (  22.16  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:42d listed in]
- [list.dnswl.org]
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -154,55 +144,134 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, Liviu Dudau <liviu.dudau@arm.com>,
- dri-devel@lists.freedesktop.org, Douglas Anderson <dianders@chromium.org>,
- linux-tegra@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
- linux-samsung-soc@vger.kernel.org, Vincent Abriou <vincent.abriou@st.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
- Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Dave Airlie <airlied@redhat.com>, freedreno@lists.freedesktop.org,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
- intel-gfx@lists.freedesktop.org, Jyri Sarha <jsarha@ti.com>,
- Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
- Maxime Ripard <mripard@kernel.org>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Seung-Woo Kim <sw0312.kim@samsung.com>, linux-kernel@vger.kernel.org,
- Todor Tomov <todor.tomov@linaro.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
- Thomas Zimmermann <tzimmermann@suse.de>,
- Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
- =?UTF-8?Q?Christian_K=c3=b6nig?= <christian.koenig@amd.com>,
- Gerd Hoffmann <kraxel@redhat.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
+ heiko@sntech.de, zhengsq@rock-chips.com, jeffy.chen@rock-chips.com,
+ zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ hans.verkuil@cisco.com, laurent.pinchart@ideasonboard.com,
+ sakari.ailus@linux.intel.com, mchehab@kernel.org, ezequiel@collabora.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gMzEvMDcvMjAxOSAxNToxMCwgQW5kcnplaiBQaWV0cmFzaWV3aWN6IHdyb3RlOgo+IFcgZG5p
-dSAzMS4wNy4yMDE5IG/CoDEyOjQwLCBTYW0gUmF2bmJvcmcgcGlzemU6Cj4+IEhpIE5laWwuCj4+
-Cj4+IE9uIFdlZCwgSnVsIDMxLCAyMDE5IGF0IDEwOjAwOjE0QU0gKzAyMDAsIE5laWwgQXJtc3Ry
-b25nIHdyb3RlOgo+Pj4gSGkgU2FtLAo+Pj4KPj4+IE9uIDI2LzA3LzIwMTkgMjA6NTUsIFNhbSBS
-YXZuYm9yZyB3cm90ZToKPj4+PiBIaSBhbGwuCj4+Pj4KPj4+PiBBbmRyemVqIGhhdmUgZG9uZSBh
-IGdvb2Qgam9iIGZvbGxvd2luZyB1cCBvbiBmZWVkYmFjayBhbmQgdGhpcyBzZXJpZXMgaXMKPj4+
-PiBub3cgcmVhZHkuCj4+Pj4KPj4+PiBXZSBuZWVkIGFjayBvbiB0aGUgcGF0Y2hlcyB0b3VjaGlu
-ZyB0aGUgaW5kaXZpZHVhbCBkcml2ZXJzIGJlZm9yZSB3ZSBjYW4KPj4+PiBwcm9jZWVkLgo+Pj4+
-IFBsZWFzZSBjaGVjayB5b3VyIGRyaXZlcnMgYW5kIGdldCBiYWNrLgo+Pj4KPj4+IEkgY2FuIGFw
-cGx5IGFsbCBjb3JlIGFuZCBtYWludGFpbmVyLWFja2VkIHBhdGNoZXMgZm9yIG5vdyA6Cj4+PiAx
-LCAyLCA3LCAxMCwgMTEsIDE2LCAxNywgMTgsIDE5LCAyMCwgMjEsIDIyLCAyMwo+Pj4KPj4+IGFu
-ZCBBbmRyemVqIGNhbiByZXNlbmQgbm90IGFwcGxpZWQgcGF0Y2hlcyB3aXRoIFlvdXJzIGFuZCBF
-bWlsJ3MgUmV2aWV3ZWQtYnksCj4+PiBzbyB3ZSBjYW4gd2FpdCBhIGZldyBtb3JlIGRheXMgdG8g
-YXBwbHkgdGhlbS4KPj4KPj4gU291bmRzIGxpa2UgYSBnb29kIHBsYW4uCj4+IFRoYW5rcyBmb3Ig
-dGhha2luZyBjYXJlIG9mIHRoaXMuCj4gCj4gV2hlbiBpcyBpdCBnb29kIHRpbWUgdG8gcmVzZW5k
-IHBhdGNoZXMgMywgNCwgNSwgNiwgOCwgOSwgMTIsIDEzLCAxNCwgMTUsIDI0IGFzIGEKPiBuZXcg
-c2VyaWVzPwoKSSdsbCBwaW5nIHlvdSB3aGVuIGV2ZXJ5dGhpbmcgaXMgYXBwbGllZCwgYnVpbGQt
-dGVzdGVkIGFuZCBwdXNoZWQgb24gZHJtLW1pc2MtbmV4dAoKTmVpbAoKPiAKPiBBbmRyemVqCgoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9j
-a2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
+
+
+On 7/31/19 1:55 AM, Hans Verkuil wrote:
+> On 7/31/19 6:33 AM, Hans Verkuil wrote:
+>> On 7/31/19 6:29 AM, Hans Verkuil wrote:
+>>> On 7/31/19 2:08 AM, Helen Koike wrote:
+>>>>
+>>>>
+>>>> On 7/30/19 5:50 PM, Helen Koike wrote:
+>>>>>
+>>>>>
+>>>>> On 7/30/19 5:15 PM, Hans Verkuil wrote:
+>>>>>> On 7/30/19 8:42 PM, Helen Koike wrote:
+>>>>>>> Hello,
+>>>>>>>
+>>>>>>> I'm re-sending a new version of ISP(Camera) v4l2 driver for rockchip
+>>>>>>> rk3399 SoC.
+>>>>>>>
+>>>>>>> I didn't change much from the last version, just applying the
+>>>>>>> suggestions made in the previous one.
+>>>>>>>
+>>>>>>> This patchset is also available at:
+>>>>>>> https://gitlab.collabora.com/koike/linux/tree/rockchip/isp/v8
+>>>>>>>
+>>>>>>> Libcamera patched to work with this version:
+>>>>>>> https://gitlab.collabora.com/koike/libcamera
+>>>>>>> (also sent to the mailing list)
+>>>>>>>
+>>>>>>> I tested on the rockpi 4 with a rpi v1.3 sensor and also with the
+>>>>>>> Scarlet Chromebook.
+>>>>>>>
+>>>>>>> Known issues (same as in v7):
+>>>>>>> -------------
+>>>>>>> - Reloading the module doesn't work (there is some missing cleanup when
+>>>>>>> unloading)
+>>>>>>> - When capturing in bayer format, changing the size doesn't seem to
+>>>>>>> affect the image.
+>>>>>>> - crop needs more tests
+>>>>>>> - v4l2-compliance error:
+>>>>>>>         fail: v4l2-test-controls.cpp(824): subscribe event for control 'Image Processing Controls' failed
+>>>>>>> test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: FAIL
+>>>>>>
+>>>>>> Can you mail me the full v4l2-compliance output?
+>>>>>
+>>>>> Sure, please check here: http://ix.io/1Q5u
+>>>>> I updated v4l-utils with the latest version and I re-ran bootstrap/configure/make,
+>>>>> but for some reason the hash from the link above is not the latest commit, probably some
+>>>>> old configuration somewhere. I'll resend this log as soon as I get v4l2-compliance
+>>>>> properly updated.
+>>>>
+>>>> Please see the output of v4l2-compliance here with an updated v4l-utils: http://ix.io/1Q6A
+>>>
+>>> So this FAIL is for /dev/v4l-subdev0 (rkisp1-isp-subdev).
+>>>
+>>> What is weird that this subdev does not appear to have controls at all.
+>>>
+>>> What is the output of 'v4l2-ctl -d /dev/v4l-subdev0 -l'? And if it lists
+>>> controls, then why?
+
+root@rockpi:~# v4l2-ctl -d /dev/v4l-subdev0 -l
+
+Image Processing Controls
+
+                     pixel_rate 0x009f0902 (int64)  : min=1 max=2147483647 step=1 default=1 value=1 flags=read-only
+
+root@rockpi:~# v4l2-ctl -d /dev/v4l-subdev1 -l
+
+Image Processing Controls
+
+                     pixel_rate 0x009f0902 (int64)  : min=1 max=2147483647 step=1 default=1 value=1 flags=read-only
+
+It seems that ISP heritage the control from the sensor driver. I believe it
+happens because isp_dev->ctrl_handler was assigned to the v4l2_dev object:
+
+dev.c:  v4l2_ctrl_handler_init(&isp_dev->ctrl_handler, 5);
+dev.c:  v4l2_dev->ctrl_handler = &isp_dev->ctrl_handler;
+
+
+>>>
+>>> If you run 'v4l2-compliance -u /dev/v4l-subdev0', do you get a fail as
+>>> well?
+
+Yes, but if I remove the ctrl_handler field from the struct rkisp1_isp_subdev
+I don't get the error on /dev/v4l-subdev0 (ISP) anymore, I just get the error
+on /dev/v4l-subdev1 (the sensor).
+
+Here is the output of v4l2-compliance -m /dev/media0 without the
+ctrl_handler field: http://ix.io/1Q9N
+
+>>
+>> I see the same issue with v4l-subdev1, but I see no "Media Driver Info"
+>> in the v4l2-compliance output for that subdev. That's strange. It would
+>> be good to know why that's happening.
+> 
+> It looks to be some parenting issue: v4l2-compliance expects to find
+> a mediaX directory in /sys/dev/char/81\:Y/device/ where 81:Y is the major/minor
+> of /dev/v4l-subdev1.
+> 
+> Because is this mi_get_media_fd() cannot find the media device for the subdev
+> in v4l2-compliance.
+
+So from my understanding this seems to be an issue in the sensor driver that
+I'm using and not in the ISP (to be verified).
+I'll submit the next version without the ctrl_handler field in struct rkisp1_isp_subdev,
+is that ok?
+
+Thanks
+Helen
+
+
+> 
+> Regards,
+> 
+> 	Hans
+> 
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
