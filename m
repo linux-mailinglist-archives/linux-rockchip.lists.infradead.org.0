@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49D617C9B7
-	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 19:01:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C20E17C9B9
+	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 19:02:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,26 +11,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=TljA7qX8q1ygE8O6ljBAJUTBd2RgDG0Yp/z8mDrIjrw=; b=qL4BE7RhMvRVWvIyDGKAQK0xum
-	tPhGYOkpduoSgylevnTmKkH7eBZIWC0Iv02Kv+J/u0d0sEdTOAnCCcHy2B6+Ba6oJTbT/zTBr0kdv
-	U3kIetKISMv3BIYOG+cRoQCUwJl3NKDVyAIC9f+vsvpCtqxQxptue9HIqLTCFTMY7LsQ3Lc/bIRYA
-	gech6DuC4paOTVnNNEErYm8EeDDXA7ezcsbzARumwnfBqHu9saPVi/gK2VTxe7ALgNeGTRvGwvJSG
-	yjZf4zvdZgcsi7PkdWMvstAl2qTC3rf+Wd02y/AFV1MpqZtI9K5+SuUivqRpMIlZ7Jt7aDX5QZHL+
-	IaoeTnSA==;
+	bh=Mb8/nZbFjAb0o5TBiGkuzNZmj+/eHTExT25F3oLv064=; b=KVutkglI99gRyUwCFBgpVBm0Ju
+	XWK+4fAGp6uuF9WOswDRlIEq00gUep+FTLO4YVXjaMojFsTv68rpalwsFbXAZOOShFSZ70PBJuUBf
+	qKtDYBSqILGtDqhWP22WgFnNEGYlmt1vLV4FxuJuIl5h7Bag77ICDDW+RgDfEI1C13c7HzREdGE2Q
+	7BmVsD+kRtonAVHiheIvZr92jtSWR6H+U9yONvrQLpa+NtEfnSdtu3978fHnbk2fsu3J+hW9o0+AT
+	gnIEY4x+TLoVtwZmKnRnjVOi6ou3TzeDLKLwYdZxpMqrZRWG2H5m+xribUApJGZyMKRzuilF42zH1
+	osIadbFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrzA-0003tt-0W; Wed, 31 Jul 2019 17:01:56 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hsrzC-0003yV-TD; Wed, 31 Jul 2019 17:01:58 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrwt-0008Uw-BG; Wed, 31 Jul 2019 16:59:37 +0000
+ id 1hsrx3-0000FK-2h; Wed, 31 Jul 2019 16:59:49 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 9FE5D28B7B7
+ (Authenticated sender: andrzej.p) with ESMTPSA id 136B128B7B7
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 06/13] drm/msm/hdmi: Provide ddc symlink in hdmi connector
+Subject: [PATCH 07/13] drm/mediatek: Provide ddc symlink in hdmi connector
  sysfs directory
-Date: Wed, 31 Jul 2019 18:58:15 +0200
-Message-Id: <ea37d027ce0286a4a6c40465430d5f1357db66fb.1564591626.git.andrzej.p@collabora.com>
+Date: Wed, 31 Jul 2019 18:58:16 +0200
+Message-Id: <db323a3cdfd643cef65d796e959c16a14f105920.1564591626.git.andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1564591626.git.andrzej.p@collabora.com>
 References: <65481afa-1104-4ee9-e53d-f2732a10d4b9@baylibre.com>
@@ -38,13 +38,15 @@ References: <65481afa-1104-4ee9-e53d-f2732a10d4b9@baylibre.com>
 In-Reply-To: <cover.1564591626.git.andrzej.p@collabora.com>
 References: <cover.1564591626.git.andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_095935_667190_FD41B308 
-X-CRM114-Status: GOOD (  10.38  )
+X-CRM114-CacheID: sfid-20190731_095945_397979_4E636B7D 
+X-CRM114-Status: GOOD (  10.74  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -62,8 +64,7 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- Sam Ravnborg <sam@ravnborg.org>, David Airlie <airlied@linux.ie>,
- Ramalingam C <ramalingam.c@intel.com>,
+ David Airlie <airlied@linux.ie>, Ramalingam C <ramalingam.c@intel.com>,
  Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
  Chris Wilson <chris@chris-wilson.co.uk>,
  Bhawanpreet Lakha <Bhawanpreet.Lakha@amd.com>, Eric Anholt <eric@anholt.net>,
@@ -79,18 +80,18 @@ Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
  Kyungmin Park <kyungmin.park@samsung.com>,
  Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
  linux-rockchip@lists.infradead.org, Kukjin Kim <kgene@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- CK Hu <ck.hu@mediatek.com>, Harry Wentland <harry.wentland@amd.com>,
+ linux-arm-msm@vger.kernel.org, CK Hu <ck.hu@mediatek.com>,
+ Harry Wentland <harry.wentland@amd.com>,
  Shashank Sharma <shashank.sharma@intel.com>, linux-tegra@vger.kernel.org,
  Philipp Zabel <p.zabel@pengutronix.de>, Leo Li <sunpeng.li@amd.com>,
  linux-kernel@vger.kernel.org, intel-gfx@lists.freedesktop.org,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Jani Nikula <jani.nikula@linux.intel.com>, Inki Dae <inki.dae@samsung.com>,
- linux-mediatek@lists.infradead.org, Jyri Sarha <jsarha@ti.com>,
- Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ Alexios Zavras <alexios.zavras@intel.com>, linux-mediatek@lists.infradead.org,
+ Jyri Sarha <jsarha@ti.com>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
  Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
- Allison Randal <allison@lohutok.net>, amd-gfx@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, amd-gfx@lists.freedesktop.org,
  freedreno@lists.freedesktop.org, Seung-Woo Kim <sw0312.kim@samsung.com>,
  Sandy Huang <hjc@rock-chips.com>,
  Nicholas Kazlauskas <nicholas.kazlauskas@amd.com>,
@@ -110,26 +111,27 @@ Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 Acked-by: Sam Ravnborg <sam@ravnborg.org>
 Reviewed-by: Emil Velikov <emil.velikov@collabora.com>
 ---
- drivers/gpu/drm/msm/hdmi/hdmi_connector.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ drivers/gpu/drm/mediatek/mtk_hdmi.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/gpu/drm/msm/hdmi/hdmi_connector.c b/drivers/gpu/drm/msm/hdmi/hdmi_connector.c
-index 07b4cb877d82..1f03262b8a52 100644
---- a/drivers/gpu/drm/msm/hdmi/hdmi_connector.c
-+++ b/drivers/gpu/drm/msm/hdmi/hdmi_connector.c
-@@ -450,8 +450,10 @@ struct drm_connector *msm_hdmi_connector_init(struct hdmi *hdmi)
+diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+index ce91b61364eb..f419765b7cc0 100644
+--- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
++++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+@@ -1299,9 +1299,10 @@ static int mtk_hdmi_bridge_attach(struct drm_bridge *bridge)
+ 	struct mtk_hdmi *hdmi = hdmi_ctx_from_bridge(bridge);
+ 	int ret;
  
- 	connector = &hdmi_connector->base;
- 
--	drm_connector_init(hdmi->dev, connector, &hdmi_connector_funcs,
--			DRM_MODE_CONNECTOR_HDMIA);
-+	drm_connector_init_with_ddc(hdmi->dev, connector,
-+				    &hdmi_connector_funcs,
-+				    DRM_MODE_CONNECTOR_HDMIA,
-+				    hdmi->i2c);
- 	drm_connector_helper_add(connector, &msm_hdmi_connector_helper_funcs);
- 
- 	connector->polled = DRM_CONNECTOR_POLL_CONNECT |
+-	ret = drm_connector_init(bridge->encoder->dev, &hdmi->conn,
+-				 &mtk_hdmi_connector_funcs,
+-				 DRM_MODE_CONNECTOR_HDMIA);
++	ret = drm_connector_init_with_ddc(bridge->encoder->dev, &hdmi->conn,
++					  &mtk_hdmi_connector_funcs,
++					  DRM_MODE_CONNECTOR_HDMIA,
++					  hdmi->ddc_adpt);
+ 	if (ret) {
+ 		dev_err(hdmi->dev, "Failed to initialize connector: %d\n", ret);
+ 		return ret;
 -- 
 2.17.1
 
