@@ -2,71 +2,68 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA9F07BAC0
-	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 09:32:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E4F27BB15
+	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 10:02:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rZNwsB4aKPmS3VKN9hbvC7br2QJ9fEj1elCoe0wk7to=; b=I5nmtOv+nDPXJ4
-	YnssrVVP8b2k81mM7txEsJrjWoS5nZAKiQAIVHXUZAA0E5A+iZaDZOHHb3hLk9CVgyFWeRRyPJUCW
-	SLmx62WmN48orsrsusq5agjMtd4rD7JR3RxJP3M8fzkGCFwbB0ylqpdj6ltrL00IpThCZCSkTZY7J
-	JYV3xP1yCQK6+CEKBDHPneCUR4lQ5wRSChwzh/ftBhzjP9slFulkANCi3HMeRN6nNEf8zhRAL/VqP
-	+YpyvZzrAuTk+kNMjZZ4wRS0BXWa7dpkymKMEVN/mmNaZggxzHYIgjDzdyNOctG2t8mxl6nKJxdIz
-	7dWEDFQyaWDlLwlPb1ng==;
+	List-Owner; bh=EzTG9sZSIwsZL2QuQDB4hcuVEqnJrVvoAMexmi6ZWYY=; b=In0yyr8mvhibMs
+	K53YMzIw1ICno6VX9eptEksvO41rjsktYENPGu5hbS0wwFbYz2gPbafCiia8e0kXP63+Z+z7RSXXZ
+	oFSH+Tlbp9iok0/TQZH0XqMkJfXyrKlzVlQnwn/NkS1LcnDOp38FJsju2S/IhkgfXqZ4r8Yl8KJTt
+	L5+IUWEVLiTLInUjdf67Xvxl5d8WyfrFztGpXDaudy1GaCulu8KtWztks29FctrlwfeJXv/WHzlrP
+	sqNukUQORj1AhP/N0TLXIHkc4EeCLvv2YVsfEgtHSdqO87kYwEYSHOkrGBtG0J9JnKt+aEDWGQ8o2
+	pk9B5Ngx6XnJnseYt1Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsj6M-00043d-3j; Wed, 31 Jul 2019 07:32:46 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hsjZF-0005oi-1q; Wed, 31 Jul 2019 08:02:37 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsj6C-00041X-UJ
- for linux-rockchip@lists.infradead.org; Wed, 31 Jul 2019 07:32:40 +0000
-Received: by mail-wr1-x441.google.com with SMTP id 31so68503219wrm.1
- for <linux-rockchip@lists.infradead.org>; Wed, 31 Jul 2019 00:32:36 -0700 (PDT)
+ id 1hsjX4-0005WG-1f
+ for linux-rockchip@lists.infradead.org; Wed, 31 Jul 2019 08:00:40 +0000
+Received: by mail-wm1-x342.google.com with SMTP id u25so48543527wmc.4
+ for <linux-rockchip@lists.infradead.org>; Wed, 31 Jul 2019 01:00:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=0PLcBA66YcB8KlrZgYrwookyVP8OjHbNS01MX1Paf5M=;
- b=jabu4YGXQvAjkAKfV5kfOfoQgqF1bIbn33XRX5g0aGZijKd9bOFEtWCYEpEbSpyZ0Z
- rkNPDVIKsGT0zSxe+29Bkl77ZprBuvqvtj7PSib440No31Kke7amBqDozvl5/doreEmh
- X06MY3FRb6JM2s2sx7H0C8TZ7SUEzo6w5LbvosOh8TnHnAi/tTWe5srtTmDfCaPrEiF/
- DygNbRyVaJ92a9hvJfl6CmZKxUrmauXmoLXsb4hOwTi57Ud/lwfuS2e/zpfznEXI4bM9
- IvT9YXnLGRtwAz+idwzti+H12ieKEbJSP8vXJRNPj94Gf3SlTJSDHp9Ao2T8gLrdUR3l
- 26Qg==
+ bh=rYgcjT+9Tm6c8Cyu83F4EFPkgLKy3QCi9/CS9cVFipk=;
+ b=0lvHjmqrSykuJ+Jw5bafEE/25tA3kTWNwJtg2zPXKrMBI+7E6iywm86cLH4wkEYY7c
+ 0AX1FQWCaPNechKRb7VfWhJlkNR0SqtoQvIxcezlXqTFuLOVLP+s57+WvjijcL60urRJ
+ rIv8/eyGkZbrwTfi+wOCVkIBUmB3NbjIpAhTNYMJCQsHrU+hQZqbk9PZ9YjWi4/milhU
+ Eye4QmniBbi4MMdSzYZKyvB9MUxucqjfAWEql8hWffejDtzkIXSqAbBufp+2d4RnUoqY
+ 0/l1E/EsWAV3NCCSp1KEOfHsW8A0amkvEEzgunu7m80I/LXAXHjvs4UIovmY3C7KC6ss
+ sDrQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=0PLcBA66YcB8KlrZgYrwookyVP8OjHbNS01MX1Paf5M=;
- b=kWsymy90wl/Ol2aDJXFD67a/FPlM6O2AgBw5YdPtN5mzxrK7a27ulWYB8NmMwiKgQx
- m9n1KlKI9ndLTqilpNR+Fv0uv/Swdx3PZQjzKLsfLIetqxr+pKHzewSRiEPP3x6m7rXS
- k6P4XaGpJVmmr+K6v5cK6NaPcVANn3qRLDAGldS4jL990v+LyyBmxxFW3q2UfENOBHb2
- CxlkPSdQwEmdQGsHiTDSbUDvjHzLjG5FVtHDeow4giXUsregFgm5l1TKf1SagTnuHTpY
- 6oPsTEhP37T1bPuDQzYmzcdM0dDGhlVPc7DjlU1RPZfwQE30pYTPbR0Cd6m0Qa+rY1CG
- 8zGw==
-X-Gm-Message-State: APjAAAXS56Rne/zpWl+ruuA0ON6g4EjJFsp6wpErgebL9laPgXzS4/o8
- 7O6+NAk/9yLme+9OAyoAtEx5bA==
-X-Google-Smtp-Source: APXvYqzgRhZ3DewRaQOLJ0FJXim4RIVQs5PnjaYSyRF2Op48l3uAOoIxtro1+ZW7tXFBM5NTLDi+Mw==
-X-Received: by 2002:a05:6000:1189:: with SMTP id
- g9mr97952041wrx.51.1564558355151; 
- Wed, 31 Jul 2019 00:32:35 -0700 (PDT)
+ bh=rYgcjT+9Tm6c8Cyu83F4EFPkgLKy3QCi9/CS9cVFipk=;
+ b=cn4OBMX+JheIyDQBejlTrQtH40bXQo9ugNJ+MbBvhsLigSYP1tP2fNsat/Y9gIb6EB
+ uPbHBMpEIopc+ZK4Zmu40rV9Hgql2Rh/F2ld9NZcrFC0V1uGVyekHTPI4U9ZCQFDNAzc
+ J/A3Wgalv2dViWNPt+C2tqfsaNxBcELCRWJVD92uef/fdubAl5LPy6cp6X98KSgVy1cl
+ jMI1mLUJbKLDJTc80vuKx6kqLZ0uXtK01xmRvxzmCmjVmQrBrwMJ5bwTitWZCm8O6fls
+ +wF9lcVurhY7ZhI6UMg6xYODoCBagSTcn7Ds3ftyGNsLTtjz4ncPGAiR7YL4WhJUAmOT
+ uAFA==
+X-Gm-Message-State: APjAAAW/ECouj3OZhDF9+m/U2lVaokbBHo1UcQeCGftqZi+d9xCdckcg
+ s3iDFj5zmikyJGheL7aEUHvUnQ==
+X-Google-Smtp-Source: APXvYqxG2jOdodqsWQ5mwtCs76XPGe47ZZXt6Cm+uvj2FaxskGuJ65ytWrAcZXkUELPsNrxYldD21w==
+X-Received: by 2002:a1c:20c3:: with SMTP id g186mr96553204wmg.15.1564560017072; 
+ Wed, 31 Jul 2019 01:00:17 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id t13sm81020046wrr.0.2019.07.31.00.32.26
+ by smtp.gmail.com with ESMTPSA id g25sm48012719wmk.39.2019.07.31.01.00.15
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 31 Jul 2019 00:32:34 -0700 (PDT)
-Subject: Re: [PATCH v4 19/23] drm/bridge: dw-hdmi: Provide ddc symlink in
- connector sysfs directory
-To: Sam Ravnborg <sam@ravnborg.org>
-References: <cover.1562843413.git.andrzej.p@collabora.com>
- <ec88a18feffa37eceb947bb83a6f9f51fb575566.1562843413.git.andrzej.p@collabora.com>
- <449b11e6-2386-4e5b-26f7-eb6046911f24@baylibre.com>
- <20190730173007.GA28537@ravnborg.org>
+ Wed, 31 Jul 2019 01:00:16 -0700 (PDT)
+Subject: Re: Review required [Was: Associate ddc adapters with connectors]
+To: Sam Ravnborg <sam@ravnborg.org>,
+ Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+References: <cover.1564161140.git.andrzej.p@collabora.com>
+ <20190726183520.GA22572@ravnborg.org> <20190726185538.GD14981@ravnborg.org>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -119,26 +116,26 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <955bfa75-3801-6b49-66f6-4ad4671df523@baylibre.com>
-Date: Wed, 31 Jul 2019 09:32:24 +0200
+Message-ID: <6560f93c-a48f-2a8c-afeb-d5e8e200480d@baylibre.com>
+Date: Wed, 31 Jul 2019 10:00:14 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190730173007.GA28537@ravnborg.org>
+In-Reply-To: <20190726185538.GD14981@ravnborg.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_003236_976207_C49A0DBF 
-X-CRM114-Status: GOOD (  15.25  )
+X-CRM114-CacheID: sfid-20190731_010024_437460_0B00E80A 
+X-CRM114-Status: GOOD (  19.83  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -154,45 +151,31 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "Y.C. Chen" <yc_chen@aspeedtech.com>,
- =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Ramalingam C <ramalingam.c@intel.com>,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- dri-devel@lists.freedesktop.org, Douglas Anderson <dianders@chromium.org>,
- Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>, kernel@collabora.com,
- Fabio Estevam <festevam@gmail.com>,
- =?UTF-8?B?VmlsbGUgU3lyasOkbMOk?= <ville.syrjala@linux.intel.com>,
- "David \(ChunMing\) Zhou" <David1.Zhou@amd.com>,
- linux-samsung-soc@vger.kernel.org, Joonyoung Shim <jy0922.shim@samsung.com>,
- linux-rockchip@lists.infradead.org, Vincent Abriou <vincent.abriou@st.com>,
- Rob Clark <robdclark@gmail.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
- Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, linux-arm-msm@vger.kernel.org,
- CK Hu <ck.hu@mediatek.com>, Dave Airlie <airlied@redhat.com>,
- intel-gfx@lists.freedesktop.org, Shashank Sharma <shashank.sharma@intel.com>,
- freedreno@lists.freedesktop.org, linux-tegra@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, Jonas Karlman <jonas@kwiboo.se>,
- linux-kernel@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Jani Nikula <jani.nikula@linux.intel.com>, Inki Dae <inki.dae@samsung.com>,
- Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
- Jyri Sarha <jsarha@ti.com>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
+Cc: David Airlie <airlied@linux.ie>, Liviu Dudau <liviu.dudau@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Chris Wilson <chris@chris-wilson.co.uk>,
- Sean Paul <sean@poorly.run>, Pengutronix Kernel Team <kernel@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org, amd-gfx@lists.freedesktop.org,
- Tomi Valkeinen <tomi.valkeinen@ti.com>, Eric Anholt <eric@anholt.net>,
- Thomas Zimmermann <tzimmermann@suse.de>,
- Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- Todor Tomov <todor.tomov@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Shawn Guo <shawnguo@kernel.org>, kernel@collabora.com,
+ linux-samsung-soc@vger.kernel.org, Sean Paul <sean@poorly.run>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
+ Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Dave Airlie <airlied@redhat.com>, Thomas Zimmermann <tzimmermann@suse.de>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
+ intel-gfx@lists.freedesktop.org, Jyri Sarha <jsarha@ti.com>,
+ Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
+ Maxime Ripard <mripard@kernel.org>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ linux-tegra@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
+ Vincent Abriou <vincent.abriou@st.com>, linux-arm-kernel@lists.infradead.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>, amd-gfx@lists.freedesktop.org,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Douglas Anderson <dianders@chromium.org>, Todor Tomov <todor.tomov@linaro.org>,
  Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
- Daniel Vetter <daniel@ffwll.ch>, Alex Deucher <alexander.deucher@amd.com>,
- Shawn Guo <shawnguo@kernel.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Alex Deucher <alexander.deucher@amd.com>, freedreno@lists.freedesktop.org,
  =?UTF-8?Q?Christian_K=c3=b6nig?= <christian.koenig@amd.com>,
  Gerd Hoffmann <kraxel@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
@@ -200,31 +183,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Sam,
 
-On 30/07/2019 19:30, Sam Ravnborg wrote:
-> Hi Neil.
+On 26/07/2019 20:55, Sam Ravnborg wrote:
+> Hi all.
 > 
->>> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
->>> ---
->>>  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 40 +++++++++++------------
->>>  1 file changed, 20 insertions(+), 20 deletions(-)
->>>
-> ...
->>
->> Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+> Andrzej have done a good job following up on feedback and this series is
+> now ready.
 > 
-> There is now a much simpler v6 of this patch.
-> Care to take a look and ack/r-b?
+> We need ack on the patches touching the individual drivers before we can
+> proceed.
+> Please check your drivers and get back.
 
-I saw it too late, I reviewed the bridge patches, now
-I'll have a look at the whole patchset.
+I can apply all core and maintainer-acked patches for now :
+1, 2, 7, 10, 11, 16, 17, 18, 19, 20, 21, 22, 23
+
+and Andrzej can resend not applied patches with Yours and Emil's Reviewed-by,
+so we can wait a few more days to apply them.
 
 Neil
 
 > 
 > 	Sam
 > 
+>> Hi Andezej.
+>>
+>> On Fri, Jul 26, 2019 at 07:22:54PM +0200, Andrzej Pietrasiewicz wrote:
+>>> It is difficult for a user to know which of the i2c adapters is for which
+>>> drm connector. This series addresses this problem.
+>>>
+>>> The idea is to have a symbolic link in connector's sysfs directory, e.g.:
+>>>
+>>> ls -l /sys/class/drm/card0-HDMI-A-1/ddc
+>>> lrwxrwxrwx 1 root root 0 Jun 24 10:42 /sys/class/drm/card0-HDMI-A-1/ddc \
+>>> 	-> ../../../../soc/13880000.i2c/i2c-2
+>>>
+>>> The user then knows that their card0-HDMI-A-1 uses i2c-2 and can e.g. run
+>>> ddcutil:
+>>>
+>>> ddcutil -b 2 getvcp 0x10
+>>> VCP code 0x10 (Brightness): current value =    90, max value =   100
+>>>
+>>> The first patch in the series adds struct i2c_adapter pointer to struct
+>>> drm_connector. If the field is used by a particular driver, then an
+>>> appropriate symbolic link is created by the generic code, which is also added
+>>> by this patch.
+>>>
+>>> Patch 2 adds a new variant of drm_connector_init(), see the changelog
+>>> below.
+>>>
+>>> Patches 3..24 are examples of how to convert a driver to this new scheme.
+>>>
+>> ...
+>>>
+>>> v5..v6:
+>>>
+>>> - improved subject line of patch 1
+>>> - added kernel-doc for drm_connector_init_with_ddc()
+>>> - improved kernel-doc for the ddc field of struct drm_connector
+>>> - added Reviewed-by in patches 17 and 18
+>>> - added Acked-by in patch 2
+>>> - made the ownership of ddc i2c_adapter explicit in all patches,
+>>> this made the affected patches much simpler
+>>
+>> Looks good now.
+>> Patch 1 and 2 are:
+>> Reviewed-by: Sam Ravnborg <sam@ravnborg.org>
+>>
+>> The remaining patches are:
+>> Acked-by: Sam Ravnborg <sam@ravnborg.org>
+>>
+>> 	Sam
+>> _______________________________________________
+>> dri-devel mailing list
+>> dri-devel@lists.freedesktop.org
+>> https://lists.freedesktop.org/mailman/listinfo/dri-devel
 
 
 _______________________________________________
