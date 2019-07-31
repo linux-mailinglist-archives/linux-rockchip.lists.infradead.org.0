@@ -2,30 +2,30 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64D8B7B8C1
-	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 06:33:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 954B87B8EE
+	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 06:55:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uge/XQVqD/qQti/A+bQpfqmYoSvQTLpdrY4HjPUD8Q8=; b=gs92JcGKvKCCOw
-	2ABThMvJrANNUImn8M4t0ghk6IVMhqJTVkxu1cGxXD54U68hqRfsA99P8tmDv9OIEjFnD4x+66gzM
-	4sRTnjwaVbNAIlTX5KjPgiLiQVMdUV+yeAN0u+8SJB4K9Qt5KrUvLw5mJM7prZMpJZ0+NpAZCnPdB
-	BL7/N4Ey4zOvPjfGnAWWuJczW86wg8cf7PMDq82W4pnt7T02p0MfSt9mW+bITJCK4chrXML8EBifS
-	WrT6Z+hn7lwDXfilL+JWKzhjrUTKbbW4OyCCUtz79FCBBU74Ox/LFuTr+Xsdd7ivmBgCxHh7XGNuS
-	B02kalrz7iFXR0BThNPQ==;
+	List-Owner; bh=9+5HG8nBobchJhtk2AKLUw9g/UrU/Qv6R5xLvHqIznQ=; b=qOj4Hb675vZn9W
+	ZkfDW9fLSB4ZpML66DWksai+T4ABpM/nDcGxP5w3pcRLpWXrA/VXJ7Jb9bUkicqRqAuvtjPfrQVlU
+	c2fDK+nYkopK8YGlCwSoGpq3UmijQ0supBglSpKLYAgN/mSl5pTMzQkiZixycQqNjLAO/hu2tvdCx
+	HPWA3vbUc/jQ24z8FdRMRSX9QgsiU6T4ftXinQDDX3M4z+pzGSZij5Cr9oWrDfL987x4keTG6Loxa
+	IFR36ZdGm+u6vfhQNxAHQFZ0wo0lOj1SM4ZmvL2WoRuE4LpJym5NU3hkA7xzhQsdDvmkc60DVc5JQ
+	JlJkqkMz1OoAX7ozN0Og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsgIz-0008G6-Ib; Wed, 31 Jul 2019 04:33:37 +0000
-Received: from lb1-smtp-cloud7.xs4all.net ([194.109.24.24])
+	id 1hsgeR-0007Pu-3V; Wed, 31 Jul 2019 04:55:47 +0000
+Received: from lb2-smtp-cloud7.xs4all.net ([194.109.24.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsgIc-0007sA-6k; Wed, 31 Jul 2019 04:33:16 +0000
+ id 1hsgeB-0007FU-BH; Wed, 31 Jul 2019 04:55:33 +0000
 Received: from [IPv6:2001:983:e9a7:1:a003:9a19:9f18:5372]
  ([IPv6:2001:983:e9a7:1:a003:9a19:9f18:5372])
  by smtp-cloud7.xs4all.net with ESMTPA
- id sgIYh2UxBur8TsgIZhB7oo; Wed, 31 Jul 2019 06:33:11 +0200
+ id sge6h2adHur8Tsge7hB9Hs; Wed, 31 Jul 2019 06:55:28 +0200
 Subject: Re: [PATCH v8 00/14] Rockchip ISP1 Driver
 From: Hans Verkuil <hverkuil@xs4all.nl>
 To: Helen Koike <helen.koike@collabora.com>, linux-rockchip@lists.infradead.org
@@ -34,31 +34,32 @@ References: <20190730184256.30338-1-helen.koike@collabora.com>
  <41e7e574-2708-eb4c-ea30-e6a1ac9c073e@collabora.com>
  <8ce532de-6c26-f8db-8754-c8dd1eb0764b@collabora.com>
  <74bb0ba1-2859-39ff-d946-129a440ba150@xs4all.nl>
-Message-ID: <fb1327fb-0903-ce62-4eea-94b81f599b62@xs4all.nl>
-Date: Wed, 31 Jul 2019 06:33:10 +0200
+ <fb1327fb-0903-ce62-4eea-94b81f599b62@xs4all.nl>
+Message-ID: <13d89676-ae84-5904-7606-935501cb2d89@xs4all.nl>
+Date: Wed, 31 Jul 2019 06:55:26 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <74bb0ba1-2859-39ff-d946-129a440ba150@xs4all.nl>
+In-Reply-To: <fb1327fb-0903-ce62-4eea-94b81f599b62@xs4all.nl>
 Content-Language: en-US
-X-CMAE-Envelope: MS4wfEaWO9wIFWm8X+G7TYQwIadLRFXiGM7jx6AHCtLf88bMkZ2Bzi3fT6ovkUy5dg9H734PKmhtKSn28Kl0V5z2nXAfF55ZUJehCnTKFrLSEbfHbYCMVj0V
- AdK4qCjivJzIPZAxYnRLbxZuYQPi2DII98Iq4GMGm1Pdh+0MPMibGL/RspqvqcwkpxsESqJDnYol38s183u3MMC8CteYV9rK0J8UtoUIgimlCIffgCkicd1y
- v6bSOrSlDoAqfENUPdzoYP4kL6BBiddJwgBk+gCTwa4MSB9WddH7CGDTdfdN7JxhOfLAbBip9rscpaCopmE6PMNkz0/InnEnNDdb5rRL4h7cbq6lfigdBBdr
- DcdlkXhiJi4N98aBRuLL+T6uOLaJTWtB1KrS3U+iJyeEfXflY1no8/QIA9zJA4MHduEYYCTlVTAxFz/Uj5eYe+bjK8A4MW2byCizEcGtTOrgejHErtKbcuNr
- 45W/HpOE6wM7dRT4LnQ2pgkT2gptz9/sIXgOLM7yNARhYB6cl4kCqgYoBmJp0eIZOrRLRcMD3aCpjXriwA5Vo2a5tiDOAs/YenYb8NV0QBBvtLkMrkglUjRe
- dP/3S1W5wuDNRhVwn8Qk+WubDlmdR+yDWqt80MUHWJ2cHzGlSJglDhk2xQm6r5osHBsos7eODGO2xwD4hF2DnEr6eJlY3a6PzuB4HfW+cis62LGTFNwrPYp7
- eXuBQPWn69n4V9IV3GaXIOoZ2dS0vYD7gh3cNmJObqDOl51gODwzcV2qEAKD6aNLoZVrW0Lq7WStOVlgl6MFOM7+5YQySO3NtGZtYh9sWfIA4vfdE1mNmWoQ
- RC6nCFIb+tvbJJlCznXJZQjSn66Gjy8+hS4JUstjk0C2Zk/VuaRONpc+s91B0IeBcPd7aWIEw3eJQcRDqJzE/a+VbRVmYoMjd5EI6GiE
+X-CMAE-Envelope: MS4wfP/q3EnArJxBpSF7A97Y6c/kJMiNjcY8zTy1HJDi56O4eVd8ArhL5LDpNvq47gai47NHfK3L/be0dDM8KvqGTek5mSMdQdRExvMPD+eKajxit+ZkID0N
+ MAdRENuetD+cl+lty3C1NbyjzQw0VJwr+5++KWyNiJuCIcI6RMa0rCtwptR0Ad0cEM9CGiWNY8QqF0YzI+q+VO71GOui9E0B3/UhGbf8ZxlHIFzWqMfeI4i6
+ hLWvaxKefJkS7bfuinmY8GOR76RBltnftT/YDcbRHO3qY7dvkTgmMOerg/xHF4Ij2Lq5th5LvovVHJuW5klfK2VsG0uTjJ6ZMBUZ4rbnf37GxY6WaXSJ6XJB
+ FhTW2BEfW4VenQAPOHaIkm3hQn1X7ekj6x6EV1LIa/wquo48Rh09wt2Xq8y1NyOOI4iC/ErXScmxv/DACce1qOh++h573A7rEbb4f3KNnXNQV2JUXvOpZ0NL
+ R61GhuJ8xT3kvjNlLgnB+0moQokpBHWbKMXSau7N1DoSrliH0OBM/4GORn82wfr7VHmHPEQRSkKHVGmfZFPUbuBCXbMGG3I23gBpV7sBLP6dzVKCzNuMaw61
+ RrgOQZUI+bQH/UZEBHlCzF4GKdncBvitwaF30Na1rgM6pcQSbbbfkf61ugGvnfVCCYyYXt86cWVGQ8tH5Ps1N/DDRZpc77DoSW0FJI9iQGpgDjg8sG9q+8F7
+ Q5HDIJMyGkIOgfynRe+Xcqdd3Exjaahm0TAimUwjNUkCZF3A4ORSifmE687wkIo2quw33fguQ9xP4A518Nbq1//AXAtlFAMbJlJ5vUkCGx2voDSE58lM7oit
+ VOKxNY5RXCVnLXHu5YPk9eJe9BPGdStm/Orc3ckITathFVYxO1SwlrSYbgdXwMmn7/Oj2wdFLxCXkn20eCOXGdtEmbKK7PKMMnHZaj3y
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_213314_415618_D1BDF485 
-X-CRM114-Status: GOOD (  17.47  )
+X-CRM114-CacheID: sfid-20190730_215531_546407_064E8501 
+X-CRM114-Status: GOOD (  16.66  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.24 listed in list.dnswl.org]
+ low trust [194.109.24.28 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -84,81 +85,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 7/31/19 6:29 AM, Hans Verkuil wrote:
-> On 7/31/19 2:08 AM, Helen Koike wrote:
->>
->>
->> On 7/30/19 5:50 PM, Helen Koike wrote:
+On 7/31/19 6:33 AM, Hans Verkuil wrote:
+> On 7/31/19 6:29 AM, Hans Verkuil wrote:
+>> On 7/31/19 2:08 AM, Helen Koike wrote:
 >>>
 >>>
->>> On 7/30/19 5:15 PM, Hans Verkuil wrote:
->>>> On 7/30/19 8:42 PM, Helen Koike wrote:
->>>>> Hello,
->>>>>
->>>>> I'm re-sending a new version of ISP(Camera) v4l2 driver for rockchip
->>>>> rk3399 SoC.
->>>>>
->>>>> I didn't change much from the last version, just applying the
->>>>> suggestions made in the previous one.
->>>>>
->>>>> This patchset is also available at:
->>>>> https://gitlab.collabora.com/koike/linux/tree/rockchip/isp/v8
->>>>>
->>>>> Libcamera patched to work with this version:
->>>>> https://gitlab.collabora.com/koike/libcamera
->>>>> (also sent to the mailing list)
->>>>>
->>>>> I tested on the rockpi 4 with a rpi v1.3 sensor and also with the
->>>>> Scarlet Chromebook.
->>>>>
->>>>> Known issues (same as in v7):
->>>>> -------------
->>>>> - Reloading the module doesn't work (there is some missing cleanup when
->>>>> unloading)
->>>>> - When capturing in bayer format, changing the size doesn't seem to
->>>>> affect the image.
->>>>> - crop needs more tests
->>>>> - v4l2-compliance error:
->>>>>         fail: v4l2-test-controls.cpp(824): subscribe event for control 'Image Processing Controls' failed
->>>>> test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: FAIL
+>>> On 7/30/19 5:50 PM, Helen Koike wrote:
 >>>>
->>>> Can you mail me the full v4l2-compliance output?
+>>>>
+>>>> On 7/30/19 5:15 PM, Hans Verkuil wrote:
+>>>>> On 7/30/19 8:42 PM, Helen Koike wrote:
+>>>>>> Hello,
+>>>>>>
+>>>>>> I'm re-sending a new version of ISP(Camera) v4l2 driver for rockchip
+>>>>>> rk3399 SoC.
+>>>>>>
+>>>>>> I didn't change much from the last version, just applying the
+>>>>>> suggestions made in the previous one.
+>>>>>>
+>>>>>> This patchset is also available at:
+>>>>>> https://gitlab.collabora.com/koike/linux/tree/rockchip/isp/v8
+>>>>>>
+>>>>>> Libcamera patched to work with this version:
+>>>>>> https://gitlab.collabora.com/koike/libcamera
+>>>>>> (also sent to the mailing list)
+>>>>>>
+>>>>>> I tested on the rockpi 4 with a rpi v1.3 sensor and also with the
+>>>>>> Scarlet Chromebook.
+>>>>>>
+>>>>>> Known issues (same as in v7):
+>>>>>> -------------
+>>>>>> - Reloading the module doesn't work (there is some missing cleanup when
+>>>>>> unloading)
+>>>>>> - When capturing in bayer format, changing the size doesn't seem to
+>>>>>> affect the image.
+>>>>>> - crop needs more tests
+>>>>>> - v4l2-compliance error:
+>>>>>>         fail: v4l2-test-controls.cpp(824): subscribe event for control 'Image Processing Controls' failed
+>>>>>> test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: FAIL
+>>>>>
+>>>>> Can you mail me the full v4l2-compliance output?
+>>>>
+>>>> Sure, please check here: http://ix.io/1Q5u
+>>>> I updated v4l-utils with the latest version and I re-ran bootstrap/configure/make,
+>>>> but for some reason the hash from the link above is not the latest commit, probably some
+>>>> old configuration somewhere. I'll resend this log as soon as I get v4l2-compliance
+>>>> properly updated.
 >>>
->>> Sure, please check here: http://ix.io/1Q5u
->>> I updated v4l-utils with the latest version and I re-ran bootstrap/configure/make,
->>> but for some reason the hash from the link above is not the latest commit, probably some
->>> old configuration somewhere. I'll resend this log as soon as I get v4l2-compliance
->>> properly updated.
+>>> Please see the output of v4l2-compliance here with an updated v4l-utils: http://ix.io/1Q6A
 >>
->> Please see the output of v4l2-compliance here with an updated v4l-utils: http://ix.io/1Q6A
+>> So this FAIL is for /dev/v4l-subdev0 (rkisp1-isp-subdev).
+>>
+>> What is weird that this subdev does not appear to have controls at all.
+>>
+>> What is the output of 'v4l2-ctl -d /dev/v4l-subdev0 -l'? And if it lists
+>> controls, then why?
+>>
+>> If you run 'v4l2-compliance -u /dev/v4l-subdev0', do you get a fail as
+>> well?
 > 
-> So this FAIL is for /dev/v4l-subdev0 (rkisp1-isp-subdev).
-> 
-> What is weird that this subdev does not appear to have controls at all.
-> 
-> What is the output of 'v4l2-ctl -d /dev/v4l-subdev0 -l'? And if it lists
-> controls, then why?
-> 
-> If you run 'v4l2-compliance -u /dev/v4l-subdev0', do you get a fail as
-> well?
+> I see the same issue with v4l-subdev1, but I see no "Media Driver Info"
+> in the v4l2-compliance output for that subdev. That's strange. It would
+> be good to know why that's happening.
 
-I see the same issue with v4l-subdev1, but I see no "Media Driver Info"
-in the v4l2-compliance output for that subdev. That's strange. It would
-be good to know why that's happening.
+It looks to be some parenting issue: v4l2-compliance expects to find
+a mediaX directory in /sys/dev/char/81\:Y/device/ where 81:Y is the major/minor
+of /dev/v4l-subdev1.
+
+Because is this mi_get_media_fd() cannot find the media device for the subdev
+in v4l2-compliance.
 
 Regards,
 
 	Hans
-
-> 
-> BTW, note that struct rkisp1_isp_subdev has a ctrl_handler field that
-> isn't used at all.
-> 
-> Regards,
-> 
-> 	Hans
-> 
-
 
 _______________________________________________
 Linux-rockchip mailing list
