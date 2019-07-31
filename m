@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 156747C977
-	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 18:59:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADD977C99A
+	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 19:00:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,32 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=2fdVE3gTgiPD01HevjYmAzKlIO+syQwNRFsPwD1HIU0=; b=Qqw4dSrQBCIQrmRZsvWIqYWMHb
-	OouRqM+MCKEFSPmqQT35AcVikD8ivAnO0e1GelAW+9UVaKaTutuGHRNyU+iJtP4Ek/nY0hitaxKfI
-	thfJxBSGcu4KQka+THUMtEe+HGSiKFgJtyBf96e87ftqjUcK59Rj0c4jugyi9cHReNHfyF20BOZGa
-	cb3164y6/xRe3rzLAO0A3FLisBE6mfc+QcQOD1jwHIsGe5TRKOH6kqNv8S2mhpP9xv9BFVmZKQ/bY
-	CgKtgw3yeMEXNPzggk5eIy7taw8Vv4F+6wRP534EXgjhJ5GVqVsesC/OZdGlMDty3Q8h0wv4dAD4Z
-	0rljPKLA==;
+	bh=UPh+cpxr34jy7hEe6XMaWz89sk1fMdODFaa/ZDiICWU=; b=u2/HUhOMP9AeSrHY60s42oMsUO
+	Tw9aY0swpNfasYDs4I1/p3b1NPPXP8JGGM50cSonPKVd8iBcQZYVmpQzDRsSsIYNI8U1jUuvgNI7M
+	FlBNUFnxd/wwGETdXSMfleVmIWOLlREBkbeNVuuO23DlKtAuZVfKEj3UFi7do5e/RaacgqbkhkrI5
+	XVbIe74Gqs5zu0A9po/q8FiJkT3fq+S7/Z9V5QHKJoWpIMTuOBcn7FpFYpBsOZFSoIFSO3sbgcJjO
+	vQlgcTs5kgtKwkfdPcbuZJbCHUrCr3DaE7eCt5PY/qfFox/mahG6PV3QfQczeGK/3udU0R/BJXTlR
+	+Clk2VoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrwh-0008Iu-Ls; Wed, 31 Jul 2019 16:59:23 +0000
+	id 1hsrxg-00024U-DC; Wed, 31 Jul 2019 17:00:24 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrw1-0007eq-A0; Wed, 31 Jul 2019 16:58:50 +0000
+ id 1hsrw9-0007qC-QR; Wed, 31 Jul 2019 16:59:01 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id BB97F28BEFC
+ (Authenticated sender: andrzej.p) with ESMTPSA id E8D0A28BF12
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 00/13] Next round of associating ddc adapters with connectors
-Date: Wed, 31 Jul 2019 18:58:09 +0200
-Message-Id: <cover.1564591626.git.andrzej.p@collabora.com>
+Subject: [PATCH 01/13] drm/amdgpu: Provide ddc symlink in dm connector's sysfs
+ directory
+Date: Wed, 31 Jul 2019 18:58:10 +0200
+Message-Id: <9b0ebdbb24fdc4fa38b763935433cd26e40d3e9b.1564591626.git.andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <65481afa-1104-4ee9-e53d-f2732a10d4b9@baylibre.com>
+In-Reply-To: <cover.1564591626.git.andrzej.p@collabora.com>
 References: <65481afa-1104-4ee9-e53d-f2732a10d4b9@baylibre.com>
+ <cover.1564591626.git.andrzej.p@collabora.com>
+In-Reply-To: <cover.1564591626.git.andrzej.p@collabora.com>
+References: <cover.1564591626.git.andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_095841_688255_270109AC 
-X-CRM114-Status: UNSURE (   8.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190731_095850_044699_CF6D11D5 
+X-CRM114-Status: GOOD (  11.04  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -59,8 +62,7 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- Sam Ravnborg <sam@ravnborg.org>, David Airlie <airlied@linux.ie>,
- Ramalingam C <ramalingam.c@intel.com>,
+ David Airlie <airlied@linux.ie>, Ramalingam C <ramalingam.c@intel.com>,
  Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
  Chris Wilson <chris@chris-wilson.co.uk>,
  Bhawanpreet Lakha <Bhawanpreet.Lakha@amd.com>, Eric Anholt <eric@anholt.net>,
@@ -100,45 +102,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Now that some of the patches of the previous v6 series are applied,
-I'm resending the remaining ones (patches 3-13) with Acked-by and
-Reviewed-by added.
+Use the ddc pointer provided by the generic connector.
 
-I'm also taking this opportunity to provide the symlink for another
-connector in amdgpu (patch 1), and to fix a small but nasty bug
-which can cause a use of an uninitialized variable (patch 2).
+Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+---
+ drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-Andrzej Pietrasiewicz (13):
-  drm/amdgpu: Provide ddc symlink in dm connector's sysfs directory
-  drm/radeon: Eliminate possible use of an uninitialized variable
-  drm/exynos: Provide ddc symlink in connector's sysfs
-  drm: rockchip: Provide ddc symlink in rk3066_hdmi sysfs directory
-  drm: rockchip: Provide ddc symlink in inno_hdmi sysfs directory
-  drm/msm/hdmi: Provide ddc symlink in hdmi connector sysfs directory
-  drm/mediatek: Provide ddc symlink in hdmi connector sysfs directory
-  drm/tegra: Provide ddc symlink in output connector sysfs directory
-  drm/vc4: Provide ddc symlink in connector sysfs directory
-  drm: zte: Provide ddc symlink in hdmi connector sysfs directory
-  drm: zte: Provide ddc symlink in vga connector sysfs directory
-  drm/tilcdc: Provide ddc symlink in connector sysfs directory
-  drm/i915: Provide ddc symlink in hdmi connector sysfs directory
-
- drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c |  5 +++--
- drivers/gpu/drm/exynos/exynos_hdmi.c              |  6 ++++--
- drivers/gpu/drm/i915/display/intel_hdmi.c         | 12 ++++++++----
- drivers/gpu/drm/mediatek/mtk_hdmi.c               |  7 ++++---
- drivers/gpu/drm/msm/hdmi/hdmi_connector.c         |  6 ++++--
- drivers/gpu/drm/radeon/radeon_connectors.c        |  2 +-
- drivers/gpu/drm/rockchip/inno_hdmi.c              |  6 ++++--
- drivers/gpu/drm/rockchip/rk3066_hdmi.c            |  7 ++++---
- drivers/gpu/drm/tegra/hdmi.c                      |  7 ++++---
- drivers/gpu/drm/tegra/sor.c                       |  7 ++++---
- drivers/gpu/drm/tilcdc/tilcdc_tfp410.c            |  6 ++++--
- drivers/gpu/drm/vc4/vc4_hdmi.c                    | 12 ++++++++----
- drivers/gpu/drm/zte/zx_hdmi.c                     |  6 ++++--
- drivers/gpu/drm/zte/zx_vga.c                      |  6 ++++--
- 14 files changed, 60 insertions(+), 35 deletions(-)
-
+diff --git a/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c b/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c
+index 4a29f72334d0..f7d79b0032d2 100644
+--- a/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c
++++ b/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c
+@@ -5144,11 +5144,12 @@ static int amdgpu_dm_connector_init(struct amdgpu_display_manager *dm,
+ 
+ 	connector_type = to_drm_connector_type(link->connector_signal);
+ 
+-	res = drm_connector_init(
++	res = drm_connector_init_with_ddc(
+ 			dm->ddev,
+ 			&aconnector->base,
+ 			&amdgpu_dm_connector_funcs,
+-			connector_type);
++			connector_type,
++			&i2c->base);
+ 
+ 	if (res) {
+ 		DRM_ERROR("connector_init failed\n");
 -- 
 2.17.1
 
