@@ -2,61 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD0097BE88
-	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 12:40:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C40A47C2F7
+	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 15:10:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qhb9BH4z83JiLBZ3u6HG+3Zem6Eqfl/t7CWZlngMARw=; b=SPJZaVEUZrw5Cx
-	+OPLHeZc1WJv1qZTyzUiU9HvxmR6/MUmZ9q2pX8V+wpC6Ye5v+ZUERruIyxpZmeY5zrVA4kZERN9j
-	/Oivz1jI9YeSyXzNTE7xEp/+Dfj7yk1cB56c52/DjJKVJt0gxmXCzBMtf0C6q04uecpCJsnKWmXwL
-	mU/CFTGpcTRcCcfvJlUTFXE2vFVXcMsSO6n4qY1H9D4qChU2sHIU4H7CRVnvQgf2LAzTHp1SuXY4L
-	rZe90W5mQKbJkhj3mSHWWvor+ypY18da+O+LTQk+OtQ6gjPKwe5F8WvRRTCVdeWR8yUh7+mbdteUp
-	/RhO+6PSJLk3/ny3Ipuw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=dyQyOW8DoQvOm188ayMglNWAictz47jVYXQjZ2tlp3Q=; b=tv5RebfB2dFmHA1ebEJeNie6a
+	f+qu3m7aWX5JAwPZDnjWWVksNCVKXv//Vb5W2MXfyT3NPgHcJn9JWSLWtxQFP/gYi2171tD4wgH2n
+	sYNm1Kenm2kG+czbbh8QV9xIY9OUNo41W1Y8FPMiYPtgrP23coflYL+Wo+ciYFUQDLqM55U6adObD
+	x5UV/Pi32UnKSX9mG6fEq+U7vo8/Aab/1Y/sjiUJm5Bnm8AYtTopOP8+4WjjWwMOoBTpzYwUAm4ZT
+	krAynNedEn23JNKZuzw1v3rGhNhTmQOo8VgTxEfZPOa9vERpn3/SSyEwlr+I0tduBJZd1A6SQOT1k
+	PdHcUbsNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsm21-0000o3-E6; Wed, 31 Jul 2019 10:40:29 +0000
-Received: from asavdk3.altibox.net ([109.247.116.14])
+	id 1hsoNN-0006RP-BS; Wed, 31 Jul 2019 13:10:41 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsm1r-0000W4-9A; Wed, 31 Jul 2019 10:40:20 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id E4FE120020;
- Wed, 31 Jul 2019 12:40:08 +0200 (CEST)
-Date: Wed, 31 Jul 2019 12:40:07 +0200
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Neil Armstrong <narmstrong@baylibre.com>
+ id 1hsoNC-0006G5-4I; Wed, 31 Jul 2019 13:10:31 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 05184289377
 Subject: Re: Review required [Was: Associate ddc adapters with connectors]
-Message-ID: <20190731104007.GA23138@ravnborg.org>
+To: Sam Ravnborg <sam@ravnborg.org>, Neil Armstrong <narmstrong@baylibre.com>
 References: <cover.1564161140.git.andrzej.p@collabora.com>
- <20190726183520.GA22572@ravnborg.org>
- <20190726185538.GD14981@ravnborg.org>
+ <20190726183520.GA22572@ravnborg.org> <20190726185538.GD14981@ravnborg.org>
  <6560f93c-a48f-2a8c-afeb-d5e8e200480d@baylibre.com>
+ <20190731104007.GA23138@ravnborg.org>
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Message-ID: <959cf323-c6b9-895b-592c-81c52aacae6e@collabora.com>
+Date: Wed, 31 Jul 2019 15:10:20 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6560f93c-a48f-2a8c-afeb-d5e8e200480d@baylibre.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=dqr19Wo4 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10
- a=MKLiDCnLOtWFweQeVuoA:9 a=CjuIK1q_8ugA:10
+In-Reply-To: <20190731104007.GA23138@ravnborg.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_034019_505010_700989CB 
-X-CRM114-Status: GOOD (  13.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190731_061030_302143_99236DBC 
+X-CRM114-Status: GOOD (  12.81  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.14 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,45 +82,32 @@ Cc: David Airlie <airlied@linux.ie>, Liviu Dudau <liviu.dudau@arm.com>,
  amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Seung-Woo Kim <sw0312.kim@samsung.com>, linux-kernel@vger.kernel.org,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
  Todor Tomov <todor.tomov@linaro.org>,
  Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
  Thomas Zimmermann <tzimmermann@suse.de>,
  Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
- Christian =?iso-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>,
+ =?UTF-8?Q?Christian_K=c3=b6nig?= <christian.koenig@amd.com>,
  Gerd Hoffmann <kraxel@redhat.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Neil.
-
-On Wed, Jul 31, 2019 at 10:00:14AM +0200, Neil Armstrong wrote:
-> Hi Sam,
-> 
-> On 26/07/2019 20:55, Sam Ravnborg wrote:
-> > Hi all.
-> > 
-> > Andrzej have done a good job following up on feedback and this series is
-> > now ready.
-> > 
-> > We need ack on the patches touching the individual drivers before we can
-> > proceed.
-> > Please check your drivers and get back.
-> 
-> I can apply all core and maintainer-acked patches for now :
-> 1, 2, 7, 10, 11, 16, 17, 18, 19, 20, 21, 22, 23
-> 
-> and Andrzej can resend not applied patches with Yours and Emil's Reviewed-by,
-> so we can wait a few more days to apply them.
-
-Sounds like a good plan.
-Thanks for thaking care of this.
-
-	Sam
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+VyBkbml1IDMxLjA3LjIwMTkgb8KgMTI6NDAsIFNhbSBSYXZuYm9yZyBwaXN6ZToKPiBIaSBOZWls
+Lgo+IAo+IE9uIFdlZCwgSnVsIDMxLCAyMDE5IGF0IDEwOjAwOjE0QU0gKzAyMDAsIE5laWwgQXJt
+c3Ryb25nIHdyb3RlOgo+PiBIaSBTYW0sCj4+Cj4+IE9uIDI2LzA3LzIwMTkgMjA6NTUsIFNhbSBS
+YXZuYm9yZyB3cm90ZToKPj4+IEhpIGFsbC4KPj4+Cj4+PiBBbmRyemVqIGhhdmUgZG9uZSBhIGdv
+b2Qgam9iIGZvbGxvd2luZyB1cCBvbiBmZWVkYmFjayBhbmQgdGhpcyBzZXJpZXMgaXMKPj4+IG5v
+dyByZWFkeS4KPj4+Cj4+PiBXZSBuZWVkIGFjayBvbiB0aGUgcGF0Y2hlcyB0b3VjaGluZyB0aGUg
+aW5kaXZpZHVhbCBkcml2ZXJzIGJlZm9yZSB3ZSBjYW4KPj4+IHByb2NlZWQuCj4+PiBQbGVhc2Ug
+Y2hlY2sgeW91ciBkcml2ZXJzIGFuZCBnZXQgYmFjay4KPj4KPj4gSSBjYW4gYXBwbHkgYWxsIGNv
+cmUgYW5kIG1haW50YWluZXItYWNrZWQgcGF0Y2hlcyBmb3Igbm93IDoKPj4gMSwgMiwgNywgMTAs
+IDExLCAxNiwgMTcsIDE4LCAxOSwgMjAsIDIxLCAyMiwgMjMKPj4KPj4gYW5kIEFuZHJ6ZWogY2Fu
+IHJlc2VuZCBub3QgYXBwbGllZCBwYXRjaGVzIHdpdGggWW91cnMgYW5kIEVtaWwncyBSZXZpZXdl
+ZC1ieSwKPj4gc28gd2UgY2FuIHdhaXQgYSBmZXcgbW9yZSBkYXlzIHRvIGFwcGx5IHRoZW0uCj4g
+Cj4gU291bmRzIGxpa2UgYSBnb29kIHBsYW4uCj4gVGhhbmtzIGZvciB0aGFraW5nIGNhcmUgb2Yg
+dGhpcy4KCldoZW4gaXMgaXQgZ29vZCB0aW1lIHRvIHJlc2VuZCBwYXRjaGVzIDMsIDQsIDUsIDYs
+IDgsIDksIDEyLCAxMywgMTQsIDE1LCAyNCBhcyBhCm5ldyBzZXJpZXM/CgpBbmRyemVqCgpfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hp
+cCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
