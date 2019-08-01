@@ -2,58 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D1457CCFA
-	for <lists+linux-rockchip@lfdr.de>; Wed, 31 Jul 2019 21:39:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 113927D447
+	for <lists+linux-rockchip@lfdr.de>; Thu,  1 Aug 2019 06:06:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9BVN/p/a2VPNv1uUGfg3IWgDtZ0x80jzu6FQXe6UWP0=; b=AhCidYO395GOYx
-	vCtDm0GOGLXe4HWQ7ec5FA2JedDo21pTWaLRTgL6r25VSnyxfq83Vj8O9ZtW1z+szCtsULj4pqv70
-	B7JX6ikar36gDBhfBryvVNLE8uSN93vrbf1tc9f/ubDHR5Ricw1Cz1aVOxNRPvqsfmN4bwKgrNtqT
-	7i0vqvNE/rOprl8I4E807CgCSuJEbwrznJiknotx/9lOyk5TVlwpbkiN/14IoQmkxNt8ncullnfl6
-	wh/XlKJ1KnWB5miyFCY4hP3Eu5bF5EqCY1ucboev1vx8ATE+9nqN6MeAZLzqXaVLKeV8rWB6JO5bN
-	GUVMQePR2SX5Py3lbB2A==;
+	List-Owner; bh=l7MFkQqe7bw0AQBVlSW6QClCaRQhloWJs9nWiWUl4vA=; b=rhbON/kklTCjoN
+	xUkA5R+YdoG1+qIuDGkyBRy9oZJHUdHAFvO1aMUA1fEnRIoQTiydu9dcJTlteI/mzBf4VGjtq7s7A
+	ytXfeGK+u27nlMA6uk1G2BXc0/HXx3xVe/2Hmy18c5I71GRj9yD9kvegjyFxX3VFMQLNKfYjGYOZT
+	GY6rmur8Fuz/P/GL1lYp5tfFICViJjdZukxJw4NFXjHkSuDSyEMYwgBgNwIFuH+NnMy5m+dCxwbqI
+	eRejvfJZ3n0SdXRCQKf8Y950bFNuKZUPekBqZqR+AL5h9IPzmKbvRH6fdwYSngzLPsO/PsOYUvmzI
+	7edbL7Ok8JvqUbj1KM6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsuRw-00015y-W5; Wed, 31 Jul 2019 19:39:48 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1ht2ME-0007cU-Ur; Thu, 01 Aug 2019 04:06:26 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsuRm-0000xA-Pv; Wed, 31 Jul 2019 19:39:40 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 1BF22289F21
-Message-ID: <869dd8b894883715378ba681c7dd26934284bdff.camel@collabora.com>
-Subject: Re: [PATCH v4 14/23] drm/tilcdc: Provide ddc symlink in connector
- sysfs directory
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Thomas Zimmermann <tzimmermann@suse.de>, Andrzej Pietrasiewicz
- <andrzej.p@collabora.com>, Sam Ravnborg <sam@ravnborg.org>
-Date: Wed, 31 Jul 2019 16:39:13 -0300
-In-Reply-To: <acfd895d-ab59-0190-e25c-1827bd8d214b@suse.de>
-References: <cover.1562843413.git.andrzej.p@collabora.com>
- <d1d415022c598fb7acd033f0f322dd67250adaa9.1562843413.git.andrzej.p@collabora.com>
- <20190723090532.GA787@ravnborg.org>
- <3ad60be5-49cf-4017-4b74-53a2d6272deb@collabora.com>
- <acfd895d-ab59-0190-e25c-1827bd8d214b@suse.de>
-Organization: Collabora
-User-Agent: Evolution 3.30.5-1.1 
+ id 1ht2MC-0007c7-6y
+ for linux-rockchip@lists.infradead.org; Thu, 01 Aug 2019 04:06:25 +0000
+Received: by mail-wr1-x443.google.com with SMTP id r1so71927121wrl.7
+ for <linux-rockchip@lists.infradead.org>; Wed, 31 Jul 2019 21:06:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=0mB42y3xmrJWhBLWeWzKTdkVYurhG+q5hPYefS8udCw=;
+ b=Rqy1b9wgnbO9iiiBCq0yAP3hGF9q5tLtF+rAKGfMKigKhec6hrRDE2gbAmGB6vil2r
+ 3lcZJ1qyK34AcYzj1Pc4F5LaFctVd17q/tHL6sMpyVAhjhlkvj+6WFudBTwwiM77jJg2
+ 1pvNRrRsnFSe3u9RLO+v1a/eLfrm+Ons2lnZo=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=0mB42y3xmrJWhBLWeWzKTdkVYurhG+q5hPYefS8udCw=;
+ b=sNL3rsrg+gNOZKCvvMCl6I/fhLOQbcHN0467+mNdK7JYpLxQtJPIklxYf8U5+whVnO
+ J3rG/F6LFa13TIngnc4n/3He6lBafC41VR/DQscrndr+IjC2mM7u9rO1nMxNuDhMHHl1
+ OuCm6UA9afCcYWersqZaoDpI0LOATKLZyBP9hY5R0L+oQ4PrlERhEYkXD7MGAdKVpu6X
+ cwVtFYvQhTod7ERzInEAd2jdPVUKHqROb3rEbI4FpjDOxd9hAaG9ixNpgzwR6MmzYg92
+ fd6q4dL3IRzLKwdvLXb6Q9MFMlJYO3ttZUAc/nlVGYOcnyzQTWJHqBCoQEJVXFbZ9Bll
+ w0xA==
+X-Gm-Message-State: APjAAAVg/CN31DCbFliFZhA4tzGt98uei3vF11gqnyOYGJ5g/ofNUoQf
+ 3P3M2FM/IaHuvSYoVSp+xBq+SBDvEywNeFeAvFbu4A==
+X-Google-Smtp-Source: APXvYqycKy7N26liWehbx4OB6WFB2ks3ASboEt4UcIJYI8SMe0JfZCnvhCeu+F7MPJNgeMKOB0gT4IRbMod1SEgn704=
+X-Received: by 2002:adf:f08f:: with SMTP id n15mr52081058wro.213.1564632382431; 
+ Wed, 31 Jul 2019 21:06:22 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190619121540.29320-1-boris.brezillon@collabora.com>
+ <20190619121540.29320-8-boris.brezillon@collabora.com>
+In-Reply-To: <20190619121540.29320-8-boris.brezillon@collabora.com>
+From: Tomasz Figa <tfiga@chromium.org>
+Date: Thu, 1 Aug 2019 13:06:10 +0900
+Message-ID: <CAHD77HksotqFBTE84rRM=DuNFX=YJPs=YnsuFkaN-pWUNCtoxA@mail.gmail.com>
+Subject: Re: [PATCH 7/9] media: hantro: Add core bits to support H264 decoding
+To: Boris Brezillon <boris.brezillon@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_123939_106003_5537FAE1 
-X-CRM114-Status: GOOD (  29.92  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190731_210624_283974_3ED80C8E 
+X-CRM114-Status: GOOD (  11.59  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,233 +89,49 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, dri-devel@lists.freedesktop.org,
- Douglas Anderson <dianders@chromium.org>, linux-tegra@vger.kernel.org,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
- linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Vincent Abriou <vincent.abriou@st.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
- Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Dave Airlie <airlied@redhat.com>,
- freedreno@lists.freedesktop.org, Jonas Karlman <jonas@kwiboo.se>,
- linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
- Jyri Sarha <jsarha@ti.com>, Alexios Zavras <alexios.zavras@intel.com>,
- Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
- Rodrigo Vivi <rodrigo.vivi@intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Seung-Woo Kim <sw0312.kim@samsung.com>, linux-kernel@vger.kernel.org,
- Todor Tomov <todor.tomov@linaro.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
- Christian =?ISO-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>,
- Gerd Hoffmann <kraxel@redhat.com>
+Cc: kernel@collabora.com, Heiko Stuebner <heiko@sntech.de>,
+ Jonas Karlman <jonas@kwiboo.se>, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Nicolas Dufresne <nicolas@ndufresne.ca>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Sakari Ailus <sakari.ailus@iki.fi>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Hertz Wong <hertz.wong@rock-chips.com>,
+ Hans Verkuil <hans.verkuil@cisco.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Boris,
 
-I'm glad to see this work moving forward!
+On Wed, Jun 19, 2019 at 9:15 PM Boris Brezillon
+<boris.brezillon@collabora.com> wrote:
+[snip]
+> @@ -533,10 +535,21 @@ hantro_queue_setup(struct vb2_queue *vq, unsigned int *num_buffers,
+>                 return -EINVAL;
+>         }
+>
+> +       /* The H264 decoder needs extra size on the output buffer. */
+> +       if (ctx->vpu_src_fmt->fourcc == V4L2_PIX_FMT_H264_SLICE_RAW)
+> +               extra_size0 = 128 * DIV_ROUND_UP(pixfmt->width, 16) *
+> +                             DIV_ROUND_UP(pixfmt->height, 16);
+> +
 
-On Wed, 2019-07-24 at 10:01 +0200, Thomas Zimmermann wrote:
-> Hi
-> 
-> Am 23.07.19 um 14:44 schrieb Andrzej Pietrasiewicz:
-> > Hi Sam,
-> > 
-> > W dniu 23.07.2019 o 11:05, Sam Ravnborg pisze:
-> > > Hi Andrzej
-> > > 
-> > > On Thu, Jul 11, 2019 at 01:26:41PM +0200, Andrzej Pietrasiewicz wrote:
-> > > > Use the ddc pointer provided by the generic connector.
-> > > > 
-> > > > Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-> > > > ---
-> > > >   drivers/gpu/drm/tilcdc/tilcdc_tfp410.c | 1 +
-> > > >   1 file changed, 1 insertion(+)
-> > > > 
-> > > > diff --git a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
-> > > > b/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
-> > > > index 62d014c20988..c373edb95666 100644
-> > > > --- a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
-> > > > +++ b/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
-> > > > @@ -219,6 +219,7 @@ static struct drm_connector
-> > > > *tfp410_connector_create(struct drm_device *dev,
-> > > >       tfp410_connector->mod = mod;
-> > > >         connector = &tfp410_connector->base;
-> > > > +    connector->ddc = mod->i2c;
-> > > >         drm_connector_init(dev, connector, &tfp410_connector_funcs,
-> > > >               DRM_MODE_CONNECTOR_DVID);
-> > > 
-> > > When reading this code, it looks strange that we set connector->ddc
-> > > *before* the call to init the connector.
-> > > One could risk that drm_connector_init() used memset(..) to clear all
-> > > fields or so, and it would break this order.
-> > 
-> > I verified the code of drm_connector_init() and cannot find any memset()
-> > invocations there. What is your actual concern?
-> 
-> I think this echoes my concern about the implicit order of operation. It
-> seems too easy to get this wrong. If you don't want to add an additional
-> interface for setting the ddc field, why not add a dedicated initializer
-> function that sets the ddc field? Something like this.
-> 
-> int drm_connector_init_with_ddc(connector, funcs, ..., ddc)
-> {
-> 	ret = drm_connector_init(connector, funcs, ...);
-> 	if (ret)
-> 		return ret;
-> 
-> 	if (!ddc)
-> 		return 0;
-> 
-> 	connector->ddc = ddc;
-> 	/* set up sysfs */
-> 
+I wonder if this shouldn't be accounted for already in the sizeimage
+returned by TRY_/S_FMT, so that the application can know the required
+buffer size if it uses some external allocator and DMABUF memory type.
+I know we had it like this in our downstream code, but it wasn't the
+problem because we use minigbm, where we explicitly add the same
+padding in the rockchip backend. Any thoughts?
 
-I know this comment comes late to the party, but I'm a slightly
-suprised to see the above instead of implementing drm_connector_init
-in terms of drm_connector_init_with_ddc, as we typically do.
-
-Namely, something along these lines (code might not even build!):
-
---------------------------------------8<-----------------------------
-diff --git a/drivers/gpu/drm/drm_connector.c b/drivers/gpu/drm/drm_connector.c
-index d49e19f3de3a..dbd095933175 100644
---- a/drivers/gpu/drm/drm_connector.c
-+++ b/drivers/gpu/drm/drm_connector.c
-@@ -179,11 +179,12 @@ void drm_connector_free_work_fn(struct work_struct *work)
- }
- 
- /**
-- * drm_connector_init - Init a preallocated connector
-+ * drm_connector_init_with_ddc - Init a preallocated connector
-  * @dev: DRM device
-  * @connector: the connector to init
-  * @funcs: callbacks for this connector
-  * @connector_type: user visible type of the connector
-+ * @ddc: pointer to the associated ddc adapter (optional)
-  *
-  * Initialises a preallocated connector. Connectors should be
-  * subclassed as part of driver connector objects.
-@@ -191,10 +192,11 @@ void drm_connector_free_work_fn(struct work_struct *work)
-  * Returns:
-  * Zero on success, error code on failure.
-  */
--int drm_connector_init(struct drm_device *dev,
--		       struct drm_connector *connector,
--		       const struct drm_connector_funcs *funcs,
--		       int connector_type)
-+int drm_connector_init_with_ddc(struct drm_device *dev,
-+				struct drm_connector *connector,
-+				const struct drm_connector_funcs *funcs,
-+				int connector_type,
-+				struct i2c_adapter *ddc)
- {
- 	struct drm_mode_config *config = &dev->mode_config;
- 	int ret;
-@@ -215,6 +217,9 @@ int drm_connector_init(struct drm_device *dev,
- 	connector->dev = dev;
- 	connector->funcs = funcs;
- 
-+	/* provide ddc symlink in sysfs */
-+	connector->ddc = ddc;
-+
- 	/* connector index is used with 32bit bitmasks */
- 	ret = ida_simple_get(&config->connector_ida, 0, 32, GFP_KERNEL);
- 	if (ret < 0) {
-@@ -295,41 +300,6 @@ int drm_connector_init(struct drm_device *dev,
- 
- 	return ret;
- }
--EXPORT_SYMBOL(drm_connector_init);
--
--/**
-- * drm_connector_init_with_ddc - Init a preallocated connector
-- * @dev: DRM device
-- * @connector: the connector to init
-- * @funcs: callbacks for this connector
-- * @connector_type: user visible type of the connector
-- * @ddc: pointer to the associated ddc adapter
-- *
-- * Initialises a preallocated connector. Connectors should be
-- * subclassed as part of driver connector objects.
-- *
-- * Ensures that the ddc field of the connector is correctly set.
-- *
-- * Returns:
-- * Zero on success, error code on failure.
-- */
--int drm_connector_init_with_ddc(struct drm_device *dev,
--				struct drm_connector *connector,
--				const struct drm_connector_funcs *funcs,
--				int connector_type,
--				struct i2c_adapter *ddc)
--{
--	int ret;
--
--	ret = drm_connector_init(dev, connector, funcs, connector_type);
--	if (ret)
--		return ret;
--
--	/* provide ddc symlink in sysfs */
--	connector->ddc = ddc;
--
--	return ret;
--}
- EXPORT_SYMBOL(drm_connector_init_with_ddc);
- 
- /**
-diff --git a/include/drm/drm_connector.h b/include/drm/drm_connector.h
-index fc5d08438333..1884abf61a86 100644
---- a/include/drm/drm_connector.h
-+++ b/include/drm/drm_connector.h
-@@ -1408,10 +1408,6 @@ struct drm_connector {
- 
- #define obj_to_connector(x) container_of(x, struct drm_connector, base)
- 
--int drm_connector_init(struct drm_device *dev,
--		       struct drm_connector *connector,
--		       const struct drm_connector_funcs *funcs,
--		       int connector_type);
- int drm_connector_init_with_ddc(struct drm_device *dev,
- 				struct drm_connector *connector,
- 				const struct drm_connector_funcs *funcs,
-@@ -1425,6 +1421,16 @@ int drm_connector_attach_encoder(struct drm_connector *connector,
- 
- void drm_connector_cleanup(struct drm_connector *connector);
- 
-+static inline int
-+drm_connector_init(struct drm_device *dev,
-+		   struct drm_connector *connector,
-+		   const struct drm_connector_funcs *funcs,
-+		   int connector_type);
-+{
-+	return drm_connector_init_with_ddc(dev, connector, funcs,
-+					   connector_type, NULL);
-+}
-+
- static inline unsigned int drm_connector_index(const struct drm_connector *connector)
- {
- 	return connector->index;
--------------------------------------->8-----------------------------
-
-This might be seen as bikeshed but it seems there's value keeping all the init
-code in the same place, as opposed to scattered.
-
-Unless there are reasons for the current code, that I'm missing?
-
-Thanks,
-Ezequiel
-
+Best regards,
+Tomasz
 
 _______________________________________________
 Linux-rockchip mailing list
