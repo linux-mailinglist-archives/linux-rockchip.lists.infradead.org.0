@@ -2,52 +2,52 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CE2D7F100
-	for <lists+linux-rockchip@lfdr.de>; Fri,  2 Aug 2019 11:35:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 971FD7F2D1
+	for <lists+linux-rockchip@lfdr.de>; Fri,  2 Aug 2019 11:51:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dx268Vz46CeH7StJM9SGtWSWrBFj0I+CwAf3eMdft90=; b=V5c5cc2scCFShb
-	B4IE8g+CIdrW9I/js2H3xAiSyyXiX7a9Fo6rmxTpVpGazfO+83/5NC+Itk++MKo9UVX6007yweZwJ
-	1MD9DKXjKI3KCkMuRIL1mLPZhtiF3cc+NdfSuJxMfQ+DuH5TsHQFVNkem4aQi9684L8ptQzyaATSF
-	MeTEOvmfiu5UO350r5cwWIfuIzlwqhw7GhVNZxdnqprLGrN2IoH+3zU5ch00qA2wPsiDRsGIpSL4D
-	Zc4cQHZ0ydo60XxxV4HXCwiBQ6NENqwKgRNofL+vSZkdsIXBQuSDE5vzEjbvwCwjbFbrqOam9lAh/
-	APz14LPBLALIj8JaWgMg==;
+	List-Owner; bh=7xZB3HkBVDdpAPS2GQRnRY3Iw/PUiYX8Yg4URHAqW/Q=; b=EPLghAk3F5cKzq
+	6pMFmx32kImhuWXPEi2VihhlrOuji0accRTCFrgL++6G22gF4RAYBwenjcU15m40gwHUb8VmDz8HB
+	lFjuKDRKuOvI3bkp1VLU8PZ30uOYPmLUjoHVE3G9iq6Bg4Y3Hhod3cZLb8UgJHqFQ5Ndq3F76JS8X
+	Rm/F69Ar+a4cbZGHKw4QaRA0a0JOTSWn82V6ZPi78kC4w8x/ddzTcTruQf/aFzCX3m7MVBj9txsFf
+	TqvPokTyLuIocdFbtU5X/zZhe+3GMcHtlWSsQocABpf2qLcee77dBmp/Hz8a0vIEjw8gc5H8psBG8
+	Ysr2XH2LZOUFqzzIcNlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htTxi-0001LA-MK; Fri, 02 Aug 2019 09:34:58 +0000
+	id 1htUDq-0000po-Hv; Fri, 02 Aug 2019 09:51:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htTxf-0001KW-3m
- for linux-rockchip@lists.infradead.org; Fri, 02 Aug 2019 09:34:56 +0000
+ id 1htUDn-0000op-Vl
+ for linux-rockchip@lists.infradead.org; Fri, 02 Aug 2019 09:51:37 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3EA46217D4;
- Fri,  2 Aug 2019 09:34:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CD8872064A;
+ Fri,  2 Aug 2019 09:51:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564738494;
- bh=NyiIAODgi67SoAGH9ft/V6UUhfzqoyu7bgemhXXdjTg=;
+ s=default; t=1564739495;
+ bh=goHfdpkyjRkUxgqH3PRtuRUvEVTPWNxCNirmAlAXiTE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=x80LHCYew8mks2oJi/OZrAMiLe+omdakI4eSNr0D6dnirdLpNbIAyon28ytlqjkw1
- zcOAqhX3UAUTWR5cEs+Fo+/DJS+QRhv/QWQhaDhd51qj84VJPZqmANaRE1wN6xOMwG
- imU9W11CW84IfjGZ/IhXHkQcgpXRiOZRan3WvUaM=
+ b=N+F5/N2xS17DE2+KW71cST1dRyNTwfdPsA/svXoYfIznhTmRFB3ox5P6YxhUua6P2
+ 8YcpTcrWamBuODt3HZlpJuS9lKDRmERuI55lPmMhgh1myF0S1G+P481LBbw0UCv8Zq
+ S6w7SDfrUOxYHiii8kawOuLaHycytO8lsdsN9iSc=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.4 109/158] pinctrl: rockchip: fix leaked of_node references
-Date: Fri,  2 Aug 2019 11:28:50 +0200
-Message-Id: <20190802092226.353596858@linuxfoundation.org>
+Subject: [PATCH 4.9 162/223] pinctrl: rockchip: fix leaked of_node references
+Date: Fri,  2 Aug 2019 11:36:27 +0200
+Message-Id: <20190802092248.664754116@linuxfoundation.org>
 X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190802092203.671944552@linuxfoundation.org>
-References: <20190802092203.671944552@linuxfoundation.org>
+In-Reply-To: <20190802092238.692035242@linuxfoundation.org>
+References: <20190802092238.692035242@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_023455_178709_8E403164 
+X-CRM114-CacheID: sfid-20190802_025136_044814_AB6D4946 
 X-CRM114-Status: UNSURE (   9.25  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.0 (-----)
@@ -108,10 +108,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+)
 
 diff --git a/drivers/pinctrl/pinctrl-rockchip.c b/drivers/pinctrl/pinctrl-rockchip.c
-index a0651128e23a..616055b5e996 100644
+index f826793e972c..417cd3bd7e0c 100644
 --- a/drivers/pinctrl/pinctrl-rockchip.c
 +++ b/drivers/pinctrl/pinctrl-rockchip.c
-@@ -1837,6 +1837,7 @@ static int rockchip_get_bank_data(struct rockchip_pin_bank *bank,
+@@ -2208,6 +2208,7 @@ static int rockchip_get_bank_data(struct rockchip_pin_bank *bank,
  						    base,
  						    &rockchip_regmap_config);
  		}
