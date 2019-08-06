@@ -2,55 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7AA3F82DE5
-	for <lists+linux-rockchip@lfdr.de>; Tue,  6 Aug 2019 10:37:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D90383449
+	for <lists+linux-rockchip@lfdr.de>; Tue,  6 Aug 2019 16:48:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N3akZrZ5+/5DGEakBJG/fECeSpSqnKfNWmTw5ooJtzY=; b=UMbJ7hxvfB+XgD
-	Uo6cw8wGmd30A8X9tG355N06EAgqMcgCkQYD/vSn0ZWs9/KXlOrf/D4bBK2tQwk/JW51rKU6nfgz4
-	/fNgGxzfBzFDCsas4zdt7F8Qeqn5B9RAIMr/AcSykIoNrXvx4exYrKy2L8fwztBHCqDx0fPNMsydC
-	kiceV1yOvcpaalXspXa9J+dP83x8p/lz5RwLoLyYY0dIW+dhyI7neGZMaRSopmCRZvsVZtuFYTD4o
-	9+11LOH8MKYbe56UO3zSKeK5hAfUyewEcKv+PZvS5y/6FJ7YdIUHH16lTQEwhrAvN3i+wsOpK2zp5
-	GXMaL94qSqQlLqdEHPxA==;
+	List-Owner; bh=g/zMzlGq166xJX/8/d78GhgWqE5+kc3EdMGFYlwSIqc=; b=g70rKfMeQtKjhz
+	smS6s64wopVDBAP2kZHQ24ZwLdtsU4ZZEpaXsgrWC+yIklY5QXvlBMNZL52KWty+ILeMCsGLyGTwV
+	B0/P0+n1+PDYwCC1SvrydB1NKReuhCSdQTLQLearndjmYk1isQWIiI9SLMIohLvCLm9jg64bn+Nvn
+	MvK2GGVYchC6BiH4fK4qki4/qVPfdJLxwS7abdKSvo23/UrtkeW0L1rwWESguYgTQr2bZFDG9uWK6
+	YPlUmXWotakQUH/A7C6LXmqy6vb4J6lbAJXQGR+UWN1UDLbQ9gbJcdRfHNTPS9mTiRB7Raihz04an
+	/qlrper8rebpqF6is0dw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huuyC-0006bo-Mx; Tue, 06 Aug 2019 08:37:24 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1hv0lg-0004E1-2S; Tue, 06 Aug 2019 14:48:52 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huuxt-0006NY-AP; Tue, 06 Aug 2019 08:37:06 +0000
-Received: from wf0413.dip.tu-dresden.de ([141.76.181.157] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <heiko@sntech.de>)
- id 1huuxd-0003Rg-64; Tue, 06 Aug 2019 10:36:49 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- Sean Paul <sean@poorly.run>, Sam Ravnborg <sam@ravnborg.org>,
- amd-gfx@lists.freedesktop.org
-Subject: Re: [PATCH 04/13] drm: rockchip: Provide ddc symlink in rk3066_hdmi
- sysfs directory
-Date: Tue, 06 Aug 2019 10:36:48 +0200
-Message-ID: <2234467.HdXYNSqS9h@phil>
-In-Reply-To: <e3058e1973c9c7649a0818450188b5c3db442b3e.1564591626.git.andrzej.p@collabora.com>
-References: <65481afa-1104-4ee9-e53d-f2732a10d4b9@baylibre.com>
- <cover.1564591626.git.andrzej.p@collabora.com>
- <e3058e1973c9c7649a0818450188b5c3db442b3e.1564591626.git.andrzej.p@collabora.com>
+ id 1hv0lS-00044Z-C0; Tue, 06 Aug 2019 14:48:39 +0000
+Received: from mail-qt1-f175.google.com (mail-qt1-f175.google.com
+ [209.85.160.175])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E4040214C6;
+ Tue,  6 Aug 2019 14:48:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565102918;
+ bh=x7+zuhPSgSXmr3tQYyWqjuUN30oPsXPwF0umtxRNEHY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=w19qnzWgKd1l9VJRONLsxahJe2Zq24AjsLOh/sS/sRdya6nJo0NcopWNDa+xlwwhp
+ SNMhuFLrRJzo9AN2RT4Lh4pEmbuCY8hXM9gveqVbnExdRBM3Z8FAvp3moXTTWjQm5X
+ N21od/+8QLv9Jso9txuCarmFtzgOq725DPDRolCQ=
+Received: by mail-qt1-f175.google.com with SMTP id k10so15631731qtq.1;
+ Tue, 06 Aug 2019 07:48:37 -0700 (PDT)
+X-Gm-Message-State: APjAAAWvNsWccgsoduR5RpQwSxkC6t7HJ8dlpwH+n+7DewUzHv1NBBuW
+ K9P3hHKeeXM2qhtzfcmSdqVs2aVOrbTCV2s7ag==
+X-Google-Smtp-Source: APXvYqzdOZglR4quROk3FUKY2+tfejjSYSYfOGLsawyMXpxA6lYUzY//ZPC4x3/JKIJvpf2DMxrxuZM012h5EesF4sA=
+X-Received: by 2002:ac8:3908:: with SMTP id s8mr3347606qtb.224.1565102917107; 
+ Tue, 06 Aug 2019 07:48:37 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190805124037.10597-1-andyshrk@gmail.com>
+In-Reply-To: <20190805124037.10597-1-andyshrk@gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Tue, 6 Aug 2019 08:48:25 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJ6_J1pR-MYK5kmUN5Q+tX32UNFqLW81tmBf=pYxtAmjg@mail.gmail.com>
+Message-ID: <CAL_JsqJ6_J1pR-MYK5kmUN5Q+tX32UNFqLW81tmBf=pYxtAmjg@mail.gmail.com>
+Subject: Re: [PATCH v2] arm64: dts: rockchip: Add dts for Leez RK3399 P710 SBC
+To: Andy Yan <andyshrk@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_013705_506893_5071F5DB 
-X-CRM114-Status: UNSURE (   8.61  )
+X-CRM114-CacheID: sfid-20190806_074838_431984_FC114940 
+X-CRM114-Status: UNSURE (   9.86  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,36 +84,43 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, kernel@collabora.com,
- "David \(ChunMing\) Zhou" <David1.Zhou@amd.com>,
- linux-samsung-soc@vger.kernel.org, Joonyoung Shim <jy0922.shim@samsung.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-rockchip@lists.infradead.org,
- Kukjin Kim <kgene@kernel.org>, Harry Wentland <harry.wentland@amd.com>,
- Leo Li <sunpeng.li@amd.com>, linux-arm-msm@vger.kernel.org,
- intel-gfx@lists.freedesktop.org, Jani Nikula <jani.nikula@linux.intel.com>,
- Inki Dae <inki.dae@samsung.com>, linux-mediatek@lists.infradead.org,
- linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
- Kyungmin Park <kyungmin.park@samsung.com>, Daniel Vetter <daniel@ffwll.ch>,
- Alex Deucher <alexander.deucher@amd.com>, freedreno@lists.freedesktop.org,
- Christian =?ISO-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>
+Cc: devicetree@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "heiko@sntech.de" <heiko@sntech.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Mittwoch, 31. Juli 2019, 18:58:13 CEST schrieb Andrzej Pietrasiewicz:
-> Use the ddc pointer provided by the generic connector.
-> 
-> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-> Acked-by: Sam Ravnborg <sam@ravnborg.org>
-> Reviewed-by: Emil Velikov <emil.velikov@collabora.com>
+On Mon, Aug 5, 2019 at 6:40 AM Andy Yan <andyshrk@gmail.com> wrote:
+>
+> P710 is a RK3399 based SBC, designed by Leez [0].
+>
+> Specification
+> - Rockchip RK3399
+> - 4/2GB LPDDR4
+> - TF sd scard slot
+> - eMMC
+> - M.2 B-Key for 4G LTE
+> - AP6256 for WiFi + BT
+> - Gigabit ethernet
+> - HDMI out
+> - 40 pin header
+> - USB 2.0 x 2
+> - USB 3.0 x 1
+> - USB 3.0 Type-C x 1
+> - TYPE-C Power supply
+>
+> [0]https://leez.lenovo.com
 
-Acked-by: Heiko Stuebner <heiko@sntech.de>
+I'm not really convinced Leez is a vendor. Looks like branding to me.
+We have enough with company names changing, we don't need changing
+brands too. Use 'lenovo'.
 
-
-
+Rob
 
 _______________________________________________
 Linux-rockchip mailing list
