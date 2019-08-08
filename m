@@ -2,53 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BEED85FE3
-	for <lists+linux-rockchip@lfdr.de>; Thu,  8 Aug 2019 12:35:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06E4C86444
+	for <lists+linux-rockchip@lfdr.de>; Thu,  8 Aug 2019 16:24:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rzxp3+LXrv5lX+Gwse5ieU24C44DmZmqQOX1x+YmJCU=; b=NELemLeoMBGQiM
-	toXAfIZwnF6M+j3LzSDQcuGZFUeq/qiVnf3u27qzozvYuG0vaHebl+Ua+NxGAWknGAU6Mt5zrrhYr
-	uCtw+fC1DCgJWBq3fhIiJKXZgn7UbeN16WmuRxW+CZlYMyJwoEmsWad0UMzC8tgIRCCgmiUPdCY+A
-	aVFrlHGYvO1oQ1ArDQyhYnwE+Y1zYACDiQbdPeh8khZPrSBj8OXR3LJ+wBignp3bFtrzVuhTqzWUO
-	dk4pjSIbTc6kPlAImdL8kGnAu9hyF+k3suoCvmiRqknL6sTbMRcB/CJXtcznlWs2nHwThu6MyFDuZ
-	u1/cExRnhETK0n3S3gJg==;
+	List-Owner; bh=S0ymuuv+9A/Y5Qequ7b7ivSg95Yy4lIKn6wAkUOt2TI=; b=LZkg6qpSfwIT8z
+	It6gZsCHeE7LHHaJI4eUxFZEBa/pv1s7Za61MNhsq1IUcYZ0/jWo15pPyvpeZmOlFgUuPgGPHZ3h9
+	fQdT3oRWqZYcHah33oA3C2oUKIZG5bzbUvTeTAVUOXeJ9PPsd3EusBY7oGgdRPYaEkz7SRQWy2gBv
+	uQo+Tlj3L2pEsnIqgML0Z1l0q4TT/8BL4pjTOz2W9w9/NxAH33H8ehRUx1vqwoujFgwn4TcapK99M
+	eMvFOf3S0WmnmktifWgBd3fU40OXvakR9/3D24u0T2I212II8gEI/+x9qufVBw/SWJPlFii+POY2B
+	bJmfeqDMNjoJVD3YAQcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvflp-000695-HO; Thu, 08 Aug 2019 10:35:45 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hvjLO-0004Mq-3j; Thu, 08 Aug 2019 14:24:42 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvflk-000667-Gl
- for linux-rockchip@lists.infradead.org; Thu, 08 Aug 2019 10:35:41 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 9E29B28C95C
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: linux-media@vger.kernel.org
-Subject: [PATCH v4 11/11] media: hantro: Enable H264 decoding on rk3288
-Date: Thu,  8 Aug 2019 07:34:32 -0300
-Message-Id: <20190808103432.12062-12-ezequiel@collabora.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190808103432.12062-1-ezequiel@collabora.com>
-References: <20190808103432.12062-1-ezequiel@collabora.com>
+ id 1hvjL6-0004Cl-Lx; Thu, 08 Aug 2019 14:24:26 +0000
+Received: from mail-qt1-f169.google.com (mail-qt1-f169.google.com
+ [209.85.160.169])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3BC5B2171F;
+ Thu,  8 Aug 2019 14:24:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565274264;
+ bh=GbxGK/XeU8Jq3BsD5vAhpYB5spmsW6zGX1dwrpsE5t4=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=aoIa7iW+xO03864JPGOTaZ0uKpmXzd9TyBhnV4ccOITEc6lK3zCzzIcNr094IVknO
+ SQuc+rxdvYL1EOfaPJXKSJQIOp+iewyyYbOTwhFMc30yuSsfvlmlM4ZcjM9ygpk39e
+ HVHroC/rC1LdgrNSETv7fVg+s4eQqHJ65iKv9yak=
+Received: by mail-qt1-f169.google.com with SMTP id n11so92291706qtl.5;
+ Thu, 08 Aug 2019 07:24:24 -0700 (PDT)
+X-Gm-Message-State: APjAAAUeP7ByXmntBQU2Ew8Pj3IAEn2iO0d0K2vYVCT81QebiSTQizxx
+ JLA+mZ+wRP4iBsZYPVQr3saTbohqBvZ1wdlrWQ==
+X-Google-Smtp-Source: APXvYqye2r+EAqTd1bwyViP0nnseaD8L/QzN64cUXepyshuKkd3QHF+cGD87GSZVBbS9vKtfQnvvObZlYmsjxVhLY5U=
+X-Received: by 2002:ac8:23b3:: with SMTP id q48mr3395933qtq.110.1565274263456; 
+ Thu, 08 Aug 2019 07:24:23 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190805124037.10597-1-andyshrk@gmail.com>
+ <CAL_JsqJ6_J1pR-MYK5kmUN5Q+tX32UNFqLW81tmBf=pYxtAmjg@mail.gmail.com>
+ <CANbgqATvVSo_D-n_mW2hK2KEK_8cs3374ddB6C8GcZZwjMSoRQ@mail.gmail.com>
+In-Reply-To: <CANbgqATvVSo_D-n_mW2hK2KEK_8cs3374ddB6C8GcZZwjMSoRQ@mail.gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 8 Aug 2019 08:24:12 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+1KVVube322GZXetVWdthrtWG=QiOTSnUg5aLbXjBuWg@mail.gmail.com>
+Message-ID: <CAL_Jsq+1KVVube322GZXetVWdthrtWG=QiOTSnUg5aLbXjBuWg@mail.gmail.com>
+Subject: Re: [PATCH v2] arm64: dts: rockchip: Add dts for Leez RK3399 P710 SBC
+To: Andy Yan <andyshrk@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_033540_708249_DCFFBB06 
-X-CRM114-Status: UNSURE (   8.87  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190808_072424_743944_5CE91F38 
+X-CRM114-Status: GOOD (  11.20  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,85 +85,36 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
- Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Hertz Wong <hertz.wong@rock-chips.com>,
- kernel@collabora.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "heiko@sntech.de" <heiko@sntech.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Hertz Wong <hertz.wong@rock-chips.com>
-
-Now that the generic bits have been added, we can activate H264 decoding
-on rk3288.
-
-Signed-off-by: Hertz Wong <hertz.wong@rock-chips.com>
-Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
----
-Changes in v4:
-* None.
----
- drivers/staging/media/hantro/rk3288_vpu_hw.c | 21 +++++++++++++++++++-
- 1 file changed, 20 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/staging/media/hantro/rk3288_vpu_hw.c b/drivers/staging/media/hantro/rk3288_vpu_hw.c
-index f1b573a006ae..6bfcc47d1e58 100644
---- a/drivers/staging/media/hantro/rk3288_vpu_hw.c
-+++ b/drivers/staging/media/hantro/rk3288_vpu_hw.c
-@@ -61,6 +61,19 @@ static const struct hantro_fmt rk3288_vpu_dec_fmts[] = {
- 		.fourcc = V4L2_PIX_FMT_NV12,
- 		.codec_mode = HANTRO_MODE_NONE,
- 	},
-+	{
-+		.fourcc = V4L2_PIX_FMT_H264_SLICE,
-+		.codec_mode = HANTRO_MODE_H264_DEC,
-+		.max_depth = 2,
-+		.frmsize = {
-+			.min_width = 48,
-+			.max_width = 3840,
-+			.step_width = H264_MB_DIM,
-+			.min_height = 48,
-+			.max_height = 2160,
-+			.step_height = H264_MB_DIM,
-+		},
-+	},
- 	{
- 		.fourcc = V4L2_PIX_FMT_MPEG2_SLICE,
- 		.codec_mode = HANTRO_MODE_MPEG2_DEC,
-@@ -162,6 +175,12 @@ static const struct hantro_codec_ops rk3288_vpu_codec_ops[] = {
- 		.init = hantro_jpeg_enc_init,
- 		.exit = hantro_jpeg_enc_exit,
- 	},
-+	[HANTRO_MODE_H264_DEC] = {
-+		.run = hantro_g1_h264_dec_run,
-+		.reset = rk3288_vpu_dec_reset,
-+		.init = hantro_h264_dec_init,
-+		.exit = hantro_h264_dec_exit,
-+	},
- 	[HANTRO_MODE_MPEG2_DEC] = {
- 		.run = hantro_g1_mpeg2_dec_run,
- 		.reset = rk3288_vpu_dec_reset,
-@@ -197,7 +216,7 @@ const struct hantro_variant rk3288_vpu_variant = {
- 	.dec_fmts = rk3288_vpu_dec_fmts,
- 	.num_dec_fmts = ARRAY_SIZE(rk3288_vpu_dec_fmts),
- 	.codec = HANTRO_JPEG_ENCODER | HANTRO_MPEG2_DECODER |
--		 HANTRO_VP8_DECODER,
-+		 HANTRO_VP8_DECODER | HANTRO_H264_DECODER,
- 	.codec_ops = rk3288_vpu_codec_ops,
- 	.irqs = rk3288_irqs,
- 	.num_irqs = ARRAY_SIZE(rk3288_irqs),
--- 
-2.22.0
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gV2VkLCBBdWcgNywgMjAxOSBhdCAxMjoxNCBBTSBBbmR5IFlhbiA8YW5keXNocmtAZ21haWwu
+Y29tPiB3cm90ZToKPgo+IEhpIFJvYjoKPgo+IFJvYiBIZXJyaW5nIDxyb2JoK2R0QGtlcm5lbC5v
+cmc+IOS6jjIwMTnlubQ45pyINuaXpeWRqOS6jCDkuIvljYgxMDo0OOWGmemBk++8mgo+Pgo+PiBP
+biBNb24sIEF1ZyA1LCAyMDE5IGF0IDY6NDAgQU0gQW5keSBZYW4gPGFuZHlzaHJrQGdtYWlsLmNv
+bT4gd3JvdGU6Cj4+ID4KPj4gPiBQNzEwIGlzIGEgUkszMzk5IGJhc2VkIFNCQywgZGVzaWduZWQg
+YnkgTGVleiBbMF0uCj4+ID4KPj4gPiBTcGVjaWZpY2F0aW9uCj4+ID4gLSBSb2NrY2hpcCBSSzMz
+OTkKPj4gPiAtIDQvMkdCIExQRERSNAo+PiA+IC0gVEYgc2Qgc2NhcmQgc2xvdAo+PiA+IC0gZU1N
+Qwo+PiA+IC0gTS4yIEItS2V5IGZvciA0RyBMVEUKPj4gPiAtIEFQNjI1NiBmb3IgV2lGaSArIEJU
+Cj4+ID4gLSBHaWdhYml0IGV0aGVybmV0Cj4+ID4gLSBIRE1JIG91dAo+PiA+IC0gNDAgcGluIGhl
+YWRlcgo+PiA+IC0gVVNCIDIuMCB4IDIKPj4gPiAtIFVTQiAzLjAgeCAxCj4+ID4gLSBVU0IgMy4w
+IFR5cGUtQyB4IDEKPj4gPiAtIFRZUEUtQyBQb3dlciBzdXBwbHkKPj4gPgo+PiA+IFswXWh0dHBz
+Oi8vbGVlei5sZW5vdm8uY29tCj4+Cj4+IEknbSBub3QgcmVhbGx5IGNvbnZpbmNlZCBMZWV6IGlz
+IGEgdmVuZG9yLiBMb29rcyBsaWtlIGJyYW5kaW5nIHRvIG1lLgo+PiBXZSBoYXZlIGVub3VnaCB3
+aXRoIGNvbXBhbnkgbmFtZXMgY2hhbmdpbmcsIHdlIGRvbid0IG5lZWQgY2hhbmdpbmcKPj4gYnJh
+bmRzIHRvby4gVXNlICdsZW5vdm8nLgo+Pgo+Cj4gSSBoYWQgY2hlY2tlZCB3aXRoIExlZXogcGVv
+cGxlIGJlZm9yZSBWMSwgdGhleSBzYWlkIExlZXogd2lsbCBydW4gYXMgYW4gaW5kZXBlbmRlbnQg
+Y29tcGFueSwgc28gdGhleSBkb24ndCB3YW50IHRvCj4gZ2l2ZSBhIGxlbm92byBsYWJlbCBmb3Ig
+dGhpcyBib2FyZC4KCk9rYXkuCgpSZXZpZXdlZC1ieTogUm9iIEhlcnJpbmcgPHJvYmhAa2VybmVs
+Lm9yZz4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxp
+bnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9j
+a2NoaXAK
