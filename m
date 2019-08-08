@@ -2,51 +2,70 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8D548562E
-	for <lists+linux-rockchip@lfdr.de>; Thu,  8 Aug 2019 00:48:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FFCC85762
+	for <lists+linux-rockchip@lfdr.de>; Thu,  8 Aug 2019 03:01:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1xJvWTi/yIkiRdQXFBuB6mvz82QcWSiSWFFgiCcLLFw=; b=dMpWqtnWW6lzsM
-	CKLfTS0hiSMiPpdaZcLqFGPV7x5HXHb2gph+Y4jhsWMuqr54Gtr652WQsxKmhwDXbNKg/+RaqFvF4
-	CF1zYEvRflqAhARDYYkMBY6NeUa6lX7z36zfsFKnHY3u3fZsDqmC7q0VFoXoc15U/xFCTXCeIJfPk
-	X035+Z6LgoyUYEncJSn20/Sgtl8q9d3PLjn2WOEGhdEg3IIL8h1Wi1KN8R++JbZ/3nt76MDWy5QnJ
-	Gj/BT5gPbMFHPe49lDKlPPEuF+z/rzDcN1e0ntaT+Muzn66Ja4U62HIP5IFlXTV/7nA2WA0Um2J4p
-	+sN3h1g0iIBEhUL5sV5A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gvwzWFzXKAv1I6M0t68BPABGdNPfijlYS2VfOVOKAxg=; b=huJU6k7XutIkk3CG9UpSwcBc1
+	KisqK1A3CTLo4jj2MQN1lKjUA15CuvEh5kpGAqIG0Drqyf8KLbB+yfAG50zHe2WUQTLI7MAy9DF/I
+	/woG5ul5cnMwahKbBLOauVTqIfJRt7FnLEzbj0w6n0fqB1RRqDNKnzE2By2ZBOSIwmPSV89NFRB8l
+	KZgt2VikeMgbVhPWYoT7AivFQ4VyO66t4HuzIXSVUYnMDcVQHECUvlxrwPuvCHFqez1GQo5XucASR
+	UJyfFRjgWfZgPFVhQY1J9XJpBE4tFyPzBPGXBG5CSDkVlxlUFZEjldaIJzZQsfwJLUajk7p/cfdm+
+	1S/7aTyrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvUjI-0003cf-Iz; Wed, 07 Aug 2019 22:48:24 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1hvWo8-0006yg-2K; Thu, 08 Aug 2019 01:01:32 +0000
+Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvUjF-0003cG-Fg
- for linux-rockchip@lists.infradead.org; Wed, 07 Aug 2019 22:48:22 +0000
-Received: from ip5f5a6044.dynamic.kabel-deutschland.de ([95.90.96.68]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hvUj8-0003su-OM; Thu, 08 Aug 2019 00:48:14 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: John Keeping <john@metanate.com>
-Subject: Re: [PATCH] drm/rockchip: fix VOP_WIN_GET macro
-Date: Thu, 08 Aug 2019 00:48:14 +0200
-Message-ID: <2679769.bco7YeSQm7@diego>
-In-Reply-To: <20190703095111.29117-1-john@metanate.com>
-References: <20190703095111.29117-1-john@metanate.com>
+ id 1hvWns-0006qE-9M; Thu, 08 Aug 2019 01:01:18 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 463qnK0hXRz9sN6;
+ Thu,  8 Aug 2019 11:01:09 +1000 (AEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
+ s=201702; t=1565226071;
+ bh=MsMFPAr56dFY8txzKEu0S50XsC7x6UWlqVj387uslpE=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=ul9uHSv2Ta3v3XNn4l0MbL7N55D+LloSbQoLFOMCydtRMR2w64dbN2GNiSq4Q4iVL
+ auqDYaV3U9Rm736O4eZ4XEyF4qFkBDRqIStHXY6JBXedpNhm+xN+qFWHlFxxC3gIBo
+ qwHRKRVFPaQ8JrQPwJgM4lPDerygjqIQ1eLt0/CI54EAHMhhE/ddu7qADHl0gKuJUU
+ 9Y1OC96+/Cm/h5LBJgyNZmS8yopeCvRXy7dA9DGXoFVb16PEGN1lc2TwKpFa78KhVE
+ J1VSHRjVp7fVo+kDdHjWaOLEaOFkximdMWSIIMvfnBswO0y/s9OtWGnMarmYLWB2LJ
+ qxIFiOKzVJ5IQ==
+Date: Thu, 8 Aug 2019 11:01:08 +1000
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+To: Naresh Kamboju <naresh.kamboju@linaro.org>
+Subject: Re: Linux next-20190807: arm64: build failed -
+ phy-rockchip-inno-hdmi.c:1046:26: error: anonymous bit-field has negative
+ width (-1)
+Message-ID: <20190808110108.2db1b128@canb.auug.org.au>
+In-Reply-To: <CA+G9fYvehn=5Rn0RHjFvCc1pCDFTUtxNeR11CQjD6rjM53D4ig@mail.gmail.com>
+References: <CA+G9fYvehn=5Rn0RHjFvCc1pCDFTUtxNeR11CQjD6rjM53D4ig@mail.gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_154821_673635_ECC8F1AD 
-X-CRM114-Status: UNSURE (   9.63  )
+X-CRM114-CacheID: sfid-20190807_180116_758977_47BD2CA5 
+X-CRM114-Status: UNSURE (   7.65  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.4 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,32 +78,98 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Sandy Huang <hjc@rock-chips.com>,
- dri-devel@lists.freedesktop.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: heiko@sntech.de, open list <linux-kernel@vger.kernel.org>,
+ lkft-triage@lists.linaro.org, kishon@ti.com,
+ linux-rockchip@lists.infradead.org,
+ Linux-Next Mailing List <linux-next@vger.kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5812658284700958738=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Mittwoch, 3. Juli 2019, 11:51:11 CEST schrieb John Keeping:
-> Commit 9a61c54b9bff ("drm/rockchip: vop: group vop registers") seems to
-> have unintentionally changed the defintion of this macro.  Since it is
-> unused, this was not spotted but any attempt to use it results in
-> compilation errors.
-> 
-> Revert to the previous definition.
-> 
-> Fixes: 9a61c54b9bff ("drm/rockchip: vop: group vop registers")
-> Signed-off-by: John Keeping <john@metanate.com>
+--===============5812658284700958738==
+Content-Type: multipart/signed; boundary="Sig_/PnbChS=XA/gL0CFTVs6ccQo";
+ protocol="application/pgp-signature"; micalg=pgp-sha256
 
-applied to drm-misc-next
+--Sig_/PnbChS=XA/gL0CFTVs6ccQo
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
 
-Thanks
-Heiko
+Hi Naresh,
+
+On Wed, 7 Aug 2019 16:48:15 +0530 Naresh Kamboju <naresh.kamboju@linaro.org=
+> wrote:
+>
+> Linux next 20190807 arm64 default config build failed due to below error.
+>=20
+> /drivers/phy/rockchip/phy-rockchip-inno-hdmi.c:1046:26: error:
+> anonymous bit-field has negative width (-1)
+>                 inno_write(inno, 0xc6, RK3328_TERM_RESISTOR_CALIB_SPEED_7=
+_0(v));
+>                                        ^
+> ../drivers/phy/rockchip/phy-rockchip-inno-hdmi.c:201:50: note:
+> expanded from macro 'RK3328_TERM_RESISTOR_CALIB_SPEED_7_0'
+> #define RK3328_TERM_RESISTOR_CALIB_SPEED_7_0(x)         UPDATE(x, 7, 9)
+>                                                         ^
+> ../drivers/phy/rockchip/phy-rockchip-inno-hdmi.c:24:42: note: expanded
+> from macro 'UPDATE'
+> #define UPDATE(x, h, l)         (((x) << (l)) & GENMASK((h), (l)))
+>                                                 ^
+> ../include/linux/bits.h:39:3: note: expanded from macro 'GENMASK'
+>         (GENMASK_INPUT_CHECK(high, low) + __GENMASK(high, low))
+>          ^
+> ../include/linux/bits.h:24:18: note: expanded from macro 'GENMASK_INPUT_C=
+HECK'
+>         ((unsigned long)BUILD_BUG_ON_ZERO(__builtin_choose_expr( \
+>                         ^
+> ../include/linux/build_bug.h:16:47: note: expanded from macro
+> 'BUILD_BUG_ON_ZERO'
+> #define BUILD_BUG_ON_ZERO(e) (sizeof(struct { int:(-!!(e)); }))
+>=20
+> Config link,
+> https://storage.kernelci.org/next/master/next-20190807/arm64/defconfig/cl=
+ang-8/kernel.config
+>=20
+> Build link,
+> https://storage.kernelci.org/next/master/next-20190807/arm64/defconfig/cl=
+ang-8/build.log
+
+I think the patch that caused this has been removed form linux-next for
+today (it had other problems as well).
+
+--=20
+Cheers,
+Stephen Rothwell
+
+--Sig_/PnbChS=XA/gL0CFTVs6ccQo
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl1LdFQACgkQAVBC80lX
+0GzDtgf/aEnfScThkUKIL3HX/GJiKdIkq1RrUzMyRCDBGdYLXLEqa5AkuWd6x0qb
+9MkNVLdg6ZatO2+T1JMstagNLw6X8ts3zQczqd/10e1mBlB2cw2jdO7jbLRmEO0m
+fz2igYmPkgFEN2ErYfwxdx0emqHpLkt0unV6TfSGNIt83isODNkH0YKS7LrSK+PK
+FDGj+eCgSFt8xjQ4Cpz+4XMngun6OMn8nRVCGj0kcRlDBvtSavxzQCFmI9HzF7Yn
+fHQ85Zg7m17qilNAJ+8HgjA5t5u18471SQxsgPujsuP1iWvRgdA5hzFujmFLpLDf
+Jxlds7woEgx7Q41L5gg56wTFwJs8Sw==
+=u6RM
+-----END PGP SIGNATURE-----
+
+--Sig_/PnbChS=XA/gL0CFTVs6ccQo--
 
 
+--===============5812658284700958738==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============5812658284700958738==--
+
