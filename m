@@ -2,90 +2,37 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0066882DB
-	for <lists+linux-rockchip@lfdr.de>; Fri,  9 Aug 2019 20:46:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1472F88908
+	for <lists+linux-rockchip@lfdr.de>; Sat, 10 Aug 2019 09:20:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eK6Bgz94ncbzh7xXnHyAz5SPf8om5DaD25RZ0HioFc8=; b=sEMGCL4aj3l5uB
-	4Iy9+vdoX5VxiyT6OXmYICLjRYO3JhIbkrNdIEuAvMf1Xr36R2yNDFILNijHtKAYWiv+8ACkvJKUk
-	99Bp5yyMnqhiFXPpxflbYkfAtAk8W7Q0XszeeiyO9Mr+a4zXXfjOyW/js7yp18DWHZ7u6q8nvNBiE
-	jsg5iI5ZjqGNFH7xjQmMxC7+Bxl9+YVSNoTawlXuX4opBzRx+186nWW6ztu4+OgGidYIy4cxPy6Q1
-	66cmtx2/4TwvEv3kWmHvtFu35EBeyZLoQjyuy3/JApmG53hLOwfEHTSpkbuKl9NPzl2M6gnWP6jYM
-	QInZuz3d8be7hGjJ2moQ==;
+	List-Owner; bh=K+eOBluTKosTFStoxORQLA7/0Z8VBQpuHjXXNqZ+KSM=; b=BGhviBxZplTcQi
+	cyGWhpd0KVUooybo18q9NtCdXZym3vl0L30TS8Y62+KlSTq/7W1HqmhZhhbDMsHkOyG2tmjNa/pkG
+	vMvmThnuiNfFN3qEJjJ3KAU400PgZgF1+GOrh4EB+APJaxyeqiK9JjHoZM6rmf4XJV5vdCc9EOvC1
+	UHYL2zRh2IVLXN6OG+DFXUrl7aL6finbZV61rPNGkebTQU+/Ao7a4rr2FdzZC+1SKBEH+WcEFW9I7
+	/ANOT1vuB9tcBYWQDQv1EN8RMTcK1AD1rbqRceEYxh/9Dbs57gh9DyQoSXNbaCowybucu5z56gVzY
+	AUYSM/4DF2cThLaFUPDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw9u3-0004Ae-6x; Fri, 09 Aug 2019 18:46:15 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw9tp-00041L-1b
- for linux-rockchip@lists.infradead.org; Fri, 09 Aug 2019 18:46:03 +0000
-Received: by mail-pl1-x644.google.com with SMTP id c14so45208501plo.0
- for <linux-rockchip@lists.infradead.org>; Fri, 09 Aug 2019 11:46:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=kA5LMiIp35kf1OvXboDks3RjTBrzmyys+m0gU3GXqkY=;
- b=totvYs6WJYnbIThPXIKEypX7mCUKzz85xs246Qyy6UXtgaVUmub9FQl8br2uKbfpFg
- 7pZWXSDF7ZHNYbhmdZaOklLs4Okoq5X9BjvlNPdUYgSuFJOBTOW4oAtVt1XwZrpBn1ml
- mdJOGpAw7V6y5I9ta7dsFbWWAB0aQC0qEyauE+/jVdoyPdl+hfhv8QMq7ACaWI39hc9W
- SaHlJ+RXDa7BMM9ba8p1GYay1MVHF9L3SsPQeTRFRdGE0RUrN/9uj+XuHaxfZ7oDD8IS
- S2nWTpOipd7a4StfDh7np0KJjkZ3DDll8OYCnDjQX9N33li3sexl18rfRUOg7bNHod84
- PwtA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=kA5LMiIp35kf1OvXboDks3RjTBrzmyys+m0gU3GXqkY=;
- b=f6hEI9PQS1Six8xy2plAEmayvW/9zSE4QOo65AntNNSiIobWBILcchtLDmwnGLxP+B
- 0AomMJLkdeRT/YvdvkzaMe1w9b3geDRiKaO8P6sK3YkvEdm4uLvkm2Yzb9iXnIu9zoB5
- q6fz1hRjYgywvksXyY72Olgg+X25NBehOMSF7m0QQdwPfxdSGQFXJ/vKCpCzL2qucS/P
- r3F5577anCnJz3fKb2rdGs2cdy9CaSFKM1cJPUXiNt2Ge8bCqSCEAjd1FnNMMS9jyAql
- 0bLY0gOuIxAQh1FNchX8Z1V3GDgtoAEEmVCu3OxeQK730X9bFg1MFCzEnokAAJG7t2/8
- A4KA==
-X-Gm-Message-State: APjAAAVjIaUtyW/nnzv3RE9hFvvbF4H0kQc5MURYGzpepbZWTK1nRibg
- T0J0RHA8LV6wrXUuE88OdHvy
-X-Google-Smtp-Source: APXvYqx8Xc1qNXI4kyu3+M5Sl/Db8l+iqg6Tbc4dM4Y8QzmZEndaSqDq3bql3F92nRtZlLFfP8a5ig==
-X-Received: by 2002:a17:902:8203:: with SMTP id
- x3mr20514753pln.304.1565376359454; 
- Fri, 09 Aug 2019 11:45:59 -0700 (PDT)
-Received: from Mani-XPS-13-9360 ([2409:4072:6092:4e27:d84b:95b4:a65a:8749])
- by smtp.gmail.com with ESMTPSA id w16sm121850348pfj.85.2019.08.09.11.45.50
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 09 Aug 2019 11:45:58 -0700 (PDT)
-Date: Sat, 10 Aug 2019 00:15:46 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Helen Koike <helen.koike@collabora.com>
-Subject: Re: [PATCH v8 00/14] Rockchip ISP1 Driver
-Message-ID: <20190809184546.GA29746@Mani-XPS-13-9360>
-References: <20190730184256.30338-1-helen.koike@collabora.com>
+	id 1hwLfT-0006iV-2f; Sat, 10 Aug 2019 07:19:59 +0000
+Received: from hch by bombadil.infradead.org with local (Exim 4.92 #3 (Red Hat
+ Linux)) id 1hwLfM-0006iA-Bq; Sat, 10 Aug 2019 07:19:52 +0000
+Date: Sat, 10 Aug 2019 00:19:52 -0700
+From: Christoph Hellwig <hch@infradead.org>
+To: Tom Murphy <murphyt7@tcd.ie>, Joerg Roedel <joro@8bytes.org>
+Subject: Re: [PATCH v4 0/5] iommu/amd: Convert the AMD iommu driver to the
+ dma-iommu api
+Message-ID: <20190810071952.GA25550@infradead.org>
+References: <20190613223901.9523-1-murphyt7@tcd.ie>
+ <20190624061945.GA4912@infradead.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190730184256.30338-1-helen.koike@collabora.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_114601_093525_468915E9 
-X-CRM114-Status: GOOD (  39.94  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+In-Reply-To: <20190624061945.GA4912@infradead.org>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,322 +45,37 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
- heiko@sntech.de, jacob2.chen@rock-chips.com, jeffy.chen@rock-chips.com,
- zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
- linux-rockchip@lists.infradead.org, hans.verkuil@cisco.com,
- laurent.pinchart@ideasonboard.com, sakari.ailus@linux.intel.com,
- zhengsq@rock-chips.com, mchehab@kernel.org, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Heiko Stuebner <heiko@sntech.de>, Will Deacon <will.deacon@arm.com>,
+ virtualization@lists.linux-foundation.org,
+ David Brown <david.brown@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, linux-s390@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org,
+ Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ linux-rockchip@lists.infradead.org, Andy Gross <agross@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>, linux-arm-msm@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Robin Murphy <robin.murphy@arm.com>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ Kukjin Kim <kgene@kernel.org>, David Woodhouse <dwmw2@infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Helen,
+On Sun, Jun 23, 2019 at 11:19:45PM -0700, Christoph Hellwig wrote:
+> Tom,
+> 
+> next time please cc Jerg as the AMD IOMMU maintainer.
+> 
+> Joerg, any chance you could review this?  Toms patches to convert the
+> AMD and Intel IOMMU drivers to the dma-iommu code are going to make my
+> life in DMA land significantly easier, so I have a vested interest
+> in this series moving forward :)
 
-On Fri, Aug 09, 2019 at 03:40:02PM -0300, Helen Koike wrote:
-> Hello,
-> 
-> I'm re-sending a new version of ISP(Camera) v4l2 driver for rockchip
-> rk3399 SoC.
-> 
-> I didn't change much from the last version, just applying the
-> suggestions made in the previous one.
-> 
-> This patchset is also available at:
-> https://gitlab.collabora.com/koike/linux/tree/rockchip/isp/v8
-> 
-> Libcamera patched to work with this version:
-> https://gitlab.collabora.com/koike/libcamera
-> (also sent to the mailing list)
-> 
-> I tested on the rockpi 4 with a rpi v1.3 sensor and also with the
-> Scarlet Chromebook.
-> 
-
-I just tested this patchset on Rock960 but getting below error while
-configuring media link:
-
-root@linaro-alip:~# media-ctl -p /dev/media0 -v
-Opening media device /dev/media0
-Enumerating entities
-looking up device: 81:4
-looking up device: 81:0
-looking up device: 81:1
-looking up device: 81:2
-looking up device: 81:3
-looking up device: 81:5
-Found 6 entities
-Enumerating pads and links
-*** Error in `media-ctl': munmap_chunk(): invalid pointer: 0x01ce44d0 ***
-Aborted
-
-Here is the change I did for Rock960:
-https://pastebin.ubuntu.com/p/CmdcqJ7bsJ/
-
-Did I miss anything?
-
-Thanks,
-Mani
-
-> Known issues (same as in v7):
-> -------------
-> - Reloading the module doesn't work (there is some missing cleanup when
-> unloading)
-> - When capturing in bayer format, changing the size doesn't seem to
-> affect the image.
-> - crop needs more tests
-> - v4l2-compliance error:
->         fail: v4l2-test-controls.cpp(824): subscribe event for control 'Image Processing Controls' failed
-> test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: FAIL
-> It seems that if controls are supported, v4l2-compliance says that
-> controls of type 'Image Processing Controls' are mandatory, is this
-> correct?
-> - It seems there are still some issues with interrupts, but I couldn't
-> isolate them yet.
-> 
-> Previous changelog:
-> -------------------
-> 
-> changes in V6:
->   - add mipi txrx phy support
->   - remove bool and enum from uapi header
->   - add buf_prepare op
->   - correct some spelling problems
->   - return all queued buffers when starting stream failed
-> 
-> changes in V5: Sync with local changes,
->   - fix the SP height limit
->   - speed up the second stream capture
->   - the second stream can't force sync for rsz when start/stop streaming
->   - add frame id to param vb2 buf
->   - enable luminance maximum threshold
-> 
-> changes in V4:
->   - fix some bugs during development
->   - move quantization settings to rkisp1 subdev
->   - correct some spelling problems
->   - describe ports in dt-binding documents
-> 
-> changes in V3:
->   - add some comments
->   - fix wrong use of v4l2_async_subdev_notifier_register
->   - optimize two paths capture at a time
->   - remove compose
->   - re-struct headers
->   - add a tmp wiki page: http://opensource.rock-chips.com/wiki_Rockchip-isp1
-> 
-> changes in V2:
->   mipi-phy:
->     - use async probing
->     - make it be a child device of the GRF
->   isp:
->     - add dummy buffer
->     - change the way to get bus configuration, which make it possible to
->             add parallel sensor support in the future(without mipi-phy driver).
-> 
-> ------------------
-> 
-> Changes in v8:
-> - Add SPDX in the header
-> - Remove emacs configs
-> - Fix doc style
-> - Remove boiler plate license text
-> 
-> Changes in v7:
-> - s/IPU3/RK_ISP1
-> - s/correspond/corresponding
-> - s/use/uses
-> - s/docuemnt/document
-> - Fix checkpatch errors (lines over 80 and SPDX)
-> - Add TODO to improve docs
-> - Migrate dphy specific code from
-> drivers/media/platform/rockchip/isp1/mipi_dphy_sy.c
-> to drivers/phy/rockchip/phy-rockchip-dphy.c
-> - Drop support for rk3288
-> - Drop support for dphy txrx
-> - code styling and checkpatch fixes
-> - fixed warning because of unknown entity type
-> - fixed v4l2-compliance errors regarding rkisp1 formats, try formats
-> and default values
-> - fix typo riksp1/rkisp1
-> - redesign: remove mipi/csi subdevice, sensors connect directly to the
-> isp subdevice in the media topology now. As a consequence, remove the
-> hack in mipidphy_g_mbus_config() where information from the sensor was
-> being propagated through the topology.
-> - From the old dphy:
->         * cache get_remote_sensor() in s_stream
->         * use V4L2_CID_PIXEL_RATE instead of V4L2_CID_LINK_FREQ
-> - Replace stream state with a boolean
-> - code styling and checkpatch fixes
-> - fix stop_stream (return after calling stop, do not reenable the stream)
-> - fix rkisp1_isp_sd_get_selection when V4L2_SUBDEV_FORMAT_TRY is set
-> - fix get format in output (isp_sd->out_fmt.mbus_code was being ignored)
-> - s/intput/input
-> - remove #define sd_to_isp_sd(_sd), add a static inline as it will be
-> reused by the capture
-> - s/strlcpy/strscpy
-> - sort out the locks in isp stats
-> - code styling and checkpatch fixes
-> - s/strlcpy/strscpy
-> - s/strcpy/strscpy
-> - fix config lsc error
-> LSC data table size is 17x17, but when configuring data to ISP,
-> should be aligned to 18x17. That means every last data of last
-> line should be filled with 0, and not filled with the data of
-> next line.
-> - Update new ISP parameters immediately
-> For those sub modules that have shadow registers in core isp, the
-> new programing parameters would not be active if both
-> CIF_ISP_CTRL_ISP_CFG_UPD_PERMANENT and CFG_UPD are not set. Now
-> we configure CFG_UPD to force update the shadow registers when new
-> ISP parameters are configured.
-> - fix some ISP parameters config error
-> Some ISP parameter config functions may override the old enable
-> bit value, because the enable bits of these modules are in the
-> same registers with parameters. So we should save the old enable
-> bits firstly.
-> - code styling and checkpatch fixes
-> - s/strlcpy/strscpy
-> - Fix v4l2-compliance issues:
->         * remove input ioctls
-> media api can be used to define the topology, this input api is not
-> required. Besides it, if an input is enumerated, v4l2-compliance is not
-> happy with G_FMT returning the default colorspace instead of something
-> more specific.
->         * return the pixelformat to the userspace
-> G_/S_/TRY_ FORMAT should return a valid pixelformat to the user, even if
-> the user gave an invalid one
->         * add missing default colorspace and ycbcr
->         * fix wrong pixformat in mp_fmts[] table
->         * add buf type check in s_/g_selection
->         * queue_setup - check sizes
->         * normalize bus_info name
->         * fix field any v4l2-compliance -s complain - set field none
->         when streaming
-> - Fix compiling error: s/vidioc_enum_fmt_vid_cap_mplane/vidioc_enum_fmt_vid_cap
-> - Replace stream state with a boolean
-> The rkisp1_state enum consists only of 3 entries, where 1 is completely
-> unused and the other two respectively mean not streaming or streaming.
-> Replace it with a boolean called "streaming".
-> - Simplify MI interrupt handling
-> Rather than adding unnecessary indirection, just use stream index to
-> handle MI interrupt enable/disable/clear, since the stream index matches
-> the order of bits now, thanks to previous patch. While at it, remove
-> some dead code.
-> - code styling and checkpatch fixes
-> - add link_validate: don't allow a link with bayer/non-bayer mismatch
-> - VIDEO_ROCKCHIP_ISP1 selects VIDEOBUF2_VMALLOC
-> - add PHY_ROCKCHIP_DPHY as a dependency for VIDEO_ROCKCHIP_ISP1
-> - Fix compilation and runtime errors due to bitrotting
-> The code has bit-rotten since March 2018, fix compilation errors.
-> The new V4L2 async notifier API requires notifiers to be initialized by
-> a call to v4l2_async_notifier_init() before being used, do so.
-> - Add missing module device table
-> - use clk_bulk framework
-> - add missing notifiers cleanups
-> - s/strlcpy/strscpy
-> - normalize bus_info name
-> - fix s_stream error path, stream_cnt wans't being decremented properly
-> - use devm_platform_ioremap_resource() helper
-> - s/deice/device
-> - redesign: remove mipi/csi subdevice, sensors connect directly to the
-> isp subdevice in the media topology now.
-> - remove "saved_state" member from rkisp1_stream struct
-> - Reverse the order of MIs
-> - Simplify MI interrupt handling
-> Rather than adding unnecessary indirection, just use stream index to
-> handle MI interrupt enable/disable/clear, since the stream index matches
-> the order of bits now, thanks to previous patch. While at it, remove
-> some dead code.
-> - code styling and checkpatch fixes
-> - update document with new design and tested example
-> - updated doc with new design and tested example
-> - add phy properties
-> - add ports
-> - add phy-cells
-> 
-> Helen Koike (1):
->   MAINTAINERS: add entry for Rockchip ISP1 driver
-> 
-> Jacob Chen (9):
->   media: doc: add document for rkisp1 meta buffer format
->   media: rkisp1: add Rockchip MIPI Synopsys DPHY driver
->   media: rkisp1: add Rockchip ISP1 subdev driver
->   media: rkisp1: add ISP1 statistics driver
->   media: rkisp1: add ISP1 params driver
->   media: rkisp1: add capture device driver
->   media: rkisp1: add rockchip isp1 core driver
->   dt-bindings: Document the Rockchip ISP1 bindings
->   dt-bindings: Document the Rockchip MIPI RX D-PHY bindings
-> 
-> Jeffy Chen (1):
->   media: rkisp1: Add user space ABI definitions
-> 
-> Shunqian Zheng (3):
->   media: videodev2.h, v4l2-ioctl: add rkisp1 meta buffer format
->   arm64: dts: rockchip: add isp0 node for rk3399
->   arm64: dts: rockchip: add rx0 mipi-phy for rk3399
-> 
->  .../bindings/media/rockchip-isp1.txt          |   71 +
->  .../bindings/media/rockchip-mipi-dphy.txt     |   38 +
->  Documentation/media/uapi/v4l/meta-formats.rst |    2 +
->  .../uapi/v4l/pixfmt-meta-rkisp1-params.rst    |   23 +
->  .../uapi/v4l/pixfmt-meta-rkisp1-stat.rst      |   22 +
->  MAINTAINERS                                   |    8 +
->  arch/arm64/boot/dts/rockchip/rk3399.dtsi      |   36 +
->  drivers/media/platform/Kconfig                |   12 +
->  drivers/media/platform/Makefile               |    1 +
->  drivers/media/platform/rockchip/isp1/Makefile |    7 +
->  .../media/platform/rockchip/isp1/capture.c    | 1754 +++++++++++++++++
->  .../media/platform/rockchip/isp1/capture.h    |  164 ++
->  drivers/media/platform/rockchip/isp1/common.h |  101 +
->  drivers/media/platform/rockchip/isp1/dev.c    |  675 +++++++
->  drivers/media/platform/rockchip/isp1/dev.h    |   97 +
->  .../media/platform/rockchip/isp1/isp_params.c | 1604 +++++++++++++++
->  .../media/platform/rockchip/isp1/isp_params.h |   50 +
->  .../media/platform/rockchip/isp1/isp_stats.c  |  508 +++++
->  .../media/platform/rockchip/isp1/isp_stats.h  |   60 +
->  drivers/media/platform/rockchip/isp1/regs.c   |  223 +++
->  drivers/media/platform/rockchip/isp1/regs.h   | 1525 ++++++++++++++
->  drivers/media/platform/rockchip/isp1/rkisp1.c | 1286 ++++++++++++
->  drivers/media/platform/rockchip/isp1/rkisp1.h |  111 ++
->  drivers/media/v4l2-core/v4l2-ioctl.c          |    2 +
->  drivers/phy/rockchip/Kconfig                  |    8 +
->  drivers/phy/rockchip/Makefile                 |    1 +
->  drivers/phy/rockchip/phy-rockchip-dphy.c      |  408 ++++
->  include/uapi/linux/rkisp1-config.h            |  816 ++++++++
->  include/uapi/linux/videodev2.h                |    4 +
->  29 files changed, 9617 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/rockchip-isp1.txt
->  create mode 100644 Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt
->  create mode 100644 Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst
->  create mode 100644 Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst
->  create mode 100644 drivers/media/platform/rockchip/isp1/Makefile
->  create mode 100644 drivers/media/platform/rockchip/isp1/capture.c
->  create mode 100644 drivers/media/platform/rockchip/isp1/capture.h
->  create mode 100644 drivers/media/platform/rockchip/isp1/common.h
->  create mode 100644 drivers/media/platform/rockchip/isp1/dev.c
->  create mode 100644 drivers/media/platform/rockchip/isp1/dev.h
->  create mode 100644 drivers/media/platform/rockchip/isp1/isp_params.c
->  create mode 100644 drivers/media/platform/rockchip/isp1/isp_params.h
->  create mode 100644 drivers/media/platform/rockchip/isp1/isp_stats.c
->  create mode 100644 drivers/media/platform/rockchip/isp1/isp_stats.h
->  create mode 100644 drivers/media/platform/rockchip/isp1/regs.c
->  create mode 100644 drivers/media/platform/rockchip/isp1/regs.h
->  create mode 100644 drivers/media/platform/rockchip/isp1/rkisp1.c
->  create mode 100644 drivers/media/platform/rockchip/isp1/rkisp1.h
->  create mode 100644 drivers/phy/rockchip/phy-rockchip-dphy.c
->  create mode 100644 include/uapi/linux/rkisp1-config.h
-> 
-> -- 
-> 2.22.0
-> 
-> 
-> -- 
-> To unsubscribe, send mail to kernel-unsubscribe@lists.collabora.co.uk.
-> 
+Tom, can you repost the series?  Seems like there hasn't been any
+news for a month.
 
 _______________________________________________
 Linux-rockchip mailing list
