@@ -2,56 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C5D789D75
-	for <lists+linux-rockchip@lfdr.de>; Mon, 12 Aug 2019 13:59:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC68C89DFE
+	for <lists+linux-rockchip@lfdr.de>; Mon, 12 Aug 2019 14:20:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=chlJTkspvEpzdM+YfrCHOxL7DCaWWXpuCQMXKZK6Mes=; b=MjRCFbFUFJItah
-	jGfciwj6XpzIV6ZpyIPhrHP6eFwrz28oW9RL56Y+Txtp/EfmvyMDdHuVmos+NbYmza4xFj1dKzK8D
-	i+5oCcSVf+VCfsKETrwAeAFFVwIRyknbHlbzL2CAm+9lhdVlIbYiY3Uyx/Ceq00NOD/UFcnMVmrVg
-	wHg9jjBJwnX+I6ufN4/r4IlsfQJFWOPdVIcH/LSH//XbY1X4qbv+MlLRdY9XRM9z9dC4ZVvX0RYH6
-	Xfwbr/rvOog1KIwOJJwAKtwfbmmPn+a8bFCv1Ifi47ntvuyKQC/8/Dv0Qdtyd0zdrYt4ksBwBL2EP
-	Dvcr/h5Iv3XYZx6NRe0w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=wzF0Czbpt1iBjpqUsmbcJjTYnFjWB7SHOPXQOkWn4X8=; b=f8PlubO2DCkXoS6NBjeW5BNCW
+	IsbrKMYXqR07Gxc26RjJC22zQSHQUV0K16R+q+UQ3FapxUjw1Hi5quERWus8OmB9akv6RRch/gbzL
+	b+I+9mwQbwaP4QDLKei9dd+oCjM3alu7Bj1fenWdTIMhLvJFyAPJKsDvpyLPg1zfQhJ/uqBcEO4zW
+	AaR7r9pOXl8yiUwomr7EbCQIP1L08HfC5ht+5Ea7jDg9xiv2PHG0HvRADp9WFCo1xPwPsiEgfr+5h
+	qpOXoZj1FKMVRGVEgJYxw/9Fd9Zj2y/eRncLG3MHJwFr/MdyfJd5eYnMcynuo3FXZ4L+Jw0b2AonE
+	7G/xlsifw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx8zA-0003dj-Dk; Mon, 12 Aug 2019 11:59:36 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hx9JK-000759-JE; Mon, 12 Aug 2019 12:20:26 +0000
+Received: from regular1.263xmail.com ([211.150.70.197])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx8yo-0003SY-9L
- for linux-rockchip@lists.infradead.org; Mon, 12 Aug 2019 11:59:15 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 8F78728AC52
-Message-ID: <1d1ff6c5943c462f38235e4b003eff5ab65dbbd0.camel@collabora.com>
-Subject: Re: [PATCH v4 03/11] media: uapi: h264: Add the concept of decoding
- mode
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Hans Verkuil <hverkuil@xs4all.nl>, linux-media@vger.kernel.org
-Date: Mon, 12 Aug 2019 08:59:02 -0300
-In-Reply-To: <e8895d5f-af65-5ee8-665b-b9d4abd681bc@xs4all.nl>
-References: <20190808103432.12062-1-ezequiel@collabora.com>
- <20190808103432.12062-4-ezequiel@collabora.com>
- <e8895d5f-af65-5ee8-665b-b9d4abd681bc@xs4all.nl>
-Organization: Collabora
-User-Agent: Evolution 3.30.5-1.1 
+ id 1hx9Fw-0003V3-37
+ for linux-rockchip@lists.infradead.org; Mon, 12 Aug 2019 12:16:58 +0000
+Received: from kever.yang?rock-chips.com (unknown [192.168.165.252])
+ by regular1.263xmail.com (Postfix) with ESMTP id C30935EA;
+ Mon, 12 Aug 2019 20:16:45 +0800 (CST)
+X-263anti-spam: KSV:0;BIG:0;
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-KSVirus-check: 0
+X-ADDR-CHECKED4: 1
+X-ABS-CHECKED: 1
+X-SKE-CHECKED: 1
+X-ANTISPAM-LEVEL: 2
+Received: from [192.168.60.65] (unknown [103.29.142.67])
+ by smtp.263.net (postfix) whith ESMTP id
+ P8185T140700526028544S1565612202265661_; 
+ Mon, 12 Aug 2019 20:16:43 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <94202846c650325fda60b116f219eda3>
+X-RL-SENDER: kever.yang@rock-chips.com
+X-SENDER: yk@rock-chips.com
+X-LOGIN-NAME: kever.yang@rock-chips.com
+X-FST-TO: linux-amarula@amarulasolutions.com
+X-SENDER-IP: 103.29.142.67
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+Subject: Re: [PATCH 14/15] rockchip: rk3399: Add bootcount support
+To: Jagan Teki <jagan@amarulasolutions.com>, Simon Glass <sjg@chromium.org>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
+References: <20190729074711.16988-1-jagan@amarulasolutions.com>
+ <20190729074711.16988-15-jagan@amarulasolutions.com>
+From: Kever Yang <kever.yang@rock-chips.com>
+Message-ID: <3a38244a-974f-f3e5-0d09-28850b72b247@rock-chips.com>
+Date: Mon, 12 Aug 2019 20:16:43 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20190729074711.16988-15-jagan@amarulasolutions.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_045914_586214_459B8F0A 
-X-CRM114-Status: GOOD (  25.05  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190812_051656_701584_E1D9BD8D 
+X-CRM114-Status: GOOD (  16.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ no trust [211.150.70.197 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,141 +84,58 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
- Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: u-boot@lists.denx.de, linux-amarula@amarulasolutions.com,
+ Akash Gajjar <akash@openedev.com>, linux-rockchip@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, 2019-08-12 at 12:19 +0200, Hans Verkuil wrote:
-> On 8/8/19 12:34 PM, Ezequiel Garcia wrote:
-> > From: Boris Brezillon <boris.brezillon@collabora.com>
-> > 
-> > Some stateless decoders don't support per-slice decoding granularity
-> > (or at least not in a way that would make them efficient or easy to use).
-> > 
-> > Expose a menu to control the supported decoding modes. Drivers are
-> > allowed to support only one decoding but they can support both too.
-> > 
-> > Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
-> > Reviewed-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > ---
-> > Changes in v4:
-> > * Typos/rewording fixes
-> > 
-> > Changes in v3:
-> > * s/per-{slice,frame} decoding/{slice,frame}-based decoding/
-> > * Add Paul's R-b
-> > 
-> > Changes in v2:
-> > * Allow decoding multiple slices in per-slice decoding mode
-> > * Minor doc improvement/fixes
-> > ---
-> >  .../media/uapi/v4l/ext-ctrls-codec.rst        | 43 ++++++++++++++++++-
-> >  drivers/media/v4l2-core/v4l2-ctrls.c          |  9 ++++
-> >  include/media/h264-ctrls.h                    | 11 +++++
-> >  3 files changed, 62 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-> > index c5f39dd50043..ea0455957149 100644
-> > --- a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-> > +++ b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-> > @@ -1747,6 +1747,11 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
-> >      * - __u32
-> >        - ``size``
-> >        -
-> > +    * - __u32
-> > +      - ``start_byte_offset``
-> > +      - Where the slice payload starts in the output buffer. Useful when the
-> > +        OUTPUT buffer contains more than one slice (some codecs need to know
-> > +        where each slice starts in this buffer).
-> >      * - __u32
-> >        - ``header_bit_size``
-> >        -
-> > @@ -1930,7 +1935,10 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
-> >        -
-> >      * - __u16
-> >        - ``num_slices``
-> > -      - Number of slices needed to decode the current frame
-> > +      - Number of slices needed to decode the current frame/field. When
-> > +        operating in slice-based decoding mode (see
-> > +        :c:type:`v4l2_mpeg_video_h264_decoding_mode`), this field
-> > +        should always be set to one.
-> >      * - __u16
-> >        - ``nal_ref_idc``
-> >        - NAL reference ID value coming from the NAL Unit header
-> > @@ -2021,6 +2029,39 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
-> >        - 0x00000004
-> >        - The DPB entry is a long term reference frame
-> >  
-> > +``V4L2_CID_MPEG_VIDEO_H264_DECODING_MODE (enum)``
-> > +    Specifies the decoding mode to use. Currently exposes slice-based and
-> > +    frame-based decoding but new modes might be added later on.
-> > +    Drivers may expose a single or multiple decoding modes,
-> > +    depending on what they can support.
-> 
-> This should mention that this is valid for V4L2_PIX_FMT_H264_SLICE pixelformat
-> only. And it is a required control (i.e. it must always be present for that
-> pixelformat). Ditto for the start code control.
-> 
-> Also, the V4L2_PIX_FMT_H264_SLICE should refer to this control and the start
-> code control as well since these controls effectively are modifiers for the
-> pixelformat.
-> 
-
-Right, this makes perfect sense.
-
-> > +
-> > +    .. note::
-> > +
-> > +       This menu control is not yet part of the public kernel API and
-> > +       it is expected to change.
-> > +
-> > +.. c:type:: v4l2_mpeg_video_h264_decoding_mode
-> > +
-> > +.. cssclass:: longtable
-> > +
-> > +.. flat-table::
-> > +    :header-rows:  0
-> > +    :stub-columns: 0
-> > +    :widths:       1 1 2
-> > +
-> > +    * - ``V4L2_MPEG_VIDEO_H264_SLICE_BASED_DECODING``
-> > +      - 0
-> > +      - The decoding is done at the slice granularity.
-> > +        v4l2_ctrl_h264_decode_params->num_slices should be set to 1.
-> > +        The OUTPUT buffer must contain a single slice.
-> > +    * - ``V4L2_MPEG_VIDEO_H264_FRAME_BASED_DECODING``
-> > +      - 1
-> > +      - The decoding is done at the frame granularity.
-> > +        v4l2_ctrl_h264_decode_params->num_slices should be set to the number of
-> > +        slices forming a frame.
-> 
-> Actually, I wonder if there shouldn't be a third option: FIELD_BASED_DECODING
-> to indicate that the hardware expects the slices of a single field in a buffer
-> instead of both fields.
-> 
-> Or just stick to FRAME_BASED_DECODING for now but explicitly mention that
-> in the case of interlaced decoding both fields must be present in the buffer.
-> 
-
-OK.
-
-> A FIELD_BASED_DECODING option can always be added later if necessary.
-> 
-
-Thanks,
-Ezequiel
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgSmFnYW4sCgoKT24gMjAxOS83LzI5IOS4i+WNiDM6NDcsIEphZ2FuIFRla2kgd3JvdGU6Cj4g
+QWRkIGJvb3Rjb3VudCBzdXBwb3J0IGZvciBSb2NrY2hpcCByazMzOTkuCj4KPiBUaGUgYm9vdGNv
+dW50IHZhbHVlIGlzIHByZXNlcnZlZCBpbiBQTVVfU1lTX1JFRzAgcmVnaXN0ZXIsCgpQTVVfU1lT
+X1JFRzAgaGFzIGJlZW4gdXNlZCBieSBvdGhlciBjYXNlIGluIFJvY2tjaGlwLCB3ZSBkb24ndApy
+ZWNvbW1lbmQgdG8gdXNlIGl0LCB0aGUgUE1VR1JGX09TX1JFRzMgaXMgc3RpbGwgcmVzZXJ2ZWQg
+bm93LApjb3VsZCB5b3UgdXNlIGl0IGluc3RlYWQ/CgpUaGFua3MsCi0gS2V2ZXIKCj4gdGhpcyB3
+b3VsZCBoZWxwIHRvIHN1cHBvcnQgcmVkdW5kZW50IGJvb3QuCj4KPiBPbmNlIHRoZSByZWR1bmRh
+bnQgYm9vdCB0cmlnZ2VycywgdGhlIGFsdGJvb3QgY29tbWFuZAo+IHdpbGwgbG9vayBmb3IgZXh0
+bGludXgtcm9sbGJhY2suY29uZiBvbiBwYXJ0aWN1bGFyCj4gYm9vdGFibGUgcGFydGl0aW9uIHdo
+aWNoIHN1cHBvc2VkIHRvIGJlIGEgcmVjb3ZlcnkKPiBwYXJ0aXRpb24gd2hlcmUgcmVkdW5kYW50
+IGJvb3QgcmVxdWlyZWQuCj4KPiBTaWduZWQtb2ZmLWJ5OiBKYWdhbiBUZWtpIDxqYWdhbkBhbWFy
+dWxhc29sdXRpb25zLmNvbT4KPiAtLS0KPiAgIGFyY2gvYXJtL21hY2gtcm9ja2NoaXAvS2NvbmZp
+ZyAgICAgICAgfCAgMiArKwo+ICAgYXJjaC9hcm0vbWFjaC1yb2NrY2hpcC9yazMzOTkvS2NvbmZp
+ZyB8IDEwICsrKysrKysrKysKPiAgIGluY2x1ZGUvY29uZmlncy9yazMzOTlfY29tbW9uLmggICAg
+ICAgfCAgNSArKysrLQo+ICAgMyBmaWxlcyBjaGFuZ2VkLCAxNiBpbnNlcnRpb25zKCspLCAxIGRl
+bGV0aW9uKC0pCj4KPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vbWFjaC1yb2NrY2hpcC9LY29uZmln
+IGIvYXJjaC9hcm0vbWFjaC1yb2NrY2hpcC9LY29uZmlnCj4gaW5kZXggMTdmMzFlODlmMy4uZGQ1
+MDU1ZWQ2OSAxMDA2NDQKPiAtLS0gYS9hcmNoL2FybS9tYWNoLXJvY2tjaGlwL0tjb25maWcKPiAr
+KysgYi9hcmNoL2FybS9tYWNoLXJvY2tjaGlwL0tjb25maWcKPiBAQCAtMTg0LDYgKzE4NCw4IEBA
+IGNvbmZpZyBST0NLQ0hJUF9SSzMzOTkKPiAgIAlpbXBseSBUUExfQ0xLCj4gICAJaW1wbHkgVFBM
+X1RJTllfTUVNU0VUCj4gICAJaW1wbHkgVFBMX1JPQ0tDSElQX0NPTU1PTl9CT0FSRAo+ICsJaW1w
+bHkgU1lTX0JPT1RDT1VOVF9TSU5HTEVXT1JEIGlmIEJPT1RDT1VOVF9MSU1JVAo+ICsJaW1wbHkg
+Q01EX0JPT1RDT1VOVCBpZiBCT09UQ09VTlRfTElNSVQKPiAgIAloZWxwCj4gICAJICBUaGUgUm9j
+a2NoaXAgUkszMzk5IGlzIGEgQVJNLWJhc2VkIFNvQyB3aXRoIGEgZHVhbC1jb3JlIENvcnRleC1B
+NzIKPiAgIAkgIGFuZCBxdWFkLWNvcmUgQ29ydGV4LUE1My4KPiBkaWZmIC0tZ2l0IGEvYXJjaC9h
+cm0vbWFjaC1yb2NrY2hpcC9yazMzOTkvS2NvbmZpZyBiL2FyY2gvYXJtL21hY2gtcm9ja2NoaXAv
+cmszMzk5L0tjb25maWcKPiBpbmRleCA2NjYwZDA1MzQ5Li42OGFjOTEzYmNiIDEwMDY0NAo+IC0t
+LSBhL2FyY2gvYXJtL21hY2gtcm9ja2NoaXAvcmszMzk5L0tjb25maWcKPiArKysgYi9hcmNoL2Fy
+bS9tYWNoLXJvY2tjaGlwL3JrMzM5OS9LY29uZmlnCj4gQEAgLTkxLDYgKzkxLDE2IEBAIGNvbmZp
+ZyBUUExfU1RBQ0sKPiAgIGNvbmZpZyBUUExfVEVYVF9CQVNFCj4gICAgICAgICAgIGRlZmF1bHQg
+MHhmZjhjMjAwMAo+ICAgCj4gK2lmIEJPT1RDT1VOVF9MSU1JVAo+ICsKPiArY29uZmlnIEJPT1RD
+T1VOVF9CT09UTElNSVQKPiArCWRlZmF1bHQgMwo+ICsKPiArY29uZmlnIFNZU19CT09UQ09VTlRf
+QUREUgo+ICsJZGVmYXVsdCAweGZmMzEwMGYwCSMgUE1VX1NZU19SRUcwCj4gKwo+ICtlbmRpZiAj
+IEJPT1RDT1VOVF9MSU1JVAo+ICsKPiAgIHNvdXJjZSAiYm9hcmQvcm9ja2NoaXAvZXZiX3JrMzM5
+OS9LY29uZmlnIgo+ICAgc291cmNlICJib2FyZC90aGVvYnJvbWEtc3lzdGVtcy9wdW1hX3JrMzM5
+OS9LY29uZmlnIgo+ICAgc291cmNlICJib2FyZC92YW1ycy9yb2NrOTYwX3JrMzM5OS9LY29uZmln
+Igo+IGRpZmYgLS1naXQgYS9pbmNsdWRlL2NvbmZpZ3MvcmszMzk5X2NvbW1vbi5oIGIvaW5jbHVk
+ZS9jb25maWdzL3JrMzM5OV9jb21tb24uaAo+IGluZGV4IDY3YjQ4ZTAzYmEuLmFjZTgyOTI4ZDEg
+MTAwNjQ0Cj4gLS0tIGEvaW5jbHVkZS9jb25maWdzL3JrMzM5OV9jb21tb24uaAo+ICsrKyBiL2lu
+Y2x1ZGUvY29uZmlncy9yazMzOTlfY29tbW9uLmgKPiBAQCAtNzAsNyArNzAsMTAgQEAKPiAgIAki
+ZmR0ZmlsZT0iIENPTkZJR19ERUZBVUxUX0ZEVF9GSUxFICJcMCIgXAo+ICAgCSJwYXJ0aXRpb25z
+PSIgUEFSVFNfREVGQVVMVCBcCj4gICAJUk9DS0NISVBfREVWSUNFX1NFVFRJTkdTIFwKPiAtCUJP
+T1RFTlYKPiArCUJPT1RFTlYgXAo+ICsJImFsdGJvb3RjbWQ9IiBcCj4gKwkJInNldGVudiBib290
+X3N5c2xpbnV4X2NvbmYgZXh0bGludXgvZXh0bGludXgtcm9sbGJhY2suY29uZjsiIFwKPiArCQki
+cnVuIGRpc3Ryb19ib290Y21kXDAiCj4gICAKPiAgICNlbmRpZgo+ICAgCgoKCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxp
+bmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
