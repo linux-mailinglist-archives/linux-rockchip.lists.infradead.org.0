@@ -2,41 +2,41 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 438A18A736
-	for <lists+linux-rockchip@lfdr.de>; Mon, 12 Aug 2019 21:36:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DE738A73B
+	for <lists+linux-rockchip@lfdr.de>; Mon, 12 Aug 2019 21:36:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QW8DwmgF8X7EYDcNGIBzwX75E2r+YTpMoWxuaTS5SSM=; b=PnWJUVF3YduJB5
-	ro3Y8G8q8TbBHlXnjtsKrYtV3M7qRhDvfEg+tA3X967HZ2gLs4jcQ+jHZNRcMuCSn/xX/68ZQ2cDh
-	n5ys+yCiNpdRHE3Kwzncdbu4MKVZPKax1uzgYEFp9rHomQuTPa3zwBLprniDc5ytWn09jpImwJcBG
-	21vlwYgDggs3FLWdGHXuWVfY/l0/pT1t8BkRQRbVB8sRHg4rjCKefu6yJGx5ghqj6lI5yxqSF0QEs
-	9V3xFFzNJAD5RAz7iBREJQc+YmYB0uD3P4jEz+FAxcALr1AylncnxzsBDQtJrg1WqSmnmp1U67bFI
-	cRFRRQVMw9QPJpwso2BQ==;
+	List-Owner; bh=WSim0jWrf+m1+VBx2FCOBsrzDSoyQl9sn81FRqSKLf0=; b=gnVFO/0i9nYoG5
+	zqHC2XHBNZ8leYe72yEuYLlBsSzV0m3THb4efOnYO5K/t/zxL7gtZfWEt0hXGCuR4PgLNBlDcyvwX
+	SsiJmswCtKDRmYgHYGiNx8xrGTxOQv7Ga0gfZ4bNcWIJJ8329XADsubdJGFpgbKO9PqjGJdyMt0za
+	TluVwz3FzwjU/IkQoFtR6bLFozyYEj40uSlh6TtACVpgxO7xoyWd8V9URceiIuvCc1aPv0Qqkk0Ea
+	J7AkQvHDGb+Oa5ih0MUeFwkxXUXSMV4C01gyqPwveFGu3WFyZys0siKL67ILJO0y7+RfI9F6X5QkL
+	FSigAt8fJhNeF/Ay61fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxG6v-0005b3-GE; Mon, 12 Aug 2019 19:36:05 +0000
+	id 1hxG70-0005eM-9v; Mon, 12 Aug 2019 19:36:10 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxG6r-0005Yb-SU
- for linux-rockchip@lists.infradead.org; Mon, 12 Aug 2019 19:36:03 +0000
+ id 1hxG6w-0005cD-EB
+ for linux-rockchip@lists.infradead.org; Mon, 12 Aug 2019 19:36:08 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id BF806285296
+ (Authenticated sender: ezequiel) with ESMTPSA id 34D9D2852AF
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: linux-media@vger.kernel.org
-Subject: [PATCH v5 05/11] media: uapi: h264: Get rid of the p0/b0/b1 ref-lists
-Date: Mon, 12 Aug 2019 16:35:16 -0300
-Message-Id: <20190812193522.10911-6-ezequiel@collabora.com>
+Subject: [PATCH v5 06/11] media: cedrus: Cleanup control initialization
+Date: Mon, 12 Aug 2019 16:35:17 -0300
+Message-Id: <20190812193522.10911-7-ezequiel@collabora.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190812193522.10911-1-ezequiel@collabora.com>
 References: <20190812193522.10911-1-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_123602_074420_C9B14C60 
-X-CRM114-Status: UNSURE (   7.22  )
+X-CRM114-CacheID: sfid-20190812_123606_768265_C057F665 
+X-CRM114-Status: UNSURE (   9.17  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,66 +75,131 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Boris Brezillon <boris.brezillon@collabora.com>
+In order to introduce other controls, the control initialization
+needs to support an initial struct v4l2_ctrl_control.
 
-Those lists can be extracted from the dpb, let's simplify userspace
-life and build that list kernel-side (generic helpers will be provided
-for drivers that need this list).
+While here, let's cleanup the control initialization,
+removing unneeded fields.
 
-Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
-Reviewed-by: Nicolas Dufresne <nicolas.dufresne@collabora.com>
-Reviewed-by: Ezequiel Garcia <ezequiel@collabora.com>
-Reviewed-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-Tested-by: Philipp Zabel <p.zabel@pengutronix.de>
+Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
 ---
 Changes in v5:
-* New patch.
+* None.
 Changes in v4:
-* Add R-b
-* Remove the reflist from the struct
-Changes in v3:
-* None
-Changes in v2:
-* None
+* New patch.
 ---
- Documentation/media/uapi/v4l/ext-ctrls-codec.rst | 9 ---------
- include/media/h264-ctrls.h                       | 3 ---
- 2 files changed, 12 deletions(-)
+ drivers/staging/media/sunxi/cedrus/cedrus.c | 45 +++++++++++----------
+ drivers/staging/media/sunxi/cedrus/cedrus.h |  3 +-
+ 2 files changed, 25 insertions(+), 23 deletions(-)
 
-diff --git a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-index ec0078e299a5..63796b39da43 100644
---- a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-+++ b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-@@ -1942,15 +1942,6 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
-     * - __u16
-       - ``nal_ref_idc``
-       - NAL reference ID value coming from the NAL Unit header
--    * - __u8
--      - ``ref_pic_list_p0[32]``
--      - Backward reference list used by P-frames in the original bitstream order
--    * - __u8
--      - ``ref_pic_list_b0[32]``
--      - Backward reference list used by B-frames in the original bitstream order
--    * - __u8
--      - ``ref_pic_list_b1[32]``
--      - Forward reference list used by B-frames in the original bitstream order
-     * - __s32
-       - ``top_field_order_cnt``
-       - Picture Order Count for the coded top field
-diff --git a/include/media/h264-ctrls.h b/include/media/h264-ctrls.h
-index 31555c99f64a..2de438393025 100644
---- a/include/media/h264-ctrls.h
-+++ b/include/media/h264-ctrls.h
-@@ -203,9 +203,6 @@ struct v4l2_ctrl_h264_decode_params {
- 	struct v4l2_h264_dpb_entry dpb[16];
- 	__u16 num_slices;
- 	__u16 nal_ref_idc;
--	__u8 ref_pic_list_p0[32];
--	__u8 ref_pic_list_b0[32];
--	__u8 ref_pic_list_b1[32];
- 	__s32 top_field_order_cnt;
- 	__s32 bottom_field_order_cnt;
- 	__u32 flags; /* V4L2_H264_DECODE_PARAM_FLAG_* */
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.c b/drivers/staging/media/sunxi/cedrus/cedrus.c
+index 370937edfc14..7bdc413bf727 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus.c
++++ b/drivers/staging/media/sunxi/cedrus/cedrus.c
+@@ -29,44 +29,51 @@
+ 
+ static const struct cedrus_control cedrus_controls[] = {
+ 	{
+-		.id		= V4L2_CID_MPEG_VIDEO_MPEG2_SLICE_PARAMS,
+-		.elem_size	= sizeof(struct v4l2_ctrl_mpeg2_slice_params),
++		.cfg = {
++			.id	= V4L2_CID_MPEG_VIDEO_MPEG2_SLICE_PARAMS,
++		},
+ 		.codec		= CEDRUS_CODEC_MPEG2,
+ 		.required	= true,
+ 	},
+ 	{
+-		.id		= V4L2_CID_MPEG_VIDEO_MPEG2_QUANTIZATION,
+-		.elem_size	= sizeof(struct v4l2_ctrl_mpeg2_quantization),
++		.cfg = {
++			.id	= V4L2_CID_MPEG_VIDEO_MPEG2_QUANTIZATION,
++		},
+ 		.codec		= CEDRUS_CODEC_MPEG2,
+ 		.required	= false,
+ 	},
+ 	{
+-		.id		= V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS,
+-		.elem_size	= sizeof(struct v4l2_ctrl_h264_decode_params),
++		.cfg = {
++			.id	= V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS,
++		},
+ 		.codec		= CEDRUS_CODEC_H264,
+ 		.required	= true,
+ 	},
+ 	{
+-		.id		= V4L2_CID_MPEG_VIDEO_H264_SLICE_PARAMS,
+-		.elem_size	= sizeof(struct v4l2_ctrl_h264_slice_params),
++		.cfg = {
++			.id	= V4L2_CID_MPEG_VIDEO_H264_SLICE_PARAMS,
++		},
+ 		.codec		= CEDRUS_CODEC_H264,
+ 		.required	= true,
+ 	},
+ 	{
+-		.id		= V4L2_CID_MPEG_VIDEO_H264_SPS,
+-		.elem_size	= sizeof(struct v4l2_ctrl_h264_sps),
++		.cfg = {
++			.id	= V4L2_CID_MPEG_VIDEO_H264_SPS,
++		},
+ 		.codec		= CEDRUS_CODEC_H264,
+ 		.required	= true,
+ 	},
+ 	{
+-		.id		= V4L2_CID_MPEG_VIDEO_H264_PPS,
+-		.elem_size	= sizeof(struct v4l2_ctrl_h264_pps),
++		.cfg = {
++			.id	= V4L2_CID_MPEG_VIDEO_H264_PPS,
++		},
+ 		.codec		= CEDRUS_CODEC_H264,
+ 		.required	= true,
+ 	},
+ 	{
+-		.id		= V4L2_CID_MPEG_VIDEO_H264_SCALING_MATRIX,
+-		.elem_size	= sizeof(struct v4l2_ctrl_h264_scaling_matrix),
++		.cfg = {
++			.id	= V4L2_CID_MPEG_VIDEO_H264_SCALING_MATRIX,
++		},
+ 		.codec		= CEDRUS_CODEC_H264,
+ 		.required	= true,
+ 	},
+@@ -106,12 +113,8 @@ static int cedrus_init_ctrls(struct cedrus_dev *dev, struct cedrus_ctx *ctx)
+ 		return -ENOMEM;
+ 
+ 	for (i = 0; i < CEDRUS_CONTROLS_COUNT; i++) {
+-		struct v4l2_ctrl_config cfg = {};
+-
+-		cfg.elem_size = cedrus_controls[i].elem_size;
+-		cfg.id = cedrus_controls[i].id;
+-
+-		ctrl = v4l2_ctrl_new_custom(hdl, &cfg, NULL);
++		ctrl = v4l2_ctrl_new_custom(hdl, &cedrus_controls[i].cfg,
++					    NULL);
+ 		if (hdl->error) {
+ 			v4l2_err(&dev->v4l2_dev,
+ 				 "Failed to create new custom control\n");
+@@ -178,7 +181,7 @@ static int cedrus_request_validate(struct media_request *req)
+ 			continue;
+ 
+ 		ctrl_test = v4l2_ctrl_request_hdl_ctrl_find(hdl,
+-							    cedrus_controls[i].id);
++							    cedrus_controls[i].cfg.id);
+ 		if (!ctrl_test) {
+ 			v4l2_info(&ctx->dev->v4l2_dev,
+ 				  "Missing required codec control\n");
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.h b/drivers/staging/media/sunxi/cedrus/cedrus.h
+index 3f476d0fd981..283827656872 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus.h
++++ b/drivers/staging/media/sunxi/cedrus/cedrus.h
+@@ -49,8 +49,7 @@ enum cedrus_h264_pic_type {
+ };
+ 
+ struct cedrus_control {
+-	u32			id;
+-	u32			elem_size;
++	struct v4l2_ctrl_config cfg;
+ 	enum cedrus_codec	codec;
+ 	unsigned char		required:1;
+ };
 -- 
 2.22.0
 
