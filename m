@@ -2,82 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B0FB894C9
-	for <lists+linux-rockchip@lfdr.de>; Mon, 12 Aug 2019 01:01:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E01D089AFD
+	for <lists+linux-rockchip@lfdr.de>; Mon, 12 Aug 2019 12:12:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=gZF889XPgSLZxstNSNlG8WRge7oe1AYBw9xrZRSRXmQ=; b=FxN
-	mJhl6UQYD3ng+BOgLLHJxsZDUe1Jn0x1J2PXIfFM4W1O6pstIGBPLNGdIrgSLE/s+EWH6qipFqfBj
-	PO6jCrTSSUZzJgVFUK8A9q7KsJTitueBz3Fn8yBkHwOjoYZ7sTTtRfQV1HiM9/QmX/AUbtbw1UcyT
-	cYX9i86i99Dc9E83RQ7zdguA4kh3qolxlH/KUAH3orvcKUOeLZBskjkGESbLJprE41G7CG/F0cvZX
-	9PqNYCv119VlDXHnuefsF11XSikMrHsGu+yzQFiTiObBrwBkoXRuwabIbL9fbRkheQz/zgwVDqJMq
-	5FJi4/6xcANbE8Fnd52XSG00dGtU8kA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=G8vibggV+8qn2wtgyZfhmhkniFmdrjeEc/V+WPBnExI=; b=IdQf5KjXAoq761
+	1Cag4OlH7wrNV0FtbYLBAHC8Z39+Et6J9HqnN0CrSr1ER7FNZYHQG1jHXZeCTd/QOYgTwPwMR+XYf
+	lpCOjDfk/g+Uk5wk7T6cDRtukGExZEbsUSG7vI1fZtc+3OYyNMoGudIs0YEnsx3qvYQ90E987ORld
+	aQbPEhOuWYruW48efoc0ym6eKvJvE8ZN/jZNvb8K19nLRaWFeEePtS7RgqjwIdkt9DntFLQEVsJMR
+	9kEZv2wu/g59Pm0B8qBkr9VHGD5RsyrAAGdK4Xh/dU/U8uv6NJbivtnsgpqWAaeiz1wUFn3B5u2w8
+	IQU+GZjo+MeGRJPQoLnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwwq9-0002tm-VI; Sun, 11 Aug 2019 23:01:29 +0000
-Received: from outgoing14.flk.host-h.net ([197.242.87.48])
+	id 1hx7JA-0008EB-Fh; Mon, 12 Aug 2019 10:12:08 +0000
+Received: from lb1-smtp-cloud7.xs4all.net ([194.109.24.24])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwwq5-0002sg-MI; Sun, 11 Aug 2019 23:01:28 +0000
-Received: from www31.flk1.host-h.net ([188.40.1.173])
- by antispam4-flk1.host-h.net with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.89)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1hwwpr-0002mc-KS; Mon, 12 Aug 2019 01:01:12 +0200
-Received: from [130.255.73.16] (helo=v01.28459.vpscontrol.net)
- by www31.flk1.host-h.net with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.84_2)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1hwwpo-0005mQ-Il; Mon, 12 Aug 2019 01:01:08 +0200
-From: Justin Swartz <justin.swartz@risingedge.co.za>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH v2] ARM: dts: add device tree for Mecer Xtreme Mini S6
-Date: Sun, 11 Aug 2019 23:00:13 +0000
-Message-Id: <20190811230015.28349-1-justin.swartz@risingedge.co.za>
-X-Mailer: git-send-email 2.11.0
-X-Authenticated-Sender: justin.swartz@risingedge.co.za
-X-Virus-Scanned: Clear (ClamAV 0.100.3/25538/Sun Aug 11 10:18:30 2019)
-X-Originating-IP: 188.40.1.173
-X-SpamExperts-Domain: risingedge.co.za
-X-SpamExperts-Username: 
-Authentication-Results: host-h.net;
- auth=pass (login) smtp.auth=@risingedge.co.za
-X-SpamExperts-Outgoing-Class: ham
-X-SpamExperts-Outgoing-Evidence: SB/global_tokens (0.0018101804767)
-X-Recommended-Action: accept
-X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0Wp43USNh4+oPQIPr3x336CpSDasLI4SayDByyq9LIhVKm1gRKW7ekOu
- zz8r3TZkPkTNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3K7uDjV/sFUXQr+CDrNQuIHgQg
- mAX8Bxy/iUu0ThNZg0h/RxVysY5Ye6+GGw0VqdJD7ren9RtRNyYim5e3GD8LGfWrcbYvelpuN/Pk
- qhBpvAyWwieZyauFYqHkIbFa+ipF21HJWO60ZqrvKy/1AXUV5oXt6ymoFHaG7BQtEYvFCSqHkTDj
- dyZcrshowL7tH1pWEOpHXO3AWQB4otYhXjSOOlnZeZkTpSWjdKDr98cJY3GhoSe4G2e3oZQMPPCL
- TET2QWyC1bDOw2oEv3DmjqX5Rdlnibl3vcBqVmvQB4A18aeunDIleDTKIGw+hISik27CAVXirbLu
- Jjy3NtnGWLbnBGfrUBEXB2fYGLNieGQuoHtJvp0r29Rf3ZjFwL+MhHEWw/0qBlNDp8uABz3dkWV+
- tnlsqEID1rwhWix/EYFNtp1TycYLFeAN4+MGwnsp7SkU6CLbyF0Zq4b1/7rjUzETJrWks4pbbQJq
- 6gWopI3ep45X19ZysgQ+31LcAX8eoFXAhohfegXGH2GIVQVglJFbK771YV8YbC29CtmpcTqTfSIf
- CWq9oj7OiT8GwpAriB+3/81I3rvR8KJ2fK9jiDYgiuaWjWJ1lPr1Ev5xNW3FQUl1thv0hd9gZGlV
- L/SEDgzCxVAfo0TfAdBm88UU/z2X2IjokNqZVv3KMEb5yncp4Gliqy40Rbjn7L/aSJSlbL1zKyEL
- KRIlJqopKieSGgZIDDCaOnYR+e17nmKXMy4iUno/l2R44/7at9DP1rQ8e6dbF/Yfz7ZwWRFpJHQn
- mVbGJJcMBQM8xFcyypgGsWJnLxVzYMsh2xD7KXeSzOTYSf/OzQimTss39BPbTa6gkWqxqeDt/vDy
- PLUXN2ILHndC4hwbA2fIdq9z/kUhYTDkDb9GLLhZsgdKPiGhHoIVmEgc3vQE4bdGRg51xWZ402gC
- TyXPOOUgfrQ68NrwMFh7KSOb5P6QksNjtkRqQoUwY2m2XXORzshGSanMY2R9xqtrh1M8CVsONrMJ
- uGzuoGnKTKcyMAVhaIz/fGNqyRYsGJ0LJeBqPlwuAReGWkPdwxr2XgmbPrJVQzt6iVRPsiDvDuTj
- 4oYwO9PC4N2NoF8mn/qyLT9gcYZ23l4P3JrzWS8jWh8xuwZvHnAADkIPtamKuAZddoNrr+WHg4o5
- S3beb97n9J0N63F3lSElipbV7k/tzvRn13OWvSfGlZ4x16b3bGBx
-X-Report-Abuse-To: spam@antispammaster.host-h.net
+ id 1hx7J5-0008DA-1U
+ for linux-rockchip@lists.infradead.org; Mon, 12 Aug 2019 10:12:05 +0000
+Received: from [192.168.2.10] ([46.9.232.237])
+ by smtp-cloud7.xs4all.net with ESMTPA
+ id x7InhPofuur8Tx7IrhhqfU; Mon, 12 Aug 2019 12:11:56 +0200
+Subject: Re: [PATCH v4 04/11] media: uapi: h264: Add the concept of start code
+To: Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
+References: <20190808103432.12062-1-ezequiel@collabora.com>
+ <20190808103432.12062-5-ezequiel@collabora.com>
+From: Hans Verkuil <hverkuil@xs4all.nl>
+Message-ID: <a729d241-6550-c23a-4f75-f106ab1c7ff9@xs4all.nl>
+Date: Mon, 12 Aug 2019 12:11:45 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <20190808103432.12062-5-ezequiel@collabora.com>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfDoPf/404e2Omyd+CfJk4yviftoCzNBRkVme7c74kGwyvxDOIMzAHj8E8MMNIoV/aHmm2NOUJtG9nBtN0tMz8RfB2zJFVY5BYAvggT5lxe/Zwdz4NOqH
+ OAvw1xr74y/BfYTZoq3M237ie4Mc91QHqpLGLj/DorGdNy3APQvEoGckSAe7XuR0YZvHlNjBJogyP3AtSAGjNtEv18CBAs6+2+C8fvTZmYCnpPwIS2MVDzfX
+ 2ZZrn+O0XsEsZAjZCyaihE3nBbw/wik6t8NLVpc/td2YXjMs9+PYEEETYIHLgaVbv2Im/kd/qLMCXecGRr+ZvQcxPayyBtBNctLM0ScfkacxXAYjvlfvStE/
+ Jil6SbSz9lscSxIqzGdBxYaivmsChUUXWLm+IhDgZrwQ3ucfIJc5ub9MRdWR9gqLxKhonpcHlpu7A0lijXerK78gpgXw1kYuhDz0yGE2zuopUiCDoS2fhKeR
+ phhxAO4SJEFzfe8X5o82zyWFzxKGoH8+zVJw+Vi/0lddIlCS8OSrtgRTephn71CZbKvOofFrZUwiE+jRhjYuEQ7aPs1iOUReTbc+R0QUEBMVM/a8ciEUCvVx
+ FGCXegGjVEM32DuckZtEzdMjkZwaWez9eStQJe7pL25pWN4DUwpAZ4Cz9rYF8pD7uZs=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190811_160125_730999_E7925C4A 
-X-CRM114-Status: GOOD (  13.12  )
+X-CRM114-CacheID: sfid-20190812_031203_245226_CE2E994C 
+X-CRM114-Status: GOOD (  21.98  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [197.242.87.48 listed in list.dnswl.org]
+ low trust [194.109.24.24 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -92,362 +68,165 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Justin Swartz <justin.swartz@risingedge.co.za>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
+ Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The Mecer Xtreme Mini S6 features a Rockchip RK3229 SoC,
-1GB DDR3 RAM, 8GB eMMC, MicroSD port, 10/100Mbps Ethernet,
-Realtek 8723BS WLAN module, 2 x USB 2.0 ports, HDMI output,
-and S/PDIF output.
+On 8/8/19 12:34 PM, Ezequiel Garcia wrote:
+> Stateless decoders have different expectations about the
+> start code that is prepended on H264 slices. Add a
+> menu control to express the supported start code types
+> (including no start code).
+> 
+> Drivers are allowed to support only one start code type,
+> but they can support both too.
+> 
+> Note that this is independent of the H264 decoding mode,
+> which specifies the granularity of the decoding operations.
+> Either in frame-based or slice-based mode, this new control
+> will allow to define the start code expected on H264 slices.
+> 
+> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+> ---
+> Changes in v4:
+> * New patch.
+> ---
+>  .../media/uapi/v4l/ext-ctrls-codec.rst        | 31 +++++++++++++++++++
+>  drivers/media/v4l2-core/v4l2-ctrls.c          |  9 ++++++
+>  include/media/h264-ctrls.h                    |  6 ++++
+>  3 files changed, 46 insertions(+)
+> 
+> diff --git a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+> index ea0455957149..94fd3a9b8b9e 100644
+> --- a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+> +++ b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+> @@ -2062,6 +2062,37 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
+>          The OUTPUT buffer should contain all slices needed to decode the
+>          frame/field.
+>  
+> +``V4L2_CID_MPEG_VIDEO_H264_STARTCODE (enum)``
+> +    Specifies the H264 slice start code expected for each slice.
+> +    This control shall e used to complement V4L2_PIX_FMT_H264_SLICE
 
-Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
----
- .../devicetree/bindings/arm/rockchip.yaml          |   5 +
- .../devicetree/bindings/vendor-prefixes.yaml       |   2 +
- arch/arm/boot/dts/Makefile                         |   1 +
- arch/arm/boot/dts/rk3229-xms6.dts                  | 283 +++++++++++++++++++++
- 4 files changed, 291 insertions(+)
- create mode 100644 arch/arm/boot/dts/rk3229-xms6.dts
+e -> be
 
-diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
-index 34865042f4e4..4abd91c2b0bd 100644
---- a/Documentation/devicetree/bindings/arm/rockchip.yaml
-+++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
-@@ -329,6 +329,11 @@ properties:
-               - khadas,edge-v
-           - const: rockchip,rk3399
- 
-+      - description: Mecer Xtreme Mini S6
-+        items:
-+          - const: mecer,xms6
-+          - const: rockchip,rk3229
-+
-       - description: mqmaker MiQi
-         items:
-           - const: mqmaker,miqi
-diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-index 6992bbbbffab..97992fccfc3d 100644
---- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
-+++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-@@ -549,6 +549,8 @@ patternProperties:
-     description: mCube
-   "^meas,.*":
-     description: Measurement Specialties
-+  "^mecer,.*":
-+    description: Mustek Limited
-   "^mediatek,.*":
-     description: MediaTek Inc.
-   "^megachips,.*":
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 9159fa2cea90..4567c0b045c2 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -905,6 +905,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += \
- 	rk3188-radxarock.dtb \
- 	rk3228-evb.dtb \
- 	rk3229-evb.dtb \
-+	rk3229-xms6.dtb \
- 	rk3288-evb-act8846.dtb \
- 	rk3288-evb-rk808.dtb \
- 	rk3288-fennec.dtb \
-diff --git a/arch/arm/boot/dts/rk3229-xms6.dts b/arch/arm/boot/dts/rk3229-xms6.dts
-new file mode 100644
-index 000000000000..4b6ab4954dd4
---- /dev/null
-+++ b/arch/arm/boot/dts/rk3229-xms6.dts
-@@ -0,0 +1,283 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+
-+/dts-v1/;
-+
-+#include <dt-bindings/input/input.h>
-+#include "rk3229.dtsi"
-+
-+/ {
-+	model = "Mecer Xtreme Mini S6";
-+	compatible = "mecer,xms6", "rockchip,rk3229";
-+
-+	dc_12v: dc-12v-regulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "dc_12v";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <12000000>;
-+		regulator-max-microvolt = <12000000>;
-+	};
-+
-+	ext_gmac: ext_gmac {
-+		compatible = "fixed-clock";
-+		clock-frequency = <125000000>;
-+		clock-output-names = "ext_gmac";
-+		#clock-cells = <0>;
-+	};
-+
-+	memory@60000000 {
-+		device_type = "memory";
-+		reg = <0x60000000 0x40000000>;
-+	};
-+
-+	power-led {
-+		compatible = "gpio-leds";
-+
-+		blue {
-+			gpios = <&gpio3 21 GPIO_ACTIVE_HIGH>;
-+			default-state = "on";
-+		};
-+	};
-+
-+	vcc_host: vcc-host-regulator {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpio = <&gpio3 RK_PC4 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&host_vbus_drv>;
-+		regulator-name = "vcc_host";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		vin-supply = <&vcc_sys>;
-+	};
-+
-+	vcc_phy: vcc-phy-regulator {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		regulator-name = "vcc_phy";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+		vin-supply = <&vccio_1v8>;
-+	};
-+
-+	vcc_sys: vcc-sys-regulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc_sys";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		vin-supply = <&dc_12v>;
-+	};
-+
-+	vccio_1v8: vccio-1v8-regulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vccio_1v8";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+		regulator-always-on;
-+		vin-supply = <&vcc_sys>;
-+	};
-+
-+	vccio_3v3: vccio-3v3-regulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vccio_3v3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-always-on;
-+		vin-supply = <&vcc_sys>;
-+	};
-+
-+	vdd_arm: vdd-arm-regulator {
-+		compatible = "pwm-regulator";
-+		pwms = <&pwm1 0 25000 1>;
-+		pwm-supply = <&vcc_sys>;
-+		regulator-name = "vdd_arm";
-+		regulator-min-microvolt = <950000>;
-+		regulator-max-microvolt = <1400000>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+	};
-+
-+	vdd_log: vdd-log-regulator {
-+		compatible = "pwm-regulator";
-+		pwms = <&pwm2 0 25000 1>;
-+		pwm-supply = <&vcc_sys>;
-+		regulator-name = "vdd_log";
-+		regulator-min-microvolt = <1000000>;
-+		regulator-max-microvolt = <1300000>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+	};
-+};
-+
-+&cpu0 {
-+	cpu-supply = <&vdd_arm>;
-+};
-+
-+&cpu1 {
-+	cpu-supply = <&vdd_arm>;
-+};
-+
-+&cpu2 {
-+	cpu-supply = <&vdd_arm>;
-+};
-+
-+&cpu3 {
-+	cpu-supply = <&vdd_arm>;
-+};
-+
-+&emmc {
-+	cap-mmc-highspeed;
-+	disable-wp;
-+	non-removable;
-+	status = "okay";
-+};
-+
-+&gmac {
-+	assigned-clocks = <&cru SCLK_MAC_SRC>;
-+	assigned-clock-rates = <50000000>;
-+	clock_in_out = "output";
-+	phy-supply = <&vcc_phy>;
-+	phy-mode = "rmii";
-+	phy-handle = <&phy>;
-+	status = "okay";
-+
-+	mdio {
-+		compatible = "snps,dwmac-mdio";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		phy: phy@0 {
-+			compatible = "ethernet-phy-id1234.d400",
-+			             "ethernet-phy-ieee802.3-c22";
-+			reg = <0>;
-+			clocks = <&cru SCLK_MAC_PHY>;
-+			resets = <&cru SRST_MACPHY>;
-+			phy-is-integrated;
-+		};
-+	};
-+};
-+
-+&gpu {
-+	mali-supply = <&vdd_log>;
-+	status = "okay";
-+};
-+
-+&hdmi {
-+	status = "okay";
-+};
-+
-+&hdmi_phy {
-+	status = "okay";
-+};
-+
-+&iep_mmu {
-+	status = "okay";
-+};
-+
-+&io_domains {
-+	status = "okay";
-+
-+	vccio1-supply = <&vccio_3v3>;
-+	vccio2-supply = <&vccio_1v8>;
-+	vccio4-supply = <&vccio_3v3>;
-+};
-+
-+&pinctrl {
-+	usb {
-+		host_vbus_drv: host-vbus-drv {
-+			rockchip,pins = <3 RK_PC4 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
-+};
-+
-+&pwm1 {
-+	status = "okay";
-+};
-+
-+&pwm2 {
-+	status = "okay";
-+};
-+
-+&sdmmc {
-+	cap-mmc-highspeed;
-+	disable-wp;
-+	status = "okay";
-+};
-+
-+&tsadc {
-+	rockchip,hw-tshut-mode = <0>;
-+	status = "okay";
-+};
-+
-+&u2phy0 {
-+	status = "okay";
-+
-+	u2phy0_host: host-port {
-+		phy-supply = <&vcc_host>;
-+		status = "okay";
-+	};
-+
-+	u2phy0_otg: otg-port {
-+		phy-supply = <&vcc_host>;
-+		status = "okay";
-+	};
-+};
-+
-+&u2phy1 {
-+	status = "okay";
-+
-+	u2phy1_host: host-port {
-+		phy-supply = <&vcc_host>;
-+		status = "okay";
-+	};
-+
-+	u2phy1_otg: otg-port {
-+		phy-supply = <&vcc_host>;
-+		status = "okay";
-+	};
-+};
-+
-+&uart2 {
-+	pinctrl-0 = <&uart21_xfer>;
-+	status = "okay";
-+};
-+
-+&usb_host0_ehci {
-+	status = "okay";
-+};
-+
-+&usb_host0_ohci {
-+	status = "okay";
-+};
-+
-+&usb_host1_ehci {
-+	status = "okay";
-+};
-+
-+&usb_host1_ohci {
-+	status = "okay";
-+};
-+
-+&usb_host2_ehci {
-+	status = "okay";
-+};
-+
-+&usb_host2_ohci {
-+	status = "okay";
-+};
-+
-+&usb_otg {
-+	status = "okay";
-+};
-+
-+&vop {
-+	status = "okay";
-+};
-+
-+&vop_mmu {
-+	status = "okay";
-+};
--- 
-2.11.0
+> +    pixel format. Drivers may expose a single or multiple
+> +    start codes, depending on what they can support.
+> +
+> +    .. note::
+> +
+> +       This menu control is not yet part of the public kernel API and
+> +       it is expected to change.
+> +
+> +.. c:type:: v4l2_mpeg_video_h264_startcode
+> +
+> +.. cssclass:: longtable
+> +
+> +.. flat-table::
+> +    :header-rows:  0
+> +    :stub-columns: 0
+> +    :widths:       1 1 2
+> +
+> +    * - ``V4L2_MPEG_VIDEO_H264_NO_STARTCODE``
+> +      - 0
+> +      - Selecting this value specifies that H264 slices are passed
+> +        to the driver without any start code.
+> +        Bla.
 
+Bla?
+
+> +    * - ``V4L2_MPEG_VIDEO_H264_ANNEX_B_STARTCODE``
+> +      - 1
+> +      - Selecting this value specifies that H264 slices are expected
+> +        to be prefixed by Annex B start codes. According to :ref:`h264`
+> +        valid start codes can be 3-bytes 0x000001, or 4-bytes 0x00000001.
+> +
+
+I had the impression that it is more common to require startcodes. If that's
+indeed the case, shouldn't this have value 0 instead of 1?
+
+>  .. _v4l2-mpeg-mpeg2:
+>  
+>  ``V4L2_CID_MPEG_VIDEO_MPEG2_SLICE_PARAMS (struct)``
+> diff --git a/drivers/media/v4l2-core/v4l2-ctrls.c b/drivers/media/v4l2-core/v4l2-ctrls.c
+> index c3194299bfac..01fddb4ec640 100644
+> --- a/drivers/media/v4l2-core/v4l2-ctrls.c
+> +++ b/drivers/media/v4l2-core/v4l2-ctrls.c
+> @@ -407,6 +407,11 @@ const char * const *v4l2_ctrl_get_menu(u32 id)
+>  		"Frame-Based",
+>  		NULL,
+>  	};
+> +	static const char * const h264_start_code[] = {
+> +		"No Start Code",
+> +		"Annex B Start Code",
+> +		NULL,
+> +	};
+>  	static const char * const mpeg_mpeg2_level[] = {
+>  		"Low",
+>  		"Main",
+> @@ -640,6 +645,8 @@ const char * const *v4l2_ctrl_get_menu(u32 id)
+>  		return h264_fmo_map_type;
+>  	case V4L2_CID_MPEG_VIDEO_H264_DECODING_MODE:
+>  		return h264_decoding_mode;
+> +	case V4L2_CID_MPEG_VIDEO_H264_STARTCODE:
+> +		return h264_start_code;
+>  	case V4L2_CID_MPEG_VIDEO_MPEG2_LEVEL:
+>  		return mpeg_mpeg2_level;
+>  	case V4L2_CID_MPEG_VIDEO_MPEG2_PROFILE:
+> @@ -860,6 +867,7 @@ const char *v4l2_ctrl_get_name(u32 id)
+>  	case V4L2_CID_MPEG_VIDEO_H264_SLICE_PARAMS:		return "H264 Slice Parameters";
+>  	case V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS:		return "H264 Decode Parameters";
+>  	case V4L2_CID_MPEG_VIDEO_H264_DECODING_MODE:		return "H264 Decoding Mode";
+> +	case V4L2_CID_MPEG_VIDEO_H264_STARTCODE:		return "H264 Start Code";
+>  	case V4L2_CID_MPEG_VIDEO_MPEG2_LEVEL:			return "MPEG2 Level";
+>  	case V4L2_CID_MPEG_VIDEO_MPEG2_PROFILE:			return "MPEG2 Profile";
+>  	case V4L2_CID_MPEG_VIDEO_MPEG4_I_FRAME_QP:		return "MPEG4 I-Frame QP Value";
+> @@ -1229,6 +1237,7 @@ void v4l2_ctrl_fill(u32 id, const char **name, enum v4l2_ctrl_type *type,
+>  	case V4L2_CID_MPEG_VIDEO_H264_SEI_FP_ARRANGEMENT_TYPE:
+>  	case V4L2_CID_MPEG_VIDEO_H264_FMO_MAP_TYPE:
+>  	case V4L2_CID_MPEG_VIDEO_H264_DECODING_MODE:
+> +	case V4L2_CID_MPEG_VIDEO_H264_STARTCODE:
+>  	case V4L2_CID_MPEG_VIDEO_MPEG2_LEVEL:
+>  	case V4L2_CID_MPEG_VIDEO_MPEG2_PROFILE:
+>  	case V4L2_CID_MPEG_VIDEO_MPEG4_LEVEL:
+> diff --git a/include/media/h264-ctrls.h b/include/media/h264-ctrls.h
+> index e6c510877f67..31555c99f64a 100644
+> --- a/include/media/h264-ctrls.h
+> +++ b/include/media/h264-ctrls.h
+> @@ -27,6 +27,7 @@
+>  #define V4L2_CID_MPEG_VIDEO_H264_SLICE_PARAMS	(V4L2_CID_MPEG_BASE+1003)
+>  #define V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS	(V4L2_CID_MPEG_BASE+1004)
+>  #define V4L2_CID_MPEG_VIDEO_H264_DECODING_MODE	(V4L2_CID_MPEG_BASE+1005)
+> +#define V4L2_CID_MPEG_VIDEO_H264_STARTCODE	(V4L2_CID_MPEG_BASE+1006)
+>  
+>  /* enum v4l2_ctrl_type type values */
+>  #define V4L2_CTRL_TYPE_H264_SPS			0x0110
+> @@ -41,6 +42,11 @@ enum v4l2_mpeg_video_h264_decoding_mode {
+>  	V4L2_MPEG_VIDEO_H264_FRAME_BASED_DECODING,
+>  };
+>  
+> +enum v4l2_mpeg_video_h264_start_code {
+> +	V4L2_MPEG_VIDEO_H264_NO_STARTCODE,
+> +	V4L2_MPEG_VIDEO_H264_ANNEX_B_STARTCODE,
+> +};
+> +
+>  #define V4L2_H264_SPS_CONSTRAINT_SET0_FLAG			0x01
+>  #define V4L2_H264_SPS_CONSTRAINT_SET1_FLAG			0x02
+>  #define V4L2_H264_SPS_CONSTRAINT_SET2_FLAG			0x04
+> 
+
+Regards,
+
+	Hans
 
 _______________________________________________
 Linux-rockchip mailing list
