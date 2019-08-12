@@ -2,75 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 944588A6E1
-	for <lists+linux-rockchip@lfdr.de>; Mon, 12 Aug 2019 21:11:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 658348A72A
+	for <lists+linux-rockchip@lfdr.de>; Mon, 12 Aug 2019 21:35:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eZMv8eZqlak8BvMpnRgpGWN1w5zSAARgqrD+E/jrwJs=; b=LoiBF8EEYOntuL
-	KVUVMsdjr0YLvZqsacCXn8XbOWpMDqYSTwNTiKmOLsjt0DrTe0ytUgprEfOivjDmdHCm657OiELpH
-	uv1JbPiqWubNL3I0BtWBOY/31KR0F77o4dP8hI301p7N6YBzX6vxirUCW2OjzWHrp1AyQ6w3eFnAY
-	/sAUv0ht8Y0AL8S63ojt9K+2DZaqwLZtzkN9zOU6cdKOauVqfTFDsbhN/lHJHsJ/f0z9E5nOEhYX5
-	D0040o7jjkuYNAiRdHbhqSEZ5HVu325wHLVYklVX93WwbFZKAEKPXGSYAcoYe+PGWoboxmcraKbNG
-	GYMyXg3hAeihVO52Zyrg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=62DGvLFvV8UHcL6jCxYS18+mgdcSnvsJI2mgeRIm8xE=; b=iD6Za0LqCbIOMH
+	UKS/Uih0I9JPG8PA4Y/KO80eYOAl3FMgW4TksjZ3xpjtEirPPnn5Ct/eJ6t5lhveN7GnD4TAN2JRp
+	w0MmYeNx8zVt8gRlVwC9FwXIBQIIXfAF4j4HH4TiyvJSdXv0/batg5jTe59Z0qnSbuJ2ojV8Xl5MN
+	C8x1qgqunQewrLSvE31digjB65y6DXPZ0R0sla/WYY/SbaGh9Ns1G7wlfqNxH5A93VGDkUFjyP3Jj
+	zNu10+WiM/7AjemBXp3ZG8xwzQ+MgQwdCnMqlbbzSIxTGTMJuuswSGsmkOz07T5D8SMuMBdbVJ60x
+	evbykEBz1++6shn05yPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxFjA-00069i-K2; Mon, 12 Aug 2019 19:11:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hxG6Z-0005Mn-ML; Mon, 12 Aug 2019 19:35:43 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxFis-0005zE-NA; Mon, 12 Aug 2019 19:11:15 +0000
-Received: from mail-qt1-f181.google.com (mail-qt1-f181.google.com
- [209.85.160.181])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2D96D20842;
- Mon, 12 Aug 2019 19:11:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565637074;
- bh=zGXxYRVN5FWM3TPyMY1MjGb5RqFeMmER7+0sGSVq3TQ=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=bVvmCjxI+kPRG+nJNG4XkRKgxw3Tm4bRcUjOq2ildmS1J/5hfn/ngXlYQvqmCA5VO
- ftcD6Ez9A2x1hDGlfIwOKR7NScXJU1VmmojMEo32y7dszjMlrd7OiuUwAR3T4RVQCF
- JCEhrBCiHDtlJbdBgfbjP8owpJ79pzvpZTcSHDY8=
-Received: by mail-qt1-f181.google.com with SMTP id j15so10358728qtl.13;
- Mon, 12 Aug 2019 12:11:14 -0700 (PDT)
-X-Gm-Message-State: APjAAAUeRFkVQQe9O6Cex3zp0pQFUYaAP98D0QH4ixhQwap4njfBsTVt
- woYrtFrWE/gRzJuf9xRzXtVcS+wHxJ55uWmlCg==
-X-Google-Smtp-Source: APXvYqy53vey6GYtzUmgKLgpgbiBPv+fXnb+bYVHJBev6DG0D+8uR8ZPe/236TEwvcCDWern5cLCJluC0mBiGyCQMWU=
-X-Received: by 2002:ac8:7593:: with SMTP id s19mr23691492qtq.136.1565637073361; 
- Mon, 12 Aug 2019 12:11:13 -0700 (PDT)
+ id 1hxG6W-0005MT-1P
+ for linux-rockchip@lists.infradead.org; Mon, 12 Aug 2019 19:35:42 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 6A236283C52
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: linux-media@vger.kernel.org
+Subject: [PATCH v5 00/11] media: hantro: Add support for H264 decoding
+Date: Mon, 12 Aug 2019 16:35:11 -0300
+Message-Id: <20190812193522.10911-1-ezequiel@collabora.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-References: <20190811230015.28349-1-justin.swartz@risingedge.co.za>
-In-Reply-To: <20190811230015.28349-1-justin.swartz@risingedge.co.za>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 12 Aug 2019 13:11:01 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqKpNgVcM-Ou7BKWv0qxvkJx3=NuSHRTHonQ-XSz-NXb1w@mail.gmail.com>
-Message-ID: <CAL_JsqKpNgVcM-Ou7BKWv0qxvkJx3=NuSHRTHonQ-XSz-NXb1w@mail.gmail.com>
-Subject: Re: [PATCH v2] ARM: dts: add device tree for Mecer Xtreme Mini S6
-To: Justin Swartz <justin.swartz@risingedge.co.za>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_121114_775425_74693071 
-X-CRM114-Status: GOOD (  11.63  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190812_123540_342640_FDF287EB 
+X-CRM114-Status: GOOD (  15.16  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,35 +56,120 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
+ Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sun, Aug 11, 2019 at 5:01 PM Justin Swartz
-<justin.swartz@risingedge.co.za> wrote:
->
-> The Mecer Xtreme Mini S6 features a Rockchip RK3229 SoC,
-> 1GB DDR3 RAM, 8GB eMMC, MicroSD port, 10/100Mbps Ethernet,
-> Realtek 8723BS WLAN module, 2 x USB 2.0 ports, HDMI output,
-> and S/PDIF output.
->
-> Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
-> ---
->  .../devicetree/bindings/arm/rockchip.yaml          |   5 +
->  .../devicetree/bindings/vendor-prefixes.yaml       |   2 +
->  arch/arm/boot/dts/Makefile                         |   1 +
->  arch/arm/boot/dts/rk3229-xms6.dts                  | 283 +++++++++++++++++++++
->  4 files changed, 291 insertions(+)
->  create mode 100644 arch/arm/boot/dts/rk3229-xms6.dts
+A new version of H264 uAPI review and Hantro G1 H264 decoding support.
+Compared to previous version, this version takes care of the
+suggestions from Hans Verkuil clarifying the uAPI spec.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+This series consolidates the two recent H264 series submitted
+by Boris [1] [2]. Some patches from [2] have been merged (namely,
+helpers for the Hantro driver), and so I'm adding the remanining
+bits required to support H264 on Hantro G1 VPU.
+
+* Patch 1 adds support for the sort_r() variant and has
+  been posted separately by Rasmus. It would be good to merge this patch
+  via the media tree, ideally as soon as possible, to avoid the
+  synchronisation burden that might appear if we decide to delay it.
+
+* Patch 2 to 4 extends the H264 uAPI, introducing frame-based vs slice-based
+  decoding granularity, and also support for different NALU start codes.
+  Currently, Annex B and no start codes are the supported options.
+
+  With the introduction of the start code control, the H264 parsed
+  slices pixel format should be renamed, dropping the _RAW suffix,
+  which is now meaningless.
+
+* Patch 5 removes the P0/B0/B1 ref lists from the decode_params control.
+  These lists are no longer needed since we build them on the
+  kernel side based on the DPB.
+
+* Patch 6 and 7 exposes the proper decoding mode and start code
+  on the cedrus driver. The driver functionality is not changed,
+  and only the Cedrus support is now being properly exposed to
+  userspace.
+
+* Patch 8 is needed to properly propagate the OUTPUT buffer timestamp to
+  the CAPTURE buffer one, which is required for intra-frame references.
+
+* Patches 9 to 11 adds H264 support for Hantro G1 and then enable
+  H264 decoding on RK3288.
+
+This is based on media master and tested on Rockchip RK3288 for Hantro and
+Allwinner H3 boards for Cedrus. Philipp Zabel tested on i.MX8MQ EVK using [3].
+
+The Ffmpeg branch used to test is based on the great work of Jonas and Boris,
+and is available in [4]. Instructions to build and run are as follows:
+
+./configure --enable-v4l2-request --enable-libdrm
+make -j4
+
+(test via framebuffer rendering):
+
+./ffmpeg -loglevel debug -hwaccel drm -hwaccel_device /dev/dri/card0 -i $some_file.avi -pix_fmt bgra -f fbdev /dev/fb0
+
+[1] https://www.mail-archive.com/linux-media@vger.kernel.org/msg148299.html
+[2] https://lkml.org/lkml/2019/6/19/379
+[3] git://git.pengutronix.de/git/pza/linux.git hantro/imx8m-wip
+[4] https://gitlab.collabora.com/ezequiel/ffmpeg/tree/stateless-mpeg2-vp8-h264-v4
+
+Boris Brezillon (3):
+  media: uapi: h264: Add the concept of decoding mode
+  media: uapi: h264: Get rid of the p0/b0/b1 ref-lists
+  media: hantro: Move copy_metadata() before doing a decode operation
+
+Ezequiel Garcia (4):
+  media: uapi: h264: Rename pixel format
+  media: uapi: h264: Add the concept of start code
+  media: cedrus: Cleanup control initialization
+  media: cedrus: Specify H264 startcode and decoding mode
+
+Hertz Wong (3):
+  media: hantro: Add core bits to support H264 decoding
+  media: hantro: Add support for H264 decoding on G1
+  media: hantro: Enable H264 decoding on rk3288
+
+Rasmus Villemoes (1):
+  lib/sort.c: implement sort() variant taking context argument
+
+ .../media/uapi/v4l/ext-ctrls-codec.rst        |  89 ++-
+ .../media/uapi/v4l/pixfmt-compressed.rst      |   8 +-
+ drivers/media/v4l2-core/v4l2-ctrls.c          |  18 +
+ drivers/media/v4l2-core/v4l2-ioctl.c          |   2 +-
+ drivers/staging/media/hantro/Makefile         |   2 +
+ drivers/staging/media/hantro/hantro.h         |   9 +-
+ drivers/staging/media/hantro/hantro_drv.c     |  50 +-
+ .../staging/media/hantro/hantro_g1_h264_dec.c | 292 ++++++++
+ drivers/staging/media/hantro/hantro_h264.c    | 651 ++++++++++++++++++
+ drivers/staging/media/hantro/hantro_hw.h      |  56 ++
+ drivers/staging/media/hantro/hantro_v4l2.c    |  10 +
+ drivers/staging/media/hantro/rk3288_vpu_hw.c  |  21 +-
+ drivers/staging/media/sunxi/cedrus/cedrus.c   |  65 +-
+ drivers/staging/media/sunxi/cedrus/cedrus.h   |   3 +-
+ .../staging/media/sunxi/cedrus/cedrus_dec.c   |   2 +-
+ .../staging/media/sunxi/cedrus/cedrus_video.c |   6 +-
+ include/linux/sort.h                          |   5 +
+ include/media/h264-ctrls.h                    |  22 +-
+ lib/sort.c                                    |  34 +-
+ 19 files changed, 1290 insertions(+), 55 deletions(-)
+ create mode 100644 drivers/staging/media/hantro/hantro_g1_h264_dec.c
+ create mode 100644 drivers/staging/media/hantro/hantro_h264.c
+
+-- 
+2.22.0
+
 
 _______________________________________________
 Linux-rockchip mailing list
