@@ -2,61 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D2738B019
-	for <lists+linux-rockchip@lfdr.de>; Tue, 13 Aug 2019 08:47:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 519DC8B15C
+	for <lists+linux-rockchip@lfdr.de>; Tue, 13 Aug 2019 09:44:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lx4FKgDTjL2EDluaJux7YKFy7zP278YjO7liaCDTcsQ=; b=N/YcrJgOQfnUr+
-	7LNzT8Sk9zaOJ9+cYR9LBfmpfcthTLLOxDW6b0bTpt9IjAjNGPC2o6QVTMFRll5lNR4DVxqDqveC8
-	0IFpUzNa93MCS0KrIREytmsdtzBkVmK+qPaAOwel1gk/Sowu7jNq7F52DcGeYqoVbiZ3m2UBJdEWa
-	RRLPJfN8ji6lZ+148hWJ1QSEO9z9PUhUjQbg5kThzV0Z61tejSPQZA2M0B+7/zbyFTevpqB9x2ezS
-	8Fdi99xPIpaBAVI2xS72Tj8LbRjq97DLg68pJg8hx0bDYLxzjqrypp5IQgb6s+cq+fi/7eFKrNi0v
-	4I+8rKBYAuSsiDlZnDPg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eBSoTt76gEYuGWhrbj5tBB3XBwrz2+02XuW8IyOqSPI=; b=Srx0QHPxNxkvsZ
+	EpauAl4ztliLV3RjnseCDaaYh0cec3BXAWuv0VmoeWHIOFN6f74mVLsjIi3kGhULcf676Tpm9dElg
+	UQDhsNw0R/oHGr83RpR6vsBCZAHeJ+GqLvabrKIBc8abREcuqBDE4onqyZHSItMXZ23JW0QEalDTz
+	MA/i3lPBGbNPJkIam/6jiGm02QHjlhz25o6GBlStq4cyfsDXRINrpQU35VwdaB3EEqGY6atavq84X
+	tIAPnHLs6azHHmHHbWrcJ/Xm2Omu+7cUpXt7TcJOElUd8f2wtW2HF45sr3tOKHEtoDC+2pJ3Yo9xY
+	oq6S4xMyvAopk7IU/F9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxQaC-00022p-Pd; Tue, 13 Aug 2019 06:47:00 +0000
-Received: from lb1-smtp-cloud8.xs4all.net ([194.109.24.21])
+	id 1hxRU8-0005Bk-PM; Tue, 13 Aug 2019 07:44:48 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxQa7-00022D-8G
- for linux-rockchip@lists.infradead.org; Tue, 13 Aug 2019 06:46:57 +0000
-Received: from [192.168.2.10] ([46.9.232.237])
- by smtp-cloud8.xs4all.net with ESMTPA
- id xQZQhIKF9qTdhxQZVh721v; Tue, 13 Aug 2019 08:46:48 +0200
-Subject: Re: [PATCH v5 03/11] media: uapi: h264: Add the concept of decoding
- mode
-To: Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
-References: <20190812193522.10911-1-ezequiel@collabora.com>
- <20190812193522.10911-4-ezequiel@collabora.com>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <104276b0-0e9c-c25d-b25c-344ad475045a@xs4all.nl>
-Date: Tue, 13 Aug 2019 08:46:12 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hxRU4-0005B2-En
+ for linux-rockchip@lists.infradead.org; Tue, 13 Aug 2019 07:44:45 +0000
+Received: by mail-pg1-x544.google.com with SMTP id n4so9086310pgv.2
+ for <linux-rockchip@lists.infradead.org>; Tue, 13 Aug 2019 00:44:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=wGWISY3VrJOIlFf6UspJXH4MK7kN0CsW/Y8ULJ0Kwsg=;
+ b=gr2P6VZATnnB9+lPemtkV6oz7hDqDZRqLEIsHSwg3T/hclit7LQRxjp93NpWl2MES2
+ Um+PzAS1Kko5EqOad+bjxXZKqx+uymm1exp3k8E1foMXH74iYttXfc4Iy13TYyEllztv
+ hUB/V1Le4fDSi6DYbcaFO7khLFTIlpHwS5Qy8=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=wGWISY3VrJOIlFf6UspJXH4MK7kN0CsW/Y8ULJ0Kwsg=;
+ b=HCVOwtoAWwjysSU6L45eYdlbYqHhPEiSx5CjnRhRVOivNex3d9i4LhoyoPhPCXDYrY
+ 7AqYo0cNJ9EE1arXhqNQoF0g6VTGmBLCPgVWoggL9JftlWF1PJRBvcUbzHyO0K0mB6L/
+ XHuNiNoA4vX7vY3pBFZUXEe5hmT/wlha8HAFJZqiAE8M+qIBIwCIQeESyeA9JdfcDZlH
+ BnyFGXEe8vdGSWOcWv+647tAiJJEhuFEPzmJ+uTcfyVsW596Ya5BDtraIKKscxLP3Mqv
+ oX2dwcmXkJozwWBmjG2saSaFeji63Wtv2gFzpLLkAsg3sqJShabcV/+FSKNZV2qaSX99
+ TN8Q==
+X-Gm-Message-State: APjAAAXjHvlNX4naIq5x3YnSDVkP09ujiKrqaOtv6UeqIQdfHEhX8e9q
+ snwgERQzLxgKFTwyH+FxBOZKIw==
+X-Google-Smtp-Source: APXvYqzkzDTF0AwWSIcaHQgPLZiwdVjeEy+ci5i4EwVLcCB8uW8sIMX56ixAY+7bZj0RLkfelhwRAg==
+X-Received: by 2002:a63:db45:: with SMTP id x5mr16250861pgi.293.1565682283264; 
+ Tue, 13 Aug 2019 00:44:43 -0700 (PDT)
+Received: from localhost ([2401:fa00:1:10:79b4:bd83:e4a5:a720])
+ by smtp.gmail.com with ESMTPSA id p3sm682260pjo.3.2019.08.13.00.44.39
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 13 Aug 2019 00:44:42 -0700 (PDT)
+From: Cheng-Yi Chiang <cychiang@chromium.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH] ASoC: rockchip: rockchip_max98090: Set period size to 240
+Date: Tue, 13 Aug 2019 15:44:30 +0800
+Message-Id: <20190813074430.191791-1-cychiang@chromium.org>
+X-Mailer: git-send-email 2.23.0.rc1.153.gdeed80330f-goog
 MIME-Version: 1.0
-In-Reply-To: <20190812193522.10911-4-ezequiel@collabora.com>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfCq/gnt8eMqH/nZZsZtpu8Svnbv/kn7oLAWevwiqYp7be3K21KrO5WzpdiGb/8aBIOthcT3WWmRf/pwNq8NYQ1zKgW11o3k5D47X3DDZdFywT1kYYue2
- ymFO2LYbKWjujH4UQHTH3LXDJvvDQ05ef72iAxHgqv50osI/N+si5bT0TpxpMt8OCckKPQJZeegJqlvvgvlojjyG2dThnqmCnKncphRK8IwgAdpLkBEMfJFw
- u2KbaN9nV0vKeTDJbtmNHKYSPq6TqWrxVe5/tYoAB1WqVbajc3A1JA9m/WVkt4+xnOpUoXcnvZoYPvkjpqNzTpOGQC/74MydvqdEsOQBKACf1K+wHyTvG6lm
- o1g6DIk068lEMUwkXJ6qOoWxN3u7JW7+PaNEIdwFOl7WcCACrTVjXG7sp5mIKWmU76mUViDOBWHXQi47vL7sHQ7E6MSXg9qxjdEKImFLL2Jy5rkDL18p+Vo0
- Y888/3MoeiXVg3waGivuQdMNqhVoS3ODyN36d5PuL/l4v/3fVdfYJXaGJuVz2hyGx4iO4I0nvbAteZTq7W0S2KMx0Fra7b8OvB05olZvXjKPRq9LUoeJqi5J
- WZnkZ2Pb/n3cMzYh3qw7yVUxGjihk4nmRHogMfwUJLZJp+nln09AQV2jeye/b3un6Fc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_234655_460072_072DCCA4 
-X-CRM114-Status: GOOD (  29.66  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190813_004444_503381_11DD8E0D 
+X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.21 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,224 +93,64 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
- Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com
+Cc: alsa-devel@alsa-project.org, dianders@chromium.org,
+ Heiko Stuebner <heiko@sntech.de>, zhengxing@rock-chips.com,
+ Liam Girdwood <lgirdwood@gmail.com>, jeffy.chen@rock-chips.com,
+ Takashi Iwai <tiwai@suse.com>, tzungbi@chromium.org,
+ Jaroslav Kysela <perex@perex.cz>, linux-rockchip@lists.infradead.org,
+ Mark Brown <broonie@kernel.org>, eddie.cai@rock-chips.com,
+ linux-arm-kernel@lists.infradead.org, enric.balletbo@collabora.com,
+ dgreid@chromium.org, cain.cai@rock-chips.com,
+ Cheng-Yi Chiang <cychiang@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 8/12/19 9:35 PM, Ezequiel Garcia wrote:
-> From: Boris Brezillon <boris.brezillon@collabora.com>
-> 
-> Some stateless decoders don't support per-slice decoding granularity
-> (or at least not in a way that would make them efficient or easy to use).
-> 
-> Expose a menu to control the supported decoding modes. Drivers are
-> allowed to support only one decoding but they can support both too.
-> 
-> Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
-> Reviewed-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> Tested-by: Philipp Zabel <p.zabel@pengutronix.de>
-> ---
-> Changes in v5:
-> * Improve specification as suggested by Hans.
-> Changes in v4:
-> * Typos/rewording fixes
-> Changes in v3:
-> * s/per-{slice,frame} decoding/{slice,frame}-based decoding/
-> * Add Paul's R-b
-> Changes in v2:
-> * Allow decoding multiple slices in per-slice decoding mode
-> * Minor doc improvement/fixes
-> ---
->  .../media/uapi/v4l/ext-ctrls-codec.rst        | 47 ++++++++++++++++++-
->  .../media/uapi/v4l/pixfmt-compressed.rst      |  3 +-
->  drivers/media/v4l2-core/v4l2-ctrls.c          |  9 ++++
->  include/media/h264-ctrls.h                    | 11 +++++
->  4 files changed, 68 insertions(+), 2 deletions(-)
-> 
-> diff --git a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-> index c5f39dd50043..568390273fde 100644
-> --- a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-> +++ b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-> @@ -1747,6 +1747,11 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
->      * - __u32
->        - ``size``
->        -
-> +    * - __u32
-> +      - ``start_byte_offset``
-> +      - Where the slice payload starts in the output buffer. Useful when the
-> +        OUTPUT buffer contains more than one slice (some codecs need to know
-> +        where each slice starts in this buffer).
->      * - __u32
->        - ``header_bit_size``
->        -
-> @@ -1930,7 +1935,10 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
->        -
->      * - __u16
->        - ``num_slices``
-> -      - Number of slices needed to decode the current frame
-> +      - Number of slices needed to decode the current frame/field. When
-> +        operating in slice-based decoding mode (see
-> +        :c:type:`v4l2_mpeg_video_h264_decoding_mode`), this field
-> +        should always be set to one.
->      * - __u16
->        - ``nal_ref_idc``
->        - NAL reference ID value coming from the NAL Unit header
-> @@ -2021,6 +2029,43 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
->        - 0x00000004
->        - The DPB entry is a long term reference frame
->  
-> +``V4L2_CID_MPEG_VIDEO_H264_DECODING_MODE (enum)``
-> +    Specifies the decoding mode to use. Currently exposes slice-based and
-> +    frame-based decoding but new modes might be added later on.
-> +    This control is used to complement V4L2_PIX_FMT_H264_SLICE
-> +    pixel format. Applications that support V4L2_PIX_FMT_H264_SLICE
-> +    are required to set this control in order to specify the decoding mode
-> +    that is expected for the buffer.
-> +    Drivers may expose a single or multiple decoding modes, depending
-> +    on what they can support.
-> +
-> +    .. note::
-> +
-> +       This menu control is not yet part of the public kernel API and
-> +       it is expected to change.
-> +
-> +.. c:type:: v4l2_mpeg_video_h264_decoding_mode
-> +
-> +.. cssclass:: longtable
-> +
-> +.. flat-table::
-> +    :header-rows:  0
-> +    :stub-columns: 0
-> +    :widths:       1 1 2
-> +
-> +    * - ``V4L2_MPEG_VIDEO_H264_SLICE_BASED_DECODING``
-> +      - 0
-> +      - The decoding is done at the slice granularity.
-> +        v4l2_ctrl_h264_decode_params->num_slices should be set to 1.
-> +        The OUTPUT buffer must contain a single slice.
-> +    * - ``V4L2_MPEG_VIDEO_H264_FRAME_BASED_DECODING``
-> +      - 1
-> +      - The decoding is done at the frame granularity.
-> +        v4l2_ctrl_h264_decode_params->num_slices should be set to the number of
-> +        slices forming a frame.
-> +        The OUTPUT buffer must contain all slices needed to decode the
-> +        frame. The OUTPUT buffer must also contain both fields.
-> +
->  .. _v4l2-mpeg-mpeg2:
->  
->  ``V4L2_CID_MPEG_VIDEO_MPEG2_SLICE_PARAMS (struct)``
-> diff --git a/Documentation/media/uapi/v4l/pixfmt-compressed.rst b/Documentation/media/uapi/v4l/pixfmt-compressed.rst
-> index 9b65473a2288..50557c85d99d 100644
-> --- a/Documentation/media/uapi/v4l/pixfmt-compressed.rst
-> +++ b/Documentation/media/uapi/v4l/pixfmt-compressed.rst
-> @@ -61,7 +61,8 @@ Compressed Formats
->  	stateless video decoders that implement an H264 pipeline
->  	(using the :ref:`mem2mem` and :ref:`media-request-api`).
->  	Metadata associated with the frame to decode are required to
-> -	be passed through the ``V4L2_CID_MPEG_VIDEO_H264_SPS``,
-> +	be passed through the ``V4L2_CID_MPEG_VIDEO_H264_DECODING_MODE``,
+From stress testing of arecord, we found that period size
+greater than ~900 will bring pl330 to DYING state and
+can not recover within 100 iterations.
+The result is that arecord will stuck and get I/O error,
+and issue can not be recovered until reboot.
 
-No, that's not right. H264_DECODING_MODE isn't metadata that has to be
-passed via a request. It's a pixelformat modifier and has to be set only
-once to describe the format that's going to be passed to the HW.
+This issue does not happen when period size is small.
+Set constraint of period size to 240 to prevent such issue.
+With the constraint, there will be no issue after 2000 iterations.
 
-That should be made clear here. Same goes for the next patch.
+We can revert this patch once the root cause is found
+in rockchip's pl330 implementation.
 
-Regards,
+Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+---
+ sound/soc/rockchip/rockchip_max98090.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-	Hans
-
-> +        ``V4L2_CID_MPEG_VIDEO_H264_SPS``,
->  	``V4L2_CID_MPEG_VIDEO_H264_PPS``,
->  	``V4L2_CID_MPEG_VIDEO_H264_SCALING_MATRIX``,
->  	``V4L2_CID_MPEG_VIDEO_H264_SLICE_PARAMS`` and
-> diff --git a/drivers/media/v4l2-core/v4l2-ctrls.c b/drivers/media/v4l2-core/v4l2-ctrls.c
-> index cd1ae016706f..c3194299bfac 100644
-> --- a/drivers/media/v4l2-core/v4l2-ctrls.c
-> +++ b/drivers/media/v4l2-core/v4l2-ctrls.c
-> @@ -402,6 +402,11 @@ const char * const *v4l2_ctrl_get_menu(u32 id)
->  		"Explicit",
->  		NULL,
->  	};
-> +	static const char * const h264_decoding_mode[] = {
-> +		"Slice-Based",
-> +		"Frame-Based",
-> +		NULL,
-> +	};
->  	static const char * const mpeg_mpeg2_level[] = {
->  		"Low",
->  		"Main",
-> @@ -633,6 +638,8 @@ const char * const *v4l2_ctrl_get_menu(u32 id)
->  		return h264_fp_arrangement_type;
->  	case V4L2_CID_MPEG_VIDEO_H264_FMO_MAP_TYPE:
->  		return h264_fmo_map_type;
-> +	case V4L2_CID_MPEG_VIDEO_H264_DECODING_MODE:
-> +		return h264_decoding_mode;
->  	case V4L2_CID_MPEG_VIDEO_MPEG2_LEVEL:
->  		return mpeg_mpeg2_level;
->  	case V4L2_CID_MPEG_VIDEO_MPEG2_PROFILE:
-> @@ -852,6 +859,7 @@ const char *v4l2_ctrl_get_name(u32 id)
->  	case V4L2_CID_MPEG_VIDEO_H264_SCALING_MATRIX:		return "H264 Scaling Matrix";
->  	case V4L2_CID_MPEG_VIDEO_H264_SLICE_PARAMS:		return "H264 Slice Parameters";
->  	case V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS:		return "H264 Decode Parameters";
-> +	case V4L2_CID_MPEG_VIDEO_H264_DECODING_MODE:		return "H264 Decoding Mode";
->  	case V4L2_CID_MPEG_VIDEO_MPEG2_LEVEL:			return "MPEG2 Level";
->  	case V4L2_CID_MPEG_VIDEO_MPEG2_PROFILE:			return "MPEG2 Profile";
->  	case V4L2_CID_MPEG_VIDEO_MPEG4_I_FRAME_QP:		return "MPEG4 I-Frame QP Value";
-> @@ -1220,6 +1228,7 @@ void v4l2_ctrl_fill(u32 id, const char **name, enum v4l2_ctrl_type *type,
->  	case V4L2_CID_MPEG_VIDEO_H264_VUI_SAR_IDC:
->  	case V4L2_CID_MPEG_VIDEO_H264_SEI_FP_ARRANGEMENT_TYPE:
->  	case V4L2_CID_MPEG_VIDEO_H264_FMO_MAP_TYPE:
-> +	case V4L2_CID_MPEG_VIDEO_H264_DECODING_MODE:
->  	case V4L2_CID_MPEG_VIDEO_MPEG2_LEVEL:
->  	case V4L2_CID_MPEG_VIDEO_MPEG2_PROFILE:
->  	case V4L2_CID_MPEG_VIDEO_MPEG4_LEVEL:
-> diff --git a/include/media/h264-ctrls.h b/include/media/h264-ctrls.h
-> index 6160a69c0143..e6c510877f67 100644
-> --- a/include/media/h264-ctrls.h
-> +++ b/include/media/h264-ctrls.h
-> @@ -26,6 +26,7 @@
->  #define V4L2_CID_MPEG_VIDEO_H264_SCALING_MATRIX	(V4L2_CID_MPEG_BASE+1002)
->  #define V4L2_CID_MPEG_VIDEO_H264_SLICE_PARAMS	(V4L2_CID_MPEG_BASE+1003)
->  #define V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS	(V4L2_CID_MPEG_BASE+1004)
-> +#define V4L2_CID_MPEG_VIDEO_H264_DECODING_MODE	(V4L2_CID_MPEG_BASE+1005)
->  
->  /* enum v4l2_ctrl_type type values */
->  #define V4L2_CTRL_TYPE_H264_SPS			0x0110
-> @@ -33,6 +34,12 @@
->  #define V4L2_CTRL_TYPE_H264_SCALING_MATRIX	0x0112
->  #define V4L2_CTRL_TYPE_H264_SLICE_PARAMS	0x0113
->  #define V4L2_CTRL_TYPE_H264_DECODE_PARAMS	0x0114
-> +#define V4L2_CTRL_TYPE_H264_DECODING_MODE	0x0115
-> +
-> +enum v4l2_mpeg_video_h264_decoding_mode {
-> +	V4L2_MPEG_VIDEO_H264_SLICE_BASED_DECODING,
-> +	V4L2_MPEG_VIDEO_H264_FRAME_BASED_DECODING,
-> +};
->  
->  #define V4L2_H264_SPS_CONSTRAINT_SET0_FLAG			0x01
->  #define V4L2_H264_SPS_CONSTRAINT_SET1_FLAG			0x02
-> @@ -125,6 +132,10 @@ struct v4l2_h264_pred_weight_table {
->  struct v4l2_ctrl_h264_slice_params {
->  	/* Size in bytes, including header */
->  	__u32 size;
-> +
-> +	/* Offset in bytes to the start of slice in the OUTPUT buffer. */
-> +	__u32 start_byte_offset;
-> +
->  	/* Offset in bits to slice_data() from the beginning of this slice. */
->  	__u32 header_bit_size;
->  
-> 
+diff --git a/sound/soc/rockchip/rockchip_max98090.c b/sound/soc/rockchip/rockchip_max98090.c
+index 7b0c21fa6dca..0097df1fae66 100644
+--- a/sound/soc/rockchip/rockchip_max98090.c
++++ b/sound/soc/rockchip/rockchip_max98090.c
+@@ -137,8 +137,19 @@ static int rk_aif1_hw_params(struct snd_pcm_substream *substream,
+ 	return ret;
+ }
+ 
++static int rk_aif1_startup(struct snd_pcm_substream *substream)
++{
++	/*
++	 * Set period size to 240 because pl330 has issue
++	 * dealing with larger period in stress testing.
++	 */
++	return snd_pcm_hw_constraint_minmax(substream->runtime,
++			SNDRV_PCM_HW_PARAM_PERIOD_SIZE, 240, 240);
++}
++
+ static const struct snd_soc_ops rk_aif1_ops = {
+ 	.hw_params = rk_aif1_hw_params,
++	.startup = rk_aif1_startup,
+ };
+ 
+ SND_SOC_DAILINK_DEFS(hifi,
+-- 
+2.23.0.rc1.153.gdeed80330f-goog
 
 
 _______________________________________________
