@@ -2,42 +2,41 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 158E98DE3D
-	for <lists+linux-rockchip@lfdr.de>; Wed, 14 Aug 2019 22:04:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA8A08DE40
+	for <lists+linux-rockchip@lfdr.de>; Wed, 14 Aug 2019 22:04:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c3PXDXg+2cxtOi/IRAk1ljf7wBSyl9/Eshz6LR0rZxE=; b=WerkknWG8XXUbg
-	9XDJifZr3BRrRgVGxlBk26DDKmfra1tRVbkWex60YIirWnAdMwETo6H9+n03767n0TagR/icWbHBE
-	XjOMq05i+SfCAnQG8LA8y7P6tD9JScG+GQaknkiYGadp0IqsTanyowRFN9NzbbPLJ6HPN+a4C6Eb7
-	E4wgdywIAfx+gsrL7ZIMB0Gn3JZu1koYhjBtWpoql1ZR/cXHaOEP+cmxe+ddzMu5r8+5nk51K+yi2
-	He7aA01BDCcowK5ecET1eScaTAddrjqZdHl0qK6KK75IJrh0aMvyO+N2ywAl+5+YQlH9Gg7da0Gq4
-	0WaZ0S6b4dRLncLLT5HQ==;
+	List-Owner; bh=PBWfj0D6yo7KVNH92O1lBULSIjPvs+gnzd/+sJawQxo=; b=ZqnSrh3omRmJJM
+	XUy5YFJwfmXPU9H2gqaBweSR4/nBomVRz2Ucbgc+YgBu0tdAvinuThbMSpHBSZA40INUxEwbE8G6g
+	g9EOd4jn0AcKAT+jDKxvsDlOifOidPUBa4grF2A2ELdpaRqUR4aUnU86L2XY7eqKxWFl9jwkog9xL
+	wft6V3vtsKNGXrMkYEAIRClYrKNEPTNpmoyg8G6Fc/sqbYvbqLBq0tQRuNtjn0P5kRTn7m5tMjo5q
+	kq4+NgjJOeBs/7tFK/JUjM9uTjS3GnQ5Uu4rV78v9CcXkUDICt2JiRKfaMnNmBWhbZ2O770qJ46iQ
+	LKkabR7ZfmxkbQmmYghw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxzV8-0003cp-2C; Wed, 14 Aug 2019 20:04:06 +0000
+	id 1hxzVC-0003f3-Uq; Wed, 14 Aug 2019 20:04:10 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxzV5-0003cU-7Y
- for linux-rockchip@lists.infradead.org; Wed, 14 Aug 2019 20:04:05 +0000
+ id 1hxzV9-0003dg-G7
+ for linux-rockchip@lists.infradead.org; Wed, 14 Aug 2019 20:04:09 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id BD4F0283BE8
+ (Authenticated sender: ezequiel) with ESMTPSA id 6E77F28C2F9
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: linux-media@vger.kernel.org
-Subject: [PATCH v6 01/11] lib/sort.c: implement sort() variant taking context
- argument
-Date: Wed, 14 Aug 2019 16:59:21 -0300
-Message-Id: <20190814195931.6587-2-ezequiel@collabora.com>
+Subject: [PATCH v6 02/11] media: uapi: h264: Rename pixel format
+Date: Wed, 14 Aug 2019 16:59:22 -0300
+Message-Id: <20190814195931.6587-3-ezequiel@collabora.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190814195931.6587-1-ezequiel@collabora.com>
 References: <20190814195931.6587-1-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_130403_533780_4627D423 
-X-CRM114-Status: GOOD (  14.36  )
+X-CRM114-CacheID: sfid-20190814_130407_800649_0E87D227 
+X-CRM114-Status: GOOD (  10.83  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -61,150 +60,129 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
  Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
- Jonas Karlman <jonas@kwiboo.se>, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- linux-kernel@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>,
  Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  linux-rockchip@lists.infradead.org,
  Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Andrew Morton <akpm@linux-foundation.org>, kernel@collabora.com
+ Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+The V4L2_PIX_FMT_H264_SLICE_RAW name was originally suggested
+because the pixel format would represent H264 slices without any
+start code.
 
-Our list_sort() utility has always supported a context argument that
-is passed through to the comparison routine. Now there's a use case
-for the similar thing for sort().
+However, as we will now introduce a start code menu control,
+give the pixel format a more meaningful name, while it's
+still early enough to do so.
 
-This implements sort_r by simply extending the existing sort function
-in the obvious way. To avoid code duplication, we want to implement
-sort() in terms of sort_r(). The naive way to do that is
-
-static int cmp_wrapper(const void *a, const void *b, const void *ctx)
-{
-  int (*real_cmp)(const void*, const void*) = ctx;
-  return real_cmp(a, b);
-}
-
-sort(..., cmp) { sort_r(..., cmp_wrapper, cmp) }
-
-but this would do two indirect calls for each comparison. Instead, do
-as is done for the default swap functions - that only adds a cost of a
-single easily predicted branch to each comparison call.
-
-Aside from introducing support for the context argument, this also
-serves as preparation for patches that will eliminate the indirect
-comparison calls in common cases.
-
-Requested-by: Boris Brezillon <boris.brezillon@collabora.com>
-Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
-Acked-by: Andrew Morton <akpm@linux-foundation.org>
+Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
 Tested-by: Philipp Zabel <p.zabel@pengutronix.de>
 ---
- include/linux/sort.h |  5 +++++
- lib/sort.c           | 34 ++++++++++++++++++++++++++++------
- 2 files changed, 33 insertions(+), 6 deletions(-)
+Changes in v6:
+* None.
+Changes in v5:
+* None.
+Changes in v4:
+* New patch.
+---
+ Documentation/media/uapi/v4l/pixfmt-compressed.rst | 4 ++--
+ drivers/media/v4l2-core/v4l2-ioctl.c               | 2 +-
+ drivers/staging/media/sunxi/cedrus/cedrus_dec.c    | 2 +-
+ drivers/staging/media/sunxi/cedrus/cedrus_video.c  | 6 +++---
+ include/media/h264-ctrls.h                         | 2 +-
+ 5 files changed, 8 insertions(+), 8 deletions(-)
 
-diff --git a/include/linux/sort.h b/include/linux/sort.h
-index 2b99a5dd073d..61b96d0ebc44 100644
---- a/include/linux/sort.h
-+++ b/include/linux/sort.h
-@@ -4,6 +4,11 @@
+diff --git a/Documentation/media/uapi/v4l/pixfmt-compressed.rst b/Documentation/media/uapi/v4l/pixfmt-compressed.rst
+index f52a7b67023d..9b65473a2288 100644
+--- a/Documentation/media/uapi/v4l/pixfmt-compressed.rst
++++ b/Documentation/media/uapi/v4l/pixfmt-compressed.rst
+@@ -52,9 +52,9 @@ Compressed Formats
+       - ``V4L2_PIX_FMT_H264_MVC``
+       - 'M264'
+       - H264 MVC video elementary stream.
+-    * .. _V4L2-PIX-FMT-H264-SLICE-RAW:
++    * .. _V4L2-PIX-FMT-H264-SLICE:
  
- #include <linux/types.h>
+-      - ``V4L2_PIX_FMT_H264_SLICE_RAW``
++      - ``V4L2_PIX_FMT_H264_SLICE``
+       - 'S264'
+       - H264 parsed slice data, without the start code and as
+ 	extracted from the H264 bitstream.  This format is adapted for
+diff --git a/drivers/media/v4l2-core/v4l2-ioctl.c b/drivers/media/v4l2-core/v4l2-ioctl.c
+index bb5b4926538a..39f10621c91b 100644
+--- a/drivers/media/v4l2-core/v4l2-ioctl.c
++++ b/drivers/media/v4l2-core/v4l2-ioctl.c
+@@ -1343,7 +1343,7 @@ static void v4l_fill_fmtdesc(struct v4l2_fmtdesc *fmt)
+ 		case V4L2_PIX_FMT_H264:		descr = "H.264"; break;
+ 		case V4L2_PIX_FMT_H264_NO_SC:	descr = "H.264 (No Start Codes)"; break;
+ 		case V4L2_PIX_FMT_H264_MVC:	descr = "H.264 MVC"; break;
+-		case V4L2_PIX_FMT_H264_SLICE_RAW:	descr = "H.264 Parsed Slice Data"; break;
++		case V4L2_PIX_FMT_H264_SLICE:	descr = "H.264 Parsed Slice Data"; break;
+ 		case V4L2_PIX_FMT_H263:		descr = "H.263"; break;
+ 		case V4L2_PIX_FMT_MPEG1:	descr = "MPEG-1 ES"; break;
+ 		case V4L2_PIX_FMT_MPEG2:	descr = "MPEG-2 ES"; break;
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
+index bdad87eb9d79..56ca4c9ad01c 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
++++ b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
+@@ -46,7 +46,7 @@ void cedrus_device_run(void *priv)
+ 			V4L2_CID_MPEG_VIDEO_MPEG2_QUANTIZATION);
+ 		break;
  
-+void sort_r(void *base, size_t num, size_t size,
-+	    int (*cmp)(const void *, const void *, const void *),
-+	    void (*swap)(void *, void *, int),
-+	    const void *priv);
-+
- void sort(void *base, size_t num, size_t size,
- 	  int (*cmp)(const void *, const void *),
- 	  void (*swap)(void *, void *, int));
-diff --git a/lib/sort.c b/lib/sort.c
-index cf408aec3733..d54cf97e9548 100644
---- a/lib/sort.c
-+++ b/lib/sort.c
-@@ -144,6 +144,18 @@ static void do_swap(void *a, void *b, size_t size, swap_func_t swap_func)
- 		swap_func(a, b, (int)size);
- }
+-	case V4L2_PIX_FMT_H264_SLICE_RAW:
++	case V4L2_PIX_FMT_H264_SLICE:
+ 		run.h264.decode_params = cedrus_find_control_data(ctx,
+ 			V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS);
+ 		run.h264.pps = cedrus_find_control_data(ctx,
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_video.c b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+index e2b530b1a956..06c695615703 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus_video.c
++++ b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+@@ -38,7 +38,7 @@ static struct cedrus_format cedrus_formats[] = {
+ 		.directions	= CEDRUS_DECODE_SRC,
+ 	},
+ 	{
+-		.pixelformat	= V4L2_PIX_FMT_H264_SLICE_RAW,
++		.pixelformat	= V4L2_PIX_FMT_H264_SLICE,
+ 		.directions	= CEDRUS_DECODE_SRC,
+ 	},
+ 	{
+@@ -104,7 +104,7 @@ static void cedrus_prepare_format(struct v4l2_pix_format *pix_fmt)
  
-+typedef int (*cmp_func_t)(const void *, const void *);
-+typedef int (*cmp_r_func_t)(const void *, const void *, const void *);
-+#define _CMP_WRAPPER ((cmp_r_func_t)0L)
-+
-+static int do_cmp(const void *a, const void *b,
-+		  cmp_r_func_t cmp, const void *priv)
-+{
-+	if (cmp == _CMP_WRAPPER)
-+		return ((cmp_func_t)(priv))(a, b);
-+	return cmp(a, b, priv);
-+}
-+
- /**
-  * parent - given the offset of the child, find the offset of the parent.
-  * @i: the offset of the heap element whose parent is sought.  Non-zero.
-@@ -171,12 +183,13 @@ static size_t parent(size_t i, unsigned int lsbit, size_t size)
- }
+ 	switch (pix_fmt->pixelformat) {
+ 	case V4L2_PIX_FMT_MPEG2_SLICE:
+-	case V4L2_PIX_FMT_H264_SLICE_RAW:
++	case V4L2_PIX_FMT_H264_SLICE:
+ 		/* Zero bytes per line for encoded source. */
+ 		bytesperline = 0;
  
- /**
-- * sort - sort an array of elements
-+ * sort_r - sort an array of elements
-  * @base: pointer to data to sort
-  * @num: number of elements
-  * @size: size of each element
-  * @cmp_func: pointer to comparison function
-  * @swap_func: pointer to swap function or NULL
-+ * @priv: third argument passed to comparison function
-  *
-  * This function does a heapsort on the given array.  You may provide
-  * a swap_func function if you need to do something more than a memory
-@@ -188,9 +201,10 @@ static size_t parent(size_t i, unsigned int lsbit, size_t size)
-  * O(n*n) worst-case behavior and extra memory requirements that make
-  * it less suitable for kernel use.
-  */
--void sort(void *base, size_t num, size_t size,
--	  int (*cmp_func)(const void *, const void *),
--	  void (*swap_func)(void *, void *, int size))
-+void sort_r(void *base, size_t num, size_t size,
-+	    int (*cmp_func)(const void *, const void *, const void *),
-+	    void (*swap_func)(void *, void *, int size),
-+	    const void *priv)
- {
- 	/* pre-scale counters for performance */
- 	size_t n = num * size, a = (num/2) * size;
-@@ -238,12 +252,12 @@ void sort(void *base, size_t num, size_t size,
- 		 * average, 3/4 worst-case.)
- 		 */
- 		for (b = a; c = 2*b + size, (d = c + size) < n;)
--			b = cmp_func(base + c, base + d) >= 0 ? c : d;
-+			b = do_cmp(base + c, base + d, cmp_func, priv) >= 0 ? c : d;
- 		if (d == n)	/* Special case last leaf with no sibling */
- 			b = c;
+@@ -469,7 +469,7 @@ static int cedrus_start_streaming(struct vb2_queue *vq, unsigned int count)
+ 		ctx->current_codec = CEDRUS_CODEC_MPEG2;
+ 		break;
  
- 		/* Now backtrack from "b" to the correct location for "a" */
--		while (b != a && cmp_func(base + a, base + b) >= 0)
-+		while (b != a && do_cmp(base + a, base + b, cmp_func, priv) >= 0)
- 			b = parent(b, lsbit, size);
- 		c = b;			/* Where "a" belongs */
- 		while (b != a) {	/* Shift it into place */
-@@ -252,4 +266,12 @@ void sort(void *base, size_t num, size_t size,
- 		}
- 	}
- }
-+EXPORT_SYMBOL(sort_r);
-+
-+void sort(void *base, size_t num, size_t size,
-+	  int (*cmp_func)(const void *, const void *),
-+	  void (*swap_func)(void *, void *, int size))
-+{
-+	return sort_r(base, num, size, _CMP_WRAPPER, swap_func, cmp_func);
-+}
- EXPORT_SYMBOL(sort);
+-	case V4L2_PIX_FMT_H264_SLICE_RAW:
++	case V4L2_PIX_FMT_H264_SLICE:
+ 		ctx->current_codec = CEDRUS_CODEC_H264;
+ 		break;
+ 
+diff --git a/include/media/h264-ctrls.h b/include/media/h264-ctrls.h
+index e1404d78d6ff..6160a69c0143 100644
+--- a/include/media/h264-ctrls.h
++++ b/include/media/h264-ctrls.h
+@@ -14,7 +14,7 @@
+ #include <linux/videodev2.h>
+ 
+ /* Our pixel format isn't stable at the moment */
+-#define V4L2_PIX_FMT_H264_SLICE_RAW v4l2_fourcc('S', '2', '6', '4') /* H264 parsed slices */
++#define V4L2_PIX_FMT_H264_SLICE v4l2_fourcc('S', '2', '6', '4') /* H264 parsed slices */
+ 
+ /*
+  * This is put insanely high to avoid conflicting with controls that
 -- 
 2.22.0
 
