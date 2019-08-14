@@ -2,55 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A57D88C63C
-	for <lists+linux-rockchip@lfdr.de>; Wed, 14 Aug 2019 04:14:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98F9C8C687
+	for <lists+linux-rockchip@lfdr.de>; Wed, 14 Aug 2019 04:16:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/1pV2fugZiba7qwdR5Oh1dmGB73whbgvtWTbkaMLDek=; b=jMMl7NRBEkjANR
-	3ykvS1FTltshnrBDkcBsZ2HHRTGPe7q0mYl39DhOY/oQ6wdB6cxk9dHUi2MVjzmJGb/m0umboTL1h
-	frxq0aOAVAeGxL4ZGQ1+TFVP5xzeADV59Cw/JBjx9NSrZ/NyehKE2h685S0R9miAy84CbYOvee0Cf
-	GDZtlj00Ai4LCfon98nsGYSLNtZU0641sBvR+JMrDTAwxAlEW45+ZUn4prjks0kRKQu4xvhBNisra
-	FCHUiFZQo+yStT440nADWGTpGOf4KNaLc2hfDIOcbLO02CrMeV9Gyh3tyLnL+0RF5HUFdKWcs9zX3
-	rN4hrD+oEP1aFu18yfbw==;
+	List-Owner; bh=VE8ivJ+GazIWKpYyEIyZbFo0O03iCfc2FzDh/CMdQdE=; b=RY2Q2pJp/6ALOT
+	nvMufUJcvcSlChWs+30AAMXjwLzwdSJt9XLhIL/UIPzh0k8nxMs3piWI2MPGJKI8KW4lPnKIkC/Lc
+	FL73wkingAP2FJMo41SErA81k6oSBpPhujLty72ofaHy/3S57+hSl28iT2ryHoMPG90CPE7dGLOI5
+	KlWWcUuscA0N/makkqRp4/KFlR/ANI5LGrmbdYyrKiMUgkkNa82z87QFYKhOAMZ4dSfZ/H0vxfGdC
+	ktCt9H89YLTGOsSXwM3ZP1pV2QsVR8BiXlP9FmTKS8H1ecmVqObV7udSIE0INCgxvv9BaszE1jrgp
+	WWn4y2jPA0mVzBXcqChw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxinc-0007vj-Gf; Wed, 14 Aug 2019 02:14:04 +0000
+	id 1hxipu-0001bS-11; Wed, 14 Aug 2019 02:16:26 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxinN-0007iX-HY
- for linux-rockchip@lists.infradead.org; Wed, 14 Aug 2019 02:13:51 +0000
+ id 1hxipq-0001aY-S9
+ for linux-rockchip@lists.infradead.org; Wed, 14 Aug 2019 02:16:24 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7B80A2084D;
- Wed, 14 Aug 2019 02:13:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E295D20874;
+ Wed, 14 Aug 2019 02:16:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565748829;
- bh=BFAM/OpfzNz2arFnoqYAr08U99/SP+2B+z5l1hDy4Ls=;
+ s=default; t=1565748982;
+ bh=ch4sW9kFKIQNeLNsVYgUacK+Hl+BFLM+LXX19iKx7e8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=bUR0XuYji11OLpCEVniNYOjrlWy7oeN/WLJ2HMyeEYILbBTHmwupj8G3Ba1Xpgut1
- extjacMGcVzuCscFrR6bxnxEA7Ew3wQBuEuo3PF5WbILR+Oa4RQvS9qsScyo9TXEIN
- 58UedVjLhc5RJi4ngztR7BuRnHtfgFeXC0aqx58s=
+ b=hUjggKwhoZZkNBUtyf6G+TrYDfRkDxAOmZlKPUBR1gm2s+iX8uB2plXv5iAnyDY8Z
+ Tw+Hgr6QHZpFEafHMLUJgzRqMOhXQ1L3NK04U3ix3nAHd9lZ/r4DX68lKcmp4SYBrC
+ IgQ3L0eZelhdKXXBhi8W1wLi0WavU8qSyIYcZ3SA=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.2 089/123] drm/rockchip: Suspend DP late
-Date: Tue, 13 Aug 2019 22:10:13 -0400
-Message-Id: <20190814021047.14828-89-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 19/68] ASoC: rockchip: Fix mono capture
+Date: Tue, 13 Aug 2019 22:14:57 -0400
+Message-Id: <20190814021548.16001-19-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190814021047.14828-1-sashal@kernel.org>
-References: <20190814021047.14828-1-sashal@kernel.org>
+In-Reply-To: <20190814021548.16001-1-sashal@kernel.org>
+References: <20190814021548.16001-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_191349_894561_B12C0E40 
-X-CRM114-Status: GOOD (  12.10  )
+X-CRM114-CacheID: sfid-20190813_191622_934153_94B66D54 
+X-CRM114-Status: GOOD (  10.48  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,51 +81,72 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Sasha Levin <sashal@kernel.org>, linux-rockchip@lists.infradead.org,
- Sean Paul <seanpaul@chromium.org>, Douglas Anderson <dianders@chromium.org>,
- dri-devel@lists.freedesktop.org
+ Mark Brown <broonie@kernel.org>, Cheng-Yi Chiang <cychiang@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Douglas Anderson <dianders@chromium.org>
+From: Cheng-Yi Chiang <cychiang@chromium.org>
 
-[ Upstream commit f7ccbed656f78212593ca965d9a8f34bf24e0aab ]
+[ Upstream commit 789e162a6255325325bd321ab0cd51dc7e285054 ]
 
-In commit fe64ba5c6323 ("drm/rockchip: Resume DP early") we moved
-resume to be early but left suspend at its normal time.  This seems
-like it could be OK, but casues problems if a suspend gets interrupted
-partway through.  The OS only balances matching suspend/resume levels.
-...so if suspend was called then resume will be called.  If suspend
-late was called then resume early will be called.  ...but if suspend
-was called resume early might not get called.  This leads to an
-unbalance in the clock enables / disables.
+This reverts commit db51707b9c9aeedd310ebce60f15d5bb006567e0.
+Revert "ASoC: rockchip: i2s: Support mono capture"
 
-Lets take the simple fix and just move suspend to be late to match.
-This makes the PM core take proper care in keeping things balanced.
+Previous discussion in
 
-Fixes: fe64ba5c6323 ("drm/rockchip: Resume DP early")
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
-Signed-off-by: Sean Paul <seanpaul@chromium.org>
-Link: https://patchwork.freedesktop.org/patch/msgid/20190802184616.44822-1-dianders@chromium.org
+https://patchwork.kernel.org/patch/10147153/
+
+explains the issue of the patch.
+While device is configured as 1-ch, hardware is still
+generating a 2-ch stream.
+When user space reads the data and assumes it is a 1-ch stream,
+the rate will be slower by 2x.
+
+Revert the change so 1-ch is not supported.
+User space can selectively take one channel data out of two channel
+if 1-ch is preferred.
+Currently, both channels record identical data.
+
+Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+Link: https://lore.kernel.org/r/20190726044202.26866-1-cychiang@chromium.org
+Signed-off-by: Mark Brown <broonie@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/gpu/drm/rockchip/analogix_dp-rockchip.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ sound/soc/rockchip/rockchip_i2s.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
-index 95e5c517a15f7..9aae3d8e99ef4 100644
---- a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
-+++ b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
-@@ -432,7 +432,7 @@ static int rockchip_dp_resume(struct device *dev)
+diff --git a/sound/soc/rockchip/rockchip_i2s.c b/sound/soc/rockchip/rockchip_i2s.c
+index 60d43d53a8f5e..11399f81c92f9 100644
+--- a/sound/soc/rockchip/rockchip_i2s.c
++++ b/sound/soc/rockchip/rockchip_i2s.c
+@@ -329,7 +329,6 @@ static int rockchip_i2s_hw_params(struct snd_pcm_substream *substream,
+ 		val |= I2S_CHN_4;
+ 		break;
+ 	case 2:
+-	case 1:
+ 		val |= I2S_CHN_2;
+ 		break;
+ 	default:
+@@ -462,7 +461,7 @@ static struct snd_soc_dai_driver rockchip_i2s_dai = {
+ 	},
+ 	.capture = {
+ 		.stream_name = "Capture",
+-		.channels_min = 1,
++		.channels_min = 2,
+ 		.channels_max = 2,
+ 		.rates = SNDRV_PCM_RATE_8000_192000,
+ 		.formats = (SNDRV_PCM_FMTBIT_S8 |
+@@ -662,7 +661,7 @@ static int rockchip_i2s_probe(struct platform_device *pdev)
+ 	}
  
- static const struct dev_pm_ops rockchip_dp_pm_ops = {
- #ifdef CONFIG_PM_SLEEP
--	.suspend = rockchip_dp_suspend,
-+	.suspend_late = rockchip_dp_suspend,
- 	.resume_early = rockchip_dp_resume,
- #endif
- };
+ 	if (!of_property_read_u32(node, "rockchip,capture-channels", &val)) {
+-		if (val >= 1 && val <= 8)
++		if (val >= 2 && val <= 8)
+ 			soc_dai->capture.channels_max = val;
+ 	}
+ 
 -- 
 2.20.1
 
