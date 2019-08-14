@@ -2,45 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4FD58D5A0
-	for <lists+linux-rockchip@lfdr.de>; Wed, 14 Aug 2019 16:09:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 926BF8D5B3
+	for <lists+linux-rockchip@lfdr.de>; Wed, 14 Aug 2019 16:12:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sZ8X1ecBBrU4D2vyQoEfYc0ANjpO6c1ldh4rwbcBlfw=; b=YoIe6jL4MQRlgd
-	VdM1FA3j71VRuyby67f+NhgvVhHvow+YmE7gTmfnt/DA3LAdmAn+7d32I5/p1lTK0csLGXo8zKKZw
-	d0sisP9eX4tCh2nMP7SIffeiyd4a3W/GuSKhAB2lWcgfc7dXOVGX8giq8GD1pq2BASOJHQ99/Nrdl
-	axxInTyL0aCwW9cS4kADA5O0UMvtabv+8Nw5Tyyy9YATdO4HatvZuOQMQwG705QaMYYqX4yx1yXhu
-	yeNK6kj0hhG6Ae83hoZnqVe+1DFL5gOspwaLKGDX0T8ooO+WT8IapwkqSuhNmaJj4fkN2z2bHpreR
-	M2sowCUQ0KKEoJ1TKV7Q==;
+	List-Owner; bh=IE9n5p9a38Vy0xwzYmk5+VuTkO+sTWebvsUgW8Zthbg=; b=Y0YoWngI9ywsml
+	pFarRUcIXR0qlBEA4P//4XoFpA6bvaU4pRkth/Nv/qqhpuwt+k6CK27aPkNoeh7KHhXfn0acOz9bk
+	zRzPq6QGgFDdNvTKr73NTDjKUbyMzo38M+xv7px0radsTLWqresOiRxFgJu09OyHVl6dSPSlZmcUc
+	SDoSCAgcoT0CWqzQDjIjdD47/TaRhyJW5CoP+9fHfXBbikGhsb3OTRm/y5VEE07fVrjx5bKOkoqCL
+	T/o5VZypcl7Z8pjwHALXbygaq+49J2LuL15HtlrPScWlLIPSITFjAuJwBv6qGGiHfgU9bXTejRx+W
+	nkhz9UKDTsKxbQdSw2Lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxtxN-0002dp-R4; Wed, 14 Aug 2019 14:08:53 +0000
+	id 1hxu0v-0004Xz-Jy; Wed, 14 Aug 2019 14:12:33 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxtxJ-0002d0-I1
- for linux-rockchip@lists.infradead.org; Wed, 14 Aug 2019 14:08:51 +0000
+ id 1hxu0p-0004XE-Lu
+ for linux-rockchip@lists.infradead.org; Wed, 14 Aug 2019 14:12:31 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id B007B28A214
-Message-ID: <48aa33392e81cc5b3a0a7eed403ecb91c89ac320.camel@collabora.com>
-Subject: Re: [PATCH v5 03/11] media: uapi: h264: Add the concept of decoding
- mode
+ (Authenticated sender: ezequiel) with ESMTPSA id 78E88286289
+Message-ID: <c490068a4d1ea550f330e8127826014bec0e12f2.camel@collabora.com>
+Subject: Re: [PATCH v5 04/11] media: uapi: h264: Add the concept of start code
 From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-Date: Wed, 14 Aug 2019 11:08:31 -0300
-In-Reply-To: <20190814122323.GC4687@aptenodytes>
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>, Hans Verkuil
+ <hverkuil@xs4all.nl>
+Date: Wed, 14 Aug 2019 11:12:16 -0300
+In-Reply-To: <20190814114928.GB4687@aptenodytes>
 References: <20190812193522.10911-1-ezequiel@collabora.com>
- <20190812193522.10911-4-ezequiel@collabora.com>
- <20190814122323.GC4687@aptenodytes>
+ <20190812193522.10911-5-ezequiel@collabora.com>
+ <f88d144f-e0fe-6974-efe5-77b5ed5c6e09@xs4all.nl>
+ <20190814114928.GB4687@aptenodytes>
 Organization: Collabora
 User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_070849_866687_12C4E2FB 
-X-CRM114-Status: GOOD (  38.06  )
+X-CRM114-CacheID: sfid-20190814_071227_977099_4A34A727 
+X-CRM114-Status: GOOD (  21.05  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -74,186 +75,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, 2019-08-14 at 14:23 +0200, Paul Kocialkowski wrote:
+On Wed, 2019-08-14 at 13:49 +0200, Paul Kocialkowski wrote:
 > Hi,
 > 
-> On Mon 12 Aug 19, 16:35, Ezequiel Garcia wrote:
-> > From: Boris Brezillon <boris.brezillon@collabora.com>
+> On Wed 14 Aug 19, 10:11, Hans Verkuil wrote:
+> > On 8/12/19 9:35 PM, Ezequiel Garcia wrote:
+> > > Stateless decoders have different expectations about the
+> > > start code that is prepended on H264 slices. Add a
+> > > menu control to express the supported start code types
+> > > (including no start code).
+> > > 
+> > > Drivers are allowed to support only one start code type,
+> > > but they can support both too.
+> > > 
+> > > Note that this is independent of the H264 decoding mode,
+> > > which specifies the granularity of the decoding operations.
+> > > Either in frame-based or slice-based mode, this new control
+> > > will allow to define the start code expected on H264 slices.
+> > > 
+> > > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+> > > Tested-by: Philipp Zabel <p.zabel@pengutronix.de>
+> > > ---
+> > > Changes in v5:
+> > > * Improve specification as suggested by Hans.
+> > > Changes in v4:
+> > > * New patch.
+> > > ---
+> > >  .../media/uapi/v4l/ext-ctrls-codec.rst        | 33 +++++++++++++++++++
+> > >  .../media/uapi/v4l/pixfmt-compressed.rst      |  3 +-
+> > >  drivers/media/v4l2-core/v4l2-ctrls.c          |  9 +++++
+> > >  include/media/h264-ctrls.h                    |  6 ++++
+> > >  4 files changed, 50 insertions(+), 1 deletion(-)
+> > > 
 > > 
-> > Some stateless decoders don't support per-slice decoding granularity
-> > (or at least not in a way that would make them efficient or easy to use).
+> > <snip>
 > > 
-> > Expose a menu to control the supported decoding modes. Drivers are
-> > allowed to support only one decoding but they can support both too.
+> > > diff --git a/include/media/h264-ctrls.h b/include/media/h264-ctrls.h
+> > > index e6c510877f67..31555c99f64a 100644
+> > > --- a/include/media/h264-ctrls.h
+> > > +++ b/include/media/h264-ctrls.h
+> > > @@ -27,6 +27,7 @@
+> > >  #define V4L2_CID_MPEG_VIDEO_H264_SLICE_PARAMS	(V4L2_CID_MPEG_BASE+1003)
+> > >  #define V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS	(V4L2_CID_MPEG_BASE+1004)
+> > >  #define V4L2_CID_MPEG_VIDEO_H264_DECODING_MODE	(V4L2_CID_MPEG_BASE+1005)
+> > > +#define V4L2_CID_MPEG_VIDEO_H264_STARTCODE	(V4L2_CID_MPEG_BASE+1006)
 > > 
-> > Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
-> > Reviewed-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > Tested-by: Philipp Zabel <p.zabel@pengutronix.de>
-> > ---
-> > Changes in v5:
-> > * Improve specification as suggested by Hans.
-> > Changes in v4:
-> > * Typos/rewording fixes
-> > Changes in v3:
-> > * s/per-{slice,frame} decoding/{slice,frame}-based decoding/
-> > * Add Paul's R-b
-> > Changes in v2:
-> > * Allow decoding multiple slices in per-slice decoding mode
-> > * Minor doc improvement/fixes
-> > ---
-> >  .../media/uapi/v4l/ext-ctrls-codec.rst        | 47 ++++++++++++++++++-
-> >  .../media/uapi/v4l/pixfmt-compressed.rst      |  3 +-
-> >  drivers/media/v4l2-core/v4l2-ctrls.c          |  9 ++++
-> >  include/media/h264-ctrls.h                    | 11 +++++
-> >  4 files changed, 68 insertions(+), 2 deletions(-)
+> > I almost forgot: can you change this to _START_CODE? Since it is two words?
+> 
+> Agreed, I like it better this way too.
+> 
+
+The reason to have STARTCODE instead of START_CODE was to have some
+consistency with other controls (namely, V4L2_CID_MPEG_VIDEO_HEVC_WITHOUT_STARTCODE).
+
+Consistency is really important in a API,
+but at the same time, I agree START_CODE looks better.
+
+> > Thanks!
 > > 
-> > diff --git a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-> > index c5f39dd50043..568390273fde 100644
-> > --- a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-> > +++ b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-> > @@ -1747,6 +1747,11 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
-> >      * - __u32
-> >        - ``size``
-> >        -
-> > +    * - __u32
-> > +      - ``start_byte_offset``
-> > +      - Where the slice payload starts in the output buffer. Useful when the
-> > +        OUTPUT buffer contains more than one slice (some codecs need to know
-> > +        where each slice starts in this buffer).
+> > 	Hans
+> > 
+> > >  
+> > >  /* enum v4l2_ctrl_type type values */
+> > >  #define V4L2_CTRL_TYPE_H264_SPS			0x0110
+> > > @@ -41,6 +42,11 @@ enum v4l2_mpeg_video_h264_decoding_mode {
+> > >  	V4L2_MPEG_VIDEO_H264_FRAME_BASED_DECODING,
+> > >  };
+> > >  
+> > > +enum v4l2_mpeg_video_h264_start_code {
+> > > +	V4L2_MPEG_VIDEO_H264_NO_STARTCODE,
+> > > +	V4L2_MPEG_VIDEO_H264_ANNEX_B_STARTCODE,
 > 
-> I think there is a possibility for misunderstanding here: does the
-> "slice payload" include the start code when it (annex-b) is selected?
+> Could we apply the same START_CODE renaming here too?
 > 
-> I'd suspect that the hardware needs to know where the start code begings rather
-> than where the NAL unit starts when there is a start code. So I'd suggest
-> specifying it as the offset to the beginning of the start code (if present) or
-> to the slice NAL unit start otherwise.
+> I was also thinking that it would be slightly more readable put like this,
+> with START_CODE as a prefix since it's common to both options and the name of
+> the enum:
 > 
-
-Yes, start_byte_offset is the offset in bytes from the beginning
-of the OUTPUT buffer to the start of this slice (which may start
-with a start code as per the start code control).
-
-I guess the field could be named simply "offset", but at the same
-time, this is bikeshedding.
-
-> The clarification should probably also concern header_bit_size, to make it clear
-> where it is counted from. I think it makes sense to count it starting from
-> the start_byte_offset position.
+> - V4L2_MPEG_VIDEO_H264_START_CODE_NONE
+> - V4L2_MPEG_VIDEO_H264_START_CODE_ANNEX_B
 > 
 
-The header_bit_size is currently counted from the start of slice.
-It seems this needs to be better documented, but not necessarily
-as part of this patch.
+Yes, that looks much better.
 
-> >      * - __u32
-> >        - ``header_bit_size``
-> >        -
-> > @@ -1930,7 +1935,10 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
-> >        -
-> >      * - __u16
-> >        - ``num_slices``
-> > -      - Number of slices needed to decode the current frame
-> > +      - Number of slices needed to decode the current frame/field. When
-> > +        operating in slice-based decoding mode (see
-> > +        :c:type:`v4l2_mpeg_video_h264_decoding_mode`), this field
-> > +        should always be set to one.
-> 
-> I am fine with the current proposal for now, but I believe that we should keep
-> discussing whether we want per-slice mode to strictly enforce having a
-> single-slice, outside of this series.
-> 
-
-Sounds good.
-
-> One reason for that would be to gather multiple slices (up to what amounts to
-> a frame) for efficient use of OUTPUT buffers and to avoid allocating a huge
-> number of small ones (which is certainly quite inefficient due to CMA
-> alignment).
-> 
-> Apparently, passing multiple slice_params controls is an issue so per-frame mode
-> currently has to rely on the hardware being able to parse the slice header on
-> its own. The issue exists in the V4L2 API, where we need to know in advance
-> the maximum number of slices we want to use to make the control an array and
-> copy all the controls with each request, even if only a single-one is used.
-> 
-> Maybe one way to solve that would be to use multiple requests with the same
-> OUTPUT buffer, one per slice, so that we only have to pass a single slice_params
-> control per-request. And the first slice of the frame would get the other
-> controls too, while the others wouldn't (assuming we can trust that controls
-> won't change in-between and I'm not sure how true that is). Worst case, all
-> the controls have to be attached with each request, which is maybe still better
-> than passing a big number of unused slice_params controls each time.
-> 
-> Again, I believe the current proposal is good to go for now as it allows the
-> hantro driver to get-in staging, which is the priority.
-> 
-> But the issue I'm discussing should certainly be fixed before unstaging the API.
-> 
-
-Totally, I think the next step is to add multi-slice support to the cedrus
-driver. It will help consolidate the API.
-
-> >      * - __u16
-> >        - ``nal_ref_idc``
-> >        - NAL reference ID value coming from the NAL Unit header
-> > @@ -2021,6 +2029,43 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
-> >        - 0x00000004
-> >        - The DPB entry is a long term reference frame
-> >  
-> > +``V4L2_CID_MPEG_VIDEO_H264_DECODING_MODE (enum)``
-> > +    Specifies the decoding mode to use. Currently exposes slice-based and
-> > +    frame-based decoding but new modes might be added later on.
-> > +    This control is used to complement V4L2_PIX_FMT_H264_SLICE
-> > +    pixel format. Applications that support V4L2_PIX_FMT_H264_SLICE
-> > +    are required to set this control in order to specify the decoding mode
-> > +    that is expected for the buffer.
-> > +    Drivers may expose a single or multiple decoding modes, depending
-> > +    on what they can support.
-> > +
-> > +    .. note::
-> > +
-> > +       This menu control is not yet part of the public kernel API and
-> > +       it is expected to change.
-> > +
-> > +.. c:type:: v4l2_mpeg_video_h264_decoding_mode
-> > +
-> > +.. cssclass:: longtable
-> > +
-> > +.. flat-table::
-> > +    :header-rows:  0
-> > +    :stub-columns: 0
-> > +    :widths:       1 1 2
-> > +
-> > +    * - ``V4L2_MPEG_VIDEO_H264_SLICE_BASED_DECODING``
-> > +      - 0
-> > +      - The decoding is done at the slice granularity.
-> > +        v4l2_ctrl_h264_decode_params->num_slices should be set to 1.
-> > +        The OUTPUT buffer must contain a single slice.
-> > +    * - ``V4L2_MPEG_VIDEO_H264_FRAME_BASED_DECODING``
-> > +      - 1
-> > +      - The decoding is done at the frame granularity.
-> > +        v4l2_ctrl_h264_decode_params->num_slices should be set to the number of
-> > +        slices forming a frame.
-> > +        The OUTPUT buffer must contain all slices needed to decode the
-> > +        frame. The OUTPUT buffer must also contain both fields.
-> > +
-> 
-> Nitpick/suggestion here: could we use the name of the enum as a prefix for the
-> modes, like:
-> - V4L2_MPEG_VIDEO_H264_DECODING_MODE_PER_SLICE
-> - V4L2_MPEG_VIDEO_H264_DECODING_MODE_PER_FRAME
-> 
-> or
-> - V4L2_MPEG_VIDEO_H264_DECODING_MODE_SLICE_BASED
-> - V4L2_MPEG_VIDEO_H264_DECODING_MODE_FRAME_BASED
-> 
-> I personally find it more readable this way, since the same prefix is kept.
-> 
-
-Yes, that looks better.
-
-Thanks for reviewing,
+Thanks,
 Ezequiel
 
 
