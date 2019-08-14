@@ -2,90 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48A508D469
-	for <lists+linux-rockchip@lfdr.de>; Wed, 14 Aug 2019 15:15:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4FD58D5A0
+	for <lists+linux-rockchip@lfdr.de>; Wed, 14 Aug 2019 16:09:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:References:In-Reply-To:Message-ID:MIME-Version:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=S2//84wDQJRYTRXRMUbEcrjbkS4MoXfg/rK8TdFDuXI=; b=P37HKsmiwG9/FBHjHVKk4YJXd
-	5SCFWcjI1INmaDboeTHqxttTHcV8Fo6MYtAy6daXDETTahvZuV97jc9d9wnR4dS0WBZX2Qh1QXsxG
-	Jtffj+lzqdY6qQ7NjgZQlnqSXmqgvOgRaNmj4LG+tDuR3pXamwUNweP77j7SPNdVQ9WNKNGytpCeX
-	8Vl9pwUaJDRLdfbk9HMd6FCSqzxT6RfcHx5Ez2JOhn2MBomisnECNwk57FyhguxydG03Y7JgmAOQF
-	B/GOnYiD40vFVdVlySn9Td+l8BVqcb2rdGI3h++nrQ3ioHmiFC71niw/fUXVobDVxoremnhpPKdX3
-	s6IQh9IlA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sZ8X1ecBBrU4D2vyQoEfYc0ANjpO6c1ldh4rwbcBlfw=; b=YoIe6jL4MQRlgd
+	VdM1FA3j71VRuyby67f+NhgvVhHvow+YmE7gTmfnt/DA3LAdmAn+7d32I5/p1lTK0csLGXo8zKKZw
+	d0sisP9eX4tCh2nMP7SIffeiyd4a3W/GuSKhAB2lWcgfc7dXOVGX8giq8GD1pq2BASOJHQ99/Nrdl
+	axxInTyL0aCwW9cS4kADA5O0UMvtabv+8Nw5Tyyy9YATdO4HatvZuOQMQwG705QaMYYqX4yx1yXhu
+	yeNK6kj0hhG6Ae83hoZnqVe+1DFL5gOspwaLKGDX0T8ooO+WT8IapwkqSuhNmaJj4fkN2z2bHpreR
+	M2sowCUQ0KKEoJ1TKV7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxt7a-0000FZ-5C; Wed, 14 Aug 2019 13:15:22 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hxtxN-0002dp-R4; Wed, 14 Aug 2019 14:08:53 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxt7J-0007w3-Lo; Wed, 14 Aug 2019 13:15:07 +0000
-Received: by mail-wr1-x441.google.com with SMTP id 31so111097094wrm.1;
- Wed, 14 Aug 2019 06:15:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:mime-version:message-id:in-reply-to
- :references:user-agent:content-transfer-encoding;
- bh=l+DBXb28UlWmpaDB+1JSMKN1QA0f4oxNynDruzjGeUQ=;
- b=uPlsGHb95cC8NgoZoj0H0Ac8di2gv5OtlJm6ZAeD2k/toyaIqSch32S62gmsQqyz8v
- 1xE3G75L/vUVfvltuFbCYmSzwItVFwU/qyu8z46VC5XgeYFzaXphBvF6CimOHmnQAwdf
- Nzk+TnXfgc0ImLDv7UjLIQnrYAxHJIj4EKKKrjUSYGAvSwpsOasj/MhR8t1Qe4b/zlq/
- fzwTzeir3WtY/zIldQ+t2Myu1D0vBMc9n6sVeogMaeoI3VzOUPghP6IUbFCH8418qwaU
- Nr6HZvVduLlXln5Z8/7DTubX6ukCVMhNKteiGq9/inC2/rkoUvoOqfEArE1iKJfJKzoS
- aQ0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
- :in-reply-to:references:user-agent:content-transfer-encoding;
- bh=l+DBXb28UlWmpaDB+1JSMKN1QA0f4oxNynDruzjGeUQ=;
- b=N0bsqsPq9gYjMjkfkkFj06t6+tMRLDe9ITHGMztwhSl500MOfyMTAoTYg2nMnL4Ljn
- 58XRwrQhZR9yIh1oGmrvNZc+QYJVbcb/dsonOdn4xe3lzMW6qNxt9s4QEDm7sJ2oQbXT
- PHNsBnqRKmH6ud27psBD+vl2o3dyBtlr2jFfZmoCScDfYMPmqp01MV3L+0kV/uMZH7iR
- N4Ak9xH/rhsLZexLxqZ2S3t0rfHN5TjADCsBOyLpmibJW1TIOtxhaPWgE6OaX35jj2n+
- BqUnj9WFN32lM+iTy9NAUzcsIdAPi3EkBqAVFmFJYdxnkNg5eDLDgG3+n5z2uspQk3h+
- JMpQ==
-X-Gm-Message-State: APjAAAWA7jQP19Sggidl6tidlHd384jSfxhwD1C775TsfPaiwvUVmdja
- JzZ1bUnS/ITgH8lOV+SkfjEdQtUiWdA=
-X-Google-Smtp-Source: APXvYqwsZx99AiaojhhlGOTWmFsuPCcQ2lZGzaWrlhqpWyE0N8zODSVZNQVlRAff82QSaQamKQaLbw==
-X-Received: by 2002:adf:dfc8:: with SMTP id q8mr23712313wrn.121.1565788504202; 
- Wed, 14 Aug 2019 06:15:04 -0700 (PDT)
-Received: from localhost ([92.59.185.54])
- by smtp.gmail.com with ESMTPSA id t19sm4622137wmi.29.2019.08.14.06.15.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 14 Aug 2019 06:15:03 -0700 (PDT)
-From: Vicente Bergas <vicencb@gmail.com>
-To: Felipe Balbi <balbi@kernel.org>
-Subject: Re: kexec on rk3399
-Date: Wed, 14 Aug 2019 15:15:02 +0200
+ id 1hxtxJ-0002d0-I1
+ for linux-rockchip@lists.infradead.org; Wed, 14 Aug 2019 14:08:51 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id B007B28A214
+Message-ID: <48aa33392e81cc5b3a0a7eed403ecb91c89ac320.camel@collabora.com>
+Subject: Re: [PATCH v5 03/11] media: uapi: h264: Add the concept of decoding
+ mode
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Date: Wed, 14 Aug 2019 11:08:31 -0300
+In-Reply-To: <20190814122323.GC4687@aptenodytes>
+References: <20190812193522.10911-1-ezequiel@collabora.com>
+ <20190812193522.10911-4-ezequiel@collabora.com>
+ <20190814122323.GC4687@aptenodytes>
+Organization: Collabora
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-Message-ID: <4fc3e5b5-31fe-41f6-8031-b37454f21437@gmail.com>
-In-Reply-To: <87v9uzaocj.fsf@gmail.com>
-References: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
- <c6993a1e-6fc2-44ab-b59e-152142e2ff4d@gmail.com> <87v9uzaocj.fsf@gmail.com>
-User-Agent: Trojita
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_061505_748537_464F410A 
-X-CRM114-Status: GOOD (  13.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190814_070849_866687_12C4E2FB 
+X-CRM114-Status: GOOD (  38.06  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vicencb[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,66 +62,202 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Matthias Brugger <mbrugger@suse.com>, Heiko Stuebner <heiko@sntech.de>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- linux-usb@vger.kernel.org, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: fbuergisser@chromium.org, kernel@collabora.com,
+ Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>, linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Nicolas Dufresne <nicolas.dufresne@collabora.com>, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gV2VkbmVzZGF5LCBBdWd1c3QgMTQsIDIwMTkgMzowNjowNCBQTSBDRVNULCBGZWxpcGUgQmFs
-Ymkgd3JvdGU6Cj4gSGksCj4KPiBWaWNlbnRlIEJlcmdhcyA8dmljZW5jYkBnbWFpbC5jb20+IHdy
-aXRlczoKPj4gT24gTW9uZGF5LCBKdWx5IDIyLCAyMDE5IDQ6MzE6MjcgUE0gQ0VTVCwgVmljZW50
-ZSBCZXJnYXMgd3JvdGU6Cj4+PiBIaSwgaSBoYXZlIGJlZW4gcnVubmluZyBsaW51eCBvbiByazMz
-OTkgYm9vdGVkIHdpdGgga2V4ZWMgZmluZSB1bnRpbCA1LjIKPj4+IEZyb20gNS4yIG9ud2FyZHMs
-IHRoZXJlIGFyZSBtZW1vcnkgY29ycnVwdGlvbiBpc3N1ZXMgYXMgcmVwb3J0ZWQgaGVyZToKPj4+
-IGh0dHA6Ly9sa21sLml1LmVkdS9oeXBlcm1haWwvbGludXgva2VybmVsLzE5MDYuMi8wNzIxMS5o
-dG1sCj4+PiBrZXhlYyBoYXMgYmVlbiBpZGVudGlmaWVkIGFzIHRoZSBwcmluY2lwYWwgcmVhc29u
-IGZvciB0aGUgaXNzdWVzLgo+Pj4gCj4+PiBJdCB0dXJucyBvdXQgdGhhdCBrZXhlYyBoYXMgbmV2
-ZXIgd29ya2VkIHJlbGlhYmx5IG9uIHRoaXMgcGxhdGZvcm0sIC4uLgo+PiAKPj4gVGhhbmsgeW91
-IGFsbCBmb3IgeW91ciBzdWdnZXN0aW9ucyBvbiB3aGVyZSB0aGUgaXNzdWUgY291bGQgYmUuCj4+
-IAo+PiBJdCBzZWVtcyB0aGF0IGl0IHdhcyB0aGUgVVNCIGRyaXZlci4KPj4gTm93IHVzaW5nIHY1
-LjIuOCBib290ZWQgd2l0aCBrZXhlYyBmcm9tIHY1LjIuOCB3aXRoIGEgd29ya2Fyb3VuZCBhbmQK
-Pj4gc28gZmFyIHNvIGdvb2QuIEl0IGlzIGJlaW5nIHRlc3RlZCBvbiB0aGUgU2FwcGhpcmUgYm9h
-cmQuCj4+IAo+PiBUaGUgd29ya2Fyb3VuZCBpczoKPj4gLS0tIGEvZHJpdmVycy91c2IvZHdjMy9k
-d2MzLW9mLXNpbXBsZS5jCj4+ICsrKyBiL2RyaXZlcnMvdXNiL2R3YzMvZHdjMy1vZi1zaW1wbGUu
-Ywo+PiBAQCAtMTMzLDYgKzEzMywxMyBAQAo+PiAgCXJldHVybiAwOwo+PiAgfQo+PiAgCj4+ICtz
-dGF0aWMgdm9pZCBkd2MzX29mX3NpbXBsZV9zaHV0ZG93bihzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNl
-ICpwZGV2KQo+PiArewo+PiArCXN0cnVjdCBkd2MzX29mX3NpbXBsZSAqc2ltcGxlID0gcGxhdGZv
-cm1fZ2V0X2RydmRhdGEocGRldik7Cj4+ICsKPj4gKwlyZXNldF9jb250cm9sX2Fzc2VydChzaW1w
-bGUtPnJlc2V0cyk7Cj4+ICt9Cj4+ICsKPj4gIHN0YXRpYyBpbnQgX19tYXliZV91bnVzZWQgZHdj
-M19vZl9zaW1wbGVfcnVudGltZV9zdXNwZW5kKHN0cnVjdCBkZXZpY2UgCj4+ICpkZXYpCj4+ICB7
-Cj4+ICAJc3RydWN0IGR3YzNfb2Zfc2ltcGxlCSpzaW1wbGUgPSBkZXZfZ2V0X2RydmRhdGEoZGV2
-KTsKPj4gQEAgLTE5MCw2ICsxOTcsNyBAQAo+PiAgc3RhdGljIHN0cnVjdCBwbGF0Zm9ybV9kcml2
-ZXIgZHdjM19vZl9zaW1wbGVfZHJpdmVyID0gewo+PiAgCS5wcm9iZQkJPSBkd2MzX29mX3NpbXBs
-ZV9wcm9iZSwKPj4gIAkucmVtb3ZlCQk9IGR3YzNfb2Zfc2ltcGxlX3JlbW92ZSwKPj4gKwkuc2h1
-dGRvd24JPSBkd2MzX29mX3NpbXBsZV9zaHV0ZG93biwKPj4gIAkuZHJpdmVyCQk9IHsKPj4gIAkJ
-Lm5hbWUJPSAiZHdjMy1vZi1zaW1wbGUiLAo+PiAgCQkub2ZfbWF0Y2hfdGFibGUgPSBvZl9kd2Mz
-X3NpbXBsZV9tYXRjaCwKPj4gCj4+IElmIHRoaXMgcGF0Y2ggaXMgT0sgYWZ0ZXIgcmV2aWV3IGkg
-Y2FuIHJlc3VibWl0IGl0IGFzIGEgcHVsbCByZXF1ZXN0Lgo+Cj4gbm90IGEgcHVsbCByZXF1ZXN0
-LCBqdXN0IHNlbmQgYSBwYXRjaCB1c2luZyBnaXQgc2VuZC1lbWFpbAo+Cj4+IFNob3VsZCBhIHNp
-bWlsYXIgY2hhbmdlIGJlIGFwcGxpZWQgdG8gZHJpdmVycy91c2IvZHdjMy9jb3JlLmMgPwo+Cj4g
-SXMgaXQgbmVjZXNzYXJ5PyBXZSBoYXZlbid0IGhhZCBhbnkgYnVnIHJlcG9ydHMgcmVnYXJkaW5n
-IHRoYXQuIEFsc28sIGlmCj4gd2UgaGF2ZSByZXNldCBjb250cm9sIHN1cHBvcnQgaW4gdGhlIGNv
-cmUgZHJpdmVyLCB3aHkgZG8gd2UgbmVlZCBpdCBpbgo+IG9mX3NpbXBsZT8gU2VlbXMgbGlrZSBv
-Zl9zaW1wbGUgY291bGQganVzdCByZWx5IG9uIHdoYXQgY29yZSBkb2VzLgoKdGhlIHdvcmthcm91
-bmQgaGFzIGJlZW4gdGVzdGVkIHBhdGNoaW5nIG9ubHkgY29yZS5jIHdpdGgKLS0tIGEvZHJpdmVy
-cy91c2IvZHdjMy9jb3JlLmMKKysrIGIvZHJpdmVycy91c2IvZHdjMy9jb3JlLmMKQEAgLTE1NjEs
-NiArMTU2MSwxMyBAQAogCXJldHVybiAwOwogfQogCitzdGF0aWMgdm9pZCBkd2MzX3NodXRkb3du
-KHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCit7CisJc3RydWN0IGR3YzMgKmR3YyA9IHBs
-YXRmb3JtX2dldF9kcnZkYXRhKHBkZXYpOworCisJcmVzZXRfY29udHJvbF9hc3NlcnQoZHdjLT5y
-ZXNldCk7Cit9CisKICNpZmRlZiBDT05GSUdfUE0KIHN0YXRpYyBpbnQgZHdjM19jb3JlX2luaXRf
-Zm9yX3Jlc3VtZShzdHJ1Y3QgZHdjMyAqZHdjKQogewpAQCAtMTg2Niw2ICsxODczLDcgQEAKIHN0
-YXRpYyBzdHJ1Y3QgcGxhdGZvcm1fZHJpdmVyIGR3YzNfZHJpdmVyID0gewogCS5wcm9iZQkJPSBk
-d2MzX3Byb2JlLAogCS5yZW1vdmUJCT0gZHdjM19yZW1vdmUsCisJLnNodXRkb3duCT0gZHdjM19z
-aHV0ZG93biwKIAkuZHJpdmVyCQk9IHsKIAkJLm5hbWUJPSAiZHdjMyIsCiAJCS5vZl9tYXRjaF90
-YWJsZQk9IG9mX21hdGNoX3B0cihvZl9kd2MzX21hdGNoKSwKCmFuZCBsZWF2aW5nIGR3YzMtb2Yt
-c2ltcGxlLmMgYXMgaXMsIHRoZSBpc3N1ZSBwZXJzaXN0ZWQuCgpSZWdhcmRzLAogIFZpY2Vuw6cu
-CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgt
-cm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hp
-cAo=
+On Wed, 2019-08-14 at 14:23 +0200, Paul Kocialkowski wrote:
+> Hi,
+> 
+> On Mon 12 Aug 19, 16:35, Ezequiel Garcia wrote:
+> > From: Boris Brezillon <boris.brezillon@collabora.com>
+> > 
+> > Some stateless decoders don't support per-slice decoding granularity
+> > (or at least not in a way that would make them efficient or easy to use).
+> > 
+> > Expose a menu to control the supported decoding modes. Drivers are
+> > allowed to support only one decoding but they can support both too.
+> > 
+> > Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+> > Reviewed-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> > Tested-by: Philipp Zabel <p.zabel@pengutronix.de>
+> > ---
+> > Changes in v5:
+> > * Improve specification as suggested by Hans.
+> > Changes in v4:
+> > * Typos/rewording fixes
+> > Changes in v3:
+> > * s/per-{slice,frame} decoding/{slice,frame}-based decoding/
+> > * Add Paul's R-b
+> > Changes in v2:
+> > * Allow decoding multiple slices in per-slice decoding mode
+> > * Minor doc improvement/fixes
+> > ---
+> >  .../media/uapi/v4l/ext-ctrls-codec.rst        | 47 ++++++++++++++++++-
+> >  .../media/uapi/v4l/pixfmt-compressed.rst      |  3 +-
+> >  drivers/media/v4l2-core/v4l2-ctrls.c          |  9 ++++
+> >  include/media/h264-ctrls.h                    | 11 +++++
+> >  4 files changed, 68 insertions(+), 2 deletions(-)
+> > 
+> > diff --git a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+> > index c5f39dd50043..568390273fde 100644
+> > --- a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+> > +++ b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+> > @@ -1747,6 +1747,11 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
+> >      * - __u32
+> >        - ``size``
+> >        -
+> > +    * - __u32
+> > +      - ``start_byte_offset``
+> > +      - Where the slice payload starts in the output buffer. Useful when the
+> > +        OUTPUT buffer contains more than one slice (some codecs need to know
+> > +        where each slice starts in this buffer).
+> 
+> I think there is a possibility for misunderstanding here: does the
+> "slice payload" include the start code when it (annex-b) is selected?
+> 
+> I'd suspect that the hardware needs to know where the start code begings rather
+> than where the NAL unit starts when there is a start code. So I'd suggest
+> specifying it as the offset to the beginning of the start code (if present) or
+> to the slice NAL unit start otherwise.
+> 
+
+Yes, start_byte_offset is the offset in bytes from the beginning
+of the OUTPUT buffer to the start of this slice (which may start
+with a start code as per the start code control).
+
+I guess the field could be named simply "offset", but at the same
+time, this is bikeshedding.
+
+> The clarification should probably also concern header_bit_size, to make it clear
+> where it is counted from. I think it makes sense to count it starting from
+> the start_byte_offset position.
+> 
+
+The header_bit_size is currently counted from the start of slice.
+It seems this needs to be better documented, but not necessarily
+as part of this patch.
+
+> >      * - __u32
+> >        - ``header_bit_size``
+> >        -
+> > @@ -1930,7 +1935,10 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
+> >        -
+> >      * - __u16
+> >        - ``num_slices``
+> > -      - Number of slices needed to decode the current frame
+> > +      - Number of slices needed to decode the current frame/field. When
+> > +        operating in slice-based decoding mode (see
+> > +        :c:type:`v4l2_mpeg_video_h264_decoding_mode`), this field
+> > +        should always be set to one.
+> 
+> I am fine with the current proposal for now, but I believe that we should keep
+> discussing whether we want per-slice mode to strictly enforce having a
+> single-slice, outside of this series.
+> 
+
+Sounds good.
+
+> One reason for that would be to gather multiple slices (up to what amounts to
+> a frame) for efficient use of OUTPUT buffers and to avoid allocating a huge
+> number of small ones (which is certainly quite inefficient due to CMA
+> alignment).
+> 
+> Apparently, passing multiple slice_params controls is an issue so per-frame mode
+> currently has to rely on the hardware being able to parse the slice header on
+> its own. The issue exists in the V4L2 API, where we need to know in advance
+> the maximum number of slices we want to use to make the control an array and
+> copy all the controls with each request, even if only a single-one is used.
+> 
+> Maybe one way to solve that would be to use multiple requests with the same
+> OUTPUT buffer, one per slice, so that we only have to pass a single slice_params
+> control per-request. And the first slice of the frame would get the other
+> controls too, while the others wouldn't (assuming we can trust that controls
+> won't change in-between and I'm not sure how true that is). Worst case, all
+> the controls have to be attached with each request, which is maybe still better
+> than passing a big number of unused slice_params controls each time.
+> 
+> Again, I believe the current proposal is good to go for now as it allows the
+> hantro driver to get-in staging, which is the priority.
+> 
+> But the issue I'm discussing should certainly be fixed before unstaging the API.
+> 
+
+Totally, I think the next step is to add multi-slice support to the cedrus
+driver. It will help consolidate the API.
+
+> >      * - __u16
+> >        - ``nal_ref_idc``
+> >        - NAL reference ID value coming from the NAL Unit header
+> > @@ -2021,6 +2029,43 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
+> >        - 0x00000004
+> >        - The DPB entry is a long term reference frame
+> >  
+> > +``V4L2_CID_MPEG_VIDEO_H264_DECODING_MODE (enum)``
+> > +    Specifies the decoding mode to use. Currently exposes slice-based and
+> > +    frame-based decoding but new modes might be added later on.
+> > +    This control is used to complement V4L2_PIX_FMT_H264_SLICE
+> > +    pixel format. Applications that support V4L2_PIX_FMT_H264_SLICE
+> > +    are required to set this control in order to specify the decoding mode
+> > +    that is expected for the buffer.
+> > +    Drivers may expose a single or multiple decoding modes, depending
+> > +    on what they can support.
+> > +
+> > +    .. note::
+> > +
+> > +       This menu control is not yet part of the public kernel API and
+> > +       it is expected to change.
+> > +
+> > +.. c:type:: v4l2_mpeg_video_h264_decoding_mode
+> > +
+> > +.. cssclass:: longtable
+> > +
+> > +.. flat-table::
+> > +    :header-rows:  0
+> > +    :stub-columns: 0
+> > +    :widths:       1 1 2
+> > +
+> > +    * - ``V4L2_MPEG_VIDEO_H264_SLICE_BASED_DECODING``
+> > +      - 0
+> > +      - The decoding is done at the slice granularity.
+> > +        v4l2_ctrl_h264_decode_params->num_slices should be set to 1.
+> > +        The OUTPUT buffer must contain a single slice.
+> > +    * - ``V4L2_MPEG_VIDEO_H264_FRAME_BASED_DECODING``
+> > +      - 1
+> > +      - The decoding is done at the frame granularity.
+> > +        v4l2_ctrl_h264_decode_params->num_slices should be set to the number of
+> > +        slices forming a frame.
+> > +        The OUTPUT buffer must contain all slices needed to decode the
+> > +        frame. The OUTPUT buffer must also contain both fields.
+> > +
+> 
+> Nitpick/suggestion here: could we use the name of the enum as a prefix for the
+> modes, like:
+> - V4L2_MPEG_VIDEO_H264_DECODING_MODE_PER_SLICE
+> - V4L2_MPEG_VIDEO_H264_DECODING_MODE_PER_FRAME
+> 
+> or
+> - V4L2_MPEG_VIDEO_H264_DECODING_MODE_SLICE_BASED
+> - V4L2_MPEG_VIDEO_H264_DECODING_MODE_FRAME_BASED
+> 
+> I personally find it more readable this way, since the same prefix is kept.
+> 
+
+Yes, that looks better.
+
+Thanks for reviewing,
+Ezequiel
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
