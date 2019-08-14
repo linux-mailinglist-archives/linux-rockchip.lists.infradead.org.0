@@ -2,90 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA4608D3E3
-	for <lists+linux-rockchip@lfdr.de>; Wed, 14 Aug 2019 14:54:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBBC98D430
+	for <lists+linux-rockchip@lfdr.de>; Wed, 14 Aug 2019 15:06:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:References:In-Reply-To:Message-ID:MIME-Version:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fPUgK5cP2s3LuiNDb4mCgKFNfT2QztONTniQNU6ImKM=; b=BsyLb1YkzA/7JWQt/k0FwUCII
-	J8FuSIehGWb2AFO9bV2J82P4RnCgXttBBUlrHUBCSL89PI1snOUnir5HvNtVA8mN/L3NLS1owLeU8
-	SBU+AOjwAWF47Vvph4ZFZ5PhGHDOYn2Ikb00pr9UHMCl7H09Dt3rbNrQoitByswfx4Yv7QOgStl4Z
-	cgxU+0ucVTuzaTAz3oJhulrGSUlGcyYMJyps7tth1V5UU0lC5SxDydOCkIkLv2IsRcPTq0+dXm6Nr
-	AtlwmW/Hk4v3l9iVOS6PimiQP8sODsKrVYFQ+uiaR/4ZqRd3nXpTlxLdtXziyhFm2rXU4YmpJB/tF
-	WD68JSj7Q==;
+	 bh=54Ir7OIoCboeG4fiKx3ED33t73ihuJjOQm+1mEAMOAM=; b=igCx/yS6vJZfnyysuyi1uconM
+	2zBL0kpklxVJ0iXOBPMDWDh+SOMqJtUNGt/t3FRoKiD20wJMcbwLZdINWaHptNzBJLYFAoVNRKiv0
+	PSmB4kXliGgOdppoUkQb6rVZSCz7r7fISNc0fldFQ5ll9zcf9+lzVHpoSxtawiKtP++m8dEtqhJxM
+	bn5x4DRSdduMqFKmWH2O7q6YQtFPJBdgcsjK/01sKRIGtcQp5KIT2tydi15HE8CTYKeOGxSkiCQRh
+	rPO0JrYe/o2vBsJZ1Sng9YBQ4oQ6vBVkS3+ynxNmRHK5TQ50UL4xZOQzbS+4YLcyCCZ6TU0jt/HNM
+	eCDWR0AuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxsnB-0007GH-CH; Wed, 14 Aug 2019 12:54:17 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hxsyn-0004J2-6u; Wed, 14 Aug 2019 13:06:17 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxsmu-00073y-2u; Wed, 14 Aug 2019 12:54:01 +0000
-Received: by mail-wm1-x341.google.com with SMTP id o4so4372298wmh.2;
- Wed, 14 Aug 2019 05:53:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:mime-version:message-id:in-reply-to
- :references:user-agent:content-transfer-encoding;
- bh=wnzpQNcThUX3QcXowxnBBqL4j7IIg0MRcsVT4jZ+WQ0=;
- b=WwwUTaFUjx3mwTYy5bqQydNTcjvb4Mj3YTzlRP+WWEevgrRkOs6SNV6SQIjWAXZKSJ
- 5qrhxomUmXZJUtK4teuc5qDa1xXeToy095gJLHKfRdh0CfjwEAWazg5b6yJOir6Qls/Y
- aVPqNQtRo2Ic1NDBkpxyyGZsV74K5wUv9Ayut3OrQklqElanK1V/Gt5ew3jnAT3rOY2h
- kyjKupMoC8hrHtUWKHFUoz5YizXy4wAmH/oOq4MtOY/HDXwOiry6kYcavF+YYBq+XtyF
- GQ2iXY3JB6qRjxzRhqdO3jyhgauwFzFpE9TW5GDxuf+NuFWpOzvOhbl24OGR2vn823Hh
- LOpg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
- :in-reply-to:references:user-agent:content-transfer-encoding;
- bh=wnzpQNcThUX3QcXowxnBBqL4j7IIg0MRcsVT4jZ+WQ0=;
- b=ZQOKhwkg3WJY27Xl3z2TStm3z9CjavbYJt5MBn4KbtzJ571eHF5XO7LlOE1hZxM/s3
- gq1Ubz8AtB7D5trQ5H0sBkZzEgyvONcIZT1V3WouFuu3t2rKBka/tRIQFOSaQuotKmWw
- gxZIxUtByGjTHObFHdpJGmPbujwLxMtG1BHEIVP15DZBfUIEHhC/MFF9pElP3O0hKjRN
- I/3UOIbMyUZllmrhGaxuCROxq+TlF49VFV7MuLu9fDbdIo9ayvukzC0Rzp4mS31fSIX/
- BFflgQOG/raMSwCMal2RNmwccFhydoLhdD2ynXzxIrPzq70j3er2XfDTZ+P7Dc0kBBzx
- 9WZA==
-X-Gm-Message-State: APjAAAUELIQy8WBPOSZLGiKZsgEoQQ07dhSnHSrn1yxoEwkitl6SvSFs
- bZN6W2tA6D8aMCZotj9Orl8=
-X-Google-Smtp-Source: APXvYqx6AefTr2LbCPjkcPD6r87zgcK6uLcRCUKzw5qoY3RHcLdPUUBtabUtohdhw9NKRmdXApfuFw==
-X-Received: by 2002:a1c:4b15:: with SMTP id y21mr4099609wma.53.1565787238388; 
- Wed, 14 Aug 2019 05:53:58 -0700 (PDT)
-Received: from localhost ([92.59.185.54])
- by smtp.gmail.com with ESMTPSA id k124sm10048136wmk.47.2019.08.14.05.53.56
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 14 Aug 2019 05:53:57 -0700 (PDT)
-From: Vicente Bergas <vicencb@gmail.com>
-To: Felipe Balbi <balbi@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>
+ id 1hxsyk-0004IK-3q; Wed, 14 Aug 2019 13:06:15 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from orsmga004.jf.intel.com ([10.7.209.38])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 14 Aug 2019 06:06:12 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,385,1559545200"; 
+ d="asc'?scan'208";a="328044176"
+Received: from pipin.fi.intel.com (HELO pipin) ([10.237.72.175])
+ by orsmga004.jf.intel.com with ESMTP; 14 Aug 2019 06:06:08 -0700
+From: Felipe Balbi <balbi@kernel.org>
+To: Vicente Bergas <vicencb@gmail.com>, Robin Murphy <robin.murphy@arm.com>
 Subject: Re: kexec on rk3399
-Date: Wed, 14 Aug 2019 14:53:55 +0200
-MIME-Version: 1.0
-Message-ID: <c6993a1e-6fc2-44ab-b59e-152142e2ff4d@gmail.com>
-In-Reply-To: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
+In-Reply-To: <c6993a1e-6fc2-44ab-b59e-152142e2ff4d@gmail.com>
 References: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
-User-Agent: Trojita
+ <c6993a1e-6fc2-44ab-b59e-152142e2ff4d@gmail.com>
+Date: Wed, 14 Aug 2019 16:06:04 +0300
+Message-ID: <87v9uzaocj.fsf@gmail.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_055400_150945_BDF1C85C 
-X-CRM114-Status: GOOD (  12.30  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190814_060614_166681_5A384B09 
+X-CRM114-Status: GOOD (  16.48  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vicencb[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,40 +72,111 @@ Cc: Matthias Brugger <mbrugger@suse.com>, Heiko Stuebner <heiko@sntech.de>,
  linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============3631818242867994164=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gTW9uZGF5LCBKdWx5IDIyLCAyMDE5IDQ6MzE6MjcgUE0gQ0VTVCwgVmljZW50ZSBCZXJnYXMg
-d3JvdGU6Cj4gSGksIGkgaGF2ZSBiZWVuIHJ1bm5pbmcgbGludXggb24gcmszMzk5IGJvb3RlZCB3
-aXRoIGtleGVjIGZpbmUgdW50aWwgNS4yCj4gRnJvbSA1LjIgb253YXJkcywgdGhlcmUgYXJlIG1l
-bW9yeSBjb3JydXB0aW9uIGlzc3VlcyBhcyByZXBvcnRlZCBoZXJlOgo+IGh0dHA6Ly9sa21sLml1
-LmVkdS9oeXBlcm1haWwvbGludXgva2VybmVsLzE5MDYuMi8wNzIxMS5odG1sCj4ga2V4ZWMgaGFz
-IGJlZW4gaWRlbnRpZmllZCBhcyB0aGUgcHJpbmNpcGFsIHJlYXNvbiBmb3IgdGhlIGlzc3Vlcy4K
-Pgo+IEl0IHR1cm5zIG91dCB0aGF0IGtleGVjIGhhcyBuZXZlciB3b3JrZWQgcmVsaWFibHkgb24g
-dGhpcyBwbGF0Zm9ybSwKPiBpIHdhcyBqdXN0IGx1Y2t5IHVudGlsIHJlY2VudGx5Lgo+Cj4gUGxl
-YXNlLCBjYW4geW91IHByb3ZpZGUgc29tZSBkaXJlY3Rpb25zIG9uIGhvdyB0byBkZWJ1ZyB0aGUg
-aXNzdWU/CgpUaGFuayB5b3UgYWxsIGZvciB5b3VyIHN1Z2dlc3Rpb25zIG9uIHdoZXJlIHRoZSBp
-c3N1ZSBjb3VsZCBiZS4KCkl0IHNlZW1zIHRoYXQgaXQgd2FzIHRoZSBVU0IgZHJpdmVyLgpOb3cg
-dXNpbmcgdjUuMi44IGJvb3RlZCB3aXRoIGtleGVjIGZyb20gdjUuMi44IHdpdGggYSB3b3JrYXJv
-dW5kIGFuZApzbyBmYXIgc28gZ29vZC4gSXQgaXMgYmVpbmcgdGVzdGVkIG9uIHRoZSBTYXBwaGly
-ZSBib2FyZC4KClRoZSB3b3JrYXJvdW5kIGlzOgotLS0gYS9kcml2ZXJzL3VzYi9kd2MzL2R3YzMt
-b2Ytc2ltcGxlLmMKKysrIGIvZHJpdmVycy91c2IvZHdjMy9kd2MzLW9mLXNpbXBsZS5jCkBAIC0x
-MzMsNiArMTMzLDEzIEBACiAJcmV0dXJuIDA7CiB9CiAKK3N0YXRpYyB2b2lkIGR3YzNfb2Zfc2lt
-cGxlX3NodXRkb3duKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCit7CisJc3RydWN0IGR3
-YzNfb2Zfc2ltcGxlICpzaW1wbGUgPSBwbGF0Zm9ybV9nZXRfZHJ2ZGF0YShwZGV2KTsKKworCXJl
-c2V0X2NvbnRyb2xfYXNzZXJ0KHNpbXBsZS0+cmVzZXRzKTsKK30KKwogc3RhdGljIGludCBfX21h
-eWJlX3VudXNlZCBkd2MzX29mX3NpbXBsZV9ydW50aW1lX3N1c3BlbmQoc3RydWN0IGRldmljZSAK
-KmRldikKIHsKIAlzdHJ1Y3QgZHdjM19vZl9zaW1wbGUJKnNpbXBsZSA9IGRldl9nZXRfZHJ2ZGF0
-YShkZXYpOwpAQCAtMTkwLDYgKzE5Nyw3IEBACiBzdGF0aWMgc3RydWN0IHBsYXRmb3JtX2RyaXZl
-ciBkd2MzX29mX3NpbXBsZV9kcml2ZXIgPSB7CiAJLnByb2JlCQk9IGR3YzNfb2Zfc2ltcGxlX3By
-b2JlLAogCS5yZW1vdmUJCT0gZHdjM19vZl9zaW1wbGVfcmVtb3ZlLAorCS5zaHV0ZG93bgk9IGR3
-YzNfb2Zfc2ltcGxlX3NodXRkb3duLAogCS5kcml2ZXIJCT0gewogCQkubmFtZQk9ICJkd2MzLW9m
-LXNpbXBsZSIsCiAJCS5vZl9tYXRjaF90YWJsZSA9IG9mX2R3YzNfc2ltcGxlX21hdGNoLAoKSWYg
-dGhpcyBwYXRjaCBpcyBPSyBhZnRlciByZXZpZXcgaSBjYW4gcmVzdWJtaXQgaXQgYXMgYSBwdWxs
-IHJlcXVlc3QuClNob3VsZCBhIHNpbWlsYXIgY2hhbmdlIGJlIGFwcGxpZWQgdG8gZHJpdmVycy91
-c2IvZHdjMy9jb3JlLmMgPwoKUmVnYXJkcywKICBWaWNlbsOnLgoKCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlz
-dApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+--===============3631818242867994164==
+Content-Type: multipart/signed; boundary="=-=-=";
+	micalg=pgp-sha256; protocol="application/pgp-signature"
+
+--=-=-=
+Content-Type: text/plain
+Content-Transfer-Encoding: quoted-printable
+
+
+Hi,
+
+Vicente Bergas <vicencb@gmail.com> writes:
+> On Monday, July 22, 2019 4:31:27 PM CEST, Vicente Bergas wrote:
+>> Hi, i have been running linux on rk3399 booted with kexec fine until 5.2
+>> From 5.2 onwards, there are memory corruption issues as reported here:
+>> http://lkml.iu.edu/hypermail/linux/kernel/1906.2/07211.html
+>> kexec has been identified as the principal reason for the issues.
+>>
+>> It turns out that kexec has never worked reliably on this platform,
+>> i was just lucky until recently.
+>>
+>> Please, can you provide some directions on how to debug the issue?
+>
+> Thank you all for your suggestions on where the issue could be.
+>
+> It seems that it was the USB driver.
+> Now using v5.2.8 booted with kexec from v5.2.8 with a workaround and
+> so far so good. It is being tested on the Sapphire board.
+>
+> The workaround is:
+> --- a/drivers/usb/dwc3/dwc3-of-simple.c
+> +++ b/drivers/usb/dwc3/dwc3-of-simple.c
+> @@ -133,6 +133,13 @@
+>  	return 0;
+>  }
+>=20=20
+> +static void dwc3_of_simple_shutdown(struct platform_device *pdev)
+> +{
+> +	struct dwc3_of_simple *simple =3D platform_get_drvdata(pdev);
+> +
+> +	reset_control_assert(simple->resets);
+> +}
+> +
+>  static int __maybe_unused dwc3_of_simple_runtime_suspend(struct device=20
+> *dev)
+>  {
+>  	struct dwc3_of_simple	*simple =3D dev_get_drvdata(dev);
+> @@ -190,6 +197,7 @@
+>  static struct platform_driver dwc3_of_simple_driver =3D {
+>  	.probe		=3D dwc3_of_simple_probe,
+>  	.remove		=3D dwc3_of_simple_remove,
+> +	.shutdown	=3D dwc3_of_simple_shutdown,
+>  	.driver		=3D {
+>  		.name	=3D "dwc3-of-simple",
+>  		.of_match_table =3D of_dwc3_simple_match,
+>
+> If this patch is OK after review i can resubmit it as a pull request.
+
+not a pull request, just send a patch using git send-email
+
+> Should a similar change be applied to drivers/usb/dwc3/core.c ?
+
+Is it necessary? We haven't had any bug reports regarding that. Also, if
+we have reset control support in the core driver, why do we need it in
+of_simple? Seems like of_simple could just rely on what core does.
+
+=2D-=20
+balbi
+
+--=-=-=
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEElLzh7wn96CXwjh2IzL64meEamQYFAl1UBzwACgkQzL64meEa
+mQYOVQ//eKd2UVl0Lk/iBF9be4Qe4UnhUTXChWgQRk4zD9Xvjfgx16lvKHRd202Y
+tDKEYXDrOeSfQZTopKUfO8d3vjPkxfqYMeLyiiXTA983oXVwc6ZeaE6+VA3AO9m1
+nWdQthWGnpSiBaXhceBgMmAaKkvuFe/dDua9OhGkLz/aOYFQ5iLEVT/Ffkj8sr5g
+u9oXIq/Vs49XFoymk8s+9qGip9l3ZbQNEkUkJbL4+hw83IiFR5SWtGG7kf/Uv/bI
+sA6JUkcTDvOXkqI/9cSk9ZeCePbOQpu5lk9C5B78//hdDNpkopJ8OeIW6YOBh5HF
+HIOZzyBgWjXu6fRM1XiqoRjWZvfpv/76CGml0zNKdDs5bvN4tbcUoJtf655JWdav
+S+0cEGfvLMsh5UiFcsBTT63S7+/Gh/d8Z/m3JsgSw9i0TBZLhbGQ36SYX+RpNSrr
+LNZsCbl67wc12ftHZOJaUTsdHy6MU4O5nf5vlSFTJCkRJtNKV65hODulCRMiTdkh
+kgyjs98yUegt2siGNHbVg8LC14GjWQaAxRLB7BN4pCx4243vmpapRRWjHG63f2Jh
+VZvYCB8hj5MBy+2BZ5S94siSoMS6+qaZ8DQ2L065EwdrlKLly4Rofh0FNhtbL5I5
+F5P6V1xEnd0TN75wevzsI57lsNB2Cov8WoSeFQ0D7OSrS6eN38s=
+=9b3X
+-----END PGP SIGNATURE-----
+--=-=-=--
+
+
+--===============3631818242867994164==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============3631818242867994164==--
+
