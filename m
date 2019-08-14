@@ -2,62 +2,52 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3E738CDBA
-	for <lists+linux-rockchip@lfdr.de>; Wed, 14 Aug 2019 10:11:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87E0F8CEEB
+	for <lists+linux-rockchip@lfdr.de>; Wed, 14 Aug 2019 11:02:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6uI/G24OhbHbC7e3iDfUt+Z5MUZ5svb+RaAEnPkydqE=; b=HcOMGHhpHVFLfE
-	l+N0QwTYIlYoMKp2d/TEzCuGb8xexHJSfKwm3v7WG/9ucIVea2t5Sf+FdJhp/FlmpiuAgq19201qu
-	CQuDWQ2M+YAoJjjcH7sP4m7WaXwnfUbCetN4HydVs/m4n/vuf6YvUNSZmFGb11cdwfc4eNq+0b5TN
-	nfqDbx0bzT6cB9wozLypV0R84k7OOO5bNralcSbvH7Yzb8XRRz8M2RxUAe5rm9jKHJeJsDaJlb3bx
-	gD6ptvAe5WblZxikO54n0Uliv9Irx2b2qsnxhbxS19S6AmB2b0syDHcLPuZPiLQ1Cbp+gdmhKLjuL
-	wgP5SIh5m1dTJVGycQHw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TKq6+mukQ24w5I3g5fK9E6yXE70n71fqONt4KLAd4zs=; b=ufb0HsMXxWj3vT
+	jXRAXZBEicQk9ftckKCK1S199ncevGxzujLuFNFT73V1xpJe+YDTUOCNpn0kD+G9zD3gTbrZJwCS4
+	xWs5XPokoHpePzFxWvwqpVzWQJlJZUSMWckI2frIHSBxpzm1LETlKQq44IpUAF39DSiPEP3iP/WC5
+	dBmtKykmcD0WyPFw8m6yScvDVfqcjh9ZX/KcMmi7w56IzJ9Bk+rA0EiSnxKz0pYoQsmSgwTqPzlZK
+	hAB9lKHEq+kG2SatkBbzDdRZNnSL7T3/HxnKiyfSQbcVwJiFvN5sLkPlIhmki/RfJg6WhTfD8FGy2
+	LzVcczoqGUVf/uXUelZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxoNu-0005gY-Q8; Wed, 14 Aug 2019 08:11:54 +0000
-Received: from lb3-smtp-cloud8.xs4all.net ([194.109.24.29])
+	id 1hxpAH-0000EK-Md; Wed, 14 Aug 2019 09:01:53 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxoNp-0005fD-2C
- for linux-rockchip@lists.infradead.org; Wed, 14 Aug 2019 08:11:51 +0000
-Received: from [IPv6:2001:420:44c1:2579:6c2e:a3d:2bd:ee96]
- ([IPv6:2001:420:44c1:2579:6c2e:a3d:2bd:ee96])
- by smtp-cloud8.xs4all.net with ESMTPA
- id xoN6hRmGlqTdhxoNAhCccS; Wed, 14 Aug 2019 10:11:37 +0200
-Subject: Re: [PATCH v5 04/11] media: uapi: h264: Add the concept of start code
-To: Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
-References: <20190812193522.10911-1-ezequiel@collabora.com>
- <20190812193522.10911-5-ezequiel@collabora.com>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <f88d144f-e0fe-6974-efe5-77b5ed5c6e09@xs4all.nl>
-Date: Wed, 14 Aug 2019 10:11:04 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.5.1
+ id 1hxpA0-00005K-JT; Wed, 14 Aug 2019 09:01:38 +0000
+Received: from wf0413.dip.tu-dresden.de ([141.76.181.157] helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <heiko@sntech.de>)
+ id 1hxp9u-0004Ye-Dp; Wed, 14 Aug 2019 11:01:30 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Kevin Hilman <khilman@baylibre.com>
+Subject: Re: CPUfreq fail on rk3399-firefly (was: next/master boot: 285 boots:
+ 16 failed, 264 passed with 3 offline, 1 untried/unknown,
+ 1 conflict (next-20190718))
+Date: Wed, 14 Aug 2019 11:01:29 +0200
+Message-ID: <2314814.WbdfqDVNqK@phil>
+In-Reply-To: <7hmugdynmk.fsf@baylibre.com>
+References: <5d3057c8.1c69fb81.c6489.8ad2@mx.google.com>
+ <20190718162005.GF5761@sirena.org.uk> <7hmugdynmk.fsf@baylibre.com>
 MIME-Version: 1.0
-In-Reply-To: <20190812193522.10911-5-ezequiel@collabora.com>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfG8Jzg4iwcPYhjaE3e0D1MzS/fTJ/eDl4AEQI2qX+XOCPw8tnWB5Y+HXAymMpC8EyabKscl/GIMDy/RJARU23MJZNq76ZSSM/xEECsPalo31ZWSBNCQe
- OiVJ1xF4NFcmHOVZa9JLq/xylYBGiJZLhwKx6OEJ29QQLrY5H3YWgXdHMLYd+L+bjMVzzdMXXmUevf0w2cwmjB+eAmLcrkxPsXJ4Zh2V0WYULRIMVzE1a0Ze
- ta8b89PWo00P5NlPW/aeg2BDTGaJzXFuUnjWrhu37Pf+NtrYt917QYI1HD2LIpUwOhVzCX2FTyYBakPMz/jcIJbJ+4c4RVQQdmuO3923M7tS1kWNzTu2leBn
- HoC6MDyCFUrT9aLlVhta7saGxI5nJnqYGKNJkDmavufWEhoRp4eUV9lwf682O5YerUzuScE++kne0/gOuD7fLY4CH6ZrAsZwPS317wIUhJ/HIUAx8MZjCfIo
- SeucqXmdwOPDQ6eNUBpXsyvfKrwQRk4zXrCRlmTXRA58Xb94D+bbRvixzBtwlSrbeSbp8jlluguU6CIfKnq+TXRarsR+mKMvzP+tueYbunp00BqTpR1Gua7w
- 479IGDcBjLac8AOsAMZVJ0zODF6y4kODYqZxBS/pFCcPiUJIBoYpiM5PSzIGlz6LXkoedT5fx4Pc9u15HRjD7j0EP0wu0bBXm5rqUfiNpwreDvPdIFEHjhhJ
- CixfdwKkLAt+KwA5kr3da35dbZPC/sATPI2z5zMIrsnmDN34sRdJoA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_011149_272922_5061097F 
-X-CRM114-Status: GOOD (  16.18  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190814_020136_793237_620475A9 
+X-CRM114-Status: GOOD (  24.26  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.29 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,82 +60,105 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
- Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com
+Cc: linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
+ linux-next@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kernel-build-reports@lists.linaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 8/12/19 9:35 PM, Ezequiel Garcia wrote:
-> Stateless decoders have different expectations about the
-> start code that is prepended on H264 slices. Add a
-> menu control to express the supported start code types
-> (including no start code).
+Hi,
+
+Am Dienstag, 13. August 2019, 19:35:31 CEST schrieb Kevin Hilman:
+> [ resent with correct addr for linux-rockchip list ]
 > 
-> Drivers are allowed to support only one start code type,
-> but they can support both too.
+> Mark Brown <broonie@kernel.org> writes:
 > 
-> Note that this is independent of the H264 decoding mode,
-> which specifies the granularity of the decoding operations.
-> Either in frame-based or slice-based mode, this new control
-> will allow to define the start code expected on H264 slices.
+> > On Thu, Jul 18, 2019 at 04:28:08AM -0700, kernelci.org bot wrote:
+> >
+> > Today's -next started failing to boot defconfig on rk3399-firefly:
+> >
+> >> arm64:
+> >
+> >>     defconfig:
+> >>         gcc-8:
+> >>             rk3399-firefly: 1 failed lab
+> >
+> > It hits a BUG() trying to set up cpufreq:
+> >
+> > [   87.381606] cpufreq: cpufreq_online: CPU0: Running at unlisted freq: 200000 KHz
+> > [   87.393244] cpufreq: cpufreq_online: CPU0: Unlisted initial frequency changed to: 408000 KHz
+> > [   87.469777] cpufreq: cpufreq_online: CPU4: Running at unlisted freq: 12000 KHz
+> > [   87.488595] cpu cpu4: _generic_set_opp_clk_only: failed to set clock rate: -22
+> > [   87.491881] cpufreq: __target_index: Failed to change cpu frequency: -22
+> > [   87.495335] ------------[ cut here ]------------
+> > [   87.496821] kernel BUG at drivers/cpufreq/cpufreq.c:1438!
+> > [   87.498462] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
+> >
+> > I'm struggling to see anything relevant in the diff from yesterday, the
+> > unlisted frequency warnings were there in the logs yesterday but no oops
+> > and I'm not seeing any changes in cpufreq, clk or anything relevant
+> > looking.
+> >
+> > Full bootlog and other info can be found here:
+> >
+> > 	https://kernelci.org/boot/id/5d302d8359b51498d049e983/
 > 
-> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-> Tested-by: Philipp Zabel <p.zabel@pengutronix.de>
-> ---
-> Changes in v5:
-> * Improve specification as suggested by Hans.
-> Changes in v4:
-> * New patch.
-> ---
->  .../media/uapi/v4l/ext-ctrls-codec.rst        | 33 +++++++++++++++++++
->  .../media/uapi/v4l/pixfmt-compressed.rst      |  3 +-
->  drivers/media/v4l2-core/v4l2-ctrls.c          |  9 +++++
->  include/media/h264-ctrls.h                    |  6 ++++
->  4 files changed, 50 insertions(+), 1 deletion(-)
+> I confirm that disabling CPUfreq in the defconfig (CONFIG_CPU_FREQ=n)
+> makes the firefly board start working again.
 > 
-
-<snip>
-
-> diff --git a/include/media/h264-ctrls.h b/include/media/h264-ctrls.h
-> index e6c510877f67..31555c99f64a 100644
-> --- a/include/media/h264-ctrls.h
-> +++ b/include/media/h264-ctrls.h
-> @@ -27,6 +27,7 @@
->  #define V4L2_CID_MPEG_VIDEO_H264_SLICE_PARAMS	(V4L2_CID_MPEG_BASE+1003)
->  #define V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS	(V4L2_CID_MPEG_BASE+1004)
->  #define V4L2_CID_MPEG_VIDEO_H264_DECODING_MODE	(V4L2_CID_MPEG_BASE+1005)
-> +#define V4L2_CID_MPEG_VIDEO_H264_STARTCODE	(V4L2_CID_MPEG_BASE+1006)
-
-I almost forgot: can you change this to _START_CODE? Since it is two words?
-
-Thanks!
-
-	Hans
-
->  
->  /* enum v4l2_ctrl_type type values */
->  #define V4L2_CTRL_TYPE_H264_SPS			0x0110
-> @@ -41,6 +42,11 @@ enum v4l2_mpeg_video_h264_decoding_mode {
->  	V4L2_MPEG_VIDEO_H264_FRAME_BASED_DECODING,
->  };
->  
-> +enum v4l2_mpeg_video_h264_start_code {
-> +	V4L2_MPEG_VIDEO_H264_NO_STARTCODE,
-> +	V4L2_MPEG_VIDEO_H264_ANNEX_B_STARTCODE,
-> +};
-> +
->  #define V4L2_H264_SPS_CONSTRAINT_SET0_FLAG			0x01
->  #define V4L2_H264_SPS_CONSTRAINT_SET1_FLAG			0x02
->  #define V4L2_H264_SPS_CONSTRAINT_SET2_FLAG			0x04
+> Note that the default defconfig enables the "performance" CPUfreq
+> governor as the default governor, so during kernel boot, it will always
+> switch to the max frequency.
 > 
+> For fun, I set the default governor to "userspace" so the kernel
+> wouldn't make any OPP changes, and that leads to a slightly more
+> informative splat[1]
+> 
+> There is still an OPP change happening because the detected OPP is not
+> one that's listed in the table, so it tries to change to a listed OPP
+> and fails in the bowels of clk_set_rate()
+
+Though I think that might only be a symptom as well.
+Both the PLL setting code as well as the actual cpu-clock implementation
+is unchanged since 2017 (and runs just fine on all boards in my farm).
+
+One source for these issues is often the regulator supplying the cpu
+going haywire - aka the voltage not matching the opp.
+
+As in this error-case it's CPU4 being set, this would mean it might
+be the big cluster supplied by the external syr825 (fan5355 clone)
+that might act up. In the Firefly-rk3399 case this is even stranger.
+
+There is a discrepancy between the "fcs,suspend-voltage-selector"
+between different bootloader versions (how the selection-pin is set up),
+so the kernel might actually write his requested voltage to the wrong
+register (not the one for actual voltage, but the second set used for
+the suspend voltage).
+
+Did you by chance swap bootloaders at some point in recent past?
+
+I'd assume [2] might actually be the same issue last year, though
+the CI-logs are not available anymore it seems.
+
+
+Could you try to set the vdd_cpu_b regulator to disabled, so that
+cpufreq for this cluster defers and see what happens?
+
+I don't really have a Firefly in my boardfarm, so I let 5.3-rc run on
+a Theobroma Puma which has the same regulator setup as the Firefly
+and all including the performance governor did run nicely, so it really
+looks like some sort of Firefly specific issue.
+
+Heiko
+
+> [1] https://termbin.com/3oum
+
+[2] https://lkml.org/lkml/2018/6/19/1167
+
+
+
 
 
 _______________________________________________
