@@ -2,54 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4293E8ECDF
-	for <lists+linux-rockchip@lfdr.de>; Thu, 15 Aug 2019 15:31:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A6A28ED66
+	for <lists+linux-rockchip@lfdr.de>; Thu, 15 Aug 2019 15:52:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/tw5N5bOoifEVL4g9puyZRWOlHyL10HMtDpQTtIjXCI=; b=BoYQlpvum2A77Y
-	DT3l7G2e3dhyT4uUUlFTOKSp4mqkYEcu/oZ/ZifCEfH5f4OxPDHyo3Zcbplmh/5g1JCOC6TVPQc+H
-	GbxB3/GL9QLGGcizM5EG4rMgxYXD5wxjnshjJsPgY9zyeMvPKCBVXhp09agAEPDC9vKQa/rmH/Ruw
-	fPAnTpwaa+ThjfDQeunTAXypduAlWGsd7IVTqjnFoJ7DiSqZMLZKOyBzPu/aVm9fBHHCeB/MG2/Wv
-	YeCT3NLi7vy0L8W44+fP1bYjUXhw9MTYURwqdn3sW6gg37kIkxxUNkj8CRkaSOnAyZyjJZRLn4+TV
-	uddRMLjE+E1rNcrLoGLA==;
+	List-Owner; bh=cvhLmIexuXO1t5hZmBZBlcwZ2F5+4WXT2E0Ex1nFFBI=; b=L0Cx/83y81B2Gd
+	6H28OYeg+HMEWMH7gadi2+oWdxv0H0QWGhdNpbC0KM8EsELj7mtD+/jDeWGwXhQQRPQRTeNvXzLi/
+	6iVInoH1svyqS+L23f58m6P13NpC2lysNhyzE+ggnc3+UX4HtA+pvB5ZnqQgL5w548TVfD0n850dk
+	ewcxXquqaZLImoYBHuz+ovOinb0mkddDMBu+3d8efnn8okbRk5h247tLqldjJ5nai1bDPucxFAOw5
+	LHxNxFar4bDmEgOEHjj6HTmT+FNI2Pkg/F5jJo+HxbMrj1rW8WK2KO60JKDtCxiYM49rOcBZEeuDW
+	INF6yVxdBGa3MV1vuxGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyFqe-0005FA-E0; Thu, 15 Aug 2019 13:31:24 +0000
+	id 1hyGAq-0006Ea-Nt; Thu, 15 Aug 2019 13:52:16 +0000
 Received: from perceval.ideasonboard.com
  ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyFqM-000544-6U; Thu, 15 Aug 2019 13:31:10 +0000
+ id 1hyGAO-00061Y-9Y; Thu, 15 Aug 2019 13:51:51 +0000
 Received: from pendragon.ideasonboard.com
  (dfj612yhrgyx302h3jwwy-3.rev.dnainternet.fi
  [IPv6:2001:14ba:21f5:5b00:ce28:277f:58d7:3ca4])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 098F92AF;
- Thu, 15 Aug 2019 15:30:54 +0200 (CEST)
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 5E6122AF;
+ Thu, 15 Aug 2019 15:51:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1565875855;
- bh=oEGS/F9TsobJYhQR4dkRtTsgMLOO7VkPub64ct7EeRk=;
+ s=mail; t=1565877106;
+ bh=eQaxJ9fWzARXPrOco46drXtMqHl8iBVISexpgwltDec=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=RUm+7Lhtsj+xA8IzGITIPGzI7HFNL822Vn8HFMW7I2T1V6Qc5Xl6v/zy3GzftG+Br
- qCjEYmiCfeUK6WEKpaQNtx+52/EUAoSPHngiKB7afFhHF/bwhW5qTZvxdvbIM+UBRA
- IJx81qsyDluQ1Resw+3axW8H7RNs6bTQ/BpYGfsc=
-Date: Thu, 15 Aug 2019 16:30:51 +0300
+ b=fvrGFVkaMHxE7ZCJ6VmVuUBnwX+lY5NX8E3uYdQdN5um35yc0ZREjQtNfQOEUAl69
+ LsG3gXVAYtPbsxxTiaxIejTqesO+6fNhlsdlUvwaDnGNfUmP3zfFIsggKWEkrWEuwD
+ hJp9t7xVupEFs5CVqLfePFRxogg15dsszGdhbves=
+Date: Thu, 15 Aug 2019 16:51:43 +0300
 From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 To: Helen Koike <helen.koike@collabora.com>
-Subject: Re: [PATCH v8 01/14] media: videodev2.h, v4l2-ioctl: add rkisp1 meta
- buffer format
-Message-ID: <20190815133051.GT5011@pendragon.ideasonboard.com>
+Subject: Re: [PATCH v8 02/14] media: doc: add document for rkisp1 meta buffer
+ format
+Message-ID: <20190815135143.GU5011@pendragon.ideasonboard.com>
 References: <20190730184256.30338-1-helen.koike@collabora.com>
- <20190730184256.30338-2-helen.koike@collabora.com>
+ <20190730184256.30338-3-helen.koike@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190730184256.30338-2-helen.koike@collabora.com>
+In-Reply-To: <20190730184256.30338-3-helen.koike@collabora.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_063106_538382_0126FBDF 
-X-CRM114-Status: GOOD (  15.91  )
+X-CRM114-CacheID: sfid-20190815_065148_627997_40C2C5BD 
+X-CRM114-Status: GOOD (  15.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -77,8 +77,9 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
- heiko@sntech.de, jacob2.chen@rock-chips.com, jeffy.chen@rock-chips.com,
- zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ heiko@sntech.de, Jacob Chen <jacob-chen@rock-chips.com>,
+ jacob2.chen@rock-chips.com, jeffy.chen@rock-chips.com, zyc@rock-chips.com,
+ linux-kernel@vger.kernel.org, tfiga@chromium.org,
  linux-rockchip@lists.infradead.org, hans.verkuil@cisco.com,
  sakari.ailus@linux.intel.com, zhengsq@rock-chips.com, mchehab@kernel.org,
  ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
@@ -92,68 +93,121 @@ Hi Helen,
 
 Thank you for the patch.
 
-On Tue, Jul 30, 2019 at 03:42:43PM -0300, Helen Koike wrote:
-> From: Shunqian Zheng <zhengsq@rock-chips.com>
+On Tue, Jul 30, 2019 at 03:42:44PM -0300, Helen Koike wrote:
+> From: Jacob Chen <jacob2.chen@rock-chips.com>
 > 
-> Add the Rockchip ISP1 specific processing parameter format
-> V4L2_META_FMT_RK_ISP1_PARAMS and metadata format
-> V4L2_META_FMT_RK_ISP1_STAT_3A for 3A.
-
-I don't like V4L2_META_FMT_RK_ISP1_PARAMS much, as the parameters are
-not passed to the hardware through a buffer, but instead written to
-registers by the kernel driver. This is an area where V4L2 controls are
-traditionally used. I do however understand that it's easier for driver
-authors to pass a large set of controls this way when they have to be
-applied atomically, but it's clearly a hack in my opinion. I won't
-oppose to it though, as I know there's no way we can support this kind
-of feature in V4L2 at the moment without an extensive amount of work, so
-
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-
-> Signed-off-by: Shunqian Zheng <zhengsq@rock-chips.com>
-> Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
+> This commit add document for rkisp1 meta buffer format
+> 
+> Signed-off-by: Jacob Chen <jacob-chen@rock-chips.com>
 > Acked-by: Hans Verkuil <hans.verkuil@cisco.com>
 > [update for upstream]
 > Signed-off-by: Helen Koike <helen.koike@collabora.com>
 > 
 > ---
 > 
-> Changes in v8: None
+> Changes in v8:
+> - Add SPDX in the header
+> - Remove emacs configs
+> - Fix doc style
+> 
 > Changes in v7:
-> - s/IPU3/RK_ISP1
+> - s/correspond/corresponding
+> - s/use/uses
+> - s/docuemnt/document
 > 
->  drivers/media/v4l2-core/v4l2-ioctl.c | 2 ++
->  include/uapi/linux/videodev2.h       | 4 ++++
->  2 files changed, 6 insertions(+)
+>  Documentation/media/uapi/v4l/meta-formats.rst |  2 ++
+>  .../uapi/v4l/pixfmt-meta-rkisp1-params.rst    | 23 +++++++++++++++++++
+>  .../uapi/v4l/pixfmt-meta-rkisp1-stat.rst      | 22 ++++++++++++++++++
+>  3 files changed, 47 insertions(+)
+>  create mode 100644 Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst
+>  create mode 100644 Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst
 > 
-> diff --git a/drivers/media/v4l2-core/v4l2-ioctl.c b/drivers/media/v4l2-core/v4l2-ioctl.c
-> index bb5b4926538a..2df20801a299 100644
-> --- a/drivers/media/v4l2-core/v4l2-ioctl.c
-> +++ b/drivers/media/v4l2-core/v4l2-ioctl.c
-> @@ -1330,6 +1330,8 @@ static void v4l_fill_fmtdesc(struct v4l2_fmtdesc *fmt)
->  	case V4L2_META_FMT_VSP1_HGT:	descr = "R-Car VSP1 2-D Histogram"; break;
->  	case V4L2_META_FMT_UVC:		descr = "UVC Payload Header Metadata"; break;
->  	case V4L2_META_FMT_D4XX:	descr = "Intel D4xx UVC Metadata"; break;
-> +	case V4L2_META_FMT_RK_ISP1_PARAMS:	descr = "Rockchip ISP1 3A params"; break;
-> +	case V4L2_META_FMT_RK_ISP1_STAT_3A:	descr = "Rockchip ISP1 3A statistics"; break;
->  
->  	default:
->  		/* Compressed formats */
-> diff --git a/include/uapi/linux/videodev2.h b/include/uapi/linux/videodev2.h
-> index 2427bc4d8eba..ae1e375a10d7 100644
-> --- a/include/uapi/linux/videodev2.h
-> +++ b/include/uapi/linux/videodev2.h
-> @@ -756,6 +756,10 @@ struct v4l2_pix_format {
->  #define V4L2_META_FMT_UVC         v4l2_fourcc('U', 'V', 'C', 'H') /* UVC Payload Header metadata */
->  #define V4L2_META_FMT_D4XX        v4l2_fourcc('D', '4', 'X', 'X') /* D4XX Payload Header metadata */
->  
-> +/* Vendor specific - used for RK_ISP1 camera sub-system */
-> +#define V4L2_META_FMT_RK_ISP1_PARAMS	v4l2_fourcc('R', 'K', '1', 'P') /* Rockchip ISP1 params */
-> +#define V4L2_META_FMT_RK_ISP1_STAT_3A	v4l2_fourcc('R', 'K', '1', 'S') /* Rockchip ISP1 3A statistics */
+> diff --git a/Documentation/media/uapi/v4l/meta-formats.rst b/Documentation/media/uapi/v4l/meta-formats.rst
+> index b10ca9ee3968..5de621fea3cc 100644
+> --- a/Documentation/media/uapi/v4l/meta-formats.rst
+> +++ b/Documentation/media/uapi/v4l/meta-formats.rst
+> @@ -24,3 +24,5 @@ These formats are used for the :ref:`metadata` interface only.
+>      pixfmt-meta-uvc
+>      pixfmt-meta-vsp1-hgo
+>      pixfmt-meta-vsp1-hgt
+> +    pixfmt-meta-rkisp1-params
+> +    pixfmt-meta-rkisp1-stat
+> diff --git a/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst b/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst
+> new file mode 100644
+> index 000000000000..103b5cb79b7c
+> --- /dev/null
+> +++ b/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst
+> @@ -0,0 +1,23 @@
+> +.. SPDX-License-Identifier: (GPL-2.0+ OR MIT)
 > +
->  /* priv field value to indicates that subsequent fields are valid. */
->  #define V4L2_PIX_FMT_PRIV_MAGIC		0xfeedcafe
->  
+> +.. _v4l2-meta-fmt-rkisp1-params:
+> +
+> +============================
+> +V4L2_META_FMT_RK_ISP1_PARAMS
+> +============================
+> +
+> +Rockchip ISP1 Parameters Data
+> +
+> +Description
+> +===========
+> +
+> +This format describes input parameters for the Rockchip ISP1.
+> +
+> +It uses c-struct :c:type:`rkisp1_isp_params_cfg`, which is defined in
+> +the ``linux/rkisp1-config.h`` header file.
+
+I would say that
+
+"The buffer contains a single instance of the C structure
+:c:type:`rkisp1_isp_params_cfg`, defined in the
+``linux/rkisp1-config.h`` header file."
+
+And add a sentence to explain what the alignment requirements are.
+
+> +
+> +The parameters consist of multiple modules.
+> +The module won't be updated if the corresponding bit was not set in module_*_update.
+
+Doesn't this belong to rkisp1-config.h ? I would group all the
+information related to fields of the structure in the header file, and
+only have here the information related to the buffer layout (this mainly
+referencing the structure and talking about alignment/padding).
+
+> +
+> +.. kernel-doc:: include/uapi/linux/rkisp1-config.h
+> +   :functions: rkisp1_isp_params_cfg
+> diff --git a/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst b/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst
+> new file mode 100644
+> index 000000000000..4ad303f96421
+> --- /dev/null
+> +++ b/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst
+> @@ -0,0 +1,22 @@
+> +.. SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +
+> +.. _v4l2-meta-fmt-rkisp1-stat:
+> +
+> +=============================
+> +V4L2_META_FMT_RK_ISP1_STAT_3A
+> +=============================
+> +
+> +
+> +Rockchip ISP1 Statistics Data
+> +
+> +Description
+> +===========
+> +
+> +This format describes image color statistics information generated by the Rockchip
+> +ISP1.
+> +
+> +It uses c-struct :c:type:`rkisp1_stat_buffer`, which is defined in
+> +the ``linux/rkisp1-config.h`` header file.
+
+Same comment here, I think we need to document alignment/padding
+constraints.
+
+> +
+> +.. kernel-doc:: include/uapi/linux/rkisp1-config.h
+> +   :functions: rkisp1_stat_buffer
 
 -- 
 Regards,
