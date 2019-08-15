@@ -2,87 +2,63 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C9D28E5FC
-	for <lists+linux-rockchip@lfdr.de>; Thu, 15 Aug 2019 10:13:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BEE18E640
+	for <lists+linux-rockchip@lfdr.de>; Thu, 15 Aug 2019 10:26:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=hq1EpZykBGyUf6Mp/RVu/6acoS0hMN6kGBhfXNUBtAI=; b=YlQ
-	FVtb7BUu25+cxFC5/4xxfhjaaR59bZehinVtmR9N0KYOlPZfgpwsZmsISUr9cju2EbHEdV9Pgf5Yl
-	sTwg0CZNFa4gblso8u+7J2wmM4icFWG7qldavcaw2I73Gc/3OCEPlwFOns0CLOhznW6SZGkqnYKg2
-	p9rbjC4vs2I1h2i2DbRDNPJdQD2sZ5p7rSH0ql6kQMGo//hC5Teq4Gp6QvbzpDQ4mr70rrIVHq1Vh
-	JPUwYiXeC2HEblXJD3PyZ2NXK7nksZ4phBzLvrncGkcL9KyVo/YsbxcqRRD4Ofehx7FSNz4oeB8ql
-	cJcet2obybsMHccX+85TVshZ2WT5nfg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=j09+Ze1a/YsYsdT+M554SM/423SJuP+8h4hEt5Ee7U0=; b=hlsKD7xYYlD/UE
+	+KauOzyZUrE4YrvKmJHaEv73rXlTN0HoZEIwKpGZ5ttOpxeiltBLJs45jKZYdOWmwZShqrxqDr469
+	iDeG3w1cRBvNQyszBlyPIbOkmZ5nwM8JAwjCdXOUnWydb3gJVEg6nZgcCmSc3KkISjtpLnmgjZG5e
+	y/ErMKbGU2kioXmd0Z4Dmb4jnpAwpccLcB5NazEjCdPUdNpwh48eGgdIV4rwXBwfWgp7KHBhY2CXh
+	X36bYiSVYued0BIXf4a2sXv27Q8e428cMIJoAOcDMR0S5t7+xKZRWxx1IZ++dwhZaBNldAthoAEnZ
+	ZFC0kszUTlAuZHzhFj6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyAss-00080s-9N; Thu, 15 Aug 2019 08:13:22 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hyB57-0005mm-3A; Thu, 15 Aug 2019 08:26:01 +0000
+Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyAso-00080U-V9; Thu, 15 Aug 2019 08:13:20 +0000
-Received: by mail-pf1-x444.google.com with SMTP id g2so1016821pfq.0;
- Thu, 15 Aug 2019 01:13:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id;
- bh=wLap0Zy+ci+CJDpmUhxVRnZnzzmq1nqEQXj4qyza1yk=;
- b=Um9fSX9fZr03aGVR9n/2L2BbbywQnKhRAh4QrS5sagL2hVLXlD30pHM3LuzL1BoIn5
- YCrlu6fk5e5H6Lheqo7PNWlDFf6NLgVhZdsYutua0Ut3l68Z79njZbJFc2JHVVZYWGBy
- /t6FZeHHUFhkK6e4+44v6dEliHtgZoLYzWfsa1bmGMaO42B62KyF5R5+eYRQpGPJyjJJ
- jRSkPUvCfTYGWCkW/P1N/xf4Nq+cHCVXScD+coc2PtThtU+itgJWTF/Yf1AhDDzyF4j5
- tdaLxbEzEeohf1Fx+5bxzYU0kl/WD0nk04iUR3HxlzL0b6SDcpY0IFuCcJ2ddLqvD5l3
- cOFg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id;
- bh=wLap0Zy+ci+CJDpmUhxVRnZnzzmq1nqEQXj4qyza1yk=;
- b=hU8ZQEV78/z2LaZBXWgCQzZIxJMC682ytxbD9K1hFdgzxJyLAIeLtlrJoeKRQg7lwv
- F/2o7ryrktWU7176Ua6D1AnMH8W1UtpbULrIEOk5auDBGY3NOm1HTn6jBzmm7zGAiXew
- IEfcxYkV257zVgWh6DYgIvGAa0ciJv3cXgxdISD0WOGNZZvgaNUGbWs9V1T6mMCZCXbi
- 8RnLFa94c4SozRtJSjmO90QANXDwXgvrZ2Ip2MUn4qV5iNRK1fTbuu/PUwQG+fcn81l5
- W2SkMQ3ZJnUjZ/hRCJ3UJGTRK+mXEkPhlIrdSMdq0+1sJgL+QVcNGavDDUGngUgXRD4K
- wQ7Q==
-X-Gm-Message-State: APjAAAX/X+Mn0IY2PLQCcGjEno0+ZUkaIWu7pzL3LkUT4dz0jatgQ/tN
- IbegcHD4XYSAbz7m2d+fSz0=
-X-Google-Smtp-Source: APXvYqxhSkqTwo55kHvwOxePBRXqzxO0xgOzn16baZ6D28WYL4ASlLZ/C50ueZXOn/sduDjLE5annQ==
-X-Received: by 2002:a17:90a:35e3:: with SMTP id
- r90mr1195041pjb.34.1565856798082; 
- Thu, 15 Aug 2019 01:13:18 -0700 (PDT)
-Received: from localhost.localdomain ([103.29.142.67])
- by smtp.gmail.com with ESMTPSA id h17sm2084786pfo.24.2019.08.15.01.13.15
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 15 Aug 2019 01:13:17 -0700 (PDT)
-From: Kever Yang <kever.yang@rock-chips.com>
-To: heiko@sntech.de
-Subject: [PATCH v2] arm: dts: rockchip: fix vcc_host_5v regulator for usb3 host
-Date: Thu, 15 Aug 2019 16:12:52 +0800
-Message-Id: <20190815081252.27405-1-kever.yang@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
+ id 1hyB4h-0005Rq-TA; Thu, 15 Aug 2019 08:25:38 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga003.fm.intel.com ([10.253.24.29])
+ by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 15 Aug 2019 01:25:33 -0700
+X-IronPort-AV: E=Sophos;i="5.64,388,1559545200"; d="scan'208";a="184561788"
+Received: from paasikivi.fi.intel.com ([10.237.72.42])
+ by fmsmga003-auth.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 15 Aug 2019 01:25:28 -0700
+Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
+ id 7CD1B20BCA; Thu, 15 Aug 2019 11:24:22 +0300 (EEST)
+Date: Thu, 15 Aug 2019 11:24:22 +0300
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Helen Koike <helen.koike@collabora.com>
+Subject: Re: [PATCH v8 05/14] media: rkisp1: add Rockchip ISP1 subdev driver
+Message-ID: <20190815082422.GM6133@paasikivi.fi.intel.com>
+References: <20190730184256.30338-1-helen.koike@collabora.com>
+ <20190730184256.30338-6-helen.koike@collabora.com>
+ <20190808091406.GQ21370@paasikivi.fi.intel.com>
+ <da6c1d01-e3f6-ad73-db55-145d7832a665@collabora.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <da6c1d01-e3f6-ad73-db55-145d7832a665@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_011319_030144_34ECC551 
-X-CRM114-Status: GOOD (  10.48  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190815_012536_180526_1A69769E 
+X-CRM114-Status: GOOD (  31.98  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kever.yang[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.126 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,64 +71,177 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jonas Karlman <jonas@kwiboo.se>, Katsuhiro Suzuki <katsuhiro@katsuster.net>,
- Kever Yang <kever.yang@rock-chips.com>, linux-kernel@vger.kernel.org,
- Vasily Khoruzhick <anarsoul@gmail.com>, linux-rockchip@lists.infradead.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Tomohiro Mayama <parly-gh@iris.mystia.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
+ heiko@sntech.de, jacob2.chen@rock-chips.com, jeffy.chen@rock-chips.com,
+ zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ linux-rockchip@lists.infradead.org, Allon Huang <allon.huang@rock-chips.com>,
+ Jacob Chen <cc@rock-chips.com>, hans.verkuil@cisco.com,
+ laurent.pinchart@ideasonboard.com, zhengsq@rock-chips.com, mchehab@kernel.org,
+ ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-According to rock64 schemetic V2 and V3, the VCC_HOST_5V output is
-controlled by USB_20_HOST_DRV, which is the same as VCC_HOST1_5V.
+Hi Helen,
 
-Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
----
+On Wed, Aug 14, 2019 at 09:58:05PM -0300, Helen Koike wrote:
 
-Changes in v2:
-- remove enable-active-high property
+...
 
- arch/arm64/boot/dts/rockchip/rk3328-rock64.dts | 11 ++---------
- 1 file changed, 2 insertions(+), 9 deletions(-)
+> >> +static int rkisp1_isp_sd_set_fmt(struct v4l2_subdev *sd,
+> >> +				 struct v4l2_subdev_pad_config *cfg,
+> >> +				 struct v4l2_subdev_format *fmt)
+> >> +{
+> >> +	struct rkisp1_device *isp_dev = sd_to_isp_dev(sd);
+> >> +	struct rkisp1_isp_subdev *isp_sd = &isp_dev->isp_sdev;
+> >> +	struct v4l2_mbus_framefmt *mf = &fmt->format;
+> >> +
+> > 
+> > Note that for sub-device nodes, the driver is itself responsible for
+> > serialising the access to its data structures.
+> 
+> But looking at subdev_do_ioctl_lock(), it seems that it serializes the
+> ioctl calls for subdevs, no? Or I'm misunderstanding something (which is
+> most probably) ?
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-index 7cfd5ca6cc85..62936b432f9a 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-@@ -34,10 +34,9 @@
- 
- 	vcc_host_5v: vcc-host-5v-regulator {
- 		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio0 RK_PA0 GPIO_ACTIVE_HIGH>;
-+		gpio = <&gpio0 RK_PA2 GPIO_ACTIVE_LOW>;
- 		pinctrl-names = "default";
--		pinctrl-0 = <&usb30_host_drv>;
-+		pinctrl-0 = <&usb20_host_drv>;
- 		regulator-name = "vcc_host_5v";
- 		regulator-always-on;
- 		regulator-boot-on;
-@@ -320,12 +319,6 @@
- 			rockchip,pins = <0 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
- 	};
--
--	usb3 {
--		usb30_host_drv: usb30-host-drv {
--			rockchip,pins = <0 RK_PA0 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
- };
- 
- &sdmmc {
+Good question. I had missed this change --- subdev_do_ioctl_lock() is
+relatively new. But setting that lock is still not possible as the struct
+is allocated in the framework and the device is registered before the
+driver gets hold of it. It's a good idea to provide the same serialisation
+for subdevs as well.
+
+I'll get back to this later.
+
+...
+
+> >> +static int rkisp1_isp_sd_s_power(struct v4l2_subdev *sd, int on)
+> > 
+> > If you support runtime PM, you shouldn't implement the s_power op.
+> 
+> Is is ok to completly remove the usage of runtime PM then?
+> Like this http://ix.io/1RJb ?
+
+Please use runtime PM instead. In the long run we should get rid of the
+s_power op. Drivers themselves know better when the hardware they control
+should be powered on or off.
+
+> 
+> tbh I'm not that familar with runtime PM and I'm not sure what is the
+> difference of it and using s_power op (and Documentation/power/runtime_pm.rst
+> is not being that helpful tbh).
+
+You can find a simple example e.g. in
+drivers/media/platform/atmel/atmel-isi.c .
+
+> 
+> > 
+> > You'll still need to call s_power on external subdevs though.
+> > 
+> >> +{
+> >> +	struct rkisp1_device *isp_dev = sd_to_isp_dev(sd);
+> >> +	int ret;
+> >> +
+> >> +	v4l2_dbg(1, rkisp1_debug, &isp_dev->v4l2_dev, "s_power: %d\n", on);
+> >> +
+> >> +	if (on) {
+> >> +		ret = pm_runtime_get_sync(isp_dev->dev);
+> 
+> If this is not ok to remove suport for runtime PM, then where should I put
+> the call to pm_runtime_get_sync() if not in this s_power op ?
+
+Basically the runtime_resume and runtime_suspend callbacks are where the
+device power state changes are implemented, and pm_runtime_get_sync and
+pm_runtime_put are how the driver controls the power state.
+
+So you no longer need the s_power() op at all. The op needs to be called on
+the pipeline however, as there are drivers that still use it.
+
+> 
+> >> +		if (ret < 0)
+> >> +			return ret;
+> >> +
+> >> +		rkisp1_config_clk(isp_dev);
+> >> +	} else {
+> >> +		ret = pm_runtime_put(isp_dev->dev);
+> >> +		if (ret < 0)
+> >> +			return ret;
+> >> +	}
+> >> +
+> >> +	return 0;
+> >> +}
+> >> +
+> >> +static int rkisp1_subdev_link_validate(struct media_link *link)
+> >> +{
+> >> +	if (link->source->index == RKISP1_ISP_PAD_SINK_PARAMS)
+> > 
+> > Is this test correct? The source is the source end of the link, i.e. the
+> > video node.
+> 
+> Ah yes, it should be link->sink->index (and not source), thanks for spotting this.
+> 
+> > 
+> > How about the links that end in a video node?
+> 
+> I thought that the only possibilities were sensor->isp1 and params->isp1 (where params
+> is an output video node that should be catched by the corrected version of the if
+> statement above.
+> 
+> Or do you mean another thing?
+
+The link_validate of the sink entity will be called only, for the knowledge
+what is possible is generally in that end.
+
+So you'll need this for all the sink pads this driver is in control of.
+I suppose this means the sub-devices as well as capture video nodes in
+practice.
+
+> 
+> > 
+> >> +		return 0;
+> >> +
+> >> +	return v4l2_subdev_link_validate(link);
+> >> +}
+> >> +
+> >> +static int rkisp1_subdev_fmt_link_validate(struct v4l2_subdev *sd,
+> >> +					struct media_link *link,
+> >> +					struct v4l2_subdev_format *source_fmt,
+> >> +					struct v4l2_subdev_format *sink_fmt)
+> >> +{
+> >> +	if (source_fmt->format.code != sink_fmt->format.code)
+> >> +		return -EINVAL;
+> 
+> ops, should be -EPIPE
+> 
+> >> +
+> >> +	/* Crop is available */
+> >> +	if (source_fmt->format.width < sink_fmt->format.width ||
+> >> +	    source_fmt->format.height < sink_fmt->format.height)
+> >> +		return -EINVAL;
+> 
+> -EPIPE
+> 
+> >> +
+> > 
+> > Could you use v4l2_subdev_link_validate_default()?
+> 
+> v4l2_subdev_link_validate_default() only allows for an exact width/height match,
+> but here we allow the sink to be smaller then the source for cropping, no?
+
+The width and height generally must match over a link. But cropping takes
+place inside a sub-device, it is not a concern in link validation as such.
+
+> 
+> Thanks again for your review!
+
+You're welcome!
+
 -- 
-2.17.1
+Kind regards,
 
+Sakari Ailus
+sakari.ailus@linux.intel.com
 
 _______________________________________________
 Linux-rockchip mailing list
