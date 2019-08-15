@@ -2,87 +2,57 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F2168E2FB
-	for <lists+linux-rockchip@lfdr.de>; Thu, 15 Aug 2019 05:00:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C36F8E4B3
+	for <lists+linux-rockchip@lfdr.de>; Thu, 15 Aug 2019 08:00:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=DwZ7U6o1lr0+ZF9vYKz2LH8pLLjJWJJKIFpSJpin5Y0=; b=ARK
-	cH1TiWrekwpyYbFH3kRk0Zwv2HeAqoLUDoQn5xEbsMRbZbuEHS5vhyv6C4WBTUDkOc3Zqwx9HNzsP
-	MNNazT5Zt2Ylr9/TUbeZtijo5mnyRx0DSNIUMAD81fqywSfs80kkRr8zz4HfvAlFgzRffac/D89vw
-	JLFSRPacvZDlN8c/Bb459lSkq7xXKohkAd+F6GQHNr/Ycchizf3nsqBIrxIkgni5gLNWkVLTdv+Lu
-	XsTZTyud0MAcMLZHQFU9J+4NrUMUswOWoS5nJ1sNnj09ieQpV96KKb6SklONc1SSd6DaOg/hE9bGo
-	4ZNEdeDf12QkQ2dPhSXfQsHzAag4MTw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OfvQgf35/5HWrHbrguG1k/K9ubR+oLbGKaXLOLrhaMM=; b=M03dMvitqm6DLg
+	nTfKljf1SwamX0qr2bEntNqd88r1gC2+Ro5XyDpPU17zThFDKe8egUOZ70HfEsAke0wEDUpsKn7aj
+	GsN1YxyjunY8mYyBO98T//qjB7eNw0AwQNkIDYA3NUZPmjQBtjBdNTihA49NYcn8VysE8ILHZAidy
+	KVR+isRaZxrKR37d/p+Di5as8t8lRSPd/mvYbf27CSi1GTdgmo/QdNtEx2AvXpLQWTZLYJql5hqND
+	wEu7hVuXiAoZ3fWF6Q5rVGdEAT6sP2TE5XyeTtEQu/HEg4MsmZKrPnW6+sbw3gTz2wBoKSDrav+Jf
+	0YNDXjmR3BqgGHMQxt6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy5zQ-0001Nu-GB; Thu, 15 Aug 2019 02:59:48 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hy8oD-0004yh-En; Thu, 15 Aug 2019 06:00:25 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy5zL-0001N2-GM; Thu, 15 Aug 2019 02:59:45 +0000
-Received: by mail-pl1-x641.google.com with SMTP id a93so530144pla.7;
- Wed, 14 Aug 2019 19:59:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id;
- bh=jtcbQSdvzy5cT1Z921sK+U6eJuTaITvB/5Row+mcI0c=;
- b=VPyImWLVUBR+YJhKD3akvkpU0i5ENU919XA+N261pXNLUFFifIFgh984CAi1BGK4vs
- lsmnqso8RLiJ5hSxAWHUja3jeCIOxoGHPfWnJrn/ovMXJpj1WRuNX3c75AJSx0/FKszp
- hJAAFWhE0XnpJm7uZ9mmm2LOPKDYV/PtMHUuZa6siu7IYpg/BQ8eGkZAbHfGeNJXuSpJ
- qZeRdMNSciFbNM8VytVYUqIkSC0J+/9HhlcbAEmm69zb06ksFXU42GNGPno9eAHvtbYJ
- ImoEBwmnFdXq0/QO62cuWxg+JxAHIe9UZFsxbrod04OUUk9CQAXBMJN8OsJE7pXhtlp8
- G/Yw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id;
- bh=jtcbQSdvzy5cT1Z921sK+U6eJuTaITvB/5Row+mcI0c=;
- b=HkIe6T13U8N3Me+1nhDMK8qksvauA1Rf7XciNqiHNrT1ZNLrdZVmEP+sZaDlDuJES3
- 8HnoEV7xU4ElRoJGsV6+CgmZdmHvICVgBXXwXCDatHTSP1W65+6t1qtJjcM3fFZ5paqF
- +eaeUvP2V/hBBxO/Hk+6wQJDJU0zpfoRr1ScQFwgp1/yAbE7lo6PZ8BzyW56eggamoOV
- y/QFQEd0fDOl7sOZKSkAMaoceC+RokPdKEJgSe7zO4/FupOYQ/RnwGTS7RuCRy8Lj3SQ
- JEPU4fdFwXGQ1oGbd5hKukFF6Tfs1oRAKxWRAj6jFyK8synuVvzpChjCX6+ia7Q7kgLn
- AHSA==
-X-Gm-Message-State: APjAAAXR/z3AJ0OTEc1fmJhbhHABgBPExrtxkTZDP4+LpYk7HHhd08rC
- eNOGxGW3nggvM0xzzTCZGZQ=
-X-Google-Smtp-Source: APXvYqwQlvrnAQc0lPUHt/zfuAZ+tW3qd3Tcao4Wz1WqTtmVKnHjXDaxSx8tYi4gb6lsRg/sGGftXQ==
-X-Received: by 2002:a17:902:d715:: with SMTP id
- w21mr2413435ply.261.1565837982100; 
- Wed, 14 Aug 2019 19:59:42 -0700 (PDT)
-Received: from localhost.localdomain ([103.29.142.67])
- by smtp.gmail.com with ESMTPSA id k5sm954439pgo.45.2019.08.14.19.59.39
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 14 Aug 2019 19:59:41 -0700 (PDT)
-From: Kever Yang <kever.yang@rock-chips.com>
-To: heiko@sntech.de
-Subject: [PATCH] arm: dts: rockchip: fix vcc_host_5v regulator for usb3 host
-Date: Thu, 15 Aug 2019 10:59:19 +0800
-Message-Id: <20190815025919.5194-1-kever.yang@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
+ id 1hy8o9-0004xx-8r; Thu, 15 Aug 2019 06:00:22 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga005.jf.intel.com ([10.7.209.41])
+ by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 14 Aug 2019 23:00:20 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,388,1559545200"; d="scan'208";a="352148825"
+Received: from pipin.fi.intel.com (HELO pipin) ([10.237.72.175])
+ by orsmga005.jf.intel.com with ESMTP; 14 Aug 2019 23:00:17 -0700
+From: Felipe Balbi <balbi@kernel.org>
+To: Vicente Bergas <vicencb@gmail.com>
+Subject: Re: kexec on rk3399
+In-Reply-To: <4fc3e5b5-31fe-41f6-8031-b37454f21437@gmail.com>
+References: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
+ <c6993a1e-6fc2-44ab-b59e-152142e2ff4d@gmail.com> <87v9uzaocj.fsf@gmail.com>
+ <4fc3e5b5-31fe-41f6-8031-b37454f21437@gmail.com>
+Date: Thu, 15 Aug 2019 09:00:16 +0300
+Message-ID: <87sgq3t1cf.fsf@gmail.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_195943_550355_EC333659 
-X-CRM114-Status: GOOD (  10.60  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190814_230021_355232_89FA40F5 
+X-CRM114-Status: GOOD (  14.64  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kever.yang[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.31 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,60 +65,106 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jonas Karlman <jonas@kwiboo.se>, Katsuhiro Suzuki <katsuhiro@katsuster.net>,
- Kever Yang <kever.yang@rock-chips.com>, linux-kernel@vger.kernel.org,
- Vasily Khoruzhick <anarsoul@gmail.com>, linux-rockchip@lists.infradead.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Tomohiro Mayama <parly-gh@iris.mystia.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Matthias Brugger <mbrugger@suse.com>, Heiko Stuebner <heiko@sntech.de>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-usb@vger.kernel.org, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-According to rock64 schemetic V2 and V3, the VCC_HOST_5V output is
-controlled by USB_20_HOST_DRV, which is the same as VCC_HOST1_5V.
 
-Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
----
+Hi,
 
- arch/arm64/boot/dts/rockchip/rk3328-rock64.dts | 10 ++--------
- 1 file changed, 2 insertions(+), 8 deletions(-)
+Vicente Bergas <vicencb@gmail.com> writes:
+>> Vicente Bergas <vicencb@gmail.com> writes:
+>>> On Monday, July 22, 2019 4:31:27 PM CEST, Vicente Bergas wrote:
+>>>> Hi, i have been running linux on rk3399 booted with kexec fine until 5.2
+>>>> From 5.2 onwards, there are memory corruption issues as reported here:
+>>>> http://lkml.iu.edu/hypermail/linux/kernel/1906.2/07211.html
+>>>> kexec has been identified as the principal reason for the issues.
+>>>> 
+>>>> It turns out that kexec has never worked reliably on this platform, ...
+>>> 
+>>> Thank you all for your suggestions on where the issue could be.
+>>> 
+>>> It seems that it was the USB driver.
+>>> Now using v5.2.8 booted with kexec from v5.2.8 with a workaround and
+>>> so far so good. It is being tested on the Sapphire board.
+>>> 
+>>> The workaround is:
+>>> --- a/drivers/usb/dwc3/dwc3-of-simple.c
+>>> +++ b/drivers/usb/dwc3/dwc3-of-simple.c
+>>> @@ -133,6 +133,13 @@
+>>>  	return 0;
+>>>  }
+>>>  
+>>> +static void dwc3_of_simple_shutdown(struct platform_device *pdev)
+>>> +{
+>>> +	struct dwc3_of_simple *simple = platform_get_drvdata(pdev);
+>>> +
+>>> +	reset_control_assert(simple->resets);
+>>> +}
+>>> +
+>>>  static int __maybe_unused dwc3_of_simple_runtime_suspend(struct device 
+>>> *dev)
+>>>  {
+>>>  	struct dwc3_of_simple	*simple = dev_get_drvdata(dev);
+>>> @@ -190,6 +197,7 @@
+>>>  static struct platform_driver dwc3_of_simple_driver = {
+>>>  	.probe		= dwc3_of_simple_probe,
+>>>  	.remove		= dwc3_of_simple_remove,
+>>> +	.shutdown	= dwc3_of_simple_shutdown,
+>>>  	.driver		= {
+>>>  		.name	= "dwc3-of-simple",
+>>>  		.of_match_table = of_dwc3_simple_match,
+>>> 
+>>> If this patch is OK after review i can resubmit it as a pull request.
+>>
+>> not a pull request, just send a patch using git send-email
+>>
+>>> Should a similar change be applied to drivers/usb/dwc3/core.c ?
+>>
+>> Is it necessary? We haven't had any bug reports regarding that. Also, if
+>> we have reset control support in the core driver, why do we need it in
+>> of_simple? Seems like of_simple could just rely on what core does.
+>
+> the workaround has been tested patching only core.c with
+> --- a/drivers/usb/dwc3/core.c
+> +++ b/drivers/usb/dwc3/core.c
+> @@ -1561,6 +1561,13 @@
+>  	return 0;
+>  }
+>  
+> +static void dwc3_shutdown(struct platform_device *pdev)
+> +{
+> +	struct dwc3 *dwc = platform_get_drvdata(pdev);
+> +
+> +	reset_control_assert(dwc->reset);
+> +}
+> +
+>  #ifdef CONFIG_PM
+>  static int dwc3_core_init_for_resume(struct dwc3 *dwc)
+>  {
+> @@ -1866,6 +1873,7 @@
+>  static struct platform_driver dwc3_driver = {
+>  	.probe		= dwc3_probe,
+>  	.remove		= dwc3_remove,
+> +	.shutdown	= dwc3_shutdown,
+>  	.driver		= {
+>  		.name	= "dwc3",
+>  		.of_match_table	= of_match_ptr(of_dwc3_match),
+>
+> and leaving dwc3-of-simple.c as is, the issue persisted.
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-index 7cfd5ca6cc85..bd4ad1635e0b 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-@@ -35,9 +35,9 @@
- 	vcc_host_5v: vcc-host-5v-regulator {
- 		compatible = "regulator-fixed";
- 		enable-active-high;
--		gpio = <&gpio0 RK_PA0 GPIO_ACTIVE_HIGH>;
-+		gpio = <&gpio0 RK_PA2 GPIO_ACTIVE_LOW>;
- 		pinctrl-names = "default";
--		pinctrl-0 = <&usb30_host_drv>;
-+		pinctrl-0 = <&usb20_host_drv>;
- 		regulator-name = "vcc_host_5v";
- 		regulator-always-on;
- 		regulator-boot-on;
-@@ -320,12 +320,6 @@
- 			rockchip,pins = <0 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
- 	};
--
--	usb3 {
--		usb30_host_drv: usb30-host-drv {
--			rockchip,pins = <0 RK_PA0 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
- };
- 
- &sdmmc {
+That's because your reset controller is not passed to dwc3 core, only to
+your glue layer.
+
 -- 
-2.17.1
-
+balbi
 
 _______________________________________________
 Linux-rockchip mailing list
