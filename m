@@ -2,64 +2,68 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12B248EC97
-	for <lists+linux-rockchip@lfdr.de>; Thu, 15 Aug 2019 15:19:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4293E8ECDF
+	for <lists+linux-rockchip@lfdr.de>; Thu, 15 Aug 2019 15:31:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8CMMzPIarPDkB8WAFKt1SQ6n/Sk4M0VG6CjokID2ljA=; b=YFMfVx5SI3ZWYz
-	ysVfVCnlXrjup18M7LE8uN4Sg9hWITZ2saPv7goVLEwJrGk5XviM1H5A/8ujwvzpIWf9s8FaRvYTW
-	jHctkhXjbkPO+yZzsp2Vh3MS1DS2Zqv49ncSbUkbXEAOjlCK7sJbq2p5tKbkxOG8mPSWC7/yz9zt+
-	OVCtoIt/pamKZKBWqXc3TmIiZyBe6jhz+Ugrm3XdmwviPdO16BIVbQ4wRDtK5gB2THPass2U92Tnz
-	n288zlI5w3vkCH1M9idRLO4BrgsgwIua/DcggCgufq0WGDblGbuLKkAQnEr6K+7TJBUpa023qYCU/
-	8CaF7y3pSLEs3pxKg2Rw==;
+	List-Owner; bh=/tw5N5bOoifEVL4g9puyZRWOlHyL10HMtDpQTtIjXCI=; b=BoYQlpvum2A77Y
+	DT3l7G2e3dhyT4uUUlFTOKSp4mqkYEcu/oZ/ZifCEfH5f4OxPDHyo3Zcbplmh/5g1JCOC6TVPQc+H
+	GbxB3/GL9QLGGcizM5EG4rMgxYXD5wxjnshjJsPgY9zyeMvPKCBVXhp09agAEPDC9vKQa/rmH/Ruw
+	fPAnTpwaa+ThjfDQeunTAXypduAlWGsd7IVTqjnFoJ7DiSqZMLZKOyBzPu/aVm9fBHHCeB/MG2/Wv
+	YeCT3NLi7vy0L8W44+fP1bYjUXhw9MTYURwqdn3sW6gg37kIkxxUNkj8CRkaSOnAyZyjJZRLn4+TV
+	uddRMLjE+E1rNcrLoGLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyFf2-00060Y-DD; Thu, 15 Aug 2019 13:19:24 +0000
-Received: from mga12.intel.com ([192.55.52.136])
+	id 1hyFqe-0005FA-E0; Thu, 15 Aug 2019 13:31:24 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyFeh-0005jE-KH; Thu, 15 Aug 2019 13:19:06 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 15 Aug 2019 06:18:59 -0700
-X-IronPort-AV: E=Sophos;i="5.64,389,1559545200"; d="scan'208";a="171107427"
-Received: from paasikivi.fi.intel.com ([10.237.72.42])
- by orsmga008-auth.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 15 Aug 2019 06:18:53 -0700
-Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
- id 1B0FC206FD; Thu, 15 Aug 2019 16:17:49 +0300 (EEST)
-Date: Thu, 15 Aug 2019 16:17:49 +0300
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
+ id 1hyFqM-000544-6U; Thu, 15 Aug 2019 13:31:10 +0000
+Received: from pendragon.ideasonboard.com
+ (dfj612yhrgyx302h3jwwy-3.rev.dnainternet.fi
+ [IPv6:2001:14ba:21f5:5b00:ce28:277f:58d7:3ca4])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 098F92AF;
+ Thu, 15 Aug 2019 15:30:54 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1565875855;
+ bh=oEGS/F9TsobJYhQR4dkRtTsgMLOO7VkPub64ct7EeRk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=RUm+7Lhtsj+xA8IzGITIPGzI7HFNL822Vn8HFMW7I2T1V6Qc5Xl6v/zy3GzftG+Br
+ qCjEYmiCfeUK6WEKpaQNtx+52/EUAoSPHngiKB7afFhHF/bwhW5qTZvxdvbIM+UBRA
+ IJx81qsyDluQ1Resw+3axW8H7RNs6bTQ/BpYGfsc=
+Date: Thu, 15 Aug 2019 16:30:51 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 To: Helen Koike <helen.koike@collabora.com>
-Subject: Re: [PATCH v8 05/14] media: rkisp1: add Rockchip ISP1 subdev driver
-Message-ID: <20190815131748.GS6133@paasikivi.fi.intel.com>
+Subject: Re: [PATCH v8 01/14] media: videodev2.h, v4l2-ioctl: add rkisp1 meta
+ buffer format
+Message-ID: <20190815133051.GT5011@pendragon.ideasonboard.com>
 References: <20190730184256.30338-1-helen.koike@collabora.com>
- <20190730184256.30338-6-helen.koike@collabora.com>
- <20190808091406.GQ21370@paasikivi.fi.intel.com>
- <da6c1d01-e3f6-ad73-db55-145d7832a665@collabora.com>
- <20190815082422.GM6133@paasikivi.fi.intel.com>
+ <20190730184256.30338-2-helen.koike@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190815082422.GM6133@paasikivi.fi.intel.com>
+In-Reply-To: <20190730184256.30338-2-helen.koike@collabora.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_061903_680889_4ADD6894 
-X-CRM114-Status: GOOD (  15.08  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190815_063106_538382_0126FBDF 
+X-CRM114-Status: GOOD (  15.91  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.136 listed in list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,9 +79,8 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
 Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
  heiko@sntech.de, jacob2.chen@rock-chips.com, jeffy.chen@rock-chips.com,
  zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
- linux-rockchip@lists.infradead.org, Allon Huang <allon.huang@rock-chips.com>,
- Jacob Chen <cc@rock-chips.com>, hans.verkuil@cisco.com,
- laurent.pinchart@ideasonboard.com, zhengsq@rock-chips.com, mchehab@kernel.org,
+ linux-rockchip@lists.infradead.org, hans.verkuil@cisco.com,
+ sakari.ailus@linux.intel.com, zhengsq@rock-chips.com, mchehab@kernel.org,
  ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
  linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
@@ -85,46 +88,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, Aug 15, 2019 at 11:24:22AM +0300, Sakari Ailus wrote:
-> Hi Helen,
-> 
-> On Wed, Aug 14, 2019 at 09:58:05PM -0300, Helen Koike wrote:
-> 
-> ...
-> 
-> > >> +static int rkisp1_isp_sd_set_fmt(struct v4l2_subdev *sd,
-> > >> +				 struct v4l2_subdev_pad_config *cfg,
-> > >> +				 struct v4l2_subdev_format *fmt)
-> > >> +{
-> > >> +	struct rkisp1_device *isp_dev = sd_to_isp_dev(sd);
-> > >> +	struct rkisp1_isp_subdev *isp_sd = &isp_dev->isp_sdev;
-> > >> +	struct v4l2_mbus_framefmt *mf = &fmt->format;
-> > >> +
-> > > 
-> > > Note that for sub-device nodes, the driver is itself responsible for
-> > > serialising the access to its data structures.
-> > 
-> > But looking at subdev_do_ioctl_lock(), it seems that it serializes the
-> > ioctl calls for subdevs, no? Or I'm misunderstanding something (which is
-> > most probably) ?
-> 
-> Good question. I had missed this change --- subdev_do_ioctl_lock() is
-> relatively new. But setting that lock is still not possible as the struct
-> is allocated in the framework and the device is registered before the
-> driver gets hold of it. It's a good idea to provide the same serialisation
-> for subdevs as well.
-> 
-> I'll get back to this later.
+Hi Helen,
 
-The main reason is actually that these ops are also called through the
-sub-device kAPI, not only through the uAPI, and the locks are only taken
-through the calls via uAPI.
+Thank you for the patch.
 
-So adding the locks to uAPI calls alone would not address the issue.
+On Tue, Jul 30, 2019 at 03:42:43PM -0300, Helen Koike wrote:
+> From: Shunqian Zheng <zhengsq@rock-chips.com>
+> 
+> Add the Rockchip ISP1 specific processing parameter format
+> V4L2_META_FMT_RK_ISP1_PARAMS and metadata format
+> V4L2_META_FMT_RK_ISP1_STAT_3A for 3A.
+
+I don't like V4L2_META_FMT_RK_ISP1_PARAMS much, as the parameters are
+not passed to the hardware through a buffer, but instead written to
+registers by the kernel driver. This is an area where V4L2 controls are
+traditionally used. I do however understand that it's easier for driver
+authors to pass a large set of controls this way when they have to be
+applied atomically, but it's clearly a hack in my opinion. I won't
+oppose to it though, as I know there's no way we can support this kind
+of feature in V4L2 at the moment without an extensive amount of work, so
+
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+
+> Signed-off-by: Shunqian Zheng <zhengsq@rock-chips.com>
+> Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
+> Acked-by: Hans Verkuil <hans.verkuil@cisco.com>
+> [update for upstream]
+> Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> 
+> ---
+> 
+> Changes in v8: None
+> Changes in v7:
+> - s/IPU3/RK_ISP1
+> 
+>  drivers/media/v4l2-core/v4l2-ioctl.c | 2 ++
+>  include/uapi/linux/videodev2.h       | 4 ++++
+>  2 files changed, 6 insertions(+)
+> 
+> diff --git a/drivers/media/v4l2-core/v4l2-ioctl.c b/drivers/media/v4l2-core/v4l2-ioctl.c
+> index bb5b4926538a..2df20801a299 100644
+> --- a/drivers/media/v4l2-core/v4l2-ioctl.c
+> +++ b/drivers/media/v4l2-core/v4l2-ioctl.c
+> @@ -1330,6 +1330,8 @@ static void v4l_fill_fmtdesc(struct v4l2_fmtdesc *fmt)
+>  	case V4L2_META_FMT_VSP1_HGT:	descr = "R-Car VSP1 2-D Histogram"; break;
+>  	case V4L2_META_FMT_UVC:		descr = "UVC Payload Header Metadata"; break;
+>  	case V4L2_META_FMT_D4XX:	descr = "Intel D4xx UVC Metadata"; break;
+> +	case V4L2_META_FMT_RK_ISP1_PARAMS:	descr = "Rockchip ISP1 3A params"; break;
+> +	case V4L2_META_FMT_RK_ISP1_STAT_3A:	descr = "Rockchip ISP1 3A statistics"; break;
+>  
+>  	default:
+>  		/* Compressed formats */
+> diff --git a/include/uapi/linux/videodev2.h b/include/uapi/linux/videodev2.h
+> index 2427bc4d8eba..ae1e375a10d7 100644
+> --- a/include/uapi/linux/videodev2.h
+> +++ b/include/uapi/linux/videodev2.h
+> @@ -756,6 +756,10 @@ struct v4l2_pix_format {
+>  #define V4L2_META_FMT_UVC         v4l2_fourcc('U', 'V', 'C', 'H') /* UVC Payload Header metadata */
+>  #define V4L2_META_FMT_D4XX        v4l2_fourcc('D', '4', 'X', 'X') /* D4XX Payload Header metadata */
+>  
+> +/* Vendor specific - used for RK_ISP1 camera sub-system */
+> +#define V4L2_META_FMT_RK_ISP1_PARAMS	v4l2_fourcc('R', 'K', '1', 'P') /* Rockchip ISP1 params */
+> +#define V4L2_META_FMT_RK_ISP1_STAT_3A	v4l2_fourcc('R', 'K', '1', 'S') /* Rockchip ISP1 3A statistics */
+> +
+>  /* priv field value to indicates that subsequent fields are valid. */
+>  #define V4L2_PIX_FMT_PRIV_MAGIC		0xfeedcafe
+>  
 
 -- 
-Sakari Ailus
-sakari.ailus@linux.intel.com
+Regards,
+
+Laurent Pinchart
 
 _______________________________________________
 Linux-rockchip mailing list
