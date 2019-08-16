@@ -2,52 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A19090196
-	for <lists+linux-rockchip@lfdr.de>; Fri, 16 Aug 2019 14:30:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CA269019E
+	for <lists+linux-rockchip@lfdr.de>; Fri, 16 Aug 2019 14:32:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/dGjwsbYLIzVceo0PfwrZYljeRDgVMqYrLAdSb/eQOs=; b=btD+2hTzzQUrWf
-	ftpQD+wNMRtLBKwYLoyQoaUNp/65t9HiV8zIma7V47sotXWx4QmMlpV5kF5LLU0WspaBc3x0lrAc/
-	7DR93zm4Np7DDhpGeaj9fdCLPIzIbsR9QbQGvG2qkxqES69yEdjl/kL8GdqOIzeurH56X4tfNjKhp
-	6fyvcKpCukUVjVphR+6lso4sFppYRvXI715/cZ7hU+DTDEFPg0UxOqzLSpGHqcY7mXm9Lyugv27/3
-	gBLFOiNjX8PWgscY+Fz1TDTNydlXkUEgahIOQ7UKuMzPz7AH0RhY/OA9bpQLosfQ0ubrip58xzl+f
-	eIacT+MroCW9IS6XkUAw==;
+	List-Owner; bh=HAsHjtTqc5plutaxyC0Ifd3PaG63fHV1KkK0ta1zC/k=; b=cuKCupXYDJOyGK
+	avSJf1U2/1DXnAdioveo30mkIK6SJoWIF3+Ot0nJWri+s90ynerAroZuQ1LKq+NE1HL4pQv6c5UQd
+	7koaEiPFnCo/uPBRulAtg08dBkOrQXsxYSX2i/7X3aVO79z9P6mRnvRaZoFqZMXbrP2f4CRS7SW+7
+	E6oF3Ja8zb0IwjiK9TJ/jPaHnPeHD8AJA28m3BNV/8p4qABlk+ZU2Vn+qwTJcaVx8C5oJiinJ5FiF
+	1n3qs1PYoFE0rKGHkTlX/lXQ00vrUnJ8gjv+5MKTAHGbzg5dJQtNEbgu0yZZRVEuAT5JkMnFTOzze
+	8scTTWfYPH1WGhTF9GKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hybNb-0003mT-Tw; Fri, 16 Aug 2019 12:30:52 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hybP4-0004J3-H4; Fri, 16 Aug 2019 12:32:22 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hybMG-0001OU-TO
- for linux-rockchip@lists.infradead.org; Fri, 16 Aug 2019 12:29:31 +0000
+ id 1hybP0-0004II-UG
+ for linux-rockchip@lists.infradead.org; Fri, 16 Aug 2019 12:32:20 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 3C8FC26127B
-Message-ID: <3c7d72f3ae3a4235cd818a051ee0265ac123bdc1.camel@collabora.com>
-Subject: Re: [PATCH v6 03/11] media: uapi: h264: Add the concept of decoding
- mode
+ (Authenticated sender: ezequiel) with ESMTPSA id BFCDE28D1AD
+Message-ID: <4708223638fb8aa6214a58cb9a05c525625020cf.camel@collabora.com>
+Subject: Re: [PATCH v6 07/11] media: cedrus: Specify H264 startcode and
+ decoding mode
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: Hans Verkuil <hverkuil@xs4all.nl>, linux-media@vger.kernel.org
-Date: Fri, 16 Aug 2019 09:29:13 -0300
-In-Reply-To: <38911c55-3ca7-4fd8-d10e-34f48a5a2851@xs4all.nl>
+Date: Fri, 16 Aug 2019 09:32:07 -0300
+In-Reply-To: <a7dab464-5be0-ff9d-7547-735a83e87e14@xs4all.nl>
 References: <20190814195931.6587-1-ezequiel@collabora.com>
- <20190814195931.6587-4-ezequiel@collabora.com>
- <38911c55-3ca7-4fd8-d10e-34f48a5a2851@xs4all.nl>
+ <20190814195931.6587-8-ezequiel@collabora.com>
+ <a7dab464-5be0-ff9d-7547-735a83e87e14@xs4all.nl>
 Organization: Collabora
 User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_052929_322750_C347B78E 
-X-CRM114-Status: GOOD (  25.91  )
+X-CRM114-CacheID: sfid-20190816_053219_102760_E64F88FD 
+X-CRM114-Status: GOOD (  15.13  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -77,136 +75,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, 2019-08-16 at 09:34 +0200, Hans Verkuil wrote:
+On Fri, 2019-08-16 at 09:38 +0200, Hans Verkuil wrote:
 > On 8/14/19 9:59 PM, Ezequiel Garcia wrote:
-> > From: Boris Brezillon <boris.brezillon@collabora.com>
+> > The cedrus VPU is slice-based and expects V4L2_PIX_FMT_H264_SLICE
+> > buffers to contain H264 slices with no start code.
 > > 
-> > Some stateless decoders don't support per-slice decoding granularity
-> > (or at least not in a way that would make them efficient or easy to use).
+> > Expose this to userspace with the newly added menu control.
 > > 
-> > Expose a menu to control the supported decoding modes. Drivers are
-> > allowed to support only one decoding but they can support both too.
-> 
-> The commit message doesn't say anything about the start_byte_offset
-> addition and the num_slices documentation improvement. It probably
-> should.
-> 
-
-Yes, of course.
-
-> See more comments below:
-> 
-> > Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
-> > Reviewed-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > Tested-by: Philipp Zabel <p.zabel@pengutronix.de>
+> > These two controls are specified as mandatory for applications,
+> > but we mark them as non-required on the driver side for
+> > backwards compatibility.
+> > 
+> > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
 > > ---
 > > Changes in v6:
-> > * Fix spec, specifiying the decode-mode pixelformat modifier
-> >   needs to be set once, as suggested by Hans.
-> > * Rename, as suggested by Paul.
+> > * Adjust to control renames.
 > > Changes in v5:
-> > * Improve specification as suggested by Hans.
+> > * Clarify commit log.
 > > Changes in v4:
-> > * Typos/rewording fixes
-> > Changes in v3:
-> > * s/per-{slice,frame} decoding/{slice,frame}-based decoding/
-> > * Add Paul's R-b
-> > Changes in v2:
-> > * Allow decoding multiple slices in per-slice decoding mode
-> > * Minor doc improvement/fixes
+> > * New patch.
 > > ---
-> >  .../media/uapi/v4l/ext-ctrls-codec.rst        | 47 ++++++++++++++++++-
-> >  .../media/uapi/v4l/pixfmt-compressed.rst      |  6 ++-
-> >  drivers/media/v4l2-core/v4l2-ctrls.c          |  9 ++++
-> >  include/media/h264-ctrls.h                    | 10 ++++
-> >  4 files changed, 69 insertions(+), 3 deletions(-)
+> >  drivers/staging/media/sunxi/cedrus/cedrus.c | 20 ++++++++++++++++++++
+> >  1 file changed, 20 insertions(+)
 > > 
-> > diff --git a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-> > index c5f39dd50043..623b34f61b32 100644
-> > --- a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-> > +++ b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-> > @@ -1747,6 +1747,11 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
-> >      * - __u32
-> >        - ``size``
-> >        -
-> > +    * - __u32
-> > +      - ``start_byte_offset``
-> > +        Offset (in bytes) from the beginning of the OUTPUT buffer to the start
-> > +        of the slice. If the slice starts with a start code, then this is the
-> > +        offset to such start code.
+> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.c b/drivers/staging/media/sunxi/cedrus/cedrus.c
+> > index 7bdc413bf727..69a836aa11ef 100644
+> > --- a/drivers/staging/media/sunxi/cedrus/cedrus.c
+> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus.c
+> > @@ -77,6 +77,26 @@ static const struct cedrus_control cedrus_controls[] = {
+> >  		.codec		= CEDRUS_CODEC_H264,
+> >  		.required	= true,
+> >  	},
+> > +	{
+> > +		.cfg = {
+> > +			.id	= V4L2_CID_MPEG_VIDEO_H264_DECODE_MODE,
+> > +			.max	= V4L2_MPEG_VIDEO_H264_DECODE_MODE_SLICE_BASED,
+> > +			.def	= V4L2_MPEG_VIDEO_H264_DECODE_MODE_SLICE_BASED,
+> > +			.menu_skip_mask = BIT(V4L2_MPEG_VIDEO_H264_DECODE_MODE_FRAME_BASED),
 > 
-> This should mention that it should be set to 0 for SLICE_BASED decoding mode.
+> You don't need this: DECODE_MODE_FRAME_BASED > DECODE_MODE_SLICE_BASED (the max
+> value). So no need to set the skip_mask since it is out of range.
+> 
+> > +		},
+> > +		.codec		= CEDRUS_CODEC_H264,
+> > +		.required	= false,
+> > +	},
+> > +	{
+> > +		.cfg = {
+> > +			.id	= V4L2_CID_MPEG_VIDEO_H264_START_CODE,
+> > +			.max	= V4L2_MPEG_VIDEO_H264_START_CODE_NONE,
+> > +			.def	= V4L2_MPEG_VIDEO_H264_START_CODE_NONE,
+> > +			.menu_skip_mask = BIT(V4L2_MPEG_VIDEO_H264_START_CODE_ANNEX_B),
+> 
+> Ditto.
 > 
 
-Right.
+I see.
 
-> >      * - __u32
-> >        - ``header_bit_size``
-> >        -
-> > @@ -1930,7 +1935,10 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
-> >        -
-> >      * - __u16
-> >        - ``num_slices``
-> > -      - Number of slices needed to decode the current frame
-> > +      - Number of slices needed to decode the current frame/field. When
-> > +        operating in slice-based decoding mode (see
-> > +        :c:type:`v4l2_mpeg_video_h264_decode_mode`), this field
-> > +        should always be set to one.
-> >      * - __u16
-> >        - ``nal_ref_idc``
-> >        - NAL reference ID value coming from the NAL Unit header
-> > @@ -2021,6 +2029,43 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
-> >        - 0x00000004
-> >        - The DPB entry is a long term reference frame
+I'll fix this.
+
+> Regards,
+> 
+> 	Hans
+> 
+> > +		},
+> > +		.codec		= CEDRUS_CODEC_H264,
+> > +		.required	= false,
+> > +	},
+> >  };
 > >  
-> > +``V4L2_CID_MPEG_VIDEO_H264_DECODE_MODE (enum)``
-> > +    Specifies the decoding mode to use. Currently exposes slice-based and
-> > +    frame-based decoding but new modes might be added later on.
-> > +    This control is used as a modifier for V4L2_PIX_FMT_H264_SLICE
-> > +    pixel format. Applications that support V4L2_PIX_FMT_H264_SLICE
-> > +    are required to set this control in order to specify the decoding mode
-> > +    that is expected for the buffer.
-> > +    Drivers may expose a single or multiple decoding modes, depending
-> > +    on what they can support.
-> > +
-> > +    .. note::
-> > +
-> > +       This menu control is not yet part of the public kernel API and
-> > +       it is expected to change.
-> > +
-> > +.. c:type:: v4l2_mpeg_video_h264_decode_mode
-> > +
-> > +.. cssclass:: longtable
-> > +
-> > +.. flat-table::
-> > +    :header-rows:  0
-> > +    :stub-columns: 0
-> > +    :widths:       1 1 2
-> > +
-> > +    * - ``V4L2_MPEG_VIDEO_H264_DECODE_MODE_SLICE_BASED``
-> > +      - 0
-> > +      - Decoding is done at the slice granularity.
-> > +        v4l2_ctrl_h264_decode_params->num_slices should be set to 1.
-> 
-> And start_byte_offset should be set to 0.
-> 
+> >  #define CEDRUS_CONTROLS_COUNT	ARRAY_SIZE(cedrus_controls)
+> > 
 
-OK.
-
-> > +        The OUTPUT buffer must contain a single slice.
-> > +    * - ``V4L2_MPEG_VIDEO_H264_DECODE_MODE_FRAME_BASED``
-> > +      - 1
-> > +      - Decoding is done at the frame granularity.
-> > +        v4l2_ctrl_h264_decode_params->num_slices should be set to the number of
-> > +        slices forming a frame.
-> 
-> And start_byte_offset should be filled in accordingly for each slice.
-> 
-
-OK.
-
-Thanks,
-Ezequiel
 
 
 _______________________________________________
