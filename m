@@ -2,42 +2,43 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91B89900BE
-	for <lists+linux-rockchip@lfdr.de>; Fri, 16 Aug 2019 13:29:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68717900FC
+	for <lists+linux-rockchip@lfdr.de>; Fri, 16 Aug 2019 13:56:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TUSaIyvjLKfuE5UNrOVFUl3Ftue7ehKt9YDWcqggrtc=; b=vA0xP8davmK3OI
-	sL31s2MkPXjwgubn6tcegKTF5SwHvvWt9Wu7q7PbtckIjUidcswDH5LbEU8/eamCPQXH9BYAGnf02
-	ABu1LULDBf5PUOAM/erlG94XlRzXlwD+Ev32stT6lhmQGL+QYQS4ZzctQyeNGpKXiD49O+BI87sps
-	oAU+SAb+kUT55A2LgxBM+H9adqh4PlNe9OjoOPd5EzuaiBkkQQL7sD0y3xeOXrztQPaOC1YI9mviF
-	oGlPbnR3c5lNv4k1ldW5NFvEmB7ySZ6cP+pwOdBI9cQ9IWxCjIRZq6y5qCZruWKMgV3Wu9MYU1r87
-	YuR4jtU/tmkLUxVsappA==;
+	List-Owner; bh=Zesah5ASk0Y145ExXrpevJCNwMqFT5ikjK+gEzzFowk=; b=TOa5YzuPBKDnXh
+	zYty6PrdR/E/AYKHdEoTkcme6rJszOTqsP+OwNzS7qEkYPKtNwjPZ5iLWwJ2nzXxkG6Wjv6nOIUCi
+	2AJxE1YH+DlxWnsxO5lYx886ZPqR3J8o1rR5RqCjiYzbGjUS0OjGhpkiaAOVymyQe55svOJ2vCmv5
+	QdCZuL9Mb4ezkiY+kO6FjLTaktQQxnVJhNFYQvOt7umTYmvn0ESi+QHECnsSWQy2LwMc8O6N9n1yS
+	VOaLhDn0PD4CbLCCv0GC3zd/MI0STNaiW9gAr/FNsbD2eMP4vMVfYfmKVlsp5rqc+JNh6nQ+I0YpO
+	fZ2UGE1pr0wbxvfTSFGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyaPr-0007p5-4X; Fri, 16 Aug 2019 11:29:07 +0000
+	id 1hyaqW-0002Zd-2R; Fri, 16 Aug 2019 11:56:40 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyaPm-0007oG-Rh; Fri, 16 Aug 2019 11:29:04 +0000
+ id 1hyaqT-0002Z9-0Y
+ for linux-rockchip@lists.infradead.org; Fri, 16 Aug 2019 11:56:38 +0000
 Received: from [88.128.80.55] (helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hyaPd-0000Hi-Rv; Fri, 16 Aug 2019 13:28:54 +0200
+ id 1hyaqQ-0000O0-Ff; Fri, 16 Aug 2019 13:56:35 +0200
 From: Heiko Stuebner <heiko@sntech.de>
-To: Douglas Anderson <dianders@chromium.org>
-Subject: Re: [PATCH] Revert "ARM: dts: rockchip: add startup delay to
- rk3288-veyron panel-regulators"
-Date: Fri, 16 Aug 2019 13:28:25 +0200
-Message-ID: <1641883.xsURkgBn4i@phil>
-In-Reply-To: <20190620182056.61552-1-dianders@chromium.org>
-References: <20190620182056.61552-1-dianders@chromium.org>
+To: Andrius =?utf-8?B?xaB0aWtvbmFz?= <andrius@stikonas.eu>
+Subject: Re: [PATCH] arm64: dts: rockchip: Enable internal SPI flash for
+ RockPro64.
+Date: Fri, 16 Aug 2019 13:56:23 +0200
+Message-ID: <3189741.LD3pXP1jMj@phil>
+In-Reply-To: <20190811211108.28071-1-andrius@stikonas.eu>
+References: <20190811211108.28071-1-andrius@stikonas.eu>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_042903_046753_C14F299E 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20190816_045637_208924_6B2DA761 
+X-CRM114-Status: GOOD (  15.79  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -57,42 +58,47 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-rockchip@lists.infradead.org, mka@chromium.org,
- enric.balletbo@collabora.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-rockchip@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Donnerstag, 20. Juni 2019, 20:20:56 CEST schrieb Douglas Anderson:
-> This reverts commit 1f45e8c6d0161f044d679f242fe7514e2625af4a.
-> 
-> This 100 ms mystery delay is not on downstream kernels and no longer
-> seems needed on upstream kernels either [1].  Presumably something in the
-> meantime has made things better.  A few possibilities for patches that
-> have landed in the meantime that could have made this better are
-> commit 3157694d8c7f ("pwm-backlight: Add support for PWM delays
-> proprieties."), commit 5fb5caee92ba ("pwm-backlight: Enable/disable
-> the PWM before/after LCD enable toggle."), and commit 6d5922dd0d60
-> ("ARM: dts: rockchip: set PWM delay backlight settings for Veyron")
-> 
-> Let's revert and get our 100 ms back.
-> 
-> [1] https://lkml.kernel.org/r/2226970.BAPq4liE1j@diego
-> 
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
-
-I've rebased the change on top of Matthias' veyron display reorganization
-and applied it for 5.4
-
-Thanks
-Heiko
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgQW5kcml1cywKCkkgZGlkIGFwcGx5IHRoaXMgcGF0Y2ggZm9yIDUuNCAuLi4gd2l0aCBhIGJp
+ZyBidXQgLi4uCk1lYW5pbmcgSSBkaWQgcXVpdGUgYSBudW1iZXIgb2YgY2hhbmdlcyBhcyBkZXNj
+cmliZWQgYmVsb3cKYW5kIHdvdWxkIGFzayB5b3UgdG8ga2VlcCB0aGVtIGluIG1pbmQgZm9yIGZ1
+dHVyZSBwYXRjaGVzLgoKU28gdGhlcmUgaXMgbm8gbmVlZCB0byByZXNlbmQgYSBmaXhlZCB2ZXJz
+aW9uIG9mIHRoaXMgcGF0Y2guCgooMSkgUGxlYXNlIGFsc28gaW5jbHVkZSBvdGhlciBsaXN0cywg
+c2NyaXB0cy9nZXRfbWFpbnRhaW5lci5wbCBpcyBhIGdvb2QKc3RhcnRpbmcgcG9pbnQuIGxpbnV4
+LXJvY2tjaGlwIGFsb25lIGZlZWxzIGxpa2UgaGlkaW5nIHRoZSBwYXRjaCA7LSkgLgoKQW0gU29u
+bnRhZywgMTEuIEF1Z3VzdCAyMDE5LCAyMzoxMTowOCBDRVNUIHNjaHJpZWIgQW5kcml1cyDFoHRp
+a29uYXM6CgooMikgUGxlYXNlIGFsd2F5cyBwcm92aWRlIGEgcGF0Y2ggZGVzY3JpcHRvbiBvZiBz
+b21lIHNvcnQsIEkgZGlkIGdvIHdpdGgKCSJUaGUgcm9ja3BybzY0IGNvbnRhaW5zIGEgbm9yLWZs
+YXNoIGNoaXAgY29ubmVjdGVkIHRvIHNwaTEuIgoKPiBTaWduZWQtb2ZmLWJ5OiBBbmRyaXVzIMWg
+dGlrb25hcyA8YW5kcml1c0BzdGlrb25hcy5ldT4KPiAtLS0KPiAgYXJjaC9hcm02NC9ib290L2R0
+cy9yb2NrY2hpcC9yazMzOTktcm9ja3BybzY0LmR0cyB8IDE0ICsrKysrKysrKysrKysrCj4gIDEg
+ZmlsZSBjaGFuZ2VkLCAxNCBpbnNlcnRpb25zKCspCj4gCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJt
+NjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJvY2twcm82NC5kdHMgYi9hcmNoL2FybTY0L2Jv
+b3QvZHRzL3JvY2tjaGlwL3JrMzM5OS1yb2NrcHJvNjQuZHRzCj4gaW5kZXggZWI1NTk0MDYyMDA2
+Li5hYmM5N2IyYzFmMTggMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hp
+cC9yazMzOTktcm9ja3BybzY0LmR0cwo+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2No
+aXAvcmszMzk5LXJvY2twcm82NC5kdHMKPiBAQCAtNjExLDYgKzYxMSwyMCBAQAo+ICAJc3RhdHVz
+ID0gIm9rYXkiOwo+ICB9Owo+ICAKPiArJnNwaTEgewoKKDMpIHBsZWFzZSBzb3J0IG5vZGVzIGFs
+cGhhYmV0aWNhbGx5LCBzbyBoZXJlIHRoaXMgc2hvdWxkIGJlIGJldHdlZW4KJnNkaW8gYW5kICZ0
+Y3BoeTAKCig0KSBBbGwgaW5kZW50YXRpb24gb2YgdGhlIGxpbmVzIGJlbG93IHdhcyBkb25lIHdp
+dGggc3BhY2VzLCBwbGVhc2UgdXNlIHRhYnMuCgo+ICsgICAgICAgc3RhdHVzID0gIm9rYXkiOwo+
+ICsgICAgICAgbWF4LWZyZXEgPSA8MTAwMDAwMDA+OwoKCig1KSBUaGlzIHByb3BlcnR5IGlzIG5v
+dCBwYXJ0IG9mIGFueSBiaW5kaW5nIGFuZCBhbHNvIG5vdCB1c2VkLCBzbyBkcm9wcGVkCgo+ICsK
+PiArICAgICAgIGZsYXNoQDAgewo+ICsgICAgICAgICAgICAgICBjb21wYXRpYmxlID0gImplZGVj
+LHNwaS1ub3IiOwo+ICsgICAgICAgICAgICAgICAjYWRkcmVzcy1jZWxscyA9IDwxPjsKPiArICAg
+ICAgICAgICAgICAgI3NpemUtY2VsbHMgPSA8MT47CgooNikgVGhlcmUgaXMgbm8gbmVlZCBhdCBh
+bGwgZm9yIHRoZSAjZm9vLWNlbGxzIGhlcmUsIHRoZXkncmUgbm90IHBhcnQgb2YgdGhlCmJpbmRp
+bmcgYW5kIGFsc28gbm90IHVzZWQuCgo+ICsgICAgICAgICAgICAgICByZWcgPSA8MD47Cj4gKyAg
+ICAgICAgICAgICAgIHNwaS1tYXgtZnJlcXVlbmN5ID0gPDEwMDAwMDAwPjsKPiArICAgICAgIH07
+Cj4gK307Cj4gKwo+ICsKCig3KSBQbGVhc2UgbWFrZSBzdXJlIHRvIG5vdCBpbmNsdWRlIGRvdWJs
+ZSBlbXB0eSBsaW5lcywgdGhpcyBzaG91bGQgb25seSBiZQpvbmUgYmV0d2VlbiBub2Rlcy4KCgpU
+aGFua3MKSGVpa28KCj4gICZzZG1tYyB7Cj4gIAlidXMtd2lkdGggPSA8ND47Cj4gIAljYXAtbW1j
+LWhpZ2hzcGVlZDsKPiAKCgoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LXJvY2tjaGlwCg==
