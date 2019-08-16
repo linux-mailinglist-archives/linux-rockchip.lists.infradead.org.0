@@ -2,49 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1A9490155
-	for <lists+linux-rockchip@lfdr.de>; Fri, 16 Aug 2019 14:24:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A19090196
+	for <lists+linux-rockchip@lfdr.de>; Fri, 16 Aug 2019 14:30:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vnxDIdLWcbNKF02wGGAmmSV9o42XPShw6acfWWTXI7g=; b=rvz5z9dvWmE3KZ
-	me/kbBtZKytFXWle3wLGQsGhi1O88RlTMLKeQDfH79hiISNiMO/YTDHBvp6bhBHTTRIMujMaiIGnT
-	mL0bz8PRAnGwL6T60RWPXxIGUEPeLKDlD4ZpCueN8lIiq1BuF44kQMpYiRFbpNfh1EetqFqVJz96U
-	de9qQd114uBHP4zXN5ksFrTahq6WqtCFUH6tHZjY1dteSRSFaODi54oLUhhXiahiTrHFS1M/pQ5MD
-	c6lgujYm/W9PpkuHc4ugc22pJ+EHg0XIj1Zv0obpveKwn+GE3a6wQgJlsisbEKmCv48GBtS8F7DmP
-	nekTNR1rFsBQ/qR7A+wA==;
+	List-Owner; bh=/dGjwsbYLIzVceo0PfwrZYljeRDgVMqYrLAdSb/eQOs=; b=btD+2hTzzQUrWf
+	ftpQD+wNMRtLBKwYLoyQoaUNp/65t9HiV8zIma7V47sotXWx4QmMlpV5kF5LLU0WspaBc3x0lrAc/
+	7DR93zm4Np7DDhpGeaj9fdCLPIzIbsR9QbQGvG2qkxqES69yEdjl/kL8GdqOIzeurH56X4tfNjKhp
+	6fyvcKpCukUVjVphR+6lso4sFppYRvXI715/cZ7hU+DTDEFPg0UxOqzLSpGHqcY7mXm9Lyugv27/3
+	gBLFOiNjX8PWgscY+Fz1TDTNydlXkUEgahIOQ7UKuMzPz7AH0RhY/OA9bpQLosfQ0ubrip58xzl+f
+	eIacT+MroCW9IS6XkUAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hybHd-0004ES-Cm; Fri, 16 Aug 2019 12:24:41 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1hybNb-0003mT-Tw; Fri, 16 Aug 2019 12:30:52 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hybHa-0004E3-QX; Fri, 16 Aug 2019 12:24:40 +0000
-Received: from [88.128.80.55] (helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hybHM-0000UE-Ke; Fri, 16 Aug 2019 14:24:25 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Kever Yang <kever.yang@rock-chips.com>
-Subject: Re: [PATCH v2] arm: dts: rockchip: fix vcc_host_5v regulator for usb3
- host
-Date: Fri, 16 Aug 2019 14:24:06 +0200
-Message-ID: <2932927.UJgUFA1Pmh@phil>
-In-Reply-To: <20190815081252.27405-1-kever.yang@rock-chips.com>
-References: <20190815081252.27405-1-kever.yang@rock-chips.com>
+ id 1hybMG-0001OU-TO
+ for linux-rockchip@lists.infradead.org; Fri, 16 Aug 2019 12:29:31 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 3C8FC26127B
+Message-ID: <3c7d72f3ae3a4235cd818a051ee0265ac123bdc1.camel@collabora.com>
+Subject: Re: [PATCH v6 03/11] media: uapi: h264: Add the concept of decoding
+ mode
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Hans Verkuil <hverkuil@xs4all.nl>, linux-media@vger.kernel.org
+Date: Fri, 16 Aug 2019 09:29:13 -0300
+In-Reply-To: <38911c55-3ca7-4fd8-d10e-34f48a5a2851@xs4all.nl>
+References: <20190814195931.6587-1-ezequiel@collabora.com>
+ <20190814195931.6587-4-ezequiel@collabora.com>
+ <38911c55-3ca7-4fd8-d10e-34f48a5a2851@xs4all.nl>
+Organization: Collabora
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_052439_005886_01B5B14C 
-X-CRM114-Status: GOOD (  16.28  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190816_052929_322750_C347B78E 
+X-CRM114-Status: GOOD (  25.91  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,83 +64,149 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jonas Karlman <jonas@kwiboo.se>, Katsuhiro Suzuki <katsuhiro@katsuster.net>,
- linux-kernel@vger.kernel.org, Vasily Khoruzhick <anarsoul@gmail.com>,
- linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Tomohiro Mayama <parly-gh@iris.mystia.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
+ Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Kever, TL,
-
-[added TL Lim for clarification]
-
-Am Donnerstag, 15. August 2019, 10:12:52 CEST schrieb Kever Yang:
-> According to rock64 schemetic V2 and V3, the VCC_HOST_5V output is
-> controlled by USB_20_HOST_DRV, which is the same as VCC_HOST1_5V.
-
-The v1 schematics I have do reference the GPIO0_A0 as controlling this
-supply, so the big question would be how to handle the different versions.
-
-Because adding this would probably break v1 boards in this function.
-
-@TL: where v1 boards also sold or were they only used during development?
-If this were the case, we could just apply the patch, not caring about
-v1 boards, but if v1 boards were also sold to customers there would be
-more of a problem.
-
-Thanks
-Heiko
-
-
+On Fri, 2019-08-16 at 09:34 +0200, Hans Verkuil wrote:
+> On 8/14/19 9:59 PM, Ezequiel Garcia wrote:
+> > From: Boris Brezillon <boris.brezillon@collabora.com>
+> > 
+> > Some stateless decoders don't support per-slice decoding granularity
+> > (or at least not in a way that would make them efficient or easy to use).
+> > 
+> > Expose a menu to control the supported decoding modes. Drivers are
+> > allowed to support only one decoding but they can support both too.
 > 
-> Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
-> ---
-> 
-> Changes in v2:
-> - remove enable-active-high property
-> 
->  arch/arm64/boot/dts/rockchip/rk3328-rock64.dts | 11 ++---------
->  1 file changed, 2 insertions(+), 9 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-> index 7cfd5ca6cc85..62936b432f9a 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-> +++ b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-> @@ -34,10 +34,9 @@
->  
->  	vcc_host_5v: vcc-host-5v-regulator {
->  		compatible = "regulator-fixed";
-> -		enable-active-high;
-> -		gpio = <&gpio0 RK_PA0 GPIO_ACTIVE_HIGH>;
-> +		gpio = <&gpio0 RK_PA2 GPIO_ACTIVE_LOW>;
->  		pinctrl-names = "default";
-> -		pinctrl-0 = <&usb30_host_drv>;
-> +		pinctrl-0 = <&usb20_host_drv>;
->  		regulator-name = "vcc_host_5v";
->  		regulator-always-on;
->  		regulator-boot-on;
-> @@ -320,12 +319,6 @@
->  			rockchip,pins = <0 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
->  		};
->  	};
-> -
-> -	usb3 {
-> -		usb30_host_drv: usb30-host-drv {
-> -			rockchip,pins = <0 RK_PA0 RK_FUNC_GPIO &pcfg_pull_none>;
-> -		};
-> -	};
->  };
->  
->  &sdmmc {
+> The commit message doesn't say anything about the start_byte_offset
+> addition and the num_slices documentation improvement. It probably
+> should.
 > 
 
+Yes, of course.
 
+> See more comments below:
+> 
+> > Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+> > Reviewed-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> > Tested-by: Philipp Zabel <p.zabel@pengutronix.de>
+> > ---
+> > Changes in v6:
+> > * Fix spec, specifiying the decode-mode pixelformat modifier
+> >   needs to be set once, as suggested by Hans.
+> > * Rename, as suggested by Paul.
+> > Changes in v5:
+> > * Improve specification as suggested by Hans.
+> > Changes in v4:
+> > * Typos/rewording fixes
+> > Changes in v3:
+> > * s/per-{slice,frame} decoding/{slice,frame}-based decoding/
+> > * Add Paul's R-b
+> > Changes in v2:
+> > * Allow decoding multiple slices in per-slice decoding mode
+> > * Minor doc improvement/fixes
+> > ---
+> >  .../media/uapi/v4l/ext-ctrls-codec.rst        | 47 ++++++++++++++++++-
+> >  .../media/uapi/v4l/pixfmt-compressed.rst      |  6 ++-
+> >  drivers/media/v4l2-core/v4l2-ctrls.c          |  9 ++++
+> >  include/media/h264-ctrls.h                    | 10 ++++
+> >  4 files changed, 69 insertions(+), 3 deletions(-)
+> > 
+> > diff --git a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+> > index c5f39dd50043..623b34f61b32 100644
+> > --- a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+> > +++ b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+> > @@ -1747,6 +1747,11 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
+> >      * - __u32
+> >        - ``size``
+> >        -
+> > +    * - __u32
+> > +      - ``start_byte_offset``
+> > +        Offset (in bytes) from the beginning of the OUTPUT buffer to the start
+> > +        of the slice. If the slice starts with a start code, then this is the
+> > +        offset to such start code.
+> 
+> This should mention that it should be set to 0 for SLICE_BASED decoding mode.
+> 
 
+Right.
+
+> >      * - __u32
+> >        - ``header_bit_size``
+> >        -
+> > @@ -1930,7 +1935,10 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
+> >        -
+> >      * - __u16
+> >        - ``num_slices``
+> > -      - Number of slices needed to decode the current frame
+> > +      - Number of slices needed to decode the current frame/field. When
+> > +        operating in slice-based decoding mode (see
+> > +        :c:type:`v4l2_mpeg_video_h264_decode_mode`), this field
+> > +        should always be set to one.
+> >      * - __u16
+> >        - ``nal_ref_idc``
+> >        - NAL reference ID value coming from the NAL Unit header
+> > @@ -2021,6 +2029,43 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
+> >        - 0x00000004
+> >        - The DPB entry is a long term reference frame
+> >  
+> > +``V4L2_CID_MPEG_VIDEO_H264_DECODE_MODE (enum)``
+> > +    Specifies the decoding mode to use. Currently exposes slice-based and
+> > +    frame-based decoding but new modes might be added later on.
+> > +    This control is used as a modifier for V4L2_PIX_FMT_H264_SLICE
+> > +    pixel format. Applications that support V4L2_PIX_FMT_H264_SLICE
+> > +    are required to set this control in order to specify the decoding mode
+> > +    that is expected for the buffer.
+> > +    Drivers may expose a single or multiple decoding modes, depending
+> > +    on what they can support.
+> > +
+> > +    .. note::
+> > +
+> > +       This menu control is not yet part of the public kernel API and
+> > +       it is expected to change.
+> > +
+> > +.. c:type:: v4l2_mpeg_video_h264_decode_mode
+> > +
+> > +.. cssclass:: longtable
+> > +
+> > +.. flat-table::
+> > +    :header-rows:  0
+> > +    :stub-columns: 0
+> > +    :widths:       1 1 2
+> > +
+> > +    * - ``V4L2_MPEG_VIDEO_H264_DECODE_MODE_SLICE_BASED``
+> > +      - 0
+> > +      - Decoding is done at the slice granularity.
+> > +        v4l2_ctrl_h264_decode_params->num_slices should be set to 1.
+> 
+> And start_byte_offset should be set to 0.
+> 
+
+OK.
+
+> > +        The OUTPUT buffer must contain a single slice.
+> > +    * - ``V4L2_MPEG_VIDEO_H264_DECODE_MODE_FRAME_BASED``
+> > +      - 1
+> > +      - Decoding is done at the frame granularity.
+> > +        v4l2_ctrl_h264_decode_params->num_slices should be set to the number of
+> > +        slices forming a frame.
+> 
+> And start_byte_offset should be filled in accordingly for each slice.
+> 
+
+OK.
+
+Thanks,
+Ezequiel
 
 
 _______________________________________________
