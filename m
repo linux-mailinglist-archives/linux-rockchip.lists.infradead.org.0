@@ -2,42 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A18309053C
-	for <lists+linux-rockchip@lfdr.de>; Fri, 16 Aug 2019 18:02:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A06AB9053D
+	for <lists+linux-rockchip@lfdr.de>; Fri, 16 Aug 2019 18:02:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FADZJ1CulXZagiotOQEXupwl91WpXCltBLcIBtuw/lw=; b=BE9Wo7e1vqOnQ7
-	7pI3uR2bwFse6zmlGRuoKAdf4dPPxxCppCnyvwS48XrmktF9/CFYRd6aHU5mCcdfsVTT5sohUM1rx
-	7CCPBtrOusnOFItaJE+zrgKiRzKHFwjz8/kgqT+T3vZohKb9tqPLmOFhaIdLBwa6F8reHq2f5xeM0
-	l6V226jsPTuIL3x2H5uIch5qUOF32yE+5zHWosZexPseZ0keoJlEF2B+ObXiYTEFJMPRw9CPzd9/+
-	0ExoEeQWEb2/k3kJ0QtJR5BAS3D0Uu3PjiqKtEvheqjDRZNqa570+xFnnG26SqejbSLnIj6s+FlVd
-	6h6hVGAL757WwvUu2Qzg==;
+	List-Owner; bh=jAHvdKy5EsyBEry52WTUtVqDf9ZnNe1Jis/nr0wq9mE=; b=YCR02YJjV9YGbK
+	z2kyYRdHGIMNd1u9cUwiI7bfVw3z/+jni0R/C4f46V2K4r1m0FUFRq2H0ZZKcEtjzxD8XjmY2+0wk
+	OELgB2zkRk+cIAiYN5Mqw9cIywE6b9Q8bo8VlzstutljMIvbT4LHRxwYxm9J2mCGeTtgzNODgnPlr
+	en8Ty4hFw5Ui2vtcreCDtHVvXzrZWcIwniNz5ahBsXZPZMg4qFQ5TCRoQeK7KUc6bVzMgxP0Nb2/b
+	kCpWGyjyt4Eoqvzt/SqtLit9srqT03fpRI+sFg7jpkAdbOeY2KDhUEx2c0bRG8t/LGXCUk76K34Dv
+	9T0Igfl1ChhztApkrDqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyegJ-0002iF-Nd; Fri, 16 Aug 2019 16:02:23 +0000
+	id 1hyegP-0002s0-LT; Fri, 16 Aug 2019 16:02:29 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyegG-0002co-Oe
- for linux-rockchip@lists.infradead.org; Fri, 16 Aug 2019 16:02:22 +0000
+ id 1hyegL-0002qb-R8
+ for linux-rockchip@lists.infradead.org; Fri, 16 Aug 2019 16:02:27 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 7391028CFAA
+ (Authenticated sender: ezequiel) with ESMTPSA id 498FF28C926
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: linux-media@vger.kernel.org
-Subject: [PATCH v7 07/11] media: cedrus: Specify H264 startcode and decoding
- mode
-Date: Fri, 16 Aug 2019 13:01:28 -0300
-Message-Id: <20190816160132.7352-8-ezequiel@collabora.com>
+Subject: [PATCH v7 08/11] media: hantro: Move copy_metadata() before doing a
+ decode operation
+Date: Fri, 16 Aug 2019 13:01:29 -0300
+Message-Id: <20190816160132.7352-9-ezequiel@collabora.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190816160132.7352-1-ezequiel@collabora.com>
 References: <20190816160132.7352-1-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_090220_941115_A380BB39 
-X-CRM114-Status: UNSURE (   7.41  )
+X-CRM114-CacheID: sfid-20190816_090226_004928_8902135F 
+X-CRM114-Status: UNSURE (   9.07  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -67,67 +67,72 @@ Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
  Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  linux-rockchip@lists.infradead.org,
  Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com,
- Ezequiel Garcia <ezequiel@collabora.com>
+ Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The cedrus VPU is slice-based and expects V4L2_PIX_FMT_H264_SLICE
-buffers to contain H264 slices with no start code.
+From: Boris Brezillon <boris.brezillon@collabora.com>
 
-Expose this to userspace with the newly added menu control.
+Some decoders use intra slice/frame references. The capture buffer
+pointed by these references might be new and thus have invalid
+timestamp which prevents the decoder logic from retrieving the
+vb2_buffer object based on the output buf timestamp.
+Copy all metadata (including the timestamp) before starting the decode
+operation.
 
-These two controls are specified as mandatory for applications,
-but we mark them as non-required on the driver side for
-backwards compatibility.
-
-Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+Suggested-by: Jonas Karlman <jonas@kwiboo.se>
+Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+Tested-by: Philipp Zabel <p.zabel@pengutronix.de>
 ---
 Changes in v7:
 * None.
 Changes in v6:
-* Remove incorrect menu_skip_mask.
-Changes in v6:
-* Adjust to control renames.
+* None.
 Changes in v5:
-* Clarify commit log.
+* None.
 Changes in v4:
-* New patch.
+* None.
 ---
- drivers/staging/media/sunxi/cedrus/cedrus.c | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
+ drivers/staging/media/hantro/hantro_drv.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.c b/drivers/staging/media/sunxi/cedrus/cedrus.c
-index 7bdc413bf727..2d3ea8b74dfd 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus.c
-@@ -77,6 +77,24 @@ static const struct cedrus_control cedrus_controls[] = {
- 		.codec		= CEDRUS_CODEC_H264,
- 		.required	= true,
- 	},
-+	{
-+		.cfg = {
-+			.id	= V4L2_CID_MPEG_VIDEO_H264_DECODE_MODE,
-+			.max	= V4L2_MPEG_VIDEO_H264_DECODE_MODE_SLICE_BASED,
-+			.def	= V4L2_MPEG_VIDEO_H264_DECODE_MODE_SLICE_BASED,
-+		},
-+		.codec		= CEDRUS_CODEC_H264,
-+		.required	= false,
-+	},
-+	{
-+		.cfg = {
-+			.id	= V4L2_CID_MPEG_VIDEO_H264_START_CODE,
-+			.max	= V4L2_MPEG_VIDEO_H264_START_CODE_NONE,
-+			.def	= V4L2_MPEG_VIDEO_H264_START_CODE_NONE,
-+		},
-+		.codec		= CEDRUS_CODEC_H264,
-+		.required	= false,
-+	},
- };
+diff --git a/drivers/staging/media/hantro/hantro_drv.c b/drivers/staging/media/hantro/hantro_drv.c
+index 4af6ee80229e..6e2351e46750 100644
+--- a/drivers/staging/media/hantro/hantro_drv.c
++++ b/drivers/staging/media/hantro/hantro_drv.c
+@@ -111,8 +111,6 @@ static void hantro_job_finish(struct hantro_dev *vpu,
+ 	src->sequence = ctx->sequence_out++;
+ 	dst->sequence = ctx->sequence_cap++;
  
- #define CEDRUS_CONTROLS_COUNT	ARRAY_SIZE(cedrus_controls)
+-	v4l2_m2m_buf_copy_metadata(src, dst, true);
+-
+ 	ret = ctx->buf_finish(ctx, &dst->vb2_buf, bytesused);
+ 	if (ret)
+ 		result = VB2_BUF_STATE_ERROR;
+@@ -178,8 +176,12 @@ void hantro_finish_run(struct hantro_ctx *ctx)
+ static void device_run(void *priv)
+ {
+ 	struct hantro_ctx *ctx = priv;
++	struct vb2_v4l2_buffer *src, *dst;
+ 	int ret;
+ 
++	src = hantro_get_src_buf(ctx);
++	dst = hantro_get_dst_buf(ctx);
++
+ 	ret = clk_bulk_enable(ctx->dev->variant->num_clocks, ctx->dev->clocks);
+ 	if (ret)
+ 		goto err_cancel_job;
+@@ -187,6 +189,8 @@ static void device_run(void *priv)
+ 	if (ret < 0)
+ 		goto err_cancel_job;
+ 
++	v4l2_m2m_buf_copy_metadata(src, dst, true);
++
+ 	ctx->codec_ops->run(ctx);
+ 	return;
+ 
 -- 
 2.22.0
 
