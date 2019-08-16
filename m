@@ -2,51 +2,49 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BF2290548
-	for <lists+linux-rockchip@lfdr.de>; Fri, 16 Aug 2019 18:02:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2252F90571
+	for <lists+linux-rockchip@lfdr.de>; Fri, 16 Aug 2019 18:08:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uVaY/topoIKKzXd7kCrT9wphpqlro2CYR5ga0ihSgBg=; b=YWdJ9kWQNG5GGA
-	l5yfcjWKkbq0kfcIgZeG0tI72leuWV3DLy3ug2gsm7GKuxeTNvDLlw7Gt6LdZj3aANJVV7uy7v/OL
-	bOxRTRz0qQd4FZ0rry0bZkqz1m3UgEVZACnMukvxAdm1cKdDXk4VoN0Oj0F4gHk5wCyzJp1c9T7gx
-	xGCbgEj38i5LkZmNJcemsU/pffCuONT1XONnSNPkh4nZjoX8rpYuNzqqRuvFaEyboZ3LeZKJpHVFD
-	mfp1ZrlZ0Sv8nmv2YsGfmJoBbD5Of8EDmZ+e0x2DekusXMf4hzMQjgedHba6x9ZvuLGdKGCnuOhwf
-	hDX1ucy9iP0ouBrbD2sw==;
+	List-Owner; bh=ckbg0NC0hCSsJzJRDXJ4lBBy/Hb/IKc17s/w3H5H37Q=; b=qS/DEW8XhdfBvM
+	uohc5L5k0jPepvd6+yamnApo2ycQj/kJGcCLOIsgIHQpXFUpjkZaG4N+H66dmV1etowsVJdLzOJ5u
+	9Yewc5xW9p4IeXceuaOVmNlHliPtoLj0bKYERItbct4pPKMJ61t9wCDbC/HaIi4W27lMd6HxJ7eh2
+	6fX1I2QnDK5NTCztjZTSxWk+ctEls6KjDkMNqErTYWohi49ut6zGriQIuVgjht+K63ZmtD9ZeAX6t
+	giIU0p0biY+tbrkj9q5/8x2syzwmYdTxSdRRJu7mACUfk0H/VZ+80x/2akyxlaf0V0dSrLhMCPva3
+	M1GTJpZuK04x34vuPjzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyege-00031B-Gy; Fri, 16 Aug 2019 16:02:44 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hyemQ-0005R1-1J; Fri, 16 Aug 2019 16:08:42 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyega-0002yJ-Ft
- for linux-rockchip@lists.infradead.org; Fri, 16 Aug 2019 16:02:41 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 2D3D0283C43
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: linux-media@vger.kernel.org
-Subject: [PATCH v7 11/11] media: hantro: Enable H264 decoding on rk3288
-Date: Fri, 16 Aug 2019 13:01:32 -0300
-Message-Id: <20190816160132.7352-12-ezequiel@collabora.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190816160132.7352-1-ezequiel@collabora.com>
-References: <20190816160132.7352-1-ezequiel@collabora.com>
+ id 1hyem6-0005EE-Fe; Fri, 16 Aug 2019 16:08:24 +0000
+Received: from [88.128.80.55] (helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hyels-0001Qb-P9; Fri, 16 Aug 2019 18:08:10 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Justin Swartz <justin.swartz@risingedge.co.za>
+Subject: Re: [PATCH v2] ARM: dts: add device tree for Mecer Xtreme Mini S6
+Date: Fri, 16 Aug 2019 18:07:45 +0200
+Message-ID: <1853641.gZJFEyITmz@phil>
+In-Reply-To: <20190811230015.28349-1-justin.swartz@risingedge.co.za>
+References: <20190811230015.28349-1-justin.swartz@risingedge.co.za>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_090240_691395_A2AF8B5B 
-X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-CacheID: sfid-20190816_090822_792917_84DED2F2 
+X-CRM114-Status: UNSURE (   9.03  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,88 +57,27 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
- Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Hertz Wong <hertz.wong@rock-chips.com>,
- kernel@collabora.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Hertz Wong <hertz.wong@rock-chips.com>
+Am Montag, 12. August 2019, 01:00:13 CEST schrieb Justin Swartz:
+> The Mecer Xtreme Mini S6 features a Rockchip RK3229 SoC,
+> 1GB DDR3 RAM, 8GB eMMC, MicroSD port, 10/100Mbps Ethernet,
+> Realtek 8723BS WLAN module, 2 x USB 2.0 ports, HDMI output,
+> and S/PDIF output.
+> 
+> Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
 
-Now that the generic bits have been added, we can activate H264 decoding
-on rk3288.
+applied for 5.4
 
-Signed-off-by: Hertz Wong <hertz.wong@rock-chips.com>
-Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
----
-Changes in v7:
-* None.
-Changes in v6:
-* None.
-Changes in v5:
-* None.
-Changes in v4:
-* None.
----
- drivers/staging/media/hantro/rk3288_vpu_hw.c | 21 +++++++++++++++++++-
- 1 file changed, 20 insertions(+), 1 deletion(-)
+Thanks
+Heiko
 
-diff --git a/drivers/staging/media/hantro/rk3288_vpu_hw.c b/drivers/staging/media/hantro/rk3288_vpu_hw.c
-index f1b573a006ae..6bfcc47d1e58 100644
---- a/drivers/staging/media/hantro/rk3288_vpu_hw.c
-+++ b/drivers/staging/media/hantro/rk3288_vpu_hw.c
-@@ -61,6 +61,19 @@ static const struct hantro_fmt rk3288_vpu_dec_fmts[] = {
- 		.fourcc = V4L2_PIX_FMT_NV12,
- 		.codec_mode = HANTRO_MODE_NONE,
- 	},
-+	{
-+		.fourcc = V4L2_PIX_FMT_H264_SLICE,
-+		.codec_mode = HANTRO_MODE_H264_DEC,
-+		.max_depth = 2,
-+		.frmsize = {
-+			.min_width = 48,
-+			.max_width = 3840,
-+			.step_width = H264_MB_DIM,
-+			.min_height = 48,
-+			.max_height = 2160,
-+			.step_height = H264_MB_DIM,
-+		},
-+	},
- 	{
- 		.fourcc = V4L2_PIX_FMT_MPEG2_SLICE,
- 		.codec_mode = HANTRO_MODE_MPEG2_DEC,
-@@ -162,6 +175,12 @@ static const struct hantro_codec_ops rk3288_vpu_codec_ops[] = {
- 		.init = hantro_jpeg_enc_init,
- 		.exit = hantro_jpeg_enc_exit,
- 	},
-+	[HANTRO_MODE_H264_DEC] = {
-+		.run = hantro_g1_h264_dec_run,
-+		.reset = rk3288_vpu_dec_reset,
-+		.init = hantro_h264_dec_init,
-+		.exit = hantro_h264_dec_exit,
-+	},
- 	[HANTRO_MODE_MPEG2_DEC] = {
- 		.run = hantro_g1_mpeg2_dec_run,
- 		.reset = rk3288_vpu_dec_reset,
-@@ -197,7 +216,7 @@ const struct hantro_variant rk3288_vpu_variant = {
- 	.dec_fmts = rk3288_vpu_dec_fmts,
- 	.num_dec_fmts = ARRAY_SIZE(rk3288_vpu_dec_fmts),
- 	.codec = HANTRO_JPEG_ENCODER | HANTRO_MPEG2_DECODER |
--		 HANTRO_VP8_DECODER,
-+		 HANTRO_VP8_DECODER | HANTRO_H264_DECODER,
- 	.codec_ops = rk3288_vpu_codec_ops,
- 	.irqs = rk3288_irqs,
- 	.num_irqs = ARRAY_SIZE(rk3288_irqs),
--- 
-2.22.0
 
 
 _______________________________________________
