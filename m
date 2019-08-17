@@ -2,90 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E19C1907F2
-	for <lists+linux-rockchip@lfdr.de>; Fri, 16 Aug 2019 20:55:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F43890C78
+	for <lists+linux-rockchip@lfdr.de>; Sat, 17 Aug 2019 05:39:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GRYESVUpfH4HjHHHRH2EvIx5Wrme6UFhqRx9UN3NZcE=; b=PsyW+/Syl0Vo2m
-	cXjXAw1P72h5EeOgoWWDYFemLr3ZWlOvOswbQ6KSdiiYh3B04nqT6X0bEnHj3WMVB2tSd9D3zoNP5
-	eifh4QeGIZV2wNn8POj1iTRMMbFQtN1Fbylb+PC6aJGbEzEZSwMQU4TL8hklvHR4KW7Yj1sv7/5Ya
-	E9fjWfeSP/+JVDHus8jTw6MmJgB9VZESpqhaDmOOHNMCvUAU+CxPD8HEmNchK2meMJedCI8sYWDaA
-	2vAKNxPG7RSjO1mPoTPj4XkX64QqE1EOMijtzA/75ELdR6VUObH3CgLQbhFyOWJWF7kn6DvZsV/IX
-	3zTB/x8gvD0sXmk0ld/Q==;
+	List-Owner; bh=cVLjuRub8Mmps/FuwJOT3Hs/xbbtp0LkWThGyQGg8mM=; b=cC1E3Wftzlqyu8
+	vVuCHSr8BwrNflgPmI+jG7wlp9sptg5kkwGF+l7Cg1wUBGBLex5OaaqB27W5hyzT2fBJzkNy4xgv4
+	8R/JrOm97Ob4DwIQAeC83WyCl9c5T44sPqPlJkQcofiU36Nzh10WFebno9LkDiAYw+riGgIIMMPIO
+	Ab8Z32Dbme9qVGRzWTXy2HKgH6mw7c5F/6GuyJAt0tNLzzHMjiy4tAyc/x+v9Q9fs+qm5zgy4Z6il
+	fRL72dk7pEfXewkONzbjXMClf1htuUQa/wfILb0Ww0GdKpJW9gj62idl7GVGq5w6bOcammbEUnuqg
+	Z9ZCEqGt1hiJL0ViTWiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyhNI-00022t-KH; Fri, 16 Aug 2019 18:54:56 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyhNE-00022Q-Mo; Fri, 16 Aug 2019 18:54:54 +0000
-Received: by mail-wr1-x444.google.com with SMTP id g17so2471308wrr.5;
- Fri, 16 Aug 2019 11:54:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=ZIcOtpmkAyPPF8IZ2E+RCqFijSBHEZNdbSz2WgCDe9w=;
- b=WyCCG07kH7AyHuxzQWuoS7suYHpK9YwqDGluSw6JlcsyLyRlB7esZjQMSvWEs74bkX
- bQ9B5idWQaBmJ3hHIMAKiXtom3/+sPMMPbxgjBF6S9OMcBuXnKA93gEe6Y0yYxWURs0Q
- 36yVEX0aJsoeyOIFeb3HfZnYbWLdlHP2y7xSpXyhVeL4jBi89EO2bmT+s/AvS32oRlfT
- ujuhAt1in/jXF/eo6bGETDCQBF3VgOflFJrXK6ZCq8hEL00pdoMAFJgGjDbIHMtSR/RO
- RoeCgnerpVtV9l8Az+Ck9wP2M8qbexPV89AjZGWSNNTq5VvOGB3DPJ2ilM2EQirXwMdt
- 7GWA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=ZIcOtpmkAyPPF8IZ2E+RCqFijSBHEZNdbSz2WgCDe9w=;
- b=X0Z6B6iFpnfxiubh/12jRmXqBjmHGYQy1RSU8LrfuI0IFJcD5CJ03/j1SoGROAH5pG
- lEKPFgDuo9ssOj7O/pXqVTV116749s1XwIj1sl4JY16jMK+mkdXeBMbibrNsDcMx34O1
- A9TIx68o1rwE0KZFt1TAYp78VwNiIs96yl1YZOG7dsGJzLZ1SqiUscsgWJJW9/htRuuk
- grVJ33AO7SvrLwj1HuYJM3TittJweOYwS5B6n2AXJ34dr5BluXCcgx/4NUZwt9byY7Qv
- QeUteEPSBabR6IcbX1b9hX2pRO6nsIyj7FmaEqD1boLZdSIatdSDGorHzEc4OVkqJhyp
- UXGQ==
-X-Gm-Message-State: APjAAAXl7XiuzXl1ZRrD0bo25hYrDy1phOPzTy/gXBiPhX/iGUfRDpU/
- 2y980QTtNs2a0y5FLCFeXdaQQB1+fpZVQLWfGo11s/oJlhs=
-X-Google-Smtp-Source: APXvYqyjAhdDi1tKcJ2RugtQNKn3XhAwEUccYsGTAVC+7iD01E6qYqknGw+0AUCSrKtSR46yZIvKiSkYsGSD9UM8ddI=
-X-Received: by 2002:adf:eac3:: with SMTP id o3mr11583482wrn.264.1565981687262; 
- Fri, 16 Aug 2019 11:54:47 -0700 (PDT)
+	id 1hypZB-0004RJ-Fl; Sat, 17 Aug 2019 03:39:45 +0000
+Received: from r3-21.sinamail.sina.com.cn ([202.108.3.21])
+ by bombadil.infradead.org with smtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hypZ7-0004F3-CU
+ for linux-rockchip@lists.infradead.org; Sat, 17 Aug 2019 03:39:43 +0000
+Received: from unknown (HELO localhost.localdomain)([222.131.78.247])
+ by sina.com with ESMTP
+ id 5D5776EB00008B47; Sat, 17 Aug 2019 11:39:27 +0800 (CST)
+X-Sender: hdanton@sina.com
+X-Auth-ID: hdanton@sina.com
+X-SMAIL-MID: 426700329115
+From: Hillf Danton <hdanton@sina.com>
+To: Tom Murphy <murphyt7@tcd.ie>
+Subject: Re: [PATCH V5 3/5] iommu/dma-iommu: Handle deferred devices
+Date: Sat, 17 Aug 2019 11:39:14 +0800
+Message-Id: <20190817033914.4812-1-hdanton@sina.com>
+In-Reply-To: <20190815110944.3579-1-murphyt7@tcd.ie>
+References: <20190815110944.3579-1-murphyt7@tcd.ie>
 MIME-Version: 1.0
-References: <CA+Vb7hpe_USzdCuTBHd8V-t6YeQ0oApiBrvM-D43JuhJda6eyQ@mail.gmail.com>
- <20190815122151.bg7it6ptxwcn2vif@willie-the-truck>
- <8253b02c-0431-6b01-6af4-6132eb992925@arm.com>
- <CA+Vb7hpi=pCC9viiof8y85Kw_vCawWQ0B6kGFALgxtZfCKoaTw@mail.gmail.com>
- <CA+Vb7hqPvDtv0ahjxa_gM68qsws6-dmtiOPmG6-WB+HZEC=4aw@mail.gmail.com>
- <2facb3cb-388a-87ee-4d87-717dd65825ae@arm.com>
-In-Reply-To: <2facb3cb-388a-87ee-4d87-717dd65825ae@arm.com>
-From: Philipp Richter <richterphilipp.pops@gmail.com>
-Date: Fri, 16 Aug 2019 20:54:36 +0200
-Message-ID: <CA+Vb7hpjX=yzVJj+BguvzwtyASCGUTwx_OXWfBuEoLO_RicMBQ@mail.gmail.com>
-Subject: Re: aarch64 Kernel Panic Asynchronous SError Interrupt on large file
- IO
-To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_115452_747599_983B3D59 
-X-CRM114-Status: GOOD (  10.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190816_203941_598208_7AD9F73C 
+X-CRM114-Status: GOOD (  12.22  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (richterphilipp.pops[at]gmail.com)
+ provider (hdanton[at]sina.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,30 +61,85 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: heiko@sntech.de, catalin.marinas@arm.com, vicencb@gmail.com,
- linux-rockchip@lists.infradead.org, andre.przywara@arm.com,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Heiko Stuebner <heiko@sntech.de>, virtualization@lists.linux-foundation.org,
+ linux-tegra@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
+ Will Deacon <will@kernel.org>, Marek Szyprowski <m.szyprowski@samsung.com>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ linux-samsung-soc@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
+ iommu@lists.linux-foundation.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, linux-rockchip@lists.infradead.org,
+ Andy Gross <agross@kernel.org>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-s390@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, David Woodhouse <dwmw2@infradead.org>,
+ linux-kernel@vger.kernel.org, Rob Clark <robdclark@gmail.com>,
+ Kukjin Kim <kgene@kernel.org>, Robin Murphy <robin.murphy@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gRnJpLCAxNiBBdWcgMjAxOSBhdCAxNDowMSwgUm9iaW4gTXVycGh5IDxyb2Jpbi5tdXJwaHlA
-YXJtLmNvbT4gd3JvdGU6Cj4KPiBUaGlzIGRvZXMgc3RhcnQgdG8gc21lbGwgbGlrZSBzb21lIGlz
-c3VlIHdpdGggdGhhdCBwYXJ0aWN1bGFyIGFyZWEgb2YKPiBwaHlzaWNhbCBtZW1vcnkgLSBlaXRo
-ZXIgYmVjYXVzZSBpdCdzIGJlZW4gbWFya2VkIGFzIFNlY3VyZS1vbmx5IGJ5Cj4gZmlybXdhcmUg
-YW5kIHRoZSBjb250cm9sbGVyIGNvbmZpZ3VyZWQgdG8gYWJvcnQgTm9uLVNlY3VyZSBhY2Nlc3Nl
-cywgb3IKPiBwb3NzaWJseSBiZWNhdXNlIG9mIGFuIGFjdHVhbCBEUkFNIGZhaWx1cmUuIFRoZSBu
-ZXh0IHRoaW5nIEknZCBkbyBpcwo+IGhhdmUgYSBwbGF5IGFyb3VuZCB3aXRoIHRoZSAibWVtdGVz
-dD0uLi4iIGtlcm5lbCBwYXJhbWV0ZXIgdG8gc2VlIGlmCj4gdGhhdCBjYW4gY29uc2lzdGVudGx5
-IGZpbmQgYSBwcm9ibGVtLCBhbmQgc2VlIGlmIHRoZSBmaXJtd2FyZSBjaGFuZ2UKPiB0aGF0IEhl
-aWtvIHBvaW50ZWQgb3V0IG1ha2VzIGFueSBkaWZmZXJlbmNlLgo+Cj4gUm9iaW4uCgpUaGFuayB5
-b3UgdmVyeSBtdWNoIGZvciB0aGlzIGluc2lnaHQuCgpJIGNvbXBpbGVkIHUtYm9vdCB3aXRoIHRo
-ZSBwYXRjaCB0aGF0IEhlaWtvIFN0w7xibmVyIGxpbmtlZCB0byBhbmQKcmV3cm90ZSB0aGUgaW1h
-Z2VzIHRvIHRoZSB0YXJnZXQgbG9jYXRpb25zIGJ1dCB0aGlzIGRpZG4ndCByZXNvbHZlIHRoZQpw
-cm9ibGVtLgpJJ2xsIHRyeSBzb21lIG1lbXRlc3RzIGJ1dCB0aGUgc3RvY2sgQXJjaGxpbnV4IEFS
-TSBrZXJuZWwgZG9lcyBub3QKaGF2ZSBpdCBlbmFibGVkIHNvIEknbGwgbmVlZCB0byBjb21waWxl
-IGl0IGluIG15c2VsZiB0aGVuIEkgZ3Vlc3MuCgpSZWdhcmRzLApQaGlsaXBwIFJpY2h0ZXIKCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tj
-aGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+
+On Thu, 15 Aug 2019 12:09:41 +0100 Tom Murphy wrote:
+> 
+> Handle devices which defer their attach to the iommu in the dma-iommu api
+> 
+> Signed-off-by: Tom Murphy <murphyt7@tcd.ie>
+> ---
+>  drivers/iommu/dma-iommu.c | 27 ++++++++++++++++++++++++++-
+>  1 file changed, 26 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
+> index 2712fbc68b28..906b7fa14d3c 100644
+> --- a/drivers/iommu/dma-iommu.c
+> +++ b/drivers/iommu/dma-iommu.c
+> @@ -22,6 +22,7 @@
+>  #include <linux/pci.h>
+>  #include <linux/scatterlist.h>
+>  #include <linux/vmalloc.h>
+> +#include <linux/crash_dump.h>
+>  
+>  struct iommu_dma_msi_page {
+>  	struct list_head	list;
+> @@ -351,6 +352,21 @@ static int iommu_dma_init_domain(struct iommu_domain *domain, dma_addr_t base,
+>  	return iova_reserve_iommu_regions(dev, domain);
+>  }
+>  
+> +static int handle_deferred_device(struct device *dev,
+> +	struct iommu_domain *domain)
+> +{
+> +	const struct iommu_ops *ops = domain->ops;
+> +
+> +	if (!is_kdump_kernel())
+> +		return 0;
+> +
+> +	if (unlikely(ops->is_attach_deferred &&
+> +		ops->is_attach_deferred(domain, dev)))
+> +		return iommu_attach_device(domain, dev);
+> +
+> +	return 0;
+> +}
+> +
+>  /**
+>   * dma_info_to_prot - Translate DMA API directions and attributes to IOMMU API
+>   *                    page flags.
+> @@ -463,6 +479,9 @@ static dma_addr_t __iommu_dma_map(struct device *dev, phys_addr_t phys,
+>  	size_t iova_off = iova_offset(iovad, phys);
+>  	dma_addr_t iova;
+>  
+> +	if (unlikely(handle_deferred_device(dev, domain)))
+> +		return DMA_MAPPING_ERROR;
+> +
+>  	size = iova_align(iovad, size + iova_off);
+>  
+>  	iova = iommu_dma_alloc_iova(domain, size, dma_get_mask(dev), dev);
+
+iommu_map_atomic() is applied to __iommu_dma_map() in 2/5.
+Is it an atomic context currently given the mutex_lock() in
+iommu_attach_device()?
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
