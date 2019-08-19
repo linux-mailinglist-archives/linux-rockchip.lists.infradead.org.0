@@ -2,38 +2,44 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4EAB920ED
-	for <lists+linux-rockchip@lfdr.de>; Mon, 19 Aug 2019 12:07:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A678F9218E
+	for <lists+linux-rockchip@lfdr.de>; Mon, 19 Aug 2019 12:43:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5PgH0ma9Dh+BLQhgPIwE9TAN6U4NO90Ixkc9DUYTwdQ=; b=b0h5/C8haJqWrH
-	h8hIK8Uzv7f6EE1KLJi3YtPwxBeN2RHHywOB9tobKlYuuMiJfxZycoHAdz3BpwY6oNzZzRuswikN8
-	2lxpdPEcsYzOtc87pR/TkMsS2ZsjR4l0dIuNGvdBY4/k0FkygUWkIlXQvkDbc5KTo5JpadMViWh0j
-	qLiHg2vHWiPruWgzQV3A5pJ0Mmb76aQD0mPI2TjE/WUclyQFAkV/SSLiS/JOMG+6IlMpn5zXIVGQQ
-	9R9xrXe6xDt/HFX1GrRF99q8X6m7Izn3n4YE4otn7Wz5c+hJ8Ylt05rQyJbvBpI26uaMTz3fOeTE9
-	bzeM3i3PlrjbN2Q4sLJQ==;
+	List-Owner; bh=eTqqEyKttftBNWWyTGrkj6rSF5Rod+oMdNSrUovKlJk=; b=n3ABFHneJfIXDv
+	+mVUwDcXZK35Qx1sgejWgtgGwcCsxQCX0F8moykOV0KpDid8cvYC6OKPkUEKhYpDz5ApcfHQU4qje
+	hSUD5tZ46/B5bJnsNHclkRRf93ilmLsm6GcnMJ9RFTxneM7EQ6iOxMW4NcyPXBtoKTl0HDK46fwyA
+	s4/WwVkEMj/QUKnURo51wdDeba6aVmlGvrFdcHo1kdskuXq7Qu4p750Ff40NWCrYhZ9kRSR4GJm81
+	2iMuhJWtqZHEF7BGPF3Tdh7N+jQavu+XQtfR4pWDt4x3/bHS7zu+qpeghWf8kLEeDOj/XdE8g7jPF
+	qvHaDSwlRzLCjAkM0dAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzeZj-0001bA-Iv; Mon, 19 Aug 2019 10:07:44 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hzeZN-0001NB-0b; Mon, 19 Aug 2019 10:07:23 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 94060344;
- Mon, 19 Aug 2019 03:07:17 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 75E183F706; Mon, 19 Aug 2019 03:07:16 -0700 (PDT)
-Date: Mon, 19 Aug 2019 11:07:14 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Philipp Richter <richterphilipp.pops@gmail.com>
+	id 1hzf8W-0003jA-5C; Mon, 19 Aug 2019 10:43:40 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hzf8D-0003Ww-Lx; Mon, 19 Aug 2019 10:43:22 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E4BAE20851;
+ Mon, 19 Aug 2019 10:43:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1566211398;
+ bh=1wJV+xb9Ez/4oRMa7R7xHQ9hwQC45y71+pL3G2Fc0wc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=vRshSSntwwtAILYZuS/2q6Sxa4BFlFgxfJUeOihnjjZJDNdjzaVMojC3N42p70wh9
+ UiGvZwu+V2NlGDKfOLJcq9UnaaN6d2HFbTZB7g0HE2+F1kKBEut3GRRQ3CxTM0STgZ
+ cvbtxpvXSs6CxQGOWAvkuCTPxSIQw9nNSMZ78EK8=
+Date: Mon, 19 Aug 2019 11:43:14 +0100
+From: Will Deacon <will@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
 Subject: Re: aarch64 Kernel Panic Asynchronous SError Interrupt on large file
  IO
-Message-ID: <20190819100713.GA6117@arrakis.emea.arm.com>
+Message-ID: <20190819104313.fekk5cxxznoctvz5@willie-the-truck>
 References: <CA+Vb7hpe_USzdCuTBHd8V-t6YeQ0oApiBrvM-D43JuhJda6eyQ@mail.gmail.com>
  <20190815122151.bg7it6ptxwcn2vif@willie-the-truck>
  <8253b02c-0431-6b01-6af4-6132eb992925@arm.com>
@@ -42,20 +48,31 @@ References: <CA+Vb7hpe_USzdCuTBHd8V-t6YeQ0oApiBrvM-D43JuhJda6eyQ@mail.gmail.com>
  <2facb3cb-388a-87ee-4d87-717dd65825ae@arm.com>
  <CA+Vb7hpjX=yzVJj+BguvzwtyASCGUTwx_OXWfBuEoLO_RicMBQ@mail.gmail.com>
  <CA+Vb7hpXfavS0k47Z0o=SkswO_jMmv3HN7RsUMdx=AHjvrD7LA@mail.gmail.com>
+ <20190819100713.GA6117@arrakis.emea.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CA+Vb7hpXfavS0k47Z0o=SkswO_jMmv3HN7RsUMdx=AHjvrD7LA@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190819100713.GA6117@arrakis.emea.arm.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_030721_289059_888EE765 
-X-CRM114-Status: GOOD (  17.19  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190819_034321_764727_5C1C6C5B 
+X-CRM114-Status: GOOD (  15.41  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,123 +85,67 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: heiko@sntech.de, andre.przywara@arm.com,
- Robin Murphy <robin.murphy@arm.com>, vicencb@gmail.com,
- linux-rockchip@lists.infradead.org, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: heiko@sntech.de, andre.przywara@arm.com, vicencb@gmail.com,
+ linux-rockchip@lists.infradead.org,
+ Philipp Richter <richterphilipp.pops@gmail.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sat, Aug 17, 2019 at 03:12:41PM +0200, Philipp Richter wrote:
-> I added "memtest=4" to the kernel cmdline and I'm getting very quicky
-> a "Internal error: synchronous external abort" panic.
-[...]
-> [    0.000000] early_memtest: # of tests: 4
-> [    0.000000]   0x0000000000200000 - 0x0000000002080000 pattern aaaaaaaaaaaaaaaa
-> [    0.000000]   0x0000000003a95000 - 0x00000000f8400000 pattern aaaaaaaaaaaaaaaa
-> [    0.000000] Internal error: synchronous external abort: 96000210 [#1] SMP
+On Mon, Aug 19, 2019 at 11:07:14AM +0100, Catalin Marinas wrote:
+> On Sat, Aug 17, 2019 at 03:12:41PM +0200, Philipp Richter wrote:
+> > I added "memtest=4" to the kernel cmdline and I'm getting very quicky
+> > a "Internal error: synchronous external abort" panic.
+> [...]
+> > [    0.000000] early_memtest: # of tests: 4
+> > [    0.000000]   0x0000000000200000 - 0x0000000002080000 pattern aaaaaaaaaaaaaaaa
+> > [    0.000000]   0x0000000003a95000 - 0x00000000f8400000 pattern aaaaaaaaaaaaaaaa
+> > [    0.000000] Internal error: synchronous external abort: 96000210 [#1] SMP
+> 
+> At least it's a synchronous error ;).
+> 
+> > [    0.000000] pc : early_memtest+0x16c/0x23c
+> [...]
+> > [    0.000000] Code: d2800002 d2800001 eb0400bf 54000309 (f9400080)
+> 
+> decodecode says:
+> 
+>    0:   d2800002        mov     x2, #0x0                        // #0
+>    4:   d2800001        mov     x1, #0x0                        // #0
+>    8:   eb0400bf        cmp     x5, x4
+>    c:   54000309        b.ls    0x6c  // b.plast
+>   10:*  f9400080        ldr     x0, [x4]                <-- trapping instruction
+> 
+> I guess that's the read of *p in memtest(). Writing *p probably
+> generates asynchronous errors it you haven't seen it yet.
+> 
+> > Is my board completely broken ? :(
+> 
+> One possibility is that you don't have any memory where you think there
+> is, so the mapping just doesn't translate to any valid physical
+> location.
+> 
+> Can you add some printk(addr) in do_sea() to see if it always faults on
+> the same address?
 
-At least it's a synchronous error ;).
+Alternatively, just run it a few more times and see if the register dump
+changes. Currently we've got:
 
-> [    0.000000] pc : early_memtest+0x16c/0x23c
-[...]
-> [    0.000000] Code: d2800002 d2800001 eb0400bf 54000309 (f9400080)
+[    0.000000] x5 : ffff8000f8400000 x4 : ffff800008400000
+[    0.000000] x3 : 0000000008400000 x2 : 0000000000000000
+[    0.000000] x1 : 0000000000000000 x0 : aaaaaaaaaaaaaaaa
 
-decodecode says:
+so I'd guess that x3 is the faulting pa. The faulting (linear) VAs in the
+originl report were 0xffff800009c74aa8 and 0xffff800009c08390, which is
+still a way way off from this one :/
 
-   0:   d2800002        mov     x2, #0x0                        // #0
-   4:   d2800001        mov     x1, #0x0                        // #0
-   8:   eb0400bf        cmp     x5, x4
-   c:   54000309        b.ls    0x6c  // b.plast
-  10:*  f9400080        ldr     x0, [x4]                <-- trapping instruction
+Looking at the TRM for the rk3328, there's 4gb of ram starting at pa 0x0,
+so maybe some of it has been configured as secure or the memory controller
+hasn't been properly initialised?
 
-I guess that's the read of *p in memtest(). Writing *p probably
-generates asynchronous errors it you haven't seen it yet.
-
-> Is my board completely broken ? :(
-
-One possibility is that you don't have any memory where you think there
-is, so the mapping just doesn't translate to any valid physical
-location.
-
-Can you add some printk(addr) in do_sea() to see if it always faults on
-the same address?
-
-Another hack to hopefully track this down is to try to cope with such
-synchronous aborts and hopefully you won't hit an asynchronous one
-(SError). Quick hack below, only tested under kvm/qemu for booting and
-passing memtest:
-
------------8<-------------------------
-diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-index 2e6f42dc5a15..47efeedeccba 100644
---- a/arch/arm64/mm/fault.c
-+++ b/arch/arm64/mm/fault.c
-@@ -606,6 +606,9 @@ static int do_sea(unsigned long addr, unsigned int esr, struct pt_regs *regs)
- 	const struct fault_info *inf;
- 	void __user *siaddr;
- 
-+	if (!user_mode(regs) && fixup_exception(regs))
-+		return 0;
-+
- 	inf = esr_to_fault_info(esr);
- 
- 	/*
-diff --git a/mm/memtest.c b/mm/memtest.c
-index f53ace709ccd..e878aa6bd1aa 100644
---- a/mm/memtest.c
-+++ b/mm/memtest.c
-@@ -3,6 +3,7 @@
- #include <linux/types.h>
- #include <linux/init.h>
- #include <linux/memblock.h>
-+#include <linux/uaccess.h>
- 
- static u64 patterns[] __initdata = {
- 	/* The first entry has to be 0 to leave memtest with zeroed memory */
-@@ -38,6 +39,7 @@ static void __init memtest(u64 pattern, phys_addr_t start_phys, phys_addr_t size
- 	phys_addr_t start_bad, last_bad;
- 	phys_addr_t start_phys_aligned;
- 	const size_t incr = sizeof(pattern);
-+	mm_segment_t old_fs;
- 
- 	start_phys_aligned = ALIGN(start_phys, incr);
- 	start = __va(start_phys_aligned);
-@@ -45,12 +47,20 @@ static void __init memtest(u64 pattern, phys_addr_t start_phys, phys_addr_t size
- 	start_bad = 0;
- 	last_bad = 0;
- 
--	for (p = start; p < end; p++)
--		*p = pattern;
-+	old_fs = get_fs();
-+	set_fs(KERNEL_DS);
-+	for (p = start; p < end; p++) {
-+		u64 val;
-+		if (!get_user(val, p))
-+			*p = pattern;
-+	}
- 
- 	for (p = start; p < end; p++, start_phys_aligned += incr) {
--		if (*p == pattern)
--			continue;
-+		u64 val;
-+		if (!get_user(val, p)) {
-+			if (val == pattern)
-+				continue;
-+		}
- 		if (start_phys_aligned == last_bad + incr) {
- 			last_bad += incr;
- 			continue;
-@@ -61,6 +71,7 @@ static void __init memtest(u64 pattern, phys_addr_t start_phys, phys_addr_t size
- 	}
- 	if (start_bad)
- 		reserve_bad_mem(pattern, start_bad, last_bad + incr);
-+	set_fs(old_fs);
- }
- 
- static void __init do_one_pass(u64 pattern, phys_addr_t start, phys_addr_t end)
+Will
 
 _______________________________________________
 Linux-rockchip mailing list
