@@ -2,77 +2,120 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D54991A77
-	for <lists+linux-rockchip@lfdr.de>; Mon, 19 Aug 2019 02:30:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0DC59201E
+	for <lists+linux-rockchip@lfdr.de>; Mon, 19 Aug 2019 11:22:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=WmbOaAt8jKd2oTXMOsIyOCXKMogQNkqLVNcsS/8s2xY=; b=Obg2mdTGHjIqxSooG+VGO1XwI
-	GzYdvuz0qfk5h1O0Isp+JO9PB0jOL/KIaLfFf8V63c53xG9M54JHdNoop6DqoPcEeQ+TFmscz8WTw
-	zqL4N1qpitRa8uzCejslgGRWoFb7QlwHsIErqaK/3CApMzxZw8qsC8XjGnZZUZIUU38I31maSPgfB
-	DbjrZaw4FOqw8Oyn/wqhx7FQPzQHFDEJdTroMb5/AP1e/ahhRl4z/MjGWjtq+Kop4qV8FnbSm6Lmp
-	f74WPPBmX+Buy1xpMrnQuqA9GbEpub8FHiX+aNG8GpfpwPqWw+VmjaCO6rzqke4nXp8T2Cw3vx0rt
-	nU+gq//Hw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pIWVSiXaFQZ2cL9CUFxbctgS8fieQQ8F45CO3ddyEEM=; b=HlE6uau5ieG+wk
+	HMQ+H/U/A68o1Z57OUwtARhxIyBNioUrfdebURpZAMJBX8TDqABKcIDrE0n1qxqV5YltF7ORnug6O
+	qIOlX3J5+hcdo+JjhdEPTiLQ6HgHlktagbrGAsNnoU5a1gGtYrcrP/SQdL8W24AbS2aRKLJeFM0U2
+	a6jCf4meE5l7xhqaAn7M24GQb/yntXKG7PAuvrcAwcSGKaW7gQLKXfLPgtAQPWu8iR7YkmcMZR3EY
+	TVsvnp+/JB1YTsubJ3imSupQiuV0nGOFpVtWKZ7So/YEaBpewDSfo5UsWZqkCo8qAPHeJUb31AR9K
+	jDkcqkv8jLdjpoH5WvvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzVYe-0006YD-UK; Mon, 19 Aug 2019 00:30:01 +0000
-Received: from regular1.263xmail.com ([211.150.70.198])
+	id 1hzds9-0005iQ-8E; Mon, 19 Aug 2019 09:22:41 +0000
+Received: from mail-eopbgr750083.outbound.protection.outlook.com
+ ([40.107.75.83] helo=NAM02-BL2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzVYO-0006Ny-9P; Mon, 19 Aug 2019 00:29:45 +0000
-Received: from kever.yang?rock-chips.com (unknown [192.168.167.160])
- by regular1.263xmail.com (Postfix) with ESMTP id 0BCDD265;
- Mon, 19 Aug 2019 08:29:33 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from [172.16.12.9] (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P912T139738371585792S1566174570916231_; 
- Mon, 19 Aug 2019 08:29:32 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <360de786e17596abca2fbe6c887ae0e9>
-X-RL-SENDER: kever.yang@rock-chips.com
-X-SENDER: yk@rock-chips.com
-X-LOGIN-NAME: kever.yang@rock-chips.com
-X-FST-TO: linux-kernel@vger.kernel.org
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-Subject: Re: [PATCH v2] arm: dts: rockchip: fix vcc_host_5v regulator for usb3
- host
-To: Heiko Stuebner <heiko@sntech.de>
-References: <20190815081252.27405-1-kever.yang@rock-chips.com>
- <2932927.UJgUFA1Pmh@phil>
-From: Kever Yang <kever.yang@rock-chips.com>
-Message-ID: <208c56e1-bfe0-a982-927d-bdddc3116631@rock-chips.com>
-Date: Mon, 19 Aug 2019 08:29:31 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <2932927.UJgUFA1Pmh@phil>
+ id 1hzdqm-0004T2-NT; Mon, 19 Aug 2019 09:21:19 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=RVZ0UdH4bNYgadc6hyAZCDnJZyJvxSqiciZXADyUrrs/nN/XtHyTLQ48uKuZakytyeuvEu/xQ89262oodvnhYKAu8wljVvqTIZlR+Rz/Kcn7FuHuKmI23GoKNINTypY9bD0kA7EQ5Lg73CjIP2PUhz/R6MrmUF/EDerqXhkq5dQbiiFuMGz6psYvhrCCOGlM2U1cdMa34WUkE3Z+TCvY5MUku1mNSfIWZ+7akdrlbt7eZO7Zkx9pOqd6CM8VCYtTP0i2+jDiGijooSiUwwmwCCzisG6XJ/rwDlnY0U0W7A9XokvwdwRCaSOICpYt8WHT2kmGc+82GLdlNgWCBBgA+Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=r8UgBCauNgoyP9AgEAhPPV6B7Eku2U7GBDTtMeBKpcc=;
+ b=QEtAwI3Rle2zas6Pqj1qujKrMb/EwiDwQ0NPjbDLsi6yo+/Ja03bvFsIq/P5BRX0+Ot4h6G1RxZ3Ew7WDANM9lJ2Z+CamXbDyx1HhoftqbNtYwUvbOn9cDMRkjeDsBZPK/hFCHC+3r/gbPBV7FLqQCmLsqFw1uaYqPDnbmkgGZ50XIIz2ah0aUB/rVPw/eUeoIu7aOgEmuq5qpqIqodQHshtmVv6vXVAtTKCNXh1l9tgSp4MUJPQjAr84w+mkOvPnLAjIsnUFTFoYcbSWO3f1SDsY2c+3OE6fkL8awNRCUT3S315nWOeJ4Q+OuCSeyFUD+SwXZDZnQq6jqlqLVcYBQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
+ dkim=pass header.d=xilinx.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=r8UgBCauNgoyP9AgEAhPPV6B7Eku2U7GBDTtMeBKpcc=;
+ b=Fxh1F/9or7PuDt3MsWHELnJlcIa37VcFF4wJf9rKAhOm3BdtdTgYEodSijJBi+jFPAEN1/alhe5jmBsyMN7HRE1GyFnXmTEbc8iFRiEnzWjq0LaxTwfgRaUFv5ncrJWxVo+OnHNIckPtGlGoFxugO7F/5IAXOTH9cUvDia4lYyk=
+Received: from MN2PR02MB6029.namprd02.prod.outlook.com (10.255.7.10) by
+ MN2PR02MB7005.namprd02.prod.outlook.com (20.180.26.84) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2178.18; Mon, 19 Aug 2019 09:21:13 +0000
+Received: from MN2PR02MB6029.namprd02.prod.outlook.com
+ ([fe80::6930:d45:6895:4255]) by MN2PR02MB6029.namprd02.prod.outlook.com
+ ([fe80::6930:d45:6895:4255%4]) with mapi id 15.20.2178.018; Mon, 19 Aug 2019
+ 09:21:12 +0000
+From: Manish Narani <MNARANI@xilinx.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: RE: [PATCH v2 01/11] dt-bindings: mmc: arasan: Update documentation
+ for SD Card Clock
+Thread-Topic: [PATCH v2 01/11] dt-bindings: mmc: arasan: Update documentation
+ for SD Card Clock
+Thread-Index: AQHVL84QKtDrcydqmkObCTy1mFTFVabXUFgAgAB7vdCAA6ZJgIAnAKOw
+Date: Mon, 19 Aug 2019 09:21:12 +0000
+Message-ID: <MN2PR02MB60299EB8B83C4EA68A0F2B33C1A80@MN2PR02MB6029.namprd02.prod.outlook.com>
+References: <1561958991-21935-1-git-send-email-manish.narani@xilinx.com>
+ <1561958991-21935-2-git-send-email-manish.narani@xilinx.com>
+ <20190722215404.GA28292@bogus>
+ <MN2PR02MB602907616249FF19C1A737D8C1C70@MN2PR02MB6029.namprd02.prod.outlook.com>
+ <CAPDyKFostBKYipTkCsDbggsrux7w8BPqARx7fwRsL1XqEEX2NQ@mail.gmail.com>
+In-Reply-To: <CAPDyKFostBKYipTkCsDbggsrux7w8BPqARx7fwRsL1XqEEX2NQ@mail.gmail.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=MNARANI@xilinx.com; 
+x-originating-ip: [149.199.50.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 0bda46b1-bb8a-40cc-a9ea-08d724869460
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:MN2PR02MB7005; 
+x-ms-traffictypediagnostic: MN2PR02MB7005:
+x-ms-exchange-purlcount: 1
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <MN2PR02MB7005D4E4074702451130B173C1A80@MN2PR02MB7005.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 0134AD334F
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(366004)(39860400002)(136003)(346002)(376002)(13464003)(189003)(199004)(6116002)(478600001)(7696005)(3846002)(76176011)(4326008)(66446008)(33656002)(66946007)(256004)(186003)(14454004)(14444005)(76116006)(64756008)(66556008)(26005)(25786009)(53546011)(54906003)(6506007)(86362001)(446003)(11346002)(71200400001)(71190400001)(66476007)(316002)(476003)(99286004)(102836004)(486006)(52536014)(305945005)(74316002)(6916009)(15650500001)(7736002)(8936002)(8676002)(81166006)(81156014)(7416002)(229853002)(53936002)(6436002)(9686003)(66066001)(6306002)(6246003)(2906002)(5660300002)(55016002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR02MB7005;
+ H:MN2PR02MB6029.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: XNF/OHUuS6/Pnik883NIB9x3OfKeXDyL4OIMidZ/a7yRTX0s1GbdSulJ0XwECdKDAWgWLDotSVaEQlPmBtfh/5wkW24o41JnyIptie1u7HLUuGPBsaucxv7JVy8HKNpCAyQlSC6iaPQZ0vOrEQy9NMyjTL3oKtw+mAr7DbH0Re8cZFYENDV4qCaEtIGowrx8JNC164usR5uG2pwN3Y1fjWrBZ8REvtvk15ML6Ss6ZAEtu9zAAPn4lpHO+yc7jgjhB9qE/zcbat0SFL957l+YfYDIxhXwFwmbcthmhorstii/jwjdxNHO9JtKzBVevUw4HZRyUYTGonBxJaOVmjC9HBGcnzvN2u1TTBmP/1QiLf28+s9YY+j92ePzJQatHRK3QOWCGbWbR7/cw0pQy31k4FQyfwTvt/YpYTkm9YpTSic=
+MIME-Version: 1.0
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0bda46b1-bb8a-40cc-a9ea-08d724869460
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Aug 2019 09:21:12.8885 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 0xLgSs68oTX45JdQEtG7Cb8W0V8J4uMMiOXocPTfvhlIwORiIZnEw6Ow8RmBrFtj3ToXz4EaXEtw5Tm0m7wFJQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR02MB7005
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190818_172944_492288_8E921C21 
-X-CRM114-Status: GOOD (  20.14  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190819_022117_009141_3042B362 
+X-CRM114-Status: GOOD (  28.29  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.198 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
+ no trust [40.107.75.83 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.75.83 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,56 +128,156 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jonas Karlman <jonas@kwiboo.se>, Katsuhiro Suzuki <katsuhiro@katsuster.net>,
- linux-kernel@vger.kernel.org, Vasily Khoruzhick <anarsoul@gmail.com>,
- linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Tomohiro Mayama <parly-gh@iris.mystia.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "kernel@esmil.dk" <kernel@esmil.dk>,
+ "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jolly Shah <JOLLYS@xilinx.com>,
+ "tony.xie@rock-chips.com" <tony.xie@rock-chips.com>,
+ "philipp.tomsich@theobroma-systems.com"
+ <philipp.tomsich@theobroma-systems.com>, "heiko@sntech.de" <heiko@sntech.de>,
+ Rob Herring <robh@kernel.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Rajan Vaja <RAJANV@xilinx.com>, Michal Simek <michals@xilinx.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Nava kishore Manne <navam@xilinx.com>,
+ "scott.branden@broadcom.com" <scott.branden@broadcom.com>,
+ "ayaka@soulik.info" <ayaka@soulik.info>, "mdf@kernel.org" <mdf@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ "adrian.hunter@intel.com" <adrian.hunter@intel.com>,
+ "olof@lixom.net" <olof@lixom.net>,
+ "christoph.muellner@theobroma-systems.com"
+ <christoph.muellner@theobroma-systems.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sCgpPbiAyMDE5LzgvMTYg5LiL5Y2IODoyNCwgSGVpa28gU3R1ZWJuZXIgd3JvdGU6
-Cj4gSGkgS2V2ZXIsIFRMLAo+Cj4gW2FkZGVkIFRMIExpbSBmb3IgY2xhcmlmaWNhdGlvbl0KPgo+
-IEFtIERvbm5lcnN0YWcsIDE1LiBBdWd1c3QgMjAxOSwgMTA6MTI6NTIgQ0VTVCBzY2hyaWViIEtl
-dmVyIFlhbmc6Cj4+IEFjY29yZGluZyB0byByb2NrNjQgc2NoZW1ldGljIFYyIGFuZCBWMywgdGhl
-IFZDQ19IT1NUXzVWIG91dHB1dCBpcwo+PiBjb250cm9sbGVkIGJ5IFVTQl8yMF9IT1NUX0RSViwg
-d2hpY2ggaXMgdGhlIHNhbWUgYXMgVkNDX0hPU1QxXzVWLgo+IFRoZSB2MSBzY2hlbWF0aWNzIEkg
-aGF2ZSBkbyByZWZlcmVuY2UgdGhlIEdQSU8wX0EwIGFzIGNvbnRyb2xsaW5nIHRoaXMKPiBzdXBw
-bHksIHNvIHRoZSBiaWcgcXVlc3Rpb24gd291bGQgYmUgaG93IHRvIGhhbmRsZSB0aGUgZGlmZmVy
-ZW50IHZlcnNpb25zLgo+Cj4gQmVjYXVzZSBhZGRpbmcgdGhpcyB3b3VsZCBwcm9iYWJseSBicmVh
-ayB2MSBib2FyZHMgaW4gdGhpcyBmdW5jdGlvbi4KPgo+IEBUTDogd2hlcmUgdjEgYm9hcmRzIGFs
-c28gc29sZCBvciB3ZXJlIHRoZXkgb25seSB1c2VkIGR1cmluZyBkZXZlbG9wbWVudD8KCgpJIGhh
-dmUgY2hlY2sgdGhpcyB3aXRoIFRMIHdoZW4gSSBtYWtlIHRoaXMgcGF0Y2gsIHRoZSBWMSBoYXJk
-d2FyZSB3YXMgCm5ldmVyIHNvbGQgYW5kIG9ubHkgVjIvVjMKCmFyZSBhdmFpbGFibGUgb24gdGhl
-IG1hcmtldC4KCgpUaGFua3MsCgotIEtldmVyCgo+IElmIHRoaXMgd2VyZSB0aGUgY2FzZSwgd2Ug
-Y291bGQganVzdCBhcHBseSB0aGUgcGF0Y2gsIG5vdCBjYXJpbmcgYWJvdXQKPiB2MSBib2FyZHMs
-IGJ1dCBpZiB2MSBib2FyZHMgd2VyZSBhbHNvIHNvbGQgdG8gY3VzdG9tZXJzIHRoZXJlIHdvdWxk
-IGJlCj4gbW9yZSBvZiBhIHByb2JsZW0uCj4KPiBUaGFua3MKPiBIZWlrbwo+Cj4KPj4gU2lnbmVk
-LW9mZi1ieTogS2V2ZXIgWWFuZyA8a2V2ZXIueWFuZ0Byb2NrLWNoaXBzLmNvbT4KPj4gLS0tCj4+
-Cj4+IENoYW5nZXMgaW4gdjI6Cj4+IC0gcmVtb3ZlIGVuYWJsZS1hY3RpdmUtaGlnaCBwcm9wZXJ0
-eQo+Pgo+PiAgIGFyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzI4LXJvY2s2NC5kdHMg
-fCAxMSArKy0tLS0tLS0tLQo+PiAgIDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlvbnMoKyksIDkg
-ZGVsZXRpb25zKC0pCj4+Cj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tj
-aGlwL3JrMzMyOC1yb2NrNjQuZHRzIGIvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMz
-Mjgtcm9jazY0LmR0cwo+PiBpbmRleCA3Y2ZkNWNhNmNjODUuLjYyOTM2YjQzMmY5YSAxMDA2NDQK
-Pj4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzMjgtcm9jazY0LmR0cwo+
-PiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzMyOC1yb2NrNjQuZHRzCj4+
-IEBAIC0zNCwxMCArMzQsOSBAQAo+PiAgIAo+PiAgIAl2Y2NfaG9zdF81djogdmNjLWhvc3QtNXYt
-cmVndWxhdG9yIHsKPj4gICAJCWNvbXBhdGlibGUgPSAicmVndWxhdG9yLWZpeGVkIjsKPj4gLQkJ
-ZW5hYmxlLWFjdGl2ZS1oaWdoOwo+PiAtCQlncGlvID0gPCZncGlvMCBSS19QQTAgR1BJT19BQ1RJ
-VkVfSElHSD47Cj4+ICsJCWdwaW8gPSA8JmdwaW8wIFJLX1BBMiBHUElPX0FDVElWRV9MT1c+Owo+
-PiAgIAkJcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPj4gLQkJcGluY3RybC0wID0gPCZ1c2Iz
-MF9ob3N0X2Rydj47Cj4+ICsJCXBpbmN0cmwtMCA9IDwmdXNiMjBfaG9zdF9kcnY+Owo+PiAgIAkJ
-cmVndWxhdG9yLW5hbWUgPSAidmNjX2hvc3RfNXYiOwo+PiAgIAkJcmVndWxhdG9yLWFsd2F5cy1v
-bjsKPj4gICAJCXJlZ3VsYXRvci1ib290LW9uOwo+PiBAQCAtMzIwLDEyICszMTksNiBAQAo+PiAg
-IAkJCXJvY2tjaGlwLHBpbnMgPSA8MCBSS19QQTIgUktfRlVOQ19HUElPICZwY2ZnX3B1bGxfbm9u
-ZT47Cj4+ICAgCQl9Owo+PiAgIAl9Owo+PiAtCj4+IC0JdXNiMyB7Cj4+IC0JCXVzYjMwX2hvc3Rf
-ZHJ2OiB1c2IzMC1ob3N0LWRydiB7Cj4+IC0JCQlyb2NrY2hpcCxwaW5zID0gPDAgUktfUEEwIFJL
-X0ZVTkNfR1BJTyAmcGNmZ19wdWxsX25vbmU+Owo+PiAtCQl9Owo+PiAtCX07Cj4+ICAgfTsKPj4g
-ICAKPj4gICAmc2RtbWMgewo+Pgo+Cj4KPgo+CgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1y
-b2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+Hi Uffe,
+
+
+> -----Original Message-----
+> From: Ulf Hansson <ulf.hansson@linaro.org>
+> Sent: Thursday, July 25, 2019 6:31 PM
+> To: Manish Narani <MNARANI@xilinx.com>
+> Cc: Rob Herring <robh@kernel.org>; mark.rutland@arm.com;
+> heiko@sntech.de; Michal Simek <michals@xilinx.com>;
+> adrian.hunter@intel.com; christoph.muellner@theobroma-systems.com;
+> philipp.tomsich@theobroma-systems.com; viresh.kumar@linaro.org;
+> scott.branden@broadcom.com; ayaka@soulik.info; kernel@esmil.dk;
+> tony.xie@rock-chips.com; Rajan Vaja <RAJANV@xilinx.com>; Jolly Shah
+> <JOLLYS@xilinx.com>; Nava kishore Manne <navam@xilinx.com>;
+> mdf@kernel.org; olof@lixom.net; linux-mmc@vger.kernel.org;
+> devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-arm-
+> kernel@lists.infradead.org; linux-rockchip@lists.infradead.org
+> Subject: Re: [PATCH v2 01/11] dt-bindings: mmc: arasan: Update
+> documentation for SD Card Clock
+> 
+> On Tue, 23 Jul 2019 at 10:23, Manish Narani <MNARANI@xilinx.com> wrote:
+> >
+> > Hi Rob,
+> >
+> > Thanks a lot for the review!
+> >
+> >
+> > > -----Original Message-----
+> > > From: Rob Herring <robh@kernel.org>
+> > > Sent: Tuesday, July 23, 2019 3:24 AM
+> > > To: Manish Narani <MNARANI@xilinx.com>
+> > > Cc: ulf.hansson@linaro.org; mark.rutland@arm.com; heiko@sntech.de;
+> Michal
+> > > Simek <michals@xilinx.com>; adrian.hunter@intel.com;
+> > > christoph.muellner@theobroma-systems.com; philipp.tomsich@theobroma-
+> > > systems.com; viresh.kumar@linaro.org; scott.branden@broadcom.com;
+> > > ayaka@soulik.info; kernel@esmil.dk; tony.xie@rock-chips.com; Rajan Vaja
+> > > <RAJANV@xilinx.com>; Jolly Shah <JOLLYS@xilinx.com>; Nava kishore
+> Manne
+> > > <navam@xilinx.com>; mdf@kernel.org; olof@lixom.net; linux-
+> > > mmc@vger.kernel.org; devicetree@vger.kernel.org; linux-
+> > > kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
+> > > rockchip@lists.infradead.org
+> > > Subject: Re: [PATCH v2 01/11] dt-bindings: mmc: arasan: Update
+> > > documentation for SD Card Clock
+> > >
+> > > On Mon, Jul 01, 2019 at 10:59:41AM +0530, Manish Narani wrote:
+> > > > The clock handling is to be updated in the Arasan SDHCI. As the
+> > > > 'devm_clk_register' is deprecated in the clock framework, this needs to
+> > > > specify one more clock named 'clk_sdcard' to get the clock in the driver
+> > > > via 'devm_clk_get()'. This clock represents the clock from controller to
+> > > > the card.
+> > >
+> > > Please explain why in terms of the binding, not some driver calls.
+> > Okay.
+> >
+> > >
+> > >
+> > > > Signed-off-by: Manish Narani <manish.narani@xilinx.com>
+> > > > ---
+> > > >  Documentation/devicetree/bindings/mmc/arasan,sdhci.txt | 15
+> ++++++++++-
+> > > ----
+> > > >  1 file changed, 10 insertions(+), 5 deletions(-)
+> > > >
+> > > > diff --git a/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
+> > > b/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
+> > > > index 1edbb04..15c6397 100644
+> > > > --- a/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
+> > > > +++ b/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
+> > > > @@ -23,6 +23,10 @@ Required Properties:
+> > > >    - reg: From mmc bindings: Register location and length.
+> > > >    - clocks: From clock bindings: Handles to clock inputs.
+> > > >    - clock-names: From clock bindings: Tuple including "clk_xin" and
+> "clk_ahb"
+> > > > +            Apart from these two there is one more optional clock which
+> > > > +            is "clk_sdcard". This clock represents output clock from
+> > > > +            controller and card. This must be specified when #clock-cells
+> > > > +            is specified.
+> > > >    - interrupts: Interrupt specifier
+> > > >
+> > > >  Required Properties for "arasan,sdhci-5.1":
+> > > > @@ -36,9 +40,10 @@ Optional Properties:
+> > > >    - clock-output-names: If specified, this will be the name of the card
+> clock
+> > > >      which will be exposed by this device.  Required if #clock-cells is
+> > > >      specified.
+> > > > -  - #clock-cells: If specified this should be the value <0>.  With this
+> property
+> > > > -    in place we will export a clock representing the Card Clock.  This clock
+> > > > -    is expected to be consumed by our PHY.  You must also specify
+> > > > +  - #clock-cells: If specified this should be the value <0>. With this
+> > > > +    property in place we will export one clock representing the Card
+> > > > +    Clock. This clock is expected to be consumed by our PHY. You must
+> also
+> > > > +    specify
+> > >
+> > > specify what?
+> > I think this line was already there, I missed to correct it, Will update in v3.
+> >
+> > >
+> > > The 3rd clock input I assume? This statement means any existing users
+> > > with 2 clock inputs and #clock-cells are in error now. Is that correct?
+> > Yes, this is correct. So far there was only one vendor using '#clock-cells'
+> which is Rockchip. I have sent DT patch (02/11) for that also.
+> > Here this is needed as earlier implementation isn't correct as suggested by
+> Uffe. (https://lkml.org/lkml/2019/6/20/486) .
+> 
+> I am not sure how big of a problem the backwards compatible thingy
+> with DT is, in general we must not break it. What do you say Manish?
+
+Though I agree with Uffe on this, there is no other way from my understanding. Please suggest.
+
+> 
+> As a workaround, would it be possible to use
+> of_clk_get_from_provider() somehow to address the compatibility issue?
+
+For this to be used we have to parse 'clkspec' from the DT node and pass the same as an argument to this function. In this case also the DT node needs to be updated, which is same as we have done in this series.
+
+
+
+Thanks,
+Manish
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
