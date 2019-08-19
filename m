@@ -2,53 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC6CD9237E
-	for <lists+linux-rockchip@lfdr.de>; Mon, 19 Aug 2019 14:31:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8F2F923AA
+	for <lists+linux-rockchip@lfdr.de>; Mon, 19 Aug 2019 14:41:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZOgpan+PnHCFchuiN0XsDgidMWg5v2NF9VgZtTdDMNM=; b=cW735aMHSrOHH9d2S51VpZ4ou
-	vvGGcHvf5ARdPcdwvcbSXAxuCYRfQR8a+3n9NF9FKFt6fCH2RlgjufMh6aLUFObb3gBPgctVY3gR7
-	2yyog/N257h8MIfprZhCA2/2DRVuj04r1TPoaVxc9sBICg0tpLjVw7H1Mkc1QFZkd9aJWyntzdUK8
-	KfykZZ8ow2+zuHAv9eqUNBNFV5tQ43O+6Ws809+8r53M/7ygudknrZBhH92dXYRtDtdfo9alJRLZn
-	P/WGd1wj4e90c5+jJoNdVWIR9gQFdhfI+93tdtowON5XXZOIcCKIkw3Kdd4RBXML5zrpHHBGjJZrh
-	WItuAG07w==;
+	 bh=Cxi71VprStXsA+ZaJD6XfRJOzhfhi7dNGXTulLlMYCk=; b=kwzeMmy7xJwmdFb18O+OJAG78
+	Bh45W9U+29EIqo0oaVlAZ6n2twVXU3loPCgwc4lBSfB5K6aQUX9BnaRtVMgj8HwpD/Xhv7NqWNlcZ
+	yG9ZCj6MD9SeRHqfGT24nw2c37br6kQQTNd5+vPi/H6NfpV7bLrpxc2XQ26qkGoqQM0/aZ5ieE7t/
+	f0nRQZbApsRiw2ExEFCkAHd9ZiIldcAzXqSD2pEPjscdgHpjzJF5bZWZFR1FZ8oo/mNHaL8rkM0tN
+	u2DQR/KP7JHArkDEIstnITYWFieMExxDTvpNzeGugEvuFKoGzioBuStmIUUDnAPvPHwfy3gXW3EgS
+	zrn9uMIEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzgp9-0001pU-KL; Mon, 19 Aug 2019 12:31:47 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1hzgyU-0008IR-I8; Mon, 19 Aug 2019 12:41:26 +0000
+Received: from relay8-d.mail.gandi.net ([217.70.183.201])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzgp5-0001od-Ly
- for linux-rockchip@lists.infradead.org; Mon, 19 Aug 2019 12:31:46 +0000
+ id 1hzgyQ-00088U-Le
+ for linux-rockchip@lists.infradead.org; Mon, 19 Aug 2019 12:41:24 +0000
 X-Originating-IP: 86.250.200.211
 Received: from aptenodytes (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211])
  (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id D8119240008;
- Mon, 19 Aug 2019 12:31:31 +0000 (UTC)
-Date: Mon, 19 Aug 2019 14:31:31 +0200
+ by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 766A11BF20D;
+ Mon, 19 Aug 2019 12:41:10 +0000 (UTC)
+Date: Mon, 19 Aug 2019 14:41:10 +0200
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: Ezequiel Garcia <ezequiel@collabora.com>
-Subject: Re: [PATCH v7 06/11] media: cedrus: Cleanup control initialization
-Message-ID: <20190819123131.GA32182@aptenodytes>
+Subject: Re: [PATCH v7 02/11] media: uapi: h264: Rename pixel format
+Message-ID: <20190819124110.GB32182@aptenodytes>
 References: <20190816160132.7352-1-ezequiel@collabora.com>
- <20190816160132.7352-7-ezequiel@collabora.com>
+ <20190816160132.7352-3-ezequiel@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <20190816160132.7352-7-ezequiel@collabora.com>
+In-Reply-To: <20190816160132.7352-3-ezequiel@collabora.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_053144_020947_AB7E79EA 
-X-CRM114-Status: GOOD (  15.71  )
+X-CRM114-CacheID: sfid-20190819_054123_012227_FF5EA8F1 
+X-CRM114-Status: GOOD (  22.00  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
+ low trust [217.70.183.201 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -70,18 +70,18 @@ Cc: fbuergisser@chromium.org, kernel@collabora.com,
  Boris Brezillon <boris.brezillon@collabora.com>,
  Philipp Zabel <p.zabel@pengutronix.de>,
  Nicolas Dufresne <nicolas.dufresne@collabora.com>, linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============1322559591195842574=="
+Content-Type: multipart/mixed; boundary="===============3713529991534311176=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
 
---===============1322559591195842574==
+--===============3713529991534311176==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="k1lZvvs/B4yU6o8G"
+	protocol="application/pgp-signature"; boundary="aVD9QWMuhilNxW9f"
 Content-Disposition: inline
 
 
---k1lZvvs/B4yU6o8G
+--aVD9QWMuhilNxW9f
 Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
@@ -89,21 +89,50 @@ Content-Transfer-Encoding: quoted-printable
 Hi,
 
 On Fri 16 Aug 19, 13:01, Ezequiel Garcia wrote:
-> In order to introduce other controls, the control initialization
-> needs to support an initial struct v4l2_ctrl_control.
+> The V4L2_PIX_FMT_H264_SLICE_RAW name was originally suggested
+> because the pixel format would represent H264 slices without any
+> start code.
 >=20
-> While here, let's cleanup the control initialization,
-> removing unneeded fields.
+> However, as we will now introduce a start code menu control,
+> give the pixel format a more meaningful name, while it's
+> still early enough to do so.
 
-Thanks for the change!
+I definitely agree that SLICE_RAW is not the suffix we are looking for, but=
+ I'm
+not sure that _SLICE is self-describing given that we can operate either
+per-frame or per-slice, and _SLICE sort of implies the latter. Also, VP8 us=
+es
+_FRAME to clearly indicate that it operates per-frame.
 
-Acked-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+In addition, the _SLICE suffix is used by MPEG-2 in the stable API. Since we
+certainly want MPEG-2 to allow per-slice and per-frame decoding as well as
+H.264 and that the _SLICE format is specified to be the broken "concatenated
+slices" that cedrus expects, we probably want to use another suffix. This w=
+ay,
+we could deprecated MPEG2_SLICE and introduce a new format for MPEG-2 that =
+would
+have consistent naming with the other mpeg formats.
+
+One suggestion I had was to call it H264_PARSED (and apply this to MPEG-2 a=
+nd
+HEVC when similar controls to H.264 are set in place for them). I think Han=
+s had
+another suggestion for the name but I don't recall what it was at this poin=
+t.
+
+Either way, if this has to be some debate, we could perhaps take it off your
+series and stay with SLICE_RAW for now, as long as we do rename it before m=
+aking
+the API stable.
+
+What do you think?
 
 Cheers,
 
 Paul
 
 > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+> Tested-by: Philipp Zabel <p.zabel@pengutronix.de>
 > ---
 > Changes in v7:
 > * None.
@@ -114,122 +143,111 @@ Paul
 > Changes in v4:
 > * New patch.
 > ---
->  drivers/staging/media/sunxi/cedrus/cedrus.c | 45 +++++++++++----------
->  drivers/staging/media/sunxi/cedrus/cedrus.h |  3 +-
->  2 files changed, 25 insertions(+), 23 deletions(-)
+>  Documentation/media/uapi/v4l/pixfmt-compressed.rst | 4 ++--
+>  drivers/media/v4l2-core/v4l2-ioctl.c               | 2 +-
+>  drivers/staging/media/sunxi/cedrus/cedrus_dec.c    | 2 +-
+>  drivers/staging/media/sunxi/cedrus/cedrus_video.c  | 6 +++---
+>  include/media/h264-ctrls.h                         | 2 +-
+>  5 files changed, 8 insertions(+), 8 deletions(-)
 >=20
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.c b/drivers/stagin=
-g/media/sunxi/cedrus/cedrus.c
-> index 370937edfc14..7bdc413bf727 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus.c
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus.c
-> @@ -29,44 +29,51 @@
+> diff --git a/Documentation/media/uapi/v4l/pixfmt-compressed.rst b/Documen=
+tation/media/uapi/v4l/pixfmt-compressed.rst
+> index f52a7b67023d..9b65473a2288 100644
+> --- a/Documentation/media/uapi/v4l/pixfmt-compressed.rst
+> +++ b/Documentation/media/uapi/v4l/pixfmt-compressed.rst
+> @@ -52,9 +52,9 @@ Compressed Formats
+>        - ``V4L2_PIX_FMT_H264_MVC``
+>        - 'M264'
+>        - H264 MVC video elementary stream.
+> -    * .. _V4L2-PIX-FMT-H264-SLICE-RAW:
+> +    * .. _V4L2-PIX-FMT-H264-SLICE:
 > =20
->  static const struct cedrus_control cedrus_controls[] =3D {
->  	{
-> -		.id		=3D V4L2_CID_MPEG_VIDEO_MPEG2_SLICE_PARAMS,
-> -		.elem_size	=3D sizeof(struct v4l2_ctrl_mpeg2_slice_params),
-> +		.cfg =3D {
-> +			.id	=3D V4L2_CID_MPEG_VIDEO_MPEG2_SLICE_PARAMS,
-> +		},
->  		.codec		=3D CEDRUS_CODEC_MPEG2,
->  		.required	=3D true,
->  	},
->  	{
-> -		.id		=3D V4L2_CID_MPEG_VIDEO_MPEG2_QUANTIZATION,
-> -		.elem_size	=3D sizeof(struct v4l2_ctrl_mpeg2_quantization),
-> +		.cfg =3D {
-> +			.id	=3D V4L2_CID_MPEG_VIDEO_MPEG2_QUANTIZATION,
-> +		},
->  		.codec		=3D CEDRUS_CODEC_MPEG2,
->  		.required	=3D false,
->  	},
->  	{
-> -		.id		=3D V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS,
-> -		.elem_size	=3D sizeof(struct v4l2_ctrl_h264_decode_params),
-> +		.cfg =3D {
-> +			.id	=3D V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS,
-> +		},
->  		.codec		=3D CEDRUS_CODEC_H264,
->  		.required	=3D true,
->  	},
->  	{
-> -		.id		=3D V4L2_CID_MPEG_VIDEO_H264_SLICE_PARAMS,
-> -		.elem_size	=3D sizeof(struct v4l2_ctrl_h264_slice_params),
-> +		.cfg =3D {
-> +			.id	=3D V4L2_CID_MPEG_VIDEO_H264_SLICE_PARAMS,
-> +		},
->  		.codec		=3D CEDRUS_CODEC_H264,
->  		.required	=3D true,
->  	},
->  	{
-> -		.id		=3D V4L2_CID_MPEG_VIDEO_H264_SPS,
-> -		.elem_size	=3D sizeof(struct v4l2_ctrl_h264_sps),
-> +		.cfg =3D {
-> +			.id	=3D V4L2_CID_MPEG_VIDEO_H264_SPS,
-> +		},
->  		.codec		=3D CEDRUS_CODEC_H264,
->  		.required	=3D true,
->  	},
->  	{
-> -		.id		=3D V4L2_CID_MPEG_VIDEO_H264_PPS,
-> -		.elem_size	=3D sizeof(struct v4l2_ctrl_h264_pps),
-> +		.cfg =3D {
-> +			.id	=3D V4L2_CID_MPEG_VIDEO_H264_PPS,
-> +		},
->  		.codec		=3D CEDRUS_CODEC_H264,
->  		.required	=3D true,
->  	},
->  	{
-> -		.id		=3D V4L2_CID_MPEG_VIDEO_H264_SCALING_MATRIX,
-> -		.elem_size	=3D sizeof(struct v4l2_ctrl_h264_scaling_matrix),
-> +		.cfg =3D {
-> +			.id	=3D V4L2_CID_MPEG_VIDEO_H264_SCALING_MATRIX,
-> +		},
->  		.codec		=3D CEDRUS_CODEC_H264,
->  		.required	=3D true,
->  	},
-> @@ -106,12 +113,8 @@ static int cedrus_init_ctrls(struct cedrus_dev *dev,=
- struct cedrus_ctx *ctx)
->  		return -ENOMEM;
+> -      - ``V4L2_PIX_FMT_H264_SLICE_RAW``
+> +      - ``V4L2_PIX_FMT_H264_SLICE``
+>        - 'S264'
+>        - H264 parsed slice data, without the start code and as
+>  	extracted from the H264 bitstream.  This format is adapted for
+> diff --git a/drivers/media/v4l2-core/v4l2-ioctl.c b/drivers/media/v4l2-co=
+re/v4l2-ioctl.c
+> index bb5b4926538a..39f10621c91b 100644
+> --- a/drivers/media/v4l2-core/v4l2-ioctl.c
+> +++ b/drivers/media/v4l2-core/v4l2-ioctl.c
+> @@ -1343,7 +1343,7 @@ static void v4l_fill_fmtdesc(struct v4l2_fmtdesc *f=
+mt)
+>  		case V4L2_PIX_FMT_H264:		descr =3D "H.264"; break;
+>  		case V4L2_PIX_FMT_H264_NO_SC:	descr =3D "H.264 (No Start Codes)"; brea=
+k;
+>  		case V4L2_PIX_FMT_H264_MVC:	descr =3D "H.264 MVC"; break;
+> -		case V4L2_PIX_FMT_H264_SLICE_RAW:	descr =3D "H.264 Parsed Slice Data";=
+ break;
+> +		case V4L2_PIX_FMT_H264_SLICE:	descr =3D "H.264 Parsed Slice Data"; bre=
+ak;
+>  		case V4L2_PIX_FMT_H263:		descr =3D "H.263"; break;
+>  		case V4L2_PIX_FMT_MPEG1:	descr =3D "MPEG-1 ES"; break;
+>  		case V4L2_PIX_FMT_MPEG2:	descr =3D "MPEG-2 ES"; break;
+> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c b/drivers/st=
+aging/media/sunxi/cedrus/cedrus_dec.c
+> index bdad87eb9d79..56ca4c9ad01c 100644
+> --- a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
+> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
+> @@ -46,7 +46,7 @@ void cedrus_device_run(void *priv)
+>  			V4L2_CID_MPEG_VIDEO_MPEG2_QUANTIZATION);
+>  		break;
 > =20
->  	for (i =3D 0; i < CEDRUS_CONTROLS_COUNT; i++) {
-> -		struct v4l2_ctrl_config cfg =3D {};
-> -
-> -		cfg.elem_size =3D cedrus_controls[i].elem_size;
-> -		cfg.id =3D cedrus_controls[i].id;
-> -
-> -		ctrl =3D v4l2_ctrl_new_custom(hdl, &cfg, NULL);
-> +		ctrl =3D v4l2_ctrl_new_custom(hdl, &cedrus_controls[i].cfg,
-> +					    NULL);
->  		if (hdl->error) {
->  			v4l2_err(&dev->v4l2_dev,
->  				 "Failed to create new custom control\n");
-> @@ -178,7 +181,7 @@ static int cedrus_request_validate(struct media_reque=
-st *req)
->  			continue;
+> -	case V4L2_PIX_FMT_H264_SLICE_RAW:
+> +	case V4L2_PIX_FMT_H264_SLICE:
+>  		run.h264.decode_params =3D cedrus_find_control_data(ctx,
+>  			V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS);
+>  		run.h264.pps =3D cedrus_find_control_data(ctx,
+> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_video.c b/drivers/=
+staging/media/sunxi/cedrus/cedrus_video.c
+> index 681dfe3367a6..eeee3efd247b 100644
+> --- a/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+> @@ -38,7 +38,7 @@ static struct cedrus_format cedrus_formats[] =3D {
+>  		.directions	=3D CEDRUS_DECODE_SRC,
+>  	},
+>  	{
+> -		.pixelformat	=3D V4L2_PIX_FMT_H264_SLICE_RAW,
+> +		.pixelformat	=3D V4L2_PIX_FMT_H264_SLICE,
+>  		.directions	=3D CEDRUS_DECODE_SRC,
+>  	},
+>  	{
+> @@ -104,7 +104,7 @@ static void cedrus_prepare_format(struct v4l2_pix_for=
+mat *pix_fmt)
 > =20
->  		ctrl_test =3D v4l2_ctrl_request_hdl_ctrl_find(hdl,
-> -							    cedrus_controls[i].id);
-> +							    cedrus_controls[i].cfg.id);
->  		if (!ctrl_test) {
->  			v4l2_info(&ctx->dev->v4l2_dev,
->  				  "Missing required codec control\n");
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.h b/drivers/stagin=
-g/media/sunxi/cedrus/cedrus.h
-> index d8e6777e5e27..2f017a651848 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus.h
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus.h
-> @@ -49,8 +49,7 @@ enum cedrus_h264_pic_type {
->  };
+>  	switch (pix_fmt->pixelformat) {
+>  	case V4L2_PIX_FMT_MPEG2_SLICE:
+> -	case V4L2_PIX_FMT_H264_SLICE_RAW:
+> +	case V4L2_PIX_FMT_H264_SLICE:
+>  		/* Zero bytes per line for encoded source. */
+>  		bytesperline =3D 0;
 > =20
->  struct cedrus_control {
-> -	u32			id;
-> -	u32			elem_size;
-> +	struct v4l2_ctrl_config cfg;
->  	enum cedrus_codec	codec;
->  	unsigned char		required:1;
->  };
+> @@ -449,7 +449,7 @@ static int cedrus_start_streaming(struct vb2_queue *v=
+q, unsigned int count)
+>  		ctx->current_codec =3D CEDRUS_CODEC_MPEG2;
+>  		break;
+> =20
+> -	case V4L2_PIX_FMT_H264_SLICE_RAW:
+> +	case V4L2_PIX_FMT_H264_SLICE:
+>  		ctx->current_codec =3D CEDRUS_CODEC_H264;
+>  		break;
+> =20
+> diff --git a/include/media/h264-ctrls.h b/include/media/h264-ctrls.h
+> index e1404d78d6ff..6160a69c0143 100644
+> --- a/include/media/h264-ctrls.h
+> +++ b/include/media/h264-ctrls.h
+> @@ -14,7 +14,7 @@
+>  #include <linux/videodev2.h>
+> =20
+>  /* Our pixel format isn't stable at the moment */
+> -#define V4L2_PIX_FMT_H264_SLICE_RAW v4l2_fourcc('S', '2', '6', '4') /* H=
+264 parsed slices */
+> +#define V4L2_PIX_FMT_H264_SLICE v4l2_fourcc('S', '2', '6', '4') /* H264 =
+parsed slices */
+> =20
+>  /*
+>   * This is put insanely high to avoid conflicting with controls that
 > --=20
 > 2.22.0
 >=20
@@ -239,25 +257,25 @@ Paul Kocialkowski, Bootlin
 Embedded Linux and kernel engineering
 https://bootlin.com
 
---k1lZvvs/B4yU6o8G
+--aVD9QWMuhilNxW9f
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl1alqMACgkQ3cLmz3+f
-v9FHGgf9GLCQ3HMQRLLRzQ23YG4MhNKPyvS67MXgy+nC7SUk4wllp+NwI9uTGkXZ
-my2QXgKSmJZOZL5D6SMa2IRMbfebAUfRcosZSjsu9HBheoMnXnRst06mSaQd+Q0H
-KoaHiAL65KKGaiWPgkMqVpr1mpJv6qaJ5BpFa+IRqKKPXxfn70CG7A7odiyEzAVN
-oFe0Ai8iiHlhw7dCL3vxcotf4radt8PivRBp8jRwXtTv54XV1TrYDjRysMCwzmZl
-pTSS8ioM8QwSyxjDzH45kDFXQH3Hxh4iIUTh1SYAfxUNSWRieaWhN3BGIJ63It1h
-3Lgr7cpxBlH/5+y4H35NpZmqgSPLNQ==
-=C07M
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl1amOYACgkQ3cLmz3+f
+v9FbNQf9FUsvvX+rt+98RlG0Ufj+V8MrfHqu/bM2WO7ayPUDT7qm1sC46F8uurVU
+iGLjgEYLkkJMYEWcEKGspv/C79AwlOtZtDQCKbpcfg+S7G7xG+JJuQhHqg6JXqGn
+Js09sHFePUbZlvD8kDs/GKaTOAa4UmtzWk6Wjw30FkCWvG93h7mDJ8IgZ3XQsOnj
+vtV7VBddAefYDT3/JnvbmqWCb5r52lzDBISdCTk7Z0bxrxXpV4DstLkO6zgGtBo0
+OnXdm/HmzHkZQ27pkA8MpSQrc4Q+W88xudpKCSksV1fTyzacP2sC+DIKjBgMB1DN
+60LEflf4vNzYPRNDD1UBf/iceHmJng==
+=R5eV
 -----END PGP SIGNATURE-----
 
---k1lZvvs/B4yU6o8G--
+--aVD9QWMuhilNxW9f--
 
 
---===============1322559591195842574==
+--===============3713529991534311176==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -268,5 +286,5 @@ Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
---===============1322559591195842574==--
+--===============3713529991534311176==--
 
