@@ -2,100 +2,89 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67A71981D1
-	for <lists+linux-rockchip@lfdr.de>; Wed, 21 Aug 2019 19:54:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7FA4983CB
+	for <lists+linux-rockchip@lfdr.de>; Wed, 21 Aug 2019 20:59:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RsLdQMgj7C3/GYQnwf0sPkZRW2cp8sajxNcK4LahSwM=; b=Ne3vKbU8UPCubs
-	uqbOsrL5b8qQQ63nuAaUPPEHjf2ACTn+p8/A/RoAHySy+Z/wINB6H6g5yg0egBDzm+QswAEAhyyMl
-	kUdicH7IN8xi6cX1r5XpPxG5N6Lm8yBlwkpvVBLrszxXTSWZ4kbboZmMBIz8PJ5lUCAiLpMmXVACh
-	yE3k4+dLGPbysg1h6zSp3JO7i4ambq+UG8EcvH/LpTSqzuj+0FFVknitPhWaByKxtkIBAkhurX0yf
-	T2CWzuaDfTKo2v2y6O9QYQLwB+rH9IC8aScnJ1gs0XsqfyeG/7vjnddwvx+8mVREXnvX4IrGdXcVq
-	G8Ok4pB0BPPtq98dN7aA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p46ohZTtq6YVZykr17nORNKCSg25PDN523lSpQLH+GY=; b=RfjL0/WsbqIIuT
+	k/ZwRIGi578zCexKdf59wANzweJKJz11cs9GAiC+e2R6r1/2Mz0qcLZC9g+1l+qqVzzjwssVxJ7EC
+	P93N0ij86OZ+Lp3ot4DoUbM4tFIzvl/2lZChbPJbXW3PHKhW9Lhx+TcupYW7yjD4SgVy/t5z2O+qJ
+	7sUdKQDQIQrblan2JHd0pydbUACjRIoAS+IQFqQlMKLdw4YBflIPE9GCVWeHtYdIjM7pRMYAI0t8d
+	Ahx/cD9puCihUdgfm/k/pwI5UEO5ebvAWuvhCJUTEZ8EnNQWwBpYZNTZYpj9NSS0EPpknTijUQ3Aj
+	d+yiSNYsDcjKY2fB0wyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0Uom-00046R-Ei; Wed, 21 Aug 2019 17:54:44 +0000
-Received: from mail-oln040092065090.outbound.protection.outlook.com
- ([40.92.65.90] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1i0Vpl-0003uL-DY; Wed, 21 Aug 2019 18:59:49 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0Uoj-000462-KF; Wed, 21 Aug 2019 17:54:42 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BwLj7SIEAPRBvxxzjsjEqMlgslqDfTd6mvM6kWaBfMuALkRhDzQXHG8R2+sdtlsWzTZl+rfDOwonOZfRj6/sviqtspby8XEklusfhPCpKXxhM06O9sO0N7eMnnISdtG/4xN5ePfwAtNryGaSNgI1SOTp+4mmtnqt/gT6hGbftOXXy1MvGZBOBATJxrFiBGS7Eps6aM6QEWrP/vhzx2cVCv9S42Ydy+/m67G95UKSqtwntuwM+u2Q7wUiIAS8Wvv+OsNcCbTM0GYng1Rc9ITkF0Xyyy/re4vI635SuQ8xd0zNtq7lTPvn+XnVRhGPooqe80ZihATtvzlxi5GKDG1yjw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2C9CDOUkw5AUgGLevr93sIeG2zpXiizo6oJblli579c=;
- b=EMpAD0dTHaEXxyfk6VH+uKi/pN5oJ4nEWu9ZXu+MySFsZEkvmXduImrbIrKdZ+XnRDqQb9JxqtQw8Vvm/4bH1qkIcG7KnM6DVOUFJHe63qP4dvSoO1gf0NAkrZXQ1tspmRukS1mpKRHrgc6DInxiBMvsF2MZUwvikTBn/YneaC8NLaI0FOUGKtdnXkL4H4DUqEkrjjolr8lNOGTg7pawO9nGYd655s+RatBb8ao/gPloHqEB3LGOBXPco2XAClQRqYo5XhrtG3ptvpZIZHG2vnSMi65xmedip3LBeoWIVDTP/vkkeNTokxwmzQboKud4/4WuyH3LdE4UE+MezfFORQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-Received: from DB5EUR01FT062.eop-EUR01.prod.protection.outlook.com
- (10.152.4.57) by DB5EUR01HT118.eop-EUR01.prod.protection.outlook.com
- (10.152.5.110) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2199.13; Wed, 21 Aug
- 2019 17:54:38 +0000
-Received: from HE1PR06MB4011.eurprd06.prod.outlook.com (10.152.4.57) by
- DB5EUR01FT062.mail.protection.outlook.com (10.152.5.167) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.20.2178.16 via Frontend Transport; Wed, 21 Aug 2019 17:54:38 +0000
-Received: from HE1PR06MB4011.eurprd06.prod.outlook.com
- ([fe80::a0ba:e766:2a23:2088]) by HE1PR06MB4011.eurprd06.prod.outlook.com
- ([fe80::a0ba:e766:2a23:2088%3]) with mapi id 15.20.2178.020; Wed, 21 Aug 2019
- 17:54:38 +0000
-From: Jonas Karlman <jonas@kwiboo.se>
+ id 1i0VpY-0003id-OK
+ for linux-rockchip@lists.infradead.org; Wed, 21 Aug 2019 18:59:39 +0000
+Received: by mail-pg1-x544.google.com with SMTP id p3so1836883pgb.9
+ for <linux-rockchip@lists.infradead.org>; Wed, 21 Aug 2019 11:59:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=mK1H0BvZsgTtsN1s5a6lp4IM3J/uRRiK2PoPe1e2FBo=;
+ b=QgfpK50JA0eIc4O+SUBfw4lElixOn+KQxHu2zfLfPhj1We5aBoVJjf+8aaw4BE4d1W
+ +M3acVRkCaqLRcIEUW2Rr6upzYiZxPEG0bVknYlce2/PENpcsrEJhAbNOFSB4yNdHBTN
+ BmS7j86s5IqAIeqDC+qAbiYArBLkywVcJUdq83mzbQcACZWrTpf5d5pzOFDqXhOTDbZj
+ pXTrohVPu7jw/EXdjP6FhIEEO6J+4mqp+MXL9W0TBaMFPkV4sOha6DygB5FUFRrrL8MH
+ DN16kfcAfTjim7UKGaoaLogOVKmTnyO2C4ksm/EhLR7bzYIqJoB0/Y+eNyguZXbnN98o
+ +4Jw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=mK1H0BvZsgTtsN1s5a6lp4IM3J/uRRiK2PoPe1e2FBo=;
+ b=RudTBK79A8KJxCwbpZnUiQU04TfZpyhLv5TyqBQZaUDTvpfBo8/QRhjRCMwab6Hd2p
+ IRKXvUL82oFut2+GJ0T3+DOsdQPnli4FmzH0z8NIPOVDOnnaakLFz1n0ysCeusBuuS4o
+ WpgvE4wiECzyXs4HDl5UkSB+WlVzycIj+4W1rmvZ8JPOglydnl7nEkyFKR9OsWvJ9wxM
+ 560uy16lPgavg46ghqVlSup6SfNjCzcOIla/32pnh0E5+qkAqF5ij4PY0JaqVhZ//1Qc
+ FL7hSHjtYnf4fn18yRKTIVG9QAH/kl3R00x/uhwig3Kk/XWTd0FnhrQYE7ojOr+FVaFD
+ EvYQ==
+X-Gm-Message-State: APjAAAWzA5vGL//juoOetnZqhX5gjnSs36XU4v4js/wVf4uiKkOpkKzh
+ vxe4TjL4GmJDgAg7NMu4DODhrg==
+X-Google-Smtp-Source: APXvYqzmd1DBEeem+J6VymgZcgptitZGRrRZZYDED2sT/w52SP7MXWbGr5otGq7GgjxXnnaMfcHksA==
+X-Received: by 2002:a17:90b:f12:: with SMTP id
+ br18mr1368456pjb.127.1566413974806; 
+ Wed, 21 Aug 2019 11:59:34 -0700 (PDT)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.gmail.com with ESMTPSA id a10sm34416479pfl.159.2019.08.21.11.59.33
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 21 Aug 2019 11:59:34 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
 To: Heiko Stuebner <heiko@sntech.de>
-Subject: [RESEND PATCH] arm64: dts: rockchip: add rk3328 VPU node
-Thread-Topic: [RESEND PATCH] arm64: dts: rockchip: add rk3328 VPU node
-Thread-Index: AQHVWEmA6lvnoZnzvUCVSolIcGQxRQ==
-Date: Wed, 21 Aug 2019 17:54:38 +0000
-Message-ID: <HE1PR06MB4011C8496657B2C267A66327ACAA0@HE1PR06MB4011.eurprd06.prod.outlook.com>
-Accept-Language: sv-SE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: HE1P192CA0024.EURP192.PROD.OUTLOOK.COM (2603:10a6:3:fe::34)
- To HE1PR06MB4011.eurprd06.prod.outlook.com
- (2603:10a6:7:9c::32)
-x-incomingtopheadermarker: OriginalChecksum:8C597AB4DD1E128AEEBEA014BF3F741B080DA9DBA481AC4D4EF99701F697DA34;
- UpperCasedChecksum:DDD5D99217A2DE2D00F8877F259A52C93BE75208C2E67B43BC98D7A94D9CF410;
- SizeAsReceived:7564; Count:48
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.17.1
-x-tmn: [qMVoivsCgaVQsd1Esgpq1b+VOhhNa+a3]
-x-microsoft-original-message-id: <20190821175425.17132-1-jonas@kwiboo.se>
-x-ms-publictraffictype: Email
-x-incomingheadercount: 48
-x-eopattributedmessage: 0
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(5050001)(7020095)(20181119158)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031323274)(2017031324274)(2017031322404)(1601125500)(1603101475)(1701031045);
- SRVR:DB5EUR01HT118; 
-x-ms-traffictypediagnostic: DB5EUR01HT118:
-x-microsoft-antispam-message-info: GBcsDMx76XzvwoMP4GtlUNcLXJFEX3mAah4xw5woDVmuwKp04Hqo3vTzrMA/KxK1UQoRRF35RerY/BQcKXyUhiJGNQ17BackEswPkwQpMtBBb2+XWE/IYaJGm6kkZ5QUUmgSAqGaTbZsBU30ZrSxnM+pm8dbAGwGZjpOvjoGai0BN6qndomE2aoq3M3SFGlQ
-x-ms-exchange-transport-forked: True
+Subject: Re: CPUfreq fail on rk3399-firefly (was: next/master boot: 285 boots:
+ 16 failed, 264 passed with 3 offline, 1 untried/unknown,
+ 1 conflict (next-20190718))
+In-Reply-To: <2314814.WbdfqDVNqK@phil>
+References: <5d3057c8.1c69fb81.c6489.8ad2@mx.google.com>
+ <20190718162005.GF5761@sirena.org.uk> <7hmugdynmk.fsf@baylibre.com>
+ <2314814.WbdfqDVNqK@phil>
+Date: Wed, 21 Aug 2019 11:59:33 -0700
+Message-ID: <7hv9uq9wfe.fsf@baylibre.com>
 MIME-Version: 1.0
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-Network-Message-Id: bd19aa3b-26be-46c0-8ccf-08d72660a25d
-X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Aug 2019 17:54:38.2018 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Internet
-X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB5EUR01HT118
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_105441_676924_F2A88271 
-X-CRM114-Status: GOOD (  13.03  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190821_115936_801599_8497000B 
+X-CRM114-Status: GOOD (  24.26  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.65.90 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,71 +97,114 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Jonas Karlman <jonas@kwiboo.se>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
+ linux-next@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kernel-build-reports@lists.linaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This patch add a VPU device node for rk3328.
+Hi Heiko,
 
-Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
----
-It would be great if this can be considered for v5.4,
-related dt-bindings commit has been merged in media tree for v5.4.
+Heiko Stuebner <heiko@sntech.de> writes:
 
-Decoding using hantro driver has been tested on a Pine64 Rock64 RK3328 device.
----
- arch/arm64/boot/dts/rockchip/rk3328.dtsi | 14 +++++++++++++-
- 1 file changed, 13 insertions(+), 1 deletion(-)
+> Am Dienstag, 13. August 2019, 19:35:31 CEST schrieb Kevin Hilman:
+>> [ resent with correct addr for linux-rockchip list ]
+>> 
+>> Mark Brown <broonie@kernel.org> writes:
+>> 
+>> > On Thu, Jul 18, 2019 at 04:28:08AM -0700, kernelci.org bot wrote:
+>> >
+>> > Today's -next started failing to boot defconfig on rk3399-firefly:
+>> >
+>> >> arm64:
+>> >
+>> >>     defconfig:
+>> >>         gcc-8:
+>> >>             rk3399-firefly: 1 failed lab
+>> >
+>> > It hits a BUG() trying to set up cpufreq:
+>> >
+>> > [   87.381606] cpufreq: cpufreq_online: CPU0: Running at unlisted freq: 200000 KHz
+>> > [   87.393244] cpufreq: cpufreq_online: CPU0: Unlisted initial frequency changed to: 408000 KHz
+>> > [   87.469777] cpufreq: cpufreq_online: CPU4: Running at unlisted freq: 12000 KHz
+>> > [   87.488595] cpu cpu4: _generic_set_opp_clk_only: failed to set clock rate: -22
+>> > [   87.491881] cpufreq: __target_index: Failed to change cpu frequency: -22
+>> > [   87.495335] ------------[ cut here ]------------
+>> > [   87.496821] kernel BUG at drivers/cpufreq/cpufreq.c:1438!
+>> > [   87.498462] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
+>> >
+>> > I'm struggling to see anything relevant in the diff from yesterday, the
+>> > unlisted frequency warnings were there in the logs yesterday but no oops
+>> > and I'm not seeing any changes in cpufreq, clk or anything relevant
+>> > looking.
+>> >
+>> > Full bootlog and other info can be found here:
+>> >
+>> > 	https://kernelci.org/boot/id/5d302d8359b51498d049e983/
+>> 
+>> I confirm that disabling CPUfreq in the defconfig (CONFIG_CPU_FREQ=n)
+>> makes the firefly board start working again.
+>> 
+>> Note that the default defconfig enables the "performance" CPUfreq
+>> governor as the default governor, so during kernel boot, it will always
+>> switch to the max frequency.
+>> 
+>> For fun, I set the default governor to "userspace" so the kernel
+>> wouldn't make any OPP changes, and that leads to a slightly more
+>> informative splat[1]
+>> 
+>> There is still an OPP change happening because the detected OPP is not
+>> one that's listed in the table, so it tries to change to a listed OPP
+>> and fails in the bowels of clk_set_rate()
+>
+> Though I think that might only be a symptom as well.
+> Both the PLL setting code as well as the actual cpu-clock implementation
+> is unchanged since 2017 (and runs just fine on all boards in my farm).
+>
+> One source for these issues is often the regulator supplying the cpu
+> going haywire - aka the voltage not matching the opp.
+>
+> As in this error-case it's CPU4 being set, this would mean it might
+> be the big cluster supplied by the external syr825 (fan5355 clone)
+> that might act up. In the Firefly-rk3399 case this is even stranger.
+>
+> There is a discrepancy between the "fcs,suspend-voltage-selector"
+> between different bootloader versions (how the selection-pin is set up),
+> so the kernel might actually write his requested voltage to the wrong
+> register (not the one for actual voltage, but the second set used for
+> the suspend voltage).
+>
+> Did you by chance swap bootloaders at some point in recent past?
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-index e9fefd8a7e02..4a175fff2861 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-@@ -278,6 +278,7 @@
- 			};
- 			pd_vpu@RK3328_PD_VPU {
- 				reg = <RK3328_PD_VPU>;
-+				clocks = <&cru ACLK_VPU>, <&cru HCLK_VPU>;
- 			};
- 		};
+No, haven't touched bootloader since I initially setup the board.
+
+> I'd assume [2] might actually be the same issue last year, though
+> the CI-logs are not available anymore it seems.
+>
+> Could you try to set the vdd_cpu_b regulator to disabled, so that
+> cpufreq for this cluster defers and see what happens?
+
+Yes, this change[1] definitely makes things boot reliably again, so
+there's defintiely something a bit unstable with this regulator, at
+least on this firefly.
+
+Kevin
+
+[1]
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+index c706db0ee9ec..6b70bdcc3328 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+@@ -454,6 +454,7 @@
  
-@@ -596,6 +597,17 @@
- 		status = "disabled";
- 	};
- 
-+	vpu: video-codec@ff350000 {
-+		compatible = "rockchip,rk3328-vpu";
-+		reg = <0x0 0xff350000 0x0 0x800>;
-+		interrupts = <GIC_SPI 9 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "vdpu";
-+		clocks = <&cru ACLK_VPU>, <&cru HCLK_VPU>;
-+		clock-names = "aclk", "hclk";
-+		iommus = <&vpu_mmu>;
-+		power-domains = <&power RK3328_PD_VPU>;
-+	};
-+
- 	vpu_mmu: iommu@ff350800 {
- 		compatible = "rockchip,iommu";
- 		reg = <0x0 0xff350800 0x0 0x40>;
-@@ -604,7 +616,7 @@
- 		clocks = <&cru ACLK_VPU>, <&cru HCLK_VPU>;
- 		clock-names = "aclk", "iface";
- 		#iommu-cells = <0>;
--		status = "disabled";
-+		power-domains = <&power RK3328_PD_VPU>;
- 	};
- 
- 	rkvdec_mmu: iommu@ff360480 {
--- 
-2.17.1
-
+ 	vdd_cpu_b: regulator@40 {
+ 		compatible = "silergy,syr827";
++		status = "disabled";
+ 		reg = <0x40>;
+ 		fcs,suspend-voltage-selector = <0>;
+ 		regulator-name = "vdd_cpu_b";
 
 _______________________________________________
 Linux-rockchip mailing list
