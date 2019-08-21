@@ -2,93 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 400E19700D
-	for <lists+linux-rockchip@lfdr.de>; Wed, 21 Aug 2019 05:12:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97B7D97FF7
+	for <lists+linux-rockchip@lfdr.de>; Wed, 21 Aug 2019 18:24:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=sBGywyYhDx15PjBvZa52S5n2/REt22wKrVBKaPCNs2Y=; b=kBALpkYMaAX3zjEWFvplQB9vNq
-	1H11YtYLShP8QdWSomLpy8XmICwD4u0XDk/FzanKq1+aWCnpvIZSf1xqUKRdWFsunuy4gcG4DPV82
-	yoJfx4MRy5ypFkXszLexntrJIn+PMIXbYj07g2LMXeZ4mEpX1RUS050wu6XGNTeNe1MIwMnsC2enH
-	UR6buYnnOdG/RPGN787NhygsRRaaoKSUXGlHO+eOpLyawskF5YPMry1pfcpdzck6LzpkjHh+VCCLA
-	ef0i3F6sQIO4k7lOXJmpkZo+dbRF3HlrK+aLkWRIIfxO01+IS78GSPh6/1OgY6CEgcuk6cc++5l1Q
-	2c0A+zmg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LwJAZZVJepkW55vuN2mvkY/QDk0Fui7q1v4rec2U14w=; b=b/WA63SWqlq+8M
+	StNJaF5ogwdIp2wyWULGo115D2F6pBRgMRn2/aYqezUPJ9cab4JDCj5/3XQv/G+n6IUwdN4+752dx
+	c0nYmy1tmkEOdfTz9WFXUO3dZojN0uU7dBOIjb9dqlCzWM5hUELgRm74lhvgzs2k4NwvSd57mNgzX
+	jf7+8ML5O/kPHmIGQLUX+WC5LgKjL1Xf02+yiBjxSJ69hcAZLZMDlcbs/YOjFi29bxfwNLsANQs37
+	ig3SmrFypvvIHjsjAEbLZIe8MXcBWX4kJfT+6IWp7W4KRCmuBk9oVncWT6ERfKS8+/r56F06fIeVi
+	25oZdsRoUKmXNcvj7qOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0H2b-0000bu-2K; Wed, 21 Aug 2019 03:12:05 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1i0TPL-0005gv-Lx; Wed, 21 Aug 2019 16:24:23 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0H2J-0000Kk-Fe; Wed, 21 Aug 2019 03:11:48 +0000
-Received: by mail-pl1-x641.google.com with SMTP id gn20so521279plb.2;
- Tue, 20 Aug 2019 20:11:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=tfmgm4LIxxx9FZ0lj1a+BI18xaGv0RsnyVSEcXhiXYo=;
- b=pDy9bJxnBGKM1sKpIALE7tC8FeAmFQuMtZ1Bu4n2nDyhrPran3Ta7FiFeQQlQExPcj
- KHDchay8h9+7yByAof4eZ5E6HyepC035XGKBUhzGOsVtn6UCQXE8bugxFBJM2Jz6dj0u
- HeBCd/xxoFIYUbenH5WCe2vxFMlxAkpAFAd1Jl5ouinHaQTwsuCA4iNylUacmTinj0lf
- VVqxVwpF7L17EJSgJiPydsfetUrf88v3qNwFIO5y1wlCN7QJvemJ0e+WhIZencU8L2/O
- EZcidgGpdgytWToe7bwLRzaTRD6UKWzXWUJ8EDJqaBcbZVheT9wRiR2I3fgXOg7IYqCm
- FQ6w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :in-reply-to:references;
- bh=tfmgm4LIxxx9FZ0lj1a+BI18xaGv0RsnyVSEcXhiXYo=;
- b=ecEo7wKzCCpqh+eO6ltfSYFWsi5N5z2Ki1qsFZmPXwbAFn6ljZcs+2uhkD9zqu5Uue
- nRMxLU1/7BHapN2SVaPo175aUsZqHmIqe4Wsl+RKMDjMNPSscJlAQFyx2wEukv/OpJ2r
- M4+vQZXO7CFg6Lq22mUXQ+9jHcJaf1oTRAQdA9qSFrziUx/9AscLnsb2Nt6sjuMwcfGk
- Oe3GfbIv/Ul5YA4SdScoUW/w/JWcDhQHbqZBTfudV2kwAAciI050hwHwhCblyKQITj7U
- 84jW1KnOQWd8Id0f6x1cMFKByNi+kntshBCuRimcbsz+HaZn4H4xR7CUqAVtkC4pDHaF
- Ck4A==
-X-Gm-Message-State: APjAAAW0Kc/XYF8b87gdSqljOVgLGmeal25sRnqBQ2cXzJIBDgZKd94J
- AEgJX9OIjVt8VkB2Mpjas8XQL/AT
-X-Google-Smtp-Source: APXvYqywbluDozgwfegRgr7JEenjh7blVGNMTCIZBGNYicQyVNkH/LJvp5txNVm0x2yEXo8FlfHXtQ==
-X-Received: by 2002:a17:902:29e6:: with SMTP id
- h93mr10098249plb.39.1566357107026; 
- Tue, 20 Aug 2019 20:11:47 -0700 (PDT)
-Received: from localhost.localdomain ([103.29.142.67])
- by smtp.gmail.com with ESMTPSA id j15sm21540009pfe.3.2019.08.20.20.11.44
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 20 Aug 2019 20:11:46 -0700 (PDT)
-From: Kever Yang <kever.yang@rock-chips.com>
-To: heiko@sntech.de
-Subject: [PATCH v2 2/2] dt-bindings: arm: rockchip: remove reference to fennec
- board
-Date: Wed, 21 Aug 2019 11:11:24 +0800
-Message-Id: <20190821031124.17806-2-kever.yang@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190821031124.17806-1-kever.yang@rock-chips.com>
+ id 1i0TP5-0005W8-6K; Wed, 21 Aug 2019 16:24:08 +0000
+Received: from mail-qk1-f177.google.com (mail-qk1-f177.google.com
+ [209.85.222.177])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BBE0E233A0;
+ Wed, 21 Aug 2019 16:24:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1566404646;
+ bh=6vn5oS8HMSG7JMJf365FjEEzES/Bh/6N4hGyDrDNZn4=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=WNTHVH0obfAHqho0ZQCiPxVlUvoCcLkMmqX2sT240VqcVX7tZBoHJOKqXnS+WaEJM
+ DLeJFLdKciGAvKI9KVzs94AyUMnSTFNuOFvYp01DM3MgSt7PVo/ICvD9lbPO8Oydkm
+ WMp7LoOXwuPPxk4qG1IFtvFdhtua71JjuTRpM7WI=
+Received: by mail-qk1-f177.google.com with SMTP id w18so2370783qki.0;
+ Wed, 21 Aug 2019 09:24:06 -0700 (PDT)
+X-Gm-Message-State: APjAAAXQXjc1PupDSAhwX6vmVC+IaPFAmuwvYr5B59wtNYKpg6mPeFUM
+ aaflg13k43fBfepyMNLsUqRB/3iROvfGDKTn3Q==
+X-Google-Smtp-Source: APXvYqzQe60WO0Pk/hkQrXQ0DanP3ksbv6OcTJaNcrDWlHGnm64JYtW9XJ7EAZi/FJz1FSt53V60vbg804R7yTHVWfE=
+X-Received: by 2002:a37:a48e:: with SMTP id
+ n136mr33011507qke.223.1566404645998; 
+ Wed, 21 Aug 2019 09:24:05 -0700 (PDT)
+MIME-Version: 1.0
 References: <20190821031124.17806-1-kever.yang@rock-chips.com>
+ <20190821031124.17806-2-kever.yang@rock-chips.com>
+In-Reply-To: <20190821031124.17806-2-kever.yang@rock-chips.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Wed, 21 Aug 2019 11:23:54 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqJW0WG_cs3Y+Rt+DgO=uJg-ccf64qGXCfURviS5fdvHsw@mail.gmail.com>
+Message-ID: <CAL_JsqJW0WG_cs3Y+Rt+DgO=uJg-ccf64qGXCfURviS5fdvHsw@mail.gmail.com>
+Subject: Re: [PATCH v2 2/2] dt-bindings: arm: rockchip: remove reference to
+ fennec board
+To: Kever Yang <kever.yang@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_201147_527709_CF2D3FF4 
-X-CRM114-Status: UNSURE (   9.23  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190821_092407_250627_C8E5025F 
+X-CRM114-Status: GOOD (  11.04  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kever.yang[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,47 +87,33 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>, linux-kernel@vger.kernel.org,
- Akash Gajjar <Akash_Gajjar@mentor.com>, Kever Yang <kever.yang@rock-chips.com>,
- Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+ "heiko@sntech.de" <heiko@sntech.de>, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
+ Akash Gajjar <Akash_Gajjar@mentor.com>,
+ Douglas Anderson <dianders@chromium.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Jagan Teki <jagan@amarulasolutions.com>, Robin Murphy <robin.murphy@arm.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The rk3288 fennec board has been removed, remove the binding document at
-the same time.
+On Tue, Aug 20, 2019 at 10:11 PM Kever Yang <kever.yang@rock-chips.com> wrote:
+>
+> The rk3288 fennec board has been removed, remove the binding document at
+> the same time.
+>
+> Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
+> ---
+>
+> Changes in v2: None
+>
+>  Documentation/devicetree/bindings/arm/rockchip.yaml | 5 -----
+>  1 file changed, 5 deletions(-)
 
-Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
----
-
-Changes in v2: None
-
- Documentation/devicetree/bindings/arm/rockchip.yaml | 5 -----
- 1 file changed, 5 deletions(-)
-
-diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
-index 34865042f4e4..cc2f1c2d0cd0 100644
---- a/Documentation/devicetree/bindings/arm/rockchip.yaml
-+++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
-@@ -424,11 +424,6 @@ properties:
-               - rockchip,rk3288-evb-rk808
-           - const: rockchip,rk3288
- 
--      - description: Rockchip RK3288 Fennec
--        items:
--          - const: rockchip,rk3288-fennec
--          - const: rockchip,rk3288
--
-       - description: Rockchip RK3328 Evaluation board
-         items:
-           - const: rockchip,rk3328-evb
--- 
-2.17.1
-
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 Linux-rockchip mailing list
