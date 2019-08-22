@@ -2,88 +2,65 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B90BE99548
-	for <lists+linux-rockchip@lfdr.de>; Thu, 22 Aug 2019 15:39:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B8019956D
+	for <lists+linux-rockchip@lfdr.de>; Thu, 22 Aug 2019 15:48:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hi5f4xNmHIw/oIV576/lMB+mgqArmDuizMwmRozUgRk=; b=Ml4d37M6bheOQV
-	vHjbjeHBlG2+m/0ganMCLQLhiuPjRTFrW30k8TeQYp75yc7ViA/mTyrVtHBsENOwbzovBw01ZXlUT
-	FqSWOxWEIu835cwn7gHi/c+kx+my7RcY2KtNYcdhfXYMPf1F56CZz/EzHuiZpb3FhfBH3DlOtyU3f
-	nAG9JKFOyTl916hNpEaH1nNVr33UlODTDIWQo3G7L+PvS1fLJpZdLQXBTFRpvKPie1Md2osvJ2I8C
-	xq/HYhIT6UeDbigxQ3SLuMnHRuU0ezSarC33Up/ZPJGRn4im0cKS6jn2evL2xNRRPaKoVTjrsHhEp
-	F/95Tq5CdoUziiNe+DyQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jf7m2wXgsjeIBYLJ3ITyoqnlzfK9EI19AJAtBQk8iR4=; b=J3doaABaMith19
+	O4hhAY0Zx50fVDSsuBDHvfYJQ19J80VZrqhqdVP5OTmNBFahyIh3D+Q9f7VjNh2MMQs1IKEjMNeP+
+	rIB+yEbvfyejuoAFoPeJEBhEkg/1SAaOsYrstG68OBOHqhEBiUyBHfYKy9JcXLaBtpAZtNsQkMNAu
+	24Wdk9L4iB86lDzhW9RjvnlBtdK2Y4+jZqzUR1+udHoDxb8k6B41tn7gL84AIgh/90nq08Mv4NbN9
+	4ecXxDhEcUcTzTjteCqrQPSXsQ9HuQZ8c90WEVK6k7QFlCTP3xM4OVcAiHR7vzYJLi7l1P9S1mdiK
+	8Kfi7C93lWklamY50rkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0nJA-0006XT-2z; Thu, 22 Aug 2019 13:39:20 +0000
-Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
+	id 1i0nRw-00031Q-6H; Thu, 22 Aug 2019 13:48:24 +0000
+Received: from lb3-smtp-cloud8.xs4all.net ([194.109.24.29])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0nIt-0006L4-Q5
- for linux-rockchip@lists.infradead.org; Thu, 22 Aug 2019 13:39:05 +0000
-Received: by mail-ua1-x942.google.com with SMTP id j21so2001257uap.2
- for <linux-rockchip@lists.infradead.org>; Thu, 22 Aug 2019 06:39:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=FeL+2QSM5K1YLKKF/js9TmuXZpGlOsVDG+4zs7enb+s=;
- b=vcFXE6FvKpiU/zrPeYmswemc9N4V2PgJ6+b3JrTcb/leP+MyngmDkrXMX6fNCC6dqn
- 5U5DxhJ0+6trsoUFiL1UHaJoAtvD3avRnS5Jjn0hIWhxZH5BNh+UbEx7r03YoAl794Jw
- HR5w6Fc5AQ9DT3i4m4j2/UueQP7AxJY/ZOBZgowVNQz1pcUgPIDl6VPhzseEWNH2yhVL
- sFvrbBxAIf0ixOmb1AbOZTeD4bKcIaPo7/IS32eixFYAFFMtH0FSJExgG3ZVVpz5HtpK
- wpmlq/Au0mkNCg+tpVy6s1iBWLieOP1LhX0U0hAfS+Vy8qt+5L2lehHVNPiimzJsKJTU
- YaRA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=FeL+2QSM5K1YLKKF/js9TmuXZpGlOsVDG+4zs7enb+s=;
- b=i9DkSNcWgXfRTILWpXCK/ZRj3k2B6yIBRW0mu9wPrZ1NvNLf9Xk2m42LRtonCrfTDl
- qCdY7FCilBGqmSXYgxCw+gGNpJAeCSl5bQfGvqfcdNxRQGtAwIPgeTq+fvQ5GA2IRD33
- qN+2DOIK7IA/q5yZtiw4CMFXqhsk04y5HZ8aecr0xezm8ViIHKbO0+LRrmvZqmVU0R6M
- t6JWNvTcO1Nun0b64F07Gs2Psn9Qg36x784YCgTV/rsI9vkPbwQZQy4YReG79FkKhm4p
- wS+mWTTD+Cpwn9YM0xxbgsVf8qIv8iKSTjnDYbk114xT6nFDHAVclwXcHdoyfie5IP8u
- XeIg==
-X-Gm-Message-State: APjAAAVKSTxtsFIuxEUD+vg1gD5F/axKT0aio36HH/POr0zeCuaJ3idR
- Mmd2DOcydzeBKAk7AfEDUiaKbUv3Dssd5VWDsCi+mA==
-X-Google-Smtp-Source: APXvYqyNGgp4CW1Vx1Kr/v3sCAPsdONPj1D+yM9NJraECZoktBBfmsmh2N05UsLj8cJbC+xyyKQktBrLSJpWnqXuTU4=
-X-Received: by 2002:ab0:15e9:: with SMTP id j38mr5992611uae.19.1566481142313; 
- Thu, 22 Aug 2019 06:39:02 -0700 (PDT)
+ id 1i0nRl-0002of-2M
+ for linux-rockchip@lists.infradead.org; Thu, 22 Aug 2019 13:48:15 +0000
+Received: from [IPv6:2001:420:44c1:2579:b0e4:6356:4d43:d7f4]
+ ([IPv6:2001:420:44c1:2579:b0e4:6356:4d43:d7f4])
+ by smtp-cloud8.xs4all.net with ESMTPA
+ id 0nRTiiAMWDqPe0nRWi1gdG; Thu, 22 Aug 2019 15:48:03 +0200
+Subject: Re: [PATCH v7 02/11] media: uapi: h264: Rename pixel format
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+References: <20190816160132.7352-1-ezequiel@collabora.com>
+ <20190816160132.7352-3-ezequiel@collabora.com>
+ <20190819124110.GB32182@aptenodytes>
+ <e618bf01-3f82-ff06-1842-9d21a379d7ee@xs4all.nl>
+ <20190822115453.GA1627@aptenodytes>
+From: Hans Verkuil <hverkuil@xs4all.nl>
+Message-ID: <5a6432ce-6d90-9efa-9ae8-400b5ca1d653@xs4all.nl>
+Date: Thu, 22 Aug 2019 15:47:55 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.5.1
 MIME-Version: 1.0
-References: <1561958991-21935-1-git-send-email-manish.narani@xilinx.com>
- <1561958991-21935-2-git-send-email-manish.narani@xilinx.com>
- <20190722215404.GA28292@bogus>
- <MN2PR02MB602907616249FF19C1A737D8C1C70@MN2PR02MB6029.namprd02.prod.outlook.com>
- <CAPDyKFostBKYipTkCsDbggsrux7w8BPqARx7fwRsL1XqEEX2NQ@mail.gmail.com>
- <MN2PR02MB60299EB8B83C4EA68A0F2B33C1A80@MN2PR02MB6029.namprd02.prod.outlook.com>
-In-Reply-To: <MN2PR02MB60299EB8B83C4EA68A0F2B33C1A80@MN2PR02MB6029.namprd02.prod.outlook.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 22 Aug 2019 15:38:26 +0200
-Message-ID: <CAPDyKFqdLE7d9uz_KcpO0CihM+QsFyKbNsoDMoNLT2Qy_TmNdw@mail.gmail.com>
-Subject: Re: [PATCH v2 01/11] dt-bindings: mmc: arasan: Update documentation
- for SD Card Clock
-To: Manish Narani <MNARANI@xilinx.com>
+In-Reply-To: <20190822115453.GA1627@aptenodytes>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfN90gFJa94wKrozwaR9elXUOkr9EbpbLEzZm/VrVePmu8PbhEzS5BJj47dSUyxtznP9Dx9UriDr8J1zXVMhDA0evQqZl/HyW7NmzEGL7jiQOjSBqRJc+
+ iZL8m/8XN2/rlQ1rT6LWgcvmZCNKTWZOnySwpJZ9Q52Z0jc19gxpokYwbN7yoJ1d1qSdf747LSgI3+WLbcJsRly1hmxt4JzxT1eR9g7NOPoCu3XnLt0sk7Br
+ USK9DTn9m3vyOUm1F7XOnJZaiCBOVa+1LSAT6DHLV3Snb4c51aXeE74CNbXbyaUtgA7Gaq+JWmKXfK7uaJ5DAvh2SZRROqu1F08K3NDEqAhSOLqqN/W8dL6B
+ N3/TQ5L9RWtsr6xWtvNzYsD4SdB7MkGCcxr2dvBwM5Sqv4DcvliafJjOUkZUcG549kNR5fEO+wBRKE+RYAOSxFfGNlNof7Gue9df3rZTyArjuwBznrQNo4n7
+ mutaA16BPQ1jK7yJd6S4Tnn0YX/kn+hKgIo5FaGOA5HylyJI18ZpbFEgxVZpI9E0+2W7T99SGMTK65F/CxhQ1lvDPGyRolBgx0Sp2N9gjM9RMgjd2WMQUMEa
+ +KOaDdc7MAwZGcLNzXZx8n6S0DXy228tzUGZTuz0gbJH8xFc/YX56qB6/I3wilkILMfk6UMd0CxZAOqxw7in8Jhlsk6x46Zc0cgR9JcpKiq1E8vdEx07Kzxq
+ OOT4IXHFtIYYWJBDQr7D0o2Ev9LPR+gFOjR/QosW0Dnv40eg1b3WEg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_063903_878177_0CA7F023 
-X-CRM114-Status: GOOD (  23.94  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190822_064813_427849_AC2D6A38 
+X-CRM114-Status: GOOD (  28.34  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.29 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,104 +73,231 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "kernel@esmil.dk" <kernel@esmil.dk>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jolly Shah <JOLLYS@xilinx.com>,
- "tony.xie@rock-chips.com" <tony.xie@rock-chips.com>,
- "philipp.tomsich@theobroma-systems.com"
- <philipp.tomsich@theobroma-systems.com>, "heiko@sntech.de" <heiko@sntech.de>,
- Rob Herring <robh@kernel.org>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Rajan Vaja <RAJANV@xilinx.com>, Michal Simek <michals@xilinx.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Nava kishore Manne <navam@xilinx.com>,
- "scott.branden@broadcom.com" <scott.branden@broadcom.com>,
- "ayaka@soulik.info" <ayaka@soulik.info>, "mdf@kernel.org" <mdf@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- "adrian.hunter@intel.com" <adrian.hunter@intel.com>,
- "olof@lixom.net" <olof@lixom.net>,
- "christoph.muellner@theobroma-systems.com"
- <christoph.muellner@theobroma-systems.com>
+Cc: fbuergisser@chromium.org, kernel@collabora.com,
+ Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>, linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Nicolas Dufresne <nicolas.dufresne@collabora.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-[...]
+On 8/22/19 1:54 PM, Paul Kocialkowski wrote:
+> Hi,
+> 
+> On Mon 19 Aug 19, 17:53, Hans Verkuil wrote:
+>> On 8/19/19 2:41 PM, Paul Kocialkowski wrote:
+>>> Hi,
+>>>
+>>> On Fri 16 Aug 19, 13:01, Ezequiel Garcia wrote:
+>>>> The V4L2_PIX_FMT_H264_SLICE_RAW name was originally suggested
+>>>> because the pixel format would represent H264 slices without any
+>>>> start code.
+>>>>
+>>>> However, as we will now introduce a start code menu control,
+>>>> give the pixel format a more meaningful name, while it's
+>>>> still early enough to do so.
+>>>
+>>> I definitely agree that SLICE_RAW is not the suffix we are looking for, but I'm
+>>> not sure that _SLICE is self-describing given that we can operate either
+>>> per-frame or per-slice, and _SLICE sort of implies the latter. Also, VP8 uses
+>>> _FRAME to clearly indicate that it operates per-frame.
+>>
+>> Well, VP8 doesn't support slices at all.
+>>
+>>>
+>>> In addition, the _SLICE suffix is used by MPEG-2 in the stable API. Since we
+>>
+>> Regarding MPEG-2: while it has a concept of slices, it is my understanding
+>> that you never process slices separately, but only full pictures. I may be
+>> wrong here.
+> 
+> I don't think that is the case since ffmpeg clearly implements decoding on a
+> per-slice basis (mpeg_decode_slice).
+> 
+> Information is also passed on a per-slice basis to VAAPI 
+> (vaapi_mpeg2_decode_slice) with a distinct data buffer and slice parameter
+> buffer for each slice. Among other things, it contains the vertical and
+> horizontal positions for the slice, which we can set in the hardware.
+> 
+>>> certainly want MPEG-2 to allow per-slice and per-frame decoding as well as
+>>> H.264 and that the _SLICE format is specified to be the broken "concatenated
+>>> slices" that cedrus expects, we probably want to use another suffix. This way,
+>>> we could deprecated MPEG2_SLICE and introduce a new format for MPEG-2 that would
+>>> have consistent naming with the other mpeg formats.
+>>
+>> I actually think that H264_SLICE is a decent name.
+>>
+>> I'm less sure about MPEG2_SLICE since I am not sure if it means the same as
+>> a H264 slice.
+> 
+> The main problem I see is that we have already specified MPEG2_SLICE in a way
+> that is incompatible with the future improvments we want to bring to the API:
+> " The output buffer must contain the appropriate number of macroblocks to
+> decode a full corresponding frame to the matching capture buffer."
+> 
+> So I only see two possibilities: either we decide to change the specification
+> of the pixel format and we can keep using the _SLICE suffix, either we need to
+> introduce a new pixel format with another suffix, which should also be reflected
+> on other MPEG formats for consistency. Then we can deprecate MPEG2_SLICE and
+> have drivers stop using it.
+> 
+> What do you think?
 
-> > > > > ---
-> > > > >  Documentation/devicetree/bindings/mmc/arasan,sdhci.txt | 15
-> > ++++++++++-
-> > > > ----
-> > > > >  1 file changed, 10 insertions(+), 5 deletions(-)
-> > > > >
-> > > > > diff --git a/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
-> > > > b/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
-> > > > > index 1edbb04..15c6397 100644
-> > > > > --- a/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
-> > > > > +++ b/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
-> > > > > @@ -23,6 +23,10 @@ Required Properties:
-> > > > >    - reg: From mmc bindings: Register location and length.
-> > > > >    - clocks: From clock bindings: Handles to clock inputs.
-> > > > >    - clock-names: From clock bindings: Tuple including "clk_xin" and
-> > "clk_ahb"
-> > > > > +            Apart from these two there is one more optional clock which
-> > > > > +            is "clk_sdcard". This clock represents output clock from
-> > > > > +            controller and card. This must be specified when #clock-cells
-> > > > > +            is specified.
-> > > > >    - interrupts: Interrupt specifier
-> > > > >
-> > > > >  Required Properties for "arasan,sdhci-5.1":
-> > > > > @@ -36,9 +40,10 @@ Optional Properties:
-> > > > >    - clock-output-names: If specified, this will be the name of the card
-> > clock
-> > > > >      which will be exposed by this device.  Required if #clock-cells is
-> > > > >      specified.
-> > > > > -  - #clock-cells: If specified this should be the value <0>.  With this
-> > property
-> > > > > -    in place we will export a clock representing the Card Clock.  This clock
-> > > > > -    is expected to be consumed by our PHY.  You must also specify
-> > > > > +  - #clock-cells: If specified this should be the value <0>. With this
-> > > > > +    property in place we will export one clock representing the Card
-> > > > > +    Clock. This clock is expected to be consumed by our PHY. You must
-> > also
-> > > > > +    specify
-> > > >
-> > > > specify what?
-> > > I think this line was already there, I missed to correct it, Will update in v3.
-> > >
-> > > >
-> > > > The 3rd clock input I assume? This statement means any existing users
-> > > > with 2 clock inputs and #clock-cells are in error now. Is that correct?
-> > > Yes, this is correct. So far there was only one vendor using '#clock-cells'
-> > which is Rockchip. I have sent DT patch (02/11) for that also.
-> > > Here this is needed as earlier implementation isn't correct as suggested by
-> > Uffe. (https://lkml.org/lkml/2019/6/20/486) .
-> >
-> > I am not sure how big of a problem the backwards compatible thingy
-> > with DT is, in general we must not break it. What do you say Manish?
->
-> Though I agree with Uffe on this, there is no other way from my understanding. Please suggest.
->
-> >
-> > As a workaround, would it be possible to use
-> > of_clk_get_from_provider() somehow to address the compatibility issue?
->
-> For this to be used we have to parse 'clkspec' from the DT node and pass the same as an argument to this function. In this case also the DT node needs to be updated, which is same as we have done in this series.
+I'd change the specification of the pixel format. So MPEG2_SLICE now supports
+multiple slices if the hardware supports it as well.
 
-Alright. I guess breaking DTBs for Rockchip platforms isn't
-acceptable, especially if those are already widely deployed, which I
-have no idea of....
+We would need an MPEG2_DECODING_MODE control as well, that currently would
+read FRAME based only.
 
-And having support for both options in the driver seems not a great
-option either, so it looks like you need to convert back into the old
-v1 approach. Huh, sorry.
+Regards,
 
-Kind regards
-Uffe
+	Hans
+
+> 
+> Cheers,
+> 
+> Paul
+> 
+>>> One suggestion I had was to call it H264_PARSED (and apply this to MPEG-2 and
+>>> HEVC when similar controls to H.264 are set in place for them). I think Hans had
+>>> another suggestion for the name but I don't recall what it was at this point.
+>>
+>> I can't remember it either. In any case, I'm not that keen on _PARSED.
+>>
+>> I think for H264 and HEVC the _SLICE suffix is good enough.
+>>
+>> Regards,
+>>
+>> 	Hans
+>>
+>>>
+>>> Either way, if this has to be some debate, we could perhaps take it off your
+>>> series and stay with SLICE_RAW for now, as long as we do rename it before making
+>>> the API stable.
+>>>
+>>> What do you think?
+>>>
+>>> Cheers,
+>>>
+>>> Paul
+>>>
+>>>> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+>>>> Tested-by: Philipp Zabel <p.zabel@pengutronix.de>
+>>>> ---
+>>>> Changes in v7:
+>>>> * None.
+>>>> Changes in v6:
+>>>> * None.
+>>>> Changes in v5:
+>>>> * None.
+>>>> Changes in v4:
+>>>> * New patch.
+>>>> ---
+>>>>  Documentation/media/uapi/v4l/pixfmt-compressed.rst | 4 ++--
+>>>>  drivers/media/v4l2-core/v4l2-ioctl.c               | 2 +-
+>>>>  drivers/staging/media/sunxi/cedrus/cedrus_dec.c    | 2 +-
+>>>>  drivers/staging/media/sunxi/cedrus/cedrus_video.c  | 6 +++---
+>>>>  include/media/h264-ctrls.h                         | 2 +-
+>>>>  5 files changed, 8 insertions(+), 8 deletions(-)
+>>>>
+>>>> diff --git a/Documentation/media/uapi/v4l/pixfmt-compressed.rst b/Documentation/media/uapi/v4l/pixfmt-compressed.rst
+>>>> index f52a7b67023d..9b65473a2288 100644
+>>>> --- a/Documentation/media/uapi/v4l/pixfmt-compressed.rst
+>>>> +++ b/Documentation/media/uapi/v4l/pixfmt-compressed.rst
+>>>> @@ -52,9 +52,9 @@ Compressed Formats
+>>>>        - ``V4L2_PIX_FMT_H264_MVC``
+>>>>        - 'M264'
+>>>>        - H264 MVC video elementary stream.
+>>>> -    * .. _V4L2-PIX-FMT-H264-SLICE-RAW:
+>>>> +    * .. _V4L2-PIX-FMT-H264-SLICE:
+>>>>  
+>>>> -      - ``V4L2_PIX_FMT_H264_SLICE_RAW``
+>>>> +      - ``V4L2_PIX_FMT_H264_SLICE``
+>>>>        - 'S264'
+>>>>        - H264 parsed slice data, without the start code and as
+>>>>  	extracted from the H264 bitstream.  This format is adapted for
+>>>> diff --git a/drivers/media/v4l2-core/v4l2-ioctl.c b/drivers/media/v4l2-core/v4l2-ioctl.c
+>>>> index bb5b4926538a..39f10621c91b 100644
+>>>> --- a/drivers/media/v4l2-core/v4l2-ioctl.c
+>>>> +++ b/drivers/media/v4l2-core/v4l2-ioctl.c
+>>>> @@ -1343,7 +1343,7 @@ static void v4l_fill_fmtdesc(struct v4l2_fmtdesc *fmt)
+>>>>  		case V4L2_PIX_FMT_H264:		descr = "H.264"; break;
+>>>>  		case V4L2_PIX_FMT_H264_NO_SC:	descr = "H.264 (No Start Codes)"; break;
+>>>>  		case V4L2_PIX_FMT_H264_MVC:	descr = "H.264 MVC"; break;
+>>>> -		case V4L2_PIX_FMT_H264_SLICE_RAW:	descr = "H.264 Parsed Slice Data"; break;
+>>>> +		case V4L2_PIX_FMT_H264_SLICE:	descr = "H.264 Parsed Slice Data"; break;
+>>>>  		case V4L2_PIX_FMT_H263:		descr = "H.263"; break;
+>>>>  		case V4L2_PIX_FMT_MPEG1:	descr = "MPEG-1 ES"; break;
+>>>>  		case V4L2_PIX_FMT_MPEG2:	descr = "MPEG-2 ES"; break;
+>>>> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
+>>>> index bdad87eb9d79..56ca4c9ad01c 100644
+>>>> --- a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
+>>>> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
+>>>> @@ -46,7 +46,7 @@ void cedrus_device_run(void *priv)
+>>>>  			V4L2_CID_MPEG_VIDEO_MPEG2_QUANTIZATION);
+>>>>  		break;
+>>>>  
+>>>> -	case V4L2_PIX_FMT_H264_SLICE_RAW:
+>>>> +	case V4L2_PIX_FMT_H264_SLICE:
+>>>>  		run.h264.decode_params = cedrus_find_control_data(ctx,
+>>>>  			V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS);
+>>>>  		run.h264.pps = cedrus_find_control_data(ctx,
+>>>> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_video.c b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+>>>> index 681dfe3367a6..eeee3efd247b 100644
+>>>> --- a/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+>>>> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+>>>> @@ -38,7 +38,7 @@ static struct cedrus_format cedrus_formats[] = {
+>>>>  		.directions	= CEDRUS_DECODE_SRC,
+>>>>  	},
+>>>>  	{
+>>>> -		.pixelformat	= V4L2_PIX_FMT_H264_SLICE_RAW,
+>>>> +		.pixelformat	= V4L2_PIX_FMT_H264_SLICE,
+>>>>  		.directions	= CEDRUS_DECODE_SRC,
+>>>>  	},
+>>>>  	{
+>>>> @@ -104,7 +104,7 @@ static void cedrus_prepare_format(struct v4l2_pix_format *pix_fmt)
+>>>>  
+>>>>  	switch (pix_fmt->pixelformat) {
+>>>>  	case V4L2_PIX_FMT_MPEG2_SLICE:
+>>>> -	case V4L2_PIX_FMT_H264_SLICE_RAW:
+>>>> +	case V4L2_PIX_FMT_H264_SLICE:
+>>>>  		/* Zero bytes per line for encoded source. */
+>>>>  		bytesperline = 0;
+>>>>  
+>>>> @@ -449,7 +449,7 @@ static int cedrus_start_streaming(struct vb2_queue *vq, unsigned int count)
+>>>>  		ctx->current_codec = CEDRUS_CODEC_MPEG2;
+>>>>  		break;
+>>>>  
+>>>> -	case V4L2_PIX_FMT_H264_SLICE_RAW:
+>>>> +	case V4L2_PIX_FMT_H264_SLICE:
+>>>>  		ctx->current_codec = CEDRUS_CODEC_H264;
+>>>>  		break;
+>>>>  
+>>>> diff --git a/include/media/h264-ctrls.h b/include/media/h264-ctrls.h
+>>>> index e1404d78d6ff..6160a69c0143 100644
+>>>> --- a/include/media/h264-ctrls.h
+>>>> +++ b/include/media/h264-ctrls.h
+>>>> @@ -14,7 +14,7 @@
+>>>>  #include <linux/videodev2.h>
+>>>>  
+>>>>  /* Our pixel format isn't stable at the moment */
+>>>> -#define V4L2_PIX_FMT_H264_SLICE_RAW v4l2_fourcc('S', '2', '6', '4') /* H264 parsed slices */
+>>>> +#define V4L2_PIX_FMT_H264_SLICE v4l2_fourcc('S', '2', '6', '4') /* H264 parsed slices */
+>>>>  
+>>>>  /*
+>>>>   * This is put insanely high to avoid conflicting with controls that
+>>>> -- 
+>>>> 2.22.0
+>>>>
+>>>
+>>
+> 
+
 
 _______________________________________________
 Linux-rockchip mailing list
