@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92D9B9D67E
-	for <lists+linux-rockchip@lfdr.de>; Mon, 26 Aug 2019 21:26:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C581C9D685
+	for <lists+linux-rockchip@lfdr.de>; Mon, 26 Aug 2019 21:27:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,34 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zheaywXzXwyPQR3AM6J33wlSm6WyynkKSre/clV1DrQ=; b=V6qt33s0LJgj9UYzM8gtWLpzLC
-	iMOSLInSa0dmOSic0TtjtmFsRS649Kv3M6YDMlnDKPLBYaa37vyA1rQd+sjY2xzAQ16H5As286oT+
-	DVz/3ExBAxth4J8AnaI6nYfcl3llyh/Bgo+NAhpx4NEVdMK334E0l6H4FKvcV40Kd/Rvf4EAqQk4A
-	rnYN7lBDUOebg5KsT3geDuMsCUtjLTA6vK16Tslvr5dRarxMRn2fX6KcLoXn66j02iuIRTJnJl/IA
-	85cuW5LNIe3/Hf83nSux1Kg8guqFBtZwvVF/wQOjagqNX6g91S1V4zhkW6cI2o+AUgXRn7ESheTOk
-	1Cs9wcbg==;
+	bh=tJAXAMrI83ekCwq8/8fukwBM0teIj2RScpxz1TeQ/zQ=; b=j8n5JHZuxLrTZ8JcEUnFqwBCiD
+	B9a5/AjrTJIKs4RdzAdNyFuAArL+o0nbW9ypb6A9TKacCnv0gs85WyV9zXP9bhyKmLMiCjsbqc4zR
+	Y3C6D0FrQknnEeJH+8kwwlx1UUqnkDEm5lRRd6SJUjikVj4AeWtWscrBX8WTOCdwh9VOhRaSiIEmQ
+	lJOnzUpKgrwh6kgW/NfimgSiA7jyEQelDgMOr7ZjvHGQ1TZPbpW5TZsQYuOQ8TvlK9eNvqYInvApW
+	c87tt/H7Z1NbT3KKBAWUkNDd0pI7EMQ7VNagevPMx8CcTcGh6KC5GBBoPHkBBBe3UwVlo+N5TZCaT
+	d9kXx8aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Kdh-0000w5-N6; Mon, 26 Aug 2019 19:26:53 +0000
+	id 1i2Kdq-00011H-P7; Mon, 26 Aug 2019 19:27:02 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Kdc-0000tV-St; Mon, 26 Aug 2019 19:26:50 +0000
+ id 1i2Kdk-0000yZ-Vq; Mon, 26 Aug 2019 19:26:58 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id E4059283D3B
+ (Authenticated sender: andrzej.p) with ESMTPSA id 20F07283D3B
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH RESEND 04/14] drm/exynos: Provide ddc symlink in connector's
- sysfs
-Date: Mon, 26 Aug 2019 21:25:46 +0200
-Message-Id: <7c0585b22f9d9f04b7e84db53887f08b31e26075.1566845537.git.andrzej.p@collabora.com>
+Subject: [PATCH RESEND 05/14] drm: rockchip: Provide ddc symlink in
+ rk3066_hdmi sysfs directory
+Date: Mon, 26 Aug 2019 21:25:47 +0200
+Message-Id: <4cad24dde4508cec17483f983da08226ba7e48b0.1566845537.git.andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1566845537.git.andrzej.p@collabora.com>
 References: <cover.1566845537.git.andrzej.p@collabora.com>
 In-Reply-To: <cover.1566845537.git.andrzej.p@collabora.com>
 References: <cover.1566845537.git.andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_122649_199359_E5504F1E 
-X-CRM114-Status: GOOD (  11.65  )
+X-CRM114-CacheID: sfid-20190826_122657_294754_CBB85D3D 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -84,7 +85,6 @@ Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
  linux-kernel@vger.kernel.org, intel-gfx@lists.freedesktop.org,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Jani Nikula <jani.nikula@linux.intel.com>, Inki Dae <inki.dae@samsung.com>,
- Alexios Zavras <alexios.zavras@intel.com>,
  Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
  Jyri Sarha <jsarha@ti.com>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
@@ -104,32 +104,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Switch to using the ddc provided by the generic connector.
+Use the ddc pointer provided by the generic connector.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 Acked-by: Sam Ravnborg <sam@ravnborg.org>
 Reviewed-by: Emil Velikov <emil.velikov@collabora.com>
 ---
- drivers/gpu/drm/exynos/exynos_hdmi.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ drivers/gpu/drm/rockchip/rk3066_hdmi.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/gpu/drm/exynos/exynos_hdmi.c b/drivers/gpu/drm/exynos/exynos_hdmi.c
-index bc1565f1822a..d4a9c9e17436 100644
---- a/drivers/gpu/drm/exynos/exynos_hdmi.c
-+++ b/drivers/gpu/drm/exynos/exynos_hdmi.c
-@@ -940,8 +940,10 @@ static int hdmi_create_connector(struct drm_encoder *encoder)
- 	connector->interlace_allowed = true;
- 	connector->polled = DRM_CONNECTOR_POLL_HPD;
+diff --git a/drivers/gpu/drm/rockchip/rk3066_hdmi.c b/drivers/gpu/drm/rockchip/rk3066_hdmi.c
+index 85fc5f01f761..e874f5fdeec4 100644
+--- a/drivers/gpu/drm/rockchip/rk3066_hdmi.c
++++ b/drivers/gpu/drm/rockchip/rk3066_hdmi.c
+@@ -564,9 +564,10 @@ rk3066_hdmi_register(struct drm_device *drm, struct rk3066_hdmi *hdmi)
  
--	ret = drm_connector_init(hdata->drm_dev, connector,
--			&hdmi_connector_funcs, DRM_MODE_CONNECTOR_HDMIA);
-+	ret = drm_connector_init_with_ddc(hdata->drm_dev, connector,
-+					  &hdmi_connector_funcs,
-+					  DRM_MODE_CONNECTOR_HDMIA,
-+					  hdata->ddc_adpt);
- 	if (ret) {
- 		DRM_DEV_ERROR(hdata->dev,
- 			      "Failed to initialize connector with drm\n");
+ 	drm_connector_helper_add(&hdmi->connector,
+ 				 &rk3066_hdmi_connector_helper_funcs);
+-	drm_connector_init(drm, &hdmi->connector,
+-			   &rk3066_hdmi_connector_funcs,
+-			   DRM_MODE_CONNECTOR_HDMIA);
++	drm_connector_init_with_ddc(drm, &hdmi->connector,
++				    &rk3066_hdmi_connector_funcs,
++				    DRM_MODE_CONNECTOR_HDMIA,
++				    hdmi->ddc);
+ 
+ 	drm_connector_attach_encoder(&hdmi->connector, encoder);
+ 
 -- 
 2.17.1
 
