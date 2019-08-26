@@ -2,80 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 277829D5B5
-	for <lists+linux-rockchip@lfdr.de>; Mon, 26 Aug 2019 20:21:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 392629D5B6
+	for <lists+linux-rockchip@lfdr.de>; Mon, 26 Aug 2019 20:21:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fIxJDFw/eIf9mmoVLLKcOW2NdGMA7GmbYGuO4nm9Vdo=; b=jvkklVv3q0eE4J
-	A8xklXTttcDSyOpY7GGFN2d+cqlrx09FdNx0hqDwuHG4qqq8wilfDTsDwrBXeIPwhP0s56qU3k+hR
-	iciAs36dtp0u/RwSqY5E/xMHnk1Y3qnFtyUYvp0t5sO37o2CqV7WdxkmRwgRGnjjuzGR8UsNqEBLP
-	7x6oYBUhB28tuDfKk3Hok8W5EHEFpkrFcebmLIXPe6OuU5xZDaoiW0DGIH6JQdofCUs9R/MUxULhZ
-	wRl2ISWeaECCBxaQY/yI0+nKycJiiERQV2jXsTklAVBgwc9B34G0RxlRR/1AG5p7pr7RlctiNi68c
-	1XSIc67dE77oJ3T5pcdw==;
+	List-Owner; bh=q5Wdd9bjvDiNCSPioCgBNH5QEu4v3/6tWnYyBH+w+w4=; b=gezZgMEiFVpRrn
+	pp7rYha/vnauIDr8/FThlHnWV4RwiHrwBhYmfdE0jijIt6VkOVJzB0dQdJaxlhkf1jeg7dM/3yQrM
+	tsd5W9Jk2J4zbCU7PU95Ty+MJ0A/2e9Albc4U0m2hNf1jpLg60bsi4/kFJ3E1J7D3ZM5Cl4HktcqF
+	8+YgYBS1IICZ9yU/ie4r1gINyhQprGs55GE+1HwggDygmnSaXCp9Gcm0GRYthv07UWbBGUHhTO/6V
+	zGK8MgnEY7HcSXrNtHcPMirW9yykj23IgKn2UZU8Fj7AreyjF4coBIWDEvdAli6YtK8tVuh21E6Em
+	VUpEhXbPGa+7sZdY5dGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Jch-0001h4-Vd; Mon, 26 Aug 2019 18:21:48 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1i2Jck-0001jI-5v; Mon, 26 Aug 2019 18:21:50 +0000
+Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2JcR-0001QH-Pc
- for linux-rockchip@lists.infradead.org; Mon, 26 Aug 2019 18:21:33 +0000
-Received: by mail-ot1-x341.google.com with SMTP id z17so16067145otk.13
- for <linux-rockchip@lists.infradead.org>; Mon, 26 Aug 2019 11:21:31 -0700 (PDT)
+ id 1i2JcT-0001Ry-3J
+ for linux-rockchip@lists.infradead.org; Mon, 26 Aug 2019 18:21:34 +0000
+Received: by mail-oi1-x243.google.com with SMTP id k22so12850529oiw.11
+ for <linux-rockchip@lists.infradead.org>; Mon, 26 Aug 2019 11:21:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=lMkAjW3GPc3JRQvbVP13XvU/Mvzd6g4b+EvCVNCUb6c=;
- b=ffu893tPRMd1kYBBeNyjkVHVyDMHakJwbHzBksPCXMkm9fxPM53fsB1W/oVCfyoodC
- 4Thwpsw1ESVHdNAJ55ruM04azF+IWfXeCxwcZI8pBe4ss1x0kbezN1yjDwYAW4a0u5Ma
- tdU0YUlznjJdyAlepyAu+XjXaTie/3HeKsHV8=
+ bh=48tbCTA8i+mDb23wmOG8QXjh+G13bWj85edFBbAfgJQ=;
+ b=GvsaNMabOTWPOC51tHnKMXIrjShnRR+Lz4yEdMxwGIU2AF5JyIfDeJue3KlVLGpElZ
+ suykasXctTIXiyzQI6D0Fb1e3QZBFHnhtn7h7/Ckv/dTjyZYDtWj0kMaUyknHpVN7jRk
+ qvWXnm7xu2EL0F6MGZCRxYx/9KWDEKJXXddQc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=lMkAjW3GPc3JRQvbVP13XvU/Mvzd6g4b+EvCVNCUb6c=;
- b=qm0NdFjoZG1JHBvvOzeEFGE0Xnj5eDwnSdBTtdvcBK2e3XQSZjABHlFmVXkSUEOFx3
- n1c3bZlulgmhCuIFYbMJGRX9NoXYlHgpprKFKgogCZEtlI5mIP75oi7ps9Ywi/rEMQoK
- zSX+55QQxmFy0uSANyHGiVi9I91v1fDXK1P0DtU2KxNLEfe5raHsJ+G5Yl8Y4KA1KE6+
- 4aijOag2FWg3Iu+YpR5MUjOI3dalpy2MXuY8ENNs2BiqVPj1KhVeZ5fw2TH3Vd32cU2R
- 63LOJmkyAI+ZBtWhFnVL170BkAOizKkv9oesIsIJ5I6COMyeRKsLdu+L6WTpYpCtH7y1
- JiAQ==
-X-Gm-Message-State: APjAAAVkUCersr1l9BMK/GrT1jxMVpKGCxlcPLb+jtfFRtfeVrazXqXi
- zhNAH2F+DbsBc8vx71Pj+Dm0qQ==
-X-Google-Smtp-Source: APXvYqza3wYDCQT0cTnJAhHpQL2uUJ0QVSC3S3y8Ldrf8OXWjm0E3kt5WlKGETM5Ip+68hoJBcfLDQ==
-X-Received: by 2002:a9d:7c93:: with SMTP id q19mr15805419otn.343.1566843690728; 
- Mon, 26 Aug 2019 11:21:30 -0700 (PDT)
+ bh=48tbCTA8i+mDb23wmOG8QXjh+G13bWj85edFBbAfgJQ=;
+ b=itRgB7CXLLpsh0CBjjTUFIUZmBTQ1P2ouFtM+G/csMtfmeCDKX5zSu924yfbT6gZGK
+ Krq7kFBC7lw5DCoJGckiDCFFVrwzM0b3rLV7kPyhmePl+UyHI/6RWHlcOSfukrsNfdhP
+ mnt56BtPHXg4rADDKAPc5IsUtlBi+tMu64Y9T511sajdt2/m0OaqDziBnP6Bvtv6gM19
+ xWnWLt5q6cGPUlw4JRVD8lfffuyGepD83QBU8i7fef6hZPxSPrxcYTcr1RCDpRjnzc5F
+ XEKjWejog3pxo9QEqWBvrnXt7bToL01iEHMa47T2iPyuQfjiqYRwEy65nntlLSZelrA/
+ lurA==
+X-Gm-Message-State: APjAAAUoibJXFhi/OgKTtwDDR9EsHphOJaZAyHR+b5Qv0W22Pmvlzhzb
+ VFx5//xdiwimY2hi0Y1H+Pu1thYXGRU=
+X-Google-Smtp-Source: APXvYqwDaedTA354vWs9CbCQbLulE0vUAJmOqMxsM3FN7ZGQ2JC5MCNCU9IpEU8C87sRxMIJXF2BAA==
+X-Received: by 2002:aca:4dd8:: with SMTP id
+ a207mr12806037oib.115.1566843691996; 
+ Mon, 26 Aug 2019 11:21:31 -0700 (PDT)
 Received: from jagan-XPS-13-9350.attlocal.net
  ([2600:1700:7430:38e0:d5b0:4823:33c8:5e46])
- by smtp.gmail.com with ESMTPSA id c11sm4401461otr.54.2019.08.26.11.21.29
+ by smtp.gmail.com with ESMTPSA id c11sm4401461otr.54.2019.08.26.11.21.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 26 Aug 2019 11:21:30 -0700 (PDT)
+ Mon, 26 Aug 2019 11:21:31 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v2 09/16] rockchip: dts: rk3399: Add u-boot,
- dm-pre-reloc for watchdog
-Date: Mon, 26 Aug 2019 23:51:04 +0530
-Message-Id: <20190826182111.30999-10-jagan@amarulasolutions.com>
+Subject: [PATCH v2 10/16] wdt: Kconfig: Add WDT_DW entry
+Date: Mon, 26 Aug 2019 23:51:05 +0530
+Message-Id: <20190826182111.30999-11-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190826182111.30999-1-jagan@amarulasolutions.com>
 References: <20190826182111.30999-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_112131_861600_7758F962 
-X-CRM114-Status: UNSURE (   8.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190826_112133_147718_7E6A5E4E 
+X-CRM114-Status: GOOD (  10.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,31 +105,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add u-boot,dm-pre-reloc property for watchdog in rk3399-u-boot.dtsi
-so-that SPL can access watchdog.
+Add Kconfig entry for CONFIG_WDT_DW, and it indeed
+depends on DM WDT.
+
+So, it can be avialable on particular board defconfig
+only if they switch to use DW driver model code.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- arch/arm/dts/rk3399-u-boot.dtsi | 6 ++++++
- 1 file changed, 6 insertions(+)
+ drivers/watchdog/Kconfig     | 8 ++++++++
+ scripts/config_whitelist.txt | 1 -
+ 2 files changed, 8 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/dts/rk3399-u-boot.dtsi b/arch/arm/dts/rk3399-u-boot.dtsi
-index 2738a3889e..54286b585b 100644
---- a/arch/arm/dts/rk3399-u-boot.dtsi
-+++ b/arch/arm/dts/rk3399-u-boot.dtsi
-@@ -3,6 +3,12 @@
-  * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
-  */
+diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
+index a66a9bcbe2..8674633b90 100644
+--- a/drivers/watchdog/Kconfig
++++ b/drivers/watchdog/Kconfig
+@@ -90,6 +90,14 @@ config WDT_CDNS
+ 	   Select this to enable Cadence watchdog timer, which can be found on some
+ 	   Xilinx Microzed Platform.
  
-+/ {
-+	watchdog@ff848000 {
-+		u-boot,dm-pre-reloc;
-+	};
-+};
++config WDT_DW
++	bool "Synopsys DesignWare watchdog"
++	depends on WDT
++	default y if ROCKCHIP_RK3399
++	help
++	  Say Y here if to include support for the Synopsys DesignWare
++	  watchdog timer found in many chips.
 +
- &pmu {
- 	u-boot,dm-pre-reloc;
- };
+ config WDT_MPC8xx
+ 	bool "MPC8xx watchdog timer support"
+ 	depends on WDT && MPC8xx
+diff --git a/scripts/config_whitelist.txt b/scripts/config_whitelist.txt
+index 35c56262ed..0618cb9047 100644
+--- a/scripts/config_whitelist.txt
++++ b/scripts/config_whitelist.txt
+@@ -321,7 +321,6 @@ CONFIG_DEFAULT_IMMR
+ CONFIG_DEF_HWCONFIG
+ CONFIG_DELAY_ENVIRONMENT
+ CONFIG_DESIGNWARE_ETH
+-CONFIG_WDT_DW
+ CONFIG_DEVELOP
+ CONFIG_DEVICE_TREE_LIST
+ CONFIG_DFU_ALT
 -- 
 2.18.0.321.gffc6fa0e3
 
