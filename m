@@ -2,71 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 741E89D5B0
-	for <lists+linux-rockchip@lfdr.de>; Mon, 26 Aug 2019 20:21:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B5C39D5B2
+	for <lists+linux-rockchip@lfdr.de>; Mon, 26 Aug 2019 20:21:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nhv2gChpS+NVmxYYE/b1GCtTOsLCI1WG8VrU5gVSRyk=; b=qb4oOpEFqHwqB2
-	Oe9kIVRFoY+v42ZUhPIuDQ2g+CAdboAcSx1byrL5LnLuQyOB9Q2zNqdvk3GZ1obSq0V3tBahvCM4v
-	G6nlT6r/ELHmxmSxVjWTpDItTuN8pj16ksmRnJCM+YWCCbl2M2h3ZPmtTIUBhofQXtjjwND8rN6Wk
-	8Vl/VKrpenR4Qo5PLrTVkMYjzswQG7nOsSjo7t7TeKKyHeecX7gqriAQn8AlR4vfdpWE8UWrYQGv8
-	BGlCZvM/0LXGHiRMkv28wy23i02qm25jjTVMvpGI7Du3pScfm4AIzrhN/VDkYRxXE8CYMGxgEYsTg
-	cb5hK3e1W50ladVfmC8w==;
+	List-Owner; bh=MA/v+L3UN1pOpBkll083A7bgOQ1YrzqY1SKInzWzL7g=; b=Wip/96gqwi/kwu
+	DYXhxP9nC/pXSxL7eUVEZ80NTOxV2nFfxjukKNzONsUwN7LkT48QVf7zavIURLso8HeTYlH21ls5v
+	vsPQxLOni7u44bzpy94xh7FiXIBpp2fgZrjI4+sx82IEw5uVgdX/wp8rAtmGDAiYzMmFMREewldOF
+	0LibFPtu+uBUVusCtgpuEs/jsZmT5/TMz7AohhIhVPODFVKm8JhpmFQoANKUHSYO2GO/e71OMSwAN
+	1aVnig36unPo/qcQLOo++30pujNbcceiDiXmkgoq2EvsG6X6tyYH9nSza81tcfrfTQyBFLhH8RDs4
+	z3f3IR7r0/OW9SopQ3ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2JcW-0001U0-47; Mon, 26 Aug 2019 18:21:36 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+	id 1i2Jca-0001Yl-7d; Mon, 26 Aug 2019 18:21:40 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2JcN-0001LF-0H
- for linux-rockchip@lists.infradead.org; Mon, 26 Aug 2019 18:21:28 +0000
-Received: by mail-oi1-x244.google.com with SMTP id b25so12889988oib.4
- for <linux-rockchip@lists.infradead.org>; Mon, 26 Aug 2019 11:21:26 -0700 (PDT)
+ id 1i2JcO-0001MY-HK
+ for linux-rockchip@lists.infradead.org; Mon, 26 Aug 2019 18:21:30 +0000
+Received: by mail-ot1-x342.google.com with SMTP id p23so11942009oto.0
+ for <linux-rockchip@lists.infradead.org>; Mon, 26 Aug 2019 11:21:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Wq6GJCz6OpwvPx36T+BmHN2obhM+vzYcJ0vK8rO0YF0=;
- b=Tk2a6UaEgy8bLEJzNNmf8GiL3Gs5M+jwjpHH0fIC6Mp6hUrKWks4kz1wzyp5hzbKx8
- 9p9JIHe3CLEhrq9cIQbtznNjh2cGpqBVsnrju2GM+Hog6gnYhtDD+0YzeS99Ptnud9TU
- JDEB0vEUwVN4EoCqBRyMvv7TzP4pZy0yLpVEI=
+ bh=8hP6rdkEvhhT0hEj14Sjz70+JpS0tBwbVOMye6DfvhQ=;
+ b=ft4AtN5xDxHjy6eOId++YM1EB7GJSKqvdjtHWYgnGKEhArM++k5myYew8y1mJTP2sZ
+ DqeH3Mbk/VyRVtif3wtmop05/hb0Y6nFX1l16/JIjyoJp3nhU06eKbgUex2tEG/UHetQ
+ 8SmeAzs6en3FSb2Uf+750xu0Q3WDHXL83SsAQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Wq6GJCz6OpwvPx36T+BmHN2obhM+vzYcJ0vK8rO0YF0=;
- b=UudiyIoGkXdDSz9gokkhSg1jOv57KH6eLCMl2kfObfGsy0PjN3MpkB++/pjOTYSSV0
- 8S2JDZ6sLhXwIedvM9Y5ABZ6kMUAkqtVqwAwZVCrfwwqp1cQGbGh8U894GvXBfwsNH0o
- n6/AvGAWNf2vY+JoApKP0lKrbIxxusJuoOgHkhA8VGxfdxpLZtayofGsHdQnLgD6VxAk
- vGX7kpvTaDbc4DKfPa/GjSL+X0tR/kfdvgMJVfU8N95+SGB9xIDWSdoCHVknbEL7ZtZ5
- MPigcA3TosH7b5hqXXrNDQrKWOTeJ2Ffm5IKRG3wk0CD4c6bAyuX3BHCxRKKRlq9SY++
- /uVg==
-X-Gm-Message-State: APjAAAWgIZJcnAEn72ucsRkWAnI2tV8wzeoz7cM01w+IxkW8pC3DiuOt
- nsGxFNOBj3S6NwrsOhCZHOHy2g==
-X-Google-Smtp-Source: APXvYqwzZ/PiVrQXQ6oBQLLL7lJqr7Kr1C+2vz72tJWQQzinstXO1Y8+qg2LbCyya9vYW49iClkzDw==
-X-Received: by 2002:aca:4e0a:: with SMTP id c10mr12953762oib.61.1566843686355; 
- Mon, 26 Aug 2019 11:21:26 -0700 (PDT)
+ bh=8hP6rdkEvhhT0hEj14Sjz70+JpS0tBwbVOMye6DfvhQ=;
+ b=fCFPNEsV3b5vErO7UP1r2qUzM3wZ7EgWtZetg2DP5T7R1OQzv1mr52i2uROLk17QiK
+ aqioPbe9pI6qeuSUyVcudHxFGqFtSOYxOYB9R98EZVmEIrpYGxNYYfUVhPP3zoiIIczi
+ x+rdkMVbXQx3E6rBtoDwRod4LdXAXvQKsEY9Uy2BVCF7LN1cwzxEdVjkgKhsJsjaCS8G
+ UBEelO13cpmrIcSER4XWwrIq0j9Q9MOrhjs3Q7REOu0WABKRj4nt+ybVK8GXtWRy1EuF
+ J2nOxPv2jQGxVB3ee8Rco5yie/QZ7UBA6r5Th/piXkhtrwrDLrQHDjmstx3cL3fpLiSz
+ tCzw==
+X-Gm-Message-State: APjAAAW7H9f3x71NytIm+1B8RWzaoFc8UAVyVW5d2KYsrcZcvXWVZBp5
+ 5kGTXJqVxSj3fWP4ZXo6KlCGpg==
+X-Google-Smtp-Source: APXvYqzm1+FntLl6FQEiVro/U1i5yZzn0uwDxMAdubld1WOR8uL9ojfUk/HhkGLEOMN5HdATGt3WCg==
+X-Received: by 2002:a9d:6852:: with SMTP id c18mr16870633oto.218.1566843687442; 
+ Mon, 26 Aug 2019 11:21:27 -0700 (PDT)
 Received: from jagan-XPS-13-9350.attlocal.net
  ([2600:1700:7430:38e0:d5b0:4823:33c8:5e46])
- by smtp.gmail.com with ESMTPSA id c11sm4401461otr.54.2019.08.26.11.21.25
+ by smtp.gmail.com with ESMTPSA id c11sm4401461otr.54.2019.08.26.11.21.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 26 Aug 2019 11:21:25 -0700 (PDT)
+ Mon, 26 Aug 2019 11:21:27 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v2 05/16] wdt: designware: Simplify is_enabled function
-Date: Mon, 26 Aug 2019 23:51:00 +0530
-Message-Id: <20190826182111.30999-6-jagan@amarulasolutions.com>
+Subject: [PATCH v2 06/16] wdt: designware: Simplify enable function
+Date: Mon, 26 Aug 2019 23:51:01 +0530
+Message-Id: <20190826182111.30999-7-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190826182111.30999-1-jagan@amarulasolutions.com>
 References: <20190826182111.30999-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_112127_049609_C097194B 
-X-CRM114-Status: UNSURE (   9.69  )
+X-CRM114-CacheID: sfid-20190826_112128_727291_6D665020 
+X-CRM114-Status: UNSURE (   8.88  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -74,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,32 +106,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Right now the designware is_enabled function is using
-numeric number to check whether watchdog is enabled or
-not, so use register macro and check the same.
+Simplify dw watchdog enable function by using
+proper macro and drop unwanted macros.
 
 Cc: Chin Liang See <clsee@altera.com>
 Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- drivers/watchdog/designware_wdt.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ drivers/watchdog/designware_wdt.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/watchdog/designware_wdt.c b/drivers/watchdog/designware_wdt.c
-index c668567c66..bd858f0608 100644
+index bd858f0608..2979fda44e 100644
 --- a/drivers/watchdog/designware_wdt.c
 +++ b/drivers/watchdog/designware_wdt.c
-@@ -45,9 +45,7 @@ static void designware_wdt_enable(void)
+@@ -14,7 +14,6 @@
  
- static unsigned int designware_wdt_is_enabled(void)
+ #define DW_WDT_CR_EN_OFFSET	0x00
+ #define DW_WDT_CR_RMOD_OFFSET	0x01
+-#define DW_WDT_CR_RMOD_VAL	0x00
+ #define DW_WDT_CRR_RESTART_VAL	0x76
+ 
+ /*
+@@ -38,9 +37,11 @@ static int designware_wdt_settimeout(unsigned int timeout)
+ 
+ static void designware_wdt_enable(void)
  {
--	unsigned long val;
--	val = readl((CONFIG_DW_WDT_BASE + DW_WDT_CR));
--	return val & 0x1;
-+	return readl(CONFIG_DW_WDT_BASE + DW_WDT_CR) & DW_WDT_CR_RMOD_OFFSET;
+-	writel(((DW_WDT_CR_RMOD_VAL << DW_WDT_CR_RMOD_OFFSET) |
+-	      (0x1 << DW_WDT_CR_EN_OFFSET)),
+-	      (CONFIG_DW_WDT_BASE + DW_WDT_CR));
++	u32 val = readl(CONFIG_DW_WDT_BASE + DW_WDT_CR);
++
++	/* Enable watchdog */
++	val |= DW_WDT_CR_RMOD_OFFSET;
++	writel(val, CONFIG_DW_WDT_BASE + DW_WDT_CR);
  }
  
- #if defined(CONFIG_HW_WATCHDOG)
+ static unsigned int designware_wdt_is_enabled(void)
 -- 
 2.18.0.321.gffc6fa0e3
 
