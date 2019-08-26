@@ -2,72 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 392629D5B6
-	for <lists+linux-rockchip@lfdr.de>; Mon, 26 Aug 2019 20:21:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E805B9D5B7
+	for <lists+linux-rockchip@lfdr.de>; Mon, 26 Aug 2019 20:21:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q5Wdd9bjvDiNCSPioCgBNH5QEu4v3/6tWnYyBH+w+w4=; b=gezZgMEiFVpRrn
-	pp7rYha/vnauIDr8/FThlHnWV4RwiHrwBhYmfdE0jijIt6VkOVJzB0dQdJaxlhkf1jeg7dM/3yQrM
-	tsd5W9Jk2J4zbCU7PU95Ty+MJ0A/2e9Albc4U0m2hNf1jpLg60bsi4/kFJ3E1J7D3ZM5Cl4HktcqF
-	8+YgYBS1IICZ9yU/ie4r1gINyhQprGs55GE+1HwggDygmnSaXCp9Gcm0GRYthv07UWbBGUHhTO/6V
-	zGK8MgnEY7HcSXrNtHcPMirW9yykj23IgKn2UZU8Fj7AreyjF4coBIWDEvdAli6YtK8tVuh21E6Em
-	VUpEhXbPGa+7sZdY5dGQ==;
+	List-Owner; bh=CAcqk3z3Y0VN4FVMjm4/AlW4CSU7/4Jf0vw1k6WXvUY=; b=UUNeqstxbP+JPK
+	ZJBmCtazLzaJqwfJWKevVjNEHDr77YtjQTexndARb46IQBRW1EKcV4kuf/tEnlKB+tlThsocmPhJ2
+	1dowBI6a1NmsFi5igBnrejSo5qu8uRhOc08GZYCHOQbsXtrgtoH2CYoe3QtZrMgUJjHZs3Ct2oOK+
+	94rKkT2mFXYoW7fKe0PwRltKImBo7CcAYy6qPMAKfcHWbrmxXaFatZvpPzuLiIYOhgFy1OFN5peos
+	xdkKZtGhtMQUEFAGdtf9X28xFXV7uqWRcO2IgpHqXVh22WW7AyQii7CFMgS53H/zfBz7GTHBv67bP
+	gpClGng6nKluHYamVr7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Jck-0001jI-5v; Mon, 26 Aug 2019 18:21:50 +0000
+	id 1i2Jcl-0001lL-Mw; Mon, 26 Aug 2019 18:21:51 +0000
 Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2JcT-0001Ry-3J
- for linux-rockchip@lists.infradead.org; Mon, 26 Aug 2019 18:21:34 +0000
-Received: by mail-oi1-x243.google.com with SMTP id k22so12850529oiw.11
- for <linux-rockchip@lists.infradead.org>; Mon, 26 Aug 2019 11:21:32 -0700 (PDT)
+ id 1i2JcT-0001TJ-Rp
+ for linux-rockchip@lists.infradead.org; Mon, 26 Aug 2019 18:21:35 +0000
+Received: by mail-oi1-x243.google.com with SMTP id t24so12828466oij.13
+ for <linux-rockchip@lists.infradead.org>; Mon, 26 Aug 2019 11:21:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=48tbCTA8i+mDb23wmOG8QXjh+G13bWj85edFBbAfgJQ=;
- b=GvsaNMabOTWPOC51tHnKMXIrjShnRR+Lz4yEdMxwGIU2AF5JyIfDeJue3KlVLGpElZ
- suykasXctTIXiyzQI6D0Fb1e3QZBFHnhtn7h7/Ckv/dTjyZYDtWj0kMaUyknHpVN7jRk
- qvWXnm7xu2EL0F6MGZCRxYx/9KWDEKJXXddQc=
+ bh=PqCk+P53M9OIrwfNEuUlXsc3KULixKlD69TP8gb4FyY=;
+ b=ZZ8umxsnoMD/WZRMaSehfPXSCy7voYfjCqizUUhjfhuWWFhOzRl2n4qYELFnMRnI8q
+ x/0/fT3weQri61cyhO+6IdKhjwZC+KBVVJwHd/lUIa7Jh6bDT+rsGn3UOIoPFxHhWfvK
+ b/9nXQzE8AjjKBfvouuYgacGPtSfKj94BH3nY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=48tbCTA8i+mDb23wmOG8QXjh+G13bWj85edFBbAfgJQ=;
- b=itRgB7CXLLpsh0CBjjTUFIUZmBTQ1P2ouFtM+G/csMtfmeCDKX5zSu924yfbT6gZGK
- Krq7kFBC7lw5DCoJGckiDCFFVrwzM0b3rLV7kPyhmePl+UyHI/6RWHlcOSfukrsNfdhP
- mnt56BtPHXg4rADDKAPc5IsUtlBi+tMu64Y9T511sajdt2/m0OaqDziBnP6Bvtv6gM19
- xWnWLt5q6cGPUlw4JRVD8lfffuyGepD83QBU8i7fef6hZPxSPrxcYTcr1RCDpRjnzc5F
- XEKjWejog3pxo9QEqWBvrnXt7bToL01iEHMa47T2iPyuQfjiqYRwEy65nntlLSZelrA/
- lurA==
-X-Gm-Message-State: APjAAAUoibJXFhi/OgKTtwDDR9EsHphOJaZAyHR+b5Qv0W22Pmvlzhzb
- VFx5//xdiwimY2hi0Y1H+Pu1thYXGRU=
-X-Google-Smtp-Source: APXvYqwDaedTA354vWs9CbCQbLulE0vUAJmOqMxsM3FN7ZGQ2JC5MCNCU9IpEU8C87sRxMIJXF2BAA==
-X-Received: by 2002:aca:4dd8:: with SMTP id
- a207mr12806037oib.115.1566843691996; 
- Mon, 26 Aug 2019 11:21:31 -0700 (PDT)
+ bh=PqCk+P53M9OIrwfNEuUlXsc3KULixKlD69TP8gb4FyY=;
+ b=A1k6+FHTd2nNuyxin3tF+yr2JsqkUxrdmeY1qGTKqjMU1/nK+Z6C6ci0xUaZ5ll5YT
+ BjQjV6deVjjvt6lx+TuH5qrib9OBkMYFuj8hoKelCXiS7LUiZ8IlsRjU/QGIWN7BL9Cu
+ TmsVfz43s+8sOT7mw9nEWdpwbtvQRBcfpecH5HIG8Lj5UYYKXqoCGiPHLw27MKg7onR8
+ taEIQaLfpYcuiY1/mvOuH2pxtPQx6SlhyuQPcx4iTMI+CZOoNkmQng77W5OKmp80nUcA
+ KbEV8Q4byGO5pwz09JuWHUDbyU/HaM7OfaYsRUGTve9pT8g4bfbZPIQTRMZoda4hG71C
+ rbBw==
+X-Gm-Message-State: APjAAAUpRTB31CPTUb1z+UNDP3NDtUOn18olvmKP+CFBcsB2lk2b4HTQ
+ JfzkJqPIrU0cy2QAiSUvFiKAyQ==
+X-Google-Smtp-Source: APXvYqy1jQ4S7tDS8uXbT+fLKY0NbX/ch+TF/ibGb9tERf9y1+QjRTLhQ06Gvix+p8WegwmtpWSTZA==
+X-Received: by 2002:aca:b20b:: with SMTP id b11mr13536237oif.16.1566843693149; 
+ Mon, 26 Aug 2019 11:21:33 -0700 (PDT)
 Received: from jagan-XPS-13-9350.attlocal.net
  ([2600:1700:7430:38e0:d5b0:4823:33c8:5e46])
- by smtp.gmail.com with ESMTPSA id c11sm4401461otr.54.2019.08.26.11.21.30
+ by smtp.gmail.com with ESMTPSA id c11sm4401461otr.54.2019.08.26.11.21.32
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 26 Aug 2019 11:21:31 -0700 (PDT)
+ Mon, 26 Aug 2019 11:21:32 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v2 10/16] wdt: Kconfig: Add WDT_DW entry
-Date: Mon, 26 Aug 2019 23:51:05 +0530
-Message-Id: <20190826182111.30999-11-jagan@amarulasolutions.com>
+Subject: [PATCH v2 11/16] wdt: Kconfig: Add TPL_WDT entry
+Date: Mon, 26 Aug 2019 23:51:06 +0530
+Message-Id: <20190826182111.30999-12-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190826182111.30999-1-jagan@amarulasolutions.com>
 References: <20190826182111.30999-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_112133_147718_7E6A5E4E 
-X-CRM114-Status: GOOD (  10.46  )
+X-CRM114-CacheID: sfid-20190826_112134_078474_50A6902F 
+X-CRM114-Status: UNSURE (   7.00  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -105,49 +105,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add Kconfig entry for CONFIG_WDT_DW, and it indeed
-depends on DM WDT.
-
-So, it can be avialable on particular board defconfig
-only if they switch to use DW driver model code.
+Add missing Kconfig entry for TPL_WDT.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- drivers/watchdog/Kconfig     | 8 ++++++++
- scripts/config_whitelist.txt | 1 -
- 2 files changed, 8 insertions(+), 1 deletion(-)
+ drivers/watchdog/Kconfig | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
 diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-index a66a9bcbe2..8674633b90 100644
+index 8674633b90..7c7f0c67a0 100644
 --- a/drivers/watchdog/Kconfig
 +++ b/drivers/watchdog/Kconfig
-@@ -90,6 +90,14 @@ config WDT_CDNS
- 	   Select this to enable Cadence watchdog timer, which can be found on some
- 	   Xilinx Microzed Platform.
+@@ -182,4 +182,11 @@ config SPL_WDT
+ 	  Enable driver model for watchdog timer in SPL.
+ 	  This is similar to CONFIG_WDT in U-Boot.
  
-+config WDT_DW
-+	bool "Synopsys DesignWare watchdog"
-+	depends on WDT
-+	default y if ROCKCHIP_RK3399
++config TPL_WDT
++	bool "Enable driver model for watchdog timer drivers in TPL"
++	depends on TPL_DM
 +	help
-+	  Say Y here if to include support for the Synopsys DesignWare
-+	  watchdog timer found in many chips.
++	  Enable driver model for watchdog timer in TPL.
++	  This is similar to CONFIG_WDT in U-Boot.
 +
- config WDT_MPC8xx
- 	bool "MPC8xx watchdog timer support"
- 	depends on WDT && MPC8xx
-diff --git a/scripts/config_whitelist.txt b/scripts/config_whitelist.txt
-index 35c56262ed..0618cb9047 100644
---- a/scripts/config_whitelist.txt
-+++ b/scripts/config_whitelist.txt
-@@ -321,7 +321,6 @@ CONFIG_DEFAULT_IMMR
- CONFIG_DEF_HWCONFIG
- CONFIG_DELAY_ENVIRONMENT
- CONFIG_DESIGNWARE_ETH
--CONFIG_WDT_DW
- CONFIG_DEVELOP
- CONFIG_DEVICE_TREE_LIST
- CONFIG_DFU_ALT
+ endmenu
 -- 
 2.18.0.321.gffc6fa0e3
 
