@@ -2,71 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44DC69D5BE
-	for <lists+linux-rockchip@lfdr.de>; Mon, 26 Aug 2019 20:22:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB4D59D5BF
+	for <lists+linux-rockchip@lfdr.de>; Mon, 26 Aug 2019 20:22:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pMUs60xP5ZGgkuuhE4mrCi8BCC7NNRGPJK+l4riDEdM=; b=HyYyKSrcFQ+APB
-	ExtqEa4qfwqOAav0iu1LIzeBfYHsk0Kp3aus0wNGkcjeaItb0VV4vd3YA3T5u2UbUKbxtDRTWBUwv
-	V/PAn2WRI8QBeOi4DaNt6Wu7lI3y7Tgv+B+mwJNuQhkVYHBHOLe2pbVUMvfllZSJpmhKUq37VrdMZ
-	svFytZAqMoJcTXI30ZnYxaGNSYZichc+AXzNPfZYPEe4Ug0RSjnJ48XSSnzVDUFbNgFa/GPmXelqr
-	a6h67CsFVW6e/S7CL2PvwPFS163zydvjYvLWz7xANK/itbHoj7y1gGFdG4rg8Xrc8idJs0sx7Zs3K
-	kpMEA7KZB+/640OzGJ/g==;
+	List-Owner; bh=cYJ64JF/JDA0bKaRbjs2+vX2VZ61XRdVAlKE4+YVTLY=; b=X9oaijYUDIvA8v
+	rk3lo2mgAGcTHUMT6oxW7cfPBMNGL0m9H4XeoR7p2/BkXClPks4MRjYtFe3FbidIrulQpTGgiI0Ot
+	ojg9e8z84L00NKHGvozVlq/gmeJoQ61OL3E8NCLbqI8qHGH1/wahxK2/cc6Nz22b+O/3yIi/zCEvz
+	m76PAkDOIZBf2lkCgZtjYvFEl+XVXNoA7TCXpaVIHAuFopWlxMy6qA2QbIoZeYNZh2W1MiiYSK+rs
+	Q0ajlwQFQRjVr4MoowCyPWGtYQbaXAffOhZqtLGWt6gCaxEc4uetVN1+GhaQAY8sCbHA2JNCpfmdg
+	pvUpJBgW6M4qi/TFe24g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Jcr-0001qE-7u; Mon, 26 Aug 2019 18:21:57 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1i2Jct-0001sj-IM; Mon, 26 Aug 2019 18:21:59 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2JcW-0001Vd-1j
- for linux-rockchip@lists.infradead.org; Mon, 26 Aug 2019 18:21:37 +0000
-Received: by mail-oi1-x243.google.com with SMTP id l2so12884370oil.0
- for <linux-rockchip@lists.infradead.org>; Mon, 26 Aug 2019 11:21:36 -0700 (PDT)
+ id 1i2JcX-0001Ww-3v
+ for linux-rockchip@lists.infradead.org; Mon, 26 Aug 2019 18:21:38 +0000
+Received: by mail-oi1-x241.google.com with SMTP id n1so12869825oic.3
+ for <linux-rockchip@lists.infradead.org>; Mon, 26 Aug 2019 11:21:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=jZTZrBBeRsgIagLVhnCtIjXbWsyubZYVGeJG3Ec4F8E=;
- b=d001+P+0aUZBLAkPxYtD/Q6XdAwdkwO763LxNH1AoTpwl3Wcc/eb/J6RHSjh+rqt+T
- YcUprHNiS7eKam9s2krfm64lUMP+loO+az7Mmq/jfw0D8Epi9r/j5ptkxx/tbwZfUH98
- D9eI5LZ7l502uPao7Nj8844//5J1kiJFMFHB4=
+ bh=PTRnUv8J7zEq+X2sNjg1iCIdKlVO2Xf4T9bpXqnekG8=;
+ b=llqXD9EtoX9u3n83kkKg2fbW6FP7nS8xt1QJxXn8rwjuiiSC9quzy8p5iyubtQG7pv
+ het+l0SANcbzzaQWP44Tq6cc3VZPT0U6F7aDcmlZrYLz8m2HYqMtOxxb7YaX7z6Socyi
+ Db2mMUQFBx9+awO5dF459vdXDplOI9Kyd8DbY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=jZTZrBBeRsgIagLVhnCtIjXbWsyubZYVGeJG3Ec4F8E=;
- b=UYRQgFoEwuorMELI5id/64y18fB/FZZmQDb4g7wbCfhJYwnJwuaUKs6Lrnm6zsIWiq
- KTXCWjt31HDdFTplTaxgysEXyWJcQGhOQLM0KEmkoCar1gJAPfATB/Xc0vGGbhHBwGBM
- ftPy76PER4OG2dDW/rbqV3v9f3J42483DuDHSwl6hE7fzXpkgx2i/94iMvavMwoJGS/K
- iIuud5LrfqaU+YE7IQFRVIIfzR8O5OTWndqQVlyKMG+UlrM9vM2P9mHuPBuSIdEz6por
- Gm/fPu2wJa0nVWcAaAtUxaxcNCZ0r3somBSE+btsucjoTqGycm1thD6QWLmYm8CS0W6l
- Xkjg==
-X-Gm-Message-State: APjAAAX9h+MYHSC5MnbVQCYcwhfL5/9cT9EPq8KdFsBbs6C+Qr1CD28p
- hjk5X0NIDaAJ5iiVLBWY0wlj3w==
-X-Google-Smtp-Source: APXvYqyPrb9fpDs01HJ5B8Rn57dA7dR4hANq+mIPHM7D5Iv7GQrczqLy1QzBfH3kbnGZJVwOfN9Q3Q==
-X-Received: by 2002:aca:2b08:: with SMTP id i8mr12835817oik.31.1566843695319; 
- Mon, 26 Aug 2019 11:21:35 -0700 (PDT)
+ bh=PTRnUv8J7zEq+X2sNjg1iCIdKlVO2Xf4T9bpXqnekG8=;
+ b=M7iF9llmW9/GAn2FcvB6+OEWjznDTGrRqCT2ts29nEz6sKWyn6khvmcL0WbwXFedMq
+ xxP+ctuDtY2tQE1S3xOvAoguq0HmWMs/RixQA6sOMwewQ8DQQmBDJBjGfDhyJXQXnjrc
+ pahBo1K7l6+6yfGEHGGEnvVQx4yn/o20r/yXX+c16eoDnHAv7gdLkXG+7v4ghWPuBQ+U
+ fOj1gb4gNckipOSQdKZFU0JPd7cP/gqe6BypeRkuTUWOeCk13SOb8KJfSzTdy5etwtrK
+ bPWQ2Lc2LfSEiT4KWpKD1NlLVcuG16nMvRY9vZLpkvnDP9Xgxr1zG5BY6BFPhh/eXe2x
+ pu/g==
+X-Gm-Message-State: APjAAAVh62788x4Kt6v1EWfGfd6O5HGt9U3qLqUQV0+BefqKKe/+Imge
+ hf9xMForJzR1HIdzuSeapFZnhQ==
+X-Google-Smtp-Source: APXvYqws+Aw+ZpimBFGouRIkRGMdJl/3ETcr/DyXWgZwBh9FfyfZpGtZUVayfYqAN4cnuh/Xb9/P4w==
+X-Received: by 2002:aca:3c1:: with SMTP id 184mr11811619oid.113.1566843696436; 
+ Mon, 26 Aug 2019 11:21:36 -0700 (PDT)
 Received: from jagan-XPS-13-9350.attlocal.net
  ([2600:1700:7430:38e0:d5b0:4823:33c8:5e46])
- by smtp.gmail.com with ESMTPSA id c11sm4401461otr.54.2019.08.26.11.21.34
+ by smtp.gmail.com with ESMTPSA id c11sm4401461otr.54.2019.08.26.11.21.35
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 26 Aug 2019 11:21:34 -0700 (PDT)
+ Mon, 26 Aug 2019 11:21:36 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v2 13/16] watchdog: Handle TPL build with watchdog disabled
-Date: Mon, 26 Aug 2019 23:51:08 +0530
-Message-Id: <20190826182111.30999-14-jagan@amarulasolutions.com>
+Subject: [DO NOT MERGE] [PATCH v2 14/16] rk3399: rockpro64: Enable watchdog
+Date: Mon, 26 Aug 2019 23:51:09 +0530
+Message-Id: <20190826182111.30999-15-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190826182111.30999-1-jagan@amarulasolutions.com>
 References: <20190826182111.30999-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_112136_104229_C48B2A96 
-X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-CacheID: sfid-20190826_112137_170806_8A670D96 
+X-CRM114-Status: UNSURE (   6.80  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -74,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,38 +105,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This patch handle a checks to not enable watchdog in TPL,
-if TPL won't require to enable that.
-
-This is useful, in rockchip platforms where watchdog would
-require in SPL and U-Boot proper and optional to have it
-in TPL. So, without this check, the TPL build failed to get
-the watchdog_reset function even though the watchdog is not
-enable for it.
+Enable watchdog in SPL and U-Boot proper for Rockpro64.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- include/watchdog.h | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ configs/rockpro64-rk3399_defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/include/watchdog.h b/include/watchdog.h
-index a4a4e8e614..f04e3e7c4d 100644
---- a/include/watchdog.h
-+++ b/include/watchdog.h
-@@ -51,9 +51,10 @@ int init_func_watchdog_reset(void);
- 		#if defined(__ASSEMBLY__)
- 			#define WATCHDOG_RESET bl watchdog_reset
- 		#else
--			/* Don't require the watchdog to be enabled in SPL */
--			#if defined(CONFIG_SPL_BUILD) &&		\
--				!defined(CONFIG_SPL_WATCHDOG_SUPPORT)
-+			/* Don't require the watchdog to be enabled in TPL/SPL */
-+			#if ((defined(CONFIG_TPL_BUILD) || defined(CONFIG_TPL_BUILD)) && \
-+			      (!defined(CONFIG_TPL_WATCHDOG_SUPPORT) || \
-+			       !defined(CONFIG_SPL_WATCHDOG_SUPPORT)))
- 				#define WATCHDOG_RESET() {}
- 			#else
- 				extern void watchdog_reset(void);
+diff --git a/configs/rockpro64-rk3399_defconfig b/configs/rockpro64-rk3399_defconfig
+index e05ea3e186..5ff38efa53 100644
+--- a/configs/rockpro64-rk3399_defconfig
++++ b/configs/rockpro64-rk3399_defconfig
+@@ -55,3 +55,5 @@ CONFIG_USB_ETHER_RTL8152=y
+ CONFIG_USB_ETHER_SMSC95XX=y
+ CONFIG_SPL_TINY_MEMSET=y
+ CONFIG_ERRNO_STR=y
++CONFIG_WDT=y
++CONFIG_SPL_WATCHDOG_SUPPORT=y
 -- 
 2.18.0.321.gffc6fa0e3
 
