@@ -2,79 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEA499D5B3
-	for <lists+linux-rockchip@lfdr.de>; Mon, 26 Aug 2019 20:21:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 915909D5B4
+	for <lists+linux-rockchip@lfdr.de>; Mon, 26 Aug 2019 20:21:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NgxO18jmagRyJYJ2uxeLV2hle0xmx9Pyp6qKZSb8A4M=; b=IedckzUOtDODyI
-	EO8OAynTTgZa/RDNHD4T/VTIAYVyKbisPASi1O0+donQlZr5b2juTZmxJlJ0Q0SlaypC/8QhM1T52
-	ATbt6jW+xmGJI9iyjSo5JoTYmncfkzdmxCLjiYOytulSSPRX3U5ZKd76fjxFGYlMNUxwky+GUmu2z
-	xDDOe1qQMjpj+/LrynbYkr+NdK7Uw9Z29qeeBVrbffUF8kisy6ambDr288A2rNlmpz+PFtzmnwcQf
-	eJ78qE63uUceJH6TLwrPcTbO34okkoZCmOrKWseUCBbliihyqw26Pu+YDUIN8siA5GRrWDEsTEbA6
-	I3OYLZbTMvWB8bHc4hiw==;
+	List-Owner; bh=i08ckhz5r3anWvU+7WxwxgtPMyc5pEdvT0M5Q3Wr4HI=; b=qxPgVS4bXM3dPY
+	vv7KeFGbkzTswFiEaSZPZU2ypAG8bZs8acEomxZSWCYfK4OEPcgnK6jbnYbJd92A7rBrun3FgxxFk
+	73SHmGUdf5fy3bCrwlqf8aqRqCqT1uNkNEQr5z8XF+7b/umBFfTmpPpdRn6PslDxjWRiWQXPImv6E
+	jwQNkmL+DvZ4siZqZurmLuwTEvr0FWwT6+UNOvfIUKGde23CvuU+9IjBLArlYN6Zl+UYoz2WoM5HX
+	goAt/tFSjU4ZGrdXx4gETyd0BCNdWdUEk2OXF+V4vJKPV9OWX8Qtg2WG2Da4AzvB1RSSKeM8t9v/K
+	U6RO06+InMT3kaY3sq1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Jcc-0001bL-L4; Mon, 26 Aug 2019 18:21:42 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1i2Jce-0001dl-DW; Mon, 26 Aug 2019 18:21:44 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2JcP-0001Nw-Iu
+ id 1i2JcQ-0001PD-CH
  for linux-rockchip@lists.infradead.org; Mon, 26 Aug 2019 18:21:31 +0000
-Received: by mail-ot1-x344.google.com with SMTP id z17so16067056otk.13
- for <linux-rockchip@lists.infradead.org>; Mon, 26 Aug 2019 11:21:29 -0700 (PDT)
+Received: by mail-oi1-x244.google.com with SMTP id q8so12580852oij.5
+ for <linux-rockchip@lists.infradead.org>; Mon, 26 Aug 2019 11:21:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=aNcJ9rEaaKnDjlWm6bI6hY9Nv7plN57nwYDZFCxbKmE=;
- b=JTibY+rsBS1tdGFqFJ2eB/lscz4QogFrrLCNJrPDWUOqkrgA+S/k1LuBBTHSR2vyS5
- bkLqMCnySBA0VlD5FdDJCibO7La2ZRHIDTAhm1OINcBjo52TSqsrGV/UCjAMZ+f14D8g
- +694P7+LWmUdPGHKOkEUxSSKl4mh8xWwLlODY=
+ bh=qO2o3JiSSK7DhHkxgiIofrCT8NvSiNOXOxqZG/yKu8I=;
+ b=RDu/HXwV0CQF9gPBLsA6w18BqJuthUCxpXnU1BPDinvSi9ETTUMJ9Ew+1W9Ivc/6NE
+ XV/Hg37IqYfrWgkcxm+3SNY0lh1ZtAaHgnas3Dq9Tm1/DNUy0RP7X9HyH/WemIUyWrqC
+ dcPfjW0ty6LoNHW2gwUIHo1SrIFfUTDLvUmOk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=aNcJ9rEaaKnDjlWm6bI6hY9Nv7plN57nwYDZFCxbKmE=;
- b=qswsPq/f4Wj7smk9QUqKsrVOUBu7VVVyAbkhj7tanAcbVB5wE8b/3GkjiXNfDUm947
- 3Ob5Hdf/ecJxTDofOWXqMcOUuiO+5aNw1TKUO6JiwIHDEBFWXn6DRmuKcRUS24dXLSba
- 17HFPMQnKZLS7xqDtFoI+8/Duo5dB7gJlQTNb78E2KqBhiJv+H3tcuKJaWzEsmnzegQI
- jtjijz1SCudGaddCgz6diGbM+FzgOqJ0AuZYUElxDSPOtfAOSIkBK2ULny9fONkqs1Gr
- /6DXbY2KT8vHst9E1DaZlzG35GgqPDW2h1jLq0Uvg49JUNXZBNnzY+GoDVL6axMoq6Gl
- Nveg==
-X-Gm-Message-State: APjAAAXWHPH3fbp70qLp/NM0B36zr4t2UrbxBTjz8rBvv7duXH+/DzxO
- 7Ym0f40o8aYSo3T1N1RVPykBDw==
-X-Google-Smtp-Source: APXvYqz2fGbwjaHI+SOjgqktyYLV1mu7mPWOj46rqk+Gv8/npnbR0TCXN6sMov7SZiEmdcJSVjZykg==
-X-Received: by 2002:a05:6830:1615:: with SMTP id
- g21mr15633100otr.124.1566843688512; 
- Mon, 26 Aug 2019 11:21:28 -0700 (PDT)
+ bh=qO2o3JiSSK7DhHkxgiIofrCT8NvSiNOXOxqZG/yKu8I=;
+ b=dOCQuXjjpx5K88ob2O4BlaclSjrVbNpd+fumo5TUPGPA9CoXiI9S1SKjD60+WDNBJn
+ 9a3pcfoaugOrOoqQEoI1xpkoVbYNPVX79DI4pCG7VKIMjvtwpv2j5Mw8mMPP4y+hmFqF
+ w2mLCloc7L6A6mnCwhSwkMXNgUVPU1ew7cBGx5lZomVi2lm+tYs/qqxjeSCiiXQMDw6e
+ Ql55LCn+URY/brRL1d2PXKM9r6HkmIaXzG9qAkxKs4H2J5J+6ZmFBsG7lHCn6mDU/m1h
+ Gh6+ESjNtOSj+JKE8L1iruEuUslAq37LbJIibKUKJQ2i25QYY5jVND06yrdww63PA+md
+ 5wyw==
+X-Gm-Message-State: APjAAAVPFtFKfrUJehLphqXfSBITeVepEzbnrl1GjtXevebInaj+XaDA
+ uU34NxQV5ldBjSS3HnTQIS6cQA==
+X-Google-Smtp-Source: APXvYqzriVDiABXEycdviLY85FJ0F0GJ37bFh9t9+B8gRs/HxFJXV1YuOsaYhxG+4rfz9PB9j4y2Gw==
+X-Received: by 2002:aca:4ecd:: with SMTP id c196mr13866597oib.10.1566843689672; 
+ Mon, 26 Aug 2019 11:21:29 -0700 (PDT)
 Received: from jagan-XPS-13-9350.attlocal.net
  ([2600:1700:7430:38e0:d5b0:4823:33c8:5e46])
- by smtp.gmail.com with ESMTPSA id c11sm4401461otr.54.2019.08.26.11.21.27
+ by smtp.gmail.com with ESMTPSA id c11sm4401461otr.54.2019.08.26.11.21.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 26 Aug 2019 11:21:28 -0700 (PDT)
+ Mon, 26 Aug 2019 11:21:29 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v2 07/16] wdt: dw: Add driver-model support
-Date: Mon, 26 Aug 2019 23:51:02 +0530
-Message-Id: <20190826182111.30999-8-jagan@amarulasolutions.com>
+Subject: [PATCH v2 08/16] wdt: dw: Rename to dw_wdt.c
+Date: Mon, 26 Aug 2019 23:51:03 +0530
+Message-Id: <20190826182111.30999-9-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190826182111.30999-1-jagan@amarulasolutions.com>
 References: <20190826182111.30999-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_112129_644506_66CB80E2 
-X-CRM114-Status: GOOD (  11.74  )
+X-CRM114-CacheID: sfid-20190826_112130_445351_2FE84FE9 
+X-CRM114-Status: UNSURE (   9.43  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -97,164 +97,109 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Chin Liang See <clsee@altera.com>,
+Cc: Dinh Nguyen <dinguyen@kernel.org>, Chin-Liang See <clsee@altera.com>,
  u-boot@lists.denx.de, Jagan Teki <jagan@amarulasolutions.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- linux-amarula@amarulasolutions.com, Akash Gajjar <akash@openedev.com>
+ linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
+ Akash Gajjar <akash@openedev.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add driver-model code for designware watchdog.
+- use dw instead of designware for driver file since
+  Linux following the same.
+- add CONFIG macro start with CONFIG_WDT since the
+  driver mode wdt drivers follow this.
 
-Cc: Chin Liang See <clsee@altera.com>
-Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Cc: Dinh Nguyen <dinguyen@kernel.org>
+Cc: Chin-Liang See <clsee@altera.com>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- drivers/watchdog/designware_wdt.c | 118 +++++++++++++++++++++++++++++-
- 1 file changed, 117 insertions(+), 1 deletion(-)
+ common/board_f.c                                | 2 +-
+ drivers/watchdog/Makefile                       | 2 +-
+ drivers/watchdog/{designware_wdt.c => dw_wdt.c} | 0
+ include/configs/socfpga_common.h                | 2 +-
+ include/configs/socfpga_stratix10_socdk.h       | 2 +-
+ scripts/config_whitelist.txt                    | 2 +-
+ 6 files changed, 5 insertions(+), 5 deletions(-)
+ rename drivers/watchdog/{designware_wdt.c => dw_wdt.c} (100%)
 
-diff --git a/drivers/watchdog/designware_wdt.c b/drivers/watchdog/designware_wdt.c
-index 2979fda44e..c822b1e36b 100644
---- a/drivers/watchdog/designware_wdt.c
-+++ b/drivers/watchdog/designware_wdt.c
-@@ -4,7 +4,6 @@
+diff --git a/common/board_f.c b/common/board_f.c
+index 31181a9dc4..33e69c645a 100644
+--- a/common/board_f.c
++++ b/common/board_f.c
+@@ -97,7 +97,7 @@ static int init_func_watchdog_init(void)
+ # if defined(CONFIG_HW_WATCHDOG) && \
+ 	(defined(CONFIG_M68K) || defined(CONFIG_MICROBLAZE) || \
+ 	defined(CONFIG_SH) || \
+-	defined(CONFIG_DESIGNWARE_WATCHDOG) || \
++	defined(CONFIG_WDT_DW) || \
+ 	defined(CONFIG_IMX_WATCHDOG))
+ 	hw_watchdog_init();
+ 	puts("       Watchdog enabled\n");
+diff --git a/drivers/watchdog/Makefile b/drivers/watchdog/Makefile
+index 955caef815..ecdc1ce54f 100644
+--- a/drivers/watchdog/Makefile
++++ b/drivers/watchdog/Makefile
+@@ -13,7 +13,6 @@ endif
+ obj-$(CONFIG_S5P)               += s5p_wdt.o
+ obj-$(CONFIG_XILINX_TB_WATCHDOG) += xilinx_tb_wdt.o
+ obj-$(CONFIG_OMAP_WATCHDOG) += omap_wdt.o
+-obj-$(CONFIG_DESIGNWARE_WATCHDOG) += designware_wdt.o
+ obj-$(CONFIG_ULP_WATCHDOG) += ulp_wdog.o
+ obj-$(CONFIG_$(SPL_TPL_)WDT) += wdt-uclass.o
+ obj-$(CONFIG_WDT_SANDBOX) += sandbox_wdt.o
+@@ -22,6 +21,7 @@ obj-$(CONFIG_WDT_ASPEED) += ast_wdt.o
+ obj-$(CONFIG_WDT_BCM6345) += bcm6345_wdt.o
+ obj-$(CONFIG_WDT_ORION) += orion_wdt.o
+ obj-$(CONFIG_WDT_CDNS) += cdns_wdt.o
++obj-$(CONFIG_WDT_DW) += dw_wdt.o
+ obj-$(CONFIG_WDT_MPC8xx) += mpc8xx_wdt.o
+ obj-$(CONFIG_WDT_MT7621) += mt7621_wdt.o
+ obj-$(CONFIG_WDT_MTK) += mtk_wdt.o
+diff --git a/drivers/watchdog/designware_wdt.c b/drivers/watchdog/dw_wdt.c
+similarity index 100%
+rename from drivers/watchdog/designware_wdt.c
+rename to drivers/watchdog/dw_wdt.c
+diff --git a/include/configs/socfpga_common.h b/include/configs/socfpga_common.h
+index 36b0ed5459..902909216d 100644
+--- a/include/configs/socfpga_common.h
++++ b/include/configs/socfpga_common.h
+@@ -105,7 +105,7 @@
+  * L4 Watchdog
   */
- 
- #include <common.h>
--#include <watchdog.h>
- #include <asm/io.h>
- #include <asm/utils.h>
- 
-@@ -16,6 +15,121 @@
- #define DW_WDT_CR_RMOD_OFFSET	0x01
- #define DW_WDT_CRR_RESTART_VAL	0x76
- 
-+#define DW_WDT_MIN_TOP		0
-+#define DW_WDT_MAX_TOP		15
-+#define DW_WDT_TOPINIT_SHIFT	4
-+
-+#ifdef CONFIG_WDT
-+
-+#include <dm.h>
-+#include <wdt.h>
-+#include <clk.h>
-+
-+struct dw_wdt {
-+	void __iomem *regs;
-+	unsigned long clk_rate;
-+};
-+
-+static inline int dw_wdt_is_enabled(struct dw_wdt *dw)
-+{
-+	return readl(dw->regs + DW_WDT_CR) & DW_WDT_CR_RMOD_OFFSET;
-+}
-+
-+/*
-+ * Set the watchdog time interval.
-+ * Counter is 32 bit.
-+ */
-+static int dw_wdt_set_timeout(struct dw_wdt *dw, unsigned int timeout)
-+{
-+	int i, top_val;
-+
-+	/* calculate the timeout range value */
-+	i = log_2_n_round_up(timeout * dw->clk_rate) - 16;
-+	top_val = clamp_t(int, i, DW_WDT_MIN_TOP, DW_WDT_MAX_TOP);
-+
-+	writel((top_val | (top_val << DW_WDT_TOPINIT_SHIFT)),
-+	       dw->regs + DW_WDT_TORR);
-+
-+	return 0;
-+}
-+
-+static void dw_wdt_enable(struct dw_wdt *dw)
-+{
-+	u32 val = readl(dw->regs + DW_WDT_CR);
-+
-+	/* Enable watchdog */
-+	val |= DW_WDT_CR_RMOD_OFFSET;
-+	writel(val, dw->regs + DW_WDT_CR);
-+}
-+
-+static int dw_wdt_reset(struct udevice *dev)
-+{
-+	struct dw_wdt *dw = dev_get_priv(dev);
-+
-+	if (dw_wdt_is_enabled(dw))
-+		writel(DW_WDT_CRR_RESTART_VAL, dw->regs + DW_WDT_CRR);
-+	else
-+		dw_wdt_enable(dw);
-+
-+	return 0;
-+}
-+
-+static int dw_wdt_start(struct udevice *dev, u64 timeout, ulong flags)
-+{
-+	struct dw_wdt *dw = dev_get_priv(dev);
-+
-+	dw_wdt_set_timeout(dw, timeout);
-+	dw_wdt_enable(dw);
-+
-+	return 0;
-+}
-+
-+static int dw_wdt_probe(struct udevice *dev)
-+{
-+	struct dw_wdt *dw = dev_get_priv(dev);
-+	struct clk clk;
-+	int ret;
-+
-+	dw->regs = dev_remap_addr(dev);
-+	if (!dw->regs)
-+		return -EINVAL;
-+
-+	ret = clk_get_by_index(dev, 0, &clk);
-+	if (ret)
-+		return ret;
-+
-+	dw->clk_rate = clk_get_rate(&clk);
-+	if (!dw->clk_rate)
-+		return -EINVAL;
-+
-+	dw_wdt_reset(dev);
-+
-+	return 0;
-+}
-+
-+static const struct wdt_ops dw_wdt_ops = {
-+	.reset = dw_wdt_reset,
-+	.start = dw_wdt_start,
-+};
-+
-+static const struct udevice_id dw_wdt_ids[] = {
-+	{ .compatible = "snps,dw-wdt" },
-+	{ /* sentinel */ }
-+};
-+
-+U_BOOT_DRIVER(dw_wdt) = {
-+	.name = "dw_wdt",
-+	.id = UCLASS_WDT,
-+	.of_match = dw_wdt_ids,
-+	.ops = &dw_wdt_ops,
-+	.priv_auto_alloc_size = sizeof(struct dw_wdt),
-+	.probe = dw_wdt_probe,
-+};
-+
-+#else
-+
-+#include <watchdog.h>
-+
- /*
-  * Set the watchdog time interval.
-  * Counter is 32 bit.
-@@ -70,3 +184,5 @@ void hw_watchdog_init(void)
- 	hw_watchdog_reset();
- }
- #endif
-+
-+#endif /* CONFIG_WDT */
+ #ifdef CONFIG_HW_WATCHDOG
+-#define CONFIG_DESIGNWARE_WATCHDOG
++#define CONFIG_WDT_DW
+ #define CONFIG_DW_WDT_BASE		SOCFPGA_L4WD0_ADDRESS
+ #define CONFIG_DW_WDT_CLOCK_KHZ		25000
+ #define CONFIG_WATCHDOG_TIMEOUT_MSECS	30000
+diff --git a/include/configs/socfpga_stratix10_socdk.h b/include/configs/socfpga_stratix10_socdk.h
+index 90ad8172e2..5d03bfd061 100644
+--- a/include/configs/socfpga_stratix10_socdk.h
++++ b/include/configs/socfpga_stratix10_socdk.h
+@@ -162,7 +162,7 @@ unsigned int cm_get_qspi_controller_clk_hz(void);
+  */
+ #ifdef CONFIG_SPL_BUILD
+ #define CONFIG_HW_WATCHDOG
+-#define CONFIG_DESIGNWARE_WATCHDOG
++#define CONFIG_WDT_DW
+ #define CONFIG_DW_WDT_BASE		SOCFPGA_L4WD0_ADDRESS
+ #ifndef __ASSEMBLY__
+ unsigned int cm_get_l4_sys_free_clk_hz(void);
+diff --git a/scripts/config_whitelist.txt b/scripts/config_whitelist.txt
+index 661c8b6427..35c56262ed 100644
+--- a/scripts/config_whitelist.txt
++++ b/scripts/config_whitelist.txt
+@@ -321,7 +321,7 @@ CONFIG_DEFAULT_IMMR
+ CONFIG_DEF_HWCONFIG
+ CONFIG_DELAY_ENVIRONMENT
+ CONFIG_DESIGNWARE_ETH
+-CONFIG_DESIGNWARE_WATCHDOG
++CONFIG_WDT_DW
+ CONFIG_DEVELOP
+ CONFIG_DEVICE_TREE_LIST
+ CONFIG_DFU_ALT
 -- 
 2.18.0.321.gffc6fa0e3
 
