@@ -2,89 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A51A39D4A8
-	for <lists+linux-rockchip@lfdr.de>; Mon, 26 Aug 2019 19:09:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 867F29D5AC
+	for <lists+linux-rockchip@lfdr.de>; Mon, 26 Aug 2019 20:21:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=byLnVT1+O+CCTkwYo7dHPkqHMLLBDZ5KQBjXOK1I//0=; b=izmsMElxGCeoQK
-	ywXEV05KPxunJ7yg9SPeDYCsrN01WkDt1ovbYFXYTkCg0urBkAESCvFX/1STEgfrpYvMPQsIkAyWt
-	kmXJfn/R6oHSgFSk2akPHQBvN+EXDsNGaP5DL7HDD8WQO+rsyxGnojMal35/zZLjSjJ4onjnkdRjk
-	QVBmOdrgZLBQt50g8/ToakgKyMyXBQxSPrDsSz4TmrKoSdkOeGdyPtQAHLeOyjpzVlbaN+hZVf3xN
-	boEdD6PtUEhXC8zD1EIkMn+N08M3dJkvkdMhu+otY7R73OQx6oPrlelOP0NFcnZRENFRE2ivGxFdU
-	8jCXrqnj+znRUd4kKbiA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=6S3L4GEixtWe1Ru6rO/kBrrYiCh/K2GhIG7XCOxqDw8=; b=mlCmANep6dC3jS
+	I776aic3WJ27h/S4jVTqTwLFRSWaW3ACaSx37vpJpxLOxzP89Ojp4HVDEnkMEwVzU7mpm9rAFiHeY
+	z5zD0lM2LcLDRASvRpGYLK6fa+lu2BOFQ82NPIMeFRLtVQ6bEuA+Cdnyhe02BuLFhOko584EkDjcw
+	r/hhyH1Y4jf6llt/0GxQl/aj/j6/xL3qCMXi6FJpurAYrjYY5D+bisQiqylO8zDYLEigoxIVLzBqB
+	XOpLhkGFaw9pfg2p5MwI50wIK2/w+98qjCJXAETeYHw2PtWd/dpgHXsbLcsyAkEICYz+bVW6WdYvM
+	ftBO+gOjy1XiRP4iO6mw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2IUp-0003qV-MY; Mon, 26 Aug 2019 17:09:35 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1i2JcN-0001L0-Jx; Mon, 26 Aug 2019 18:21:27 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2IUS-0003ev-DC
- for linux-rockchip@lists.infradead.org; Mon, 26 Aug 2019 17:09:14 +0000
-Received: by mail-pf1-x443.google.com with SMTP id i30so12178716pfk.9
- for <linux-rockchip@lists.infradead.org>; Mon, 26 Aug 2019 10:09:10 -0700 (PDT)
+ id 1i2JcG-0001JK-RU
+ for linux-rockchip@lists.infradead.org; Mon, 26 Aug 2019 18:21:22 +0000
+Received: by mail-oi1-x242.google.com with SMTP id l2so12883488oil.0
+ for <linux-rockchip@lists.infradead.org>; Mon, 26 Aug 2019 11:21:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version:content-transfer-encoding;
- bh=yPeEMddIi0z8KsbVoXmX4P9JjZRScu3qoYzqC8dRJtQ=;
- b=aL4eazpgspu49x5bhKNzO0ttOCOEIJSQo3jsWqBwo2CIZ5b0YXuTw84rMEeXLIyDTS
- 9CsdkHCOlwsyqfDQT8RK12Bx4seoREL5VE+27nqmQbTpAWk5JrDBVEPcIwQJjeseaVxV
- F2RA8lyjbKRhkyxs2559lPjl4GDWJRY6IGHYTVtzBRjIyOzreU6+Q1UX+L3xLd4NwCB8
- /mGh9pEOqeI6lWsEh7xXx+K3cWSEHF4wL9LcDJAErjXicJz7nppR8mOeDuTixy8Ofdb9
- eXQWzi3CPV5V409yrVcmmM9IV8coOG9j5aMG6AWsCrOT3AhapKOI/gbcc5T9Fau/Loyw
- 5aQg==
+ d=amarulasolutions.com; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=/7SgKrjWzUviuhlLMkeSP3k1gsudg9fnF1buswRrfG8=;
+ b=iXVF3gsIFc2HPowc8nO2Ug2FY/L2RSQP85BVkPl+fHmuxh54FIlYanvlfSRZA7dUjI
+ cW1MNjVQb7GJWvBb1w+dbb4YN9oWyCwYi8chaRB3yefm8LgUZSop/C3h12gjDsYKrVjj
+ PQCis36ESoZlWYM2RjoKmkuSnNvduMdPZXA5o=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version:content-transfer-encoding;
- bh=yPeEMddIi0z8KsbVoXmX4P9JjZRScu3qoYzqC8dRJtQ=;
- b=AB0cx05mgvkdgQVqlgL+QU0fEJYxm3O38RBNTr8jecgu2rEyIc/IdZgH7WTDZUbvGZ
- Sg1Er0o0EkXExNGxsR0fRms+QFAgUd2HCh0t8SXuAhhZ5/AvVXw0djesP6vIfVHpEtTJ
- 0y5gaxxdO6f0pK5vZox1z7gJHwSOYmkBOe9cyn728/hgt3duLrGKRO2UH0IwAdT9Lg5U
- KmHv1E50dh7fCP9qteUGpisrxrf6TpGwPY8x/xloDuespu0Dgr+CmbrMHnczRuGYmUhn
- ipviAZdrLMiCutPtpLWK79tMgyjvdHcaabLM+yDJjBoo1o9D18d4qXYD39un3Ssnzvfx
- cgGQ==
-X-Gm-Message-State: APjAAAVCtimBvX+zO3uT0ytGZM43yx7fjYd2RuxfNqRnN84DKDpPOuI/
- KMqWQ9Ib+G9CVUpC7z9KLRntHqIaD4A=
-X-Google-Smtp-Source: APXvYqxVp9zJ5zqqJbitmKSrHWunH37Vo1H3Mu2yAOmtWhXd2V8RC0WBZxuI0F9r1DUFJW2cz7mheg==
-X-Received: by 2002:a62:754a:: with SMTP id q71mr20811624pfc.15.1566839350017; 
- Mon, 26 Aug 2019 10:09:10 -0700 (PDT)
-Received: from localhost ([2601:602:9200:a1a5:cc35:e750:308e:47f])
- by smtp.gmail.com with ESMTPSA id 22sm15757652pfv.134.2019.08.26.10.09.09
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 26 Aug 2019 10:09:09 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Kever Yang <kever.yang@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>
-Subject: Re: CPUfreq fail on rk3399-firefly
-In-Reply-To: <db7af16f-d8cc-fbcb-726d-2aeba5563076@rock-chips.com>
-References: <5d3057c8.1c69fb81.c6489.8ad2@mx.google.com>
- <20190718162005.GF5761@sirena.org.uk> <7hmugdynmk.fsf@baylibre.com>
- <2314814.WbdfqDVNqK@phil> <7hv9uq9wfe.fsf@baylibre.com>
- <c973d3fa-5f0d-c277-7c83-6227942a671a@rock-chips.com>
- <7hd0gvzuvw.fsf@baylibre.com> <7h8srjzuen.fsf@baylibre.com>
- <db7af16f-d8cc-fbcb-726d-2aeba5563076@rock-chips.com>
-Date: Mon, 26 Aug 2019 10:09:08 -0700
-Message-ID: <7h4l23zwej.fsf@baylibre.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=/7SgKrjWzUviuhlLMkeSP3k1gsudg9fnF1buswRrfG8=;
+ b=JkxFfhooYz71Q/k+Ay7w3tj81cNf1Wcb+MIYonnW1+PBDPV2erXmoTQWKRiA0P+0+J
+ dsake5EY9ABT3IUSHg/t27a7lfWGXAk38eyknJ87ew6Ed9/8eAbrJ2UjQMpxp5BDpp0s
+ jxSEt4bhFWL7DS5zzhLwUeAgzX2LhO6h5ZDDBqs2G7GKtfy+iOvL44LR4LgKxB3rVanJ
+ DTi9lQu2TrG1oFU0PZGCVXoFd3Qne2r6mCgqy7Bd2MH6BzHwXwxXsJIb6mR/PpEzuqdp
+ fyKFAqye/MilEBcVnRF2USZVWhVeHgpLH+9Z7GmQ+aF63E3Bmcn0ydRRKlQ61xZymBPD
+ JKhA==
+X-Gm-Message-State: APjAAAUjVo1rxKjPT+3tuxWMOLLgxdX2PRz//X8TYCiNMLw0plqBHl7U
+ ApIW29mLLXAQTqIs/EiLkqdWvg==
+X-Google-Smtp-Source: APXvYqwzKUvJZ163nGk5vJPp6Wpnx0mU92xfSVTtcBSCrylyil1TjRndz/5i2bdoF0Fa40Tg4w3ZgA==
+X-Received: by 2002:aca:1104:: with SMTP id 4mr8966621oir.65.1566843678496;
+ Mon, 26 Aug 2019 11:21:18 -0700 (PDT)
+Received: from jagan-XPS-13-9350.attlocal.net
+ ([2600:1700:7430:38e0:d5b0:4823:33c8:5e46])
+ by smtp.gmail.com with ESMTPSA id c11sm4401461otr.54.2019.08.26.11.21.17
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 26 Aug 2019 11:21:17 -0700 (PDT)
+From: Jagan Teki <jagan@amarulasolutions.com>
+To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
+Subject: [PATCH v2 00/16] rk3399: Add redundant boot support 
+Date: Mon, 26 Aug 2019 23:50:55 +0530
+Message-Id: <20190826182111.30999-1-jagan@amarulasolutions.com>
+X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_100912_597499_03DB8CCA 
-X-CRM114-Status: GOOD (  22.56  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190826_112121_498093_25285673 
+X-CRM114-Status: GOOD (  10.57  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,116 +94,118 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-build-reports@lists.linaro.org, linux-rockchip@lists.infradead.org,
- linux-next@vger.kernel.org,
- =?utf-8?B?6Zer5a2d?= =?utf-8?B?5Yab?= <andy.yan@rock-chips.com>,
- =?utf-8?B?5byg5pm0?= <elaine.zhang@rock-chips.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Jagan Teki <jagan@amarulasolutions.com>, u-boot@lists.denx.de,
+ linux-amarula@amarulasolutions.com, Akash Gajjar <akash@openedev.com>,
+ linux-rockchip@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgS2V2ZXIsCgpLZXZlciBZYW5nIDxrZXZlci55YW5nQHJvY2stY2hpcHMuY29tPiB3cml0ZXM6
-Cgo+IEhpIEtldmluLAo+Cj4gIMKgwqDCoCBJIHdhbnQgdG8gaGF2ZSBhIHRlc3Qgd2l0aCBteSBi
-b2FyZCwgSSBjYW4gZ2V0IHRoZSBJbWFnZSBhbmQgZHRiIAo+IGZyb20gdGhlIGxpbmsgZm9yIHRo
-ZSBqb2IsCj4KPiBidXQgaG93IGNhbiBJIGdldCB0aGUgcmFuZGlzayB3aGljaCBpcyBuYW1lZCBp
-bml0cmQtU0RieXkyLmNwaW8uZ3o/CgpUaGUgcmFtZGlzayBpbWFnZXMgYXJlIGhlcmU6CgogIGh0
-dHBzOi8vc3RvcmFnZS5rZXJuZWxjaS5vcmcvaW1hZ2VzL3Jvb3Rmcy9idWlsZHJvb3Qva2NpLTIw
-MTkuMDIvYXJtNjQvYmFzZS8KCmluIHRoZSBrZXJuZWxDSSBsb2dzIHRoZSByYW1kaXNrIGlzIHNs
-aWdodGx5IG1vZGlmaWVkIGJlY2F1c2UgdGhlIGtlcm5lbAptb2R1bGVzIGhhdmUgYmVlbiBpbnNl
-cnRlZCBpbnRvIHRoZSBjcGlvIGFyY2hpdmUuCgpIb3dldmVyLCBmb3IgdGhlIHB1cnBvc2VzIG9m
-IHRoaXMgdGVzdCwgeW91IGNhbiBqdXN0IHRlc3Qgd2l0aCB0aGUKdW5tb2RpZmllZCByb290ZnMu
-Y3Bpby5neiBhYm92ZS4KCktldmluCgoKPiBUaGFua3MsCj4KPiAtIEtldmVyCj4KPiBPbiAyMDE5
-LzgvMjQg5LiK5Y2IMTowMywgS2V2aW4gSGlsbWFuIHdyb3RlOgo+PiBLZXZpbiBIaWxtYW4gPGto
-aWxtYW5AYmF5bGlicmUuY29tPiB3cml0ZXM6Cj4+Cj4+PiBLZXZlciBZYW5nIDxrZXZlci55YW5n
-QHJvY2stY2hpcHMuY29tPiB3cml0ZXM6Cj4+Pgo+Pj4+IEhpIEtldmluLCBIZWlrbywKPj4+Pgo+
-Pj4+IE9uIDIwMTkvOC8yMiDkuIrljYgyOjU5LCBLZXZpbiBIaWxtYW4gd3JvdGU6Cj4+Pj4+IEhp
-IEhlaWtvLAo+Pj4+Pgo+Pj4+PiBIZWlrbyBTdHVlYm5lciA8aGVpa29Ac250ZWNoLmRlPiB3cml0
-ZXM6Cj4+Pj4+Cj4+Pj4+PiBBbSBEaWVuc3RhZywgMTMuIEF1Z3VzdCAyMDE5LCAxOTozNTozMSBD
-RVNUIHNjaHJpZWIgS2V2aW4gSGlsbWFuOgo+Pj4+Pj4+IFsgcmVzZW50IHdpdGggY29ycmVjdCBh
-ZGRyIGZvciBsaW51eC1yb2NrY2hpcCBsaXN0IF0KPj4+Pj4+Pgo+Pj4+Pj4+IE1hcmsgQnJvd24g
-PGJyb29uaWVAa2VybmVsLm9yZz4gd3JpdGVzOgo+Pj4+Pj4+Cj4+Pj4+Pj4+IE9uIFRodSwgSnVs
-IDE4LCAyMDE5IGF0IDA0OjI4OjA4QU0gLTA3MDAsIGtlcm5lbGNpLm9yZyBib3Qgd3JvdGU6Cj4+
-Pj4+Pj4+Cj4+Pj4+Pj4+IFRvZGF5J3MgLW5leHQgc3RhcnRlZCBmYWlsaW5nIHRvIGJvb3QgZGVm
-Y29uZmlnIG9uIHJrMzM5OS1maXJlZmx5Ogo+Pj4+Pj4+Pgo+Pj4+Pj4+Pj4gYXJtNjQ6Cj4+Pj4+
-Pj4+PiAgICAgICBkZWZjb25maWc6Cj4+Pj4+Pj4+PiAgICAgICAgICAgZ2NjLTg6Cj4+Pj4+Pj4+
-PiAgICAgICAgICAgICAgIHJrMzM5OS1maXJlZmx5OiAxIGZhaWxlZCBsYWIKPj4+Pj4+Pj4gSXQg
-aGl0cyBhIEJVRygpIHRyeWluZyB0byBzZXQgdXAgY3B1ZnJlcToKPj4+Pj4+Pj4KPj4+Pj4+Pj4g
-WyAgIDg3LjM4MTYwNl0gY3B1ZnJlcTogY3B1ZnJlcV9vbmxpbmU6IENQVTA6IFJ1bm5pbmcgYXQg
-dW5saXN0ZWQgZnJlcTogMjAwMDAwIEtIego+Pj4+Pj4+PiBbICAgODcuMzkzMjQ0XSBjcHVmcmVx
-OiBjcHVmcmVxX29ubGluZTogQ1BVMDogVW5saXN0ZWQgaW5pdGlhbCBmcmVxdWVuY3kgY2hhbmdl
-ZCB0bzogNDA4MDAwIEtIego+Pj4+Pj4+PiBbICAgODcuNDY5Nzc3XSBjcHVmcmVxOiBjcHVmcmVx
-X29ubGluZTogQ1BVNDogUnVubmluZyBhdCB1bmxpc3RlZCBmcmVxOiAxMjAwMCBLSHoKPj4+Pj4+
-Pj4gWyAgIDg3LjQ4ODU5NV0gY3B1IGNwdTQ6IF9nZW5lcmljX3NldF9vcHBfY2xrX29ubHk6IGZh
-aWxlZCB0byBzZXQgY2xvY2sgcmF0ZTogLTIyCj4+Pj4+Pj4+IFsgICA4Ny40OTE4ODFdIGNwdWZy
-ZXE6IF9fdGFyZ2V0X2luZGV4OiBGYWlsZWQgdG8gY2hhbmdlIGNwdSBmcmVxdWVuY3k6IC0yMgo+
-Pj4+Pj4+PiBbICAgODcuNDk1MzM1XSAtLS0tLS0tLS0tLS1bIGN1dCBoZXJlIF0tLS0tLS0tLS0t
-LS0KPj4+Pj4+Pj4gWyAgIDg3LjQ5NjgyMV0ga2VybmVsIEJVRyBhdCBkcml2ZXJzL2NwdWZyZXEv
-Y3B1ZnJlcS5jOjE0MzghCj4+Pj4+Pj4+IFsgICA4Ny40OTg0NjJdIEludGVybmFsIGVycm9yOiBP
-b3BzIC0gQlVHOiAwIFsjMV0gUFJFRU1QVCBTTVAKPj4+Pj4+Pj4KPj4+Pj4+Pj4gSSdtIHN0cnVn
-Z2xpbmcgdG8gc2VlIGFueXRoaW5nIHJlbGV2YW50IGluIHRoZSBkaWZmIGZyb20geWVzdGVyZGF5
-LCB0aGUKPj4+Pj4+Pj4gdW5saXN0ZWQgZnJlcXVlbmN5IHdhcm5pbmdzIHdlcmUgdGhlcmUgaW4g
-dGhlIGxvZ3MgeWVzdGVyZGF5IGJ1dCBubyBvb3BzCj4+Pj4+Pj4+IGFuZCBJJ20gbm90IHNlZWlu
-ZyBhbnkgY2hhbmdlcyBpbiBjcHVmcmVxLCBjbGsgb3IgYW55dGhpbmcgcmVsZXZhbnQKPj4+Pj4+
-Pj4gbG9va2luZy4KPj4+Pj4+Pj4KPj4+Pj4+Pj4gRnVsbCBib290bG9nIGFuZCBvdGhlciBpbmZv
-IGNhbiBiZSBmb3VuZCBoZXJlOgo+Pj4+Pj4+Pgo+Pj4+Pj4+PiAJaHR0cHM6Ly9rZXJuZWxjaS5v
-cmcvYm9vdC9pZC81ZDMwMmQ4MzU5YjUxNDk4ZDA0OWU5ODMvCj4+Pj4+Pj4gSSBjb25maXJtIHRo
-YXQgZGlzYWJsaW5nIENQVWZyZXEgaW4gdGhlIGRlZmNvbmZpZyAoQ09ORklHX0NQVV9GUkVRPW4p
-Cj4+Pj4+Pj4gbWFrZXMgdGhlIGZpcmVmbHkgYm9hcmQgc3RhcnQgd29ya2luZyBhZ2Fpbi4KPj4+
-Pj4+Pgo+Pj4+Pj4+IE5vdGUgdGhhdCB0aGUgZGVmYXVsdCBkZWZjb25maWcgZW5hYmxlcyB0aGUg
-InBlcmZvcm1hbmNlIiBDUFVmcmVxCj4+Pj4+Pj4gZ292ZXJub3IgYXMgdGhlIGRlZmF1bHQgZ292
-ZXJub3IsIHNvIGR1cmluZyBrZXJuZWwgYm9vdCwgaXQgd2lsbCBhbHdheXMKPj4+Pj4+PiBzd2l0
-Y2ggdG8gdGhlIG1heCBmcmVxdWVuY3kuCj4+Pj4+Pj4KPj4+Pj4+PiBGb3IgZnVuLCBJIHNldCB0
-aGUgZGVmYXVsdCBnb3Zlcm5vciB0byAidXNlcnNwYWNlIiBzbyB0aGUga2VybmVsCj4+Pj4+Pj4g
-d291bGRuJ3QgbWFrZSBhbnkgT1BQIGNoYW5nZXMsIGFuZCB0aGF0IGxlYWRzIHRvIGEgc2xpZ2h0
-bHkgbW9yZQo+Pj4+Pj4+IGluZm9ybWF0aXZlIHNwbGF0WzFdCj4+Pj4+Pj4KPj4+Pj4+PiBUaGVy
-ZSBpcyBzdGlsbCBhbiBPUFAgY2hhbmdlIGhhcHBlbmluZyBiZWNhdXNlIHRoZSBkZXRlY3RlZCBP
-UFAgaXMgbm90Cj4+Pj4+Pj4gb25lIHRoYXQncyBsaXN0ZWQgaW4gdGhlIHRhYmxlLCBzbyBpdCB0
-cmllcyB0byBjaGFuZ2UgdG8gYSBsaXN0ZWQgT1BQCj4+Pj4+Pj4gYW5kIGZhaWxzIGluIHRoZSBi
-b3dlbHMgb2YgY2xrX3NldF9yYXRlKCkKPj4+Pj4+IFRob3VnaCBJIHRoaW5rIHRoYXQgbWlnaHQg
-b25seSBiZSBhIHN5bXB0b20gYXMgd2VsbC4KPj4+Pj4+IEJvdGggdGhlIFBMTCBzZXR0aW5nIGNv
-ZGUgYXMgd2VsbCBhcyB0aGUgYWN0dWFsIGNwdS1jbG9jayBpbXBsZW1lbnRhdGlvbgo+Pj4+Pj4g
-aXMgdW5jaGFuZ2VkIHNpbmNlIDIwMTcgKGFuZCBydW5zIGp1c3QgZmluZSBvbiBhbGwgYm9hcmRz
-IGluIG15IGZhcm0pLgo+Pj4+Pj4KPj4+Pj4+IE9uZSBzb3VyY2UgZm9yIHRoZXNlIGlzc3VlcyBp
-cyBvZnRlbiB0aGUgcmVndWxhdG9yIHN1cHBseWluZyB0aGUgY3B1Cj4+Pj4+PiBnb2luZyBoYXl3
-aXJlIC0gYWthIHRoZSB2b2x0YWdlIG5vdCBtYXRjaGluZyB0aGUgb3BwLgo+Pj4+Pj4KPj4+Pj4+
-IEFzIGluIHRoaXMgZXJyb3ItY2FzZSBpdCdzIENQVTQgYmVpbmcgc2V0LCB0aGlzIHdvdWxkIG1l
-YW4gaXQgbWlnaHQKPj4+Pj4+IGJlIHRoZSBiaWcgY2x1c3RlciBzdXBwbGllZCBieSB0aGUgZXh0
-ZXJuYWwgc3lyODI1IChmYW41MzU1IGNsb25lKQo+Pj4+Pj4gdGhhdCBtaWdodCBhY3QgdXAuIElu
-IHRoZSBGaXJlZmx5LXJrMzM5OSBjYXNlIHRoaXMgaXMgZXZlbiBzdHJhbmdlci4KPj4+Pj4+Cj4+
-Pj4+PiBUaGVyZSBpcyBhIGRpc2NyZXBhbmN5IGJldHdlZW4gdGhlICJmY3Msc3VzcGVuZC12b2x0
-YWdlLXNlbGVjdG9yIgo+Pj4+Pj4gYmV0d2VlbiBkaWZmZXJlbnQgYm9vdGxvYWRlciB2ZXJzaW9u
-cyAoaG93IHRoZSBzZWxlY3Rpb24tcGluIGlzIHNldCB1cCksCj4+Pj4+PiBzbyB0aGUga2VybmVs
-IG1pZ2h0IGFjdHVhbGx5IHdyaXRlIGhpcyByZXF1ZXN0ZWQgdm9sdGFnZSB0byB0aGUgd3JvbmcK
-Pj4+Pj4+IHJlZ2lzdGVyIChub3QgdGhlIG9uZSBmb3IgYWN0dWFsIHZvbHRhZ2UsIGJ1dCB0aGUg
-c2Vjb25kIHNldCB1c2VkIGZvcgo+Pj4+Pj4gdGhlIHN1c3BlbmQgdm9sdGFnZSkuCj4+Pj4+Pgo+
-Pj4+Pj4gRGlkIHlvdSBieSBjaGFuY2Ugc3dhcCBib290bG9hZGVycyBhdCBzb21lIHBvaW50IGlu
-IHJlY2VudCBwYXN0Pwo+Pj4+PiBObywgaGF2ZW4ndCB0b3VjaGVkIGJvb3Rsb2FkZXIgc2luY2Ug
-SSBpbml0aWFsbHkgc2V0dXAgdGhlIGJvYXJkLgo+Pj4+IFRoZSBDUFUgdm9sdGFnZSBkb2VzIG5v
-dCBhZmZlY3QgYnkgYm9vdGxvYWRlciBmb3Iga2VybmVsIHNob3VsZCBoYXZlIGl0cwo+Pj4+IG93
-biBvcHAtdGFibGUsCj4+Pj4KPj4+PiB0aGUgYm9vdGxvYWRlciBtYXkgb25seSBhZmZlY3QgdGhl
-IGNlbnRlci9sb2dpYyBwb3dlciBzdXBwbHkuCj4+Pj4KPj4+Pj4+IEknZCBhc3N1bWUgWzJdIG1p
-Z2h0IGFjdHVhbGx5IGJlIHRoZSBzYW1lIGlzc3VlIGxhc3QgeWVhciwgdGhvdWdoCj4+Pj4+PiB0
-aGUgQ0ktbG9ncyBhcmUgbm90IGF2YWlsYWJsZSBhbnltb3JlIGl0IHNlZW1zLgo+Pj4+Pj4KPj4+
-Pj4+IENvdWxkIHlvdSB0cnkgdG8gc2V0IHRoZSB2ZGRfY3B1X2IgcmVndWxhdG9yIHRvIGRpc2Fi
-bGVkLCBzbyB0aGF0Cj4+Pj4+PiBjcHVmcmVxIGZvciB0aGlzIGNsdXN0ZXIgZGVmZXJzIGFuZCBz
-ZWUgd2hhdCBoYXBwZW5zPwo+Pj4+PiBZZXMsIHRoaXMgY2hhbmdlWzFdIGRlZmluaXRlbHkgbWFr
-ZXMgdGhpbmdzIGJvb3QgcmVsaWFibHkgYWdhaW4sIHNvCj4+Pj4+IHRoZXJlJ3MgZGVmaW50aWVs
-eSBzb21ldGhpbmcgYSBiaXQgdW5zdGFibGUgd2l0aCB0aGlzIHJlZ3VsYXRvciwgYXQKPj4+Pj4g
-bGVhc3Qgb24gdGhpcyBmaXJlZmx5Lgo+Pj4+IElzIGl0IHBvc3NpYmxlIHRvIHRhcmdldCB3aGlj
-aCBwYXRjaCBpbnRyb2R1Y2UgdGhpcyBidWc/IFRoaXMgYm9hcmQKPj4+PiBzaG91bGQgaGF2ZSB3
-b3JrIGNvcnJlY3RseSBmb3IgYSBsb25nIHRpbWUgd2l0aCB1cHN0cmVhbSBzb3VyY2UgY29kZS4K
-Pj4+IFVuZm9ydHVuYXRlbHksIGl0IHNlZW1zIHRvIGJlIGEgcmVndWxhciwgYnV0IGludGVybWl0
-dGVudCBmYWlsdXJlLCBzbwo+Pj4gYmlzZWN0aW9uIGlzIG5vdCBwcm9kdWNpbmcgYW55dGhpbmcg
-cmVsaWFibGUuCj4+Pgo+Pj4gWW91IGNhbiBzZWUgdGhhdCBib3RoIGluIG1haW5saW5lWzFdIGFu
-ZCBpbiBsaW51eC1uZXh0WzJdIHRoZXJlIGFyZQo+Pj4gcGVyaW9kaWMgZmFpbHVyZXMsIGJ1dCBp
-dCdzIGhhcmQgdG8gc2VlIGFueSBwYXR0ZXJucy4KPj4gRXZlbiB3b3JzZSwgSSAocmUpdGVzdGVk
-IG1haW5saW5lIGZvciB2ZXJzaW9ucyB0aGF0IHdlcmUgcHJldmlvdXNseQo+PiBwYXNzaW5nICh2
-NS4yLCB2NS4zLXJjNSkgYW5kIHRoZXkgYXJlIGFsc28gZmFpbGluZyBub3cuCj4+Cj4+IFRoZXkg
-d29yayBhZ2FpbiBpZiBJIGRpc2FibGUgdGhhdCByZWd1bGF0b3IgYXMgc3VnZ2VzdGVkIGJ5IEhl
-aWtvLgo+Pgo+PiBTbyB0aGlzIGlzIGluY3JlYXNpbmdseSBwb2ludGluZyB0byBmYWlsaW5nIGhh
-cmR3YXJlLgo+Pgo+PiBLZXZpbgo+Pgo+Pgo+PgoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJv
-Y2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
+Boot redundancy is one of the key criteria for switch
+recovery or golden partition based on the bootcount 
+value, which indeed very much needed in production 
+systems on the fields.
+
+This patchset support redundant boot on Rockchip rk3399.
+
+To make full functional redundancy below features 
+would require from U-Boot level.
+- bootcount, for counting number reboots
+- altboot
+- watchdog support, if SPL or U-Boot reset because of WDT
+- add CPUINFO for more understanding about how SoC and 
+  reset reason.
+
+Changes for v2:
+- Handle TPL build for watchdog, if TPL won't enable
+- Fix comments for dw_wdt driver-model comments from Andy
+- Add Kconfig items for WDT_TPL
+- Support WDT on TPL as well
+- Use SYS_SOC for cpu-info
+
+I would like, not to merge watchdog and bootcount on Mainline
+devboards since these features will mostly required on production
+devices but any comments, please share.
+
+Any inputs?
+Jagan.
+
+Jagan Teki (16):
+  rockchip: Add cpu-info
+  rockchip: rk3288/rk3399: Enable DISPLAY_CPUINFO
+  arm: rockchip: Add common cru.h
+  rockchip: Add rk3399 reset cause
+  wdt: designware: Simplify is_enabled function
+  wdt: designware: Simplify enable function
+  wdt: dw: Add driver-model support
+  wdt: dw: Rename to dw_wdt.c
+  rockchip: dts: rk3399: Add u-boot, dm-pre-reloc for watchdog
+  wdt: Kconfig: Add WDT_DW entry
+  wdt: Kconfig: Add TPL_WDT entry
+  spl: Add watchdog support fot TPL
+  watchdog: Handle TPL build with watchdog disabled
+  [DO NOT MERGE] rk3399: rockpro64: Enable watchdog
+  rockchip: rk3399: Add bootcount support
+  [DO NOT MERGE] rk3399: rockpro64: Enable bootcount
+
+ arch/arm/dts/rk3399-u-boot.dtsi               |   6 +
+ arch/arm/include/asm/arch-rockchip/cru.h      |  26 +++
+ .../include/asm/arch-rockchip/cru_rk3399.h    |  10 +-
+ arch/arm/mach-rockchip/Kconfig                |   2 +
+ arch/arm/mach-rockchip/Makefile               |   1 +
+ arch/arm/mach-rockchip/cpu-info.c             |  59 ++++++
+ arch/arm/mach-rockchip/rk3399/Kconfig         |  10 +
+ arch/arm/mach-rockchip/rk3399/clk_rk3399.c    |   2 +-
+ arch/arm/mach-rockchip/rk3399/rk3399.c        |   2 +-
+ common/board_f.c                              |   2 +-
+ common/spl/Kconfig                            |   9 +
+ configs/evb-rk3288_defconfig                  |   1 -
+ configs/evb-rk3399_defconfig                  |   1 -
+ configs/ficus-rk3399_defconfig                |   1 -
+ configs/firefly-rk3288_defconfig              |   1 -
+ configs/firefly-rk3399_defconfig              |   1 -
+ configs/khadas-edge-captain-rk3399_defconfig  |   1 -
+ configs/khadas-edge-rk3399_defconfig          |   1 -
+ configs/khadas-edge-v-rk3399_defconfig        |   1 -
+ configs/miqi-rk3288_defconfig                 |   1 -
+ configs/nanopc-t4-rk3399_defconfig            |   1 -
+ configs/nanopi-m4-rk3399_defconfig            |   1 -
+ configs/nanopi-neo4-rk3399_defconfig          |   1 -
+ configs/orangepi-rk3399_defconfig             |   1 -
+ configs/phycore-rk3288_defconfig              |   1 -
+ configs/popmetal-rk3288_defconfig             |   1 -
+ configs/puma-rk3399_defconfig                 |   1 -
+ configs/rock-pi-4-rk3399_defconfig            |   1 -
+ configs/rock960-rk3399_defconfig              |   1 -
+ configs/rockpro64-rk3399_defconfig            |   4 +-
+ configs/tinker-rk3288_defconfig               |   1 -
+ configs/vyasa-rk3288_defconfig                |   1 -
+ drivers/Makefile                              |   2 +-
+ drivers/clk/rockchip/clk_rk3399.c             |  36 ++--
+ drivers/ram/rockchip/sdram_rk3399.c           |  10 +-
+ drivers/video/rockchip/rk3399_mipi.c          |   2 +-
+ drivers/video/rockchip/rk_mipi.c              |   2 +-
+ drivers/watchdog/Kconfig                      |  15 ++
+ drivers/watchdog/Makefile                     |   2 +-
+ drivers/watchdog/designware_wdt.c             |  73 -------
+ drivers/watchdog/dw_wdt.c                     | 188 ++++++++++++++++++
+ include/configs/rk3399_common.h               |   5 +-
+ include/configs/socfpga_common.h              |   2 +-
+ include/configs/socfpga_stratix10_socdk.h     |   2 +-
+ include/watchdog.h                            |   7 +-
+ scripts/config_whitelist.txt                  |   1 -
+ 46 files changed, 364 insertions(+), 136 deletions(-)
+ create mode 100644 arch/arm/include/asm/arch-rockchip/cru.h
+ create mode 100644 arch/arm/mach-rockchip/cpu-info.c
+ delete mode 100644 drivers/watchdog/designware_wdt.c
+ create mode 100644 drivers/watchdog/dw_wdt.c
+
+-- 
+2.18.0.321.gffc6fa0e3
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
