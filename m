@@ -2,92 +2,121 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C6409E7A9
-	for <lists+linux-rockchip@lfdr.de>; Tue, 27 Aug 2019 14:16:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1101B9EA64
+	for <lists+linux-rockchip@lfdr.de>; Tue, 27 Aug 2019 16:07:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:References:In-Reply-To:Message-ID:MIME-Version:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=deDRUlwfBAgNG/3fW3rsx68E/EXwhWRhlffF4HSc/9U=; b=SfktinVMz4yzp9vK54M/9JyaB
-	8TVp2jQQDfw/p+Z85G8XZFqVNrhteQkMJdJgFnYCQwevuR+PTOiwDsYiz37qWzAaTV56u3u+DoM1z
-	vohldd/sSRwi8p7RxUs6Ypv5L2xrJ1YYiMLz8k9c0+HMMAjxI30b1LitZByeS/gwrnjGUIOdz+57h
-	Hwu4PCpKvN+4/Krb+xt8MOGFTrrSj2gQsgHkPPUxz4YgQ9ER89jQ4t/EsPltfbkNH9k41fnRiI8aS
-	ZlfXyBW37mCYLE877VDQGcLO03IlAClBKzQpxGW5oCNOO+Lgd0TcDvo8ztDUWNrNyY33ttXdPEkRx
-	tmoSyhcyg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PHP9TeaN5SPQ1oD/kDp/woe4e0VQ4SksUosoEoT/puQ=; b=bp9qwiunNpKxxZ
+	QBHdGGulWakDPcyS1YYJtEozoaKekeM4GDjzl7CLcpYw2JQdLQVDggUxQuHfwecU60NC5sXiz0xHg
+	Nf7720B8hCqBnfIYmAJ5tUwCrA6XfnzQ/KFarf5K3asUy/Iw6358imNZpXEX1hKljsBTYelCSV1Bd
+	XpMWN+yCPVadpCy4As8rOCFsREslK3hawK+FbIkTc5MesVP8Xzt1uHKTZ/msBH1+jHC+TRsHElnI/
+	kAXRGsLb4ADUi5p2p4hafUeva7JW2slC/ofrn8KalWHQtsMItJOkLs3jtmanx1dgp/XGjlPMVzrQ4
+	2KX+X//GKk7LAI2kuqow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2aOz-0004X3-Pi; Tue, 27 Aug 2019 12:16:45 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1i2c7j-0005bF-Jf; Tue, 27 Aug 2019 14:07:03 +0000
+Received: from mail-eopbgr710074.outbound.protection.outlook.com
+ ([40.107.71.74] helo=NAM05-BY2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2aOe-0004MU-R0; Tue, 27 Aug 2019 12:16:26 +0000
-Received: by mail-wm1-x342.google.com with SMTP id m125so2778574wmm.3;
- Tue, 27 Aug 2019 05:16:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:mime-version:message-id:in-reply-to
- :references:user-agent:content-transfer-encoding;
- bh=pU0lXL5v2+TfEcbDBaFqBB4HEseMI0PfB9qV53kie2U=;
- b=LmAsZv/mq0KHO3X+ry/5ysAZwONa3RGEyT694iXRSw0CGvdySAdY4GH5kkNPD7HS7k
- TEYfa/jK6hCZrE3b6816WgGV6fuPkZzqD4nh17/BwjsStTctQffjujy4nfdsf/kfd44w
- CMFX7ZVACIi29XdllRrXnRXQFlNhfUKyVvdN7qK1l5OH++LM2iAGRT0YTtgy+DFzRS4j
- dIZJsoY61Sw79NBRi4bWj4EtuPH/98XzUq1c5i1KRFQiTAFBkYIkMx6IUj8xbZrRHPIo
- IrsyIceEz4hrqHAq3MXspIN9Ct9/e19Vlh4yXtOrWvFlojh8+KdI0oWSGdbNykIVqCKW
- 00sA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
- :in-reply-to:references:user-agent:content-transfer-encoding;
- bh=pU0lXL5v2+TfEcbDBaFqBB4HEseMI0PfB9qV53kie2U=;
- b=IzbxVijqbjHlhcj9gQguZQhM/ccE27bqbiHFj5veUJ6TIC6whcXikSpNKVVHIkyXdS
- dv7c4i6w6ozVRsmkE2HbqtW03DCT8inLD6/ccmgUVAXMR51RpR/5Of2hpriToM32/kiP
- 5yZt/0avkC+5HLMuIroQskDF5uoFanRQsyy5H/x3aNvXSxs4GDIp4Z2Qgn7XU1+NHUls
- JXkwa2yDWrJ2UIJsvAU1lITHlbQXySrmjueBa4z9a7Z2Xs9nOce71wWwRCoAWGVgXRcY
- +PlR6hgDdqA5VTGW2g0pB175XComY8EUjxmtI9N8y6nOJheDxus9iTOiQqoQf+KMb+d7
- kaPQ==
-X-Gm-Message-State: APjAAAUOj6dsr5xNCzuymMvJQ2SFNw4IJJaBz7H/JqNkzdGS8Y81rf97
- urKEWzGb1Zmw3EuHBOM2J4s=
-X-Google-Smtp-Source: APXvYqwqrwEIaF4GWhDndW+OvoIvxiahrwYyryDBG/0B/AEPySBTSKs1IX5f0yXf9wv+KitoR9I30A==
-X-Received: by 2002:a7b:c453:: with SMTP id l19mr27357429wmi.106.1566908183390; 
- Tue, 27 Aug 2019 05:16:23 -0700 (PDT)
-Received: from localhost ([92.59.185.54])
- by smtp.gmail.com with ESMTPSA id o25sm1993846wmc.36.2019.08.27.05.16.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 27 Aug 2019 05:16:22 -0700 (PDT)
-From: Vicente Bergas <vicencb@gmail.com>
-To: Felipe Balbi <balbi@kernel.org>
-Subject: Re: [PATCH] usb: dwc3: Add shutdown to
- =?iso-8859-1?Q?platform=5Fdriver?=
-Date: Tue, 27 Aug 2019 14:16:20 +0200
+ id 1i2c7e-0005Zp-LM; Tue, 27 Aug 2019 14:07:00 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=KropETEEKKQVsemQf0gCIINbtiY+qGmpLBgx5UIcNYtX5TnLd810PbeDo8TLSNtikWkomJQTVzc6AhB3rN37PsykUMRi3jffU8+IiGuwDmtIBnHdotBexv8TqvE5rmvg/8se8RBumhvIIRTTpn4QI6Oq3UIjZSJot7WyZ3zyO6VzPlOEBvOv52chHvbZDqCJbOuAbWEd8+x6bMnw3srXKkCIRsSPrK/rSzYM9pWLh2o0itDWXHIupJ9pX3zqeYtVTdN1d2n/wbm1aKoiJzPTD43jhmCFLtr6N/TXhQKA1q399Njaqitk7wqWU6mM2R1EKcKQrf5b1eJAeqstK/H6bQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vjPokZrKnjfm26czzZwfnznszP96JXp+KZFZrp4LIl0=;
+ b=fiLCbL5yyQWPzboQkpds/x2v48aFRZb42VGZut02+Keec3GE6/L5l3gBQsaZPM3h0HRDMdft30TbPMMhipXA8Zz11eh+V7uSYPgjZeGAlBqj4muD/tJqcfrw95x//GpoWTcpSwri4LLdeR9/vVCBo/SYNtx3xgKIp1f4CD6DIUnQEL5vUnFDfOEXKM4fQtnXtsskuunlXAOSSh+47YchrVSjPMNVNuFdo+xFza4eXGDqBn9KngTUc6HyZb26g/ckCrtQ32v+mJojaMdgTIwR8OrJZUaA4QAHdPmOc3GsDCxQI+Du1cBpi5tQfcrmF4pvfD4XWUWThPK2Foi9OMcfYg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
+ header.d=amd.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amdcloud.onmicrosoft.com; s=selector2-amdcloud-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vjPokZrKnjfm26czzZwfnznszP96JXp+KZFZrp4LIl0=;
+ b=j8bDAKQhTXDGmwndfWUyFT3bqbXWwkE/uIKOD+x1Floox4Al9uSjhT0Z6HEsixDoVvRs4VlfeUQ9kQNZr7WCQKzVQEcDHLYDDdWFhrhv1bxLGT9R7twcEWXKlgsTGAymhQZTNzLilEtevWMVNFLCBw/M+f4+iIBD/8MASliXbnc=
+Received: from CY4PR1201MB0230.namprd12.prod.outlook.com (10.172.79.7) by
+ CY4PR1201MB0037.namprd12.prod.outlook.com (10.172.78.22) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2199.20; Tue, 27 Aug 2019 14:06:55 +0000
+Received: from CY4PR1201MB0230.namprd12.prod.outlook.com
+ ([fe80::708e:c826:5b05:e3f0]) by CY4PR1201MB0230.namprd12.prod.outlook.com
+ ([fe80::708e:c826:5b05:e3f0%11]) with mapi id 15.20.2199.021; Tue, 27 Aug
+ 2019 14:06:55 +0000
+From: Harry Wentland <hwentlan@amd.com>
+To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>
+Subject: Re: [PATCH RESEND 03/14] drm/amdgpu: Provide ddc symlink in dm
+ connector's sysfs directory
+Thread-Topic: [PATCH RESEND 03/14] drm/amdgpu: Provide ddc symlink in dm
+ connector's sysfs directory
+Thread-Index: AQHVXEQy4bdMU/E4KEWQW1YKbrvOHKcPCM4A
+Date: Tue, 27 Aug 2019 14:06:55 +0000
+Message-ID: <d7fa0b27-800b-9843-29cd-0e9095bfd75d@amd.com>
+References: <cover.1566845537.git.andrzej.p@collabora.com>
+ <40293fa4e619d1d1af213a076b1d03440e50c56c.1566845537.git.andrzej.p@collabora.com>
+In-Reply-To: <40293fa4e619d1d1af213a076b1d03440e50c56c.1566845537.git.andrzej.p@collabora.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [165.204.55.250]
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+x-clientproxiedby: YTBPR01CA0033.CANPRD01.PROD.OUTLOOK.COM
+ (2603:10b6:b01:14::46) To CY4PR1201MB0230.namprd12.prod.outlook.com
+ (2603:10b6:910:1e::7)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Harry.Wentland@amd.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 8336f750-1766-4bfa-1bf8-08d72af7d11b
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:CY4PR1201MB0037; 
+x-ms-traffictypediagnostic: CY4PR1201MB0037:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <CY4PR1201MB0037E9A1B0D90CF8B8C890998CA00@CY4PR1201MB0037.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1360;
+x-forefront-prvs: 0142F22657
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(366004)(396003)(376002)(39860400002)(346002)(199004)(189003)(5660300002)(305945005)(256004)(6486002)(81156014)(36756003)(7736002)(31686004)(8676002)(7406005)(3846002)(99286004)(2616005)(6116002)(4326008)(26005)(76176011)(486006)(71190400001)(2906002)(71200400001)(81166006)(2501003)(102836004)(31696002)(476003)(386003)(229853002)(52116002)(53936002)(6512007)(66066001)(65806001)(65956001)(53546011)(58126008)(8936002)(110136005)(6246003)(6436002)(54906003)(66946007)(316002)(446003)(7366002)(186003)(66476007)(66446008)(66556008)(11346002)(64756008)(4744005)(25786009)(6506007)(478600001)(7416002)(14454004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CY4PR1201MB0037;
+ H:CY4PR1201MB0230.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: amd.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: +7fPAfqNWZf6cZKcQxXPRsR0/BLGvw+2x58Nox1VJq8Tau6Au7BfeCEDnenbdU0n90rC5eer0gwEuYUgeV7FElSYaHT/Fn6mr1lCV6tHoXbFasab4VIfufrY1FYDFOsR+4NEzT7vdwfYHdwpdOOoXlX5CR6DKJ7k1ijAPBMknpXVrUzIbV0iDtqid4ivmxzBuQYH0CCMAoYJY3eqkWHDte+UGzrQJ9r8n+cagwYkyM9qYGp3IQAfaH08fkWu43oGvJrahhOlusJCsLDfNuA2/rKCy1Bqq+UHpjWL0h4Tbbt/EVVn0mvDjY705lLI4hspswtwLZZfPj//LrkmbksHOP2KdwaOYxU6jZUKM0OegE5oOa5juwBHSex19QySEXcM2Cm5DwPsbDylR7Wl2Oh9hBhnnf5pICFlMDAJMM4REoY=
+Content-ID: <B21E8E0F36C3F84EA1BD29A6779B155F@namprd12.prod.outlook.com>
 MIME-Version: 1.0
-Message-ID: <645526b8-bfed-4cc6-9500-1843c5fe0da9@gmail.com>
-In-Reply-To: <87v9uix1sv.fsf@gmail.com>
-References: <4d18d4f7-a00e-bd60-6361-51054eba3bca@arm.com>
- <20190817174140.6394-1-vicencb@gmail.com>
- <8d48017a-64c5-4b25-8d85-113ffcf502c9@gmail.com> <87v9uix1sv.fsf@gmail.com>
-User-Agent: Trojita
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8336f750-1766-4bfa-1bf8-08d72af7d11b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Aug 2019 14:06:55.3436 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Fb4P3l8tDYhu4SOUm5uBZKlVzF9tVZhoHDaXxNE3OUDNx01ZAtIC5OJ06PI38fHEJmiONgAra4vKAtTUR12LCg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR1201MB0037
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_051624_902047_A5F35BAB 
-X-CRM114-Status: GOOD (  11.97  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190827_070658_703268_01F29540 
+X-CRM114-Status: GOOD (  18.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vicencb[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ no trust [40.107.71.74 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,41 +129,93 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Matthias Brugger <mbrugger@suse.com>, Heiko Stuebner <heiko@sntech.de>,
- MarcZyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- linux-usb@vger.kernel.org, Will Deacon <will.deacon@arm.com>,
- linux-rockchip@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: =?utf-8?B?SGVpa28gU3TDvGJuZXI=?= <heiko@sntech.de>,
+ Sam Ravnborg <sam@ravnborg.org>, Neil Armstrong <narmstrong@baylibre.com>,
+ David Airlie <airlied@linux.ie>, Ramalingam C <ramalingam.c@intel.com>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ Chris Wilson <chris@chris-wilson.co.uk>, "Lakha,
+ Bhawanpreet" <Bhawanpreet.Lakha@amd.com>, Andrzej Hajda <a.hajda@samsung.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ "kernel@collabora.com" <kernel@collabora.com>, "Koo,
+ Anthony" <Anthony.Koo@amd.com>,
+ =?utf-8?B?VmlsbGUgU3lyasOkbMOk?= <ville.syrjala@linux.intel.com>, "Zhou,
+ David\(ChunMing\)" <David1.Zhou@amd.com>,
+ Mario Kleiner <mario.kleiner.de@gmail.com>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ Joonyoung Shim <jy0922.shim@samsung.com>,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, "Francis,
+ David" <David.Francis@amd.com>, Rob Clark <robdclark@gmail.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Kukjin Kim <kgene@kernel.org>,
+ "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
+ CK Hu <ck.hu@mediatek.com>, "Wentland, Harry" <Harry.Wentland@amd.com>,
+ Uma Shankar <uma.shankar@intel.com>,
+ Shashank Sharma <shashank.sharma@intel.com>,
+ "freedreno@lists.freedesktop.org" <freedreno@lists.freedesktop.org>,
+ "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Jonas Karlman <jonas@kwiboo.se>, "Li,
+ Sun peng \(Leo\)" <Sunpeng.Li@amd.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Jani Nikula <jani.nikula@linux.intel.com>, Inki Dae <inki.dae@samsung.com>,
+ Mamta Shukla <mamtashukla555@gmail.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Jyri Sarha <jsarha@ti.com>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ "amd-gfx@lists.freedesktop.org" <amd-gfx@lists.freedesktop.org>,
+ Eric Anholt <eric@anholt.net>, Enrico Weigelt <info@metux.net>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
+ "Kazlauskas, Nicholas" <Nicholas.Kazlauskas@amd.com>,
+ Todor Tomov <todor.tomov@linaro.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Daniel Vetter <daniel@ffwll.ch>,
+ "Deucher, Alexander" <Alexander.Deucher@amd.com>,
+ Shawn Guo <shawnguo@kernel.org>, "Koenig,
+ Christian" <Christian.Koenig@amd.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gVHVlc2RheSwgQXVndXN0IDI3LCAyMDE5IDE6NTM6MDQgUE0gQ0VTVCwgRmVsaXBlIEJhbGJp
-IHdyb3RlOgo+IEhpLAo+Cj4gVmljZW50ZSBCZXJnYXMgPHZpY2VuY2JAZ21haWwuY29tPiB3cml0
-ZXM6Cj4+IE9uIFNhdHVyZGF5LCBBdWd1c3QgMTcsIDIwMTkgNzo0MTo0MCBQTSBDRVNULCBWaWNl
-bnRlIEJlcmdhcyB3cm90ZToKPj4+IE90aGVyd2lzZSB0aGUgZGV2aWNlIGtlZXBzIHdyaXRpbmcg
-dG8gbWVtb3J5IGFmdGVyIGtleGVjIGFuZCBkaXN0dXJicwo+Pj4gdGhlIG5leHQga2VybmVsLgou
-Li4KPgo+IHdoeSBkb24ndCB5b3UganVzdCBoYXZlIHNodXRkb3duIHVzZSB0aGUgc2FtZSBleGFj
-dCBmdW5jdGlvbiBhcyByZW1vdmU/Cj4gRnJhbmtseSwgdGhvdWdoLCBJIHN0aWxsIGRvbid0IGZ1
-bGx5IHVuZGVyc3RhbmQgd2hhdCdzIGdvaW5nIHdyb25nCj4gaGVyZS4gV2h5IGlzIHRoZSBkZXZp
-Y2Ugc3RpbGwgYWxpdmUgZHVyaW5nIGtleGVjPwo+Cj4gY2hlZXJzCgpIaSBGZWxpcGUsCnRoZSBy
-ZW1vdmUgYW5kIHNodXRkb3duIGZ1bmN0aW9ucyBoYXZlIGRpZmZlcmVudCBwcm90b3R5cGVzLCBz
-bwpzaHV0ZG93biBpcyB3cmFwcGluZyByZW1vdmUuCldvdWxkIGl0IGJlIHByZWZlcmFibGUgdG8g
-Y2FzdCByZW1vdmUgYXMgc2h1dGRvd24/CgpUaGUgaXNzdWUgd2l0aCBrZXhlYyBpcyB0aGF0IHRo
-ZSBkZXZpY2UgaXMgYmVpbmcgdXNlZCBkdXJpbmcgdGhlIGxpdmV0aW1lCm9mIHRoZSBmaXJzdCBr
-ZXJuZWwuIFdoZW4gdGhlIGZpcnN0IGtlcm5lbCBleGVjdXRlcyBrZXhlYyBpdCBjYWxscyB0aGUK
-c2h1dGRvd24gZnVuY3Rpb24gb2YgZHJpdmVycyAoaW5zdGVhZCBvZiByZW1vdmUpLiBCZWNhdXNl
-IG9mIHRoaXMgdGhlIGR3YzMKZGV2aWNlIGtlZXBzIGRvaW5nIHRoaW5ncyBsaWtlIERNQS4KV2hp
-bGUgdGhlIHNlY29uZCBrZXJuZWwgaXMgdGFraW5nIG92ZXIsIGl0IGdldHMgaXRzIG1lbW9yeSBj
-b3JydXB0ZWQgd2l0aApzdWNoIERNQSBhY2Nlc3NlcyBmcm9tIHRoZSBkZXZpY2UuIFdoZW4gdGhl
-IHNlY29uZCBrZXJuZWwgcmVhY2hlcyB0aGUgcG9pbnQKb2YgdGFraW5nIG92ZXIgdGhlIGR3YzMg
-ZGV2aWNlLCByZS1pbml0aWFsaXplcyBpdCwgYnV0IGl0IGlzIGFscmVhZHkgdG9vCmxhdGUuIFN0
-aWxsIHdvcnNlLCBpZiB0aGUgc2Vjb25kIGtlcm5lbCBkaWQgbm90IGhhdmUgdGhlIGR3YzMgZHJp
-dmVyLCBpdAp3b3VsZCBnZXQgZW5kbGVzcyBtZW1vcnkgY29ycnVwdGlvbnMuCkFsbCBpbiBhbGws
-IGRldmljZXMgdGhhdCBjYW4gZG8gRE1BIG5lZWQgdG8gc3RvcCBkb2luZyBpdCBvbiBzaHV0ZG93
-bi4KClJlZ2FyZHMsCiAgVmljZW7Dpy4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2No
-aXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
+On 2019-08-26 3:25 p.m., Andrzej Pietrasiewicz wrote:
+> Use the ddc pointer provided by the generic connector.
+> 
+> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+
+Reviewed-by: Harry Wentland <harry.wentland@amd.com>
+
+Harry
+
+> ---
+>  drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c | 5 +++--
+>  1 file changed, 3 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c b/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c
+> index cb7cfa9b34f2..e872a415b409 100644
+> --- a/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c
+> +++ b/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c
+> @@ -5144,11 +5144,12 @@ static int amdgpu_dm_connector_init(struct amdgpu_display_manager *dm,
+>  
+>  	connector_type = to_drm_connector_type(link->connector_signal);
+>  
+> -	res = drm_connector_init(
+> +	res = drm_connector_init_with_ddc(
+>  			dm->ddev,
+>  			&aconnector->base,
+>  			&amdgpu_dm_connector_funcs,
+> -			connector_type);
+> +			connector_type,
+> +			&i2c->base);
+>  
+>  	if (res) {
+>  		DRM_ERROR("connector_init failed\n");
+> 
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
