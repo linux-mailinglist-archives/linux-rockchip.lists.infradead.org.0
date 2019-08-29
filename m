@@ -2,79 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13E81A0F98
-	for <lists+linux-rockchip@lfdr.de>; Thu, 29 Aug 2019 04:33:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FC31A0FE3
+	for <lists+linux-rockchip@lfdr.de>; Thu, 29 Aug 2019 05:17:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=XgEpsp5Hk35BGn1oLOGnaXDtzQQJ+ZV3JJa8niPZiTQ=; b=LJyPJq2B7UCHl1gBAC/LyLCYd
-	BYvwA9UVrdIeHiB3XXlDE54ypeoOa3VmBj0brajNKFitwwbXznp/EO5MKnUJN9NrIQw0xRFq0LvBA
-	iyxQBuvi5nqD6Jkm2UWEtUbAZUAeIv6qYKHdUmFZ86fS2zhMdarQbFUP9j3V3tQ0XdcvyI4Y3HehX
-	D4Ax3wXI00QCZI4kAvo6H+3IdrUvIHDVGnDiBbuWqPCLyBlGXb92kt6WbhNEp1kqFNa992pLueKGx
-	7BrC6Rh4w7rajA3TWQTYrAGjTk1pai7KIUH5yckMjzWAtN4WhW06cQX+4Y/zMHRmtr0kXc5ZAO09I
-	AU3eWfGJQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MCKXMVA7ytO2mMkf7GjX+RQ7yH0gUG8wKwiM2CgFfnA=; b=ujBKCeLZYZTE+8
+	kiqVRfdPJ/3ofv2vRcVnkqyCy+NTP2sT/5sHUc7VFHTE6HVwBBL3yNZ5kEWYFHDgyaenLrByM4Kqk
+	BQPpnexfRET9q8o0drvRDXaztR1XaUO05UkTApfMY3jbQ8DYDMaojt9VBhhmqzAS7CoNMS8q6Krus
+	+alz6wDoFpCyFkX/TXmro9tHK5sJ27PMUE58Z1UGF3yZzEKS57M0YNozXBrm06aylgdorhafVrBQ+
+	yQ6X+S1i9sq4vf6XXKGVsXfodD589SVSFHJK9aGuPXq70inmReZo2Rd64zB+VA9hcfxve+0iV5MVI
+	IJoJvRll1AIcSifhLJbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3AFl-0007Bu-FA; Thu, 29 Aug 2019 02:33:37 +0000
-Received: from lucky1.263xmail.com ([211.157.147.135])
+	id 1i3AwZ-0004kO-F2; Thu, 29 Aug 2019 03:17:51 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3AFZ-00075C-Gy; Thu, 29 Aug 2019 02:33:27 +0000
-Received: from shawn.lin?rock-chips.com (unknown [192.168.167.158])
- by lucky1.263xmail.com (Postfix) with ESMTP id DB5303DE17;
- Thu, 29 Aug 2019 10:31:11 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 1
-X-MAIL-DELIVERY: 0
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from [172.16.12.37] (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P1611T140153748326144S1567045863028376_; 
- Thu, 29 Aug 2019 10:31:07 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <b3c576a24e41d32ebb6ea575d2616e43>
-X-RL-SENDER: shawn.lin@rock-chips.com
-X-SENDER: lintao@rock-chips.com
-X-LOGIN-NAME: shawn.lin@rock-chips.com
-X-FST-TO: linux-arm-kernel@lists.infradead.org
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-Subject: =?UTF-8?Q?Re=3a_=5bPATCH=5d_PCI=3a_rockchip=3a_Properly_handle_opti?=
- =?UTF-8?B?b25hbCByZWd1bGF0b3Jz44CQ6K+35rOo5oSP77yM6YKu5Lu255SxbGludXgtcm9j?=
- =?UTF-8?Q?kchip-bounces+shawn=2elin=3drock-chips=2ecom=40lists=2einfradead?=
- =?UTF-8?B?Lm9yZ+S7o+WPkeOAkQ==?=
-To: Thierry Reding <thierry.reding@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Bjorn Helgaas <bhelgaas@google.com>
-References: <20190828150737.30285-1-thierry.reding@gmail.com>
-From: Shawn Lin <shawn.lin@rock-chips.com>
-Message-ID: <c435244d-34e5-3ab8-d4df-5e08e7951e6f@rock-chips.com>
-Date: Thu, 29 Aug 2019 10:31:03 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i3AwN-0004b4-If; Thu, 29 Aug 2019 03:17:40 +0000
+Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5E9DB22CF8;
+ Thu, 29 Aug 2019 03:17:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567048658;
+ bh=u98FcVu0HBkillng09TqWFlGgpgWVWpnghz9szhnReI=;
+ h=From:To:Cc:Subject:Date:From;
+ b=HAD4xrCfip0e9CQw3xO5Qsd40IdOaU7J/AldbwBXqtbzk8rjpl8hI756VTkNodh/u
+ TBVn9ukdcGLCetH0FJeWue86+GoA3/LG0UkyCNfplVPqTMn8dzCqF1PTy5FJwAL/4s
+ TIBsO4qGmnx83Y6eLXMQ9gHQfu+oUhFvlJ2Qz6jQ=
+Received: by wens.tw (Postfix, from userid 1000)
+ id BA06A5FCC3; Thu, 29 Aug 2019 11:17:32 +0800 (CST)
+From: Chen-Yu Tsai <wens@kernel.org>
+To: Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Jose Abreu <joabreu@synopsys.com>, "David S. Miller" <davem@davemloft.net>,
+ Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH netdev] net: stmmac: dwmac-rk: Don't fail if phy regulator is
+ absent
+Date: Thu, 29 Aug 2019 11:17:24 +0800
+Message-Id: <20190829031724.20865-1-wens@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20190828150737.30285-1-thierry.reding@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_193325_885635_9E432E31 
-X-CRM114-Status: GOOD (  21.54  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190828_201739_643203_96815E07 
+X-CRM114-Status: GOOD (  12.35  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.135 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,83 +79,54 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, linux-pci@vger.kernel.org,
- shawn.lin@rock-chips.com, Vidya Sagar <vidyas@nvidia.com>,
- linux-rockchip@lists.infradead.org, Andrew Murray <andrew.murray@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ netdev@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 2019/8/28 23:07, Thierry Reding wrote:
-> From: Thierry Reding <treding@nvidia.com>
-> 
-> regulator_get_optional() can fail for a number of reasons besides probe
-> deferral. It can for example return -ENOMEM if it runs out of memory as
-> it tries to allocate data structures. Propagating only -EPROBE_DEFER is
-> problematic because it results in these legitimately fatal errors being
-> treated as "regulator not specified in DT".
-> 
-> What we really want is to ignore the optional regulators only if they
-> have not been specified in DT. regulator_get_optional() returns -ENODEV
-> in this case, so that's the special case that we need to handle. So we
-> propagate all errors, except -ENODEV, so that real failures will still
-> cause the driver to fail probe.
-> 
-> Signed-off-by: Thierry Reding <treding@nvidia.com>
+From: Chen-Yu Tsai <wens@csie.org>
 
-LGTM,
-Acked-by: Shawn Lin <shawn.lin@rock-chips.com>
+The devicetree binding lists the phy phy as optional. As such, the
+driver should not bail out if it can't find a regulator. Instead it
+should just skip the remaining regulator related code and continue
+on normally.
 
-> ---
->   drivers/pci/controller/pcie-rockchip-host.c | 16 ++++++++--------
->   1 file changed, 8 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
-> index 8d20f1793a61..ef8e677ce9d1 100644
-> --- a/drivers/pci/controller/pcie-rockchip-host.c
-> +++ b/drivers/pci/controller/pcie-rockchip-host.c
-> @@ -608,29 +608,29 @@ static int rockchip_pcie_parse_host_dt(struct rockchip_pcie *rockchip)
->   
->   	rockchip->vpcie12v = devm_regulator_get_optional(dev, "vpcie12v");
->   	if (IS_ERR(rockchip->vpcie12v)) {
-> -		if (PTR_ERR(rockchip->vpcie12v) == -EPROBE_DEFER)
-> -			return -EPROBE_DEFER;
-> +		if (PTR_ERR(rockchip->vpcie12v) != -ENODEV)
-> +			return PTR_ERR(rockchip->vpcie12v);
->   		dev_info(dev, "no vpcie12v regulator found\n");
->   	}
->   
->   	rockchip->vpcie3v3 = devm_regulator_get_optional(dev, "vpcie3v3");
->   	if (IS_ERR(rockchip->vpcie3v3)) {
-> -		if (PTR_ERR(rockchip->vpcie3v3) == -EPROBE_DEFER)
-> -			return -EPROBE_DEFER;
-> +		if (PTR_ERR(rockchip->vpcie3v3) != -ENODEV)
-> +			return PTR_ERR(rockchip->vpcie3v3);
->   		dev_info(dev, "no vpcie3v3 regulator found\n");
->   	}
->   
->   	rockchip->vpcie1v8 = devm_regulator_get_optional(dev, "vpcie1v8");
->   	if (IS_ERR(rockchip->vpcie1v8)) {
-> -		if (PTR_ERR(rockchip->vpcie1v8) == -EPROBE_DEFER)
-> -			return -EPROBE_DEFER;
-> +		if (PTR_ERR(rockchip->vpcie1v8) != -ENODEV)
-> +			return PTR_ERR(rockchip->vpcie1v8);
->   		dev_info(dev, "no vpcie1v8 regulator found\n");
->   	}
->   
->   	rockchip->vpcie0v9 = devm_regulator_get_optional(dev, "vpcie0v9");
->   	if (IS_ERR(rockchip->vpcie0v9)) {
-> -		if (PTR_ERR(rockchip->vpcie0v9) == -EPROBE_DEFER)
-> -			return -EPROBE_DEFER;
-> +		if (PTR_ERR(rockchip->vpcie0v9) != -ENODEV)
-> +			return PTR_ERR(rockchip->vpcie0v9);
->   		dev_info(dev, "no vpcie0v9 regulator found\n");
->   	}
->   
-> 
+Skip the remainder of phy_power_on() if a regulator supply isn't
+available. This also gets rid of the bogus return code.
 
+Fixes: 2e12f536635f ("net: stmmac: dwmac-rk: Use standard devicetree property for phy regulator")
+Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+---
+
+On a separate note, maybe we should add this file to the Rockchip
+entry in MAINTAINERS?
+
+---
+ drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c
+index 4644b2aeeba1..e2e469c37a4d 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c
+@@ -1194,10 +1194,8 @@ static int phy_power_on(struct rk_priv_data *bsp_priv, bool enable)
+ 	int ret;
+ 	struct device *dev = &bsp_priv->pdev->dev;
+ 
+-	if (!ldo) {
+-		dev_err(dev, "no regulator found\n");
+-		return -1;
+-	}
++	if (!ldo)
++		return 0;
+ 
+ 	if (enable) {
+ 		ret = regulator_enable(ldo);
+-- 
+2.20.1
 
 
 _______________________________________________
