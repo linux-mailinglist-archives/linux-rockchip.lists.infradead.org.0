@@ -2,55 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B56F7A16B2
-	for <lists+linux-rockchip@lfdr.de>; Thu, 29 Aug 2019 12:50:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0966BA16C2
+	for <lists+linux-rockchip@lfdr.de>; Thu, 29 Aug 2019 12:51:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9+SwNUPT8kbSRwJiyHyNbdZTqGubkCJMhtyz6Znzi7A=; b=euWhNQiES7I+Qe
-	DUyDGsgTLmOQlVQGgsjTL0dY6KaIHqjutwQsyOrVYlJDXlw+poDNA7C2B6ro9hj42xrxY+h52xmlL
-	ybLfvKBd+x9UV6yVkP3h0xpYcK9ra1TvgfY/WM0yo4xRltYMKo4MRAfZpJtob2Mtk37AcrDf/bGLX
-	5tevgCUobZdUep/VAQlM5lcrWv9D/dxYSqvO8KySVtiPjcYgWjy7e23LIoqyqPWiTeK5vF6clOuf2
-	o2m/JGLYwzFvGHxaJ4hXfXqu3cd/h9XOCW0XJGhJRpATKKGOzKRwQUopckAak0zF3UW1CwemYXR5E
-	fIkx0Lig2lNODAX5CVOA==;
+	List-Owner; bh=3/8bRHCx8rXVQifDRLHNxAP+ZmFkb6RVGnINwUSogY8=; b=KulLEkX0xWaqer
+	tF4yLo4J2QxV1t63cq7sPrFU1wr2oRW/j1uSuxh8AVVR07goSSMeEADzWdOG3fCKU8JmzzMD9hd+b
+	t6qc/XoLhuTprX6qTck/TtF3iFSryPwkgmy9hYZ4DulG6BE/h8g8Ee2hTlS6nZCEFvt2Q+tl6d1A4
+	MHdg0AUjqRqcSvi/oDnu4OI3w6f70T/2VRfGFtQv55B7nK0J2xYlxXL6OQYGzEzCjnpz4xE07PtJh
+	cpVWo85PtOYfuO8z/OFX2Auyqrp3auuLbwEg+ziHckz6O4UwpoYua1JYywpEUnfc93CV3O4Et20fw
+	oZST+a0vibR/89vf0u1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3I0g-0000FB-Q1; Thu, 29 Aug 2019 10:50:34 +0000
+	id 1i3I16-0000Qm-Pj; Thu, 29 Aug 2019 10:51:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3I0c-0000EM-Im
- for linux-rockchip@lists.infradead.org; Thu, 29 Aug 2019 10:50:31 +0000
+ id 1i3I11-0000OD-5J
+ for linux-rockchip@lists.infradead.org; Thu, 29 Aug 2019 10:50:56 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EB7C02173E;
- Thu, 29 Aug 2019 10:50:28 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 224CB23405;
+ Thu, 29 Aug 2019 10:50:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567075829;
- bh=9OwpUQxQjkGWdwWltlQKTGXWR2s8Zhgbq2LrY6GIs8I=;
+ s=default; t=1567075854;
+ bh=7R5Sb9pQniThNe2V1GX9Yyy/CTgDm7fN5URc3GLrp6Y=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=mFvjoaEScbm2R6FOwxzrEGMFZoYfEgpa8b2+wAsTnEMKfv+FLgNhr3POwCdh7WHED
- PqZea4ufXFCibqlPG24V36t+b1fetVPXa3voyWAFmSSuN4RkJSH9J5ygTQuMR1KIXD
- o3NTkqgM1Lh1bsunIbO5ZHrlQaKB5UUwF49ch0dc=
+ b=iTH2/+J4xIoqqeujl8Zj5v6Q5OrTQJj6mZ4eRUMoM+RDtn8aODqr3mDmDGzx/rWg1
+ inOJx1G3Z0JhQR8pUAOdIbdw2Xj0eG6gyQw6Rl7BTNRbpx+1E+BSdxSgOij/lu7ach
+ c1rrSa/R+CWVvmJeDRXysjfA3kI8QJJzyeRt8EOg=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 17/29] arm64: dts: rockchip: enable usb-host
+Subject: [PATCH AUTOSEL 4.14 09/14] arm64: dts: rockchip: enable usb-host
  regulators at boot on rk3328-rock64
-Date: Thu, 29 Aug 2019 06:49:57 -0400
-Message-Id: <20190829105009.2265-17-sashal@kernel.org>
+Date: Thu, 29 Aug 2019 06:50:38 -0400
+Message-Id: <20190829105043.2508-9-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190829105009.2265-1-sashal@kernel.org>
-References: <20190829105009.2265-1-sashal@kernel.org>
+In-Reply-To: <20190829105043.2508-1-sashal@kernel.org>
+References: <20190829105043.2508-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_035030_636101_EA863A3D 
+X-CRM114-CacheID: sfid-20190829_035055_588932_EFA97AC0 
 X-CRM114-Status: UNSURE (   8.53  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
@@ -107,10 +107,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 2 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-index c142169a58fc5..e9147e35b7396 100644
+index e720f40bbd5d7..3f8f528099a80 100644
 --- a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
 +++ b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-@@ -40,6 +40,7 @@
+@@ -77,6 +77,7 @@
  		pinctrl-0 = <&usb30_host_drv>;
  		regulator-name = "vcc_host_5v";
  		regulator-always-on;
@@ -118,7 +118,7 @@ index c142169a58fc5..e9147e35b7396 100644
  		vin-supply = <&vcc_sys>;
  	};
  
-@@ -50,6 +51,7 @@
+@@ -87,6 +88,7 @@
  		pinctrl-0 = <&usb20_host_drv>;
  		regulator-name = "vcc_host1_5v";
  		regulator-always-on;
