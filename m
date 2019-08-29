@@ -2,86 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CAF1A1078
-	for <lists+linux-rockchip@lfdr.de>; Thu, 29 Aug 2019 06:30:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27673A13F9
+	for <lists+linux-rockchip@lfdr.de>; Thu, 29 Aug 2019 10:42:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Qz0xpF3DmCJubS1PRxD/tm8KfbKA0XRQ0IS2dVte1k8=; b=CGt3zPk+c2/mur
-	jdcRn4GJdqZaMljgjvi7NwHShu/ZOw8kcdQI08fo7gaYVHrffQOEEANFUd86YQ1IDU49vHQzTLqFa
-	TAwOXnM8l9/jx1oPqsfykr5ypqQX7EQLqk5mhcBGRuFiRznqH3ZYRLVl9HhIISjZMqAY6JM9nAZ1m
-	Jt3+g4VMFBlLrr3WL5SKcB3ldAOgPEAUFA9s8Q/LT7bPk/k0JoN2vu7tvRR1ZNNopGJzbnydRWbJw
-	tMzGWKeUTb8et8nMbVnotV3XmtzdWmOFRD7ksUzVDDY5hHxZ2tZOraZj5mQ6TaLQ72oi0JigKATEe
-	0zrhi+lnv5Evv66nFLjg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=a9aCfzKCcMz/NiY99wVqtOnUaZS3t8lkH5TksSDi/1k=; b=KnC
+	ZietX8i2Ysb7o0BNfEt+lpsPnXH1+ixe4e9enMJTWjXmyYDMV+16ZM+c/oSC04kltCTzMxbFoQR4v
+	Da1P9b7cNcgw7uEfWtqRdKnHK5nE2ZwfUNCUuQeJrgs+yH6svFx1kCAqLZqeFYUygtlAuvesZW1w0
+	rdVQmDOokpk8hfWNdPQv+oX+8ltQyJ332gvG0xPBRHJGsG6DwmMWT3OY+mWBIps78v/ha03lqF9Xn
+	zADwvibSUXDG3RhKU8OtLr+J/Y/Cp543mMGVpDlkDFsrAZRNifGrpp0D3+JMGuGd61VJxABq9qEzW
+	SaknAa7hk4wZt5EJ8J3PvzBgPgdnltA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3C4f-0000fY-Fc; Thu, 29 Aug 2019 04:30:17 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1i3G0T-0003OP-6D; Thu, 29 Aug 2019 08:42:13 +0000
+Received: from lucky1.263xmail.com ([211.157.147.134])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3C4c-0000ep-Ph
- for linux-rockchip@lists.infradead.org; Thu, 29 Aug 2019 04:30:16 +0000
-Received: by mail-pf1-x441.google.com with SMTP id y200so1178708pfb.6
- for <linux-rockchip@lists.infradead.org>; Wed, 28 Aug 2019 21:30:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=WjPTSP9KK2QsqjmhzaDx1khiUa3+dCf9cZMoVMaAshk=;
- b=MMK7O5IUDss97+ZReyNXw062RBZnNuHPYc45XAcCIE0DL5/DB+mNF+5x81uwfZZ9fh
- LrEZ3DrQ4CCRN2P4AHfiQxbBoS/6fKM2ZqMmGV4BBMpM31+fR4kYqVAjtWFGBilNpbqJ
- XVYy0EPLnGvGvc2zVSJPSyF8gdUOu4Vu4gvIg=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=WjPTSP9KK2QsqjmhzaDx1khiUa3+dCf9cZMoVMaAshk=;
- b=KY7Ruy4eZyDb7RAQx1oWSkWDf7/ul81DCAi9auJISqzPd6gj5/PqkRrhyY0mlAGl7f
- 5quU5Th5Dl6pFHr9M+nj5RI+pLGH82FPuH3H7KfnZbmh/QhYv6lgLTHqmfGtzA7ctAdY
- M0HJvziWHpGYw6LzQ4hsuv44IIgIuT3/bUx63w342E9EW/zQ6s4yhT+zMKUKHPgHnBcd
- +VVzJeeFYZWCR7WYwF6FFDUWtFLDtSuDyMIlID7kvSTGi8d4zxbCVCQ4kqbkxj6yrcUR
- yJO5op6lpzADrDlDchJNpcnt2QczsXb9c/hRRPjRXpx9uZcFn89gJGsPkBl4u7XsYDYl
- IBpw==
-X-Gm-Message-State: APjAAAXHoG26+rM1/SliLedgeFkK+y8hdFGjJrM05zTR+/l/u6lTglzP
- B7+D/ShmsUEhOIqkaCuwohbmOw==
-X-Google-Smtp-Source: APXvYqyPaVF6cNmZOG33dRsz6I4yq7+2LHI4Ys4JgoXMTN5eZVkbgzvy71GI5pd6/ByGdtUhZbRStg==
-X-Received: by 2002:a17:90a:2525:: with SMTP id
- j34mr8022406pje.11.1567053013589; 
- Wed, 28 Aug 2019 21:30:13 -0700 (PDT)
-Received: from localhost ([2401:fa00:1:10:79b4:bd83:e4a5:a720])
- by smtp.gmail.com with ESMTPSA id s72sm717756pgc.92.2019.08.28.21.30.09
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 28 Aug 2019 21:30:12 -0700 (PDT)
-From: Cheng-Yi Chiang <cychiang@chromium.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH] drm: dw-hdmi-i2s: enable audio clock in audio_startup
-Date: Thu, 29 Aug 2019 12:29:57 +0800
-Message-Id: <20190829042957.150929-1-cychiang@chromium.org>
-X-Mailer: git-send-email 2.23.0.187.g17f5b7556c-goog
-MIME-Version: 1.0
+ id 1i3G0O-0003O2-VS
+ for linux-rockchip@lists.infradead.org; Thu, 29 Aug 2019 08:42:10 +0000
+Received: from shawn.lin?rock-chips.com (unknown [192.168.167.138])
+ by lucky1.263xmail.com (Postfix) with ESMTP id 2B3FD3E88A;
+ Thu, 29 Aug 2019 16:42:02 +0800 (CST)
+X-263anti-spam: KSV:0;BIG:0;
+X-MAIL-GRAY: 1
+X-MAIL-DELIVERY: 0
+X-KSVirus-check: 0
+X-ADDR-CHECKED4: 1
+X-ABS-CHECKED: 1
+X-SKE-CHECKED: 1
+X-ANTISPAM-LEVEL: 2
+Received: from localhost.localdomain (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P806T139970504931072S1567068119523134_; 
+ Thu, 29 Aug 2019 16:42:00 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <3db9f6487452e5487522be5413dd36c8>
+X-RL-SENDER: shawn.lin@rock-chips.com
+X-SENDER: lintao@rock-chips.com
+X-LOGIN-NAME: shawn.lin@rock-chips.com
+X-FST-TO: heiko@sntech.de
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+From: Shawn Lin <shawn.lin@rock-chips.com>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH] arm64: dts: rockchip: limit clock rate of eMMC for rk3328
+ boards
+Date: Thu, 29 Aug 2019 16:41:02 +0800
+Message-Id: <1567068062-174383-1-git-send-email-shawn.lin@rock-chips.com>
+X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_213014_853127_23CBE165 
-X-CRM114-Status: UNSURE (   8.02  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190829_014209_174068_A7A95130 
+X-CRM114-Status: GOOD (  13.42  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [211.157.147.134 listed in list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,62 +80,57 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, tzungbi@chromium.org, zhengxing@rock-chips.com,
- kuninori.morimoto.gx@renesas.com, a.hajda@samsung.com, airlied@linux.ie,
- jeffy.chen@rock-chips.com, dianders@chromium.org,
- dri-devel@lists.freedesktop.org, cain.cai@rock-chips.com,
- linux-rockchip@lists.infradead.org, eddie.cai@rock-chips.com,
- Laurent.pinchart@ideasonboard.com, daniel@ffwll.ch,
- enric.balletbo@collabora.com, dgreid@chromium.org, sam@ravnborg.org,
- linux-arm-kernel@lists.infradead.org, cychiang@chromium.org
+Cc: linux-rockchip@lists.infradead.org, Shawn Lin <shawn.lin@rock-chips.com>,
+ Liang Chen <cl@rock-chips.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-In the designware databook, the sequence of enabling audio clock and
-setting format is not clearly specified.
-Currently, audio clock is enabled in the end of hw_param ops after
-setting format.
+max-frequency is missing for rk3328-evb and rk3328-rock64, so the
+eMMC will run into 200MHz bus clock in HS200 mode. The IO can only
+support up to 150MHz for rk3228 Soc, so now rk3328 boards are not
+always boot properly.
 
-On some monitors, there is a possibility that audio does not come out.
-Fix this by enabling audio clock in audio_startup ops
-before hw_param ops setting format.
-
-Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+Fixes: 955bebde057e ("arm64: dts: rockchip: add rk3328-rock64 board")
+Fixes: 0c1f8546753f ("arm64: dts: rockchip: add RK3328 eavluation board devicetree")
+Cc: Liang Chen <cl@rock-chips.com>
+Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
 ---
- drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
 
-diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-index 5cbb71a866d5..08b4adbb1ddc 100644
---- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-+++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-@@ -69,6 +69,14 @@ static int dw_hdmi_i2s_hw_params(struct device *dev, void *data,
- 	hdmi_write(audio, conf0, HDMI_AUD_CONF0);
- 	hdmi_write(audio, conf1, HDMI_AUD_CONF1);
- 
-+	return 0;
-+}
-+
-+static int dw_hdmi_i2s_audio_startup(struct device *dev, void *data)
-+{
-+	struct dw_hdmi_i2s_audio_data *audio = data;
-+	struct dw_hdmi *hdmi = audio->hdmi;
-+
- 	dw_hdmi_audio_enable(hdmi);
- 
- 	return 0;
-@@ -105,6 +113,7 @@ static int dw_hdmi_i2s_get_dai_id(struct snd_soc_component *component,
- }
- 
- static struct hdmi_codec_ops dw_hdmi_i2s_ops = {
-+	.audio_startup = dw_hdmi_i2s_audio_startup,
- 	.hw_params	= dw_hdmi_i2s_hw_params,
- 	.audio_shutdown	= dw_hdmi_i2s_audio_shutdown,
- 	.get_dai_id	= dw_hdmi_i2s_get_dai_id,
+ arch/arm64/boot/dts/rockchip/rk3328-evb.dts    | 1 +
+ arch/arm64/boot/dts/rockchip/rk3328-rock64.dts | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328-evb.dts b/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
+index 49c4b96..a5d8b0c 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
+@@ -73,6 +73,7 @@
+ &emmc {
+ 	bus-width = <8>;
+ 	cap-mmc-highspeed;
++	max-frequency = <150000000>;
+ 	non-removable;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&emmc_clk &emmc_cmd &emmc_bus8>;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+index 62936b4..e99e22e 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+@@ -132,6 +132,7 @@
+ &emmc {
+ 	bus-width = <8>;
+ 	cap-mmc-highspeed;
++	max-frequency = <150000000>;
+ 	mmc-hs200-1_8v;
+ 	non-removable;
+ 	pinctrl-names = "default";
 -- 
-2.23.0.187.g17f5b7556c-goog
+1.9.1
+
+
 
 
 _______________________________________________
