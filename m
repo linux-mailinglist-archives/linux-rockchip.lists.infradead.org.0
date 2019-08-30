@@ -2,72 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 048D5A2B66
-	for <lists+linux-rockchip@lfdr.de>; Fri, 30 Aug 2019 02:28:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89633A2D08
+	for <lists+linux-rockchip@lfdr.de>; Fri, 30 Aug 2019 04:56:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=40zrAPndaQctB1fuUMBiEDvSkGoIhVBLrcebNdpc00g=; b=Sc4
-	IyJDzx2QM/r09xXJYterfIhrWA6aadPdNnFJdjEtdlyWBhjcG/miB4x2YEwBOsLsjQ1qHJCObq7ak
-	i3W4xk3godm03CncPbd3eGHegtRazyqOr3PAIrRNABf5iqEUY+MVRw2aIHdZLegcc/38ED1oWYyGp
-	/KmBRZuwBJX0TGg54C2dC5byr1lx+MEsfWhE2ldQOsS0fOukVCWL8OxE6VqbaZ8+RgY5eKlIUr/EO
-	UofrK+h+qOuLU3kw3Kv019TPIVQChkLhzP+bFw2N07tYvOSR+JYv47bL/hp8vWaDGvPNheIf28Avv
-	YPov0bVJ6xKR8PQbzTwGoVxtmpVBkew==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8b6jcVwjPoicggW2iEVr6BJFX/xVXYYys4ncb6zlpNw=; b=q2tgUcIB2gZsru
+	eMth3hRH18eh2MDFqJkarRZh66XEBIN/Q4C4q/rcdoaBHISh7BTGdg/vB+5naG3+v3Gzcs8mDuTO+
+	jFm6yqVbMfY0pjEzTwr/NeaEWzt0bXwvD8k6mhgnSWUVD/MyxK1UIryUUVGbqJjdSuaQEoBv6p9vd
+	cncsZ6OHXR6u90skXTDm3sN3qzYeeY7gGEcrHVgbjn4IrV5goe4wozZidCokLT07yJQqLHIgRSyjR
+	85hD4dIbVYPeNIPgAh7okEnHbvc+Y8+kUCAGhvuvj3TlB+XCy3SE6zxZkd2T99iJS97IQ72OrTOKf
+	K0X90keNjGgIBe8Pm+BA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Ulp-0002tn-8I; Fri, 30 Aug 2019 00:28:05 +0000
-Received: from lucky1.263xmail.com ([211.157.147.135])
+	id 1i3X4z-0002Jf-6A; Fri, 30 Aug 2019 02:56:01 +0000
+Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3Ull-0002su-Bt
- for linux-rockchip@lists.infradead.org; Fri, 30 Aug 2019 00:28:02 +0000
-Received: from shawn.lin?rock-chips.com (unknown [192.168.167.160])
- by lucky1.263xmail.com (Postfix) with ESMTP id 053813D9ED;
- Fri, 30 Aug 2019 08:27:52 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 1
-X-MAIL-DELIVERY: 0
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P24082T140619232044800S1567124870762320_; 
- Fri, 30 Aug 2019 08:27:51 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <68427a5ae9e8c6af482fd81a67ec07fb>
-X-RL-SENDER: shawn.lin@rock-chips.com
-X-SENDER: lintao@rock-chips.com
-X-LOGIN-NAME: shawn.lin@rock-chips.com
-X-FST-TO: heiko@sntech.de
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-From: Shawn Lin <shawn.lin@rock-chips.com>
-To: Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH v2] arm64: dts: rockchip: limit clock rate of MMC controllers
- for RK3328
-Date: Fri, 30 Aug 2019 08:26:47 +0800
-Message-Id: <1567124807-199633-1-git-send-email-shawn.lin@rock-chips.com>
-X-Mailer: git-send-email 1.9.1
+ id 1i3X4i-00028S-1N
+ for linux-rockchip@lists.infradead.org; Fri, 30 Aug 2019 02:55:45 +0000
+Received: by mail-ua1-x944.google.com with SMTP id m8so1862090uap.2
+ for <linux-rockchip@lists.infradead.org>; Thu, 29 Aug 2019 19:55:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=uVJP3tNQZmRfMHp/W2ZEuVlB3ztV/VuTs152oodDoRA=;
+ b=go/AeEsI5vC+mODTwi/w5PsQtEjcwg1f3Pf9r94z/spWywhIHshzlHgOAz73WeypOX
+ pqMIDya9cWyUswo1xPqA+BADMwbb805CpsmQht+9dYBhC6NqBViosIEVvwIli8l3sTlO
+ 1jIG9p8bhTKdxA20ytec9mf4cYGdg+LwRAdxU=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=uVJP3tNQZmRfMHp/W2ZEuVlB3ztV/VuTs152oodDoRA=;
+ b=P382OY8cjG1LxoaMYPNOUrcW+/MuYHC+jKp9XPgyzebcodK3c1KZuSwpiTaDuirdsA
+ FHlaNFxTG1tWfD7OzFegR3whROxDIRNpgx0Z9YwmUb522E3XtlmTiqdd4ddQxbdcH25T
+ c6hQulLbEMGT2W64I6wekKAytf62yzrxuNZq0KQwqOVhau0M1ECsQ9J/KsjwCbQaoI+c
+ MC6ML7z9hoB/XKwFznsvcu8YeIfiAn5TLIEnBNm5qXtFoe6pHdnutqLRjaleouRn8J7J
+ CTIyC4CjbjT1mFxrHl5aNKc5SpH/CzT3Bv6E4recM/ICCXh4EnDMaqQvg7JCpZyNshrM
+ RRlA==
+X-Gm-Message-State: APjAAAU/0T7zbf6xTGerT6Pd3K5qQj0TtUFq2cyAUKyRRTBs/Oz3MS77
+ HqVb38004L5sWbe0tQGr3W/Sav0iI/G/MumBP9c/ZQ==
+X-Google-Smtp-Source: APXvYqz3y2+iMq8OG/5tEVPvpxYHj7wpUTGqFySYc0DUG/K3JsZPiNj8noweU6gAsRnU3oLPZiigq/TH0naxasIEv+E=
+X-Received: by 2002:ab0:7c3:: with SMTP id d3mr6638328uaf.131.1567133739477;
+ Thu, 29 Aug 2019 19:55:39 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190717083327.47646-1-cychiang@chromium.org>
+ <CA+Px+wX4gbntkd6y8NN8xwXpZLD4MH9rTeHcW9+Ndtw=3_mWBw@mail.gmail.com>
+In-Reply-To: <CA+Px+wX4gbntkd6y8NN8xwXpZLD4MH9rTeHcW9+Ndtw=3_mWBw@mail.gmail.com>
+From: Cheng-yi Chiang <cychiang@chromium.org>
+Date: Fri, 30 Aug 2019 10:55:12 +0800
+Message-ID: <CAFv8NwLiY+ro0L4c5vjSOGN8jA-Qr4zm2OWvVHkiuoa7_4e2Fg@mail.gmail.com>
+Subject: Re: [PATCH v5 0/5] Add HDMI jack support on RK3288
+To: Tzung-Bi Shih <tzungbi@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_172801_566886_5F23EA3B 
-X-CRM114-Status: GOOD (  15.12  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190829_195544_087979_2CB0EC06 
+X-CRM114-Status: GOOD (  15.84  )
+X-Spam-Score: -7.4 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-7.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.135 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,69 +91,60 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Shawn Lin <shawn.lin@rock-chips.com>,
- Robin Murphy <robin.murphy@arm.com>, Liang Chen <cl@rock-chips.com>
-MIME-Version: 1.0
+Cc: ALSA development <alsa-devel@alsa-project.org>,
+ Douglas Anderson <dianders@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
+ Liam Girdwood <lgirdwood@gmail.com>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, Takashi Iwai <tiwai@suse.com>,
+ tzungbi@chromium.org, Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, linux-rockchip@lists.infradead.org,
+ Dylan Reid <dgreid@chromium.org>, Jaroslav Kysela <perex@perex.cz>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-150MHz is a fundamental limitation of RK3288 Soc, w/o this limitation,
-eMMC, for instance, will run into 200MHz clock rate in HS200 mode, which
-makes the RK3328 boards not always boot properly. By adding it in
-rk3328.dtsi would also obviate the worry of missing it when adding new
-boards.
+On Wed, Jul 17, 2019 at 6:28 PM Tzung-Bi Shih <tzungbi@google.com> wrote:
+>
+> On Wed, Jul 17, 2019 at 4:33 PM Cheng-Yi Chiang <cychiang@chromium.org> wrote:
+> >
+> > This patch series supports HDMI jack reporting on RK3288, which uses
+> > DRM dw-hdmi driver and hdmi-codec codec driver.
+> >
+> > The previous discussion about reporting jack status using hdmi-notifier
+> > and drm_audio_component is at
+> >
+> > https://lore.kernel.org/patchwork/patch/1083027/
+> >
+> > The new approach is to use a callback mechanism that is
+> > specific to hdmi-codec.
+> >
+> > Changes from v4 to v5:
+> > - synopsys/Kconfig: Remove the incorrect dependency change in v4.
+> > - rockchip/Kconfig: Add dependency of hdmi-codec when it is really need
+> >   for jack support.
+> >
+> > Cheng-Yi Chiang (5):
+> >   ASoC: hdmi-codec: Add an op to set callback function for plug event
+> >   drm: bridge: dw-hdmi: Report connector status using callback
+> >   drm: dw-hdmi-i2s: Use fixed id for codec device
+> >   ASoC: rockchip_max98090: Add dai_link for HDMI
+> >   ASoC: rockchip_max98090: Add HDMI jack support
+> >
+> LGTM.
+>
+> Reviewed-by: Tzung-Bi Shih <tzungbi@google.com>
 
-Fixes: 52e02d377a72 ("arm64: dts: rockchip: add core dtsi file for RK3328 SoCs")
-Cc: Robin Murphy <robin.murphy@arm.com>
-Cc: Liang Chen <cl@rock-chips.com>
-Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
-
----
-
-Not a strickly fix patch but add fixes tag in hope for stable
-kernel maintainers would help backport it.
-
-Changes in v2:
-- move the limitation in rk3288.dtsi
-
- arch/arm64/boot/dts/rockchip/rk3328.dtsi | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-index 4a175ff..31cc154 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-@@ -813,6 +813,7 @@
- 			 <&cru SCLK_SDMMC_DRV>, <&cru SCLK_SDMMC_SAMPLE>;
- 		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
- 		fifo-depth = <0x100>;
-+		max-frequency = <150000000>;
- 		status = "disabled";
- 	};
- 
-@@ -824,6 +825,7 @@
- 			 <&cru SCLK_SDIO_DRV>, <&cru SCLK_SDIO_SAMPLE>;
- 		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
- 		fifo-depth = <0x100>;
-+		max-frequency = <150000000>;
- 		status = "disabled";
- 	};
- 
-@@ -835,6 +837,7 @@
- 			 <&cru SCLK_EMMC_DRV>, <&cru SCLK_EMMC_SAMPLE>;
- 		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
- 		fifo-depth = <0x100>;
-+		max-frequency = <150000000>;
- 		status = "disabled";
- 	};
- 
--- 
-1.9.1
-
-
-
+Hi Daniel,
+Do you have further concern on this patch series related to hdmi-codec
+and drm part ?
+We would like to merge this patch series if possible.
+They will be needed in many future chrome projects for HDMI audio jack
+detection.
+Thanks a lot!
 
 _______________________________________________
 Linux-rockchip mailing list
