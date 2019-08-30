@@ -2,44 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC3C9A3D35
-	for <lists+linux-rockchip@lfdr.de>; Fri, 30 Aug 2019 19:49:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F5D0A3F92
+	for <lists+linux-rockchip@lfdr.de>; Fri, 30 Aug 2019 23:17:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NwMgzinF99W5hS/iEkjbhSM6O5uQC2hQEANBIqiTYRU=; b=mLM9WHovH8O5qT
-	vuWwnr6NVb7fwcRjMyo7Hqx2xx+ZBOfR4VSoWgoqeoEh+JC7e8YWq1pbzgmjVQ5MqYHm3gqZjj8ww
-	ww9u5t7MONsZ10/az8NxxUTB6kbi8qILN9NCB0Zr5dHPTtFJ7k8S2uGXGKuSmjyGMpdUXCv3MGWpj
-	WXMMXDrO5T4BW1bWBIdgvMQuk0xemg+9Tu801/xhjU328JR+gKmH1VNfGjm0FYjOI068nH9M/WlSC
-	EBh62H59Z5gnOZXEowcxmNjGIpNUzDTf2OdCSNHx6EPMh+3F7aGEIonzvJixcGOLe0ryTb2IvqHRX
-	0x9HLdfn2A2fYrtbzbrg==;
+	List-Owner; bh=MRkIZd+IWYsKP0LTsk8EkNuMFuk9H1CRAK2r9ILSS+w=; b=l/LcUyJhk6GrGb
+	2EFv587tBXE5OlcvnaOUqda0jQR/HCUc8YzE/jyTqed9227OwQFWMw+jlqUFL6TsVc4gaKsdq8u/v
+	VhYm6vuSKhtu0Xgtl1pJUU11LcysW2JVJhwkRXMfBaAs2+4+w6qYw8IVKDVCIUGNRsM0nehlBrg9A
+	rFTn5OMWZfXvGugVPoBDHPjRm2BHUHsLaruw5QGdSEpCxUBaYbyPfSTqX8LvFrZZ7DOohiyJyeumw
+	IFIwl/n8k+QRKErNiEmY588aqiL0ouFKXEqJPnrQfGqKgM71v/FxCi7Y7ZFv8NTIIbeF3Pq+15XaU
+	Kx3NC/Je1yMyp9fyx+fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3l15-0003gL-47; Fri, 30 Aug 2019 17:48:55 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1i3oHG-00010a-2N; Fri, 30 Aug 2019 21:17:50 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3l10-0003fu-U5
- for linux-rockchip@lists.infradead.org; Fri, 30 Aug 2019 17:48:52 +0000
-Received: from [104.132.1.107] (helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1i3l0o-0005xA-HL; Fri, 30 Aug 2019 19:48:38 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Uwe =?ISO-8859-1?Q?Kleine=2DK=F6nig?= <uwe@kleine-koenig.org>
-Subject: Re: [PATCH v3 2/6] pwm: let pwm_get_state() return the last
- implemented state
-Date: Fri, 30 Aug 2019 19:48:35 +0200
-Message-ID: <5802279.ETANMDGNFP@phil>
-In-Reply-To: <20190824153707.13746-3-uwe@kleine-koenig.org>
-References: <20190824153707.13746-1-uwe@kleine-koenig.org>
- <20190824153707.13746-3-uwe@kleine-koenig.org>
-MIME-Version: 1.0
+ id 1i3oH1-0000py-HN; Fri, 30 Aug 2019 21:17:36 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::d71])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id E0D70154FE29B;
+ Fri, 30 Aug 2019 14:17:28 -0700 (PDT)
+Date: Fri, 30 Aug 2019 14:17:28 -0700 (PDT)
+Message-Id: <20190830.141728.336807562506579224.davem@davemloft.net>
+To: wens@kernel.org
+Subject: Re: [PATCH netdev] net: stmmac: dwmac-rk: Don't fail if phy
+ regulator is absent
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20190829031724.20865-1-wens@kernel.org>
+References: <20190829031724.20865-1-wens@kernel.org>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Fri, 30 Aug 2019 14:17:29 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_104851_124026_8E8B3F51 
-X-CRM114-Status: GOOD (  18.32  )
+X-CRM114-CacheID: sfid-20190830_141735_579938_F8217B80 
+X-CRM114-Status: GOOD (  10.32  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -59,132 +63,39 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, Maxime Ripard <maxime.ripard@bootlin.com>,
- Patrick Havelange <patrick.havelange@essensium.com>,
- linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
- Thierry Reding <thierry.reding@gmail.com>, kernel@pengutronix.de
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ wens@csie.org, joabreu@synopsys.com, peppe.cavallaro@st.com,
+ linux-arm-kernel@lists.infradead.org, heiko@sntech.de
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Samstag, 24. August 2019, 17:37:03 CEST schrieb Uwe Kleine-K=F6nig:
-> When pwm_apply_state() is called the lowlevel driver usually has to
-> apply some rounding because the hardware doesn't support nanosecond
-> resolution. So let pwm_get_state() return the actually implemented state
-> instead of the last applied one if possible.
-> =
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Thu, 29 Aug 2019 11:17:24 +0800
 
-> Signed-off-by: Uwe Kleine-K=F6nig <uwe@kleine-koenig.org>
+> From: Chen-Yu Tsai <wens@csie.org>
+> 
+> The devicetree binding lists the phy phy as optional. As such, the
+> driver should not bail out if it can't find a regulator. Instead it
+> should just skip the remaining regulator related code and continue
+> on normally.
+> 
+> Skip the remainder of phy_power_on() if a regulator supply isn't
+> available. This also gets rid of the bogus return code.
+> 
+> Fixes: 2e12f536635f ("net: stmmac: dwmac-rk: Use standard devicetree property for phy regulator")
+> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 
-With this applied, the display brightness on my rk3399-gru-scarlet gets
-inverted. Now it's very bright on level 1 and very dim on the max level.
+Applied and queued up for -stable.
 
-According to the debugfs, the inverted state changes:
+> On a separate note, maybe we should add this file to the Rockchip
+> entry in MAINTAINERS?
 
-OLD STATE:
-----------
-root@localhost:~# cat /debug/pwm
-platform/ff420030.pwm, 1 PWM device
- pwm-0   (ppvar-bigcpu-pwm    ): requested enabled period: 3334 ns duty: 33=
-1 ns polarity: normal
+Yes, probably.
 
-platform/ff420020.pwm, 1 PWM device
- pwm-0   (ppvar-litcpu-pwm    ): requested enabled period: 3334 ns duty: 41=
-4 ns polarity: normal
-
-platform/ff420010.pwm, 1 PWM device
- pwm-0   (backlight           ): requested enabled period: 999996 ns duty: =
-941148 ns polarity: normal
-
-platform/ff420000.pwm, 1 PWM device
- pwm-0   (ppvar-gpu-pwm       ): requested enabled period: 3334 ns duty: 33=
-34 ns polarity: normal
-
-NEW STATE:
-----------
-root@localhost:~# cat /debug/pwm =
-
-platform/ff420030.pwm, 1 PWM device
- pwm-0   (ppvar-bigcpu-pwm    ): requested enabled period: 3334 ns duty: 33=
-1 ns polarity: normal
-
-platform/ff420020.pwm, 1 PWM device
- pwm-0   (ppvar-litcpu-pwm    ): requested enabled period: 3334 ns duty: 41=
-4 ns polarity: normal
-
-platform/ff420010.pwm, 1 PWM device
- pwm-0   (backlight           ): requested enabled period: 999996 ns duty: =
-941148 ns polarity: inverse
-
-platform/ff420000.pwm, 1 PWM device
- pwm-0   (ppvar-gpu-pwm       ): requested enabled period: 3334 ns duty: 33=
-34 ns polarity: normal
-
-
-And the reason is below.
-
-> ---
->  drivers/pwm/core.c | 9 ++++++++-
->  1 file changed, 8 insertions(+), 1 deletion(-)
-> =
-
-> diff --git a/drivers/pwm/core.c b/drivers/pwm/core.c
-> index 72347ca4a647..92333b89bf02 100644
-> --- a/drivers/pwm/core.c
-> +++ b/drivers/pwm/core.c
-> @@ -473,7 +473,14 @@ int pwm_apply_state(struct pwm_device *pwm, struct p=
-wm_state *state)
->  		if (err)
->  			return err;
->  =
-
-> -		pwm->state =3D *state;
-> +		/*
-> +		 * .apply might have to round some values in *state, if possible
-> +		 * read the actually implemented value back.
-> +		 */
-> +		if (chip->ops->get_state)
-> +			chip->ops->get_state(chip, pwm, &pwm->state);
-> +		else
-> +			pwm->state =3D *state;
-
-This should probably become
->-		pwm->state =3D *state;
-> +
-> +		/*
-> +		 * .apply might have to round some values in *state, if possible
-> +		 * read the actually implemented value back.
-> +		 */
-> +		if (chip->ops->get_state)
-> +			chip->ops->get_state(chip, pwm, &pwm->state);
-
-so always initialize the state to the provided one and then let the driver
-override values?
-
-The inversion case stems from the Rockchip pwm driver (wrongly?) only
-setting the polarity field when actually inverted, so here the polarity fie=
-ld
-probably never actually got set at all.
-
-But while we should probably fix the rockchip driver to set polarity all the
-time, this is still being true for possible future state-fields, which also
-wouldn't get initialzed from all drivers, which might need an adaption
-first?
-
-
-Heiko
-
-
->  	} else {
->  		/*
->  		 * FIXME: restore the initial state in case of error.
-> =
-
-
-
-
-
+Thanks.
 
 _______________________________________________
 Linux-rockchip mailing list
