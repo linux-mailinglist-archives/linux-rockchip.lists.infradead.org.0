@@ -2,55 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F5D0A3F92
-	for <lists+linux-rockchip@lfdr.de>; Fri, 30 Aug 2019 23:17:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD27AA4682
+	for <lists+linux-rockchip@lfdr.de>; Sun,  1 Sep 2019 01:05:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MRkIZd+IWYsKP0LTsk8EkNuMFuk9H1CRAK2r9ILSS+w=; b=l/LcUyJhk6GrGb
-	2EFv587tBXE5OlcvnaOUqda0jQR/HCUc8YzE/jyTqed9227OwQFWMw+jlqUFL6TsVc4gaKsdq8u/v
-	VhYm6vuSKhtu0Xgtl1pJUU11LcysW2JVJhwkRXMfBaAs2+4+w6qYw8IVKDVCIUGNRsM0nehlBrg9A
-	rFTn5OMWZfXvGugVPoBDHPjRm2BHUHsLaruw5QGdSEpCxUBaYbyPfSTqX8LvFrZZ7DOohiyJyeumw
-	IFIwl/n8k+QRKErNiEmY588aqiL0ouFKXEqJPnrQfGqKgM71v/FxCi7Y7ZFv8NTIIbeF3Pq+15XaU
-	Kx3NC/Je1yMyp9fyx+fw==;
+	List-Owner; bh=MSjDIPLveBYHtT3Xu8epphSlDx2XsB6PzgW31s0rTLc=; b=TQPwhacRZ6kyOR
+	+k3ExmrLEI4FjHmyGJYpnPax0EX7xaqi4aTckuiV0FVF8Rp4uqiVhw3Y/3NZKc5Y8K839cnD6pjLE
+	hrgn58ct7I9QUXsUwT4IfGuHeYBAR6UEWfBrsZnF3Kxf/4JbfhBFCa7tx7A9NXR07BJm9MAO/F2O5
+	8qjCRRORGpCOJvgBhPjzTLP+On1TykuC2sb9vb7GxiZTGr/Ry3gVoIx34jmS27FjZKVVzgIeukVip
+	oMbPTLtuzqJdEedTrL08+vM1EdLiWbJJGbFGFrQ4frE9og3gFQrkYBGVLhSA+CifnRTdYTtY9ElJn
+	IgsI4isQVzmOmGEfrv+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3oHG-00010a-2N; Fri, 30 Aug 2019 21:17:50 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1i4CRC-0002FB-2H; Sat, 31 Aug 2019 23:05:42 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3oH1-0000py-HN; Fri, 30 Aug 2019 21:17:36 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::d71])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id E0D70154FE29B;
- Fri, 30 Aug 2019 14:17:28 -0700 (PDT)
-Date: Fri, 30 Aug 2019 14:17:28 -0700 (PDT)
-Message-Id: <20190830.141728.336807562506579224.davem@davemloft.net>
-To: wens@kernel.org
-Subject: Re: [PATCH netdev] net: stmmac: dwmac-rk: Don't fail if phy
- regulator is absent
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <20190829031724.20865-1-wens@kernel.org>
-References: <20190829031724.20865-1-wens@kernel.org>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Fri, 30 Aug 2019 14:17:29 -0700 (PDT)
+ id 1i4CQY-0000qy-7S; Sat, 31 Aug 2019 23:05:03 +0000
+Received: from [88.128.80.160] (helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1i4CQJ-0002xc-OE; Sun, 01 Sep 2019 01:04:49 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Elon Zhang <zhangzj@rock-chips.com>
+Subject: Re: [PATCH v1 1/1] ARM: dts: rockchip: set crypto default disabled on
+ rk3288
+Date: Sun, 01 Sep 2019 01:04:31 +0200
+Message-ID: <3345609.Z0LLm6LDBC@phil>
+In-Reply-To: <3b9cbffa-291e-fc95-bce6-5b24f5fd860d@rock-chips.com>
+References: <20190827071439.14767-1-zhangzj@rock-chips.com>
+ <4806912.UyKsYhR33o@phil>
+ <3b9cbffa-291e-fc95-bce6-5b24f5fd860d@rock-chips.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_141735_579938_F8217B80 
-X-CRM114-Status: GOOD (  10.32  )
+X-CRM114-CacheID: sfid-20190831_160502_426643_D97A9087 
+X-CRM114-Status: GOOD (  22.16  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,39 +59,98 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- wens@csie.org, joabreu@synopsys.com, peppe.cavallaro@st.com,
- linux-arm-kernel@lists.infradead.org, heiko@sntech.de
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Chen-Yu Tsai <wens@kernel.org>
-Date: Thu, 29 Aug 2019 11:17:24 +0800
+Hi Elon,
 
-> From: Chen-Yu Tsai <wens@csie.org>
+Am Donnerstag, 29. August 2019, 13:31:00 CEST schrieb Elon Zhang:
+> On 8/27/2019 22:28, Heiko Stuebner wrote:
+> > Am Dienstag, 27. August 2019, 09:14:39 CEST schrieb Elon Zhang:
+> >> Not every board needs to enable crypto node, so the node should
+> >> be set default disabled in rk3288.dtsi and enabled in specific
+> >> board dts file.
+> > Can you give a bit more rationale here? There would need to be a very
+> > specific reason because of the following:
+> >
+> > The crypto module is not wired to some board-specific components,
+> > so its usability does not depend on the specific board at all.
+> > Instead every board can just use it out of the box and the devicetree
+> > is supposed to describe the hardware and is _not_ meant as a space
+> > for user configuration.
 > 
-> The devicetree binding lists the phy phy as optional. As such, the
-> driver should not bail out if it can't find a regulator. Instead it
-> should just skip the remaining regulator related code and continue
-> on normally.
+> Right for almost all normal hardware modules but the crypto module was 
+> designed
 > 
-> Skip the remainder of phy_power_on() if a regulator supply isn't
-> available. This also gets rid of the bogus return code.
+> for secure world. As a result,  the crypto module will become 
+> inaccessible for linux kernel if secure world enable it.
 > 
-> Fixes: 2e12f536635f ("net: stmmac: dwmac-rk: Use standard devicetree property for phy regulator")
-> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+> We plan to enable the crypto module in secure world so we should set 
+> crypto module default disabled in linux kernel.
 
-Applied and queued up for -stable.
+ok ... I'm halfway convinced ;-) .
 
-> On a separate note, maybe we should add this file to the Rockchip
-> entry in MAINTAINERS?
+The big thing I want to see is that secure setting in the actual firmware.
+Aka right now you probably have that in your Rockchip-specific ATF fork
+and I really want to see the relevant change for public uboot or ATF.
 
-Yes, probably.
+I don't necessarily require it to be fully merged before taking this, but
+I really want to see the change either on a mailing list or atf gerrit
+instance [that makes the crypto engine secure only].
 
-Thanks.
+Rationale behind this is that we don't care very much about private stuff
+that the general ecosystem doesn't benefit from.
+
+
+Thanks
+Heiko
+
+
+> > So in fact the status property should probably go away completely from
+> > the crypto node, as it's usable out of the box in all cases.
+> >
+> >
+> > Heiko
+> >
+> >
+> >
+> >> Signed-off-by: Elon Zhang <zhangzj@rock-chips.com>
+> >> ---
+> >>   arch/arm/boot/dts/rk3288.dtsi | 2 +-
+> >>   1 file changed, 1 insertion(+), 1 deletion(-)
+> >>
+> >> diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+> >> index cc893e154fe5..d509aa24177c 100644
+> >> --- a/arch/arm/boot/dts/rk3288.dtsi
+> >> +++ b/arch/arm/boot/dts/rk3288.dtsi
+> >> @@ -984,7 +984,7 @@
+> >>   		clock-names = "aclk", "hclk", "sclk", "apb_pclk";
+> >>   		resets = <&cru SRST_CRYPTO>;
+> >>   		reset-names = "crypto-rst";
+> >> -		status = "okay";
+> >> +		status = "disabled";
+> >>   	};
+> >>   
+> >>   	iep_mmu: iommu@ff900800 {
+> >>
+> >
+> >
+> >
+> >
+> >
+> >
+> 
+> 
+> 
+
+
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
