@@ -2,105 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FA34A4968
-	for <lists+linux-rockchip@lfdr.de>; Sun,  1 Sep 2019 14:46:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89A90A4C45
+	for <lists+linux-rockchip@lfdr.de>; Sun,  1 Sep 2019 23:24:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zy9eDBZXwXRn+ViLQR/CgY7CR0j2YIlAsu6S59PpQ+I=; b=oWWwXI1DtpKSx8
-	YLgoEr/h+oEIql0UKm52dRahz7Klt7lUGWZnBq/Aofyyuk2cjYJNQNe5jBiES6YuczRhFs/zINQBZ
-	JMZKO/XQEdM/O1n6QRIV0z53U78y+34geJGN0gDoI5ENf1sxJcGK0db5h8QT3PgXx3RPBorRnItxb
-	OfAU376r+Izx3HMtLlnAFlsHwwHE6dq/YjhhROB6p7LtsXdjI4iUAxTKp/IM5b7TPiCJLBUEhkaPF
-	2tyEtH0LV1wt7RGv3htv/DoQWSx2raVOxyn67TDnq6AaKmTq1ezVIBM210Eplt54L3l63BQmzPeTE
-	4+26IaZllAIyDRMVa1Lw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:To:From:
+	Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=E4T85y29MUUgEGsAKYEX/0KqWkNXlO6O/gY/0QjGFRQ=; b=N9iPMLocQ2Btut
+	3gcSwRy74+f1xps4g24Sz00bW2pZIYZ3bX5DZiDZz/xAeeakurOcgvkab1ciHa+MIYj+QtZFIC2Mx
+	MAbdX+xZRzku+pZOjVmwy9KD3IPOjMmIWa2SaFZboMbm6YZBDc8LdwD0K212nmk+WLOp3XjeC9FPo
+	uOEk70iqWVfMN+E4LMIwz33GXhH50eny+2VBAMifQ83fK2eFXTz69tEsKFeZ2qa6kJtj8hvKDRrE9
+	4tVzgLLkJv8eYauEtatkT3HckOC0zV+jrB4Y6X4yXPd1d5gEL4gN3QAO/pcfZ8VQ/kfojWPbN7RaX
+	raYZvPxzSyk6QWuXDt+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4PFC-00013P-Aa; Sun, 01 Sep 2019 12:46:10 +0000
-Received: from mail-oln040092066034.outbound.protection.outlook.com
- ([40.92.66.34] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1i4XKf-0001MW-I1; Sun, 01 Sep 2019 21:24:21 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4PEu-0000hE-Nf
- for linux-rockchip@lists.infradead.org; Sun, 01 Sep 2019 12:45:54 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=IgPdZ65o9PUh0GU7XP0HjX1G0PPXSq7Onrq2HETUvptWXrknvl+Rh7CL9Hrc/tcWi/omJvY9SOaHXOBoY03toOob+DRaSjIBERmDHmcE5MtotbhtS3grEOHIV0rldREm6web9TtQdEByY3XmjWnCGRLUbgUIfeFvHspmj4yWPZTsvTuHUbg6ev7H61024f1CtemlNhttnVk/I3l80YrWstc6MBihauRt6IkGMFULabVjpW5BTmFV3QD9NzRNCfSM3vXPmBl3lu9upEwHfp0YmRdBHmmylpzilL6iaI1Cz3qbGfpu5lp8Jnx8kg5UwoB7Oh9XwFG34Y1EXmo8LCw8AQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=eeQvnvWDchEPDYP1XlV2FhNDP12tzl1tsCGA/GSddII=;
- b=ZJ64Eya7gRzKy30Ri10G/Fp2bj4L1iI5mMYZhop5RPRySa7+EOlueszaH0uDZpYn4ZxhfzIQBwNXlywLRhVRoWRHqtqhReUuNONP4W18irvjYbtC2mKLBqN0RwEeAJrTiovsChF1cmvW/63h/X+xfd6RPpjAjWoykpPGuu5tod367Q0cF2PqAZHAcD0OSy7kQfY5TQM4yUqR35L6emo/OE67kZus9wkbqqTX6QR+lGq6gmx9CsSGMe4ZH41MEHF4IgkQe9U0umkFF9ONmtbcj2y+XOf0Ir3gsYjKQ6mdEvb11aXtQ9ZI0VprmDq1DCFFVNCcgEudaFa9vi/Ee4tMlQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-Received: from HE1EUR01FT057.eop-EUR01.prod.protection.outlook.com
- (10.152.0.55) by HE1EUR01HT092.eop-EUR01.prod.protection.outlook.com
- (10.152.0.224) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2220.16; Sun, 1 Sep
- 2019 12:45:49 +0000
-Received: from HE1PR06MB4011.eurprd06.prod.outlook.com (10.152.0.52) by
- HE1EUR01FT057.mail.protection.outlook.com (10.152.0.208) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2220.16 via Frontend Transport; Sun, 1 Sep 2019 12:45:49 +0000
-Received: from HE1PR06MB4011.eurprd06.prod.outlook.com
- ([fe80::a0ba:e766:2a23:2088]) by HE1PR06MB4011.eurprd06.prod.outlook.com
- ([fe80::a0ba:e766:2a23:2088%3]) with mapi id 15.20.2199.021; Sun, 1 Sep 2019
- 12:45:49 +0000
-From: Jonas Karlman <jonas@kwiboo.se>
-To: Ezequiel Garcia <ezequiel@collabora.com>
-Subject: [RFC 12/12] media: hantro: Enable H264 decoding on RK3328
-Thread-Topic: [RFC 12/12] media: hantro: Enable H264 decoding on RK3328
-Thread-Index: AQHVYMMuvZQ1uHpGmUOTBIxTdNJunA==
-Date: Sun, 1 Sep 2019 12:45:49 +0000
-Message-ID: <HE1PR06MB401121228D13FA596BE8ADDFACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
-References: <HE1PR06MB40117D0EE96E6FA638A04B78ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
- <20190901124531.23645-1-jonas@kwiboo.se>
-In-Reply-To: <20190901124531.23645-1-jonas@kwiboo.se>
-Accept-Language: sv-SE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: HE1PR05CA0343.eurprd05.prod.outlook.com
- (2603:10a6:7:92::38) To HE1PR06MB4011.eurprd06.prod.outlook.com
- (2603:10a6:7:9c::32)
-x-incomingtopheadermarker: OriginalChecksum:DC266DF213D4E8D0C3D1E2D5093F387F19B067E3DACF8FC4F0FD73990B771076;
- UpperCasedChecksum:E97356B334C780799DD41F7BE53990FD24D9A7535924EA69093E283C4EFCFD1A;
- SizeAsReceived:7859; Count:50
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.17.1
-x-tmn: [Bw5RG+BkWMYsEZmrCEi5JTjBEQh81nv2]
-x-microsoft-original-message-id: <20190901124531.23645-12-jonas@kwiboo.se>
-x-ms-publictraffictype: Email
-x-incomingheadercount: 50
-x-eopattributedmessage: 0
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031322404)(2017031323274)(2017031324274)(1601125500)(1603101475)(1701031045);
- SRVR:HE1EUR01HT092; 
-x-ms-traffictypediagnostic: HE1EUR01HT092:
-x-microsoft-antispam-message-info: Y9PxsReJX/uTvNX1wro58uPrZhxU5sMjtjaMPhDuFUBUo3xD04L6Ad8i3MIDn8b59KnUe+P0wGM+5FxiYBlItIg05QFanmQJzXKF6L3n2p4lFS4+wsypv+2Sv8oaxd7i3ZdQdi6BaBBJe+bM6R8bJRzStM68F09wZAxFWlOqGlKiSOnjAQnfCWvIx7l4Pz42
-x-ms-exchange-transport-forked: True
-MIME-Version: 1.0
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-Network-Message-Id: 87e5dc36-64a0-491d-f921-08d72eda5107
-X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Sep 2019 12:45:49.6349 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Internet
-X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1EUR01HT092
+ id 1i4XKb-0001MB-41
+ for linux-rockchip@lists.infradead.org; Sun, 01 Sep 2019 21:24:18 +0000
+Received: by mail-wm1-x341.google.com with SMTP id g207so8509190wmg.5
+ for <linux-rockchip@lists.infradead.org>; Sun, 01 Sep 2019 14:24:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:subject:message-id:user-agent;
+ bh=N3KJKJtp5xwRFluPXIZhnktPSoUzv6QebQOPvdFyKj0=;
+ b=d6/t26TXCWrVShwnPbhWNXiDUdnhwVgY6mNxdoabpcqgR1npaGkt1vVc8cPgTXj8zn
+ hdyVbk4o6Rx+l9IDMyPwrKA95I0lNVwt174ySiyPoZzQ6anN5ffxBtzNUbWcEV7KJi9S
+ wHmhq5gHVEsGmtKzCBhgGk497uslEiiM8zk1uYI5rh9L/RJkUQZpfnoJ3BrKR4yJpie4
+ ObIfzDYWiG8FMZBWcPZF0di0ER6q1A4jbUN7osLpVWDWVlNjrI9KYY1t+/j8GMCyxSSG
+ q6c/EWPUWLDd53O7Ni8mSKX2Fr4wzxw/VC0ICOEANqL2lZIkam68j4YMK94onln82QS1
+ dPbA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:subject:message-id:user-agent;
+ bh=N3KJKJtp5xwRFluPXIZhnktPSoUzv6QebQOPvdFyKj0=;
+ b=qkaOdTS8GAtH0hl4TXYnH8jkIKYWnrMmCgzENDxFP2YJkHNrwdUI7qAtosKlU03yR3
+ RKOLXHH/f6d2TAmjJsAK0+xxU6IdPWd1SOZjDhwvQdj06UzbcI/JY0eo734HvpGG8yb1
+ plPs6p2pt4g1drZHyQG9DhVb/RXHlm3UJRYOHtC1JpKdwdFAk3/T6KNVti0mB5dsPn/W
+ w1ER9geYdPHuDj0MtUEo9oMFoS3vkzsYDpfJcjsXRWDChU/wil0H2y7djHTSA3NuFng+
+ HPc853NRd3dDIQaRzN7f03sf9H87JMtq7ZK0RJZYxUXljU00VzsKQCi8lMQY1tKCvV9z
+ fBiA==
+X-Gm-Message-State: APjAAAULQDsgbBW9XCPyBINPGbxDeZGfO4uWPsbAKl4aHonlDi0ttkGe
+ GolVxGLHIxSOOZNrhSz1UWeN78kwb3Y=
+X-Google-Smtp-Source: APXvYqxM+cRORskoTIwsfqIn6e1pcjlyjUIVXk53I4iGIhV/5xM5t3ugS+olCdZXoWmVNqu3Jxd4fQ==
+X-Received: by 2002:a1c:494:: with SMTP id 142mr30957830wme.12.1567373054785; 
+ Sun, 01 Sep 2019 14:24:14 -0700 (PDT)
+Received: from localhost.localdomain (137.19.122.78.rev.sfr.net.
+ [78.122.19.137])
+ by smtp.gmail.com with ESMTPSA id d1sm13199217wrs.71.2019.09.01.14.24.14
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 01 Sep 2019 14:24:14 -0700 (PDT)
+Date: Sun, 01 Sep 2019 23:24:13 +0200
+From: Alexandre Janon <alex14fr@gmail.com>
+To: linux-rockchip@lists.infradead.org
+Subject: [PATCH] Fix I/O aborts on Firefly RK3288
+Message-ID: <20190901212413.t561j%alex14fr@gmail.com>
+User-Agent: mail v14.9.14
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190901_054552_825052_8EA1FB98 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190901_142417_167928_59A23FDC 
+X-CRM114-Status: GOOD (  11.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.66.34 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (alex14fr[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,44 +95,203 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Jonas Karlman <jonas@kwiboo.se>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Hans Verkuil <hverkuil@xs4all.nl>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-RK3328 SoC has the same decoder IP block as RK3399,
-lets enable H264 decoding on RK3328.
+Hello everyone,
 
-Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
----
- drivers/staging/media/hantro/rk3399_vpu_hw.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+On my Firefly RK3288 with the binary Rockchip "mini loader" (v2.54), I/Os from
+and to some physical addresses (above ff430000) causes kernel panics (Imprecise
+external aborts), I don't know precisely why (maybe the 'Trusted' execution
+environment ?)
 
-diff --git a/drivers/staging/media/hantro/rk3399_vpu_hw.c b/drivers/staging/media/hantro/rk3399_vpu_hw.c
-index 47ca51b75a0d..08b965129377 100644
---- a/drivers/staging/media/hantro/rk3399_vpu_hw.c
-+++ b/drivers/staging/media/hantro/rk3399_vpu_hw.c
-@@ -232,7 +232,8 @@ const struct hantro_variant rk3328_vpu_variant = {
- 	.dec_offset = 0x400,
- 	.dec_fmts = rk3399_vpu_dec_fmts,
- 	.num_dec_fmts = ARRAY_SIZE(rk3399_vpu_dec_fmts),
--	.codec = HANTRO_MPEG2_DECODER | HANTRO_VP8_DECODER,
-+	.codec = HANTRO_MPEG2_DECODER | HANTRO_VP8_DECODER |
-+		 HANTRO_H264_DECODER,
- 	.codec_ops = rk3399_vpu_codec_ops,
- 	.irqs = rk3328_irqs,
- 	.num_irqs = ARRAY_SIZE(rk3328_irqs),
--- 
-2.17.1
+I thus disabled access to these addresses, caused by:
+- a quirk in rockchip timer init, targetting timer6-7 @ff810000, which didn't
+  seemed to be needed in my case,
+- rockchip platsmp boot_secondary CPU, targetting an smp-sram device @ff700000,
+- various DT devices advertised as okay statuses, but whose I/O regs cause data
+  aborts.
+
+As replacement:
+- timer quirk is commented out,
+- for platsmp code for secondary CPUs initialization, we use the PSCI method as
+  in the Rockchip's 4.4 BSP,
+- timer6-7 (@ff810000) are not used, timer1-5 (@ff6b0000) instead,
+- dma-controller@ffb20000 is disabled, the one @ff250000 is used instead,
+- the efuse@ffb40000 is disabled
+
+By using this patch I can boot mainline kernel entirely from eMMC using
+rockchip-linux/u-boot, branch next-dev, to the latest Arch Linux ARM multiv7
+rootfs. USB host, HDMI, Ethernet and eMMC work in this kernel, the rest is
+untested.
+
+Regards,
+Alexandre
+
+
+
+diff --git a/arch/arm/boot/dts/rk3288-firefly.dtsi b/arch/arm/boot/dts/rk3288-firefly.dtsi
+index 5e0a19004e46..138bea00c600 100644
+--- a/arch/arm/boot/dts/rk3288-firefly.dtsi
++++ b/arch/arm/boot/dts/rk3288-firefly.dtsi
+@@ -12,6 +12,10 @@
+ 		reg = <0x0 0x0 0x0 0x80000000>;
+ 	};
+ 
++	cpus {
++		enable-method = "rockchip,psci-smp";
++	};
++
+ 	adc-keys {
+ 		compatible = "adc-keys";
+ 		io-channels = <&saradc 1>;
+@@ -160,6 +164,8 @@
+ 		regulator-always-on;
+ 		vin-supply = <&vcc_io>;
+ 	};
++
++
+ };
+ 
+ &cpu0 {
+@@ -478,6 +484,12 @@
+ 			rockchip,pins = <0 RK_PB4 RK_FUNC_GPIO &pcfg_pull_none>;
+ 		};
+ 	};
++
++   psci {
++		 compatible = "arm,psci-1.0";
++		 method = "smc";
++   };
++
+ };
+ 
+ &saradc {
+@@ -572,3 +584,5 @@
+ &wdt {
+ 	status = "okay";
+ };
++
++
+diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+index cc893e154fe5..584064880bf8 100644
+--- a/arch/arm/boot/dts/rk3288.dtsi
++++ b/arch/arm/boot/dts/rk3288.dtsi
+@@ -181,7 +181,7 @@
+ 			arm,pl330-broken-no-flushp;
+ 			clocks = <&cru ACLK_DMAC1>;
+ 			clock-names = "apb_pclk";
+-			status = "disabled";
++			status = "okay";
+ 		};
+ 
+ 		dmac_bus_s: dma-controller@ffb20000 {
+@@ -193,6 +193,7 @@
+ 			arm,pl330-broken-no-flushp;
+ 			clocks = <&cru ACLK_DMAC1>;
+ 			clock-names = "apb_pclk";
++			status = "disabled";
+ 		};
+ 	};
+ 
+@@ -234,14 +235,24 @@
+ 		arm,no-tick-in-suspend;
+ 	};
+ 
+-	timer: timer@ff810000 {
++	timer: timer@ff6b0000 {
++		compatible = "rockchip,rk3288-timer";
++		reg = <0x0 0xff6b0000 0x0 0x20>;
++		interrupts = <GIC_SPI 66 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&xin24m>, <&cru PCLK_TIMER>;
++		clock-names = "timer", "pclk";
++	};
++
++	timer@ff810000 {
+ 		compatible = "rockchip,rk3288-timer";
+ 		reg = <0x0 0xff810000 0x0 0x20>;
+ 		interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&xin24m>, <&cru PCLK_TIMER>;
+ 		clock-names = "timer", "pclk";
++		status = "disabled";
+ 	};
+ 
++
+ 	display-subsystem {
+ 		compatible = "rockchip,display-subsystem";
+ 		ports = <&vopl_out>, <&vopb_out>;
+@@ -724,9 +735,11 @@
+ 		#address-cells = <1>;
+ 		#size-cells = <1>;
+ 		ranges = <0 0x0 0xff700000 0x18000>;
++		status = "disabled";
+ 		smp-sram@0 {
+ 			compatible = "rockchip,rk3066-smp-sram";
+ 			reg = <0x00 0x10>;
++			status = "disabled";
+ 		};
+ 	};
+ 
+@@ -1390,10 +1403,12 @@
+ 		#size-cells = <1>;
+ 		clocks = <&cru PCLK_EFUSE256>;
+ 		clock-names = "pclk_efuse";
++		status = "disabled";
+ 
+ 		cpu_leakage: cpu_leakage@17 {
+ 			reg = <0x17 0x1>;
+ 		};
++
+ 	};
+ 
+ 	gic: interrupt-controller@ffc01000 {
+diff --git a/arch/arm/mach-rockchip/platsmp.c b/arch/arm/mach-rockchip/platsmp.c
+index 649e0a54784c..d9fdcbe30aea 100644
+--- a/arch/arm/mach-rockchip/platsmp.c
++++ b/arch/arm/mach-rockchip/platsmp.c
+@@ -372,3 +372,7 @@ static const struct smp_operations rockchip_smp_ops __initconst = {
+ 
+ CPU_METHOD_OF_DECLARE(rk3036_smp, "rockchip,rk3036-smp", &rk3036_smp_ops);
+ CPU_METHOD_OF_DECLARE(rk3066_smp, "rockchip,rk3066-smp", &rockchip_smp_ops);
++
++extern const struct smp_operations psci_smp_ops;
++CPU_METHOD_OF_DECLARE(rk3036_smp2, "rockchip,psci-smp", &psci_smp_ops);
++
+diff --git a/arch/arm/mach-rockchip/rockchip.c b/arch/arm/mach-rockchip/rockchip.c
+index f9797a2b5d0d..4a172d220f72 100644
+--- a/arch/arm/mach-rockchip/rockchip.c
++++ b/arch/arm/mach-rockchip/rockchip.c
+@@ -26,14 +26,14 @@
+ static void __init rockchip_timer_init(void)
+ {
+ 	if (of_machine_is_compatible("rockchip,rk3288")) {
+-		void __iomem *reg_base;
++		//void __iomem *reg_base;
+ 
+ 		/*
+ 		 * Most/all uboot versions for rk3288 don't enable timer7
+ 		 * which is needed for the architected timer to work.
+ 		 * So make sure it is running during early boot.
+ 		 */
+-		reg_base = ioremap(RK3288_TIMER6_7_PHYS, SZ_16K);
++	/*	reg_base = ioremap(RK3288_TIMER6_7_PHYS, SZ_16K);
+ 		if (reg_base) {
+ 			writel(0, reg_base + 0x30);
+ 			writel(0xffffffff, reg_base + 0x20);
+@@ -43,7 +43,7 @@ static void __init rockchip_timer_init(void)
+ 			iounmap(reg_base);
+ 		} else {
+ 			pr_err("rockchip: could not map timer7 registers\n");
+-		}
++		} */
+ 	}
+ 
+ 	of_clk_init(NULL);
+
+
 
 
 _______________________________________________
