@@ -2,102 +2,100 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0347A48A9
-	for <lists+linux-rockchip@lfdr.de>; Sun,  1 Sep 2019 12:04:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F3DFA4951
+	for <lists+linux-rockchip@lfdr.de>; Sun,  1 Sep 2019 14:42:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RplEdHP+Om0R5+bZvAXu8hDQMUJzsTV0MZCX2W9Avn8=; b=m6YlibaH3hmPNE
-	0cHCvjf6WyHJRsv5A13AQspm1AsA7IbMKFVX23A2H5sVIxdzWzUmASa4wbBu8GXcGppc09lgq+zgh
-	BH1Lm+yUHaBQl9v269bIlOB6NJYxWurt2X7uDaeGAXrgdTmr66vT6UMaFxUG++h3bLTSnGMGuYNm7
-	3sZXohnVld7IRnyOzlf/qt5E95eXPttjMAclaT3WJTCQTtx8aEdlrgtiRdr7aZq5v56rV1t6nY5Ba
-	qnwGl5Dyxap4rJR8LWItGQcf5DzJJ5kgIizkaULUWGPB21519TNLJjZxCe28Po0lCv8FiQTBI+B3d
-	+mRCxasWPXsPovfYenMw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BCJyQ3yjo4IAxovyXjt9jVKOr53yQxWJVXvyNINxMLI=; b=kHyg38QBtEFGFE
+	z/suk+uHjtVnpbVeDdIvhvgL3EsCWyowzvuCiO9L44C+/ShBowjsFY+HQMmYjZFVYvoH/h7aYcyfd
+	S66g1pMbBxkiRfKTTum31pQdXFFOrddouo8dUQLKkJTCuh6whrr4iojDeY28M7zJjv4TBVMDn0yCH
+	nmt5rGlOmev1hMFebsrSELAXCJIgQ2XkgZ28yt3dvfQ8Sl+0yczLL2KiLMZPbSCW0DAV30N4vJaDy
+	kR4xcECwQVV9WfZ8hl/gXpSge67rPV4fdp4tCj4FGBtr6B4eOxcHLj400nC8fxCMtt4uSc2oinIr2
+	bG5KT6/ENC37oH5fQ1Mw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4MiL-00075b-BI; Sun, 01 Sep 2019 10:04:05 +0000
-Received: from mail-oln040092066060.outbound.protection.outlook.com
- ([40.92.66.60] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1i4PBt-0007eG-8X; Sun, 01 Sep 2019 12:42:45 +0000
+Received: from mail-oln040092066036.outbound.protection.outlook.com
+ ([40.92.66.36] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4MiF-00075A-K0; Sun, 01 Sep 2019 10:04:01 +0000
+ id 1i4PBn-0007di-NO
+ for linux-rockchip@lists.infradead.org; Sun, 01 Sep 2019 12:42:42 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YkbehVc7oP/dh9Cps3Ox79sWtE5xjnwgI7pxhpTOZ1YV0wNviIt0HQotyDMf1UvOxivJSIKaLQAQKb+Y8U4uluXZ7v9CudLEQ+dHTH0znJdDS6q6sms0qvti+ZAoGtmQswwv4aMLo34t6Q6gtantJ8jDeLR47lch6cckTXa8u6xfJT49nOZFPL9XLCDYFHSkyKSTa9iBP9Y/lf+T0hCtexE8QHZ9rIyeZ2O8y5B+sCUaxAhoKovNeuFU+yCuvMWNmsJDQEQPNkR7JH/yWc0IMjcjOnhrIQvKYH1tnWo8Ndu5vwmvbRxy2ggazTm+FRoxWggQmWZAD9n6R4R61jY6bA==
+ b=jnkDoGbOiLE2qYg5gXIeThcVZohkw3lGTvhz1PSyyGjGEFFnI1WbuSQ2zVJNtTHt25Yf7jua2mdnUe1Kxil2VPX9rT7HfgWr3uSAW3I4TJKuIBeDDdvviCavTQhOb5GaDGDgE3HO6Ta9TkNcp1lD6+3YxK/G5pYfPp4bu+4Jguv0dM+fZFxkQJQyuTCUQ+9K4N8bOOvLj0/EsHnAWmHzxq5TBkAiyZrGWtaO4p0uOHMDk3cbAWjCJ9gc9a3rvuHiSYulElpL6QeTpTqeGTcu6CgRUTQ5cO7sy4C/eMpDLlJzIKl97jmCFP7quVdvVcIdaGG4oPw4ZAwT4fSQ+Od9AQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HaavbiEG3ZX9MFpUhrwDr9aaAj5KgWam58l2xiiE6eQ=;
- b=l6sIMC+Bb89eVWvxW1RB5egb4YTTxLdfcWVoaLo9fCA+zKXwvk17cgChbUGzKKqOacaKoMgDKgWjOWOpc9X2pcDHYV4qYUsM4QE1maIqeGyjMy3qxnepQMhi/j5ceuzJXRNLQrkSdrdrm098VgllknEPf6NZD7RlWxce0PfhXhRbiJOXm+NVfbbkyffvfZ7iOIVtr3r6xbXrxSHlez5bq8WC9wc3Q46h4pm1gaX1HmWZi7MsUvNLa2rYdN3LDrZwFfMb5Rdr1zMYgZDuF+lIR3fFFf9C19Gj3PFGFVlBKGptGsVskZI6ow66yUBcTLSrX/Y2Og0/E4vo3PnIeD3DEQ==
+ bh=0ITTUGBEC6vuk6g7mp7xWMIQ1rcw343w+qmGi/CSXN4=;
+ b=A/Um0Sx3rT7R+NH/jMMDQ9i4at92DHAYtc+CULvek6i1W0VYU905Dv10N46TJx126Cj9GewHfxABY0x/kOt+t7Uw2TCsnbNaBF479p454SgnoI5CWywj1d1U4mJ2uH32VI96sGfa1LO1djzfG3YHcuMSFX7wzs43H3httFk25otCt/2Mr22eZbzIyDJhEYLwuCZB5krjwK5hzRN0q4gp5V5zqL8kALfA2khscFgF6wb75iKb7OxCqKXRihG7H1bxyvOYuiqS2Iurdq7u0xDnMi66xKZ8N15XlExN+UY23+hW26+IqvPi5RpOab19QPImS6nm5WU0XgaJxTp1NQEmCw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
  dkim=none; arc=none
-Received: from HE1EUR01FT007.eop-EUR01.prod.protection.outlook.com
- (10.152.0.51) by HE1EUR01HT185.eop-EUR01.prod.protection.outlook.com
- (10.152.1.199) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2220.16; Sun, 1 Sep
- 2019 10:03:53 +0000
-Received: from HE1PR06MB4011.eurprd06.prod.outlook.com (10.152.0.57) by
- HE1EUR01FT007.mail.protection.outlook.com (10.152.1.243) with Microsoft SMTP
+Received: from HE1EUR01FT057.eop-EUR01.prod.protection.outlook.com
+ (10.152.0.60) by HE1EUR01HT143.eop-EUR01.prod.protection.outlook.com
+ (10.152.1.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2220.16; Sun, 1 Sep
+ 2019 12:42:36 +0000
+Received: from HE1PR06MB4011.eurprd06.prod.outlook.com (10.152.0.52) by
+ HE1EUR01FT057.mail.protection.outlook.com (10.152.0.208) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2220.16 via Frontend Transport; Sun, 1 Sep 2019 10:03:53 +0000
+ 15.20.2220.16 via Frontend Transport; Sun, 1 Sep 2019 12:42:36 +0000
 Received: from HE1PR06MB4011.eurprd06.prod.outlook.com
  ([fe80::a0ba:e766:2a23:2088]) by HE1PR06MB4011.eurprd06.prod.outlook.com
  ([fe80::a0ba:e766:2a23:2088%3]) with mapi id 15.20.2199.021; Sun, 1 Sep 2019
- 10:03:53 +0000
+ 12:42:36 +0000
 From: Jonas Karlman <jonas@kwiboo.se>
-To: Cheng-Yi Chiang <cychiang@chromium.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH] drm: dw-hdmi-i2s: enable audio clock in audio_startup
-Thread-Topic: [PATCH] drm: dw-hdmi-i2s: enable audio clock in audio_startup
-Thread-Index: AQHVXiJ4olMh5nfx9ESKyNNc1nttD6cWnNeA
-Date: Sun, 1 Sep 2019 10:03:53 +0000
-Message-ID: <HE1PR06MB4011FA45247F186BB83DFF04ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
-References: <20190829042957.150929-1-cychiang@chromium.org>
-In-Reply-To: <20190829042957.150929-1-cychiang@chromium.org>
+To: Ezequiel Garcia <ezequiel@collabora.com>
+Subject: [PATCH RFC 00/12] media: hantro: H264 fixes and improvements
+Thread-Topic: [PATCH RFC 00/12] media: hantro: H264 fixes and improvements
+Thread-Index: AQHVYMK7ybJvfQx/EkSu6izc1mlMgw==
+Date: Sun, 1 Sep 2019 12:42:35 +0000
+Message-ID: <HE1PR06MB40117D0EE96E6FA638A04B78ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
 Accept-Language: sv-SE, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: HE1P191CA0002.EURP191.PROD.OUTLOOK.COM (2603:10a6:3:cf::12)
- To HE1PR06MB4011.eurprd06.prod.outlook.com
+x-clientproxiedby: HE1PR0401CA0044.eurprd04.prod.outlook.com
+ (2603:10a6:3:19::12) To HE1PR06MB4011.eurprd06.prod.outlook.com
  (2603:10a6:7:9c::32)
-x-incomingtopheadermarker: OriginalChecksum:16C72D0C8AB52BEE626484D0B0E852CFFB509B27838AC274E6A26036719DAA6B;
- UpperCasedChecksum:118D8592DF4188344C2A8E08D26BEBCC14626A9511864823E42993A4B8E11281;
- SizeAsReceived:8542; Count:49
+x-incomingtopheadermarker: OriginalChecksum:606DA59343B34EFEF8CB182B89E40F4A881915CACA35D383DD78BD24CA3E6686;
+ UpperCasedChecksum:C161D1087CE68C10B779ECF33C07EB2BEA2C8B74F490B7E2BE85456961E50778;
+ SizeAsReceived:7824; Count:48
 x-ms-exchange-messagesentrepresentingtype: 1
-x-tmn: [+npBKufwFZGj9FtjgXjbVb5NfZd1lCOJ]
-x-microsoft-original-message-id: <4c191c41-1e7a-0fd5-e4c8-f5df55a92fc4@kwiboo.se>
+x-mailer: git-send-email 2.17.1
+x-tmn: [g+/LAtbl95M1BjUcmQx3COL8wA0E5cH9]
+x-microsoft-original-message-id: <20190901124220.23568-1-jonas@kwiboo.se>
 x-ms-publictraffictype: Email
-x-incomingheadercount: 49
+x-incomingheadercount: 48
 x-eopattributedmessage: 0
 x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031322404)(2017031323274)(2017031324274)(1601125500)(1603101475)(1701031045);
- SRVR:HE1EUR01HT185; 
-x-ms-traffictypediagnostic: HE1EUR01HT185:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-message-info: qId+/Ijj75PN1F7VHwgSPyHM6ytGrwqcE0kM9ZL5GN8eIY6LX1+kkIR0e+NM1JiunrCQDeVb7SFyzTa+RWRxARj/pD6QUH0dzyd3QsN5jiDmSt4uDgLLOuIRlZQrkcuJwZBNfYfbzgoKIjqzvmmkecbCX0YzGKnjEGWiHIufvHMeNxLmyb2OAnEnpQUOmrYz
+ RULEID:(2390118)(5050001)(7020095)(20181119158)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031322404)(2017031323274)(2017031324274)(1601125500)(1603101475)(1603102475)(1701031045);
+ SRVR:HE1EUR01HT143; 
+x-ms-traffictypediagnostic: HE1EUR01HT143:
+x-ms-exchange-purlcount: 4
+x-microsoft-antispam-message-info: MVD3DMTecQzPPjiEoJEGD+paIuZ71esNAB4okw3gkb4Yj8A+OYvxD4dhUpp6NUX/vAYs7VpYcdcn7WNGdmpGUrnbUcVkeIxRQLZTV+MeelGO2pOz798vs5iJhKmecvAyAA1ocg4wytYSfqN5LeHXHsNy0jcHBi/85t8/An+SqxS0D5kdJvgslNDfqLNvnT6X
 x-ms-exchange-transport-forked: True
-Content-ID: <0218E2ADABBE9D4DBD0D6B875F7CFEE1@eurprd06.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: outlook.com
 X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4a8ec63f-234b-4be1-5cad-08d72ec3b1b5
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2db92e7f-9b8f-4b2b-834b-08d72ed9dd74
 X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Sep 2019 10:03:53.5265 (UTC)
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Sep 2019 12:42:35.8942 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Internet
 X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1EUR01HT185
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1EUR01HT143
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190901_030359_663373_8C418730 
-X-CRM114-Status: GOOD (  15.89  )
+X-CRM114-CacheID: sfid-20190901_054239_774215_CBDA6747 
+X-CRM114-Status: GOOD (  10.90  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.66.60 listed in list.dnswl.org]
+ no trust [40.92.66.36 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -112,91 +110,84 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Jernej Skrabec <jernej.skrabec@siol.net>,
- "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
- "tzungbi@chromium.org" <tzungbi@chromium.org>,
- "zhengxing@rock-chips.com" <zhengxing@rock-chips.com>,
- "kuninori.morimoto.gx@renesas.com" <kuninori.morimoto.gx@renesas.com>,
+Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Jonas Karlman <jonas@kwiboo.se>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>,
  "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "airlied@linux.ie" <airlied@linux.ie>,
- "jeffy.chen@rock-chips.com" <jeffy.chen@rock-chips.com>,
- "dianders@chromium.org" <dianders@chromium.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "cain.cai@rock-chips.com" <cain.cai@rock-chips.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- "a.hajda@samsung.com" <a.hajda@samsung.com>,
- "eddie.cai@rock-chips.com" <eddie.cai@rock-chips.com>,
- "Laurent.pinchart@ideasonboard.com" <Laurent.pinchart@ideasonboard.com>,
- "daniel@ffwll.ch" <daniel@ffwll.ch>,
- "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
- "dgreid@chromium.org" <dgreid@chromium.org>,
- "sam@ravnborg.org" <sam@ravnborg.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 2019-08-29 06:29, Cheng-Yi Chiang wrote:
-> In the designware databook, the sequence of enabling audio clock and
-> setting format is not clearly specified.
-> Currently, audio clock is enabled in the end of hw_param ops after
-> setting format.
->
-> On some monitors, there is a possibility that audio does not come out.
-> Fix this by enabling audio clock in audio_startup ops
-> before hw_param ops setting format.
->
-> Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
-> ---
->  drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c | 9 +++++++++
->  1 file changed, 9 insertions(+)
->
-> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> index 5cbb71a866d5..08b4adbb1ddc 100644
-> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> @@ -69,6 +69,14 @@ static int dw_hdmi_i2s_hw_params(struct device *dev, void *data,
->  	hdmi_write(audio, conf0, HDMI_AUD_CONF0);
->  	hdmi_write(audio, conf1, HDMI_AUD_CONF1);
->  
-> +	return 0;
-> +}
-> +
-> +static int dw_hdmi_i2s_audio_startup(struct device *dev, void *data)
-> +{
-> +	struct dw_hdmi_i2s_audio_data *audio = data;
-> +	struct dw_hdmi *hdmi = audio->hdmi;
-> +
->  	dw_hdmi_audio_enable(hdmi);
->  
->  	return 0;
-> @@ -105,6 +113,7 @@ static int dw_hdmi_i2s_get_dai_id(struct snd_soc_component *component,
->  }
->  
->  static struct hdmi_codec_ops dw_hdmi_i2s_ops = {
-> +	.audio_startup = dw_hdmi_i2s_audio_startup,
+This series contains fixes and improvements for the hantro H264 decoder.
 
-A small white space nit, there should be a tab and not space to align the equal sign above.
-Also this patch do not cleanly apply to drm-misc-next or linux-next after
-fc1ca6e01d0a "drm/bridge: dw-hdmi-i2s: add .get_eld support" was merged.
+Patch 1-6 fixes issues and limitations observed when preparing support
+for field encoded content.
 
-This patch does fix an issue I have observed on my Rockchip devices where audio would not always
-came out after switching between audio streams having different rate and channels parameters.
-I used to carry [1] to fix that issue, but this seems like a more sane fix.
+Patch 7 introduce new DPB entry flags that is used to signal how a reference
+frame is referenced. This information is needed to correctly build a
+reference list for field encoded content.
 
-[1] https://github.com/Kwiboo/linux-rockchip/commit/4862e4044532b8b480fa3a0faddc197586623808
+Patch 8 adds bits to handle field encoded content, this is a rough patch
+and should be reworked with proper code style and formatting.
+Please get back with feedback on how to improve this.
 
-With above fixed,
+The following samples from [1] are now playable with patch 1-8
+- H264_1080i-25-interlace_Kaesescheibchen.mkv
+- H264_10_1080i_50_AC3-Astra19.2_ProSieben_HD.ts
+- big_buck_bunny_1080p_H264_AAC_25fps_7200K.mp4
+- h264_tivo_sample.ts
 
-Reviewed-by: Jonas Karlman <jonas@kwiboo.se>
+The rest of the patches refactors G1 H264 code to more closely match
+the code generated by my rockchip-vpu-regtool at [2] and then adds
+support for H264 decoding on RK3399/RK3328 using the VPU2 block.
+This code is early work and needs proper code style and formatting,
+I just wanted to share the early work and get some initial feedback.
+
+This series has been tested using ffmpeg v4l2 request hwaccel at [3] [4]
+
+[1] http://kwiboo.libreelec.tv/test/samples/
+[2] https://github.com/Kwiboo/rockchip-vpu-regtool
+[3] https://github.com/Kwiboo/FFmpeg/commits/v4l2-request-hwaccel-4.0.4
+[4] https://github.com/Kwiboo/FFmpeg/compare/4.0.4-Leia-18.4...45df99d31062e068073cf899dce559e334c9127f
 
 Regards,
 Jonas
 
->  	.hw_params	= dw_hdmi_i2s_hw_params,
->  	.audio_shutdown	= dw_hdmi_i2s_audio_shutdown,
->  	.get_dai_id	= dw_hdmi_i2s_get_dai_id,
+Jonas Karlman (12):
+  media: hantro: Fix H264 max frmsize supported on RK3288
+  media: hantro: Do not reorder H264 scaling list
+  media: hantro: Fix H264 motion vector buffer offset
+  media: hantro: Reduce H264 extra space for motion vectors
+  media: hantro: Remove now unused H264 pic_size
+  media: hantro: Set H264 FIELDPIC_FLAG_E flag correctly
+  media: uapi: h264: Add DPB entry field reference flags
+  media: hantro: Fix H264 decoding of field encoded content
+  media: hantro: Refactor G1 H264 code
+  media: hantro: Add support for H264 decoding on RK3399
+  media: hantro: Enable H264 decoding on RK3399
+  media: hantro: Enable H264 decoding on RK3328
+
+ .../media/uapi/v4l/ext-ctrls-codec.rst        |  12 +
+ drivers/staging/media/hantro/Makefile         |   1 +
+ .../staging/media/hantro/hantro_g1_h264_dec.c | 685 +++++++++++-------
+ drivers/staging/media/hantro/hantro_h264.c    | 209 +++---
+ drivers/staging/media/hantro/hantro_hw.h      |  10 +-
+ drivers/staging/media/hantro/hantro_v4l2.c    |   6 +-
+ drivers/staging/media/hantro/rk3288_vpu_hw.c  |   4 +-
+ drivers/staging/media/hantro/rk3399_vpu_hw.c  |  24 +-
+ .../media/hantro/rk3399_vpu_hw_h264_dec.c     | 486 +++++++++++++
+ include/media/h264-ctrls.h                    |   4 +
+ 10 files changed, 1091 insertions(+), 350 deletions(-)
+ create mode 100644 drivers/staging/media/hantro/rk3399_vpu_hw_h264_dec.c
+
+-- 
+2.17.1
 
 
 _______________________________________________
