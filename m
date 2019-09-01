@@ -2,48 +2,104 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AB25A4746
-	for <lists+linux-rockchip@lfdr.de>; Sun,  1 Sep 2019 06:37:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0347A48A9
+	for <lists+linux-rockchip@lfdr.de>; Sun,  1 Sep 2019 12:04:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GNShHMV+5MSUZRSTqxpnkfrNCaYKtlZ/m+jGxhVBTLw=; b=aRMc+tjqZ2C/xN
-	VbxIScZOqd5ZQZnmgEoVyX4rlT3Wg7yAEb8roVxxT/X1UfO1bt01fQX/fxfNGUhN3d1Tk2IiJt/9r
-	pLIKmhYPaMXmV1Gc5E8kowshgWFioSWbOzVZnLkeFQNwezl6vBUngx8NWWmFm7ryrhWMXHgoPCmFt
-	TQOaUopDGRud9vapMsfeWJENYdVhyflOws7YH8a1gjPSMJA0nIhLNxvzIwSeCJZbWOr21mjpZ+JHQ
-	wZp2Oe6yMtuRzQJXPI5wC1pdlYK6lR5Nm8Z/Vd22ansbXUGkSLxZ944iOu2SkFHmVy/RMbLb1u0Tu
-	eJwi3FI6v5NJgDnqc3qw==;
+	List-Owner; bh=RplEdHP+Om0R5+bZvAXu8hDQMUJzsTV0MZCX2W9Avn8=; b=m6YlibaH3hmPNE
+	0cHCvjf6WyHJRsv5A13AQspm1AsA7IbMKFVX23A2H5sVIxdzWzUmASa4wbBu8GXcGppc09lgq+zgh
+	BH1Lm+yUHaBQl9v269bIlOB6NJYxWurt2X7uDaeGAXrgdTmr66vT6UMaFxUG++h3bLTSnGMGuYNm7
+	3sZXohnVld7IRnyOzlf/qt5E95eXPttjMAclaT3WJTCQTtx8aEdlrgtiRdr7aZq5v56rV1t6nY5Ba
+	qnwGl5Dyxap4rJR8LWItGQcf5DzJJ5kgIizkaULUWGPB21519TNLJjZxCe28Po0lCv8FiQTBI+B3d
+	+mRCxasWPXsPovfYenMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4Hbt-0002Zr-Dl; Sun, 01 Sep 2019 04:37:05 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1i4MiL-00075b-BI; Sun, 01 Sep 2019 10:04:05 +0000
+Received: from mail-oln040092066060.outbound.protection.outlook.com
+ ([40.92.66.60] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4Hbo-0002Z6-GK; Sun, 01 Sep 2019 04:37:03 +0000
-Received: from [88.128.80.103] (helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1i4Hbi-00042y-2b; Sun, 01 Sep 2019 06:36:55 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Elon Zhang <zhangzj@rock-chips.com>
-Subject: Re: [PATCH v2 1/1] arm64: dts: rockchip: Add support for TB-96AI board
-Date: Sun, 01 Sep 2019 06:36:41 +0200
-Message-ID: <3671433.J3OatT8Kjo@phil>
-In-Reply-To: <20190805015755.26017-1-zhangzj@rock-chips.com>
-References: <20190805015755.26017-1-zhangzj@rock-chips.com>
+ id 1i4MiF-00075A-K0; Sun, 01 Sep 2019 10:04:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=YkbehVc7oP/dh9Cps3Ox79sWtE5xjnwgI7pxhpTOZ1YV0wNviIt0HQotyDMf1UvOxivJSIKaLQAQKb+Y8U4uluXZ7v9CudLEQ+dHTH0znJdDS6q6sms0qvti+ZAoGtmQswwv4aMLo34t6Q6gtantJ8jDeLR47lch6cckTXa8u6xfJT49nOZFPL9XLCDYFHSkyKSTa9iBP9Y/lf+T0hCtexE8QHZ9rIyeZ2O8y5B+sCUaxAhoKovNeuFU+yCuvMWNmsJDQEQPNkR7JH/yWc0IMjcjOnhrIQvKYH1tnWo8Ndu5vwmvbRxy2ggazTm+FRoxWggQmWZAD9n6R4R61jY6bA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=HaavbiEG3ZX9MFpUhrwDr9aaAj5KgWam58l2xiiE6eQ=;
+ b=l6sIMC+Bb89eVWvxW1RB5egb4YTTxLdfcWVoaLo9fCA+zKXwvk17cgChbUGzKKqOacaKoMgDKgWjOWOpc9X2pcDHYV4qYUsM4QE1maIqeGyjMy3qxnepQMhi/j5ceuzJXRNLQrkSdrdrm098VgllknEPf6NZD7RlWxce0PfhXhRbiJOXm+NVfbbkyffvfZ7iOIVtr3r6xbXrxSHlez5bq8WC9wc3Q46h4pm1gaX1HmWZi7MsUvNLa2rYdN3LDrZwFfMb5Rdr1zMYgZDuF+lIR3fFFf9C19Gj3PFGFVlBKGptGsVskZI6ow66yUBcTLSrX/Y2Og0/E4vo3PnIeD3DEQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+Received: from HE1EUR01FT007.eop-EUR01.prod.protection.outlook.com
+ (10.152.0.51) by HE1EUR01HT185.eop-EUR01.prod.protection.outlook.com
+ (10.152.1.199) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2220.16; Sun, 1 Sep
+ 2019 10:03:53 +0000
+Received: from HE1PR06MB4011.eurprd06.prod.outlook.com (10.152.0.57) by
+ HE1EUR01FT007.mail.protection.outlook.com (10.152.1.243) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2220.16 via Frontend Transport; Sun, 1 Sep 2019 10:03:53 +0000
+Received: from HE1PR06MB4011.eurprd06.prod.outlook.com
+ ([fe80::a0ba:e766:2a23:2088]) by HE1PR06MB4011.eurprd06.prod.outlook.com
+ ([fe80::a0ba:e766:2a23:2088%3]) with mapi id 15.20.2199.021; Sun, 1 Sep 2019
+ 10:03:53 +0000
+From: Jonas Karlman <jonas@kwiboo.se>
+To: Cheng-Yi Chiang <cychiang@chromium.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH] drm: dw-hdmi-i2s: enable audio clock in audio_startup
+Thread-Topic: [PATCH] drm: dw-hdmi-i2s: enable audio clock in audio_startup
+Thread-Index: AQHVXiJ4olMh5nfx9ESKyNNc1nttD6cWnNeA
+Date: Sun, 1 Sep 2019 10:03:53 +0000
+Message-ID: <HE1PR06MB4011FA45247F186BB83DFF04ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+References: <20190829042957.150929-1-cychiang@chromium.org>
+In-Reply-To: <20190829042957.150929-1-cychiang@chromium.org>
+Accept-Language: sv-SE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: HE1P191CA0002.EURP191.PROD.OUTLOOK.COM (2603:10a6:3:cf::12)
+ To HE1PR06MB4011.eurprd06.prod.outlook.com
+ (2603:10a6:7:9c::32)
+x-incomingtopheadermarker: OriginalChecksum:16C72D0C8AB52BEE626484D0B0E852CFFB509B27838AC274E6A26036719DAA6B;
+ UpperCasedChecksum:118D8592DF4188344C2A8E08D26BEBCC14626A9511864823E42993A4B8E11281;
+ SizeAsReceived:8542; Count:49
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tmn: [+npBKufwFZGj9FtjgXjbVb5NfZd1lCOJ]
+x-microsoft-original-message-id: <4c191c41-1e7a-0fd5-e4c8-f5df55a92fc4@kwiboo.se>
+x-ms-publictraffictype: Email
+x-incomingheadercount: 49
+x-eopattributedmessage: 0
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031322404)(2017031323274)(2017031324274)(1601125500)(1603101475)(1701031045);
+ SRVR:HE1EUR01HT185; 
+x-ms-traffictypediagnostic: HE1EUR01HT185:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-message-info: qId+/Ijj75PN1F7VHwgSPyHM6ytGrwqcE0kM9ZL5GN8eIY6LX1+kkIR0e+NM1JiunrCQDeVb7SFyzTa+RWRxARj/pD6QUH0dzyd3QsN5jiDmSt4uDgLLOuIRlZQrkcuJwZBNfYfbzgoKIjqzvmmkecbCX0YzGKnjEGWiHIufvHMeNxLmyb2OAnEnpQUOmrYz
+x-ms-exchange-transport-forked: True
+Content-ID: <0218E2ADABBE9D4DBD0D6B875F7CFEE1@eurprd06.prod.outlook.com>
 MIME-Version: 1.0
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4a8ec63f-234b-4be1-5cad-08d72ec3b1b5
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Sep 2019 10:03:53.5265 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1EUR01HT185
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190831_213700_850326_EA1CEB52 
-X-CRM114-Status: GOOD (  23.68  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190901_030359_663373_8C418730 
+X-CRM114-Status: GOOD (  15.89  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.92.66.60 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,660 +112,91 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, manivannan.sadhasivam@linaro.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>,
+ "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
+ "tzungbi@chromium.org" <tzungbi@chromium.org>,
+ "zhengxing@rock-chips.com" <zhengxing@rock-chips.com>,
+ "kuninori.morimoto.gx@renesas.com" <kuninori.morimoto.gx@renesas.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "airlied@linux.ie" <airlied@linux.ie>,
+ "jeffy.chen@rock-chips.com" <jeffy.chen@rock-chips.com>,
+ "dianders@chromium.org" <dianders@chromium.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "cain.cai@rock-chips.com" <cain.cai@rock-chips.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ "a.hajda@samsung.com" <a.hajda@samsung.com>,
+ "eddie.cai@rock-chips.com" <eddie.cai@rock-chips.com>,
+ "Laurent.pinchart@ideasonboard.com" <Laurent.pinchart@ideasonboard.com>,
+ "daniel@ffwll.ch" <daniel@ffwll.ch>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "dgreid@chromium.org" <dgreid@chromium.org>,
+ "sam@ravnborg.org" <sam@ravnborg.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Elon,
-
-Am Montag, 5. August 2019, 03:57:55 CEST schrieb Elon Zhang:
-> Add devicetree support for RK3399Pro TB-96AI board, one of
-> the 96Boards family.
-> 
-> The TB-96AI board is a 96Boards Compute SOM design, launched
-> by Linaro, Rockchip and Beiqicloud.
-> 
-> More information can be obtained from the following websites:
-> 1.https://www.96boards.org/product/tb-96ai/
-> 2.http://t.rock-chips.com/
-> 3.http://www.beiqicloud.com/
-> 
-> This patch add basic node for the board and support booting up
-> to Fedora.
-> 
-> Signed-off-by: Elon Zhang <zhangzj@rock-chips.com>
+On 2019-08-29 06:29, Cheng-Yi Chiang wrote:
+> In the designware databook, the sequence of enabling audio clock and
+> setting format is not clearly specified.
+> Currently, audio clock is enabled in the end of hw_param ops after
+> setting format.
+>
+> On some monitors, there is a possibility that audio does not come out.
+> Fix this by enabling audio clock in audio_startup ops
+> before hw_param ops setting format.
+>
+> Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
 > ---
-> changes since v1:
-> - remove needless node
-> - using a standard LED formats for 96Boards
-> 
->  arch/arm64/boot/dts/rockchip/Makefile         |   1 +
->  .../boot/dts/rockchip/rk3399pro-tb-96ai.dts   | 560 ++++++++++++++++++
->  2 files changed, 561 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro-tb-96ai.dts
-> 
-> diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
-> index 5f2687acbf94..3d6c8d4363b5 100644
-> --- a/arch/arm64/boot/dts/rockchip/Makefile
-> +++ b/arch/arm64/boot/dts/rockchip/Makefile
-> @@ -27,3 +27,4 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock960.dtb
->  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rockpro64.dtb
->  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire.dtb
->  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire-excavator.dtb
-> +dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399pro-tb-96ai.dtb
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro-tb-96ai.dts b/arch/arm64/boot/dts/rockchip/rk3399pro-tb-96ai.dts
-> new file mode 100644
-> index 000000000000..767b37b854ba
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399pro-tb-96ai.dts
-> @@ -0,0 +1,560 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +/*
-> + * Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd.
-> + */
+>  drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c | 9 +++++++++
+>  1 file changed, 9 insertions(+)
+>
+> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+> index 5cbb71a866d5..08b4adbb1ddc 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+> @@ -69,6 +69,14 @@ static int dw_hdmi_i2s_hw_params(struct device *dev, void *data,
+>  	hdmi_write(audio, conf0, HDMI_AUD_CONF0);
+>  	hdmi_write(audio, conf1, HDMI_AUD_CONF1);
+>  
+> +	return 0;
+> +}
 > +
-> +/dts-v1/;
-> +#include "rk3399pro.dtsi"
-> +#include "rk3399-opp.dtsi"
+> +static int dw_hdmi_i2s_audio_startup(struct device *dev, void *data)
+> +{
+> +	struct dw_hdmi_i2s_audio_data *audio = data;
+> +	struct dw_hdmi *hdmi = audio->hdmi;
 > +
-> +/ {
-> +	compatible = "beiqi,rk3399pro-tb-96ai", "rockchip,rk3399pro";
-> +
-> +	chosen {
-> +		stdout-path = "serial2:1500000n8";
-> +	};
-> +
-> +	xin32k: xin32k {
-> +		compatible = "fixed-clock";
-> +		clock-frequency = <32768>;
-> +		clock-output-names = "xin32k";
-> +		#clock-cells = <0>;
-> +	};
+>  	dw_hdmi_audio_enable(hdmi);
+>  
+>  	return 0;
+> @@ -105,6 +113,7 @@ static int dw_hdmi_i2s_get_dai_id(struct snd_soc_component *component,
+>  }
+>  
+>  static struct hdmi_codec_ops dw_hdmi_i2s_ops = {
+> +	.audio_startup = dw_hdmi_i2s_audio_startup,
 
-I would guess this 32kHz clock does originate from the rk809 below?
-If so please simply adjust the clock-output-names in it, so that
-it sources correctly.
+A small white space nit, there should be a tab and not space to align the equal sign above.
+Also this patch do not cleanly apply to drm-misc-next or linux-next after
+fc1ca6e01d0a "drm/bridge: dw-hdmi-i2s: add .get_eld support" was merged.
 
-> +
-> +	vcc5v0_sys: vccsys {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "vcc5v0_sys";
-> +		regulator-always-on;
-> +		regulator-boot-on;
-> +		regulator-min-microvolt = <5000000>;
-> +		regulator-max-microvolt = <5000000>;
-> +	};
+This patch does fix an issue I have observed on my Rockchip devices where audio would not always
+came out after switching between audio streams having different rate and channels parameters.
+I used to carry [1] to fix that issue, but this seems like a more sane fix.
 
-Please always try to construct a full regulator tree.
-(see debugfs/regulator/regulator_summary)
+[1] https://github.com/Kwiboo/linux-rockchip/commit/4862e4044532b8b480fa3a0faddc197586623808
 
-Part of me doesn't want to believe that vcc5v0_sys is
-the root regulator getting the outside power supply ;-) .
+With above fixed,
 
+Reviewed-by: Jonas Karlman <jonas@kwiboo.se>
 
-> +
-> +	leds {
-> +		compatible = "gpio-leds";
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&work_led1>,<&work_led2>,<&work_led3>;
-> +
-> +		work_led1 {
-> +			gpios = <&gpio2 5 GPIO_ACTIVE_HIGH>;
-> +			label = "system_work_led1";
-> +			retain-state-suspended;
-> +		};
-> +
-> +		work_led2 {
-> +			gpios = <&gpio2 4 GPIO_ACTIVE_HIGH>;
-> +			label = "system_work_led2";
-> +			retain-state-suspended;
-> +		};
-> +
-> +		work_led3 {
-> +			gpios = <&gpio2 3 GPIO_ACTIVE_HIGH>;
-> +			label = "system_work_led3";
-> +			retain-state-suspended;
-> +		};
-> +	};
-> +};
-> +
-> +&cpu_l0 {
-> +	cpu-supply = <&vdd_cpu_l>;
-> +};
-> +
-> +&cpu_l1 {
-> +	cpu-supply = <&vdd_cpu_l>;
-> +};
-> +
-> +&cpu_l2 {
-> +	cpu-supply = <&vdd_cpu_l>;
-> +};
-> +
-> +&cpu_l3 {
-> +	cpu-supply = <&vdd_cpu_l>;
-> +};
-> +
-> +&cpu_b0 {
-> +	cpu-supply = <&vdd_cpu_b>;
-> +};
-> +
-> +&cpu_b1 {
-> +	cpu-supply = <&vdd_cpu_b>;
-> +};
-> +
-> +&emmc_phy {
-> +	status = "okay";
-> +};
-> +
-> +&i2c0 {
-> +	status = "okay";
-> +	i2c-scl-rising-time-ns = <180>;
-> +	i2c-scl-falling-time-ns = <30>;
-> +	clock-frequency = <400000>;
-> +
-> +	rk809: pmic@20 {
-> +		compatible = "rockchip,rk809";
-> +		reg = <0x20>;
-> +		interrupt-parent = <&gpio1>;
-> +		interrupts = <RK_PC2 IRQ_TYPE_LEVEL_LOW>;
-> +		pinctrl-names = "default", "pmic-sleep",
-> +				"pmic-power-off", "pmic-reset";
-> +		pinctrl-0 = <&pmic_int_l>;
-> +		pinctrl-1 = <&soc_slppin_slp>, <&rk809_slppin_slp>;
-> +		pinctrl-2 = <&soc_slppin_gpio>, <&rk809_slppin_pwrdn>;
-> +		pinctrl-3 = <&soc_slppin_gpio>,<&rk809_slppin_null>;
-> +		rockchip,system-power-controller;
-> +		pmic-reset-func = <1>;
+Regards,
+Jonas
 
-That is not part of the binding I think
-
-> +		wakeup-source;
-> +		#clock-cells = <1>;
-> +		clock-output-names = "rk808-clkout1", "rk808-clkout2";
-> +
-> +		vcc1-supply = <&vcc5v0_sys>;
-> +		vcc2-supply = <&vcc5v0_sys>;
-> +		vcc3-supply = <&vcc5v0_sys>;
-> +		vcc4-supply = <&vcc5v0_sys>;
-> +		vcc5-supply = <&vcc_buck5>;
-> +		vcc6-supply = <&vcc_buck5>;
-> +		vcc7-supply = <&vcc3v3_sys>;
-> +		vcc8-supply = <&vcc3v3_sys>;
-> +		vcc9-supply = <&vcc5v0_sys>;
-> +
-> +		pwrkey {
-> +			status = "okay";
-> +		};
-> +
-> +		rtc {
-> +			status = "okay";
-> +		};
-
-There is no binding for either pwrkey nor rtc subnodes and
-I think the rtc device is just created  in any case, so you should just
-drop these nodes.
-
-
-> +		pinctrl_rk8xx: pinctrl_rk8xx {
-> +			gpio-controller;
-> +			#gpio-cells = <2>;
-> +
-> +			rk809_slppin_null: rk809_slppin_null {
-> +				pins = "gpio_slp";
-> +				function = "pin_fun0";
-> +			};
-> +
-> +			rk809_slppin_slp: rk809_slppin_slp {
-> +				pins = "gpio_slp";
-> +				function = "pin_fun1";
-> +			};
-> +
-> +			rk809_slppin_pwrdn: rk809_slppin_pwrdn {
-> +				pins = "gpio_slp";
-> +				function = "pin_fun2";
-> +			};
-> +
-> +			rk809_slppin_rst: rk809_slppin_rst {
-> +				pins = "gpio_slp";
-> +				function = "pin_fun3";
-> +			};
-> +		};
-
-There is a binding for rk805 pinctrl, but it looks way different than this.
-Please adapt and if necessary submit binding+code for rk809 first.
-
-See Documentation/devicetree/bindings/pinctrl/pinctrl-rk805.txt
-for reference.
-
-
-> +		regulators {
-> +			vdd_center: DCDC_REG1 {
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-min-microvolt = <750000>;
-> +				regulator-max-microvolt = <1350000>;
-> +				regulator-initial-mode = <0x2>;
-> +				regulator-name = "vdd_center";
-> +				regulator-state-mem {
-> +					regulator-on-in-suspend;
-> +					regulator-suspend-microvolt = <900000>;
-> +				};
-> +			};
-> +
-> +			vdd_cpu_l: DCDC_REG2 {
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-min-microvolt = <750000>;
-> +				regulator-max-microvolt = <1350000>;
-> +				regulator-ramp-delay = <6001>;
-> +				regulator-initial-mode = <0x2>;
-> +				regulator-name = "vdd_cpu_l";
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
-> +			};
-> +
-> +			vcc_ddr: DCDC_REG3 {
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-name = "vcc_ddr";
-> +				regulator-initial-mode = <0x2>;
-> +				regulator-state-mem {
-> +					regulator-on-in-suspend;
-> +				};
-> +			};
-> +
-> +			vcc3v3_sys: DCDC_REG4 {
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-min-microvolt = <3300000>;
-> +				regulator-max-microvolt = <3300000>;
-> +				regulator-initial-mode = <0x2>;
-> +				regulator-name = "vcc3v3_sys";
-> +				regulator-state-mem {
-> +					regulator-on-in-suspend;
-> +					regulator-suspend-microvolt = <3300000>;
-> +				};
-> +			};
-> +
-> +			vcc_buck5: DCDC_REG5 {
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-min-microvolt = <2200000>;
-> +				regulator-max-microvolt = <2200000>;
-> +				regulator-name = "vcc_buck5";
-> +				regulator-state-mem {
-> +					regulator-on-in-suspend;
-> +					regulator-suspend-microvolt = <2200000>;
-> +				};
-> +			};
-> +
-> +			vcca_0v9: LDO_REG1 {
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-min-microvolt = <900000>;
-> +				regulator-max-microvolt = <900000>;
-> +				regulator-name = "vcca_0v9";
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
-> +			};
-> +
-> +			vcc_1v8: LDO_REG2 {
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-min-microvolt = <1800000>;
-> +				regulator-max-microvolt = <1800000>;
-> +
-> +				regulator-name = "vcc_1v8";
-> +				regulator-state-mem {
-> +					regulator-on-in-suspend;
-> +					regulator-suspend-microvolt = <1800000>;
-> +				};
-> +			};
-> +
-> +			vcc0v9_soc: LDO_REG3 {
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-min-microvolt = <900000>;
-> +				regulator-max-microvolt = <900000>;
-> +
-> +				regulator-name = "vcc0v9_soc";
-> +				regulator-state-mem {
-> +					regulator-on-in-suspend;
-> +					regulator-suspend-microvolt = <900000>;
-> +				};
-> +			};
-> +
-> +			vcca_1v8: LDO_REG4 {
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-min-microvolt = <1800000>;
-> +				regulator-max-microvolt = <1800000>;
-> +
-> +				regulator-name = "vcca_1v8";
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
-> +			};
-> +
-> +			vdd1v5_dvp: LDO_REG5 {
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-min-microvolt = <1500000>;
-> +				regulator-max-microvolt = <1500000>;
-> +
-> +				regulator-name = "vdd1v5_dvp";
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
-> +			};
-> +
-> +			vcc_1v5: LDO_REG6 {
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-min-microvolt = <1500000>;
-> +				regulator-max-microvolt = <1500000>;
-> +
-> +				regulator-name = "vcc_1v5";
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
-> +			};
-> +
-> +			vcc_3v0: LDO_REG7 {
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-min-microvolt = <3000000>;
-> +				regulator-max-microvolt = <3000000>;
-> +
-> +				regulator-name = "vcc_3v0";
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
-> +			};
-> +
-> +			vccio_sd: LDO_REG8 {
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-min-microvolt = <1800000>;
-> +				regulator-max-microvolt = <3300000>;
-> +
-> +				regulator-name = "vccio_sd";
-> +				regulator-state-mem {
-> +					regulator-on-in-suspend;
-> +					regulator-suspend-microvolt = <3300000>;
-> +				};
-> +			};
-> +
-> +			vcc_sd: LDO_REG9 {
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-min-microvolt = <3300000>;
-> +				regulator-max-microvolt = <3300000>;
-> +
-> +				regulator-name = "vcc_sd";
-> +				regulator-state-mem {
-> +					regulator-on-in-suspend;
-> +					regulator-suspend-microvolt = <3300000>;
-> +				};
-> +			};
-> +
-> +			vcc5v0_usb: SWITCH_REG1 {
-> +				regulator-min-microvolt = <5000000>;
-> +				regulator-max-microvolt = <5000000>;
-> +
-> +				regulator-name = "vcc5v0_usb";
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
-> +			};
-> +
-> +			vccio_3v3: SWITCH_REG2 {
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-min-microvolt = <3300000>;
-> +				regulator-max-microvolt = <3300000>;
-> +
-> +				regulator-name = "vccio_3v3";
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
-> +			};
-> +		};
-> +	};
-> +
-> +	vdd_cpu_b: regulator@1c {
-> +		compatible = "fcs,fan53555";
-> +		reg = <0x1c>;
-> +		vin-supply = <&vcc5v0_sys>;
-> +		pinctrl-0 = <&vsel1_gpio>;
-> +		vsel-gpios = <&gpio1 RK_PC1 GPIO_ACTIVE_HIGH>;
-
-I don't think there is a vsel-gpios propety specified yet and the
-fan53555 driver cannot handle that pin yet.
-You could change that ;-)
-
-> +		regulator-name = "vdd_cpu_b";
-> +		regulator-min-microvolt = <712500>;
-> +		regulator-max-microvolt = <1500000>;
-> +		regulator-ramp-delay = <2300>;
-> +		fcs,suspend-voltage-selector = <1>;
-> +		regulator-always-on;
-> +		regulator-boot-on;
-> +		regulator-initial-state = <3>;
-> +		regulator-state-mem {
-> +			regulator-off-in-suspend;
-> +		};
-> +	};
-> +
-> +	vdd_gpu: regulator@10 {
-> +		compatible = "fcs,fan53555";
-> +		status = "okay";
-> +		reg = <0x10>;
-> +		vin-supply = <&vcc5v0_sys>;
-> +		pinctrl-0 = <&vsel2_gpio>;
-> +		vsel-gpios = <&gpio1 RK_PB6 GPIO_ACTIVE_HIGH>;
-> +		regulator-name = "vdd_gpu";
-> +		regulator-min-microvolt = <735000>;
-> +		regulator-max-microvolt = <1400000>;
-> +		regulator-ramp-delay = <2300>;
-> +		fcs,suspend-voltage-selector = <1>;
-> +		regulator-always-on;
-> +		regulator-boot-on;
-> +		regulator-state-mem {
-> +			regulator-off-in-suspend;
-> +		};
-> +	};
-> +};
-> +
-> +&i2c8 {
-> +	status = "okay";
-> +	i2c-scl-rising-time-ns = <345>;
-> +	i2c-scl-falling-time-ns = <11>;
-> +	clock-frequency = <100000>;
-> +};
-> +
-> +&io_domains {
-> +	status = "okay";
-> +	bt656-supply = <&vcca_1v8>; /* APIO2_VDD */
-> +	audio-supply = <&vcca_1v8>; /* APIO5_VDD */
-> +	sdmmc-supply = <&vccio_sd>; /* SDMMC0_VDD */
-> +	gpio1830-supply = <&vcc_1v8>; /* APIO4_VDD */
-> +};
-> +
-> +&pinctrl {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&npu_ref_clk>;
-> +
-> +	leds {
-> +		work_led1: work_led1 {
-> +			rockchip,pins =
-> +				<2 5 RK_FUNC_GPIO &pcfg_pull_none>;
-> +		};
-> +
-> +		work_led2: work_led2 {
-> +			rockchip,pins =
-> +				<2 4 RK_FUNC_GPIO &pcfg_pull_none>;
-> +		};
-> +
-> +		work_led3: work_led3 {
-> +			rockchip,pins =
-> +				<2 3 RK_FUNC_GPIO &pcfg_pull_none>;
-> +		};
-> +	};
-> +
-> +	npu_clk {
-> +		npu_ref_clk: npu-ref-clk {
-> +			rockchip,pins =
-> +				<0 RK_PA2 1 &pcfg_pull_none>;
-> +		};
-> +	};
-> +
-> +	pmic {
-> +		pmic_int_l: pmic-int-l {
-> +			rockchip,pins =
-> +				<1 RK_PC2 0 &pcfg_pull_up>;
-> +		};
-> +
-> +		soc_slppin_gpio: soc-slppin-gpio {
-> +			rockchip,pins =
-> +				<1 RK_PA5 0 &pcfg_output_low>;
-> +		};
-> +
-> +		soc_slppin_slp: soc-slppin-slp {
-> +			rockchip,pins =
-> +				<1 RK_PA5 1 &pcfg_pull_down>;
-> +		};
-> +
-> +		vsel1_gpio: vsel1-gpio {
-> +			rockchip,pins =
-> +				<1 RK_PC1 0 &pcfg_pull_down>;
-> +		};
-> +
-> +		vsel2_gpio: vsel2-gpio {
-> +			rockchip,pins =
-> +				<1 RK_PB6 0 &pcfg_pull_down>;
-> +		};
-> +	};
-> +
-> +	usb3 {
-> +		usb3_host_en: usb3-host-en {
-> +			rockchip,pins =
-> +				<2 RK_PA2 RK_FUNC_GPIO &pcfg_output_high>;
-> +		};
-> +	};
-> +};
-> +
-> +&pmu_io_domains {
-> +	status = "okay";
-> +	pmu1830-supply = <&vcc_1v8>;
-> +};
-> +
-> +&pwm0 {
-> +	status = "okay";
-> +};
-> +
-> +&pwm2 {
-> +	status = "okay";
-> +};
-> +
-> +&saradc {
-> +	status = "okay";
-> +	vref-supply = <&vcc_1v8>;
-> +};
-> +
-> +&sdhci {
-> +	bus-width = <8>;
-> +	mmc-hs400-1_8v;
-> +	non-removable;
-> +	keep-power-in-suspend;
-> +	mmc-hs400-enhanced-strobe;
-> +	status = "okay";
-> +};
-> +
-> +&tcphy1 {
-> +	status = "okay";
-> +};
-> +
-> +&tsadc {
-> +	rockchip,hw-tshut-mode = <1>; /* tshut mode 0:CRU 1:GPIO */
-> +	rockchip,hw-tshut-polarity = <1>; /* tshut polarity 0:LOW 1:HIGH */
-> +	status = "okay";
-> +};
-> +
-> +&u2phy1 {
-> +	status = "okay";
-> +
-> +	u2phy1_otg: otg-port {
-> +		status = "okay";
-> +	};
-> +
-> +	u2phy1_host: host-port {
-> +		phy-supply = <&vcc5v0_usb>;
-> +		status = "okay";
-> +	};
-> +};
-> +
-> +&uart0 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&uart0_xfer &uart0_cts>;
-> +	status = "okay";
-> +};
-> +
-> +&uart2 {
-> +	status = "okay";
-> +};
-> +
-> +&uart4 {
-> +	status = "okay";
-> +};
-> +
-> +&usb_host0_ehci {
-> +	status = "okay";
-> +};
-> +
-> +&usb_host1_ehci {
-> +	status = "okay";
-> +};
-> +
-> +&usb_host0_ohci {
-> +	status = "okay";
-> +};
-> +
-> +&usb_host1_ohci {
-> +	status = "okay";
-> +};
-> +
-> +&usbdrd3_1 {
-> +	status = "okay";
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&usb3_host_en>;
-> +};
-> +
-> +&usbdrd_dwc3_0 {
-> +	status = "okay";
-> +};
-> +
-> +&usbdrd_dwc3_1 {
-> +	snps,dis-u3-autosuspend-quirk;
-
-This property is neither part of the dwc3 driver,
-nor the dwc3 devicetree binding.
-
-> +	status = "okay";
-> +};
-> +
-> 
-
-
-Heiko
-
+>  	.hw_params	= dw_hdmi_i2s_hw_params,
+>  	.audio_shutdown	= dw_hdmi_i2s_audio_shutdown,
+>  	.get_dai_id	= dw_hdmi_i2s_get_dai_id,
 
 
 _______________________________________________
