@@ -2,48 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B0D2A5D0B
-	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Sep 2019 22:19:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17AF7A5D0E
+	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Sep 2019 22:20:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3lJzrjvS/Z/6Tjanm8saxuR9KeGq+Ppf7Vngn8gqQFI=; b=o1sZTFhSPdHmLP
-	bEVfPjWtyvbRLxE03ZZEzU3fBO1fA0Gy2OhiUdeFT4sZBjMLVEaRC+OrJYY25KTydiK185pYh6CJq
-	PWkk4ivWmBTwlT057Td+Pl7aLbG8uD6tlJtlZ5i+zbJIgAryC1vA5fk7XcIfl9tWScSR/Y7RBpdZy
-	xab76lYEA1sq7IhN+am59Vo40pP+9Scb5e9inj/grrNqcRGQrymVOVmaqp++3Pj1uBD0uGZGEmBkt
-	T/p15lqT6fCbH9rZc6XbmpOScbOaqtfVlIQjUHMFmIExdX3E/qG0uh+CVyMprqVm/Iitx0QxX84v9
-	O1UQ8aaGIhg1H3WN5zrw==;
+	List-Owner; bh=rTECdogSjmaQr3SlGbRq3DootIuB8K5Hs6XRY9An1WU=; b=Khj0pa84TB1bLd
+	TCPxiyAGsIurFqtM4fgEWuCKTwMiH44Gq6oxZPFfe9i8V3093sF4qbpoe8Etv/gRz7/ffFACMpd6n
+	Qm8/J9Bh+loTG/8Ew4+hmcCxVleTJ4sDwgfwo5k3OBCUrTkftggI2iieC6KcCdalbYr7HlsM4t1xX
+	UY2i7FfOiudbLhS/3LzGNJg5ZCTRjm7U4yJl1hfaRMnzsFUnZNa7KvO9KJRYibdNECngTTQZ7QoVB
+	kMqP/ec/eMSJQWWdbiDErLD92WrKVZ1iWEzhCDBVDzVrYD1My0lZ07xpSjkSo+59uCKVbPtkcRKmo
+	XmJ3dZGKyCrfc6h9aWSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4snD-00024l-3n; Mon, 02 Sep 2019 20:19:15 +0000
+	id 1i4soT-0003Kt-UG; Mon, 02 Sep 2019 20:20:33 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4sn9-00024P-I7
- for linux-rockchip@lists.infradead.org; Mon, 02 Sep 2019 20:19:12 +0000
+ id 1i4soQ-0003KZ-QW
+ for linux-rockchip@lists.infradead.org; Mon, 02 Sep 2019 20:20:32 +0000
 Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
  by metis.ext.pengutronix.de with esmtps
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <ukl@pengutronix.de>)
- id 1i4sn5-0006Mr-0d; Mon, 02 Sep 2019 22:19:07 +0200
+ id 1i4soO-0006ad-B7; Mon, 02 Sep 2019 22:20:28 +0200
 Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
  (envelope-from <ukl@pengutronix.de>)
- id 1i4sn3-0002eH-TQ; Mon, 02 Sep 2019 22:19:05 +0200
-Date: Mon, 2 Sep 2019 22:19:05 +0200
+ id 1i4soO-0002kg-0V; Mon, 02 Sep 2019 22:20:28 +0200
+Date: Mon, 2 Sep 2019 22:20:27 +0200
 From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Thierry Reding <thierry.reding@gmail.com>,
- Heiko Stuebner <heiko@sntech.de>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Patrick Havelange <patrick.havelange@essensium.com>
-Subject: Re: [PATCH v3 0/6] pwm: ensure pwm_apply_state() doesn't modify the
- state argument
-Message-ID: <20190902201905.kyduxnehcjfzitrc@pengutronix.de>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: Re: [PATCH v3 2/6] pwm: let pwm_get_state() return the last
+ implemented state
+Message-ID: <20190902202027.es2vmearjdgzzdpz@pengutronix.de>
 References: <20190824153707.13746-1-uwe@kleine-koenig.org>
+ <20190824153707.13746-3-uwe@kleine-koenig.org>
+ <5802279.ETANMDGNFP@phil>
+ <20190902143231.k2ugpv2oemceaequ@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190824153707.13746-1-uwe@kleine-koenig.org>
+In-Reply-To: <20190902143231.k2ugpv2oemceaequ@pengutronix.de>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
 X-SA-Exim-Mail-From: ukl@pengutronix.de
@@ -51,8 +51,8 @@ X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-rockchip@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_131911_601284_096791C5 
-X-CRM114-Status: GOOD (  13.11  )
+X-CRM114-CacheID: sfid-20190902_132030_861951_B5537BA2 
+X-CRM114-Status: GOOD (  21.12  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,50 +72,82 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, kernel@pengutronix.de,
- linux-rockchip@lists.infradead.org
+Cc: linux-pwm@vger.kernel.org, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Patrick Havelange <patrick.havelange@essensium.com>,
+ linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
+ Thierry Reding <thierry.reding@gmail.com>, kernel@pengutronix.de
 Content-Type: text/plain; charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sat, Aug 24, 2019 at 05:37:01PM +0200, Uwe Kleine-K=F6nig wrote:
-> Hello,
+On Mon, Sep 02, 2019 at 04:32:31PM +0200, Uwe Kleine-K=F6nig wrote:
+> On Fri, Aug 30, 2019 at 07:48:35PM +0200, Heiko Stuebner wrote:
+> > Am Samstag, 24. August 2019, 17:37:03 CEST schrieb Uwe Kleine-K=F6nig:
+> > > ---
+> > >  drivers/pwm/core.c | 9 ++++++++-
+> > >  1 file changed, 8 insertions(+), 1 deletion(-)
+> > > =
+
+> > > diff --git a/drivers/pwm/core.c b/drivers/pwm/core.c
+> > > index 72347ca4a647..92333b89bf02 100644
+> > > --- a/drivers/pwm/core.c
+> > > +++ b/drivers/pwm/core.c
+> > > @@ -473,7 +473,14 @@ int pwm_apply_state(struct pwm_device *pwm, stru=
+ct pwm_state *state)
+> > >  		if (err)
+> > >  			return err;
+> > >  =
+
+> > > -		pwm->state =3D *state;
+> > > +		/*
+> > > +		 * .apply might have to round some values in *state, if possible
+> > > +		 * read the actually implemented value back.
+> > > +		 */
+> > > +		if (chip->ops->get_state)
+> > > +			chip->ops->get_state(chip, pwm, &pwm->state);
+> > > +		else
+> > > +			pwm->state =3D *state;
+> > =
+
+> > This should probably become
+> > >-		pwm->state =3D *state;
+> > > +
+> > > +		/*
+> > > +		 * .apply might have to round some values in *state, if possible
+> > > +		 * read the actually implemented value back.
+> > > +		 */
+> > > +		if (chip->ops->get_state)
+> > > +			chip->ops->get_state(chip, pwm, &pwm->state);
+> > =
+
+> > so always initialize the state to the provided one and then let the dri=
+ver
+> > override values?
 > =
 
-> this series eventually changes the prototype of pwm_apply_state to take
-> a const struct pwm_state *, see the last patch for a rationale.
+> This feels wrong. There is another thread that adds a developer knob
+> that emits some warnings. Catching this kind of error with it would be a
+> good idea IMHO.
 > =
 
-> Changes since v2 apart from rebasing and so covering a few more drivers
-> is mainly addressing the concern that after state was rounded and
-> applied at least pwm_get_state should return the rounded values. See
-> patch 2.
+> > The inversion case stems from the Rockchip pwm driver (wrongly?) only
+> > setting the polarity field when actually inverted, so here the polarity=
+ field
+> > probably never actually got set at all.
+> > =
 
-I thought a bit on this series and there is a question about it.
-Depending on what is considered the right answer for it, this series
-might have to change.
+> > But while we should probably fix the rockchip driver to set polarity al=
+l the
+> > time, this is still being true for possible future state-fields, which =
+also
+> > wouldn't get initialzed from all drivers, which might need an adaption
+> > first?
+> =
 
-The key question is:
+> Actually I would prefer that all drivers do it right and rely on this.
 
-  - Is pwm_get_state() supposed to return
-    a) the last requested configuration; or
-    b) the last actually implemented configuration?
-
-(If the difference is unclear: consider a PWM that can only implement
-the following periods:
-
-	1 ms, 2 ms, 3 ms, 4 ms, 5 ms, 6 ms, ...
-
-and a consumer requested 4.2 ms. Should pwm_get_state() return .period =3D 4
-ms (assuming this was picked) or 4.2 ms?)
-
-As of v5.3-rc5 it depends on the backend driver. For most of them 4.2 ms
-is returned. My series tries to push it to return 4 ms instead. (But
-this only works for backends that implement the .get_state() callback.
-And it gets more complicated as the drivers are not free of surprises.)
-
-Maybe we need functions for both answers?
+FTR: I sent a patch for the rockchip driver to do the right thing here.
 
 Best regards
 Uwe
