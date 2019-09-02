@@ -2,142 +2,105 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC06DA5320
-	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Sep 2019 11:43:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2325BA540E
+	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Sep 2019 12:33:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wBs5BkEiT6IvSygx/mM9oy6Lo6b6Z5odl830TxkpkTI=; b=IWqQrkEreS4bJ9
-	zmMfRm/pwLqcfKG3BLuTSmwmuk4Ky1mhgmGqaTWgo2HAIGg+GYajNBh1ppR6FYx3S1oDMV3eSdCJN
-	ztSHxyVHgvTLSHKkfru06dOOCKc5LQBzs2WYIoVftRlu1s3YOqKYkqa63hXATSrOKsGGNZmAS0lVc
-	x3fCNY+D+Jqp1OvKjnmhQoaF/OaDhvywkjpA9beROGZYJpn47mE9QjT1F1ca/Rh6iHCdssoJgolc5
-	pnBYf6Lq1/oH3EZXFML25jAVi0kE4AxS4aJ0hHGCSgEQoWibn6vrIPj4VYkY0Ti3ngC7mv3rGjNcG
-	tEQ6IIL4c/+LCcoK1lzQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UbYCwPKdDctiBzlHQcgTZUyigFXMCnV5/qOvvTTaDN0=; b=ZvqFC8CkX/RAOg
+	DEV4JBEGZVEo9D08hv+O4iQPeAxC3N37ysiZeiU0xgQD2/EUUhQREedMurd8FW+3Q30nFiIZyLNoQ
+	AEHB8XE4wHLRLtHNXEbNO5yzUSkFuHHUWinVRLGJ3//+98LEDEYgANlnGIxQYbpwD/ANO6jtuXEaU
+	or5SdH1BZo2uoZM75DkY/Y29Ydw0WXh46+kwAk2zmQTYSLO5XHbR2YRPBbyBULnCSxYVg/L2eHAsz
+	CU9DG/rq9NsbnSi+xKgk+g0rXMGyYyKGGJCJNnWEyqz5WEuPOMgQdUtAdUBkKb7Kzh2lOvvyJOd1L
+	07npTyVlHpP4BSrTpqLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4irV-00066t-3Q; Mon, 02 Sep 2019 09:43:01 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1i4jds-00023Q-KU; Mon, 02 Sep 2019 10:33:01 +0000
+Received: from mail-oln040092070053.outbound.protection.outlook.com
+ ([40.92.70.53] helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4irB-0005uF-3b
- for linux-rockchip@lists.infradead.org; Mon, 02 Sep 2019 09:42:42 +0000
-Received: by mail-wm1-x341.google.com with SMTP id n2so12468462wmk.4
- for <linux-rockchip@lists.infradead.org>; Mon, 02 Sep 2019 02:42:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=zF4AO/85szZSoAS5TjK4OSgeMooVOP2OGN/ZLZMPGT0=;
- b=XA1e5GIOUu2NUFJwmZhtAyhgQbW4RnV4Cak9Wb1tvGNRavvX2OVfo4Wj6PjsKwYc9y
- SMqgbDiL0ZMvYUk9mqm8mm4ul2rnEtRihnth4hGJsf01+WUlgnjiVwTkNkWPrKqPnbqm
- +NZX3waL3ubKr8DPw/WI8fEk600Pcr60vdeo6oM2NHu6/CemjeVkww8coHvgYxHgkE1o
- PEQ6qdfnTHmq7l+MCFZfH46C/CI508AGKfvwzd8wBIRZXmKRyl8sqsxvjzWyj58/zUeb
- KJX5ECGWZbyc9RMbMcvOK2km1EzDx4IlXpExnFceVKJOv3en0+0XIA3+Q2zt5DtKCZeU
- Ti9Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=zF4AO/85szZSoAS5TjK4OSgeMooVOP2OGN/ZLZMPGT0=;
- b=reSd9BwtmBExv0OFeTcpOEvn5ZhliWBUMAvn+3q9EUCDGANor/3sEdIbBtxN0XPIkb
- G9An8rpoN7a4usGnv7S3bszV5IOkUF6QTbWjB7LFaY93GfqODEg0niZ3CkFX+kjM5yam
- 63ihx9LE+qDVNYPPAI3vQamKv/prKRXJ7VjE4VnpCoxArz1kpVo9linPLmd0XgKgQ5Im
- AQhrqODx7eeaZUU+2ajnTlsYz6S8O1qYUieoTymOan2miu/4GGHn5lfc+U3YMcNxnJYR
- JdhSuqsQFttDtADfmDNqyudhnngIHn10m+XXrvZOq3luwqi1Pagk5SjHZolAc+nDjrBq
- ygaA==
-X-Gm-Message-State: APjAAAVL0iiI2/Md4gTxOUS46+6QPRFvNBBxnrjx0CKXSsMEwULBnODh
- Ogvyb2xnO2LH+42Tbhh9ETxWhw==
-X-Google-Smtp-Source: APXvYqwJIsPbaROmt1d3bnUfs9QkxuhxmuyWN7kAJPOe5L4lfPhETft0BsyWy1zD9RpGeiRNvjmIdA==
-X-Received: by 2002:a05:600c:305:: with SMTP id
- q5mr20158489wmd.141.1567417359306; 
- Mon, 02 Sep 2019 02:42:39 -0700 (PDT)
-Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id w13sm33209651wre.44.2019.09.02.02.42.38
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 02 Sep 2019 02:42:38 -0700 (PDT)
+ id 1i4jdZ-0001ro-MZ; Mon, 02 Sep 2019 10:32:43 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Q7RL4JzppThEOGuni15BfXQKo4eraxoUWeYC5SS+EC/O6myKg+q0rXwYK03QFGa6qIhvITEsg5SyOOmOHKrIVmPJyfNKKHWv3/zPQR+hA+4t6JQtSTkVFho7a94S//JdUQqgSbytC7pDQE+kDBf4K5BbDDYJQ27TGkaBl16TsOYWgJDnOyAL4+rVdwRTOUr+dqp1au5hiJFtY2T2q63GvCmwuXY9rOftEAVxbhIeDS76rVxl8E421mIIturOK8TRdMRi9ypMLXRcAaLXlZZ/zU+1pDfY3nIj0PDPL1pXE0fWCN/Ucc/p1T1UtYpkpmnLo9hz06fDF954Wy7rCtb9Ag==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mMy0bYrDmhv8lbTruCvXNPgcPqXv372WjYxd1S80E7s=;
+ b=PqtFtgL9qfsy0+lXQqm0r+aiFCzXFgUKeEHG0vuhKuqsbJWTnpU/8WabxMADJi0tvNEF8iU3AyTPyJdvOpNZh4KADA7pFGOmngtsalc/1M4jgebM2TGfUxLdnRONL1p0GhLjCVB9clb51XFUSjKkNvr95BzCQwX0VRqqqwTupgH/w3H+RbqGIpmtI14qQ0UJWXOd5tNBddYlm/9B9OEjSG0rm4C4rQWBX4Hh5ZvtdIcaB/+sWZEQz9iALGOaw6UePy9r+uAK1EY06msfjXm6YgP6PdkhlHyfTXjPXJSeZQOsUmE/NpBgg7EDslji/8znAj9zGoB/P+4BQaKfwBHuNQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+Received: from AM5EUR03FT032.eop-EUR03.prod.protection.outlook.com
+ (10.152.16.56) by AM5EUR03HT039.eop-EUR03.prod.protection.outlook.com
+ (10.152.17.109) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2220.16; Mon, 2 Sep
+ 2019 10:32:38 +0000
+Received: from HE1PR06MB4011.eurprd06.prod.outlook.com (10.152.16.60) by
+ AM5EUR03FT032.mail.protection.outlook.com (10.152.16.84) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.2220.16 via Frontend Transport; Mon, 2 Sep 2019 10:32:38 +0000
+Received: from HE1PR06MB4011.eurprd06.prod.outlook.com
+ ([fe80::1188:7e7d:69b:a036]) by HE1PR06MB4011.eurprd06.prod.outlook.com
+ ([fe80::1188:7e7d:69b:a036%5]) with mapi id 15.20.2220.022; Mon, 2 Sep 2019
+ 10:32:37 +0000
+From: Jonas Karlman <jonas@kwiboo.se>
+To: Neil Armstrong <narmstrong@baylibre.com>, Cheng-Yi Chiang
+ <cychiang@chromium.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
 Subject: Re: [PATCH v2] drm: dw-hdmi-i2s: enable audio clock in audio_startup
-To: Cheng-Yi Chiang <cychiang@chromium.org>, linux-kernel@vger.kernel.org
+Thread-Topic: [PATCH v2] drm: dw-hdmi-i2s: enable audio clock in audio_startup
+Thread-Index: AQHVYUIsW0s7539kVU2Jt4QPypUBOKcYIv4AgAAN9AA=
+Date: Mon, 2 Sep 2019 10:32:37 +0000
+Message-ID: <HE1PR06MB4011E2F58875F30446D902BFACBE0@HE1PR06MB4011.eurprd06.prod.outlook.com>
 References: <20190902035435.44463-1-cychiang@chromium.org>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <241fd791-3792-34c8-ac35-a81a0a41070c@baylibre.com>
-Date: Mon, 2 Sep 2019 11:42:38 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190902035435.44463-1-cychiang@chromium.org>
+ <241fd791-3792-34c8-ac35-a81a0a41070c@baylibre.com>
+In-Reply-To: <241fd791-3792-34c8-ac35-a81a0a41070c@baylibre.com>
+Accept-Language: sv-SE, en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: HE1PR0902CA0020.eurprd09.prod.outlook.com
+ (2603:10a6:3:e5::30) To HE1PR06MB4011.eurprd06.prod.outlook.com
+ (2603:10a6:7:9c::32)
+x-incomingtopheadermarker: OriginalChecksum:11AFA484E24FBB2CDB4BF31F98FE745128D47FBAE604F925178CCA20798AFEF0;
+ UpperCasedChecksum:CEAEE32EF148EBB03EB444A95DF68042F6507D089325A6FC5FE9125E539400DE;
+ SizeAsReceived:8557; Count:49
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tmn: [A8LugvH9kj5T4xfRlk+80mbCfMFbMrmW]
+x-microsoft-original-message-id: <d6fa2d56-335b-e15d-da18-749ea0341fad@kwiboo.se>
+x-ms-publictraffictype: Email
+x-incomingheadercount: 49
+x-eopattributedmessage: 0
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(5050001)(7020095)(20181119158)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031322404)(2017031323274)(2017031324274)(1601125500)(1603101475)(1701031045);
+ SRVR:AM5EUR03HT039; 
+x-ms-traffictypediagnostic: AM5EUR03HT039:
+x-microsoft-antispam-message-info: aPYwSGaRGf/92nAQF7WaYOyubhfYLufZAH+FzJ9zdaNyO4ale39c/SDQ8VerWyS8qfidyZqVm3lWQUxlMf+YMp5pW0YO74TbIMgWC/2ck7aCNT3CyKJ20Wf8vQFlvNnlI8Z1eNL4y0AeZsmrzNHr8rmgL2Wq8nVdVEjB6Jo8ZgQeqi27NodGvdkrcyadRWyZ
+x-ms-exchange-transport-forked: True
+Content-ID: <28AEFB56CC9D7540A050CC1E73674443@eurprd06.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5f14e6ad-372f-4349-ed8d-08d72f90dfc7
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Sep 2019 10:32:37.8279 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5EUR03HT039
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_024241_197034_3BFF6527 
-X-CRM114-Status: GOOD (  19.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190902_033241_741737_7D02E7C1 
+X-CRM114-Status: GOOD (  13.31  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.92.70.53 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -150,77 +113,94 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, tzungbi@chromium.org, zhengxing@rock-chips.com,
- kuninori.morimoto.gx@renesas.com, linux-rockchip@lists.infradead.org,
- airlied@linux.ie, jeffy.chen@rock-chips.com, dianders@chromium.org,
- dri-devel@lists.freedesktop.org, cain.cai@rock-chips.com, a.hajda@samsung.com,
- Jonas Karlman <jonas@kwiboo.se>, eddie.cai@rock-chips.com,
- Laurent.pinchart@ideasonboard.com, daniel@ffwll.ch,
- enric.balletbo@collabora.com, dgreid@chromium.org, sam@ravnborg.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
+ "tzungbi@chromium.org" <tzungbi@chromium.org>,
+ "zhengxing@rock-chips.com" <zhengxing@rock-chips.com>,
+ "kuninori.morimoto.gx@renesas.com" <kuninori.morimoto.gx@renesas.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "airlied@linux.ie" <airlied@linux.ie>,
+ "jeffy.chen@rock-chips.com" <jeffy.chen@rock-chips.com>,
+ "dianders@chromium.org" <dianders@chromium.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "cain.cai@rock-chips.com" <cain.cai@rock-chips.com>,
+ "a.hajda@samsung.com" <a.hajda@samsung.com>,
+ "eddie.cai@rock-chips.com" <eddie.cai@rock-chips.com>,
+ "Laurent.pinchart@ideasonboard.com" <Laurent.pinchart@ideasonboard.com>,
+ "daniel@ffwll.ch" <daniel@ffwll.ch>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "dgreid@chromium.org" <dgreid@chromium.org>,
+ "sam@ravnborg.org" <sam@ravnborg.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+On 2019-09-02 11:42, Neil Armstrong wrote:
+> Hi,
+>
+> On 02/09/2019 05:54, Cheng-Yi Chiang wrote:
+>> In the designware databook, the sequence of enabling audio clock and
+>> setting format is not clearly specified.
+>> Currently, audio clock is enabled in the end of hw_param ops after
+>> setting format.
+>>
+>> On some monitors, there is a possibility that audio does not come out.
+>> Fix this by enabling audio clock in audio_startup ops
+>> before hw_param ops setting format.
+>>
+>> Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+>> Reviewed-by: Douglas Anderson <dianders@chromium.org>
+>> Reviewed-by: Jonas Karlman <jonas@kwiboo.se>
+>> Tested-by: Douglas Anderson <dianders@chromium.org>
+>> ---
+>>  Changes from v1:
+>>  1. Move audio_startup to the front of audio_shutdown.
+>>  2. Fix the indentation of audio_startup equal sign using tab.
+>>  3. Rebase the patch on linux-next/master.
+>>  4. Add Reviewed-by and Tested-by fields from dianders@chromium.org.
+>>  5. Add Reviewed-by field from jonas@kwiboo.se.
+>>
+>>  drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c | 9 +++++++++
+>>  1 file changed, 9 insertions(+)
+>>
+>> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+>> index 1d15cf9b6821..34d8e837555f 100644
+>> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+>> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+>> @@ -109,6 +109,14 @@ static int dw_hdmi_i2s_hw_params(struct device *dev, void *data,
+>>  	hdmi_write(audio, conf0, HDMI_AUD_CONF0);
+>>  	hdmi_write(audio, conf1, HDMI_AUD_CONF1);
+>>  
+>> +	return 0;
+>> +}
+>> +
+>> +static int dw_hdmi_i2s_audio_startup(struct device *dev, void *data)
+>> +{
+>> +	struct dw_hdmi_i2s_audio_data *audio = data;
+>> +	struct dw_hdmi *hdmi = audio->hdmi;
+>> +
+>>  	dw_hdmi_audio_enable(hdmi);
+>>  
+>>  	return 0;
+>> @@ -153,6 +161,7 @@ static int dw_hdmi_i2s_get_dai_id(struct snd_soc_component *component,
+>>  
+>>  static struct hdmi_codec_ops dw_hdmi_i2s_ops = {
+>>  	.hw_params	= dw_hdmi_i2s_hw_params,
+>> +	.audio_startup  = dw_hdmi_i2s_audio_startup,
+>>  	.audio_shutdown	= dw_hdmi_i2s_audio_shutdown,
+>>  	.get_eld	= dw_hdmi_i2s_get_eld,
+>>  	.get_dai_id	= dw_hdmi_i2s_get_dai_id,
+>>
+> Looks sane, Jonas should I apply it now it's rebased ?
 
-On 02/09/2019 05:54, Cheng-Yi Chiang wrote:
-> In the designware databook, the sequence of enabling audio clock and
-> setting format is not clearly specified.
-> Currently, audio clock is enabled in the end of hw_param ops after
-> setting format.
-> 
-> On some monitors, there is a possibility that audio does not come out.
-> Fix this by enabling audio clock in audio_startup ops
-> before hw_param ops setting format.
-> 
-> Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
-> Reviewed-by: Douglas Anderson <dianders@chromium.org>
-> Reviewed-by: Jonas Karlman <jonas@kwiboo.se>
-> Tested-by: Douglas Anderson <dianders@chromium.org>
-> ---
->  Changes from v1:
->  1. Move audio_startup to the front of audio_shutdown.
->  2. Fix the indentation of audio_startup equal sign using tab.
->  3. Rebase the patch on linux-next/master.
->  4. Add Reviewed-by and Tested-by fields from dianders@chromium.org.
->  5. Add Reviewed-by field from jonas@kwiboo.se.
-> 
->  drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c | 9 +++++++++
->  1 file changed, 9 insertions(+)
-> 
-> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> index 1d15cf9b6821..34d8e837555f 100644
-> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> @@ -109,6 +109,14 @@ static int dw_hdmi_i2s_hw_params(struct device *dev, void *data,
->  	hdmi_write(audio, conf0, HDMI_AUD_CONF0);
->  	hdmi_write(audio, conf1, HDMI_AUD_CONF1);
->  
-> +	return 0;
-> +}
-> +
-> +static int dw_hdmi_i2s_audio_startup(struct device *dev, void *data)
-> +{
-> +	struct dw_hdmi_i2s_audio_data *audio = data;
-> +	struct dw_hdmi *hdmi = audio->hdmi;
-> +
->  	dw_hdmi_audio_enable(hdmi);
->  
->  	return 0;
-> @@ -153,6 +161,7 @@ static int dw_hdmi_i2s_get_dai_id(struct snd_soc_component *component,
->  
->  static struct hdmi_codec_ops dw_hdmi_i2s_ops = {
->  	.hw_params	= dw_hdmi_i2s_hw_params,
-> +	.audio_startup  = dw_hdmi_i2s_audio_startup,
->  	.audio_shutdown	= dw_hdmi_i2s_audio_shutdown,
->  	.get_eld	= dw_hdmi_i2s_get_eld,
->  	.get_dai_id	= dw_hdmi_i2s_get_dai_id,
-> 
-Looks sane, Jonas should I apply it now it's rebased ?
+Sure, looks sane and compiles without warnings on my build host.
 
-Neil
+Regards,
+Jonas
+
+>
+> Neil
 
 _______________________________________________
 Linux-rockchip mailing list
