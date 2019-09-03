@@ -2,109 +2,142 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 924A0A6322
-	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Sep 2019 09:54:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBC92A6619
+	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Sep 2019 11:54:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9uF1RssD6Rq3SVzCkq7GPzsFSJDlXcjo7lXHp6oZLZk=; b=VR8wfbjTCi7uCd
-	9tmLk5BtyQZWpYAiy6wIPik6kWwivOux4pZaI/EqZGRas9mpzHARjHrO3jWXXLNFrF4E39egL7+Mn
-	oEGvnlWYY16egwg0tzKvGEk7ELk2JfbaRDImlmHGemyazHKWtypp+pXRLr0EwTJDYqdg3VDBns7V4
-	/+aO0Kt9knNrYM5lOLPsyqvhUwRZeC/6sb+mfgbMUYoJOziUrYtxeS7kLUWYZ+8EJw5vQ98Tf7jKE
-	NAyRz3QPKJV4WcnA39wFUgAo18ftlOG+PlS8565P8rEKsafWZNsITpnrAGeBJNYQsJrayP653Qy58
-	/XbZHwrmI1Ttg1ikkz9A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=l8Js9uguu/k03pU10Mt9qFrNpNzuHXerOc02e4IfjX0=; b=f+RYWCl7Zhe4nu
+	gDjEbMQ/URcccjMPrJHGVVb2jj1LPBNwklIg/UPQ/v78qrL0oOZlfsBTn5jroRZXhgLBwjF3wxPQC
+	osj6XGcGeUGy7Ny7TjU4VDu8ogphDNFVv5pDS3rqV3t0T+ecF+Ro9IM7BdCHVg07Xy0ZiFlRDjlKe
+	eamXWjDwmB04+/4Ot8bvuH55TfIPFhVUhiCF6h11bnN7nREajX+cHaTWpubzubs2X7crjwkC/ut8M
+	UbGygKk7IZQWuhGDrKwzQE2A33Akz+08Z/V+MdE+BDcE5C1sLbgpKRx6Q0RG+Sv7p3lsSH2/fwa3X
+	zkIryG+eLPsU0XvN7OGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i53eN-0008Es-HD; Tue, 03 Sep 2019 07:54:51 +0000
-Received: from mail-oln040092066056.outbound.protection.outlook.com
- ([40.92.66.56] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1i55Va-0001e3-Vu; Tue, 03 Sep 2019 09:53:55 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i53eH-0008EN-6U
- for linux-rockchip@lists.infradead.org; Tue, 03 Sep 2019 07:54:47 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=F+JrzNBJKJWVQcreGUBWYsRIyVVgLxphGPbgdEIQ8A2X9L6aE7wq5/ynIWJIi5c0zZIKauoIcEHYhtzlSX3QUhfiCnhpGJFK4fznD7LFLA0WYgIO9DEwUL0HmgbwIZ2hmTeqoOMLYrGXk4gYe3USu7WKHHrJFpslKpr470hT2qj26GgwDdCrLAvDjRsLdKgxAMnJml5Z2JV5ktT4xLrrZA36qpp3AiMHl585iFI0oPrG492brHpt0GRBblMTxlxTmFa6KqR2mbI3dUQra6ASvtIiRJRDyqIJ1UDxMLeHtV/YNT+AW9I+83YqvOS0KhhnOcHUJlEkCHLaW3EOG6Jdvg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BuOSWVAZu1UU0UqJFhnZvN9/ABpumqO80ZehfKB+Poc=;
- b=PXimOnsBqeeH5pTM52asB6KuK1JnLpgiJlReoV3T41/o7h85/cdAwSzrcVzplZu/CzUVHr+vyd4R8GeutEcAQEJ6QBvhIipuEC1SfjZBUB1R90/TiwSYigh0PcVEFKqvtX2HpHsNI3JUE/Q44V7uyBAJ10MAO2zNKAwUl4NyWzUWWYul+Viwhj5tTxGQwPGibXCXhWzeJhwPhs6dVXgkJ/Woc0S38cj878DrLbUITCucP6PwPcg5AhDn45BL2TGrbOPZe+Iqrzf0UhyrYTIT6RnsS4V7n5hDJkvHeAUEcwIYHAsLoosoFiDRxvYLx+09J3UDgUAxJu4ebgMjf7MzdA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-Received: from HE1EUR01FT018.eop-EUR01.prod.protection.outlook.com
- (10.152.0.54) by HE1EUR01HT052.eop-EUR01.prod.protection.outlook.com
- (10.152.0.253) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2220.16; Tue, 3 Sep
- 2019 07:54:41 +0000
-Received: from DB6PR06MB4007.eurprd06.prod.outlook.com (10.152.0.58) by
- HE1EUR01FT018.mail.protection.outlook.com (10.152.0.175) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.20.2220.16 via Frontend Transport; Tue, 3 Sep 2019 07:54:41 +0000
-Received: from DB6PR06MB4007.eurprd06.prod.outlook.com
- ([fe80::ed3f:186c:c80e:a861]) by DB6PR06MB4007.eurprd06.prod.outlook.com
- ([fe80::ed3f:186c:c80e:a861%6]) with mapi id 15.20.2220.021; Tue, 3 Sep 2019
- 07:54:41 +0000
-From: Jonas Karlman <jonas@kwiboo.se>
-To: Philipp Zabel <p.zabel@pengutronix.de>, Ezequiel Garcia
- <ezequiel@collabora.com>
-Subject: Re: [PATCH 02/12] media: hantro: Do not reorder H264 scaling list
-Thread-Topic: [PATCH 02/12] media: hantro: Do not reorder H264 scaling list
-Thread-Index: AQHVYMMq6YIWopjAr0aH2udYAseNuKcYbBiAgAAmcoCAAQWaAA==
-Date: Tue, 3 Sep 2019 07:54:41 +0000
-Message-ID: <DB6PR06MB4007C140420365E83064C5BEACB90@DB6PR06MB4007.eurprd06.prod.outlook.com>
-References: <HE1PR06MB40117D0EE96E6FA638A04B78ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
- <20190901124531.23645-1-jonas@kwiboo.se>
- <HE1PR06MB40116C92C3D52C5957EF48E9ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
- <1567432843.3666.6.camel@pengutronix.de>
- <HE1PR06MB4011A8F99D58E5ACFAE3CECAACBE0@HE1PR06MB4011.eurprd06.prod.outlook.com>
-In-Reply-To: <HE1PR06MB4011A8F99D58E5ACFAE3CECAACBE0@HE1PR06MB4011.eurprd06.prod.outlook.com>
-Accept-Language: sv-SE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: HE1PR0501CA0019.eurprd05.prod.outlook.com
- (2603:10a6:3:1a::29) To DB6PR06MB4007.eurprd06.prod.outlook.com
- (2603:10a6:6:4e::32)
-x-incomingtopheadermarker: OriginalChecksum:22665D6C63946FAB0C1BAE9F9F1E1758E353A799EE1B6B33C9305A69C728CC71;
- UpperCasedChecksum:19BDF4D3801EF3B32D60D1C37C1F1E8DD5C350F76061FDB222B1136F2963D65A;
- SizeAsReceived:8095; Count:49
-x-ms-exchange-messagesentrepresentingtype: 1
-x-tmn: [QVut8zgzLocyaE/3IPiHWZtztoXL8nKv]
-x-microsoft-original-message-id: <6c6529b4-84ad-4eb3-80be-6987883384a8@kwiboo.se>
-x-ms-publictraffictype: Email
-x-incomingheadercount: 49
-x-eopattributedmessage: 0
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031322404)(2017031323274)(2017031324274)(1601125500)(1603101475)(1701031045);
- SRVR:HE1EUR01HT052; 
-x-ms-traffictypediagnostic: HE1EUR01HT052:
-x-ms-exchange-purlcount: 2
-x-microsoft-antispam-message-info: XXQY4RzIbPiBLx2PMRnyKfx6NAakeRQWWkofVWRiEbGIfAxRQyRJ10we8x1ULRUkMtIivZk7WEKvctQFduzxaJaKN9uQNDO//UcJ1D6767EyYJM0u7v/EGHNIMJjUDFZ0nROuZBKD7JZwSU8QVnbK4T7EVelLq6OACmTMrmBiVL8CD17tnCWAzT3hJFpmfXp
-x-ms-exchange-transport-forked: True
-Content-ID: <C0226E9BC9AE3841937AE2A44272B4B6@eurprd06.prod.outlook.com>
+ id 1i55VJ-0001Rt-MC
+ for linux-rockchip@lists.infradead.org; Tue, 03 Sep 2019 09:53:39 +0000
+Received: by mail-wm1-x342.google.com with SMTP id k1so17390476wmi.1
+ for <linux-rockchip@lists.infradead.org>; Tue, 03 Sep 2019 02:53:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:openpgp:autocrypt:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=3svFEUFdlGRo7s6oU/gAKMoNrDtitSPWMnmTngxdf5A=;
+ b=kIYuXA48J8yijkoUvvwSReT8C7vDXIE1MLur0hYz+TkH/SXUuow+Z9RpdecahEHqfT
+ gfMPla1YRabYeDgUmmlkI8D2h8jprn/SfljLi+ALfCaC5DkQKMTAK0wMqVl6du0USNUP
+ 8Q9gmtoY2VKhAzFr3dUpG6KeMi4nQnXYJ//3tyrry7WaQ5cA8e5yAWcsNuXjC2NU6cQ2
+ OY1QInnD6h/5eRALoJF5X41M/S+WlVJY7NPvflic7F82lpWhjVR8SpEYC2f2fKFbBKRK
+ V97d6ec4ppirWFT5oWkF04LkBSC7guAniEjV1TjuaQn/Ki9QMH3obFR5ePfsUn0aGeOl
+ gcVw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=3svFEUFdlGRo7s6oU/gAKMoNrDtitSPWMnmTngxdf5A=;
+ b=QFizjaMTd59xrKG/M3D6B3J+I3opb7BWViIdTYs71i2Oi0PAqjHNPA5eZgwfOCqk7K
+ 5RiAOvtNk2/V6va8S1TWrbaZ4VDF/0Frln4xQt8KL53mwk9XOrSjey6Uf5n4IbiBX6bG
+ Lw1UM72BA5uO0eJJCles3jFjrRD0dCiMGPMn8EXlXoix/7i6fwbnWXqrigeKYADJFM89
+ SRtefZqTd3RgjrtZa+cBWRUF/8JlOUu7Y0W15FODkEG4HSjJMmN/RDPnEBk+Rs30qxxg
+ W7GTst8aUQgM7jBz1fJOE+ZULuiXpVzUe6x2kRzGyDzJBUQeHE27QoYnS0KRzkZilygo
+ JTQA==
+X-Gm-Message-State: APjAAAX29ZriyLHWl26y0zywjXSmCOYhRA9gyv9+jvU3axgnZTdtw9lB
+ miUrOaqw7YWEaMtAj4wb/ADukQ==
+X-Google-Smtp-Source: APXvYqyTtwuHZrhUbdBQZ7Or0d1HOtYQZHQdZrPahyeZ5TF7qNJyfrFtU4pNalcJKWCYtGBlnIJk7Q==
+X-Received: by 2002:a7b:c186:: with SMTP id y6mr13960388wmi.12.1567504414674; 
+ Tue, 03 Sep 2019 02:53:34 -0700 (PDT)
+Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id r18sm20184350wrx.36.2019.09.03.02.53.33
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 03 Sep 2019 02:53:34 -0700 (PDT)
+Subject: Re: [PATCH] drm: bridge/dw_hdmi: add audio sample channel status
+ setting
+To: Cheng-Yi Chiang <cychiang@chromium.org>, linux-kernel@vger.kernel.org
+References: <20190903055103.134764-1-cychiang@chromium.org>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ ZaTUOEkgIor5losDrePdPgE=
+Organization: Baylibre
+Message-ID: <e1c3483c-baa6-c726-e547-fadf40d259f4@baylibre.com>
+Date: Tue, 3 Sep 2019 11:53:33 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0ea64c1d-7414-4428-910d-08d73043fa15
-X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Sep 2019 07:54:41.7181 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Internet
-X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1EUR01HT052
+In-Reply-To: <20190903055103.134764-1-cychiang@chromium.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_005445_248517_4A311686 
-X-CRM114-Status: GOOD (  27.12  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190903_025337_759420_1BD18576 
+X-CRM114-Status: GOOD (  19.57  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.66.56 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -117,189 +150,161 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Hans Verkuil <hverkuil@xs4all.nl>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: alsa-devel@alsa-project.org, tzungbi@chromium.org, zhengxing@rock-chips.com,
+ kuninori.morimoto.gx@renesas.com, linux-rockchip@lists.infradead.org,
+ airlied@linux.ie, sam@ravnborg.org, jeffy.chen@rock-chips.com,
+ dianders@chromium.org, dri-devel@lists.freedesktop.org,
+ cain.cai@rock-chips.com, a.hajda@samsung.com, eddie.cai@rock-chips.com,
+ Laurent.pinchart@ideasonboard.com, daniel@ffwll.ch,
+ Yakir Yang <ykk@rock-chips.com>, enric.balletbo@collabora.com,
+ dgreid@chromium.org, kuankuan.y@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 2019-09-02 18:18, Jonas Karlman wrote:
-> On 2019-09-02 16:00, Philipp Zabel wrote:
->> Hi Jonas,
->>
->> On Sun, 2019-09-01 at 12:45 +0000, Jonas Karlman wrote:
->>> Scaling list supplied from userspace using ffmpeg and libva-v4l2-request
->>> is already in matrix order and can be used without applying the inverse
->>> scanning process.
->> "in matrix order" is equivalent to "in raster scan order"?
-> The values supplied by ffmpeg and libva-v4l2-request is in the order after the
-> inverse scanning process has been applied (scaling list has been transformed
-> into a scaling matrix). Not sure what this is called, "matrix order" seemed
-> close enough.
->
-> Since there is two scan orders, zig-zag and field, and cedrus already expecting
-> the values in "matrix" order, it seems more logical to let userspace handle the
-> inverse scanning process.
+Hi,
 
-After a closer look both ffmpeg and rkmpp only apply zig-zag scan and not field scan,
-ffmpeg will memcpy the scaling_matrix4/8 as is for vaapi, vdpau and nvdec,
-for dxva2 there is a workaround flag that controls if zig-zag should be applied or not.
+On 03/09/2019 07:51, Cheng-Yi Chiang wrote:
+> From: Yakir Yang <ykk@rock-chips.com>
+> 
+> When transmitting IEC60985 linear PCM audio, we configure the
+> Audio Sample Channel Status information of all the channel
+> status bits in the IEC60958 frame.
+> Refer to 60958-3 page 10 for frequency, original frequency, and
+> wordlength setting.
+> 
+> This fix the issue that audio does not come out on some monitors
+> (e.g. LG 22CV241)
+> 
+> Signed-off-by: Yakir Yang <ykk@rock-chips.com>
+> Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+> ---
+>  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 59 +++++++++++++++++++++++
+>  drivers/gpu/drm/bridge/synopsys/dw-hdmi.h | 20 ++++++++
+>  2 files changed, 79 insertions(+)
+> 
+> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> index bd65d0479683..34d46e25d610 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> @@ -582,6 +582,63 @@ static unsigned int hdmi_compute_n(unsigned int freq, unsigned long pixel_clk)
+>  	return n;
+>  }
+>  
+> +static void hdmi_set_schnl(struct dw_hdmi *hdmi)
+> +{
+> +	u8 aud_schnl_samplerate;
+> +	u8 aud_schnl_8;
+> +
+> +	/* These registers are on RK3288 using version 2.0a. */
+> +	if (hdmi->version != 0x200a)
+> +		return;
 
-I suggest a clarification of the expect order of values and use of the same value order as vaapi, vdpau and nvdec.
-i.e. have the scaling list values in "matrix order"/"raster order", after zig-zag scan has been applied,
-as is currently expected by cedrus and hantro after this patch.
+Are these limited to the 2.0a version *in* RK3288, or 2.0a version on all
+SoCs ?
 
-I would also suggest a change to the expected order of the 8x8 scaling lists to follow the H264 standard,
-instead of the ffmpeg order like this patch and cedrus driver currently expects.
-
-Expected scaling list order would then be,
-for 4x4: Intra Y, Intra Cb, Intra Cr, Inter Y, Inter Cb, Inter Cr,
-for 8x8: Intra Y, Inter Y, Intra Cb, Inter Cb, Intra Cr, Inter Cr.
-
-Regards,
-Jonas
-
->
->> Could you add this requirement to the
->> V4L2_CID_MPEG_VIDEO_H264_SCALING_MATRIX documentation?
-> Sure, I will update documentation in v2.
->
->>> The HW also only support 8x8 scaling list for the Y component, indices 0
->>> and 3 in the scaling list supplied from userspace.
->>>
->>> Remove reordering and write the scaling matrix in an order expected by
->>> the VPU, also only allocate memory for the two 8x8 lists used.
->>>
->>> Fixes: a9471e25629b ("media: hantro: Add core bits to support H264 decoding")
->>> Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
->>> ---
->>>  drivers/staging/media/hantro/hantro_h264.c | 64 +++++++---------------
->>>  1 file changed, 20 insertions(+), 44 deletions(-)
->>>
->>> diff --git a/drivers/staging/media/hantro/hantro_h264.c b/drivers/staging/media/hantro/hantro_h264.c
->>> index 0d758e0c0f99..e2d01145ac4f 100644
->>> --- a/drivers/staging/media/hantro/hantro_h264.c
->>> +++ b/drivers/staging/media/hantro/hantro_h264.c
->>> @@ -20,7 +20,7 @@
->>>  /* Size with u32 units. */
->>>  #define CABAC_INIT_BUFFER_SIZE		(460 * 2)
->>>  #define POC_BUFFER_SIZE			34
->>> -#define SCALING_LIST_SIZE		(6 * 16 + 6 * 64)
->>> +#define SCALING_LIST_SIZE		(6 * 16 + 2 * 64)
->> This changes the size of struct hantro_h264_dec_priv_tbl. Did this
->> describe the auxiliary buffer format incorrectly before?
-> Based on RKMPP and Hantro SDK the HW expects the 8x8 inter/intra list for
-> Y-component to be located at indices 0 and 1, lists for Cr/Cb is only used for
-> 4:4:4 and HW only supports 4:0:0/4:2:0 if I am not mistaken. So the unused
-> extra 4 lists at the end of the auxiliary buffer seemed like a waste,
-> also RKMPP and Hantro SDK only seemed to allocate space for 2 lists.
->
->>>  #define POC_CMP(p0, p1) ((p0) < (p1) ? -1 : 1)
->>>  
->>> @@ -194,57 +194,33 @@ static const u32 h264_cabac_table[] = {
->>>  	0x1f0c2517, 0x1f261440
->>>  };
->>>  
->>> -/*
->>> - * NOTE: The scaling lists are in zig-zag order, apply inverse scanning process
->>> - * to get the values in matrix order. In addition, the hardware requires bytes
->>> - * swapped within each subsequent 4 bytes. Both arrays below include both
->>> - * transformations.
->>> - */
->>> -static const u32 zig_zag_4x4[] = {
->>> -	3, 2, 7, 11, 6, 1, 0, 5, 10, 15, 14, 9, 4, 8, 13, 12
->>> -};
->>> -
->>> -static const u32 zig_zag_8x8[] = {
->>> -	3, 2, 11, 19, 10, 1, 0, 9, 18, 27, 35, 26, 17, 8, 7, 6,
->>> -	15, 16, 25, 34, 43, 51, 42, 33, 24, 23, 14, 5, 4, 13, 22, 31,
->>> -	32, 41, 50, 59, 58, 49, 40, 39, 30, 21, 12, 20, 29, 38, 47, 48,
->>> -	57, 56, 55, 46, 37, 28, 36, 45, 54, 63, 62, 53, 44, 52, 61, 60
->>> -};
->>> -
->>>  static void
->>>  reorder_scaling_list(struct hantro_ctx *ctx)
->>>  {
->>>  	const struct hantro_h264_dec_ctrls *ctrls = &ctx->h264_dec.ctrls;
->>>  	const struct v4l2_ctrl_h264_scaling_matrix *scaling = ctrls->scaling;
->>> -	const size_t num_list_4x4 = ARRAY_SIZE(scaling->scaling_list_4x4);
->>> -	const size_t list_len_4x4 = ARRAY_SIZE(scaling->scaling_list_4x4[0]);
->>> -	const size_t num_list_8x8 = ARRAY_SIZE(scaling->scaling_list_8x8);
->>> -	const size_t list_len_8x8 = ARRAY_SIZE(scaling->scaling_list_8x8[0]);
->>>  	struct hantro_h264_dec_priv_tbl *tbl = ctx->h264_dec.priv.cpu;
->>> -	u8 *dst = tbl->scaling_list;
->>> -	const u8 *src;
->>> -	int i, j;
->>> -
->>> -	BUILD_BUG_ON(ARRAY_SIZE(zig_zag_4x4) != list_len_4x4);
->>> -	BUILD_BUG_ON(ARRAY_SIZE(zig_zag_8x8) != list_len_8x8);
->>> -	BUILD_BUG_ON(ARRAY_SIZE(tbl->scaling_list) !=
->>> -		     num_list_4x4 * list_len_4x4 +
->>> -		     num_list_8x8 * list_len_8x8);
->>> -
->>> -	src = &scaling->scaling_list_4x4[0][0];
->>> -	for (i = 0; i < num_list_4x4; ++i) {
->>> -		for (j = 0; j < list_len_4x4; ++j)
->>> -			dst[zig_zag_4x4[j]] = src[j];
->>> -		src += list_len_4x4;
->>> -		dst += list_len_4x4;
->>> +	u32 *dst = (u32 *)tbl->scaling_list;
->>> +	u32 i, j, tmp;
->>> +
->>> +	for (i = 0; i < ARRAY_SIZE(scaling->scaling_list_4x4); i++) {
->>> +		for (j = 0; j < ARRAY_SIZE(scaling->scaling_list_4x4[0]) / 4; j++) {
->>> +			tmp = (scaling->scaling_list_4x4[i][4 * j + 0] << 24) |
->>> +			      (scaling->scaling_list_4x4[i][4 * j + 1] << 16) |
->>> +			      (scaling->scaling_list_4x4[i][4 * j + 2] << 8) |
->>> +			      (scaling->scaling_list_4x4[i][4 * j + 3]);
->>> +			*dst++ = tmp;
->>> +		}
->> This looks like it could use swab32().
-> Thanks for the tip, will look into and change in v2.
->
->>>  	}
->>>  
->>> -	src = &scaling->scaling_list_8x8[0][0];
->>> -	for (i = 0; i < num_list_8x8; ++i) {
->>> -		for (j = 0; j < list_len_8x8; ++j)
->>> -			dst[zig_zag_8x8[j]] = src[j];
->>> -		src += list_len_8x8;
->>> -		dst += list_len_8x8;
->>> +	for (i = 0; i < ARRAY_SIZE(scaling->scaling_list_8x8); i += 3) {
->>> +		for (j = 0; j < ARRAY_SIZE(scaling->scaling_list_8x8[0]) / 4; j++) {
->>> +			tmp = (scaling->scaling_list_8x8[i][4 * j + 0] << 24) |
->>> +			      (scaling->scaling_list_8x8[i][4 * j + 1] << 16) |
->>> +			      (scaling->scaling_list_8x8[i][4 * j + 2] << 8) |
->>> +			      (scaling->scaling_list_8x8[i][4 * j + 3]);
->>> +			*dst++ = tmp;
->>> +		}
->> After this change, the second 8x8 scaling list has moved to a different
->> offset. Is this where the hardware has always been looking for it, or is
->> there a change missing in another place?
-> As mentioned above HW only looks at indices 0 and 1, and ffmpeg will store the
-> inter/intra Y list at indices 0 and 3 as seen at [1], in similar way cedrus only
-> use indices 0 and 3 at [2].
-> FFmpeg memcpy entire scaling_matrix8 to scaling_list_8x8 for v4l2-request-api
-> and memcpy scaling_matrix8[0] and scaling_matrix8[3] for vaapi.
->
-> You can see the effect of this patch using the h264_tivo_sample.ts sample from
-> cover letter, patch 3-8 must be applied. With this patch applied the green
-> football field will stay green, without the patch the field will shift in colors.
->
-> [1] https://github.com/FFmpeg/FFmpeg/blob/master/libavcodec/h264_ps.c#L299-L308
-> [2] https://git.linuxtv.org/media_tree.git/tree/drivers/staging/media/sunxi/cedrus/cedrus_h264.c#n231
->
-> Regards,
-> Jonas
->
->> regards
->> Philipp
+> +
+> +	switch (hdmi->sample_rate) {
+> +	case 32000:
+> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_32K;
+> +		break;
+> +	case 44100:
+> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_44K1;
+> +		break;
+> +	case 48000:
+> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_48K;
+> +		break;
+> +	case 88200:
+> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_88K2;
+> +		break;
+> +	case 96000:
+> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_96K;
+> +		break;
+> +	case 176400:
+> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_176K4;
+> +		break;
+> +	case 192000:
+> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_192K;
+> +		break;
+> +	case 768000:
+> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_768K;
+> +		break;
+> +	default:
+> +		dev_warn(hdmi->dev, "Unsupported audio sample rate (%u)\n",
+> +			 hdmi->sample_rate);
+> +		return;
+> +	}
+> +
+> +	/* set channel status register */
+> +	hdmi_modb(hdmi, aud_schnl_samplerate, HDMI_FC_AUDSCHNLS7_SMPRATE_MASK,
+> +		  HDMI_FC_AUDSCHNLS7);
+> +
+> +	/*
+> +	 * Set original frequency to be the same as frequency.
+> +	 * Use one-complement value as stated in IEC60958-3 page 13.
+> +	 */
+> +	aud_schnl_8 = (~aud_schnl_samplerate) <<
+> +			HDMI_FC_AUDSCHNLS8_ORIGSAMPFREQ_OFFSET;
+> +
+> +	/* This means word length is 16 bit. Refer to IEC60958-3 page 12. */
+> +	aud_schnl_8 |= 2 << HDMI_FC_AUDSCHNLS8_WORDLEGNTH_OFFSET;
+> +
+> +	hdmi_writeb(hdmi, aud_schnl_8, HDMI_FC_AUDSCHNLS8);
+> +}
+> +
+>  static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
+>  	unsigned long pixel_clk, unsigned int sample_rate)
+>  {
+> @@ -620,6 +677,8 @@ static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
+>  	hdmi->audio_cts = cts;
+>  	hdmi_set_cts_n(hdmi, cts, hdmi->audio_enable ? n : 0);
+>  	spin_unlock_irq(&hdmi->audio_lock);
+> +
+> +	hdmi_set_schnl(hdmi);
+>  }
+>  
+>  static void hdmi_init_clk_regenerator(struct dw_hdmi *hdmi)
+> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
+> index 6988f12d89d9..619ebc1c8354 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
+> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
+> @@ -158,6 +158,17 @@
+>  #define HDMI_FC_SPDDEVICEINF                    0x1062
+>  #define HDMI_FC_AUDSCONF                        0x1063
+>  #define HDMI_FC_AUDSSTAT                        0x1064
+> +#define HDMI_FC_AUDSV                           0x1065
+> +#define HDMI_FC_AUDSU                           0x1066
+> +#define HDMI_FC_AUDSCHNLS0                      0x1067
+> +#define HDMI_FC_AUDSCHNLS1                      0x1068
+> +#define HDMI_FC_AUDSCHNLS2                      0x1069
+> +#define HDMI_FC_AUDSCHNLS3                      0x106a
+> +#define HDMI_FC_AUDSCHNLS4                      0x106b
+> +#define HDMI_FC_AUDSCHNLS5                      0x106c
+> +#define HDMI_FC_AUDSCHNLS6                      0x106d
+> +#define HDMI_FC_AUDSCHNLS7                      0x106e
+> +#define HDMI_FC_AUDSCHNLS8                      0x106f
+>  #define HDMI_FC_DATACH0FILL                     0x1070
+>  #define HDMI_FC_DATACH1FILL                     0x1071
+>  #define HDMI_FC_DATACH2FILL                     0x1072
+> @@ -706,6 +717,15 @@ enum {
+>  /* HDMI_FC_AUDSCHNLS7 field values */
+>  	HDMI_FC_AUDSCHNLS7_ACCURACY_OFFSET = 4,
+>  	HDMI_FC_AUDSCHNLS7_ACCURACY_MASK = 0x30,
+> +	HDMI_FC_AUDSCHNLS7_SMPRATE_MASK = 0x0f,
+> +	HDMI_FC_AUDSCHNLS7_SMPRATE_192K = 0xe,
+> +	HDMI_FC_AUDSCHNLS7_SMPRATE_176K4 = 0xc,
+> +	HDMI_FC_AUDSCHNLS7_SMPRATE_96K = 0xa,
+> +	HDMI_FC_AUDSCHNLS7_SMPRATE_768K = 0x9,
+> +	HDMI_FC_AUDSCHNLS7_SMPRATE_88K2 = 0x8,
+> +	HDMI_FC_AUDSCHNLS7_SMPRATE_32K = 0x3,
+> +	HDMI_FC_AUDSCHNLS7_SMPRATE_48K = 0x2,
+> +	HDMI_FC_AUDSCHNLS7_SMPRATE_44K1 = 0x0,
+>  
+>  /* HDMI_FC_AUDSCHNLS8 field values */
+>  	HDMI_FC_AUDSCHNLS8_ORIGSAMPFREQ_MASK = 0xf0,
+> 
 
 
 _______________________________________________
