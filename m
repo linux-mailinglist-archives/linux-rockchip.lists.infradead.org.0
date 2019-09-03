@@ -2,89 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8818FA6685
-	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Sep 2019 12:26:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47072A66F6
+	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Sep 2019 12:58:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:To:From:
-	Subject:Date:In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=FhX0S0BBghCjgTsRq/hjsxDY8ZE5WPFwbm8O+f+j8aA=; b=SriIsHuDtbYtVJ
-	o6pinS7XRMfhu6iNEPWcDyFQ4MPQ/aUOyubWis4sVAgRRbhxureyKGQtHRQDvs1Ik0SOGIrl70P+K
-	rLqUQ8jlnmh5Khmy9gyM9ZCJpL2n9mDcRRp0S3OWHCVkJD+29YWHbwo15cNsAzjeBQuzcM9Xuwc92
-	De2Ij20NsXL9V5OlhI+VGZ9W00GIe0pUuU4SGkCaGDzKdDPqnLFM/yBzZK1rY+OhpC0NPKIB7FeqQ
-	zeKuUjvrvEMCMbqEM5U9iIGJrJAa7z3rfNSRinKa5VQZfadRvQcB43jAZHDhMzOkUan9d3usZY7cu
-	EOHF41sHf5P8wSzNZ5rA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OYlVKA4Y1fBmi4F7aU47Q0J94shDVZxMnaHhLiz/oAM=; b=bl+zNQtuSpQGGj
+	UBC81H4ekWiiFlT0ZAuQK2A5nC5khd2bE/1ynBN6ACd11mFuva04OEigl9+NcAag/11dZiPdSBexH
+	L6dChe5Bzyf1Wm9SRQocLhJjpF6Tee3NYb0Kd94uoSfcbiVfjcwojDkJxFLIOY1W/TmpDsxKZYLwh
+	jFc/c/sL4DGVO86IThMMHzfy91gODGGHPPuAZQDlaQP95hEG1PTp1+4dWbb+VQWZgOdID00PfelG+
+	pA6wByOIjKHro/luuQmXz2QHb14qD2CSM6gUCopU8Pa/DMg2RWRFbw/J0FcXIghMkj1Dc4XUouEv8
+	bfCHgxrJTNwpY+Xb6y7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i561I-00059u-Ts; Tue, 03 Sep 2019 10:26:40 +0000
-Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
+	id 1i56WO-00071n-Vw; Tue, 03 Sep 2019 10:58:49 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i561F-00059Y-RB
- for linux-rockchip@lists.infradead.org; Tue, 03 Sep 2019 10:26:39 +0000
-Received: by mail-wm1-x333.google.com with SMTP id r195so1304911wme.2
- for <linux-rockchip@lists.infradead.org>; Tue, 03 Sep 2019 03:26:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=content-transfer-encoding:in-reply-to:date:cc:subject:from:to
- :message-id; bh=dYP1zyQ9/bq+0Ynwnbj9T01bNKrm29VzHbRhbnLqS7E=;
- b=FKi+mVY6T0pz4hK6a95XdNElcQW89HKXamL7zCzgY4oFD6qrBi0M8jxFRZGNJd8Thn
- eIPBQxxQqWtkbzqJC9cNFTgDK+2ksx67ykKgGCCVHPjRZ351c54NxGER93HMy8IKkE2B
- 18FqCNPWL5wDuHsnwSeIavJ7C+aaxll8WTmR7jJulX+wJeU3bnKjucx42K2ifvY08qED
- 2LXbj/wa+VZUgiHge8fx8+OIJvNXlVXwSuAgL/HjE2KRdAjiH+AblQhau8lPPBGoudnL
- jda8Y4mAa5cIW3/Rwj1MtYyHpCD165pSXxuJhKz/k94kI8OiFg2onbZCrscpeHBz9I1t
- EZAA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:content-transfer-encoding:in-reply-to:date:cc
- :subject:from:to:message-id;
- bh=dYP1zyQ9/bq+0Ynwnbj9T01bNKrm29VzHbRhbnLqS7E=;
- b=BEH7S+0dAjbAy+o8lg9L2RbK354axsM8ctEhVcNFOnVsYaCGKB8qBH9XELLhgtzV/n
- 7Dqa99l3DUmv3uL62z0W+z90jZxpo+dwot7HIRWfF+x0eaL3LGdQWkiWKl3ozeX8LUS7
- A8zXe9kZ724vEP/koouwozikJzRXG30D2GUaRxNnrP7cxAL82zbiZNA1vJcvPqJMVEGy
- pYYG4fAgq3fjbXmHT1M2bJuqO0PEYhirEYWsQ8Dua+HzxJqRJKYk46H07uVRU4o9kLl9
- uxyRg7FjyFsKUw/59h3EV9J5orcZuSc4oPk5U5F5j3SG0rZLKLDtReadSrx8gyz6EeH9
- uqCg==
-X-Gm-Message-State: APjAAAVYDmyfysn/1Iw++DKPFIqNlwFwn7TVOiwjetTNXs7+t3UuHgvy
- p4TpIRh12dvWNrVAYK76tl63JDQ43A4=
-X-Google-Smtp-Source: APXvYqwqZQwypQ4B9nzWz+DGf3sTbHUGd8RMrjWRqDnxO9a+kLCEfaRpu8wHwvpSEdpc3Ysl2nYiPg==
-X-Received: by 2002:a7b:cc0f:: with SMTP id f15mr40880093wmh.39.1567506395637; 
- Tue, 03 Sep 2019 03:26:35 -0700 (PDT)
-Received: from localhost (cpc83647-brig20-2-0-cust926.3-3.cable.virginm.net.
- [82.19.195.159])
- by smtp.gmail.com with ESMTPSA id f197sm34966301wme.22.2019.09.03.03.26.34
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 03 Sep 2019 03:26:34 -0700 (PDT)
-In-Reply-To: <CAHNYxRwKScOowbO5QFGbA_SibyqTds+X7hZ1zP4A-FuTEeqP1A@mail.gmail.com>
-Date: Tue, 03 Sep 2019 11:26:33 +0100
-Subject: Re: Broken suspend/resume on RK3399-based Chromebook
-From: "Alex Dewar" <alex.dewar90@gmail.com>
-To: "Alexandru M Stan" <amstan@chromium.org>
-Message-Id: <BWQAN40QNAV4.2CDUWRNCWYSUA@lenovo-laptop>
+ id 1i56WK-00071E-0L
+ for linux-rockchip@lists.infradead.org; Tue, 03 Sep 2019 10:58:45 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1i56WC-0006J1-Qf; Tue, 03 Sep 2019 12:58:36 +0200
+Message-ID: <1567508315.5229.3.camel@pengutronix.de>
+Subject: Re: [PATCH 03/12] media: hantro: Fix H264 motion vector buffer offset
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Jonas Karlman <jonas@kwiboo.se>, Ezequiel Garcia <ezequiel@collabora.com>
+Date: Tue, 03 Sep 2019 12:58:35 +0200
+In-Reply-To: <HE1PR06MB40115337CD86C429EF24430CACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+References: <HE1PR06MB40117D0EE96E6FA638A04B78ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+ <20190901124531.23645-1-jonas@kwiboo.se>
+ <HE1PR06MB40115337CD86C429EF24430CACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+X-Mailer: Evolution 3.22.6-1+deb9u2 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-rockchip@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_032637_907488_C17FBD43 
-X-CRM114-Status: GOOD (  11.40  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190903_035844_053942_6E136328 
+X-CRM114-Status: GOOD (  19.85  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:333 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (alex.dewar90[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (alex.dewar90[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,42 +66,124 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>
-MIME-Version: 1.0
+Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Alexandru,
+Hi Jonas,
 
-Thanks for your detailed response.
+On Sun, 2019-09-01 at 12:45 +0000, Jonas Karlman wrote:
+> A decoded 8-bit 4:2:0 frame need memory for up to 448 macroblocks
+> and is laid out in memory as follow:
 
-On Mon Aug 26, 2019 at 1:08 PM Alexandru M Stan wrote:
-> Hello Alex,
+Do you mean "A decoded 8-bit 4:2:0 frame needs up to 448 bytes per
+macroblock"?
+
+A 1280x720 frame already consists of 3600 macroblocks (each 16x16 Y +
+2x8x8 Cb,Cr).
+
+> +-------------------+
+> > Y-plane   256 MBs |
+
+So that looks like it should be 256 bytes * number of macroblocks
+instead, same for the following two.
+
+> +-------------------+
+> > UV-plane  128 MBs |
+> +-------------------+
+> > MV buffer  64 MBs |
+> 
+> +-------------------+
 >
-> On Sat, Aug 24, 2019 at 2:55 AM Alex Dewar <alex.dewar90@gmail.com> wrote:
-> > I've got an Asus Chromebook Flip C101PA, which is based on the Rockchip RK3399
-> > SoC, and it seems like suspend and resume is broken (AFAIK it's never worked).
->
-> Sounds about right. I don't think it ever worked.
+> The motion vector buffer offset is currently correct for 4:2:0 because
+> the extra space for motion vectors is overallocated with an extra 64 MBs.
+> 
+> Wrong offset for both destination and motion vector buffer are used
+> for the bottom field of field encoded content, wrong offset is
+> also used for 4:0:0 (monochrome) content.
+> 
+> Fix this by always setting the motion vector address to the expected
+> 384 MBs offset for 4:2:0 and 256 MBs offset for 4:0:0 content.
 
-I should probably say that I've only tested on fairly recent kernels, so
-I guess it could have worked at some point.
+Expected by whom? For example, could these be placed in separate buffers
+instead of appended to the VB2 allocated buffers?
 
->
-> Another debugging tip:
-> You should get one of these: https://www.sparkfun.com/products/14746
-> It will let you get a serial console out of the rk3399, and you'll
-> also be able to see what the EC has to say about stuff.
-> How to use it: https://www.chromium.org/chromium-os/ccd
->
+> Also use correct destination and motion vector buffer offset
+> for the bottom field of field encoded content.
+> 
+> While at it also extend the check for 4:0:0 (monochrome) to include an
+> additional check for High Profile (100).
+> 
+> Fixes: dea0a82f3d22 ("media: hantro: Add support for H264 decoding on G1")
+> Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
+> ---
+>  .../staging/media/hantro/hantro_g1_h264_dec.c | 33 +++++++++++--------
+>  1 file changed, 19 insertions(+), 14 deletions(-)
+> 
+> diff --git a/drivers/staging/media/hantro/hantro_g1_h264_dec.c b/drivers/staging/media/hantro/hantro_g1_h264_dec.c
+> index 7ab534936843..159bd67e0a36 100644
+> --- a/drivers/staging/media/hantro/hantro_g1_h264_dec.c
+> +++ b/drivers/staging/media/hantro/hantro_g1_h264_dec.c
+> @@ -19,6 +19,9 @@
+>  #include "hantro_hw.h"
+>  #include "hantro_v4l2.h"
+>  
+> +#define MV_OFFSET_420	384
+> +#define MV_OFFSET_400	256
+> +
+>  static void set_params(struct hantro_ctx *ctx)
+>  {
+>  	const struct hantro_h264_dec_ctrls *ctrls = &ctx->h264_dec.ctrls;
+> @@ -49,8 +52,8 @@ static void set_params(struct hantro_ctx *ctx)
+>  	vdpu_write_relaxed(vpu, reg, G1_REG_DEC_CTRL0);
+>  
+>  	/* Decoder control register 1. */
+> -	reg = G1_REG_DEC_CTRL1_PIC_MB_WIDTH(sps->pic_width_in_mbs_minus1 + 1) |
+> -	      G1_REG_DEC_CTRL1_PIC_MB_HEIGHT_P(sps->pic_height_in_map_units_minus1 + 1) |
+> +	reg = G1_REG_DEC_CTRL1_PIC_MB_WIDTH(H264_MB_WIDTH(ctx->dst_fmt.width)) |
+> +	      G1_REG_DEC_CTRL1_PIC_MB_HEIGHT_P(H264_MB_HEIGHT(ctx->dst_fmt.height)) |
+>  	      G1_REG_DEC_CTRL1_REF_FRAMES(sps->max_num_ref_frames);
+>  	vdpu_write_relaxed(vpu, reg, G1_REG_DEC_CTRL1);
+>  
+> @@ -79,7 +82,7 @@ static void set_params(struct hantro_ctx *ctx)
+>  		reg |= G1_REG_DEC_CTRL4_CABAC_E;
+>  	if (sps->flags & V4L2_H264_SPS_FLAG_DIRECT_8X8_INFERENCE)
+>  		reg |= G1_REG_DEC_CTRL4_DIR_8X8_INFER_E;
+> -	if (sps->chroma_format_idc == 0)
+> +	if (sps->profile_idc >= 100 && sps->chroma_format_idc == 0)
+>  		reg |= G1_REG_DEC_CTRL4_BLACKWHITE_E;
+>  	if (pps->flags & V4L2_H264_PPS_FLAG_WEIGHTED_PRED)
+>  		reg |= G1_REG_DEC_CTRL4_WEIGHT_PRED_E;
+> @@ -233,6 +236,7 @@ static void set_buffers(struct hantro_ctx *ctx)
+>  	struct vb2_v4l2_buffer *src_buf, *dst_buf;
+>  	struct hantro_dev *vpu = ctx->dev;
+>  	dma_addr_t src_dma, dst_dma;
+> +	unsigned int offset = MV_OFFSET_420;
+>  
+>  	src_buf = hantro_get_src_buf(ctx);
+>  	dst_buf = hantro_get_dst_buf(ctx);
+> @@ -243,19 +247,20 @@ static void set_buffers(struct hantro_ctx *ctx)
+>  
+>  	/* Destination (decoded frame) buffer. */
+>  	dst_dma = vb2_dma_contig_plane_dma_addr(&dst_buf->vb2_buf, 0);
+> +	if (ctrls->slices[0].flags & V4L2_H264_SLICE_FLAG_BOTTOM_FIELD)
+> +		dst_dma += ALIGN(ctx->dst_fmt.width, H264_MB_DIM);
 
-I'll look into this; thanks. And thanks for all the work you guys have
-put into upstreaming the Chromebook code!
+How does this work? Does userspace decode two fields into the same
+capture buffer and the hardware writes each field with a stride of 2
+lines? I suppose this corresponds to V4L2_FIELD_INTERLACED. Could this
+also be made to support V4L2_FIELD_SEQ_TB output?
 
-> Please let us know if you find anything interesting,
-> Alexandru Stan (amstan)
+regards
+Philipp
 
 _______________________________________________
 Linux-rockchip mailing list
