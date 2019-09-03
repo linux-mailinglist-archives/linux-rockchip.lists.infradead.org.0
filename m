@@ -2,142 +2,60 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBC92A6619
-	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Sep 2019 11:54:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B0AAA6625
+	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Sep 2019 11:56:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l8Js9uguu/k03pU10Mt9qFrNpNzuHXerOc02e4IfjX0=; b=f+RYWCl7Zhe4nu
-	gDjEbMQ/URcccjMPrJHGVVb2jj1LPBNwklIg/UPQ/v78qrL0oOZlfsBTn5jroRZXhgLBwjF3wxPQC
-	osj6XGcGeUGy7Ny7TjU4VDu8ogphDNFVv5pDS3rqV3t0T+ecF+Ro9IM7BdCHVg07Xy0ZiFlRDjlKe
-	eamXWjDwmB04+/4Ot8bvuH55TfIPFhVUhiCF6h11bnN7nREajX+cHaTWpubzubs2X7crjwkC/ut8M
-	UbGygKk7IZQWuhGDrKwzQE2A33Akz+08Z/V+MdE+BDcE5C1sLbgpKRx6Q0RG+Sv7p3lsSH2/fwa3X
-	zkIryG+eLPsU0XvN7OGg==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9koiY0BjfZJcREBmxIu5Qlty0Ljpm8YtSfCxf1Pqdrg=; b=YHk12dPyCJdEHk
+	T333S7lu+L6fA4SXD9aoWVrTy1lbpEyvo6tBHgqWRDBvQDHGhw7nf7fabXDZiAutjeQd2xQH8qbT5
+	UjWv2Z8oAAszpv/Gb3svQKICf/TighVdAGuR3wgKyCKdrDHq7uOvt6cYRms1bEpDzW9ft/3Wq/tPi
+	SBxXJ+S+D/ICx2DLQDXbn1PCALZyoOfgIPBrvbSw8tpnOVMph8PhvaewYyD8S0KonpOSLRMPwVGVb
+	QYNQx9H1BKzF9wq/bUss2HDvtAcwbUlGl6vRuPkUku2NVp2tFs+d6Q5aqbD210w0asXreGpWwkfbr
+	eynjirxvYhnBpFiJ8JBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i55Va-0001e3-Vu; Tue, 03 Sep 2019 09:53:55 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1i55YR-0003SY-6e; Tue, 03 Sep 2019 09:56:51 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i55VJ-0001Rt-MC
- for linux-rockchip@lists.infradead.org; Tue, 03 Sep 2019 09:53:39 +0000
-Received: by mail-wm1-x342.google.com with SMTP id k1so17390476wmi.1
- for <linux-rockchip@lists.infradead.org>; Tue, 03 Sep 2019 02:53:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=3svFEUFdlGRo7s6oU/gAKMoNrDtitSPWMnmTngxdf5A=;
- b=kIYuXA48J8yijkoUvvwSReT8C7vDXIE1MLur0hYz+TkH/SXUuow+Z9RpdecahEHqfT
- gfMPla1YRabYeDgUmmlkI8D2h8jprn/SfljLi+ALfCaC5DkQKMTAK0wMqVl6du0USNUP
- 8Q9gmtoY2VKhAzFr3dUpG6KeMi4nQnXYJ//3tyrry7WaQ5cA8e5yAWcsNuXjC2NU6cQ2
- OY1QInnD6h/5eRALoJF5X41M/S+WlVJY7NPvflic7F82lpWhjVR8SpEYC2f2fKFbBKRK
- V97d6ec4ppirWFT5oWkF04LkBSC7guAniEjV1TjuaQn/Ki9QMH3obFR5ePfsUn0aGeOl
- gcVw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=3svFEUFdlGRo7s6oU/gAKMoNrDtitSPWMnmTngxdf5A=;
- b=QFizjaMTd59xrKG/M3D6B3J+I3opb7BWViIdTYs71i2Oi0PAqjHNPA5eZgwfOCqk7K
- 5RiAOvtNk2/V6va8S1TWrbaZ4VDF/0Frln4xQt8KL53mwk9XOrSjey6Uf5n4IbiBX6bG
- Lw1UM72BA5uO0eJJCles3jFjrRD0dCiMGPMn8EXlXoix/7i6fwbnWXqrigeKYADJFM89
- SRtefZqTd3RgjrtZa+cBWRUF/8JlOUu7Y0W15FODkEG4HSjJMmN/RDPnEBk+Rs30qxxg
- W7GTst8aUQgM7jBz1fJOE+ZULuiXpVzUe6x2kRzGyDzJBUQeHE27QoYnS0KRzkZilygo
- JTQA==
-X-Gm-Message-State: APjAAAX29ZriyLHWl26y0zywjXSmCOYhRA9gyv9+jvU3axgnZTdtw9lB
- miUrOaqw7YWEaMtAj4wb/ADukQ==
-X-Google-Smtp-Source: APXvYqyTtwuHZrhUbdBQZ7Or0d1HOtYQZHQdZrPahyeZ5TF7qNJyfrFtU4pNalcJKWCYtGBlnIJk7Q==
-X-Received: by 2002:a7b:c186:: with SMTP id y6mr13960388wmi.12.1567504414674; 
- Tue, 03 Sep 2019 02:53:34 -0700 (PDT)
-Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id r18sm20184350wrx.36.2019.09.03.02.53.33
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 03 Sep 2019 02:53:34 -0700 (PDT)
-Subject: Re: [PATCH] drm: bridge/dw_hdmi: add audio sample channel status
- setting
-To: Cheng-Yi Chiang <cychiang@chromium.org>, linux-kernel@vger.kernel.org
-References: <20190903055103.134764-1-cychiang@chromium.org>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <e1c3483c-baa6-c726-e547-fadf40d259f4@baylibre.com>
-Date: Tue, 3 Sep 2019 11:53:33 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190903055103.134764-1-cychiang@chromium.org>
-Content-Language: en-US
+ id 1i55YN-0003SA-Cy
+ for linux-rockchip@lists.infradead.org; Tue, 03 Sep 2019 09:56:49 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1i55YG-0000fO-Qa; Tue, 03 Sep 2019 11:56:40 +0200
+Message-ID: <1567504599.5229.1.camel@pengutronix.de>
+Subject: Re: [PATCH 02/12] media: hantro: Do not reorder H264 scaling list
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Jonas Karlman <jonas@kwiboo.se>, Ezequiel Garcia <ezequiel@collabora.com>
+Date: Tue, 03 Sep 2019 11:56:39 +0200
+In-Reply-To: <HE1PR06MB4011A8F99D58E5ACFAE3CECAACBE0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+References: <HE1PR06MB40117D0EE96E6FA638A04B78ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+ <20190901124531.23645-1-jonas@kwiboo.se>
+ <HE1PR06MB40116C92C3D52C5957EF48E9ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+ <1567432843.3666.6.camel@pengutronix.de>
+ <HE1PR06MB4011A8F99D58E5ACFAE3CECAACBE0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+X-Mailer: Evolution 3.22.6-1+deb9u2 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-rockchip@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_025337_759420_1BD18576 
-X-CRM114-Status: GOOD (  19.57  )
+X-CRM114-CacheID: sfid-20190903_025647_443956_AE470641 
+X-CRM114-Status: GOOD (  20.56  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -150,164 +68,68 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, tzungbi@chromium.org, zhengxing@rock-chips.com,
- kuninori.morimoto.gx@renesas.com, linux-rockchip@lists.infradead.org,
- airlied@linux.ie, sam@ravnborg.org, jeffy.chen@rock-chips.com,
- dianders@chromium.org, dri-devel@lists.freedesktop.org,
- cain.cai@rock-chips.com, a.hajda@samsung.com, eddie.cai@rock-chips.com,
- Laurent.pinchart@ideasonboard.com, daniel@ffwll.ch,
- Yakir Yang <ykk@rock-chips.com>, enric.balletbo@collabora.com,
- dgreid@chromium.org, kuankuan.y@gmail.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 03/09/2019 07:51, Cheng-Yi Chiang wrote:
-> From: Yakir Yang <ykk@rock-chips.com>
-> 
-> When transmitting IEC60985 linear PCM audio, we configure the
-> Audio Sample Channel Status information of all the channel
-> status bits in the IEC60958 frame.
-> Refer to 60958-3 page 10 for frequency, original frequency, and
-> wordlength setting.
-> 
-> This fix the issue that audio does not come out on some monitors
-> (e.g. LG 22CV241)
-> 
-> Signed-off-by: Yakir Yang <ykk@rock-chips.com>
-> Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
-> ---
->  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 59 +++++++++++++++++++++++
->  drivers/gpu/drm/bridge/synopsys/dw-hdmi.h | 20 ++++++++
->  2 files changed, 79 insertions(+)
-> 
-> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> index bd65d0479683..34d46e25d610 100644
-> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> @@ -582,6 +582,63 @@ static unsigned int hdmi_compute_n(unsigned int freq, unsigned long pixel_clk)
->  	return n;
->  }
->  
-> +static void hdmi_set_schnl(struct dw_hdmi *hdmi)
-> +{
-> +	u8 aud_schnl_samplerate;
-> +	u8 aud_schnl_8;
-> +
-> +	/* These registers are on RK3288 using version 2.0a. */
-> +	if (hdmi->version != 0x200a)
-> +		return;
-
-Are these limited to the 2.0a version *in* RK3288, or 2.0a version on all
-SoCs ?
-
-> +
-> +	switch (hdmi->sample_rate) {
-> +	case 32000:
-> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_32K;
-> +		break;
-> +	case 44100:
-> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_44K1;
-> +		break;
-> +	case 48000:
-> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_48K;
-> +		break;
-> +	case 88200:
-> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_88K2;
-> +		break;
-> +	case 96000:
-> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_96K;
-> +		break;
-> +	case 176400:
-> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_176K4;
-> +		break;
-> +	case 192000:
-> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_192K;
-> +		break;
-> +	case 768000:
-> +		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_768K;
-> +		break;
-> +	default:
-> +		dev_warn(hdmi->dev, "Unsupported audio sample rate (%u)\n",
-> +			 hdmi->sample_rate);
-> +		return;
-> +	}
-> +
-> +	/* set channel status register */
-> +	hdmi_modb(hdmi, aud_schnl_samplerate, HDMI_FC_AUDSCHNLS7_SMPRATE_MASK,
-> +		  HDMI_FC_AUDSCHNLS7);
-> +
-> +	/*
-> +	 * Set original frequency to be the same as frequency.
-> +	 * Use one-complement value as stated in IEC60958-3 page 13.
-> +	 */
-> +	aud_schnl_8 = (~aud_schnl_samplerate) <<
-> +			HDMI_FC_AUDSCHNLS8_ORIGSAMPFREQ_OFFSET;
-> +
-> +	/* This means word length is 16 bit. Refer to IEC60958-3 page 12. */
-> +	aud_schnl_8 |= 2 << HDMI_FC_AUDSCHNLS8_WORDLEGNTH_OFFSET;
-> +
-> +	hdmi_writeb(hdmi, aud_schnl_8, HDMI_FC_AUDSCHNLS8);
-> +}
-> +
->  static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
->  	unsigned long pixel_clk, unsigned int sample_rate)
->  {
-> @@ -620,6 +677,8 @@ static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
->  	hdmi->audio_cts = cts;
->  	hdmi_set_cts_n(hdmi, cts, hdmi->audio_enable ? n : 0);
->  	spin_unlock_irq(&hdmi->audio_lock);
-> +
-> +	hdmi_set_schnl(hdmi);
->  }
->  
->  static void hdmi_init_clk_regenerator(struct dw_hdmi *hdmi)
-> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
-> index 6988f12d89d9..619ebc1c8354 100644
-> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
-> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
-> @@ -158,6 +158,17 @@
->  #define HDMI_FC_SPDDEVICEINF                    0x1062
->  #define HDMI_FC_AUDSCONF                        0x1063
->  #define HDMI_FC_AUDSSTAT                        0x1064
-> +#define HDMI_FC_AUDSV                           0x1065
-> +#define HDMI_FC_AUDSU                           0x1066
-> +#define HDMI_FC_AUDSCHNLS0                      0x1067
-> +#define HDMI_FC_AUDSCHNLS1                      0x1068
-> +#define HDMI_FC_AUDSCHNLS2                      0x1069
-> +#define HDMI_FC_AUDSCHNLS3                      0x106a
-> +#define HDMI_FC_AUDSCHNLS4                      0x106b
-> +#define HDMI_FC_AUDSCHNLS5                      0x106c
-> +#define HDMI_FC_AUDSCHNLS6                      0x106d
-> +#define HDMI_FC_AUDSCHNLS7                      0x106e
-> +#define HDMI_FC_AUDSCHNLS8                      0x106f
->  #define HDMI_FC_DATACH0FILL                     0x1070
->  #define HDMI_FC_DATACH1FILL                     0x1071
->  #define HDMI_FC_DATACH2FILL                     0x1072
-> @@ -706,6 +717,15 @@ enum {
->  /* HDMI_FC_AUDSCHNLS7 field values */
->  	HDMI_FC_AUDSCHNLS7_ACCURACY_OFFSET = 4,
->  	HDMI_FC_AUDSCHNLS7_ACCURACY_MASK = 0x30,
-> +	HDMI_FC_AUDSCHNLS7_SMPRATE_MASK = 0x0f,
-> +	HDMI_FC_AUDSCHNLS7_SMPRATE_192K = 0xe,
-> +	HDMI_FC_AUDSCHNLS7_SMPRATE_176K4 = 0xc,
-> +	HDMI_FC_AUDSCHNLS7_SMPRATE_96K = 0xa,
-> +	HDMI_FC_AUDSCHNLS7_SMPRATE_768K = 0x9,
-> +	HDMI_FC_AUDSCHNLS7_SMPRATE_88K2 = 0x8,
-> +	HDMI_FC_AUDSCHNLS7_SMPRATE_32K = 0x3,
-> +	HDMI_FC_AUDSCHNLS7_SMPRATE_48K = 0x2,
-> +	HDMI_FC_AUDSCHNLS7_SMPRATE_44K1 = 0x0,
->  
->  /* HDMI_FC_AUDSCHNLS8 field values */
->  	HDMI_FC_AUDSCHNLS8_ORIGSAMPFREQ_MASK = 0xf0,
-> 
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gTW9uLCAyMDE5LTA5LTAyIGF0IDE2OjE4ICswMDAwLCBKb25hcyBLYXJsbWFuIHdyb3RlOgo+
+IE9uIDIwMTktMDktMDIgMTY6MDAsIFBoaWxpcHAgWmFiZWwgd3JvdGU6Cj4gPiBIaSBKb25hcywK
+PiA+IAo+ID4gT24gU3VuLCAyMDE5LTA5LTAxIGF0IDEyOjQ1ICswMDAwLCBKb25hcyBLYXJsbWFu
+IHdyb3RlOgo+ID4gPiBTY2FsaW5nIGxpc3Qgc3VwcGxpZWQgZnJvbSB1c2Vyc3BhY2UgdXNpbmcg
+ZmZtcGVnIGFuZCBsaWJ2YS12NGwyLXJlcXVlc3QKPiA+ID4gaXMgYWxyZWFkeSBpbiBtYXRyaXgg
+b3JkZXIgYW5kIGNhbiBiZSB1c2VkIHdpdGhvdXQgYXBwbHlpbmcgdGhlIGludmVyc2UKPiA+ID4g
+c2Nhbm5pbmcgcHJvY2Vzcy4KPiA+IAo+ID4gImluIG1hdHJpeCBvcmRlciIgaXMgZXF1aXZhbGVu
+dCB0byAiaW4gcmFzdGVyIHNjYW4gb3JkZXIiPwo+IAo+IFRoZSB2YWx1ZXMgc3VwcGxpZWQgYnkg
+ZmZtcGVnIGFuZCBsaWJ2YS12NGwyLXJlcXVlc3QgaXMgaW4gdGhlIG9yZGVyIGFmdGVyIHRoZQo+
+IGludmVyc2Ugc2Nhbm5pbmcgcHJvY2VzcyBoYXMgYmVlbiBhcHBsaWVkIChzY2FsaW5nIGxpc3Qg
+aGFzIGJlZW4gdHJhbnNmb3JtZWQKPiBpbnRvIGEgc2NhbGluZyBtYXRyaXgpLiBOb3Qgc3VyZSB3
+aGF0IHRoaXMgaXMgY2FsbGVkLCAibWF0cml4IG9yZGVyIiBzZWVtZWQKPiBjbG9zZSBlbm91Z2gu
+CgpPaywgYWZ0ZXIgcmVhZGluZyBjaGFwdGVycwoKOC41LjYgSW52ZXJzZSBzY2FubmluZyBwcm9j
+ZXNzIGZvciA0eDQgdHJhbnNmb3JtIGNvZWZmaWNpZW50cyBhbmQgc2NhbGluZyBsaXN0cwo4LjUu
+NyBJbnZlcnNlIHNjYW5uaW5nIHByb2Nlc3MgZm9yIDh4OCB0cmFuc2Zvcm0gY29lZmZpY2llbnRz
+IGFuZCBzY2FsaW5nIGxpc3RzCgpvZiBJVFUtVCBSZWMuIEguMjY0LCB0aGlzIHNlZW1zIGNsZWFy
+IGVub3VnaC4gSSBqdXN0IGFza2VkIHRvIG1ha2Ugc3VyZSwKYmVjYXVzZSBsaWJ2YSBkb2N1bWVu
+dGF0aW9uIHVzZXMgdGhlwqB0ZXJtICJyYXN0ZXIgc2NhbiIgWzFdLgoKWzFdIGh0dHA6Ly9pbnRl
+bC5naXRodWIuaW8vbGlidmEvc3RydWN0VkFJUU1hdHJpeEJ1ZmZlckgyNjQuaHRtbAoKPiBTaW5j
+ZSB0aGVyZSBpcyB0d28gc2NhbiBvcmRlcnMsIHppZy16YWcgYW5kIGZpZWxkLCBhbmQgY2VkcnVz
+IGFscmVhZHkgZXhwZWN0aW5nCj4gdGhlIHZhbHVlcyBpbiAibWF0cml4IiBvcmRlciwgaXQgc2Vl
+bXMgbW9yZSBsb2dpY2FsIHRvIGxldCB1c2Vyc3BhY2UgaGFuZGxlIHRoZQo+IGludmVyc2Ugc2Nh
+bm5pbmcgcHJvY2Vzcy4KCkkgYWdyZWUuCgpbLi4uXQo+ID4gVGhpcyBjaGFuZ2VzIHRoZSBzaXpl
+IG9mIHN0cnVjdCBoYW50cm9faDI2NF9kZWNfcHJpdl90YmwuIERpZCB0aGlzCj4gPiBkZXNjcmli
+ZSB0aGUgYXV4aWxpYXJ5IGJ1ZmZlciBmb3JtYXQgaW5jb3JyZWN0bHkgYmVmb3JlPwo+IAo+IEJh
+c2VkIG9uIFJLTVBQIGFuZCBIYW50cm8gU0RLIHRoZSBIVyBleHBlY3RzIHRoZSA4eDggaW50ZXIv
+aW50cmEgbGlzdCBmb3IKPiBZLWNvbXBvbmVudCB0byBiZSBsb2NhdGVkIGF0IGluZGljZXMgMCBh
+bmQgMSwgbGlzdHMgZm9yIENyL0NiIGlzIG9ubHkgdXNlZCBmb3IKPiA0OjQ6NCBhbmQgSFcgb25s
+eSBzdXBwb3J0cyA0OjA6MC80OjI6MCBpZiBJIGFtIG5vdCBtaXN0YWtlbi4gU28gdGhlIHVudXNl
+ZAo+IGV4dHJhIDQgbGlzdHMgYXQgdGhlIGVuZCBvZiB0aGUgYXV4aWxpYXJ5IGJ1ZmZlciBzZWVt
+ZWQgbGlrZSBhIHdhc3RlLAo+IGFsc28gUktNUFAgYW5kIEhhbnRybyBTREsgb25seSBzZWVtZWQg
+dG8gYWxsb2NhdGUgc3BhY2UgZm9yIDIgbGlzdHMuCgpPay4KCj4gPiBBZnRlciB0aGlzIGNoYW5n
+ZSwgdGhlIHNlY29uZCA4eDggc2NhbGluZyBsaXN0IGhhcyBtb3ZlZCB0byBhIGRpZmZlcmVudAo+
+ID4gb2Zmc2V0LiBJcyB0aGlzIHdoZXJlIHRoZSBoYXJkd2FyZSBoYXMgYWx3YXlzIGJlZW4gbG9v
+a2luZyBmb3IgaXQsIG9yIGlzCj4gPiB0aGVyZSBhIGNoYW5nZSBtaXNzaW5nIGluIGFub3RoZXIg
+cGxhY2U/Cj4gCj4gQXMgbWVudGlvbmVkIGFib3ZlIEhXIG9ubHkgbG9va3MgYXQgaW5kaWNlcyAw
+IGFuZCAxLCBhbmQgZmZtcGVnIHdpbGwgc3RvcmUgdGhlCj4gaW50ZXIvaW50cmEgWSBsaXN0IGF0
+IGluZGljZXMgMCBhbmQgMyBhcyBzZWVuIGF0IFsxXSwgaW4gc2ltaWxhciB3YXkgY2VkcnVzIG9u
+bHkKPiB1c2UgaW5kaWNlcyAwIGFuZCAzIGF0IFsyXS4KPiBGRm1wZWcgbWVtY3B5IGVudGlyZSBz
+Y2FsaW5nX21hdHJpeDggdG8gc2NhbGluZ19saXN0Xzh4OCBmb3IgdjRsMi1yZXF1ZXN0LWFwaQo+
+IGFuZCBtZW1jcHkgc2NhbGluZ19tYXRyaXg4WzBdIGFuZCBzY2FsaW5nX21hdHJpeDhbM10gZm9y
+IHZhYXBpLgo+IAo+IFlvdSBjYW4gc2VlIHRoZSBlZmZlY3Qgb2YgdGhpcyBwYXRjaCB1c2luZyB0
+aGUgaDI2NF90aXZvX3NhbXBsZS50cyBzYW1wbGUgZnJvbQo+IGNvdmVyIGxldHRlciwgcGF0Y2gg
+My04IG11c3QgYmUgYXBwbGllZC4gV2l0aCB0aGlzIHBhdGNoIGFwcGxpZWQgdGhlIGdyZWVuCj4g
+Zm9vdGJhbGwgZmllbGQgd2lsbCBzdGF5IGdyZWVuLCB3aXRob3V0IHRoZSBwYXRjaCB0aGUgZmll
+bGQgd2lsbCBzaGlmdCBpbiBjb2xvcnMuCj4gCj4gWzFdIGh0dHBzOi8vZ2l0aHViLmNvbS9GRm1w
+ZWcvRkZtcGVnL2Jsb2IvbWFzdGVyL2xpYmF2Y29kZWMvaDI2NF9wcy5jI0wyOTktTDMwOAo+IFsy
+XSBodHRwczovL2dpdC5saW51eHR2Lm9yZy9tZWRpYV90cmVlLmdpdC90cmVlL2RyaXZlcnMvc3Rh
+Z2luZy9tZWRpYS9zdW54aS9jZWRydXMvY2VkcnVzX2gyNjQuYyNuMjMxCgpUaGFuayB5b3UsIEkn
+bGwgdHJ5IHRoaXMuCgpyZWdhcmRzClBoaWxpcHAKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1y
+b2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
