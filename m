@@ -2,65 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E5D0A7244
-	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Sep 2019 20:09:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74AFAA726A
+	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Sep 2019 20:17:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=atwydBYKYa+GbntddNE8UqOXrgLHjA3YPaeyBKD8ja4=; b=e+EJLAWCKuET/i
-	mGCmJb85VQxHjUABfsDA3HqwtpQEZQPsTNO2gCqfg+LvFH4KtHp2snpMcLwr6M1v+j35NFQLSRDCt
-	9gPbwA89XXqo1n+/orVrmusFe6DfbuHBiHpUF+dMgdHz2vs3Q1/DQd+TeZP55sZbTiOd4HYGh6usQ
-	8Sc0jlW0PPnyLZ9z0jwb5rcWGXUICX3hcE3CXGP69nqqFOIPU75n9HGhxyvXxrApxmIyQ3qrIJhws
-	6Rgs86gEhuYsa8C3TQLbUGWOl6izNq3Npn4GKlH06vpk6Y7ZKd0dOSRwrrPod/TL6jrqqhttPQjmt
-	aegOWPuDLuA1czVJ4BSg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=syfP3ngV0StGMp0/wGwLliBgu7Kj24zb4c5bIiOZcnA=; b=Lz5Y25uc0ITrk9
+	CmfbzxVzBMOSveEQ5jzfL4d2rptan/YakJXReA8X8SHJs3VpjPN+wjaJpuxobjBJEb0TIUmFALAae
+	UnH5QZGCC9dGEHNdUbP+YHL7ZVjZw0eb1a4wcXCoAbd1a0jlqNKIljHKwzpT8m3KG6aM/Aa/JH9M9
+	lPTf1kHRZHChx1g2NfLwdva9OT0z6cZFhQdT2f/ED7Ufz82L7aW/PWEorouD4hLcsvh88lj7bGxuC
+	+lysK7ZJuLfriFMrBCvZJ1TLBoATgtIVAZYp89C80nOB1k6yMdYkGpOnOZzOWGwqejO+bcGPS5wjt
+	8CDbxuaiMCkKZxfKxxcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5DEi-00075n-MH; Tue, 03 Sep 2019 18:09:00 +0000
-Received: from mailoutvs7.siol.net ([185.57.226.198] helo=mail.siol.net)
+	id 1i5DMu-0001m4-W5; Tue, 03 Sep 2019 18:17:29 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5DER-0006uZ-TS; Tue, 03 Sep 2019 18:08:46 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id A94315219C4;
- Tue,  3 Sep 2019 20:08:33 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id P2mZ8gzE8-O5; Tue,  3 Sep 2019 20:08:33 +0200 (CEST)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id E59FD521C1B;
- Tue,  3 Sep 2019 20:08:32 +0200 (CEST)
-Received: from jernej-laptop.localnet (cpe-86-58-59-25.static.triera.net
- [86.58.59.25]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Postfix) with ESMTPA id 5FE0D5219C4;
- Tue,  3 Sep 2019 20:08:28 +0200 (CEST)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH] drm: bridge/dw_hdmi: add audio sample channel status
- setting
-Date: Tue, 03 Sep 2019 20:08:28 +0200
-Message-ID: <19353031.SdOy5F5fmg@jernej-laptop>
-In-Reply-To: <d8a80ba5-dd2b-f84d-bbfc-9dd5ccbc26e9@baylibre.com>
-References: <20190903055103.134764-1-cychiang@chromium.org>
- <e1c3483c-baa6-c726-e547-fadf40d259f4@baylibre.com>
- <d8a80ba5-dd2b-f84d-bbfc-9dd5ccbc26e9@baylibre.com>
+ id 1i5DMs-0001lh-E9
+ for linux-rockchip@lists.infradead.org; Tue, 03 Sep 2019 18:17:28 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 5A40F28A0A2
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: linux-media@vger.kernel.org
+Subject: [PATCH 0/4] Enable Hantro G1 post-processor
+Date: Tue,  3 Sep 2019 15:17:07 -0300
+Message-Id: <20190903181711.7559-1-ezequiel@collabora.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_110844_114828_3AF34CA9 
-X-CRM114-Status: GOOD (  17.00  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190903_111726_610818_C38100BF 
+X-CRM114-Status: GOOD (  11.01  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.198 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,258 +58,77 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, kuninori.morimoto.gx@renesas.com,
- cain.cai@rock-chips.com, airlied@linux.ie, dri-devel@lists.freedesktop.org,
- dianders@chromium.org, a.hajda@samsung.com, Laurent.pinchart@ideasonboard.com,
- Yakir Yang <ykk@rock-chips.com>, sam@ravnborg.org,
- Cheng-Yi Chiang <cychiang@chromium.org>, zhengxing@rock-chips.com,
- linux-rockchip@lists.infradead.org, dgreid@chromium.org, tzungbi@chromium.org,
- Jonas Karlman <jonas@kwiboo.se>, jeffy.chen@rock-chips.com,
- eddie.cai@rock-chips.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, daniel@ffwll.ch, enric.balletbo@collabora.com,
- kuankuan.y@gmail.com
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
+ Tomasz Figa <tfiga@chromium.org>, linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>, Chris Healy <cphealy@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi!
+Hi all,
 
-Dne torek, 03. september 2019 ob 20:00:33 CEST je Neil Armstrong napisal(a):
-> Hi,
-> =
+This series enables the post-processor support available
+on the Hantro G1 VPU. The post-processor block can be
+pipelined with the decoder hardware, allowing to perform
+operations such as color conversion, scaling, rotation,
+cropping, among others.
 
-> Le 03/09/2019 =E0 11:53, Neil Armstrong a =E9crit :
-> > Hi,
-> > =
+The decoder hardware needs its own set of NV12 buffers
+(the native decoder format), and the post-processor is the
+owner of the CAPTURE buffers. This allows the application
+get processed (scaled, converted, etc) buffers, completely
+transparently.
 
-> > On 03/09/2019 07:51, Cheng-Yi Chiang wrote:
-> >> From: Yakir Yang <ykk@rock-chips.com>
-> >> =
+This feature is implemented by exposing other CAPTURE pixel
+formats to the application (ENUM_FMT). When the application
+sets a pixel format other than NV12, the driver will enable
+and use the post-processor transparently.
 
-> >> When transmitting IEC60985 linear PCM audio, we configure the
-> >> Audio Sample Channel Status information of all the channel
-> >> status bits in the IEC60958 frame.
-> >> Refer to 60958-3 page 10 for frequency, original frequency, and
-> >> wordlength setting.
-> >> =
+Patches 1 to 3 cleanup and organize the code to allow easier
+integration of the post-processor. Then patch 4 introduces
+the new pixel formats and enables the post-processor itself.
 
-> >> This fix the issue that audio does not come out on some monitors
-> >> (e.g. LG 22CV241)
-> >> =
+I am aware it's still early for v5.5, yet I'm posting this
+series to get feedback and allow others to tests.
+Also, keep in mind these patches are conflict with Jonas'
+recent series.
 
-> >> Signed-off-by: Yakir Yang <ykk@rock-chips.com>
-> >> Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
-> >> ---
-> >> =
+This is tested on RK3288 platforms with MPEG-2, VP8 and H264 streams,
+decoding to RGB and YUV-packed surfaces.
 
-> >>  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 59 +++++++++++++++++++++++
-> >>  drivers/gpu/drm/bridge/synopsys/dw-hdmi.h | 20 ++++++++
-> >>  2 files changed, 79 insertions(+)
-> >> =
+Thanks,
+Ezequiel
 
-> >> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> >> b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c index
-> >> bd65d0479683..34d46e25d610 100644
-> >> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> >> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> >> @@ -582,6 +582,63 @@ static unsigned int hdmi_compute_n(unsigned int
-> >> freq, unsigned long pixel_clk)>> =
+Ezequiel Garcia (4):
+  media: hantro: Simplify macroblock macros
+  media: hantro: Simplify buffer helpers
+  media: hantro: Add helper for the H264 motion vectors allocation
+  media: hantro: Support color conversion via post-processing
 
-> >>  	return n;
-> >>  =
+ drivers/staging/media/hantro/Makefile         |   1 +
+ drivers/staging/media/hantro/hantro.h         |  49 ++-
+ drivers/staging/media/hantro/hantro_drv.c     |  27 +-
+ .../staging/media/hantro/hantro_g1_h264_dec.c |   9 +-
+ .../media/hantro/hantro_g1_mpeg2_dec.c        |  14 +-
+ .../staging/media/hantro/hantro_g1_vp8_dec.c  |  13 +-
+ .../staging/media/hantro/hantro_h1_jpeg_enc.c |   4 +-
+ drivers/staging/media/hantro/hantro_h264.c    |  26 +-
+ drivers/staging/media/hantro/hantro_hw.h      |  15 +-
+ .../staging/media/hantro/hantro_postproc.c    | 316 ++++++++++++++++++
+ drivers/staging/media/hantro/hantro_v4l2.c    |  25 +-
+ drivers/staging/media/hantro/rk3288_vpu_hw.c  |  37 +-
+ drivers/staging/media/hantro/rk3399_vpu_hw.c  |  12 +-
+ .../media/hantro/rk3399_vpu_hw_jpeg_enc.c     |   4 +-
+ .../media/hantro/rk3399_vpu_hw_mpeg2_dec.c    |  11 +-
+ .../media/hantro/rk3399_vpu_hw_vp8_dec.c      |  12 +-
+ 16 files changed, 483 insertions(+), 92 deletions(-)
+ create mode 100644 drivers/staging/media/hantro/hantro_postproc.c
 
-> >>  }
-> >> =
-
-> >> +static void hdmi_set_schnl(struct dw_hdmi *hdmi)
-> >> +{
-> >> +	u8 aud_schnl_samplerate;
-> >> +	u8 aud_schnl_8;
-> >> +
-> >> +	/* These registers are on RK3288 using version 2.0a. */
-> >> +	if (hdmi->version !=3D 0x200a)
-> >> +		return;
-> > =
-
-> > Are these limited to the 2.0a version *in* RK3288, or 2.0a version on a=
-ll
-> > SoCs ?
-> =
-
-> After investigations, Amlogic sets these registers on their 2.0a version
-> aswell, and Jernej (added in Cc) reported me Allwinner sets them on their
-> < 2.0a and > 2.0a IPs versions.
-> =
-
-> Can you check on the Rockchip IP versions in RK3399 ?
-> =
-
-> For reference, the HDMI 1.4a IP version allwinner setups is:
-> https://github.com/Allwinner-Homlet/H3-BSP4.4-linux/blob/master/drivers/v=
-ide
-> o/fbdev/sunxi/disp2/hdmi/hdmi_bsp_sun8iw7.c#L531-L539 (registers a
-> "scrambled" but a custom bit can reset to the original mapping, 0x1066 ...
-> 0x106f)
-
-For easier reading, here is similar, but annotated version: http://ix.io/1U=
-b6
-Check function bsp_hdmi_audio().
-
-Unless there is a special reason, you can just remove that check.
-
-Best regards,
-Jernej
-
-> =
-
-> Neil
-> =
-
-> >> +
-> >> +	switch (hdmi->sample_rate) {
-> >> +	case 32000:
-> >> +		aud_schnl_samplerate =3D HDMI_FC_AUDSCHNLS7_SMPRATE_32K;
-> >> +		break;
-> >> +	case 44100:
-> >> +		aud_schnl_samplerate =3D HDMI_FC_AUDSCHNLS7_SMPRATE_44K1;
-> >> +		break;
-> >> +	case 48000:
-> >> +		aud_schnl_samplerate =3D HDMI_FC_AUDSCHNLS7_SMPRATE_48K;
-> >> +		break;
-> >> +	case 88200:
-> >> +		aud_schnl_samplerate =3D HDMI_FC_AUDSCHNLS7_SMPRATE_88K2;
-> >> +		break;
-> >> +	case 96000:
-> >> +		aud_schnl_samplerate =3D HDMI_FC_AUDSCHNLS7_SMPRATE_96K;
-> >> +		break;
-> >> +	case 176400:
-> >> +		aud_schnl_samplerate =3D =
-
-HDMI_FC_AUDSCHNLS7_SMPRATE_176K4;
-> >> +		break;
-> >> +	case 192000:
-> >> +		aud_schnl_samplerate =3D HDMI_FC_AUDSCHNLS7_SMPRATE_192K;
-> >> +		break;
-> >> +	case 768000:
-> >> +		aud_schnl_samplerate =3D HDMI_FC_AUDSCHNLS7_SMPRATE_768K;
-> >> +		break;
-> >> +	default:
-> >> +		dev_warn(hdmi->dev, "Unsupported audio sample rate (%u)
-\n",
-> >> +			 hdmi->sample_rate);
-> >> +		return;
-> >> +	}
-> >> +
-> >> +	/* set channel status register */
-> >> +	hdmi_modb(hdmi, aud_schnl_samplerate, =
-
-HDMI_FC_AUDSCHNLS7_SMPRATE_MASK,
-> >> +		  HDMI_FC_AUDSCHNLS7);
-> >> +
-> >> +	/*
-> >> +	 * Set original frequency to be the same as frequency.
-> >> +	 * Use one-complement value as stated in IEC60958-3 page 13.
-> >> +	 */
-> >> +	aud_schnl_8 =3D (~aud_schnl_samplerate) <<
-> >> +			HDMI_FC_AUDSCHNLS8_ORIGSAMPFREQ_OFFSET;
-> >> +
-> >> +	/* This means word length is 16 bit. Refer to IEC60958-3 page 12. =
-
-*/
-> >> +	aud_schnl_8 |=3D 2 << HDMI_FC_AUDSCHNLS8_WORDLEGNTH_OFFSET;
-> >> +
-> >> +	hdmi_writeb(hdmi, aud_schnl_8, HDMI_FC_AUDSCHNLS8);
-> >> +}
-> >> +
-> >> =
-
-> >>  static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
-> >>  =
-
-> >>  	unsigned long pixel_clk, unsigned int sample_rate)
-> >>  =
-
-> >>  {
-> >> =
-
-> >> @@ -620,6 +677,8 @@ static void hdmi_set_clk_regenerator(struct dw_hdmi
-> >> *hdmi,>> =
-
-> >>  	hdmi->audio_cts =3D cts;
-> >>  	hdmi_set_cts_n(hdmi, cts, hdmi->audio_enable ? n : 0);
-> >>  	spin_unlock_irq(&hdmi->audio_lock);
-> >> =
-
-> >> +
-> >> +	hdmi_set_schnl(hdmi);
-> >> =
-
-> >>  }
-> >>  =
-
-> >>  static void hdmi_init_clk_regenerator(struct dw_hdmi *hdmi)
-> >> =
-
-> >> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
-> >> b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h index
-> >> 6988f12d89d9..619ebc1c8354 100644
-> >> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
-> >> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
-> >> @@ -158,6 +158,17 @@
-> >> =
-
-> >>  #define HDMI_FC_SPDDEVICEINF                    0x1062
-> >>  #define HDMI_FC_AUDSCONF                        0x1063
-> >>  #define HDMI_FC_AUDSSTAT                        0x1064
-> >> =
-
-> >> +#define HDMI_FC_AUDSV                           0x1065
-> >> +#define HDMI_FC_AUDSU                           0x1066
-> >> +#define HDMI_FC_AUDSCHNLS0                      0x1067
-> >> +#define HDMI_FC_AUDSCHNLS1                      0x1068
-> >> +#define HDMI_FC_AUDSCHNLS2                      0x1069
-> >> +#define HDMI_FC_AUDSCHNLS3                      0x106a
-> >> +#define HDMI_FC_AUDSCHNLS4                      0x106b
-> >> +#define HDMI_FC_AUDSCHNLS5                      0x106c
-> >> +#define HDMI_FC_AUDSCHNLS6                      0x106d
-> >> +#define HDMI_FC_AUDSCHNLS7                      0x106e
-> >> +#define HDMI_FC_AUDSCHNLS8                      0x106f
-> >> =
-
-> >>  #define HDMI_FC_DATACH0FILL                     0x1070
-> >>  #define HDMI_FC_DATACH1FILL                     0x1071
-> >>  #define HDMI_FC_DATACH2FILL                     0x1072
-> >> =
-
-> >> @@ -706,6 +717,15 @@ enum {
-> >> =
-
-> >>  /* HDMI_FC_AUDSCHNLS7 field values */
-> >>  =
-
-> >>  	HDMI_FC_AUDSCHNLS7_ACCURACY_OFFSET =3D 4,
-> >>  	HDMI_FC_AUDSCHNLS7_ACCURACY_MASK =3D 0x30,
-> >> =
-
-> >> +	HDMI_FC_AUDSCHNLS7_SMPRATE_MASK =3D 0x0f,
-> >> +	HDMI_FC_AUDSCHNLS7_SMPRATE_192K =3D 0xe,
-> >> +	HDMI_FC_AUDSCHNLS7_SMPRATE_176K4 =3D 0xc,
-> >> +	HDMI_FC_AUDSCHNLS7_SMPRATE_96K =3D 0xa,
-> >> +	HDMI_FC_AUDSCHNLS7_SMPRATE_768K =3D 0x9,
-> >> +	HDMI_FC_AUDSCHNLS7_SMPRATE_88K2 =3D 0x8,
-> >> +	HDMI_FC_AUDSCHNLS7_SMPRATE_32K =3D 0x3,
-> >> +	HDMI_FC_AUDSCHNLS7_SMPRATE_48K =3D 0x2,
-> >> +	HDMI_FC_AUDSCHNLS7_SMPRATE_44K1 =3D 0x0,
-> >> =
-
-> >>  /* HDMI_FC_AUDSCHNLS8 field values */
-> >>  =
-
-> >>  	HDMI_FC_AUDSCHNLS8_ORIGSAMPFREQ_MASK =3D 0xf0,
-
-
-
+-- 
+2.22.0
 
 
 _______________________________________________
