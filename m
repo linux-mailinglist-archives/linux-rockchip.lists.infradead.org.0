@@ -2,70 +2,84 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33020A7D8F
-	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Sep 2019 10:21:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A18FA7EE4
+	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Sep 2019 11:10:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M76peNxmOhjc+MTn8/xmbUgPQSFnF8kp9GJiXbuZoJM=; b=Xf175zIJjhzC0e
-	8lLDbcDGootKGE+YLOsfiN03uiRjO3qMzW2b+mKwbn2epVk6xZUQMdKt7/IR7TdZYdOV++GH1dAWj
-	3NHRKHZ1w8IXA0y3mP4h6W1t7AGGgPnzV8DRQGAhR2C1zgWUGPjZTo6jUd0PQyykWBKgQlhH9HFoc
-	LF9r024VGaUB/qcI1yKhUMynY86mo2eN5/n2N2kkYrKZRpchcxMr+G6YVeJz++xFWQ1iY5LxcObx0
-	QgXQ7hhcBXPjHAYONV90XjYj6R8Une9rhdFjRVsPPc5g5bY72MeRoJHJNncE0OKuwLs8K97Z/QmXb
-	eZgEjHUveFL0esdJ/jeg==;
+	List-Owner; bh=4XVjXFD1cehoBvIgas0XYVvTTLQvhGuUoTBiC0NEqkc=; b=XIvKKTrjohtvBq
+	ql6fNil9qBYLxnLjvS2L8ke97PUEc1CNFF/jxWVDU17ADt2UR5PC2+J8alLhgyUQZkqiYZ4TaqETY
+	Lfwd87iuF61etog7RraDm0aPFFwGEJD57ZRZcc1R9HoFqoNU7mC2tIJoFK484+nHK4gLxLChHrKy3
+	Pj3kH0GyBhEY1kQRaKPagQqTk/dISnOf07dXlx1g73I5PgFe93y0ll7HEEIi+Q9/wiSks/8lvBtTa
+	xAfDWdTaQiGBsFuvUpeEqDVNvJKketcFqxcUAJAwqh73tC/5zLYKARBXSpUarxQfue/bRmVM91LaI
+	wENGmcSEXu0Fi1aNHZHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5QY3-0002Dq-5R; Wed, 04 Sep 2019 08:21:51 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1i5RIl-0005KZ-Hu; Wed, 04 Sep 2019 09:10:07 +0000
+Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5QXx-0002Bt-FN
- for linux-rockchip@lists.infradead.org; Wed, 04 Sep 2019 08:21:47 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1i5QXs-0003ro-FB; Wed, 04 Sep 2019 10:21:40 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1i5QXq-0007xf-0D; Wed, 04 Sep 2019 10:21:38 +0200
-Date: Wed, 4 Sep 2019 10:21:37 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Doug Anderson <dianders@chromium.org>
-Subject: Re: [PATCH v3 5/6] pwm: fsl-ftm: Don't update the state for the
- caller of pwm_apply_state()
-Message-ID: <20190904082137.7rro26fh4cankej5@pengutronix.de>
-References: <20190824153707.13746-6-uwe@kleine-koenig.org>
- <CAD=FV=X8kVU_zr69aKe-+GkAQh-tDwVf8tFogKve3s5O5ndF-g@mail.gmail.com>
- <20190902142709.wxrjsfzorozgeiuh@pengutronix.de>
- <CAD=FV=XFTuixKL-VBv-QObiO=Jg43i6W0enprLgXQ0U8=9C49A@mail.gmail.com>
- <20190903184800.2fmmvwyzbwbsaf6y@pengutronix.de>
- <CAD=FV=XOyayzv6N9Ky8m2ffXe4UzUijzrL8JCMZC3K+MEzaRFw@mail.gmail.com>
- <20190903201550.gxcyed5svtq33ev2@pengutronix.de>
- <CAD=FV=WjRiaNLJQJ25OeNSpY455H-ev8g3iZN24UXQtk3uXhtA@mail.gmail.com>
- <20190903210740.qgyvxxmsdg5dzaby@pengutronix.de>
- <CAD=FV=VDj8pCmkBd70buQNVmiv56OUEVWfRJALYgtZcESvPXdw@mail.gmail.com>
+ id 1i5RIg-0004ml-L6
+ for linux-rockchip@lists.infradead.org; Wed, 04 Sep 2019 09:10:05 +0000
+Received: by mail-vk1-xa43.google.com with SMTP id x20so4213788vkd.6
+ for <linux-rockchip@lists.infradead.org>; Wed, 04 Sep 2019 02:09:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=/7UND9SOq0N/Mu7NFRIefvWNsoxRo00bN5EWVx1PPmg=;
+ b=Mlg5W6F0m6BbiO7bLUIcb9iudFcat5z/DX3B7/G8pCGiW9ROsclogeu2jIRlvHzM/d
+ IXAxYvgqLjxSbY15XuPpr7HHx82st/A8TT7KGrkwiAwb718KqM9yKz4SKhMnx/QM2w1U
+ SMLB3tK9KTJrgBY5A+s3bOjaPYoMoxO05sCsY=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=/7UND9SOq0N/Mu7NFRIefvWNsoxRo00bN5EWVx1PPmg=;
+ b=cQTM4IzjiuEjYgst/6bGZKZ95gxQNnR7WkbsfirYcVfTOoS9M6V7nu3vP9qp4dxkDP
+ RbF7Wstn14dEkRprP2aj4arz/749da2ghWyBZQGMC6/wdRi7xQkOJHRftQs5NuMKzBFf
+ 7FJ2xQKyO3Fwlp6KcFZfhMNUGycT5aYwdNG3nV/XO0pyfmS4dxRvjbw6vXGGqoA+1gWt
+ 38YET55PojVEiEDOlbl9ef4Ep64xqrBIyWUcsK0EP1yAsJpBio5i1BPQ/tN+tkH6LwXq
+ 4vTVEvPwSRMVYTjfEGMyTzzaZw7m223ecM8wpsw17Fvv71ozjqWC087Vo30SLCUzLsgB
+ ZgLw==
+X-Gm-Message-State: APjAAAV13H7KyX9DGUu9XAn99TlaAGOzEJG6dKvQbMLqEtxS5cgHY6to
+ bVjYzlqTB3qe7kUztMqXgpqzlP24S3kfq7sw5TP0yQ==
+X-Google-Smtp-Source: APXvYqxyUrMUAEkf02GxMqWIIOzfSuvgtrLWM2sSGK16hyG7HzhEOSHPAFZCD4s0FpvvQcKVYvJ3YZLL0+Bj3C67BUA=
+X-Received: by 2002:ac5:c4f7:: with SMTP id b23mr14767555vkl.17.1567588196444; 
+ Wed, 04 Sep 2019 02:09:56 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAD=FV=VDj8pCmkBd70buQNVmiv56OUEVWfRJALYgtZcESvPXdw@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-rockchip@lists.infradead.org
+References: <20190903055103.134764-1-cychiang@chromium.org>
+ <e1c3483c-baa6-c726-e547-fadf40d259f4@baylibre.com>
+In-Reply-To: <e1c3483c-baa6-c726-e547-fadf40d259f4@baylibre.com>
+From: Cheng-yi Chiang <cychiang@chromium.org>
+Date: Wed, 4 Sep 2019 17:09:29 +0800
+Message-ID: <CAFv8NwKHZM+zTu7GF_J0Xk6hubA2JK4cCsdhsDPOGk=3rnbCZw@mail.gmail.com>
+Subject: Re: [PATCH] drm: bridge/dw_hdmi: add audio sample channel status
+ setting
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_012145_677599_0FB3E5D9 
-X-CRM114-Status: GOOD (  39.60  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190904_021002_715970_52E08E0D 
+X-CRM114-Status: GOOD (  23.11  )
+X-Spam-Score: -7.4 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-7.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,187 +92,195 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm <linux-pwm@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Patrick Havelange <patrick.havelange@essensium.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
- Sascha Hauer <kernel@pengutronix.de>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: "moderated list:SOUND - SOC LAYER / DYNAMIC AUDIO POWER MANAGEM..."
+ <alsa-devel@alsa-project.org>, tzungbi@chromium.org,
+ kuninori.morimoto.gx@renesas.com, Xing Zheng <zhengxing@rock-chips.com>,
+ cain.cai@rock-chips.com, David Airlie <airlied@linux.ie>, sam@ravnborg.org,
+ Jeffy Chen <jeffy.chen@rock-chips.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
+ Doug Anderson <dianders@chromium.org>, Andrzej Hajda <a.hajda@samsung.com>,
+ =?UTF-8?B?6JSh5p6r?= <eddie.cai@rock-chips.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Yakir Yang <ykk@rock-chips.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ linux-rockchip@lists.infradead.org, Dylan Reid <dgreid@chromium.org>,
+ kuankuan.y@gmail.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Sep 03, 2019 at 02:48:54PM -0700, Doug Anderson wrote:
+Hi,
+
+On Tue, Sep 3, 2019 at 5:53 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
 > Hi,
-> =
-
-> On Tue, Sep 3, 2019 at 2:07 PM Uwe Kleine-K=F6nig
-> <u.kleine-koenig@pengutronix.de> wrote:
+>
+> On 03/09/2019 07:51, Cheng-Yi Chiang wrote:
+> > From: Yakir Yang <ykk@rock-chips.com>
 > >
-> > On Tue, Sep 03, 2019 at 01:50:27PM -0700, Doug Anderson wrote:
-> > > Hi,
-> > >
-> > > On Tue, Sep 3, 2019 at 1:15 PM Uwe Kleine-K=F6nig
-> > > <u.kleine-koenig@pengutronix.de> wrote:
-> > > >
-> > > > On Tue, Sep 03, 2019 at 12:35:25PM -0700, Doug Anderson wrote:
-> > > > > Hi,
-> > > > >
-> > > > > On Tue, Sep 3, 2019 at 11:48 AM Uwe Kleine-K=F6nig
-> > > > > <u.kleine-koenig@pengutronix.de> wrote:
-> > > > > >
-> > > > > > Hello,
-> > > > > >
-> > > > > > On Tue, Sep 03, 2019 at 09:54:37AM -0700, Doug Anderson wrote:
-> > > > > > > On Mon, Sep 2, 2019 at 7:27 AM Uwe Kleine-K=F6nig
-> > > > > > > <u.kleine-koenig@pengutronix.de> wrote:
-> > > > > > > > On Fri, Aug 30, 2019 at 10:39:16AM -0700, Doug Anderson wro=
-te:
-> > > > > > > > > On Sat, Aug 24, 2019 at 8:37 AM Uwe Kleine-K=F6nig <uwe@k=
-leine-koenig.org> wrote:
-> > > > > > > > > >
-> > > > > > > > > > The pwm-fsl-ftm driver is one of only three PWM drivers=
- which updates
-> > > > > > > > > > the state for the caller of pwm_apply_state(). This mig=
-ht have
-> > > > > > > > > > surprising results if the caller reuses the values expe=
-cting them to
-> > > > > > > > > > still represent the same state.
-> > > > > > > > > >
-> > > > > > > > > > Signed-off-by: Uwe Kleine-K=F6nig <uwe@kleine-koenig.or=
-g>
-> > > > > > > > > > ---
-> > > > > > > > > >  drivers/pwm/pwm-fsl-ftm.c | 4 ----
-> > > > > > > > > >  1 file changed, 4 deletions(-)
-> > > > > > > > >
-> > > > > > > > > Presumably this patch could break something since the pwm=
--fsl-ftm
-> > > > > > > > > driver doesn't appear to implement the get_state() functi=
-on.  ...or
-> > > > > > > > > did I miss it?
-> > > > > > > >
-> > > > > > > > I don't expect breakage. We have more than 50 pwm drivers a=
-nd only three
-> > > > > > > > of them made use of adapting the passed state. So unless yo=
-u do
-> > > > > > > > something special with the PWM (i.e. more than backlight, L=
-ED or fan
-> > > > > > > > control) I don't think a consumer might care. But it might =
-well be that
-> > > > > > > > I miss something so feel free to prove me wrong.
-> > > > > > >
-> > > > > > > I don't have this hardware so I can't prove you wrong.  ...but
-> > > > > > > presumably someone added the code to return the state on purp=
-ose?
-> > > > > > >
-> > > > > > > Maybe you could implement get_state() for this driver in your=
- series?
-> > > > > >
-> > > > > > Sure, I could. But I don't have hardware either and so I'm not =
-in a
-> > > > > > better position than anybody else on this list.
-> > > > > >
-> > > > > > I suggest to apply as is during the merge window, and let affec=
-ted
-> > > > > > user report problems (or patches) if there really is an issue.
-> > > > > > Guessing what people might suffer from and trying to cure this =
-with
-> > > > > > untested patches won't help I think.
-> > > > >
-> > > > > I suppose it's not up to me, but I would rather have a patch that
-> > > > > attempts to keep things working like they did before rather than =
-one
-> > > > > that is known to change behavior.  Even worse is that your patch
-> > > > > description doesn't mention this functionality change at all.
-> > > >
-> > > > I suggest to add
-> > > >
-> > > >         As the driver doesn't provide a .get_state() callback it is
-> > > >         expected that this changes behaviour slightly as pwm_get_st=
-ate()
-> > > >         will yield the last set instead of the last implemented set=
-ting.
-> > > >
-> > > > to the commit log to fix this.
-> > > >
-> > > > > I will also note that not everyone does a deep test of all
-> > > > > functionality during every kernel merge window.  ...so your chang=
-e in
-> > > > > functionality certain has a pretty high chance of remaining broke=
-n for
-> > > > > a while.
-> > > >
-> > > > I don't expect any real breakage. The changed behaviour only affects
-> > > > users of pwm_get_state() that is called after pwm_apply_state().
-> > > >
-> > > > > In addition if a PWM is used for something like a PWM
-> > > > > regulator then subtle changes can cause totally non-obvious break=
-ages,
-> > > > > maybe adjusting regulators by a very small percentage.
-> > > >
-> > > > So for drivers/regulator/pwm-regulator.c this affects the .get_volt=
-age()
-> > > > call only. Note that .set_voltage() does call pwm_get_state() but
-> > > > doesn't use the result. I don't see how my change would affect the
-> > > > configuration written to the PWM registers when the PWM regulator d=
-river
-> > > > is its user. So if you want to convince me that the PWM regulator i=
-s one
-> > > > of the potentially affected consumers, you have to work a bit harde=
-r.
-> > > > :-)
-> > >
-> > > Prior to your patch, pwm_apply_state() would call the ->apply()
-> > > function, right?  That would modify the state.  Then pwm_apply_state()
-> > > would store the state (after it had been modified) into pwm->state.
-> > > All future calls to pwm_get_state() would return the modified state.
-> > >
-> > > ...this means that the call to pwm_get_state() in
-> > > pwm_regulator_get_voltage() would return the actual hardware state.
-> > >
-> > > After your patch series pwm_get_state() will not return the actual
-> > > hardware state for "pwm-fsl-ftm.c", it will return the state that was
-> > > programmed.
-> > >
-> > > While pwm_set_voltage() will not necessarily be affected, future calls
-> > > to pwm_regulator_get_voltage() could be affected.  Unless you are
-> > > asserting that 100% of the calls to pwm_get_voltage() cosmetic.
-> > >
-> > >
-> > > Please correct anything I got wrong there.
+> > When transmitting IEC60985 linear PCM audio, we configure the
+> > Audio Sample Channel Status information of all the channel
+> > status bits in the IEC60958 frame.
+> > Refer to 60958-3 page 10 for frequency, original frequency, and
+> > wordlength setting.
 > >
-> > I think this is all true. The key question here is then: Who calls the
-> > .get_voltage() callback and cares about the result? Yes, it changes a
-> > few files in sysfs but apart from that?
-> =
+> > This fix the issue that audio does not come out on some monitors
+> > (e.g. LG 22CV241)
+> >
+> > Signed-off-by: Yakir Yang <ykk@rock-chips.com>
+> > Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+> > ---
+> >  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 59 +++++++++++++++++++++++
+> >  drivers/gpu/drm/bridge/synopsys/dw-hdmi.h | 20 ++++++++
+> >  2 files changed, 79 insertions(+)
+> >
+> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> > index bd65d0479683..34d46e25d610 100644
+> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> > @@ -582,6 +582,63 @@ static unsigned int hdmi_compute_n(unsigned int freq, unsigned long pixel_clk)
+> >       return n;
+> >  }
+> >
+> > +static void hdmi_set_schnl(struct dw_hdmi *hdmi)
+> > +{
+> > +     u8 aud_schnl_samplerate;
+> > +     u8 aud_schnl_8;
+> > +
+> > +     /* These registers are on RK3288 using version 2.0a. */
+> > +     if (hdmi->version != 0x200a)
+> > +             return;
+>
+> Are these limited to the 2.0a version *in* RK3288, or 2.0a version on all
+> SoCs ?
+>
 
-> There are lots of drivers that call get_voltage() for things other
-> than sysfs, but without auditing each one I can't say if any of them
-> would change behavior in a way that would matter.
+In the original patch by Yakir,
 
-In my book it is ok to do such a change. The driver continues to compile
-just fine, it isn't knowingly broken. And if someone finds a regression
-we can fix it then and have someone who cares for testing.
+https://lore.kernel.org/patchwork/patch/539653/   (sorry, I should
+have added this link in the "after the cut" note)
 
-And even if a regulator changes its behaviour slightly and breaks in a
-hardly detectable way, I would bet that in 95% of the cases it only
-worked by chance before. And I hope for the remaining 5% who seem to
-care about correctness, that the reverify on a kernel upgrade.
+The fix is limited to version 2.0.
+Since I am only testing on RK3288 with 2.0a, I change the check to 2.0a only.
+I can not test 2.0a version on other SoCs.
+The databook I have at hand is 2.0a (not specific to RK3288) so I
+think all 2.0a should have this register.
 
-Yes, there might be some cases falling through the cracks, but if we
-start to demand this kind of care from people who work on generic code
-(here: PWM core) we will be stuck for a long time and scare people with
-motivation away. So the lesser evil in my eyes is to accept that not all
-corner cases might be handled because they are unknown.
+As for other version like version 1.3 on iMX6, there is no such
+register, as stated by Russell
 
-Best regards
-Uwe
+http://lkml.iu.edu/hypermail/linux/kernel/1501.3/06268.html.
 
--- =
+So at least we should check the version.
+Maybe we can set the criteria as version 2.0 or above to make it a safe patch ?
+If there is the same need on other SoC with version < 2.0, it can be
+added later.
+Presumably, there will be databook of that version to help confirming
+this setting.
 
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+Thanks!
+> > +
+> > +     switch (hdmi->sample_rate) {
+> > +     case 32000:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_32K;
+> > +             break;
+> > +     case 44100:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_44K1;
+> > +             break;
+> > +     case 48000:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_48K;
+> > +             break;
+> > +     case 88200:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_88K2;
+> > +             break;
+> > +     case 96000:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_96K;
+> > +             break;
+> > +     case 176400:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_176K4;
+> > +             break;
+> > +     case 192000:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_192K;
+> > +             break;
+> > +     case 768000:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_768K;
+> > +             break;
+> > +     default:
+> > +             dev_warn(hdmi->dev, "Unsupported audio sample rate (%u)\n",
+> > +                      hdmi->sample_rate);
+> > +             return;
+> > +     }
+> > +
+> > +     /* set channel status register */
+> > +     hdmi_modb(hdmi, aud_schnl_samplerate, HDMI_FC_AUDSCHNLS7_SMPRATE_MASK,
+> > +               HDMI_FC_AUDSCHNLS7);
+> > +
+> > +     /*
+> > +      * Set original frequency to be the same as frequency.
+> > +      * Use one-complement value as stated in IEC60958-3 page 13.
+> > +      */
+> > +     aud_schnl_8 = (~aud_schnl_samplerate) <<
+> > +                     HDMI_FC_AUDSCHNLS8_ORIGSAMPFREQ_OFFSET;
+> > +
+> > +     /* This means word length is 16 bit. Refer to IEC60958-3 page 12. */
+> > +     aud_schnl_8 |= 2 << HDMI_FC_AUDSCHNLS8_WORDLEGNTH_OFFSET;
+> > +
+> > +     hdmi_writeb(hdmi, aud_schnl_8, HDMI_FC_AUDSCHNLS8);
+> > +}
+> > +
+> >  static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
+> >       unsigned long pixel_clk, unsigned int sample_rate)
+> >  {
+> > @@ -620,6 +677,8 @@ static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
+> >       hdmi->audio_cts = cts;
+> >       hdmi_set_cts_n(hdmi, cts, hdmi->audio_enable ? n : 0);
+> >       spin_unlock_irq(&hdmi->audio_lock);
+> > +
+> > +     hdmi_set_schnl(hdmi);
+> >  }
+> >
+> >  static void hdmi_init_clk_regenerator(struct dw_hdmi *hdmi)
+> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
+> > index 6988f12d89d9..619ebc1c8354 100644
+> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
+> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
+> > @@ -158,6 +158,17 @@
+> >  #define HDMI_FC_SPDDEVICEINF                    0x1062
+> >  #define HDMI_FC_AUDSCONF                        0x1063
+> >  #define HDMI_FC_AUDSSTAT                        0x1064
+> > +#define HDMI_FC_AUDSV                           0x1065
+> > +#define HDMI_FC_AUDSU                           0x1066
+> > +#define HDMI_FC_AUDSCHNLS0                      0x1067
+> > +#define HDMI_FC_AUDSCHNLS1                      0x1068
+> > +#define HDMI_FC_AUDSCHNLS2                      0x1069
+> > +#define HDMI_FC_AUDSCHNLS3                      0x106a
+> > +#define HDMI_FC_AUDSCHNLS4                      0x106b
+> > +#define HDMI_FC_AUDSCHNLS5                      0x106c
+> > +#define HDMI_FC_AUDSCHNLS6                      0x106d
+> > +#define HDMI_FC_AUDSCHNLS7                      0x106e
+> > +#define HDMI_FC_AUDSCHNLS8                      0x106f
+> >  #define HDMI_FC_DATACH0FILL                     0x1070
+> >  #define HDMI_FC_DATACH1FILL                     0x1071
+> >  #define HDMI_FC_DATACH2FILL                     0x1072
+> > @@ -706,6 +717,15 @@ enum {
+> >  /* HDMI_FC_AUDSCHNLS7 field values */
+> >       HDMI_FC_AUDSCHNLS7_ACCURACY_OFFSET = 4,
+> >       HDMI_FC_AUDSCHNLS7_ACCURACY_MASK = 0x30,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_MASK = 0x0f,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_192K = 0xe,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_176K4 = 0xc,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_96K = 0xa,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_768K = 0x9,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_88K2 = 0x8,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_32K = 0x3,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_48K = 0x2,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_44K1 = 0x0,
+> >
+> >  /* HDMI_FC_AUDSCHNLS8 field values */
+> >       HDMI_FC_AUDSCHNLS8_ORIGSAMPFREQ_MASK = 0xf0,
+> >
+>
 
 _______________________________________________
 Linux-rockchip mailing list
