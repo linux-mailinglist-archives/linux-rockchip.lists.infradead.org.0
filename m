@@ -2,59 +2,92 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BE6FA83BB
-	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Sep 2019 15:28:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1162DA861E
+	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Sep 2019 17:44:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8qDUJGdp3zHTTg0B4WJOYi7dXSxYWStRlN57e8u2W2o=; b=Gso3rItdPYP2He
-	M0j1O5aGoff2dvAaxud7Cvtix9O7KGNBXmdyMsAX+E+zY1vBH+d0sqz4al2mLKWDAOxU98hk+2gMb
-	XkhhPYPTFGR6r6GppAUnjL5gJBelMx3WWKLmBY5o1Rv3Rzqn9dAx8GVxaJYNV7LgVDIpdr1LcxE9T
-	izMkBJC+iN2EjFbMEgrXn+RT+I82Eu/bQmrYuCgmlIVq2hDgalD9jP597NM1ONU6KVjeY9N6c+KNg
-	vPYtGujGFtdYnRUWaJgcDJauSsM/Q8aqGtC3r/1fFmlianSmVqa3OwZDq2x/gncTUH8y2oouY+yDw
-	yRxgo1e+1Y/00O2bmqmA==;
+	List-Owner; bh=Ri9xxTpoBstyDVZgvAwzX92on/CPiNhSDhgXiqX2GMo=; b=s9ZsBghgFWYZWG
+	84u3Jja0n0QJaxSPoP800sXXo/ICkhKv0Y6SGyPKFIgL79GmtvOOvq5mIHlx5iqeuCkmG7fGqoJcO
+	LoY+yYwpj9PBUqMT6R1P/IsCkPavwE2oU+LMvQOVXgezwgx1Ng8Xvbkvt5QAiykR0xJihZGqrTWXA
+	FqferlQCLjSMe3fHykeQU26g29XlnOCGa4qeHEVDAIiqsF+9TdZSGgzhiP52R/p2sqhIVLjeOPFj6
+	hm8GESvMwcOf0e35DqepRMiIjS3sMS3xklCcH+3cJdGP90crLZVj2IfUvbkD/ZizujYjPOVK8HsF6
+	IKsSAk+AFU9dKhkDQ9Gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5VKp-00085b-RZ; Wed, 04 Sep 2019 13:28:31 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1i5XSG-0004md-Tr; Wed, 04 Sep 2019 15:44:21 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5VKn-000857-A9
- for linux-rockchip@lists.infradead.org; Wed, 04 Sep 2019 13:28:30 +0000
-Received: from lupine.hi.pengutronix.de
- ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1i5VKj-0006iw-SU; Wed, 04 Sep 2019 15:28:25 +0200
-Message-ID: <1567603704.3041.10.camel@pengutronix.de>
-Subject: Re: [PATCH for 5.4] media: hantro: Fix s_fmt for dynamic resolution
- changes
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
-Date: Wed, 04 Sep 2019 15:28:24 +0200
-In-Reply-To: <37bbd1b8ee7bb82c75aefb675e0c3ddd955dde0b.camel@collabora.com>
-References: <20190903171256.25052-1-ezequiel@collabora.com>
- <1567592011.3041.1.camel@pengutronix.de>
- <37bbd1b8ee7bb82c75aefb675e0c3ddd955dde0b.camel@collabora.com>
-X-Mailer: Evolution 3.22.6-1+deb9u2 
-Mime-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-rockchip@lists.infradead.org
+ id 1i5XSD-0004m7-AD
+ for linux-rockchip@lists.infradead.org; Wed, 04 Sep 2019 15:44:18 +0000
+Received: by mail-io1-xd41.google.com with SMTP id n197so43263586iod.9
+ for <linux-rockchip@lists.infradead.org>; Wed, 04 Sep 2019 08:44:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=TH7Dg9ljf2Vj64HDPlPhmHR1vea0MJI1LXKjcd+873A=;
+ b=eTP8Lj0BXh8sZhX3RO0A6HzDQf4KNS0yeIXIPuARLp0MohKONAlQ3xxDrzBBeQZ0ns
+ PLccEPHtAm0Nc2vs5JrgL/y0Jpu5fYE9XW5X1vla8ude8uQPpMtEF2fL24cR+yatfBLC
+ CxV9CcHgMcZDh7APyBb/UNBW4fVk3jzrzOT4Q=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=TH7Dg9ljf2Vj64HDPlPhmHR1vea0MJI1LXKjcd+873A=;
+ b=lzQHAQp4iu+J3wu63k4C8+wS9VXz+meZ6rykmqRl5bSCm3ppnj6Q9jgXaByfJSBWI3
+ PnpFYit8kxlY9qfkW1dbFQrp25Ra7mqrU67Cay8I7hvp9mWA13UWzcdLOvoNg0hUSPpE
+ R6nKUUpqVGgmK8v6WAiNRuJpp0Y5RQAWz2V7CcKrvBOcoeTNv/K6Sa4ahBskLUPRSg+t
+ DsgQgr8RDOanuLHVqF9v7jxYSh0i9Ln6jsYT0l0zEXNKXng8KCdCmPXrddcGkeuLlKJ7
+ XURT/6CfxT8OWu2PQ1WfjSgUdZB2Q9GB1Dr2A4jKDIep2H+DF4dRQVe2TpWF+RLD7Ddk
+ 9gWQ==
+X-Gm-Message-State: APjAAAV2S88yXfU7uk+gG3UQBcr9nCJagEhnwckephJZ2CVwP7iCUuB6
+ 90tMAS+vhlUcG5dw7C/gilU5Is7Ew2c=
+X-Google-Smtp-Source: APXvYqxl6FD760ekw7fhCuTZQCDGfn8i+K+KMUhtBPan5G0xnuES7ti78TMtOd/ZA13bk6a3D5VskA==
+X-Received: by 2002:a6b:4411:: with SMTP id r17mr879800ioa.283.1567611855435; 
+ Wed, 04 Sep 2019 08:44:15 -0700 (PDT)
+Received: from mail-io1-f44.google.com (mail-io1-f44.google.com.
+ [209.85.166.44])
+ by smtp.gmail.com with ESMTPSA id a6sm20137426ios.20.2019.09.04.08.44.14
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 04 Sep 2019 08:44:15 -0700 (PDT)
+Received: by mail-io1-f44.google.com with SMTP id u185so41369836iod.10
+ for <linux-rockchip@lists.infradead.org>; Wed, 04 Sep 2019 08:44:14 -0700 (PDT)
+X-Received: by 2002:a6b:6e0a:: with SMTP id d10mr954243ioh.141.1567611854025; 
+ Wed, 04 Sep 2019 08:44:14 -0700 (PDT)
+MIME-Version: 1.0
+References: <1567564030-83224-1-git-send-email-shawn.lin@rock-chips.com>
+In-Reply-To: <1567564030-83224-1-git-send-email-shawn.lin@rock-chips.com>
+From: Doug Anderson <dianders@chromium.org>
+Date: Wed, 4 Sep 2019 08:44:01 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=Vwmj=LehhLCN5OBbEfNNXp9gULLYRoVV86HtqZBxvEjw@mail.gmail.com>
+Message-ID: <CAD=FV=Vwmj=LehhLCN5OBbEfNNXp9gULLYRoVV86HtqZBxvEjw@mail.gmail.com>
+Subject: Re: [PATCH] mmc: dw_mmc-rockchip: Using 180 sample phase if all
+ phases work
+To: Shawn Lin <shawn.lin@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_062829_355307_113A6C1B 
-X-CRM114-Status: GOOD (  20.57  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190904_084417_380708_D27EC151 
+X-CRM114-Status: GOOD (  21.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,93 +100,79 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
- Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>, linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>, kernel@collabora.com
+Cc: Jaehoon Chung <jh80.chung@samsung.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Ulf Hansson <ulf.hansson@linaro.org>,
+ Linux MMC List <linux-mmc@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, 2019-09-04 at 10:01 -0300, Ezequiel Garcia wrote:
-> On Wed, 2019-09-04 at 12:13 +0200, Philipp Zabel wrote:
-> > Hi Ezequiel,
-> > 
-> > On Tue, 2019-09-03 at 14:12 -0300, Ezequiel Garcia wrote:
-> > > Commit 953aaa1492c53 ("media: rockchip/vpu: Prepare things to support decoders")
-> > > changed the conditions under S_FMT was allowed for OUTPUT
-> > > CAPTURE buffers.
-> > > 
-> > > However, and according to the mem-to-mem stateless decoder specification,
-> > > in order to support dynamic resolution changes, S_FMT should be allowed
-> > > even if OUTPUT buffers have been allocated.
-> > > 
-> > > Relax decoder S_FMT restrictions on OUTPUT buffers, allowing a resolution
-> > > modification, provided the pixel format stays the same.
-> > > 
-> > > Tested on RK3288 platforms using ChromiumOS Video Decode/Encode Accelerator Unittests.
-> > > 
-> > > Fixes: 953aaa1492c53 ("media: rockchip/vpu: Prepare things to support decoders")
-> > > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-> > > ---
-> > >  drivers/staging/media/hantro/hantro_v4l2.c | 22 ++++++++++++++++------
-> > >  1 file changed, 16 insertions(+), 6 deletions(-)
-> > > 
-> > > diff --git a/drivers/staging/media/hantro/hantro_v4l2.c b/drivers/staging/media/hantro/hantro_v4l2.c
-> > > index 3dae52abb96c..d48b548842cf 100644
-> > > --- a/drivers/staging/media/hantro/hantro_v4l2.c
-> > > +++ b/drivers/staging/media/hantro/hantro_v4l2.c
-> > > @@ -367,19 +367,22 @@ vidioc_s_fmt_out_mplane(struct file *file, void *priv, struct v4l2_format *f)
-> > >  {
-> > >  	struct v4l2_pix_format_mplane *pix_mp = &f->fmt.pix_mp;
-> > >  	struct hantro_ctx *ctx = fh_to_ctx(priv);
-> > > +	struct vb2_queue *vq = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, f->type);
-> > >  	const struct hantro_fmt *formats;
-> > >  	unsigned int num_fmts;
-> > > -	struct vb2_queue *vq;
-> > >  	int ret;
-> > >  
-> > > -	/* Change not allowed if queue is busy. */
-> > > -	vq = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, f->type);
-> > > -	if (vb2_is_busy(vq))
-> > > -		return -EBUSY;
-> > > -
-> > >  	if (!hantro_is_encoder_ctx(ctx)) {
-> > >  		struct vb2_queue *peer_vq;
-> > >  
-> > > +		/*
-> > > +		 * In other to support dynamic resolution change,
-> > > +		 * the decoder admits a resolution change, as long
-> > > +		 * as the pixelformat remains. Can't be done if streaming.
-> > > +		 */
-> > > +		if (vb2_is_streaming(vq) || (vb2_is_busy(vq) &&
-> > > +		    pix_mp->pixelformat != ctx->src_fmt.pixelformat))
-> > 
-> > Before using contents of the v4l2_format f for comparison, we should run
-> > vidioc_try_fmt_out_mplane over it.
-> 
-> Right, good catch.
-> 
-> >  Also, besides pixelformat, sizeimage
-> > shouldn't change either, at least if this is a VB2_MMAP queue.
-> > 
-> 
-> This is the OUTPUT queue, so I don't see why the sizeimage
-> of the coded buffers should stay the same. Maybe I'm missing
-> something? 
+Hi,
 
-If the OUTPUT vb2_queue is busy, we already have some buffers of the old
-size allocated. We can't change their size dynamically with just
-VIDIOC_S_FMT.
+On Tue, Sep 3, 2019 at 7:28 PM Shawn Lin <shawn.lin@rock-chips.com> wrote:
+>
+> default_sample_phase is used to make sure the cards are enumurated
+> properly and will be set to 0 if not assigned. However, the sample
+> phase should depends on the tuned phase if running higher clock rate.
+> If all phases work but default_sample_phase isn't assigned, driver
+> set sample phase to 0 for this case, which isn't the best choice,
+> because we always expect to set phase to the middle of window. To
+> solve the following continually issues we have seen in the test, we
+> need set phase to the more stable one, 180, if all phases work.
+>
+> mmcblk1: error -84 transferring data, sector 1735064, nr 8, cmd
+> response 0x900, card status 0xb00
+> mmcblk1: retrying using single block read
+> dwmmc_rockchip ff0f0000.dwmmc: All phases work, using default phase 0.
+> mmcblk1: retrying because a re-tune was needed
+>
+> .....
+>
+> mmcblk1: error -84 transferring data, sector 1728672, nr 248, cmd
+> response 0x900, card status 0xb00
+> mmcblk1: retrying using single block read
+> dwmmc_rockchip ff0f0000.dwmmc: All phases work, using default phase 0.
+>
+> Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+> ---
+>
+>  drivers/mmc/host/dw_mmc-rockchip.c | 5 ++---
+>  1 file changed, 2 insertions(+), 3 deletions(-)
+>
+> diff --git a/drivers/mmc/host/dw_mmc-rockchip.c b/drivers/mmc/host/dw_mmc-rockchip.c
+> index d4d0213..9ef9723 100644
+> --- a/drivers/mmc/host/dw_mmc-rockchip.c
+> +++ b/drivers/mmc/host/dw_mmc-rockchip.c
+> @@ -209,9 +209,8 @@ static int dw_mci_rk3288_execute_tuning(struct dw_mci_slot *slot, u32 opcode)
+>         }
+>
+>         if (ranges[0].start == 0 && ranges[0].end == priv->num_phases - 1) {
+> -               clk_set_phase(priv->sample_clk, priv->default_sample_phase);
+> -               dev_info(host->dev, "All phases work, using default phase %d.",
+> -                        priv->default_sample_phase);
+> +               clk_set_phase(priv->sample_clk, 180);
+> +               dev_info(host->dev, "All phases work, using phase 180.");
 
-Maybe this should correct sizeimage to the old size instead of returning
--EBUSY? Either way, if the old buffer size is too small to reasonably
-decode the new resolution, the OUTPUT buffers have to be reallocated.
+This violates what is documented in the device tree bindings, which says:
 
-regards
-Philipp
+* rockchip,default-sample-phase: The default phase to set ciu-sample at
+  probing, low speeds or in case where all phases work at tuning time.
+  If not specified 0 deg will be used.
+
+Specifically:
+* You don't use "default-sample-phase" at all when all phases pass.
+* You don't default to 0 if not specified.
+
+Personally I think we could change the bindings to say: "If not
+specified 180 deg will be used" and then change the code to do the
+same.  If we wanted to keep the "stable ABI" that is device tree we
+could also just do the "180 default" for new SoCs and then manually
+add the device tree fragment to all old dts files.
+
+
+-Doug
 
 _______________________________________________
 Linux-rockchip mailing list
