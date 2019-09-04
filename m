@@ -2,56 +2,102 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94D82A835D
-	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Sep 2019 15:07:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7EB7A8374
+	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Sep 2019 15:16:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fVFAzcvGwWR6kJg99Qdv7WWGjZvjbq8uuKkqS9bYfPs=; b=fXZx9BznC9VP8s
-	iPG6xGTGcfLaxYnScC42kPd/9JTcEA7vI9U4KwmhiZg91UlOclQbUXXaYStSZgJ32qjPH9CiYTVtg
-	btz0y9RoXNAYV/FvI9K4vrj7iJDC1xcTamEmZfF6RZQhV22ksqx1PHR4dR4zOV4oxhARZt16Ify8J
-	M3qtLFtq7WJb5sLTaEPQ7zWaUDmAmLFNkKxRM7LLcbcEnUQcOLWVFwGI5PAMX9NJ65qSR29Xkvcp8
-	namXwX3M6zIkj195JbRbZEXNbkRfgF2jzMfAmgzCOiE9ho1iJHhRRWRhAGJmmzq0+LFXkHVGwMzWw
-	V+bC85j2n0JXeSJefrtw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vU6+SrwPYNp/mxiH6rJsaOMP3VgQbCbPYJnDignGKs0=; b=JjD6kUgKtl1WSSZV65e/leUVp
+	XWxlHXWiUWlka5/SGGw51DVoBJCrdWlnT+elPSQfwh4DM6D+y06Rjr+ABk6LfeSMNaR8JSEs2QctH
+	03iIAYlksuLU2OgEFJ0Mmm+YWwW1KXVhr6PcgVnJP6AzoJ4OS5j/EfcraLFMeIZuk4viWYDKCEweO
+	n3pYW8ItNEmnPcnIQbHZ6lzfabbRQyvPUa3SG9Hg5EME5e4eGYAnJ7VZoCWY7SX7VBiUbdgfwfAD4
+	R9CQZb4DMkepUoIsnDFvCJJPHBrxPzNNioAEAkvv1nr5SGnipQzzPWKgxJO1SBD2mABSCX6xEE/ZC
+	KlrRz+oeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5V0n-00058Y-BS; Wed, 04 Sep 2019 13:07:49 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1i5V9I-0000kl-Ts; Wed, 04 Sep 2019 13:16:37 +0000
+Received: from smtp-fw-9102.amazon.com ([207.171.184.29])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5V0k-0004yw-3u
- for linux-rockchip@lists.infradead.org; Wed, 04 Sep 2019 13:07:47 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 9EE3728D622
-Message-ID: <b7a43c96fa861de1dbbe969e3aaa4220e7e96793.camel@collabora.com>
-Subject: Re: [PATCH 01/12] media: hantro: Fix H264 max frmsize supported on
- RK3288
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Jonas Karlman <jonas@kwiboo.se>
-Date: Wed, 04 Sep 2019 10:07:36 -0300
-In-Reply-To: <HE1PR06MB4011EAB6F0965D47A20AF805ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
-References: <HE1PR06MB40117D0EE96E6FA638A04B78ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
- <HE1PR06MB4011EAB6F0965D47A20AF805ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
-Organization: Collabora
-User-Agent: Evolution 3.30.5-1.1 
+ id 1i5V90-0000YK-LI; Wed, 04 Sep 2019 13:16:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
+ t=1567602978; x=1599138978;
+ h=subject:to:cc:references:from:message-id:date:
+ mime-version:in-reply-to:content-transfer-encoding;
+ bh=dVPgUqN88hiyFCDUl2n0H4GWl7kQ/LvDY+M8i0q+25Y=;
+ b=VZ3WoOwZpRNbBzyask86p+s4bzhM8s3rmsabMlkwyJH3M21cXVQCp8uw
+ wTHlnw8VLhZerNNEdVY59ltyzNsefsAk0t6RL2XdWQBV4jcjYOxAWB1x5
+ rLSrxKCRKFhsCPtzFe4rAzF2EfZr+EJ8mF79yr+8z7QKIPk+FoNiHNa48 Y=;
+X-IronPort-AV: E=Sophos;i="5.64,467,1559520000"; d="scan'208";a="700658012"
+Received: from sea3-co-svc-lb6-vlan3.sea.amazon.com (HELO
+ email-inbound-relay-2c-397e131e.us-west-2.amazon.com) ([10.47.22.38])
+ by smtp-border-fw-out-9102.sea19.amazon.com with ESMTP;
+ 04 Sep 2019 13:16:13 +0000
+Received: from EX13MTAUEA001.ant.amazon.com
+ (pdx4-ws-svc-p6-lb7-vlan3.pdx.amazon.com [10.170.41.166])
+ by email-inbound-relay-2c-397e131e.us-west-2.amazon.com (Postfix) with ESMTPS
+ id 3E81BA215A; Wed,  4 Sep 2019 13:16:11 +0000 (UTC)
+Received: from EX13D01EUB001.ant.amazon.com (10.43.166.194) by
+ EX13MTAUEA001.ant.amazon.com (10.43.61.243) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Wed, 4 Sep 2019 13:16:10 +0000
+Received: from [10.88.66.45] (10.43.160.149) by EX13D01EUB001.ant.amazon.com
+ (10.43.166.194) with Microsoft SMTP Server (TLS) id 15.0.1367.3; Wed, 4 Sep
+ 2019 13:15:54 +0000
+Subject: Re: [PATCH -next 13/15] thermal: thermal_mmio: use
+ devm_platform_ioremap_resource() to simplify code
+To: YueHaibing <yuehaibing@huawei.com>, <miquel.raynal@bootlin.com>,
+ <rui.zhang@intel.com>, <edubezval@gmail.com>, <daniel.lezcano@linaro.org>,
+ <amit.kucheria@verdurent.com>, <eric@anholt.net>, <wahrenst@gmx.net>,
+ <f.fainelli@gmail.com>, <rjui@broadcom.com>, <sbranden@broadcom.com>,
+ <mmayer@broadcom.com>, <computersforpeace@gmail.com>,
+ <gregory.0xf0@gmail.com>, <matthias.bgg@gmail.com>, <agross@kernel.org>,
+ <heiko@sntech.de>, <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>,
+ <marc.w.gonzalez@free.fr>, <mans@mansr.com>, <jun.nie@linaro.org>,
+ <shawnguo@kernel.org>, <phil@raspberrypi.org>, <gregkh@linuxfoundation.org>,
+ <david.hernandezsanchez@st.com>, <horms+renesas@verge.net.au>,
+ <wsa+renesas@sang-engineering.com>, <linux-pm@vger.kernel.org>
+References: <20190904122939.23780-1-yuehaibing@huawei.com>
+ <20190904122939.23780-14-yuehaibing@huawei.com>
+From: Talel Shenhar <talel@amazon.com>
+Message-ID: <228fdf20-9f3a-4809-6fed-448e2bb349d3@amazon.com>
+Date: Wed, 4 Sep 2019 16:15:48 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20190904122939.23780-14-yuehaibing@huawei.com>
+Content-Language: en-US
+X-Originating-IP: [10.43.160.149]
+X-ClientProxiedBy: EX13D08UWC003.ant.amazon.com (10.43.162.21) To
+ EX13D01EUB001.ant.amazon.com (10.43.166.194)
+Precedence: Bulk
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_060746_295349_E8CB500E 
-X-CRM114-Status: GOOD (  11.93  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190904_061618_743313_F5D415C0 
+X-CRM114-Status: UNSURE (   8.59  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -12.7 (------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-12.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [207.171.184.29 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
-Precedence: list
 List-Id: Upstream kernel work for Rockchip platforms
  <linux-rockchip.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-rockchip>, 
@@ -61,62 +107,30 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Hans Verkuil <hverkuil@xs4all.nl>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ talel@amazon.com, linux-rockchip@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
+ ronenk@amazon.com, bcm-kernel-feedback-list@broadcom.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hello Jonas,
+Thanks.
 
-Thank you for the patch.
+Talel.
 
-On Sun, 2019-09-01 at 12:45 +0000, Jonas Karlman wrote:
-> TRM specify supported image size 48x48 to 4096x2304 at step size 16 pixels,
-> change frmsize max_width/max_height to match TRM.
-> 
-
-The RK3288 TRM v1.1 (2015-8-20) I have here mentions a maximum
-of 3840x2160.
-
-I must admit I haven't tested with actual content this size
-to verify it, have you checked it?
-
-Thanks,
-Ezequiel
- 
-> Fixes: 760327930e10 ("media: hantro: Enable H264 decoding on rk3288")
-> Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
+On 9/4/19 2:29 PM, YueHaibing wrote:
+> Use devm_platform_ioremap_resource() to simplify the code a bit.
+> This is detected by coccinelle.
+>
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+Reviewed-By: Talel Shenhar <talel@amazon.com>
 > ---
->  drivers/staging/media/hantro/rk3288_vpu_hw.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/staging/media/hantro/rk3288_vpu_hw.c b/drivers/staging/media/hantro/rk3288_vpu_hw.c
-> index 6bfcc47d1e58..ebb017b8a334 100644
-> --- a/drivers/staging/media/hantro/rk3288_vpu_hw.c
-> +++ b/drivers/staging/media/hantro/rk3288_vpu_hw.c
-> @@ -67,10 +67,10 @@ static const struct hantro_fmt rk3288_vpu_dec_fmts[] = {
->  		.max_depth = 2,
->  		.frmsize = {
->  			.min_width = 48,
-> -			.max_width = 3840,
-> +			.max_width = 4096,
->  			.step_width = H264_MB_DIM,
->  			.min_height = 48,
-> -			.max_height = 2160,
-> +			.max_height = 2304,
->  			.step_height = H264_MB_DIM,
->  		},
->  	},
-
-
+>   drivers/thermal/thermal_mmio.c | 4 +---
+>   1 file changed, 1 insertion(+), 3 deletions(-)
 
 _______________________________________________
 Linux-rockchip mailing list
