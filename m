@@ -2,93 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDB34A958F
-	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Sep 2019 23:51:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8067AA97AB
+	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Sep 2019 02:38:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6a4IwCwnCT/RkDrbkms/VlGeXxXJ31a6lkY0CkFNkdo=; b=DAnmeuahMqcVE6
-	DYm0tctbfREu6yNNNBVEkPxRGwZ14eBTc4Q3+Og6P8dYvfs0LzLnm0u52lx7APgYEyWKfSPpHNCy2
-	2CNI68z9F0EaeTcbLgoLTuJXtSvmZMpZER36jgGABHRahPh4z53dMXDnb9NACsCNNgzoBg0QyzAlG
-	vafa6L/em4KHCZ7yhBuhnQqDkhb9UgXPARyvm7HogI4wre6CkFpBBRxVPR7fwehlBQ8nvtHotD68o
-	/cVKMvRg7M6SLLkcG1wRg0foEd3k2fLbpolsk1YCGU6+rSehuWDwdKjXt8jncRnaQ4gncyrQAaRDr
-	SzL/dfv93bOLatCweBBw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=aZ0Xj7QKJ5CxXMnMbGKnrV6+Qj0XOVoxtd/spFG7S/g=; b=UsKbiVfI1eNCQlfMDJZbJLUEc
+	NaZXzG0iRFyHB/trHRrozufATsUQ1Bk0vetrCPFVdqc6RtwEdy2ZPnAdTO7oCVVZq++AMsQpjDMCE
+	7vwc827Y0Vcgngdkq7ftJAd7YwCkuaxeihcYBRZfDuZ/UdMfrRwzE/9dgyxL5F1UuaqtO3k35aqYU
+	FcOCdDx8tX3fYLJDTgxrzanaptE4JT3CJ6MCo4rI6ZilyeXjphE0OMubjSo+TmZrJLDNuqo9jictr
+	P3V27/RJtYg/4RiwuL659sPHfgniuBFXhiafpZvbuKxwDHfSBp4M1FjwxZPWkmdv5/9Wt1S+Zckoq
+	sD/I7e6kQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5dB3-0004Do-O3; Wed, 04 Sep 2019 21:50:57 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1i5fn6-0008So-8c; Thu, 05 Sep 2019 00:38:24 +0000
+Received: from lucky1.263xmail.com ([211.157.147.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5dAq-00042C-FW
- for linux-rockchip@lists.infradead.org; Wed, 04 Sep 2019 21:50:47 +0000
-Received: by mail-pf1-x444.google.com with SMTP id h195so167894pfe.5
- for <linux-rockchip@lists.infradead.org>; Wed, 04 Sep 2019 14:50:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=8+W3OmsE39CBrAqbMD2zucygtqzvFfD25TTwncsech0=;
- b=GjpcQGU018si9YdNfH37M4Jo6uFHTdY0pqnKW1bI2T4aZO3/19Jl5FH8QdTr0Txf8r
- lbdktBIKjY2hxc0z7a5SHCBYbyQppUU8ZGyzcF8t2+flQ2Lwlaci+p+gktP+EW6EDqmr
- 7s3ugo5oTSkkJtiu8ZB2vHh7nTcCkJZ54OVg2D6VObo1g+/f028Cz07rHoklB10LETyV
- dFLuT9gELB49hdOz0T2z4JW8dQv635Vj0nXxpecfeEsOaJpbIBJvSdsZWsjU0QjyIfUH
- 6VYX5tAcR4yuR3xTSFjlWWV60la4AcfUIWbgbdwQcCg1cQrBM60/vQn9sZI9Ky7KMt6T
- 2ZMg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=8+W3OmsE39CBrAqbMD2zucygtqzvFfD25TTwncsech0=;
- b=RNf+Ym+y0VXDYWkfbf9HBzkCqRrBa2TSstKVWB41n3/qz94G7aWJfBPCm9Dp5rwpwP
- jYkfpm9JTzA9I5RtuvRuH543PFvwJK+5RyJIBJZCL8gPA6X1q1CcRvLygRUpB/yhk3lu
- PiWufH6M+UIMJy1vuHXviCxsTpjvApWq3fP2ik64VQq4aqtcom3VDk7ubhRIFW1RsrrZ
- qVvW4VvFQ9DD0/ozvi0kuc7IyEeQYiZwcje05MfEOklpxbR+EHx/oguSRb+dEHEzgPyg
- iIuIoURqaGHizkKZU1VUtbg+2a57QDT0JokEDkh4ahzJfP4AmMO9E9Y+HfnRzhYHcaXL
- 4I4Q==
-X-Gm-Message-State: APjAAAVxM80Uu/tiGFQPwnxCyJBRfuXFe5UtmDpDDjDtb+Kuf5eu0Ny6
- TkNokC6gecNrOGuoPVwIvwqzjw==
-X-Google-Smtp-Source: APXvYqznFPRSJgh/JgdkRzej7oU2uH6AV2QPDQ8rDqB3T60xWU5jKILyc014vwXgwi8/8ui1HTj0dw==
-X-Received: by 2002:a17:90a:cc0c:: with SMTP id
- b12mr375908pju.138.1567633843429; 
- Wed, 04 Sep 2019 14:50:43 -0700 (PDT)
-Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id w2sm88618pgc.32.2019.09.04.14.50.41
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Sep 2019 14:50:42 -0700 (PDT)
-Date: Wed, 4 Sep 2019 14:50:39 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: YueHaibing <yuehaibing@huawei.com>
-Subject: Re: [PATCH -next 08/15] thermal: tsens: use
- devm_platform_ioremap_resource() to simplify code
-Message-ID: <20190904215039.GG580@tuxbook-pro>
-References: <20190904122939.23780-1-yuehaibing@huawei.com>
- <20190904122939.23780-9-yuehaibing@huawei.com>
+ id 1i5fn2-0008S2-Kl
+ for linux-rockchip@lists.infradead.org; Thu, 05 Sep 2019 00:38:22 +0000
+Received: from shawn.lin?rock-chips.com (unknown [192.168.167.161])
+ by lucky1.263xmail.com (Postfix) with ESMTP id DDB3E69ADA;
+ Thu,  5 Sep 2019 08:38:10 +0800 (CST)
+X-263anti-spam: KSV:0;BIG:0;
+X-MAIL-GRAY: 1
+X-MAIL-DELIVERY: 0
+X-KSVirus-check: 0
+X-ADDR-CHECKED4: 1
+X-ABS-CHECKED: 1
+X-SKE-CHECKED: 1
+X-ANTISPAM-LEVEL: 2
+Received: from [172.16.12.37] (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P21150T140136998237952S1567643887723782_; 
+ Thu, 05 Sep 2019 08:38:09 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <17808e1317399cd22e2311d389b14c6e>
+X-RL-SENDER: shawn.lin@rock-chips.com
+X-SENDER: lintao@rock-chips.com
+X-LOGIN-NAME: shawn.lin@rock-chips.com
+X-FST-TO: linux-rockchip@lists.infradead.org
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+Subject: =?UTF-8?Q?Re=3a_=5bPATCH=5d_mmc=3a_dw=5fmmc-rockchip=3a_Using_180_s?=
+ =?UTF-8?B?YW1wbGUgcGhhc2UgaWYgYWxsIHBoYXNlcyB3b3Jr44CQ6K+35rOo5oSP77yM6YKu?=
+ =?UTF-8?B?5Lu255SxbGludXgtbW1jLW93bmVyQHZnZXIua2VybmVsLm9yZ+S7o+WPkeOAkQ==?=
+To: Doug Anderson <dianders@chromium.org>
+References: <1567564030-83224-1-git-send-email-shawn.lin@rock-chips.com>
+ <CAD=FV=Vwmj=LehhLCN5OBbEfNNXp9gULLYRoVV86HtqZBxvEjw@mail.gmail.com>
+From: Shawn Lin <shawn.lin@rock-chips.com>
+Message-ID: <f461c5ba-4798-8177-618a-4b864c24e5b3@rock-chips.com>
+Date: Thu, 5 Sep 2019 08:38:08 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190904122939.23780-9-yuehaibing@huawei.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <CAD=FV=Vwmj=LehhLCN5OBbEfNNXp9gULLYRoVV86HtqZBxvEjw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_145044_520343_8F7C649B 
-X-CRM114-Status: GOOD (  14.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190904_173820_996701_3CDDD824 
+X-CRM114-Status: GOOD (  25.75  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ no trust [211.157.147.130 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,76 +86,91 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mans@mansr.com, mmayer@broadcom.com, eric@anholt.net,
- miquel.raynal@bootlin.com, linux-stm32@st-md-mailman.stormreply.com,
- heiko@sntech.de, amit.kucheria@verdurent.com, f.fainelli@gmail.com,
- daniel.lezcano@linaro.org, phil@raspberrypi.org,
- linux-rockchip@lists.infradead.org, agross@kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-arm-msm@vger.kernel.org,
- rui.zhang@intel.com, david.hernandezsanchez@st.com, alexandre.torgue@st.com,
- marc.w.gonzalez@free.fr, rjui@broadcom.com, edubezval@gmail.com,
- linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
- gregory.0xf0@gmail.com, matthias.bgg@gmail.com, horms+renesas@verge.net.au,
- talel@amazon.com, linux-arm-kernel@lists.infradead.org, sbranden@broadcom.com,
- wsa+renesas@sang-engineering.com, gregkh@linuxfoundation.org,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, wahrenst@gmx.net,
- mcoquelin.stm32@gmail.com, jun.nie@linaro.org, computersforpeace@gmail.com,
- shawnguo@kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Ulf Hansson <ulf.hansson@linaro.org>, Heiko Stuebner <heiko@sntech.de>,
+ shawn.lin@rock-chips.com, Linux MMC List <linux-mmc@vger.kernel.org>,
+ Jaehoon Chung <jh80.chung@samsung.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed 04 Sep 05:29 PDT 2019, YueHaibing wrote:
 
-> Use devm_platform_ioremap_resource() to simplify the code a bit.
-> This is detected by coccinelle.
+On 2019/9/4 23:44, Doug Anderson wrote:
+> Hi,
+> 
+> On Tue, Sep 3, 2019 at 7:28 PM Shawn Lin <shawn.lin@rock-chips.com> wrote:
+>>
+>> default_sample_phase is used to make sure the cards are enumurated
+>> properly and will be set to 0 if not assigned. However, the sample
+>> phase should depends on the tuned phase if running higher clock rate.
+>> If all phases work but default_sample_phase isn't assigned, driver
+>> set sample phase to 0 for this case, which isn't the best choice,
+>> because we always expect to set phase to the middle of window. To
+>> solve the following continually issues we have seen in the test, we
+>> need set phase to the more stable one, 180, if all phases work.
+>>
+>> mmcblk1: error -84 transferring data, sector 1735064, nr 8, cmd
+>> response 0x900, card status 0xb00
+>> mmcblk1: retrying using single block read
+>> dwmmc_rockchip ff0f0000.dwmmc: All phases work, using default phase 0.
+>> mmcblk1: retrying because a re-tune was needed
+>>
+>> .....
+>>
+>> mmcblk1: error -84 transferring data, sector 1728672, nr 248, cmd
+>> response 0x900, card status 0xb00
+>> mmcblk1: retrying using single block read
+>> dwmmc_rockchip ff0f0000.dwmmc: All phases work, using default phase 0.
+>>
+>> Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+>> ---
+>>
+>>   drivers/mmc/host/dw_mmc-rockchip.c | 5 ++---
+>>   1 file changed, 2 insertions(+), 3 deletions(-)
+>>
+>> diff --git a/drivers/mmc/host/dw_mmc-rockchip.c b/drivers/mmc/host/dw_mmc-rockchip.c
+>> index d4d0213..9ef9723 100644
+>> --- a/drivers/mmc/host/dw_mmc-rockchip.c
+>> +++ b/drivers/mmc/host/dw_mmc-rockchip.c
+>> @@ -209,9 +209,8 @@ static int dw_mci_rk3288_execute_tuning(struct dw_mci_slot *slot, u32 opcode)
+>>          }
+>>
+>>          if (ranges[0].start == 0 && ranges[0].end == priv->num_phases - 1) {
+>> -               clk_set_phase(priv->sample_clk, priv->default_sample_phase);
+>> -               dev_info(host->dev, "All phases work, using default phase %d.",
+>> -                        priv->default_sample_phase);
+>> +               clk_set_phase(priv->sample_clk, 180);
+>> +               dev_info(host->dev, "All phases work, using phase 180.");
+> 
+> This violates what is documented in the device tree bindings, which says:
 > 
 
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+Thanks for catching this.
 
-> Reported-by: Hulk Robot <hulkci@huawei.com>
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-> ---
->  drivers/thermal/qcom/tsens-common.c | 7 ++-----
->  1 file changed, 2 insertions(+), 5 deletions(-)
+> * rockchip,default-sample-phase: The default phase to set ciu-sample at
+>    probing, low speeds or in case where all phases work at tuning time.
+>    If not specified 0 deg will be used.
 > 
-> diff --git a/drivers/thermal/qcom/tsens-common.c b/drivers/thermal/qcom/tsens-common.c
-> index 528df88..43ce4fb 100644
-> --- a/drivers/thermal/qcom/tsens-common.c
-> +++ b/drivers/thermal/qcom/tsens-common.c
-> @@ -155,7 +155,6 @@ int __init init_common(struct tsens_priv *priv)
->  {
->  	void __iomem *tm_base, *srot_base;
->  	struct device *dev = priv->dev;
-> -	struct resource *res;
->  	u32 enabled;
->  	int ret, i, j;
->  	struct platform_device *op = of_find_device_by_node(priv->dev->of_node);
-> @@ -166,8 +165,7 @@ int __init init_common(struct tsens_priv *priv)
->  	if (op->num_resources > 1) {
->  		/* DT with separate SROT and TM address space */
->  		priv->tm_offset = 0;
-> -		res = platform_get_resource(op, IORESOURCE_MEM, 1);
-> -		srot_base = devm_ioremap_resource(&op->dev, res);
-> +		srot_base = devm_platform_ioremap_resource(op, 1);
->  		if (IS_ERR(srot_base)) {
->  			ret = PTR_ERR(srot_base);
->  			goto err_put_device;
-> @@ -184,8 +182,7 @@ int __init init_common(struct tsens_priv *priv)
->  		priv->tm_offset = 0x1000;
->  	}
->  
-> -	res = platform_get_resource(op, IORESOURCE_MEM, 0);
-> -	tm_base = devm_ioremap_resource(&op->dev, res);
-> +	tm_base = devm_platform_ioremap_resource(op, 0);
->  	if (IS_ERR(tm_base)) {
->  		ret = PTR_ERR(tm_base);
->  		goto err_put_device;
-> -- 
-> 2.7.4
+> Specifically:
+> * You don't use "default-sample-phase" at all when all phases pass.
+> * You don't default to 0 if not specified.
+> 
+> Personally I think we could change the bindings to say: "If not
+> specified 180 deg will be used" and then change the code to do the
+
+That sounds sane to me. I will respin v2 to fix the bingdings and
+change the code.
+
+> same.  If we wanted to keep the "stable ABI" that is device tree we
+> could also just do the "180 default" for new SoCs and then manually
+> add the device tree fragment to all old dts files.
+> >
+> -Doug
 > 
 > 
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
