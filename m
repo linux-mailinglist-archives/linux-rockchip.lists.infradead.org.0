@@ -2,71 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EEF0AA7C0
-	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Sep 2019 17:54:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D97CAAA7C
+	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Sep 2019 20:00:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P3kVX/UvPggXTNua3PL/5rHTIitd6FifDl/jegTim30=; b=gqyLMPvjxhcCde
-	98kJ60W3dJgJpkVQm+itJLHjnHRus+FM+0120bMcAXvP/qWd3lAMFwQEUewRSyez+ALv27jePYl5s
-	F20TWOCSYEHfWqCJaXQ6WPb0vrqbfpmnCrWVSPLSD38YiJzoJaL4u6Y9emKEQtimZtU0dvZt+Iaof
-	foYNEayEpFtKgvCeJ4mu8AEa2Rk7uBQtWTHvVmSihZnwLAvDRTa9EK67ibDlnhPE7r0jADPEcTkYp
-	ah3rZlo53RhEJ1+qVyB+ejmx9QyHnsLzJwz9KL85qZv+xJPPADdeWwIO9cg4l/xwLRhQmZ464A5Xl
-	KdaWI62NBxK8w2r1TFAQ==;
+	List-Owner; bh=gUNUgefQabVKpLEDhMm4HVu/G5AI82rc9PXDKu4HHbc=; b=RVOs8Qaa+HsB2J
+	6G+p1i+UiDuGPUExT3g1Z0nJm5Y9xBfJ+cmK5DOr9KbwSjveKKDeRsP30OoEjESZvOxAsxGBxt5b8
+	wo6VoueV60illzIrrScLD9eFH07eEhtDwQqYpDRKN+N1SeUFxJleeR/XunyW7SXtpyqBMf1PhgG+q
+	kRj7zdcyVNFpxh44d0o7DfrvMm2tjvPutRxJ4NKRLqRbyBzk7hm7CMPX47qwunA9OvkULza4/8vDt
+	YQmueDXHJ7jXNvFJa/OdN38pJhQz6mZir9qfJ8KVdTyM8stdK0aIhxh7NxjYuA5yJ5rVSXvItxG7m
+	J760hQdRB080rwybdCMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5u61-0008B7-BB; Thu, 05 Sep 2019 15:54:53 +0000
-Received: from mail-qk1-f169.google.com ([209.85.222.169])
+	id 1i5w3b-0002KA-OQ; Thu, 05 Sep 2019 18:00:31 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5u5o-000817-Ja; Thu, 05 Sep 2019 15:54:41 +0000
-Received: by mail-qk1-f169.google.com with SMTP id m2so2565412qkd.10;
- Thu, 05 Sep 2019 08:54:40 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=8u9EXTMrjZ2qKsoTSmQlsQU+UdJSkrB/f8uH5V3oN7w=;
- b=KpQXoQyJntfXxw5nZJVc1m6hjtQn5v4J6iNyrYgu65tAFefXWPmgiEP3mLPDYjhEDy
- CRJObrpdHjgqTIGq+c6K+dEe1Iq9kpKsu+ivw/qemojn0lcgXviVoZEDGgy1XF/s2yJY
- 1k2uDChRCKylUQ+ODYd6KOgbIfWu8t4EWRqffa42UZDmk7nsiVCRoaiMiCxqhLdY29Hr
- AzFpqmFNZFRqhZvacD0vHGpdYjKjqcMvTVtfBUZU5dT05pYP9cBj0VJ+O5gf+xs2THMK
- nic/y9cErAO7P9msFpLluyS2NCAcA8lsFcYXfqrQABIYDcADVNWR3dgV5lyM7B5FHjXq
- MLkA==
-X-Gm-Message-State: APjAAAUcfNde0KSf7b0BeHj8ubddeDrmJy8TZ1XLKvOfGGSUlTVckKH2
- 71Pk3K1b2/8DT8C8NQaUqPTsD3lUnAw2rRdaR1g=
-X-Google-Smtp-Source: APXvYqzHaenAKqEKH+c19eggo/dRXSvRjvMlrYg3zTnJtYP+Eyn98O6r++V8qnAIm/XmT2ENQEgZGjOh8lFMkWVTFag=
-X-Received: by 2002:a37:4b0d:: with SMTP id y13mr3523664qka.3.1567698879330;
- Thu, 05 Sep 2019 08:54:39 -0700 (PDT)
+ id 1i5w3X-0002JK-QZ
+ for linux-rockchip@lists.infradead.org; Thu, 05 Sep 2019 18:00:29 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 595DB28DD72
+Message-ID: <93b49e964b1f9f5c799affd2ab5416a16f0dda23.camel@collabora.com>
+Subject: Re: [PATCH for 5.4] media: hantro: Fix s_fmt for dynamic resolution
+ changes
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Philipp Zabel <p.zabel@pengutronix.de>, linux-media@vger.kernel.org
+Date: Thu, 05 Sep 2019 15:00:15 -0300
+In-Reply-To: <1567603704.3041.10.camel@pengutronix.de>
+References: <20190903171256.25052-1-ezequiel@collabora.com>
+ <1567592011.3041.1.camel@pengutronix.de>
+ <37bbd1b8ee7bb82c75aefb675e0c3ddd955dde0b.camel@collabora.com>
+ <1567603704.3041.10.camel@pengutronix.de>
+Organization: Collabora
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-References: <1718334.9BoTfW0Ujv@phil> <43564855.cWDBQSyQMS@phil>
-In-Reply-To: <43564855.cWDBQSyQMS@phil>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 5 Sep 2019 17:54:23 +0200
-Message-ID: <CAK8P3a3mXDAq0HiwAe53iM7CqDF6BW3Y7iwzNCMPrLuz0eFBog@mail.gmail.com>
-Subject: Re: [GIT PULL 2/2] Rockchip DT64 changes for 5.4 - round2
-To: Heiko Stuebner <heiko@sntech.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_085440_640162_1160D096 
-X-CRM114-Status: UNSURE (   5.29  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190905_110028_126100_E4A46C01 
+X-CRM114-Status: GOOD (  22.90  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.169 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,21 +63,102 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Rockchip SoC support" <linux-rockchip@lists.infradead.org>,
- SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
+ Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>, linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>, kernel@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, Sep 5, 2019 at 2:18 PM Heiko Stuebner <heiko@sntech.de> wrote:
-> RK3328 mmc clockrate limit and addition of vpu node as well
-> as a regulator fix for the rk3328-rock64.
+On Wed, 2019-09-04 at 15:28 +0200, Philipp Zabel wrote:
+> On Wed, 2019-09-04 at 10:01 -0300, Ezequiel Garcia wrote:
+> > On Wed, 2019-09-04 at 12:13 +0200, Philipp Zabel wrote:
+> > > Hi Ezequiel,
+> > > 
+> > > On Tue, 2019-09-03 at 14:12 -0300, Ezequiel Garcia wrote:
+> > > > Commit 953aaa1492c53 ("media: rockchip/vpu: Prepare things to support decoders")
+> > > > changed the conditions under S_FMT was allowed for OUTPUT
+> > > > CAPTURE buffers.
+> > > > 
+> > > > However, and according to the mem-to-mem stateless decoder specification,
+> > > > in order to support dynamic resolution changes, S_FMT should be allowed
+> > > > even if OUTPUT buffers have been allocated.
+> > > > 
+> > > > Relax decoder S_FMT restrictions on OUTPUT buffers, allowing a resolution
+> > > > modification, provided the pixel format stays the same.
+> > > > 
+> > > > Tested on RK3288 platforms using ChromiumOS Video Decode/Encode Accelerator Unittests.
+> > > > 
+> > > > Fixes: 953aaa1492c53 ("media: rockchip/vpu: Prepare things to support decoders")
+> > > > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+> > > > ---
+> > > >  drivers/staging/media/hantro/hantro_v4l2.c | 22 ++++++++++++++++------
+> > > >  1 file changed, 16 insertions(+), 6 deletions(-)
+> > > > 
+> > > > diff --git a/drivers/staging/media/hantro/hantro_v4l2.c b/drivers/staging/media/hantro/hantro_v4l2.c
+> > > > index 3dae52abb96c..d48b548842cf 100644
+> > > > --- a/drivers/staging/media/hantro/hantro_v4l2.c
+> > > > +++ b/drivers/staging/media/hantro/hantro_v4l2.c
+> > > > @@ -367,19 +367,22 @@ vidioc_s_fmt_out_mplane(struct file *file, void *priv, struct v4l2_format *f)
+> > > >  {
+> > > >  	struct v4l2_pix_format_mplane *pix_mp = &f->fmt.pix_mp;
+> > > >  	struct hantro_ctx *ctx = fh_to_ctx(priv);
+> > > > +	struct vb2_queue *vq = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, f->type);
+> > > >  	const struct hantro_fmt *formats;
+> > > >  	unsigned int num_fmts;
+> > > > -	struct vb2_queue *vq;
+> > > >  	int ret;
+> > > >  
+> > > > -	/* Change not allowed if queue is busy. */
+> > > > -	vq = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, f->type);
+> > > > -	if (vb2_is_busy(vq))
+> > > > -		return -EBUSY;
+> > > > -
+> > > >  	if (!hantro_is_encoder_ctx(ctx)) {
+> > > >  		struct vb2_queue *peer_vq;
+> > > >  
+> > > > +		/*
+> > > > +		 * In other to support dynamic resolution change,
+> > > > +		 * the decoder admits a resolution change, as long
+> > > > +		 * as the pixelformat remains. Can't be done if streaming.
+> > > > +		 */
+> > > > +		if (vb2_is_streaming(vq) || (vb2_is_busy(vq) &&
+> > > > +		    pix_mp->pixelformat != ctx->src_fmt.pixelformat))
+> > > 
+> > > Before using contents of the v4l2_format f for comparison, we should run
+> > > vidioc_try_fmt_out_mplane over it.
+> > 
+> > Right, good catch.
+> > 
+> > >  Also, besides pixelformat, sizeimage
+> > > shouldn't change either, at least if this is a VB2_MMAP queue.
+> > > 
+> > 
+> > This is the OUTPUT queue, so I don't see why the sizeimage
+> > of the coded buffers should stay the same. Maybe I'm missing
+> > something? 
+> 
+> If the OUTPUT vb2_queue is busy, we already have some buffers of the old
+> size allocated. We can't change their size dynamically with just
+> VIDIOC_S_FMT.
+> 
+> Maybe this should correct sizeimage to the old size instead of returning
+> -EBUSY? Either way, if the old buffer size is too small to reasonably
+> decode the new resolution, the OUTPUT buffers have to be reallocated.
+> 
 
-Pulled into arm/dt, thanks!
+Note that for a decoder, the OUTPUT side buffers are coded. Is there any
+straightforward correlation between the buffer size and the resolution?
 
-       Arnd
+In other words, how does the driver figure out if the size is
+resonably large?
+
+Regards,
+Ezequiel
+
 
 _______________________________________________
 Linux-rockchip mailing list
