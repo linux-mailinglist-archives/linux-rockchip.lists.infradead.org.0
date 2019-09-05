@@ -2,84 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23813A9BD9
-	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Sep 2019 09:31:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A89BA9EB2
+	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Sep 2019 11:43:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u41psF89GE4dUkmqlFkdqdTaXEIyb4zSuZRmWtP6Nnk=; b=OQ4wAsAzoNqBUM
-	akdDsXp04ZzDZzi8R3VYRBRGxYYGksn7d/hMwNkxkPtBpmWbKtRrI4nqZorszfGWHDnINmX/CiylK
-	UvUBBDAIoU5N4b1HoimPJyOtOwq+HIpNE1RypyjhENsXhH6Cw18QmBNp2DXYR0w0n4+xm8YSZ/V+y
-	LKqUN8zXfDCbutv3rPLRYvHCa0MtL3KBhmtvLQJ6TvpYvLdGI7iPN0eJAv1NURnOWyay4YH+g7Nd8
-	RFzfZ0ATIUGiv3EDhHznsiGRp7zNMI+qxpxyf39GUhKdex6U78ivsJUVnDdrCc8GewBQDNbv5P7H/
-	PozCzOBGDerDQy1DvDOw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vSA1HUIeCoEAbA9G0iblccBj/dIVU870uZMFT3lez20=; b=Axr5Dtp+9btVCO
+	AJ1TPP26hZBVy2qXhN7enqkjTLqtvJC2Cfj85aPfLotZavAf9YcsXm9WZLnJYErmjGjb15dAV3upy
+	1+EcjUh3e09zsu4n540VZRr1LHCBE6SaTzBvH6ka0rN5MzuUCJ/PBzh7vJU9ewi4YcL+39Rak/8uP
+	AHLl1gpM2aegnkvm4JFeX6uqCn6gw0fwGXOoJO0XXj1ZJzIlgxzqeMVA90kd5w5QWd5KK9yj4aSMK
+	pZDzj/qcYX0KfZL7ABmmhQDd0H0EXqgdZOxRjyFdZBPvoxxKWdow2yykxnKdus2gmM95BX1XLmH8z
+	bif4J2kxSMftg6ZDXE9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5mEq-0005ma-Jp; Thu, 05 Sep 2019 07:31:28 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1i5oIp-00006P-0h; Thu, 05 Sep 2019 09:43:43 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5mE9-0005cN-Sj
- for linux-rockchip@lists.infradead.org; Thu, 05 Sep 2019 07:30:51 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id b11so905692vsq.2
- for <linux-rockchip@lists.infradead.org>; Thu, 05 Sep 2019 00:30:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=IQ0/S8VZ4qMRw3JK6ZvbKs3F/tCm6SUhf9G5EivQXdc=;
- b=UYM/4pTaMPGMdyfvPuMOZOCgbDH/G0Ni+FJW6pxskSIFTL+aEsPWoZPKHIpZVYyllZ
- 8yTuO/J7O03xjHJca6yzh94hK3SAWnbDyuL+c+5JQ7cYVyukh/LoPPlGshjdY95pf3Lq
- S8qSUsurOi3OQJ6x1qVP+pXjj73B20oAABO7B9nw8tC3RGD2F+gvDbok1aUi+f3amBTZ
- KfR7KrQ1rWUfmzOSuuqdErJ2r97mXqWON3aUo/7cZRpLy2zOHTDluZtK5/EOLt0pUHXg
- w5llS0QPgMmCjT94tvyi6jNoJWFq4UBg0G4nVD6BQE2pyUuDklWOeY1R4pAGkpcsGu5W
- 8lzg==
+ id 1i5oIl-00005H-BO
+ for linux-rockchip@lists.infradead.org; Thu, 05 Sep 2019 09:43:41 +0000
+Received: by mail-pf1-x444.google.com with SMTP id q21so1361309pfn.11
+ for <linux-rockchip@lists.infradead.org>; Thu, 05 Sep 2019 02:43:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=kgR/rau9PNQnc1XrO3uDHAlTFaU8EKj1qkkgQWKlXHw=;
+ b=KwRfK/CvuP30TijZ9J7kOzqGl6l928El2JhHJT+38Q+/hp7rCU7bqZA0U7kMamuslW
+ 5XQj0uFAvI+sovFMq8NA1UuaSpcSDD4IdOarNrpqKb6afjxUK1hfijwXuxdavgyP19Br
+ P9nfVrS72UN6quo3MOCgkFUq/TH3+HH5hyqJs=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=IQ0/S8VZ4qMRw3JK6ZvbKs3F/tCm6SUhf9G5EivQXdc=;
- b=m1BOt9ygYdebV5SCFZRWjpk/ApuzLE6aDD/XxN3JgdyQgdt22is+RT1+he+c1Zf03i
- A+i/B4yelGWDxeJz5YX0lN9q3Hgu/beBAp/838UEPAcvW7aD24CtqA6D3idCQlw6C6ZZ
- KMbgdHOcW8B7XJi4iX4fo1ujQd7UnZskhK5G1JgAoRCjkx7jzDGNzunKNnDEEWGgUAk6
- //M0CPd2jD51OEPlaZ6HWVQH/rwO4HQjWvcJ3lIdPfRHo1X4F4x4R2AgBw5YIc57QG8f
- x1d5SkT2JE0bYo8wmzsC4mkmIzqVOqW0QpCrA0r6ZXo90Ql/Oq1x2CNpkdny7aVud5Mg
- MsHg==
-X-Gm-Message-State: APjAAAWh3J7MhplGP9Ukc2xLKl4Qw3/jT9hy0/avMn5wnXBuT23eGRHy
- c0JEGXa/r/c3ftQQDFmMVpwoxDQswd3zss/0vsgvlA==
-X-Google-Smtp-Source: APXvYqxllVsWEAV7tGPP3LJ4W5SKkNdoOGohNtI9UJQVSXkxZfNZ3BhfODbGFkD56GQJlowJrS1LQqlNWZhtmrW118o=
-X-Received: by 2002:a67:e2cf:: with SMTP id i15mr969126vsm.165.1567668644030; 
- Thu, 05 Sep 2019 00:30:44 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=kgR/rau9PNQnc1XrO3uDHAlTFaU8EKj1qkkgQWKlXHw=;
+ b=mSwhDTniCE3Q47XSPuVUArTT2npWdrOyALKS98Q2JwCkCSb/f/yQgwZc/WCmK9c43T
+ v2AuOXKGuQNdI/oRlP/T5Rj2/uUlARUXvPVakU56ruL+eWIoL5m18GhMix+AVxrC1all
+ Zm3BGvt2vdNhUlxUV1r32aQKf5r4yZmbbbjIELFpxFelMl2ISHRI12Rm3SY0Cn68fnju
+ x/Ge46tkOHyZNpUmLAone5dO8X6e3QSDXfMiTrCKu79TQy5JNESDV4HhVVovTwOicbBS
+ +d6hG4ucJd3Cvjh9SPCC/VVO7F+SkHtpaH8W3WXG08+Pz8Ie9MgVNDAsas2kqAo6axXa
+ pqsA==
+X-Gm-Message-State: APjAAAVMkeW5XhHUY/65NhYIYKbnfsdCDBNE/t13DXIdMSD2yDXxR07p
+ TIfAJS6Q8lzPKcjE//CYs7KkKg==
+X-Google-Smtp-Source: APXvYqz5IR9c5mog/LVvbNwuhK3G189Z8ZJSF7jvcWe5pUpOsa/a8rFtsJumvVxpIkOAWikyOWiQZA==
+X-Received: by 2002:a17:90a:f48f:: with SMTP id
+ bx15mr2937994pjb.113.1567676618357; 
+ Thu, 05 Sep 2019 02:43:38 -0700 (PDT)
+Received: from localhost ([2401:fa00:1:10:79b4:bd83:e4a5:a720])
+ by smtp.gmail.com with ESMTPSA id c17sm311633pfo.57.2019.09.05.02.43.33
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 05 Sep 2019 02:43:37 -0700 (PDT)
+From: Cheng-Yi Chiang <cychiang@chromium.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v2] drm: bridge/dw_hdmi: add audio sample channel status
+ setting
+Date: Thu,  5 Sep 2019 17:43:25 +0800
+Message-Id: <20190905094325.33156-1-cychiang@chromium.org>
+X-Mailer: git-send-email 2.23.0.187.g17f5b7556c-goog
 MIME-Version: 1.0
-References: <1567564030-83224-1-git-send-email-shawn.lin@rock-chips.com>
- <CAD=FV=Vwmj=LehhLCN5OBbEfNNXp9gULLYRoVV86HtqZBxvEjw@mail.gmail.com>
-In-Reply-To: <CAD=FV=Vwmj=LehhLCN5OBbEfNNXp9gULLYRoVV86HtqZBxvEjw@mail.gmail.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 5 Sep 2019 09:30:08 +0200
-Message-ID: <CAPDyKFqbr9Q-aDOf3t+nftw=a1vR95yHHo=-ieoT1fnQ1S-HCQ@mail.gmail.com>
-Subject: Re: [PATCH] mmc: dw_mmc-rockchip: Using 180 sample phase if all
- phases work
-To: Doug Anderson <dianders@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_003047_160364_4C6168BA 
-X-CRM114-Status: GOOD (  23.78  )
+X-CRM114-CacheID: sfid-20190905_024339_414149_A64B1B74 
+X-CRM114-Status: GOOD (  13.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,85 +94,206 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Jaehoon Chung <jh80.chung@samsung.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Shawn Lin <shawn.lin@rock-chips.com>,
- Linux MMC List <linux-mmc@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>
+Cc: alsa-devel@alsa-project.org, kuninori.morimoto.gx@renesas.com,
+ airlied@linux.ie, dri-devel@lists.freedesktop.org, cain.cai@rock-chips.com,
+ a.hajda@samsung.com, Laurent.pinchart@ideasonboard.com,
+ Yakir Yang <ykk@rock-chips.com>, sam@ravnborg.org, cychiang@chromium.org,
+ zhengxing@rock-chips.com, linux-rockchip@lists.infradead.org,
+ dgreid@chromium.org, tzungbi@chromium.org, jonas@kwiboo.se,
+ jeffy.chen@rock-chips.com, eddie.cai@rock-chips.com,
+ linux-arm-kernel@lists.infradead.org, jernej.skrabec@siol.net,
+ dianders@chromium.org, daniel@ffwll.ch, enric.balletbo@collabora.com,
+ kuankuan.y@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, 4 Sep 2019 at 17:44, Doug Anderson <dianders@chromium.org> wrote:
->
-> Hi,
->
-> On Tue, Sep 3, 2019 at 7:28 PM Shawn Lin <shawn.lin@rock-chips.com> wrote:
-> >
-> > default_sample_phase is used to make sure the cards are enumurated
-> > properly and will be set to 0 if not assigned. However, the sample
-> > phase should depends on the tuned phase if running higher clock rate.
-> > If all phases work but default_sample_phase isn't assigned, driver
-> > set sample phase to 0 for this case, which isn't the best choice,
-> > because we always expect to set phase to the middle of window. To
-> > solve the following continually issues we have seen in the test, we
-> > need set phase to the more stable one, 180, if all phases work.
-> >
-> > mmcblk1: error -84 transferring data, sector 1735064, nr 8, cmd
-> > response 0x900, card status 0xb00
-> > mmcblk1: retrying using single block read
-> > dwmmc_rockchip ff0f0000.dwmmc: All phases work, using default phase 0.
-> > mmcblk1: retrying because a re-tune was needed
-> >
-> > .....
-> >
-> > mmcblk1: error -84 transferring data, sector 1728672, nr 248, cmd
-> > response 0x900, card status 0xb00
-> > mmcblk1: retrying using single block read
-> > dwmmc_rockchip ff0f0000.dwmmc: All phases work, using default phase 0.
-> >
-> > Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
-> > ---
-> >
-> >  drivers/mmc/host/dw_mmc-rockchip.c | 5 ++---
-> >  1 file changed, 2 insertions(+), 3 deletions(-)
-> >
-> > diff --git a/drivers/mmc/host/dw_mmc-rockchip.c b/drivers/mmc/host/dw_mmc-rockchip.c
-> > index d4d0213..9ef9723 100644
-> > --- a/drivers/mmc/host/dw_mmc-rockchip.c
-> > +++ b/drivers/mmc/host/dw_mmc-rockchip.c
-> > @@ -209,9 +209,8 @@ static int dw_mci_rk3288_execute_tuning(struct dw_mci_slot *slot, u32 opcode)
-> >         }
-> >
-> >         if (ranges[0].start == 0 && ranges[0].end == priv->num_phases - 1) {
-> > -               clk_set_phase(priv->sample_clk, priv->default_sample_phase);
-> > -               dev_info(host->dev, "All phases work, using default phase %d.",
-> > -                        priv->default_sample_phase);
-> > +               clk_set_phase(priv->sample_clk, 180);
-> > +               dev_info(host->dev, "All phases work, using phase 180.");
->
-> This violates what is documented in the device tree bindings, which says:
->
-> * rockchip,default-sample-phase: The default phase to set ciu-sample at
->   probing, low speeds or in case where all phases work at tuning time.
->   If not specified 0 deg will be used.
->
-> Specifically:
-> * You don't use "default-sample-phase" at all when all phases pass.
-> * You don't default to 0 if not specified.
->
-> Personally I think we could change the bindings to say: "If not
-> specified 180 deg will be used" and then change the code to do the
-> same.  If we wanted to keep the "stable ABI" that is device tree we
-> could also just do the "180 default" for new SoCs and then manually
-> add the device tree fragment to all old dts files.
->
+From: Yakir Yang <ykk@rock-chips.com>
 
-Thanks for spotting this! Let me drop the patch and wait for a new
-version from Shawn.
+When transmitting IEC60985 linear PCM audio, we configure the
+Aduio Sample Channel Status information of all the channel
+status bits in the IEC60958 frame.
+Refer to 60958-3 page 10 for frequency, original frequency, and
+wordlength setting.
 
-Kind regards
-Uffe
+This fix the issue that audio does not come out on some monitors
+(e.g. LG 22CV241)
+
+Note that these registers are only for interfaces:
+I2S audio interface, General Purpose Audio (GPA), or AHB audio DMA
+(AHBAUDDMA).
+For S/PDIF interface this information comes from the stream.
+
+Currently this function dw_hdmi_set_channel_status is only called
+from dw-hdmi-i2s-audio in I2S setup.
+
+Signed-off-by: Yakir Yang <ykk@rock-chips.com>
+Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+---
+ Original patch by Yakir Yang is at
+
+ https://lore.kernel.org/patchwork/patch/539653/
+
+ Change from v1 to v2:
+ 1. Remove the version check because this will only be called by
+    dw-hdmi-i2s-audio, and the registers are available in I2S setup.
+ 2. Set these registers in dw_hdmi_i2s_hw_params.
+ 3. Fix the sample width setting so it can use 16 or 24 bits.
+
+ .../drm/bridge/synopsys/dw-hdmi-i2s-audio.c   |  1 +
+ drivers/gpu/drm/bridge/synopsys/dw-hdmi.c     | 70 +++++++++++++++++++
+ drivers/gpu/drm/bridge/synopsys/dw-hdmi.h     | 20 ++++++
+ include/drm/bridge/dw_hdmi.h                  |  2 +
+ 4 files changed, 93 insertions(+)
+
+diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+index 34d8e837555f..b801a28b0f17 100644
+--- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
++++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+@@ -102,6 +102,7 @@ static int dw_hdmi_i2s_hw_params(struct device *dev, void *data,
+ 	}
+ 
+ 	dw_hdmi_set_sample_rate(hdmi, hparms->sample_rate);
++	dw_hdmi_set_channel_status(hdmi, hparms->sample_width);
+ 	dw_hdmi_set_channel_count(hdmi, hparms->channels);
+ 	dw_hdmi_set_channel_allocation(hdmi, hparms->cea.channel_allocation);
+ 
+diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+index bd65d0479683..d1daa369c8ae 100644
+--- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
++++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+@@ -582,6 +582,76 @@ static unsigned int hdmi_compute_n(unsigned int freq, unsigned long pixel_clk)
+ 	return n;
+ }
+ 
++/*
++ * When transmitting IEC60958 linear PCM audio, these registers allow to
++ * configure the channel status information of all the channel status
++ * bits in the IEC60958 frame. For the moment this configuration is only
++ * used when the I2S audio interface, General Purpose Audio (GPA),
++ * or AHB audio DMA (AHBAUDDMA) interface is active
++ * (for S/PDIF interface this information comes from the stream).
++ */
++void dw_hdmi_set_channel_status(struct dw_hdmi *hdmi,
++				unsigned int sample_width)
++{
++	u8 aud_schnl_samplerate;
++	u8 aud_schnl_8;
++	u8 word_length_bits;
++
++	switch (hdmi->sample_rate) {
++	case 32000:
++		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_32K;
++		break;
++	case 44100:
++		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_44K1;
++		break;
++	case 48000:
++		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_48K;
++		break;
++	case 88200:
++		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_88K2;
++		break;
++	case 96000:
++		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_96K;
++		break;
++	case 176400:
++		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_176K4;
++		break;
++	case 192000:
++		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_192K;
++		break;
++	case 768000:
++		aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_768K;
++		break;
++	default:
++		dev_warn(hdmi->dev, "Unsupported audio sample rate (%u)\n",
++			 hdmi->sample_rate);
++		return;
++	}
++
++	/* set channel status register */
++	hdmi_modb(hdmi, aud_schnl_samplerate, HDMI_FC_AUDSCHNLS7_SMPRATE_MASK,
++		  HDMI_FC_AUDSCHNLS7);
++
++	/*
++	 * Set original frequency to be the same as frequency.
++	 * Use one-complement value as stated in IEC60958-3 page 13.
++	 */
++	aud_schnl_8 = (~aud_schnl_samplerate) <<
++			HDMI_FC_AUDSCHNLS8_ORIGSAMPFREQ_OFFSET;
++
++	/*
++	 * Refer to IEC60958-3 page 12. We can accept 16 bits or 24 bits.
++	 * Otherwise, set the register to 0t o indicate using default value.
++	 */
++	word_length_bits = (sample_width == 16) ? 0x2 :
++			    ((sample_width == 24) ? 0xb : 0);
++
++	aud_schnl_8 |= word_length_bits << HDMI_FC_AUDSCHNLS8_WORDLEGNTH_OFFSET;
++
++	hdmi_writeb(hdmi, aud_schnl_8, HDMI_FC_AUDSCHNLS8);
++}
++EXPORT_SYMBOL_GPL(dw_hdmi_set_channel_status);
++
+ static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
+ 	unsigned long pixel_clk, unsigned int sample_rate)
+ {
+diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
+index 6988f12d89d9..619ebc1c8354 100644
+--- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
++++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
+@@ -158,6 +158,17 @@
+ #define HDMI_FC_SPDDEVICEINF                    0x1062
+ #define HDMI_FC_AUDSCONF                        0x1063
+ #define HDMI_FC_AUDSSTAT                        0x1064
++#define HDMI_FC_AUDSV                           0x1065
++#define HDMI_FC_AUDSU                           0x1066
++#define HDMI_FC_AUDSCHNLS0                      0x1067
++#define HDMI_FC_AUDSCHNLS1                      0x1068
++#define HDMI_FC_AUDSCHNLS2                      0x1069
++#define HDMI_FC_AUDSCHNLS3                      0x106a
++#define HDMI_FC_AUDSCHNLS4                      0x106b
++#define HDMI_FC_AUDSCHNLS5                      0x106c
++#define HDMI_FC_AUDSCHNLS6                      0x106d
++#define HDMI_FC_AUDSCHNLS7                      0x106e
++#define HDMI_FC_AUDSCHNLS8                      0x106f
+ #define HDMI_FC_DATACH0FILL                     0x1070
+ #define HDMI_FC_DATACH1FILL                     0x1071
+ #define HDMI_FC_DATACH2FILL                     0x1072
+@@ -706,6 +717,15 @@ enum {
+ /* HDMI_FC_AUDSCHNLS7 field values */
+ 	HDMI_FC_AUDSCHNLS7_ACCURACY_OFFSET = 4,
+ 	HDMI_FC_AUDSCHNLS7_ACCURACY_MASK = 0x30,
++	HDMI_FC_AUDSCHNLS7_SMPRATE_MASK = 0x0f,
++	HDMI_FC_AUDSCHNLS7_SMPRATE_192K = 0xe,
++	HDMI_FC_AUDSCHNLS7_SMPRATE_176K4 = 0xc,
++	HDMI_FC_AUDSCHNLS7_SMPRATE_96K = 0xa,
++	HDMI_FC_AUDSCHNLS7_SMPRATE_768K = 0x9,
++	HDMI_FC_AUDSCHNLS7_SMPRATE_88K2 = 0x8,
++	HDMI_FC_AUDSCHNLS7_SMPRATE_32K = 0x3,
++	HDMI_FC_AUDSCHNLS7_SMPRATE_48K = 0x2,
++	HDMI_FC_AUDSCHNLS7_SMPRATE_44K1 = 0x0,
+ 
+ /* HDMI_FC_AUDSCHNLS8 field values */
+ 	HDMI_FC_AUDSCHNLS8_ORIGSAMPFREQ_MASK = 0xf0,
+diff --git a/include/drm/bridge/dw_hdmi.h b/include/drm/bridge/dw_hdmi.h
+index cf528c289857..12144d2f80f4 100644
+--- a/include/drm/bridge/dw_hdmi.h
++++ b/include/drm/bridge/dw_hdmi.h
+@@ -156,6 +156,8 @@ void dw_hdmi_setup_rx_sense(struct dw_hdmi *hdmi, bool hpd, bool rx_sense);
+ 
+ void dw_hdmi_set_sample_rate(struct dw_hdmi *hdmi, unsigned int rate);
+ void dw_hdmi_set_channel_count(struct dw_hdmi *hdmi, unsigned int cnt);
++void dw_hdmi_set_channel_status(struct dw_hdmi *hdmi,
++				unsigned int sample_width);
+ void dw_hdmi_set_channel_allocation(struct dw_hdmi *hdmi, unsigned int ca);
+ void dw_hdmi_audio_enable(struct dw_hdmi *hdmi);
+ void dw_hdmi_audio_disable(struct dw_hdmi *hdmi);
+-- 
+2.23.0.187.g17f5b7556c-goog
+
 
 _______________________________________________
 Linux-rockchip mailing list
