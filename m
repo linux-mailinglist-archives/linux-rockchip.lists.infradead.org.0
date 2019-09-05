@@ -2,98 +2,59 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEBACAAB55
-	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Sep 2019 20:42:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0BE6AAB6F
+	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Sep 2019 20:48:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N3RoTYhyJdU9Lzn6lF+ceD3MVnSJsy/BrB1lebDOjb0=; b=YkH6LMdeUiBhox
-	ZgUeY8rlu1K+lYBHIjl3CkHB6aIxV+JUq7ShszjV9j5fN/UJm0t+I3fA2Mkbe/HXK6zNSS0cPwOIc
-	ELWHfQ4yVfv3xmaW6ihb7K91S669XF94GXOe2gKh7B85glTlntVbedTVOUUCXxsTkCfQA9YZ968h3
-	ZNwml7avPYOh8PkeyKhoY682QteiRsO/pUiCc4XW2UbTqbsUadgwrMhotVJ9FqY7nGSMzpG7mj8RQ
-	NooUTU7RWncOb+0ltHIKahA75F2nMdeKtWF3zPZZ3ZUXLJKZaJUpX24HlXkNzjJQxs0Y3S9Oz39Nz
-	nMn3uD9CBmn0YDCiF3Qw==;
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:To:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VSzAJULSwBoTfHUjpI+JnCN8fxgUreYAbVf5TO2LQBQ=; b=o/v7rnyDbdg2fb
+	xM2CTsG2dU2gqQBvk5Bj1o+MvaUIhp21CZ7FuAG7DDvr2qjhqyVai6Lzl8e+fagQ8gRmvywJQOOnr
+	3bmpxZW4TnG4phokNUZigedwSN7ukyng2z+0j9bYISMu0ySkRRzTcOmbeKn+Uz50DKTXP7SIn9cye
+	LRZvYjQgXgElqq7Y5S+xShvdzbW6RlgtpvV78mQOeTI7biwCUFT48W9BJ7u6rmhPtueOeLeb0xySh
+	LuVCjONyaXrvSs7vM5rMJzG5fVsFSflJTk/CpkFoetqrocfb2rYNo/jeD/ZwgwKVvBJg6jFviv8Us
+	BUURp5Vp7ajyMvjn3LRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5whu-0001D2-U0; Thu, 05 Sep 2019 18:42:11 +0000
-Received: from mout.gmx.net ([212.227.15.18])
+	id 1i5woL-00030w-Nn; Thu, 05 Sep 2019 18:48:49 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5whd-00010V-Ox; Thu, 05 Sep 2019 18:41:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1567708872;
- bh=M1UGnPJJ+2VuEq33S0TdraaobxmDCqcrUAEKeQ8qQUs=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=ZUbcaI0T/PtTrufTRwK68S574RNG0IIdnpXj1FAIZ5Hk2GJ9INr7/CPWoXQf98mlD
- xqb1bKKYrkuiba88qXFMUIdcc0HdiT3JpXBB3hoJKof64v9bk714UXkxmhiRfaSz0T
- 7fTJq/e15prco2OCp2oJY6DJpfk8h7K9eVpIydPk=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.162] ([37.4.249.90]) by mail.gmx.com (mrgmx002
- [212.227.17.190]) with ESMTPSA (Nemesis) id 0M9Jss-1i125G274g-00CkFc; Thu, 05
- Sep 2019 20:41:12 +0200
-Subject: Re: [PATCH -next 02/15] thermal: bcm2835: use
- devm_platform_ioremap_resource() to simplify code
-To: YueHaibing <yuehaibing@huawei.com>, miquel.raynal@bootlin.com,
- rui.zhang@intel.com, edubezval@gmail.com, daniel.lezcano@linaro.org,
- amit.kucheria@verdurent.com, eric@anholt.net, f.fainelli@gmail.com,
- rjui@broadcom.com, sbranden@broadcom.com, mmayer@broadcom.com,
- computersforpeace@gmail.com, gregory.0xf0@gmail.com, matthias.bgg@gmail.com,
- agross@kernel.org, heiko@sntech.de, mcoquelin.stm32@gmail.com,
- alexandre.torgue@st.com, marc.w.gonzalez@free.fr, mans@mansr.com,
- talel@amazon.com, jun.nie@linaro.org, shawnguo@kernel.org,
- phil@raspberrypi.org, gregkh@linuxfoundation.org,
- david.hernandezsanchez@st.com, horms+renesas@verge.net.au,
- wsa+renesas@sang-engineering.com
-References: <20190904122939.23780-1-yuehaibing@huawei.com>
- <20190904122939.23780-3-yuehaibing@huawei.com>
-From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <ba19c083-3c86-eaeb-c071-ea96c2e0dd6e@gmx.net>
-Date: Thu, 5 Sep 2019 20:41:08 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i5woI-00030J-SX
+ for linux-rockchip@lists.infradead.org; Thu, 05 Sep 2019 18:48:48 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C015520825;
+ Thu,  5 Sep 2019 18:48:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567709326;
+ bh=w50tD+33F5R8dc2fXJEl8SIoqEQOVGYCi7R9J3SrOV8=;
+ h=In-Reply-To:References:Cc:Subject:To:From:Date:From;
+ b=VIMSHFkGskoaCxhINBinMken3pf2l4A0IuhKPUF4mfZOBRhqcF7b0aF1PD94/mrwm
+ rtXpBvt2jZgnEkBPLs92JcDYq+8ot6ai7g6YVCHIx+5LCOQ/Uz6+D8S/84de+0k79C
+ zLknPoufl0L7JxAyxHxIZOo/Bb+EKRpe9048KHb4=
 MIME-Version: 1.0
-In-Reply-To: <20190904122939.23780-3-yuehaibing@huawei.com>
-Content-Language: en-US
-X-Provags-ID: V03:K1:WOmrGoYt2aZLE0c0r9K+/VJMXUNzvW/kX7vmvJXlWPXzYW5NR9J
- luyrP+5HUxX+Ik46iIlejCplMa2am5XS0NfLLQ7ZhlXmasy18+i/OA5VoR5aEu1/yVdmVn8
- AN3N1d8lbnA4HPsgXXRyGpNFweFZlAReZpmXxwXL0XGXKC31gFW9I6jO2SraUQgZg8eu25p
- foqc0kdcwKEMp61BV4kvQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:nkW495xtuv4=:tTHYYykyc8MeFH8VYXAtPV
- 1oz89eAs6J4EKmXGB8jywzeB9Rr+HNFXREs3+bl+7MUrhT6Tb5vvEZikpkfN7YcTYBM8A3ZVH
- n4yQa0u0tAnwQxNBcgEVMVosn+/mze41K8we0bObWZxZnDx2pz3YHKwLh/kXBAuFm7+0Rk0Vz
- yZS/73BjtleldpUL66iGqoS9Kj+dBB99d7VSTXyev99g2bS5AtTKgTzYAA9qHIzpXlHp1Snis
- PEOX6R6c/BcoM0LLyefpTFEzY1NY3QGc+6StuImf16b+OmrPPtW8D//puDVdc/ayO1z9cDfeJ
- 2PL2gEH1o2MNxNBYTWlBwD8J1tB2j4dcJRftBAnkaqQ85Gnn8YFcAPxPDuXAvIsqLzV5G839e
- t3N7LgD6zsHeAv9bVTecZjXBHpH+dyf2hYb76M23xIsMwiP5LM3kDJiED61MjNEaWcX8zsGfm
- RP9/VZQ1volYqm1DX5jdkWLrIHvMus+bGRoZLYL2Q9xS0OD/7faZ7Od2MonlHbOd/NL+MJ3aS
- 5RkRJ+DxwonIs2MCGlaOei4aS36r81FmO4qEESDkxqF7tpHww+f3zGTyKOB3NihhKihqYzL13
- pQeW9GaJIbB8jiwxFakYjSp6Ti/3DZcmc/zXgV5bm4FDgyFgUYqnvUq3AK21ur7WXKI5fAqot
- Xp+FknRGP5lTeyZZ8CsTu46mC2ZzJe50IK5pF1sJhsgLnol8Y4rFGBC1lImxkwgaRFmMvOeRg
- 6p+CY4LmFMoUcXfgsv0n8F2h8jtRus6M6jswi9Gt6eu6xOMsMZF1AaYL1Pa6igzbvRrJfwzU3
- yvScYds6ExX42p5vtUeswaXEf/dgE7K2xM8NN1px/JV4fBBYzPPjOzmp/BbOs9ZB0h6Kavpz2
- XAzYn0SJ3Kktzm96QDIc1dqXs9MM/Zh8VYzo8Lc1dT2USxJ6AR+QdDrz6sYDuqhA5BvZrwKSy
- 1Hki0CKIATnfugQVT9araYuKn4Cva/enmNtmVQepcuvmixrpK5w/zayiST5ToOI9RpIl/vvB1
- S2oeaSoQM7cpO2Yea2NVgSizipQACekJixPec4JSuy+Yu0VZ9pg7o8EHw76mY2MG+r4CsH0qs
- B+wYJGsCbNNnemavOVy5pwJLAavhQyNzEzkaNeSVbJ8Radnx6JSvwpUHT0j6Z9CbiyqktJXjm
- WAkFtcjYEqCIzTorRGlhm1s0kDMdvWQ48irGv4jdgqqjV0BOUzFd1PFWfxdVIEj2oCItAhZRO
- +wNSe5aKqpNdFgJlAHm64qfczlAf/2dRkGgFKifPkw02mAE78ADOPFEIwwUDxgy7aWF9pxBsk
- BkFDWVHIRO1pQHw1LJYrmWliprIUaSrvL2WGAhCqiZ5p3ie7wRrL1uTXOP5q1jDcd60a/ptQS
- HvdmAdVPs6xsOBeK0uTBLtNTJ7JT6bTKcckdOw/FyjzI0O9H1+fEAqb8MkMB1wRxp5QtVQcZe
- nWoFCFDA87OryLqTPF6kHOtM6PdhH/EI8=
+In-Reply-To: <1787421.rStINWtZbh@phil>
+References: <1787421.rStINWtZbh@phil>
+Subject: Re: [GIT PULL] Rockchip clock updates for 5.4
+To: Heiko Stuebner <heiko@sntech.de>, mturquette@baylibre.com
+From: Stephen Boyd <sboyd@kernel.org>
+User-Agent: alot/0.8.1
+Date: Thu, 05 Sep 2019 11:48:44 -0700
+Message-Id: <20190905184846.C015520825@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_114154_110467_48598D9C 
-X-CRM114-Status: UNSURE (   6.32  )
+X-CRM114-CacheID: sfid-20190905_114846_945334_DC9CC1B8 
+X-CRM114-Status: UNSURE (   8.19  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -103,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,23 +77,39 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
- bcm-kernel-feedback-list@broadcom.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am 04.09.19 um 14:29 schrieb YueHaibing:
-> Use devm_platform_ioremap_resource() to simplify the code a bit.
-> This is detected by coccinelle.
->
-> Reported-by: Hulk Robot <hulkci@huawei.com>
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-Acked-by: Stefan Wahren <wahrenst@gmx.net>
+Quoting Heiko Stuebner (2019-09-05 05:25:14)
+> Hi Mike, Stephen,
+> 
+> please find below rockchip clock changes for 5.4
+> 
+> Please pull
+> 
+> Thanks
+> Heiko
+> 
+> 
+> The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
+> 
+>   Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.4-rockchip-clk1
+> 
+> for you to fetch changes up to ac68dfd3c4836bb2636fd37f3e075ed218afdb2b:
+> 
+>   clk: rockchip: Add clock controller for the rk3308 (2019-09-05 12:43:39 +0200)
+> 
+> ----------------------------------------------------------------
+
+Thanks. Pulled into clk-next
+
 
 _______________________________________________
 Linux-rockchip mailing list
