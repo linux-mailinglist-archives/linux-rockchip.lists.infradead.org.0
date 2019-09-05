@@ -2,48 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6038FAA311
-	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Sep 2019 14:25:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 109D8AA7BB
+	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Sep 2019 17:54:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mCPbpWZrd3uOlO2iVQybBmAcl1STQ2sGIpYJqTS5cSY=; b=Fy8IxW3XvM9tOF
-	daS63zPkOHzP/Wn9+9U14ErtdAdet+FzNUl1pfz/TOJRwlxABfEvYmEmbtsSqtHH4H0GKX1kZmIPf
-	4fsBSGUI1Ezd1mQrVOXCgA8yykTATBvH+/ctgLRlDerWA9LQ8bpOyDas06MTb+gwICNuPibp++M7g
-	BHTZ1XiHFBoR2gLtNuSZQV397DnGv6CgJAAc3kgqODZUz/HpxO+tZhG3mGIZSqFdXC+QpZCALm9wY
-	kLYseX25W+iBe3KddIFrwHdL89WsDxw5D1q+KymtXpP7UOwxldO95zlg2h2MQF3kcf5VRAWvyNFR5
-	qX2xD7oKs/LZvYwLwkSA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=po8iNpZODn3yt5qkqiuxO+QGXiWH6qacVapQnU8XZF0=; b=ZFxGIf3DkNSMjA
+	JRl1rdJ/KS5qZfWiL1Qc3CSNyfzraq2ZmeMerwq4GRSI6G9TV1QTgvqBB/OHexwdxZM2/H6mvSzei
+	PaYn27DBvlHVj92R06E37DcQmth5sKQTJka1+iaaPY5Aa6m2g7nEuwRxM+6KOC9I46QEa7n4Qf1Jl
+	CzaWP047q4rUubMwvG4gMkhpjQoBLJ1SNQtIp3ff+Zhq+ZnnHZsiNwuPhek8e37HOWbuwBnaw5eMl
+	WL7pii68sFmEa9ecKyAI97AhSSB70joh7jZjHUl8mL6zyMylJPNfbZnhSfwH970Ktj33P3LyLIBUo
+	vLYoopie171Ee2dDSOPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5qpJ-0002Bx-B8; Thu, 05 Sep 2019 12:25:25 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1i5u5O-0007st-FE; Thu, 05 Sep 2019 15:54:14 +0000
+Received: from mail-qk1-f193.google.com ([209.85.222.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5qpE-00026r-33
- for linux-rockchip@lists.infradead.org; Thu, 05 Sep 2019 12:25:21 +0000
-Received: from wf0413.dip.tu-dresden.de ([141.76.181.157] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <heiko@sntech.de>)
- id 1i5qp9-0003t7-6a; Thu, 05 Sep 2019 14:25:15 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: mturquette@baylibre.com, Stephen Boyd <sboyd@kernel.org>
-Subject: [GIT PULL] Rockchip clock updates for 5.4
-Date: Thu, 05 Sep 2019 14:25:14 +0200
-Message-ID: <1787421.rStINWtZbh@phil>
+ id 1i5u59-0007g8-Vr; Thu, 05 Sep 2019 15:54:01 +0000
+Received: by mail-qk1-f193.google.com with SMTP id s14so2604060qkm.4;
+ Thu, 05 Sep 2019 08:53:58 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Cwmjf5gb63BqTpHRDO6wRd2JZxlRfCH6QvFbYjf7VDQ=;
+ b=oHw6+4/0QOCmitXsPLbmyWWPk+Wr5qTXcU3Zyi8zro2q0bC8jdz5u5160ZGc2fUao9
+ YOuowPWinA2xYMYvFiKfKAaYA1HQSlF+K6zdxeiBgAKa3XaqsFJMT2t3rA1+coOa0wq8
+ IJJjvEPUmkyOEtutEl4LmWFDPFwulnGETIh/2a1myhEN7m3dgsKbSkf1F/i9TY0ThWu+
+ JfjWh3y1AEq1sf4zjZ6PfxQKjqGsbhf6pSydR6amJrj7pvS9i8olcg2R16uloVYYvGnV
+ cngQIryVdmXWVeTuogfUm8QeQYVtfiKYnDBr8L9Osj9iD1BQUtyGIKpf4tBkTAJPqt45
+ 3WVA==
+X-Gm-Message-State: APjAAAXFuXOqEXovp+aZi0CcEwiy8bODia2L205hIhinat6myjflpY+l
+ 5no8KC1USJ7P2NqQ0FIYufNjamCHsA+50Qbzh5u7J5AV
+X-Google-Smtp-Source: APXvYqzGdnC8Gr9nMt4LFO33Zvu0VJq0io3bNUXh3Sk5jWwSQBrBIVfSSVkOzBGRDpnSQ4aR9CNOuZ5EHx5/1URezvQ=
+X-Received: by 2002:a37:4051:: with SMTP id n78mr3551173qka.138.1567698837330; 
+ Thu, 05 Sep 2019 08:53:57 -0700 (PDT)
 MIME-Version: 1.0
+References: <1718334.9BoTfW0Ujv@phil>
+In-Reply-To: <1718334.9BoTfW0Ujv@phil>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 5 Sep 2019 17:53:41 +0200
+Message-ID: <CAK8P3a22kJ=psDxxcf2xnmW9k99mb8s7OaoEsZeXwizt2WTM+A@mail.gmail.com>
+Subject: Re: [GIT PULL 1/2] Rockchip DT32 changes for 5.4 - round2
+To: Heiko Stuebner <heiko@sntech.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_052520_323069_6CB9861D 
-X-CRM114-Status: GOOD (  10.48  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190905_085400_026810_851AD855 
+X-CRM114-Status: UNSURE (   8.63  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.222.193 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.193 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,60 +81,29 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org
+Cc: "open list:ARM/Rockchip SoC support" <linux-rockchip@lists.infradead.org>,
+ SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Mike, Stephen,
+On Thu, Sep 5, 2019 at 2:18 PM Heiko Stuebner <heiko@sntech.de> wrote:
+>
+> Hi (arm-)soc people,
+>
+> please find below and in the reply a small second round of Rockchip changes
+> targetted at 5.4.
+>
+> Mainly only small cleanups and have been in linux-next for a while now,
+> I just didn't get to pull-requests due to travel and jetlag.
+> Linus wrote that he wants to do an -rc8 but if the stuff below is too late
+> I can also easily move it to 5.5.
 
-please find below rockchip clock changes for 5.4
+This looks simple enough, so pulled into arm/dt, thanks!
 
-Please pull
-
-Thanks
-Heiko
-
-
-The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
-
-  Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.4-rockchip-clk1
-
-for you to fetch changes up to ac68dfd3c4836bb2636fd37f3e075ed218afdb2b:
-
-  clk: rockchip: Add clock controller for the rk3308 (2019-09-05 12:43:39 +0200)
-
-----------------------------------------------------------------
-Removal of an unused variable vom rv1108 and addition of
-clock driver for rk3308 arm64 soc.
-
-----------------------------------------------------------------
-Finley Xiao (3):
-      dt-bindings: Add bindings for rk3308 clock controller
-      clk: rockchip: Add dt-binding header for rk3308
-      clk: rockchip: Add clock controller for the rk3308
-
-Nathan Huckleberry (1):
-      clk: rockchip: Fix -Wunused-const-variable in rv1108 clk driver
-
- .../bindings/clock/rockchip,rk3308-cru.txt         |  60 ++
- drivers/clk/rockchip/Makefile                      |   1 +
- drivers/clk/rockchip/clk-rk3308.c                  | 955 +++++++++++++++++++++
- drivers/clk/rockchip/clk-rv1108.c                  |   1 -
- drivers/clk/rockchip/clk.h                         |  13 +
- include/dt-bindings/clock/rk3308-cru.h             | 387 +++++++++
- 6 files changed, 1416 insertions(+), 1 deletion(-)
- create mode 100644 Documentation/devicetree/bindings/clock/rockchip,rk3308-cru.txt
- create mode 100644 drivers/clk/rockchip/clk-rk3308.c
- create mode 100644 include/dt-bindings/clock/rk3308-cru.h
-
-
-
+      Arnd
 
 _______________________________________________
 Linux-rockchip mailing list
