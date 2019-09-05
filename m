@@ -2,55 +2,107 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D97CAAA7C
-	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Sep 2019 20:00:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEBACAAB55
+	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Sep 2019 20:42:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gUNUgefQabVKpLEDhMm4HVu/G5AI82rc9PXDKu4HHbc=; b=RVOs8Qaa+HsB2J
-	6G+p1i+UiDuGPUExT3g1Z0nJm5Y9xBfJ+cmK5DOr9KbwSjveKKDeRsP30OoEjESZvOxAsxGBxt5b8
-	wo6VoueV60illzIrrScLD9eFH07eEhtDwQqYpDRKN+N1SeUFxJleeR/XunyW7SXtpyqBMf1PhgG+q
-	kRj7zdcyVNFpxh44d0o7DfrvMm2tjvPutRxJ4NKRLqRbyBzk7hm7CMPX47qwunA9OvkULza4/8vDt
-	YQmueDXHJ7jXNvFJa/OdN38pJhQz6mZir9qfJ8KVdTyM8stdK0aIhxh7NxjYuA5yJ5rVSXvItxG7m
-	J760hQdRB080rwybdCMQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=N3RoTYhyJdU9Lzn6lF+ceD3MVnSJsy/BrB1lebDOjb0=; b=YkH6LMdeUiBhox
+	ZgUeY8rlu1K+lYBHIjl3CkHB6aIxV+JUq7ShszjV9j5fN/UJm0t+I3fA2Mkbe/HXK6zNSS0cPwOIc
+	ELWHfQ4yVfv3xmaW6ihb7K91S669XF94GXOe2gKh7B85glTlntVbedTVOUUCXxsTkCfQA9YZ968h3
+	ZNwml7avPYOh8PkeyKhoY682QteiRsO/pUiCc4XW2UbTqbsUadgwrMhotVJ9FqY7nGSMzpG7mj8RQ
+	NooUTU7RWncOb+0ltHIKahA75F2nMdeKtWF3zPZZ3ZUXLJKZaJUpX24HlXkNzjJQxs0Y3S9Oz39Nz
+	nMn3uD9CBmn0YDCiF3Qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5w3b-0002KA-OQ; Thu, 05 Sep 2019 18:00:31 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1i5whu-0001D2-U0; Thu, 05 Sep 2019 18:42:11 +0000
+Received: from mout.gmx.net ([212.227.15.18])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5w3X-0002JK-QZ
- for linux-rockchip@lists.infradead.org; Thu, 05 Sep 2019 18:00:29 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 595DB28DD72
-Message-ID: <93b49e964b1f9f5c799affd2ab5416a16f0dda23.camel@collabora.com>
-Subject: Re: [PATCH for 5.4] media: hantro: Fix s_fmt for dynamic resolution
- changes
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Philipp Zabel <p.zabel@pengutronix.de>, linux-media@vger.kernel.org
-Date: Thu, 05 Sep 2019 15:00:15 -0300
-In-Reply-To: <1567603704.3041.10.camel@pengutronix.de>
-References: <20190903171256.25052-1-ezequiel@collabora.com>
- <1567592011.3041.1.camel@pengutronix.de>
- <37bbd1b8ee7bb82c75aefb675e0c3ddd955dde0b.camel@collabora.com>
- <1567603704.3041.10.camel@pengutronix.de>
-Organization: Collabora
-User-Agent: Evolution 3.30.5-1.1 
+ id 1i5whd-00010V-Ox; Thu, 05 Sep 2019 18:41:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1567708872;
+ bh=M1UGnPJJ+2VuEq33S0TdraaobxmDCqcrUAEKeQ8qQUs=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=ZUbcaI0T/PtTrufTRwK68S574RNG0IIdnpXj1FAIZ5Hk2GJ9INr7/CPWoXQf98mlD
+ xqb1bKKYrkuiba88qXFMUIdcc0HdiT3JpXBB3hoJKof64v9bk714UXkxmhiRfaSz0T
+ 7fTJq/e15prco2OCp2oJY6DJpfk8h7K9eVpIydPk=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.162] ([37.4.249.90]) by mail.gmx.com (mrgmx002
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 0M9Jss-1i125G274g-00CkFc; Thu, 05
+ Sep 2019 20:41:12 +0200
+Subject: Re: [PATCH -next 02/15] thermal: bcm2835: use
+ devm_platform_ioremap_resource() to simplify code
+To: YueHaibing <yuehaibing@huawei.com>, miquel.raynal@bootlin.com,
+ rui.zhang@intel.com, edubezval@gmail.com, daniel.lezcano@linaro.org,
+ amit.kucheria@verdurent.com, eric@anholt.net, f.fainelli@gmail.com,
+ rjui@broadcom.com, sbranden@broadcom.com, mmayer@broadcom.com,
+ computersforpeace@gmail.com, gregory.0xf0@gmail.com, matthias.bgg@gmail.com,
+ agross@kernel.org, heiko@sntech.de, mcoquelin.stm32@gmail.com,
+ alexandre.torgue@st.com, marc.w.gonzalez@free.fr, mans@mansr.com,
+ talel@amazon.com, jun.nie@linaro.org, shawnguo@kernel.org,
+ phil@raspberrypi.org, gregkh@linuxfoundation.org,
+ david.hernandezsanchez@st.com, horms+renesas@verge.net.au,
+ wsa+renesas@sang-engineering.com
+References: <20190904122939.23780-1-yuehaibing@huawei.com>
+ <20190904122939.23780-3-yuehaibing@huawei.com>
+From: Stefan Wahren <wahrenst@gmx.net>
+Message-ID: <ba19c083-3c86-eaeb-c071-ea96c2e0dd6e@gmx.net>
+Date: Thu, 5 Sep 2019 20:41:08 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20190904122939.23780-3-yuehaibing@huawei.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:WOmrGoYt2aZLE0c0r9K+/VJMXUNzvW/kX7vmvJXlWPXzYW5NR9J
+ luyrP+5HUxX+Ik46iIlejCplMa2am5XS0NfLLQ7ZhlXmasy18+i/OA5VoR5aEu1/yVdmVn8
+ AN3N1d8lbnA4HPsgXXRyGpNFweFZlAReZpmXxwXL0XGXKC31gFW9I6jO2SraUQgZg8eu25p
+ foqc0kdcwKEMp61BV4kvQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:nkW495xtuv4=:tTHYYykyc8MeFH8VYXAtPV
+ 1oz89eAs6J4EKmXGB8jywzeB9Rr+HNFXREs3+bl+7MUrhT6Tb5vvEZikpkfN7YcTYBM8A3ZVH
+ n4yQa0u0tAnwQxNBcgEVMVosn+/mze41K8we0bObWZxZnDx2pz3YHKwLh/kXBAuFm7+0Rk0Vz
+ yZS/73BjtleldpUL66iGqoS9Kj+dBB99d7VSTXyev99g2bS5AtTKgTzYAA9qHIzpXlHp1Snis
+ PEOX6R6c/BcoM0LLyefpTFEzY1NY3QGc+6StuImf16b+OmrPPtW8D//puDVdc/ayO1z9cDfeJ
+ 2PL2gEH1o2MNxNBYTWlBwD8J1tB2j4dcJRftBAnkaqQ85Gnn8YFcAPxPDuXAvIsqLzV5G839e
+ t3N7LgD6zsHeAv9bVTecZjXBHpH+dyf2hYb76M23xIsMwiP5LM3kDJiED61MjNEaWcX8zsGfm
+ RP9/VZQ1volYqm1DX5jdkWLrIHvMus+bGRoZLYL2Q9xS0OD/7faZ7Od2MonlHbOd/NL+MJ3aS
+ 5RkRJ+DxwonIs2MCGlaOei4aS36r81FmO4qEESDkxqF7tpHww+f3zGTyKOB3NihhKihqYzL13
+ pQeW9GaJIbB8jiwxFakYjSp6Ti/3DZcmc/zXgV5bm4FDgyFgUYqnvUq3AK21ur7WXKI5fAqot
+ Xp+FknRGP5lTeyZZ8CsTu46mC2ZzJe50IK5pF1sJhsgLnol8Y4rFGBC1lImxkwgaRFmMvOeRg
+ 6p+CY4LmFMoUcXfgsv0n8F2h8jtRus6M6jswi9Gt6eu6xOMsMZF1AaYL1Pa6igzbvRrJfwzU3
+ yvScYds6ExX42p5vtUeswaXEf/dgE7K2xM8NN1px/JV4fBBYzPPjOzmp/BbOs9ZB0h6Kavpz2
+ XAzYn0SJ3Kktzm96QDIc1dqXs9MM/Zh8VYzo8Lc1dT2USxJ6AR+QdDrz6sYDuqhA5BvZrwKSy
+ 1Hki0CKIATnfugQVT9araYuKn4Cva/enmNtmVQepcuvmixrpK5w/zayiST5ToOI9RpIl/vvB1
+ S2oeaSoQM7cpO2Yea2NVgSizipQACekJixPec4JSuy+Yu0VZ9pg7o8EHw76mY2MG+r4CsH0qs
+ B+wYJGsCbNNnemavOVy5pwJLAavhQyNzEzkaNeSVbJ8Radnx6JSvwpUHT0j6Z9CbiyqktJXjm
+ WAkFtcjYEqCIzTorRGlhm1s0kDMdvWQ48irGv4jdgqqjV0BOUzFd1PFWfxdVIEj2oCItAhZRO
+ +wNSe5aKqpNdFgJlAHm64qfczlAf/2dRkGgFKifPkw02mAE78ADOPFEIwwUDxgy7aWF9pxBsk
+ BkFDWVHIRO1pQHw1LJYrmWliprIUaSrvL2WGAhCqiZ5p3ie7wRrL1uTXOP5q1jDcd60a/ptQS
+ HvdmAdVPs6xsOBeK0uTBLtNTJ7JT6bTKcckdOw/FyjzI0O9H1+fEAqb8MkMB1wRxp5QtVQcZe
+ nWoFCFDA87OryLqTPF6kHOtM6PdhH/EI8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_110028_126100_E4A46C01 
-X-CRM114-Status: GOOD (  22.90  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190905_114154_110467_48598D9C 
+X-CRM114-Status: UNSURE (   6.32  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,102 +115,23 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: fbuergisser@chromium.org, Nicolas Dufresne <nicolas.dufresne@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
- Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>, linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>, kernel@collabora.com
+Cc: linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
+ bcm-kernel-feedback-list@broadcom.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, 2019-09-04 at 15:28 +0200, Philipp Zabel wrote:
-> On Wed, 2019-09-04 at 10:01 -0300, Ezequiel Garcia wrote:
-> > On Wed, 2019-09-04 at 12:13 +0200, Philipp Zabel wrote:
-> > > Hi Ezequiel,
-> > > 
-> > > On Tue, 2019-09-03 at 14:12 -0300, Ezequiel Garcia wrote:
-> > > > Commit 953aaa1492c53 ("media: rockchip/vpu: Prepare things to support decoders")
-> > > > changed the conditions under S_FMT was allowed for OUTPUT
-> > > > CAPTURE buffers.
-> > > > 
-> > > > However, and according to the mem-to-mem stateless decoder specification,
-> > > > in order to support dynamic resolution changes, S_FMT should be allowed
-> > > > even if OUTPUT buffers have been allocated.
-> > > > 
-> > > > Relax decoder S_FMT restrictions on OUTPUT buffers, allowing a resolution
-> > > > modification, provided the pixel format stays the same.
-> > > > 
-> > > > Tested on RK3288 platforms using ChromiumOS Video Decode/Encode Accelerator Unittests.
-> > > > 
-> > > > Fixes: 953aaa1492c53 ("media: rockchip/vpu: Prepare things to support decoders")
-> > > > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-> > > > ---
-> > > >  drivers/staging/media/hantro/hantro_v4l2.c | 22 ++++++++++++++++------
-> > > >  1 file changed, 16 insertions(+), 6 deletions(-)
-> > > > 
-> > > > diff --git a/drivers/staging/media/hantro/hantro_v4l2.c b/drivers/staging/media/hantro/hantro_v4l2.c
-> > > > index 3dae52abb96c..d48b548842cf 100644
-> > > > --- a/drivers/staging/media/hantro/hantro_v4l2.c
-> > > > +++ b/drivers/staging/media/hantro/hantro_v4l2.c
-> > > > @@ -367,19 +367,22 @@ vidioc_s_fmt_out_mplane(struct file *file, void *priv, struct v4l2_format *f)
-> > > >  {
-> > > >  	struct v4l2_pix_format_mplane *pix_mp = &f->fmt.pix_mp;
-> > > >  	struct hantro_ctx *ctx = fh_to_ctx(priv);
-> > > > +	struct vb2_queue *vq = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, f->type);
-> > > >  	const struct hantro_fmt *formats;
-> > > >  	unsigned int num_fmts;
-> > > > -	struct vb2_queue *vq;
-> > > >  	int ret;
-> > > >  
-> > > > -	/* Change not allowed if queue is busy. */
-> > > > -	vq = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, f->type);
-> > > > -	if (vb2_is_busy(vq))
-> > > > -		return -EBUSY;
-> > > > -
-> > > >  	if (!hantro_is_encoder_ctx(ctx)) {
-> > > >  		struct vb2_queue *peer_vq;
-> > > >  
-> > > > +		/*
-> > > > +		 * In other to support dynamic resolution change,
-> > > > +		 * the decoder admits a resolution change, as long
-> > > > +		 * as the pixelformat remains. Can't be done if streaming.
-> > > > +		 */
-> > > > +		if (vb2_is_streaming(vq) || (vb2_is_busy(vq) &&
-> > > > +		    pix_mp->pixelformat != ctx->src_fmt.pixelformat))
-> > > 
-> > > Before using contents of the v4l2_format f for comparison, we should run
-> > > vidioc_try_fmt_out_mplane over it.
-> > 
-> > Right, good catch.
-> > 
-> > >  Also, besides pixelformat, sizeimage
-> > > shouldn't change either, at least if this is a VB2_MMAP queue.
-> > > 
-> > 
-> > This is the OUTPUT queue, so I don't see why the sizeimage
-> > of the coded buffers should stay the same. Maybe I'm missing
-> > something? 
-> 
-> If the OUTPUT vb2_queue is busy, we already have some buffers of the old
-> size allocated. We can't change their size dynamically with just
-> VIDIOC_S_FMT.
-> 
-> Maybe this should correct sizeimage to the old size instead of returning
-> -EBUSY? Either way, if the old buffer size is too small to reasonably
-> decode the new resolution, the OUTPUT buffers have to be reallocated.
-> 
-
-Note that for a decoder, the OUTPUT side buffers are coded. Is there any
-straightforward correlation between the buffer size and the resolution?
-
-In other words, how does the driver figure out if the size is
-resonably large?
-
-Regards,
-Ezequiel
-
+Am 04.09.19 um 14:29 schrieb YueHaibing:
+> Use devm_platform_ioremap_resource() to simplify the code a bit.
+> This is detected by coccinelle.
+>
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+Acked-by: Stefan Wahren <wahrenst@gmx.net>
 
 _______________________________________________
 Linux-rockchip mailing list
