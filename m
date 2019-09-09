@@ -2,94 +2,108 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66BA9ADBC5
-	for <lists+linux-rockchip@lfdr.de>; Mon,  9 Sep 2019 17:07:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34D51ADF68
+	for <lists+linux-rockchip@lfdr.de>; Mon,  9 Sep 2019 21:25:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:References:In-Reply-To:Message-ID:MIME-Version:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SSAUY3S++EreS6uaVEcK5iSg0QEhGvs5sJfE4ite+Uo=; b=r23cLE6N27okzlPnqbIiQiRro
-	zw6Uz88H2CfEIUhhgueDsiwP9mxID6tdb1nIRv3S6TUqiiin2NAxx8TTCELlV4CYiY4T4+KEDJWqj
-	wI7psoJIIgbWulj9802Q7K1h470x5zt65F1NdOEiBs1BDtn+/iMNHbwS0KSSFrGXR+FfY63XhTq03
-	ArBcia35LJMf3SLL1/F8ta50J2nMt1p5Z3qKYPTSxbj8V7s6sA1pjUpyspLt/6ktnRC1HaS/sxLWH
-	paHkMNFJfSzCM72ltIwNkCC4Bn5NgqvaVUXTQYbnJLhJ3jWtp9JB4b/j8b88IUY87nuV6smJWAZ4L
-	QPkmYqAQw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=m9o83ZfNYWp9Tv7zgbrhtTHRKJUFD1qp2ic83dVtVpA=; b=N3nzSDP/8YGKw7
+	UhRS5jMKgyP0NSESTvPyBv7UQQkeOOYhofi+HzjCCYDXk8iPtK2PmileuPM9YpN7l+DWz2RroLM8N
+	NWV+p64rkvawQitOscf7fpS8vxqZayQgmy2cp/RkBbv9EexeZwSyNQmmVZoaZAPSuO1WOuCtF5gY0
+	H04hY2xFKR2PEQ8Q8ZNYDTWfKjhwN9d/ynP1c//3SwuKhvl4TnplQuIC58Mjl3838JTbtBVAd0m6e
+	r19oSPjTVcV6+cTVKDkIzWTphRYsi3LuTNJprPBfDmgeXNLexmBkDV9SokunWBIxegNpcKHyKztoq
+	Mgyy8m0Bo3a7JkGDmluw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7LGY-0004O8-BJ; Mon, 09 Sep 2019 15:07:42 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1i7PHp-0006CG-4H; Mon, 09 Sep 2019 19:25:17 +0000
+Received: from mail-oln040092069016.outbound.protection.outlook.com
+ ([40.92.69.16] helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7LGK-0004EQ-N5; Mon, 09 Sep 2019 15:07:30 +0000
-Received: by mail-wm1-x344.google.com with SMTP id t9so15114122wmi.5;
- Mon, 09 Sep 2019 08:07:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:mime-version:message-id:in-reply-to
- :references:user-agent:content-transfer-encoding;
- bh=8lNJiD/cdGLfa+TOe5mXLdKF5J81dh2AlIfmRLL9vdo=;
- b=aflVrGESjQUPFYiNO/GjC2PhcA+9Eh8MycvxVNAE01cTyYPHsZ5PSiRChlyoXn8Ypi
- Gl45yarFuOqiWBCqKXncrGvtng1bbUy2eJjsd9ncsau4e+OI6442hEY7qgWCcjF0Nq9V
- 0HKitL/Gt4/H4RhkbDEaEkbhn8zAfzM4DhMAelCPpI5D7RearOHHAk/T3cUuh6rqpBly
- n0rpz7zsl9ADlwzu0eEojhjBRwl0TVbxlYNlw0gBsncKAUj6qhOgrGq1/jkNRMTAQ56H
- jcPF7lYk+LtHCDtvF5Qxhom+5Lb35VWOE67LPs1LdHoh6uDspbNHyXZ/sZkb8zw+P5tQ
- 3u2w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
- :in-reply-to:references:user-agent:content-transfer-encoding;
- bh=8lNJiD/cdGLfa+TOe5mXLdKF5J81dh2AlIfmRLL9vdo=;
- b=c1fi5X4r1CSuQBMc/XfzRs4BEwG/0WoFFDEf31/5VTQiyDeT9LGJLhnNGXHCPtOOwg
- SpiJDpKFHjPkaSqLtvkvzkATr7Kumcx+rR/3y0BtVIjA+CN79o53hZgR6drW6MEJwdEv
- NuPAgAgoe9Y9fgLHKk2I9M+gd5d05+85hYjToAIDAGqWWKpLpPMU13RipjY8AEXvV4zz
- 3l/BWOPwmjBg20boGXdoJskFTuvGoMzgMSF63Fa/C5LMRCPTK5qOF1oegk5TYVSwJslo
- 4oNm16CjCMdHPN7v9t30b+aa+thEmG9RjwdZv6RirfRPf7eF/4VFFJ5SbB7U0awwfxgb
- H/KA==
-X-Gm-Message-State: APjAAAWnekAl9TNODqTWTQaOFzWM81Qb9CEA5iwMbr60cCQT1vJpDiXm
- fdnBExXGSN1D6cD7Rh+1jpI=
-X-Google-Smtp-Source: APXvYqzguRfbA18FewBNkcyW0CglXP4Km8nbjPwt7Ka17MXn0mq+V8NmdOZlWGOhktcTK/CGaJSRcQ==
-X-Received: by 2002:a7b:cf25:: with SMTP id m5mr18942744wmg.25.1568041646877; 
- Mon, 09 Sep 2019 08:07:26 -0700 (PDT)
-Received: from localhost ([92.59.185.54])
- by smtp.gmail.com with ESMTPSA id b194sm31472703wmg.46.2019.09.09.08.07.25
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 09 Sep 2019 08:07:25 -0700 (PDT)
-From: Vicente Bergas <vicencb@gmail.com>
-To: Felipe Balbi <balbi@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH] usb: dwc3: Add shutdown to
- =?iso-8859-1?Q?platform=5Fdriver?=
-Date: Mon, 09 Sep 2019 17:07:24 +0200
+ id 1i7PHk-0006BK-8V
+ for linux-rockchip@lists.infradead.org; Mon, 09 Sep 2019 19:25:14 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=QKwVkGVWtevmpsnX5SgOMsyKT6LLRAQ1mvA9V/5SiwrhtloLT1My2Ocue5xVfUEdju8iAhhEB5qfDSaZUbesWDV/OarnFhmS8JMpkczodEjGaVrWGvhOn96HiCQHQpR2PTupI5Xh14rTMYBdB5yg4AIV3Q/v4PH7C0CZREkrHje5GfvAt7AJXAzg8bUu9R3kEfVTIJQ+eZI5CXCpyNqXlPPuZYnPSXoSR0P670B0DM14QYkLBqbKIthQoPvWRrEpAXSRnObwHGcNuDQIC7CntZ5Ez5pHel0Xp/EDxBmHMKi6oO1Rouv7g4SXhO9wNYoPU4SqVtJO2W/rzpuqiNyJyA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=S3mmmWnTghCdUdvX37iI468w4pV1YIs13Ww5+8dNxus=;
+ b=nnzxw9rKC93rUA6vGv3rKajhWWFFQguudHceuloVd+dTU8AANaTaUntBE5teVOSNm5IJhJymPWZc48AucoeMELITh3veRZRG3SD0zCAJwI/jLsOIa91NNtM9iyXH0KXvEw5G4fVt6JXc4+aAzJvFhY472JtChg++3+4h+8WpctJA5aI4pq06g4lfzVPyRs/RSdnjrI+OtoPn/DhCxfyH1sNWtkmA6TUmPJb/DSSPp5SqLYVuY25MOZy/A8RkXkRjREPHXfFpt7eHkU8lavH50N+5kajkwRrEH5dMEoc28ynpWVhzFmfZGB1eVWEy827ippByMrRwZ2O4rRI0D4y/Ww==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+Received: from VE1EUR02FT003.eop-EUR02.prod.protection.outlook.com
+ (10.152.12.55) by VE1EUR02HT045.eop-EUR02.prod.protection.outlook.com
+ (10.152.13.134) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2241.14; Mon, 9 Sep
+ 2019 19:25:06 +0000
+Received: from HE1PR06MB4011.eurprd06.prod.outlook.com (10.152.12.60) by
+ VE1EUR02FT003.mail.protection.outlook.com (10.152.12.112) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.2241.14 via Frontend Transport; Mon, 9 Sep 2019 19:25:06 +0000
+Received: from HE1PR06MB4011.eurprd06.prod.outlook.com
+ ([fe80::59e6:329d:5fc7:5181]) by HE1PR06MB4011.eurprd06.prod.outlook.com
+ ([fe80::59e6:329d:5fc7:5181%5]) with mapi id 15.20.2241.018; Mon, 9 Sep 2019
+ 19:25:06 +0000
+From: Jonas Karlman <jonas@kwiboo.se>
+To: Ezequiel Garcia <ezequiel@collabora.com>
+Subject: Re: [PATCH 01/12] media: hantro: Fix H264 max frmsize supported on
+ RK3288
+Thread-Topic: [PATCH 01/12] media: hantro: Fix H264 max frmsize supported on
+ RK3288
+Thread-Index: AQHVYMMqh0O1621DYkuOLEeadywFI6cbgeoAgAhFHwA=
+Date: Mon, 9 Sep 2019 19:25:06 +0000
+Message-ID: <HE1PR06MB401159D9A49FE4864CEF30F5ACB70@HE1PR06MB4011.eurprd06.prod.outlook.com>
+References: <HE1PR06MB40117D0EE96E6FA638A04B78ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+ <HE1PR06MB4011EAB6F0965D47A20AF805ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+ <b7a43c96fa861de1dbbe969e3aaa4220e7e96793.camel@collabora.com>
+In-Reply-To: <b7a43c96fa861de1dbbe969e3aaa4220e7e96793.camel@collabora.com>
+Accept-Language: sv-SE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: HE1PR0102CA0027.eurprd01.prod.exchangelabs.com
+ (2603:10a6:7:14::40) To HE1PR06MB4011.eurprd06.prod.outlook.com
+ (2603:10a6:7:9c::32)
+x-incomingtopheadermarker: OriginalChecksum:C8BC4683345164D72083381983992A7B0E332B9B35DEFCFF7DE47E0954472DE0;
+ UpperCasedChecksum:DE3B56E668BDC3905B551E22FDD7633CA327E09FF0B1F2D14B2BD0B24354B99C;
+ SizeAsReceived:7998; Count:49
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tmn: [AT1tQaLXTq7HP+DF/epjReN1x0Ft5xAY]
+x-microsoft-original-message-id: <2376bce6-066f-1184-2a71-f79c02f5cb50@kwiboo.se>
+x-ms-publictraffictype: Email
+x-incomingheadercount: 49
+x-eopattributedmessage: 0
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031322404)(2017031323274)(2017031324274)(1601125500)(1603101475)(1701031045);
+ SRVR:VE1EUR02HT045; 
+x-ms-traffictypediagnostic: VE1EUR02HT045:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-message-info: oEDTeNLi3aL6WMwNZV5buoiS+6H8ku4dOaopQTSozD02JTxNrI7E4g5eckgqjsbS9iYcS+CHhtSZM0sPJqXCqtIGM9fAzMYTxCAoTQZ5m5/HbHdFvakynbhjhrn32r2F90EEt7pY5mTZtCmtdycdPEMCNrJQVjnDnBr8olJJTwr8ZuGmTlORIp20mHZ8x8Oa
+x-ms-exchange-transport-forked: True
+Content-ID: <E5F5A2A879876A45ADFDACE62684BCF4@eurprd06.prod.outlook.com>
 MIME-Version: 1.0
-Message-ID: <0edb55d4-3bad-47ac-9d29-8d994d182e67@gmail.com>
-In-Reply-To: <645526b8-bfed-4cc6-9500-1843c5fe0da9@gmail.com>
-References: <4d18d4f7-a00e-bd60-6361-51054eba3bca@arm.com>
- <20190817174140.6394-1-vicencb@gmail.com>
- <8d48017a-64c5-4b25-8d85-113ffcf502c9@gmail.com> <87v9uix1sv.fsf@gmail.com>
- <645526b8-bfed-4cc6-9500-1843c5fe0da9@gmail.com>
-User-Agent: Trojita
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2e58e504-290e-444b-b89a-08d7355b6ba7
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Sep 2019 19:25:06.4962 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1EUR02HT045
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_080728_756592_00B75708 
-X-CRM114-Status: GOOD (  14.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190909_122512_300983_C10CEC79 
+X-CRM114-Status: GOOD (  16.22  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ no trust [40.92.69.16 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vicencb[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,44 +116,74 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Matthias Brugger <mbrugger@suse.com>, Heiko Stuebner <heiko@sntech.de>,
- MarcZyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- linux-usb@vger.kernel.org, Will Deacon <will.deacon@arm.com>,
- linux-rockchip@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gVHVlc2RheSwgQXVndXN0IDI3LCAyMDE5IDI6MTY6MjAgUE0gQ0VTVCwgVmljZW50ZSBCZXJn
-YXMgd3JvdGU6Cj4gT24gVHVlc2RheSwgQXVndXN0IDI3LCAyMDE5IDE6NTM6MDQgUE0gQ0VTVCwg
-RmVsaXBlIEJhbGJpIHdyb3RlOgo+PiBIaSwKPj4gCj4+IFZpY2VudGUgQmVyZ2FzIDx2aWNlbmNi
-QGdtYWlsLmNvbT4gd3JpdGVzOgo+Pj4gT24gU2F0dXJkYXksIEF1Z3VzdCAxNywgMjAxOSA3OjQx
-OjQwIFBNIENFU1QsIFZpY2VudGUgQmVyZ2FzIHdyb3RlOgo+Pj4+IE90aGVyd2lzZSB0aGUgZGV2
-aWNlIGtlZXBzIHdyaXRpbmcgdG8gbWVtb3J5IGFmdGVyIGtleGVjIGFuZCBkaXN0dXJicwo+Pj4+
-IHRoZSBuZXh0IGtlcm5lbC4KPiAuLi4KPj4gCj4+IHdoeSBkb24ndCB5b3UganVzdCBoYXZlIHNo
-dXRkb3duIHVzZSB0aGUgc2FtZSBleGFjdCBmdW5jdGlvbiBhcyByZW1vdmU/Cj4+IEZyYW5rbHks
-IHRob3VnaCwgSSBzdGlsbCBkb24ndCBmdWxseSB1bmRlcnN0YW5kIHdoYXQncyBnb2luZyB3cm9u
-Zwo+PiBoZXJlLiBXaHkgaXMgdGhlIGRldmljZSBzdGlsbCBhbGl2ZSBkdXJpbmcga2V4ZWM/Cj4+
-IAo+PiBjaGVlcnMKPgo+IEhpIEZlbGlwZSwKPiB0aGUgcmVtb3ZlIGFuZCBzaHV0ZG93biBmdW5j
-dGlvbnMgaGF2ZSBkaWZmZXJlbnQgcHJvdG90eXBlcywgc28KPiBzaHV0ZG93biBpcyB3cmFwcGlu
-ZyByZW1vdmUuCj4gV291bGQgaXQgYmUgcHJlZmVyYWJsZSB0byBjYXN0IHJlbW92ZSBhcyBzaHV0
-ZG93bj8KPgo+IFRoZSBpc3N1ZSB3aXRoIGtleGVjIGlzIHRoYXQgdGhlIGRldmljZSBpcyBiZWlu
-ZyB1c2VkIGR1cmluZyB0aGUgbGl2ZXRpbWUKPiBvZiB0aGUgZmlyc3Qga2VybmVsLiBXaGVuIHRo
-ZSBmaXJzdCBrZXJuZWwgZXhlY3V0ZXMga2V4ZWMgaXQgY2FsbHMgdGhlCj4gc2h1dGRvd24gZnVu
-Y3Rpb24gb2YgZHJpdmVycyAoaW5zdGVhZCBvZiByZW1vdmUpLiBCZWNhdXNlIG9mIHRoaXMgdGhl
-IGR3YzMKPiBkZXZpY2Uga2VlcHMgZG9pbmcgdGhpbmdzIGxpa2UgRE1BLgo+IFdoaWxlIHRoZSBz
-ZWNvbmQga2VybmVsIGlzIHRha2luZyBvdmVyLCBpdCBnZXRzIGl0cyBtZW1vcnkgY29ycnVwdGVk
-IHdpdGgKPiBzdWNoIERNQSBhY2Nlc3NlcyBmcm9tIHRoZSBkZXZpY2UuIFdoZW4gdGhlIHNlY29u
-ZCBrZXJuZWwgcmVhY2hlcyB0aGUgcG9pbnQKPiBvZiB0YWtpbmcgb3ZlciB0aGUgZHdjMyBkZXZp
-Y2UsIHJlLWluaXRpYWxpemVzIGl0LCBidXQgaXQgaXMgYWxyZWFkeSB0b28KPiBsYXRlLiBTdGls
-bCB3b3JzZSwgaWYgdGhlIHNlY29uZCBrZXJuZWwgZGlkIG5vdCBoYXZlIHRoZSBkd2MzIGRyaXZl
-ciwgaXQKPiB3b3VsZCBnZXQgZW5kbGVzcyBtZW1vcnkgY29ycnVwdGlvbnMuCj4gQWxsIGluIGFs
-bCwgZGV2aWNlcyB0aGF0IGNhbiBkbyBETUEgbmVlZCB0byBzdG9wIGRvaW5nIGl0IG9uIHNodXRk
-b3duLgo+Cj4gUmVnYXJkcywKPiAgVmljZW7Dpy4KCkhpLApwbGVhc2UsIGNhbiB5b3UgcHJvdmlk
-ZSBzb21lIGZlZWRiYWNrIG9uIHRoaXM/CgpSZWdhcmRzLAogVmljZW7Dpy4KCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxp
-bmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+On 2019-09-04 15:07, Ezequiel Garcia wrote:
+> Hello Jonas,
+>
+> Thank you for the patch.
+>
+> On Sun, 2019-09-01 at 12:45 +0000, Jonas Karlman wrote:
+>> TRM specify supported image size 48x48 to 4096x2304 at step size 16 pixels,
+>> change frmsize max_width/max_height to match TRM.
+>>
+> The RK3288 TRM v1.1 (2015-8-20) I have here mentions a maximum
+> of 3840x2160.
+>
+> I must admit I haven't tested with actual content this size
+> to verify it, have you checked it?
+
+I can confirm that one of my test samples (PUPPIES BATH IN 4K) is 4096x2304 and can be decoded after this patch.
+However the decoding speed is not optimal at 400Mhz, if I recall correctly you need to set the VPU1 clock to 600Mhz for 4K decoding on RK3288.
+
+The RK3288 TRM vcodec chapter from [1], unknown revision and date, lists 48x48 to 4096x2304 step size 16 pixels under 25.5.1 H.264 decoder.
+
+[1] http://www.t-firefly.com/download/firefly-rk3288/docs/TRM/rk3288-chapter-25-video-encoder-decoder-unit-(vcodec).pdf
+
+Regards,
+Jonas
+
+>
+> Thanks,
+> Ezequiel
+>  
+>> Fixes: 760327930e10 ("media: hantro: Enable H264 decoding on rk3288")
+>> Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
+>> ---
+>>  drivers/staging/media/hantro/rk3288_vpu_hw.c | 4 ++--
+>>  1 file changed, 2 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/drivers/staging/media/hantro/rk3288_vpu_hw.c b/drivers/staging/media/hantro/rk3288_vpu_hw.c
+>> index 6bfcc47d1e58..ebb017b8a334 100644
+>> --- a/drivers/staging/media/hantro/rk3288_vpu_hw.c
+>> +++ b/drivers/staging/media/hantro/rk3288_vpu_hw.c
+>> @@ -67,10 +67,10 @@ static const struct hantro_fmt rk3288_vpu_dec_fmts[] = {
+>>  		.max_depth = 2,
+>>  		.frmsize = {
+>>  			.min_width = 48,
+>> -			.max_width = 3840,
+>> +			.max_width = 4096,
+>>  			.step_width = H264_MB_DIM,
+>>  			.min_height = 48,
+>> -			.max_height = 2160,
+>> +			.max_height = 2304,
+>>  			.step_height = H264_MB_DIM,
+>>  		},
+>>  	},
+>
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
