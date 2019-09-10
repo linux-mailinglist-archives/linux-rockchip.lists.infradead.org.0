@@ -2,46 +2,45 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F463AE7B2
-	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Sep 2019 12:14:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 775CBAE7D2
+	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Sep 2019 12:18:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cas3ZIBPQEglSn6r/n1OUjk32Sj5PqeR5F9pESBWzuU=; b=l1jNpSqXqizlZa
-	6fKcfn8SCl5zcQIgv0v20p9K0e2CA4EALDfAW28IeUqWk1ZADhPRmh0T9EuxpQJloAt7sD1wDSxpv
-	k/5OXqhHk9vH1WmHGoSuEEUC97GMI8fggRrT4DXOagORcFhHUiQ1PUU/T2lrqzEJR+KmJMV1xDIQQ
-	Biok8TgHfNvGUwaMr5V19uU5cyhGtUyVcLK3n5Sunrm2qBlauzohZ7bMxI+X4PqVZ/do/ImbSCMDi
-	xMss1o0FcZBzrj51gtaATmt2i7rF8t9qLtps68TbR7Rz4F6WAE8Kz6ytkzuns9LUo6KtsOdKZ1V5D
-	OqPJichidbppTg37B7KA==;
+	List-Owner; bh=1KkHwCXqm20T7BZOjm5xgj6yHYUyZXUX3tPIm9f9dOk=; b=l4086G05V+yuAC
+	Yh91wU0gVsclEd5oeJ0Mubhe96GzF3iXOKs3A2wSu3w6HUxDdZqmV1TBDv/Jxnr6Sbx6tvTTOo5R1
+	KgRzhqc6Cew5Rfz+Tt5ribatCAiyzI0s/LLLv/TLV+SVTbJkh/2L83+OPEa9hxEGKHFH0WnT1lhXv
+	BcwokhfCW4coANz3My4EEKgQqU8tLrJIceQzk5wA9XNIff1jqbYto1/NaCEfD8/Xj7WGVx1RAjqMp
+	3U5jXthLSCVj+2oFdpDNAw+HFMLmlD2jruSnb2xle4w/orNGirs7VerqWLzuX4QhtjDBBCtvHd+Im
+	U+1o/6mEHBXHhDO0dnng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7dAK-0003fn-Rx; Tue, 10 Sep 2019 10:14:28 +0000
+	id 1i7dEQ-0005TK-HN; Tue, 10 Sep 2019 10:18:42 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7dAG-0003eo-By
- for linux-rockchip@lists.infradead.org; Tue, 10 Sep 2019 10:14:26 +0000
+ id 1i7dEN-0005ST-50
+ for linux-rockchip@lists.infradead.org; Tue, 10 Sep 2019 10:18:40 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id B932128C51D
-Message-ID: <56f8886353ced71426e2ce6442eed18fe349cdab.camel@collabora.com>
-Subject: Re: [PATCH 02/12] media: hantro: Do not reorder H264 scaling list
+ (Authenticated sender: ezequiel) with ESMTPSA id 8C97828C51D
+Message-ID: <255f22b1ddea5fa81104865769eec0fcb5617b36.camel@collabora.com>
+Subject: Re: [PATCH 03/12] media: hantro: Fix H264 motion vector buffer offset
 From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Jonas Karlman <jonas@kwiboo.se>, Philipp Zabel <p.zabel@pengutronix.de>
-Date: Tue, 10 Sep 2019 11:14:17 +0100
-In-Reply-To: <HE1PR06MB4011A8F99D58E5ACFAE3CECAACBE0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+To: Jonas Karlman <jonas@kwiboo.se>
+Date: Tue, 10 Sep 2019 11:18:34 +0100
+In-Reply-To: <HE1PR06MB40115337CD86C429EF24430CACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
 References: <HE1PR06MB40117D0EE96E6FA638A04B78ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
  <20190901124531.23645-1-jonas@kwiboo.se>
- <HE1PR06MB40116C92C3D52C5957EF48E9ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
- <1567432843.3666.6.camel@pengutronix.de>
- <HE1PR06MB4011A8F99D58E5ACFAE3CECAACBE0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+ <HE1PR06MB40115337CD86C429EF24430CACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
 Organization: Collabora
 User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_031424_797289_3C704AD6 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20190910_031839_319460_66DAE4C4 
+X-CRM114-Status: UNSURE (   9.82  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -68,6 +67,7 @@ Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  Hans Verkuil <hverkuil@xs4all.nl>,
  "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
  Boris Brezillon <boris.brezillon@collabora.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
  "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -77,34 +77,40 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 Hi Jonas,
 
-Thanks for your patch.
+Thanks for fixing this, I'm happy we are reducing the amount
+of black magic here.
 
-On Mon, 2019-09-02 at 16:18 +0000, Jonas Karlman wrote:
-[..]
+On Sun, 2019-09-01 at 12:45 +0000, Jonas Karlman wrote:
+> A decoded 8-bit 4:2:0 frame need memory for up to 448 macroblocks
+> and is laid out in memory as follow:
 > 
-> > > diff --git a/drivers/staging/media/hantro/hantro_h264.c b/drivers/staging/media/hantro/hantro_h264.c
-> > > index 0d758e0c0f99..e2d01145ac4f 100644
-> > > --- a/drivers/staging/media/hantro/hantro_h264.c
-> > > +++ b/drivers/staging/media/hantro/hantro_h264.c
-> > > @@ -20,7 +20,7 @@
-> > >  /* Size with u32 units. */
-> > >  #define CABAC_INIT_BUFFER_SIZE		(460 * 2)
-> > >  #define POC_BUFFER_SIZE			34
-> > > -#define SCALING_LIST_SIZE		(6 * 16 + 6 * 64)
-> > > +#define SCALING_LIST_SIZE		(6 * 16 + 2 * 64)
-> > This changes the size of struct hantro_h264_dec_priv_tbl. Did this
-> > describe the auxiliary buffer format incorrectly before?
+> +-------------------+
+> > Y-plane   256 MBs |
+> +-------------------+
+> > UV-plane  128 MBs |
+> +-------------------+
+> > MV buffer  64 MBs |
+> +-------------------+
 > 
-> Based on RKMPP and Hantro SDK the HW expects the 8x8 inter/intra list for
-> Y-component to be located at indices 0 and 1, lists for Cr/Cb is only used for
-> 4:4:4 and HW only supports 4:0:0/4:2:0 if I am not mistaken. So the unused
-> extra 4 lists at the end of the auxiliary buffer seemed like a waste,
-> also RKMPP and Hantro SDK only seemed to allocate space for 2 lists.
+> The motion vector buffer offset is currently correct for 4:2:0 because
+> the extra space for motion vectors is overallocated with an extra 64 MBs.
+> 
+> Wrong offset for both destination and motion vector buffer are used
+> for the bottom field of field encoded content, wrong offset is
+> also used for 4:0:0 (monochrome) content.
+> 
+> Fix this by always setting the motion vector address to the expected
+> 384 MBs offset for 4:2:0 and 256 MBs offset for 4:0:0 content.
+> 
+> Also use correct destination and motion vector buffer offset
+> for the bottom field of field encoded content.
+> 
+> While at it also extend the check for 4:0:0 (monochrome) to include an
+> additional check for High Profile (100).
 > 
 
-I think it would make a lot of sense to document what the hardware
-expects somewhere, perhaps as part of the struct hantro_h264_dec_priv_tbl
-documentation?
+As with the scaling list, I believe it would make a lot of sense
+to document this in the driver itself.
 
 Thanks,
 Ezequiel
