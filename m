@@ -2,108 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34D51ADF68
-	for <lists+linux-rockchip@lfdr.de>; Mon,  9 Sep 2019 21:25:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33C10AE26A
+	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Sep 2019 04:45:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m9o83ZfNYWp9Tv7zgbrhtTHRKJUFD1qp2ic83dVtVpA=; b=N3nzSDP/8YGKw7
-	UhRS5jMKgyP0NSESTvPyBv7UQQkeOOYhofi+HzjCCYDXk8iPtK2PmileuPM9YpN7l+DWz2RroLM8N
-	NWV+p64rkvawQitOscf7fpS8vxqZayQgmy2cp/RkBbv9EexeZwSyNQmmVZoaZAPSuO1WOuCtF5gY0
-	H04hY2xFKR2PEQ8Q8ZNYDTWfKjhwN9d/ynP1c//3SwuKhvl4TnplQuIC58Mjl3838JTbtBVAd0m6e
-	r19oSPjTVcV6+cTVKDkIzWTphRYsi3LuTNJprPBfDmgeXNLexmBkDV9SokunWBIxegNpcKHyKztoq
-	Mgyy8m0Bo3a7JkGDmluw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=KaEHStz0o8i9qiz26kkbaMh+/yLvkLEJmPRV32DfZgo=; b=M4VyDJZgaYuncJdOkIRuWdFP5
+	HA+0LDQGJRdHWki0u26TUYPt72Y0O8mvkJVjmPpQze7+IKQdcaDcDUGAbrBCWVrODygH8xixcF44I
+	qe2kdcMrP/XpT+JFi6dDQ3wZEnB5+PlTmf5r/uyg4zg0LgtHop+bHlvfw5i8DpAZZcM7wlhLG0+yl
+	JcEY5WJuhbAXCxohzv3KmR9K6ATEkQFi1Kc6jlkrN72JjZ5WokfhaMZfkaOZulc/t/KBeH+ZQHYYt
+	nbcS9rXOnSXhWAtI1wfwajfYpQImxPqjfcrDfsN4aqKEJuC8kHNsWXyi9xYRsERs4CXb2xtKUJvl+
+	cVygFbawg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7PHp-0006CG-4H; Mon, 09 Sep 2019 19:25:17 +0000
-Received: from mail-oln040092069016.outbound.protection.outlook.com
- ([40.92.69.16] helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1i7WA7-0005SV-4e; Tue, 10 Sep 2019 02:45:47 +0000
+Received: from regular1.263xmail.com ([211.150.70.199])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7PHk-0006BK-8V
- for linux-rockchip@lists.infradead.org; Mon, 09 Sep 2019 19:25:14 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=QKwVkGVWtevmpsnX5SgOMsyKT6LLRAQ1mvA9V/5SiwrhtloLT1My2Ocue5xVfUEdju8iAhhEB5qfDSaZUbesWDV/OarnFhmS8JMpkczodEjGaVrWGvhOn96HiCQHQpR2PTupI5Xh14rTMYBdB5yg4AIV3Q/v4PH7C0CZREkrHje5GfvAt7AJXAzg8bUu9R3kEfVTIJQ+eZI5CXCpyNqXlPPuZYnPSXoSR0P670B0DM14QYkLBqbKIthQoPvWRrEpAXSRnObwHGcNuDQIC7CntZ5Ez5pHel0Xp/EDxBmHMKi6oO1Rouv7g4SXhO9wNYoPU4SqVtJO2W/rzpuqiNyJyA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=S3mmmWnTghCdUdvX37iI468w4pV1YIs13Ww5+8dNxus=;
- b=nnzxw9rKC93rUA6vGv3rKajhWWFFQguudHceuloVd+dTU8AANaTaUntBE5teVOSNm5IJhJymPWZc48AucoeMELITh3veRZRG3SD0zCAJwI/jLsOIa91NNtM9iyXH0KXvEw5G4fVt6JXc4+aAzJvFhY472JtChg++3+4h+8WpctJA5aI4pq06g4lfzVPyRs/RSdnjrI+OtoPn/DhCxfyH1sNWtkmA6TUmPJb/DSSPp5SqLYVuY25MOZy/A8RkXkRjREPHXfFpt7eHkU8lavH50N+5kajkwRrEH5dMEoc28ynpWVhzFmfZGB1eVWEy827ippByMrRwZ2O4rRI0D4y/Ww==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-Received: from VE1EUR02FT003.eop-EUR02.prod.protection.outlook.com
- (10.152.12.55) by VE1EUR02HT045.eop-EUR02.prod.protection.outlook.com
- (10.152.13.134) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2241.14; Mon, 9 Sep
- 2019 19:25:06 +0000
-Received: from HE1PR06MB4011.eurprd06.prod.outlook.com (10.152.12.60) by
- VE1EUR02FT003.mail.protection.outlook.com (10.152.12.112) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.20.2241.14 via Frontend Transport; Mon, 9 Sep 2019 19:25:06 +0000
-Received: from HE1PR06MB4011.eurprd06.prod.outlook.com
- ([fe80::59e6:329d:5fc7:5181]) by HE1PR06MB4011.eurprd06.prod.outlook.com
- ([fe80::59e6:329d:5fc7:5181%5]) with mapi id 15.20.2241.018; Mon, 9 Sep 2019
- 19:25:06 +0000
-From: Jonas Karlman <jonas@kwiboo.se>
-To: Ezequiel Garcia <ezequiel@collabora.com>
-Subject: Re: [PATCH 01/12] media: hantro: Fix H264 max frmsize supported on
- RK3288
-Thread-Topic: [PATCH 01/12] media: hantro: Fix H264 max frmsize supported on
- RK3288
-Thread-Index: AQHVYMMqh0O1621DYkuOLEeadywFI6cbgeoAgAhFHwA=
-Date: Mon, 9 Sep 2019 19:25:06 +0000
-Message-ID: <HE1PR06MB401159D9A49FE4864CEF30F5ACB70@HE1PR06MB4011.eurprd06.prod.outlook.com>
-References: <HE1PR06MB40117D0EE96E6FA638A04B78ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
- <HE1PR06MB4011EAB6F0965D47A20AF805ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
- <b7a43c96fa861de1dbbe969e3aaa4220e7e96793.camel@collabora.com>
-In-Reply-To: <b7a43c96fa861de1dbbe969e3aaa4220e7e96793.camel@collabora.com>
-Accept-Language: sv-SE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: HE1PR0102CA0027.eurprd01.prod.exchangelabs.com
- (2603:10a6:7:14::40) To HE1PR06MB4011.eurprd06.prod.outlook.com
- (2603:10a6:7:9c::32)
-x-incomingtopheadermarker: OriginalChecksum:C8BC4683345164D72083381983992A7B0E332B9B35DEFCFF7DE47E0954472DE0;
- UpperCasedChecksum:DE3B56E668BDC3905B551E22FDD7633CA327E09FF0B1F2D14B2BD0B24354B99C;
- SizeAsReceived:7998; Count:49
-x-ms-exchange-messagesentrepresentingtype: 1
-x-tmn: [AT1tQaLXTq7HP+DF/epjReN1x0Ft5xAY]
-x-microsoft-original-message-id: <2376bce6-066f-1184-2a71-f79c02f5cb50@kwiboo.se>
-x-ms-publictraffictype: Email
-x-incomingheadercount: 49
-x-eopattributedmessage: 0
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031322404)(2017031323274)(2017031324274)(1601125500)(1603101475)(1701031045);
- SRVR:VE1EUR02HT045; 
-x-ms-traffictypediagnostic: VE1EUR02HT045:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-message-info: oEDTeNLi3aL6WMwNZV5buoiS+6H8ku4dOaopQTSozD02JTxNrI7E4g5eckgqjsbS9iYcS+CHhtSZM0sPJqXCqtIGM9fAzMYTxCAoTQZ5m5/HbHdFvakynbhjhrn32r2F90EEt7pY5mTZtCmtdycdPEMCNrJQVjnDnBr8olJJTwr8ZuGmTlORIp20mHZ8x8Oa
-x-ms-exchange-transport-forked: True
-Content-ID: <E5F5A2A879876A45ADFDACE62684BCF4@eurprd06.prod.outlook.com>
+ id 1i7W9o-0005HB-0d; Tue, 10 Sep 2019 02:45:29 +0000
+Received: from zhangzj?rock-chips.com (unknown [192.168.167.84])
+ by regular1.263xmail.com (Postfix) with ESMTP id 72F88401;
+ Tue, 10 Sep 2019 10:45:17 +0800 (CST)
+X-263anti-spam: KSV:0;BIG:0;
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-KSVirus-check: 0
+X-ADDR-CHECKED4: 1
+X-ABS-CHECKED: 1
+X-SKE-CHECKED: 1
+X-ANTISPAM-LEVEL: 2
+Received: from [172.16.9.224] (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P16693T140560903952128S1568083501895127_; 
+ Tue, 10 Sep 2019 10:45:05 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <9c1844bd32ab9429d9ac9fa2b5c8436b>
+X-RL-SENDER: zhangzj@rock-chips.com
+X-SENDER: zhangzj@rock-chips.com
+X-LOGIN-NAME: zhangzj@rock-chips.com
+X-FST-TO: linux-rockchip@lists.infradead.org
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+Subject: Re: [PATCH v1 1/1] ARM: dts: rockchip: set crypto default disabled on
+ rk3288
+To: Heiko Stuebner <heiko@sntech.de>
+References: <20190827071439.14767-1-zhangzj@rock-chips.com>
+ <4806912.UyKsYhR33o@phil>
+ <3b9cbffa-291e-fc95-bce6-5b24f5fd860d@rock-chips.com>
+ <3345609.Z0LLm6LDBC@phil>
+From: Elon Zhang <zhangzj@rock-chips.com>
+Message-ID: <192e0e32-363b-b6aa-84ed-67040c0c5f4f@rock-chips.com>
+Date: Tue, 10 Sep 2019 10:45:04 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2e58e504-290e-444b-b89a-08d7355b6ba7
-X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Sep 2019 19:25:06.4962 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Internet
-X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1EUR02HT045
+In-Reply-To: <3345609.Z0LLm6LDBC@phil>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_122512_300983_C10CEC79 
-X-CRM114-Status: GOOD (  16.22  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190909_194528_398240_B37798C1 
+X-CRM114-Status: GOOD (  20.13  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.69.16 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [211.150.70.199 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -116,74 +87,66 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Hans Verkuil <hverkuil@xs4all.nl>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 2019-09-04 15:07, Ezequiel Garcia wrote:
-> Hello Jonas,
->
-> Thank you for the patch.
->
-> On Sun, 2019-09-01 at 12:45 +0000, Jonas Karlman wrote:
->> TRM specify supported image size 48x48 to 4096x2304 at step size 16 pixels,
->> change frmsize max_width/max_height to match TRM.
->>
-> The RK3288 TRM v1.1 (2015-8-20) I have here mentions a maximum
-> of 3840x2160.
->
-> I must admit I haven't tested with actual content this size
-> to verify it, have you checked it?
-
-I can confirm that one of my test samples (PUPPIES BATH IN 4K) is 4096x2304 and can be decoded after this patch.
-However the decoding speed is not optimal at 400Mhz, if I recall correctly you need to set the VPU1 clock to 600Mhz for 4K decoding on RK3288.
-
-The RK3288 TRM vcodec chapter from [1], unknown revision and date, lists 48x48 to 4096x2304 step size 16 pixels under 25.5.1 H.264 decoder.
-
-[1] http://www.t-firefly.com/download/firefly-rk3288/docs/TRM/rk3288-chapter-25-video-encoder-decoder-unit-(vcodec).pdf
-
-Regards,
-Jonas
-
->
-> Thanks,
-> Ezequiel
->  
->> Fixes: 760327930e10 ("media: hantro: Enable H264 decoding on rk3288")
->> Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
->> ---
->>  drivers/staging/media/hantro/rk3288_vpu_hw.c | 4 ++--
->>  1 file changed, 2 insertions(+), 2 deletions(-)
->>
->> diff --git a/drivers/staging/media/hantro/rk3288_vpu_hw.c b/drivers/staging/media/hantro/rk3288_vpu_hw.c
->> index 6bfcc47d1e58..ebb017b8a334 100644
->> --- a/drivers/staging/media/hantro/rk3288_vpu_hw.c
->> +++ b/drivers/staging/media/hantro/rk3288_vpu_hw.c
->> @@ -67,10 +67,10 @@ static const struct hantro_fmt rk3288_vpu_dec_fmts[] = {
->>  		.max_depth = 2,
->>  		.frmsize = {
->>  			.min_width = 48,
->> -			.max_width = 3840,
->> +			.max_width = 4096,
->>  			.step_width = H264_MB_DIM,
->>  			.min_height = 48,
->> -			.max_height = 2160,
->> +			.max_height = 2304,
->>  			.step_height = H264_MB_DIM,
->>  		},
->>  	},
->
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgSGVpa28sCgpPbiA5LzEvMjAxOSAwNzowNCwgSGVpa28gU3R1ZWJuZXIgd3JvdGU6Cj4gSGkg
+RWxvbiwKPgo+IEFtIERvbm5lcnN0YWcsIDI5LiBBdWd1c3QgMjAxOSwgMTM6MzE6MDAgQ0VTVCBz
+Y2hyaWViIEVsb24gWmhhbmc6Cj4+IE9uIDgvMjcvMjAxOSAyMjoyOCwgSGVpa28gU3R1ZWJuZXIg
+d3JvdGU6Cj4+PiBBbSBEaWVuc3RhZywgMjcuIEF1Z3VzdCAyMDE5LCAwOToxNDozOSBDRVNUIHNj
+aHJpZWIgRWxvbiBaaGFuZzoKPj4+PiBOb3QgZXZlcnkgYm9hcmQgbmVlZHMgdG8gZW5hYmxlIGNy
+eXB0byBub2RlLCBzbyB0aGUgbm9kZSBzaG91bGQKPj4+PiBiZSBzZXQgZGVmYXVsdCBkaXNhYmxl
+ZCBpbiByazMyODguZHRzaSBhbmQgZW5hYmxlZCBpbiBzcGVjaWZpYwo+Pj4+IGJvYXJkIGR0cyBm
+aWxlLgo+Pj4gQ2FuIHlvdSBnaXZlIGEgYml0IG1vcmUgcmF0aW9uYWxlIGhlcmU/IFRoZXJlIHdv
+dWxkIG5lZWQgdG8gYmUgYSB2ZXJ5Cj4+PiBzcGVjaWZpYyByZWFzb24gYmVjYXVzZSBvZiB0aGUg
+Zm9sbG93aW5nOgo+Pj4KPj4+IFRoZSBjcnlwdG8gbW9kdWxlIGlzIG5vdCB3aXJlZCB0byBzb21l
+IGJvYXJkLXNwZWNpZmljIGNvbXBvbmVudHMsCj4+PiBzbyBpdHMgdXNhYmlsaXR5IGRvZXMgbm90
+IGRlcGVuZCBvbiB0aGUgc3BlY2lmaWMgYm9hcmQgYXQgYWxsLgo+Pj4gSW5zdGVhZCBldmVyeSBi
+b2FyZCBjYW4ganVzdCB1c2UgaXQgb3V0IG9mIHRoZSBib3ggYW5kIHRoZSBkZXZpY2V0cmVlCj4+
+PiBpcyBzdXBwb3NlZCB0byBkZXNjcmliZSB0aGUgaGFyZHdhcmUgYW5kIGlzIF9ub3RfIG1lYW50
+IGFzIGEgc3BhY2UKPj4+IGZvciB1c2VyIGNvbmZpZ3VyYXRpb24uCj4+IFJpZ2h0IGZvciBhbG1v
+c3QgYWxsIG5vcm1hbCBoYXJkd2FyZSBtb2R1bGVzIGJ1dCB0aGUgY3J5cHRvIG1vZHVsZSB3YXMK
+Pj4gZGVzaWduZWQKPj4KPj4gZm9yIHNlY3VyZSB3b3JsZC4gQXMgYSByZXN1bHQsICB0aGUgY3J5
+cHRvIG1vZHVsZSB3aWxsIGJlY29tZQo+PiBpbmFjY2Vzc2libGUgZm9yIGxpbnV4IGtlcm5lbCBp
+ZiBzZWN1cmUgd29ybGQgZW5hYmxlIGl0Lgo+Pgo+PiBXZSBwbGFuIHRvIGVuYWJsZSB0aGUgY3J5
+cHRvIG1vZHVsZSBpbiBzZWN1cmUgd29ybGQgc28gd2Ugc2hvdWxkIHNldAo+PiBjcnlwdG8gbW9k
+dWxlIGRlZmF1bHQgZGlzYWJsZWQgaW4gbGludXgga2VybmVsLgo+IG9rIC4uLiBJJ20gaGFsZndh
+eSBjb252aW5jZWQgOy0pIC4KPgo+IFRoZSBiaWcgdGhpbmcgSSB3YW50IHRvIHNlZSBpcyB0aGF0
+IHNlY3VyZSBzZXR0aW5nIGluIHRoZSBhY3R1YWwgZmlybXdhcmUuCj4gQWthIHJpZ2h0IG5vdyB5
+b3UgcHJvYmFibHkgaGF2ZSB0aGF0IGluIHlvdXIgUm9ja2NoaXAtc3BlY2lmaWMgQVRGIGZvcmsK
+PiBhbmQgSSByZWFsbHkgd2FudCB0byBzZWUgdGhlIHJlbGV2YW50IGNoYW5nZSBmb3IgcHVibGlj
+IHVib290IG9yIEFURi4KPgo+IEkgZG9uJ3QgbmVjZXNzYXJpbHkgcmVxdWlyZSBpdCB0byBiZSBm
+dWxseSBtZXJnZWQgYmVmb3JlIHRha2luZyB0aGlzLCBidXQKPiBJIHJlYWxseSB3YW50IHRvIHNl
+ZSB0aGUgY2hhbmdlIGVpdGhlciBvbiBhIG1haWxpbmcgbGlzdCBvciBhdGYgZ2Vycml0Cj4gaW5z
+dGFuY2UgW3RoYXQgbWFrZXMgdGhlIGNyeXB0byBlbmdpbmUgc2VjdXJlIG9ubHldLgo+Cj4gUmF0
+aW9uYWxlIGJlaGluZCB0aGlzIGlzIHRoYXQgd2UgZG9uJ3QgY2FyZSB2ZXJ5IG11Y2ggYWJvdXQg
+cHJpdmF0ZSBzdHVmZgo+IHRoYXQgdGhlIGdlbmVyYWwgZWNvc3lzdGVtIGRvZXNuJ3QgYmVuZWZp
+dCBmcm9tLgoKTm93IHRoZSBjcnlwdG8gc2VjdXJpdHkgcHJvcGVydHkgc2V0dGluZyBpcyBkb25l
+IGluIHRoZSByb2NrY2hpcCBwcml2YXRlIApjb2RlLCB3aGljaCBpcyBub3QKCm9wZW5zb3VyY2Uu
+IFNvwqAgaWYgeW91IGRvbid0IGNhcmUgYWJvdXQgcHJpdmF0ZSBzdHVmZiBhbmQgdGhlIGNoYW5n
+ZSBpbiAKcHJpdmF0ZSBzdHVmZiB3aWxsIG5vdAoKYWZmZWN0IHRoZSB1cHN0cmVhbSBrZXJuZWws
+wqAgdGhlIGNyeXB0byBjYW4gYmUgZW5hYmxlZCBpbiB1cHN0cmVhbSBrZXJuZWw/Cgo+Cj4KPiBU
+aGFua3MKPiBIZWlrbwo+Cj4KPj4+IFNvIGluIGZhY3QgdGhlIHN0YXR1cyBwcm9wZXJ0eSBzaG91
+bGQgcHJvYmFibHkgZ28gYXdheSBjb21wbGV0ZWx5IGZyb20KPj4+IHRoZSBjcnlwdG8gbm9kZSwg
+YXMgaXQncyB1c2FibGUgb3V0IG9mIHRoZSBib3ggaW4gYWxsIGNhc2VzLgo+Pj4KPj4+Cj4+PiBI
+ZWlrbwo+Pj4KPj4+Cj4+Pgo+Pj4+IFNpZ25lZC1vZmYtYnk6IEVsb24gWmhhbmcgPHpoYW5nempA
+cm9jay1jaGlwcy5jb20+Cj4+Pj4gLS0tCj4+Pj4gICAgYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4
+LmR0c2kgfCAyICstCj4+Pj4gICAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRl
+bGV0aW9uKC0pCj4+Pj4KPj4+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4
+LmR0c2kgYi9hcmNoL2FybS9ib290L2R0cy9yazMyODguZHRzaQo+Pj4+IGluZGV4IGNjODkzZTE1
+NGZlNS4uZDUwOWFhMjQxNzdjIDEwMDY0NAo+Pj4+IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3Jr
+MzI4OC5kdHNpCj4+Pj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LmR0c2kKPj4+PiBA
+QCAtOTg0LDcgKzk4NCw3IEBACj4+Pj4gICAgCQljbG9jay1uYW1lcyA9ICJhY2xrIiwgImhjbGsi
+LCAic2NsayIsICJhcGJfcGNsayI7Cj4+Pj4gICAgCQlyZXNldHMgPSA8JmNydSBTUlNUX0NSWVBU
+Tz47Cj4+Pj4gICAgCQlyZXNldC1uYW1lcyA9ICJjcnlwdG8tcnN0IjsKPj4+PiAtCQlzdGF0dXMg
+PSAib2theSI7Cj4+Pj4gKwkJc3RhdHVzID0gImRpc2FibGVkIjsKPj4+PiAgICAJfTsKPj4+PiAg
+ICAKPj4+PiAgICAJaWVwX21tdTogaW9tbXVAZmY5MDA4MDAgewo+Pj4+Cj4+Pgo+Pj4KPj4+Cj4+
+Pgo+Pj4KPj4KPj4KPgo+Cj4KPgo+Cj4KCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tj
+aGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
