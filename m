@@ -2,79 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33C10AE26A
-	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Sep 2019 04:45:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F463AE7B2
+	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Sep 2019 12:14:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KaEHStz0o8i9qiz26kkbaMh+/yLvkLEJmPRV32DfZgo=; b=M4VyDJZgaYuncJdOkIRuWdFP5
-	HA+0LDQGJRdHWki0u26TUYPt72Y0O8mvkJVjmPpQze7+IKQdcaDcDUGAbrBCWVrODygH8xixcF44I
-	qe2kdcMrP/XpT+JFi6dDQ3wZEnB5+PlTmf5r/uyg4zg0LgtHop+bHlvfw5i8DpAZZcM7wlhLG0+yl
-	JcEY5WJuhbAXCxohzv3KmR9K6ATEkQFi1Kc6jlkrN72JjZ5WokfhaMZfkaOZulc/t/KBeH+ZQHYYt
-	nbcS9rXOnSXhWAtI1wfwajfYpQImxPqjfcrDfsN4aqKEJuC8kHNsWXyi9xYRsERs4CXb2xtKUJvl+
-	cVygFbawg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cas3ZIBPQEglSn6r/n1OUjk32Sj5PqeR5F9pESBWzuU=; b=l1jNpSqXqizlZa
+	6fKcfn8SCl5zcQIgv0v20p9K0e2CA4EALDfAW28IeUqWk1ZADhPRmh0T9EuxpQJloAt7sD1wDSxpv
+	k/5OXqhHk9vH1WmHGoSuEEUC97GMI8fggRrT4DXOagORcFhHUiQ1PUU/T2lrqzEJR+KmJMV1xDIQQ
+	Biok8TgHfNvGUwaMr5V19uU5cyhGtUyVcLK3n5Sunrm2qBlauzohZ7bMxI+X4PqVZ/do/ImbSCMDi
+	xMss1o0FcZBzrj51gtaATmt2i7rF8t9qLtps68TbR7Rz4F6WAE8Kz6ytkzuns9LUo6KtsOdKZ1V5D
+	OqPJichidbppTg37B7KA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7WA7-0005SV-4e; Tue, 10 Sep 2019 02:45:47 +0000
-Received: from regular1.263xmail.com ([211.150.70.199])
+	id 1i7dAK-0003fn-Rx; Tue, 10 Sep 2019 10:14:28 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7W9o-0005HB-0d; Tue, 10 Sep 2019 02:45:29 +0000
-Received: from zhangzj?rock-chips.com (unknown [192.168.167.84])
- by regular1.263xmail.com (Postfix) with ESMTP id 72F88401;
- Tue, 10 Sep 2019 10:45:17 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from [172.16.9.224] (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P16693T140560903952128S1568083501895127_; 
- Tue, 10 Sep 2019 10:45:05 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <9c1844bd32ab9429d9ac9fa2b5c8436b>
-X-RL-SENDER: zhangzj@rock-chips.com
-X-SENDER: zhangzj@rock-chips.com
-X-LOGIN-NAME: zhangzj@rock-chips.com
-X-FST-TO: linux-rockchip@lists.infradead.org
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-Subject: Re: [PATCH v1 1/1] ARM: dts: rockchip: set crypto default disabled on
- rk3288
-To: Heiko Stuebner <heiko@sntech.de>
-References: <20190827071439.14767-1-zhangzj@rock-chips.com>
- <4806912.UyKsYhR33o@phil>
- <3b9cbffa-291e-fc95-bce6-5b24f5fd860d@rock-chips.com>
- <3345609.Z0LLm6LDBC@phil>
-From: Elon Zhang <zhangzj@rock-chips.com>
-Message-ID: <192e0e32-363b-b6aa-84ed-67040c0c5f4f@rock-chips.com>
-Date: Tue, 10 Sep 2019 10:45:04 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i7dAG-0003eo-By
+ for linux-rockchip@lists.infradead.org; Tue, 10 Sep 2019 10:14:26 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id B932128C51D
+Message-ID: <56f8886353ced71426e2ce6442eed18fe349cdab.camel@collabora.com>
+Subject: Re: [PATCH 02/12] media: hantro: Do not reorder H264 scaling list
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Jonas Karlman <jonas@kwiboo.se>, Philipp Zabel <p.zabel@pengutronix.de>
+Date: Tue, 10 Sep 2019 11:14:17 +0100
+In-Reply-To: <HE1PR06MB4011A8F99D58E5ACFAE3CECAACBE0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+References: <HE1PR06MB40117D0EE96E6FA638A04B78ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+ <20190901124531.23645-1-jonas@kwiboo.se>
+ <HE1PR06MB40116C92C3D52C5957EF48E9ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+ <1567432843.3666.6.camel@pengutronix.de>
+ <HE1PR06MB4011A8F99D58E5ACFAE3CECAACBE0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+Organization: Collabora
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-In-Reply-To: <3345609.Z0LLm6LDBC@phil>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_194528_398240_B37798C1 
-X-CRM114-Status: GOOD (  20.13  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190910_031424_797289_3C704AD6 
+X-CRM114-Status: GOOD (  12.03  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.199 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,66 +63,54 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sCgpPbiA5LzEvMjAxOSAwNzowNCwgSGVpa28gU3R1ZWJuZXIgd3JvdGU6Cj4gSGkg
-RWxvbiwKPgo+IEFtIERvbm5lcnN0YWcsIDI5LiBBdWd1c3QgMjAxOSwgMTM6MzE6MDAgQ0VTVCBz
-Y2hyaWViIEVsb24gWmhhbmc6Cj4+IE9uIDgvMjcvMjAxOSAyMjoyOCwgSGVpa28gU3R1ZWJuZXIg
-d3JvdGU6Cj4+PiBBbSBEaWVuc3RhZywgMjcuIEF1Z3VzdCAyMDE5LCAwOToxNDozOSBDRVNUIHNj
-aHJpZWIgRWxvbiBaaGFuZzoKPj4+PiBOb3QgZXZlcnkgYm9hcmQgbmVlZHMgdG8gZW5hYmxlIGNy
-eXB0byBub2RlLCBzbyB0aGUgbm9kZSBzaG91bGQKPj4+PiBiZSBzZXQgZGVmYXVsdCBkaXNhYmxl
-ZCBpbiByazMyODguZHRzaSBhbmQgZW5hYmxlZCBpbiBzcGVjaWZpYwo+Pj4+IGJvYXJkIGR0cyBm
-aWxlLgo+Pj4gQ2FuIHlvdSBnaXZlIGEgYml0IG1vcmUgcmF0aW9uYWxlIGhlcmU/IFRoZXJlIHdv
-dWxkIG5lZWQgdG8gYmUgYSB2ZXJ5Cj4+PiBzcGVjaWZpYyByZWFzb24gYmVjYXVzZSBvZiB0aGUg
-Zm9sbG93aW5nOgo+Pj4KPj4+IFRoZSBjcnlwdG8gbW9kdWxlIGlzIG5vdCB3aXJlZCB0byBzb21l
-IGJvYXJkLXNwZWNpZmljIGNvbXBvbmVudHMsCj4+PiBzbyBpdHMgdXNhYmlsaXR5IGRvZXMgbm90
-IGRlcGVuZCBvbiB0aGUgc3BlY2lmaWMgYm9hcmQgYXQgYWxsLgo+Pj4gSW5zdGVhZCBldmVyeSBi
-b2FyZCBjYW4ganVzdCB1c2UgaXQgb3V0IG9mIHRoZSBib3ggYW5kIHRoZSBkZXZpY2V0cmVlCj4+
-PiBpcyBzdXBwb3NlZCB0byBkZXNjcmliZSB0aGUgaGFyZHdhcmUgYW5kIGlzIF9ub3RfIG1lYW50
-IGFzIGEgc3BhY2UKPj4+IGZvciB1c2VyIGNvbmZpZ3VyYXRpb24uCj4+IFJpZ2h0IGZvciBhbG1v
-c3QgYWxsIG5vcm1hbCBoYXJkd2FyZSBtb2R1bGVzIGJ1dCB0aGUgY3J5cHRvIG1vZHVsZSB3YXMK
-Pj4gZGVzaWduZWQKPj4KPj4gZm9yIHNlY3VyZSB3b3JsZC4gQXMgYSByZXN1bHQsICB0aGUgY3J5
-cHRvIG1vZHVsZSB3aWxsIGJlY29tZQo+PiBpbmFjY2Vzc2libGUgZm9yIGxpbnV4IGtlcm5lbCBp
-ZiBzZWN1cmUgd29ybGQgZW5hYmxlIGl0Lgo+Pgo+PiBXZSBwbGFuIHRvIGVuYWJsZSB0aGUgY3J5
-cHRvIG1vZHVsZSBpbiBzZWN1cmUgd29ybGQgc28gd2Ugc2hvdWxkIHNldAo+PiBjcnlwdG8gbW9k
-dWxlIGRlZmF1bHQgZGlzYWJsZWQgaW4gbGludXgga2VybmVsLgo+IG9rIC4uLiBJJ20gaGFsZndh
-eSBjb252aW5jZWQgOy0pIC4KPgo+IFRoZSBiaWcgdGhpbmcgSSB3YW50IHRvIHNlZSBpcyB0aGF0
-IHNlY3VyZSBzZXR0aW5nIGluIHRoZSBhY3R1YWwgZmlybXdhcmUuCj4gQWthIHJpZ2h0IG5vdyB5
-b3UgcHJvYmFibHkgaGF2ZSB0aGF0IGluIHlvdXIgUm9ja2NoaXAtc3BlY2lmaWMgQVRGIGZvcmsK
-PiBhbmQgSSByZWFsbHkgd2FudCB0byBzZWUgdGhlIHJlbGV2YW50IGNoYW5nZSBmb3IgcHVibGlj
-IHVib290IG9yIEFURi4KPgo+IEkgZG9uJ3QgbmVjZXNzYXJpbHkgcmVxdWlyZSBpdCB0byBiZSBm
-dWxseSBtZXJnZWQgYmVmb3JlIHRha2luZyB0aGlzLCBidXQKPiBJIHJlYWxseSB3YW50IHRvIHNl
-ZSB0aGUgY2hhbmdlIGVpdGhlciBvbiBhIG1haWxpbmcgbGlzdCBvciBhdGYgZ2Vycml0Cj4gaW5z
-dGFuY2UgW3RoYXQgbWFrZXMgdGhlIGNyeXB0byBlbmdpbmUgc2VjdXJlIG9ubHldLgo+Cj4gUmF0
-aW9uYWxlIGJlaGluZCB0aGlzIGlzIHRoYXQgd2UgZG9uJ3QgY2FyZSB2ZXJ5IG11Y2ggYWJvdXQg
-cHJpdmF0ZSBzdHVmZgo+IHRoYXQgdGhlIGdlbmVyYWwgZWNvc3lzdGVtIGRvZXNuJ3QgYmVuZWZp
-dCBmcm9tLgoKTm93IHRoZSBjcnlwdG8gc2VjdXJpdHkgcHJvcGVydHkgc2V0dGluZyBpcyBkb25l
-IGluIHRoZSByb2NrY2hpcCBwcml2YXRlIApjb2RlLCB3aGljaCBpcyBub3QKCm9wZW5zb3VyY2Uu
-IFNvwqAgaWYgeW91IGRvbid0IGNhcmUgYWJvdXQgcHJpdmF0ZSBzdHVmZiBhbmQgdGhlIGNoYW5n
-ZSBpbiAKcHJpdmF0ZSBzdHVmZiB3aWxsIG5vdAoKYWZmZWN0IHRoZSB1cHN0cmVhbSBrZXJuZWws
-wqAgdGhlIGNyeXB0byBjYW4gYmUgZW5hYmxlZCBpbiB1cHN0cmVhbSBrZXJuZWw/Cgo+Cj4KPiBU
-aGFua3MKPiBIZWlrbwo+Cj4KPj4+IFNvIGluIGZhY3QgdGhlIHN0YXR1cyBwcm9wZXJ0eSBzaG91
-bGQgcHJvYmFibHkgZ28gYXdheSBjb21wbGV0ZWx5IGZyb20KPj4+IHRoZSBjcnlwdG8gbm9kZSwg
-YXMgaXQncyB1c2FibGUgb3V0IG9mIHRoZSBib3ggaW4gYWxsIGNhc2VzLgo+Pj4KPj4+Cj4+PiBI
-ZWlrbwo+Pj4KPj4+Cj4+Pgo+Pj4+IFNpZ25lZC1vZmYtYnk6IEVsb24gWmhhbmcgPHpoYW5nempA
-cm9jay1jaGlwcy5jb20+Cj4+Pj4gLS0tCj4+Pj4gICAgYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4
-LmR0c2kgfCAyICstCj4+Pj4gICAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRl
-bGV0aW9uKC0pCj4+Pj4KPj4+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4
-LmR0c2kgYi9hcmNoL2FybS9ib290L2R0cy9yazMyODguZHRzaQo+Pj4+IGluZGV4IGNjODkzZTE1
-NGZlNS4uZDUwOWFhMjQxNzdjIDEwMDY0NAo+Pj4+IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3Jr
-MzI4OC5kdHNpCj4+Pj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LmR0c2kKPj4+PiBA
-QCAtOTg0LDcgKzk4NCw3IEBACj4+Pj4gICAgCQljbG9jay1uYW1lcyA9ICJhY2xrIiwgImhjbGsi
-LCAic2NsayIsICJhcGJfcGNsayI7Cj4+Pj4gICAgCQlyZXNldHMgPSA8JmNydSBTUlNUX0NSWVBU
-Tz47Cj4+Pj4gICAgCQlyZXNldC1uYW1lcyA9ICJjcnlwdG8tcnN0IjsKPj4+PiAtCQlzdGF0dXMg
-PSAib2theSI7Cj4+Pj4gKwkJc3RhdHVzID0gImRpc2FibGVkIjsKPj4+PiAgICAJfTsKPj4+PiAg
-ICAKPj4+PiAgICAJaWVwX21tdTogaW9tbXVAZmY5MDA4MDAgewo+Pj4+Cj4+Pgo+Pj4KPj4+Cj4+
-Pgo+Pj4KPj4KPj4KPgo+Cj4KPgo+Cj4KCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tj
-aGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
+Hi Jonas,
+
+Thanks for your patch.
+
+On Mon, 2019-09-02 at 16:18 +0000, Jonas Karlman wrote:
+[..]
+> 
+> > > diff --git a/drivers/staging/media/hantro/hantro_h264.c b/drivers/staging/media/hantro/hantro_h264.c
+> > > index 0d758e0c0f99..e2d01145ac4f 100644
+> > > --- a/drivers/staging/media/hantro/hantro_h264.c
+> > > +++ b/drivers/staging/media/hantro/hantro_h264.c
+> > > @@ -20,7 +20,7 @@
+> > >  /* Size with u32 units. */
+> > >  #define CABAC_INIT_BUFFER_SIZE		(460 * 2)
+> > >  #define POC_BUFFER_SIZE			34
+> > > -#define SCALING_LIST_SIZE		(6 * 16 + 6 * 64)
+> > > +#define SCALING_LIST_SIZE		(6 * 16 + 2 * 64)
+> > This changes the size of struct hantro_h264_dec_priv_tbl. Did this
+> > describe the auxiliary buffer format incorrectly before?
+> 
+> Based on RKMPP and Hantro SDK the HW expects the 8x8 inter/intra list for
+> Y-component to be located at indices 0 and 1, lists for Cr/Cb is only used for
+> 4:4:4 and HW only supports 4:0:0/4:2:0 if I am not mistaken. So the unused
+> extra 4 lists at the end of the auxiliary buffer seemed like a waste,
+> also RKMPP and Hantro SDK only seemed to allocate space for 2 lists.
+> 
+
+I think it would make a lot of sense to document what the hardware
+expects somewhere, perhaps as part of the struct hantro_h264_dec_priv_tbl
+documentation?
+
+Thanks,
+Ezequiel
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
