@@ -2,64 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76F51B022D
-	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Sep 2019 18:54:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7B76B0256
+	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Sep 2019 19:03:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UMrASEL+/omPUdJxQc/S0NUtVn1AVngUHhrxNy419AU=; b=DDrnCtGU9KE6dm
-	rRr3x7lojADak5SatUREUo/1JBO9kcwFpB4PZs+URo53z2bebv22ouaiFkFyHH+VBrz340SJYNjPd
-	jpTYcjq9o6yIAyZiIwow0A1ItGcOj58hS2AxOAwVunneQ9DhNc/buLXdqdMNg/gSl7fWJe/6zs9FH
-	i0YKntHbGBNUFK913oRQeS6Ce16Urh/i9pgq2CBKORY5ZAK9VIWPQ5FYElrxR2toYcQB6mkViuCtY
-	VzNhqB4BA9KPRDS/UPnGeNMfUky1HynmP1jYRvoxIyNTjg+7bUIn6UHmYCKUpJHgoCAZeokBsy5A1
-	A+tStDC2i916HyABgG5A==;
+	List-Owner; bh=u9q6n3OBnc/EGsL3L+McCvaN+N+MPkuFXyG6P3f3TH4=; b=bWLKJzjcOXVvpV
+	5/hfKUPBVaaeXD3sKz31TvtG/hPgLI926geyThH97K/x3VYi3Bg9mUgKa++D4mX50F2f8sGNBtO8K
+	V5FEHhWbGJ2yFmDaHs06eTcuQXw+PLIKz/Lwx3hwzhGlPIGB/hrJfwyfNwJQOfxS58xQK9TkgRtnt
+	0x6AaEfsU+RetUhTOxomNS9nyJFYltMw6fJGYNciIc/+mruooZtQYRmoEcuv3bbLLpgYO9Om+AOSy
+	p8FRWxcuDrnGOEgg7JKwH18ZfvsKbmZ92noO+VJOvlYBhyLWmwBCCZLlMnyAMXBeekEFe4Ia6vhoQ
+	a7hJgtdAkILVEtAO7aSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i85tG-0003ef-U3; Wed, 11 Sep 2019 16:54:47 +0000
-Received: from mailoutvs4.siol.net ([185.57.226.195] helo=mail.siol.net)
+	id 1i861i-00080l-EO; Wed, 11 Sep 2019 17:03:30 +0000
+Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i85sy-0003Sw-R3; Wed, 11 Sep 2019 16:54:31 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTP id 44A12522489;
- Wed, 11 Sep 2019 18:54:20 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at psrvmta12.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta12.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id JqGzle1UahVN; Wed, 11 Sep 2019 18:54:19 +0200 (CEST)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTPS id 9203F521CBC;
- Wed, 11 Sep 2019 18:54:19 +0200 (CEST)
-Received: from jernej-laptop.localnet (cpe-86-58-59-25.static.triera.net
- [86.58.59.25]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Zimbra) with ESMTPA id 8399E522314;
- Wed, 11 Sep 2019 18:54:16 +0200 (CEST)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH v3] drm: bridge/dw_hdmi: add audio sample channel status
- setting
-Date: Wed, 11 Sep 2019 18:54:16 +0200
-Message-ID: <10668907.r1TyVuJQb1@jernej-laptop>
-In-Reply-To: <1e2ec69d-e42d-4e1b-7ce9-d1620cfbb4c9@baylibre.com>
+ id 1i861R-0007qU-41
+ for linux-rockchip@lists.infradead.org; Wed, 11 Sep 2019 17:03:14 +0000
+Received: by mail-ua1-x941.google.com with SMTP id w12so7015858uam.8
+ for <linux-rockchip@lists.infradead.org>; Wed, 11 Sep 2019 10:03:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=buUqc8ERVmqHmMW6WwjRVMJPzy7dr7EKMl9vRpwJpZM=;
+ b=Z+nLvmJsUyDmb3Z8llyNwlmD2jVrnXGV2ode7JUJ0CBsoLN0QQqjF/H/3gDTLg6VDJ
+ jXit3LAhfojKsULrELXKF1wwGBp8vNz5EVM7DcARGt0ByQSpvOJ48NQVf6fQWh/Zujp+
+ cBblUSKAe177/psfJfCGsbkuJOHDOsO5Qb/yg=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=buUqc8ERVmqHmMW6WwjRVMJPzy7dr7EKMl9vRpwJpZM=;
+ b=MsNtmet8Dxjov57jLG12dFWDV3P2mgrNrnSnu/BjWrMSFXxVwBMWmYp2hi4/UTX1Dr
+ dgHhhRE+6ctvVf0iIbfitMostsJS+iK+sUWl4E/mnELBsp0G9lbKtDznzKyz6lkLoPWi
+ i+hDqJofLC3TWEGVEn5N/UftaAaLhLQNOZ8a857mwDdmBGmQYLhkMMXB+Dft1AMUDMfF
+ 7ibTUx2eQhCzHT0TBNIG/ro0glNiBFMQoGjslT/hS4SlgsxBxS4jqNsYV4hvgn7BgnHB
+ sRFZWQv59jSpwJQZidjbcr1rOik5rjGfanqxGtoOVsS12bnFLijSKdxjfReYq8F7UdC4
+ ZKjA==
+X-Gm-Message-State: APjAAAXvf+Spmu0z8az5F2SjlgYZM7cdGrDbtzNd/D+KCkt/7JsnAmFK
+ gGrH2J1MS+lDE7TDMlErGkV5FAdghyaYFGaC2XfHag==
+X-Google-Smtp-Source: APXvYqyHbuhYljIhllMZZXCEGHUZOYmQOMAogOruLFfO7e3oALf2ZphzQ2tT6Oy4Xky7aPF4tOyye2GIxWQClO2dXQ0=
+X-Received: by 2002:ab0:604a:: with SMTP id o10mr4566868ual.105.1568221385686; 
+ Wed, 11 Sep 2019 10:03:05 -0700 (PDT)
+MIME-Version: 1.0
 References: <20190911082646.134347-1-cychiang@chromium.org>
  <1e2ec69d-e42d-4e1b-7ce9-d1620cfbb4c9@baylibre.com>
-MIME-Version: 1.0
+ <10668907.r1TyVuJQb1@jernej-laptop>
+In-Reply-To: <10668907.r1TyVuJQb1@jernej-laptop>
+From: Cheng-yi Chiang <cychiang@chromium.org>
+Date: Thu, 12 Sep 2019 01:02:38 +0800
+Message-ID: <CAFv8NwJGa0HXsnv2MvJhknpr9PxUL3jH2HZLSLiSD5s_nHiQhQ@mail.gmail.com>
+Subject: Re: [PATCH v3] drm: bridge/dw_hdmi: add audio sample channel status
+ setting
+To: =?UTF-8?Q?Jernej_=C5=A0krabec?= <jernej.skrabec@siol.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_095429_200883_D3B346D0 
-X-CRM114-Status: GOOD (  21.05  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190911_100313_165659_A1320D32 
+X-CRM114-Status: GOOD (  26.35  )
+X-Spam-Score: -7.6 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-7.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,173 +94,140 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, dianders@chromium.org,
- kuninori.morimoto.gx@renesas.com, airlied@linux.ie,
- dri-devel@lists.freedesktop.org, cain.cai@rock-chips.com, a.hajda@samsung.com,
- Laurent.pinchart@ideasonboard.com, Yakir Yang <ykk@rock-chips.com>,
- sam@ravnborg.org, Jerome Brunet <jbrunet@baylibre.com>,
- zhengxing@rock-chips.com, linux-rockchip@lists.infradead.org,
- dgreid@chromium.org, Cheng-Yi Chiang <cychiang@chromium.org>,
+Cc: "moderated list:SOUND - SOC LAYER / DYNAMIC AUDIO POWER MANAGEM..."
+ <alsa-devel@alsa-project.org>, Doug Anderson <dianders@chromium.org>,
+ kuninori.morimoto.gx@renesas.com, Neil Armstrong <narmstrong@baylibre.com>,
+ David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
+ cain.cai@rock-chips.com, Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Yakir Yang <ykk@rock-chips.com>, sam@ravnborg.org,
+ Jerome Brunet <jbrunet@baylibre.com>, Xing Zheng <zhengxing@rock-chips.com>,
+ linux-rockchip@lists.infradead.org, Dylan Reid <dgreid@chromium.org>,
  tzungbi@chromium.org, Jonas Karlman <jonas@kwiboo.se>,
- jeffy.chen@rock-chips.com, eddie.cai@rock-chips.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- daniel@ffwll.ch, enric.balletbo@collabora.com, kuankuan.y@gmail.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Jeffy Chen <jeffy.chen@rock-chips.com>,
+ =?UTF-8?B?6JSh5p6r?= <eddie.cai@rock-chips.com>,
+ linux-arm-kernel@lists.infradead.org,
+ linux-kernel <linux-kernel@vger.kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>, kuankuan.y@gmail.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Dne sreda, 11. september 2019 ob 18:23:59 CEST je Neil Armstrong napisal(a):
-> On 11/09/2019 10:26, Cheng-Yi Chiang wrote:
-> > From: Yakir Yang <ykk@rock-chips.com>
-> > 
-> > When transmitting IEC60985 linear PCM audio, we configure the
-> > Aduio Sample Channel Status information in the IEC60958 frame.
-> > The status bit is already available in iec.status of hdmi_codec_params.
-> > 
-> > This fix the issue that audio does not come out on some monitors
-> > (e.g. LG 22CV241)
-> > 
-> > Note that these registers are only for interfaces:
-> > I2S audio interface, General Purpose Audio (GPA), or AHB audio DMA
-> > (AHBAUDDMA).
-> > For S/PDIF interface this information comes from the stream.
-> > 
-> > Currently this function dw_hdmi_set_channel_status is only called
-> > from dw-hdmi-i2s-audio in I2S setup.
-> > 
-> > Signed-off-by: Yakir Yang <ykk@rock-chips.com>
-> > Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
-> > ---
-> > 
-> > Change from v2 to v3:
-> > 1. Reuse what is already set in iec.status in hw_param.
-> > 2. Remove all useless definition of registers and values.
-> > 3. Note that the original sampling frequency is not written to
-> > 
-> >    the channel status as we reuse create_iec958_consumer in pcm_iec958.c.
-> >    Without that it can still play audio fine.
-> >  
-> >  .../drm/bridge/synopsys/dw-hdmi-i2s-audio.c   |  1 +
-> >  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c     | 20 +++++++++++++++++++
-> >  drivers/gpu/drm/bridge/synopsys/dw-hdmi.h     |  2 ++
-> >  include/drm/bridge/dw_hdmi.h                  |  1 +
-> >  4 files changed, 24 insertions(+)
-> > 
-> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> > b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c index
-> > 34d8e837555f..20f4f92dd866 100644
-> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> > @@ -102,6 +102,7 @@ static int dw_hdmi_i2s_hw_params(struct device *dev,
-> > void *data,> 
-> >  	}
-> >  	
-> >  	dw_hdmi_set_sample_rate(hdmi, hparms->sample_rate);
-> > 
-> > +	dw_hdmi_set_channel_status(hdmi, hparms->iec.status);
-> > 
-> >  	dw_hdmi_set_channel_count(hdmi, hparms->channels);
-> >  	dw_hdmi_set_channel_allocation(hdmi, hparms-
->cea.channel_allocation);
-> > 
-> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> > b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c index
-> > bd65d0479683..aa7efd4da1c8 100644
-> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> > @@ -582,6 +582,26 @@ static unsigned int hdmi_compute_n(unsigned int freq,
-> > unsigned long pixel_clk)> 
-> >  	return n;
-> >  
-> >  }
-> > 
-> > +/*
-> > + * When transmitting IEC60958 linear PCM audio, these registers allow to
-> > + * configure the channel status information of all the channel status
-> > + * bits in the IEC60958 frame. For the moment this configuration is only
-> > + * used when the I2S audio interface, General Purpose Audio (GPA),
-> > + * or AHB audio DMA (AHBAUDDMA) interface is active
-> > + * (for S/PDIF interface this information comes from the stream).
-> > + */
-> > +void dw_hdmi_set_channel_status(struct dw_hdmi *hdmi,
-> > +				u8 *channel_status)
-> > +{
-> > +	/*
-> > +	 * Set channel status register for frequency and word length.
-> > +	 * Use default values for other registers.
-> > +	 */
-> > +	hdmi_writeb(hdmi, channel_status[3], HDMI_FC_AUDSCHNLS7);
-> > +	hdmi_writeb(hdmi, channel_status[4], HDMI_FC_AUDSCHNLS8);
-> > +}
-> > +EXPORT_SYMBOL_GPL(dw_hdmi_set_channel_status);
-> > +
-> > 
-> >  static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
-> >  
-> >  	unsigned long pixel_clk, unsigned int sample_rate)
-> >  
-> >  {
-> > 
-> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
-> > b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h index
-> > 6988f12d89d9..fcff5059db24 100644
-> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
-> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
-> > @@ -158,6 +158,8 @@
-> > 
-> >  #define HDMI_FC_SPDDEVICEINF                    0x1062
-> >  #define HDMI_FC_AUDSCONF                        0x1063
-> >  #define HDMI_FC_AUDSSTAT                        0x1064
-> > 
-> > +#define HDMI_FC_AUDSCHNLS7                      0x106e
-> > +#define HDMI_FC_AUDSCHNLS8                      0x106f
-> > 
-> >  #define HDMI_FC_DATACH0FILL                     0x1070
-> >  #define HDMI_FC_DATACH1FILL                     0x1071
-> >  #define HDMI_FC_DATACH2FILL                     0x1072
-> > 
-> > diff --git a/include/drm/bridge/dw_hdmi.h b/include/drm/bridge/dw_hdmi.h
-> > index cf528c289857..4b3e863c4f8a 100644
-> > --- a/include/drm/bridge/dw_hdmi.h
-> > +++ b/include/drm/bridge/dw_hdmi.h
-> > @@ -156,6 +156,7 @@ void dw_hdmi_setup_rx_sense(struct dw_hdmi *hdmi, bool
-> > hpd, bool rx_sense);> 
-> >  void dw_hdmi_set_sample_rate(struct dw_hdmi *hdmi, unsigned int rate);
-> >  void dw_hdmi_set_channel_count(struct dw_hdmi *hdmi, unsigned int cnt);
-> > 
-> > +void dw_hdmi_set_channel_status(struct dw_hdmi *hdmi, u8
-> > *channel_status);
-> > 
-> >  void dw_hdmi_set_channel_allocation(struct dw_hdmi *hdmi, unsigned int
-> >  ca);
-> >  void dw_hdmi_audio_enable(struct dw_hdmi *hdmi);
-> >  void dw_hdmi_audio_disable(struct dw_hdmi *hdmi);
-> 
-> Looks fine for me:
-> Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
-> 
-> Jonas ? Jernej ? Russell ?
-
-Patch itself is fine, I'm just wondering if more information should be copied 
-from status array to registers. But I think they are not 1:1 mapping so some 
-more work would be needed. Anyway, patch is:
-
-Reviewed-by: Jernej Skrabec <jernej.skrabec@siol.net>
-
-Best regards,
-Jernej
-
-> 
-> If it's ok for you I'll apply it.
-> 
-> Neil
-
-
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gVGh1LCBTZXAgMTIsIDIwMTkgYXQgMTI6NTQgQU0gSmVybmVqIMWga3JhYmVjIDxqZXJuZWou
+c2tyYWJlY0BzaW9sLm5ldD4gd3JvdGU6Cj4KPiBEbmUgc3JlZGEsIDExLiBzZXB0ZW1iZXIgMjAx
+OSBvYiAxODoyMzo1OSBDRVNUIGplIE5laWwgQXJtc3Ryb25nIG5hcGlzYWwoYSk6Cj4gPiBPbiAx
+MS8wOS8yMDE5IDEwOjI2LCBDaGVuZy1ZaSBDaGlhbmcgd3JvdGU6Cj4gPiA+IEZyb206IFlha2ly
+IFlhbmcgPHlra0Byb2NrLWNoaXBzLmNvbT4KPiA+ID4KPiA+ID4gV2hlbiB0cmFuc21pdHRpbmcg
+SUVDNjA5ODUgbGluZWFyIFBDTSBhdWRpbywgd2UgY29uZmlndXJlIHRoZQo+ID4gPiBBZHVpbyBT
+YW1wbGUgQ2hhbm5lbCBTdGF0dXMgaW5mb3JtYXRpb24gaW4gdGhlIElFQzYwOTU4IGZyYW1lLgo+
+ID4gPiBUaGUgc3RhdHVzIGJpdCBpcyBhbHJlYWR5IGF2YWlsYWJsZSBpbiBpZWMuc3RhdHVzIG9m
+IGhkbWlfY29kZWNfcGFyYW1zLgo+ID4gPgo+ID4gPiBUaGlzIGZpeCB0aGUgaXNzdWUgdGhhdCBh
+dWRpbyBkb2VzIG5vdCBjb21lIG91dCBvbiBzb21lIG1vbml0b3JzCj4gPiA+IChlLmcuIExHIDIy
+Q1YyNDEpCj4gPiA+Cj4gPiA+IE5vdGUgdGhhdCB0aGVzZSByZWdpc3RlcnMgYXJlIG9ubHkgZm9y
+IGludGVyZmFjZXM6Cj4gPiA+IEkyUyBhdWRpbyBpbnRlcmZhY2UsIEdlbmVyYWwgUHVycG9zZSBB
+dWRpbyAoR1BBKSwgb3IgQUhCIGF1ZGlvIERNQQo+ID4gPiAoQUhCQVVERE1BKS4KPiA+ID4gRm9y
+IFMvUERJRiBpbnRlcmZhY2UgdGhpcyBpbmZvcm1hdGlvbiBjb21lcyBmcm9tIHRoZSBzdHJlYW0u
+Cj4gPiA+Cj4gPiA+IEN1cnJlbnRseSB0aGlzIGZ1bmN0aW9uIGR3X2hkbWlfc2V0X2NoYW5uZWxf
+c3RhdHVzIGlzIG9ubHkgY2FsbGVkCj4gPiA+IGZyb20gZHctaGRtaS1pMnMtYXVkaW8gaW4gSTJT
+IHNldHVwLgo+ID4gPgo+ID4gPiBTaWduZWQtb2ZmLWJ5OiBZYWtpciBZYW5nIDx5a2tAcm9jay1j
+aGlwcy5jb20+Cj4gPiA+IFNpZ25lZC1vZmYtYnk6IENoZW5nLVlpIENoaWFuZyA8Y3ljaGlhbmdA
+Y2hyb21pdW0ub3JnPgo+ID4gPiAtLS0KPiA+ID4KPiA+ID4gQ2hhbmdlIGZyb20gdjIgdG8gdjM6
+Cj4gPiA+IDEuIFJldXNlIHdoYXQgaXMgYWxyZWFkeSBzZXQgaW4gaWVjLnN0YXR1cyBpbiBod19w
+YXJhbS4KPiA+ID4gMi4gUmVtb3ZlIGFsbCB1c2VsZXNzIGRlZmluaXRpb24gb2YgcmVnaXN0ZXJz
+IGFuZCB2YWx1ZXMuCj4gPiA+IDMuIE5vdGUgdGhhdCB0aGUgb3JpZ2luYWwgc2FtcGxpbmcgZnJl
+cXVlbmN5IGlzIG5vdCB3cml0dGVuIHRvCj4gPiA+Cj4gPiA+ICAgIHRoZSBjaGFubmVsIHN0YXR1
+cyBhcyB3ZSByZXVzZSBjcmVhdGVfaWVjOTU4X2NvbnN1bWVyIGluIHBjbV9pZWM5NTguYy4KPiA+
+ID4gICAgV2l0aG91dCB0aGF0IGl0IGNhbiBzdGlsbCBwbGF5IGF1ZGlvIGZpbmUuCj4gPiA+Cj4g
+PiA+ICAuLi4vZHJtL2JyaWRnZS9zeW5vcHN5cy9kdy1oZG1pLWkycy1hdWRpby5jICAgfCAgMSAr
+Cj4gPiA+ICBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL3N5bm9wc3lzL2R3LWhkbWkuYyAgICAgfCAy
+MCArKysrKysrKysrKysrKysrKysrCj4gPiA+ICBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL3N5bm9w
+c3lzL2R3LWhkbWkuaCAgICAgfCAgMiArKwo+ID4gPiAgaW5jbHVkZS9kcm0vYnJpZGdlL2R3X2hk
+bWkuaCAgICAgICAgICAgICAgICAgIHwgIDEgKwo+ID4gPiAgNCBmaWxlcyBjaGFuZ2VkLCAyNCBp
+bnNlcnRpb25zKCspCj4gPiA+Cj4gPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vYnJp
+ZGdlL3N5bm9wc3lzL2R3LWhkbWktaTJzLWF1ZGlvLmMKPiA+ID4gYi9kcml2ZXJzL2dwdS9kcm0v
+YnJpZGdlL3N5bm9wc3lzL2R3LWhkbWktaTJzLWF1ZGlvLmMgaW5kZXgKPiA+ID4gMzRkOGU4Mzc1
+NTVmLi4yMGY0ZjkyZGQ4NjYgMTAwNjQ0Cj4gPiA+IC0tLSBhL2RyaXZlcnMvZ3B1L2RybS9icmlk
+Z2Uvc3lub3BzeXMvZHctaGRtaS1pMnMtYXVkaW8uYwo+ID4gPiArKysgYi9kcml2ZXJzL2dwdS9k
+cm0vYnJpZGdlL3N5bm9wc3lzL2R3LWhkbWktaTJzLWF1ZGlvLmMKPiA+ID4gQEAgLTEwMiw2ICsx
+MDIsNyBAQCBzdGF0aWMgaW50IGR3X2hkbWlfaTJzX2h3X3BhcmFtcyhzdHJ1Y3QgZGV2aWNlICpk
+ZXYsCj4gPiA+IHZvaWQgKmRhdGEsPgo+ID4gPiAgICAgfQo+ID4gPgo+ID4gPiAgICAgZHdfaGRt
+aV9zZXRfc2FtcGxlX3JhdGUoaGRtaSwgaHBhcm1zLT5zYW1wbGVfcmF0ZSk7Cj4gPiA+Cj4gPiA+
+ICsgICBkd19oZG1pX3NldF9jaGFubmVsX3N0YXR1cyhoZG1pLCBocGFybXMtPmllYy5zdGF0dXMp
+Owo+ID4gPgo+ID4gPiAgICAgZHdfaGRtaV9zZXRfY2hhbm5lbF9jb3VudChoZG1pLCBocGFybXMt
+PmNoYW5uZWxzKTsKPiA+ID4gICAgIGR3X2hkbWlfc2V0X2NoYW5uZWxfYWxsb2NhdGlvbihoZG1p
+LCBocGFybXMtCj4gPmNlYS5jaGFubmVsX2FsbG9jYXRpb24pOwo+ID4gPgo+ID4gPiBkaWZmIC0t
+Z2l0IGEvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9zeW5vcHN5cy9kdy1oZG1pLmMKPiA+ID4gYi9k
+cml2ZXJzL2dwdS9kcm0vYnJpZGdlL3N5bm9wc3lzL2R3LWhkbWkuYyBpbmRleAo+ID4gPiBiZDY1
+ZDA0Nzk2ODMuLmFhN2VmZDRkYTFjOCAxMDA2NDQKPiA+ID4gLS0tIGEvZHJpdmVycy9ncHUvZHJt
+L2JyaWRnZS9zeW5vcHN5cy9kdy1oZG1pLmMKPiA+ID4gKysrIGIvZHJpdmVycy9ncHUvZHJtL2Jy
+aWRnZS9zeW5vcHN5cy9kdy1oZG1pLmMKPiA+ID4gQEAgLTU4Miw2ICs1ODIsMjYgQEAgc3RhdGlj
+IHVuc2lnbmVkIGludCBoZG1pX2NvbXB1dGVfbih1bnNpZ25lZCBpbnQgZnJlcSwKPiA+ID4gdW5z
+aWduZWQgbG9uZyBwaXhlbF9jbGspPgo+ID4gPiAgICAgcmV0dXJuIG47Cj4gPiA+Cj4gPiA+ICB9
+Cj4gPiA+Cj4gPiA+ICsvKgo+ID4gPiArICogV2hlbiB0cmFuc21pdHRpbmcgSUVDNjA5NTggbGlu
+ZWFyIFBDTSBhdWRpbywgdGhlc2UgcmVnaXN0ZXJzIGFsbG93IHRvCj4gPiA+ICsgKiBjb25maWd1
+cmUgdGhlIGNoYW5uZWwgc3RhdHVzIGluZm9ybWF0aW9uIG9mIGFsbCB0aGUgY2hhbm5lbCBzdGF0
+dXMKPiA+ID4gKyAqIGJpdHMgaW4gdGhlIElFQzYwOTU4IGZyYW1lLiBGb3IgdGhlIG1vbWVudCB0
+aGlzIGNvbmZpZ3VyYXRpb24gaXMgb25seQo+ID4gPiArICogdXNlZCB3aGVuIHRoZSBJMlMgYXVk
+aW8gaW50ZXJmYWNlLCBHZW5lcmFsIFB1cnBvc2UgQXVkaW8gKEdQQSksCj4gPiA+ICsgKiBvciBB
+SEIgYXVkaW8gRE1BIChBSEJBVURETUEpIGludGVyZmFjZSBpcyBhY3RpdmUKPiA+ID4gKyAqIChm
+b3IgUy9QRElGIGludGVyZmFjZSB0aGlzIGluZm9ybWF0aW9uIGNvbWVzIGZyb20gdGhlIHN0cmVh
+bSkuCj4gPiA+ICsgKi8KPiA+ID4gK3ZvaWQgZHdfaGRtaV9zZXRfY2hhbm5lbF9zdGF0dXMoc3Ry
+dWN0IGR3X2hkbWkgKmhkbWksCj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICB1OCAq
+Y2hhbm5lbF9zdGF0dXMpCj4gPiA+ICt7Cj4gPiA+ICsgICAvKgo+ID4gPiArICAgICogU2V0IGNo
+YW5uZWwgc3RhdHVzIHJlZ2lzdGVyIGZvciBmcmVxdWVuY3kgYW5kIHdvcmQgbGVuZ3RoLgo+ID4g
+PiArICAgICogVXNlIGRlZmF1bHQgdmFsdWVzIGZvciBvdGhlciByZWdpc3RlcnMuCj4gPiA+ICsg
+ICAgKi8KPiA+ID4gKyAgIGhkbWlfd3JpdGViKGhkbWksIGNoYW5uZWxfc3RhdHVzWzNdLCBIRE1J
+X0ZDX0FVRFNDSE5MUzcpOwo+ID4gPiArICAgaGRtaV93cml0ZWIoaGRtaSwgY2hhbm5lbF9zdGF0
+dXNbNF0sIEhETUlfRkNfQVVEU0NITkxTOCk7Cj4gPiA+ICt9Cj4gPiA+ICtFWFBPUlRfU1lNQk9M
+X0dQTChkd19oZG1pX3NldF9jaGFubmVsX3N0YXR1cyk7Cj4gPiA+ICsKPiA+ID4KPiA+ID4gIHN0
+YXRpYyB2b2lkIGhkbWlfc2V0X2Nsa19yZWdlbmVyYXRvcihzdHJ1Y3QgZHdfaGRtaSAqaGRtaSwK
+PiA+ID4KPiA+ID4gICAgIHVuc2lnbmVkIGxvbmcgcGl4ZWxfY2xrLCB1bnNpZ25lZCBpbnQgc2Ft
+cGxlX3JhdGUpCj4gPiA+Cj4gPiA+ICB7Cj4gPiA+Cj4gPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJz
+L2dwdS9kcm0vYnJpZGdlL3N5bm9wc3lzL2R3LWhkbWkuaAo+ID4gPiBiL2RyaXZlcnMvZ3B1L2Ry
+bS9icmlkZ2Uvc3lub3BzeXMvZHctaGRtaS5oIGluZGV4Cj4gPiA+IDY5ODhmMTJkODlkOS4uZmNm
+ZjUwNTlkYjI0IDEwMDY0NAo+ID4gPiAtLS0gYS9kcml2ZXJzL2dwdS9kcm0vYnJpZGdlL3N5bm9w
+c3lzL2R3LWhkbWkuaAo+ID4gPiArKysgYi9kcml2ZXJzL2dwdS9kcm0vYnJpZGdlL3N5bm9wc3lz
+L2R3LWhkbWkuaAo+ID4gPiBAQCAtMTU4LDYgKzE1OCw4IEBACj4gPiA+Cj4gPiA+ICAjZGVmaW5l
+IEhETUlfRkNfU1BEREVWSUNFSU5GICAgICAgICAgICAgICAgICAgICAweDEwNjIKPiA+ID4gICNk
+ZWZpbmUgSERNSV9GQ19BVURTQ09ORiAgICAgICAgICAgICAgICAgICAgICAgIDB4MTA2Mwo+ID4g
+PiAgI2RlZmluZSBIRE1JX0ZDX0FVRFNTVEFUICAgICAgICAgICAgICAgICAgICAgICAgMHgxMDY0
+Cj4gPiA+Cj4gPiA+ICsjZGVmaW5lIEhETUlfRkNfQVVEU0NITkxTNyAgICAgICAgICAgICAgICAg
+ICAgICAweDEwNmUKPiA+ID4gKyNkZWZpbmUgSERNSV9GQ19BVURTQ0hOTFM4ICAgICAgICAgICAg
+ICAgICAgICAgIDB4MTA2Zgo+ID4gPgo+ID4gPiAgI2RlZmluZSBIRE1JX0ZDX0RBVEFDSDBGSUxM
+ICAgICAgICAgICAgICAgICAgICAgMHgxMDcwCj4gPiA+ICAjZGVmaW5lIEhETUlfRkNfREFUQUNI
+MUZJTEwgICAgICAgICAgICAgICAgICAgICAweDEwNzEKPiA+ID4gICNkZWZpbmUgSERNSV9GQ19E
+QVRBQ0gyRklMTCAgICAgICAgICAgICAgICAgICAgIDB4MTA3Mgo+ID4gPgo+ID4gPiBkaWZmIC0t
+Z2l0IGEvaW5jbHVkZS9kcm0vYnJpZGdlL2R3X2hkbWkuaCBiL2luY2x1ZGUvZHJtL2JyaWRnZS9k
+d19oZG1pLmgKPiA+ID4gaW5kZXggY2Y1MjhjMjg5ODU3Li40YjNlODYzYzRmOGEgMTAwNjQ0Cj4g
+PiA+IC0tLSBhL2luY2x1ZGUvZHJtL2JyaWRnZS9kd19oZG1pLmgKPiA+ID4gKysrIGIvaW5jbHVk
+ZS9kcm0vYnJpZGdlL2R3X2hkbWkuaAo+ID4gPiBAQCAtMTU2LDYgKzE1Niw3IEBAIHZvaWQgZHdf
+aGRtaV9zZXR1cF9yeF9zZW5zZShzdHJ1Y3QgZHdfaGRtaSAqaGRtaSwgYm9vbAo+ID4gPiBocGQs
+IGJvb2wgcnhfc2Vuc2UpOz4KPiA+ID4gIHZvaWQgZHdfaGRtaV9zZXRfc2FtcGxlX3JhdGUoc3Ry
+dWN0IGR3X2hkbWkgKmhkbWksIHVuc2lnbmVkIGludCByYXRlKTsKPiA+ID4gIHZvaWQgZHdfaGRt
+aV9zZXRfY2hhbm5lbF9jb3VudChzdHJ1Y3QgZHdfaGRtaSAqaGRtaSwgdW5zaWduZWQgaW50IGNu
+dCk7Cj4gPiA+Cj4gPiA+ICt2b2lkIGR3X2hkbWlfc2V0X2NoYW5uZWxfc3RhdHVzKHN0cnVjdCBk
+d19oZG1pICpoZG1pLCB1OAo+ID4gPiAqY2hhbm5lbF9zdGF0dXMpOwo+ID4gPgo+ID4gPiAgdm9p
+ZCBkd19oZG1pX3NldF9jaGFubmVsX2FsbG9jYXRpb24oc3RydWN0IGR3X2hkbWkgKmhkbWksIHVu
+c2lnbmVkIGludAo+ID4gPiAgY2EpOwo+ID4gPiAgdm9pZCBkd19oZG1pX2F1ZGlvX2VuYWJsZShz
+dHJ1Y3QgZHdfaGRtaSAqaGRtaSk7Cj4gPiA+ICB2b2lkIGR3X2hkbWlfYXVkaW9fZGlzYWJsZShz
+dHJ1Y3QgZHdfaGRtaSAqaGRtaSk7Cj4gPgo+ID4gTG9va3MgZmluZSBmb3IgbWU6Cj4gPiBSZXZp
+ZXdlZC1ieTogTmVpbCBBcm1zdHJvbmcgPG5hcm1zdHJvbmdAYmF5bGlicmUuY29tPgo+ID4KPiA+
+IEpvbmFzID8gSmVybmVqID8gUnVzc2VsbCA/Cj4KPiBQYXRjaCBpdHNlbGYgaXMgZmluZSwgSSdt
+IGp1c3Qgd29uZGVyaW5nIGlmIG1vcmUgaW5mb3JtYXRpb24gc2hvdWxkIGJlIGNvcGllZAo+IGZy
+b20gc3RhdHVzIGFycmF5IHRvIHJlZ2lzdGVycy4gQnV0IEkgdGhpbmsgdGhleSBhcmUgbm90IDE6
+MSBtYXBwaW5nIHNvIHNvbWUKPiBtb3JlIHdvcmsgd291bGQgYmUgbmVlZGVkLiBBbnl3YXksIHBh
+dGNoIGlzOgoKSGkgSmVybmVqLApZZXMgeW91IGFyZSByaWdodC4gSSB3YXMgdGhpbmtpbmcgYWJv
+dXQgdGhlIHNhbWUgdGhpbmcuCkJ1dCB0aGVyZSBhcmUgYWxzbyBzb21lIGZpZWxkcyBpbiB0aGUg
+SUVDNjA5NTggc3BlYyBub3QgbWFwcGVkIHRvIHRoZQpyZWdpc3RlcnMgb24gZHctaGRtaS4KU28g
+SSBlbmRlZCB1cCBqdXN0IHdyaXRpbmcgdGhlIHR3byByZWdpc3RlcnMgaW4gdGhlIG9yaWdpbmFs
+IHlraydzCnBhdGNoLCBhbmQgaWdub3JpbmcgIm9yaWdpbmFsIHNhbXBsaW5nIGZyZXF1ZW5jeSIg
+bGlrZSBwY21faWVjOTU4LgpJdCB0dXJucyBvdXQgdGhhdCBhdWRpbyBwbGF5cyBmaW5lIG9uIG15
+IExHIG1vbml0b3IuIFNvIEkgc3VnZ2VzdCB3ZQpjYW4ga2VlcCB0aGlzIHBhdGNoIGFzIHNpbXBs
+ZSBhcyBpdCBpcywgYW5kIGFkZCBtb3JlIHJlZ2lzdGVyIHNldHRpbmcKaWYgd2UgZmluZCBpc3N1
+ZS4KVGhhbmtzIQoKPgo+Cj4gUmV2aWV3ZWQtYnk6IEplcm5laiBTa3JhYmVjIDxqZXJuZWouc2ty
+YWJlY0BzaW9sLm5ldD4KPgo+IEJlc3QgcmVnYXJkcywKPiBKZXJuZWoKPgo+ID4KPiA+IElmIGl0
+J3Mgb2sgZm9yIHlvdSBJJ2xsIGFwcGx5IGl0Lgo+ID4KPiA+IE5laWwKPgo+Cj4KPgoKX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAg
+bWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
