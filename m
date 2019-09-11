@@ -2,56 +2,142 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28EAAAF807
-	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Sep 2019 10:34:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 313A8B018F
+	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Sep 2019 18:24:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=giGtNEPo8eyLnXNytoiKzg2/NUjxKwfMpojrRmY4h5M=; b=k9NFz6Z8GAU81P
-	kc6IkKLI8xwF/1fjO4LXlawcYRFrs1bNF9HULT9LO/EtGx9yy2de7ocn34Izkt7NKx3lDsxTpWcul
-	H+83q9YS3OAdwEPQYKTZO36hW0bkvo5+AuyXDpB0dl7iq4c2+KvZ97s4qTOGk/JLrHxmT8+rXtsfx
-	eJkiibdaY3NHjsX6AtdGzNsqZZDGCpb9xiG/iuOhV1WrtFCfQzz+Cvs+y7Q3JF1LOVxEcmaC/uY/c
-	3CsLI+DDMu/uV/VG4xJClVf/yhOz5ZVNrt/iYXUbnUbDb4gpI/FgkWsl9KUyOu9EPJKCEFhCIjqW4
-	svsZHc4qiAL8Qw2bl2AA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xWx40Ci+Fp0TTzil6YMtz5goUXMKscRX1KEwmRXV/0Y=; b=RM/D/icSoyPHja
+	ZoMPsus87mTgoFSBxXt4XrAx5/zc7Y2QIMNTi/QekfKX348fMs78sY+Nre+4vjbNncva3PCXVDv7w
+	kLjH16aZ+YMzDfpU0QY1LM9dxHl38eO+/v9MOn9qiEz869NZtgMe6TMBUfKwjhgtp5BnijonSZISb
+	BJXUd2sRD30vsahvtVjuhMHTr0KB/HM/WuwIaljKeEutXEfNDNAcsLAroD/7J27/3dv4kqW3pG15+
+	5r7Fb2vDdLuyEo944iqbF+sGwgiOx0tH9RCp18R7bRW+dTKY0k8i44+dWOOzL8pgF7epufd+4dQ+T
+	xfkCNV1A+zH4s1Er3fIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
-	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7y5E-0001dY-9j; Wed, 11 Sep 2019 08:34:36 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7y57-0001d2-D4
- for linux-rockchip@lists.infradead.org; Wed, 11 Sep 2019 08:34:32 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 95FB328DCE3
-Message-ID: <6b40b995957f9dbb685ffcb687dd18646354ca3a.camel@collabora.com>
-Subject: Re: [PATCH 4/4] media: hantro: Support color conversion via
- post-processing
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Hans Verkuil <hverkuil@xs4all.nl>, linux-media@vger.kernel.org
-Date: Wed, 11 Sep 2019 09:34:24 +0100
-In-Reply-To: <30f7135e-7580-9b69-5976-5897a9b256f4@xs4all.nl>
-References: <20190903181711.7559-1-ezequiel@collabora.com>
- <20190903181711.7559-5-ezequiel@collabora.com>
- <30f7135e-7580-9b69-5976-5897a9b256f4@xs4all.nl>
-Organization: Collabora
-User-Agent: Evolution 3.30.5-1.1 
+	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+	id 1i85Ps-00010P-12; Wed, 11 Sep 2019 16:24:24 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i85PX-0000lo-3E
+ for linux-rockchip@lists.infradead.org; Wed, 11 Sep 2019 16:24:04 +0000
+Received: by mail-wr1-x443.google.com with SMTP id l3so2547423wru.7
+ for <linux-rockchip@lists.infradead.org>; Wed, 11 Sep 2019 09:24:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:openpgp:autocrypt:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=1aeFNqOpX1l0T3sLZE0GImu3YT1JIHyjts4KwaTkPb4=;
+ b=0og97i2X2lPm1u0FA8orQhWmkgm8sFSPAWcjdTMnmtdaPm6hmzsWRyc7qzdCdpTc+K
+ HmNflBo2j+ah4jQePd5ttlAfrG7Iw/ga+wzPwY531g4Rvm4DQPii9OsH20JftchLNU4w
+ ypwN3vxv2rJ+QA/h8/gZr28+1Npz+b85sfbNlh8ySEzboTuNDk6XIDxIcIjDn9AipK9W
+ MEKHW9XXC88XXArqIoIhkjU0eR5aLVa0Egld+Vlg2ed5ms3aDL2Uq2gnQHo7Oqu8HvRl
+ nMVscqcWgCgCWwj+cFhGhqT8acRLv6Vx3rgggG7zLgscW/nxoxQSlrDFfL3WAbbmpMt3
+ Hozw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=1aeFNqOpX1l0T3sLZE0GImu3YT1JIHyjts4KwaTkPb4=;
+ b=gAc1Y7ksLZKGl9mpt/B2B7j9c6PVScO3GGbSbfil66j1SQyjHFQ8oMBCuZio4bOzKA
+ cP4nWxXDVwLI/AD/g2wYifVqeU3xLGnkWuUcHbuUk9eCAPkB6vlZSi5faYgzKeyXw4/b
+ awXlYFPqgNEPoCSIiDIBqkwwviRqlRwifbLmY7iHNStfx+tblToeGBKO6YJrfJntFXzJ
+ xgzzfeNWSpX9IS4GUHWG1oZpeUoOBYjyc8YZTT4q75rEmon/dTK0WXeq6LG9pFsuXXbh
+ 9CLrrLWh6/sE0XkcLQpDgqb+oWny71Z1V7EIEIBWx9U/mzfiC7Eq68QnUAPHCcWyhABF
+ 3jdg==
+X-Gm-Message-State: APjAAAUJEI+5Q+jrBebWAterfiaDiW80UAZZn1mIK6XbXrbsVSU9P1FP
+ rLH7frVW1PuBr5KYUu/rQ0YK4w==
+X-Google-Smtp-Source: APXvYqwQCIK9LvYW6kmdJ5gXTptp2YAEu8qow/5+gNE0h6lktGJHH/w16XPnqBQ+FTUanYyksyILtg==
+X-Received: by 2002:adf:f48e:: with SMTP id l14mr29875557wro.234.1568219041433; 
+ Wed, 11 Sep 2019 09:24:01 -0700 (PDT)
+Received: from [192.168.1.62] (wal59-h01-176-150-251-154.dsl.sta.abo.bbox.fr.
+ [176.150.251.154])
+ by smtp.gmail.com with ESMTPSA id q15sm27450181wrg.65.2019.09.11.09.23.59
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 11 Sep 2019 09:24:00 -0700 (PDT)
+Subject: Re: [PATCH v3] drm: bridge/dw_hdmi: add audio sample channel status
+ setting
+To: Cheng-Yi Chiang <cychiang@chromium.org>, linux-kernel@vger.kernel.org
+References: <20190911082646.134347-1-cychiang@chromium.org>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ ZaTUOEkgIor5losDrePdPgE=
+Organization: Baylibre
+Message-ID: <1e2ec69d-e42d-4e1b-7ce9-d1620cfbb4c9@baylibre.com>
+Date: Wed, 11 Sep 2019 18:23:59 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20190911082646.134347-1-cychiang@chromium.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_013429_716520_109F7CC8 
-X-CRM114-Status: GOOD (  27.80  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190911_092403_146002_5087D12D 
+X-CRM114-Status: GOOD (  22.69  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,564 +150,134 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
- Tomasz Figa <tfiga@chromium.org>, linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com,
- Chris Healy <cphealy@gmail.com>
+Cc: alsa-devel@alsa-project.org, kuninori.morimoto.gx@renesas.com,
+ airlied@linux.ie, dri-devel@lists.freedesktop.org, cain.cai@rock-chips.com,
+ a.hajda@samsung.com, Laurent.pinchart@ideasonboard.com,
+ Yakir Yang <ykk@rock-chips.com>, sam@ravnborg.org,
+ Jerome Brunet <jbrunet@baylibre.com>, zhengxing@rock-chips.com,
+ linux-rockchip@lists.infradead.org, dgreid@chromium.org, tzungbi@chromium.org,
+ Jonas Karlman <jonas@kwiboo.se>, jeffy.chen@rock-chips.com,
+ eddie.cai@rock-chips.com, linux-arm-kernel@lists.infradead.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>, dianders@chromium.org,
+ daniel@ffwll.ch, enric.balletbo@collabora.com, kuankuan.y@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, 2019-09-09 at 13:03 +0200, Hans Verkuil wrote:
-> On 9/3/19 8:17 PM, Ezequiel Garcia wrote:
-> > The Hantro G1 decoder is able to enable a post-processor
-> > on the decoding pipeline, which can be used to perform
-> > scaling and color conversion.
-> > 
-> > The post-processor is integrated to the decoder, and it's
-> > possible to use it in a way that is completely transparent
-> > to the user.
-> > 
-> > This commit enables color conversion via post-processing,
-> > which means the driver now exposes YUV packed and RGB pixel
-> > formats, in addition to NV12.
-> > 
-> > On the YUV-to-RGB path, the post-processing pipeline
-> > allows to modify the image contrast, brigthness and saturation,
-> > so additional user controls are added to expose them.
-> > 
-> > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-> > ---
-> >  drivers/staging/media/hantro/Makefile         |   1 +
-> >  drivers/staging/media/hantro/hantro.h         |  23 +-
-> >  drivers/staging/media/hantro/hantro_drv.c     |  24 +-
-> >  .../staging/media/hantro/hantro_g1_h264_dec.c |   2 +-
-> >  .../media/hantro/hantro_g1_mpeg2_dec.c        |   3 +-
-> >  .../staging/media/hantro/hantro_g1_vp8_dec.c  |   2 +-
-> >  drivers/staging/media/hantro/hantro_h264.c    |   7 +-
-> >  drivers/staging/media/hantro/hantro_hw.h      |  11 +
-> >  .../staging/media/hantro/hantro_postproc.c    | 316 ++++++++++++++++++
-> >  drivers/staging/media/hantro/hantro_v4l2.c    |  21 +-
-> >  drivers/staging/media/hantro/rk3288_vpu_hw.c  |  21 ++
-> >  11 files changed, 420 insertions(+), 11 deletions(-)
-> >  create mode 100644 drivers/staging/media/hantro/hantro_postproc.c
-> > 
-> > diff --git a/drivers/staging/media/hantro/Makefile b/drivers/staging/media/hantro/Makefile
-> > index 5d6b0383d280..496b30c3c396 100644
-> > --- a/drivers/staging/media/hantro/Makefile
-> > +++ b/drivers/staging/media/hantro/Makefile
-> > @@ -3,6 +3,7 @@ obj-$(CONFIG_VIDEO_HANTRO) += hantro-vpu.o
-> >  hantro-vpu-y += \
-> >  		hantro_drv.o \
-> >  		hantro_v4l2.o \
-> > +		hantro_postproc.o \
-> >  		hantro_h1_jpeg_enc.o \
-> >  		hantro_g1_h264_dec.o \
-> >  		hantro_g1_mpeg2_dec.o \
-> > diff --git a/drivers/staging/media/hantro/hantro.h b/drivers/staging/media/hantro/hantro.h
-> > index e8872f24e351..8446a1fa9ab9 100644
-> > --- a/drivers/staging/media/hantro/hantro.h
-> > +++ b/drivers/staging/media/hantro/hantro.h
-> > @@ -237,6 +237,7 @@ struct hantro_ctx {
-> >  			  unsigned int bytesused);
-> >  
-> >  	const struct hantro_codec_ops *codec_ops;
-> > +	struct hantro_postproc_ctx postproc;
-> >  
-> >  	/* Specific for particular codec modes. */
-> >  	union {
-> > @@ -250,7 +251,8 @@ struct hantro_ctx {
-> >  /**
-> >   * struct hantro_fmt - information about supported video formats.
-> >   * @name:	Human readable name of the format.
-> > - * @fourcc:	FourCC code of the format. See V4L2_PIX_FMT_*.
-> > + * @fourcc:	FourCC code of the post-processed format. See V4L2_PIX_FMT_*.
-> > + * @dec_fourcc:	FourCC code of the native format. See V4L2_PIX_FMT_*.
-> >   * @codec_mode:	Codec mode related to this format. See
-> >   *		enum hantro_codec_mode.
-> >   * @header_size: Optional header size. Currently used by JPEG encoder.
-> > @@ -261,6 +263,7 @@ struct hantro_ctx {
-> >  struct hantro_fmt {
-> >  	char *name;
-> >  	u32 fourcc;
-> > +	u32 dec_fourcc;
-> >  	enum hantro_codec_mode codec_mode;
-> >  	int header_size;
-> >  	int max_depth;
-> > @@ -387,4 +390,22 @@ hantro_h264_buffer_extra_size(unsigned int width, unsigned int height)
-> >  	return 128 * MB_WIDTH(width) * MB_HEIGHT(height);
-> >  }
-> >  
-> > +static inline bool
-> > +hantro_use_postproc(struct hantro_ctx *ctx)
-> > +{
-> > +	return ctx->vpu_dst_fmt->fourcc != ctx->vpu_dst_fmt->dec_fourcc;
-> > +}
-> > +
-> > +static inline dma_addr_t
-> > +hantro_get_dec_buf_addr(struct hantro_ctx *ctx, struct vb2_buffer *vb)
-> > +{
-> > +	if (hantro_use_postproc(ctx))
-> > +		return ctx->postproc.dec_q[vb->index].dma;
-> > +	return vb2_dma_contig_plane_dma_addr(vb, 0);
-> > +}
-> > +
-> > +void hantro_postproc_setup(struct hantro_ctx *ctx);
-> > +void hantro_postproc_free(struct hantro_ctx *ctx);
-> > +int hantro_postproc_alloc(struct hantro_ctx *ctx);
-> > +
-> >  #endif /* HANTRO_H_ */
-> > diff --git a/drivers/staging/media/hantro/hantro_drv.c b/drivers/staging/media/hantro/hantro_drv.c
-> > index f550b68d46ca..300178562014 100644
-> > --- a/drivers/staging/media/hantro/hantro_drv.c
-> > +++ b/drivers/staging/media/hantro/hantro_drv.c
-> > @@ -53,7 +53,7 @@ dma_addr_t hantro_get_ref(struct hantro_ctx *ctx, u64 ts)
-> >  	if (index < 0)
-> >  		return 0;
-> >  	buf = vb2_get_buffer(q, index);
-> > -	return vb2_dma_contig_plane_dma_addr(buf, 0);
-> > +	return hantro_get_dec_buf_addr(ctx, buf);
-> >  }
-> >  
-> >  static int
-> > @@ -165,6 +165,9 @@ void hantro_finish_run(struct hantro_ctx *ctx)
-> >  {
-> >  	struct vb2_v4l2_buffer *src_buf;
-> >  
-> > +	if (hantro_use_postproc(ctx))
-> > +		hantro_postproc_setup(ctx);
-> > +
-> >  	src_buf = hantro_get_src_buf(ctx);
-> >  	v4l2_ctrl_request_complete(src_buf->vb2_buf.req_obj.req,
-> >  				   &ctx->ctrl_handler);
-> > @@ -365,8 +368,9 @@ static int hantro_ctrls_setup(struct hantro_dev *vpu,
-> >  			      int allowed_codecs)
-> >  {
-> >  	int i, num_ctrls = ARRAY_SIZE(controls);
-> > +	int postproc_ctrls = (allowed_codecs & HANTRO_DECODERS) ? 3 : 0;
-> >  
-> > -	v4l2_ctrl_handler_init(&ctx->ctrl_handler, num_ctrls);
-> > +	v4l2_ctrl_handler_init(&ctx->ctrl_handler, num_ctrls + postproc_ctrls);
-> >  
-> >  	for (i = 0; i < num_ctrls; i++) {
-> >  		if (!(allowed_codecs & controls[i].codec))
-> > @@ -382,6 +386,22 @@ static int hantro_ctrls_setup(struct hantro_dev *vpu,
-> >  			return ctx->ctrl_handler.error;
-> >  		}
-> >  	}
-> > +
-> > +	/*
-> > +	 * Add post-processing controls.
-> > +	 * Only used if the post-processing path is enabled,
-> > +	 * when the application sets a CAPTURE pixel format
-> > +	 * that requires it.
-> > +	 */
-> > +	if (postproc_ctrls) {
-> > +		v4l2_ctrl_new_std(&ctx->ctrl_handler, NULL,
-> > +				  V4L2_CID_CONTRAST, -64, 64, 1, 0);
-> > +		v4l2_ctrl_new_std(&ctx->ctrl_handler, NULL,
-> > +				  V4L2_CID_BRIGHTNESS, -128, 127, 1, 0);
-> > +		v4l2_ctrl_new_std(&ctx->ctrl_handler, NULL,
-> > +				  V4L2_CID_SATURATION, -64, 128, 1, 0);
-> > +	}
-> > +
-> >  	return v4l2_ctrl_handler_setup(&ctx->ctrl_handler);
-> >  }
-> >  
-> > diff --git a/drivers/staging/media/hantro/hantro_g1_h264_dec.c b/drivers/staging/media/hantro/hantro_g1_h264_dec.c
-> > index 29130946dea4..e263a6b50651 100644
-> > --- a/drivers/staging/media/hantro/hantro_g1_h264_dec.c
-> > +++ b/drivers/staging/media/hantro/hantro_g1_h264_dec.c
-> > @@ -241,7 +241,7 @@ static void set_buffers(struct hantro_ctx *ctx)
-> >  	vdpu_write_relaxed(vpu, src_dma, G1_REG_ADDR_STR);
-> >  
-> >  	/* Destination (decoded frame) buffer. */
-> > -	dst_dma = vb2_dma_contig_plane_dma_addr(&dst_buf->vb2_buf, 0);
-> > +	dst_dma = hantro_get_dec_buf_addr(ctx, &dst_buf->vb2_buf);
-> >  	vdpu_write_relaxed(vpu, dst_dma, G1_REG_ADDR_DST);
-> >  
-> >  	/* Higher profiles require DMV buffer appended to reference frames. */
-> > diff --git a/drivers/staging/media/hantro/hantro_g1_mpeg2_dec.c b/drivers/staging/media/hantro/hantro_g1_mpeg2_dec.c
-> > index f3bf67d8a289..63fe89ef21ae 100644
-> > --- a/drivers/staging/media/hantro/hantro_g1_mpeg2_dec.c
-> > +++ b/drivers/staging/media/hantro/hantro_g1_mpeg2_dec.c
-> > @@ -121,7 +121,7 @@ hantro_g1_mpeg2_dec_set_buffers(struct hantro_dev *vpu, struct hantro_ctx *ctx,
-> >  	vdpu_write_relaxed(vpu, addr, G1_REG_RLC_VLC_BASE);
-> >  
-> >  	/* Destination frame buffer */
-> > -	addr = vb2_dma_contig_plane_dma_addr(dst_buf, 0);
-> > +	addr = hantro_get_dec_buf_addr(ctx, dst_buf);
-> >  	current_addr = addr;
-> >  
-> >  	if (picture->picture_structure == PICT_BOTTOM_FIELD)
-> > @@ -243,7 +243,6 @@ void hantro_g1_mpeg2_dec_run(struct hantro_ctx *ctx)
-> >  	hantro_g1_mpeg2_dec_set_buffers(vpu, ctx, &src_buf->vb2_buf,
-> >  					&dst_buf->vb2_buf,
-> >  					sequence, picture, slice_params);
-> > -
-> >  	hantro_finish_run(ctx);
-> >  
-> >  	reg = G1_REG_DEC_E(1);
-> > diff --git a/drivers/staging/media/hantro/hantro_g1_vp8_dec.c b/drivers/staging/media/hantro/hantro_g1_vp8_dec.c
-> > index cad18094fee0..e708994d1aba 100644
-> > --- a/drivers/staging/media/hantro/hantro_g1_vp8_dec.c
-> > +++ b/drivers/staging/media/hantro/hantro_g1_vp8_dec.c
-> > @@ -422,7 +422,7 @@ static void cfg_buffers(struct hantro_ctx *ctx,
-> >  	}
-> >  	vdpu_write_relaxed(vpu, reg, G1_REG_FWD_PIC(0));
-> >  
-> > -	dst_dma = vb2_dma_contig_plane_dma_addr(&vb2_dst->vb2_buf, 0);
-> > +	dst_dma = hantro_get_dec_buf_addr(ctx, &vb2_dst->vb2_buf);
-> >  	vdpu_write_relaxed(vpu, dst_dma, G1_REG_ADDR_DST);
-> >  }
-> >  
-> > diff --git a/drivers/staging/media/hantro/hantro_h264.c b/drivers/staging/media/hantro/hantro_h264.c
-> > index 2227b4e12067..d00b3096b7ae 100644
-> > --- a/drivers/staging/media/hantro/hantro_h264.c
-> > +++ b/drivers/staging/media/hantro/hantro_h264.c
-> > @@ -13,6 +13,7 @@
-> >  #include <linux/types.h>
-> >  #include <linux/sort.h>
-> >  #include <media/v4l2-mem2mem.h>
-> > +#include <media/v4l2-common.h>
-> >  
-> >  #include "hantro.h"
-> >  #include "hantro_hw.h"
-> > @@ -635,7 +636,11 @@ int hantro_h264_dec_init(struct hantro_ctx *ctx)
-> >  	tbl = priv->cpu;
-> >  	memcpy(tbl->cabac_table, h264_cabac_table, sizeof(tbl->cabac_table));
-> >  
-> > -	v4l2_fill_pixfmt_mp(&pix_mp, ctx->dst_fmt.pixelformat,
-> > +	/*
-> > +	 * For the decoder picture size, we want the decoder
-> > +	 * native pixel format, so we use dec_fourcc here.
-> > +	 */
-> > +	v4l2_fill_pixfmt_mp(&pix_mp, ctx->vpu_dst_fmt->dec_fourcc,
-> >  			    ctx->dst_fmt.width, ctx->dst_fmt.height);
-> >  	h264_dec->pic_size = pix_mp.plane_fmt[0].sizeimage;
-> >  
-> > diff --git a/drivers/staging/media/hantro/hantro_hw.h b/drivers/staging/media/hantro/hantro_hw.h
-> > index 69b88f4d3fb3..ae1d869e7c28 100644
-> > --- a/drivers/staging/media/hantro/hantro_hw.h
-> > +++ b/drivers/staging/media/hantro/hantro_hw.h
-> > @@ -28,11 +28,13 @@ struct hantro_variant;
-> >   * @cpu:	CPU pointer to the buffer.
-> >   * @dma:	DMA address of the buffer.
-> >   * @size:	Size of the buffer.
-> > + * @attrs:	Attributes of the DMA mapping.
-> >   */
-> >  struct hantro_aux_buf {
-> >  	void *cpu;
-> >  	dma_addr_t dma;
-> >  	size_t size;
-> > +	unsigned long attrs;
-> >  };
-> >  
-> >  /**
-> > @@ -109,6 +111,15 @@ struct hantro_vp8_dec_hw_ctx {
-> >  	struct hantro_aux_buf prob_tbl;
-> >  };
-> >  
-> > +/**
-> > + * struct hantro_postproc_ctx
-> > + *
-> > + * @dec_q:		References buffers, in decoder format.
-> > + */
-> > +struct hantro_postproc_ctx {
-> > +	struct hantro_aux_buf dec_q[VB2_MAX_FRAME];
-> > +};
-> > +
-> >  /**
-> >   * struct hantro_codec_ops - codec mode specific operations
-> >   *
-> > diff --git a/drivers/staging/media/hantro/hantro_postproc.c b/drivers/staging/media/hantro/hantro_postproc.c
-> > new file mode 100644
-> > index 000000000000..17d023a253a8
-> > --- /dev/null
-> > +++ b/drivers/staging/media/hantro/hantro_postproc.c
-> > @@ -0,0 +1,316 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Hantro G1 post-processor support
-> > + *
-> > + * Copyright (C) 2019 Collabora, Ltd.
-> > + */
-> > +
-> > +#include <linux/dma-mapping.h>
-> > +#include <linux/types.h>
-> > +
-> > +#include "hantro.h"
-> > +#include "hantro_hw.h"
-> > +
-> > +#define G1_SWREG(nr)		((nr) * 4)
-> > +
-> > +#define G1_REG_PP_INTERRUPT		G1_SWREG(60)
-> > +#define    G1_REG_PP_READY_IRQ		BIT(12)
-> > +#define    G1_REG_PP_IRQ		BIT(8)
-> > +#define    G1_REG_PP_IRQ_DIS		BIT(4)
-> > +#define    G1_REG_PP_PIPELINE_EN	BIT(1)
-> > +#define    G1_REG_PP_EXTERNAL_TRIGGER	BIT(0)
-> > +#define G1_REG_PP_DEV_CONFIG		G1_SWREG(61)
-> > +#define     G1_REG_PP_AXI_RD_ID(v)	(((v) << 24) & GENMASK(31, 24))
-> > +#define     G1_REG_PP_AXI_WR_ID(v)	(((v) << 16) & GENMASK(23, 16))
-> > +#define     G1_REG_PP_INSWAP32_E(v)	((v) ? BIT(10) : 0)
-> > +#define     G1_REG_PP_DATA_DISC_E(v)	((v) ? BIT(9) : 0)
-> > +#define     G1_REG_PP_CLK_GATE_E(v)	((v) ? BIT(8) : 0)
-> > +#define     G1_REG_PP_IN_ENDIAN(v)	((v) ? BIT(7) : 0)
-> > +#define     G1_REG_PP_OUT_ENDIAN(v)	((v) ? BIT(6) : 0)
-> > +#define     G1_REG_PP_OUTSWAP32_E(v)	((v) ? BIT(5) : 0)
-> > +#define     G1_REG_PP_MAX_BURST(v)	(((v) << 0) & GENMASK(4, 0))
-> > +#define G1_REG_PP_IN_LUMA_BASE		G1_SWREG(63)
-> > +#define G1_REG_PP_IN_CB_BASE		G1_SWREG(64)
-> > +#define G1_REG_PP_IN_CR_BASE		G1_SWREG(65)
-> > +#define G1_REG_PP_OUT_LUMA_BASE		G1_SWREG(66)
-> > +#define G1_REG_PP_OUT_CHROMA_BASE	G1_SWREG(67)
-> > +#define G1_REG_PP_CONTRAST_ADJUST	G1_SWREG(68)
-> > +#define G1_REG_PP_COLOR_CONVERSION	G1_SWREG(69)
-> > +#define G1_REG_PP_COLOR_CONVERSION0	G1_SWREG(70)
-> > +#define G1_REG_PP_COLOR_CONVERSION1	G1_SWREG(71)
-> > +#define G1_REG_PP_INPUT_SIZE		G1_SWREG(72)
-> > +#define    G1_REG_PP_INPUT_SIZE_HEIGHT(v) (((v) << 9) & GENMASK(16, 9))
-> > +#define    G1_REG_PP_INPUT_SIZE_WIDTH(v)  (((v) << 0) & GENMASK(8, 0))
-> > +#define G1_REG_PP_SCALING0		G1_SWREG(79)
-> > +#define     G1_REG_PP_PADD_R(v)	(((v) << 23) & GENMASK(27, 23))
-> > +#define     G1_REG_PP_PADD_G(v)	(((v) << 18) & GENMASK(22, 18))
-> > +#define     G1_REG_PP_RANGEMAP_Y(v) ((v) ? BIT(31) : 0)
-> > +#define     G1_REG_PP_RANGEMAP_C(v) ((v) ? BIT(30) : 0)
-> > +#define     G1_REG_PP_YCBCR_RANGE(v) ((v) ? BIT(29) : 0)
-> > +#define     G1_REG_PP_RGB_16(v) ((v) ? BIT(28) : 0)
-> > +#define G1_REG_PP_SCALING1		G1_SWREG(80)
-> > +#define     G1_REG_PP_PADD_B(v)	(((v) << 18) & GENMASK(22, 18))
-> > +#define G1_REG_PP_MASK_R		G1_SWREG(82)
-> > +#define G1_REG_PP_MASK_G		G1_SWREG(83)
-> > +#define G1_REG_PP_MASK_B		G1_SWREG(84)
-> > +#define G1_REG_PP_CONTROL		G1_SWREG(85)
-> > +#define     G1_REG_PP_CONTROL_IN_FMT(v)	(((v) << 29) & GENMASK(31, 29))
-> > +#define     G1_REG_PP_CONTROL_OUT_FMT(v) (((v) << 26) & GENMASK(28, 26))
-> > +#define     G1_REG_PP_CONTROL_OUT_HEIGHT(v) (((v) << 15) & GENMASK(25, 15))
-> > +#define     G1_REG_PP_CONTROL_OUT_WIDTH(v) (((v) << 4) & GENMASK(14, 4))
-> > +#define G1_REG_PP_MASK1_ORIG_WIDTH	G1_SWREG(88)
-> > +#define     G1_REG_PP_ORIG_WIDTH(v)	(((v) << 23) & GENMASK(31, 23))
-> > +#define G1_REG_PP_DISPLAY_WIDTH		G1_SWREG(92)
-> > +#define G1_REG_PP_FUSE			G1_SWREG(99)
-> > +
-> > +#define VPU_PP_IN_YUYV			0x0
-> > +#define VPU_PP_IN_NV12			0x1
-> > +#define VPU_PP_IN_YUV420		0x2
-> > +#define VPU_PP_IN_YUV240_TILED		0x5
-> > +#define VPU_PP_OUT_RGB			0x0
-> > +#define VPU_PP_OUT_YUYV			0x3
-> > +
-> > +#define DEF_COLOR_COEFF_A 298
-> > +#define DEF_COLOR_COEFF_B 409
-> > +#define DEF_COLOR_COEFF_C 208
-> > +#define DEF_COLOR_COEFF_D 100
-> > +#define DEF_COLOR_COEFF_E 516
-> > +
-> > +static const struct hantro_reg reg_color_a2 = { G1_REG_PP_COLOR_CONVERSION, 18, 0x3ff };
-> > +static const struct hantro_reg reg_color_a1 = { G1_REG_PP_COLOR_CONVERSION, 8, 0x3ff };
-> > +static const struct hantro_reg reg_color_b = { G1_REG_PP_COLOR_CONVERSION0, 0, 0x3ff };
-> > +static const struct hantro_reg reg_color_c = { G1_REG_PP_COLOR_CONVERSION0, 10, 0x3ff };
-> > +static const struct hantro_reg reg_color_d = { G1_REG_PP_COLOR_CONVERSION0, 20, 0x3ff };
-> > +static const struct hantro_reg reg_color_e = { G1_REG_PP_COLOR_CONVERSION1, 0, 0x3ff };
-> > +static const struct hantro_reg reg_color_f = { G1_REG_PP_COLOR_CONVERSION1, 10, 0xff };
-> > +static const struct hantro_reg reg_contrast_thr1 = { G1_REG_PP_CONTRAST_ADJUST, 24, 0xff };
-> > +static const struct hantro_reg reg_contrast_thr2 = { G1_REG_PP_COLOR_CONVERSION, 0, 0xff };
-> > +static const struct hantro_reg reg_contrast_off1 = { G1_REG_PP_CONTRAST_ADJUST, 0, 0x3ff };
-> > +static const struct hantro_reg reg_contrast_off2 = { G1_REG_PP_CONTRAST_ADJUST, 10, 0x3ff };
-> > +static const struct hantro_reg reg_ycbcr_range = { G1_REG_PP_SCALING0, 29, 0x1 };
-> > +static const struct hantro_reg reg_pad_r = { G1_REG_PP_SCALING0, 23, 0x1f };
-> > +static const struct hantro_reg reg_pad_g = { G1_REG_PP_SCALING0, 18, 0x1f };
-> > +static const struct hantro_reg reg_pad_b = { G1_REG_PP_SCALING1, 18, 0x1f };
-> > +
-> > +static s32 hantro_postproc_get_ctrl(struct hantro_ctx *ctx, u32 id, s32 def_val)
-> > +{
-> > +	struct v4l2_ctrl *ctrl;
-> > +
-> > +	ctrl = v4l2_ctrl_find(&ctx->ctrl_handler, id);
-> > +	if (!ctrl)
-> > +		return def_val;
-> > +	return v4l2_ctrl_g_ctrl(ctrl);
-> > +}
-> > +
-> > +static void hantro_postproc_setup_rgb(struct hantro_ctx *ctx)
-> > +{
-> > +	struct hantro_dev *vpu = ctx->dev;
-> > +	s32 thr1y, thr2y;
-> > +	s32 thr1, thr2;
-> > +	s32 off1, off2;
-> > +	s32 a1, a2;
-> > +	s32 tmp, satur;
-> > +	s32 contrast, saturation, brightness;
-> > +
-> > +	contrast = hantro_postproc_get_ctrl(ctx, V4L2_CID_CONTRAST, 0);
-> > +	brightness = hantro_postproc_get_ctrl(ctx, V4L2_CID_BRIGHTNESS, 0);
-> > +	saturation = hantro_postproc_get_ctrl(ctx, V4L2_CID_SATURATION, 0);
-> > +
-> > +	if (ctx->src_fmt.quantization == V4L2_QUANTIZATION_LIM_RANGE) {
-> > +		s32 tmp1, tmp2;
-> > +
-> > +		thr1 = (219 * (contrast + 128)) / 512;
-> > +		thr1y = (219 - 2 * thr1) / 2;
-> > +		thr2 = 219 - thr1;
-> > +		thr2y = 219 - thr1y;
-> > +
-> > +		tmp1 = (thr1y * 256) / thr1;
-> > +		tmp2 = ((thr2y - thr1y) * 256) / (thr2 - thr1);
-> > +		off1 = ((thr1y - ((tmp2 * thr1) / 256)) * (s32)DEF_COLOR_COEFF_A) / 256;
-> > +		off2 = ((thr2y - ((tmp1 * thr2) / 256)) * (s32)DEF_COLOR_COEFF_A) / 256;
-> > +
-> > +		tmp1 = (64 * (contrast + 128)) / 128;
-> > +		tmp2 = 256 * (128 - tmp1);
-> > +		a1 = (tmp2 + off2) / thr1;
-> > +		a2 = a1 + (256 * (off2 - 1)) / (thr2 - thr1);
-> > +	} else {
-> > +		thr1 = (64 * (contrast + 128)) / 128;
-> > +		thr1y = 128 - thr1;
-> > +		thr2 = 256 - thr1;
-> > +		thr2y = 256 - thr1y;
-> > +		a1 = (thr1y * 256) / thr1;
-> > +		a2 = ((thr2y - thr1y) * 256) / (thr2 - thr1);
-> > +		off1 = thr1y - (a2 * thr1) / 256;
-> > +		off2 = thr2y - (a1 * thr2) / 256;
-> > +	}
-> > +
-> > +	a1 = clamp(a1, 0, 1023);
-> > +	a2 = clamp(a2, 0, 1023);
-> > +	thr1 = clamp(thr1, 0, 255);
-> > +	thr2 = clamp(thr2, 0, 255);
-> > +	off1 = clamp(off1, -512, 511);
-> > +	off2 = clamp(off2, -512, 511);
-> > +
-> > +	hantro_reg_write(vpu, &reg_contrast_thr1, thr1);
-> > +	hantro_reg_write(vpu, &reg_contrast_thr2, thr2);
-> > +	hantro_reg_write(vpu, &reg_contrast_off1, off1);
-> > +	hantro_reg_write(vpu, &reg_contrast_off2, off2);
-> > +	hantro_reg_write(vpu, &reg_color_a1, a1);
-> > +	hantro_reg_write(vpu, &reg_color_a2, a2);
-> > +
-> > +	/* Brightness */
-> > +	hantro_reg_write(vpu, &reg_color_f, brightness);
-> > +
-> > +	/* Saturation */
-> > +	satur = 64 + saturation;
-> > +	tmp = (satur * (s32)DEF_COLOR_COEFF_B) / 64;
-> > +	tmp = clamp(tmp, 0, 1023);
-> > +	hantro_reg_write(vpu, &reg_color_b, tmp);
-> > +
-> > +	tmp = (satur * (s32)DEF_COLOR_COEFF_C) / 64;
-> > +	tmp = clamp(tmp, 0, 1023);
-> > +	hantro_reg_write(vpu, &reg_color_c, tmp);
-> > +
-> > +	tmp = (satur * (s32)DEF_COLOR_COEFF_D) / 64;
-> > +	tmp = clamp(tmp, 0, 1023);
-> > +	hantro_reg_write(vpu, &reg_color_d, tmp);
-> > +
-> > +	tmp = (satur * (s32)DEF_COLOR_COEFF_E) / 64;
-> > +	tmp = clamp(tmp, 0, 1023);
-> > +	hantro_reg_write(vpu, &reg_color_e, tmp);
-> > +
-> > +	/* Set RGB padding and mask */
-> > +	switch (ctx->vpu_dst_fmt->fourcc) {
-> > +	case V4L2_PIX_FMT_RGBX32:
-> > +		hantro_reg_write(vpu, &reg_pad_r, 0);
-> > +		hantro_reg_write(vpu, &reg_pad_g, 8);
-> > +		hantro_reg_write(vpu, &reg_pad_b, 16);
-> > +
-> > +		vdpu_write_relaxed(vpu, 0xff000000, G1_REG_PP_MASK_R);
-> > +		vdpu_write_relaxed(vpu, 0x00ff0000, G1_REG_PP_MASK_G);
-> > +		vdpu_write_relaxed(vpu, 0x0000ff00, G1_REG_PP_MASK_B);
-> > +		break;
-> > +	case V4L2_PIX_FMT_XRGB32:
-> > +		hantro_reg_write(vpu, &reg_pad_r, 8);
-> > +		hantro_reg_write(vpu, &reg_pad_g, 16);
-> > +		hantro_reg_write(vpu, &reg_pad_b, 24);
-> > +
-> > +		vdpu_write_relaxed(vpu, 0x00ff0000, G1_REG_PP_MASK_R);
-> > +		vdpu_write_relaxed(vpu, 0x0000ff00, G1_REG_PP_MASK_G);
-> > +		vdpu_write_relaxed(vpu, 0x000000ff, G1_REG_PP_MASK_B);
-> > +		break;
-> > +	case V4L2_PIX_FMT_XBGR32:
-> > +		hantro_reg_write(vpu, &reg_pad_b, 0);
-> > +		hantro_reg_write(vpu, &reg_pad_g, 8);
-> > +		hantro_reg_write(vpu, &reg_pad_r, 16);
-> > +
-> > +		vdpu_write_relaxed(vpu, 0xff000000, G1_REG_PP_MASK_B);
-> > +		vdpu_write_relaxed(vpu, 0x00ff0000, G1_REG_PP_MASK_G);
-> > +		vdpu_write_relaxed(vpu, 0x0000ff00, G1_REG_PP_MASK_R);
-> > +		break;
-> > +	}
-> > +}
-> > +
-> > +void hantro_postproc_setup(struct hantro_ctx *ctx)
-> > +{
-> > +	struct hantro_dev *vpu = ctx->dev;
-> > +	struct vb2_v4l2_buffer *dst_buf;
-> > +	u32 reg, src_pp_fmt, dst_pp_fmt;
-> > +	dma_addr_t dst_dma;
-> > +
-> > +	/* Turn on pipeline mode. Must be done first. */
-> > +	vdpu_write(vpu, G1_REG_PP_PIPELINE_EN, G1_REG_PP_INTERRUPT);
-> > +
-> > +	reg = G1_REG_PP_AXI_RD_ID(0) |
-> > +	      G1_REG_PP_AXI_WR_ID(0) |
-> > +	      G1_REG_PP_INSWAP32_E(1) |
-> > +	      G1_REG_PP_OUTSWAP32_E(1) |
-> > +	      G1_REG_PP_DATA_DISC_E(0) |
-> > +	      G1_REG_PP_CLK_GATE_E(1) |
-> > +	      G1_REG_PP_IN_ENDIAN(1) |
-> > +	      G1_REG_PP_OUT_ENDIAN(1) |
-> > +	      G1_REG_PP_MAX_BURST(16);
-> > +	vdpu_write_relaxed(vpu, reg, G1_REG_PP_DEV_CONFIG);
-> > +
-> > +	/* Configure picture resolution. */
-> > +	reg = G1_REG_PP_INPUT_SIZE_HEIGHT(MB_HEIGHT(ctx->dst_fmt.height)) |
-> > +	      G1_REG_PP_INPUT_SIZE_WIDTH(MB_WIDTH(ctx->dst_fmt.width));
-> > +	vdpu_write_relaxed(vpu, reg, G1_REG_PP_INPUT_SIZE);
-> > +
-> > +	dst_buf = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
-> > +	dst_dma = vb2_dma_contig_plane_dma_addr(&dst_buf->vb2_buf, 0);
-> > +	vdpu_write_relaxed(vpu, dst_dma, G1_REG_PP_OUT_LUMA_BASE);
-> > +
-> > +	reg = (ctx->dst_fmt.quantization ==
-> > +	       V4L2_QUANTIZATION_LIM_RANGE) ? 0 : 1;
+On 11/09/2019 10:26, Cheng-Yi Chiang wrote:
+> From: Yakir Yang <ykk@rock-chips.com>
 > 
-> Why dst_fmt? Userspace cannot set the quantization range of the capture
-> format, it's either copied from the source format or explicitly set in the
-> driver.
+> When transmitting IEC60985 linear PCM audio, we configure the
+> Aduio Sample Channel Status information in the IEC60958 frame.
+> The status bit is already available in iec.status of hdmi_codec_params.
 > 
-> I see this code in vidioc_s_fmt_cap_mplane():
+> This fix the issue that audio does not come out on some monitors
+> (e.g. LG 22CV241)
 > 
->         /* Colorimetry information are always propagated. */
->         ctx->src_fmt.colorspace = pix_mp->colorspace;
->         ctx->src_fmt.ycbcr_enc = pix_mp->ycbcr_enc;
->         ctx->src_fmt.xfer_func = pix_mp->xfer_func;
->         ctx->src_fmt.quantization = pix_mp->quantization;
+> Note that these registers are only for interfaces:
+> I2S audio interface, General Purpose Audio (GPA), or AHB audio DMA
+> (AHBAUDDMA).
+> For S/PDIF interface this information comes from the stream.
 > 
-> I think this is wrong.
+> Currently this function dw_hdmi_set_channel_status is only called
+> from dw-hdmi-i2s-audio in I2S setup.
 > 
-> If I am not mistaken, userspace has parsed this information from the bytestream
-> and should pass it to the driver when it calls S_FMT for the output queue.
-> Please correct me if I am wrong. But this information has to come from somewhere.
+> Signed-off-by: Yakir Yang <ykk@rock-chips.com>
+> Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+> ---
 > 
-> These values should be propagated to the capture queue.
+> Change from v2 to v3:
+> 1. Reuse what is already set in iec.status in hw_param.
+> 2. Remove all useless definition of registers and values.
+> 3. Note that the original sampling frequency is not written to
+>    the channel status as we reuse create_iec958_consumer in pcm_iec958.c.
+>    Without that it can still play audio fine.
+> 
+>  .../drm/bridge/synopsys/dw-hdmi-i2s-audio.c   |  1 +
+>  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c     | 20 +++++++++++++++++++
+>  drivers/gpu/drm/bridge/synopsys/dw-hdmi.h     |  2 ++
+>  include/drm/bridge/dw_hdmi.h                  |  1 +
+>  4 files changed, 24 insertions(+)
+> 
+> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+> index 34d8e837555f..20f4f92dd866 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+> @@ -102,6 +102,7 @@ static int dw_hdmi_i2s_hw_params(struct device *dev, void *data,
+>  	}
+>  
+>  	dw_hdmi_set_sample_rate(hdmi, hparms->sample_rate);
+> +	dw_hdmi_set_channel_status(hdmi, hparms->iec.status);
+>  	dw_hdmi_set_channel_count(hdmi, hparms->channels);
+>  	dw_hdmi_set_channel_allocation(hdmi, hparms->cea.channel_allocation);
+>  
+> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> index bd65d0479683..aa7efd4da1c8 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> @@ -582,6 +582,26 @@ static unsigned int hdmi_compute_n(unsigned int freq, unsigned long pixel_clk)
+>  	return n;
+>  }
+>  
+> +/*
+> + * When transmitting IEC60958 linear PCM audio, these registers allow to
+> + * configure the channel status information of all the channel status
+> + * bits in the IEC60958 frame. For the moment this configuration is only
+> + * used when the I2S audio interface, General Purpose Audio (GPA),
+> + * or AHB audio DMA (AHBAUDDMA) interface is active
+> + * (for S/PDIF interface this information comes from the stream).
+> + */
+> +void dw_hdmi_set_channel_status(struct dw_hdmi *hdmi,
+> +				u8 *channel_status)
+> +{
+> +	/*
+> +	 * Set channel status register for frequency and word length.
+> +	 * Use default values for other registers.
+> +	 */
+> +	hdmi_writeb(hdmi, channel_status[3], HDMI_FC_AUDSCHNLS7);
+> +	hdmi_writeb(hdmi, channel_status[4], HDMI_FC_AUDSCHNLS8);
+> +}
+> +EXPORT_SYMBOL_GPL(dw_hdmi_set_channel_status);
+> +
+>  static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
+>  	unsigned long pixel_clk, unsigned int sample_rate)
+>  {
+> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
+> index 6988f12d89d9..fcff5059db24 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
+> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
+> @@ -158,6 +158,8 @@
+>  #define HDMI_FC_SPDDEVICEINF                    0x1062
+>  #define HDMI_FC_AUDSCONF                        0x1063
+>  #define HDMI_FC_AUDSSTAT                        0x1064
+> +#define HDMI_FC_AUDSCHNLS7                      0x106e
+> +#define HDMI_FC_AUDSCHNLS8                      0x106f
+>  #define HDMI_FC_DATACH0FILL                     0x1070
+>  #define HDMI_FC_DATACH1FILL                     0x1071
+>  #define HDMI_FC_DATACH2FILL                     0x1072
+> diff --git a/include/drm/bridge/dw_hdmi.h b/include/drm/bridge/dw_hdmi.h
+> index cf528c289857..4b3e863c4f8a 100644
+> --- a/include/drm/bridge/dw_hdmi.h
+> +++ b/include/drm/bridge/dw_hdmi.h
+> @@ -156,6 +156,7 @@ void dw_hdmi_setup_rx_sense(struct dw_hdmi *hdmi, bool hpd, bool rx_sense);
+>  
+>  void dw_hdmi_set_sample_rate(struct dw_hdmi *hdmi, unsigned int rate);
+>  void dw_hdmi_set_channel_count(struct dw_hdmi *hdmi, unsigned int cnt);
+> +void dw_hdmi_set_channel_status(struct dw_hdmi *hdmi, u8 *channel_status);
+>  void dw_hdmi_set_channel_allocation(struct dw_hdmi *hdmi, unsigned int ca);
+>  void dw_hdmi_audio_enable(struct dw_hdmi *hdmi);
+>  void dw_hdmi_audio_disable(struct dw_hdmi *hdmi);
 > 
 
-Yes, I think you are right here.
+Looks fine for me:
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
 
-> Adding YUV to RGB conversion changes this: in that case you want to convert to
-> full range RGB. So both ycbcr_enc and quantization can be set to the DEFAULT
-> value for the RGB capture format. The colorspace and xfer_func values are copied
-> as before since those are not converted by the post-processing step.
-> 
+Jonas ? Jernej ? Russell ?
 
-Right, that makes sense.
+If it's ok for you I'll apply it.
 
-Thanks for the feedback,
-Ezequiel
-
+Neil
 
 _______________________________________________
 Linux-rockchip mailing list
