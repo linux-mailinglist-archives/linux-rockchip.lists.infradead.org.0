@@ -2,88 +2,94 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E391B04A6
-	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Sep 2019 21:49:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03C0EB0532
+	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Sep 2019 23:26:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ovUvySLorBFZBNfIqvHOWpM8LNmGzl4AQ6EaFL+BjCQ=; b=OwfSxCGzBrr5igInixtduhd9Q
-	1PkQS6g9+54nl5G47InrjsZXRoSwpCFmtnNYNt21dmMgYzJrFi8uo4QuTMdg5bxx2EykSXsDQHdDa
-	Ed/X7jxw03WN/SA8qTeKqJRwpprDXw3AeEh7Qn6ZJHXhHSP0DV4DpyeKQ5L7RtVVXbkSs76Fzgi+B
-	CNpd8l2R8B7/FfN8yB0b9BF2x7Ius8p0gTIYARZxVhOQKyNWjVoGczdrKnvi42mQ/WJWzY/zzWTZl
-	hk1Y7BARB9kZqbxW0NnICKBwbkGSy3aLZNh7tK/VWVjrt33jXACaUA2gneFX67d6hO85LdfVopQjy
-	BSpTZ9YNA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eEAHZyDG1udcpdXEo6j96Rd6AaUSyIbnO9wJr7bmBcc=; b=Ff4B0bsnPp053W
+	XHrOjt4vaCSo1KUFYwfpZb/jCimxx4jcb9HVzDw3OENyKISkMwQfRP+GlyvS8bsjzMq7mpgrX6T4i
+	nJZdZeVVirxefQq1tiQ8oEEkoMFPI5TX1UB3uuqHIxYVG5mevO09MB8Oea2J6x7iFlaPXtJny1SSK
+	WH8ilAbsPVKJ/JHWx8VQMDOHb+De1/E6+BieJ3iyPLApnnH16q1+NGgTNMIMiL8qKxeDfE9hApbK0
+	w/dOqc9V7+FFPJOLZ7zYc4YC/SQYDFaLSjb1xzPHd2eI/Z6/GzotUIFWLepGKDBsou/YQSRyxTdVS
+	abaw9+k+jAIjKlNxptFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i88ce-0004YB-6N; Wed, 11 Sep 2019 19:49:48 +0000
-Received: from mail-ed1-x532.google.com ([2a00:1450:4864:20::532])
+	id 1i8A87-00019K-6b; Wed, 11 Sep 2019 21:26:23 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i88ca-0004XX-SX
- for linux-rockchip@lists.infradead.org; Wed, 11 Sep 2019 19:49:46 +0000
-Received: by mail-ed1-x532.google.com with SMTP id c20so12805957eds.1
- for <linux-rockchip@lists.infradead.org>; Wed, 11 Sep 2019 12:49:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=ndufresne-ca.20150623.gappssmtp.com; s=20150623;
- h=message-id:subject:from:to:cc:date:in-reply-to:references
- :user-agent:mime-version;
- bh=v3mgNJx4oG3sOd0s0/8iNdeiQGEHPFmY0wcwefa76ac=;
- b=Iw7ZAVq0XliGKL+EWtqH0rdNmLLCbg3UPsmQyGopj5KGDTEMrNkKBiGTL66WciZ08g
- dFu6JtGz5RHbUWUPH85QeJJsOfkXw3QbAnsL6KjmQHe9bwoVU9UCSM3i6APX/3eX/JPh
- VpkXEhOVqDEwqlqn8FNN59lZ/+cfhCmYIXZMYGlP5SwCdgdSbq2ssVk8U5PC56BaGSKQ
- cR8A9Z4v3MiHZyQHT9ofeGTEJdzXpMhJZADeYELFxRkxAU4ko0jtDLhKek5RIkacJI33
- 93Ow04E/yn3uh/xuP8zZjOYrNZIee8E7+QTPp29Qyor31e3n2Svk8BFX7/rGjHKOx7A2
- yGdg==
+ id 1i8A83-00018r-Tr
+ for linux-rockchip@lists.infradead.org; Wed, 11 Sep 2019 21:26:21 +0000
+Received: by mail-io1-xd43.google.com with SMTP id r8so24435581iol.10
+ for <linux-rockchip@lists.infradead.org>; Wed, 11 Sep 2019 14:26:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=joMxkm9Lfu3s8hTjVmKn7UZQD/plMPjc3HsB2FD38bQ=;
+ b=Zx6vpeYVn31jXHkZOhlcgPcW1og+HMJsIpg2RaBgHxyfySTkmxb/1jlnkTPE9Iyb6r
+ Uveb2Y2m+bgiiLFvkQeltufJuZft+2rmS04bZBvmIxGGsLuZ63BL71zcyiPV0GMKwqAo
+ ICsdNKxpJlFqFbJH/hchMGgXJSgTXGdfd2Ykw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
- :references:user-agent:mime-version;
- bh=v3mgNJx4oG3sOd0s0/8iNdeiQGEHPFmY0wcwefa76ac=;
- b=hoQySXdNiRVmUFxdiD4Nw0pvL/71k6qGO6FCwZJvdUKrqXnYbtXkZPXfUM5H9H9NgP
- Qb4ZnR86pIQGCilgNTl2l6Edy5D/YnxNT5McuOTM0/OTCzhBjEiikG7mRpQ9a1OuZG0C
- IonGR12+3Row4CYMHzIE9cDHx4IY8m9hskywzB3Nk+xQj7ex9YF9+rD1RddKWT4S6aDv
- Kyg62RDbXCgbmmmRiyWi/nliksAyggtNc7FkgqYuBXB5RtwrSlKLNftpt6Mzh68X2ImY
- wr2jmsUocy+FHsBPcxIlgBZqLf+GfkG7aBw1Hqm139kBcOHkB07gS7BSgg9uZBcMNe3k
- NKEA==
-X-Gm-Message-State: APjAAAVbcLmpQAUa9Kh5Gpg2OHuUIFrfiRIFj/a03Kf3h6vyVyz10992
- 2DBETE/gSBLVRdMdDjH6v6XG9w==
-X-Google-Smtp-Source: APXvYqwyvHcR4sCaGmFTbCVqN+AbRRwLHK9jU9Me2Ux6oKu2c1pYWT41ezAIZ4sUJIP99Cq5Dw/dKw==
-X-Received: by 2002:a17:906:3715:: with SMTP id
- d21mr30787397ejc.24.1568231380558; 
- Wed, 11 Sep 2019 12:49:40 -0700 (PDT)
-Received: from tpx230-nicolas.home ([86.85.109.110])
- by smtp.gmail.com with ESMTPSA id a11sm4356622edf.73.2019.09.11.12.49.39
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Sep 2019 12:49:39 -0700 (PDT)
-Message-ID: <c7b62640ae0e57a9da0c6c5245b5454af08ad2a0.camel@ndufresne.ca>
-Subject: Re: [PATCH 0/4] Enable Hantro G1 post-processor
-From: Nicolas Dufresne <nicolas@ndufresne.ca>
-To: Ezequiel Garcia <ezequiel@collabora.com>, Tomasz Figa <tfiga@chromium.org>
-Date: Wed, 11 Sep 2019 15:49:38 -0400
-In-Reply-To: <6e493142690d48ee7e65c1cb2a4d6aec1e3b671b.camel@collabora.com>
-References: <20190903181711.7559-1-ezequiel@collabora.com>
- <CAAFQd5AdikoN+7TG=0ZGFkSzaK2UFHM4VG7SYtfUtmjQgD61zA@mail.gmail.com>
- <6e493142690d48ee7e65c1cb2a4d6aec1e3b671b.camel@collabora.com>
-User-Agent: Evolution 3.32.4 (3.32.4-1.fc30) 
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=joMxkm9Lfu3s8hTjVmKn7UZQD/plMPjc3HsB2FD38bQ=;
+ b=C53ZILqFyMOkp+HGEeYwMfxwXOMyikCLUJ5Bze96mbznPVn14Uzit6nA7MJMBxy+Gw
+ Bm+8TCuvxbaLMuuVW3GVohyU8BKvhF26I1Gkmkz2aNo8CVBJsCSNdyDKDXRhDgdERH/4
+ /DqFFFr1dEZjtvEwi6PWhqKwC/AnrW6gf4dcoy3ckNwWU+77iIaZFp2jl14/PCBoJybQ
+ P1OXkzaRGKiX8cR9sGeiUCj3xS95Gz5i2DC9m2hW4k86QbvaO2aFY7wrwIp7s5tctWDY
+ Mz0IMUSIqTashxDsgfSPqa1erL/HngbV+Ti2V3jV3LlDpQDhksQf93U7iClGoQQCcjC3
+ Sq3Q==
+X-Gm-Message-State: APjAAAUGzDDwqRgN2GNObRm19BSu0hfYC/qyLmsf8ge6bVHU+L0Ek1Un
+ aJhecDKZPcHERYu+tvePUGiXejis9sg=
+X-Google-Smtp-Source: APXvYqz78whzYY21shuMETVJsUWfMoRS7cxuvY0UMShOlJIgA8/+hv8aeC7ttpHu1Bjed8rllOpS0g==
+X-Received: by 2002:a05:6602:21cb:: with SMTP id
+ c11mr2457931ioc.25.1568237178541; 
+ Wed, 11 Sep 2019 14:26:18 -0700 (PDT)
+Received: from mail-io1-f47.google.com (mail-io1-f47.google.com.
+ [209.85.166.47])
+ by smtp.gmail.com with ESMTPSA id h4sm21587278iok.1.2019.09.11.14.26.15
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 11 Sep 2019 14:26:16 -0700 (PDT)
+Received: by mail-io1-f47.google.com with SMTP id h144so49328954iof.7
+ for <linux-rockchip@lists.infradead.org>; Wed, 11 Sep 2019 14:26:15 -0700 (PDT)
+X-Received: by 2002:a6b:b704:: with SMTP id h4mr16276935iof.218.1568237175640; 
+ Wed, 11 Sep 2019 14:26:15 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190722193939.125578-1-dianders@chromium.org>
+ <CAPDyKFoND5Kaam72zxO4wChO0z_1XL2KWX6oNjVcMUGA7G8RFg@mail.gmail.com>
+In-Reply-To: <CAPDyKFoND5Kaam72zxO4wChO0z_1XL2KWX6oNjVcMUGA7G8RFg@mail.gmail.com>
+From: Doug Anderson <dianders@chromium.org>
+Date: Wed, 11 Sep 2019 14:26:04 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=VTLoqGbxFFMT8h72cfHCLupyvZpD75JB0N86+kFA+vzw@mail.gmail.com>
+Message-ID: <CAD=FV=VTLoqGbxFFMT8h72cfHCLupyvZpD75JB0N86+kFA+vzw@mail.gmail.com>
+Subject: Re: [PATCH v2 0/2] mmc: core: Fix Marvell WiFi reset by adding SDIO
+ API to replug card
+To: Ulf Hansson <ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_124944_927826_D2A3480C 
-X-CRM114-Status: GOOD (  20.55  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190911_142619_992455_D4638A82 
+X-CRM114-Status: GOOD (  25.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:532 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,109 +102,135 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Ganapathi Bhat <gbhat@marvell.com>, Brian Norris <briannorris@chromium.org>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ Xinming Hu <huxinming820@gmail.com>, netdev <netdev@vger.kernel.org>,
+ Andreas Fenkart <afenkart@gmail.com>,
+ linux-wireless <linux-wireless@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Amitkumar Karwar <amitkarwar@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com,
- Chris Healy <cphealy@gmail.com>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
-Content-Type: multipart/mixed; boundary="===============0211386631024562723=="
+ Nishant Sarmukadam <nishants@marvell.com>, Avri Altman <avri.altman@wdc.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, "David S. Miller" <davem@davemloft.net>,
+ Kalle Valo <kvalo@codeaurora.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+Hi,
 
---===============0211386631024562723==
-Content-Type: multipart/signed; micalg="pgp-sha1"; protocol="application/pgp-signature";
-	boundary="=-a9ozNFCk/x1M6OTkHF6F"
+On Thu, Jul 25, 2019 at 6:28 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+>
+> On Mon, 22 Jul 2019 at 21:41, Douglas Anderson <dianders@chromium.org> wrote:
+> >
+> > As talked about in the thread at:
+> >
+> > http://lkml.kernel.org/r/CAD=FV=X7P2F1k_zwHc0mbtfk55-rucTz_GoDH=PL6zWqKYcpuw@mail.gmail.com
+> >
+> > ...when the Marvell WiFi card tries to reset itself it kills
+> > Bluetooth.  It was observed that we could re-init the card properly by
+> > unbinding / rebinding the host controller.  It was also observed that
+> > in the downstream Chrome OS codebase the solution used was
+> > mmc_remove_host() / mmc_add_host(), which is similar to the solution
+> > in this series.
+> >
+> > So far I've only done testing of this series using the reset test
+> > source that can be simulated via sysfs.  Specifically I ran this test:
+> >
+> > for i in $(seq 1000); do
+> >   echo "LOOP $i --------"
+> >   echo 1 > /sys/kernel/debug/mwifiex/mlan0/reset
+> >
+> >   while true; do
+> >     if ! ping -w15 -c1 "${GW}" >/dev/null 2>&1; then
+> >       fail=$(( fail + 1 ))
+> >       echo "Fail WiFi ${fail}"
+> >       if [[ ${fail} == 3 ]]; then
+> >         exit 1
+> >       fi
+> >     else
+> >       fail=0
+> >       break
+> >     fi
+> >   done
+> >
+> >   hciconfig hci0 down
+> >   sleep 1
+> >   if ! hciconfig hci0 up; then
+> >     echo "Fail BT"
+> >     exit 1
+> >   fi
+> > done
+> >
+> > I ran this several times and got several hundred iterations each
+> > before a failure.  When I saw failures:
+> >
+> > * Once I saw a "Fail BT"; manually resetting the card again fixed it.
+> >   I didn't give it time to see if it would have detected this
+> >   automatically.
+> > * Once I saw the ping fail because (for some reason) my device only
+> >   got an IPv6 address from my router and the IPv4 ping failed.  I
+> >   changed my script to use 'ping6' to see if that would help.
+> > * Once I saw the ping fail because the higher level network stack
+> >   ("shill" in my case) seemed to crash.  A few minutes later the
+> >   system recovered itself automatically.  https://crbug.com/984593 if
+> >   you want more details.
+> > * Sometimes while I was testing I saw "Fail WiFi 1" indicating a
+> >   transitory failure.  Usually this was an association failure, but in
+> >   one case I saw the device do "Firmware wakeup failed" after I
+> >   triggered the reset.  This caused the driver to trigger a re-reset
+> >   of itself which eventually recovered things.  This was good because
+> >   it was an actual test of the normal reset flow (not the one
+> >   triggered via sysfs).
+> >
+> > Changes in v2:
+> > - s/routnine/routine (Brian Norris, Matthias Kaehlcke).
+> > - s/contining/containing (Matthias Kaehlcke).
+> > - Add Matthias Reviewed-by tag.
+> > - Removed clear_bit() calls and old comment (Brian Norris).
+> > - Explicit CC of Andreas Fenkart.
+> > - Explicit CC of Brian Norris.
+> > - Add "Fixes" pointing at the commit Brian talked about.
+> > - Add Brian's Reviewed-by tag.
+> >
+> > Douglas Anderson (2):
+> >   mmc: core: Add sdio_trigger_replug() API
+> >   mwifiex: Make use of the new sdio_trigger_replug() API to reset
+> >
+> >  drivers/mmc/core/core.c                     | 28 +++++++++++++++++++--
+> >  drivers/mmc/core/sdio_io.c                  | 20 +++++++++++++++
+> >  drivers/net/wireless/marvell/mwifiex/sdio.c | 16 +-----------
+> >  include/linux/mmc/host.h                    | 15 ++++++++++-
+> >  include/linux/mmc/sdio_func.h               |  2 ++
+> >  5 files changed, 63 insertions(+), 18 deletions(-)
+> >
+>
+> Doug, thanks for sending this!
+>
+> As you know, I have been working on additional changes for SDIO
+> suspend/resume (still WIP and not ready for sharing) and this series
+> is related.
+>
+> The thing is, that even during system suspend/resume, synchronizations
+> are needed between the different layers (mmc host, mmc core and
+> sdio-funcs), which is common to the problem you want to solve.
+>
+> That said, I need to scratch my head a bit more before I can provide
+> you some feedback on $subject series. Moreover, it's vacation period
+> at my side so things are moving a bit slower. Please be patient.
 
+I had kinda forgotten about this series after we landed it locally in
+Chrome OS, but I realized that it never got resolved upstream.  Any
+chance your head has been sufficiently scratched and you're now happy
+with $subject series?  ;-)
 
---=-a9ozNFCk/x1M6OTkHF6F
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-Le mercredi 11 septembre 2019 =C3=A0 09:27 +0100, Ezequiel Garcia a =C3=A9c=
-rit :
-> On Mon, 2019-09-09 at 16:07 +0900, Tomasz Figa wrote:
-> > Hi Ezequiel,
-> >=20
-> > On Wed, Sep 4, 2019 at 3:17 AM Ezequiel Garcia <ezequiel@collabora.com>=
- wrote:
-> > > Hi all,
-> > >=20
-> > > This series enables the post-processor support available
-> > > on the Hantro G1 VPU. The post-processor block can be
-> > > pipelined with the decoder hardware, allowing to perform
-> > > operations such as color conversion, scaling, rotation,
-> > > cropping, among others.
-> > >=20
-> > > The decoder hardware needs its own set of NV12 buffers
-> > > (the native decoder format), and the post-processor is the
-> > > owner of the CAPTURE buffers. This allows the application
-> > > get processed (scaled, converted, etc) buffers, completely
-> > > transparently.
-> > >=20
-> > > This feature is implemented by exposing other CAPTURE pixel
-> > > formats to the application (ENUM_FMT). When the application
-> > > sets a pixel format other than NV12, the driver will enable
-> > > and use the post-processor transparently.
-> >=20
-> > I'll try to review the series a bit later, but a general comment here
-> > is that the userspace wouldn't have a way to distinguish between the
-> > native and post-processed formats. I'm pretty much sure that
-> > post-processing at least imposes some power penalty, so it would be
-> > good if the userspace could avoid it if unnecessary.
-> >=20
->=20
-> Hm, that's true, good catch.
->=20
-> So, it would be desirable to retain the current behavior of allowing
-> the application to just set a different pixel format and get
-> a post-processed frame, transparently.
->=20
-> But at the same time, it would be nice if the application is somehow
-> aware of the post-processing happening. Maybe we can expose a more
-> accurate media controller topology, have applications enable
-> the post-processing pipeline explicitly.
-
-How it works on the stateful side is that userspace set the encoding
-type (the codec), then passes a header (in our case, there will be
-parsed structures replacing this) first. The driver then configure
-capture format, giving a hint of the "default" or "native" format. This
-may or may not be sufficient, but it does work in giving userspace a
-hint.
-
->=20
-> Thanks for the feedback,
-> Ezequiel
->=20
-
---=-a9ozNFCk/x1M6OTkHF6F
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iF0EABECAB0WIQSScpfJiL+hb5vvd45xUwItrAaoHAUCXXlP0gAKCRBxUwItrAao
-HNw+AKCQcVOG1SaxOGLL555nItsPa9cvMQCeK4EDSk7KrRai+IkgEBCyQDHa8Yo=
-=ffC4
------END PGP SIGNATURE-----
-
---=-a9ozNFCk/x1M6OTkHF6F--
-
-
-
---===============0211386631024562723==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-Doug
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
---===============0211386631024562723==--
-
-
