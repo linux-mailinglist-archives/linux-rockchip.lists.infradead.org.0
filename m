@@ -2,83 +2,84 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03C0EB0532
-	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Sep 2019 23:26:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C605B0878
+	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Sep 2019 07:52:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eEAHZyDG1udcpdXEo6j96Rd6AaUSyIbnO9wJr7bmBcc=; b=Ff4B0bsnPp053W
-	XHrOjt4vaCSo1KUFYwfpZb/jCimxx4jcb9HVzDw3OENyKISkMwQfRP+GlyvS8bsjzMq7mpgrX6T4i
-	nJZdZeVVirxefQq1tiQ8oEEkoMFPI5TX1UB3uuqHIxYVG5mevO09MB8Oea2J6x7iFlaPXtJny1SSK
-	WH8ilAbsPVKJ/JHWx8VQMDOHb+De1/E6+BieJ3iyPLApnnH16q1+NGgTNMIMiL8qKxeDfE9hApbK0
-	w/dOqc9V7+FFPJOLZ7zYc4YC/SQYDFaLSjb1xzPHd2eI/Z6/GzotUIFWLepGKDBsou/YQSRyxTdVS
-	abaw9+k+jAIjKlNxptFw==;
+	List-Owner; bh=GHzZ2sQIBM3HMiPlRonj+wkSBSQExBIX5PknPJJjAOc=; b=u0fctqJByFsKnn
+	HcNGzvHPfmUmRlwJzV+fkiB7zn7axBFd8tR0Vkv4wtlHAj7O2zUxETn870KTkUOop6lm0msI3CslL
+	EMtoWMsrtwosF2nopSHM0mDMGhzjzsR/bcvo1aOlk+GXlxL3mPfdnc6lsdcrpVGGY1E1k8gCyCcSd
+	rCXhrPasSaYhiJ6c3lc9stjup8boMmwjqYhhS/+djFKfs9RHb1CtD+UNzyiiuW90szPf+NXhS9dFH
+	UeBGfr+37gmwocLIn3d6nPz7kk/KbAYzJSZ6TiaoQIdEctc3KNXdl1kV7qMWFlICWrBE+HB34x93M
+	gqRuHP9K+y0VB5VXfBxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8A87-00019K-6b; Wed, 11 Sep 2019 21:26:23 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1i8I1u-000821-MT; Thu, 12 Sep 2019 05:52:30 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8A83-00018r-Tr
- for linux-rockchip@lists.infradead.org; Wed, 11 Sep 2019 21:26:21 +0000
-Received: by mail-io1-xd43.google.com with SMTP id r8so24435581iol.10
- for <linux-rockchip@lists.infradead.org>; Wed, 11 Sep 2019 14:26:19 -0700 (PDT)
+ id 1i8I1r-00081a-Kp
+ for linux-rockchip@lists.infradead.org; Thu, 12 Sep 2019 05:52:29 +0000
+Received: by mail-ed1-x542.google.com with SMTP id o9so22853589edq.0
+ for <linux-rockchip@lists.infradead.org>; Wed, 11 Sep 2019 22:52:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=joMxkm9Lfu3s8hTjVmKn7UZQD/plMPjc3HsB2FD38bQ=;
- b=Zx6vpeYVn31jXHkZOhlcgPcW1og+HMJsIpg2RaBgHxyfySTkmxb/1jlnkTPE9Iyb6r
- Uveb2Y2m+bgiiLFvkQeltufJuZft+2rmS04bZBvmIxGGsLuZ63BL71zcyiPV0GMKwqAo
- ICsdNKxpJlFqFbJH/hchMGgXJSgTXGdfd2Ykw=
+ :cc:content-transfer-encoding;
+ bh=zYhiCckqOXI05h66pSc49yJ2M97KJomA6zTeLvJqATU=;
+ b=N/6X6JFb465MDW4UOH0bJ7UVlCMn+fKiILQz+XlhCgqXqKZ9Gln8gkjQO7D8f43Vzm
+ 8eX6U8FbQTFyGpMJuEIR5MnYhp7cSge0yKbrEn6SoCMmpJy8xajyWMuzdHAK1sFYI/j3
+ L28pcq5cBcvI3laZEDztFQ9iIzw4pxAhg3YSQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=joMxkm9Lfu3s8hTjVmKn7UZQD/plMPjc3HsB2FD38bQ=;
- b=C53ZILqFyMOkp+HGEeYwMfxwXOMyikCLUJ5Bze96mbznPVn14Uzit6nA7MJMBxy+Gw
- Bm+8TCuvxbaLMuuVW3GVohyU8BKvhF26I1Gkmkz2aNo8CVBJsCSNdyDKDXRhDgdERH/4
- /DqFFFr1dEZjtvEwi6PWhqKwC/AnrW6gf4dcoy3ckNwWU+77iIaZFp2jl14/PCBoJybQ
- P1OXkzaRGKiX8cR9sGeiUCj3xS95Gz5i2DC9m2hW4k86QbvaO2aFY7wrwIp7s5tctWDY
- Mz0IMUSIqTashxDsgfSPqa1erL/HngbV+Ti2V3jV3LlDpQDhksQf93U7iClGoQQCcjC3
- Sq3Q==
-X-Gm-Message-State: APjAAAUGzDDwqRgN2GNObRm19BSu0hfYC/qyLmsf8ge6bVHU+L0Ek1Un
- aJhecDKZPcHERYu+tvePUGiXejis9sg=
-X-Google-Smtp-Source: APXvYqz78whzYY21shuMETVJsUWfMoRS7cxuvY0UMShOlJIgA8/+hv8aeC7ttpHu1Bjed8rllOpS0g==
-X-Received: by 2002:a05:6602:21cb:: with SMTP id
- c11mr2457931ioc.25.1568237178541; 
- Wed, 11 Sep 2019 14:26:18 -0700 (PDT)
-Received: from mail-io1-f47.google.com (mail-io1-f47.google.com.
- [209.85.166.47])
- by smtp.gmail.com with ESMTPSA id h4sm21587278iok.1.2019.09.11.14.26.15
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=zYhiCckqOXI05h66pSc49yJ2M97KJomA6zTeLvJqATU=;
+ b=WVmJpZq1mlkPCXSuqvxGqIhu1jYkOSL9yjztwuMhjYdvgA+E8lOomdlWNRGrmPDWib
+ BWTa+0BgAFtAOOw5NFeC+d3AMIbQHmVOacmiToa5oEqHiNjxhwwlAYnppujJNIRlkxV9
+ BDJ9UYr92jB/TQsRSXKXdAi7W1ZYU/6MUMLRJ+dbuceu5LwUNejUZpMYB5z+JBlwkJoc
+ EoJKB5J9aEDF5i5qjhp5d3763Ox4PFBZoQsYjp+t7XEzCD+RQ/CSmedwf33bF6WizFAe
+ MWXPfIJBTweWTuAnhSqh0hH5w5cBCnld6Ibnj250OfbUaN4ohBn1XctTKh5cBGb9meBY
+ mCDw==
+X-Gm-Message-State: APjAAAVrBuQCi9nKNGZocxiwv3kRlmD+CA4hIdXttDYrPh+aPxvP55ok
+ VN2wAYP2ROJyB2zS8KzbP4ujPMRAb/9/nA==
+X-Google-Smtp-Source: APXvYqzo+HbcYKzS/zho5PBxPM+MUyeRt/Ge+rd0UVDx5c6iq9P3HHyh74zhE/zz2+AJAydvW5g4gA==
+X-Received: by 2002:a50:b501:: with SMTP id y1mr39874411edd.167.1568267543479; 
+ Wed, 11 Sep 2019 22:52:23 -0700 (PDT)
+Received: from mail-wm1-f53.google.com (mail-wm1-f53.google.com.
+ [209.85.128.53])
+ by smtp.gmail.com with ESMTPSA id h6sm3805452ede.35.2019.09.11.22.52.21
  for <linux-rockchip@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 11 Sep 2019 14:26:16 -0700 (PDT)
-Received: by mail-io1-f47.google.com with SMTP id h144so49328954iof.7
- for <linux-rockchip@lists.infradead.org>; Wed, 11 Sep 2019 14:26:15 -0700 (PDT)
-X-Received: by 2002:a6b:b704:: with SMTP id h4mr16276935iof.218.1568237175640; 
- Wed, 11 Sep 2019 14:26:15 -0700 (PDT)
+ Wed, 11 Sep 2019 22:52:22 -0700 (PDT)
+Received: by mail-wm1-f53.google.com with SMTP id x2so616612wmj.2
+ for <linux-rockchip@lists.infradead.org>; Wed, 11 Sep 2019 22:52:21 -0700 (PDT)
+X-Received: by 2002:a1c:c104:: with SMTP id r4mr7245357wmf.64.1568267541410;
+ Wed, 11 Sep 2019 22:52:21 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190722193939.125578-1-dianders@chromium.org>
- <CAPDyKFoND5Kaam72zxO4wChO0z_1XL2KWX6oNjVcMUGA7G8RFg@mail.gmail.com>
-In-Reply-To: <CAPDyKFoND5Kaam72zxO4wChO0z_1XL2KWX6oNjVcMUGA7G8RFg@mail.gmail.com>
-From: Doug Anderson <dianders@chromium.org>
-Date: Wed, 11 Sep 2019 14:26:04 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=VTLoqGbxFFMT8h72cfHCLupyvZpD75JB0N86+kFA+vzw@mail.gmail.com>
-Message-ID: <CAD=FV=VTLoqGbxFFMT8h72cfHCLupyvZpD75JB0N86+kFA+vzw@mail.gmail.com>
-Subject: Re: [PATCH v2 0/2] mmc: core: Fix Marvell WiFi reset by adding SDIO
- API to replug card
-To: Ulf Hansson <ulf.hansson@linaro.org>
+References: <20190903181711.7559-1-ezequiel@collabora.com>
+ <CAAFQd5AdikoN+7TG=0ZGFkSzaK2UFHM4VG7SYtfUtmjQgD61zA@mail.gmail.com>
+ <6e493142690d48ee7e65c1cb2a4d6aec1e3b671b.camel@collabora.com>
+ <c7b62640ae0e57a9da0c6c5245b5454af08ad2a0.camel@ndufresne.ca>
+In-Reply-To: <c7b62640ae0e57a9da0c6c5245b5454af08ad2a0.camel@ndufresne.ca>
+From: Tomasz Figa <tfiga@chromium.org>
+Date: Thu, 12 Sep 2019 14:52:09 +0900
+X-Gmail-Original-Message-ID: <CAAFQd5CKkdN0byeAonPvvzmHQ5CRXLRVidAG8FGmxExHzgvaqA@mail.gmail.com>
+Message-ID: <CAAFQd5CKkdN0byeAonPvvzmHQ5CRXLRVidAG8FGmxExHzgvaqA@mail.gmail.com>
+Subject: Re: [PATCH 0/4] Enable Hantro G1 post-processor
+To: Nicolas Dufresne <nicolas@ndufresne.ca>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_142619_992455_D4638A82 
-X-CRM114-Status: GOOD (  25.56  )
+X-CRM114-CacheID: sfid-20190911_225227_709649_036F4B6C 
+X-CRM114-Status: GOOD (  22.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -102,135 +103,71 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Ganapathi Bhat <gbhat@marvell.com>, Brian Norris <briannorris@chromium.org>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- Xinming Hu <huxinming820@gmail.com>, netdev <netdev@vger.kernel.org>,
- Andreas Fenkart <afenkart@gmail.com>,
- linux-wireless <linux-wireless@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>,
- Amitkumar Karwar <amitkarwar@gmail.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+Cc: Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Nishant Sarmukadam <nishants@marvell.com>, Avri Altman <avri.altman@wdc.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, "David S. Miller" <davem@davemloft.net>,
- Kalle Valo <kvalo@codeaurora.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>, Chris Healy <cphealy@gmail.com>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Thu, Jul 25, 2019 at 6:28 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
->
-> On Mon, 22 Jul 2019 at 21:41, Douglas Anderson <dianders@chromium.org> wrote:
-> >
-> > As talked about in the thread at:
-> >
-> > http://lkml.kernel.org/r/CAD=FV=X7P2F1k_zwHc0mbtfk55-rucTz_GoDH=PL6zWqKYcpuw@mail.gmail.com
-> >
-> > ...when the Marvell WiFi card tries to reset itself it kills
-> > Bluetooth.  It was observed that we could re-init the card properly by
-> > unbinding / rebinding the host controller.  It was also observed that
-> > in the downstream Chrome OS codebase the solution used was
-> > mmc_remove_host() / mmc_add_host(), which is similar to the solution
-> > in this series.
-> >
-> > So far I've only done testing of this series using the reset test
-> > source that can be simulated via sysfs.  Specifically I ran this test:
-> >
-> > for i in $(seq 1000); do
-> >   echo "LOOP $i --------"
-> >   echo 1 > /sys/kernel/debug/mwifiex/mlan0/reset
-> >
-> >   while true; do
-> >     if ! ping -w15 -c1 "${GW}" >/dev/null 2>&1; then
-> >       fail=$(( fail + 1 ))
-> >       echo "Fail WiFi ${fail}"
-> >       if [[ ${fail} == 3 ]]; then
-> >         exit 1
-> >       fi
-> >     else
-> >       fail=0
-> >       break
-> >     fi
-> >   done
-> >
-> >   hciconfig hci0 down
-> >   sleep 1
-> >   if ! hciconfig hci0 up; then
-> >     echo "Fail BT"
-> >     exit 1
-> >   fi
-> > done
-> >
-> > I ran this several times and got several hundred iterations each
-> > before a failure.  When I saw failures:
-> >
-> > * Once I saw a "Fail BT"; manually resetting the card again fixed it.
-> >   I didn't give it time to see if it would have detected this
-> >   automatically.
-> > * Once I saw the ping fail because (for some reason) my device only
-> >   got an IPv6 address from my router and the IPv4 ping failed.  I
-> >   changed my script to use 'ping6' to see if that would help.
-> > * Once I saw the ping fail because the higher level network stack
-> >   ("shill" in my case) seemed to crash.  A few minutes later the
-> >   system recovered itself automatically.  https://crbug.com/984593 if
-> >   you want more details.
-> > * Sometimes while I was testing I saw "Fail WiFi 1" indicating a
-> >   transitory failure.  Usually this was an association failure, but in
-> >   one case I saw the device do "Firmware wakeup failed" after I
-> >   triggered the reset.  This caused the driver to trigger a re-reset
-> >   of itself which eventually recovered things.  This was good because
-> >   it was an actual test of the normal reset flow (not the one
-> >   triggered via sysfs).
-> >
-> > Changes in v2:
-> > - s/routnine/routine (Brian Norris, Matthias Kaehlcke).
-> > - s/contining/containing (Matthias Kaehlcke).
-> > - Add Matthias Reviewed-by tag.
-> > - Removed clear_bit() calls and old comment (Brian Norris).
-> > - Explicit CC of Andreas Fenkart.
-> > - Explicit CC of Brian Norris.
-> > - Add "Fixes" pointing at the commit Brian talked about.
-> > - Add Brian's Reviewed-by tag.
-> >
-> > Douglas Anderson (2):
-> >   mmc: core: Add sdio_trigger_replug() API
-> >   mwifiex: Make use of the new sdio_trigger_replug() API to reset
-> >
-> >  drivers/mmc/core/core.c                     | 28 +++++++++++++++++++--
-> >  drivers/mmc/core/sdio_io.c                  | 20 +++++++++++++++
-> >  drivers/net/wireless/marvell/mwifiex/sdio.c | 16 +-----------
-> >  include/linux/mmc/host.h                    | 15 ++++++++++-
-> >  include/linux/mmc/sdio_func.h               |  2 ++
-> >  5 files changed, 63 insertions(+), 18 deletions(-)
-> >
->
-> Doug, thanks for sending this!
->
-> As you know, I have been working on additional changes for SDIO
-> suspend/resume (still WIP and not ready for sharing) and this series
-> is related.
->
-> The thing is, that even during system suspend/resume, synchronizations
-> are needed between the different layers (mmc host, mmc core and
-> sdio-funcs), which is common to the problem you want to solve.
->
-> That said, I need to scratch my head a bit more before I can provide
-> you some feedback on $subject series. Moreover, it's vacation period
-> at my side so things are moving a bit slower. Please be patient.
-
-I had kinda forgotten about this series after we landed it locally in
-Chrome OS, but I realized that it never got resolved upstream.  Any
-chance your head has been sufficiently scratched and you're now happy
-with $subject series?  ;-)
-
--Doug
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gVGh1LCBTZXAgMTIsIDIwMTkgYXQgNDo0OSBBTSBOaWNvbGFzIER1ZnJlc25lIDxuaWNvbGFz
+QG5kdWZyZXNuZS5jYT4gd3JvdGU6Cj4KPiBMZSBtZXJjcmVkaSAxMSBzZXB0ZW1icmUgMjAxOSDD
+oCAwOToyNyArMDEwMCwgRXplcXVpZWwgR2FyY2lhIGEgw6ljcml0IDoKPiA+IE9uIE1vbiwgMjAx
+OS0wOS0wOSBhdCAxNjowNyArMDkwMCwgVG9tYXN6IEZpZ2Egd3JvdGU6Cj4gPiA+IEhpIEV6ZXF1
+aWVsLAo+ID4gPgo+ID4gPiBPbiBXZWQsIFNlcCA0LCAyMDE5IGF0IDM6MTcgQU0gRXplcXVpZWwg
+R2FyY2lhIDxlemVxdWllbEBjb2xsYWJvcmEuY29tPiB3cm90ZToKPiA+ID4gPiBIaSBhbGwsCj4g
+PiA+ID4KPiA+ID4gPiBUaGlzIHNlcmllcyBlbmFibGVzIHRoZSBwb3N0LXByb2Nlc3NvciBzdXBw
+b3J0IGF2YWlsYWJsZQo+ID4gPiA+IG9uIHRoZSBIYW50cm8gRzEgVlBVLiBUaGUgcG9zdC1wcm9j
+ZXNzb3IgYmxvY2sgY2FuIGJlCj4gPiA+ID4gcGlwZWxpbmVkIHdpdGggdGhlIGRlY29kZXIgaGFy
+ZHdhcmUsIGFsbG93aW5nIHRvIHBlcmZvcm0KPiA+ID4gPiBvcGVyYXRpb25zIHN1Y2ggYXMgY29s
+b3IgY29udmVyc2lvbiwgc2NhbGluZywgcm90YXRpb24sCj4gPiA+ID4gY3JvcHBpbmcsIGFtb25n
+IG90aGVycy4KPiA+ID4gPgo+ID4gPiA+IFRoZSBkZWNvZGVyIGhhcmR3YXJlIG5lZWRzIGl0cyBv
+d24gc2V0IG9mIE5WMTIgYnVmZmVycwo+ID4gPiA+ICh0aGUgbmF0aXZlIGRlY29kZXIgZm9ybWF0
+KSwgYW5kIHRoZSBwb3N0LXByb2Nlc3NvciBpcyB0aGUKPiA+ID4gPiBvd25lciBvZiB0aGUgQ0FQ
+VFVSRSBidWZmZXJzLiBUaGlzIGFsbG93cyB0aGUgYXBwbGljYXRpb24KPiA+ID4gPiBnZXQgcHJv
+Y2Vzc2VkIChzY2FsZWQsIGNvbnZlcnRlZCwgZXRjKSBidWZmZXJzLCBjb21wbGV0ZWx5Cj4gPiA+
+ID4gdHJhbnNwYXJlbnRseS4KPiA+ID4gPgo+ID4gPiA+IFRoaXMgZmVhdHVyZSBpcyBpbXBsZW1l
+bnRlZCBieSBleHBvc2luZyBvdGhlciBDQVBUVVJFIHBpeGVsCj4gPiA+ID4gZm9ybWF0cyB0byB0
+aGUgYXBwbGljYXRpb24gKEVOVU1fRk1UKS4gV2hlbiB0aGUgYXBwbGljYXRpb24KPiA+ID4gPiBz
+ZXRzIGEgcGl4ZWwgZm9ybWF0IG90aGVyIHRoYW4gTlYxMiwgdGhlIGRyaXZlciB3aWxsIGVuYWJs
+ZQo+ID4gPiA+IGFuZCB1c2UgdGhlIHBvc3QtcHJvY2Vzc29yIHRyYW5zcGFyZW50bHkuCj4gPiA+
+Cj4gPiA+IEknbGwgdHJ5IHRvIHJldmlldyB0aGUgc2VyaWVzIGEgYml0IGxhdGVyLCBidXQgYSBn
+ZW5lcmFsIGNvbW1lbnQgaGVyZQo+ID4gPiBpcyB0aGF0IHRoZSB1c2Vyc3BhY2Ugd291bGRuJ3Qg
+aGF2ZSBhIHdheSB0byBkaXN0aW5ndWlzaCBiZXR3ZWVuIHRoZQo+ID4gPiBuYXRpdmUgYW5kIHBv
+c3QtcHJvY2Vzc2VkIGZvcm1hdHMuIEknbSBwcmV0dHkgbXVjaCBzdXJlIHRoYXQKPiA+ID4gcG9z
+dC1wcm9jZXNzaW5nIGF0IGxlYXN0IGltcG9zZXMgc29tZSBwb3dlciBwZW5hbHR5LCBzbyBpdCB3
+b3VsZCBiZQo+ID4gPiBnb29kIGlmIHRoZSB1c2Vyc3BhY2UgY291bGQgYXZvaWQgaXQgaWYgdW5u
+ZWNlc3NhcnkuCj4gPiA+Cj4gPgo+ID4gSG0sIHRoYXQncyB0cnVlLCBnb29kIGNhdGNoLgo+ID4K
+PiA+IFNvLCBpdCB3b3VsZCBiZSBkZXNpcmFibGUgdG8gcmV0YWluIHRoZSBjdXJyZW50IGJlaGF2
+aW9yIG9mIGFsbG93aW5nCj4gPiB0aGUgYXBwbGljYXRpb24gdG8ganVzdCBzZXQgYSBkaWZmZXJl
+bnQgcGl4ZWwgZm9ybWF0IGFuZCBnZXQKPiA+IGEgcG9zdC1wcm9jZXNzZWQgZnJhbWUsIHRyYW5z
+cGFyZW50bHkuCj4gPgo+ID4gQnV0IGF0IHRoZSBzYW1lIHRpbWUsIGl0IHdvdWxkIGJlIG5pY2Ug
+aWYgdGhlIGFwcGxpY2F0aW9uIGlzIHNvbWVob3cKPiA+IGF3YXJlIG9mIHRoZSBwb3N0LXByb2Nl
+c3NpbmcgaGFwcGVuaW5nLiBNYXliZSB3ZSBjYW4gZXhwb3NlIGEgbW9yZQo+ID4gYWNjdXJhdGUg
+bWVkaWEgY29udHJvbGxlciB0b3BvbG9neSwgaGF2ZSBhcHBsaWNhdGlvbnMgZW5hYmxlCj4gPiB0
+aGUgcG9zdC1wcm9jZXNzaW5nIHBpcGVsaW5lIGV4cGxpY2l0bHkuCj4KPiBIb3cgaXQgd29ya3Mg
+b24gdGhlIHN0YXRlZnVsIHNpZGUgaXMgdGhhdCB1c2Vyc3BhY2Ugc2V0IHRoZSBlbmNvZGluZwo+
+IHR5cGUgKHRoZSBjb2RlYyksIHRoZW4gcGFzc2VzIGEgaGVhZGVyIChpbiBvdXIgY2FzZSwgdGhl
+cmUgd2lsbCBiZQo+IHBhcnNlZCBzdHJ1Y3R1cmVzIHJlcGxhY2luZyB0aGlzKSBmaXJzdC4gVGhl
+IGRyaXZlciB0aGVuIGNvbmZpZ3VyZQo+IGNhcHR1cmUgZm9ybWF0LCBnaXZpbmcgYSBoaW50IG9m
+IHRoZSAiZGVmYXVsdCIgb3IgIm5hdGl2ZSIgZm9ybWF0LiBUaGlzCj4gbWF5IG9yIG1heSBub3Qg
+YmUgc3VmZmljaWVudCwgYnV0IGl0IGRvZXMgd29yayBpbiBnaXZpbmcgdXNlcnNwYWNlIGEKPiBo
+aW50LgoKVGhlIGJhZCBzaWRlIG9mIHRoYXQgaXMgdGhhdCB3ZSBjYW4ndCBoYW5kbGUgbW9yZSB0
+aGFuIDEgbmF0aXZlIGZvcm1hdC4KCkZvciB0aGUgbW9zdCBiYWNrd2FyZHMtY29tcGF0aWJsZSBi
+ZWhhdmlvciwgc29ydGluZyB0aGUgcmVzdWx0cyBvZgpFTlVNX0ZNVCBhY2NvcmRpbmcgdG8gZm9y
+bWF0IHByZWZlcmVuY2Ugd291bGQgYWxsb3cgdGhlIGFwcGxpY2F0aW9ucwp0aGF0IGNob29zZSB0
+aGUgZmlyc3QgZm9ybWF0IHJldHVybmVkIHRoYXQgd29ya3MgZm9yIHRoZW0gdG8gY2hvb3NlCnRo
+ZSBiZXN0IG9uZS4KCkZvciBhIGZ1cnRoZXIgaW1wcm92ZW1lbnQsIGFuIEVOVU1fRk1UIGZsYWcg
+dGhhdCB0ZWxscyB0aGUgdXNlcnNwYWNlCnRoYXQgYSBmb3JtYXQgaXMgcHJlZmVycmVkIGNvdWxk
+IHdvcmsuCgpUaGF0IHNhaWQsIG1vZGVsbGluZyB0aGUgcGlwZWxpbmUgYXBwcm9wcmlhdGVseSB1
+c2luZyB0aGUgbWVkaWEKY29udHJvbGxlciBpcyB0aGUgaWRlYSBJIGxpa2UgdGhlIG1vc3QsIGJl
+Y2F1c2UgaXQncyB0aGUgbW9zdApjb21wcmVoZW5zaXZlIHNvbHV0aW9uLiBUaGF0IHdvdWxkIGhh
+dmUgdG8gYmUgd2VsbCBzcGVjaWZpZWQgYW5kCmRvY3VtZW50ZWQsIHRob3VnaCwgYW5kIHNvdW5k
+cyBsaWtlIGEgbG9uZyB0ZXJtIGVmZm9ydC4KCkJlc3QgcmVnYXJkcywKVG9tYXN6CgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBt
+YWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
