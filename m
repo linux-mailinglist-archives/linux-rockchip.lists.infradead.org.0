@@ -2,44 +2,43 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B83F2B49C4
-	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Sep 2019 10:48:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96A05B49CA
+	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Sep 2019 10:48:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HKGvFA03WcrsLT5Zq5rUNB9gFvwwnRW87/z0hYmfeEQ=; b=IEZTRLDZkDQjwT
-	yt7tToghKeXyfV0A/Hdh0JollXsDytr78jE2UBVTrQ3ZNSP91Q1KZVyjD2+IJS3ecJU+mxYcyVQK9
-	xMYO+km4GTCizxmL/TJ/2s2Ed+8vTPGtzXVlRj8gPCtRR2cCbpcavyFTW7Hf9aHxYib6II4RUvTRy
-	uwC619x5NUlQpkYkZQBx8kM4g83uUPvFXCYK3fh9NpkCL/tOAEAyXZ+j6eiVvy3djA4H/NChkOEpR
-	sGFxuMB7K95Xt2JXV5oDduJcMgy3Roiq9OOaL0GeH/Lry8UupiQjpCD2NYxwq/eAr1PZO9RyiSx9e
-	3xew+jL9y6XSlumb5aXA==;
+	List-Owner; bh=pw8+COob0JOWao4ZNecb51D1nG5nVm5HrLSCD7kpPok=; b=I3GiDpKFiW0lB1
+	3H52lXAWc1FxnOn9PkHHKi2mHl3Yb51H9dOHjL5x9RVtr+yPNxkDTilf95/DINW17EVxTEEW3eLuk
+	2B2a4B1FtIK/cmP6IfZgC4G5hOqwbmlfPLKQ6c9kGKnKFYs4ZUVcTqAAwsHtXcwUATrOG5hRi1ux3
+	6rJOkH72QcQugfspjwG3wCgUFVQyOPWABcX8mKzHmQdmkyBNZbTSVE8YbKLysTJKpF4bvELSlK+X3
+	dqjtdXcWgtViKnITCA3fZlfxGAf5yF/4E6k29ojuYzfW80Nsu+FBvww9kbWazCaWzTv3pU5ItSELI
+	2B/z1/eZcyy3YI8nH/WA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iA99Y-0003xH-Vs; Tue, 17 Sep 2019 08:48:05 +0000
+	id 1iA99v-0004GD-EI; Tue, 17 Sep 2019 08:48:27 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iA99H-0003lQ-KX; Tue, 17 Sep 2019 08:47:48 +0000
+ id 1iA99Y-0003yG-He; Tue, 17 Sep 2019 08:48:06 +0000
 Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
  helo=phil.fritz.box)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iA8pK-0005ZY-GI; Tue, 17 Sep 2019 10:27:10 +0200
+ id 1iA8pK-0005ZY-QE; Tue, 17 Sep 2019 10:27:10 +0200
 From: Heiko Stuebner <heiko@sntech.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 11/13] dt-bindings: document PX30 usb2phy General Register
- Files
-Date: Tue, 17 Sep 2019 10:26:57 +0200
-Message-Id: <20190917082659.25549-11-heiko@sntech.de>
+Subject: [PATCH 12/13] arm64: dts: rockchip: add usb2phy for px30
+Date: Tue, 17 Sep 2019 10:26:58 +0200
+Message-Id: <20190917082659.25549-12-heiko@sntech.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190917082659.25549-1-heiko@sntech.de>
 References: <20190917082659.25549-1-heiko@sntech.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_014747_822901_E5D56CC3 
-X-CRM114-Status: GOOD (  10.23  )
+X-CRM114-CacheID: sfid-20190917_014804_768024_732C8249 
+X-CRM114-Status: GOOD (  10.83  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,26 +67,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-One of the separate General Register Files contains the registers for
-controlling the usb2phy, so add the necessary binding compatible for it.
+Add the usb2phy node on the px30 and hook it up to the usb controllers
+it supplies.
 
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 ---
- Documentation/devicetree/bindings/soc/rockchip/grf.txt | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/rockchip/px30.dtsi | 43 ++++++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.txt b/Documentation/devicetree/bindings/soc/rockchip/grf.txt
-index 46e27cd69f18..d7debec26ba4 100644
---- a/Documentation/devicetree/bindings/soc/rockchip/grf.txt
-+++ b/Documentation/devicetree/bindings/soc/rockchip/grf.txt
-@@ -30,6 +30,7 @@ Required Properties:
- - compatible: SGRF should be one of the following
-    - "rockchip,rk3288-sgrf", "syscon": for rk3288
- - compatible: USB2PHYGRF should be one of the followings
-+   - "rockchip,px30-usb2phy-grf", "syscon": for px30
-    - "rockchip,rk3328-usb2phy-grf", "syscon": for rk3328
- - compatible: USBGRF should be one of the following
-    - "rockchip,rv1108-usbgrf", "syscon": for rv1108
+diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
+index 9ad1c2f04ea9..837e421cc30f 100644
+--- a/arch/arm64/boot/dts/rockchip/px30.dtsi
++++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+@@ -701,6 +701,43 @@
+ 			<26000000>;
+ 	};
+ 
++	usb2phy_grf: syscon@ff2c0000 {
++		compatible = "rockchip,px30-usb2phy-grf", "syscon",
++			     "simple-mfd";
++		reg = <0x0 0xff2c0000 0x0 0x10000>;
++		#address-cells = <1>;
++		#size-cells = <1>;
++
++		u2phy: usb2-phy@100 {
++			compatible = "rockchip,px30-usb2phy";
++			reg = <0x100 0x20>;
++			clocks = <&pmucru SCLK_USBPHY_REF>;
++			clock-names = "phyclk";
++			#clock-cells = <0>;
++			assigned-clocks = <&cru USB480M>;
++			assigned-clock-parents = <&u2phy>;
++			clock-output-names = "usb480m_phy";
++			status = "disabled";
++
++			u2phy_host: host-port {
++				#phy-cells = <0>;
++				interrupts = <GIC_SPI 68 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-names = "linestate";
++				status = "disabled";
++			};
++
++			u2phy_otg: otg-port {
++				#phy-cells = <0>;
++				interrupts = <GIC_SPI 66 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 65 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-names = "otg-bvalid", "otg-id",
++						  "linestate";
++				status = "disabled";
++			};
++		};
++	};
++
+ 	usb20_otg: usb@ff300000 {
+ 		compatible = "rockchip,px30-usb", "rockchip,rk3066-usb",
+ 			     "snps,dwc2";
+@@ -713,6 +750,8 @@
+ 		g-rx-fifo-size = <280>;
+ 		g-tx-fifo-size = <256 128 128 64 32 16>;
+ 		g-use-dma;
++		phys = <&u2phy_otg>;
++		phy-names = "usb2-phy";
+ 		power-domains = <&power PX30_PD_USB>;
+ 		status = "disabled";
+ 	};
+@@ -723,6 +762,8 @@
+ 		interrupts = <GIC_SPI 60 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru HCLK_HOST>;
+ 		clock-names = "usbhost";
++		phys = <&u2phy_host>;
++		phy-names = "usb";
+ 		power-domains = <&power PX30_PD_USB>;
+ 		status = "disabled";
+ 	};
+@@ -733,6 +774,8 @@
+ 		interrupts = <GIC_SPI 61 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru HCLK_HOST>;
+ 		clock-names = "usbhost";
++		phys = <&u2phy_host>;
++		phy-names = "usb";
+ 		power-domains = <&power PX30_PD_USB>;
+ 		status = "disabled";
+ 	};
 -- 
 2.20.1
 
