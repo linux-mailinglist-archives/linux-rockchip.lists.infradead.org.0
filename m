@@ -2,44 +2,44 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A84EB48EF
-	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Sep 2019 10:13:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79B80B48EC
+	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Sep 2019 10:13:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kkglppgVeKAi6i8U2npS2m7ZOkySDsy2XS/2rY9WikY=; b=NNllaTpphTDak9
-	6WMR3JMX8IHQnkhEqyA5YYF8UzoVtk1+CZbjKL9QGyZDpyz27J+ceOwN33VXy8trd2MXy1/+RCUjY
-	H9lGWYFJ6v2hrxJYQE3XM/iwXxZ717OtLoWfHgLRvzqXiJwtwXd/17JqPL0yMHapJLmtD/nRuJQvH
-	bm5KjKWs8qMYQgExI5AMI54QyOAl+SLQ2mj4UusYFHgpHBJ14n9s8pyqbTTg42vzpp6CAVvXBRSTn
-	CwjYwiRl7eyUpxTibLjeSwMHJDWlDaP9R9BOUzgaWlTRO8R38Fi7U9OmgAvpnJNy54xhaME6k5DPX
-	lf8gUmZo+bmyKHP/+wtw==;
+	List-Owner; bh=ScLzGqeGtIleQXidCfbUw1bfcg/lldqjMbIH3ypLBao=; b=qTY+EGdekgq102
+	LwTj5ac4fI9hJk17pnJB7M0RpmyA04/rpI07iCzQJfAccHhi9V4LUc/us3HnYoHcT5SoQiVJ1HTP2
+	P2DR6WVgGLG7654UzjpXo8wz22IMHcGVHCjYXJiL6ZXp8Ehr71KiOWYh1+zyLVjQ2I9Qfl9vo3ied
+	iBNcm1OJdGBkm2ck46n23mhgX90E87r9Cnq/z/v9g2pJ9aLrtKFc8BVFlLkyqhbZ2WKtrClGDJyyW
+	QgAYF+6JEdNO6/BZMPmiES9JcPXKRIMvGsWDl8JKHtR+ISXCTSjEJsXt1o9+hxK/m9v97zNlKTmOv
+	/QpvnUZ1/Xlh3yqIes2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iA8cM-00059a-Q4; Tue, 17 Sep 2019 08:13:46 +0000
+	id 1iA8cE-000567-Ur; Tue, 17 Sep 2019 08:13:39 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iA8c7-00051v-0m
- for linux-rockchip@lists.infradead.org; Tue, 17 Sep 2019 08:13:34 +0000
+ id 1iA8c7-00051u-0p
+ for linux-rockchip@lists.infradead.org; Tue, 17 Sep 2019 08:13:33 +0000
 Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
  helo=phil.fritz.box)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iA8c0-0005RU-95; Tue, 17 Sep 2019 10:13:24 +0200
+ id 1iA8c0-0005RU-Hh; Tue, 17 Sep 2019 10:13:24 +0200
 From: Heiko Stuebner <heiko@sntech.de>
 To: lee.jones@linaro.org
-Subject: [PATCH 2/4] mfd: rk808: fix rk817 powerkey integration
-Date: Tue, 17 Sep 2019 10:12:54 +0200
-Message-Id: <20190917081256.24919-2-heiko@sntech.de>
+Subject: [PATCH 3/4] mfd: rk808: set rk817 interrupt polarity to low
+Date: Tue, 17 Sep 2019 10:12:55 +0200
+Message-Id: <20190917081256.24919-3-heiko@sntech.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190917081256.24919-1-heiko@sntech.de>
 References: <20190917081256.24919-1-heiko@sntech.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_011331_295237_804DFB74 
-X-CRM114-Status: GOOD (  11.10  )
+X-CRM114-CacheID: sfid-20190917_011331_274425_6A5C7CF5 
+X-CRM114-Status: GOOD (  10.99  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,48 +67,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The pwrkey integration seems to stem from the vendor kernel, as the
-compatible is wrong and also the order of key-irqs is swapped.
+All other rk8xx operate with the polarity on low and even the old
+submitted devicetree snippet for the px30-evb declared the irq as low.
+So bring the rk817 preset in line with this, as there is really no
+reason for it to be the only with with a high polarity.
 
-So fix these issues to make the pwrkey on rk817 actually work.
+The rk809/rk817 hasn't been added to any devicetrees so far, so this
+won't break anything.
 
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 ---
- drivers/mfd/rk808.c | 14 +++-----------
- 1 file changed, 3 insertions(+), 11 deletions(-)
+ drivers/mfd/rk808.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/mfd/rk808.c b/drivers/mfd/rk808.c
-index 050478cabc95..966841744ee6 100644
+index 966841744ee6..c0e5e921766d 100644
 --- a/drivers/mfd/rk808.c
 +++ b/drivers/mfd/rk808.c
-@@ -121,16 +121,8 @@ static struct resource rk817_rtc_resources[] = {
- };
+@@ -207,7 +207,7 @@ static const struct rk808_reg_data rk808_pre_init_reg[] = {
  
- static struct resource rk805_key_resources[] = {
--	{
--		.start  = RK805_IRQ_PWRON_FALL,
--		.end    = RK805_IRQ_PWRON_FALL,
--		.flags  = IORESOURCE_IRQ,
--	},
--	{
--		.start  = RK805_IRQ_PWRON_RISE,
--		.end    = RK805_IRQ_PWRON_RISE,
--		.flags  = IORESOURCE_IRQ,
--	}
-+	DEFINE_RES_IRQ(RK805_IRQ_PWRON_RISE),
-+	DEFINE_RES_IRQ(RK805_IRQ_PWRON_FALL),
+ static const struct rk808_reg_data rk817_pre_init_reg[] = {
+ 	{RK817_RTC_CTRL_REG, RTC_STOP, RTC_STOP},
+-	{RK817_GPIO_INT_CFG, RK817_INT_POL_MSK, RK817_INT_POL_H},
++	{RK817_GPIO_INT_CFG, RK817_INT_POL_MSK, RK817_INT_POL_L},
+ 	{RK817_SYS_CFG(1), RK817_HOTDIE_TEMP_MSK | RK817_TSD_TEMP_MSK,
+ 					   RK817_HOTDIE_105 | RK817_TSD_140},
  };
- 
- static struct resource rk817_pwrkey_resources[] = {
-@@ -167,7 +159,7 @@ static const struct mfd_cell rk817s[] = {
- 	{ .name = "rk808-clkout",},
- 	{ .name = "rk808-regulator",},
- 	{
--		.name = "rk8xx-pwrkey",
-+		.name = "rk805-pwrkey",
- 		.num_resources = ARRAY_SIZE(rk817_pwrkey_resources),
- 		.resources = &rk817_pwrkey_resources[0],
- 	},
 -- 
 2.20.1
 
