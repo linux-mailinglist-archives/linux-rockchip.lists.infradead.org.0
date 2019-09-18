@@ -2,87 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16CDCB5E0D
-	for <lists+linux-rockchip@lfdr.de>; Wed, 18 Sep 2019 09:31:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92887B5F16
+	for <lists+linux-rockchip@lfdr.de>; Wed, 18 Sep 2019 10:25:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jYGnNCktZn6HVm4tm15s1V+hbGsD2FFeT7+1DcupvMw=; b=j+fZf++YcjOS/w
-	1B2jxbjYaXjlbAGnq0k1veCFwQ0PgfajupExGOIS44A5eg3ifySdCpGRuO4n86pEG+iBFKkOQyfh5
-	/NryxxekAMquL9Nc/jXVMGFQYCe3i5fnAAqn8tUMpGgLffDrePjcr3S5ncSx1tDJZwsUmYdpFswrP
-	6r3zSv7fccBMcgzjDqUwEqwJ5iufZCQKM5GQJhes2tT2NJfw6EmoO02vDs4nlFUrj5t0cwpa6V5UV
-	WQLSGnH+ecQAqw7maAEUJbSpMBe3CYk8yi1RdwMeIfEGy5wTHO4FC6gcdT45HHiqv+B7lvVjyi5bQ
-	fTLfR+oMQNKQknShAY6g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=84lb2pXCAqqqtEjT6yklhk6BGjnkQUWWu+VFcGaQZzs=; b=DTx1NSu/Qb4bSc
+	FST5K0qydY8+uwX+5znY/5gODEy7qHiuV7q8ysY8fvZe3BbXMgA/ZodTCCm0/z/xCLCrRchqgGUVB
+	JSTLhjDTv98PSe5QYWpNMprnXC7Vc9zlAp2N6qKj3Wh6aUHTvwK/m6ieVPMnjW1UpcQaoSjiud9eR
+	J3awHKiF/A/kbLEdd5fSwpXEucvajgi41AvK3P3immYDk6kJTcHuAoOTWL+4WDhR9RAW2kFqkCCza
+	stohBGS2giy+24CaYFsDpzUA85uoDShIImgFDrBJcsnTnaXbLykdgG3zLl5Mrd420ZZw1ltcdFzMu
+	La+9iWpPQLIpOy6LvKrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAUQm-00012k-CL; Wed, 18 Sep 2019 07:31:16 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1iAVH7-0004nJ-8x; Wed, 18 Sep 2019 08:25:21 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAUP5-0007vu-Er
- for linux-rockchip@lists.infradead.org; Wed, 18 Sep 2019 07:29:32 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id l2so3807662vsr.8
- for <linux-rockchip@lists.infradead.org>; Wed, 18 Sep 2019 00:29:24 -0700 (PDT)
+ id 1iAVH2-0004me-Ch
+ for linux-rockchip@lists.infradead.org; Wed, 18 Sep 2019 08:25:17 +0000
+Received: by mail-pl1-x641.google.com with SMTP id e5so2762712pls.9
+ for <linux-rockchip@lists.infradead.org>; Wed, 18 Sep 2019 01:25:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=SDoUVLf2sM2Wd7eza5DvRhJf8f3rN/ciRvE3nXJqNFQ=;
- b=bHgC61S83XFKjjHLXOkOq4DxsfgHo2iXOrB0kGNER7zB3qrVVxUkcW0pixzEoZ/hFO
- 9zlhd8/Ni87ZlTvrJ0eiUB+ehwc8ERiN1SdYfkRdu5K74DlnoLi+h/s3kgUV+MO5yxI4
- IpXJ9/umG++g7tOVTqBUHyZhF1w1+BHeH19F0=
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=VKl0NI5uuTzXRMlZIfLK2DJ9dA76CcXi+wvYjjhfeJ4=;
+ b=QjtMNatKQcwth+X0GKHkr+Z2zJz6zbi9oKCgR26mEnXpfoUjWiImm9bASZSwNJTdA7
+ 2sYwbfAxoZKJIti+khkPv+rHKQ/aqRnzVaaVyCAV9sxHcFnNpVTLVkNumDYo8RwYrBU6
+ qQ5EfggIIMUwE/rxyvwKGoh69y/Hl9FmhmtWE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=SDoUVLf2sM2Wd7eza5DvRhJf8f3rN/ciRvE3nXJqNFQ=;
- b=TCSCeqNAdXD81shgSeaSh3N6pjOCQxukoeVibcYhH6Z3lYE0w0KmQMeF1TSW90mlxv
- mR1ULuZUusHgmOD+UlrmA3Kg9JCO5cxL57xJPrmFbLyU+4K7n5YCJmNksQaYF4E61XyG
- cs0RApDdTlRNaufudz65mikfG3iJBfkUsaZiSKkbAoY6wpv7qjQ3gyxFy82sXKtzEf7b
- +e7w4jYaUqtYkM7CHWLo18+UllTaDJfmanrKhnUabvsKvl77U0ojL8807ODgxz8urRHe
- Pl2OFCX7g2/mS4GArAbJJ3Qa11EUiC1uEIKJ+zcRxTvZECZlb103XsB8Cq0PJHdKesBm
- ET+w==
-X-Gm-Message-State: APjAAAWFlrH7BXjZQKbdkllNv0Kdb+gtI0jDTQhXf/djqKHiaJ+sp2LY
- J/RJ06bYbEjANTOk82yesCyEkmd5vnaMCqPrnDXnaw==
-X-Google-Smtp-Source: APXvYqz3X6HVZiW3ZAIrMpmqoTkGT9csY3mslQR+djJ/IC/kNyPMlb3OEGubgnn0YA3Nv38dQWDVGsLPAgmKFKrvNcM=
-X-Received: by 2002:a67:db8d:: with SMTP id f13mr1362214vsk.163.1568791763011; 
- Wed, 18 Sep 2019 00:29:23 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=VKl0NI5uuTzXRMlZIfLK2DJ9dA76CcXi+wvYjjhfeJ4=;
+ b=RyKJdM2cqfL7xsU95pGMH272HRb/gB87bm5cAMt7EZMb3ndo/O7z64+5DCOIk4vHhu
+ dJJ8sGx3es7zs6EroYdUq2trKpVeyhemY3iu6OyGtrKaPcz1q4uDXkTVxVHPFawy0vo7
+ WyLC8beVyLh2of3km0+TCvJy0vrE3REB8DhpUq9GA5JqsYM5wGmiONLwJleq23aDlHsG
+ D6NPykcKAcOjcVbxobNAE7waWh7xV0ufFadJs7BMEsOGuI+zXOOGk/wAgB6tam9lnX9D
+ QSNgBICOLz26XCtVYEelw1wTVR362ELjPJ2UWf5RxZgtTJIZZQsn+ZRbwodugLlrCHf6
+ IxIQ==
+X-Gm-Message-State: APjAAAWXFCNENQt1UIttOK2/7sJZYj9TzFLVS+pcC6CwtpKejUR5esNw
+ k1nHDQBynCdUg10rZsLu5i2FvA==
+X-Google-Smtp-Source: APXvYqzayEko5q8A495MmFMU31IxcUPuZcsYT8Q3ERIy5jSSRpRvbSnJkE1FFghYilaSJdpwBGfTCA==
+X-Received: by 2002:a17:902:ba95:: with SMTP id
+ k21mr3061713pls.80.1568795114731; 
+ Wed, 18 Sep 2019 01:25:14 -0700 (PDT)
+Received: from localhost ([2401:fa00:1:10:79b4:bd83:e4a5:a720])
+ by smtp.gmail.com with ESMTPSA id y28sm8689470pfq.48.2019.09.18.01.25.10
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 18 Sep 2019 01:25:13 -0700 (PDT)
+From: Cheng-Yi Chiang <cychiang@chromium.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v6 0/4] Add HDMI jack support on RK3288
+Date: Wed, 18 Sep 2019 16:24:56 +0800
+Message-Id: <20190918082500.209281-1-cychiang@chromium.org>
+X-Mailer: git-send-email 2.23.0.237.gc6a4ce50a0-goog
 MIME-Version: 1.0
-References: <20190717083327.47646-1-cychiang@chromium.org>
- <CA+Px+wX4gbntkd6y8NN8xwXpZLD4MH9rTeHcW9+Ndtw=3_mWBw@mail.gmail.com>
- <CAFv8NwLiY+ro0L4c5vjSOGN8jA-Qr4zm2OWvVHkiuoa7_4e2Fg@mail.gmail.com>
- <CAFv8NwJjG4mwfnYO=M3O9nZN48D6aY72nQuqEFpZL68dh5727w@mail.gmail.com>
- <7019a223-cc97-e1c6-907b-e6b3d626164f@baylibre.com>
- <20190909135346.GG2036@sirena.org.uk>
- <3fc94731-f66a-223d-995e-97ac67f9e882@baylibre.com>
-In-Reply-To: <3fc94731-f66a-223d-995e-97ac67f9e882@baylibre.com>
-From: Cheng-yi Chiang <cychiang@chromium.org>
-Date: Wed, 18 Sep 2019 15:28:56 +0800
-Message-ID: <CAFv8NwL3+4Qsv0B7PtVhB=HX6uFUMMaw5V=E3NTRE-v_jDVAxg@mail.gmail.com>
-Subject: Re: [PATCH v5 0/5] Add HDMI jack support on RK3288
-To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_002931_529562_CCB439AB 
-X-CRM114-Status: GOOD (  14.25  )
-X-Spam-Score: -7.4 (-------)
+X-CRM114-CacheID: sfid-20190918_012516_479575_2D579CC9 
+X-CRM114-Status: UNSURE (   7.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -96,61 +94,62 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: ALSA development <alsa-devel@alsa-project.org>,
- Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
+Cc: alsa-devel@alsa-project.org, Heiko Stuebner <heiko@sntech.de>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
  dri-devel@lists.freedesktop.org, Liam Girdwood <lgirdwood@gmail.com>,
  Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
  Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- linux-rockchip@lists.infradead.org, Takashi Iwai <tiwai@suse.com>,
- Tzung-Bi Shih <tzungbi@google.com>, Dylan Reid <dgreid@chromium.org>,
- tzungbi@chromium.org, Jonas Karlman <jonas@kwiboo.se>,
- Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org,
- Jernej Skrabec <jernej.skrabec@siol.net>,
- Douglas Anderson <dianders@chromium.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Daniel Vetter <daniel@ffwll.ch>
+ Jerome Brunet <jbrunet@baylibre.com>, Takashi Iwai <tiwai@suse.com>,
+ linux-rockchip@lists.infradead.org, dgreid@chromium.org,
+ Cheng-Yi Chiang <cychiang@chromium.org>, tzungbi@chromium.org,
+ Jonas Karlman <jonas@kwiboo.se>, Russell King <rmk+kernel@armlinux.org.uk>,
+ Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
+ linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ dianders@chromium.org, Daniel Vetter <daniel@ffwll.ch>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, Sep 13, 2019 at 5:33 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
->
-> Hi,
->
-> On 09/09/2019 15:53, Mark Brown wrote:
-> > On Mon, Sep 09, 2019 at 09:37:14AM +0200, Neil Armstrong wrote:
-> >
-> >> I'd like some review from ASoC people and other drm bridge reviewers,
-> >> Jernej, Jonas & Andrzej.
-> >
-> >> Jonas could have some comments on the overall patchset.
-> >
-> > The ASoC bits look basically fine, I've gone ahead and applied
-> > patch 1 as is since we're just before the merge window and that
-> > way we reduce potential cross tree issues.  I know there's a lot
-> > of discussion on the DRM side about how they want to handle
-> > things with jacks, I'm not 100% sure what the latest thinking is
-> > there.
-> >
->
-> Thanks Mark.
->
->
-> Cheng-Yi can you resent this serie without the already applied
-> first patch with Jernej, Jonas, and Jerome Brunet <jbrunet@baylibre.com> CCed ?
+This patch series supports HDMI jack reporting on RK3288, which uses
+DRM dw-hdmi driver and hdmi-codec codec driver.
 
-Hi Neil,
-Got it. Sorry for the late reply.
-I will resend this series without the first patch, based on latest
-drm-misc-next, and cc the folks.
-Thanks!
+The previous discussion about reporting jack status using hdmi-notifier
+and drm_audio_component is at
 
->
-> Thanks,
-> Neil
->
+https://lore.kernel.org/patchwork/patch/1083027/
+
+The new approach is to use a callback mechanism that is
+specific to hdmi-codec.
+
+The dependent change on hdmi-codec.c
+
+https://patchwork.kernel.org/patch/11047447
+
+has been picked up by Mark Brown in ASoC tree for-5.4 branch.
+
+Changes from v5 to v6:
+
+1. Remove the patch for sound/soc/codecs/hdmi-codec.c because it is accepted.
+2. Rebase the rest of patches based on drm-misc-next tree.
+
+Cheng-Yi Chiang (4):
+  drm: bridge: dw-hdmi: Report connector status using callback
+  drm: dw-hdmi-i2s: Use fixed id for codec device
+  ASoC: rockchip_max98090: Add dai_link for HDMI
+  ASoC: rockchip_max98090: Add HDMI jack support
+
+ .../drm/bridge/synopsys/dw-hdmi-i2s-audio.c   |  13 +-
+ drivers/gpu/drm/bridge/synopsys/dw-hdmi.c     |  41 ++++++-
+ include/drm/bridge/dw_hdmi.h                  |   4 +
+ sound/soc/rockchip/Kconfig                    |   3 +-
+ sound/soc/rockchip/rk3288_hdmi_analog.c       |   3 +-
+ sound/soc/rockchip/rockchip_max98090.c        | 116 ++++++++++++++----
+ 6 files changed, 153 insertions(+), 27 deletions(-)
+
+-- 
+2.23.0.237.gc6a4ce50a0-goog
+
 
 _______________________________________________
 Linux-rockchip mailing list
