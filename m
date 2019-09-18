@@ -2,86 +2,89 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F60CB5F2A
-	for <lists+linux-rockchip@lfdr.de>; Wed, 18 Sep 2019 10:27:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B79F0B5F5D
+	for <lists+linux-rockchip@lfdr.de>; Wed, 18 Sep 2019 10:44:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d1Irn7M0yWFLMZb7iuNrKqO0eHBHrKWSxPkD8vqdjLg=; b=r29exppETipTn2
-	222sexMitadbxjylZcyYOiATKUcZMVEdH/uwuDmbTxl+i9DFrcd9hOT3ukNGlfgweWTakBNrxk0+x
-	D8Bgf9bhAGDjguPSwYfLfH5j3LLhoZtxSkHTuHQOzVvZVmeuBY0616d5sS9vkl5Z10D/Iyd9EAJ97
-	COiUkq03S25yNecvmiKtI45geUcP7DFY6Pc2yfNvIjHT3WAkkcEsRBVbS+aa2/SLwbs/13MsAl089
-	weqzzBtliAj7Idzqj3CWykPUsiCgNh7TlmVcfunzWp3MJkzmiflJDSK7Nk+E10kJdCmgeVinkepyx
-	TjT2MGFD2C6IgHJCk2dQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:References:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=BB4em4PFx4P/srVdBNWZiTWNx4xusZUI4yZUIznDj3k=; b=umq3pXB07VCOpult6oP9H2DiY2
+	TBhkRaE86egHAJDYebmPRO4atO9CBW2zbI+L/JZC3UCW8PxYST2gUgLsKnFMUCGindyGLNfb7tlav
+	IELfRaSIn2+MQCbn2VrI6BA13kTMxa5y4oBOycYufhZzq9OMqo5liXzDGlQ3v7R6bjvW1WTMdLCnP
+	0XvBnIM3aCsPfz1sSdhb0orKSnueaGE3G3tZyI0LiW3FJLUeZ4UL0FW42l+zPv8it3aN9Xs41T7Pw
+	XaWPGLtH9u45FMy6EEHULCCPPv8+haBeOkEqAvdbMpl5zndmUU8b6zX69ncmDO+ecXPaNyLn3H06p
+	MzAu4YRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAVIr-0006TG-Ri; Wed, 18 Sep 2019 08:27:10 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iAVZ7-0003t9-GQ; Wed, 18 Sep 2019 08:43:57 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAVHc-0005IF-2B
- for linux-rockchip@lists.infradead.org; Wed, 18 Sep 2019 08:25:55 +0000
-Received: by mail-pg1-x542.google.com with SMTP id a24so3591360pgj.2
- for <linux-rockchip@lists.infradead.org>; Wed, 18 Sep 2019 01:25:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=58QuMxmjHlqsWVtyFBQnvBpwo6+B1q1GdfYt1s4m2qE=;
- b=QTaH6GH5UguvXVEDbNSlyuomPAH87bYVOWqCH6McKhsGTYK/xYVHQgKnh5a5Tw0WNQ
- e1ZPFnuD/Y0yn4S2mKnoxDRgTiB9Z50mHQ31aQMtM2MYHFdO9az/vg2dsYmvd6pDZ634
- kY66oETu+TYVAH5TtMe6QmFRkiCAUAqTvr8BY=
+ id 1iAVZ3-0003sV-Ci
+ for linux-rockchip@lists.infradead.org; Wed, 18 Sep 2019 08:43:55 +0000
+Received: by mail-wr1-x444.google.com with SMTP id a11so5992057wrx.1
+ for <linux-rockchip@lists.infradead.org>; Wed, 18 Sep 2019 01:43:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:references:user-agent:to:cc:subject:in-reply-to:date
+ :message-id:mime-version;
+ bh=Es/bmU3c9XGaRtzCiMLIVrPNjr9MNI0eTxg3xMnbUYc=;
+ b=S2FCcJGdZtO1gO4SQHnOHraw90NxGk+ySbB9OIxE1vfxheAusATdTaw/syxuwdGWQI
+ 92sF2Nr9TgHxs7w9AuZJMkw35AR0EvurNbRLvbFBj0IhXv8+CtvAmZEn4/1JRD/sQl+7
+ tNMt7J5QEAw5awSGxUcQ8/C/fS2112pJR0ilZf81yL8vBnGNaugVKY9xmUmAErDUp2Sh
+ VlGTEU7rvD1DW5sD4FehEg9RXAfUKfdQ8YV5iBOpMAeohp1oWwhAsgleYcPMPeSmZEgO
+ sl+eIrDHwIH3Ei22m0zaGRvVaJHEvtf5PLgIY9dlvf0pyHhxZ0Kxb/8q3jOurf9y3lOh
+ +X0Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=58QuMxmjHlqsWVtyFBQnvBpwo6+B1q1GdfYt1s4m2qE=;
- b=PbXcQCK69HXnpImyv8+pcDpefZe/2Ah2z9c7jlvVb3n3fW4/5sHJbihMb+hEYIn7k1
- L3QCMZ623zI5zhSQZtVaTubxzDK27gNbMa93RtRDNdJvMzmgo0X7EZD6G2u8HxP/rIqw
- 3O1TnFB+IMgOlrRpLB0gD5tWxU1gq4Z1kONG/ui5D1tmVp/+c3SXskxnEzJ1sth9Pcd8
- U85gNxk08cer2+g+ewbTR6LiJR5gBqJEgLT6jvB1fe7ejhbhcaKwvnG1Yh+dlyI6iDff
- VXCikSDUspkmiOv9l7B0bUikCfsfXp+CoAmZJKxyB7TCIfuYadpGbUJi9P9fdIWoeDNV
- wE9w==
-X-Gm-Message-State: APjAAAVrBSos0WC/8YPN8NiAJD8A3E4FmZAFvy2D+T+fw+uYMIK80ads
- Tt4hHLomZ5+lzNFu2djgUi6Ilw==
-X-Google-Smtp-Source: APXvYqxHmdR5xUtBiMVc0Mnxrw8HNJTIpU4I57BZIUZlNw5Ee/93dqanNwaTMuLFn6EQAArQLOrQxQ==
-X-Received: by 2002:a63:1a5a:: with SMTP id a26mr2870744pgm.178.1568795151570; 
- Wed, 18 Sep 2019 01:25:51 -0700 (PDT)
-Received: from localhost ([2401:fa00:1:10:79b4:bd83:e4a5:a720])
- by smtp.gmail.com with ESMTPSA id v44sm13357519pgn.17.2019.09.18.01.25.47
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 18 Sep 2019 01:25:50 -0700 (PDT)
-From: Cheng-Yi Chiang <cychiang@chromium.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v6 4/4] ASoC: rockchip_max98090: Add HDMI jack support
-Date: Wed, 18 Sep 2019 16:25:00 +0800
-Message-Id: <20190918082500.209281-5-cychiang@chromium.org>
-X-Mailer: git-send-email 2.23.0.237.gc6a4ce50a0-goog
-In-Reply-To: <20190918082500.209281-1-cychiang@chromium.org>
+ h=x-gm-message-state:from:references:user-agent:to:cc:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=Es/bmU3c9XGaRtzCiMLIVrPNjr9MNI0eTxg3xMnbUYc=;
+ b=XNaysbLfPJDp/jFIfvwr6fu0nlWEfG29Ug2VufM0r2KP9yGUFWey6ns8vPsHxF6AjM
+ HVlY3joRNRKLZAQWAVWt8zb97vQ+PoIYpkX0Z/1qz5VM0zs3U/JHBx9aSEf7+28lqqW/
+ amJemYOeXgVEP5wj1pAxy+6mcD40bw5PZGIZKft5VBnNiHIxqIeF2UhA3mMnwSWpERkr
+ KyeJxKIlE6YVg0+x+LH4P1drgrp7teVPEqQGG8dq9hYXrQ7mwAfL5H4IxMpGRfinwzz/
+ LIPg7ozYp8RR8Zv7l91/5KZpqPwxyyBlWYYnglWMwEBDP39iPvT1D5bCzaeO5JVnOv1b
+ mLdA==
+X-Gm-Message-State: APjAAAVlxP9Y41R1fL9vm2qYki103uj0Mkm7LJhLV36xx03OB/mwEltU
+ U2y5Cji/Q3vmM6Jxd64tGmE10w==
+X-Google-Smtp-Source: APXvYqz3Kpju44v9NdaCUS71dFKfNZ3q3V7oya0OqrnOC9uxnDdFSkv5zrOWWA/QCE/CJM9pIPUidg==
+X-Received: by 2002:a5d:52c8:: with SMTP id r8mr2192409wrv.256.1568796231510; 
+ Wed, 18 Sep 2019 01:43:51 -0700 (PDT)
+Received: from localhost (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id q10sm9774982wrd.39.2019.09.18.01.43.50
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 18 Sep 2019 01:43:50 -0700 (PDT)
+From: Jerome Brunet <jbrunet@baylibre.com>
+X-Google-Original-From: Jerome Brunet <jbrunet@starbuckisacylon.baylibre.com>
 References: <20190918082500.209281-1-cychiang@chromium.org>
+ <20190918082500.209281-3-cychiang@chromium.org>
+User-agent: mu4e 1.3.1; emacs 26.2
+To: Cheng-Yi Chiang <cychiang@chromium.org>
+Subject: Re: [PATCH v6 2/4] drm: dw-hdmi-i2s: Use fixed id for codec device
+In-reply-to: <20190918082500.209281-3-cychiang@chromium.org>
+Date: Wed, 18 Sep 2019 10:43:49 +0200
+Message-ID: <1j7e663sfu.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_012552_315064_7D624D94 
-X-CRM114-Status: GOOD (  12.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190918_014353_436918_FCA00B40 
+X-CRM114-Status: GOOD (  16.13  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,13 +99,12 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: alsa-devel@alsa-project.org, Heiko Stuebner <heiko@sntech.de>,
  Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, Liam Girdwood <lgirdwood@gmail.com>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
  Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jerome Brunet <jbrunet@baylibre.com>, Takashi Iwai <tiwai@suse.com>,
- linux-rockchip@lists.infradead.org, dgreid@chromium.org,
- Cheng-Yi Chiang <cychiang@chromium.org>, tzungbi@chromium.org,
- Jonas Karlman <jonas@kwiboo.se>, Russell King <rmk+kernel@armlinux.org.uk>,
+ Takashi Iwai <tiwai@suse.com>, linux-rockchip@lists.infradead.org,
+ dgreid@chromium.org, tzungbi@chromium.org, Jonas Karlman <jonas@kwiboo.se>,
+ Liam Girdwood <lgirdwood@gmail.com>, Russell King <rmk+kernel@armlinux.org.uk>,
  Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
  linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
  dianders@chromium.org, Daniel Vetter <daniel@ffwll.ch>
@@ -111,70 +113,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-In machine driver, create a jack and let hdmi-codec report jack status.
 
-Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
----
- sound/soc/rockchip/Kconfig             |  3 ++-
- sound/soc/rockchip/rockchip_max98090.c | 20 ++++++++++++++++++++
- 2 files changed, 22 insertions(+), 1 deletion(-)
+On Wed 18 Sep 2019 at 10:24, Cheng-Yi Chiang <cychiang@chromium.org> wrote:
 
-diff --git a/sound/soc/rockchip/Kconfig b/sound/soc/rockchip/Kconfig
-index b43657e6e655..d610b553ea3b 100644
---- a/sound/soc/rockchip/Kconfig
-+++ b/sound/soc/rockchip/Kconfig
-@@ -40,9 +40,10 @@ config SND_SOC_ROCKCHIP_MAX98090
- 	select SND_SOC_ROCKCHIP_I2S
- 	select SND_SOC_MAX98090
- 	select SND_SOC_TS3A227E
-+	select SND_SOC_HDMI_CODEC
- 	help
- 	  Say Y or M here if you want to add support for SoC audio on Rockchip
--	  boards using the MAX98090 codec, such as Veyron.
-+	  boards using the MAX98090 codec and HDMI codec, such as Veyron.
- 
- config SND_SOC_ROCKCHIP_RT5645
- 	tristate "ASoC support for Rockchip boards using a RT5645/RT5650 codec"
-diff --git a/sound/soc/rockchip/rockchip_max98090.c b/sound/soc/rockchip/rockchip_max98090.c
-index c82948e383da..c81c4acda917 100644
---- a/sound/soc/rockchip/rockchip_max98090.c
-+++ b/sound/soc/rockchip/rockchip_max98090.c
-@@ -134,6 +134,25 @@ enum {
- 	DAILINK_HDMI,
- };
- 
-+static struct snd_soc_jack rk_hdmi_jack;
-+
-+static int rk_hdmi_init(struct snd_soc_pcm_runtime *runtime)
-+{
-+	struct snd_soc_card *card = runtime->card;
-+	struct snd_soc_component *component = runtime->codec_dai->component;
-+	int ret;
-+
-+	/* enable jack detection */
-+	ret = snd_soc_card_jack_new(card, "HDMI Jack", SND_JACK_LINEOUT,
-+				    &rk_hdmi_jack, NULL, 0);
-+	if (ret) {
-+		dev_err(card->dev, "Can't new HDMI Jack %d\n", ret);
-+		return ret;
-+	}
-+
-+	return hdmi_codec_set_jack_detect(component, &rk_hdmi_jack);
-+}
-+
- /* max98090 and HDMI codec dai_link */
- static struct snd_soc_dai_link rk_dailinks[] = {
- 	[DAILINK_MAX98090] = {
-@@ -151,6 +170,7 @@ static struct snd_soc_dai_link rk_dailinks[] = {
- 		.ops = &rk_aif1_ops,
- 		.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
- 			SND_SOC_DAIFMT_CBS_CFS,
-+		.init = rk_hdmi_init,
- 		SND_SOC_DAILINK_REG(hdmi),
- 	}
- };
--- 
-2.23.0.237.gc6a4ce50a0-goog
+> The problem of using auto ID is that the device name will be like
+> hdmi-audio-codec.<id number>.auto.
+>
+> The number might be changed when there are other platform devices being
+> created before hdmi-audio-codec device.
+> Use a fixed name so machine driver can set codec name on the DAI link.
+>
+> Using the fixed name should be fine because there will only be one
+> hdmi-audio-codec device.
+
+While this is true all platforms we know of (I suppose), It might not be
+the case later on. I wonder if making such assumption is really
+desirable in a code which is used by quite a few different platforms.
+
+Instead of trying to predict what the device name will be, can't you just
+query it in your machine driver ? Using a device tree phandle maybe ?
+
+It is quite usual to set the dai links this way, "simple-card" is a good
+example of this.
+
+>
+> Fix the codec name in rockchip rk3288_hdmi_analog machine driver.
+>
+> Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+> ---
+>  drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c | 2 +-
+>  sound/soc/rockchip/rk3288_hdmi_analog.c             | 3 ++-
+>  2 files changed, 3 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+> index d7e65c869415..86bd482b9f94 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+> @@ -193,7 +193,7 @@ static int snd_dw_hdmi_probe(struct platform_device *pdev)
+>  
+>  	memset(&pdevinfo, 0, sizeof(pdevinfo));
+>  	pdevinfo.parent		= pdev->dev.parent;
+> -	pdevinfo.id		= PLATFORM_DEVID_AUTO;
+> +	pdevinfo.id		= PLATFORM_DEVID_NONE;
+>  	pdevinfo.name		= HDMI_CODEC_DRV_NAME;
+>  	pdevinfo.data		= &pdata;
+>  	pdevinfo.size_data	= sizeof(pdata);
+> diff --git a/sound/soc/rockchip/rk3288_hdmi_analog.c b/sound/soc/rockchip/rk3288_hdmi_analog.c
+> index 767700c34ee2..8286025a8747 100644
+> --- a/sound/soc/rockchip/rk3288_hdmi_analog.c
+> +++ b/sound/soc/rockchip/rk3288_hdmi_analog.c
+> @@ -15,6 +15,7 @@
+>  #include <linux/gpio.h>
+>  #include <linux/of_gpio.h>
+>  #include <sound/core.h>
+> +#include <sound/hdmi-codec.h>
+>  #include <sound/jack.h>
+>  #include <sound/pcm.h>
+>  #include <sound/pcm_params.h>
+> @@ -142,7 +143,7 @@ static const struct snd_soc_ops rk_ops = {
+>  SND_SOC_DAILINK_DEFS(audio,
+>  	DAILINK_COMP_ARRAY(COMP_EMPTY()),
+>  	DAILINK_COMP_ARRAY(COMP_CODEC(NULL, NULL),
+> -			   COMP_CODEC("hdmi-audio-codec.2.auto", "i2s-hifi")),
+> +			   COMP_CODEC(HDMI_CODEC_DRV_NAME, "i2s-hifi")),
+>  	DAILINK_COMP_ARRAY(COMP_EMPTY()));
+>  
+>  static struct snd_soc_dai_link rk_dailink = {
 
 
 _______________________________________________
