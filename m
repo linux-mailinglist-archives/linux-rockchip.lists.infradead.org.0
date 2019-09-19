@@ -2,61 +2,91 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87796B7840
-	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Sep 2019 13:11:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74336B7890
+	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Sep 2019 13:37:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xE9Absxrg24bepyXx1+SakO6W0tC7d+b+/G4WKdEBHo=; b=p9dfmzCLSAhiaJ
-	IbtndSVPxPuUIYTABVKGsGOCbRmVKuYLv6gWD0vxKY2ua9ESjxATXwg+LxNsxQO3x5zESFxsc1UMY
-	VKJUXlWmLHdECJaxqXt1XCzEcNWGX4e/XWyAuT2keWNElimOwsH4JsfBFzKkzTVsM2xg/CPU+ykEw
-	9WSM2Rc7tRrEu3vejK26UykGnP8k9zLfgyzsS3ZrALUNE7ikuj6nMSoxaXLnwK9kHbfXUEQfplvPz
-	DWAe8WCODGVMBODAjkGJhT2Tz4PA6Yj0j6EI2ul5YrjUce8HAOVmNqHjrHqkvyetIptAsc2drF04h
-	CNLgJkc43bdG9VnhAOxA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:References:In-Reply-To:Message-ID:MIME-Version:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=+/RAtFxWu+AQlvTVGtwuE7Q6w25Nx+cJm5RC4ujHX4Q=; b=oVv15W5RIBt6B3lJI3DzTUXkE
+	NU0znCci4KlrRMjIyyBdOhw47jXyKuc7E96YlbRdmxWAbyXbqys5duosB1lqb97gQjGISgOag9Zlr
+	cQ3A0zGJUf2Zy0YHXb6GiuYOze/7hcNPqjFu+fxI8vUmBDcT1IeSmDy+m+G9Qro3iBHxCS1siKtGU
+	srNkHTYsiPXi2aElI8WP5yOr4NhxivCZZq6SAD6CAus1K+R73pqsLv7i9B00gqH4uqUGqSNJqsX2e
+	xV+DUABn3yegpakjqDnFpFTH9kFnwwIjCGA1c9MesZ+5BbaARAyCushPQfWqjMWIRnP5C0giziK8Z
+	Lcij2ubBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAuLb-0005Ek-DL; Thu, 19 Sep 2019 11:11:39 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iAukS-000632-Ft; Thu, 19 Sep 2019 11:37:21 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAuLJ-00052l-Ve
- for linux-rockchip@lists.infradead.org; Thu, 19 Sep 2019 11:11:23 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1iAuLF-0001IP-5b; Thu, 19 Sep 2019 13:11:17 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1iAuLD-0002qQ-8O; Thu, 19 Sep 2019 13:11:15 +0200
-Date: Thu, 19 Sep 2019 13:11:15 +0200
-From: oUwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- David Wu <david.wu@rock-chips.com>
-Subject: Re: [PATCH] pwm: rockchip: simplify rockchip_pwm_get_state()
-Message-ID: <20190919111115.5oraof2bdl4627xv@pengutronix.de>
-References: <20190919091728.24756-1-linux@rasmusvillemoes.dk>
+ id 1iAujV-0005oO-3E; Thu, 19 Sep 2019 11:36:22 +0000
+Received: by mail-wm1-x344.google.com with SMTP id i16so4071777wmd.3;
+ Thu, 19 Sep 2019 04:36:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:mime-version:message-id:in-reply-to
+ :references:user-agent:content-transfer-encoding;
+ bh=D1vZLJBNdwLJcR15QNa7GnTaPz3ykDl4G6RRyeU9kl8=;
+ b=o07Tyjqghx9bs4O1iIu8fJy1k1OGl9v1WCdYVPCjNq0JdKmP4e1MEo5wRiqhJ/8UL9
+ RjiZGh+06tDYEH6Dw5NCv2qZRPOQLxH6bTSA8YX1B3ZH6X23poIDQP/AVDqASyckDVHK
+ 4XLN2q/KKHJylC1wS3iSq9wmaCp+L+mVR9Rx476REzIRn6Uo+ug/edqZB/yHMa8StuoV
+ tdX0Z5MJJIZk9o10FE6mfqdfKswwKzsQca40Yhm5xsqfIiTlwr9P46t1vpyumeccm2SS
+ gzlwzeq+U6hSdQRsVsR0nRnc5EbJB2HlZL5Z/Uf7q0JGYkIW0XDPSE+NI8w/pQiKH8MA
+ g8BQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
+ :in-reply-to:references:user-agent:content-transfer-encoding;
+ bh=D1vZLJBNdwLJcR15QNa7GnTaPz3ykDl4G6RRyeU9kl8=;
+ b=FGoPUaSbGFV9ZIT/dR6Dn+SD8L2BT2rOxrmPQfcaBwvnT2X6DSlavG+N+J704RySaE
+ fWVHT6Mgmfzv1DiocGTi6g/EmZUwfbF9mcu5Uy48xIRfg38yDnHW0aTU2PxxhTNTfL0U
+ fcLOvknRtI2YkJrnP5ViJzKHSril4WO4J1QWuNQ+t9XanJo3Pz7sBGPbjbKtA719AnAV
+ QJH9uOf6VA+5DiK4aD8eRlqzWn8SRUxqeFCGr0+4eQl9wTIwHva/nYj3rMOkuN3RhFlj
+ 4UOQex3ym19YwDHw2WzPajERguFaav/24mCaO05Yw/CpU8fIHqHMWKwvNVSlx59WLNLJ
+ NpmQ==
+X-Gm-Message-State: APjAAAW9kawwTFfOvkEJxTp574AlX8zToUHDChI5G1r7ruwLpvtm49BY
+ ySAprul5FAjKtbsOWX+e4OU=
+X-Google-Smtp-Source: APXvYqyAwy3PFFQNcIkSusblMU+xvYWCWWPwKHOT0G+F5vcXxm7WOivcwFDk2Osce2RwLCZRG4QFiw==
+X-Received: by 2002:a1c:2d11:: with SMTP id t17mr2521207wmt.147.1568892979432; 
+ Thu, 19 Sep 2019 04:36:19 -0700 (PDT)
+Received: from localhost ([92.59.185.54])
+ by smtp.gmail.com with ESMTPSA id d193sm8701719wmd.0.2019.09.19.04.36.17
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 19 Sep 2019 04:36:18 -0700 (PDT)
+From: Vicente Bergas <vicencb@gmail.com>
+To: Felipe Balbi <balbi@kernel.org>
+Subject: Re: [PATCH] usb: dwc3: Add shutdown to
+ =?iso-8859-1?Q?platform=5Fdriver?=
+Date: Thu, 19 Sep 2019 13:36:17 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190919091728.24756-1-linux@rasmusvillemoes.dk>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-rockchip@lists.infradead.org
+Message-ID: <e226af9a-3719-4641-9f8c-402e8de7b058@gmail.com>
+In-Reply-To: <20190817174140.6394-1-vicencb@gmail.com>
+References: <4d18d4f7-a00e-bd60-6361-51054eba3bca@arm.com>
+ <20190817174140.6394-1-vicencb@gmail.com>
+User-Agent: Trojita
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_041122_112485_80065A84 
-X-CRM114-Status: GOOD (  12.34  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190919_043621_166700_B0CCC454 
+X-CRM114-Status: GOOD (  15.22  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (vicencb[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,57 +99,45 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Thierry Reding <thierry.reding@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Matthias Brugger <mbrugger@suse.com>, Heiko Stuebner <heiko@sntech.de>,
+ MarcZyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-usb@vger.kernel.org, Will Deacon <will.deacon@arm.com>,
+ linux-rockchip@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, Sep 19, 2019 at 11:17:27AM +0200, Rasmus Villemoes wrote:
-> The way state->enabled is computed is rather convoluted and hard to
-> read - both branches of the if() actually do the exact same thing. So
-> remove the if(), and further simplify "<boolean condition> ? true :
-> false" to "<boolean condition>".
-> =
-
-> Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-> ---
-> I stumbled on this while trying to understand how the pwm subsystem
-> works. This patch is a semantic no-op, but it's also possible that,
-> say, the first branch simply contains a "double negative" so either
-> the !=3D should be =3D=3D or the "false : true" should be "true : false".
-
-The change looks obviously right, it's a noop.
-
-I share your doubts however. The construct was introduced in commit =
-
-831b2790507b ("pwm: rockchip: Use same PWM ops for each IP") by David
-Wu.
-
-Before there were rockchip_pwm_get_state_v1 for the supports_polarity =3D
-false case and rockchip_pwm_get_state_v2 for supports_polarity =3D true.
-
-In both state->enabled was assigned true if ((val & enable_conf) =3D=3D
-enable_conf). So I assume everything is fine.
-
-A confirmation by David would be great though.
-
-As a side note: Is there publicly available documentation for this IP?
-If a link were added to the driver's header we could check easily
-ourselves.
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+UGluZz8KCk9uIFNhdHVyZGF5LCBBdWd1c3QgMTcsIDIwMTkgNzo0MTo0MCBQTSBDRVNULCBWaWNl
+bnRlIEJlcmdhcyB3cm90ZToKPiBPdGhlcndpc2UgdGhlIGRldmljZSBrZWVwcyB3cml0aW5nIHRv
+IG1lbW9yeSBhZnRlciBrZXhlYyBhbmQgZGlzdHVyYnMKPiB0aGUgbmV4dCBrZXJuZWwuCj4KPiBT
+aWduZWQtb2ZmLWJ5OiBWaWNlbnRlIEJlcmdhcyA8dmljZW5jYkBnbWFpbC5jb20+Cj4gLS0tCj4g
+IGRyaXZlcnMvdXNiL2R3YzMvZHdjMy1vZi1zaW1wbGUuYyB8IDYgKysrKysrCj4gIDEgZmlsZSBj
+aGFuZ2VkLCA2IGluc2VydGlvbnMoKykKPgo+IEhpIEZlbGlwZSwgUm9iaW4sCj4gdGhpcyB2ZXJz
+aW9uIGNhbGxzICdyZW1vdmUnIGZyb20gJ3NodXRkb3duJyBpbnN0ZWFkIG9mIGp1c3QgYXNzZXJ0
+aW5nCj4gYSByZXNldCBiZWNhdXNlIGl0IGxvb2tzIGxpa2UgYSBjbGVhbmVyIHdheSB0byBzdG9w
+IHRoZSBkZXZpY2UuCj4KPiBDYWxsaW5nIHJlbW92ZSBmcm9tIHNodXRkb3duIGluIGNvcmUuYyBp
+bnN0ZWFkIG9mIGR3YzMtb2Ytc2ltcGxlLmMgZG9lcyBub3QKPiBmaXggdGhlIGlzc3VlIGVpdGhl
+ci4KPgo+IEl0IGhhcyBiZWVuIHRlc3RlZCBvbiB0aGUgc2FwcGhpcmUgYm9hcmQsIGEgUkszMzk5
+IHBsYXRmb3JtLgo+Cj4gUmVnYXJkcywKPiAgIFZpY2Vuw6cuCj4KPiBkaWZmIC0tZ2l0IGEvZHJp
+dmVycy91c2IvZHdjMy9kd2MzLW9mLXNpbXBsZS5jIAo+IGIvZHJpdmVycy91c2IvZHdjMy9kd2Mz
+LW9mLXNpbXBsZS5jCj4gaW5kZXggYmRhYzNlN2Q3YjE4Li5kNWZkNDVjNjQ5MDEgMTAwNjQ0Cj4g
+LS0tIGEvZHJpdmVycy91c2IvZHdjMy9kd2MzLW9mLXNpbXBsZS5jCj4gKysrIGIvZHJpdmVycy91
+c2IvZHdjMy9kd2MzLW9mLXNpbXBsZS5jCj4gQEAgLTEzMyw2ICsxMzMsMTEgQEAgc3RhdGljIGlu
+dCBkd2MzX29mX3NpbXBsZV9yZW1vdmUoc3RydWN0IAo+IHBsYXRmb3JtX2RldmljZSAqcGRldikK
+PiAgCXJldHVybiAwOwo+ICB9Cj4gIAo+ICtzdGF0aWMgdm9pZCBkd2MzX29mX3NpbXBsZV9zaHV0
+ZG93bihzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICt7Cj4gKwlkd2MzX29mX3NpbXBs
+ZV9yZW1vdmUocGRldik7Cj4gK30KPiArCj4gIHN0YXRpYyBpbnQgX19tYXliZV91bnVzZWQgCj4g
+ZHdjM19vZl9zaW1wbGVfcnVudGltZV9zdXNwZW5kKHN0cnVjdCBkZXZpY2UgKmRldikKPiAgewo+
+ICAJc3RydWN0IGR3YzNfb2Zfc2ltcGxlCSpzaW1wbGUgPSBkZXZfZ2V0X2RydmRhdGEoZGV2KTsK
+PiBAQCAtMTkwLDYgKzE5NSw3IEBAIE1PRFVMRV9ERVZJQ0VfVEFCTEUob2YsIG9mX2R3YzNfc2lt
+cGxlX21hdGNoKTsKPiAgc3RhdGljIHN0cnVjdCBwbGF0Zm9ybV9kcml2ZXIgZHdjM19vZl9zaW1w
+bGVfZHJpdmVyID0gewo+ICAJLnByb2JlCQk9IGR3YzNfb2Zfc2ltcGxlX3Byb2JlLAo+ICAJLnJl
+bW92ZQkJPSBkd2MzX29mX3NpbXBsZV9yZW1vdmUsCj4gKwkuc2h1dGRvd24JPSBkd2MzX29mX3Np
+bXBsZV9zaHV0ZG93biwKPiAgCS5kcml2ZXIJCT0gewo+ICAJCS5uYW1lCT0gImR3YzMtb2Ytc2lt
+cGxlIiwKPiAgCQkub2ZfbWF0Y2hfdGFibGUgPSBvZl9kd2MzX3NpbXBsZV9tYXRjaCwKCgpfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hp
+cCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
