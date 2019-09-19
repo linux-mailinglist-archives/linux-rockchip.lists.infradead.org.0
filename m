@@ -2,80 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D9D1B6D3D
-	for <lists+linux-rockchip@lfdr.de>; Wed, 18 Sep 2019 22:08:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55958B72A0
+	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Sep 2019 07:29:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qk12j9TBwy4b9FhfF9KhHSnK10BESCPZpk1a969+jlM=; b=SEwQfh33JAiRTc
-	kd8SIWt9eVrRHqANdWlkHd27/Pd14Hd1Nze175fmqRpgpUAqfZOxZ9j90MKPZPZx9Y/yZHPYYTbS5
-	viHDIfsk3MeDqnpvPS6O/cveqQa7E+XNfZ//eznNF1Mg2hCCezVqOorOZ8tLSeClje7L4C7CAWh6D
-	EiaObOZB/i+A6p7+xvYZijXa/GtUl2d77N4q48jL0yzgo2sbfT0Yz2HD2HRqsTvUUh7UEXYAogsk0
-	NBFpXE/oCP519kVk0Pn2dJXy9k3bVBBCC2++uzumYyQRsFWWdrW8ryYg1bG9kECBrJOyIf7G9+RVu
-	tGe9c7O1cX7FVungCtbA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=h79Lg2j3fgUZAsSJRHxdfwpWBMKs/rxtPlj32FpB7ac=; b=DnblCvP9tv/gc/
+	QcjhsF+gun1FwsIOuRYcq27EJzQdGz/hLQv+OeFBTn6yBDZceYl36kL8JMNOUDCrEdQ5lsuU+Vh4a
+	oB3JF9cmKheKDobw7uYlvqqV/z8RcLga+XStSsC0CbpVkBut4x+C+hOf9aKWD/b/SF2OfrEicHpmW
+	92S/e+/Ga9BUX6B0cjS6NlIs5d/3PoqLsXvP5GU/DRJ2RLtH3aMdjG14HwEOVhH7OyCAhcfF2mHSa
+	lXZoslsDmt42B0aGghsvKoca0ZdFaBzT/8D4QFPdVdlRaPVDStdkXnLLprczw1oI1EfiqSEdWV61u
+	nnqhPDlor7yjrERPOB2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAgF1-0007zq-MN; Wed, 18 Sep 2019 20:07:55 +0000
-Received: from mail-yb1-xb42.google.com ([2607:f8b0:4864:20::b42])
+	id 1iAp03-00059j-6J; Thu, 19 Sep 2019 05:29:03 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAgEn-0007mO-CS
- for linux-rockchip@lists.infradead.org; Wed, 18 Sep 2019 20:07:43 +0000
-Received: by mail-yb1-xb42.google.com with SMTP id y6so457167ybq.12
- for <linux-rockchip@lists.infradead.org>; Wed, 18 Sep 2019 13:07:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=8wRVg7Xp6X9fH0kFWOO4JmqVs8YGObxnFzNWoZ7A1I4=;
- b=JQuBapSX6N+q1mvLBlG+ko3vJHHAReQ7+RKU3yLX8PMtWnaVC4/ePwCDnv7GNJlyu7
- 5ufKPZlQCzxQ9sW8GoVcTdN27S1aYjJxUATQvTcg7SeRZX0lQiBzGTGnUvUp3OywcLL6
- DwiqhbAREYbkAySZMFBtgEhdPeLwqOCPvoQwEKkMNomCPbtDc9pMmUvVAVmUAO+q4eM/
- 1S8XNWIN8qsRv6pVHT+mU4v/LbO3hi/oO1q18koj2TDm4uLVJz2aaOOQFxwrlYQd663U
- RJa1Ph7YnozA8evZr52kZ9iUmxvSDyuRh7qlvLdxFop0HltioB8rvx/7+Uq2nOO90V7S
- O/8w==
+ id 1iAozk-0004wy-K2
+ for linux-rockchip@lists.infradead.org; Thu, 19 Sep 2019 05:28:46 +0000
+Received: by mail-pl1-x643.google.com with SMTP id b10so1060871plr.4
+ for <linux-rockchip@lists.infradead.org>; Wed, 18 Sep 2019 22:28:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=E8KFyd/TP6XKCfQ2oRClCpzfGJuYKDTzZWJ6RMaNc7U=;
+ b=XpIyaEirHSq/r7bNW+OHgSAFA4nLR1NS2ExLkb1HX9sjR961wapQb1OBvviY1rbtlu
+ QrV9Hma5WMowRwq5dKiuIDQrSUmfckih2b5OLxxW3mCBI99/LHD7dMJcGOLQ6prwBQSq
+ sWviVTRlu10qfi+H7BjPBzB1uZS5rYWg+X6q0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=8wRVg7Xp6X9fH0kFWOO4JmqVs8YGObxnFzNWoZ7A1I4=;
- b=OYSJIOkFmQ/LQ7cqtDYyCSPwSZBVbVhHBmxeqHkgfg3AYiZcKBjrquSpON3tuFjkeR
- CwonayBDvTNkq3mJWO5X0Ho36NA3plywulLLNxDc7wP8GcgtHyUZ+uLyF06xOhsKAg88
- LjN+QF4oKiZbADyzuM7ZnGgSfViHG9HcUfRcwQBKcD6gAlK1R2GxmPfbAjo2tEF8WNuj
- YR+a0E2i7LgJLa4f/fItjc/LEavIaRkQ1axv2rkieRmTKJqg7yoVzrSaDmiPA1KR4ukT
- 4IOuRZXhT8hpfmLlsS7nj75DUFyYeduAxrh7JGErrMQ1M1xLdqHZlOWLd4GQ0g0GSDbU
- H3bA==
-X-Gm-Message-State: APjAAAXhDnTV84TsJokYVnR6jZcFl2Dncy9B90R3glolRc5bL+28kmm9
- NnNFzBko/uScKFwzZgTwHJnpog==
-X-Google-Smtp-Source: APXvYqxp93kVw5JZ6ziN8xitJxe4JOB8xsrtmFJlgaaZHb9kWTb2WQcrBfBg/UL18FVpSe/EetmYyg==
-X-Received: by 2002:a25:2e44:: with SMTP id b4mr3154900ybn.9.1568837259968;
- Wed, 18 Sep 2019 13:07:39 -0700 (PDT)
-Received: from rosewood.cam.corp.google.com
- ([2620:0:1013:11:89c6:2139:5435:371d])
- by smtp.gmail.com with ESMTPSA id 207sm1429317ywu.106.2019.09.18.13.07.39
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=E8KFyd/TP6XKCfQ2oRClCpzfGJuYKDTzZWJ6RMaNc7U=;
+ b=Lr6Yo80gDT8cy0i51qmpGQf8AZ0DctIzAITK+uTapGI1d+HU6Egx1zeoGbL4jEhdQ8
+ j8jWdFrL3opjWzy02MqOgDYL6oN7UNAmVfJsYMBXVN5s9bwOT9FcbCgYSw2BX2l3nlYZ
+ xd9g8LdBWobTZWCWat53JB7r6WrgcXtfNCXu+RZ2YXFh9ai4Ke3Z2aV+/iccjHwq3G6r
+ exe4v9oitzDVJQKb5nZrlt5z9utrxJHdlJkpOqOadzAxGlpMoIhncKKh6stvvArzO1Ug
+ sOK7H/++mFKJAmjB3rGw1BprOsaJo4Yhuc+f5iT3jOwX86cI4An+WS2+F4kuaJf/GXhi
+ D4mw==
+X-Gm-Message-State: APjAAAUJpDrpZIZizYwduLBC4RA/o0d3n7XsT7117sXA6891y7aFYEdd
+ zFlsT3zuOujGN3c27Fc+ne7wKQ==
+X-Google-Smtp-Source: APXvYqyXep4j3PxBeU3HcFSA72SjdVCFY3JFDwTX+hv+32+q1l8s4NYodtDu9DB7lZ+aFuZ2ut2P8g==
+X-Received: by 2002:a17:902:7485:: with SMTP id
+ h5mr8110269pll.240.1568870922029; 
+ Wed, 18 Sep 2019 22:28:42 -0700 (PDT)
+Received: from localhost.localdomain ([49.206.200.127])
+ by smtp.gmail.com with ESMTPSA id z20sm5051930pjn.12.2019.09.18.22.28.37
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Sep 2019 13:07:39 -0700 (PDT)
-From: Sean Paul <sean@poorly.run>
-To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v2 2/3] drm: Measure Self Refresh Entry/Exit times to avoid
- thrashing
-Date: Wed, 18 Sep 2019 16:07:29 -0400
-Message-Id: <20190918200734.149876-2-sean@poorly.run>
-X-Mailer: git-send-email 2.23.0.237.gc6a4ce50a0-goog
-In-Reply-To: <20190918200734.149876-1-sean@poorly.run>
-References: <20190918200734.149876-1-sean@poorly.run>
+ Wed, 18 Sep 2019 22:28:41 -0700 (PDT)
+From: Jagan Teki <jagan@amarulasolutions.com>
+To: Heiko Stuebner <heiko@sntech.de>, Levin Du <djw@t-chip.com.cn>,
+ Akash Gajjar <akash@openedev.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH 0/6] arm64: dts: rockchip: ROC-PC fixes
+Date: Thu, 19 Sep 2019 10:58:16 +0530
+Message-Id: <20190919052822.10403-1-jagan@amarulasolutions.com>
+X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_130741_534419_056FF669 
-X-CRM114-Status: GOOD (  21.14  )
+X-CRM114-CacheID: sfid-20190918_222845_085618_2926D591 
+X-CRM114-Status: UNSURE (   7.41  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -98,288 +96,43 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: heiko@sntech.de, linux-rockchip@lists.infradead.org,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Daniel Vetter <daniel.vetter@ffwll.ch>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Sandy Huang <hjc@rock-chips.com>, linux-kernel@vger.kernel.org,
- David Airlie <airlied@linux.ie>, Sean Paul <seanpaul@chromium.org>,
- daniel@ffwll.ch, jekarl@iki.fi, Sean Paul <sean@poorly.run>,
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Jagan Teki <jagan@amarulasolutions.com>,
+ Da Xue <da@lessconfused.com>, linux-amarula@amarulasolutions.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Sean Paul <seanpaul@chromium.org>
+This series is trying to fix the Linux boot and other
+regulators stuff for ROC-RK3399-PC board.
 
-Currently the self refresh idle timer is a const set by the crtc. This
-is fine if the self refresh entry/exit times are well-known for all
-panels used on that crtc. However panels and workloads can vary quite a
-bit, and a timeout which works well for one doesn't work well for
-another.
+patch 1: attach pinctrl to pwm2 pin
 
-In the extreme, if the timeout is too short we could get in a situation
-where the self refresh exits are taking so long we queue up a self refresh
-entry before the exit commit is even finished.
+patch 2-4: libretech naming conventions
 
-This patch changes the idle timeout to a moving average of the entry
-times + a moving average of exit times + the crtc constant.
+patch 5-6: regulator renaming, input rails fixes
 
-This patch was tested on rockchip, with a kevin CrOS panel the idle
-delay averages out to about ~235ms (35 entry + 100 exit + 100 const). On
-the same board, the bob panel idle delay lands around ~340ms (90 entry
-+ 150 exit + 100 const).
+Any inputs?
+Jagan.
 
-WRT the dedicated mutex in self_refresh_data, it would be nice if we
-could rely on drm_crtc.mutex to protect the average times, but there are
-a few reasons why a separate lock is a better choice:
-- We can't rely on drm_crtc.mutex being held if we're doing a nonblocking
-  commit
-- We can't grab drm_crtc.mutex since drm_modeset_lock() doesn't tell us
-  whether the lock was already held in the acquire context (it eats
-  -EALREADY), so we can't tell if we should drop it or not
-- We don't need such a heavy-handed lock for what we're trying to do,
-  commit ordering doesn't matter, so a point-of-use lock will be less
-  contentious
+Jagan Teki (6):
+  arm64: dts: rockchip: Fix rk3399-roc-pc pwm2 pin
+  dt-bindings: arm: rockchip: Use libretech for roc-pc binding
+  arm64: dts: rockchip: Use libretech model, compatible for ROC-PC
+  arm64: dts: rockchip: Rename roc-pc with libretech notation
+  arm64: dts: rockchip: Rename vcc12v_sys into dc_12v for roc-rk3399-pc
+  arm64: dts: rockchip: Fix roc-rk3399-pc regulator input rails
 
-Reviewed-by: Daniel Vetter <daniel.vetter@ffwll.ch>
-Signed-off-by: Sean Paul <seanpaul@chromium.org>
-Link to v1: https://patchwork.freedesktop.org/patch/msgid/20190917200443.64481-2-sean@poorly.run
+ .../devicetree/bindings/arm/rockchip.yaml     | 11 +++---
+ arch/arm64/boot/dts/rockchip/Makefile         |  2 +-
+ ...dts => rk3399-libretech-roc-rk3399-pc.dts} | 38 ++++++++++---------
+ 3 files changed, 27 insertions(+), 24 deletions(-)
+ rename arch/arm64/boot/dts/rockchip/{rk3399-roc-pc.dts => rk3399-libretech-roc-rk3399-pc.dts} (95%)
 
-Changes in v2:
-- Migrate locking explanation from comment to commit msg (Daniel)
-- Turf constant entry delay and multiply the avg times by 2 (Daniel)
----
- drivers/gpu/drm/drm_atomic_helper.c         | 20 ++++++
- drivers/gpu/drm/drm_self_refresh_helper.c   | 72 +++++++++++++++++++--
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c |  5 +-
- include/drm/drm_self_refresh_helper.h       |  6 +-
- 4 files changed, 90 insertions(+), 13 deletions(-)
-
-diff --git a/drivers/gpu/drm/drm_atomic_helper.c b/drivers/gpu/drm/drm_atomic_helper.c
-index 9d7e4da6c292..3f13fa9a9e24 100644
---- a/drivers/gpu/drm/drm_atomic_helper.c
-+++ b/drivers/gpu/drm/drm_atomic_helper.c
-@@ -26,6 +26,7 @@
-  */
- 
- #include <linux/dma-fence.h>
-+#include <linux/ktime.h>
- 
- #include <drm/drm_atomic.h>
- #include <drm/drm_atomic_helper.h>
-@@ -1570,9 +1571,23 @@ static void commit_tail(struct drm_atomic_state *old_state)
- {
- 	struct drm_device *dev = old_state->dev;
- 	const struct drm_mode_config_helper_funcs *funcs;
-+	ktime_t start;
-+	s64 commit_time_ms;
- 
- 	funcs = dev->mode_config.helper_private;
- 
-+	/*
-+	 * We're measuring the _entire_ commit, so the time will vary depending
-+	 * on how many fences and objects are involved. For the purposes of self
-+	 * refresh, this is desirable since it'll give us an idea of how
-+	 * congested things are. This will inform our decision on how often we
-+	 * should enter self refresh after idle.
-+	 *
-+	 * These times will be averaged out in the self refresh helpers to avoid
-+	 * overreacting over one outlier frame
-+	 */
-+	start = ktime_get();
-+
- 	drm_atomic_helper_wait_for_fences(dev, old_state, false);
- 
- 	drm_atomic_helper_wait_for_dependencies(old_state);
-@@ -1582,6 +1597,11 @@ static void commit_tail(struct drm_atomic_state *old_state)
- 	else
- 		drm_atomic_helper_commit_tail(old_state);
- 
-+	commit_time_ms = ktime_ms_delta(ktime_get(), start);
-+	if (commit_time_ms > 0)
-+		drm_self_refresh_helper_update_avg_times(old_state,
-+						 (unsigned long)commit_time_ms);
-+
- 	drm_atomic_helper_commit_cleanup_done(old_state);
- 
- 	drm_atomic_state_put(old_state);
-diff --git a/drivers/gpu/drm/drm_self_refresh_helper.c b/drivers/gpu/drm/drm_self_refresh_helper.c
-index 9095cebf2147..68f4765a5896 100644
---- a/drivers/gpu/drm/drm_self_refresh_helper.c
-+++ b/drivers/gpu/drm/drm_self_refresh_helper.c
-@@ -5,6 +5,7 @@
-  * Authors:
-  * Sean Paul <seanpaul@chromium.org>
-  */
-+#include <linux/average.h>
- #include <linux/bitops.h>
- #include <linux/slab.h>
- #include <linux/workqueue.h>
-@@ -50,10 +51,17 @@
-  * atomic_check when &drm_crtc_state.self_refresh_active is true.
-  */
- 
-+#define SELF_REFRESH_AVG_SEED_MS 200
-+
-+DECLARE_EWMA(psr_time, 4, 4)
-+
- struct drm_self_refresh_data {
- 	struct drm_crtc *crtc;
- 	struct delayed_work entry_work;
--	unsigned int entry_delay_ms;
-+
-+	struct mutex avg_mutex;
-+	struct ewma_psr_time entry_avg_ms;
-+	struct ewma_psr_time exit_avg_ms;
- };
- 
- static void drm_self_refresh_helper_entry_work(struct work_struct *work)
-@@ -121,6 +129,44 @@ static void drm_self_refresh_helper_entry_work(struct work_struct *work)
- 	drm_modeset_acquire_fini(&ctx);
- }
- 
-+/**
-+ * drm_self_refresh_helper_update_avg_times - Updates a crtc's SR time averages
-+ * @state: the state which has just been applied to hardware
-+ * @commit_time_ms: the amount of time in ms that this commit took to complete
-+ *
-+ * Called after &drm_mode_config_funcs.atomic_commit_tail, this function will
-+ * update the average entry/exit self refresh times on self refresh transitions.
-+ * These averages will be used when calculating how long to delay before
-+ * entering self refresh mode after activity.
-+ */
-+void drm_self_refresh_helper_update_avg_times(struct drm_atomic_state *state,
-+					      unsigned int commit_time_ms)
-+{
-+	struct drm_crtc *crtc;
-+	struct drm_crtc_state *old_crtc_state, *new_crtc_state;
-+	int i;
-+
-+	for_each_oldnew_crtc_in_state(state, crtc, old_crtc_state,
-+				      new_crtc_state, i) {
-+		struct drm_self_refresh_data *sr_data = crtc->self_refresh_data;
-+		struct ewma_psr_time *time;
-+
-+		if (old_crtc_state->self_refresh_active ==
-+		    new_crtc_state->self_refresh_active)
-+			continue;
-+
-+		if (new_crtc_state->self_refresh_active)
-+			time = &sr_data->entry_avg_ms;
-+		else
-+			time = &sr_data->exit_avg_ms;
-+
-+		mutex_lock(&sr_data->avg_mutex);
-+		ewma_psr_time_add(time, commit_time_ms);
-+		mutex_unlock(&sr_data->avg_mutex);
-+	}
-+}
-+EXPORT_SYMBOL(drm_self_refresh_helper_update_avg_times);
-+
- /**
-  * drm_self_refresh_helper_alter_state - Alters the atomic state for SR exit
-  * @state: the state currently being checked
-@@ -152,6 +198,7 @@ void drm_self_refresh_helper_alter_state(struct drm_atomic_state *state)
- 
- 	for_each_new_crtc_in_state(state, crtc, crtc_state, i) {
- 		struct drm_self_refresh_data *sr_data;
-+		unsigned int delay;
- 
- 		/* Don't trigger the entry timer when we're already in SR */
- 		if (crtc_state->self_refresh_active)
-@@ -161,8 +208,13 @@ void drm_self_refresh_helper_alter_state(struct drm_atomic_state *state)
- 		if (!sr_data)
- 			continue;
- 
-+		mutex_lock(&sr_data->avg_mutex);
-+		delay = (ewma_psr_time_read(&sr_data->entry_avg_ms) +
-+			 ewma_psr_time_read(&sr_data->exit_avg_ms)) * 2;
-+		mutex_unlock(&sr_data->avg_mutex);
-+
- 		mod_delayed_work(system_wq, &sr_data->entry_work,
--				 msecs_to_jiffies(sr_data->entry_delay_ms));
-+				 msecs_to_jiffies(delay));
- 	}
- }
- EXPORT_SYMBOL(drm_self_refresh_helper_alter_state);
-@@ -170,12 +222,10 @@ EXPORT_SYMBOL(drm_self_refresh_helper_alter_state);
- /**
-  * drm_self_refresh_helper_init - Initializes self refresh helpers for a crtc
-  * @crtc: the crtc which supports self refresh supported displays
-- * @entry_delay_ms: amount of inactivity to wait before entering self refresh
-  *
-  * Returns zero if successful or -errno on failure
-  */
--int drm_self_refresh_helper_init(struct drm_crtc *crtc,
--				 unsigned int entry_delay_ms)
-+int drm_self_refresh_helper_init(struct drm_crtc *crtc)
- {
- 	struct drm_self_refresh_data *sr_data = crtc->self_refresh_data;
- 
-@@ -189,8 +239,18 @@ int drm_self_refresh_helper_init(struct drm_crtc *crtc,
- 
- 	INIT_DELAYED_WORK(&sr_data->entry_work,
- 			  drm_self_refresh_helper_entry_work);
--	sr_data->entry_delay_ms = entry_delay_ms;
- 	sr_data->crtc = crtc;
-+	mutex_init(&sr_data->avg_mutex);
-+	ewma_psr_time_init(&sr_data->entry_avg_ms);
-+	ewma_psr_time_init(&sr_data->exit_avg_ms);
-+
-+	/*
-+	 * Seed the averages so they're non-zero (and sufficiently large
-+	 * for even poorly performing panels). As time goes on, this will be
-+	 * averaged out and the values will trend to their true value.
-+	 */
-+	ewma_psr_time_add(&sr_data->entry_avg_ms, SELF_REFRESH_AVG_SEED_MS);
-+	ewma_psr_time_add(&sr_data->exit_avg_ms, SELF_REFRESH_AVG_SEED_MS);
- 
- 	crtc->self_refresh_data = sr_data;
- 	return 0;
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-index 2f821c58007c..613404f86668 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-@@ -39,8 +39,6 @@
- #include "rockchip_drm_vop.h"
- #include "rockchip_rgb.h"
- 
--#define VOP_SELF_REFRESH_ENTRY_DELAY_MS 100
--
- #define VOP_WIN_SET(vop, win, name, v) \
- 		vop_reg_set(vop, &win->phy->name, win->base, ~0, v, #name)
- #define VOP_SCL_SET(vop, win, name, v) \
-@@ -1563,8 +1561,7 @@ static int vop_create_crtc(struct vop *vop)
- 	init_completion(&vop->line_flag_completion);
- 	crtc->port = port;
- 
--	ret = drm_self_refresh_helper_init(crtc,
--					   VOP_SELF_REFRESH_ENTRY_DELAY_MS);
-+	ret = drm_self_refresh_helper_init(crtc);
- 	if (ret)
- 		DRM_DEV_DEBUG_KMS(vop->dev,
- 			"Failed to init %s with SR helpers %d, ignoring\n",
-diff --git a/include/drm/drm_self_refresh_helper.h b/include/drm/drm_self_refresh_helper.h
-index 397a583ccca7..5b79d253fb46 100644
---- a/include/drm/drm_self_refresh_helper.h
-+++ b/include/drm/drm_self_refresh_helper.h
-@@ -12,9 +12,9 @@ struct drm_atomic_state;
- struct drm_crtc;
- 
- void drm_self_refresh_helper_alter_state(struct drm_atomic_state *state);
-+void drm_self_refresh_helper_update_avg_times(struct drm_atomic_state *state,
-+					      unsigned int commit_time_ms);
- 
--int drm_self_refresh_helper_init(struct drm_crtc *crtc,
--				 unsigned int entry_delay_ms);
--
-+int drm_self_refresh_helper_init(struct drm_crtc *crtc);
- void drm_self_refresh_helper_cleanup(struct drm_crtc *crtc);
- #endif
 -- 
-Sean Paul, Software Engineer, Google / Chromium OS
+2.18.0.321.gffc6fa0e3
 
 
 _______________________________________________
