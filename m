@@ -2,91 +2,63 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAD8DB7BEE
-	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Sep 2019 16:14:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1B0EB7D94
+	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Sep 2019 17:09:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rqxqUgR1y1o4QdfjfwUKbv9uqjTVMZ/uo1NxL8VKO1M=; b=BW0F1z0X8AOOO8
-	79JZ0GP8+qIyrLbS2lL63WEivApFigureoZuWzBkE5zI7lQktp2o7qSqWa3FMcWP9xoXegLkEgRz+
-	pcoOHzpZtmm59gL/jMDLrRSrGruHO9EIjRzg6rdEEspoB026ERdhJyDHKQSt8X3vr4nCgNP/5BIda
-	dYFgFHDUyTXexcx/5zdiS7RaOqeWLD92VWctVNHV7mTpu77FNiFkJkkPleZc6b1vKO6P7fvISjWtX
-	+ytojt/BbcEeUXUsmTY64rlpFSpCm026w6Y2dxT2Z518q08hZMJrBCXgpYOs1f2Uc+VaQoZrWs7Ai
-	lTSsO2GlCL7LbxpzHneA==;
+	List-Owner; bh=tqQ+fsqMjz6U8PDyblkT3afOkLCEXSrFbVkHoonoH00=; b=d9njzo2iDKvLJu
+	rgxVax3cC/cEPiTtWzocdgx83FS5NuEuEYYRauCV+eIA13vpk4ap248zkMoY270SNGnDYkFGCejSi
+	yrKGWWdW7/VfMiPsEAeNpDm6JPDUOKbWVzX4qLhAreeiDh3T1CX0dFf8e8SoK3rTJv2i8o1QAd4Ou
+	ZBdNdRKmki4tniLxNy0JLjXUON7KKi3cF8M0MThEOjyQqOIdo3kAh23oOz9rXN8PMy0o/cVI8QDKv
+	GTYeyAIIsXtTlohv1G5QZz3iP+HJz/afUBUBZIObodv+75A0Zgk0GhHCyPkalU/FhNlsV1o/lbdqN
+	ztI97dNoElWCi2kooq/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAxCn-0001LT-DX; Thu, 19 Sep 2019 14:14:45 +0000
-Received: from mail-yw1-xc43.google.com ([2607:f8b0:4864:20::c43])
+	id 1iAy3v-0005wI-83; Thu, 19 Sep 2019 15:09:39 +0000
+Received: from mailoutvs12.siol.net ([185.57.226.203] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAxCL-00014X-7b
- for linux-rockchip@lists.infradead.org; Thu, 19 Sep 2019 14:14:19 +0000
-Received: by mail-yw1-xc43.google.com with SMTP id e205so1269603ywc.7
- for <linux-rockchip@lists.infradead.org>; Thu, 19 Sep 2019 07:14:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=udmOyjd9D9tkFljgvi3r1XrIW/XfmorOvAaN7s+8Jwc=;
- b=fpN3uw4uMXsVCezAjyNW9ur4T/pM6qJb5e5n7XGGJT2qSrDhkNkfgnDxJ9KmlBNQPB
- p0hAx5NW9K5Hq5XDqWTdvHuA6lTLTFDCxijZZpZTqickdBBlvmIUexdUxX15HPnVLZxw
- Wq+HizWLYftCTSKiPDmsEE/8EUAP/YgIH44FPvc783K07en1rxX7f3lH8KI84SvRrX4r
- Sk4E7QxyYHYSiX5/2GikWfvc5Q/Kjh5BGUTBuhCOsHJ9AkQyuFDXMI2uXdY2jaR2Jk41
- 6oOmPqXmarqNl1Ee3KHYlIUBdNwL/F84RBYG47UxIhjncPGdS90FbhA6O66w0j6UDWun
- vkSg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=udmOyjd9D9tkFljgvi3r1XrIW/XfmorOvAaN7s+8Jwc=;
- b=U7xx/XqupM1ZymXctRgtKqJKQvsWn3eMT5IG4gwsdZ71zCCGOBSvtb7A6r8aPkJW7x
- LLhxu+t3zoZo7bJ/ilc77jRw/vgc9Xoh6G5N+iFExYVYrJ6pW8uzzcONdSwP1c1Z20MP
- F6jR9/aqrKDjZTUEcQGOh4mEdkRvOkwCyznu8CGkdMW1pdQtQzGkVh3mjPAec/YlHylh
- Q9DtFBtJozT7uSg+ky6LO4uPN2P9g1riSGtnZ0rD0g9TZtx0AST6UGvF69fAL7xZLDCl
- zjhvLCyv59kWDbf2ZOIXKBuwRiqOJ6x8NPH7sEfBb19NSTXcnbHhMRM0SFQrW4fadGR3
- t5DQ==
-X-Gm-Message-State: APjAAAWqhlNjynP4c+8Y5HmLrlj0y5THOVrMu/ODPGCzUzxs+DA8r/eY
- yeYaxdeO2ObK5xCF0SZf8Yl30w==
-X-Google-Smtp-Source: APXvYqyIrM/I2o6POD5dYaVuNOMphdTt9P9xMiGUBl7nZ1fEtJ9pCoBZy7YCeft7N+10PTFz7M/TMQ==
-X-Received: by 2002:a0d:c907:: with SMTP id l7mr7869011ywd.246.1568902454106; 
- Thu, 19 Sep 2019 07:14:14 -0700 (PDT)
-Received: from localhost ([2620:0:1013:11:89c6:2139:5435:371d])
- by smtp.gmail.com with ESMTPSA id h136sm1947725ywc.83.2019.09.19.07.14.13
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Sep 2019 07:14:13 -0700 (PDT)
-Date: Thu, 19 Sep 2019 10:14:13 -0400
-From: Sean Paul <sean@poorly.run>
-To: dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v2 2/3] drm: Measure Self Refresh Entry/Exit times to
- avoid thrashing
-Message-ID: <20190919141413.GU218215@art_vandelay>
-References: <20190918200734.149876-1-sean@poorly.run>
- <20190918200734.149876-2-sean@poorly.run>
+ id 1iAy2l-0005Vq-Ua; Thu, 19 Sep 2019 15:08:31 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 9783A52321B;
+ Thu, 19 Sep 2019 17:08:15 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id qXh4faEEmrjJ; Thu, 19 Sep 2019 17:08:15 +0200 (CEST)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id CD1F6523266;
+ Thu, 19 Sep 2019 17:08:14 +0200 (CEST)
+Received: from jernej-laptop.localnet (cpe-86-58-59-25.static.triera.net
+ [86.58.59.25]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Postfix) with ESMTPA id 1BCEA52321B;
+ Thu, 19 Sep 2019 17:08:10 +0200 (CEST)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: Cheng-Yi Chiang <cychiang@chromium.org>
+Subject: Re: [PATCH v7 3/4] ASoC: rockchip_max98090: Add dai_link for HDMI
+Date: Thu, 19 Sep 2019 17:08:09 +0200
+Message-ID: <1660944.WuPFEyXK2U@jernej-laptop>
+In-Reply-To: <20190919135450.62309-4-cychiang@chromium.org>
+References: <20190919135450.62309-1-cychiang@chromium.org>
+ <20190919135450.62309-4-cychiang@chromium.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190918200734.149876-2-sean@poorly.run>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_071417_338349_06C9F82A 
-X-CRM114-Status: GOOD (  31.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190919_080828_418803_89354F04 
+X-CRM114-Status: GOOD (  16.53  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c43 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.203 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,302 +71,168 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: heiko@sntech.de, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel.vetter@ffwll.ch>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Sandy Huang <hjc@rock-chips.com>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Sean Paul <seanpaul@chromium.org>,
- daniel@ffwll.ch, jekarl@iki.fi, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: alsa-devel@alsa-project.org, Heiko Stuebner <heiko@sntech.de>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jerome Brunet <jbrunet@baylibre.com>, Takashi Iwai <tiwai@suse.com>,
+ linux-rockchip@lists.infradead.org, dgreid@chromium.org, tzungbi@chromium.org,
+ Jonas Karlman <jonas@kwiboo.se>, Liam Girdwood <lgirdwood@gmail.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
+ Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org,
+ dianders@chromium.org, Daniel Vetter <daniel@ffwll.ch>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Sep 18, 2019 at 04:07:29PM -0400, Sean Paul wrote:
-> From: Sean Paul <seanpaul@chromium.org>
-> 
-> Currently the self refresh idle timer is a const set by the crtc. This
-> is fine if the self refresh entry/exit times are well-known for all
-> panels used on that crtc. However panels and workloads can vary quite a
-> bit, and a timeout which works well for one doesn't work well for
-> another.
-> 
-> In the extreme, if the timeout is too short we could get in a situation
-> where the self refresh exits are taking so long we queue up a self refresh
-> entry before the exit commit is even finished.
-> 
-> This patch changes the idle timeout to a moving average of the entry
-> times + a moving average of exit times + the crtc constant.
-> 
-> This patch was tested on rockchip, with a kevin CrOS panel the idle
-> delay averages out to about ~235ms (35 entry + 100 exit + 100 const). On
-> the same board, the bob panel idle delay lands around ~340ms (90 entry
-> + 150 exit + 100 const).
-> 
-> WRT the dedicated mutex in self_refresh_data, it would be nice if we
-> could rely on drm_crtc.mutex to protect the average times, but there are
-> a few reasons why a separate lock is a better choice:
-> - We can't rely on drm_crtc.mutex being held if we're doing a nonblocking
->   commit
-> - We can't grab drm_crtc.mutex since drm_modeset_lock() doesn't tell us
->   whether the lock was already held in the acquire context (it eats
->   -EALREADY), so we can't tell if we should drop it or not
-> - We don't need such a heavy-handed lock for what we're trying to do,
->   commit ordering doesn't matter, so a point-of-use lock will be less
->   contentious
-> 
-> Reviewed-by: Daniel Vetter <daniel.vetter@ffwll.ch>
-
-Pushed the first 2 to drm-misc-next-fixes to fix the gru-bob regression. I'll
-fix up the 3rd patch separately.
-
-Thank you for the reviews!
-
-Sean
-
-> Signed-off-by: Sean Paul <seanpaul@chromium.org>
-> Link to v1: https://patchwork.freedesktop.org/patch/msgid/20190917200443.64481-2-sean@poorly.run
-> 
-> Changes in v2:
-> - Migrate locking explanation from comment to commit msg (Daniel)
-> - Turf constant entry delay and multiply the avg times by 2 (Daniel)
-> ---
->  drivers/gpu/drm/drm_atomic_helper.c         | 20 ++++++
->  drivers/gpu/drm/drm_self_refresh_helper.c   | 72 +++++++++++++++++++--
->  drivers/gpu/drm/rockchip/rockchip_drm_vop.c |  5 +-
->  include/drm/drm_self_refresh_helper.h       |  6 +-
->  4 files changed, 90 insertions(+), 13 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/drm_atomic_helper.c b/drivers/gpu/drm/drm_atomic_helper.c
-> index 9d7e4da6c292..3f13fa9a9e24 100644
-> --- a/drivers/gpu/drm/drm_atomic_helper.c
-> +++ b/drivers/gpu/drm/drm_atomic_helper.c
-> @@ -26,6 +26,7 @@
->   */
->  
->  #include <linux/dma-fence.h>
-> +#include <linux/ktime.h>
->  
->  #include <drm/drm_atomic.h>
->  #include <drm/drm_atomic_helper.h>
-> @@ -1570,9 +1571,23 @@ static void commit_tail(struct drm_atomic_state *old_state)
->  {
->  	struct drm_device *dev = old_state->dev;
->  	const struct drm_mode_config_helper_funcs *funcs;
-> +	ktime_t start;
-> +	s64 commit_time_ms;
->  
->  	funcs = dev->mode_config.helper_private;
->  
-> +	/*
-> +	 * We're measuring the _entire_ commit, so the time will vary depending
-> +	 * on how many fences and objects are involved. For the purposes of self
-> +	 * refresh, this is desirable since it'll give us an idea of how
-> +	 * congested things are. This will inform our decision on how often we
-> +	 * should enter self refresh after idle.
-> +	 *
-> +	 * These times will be averaged out in the self refresh helpers to avoid
-> +	 * overreacting over one outlier frame
-> +	 */
-> +	start = ktime_get();
-> +
->  	drm_atomic_helper_wait_for_fences(dev, old_state, false);
->  
->  	drm_atomic_helper_wait_for_dependencies(old_state);
-> @@ -1582,6 +1597,11 @@ static void commit_tail(struct drm_atomic_state *old_state)
->  	else
->  		drm_atomic_helper_commit_tail(old_state);
->  
-> +	commit_time_ms = ktime_ms_delta(ktime_get(), start);
-> +	if (commit_time_ms > 0)
-> +		drm_self_refresh_helper_update_avg_times(old_state,
-> +						 (unsigned long)commit_time_ms);
-> +
->  	drm_atomic_helper_commit_cleanup_done(old_state);
->  
->  	drm_atomic_state_put(old_state);
-> diff --git a/drivers/gpu/drm/drm_self_refresh_helper.c b/drivers/gpu/drm/drm_self_refresh_helper.c
-> index 9095cebf2147..68f4765a5896 100644
-> --- a/drivers/gpu/drm/drm_self_refresh_helper.c
-> +++ b/drivers/gpu/drm/drm_self_refresh_helper.c
-> @@ -5,6 +5,7 @@
->   * Authors:
->   * Sean Paul <seanpaul@chromium.org>
->   */
-> +#include <linux/average.h>
->  #include <linux/bitops.h>
->  #include <linux/slab.h>
->  #include <linux/workqueue.h>
-> @@ -50,10 +51,17 @@
->   * atomic_check when &drm_crtc_state.self_refresh_active is true.
->   */
->  
-> +#define SELF_REFRESH_AVG_SEED_MS 200
-> +
-> +DECLARE_EWMA(psr_time, 4, 4)
-> +
->  struct drm_self_refresh_data {
->  	struct drm_crtc *crtc;
->  	struct delayed_work entry_work;
-> -	unsigned int entry_delay_ms;
-> +
-> +	struct mutex avg_mutex;
-> +	struct ewma_psr_time entry_avg_ms;
-> +	struct ewma_psr_time exit_avg_ms;
->  };
->  
->  static void drm_self_refresh_helper_entry_work(struct work_struct *work)
-> @@ -121,6 +129,44 @@ static void drm_self_refresh_helper_entry_work(struct work_struct *work)
->  	drm_modeset_acquire_fini(&ctx);
->  }
->  
-> +/**
-> + * drm_self_refresh_helper_update_avg_times - Updates a crtc's SR time averages
-> + * @state: the state which has just been applied to hardware
-> + * @commit_time_ms: the amount of time in ms that this commit took to complete
-> + *
-> + * Called after &drm_mode_config_funcs.atomic_commit_tail, this function will
-> + * update the average entry/exit self refresh times on self refresh transitions.
-> + * These averages will be used when calculating how long to delay before
-> + * entering self refresh mode after activity.
-> + */
-> +void drm_self_refresh_helper_update_avg_times(struct drm_atomic_state *state,
-> +					      unsigned int commit_time_ms)
-> +{
-> +	struct drm_crtc *crtc;
-> +	struct drm_crtc_state *old_crtc_state, *new_crtc_state;
-> +	int i;
-> +
-> +	for_each_oldnew_crtc_in_state(state, crtc, old_crtc_state,
-> +				      new_crtc_state, i) {
-> +		struct drm_self_refresh_data *sr_data = crtc->self_refresh_data;
-> +		struct ewma_psr_time *time;
-> +
-> +		if (old_crtc_state->self_refresh_active ==
-> +		    new_crtc_state->self_refresh_active)
-> +			continue;
-> +
-> +		if (new_crtc_state->self_refresh_active)
-> +			time = &sr_data->entry_avg_ms;
-> +		else
-> +			time = &sr_data->exit_avg_ms;
-> +
-> +		mutex_lock(&sr_data->avg_mutex);
-> +		ewma_psr_time_add(time, commit_time_ms);
-> +		mutex_unlock(&sr_data->avg_mutex);
-> +	}
-> +}
-> +EXPORT_SYMBOL(drm_self_refresh_helper_update_avg_times);
-> +
->  /**
->   * drm_self_refresh_helper_alter_state - Alters the atomic state for SR exit
->   * @state: the state currently being checked
-> @@ -152,6 +198,7 @@ void drm_self_refresh_helper_alter_state(struct drm_atomic_state *state)
->  
->  	for_each_new_crtc_in_state(state, crtc, crtc_state, i) {
->  		struct drm_self_refresh_data *sr_data;
-> +		unsigned int delay;
->  
->  		/* Don't trigger the entry timer when we're already in SR */
->  		if (crtc_state->self_refresh_active)
-> @@ -161,8 +208,13 @@ void drm_self_refresh_helper_alter_state(struct drm_atomic_state *state)
->  		if (!sr_data)
->  			continue;
->  
-> +		mutex_lock(&sr_data->avg_mutex);
-> +		delay = (ewma_psr_time_read(&sr_data->entry_avg_ms) +
-> +			 ewma_psr_time_read(&sr_data->exit_avg_ms)) * 2;
-> +		mutex_unlock(&sr_data->avg_mutex);
-> +
->  		mod_delayed_work(system_wq, &sr_data->entry_work,
-> -				 msecs_to_jiffies(sr_data->entry_delay_ms));
-> +				 msecs_to_jiffies(delay));
->  	}
->  }
->  EXPORT_SYMBOL(drm_self_refresh_helper_alter_state);
-> @@ -170,12 +222,10 @@ EXPORT_SYMBOL(drm_self_refresh_helper_alter_state);
->  /**
->   * drm_self_refresh_helper_init - Initializes self refresh helpers for a crtc
->   * @crtc: the crtc which supports self refresh supported displays
-> - * @entry_delay_ms: amount of inactivity to wait before entering self refresh
->   *
->   * Returns zero if successful or -errno on failure
->   */
-> -int drm_self_refresh_helper_init(struct drm_crtc *crtc,
-> -				 unsigned int entry_delay_ms)
-> +int drm_self_refresh_helper_init(struct drm_crtc *crtc)
->  {
->  	struct drm_self_refresh_data *sr_data = crtc->self_refresh_data;
->  
-> @@ -189,8 +239,18 @@ int drm_self_refresh_helper_init(struct drm_crtc *crtc,
->  
->  	INIT_DELAYED_WORK(&sr_data->entry_work,
->  			  drm_self_refresh_helper_entry_work);
-> -	sr_data->entry_delay_ms = entry_delay_ms;
->  	sr_data->crtc = crtc;
-> +	mutex_init(&sr_data->avg_mutex);
-> +	ewma_psr_time_init(&sr_data->entry_avg_ms);
-> +	ewma_psr_time_init(&sr_data->exit_avg_ms);
-> +
-> +	/*
-> +	 * Seed the averages so they're non-zero (and sufficiently large
-> +	 * for even poorly performing panels). As time goes on, this will be
-> +	 * averaged out and the values will trend to their true value.
-> +	 */
-> +	ewma_psr_time_add(&sr_data->entry_avg_ms, SELF_REFRESH_AVG_SEED_MS);
-> +	ewma_psr_time_add(&sr_data->exit_avg_ms, SELF_REFRESH_AVG_SEED_MS);
->  
->  	crtc->self_refresh_data = sr_data;
->  	return 0;
-> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> index 2f821c58007c..613404f86668 100644
-> --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> @@ -39,8 +39,6 @@
->  #include "rockchip_drm_vop.h"
->  #include "rockchip_rgb.h"
->  
-> -#define VOP_SELF_REFRESH_ENTRY_DELAY_MS 100
-> -
->  #define VOP_WIN_SET(vop, win, name, v) \
->  		vop_reg_set(vop, &win->phy->name, win->base, ~0, v, #name)
->  #define VOP_SCL_SET(vop, win, name, v) \
-> @@ -1563,8 +1561,7 @@ static int vop_create_crtc(struct vop *vop)
->  	init_completion(&vop->line_flag_completion);
->  	crtc->port = port;
->  
-> -	ret = drm_self_refresh_helper_init(crtc,
-> -					   VOP_SELF_REFRESH_ENTRY_DELAY_MS);
-> +	ret = drm_self_refresh_helper_init(crtc);
->  	if (ret)
->  		DRM_DEV_DEBUG_KMS(vop->dev,
->  			"Failed to init %s with SR helpers %d, ignoring\n",
-> diff --git a/include/drm/drm_self_refresh_helper.h b/include/drm/drm_self_refresh_helper.h
-> index 397a583ccca7..5b79d253fb46 100644
-> --- a/include/drm/drm_self_refresh_helper.h
-> +++ b/include/drm/drm_self_refresh_helper.h
-> @@ -12,9 +12,9 @@ struct drm_atomic_state;
->  struct drm_crtc;
->  
->  void drm_self_refresh_helper_alter_state(struct drm_atomic_state *state);
-> +void drm_self_refresh_helper_update_avg_times(struct drm_atomic_state *state,
-> +					      unsigned int commit_time_ms);
->  
-> -int drm_self_refresh_helper_init(struct drm_crtc *crtc,
-> -				 unsigned int entry_delay_ms);
-> -
-> +int drm_self_refresh_helper_init(struct drm_crtc *crtc);
->  void drm_self_refresh_helper_cleanup(struct drm_crtc *crtc);
->  #endif
-> -- 
-> Sean Paul, Software Engineer, Google / Chromium OS
-> 
-
--- 
-Sean Paul, Software Engineer, Google / Chromium OS
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkhCgpEbmUgxI1ldHJ0ZWssIDE5LiBzZXB0ZW1iZXIgMjAxOSBvYiAxNTo1NDo0OSBDRVNUIGpl
+IENoZW5nLVlpIENoaWFuZyAKbmFwaXNhbChhKToKPiBVc2UgdHdvIGRhaV9saW5rcy4gT25lIGZv
+ciBIRE1JIGFuZCBvbmUgZm9yIG1heDk4MDkwLgo+IFdpdGggdGhpcyBzZXR1cCwgYXVkaW8gY2Fu
+IHBsYXkgdG8gc3BlYWtlciBhbmQgSERNSSBzZWxlY3RpdmVseS4KPiAKPiBTaWduZWQtb2ZmLWJ5
+OiBDaGVuZy1ZaSBDaGlhbmcgPGN5Y2hpYW5nQGNocm9taXVtLm9yZz4KPiAtLS0KPiAgLi4uL2Jv
+b3QvZHRzL3JrMzI4OC12ZXlyb24tYW5hbG9nLWF1ZGlvLmR0c2kgIHwgICAxICsKPiAgc291bmQv
+c29jL3JvY2tjaGlwL3JvY2tjaGlwX21heDk4MDkwLmMgICAgICAgIHwgMTI5ICsrKysrKysrKysr
+KysrLS0tLQo+ICAyIGZpbGVzIGNoYW5nZWQsIDEwMyBpbnNlcnRpb25zKCspLCAyNyBkZWxldGlv
+bnMoLSkKPiAKPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXZleXJvbi1h
+bmFsb2ctYXVkaW8uZHRzaQo+IGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXZleXJvbi1hbmFs
+b2ctYXVkaW8uZHRzaSBpbmRleAo+IDQ0NTI3MGFhMTM2ZS4uNTEyMDhkMTYxZDY1IDEwMDY0NAo+
+IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC12ZXlyb24tYW5hbG9nLWF1ZGlvLmR0c2kK
+PiArKysgYi9hcmNoL2FybS9ib290L2R0cy9yazMyODgtdmV5cm9uLWFuYWxvZy1hdWRpby5kdHNp
+Cj4gQEAgLTE3LDYgKzE3LDcgQEAKPiAgCQlyb2NrY2hpcCxocC1kZXQtZ3Bpb3MgPSA8JmdwaW82
+IFJLX1BBNSAKR1BJT19BQ1RJVkVfSElHSD47Cj4gIAkJcm9ja2NoaXAsbWljLWRldC1ncGlvcyA9
+IDwmZ3BpbzYgUktfUEIzIApHUElPX0FDVElWRV9MT1c+Owo+ICAJCXJvY2tjaGlwLGhlYWRzZXQt
+Y29kZWMgPSA8JmhlYWRzZXRjb2RlYz47Cj4gKwkJcm9ja2NoaXAsaGRtaS1jb2RlYyA9IDwmaGRt
+aT47Cj4gIAl9Owo+ICB9Owo+IAo+IGRpZmYgLS1naXQgYS9zb3VuZC9zb2Mvcm9ja2NoaXAvcm9j
+a2NoaXBfbWF4OTgwOTAuYwo+IGIvc291bmQvc29jL3JvY2tjaGlwL3JvY2tjaGlwX21heDk4MDkw
+LmMgaW5kZXggYzVmYzI0Njc1YTMzLi42YzIxNzQ5MmJiMzAKPiAxMDA2NDQKPiAtLS0gYS9zb3Vu
+ZC9zb2Mvcm9ja2NoaXAvcm9ja2NoaXBfbWF4OTgwOTAuYwo+ICsrKyBiL3NvdW5kL3NvYy9yb2Nr
+Y2hpcC9yb2NrY2hpcF9tYXg5ODA5MC5jCj4gQEAgLTExLDYgKzExLDcgQEAKPiAgI2luY2x1ZGUg
+PGxpbnV4L2dwaW8uaD4KPiAgI2luY2x1ZGUgPGxpbnV4L29mX2dwaW8uaD4KPiAgI2luY2x1ZGUg
+PHNvdW5kL2NvcmUuaD4KPiArI2luY2x1ZGUgPHNvdW5kL2hkbWktY29kZWMuaD4KPiAgI2luY2x1
+ZGUgPHNvdW5kL2phY2suaD4KPiAgI2luY2x1ZGUgPHNvdW5kL3BjbS5oPgo+ICAjaW5jbHVkZSA8
+c291bmQvcGNtX3BhcmFtcy5oPgo+IEBAIC00MSw2ICs0Miw3IEBAIHN0YXRpYyBjb25zdCBzdHJ1
+Y3Qgc25kX3NvY19kYXBtX3dpZGdldCBya19kYXBtX3dpZGdldHNbXQo+ID0geyBTTkRfU09DX0RB
+UE1fTUlDKCJIZWFkc2V0IE1pYyIsIE5VTEwpLAo+ICAJU05EX1NPQ19EQVBNX01JQygiSW50IE1p
+YyIsIE5VTEwpLAo+ICAJU05EX1NPQ19EQVBNX1NQSygiU3BlYWtlciIsIE5VTEwpLAo+ICsJU05E
+X1NPQ19EQVBNX0xJTkUoIkhETUkiLCBOVUxMKSwKPiAgfTsKPiAKPiAgc3RhdGljIGNvbnN0IHN0
+cnVjdCBzbmRfc29jX2RhcG1fcm91dGUgcmtfYXVkaW9fbWFwW10gPSB7Cj4gQEAgLTUyLDYgKzU0
+LDcgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBzbmRfc29jX2RhcG1fcm91dGUgcmtfYXVkaW9fbWFw
+W10gPSB7Cj4gIAl7IkhlYWRwaG9uZSIsIE5VTEwsICJIUFIifSwKPiAgCXsiU3BlYWtlciIsIE5V
+TEwsICJTUEtMIn0sCj4gIAl7IlNwZWFrZXIiLCBOVUxMLCAiU1BLUiJ9LAo+ICsJeyJIRE1JIiwg
+TlVMTCwgIlRYIn0sCj4gIH07Cj4gCj4gIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgc25kX2tjb250cm9s
+X25ldyBya19tY19jb250cm9sc1tdID0gewo+IEBAIC01OSw2ICs2Miw3IEBAIHN0YXRpYyBjb25z
+dCBzdHJ1Y3Qgc25kX2tjb250cm9sX25ldyBya19tY19jb250cm9sc1tdID0gewo+ICAJU09DX0RB
+UE1fUElOX1NXSVRDSCgiSGVhZHNldCBNaWMiKSwKPiAgCVNPQ19EQVBNX1BJTl9TV0lUQ0goIklu
+dCBNaWMiKSwKPiAgCVNPQ19EQVBNX1BJTl9TV0lUQ0goIlNwZWFrZXIiKSwKPiArCVNPQ19EQVBN
+X1BJTl9TV0lUQ0goIkhETUkiKSwKPiAgfTsKPiAKPiAgc3RhdGljIGludCBya19haWYxX2h3X3Bh
+cmFtcyhzdHJ1Y3Qgc25kX3BjbV9zdWJzdHJlYW0gKnN1YnN0cmVhbSwKPiBAQCAtOTIsMzggKzk2
+LDYzIEBAIHN0YXRpYyBpbnQgcmtfYWlmMV9od19wYXJhbXMoc3RydWN0IHNuZF9wY21fc3Vic3Ry
+ZWFtCj4gKnN1YnN0cmVhbSwKPiAKPiAgCXJldCA9IHNuZF9zb2NfZGFpX3NldF9zeXNjbGsoY3B1
+X2RhaSwgMCwgbWNsaywKPiAgCQkJCSAgICAgU05EX1NPQ19DTE9DS19PVVQpOwo+IC0JaWYgKHJl
+dCA8IDApIHsKPiAtCQlkZXZfZXJyKGNvZGVjX2RhaS0+ZGV2LCAiQ2FuJ3Qgc2V0IGNvZGVjIGNs
+b2NrICVkXG4iLCAKcmV0KTsKPiArCWlmIChyZXQpIHsKPiArCQlkZXZfZXJyKGNwdV9kYWktPmRl
+diwgIkNhbid0IHNldCBjcHUgZGFpIGNsb2NrICVkXG4iLCAKcmV0KTsKPiAgCQlyZXR1cm4gcmV0
+Owo+ICAJfQo+IAo+ICsJLyogSERNSSBjb2RlYyBkYWkgZG9lcyBub3QgbmVlZCB0byBzZXQgc3lz
+Y2xrLiAqLwo+ICsJaWYgKCFzdHJjbXAocnRkLT5kYWlfbGluay0+bmFtZSwgIkhETUkiKSkKPiAr
+CQlyZXR1cm4gMDsKPiArCj4gIAlyZXQgPSBzbmRfc29jX2RhaV9zZXRfc3lzY2xrKGNvZGVjX2Rh
+aSwgMCwgbWNsaywKPiAgCQkJCSAgICAgU05EX1NPQ19DTE9DS19JTik7Cj4gLQlpZiAocmV0IDwg
+MCkgewo+IC0JCWRldl9lcnIoY29kZWNfZGFpLT5kZXYsICJDYW4ndCBzZXQgY29kZWMgY2xvY2sg
+JWRcbiIsIApyZXQpOwo+ICsJaWYgKHJldCkgewo+ICsJCWRldl9lcnIoY29kZWNfZGFpLT5kZXYs
+ICJDYW4ndCBzZXQgY29kZWMgZGFpIGNsb2NrIAolZFxuIiwgcmV0KTsKPiAgCQlyZXR1cm4gcmV0
+Owo+ICAJfQo+IAo+IC0JcmV0dXJuIHJldDsKPiArCXJldHVybiAwOwo+ICB9Cj4gCj4gIHN0YXRp
+YyBjb25zdCBzdHJ1Y3Qgc25kX3NvY19vcHMgcmtfYWlmMV9vcHMgPSB7Cj4gIAkuaHdfcGFyYW1z
+ID0gcmtfYWlmMV9od19wYXJhbXMsCj4gIH07Cj4gCj4gLVNORF9TT0NfREFJTElOS19ERUZTKGhp
+ZmksCj4gLQlEQUlMSU5LX0NPTVBfQVJSQVkoQ09NUF9FTVBUWSgpKSwKPiAtCURBSUxJTktfQ09N
+UF9BUlJBWShDT01QX0NPREVDKE5VTEwsICJIaUZpIikpLAo+IC0JREFJTElOS19DT01QX0FSUkFZ
+KENPTVBfRU1QVFkoKSkpOwo+IC0KPiAtc3RhdGljIHN0cnVjdCBzbmRfc29jX2RhaV9saW5rIHJr
+X2RhaWxpbmsgPSB7Cj4gLQkubmFtZSA9ICJtYXg5ODA5MCIsCj4gLQkuc3RyZWFtX25hbWUgPSAi
+QXVkaW8iLAo+IC0JLm9wcyA9ICZya19haWYxX29wcywKPiAtCS8qIHNldCBtYXg5ODA5MCBhcyBz
+bGF2ZSAqLwo+IC0JLmRhaV9mbXQgPSBTTkRfU09DX0RBSUZNVF9JMlMgfCBTTkRfU09DX0RBSUZN
+VF9OQl9ORiB8Cj4gLQkJU05EX1NPQ19EQUlGTVRfQ0JTX0NGUywKPiAtCVNORF9TT0NfREFJTElO
+S19SRUcoaGlmaSksCj4gK1NORF9TT0NfREFJTElOS19ERUZTKGFuYWxvZywKPiArCQkgICAgIERB
+SUxJTktfQ09NUF9BUlJBWShDT01QX0VNUFRZKCkpLAo+ICsJCSAgICAgREFJTElOS19DT01QX0FS
+UkFZKENPTVBfQ09ERUMoTlVMTCwgIkhpRmkiKSksCj4gKwkJICAgICBEQUlMSU5LX0NPTVBfQVJS
+QVkoQ09NUF9FTVBUWSgpKSk7Cj4gKwo+ICtTTkRfU09DX0RBSUxJTktfREVGUyhoZG1pLAo+ICsJ
+CSAgICAgREFJTElOS19DT01QX0FSUkFZKENPTVBfRU1QVFkoKSksCj4gKwkJICAgICBEQUlMSU5L
+X0NPTVBfQVJSQVkoQ09NUF9DT0RFQyhOVUxMLCAiaTJzLWhpZmkiKSksCj4gKwkJICAgICBEQUlM
+SU5LX0NPTVBfQVJSQVkoQ09NUF9FTVBUWSgpKSk7Cj4gKwo+ICtlbnVtIHsKPiArCURBSUxJTktf
+TUFYOTgwOTAsCj4gKwlEQUlMSU5LX0hETUksCj4gK307Cj4gKwo+ICsvKiBtYXg5ODA5MCBhbmQg
+SERNSSBjb2RlYyBkYWlfbGluayAqLwo+ICtzdGF0aWMgc3RydWN0IHNuZF9zb2NfZGFpX2xpbmsg
+cmtfZGFpbGlua3NbXSA9IHsKPiArCVtEQUlMSU5LX01BWDk4MDkwXSA9IHsKPiArCQkubmFtZSA9
+ICJtYXg5ODA5MCIsCj4gKwkJLnN0cmVhbV9uYW1lID0gIkFuYWxvZyIsCj4gKwkJLm9wcyA9ICZy
+a19haWYxX29wcywKPiArCQkvKiBzZXQgbWF4OTgwOTAgYXMgc2xhdmUgKi8KPiArCQkuZGFpX2Zt
+dCA9IFNORF9TT0NfREFJRk1UX0kyUyB8IFNORF9TT0NfREFJRk1UX05CX05GIHwKPiArCQkJU05E
+X1NPQ19EQUlGTVRfQ0JTX0NGUywKPiArCQlTTkRfU09DX0RBSUxJTktfUkVHKGFuYWxvZyksCj4g
+Kwl9LAo+ICsJW0RBSUxJTktfSERNSV0gPSB7Cj4gKwkJLm5hbWUgPSAiSERNSSIsCj4gKwkJLnN0
+cmVhbV9uYW1lID0gIkhETUkiLAo+ICsJCS5vcHMgPSAmcmtfYWlmMV9vcHMsCj4gKwkJLmRhaV9m
+bXQgPSBTTkRfU09DX0RBSUZNVF9JMlMgfCBTTkRfU09DX0RBSUZNVF9OQl9ORiB8Cj4gKwkJCVNO
+RF9TT0NfREFJRk1UX0NCU19DRlMsCj4gKwkJU05EX1NPQ19EQUlMSU5LX1JFRyhoZG1pKSwKPiAr
+CX0KPiAgfTsKPiAKPiAgc3RhdGljIGludCBya185ODA5MF9oZWFkc2V0X2luaXQoc3RydWN0IHNu
+ZF9zb2NfY29tcG9uZW50ICpjb21wb25lbnQpOwo+IEBAIC0xMzYsOCArMTY1LDggQEAgc3RhdGlj
+IHN0cnVjdCBzbmRfc29jX2F1eF9kZXYgcmtfOTgwOTBfaGVhZHNldF9kZXYgPSB7Cj4gIHN0YXRp
+YyBzdHJ1Y3Qgc25kX3NvY19jYXJkIHNuZF9zb2NfY2FyZF9yayA9IHsKPiAgCS5uYW1lID0gIlJP
+Q0tDSElQLUkyUyIsCj4gIAkub3duZXIgPSBUSElTX01PRFVMRSwKPiAtCS5kYWlfbGluayA9ICZy
+a19kYWlsaW5rLAo+IC0JLm51bV9saW5rcyA9IDEsCj4gKwkuZGFpX2xpbmsgPSBya19kYWlsaW5r
+cywKPiArCS5udW1fbGlua3MgPSBBUlJBWV9TSVpFKHJrX2RhaWxpbmtzKSwKPiAgCS5hdXhfZGV2
+ID0gJnJrXzk4MDkwX2hlYWRzZXRfZGV2LAo+ICAJLm51bV9hdXhfZGV2cyA9IDEsCj4gIAkuZGFw
+bV93aWRnZXRzID0gcmtfZGFwbV93aWRnZXRzLAo+IEBAIC0xNzMsMjcgKzIwMiw3MyBAQCBzdGF0
+aWMgaW50IHNuZF9ya19tY19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlCj4gKnBkZXYpIGlu
+dCByZXQgPSAwOwo+ICAJc3RydWN0IHNuZF9zb2NfY2FyZCAqY2FyZCA9ICZzbmRfc29jX2NhcmRf
+cms7Cj4gIAlzdHJ1Y3QgZGV2aWNlX25vZGUgKm5wID0gcGRldi0+ZGV2Lm9mX25vZGU7Cj4gKwlz
+dHJ1Y3QgZGV2aWNlX25vZGUgKm5wX2FuYWxvZzsKPiArCXN0cnVjdCBkZXZpY2Vfbm9kZSAqbnBf
+Y3B1Owo+ICsJc3RydWN0IGRldmljZV9ub2RlICpucF9oZG1pX2NvZGVjOwo+ICsJc3RydWN0IG9m
+X3BoYW5kbGVfYXJncyBhcmdzOwo+IAo+ICAJLyogcmVnaXN0ZXIgdGhlIHNvYyBjYXJkICovCj4g
+IAljYXJkLT5kZXYgPSAmcGRldi0+ZGV2Owo+IAo+IC0JcmtfZGFpbGluay5jb2RlY3MtPm9mX25v
+ZGUgPSBvZl9wYXJzZV9waGFuZGxlKG5wLAo+IC0JCQkicm9ja2NoaXAsYXVkaW8tY29kZWMiLCAw
+KTsKPiAtCWlmICghcmtfZGFpbGluay5jb2RlY3MtPm9mX25vZGUpIHsKPiArCW5wX2FuYWxvZyA9
+IG9mX3BhcnNlX3BoYW5kbGUobnAsICJyb2NrY2hpcCxhdWRpby1jb2RlYyIsIDApOwo+ICsJaWYg
+KCFucF9hbmFsb2cpIHsKPiAgCQlkZXZfZXJyKCZwZGV2LT5kZXYsCj4gIAkJCSJQcm9wZXJ0eSAn
+cm9ja2NoaXAsYXVkaW8tY29kZWMnIG1pc3Npbmcgb3IgCmludmFsaWRcbiIpOwo+ICAJCXJldHVy
+biAtRUlOVkFMOwo+ICAJfQo+ICsJcmtfZGFpbGlua3NbREFJTElOS19NQVg5ODA5MF0uY29kZWNz
+LT5vZl9ub2RlID0gbnBfYW5hbG9nOwo+ICsKPiArCXJldCA9IG9mX3BhcnNlX3BoYW5kbGVfd2l0
+aF9maXhlZF9hcmdzKG5wLCAicm9ja2NoaXAsYXVkaW8tY29kZWMiLAo+ICsJCQkJCSAgICAgICAw
+LCAwLCAmYXJncyk7Cj4gKwlpZiAocmV0KSB7Cj4gKwkJZGV2X2VycigmcGRldi0+ZGV2LAo+ICsJ
+CQkiVW5hYmxlIHRvIHBhcnNlIHByb3BlcnR5ICdyb2NrY2hpcCxhdWRpby0KY29kZWMnXG4iKTsK
+PiArCQlyZXR1cm4gcmV0Owo+ICsJfQo+ICsKPiArCXJldCA9IHNuZF9zb2NfZ2V0X2RhaV9uYW1l
+KAo+ICsJCQkmYXJncywgJnJrX2RhaWxpbmtzW0RBSUxJTktfTUFYOTgwOTBdLmNvZGVjcy0KPmRh
+aV9uYW1lKTsKPiArCWlmIChyZXQpIHsKPiArCQlkZXZfZXJyKCZwZGV2LT5kZXYsICJVbmFibGUg
+dG8gZ2V0IGNvZGVjIGRhaV9uYW1lXG4iKTsKPiArCQlyZXR1cm4gcmV0Owo+ICsJfQo+ICsKPiAr
+CW5wX2NwdSA9IG9mX3BhcnNlX3BoYW5kbGUobnAsICJyb2NrY2hpcCxpMnMtY29udHJvbGxlciIs
+IDApOwo+IAo+IC0JcmtfZGFpbGluay5jcHVzLT5vZl9ub2RlID0gb2ZfcGFyc2VfcGhhbmRsZShu
+cCwKPiAtCQkJInJvY2tjaGlwLGkycy1jb250cm9sbGVyIiwgMCk7Cj4gLQlpZiAoIXJrX2RhaWxp
+bmsuY3B1cy0+b2Zfbm9kZSkgewo+ICsJaWYgKCFucF9jcHUpIHsKPiAgCQlkZXZfZXJyKCZwZGV2
+LT5kZXYsCj4gIAkJCSJQcm9wZXJ0eSAncm9ja2NoaXAsaTJzLWNvbnRyb2xsZXInIG1pc3Npbmcg
+Cm9yIGludmFsaWRcbiIpOwo+ICAJCXJldHVybiAtRUlOVkFMOwo+ICAJfQo+IAo+IC0JcmtfZGFp
+bGluay5wbGF0Zm9ybXMtPm9mX25vZGUgPSBya19kYWlsaW5rLmNwdXMtPm9mX25vZGU7Cj4gKwlu
+cF9oZG1pX2NvZGVjID0gb2ZfcGFyc2VfcGhhbmRsZShucCwgInJvY2tjaGlwLGhkbWktY29kZWMi
+LCAwKTsKPiArCWlmICghbnBfaGRtaV9jb2RlYykgewo+ICsJCWRldl9lcnIoJnBkZXYtPmRldiwK
+PiArCQkJIlByb3BlcnR5ICdyb2NrY2hpcCxoZG1pLWNvZGVjJyBtaXNzaW5nIG9yIAppbnZhbGlk
+XG4iKTsKPiArCQlyZXR1cm4gLUVJTlZBTDsKPiArCX0KClByb3BlcnR5ICJyb2NrY2hpcCxoZG1p
+LWNvZGVjIiBpcyBhZGRlZCBpbiB0aGlzIHNlcmllcywgcmlnaHQ/IFlvdSBjYW4ndCBtYWtlIApp
+dCBtYW5kYXRvcnksIGJlY2F1c2Uga2VybmVsIG11c3QgYmUgYmFja3dhcmQgY29tcGF0aWJsZSB3
+aXRoIG9sZCBkZXZpY2UgdHJlZSAKZmlsZXMgYW5kIHRoZXkgZG9uJ3QgaGF2ZSB0aGlzIHByb3Bl
+cnR5LgoKVGhpbmsgYWJvdXQgdXNlIGNhc2Ugd2hlbiB1c2VyIGhhcHBpbHkgdXNlZCB0aGlzIGRy
+aXZlciBhbmQgYWZ0ZXIga2VybmVsIAp1cGRhdGUsIGl0IHN1ZGRlbmx5IHN0b3BzIHdvcmtpbmcu
+IFlvdSBjYW4ndCBhc3N1bWUgdGhhdCBib2FyZCBEVEIgZmlsZSB3aWxsIGJlIAp1cGRhdGVkIGFs
+b25nIHdpdGgga2VybmVsIHVwZGF0ZS4KCkp1c3QgbWFrZSBpdCBvcHRpb25hbCBhbmQgZG9uJ3Qg
+ZXhwb3NlIGphY2sgZnVuY3Rpb25hbGl0eSBpZiBpdCdzIG5vdCBwcmVzZW50LgoKQmVzdCByZWdh
+cmRzLApKZXJuZWoKCj4gKwo+ICsJcmtfZGFpbGlua3NbREFJTElOS19IRE1JXS5jb2RlY3MtPm9m
+X25vZGUgPSBucF9oZG1pX2NvZGVjOwo+ICsKPiArCXJldCA9IG9mX3BhcnNlX3BoYW5kbGVfd2l0
+aF9maXhlZF9hcmdzKG5wLCAicm9ja2NoaXAsaGRtaS1jb2RlYyIsCj4gKwkJCQkJICAgICAgIDAs
+IDAsICZhcmdzKTsKPiArCWlmIChyZXQpIHsKPiArCQlkZXZfZXJyKCZwZGV2LT5kZXYsCj4gKwkJ
+CSJVbmFibGUgdG8gcGFyc2UgcHJvcGVydHkgJ3JvY2tjaGlwLGhkbWktCmNvZGVjJ1xuIik7Cj4g
+KwkJcmV0dXJuIHJldDsKPiArCX0KPiArCj4gKwlyZXQgPSBzbmRfc29jX2dldF9kYWlfbmFtZSgK
+PiArCQkJJmFyZ3MsICZya19kYWlsaW5rc1tEQUlMSU5LX0hETUldLmNvZGVjcy0KPmRhaV9uYW1l
+KTsKPiArCWlmIChyZXQpIHsKPiArCQlkZXZfZXJyKCZwZGV2LT5kZXYsICJVbmFibGUgdG8gZ2V0
+IGhkbWkgY29kZWMgCmRhaV9uYW1lXG4iKTsKPiArCQlyZXR1cm4gcmV0Owo+ICsJfQo+ICsKPiAr
+CXJrX2RhaWxpbmtzW0RBSUxJTktfTUFYOTgwOTBdLmNwdXMtPm9mX25vZGUgPSBucF9jcHU7Cj4g
+Kwlya19kYWlsaW5rc1tEQUlMSU5LX01BWDk4MDkwXS5wbGF0Zm9ybXMtPm9mX25vZGUgPSBucF9j
+cHU7Cj4gKwlya19kYWlsaW5rc1tEQUlMSU5LX0hETUldLmNwdXMtPm9mX25vZGUgPSBucF9jcHU7
+Cj4gKwlya19kYWlsaW5rc1tEQUlMSU5LX0hETUldLnBsYXRmb3Jtcy0+b2Zfbm9kZSA9IG5wX2Nw
+dTsKPiAKPiAgCXJrXzk4MDkwX2hlYWRzZXRfZGV2LmNvZGVjX29mX25vZGUgPSBvZl9wYXJzZV9w
+aGFuZGxlKG5wLAo+ICAJCQkicm9ja2NoaXAsaGVhZHNldC1jb2RlYyIsIDApOwoKCgoKCl9fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlw
+IG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
