@@ -2,79 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29160B907E
-	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Sep 2019 15:17:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A301B9475
+	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Sep 2019 17:51:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F/x3ZY8PkYSY42JVuzJXnuErm1Csumv0zawh8b+rNBc=; b=O/9spQCo/YOw5+
-	tdmAzCTPAPHzxq9trZOsWNs2J2VNEvtxIWQ0Y5FlX3iLxb/3a9Aij+LGIbQA70dmNYQlIdxsXVOLP
-	YzOqH9LS5a2hVFXxpFhMCi4iBlNuJBh/sKii8MPocQH0AAo4x/wabn4pu2JIKAHIiXiS/br8XH2Ok
-	UbO1IiMkq8EWO1o/ExM3KuD0bDBwXbnd51OF556K3EGAUnlsuwhCPCbZ57dv3Z/NHZZ/QYUPuHZEO
-	u7TWUkGh2v4C0j8Doswk1gXmkUovbaUXF68lxekjBa7GC6v3A9uUyb2DknsqNSwLGhmayKLVn97H7
-	KfEG9YgTT+9ZLArb3PPQ==;
+	List-Owner; bh=IYlyaS79sx3YVwOCx8Ztx3abaNq+wC7ftwKDnwSCAOg=; b=IuQZrYspu5FzSL
+	abaMBeDpHBwBqgnrC6+V19DjenZ78YD4GXeoZ3TJNAewYSDuVriAibrVSp7NSz6/olZbw77yXei7s
+	woPVey/NbkUqsDUjQ1WrG1Gf9rvfuaYnPh5yBaJlPqVvAvN7uZ4DTWk9YMvUCWAK9IRof39Rd+Z6v
+	B02ApIhuwo2EBugahIHjtZ6mSZTIKUMArzIveIDuVSy3dy6t6D650lW1jpXJQbeU7Ma97idAbMZVS
+	zBJSDXswsNIjixJBYi3Ko0oCFCVJfAGKMlGgxzLvzwQuM7Jy0HUcEsS8Cgu95RElidbWV3vhNR+/s
+	hD4oVbJCXjlrprhlos/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBImv-0002G4-Bt; Fri, 20 Sep 2019 13:17:29 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1iBLBl-0003d4-JL; Fri, 20 Sep 2019 15:51:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBImr-0002Ex-Vr
- for linux-rockchip@lists.infradead.org; Fri, 20 Sep 2019 13:17:27 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id w195so4624834vsw.11
- for <linux-rockchip@lists.infradead.org>; Fri, 20 Sep 2019 06:17:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=AoavR4xdj4/imYAiuw54/Vm4zeQLkNQ/AqS6//uaDts=;
- b=V1RNBUStYm4YGiq1I5LEaUO2XQ+YNj9NmMJV25hOSUesQL6D+kLBldLfBEWG7Q6rRR
- DzJ9X+0zQnsML7Ja+Wx7ItQUzdH47FbhipjeyiDcAZvAIe8QobS1467LliWkQWModgvc
- 0nCB4dHVchQxkXkc5j53SXBnZ20XyrEaISU6o=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=AoavR4xdj4/imYAiuw54/Vm4zeQLkNQ/AqS6//uaDts=;
- b=dH/BrMokcZprZ0EiM7AtFm9su//rNP9nst1NKhEmzwVUpVc66AhHhVGE3c2Bz5zeUK
- h/d+hgwuWMl1IaIWJ4b5jn1Mw0BtdMA2v16rI87RzhIZUJw+gkSrIsuaqCQWfHm5k5pI
- U1opD9GZ+CHjZHod0xOMZzi6yo189wU3Zn8TdEX+iODQoQCeIbTTY379D5E+/hbhPrNp
- 7GtU7UBQxm2U0u2XO8/jv9v1AezYpz6VMZn+6DaV6KzVq4F1DSQ6s1D6Sy6S6FW5Rjuv
- qbdaHzJ1eWZ5cUst+hhnBm/VuYpjdIslfUsnL0k/OjDheYbv4DSCeNRi2HgfPHhFzF6v
- YZNQ==
-X-Gm-Message-State: APjAAAUIxfv9QLRY9tUgyV57CFIyftfsTyZkjNQ8pdUcVv8uBmXhaHUH
- h3Q4FtAqW5mknhBGisG8JunehW6eMPqzXhKGztoZwg==
-X-Google-Smtp-Source: APXvYqyr874RxvV+yRv00SR1IyW6VriKg173lF+YV+LA2MVXngfVaiigsw3tuxmxgFkVbVohsefqji/oZ/Ltb9CTzU4=
-X-Received: by 2002:a67:2b86:: with SMTP id r128mr2668415vsr.119.1568985440641; 
- Fri, 20 Sep 2019 06:17:20 -0700 (PDT)
+ id 1iBLBX-0003MJ-9u; Fri, 20 Sep 2019 15:51:05 +0000
+Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
+ [209.85.160.179])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A5A352184C;
+ Fri, 20 Sep 2019 15:51:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1568994662;
+ bh=Gk8b96/zmrgvgnCdppmwZEWWClB9i1dZv17q7MLhgfc=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=OZM0VO15KguCMz8L73yAu9wwfmIvWTtRKsRWtXbjJFKVXMMLe2p8bfBQAQkCKcL2U
+ ZC9RtUZrL5eJL0Hk2B8lfXus6Mb7THpBP0h7NAF9u+kkBEJeVMK5UCXfPgFFwcMQVI
+ OoR623SUjj3mRa2R4ehGSSj+mTawpcia4HoOgbSk=
+Received: by mail-qt1-f179.google.com with SMTP id r5so9245213qtd.0;
+ Fri, 20 Sep 2019 08:51:02 -0700 (PDT)
+X-Gm-Message-State: APjAAAUvkwO1I8vCAVFpEX9p0ppmt7LhI5/1mA6ceg9NijZiguUCtgL9
+ L0A2p1JaDQ1Co0dM5TjPpS0ghxCUQCtJCYsv/A==
+X-Google-Smtp-Source: APXvYqwMIrqIhbU+PH2zwmKFyZZ7p9gmNZDVfDvJtsMY/FngbKyrGtmiBbkzWBc5h/SVux0vE5Rh9MaGgWH9K6YJIV0=
+X-Received: by 2002:ac8:444f:: with SMTP id m15mr4046894qtn.110.1568994661811; 
+ Fri, 20 Sep 2019 08:51:01 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190919135450.62309-1-cychiang@chromium.org>
- <20190919135450.62309-4-cychiang@chromium.org>
- <1660944.WuPFEyXK2U@jernej-laptop>
-In-Reply-To: <1660944.WuPFEyXK2U@jernej-laptop>
-From: Cheng-yi Chiang <cychiang@chromium.org>
-Date: Fri, 20 Sep 2019 21:16:54 +0800
-Message-ID: <CAFv8Nw+DxXJQMs+iv7OWoM_ZLz3hZyrwrZLW0AbLVnfHdUvP=Q@mail.gmail.com>
-Subject: Re: [PATCH v7 3/4] ASoC: rockchip_max98090: Add dai_link for HDMI
-To: =?UTF-8?Q?Jernej_=C5=A0krabec?= <jernej.skrabec@siol.net>
+References: <20190918173141.4314-1-krzk@kernel.org>
+ <20190918173141.4314-8-krzk@kernel.org>
+In-Reply-To: <20190918173141.4314-8-krzk@kernel.org>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Fri, 20 Sep 2019 10:50:50 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+0ikCageBv3TSwx0tp=ZDkrFwpFVt2gJHWsFe2f-K2pA@mail.gmail.com>
+Message-ID: <CAL_Jsq+0ikCageBv3TSwx0tp=ZDkrFwpFVt2gJHWsFe2f-K2pA@mail.gmail.com>
+Subject: Re: [PATCH v2 8/8] dt-bindings: pwm: Convert Samsung PWM bindings to
+ json-schema
+To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_061726_035354_188CAE68 
-X-CRM114-Status: GOOD (  22.29  )
-X-Spam-Score: -7.4 (-------)
+X-CRM114-CacheID: sfid-20190920_085103_387705_B9B73A56 
+X-CRM114-Status: GOOD (  22.68  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.4 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -93,211 +85,219 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:SOUND - SOC LAYER / DYNAMIC AUDIO POWER MANAGEM..."
- <alsa-devel@alsa-project.org>, Heiko Stuebner <heiko@sntech.de>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, linux-kernel <linux-kernel@vger.kernel.org>,
- Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jerome Brunet <jbrunet@baylibre.com>, Takashi Iwai <tiwai@suse.com>,
- linux-rockchip@lists.infradead.org, Dylan Reid <dgreid@chromium.org>,
- tzungbi@chromium.org, Jonas Karlman <jonas@kwiboo.se>,
- Liam Girdwood <lgirdwood@gmail.com>, Russell King <rmk+kernel@armlinux.org.uk>,
- Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- linux-arm-kernel@lists.infradead.org, Doug Anderson <dianders@chromium.org>,
- Daniel Vetter <daniel@ffwll.ch>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Linux PWM List <linux-pwm@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Thierry Reding <thierry.reding@gmail.com>, linux-riscv@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux LED Subsystem <linux-leds@vger.kernel.org>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>, Guenter Roeck <linux@roeck-us.net>,
+ devicetree@vger.kernel.org, LINUX-WATCHDOG <linux-watchdog@vger.kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ "moderated list:BROADCOM BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>, Matt Mackall <mpm@selenic.com>,
+ linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
+ <linux-crypto@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBTZXAgMTksIDIwMTkgYXQgMTE6MDggUE0gSmVybmVqIMWga3JhYmVjIDxqZXJuZWou
-c2tyYWJlY0BzaW9sLm5ldD4gd3JvdGU6Cj4KPiBIaSEKPgo+IERuZSDEjWV0cnRlaywgMTkuIHNl
-cHRlbWJlciAyMDE5IG9iIDE1OjU0OjQ5IENFU1QgamUgQ2hlbmctWWkgQ2hpYW5nCj4gbmFwaXNh
-bChhKToKPiA+IFVzZSB0d28gZGFpX2xpbmtzLiBPbmUgZm9yIEhETUkgYW5kIG9uZSBmb3IgbWF4
-OTgwOTAuCj4gPiBXaXRoIHRoaXMgc2V0dXAsIGF1ZGlvIGNhbiBwbGF5IHRvIHNwZWFrZXIgYW5k
-IEhETUkgc2VsZWN0aXZlbHkuCj4gPgo+ID4gU2lnbmVkLW9mZi1ieTogQ2hlbmctWWkgQ2hpYW5n
-IDxjeWNoaWFuZ0BjaHJvbWl1bS5vcmc+Cj4gPiAtLS0KPiA+ICAuLi4vYm9vdC9kdHMvcmszMjg4
-LXZleXJvbi1hbmFsb2ctYXVkaW8uZHRzaSAgfCAgIDEgKwo+ID4gIHNvdW5kL3NvYy9yb2NrY2hp
-cC9yb2NrY2hpcF9tYXg5ODA5MC5jICAgICAgICB8IDEyOSArKysrKysrKysrKysrKy0tLS0KPiA+
-ICAyIGZpbGVzIGNoYW5nZWQsIDEwMyBpbnNlcnRpb25zKCspLCAyNyBkZWxldGlvbnMoLSkKPiA+
-Cj4gPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXZleXJvbi1hbmFsb2ct
-YXVkaW8uZHRzaQo+ID4gYi9hcmNoL2FybS9ib290L2R0cy9yazMyODgtdmV5cm9uLWFuYWxvZy1h
-dWRpby5kdHNpIGluZGV4Cj4gPiA0NDUyNzBhYTEzNmUuLjUxMjA4ZDE2MWQ2NSAxMDA2NDQKPiA+
-IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC12ZXlyb24tYW5hbG9nLWF1ZGlvLmR0c2kK
-PiA+ICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC12ZXlyb24tYW5hbG9nLWF1ZGlvLmR0
-c2kKPiA+IEBAIC0xNyw2ICsxNyw3IEBACj4gPiAgICAgICAgICAgICAgIHJvY2tjaGlwLGhwLWRl
-dC1ncGlvcyA9IDwmZ3BpbzYgUktfUEE1Cj4gR1BJT19BQ1RJVkVfSElHSD47Cj4gPiAgICAgICAg
-ICAgICAgIHJvY2tjaGlwLG1pYy1kZXQtZ3Bpb3MgPSA8JmdwaW82IFJLX1BCMwo+IEdQSU9fQUNU
-SVZFX0xPVz47Cj4gPiAgICAgICAgICAgICAgIHJvY2tjaGlwLGhlYWRzZXQtY29kZWMgPSA8Jmhl
-YWRzZXRjb2RlYz47Cj4gPiArICAgICAgICAgICAgIHJvY2tjaGlwLGhkbWktY29kZWMgPSA8Jmhk
-bWk+Owo+ID4gICAgICAgfTsKPiA+ICB9Owo+ID4KPiA+IGRpZmYgLS1naXQgYS9zb3VuZC9zb2Mv
-cm9ja2NoaXAvcm9ja2NoaXBfbWF4OTgwOTAuYwo+ID4gYi9zb3VuZC9zb2Mvcm9ja2NoaXAvcm9j
-a2NoaXBfbWF4OTgwOTAuYyBpbmRleCBjNWZjMjQ2NzVhMzMuLjZjMjE3NDkyYmIzMAo+ID4gMTAw
-NjQ0Cj4gPiAtLS0gYS9zb3VuZC9zb2Mvcm9ja2NoaXAvcm9ja2NoaXBfbWF4OTgwOTAuYwo+ID4g
-KysrIGIvc291bmQvc29jL3JvY2tjaGlwL3JvY2tjaGlwX21heDk4MDkwLmMKPiA+IEBAIC0xMSw2
-ICsxMSw3IEBACj4gPiAgI2luY2x1ZGUgPGxpbnV4L2dwaW8uaD4KPiA+ICAjaW5jbHVkZSA8bGlu
-dXgvb2ZfZ3Bpby5oPgo+ID4gICNpbmNsdWRlIDxzb3VuZC9jb3JlLmg+Cj4gPiArI2luY2x1ZGUg
-PHNvdW5kL2hkbWktY29kZWMuaD4KPiA+ICAjaW5jbHVkZSA8c291bmQvamFjay5oPgo+ID4gICNp
-bmNsdWRlIDxzb3VuZC9wY20uaD4KPiA+ICAjaW5jbHVkZSA8c291bmQvcGNtX3BhcmFtcy5oPgo+
-ID4gQEAgLTQxLDYgKzQyLDcgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBzbmRfc29jX2RhcG1fd2lk
-Z2V0IHJrX2RhcG1fd2lkZ2V0c1tdCj4gPiA9IHsgU05EX1NPQ19EQVBNX01JQygiSGVhZHNldCBN
-aWMiLCBOVUxMKSwKPiA+ICAgICAgIFNORF9TT0NfREFQTV9NSUMoIkludCBNaWMiLCBOVUxMKSwK
-PiA+ICAgICAgIFNORF9TT0NfREFQTV9TUEsoIlNwZWFrZXIiLCBOVUxMKSwKPiA+ICsgICAgIFNO
-RF9TT0NfREFQTV9MSU5FKCJIRE1JIiwgTlVMTCksCj4gPiAgfTsKPiA+Cj4gPiAgc3RhdGljIGNv
-bnN0IHN0cnVjdCBzbmRfc29jX2RhcG1fcm91dGUgcmtfYXVkaW9fbWFwW10gPSB7Cj4gPiBAQCAt
-NTIsNiArNTQsNyBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHNuZF9zb2NfZGFwbV9yb3V0ZSBya19h
-dWRpb19tYXBbXSA9IHsKPiA+ICAgICAgIHsiSGVhZHBob25lIiwgTlVMTCwgIkhQUiJ9LAo+ID4g
-ICAgICAgeyJTcGVha2VyIiwgTlVMTCwgIlNQS0wifSwKPiA+ICAgICAgIHsiU3BlYWtlciIsIE5V
-TEwsICJTUEtSIn0sCj4gPiArICAgICB7IkhETUkiLCBOVUxMLCAiVFgifSwKPiA+ICB9Owo+ID4K
-PiA+ICBzdGF0aWMgY29uc3Qgc3RydWN0IHNuZF9rY29udHJvbF9uZXcgcmtfbWNfY29udHJvbHNb
-XSA9IHsKPiA+IEBAIC01OSw2ICs2Miw3IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgc25kX2tjb250
-cm9sX25ldyBya19tY19jb250cm9sc1tdID0gewo+ID4gICAgICAgU09DX0RBUE1fUElOX1NXSVRD
-SCgiSGVhZHNldCBNaWMiKSwKPiA+ICAgICAgIFNPQ19EQVBNX1BJTl9TV0lUQ0goIkludCBNaWMi
-KSwKPiA+ICAgICAgIFNPQ19EQVBNX1BJTl9TV0lUQ0goIlNwZWFrZXIiKSwKPiA+ICsgICAgIFNP
-Q19EQVBNX1BJTl9TV0lUQ0goIkhETUkiKSwKPiA+ICB9Owo+ID4KPiA+ICBzdGF0aWMgaW50IHJr
-X2FpZjFfaHdfcGFyYW1zKHN0cnVjdCBzbmRfcGNtX3N1YnN0cmVhbSAqc3Vic3RyZWFtLAo+ID4g
-QEAgLTkyLDM4ICs5Niw2MyBAQCBzdGF0aWMgaW50IHJrX2FpZjFfaHdfcGFyYW1zKHN0cnVjdCBz
-bmRfcGNtX3N1YnN0cmVhbQo+ID4gKnN1YnN0cmVhbSwKPiA+Cj4gPiAgICAgICByZXQgPSBzbmRf
-c29jX2RhaV9zZXRfc3lzY2xrKGNwdV9kYWksIDAsIG1jbGssCj4gPiAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgIFNORF9TT0NfQ0xPQ0tfT1VUKTsKPiA+IC0gICAgIGlmIChyZXQg
-PCAwKSB7Cj4gPiAtICAgICAgICAgICAgIGRldl9lcnIoY29kZWNfZGFpLT5kZXYsICJDYW4ndCBz
-ZXQgY29kZWMgY2xvY2sgJWRcbiIsCj4gcmV0KTsKPiA+ICsgICAgIGlmIChyZXQpIHsKPiA+ICsg
-ICAgICAgICAgICAgZGV2X2VycihjcHVfZGFpLT5kZXYsICJDYW4ndCBzZXQgY3B1IGRhaSBjbG9j
-ayAlZFxuIiwKPiByZXQpOwo+ID4gICAgICAgICAgICAgICByZXR1cm4gcmV0Owo+ID4gICAgICAg
-fQo+ID4KPiA+ICsgICAgIC8qIEhETUkgY29kZWMgZGFpIGRvZXMgbm90IG5lZWQgdG8gc2V0IHN5
-c2Nsay4gKi8KPiA+ICsgICAgIGlmICghc3RyY21wKHJ0ZC0+ZGFpX2xpbmstPm5hbWUsICJIRE1J
-IikpCj4gPiArICAgICAgICAgICAgIHJldHVybiAwOwo+ID4gKwo+ID4gICAgICAgcmV0ID0gc25k
-X3NvY19kYWlfc2V0X3N5c2Nsayhjb2RlY19kYWksIDAsIG1jbGssCj4gPiAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgIFNORF9TT0NfQ0xPQ0tfSU4pOwo+ID4gLSAgICAgaWYgKHJl
-dCA8IDApIHsKPiA+IC0gICAgICAgICAgICAgZGV2X2Vycihjb2RlY19kYWktPmRldiwgIkNhbid0
-IHNldCBjb2RlYyBjbG9jayAlZFxuIiwKPiByZXQpOwo+ID4gKyAgICAgaWYgKHJldCkgewo+ID4g
-KyAgICAgICAgICAgICBkZXZfZXJyKGNvZGVjX2RhaS0+ZGV2LCAiQ2FuJ3Qgc2V0IGNvZGVjIGRh
-aSBjbG9jawo+ICVkXG4iLCByZXQpOwo+ID4gICAgICAgICAgICAgICByZXR1cm4gcmV0Owo+ID4g
-ICAgICAgfQo+ID4KPiA+IC0gICAgIHJldHVybiByZXQ7Cj4gPiArICAgICByZXR1cm4gMDsKPiA+
-ICB9Cj4gPgo+ID4gIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgc25kX3NvY19vcHMgcmtfYWlmMV9vcHMg
-PSB7Cj4gPiAgICAgICAuaHdfcGFyYW1zID0gcmtfYWlmMV9od19wYXJhbXMsCj4gPiAgfTsKPiA+
-Cj4gPiAtU05EX1NPQ19EQUlMSU5LX0RFRlMoaGlmaSwKPiA+IC0gICAgIERBSUxJTktfQ09NUF9B
-UlJBWShDT01QX0VNUFRZKCkpLAo+ID4gLSAgICAgREFJTElOS19DT01QX0FSUkFZKENPTVBfQ09E
-RUMoTlVMTCwgIkhpRmkiKSksCj4gPiAtICAgICBEQUlMSU5LX0NPTVBfQVJSQVkoQ09NUF9FTVBU
-WSgpKSk7Cj4gPiAtCj4gPiAtc3RhdGljIHN0cnVjdCBzbmRfc29jX2RhaV9saW5rIHJrX2RhaWxp
-bmsgPSB7Cj4gPiAtICAgICAubmFtZSA9ICJtYXg5ODA5MCIsCj4gPiAtICAgICAuc3RyZWFtX25h
-bWUgPSAiQXVkaW8iLAo+ID4gLSAgICAgLm9wcyA9ICZya19haWYxX29wcywKPiA+IC0gICAgIC8q
-IHNldCBtYXg5ODA5MCBhcyBzbGF2ZSAqLwo+ID4gLSAgICAgLmRhaV9mbXQgPSBTTkRfU09DX0RB
-SUZNVF9JMlMgfCBTTkRfU09DX0RBSUZNVF9OQl9ORiB8Cj4gPiAtICAgICAgICAgICAgIFNORF9T
-T0NfREFJRk1UX0NCU19DRlMsCj4gPiAtICAgICBTTkRfU09DX0RBSUxJTktfUkVHKGhpZmkpLAo+
-ID4gK1NORF9TT0NfREFJTElOS19ERUZTKGFuYWxvZywKPiA+ICsgICAgICAgICAgICAgICAgICBE
-QUlMSU5LX0NPTVBfQVJSQVkoQ09NUF9FTVBUWSgpKSwKPiA+ICsgICAgICAgICAgICAgICAgICBE
-QUlMSU5LX0NPTVBfQVJSQVkoQ09NUF9DT0RFQyhOVUxMLCAiSGlGaSIpKSwKPiA+ICsgICAgICAg
-ICAgICAgICAgICBEQUlMSU5LX0NPTVBfQVJSQVkoQ09NUF9FTVBUWSgpKSk7Cj4gPiArCj4gPiAr
-U05EX1NPQ19EQUlMSU5LX0RFRlMoaGRtaSwKPiA+ICsgICAgICAgICAgICAgICAgICBEQUlMSU5L
-X0NPTVBfQVJSQVkoQ09NUF9FTVBUWSgpKSwKPiA+ICsgICAgICAgICAgICAgICAgICBEQUlMSU5L
-X0NPTVBfQVJSQVkoQ09NUF9DT0RFQyhOVUxMLCAiaTJzLWhpZmkiKSksCj4gPiArICAgICAgICAg
-ICAgICAgICAgREFJTElOS19DT01QX0FSUkFZKENPTVBfRU1QVFkoKSkpOwo+ID4gKwo+ID4gK2Vu
-dW0gewo+ID4gKyAgICAgREFJTElOS19NQVg5ODA5MCwKPiA+ICsgICAgIERBSUxJTktfSERNSSwK
-PiA+ICt9Owo+ID4gKwo+ID4gKy8qIG1heDk4MDkwIGFuZCBIRE1JIGNvZGVjIGRhaV9saW5rICov
-Cj4gPiArc3RhdGljIHN0cnVjdCBzbmRfc29jX2RhaV9saW5rIHJrX2RhaWxpbmtzW10gPSB7Cj4g
-PiArICAgICBbREFJTElOS19NQVg5ODA5MF0gPSB7Cj4gPiArICAgICAgICAgICAgIC5uYW1lID0g
-Im1heDk4MDkwIiwKPiA+ICsgICAgICAgICAgICAgLnN0cmVhbV9uYW1lID0gIkFuYWxvZyIsCj4g
-PiArICAgICAgICAgICAgIC5vcHMgPSAmcmtfYWlmMV9vcHMsCj4gPiArICAgICAgICAgICAgIC8q
-IHNldCBtYXg5ODA5MCBhcyBzbGF2ZSAqLwo+ID4gKyAgICAgICAgICAgICAuZGFpX2ZtdCA9IFNO
-RF9TT0NfREFJRk1UX0kyUyB8IFNORF9TT0NfREFJRk1UX05CX05GIHwKPiA+ICsgICAgICAgICAg
-ICAgICAgICAgICBTTkRfU09DX0RBSUZNVF9DQlNfQ0ZTLAo+ID4gKyAgICAgICAgICAgICBTTkRf
-U09DX0RBSUxJTktfUkVHKGFuYWxvZyksCj4gPiArICAgICB9LAo+ID4gKyAgICAgW0RBSUxJTktf
-SERNSV0gPSB7Cj4gPiArICAgICAgICAgICAgIC5uYW1lID0gIkhETUkiLAo+ID4gKyAgICAgICAg
-ICAgICAuc3RyZWFtX25hbWUgPSAiSERNSSIsCj4gPiArICAgICAgICAgICAgIC5vcHMgPSAmcmtf
-YWlmMV9vcHMsCj4gPiArICAgICAgICAgICAgIC5kYWlfZm10ID0gU05EX1NPQ19EQUlGTVRfSTJT
-IHwgU05EX1NPQ19EQUlGTVRfTkJfTkYgfAo+ID4gKyAgICAgICAgICAgICAgICAgICAgIFNORF9T
-T0NfREFJRk1UX0NCU19DRlMsCj4gPiArICAgICAgICAgICAgIFNORF9TT0NfREFJTElOS19SRUco
-aGRtaSksCj4gPiArICAgICB9Cj4gPiAgfTsKPiA+Cj4gPiAgc3RhdGljIGludCBya185ODA5MF9o
-ZWFkc2V0X2luaXQoc3RydWN0IHNuZF9zb2NfY29tcG9uZW50ICpjb21wb25lbnQpOwo+ID4gQEAg
-LTEzNiw4ICsxNjUsOCBAQCBzdGF0aWMgc3RydWN0IHNuZF9zb2NfYXV4X2RldiBya185ODA5MF9o
-ZWFkc2V0X2RldiA9IHsKPiA+ICBzdGF0aWMgc3RydWN0IHNuZF9zb2NfY2FyZCBzbmRfc29jX2Nh
-cmRfcmsgPSB7Cj4gPiAgICAgICAubmFtZSA9ICJST0NLQ0hJUC1JMlMiLAo+ID4gICAgICAgLm93
-bmVyID0gVEhJU19NT0RVTEUsCj4gPiAtICAgICAuZGFpX2xpbmsgPSAmcmtfZGFpbGluaywKPiA+
-IC0gICAgIC5udW1fbGlua3MgPSAxLAo+ID4gKyAgICAgLmRhaV9saW5rID0gcmtfZGFpbGlua3Ms
-Cj4gPiArICAgICAubnVtX2xpbmtzID0gQVJSQVlfU0laRShya19kYWlsaW5rcyksCj4gPiAgICAg
-ICAuYXV4X2RldiA9ICZya185ODA5MF9oZWFkc2V0X2RldiwKPiA+ICAgICAgIC5udW1fYXV4X2Rl
-dnMgPSAxLAo+ID4gICAgICAgLmRhcG1fd2lkZ2V0cyA9IHJrX2RhcG1fd2lkZ2V0cywKPiA+IEBA
-IC0xNzMsMjcgKzIwMiw3MyBAQCBzdGF0aWMgaW50IHNuZF9ya19tY19wcm9iZShzdHJ1Y3QgcGxh
-dGZvcm1fZGV2aWNlCj4gPiAqcGRldikgaW50IHJldCA9IDA7Cj4gPiAgICAgICBzdHJ1Y3Qgc25k
-X3NvY19jYXJkICpjYXJkID0gJnNuZF9zb2NfY2FyZF9yazsKPiA+ICAgICAgIHN0cnVjdCBkZXZp
-Y2Vfbm9kZSAqbnAgPSBwZGV2LT5kZXYub2Zfbm9kZTsKPiA+ICsgICAgIHN0cnVjdCBkZXZpY2Vf
-bm9kZSAqbnBfYW5hbG9nOwo+ID4gKyAgICAgc3RydWN0IGRldmljZV9ub2RlICpucF9jcHU7Cj4g
-PiArICAgICBzdHJ1Y3QgZGV2aWNlX25vZGUgKm5wX2hkbWlfY29kZWM7Cj4gPiArICAgICBzdHJ1
-Y3Qgb2ZfcGhhbmRsZV9hcmdzIGFyZ3M7Cj4gPgo+ID4gICAgICAgLyogcmVnaXN0ZXIgdGhlIHNv
-YyBjYXJkICovCj4gPiAgICAgICBjYXJkLT5kZXYgPSAmcGRldi0+ZGV2Owo+ID4KPiA+IC0gICAg
-IHJrX2RhaWxpbmsuY29kZWNzLT5vZl9ub2RlID0gb2ZfcGFyc2VfcGhhbmRsZShucCwKPiA+IC0g
-ICAgICAgICAgICAgICAgICAgICAicm9ja2NoaXAsYXVkaW8tY29kZWMiLCAwKTsKPiA+IC0gICAg
-IGlmICghcmtfZGFpbGluay5jb2RlY3MtPm9mX25vZGUpIHsKPiA+ICsgICAgIG5wX2FuYWxvZyA9
-IG9mX3BhcnNlX3BoYW5kbGUobnAsICJyb2NrY2hpcCxhdWRpby1jb2RlYyIsIDApOwo+ID4gKyAg
-ICAgaWYgKCFucF9hbmFsb2cpIHsKPiA+ICAgICAgICAgICAgICAgZGV2X2VycigmcGRldi0+ZGV2
-LAo+ID4gICAgICAgICAgICAgICAgICAgICAgICJQcm9wZXJ0eSAncm9ja2NoaXAsYXVkaW8tY29k
-ZWMnIG1pc3Npbmcgb3IKPiBpbnZhbGlkXG4iKTsKPiA+ICAgICAgICAgICAgICAgcmV0dXJuIC1F
-SU5WQUw7Cj4gPiAgICAgICB9Cj4gPiArICAgICBya19kYWlsaW5rc1tEQUlMSU5LX01BWDk4MDkw
-XS5jb2RlY3MtPm9mX25vZGUgPSBucF9hbmFsb2c7Cj4gPiArCj4gPiArICAgICByZXQgPSBvZl9w
-YXJzZV9waGFuZGxlX3dpdGhfZml4ZWRfYXJncyhucCwgInJvY2tjaGlwLGF1ZGlvLWNvZGVjIiwK
-PiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAsIDAsICZh
-cmdzKTsKPiA+ICsgICAgIGlmIChyZXQpIHsKPiA+ICsgICAgICAgICAgICAgZGV2X2VycigmcGRl
-di0+ZGV2LAo+ID4gKyAgICAgICAgICAgICAgICAgICAgICJVbmFibGUgdG8gcGFyc2UgcHJvcGVy
-dHkgJ3JvY2tjaGlwLGF1ZGlvLQo+IGNvZGVjJ1xuIik7Cj4gPiArICAgICAgICAgICAgIHJldHVy
-biByZXQ7Cj4gPiArICAgICB9Cj4gPiArCj4gPiArICAgICByZXQgPSBzbmRfc29jX2dldF9kYWlf
-bmFtZSgKPiA+ICsgICAgICAgICAgICAgICAgICAgICAmYXJncywgJnJrX2RhaWxpbmtzW0RBSUxJ
-TktfTUFYOTgwOTBdLmNvZGVjcy0KPiA+ZGFpX25hbWUpOwo+ID4gKyAgICAgaWYgKHJldCkgewo+
-ID4gKyAgICAgICAgICAgICBkZXZfZXJyKCZwZGV2LT5kZXYsICJVbmFibGUgdG8gZ2V0IGNvZGVj
-IGRhaV9uYW1lXG4iKTsKPiA+ICsgICAgICAgICAgICAgcmV0dXJuIHJldDsKPiA+ICsgICAgIH0K
-PiA+ICsKPiA+ICsgICAgIG5wX2NwdSA9IG9mX3BhcnNlX3BoYW5kbGUobnAsICJyb2NrY2hpcCxp
-MnMtY29udHJvbGxlciIsIDApOwo+ID4KPiA+IC0gICAgIHJrX2RhaWxpbmsuY3B1cy0+b2Zfbm9k
-ZSA9IG9mX3BhcnNlX3BoYW5kbGUobnAsCj4gPiAtICAgICAgICAgICAgICAgICAgICAgInJvY2tj
-aGlwLGkycy1jb250cm9sbGVyIiwgMCk7Cj4gPiAtICAgICBpZiAoIXJrX2RhaWxpbmsuY3B1cy0+
-b2Zfbm9kZSkgewo+ID4gKyAgICAgaWYgKCFucF9jcHUpIHsKPiA+ICAgICAgICAgICAgICAgZGV2
-X2VycigmcGRldi0+ZGV2LAo+ID4gICAgICAgICAgICAgICAgICAgICAgICJQcm9wZXJ0eSAncm9j
-a2NoaXAsaTJzLWNvbnRyb2xsZXInIG1pc3NpbmcKPiBvciBpbnZhbGlkXG4iKTsKPiA+ICAgICAg
-ICAgICAgICAgcmV0dXJuIC1FSU5WQUw7Cj4gPiAgICAgICB9Cj4gPgo+ID4gLSAgICAgcmtfZGFp
-bGluay5wbGF0Zm9ybXMtPm9mX25vZGUgPSBya19kYWlsaW5rLmNwdXMtPm9mX25vZGU7Cj4gPiAr
-ICAgICBucF9oZG1pX2NvZGVjID0gb2ZfcGFyc2VfcGhhbmRsZShucCwgInJvY2tjaGlwLGhkbWkt
-Y29kZWMiLCAwKTsKPiA+ICsgICAgIGlmICghbnBfaGRtaV9jb2RlYykgewo+ID4gKyAgICAgICAg
-ICAgICBkZXZfZXJyKCZwZGV2LT5kZXYsCj4gPiArICAgICAgICAgICAgICAgICAgICAgIlByb3Bl
-cnR5ICdyb2NrY2hpcCxoZG1pLWNvZGVjJyBtaXNzaW5nIG9yCj4gaW52YWxpZFxuIik7Cj4gPiAr
-ICAgICAgICAgICAgIHJldHVybiAtRUlOVkFMOwo+ID4gKyAgICAgfQo+Cj4gUHJvcGVydHkgInJv
-Y2tjaGlwLGhkbWktY29kZWMiIGlzIGFkZGVkIGluIHRoaXMgc2VyaWVzLCByaWdodD8gWW91IGNh
-bid0IG1ha2UKPiBpdCBtYW5kYXRvcnksIGJlY2F1c2Uga2VybmVsIG11c3QgYmUgYmFja3dhcmQg
-Y29tcGF0aWJsZSB3aXRoIG9sZCBkZXZpY2UgdHJlZQo+IGZpbGVzIGFuZCB0aGV5IGRvbid0IGhh
-dmUgdGhpcyBwcm9wZXJ0eS4KPgo+IFRoaW5rIGFib3V0IHVzZSBjYXNlIHdoZW4gdXNlciBoYXBw
-aWx5IHVzZWQgdGhpcyBkcml2ZXIgYW5kIGFmdGVyIGtlcm5lbAo+IHVwZGF0ZSwgaXQgc3VkZGVu
-bHkgc3RvcHMgd29ya2luZy4gWW91IGNhbid0IGFzc3VtZSB0aGF0IGJvYXJkIERUQiBmaWxlIHdp
-bGwgYmUKPiB1cGRhdGVkIGFsb25nIHdpdGgga2VybmVsIHVwZGF0ZS4KPgo+IEp1c3QgbWFrZSBp
-dCBvcHRpb25hbCBhbmQgZG9uJ3QgZXhwb3NlIGphY2sgZnVuY3Rpb25hbGl0eSBpZiBpdCdzIG5v
-dCBwcmVzZW50LgpIaSBKZXJuZWosClRoYW5rcyBmb3IgdGhlIHJlcGx5LgpJIHNlZS4gWWVzIEkg
-Y2FuIG1ha2UgaXQgb3B0aW9uYWwuCkJ1dCBpdCB3aWxsIGJlY29tZSBhIGxpdHRsZSBiaXQgbWVz
-c3kgZm9yIHR3byB0eXBlcyBvZiB1c2FnZSB0byBzaGFyZQpvbmUgbWFjaGluZSBkcml2ZXIuCgpJ
-IHRoaW5rIEkgd2lsbCBjcmVhdGUgdHdvIGluc3RhbmNlcyBvZiBzdHJ1Y3RzIGZvcgoKZGFwbSB3
-aWRnZXRzLApkYXBtIHJvdXRlcywKa2NvbnRyb2xzLApkYWlfbGlua3MKCmZvciAibWF4OTgwOTAg
-b25seSIgYW5kICJtYXg5ODA5MCtoZG1pIgoKYW5kIHNldCB0aG9zZSBmaWVsZHMgaW4gc25kX3Nv
-Y19jYXJkIGRlcGVuZGluZyBvbiBkZXBlbmRpbmcgb24gdGhlIHByb3BlcnR5LgpUaGVzZSB0d28g
-dXNhZ2VzIGNhbiBzdGlsbCBzaGFyZSBtb3N0IG9mIHRoZSBmdW5jdGlvbiBjYWxscy4KSG9wZSB0
-aGlzIGxvb2tzIGNsZWFuLgoKSWYgeW91IGhhdmUgYSBjbGVhbmVyIHdheSBvZiBzaGFyaW5nIG1h
-Y2hpbmUgZHJpdmVyIHBsZWFzZSBsZXQgbWUga25vdy4KSSdsbCBwb3N0IGFuIHVwZGF0ZSBwcm9i
-YWJseSBuZXh0IHdlZWsuClRoYW5rcyBhIGxvdCEKCgo+Cj4gQmVzdCByZWdhcmRzLAo+IEplcm5l
-ago+Cj4gPiArCj4gPiArICAgICBya19kYWlsaW5rc1tEQUlMSU5LX0hETUldLmNvZGVjcy0+b2Zf
-bm9kZSA9IG5wX2hkbWlfY29kZWM7Cj4gPiArCj4gPiArICAgICByZXQgPSBvZl9wYXJzZV9waGFu
-ZGxlX3dpdGhfZml4ZWRfYXJncyhucCwgInJvY2tjaGlwLGhkbWktY29kZWMiLAo+ID4gKyAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMCwgMCwgJmFyZ3MpOwo+ID4g
-KyAgICAgaWYgKHJldCkgewo+ID4gKyAgICAgICAgICAgICBkZXZfZXJyKCZwZGV2LT5kZXYsCj4g
-PiArICAgICAgICAgICAgICAgICAgICAgIlVuYWJsZSB0byBwYXJzZSBwcm9wZXJ0eSAncm9ja2No
-aXAsaGRtaS0KPiBjb2RlYydcbiIpOwo+ID4gKyAgICAgICAgICAgICByZXR1cm4gcmV0Owo+ID4g
-KyAgICAgfQo+ID4gKwo+ID4gKyAgICAgcmV0ID0gc25kX3NvY19nZXRfZGFpX25hbWUoCj4gPiAr
-ICAgICAgICAgICAgICAgICAgICAgJmFyZ3MsICZya19kYWlsaW5rc1tEQUlMSU5LX0hETUldLmNv
-ZGVjcy0KPiA+ZGFpX25hbWUpOwo+ID4gKyAgICAgaWYgKHJldCkgewo+ID4gKyAgICAgICAgICAg
-ICBkZXZfZXJyKCZwZGV2LT5kZXYsICJVbmFibGUgdG8gZ2V0IGhkbWkgY29kZWMKPiBkYWlfbmFt
-ZVxuIik7Cj4gPiArICAgICAgICAgICAgIHJldHVybiByZXQ7Cj4gPiArICAgICB9Cj4gPiArCj4g
-PiArICAgICBya19kYWlsaW5rc1tEQUlMSU5LX01BWDk4MDkwXS5jcHVzLT5vZl9ub2RlID0gbnBf
-Y3B1Owo+ID4gKyAgICAgcmtfZGFpbGlua3NbREFJTElOS19NQVg5ODA5MF0ucGxhdGZvcm1zLT5v
-Zl9ub2RlID0gbnBfY3B1Owo+ID4gKyAgICAgcmtfZGFpbGlua3NbREFJTElOS19IRE1JXS5jcHVz
-LT5vZl9ub2RlID0gbnBfY3B1Owo+ID4gKyAgICAgcmtfZGFpbGlua3NbREFJTElOS19IRE1JXS5w
-bGF0Zm9ybXMtPm9mX25vZGUgPSBucF9jcHU7Cj4gPgo+ID4gICAgICAgcmtfOTgwOTBfaGVhZHNl
-dF9kZXYuY29kZWNfb2Zfbm9kZSA9IG9mX3BhcnNlX3BoYW5kbGUobnAsCj4gPiAgICAgICAgICAg
-ICAgICAgICAgICAgInJvY2tjaGlwLGhlYWRzZXQtY29kZWMiLCAwKTsKPgo+Cj4KPgoKX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAg
-bWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
+On Wed, Sep 18, 2019 at 12:32 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>
+> Convert Samsung PWM (S3C, S5P and Exynos SoCs) bindings to DT schema
+> format using json-schema.
+>
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+>
+> ---
+>
+> Changes since v1:
+> 1. Indent example with four spaces (more readable),
+> 2. Fix samsung,pwm-outputs after review,
+> 3. Remove double-quotes from clock names.
+> ---
+>  .../devicetree/bindings/pwm/pwm-samsung.txt   |  51 ---------
+>  .../devicetree/bindings/pwm/pwm-samsung.yaml  | 107 ++++++++++++++++++
+>  2 files changed, 107 insertions(+), 51 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/pwm/pwm-samsung.txt
+>  create mode 100644 Documentation/devicetree/bindings/pwm/pwm-samsung.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/pwm/pwm-samsung.txt b/Documentation/devicetree/bindings/pwm/pwm-samsung.txt
+> deleted file mode 100644
+> index 5538de9c2007..000000000000
+> --- a/Documentation/devicetree/bindings/pwm/pwm-samsung.txt
+> +++ /dev/null
+> @@ -1,51 +0,0 @@
+> -* Samsung PWM timers
+> -
+> -Samsung SoCs contain PWM timer blocks which can be used for system clock source
+> -and clock event timers, as well as to drive SoC outputs with PWM signal. Each
+> -PWM timer block provides 5 PWM channels (not all of them can drive physical
+> -outputs - see SoC and board manual).
+> -
+> -Be aware that the clocksource driver supports only uniprocessor systems.
+> -
+> -Required properties:
+> -- compatible : should be one of following:
+> -    samsung,s3c2410-pwm - for 16-bit timers present on S3C24xx SoCs
+> -    samsung,s3c6400-pwm - for 32-bit timers present on S3C64xx SoCs
+> -    samsung,s5p6440-pwm - for 32-bit timers present on S5P64x0 SoCs
+> -    samsung,s5pc100-pwm - for 32-bit timers present on S5PC100, S5PV210,
+> -                         Exynos4210 rev0 SoCs
+> -    samsung,exynos4210-pwm - for 32-bit timers present on Exynos4210,
+> -                          Exynos4x12, Exynos5250 and Exynos5420 SoCs
+> -- reg: base address and size of register area
+> -- interrupts: list of timer interrupts (one interrupt per timer, starting at
+> -  timer 0)
+> -- clock-names: should contain all following required clock names:
+> -    - "timers" - PWM base clock used to generate PWM signals,
+> -  and any subset of following optional clock names:
+> -    - "pwm-tclk0" - first external PWM clock source,
+> -    - "pwm-tclk1" - second external PWM clock source.
+> -  Note that not all IP variants allow using all external clock sources.
+> -  Refer to SoC documentation to learn which clock source configurations
+> -  are available.
+> -- clocks: should contain clock specifiers of all clocks, which input names
+> -  have been specified in clock-names property, in same order.
+> -- #pwm-cells: should be 3. See pwm.txt in this directory for a description of
+> -  the cells format. The only third cell flag supported by this binding is
+> -  PWM_POLARITY_INVERTED.
+> -
+> -Optional properties:
+> -- samsung,pwm-outputs: list of PWM channels used as PWM outputs on particular
+> -    platform - an array of up to 5 elements being indices of PWM channels
+> -    (from 0 to 4), the order does not matter.
+> -
+> -Example:
+> -       pwm@7f006000 {
+> -               compatible = "samsung,s3c6400-pwm";
+> -               reg = <0x7f006000 0x1000>;
+> -               interrupt-parent = <&vic0>;
+> -               interrupts = <23>, <24>, <25>, <27>, <28>;
+> -               clocks = <&clock 67>;
+> -               clock-names = "timers";
+> -               samsung,pwm-outputs = <0>, <1>;
+> -               #pwm-cells = <3>;
+> -       }
+> diff --git a/Documentation/devicetree/bindings/pwm/pwm-samsung.yaml b/Documentation/devicetree/bindings/pwm/pwm-samsung.yaml
+> new file mode 100644
+> index 000000000000..06d11faabff6
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/pwm/pwm-samsung.yaml
+> @@ -0,0 +1,107 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/pwm/pwm-samsung.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Samsung SoC PWM timers
+> +
+> +maintainers:
+> +  - Thierry Reding <thierry.reding@gmail.com>
+> +  - Krzysztof Kozlowski <krzk@kernel.org>
+> +
+> +description: |+
+> +  Samsung SoCs contain PWM timer blocks which can be used for system clock source
+> +  and clock event timers, as well as to drive SoC outputs with PWM signal. Each
+> +  PWM timer block provides 5 PWM channels (not all of them can drive physical
+> +  outputs - see SoC and board manual).
+> +
+> +  Be aware that the clocksource driver supports only uniprocessor systems.
+> +
+> +allOf:
+> +  - $ref: pwm.yaml#
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - samsung,s3c2410-pwm             # 16-bit, S3C24xx
+> +      - samsung,s3c6400-pwm             # 32-bit, S3C64xx
+> +      - samsung,s5p6440-pwm             # 32-bit, S5P64x0
+> +      - samsung,s5pc100-pwm             # 32-bit, S5PC100, S5PV210, Exynos4210 rev0 SoCs
+> +      - samsung,exynos4210-pwm          # 32-bit, Exynos
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    minItems: 1
+> +    maxItems: 3
+> +
+> +  clock-names:
+> +    description: |
+> +      Should contain all following required clock names:
+> +      - "timers" - PWM base clock used to generate PWM signals,
+> +      and any subset of following optional clock names:
+> +      - "pwm-tclk0" - first external PWM clock source,
+> +      - "pwm-tclk1" - second external PWM clock source.
+> +      Note that not all IP variants allow using all external clock sources.
+> +      Refer to SoC documentation to learn which clock source configurations
+> +      are available.
+> +    oneOf:
+> +      - items:
+> +        - const: timers
+> +      - items:
+> +        - const: timers
+> +        - const: pwm-tclk0
+> +      - items:
+> +        - const: timers
+> +        - const: pwm-tclk1
+> +      - items:
+> +        - const: timers
+> +        - const: pwm-tclk0
+> +        - const: pwm-tclk1
+> +
+> +  interrupts:
+> +    description:
+> +      One interrupt per timer, starting at timer 0.
+> +    minItems: 1
+> +    maxItems: 5
+> +
+> +  "#pwm-cells":
+> +    description:
+> +      The only third cell flag supported by this binding
+> +      is PWM_POLARITY_INVERTED.
+> +    const: 3
+> +
+> +  samsung,pwm-outputs:
+> +    description:
+> +      A list of PWM channels used as PWM outputs on particular platform.
+> +      It is an array of up to 5 elements being indices of PWM channels
+> +      (from 0 to 4), the order does not matter.
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32-array
+> +      - uniqueItems: true
+> +      - items:
+> +          minimum: 0
+> +          maximum: 4
+> +
+> +required:
+> +  - clocks
+> +  - clock-names
+> +  - compatible
+> +  - interrupts
+> +  - "#pwm-cells"
+> +  - reg
+
+additionalProperties: false
+
+should work here. And in the rng binding too.
+
+Rob
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
