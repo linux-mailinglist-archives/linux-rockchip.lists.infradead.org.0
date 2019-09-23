@@ -2,141 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C969B9F6B
-	for <lists+linux-rockchip@lfdr.de>; Sat, 21 Sep 2019 20:41:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A17F4BB38F
+	for <lists+linux-rockchip@lfdr.de>; Mon, 23 Sep 2019 14:21:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
-	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KWzi3NxpLKE2VEc2QoO0OeUk8pNq/vbWAndiAuixvv0=; b=Radf3HyUTaI3TS
-	Vr4+Gzb7GPJy1ZNkHE24+qYbmuGDfQCwgVzQpoz+3YmUlzwvLM4HeWGYA6NOHRVLCLdEcncs6adgf
-	jFZOYjDCL/EU2qFMz6Ble2we3+myMmdF9J+HEr0V97jYMFf8UYIHTOspGSKdzNSmNstnhAwlDhgU5
-	yUXjixpgZuKeIeKE72kuh5J3Qumqt4zz0qmPeQn4jNZGOS0xv434qAGVAhnrx9wJhfAMlQS+jpvTs
-	JLAmAMQ1MEmYW8aZTNavl+BVWnu0MNQ0fDpm6s6e+zV3D439MIyZvXYoKEMsFXYRDt4Z9lW8HKWPj
-	q13CjSAlcsfb5Na/C2dg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=qNlMG6SyflkicLbPN1YV0nmHSXD+NMKT8uGYhjkdo/c=; b=Bvd
+	4yEMnKN87kgBFHZ8n03dCF8Hlbfvo9ML8hrLKmlJzlmOeIX+TViTgR34A9pYwaNaoI/vKfltFYxx1
+	ZyhRdApTuQjJo2OMp/MEZVA4vJPZaQvujgVcqzB8JS+X9DyPz6pYAb1l5aMYLFGGNzh58vwQKRYPq
+	jYQHXPkt9wt2Yr8nBz+gStgfHUKTZ2UdyZBeAO7b/1hDQlBsLKPGp68ubiWKStO6cxHyO733ByLL5
+	KHGpVx6W8lGQZOHmh8WUI1V62jfoykYVpvTgaCrcyQkdS6GizeQpRHzrX0HE4QsQFMBtRyjr8HTgW
+	Gv0ofZIvO+U9ScbuQyS+1iZQpNUzD5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBkJT-0001j3-3i; Sat, 21 Sep 2019 18:40:55 +0000
-Received: from mout.web.de ([212.227.17.11])
+	id 1iCNKm-00069V-QC; Mon, 23 Sep 2019 12:20:52 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBkJN-0001ij-Uk
- for linux-rockchip@lists.infradead.org; Sat, 21 Sep 2019 18:40:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1569091219;
- bh=Twq1fj2lQc3nmfC187jBrB33/1QwxY+fy4X0HS5AHhE=;
- h=X-UI-Sender-Class:To:From:Subject:Cc:Date;
- b=KJw7POip/zrplKUQwCoIyGHOd6wUfMqr5wf0nR9Oh9gfI6S5CaOuzaW6BuiMm/FSK
- aZEUenAMLauMrLPjOIGDSLWjIuwRC76aETAuFCiqtY3HfhUZcegJlDpqZL4lSIYiix
- DM9kEdaI8yoQy6iQVmvYcYcymNxcU885GyoRe/lY=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.1.2] ([2.244.64.44]) by smtp.web.de (mrweb102
- [213.165.67.124]) with ESMTPSA (Nemesis) id 0LkPnr-1hebHM20Al-00cQL7; Sat, 21
- Sep 2019 20:40:19 +0200
-To: dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- David Airlie <airlied@linux.ie>, =?UTF-8?Q?Heiko_St=c3=bcbner?=
- <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
- Zheng Yang <zhengyang@rock-chips.com>
-From: Markus Elfring <Markus.Elfring@web.de>
-Subject: [PATCH] drm/rockchip/rk3066: Use devm_platform_ioremap_resource() in
- rk3066_hdmi_bind()
-Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
- 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 FEE=
-Message-ID: <0666bc0b-6624-21a0-47c4-b78e2a3b3ad5@web.de>
-Date: Sat, 21 Sep 2019 20:40:16 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
-MIME-Version: 1.0
-Content-Language: en-US
-X-Provags-ID: V03:K1:5I3KuHcCJx+Ogtmv8TkE+aOUJZQhTM3hWEdytOtIg94XcoRHXwC
- 8yQ5Vmf68D9oCgcXp+HmU9gj4qeO98DxGjMCbZ1ppeQ4x+B6HID151IVmVk8W4TmWKbCdbJ
- ojRXBpR86dRNY/b4Ab+bVKTjNSlv50SVKc+l+ueTnsraKxfntPYIY+v9ww63xXEJC7LMP8v
- 1hgw5woFymUdqEDVnx62w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:K5heBjx4d+Y=:fXuxZ2pnoPj0CdmC3JlDEZ
- CbsPctl5Dv4ymI1Gq83euUzsXwR8fnbxQlDP+6mp6yPoStGj6ZuQn2d9sDHkhc2nkJhrMo/x/
- j/F/gYf3osfiSYY0Qm1cLdUagAMSjpBRlRMPKmB6vifQpKrTHdJc3clRgmNqNmITDmXHKcyHB
- myvzRAA5hXz9sCMrBkcUkoSb15f4ynbNReKzQpZrAiMat/jijqK+FOHr525rgDLz6A2lOHCry
- P6nNmaMcqsm60nw8AnV2waLeuvuv8J1CK4fb3QciefjMhL+K/vRdaY0AkK8r8itIjERyIDk3U
- bT4Qtvab5BCWoCgVOEmRq/StQmri5DEjY1rDd68CfU+qQozdoomT/NbgYmPYPV5xjAZny30C8
- /cPD4C+PwCRRQ/4CJh+KkvlSKbB3aWHRdGAvfKteDQ17R0C/N/RY64Jzd97huCMkv696rkT6p
- uLVthZ9xtrlu1fuMqGHRUaa+UD/58GfMlcngQkO7FtxXuzKcSf2/Rh7LpcgS/w/47RdyX0MrL
- BfqCYskBrYJgeF+iHtVxYLXE0jfUI36FvluE0JTH53pQNUGwN9ZDitRNQrSRMNtJYWs3FoR5A
- Y8O9bRtyPcp8qYRfkSPsxReFGB5SOlfa85Zxl9ASaOLulY5VEDRNXtbCZkceWAfFw0CDGM3W0
- s/xyrLPADuy6v2KFwo+TImvJBNs/TXQz4DrT2MV9TeQsXkda4RcZfBLRT0z5/lJ2wC2BV1Gwi
- W6t2IjKPFW5bYFFdRF7sTgJjWD2+jcsEYQKSZx/kGbXTr+6DeF+BlaFMiRAggHfwcP7k6hJ0l
- a+oB6oU+W/cUT/cZC+ACBybyCQFsi1iYF2/GEQJEabc/sjUJSgMFtfjdlNWyWHas5cmZt++C7
- 2MjM6UiVheaR5Msu6ssQBX3eYehRvGwV84dzZel36ID+qEwgo2Ff96z+9BNKrKRA0t3QED4BH
- HFJvJ31PAshjBK/Uj4TCyDjNkwLVcGegGqTaSPAg4dQHJeOXK1U/YHPxLBsrCkB3YJSc7yt8G
- KdPMkfR2B1ff4HeIuANRjyo/ubt1u0yD7rLa4t3rFKZMlRq10mx/DsPBDF83JjNzRBUG6cXMz
- O1YctSmIXp8W2SO8bVJVblEitOoA5b5Z0vwVX/zRofYmnITrjI6TqsJPTwoI0u2AAgA8ZqFg/
- 4c64q5b0u+ShwgIHuCo9fjrjX6wlEnSaJHI00WU7gHd63CwLpl/UGFr/UjKvC2AIe5CT50tDo
- 3oEk4kmbOkHN6ms4R2t9KecIokfQPjnO1XXf69e45uQuar0rzR9RHeAXoMqQ=
+ id 1iCNKS-0005zb-PY; Mon, 23 Sep 2019 12:20:35 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 275AD283BCE
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+To: dri-devel@lists.freedesktop.org
+Subject: [PATCH] drm/rockchip: Add AFBC support
+Date: Mon, 23 Sep 2019 14:20:13 +0200
+Message-Id: <20190923122014.18229-1-andrzej.p@collabora.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190921_114050_289534_F698AD95 
-X-CRM114-Status: UNSURE (   8.89  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190923_052034_142060_16073125 
+X-CRM114-Status: GOOD (  16.73  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.11 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (markus.elfring[at]web.de)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -149,53 +56,365 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Johan Jonker <jbx6244@gmail.com>, kernel-janitors@vger.kernel.org,
- LKML <linux-kernel@vger.kernel.org>
+Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
+ Sean Paul <sean@poorly.run>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Sandy Huang <hjc@rock-chips.com>, Maxime Ripard <mripard@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Markus Elfring <elfring@users.sourceforge.net>
-Date: Sat, 21 Sep 2019 20:32:25 +0200
+From: Ezequiel Garcia <ezequiel@collabora.com>
 
-Simplify this function implementation by using a known wrapper function.
+AFBC is a proprietary lossless image compression protocol and format.
+It helps reduce memory bandwidth of the graphics pipeline operations.
+This, in turn, improves power efficiency.
 
-This issue was detected by using the Coccinelle software.
-
-Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+[locking improvements]
+Signed-off-by: Tomeu Vizoso <tomeu.vizoso@collabora.com>
+[squashing the above, commit message and Rockchip AFBC modifier]
+Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- drivers/gpu/drm/rockchip/rk3066_hdmi.c | 8 +-------
- 1 file changed, 1 insertion(+), 7 deletions(-)
+ drivers/gpu/drm/rockchip/rockchip_drm_fb.c  | 27 ++++++
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 94 ++++++++++++++++++++-
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.h | 12 +++
+ drivers/gpu/drm/rockchip/rockchip_vop_reg.c | 18 ++++
+ include/uapi/drm/drm_fourcc.h               |  3 +
+ 5 files changed, 151 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/gpu/drm/rockchip/rk3066_hdmi.c b/drivers/gpu/drm/rockchip/rk3066_hdmi.c
-index 85fc5f01f761..cdb401f4283d 100644
---- a/drivers/gpu/drm/rockchip/rk3066_hdmi.c
-+++ b/drivers/gpu/drm/rockchip/rk3066_hdmi.c
-@@ -743,7 +743,6 @@ static int rk3066_hdmi_bind(struct device *dev, struct device *master,
- 	struct platform_device *pdev = to_platform_device(dev);
- 	struct drm_device *drm = data;
- 	struct rk3066_hdmi *hdmi;
--	struct resource *iores;
- 	int irq;
+diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
+index 64ca87cf6d50..5178939a9c29 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
++++ b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
+@@ -24,6 +24,27 @@ static const struct drm_framebuffer_funcs rockchip_drm_fb_funcs = {
+ 	.dirty	       = drm_atomic_helper_dirtyfb,
+ };
+ 
++static int
++rockchip_verify_afbc_mod(struct drm_device *dev,
++			 const struct drm_mode_fb_cmd2 *mode_cmd)
++{
++	if (mode_cmd->modifier[0] &
++	    ~DRM_FORMAT_MOD_ARM_AFBC(AFBC_FORMAT_MOD_ROCKCHIP)) {
++		DRM_DEV_ERROR(dev->dev,
++			      "Unsupported format modifier 0x%llx\n",
++			      mode_cmd->modifier[0]);
++		return -EINVAL;
++	}
++
++	if (mode_cmd->width > 2560) {
++		DRM_DEV_ERROR(dev->dev,
++			      "Unsupported width %d\n", mode_cmd->width);
++		return -EINVAL;
++	}
++
++	return 0;
++}
++
+ static struct drm_framebuffer *
+ rockchip_fb_alloc(struct drm_device *dev, const struct drm_mode_fb_cmd2 *mode_cmd,
+ 		  struct drm_gem_object **obj, unsigned int num_planes)
+@@ -32,6 +53,12 @@ rockchip_fb_alloc(struct drm_device *dev, const struct drm_mode_fb_cmd2 *mode_cm
  	int ret;
-
-@@ -753,12 +752,7 @@ static int rk3066_hdmi_bind(struct device *dev, struct device *master,
-
- 	hdmi->dev = dev;
- 	hdmi->drm_dev = drm;
--
--	iores = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	if (!iores)
--		return -ENXIO;
--
--	hdmi->regs = devm_ioremap_resource(dev, iores);
-+	hdmi->regs = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(hdmi->regs))
- 		return PTR_ERR(hdmi->regs);
-
---
-2.23.0
+ 	int i;
+ 
++	if (mode_cmd->modifier[0]) {
++		ret = rockchip_verify_afbc_mod(dev, mode_cmd);
++		if (ret)
++			return ERR_PTR(ret);
++	}
++
+ 	fb = kzalloc(sizeof(*fb), GFP_KERNEL);
+ 	if (!fb)
+ 		return ERR_PTR(-ENOMEM);
+diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+index 21b68eea46cc..50bf214d21da 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
++++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+@@ -46,6 +46,13 @@
+ 		vop_reg_set(vop, &win->phy->scl->ext->name, \
+ 			    win->base, ~0, v, #name)
+ 
++#define VOP_AFBC_SET(x, name, v) \
++	do { \
++		if (vop->data->afbc) \
++			vop_reg_set(vop, &vop->data->afbc->name, \
++				0, ~0, v, #name); \
++	} while (0)
++
+ #define VOP_WIN_YUV2YUV_SET(vop, win_yuv2yuv, name, v) \
+ 	do { \
+ 		if (win_yuv2yuv && win_yuv2yuv->name.mask) \
+@@ -123,6 +130,8 @@ struct vop {
+ 	struct drm_device *drm_dev;
+ 	bool is_enabled;
+ 
++	struct vop_win *afbc_win;
++
+ 	struct completion dsp_hold_completion;
+ 
+ 	/* protected by dev->event_lock */
+@@ -245,6 +254,30 @@ static bool has_rb_swapped(uint32_t format)
+ 	}
+ }
+ 
++#define AFBC_FMT_RGB565        0x0
++#define AFBC_FMT_U8U8U8U8      0x5
++#define AFBC_FMT_U8U8U8        0x4
++
++static int vop_convert_afbc_format(uint32_t format)
++{
++	switch (format) {
++	case DRM_FORMAT_XRGB8888:
++	case DRM_FORMAT_ARGB8888:
++	case DRM_FORMAT_XBGR8888:
++	case DRM_FORMAT_ABGR8888:
++		return AFBC_FMT_U8U8U8U8;
++	case DRM_FORMAT_RGB888:
++	case DRM_FORMAT_BGR888:
++		return AFBC_FMT_U8U8U8;
++	case DRM_FORMAT_RGB565:
++	case DRM_FORMAT_BGR565:
++		return AFBC_FMT_RGB565;
++	default:
++		DRM_ERROR("unsupported afbc format[%08x]\n", format);
++		return -EINVAL;
++	}
++}
++
+ static enum vop_data_format vop_convert_format(uint32_t format)
+ {
+ 	switch (format) {
+@@ -587,10 +620,16 @@ static int vop_enable(struct drm_crtc *crtc)
+ 
+ 		vop_win_disable(vop, win);
+ 	}
+-	spin_unlock(&vop->reg_lock);
++
++	if (vop->data->afbc) {
++		VOP_AFBC_SET(vop, enable, 0);
++		vop->afbc_win = NULL;
++	}
+ 
+ 	vop_cfg_done(vop);
+ 
++	spin_unlock(&vop->reg_lock);
++
+ 	/*
+ 	 * At here, vop clock & iommu is enable, R/W vop regs would be safe.
+ 	 */
+@@ -719,6 +758,32 @@ static int vop_plane_atomic_check(struct drm_plane *plane,
+ 		return -EINVAL;
+ 	}
+ 
++	if (fb->modifier & DRM_FORMAT_MOD_ARM_AFBC(AFBC_FORMAT_MOD_ROCKCHIP)) {
++		struct vop *vop = to_vop(crtc);
++
++		if (!vop->data->afbc) {
++			DRM_ERROR("VOP does not support AFBC\n");
++			return -EINVAL;
++		}
++
++		ret = vop_convert_afbc_format(fb->format->format);
++		if (ret < 0)
++			return ret;
++
++		if (state->src.x1 || state->src.y1) {
++			DRM_ERROR("AFBC does not support offset display\n");
++			DRM_ERROR("xpos=%d, ypos=%d, offset=%d\n",
++				state->src.x1, state->src.y1, fb->offsets[0]);
++			return -EINVAL;
++		}
++
++		if (state->rotation && state->rotation != DRM_MODE_ROTATE_0) {
++			DRM_ERROR("AFBC does not support rotation\n");
++			DRM_ERROR("rotation=%d\n", state->rotation);
++			return -EINVAL;
++		}
++	}
++
+ 	return 0;
+ }
+ 
+@@ -732,6 +797,9 @@ static void vop_plane_atomic_disable(struct drm_plane *plane,
+ 	if (!old_state->crtc)
+ 		return;
+ 
++	if (vop->afbc_win == vop_win)
++		vop->afbc_win = NULL;
++
+ 	spin_lock(&vop->reg_lock);
+ 
+ 	vop_win_disable(vop, win);
+@@ -774,6 +842,9 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
+ 	if (WARN_ON(!vop->is_enabled))
+ 		return;
+ 
++	if (vop->afbc_win == vop_win)
++		vop->afbc_win = NULL;
++
+ 	if (!state->visible) {
+ 		vop_plane_atomic_disable(plane, old_state);
+ 		return;
+@@ -808,6 +879,20 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
+ 
+ 	spin_lock(&vop->reg_lock);
+ 
++	if (fb->modifier & DRM_FORMAT_MOD_ARM_AFBC(AFBC_FORMAT_MOD_ROCKCHIP)) {
++		int afbc_format = vop_convert_afbc_format(fb->format->format);
++
++		VOP_AFBC_SET(vop, format, afbc_format | 1 << 4);
++		VOP_AFBC_SET(vop, hreg_block_split, 0);
++		VOP_AFBC_SET(vop, win_sel, win_index);
++		VOP_AFBC_SET(vop, hdr_ptr, dma_addr);
++		VOP_AFBC_SET(vop, pic_size, act_info);
++
++		vop->afbc_win = vop_win;
++
++		pr_info("AFBC on plane %s\n", plane->name);
++	}
++
+ 	VOP_WIN_SET(vop, win, format, format);
+ 	VOP_WIN_SET(vop, win, yrgb_vir, DIV_ROUND_UP(fb->pitches[0], 4));
+ 	VOP_WIN_SET(vop, win, yrgb_mst, dma_addr);
+@@ -1163,6 +1248,7 @@ static void vop_crtc_atomic_flush(struct drm_crtc *crtc,
+ 
+ 	spin_lock(&vop->reg_lock);
+ 
++	VOP_AFBC_SET(vop, enable, vop->afbc_win ? 0x1 : 0);
+ 	vop_cfg_done(vop);
+ 
+ 	spin_unlock(&vop->reg_lock);
+@@ -1471,7 +1557,8 @@ static int vop_create_crtc(struct vop *vop)
+ 					       0, &vop_plane_funcs,
+ 					       win_data->phy->data_formats,
+ 					       win_data->phy->nformats,
+-					       NULL, win_data->type, NULL);
++					       win_data->phy->format_modifiers,
++					       win_data->type, NULL);
+ 		if (ret) {
+ 			DRM_DEV_ERROR(vop->dev, "failed to init plane %d\n",
+ 				      ret);
+@@ -1511,7 +1598,8 @@ static int vop_create_crtc(struct vop *vop)
+ 					       &vop_plane_funcs,
+ 					       win_data->phy->data_formats,
+ 					       win_data->phy->nformats,
+-					       NULL, win_data->type, NULL);
++					       win_data->phy->format_modifiers,
++					       win_data->type, NULL);
+ 		if (ret) {
+ 			DRM_DEV_ERROR(vop->dev, "failed to init overlay %d\n",
+ 				      ret);
+diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
+index 2149a889c29d..dc8b12025269 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
++++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
+@@ -77,6 +77,16 @@ struct vop_misc {
+ 	struct vop_reg global_regdone_en;
+ };
+ 
++struct vop_afbc {
++	struct vop_reg enable;
++	struct vop_reg win_sel;
++	struct vop_reg format;
++	struct vop_reg hreg_block_split;
++	struct vop_reg pic_size;
++	struct vop_reg hdr_ptr;
++	struct vop_reg rstn;
++};
++
+ struct vop_intr {
+ 	const int *intrs;
+ 	uint32_t nintrs;
+@@ -128,6 +138,7 @@ struct vop_win_phy {
+ 	const struct vop_scl_regs *scl;
+ 	const uint32_t *data_formats;
+ 	uint32_t nformats;
++	const uint64_t *format_modifiers;
+ 
+ 	struct vop_reg enable;
+ 	struct vop_reg gate;
+@@ -169,6 +180,7 @@ struct vop_data {
+ 	const struct vop_output *output;
+ 	const struct vop_win_yuv2yuv_data *win_yuv2yuv;
+ 	const struct vop_win_data *win;
++	const struct vop_afbc *afbc;
+ 	unsigned int win_size;
+ 
+ #define VOP_FEATURE_OUTPUT_RGB10	BIT(0)
+diff --git a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
+index 7b9c74750f6d..e9ff0c43c396 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
++++ b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
+@@ -30,6 +30,12 @@
+ #define VOP_REG_MASK_SYNC(off, _mask, _shift) \
+ 		_VOP_REG(off, _mask, _shift, true, false)
+ 
++static const uint64_t format_modifiers_afbc[] = {
++	DRM_FORMAT_MOD_ARM_AFBC(AFBC_FORMAT_MOD_ROCKCHIP),
++	DRM_FORMAT_MOD_LINEAR,
++	DRM_FORMAT_MOD_INVALID
++};
++
+ static const uint32_t formats_win_full[] = {
+ 	DRM_FORMAT_XRGB8888,
+ 	DRM_FORMAT_ARGB8888,
+@@ -667,6 +673,7 @@ static const struct vop_win_phy rk3368_win01_data = {
+ 	.scl = &rk3288_win_full_scl,
+ 	.data_formats = formats_win_full,
+ 	.nformats = ARRAY_SIZE(formats_win_full),
++	.format_modifiers = format_modifiers_afbc,
+ 	.enable = VOP_REG(RK3368_WIN0_CTRL0, 0x1, 0),
+ 	.format = VOP_REG(RK3368_WIN0_CTRL0, 0x7, 1),
+ 	.rb_swap = VOP_REG(RK3368_WIN0_CTRL0, 0x1, 12),
+@@ -758,6 +765,16 @@ static const struct vop_data rk3366_vop = {
+ 	.win_size = ARRAY_SIZE(rk3368_vop_win_data),
+ };
+ 
++static const struct vop_afbc rk3399_afbc = {
++	.rstn = VOP_REG(RK3399_AFBCD0_CTRL, 0x1, 3),
++	.enable = VOP_REG(RK3399_AFBCD0_CTRL, 0x1, 0),
++	.win_sel = VOP_REG(RK3399_AFBCD0_CTRL, 0x3, 1),
++	.format = VOP_REG(RK3399_AFBCD0_CTRL, 0x1f, 16),
++	.hreg_block_split = VOP_REG(RK3399_AFBCD0_CTRL, 0x1, 21),
++	.hdr_ptr = VOP_REG(RK3399_AFBCD0_HDR_PTR, 0xffffffff, 0),
++	.pic_size = VOP_REG(RK3399_AFBCD0_PIC_SIZE, 0xffffffff, 0),
++};
++
+ static const struct vop_output rk3399_output = {
+ 	.dp_pin_pol = VOP_REG(RK3399_DSP_CTRL1, 0xf, 16),
+ 	.rgb_pin_pol = VOP_REG(RK3368_DSP_CTRL1, 0xf, 16),
+@@ -808,6 +825,7 @@ static const struct vop_data rk3399_vop_big = {
+ 	.modeset = &rk3288_modeset,
+ 	.output = &rk3399_output,
+ 	.misc = &rk3368_misc,
++	.afbc = &rk3399_afbc,
+ 	.win = rk3368_vop_win_data,
+ 	.win_size = ARRAY_SIZE(rk3368_vop_win_data),
+ 	.win_yuv2yuv = rk3399_vop_big_win_yuv2yuv_data,
+diff --git a/include/uapi/drm/drm_fourcc.h b/include/uapi/drm/drm_fourcc.h
+index 3feeaa3f987a..ba6caf06c824 100644
+--- a/include/uapi/drm/drm_fourcc.h
++++ b/include/uapi/drm/drm_fourcc.h
+@@ -742,6 +742,9 @@ extern "C" {
+  */
+ #define AFBC_FORMAT_MOD_BCH     (1ULL << 11)
+ 
++#define AFBC_FORMAT_MOD_ROCKCHIP \
++	(AFBC_FORMAT_MOD_BLOCK_SIZE_16x16 | AFBC_FORMAT_MOD_SPARSE)
++
+ /*
+  * Allwinner tiled modifier
+  *
+-- 
+2.17.1
 
 
 _______________________________________________
