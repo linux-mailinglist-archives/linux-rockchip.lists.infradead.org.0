@@ -2,48 +2,75 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A17F4BB38F
-	for <lists+linux-rockchip@lfdr.de>; Mon, 23 Sep 2019 14:21:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65564BB400
+	for <lists+linux-rockchip@lfdr.de>; Mon, 23 Sep 2019 14:40:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=qNlMG6SyflkicLbPN1YV0nmHSXD+NMKT8uGYhjkdo/c=; b=Bvd
-	4yEMnKN87kgBFHZ8n03dCF8Hlbfvo9ML8hrLKmlJzlmOeIX+TViTgR34A9pYwaNaoI/vKfltFYxx1
-	ZyhRdApTuQjJo2OMp/MEZVA4vJPZaQvujgVcqzB8JS+X9DyPz6pYAb1l5aMYLFGGNzh58vwQKRYPq
-	jYQHXPkt9wt2Yr8nBz+gStgfHUKTZ2UdyZBeAO7b/1hDQlBsLKPGp68ubiWKStO6cxHyO733ByLL5
-	KHGpVx6W8lGQZOHmh8WUI1V62jfoykYVpvTgaCrcyQkdS6GizeQpRHzrX0HE4QsQFMBtRyjr8HTgW
-	Gv0ofZIvO+U9ScbuQyS+1iZQpNUzD5g==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=0hd6VFY2BPWoJJRIrrollY90EMR/7g62r2yTZB0P18M=; b=Lpoe6iLwvbhDGfn+CtGDvjYB/Z
+	uI/3mslF72SNwPBaVSbSYrbe8O63ALFjZZkEIjMjbbQw8mIVxh3lX1JW4n0zA3HwRjNApbG8WX0kh
+	1gLLoMMy2HZxut893h/EcyesxwcNYdkyfImKPnuNplSCv5X6tbKIlF1xrRAj9Ezszu9zC5iiWH4i9
+	Vvg+jDqoBriLhlzy9c+jUZKbIk/3XngRBhrshQHmYBre6sH+xeqAukQq2FyfIQAdQRBui9OXbcsk+
+	FbyUazI7wAbaxaepT032B0KEaGA8W+2BtgmrHUlD0e8HdbFEk6dy3DYgz+kCM4xGXiB8F0g2+/L4S
+	jtvji8ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCNKm-00069V-QC; Mon, 23 Sep 2019 12:20:52 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1iCNdf-0004Rh-Mg; Mon, 23 Sep 2019 12:40:23 +0000
+Received: from regular1.263xmail.com ([211.150.70.202])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCNKS-0005zb-PY; Mon, 23 Sep 2019 12:20:35 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 275AD283BCE
-From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-To: dri-devel@lists.freedesktop.org
-Subject: [PATCH] drm/rockchip: Add AFBC support
-Date: Mon, 23 Sep 2019 14:20:13 +0200
-Message-Id: <20190923122014.18229-1-andrzej.p@collabora.com>
-X-Mailer: git-send-email 2.17.1
+ id 1iCNd4-0002jg-6l; Mon, 23 Sep 2019 12:39:47 +0000
+Received: from hjc?rock-chips.com (unknown [192.168.167.32])
+ by regular1.263xmail.com (Postfix) with ESMTP id 1B172298;
+ Mon, 23 Sep 2019 20:39:37 +0800 (CST)
+X-263anti-spam: KSV:0;BIG:0;
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-KSVirus-check: 0
+X-ADDR-CHECKED4: 1
+X-ABS-CHECKED: 1
+X-SKE-CHECKED: 1
+X-ANTISPAM-LEVEL: 2
+Received: from localhost.localdomain (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P10893T140454720919296S1569242369031174_; 
+ Mon, 23 Sep 2019 20:39:35 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <4f52eaa6100668ddca492c679c1ad8c6>
+X-RL-SENDER: hjc@rock-chips.com
+X-SENDER: hjc@rock-chips.com
+X-LOGIN-NAME: hjc@rock-chips.com
+X-FST-TO: dri-devel@lists.freedesktop.org
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+From: Sandy Huang <hjc@rock-chips.com>
+To: dri-devel@lists.freedesktop.org, Sandy Huang <hjc@rock-chips.com>,
+ =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>
+Subject: [PATCH 02/36] drm/rockchip: use bpp instead of cpp for drm_format_info
+Date: Mon, 23 Sep 2019 20:38:51 +0800
+Message-Id: <1569242365-182133-3-git-send-email-hjc@rock-chips.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1569242365-182133-1-git-send-email-hjc@rock-chips.com>
+References: <1569242365-182133-1-git-send-email-hjc@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_052034_142060_16073125 
-X-CRM114-Status: GOOD (  16.73  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190923_053946_451839_CFEBB887 
+X-CRM114-Status: GOOD (  11.22  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ no trust [211.150.70.202 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,365 +83,62 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
- Sean Paul <sean@poorly.run>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Sandy Huang <hjc@rock-chips.com>, Maxime Ripard <mripard@kernel.org>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, kernel@collabora.com,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Ezequiel Garcia <ezequiel@collabora.com>
+cpp[BytePerPlane] can't describe the 10bit data format correctly,
+So we use bpp[BitPerPlane] to instead cpp.
 
-AFBC is a proprietary lossless image compression protocol and format.
-It helps reduce memory bandwidth of the graphics pipeline operations.
-This, in turn, improves power efficiency.
-
-Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-[locking improvements]
-Signed-off-by: Tomeu Vizoso <tomeu.vizoso@collabora.com>
-[squashing the above, commit message and Rockchip AFBC modifier]
-Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Signed-off-by: Sandy Huang <hjc@rock-chips.com>
 ---
- drivers/gpu/drm/rockchip/rockchip_drm_fb.c  | 27 ++++++
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 94 ++++++++++++++++++++-
- drivers/gpu/drm/rockchip/rockchip_drm_vop.h | 12 +++
- drivers/gpu/drm/rockchip/rockchip_vop_reg.c | 18 ++++
- include/uapi/drm/drm_fourcc.h               |  3 +
- 5 files changed, 151 insertions(+), 3 deletions(-)
+ drivers/gpu/drm/rockchip/rockchip_drm_fb.c  | 2 +-
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
-index 64ca87cf6d50..5178939a9c29 100644
+index ca01234..ee1158e 100644
 --- a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
 +++ b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
-@@ -24,6 +24,27 @@ static const struct drm_framebuffer_funcs rockchip_drm_fb_funcs = {
- 	.dirty	       = drm_atomic_helper_dirtyfb,
- };
+@@ -81,7 +81,7 @@ rockchip_user_fb_create(struct drm_device *dev, struct drm_file *file_priv,
  
-+static int
-+rockchip_verify_afbc_mod(struct drm_device *dev,
-+			 const struct drm_mode_fb_cmd2 *mode_cmd)
-+{
-+	if (mode_cmd->modifier[0] &
-+	    ~DRM_FORMAT_MOD_ARM_AFBC(AFBC_FORMAT_MOD_ROCKCHIP)) {
-+		DRM_DEV_ERROR(dev->dev,
-+			      "Unsupported format modifier 0x%llx\n",
-+			      mode_cmd->modifier[0]);
-+		return -EINVAL;
-+	}
-+
-+	if (mode_cmd->width > 2560) {
-+		DRM_DEV_ERROR(dev->dev,
-+			      "Unsupported width %d\n", mode_cmd->width);
-+		return -EINVAL;
-+	}
-+
-+	return 0;
-+}
-+
- static struct drm_framebuffer *
- rockchip_fb_alloc(struct drm_device *dev, const struct drm_mode_fb_cmd2 *mode_cmd,
- 		  struct drm_gem_object **obj, unsigned int num_planes)
-@@ -32,6 +53,12 @@ rockchip_fb_alloc(struct drm_device *dev, const struct drm_mode_fb_cmd2 *mode_cm
- 	int ret;
- 	int i;
+ 		min_size = (height - 1) * mode_cmd->pitches[i] +
+ 			mode_cmd->offsets[i] +
+-			width * info->cpp[i];
++			width * info->bpp[i] / 8;
  
-+	if (mode_cmd->modifier[0]) {
-+		ret = rockchip_verify_afbc_mod(dev, mode_cmd);
-+		if (ret)
-+			return ERR_PTR(ret);
-+	}
-+
- 	fb = kzalloc(sizeof(*fb), GFP_KERNEL);
- 	if (!fb)
- 		return ERR_PTR(-ENOMEM);
+ 		if (obj->size < min_size) {
+ 			drm_gem_object_put_unlocked(obj);
 diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-index 21b68eea46cc..50bf214d21da 100644
+index 2f821c5..d90d4b6 100644
 --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
 +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-@@ -46,6 +46,13 @@
- 		vop_reg_set(vop, &win->phy->scl->ext->name, \
- 			    win->base, ~0, v, #name)
+@@ -832,7 +832,7 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
+ 	dsp_sty = dest->y1 + crtc->mode.vtotal - crtc->mode.vsync_start;
+ 	dsp_st = dsp_sty << 16 | (dsp_stx & 0xffff);
  
-+#define VOP_AFBC_SET(x, name, v) \
-+	do { \
-+		if (vop->data->afbc) \
-+			vop_reg_set(vop, &vop->data->afbc->name, \
-+				0, ~0, v, #name); \
-+	} while (0)
-+
- #define VOP_WIN_YUV2YUV_SET(vop, win_yuv2yuv, name, v) \
- 	do { \
- 		if (win_yuv2yuv && win_yuv2yuv->name.mask) \
-@@ -123,6 +130,8 @@ struct vop {
- 	struct drm_device *drm_dev;
- 	bool is_enabled;
+-	offset = (src->x1 >> 16) * fb->format->cpp[0];
++	offset = (src->x1 >> 16) * fb->format->bpp[0] / 8;
+ 	offset += (src->y1 >> 16) * fb->pitches[0];
+ 	dma_addr = rk_obj->dma_addr + offset + fb->offsets[0];
  
-+	struct vop_win *afbc_win;
-+
- 	struct completion dsp_hold_completion;
+@@ -859,7 +859,7 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
+ 	if (is_yuv) {
+ 		int hsub = fb->format->hsub;
+ 		int vsub = fb->format->vsub;
+-		int bpp = fb->format->cpp[1];
++		int bpp = fb->format->bpp[1] / 8;
  
- 	/* protected by dev->event_lock */
-@@ -245,6 +254,30 @@ static bool has_rb_swapped(uint32_t format)
- 	}
- }
- 
-+#define AFBC_FMT_RGB565        0x0
-+#define AFBC_FMT_U8U8U8U8      0x5
-+#define AFBC_FMT_U8U8U8        0x4
-+
-+static int vop_convert_afbc_format(uint32_t format)
-+{
-+	switch (format) {
-+	case DRM_FORMAT_XRGB8888:
-+	case DRM_FORMAT_ARGB8888:
-+	case DRM_FORMAT_XBGR8888:
-+	case DRM_FORMAT_ABGR8888:
-+		return AFBC_FMT_U8U8U8U8;
-+	case DRM_FORMAT_RGB888:
-+	case DRM_FORMAT_BGR888:
-+		return AFBC_FMT_U8U8U8;
-+	case DRM_FORMAT_RGB565:
-+	case DRM_FORMAT_BGR565:
-+		return AFBC_FMT_RGB565;
-+	default:
-+		DRM_ERROR("unsupported afbc format[%08x]\n", format);
-+		return -EINVAL;
-+	}
-+}
-+
- static enum vop_data_format vop_convert_format(uint32_t format)
- {
- 	switch (format) {
-@@ -587,10 +620,16 @@ static int vop_enable(struct drm_crtc *crtc)
- 
- 		vop_win_disable(vop, win);
- 	}
--	spin_unlock(&vop->reg_lock);
-+
-+	if (vop->data->afbc) {
-+		VOP_AFBC_SET(vop, enable, 0);
-+		vop->afbc_win = NULL;
-+	}
- 
- 	vop_cfg_done(vop);
- 
-+	spin_unlock(&vop->reg_lock);
-+
- 	/*
- 	 * At here, vop clock & iommu is enable, R/W vop regs would be safe.
- 	 */
-@@ -719,6 +758,32 @@ static int vop_plane_atomic_check(struct drm_plane *plane,
- 		return -EINVAL;
- 	}
- 
-+	if (fb->modifier & DRM_FORMAT_MOD_ARM_AFBC(AFBC_FORMAT_MOD_ROCKCHIP)) {
-+		struct vop *vop = to_vop(crtc);
-+
-+		if (!vop->data->afbc) {
-+			DRM_ERROR("VOP does not support AFBC\n");
-+			return -EINVAL;
-+		}
-+
-+		ret = vop_convert_afbc_format(fb->format->format);
-+		if (ret < 0)
-+			return ret;
-+
-+		if (state->src.x1 || state->src.y1) {
-+			DRM_ERROR("AFBC does not support offset display\n");
-+			DRM_ERROR("xpos=%d, ypos=%d, offset=%d\n",
-+				state->src.x1, state->src.y1, fb->offsets[0]);
-+			return -EINVAL;
-+		}
-+
-+		if (state->rotation && state->rotation != DRM_MODE_ROTATE_0) {
-+			DRM_ERROR("AFBC does not support rotation\n");
-+			DRM_ERROR("rotation=%d\n", state->rotation);
-+			return -EINVAL;
-+		}
-+	}
-+
- 	return 0;
- }
- 
-@@ -732,6 +797,9 @@ static void vop_plane_atomic_disable(struct drm_plane *plane,
- 	if (!old_state->crtc)
- 		return;
- 
-+	if (vop->afbc_win == vop_win)
-+		vop->afbc_win = NULL;
-+
- 	spin_lock(&vop->reg_lock);
- 
- 	vop_win_disable(vop, win);
-@@ -774,6 +842,9 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
- 	if (WARN_ON(!vop->is_enabled))
- 		return;
- 
-+	if (vop->afbc_win == vop_win)
-+		vop->afbc_win = NULL;
-+
- 	if (!state->visible) {
- 		vop_plane_atomic_disable(plane, old_state);
- 		return;
-@@ -808,6 +879,20 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
- 
- 	spin_lock(&vop->reg_lock);
- 
-+	if (fb->modifier & DRM_FORMAT_MOD_ARM_AFBC(AFBC_FORMAT_MOD_ROCKCHIP)) {
-+		int afbc_format = vop_convert_afbc_format(fb->format->format);
-+
-+		VOP_AFBC_SET(vop, format, afbc_format | 1 << 4);
-+		VOP_AFBC_SET(vop, hreg_block_split, 0);
-+		VOP_AFBC_SET(vop, win_sel, win_index);
-+		VOP_AFBC_SET(vop, hdr_ptr, dma_addr);
-+		VOP_AFBC_SET(vop, pic_size, act_info);
-+
-+		vop->afbc_win = vop_win;
-+
-+		pr_info("AFBC on plane %s\n", plane->name);
-+	}
-+
- 	VOP_WIN_SET(vop, win, format, format);
- 	VOP_WIN_SET(vop, win, yrgb_vir, DIV_ROUND_UP(fb->pitches[0], 4));
- 	VOP_WIN_SET(vop, win, yrgb_mst, dma_addr);
-@@ -1163,6 +1248,7 @@ static void vop_crtc_atomic_flush(struct drm_crtc *crtc,
- 
- 	spin_lock(&vop->reg_lock);
- 
-+	VOP_AFBC_SET(vop, enable, vop->afbc_win ? 0x1 : 0);
- 	vop_cfg_done(vop);
- 
- 	spin_unlock(&vop->reg_lock);
-@@ -1471,7 +1557,8 @@ static int vop_create_crtc(struct vop *vop)
- 					       0, &vop_plane_funcs,
- 					       win_data->phy->data_formats,
- 					       win_data->phy->nformats,
--					       NULL, win_data->type, NULL);
-+					       win_data->phy->format_modifiers,
-+					       win_data->type, NULL);
- 		if (ret) {
- 			DRM_DEV_ERROR(vop->dev, "failed to init plane %d\n",
- 				      ret);
-@@ -1511,7 +1598,8 @@ static int vop_create_crtc(struct vop *vop)
- 					       &vop_plane_funcs,
- 					       win_data->phy->data_formats,
- 					       win_data->phy->nformats,
--					       NULL, win_data->type, NULL);
-+					       win_data->phy->format_modifiers,
-+					       win_data->type, NULL);
- 		if (ret) {
- 			DRM_DEV_ERROR(vop->dev, "failed to init overlay %d\n",
- 				      ret);
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
-index 2149a889c29d..dc8b12025269 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
-@@ -77,6 +77,16 @@ struct vop_misc {
- 	struct vop_reg global_regdone_en;
- };
- 
-+struct vop_afbc {
-+	struct vop_reg enable;
-+	struct vop_reg win_sel;
-+	struct vop_reg format;
-+	struct vop_reg hreg_block_split;
-+	struct vop_reg pic_size;
-+	struct vop_reg hdr_ptr;
-+	struct vop_reg rstn;
-+};
-+
- struct vop_intr {
- 	const int *intrs;
- 	uint32_t nintrs;
-@@ -128,6 +138,7 @@ struct vop_win_phy {
- 	const struct vop_scl_regs *scl;
- 	const uint32_t *data_formats;
- 	uint32_t nformats;
-+	const uint64_t *format_modifiers;
- 
- 	struct vop_reg enable;
- 	struct vop_reg gate;
-@@ -169,6 +180,7 @@ struct vop_data {
- 	const struct vop_output *output;
- 	const struct vop_win_yuv2yuv_data *win_yuv2yuv;
- 	const struct vop_win_data *win;
-+	const struct vop_afbc *afbc;
- 	unsigned int win_size;
- 
- #define VOP_FEATURE_OUTPUT_RGB10	BIT(0)
-diff --git a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
-index 7b9c74750f6d..e9ff0c43c396 100644
---- a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
-@@ -30,6 +30,12 @@
- #define VOP_REG_MASK_SYNC(off, _mask, _shift) \
- 		_VOP_REG(off, _mask, _shift, true, false)
- 
-+static const uint64_t format_modifiers_afbc[] = {
-+	DRM_FORMAT_MOD_ARM_AFBC(AFBC_FORMAT_MOD_ROCKCHIP),
-+	DRM_FORMAT_MOD_LINEAR,
-+	DRM_FORMAT_MOD_INVALID
-+};
-+
- static const uint32_t formats_win_full[] = {
- 	DRM_FORMAT_XRGB8888,
- 	DRM_FORMAT_ARGB8888,
-@@ -667,6 +673,7 @@ static const struct vop_win_phy rk3368_win01_data = {
- 	.scl = &rk3288_win_full_scl,
- 	.data_formats = formats_win_full,
- 	.nformats = ARRAY_SIZE(formats_win_full),
-+	.format_modifiers = format_modifiers_afbc,
- 	.enable = VOP_REG(RK3368_WIN0_CTRL0, 0x1, 0),
- 	.format = VOP_REG(RK3368_WIN0_CTRL0, 0x7, 1),
- 	.rb_swap = VOP_REG(RK3368_WIN0_CTRL0, 0x1, 12),
-@@ -758,6 +765,16 @@ static const struct vop_data rk3366_vop = {
- 	.win_size = ARRAY_SIZE(rk3368_vop_win_data),
- };
- 
-+static const struct vop_afbc rk3399_afbc = {
-+	.rstn = VOP_REG(RK3399_AFBCD0_CTRL, 0x1, 3),
-+	.enable = VOP_REG(RK3399_AFBCD0_CTRL, 0x1, 0),
-+	.win_sel = VOP_REG(RK3399_AFBCD0_CTRL, 0x3, 1),
-+	.format = VOP_REG(RK3399_AFBCD0_CTRL, 0x1f, 16),
-+	.hreg_block_split = VOP_REG(RK3399_AFBCD0_CTRL, 0x1, 21),
-+	.hdr_ptr = VOP_REG(RK3399_AFBCD0_HDR_PTR, 0xffffffff, 0),
-+	.pic_size = VOP_REG(RK3399_AFBCD0_PIC_SIZE, 0xffffffff, 0),
-+};
-+
- static const struct vop_output rk3399_output = {
- 	.dp_pin_pol = VOP_REG(RK3399_DSP_CTRL1, 0xf, 16),
- 	.rgb_pin_pol = VOP_REG(RK3368_DSP_CTRL1, 0xf, 16),
-@@ -808,6 +825,7 @@ static const struct vop_data rk3399_vop_big = {
- 	.modeset = &rk3288_modeset,
- 	.output = &rk3399_output,
- 	.misc = &rk3368_misc,
-+	.afbc = &rk3399_afbc,
- 	.win = rk3368_vop_win_data,
- 	.win_size = ARRAY_SIZE(rk3368_vop_win_data),
- 	.win_yuv2yuv = rk3399_vop_big_win_yuv2yuv_data,
-diff --git a/include/uapi/drm/drm_fourcc.h b/include/uapi/drm/drm_fourcc.h
-index 3feeaa3f987a..ba6caf06c824 100644
---- a/include/uapi/drm/drm_fourcc.h
-+++ b/include/uapi/drm/drm_fourcc.h
-@@ -742,6 +742,9 @@ extern "C" {
-  */
- #define AFBC_FORMAT_MOD_BCH     (1ULL << 11)
- 
-+#define AFBC_FORMAT_MOD_ROCKCHIP \
-+	(AFBC_FORMAT_MOD_BLOCK_SIZE_16x16 | AFBC_FORMAT_MOD_SPARSE)
-+
- /*
-  * Allwinner tiled modifier
-  *
+ 		uv_obj = fb->obj[1];
+ 		rk_uv_obj = to_rockchip_obj(uv_obj);
 -- 
-2.17.1
+2.7.4
+
+
 
 
 _______________________________________________
