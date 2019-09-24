@@ -2,86 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9E63BC9DE
-	for <lists+linux-rockchip@lfdr.de>; Tue, 24 Sep 2019 16:10:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35079BD48A
+	for <lists+linux-rockchip@lfdr.de>; Tue, 24 Sep 2019 23:47:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=blPO+/6XMOazdzisiUsNPxMtvR2P2HuQmhNuuMzQ8zQ=; b=GoRGlB5YYQE9eG
-	5WLxG1YgmR+lFUd3oWCbsCOdKqO0RFTfhYxvqh+IrmMzCKDLYic0bW0FTxYMuV0/wD6f2LLM4KvJs
-	0/Be9CTC6WTLzJZyDuc2M5DXPWaHbKzbdELM3l3mijuzOJFAfGMp5XWBuh9iniq5Wf/PWtViE+wDC
-	lfvmdz1LndgHZa07ifL8jwSNTWBUb0jYbLfdqACpdVkeEZ8qDGG+ST68sxkLmBtBRhrxTuw0TzlUx
-	gwdyd9icI3LfIqFXZsGnzdtiRoErIQ7VSPTaQ7qoq/6tw2OO8wiJW3Ipyo0hl0c/09ouPghZBQbXy
-	EIQw5hpqK3nMtLTNx9gA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BsCw+gjcePsLFfnOzW2FzEKsEeIrlpYQNn6+6IK1hZM=; b=cssCtosAMocUL2
+	a/yPE/mjY6yyJnb/TqSUOoAhr4V1wwdQAHgmg/N11yO5rV9jazUdMh5RXn+ewlY2/CpBs/SdP4iQd
+	xMxfJKuKjB2kLLNWWp9lKve6Izo4EjD7MCl6fyHicOnWZQHczEVUVDX0ILOSUu5cQJ2F3a35NQ+6z
+	TFi7FuqDYevII3OkpyphiELET61ETzXVpLpqN9qWFNzvjP8Fd35VzleOZhOhcyNVaJvkUuEA0Bq+T
+	zAN9uDhKB5glwz82YY7hZ5n8IGVfBkNCpkYnMFCWqmp3oYUeuvRKH/uZBJCDgtjb3EEDCYw1ebxNw
+	3DpzQT5Ew3LnIKijINWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iClWV-0001gh-0B; Tue, 24 Sep 2019 14:10:35 +0000
-Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
+	id 1iCseO-0005gT-HJ; Tue, 24 Sep 2019 21:47:12 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iClWQ-0001ew-Rc
- for linux-rockchip@lists.infradead.org; Tue, 24 Sep 2019 14:10:32 +0000
-Received: by mail-wr1-x42a.google.com with SMTP id i18so2113693wru.11
- for <linux-rockchip@lists.infradead.org>; Tue, 24 Sep 2019 07:10:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=CD8NXjWHXI1PHdT+Yt5q2iCIoHrQv0Ncx4K7iwz1VKY=;
- b=zBxpjFaP7l2EinUCWp0CpW2Sg1KTXXAkWldWE1wejALSHl3jp0sFDuHfH9Gi2HC2Au
- kzQ8eNjBepwuBE+WbnhNaJeaA2YgNuzXB5kwhQzzLXinKPvQCT716XwpcJ0OQwEW4Q1k
- mYBZVNfAVOI9FS3MUBcZFqmEz8BMf5scqsMrQSYS7a0Jda+62JkKZCi45L2ODbr/7ITr
- EoZCg4hKA2dNdppOt/WLSZcVso9BHBuKo+dAoQSrK79NYYuSijPjb9/ZAnfpmak9bhlW
- Khimacswau6lOgHXL5Nurct25X6UOV0+d8wHpX6mo9I/A7DTGUsuFceEWn1DJa/iOWon
- b9dw==
+ id 1iCsdl-0005PC-R5; Tue, 24 Sep 2019 21:46:35 +0000
+Received: by mail-ot1-f67.google.com with SMTP id y39so2899847ota.7;
+ Tue, 24 Sep 2019 14:46:33 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=CD8NXjWHXI1PHdT+Yt5q2iCIoHrQv0Ncx4K7iwz1VKY=;
- b=HfaDqIJ42d5+D+0Cc24NNmsbygS/V1n49gJHjTCwPYpzZbjM4+Gzs0exwUulcaWHlL
- ZgL54lvpj+/jN0PGaz4fayC/DIqh14r0VVpPDxPOP/zGKsbiq1mZsNcX56QVEcVjmvie
- cXN4l7LhHJVIRkCi1qpsOwZi+ObfFauZWUOK/jLn80FaLuxUsXsJnpdOF+5JGxksUriT
- QobY0xKLnIOk154+hIBjNKfApCq7HEZOnvUmWpxtnRuAGPEvX0q6zZqVhe7uI1xpR1nX
- deG0J01t7CGt6eeVIvVme6yjavQnuZZN05DGqcx01AjEFHTMYtFpxFqFvVE9rBOkm049
- accg==
-X-Gm-Message-State: APjAAAUwcAZJa/CZhdq1IxQEo7efJaqSQt5o0Pp2WzGJGcGx+4uoDEzT
- +1w4Kh2H65vDszhvOR503rL5Nm3hMY9oyQ==
-X-Google-Smtp-Source: APXvYqyxcFFWxlfEByHp+UI2Ozbsm+7ZlCpzeuoY03TS06zxKMIrzCq38xzQB0qK8eF54jJ/spcLAg==
-X-Received: by 2002:adf:e7ca:: with SMTP id e10mr2442564wrn.234.1569334227683; 
- Tue, 24 Sep 2019 07:10:27 -0700 (PDT)
-Received: from localhost (uluru.liltaz.com. [163.172.81.188])
- by smtp.gmail.com with ESMTPSA id f83sm61195wmf.43.2019.09.24.07.10.25
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1EA8rb2xQcb5dg7rm6kSLl37zgnf6FJeYhc+aCc8i8Q=;
+ b=NBGeVv4WpxmfgBaZR4tlQU898UNg3nu6qU7gpKR/78cBRTKw6HZuCpPNU1jc1dQbeJ
+ WsgRarQ4XK/M7VZyFN5z7tn5fGUo80oR8snKXMQd2gSgqxDPRZAqUl2tvNY2yCUfCI28
+ yWWi30xOfSOFOAftsWIa+sTa7sWKNdsrnaAjkNGBw8S1rk9GbQuXUrRW8Q/1X5+y9+zw
+ FicEMamN8BsI6IZklAk1MQrYBwiYDFLcSBU/ocJpaP0RHIFO9f9Z9H0St6A8iAt/nRP8
+ CcKT6ANSkD30GUoDpzlZIsvhPRXxgWMBlo/SdS+X+hES4fd9zmMiVKFpEPFNdjblmg7S
+ aZOQ==
+X-Gm-Message-State: APjAAAXmmcSsk3LtU0lvBi3rUf8kpH4ldCVJ79eTpHLJQUsi8o6NO2vd
+ F/d0nkvxoGIBc13S115T3w==
+X-Google-Smtp-Source: APXvYqyfVq4l/5/hBZkfgpAi1Pc1khFxc5Y5xwdvEOTzeXf8zarYTh54eCs4NscjomBDZ62d4/y0HA==
+X-Received: by 2002:a05:6830:16da:: with SMTP id
+ l26mr3762822otr.339.1569361592670; 
+ Tue, 24 Sep 2019 14:46:32 -0700 (PDT)
+Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.googlemail.com with ESMTPSA id s66sm976787otb.65.2019.09.24.14.46.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 24 Sep 2019 07:10:26 -0700 (PDT)
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Ankur Tyagi <Ankur.Tyagi@gallagher.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>
-Subject: RE: [PATCH 2/3] clk: let init callback return an error code
-In-Reply-To: <ME2PR01MB4738B127557AE20F6315AA7FE5840@ME2PR01MB4738.ausprd01.prod.outlook.com>
-References: <20190924123954.31561-1-jbrunet@baylibre.com>
- <20190924123954.31561-3-jbrunet@baylibre.com>
- <ME2PR01MB4738B127557AE20F6315AA7FE5840@ME2PR01MB4738.ausprd01.prod.outlook.com>
-Date: Tue, 24 Sep 2019 16:10:25 +0200
-Message-ID: <1jv9thlr8u.fsf@starbuckisacylon.baylibre.com>
+ Tue, 24 Sep 2019 14:46:31 -0700 (PDT)
+From: Rob Herring <robh@kernel.org>
+To: linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Subject: [PATCH 00/11] PCI dma-ranges parsing consolidation
+Date: Tue, 24 Sep 2019 16:46:19 -0500
+Message-Id: <20190924214630.12817-1-robh@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_071030_946262_AF7022F1 
-X-CRM114-Status: GOOD (  12.30  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190924_144633_901500_2301D59C 
+X-CRM114-Status: GOOD (  11.66  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:42a listed in]
- [list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,64 +89,80 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- Heiko Stuebner <heiko@sntech.de>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "David S. Miller" <davem@davemloft.net>, Tero Kristo <t-kristo@ti.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
- "linux-amlogic@lists.infradead.org" <linux-amlogic@lists.infradead.org>,
- "linux-omap@vger.kernel.org" <linux-omap@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Heiko Stuebner <heiko@sntech.de>,
+ Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>,
+ Shawn Lin <shawn.lin@rock-chips.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
+ Ryder Lee <ryder.lee@mediatek.com>, Michal Simek <michal.simek@xilinx.com>,
+ linux-rockchip@lists.infradead.org, bcm-kernel-feedback-list@broadcom.com,
+ Linus Walleij <linus.walleij@linaro.org>, Ray Jui <rjui@broadcom.com>,
+ Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, Simon Horman <horms@verge.net.au>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Scott Branden <sbranden@broadcom.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>, rfi@lists.rocketboards.org,
+ linux-renesas-soc@vger.kernel.org, Tom Joseph <tjoseph@cadence.com>,
+ Jingoo Han <jingoohan1@gmail.com>, Ley Foon Tan <lftan@altera.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue 24 Sep 2019 at 13:38, Ankur Tyagi <Ankur.Tyagi@gallagher.com> wrote:
+This series moves the DT 'dma-ranges' parsing into common helpers
+utilizing a resource list. In the process of doing this, I noticed
+several cases where pci_parse_request_of_pci_ranges() could be used so
+I converted those drivers first. The last 5 patches make the actual
+change to use the common 'dma_ranges' resource list. There's no
+(intended) functional change in this series though I'm also working on
+a separate series to improve the handling of 'dma-ranges' and dma
+masks.
 
-> Hi,
->
-> I am no expert here but just looked at the patch and found few
-> discrepancy that I have mentioned inline.
->
+pci-rcar-gen2 is the only remaining driver doing its own dma-ranges
+handling as it is still using the old ARM PCI functions. Looks like it
+is the last one (in drivers/pci/).
 
-[...]
+Compile tested only.
 
->
-> Aren't all functions returning 0 always?
->
+Rob
 
-Yes, on purpose. This patch is an API conversion to let the init()
-callback of the clock ops return an error code or 0.
+Rob Herring (11):
+  PCI: aardvark: Use pci_parse_request_of_pci_ranges()
+  PCI: altera: Use pci_parse_request_of_pci_ranges()
+  PCI: mediatek: Use pci_parse_request_of_pci_ranges()
+  PCI: versatile: Enable COMPILE_TEST
+  PCI: versatile: Use pci_parse_request_of_pci_ranges()
+  PCI: of: Add inbound resource parsing to helpers
+  PCI: ftpci100: Use inbound resources for setup
+  PCI: v3-semi: Use inbound resources for setup
+  PCI: xgene: Use inbound resources for setup
+  PCI: iproc: Use inbound resources for setup
+  PCI: rcar: Use inbound resources for setup
 
-The patch is not meant to change anything in the prior behavior of the
-clock drivers which is why every exit path return 0 with this change.
+ drivers/pci/controller/Kconfig                |  2 +-
+ .../pci/controller/dwc/pcie-designware-host.c |  3 +-
+ drivers/pci/controller/pci-aardvark.c         | 58 ++---------------
+ drivers/pci/controller/pci-ftpci100.c         | 29 ++++-----
+ drivers/pci/controller/pci-host-common.c      |  2 +-
+ drivers/pci/controller/pci-v3-semi.c          | 40 +++++-------
+ drivers/pci/controller/pci-versatile.c        | 62 ++++--------------
+ drivers/pci/controller/pci-xgene.c            | 33 ++++------
+ drivers/pci/controller/pcie-altera.c          | 38 +----------
+ drivers/pci/controller/pcie-cadence-host.c    |  2 +-
+ drivers/pci/controller/pcie-iproc-platform.c  |  1 +
+ drivers/pci/controller/pcie-iproc.c           | 63 +++----------------
+ drivers/pci/controller/pcie-mediatek.c        | 47 +++++---------
+ drivers/pci/controller/pcie-mobiveil.c        |  4 +-
+ drivers/pci/controller/pcie-rcar.c            | 48 ++++++--------
+ drivers/pci/controller/pcie-rockchip-host.c   |  3 +-
+ drivers/pci/controller/pcie-xilinx-nwl.c      |  2 +-
+ drivers/pci/controller/pcie-xilinx.c          |  2 +-
+ drivers/pci/of.c                              | 44 ++++++++++++-
+ drivers/pci/pci.h                             |  8 ++-
+ include/linux/pci.h                           |  2 +
+ 21 files changed, 162 insertions(+), 331 deletions(-)
 
-IOW, yes there are all returning 0 for now, but it will eventually
-change.
-
-
->>   *
->>   * @debug_init:Set up type-specific debugfs entries for this clock.  This
->>   *is called once, after the debugfs directory entry for this
->> @@ -243,7 +247,7 @@ struct clk_ops {
->>    struct clk_duty *duty);
->>  int(*set_duty_cycle)(struct clk_hw *hw,
->>    struct clk_duty *duty);
->> -void(*init)(struct clk_hw *hw);
->> +int(*init)(struct clk_hw *hw);
->>  void(*debug_init)(struct clk_hw *hw, struct dentry *dentry);
->>  };
->>
->> --
->> 2.21.0
->
-> ________________________________
->  This email is confidential and may contain information subject to legal privilege. If you are not the intended recipient please advise us of our error by return e-mail then delete this email and any attached files. You may not copy, disclose or use the contents in any way. The views expressed in this email may not be those of Gallagher Group Ltd or subsidiary companies thereof.
-> ________________________________
+--
+2.20.1
 
 _______________________________________________
 Linux-rockchip mailing list
