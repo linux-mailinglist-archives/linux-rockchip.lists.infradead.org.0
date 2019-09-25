@@ -2,75 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAF6ABD991
-	for <lists+linux-rockchip@lfdr.de>; Wed, 25 Sep 2019 10:09:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECB1FBDA67
+	for <lists+linux-rockchip@lfdr.de>; Wed, 25 Sep 2019 11:01:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=y6/FDikN2lwclc+0bAPnKOLKYD3Bmu6rTn0isHbJfgM=; b=sP97/72uu6/GUiqBBbSvhxgO5g
-	704ZGYDu37Wdf51gYwl3c6ow16ioxtKGr4YDJKLMcUC90/cYvA+y6OmCRIm+3HXo9ds4dPU1hfhtE
-	kWya6LjWTaQ2fljGdykoCDHNXtRoGk/fiTXj581ZqWWFPGyCAAs6KmsBDrmkZmFPYucOrruKomapN
-	SZdd5iRVYxykncyycn7RIL3BdckyyaE2GuUoPhn87ope5ShDkmUirX20ad3bc1kic09NcPj6mfQC8
-	WFUxxS+X3HvKPwT3d8AP8QF+9Ivxl5Emx3lR8Wph7J4i6Qazkj6xFvj386eamAJYIl6LUJC2NXmXC
-	y2V7mTiw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/uO3yb9vsInkT++dv0lEiZQ++0gltexqfohtQ8mvdBY=; b=YjixeUKi2EslrC
+	oftaMnpnDYFviTh9zDcIKMmWfDRTINXikixNA+bQ+HehQQDswDuiSudQD/an/3ZUko/FZUAfmwOWM
+	FsU0mVRPfFHqi9ZA1PCWcBsYCpF4uZB4avFuIJGJTi5RtTkfYEcM/L82MhgVFBaIAUpv1sl7F0yn+
+	K3nYKg1ckkb/5gJv8TSpL3BGZXIH8RxQsENY9feOvKcrzlozHl3C+8WywP83jpUvL8YjbwPGNgw60
+	lxja0a2TI8G3gVKYFFQ31vrpDv96zqUaoNzur416lg4xv7J3Lw6ynUdU80vLDwjedCprZ6TsvfvMH
+	YgvoqaoMRSqdoJqDURKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iD2M7-0005fK-Hy; Wed, 25 Sep 2019 08:08:59 +0000
-Received: from regular1.263xmail.com ([211.150.70.203])
+	id 1iD3B3-0006lo-UR; Wed, 25 Sep 2019 09:01:38 +0000
+Received: from relay11.mail.gandi.net ([217.70.178.231])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iD2Kj-000599-P7; Wed, 25 Sep 2019 08:07:41 +0000
-Received: from hjc?rock-chips.com (unknown [192.168.167.42])
- by regular1.263xmail.com (Postfix) with ESMTP id 832DC43D;
- Wed, 25 Sep 2019 16:07:12 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P2645T139744972404480S1569398812082049_; 
- Wed, 25 Sep 2019 16:07:12 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <5d8ea79ab9f3f7b7a98cad262bf6bc0b>
-X-RL-SENDER: hjc@rock-chips.com
-X-SENDER: hjc@rock-chips.com
-X-LOGIN-NAME: hjc@rock-chips.com
-X-FST-TO: dri-devel@lists.freedesktop.org
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-From: Sandy Huang <hjc@rock-chips.com>
-To: dri-devel@lists.freedesktop.org, Sandy Huang <hjc@rock-chips.com>,
- =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>
-Subject: [PATCH 3/3] drm/rockchip: Add support 10bit yuv format
-Date: Wed, 25 Sep 2019 16:06:40 +0800
-Message-Id: <1569398801-92201-4-git-send-email-hjc@rock-chips.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1569398801-92201-1-git-send-email-hjc@rock-chips.com>
-References: <1569398801-92201-1-git-send-email-hjc@rock-chips.com>
+ id 1iD39t-0006Ob-Lp; Wed, 25 Sep 2019 09:00:35 +0000
+Received: from windsurf (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
+ [86.250.200.211])
+ (Authenticated sender: thomas.petazzoni@bootlin.com)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id A5CD4100009;
+ Wed, 25 Sep 2019 09:00:14 +0000 (UTC)
+Date: Wed, 25 Sep 2019 11:00:13 +0200
+From: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH 06/11] PCI: of: Add inbound resource parsing to helpers
+Message-ID: <20190925110013.43ffbce6@windsurf>
+In-Reply-To: <20190924214630.12817-7-robh@kernel.org>
+References: <20190924214630.12817-1-robh@kernel.org>
+ <20190924214630.12817-7-robh@kernel.org>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_010734_907567_7A98BDB4 
-X-CRM114-Status: GOOD (  11.10  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190925_020027_235402_C21CEB89 
+X-CRM114-Status: GOOD (  13.15  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.203 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
+ 0.0 URIBL_RED              Contains an URL listed in the URIBL redlist
+ [URIs: amperecomputing.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,96 +64,92 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Ayan.Halder@arm.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Heiko Stuebner <heiko@sntech.de>,
+ Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>, linux-pci@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>, Ryder Lee <ryder.lee@mediatek.com>,
+ Nadav Haklai <nadavh@marvell.com>, Toan Le <toan@os.amperecomputing.com>,
+ Will Deacon <will@kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Michal Simek <michal.simek@xilinx.com>, linux-rockchip@lists.infradead.org,
+ bcm-kernel-feedback-list@broadcom.com, Shawn Lin <shawn.lin@rock-chips.com>,
+ Ray Jui <rjui@broadcom.com>, Hou Zhiqiang <Zhiqiang.Hou@nxp.com>,
+ Simon Horman <horms@verge.net.au>, linux-mediatek@lists.infradead.org,
+ Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org,
+ Scott Branden <sbranden@broadcom.com>, Jingoo Han <jingoohan1@gmail.com>,
+ rfi@lists.rocketboards.org, linux-renesas-soc@vger.kernel.org,
+ Tom Joseph <tjoseph@cadence.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Ley Foon Tan <lftan@altera.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add support 10bit yuv format display for rockchip some socs,
-include:
-    RK3288/RK3228/RK3328/RK3368/RK3399
+On Tue, 24 Sep 2019 16:46:25 -0500
+Rob Herring <robh@kernel.org> wrote:
 
-Signed-off-by: Sandy Huang <hjc@rock-chips.com>
----
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 16 ++++++++++++++++
- drivers/gpu/drm/rockchip/rockchip_drm_vop.h |  1 +
- drivers/gpu/drm/rockchip/rockchip_vop_reg.c |  2 ++
- 3 files changed, 19 insertions(+)
+> Extend devm_of_pci_get_host_bridge_resources() and
+> pci_parse_request_of_pci_ranges() helpers to also parse the inbound
+> addresses from DT 'dma-ranges' and populate a resource list with the
+> translated addresses. This will help ensure 'dma-ranges' is always
+> parsed in a consistent way.
+> 
+> Cc: Jingoo Han <jingoohan1@gmail.com>
+> Cc: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+> Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> Cc: Bjorn Helgaas <bhelgaas@google.com>
+> Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Linus Walleij <linus.walleij@linaro.org>
+> Cc: Toan Le <toan@os.amperecomputing.com>
+> Cc: Ley Foon Tan <lftan@altera.com>
+> Cc: Tom Joseph <tjoseph@cadence.com>
+> Cc: Ray Jui <rjui@broadcom.com>
+> Cc: Scott Branden <sbranden@broadcom.com>
+> Cc: bcm-kernel-feedback-list@broadcom.com
+> Cc: Ryder Lee <ryder.lee@mediatek.com>
+> Cc: Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>
+> Cc: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> Cc: Simon Horman <horms@verge.net.au>
+> Cc: Shawn Lin <shawn.lin@rock-chips.com>
+> Cc: Heiko Stuebner <heiko@sntech.de>
+> Cc: Michal Simek <michal.simek@xilinx.com>
+> Cc: rfi@lists.rocketboards.org
+> Cc: linux-mediatek@lists.infradead.org
+> Cc: linux-renesas-soc@vger.kernel.org
+> Cc: linux-rockchip@lists.infradead.org
+> Signed-off-by: Rob Herring <robh@kernel.org>
+> ---
+>  .../pci/controller/dwc/pcie-designware-host.c |  3 +-
+>  drivers/pci/controller/pci-aardvark.c         |  2 +-
+>  drivers/pci/controller/pci-ftpci100.c         |  3 +-
+>  drivers/pci/controller/pci-host-common.c      |  2 +-
+>  drivers/pci/controller/pci-v3-semi.c          |  2 +-
+>  drivers/pci/controller/pci-versatile.c        |  2 +-
+>  drivers/pci/controller/pci-xgene.c            |  1 +
+>  drivers/pci/controller/pcie-altera.c          |  2 +-
+>  drivers/pci/controller/pcie-cadence-host.c    |  2 +-
+>  drivers/pci/controller/pcie-iproc-platform.c  |  1 +
+>  drivers/pci/controller/pcie-mediatek.c        |  2 +-
+>  drivers/pci/controller/pcie-mobiveil.c        |  4 +-
+>  drivers/pci/controller/pcie-rcar.c            |  3 +-
+>  drivers/pci/controller/pcie-rockchip-host.c   |  3 +-
+>  drivers/pci/controller/pcie-xilinx-nwl.c      |  2 +-
+>  drivers/pci/controller/pcie-xilinx.c          |  2 +-
+>  drivers/pci/of.c                              | 44 ++++++++++++++++++-
+>  drivers/pci/pci.h                             |  8 +++-
+>  include/linux/pci.h                           |  2 +
+>  19 files changed, 72 insertions(+), 18 deletions(-)
 
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-index ce5b45d..9cb9fff 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-@@ -249,6 +249,21 @@ static bool has_rb_swapped(uint32_t format)
- 	}
- }
- 
-+static bool is_yuv_10bit(uint32_t format)
-+{
-+	switch (format) {
-+	case DRM_FORMAT_NV12_10:
-+	case DRM_FORMAT_NV21_10:
-+	case DRM_FORMAT_NV16_10:
-+	case DRM_FORMAT_NV61_10:
-+	case DRM_FORMAT_NV24_10:
-+	case DRM_FORMAT_NV42_10:
-+		return true;
-+	default:
-+		return false;
-+	}
-+}
-+
- static int vop_format_get_bpp(u32 format, u8 plane)
- {
- 	const struct drm_format_info *info;
-@@ -890,6 +905,7 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
- 		dma_addr = rk_uv_obj->dma_addr + offset + fb->offsets[1];
- 		VOP_WIN_SET(vop, win, uv_vir, DIV_ROUND_UP(fb->pitches[1], 4));
- 		VOP_WIN_SET(vop, win, uv_mst, dma_addr);
-+		VOP_WIN_SET(vop, win, fmt_10, is_yuv_10bit(fb->format->format));
- 
- 		for (i = 0; i < NUM_YUV2YUV_COEFFICIENTS; i++) {
- 			VOP_WIN_YUV2YUV_COEFFICIENT_SET(vop,
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
-index 2149a889..adc2b0b5 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
-@@ -133,6 +133,7 @@ struct vop_win_phy {
- 	struct vop_reg gate;
- 	struct vop_reg format;
- 	struct vop_reg rb_swap;
-+	struct vop_reg fmt_10;
- 	struct vop_reg act_info;
- 	struct vop_reg dsp_info;
- 	struct vop_reg dsp_st;
-diff --git a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
-index d1494be..732e535 100644
---- a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
-@@ -544,6 +544,7 @@ static const struct vop_win_phy rk3288_win01_data = {
- 	.nformats = ARRAY_SIZE(formats_win_full),
- 	.enable = VOP_REG(RK3288_WIN0_CTRL0, 0x1, 0),
- 	.format = VOP_REG(RK3288_WIN0_CTRL0, 0x7, 1),
-+	.fmt_10 = VOP_REG(RK3288_WIN0_CTRL0, 0x1, 4),
- 	.rb_swap = VOP_REG(RK3288_WIN0_CTRL0, 0x1, 12),
- 	.act_info = VOP_REG(RK3288_WIN0_ACT_INFO, 0x1fff1fff, 0),
- 	.dsp_info = VOP_REG(RK3288_WIN0_DSP_INFO, 0x0fff0fff, 0),
-@@ -674,6 +675,7 @@ static const struct vop_win_phy rk3368_win01_data = {
- 	.nformats = ARRAY_SIZE(formats_win_full),
- 	.enable = VOP_REG(RK3368_WIN0_CTRL0, 0x1, 0),
- 	.format = VOP_REG(RK3368_WIN0_CTRL0, 0x7, 1),
-+	.fmt_10 = VOP_REG(RK3368_WIN0_CTRL0, 0x1, 4),
- 	.rb_swap = VOP_REG(RK3368_WIN0_CTRL0, 0x1, 12),
- 	.x_mir_en = VOP_REG(RK3368_WIN0_CTRL0, 0x1, 21),
- 	.y_mir_en = VOP_REG(RK3368_WIN0_CTRL0, 0x1, 22),
+for the AArdvark bits:
+
+Tested-by: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+(on Armada 3720-DB, with a E1000E NIC)
+
+Thomas
 -- 
-2.7.4
-
-
-
+Thomas Petazzoni, CTO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 Linux-rockchip mailing list
