@@ -2,219 +2,90 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00308BEFE2
-	for <lists+linux-rockchip@lfdr.de>; Thu, 26 Sep 2019 12:44:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E40BBFB76
+	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Sep 2019 00:51:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GNWZvFksBBMnBf/J6BEdzPGh6Xww0k14VT+3y4UOZj8=; b=QRFU7uJ6sJTeP7
-	xcSxEuXQbhkl10oSe2sjbRy1sUObzVnWMAKGn5aHRt32dplmG4OTs7bdfwI2uZ1J0M/BQt0CqG1Ov
-	5ibFK9QlU45vlOkX2ycN7jJmCLYKPzXLiGFabPH582yVLJN3vGwAYalA2mpwG24l1zpB7jM+bXJoM
-	UfLIX5cXn5yKmJhN3c/wzkV4AH923GpClTTCOdvrLT6hVYfENk0/qvbbmaXCHkoaijaKgXLJMkqSd
-	fYSLKB84vrByvb0PG/NKpRvtgNgIzgYrtZx41Ouk4pRYXCl8xM15dPfZpZg+FBw8usJlPzhsQFG8S
-	I0Q9El2vVuxHUxUF/BNQ==;
+	List-Owner; bh=zKAUvAD4vtpTRJ7AtcjcjDGB+iGv7BGxFgqdZ6LvKqU=; b=el5feENf17XHmc
+	yffrZ0iIcKN0xAZAX7RIvSN+UGZb+k62v9hoEbPCnnwZjB0stfETm9QuebfaQ++A/3pcXT/uD7Nkq
+	PBHagzcsLrRBCMcMXu6U7tpxW7AbAwOZL9avFewf1jFMAk6jYDidEGG7cjJfyAPPZ8TVxPlUWUU4B
+	OskBgpt92jTUVWwZ2aEpJFyH77VN0tdGvnY+RIpv+bnTQFixQY9JCeZ7c6W4vKE5jmcY6P2xtJhDE
+	xmp781D2RPwmMzO6MmB323nC5RDmREMaTB4+7DuNI0BNeqyYyu8wvYpSVNofIAR7HrwflZIwk5V+7
+	OLigRyYktHlnsMg1SUgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDRFq-0002eK-5e; Thu, 26 Sep 2019 10:44:10 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
+	id 1iDcbu-0005Ng-7M; Thu, 26 Sep 2019 22:51:42 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDRFX-0002Sz-Py; Thu, 26 Sep 2019 10:43:54 +0000
-Received: from mailhost.synopsys.com (badc-mailhost2.synopsys.com
- [10.192.0.18])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 66F39C0480;
- Thu, 26 Sep 2019 10:43:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1569494627; bh=mqga0snLfE12Jrt0b/qfwvU35Ivg+d/d8F62Vx4mmRE=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=Kr1mEQPDKInc14PeH7yM0RUDRuV2PnrDqpW5uq/gMZSx9amJGmH9wpe7Hne2HLvlo
- 3+rP+Y736/HPFAtr1wn6fclTbtsMsmOqjsqVxrfm/jS02NXgQ+BIT+GXNd5xsLvobC
- 51H7dv51+6wR6hRZcWi3l+WIcf2kISJeOw5oPRM9yXiD/X6qwRAhNE3lci6GFCrgBN
- ddtFam6dPU1r1MFtbNN9+E0+LELIVyAB1Q4tpWpZUKj5Vs2lATK6XRYUQg7NMnnL/D
- GYD0NSqY6cE4/pNrH3kYS5iQPv1CoRKCQCohaJ3HS56+6ocdOApHvg20Nn1J+9l7er
- HNJO6MBJPSA3g==
-Received: from US01WEHTC3.internal.synopsys.com
- (us01wehtc3.internal.synopsys.com [10.15.84.232])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id A614EA0067;
- Thu, 26 Sep 2019 10:43:35 +0000 (UTC)
-Received: from US01WEHTC2.internal.synopsys.com (10.12.239.237) by
- US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Thu, 26 Sep 2019 03:43:25 -0700
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WEHTC2.internal.synopsys.com (10.12.239.237) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Thu, 26 Sep 2019 03:43:25 -0700
-Received: from NAM04-BN3-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Thu, 26 Sep 2019 03:43:25 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=is/kprMS5faVvCz7edkkuVAp6rOYL6xczLEfwaEsHqYo8zv6tM9b2BuUcGTSssRaIiHzOtYSdzT8mTM0Wdt6sSpyD0ZCsvcQ3qwPCI9CrG/jLsMoQOI/HthgDuezwltbhfLbMV7+2Oivs2y1x9en8PuCYmPJVIJJL6ZA4nkG074ftwnWsId3X2MZ3Nlui9tjS8M5dkfElJpWVOlMb9yKNZoRZ7qYetRhYRr8R3/E06itEw0EvG6TdzK+kQftCSblzLL9v9g/CDQOZjrbgXyd9hUvs36MAVf6REX6ZhZba80XSmWZh3yK/oBmHQGGokyEqVAAGIxHHbqagPnkrVdtyw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3FU44I+fh9UBEcuIGGPeJ7Mqi6Gh3jjuhObAnW5l6Pc=;
- b=BfcsRD/qi8UXtU6wGmWB+PRNgkRIbbaAQbmMHhBIk1rX6vCAg9WXbjt75DRo1Y5t+b9vOyESZcs9S/pqBGGjIrcQNRNvjYxQrAfQpGVNVQS/jDB3tI1/e0nON1pjSHypISPmun/KXXlRBmf1cP4eExTO4/kvZi1eybQj69jMbf8dFq6pP4a4aiv4jKczC/y3kBUEsLMZSNrRatITmWo2gg6I4azrLyLtrinJ0ey7dvod7aKpvRma239KsKhsFXV+quAEZmDJlaTTEQzbHIEdQsKSY2qPYkyihmoQMtlFPWsEalZzatapBmQoiN8+gAnW58y92yiP5x90noa8eHcfgQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
- dkim=pass header.d=synopsys.com; arc=none
+ id 1iDcbc-0005Bp-08
+ for linux-rockchip@lists.infradead.org; Thu, 26 Sep 2019 22:51:25 +0000
+Received: by mail-pl1-x643.google.com with SMTP id f21so248509plj.10
+ for <linux-rockchip@lists.infradead.org>; Thu, 26 Sep 2019 15:51:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3FU44I+fh9UBEcuIGGPeJ7Mqi6Gh3jjuhObAnW5l6Pc=;
- b=Gy8gmfEDWxz9YwNoqOrLMwVyoSI75QIv/4mQRmztN3EhjFoECAPdJrXM5g7NqFfAu8c9n07s6LAbDQksfZWwWKb239VuNnQlQzWT/+cxkPBeLKbwubT5y94dsc4RoPMe60+ddThhl3ggdjAznfAj0OUX6e9tVKlMUTwbvEynC2A=
-Received: from DM6PR12MB4010.namprd12.prod.outlook.com (10.255.175.83) by
- DM6PR12MB3561.namprd12.prod.outlook.com (20.178.199.24) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2284.26; Thu, 26 Sep 2019 10:43:22 +0000
-Received: from DM6PR12MB4010.namprd12.prod.outlook.com
- ([fe80::dd4:2e5:e564:8684]) by DM6PR12MB4010.namprd12.prod.outlook.com
- ([fe80::dd4:2e5:e564:8684%5]) with mapi id 15.20.2284.028; Thu, 26 Sep 2019
- 10:43:22 +0000
-From: Gustavo Pimentel <Gustavo.Pimentel@synopsys.com>
-To: Rob Herring <robh@kernel.org>, "linux-pci@vger.kernel.org"
- <linux-pci@vger.kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, "Lorenzo
- Pieralisi" <lorenzo.pieralisi@arm.com>
-Subject: RE: [PATCH 06/11] PCI: of: Add inbound resource parsing to helpers
-Thread-Topic: [PATCH 06/11] PCI: of: Add inbound resource parsing to helpers
-Thread-Index: AQHVcyGgfsQUUII3iES1szl1M3Fheqc9yAKA
-Date: Thu, 26 Sep 2019 10:43:22 +0000
-Message-ID: <DM6PR12MB4010C707B378530452747738DA860@DM6PR12MB4010.namprd12.prod.outlook.com>
-References: <20190924214630.12817-1-robh@kernel.org>
- <20190924214630.12817-7-robh@kernel.org>
-In-Reply-To: <20190924214630.12817-7-robh@kernel.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-dg-ref: =?us-ascii?Q?PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcZ3VzdGF2b1xh?=
- =?us-ascii?Q?cHBkYXRhXHJvYW1pbmdcMDlkODQ5YjYtMzJkMy00YTQwLTg1ZWUtNmI4NGJh?=
- =?us-ascii?Q?MjllMzViXG1zZ3NcbXNnLTcyZDAzODg5LWUwNGEtMTFlOS05ODhmLWY4OTRj?=
- =?us-ascii?Q?MjczODA0MlxhbWUtdGVzdFw3MmQwMzg4Yi1lMDRhLTExZTktOTg4Zi1mODk0?=
- =?us-ascii?Q?YzI3MzgwNDJib2R5LnR4dCIgc3o9IjE2MjA3IiB0PSIxMzIxMzk2ODE5ODAx?=
- =?us-ascii?Q?NjEyNDMiIGg9IlFQSW9wSlQ2ZUVrbDNzeTY0Q0NIUWRaM3pXWT0iIGlkPSIi?=
- =?us-ascii?Q?IGJsPSIwIiBibz0iMSIgY2k9ImNBQUFBRVJIVTFSU1JVRk5DZ1VBQUJRSkFB?=
- =?us-ascii?Q?RGJIQ2sxVjNUVkFSb2s3RW12SEtHTEdpVHNTYThjb1lzT0FBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFIQUFBQUNrQ0FBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFFQUFRQUJBQUFBRUdJWXpRQUFBQUFBQUFBQUFBQUFBSjRBQUFCbUFHa0Fi?=
- =?us-ascii?Q?Z0JoQUc0QVl3QmxBRjhBY0FCc0FHRUFiZ0J1QUdrQWJnQm5BRjhBZHdCaEFI?=
- =?us-ascii?Q?UUFaUUJ5QUcwQVlRQnlBR3NBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUVBQUFBQUFBQUFBZ0FBQUFBQW5nQUFBR1lBYndCMUFHNEFaQUJ5QUhrQVh3?=
- =?us-ascii?Q?QndBR0VBY2dCMEFHNEFaUUJ5QUhNQVh3Qm5BR1lBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFRQUFBQUFBQUFBQ0FB?=
- =?us-ascii?Q?QUFBQUNlQUFBQVpnQnZBSFVBYmdCa0FISUFlUUJmQUhBQVlRQnlBSFFBYmdC?=
- =?us-ascii?Q?bEFISUFjd0JmQUhNQVlRQnRBSE1BZFFCdUFHY0FYd0JqQUc4QWJnQm1BQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFCQUFBQUFBQUFBQUlBQUFBQUFKNEFBQUJtQUc4?=
- =?us-ascii?Q?QWRRQnVBR1FBY2dCNUFGOEFjQUJoQUhJQWRBQnVBR1VBY2dCekFGOEFjd0Jo?=
- =?us-ascii?Q?QUcwQWN3QjFBRzRBWndCZkFISUFaUUJ6QUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBRUFBQUFBQUFBQUFnQUFBQUFBbmdBQUFHWUFid0IxQUc0QVpBQnlBSGtB?=
- =?us-ascii?Q?WHdCd0FHRUFjZ0IwQUc0QVpRQnlBSE1BWHdCekFHMEFhUUJqQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQVFBQUFBQUFBQUFD?=
- =?us-ascii?Q?QUFBQUFBQ2VBQUFBWmdCdkFIVUFiZ0JrQUhJQWVRQmZBSEFBWVFCeUFIUUFi?=
- =?us-ascii?Q?Z0JsQUhJQWN3QmZBSE1BZEFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUJBQUFBQUFBQUFBSUFBQUFBQUo0QUFBQm1B?=
- =?us-ascii?Q?RzhBZFFCdUFHUUFjZ0I1QUY4QWNBQmhBSElBZEFCdUFHVUFjZ0J6QUY4QWRB?=
- =?us-ascii?Q?QnpBRzBBWXdBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFFQUFBQUFBQUFBQWdBQUFBQUFuZ0FBQUdZQWJ3QjFBRzRBWkFCeUFI?=
- =?us-ascii?Q?a0FYd0J3QUdFQWNnQjBBRzRBWlFCeUFITUFYd0IxQUcwQVl3QUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBUUFBQUFBQUFB?=
- =?us-ascii?Q?QUNBQUFBQUFDZUFBQUFad0IwQUhNQVh3QndBSElBYndCa0FIVUFZd0IwQUY4?=
- =?us-ascii?Q?QWRBQnlBR0VBYVFCdUFHa0FiZ0JuQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQkFBQUFBQUFBQUFJQUFBQUFBSjRBQUFC?=
- =?us-ascii?Q?ekFHRUFiQUJsQUhNQVh3QmhBR01BWXdCdkFIVUFiZ0IwQUY4QWNBQnNBR0VB?=
- =?us-ascii?Q?YmdBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUVBQUFBQUFBQUFBZ0FBQUFBQW5nQUFBSE1BWVFCc0FHVUFjd0Jm?=
- =?us-ascii?Q?QUhFQWRRQnZBSFFBWlFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFRQUFBQUFB?=
- =?us-ascii?Q?QUFBQ0FBQUFBQUNlQUFBQWN3QnVBSEFBY3dCZkFHd0FhUUJqQUdVQWJnQnpB?=
- =?us-ascii?Q?R1VBWHdCMEFHVUFjZ0J0QUY4QU1RQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFCQUFBQUFBQUFBQUlBQUFBQUFKNEFB?=
- =?us-ascii?Q?QUJ6QUc0QWNBQnpBRjhBYkFCcEFHTUFaUUJ1QUhNQVpRQmZBSFFBWlFCeUFH?=
- =?us-ascii?Q?MEFYd0J6QUhRQWRRQmtBR1VBYmdCMEFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBRUFBQUFBQUFBQUFnQUFBQUFBbmdBQUFIWUFad0JmQUdzQVpR?=
- =?us-ascii?Q?QjVBSGNBYndCeUFHUUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQVFBQUFB?=
- =?us-ascii?Q?QUFBQUFDQUFBQUFBQT0iLz48L21ldGE+?=
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=gustavo@synopsys.com; 
-x-originating-ip: [83.174.63.141]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 1bb308a6-8252-40c9-977d-08d7426e5a8c
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:DM6PR12MB3561; 
-x-ms-traffictypediagnostic: DM6PR12MB3561:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM6PR12MB3561AF645B1A6EA4317B88E9DA860@DM6PR12MB3561.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4714;
-x-forefront-prvs: 0172F0EF77
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(366004)(346002)(136003)(376002)(396003)(39860400002)(199004)(189003)(99286004)(54906003)(110136005)(316002)(66066001)(33656002)(7696005)(86362001)(5660300002)(30864003)(52536014)(7416002)(305945005)(74316002)(7736002)(2906002)(186003)(76176011)(478600001)(26005)(102836004)(25786009)(6506007)(53546011)(66946007)(64756008)(76116006)(66446008)(66476007)(66556008)(6116002)(3846002)(476003)(11346002)(446003)(14454004)(486006)(71190400001)(4326008)(14444005)(256004)(2501003)(71200400001)(8676002)(81156014)(81166006)(8936002)(9686003)(229853002)(6436002)(55016002)(6246003);
- DIR:OUT; SFP:1102; SCL:1; SRVR:DM6PR12MB3561;
- H:DM6PR12MB4010.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: I0G6H+KG4ukO+4lQcOsCUosSzsVQsgFfGtJiaVJIp3T0N0FB8omg2TF09xLJ+NU8SQeNPhs0jV5AlP7mqBGnRqmKrm2j/TQS/A0IZ+Uz5aujyd9EC+uoefqy6jM6+DNF6K2gz80npM+Im4f9jJuuKVcga1bFFbXpNF5mCq/pzUgl2g7KSONMIAdGJOhRrGa4fU4gRcQ1v45Bj1s3zLrhLaNZoFeSjY7+RQPvlxfsyPyJYITU9LEoCn7+eRZFAwl0A4e8We27PuUPXwnzHrb0SuARsQnhhR6iZDW2FC6qaRHmdhkQaNfLNwoFnHjzAoX63UAP0cpOu5Wct0cMXCixBMO+8oqJpdJ7lwbn7Ngx6sIBQqUkuVa3wMhr6xEhtRVX+KS/t5tkqrdi0xZeS4nQlvdnejUi3K56/6TZIpb9zm8=
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version:content-transfer-encoding;
+ bh=kg+W2f5e/pogc4hGhrCGEqMguXq5FDO31U9eHUNSVU8=;
+ b=doq6egEf3LmGnlfezLhjQYmyH9WNiUDMElP8GikmAOh7DM8SV20L7QhN+Jvey9pbDt
+ C9c2VT7GuS73tOkt5Ed0UHo5K8cTBGyf4trSfNwwP1JlrNpcP1tS6txwiKHKn6aRA7D0
+ KK7BevD9aR5UOMIXyhDUxNBAV1wC/0MVWxgjBUlih/SCPDlFaDZFJShXDZjC8WY86VZ4
+ 2EgPqNpG/IpiEV2sgHZYGNGfLp5J3/o4zl+kOinTMaO+LipU23kg0/3Tz8BhoGodzKON
+ hbsMy0+A397W+GVOMRGyRzkyXOTywv4U3+LNiQyTP264fqQIZ5g2eGH6Oktu/xqCnMaW
+ KNrg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version:content-transfer-encoding;
+ bh=kg+W2f5e/pogc4hGhrCGEqMguXq5FDO31U9eHUNSVU8=;
+ b=OBFdXBO5XrtShfP+6FYE2qdQ20jo5aPlQSYDi9lkeCokezV9Vc8FZ0n00piUgUlgZ5
+ YnJXD1ZLlUlSVBWvCyPFqXxJiaoYQHa2gkNfJ8NHispEePfBS516NgI1sJXnK16xJMzg
+ LTauzC2X3fEsemSKJE8SPOPfRCOaVzRye+f1oBl6vnsVs6mmMUZ3RGQxIpM5L+DI5mkc
+ LRoq3/9+PfUloVKpwc6oP/IDR6cWaEbNHmHPpohq5lWHkGLqwGVlqAvH5o5JHFfhpyYC
+ tqVzygeeQ+UA5bYIFe6jan/bH8t2kpCmJpQPoPuIRzd+Sb/twFvc7exzxHTY75ij2h+g
+ PjtA==
+X-Gm-Message-State: APjAAAV4m09ROxfJCoqJI6H0HhbVhce59CMFDRpLz690PGlgvF/bYH1W
+ L2POwcTGJyMtGGbm4h9aVp69JQ==
+X-Google-Smtp-Source: APXvYqwm2QmMOmlapOmvCZzfzmqAyybOChJa6QGvuyVRnsVKtwIzD0kUT3oqqJ7MALibHdkkoDNQbA==
+X-Received: by 2002:a17:902:bc46:: with SMTP id
+ t6mr1047383plz.307.1569538282342; 
+ Thu, 26 Sep 2019 15:51:22 -0700 (PDT)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.gmail.com with ESMTPSA id 64sm322938pfx.31.2019.09.26.15.51.21
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 26 Sep 2019 15:51:21 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Kever Yang <kever.yang@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>
+Subject: Re: CPUfreq fail on rk3399-firefly
+In-Reply-To: <7h8srjzuen.fsf@baylibre.com>
+References: <5d3057c8.1c69fb81.c6489.8ad2@mx.google.com>
+ <20190718162005.GF5761@sirena.org.uk> <7hmugdynmk.fsf@baylibre.com>
+ <2314814.WbdfqDVNqK@phil> <7hv9uq9wfe.fsf@baylibre.com>
+ <c973d3fa-5f0d-c277-7c83-6227942a671a@rock-chips.com>
+ <7hd0gvzuvw.fsf@baylibre.com> <7h8srjzuen.fsf@baylibre.com>
+Date: Thu, 26 Sep 2019 15:51:20 -0700
+Message-ID: <7hh84yisd3.fsf@baylibre.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1bb308a6-8252-40c9-977d-08d7426e5a8c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Sep 2019 10:43:22.7024 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: LTsFZDlA+Ud+S99T4lWodj8QrwO77oyp1EMC97uzWO0ttylJoG9jrrX7Tk2skdy4uD+dYf1EfiGL8p54ez3O/Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR12MB3561
-X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_034351_900318_6DCEB07B 
-X-CRM114-Status: GOOD (  12.71  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190926_155124_040597_B5ACAE82 
+X-CRM114-Status: GOOD (  19.35  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -227,427 +98,107 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>,
- Linus Walleij <linus.walleij@linaro.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
- Ryder Lee <ryder.lee@mediatek.com>, Michal Simek <michal.simek@xilinx.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "bcm-kernel-feedback-list@broadcom.com"
- <bcm-kernel-feedback-list@broadcom.com>, Shawn Lin <shawn.lin@rock-chips.com>,
- Ray Jui <rjui@broadcom.com>, Hou Zhiqiang <Zhiqiang.Hou@nxp.com>,
- Simon Horman <horms@verge.net.au>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Scott Branden <sbranden@broadcom.com>, Jingoo Han <jingoohan1@gmail.com>,
- "rfi@lists.rocketboards.org" <rfi@lists.rocketboards.org>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- Tom Joseph <tjoseph@cadence.com>,
- Gustavo Pimentel <Gustavo.Pimentel@synopsys.com>,
- Ley Foon  Tan <lftan@altera.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kernel-build-reports@lists.linaro.org, linux-rockchip@lists.infradead.org,
+ linux-next@vger.kernel.org,
+ =?utf-8?B?6Zer5a2d?= =?utf-8?B?5Yab?= <andy.yan@rock-chips.com>,
+ =?utf-8?B?5byg5pm0?= <elaine.zhang@rock-chips.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Sep 24, 2019 at 22:46:25, Rob Herring <robh@kernel.org> wrote:
-
-> Extend devm_of_pci_get_host_bridge_resources() and
-> pci_parse_request_of_pci_ranges() helpers to also parse the inbound
-> addresses from DT 'dma-ranges' and populate a resource list with the
-> translated addresses. This will help ensure 'dma-ranges' is always
-> parsed in a consistent way.
-> 
-> Cc: Jingoo Han <jingoohan1@gmail.com>
-> Cc: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
-> Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Cc: Bjorn Helgaas <bhelgaas@google.com>
-> Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Linus Walleij <linus.walleij@linaro.org>
-> Cc: Toan Le <toan@os.amperecomputing.com>
-> Cc: Ley Foon Tan <lftan@altera.com>
-> Cc: Tom Joseph <tjoseph@cadence.com>
-> Cc: Ray Jui <rjui@broadcom.com>
-> Cc: Scott Branden <sbranden@broadcom.com>
-> Cc: bcm-kernel-feedback-list@broadcom.com
-> Cc: Ryder Lee <ryder.lee@mediatek.com>
-> Cc: Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>
-> Cc: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
-> Cc: Simon Horman <horms@verge.net.au>
-> Cc: Shawn Lin <shawn.lin@rock-chips.com>
-> Cc: Heiko Stuebner <heiko@sntech.de>
-> Cc: Michal Simek <michal.simek@xilinx.com>
-> Cc: rfi@lists.rocketboards.org
-> Cc: linux-mediatek@lists.infradead.org
-> Cc: linux-renesas-soc@vger.kernel.org
-> Cc: linux-rockchip@lists.infradead.org
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
->  .../pci/controller/dwc/pcie-designware-host.c |  3 +-
->  drivers/pci/controller/pci-aardvark.c         |  2 +-
->  drivers/pci/controller/pci-ftpci100.c         |  3 +-
->  drivers/pci/controller/pci-host-common.c      |  2 +-
->  drivers/pci/controller/pci-v3-semi.c          |  2 +-
->  drivers/pci/controller/pci-versatile.c        |  2 +-
->  drivers/pci/controller/pci-xgene.c            |  1 +
->  drivers/pci/controller/pcie-altera.c          |  2 +-
->  drivers/pci/controller/pcie-cadence-host.c    |  2 +-
->  drivers/pci/controller/pcie-iproc-platform.c  |  1 +
->  drivers/pci/controller/pcie-mediatek.c        |  2 +-
->  drivers/pci/controller/pcie-mobiveil.c        |  4 +-
->  drivers/pci/controller/pcie-rcar.c            |  3 +-
->  drivers/pci/controller/pcie-rockchip-host.c   |  3 +-
->  drivers/pci/controller/pcie-xilinx-nwl.c      |  2 +-
->  drivers/pci/controller/pcie-xilinx.c          |  2 +-
->  drivers/pci/of.c                              | 44 ++++++++++++++++++-
->  drivers/pci/pci.h                             |  8 +++-
->  include/linux/pci.h                           |  2 +
->  19 files changed, 72 insertions(+), 18 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/dwc/pcie-designware-host.c b/drivers/pci/controller/dwc/pcie-designware-host.c
-> index f93252d0da5b..0743ae64bb0f 100644
-> --- a/drivers/pci/controller/dwc/pcie-designware-host.c
-> +++ b/drivers/pci/controller/dwc/pcie-designware-host.c
-> @@ -342,7 +342,8 @@ int dw_pcie_host_init(struct pcie_port *pp)
->  		return -ENOMEM;
->  
->  	ret = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
-> -					&bridge->windows, &pp->io_base);
-> +					&bridge->windows, &bridge->dma_ranges,
-> +					&pp->io_base);
->  	if (ret)
->  		return ret;
->  
-> diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
-> index ff3af3d34028..c00b391529f3 100644
-> --- a/drivers/pci/controller/pci-aardvark.c
-> +++ b/drivers/pci/controller/pci-aardvark.c
-> @@ -940,7 +940,7 @@ static int advk_pcie_probe(struct platform_device *pdev)
->  	}
->  
->  	ret = pci_parse_request_of_pci_ranges(dev, &pcie->resources,
-> -					      &bus);
-> +					      &bridge->dma_ranges, &bus);
->  	if (ret) {
->  		dev_err(dev, "Failed to parse resources\n");
->  		return ret;
-> diff --git a/drivers/pci/controller/pci-ftpci100.c b/drivers/pci/controller/pci-ftpci100.c
-> index bf5ece5d9291..3e07a8203736 100644
-> --- a/drivers/pci/controller/pci-ftpci100.c
-> +++ b/drivers/pci/controller/pci-ftpci100.c
-> @@ -481,7 +481,8 @@ static int faraday_pci_probe(struct platform_device *pdev)
->  		return PTR_ERR(p->base);
->  
->  	ret = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
-> -						    &res, &io_base);
-> +						    &res, &host->dma_ranges,
-> +						    &io_base);
->  	if (ret)
->  		return ret;
->  
-> diff --git a/drivers/pci/controller/pci-host-common.c b/drivers/pci/controller/pci-host-common.c
-> index c742881b5061..183381c19ee8 100644
-> --- a/drivers/pci/controller/pci-host-common.c
-> +++ b/drivers/pci/controller/pci-host-common.c
-> @@ -27,7 +27,7 @@ static struct pci_config_window *gen_pci_init(struct device *dev,
->  	struct pci_config_window *cfg;
->  
->  	/* Parse our PCI ranges and request their resources */
-> -	err = pci_parse_request_of_pci_ranges(dev, resources, &bus_range);
-> +	err = pci_parse_request_of_pci_ranges(dev, resources, NULL, &bus_range);
->  	if (err)
->  		return ERR_PTR(err);
->  
-> diff --git a/drivers/pci/controller/pci-v3-semi.c b/drivers/pci/controller/pci-v3-semi.c
-> index d219404bad92..090df766faf9 100644
-> --- a/drivers/pci/controller/pci-v3-semi.c
-> +++ b/drivers/pci/controller/pci-v3-semi.c
-> @@ -794,7 +794,7 @@ static int v3_pci_probe(struct platform_device *pdev)
->  		return PTR_ERR(v3->config_base);
->  
->  	ret = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff, &res,
-> -						    &io_base);
-> +						    &host->dma_ranges, &io_base);
->  	if (ret)
->  		return ret;
->  
-> diff --git a/drivers/pci/controller/pci-versatile.c b/drivers/pci/controller/pci-versatile.c
-> index 237b1abb26f2..211159f54b4a 100644
-> --- a/drivers/pci/controller/pci-versatile.c
-> +++ b/drivers/pci/controller/pci-versatile.c
-> @@ -93,7 +93,7 @@ static int versatile_pci_probe(struct platform_device *pdev)
->  	if (IS_ERR(versatile_cfg_base[1]))
->  		return PTR_ERR(versatile_cfg_base[1]);
->  
-> -	ret = pci_parse_request_of_pci_ranges(dev, &pci_res, NULL);
-> +	ret = pci_parse_request_of_pci_ranges(dev, &pci_res, NULL, NULL);
->  	if (ret)
->  		return ret;
->  
-> diff --git a/drivers/pci/controller/pci-xgene.c b/drivers/pci/controller/pci-xgene.c
-> index ffda3e8b4742..11f27c42c06a 100644
-> --- a/drivers/pci/controller/pci-xgene.c
-> +++ b/drivers/pci/controller/pci-xgene.c
-> @@ -635,6 +635,7 @@ static int xgene_pcie_probe(struct platform_device *pdev)
->  		return ret;
->  
->  	ret = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff, &res,
-> +						    &bridge->dma_ranges,
->  						    &iobase);
->  	if (ret)
->  		return ret;
-> diff --git a/drivers/pci/controller/pcie-altera.c b/drivers/pci/controller/pcie-altera.c
-> index 2ed00babff5a..fde6a3b16fb9 100644
-> --- a/drivers/pci/controller/pcie-altera.c
-> +++ b/drivers/pci/controller/pcie-altera.c
-> @@ -801,7 +801,7 @@ static int altera_pcie_probe(struct platform_device *pdev)
->  	}
->  
->  	ret = pci_parse_request_of_pci_ranges(dev, &pcie->resources,
-> -					      NULL);
-> +					      &bridge->dma_ranges, NULL);
->  	if (ret) {
->  		dev_err(dev, "Failed add resources\n");
->  		return ret;
-> diff --git a/drivers/pci/controller/pcie-cadence-host.c b/drivers/pci/controller/pcie-cadence-host.c
-> index 97e251090b4f..a8f7a6284c3e 100644
-> --- a/drivers/pci/controller/pcie-cadence-host.c
-> +++ b/drivers/pci/controller/pcie-cadence-host.c
-> @@ -211,7 +211,7 @@ static int cdns_pcie_host_init(struct device *dev,
->  	int err;
->  
->  	/* Parse our PCI ranges and request their resources */
-> -	err = pci_parse_request_of_pci_ranges(dev, resources, &bus_range);
-> +	err = pci_parse_request_of_pci_ranges(dev, resources, NULL, &bus_range);
->  	if (err)
->  		return err;
->  
-> diff --git a/drivers/pci/controller/pcie-iproc-platform.c b/drivers/pci/controller/pcie-iproc-platform.c
-> index 5a3550b6bb29..62eee2d17f43 100644
-> --- a/drivers/pci/controller/pcie-iproc-platform.c
-> +++ b/drivers/pci/controller/pcie-iproc-platform.c
-> @@ -101,6 +101,7 @@ static int iproc_pcie_pltfm_probe(struct platform_device *pdev)
->  	}
->  
->  	ret = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff, &resources,
-> +						    &bridge->dma_ranges,
->  						    &iobase);
->  	if (ret) {
->  		dev_err(dev, "unable to get PCI host bridge resources\n");
-> diff --git a/drivers/pci/controller/pcie-mediatek.c b/drivers/pci/controller/pcie-mediatek.c
-> index cea4112b5309..f3996eed152d 100644
-> --- a/drivers/pci/controller/pcie-mediatek.c
-> +++ b/drivers/pci/controller/pcie-mediatek.c
-> @@ -1032,7 +1032,7 @@ static int mtk_pcie_setup(struct mtk_pcie *pcie)
->  	int err;
->  
->  	err = pci_parse_request_of_pci_ranges(dev, windows,
-> -					      &bus);
-> +					      &host->dma_ranges, &bus);
->  	if (err)
->  		return err;
->  
-> diff --git a/drivers/pci/controller/pcie-mobiveil.c b/drivers/pci/controller/pcie-mobiveil.c
-> index 672e633601c7..93064faaa656 100644
-> --- a/drivers/pci/controller/pcie-mobiveil.c
-> +++ b/drivers/pci/controller/pcie-mobiveil.c
-> @@ -875,7 +875,9 @@ static int mobiveil_pcie_probe(struct platform_device *pdev)
->  
->  	/* parse the host bridge base addresses from the device tree file */
->  	ret = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
-> -						    &pcie->resources, &iobase);
-> +						    &pcie->resources,
-> +						    &bridge->dma_ranges,
-> +						    &iobase);
->  	if (ret) {
->  		dev_err(dev, "Getting bridge resources failed\n");
->  		return ret;
-> diff --git a/drivers/pci/controller/pcie-rcar.c b/drivers/pci/controller/pcie-rcar.c
-> index f6a669a9af41..b8d6e86a5539 100644
-> --- a/drivers/pci/controller/pcie-rcar.c
-> +++ b/drivers/pci/controller/pcie-rcar.c
-> @@ -1138,7 +1138,8 @@ static int rcar_pcie_probe(struct platform_device *pdev)
->  	pcie->dev = dev;
->  	platform_set_drvdata(pdev, pcie);
->  
-> -	err = pci_parse_request_of_pci_ranges(dev, &pcie->resources, NULL);
-> +	err = pci_parse_request_of_pci_ranges(dev, &pcie->resources,
-> +					      &bridge->dma_ranges, NULL);
->  	if (err)
->  		goto err_free_bridge;
->  
-> diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
-> index 8d20f1793a61..093b816b9dc9 100644
-> --- a/drivers/pci/controller/pcie-rockchip-host.c
-> +++ b/drivers/pci/controller/pcie-rockchip-host.c
-> @@ -996,7 +996,8 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
->  		goto err_deinit_port;
->  
->  	err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
-> -						    &res, &io_base);
-> +						    &res, &bridge->dma_ranges,
-> +						    &io_base);
->  	if (err)
->  		goto err_remove_irq_domain;
->  
-> diff --git a/drivers/pci/controller/pcie-xilinx-nwl.c b/drivers/pci/controller/pcie-xilinx-nwl.c
-> index 45c0f344ccd1..5c9132a02d15 100644
-> --- a/drivers/pci/controller/pcie-xilinx-nwl.c
-> +++ b/drivers/pci/controller/pcie-xilinx-nwl.c
-> @@ -846,7 +846,7 @@ static int nwl_pcie_probe(struct platform_device *pdev)
->  	}
->  
->  	err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff, &res,
-> -						    &iobase);
-> +						    &bridge->dma_ranges, &iobase);
->  	if (err) {
->  		dev_err(dev, "Getting bridge resources failed\n");
->  		return err;
-> diff --git a/drivers/pci/controller/pcie-xilinx.c b/drivers/pci/controller/pcie-xilinx.c
-> index 5bf3af3b28e6..a95faca30291 100644
-> --- a/drivers/pci/controller/pcie-xilinx.c
-> +++ b/drivers/pci/controller/pcie-xilinx.c
-> @@ -648,7 +648,7 @@ static int xilinx_pcie_probe(struct platform_device *pdev)
->  	}
->  
->  	err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff, &res,
-> -						    &iobase);
-> +						    &bridge->dma_ranges, &iobase);
->  	if (err) {
->  		dev_err(dev, "Getting bridge resources failed\n");
->  		return err;
-> diff --git a/drivers/pci/of.c b/drivers/pci/of.c
-> index bc7b27a28795..8d31e078461f 100644
-> --- a/drivers/pci/of.c
-> +++ b/drivers/pci/of.c
-> @@ -257,7 +257,9 @@ EXPORT_SYMBOL_GPL(of_pci_check_probe_only);
->   */
->  int devm_of_pci_get_host_bridge_resources(struct device *dev,
->  			unsigned char busno, unsigned char bus_max,
-> -			struct list_head *resources, resource_size_t *io_base)
-> +			struct list_head *resources,
-> +			struct list_head *ib_resources,
-> +			resource_size_t *io_base)
->  {
->  	struct device_node *dev_node = dev->of_node;
->  	struct resource *res, tmp_res;
-> @@ -340,6 +342,42 @@ int devm_of_pci_get_host_bridge_resources(struct device *dev,
->  		pci_add_resource_offset(resources, res,	res->start - range.pci_addr);
->  	}
->  
-> +	/* Check for dma-ranges property */
-> +	if (!ib_resources)
-> +		return 0;
-> +	err = of_pci_dma_range_parser_init(&parser, dev_node);
-> +	if (err)
-> +		return 0;
-> +
-> +	dev_dbg(dev, "Parsing dma-ranges property...\n");
-> +	for_each_of_pci_range(&parser, &range) {
-> +		/*
-> +		 * If we failed translation or got a zero-sized region
-> +		 * then skip this range
-> +		 */
-> +		if (((range.flags & IORESOURCE_TYPE_BITS) != IORESOURCE_MEM) ||
-> +		    range.cpu_addr == OF_BAD_ADDR || range.size == 0)
-> +			continue;
-> +
-> +		dev_info(dev, "IB MEM %#010llx..%#010llx -> %#010llx\n",
-> +			 range.cpu_addr,
-> +			 range.cpu_addr + range.size - 1, range.pci_addr);
-> +
-> +
-> +		err = of_pci_range_to_resource(&range, dev_node, &tmp_res);
-> +		if (err)
-> +			continue;
-> +
-> +		res = devm_kmemdup(dev, &tmp_res, sizeof(tmp_res), GFP_KERNEL);
-> +		if (!res) {
-> +			err = -ENOMEM;
-> +			goto failed;
-> +		}
-> +
-> +		pci_add_resource_offset(ib_resources, res,
-> +					res->start - range.pci_addr);
-> +	}
-> +
->  	return 0;
->  
->  failed:
-> @@ -482,6 +520,7 @@ EXPORT_SYMBOL_GPL(of_irq_parse_and_map_pci);
->  
->  int pci_parse_request_of_pci_ranges(struct device *dev,
->  				    struct list_head *resources,
-> +				    struct list_head *ib_resources,
->  				    struct resource **bus_range)
->  {
->  	int err, res_valid = 0;
-> @@ -489,8 +528,9 @@ int pci_parse_request_of_pci_ranges(struct device *dev,
->  	struct resource_entry *win, *tmp;
->  
->  	INIT_LIST_HEAD(resources);
-> +	INIT_LIST_HEAD(ib_resources);
->  	err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff, resources,
-> -						    &iobase);
-> +						    ib_resources, &iobase);
->  	if (err)
->  		return err;
->  
-> diff --git a/drivers/pci/pci.h b/drivers/pci/pci.h
-> index d22d1b807701..790458953c54 100644
-> --- a/drivers/pci/pci.h
-> +++ b/drivers/pci/pci.h
-> @@ -582,11 +582,15 @@ of_pci_get_max_link_speed(struct device_node *node)
->  #if defined(CONFIG_OF_ADDRESS)
->  int devm_of_pci_get_host_bridge_resources(struct device *dev,
->  			unsigned char busno, unsigned char bus_max,
-> -			struct list_head *resources, resource_size_t *io_base);
-> +			struct list_head *resources,
-> +			struct list_head *ib_resources,
-> +			resource_size_t *io_base);
->  #else
->  static inline int devm_of_pci_get_host_bridge_resources(struct device *dev,
->  			unsigned char busno, unsigned char bus_max,
-> -			struct list_head *resources, resource_size_t *io_base)
-> +			struct list_head *resources,
-> +			struct list_head *ib_resources,
-> +			resource_size_t *io_base);
->  {
->  	return -EINVAL;
->  }
-> diff --git a/include/linux/pci.h b/include/linux/pci.h
-> index 82e4cd1b7ac3..d57389b86f92 100644
-> --- a/include/linux/pci.h
-> +++ b/include/linux/pci.h
-> @@ -2312,6 +2312,7 @@ void pci_release_bus_of_node(struct pci_bus *bus);
->  struct irq_domain *pci_host_bridge_of_msi_domain(struct pci_bus *bus);
->  int pci_parse_request_of_pci_ranges(struct device *dev,
->  				    struct list_head *resources,
-> +				    struct list_head *ib_resources,
->  				    struct resource **bus_range);
->  
->  /* Arch may override this (weak) */
-> @@ -2326,6 +2327,7 @@ static inline struct irq_domain *
->  pci_host_bridge_of_msi_domain(struct pci_bus *bus) { return NULL; }
->  static inline int pci_parse_request_of_pci_ranges(struct device *dev,
->  						  struct list_head *resources,
-> +						  struct list_head *ib_resources,
->  						  struct resource **bus_range)
->  {
->  	return -EINVAL;
-> -- 
-> 2.20.1
-
-Seems ok to me.
-
-
-Acked-by: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+S2V2aW4gSGlsbWFuIDxraGlsbWFuQGJheWxpYnJlLmNvbT4gd3JpdGVzOgoKPiBLZXZpbiBIaWxt
+YW4gPGtoaWxtYW5AYmF5bGlicmUuY29tPiB3cml0ZXM6Cj4KPj4gS2V2ZXIgWWFuZyA8a2V2ZXIu
+eWFuZ0Byb2NrLWNoaXBzLmNvbT4gd3JpdGVzOgo+Pgo+Pj4gSGkgS2V2aW4sIEhlaWtvLAo+Pj4K
+Pj4+IE9uIDIwMTkvOC8yMiDkuIrljYgyOjU5LCBLZXZpbiBIaWxtYW4gd3JvdGU6Cj4+Pj4gSGkg
+SGVpa28sCj4+Pj4KPj4+PiBIZWlrbyBTdHVlYm5lciA8aGVpa29Ac250ZWNoLmRlPiB3cml0ZXM6
+Cj4+Pj4KPj4+Pj4gQW0gRGllbnN0YWcsIDEzLiBBdWd1c3QgMjAxOSwgMTk6MzU6MzEgQ0VTVCBz
+Y2hyaWViIEtldmluIEhpbG1hbjoKPj4+Pj4+IFsgcmVzZW50IHdpdGggY29ycmVjdCBhZGRyIGZv
+ciBsaW51eC1yb2NrY2hpcCBsaXN0IF0KPj4+Pj4+Cj4+Pj4+PiBNYXJrIEJyb3duIDxicm9vbmll
+QGtlcm5lbC5vcmc+IHdyaXRlczoKPj4+Pj4+Cj4+Pj4+Pj4gT24gVGh1LCBKdWwgMTgsIDIwMTkg
+YXQgMDQ6Mjg6MDhBTSAtMDcwMCwga2VybmVsY2kub3JnIGJvdCB3cm90ZToKPj4+Pj4+Pgo+Pj4+
+Pj4+IFRvZGF5J3MgLW5leHQgc3RhcnRlZCBmYWlsaW5nIHRvIGJvb3QgZGVmY29uZmlnIG9uIHJr
+MzM5OS1maXJlZmx5Ogo+Pj4+Pj4+Cj4+Pj4+Pj4+IGFybTY0Ogo+Pj4+Pj4+PiAgICAgIGRlZmNv
+bmZpZzoKPj4+Pj4+Pj4gICAgICAgICAgZ2NjLTg6Cj4+Pj4+Pj4+ICAgICAgICAgICAgICByazMz
+OTktZmlyZWZseTogMSBmYWlsZWQgbGFiCj4+Pj4+Pj4gSXQgaGl0cyBhIEJVRygpIHRyeWluZyB0
+byBzZXQgdXAgY3B1ZnJlcToKPj4+Pj4+Pgo+Pj4+Pj4+IFsgICA4Ny4zODE2MDZdIGNwdWZyZXE6
+IGNwdWZyZXFfb25saW5lOiBDUFUwOiBSdW5uaW5nIGF0IHVubGlzdGVkIGZyZXE6IDIwMDAwMCBL
+SHoKPj4+Pj4+PiBbICAgODcuMzkzMjQ0XSBjcHVmcmVxOiBjcHVmcmVxX29ubGluZTogQ1BVMDog
+VW5saXN0ZWQgaW5pdGlhbCBmcmVxdWVuY3kgY2hhbmdlZCB0bzogNDA4MDAwIEtIego+Pj4+Pj4+
+IFsgICA4Ny40Njk3NzddIGNwdWZyZXE6IGNwdWZyZXFfb25saW5lOiBDUFU0OiBSdW5uaW5nIGF0
+IHVubGlzdGVkIGZyZXE6IDEyMDAwIEtIego+Pj4+Pj4+IFsgICA4Ny40ODg1OTVdIGNwdSBjcHU0
+OiBfZ2VuZXJpY19zZXRfb3BwX2Nsa19vbmx5OiBmYWlsZWQgdG8gc2V0IGNsb2NrIHJhdGU6IC0y
+Mgo+Pj4+Pj4+IFsgICA4Ny40OTE4ODFdIGNwdWZyZXE6IF9fdGFyZ2V0X2luZGV4OiBGYWlsZWQg
+dG8gY2hhbmdlIGNwdSBmcmVxdWVuY3k6IC0yMgo+Pj4+Pj4+IFsgICA4Ny40OTUzMzVdIC0tLS0t
+LS0tLS0tLVsgY3V0IGhlcmUgXS0tLS0tLS0tLS0tLQo+Pj4+Pj4+IFsgICA4Ny40OTY4MjFdIGtl
+cm5lbCBCVUcgYXQgZHJpdmVycy9jcHVmcmVxL2NwdWZyZXEuYzoxNDM4IQo+Pj4+Pj4+IFsgICA4
+Ny40OTg0NjJdIEludGVybmFsIGVycm9yOiBPb3BzIC0gQlVHOiAwIFsjMV0gUFJFRU1QVCBTTVAK
+Pj4+Pj4+Pgo+Pj4+Pj4+IEknbSBzdHJ1Z2dsaW5nIHRvIHNlZSBhbnl0aGluZyByZWxldmFudCBp
+biB0aGUgZGlmZiBmcm9tIHllc3RlcmRheSwgdGhlCj4+Pj4+Pj4gdW5saXN0ZWQgZnJlcXVlbmN5
+IHdhcm5pbmdzIHdlcmUgdGhlcmUgaW4gdGhlIGxvZ3MgeWVzdGVyZGF5IGJ1dCBubyBvb3BzCj4+
+Pj4+Pj4gYW5kIEknbSBub3Qgc2VlaW5nIGFueSBjaGFuZ2VzIGluIGNwdWZyZXEsIGNsayBvciBh
+bnl0aGluZyByZWxldmFudAo+Pj4+Pj4+IGxvb2tpbmcuCj4+Pj4+Pj4KPj4+Pj4+PiBGdWxsIGJv
+b3Rsb2cgYW5kIG90aGVyIGluZm8gY2FuIGJlIGZvdW5kIGhlcmU6Cj4+Pj4+Pj4KPj4+Pj4+PiAJ
+aHR0cHM6Ly9rZXJuZWxjaS5vcmcvYm9vdC9pZC81ZDMwMmQ4MzU5YjUxNDk4ZDA0OWU5ODMvCj4+
+Pj4+PiBJIGNvbmZpcm0gdGhhdCBkaXNhYmxpbmcgQ1BVZnJlcSBpbiB0aGUgZGVmY29uZmlnIChD
+T05GSUdfQ1BVX0ZSRVE9bikKPj4+Pj4+IG1ha2VzIHRoZSBmaXJlZmx5IGJvYXJkIHN0YXJ0IHdv
+cmtpbmcgYWdhaW4uCj4+Pj4+Pgo+Pj4+Pj4gTm90ZSB0aGF0IHRoZSBkZWZhdWx0IGRlZmNvbmZp
+ZyBlbmFibGVzIHRoZSAicGVyZm9ybWFuY2UiIENQVWZyZXEKPj4+Pj4+IGdvdmVybm9yIGFzIHRo
+ZSBkZWZhdWx0IGdvdmVybm9yLCBzbyBkdXJpbmcga2VybmVsIGJvb3QsIGl0IHdpbGwgYWx3YXlz
+Cj4+Pj4+PiBzd2l0Y2ggdG8gdGhlIG1heCBmcmVxdWVuY3kuCj4+Pj4+Pgo+Pj4+Pj4gRm9yIGZ1
+biwgSSBzZXQgdGhlIGRlZmF1bHQgZ292ZXJub3IgdG8gInVzZXJzcGFjZSIgc28gdGhlIGtlcm5l
+bAo+Pj4+Pj4gd291bGRuJ3QgbWFrZSBhbnkgT1BQIGNoYW5nZXMsIGFuZCB0aGF0IGxlYWRzIHRv
+IGEgc2xpZ2h0bHkgbW9yZQo+Pj4+Pj4gaW5mb3JtYXRpdmUgc3BsYXRbMV0KPj4+Pj4+Cj4+Pj4+
+PiBUaGVyZSBpcyBzdGlsbCBhbiBPUFAgY2hhbmdlIGhhcHBlbmluZyBiZWNhdXNlIHRoZSBkZXRl
+Y3RlZCBPUFAgaXMgbm90Cj4+Pj4+PiBvbmUgdGhhdCdzIGxpc3RlZCBpbiB0aGUgdGFibGUsIHNv
+IGl0IHRyaWVzIHRvIGNoYW5nZSB0byBhIGxpc3RlZCBPUFAKPj4+Pj4+IGFuZCBmYWlscyBpbiB0
+aGUgYm93ZWxzIG9mIGNsa19zZXRfcmF0ZSgpCj4+Pj4+IFRob3VnaCBJIHRoaW5rIHRoYXQgbWln
+aHQgb25seSBiZSBhIHN5bXB0b20gYXMgd2VsbC4KPj4+Pj4gQm90aCB0aGUgUExMIHNldHRpbmcg
+Y29kZSBhcyB3ZWxsIGFzIHRoZSBhY3R1YWwgY3B1LWNsb2NrIGltcGxlbWVudGF0aW9uCj4+Pj4+
+IGlzIHVuY2hhbmdlZCBzaW5jZSAyMDE3IChhbmQgcnVucyBqdXN0IGZpbmUgb24gYWxsIGJvYXJk
+cyBpbiBteSBmYXJtKS4KPj4+Pj4KPj4+Pj4gT25lIHNvdXJjZSBmb3IgdGhlc2UgaXNzdWVzIGlz
+IG9mdGVuIHRoZSByZWd1bGF0b3Igc3VwcGx5aW5nIHRoZSBjcHUKPj4+Pj4gZ29pbmcgaGF5d2ly
+ZSAtIGFrYSB0aGUgdm9sdGFnZSBub3QgbWF0Y2hpbmcgdGhlIG9wcC4KPj4+Pj4KPj4+Pj4gQXMg
+aW4gdGhpcyBlcnJvci1jYXNlIGl0J3MgQ1BVNCBiZWluZyBzZXQsIHRoaXMgd291bGQgbWVhbiBp
+dCBtaWdodAo+Pj4+PiBiZSB0aGUgYmlnIGNsdXN0ZXIgc3VwcGxpZWQgYnkgdGhlIGV4dGVybmFs
+IHN5cjgyNSAoZmFuNTM1NSBjbG9uZSkKPj4+Pj4gdGhhdCBtaWdodCBhY3QgdXAuIEluIHRoZSBG
+aXJlZmx5LXJrMzM5OSBjYXNlIHRoaXMgaXMgZXZlbiBzdHJhbmdlci4KPj4+Pj4KPj4+Pj4gVGhl
+cmUgaXMgYSBkaXNjcmVwYW5jeSBiZXR3ZWVuIHRoZSAiZmNzLHN1c3BlbmQtdm9sdGFnZS1zZWxl
+Y3RvciIKPj4+Pj4gYmV0d2VlbiBkaWZmZXJlbnQgYm9vdGxvYWRlciB2ZXJzaW9ucyAoaG93IHRo
+ZSBzZWxlY3Rpb24tcGluIGlzIHNldCB1cCksCj4+Pj4+IHNvIHRoZSBrZXJuZWwgbWlnaHQgYWN0
+dWFsbHkgd3JpdGUgaGlzIHJlcXVlc3RlZCB2b2x0YWdlIHRvIHRoZSB3cm9uZwo+Pj4+PiByZWdp
+c3RlciAobm90IHRoZSBvbmUgZm9yIGFjdHVhbCB2b2x0YWdlLCBidXQgdGhlIHNlY29uZCBzZXQg
+dXNlZCBmb3IKPj4+Pj4gdGhlIHN1c3BlbmQgdm9sdGFnZSkuCj4+Pj4+Cj4+Pj4+IERpZCB5b3Ug
+YnkgY2hhbmNlIHN3YXAgYm9vdGxvYWRlcnMgYXQgc29tZSBwb2ludCBpbiByZWNlbnQgcGFzdD8K
+Pj4+PiBObywgaGF2ZW4ndCB0b3VjaGVkIGJvb3Rsb2FkZXIgc2luY2UgSSBpbml0aWFsbHkgc2V0
+dXAgdGhlIGJvYXJkLgo+Pj4KPj4+IFRoZSBDUFUgdm9sdGFnZSBkb2VzIG5vdCBhZmZlY3QgYnkg
+Ym9vdGxvYWRlciBmb3Iga2VybmVsIHNob3VsZCBoYXZlIGl0cyAKPj4+IG93biBvcHAtdGFibGUs
+Cj4+Pgo+Pj4gdGhlIGJvb3Rsb2FkZXIgbWF5IG9ubHkgYWZmZWN0IHRoZSBjZW50ZXIvbG9naWMg
+cG93ZXIgc3VwcGx5Lgo+Pj4KPj4+Pgo+Pj4+PiBJJ2QgYXNzdW1lIFsyXSBtaWdodCBhY3R1YWxs
+eSBiZSB0aGUgc2FtZSBpc3N1ZSBsYXN0IHllYXIsIHRob3VnaAo+Pj4+PiB0aGUgQ0ktbG9ncyBh
+cmUgbm90IGF2YWlsYWJsZSBhbnltb3JlIGl0IHNlZW1zLgo+Pj4+Pgo+Pj4+PiBDb3VsZCB5b3Ug
+dHJ5IHRvIHNldCB0aGUgdmRkX2NwdV9iIHJlZ3VsYXRvciB0byBkaXNhYmxlZCwgc28gdGhhdAo+
+Pj4+PiBjcHVmcmVxIGZvciB0aGlzIGNsdXN0ZXIgZGVmZXJzIGFuZCBzZWUgd2hhdCBoYXBwZW5z
+Pwo+Pj4+IFllcywgdGhpcyBjaGFuZ2VbMV0gZGVmaW5pdGVseSBtYWtlcyB0aGluZ3MgYm9vdCBy
+ZWxpYWJseSBhZ2Fpbiwgc28KPj4+PiB0aGVyZSdzIGRlZmludGllbHkgc29tZXRoaW5nIGEgYml0
+IHVuc3RhYmxlIHdpdGggdGhpcyByZWd1bGF0b3IsIGF0Cj4+Pj4gbGVhc3Qgb24gdGhpcyBmaXJl
+Zmx5Lgo+Pj4KPj4+IElzIGl0IHBvc3NpYmxlIHRvIHRhcmdldCB3aGljaCBwYXRjaCBpbnRyb2R1
+Y2UgdGhpcyBidWc/IFRoaXMgYm9hcmTCoCAKPj4+IHNob3VsZCBoYXZlIHdvcmsgY29ycmVjdGx5
+IGZvciBhIGxvbmcgdGltZSB3aXRoIHVwc3RyZWFtIHNvdXJjZSBjb2RlLgo+Pgo+PiBVbmZvcnR1
+bmF0ZWx5LCBpdCBzZWVtcyB0byBiZSBhIHJlZ3VsYXIsIGJ1dCBpbnRlcm1pdHRlbnQgZmFpbHVy
+ZSwgc28KPj4gYmlzZWN0aW9uIGlzIG5vdCBwcm9kdWNpbmcgYW55dGhpbmcgcmVsaWFibGUuCj4+
+Cj4+IFlvdSBjYW4gc2VlIHRoYXQgYm90aCBpbiBtYWlubGluZVsxXSBhbmQgaW4gbGludXgtbmV4
+dFsyXSB0aGVyZSBhcmUKPj4gcGVyaW9kaWMgZmFpbHVyZXMsIGJ1dCBpdCdzIGhhcmQgdG8gc2Vl
+IGFueSBwYXR0ZXJucy4KPgo+IEV2ZW4gd29yc2UsIEkgKHJlKXRlc3RlZCBtYWlubGluZSBmb3Ig
+dmVyc2lvbnMgdGhhdCB3ZXJlIHByZXZpb3VzbHkKPiBwYXNzaW5nICh2NS4yLCB2NS4zLXJjNSkg
+YW5kIHRoZXkgYXJlIGFsc28gZmFpbGluZyBub3cuCj4KPiBUaGV5IHdvcmsgYWdhaW4gaWYgSSBk
+aXNhYmxlIHRoYXQgcmVndWxhdG9yIGFzIHN1Z2dlc3RlZCBieSBIZWlrby4KPgo+IFNvIHRoaXMg
+aXMgaW5jcmVhc2luZ2x5IHBvaW50aW5nIHRvIGZhaWxpbmcgaGFyZHdhcmUuCgpUaGlzIGlzIG5v
+dyBmYWlsaW5nIGluIHRoZSB2NS4yIHN0YWJsZSB0cmVlLgoKQW55IHN1Z2dlc3Rpb25zIG9uIHdo
+YXQgdG8gZG8/ICBvdGhlcndpc2UsIEknbGwganVzdCBuZWVkIHRvIGRpc2FibGUKdGhpcyBib2Fy
+ZC4KCk9yLCBpZiBzb21lb25lIHdhbnRzIHRvIGRvbmF0ZSBhIG5ldyByazMzOTktZmlyZWZseSBm
+b3IgbXkgbGFiLCBJJ2QgYmUKZ2xhZCB0byB0cnkgcmVwbGFjaW5nIGl0LgoKS2V2aW4KCl9fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlw
+IG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
