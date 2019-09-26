@@ -2,50 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C87BBBE520
-	for <lists+linux-rockchip@lfdr.de>; Wed, 25 Sep 2019 20:50:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E7C3BED5E
+	for <lists+linux-rockchip@lfdr.de>; Thu, 26 Sep 2019 10:27:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NXY2UnbPKeKpZrCM6DuO8tz5dynWyQu48zJAn7C0Of4=; b=myBJc3xyl10pD9
-	Fnjhfnth6/HR0fZIJ9mcpQP/6UZ1Dk8D4pk4LmyziMk3y7karOBV5F61J6o7vjq/v7//settsOlpT
-	2A1IbDUpr9DGtOd9lU7jz4lomdrEDHUXP6/ukHStfZ1zrRh0MQV7mTUJ21Anfyb1w8eZaW0xhwf1F
-	LWIaktGhLVGrcI2TNZNgzn9KlYosmmMtiThz/MCE9rAYLhtnZ7jgAmPnmizxz3SS4tnslfse7QrVF
-	5fuZqyV3AEC8cSnO1e9mIYJxvjMZpCm8EQBmhjgF/2eYh+twClV4XQeEZN0+57HHhfTd+BOV7fUCO
-	3HmeCHDnV5xuoSAbfgeA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=vvJbTXrN3dVneBpbwL0SM9h3Ah7DYTeF3Aps31C25t4=; b=VEZhhVXqpN31QvjdvQW9s4jNq3
+	oQnd4hoQjkuPfuJF85qvhW2Fyv4SpddhI0h1WjAU129LZOJwaq1OsZDgrJf6LpQt7KCx0BrMIcnEq
+	aaNmqhuS/gHjODILNL1olBJ2ANvoI1W7QnyYRA+bdh1pc6H3BII6kGYFKF7sntJGsN0X/KzAlh1T7
+	LN3FW9qHoHfxeKnE1svlwEIxiIW11NxUsdk2BZBBHirNccdoJHc4eDtHekQ1Yc4tVUU/aRN70ilIa
+	EtngDLAa24evljzDk9oLaK0foi6ZvYy8CDx/JSUNg2WMvgn5uXh4Zq1NSXCzKclX+aAICwoo/3CXL
+	lZzUYfsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDCNH-0003Ng-UV; Wed, 25 Sep 2019 18:50:52 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1iDP7F-0000vn-5B; Thu, 26 Sep 2019 08:27:09 +0000
+Received: from lucky1.263xmail.com ([211.157.147.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDCMf-0002qo-G0; Wed, 25 Sep 2019 18:50:15 +0000
-Received: from muedsl-82-207-238-254.citykom.de ([82.207.238.254]
- helo=phil.fritz.box)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iDCMb-0005K2-Ex; Wed, 25 Sep 2019 20:50:09 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: srinivas.kandagatla@linaro.org
-Subject: [PATCH 2/2] nvmem: add Rockchip OTP driver
-Date: Wed, 25 Sep 2019 20:49:57 +0200
-Message-Id: <20190925184957.14338-2-heiko@sntech.de>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20190925184957.14338-1-heiko@sntech.de>
-References: <20190925184957.14338-1-heiko@sntech.de>
-MIME-Version: 1.0
+ id 1iDP5Y-0000Om-Qx; Thu, 26 Sep 2019 08:25:27 +0000
+Received: from localhost (unknown [192.168.167.193])
+ by lucky1.263xmail.com (Postfix) with ESMTP id 8A99668135;
+ Thu, 26 Sep 2019 16:25:07 +0800 (CST)
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-ADDR-CHECKED4: 1
+X-ANTISPAM-LEVEL: 2
+X-ABS-CHECKED: 0
+Received: from localhost.localdomain (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P24701T140118476191488S1569486296531843_; 
+ Thu, 26 Sep 2019 16:25:07 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <1af4b4c1788e9f87dccb81098897a452>
+X-RL-SENDER: hjc@rock-chips.com
+X-SENDER: hjc@rock-chips.com
+X-LOGIN-NAME: hjc@rock-chips.com
+X-FST-TO: dri-devel@lists.freedesktop.org
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+From: Sandy Huang <hjc@rock-chips.com>
+To: dri-devel@lists.freedesktop.org, Sandy Huang <hjc@rock-chips.com>,
+ =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>
+Subject: [PATCH v2 2/3] drm/rockchip: Add rockchip_vop_get_offset to get offset
+Date: Thu, 26 Sep 2019 16:24:48 +0800
+Message-Id: <1569486289-152061-3-git-send-email-hjc@rock-chips.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1569486289-152061-1-git-send-email-hjc@rock-chips.com>
+References: <1569486289-152061-1-git-send-email-hjc@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_115013_688766_ABE52D12 
-X-CRM114-Status: GOOD (  19.27  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190926_012525_296470_4F5DB337 
+X-CRM114-Status: GOOD (  12.61  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [211.157.147.131 listed in list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,343 +80,115 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- Finley Xiao <finley.xiao@rock-chips.com>, linux-arm-kernel@lists.infradead.org,
- christoph.muellner@theobroma-systems.com
+Cc: linux-rockchip@lists.infradead.org, maarten.lankhorst@linux.intel.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Finley Xiao <finley.xiao@rock-chips.com>
+Add rockchip_vop_get_offset to get offset, this can compatible legacy
+and block_h/w format describe.
 
-Newer Rockchip socs like the px30 use a different one-time-programmable
-memory controller for things like cpu-id and leakage information,
-so add the necessary driver for it.
-
-Signed-off-by: Finley Xiao <finley.xiao@rock-chips.com>
-[ported from vendor 4.4, converted to clock-bulk API and cleanups]
-Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+Signed-off-by: Sandy Huang <hjc@rock-chips.com>
 ---
- drivers/nvmem/Kconfig        |  11 ++
- drivers/nvmem/Makefile       |   2 +
- drivers/nvmem/rockchip-otp.c | 268 +++++++++++++++++++++++++++++++++++
- 3 files changed, 281 insertions(+)
- create mode 100644 drivers/nvmem/rockchip-otp.c
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 61 ++++++++++++++++++++++++-----
+ 1 file changed, 52 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/nvmem/Kconfig b/drivers/nvmem/Kconfig
-index c2ec750cae6e..80b7e5d9c448 100644
---- a/drivers/nvmem/Kconfig
-+++ b/drivers/nvmem/Kconfig
-@@ -119,6 +119,17 @@ config ROCKCHIP_EFUSE
- 	  This driver can also be built as a module. If so, the module
- 	  will be called nvmem_rockchip_efuse.
+diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+index 2f821c5..ce74218 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
++++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+@@ -249,6 +249,56 @@ static bool has_rb_swapped(uint32_t format)
+ 	}
+ }
  
-+config ROCKCHIP_OTP
-+	tristate "Rockchip OTP controller support"
-+	depends on ARCH_ROCKCHIP || COMPILE_TEST
-+	depends on HAS_IOMEM
-+	help
-+	  This is a simple drive to dump specified values of Rockchip SoC
-+	  from otp, such as cpu-leakage.
-+
-+	  This driver can also be built as a module. If so, the module
-+	  will be called nvmem_rockchip_otp.
-+
- config NVMEM_BCM_OCOTP
- 	tristate "Broadcom On-Chip OTP Controller support"
- 	depends on ARCH_BCM_IPROC || COMPILE_TEST
-diff --git a/drivers/nvmem/Makefile b/drivers/nvmem/Makefile
-index e5c153d99a67..bbdbb929470f 100644
---- a/drivers/nvmem/Makefile
-+++ b/drivers/nvmem/Makefile
-@@ -30,6 +30,8 @@ obj-$(CONFIG_QCOM_QFPROM)	+= nvmem_qfprom.o
- nvmem_qfprom-y			:= qfprom.o
- obj-$(CONFIG_ROCKCHIP_EFUSE)	+= nvmem_rockchip_efuse.o
- nvmem_rockchip_efuse-y		:= rockchip-efuse.o
-+obj-$(CONFIG_ROCKCHIP_OTP)	+= nvmem-rockchip-otp.o
-+nvmem-rockchip-otp-y		:= rockchip-otp.o
- obj-$(CONFIG_NVMEM_SUNXI_SID)	+= nvmem_sunxi_sid.o
- nvmem_stm32_romem-y 		:= stm32-romem.o
- obj-$(CONFIG_NVMEM_STM32_ROMEM) += nvmem_stm32_romem.o
-diff --git a/drivers/nvmem/rockchip-otp.c b/drivers/nvmem/rockchip-otp.c
-new file mode 100644
-index 000000000000..9f53bcce2f87
---- /dev/null
-+++ b/drivers/nvmem/rockchip-otp.c
-@@ -0,0 +1,268 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * Rockchip OTP Driver
-+ *
-+ * Copyright (c) 2018 Rockchip Electronics Co. Ltd.
-+ * Author: Finley Xiao <finley.xiao@rock-chips.com>
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/delay.h>
-+#include <linux/device.h>
-+#include <linux/io.h>
-+#include <linux/iopoll.h>
-+#include <linux/module.h>
-+#include <linux/nvmem-provider.h>
-+#include <linux/reset.h>
-+#include <linux/slab.h>
-+#include <linux/of.h>
-+#include <linux/of_platform.h>
-+#include <linux/platform_device.h>
-+
-+/* OTP Register Offsets */
-+#define OTPC_SBPI_CTRL			0x0020
-+#define OTPC_SBPI_CMD_VALID_PRE		0x0024
-+#define OTPC_SBPI_CS_VALID_PRE		0x0028
-+#define OTPC_SBPI_STATUS		0x002C
-+#define OTPC_USER_CTRL			0x0100
-+#define OTPC_USER_ADDR			0x0104
-+#define OTPC_USER_ENABLE		0x0108
-+#define OTPC_USER_Q			0x0124
-+#define OTPC_INT_STATUS			0x0304
-+#define OTPC_SBPI_CMD0_OFFSET		0x1000
-+#define OTPC_SBPI_CMD1_OFFSET		0x1004
-+
-+/* OTP Register bits and masks */
-+#define OTPC_USER_ADDR_MASK		GENMASK(31, 16)
-+#define OTPC_USE_USER			BIT(0)
-+#define OTPC_USE_USER_MASK		GENMASK(16, 16)
-+#define OTPC_USER_FSM_ENABLE		BIT(0)
-+#define OTPC_USER_FSM_ENABLE_MASK	GENMASK(16, 16)
-+#define OTPC_SBPI_DONE			BIT(1)
-+#define OTPC_USER_DONE			BIT(2)
-+
-+#define SBPI_DAP_ADDR			0x02
-+#define SBPI_DAP_ADDR_SHIFT		8
-+#define SBPI_DAP_ADDR_MASK		GENMASK(31, 24)
-+#define SBPI_CMD_VALID_MASK		GENMASK(31, 16)
-+#define SBPI_DAP_CMD_WRF		0xC0
-+#define SBPI_DAP_REG_ECC		0x3A
-+#define SBPI_ECC_ENABLE			0x00
-+#define SBPI_ECC_DISABLE		0x09
-+#define SBPI_ENABLE			BIT(0)
-+#define SBPI_ENABLE_MASK		GENMASK(16, 16)
-+
-+#define OTPC_TIMEOUT			10000
-+
-+struct rockchip_otp {
-+	struct device *dev;
-+	void __iomem *base;
-+	struct clk_bulk_data	*clks;
-+	int num_clks;
-+	struct reset_control *rst;
-+};
-+
-+/* list of required clocks */
-+static const char * const rockchip_otp_clocks[] = {
-+	"otp", "apb_pclk", "phy",
-+};
-+
-+struct rockchip_data {
-+	int size;
-+};
-+
-+static int rockchip_otp_reset(struct rockchip_otp *otp)
++static u32 rockchip_vop_get_offset(struct drm_plane_state *state, u8 plane)
 +{
-+	int ret;
++	const struct drm_format_info *info;
++	struct drm_rect *src = &state->src;
++	struct drm_framebuffer *fb = state->fb;
++	u32 format = fb->format->format;
++	u8 h_div = 1, v_div = 1;
++	u32 block_w, block_h, block_size, block_start_y, num_hblocks;
++	u32 sample_x, sample_y;
++	u32 offset;
 +
-+	ret = reset_control_assert(otp->rst);
-+	if (ret) {
-+		dev_err(otp->dev, "failed to assert otp phy %d\n", ret);
-+		return ret;
++	info = drm_format_info(format);
++	if (!info || plane >= info->num_planes)
++		return 0;
++
++	if (plane > 0) {
++		h_div = fb->format->hsub;
++		v_div = fb->format->vsub;
 +	}
 +
-+	udelay(2);
++	switch (format) {
++	case DRM_FORMAT_NV12_10:
++	case DRM_FORMAT_NV21_10:
++	case DRM_FORMAT_NV16_10:
++	case DRM_FORMAT_NV61_10:
++	case DRM_FORMAT_NV24_10:
++	case DRM_FORMAT_NV42_10:
++		block_w = drm_format_info_block_width(fb->format, plane);
++		block_h = drm_format_info_block_height(fb->format, plane);
++		block_size = fb->format->char_per_block[plane];
 +
-+	ret = reset_control_deassert(otp->rst);
-+	if (ret) {
-+		dev_err(otp->dev, "failed to deassert otp phy %d\n", ret);
-+		return ret;
++		sample_x = (src->x1 >> 16) / h_div;
++		sample_y = (src->y1 >> 16) / v_div;
++		block_start_y = (sample_y / block_h) * block_h;
++		num_hblocks = sample_x / block_w;
++
++		offset = fb->pitches[plane] * block_start_y;
++		offset += block_size * num_hblocks;
++
++		break;
++	default:
++		offset = (src->x1 >> 16) * fb->format->cpp[plane] / h_div;
++		offset += (src->y1 >> 16) * fb->pitches[plane] / v_div;
++
++		break;
 +	}
 +
-+	return 0;
++	return offset;
 +}
 +
-+static int rockchip_otp_wait_status(struct rockchip_otp *otp, u32 flag)
-+{
-+	u32 status = 0;
-+	int ret;
-+
-+	ret = readl_poll_timeout_atomic(otp->base + OTPC_INT_STATUS, status,
-+					(status & flag), 1, OTPC_TIMEOUT);
-+	if (ret)
-+		return ret;
-+
-+	/* clean int status */
-+	writel(flag, otp->base + OTPC_INT_STATUS);
-+
-+	return 0;
-+}
-+
-+static int rockchip_otp_ecc_enable(struct rockchip_otp *otp, bool enable)
-+{
-+	int ret = 0;
-+
-+	writel(SBPI_DAP_ADDR_MASK | (SBPI_DAP_ADDR << SBPI_DAP_ADDR_SHIFT),
-+	       otp->base + OTPC_SBPI_CTRL);
-+
-+	writel(SBPI_CMD_VALID_MASK | 0x1, otp->base + OTPC_SBPI_CMD_VALID_PRE);
-+	writel(SBPI_DAP_CMD_WRF | SBPI_DAP_REG_ECC,
-+	       otp->base + OTPC_SBPI_CMD0_OFFSET);
-+	if (enable)
-+		writel(SBPI_ECC_ENABLE, otp->base + OTPC_SBPI_CMD1_OFFSET);
-+	else
-+		writel(SBPI_ECC_DISABLE, otp->base + OTPC_SBPI_CMD1_OFFSET);
-+
-+	writel(SBPI_ENABLE_MASK | SBPI_ENABLE, otp->base + OTPC_SBPI_CTRL);
-+
-+	ret = rockchip_otp_wait_status(otp, OTPC_SBPI_DONE);
-+	if (ret < 0)
-+		dev_err(otp->dev, "timeout during ecc_enable\n");
-+
-+	return ret;
-+}
-+
-+static int rockchip_otp_read(void *context, unsigned int offset,
-+			     void *val, size_t bytes)
-+{
-+	struct rockchip_otp *otp = context;
-+	u8 *buf = val;
-+	int ret = 0;
-+
-+	ret = clk_bulk_prepare_enable(otp->num_clks, otp->clks);
-+	if (ret < 0) {
-+		dev_err(otp->dev, "failed to prepare/enable clks\n");
-+		return ret;
-+	}
-+
-+	ret = rockchip_otp_reset(otp);
-+	if (ret) {
-+		dev_err(otp->dev, "failed to reset otp phy\n");
-+		goto disable_clks;
-+	}
-+
-+	ret = rockchip_otp_ecc_enable(otp, false);
-+	if (ret < 0) {
-+		dev_err(otp->dev, "rockchip_otp_ecc_enable err\n");
-+		goto disable_clks;
-+	}
-+
-+	writel(OTPC_USE_USER | OTPC_USE_USER_MASK, otp->base + OTPC_USER_CTRL);
-+	udelay(5);
-+	while (bytes--) {
-+		writel(offset++ | OTPC_USER_ADDR_MASK,
-+		       otp->base + OTPC_USER_ADDR);
-+		writel(OTPC_USER_FSM_ENABLE | OTPC_USER_FSM_ENABLE_MASK,
-+		       otp->base + OTPC_USER_ENABLE);
-+		ret = rockchip_otp_wait_status(otp, OTPC_USER_DONE);
-+		if (ret < 0) {
-+			dev_err(otp->dev, "timeout during read setup\n");
-+			goto read_end;
-+		}
-+		*buf++ = readb(otp->base + OTPC_USER_Q);
-+	}
-+
-+read_end:
-+	writel(0x0 | OTPC_USE_USER_MASK, otp->base + OTPC_USER_CTRL);
-+disable_clks:
-+	clk_bulk_disable_unprepare(otp->num_clks, otp->clks);
-+
-+	return ret;
-+}
-+
-+static struct nvmem_config otp_config = {
-+	.name = "rockchip-otp",
-+	.owner = THIS_MODULE,
-+	.read_only = true,
-+	.stride = 1,
-+	.word_size = 1,
-+	.reg_read = rockchip_otp_read,
-+};
-+
-+static const struct rockchip_data px30_data = {
-+	.size = 0x40,
-+};
-+
-+static const struct of_device_id rockchip_otp_match[] = {
-+	{
-+		.compatible = "rockchip,px30-otp",
-+		.data = (void *)&px30_data,
-+	},
-+	{
-+		.compatible = "rockchip,rk3308-otp",
-+		.data = (void *)&px30_data,
-+	},
-+	{ /* sentinel */ },
-+};
-+MODULE_DEVICE_TABLE(of, rockchip_otp_match);
-+
-+static int rockchip_otp_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct rockchip_otp *otp;
-+	const struct rockchip_data *data;
-+	struct nvmem_device *nvmem;
-+	int ret, i;
-+
-+	data = of_device_get_match_data(dev);
-+	if (!data) {
-+		dev_err(dev, "failed to get match data\n");
-+		return -EINVAL;
-+	}
-+
-+	otp = devm_kzalloc(&pdev->dev, sizeof(struct rockchip_otp),
-+			   GFP_KERNEL);
-+	if (!otp)
-+		return -ENOMEM;
-+
-+	otp->dev = dev;
-+	otp->base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(otp->base))
-+		return PTR_ERR(otp->base);
-+
-+	otp->num_clks = ARRAY_SIZE(rockchip_otp_clocks);
-+	otp->clks = devm_kcalloc(dev, otp->num_clks,
-+				     sizeof(*otp->clks), GFP_KERNEL);
-+	if (!otp->clks)
-+		return -ENOMEM;
-+
-+	for (i = 0; i < otp->num_clks; ++i)
-+		otp->clks[i].id = rockchip_otp_clocks[i];
-+
-+	ret = devm_clk_bulk_get(dev, otp->num_clks, otp->clks);
-+	if (ret)
-+		return ret;
-+
-+	otp->rst = devm_reset_control_get(dev, "phy");
-+	if (IS_ERR(otp->rst))
-+		return PTR_ERR(otp->rst);
-+
-+	otp_config.size = data->size;
-+	otp_config.priv = otp;
-+	otp_config.dev = dev;
-+	nvmem = devm_nvmem_register(dev, &otp_config);
-+
-+	return PTR_ERR_OR_ZERO(nvmem);
-+}
-+
-+static struct platform_driver rockchip_otp_driver = {
-+	.probe = rockchip_otp_probe,
-+	.driver = {
-+		.name = "rockchip-otp",
-+		.of_match_table = rockchip_otp_match,
-+	},
-+};
-+
-+module_platform_driver(rockchip_otp_driver);
-+MODULE_DESCRIPTION("Rockchip OTP driver");
-+MODULE_LICENSE("GPL v2");
+ static enum vop_data_format vop_convert_format(uint32_t format)
+ {
+ 	switch (format) {
+@@ -832,8 +882,7 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
+ 	dsp_sty = dest->y1 + crtc->mode.vtotal - crtc->mode.vsync_start;
+ 	dsp_st = dsp_sty << 16 | (dsp_stx & 0xffff);
+ 
+-	offset = (src->x1 >> 16) * fb->format->cpp[0];
+-	offset += (src->y1 >> 16) * fb->pitches[0];
++	offset = rockchip_vop_get_offset(state, 0);
+ 	dma_addr = rk_obj->dma_addr + offset + fb->offsets[0];
+ 
+ 	/*
+@@ -857,16 +906,10 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
+ 		    (state->rotation & DRM_MODE_REFLECT_X) ? 1 : 0);
+ 
+ 	if (is_yuv) {
+-		int hsub = fb->format->hsub;
+-		int vsub = fb->format->vsub;
+-		int bpp = fb->format->cpp[1];
+-
+ 		uv_obj = fb->obj[1];
+ 		rk_uv_obj = to_rockchip_obj(uv_obj);
+ 
+-		offset = (src->x1 >> 16) * bpp / hsub;
+-		offset += (src->y1 >> 16) * fb->pitches[1] / vsub;
+-
++		offset = rockchip_vop_get_offset(state, 1);
+ 		dma_addr = rk_uv_obj->dma_addr + offset + fb->offsets[1];
+ 		VOP_WIN_SET(vop, win, uv_vir, DIV_ROUND_UP(fb->pitches[1], 4));
+ 		VOP_WIN_SET(vop, win, uv_mst, dma_addr);
 -- 
-2.23.0
+2.7.4
+
+
 
 
 _______________________________________________
