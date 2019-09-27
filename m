@@ -2,71 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07971C0944
-	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Sep 2019 18:12:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62BA5C0948
+	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Sep 2019 18:13:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1O1QTP8NtPGwtu41nkgTkxni/rpet6vgX5nS0T5L39E=; b=M9gclJD3QtWe3R
-	evaLuSYJkt5jcoclO1+ILjECLl2W1L45IYKwjBjfmy+Z2Llh5b8GBnGQcDNUfaINdhWWFhzExPeXN
-	9syZkilE5cAK0K/u9WokkIw3He74YOOWEkrVa+qxAn1expkCfXja6dcfyN3Fw8O8ZH2Yhpc2mVOnD
-	RqoezN+jHj3k+GSU0r51Y32bOIuyQafIUI/NoyAuQ1978ZGxYPrpw5S2Lv/KI+GbH9bYodfRgNlvg
-	ymBNmxO+eOM2/db5N0tl7BccwsW05w7V7ErGf9tfTm48XQZBwMZ+nvzJ5UbuEdKJ59R4tw64o2IAx
-	M7CGEST4AsSNpCRvt+jg==;
+	List-Owner; bh=1O1QTP8NtPGwtu41nkgTkxni/rpet6vgX5nS0T5L39E=; b=ZYhDiLs/t2odbJ
+	04SGBJu74zDhU+Yiq68jocZIvtqUf5f4hpkzj36bHcsyp5TjgZAttg/KYzdOytFXXlqJzHxWfSibg
+	jacz/bGTJ8zK1ca2KaHCXxRwp3z37kVMZN3c4X22CCiIen6Xl8ZTQ1kXSkgXTLC4+HHHiBRbGJC0d
+	ocGHpuaS2DD1z/AtCDv8f0ieZ1nO017ESe/JmLUbAgqoGLD8G5NWBfdcW2KC1vsZIxguB8xbzAT+5
+	4TGc1DUq+3Yf1xF5p54vyWCFnuZVPPoQIfkDFOJ+v8VfnC0I32xvD2SAM/mZclCXVSdSVaOVc6VCh
+	0hf/FXzDPQC1LxJzRdeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDsrO-0001Aa-Tp; Fri, 27 Sep 2019 16:12:46 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iDsrp-0001Y4-8k; Fri, 27 Sep 2019 16:13:13 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDsr9-00010B-0Q; Fri, 27 Sep 2019 16:12:33 +0000
-Received: by mail-pg1-x544.google.com with SMTP id s1so3749503pgv.8;
- Fri, 27 Sep 2019 09:12:30 -0700 (PDT)
+ id 1iDsrM-0001AG-Vj; Fri, 27 Sep 2019 16:12:46 +0000
+Received: by mail-pf1-x444.google.com with SMTP id y5so1873132pfo.4;
+ Fri, 27 Sep 2019 09:12:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:thread-topic:thread-index:date:message-id
  :references:in-reply-to:accept-language:content-language
  :content-transfer-encoding:mime-version;
  bh=BkVG3iqmCYH0eeVp/xh+5XrL/M0KG001eUUCkmNI95A=;
- b=e/COpqTQALXS/QFYGHR1MkEudE13Jo0gu/GoimIqBLcFoQENfvDpbpnGH6rkcPSnRK
- X+0JmFgBGbYt/klH5Zl5tYgSwttlfa07Ae5vQeQOhJ93uslS/kApiYjBJFw9PcZp45QL
- oZsO4N4MwNcWs36Od/VGYu8ZoPZnEE6ceVxX5aYe9U2pDDKNoakb+nlQ+Mf/K+GabJcK
- 0H7H9VIYfKPbP2iwwpMCCeHhBVTBYK1aSjwW9QTk7RBopSXucwgbbrSwUGGPKjN36ZeJ
- wAfdO4ExHw2qwAzUOC4diHPm7MvNIXFw0EmQRzt/tu9/PTAXiQEPE0DEhY1bVi8rrLkN
- 78oA==
+ b=Mn2aTSFJcLMbdJ0EDU05EbRCklKYGTviE75JGUm7L85MaO4x0BluxsXTdrT7r/1c5g
+ ef7FdH+DK4gBrLK9SP6Ssa3T9eS8g0cnggV2vycqPfoRr4TKzvQ40IcQ0AojCMYKfpni
+ UbChhtTqXyzLcsFEF3NUmE0OxKsqw7YDx5RW7fFY5g0Dr2MwIxKwQuAPSh90Hco9QIKL
+ /DHVEfFAONO+74Yfae6ckNUID+VmFipdI7Ia2jow0nxIQqbAe3zEq7wiZe2woLlHWHrw
+ Xv/8S8YMFuP1l+czE/Byy1e/KRZgB9s6bBPYYWDmzIKpheVtFDMSvnOS4XDOSTXWX0WJ
+ gPxQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:thread-topic:thread-index
  :date:message-id:references:in-reply-to:accept-language
  :content-language:content-transfer-encoding:mime-version;
  bh=BkVG3iqmCYH0eeVp/xh+5XrL/M0KG001eUUCkmNI95A=;
- b=p2LvhHpS+nQApQSIUafL5H64MHxhAufy8X6jCRC0bBdA5tfrj3J9gvyAJztwRJFu3w
- fqmZInPcp95x9mqDDmnEwFMKT87m11Rq6xroaxdqMA4sKL58EfAgv8+IKk6DJ33zn9wY
- iOHvnnbi9pwX/FfBiW5Aysx3kgOAgBbhUoFDqceqstxhfaYA+AesBfzEfE2ja5yI8tSd
- G1YCrKYooL0VMTnJBezgohiww4qh11qEMORsap25esWssp/YsQm4BJESjhYGZaMcHfCZ
- rBxDNZjBn/TswyxG/dTMubxTdiLLxuECJah+txinLevMyBQxEFOzX/dFHSWLQz6P2CAn
- qOAQ==
-X-Gm-Message-State: APjAAAV9RTqMVnGxoxlD2wOhqoBW9pkd0VcCRSnC1SPUu+f3MBxVPBcY
- YjX+cDWJof3hb/lTCltO9vA=
-X-Google-Smtp-Source: APXvYqzkAgoVkc6rj9y4WlIo7pSMPSSyceNGsbwh/2NjqKHcUSmCCNwo+nge9m/SUn9OJleP/CpFLQ==
-X-Received: by 2002:a65:4002:: with SMTP id f2mr10165853pgp.447.1569600749847; 
- Fri, 27 Sep 2019 09:12:29 -0700 (PDT)
+ b=gzl1uL7KR1GRcUD4d34AR1ZVUno/G+HYYgI9IY4PavsQoLaPcJQVedx7NPDVept4iN
+ iR+B/JOq5felQBHcuNgSYbTsinXjBAXQspKov3yRuuKSixR38OPRM6J16U7hbEzE8cCP
+ ZnA5BEvtteITq33kK7tLEPxJzhbPY//8Vr/9tx57uNItPPig/rzvGLkhQV6U6Q47Mweo
+ IU6zMwDr/qzG6yCPbE7rraIdIfVoi+VDTRGZUPOezacEk8aTu7c6i/EFzHizFfEGdYsd
+ Jq33eoUwEUHIyzYw9z7GtKjhPi4faNhf3MH3FlLM0ri+gD6kjFhBSdZOWtbablXnqenZ
+ EpAw==
+X-Gm-Message-State: APjAAAWpzJUnvjWw6stMg59q0QPslpAkpMnVU0BoWb8b+xiu79ZrOU0f
+ +WkHpCOhMYxEcrtpFm5DY9M=
+X-Google-Smtp-Source: APXvYqxitbAP3PcPa0X7X2zX+V7jMSsAuljIqXk3oFFlbn7LYzvFIn3W4VY61E9Z7VlJ3Yul0lMOQg==
+X-Received: by 2002:a17:90a:e28a:: with SMTP id
+ d10mr9357077pjz.102.1569600764256; 
+ Fri, 27 Sep 2019 09:12:44 -0700 (PDT)
 Received: from SL2P216MB0105.KORP216.PROD.OUTLOOK.COM ([2603:1046:100:22::5])
  by smtp.gmail.com with ESMTPSA id
- 64sm3894470pfx.31.2019.09.27.09.12.23
+ l12sm7805593pgs.44.2019.09.27.09.12.37
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 27 Sep 2019 09:12:28 -0700 (PDT)
+ Fri, 27 Sep 2019 09:12:43 -0700 (PDT)
 From: Jingoo Han <jingoohan1@gmail.com>
 To: Rob Herring <robh@kernel.org>, "linux-pci@vger.kernel.org"
  <linux-pci@vger.kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, Lorenzo
  Pieralisi <lorenzo.pieralisi@arm.com>
 Subject: Re: [PATCH 06/11] PCI: of: Add inbound resource parsing to helpers
 Thread-Topic: [PATCH 06/11] PCI: of: Add inbound resource parsing to helpers
-Thread-Index: AQHVcyGPS+dm5x72Oke0UZO8SHhXHqc/tmMt
+Thread-Index: AQHVcyGPS+dm5x72Oke0UZO8SHhXHqc/tnKx
 X-MS-Exchange-MessageSentRepresentingType: 1
-Date: Fri, 27 Sep 2019 16:12:20 +0000
-Message-ID: <SL2P216MB0105248CAB7433BEB727E94CAA810@SL2P216MB0105.KORP216.PROD.OUTLOOK.COM>
+Date: Fri, 27 Sep 2019 16:12:27 +0000
+Message-ID: <SL2P216MB0105EF7D414AE054835D25C9AA810@SL2P216MB0105.KORP216.PROD.OUTLOOK.COM>
 References: <20190924214630.12817-1-robh@kernel.org>
  <20190924214630.12817-7-robh@kernel.org>
 In-Reply-To: <20190924214630.12817-7-robh@kernel.org>
@@ -78,7 +79,7 @@ X-MS-TNEF-Correlator:
 X-MS-Exchange-Organization-RecordReviewCfmType: 0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_091231_074798_EF697791 
+X-CRM114-CacheID: sfid-20190927_091245_027765_FFB41D9B 
 X-CRM114-Status: GOOD (  15.17  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -86,7 +87,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
