@@ -2,72 +2,105 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F6AEBFD6D
-	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Sep 2019 05:02:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07971C0944
+	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Sep 2019 18:12:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=F1+XU1o7E/cm6P91n2FDZCmkcuwXSP9JYMTs10peAkI=; b=SrEa3E2QdxZfJDv9e49RoTvc8q
-	ExPT48wbKvBAUZFL46WRqi6i9OUi/zapwWcydkqEzrZ3FBLraJ0dTntaNuspO9LE+ouVrcpjwbyIa
-	Cz2iXKnBYCjjx0V7+MAuXIdN17DUiN+BWK1KkJux3+IDVYBxN60dIr95bVKd52oAwTDqqFScXfj6o
-	Zj6vndXo3CIlLgNvNhuAhE37CzMJYVsWftnZrym5H89mNBxC2LjqqVe4oGQVOAbB8W6iPL379MIJe
-	XsCsiIPvRo8H77DOjzIPlK1gwZY/nkxPP06G7Htn7pMms5ZM2CrMbd+W0PPtgpOHzGKbQH8ny3D6a
-	9PxoENUA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1O1QTP8NtPGwtu41nkgTkxni/rpet6vgX5nS0T5L39E=; b=M9gclJD3QtWe3R
+	evaLuSYJkt5jcoclO1+ILjECLl2W1L45IYKwjBjfmy+Z2Llh5b8GBnGQcDNUfaINdhWWFhzExPeXN
+	9syZkilE5cAK0K/u9WokkIw3He74YOOWEkrVa+qxAn1expkCfXja6dcfyN3Fw8O8ZH2Yhpc2mVOnD
+	RqoezN+jHj3k+GSU0r51Y32bOIuyQafIUI/NoyAuQ1978ZGxYPrpw5S2Lv/KI+GbH9bYodfRgNlvg
+	ymBNmxO+eOM2/db5N0tl7BccwsW05w7V7ErGf9tfTm48XQZBwMZ+nvzJ5UbuEdKJ59R4tw64o2IAx
+	M7CGEST4AsSNpCRvt+jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDgWm-0000oh-AA; Fri, 27 Sep 2019 03:02:40 +0000
-Received: from lucky1.263xmail.com ([211.157.147.132])
+	id 1iDsrO-0001Aa-Tp; Fri, 27 Sep 2019 16:12:46 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDgVU-00082g-02; Fri, 27 Sep 2019 03:01:22 +0000
-Received: from localhost (unknown [192.168.167.138])
- by lucky1.263xmail.com (Postfix) with ESMTP id 876FA5CF59;
- Fri, 27 Sep 2019 11:01:17 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-ABS-CHECKED: 0
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P20920T140646948005632S1569553274502940_; 
- Fri, 27 Sep 2019 11:01:16 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <b623b4ff587c8a9c03bc708a4945eab9>
-X-RL-SENDER: zhangqing@rock-chips.com
-X-SENDER: zhangqing@rock-chips.com
-X-LOGIN-NAME: zhangqing@rock-chips.com
-X-FST-TO: heiko@sntech.de
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-From: Elaine Zhang <zhangqing@rock-chips.com>
-To: heiko@sntech.de
-Subject: [PATCH v3 5/5] clk: rockchip: support pll setting by auto
-Date: Fri, 27 Sep 2019 11:01:24 +0800
-Message-Id: <1569553284-3232-1-git-send-email-zhangqing@rock-chips.com>
-X-Mailer: git-send-email 1.9.1
-In-Reply-To: <1569553244-3165-1-git-send-email-zhangqing@rock-chips.com>
-References: <1569553244-3165-1-git-send-email-zhangqing@rock-chips.com>
+ id 1iDsr9-00010B-0Q; Fri, 27 Sep 2019 16:12:33 +0000
+Received: by mail-pg1-x544.google.com with SMTP id s1so3749503pgv.8;
+ Fri, 27 Sep 2019 09:12:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:thread-topic:thread-index:date:message-id
+ :references:in-reply-to:accept-language:content-language
+ :content-transfer-encoding:mime-version;
+ bh=BkVG3iqmCYH0eeVp/xh+5XrL/M0KG001eUUCkmNI95A=;
+ b=e/COpqTQALXS/QFYGHR1MkEudE13Jo0gu/GoimIqBLcFoQENfvDpbpnGH6rkcPSnRK
+ X+0JmFgBGbYt/klH5Zl5tYgSwttlfa07Ae5vQeQOhJ93uslS/kApiYjBJFw9PcZp45QL
+ oZsO4N4MwNcWs36Od/VGYu8ZoPZnEE6ceVxX5aYe9U2pDDKNoakb+nlQ+Mf/K+GabJcK
+ 0H7H9VIYfKPbP2iwwpMCCeHhBVTBYK1aSjwW9QTk7RBopSXucwgbbrSwUGGPKjN36ZeJ
+ wAfdO4ExHw2qwAzUOC4diHPm7MvNIXFw0EmQRzt/tu9/PTAXiQEPE0DEhY1bVi8rrLkN
+ 78oA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:thread-topic:thread-index
+ :date:message-id:references:in-reply-to:accept-language
+ :content-language:content-transfer-encoding:mime-version;
+ bh=BkVG3iqmCYH0eeVp/xh+5XrL/M0KG001eUUCkmNI95A=;
+ b=p2LvhHpS+nQApQSIUafL5H64MHxhAufy8X6jCRC0bBdA5tfrj3J9gvyAJztwRJFu3w
+ fqmZInPcp95x9mqDDmnEwFMKT87m11Rq6xroaxdqMA4sKL58EfAgv8+IKk6DJ33zn9wY
+ iOHvnnbi9pwX/FfBiW5Aysx3kgOAgBbhUoFDqceqstxhfaYA+AesBfzEfE2ja5yI8tSd
+ G1YCrKYooL0VMTnJBezgohiww4qh11qEMORsap25esWssp/YsQm4BJESjhYGZaMcHfCZ
+ rBxDNZjBn/TswyxG/dTMubxTdiLLxuECJah+txinLevMyBQxEFOzX/dFHSWLQz6P2CAn
+ qOAQ==
+X-Gm-Message-State: APjAAAV9RTqMVnGxoxlD2wOhqoBW9pkd0VcCRSnC1SPUu+f3MBxVPBcY
+ YjX+cDWJof3hb/lTCltO9vA=
+X-Google-Smtp-Source: APXvYqzkAgoVkc6rj9y4WlIo7pSMPSSyceNGsbwh/2NjqKHcUSmCCNwo+nge9m/SUn9OJleP/CpFLQ==
+X-Received: by 2002:a65:4002:: with SMTP id f2mr10165853pgp.447.1569600749847; 
+ Fri, 27 Sep 2019 09:12:29 -0700 (PDT)
+Received: from SL2P216MB0105.KORP216.PROD.OUTLOOK.COM ([2603:1046:100:22::5])
+ by smtp.gmail.com with ESMTPSA id
+ 64sm3894470pfx.31.2019.09.27.09.12.23
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 27 Sep 2019 09:12:28 -0700 (PDT)
+From: Jingoo Han <jingoohan1@gmail.com>
+To: Rob Herring <robh@kernel.org>, "linux-pci@vger.kernel.org"
+ <linux-pci@vger.kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, Lorenzo
+ Pieralisi <lorenzo.pieralisi@arm.com>
+Subject: Re: [PATCH 06/11] PCI: of: Add inbound resource parsing to helpers
+Thread-Topic: [PATCH 06/11] PCI: of: Add inbound resource parsing to helpers
+Thread-Index: AQHVcyGPS+dm5x72Oke0UZO8SHhXHqc/tmMt
+X-MS-Exchange-MessageSentRepresentingType: 1
+Date: Fri, 27 Sep 2019 16:12:20 +0000
+Message-ID: <SL2P216MB0105248CAB7433BEB727E94CAA810@SL2P216MB0105.KORP216.PROD.OUTLOOK.COM>
+References: <20190924214630.12817-1-robh@kernel.org>
+ <20190924214630.12817-7-robh@kernel.org>
+In-Reply-To: <20190924214630.12817-7-robh@kernel.org>
+Accept-Language: ko-KR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-Exchange-Organization-SCL: -1
+X-MS-TNEF-Correlator: 
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_200120_390507_37A6BF36 
-X-CRM114-Status: GOOD (  17.79  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190927_091231_074798_EF697791 
+X-CRM114-Status: GOOD (  15.17  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.132 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [211.157.147.132 listed in wl.mailspike.net]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jingoohan1[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (jingoohan1[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,291 +113,70 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: huangtao@rock-chips.com, xxx@rock-chips.com, xf@rock-chips.com,
- sboyd@kernel.org, mturquette@baylibre.com,
- Elaine Zhang <zhangqing@rock-chips.com>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Heiko Stuebner <heiko@sntech.de>,
+ Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
+ Ryder Lee <ryder.lee@mediatek.com>, Michal Simek <michal.simek@xilinx.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "bcm-kernel-feedback-list@broadcom.com"
+ <bcm-kernel-feedback-list@broadcom.com>, Shawn Lin <shawn.lin@rock-chips.com>,
+ Ray Jui <rjui@broadcom.com>, Hou Zhiqiang <Zhiqiang.Hou@nxp.com>,
+ Simon Horman <horms@verge.net.au>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Scott Branden <sbranden@broadcom.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ "rfi@lists.rocketboards.org" <rfi@lists.rocketboards.org>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ Tom Joseph <tjoseph@cadence.com>, Han Jingoo <jingoohan1@gmail.com>,
+ Ley Foon Tan <lftan@altera.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-If setting freq is not support in rockchip_pll_rate_table,
-It can calculate and set pll params by auto.
-
-Signed-off-by: Elaine Zhang <zhangqing@rock-chips.com>
----
- drivers/clk/rockchip/clk-pll.c | 215 ++++++++++++++++++++++++++++++++++++++---
- 1 file changed, 200 insertions(+), 15 deletions(-)
-
-diff --git a/drivers/clk/rockchip/clk-pll.c b/drivers/clk/rockchip/clk-pll.c
-index 390e9473807a..ac8c62c531f0 100644
---- a/drivers/clk/rockchip/clk-pll.c
-+++ b/drivers/clk/rockchip/clk-pll.c
-@@ -14,6 +14,7 @@
- #include <linux/clk-provider.h>
- #include <linux/regmap.h>
- #include <linux/clk.h>
-+#include <linux/gcd.h>
- #include "clk.h"
- 
- #define PLL_MODE_MASK		0x3
-@@ -46,6 +47,198 @@ struct rockchip_clk_pll {
- #define to_rockchip_clk_pll_nb(nb) \
- 			container_of(nb, struct rockchip_clk_pll, clk_nb)
- 
-+#define MHZ			(1000UL * 1000UL)
-+#define KHZ			(1000UL)
-+
-+/* CLK_PLL_TYPE_RK3066_AUTO type ops */
-+#define PLL_FREF_MIN		(269 * KHZ)
-+#define PLL_FREF_MAX		(2200 * MHZ)
-+
-+#define PLL_FVCO_MIN		(440 * MHZ)
-+#define PLL_FVCO_MAX		(2200 * MHZ)
-+
-+#define PLL_FOUT_MIN		(27500 * KHZ)
-+#define PLL_FOUT_MAX		(2200 * MHZ)
-+
-+#define PLL_NF_MAX		(4096)
-+#define PLL_NR_MAX		(64)
-+#define PLL_NO_MAX		(16)
-+
-+/* CLK_PLL_TYPE_RK3036/3366/3399_AUTO type ops */
-+#define MIN_FOUTVCO_FREQ	(800 * MHZ)
-+#define MAX_FOUTVCO_FREQ	(2000 * MHZ)
-+
-+static struct rockchip_pll_rate_table auto_table;
-+
-+static struct rockchip_pll_rate_table *rk_pll_rate_table_get(void)
-+{
-+	return &auto_table;
-+}
-+
-+static int rockchip_pll_clk_set_postdiv(unsigned long fout_hz,
-+					u32 *postdiv1,
-+					u32 *postdiv2,
-+					u32 *foutvco)
-+{
-+	unsigned long freq;
-+
-+	if (fout_hz < MIN_FOUTVCO_FREQ) {
-+		for (*postdiv1 = 1; *postdiv1 <= 7; (*postdiv1)++) {
-+			for (*postdiv2 = 1; *postdiv2 <= 7; (*postdiv2)++) {
-+				freq = fout_hz * (*postdiv1) * (*postdiv2);
-+				if (freq >= MIN_FOUTVCO_FREQ &&
-+				    freq <= MAX_FOUTVCO_FREQ) {
-+					*foutvco = freq;
-+					return 0;
-+				}
-+			}
-+		}
-+		pr_err("CANNOT FIND postdiv1/2 to make fout in range from 800M to 2000M,fout = %lu\n",
-+		       fout_hz);
-+	} else {
-+		*postdiv1 = 1;
-+		*postdiv2 = 1;
-+	}
-+	return 0;
-+}
-+
-+static struct rockchip_pll_rate_table *
-+rockchip_pll_clk_set_by_auto(struct rockchip_clk_pll *pll,
-+			     unsigned long fin_hz,
-+			     unsigned long fout_hz)
-+{
-+	struct rockchip_pll_rate_table *rate_table = rk_pll_rate_table_get();
-+	/* FIXME set postdiv1/2 always 1*/
-+	u32 foutvco = fout_hz;
-+	u64 fin_64, frac_64;
-+	u32 f_frac, postdiv1, postdiv2;
-+	unsigned long clk_gcd = 0;
-+
-+	if (fin_hz == 0 || fout_hz == 0 || fout_hz == fin_hz)
-+		return NULL;
-+
-+	rockchip_pll_clk_set_postdiv(fout_hz, &postdiv1, &postdiv2, &foutvco);
-+	rate_table->postdiv1 = postdiv1;
-+	rate_table->postdiv2 = postdiv2;
-+	rate_table->dsmpd = 1;
-+
-+	if (fin_hz / MHZ * MHZ == fin_hz && fout_hz / MHZ * MHZ == fout_hz) {
-+		fin_hz /= MHZ;
-+		foutvco /= MHZ;
-+		clk_gcd = gcd(fin_hz, foutvco);
-+		rate_table->refdiv = fin_hz / clk_gcd;
-+		rate_table->fbdiv = foutvco / clk_gcd;
-+
-+		rate_table->frac = 0;
-+
-+		pr_debug("fin = %lu, fout = %lu, clk_gcd = %lu, refdiv = %u, fbdiv = %u, postdiv1 = %u, postdiv2 = %u, frac = %u\n",
-+			 fin_hz, fout_hz, clk_gcd, rate_table->refdiv,
-+			 rate_table->fbdiv, rate_table->postdiv1,
-+			 rate_table->postdiv2, rate_table->frac);
-+	} else {
-+		pr_debug("frac div running, fin_hz = %lu, fout_hz = %lu, fin_INT_mhz = %lu, fout_INT_mhz = %lu\n",
-+			 fin_hz, fout_hz,
-+			 fin_hz / MHZ * MHZ,
-+			 fout_hz / MHZ * MHZ);
-+		pr_debug("frac get postdiv1 = %u,  postdiv2 = %u, foutvco = %u\n",
-+			 rate_table->postdiv1, rate_table->postdiv2, foutvco);
-+		clk_gcd = gcd(fin_hz / MHZ, foutvco / MHZ);
-+		rate_table->refdiv = fin_hz / MHZ / clk_gcd;
-+		rate_table->fbdiv = foutvco / MHZ / clk_gcd;
-+		pr_debug("frac get refdiv = %u,  fbdiv = %u\n",
-+			 rate_table->refdiv, rate_table->fbdiv);
-+
-+		rate_table->frac = 0;
-+
-+		f_frac = (foutvco % MHZ);
-+		fin_64 = fin_hz;
-+		do_div(fin_64, (u64)rate_table->refdiv);
-+		frac_64 = (u64)f_frac << 24;
-+		do_div(frac_64, fin_64);
-+		rate_table->frac = (u32)frac_64;
-+		if (rate_table->frac > 0)
-+			rate_table->dsmpd = 0;
-+		pr_debug("frac = %x\n", rate_table->frac);
-+	}
-+	return rate_table;
-+}
-+
-+static struct rockchip_pll_rate_table *
-+rockchip_rk3066_pll_clk_set_by_auto(struct rockchip_clk_pll *pll,
-+				    unsigned long fin_hz,
-+				    unsigned long fout_hz)
-+{
-+	struct rockchip_pll_rate_table *rate_table = rk_pll_rate_table_get();
-+	u32 nr, nf, no, nonr;
-+	u32 nr_out, nf_out, no_out;
-+	u32 n;
-+	u32 numerator, denominator;
-+	u64 fref, fvco, fout;
-+	unsigned long clk_gcd = 0;
-+
-+	nr_out = PLL_NR_MAX + 1;
-+	no_out = 0;
-+	nf_out = 0;
-+
-+	if (fin_hz == 0 || fout_hz == 0 || fout_hz == fin_hz)
-+		return NULL;
-+
-+	clk_gcd = gcd(fin_hz, fout_hz);
-+
-+	numerator = fout_hz / clk_gcd;
-+	denominator = fin_hz / clk_gcd;
-+
-+	for (n = 1;; n++) {
-+		nf = numerator * n;
-+		nonr = denominator * n;
-+		if (nf > PLL_NF_MAX || nonr > (PLL_NO_MAX * PLL_NR_MAX))
-+			break;
-+
-+		for (no = 1; no <= PLL_NO_MAX; no++) {
-+			if (!(no == 1 || !(no % 2)))
-+				continue;
-+
-+			if (nonr % no)
-+				continue;
-+			nr = nonr / no;
-+
-+			if (nr > PLL_NR_MAX)
-+				continue;
-+
-+			fref = fin_hz / nr;
-+			if (fref < PLL_FREF_MIN || fref > PLL_FREF_MAX)
-+				continue;
-+
-+			fvco = fref * nf;
-+			if (fvco < PLL_FVCO_MIN || fvco > PLL_FVCO_MAX)
-+				continue;
-+
-+			fout = fvco / no;
-+			if (fout < PLL_FOUT_MIN || fout > PLL_FOUT_MAX)
-+				continue;
-+
-+			/* select the best from all available PLL settings */
-+			if ((no > no_out) ||
-+			    ((no == no_out) && (nr < nr_out))) {
-+				nr_out = nr;
-+				nf_out = nf;
-+				no_out = no;
-+			}
-+		}
-+	}
-+
-+	/* output the best PLL setting */
-+	if ((nr_out <= PLL_NR_MAX) && (no_out > 0)) {
-+		rate_table->nr = nr_out;
-+		rate_table->nf = nf_out;
-+		rate_table->no = no_out;
-+	} else {
-+		return NULL;
-+	}
-+
-+	return rate_table;
-+}
-+
- static const struct rockchip_pll_rate_table *rockchip_get_pll_settings(
- 			    struct rockchip_clk_pll *pll, unsigned long rate)
- {
-@@ -57,24 +250,16 @@ static const struct rockchip_pll_rate_table *rockchip_get_pll_settings(
- 			return &rate_table[i];
- 	}
- 
--	return NULL;
-+	if (pll->type == pll_rk3066)
-+		return rockchip_rk3066_pll_clk_set_by_auto(pll, 24 * MHZ, rate);
-+	else
-+		return rockchip_pll_clk_set_by_auto(pll, 24 * MHZ, rate);
- }
- 
- static long rockchip_pll_round_rate(struct clk_hw *hw,
- 			    unsigned long drate, unsigned long *prate)
- {
--	struct rockchip_clk_pll *pll = to_rockchip_clk_pll(hw);
--	const struct rockchip_pll_rate_table *rate_table = pll->rate_table;
--	int i;
--
--	/* Assumming rate_table is in descending order */
--	for (i = 0; i < pll->rate_count; i++) {
--		if (drate >= rate_table[i].rate)
--			return rate_table[i].rate;
--	}
--
--	/* return minimum supported value */
--	return rate_table[i - 1].rate;
-+	return drate;
- }
- 
- /*
-@@ -154,7 +339,7 @@ static unsigned long rockchip_rk3036_pll_recalc_rate(struct clk_hw *hw,
- {
- 	struct rockchip_clk_pll *pll = to_rockchip_clk_pll(hw);
- 	struct rockchip_pll_rate_table cur;
--	u64 rate64 = prate;
-+	u64 rate64 = prate, frac_rate64 = prate;
- 
- 	rockchip_rk3036_pll_get_params(pll, &cur);
- 
-@@ -163,7 +348,7 @@ static unsigned long rockchip_rk3036_pll_recalc_rate(struct clk_hw *hw,
- 
- 	if (cur.dsmpd == 0) {
- 		/* fractional mode */
--		u64 frac_rate64 = prate * cur.frac;
-+		frac_rate64 *= cur.frac;
- 
- 		do_div(frac_rate64, cur.refdiv);
- 		rate64 += frac_rate64 >> 24;
--- 
-1.9.1
-
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+DQoNCu+7vz4gT24gOS8yNC8xOSwgNTo0NiBQTSwgUm9iIEhlcnJpbmcgd3JvdGU6DQo+DQo+IEV4
+dGVuZCBkZXZtX29mX3BjaV9nZXRfaG9zdF9icmlkZ2VfcmVzb3VyY2VzKCkgYW5kDQo+IHBjaV9w
+YXJzZV9yZXF1ZXN0X29mX3BjaV9yYW5nZXMoKSBoZWxwZXJzIHRvIGFsc28gcGFyc2UgdGhlIGlu
+Ym91bmQNCj4gYWRkcmVzc2VzIGZyb20gRFQgJ2RtYS1yYW5nZXMnIGFuZCBwb3B1bGF0ZSBhIHJl
+c291cmNlIGxpc3Qgd2l0aCB0aGUNCj4gdHJhbnNsYXRlZCBhZGRyZXNzZXMuIFRoaXMgd2lsbCBo
+ZWxwIGVuc3VyZSAnZG1hLXJhbmdlcycgaXMgYWx3YXlzDQo+IHBhcnNlZCBpbiBhIGNvbnNpc3Rl
+bnQgd2F5Lg0KPg0KPiBDYzogSmluZ29vIEhhbiA8amluZ29vaGFuMUBnbWFpbC5jb20+DQoNCkZv
+ciAvZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNpZS1kZXNpZ253YXJlLWhvc3QuYywNCg0K
+QWNrZWQtYnk6IEppbmdvbyBIYW4gPGppbmdvb2hhbjFAZ21haWwuY29tPg0KDQpCZXN0IHJlZ2Fy
+ZHMsDQpKaW5nb28gSGFuDQoNCj4gQ2M6IEd1c3Rhdm8gUGltZW50ZWwgPGd1c3Rhdm8ucGltZW50
+ZWxAc3lub3BzeXMuY29tPg0KPiBDYzogTG9yZW56byBQaWVyYWxpc2kgPGxvcmVuem8ucGllcmFs
+aXNpQGFybS5jb20+DQo+IENjOiBCam9ybiBIZWxnYWFzIDxiaGVsZ2Fhc0Bnb29nbGUuY29tPg0K
+PiBDYzogVGhvbWFzIFBldGF6em9uaSA8dGhvbWFzLnBldGF6em9uaUBib290bGluLmNvbT4NCj4g
+Q2M6IFdpbGwgRGVhY29uIDx3aWxsQGtlcm5lbC5vcmc+DQo+IENjOiBMaW51cyBXYWxsZWlqIDxs
+aW51cy53YWxsZWlqQGxpbmFyby5vcmc+DQo+IENjOiBUb2FuIExlIDx0b2FuQG9zLmFtcGVyZWNv
+bXB1dGluZy5jb20+DQo+IENjOiBMZXkgRm9vbiBUYW4gPGxmdGFuQGFsdGVyYS5jb20+DQo+IENj
+OiBUb20gSm9zZXBoIDx0am9zZXBoQGNhZGVuY2UuY29tPg0KPiBDYzogUmF5IEp1aSA8cmp1aUBi
+cm9hZGNvbS5jb20+DQo+IENjOiBTY290dCBCcmFuZGVuIDxzYnJhbmRlbkBicm9hZGNvbS5jb20+
+DQo+IENjOiBiY20ta2VybmVsLWZlZWRiYWNrLWxpc3RAYnJvYWRjb20uY29tDQo+IENjOiBSeWRl
+ciBMZWUgPHJ5ZGVyLmxlZUBtZWRpYXRlay5jb20+DQo+IENjOiBLYXJ0aGlrZXlhbiBNaXRyYW4g
+PG0ua2FydGhpa2V5YW5AbW9iaXZlaWwuY28uaW4+DQo+IENjOiBIb3UgWmhpcWlhbmcgPFpoaXFp
+YW5nLkhvdUBueHAuY29tPg0KPiBDYzogU2ltb24gSG9ybWFuIDxob3Jtc0B2ZXJnZS5uZXQuYXU+
+DQo+IENjOiBTaGF3biBMaW4gPHNoYXduLmxpbkByb2NrLWNoaXBzLmNvbT4NCj4gQ2M6IEhlaWtv
+IFN0dWVibmVyIDxoZWlrb0BzbnRlY2guZGU+DQo+IENjOiBNaWNoYWwgU2ltZWsgPG1pY2hhbC5z
+aW1la0B4aWxpbnguY29tPg0KPiBDYzogcmZpQGxpc3RzLnJvY2tldGJvYXJkcy5vcmcNCj4gQ2M6
+IGxpbnV4LW1lZGlhdGVrQGxpc3RzLmluZnJhZGVhZC5vcmcNCj4gQ2M6IGxpbnV4LXJlbmVzYXMt
+c29jQHZnZXIua2VybmVsLm9yZw0KPiBDYzogbGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFk
+Lm9yZw0KPiBTaWduZWQtb2ZmLWJ5OiBSb2IgSGVycmluZyA8cm9iaEBrZXJuZWwub3JnPg0KPiAt
+LS0NCj4gIC4uLi9wY2kvY29udHJvbGxlci9kd2MvcGNpZS1kZXNpZ253YXJlLWhvc3QuYyB8ICAz
+ICstDQoNCi4uLi4NCg0KPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2Mv
+cGNpZS1kZXNpZ253YXJlLWhvc3QuYyBiL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL3BjaWUt
+ZGVzaWdud2FyZS1ob3N0LmMNCj4gaW5kZXggZjkzMjUyZDBkYTViLi4wNzQzYWU2NGJiMGYgMTAw
+NjQ0DQo+IC0tLSBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL3BjaWUtZGVzaWdud2FyZS1o
+b3N0LmMNCj4gKysrIGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNpZS1kZXNpZ253YXJl
+LWhvc3QuYw0KPiBAQCAtMzQyLDcgKzM0Miw4IEBAIGludCBkd19wY2llX2hvc3RfaW5pdChzdHJ1
+Y3QgcGNpZV9wb3J0ICpwcCkNCj4gIAkJcmV0dXJuIC1FTk9NRU07DQo+ICANCj4gIAlyZXQgPSBk
+ZXZtX29mX3BjaV9nZXRfaG9zdF9icmlkZ2VfcmVzb3VyY2VzKGRldiwgMCwgMHhmZiwNCj4gLQkJ
+CQkJJmJyaWRnZS0+d2luZG93cywgJnBwLT5pb19iYXNlKTsNCj4gKwkJCQkJJmJyaWRnZS0+d2lu
+ZG93cywgJmJyaWRnZS0+ZG1hX3JhbmdlcywNCj4gKwkJCQkJJnBwLT5pb19iYXNlKTsNCj4gIAlp
+ZiAocmV0KQ0KPiAgCQlyZXR1cm4gcmV0Ow0KIA0KLi4uLg0KX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0Ckxp
+bnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
