@@ -2,7 +2,7 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7445BBFD63
+	by mail.lfdr.de (Postfix) with ESMTPS id A6DA4BFD64
 	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Sep 2019 05:01:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -11,21 +11,21 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=vMZ+FbHi48hE/jOr2F2iEPmjl357Q2h0DrqDx11x9c4=; b=upRNAxkDvlINQCOp1nhNw8eooY
-	zXEwrqHdRMCzWwY5odRQpDpQo2RjVTX227a+5NDBL8K6lx9CUDT0dWWX7tKeymy6D7K5ObQwIVGCm
-	oZmhLdVBb3aMZHNhT/IdwDsEAHBbilSDYUJdT/8tNrunH/XdN0R3WPfXSWEoGHmnsKiq+HVJ5mRYC
-	9N5lFsGqVfNF3XZ9Tp3fBhDgjMZaJkF6Y/7I/6vfUACWJRowb9oz2avDS3bR3oCHW4ATByk01gSIO
-	tyC6uyseN9qSV2FDQY/svjqP1m5EmFb5FGvl1at7bRh/ZYuTcMJtp3NbzYZ5+GQ2Z/GHsv7YzegTK
-	pXDzlH5A==;
+	bh=8t7Xv9SDVy+Hd0JMwPkUEW58OMA8ZHIx4ib9nL2QfN8=; b=CTd2Hfxx2kgu8/ua8Z5NYH5TWb
+	U2alxuJp468I6Ij6VZ/SGkbH4VREEte194O10yumKip7rWtOVUJY/TY2+I6XRcg2byuuQmJF+Nrb1
+	CRIhcfBvDPCkDa8KwCurk0C8ux3ZvIStd3a9n+po7SZj7ub6KC6Vkn/Z1dPO8g325PJ2bue27jTU5
+	9+m545m4lHykI2wfgNgs6y1KBiNluCHRD0+ES6F87CJjqEMezOajyUoRhDBrmrOfoqD9cC2MJcZUt
+	Wy6MnDN4FM5f2298GduuozOekH61c1hsuFtxKyAhPGxPxTFNVJOPtM3We4UwqQPZnfTbKdibLDOb8
+	Wpxix9og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDgVW-00085C-Kf; Fri, 27 Sep 2019 03:01:22 +0000
+	id 1iDgVY-00086E-2P; Fri, 27 Sep 2019 03:01:24 +0000
 Received: from lucky1.263xmail.com ([211.157.147.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDgV0-0007c2-O4; Fri, 27 Sep 2019 03:00:52 +0000
+ id 1iDgV0-0007c1-LN; Fri, 27 Sep 2019 03:00:52 +0000
 Received: from localhost (unknown [192.168.167.158])
- by lucky1.263xmail.com (Postfix) with ESMTP id 59109673C7;
- Fri, 27 Sep 2019 11:00:40 +0800 (CST)
+ by lucky1.263xmail.com (Postfix) with ESMTP id 6EC4967267;
+ Fri, 27 Sep 2019 11:00:41 +0800 (CST)
 X-MAIL-GRAY: 0
 X-MAIL-DELIVERY: 1
 X-ADDR-CHECKED4: 1
@@ -34,9 +34,9 @@ X-ABS-CHECKED: 0
 Received: from localhost.localdomain (unknown [58.22.7.114])
  by smtp.263.net (postfix) whith ESMTP id
  P5565T139972115928832S1569553235679252_; 
- Fri, 27 Sep 2019 11:00:40 +0800 (CST)
+ Fri, 27 Sep 2019 11:00:41 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <1db5e33c8ff71cd2c0bc378bbe070ca7>
+X-UNIQUE-TAG: <15c8727cec935c0d0ea6bb896826c7d4>
 X-RL-SENDER: zhangqing@rock-chips.com
 X-SENDER: zhangqing@rock-chips.com
 X-LOGIN-NAME: zhangqing@rock-chips.com
@@ -46,16 +46,16 @@ X-ATTACHMENT-NUM: 0
 X-DNS-TYPE: 0
 From: Elaine Zhang <zhangqing@rock-chips.com>
 To: heiko@sntech.de
-Subject: [PATCH v3 3/5] clk: rockchip: add a clock-type for muxes based in the
- pmugrf
-Date: Fri, 27 Sep 2019 11:00:42 +0800
-Message-Id: <1569553244-3165-4-git-send-email-zhangqing@rock-chips.com>
+Subject: [PATCH v3 4/5] clk: rockchip: add pll up and down when change pll freq
+Date: Fri, 27 Sep 2019 11:00:43 +0800
+Message-Id: <1569553244-3165-5-git-send-email-zhangqing@rock-chips.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1569553244-3165-1-git-send-email-zhangqing@rock-chips.com>
 References: <1569553244-3165-1-git-send-email-zhangqing@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_200050_941584_54A5D266 
-X-CRM114-Status: GOOD (  10.12  )
+X-CRM114-CacheID: sfid-20190926_200050_861196_CDDDB096 
+X-CRM114-Status: UNSURE (   8.98  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.5 points)
@@ -92,85 +92,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Rockchip socs often have some tiny number of muxes not controlled from
-the core clock controller but through bits set in the pmugrf.
-Use MUXPMUGRF() to cover this special clock-type.
+set pll sequence:
+	->set pll to slow mode or other plls
+	->set pll down
+	->set pll params
+	->set pll up
+	->wait pll lock status
+	->set pll to normal mode
+
+To slove the system error:
+wait_pll_lock: timeout waiting for pll to lock
+pll_set_params: pll update unsucessful,
+		trying to restore old params
 
 Signed-off-by: Elaine Zhang <zhangqing@rock-chips.com>
 ---
- drivers/clk/rockchip/clk.c |  9 +++++++++
- drivers/clk/rockchip/clk.h | 17 +++++++++++++++++
- 2 files changed, 26 insertions(+)
+ drivers/clk/rockchip/clk-pll.c | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
-diff --git a/drivers/clk/rockchip/clk.c b/drivers/clk/rockchip/clk.c
-index 8f77c3f9fab7..4f238f2851ac 100644
---- a/drivers/clk/rockchip/clk.c
-+++ b/drivers/clk/rockchip/clk.c
-@@ -407,6 +407,8 @@ struct rockchip_clk_provider * __init rockchip_clk_init(struct device_node *np,
- 
- 	ctx->grf = syscon_regmap_lookup_by_phandle(ctx->cru_node,
- 						   "rockchip,grf");
-+	ctx->pmugrf = syscon_regmap_lookup_by_phandle(ctx->cru_node,
-+						   "rockchip,pmugrf");
- 
- 	return ctx;
- 
-@@ -482,6 +484,13 @@ void __init rockchip_clk_register_branches(
- 				list->mux_shift, list->mux_width,
- 				list->mux_flags);
- 			break;
-+		case branch_muxpmugrf:
-+			clk = rockchip_clk_register_muxgrf(list->name,
-+				list->parent_names, list->num_parents,
-+				flags, ctx->pmugrf, list->muxdiv_offset,
-+				list->mux_shift, list->mux_width,
-+				list->mux_flags);
-+			break;
- 		case branch_divider:
- 			if (list->div_table)
- 				clk = clk_register_divider_table(NULL,
-diff --git a/drivers/clk/rockchip/clk.h b/drivers/clk/rockchip/clk.h
-index 0d401ce09a54..ae059b7744f9 100644
---- a/drivers/clk/rockchip/clk.h
-+++ b/drivers/clk/rockchip/clk.h
-@@ -238,6 +238,7 @@ struct rockchip_clk_provider {
- 	struct clk_onecell_data clk_data;
- 	struct device_node *cru_node;
- 	struct regmap *grf;
-+	struct regmap *pmugrf;
- 	spinlock_t lock;
- };
- 
-@@ -390,6 +391,7 @@ enum rockchip_clk_branch_type {
- 	branch_composite,
- 	branch_mux,
- 	branch_muxgrf,
-+	branch_muxpmugrf,
- 	branch_divider,
- 	branch_fraction_divider,
- 	branch_gate,
-@@ -662,6 +664,21 @@ struct rockchip_clk_branch {
- 		.gate_offset	= -1,				\
+diff --git a/drivers/clk/rockchip/clk-pll.c b/drivers/clk/rockchip/clk-pll.c
+index 198417d56300..390e9473807a 100644
+--- a/drivers/clk/rockchip/clk-pll.c
++++ b/drivers/clk/rockchip/clk-pll.c
+@@ -199,6 +199,11 @@ static int rockchip_rk3036_pll_set_params(struct rockchip_clk_pll *pll,
+ 		rate_change_remuxed = 1;
  	}
  
-+#define MUXPMUGRF(_id, cname, pnames, f, o, s, w, mf)		\
-+	{							\
-+		.id		= _id,				\
-+		.branch_type	= branch_muxpmugrf,		\
-+		.name		= cname,			\
-+		.parent_names	= pnames,			\
-+		.num_parents	= ARRAY_SIZE(pnames),		\
-+		.flags		= f,				\
-+		.muxdiv_offset	= o,				\
-+		.mux_shift	= s,				\
-+		.mux_width	= w,				\
-+		.mux_flags	= mf,				\
-+		.gate_offset	= -1,				\
-+	}
++	/* set pll power down */
++	writel(HIWORD_UPDATE(RK3036_PLLCON1_PWRDOWN,
++			     RK3036_PLLCON1_PWRDOWN, 0),
++	       pll->reg_base + RK3036_PLLCON(1));
 +
- #define DIV(_id, cname, pname, f, o, s, w, df)			\
- 	{							\
- 		.id		= _id,				\
+ 	/* update pll values */
+ 	writel_relaxed(HIWORD_UPDATE(rate->fbdiv, RK3036_PLLCON0_FBDIV_MASK,
+ 					  RK3036_PLLCON0_FBDIV_SHIFT) |
+@@ -220,6 +225,11 @@ static int rockchip_rk3036_pll_set_params(struct rockchip_clk_pll *pll,
+ 	pllcon |= rate->frac << RK3036_PLLCON2_FRAC_SHIFT;
+ 	writel_relaxed(pllcon, pll->reg_base + RK3036_PLLCON(2));
+ 
++	/* set pll power up */
++	writel(HIWORD_UPDATE(0, RK3036_PLLCON1_PWRDOWN, 0),
++	       pll->reg_base + RK3036_PLLCON(1));
++	udelay(1);
++
+ 	/* wait for the pll to lock */
+ 	ret = rockchip_pll_wait_lock(pll);
+ 	if (ret) {
+@@ -676,6 +686,11 @@ static int rockchip_rk3399_pll_set_params(struct rockchip_clk_pll *pll,
+ 		rate_change_remuxed = 1;
+ 	}
+ 
++	/* set pll power down */
++	writel(HIWORD_UPDATE(RK3399_PLLCON3_PWRDOWN,
++			     RK3399_PLLCON3_PWRDOWN, 0),
++	       pll->reg_base + RK3399_PLLCON(3));
++
+ 	/* update pll values */
+ 	writel_relaxed(HIWORD_UPDATE(rate->fbdiv, RK3399_PLLCON0_FBDIV_MASK,
+ 						  RK3399_PLLCON0_FBDIV_SHIFT),
+@@ -699,6 +714,12 @@ static int rockchip_rk3399_pll_set_params(struct rockchip_clk_pll *pll,
+ 					    RK3399_PLLCON3_DSMPD_SHIFT),
+ 		       pll->reg_base + RK3399_PLLCON(3));
+ 
++	/* set pll power up */
++	writel(HIWORD_UPDATE(0,
++			     RK3399_PLLCON3_PWRDOWN, 0),
++	       pll->reg_base + RK3399_PLLCON(3));
++	udelay(1);
++
+ 	/* wait for the pll to lock */
+ 	ret = rockchip_rk3399_pll_wait_lock(pll);
+ 	if (ret) {
 -- 
 1.9.1
 
