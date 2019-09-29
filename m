@@ -2,44 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0590FC1921
-	for <lists+linux-rockchip@lfdr.de>; Sun, 29 Sep 2019 21:34:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7562FC193E
+	for <lists+linux-rockchip@lfdr.de>; Sun, 29 Sep 2019 21:58:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DUDKryuLIIG7t14ynYlgtquf/EcqaFEOuQ8nIvwyJAo=; b=ECpaS1jOBBMiOl
-	gZacipEJI0Lh3lFMNNST3l/PQqsz8uYyqd2NRVLl+byKcBxLLz3H+Un9OgpDSr78Yevki7fByeOO4
-	CTz1T6cT8AuqQBv2A+437L6DidLjYNpyxVk1/zKOUZF7+L5D0JHiVdnO7wcr6V1/vGPbV/UO7pyq8
-	hKr/P4VF1eGZN1T8SpD3jdqFGo2LCJ1aHfZz+cJWmT2GT90QF2R/c3dL4avLDKeVDVJT4yXSv9VDw
-	z9wGz8X8nvb8Q5BGu+gXHEnJEq0EZjaoEEO1CT4WH5d/KQCsGuvR6MSeBBQCXrVcOS/JXf488YN/O
-	QTvAqXpFdP33PocEubNw==;
+	List-Owner; bh=0GnCqqt9YKKDgyb70SfUxGjnBvfC4fk0jT27pzgsJlw=; b=G8Wd0fszfQvqpL
+	5uzzlKO0ShotDHLuzSkhRfL24LIAWvxOoqCkQc58wvP07F89j/R8e2abdQCUmMSCH9wfVppgjM+o3
+	e94fWI1ZuGfqJwFdzX0niDr00mzpNSC4jmTSqSyBjFOWmdc1pttYs25yNbDTcRUSlq0nXZEmXF0cA
+	KbguiNGYiMD1tBEHSYMKHsfyoOnQVkG1wvYIDDeAApxJ5TX2Y9+dA+7gOTaYBqNd6snAsaj/KxWDH
+	rNDBN9UrIUHKNrsBMdOp6NxIa/XjgMJvw6xu7cVeP3Hiba/VTI1RUiyZpOJS/AtlQyv85fJRIyx5G
+	O+i5B4CE7lTWtAuCYvOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEexU-0000UK-SC; Sun, 29 Sep 2019 19:34:16 +0000
+	id 1iEfLK-0008Ot-2x; Sun, 29 Sep 2019 19:58:54 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEexP-0000TI-Qu; Sun, 29 Sep 2019 19:34:13 +0000
+ id 1iEfL6-0008FU-Le; Sun, 29 Sep 2019 19:58:42 +0000
 Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
  helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iEexA-0001BS-Tj; Sun, 29 Sep 2019 21:33:56 +0200
+ id 1iEfL3-0001Hr-2j; Sun, 29 Sep 2019 21:58:37 +0200
 From: Heiko Stuebner <heiko@sntech.de>
-To: Jerome Brunet <jbrunet@baylibre.com>
-Subject: Re: [PATCH 2/3] clk: let init callback return an error code
-Date: Sun, 29 Sep 2019 21:33:53 +0200
-Message-ID: <7697352.nLdc4jJAoa@phil>
-In-Reply-To: <20190924123954.31561-3-jbrunet@baylibre.com>
-References: <20190924123954.31561-1-jbrunet@baylibre.com>
- <20190924123954.31561-3-jbrunet@baylibre.com>
+To: Hugh Cole-Baker <sigmaris@gmail.com>
+Subject: Re: [PATCH] arm64: dts: rockchip: fix Rockpro64 RK808 interrupt line
+Date: Sun, 29 Sep 2019 21:58:36 +0200
+Message-ID: <2631784.KOmX0qhJ1H@phil>
+In-Reply-To: <20190921131457.36258-1-sigmaris@gmail.com>
+References: <20190921131457.36258-1-sigmaris@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_123412_020484_0F48DCBC 
-X-CRM114-Status: UNSURE (   8.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190929_125840_859426_05F93BA3 
+X-CRM114-Status: GOOD (  11.53  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -59,29 +57,35 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- Stephen Boyd <sboyd@kernel.org>, netdev@vger.kernel.org,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, Tero Kristo <t-kristo@ti.com>,
- linux-rockchip@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-omap@vger.kernel.org,
- linux-clk@vger.kernel.org, Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Akash Gajjar <Akash_Gajjar@mentor.com>, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Dienstag, 24. September 2019, 14:39:53 CEST schrieb Jerome Brunet:
-> If the init callback is allowed to request resources, it needs a return
-> value to report the outcome of such a request.
+Am Samstag, 21. September 2019, 15:14:57 CEST schrieb Hugh Cole-Baker:
+> Fix the pinctrl and interrupt specifier for RK808 to use GPIO3_B2. On the
+> Rockpro64 schematic [1] page 16, it shows GPIO3_B2 used for the interrupt
+> line PMIC_INT_L from the RK808, and there's a note which translates as:
+> "PMU termination GPIO1_C5 changed to this".
 > 
-> Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
-> ---
-[...]
->  drivers/clk/rockchip/clk-pll.c        | 28 ++++++++++++++++-----------
+> Tested by setting an RTC wakealarm and checking /proc/interrupts counters.
+> Without this patch, neither the rockchip_gpio_irq counter for the RK808,
+> nor the RTC alarm counter increment when the alarm time is reached.
+> With this patch, both interrupt counters increment by 1 as expected.
+> 
+> [1] http://files.pine64.org/doc/rockpro64/rockpro64_v21-SCH.pdf
+> 
+> Fixes: e4f3fb4 ("arm64: dts: rockchip: add initial dts support for Rockpro64")
+> Signed-off-by: Hugh Cole-Baker <sigmaris@gmail.com>
 
-for the Rockchip part
-Acked-by: Heiko Stuebner <heiko@sntech.de>
+applied as fix for 5.4
+
+Thanks
+Heiko
 
 
 
