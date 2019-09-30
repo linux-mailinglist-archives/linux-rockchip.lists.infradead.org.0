@@ -2,41 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5AD9C2984
-	for <lists+linux-rockchip@lfdr.de>; Tue,  1 Oct 2019 00:28:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53AF4C2986
+	for <lists+linux-rockchip@lfdr.de>; Tue,  1 Oct 2019 00:28:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xbKXhK7ychyxAqAmDEtyNL6jabZX4gtkek3uyDUYYPU=; b=YNqssqUyH2susm
-	bvY87nxZbJU78/NVt2VLUyHz74/4MSBTgKVbZvzCBF1r9iwptPcTJziLzulKvHjbGxAi+rcPGWEA+
-	PM6bTW1GiLJrjTwFV+iq/0uYU1rLtsnL5CsPQnI9cHtFXIiHgvuXGJ6eiR8FgFqLwuIbEtTHKrPiC
-	ngZ5XDvwJtWIuVu+vlobyAAaFSnPj8JICFJVlViUqM4NlhRU2j26EK7QW2Q6pFIHk1qw+8pebO2ub
-	upwTdjXWgFTwIeyjHptzR3SQ4cR5SiJ/sZFlbaH7onCdlONvrAYr0kBD30TnzonzwGRICh//iXnaP
-	HXhPJY0rrjKS3sTUEstA==;
+	List-Owner; bh=YGpGh8+CKi0xdj+ppH7MLMj8BGJo4Fzq4LYRxf7Yn7k=; b=j8JCAHvS1nKX+z
+	8aWqTFwppRWPDgQ3mjukWKRJdPEdfiK3IHmXDqUa7F570UEFi6NX1R2jwkf4C8Jl6xutBh+jOEJWw
+	YD/R9E74ahpn83uax+2xLOgWY6zhzHSG3RbjWHFoJlBJHvDPotcqEnezUK0jBqQdiiFEwa13BWxz+
+	CF6AIdug7Wm8HdZl4VyelTAet4a72Sqo3Wxzf8qm7VGjqAdev6cek2HuqJMraGSAYFyBG4TfaLV+L
+	iLyqjCAgpuswpUNUA/t2LRhYMSlyD7vvc2E7hDuQgKtfiTBsDP0p6ffBrD0hcNsgyDEhPcgsbuJx5
+	UCjbXS9s4IxWbIaZ6bqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iF49l-0007rn-QA; Mon, 30 Sep 2019 22:28:37 +0000
+	id 1iF49q-0007ux-Ij; Mon, 30 Sep 2019 22:28:42 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iF49i-0007pH-7z
- for linux-rockchip@lists.infradead.org; Mon, 30 Sep 2019 22:28:35 +0000
+ id 1iF49m-0007sz-OK
+ for linux-rockchip@lists.infradead.org; Mon, 30 Sep 2019 22:28:40 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id F04CB283BA6
+ (Authenticated sender: ezequiel) with ESMTPSA id 96BCC28A81A
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v3 4/5] ARM: dts: rockchip: Add RK3288 VOP gamma LUT address
-Date: Mon, 30 Sep 2019 19:28:01 -0300
-Message-Id: <20190930222802.32088-5-ezequiel@collabora.com>
+Subject: [PATCH v3 5/5] RFC: drm/atomic-helper: Reapply color transformation
+ after resume
+Date: Mon, 30 Sep 2019 19:28:02 -0300
+Message-Id: <20190930222802.32088-6-ezequiel@collabora.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190930222802.32088-1-ezequiel@collabora.com>
 References: <20190930222802.32088-1-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_152834_438218_ABF2F273 
-X-CRM114-Status: UNSURE (   9.34  )
+X-CRM114-CacheID: sfid-20190930_152838_927836_69397FEB 
+X-CRM114-Status: UNSURE (   9.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,42 +76,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-RK3288 SoC VOPs have optional support Gamma LUT setting,
-which requires specifying the Gamma LUT address in the devicetree.
+Some platforms are not able to maintain the color transformation
+state after a system suspend/resume cycle.
+
+Set the colog_mgmt_changed flag so that CMM on the CRTCs in
+the suspend state are reapplied after system resume.
 
 Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-Reviewed-by: Douglas Anderson <dianders@chromium.org>
 ---
-Changes from v2:
-* None.
-Changes from v1:
-* Drop reg-names, as suggested by Doug.
----
- arch/arm/boot/dts/rk3288.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+This is an RFC, and it's mostly based on Jacopo Mondi's work https://lkml.org/lkml/2019/9/6/498.
 
-diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
-index cc893e154fe5..c6fc633ace80 100644
---- a/arch/arm/boot/dts/rk3288.dtsi
-+++ b/arch/arm/boot/dts/rk3288.dtsi
-@@ -1023,7 +1023,7 @@
+Changes from v2:
+* New patch.
+---
+ drivers/gpu/drm/drm_atomic_helper.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/drivers/gpu/drm/drm_atomic_helper.c b/drivers/gpu/drm/drm_atomic_helper.c
+index e41db0f202ca..518488125575 100644
+--- a/drivers/gpu/drm/drm_atomic_helper.c
++++ b/drivers/gpu/drm/drm_atomic_helper.c
+@@ -3234,8 +3234,20 @@ int drm_atomic_helper_resume(struct drm_device *dev,
+ 			     struct drm_atomic_state *state)
+ {
+ 	struct drm_modeset_acquire_ctx ctx;
++	struct drm_crtc_state *crtc_state;
++	struct drm_crtc *crtc;
++	unsigned int i;
+ 	int err;
  
- 	vopb: vop@ff930000 {
- 		compatible = "rockchip,rk3288-vop";
--		reg = <0x0 0xff930000 0x0 0x19c>;
-+		reg = <0x0 0xff930000 0x0 0x19c>, <0x0 0xff931000 0x0 0x1000>;
- 		interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&cru ACLK_VOP0>, <&cru DCLK_VOP0>, <&cru HCLK_VOP0>;
- 		clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
-@@ -1073,7 +1073,7 @@
++	for_each_new_crtc_in_state(state, crtc, crtc_state, i) {
++		/*
++		 * Force re-enablement of CMM after system resume if any
++		 * of the DRM color transformation properties was set in
++		 * the state saved at system suspend time.
++		 */
++		if (crtc_state->gamma_lut)
++			crtc_state->color_mgmt_changed = true;
++	}
+ 	drm_mode_config_reset(dev);
  
- 	vopl: vop@ff940000 {
- 		compatible = "rockchip,rk3288-vop";
--		reg = <0x0 0xff940000 0x0 0x19c>;
-+		reg = <0x0 0xff940000 0x0 0x19c>, <0x0 0xff941000 0x0 0x1000>;
- 		interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&cru ACLK_VOP1>, <&cru DCLK_VOP1>, <&cru HCLK_VOP1>;
- 		clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
+ 	DRM_MODESET_LOCK_ALL_BEGIN(dev, ctx, 0, err);
 -- 
 2.22.0
 
