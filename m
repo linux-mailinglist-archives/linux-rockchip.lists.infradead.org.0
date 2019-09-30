@@ -2,95 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FE2CC19C8
-	for <lists+linux-rockchip@lfdr.de>; Mon, 30 Sep 2019 01:46:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90A1AC297D
+	for <lists+linux-rockchip@lfdr.de>; Tue,  1 Oct 2019 00:28:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xIP8pgI+cPtPDTjTFiIYH7bIfLl4VNLJ6L5EGAfXAqs=; b=R+gLgNDW2Yg/LE
-	sAxbHwSZrq+I1+hmzntIIvjnhg2TFaSqBlY0kzXM1SPmBiyDTQm+TSAnQIhzbQmMP9NAHi4OBlTjY
-	QctQMH1CeQsn8WumP20d+UxYFSBtvNWjlH8Y66d+0M8x+RMn5dWqJbnZ5DKsoUpNhYZ/h7PHqrhOF
-	ihTEFrkZK4gKWYejiimBnjmEdqalyS3SIU1lIp2RcFKKOAngqfNxr5W47GioS68xSppHJpbg49XQf
-	n1BzP5rKtZJrObwgTCZsFyJ/xFqwh7JUAMRJHnqPawQ57EZTchD1cO+9zi+NeLrHSEytkziw3z/GX
-	3GNF8lOC7vxTTdDdWwUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+ghQjesHagLKbNDCclaNg84EzAYwPL7bJhhnTYfa4Yk=; b=O2mAwmr7DaoWzI
+	JMaxKoPDuMH/OSk6sAw5Zi1r8KiYYfsjzMQtGfMCqe6E2xerqlpH3LDNVQfmkyBy/PCU6i8Z7X6De
+	OOv3FGd2s4TodXqjO6PaXGE3BP9fA8VNLDOkGBcDH5HH5iJybXXwmx4MZ0ghA4aWyAb8UQDgpGcI5
+	icjwD4poCKyt41c1PI47KlMiYn5+aQziIsTOYAbWPwlUVLCduT3o9jLDxrPM1A0QLlwYUj04FCt7c
+	8zv6wN7zwmuItF0WsbeTbpsy64kB74dq8/l790zW2JCLPqPa7AIkx5d58t95vyvAoTIybZrZJF+EA
+	2PJsDlf53xJ+HyvqLyDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEitX-0004WJ-JJ; Sun, 29 Sep 2019 23:46:27 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1iF49T-0007g9-S3; Mon, 30 Sep 2019 22:28:19 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEitQ-0004Sh-Rn; Sun, 29 Sep 2019 23:46:22 +0000
-Received: by mail-qt1-x841.google.com with SMTP id u22so14666795qtq.13;
- Sun, 29 Sep 2019 16:46:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=9IjuVXfjyC+Q3EgkfLoZRHzj7hful0PTkZcBqQey3BU=;
- b=WgOkqUXG/IOsCK1v46IkgYuvCCXlWivbA0/c8I3P1LW9SLM09h//IDxsINvCoNLie1
- d2uDzX0BimZmK66AyDUtq4ykya65Xw7IM43b5alZxJ6Bj4GSCxD/hznZReZ+zKZKcjnW
- 32ER5J6DTGckGj+qW2ka0ox7QFqlyfL11PLQ6onHceTt7/mxI6u6G7ArnYeq9ad3PyZG
- fTePApuiq8DXfLot28KFYxlHH/PoJ4FZSJzGQPl5+gejE1YAeeSNrfgue6W8MbxenL3w
- 0YHyQ/tlYHv2h/6F+e+b8mDM6hZXe+sEJBwENssePuU7yxUAt54Pmic+/221kiWZY6iy
- oUZA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=9IjuVXfjyC+Q3EgkfLoZRHzj7hful0PTkZcBqQey3BU=;
- b=ttJChTriWmQocD/u36WAdh+GJ3H53y8DbRcBf0COPD+567kPByd3cf3AIOe8R0S+y4
- HUBBKCuFucZFUBTClByxjQwahxKVBW8xKOAB/PZJR6Ve5SsoowxiFycA0QFfpwix6aiS
- Wpel9T1Q7Nt5ud7t3zd0wDH7Ym/SJSygyJyjdklA2TvEMfEur+oe2lpSai70zhoi9+3K
- zrqOc6ZHRjmL+Um0/IWUfuVhEHDU2ucyAGZ90BD/1ecqSLjPkFWBqpFXBNf/wJs+6rmQ
- EiUyZCPpnrfuq7W0/Y6ECR2gDLdZ7wabIYxNLvZbhjTe66+MoSL4gvE3mntw/uQpSrkF
- ZGJg==
-X-Gm-Message-State: APjAAAWY8R5m909gXm8NyowYOCD+JouUcPdlqswp5b+euzO1jnhMrE8h
- S4qW2rDZiMO9NP8XGEanKDY=
-X-Google-Smtp-Source: APXvYqxVMoPmFYQFR1uQ9s3WqrOhj1kuaz6jaF1gAqCSFqi7agIMTQouJhYavwt4z9geiH7wAvaCbg==
-X-Received: by 2002:a0c:c48e:: with SMTP id u14mr18611626qvi.37.1569800779344; 
- Sun, 29 Sep 2019 16:46:19 -0700 (PDT)
-Received: from vivek-desktop (ool-457857f8.dyn.optonline.net. [69.120.87.248])
- by smtp.gmail.com with ESMTPSA id
- m14sm4585875qki.27.2019.09.29.16.46.18
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 29 Sep 2019 16:46:18 -0700 (PDT)
-Date: Sun, 29 Sep 2019 19:46:15 -0400
-From: Vivek Unune <npcomplete13@gmail.com>
-To: Vicente Bergas <vicencb@gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: Fix usb-c on Hugsun X99 TV Box
-Message-ID: <20190929234615.GA5355@vivek-desktop>
-References: <20190929032230.24628-1-npcomplete13@gmail.com>
- <54c67ca8-8428-48ee-9a96-e1216ba02839@gmail.com>
+ id 1iF49Q-0007en-Dj
+ for linux-rockchip@lists.infradead.org; Mon, 30 Sep 2019 22:28:18 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 2D967283BA6
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: dri-devel@lists.freedesktop.org
+Subject: [PATCH v3 0/5] RK3288 Gamma LUT
+Date: Mon, 30 Sep 2019 19:27:57 -0300
+Message-Id: <20190930222802.32088-1-ezequiel@collabora.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <54c67ca8-8428-48ee-9a96-e1216ba02839@gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_164620_921961_800E2C01 
-X-CRM114-Status: GOOD (  16.35  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190930_152816_594746_9C48163B 
+X-CRM114-Status: GOOD (  10.17  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (npcomplete13[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (npcomplete13[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,90 +58,89 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- Felipe Balbi <felipe.balbi@linux.intel.com>, Felipe Balbi <balbi@kernel.org>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, akash@openedev.com, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jacopo Mondi <jacopo@jmondi.org>,
+ =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ linux-kernel@vger.kernel.org, Sandy Huang <hjc@rock-chips.com>,
+ Rob Herring <robh+dt@kernel.org>, Douglas Anderson <dianders@chromium.org>,
+ linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Sean Paul <seanpaul@chromium.org>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>, Ilia Mirkin <imirkin@alum.mit.edu>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sun, Sep 29, 2019 at 01:22:17PM +0200, Vicente Bergas wrote:
-> On Sunday, September 29, 2019 5:22:30 AM CEST, Vivek Unune wrote:
-> > Fix usb-c on X99 TV Box. Tested with armbian w/ kernel 5.3
-> > =
+Let's support Gamma LUT configuration on RK3288 SoCs.
 
-> > Signed-off-by: Vivek Unune <npcomplete13@gmail.com>
-> > ---
-> >  arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts | 4 ++--
-> >  1 file changed, 2 insertions(+), 2 deletions(-)
-> > =
+In order to do so, this series adds a new and optional
+address resource.
+    
+A separate address resource is required because on this RK3288,
+the LUT address is after the MMU address, which is requested
+by the iommu driver. This prevents the DRM driver
+from requesting an entire register space.
 
-> > diff --git a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-> > b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-> > index 0d1f5f9a0de9..c133e8d64b2a 100644
-> > --- a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-> > +++ b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-> > @@ -644,7 +644,7 @@
-> >  	status =3D "okay";
-> >  	u2phy0_host: host-port {
-> > -		phy-supply =3D <&vcc5v0_host>;
-> > +		phy-supply =3D <&vcc5v0_typec>;
-> >  		status =3D "okay";
-> >  	};
-> > @@ -712,7 +712,7 @@
-> >  &usbdrd_dwc3_0 {
-> >  	status =3D "okay";
-> > -	dr_mode =3D "otg";
-> > +	dr_mode =3D "host";
-> >  };
-> >  &usbdrd3_1 {
-> =
+The current implementation works for RGB 10-bit tables, as that
+is what seems to work on RK3288.
 
-> Hi Vivek,
-> =
+This has been tested on a Rock2 Square board, using
+'modetest' tool (modetest now supports GAMMA_LUT property),
+with legacy and atomic APIs.
 
-> which is the relationship of your patch and this commit:
-> =
+In addition, I've tested it with Jacopo's modified kmsxx [1],
+See the rcar-du color management series for more information [2].
 
-> e1d9149e8389f1690cdd4e4056766dd26488a0fe
-> arm64: dts: rockchip: Fix USB3 Type-C on rk3399-sapphire
-> =
-
-> with respect to this other commit:
-> =
-
-> c09b73cfac2a9317f1104169045c519c6021aa1d
-> usb: dwc3: don't set gadget->is_otg flag
-> =
-
-> ?
-> =
-
-> I did not test reverting e1d9149e since c09b73cf was applied.
-> =
-
-> Regards,
->  Vicen=E7.
-> =
-
-
-Hi Vicen=E7,
-
-Indeed, I was motivated by e1d9149e ("arm64: dts: rockchip: Fix USB3 =
-
-Type-C on rk3399-sapphire"). X99 TV box showed exact same symptoms
-with usb-c port. After applying the fix, it worked.
-
-I was not aware of c09b73cf ("usb: dwc3: don't set gadget->is_otg
- flag") and it will be interesting to test it. This might render
-my fix unecessary.
+[1] https://jmondi.org/cgit/kmsxx/
+[2] https://lkml.org/lkml/2019/9/6/490
 
 Thanks,
+Eze
 
-Vivek
+Changes from v2:
+* revert Sean Paul's patch, in order to use
+  atomic_commit_tail hook.
+* add RFC/patch for color management on resume.
+
+Changes from v1:
+* drop explicit linear LUT after finding a proper
+  way to disable gamma correction.
+* avoid setting gamma is the CRTC is not active.
+* s/int/unsigned int as suggested by Jacopo.
+* only enable color management and set gamma size
+  if gamma LUT is supported, suggested by Doug.
+* drop the reg-names usage, and instead just use indexed reg
+  specifiers, suggested by Doug.
+
+Changes from RFC:
+* Request (an optional) address resource for the LUT.
+* Add devicetree changes.
+* Drop support for RK3399, which doesn't seem to work
+  out of the box and needs more research.
+* Support pass-thru setting when GAMMA_LUT is NULL.
+* Add a check for the gamma size, as suggested by Ilia.
+* Move gamma setting to atomic_commit_tail, as pointed
+  out by Jacopo/Laurent, is the correct way.
+
+Ezequiel Garcia (5):
+  Revert "drm/rockchip: Use drm_atomic_helper_commit_tail_rpm"
+  dt-bindings: display: rockchip: document VOP gamma LUT address
+  drm/rockchip: Add optional support for CRTC gamma LUT
+  ARM: dts: rockchip: Add RK3288 VOP gamma LUT address
+  RFC: drm/atomic-helper: Reapply color transformation after resume
+
+ .../display/rockchip/rockchip-vop.txt         |   6 +-
+ arch/arm/boot/dts/rk3288.dtsi                 |   4 +-
+ drivers/gpu/drm/drm_atomic_helper.c           |  12 ++
+ drivers/gpu/drm/rockchip/rockchip_drm_fb.c    |  24 +++-
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.c   | 114 ++++++++++++++++++
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.h   |   7 ++
+ drivers/gpu/drm/rockchip/rockchip_vop_reg.c   |   2 +
+ 7 files changed, 165 insertions(+), 4 deletions(-)
+
+-- 
+2.22.0
 
 
 _______________________________________________
