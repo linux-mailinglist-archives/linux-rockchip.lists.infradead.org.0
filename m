@@ -2,71 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 975CFC29FB
-	for <lists+linux-rockchip@lfdr.de>; Tue,  1 Oct 2019 00:49:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F2E3C2A17
+	for <lists+linux-rockchip@lfdr.de>; Tue,  1 Oct 2019 00:58:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HDA3vQTOs4kYmxJ1c+5YJPkKF/0KgAaLE+4KnesM6Uk=; b=Q2cOhpTu37jFpU
-	DvcyrcS00PNF0ctnULsKKcNlHMAYg2aiczmcM3fpKxAkrjPSKIE9TU/YFTthJMsAbCS9Q567LmbpG
-	gyq7gM6hdvl3jul3Eo9o2Y197jfWVgp1RmSJrXa+npf3wsKXkHz9uBk0StvbOFPNZrMjETpTHS4I8
-	lGWMP9KrNbaepd/64xQ984id/E28Ox7hpqFeZ4JH9FAuqALzUnYMJUg0VlaLKR/r+3JDluR1Bl5HA
-	5CiYuvyFa8uIpso9X6NG98S4feZhZIrGRT9zDbI+6g2EEG5umzceFLh9pqfNNNOQYjxkSB1O35sfu
-	jW44XFbT0HiK1DJc1wwQ==;
+	List-Owner; bh=ib1+wDLEtTyyQeMCPX+w2v0O8Ae7dwNQeZznvzL3mX4=; b=j/pKuWmgv05NQq
+	vCwXJgTNEUAmaOvlPzoKqw8MzG7+xTc5Ofy10RgRNn4XVovVyXmgKJThuTgXH+IlaRUJ6X7VwxADw
+	glpMTbkc/G6MtgqnfnW/ThDw9MW9/1UjRYkjg2QXUsX0wYIXEAljF1835vgdBnEJbfENAyOXFaVvM
+	8N6ew86OmMAIuaOT+XPrs/wiV+Ln2zNPeu/jNFu1FJwALFtU0PmDw/bPF7csF1H7EU5vU/2oR0+VB
+	NS71yaN/2t8vtXjbFNgye5rkrWk1A8Orba7qOtaYB/R9en91vv9aCKRchx5jSGWeWjWr8yvnRhOp8
+	2PzpqxsHTB3jsp3n66RA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iF4UM-00075a-Oz; Mon, 30 Sep 2019 22:49:54 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1iF4ch-00023C-AI; Mon, 30 Sep 2019 22:58:31 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iF4UK-000752-45
- for linux-rockchip@lists.infradead.org; Mon, 30 Sep 2019 22:49:53 +0000
-Received: by mail-oi1-f196.google.com with SMTP id e18so12696856oii.0
- for <linux-rockchip@lists.infradead.org>; Mon, 30 Sep 2019 15:49:52 -0700 (PDT)
+ id 1iF4cQ-0001rj-Vf; Mon, 30 Sep 2019 22:58:16 +0000
+Received: by mail-ot1-f67.google.com with SMTP id 21so9841544otj.11;
+ Mon, 30 Sep 2019 15:58:13 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=PczlEvTcFQArjHB6+AobRiVj/8O0AsH2F+pyn4AkV9Q=;
- b=nwDHk45seLUzpD5EMzW1aQ2e5coHsaHwf8XXvcF4v+acmu77RVKDMyJFlSjrMqF/u6
- QAgPnGu7Iq3iGbwcWKtHrMldMBVnJ/k5510up0fqzV15I59TkEaAr7JbgSPmNC0UjE/p
- z6WzbWS/NsRW0Ud/7zNz9qGknbuMJYlYI5Q0Bwrf0x2thLWAysxkyCfjnaoyrs4ARmH+
- 7ymQg3uTSjFMVPtOPmsTPkLAB5K65mF5OHDMmzfiqdV0Sjw1Xu20s4BeWec41N8voy69
- bkPRklJxvSpYivxvYATbCFlRsBBGQZmjIwUTBZExPUt4paYG+It1hkf9+lBkm2ybtTt6
- EERQ==
-X-Gm-Message-State: APjAAAW9UbWvfotLCM37ZuqQUJIahYiZCuNkphFBCL7rFt2eY0/A2BAE
- Hg6jqc4LJiERCNAHccEw8g==
-X-Google-Smtp-Source: APXvYqwTDeeH9jMNF4XEpuXW6/a8oSBcyxUotRCwupjdOMxLrSLEeTuiggY2bfZGFDq6quemIM81TA==
-X-Received: by 2002:aca:4a50:: with SMTP id x77mr1296885oia.115.1569883791410; 
- Mon, 30 Sep 2019 15:49:51 -0700 (PDT)
+ bh=yMD9pmuStBSmV7/f6WmG6NS1chDF+Ciauz815CKJvxk=;
+ b=oeBynGJOK57C6lK09TUY+iuXpRz+ouUhSyYlamI9NgSBzCrMAYh62fzRRhQ4uVd+xa
+ D23J9WplBXjyxSxajBghMf66Bq8dGWG4q+n6/3T2mRhIGdL0E1+0MB65iLy2Xkb6G8ct
+ TrR19tzv23rxAaYwW1t5JRZKJdekQ9BQxByFTaMXi48eDMsBRHYQKr2CHmO9zwM7pkDr
+ biROaY58uSVCWyn3VX1slJjnlBvHl0+viYBsb/83ylRpKbNex9ubt+LOWP1tar8sNEmn
+ rEHcGh3waMC9JYLGkuPqZsXpWpykyvHBEYhPvoDp8pTiHTOF2HkvlsXZWnvHe0HY7Jfb
+ dSQQ==
+X-Gm-Message-State: APjAAAX+MWFkQ/55ds1Voq+iu9N2Ynaxf5qwyL85RvKV+srRUeXIUKQb
+ o1UJegKT6g127zPVbNpw9Q==
+X-Google-Smtp-Source: APXvYqywsx7UD2SV0vlleU8U80VUN6PE7GBO/x4hSrEd/v4xkSmgFSt6RjJIUygixJXrVFXJWQV6pQ==
+X-Received: by 2002:a9d:a06:: with SMTP id 6mr15686295otg.69.1569884292929;
+ Mon, 30 Sep 2019 15:58:12 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id i13sm4391632otj.58.2019.09.30.15.49.50
+ by smtp.gmail.com with ESMTPSA id a9sm4409375otc.75.2019.09.30.15.58.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Sep 2019 15:49:50 -0700 (PDT)
-Date: Mon, 30 Sep 2019 17:49:50 -0500
+ Mon, 30 Sep 2019 15:58:12 -0700 (PDT)
+Date: Mon, 30 Sep 2019 17:58:11 -0500
 From: Rob Herring <robh@kernel.org>
 To: Heiko Stuebner <heiko@sntech.de>
-Subject: Re: [PATCH] phy: phy-rockchip-inno-usb2: add phy description for px30
-Message-ID: <20190930224950.GA32051@bogus>
-References: <20190917082532.25479-1-heiko@sntech.de>
+Subject: Re: [PATCH 09/13] arm64: dts: rockchip: document explicit px30 cru
+ dependencies
+Message-ID: <20190930225811.GA14016@bogus>
+References: <20190917082659.25549-1-heiko@sntech.de>
+ <20190917082659.25549-9-heiko@sntech.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190917082532.25479-1-heiko@sntech.de>
+In-Reply-To: <20190917082659.25549-9-heiko@sntech.de>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_154952_161660_B148B9DC 
-X-CRM114-Status: UNSURE (   9.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190930_155815_018519_15324E5C 
+X-CRM114-Status: GOOD (  12.92  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -76,7 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
+ [209.85.210.67 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -92,26 +92,35 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org, kishon@ti.com,
+ Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
  linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- christoph.muellner@theobroma-systems.com
+ linux-arm-kernel@lists.infradead.org, christoph.muellner@theobroma-systems.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, 17 Sep 2019 10:25:32 +0200, Heiko Stuebner wrote:
-> The px30 soc from Rockchip shares the same register description as
-> the rk3328, so can re-use its definitions.
+On Tue, 17 Sep 2019 10:26:55 +0200, Heiko Stuebner wrote:
+> The px30 contains 2 separate clock controllers the regular cru creating
+> most clocks as well as the pmucru managing the GPLL and some other clocks.
+> 
+> The gpll of course also is needed by the cru, so while we normally do rely
+> on clock names to associate clocks getting probed later on (for example
+> xin32k coming from an i2c device in most cases) it is safer to declare the
+> explicit dependency between the two crus. This makes sure that for example
+> the clock-framework probes them in the correct order from the start.
+> 
+> The assigned-clocks properties were simply working by chance in the past
+> so split them accordingly to the 2 crus to honor the loading direction.
 > 
 > Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 > ---
->  Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt | 1 +
->  drivers/phy/rockchip/phy-rockchip-inno-usb2.c                    | 1 +
->  2 files changed, 2 insertions(+)
+>  .../bindings/clock/rockchip,px30-cru.txt      |  5 ++++
+>  arch/arm64/boot/dts/rockchip/px30.dtsi        | 25 +++++++++++--------
+>  2 files changed, 20 insertions(+), 10 deletions(-)
 > 
 
-Acked-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 Linux-rockchip mailing list
