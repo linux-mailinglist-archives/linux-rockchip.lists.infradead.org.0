@@ -2,39 +2,43 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90A1AC297D
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B0BBC297E
 	for <lists+linux-rockchip@lfdr.de>; Tue,  1 Oct 2019 00:28:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+ghQjesHagLKbNDCclaNg84EzAYwPL7bJhhnTYfa4Yk=; b=O2mAwmr7DaoWzI
-	JMaxKoPDuMH/OSk6sAw5Zi1r8KiYYfsjzMQtGfMCqe6E2xerqlpH3LDNVQfmkyBy/PCU6i8Z7X6De
-	OOv3FGd2s4TodXqjO6PaXGE3BP9fA8VNLDOkGBcDH5HH5iJybXXwmx4MZ0ghA4aWyAb8UQDgpGcI5
-	icjwD4poCKyt41c1PI47KlMiYn5+aQziIsTOYAbWPwlUVLCduT3o9jLDxrPM1A0QLlwYUj04FCt7c
-	8zv6wN7zwmuItF0WsbeTbpsy64kB74dq8/l790zW2JCLPqPa7AIkx5d58t95vyvAoTIybZrZJF+EA
-	2PJsDlf53xJ+HyvqLyDw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5HOj9hmMnTRTXmdJD0Zy4lpYC5G026+7qr053m4c324=; b=RUrbhzGWNgqWwi
+	juOMcX3yTwVhV2X4jpxYoenhKZfleQ+XzIfofgsvPZhB8hcDj7znC32qPJTfKKLWe7cfdejhbRy30
+	TBIMdAt604XF5v4q0+QGUbhBPReQDnw9hgQnQp02qD7jgcTSftVRQjCcy9jMloAuq9PQeff+7Puq+
+	7+e4O/Zo9uLnDHehhOAAaE/bRmqTfpv5+d7rIEt42PILfvLpN9Nuy4Em6/tC3QBH7b/epvDUtmG4v
+	0mT5tN/fzjt7nIdxZouS+pymzKusXN39aK7ASzShBmWjyeA5iqvXnsRUZ+OIsHv420+R921IeNM9s
+	jO7rmSEWBv6vRV93Nhqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iF49T-0007g9-S3; Mon, 30 Sep 2019 22:28:19 +0000
+	id 1iF49X-0007hc-6U; Mon, 30 Sep 2019 22:28:23 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iF49Q-0007en-Dj
- for linux-rockchip@lists.infradead.org; Mon, 30 Sep 2019 22:28:18 +0000
+ id 1iF49T-0007fv-4D
+ for linux-rockchip@lists.infradead.org; Mon, 30 Sep 2019 22:28:20 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 2D967283BA6
+ (Authenticated sender: ezequiel) with ESMTPSA id BE02D283C0F
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v3 0/5] RK3288 Gamma LUT
-Date: Mon, 30 Sep 2019 19:27:57 -0300
-Message-Id: <20190930222802.32088-1-ezequiel@collabora.com>
+Subject: [PATCH v3 1/5] Revert "drm/rockchip: Use
+ drm_atomic_helper_commit_tail_rpm"
+Date: Mon, 30 Sep 2019 19:27:58 -0300
+Message-Id: <20190930222802.32088-2-ezequiel@collabora.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190930222802.32088-1-ezequiel@collabora.com>
+References: <20190930222802.32088-1-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_152816_594746_9C48163B 
-X-CRM114-Status: GOOD (  10.17  )
+X-CRM114-CacheID: sfid-20190930_152819_297315_D8676778 
+X-CRM114-Status: UNSURE (   8.96  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -65,80 +69,63 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Rob Herring <robh+dt@kernel.org>, Douglas Anderson <dianders@chromium.org>,
  linux-rockchip@lists.infradead.org,
  Boris Brezillon <boris.brezillon@collabora.com>,
- Sean Paul <seanpaul@chromium.org>, kernel@collabora.com,
- Ezequiel Garcia <ezequiel@collabora.com>, Ilia Mirkin <imirkin@alum.mit.edu>
+ Sean Paul <seanpaul@chromium.org>, Sean Paul <sean@poorly.run>,
+ kernel@collabora.com, Ezequiel Garcia <ezequiel@collabora.com>,
+ Ilia Mirkin <imirkin@alum.mit.edu>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Let's support Gamma LUT configuration on RK3288 SoCs.
+This reverts commit c87fb38df19da3362a0e20df1aad852100995ead,
+which conflicts with adding driver-specific behavior in
+atomic_commit_tail().
 
-In order to do so, this series adds a new and optional
-address resource.
-    
-A separate address resource is required because on this RK3288,
-the LUT address is after the MMU address, which is requested
-by the iommu driver. This prevents the DRM driver
-from requesting an entire register space.
+No functional changes expected on this commit, but just preparation
+for the upcoming gamma LUT support.
 
-The current implementation works for RGB 10-bit tables, as that
-is what seems to work on RK3288.
-
-This has been tested on a Rock2 Square board, using
-'modetest' tool (modetest now supports GAMMA_LUT property),
-with legacy and atomic APIs.
-
-In addition, I've tested it with Jacopo's modified kmsxx [1],
-See the rcar-du color management series for more information [2].
-
-[1] https://jmondi.org/cgit/kmsxx/
-[2] https://lkml.org/lkml/2019/9/6/490
-
-Thanks,
-Eze
-
+Cc: Sean Paul <sean@poorly.run>
+Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+---
 Changes from v2:
-* revert Sean Paul's patch, in order to use
-  atomic_commit_tail hook.
-* add RFC/patch for color management on resume.
+* New patch.
+---
+ drivers/gpu/drm/rockchip/rockchip_drm_fb.c | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
 
-Changes from v1:
-* drop explicit linear LUT after finding a proper
-  way to disable gamma correction.
-* avoid setting gamma is the CRTC is not active.
-* s/int/unsigned int as suggested by Jacopo.
-* only enable color management and set gamma size
-  if gamma LUT is supported, suggested by Doug.
-* drop the reg-names usage, and instead just use indexed reg
-  specifiers, suggested by Doug.
-
-Changes from RFC:
-* Request (an optional) address resource for the LUT.
-* Add devicetree changes.
-* Drop support for RK3399, which doesn't seem to work
-  out of the box and needs more research.
-* Support pass-thru setting when GAMMA_LUT is NULL.
-* Add a check for the gamma size, as suggested by Ilia.
-* Move gamma setting to atomic_commit_tail, as pointed
-  out by Jacopo/Laurent, is the correct way.
-
-Ezequiel Garcia (5):
-  Revert "drm/rockchip: Use drm_atomic_helper_commit_tail_rpm"
-  dt-bindings: display: rockchip: document VOP gamma LUT address
-  drm/rockchip: Add optional support for CRTC gamma LUT
-  ARM: dts: rockchip: Add RK3288 VOP gamma LUT address
-  RFC: drm/atomic-helper: Reapply color transformation after resume
-
- .../display/rockchip/rockchip-vop.txt         |   6 +-
- arch/arm/boot/dts/rk3288.dtsi                 |   4 +-
- drivers/gpu/drm/drm_atomic_helper.c           |  12 ++
- drivers/gpu/drm/rockchip/rockchip_drm_fb.c    |  24 +++-
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c   | 114 ++++++++++++++++++
- drivers/gpu/drm/rockchip/rockchip_drm_vop.h   |   7 ++
- drivers/gpu/drm/rockchip/rockchip_vop_reg.c   |   2 +
- 7 files changed, 165 insertions(+), 4 deletions(-)
-
+diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
+index ca01234c037c..dba352ec0ee3 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
++++ b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
+@@ -105,8 +105,27 @@ rockchip_user_fb_create(struct drm_device *dev, struct drm_file *file_priv,
+ 	return ERR_PTR(ret);
+ }
+ 
++static void
++rockchip_atomic_helper_commit_tail_rpm(struct drm_atomic_state *old_state)
++{
++	struct drm_device *dev = old_state->dev;
++
++	drm_atomic_helper_commit_modeset_disables(dev, old_state);
++
++	drm_atomic_helper_commit_modeset_enables(dev, old_state);
++
++	drm_atomic_helper_commit_planes(dev, old_state,
++					DRM_PLANE_COMMIT_ACTIVE_ONLY);
++
++	drm_atomic_helper_commit_hw_done(old_state);
++
++	drm_atomic_helper_wait_for_vblanks(dev, old_state);
++
++	drm_atomic_helper_cleanup_planes(dev, old_state);
++}
++
+ static const struct drm_mode_config_helper_funcs rockchip_mode_config_helpers = {
+-	.atomic_commit_tail = drm_atomic_helper_commit_tail_rpm,
++	.atomic_commit_tail = rockchip_atomic_helper_commit_tail_rpm,
+ };
+ 
+ static const struct drm_mode_config_funcs rockchip_drm_mode_config_funcs = {
 -- 
 2.22.0
 
