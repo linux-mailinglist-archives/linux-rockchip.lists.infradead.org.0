@@ -2,78 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FC32C31EB
-	for <lists+linux-rockchip@lfdr.de>; Tue,  1 Oct 2019 13:01:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A956DC3690
+	for <lists+linux-rockchip@lfdr.de>; Tue,  1 Oct 2019 16:00:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HEvbKC5aHeK6KGdAX9Msql7FMIG5GxtKTk2pkL+fERY=; b=JPp56sTnxjcVo3
-	CebuBTjf4EkDmyGkJFcR1ubuBAXQKuu6/zr/LvuFoGNMV2z6uas6RRzz58HMWxFetUgBloSf6qYSv
-	pE44IoEOAaZ37m9hRcP/SiR4AvydIr31tDeebbHJZSiQkY+d4zHDbSZyxOFgFcl8Dn50ZyY64S1Ba
-	wRw1Tcs4/S84SUkxpXHPew4Iw8rusq5jUC9mHVKrNUdNpd4RpiHNOzqUWcT2mgqONq79lLhzEVNiz
-	iiN9eoh+/J6LZwa7+u5WLIoqAw/OptUJsU0dQepmoZTqCFLpXmuKP368IALrldtPwcIvLOpDOcvXL
-	tQo7CqQmOrs8yja+0O6A==;
+	List-Owner; bh=BSSWzgqoC+BWwOI3FyXohf7DDxWvMjXF5x1s+mLHRFE=; b=gB21pRWXXvVPkB
+	UKc0afj9itsRf3xeP+DqJdiZ4kHRmUB77NfCvYi2X67VR98YT9ib2lqakx7MS4eafukpZyBgFPlwj
+	1y4ckCbHHYN32abxA4wCUlgi9YMlGBdWVjBOaHqQo5DlNSRqchqpnthT3MHvAckVxuu7hYd0iuQ1S
+	JSZtXLAjqVpK6YaeryBKO6EYShscfOVix03Q7JwDtg+WZy2B1DUNB6nGmFhipRZPGuzNCu9AqbsDj
+	4D8PR5sika9n5L/CEUBO2gBoe7LkIrUJd39UCRlCc2VCmpDWR+4zd4A3jOt468CItJL3HBMmRk32a
+	OoCzlxpTpHeLjjdrMnDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFFuP-0000br-NZ; Tue, 01 Oct 2019 11:01:33 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iFIhZ-0007Az-1c; Tue, 01 Oct 2019 14:00:29 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFFuH-0000Tj-3i; Tue, 01 Oct 2019 11:01:26 +0000
-Received: from mail-wm1-f42.google.com (mail-wm1-f42.google.com
- [209.85.128.42])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 23C0021D71;
- Tue,  1 Oct 2019 11:01:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569927684;
- bh=WFo4AOUfzZaJbgEqFa0H+5dWz8gP0vH+XT9yDB8pn74=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=DKAOAjhhZQekV/U0rf1A61tna9L0itLTk3ksZxH/4x8NGaaPEMB6wFbrRuMk0nE04
- pmYtJv/BtN/snI8o56m6K6S3SNSX+TmnxsyTYPmUmLs0860AYsKNWKF8bA4kBcxDS0
- YByxPCIlMdIoRWs6B2VsNN9AfxWvOcIyagdW+dRY=
-Received: by mail-wm1-f42.google.com with SMTP id p7so2839162wmp.4;
- Tue, 01 Oct 2019 04:01:24 -0700 (PDT)
-X-Gm-Message-State: APjAAAV9M13ygKzJhbdX8HHPcqM6AMvh/YVbhJRinOla/2M3bnvX0K2h
- b0WCksrgde/ebwgbboyXez16q/LFGXSZqR7CFq0=
-X-Google-Smtp-Source: APXvYqxTkPFr419qtuPFWbkgNrsF7CMpg7mB9lJniQFsAuSfCSwlMLaZF7coguK/T5VVCPX6kxCP/gJgub/cxMZOwAw=
-X-Received: by 2002:a1c:2b41:: with SMTP id r62mr3025307wmr.47.1569927682563; 
- Tue, 01 Oct 2019 04:01:22 -0700 (PDT)
+ id 1iFIhE-0005hV-NM; Tue, 01 Oct 2019 14:00:10 +0000
+Received: by mail-ot1-f67.google.com with SMTP id 41so11583743oti.12;
+ Tue, 01 Oct 2019 07:00:05 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=JZBM1FPFDAl5uESgEP9tPsFTn7qdNx8IBtQzRJpA2CU=;
+ b=aer6VLjy8+Mr+vQ6cQvBMdfgqgu9nPxjI/HVtzbNs17eS4WQIrx7VhKmV+379e7uGZ
+ upbO7DFwGhnzp85mQGVTVjjCE02L+Pxngrijdyv1OQg87Yz+uz9OKArRCQfhlX+1p5KB
+ 9pwyGIJ1QrJZ0SSQipFejRg7tD5/f/qmr5DQotiMqz2URN9FbcI6bCKZBTcDoxcqxAKj
+ 4yUAeCbwNIcA2mBIygnmdIEslCpAW8Lbsrusy0YtjHMKe9fBre8D6Hmn7EbNqdNqcjPI
+ BjCsoFfxEwvBbOnrTbhQtfId6uZIuA9eA1VrYGKtBKWLXoUEG7DnTDtAj4Zq3KfmdnKq
+ 0xQw==
+X-Gm-Message-State: APjAAAULyc1f2eHQAGxbnrFdYy2+xGHaM1baQH+T9SEqFLftKVST9bpN
+ 6cBZ3DQsnCaTVIzscKUXQQ==
+X-Google-Smtp-Source: APXvYqyny3jSQCJcTq07B8NFgeh+CqrPZ/jllExOJcitfcVJnCPPhlC7KQB0zTngJlFTUtwdcVIBqg==
+X-Received: by 2002:a9d:4041:: with SMTP id o1mr4924805oti.61.1569938405253;
+ Tue, 01 Oct 2019 07:00:05 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id m25sm5045457oie.39.2019.10.01.07.00.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 01 Oct 2019 07:00:04 -0700 (PDT)
+Date: Tue, 1 Oct 2019 09:00:03 -0500
+From: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v2 2/8] dt-bindings: sram: Convert SRAM bindings to
+ json-schema
+Message-ID: <20191001140003.GA31344@bogus>
+References: <20190918173141.4314-1-krzk@kernel.org>
+ <20190918173141.4314-2-krzk@kernel.org>
 MIME-Version: 1.0
-References: <20190919052822.10403-1-jagan@amarulasolutions.com>
- <20190919052822.10403-5-jagan@amarulasolutions.com> <4177305.6QI6aNXrAv@phil>
- <CAMty3ZBZ0kXsc-4EwUwy9rAHcDvhhYL1JWkyhhdvSvfRdyvvwA@mail.gmail.com>
-In-Reply-To: <CAMty3ZBZ0kXsc-4EwUwy9rAHcDvhhYL1JWkyhhdvSvfRdyvvwA@mail.gmail.com>
-From: Chen-Yu Tsai <wens@kernel.org>
-Date: Tue, 1 Oct 2019 19:01:09 +0800
-X-Gmail-Original-Message-ID: <CAGb2v67J_Dir72==ZxLmW-yeEsryWEJduVnHQiL96nn0vJEMcg@mail.gmail.com>
-Message-ID: <CAGb2v67J_Dir72==ZxLmW-yeEsryWEJduVnHQiL96nn0vJEMcg@mail.gmail.com>
-Subject: Re: [PATCH 4/6] arm64: dts: rockchip: Rename roc-pc with libretech
- notation
-To: Jagan Teki <jagan@amarulasolutions.com>
+Content-Disposition: inline
+In-Reply-To: <20190918173141.4314-2-krzk@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_040125_193319_6ED3B196 
-X-CRM114-Status: GOOD (  25.86  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191001_070008_766327_055E1956 
+X-CRM114-Status: GOOD (  25.22  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.210.67 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,89 +91,213 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Levin Du <djw@t-chip.com.cn>,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
- Da Xue <da@lessconfused.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>,
+ linux-riscv@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-leds@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ Herbert Xu <herbert@gondor.apana.org.au>, linux-clk@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, bcm-kernel-feedback-list@broadcom.com,
+ Guenter Roeck <linux@roeck-us.net>, devicetree@vger.kernel.org,
+ linux-watchdog@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org, Matt Mackall <mpm@selenic.com>,
+ linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-crypto@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Oct 1, 2019 at 6:34 PM Jagan Teki <jagan@amarulasolutions.com> wrote:
->
-> On Mon, Sep 30, 2019 at 3:02 AM Heiko Stuebner <heiko@sntech.de> wrote:
-> >
-> > Hi Jagan,
-> >
-> > Am Donnerstag, 19. September 2019, 07:28:20 CEST schrieb Jagan Teki:
-> > > Though the ROC-PC is manufactured by firefly, it is co-designed
-> > > by libretch like other Libretech computer boards from allwinner,
-> > > amlogic does.
-> > >
-> > > So, it is always meaningful to keep maintain those vendors who
-> > > are part of design participation so-that the linux mainline
-> > > code will expose outside world who are the makers of such
-> > > hardware prototypes.
-> > >
-> > > So, rename the existing rk3399-roc-pc.dts with libretch notation,
-> > > rk3399-libretech-roc-rk3399-pc.dts
-> > >
-> > > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > > ---
-> > >  arch/arm64/boot/dts/rockchip/Makefile                           | 2 +-
-> > >  .../{rk3399-roc-pc.dts => rk3399-libretech-roc-rk3399-pc.dts}   | 0
-> >
-> > Somewhat "randomly" renaming files for "exposure" of the maker isn't the
-> > way to go. Especially as the file name itself is merely a handle and not
-> > meant for fame. The board filename should mainly enable developers to
-> > hopefully the correct board file to use/change - and "rk3399-roc-pc"
-> > is sufficiently unique to do that.
-> >
-> > Similar to how the NanoPi boards do that.
-> >
-> > And renames not only loose the history of changes but also in this case
-> > the file is in the kernel since july 2018 - more than a year, so this might
-> > actually affect the workflow of someone.
->
-> Yes, I agreed this point.
->
-> >
-> > So I'd really expect an actual technical reason for a rename.
->
-> This changes purely based on the recent changes on naming conventions
-> that have been followed in amlogic and allwinner with regards to
-> libretech [1]. I have seen few Bananapi boards from Allwinner H3 has
-> been converted as per Libretech computer recently. I assume these
+On Wed, Sep 18, 2019 at 07:31:35PM +0200, Krzysztof Kozlowski wrote:
+> Convert generic mmio-sram bindings to DT schema format using
+> json-schema.
 
-The DTS file for AML-S905X-CC has never been renamed.
+I've been slow getting to this because I started on the same thing...
 
-The ALL-H3-CC was only reworked to split out the common bits to accommodate
-the different SoC (H3 vs H5) variants for the same board. Even after the
-rework, the board DTS files retained their original naming scheme. Same
-goes for the Bananapi M2+. However we have never renamed Bananapi files
-to Libretech.
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> 
+> ---
+> 
+> Changes since v1:
+> 1. Indent example with four spaces (more readable).
+> ---
+>  .../devicetree/bindings/sram/sram.txt         |  80 ----------
+>  .../devicetree/bindings/sram/sram.yaml        | 138 ++++++++++++++++++
+>  2 files changed, 138 insertions(+), 80 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/sram/sram.txt
+>  create mode 100644 Documentation/devicetree/bindings/sram/sram.yaml
 
-Since Libre Computer and Firefly both have the ROC-RK3399-PC, renaming
-it is likely to cause some confusion.
+> diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
+> new file mode 100644
+> index 000000000000..8d9d6ce494b2
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/sram/sram.yaml
+> @@ -0,0 +1,138 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/sram/sram.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Generic on-chip SRAM
+> +
+> +maintainers:
+> +  - FIXME <who@should.it.be>
 
-ChenYu
+You can put me.
 
-> changes are because libretech has part of co-designed vendor and also
-> open source forum supported for these hardware.
->
-> For further information, may be Da Xue can comment on this.
->
-> [1] https://libre.computer/products/boards/
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> +
+> +description: |+
+> +  Simple IO memory regions to be managed by the genalloc API.
+> +
+> +  Each child of the sram node specifies a region of reserved memory. Each
+> +  child node should use a 'reg' property to specify a specific range of
+> +  reserved memory.
+> +
+> +  Following the generic-names recommended practice, node names should
+> +  reflect the purpose of the node. Unit address (@<address>) should be
+> +  appended to the name.
+> +
+> +properties:
+> +  $nodename:
+> +    pattern: "^sram(@.*)?"
+> +
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - mmio-sram
+> +          - atmel,sama5d2-securam
+
+I was trying to go down the path of putting all the compatibles for 
+various SRAM bindings here, but I ran into some issues. I need to 
+revisit as I've forgotten the exact issue.
+
+This would need to be a 'contains' if this is going to work for others.
+
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  "#address-cells":
+> +    description: Should use the same values as the root node.
+> +
+> +  "#size-cells":
+> +    description: Should use the same values as the root node.
+
+I defined both of these to be 1 as 4GB of SRAM should be enough for a 
+while. We can debate 1 or 2 cells vs. 1, but there's no reason it has to 
+be the same as the root (unless we're failing to do address 
+translation).
+
+> +
+> +  ranges:
+> +    description:
+> +      Should translate from local addresses within the sram to bus addresses.
+> +
+> +  no-memory-wc:
+> +    description:
+> +      The flag indicating, that SRAM memory region has not to be remapped
+> +      as write combining. WC is used by default.
+> +    type: boolean
+> +
+> +  # TODO: additionalProperties: false
+> +
+> +patternProperties:
+> +  "^([a-z]*-)?sram@[a-f0-9]$":
+> +    type: object
+> +    description:
+> +      Each child of the sram node specifies a region of reserved memory.
+> +    properties:
+> +      reg:
+> +        description:
+> +          IO mem address range, relative to the SRAM range.
+
+maxItems: 1
+
+> +
+> +      compatible:
+> +        $ref: /schemas/types.yaml#/definitions/string
+> +        description:
+> +          Should contain a vendor specific string in the form
+> +          <vendor>,[<device>-]<usage>
+> +
+> +      pool:
+> +        description:
+> +          Indicates that the particular reserved SRAM area is addressable
+> +          and in use by another device or devices.
+> +        type: boolean
+> +
+> +      export:
+> +        description:
+> +          Indicates that the reserved SRAM area may be accessed outside
+> +          of the kernel, e.g. by bootloader or userspace.
+> +        type: boolean
+> +
+> +      protect-exec:
+> +        description: |
+> +          Same as 'pool' above but with the additional constraint that code
+> +          will be run from the region and that the memory is maintained as
+> +          read-only, executable during code execution. NOTE: This region must
+> +          be page aligned on start and end in order to properly allow
+> +          manipulation of the page attributes.
+> +        type: boolean
+> +
+> +      label:
+> +        $ref: /schemas/types.yaml#/definitions/string
+
+Already has a type definition.
+
+> +        description:
+> +          The name for the reserved partition, if omitted, the label is taken
+> +          from the node name excluding the unit address.
+> +
+> +      clocks:
+> +        description:
+> +          A list of phandle and clock specifier pair that controls the
+> +          single SRAM clock.
+> +
+> +      # TODO: additionalProperties: false
+> +
+> +    required:
+> +      - reg
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - "#address-cells"
+> +  - "#size-cells"
+> +  - ranges
+> +
+> +examples:
+> +  - |
+> +    sram: sram@5c000000 {
+> +        compatible = "mmio-sram";
+> +        reg = <0x5c000000 0x40000>; /* 256 KiB SRAM at address 0x5c000000 */
+> +
+> +        #address-cells = <1>;
+> +        #size-cells = <1>;
+> +        ranges = <0 0x5c000000 0x40000>;
+> +
+> +        smp-sram@100 {
+> +            compatible = "socvendor,smp-sram";
+> +            reg = <0x100 0x50>;
+> +        };
+> +
+> +        device-sram@1000 {
+> +            reg = <0x1000 0x1000>;
+> +            pool;
+> +        };
+> +
+> +        exported@20000 {
+> +            reg = <0x20000 0x20000>;
+> +            export;
+> +        };
+> +    };
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
