@@ -2,83 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A956DC3690
-	for <lists+linux-rockchip@lfdr.de>; Tue,  1 Oct 2019 16:00:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D80DC380D
+	for <lists+linux-rockchip@lfdr.de>; Tue,  1 Oct 2019 16:51:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BSSWzgqoC+BWwOI3FyXohf7DDxWvMjXF5x1s+mLHRFE=; b=gB21pRWXXvVPkB
-	UKc0afj9itsRf3xeP+DqJdiZ4kHRmUB77NfCvYi2X67VR98YT9ib2lqakx7MS4eafukpZyBgFPlwj
-	1y4ckCbHHYN32abxA4wCUlgi9YMlGBdWVjBOaHqQo5DlNSRqchqpnthT3MHvAckVxuu7hYd0iuQ1S
-	JSZtXLAjqVpK6YaeryBKO6EYShscfOVix03Q7JwDtg+WZy2B1DUNB6nGmFhipRZPGuzNCu9AqbsDj
-	4D8PR5sika9n5L/CEUBO2gBoe7LkIrUJd39UCRlCc2VCmpDWR+4zd4A3jOt468CItJL3HBMmRk32a
-	OoCzlxpTpHeLjjdrMnDg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RrfoGWl30WHICWXH7nMUrKELxfS4X2mP26U96TgXY2M=; b=IhsFVCnLruMOWhiGN4oAA9NIp
+	FMFuUW29rlDgS4zd7kb2mGI9yhSVX/GLRwsfDFSsiHpvn6zTMKVSeNkt02W6kmw2h1NmesD5WX+7c
+	CVzaXCXCxm4jofGhkIFnS23IAfhEh/m7bREibF9S7eHvHUaCmxtMA6bbHD/6CK3R2QPo0xdp9AjRS
+	rdQRcTusc3LKq7jr5yr8HdYwgBFyVk8reyPnXKBMefeh34ZnbXiDDXlj7doh5uCaN7g+IzlW2eNrF
+	6xAIACpzMdWhzBTdUsfUpg4ijCEHBF2ekYJRPb2WsOhX7NwbsQ7j174Z0eOB85sKOHeSMWpxOrpPV
+	NaT9buoeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFIhZ-0007Az-1c; Tue, 01 Oct 2019 14:00:29 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1iFJUS-00015P-6r; Tue, 01 Oct 2019 14:51:00 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFIhE-0005hV-NM; Tue, 01 Oct 2019 14:00:10 +0000
-Received: by mail-ot1-f67.google.com with SMTP id 41so11583743oti.12;
- Tue, 01 Oct 2019 07:00:05 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=JZBM1FPFDAl5uESgEP9tPsFTn7qdNx8IBtQzRJpA2CU=;
- b=aer6VLjy8+Mr+vQ6cQvBMdfgqgu9nPxjI/HVtzbNs17eS4WQIrx7VhKmV+379e7uGZ
- upbO7DFwGhnzp85mQGVTVjjCE02L+Pxngrijdyv1OQg87Yz+uz9OKArRCQfhlX+1p5KB
- 9pwyGIJ1QrJZ0SSQipFejRg7tD5/f/qmr5DQotiMqz2URN9FbcI6bCKZBTcDoxcqxAKj
- 4yUAeCbwNIcA2mBIygnmdIEslCpAW8Lbsrusy0YtjHMKe9fBre8D6Hmn7EbNqdNqcjPI
- BjCsoFfxEwvBbOnrTbhQtfId6uZIuA9eA1VrYGKtBKWLXoUEG7DnTDtAj4Zq3KfmdnKq
- 0xQw==
-X-Gm-Message-State: APjAAAULyc1f2eHQAGxbnrFdYy2+xGHaM1baQH+T9SEqFLftKVST9bpN
- 6cBZ3DQsnCaTVIzscKUXQQ==
-X-Google-Smtp-Source: APXvYqyny3jSQCJcTq07B8NFgeh+CqrPZ/jllExOJcitfcVJnCPPhlC7KQB0zTngJlFTUtwdcVIBqg==
-X-Received: by 2002:a9d:4041:: with SMTP id o1mr4924805oti.61.1569938405253;
- Tue, 01 Oct 2019 07:00:05 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id m25sm5045457oie.39.2019.10.01.07.00.04
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 01 Oct 2019 07:00:04 -0700 (PDT)
-Date: Tue, 1 Oct 2019 09:00:03 -0500
-From: Rob Herring <robh@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH v2 2/8] dt-bindings: sram: Convert SRAM bindings to
- json-schema
-Message-ID: <20191001140003.GA31344@bogus>
-References: <20190918173141.4314-1-krzk@kernel.org>
- <20190918173141.4314-2-krzk@kernel.org>
+ id 1iFJUN-00013M-PV
+ for linux-rockchip@lists.infradead.org; Tue, 01 Oct 2019 14:50:58 +0000
+X-Originating-IP: 2.224.242.101
+Received: from uno.localdomain (2-224-242-101.ip172.fastwebnet.it
+ [2.224.242.101]) (Authenticated sender: jacopo@jmondi.org)
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 4BF9D40004;
+ Tue,  1 Oct 2019 14:50:39 +0000 (UTC)
+Date: Tue, 1 Oct 2019 16:52:22 +0200
+From: Jacopo Mondi <jacopo@jmondi.org>
+To: Ezequiel Garcia <ezequiel@collabora.com>
+Subject: Re: [PATCH v3 5/5] RFC: drm/atomic-helper: Reapply color
+ transformation after resume
+Message-ID: <20191001145222.32aapomoqlaxpvbb@uno.localdomain>
+References: <20190930222802.32088-1-ezequiel@collabora.com>
+ <20190930222802.32088-6-ezequiel@collabora.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190918173141.4314-2-krzk@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190930222802.32088-6-ezequiel@collabora.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_070008_766327_055E1956 
-X-CRM114-Status: GOOD (  25.22  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191001_075056_128456_E80615CD 
+X-CRM114-Status: GOOD (  20.02  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.210.67 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.194 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,215 +63,118 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>,
- linux-riscv@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-leds@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- Herbert Xu <herbert@gondor.apana.org.au>, linux-clk@vger.kernel.org,
- linux-rockchip@lists.infradead.org, bcm-kernel-feedback-list@broadcom.com,
- Guenter Roeck <linux@roeck-us.net>, devicetree@vger.kernel.org,
- linux-watchdog@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org, Matt Mackall <mpm@selenic.com>,
- linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-crypto@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko =?utf-8?Q?St=C3=BCbner?= <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
+ Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Sean Paul <seanpaul@chromium.org>, Rob Herring <robh+dt@kernel.org>,
+ kernel@collabora.com, Ilia Mirkin <imirkin@alum.mit.edu>
+Content-Type: multipart/mixed; boundary="===============5724696589098431261=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Sep 18, 2019 at 07:31:35PM +0200, Krzysztof Kozlowski wrote:
-> Convert generic mmio-sram bindings to DT schema format using
-> json-schema.
 
-I've been slow getting to this because I started on the same thing...
+--===============5724696589098431261==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="zl62uyu5oe5zzls3"
+Content-Disposition: inline
 
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> 
+
+--zl62uyu5oe5zzls3
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+
+Hi Ezequiel,
+
+On Mon, Sep 30, 2019 at 07:28:02PM -0300, Ezequiel Garcia wrote:
+> Some platforms are not able to maintain the color transformation
+> state after a system suspend/resume cycle.
+>
+> Set the colog_mgmt_changed flag so that CMM on the CRTCs in
+
+CMM is the name of the Renesas unit for color enanchement. It should
+not be used here as this will apply to all platforms.
+
+> the suspend state are reapplied after system resume.
+>
+> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
 > ---
-> 
-> Changes since v1:
-> 1. Indent example with four spaces (more readable).
+> This is an RFC, and it's mostly based on Jacopo Mondi's work https://lkml.org/lkml/2019/9/6/498.
+>
+> Changes from v2:
+> * New patch.
 > ---
->  .../devicetree/bindings/sram/sram.txt         |  80 ----------
->  .../devicetree/bindings/sram/sram.yaml        | 138 ++++++++++++++++++
->  2 files changed, 138 insertions(+), 80 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/sram/sram.txt
->  create mode 100644 Documentation/devicetree/bindings/sram/sram.yaml
+>  drivers/gpu/drm/drm_atomic_helper.c | 12 ++++++++++++
+>  1 file changed, 12 insertions(+)
+>
+> diff --git a/drivers/gpu/drm/drm_atomic_helper.c b/drivers/gpu/drm/drm_atomic_helper.c
+> index e41db0f202ca..518488125575 100644
+> --- a/drivers/gpu/drm/drm_atomic_helper.c
+> +++ b/drivers/gpu/drm/drm_atomic_helper.c
+> @@ -3234,8 +3234,20 @@ int drm_atomic_helper_resume(struct drm_device *dev,
+>  			     struct drm_atomic_state *state)
+>  {
+>  	struct drm_modeset_acquire_ctx ctx;
+> +	struct drm_crtc_state *crtc_state;
+> +	struct drm_crtc *crtc;
+> +	unsigned int i;
+>  	int err;
+>
+> +	for_each_new_crtc_in_state(state, crtc, crtc_state, i) {
+> +		/*
+> +		 * Force re-enablement of CMM after system resume if any
+> +		 * of the DRM color transformation properties was set in
+> +		 * the state saved at system suspend time.
+> +		 */
+> +		if (crtc_state->gamma_lut)
 
-> diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
-> new file mode 100644
-> index 000000000000..8d9d6ce494b2
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/sram/sram.yaml
-> @@ -0,0 +1,138 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/sram/sram.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Generic on-chip SRAM
-> +
-> +maintainers:
-> +  - FIXME <who@should.it.be>
+Please note that in my original patch I only took gamma_lut into
+account as that's what our CMM supports at the moment, but you should
+here consider the degamma_lut and cmt flags in the crtc_state.
 
-You can put me.
+> +			crtc_state->color_mgmt_changed = true;
+> +	}
+>  	drm_mode_config_reset(dev);
+>
+>  	DRM_MODESET_LOCK_ALL_BEGIN(dev, ctx, 0, err);
+> --
+> 2.22.0
+>
 
-> +
-> +description: |+
-> +  Simple IO memory regions to be managed by the genalloc API.
-> +
-> +  Each child of the sram node specifies a region of reserved memory. Each
-> +  child node should use a 'reg' property to specify a specific range of
-> +  reserved memory.
-> +
-> +  Following the generic-names recommended practice, node names should
-> +  reflect the purpose of the node. Unit address (@<address>) should be
-> +  appended to the name.
-> +
-> +properties:
-> +  $nodename:
-> +    pattern: "^sram(@.*)?"
-> +
-> +  compatible:
-> +    items:
-> +      - enum:
-> +          - mmio-sram
-> +          - atmel,sama5d2-securam
+--zl62uyu5oe5zzls3
+Content-Type: application/pgp-signature; name="signature.asc"
 
-I was trying to go down the path of putting all the compatibles for 
-various SRAM bindings here, but I ran into some issues. I need to 
-revisit as I've forgotten the exact issue.
+-----BEGIN PGP SIGNATURE-----
 
-This would need to be a 'contains' if this is going to work for others.
+iQIzBAABCAAdFiEEtcQ9SICaIIqPWDjAcjQGjxahVjwFAl2TaCYACgkQcjQGjxah
+VjyNJA//aSwBuTdB7lLcaiEaE+P3RsAcLZl6sS/EGaTO5tsvgJD43qhcW0FyAZdV
+8ABNJ3e+W7ZgTzkHWVBvs6Y5eQlE3AvvAhXFPEjL9ca9Y/rRLgcF6mQ8GQCqsYO7
+dvBkd1bpWG7XBOO5KzSLSDbIsjDRmDbpFVQHtTWDJZN/LzIqZHoGPZL9Tc7yoAY7
+9MW3av52glPOWqTJj9zscg/Y7BWuapCmmPPV97iLUPKVtvN/G+2fgIVxushM2e3K
+TJvYsU63CZ5pzKX1U02UBbs0KKsENRRjWCTcGs2gf5xq0WhBs+lC0uZAclNkw/lu
+wd5ehPD3CaE2NiBECnHtptxEZE+jMzzP7jmDojYHILG0NqV6pcVVHdZsYK7AE/qb
+CfqDtLn6HnbaZZcia7Smp50QpTGY5z46Qe9l15CH/wtzjywwyKyl9GvuEK18ycx5
+6iwGZW0PYHJnAQwh0U4F92akAXIOf5xfpW2358jlIr8iwmSE5UgrqA4YcDDPGDfs
+7YvBDUBn/Bs0RYUetb/+HI5rcYZsWdBkpL/cHP6y+8yItmdS9IyYlHS6pXxm3X04
+dS7tEaUs29GYJKsVshqq7ORctg0pd4ebsSsZeyqTLq7YmzXefjzpHihSvuKt0oMU
+pqCdnYKZkFUm70gLJXTHVVjSty7YOBB428DgPlWTFmgNUvVUqec=
+=hYRk
+-----END PGP SIGNATURE-----
 
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  "#address-cells":
-> +    description: Should use the same values as the root node.
-> +
-> +  "#size-cells":
-> +    description: Should use the same values as the root node.
+--zl62uyu5oe5zzls3--
 
-I defined both of these to be 1 as 4GB of SRAM should be enough for a 
-while. We can debate 1 or 2 cells vs. 1, but there's no reason it has to 
-be the same as the root (unless we're failing to do address 
-translation).
 
-> +
-> +  ranges:
-> +    description:
-> +      Should translate from local addresses within the sram to bus addresses.
-> +
-> +  no-memory-wc:
-> +    description:
-> +      The flag indicating, that SRAM memory region has not to be remapped
-> +      as write combining. WC is used by default.
-> +    type: boolean
-> +
-> +  # TODO: additionalProperties: false
-> +
-> +patternProperties:
-> +  "^([a-z]*-)?sram@[a-f0-9]$":
-> +    type: object
-> +    description:
-> +      Each child of the sram node specifies a region of reserved memory.
-> +    properties:
-> +      reg:
-> +        description:
-> +          IO mem address range, relative to the SRAM range.
-
-maxItems: 1
-
-> +
-> +      compatible:
-> +        $ref: /schemas/types.yaml#/definitions/string
-> +        description:
-> +          Should contain a vendor specific string in the form
-> +          <vendor>,[<device>-]<usage>
-> +
-> +      pool:
-> +        description:
-> +          Indicates that the particular reserved SRAM area is addressable
-> +          and in use by another device or devices.
-> +        type: boolean
-> +
-> +      export:
-> +        description:
-> +          Indicates that the reserved SRAM area may be accessed outside
-> +          of the kernel, e.g. by bootloader or userspace.
-> +        type: boolean
-> +
-> +      protect-exec:
-> +        description: |
-> +          Same as 'pool' above but with the additional constraint that code
-> +          will be run from the region and that the memory is maintained as
-> +          read-only, executable during code execution. NOTE: This region must
-> +          be page aligned on start and end in order to properly allow
-> +          manipulation of the page attributes.
-> +        type: boolean
-> +
-> +      label:
-> +        $ref: /schemas/types.yaml#/definitions/string
-
-Already has a type definition.
-
-> +        description:
-> +          The name for the reserved partition, if omitted, the label is taken
-> +          from the node name excluding the unit address.
-> +
-> +      clocks:
-> +        description:
-> +          A list of phandle and clock specifier pair that controls the
-> +          single SRAM clock.
-> +
-> +      # TODO: additionalProperties: false
-> +
-> +    required:
-> +      - reg
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - "#address-cells"
-> +  - "#size-cells"
-> +  - ranges
-> +
-> +examples:
-> +  - |
-> +    sram: sram@5c000000 {
-> +        compatible = "mmio-sram";
-> +        reg = <0x5c000000 0x40000>; /* 256 KiB SRAM at address 0x5c000000 */
-> +
-> +        #address-cells = <1>;
-> +        #size-cells = <1>;
-> +        ranges = <0 0x5c000000 0x40000>;
-> +
-> +        smp-sram@100 {
-> +            compatible = "socvendor,smp-sram";
-> +            reg = <0x100 0x50>;
-> +        };
-> +
-> +        device-sram@1000 {
-> +            reg = <0x1000 0x1000>;
-> +            pool;
-> +        };
-> +
-> +        exported@20000 {
-> +            reg = <0x20000 0x20000>;
-> +            export;
-> +        };
-> +    };
-> -- 
-> 2.17.1
-> 
+--===============5724696589098431261==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============5724696589098431261==--
+
