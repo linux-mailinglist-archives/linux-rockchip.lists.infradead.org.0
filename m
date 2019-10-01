@@ -2,81 +2,88 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D499C38DF
-	for <lists+linux-rockchip@lfdr.de>; Tue,  1 Oct 2019 17:24:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D005AC4421
+	for <lists+linux-rockchip@lfdr.de>; Wed,  2 Oct 2019 01:08:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AY6nCUudTTU/Pi0AAvC/QfTvxS0DjTSM1Mghk/M0grU=; b=CgYJLgBISErG0F
-	2ZIfcm0z4RNNMvkAZ1TkTXTvkhiJrgK9SioQmdqA7jCbR7dslkh23fy7dFA+a7BbboCqT67ppdmh3
-	27jzdxKtPSaUPeTKfZZRRHbilxPGg7yiTItqUfoGhLlQrFTLY2LytRUwfUHhy8YCrYyuBEBAGvBsS
-	dhi0bMfdyOj9uO5K1N29/z6drdFzUlin68WBX5hYkf5nAmGvByeOPXqDIgNQAjGvJmZ4R0bpkLwAi
-	DDZehDZ6vJPCNuLKryeBf3lAPHIPFHEM5ClAICSC5ncUEwZbEuX43WFiu0AKumWFQmMKQiMu+3V0s
-	cfVnMf2IDy/aEjLio9iQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=U78wmXgMS7cRLNmbnZfTPjuakAAtGfiR9nestHk1vlQ=; b=nVlszih/oTTNa/
+	Q76qrMsawXqOkyz0DGdWIVYGsHxoyBdZApHdXcQPZWYzu6z/4DIg8/RzFw/ZmZFoykPxC2uXXHyju
+	AZYUpqFldeMy4ILSStqUHrUyw+jpKZEWAHN7bAaGA6qr+Kc1qTXnH7Uii/Hzwk8pa1ovHan8XSRWP
+	lf5X9TH3wjJDNsVmGRFewTczv/uHWHczhJhojk2SpM3YJLWkrhDBM0MyubYsrR/Do7HKMV7CBdtA5
+	OG34FcHpdfhF4GXjkWkgC5oh7wIm8DsJNaHvXGr/Qo7HydvSzpyaCnXcla0ALqSKDmUCPuNSyrL4q
+	EeLbFTC3Naq6iLXVeYKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFK18-0006LB-8V; Tue, 01 Oct 2019 15:24:46 +0000
-Received: from mail-wm1-f66.google.com ([209.85.128.66])
+	id 1iFRFJ-0004ix-49; Tue, 01 Oct 2019 23:07:53 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFK0w-00069J-BY; Tue, 01 Oct 2019 15:24:36 +0000
-Received: by mail-wm1-f66.google.com with SMTP id v17so3707217wml.4;
- Tue, 01 Oct 2019 08:24:31 -0700 (PDT)
+ id 1iFRFF-0004hP-E0
+ for linux-rockchip@lists.infradead.org; Tue, 01 Oct 2019 23:07:51 +0000
+Received: by mail-pg1-x542.google.com with SMTP id y35so10785900pgl.1
+ for <linux-rockchip@lists.infradead.org>; Tue, 01 Oct 2019 16:07:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=+Nf7W/69rcbuSCjp3T5cjBQS4Gd3M1DUTau7shEAvBo=;
+ b=TqlVV4aRNdNJI/F4t+UvY1imNZCNpHkFYzdwAZRWjvxazB056mnYe1qHRWC6KUYq+z
+ iSJNy6Os93x9pQOaW/lYUA3GScy2NV3Wlsk6OHQFWvbZS0F1cT0NtKV48S1jve0inqDy
+ 3weCrTIfx4rISC/82sP2LHIKHMYbaJANnsEwQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=qIz20MyIeJ4YRS3q69VVUyLU1/qqd5R6Zf74yV/b9ww=;
- b=Jo2Strk3UOyLXIsdvUM36G6pAbxSbf6qgbRgkdC/iWHvWI/Q/8nuVrSVVndYYEgEuz
- UYKO1HvkdAit5nxpX+Ytn3BEvXADSYvvbLIJ58td6BOWq4Acck1EPWp6eAE7JOjrTpy8
- q2JtuPEREVOtHsP+yky3lN64xS0v4w7+ITA9z2xn1uLY+HkZgckzaBwj9aN66/41tYxR
- xQ+wCxCRSU0f6zpoPHoQZYU9YwWRFrcSExqyH565OjPB2eH2TY21AwxLobqIsH5m/+iK
- 6helwP5KFxPGdrD+R7p8PoOEt/iLUmzsL+uUIlLKRP8qKXLwZXyR+5d5L7tB98CpjAeM
- evWw==
-X-Gm-Message-State: APjAAAWGD3Q6Gpp9z9o2Kxc2GQ+FQzUidJW0oEslexKGk/Tw9uzsMys6
- LuuVxqDEkUfkjkBhEq/4vmc=
-X-Google-Smtp-Source: APXvYqzgA01GZd24cae9Ug02bMZVgbmEoHDdIAy+uHttgtTk16j30giNWmxHikB8fPnYof+FbNzouQ==
-X-Received: by 2002:a1c:60c1:: with SMTP id u184mr4104201wmb.32.1569943469278; 
- Tue, 01 Oct 2019 08:24:29 -0700 (PDT)
-Received: from pi3 ([194.230.155.145])
- by smtp.googlemail.com with ESMTPSA id i1sm4699293wmb.19.2019.10.01.08.24.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 01 Oct 2019 08:24:28 -0700 (PDT)
-Date: Tue, 1 Oct 2019 17:24:22 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 2/8] dt-bindings: sram: Convert SRAM bindings to
- json-schema
-Message-ID: <20191001152422.GA31358@pi3>
-References: <20190918173141.4314-1-krzk@kernel.org>
- <20190918173141.4314-2-krzk@kernel.org>
- <20191001140003.GA31344@bogus>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=+Nf7W/69rcbuSCjp3T5cjBQS4Gd3M1DUTau7shEAvBo=;
+ b=tHr90Yfn9uJnT3Rw8YPRIAJLcEfNWsFSBc5Dhet3mwJqm9aUoh00+gEK8F5zG7stpr
+ 398eklmPoi1SoAtuRxZ/CTLy/B2a/u97TQ2SX916f4/AGOMMKc58TxFGHFQ0a/TOBI97
+ iA7z4ArlFEC8DH+Sd5fgAvcPycSwU6hfIwqQhb9gRhf8dd4LrEs49OmAo4oWijlTk0QO
+ ulIY19gQD3LuKA2+Qbr77HaZJbdSDJxlzFAm7FPFNX+2M+XFIEMQxNYeKUsBpFxK4KsD
+ 0J5OJQuZtLsu6OISORzc3cyE6+D7bVaeQd262GknITthKKDyV5j/SIKV4qpBWYTOvjfq
+ 8AnQ==
+X-Gm-Message-State: APjAAAVX1wyJDZrSorLDfB1t/+DRxzpDEk+E6FSPf+j+SOsfYxccLQ1r
+ sYawloBcTVoRXLGoIwYXrCinZw==
+X-Google-Smtp-Source: APXvYqwHNpEZQEilkNVmA3O5/XhCn/v8v+BBDw5V7KfhdqV5vHV6BNpopnq9XLH3i0O2OgOBpUpVkw==
+X-Received: by 2002:a17:90a:170e:: with SMTP id
+ z14mr721514pjd.119.1569971268070; 
+ Tue, 01 Oct 2019 16:07:48 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:4fff:7a6b:a335:8fde])
+ by smtp.gmail.com with ESMTPSA id y10sm15879881pfe.148.2019.10.01.16.07.47
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 01 Oct 2019 16:07:47 -0700 (PDT)
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH] ARM: dts: rockchip: Use interpolated brightness tables for
+ veyron
+Date: Tue,  1 Oct 2019 16:07:43 -0700
+Message-Id: <20191001160735.1.Ic9fd698810ea569c465350154da40b85d24f805b@changeid>
+X-Mailer: git-send-email 2.23.0.444.g18eeb5a265-goog
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191001140003.GA31344@bogus>
-User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_082434_397814_C59E4372 
-X-CRM114-Status: GOOD (  26.96  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191001_160749_499553_2D7C6984 
+X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.66 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.66 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,182 +96,219 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>,
- linux-riscv@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-leds@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- Herbert Xu <herbert@gondor.apana.org.au>, linux-clk@vger.kernel.org,
- linux-rockchip@lists.infradead.org, bcm-kernel-feedback-list@broadcom.com,
- Guenter Roeck <linux@roeck-us.net>, devicetree@vger.kernel.org,
- linux-watchdog@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org, Matt Mackall <mpm@selenic.com>,
- linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-crypto@vger.kernel.org
+Cc: devicetree@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Matthias Kaehlcke <mka@chromium.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Oct 01, 2019 at 09:00:03AM -0500, Rob Herring wrote:
-> On Wed, Sep 18, 2019 at 07:31:35PM +0200, Krzysztof Kozlowski wrote:
-> > Convert generic mmio-sram bindings to DT schema format using
-> > json-schema.
-> 
-> I've been slow getting to this because I started on the same thing...
-> 
-> > 
-> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> > 
-> > ---
-> > 
-> > Changes since v1:
-> > 1. Indent example with four spaces (more readable).
-> > ---
-> >  .../devicetree/bindings/sram/sram.txt         |  80 ----------
-> >  .../devicetree/bindings/sram/sram.yaml        | 138 ++++++++++++++++++
-> >  2 files changed, 138 insertions(+), 80 deletions(-)
-> >  delete mode 100644 Documentation/devicetree/bindings/sram/sram.txt
-> >  create mode 100644 Documentation/devicetree/bindings/sram/sram.yaml
-> 
-> > diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
-> > new file mode 100644
-> > index 000000000000..8d9d6ce494b2
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/sram/sram.yaml
-> > @@ -0,0 +1,138 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/sram/sram.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Generic on-chip SRAM
-> > +
-> > +maintainers:
-> > +  - FIXME <who@should.it.be>
-> 
-> You can put me.
+Use interpolated brightness tables (added by commit 573fe6d1c25
+("backlight: pwm_bl: Linear interpolation between
+brightness-levels") for veyron, instead of specifying every single
+step.
 
-Sure.
+Another option would be to switch to a perceptual brightness curve
+(CIE 1931), with the caveat that it would change the behavior of
+the backlight. Also the concept of a minimum brightness level is
+currently not supported for CIE 1931 curves.
 
-> 
-> > +
-> > +description: |+
-> > +  Simple IO memory regions to be managed by the genalloc API.
-> > +
-> > +  Each child of the sram node specifies a region of reserved memory. Each
-> > +  child node should use a 'reg' property to specify a specific range of
-> > +  reserved memory.
-> > +
-> > +  Following the generic-names recommended practice, node names should
-> > +  reflect the purpose of the node. Unit address (@<address>) should be
-> > +  appended to the name.
-> > +
-> > +properties:
-> > +  $nodename:
-> > +    pattern: "^sram(@.*)?"
-> > +
-> > +  compatible:
-> > +    items:
-> > +      - enum:
-> > +          - mmio-sram
-> > +          - atmel,sama5d2-securam
-> 
-> I was trying to go down the path of putting all the compatibles for 
-> various SRAM bindings here, but I ran into some issues. I need to 
-> revisit as I've forgotten the exact issue.
-> 
-> This would need to be a 'contains' if this is going to work for others.
+Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+---
 
-OK.
+ arch/arm/boot/dts/rk3288-veyron-edp.dtsi   | 35 ++--------------------
+ arch/arm/boot/dts/rk3288-veyron-jaq.dts    | 35 ++--------------------
+ arch/arm/boot/dts/rk3288-veyron-minnie.dts | 35 ++--------------------
+ arch/arm/boot/dts/rk3288-veyron-tiger.dts  | 35 ++--------------------
+ 4 files changed, 8 insertions(+), 132 deletions(-)
 
-> 
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  "#address-cells":
-> > +    description: Should use the same values as the root node.
-> > +
-> > +  "#size-cells":
-> > +    description: Should use the same values as the root node.
-> 
-> I defined both of these to be 1 as 4GB of SRAM should be enough for a 
-> while. We can debate 1 or 2 cells vs. 1, but there's no reason it has to 
-> be the same as the root (unless we're failing to do address 
-> translation).
-
-That was copied from txt version. I can adjust them to 1 although this
-is will more than simple conversion.
-
-> 
-> > +
-> > +  ranges:
-> > +    description:
-> > +      Should translate from local addresses within the sram to bus addresses.
-> > +
-> > +  no-memory-wc:
-> > +    description:
-> > +      The flag indicating, that SRAM memory region has not to be remapped
-> > +      as write combining. WC is used by default.
-> > +    type: boolean
-> > +
-> > +  # TODO: additionalProperties: false
-> > +
-> > +patternProperties:
-> > +  "^([a-z]*-)?sram@[a-f0-9]$":
-> > +    type: object
-> > +    description:
-> > +      Each child of the sram node specifies a region of reserved memory.
-> > +    properties:
-> > +      reg:
-> > +        description:
-> > +          IO mem address range, relative to the SRAM range.
-> 
-> maxItems: 1
-
-OK
-
-> 
-> > +
-> > +      compatible:
-> > +        $ref: /schemas/types.yaml#/definitions/string
-> > +        description:
-> > +          Should contain a vendor specific string in the form
-> > +          <vendor>,[<device>-]<usage>
-> > +
-> > +      pool:
-> > +        description:
-> > +          Indicates that the particular reserved SRAM area is addressable
-> > +          and in use by another device or devices.
-> > +        type: boolean
-> > +
-> > +      export:
-> > +        description:
-> > +          Indicates that the reserved SRAM area may be accessed outside
-> > +          of the kernel, e.g. by bootloader or userspace.
-> > +        type: boolean
-> > +
-> > +      protect-exec:
-> > +        description: |
-> > +          Same as 'pool' above but with the additional constraint that code
-> > +          will be run from the region and that the memory is maintained as
-> > +          read-only, executable during code execution. NOTE: This region must
-> > +          be page aligned on start and end in order to properly allow
-> > +          manipulation of the page attributes.
-> > +        type: boolean
-> > +
-> > +      label:
-> > +        $ref: /schemas/types.yaml#/definitions/string
-> 
-> Already has a type definition.
-
-OK
-
-Best regards,
-Krzysztof
+diff --git a/arch/arm/boot/dts/rk3288-veyron-edp.dtsi b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
+index 773bedca872f..e95c89fe0545 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
++++ b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
+@@ -41,39 +41,8 @@
+ 
+ 	backlight: backlight {
+ 		compatible = "pwm-backlight";
+-		brightness-levels = <
+-			  0   1   2   3   4   5   6   7
+-			  8   9  10  11  12  13  14  15
+-			 16  17  18  19  20  21  22  23
+-			 24  25  26  27  28  29  30  31
+-			 32  33  34  35  36  37  38  39
+-			 40  41  42  43  44  45  46  47
+-			 48  49  50  51  52  53  54  55
+-			 56  57  58  59  60  61  62  63
+-			 64  65  66  67  68  69  70  71
+-			 72  73  74  75  76  77  78  79
+-			 80  81  82  83  84  85  86  87
+-			 88  89  90  91  92  93  94  95
+-			 96  97  98  99 100 101 102 103
+-			104 105 106 107 108 109 110 111
+-			112 113 114 115 116 117 118 119
+-			120 121 122 123 124 125 126 127
+-			128 129 130 131 132 133 134 135
+-			136 137 138 139 140 141 142 143
+-			144 145 146 147 148 149 150 151
+-			152 153 154 155 156 157 158 159
+-			160 161 162 163 164 165 166 167
+-			168 169 170 171 172 173 174 175
+-			176 177 178 179 180 181 182 183
+-			184 185 186 187 188 189 190 191
+-			192 193 194 195 196 197 198 199
+-			200 201 202 203 204 205 206 207
+-			208 209 210 211 212 213 214 215
+-			216 217 218 219 220 221 222 223
+-			224 225 226 227 228 229 230 231
+-			232 233 234 235 236 237 238 239
+-			240 241 242 243 244 245 246 247
+-			248 249 250 251 252 253 254 255>;
++		brightness-levels = <0 255>;
++		num-interpolated-steps = <254>;
+ 		default-brightness-level = <128>;
+ 		enable-gpios = <&gpio7 RK_PA2 GPIO_ACTIVE_HIGH>;
+ 		pinctrl-names = "default";
+diff --git a/arch/arm/boot/dts/rk3288-veyron-jaq.dts b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
+index 56ad9a43a6c2..5e10cc644875 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-jaq.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
+@@ -21,39 +21,8 @@
+ 
+ &backlight {
+ 	/* Jaq panel PWM must be >= 3%, so start non-zero brightness at 8 */
+-	brightness-levels = <
+-		  0
+-		  8   9  10  11  12  13  14  15
+-		 16  17  18  19  20  21  22  23
+-		 24  25  26  27  28  29  30  31
+-		 32  33  34  35  36  37  38  39
+-		 40  41  42  43  44  45  46  47
+-		 48  49  50  51  52  53  54  55
+-		 56  57  58  59  60  61  62  63
+-		 64  65  66  67  68  69  70  71
+-		 72  73  74  75  76  77  78  79
+-		 80  81  82  83  84  85  86  87
+-		 88  89  90  91  92  93  94  95
+-		 96  97  98  99 100 101 102 103
+-		104 105 106 107 108 109 110 111
+-		112 113 114 115 116 117 118 119
+-		120 121 122 123 124 125 126 127
+-		128 129 130 131 132 133 134 135
+-		136 137 138 139 140 141 142 143
+-		144 145 146 147 148 149 150 151
+-		152 153 154 155 156 157 158 159
+-		160 161 162 163 164 165 166 167
+-		168 169 170 171 172 173 174 175
+-		176 177 178 179 180 181 182 183
+-		184 185 186 187 188 189 190 191
+-		192 193 194 195 196 197 198 199
+-		200 201 202 203 204 205 206 207
+-		208 209 210 211 212 213 214 215
+-		216 217 218 219 220 221 222 223
+-		224 225 226 227 228 229 230 231
+-		232 233 234 235 236 237 238 239
+-		240 241 242 243 244 245 246 247
+-		248 249 250 251 252 253 254 255>;
++	brightness-levels = <8 255>;
++	num-interpolated-steps = <246>;
+ };
+ 
+ &rk808 {
+diff --git a/arch/arm/boot/dts/rk3288-veyron-minnie.dts b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+index 6b0e1cb1f681..503278e60d6b 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-minnie.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+@@ -39,39 +39,8 @@
+ 
+ &backlight {
+ 	/* Minnie panel PWM must be >= 1%, so start non-zero brightness at 3 */
+-	brightness-levels = <
+-			  0   3   4   5   6   7
+-			  8   9  10  11  12  13  14  15
+-			 16  17  18  19  20  21  22  23
+-			 24  25  26  27  28  29  30  31
+-			 32  33  34  35  36  37  38  39
+-			 40  41  42  43  44  45  46  47
+-			 48  49  50  51  52  53  54  55
+-			 56  57  58  59  60  61  62  63
+-			 64  65  66  67  68  69  70  71
+-			 72  73  74  75  76  77  78  79
+-			 80  81  82  83  84  85  86  87
+-			 88  89  90  91  92  93  94  95
+-			 96  97  98  99 100 101 102 103
+-			104 105 106 107 108 109 110 111
+-			112 113 114 115 116 117 118 119
+-			120 121 122 123 124 125 126 127
+-			128 129 130 131 132 133 134 135
+-			136 137 138 139 140 141 142 143
+-			144 145 146 147 148 149 150 151
+-			152 153 154 155 156 157 158 159
+-			160 161 162 163 164 165 166 167
+-			168 169 170 171 172 173 174 175
+-			176 177 178 179 180 181 182 183
+-			184 185 186 187 188 189 190 191
+-			192 193 194 195 196 197 198 199
+-			200 201 202 203 204 205 206 207
+-			208 209 210 211 212 213 214 215
+-			216 217 218 219 220 221 222 223
+-			224 225 226 227 228 229 230 231
+-			232 233 234 235 236 237 238 239
+-			240 241 242 243 244 245 246 247
+-			248 249 250 251 252 253 254 255>;
++	brightness-levels = <3 255>;
++	num-interpolated-steps = <251>;
+ };
+ 
+ &i2c_tunnel {
+diff --git a/arch/arm/boot/dts/rk3288-veyron-tiger.dts b/arch/arm/boot/dts/rk3288-veyron-tiger.dts
+index 27557203ae33..e50367564dc6 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-tiger.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-tiger.dts
+@@ -23,39 +23,8 @@
+ 
+ &backlight {
+ 	/* Tiger panel PWM must be >= 1%, so start non-zero brightness at 3 */
+-	brightness-levels = <
+-		  0   3   4   5   6   7
+-		  8   9  10  11  12  13  14  15
+-		 16  17  18  19  20  21  22  23
+-		 24  25  26  27  28  29  30  31
+-		 32  33  34  35  36  37  38  39
+-		 40  41  42  43  44  45  46  47
+-		 48  49  50  51  52  53  54  55
+-		 56  57  58  59  60  61  62  63
+-		 64  65  66  67  68  69  70  71
+-		 72  73  74  75  76  77  78  79
+-		 80  81  82  83  84  85  86  87
+-		 88  89  90  91  92  93  94  95
+-		 96  97  98  99 100 101 102 103
+-		104 105 106 107 108 109 110 111
+-		112 113 114 115 116 117 118 119
+-		120 121 122 123 124 125 126 127
+-		128 129 130 131 132 133 134 135
+-		136 137 138 139 140 141 142 143
+-		144 145 146 147 148 149 150 151
+-		152 153 154 155 156 157 158 159
+-		160 161 162 163 164 165 166 167
+-		168 169 170 171 172 173 174 175
+-		176 177 178 179 180 181 182 183
+-		184 185 186 187 188 189 190 191
+-		192 193 194 195 196 197 198 199
+-		200 201 202 203 204 205 206 207
+-		208 209 210 211 212 213 214 215
+-		216 217 218 219 220 221 222 223
+-		224 225 226 227 228 229 230 231
+-		232 233 234 235 236 237 238 239
+-		240 241 242 243 244 245 246 247
+-		248 249 250 251 252 253 254 255>;
++	brightness-levels = <3 255>;
++	num-interpolated-steps = <251>;
+ };
+ 
+ &backlight_regulator {
+-- 
+2.23.0.444.g18eeb5a265-goog
 
 
 _______________________________________________
