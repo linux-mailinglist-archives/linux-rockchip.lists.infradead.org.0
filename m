@@ -2,78 +2,74 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6B3AC951E
-	for <lists+linux-rockchip@lfdr.de>; Thu,  3 Oct 2019 01:44:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FF43C9727
+	for <lists+linux-rockchip@lfdr.de>; Thu,  3 Oct 2019 06:06:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NHAaOuqATz6vzQxFATpZAEI4j2R+yJdLCa0pzV2Rzpo=; b=h6v8EdalD8pZEw
-	07i93s0TTHZ4WXCi6vHjVnOXY2F9yHrLP/o8BLX9WW+1i7jojgakfduS/NW4VVuWED52XQt8BuVhg
-	4xyzuTBxILj75zkz8UXSbTuaiW7X41wjIHZQ+CmlpwYAz/6xHF9WFcxbFCSmN5Njf3HmQcVnKWOk0
-	9iRFcovEYiOE5sPwOocizUALYv8WBzZ2s2iXU5UDLjk/2CP8tLspFamGyLF4Uz3UKTC7BUt5Tb8U5
-	CVTjq8Ei2PEr/uMqMR//cMcEYYnSRAFaCmAqXJbbkAwzqfjq1lAgIr+J91pun7Tx/1GT8WFrDxqWg
-	25XCelPuxzAeELCdGQ6A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9h3vdxsE3Wdub6FgZv3eBI4rx77ZwgbxyB28UjNyI+c=; b=FpNmyl8Fbqw9st
+	pASwk5yij6ePP2M/diIzJePHm4LgHe+L7px6wbd2shtnggLrYgJEC83ByktRcGraJzDSSh9lh7iAI
+	ECVJK8uc2mG+Fihu5bbvHHcwk2efW2pnHjm70B39tqy6ehAgf98aI+MFoAcqrM1IQxK6qrDn6YZwZ
+	hcDRFcvEGQuRz73Gs/Mt/U7VIqpqH/qACGHHVzTdX1njpK2Ce/zu/fYHd/PUGM5Go/yGimwjaKv4Y
+	L+6r85NyeoI5AtkLZCygagaUgs3/VGrskeygwOKLsTL98LocFyBY+wgSNAFSZe87f0GSTsmToQMD3
+	OoyC/DYo/hwpaspOieDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFoIV-0007H3-Is; Wed, 02 Oct 2019 23:44:43 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iFsNL-0000fb-TW; Thu, 03 Oct 2019 04:05:59 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFoIR-0007Fo-GC
- for linux-rockchip@lists.infradead.org; Wed, 02 Oct 2019 23:44:41 +0000
-Received: by mail-pg1-x542.google.com with SMTP id c17so584093pgg.4
- for <linux-rockchip@lists.infradead.org>; Wed, 02 Oct 2019 16:44:38 -0700 (PDT)
+ id 1iFsND-0000X3-6B
+ for linux-rockchip@lists.infradead.org; Thu, 03 Oct 2019 04:05:53 +0000
+Received: by mail-pg1-x541.google.com with SMTP id c17so908874pgg.4
+ for <linux-rockchip@lists.infradead.org>; Wed, 02 Oct 2019 21:05:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=9o+aVMafZNh1ZBc9I6ckxlik1QiG/UvW5Wt+nH2rOMs=;
- b=dAaTHI5NhKSOqh6X6vkUfZ7fxdK8NudPU+TFuLPA2/jL2ZjXBajNS/ZZXlY0LtMGim
- 5jl36gvqdRy5B9s4xlzgNLd4mMLzy6DbGCqCMtrfoByESBlb9hYL3ufD/mroNDBvKsP6
- U54jM3ho8xbwaGpnQ3U7OYJIiZ3ZqPnpCsQQw=
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ipcV5l1n/8It2aLom5M2l+YXf6MikdW6xOH7ijHIWC4=;
+ b=GJ8dCYphiCUor6hJ8Gk2a0LVJjkKGKBK0qYgul5TeGjsdlVTkyabw4iWB5Tf+iw8Ua
+ FiN7fu0PJaIxegA5BQ9wp6F5l6rFTNhY5aFK9pAnie4HM6QzrpFmxoq8pnTTVRFeYJAV
+ OE4PSBL5YMHVsOurDvxBxxhEypEBCMV34tWV0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=9o+aVMafZNh1ZBc9I6ckxlik1QiG/UvW5Wt+nH2rOMs=;
- b=HqrT4a/Rw70zjOh26XRDVM6mfSBJ0Tmtvnf60P0s2pPJc7CDN5mAtaQM1K5GgsnWyC
- ogmkyO0QmsKucl4OQZ3/dTS6/I/suob3UWQIaiW5I7XVxUgrNy3LBC57tX/GUraGhG/P
- RwXyDFPruwTe7CChh1JQCXoBpKZO/7V8aEA+Nt8K30ziSPhcNcEYh+4GYtMwq1v/hKB5
- NUa+38x/PIAHROpMftwuMcD+GOFIWLXlDEoxyINLU7ss1zJOHnE93UCndJ8hk2m+3Rbi
- 8tIOfY3Z4I91owZtiXSxu7z8uzfTczTf/8ar7+usjYjmVH0TsCjEWjNkh3K0dUIAethd
- MDGg==
-X-Gm-Message-State: APjAAAXAJJjEXfgQlnkr2K3M47bA8YiyRJLEZCUQ8lF26stjD3nQ8oyT
- EysuTzEPSHNQM2i5HXbELndl2Q==
-X-Google-Smtp-Source: APXvYqx7tAiFYBlhceMShOLU4glxP11l0ZXEXx/4CKfroBA38HHANDXcLnns13A63AD43NhZQaLhQA==
-X-Received: by 2002:a62:b40a:: with SMTP id h10mr7621495pfn.88.1570059878236; 
- Wed, 02 Oct 2019 16:44:38 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:4fff:7a6b:a335:8fde])
- by smtp.gmail.com with ESMTPSA id b22sm552757pfo.85.2019.10.02.16.44.37
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ipcV5l1n/8It2aLom5M2l+YXf6MikdW6xOH7ijHIWC4=;
+ b=H+imYtCelGPIfAthImcp2nhwyZrnOVnei9AOd6Is7Vax8+bCFg8QWxwRfP2FeFDOiG
+ 0WF9SeWjPzmrGfkcaWpln+jDvju0kHvWBTW5i4A/9qaFgShEf8m8Ir7nY6oD8gFnLEhw
+ /0wwU+NuuyUFaOpV4cZJJtCTPO6rVZxr+MVGgzU/oGIbt9/Hev1MZJNC/d0nq0ZxSFx3
+ kQY7pgtRdC0GlI98wgOni1bsaXGPHfURCSX9koYbLEq+bOcqMzPG5pa2YTN5d6tbMoYO
+ mVBcZeEAYnEcHvb8XyaYZPnc8ezoE3/U6AtrPKM7MckaMAR6ZGIaLRk7uBYNV9HZgUyG
+ C9Fw==
+X-Gm-Message-State: APjAAAWOqFnsIVkYvK3oT8E7gm8ikGPAmTGbFqdLnOzRSGlMolocsRNX
+ JTO+R5mfWWPNz3O8E61nDn88dg==
+X-Google-Smtp-Source: APXvYqzWiB8hQkm2uo7S8xni0GVmAx2W9Y1kaKW4dhI8KN2xpmpX/enaUKzWwxDftTpN40iGJ57rhw==
+X-Received: by 2002:a62:754a:: with SMTP id q71mr8685426pfc.70.1570075550111; 
+ Wed, 02 Oct 2019 21:05:50 -0700 (PDT)
+Received: from localhost ([2401:fa00:1:10:79b4:bd83:e4a5:a720])
+ by smtp.gmail.com with ESMTPSA id z5sm954845pgi.19.2019.10.02.21.05.46
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 02 Oct 2019 16:44:37 -0700 (PDT)
-Date: Wed, 2 Oct 2019 16:44:36 -0700
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Doug Anderson <dianders@chromium.org>
-Subject: Re: [PATCH] ARM: dts: rockchip: Use interpolated brightness tables
- for veyron
-Message-ID: <20191002234436.GI87296@google.com>
-References: <20191001160735.1.Ic9fd698810ea569c465350154da40b85d24f805b@changeid>
- <CAD=FV=UnZtGN142yUu-NzVG00P=1MZ-X3aY+cjrMRCnL2D8xFg@mail.gmail.com>
+ Wed, 02 Oct 2019 21:05:49 -0700 (PDT)
+From: Cheng-Yi Chiang <cychiang@chromium.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v2] FROMLIST: drm/bridge: dw-hdmi: Restore audio when setting
+ a mode
+Date: Thu,  3 Oct 2019 12:05:40 +0800
+Message-Id: <20191003040540.180310-1-cychiang@chromium.org>
+X-Mailer: git-send-email 2.23.0.444.g18eeb5a265-goog
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAD=FV=UnZtGN142yUu-NzVG00P=1MZ-X3aY+cjrMRCnL2D8xFg@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_164439_541655_C753CD87 
-X-CRM114-Status: GOOD (  17.82  )
+X-CRM114-CacheID: sfid-20191002_210551_223769_C2114A2D 
+X-CRM114-Status: GOOD (  11.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -97,117 +93,77 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, LKML <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>, tzungbi@chromium.org,
+ alsa-devel@alsa-project.org, Jonas Karlman <jonas@kwiboo.se>,
+ Neil Armstrong <narmstrong@baylibre.com>, dianders@chromium.org,
+ dri-devel@lists.freedesktop.org, Jaroslav Kysela <perex@perex.cz>,
+ Hans Verkuil <hverkuil@xs4all.nl>, linux-rockchip@lists.infradead.org,
+ Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
+ Daniel Kurtz <djkurtz@chromium.org>, Yakir Yang <ykk@rock-chips.com>,
+ dgreid@chromium.org, Cheng-Yi Chiang <cychiang@chromium.org>,
+ linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Oct 02, 2019 at 03:23:54PM -0700, Doug Anderson wrote:
-> Hi,
-> 
-> On Tue, Oct 1, 2019 at 4:07 PM Matthias Kaehlcke <mka@chromium.org> wrote:
-> > --- a/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-> > +++ b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-> > @@ -39,39 +39,8 @@
-> >
-> >  &backlight {
-> >         /* Minnie panel PWM must be >= 1%, so start non-zero brightness at 3 */
-> > -       brightness-levels = <
-> > -                         0   3   4   5   6   7
-> > -                         8   9  10  11  12  13  14  15
-> > -                        16  17  18  19  20  21  22  23
-> > -                        24  25  26  27  28  29  30  31
-> > -                        32  33  34  35  36  37  38  39
-> > -                        40  41  42  43  44  45  46  47
-> > -                        48  49  50  51  52  53  54  55
-> > -                        56  57  58  59  60  61  62  63
-> > -                        64  65  66  67  68  69  70  71
-> > -                        72  73  74  75  76  77  78  79
-> > -                        80  81  82  83  84  85  86  87
-> > -                        88  89  90  91  92  93  94  95
-> > -                        96  97  98  99 100 101 102 103
-> > -                       104 105 106 107 108 109 110 111
-> > -                       112 113 114 115 116 117 118 119
-> > -                       120 121 122 123 124 125 126 127
-> > -                       128 129 130 131 132 133 134 135
-> > -                       136 137 138 139 140 141 142 143
-> > -                       144 145 146 147 148 149 150 151
-> > -                       152 153 154 155 156 157 158 159
-> > -                       160 161 162 163 164 165 166 167
-> > -                       168 169 170 171 172 173 174 175
-> > -                       176 177 178 179 180 181 182 183
-> > -                       184 185 186 187 188 189 190 191
-> > -                       192 193 194 195 196 197 198 199
-> > -                       200 201 202 203 204 205 206 207
-> > -                       208 209 210 211 212 213 214 215
-> > -                       216 217 218 219 220 221 222 223
-> > -                       224 225 226 227 228 229 230 231
-> > -                       232 233 234 235 236 237 238 239
-> > -                       240 241 242 243 244 245 246 247
-> > -                       248 249 250 251 252 253 254 255>;
-> > +       brightness-levels = <3 255>;
-> > +       num-interpolated-steps = <251>;
-> 
-> I _think_ you want:
-> 
-> brightness-levels = <0 3 255>;
-> num-interpolated-steps = <252>;
-> 
-> Specifically:
-> 
-> * It seems like you're intending to keep everything the same and just
-> have a more compact representation, right?
+From: Daniel Kurtz <djkurtz@chromium.org>
 
-Ideally yes, I thought we were missing 1 level due to the 0 step being
-missing, but it's actually 2, since I interpreted 'num-interpolated-steps'
-as the number between two values in the table, however it is this number +1.
+When setting a new display mode, dw_hdmi_setup() calls
+dw_hdmi_enable_video_path(), which disables all hdmi clocks, including
+the audio clock.
 
-> Looking through the values in '/sys/class/backlight/backlight' on
-> minnie shows differences before and after your patch.
-> 
-> * I think you want brightness of 0 to match to PWM level 0.
+We should only (re-)enable the audio clock if audio was already enabled
+when setting the new mode.
 
-For level 0 that was actually given, due to
+Without this patch, on RK3288, there will be HDMI audio on some monitors
+if i2s was played to headphone when the monitor was plugged.
+ACER H277HU and ASUS PB278 are two of the monitors showing this issue.
 
-pwm_backlight_update_status()
-{
-  ..
-  if (brightness > 0) {
-    ...
-  } else
-    pwm_backlight_power_off(pb);
-  ...
-}
+Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+Signed-off-by: Daniel Kurtz <djkurtz@chromium.org>
+Signed-off-by: Yakir Yang <ykk@rock-chips.com>
+---
+ Change from v1 to v2:
+ - Use audio_lock to protect audio clock.
 
-but we're slightly off for the rest of the levels.
+ drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
 
-> * If I put in printouts in the code with your table, I see:
-> 
-> pwm-backlight backlight: new number of brightness levels: 252
-> pwm-backlight backlight: i=0, j=0, lc=0, value=3
-> pwm-backlight backlight: i=0, j=1, lc=1, value=4
-> ...
-> pwm-backlight backlight: i=0, j=250, lc=250, value=253
-> pwm-backlight backlight: lc=251, data->levels[i]=255
-> 
-> ...as you can see, you end up missing assigning a value of 254.
+diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+index aa7efd4da1c8..749d8e4c535b 100644
+--- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
++++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+@@ -1982,6 +1982,17 @@ static void hdmi_disable_overflow_interrupts(struct dw_hdmi *hdmi)
+ 		    HDMI_IH_MUTE_FC_STAT2);
+ }
+ 
++static void dw_hdmi_audio_restore(struct dw_hdmi *hdmi)
++{
++	unsigned long flags;
++
++	spin_lock_irqsave(&hdmi->audio_lock, flags);
++
++	hdmi_enable_audio_clk(hdmi, hdmi->audio_enable);
++
++	spin_unlock_irqrestore(&hdmi->audio_lock, flags);
++}
++
+ static int dw_hdmi_setup(struct dw_hdmi *hdmi, struct drm_display_mode *mode)
+ {
+ 	int ret;
+@@ -2045,7 +2056,7 @@ static int dw_hdmi_setup(struct dw_hdmi *hdmi, struct drm_display_mode *mode)
+ 
+ 		/* HDMI Initialization Step E - Configure audio */
+ 		hdmi_clk_regenerator_update_pixel_clock(hdmi);
+-		hdmi_enable_audio_clk(hdmi, true);
++		dw_hdmi_audio_restore(hdmi);
+ 	}
+ 
+ 	/* not for DVI mode */
+-- 
+2.23.0.444.g18eeb5a265-goog
 
-Thanks for investigating. With 'num-interpolated-steps' increased
-by one this is fixed, though we are still missing one level at the
-beginning of the table. I didn't expect 'brightness-levels = <0 3 255>'
-to work, since there are less than 252/251 integer numbers between 0
-and 3, but the code actually accounts for that case and just interprets
-it as a single step, which is what we want.
-
-Long story short: you are right, we want
-
-brightness-levels = <0 3 255>;
-num-interpolated-steps = <252>;
 
 _______________________________________________
 Linux-rockchip mailing list
