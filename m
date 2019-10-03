@@ -2,75 +2,59 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F60ACA97C
-	for <lists+linux-rockchip@lfdr.de>; Thu,  3 Oct 2019 19:21:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 700DBCADD5
+	for <lists+linux-rockchip@lfdr.de>; Thu,  3 Oct 2019 20:10:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LSGt0+Ciy6HW9geJbFR/20Q4vEMx9H3zRNnxpawEV+w=; b=alvnvLct1WvZhx
-	85YuHbGIKibiSaEuaMXW8nQeQNiqgh0rWFNCqJYoMuKculFcKi2jokHh4t0y5rCOo1kGERnzMZ/1N
-	lfbJ1g5cjPBtFfuHPkf9Hbc579WgRBRZvdtt403HT8vtwoddejNoSOgOVKbE++PMfibnjVxJwzfZH
-	Q0Hbn5bvqOiNi5+uYiWpBhwFO2LAkjtl66gIkX8WP2Eq2Q9RGAUELau3b6+uXdd+T64OrqtZLBWRx
-	/V3N2sDFyRMzOKJii49I9LGfkaE0sCjtSQzDn7UagaOjqLt4hXlcgKV76vWl8RUMXUedEIZtFaH9q
-	OElVj+9jWirJU7CBDmkg==;
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WpWjXNWXUZUfUJiQvJtWoU/SNzu6+CC0H1Sb63gwte0=; b=bAHuG3rf8rBAIw
+	X3r/jj/2f6/CG24CKGrFjAFEF8epFkQ93HMsaJ7cnumPEVMQayMhSrEWE4vh2xHeM8HL2ZTyqjoFF
+	5vsxGL52w4+1UO2FD/W+c/VqpJVmcE6Ga0ZB2pXB6fniVWU0u1uzS+ij/nObJKjRimvMRlhFvI+wp
+	koIE6kxLuoj+EfA9VZaCXxZ4f0/UpIKsZ/AiTUMTezrKGYAXHhiKJ+3/5w7L05Td1g1ZrSrgSBXeQ
+	QDxs874dYVjQWuJoRRFeO0X+AO3wygmRjxAGLyccQSM+j089JVJpfKa84ASMIRBMdNEb0nWymhhb8
+	SI6PcusGtu25/EuCPLEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG4ml-0003NM-J3; Thu, 03 Oct 2019 17:21:03 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iG5YU-0001lP-UU; Thu, 03 Oct 2019 18:10:22 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG4mV-0003BP-Lv
- for linux-rockchip@lists.infradead.org; Thu, 03 Oct 2019 17:20:49 +0000
-Received: by mail-pg1-x541.google.com with SMTP id z12so2147884pgp.9
- for <linux-rockchip@lists.infradead.org>; Thu, 03 Oct 2019 10:20:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=5YUdKlUjg7izQDgolGpnYHYo+vhd5m2wc6atfBTGDOc=;
- b=HyHetN5bW58UK8pvTmhvXzE8owYnlZMnXW9PjWvCODAS81IDbcZueUkr/Uoczsv9Vc
- bTur5ctetQ58WmGmffdgdCd9BwU66+/P56lnDRZ4y4rtAfxLuKVqeIh6JPJL1KjJbdg+
- FZhdZHeT3uiPdXRTNibqPLDiff8iMuzt7m6Ns=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=5YUdKlUjg7izQDgolGpnYHYo+vhd5m2wc6atfBTGDOc=;
- b=Yz2PTALOswcgWGjqPQt0kbLsp5K7ocs3gw1oBNomWF5y2qudNszsVpWiB79qwazHTB
- z04yxTdKefnpYajXLI24cMNsUMqaqqOfumHhdcoOEfeTN0Iu/IZWeMqjoJ1ndjQseip8
- S3/244GoFFLaFqvb+Hj0I9VqItHE9oG8NYBuCol/oPyNqdV2I9Z0IbouxHJCMWhBypCP
- 12/iD//wtMET/Kvb5/6jaY0fuqqDxEBLr0KFHKUZuEjgcpRQ58iMczxTKOzzejcNsY0p
- ZplryKEprW1gUkL96NRsJLuXDIQC39yDBBqtHVn74Tvs2EMH9RG6YpY+srQG3j2qaeM9
- P3vA==
-X-Gm-Message-State: APjAAAVwtehsSKtsIrVO89OyMAC2q5baY68rNFEkZkmw2qU3TnlEzS28
- HOO4t6855vbtc4XxGC04KLpgnQ==
-X-Google-Smtp-Source: APXvYqwqK3NYUOfm0zqEB+8oEVhfJkq+2Gkte77oRWmOxvpTWnoh+bkvBUCwT7uu3XNO4aStKCP0hw==
-X-Received: by 2002:a65:6854:: with SMTP id q20mr10628268pgt.188.1570123246570; 
- Thu, 03 Oct 2019 10:20:46 -0700 (PDT)
-Received: from tictac2.mtv.corp.google.com
- ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id c8sm3432491pga.42.2019.10.03.10.20.45
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 03 Oct 2019 10:20:46 -0700 (PDT)
-From: Douglas Anderson <dianders@chromium.org>
-To: heiko@sntech.de
-Subject: [PATCH] drm/rockchip: Round up _before_ giving to the clock framework
-Date: Thu,  3 Oct 2019 10:20:24 -0700
-Message-Id: <20191003102003.1.Ib233b3e706cf6317858384264d5b0ed35657456e@changeid>
-X-Mailer: git-send-email 2.23.0.444.g18eeb5a265-goog
+ id 1iG5YH-0001CA-1k; Thu, 03 Oct 2019 18:10:10 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4D6D620679;
+ Thu,  3 Oct 2019 18:10:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570126207;
+ bh=sB5Ps8gXl1Clpj94aGeMy9RyrsHpbQ1qiqUJfZHEo/o=;
+ h=In-Reply-To:References:From:To:Cc:Subject:Date:From;
+ b=Ee2eg6M52ngE6uPWZT6vmU/q/8MON8SHGMolIrjrhaXt99aTxP7MORkqW72JwHLWX
+ GFovIgyUsk60pKR2azvezkOvf7B41KGqZjUnLOS519CJyMh4TG5KR5jR7+oAvMN6Bz
+ kkI9KGZWbT0OngnPIz3kDuiyq3nk4kBfNwSfjApg=
 MIME-Version: 1.0
+In-Reply-To: <1569553244-3165-2-git-send-email-zhangqing@rock-chips.com>
+References: <1569553244-3165-1-git-send-email-zhangqing@rock-chips.com>
+ <1569553244-3165-2-git-send-email-zhangqing@rock-chips.com>
+From: Stephen Boyd <sboyd@kernel.org>
+To: Elaine Zhang <zhangqing@rock-chips.com>, heiko@sntech.de
+Subject: Re: [PATCH v3 1/5] clk: rockchip: Add supprot to limit input rate for
+ fractional divider
+User-Agent: alot/0.8.1
+Date: Thu, 03 Oct 2019 11:10:06 -0700
+Message-Id: <20191003181007.4D6D620679@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_102047_727915_F7812488 
-X-CRM114-Status: GOOD (  18.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191003_111009_142478_A3021E81 
+X-CRM114-Status: GOOD (  13.87  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,106 +77,145 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
- Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
- Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
- mka@chromium.org, seanpaul@chromium.org, Daniel Vetter <daniel@ffwll.ch>,
- ryandcase@chromium.org, tfiga@chromium.org,
+Cc: huangtao@rock-chips.com, xf@rock-chips.com, mturquette@baylibre.com,
+ Elaine Zhang <zhangqing@rock-chips.com>, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Finley Xiao <finley.xiao@rock-chips.com>, xxx@rock-chips.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-I'm embarassed to say that even though I've touched
-vop_crtc_mode_fixup() twice and I swear I tested it, there's still a
-stupid glaring bug in it.  Specifically, on veyron_minnie (with all
-the latest display timings) we want to be setting our pixel clock to
-66,666,666.67 Hz and we tell userspace that's what we set, but we're
-actually choosing 66,000,000 Hz.  This is confirmed by looking at the
-clock tree.
+Quoting Elaine Zhang (2019-09-26 20:00:40)
+> diff --git a/drivers/clk/rockchip/clk-px30.c b/drivers/clk/rockchip/clk-px30.c
+> index 3a501896b280..6c2f53dc73b6 100644
+> --- a/drivers/clk/rockchip/clk-px30.c
+> +++ b/drivers/clk/rockchip/clk-px30.c
+> @@ -13,6 +13,7 @@
+>  #include "clk.h"
+>  
+>  #define PX30_GRF_SOC_STATUS0           0x480
+> +#define PX30_FRAC_MAX_PRATE            600000000
+>  
+>  enum px30_plls {
+>         apll, dpll, cpll, npll, apll_b_h, apll_b_l,
+> @@ -420,7 +421,7 @@ enum px30_pmu_plls {
+>         COMPOSITE_FRACMUX(0, "dclk_vopb_frac", "dclk_vopb_src", CLK_SET_RATE_PARENT,
+>                         PX30_CLKSEL_CON(6), 0,
+>                         PX30_CLKGATE_CON(2), 3, GFLAGS,
+> -                       &px30_dclk_vopb_fracmux),
+> +                       &px30_dclk_vopb_fracmux, 0),
+>         GATE(DCLK_VOPB, "dclk_vopb", "dclk_vopb_mux", CLK_SET_RATE_PARENT,
+>                         PX30_CLKGATE_CON(2), 4, GFLAGS),
+>         COMPOSITE(0, "dclk_vopl_src", mux_npll_cpll_p, 0,
+> @@ -429,7 +430,7 @@ enum px30_pmu_plls {
+>         COMPOSITE_FRACMUX(0, "dclk_vopl_frac", "dclk_vopl_src", CLK_SET_RATE_PARENT,
+>                         PX30_CLKSEL_CON(9), 0,
+>                         PX30_CLKGATE_CON(2), 7, GFLAGS,
+> -                       &px30_dclk_vopl_fracmux),
+> +                       &px30_dclk_vopl_fracmux, 0),
+>         GATE(DCLK_VOPL, "dclk_vopl", "dclk_vopl_mux", CLK_SET_RATE_PARENT,
+>                         PX30_CLKGATE_CON(2), 8, GFLAGS),
+>  
+> @@ -555,7 +556,7 @@ enum px30_pmu_plls {
+>         COMPOSITE_FRACMUX(0, "clk_pdm_frac", "clk_pdm_src", CLK_SET_RATE_PARENT,
 
-The problem is that in drm_display_mode_from_videomode() we convert
-from Hz to kHz with:
+Can you make a new macro COMPOSITE_FRACMUX_PRATE or something that
+passes in another argument so that we don't have to change the users
+of this macro when they don't care?
 
-  dmode->clock = vm->pixelclock / 1000;
+>                         PX30_CLKSEL_CON(27), 0,
+>                         PX30_CLKGATE_CON(9), 10, GFLAGS,
+> -                       &px30_pdm_fracmux),
+> +                       &px30_pdm_fracmux, PX30_FRAC_MAX_PRATE),
+>         GATE(SCLK_PDM, "clk_pdm", "clk_pdm_mux", CLK_SET_RATE_PARENT,
+>                         PX30_CLKGATE_CON(9), 11, GFLAGS),
+>  
+> diff --git a/drivers/clk/rockchip/clk-rk3399.c b/drivers/clk/rockchip/clk-rk3399.c
+> index ce1d2446f142..bda5d50c5319 100644
+> --- a/drivers/clk/rockchip/clk-rk3399.c
+> +++ b/drivers/clk/rockchip/clk-rk3399.c
+> @@ -13,6 +13,12 @@
+>  #include <dt-bindings/clock/rk3399-cru.h>
+>  #include "clk.h"
+>  
+> +#define RK3399_I2S_FRAC_MAX_PRATE       800000000
+> +#define RK3399_UART_FRAC_MAX_PRATE     800000000
+> +#define RK3399_SPDIF_FRAC_MAX_PRATE    600000000
+> +#define RK3399_VOP_FRAC_MAX_PRATE      600000000
+> +#define RK3399_WIFI_FRAC_MAX_PRATE     600000000
 
-...so when the device tree specifies a clock of 66666667 for the panel
-then DRM translates that to 66666000.  The clock framework will always
-pick a clock that is _lower_ than the one requested, so it will refuse
-to pick 66666667 and we'll end up at 66000000.
+Is the "max rate" really just the frequency of the parent? If so, why
+can't round_rate() on the parent figure out what that value is and only
+provide that frequency?
 
-While we could try to fix drm_display_mode_from_videomode() to round
-to the nearest kHz and it would fix our problem, it wouldn't help if
-the clock we actually needed was 60,000,001 Hz.  We could
-alternatively have DRM always round up, but maybe this would break
-someone else who already baked in the assumption that DRM rounds down.
+> +
+>  enum rk3399_plls {
+>         lpll, bpll, dpll, cpll, gpll, npll, vpll,
+>  };
+> diff --git a/drivers/clk/rockchip/clk.c b/drivers/clk/rockchip/clk.c
+> index 546e810c3560..fac5a4a3f5c3 100644
+> --- a/drivers/clk/rockchip/clk.c
+> +++ b/drivers/clk/rockchip/clk.c
+> @@ -184,12 +184,26 @@ static void rockchip_fractional_approximation(struct clk_hw *hw,
+>         unsigned long p_rate, p_parent_rate;
+>         struct clk_hw *p_parent;
+>         unsigned long scale;
+> +       u32 div;
 
-Let's solve this by just adding 999 Hz before calling
-clk_round_rate().  This should be safe and work everywhere.
+Why u32 instead of unsigned long?
 
-NOTE: if this is picked to stable, it's probably easiest to first pick
-commit 527e4ca3b6d1 ("drm/rockchip: Base adjustments of the mode based
-on prev adjustments") which shouldn't hurt in stable.
+>  
+>         p_rate = clk_hw_get_rate(clk_hw_get_parent(hw));
+> -       if ((rate * 20 > p_rate) && (p_rate % rate != 0)) {
+> +       if (((rate * 20 > p_rate) && (p_rate % rate != 0)) ||
+> +           (fd->max_prate && fd->max_prate < p_rate)) {
+>                 p_parent = clk_hw_get_parent(clk_hw_get_parent(hw));
+>                 p_parent_rate = clk_hw_get_rate(p_parent);
+>                 *parent_rate = p_parent_rate;
+> +               if (fd->max_prate && p_parent_rate > fd->max_prate) {
+> +                       div = DIV_ROUND_UP(p_parent_rate, fd->max_prate);
+> +                       *parent_rate = p_parent_rate / div;
+> +               }
+> +
+> +               if (*parent_rate < rate * 20) {
 
-Fixes: b59b8de31497 ("drm/rockchip: return a true clock rate to adjusted_mode")
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
----
+20 seems very magical.
 
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 37 +++++++++++++++++++--
- 1 file changed, 34 insertions(+), 3 deletions(-)
+> +                       pr_err("%s parent_rate(%ld) is low than rate(%ld)*20, fractional div is not allowed\n",
 
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-index 613404f86668..84e3decb17b1 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-@@ -1040,10 +1040,41 @@ static bool vop_crtc_mode_fixup(struct drm_crtc *crtc,
- 				struct drm_display_mode *adjusted_mode)
- {
- 	struct vop *vop = to_vop(crtc);
-+	unsigned long rate;
- 
--	adjusted_mode->clock =
--		DIV_ROUND_UP(clk_round_rate(vop->dclk,
--					    adjusted_mode->clock * 1000), 1000);
-+	/*
-+	 * Clock craziness.
-+	 *
-+	 * Key points:
-+	 *
-+	 * - DRM works in in kHz.
-+	 * - Clock framework works in Hz.
-+	 * - Rockchip's clock driver picks the clock rate that is the
-+	 *   same _OR LOWER_ than the one requested.
-+	 *
-+	 * Action plan:
-+	 *
-+	 * 1. When DRM gives us a mode, we should add 999 Hz to it.  That way
-+	 *    if the clock we need is 60000001 Hz (~60 MHz) and DRM tells us to
-+	 *    make 60000 kHz then the clock framework will actually give us
-+	 *    the right clock.
-+	 *
-+	 *    NOTE: if the PLL (maybe through a divider) could actually make
-+	 *    a clock rate 999 Hz higher instead of the one we want then this
-+	 *    could be a problem.  Unfortunately there's not much we can do
-+	 *    since it's baked into DRM to use kHz.  It shouldn't matter in
-+	 *    practice since Rockchip PLLs are controlled by tables and
-+	 *    even if there is a divider in the middle I wouldn't expect PLL
-+	 *    rates in the table that are just a few kHz different.
-+	 *
-+	 * 2. Get the clock framework to round the rate for us to tell us
-+	 *    what it will actually make.
-+	 *
-+	 * 3. Store the rounded up rate so that we don't need to worry about
-+	 *    this in the actual clk_set_rate().
-+	 */
-+	rate = clk_round_rate(vop->dclk, adjusted_mode->clock * 1000 + 999);
-+	adjusted_mode->clock = DIV_ROUND_UP(rate, 1000);
- 
- 	return true;
- }
--- 
-2.23.0.444.g18eeb5a265-goog
+s/low/lower/?
+
+> +                              clk_hw_get_name(hw), *parent_rate, rate);
+> +                       *m = 0;
+> +                       *n = 1;
+> +                       return;
+> +               }
+>         }
+>  
+>         /*
+> diff --git a/include/linux/clk-provider.h b/include/linux/clk-provider.h
+> index 2ae7604783dd..30993c0630a3 100644
+> --- a/include/linux/clk-provider.h
+> +++ b/include/linux/clk-provider.h
+> @@ -624,6 +624,7 @@ struct clk_hw *clk_hw_register_fixed_factor(struct device *dev,
+>   * @mwidth:    width of the numerator bit field
+>   * @nshift:    shift to the denominator bit field
+>   * @nwidth:    width of the denominator bit field
+> + * @max_parent:        the maximum frequency of fractional divider parent clock
+
+This doesn't match the name of the member.
+
+>   * @lock:      register lock
+>   *
+>   * Clock with adjustable fractional divider affecting its output frequency.
+> @@ -647,6 +648,7 @@ struct clk_fractional_divider {
+>         u8              nwidth;
+>         u32             nmask;
+>         u8              flags;
+> +       unsigned long   max_prate;
+
 
 
 _______________________________________________
