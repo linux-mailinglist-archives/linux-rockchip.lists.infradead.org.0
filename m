@@ -2,51 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B594DCADDB
-	for <lists+linux-rockchip@lfdr.de>; Thu,  3 Oct 2019 20:11:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80687CADEA
+	for <lists+linux-rockchip@lfdr.de>; Thu,  3 Oct 2019 20:14:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g56XteCoElTdnG4pHjBEZArFOAPWeG/APcEp0T7pep0=; b=b7Q3SlQNHcyHjl
-	ZKS308qkZ1beamz6v3JAsV7UGEvm7F4Fi4OG9QzSN63844tEG1lqEXBKV5Nma8SVmsw0ZcKofDKKs
-	nmMyPJLrjtc35cbNASTTipLVccvoJcqIUBJu9e2N9tA1/tZrR0387WbEEl2W2EEUL46d5FFRL8DWi
-	tnL6RIkVT+yS/FoF4jAG1yXwKcMrWxi6bwOLC+K8YGPYcEVfgLx0cBtujzuKny2BY6C+/Dg6nlIYO
-	vXQwXBg85QzMHnVVEKkYpcxR42ASIFO/qqsTno7gNsIxw4nLIZUWDMZiPTlvu/lOa93K878LKxuGB
-	Ifshy13ttA2WzelgJmFA==;
+	List-Owner; bh=P5ZQrwIM2INkfO120PQL9bOyC7MahITiaS0qf6EoVnQ=; b=pAPidv8QO0RsEP
+	Lpa/2W1eKatX/OiK8CXAzI38m65bm/vY2Un7yc2C1484/g2mJUSs1nJb/IVMBfgf4feev4rlQUCcx
+	XCxtaVQqt2zVvSVYKs65eR2T5NusApw+MrzrIYd9RaKHNo5zqFFkORTcWURqaoQ/InpB1+BR7VTiJ
+	3OQkU6TMCLGOPij4YpgpnmE7Oh8XiUbas0Lr4oeip/mrpKioi2CLIiNzCENKODGPoA3FCPqgmLMUz
+	lblYq/I5a+taD2IEG1/GChhgRL/HXfZiNvmbeTV9ZW5CB1e3QikpON1X0kul20KAqeT0E9SglIc9V
+	VfChJOS2vKkpHe/tz3sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG5ZM-00029d-Uh; Thu, 03 Oct 2019 18:11:17 +0000
+	id 1iG5c9-0003AV-VM; Thu, 03 Oct 2019 18:14:09 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG5Z8-0001ym-TM; Thu, 03 Oct 2019 18:11:04 +0000
+ id 1iG5bu-00030T-J3; Thu, 03 Oct 2019 18:13:55 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 803B120862;
- Thu,  3 Oct 2019 18:11:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 304B520862;
+ Thu,  3 Oct 2019 18:13:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570126262;
- bh=aArKOWxO0UzBJPgQiYgtFIO0VS3NLn3FEgzr04GaghE=;
+ s=default; t=1570126434;
+ bh=OEFcG8Srhv/ZYjCll5MhUaVrXvpLIbrBCRSqjpiiIA8=;
  h=In-Reply-To:References:From:To:Cc:Subject:Date:From;
- b=sTG8BoNGODYMJh9K8VdkTLOSAFtZXJXm0caFHt36ztIL/MBfhYfFtDzI1Oi6LU0sL
- O1j9gxbPlg8iCQnVT8pMZIipOVO2X+bRYi5fdMJLaH1XMsr/Tl3y6rf1l0WaJpLBh+
- p2KCBMaJK91l7C6g24fwfoT8haHVbqLr8Dx8CycM=
+ b=sUPn/ARNFZqfClXLICHZK6NPr0REdXEB476kJ0611ANUQHt9gL40z9v8L14djPWn+
+ izGkbv1jIE8yRn8xIzhu7FDNm+RXop7VmOFFBOFSZDFQNrj2tNykzR6ZueyWoR3+/O
+ 4xS6sxAYfdZJYGfydjpeOhAQcPHkDi9YExTXxzY4=
 MIME-Version: 1.0
-In-Reply-To: <1569553244-3165-3-git-send-email-zhangqing@rock-chips.com>
+In-Reply-To: <1569553244-3165-5-git-send-email-zhangqing@rock-chips.com>
 References: <1569553244-3165-1-git-send-email-zhangqing@rock-chips.com>
- <1569553244-3165-3-git-send-email-zhangqing@rock-chips.com>
+ <1569553244-3165-5-git-send-email-zhangqing@rock-chips.com>
 From: Stephen Boyd <sboyd@kernel.org>
 To: Elaine Zhang <zhangqing@rock-chips.com>, heiko@sntech.de
-Subject: Re: [PATCH v3 2/5] clk: rockchip: fix up the frac clk get rate error
+Subject: Re: [PATCH v3 4/5] clk: rockchip: add pll up and down when change pll
+ freq
 User-Agent: alot/0.8.1
-Date: Thu, 03 Oct 2019 11:11:01 -0700
-Message-Id: <20191003181102.803B120862@mail.kernel.org>
+Date: Thu, 03 Oct 2019 11:13:53 -0700
+Message-Id: <20191003181354.304B520862@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_111102_968058_D513AED1 
-X-CRM114-Status: GOOD (  12.55  )
+X-CRM114-CacheID: sfid-20191003_111354_647953_C316B4E0 
+X-CRM114-Status: UNSURE (   5.47  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,59 +87,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Quoting Elaine Zhang (2019-09-26 20:00:41)
-> support fractional divider with only one level parent clock
+Quoting Elaine Zhang (2019-09-26 20:00:43)
+> set pll sequence:
+>         ->set pll to slow mode or other plls
+>         ->set pll down
+>         ->set pll params
+>         ->set pll up
+>         ->wait pll lock status
+>         ->set pll to normal mode
+> 
+> To slove the system error:
 
-Please put a lot more description in here. A single sentence doesn't
-help anyone understand the motivation for the change.
+solve?
 
+> wait_pll_lock: timeout waiting for pll to lock
+> pll_set_params: pll update unsucessful,
+>                 trying to restore old params
 > 
-> Signed-off-by: Elaine Zhang <zhangqing@rock-chips.com>
-> ---
->  drivers/clk/rockchip/clk.c | 19 ++++++++++++-------
->  1 file changed, 12 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/clk/rockchip/clk.c b/drivers/clk/rockchip/clk.c
-> index fac5a4a3f5c3..8f77c3f9fab7 100644
-> --- a/drivers/clk/rockchip/clk.c
-> +++ b/drivers/clk/rockchip/clk.c
-> @@ -190,16 +190,21 @@ static void rockchip_fractional_approximation(struct clk_hw *hw,
->         if (((rate * 20 > p_rate) && (p_rate % rate != 0)) ||
->             (fd->max_prate && fd->max_prate < p_rate)) {
->                 p_parent = clk_hw_get_parent(clk_hw_get_parent(hw));
-> -               p_parent_rate = clk_hw_get_rate(p_parent);
-> -               *parent_rate = p_parent_rate;
-> -               if (fd->max_prate && p_parent_rate > fd->max_prate) {
-> -                       div = DIV_ROUND_UP(p_parent_rate, fd->max_prate);
-> -                       *parent_rate = p_parent_rate / div;
-> +               if (!p_parent) {
-> +                       *parent_rate = p_rate;
-> +               } else {
-> +                       p_parent_rate = clk_hw_get_rate(p_parent);
-> +                       *parent_rate = p_parent_rate;
-> +                       if (fd->max_prate && p_parent_rate > fd->max_prate) {
-> +                               div = DIV_ROUND_UP(p_parent_rate,
-> +                                                  fd->max_prate);
-> +                               *parent_rate = p_parent_rate / div;
-> +                       }
->                 }
->  
->                 if (*parent_rate < rate * 20) {
-> -                       pr_err("%s parent_rate(%ld) is low than rate(%ld)*20, fractional div is not allowed\n",
-> -                              clk_hw_get_name(hw), *parent_rate, rate);
-> +                       pr_warn("%s p_rate(%ld) is low than rate(%ld)*20, use integer or half-div\n",
-> +                               clk_hw_get_name(hw), *parent_rate, rate);
 
-Hm.. now it's changed to a warning?
+This commit text needs help. It looks like pseudo-code.
 
->                         *m = 0;
->                         *n = 1;
->                         return;
-> -- 
-> 1.9.1
-> 
-> 
-> 
 
 _______________________________________________
 Linux-rockchip mailing list
