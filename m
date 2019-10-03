@@ -2,44 +2,45 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DBF2CB20B
-	for <lists+linux-rockchip@lfdr.de>; Fri,  4 Oct 2019 00:50:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D76EECB20D
+	for <lists+linux-rockchip@lfdr.de>; Fri,  4 Oct 2019 00:50:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6PmB1RN8v82Ld9bHeR8kLcWv+gpw9Fvu+GxDLDpLcIc=; b=H/LUg4kn9IFQ+U
-	TZoS7wK5uRl3xqHQjjF4kainUFg3SDSJTPTDXpiiT2RfnNFH7UpFAtBJ2q0dkPoZq4+l7+bHREO19
-	rI9E2yHg/2hoBatPFqkjtoFkO80AWO6Anw9WJMb2zT73XLve3QcxVasm9w80razs7LpSTLCxTwKUV
-	3p8BKo6VxGUzurfZhcBiMSjRdi+xUJOLBi/lSDpuG1IbdPcYXGYNIIQLBYK5R8KwRb/Nw3pbTKNFk
-	4OTfFuaMysdPLafgVvCJggyN5myo4lRrpiWPRRyfER46dzVcYTh3XSuaz8nXhaWpTh+TJZn3juL48
-	xO1p/miPoqbM0+qZJzQQ==;
+	List-Owner; bh=RIryyI6vYSFi09q+aFox8iI+rzVNKcXY8FIYcvOzjkU=; b=lY6wKSn3pkza3y
+	CoGUSLbe5RSMbQRIlGxqtn61W2bMClqE4FsteAdfsWDistowYcwHTgd68w2dvd36iBGF3XRprq+x4
+	/p4/iXFmbdZC/ljqnDA84oWr2jZZlWGHPCXKgOJ26eKSdRoOH3n5d74LUWpPkB8eLAlFgjWsx5Z1t
+	AW9nDXlsa5fOt7WvD097UG8w0D1VoXpsBURNH+r/3HPZ+pRypz68YbAAcLpyY+yZPldnPjVcul4IP
+	a6AwLhqGFxQmcHvbDhLXUP9Deco5exzC2ZSo6+FDtBnh3W+pSTwOtul9AbfGvsGsGWbZa7YKsax26
+	mu3n0fZEF003AAYVszPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG9vP-0001Mt-7K; Thu, 03 Oct 2019 22:50:19 +0000
+	id 1iG9vf-0001dK-Gk; Thu, 03 Oct 2019 22:50:35 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG9v4-0008Ef-2Z; Thu, 03 Oct 2019 22:49:59 +0000
+ id 1iG9vH-0000mq-EZ; Thu, 03 Oct 2019 22:50:12 +0000
 Received: from p57b7758c.dip0.t-ipconnect.de ([87.183.117.140]
  helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iG9up-0000uR-6I; Fri, 04 Oct 2019 00:49:43 +0200
+ id 1iG9vA-0000up-PG; Fri, 04 Oct 2019 00:50:04 +0200
 From: Heiko Stuebner <heiko@sntech.de>
 To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH 5/6] arm64: dts: rockchip: Rename vcc12v_sys into dc_12v
- for roc-rk3399-pc
-Date: Fri, 04 Oct 2019 00:49:42 +0200
-Message-ID: <2645663.MEMbyMBloX@phil>
-In-Reply-To: <20190919052822.10403-6-jagan@amarulasolutions.com>
+Subject: Re: [PATCH 6/6] arm64: dts: rockchip: Fix roc-rk3399-pc regulator
+ input rails
+Date: Fri, 04 Oct 2019 00:50:03 +0200
+Message-ID: <3794940.QX3D9CpLXO@phil>
+In-Reply-To: <20190919052822.10403-7-jagan@amarulasolutions.com>
 References: <20190919052822.10403-1-jagan@amarulasolutions.com>
- <20190919052822.10403-6-jagan@amarulasolutions.com>
+ <20190919052822.10403-7-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_154958_269118_C0C40D6C 
-X-CRM114-Status: GOOD (  10.15  )
+X-CRM114-CacheID: sfid-20191003_155011_682736_69C553B0 
+X-CRM114-Status: UNSURE (   8.43  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,15 +70,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Donnerstag, 19. September 2019, 07:28:21 CEST schrieb Jagan Teki:
-> It is always better practice to follow regulator naming conventions
-> as per the schematics for future references.
+Am Donnerstag, 19. September 2019, 07:28:22 CEST schrieb Jagan Teki:
+> Few, know rk808 pmic regulators VCC[1-4], VCC[6-7], VCC[9-11],
+> VDD_LOG, VDD_GPU, VDD_CPU_B, VCC3V3_SYS are inputting with vcc_sys
+> which is 5V power rail from dc_12v.
 > 
-> This would indeed helpful to review and check the naming convention
-> directly on schematics, both for the code reviewers and the developers.
-> 
-> So, rename vcc12v_sys into dc_12v as per rk3399 power tree as per
-> roc-rk3399-pc schematics.
+> So, replace the vin-supply of above mentioned regulators
+> with vcc_sys as per the PMIC-RK808-D page of roc-rk3399-pc
+> schematics.
 > 
 > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 
