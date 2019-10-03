@@ -2,74 +2,74 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FF43C9727
-	for <lists+linux-rockchip@lfdr.de>; Thu,  3 Oct 2019 06:06:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 681C8C9737
+	for <lists+linux-rockchip@lfdr.de>; Thu,  3 Oct 2019 06:14:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9h3vdxsE3Wdub6FgZv3eBI4rx77ZwgbxyB28UjNyI+c=; b=FpNmyl8Fbqw9st
-	pASwk5yij6ePP2M/diIzJePHm4LgHe+L7px6wbd2shtnggLrYgJEC83ByktRcGraJzDSSh9lh7iAI
-	ECVJK8uc2mG+Fihu5bbvHHcwk2efW2pnHjm70B39tqy6ehAgf98aI+MFoAcqrM1IQxK6qrDn6YZwZ
-	hcDRFcvEGQuRz73Gs/Mt/U7VIqpqH/qACGHHVzTdX1njpK2Ce/zu/fYHd/PUGM5Go/yGimwjaKv4Y
-	L+6r85NyeoI5AtkLZCygagaUgs3/VGrskeygwOKLsTL98LocFyBY+wgSNAFSZe87f0GSTsmToQMD3
-	OoyC/DYo/hwpaspOieDQ==;
+	List-Owner; bh=cMfMoIIGIXqYtVJVD0qrm+1/Vuqsu/8FpjsPhdA3WJk=; b=cEP03JMDj09eFn
+	qBBu1PSDAbYMg3Ua1KDJS1MLuCgoGHULLAqJa1UK6XHt4noABWMkEPeyRcggkcmpVhZ4cNsTnqAic
+	aFPiZAwUHt9miTjFgIjQihnI5ZztJzRQx+DdeW48Svl7YS7vvYdRlsholMi+cQQsyYRnTloBcwsX1
+	Vm2WsiDoqt4tRJR8raGlroJpC5o76UWuAfbFLs8kK+Ij1n3vinrV3/BysQCJWXOq9Ct6GLVWQTYYf
+	5MDa90mHRRuJYsMxh3XcguiVTv4I00fvYp+4qbeFM8J4sqk7BdKPXmJ+hJ2QmKqueNo3a8kAZYAc0
+	ryLc7agJSFCc21zEJ9rA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFsNL-0000fb-TW; Thu, 03 Oct 2019 04:05:59 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iFsVy-0002pn-Bv; Thu, 03 Oct 2019 04:14:54 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFsND-0000X3-6B
- for linux-rockchip@lists.infradead.org; Thu, 03 Oct 2019 04:05:53 +0000
-Received: by mail-pg1-x541.google.com with SMTP id c17so908874pgg.4
- for <linux-rockchip@lists.infradead.org>; Wed, 02 Oct 2019 21:05:50 -0700 (PDT)
+ id 1iFsVq-0002iH-68
+ for linux-rockchip@lists.infradead.org; Thu, 03 Oct 2019 04:14:47 +0000
+Received: by mail-pf1-x443.google.com with SMTP id b128so880672pfa.1
+ for <linux-rockchip@lists.infradead.org>; Wed, 02 Oct 2019 21:14:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=ipcV5l1n/8It2aLom5M2l+YXf6MikdW6xOH7ijHIWC4=;
- b=GJ8dCYphiCUor6hJ8Gk2a0LVJjkKGKBK0qYgul5TeGjsdlVTkyabw4iWB5Tf+iw8Ua
- FiN7fu0PJaIxegA5BQ9wp6F5l6rFTNhY5aFK9pAnie4HM6QzrpFmxoq8pnTTVRFeYJAV
- OE4PSBL5YMHVsOurDvxBxxhEypEBCMV34tWV0=
+ bh=FMBWBObY5TAg6ccjViv94lsR9vhyqh//qqXjnxybPn4=;
+ b=XqXsTJWVRpZea6TA7FBFgnhTI63A2/g03nfSRRb33FkaY5eHoSUvNUKEOdIMbnpkbB
+ Pecea+Q0A331rSFnGj2eJ25IBgyIygcpzhSbOdlVrje4TCo89GmFdQxR3an9e70yYyn9
+ A+wMolfWeeZXTHrgo82zxfTc7I+G9zjh+5wFk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=ipcV5l1n/8It2aLom5M2l+YXf6MikdW6xOH7ijHIWC4=;
- b=H+imYtCelGPIfAthImcp2nhwyZrnOVnei9AOd6Is7Vax8+bCFg8QWxwRfP2FeFDOiG
- 0WF9SeWjPzmrGfkcaWpln+jDvju0kHvWBTW5i4A/9qaFgShEf8m8Ir7nY6oD8gFnLEhw
- /0wwU+NuuyUFaOpV4cZJJtCTPO6rVZxr+MVGgzU/oGIbt9/Hev1MZJNC/d0nq0ZxSFx3
- kQY7pgtRdC0GlI98wgOni1bsaXGPHfURCSX9koYbLEq+bOcqMzPG5pa2YTN5d6tbMoYO
- mVBcZeEAYnEcHvb8XyaYZPnc8ezoE3/U6AtrPKM7MckaMAR6ZGIaLRk7uBYNV9HZgUyG
- C9Fw==
-X-Gm-Message-State: APjAAAWOqFnsIVkYvK3oT8E7gm8ikGPAmTGbFqdLnOzRSGlMolocsRNX
- JTO+R5mfWWPNz3O8E61nDn88dg==
-X-Google-Smtp-Source: APXvYqzWiB8hQkm2uo7S8xni0GVmAx2W9Y1kaKW4dhI8KN2xpmpX/enaUKzWwxDftTpN40iGJ57rhw==
-X-Received: by 2002:a62:754a:: with SMTP id q71mr8685426pfc.70.1570075550111; 
- Wed, 02 Oct 2019 21:05:50 -0700 (PDT)
+ bh=FMBWBObY5TAg6ccjViv94lsR9vhyqh//qqXjnxybPn4=;
+ b=VUKRU0S2aOP02bfxI7CRCd3nM4YH1LTsEgRRcRHVPufMrrDj0AFJygNoaJfJky+BJY
+ GnxjC1z8xXbKwxPx9yxfzLmvs7c5/LKa3sgdPAuf6x4MJZhiVM6LlUYTbvAZqoeYTjVa
+ I2vkKP3eK81B/JEBDo8hf6vVT736y1TKKQKe7ek6/YLn4CF+NTX2gWxi0/4yCCwvfK7S
+ d71Tw05HbzfnQ/0noQRsWjO5a6WsOw7JJlZaKEyfcn1X1v4FT8IERA0NoQM/BA3XKX6i
+ 7edp01lnfg7OFCenud2CscZJ7tedAnIKeYEx5YsraJ1vGnyAmWj6zzwwKF+LfGGPh7gd
+ fUBA==
+X-Gm-Message-State: APjAAAX33nLIC88xEgeNlMgMTrA5aiKPLtqtMifsHHxZ7rI7v+2jLRch
+ fwGLCFlh+c6YkfezeXmm6GIkXQ==
+X-Google-Smtp-Source: APXvYqz6+m0BHndgOBBpcbuerLKGK0gYMwBss4tu7T/iC6fV04yrpAecbt/bgBysta04HsJtKsYn4A==
+X-Received: by 2002:a63:1c09:: with SMTP id c9mr7498204pgc.347.1570076084849; 
+ Wed, 02 Oct 2019 21:14:44 -0700 (PDT)
 Received: from localhost ([2401:fa00:1:10:79b4:bd83:e4a5:a720])
- by smtp.gmail.com with ESMTPSA id z5sm954845pgi.19.2019.10.02.21.05.46
+ by smtp.gmail.com with ESMTPSA id q42sm718700pja.16.2019.10.02.21.14.41
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 02 Oct 2019 21:05:49 -0700 (PDT)
+ Wed, 02 Oct 2019 21:14:44 -0700 (PDT)
 From: Cheng-Yi Chiang <cychiang@chromium.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2] FROMLIST: drm/bridge: dw-hdmi: Restore audio when setting
- a mode
-Date: Thu,  3 Oct 2019 12:05:40 +0800
-Message-Id: <20191003040540.180310-1-cychiang@chromium.org>
+Subject: [PATCH v2 RESEND] drm/bridge: dw-hdmi: Restore audio when setting a
+ mode
+Date: Thu,  3 Oct 2019 12:14:38 +0800
+Message-Id: <20191003041438.194224-1-cychiang@chromium.org>
 X-Mailer: git-send-email 2.23.0.444.g18eeb5a265-goog
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_210551_223769_C2114A2D 
-X-CRM114-Status: GOOD (  11.38  )
+X-CRM114-CacheID: sfid-20191002_211446_222917_23AC54A2 
+X-CRM114-Status: GOOD (  11.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -125,7 +125,8 @@ Signed-off-by: Daniel Kurtz <djkurtz@chromium.org>
 Signed-off-by: Yakir Yang <ykk@rock-chips.com>
 ---
  Change from v1 to v2:
- - Use audio_lock to protect audio clock.
+  - Use audio_lock to protect audio clock.
+  - Fix the patch title.
 
  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 13 ++++++++++++-
  1 file changed, 12 insertions(+), 1 deletion(-)
