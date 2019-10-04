@@ -2,116 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08385CBD9D
-	for <lists+linux-rockchip@lfdr.de>; Fri,  4 Oct 2019 16:42:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E86FFCBDB8
+	for <lists+linux-rockchip@lfdr.de>; Fri,  4 Oct 2019 16:46:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9iQsntCZIgLyWhdtWYs8TJv8gS6R5rerfWjuAb+kH/o=; b=BWrGPJQgFAIa/Y
-	jajnHi7fyWlt6dk/2T2vRJQZ6WSLym13tZQ5mkpx9WYMdD+dw+i2/O9cKkuOdKUDL2fNYUWNXoKWr
-	T/6Zz1htw4vjGnWNuopxV4MSi74cy1Mmh6zTDx5y33iOoOvHyA71pzpi/cElZ7rHWLlM1ozxmpWr4
-	O/x+EwRYKPwQ7zTRDhFuHnTBdHTEHgZGMhlbwOWXFEyPNdeA29SzYWY3yqL2GoA2MSZ/F6h+taQ5H
-	ttrqiNobqxkDnfF5jG+AYuQcEsF+EwucnCbhVNmElNbvJJydex+0dhxVH+kV3UmvvsNperpUVCs6V
-	ErZqPUjvMFXxLVvgbZsg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=heSF4rE3rsnpkgouS3dPKPL5pEq0Smkmv26EffCxMhg=; b=AVu
+	WULQkfdV9zzKvqdXZf9sTkH5RbYzqOz9orEFypQNcUiQLtnxKDm08MLHJ1UMTB3PvJvrL8jIGVvq6
+	y4wOwYkv6SkVocvfPhVM0ZtVyezSpsy1ztRKFR+qdWwOC6j8PBC5pATPxu2jmJKW3/axYA6lCLM00
+	zOeo8dp4ISg6J4GikEQ8QVLzdXXFHBkW4aEOU3VdaHIyrtaWML9MHergr7rTN9KXbrpCTDkeXhVZy
+	DHfyhCHsdtYy+KDbSAcOQ1OjXAP/m6rypOJL0WNhN78yb+twYummnKmFOtN5cZiel//K5t2nSiJAz
+	sHap/XewLekKJ9OaPvGuRgO6UJxkEJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGOnG-0008KP-L2; Fri, 04 Oct 2019 14:42:54 +0000
-Received: from mail-oln040092066080.outbound.protection.outlook.com
- ([40.92.66.80] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1iGOqe-0002KC-35; Fri, 04 Oct 2019 14:46:24 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGOn7-0008DK-Mu; Fri, 04 Oct 2019 14:42:47 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ix8uN9xw0FdiOVq6sbe6hW9rBcHgVvq7cMCcdFB6jBfL8BbHJR1qLWJRuSnJBw6Gc/W3IWfg98XFUyDJpIZ1MGTginHFiIODIbusFTu7HJxCZXJ7Xv0iLSDqk7ya/7sUtlyXvIWQzAeknaxUiMw0V28jII4/bVHBJJQdRV6A+YGSUQrCny5RdByFcc+yq2dmU+cL9UVMx80O/KsN56cCQG2HfNH/zpHKbgonupW5lVFXma+Hj5CvfRKMq8/e0HOF3O8VovEbiY4z0Cd9OD6iRtWxqGm9rRKi+a3CXS6M68X+yhV5x6btx1Y60HgKX/2uyD9koq5Ld2Z8ft20MiTEMg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5E8sBNjbGYhd6RYLTEJ15IEILUzUJcRA8IZbSsmxB+w=;
- b=RrY/xbcpjc2WL1j9hUcgfS+oOLQJ6L1k2goz6HqDxkUBVYyGUzAvja1iHbd3qW5Bxqh46pwOFRxEERDO9AaJQxhtj/9HNWh5o7j10CXkOXwzU8Iv3DcRlMp4GNOspE/xX7k2IaA5ZAswcE9DiZN/zthI6F4nxHjTE5Px3Zksz/3ie2tHmVPEvpr3+GGCTeGyTUL0BkYHjla6+o4g1GhI/lskkWsNGeIZ2liOBHQImo/0/vzkUJLqui2U02Gr5RVwQ8FssANFPOVqiff5klbZVqmfUsH7pIaREwUg+Yo/Yq2Asp5yaTSXQalS9EoX1cbahiBnkOzW8ggDw4K2UpQLxg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-Received: from DB5EUR01FT062.eop-EUR01.prod.protection.outlook.com
- (10.152.4.52) by DB5EUR01HT169.eop-EUR01.prod.protection.outlook.com
- (10.152.5.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2327.20; Fri, 4 Oct
- 2019 14:42:42 +0000
-Received: from HE1PR06MB4011.eurprd06.prod.outlook.com (10.152.4.53) by
- DB5EUR01FT062.mail.protection.outlook.com (10.152.5.167) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2327.20 via Frontend Transport; Fri, 4 Oct 2019 14:42:42 +0000
-Received: from HE1PR06MB4011.eurprd06.prod.outlook.com
- ([fe80::5c5a:1160:a2e0:43d8]) by HE1PR06MB4011.eurprd06.prod.outlook.com
- ([fe80::5c5a:1160:a2e0:43d8%4]) with mapi id 15.20.2305.023; Fri, 4 Oct 2019
- 14:42:42 +0000
-From: Jonas Karlman <jonas@kwiboo.se>
-To: Robin Murphy <robin.murphy@arm.com>, Soeren Moch <smoch@web.de>, Shawn Lin
- <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>
-Subject: =?utf-8?B?UmU6IFtQQVRDSCAzLzNdIGFybTY0OiBkdHM6IHJvY2tjaGlwOiBmaXggUm9j?=
- =?utf-8?B?a1BybzY0IHNkbW1jIHNldHRpbmdz44CQ6K+35rOo5oSP77yM6YKu5Lu255Sx?=
- =?utf-8?B?bGludXgtcm9ja2NoaXAtYm91bmNlcytzaGF3bi5saW49cm9jay1jaGlwcy5j?=
- =?utf-8?B?b21AbGlzdHMuaW5mcmFkZWFkLm9yZ+S7o+WPkeOAkQ==?=
-Thread-Topic: =?utf-8?B?W1BBVENIIDMvM10gYXJtNjQ6IGR0czogcm9ja2NoaXA6IGZpeCBSb2NrUHJv?=
- =?utf-8?B?NjQgc2RtbWMgc2V0dGluZ3PjgJDor7fms6jmhI/vvIzpgq7ku7bnlLFsaW51?=
- =?utf-8?B?eC1yb2NrY2hpcC1ib3VuY2VzK3NoYXduLmxpbj1yb2NrLWNoaXBzLmNvbUBs?=
- =?utf-8?B?aXN0cy5pbmZyYWRlYWQub3Jn5Luj5Y+R44CR?=
-Thread-Index: AQHVelmZzetu3oK16ky/CrX/r+rnT6dJ1g8AgACy24CAAAZUAA==
-Date: Fri, 4 Oct 2019 14:42:42 +0000
-Message-ID: <HE1PR06MB4011FC12B5F4D3C455DEF738AC9E0@HE1PR06MB4011.eurprd06.prod.outlook.com>
-References: <20191003215036.15023-1-smoch@web.de>
- <20191003215036.15023-3-smoch@web.de>
- <31181f3c-20ec-e717-1f7e-8b35cd54d96d@arm.com>
- <a8b20c45-0426-ee42-4efc-52e56ea6bb20@web.de>
- <120e2dbc-55eb-2205-b00f-7e50928ec706@rock-chips.com>
- <1c452b8b-853f-8f58-5f3a-0bbecbe20557@web.de>
- <fc7dce53-ad39-26e3-7c19-ab60ff4cc332@arm.com>
-In-Reply-To: <fc7dce53-ad39-26e3-7c19-ab60ff4cc332@arm.com>
-Accept-Language: sv-SE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: HE1PR0202CA0025.eurprd02.prod.outlook.com
- (2603:10a6:3:e4::11) To HE1PR06MB4011.eurprd06.prod.outlook.com
- (2603:10a6:7:9c::32)
-x-incomingtopheadermarker: OriginalChecksum:7CF50A1E667196D90AF2176FE6D9CC7563319E220D78F793786DA8F4E108C6AB;
- UpperCasedChecksum:C78ACEA92EAB943C01188770F7B165E306DDB7F30EF529F8CD3DF04562636393;
- SizeAsReceived:8498; Count:50
-x-ms-exchange-messagesentrepresentingtype: 1
-x-tmn: [Owz6KUrMWcf3Tt+4rzmu5Z0/4XjsEUF9]
-x-microsoft-original-message-id: <6c592ee3-c9d7-a291-9812-c224b0832835@kwiboo.se>
-x-ms-publictraffictype: Email
-x-incomingheadercount: 50
-x-eopattributedmessage: 0
-x-ms-traffictypediagnostic: DB5EUR01HT169:
-x-ms-exchange-purlcount: 2
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: IKt8z7P0QxpTmlBscNAgHTRVCIM/bVTO8qDi7/RK57OWedQNEZyTHvrnZ3YzuRc/zlriV5wgN+dq3rEprKJggcFjbOFjcTa31zy4YJFe04GBoNBEPxEhJ4X9gi4qsJ3zd3eQWHyQLCreusQOHlZqvtGxQMI5TLvLsVBAurrWZlWM4afNbVmojkqDuRKbx85Z3ZXJ4o2neSbtPWOW/3AIHZmYP9T1D478pUK9VS0bdec=
-x-ms-exchange-transport-forked: True
-Content-ID: <3CAD63302B4A2E4EB53971FB8091A3C2@eurprd06.prod.outlook.com>
-MIME-Version: 1.0
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-Network-Message-Id: e493e80d-b542-41ac-9ec0-08d748d91c7f
-X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Oct 2019 14:42:42.4140 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Internet
-X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB5EUR01HT169
+ id 1iGOqU-0002Cq-3f; Fri, 04 Oct 2019 14:46:16 +0000
+Received: from localhost.localdomain (unknown [194.230.155.145])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7332920659;
+ Fri,  4 Oct 2019 14:46:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570200373;
+ bh=dQL2fC9VvCzTjScxkV1h3zjnJh/luUky5kOf4oisgNs=;
+ h=From:To:Cc:Subject:Date:From;
+ b=unXuT7183LQK6F8lpqOxb2CO6Q/bKxgDzb/JR4b6n0dVKs3Z1aaFDO2MNWU/u6Pk9
+ R1sRf+8bs0uOkNhxGr+4+3x1sUk92cil8eNe/chJGRw+S2Qc/jkiDSQQvfNRkaRjyt
+ 84FhGdEwjfviPWWVQl0cINivsFrXCsnA+Vro5pFQ=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Sean Paul <sean@poorly.run>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Jiri Kosina <trivial@kernel.org>, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ intel-gfx@lists.freedesktop.org, lima@lists.freedesktop.org,
+ nouveau@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+Subject: [PATCH TRIVIAL v2] gpu: Fix Kconfig indentation
+Date: Fri,  4 Oct 2019 16:45:49 +0200
+Message-Id: <20191004144549.3567-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_074245_754226_F9512D24 
-X-CRM114-Status: GOOD (  18.79  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191004_074614_199493_EE705DAE 
+X-CRM114-Status: GOOD (  21.37  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.66.80 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.92.66.80 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,77 +79,553 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Krzysztof Kozlowski <krzk@kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gMjAxOS0xMC0wNCAxNjoyMCwgUm9iaW4gTXVycGh5IHdyb3RlOg0KPiBPbiAwNC8xMC8yMDE5
-IDA0OjM5LCBTb2VyZW4gTW9jaCB3cm90ZToNCj4+DQo+PiBPbiAwNC4xMC4xOSAwNDoxMywgU2hh
-d24gTGluIHdyb3RlOg0KPj4+IE9uIDIwMTkvMTAvNCA4OjUzLCBTb2VyZW4gTW9jaCB3cm90ZToN
-Cj4+Pj4NCj4+Pj4gT24gMDQuMTAuMTkgMDI6MDEsIFJvYmluIE11cnBoeSB3cm90ZToNCj4+Pj4+
-IE9uIDIwMTktMTAtMDMgMTA6NTAgcG0sIFNvZXJlbiBNb2NoIHdyb3RlOg0KPj4+Pj4+IEFjY29y
-ZGluZyB0byB0aGUgUm9ja1BybzY0IHNjaGVtYXRpYyBbMV0gdGhlIHJrMzM5OSBzZG1tYw0KPj4+
-Pj4+IGNvbnRyb2xsZXIgaXMNCj4+Pj4+PiBjb25uZWN0ZWQgdG8gYSBtaWNyb1NEIChURiBjYXJk
-KSBzbG90LCB3aGljaCBjYW5ub3QgYmUgc3dpdGNoZWQgdG8NCj4+Pj4+PiAxLjhWLg0KPj4+Pj4g
-UmVhbGx5PyBBRkFJQ1MgdGhlIFNETU1DMCB3aXJpbmcgbG9va3MgcHJldHR5IG11Y2ggaWRlbnRp
-Y2FsIHRvIHRoZQ0KPj4+Pj4gTmFub1BDLVQ0IHNjaGVtYXRpYyAoaXQncyB0aGUgc2FtZSByZWZl
-cmVuY2UgZGVzaWduLCBhZnRlciBhbGwpLCBhbmQgSQ0KPj4+Pj4ga25vdyB0aGF0IGJvYXJkIGNh
-biBoYXBwaWx5IGRyaXZlIGEgVUhTLUkgbWljcm9TRCBjYXJkIHdpdGggMS44diBJL09zLA0KPj4+
-Pj4gYmVjYXVzZSBtaW5lJ3MgZG9pbmcgc28gcmlnaHQgbm93Lg0KPj4+Pj4NCj4+Pj4+IFJvYmlu
-Lg0KPj4+PiBPSywgdGhlIFJvY2tQcm82NCBkb2VzIG5vdCBhbGxvdyBhIGNhcmQgcmVzZXQgKHBv
-d2VyIGN5Y2xlKSBzaW5jZQ0KPj4+PiBWQ0MzVjBfU0QgaXMgZGlyZWN0bHkgY29ubmVjdGVkIHRv
-IFZDQzNWM19TWVMgKHZpYSBSODk1NTUpLCB0aGUNCj4+Pj4gU0RNTUMwX1BXSF9IIHNpZ25hbCBp
-cyBub3QgY29ubmVjdGVkLiBTbyB0aGUgY2FyZCBmYWlscyB0byBpZGVudGlmeQ0KPj4+PiBpdHNl
-bGYgYWZ0ZXIgc3VzcGVuZCBvciByZWJvb3Qgd2hlbiBzd2l0Y2hlZCB0byAxLjhWIG9wZXJhdGlv
-bi4NCj4gQWgsIHRoYW5rcyBmb3IgY2xhcmlmeWluZyAtIEkgZGlkIG92ZXJsb29rIHRoZSBzdWJ0
-bGV0eSB0aGF0IFUxMiBhbmQgDQo+IGZyaWVuZHMgaGF2ZSAiTkMiIGFzIGFsdGVybmF0aXZlIHBh
-cnQgbnVtYmVycywgZXZlbiB0aG91Z2ggdGhleSBhcmVuJ3QgDQo+IGFjdHVhbGx5IG1hcmtlZCBh
-cyBETlAuIFNvIGl0J3Mgc3RpbGwgbm90IHNvIG11Y2ggImNhbm5vdCBiZSBzd2l0Y2hlZCIgDQo+
-IGFzICJzd2l0Y2hpbmcgY2FuIGxlYWQgdG8gb3RoZXIgcHJvYmxlbXMiLg0KPg0KPj4+IEkgYmVs
-aWV2ZSB3ZSBhZGRyZXNzZWQgdGhpcyBpc3N1ZSBsb25nIHRpbWUgYWdvLCBwbGVhc2UgY2hlY2s6
-DQo+Pj4NCj4+PiBodHRwczovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dp
-dC90b3J2YWxkcy9saW51eC5naXQvY29tbWl0Lz9pZD02YTExZmM0N2YxNzVjOGQ4NzAxOGU4OWNi
-NThlMmQzNmM2NjUzNGNiDQo+Pj4NCj4+IFRoYW5rcyBmb3IgdGhlIHBvaW50ZXIuDQo+PiBJbiB0
-aGlzIGNhc2UgSSBndWVzcyBJIHNob3VsZCB1c2UgZm9sbG93aW5nIHBhdGNoIGluc3RlYWQ6DQo+
-Pg0KPj4gLS0tIHJrMzM5OS1yb2NrcHJvNjQuZHRzLmJhayDCoMKgIDIwMTktMTAtMDMgMjI6MTQ6
-MDAuMDY3NzQ1Nzk5ICswMjAwDQo+PiArKysgcmszMzk5LXJvY2twcm82NC5kdHPCoMKgwqAgMjAx
-OS0xMC0wNCAwMDowMjo1MC4wNDc4OTIzNjYgKzAyMDANCj4+IEBAIC02MTksNiArNjE5LDggQEAN
-Cj4+ICDCoMKgwqDCoCBtYXgtZnJlcXVlbmN5ID0gPDE1MDAwMDAwMD47DQo+PiAgwqDCoMKgwqAg
-cGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsNCj4+ICDCoMKgwqDCoCBwaW5jdHJsLTAgPSA8JnNk
-bW1jX2NsayAmc2RtbWNfY21kICZzZG1tY19idXM0PjsNCj4+ICvCoMKgwqAgc2QtdWhzLXNkcjEw
-NDsNCj4+ICvCoMKgwqAgdnFtbWMtc3VwcGx5ID0gPCZ2Y2Nfc2Rpbz47DQo+PiAgwqDCoMKgwqAg
-c3RhdHVzID0gIm9rYXkiOw0KPj4gIMKgfTsNCj4+ICAgDQo+PiBXaGVuIEkgZG8gc28sIHRoZSBz
-ZCBjYXJkIGlzIGRldGVjdGVkIGFzIFNEUjEwNCwgYnV0IGEgcmVib290IGhhbmdzOg0KPj4NCj4+
-IEJvb3QxOiAyMDE4LTA2LTI2LCB2ZXJzaW9uOiAxLjE0DQo+PiBDUFVJZCA9IDB4MA0KPj4gQ2hp
-cFR5cGUgPSAweDEwLCAyODYNCj4+IFNwaV9DaGlwSWQgPSBjODQwMTgNCj4+IG5vIGZpbmQgcmtw
-YXJ0aXRpb24NCj4+IFNwaUJvb3RJbml0OmZmZmZmZmZmDQo+PiBtbWM6IEVSUk9SOiBTREhDSSBF
-UlI6Y21kOjB4MTAyLHN0YXQ6MHgxODAwMA0KPj4gbW1jOiBFUlJPUjogQ2FyZCBkaWQgbm90IHJl
-c3BvbmQgdG8gdm9sdGFnZSBzZWxlY3QhDQo+PiBlbW1jIHJlaW5pdA0KPj4gbW1jOiBFUlJPUjog
-U0RIQ0kgRVJSOmNtZDoweDEwMixzdGF0OjB4MTgwMDANCj4+IG1tYzogRVJST1I6IENhcmQgZGlk
-IG5vdCByZXNwb25kIHRvIHZvbHRhZ2Ugc2VsZWN0IQ0KPj4gZW1tYyByZWluaXQNCj4+IG1tYzog
-RVJST1I6IFNESENJIEVSUjpjbWQ6MHgxMDIsc3RhdDoweDE4MDAwDQo+PiBtbWM6IEVSUk9SOiBD
-YXJkIGRpZCBub3QgcmVzcG9uZCB0byB2b2x0YWdlIHNlbGVjdCENCj4+IFNkbW1jSW5pdD0yIDEN
-Cj4+IG1tYzA6Y21kNSwzMg0KPj4gbW1jMDpjbWQ3LDMyDQo+PiBtbWMwOmNtZDUsMzINCj4+IG1t
-YzA6Y21kNywzMg0KPj4gbW1jMDpjbWQ1LDMyDQo+PiBtbWMwOmNtZDcsMzINCj4+IFNkbW1jSW5p
-dD0wIDENCj4+DQo+PiBTbyBJIGd1ZXNzIEkgc2hvdWxkIHVzZSBhIGRpZmZlcmVudCBtaW5pbG9h
-ZGVyIGZvciB0aGlzIHJlYm9vdCB0byB3b3JrIT8NCj4+IE9yIHdoYXQgZWxzZSBjb3VsZCBiZSB3
-cm9uZyBoZXJlPw0KPiBIbW0sIEkgZ3Vlc3MgdGhpcyBpcyAidGhlIFRpbmtlcmJvYXJkIHByb2Js
-ZW0iIGFnYWluIC0gdGhlIHBhdGNoIGFib3ZlIA0KPiB3b3VsZCBiZSBPSyBpZiB3ZSBjb3VsZCBn
-ZXQgYXMgZmFyIGFzIHRoZSBrZXJuZWwsIGJ1dCBjYW4ndCBoZWxwIGlmIHRoZSANCj4gb2ZmZW5k
-aW5nIGNhcmQgaXMgaXRzZWxmIHRoZSBib290IG1lZGl1bS4gVGhlcmUgd2FzIGEgcHJvcG9zYWwg
-aGVyZToNCj4NCj4gaHR0cHM6Ly9wYXRjaHdvcmsua2VybmVsLm9yZy9wYXRjaC8xMDgxNzIxNy8N
-Cj4NCj4gYWx0aG91Z2ggSSdtIG5vdCBzdXJlIHdoYXQgaWYgYW55IHByb2dyZXNzIGhhcyBiZWVu
-IG1hZGUgc2luY2UgdGhlbi4NCg0KQ29ycmVjdCwgSSBuZXZlciBnb3QgYXJvdW5kIHRvIGNvbXBs
-ZXRlIHRlc3Rpbmcgb24gb3RoZXIgZGV2aWNlcy4NCk1heWJlIHNvbWVvbmUgbW9yZSBmYW1pbGlh
-ciB3aXRoIG1tYyBzdWJzeXN0ZW0gY2FuIHBpY2sgdGhhdCB1cCBpZiBpdCBub3cgdHVybnMgb3V0
-IG90aGVyIGRldmljZXMgc2hvdyB0aGUgc2FtZS9zaW1pbGFyIGlzc3VlPw0KDQpmd2l3IHRoZSAi
-bW1jOiBjb3JlOiBzZXQgaW5pdGlhbCBzaWduYWwgdm9sdGFnZSBvbiBwb3dlciBvZmYiIHJmYy9w
-YXRjaCBoYXZlIGJlZW4gdXNlZCBpbiBMaWJyZUVMRUMgcm9ja2NoaXAgYnVpbGRzIGZvciB3ZWxs
-IG92ZXIgYSB5ZWFyIG5vdy4NCg0KUmVnYXJkcywNCkpvbmFzDQoNCj4NCj4gUm9iaW4uDQo+DQoN
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJv
-Y2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+Adjust indentation from spaces to tab (+optional two spaces) as in
+coding style with command like:
+    $ sed -e 's/^        /\t/' -i */Kconfig
+
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+
+---
+
+Changes since v1:
+1. Fix also DRM_AMD_DC_HDCP (new arrival since v1).
+---
+ drivers/gpu/drm/Kconfig                  |  10 +-
+ drivers/gpu/drm/amd/display/Kconfig      |  32 ++---
+ drivers/gpu/drm/bridge/Kconfig           |   8 +-
+ drivers/gpu/drm/i915/Kconfig             |  12 +-
+ drivers/gpu/drm/i915/Kconfig.debug       | 144 +++++++++++------------
+ drivers/gpu/drm/lima/Kconfig             |   2 +-
+ drivers/gpu/drm/mgag200/Kconfig          |   8 +-
+ drivers/gpu/drm/nouveau/Kconfig          |   2 +-
+ drivers/gpu/drm/omapdrm/displays/Kconfig |   6 +-
+ drivers/gpu/drm/omapdrm/dss/Kconfig      |  12 +-
+ drivers/gpu/drm/rockchip/Kconfig         |   8 +-
+ drivers/gpu/drm/udl/Kconfig              |   2 +-
+ drivers/gpu/vga/Kconfig                  |   2 +-
+ 13 files changed, 124 insertions(+), 124 deletions(-)
+
+diff --git a/drivers/gpu/drm/Kconfig b/drivers/gpu/drm/Kconfig
+index e67c194c2aca..7cb6e4eb99e8 100644
+--- a/drivers/gpu/drm/Kconfig
++++ b/drivers/gpu/drm/Kconfig
+@@ -207,8 +207,8 @@ config DRM_RADEON
+ 	tristate "ATI Radeon"
+ 	depends on DRM && PCI && MMU
+ 	select FW_LOADER
+-        select DRM_KMS_HELPER
+-        select DRM_TTM
++	select DRM_KMS_HELPER
++	select DRM_TTM
+ 	select POWER_SUPPLY
+ 	select HWMON
+ 	select BACKLIGHT_CLASS_DEVICE
+@@ -226,9 +226,9 @@ config DRM_AMDGPU
+ 	tristate "AMD GPU"
+ 	depends on DRM && PCI && MMU
+ 	select FW_LOADER
+-        select DRM_KMS_HELPER
++	select DRM_KMS_HELPER
+ 	select DRM_SCHED
+-        select DRM_TTM
++	select DRM_TTM
+ 	select POWER_SUPPLY
+ 	select HWMON
+ 	select BACKLIGHT_CLASS_DEVICE
+@@ -266,7 +266,7 @@ config DRM_VKMS
+ 	  If M is selected the module will be called vkms.
+ 
+ config DRM_ATI_PCIGART
+-        bool
++	bool
+ 
+ source "drivers/gpu/drm/exynos/Kconfig"
+ 
+diff --git a/drivers/gpu/drm/amd/display/Kconfig b/drivers/gpu/drm/amd/display/Kconfig
+index 1bbe762ee6ba..313183b80032 100644
+--- a/drivers/gpu/drm/amd/display/Kconfig
++++ b/drivers/gpu/drm/amd/display/Kconfig
+@@ -23,16 +23,16 @@ config DRM_AMD_DC_DCN2_0
+ 	depends on DRM_AMD_DC && X86
+ 	depends on DRM_AMD_DC_DCN1_0
+ 	help
+-	    Choose this option if you want to have
+-	    Navi support for display engine
++	  Choose this option if you want to have
++	  Navi support for display engine
+ 
+ config DRM_AMD_DC_DCN2_1
+-        bool "DCN 2.1 family"
+-        depends on DRM_AMD_DC && X86
+-        depends on DRM_AMD_DC_DCN2_0
+-        help
+-            Choose this option if you want to have
+-            Renoir support for display engine
++	bool "DCN 2.1 family"
++	depends on DRM_AMD_DC && X86
++	depends on DRM_AMD_DC_DCN2_0
++	help
++	  Choose this option if you want to have
++	  Renoir support for display engine
+ 
+ config DRM_AMD_DC_DSC_SUPPORT
+ 	bool "DSC support"
+@@ -41,16 +41,16 @@ config DRM_AMD_DC_DSC_SUPPORT
+ 	depends on DRM_AMD_DC_DCN1_0
+ 	depends on DRM_AMD_DC_DCN2_0
+ 	help
+-	    Choose this option if you want to have
+-	    Dynamic Stream Compression support
++	  Choose this option if you want to have
++	  Dynamic Stream Compression support
+ 
+ config DRM_AMD_DC_HDCP
+-        bool "Enable HDCP support in DC"
+-        depends on DRM_AMD_DC
+-        help
+-         Choose this option
+-         if you want to support
+-         HDCP authentication
++	bool "Enable HDCP support in DC"
++	depends on DRM_AMD_DC
++	help
++	 Choose this option
++	 if you want to support
++	 HDCP authentication
+ 
+ config DEBUG_KERNEL_DC
+ 	bool "Enable kgdb break in DC"
+diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
+index 1cc9f502c1f2..a5aa7ec16000 100644
+--- a/drivers/gpu/drm/bridge/Kconfig
++++ b/drivers/gpu/drm/bridge/Kconfig
+@@ -60,10 +60,10 @@ config DRM_MEGACHIPS_STDPXXXX_GE_B850V3_FW
+ 	select DRM_KMS_HELPER
+ 	select DRM_PANEL
+ 	---help---
+-          This is a driver for the display bridges of
+-          GE B850v3 that convert dual channel LVDS
+-          to DP++. This is used with the i.MX6 imx-ldb
+-          driver. You are likely to say N here.
++	  This is a driver for the display bridges of
++	  GE B850v3 that convert dual channel LVDS
++	  to DP++. This is used with the i.MX6 imx-ldb
++	  driver. You are likely to say N here.
+ 
+ config DRM_NXP_PTN3460
+ 	tristate "NXP PTN3460 DP/LVDS bridge"
+diff --git a/drivers/gpu/drm/i915/Kconfig b/drivers/gpu/drm/i915/Kconfig
+index 0d21402945ab..3c6d57df262d 100644
+--- a/drivers/gpu/drm/i915/Kconfig
++++ b/drivers/gpu/drm/i915/Kconfig
+@@ -76,7 +76,7 @@ config DRM_I915_CAPTURE_ERROR
+ 	  This option enables capturing the GPU state when a hang is detected.
+ 	  This information is vital for triaging hangs and assists in debugging.
+ 	  Please report any hang to
+-            https://bugs.freedesktop.org/enter_bug.cgi?product=DRI
++	    https://bugs.freedesktop.org/enter_bug.cgi?product=DRI
+ 	  for triaging.
+ 
+ 	  If in doubt, say "Y".
+@@ -105,11 +105,11 @@ config DRM_I915_USERPTR
+ 	  If in doubt, say "Y".
+ 
+ config DRM_I915_GVT
+-        bool "Enable Intel GVT-g graphics virtualization host support"
+-        depends on DRM_I915
+-        depends on 64BIT
+-        default n
+-        help
++	bool "Enable Intel GVT-g graphics virtualization host support"
++	depends on DRM_I915
++	depends on 64BIT
++	default n
++	help
+ 	  Choose this option if you want to enable Intel GVT-g graphics
+ 	  virtualization technology host support with integrated graphics.
+ 	  With GVT-g, it's possible to have one integrated graphics
+diff --git a/drivers/gpu/drm/i915/Kconfig.debug b/drivers/gpu/drm/i915/Kconfig.debug
+index 00786a142ff0..eea79125b3ea 100644
+--- a/drivers/gpu/drm/i915/Kconfig.debug
++++ b/drivers/gpu/drm/i915/Kconfig.debug
+@@ -1,34 +1,34 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ config DRM_I915_WERROR
+-        bool "Force GCC to throw an error instead of a warning when compiling"
+-        # As this may inadvertently break the build, only allow the user
+-        # to shoot oneself in the foot iff they aim really hard
+-        depends on EXPERT
+-        # We use the dependency on !COMPILE_TEST to not be enabled in
+-        # allmodconfig or allyesconfig configurations
+-        depends on !COMPILE_TEST
++	bool "Force GCC to throw an error instead of a warning when compiling"
++	# As this may inadvertently break the build, only allow the user
++	# to shoot oneself in the foot iff they aim really hard
++	depends on EXPERT
++	# We use the dependency on !COMPILE_TEST to not be enabled in
++	# allmodconfig or allyesconfig configurations
++	depends on !COMPILE_TEST
+ 	select HEADER_TEST
+-        default n
+-        help
+-          Add -Werror to the build flags for (and only for) i915.ko.
+-          Do not enable this unless you are writing code for the i915.ko module.
++	default n
++	help
++	  Add -Werror to the build flags for (and only for) i915.ko.
++	  Do not enable this unless you are writing code for the i915.ko module.
+ 
+-          Recommended for driver developers only.
++	  Recommended for driver developers only.
+ 
+-          If in doubt, say "N".
++	  If in doubt, say "N".
+ 
+ config DRM_I915_DEBUG
+-        bool "Enable additional driver debugging"
+-        depends on DRM_I915
+-        select DEBUG_FS
+-        select PREEMPT_COUNT
+-        select REFCOUNT_FULL
+-        select I2C_CHARDEV
+-        select STACKDEPOT
+-        select DRM_DP_AUX_CHARDEV
+-        select X86_MSR # used by igt/pm_rpm
+-        select DRM_VGEM # used by igt/prime_vgem (dmabuf interop checks)
+-        select DRM_DEBUG_MM if DRM=y
++	bool "Enable additional driver debugging"
++	depends on DRM_I915
++	select DEBUG_FS
++	select PREEMPT_COUNT
++	select REFCOUNT_FULL
++	select I2C_CHARDEV
++	select STACKDEPOT
++	select DRM_DP_AUX_CHARDEV
++	select X86_MSR # used by igt/pm_rpm
++	select DRM_VGEM # used by igt/prime_vgem (dmabuf interop checks)
++	select DRM_DEBUG_MM if DRM=y
+ 	select DRM_DEBUG_SELFTEST
+ 	select DMABUF_SELFTESTS
+ 	select SW_SYNC # signaling validation framework (igt/syncobj*)
+@@ -36,14 +36,14 @@ config DRM_I915_DEBUG
+ 	select DRM_I915_SELFTEST
+ 	select DRM_I915_DEBUG_RUNTIME_PM
+ 	select DRM_I915_DEBUG_MMIO
+-        default n
+-        help
+-          Choose this option to turn on extra driver debugging that may affect
+-          performance but will catch some internal issues.
++	default n
++	help
++	  Choose this option to turn on extra driver debugging that may affect
++	  performance but will catch some internal issues.
+ 
+-          Recommended for driver developers only.
++	  Recommended for driver developers only.
+ 
+-          If in doubt, say "N".
++	  If in doubt, say "N".
+ 
+ config DRM_I915_DEBUG_MMIO
+ 	bool "Always insert extra checks around mmio access by default"
+@@ -59,16 +59,16 @@ config DRM_I915_DEBUG_MMIO
+ 	  If in doubt, say "N".
+ 
+ config DRM_I915_DEBUG_GEM
+-        bool "Insert extra checks into the GEM internals"
+-        default n
+-        depends on DRM_I915_WERROR
+-        help
+-          Enable extra sanity checks (including BUGs) along the GEM driver
+-          paths that may slow the system down and if hit hang the machine.
++	bool "Insert extra checks into the GEM internals"
++	default n
++	depends on DRM_I915_WERROR
++	help
++	  Enable extra sanity checks (including BUGs) along the GEM driver
++	  paths that may slow the system down and if hit hang the machine.
+ 
+-          Recommended for driver developers only.
++	  Recommended for driver developers only.
+ 
+-          If in doubt, say "N".
++	  If in doubt, say "N".
+ 
+ config DRM_I915_ERRLOG_GEM
+ 	bool "Insert extra logging (very verbose) for common GEM errors"
+@@ -111,41 +111,41 @@ config DRM_I915_TRACE_GTT
+ 	  If in doubt, say "N".
+ 
+ config DRM_I915_SW_FENCE_DEBUG_OBJECTS
+-        bool "Enable additional driver debugging for fence objects"
+-        depends on DRM_I915
+-        select DEBUG_OBJECTS
+-        default n
+-        help
+-          Choose this option to turn on extra driver debugging that may affect
+-          performance but will catch some internal issues.
++	bool "Enable additional driver debugging for fence objects"
++	depends on DRM_I915
++	select DEBUG_OBJECTS
++	default n
++	help
++	  Choose this option to turn on extra driver debugging that may affect
++	  performance but will catch some internal issues.
+ 
+-          Recommended for driver developers only.
++	  Recommended for driver developers only.
+ 
+-          If in doubt, say "N".
++	  If in doubt, say "N".
+ 
+ config DRM_I915_SW_FENCE_CHECK_DAG
+-        bool "Enable additional driver debugging for detecting dependency cycles"
+-        depends on DRM_I915
+-        default n
+-        help
+-          Choose this option to turn on extra driver debugging that may affect
+-          performance but will catch some internal issues.
++	bool "Enable additional driver debugging for detecting dependency cycles"
++	depends on DRM_I915
++	default n
++	help
++	  Choose this option to turn on extra driver debugging that may affect
++	  performance but will catch some internal issues.
+ 
+-          Recommended for driver developers only.
++	  Recommended for driver developers only.
+ 
+-          If in doubt, say "N".
++	  If in doubt, say "N".
+ 
+ config DRM_I915_DEBUG_GUC
+-        bool "Enable additional driver debugging for GuC"
+-        depends on DRM_I915
+-        default n
+-        help
+-          Choose this option to turn on extra driver debugging that may affect
+-          performance but will help resolve GuC related issues.
++	bool "Enable additional driver debugging for GuC"
++	depends on DRM_I915
++	default n
++	help
++	  Choose this option to turn on extra driver debugging that may affect
++	  performance but will help resolve GuC related issues.
+ 
+-          Recommended for driver developers only.
++	  Recommended for driver developers only.
+ 
+-          If in doubt, say "N".
++	  If in doubt, say "N".
+ 
+ config DRM_I915_SELFTEST
+ 	bool "Enable selftests upon driver load"
+@@ -178,15 +178,15 @@ config DRM_I915_SELFTEST_BROKEN
+ 	  If in doubt, say "N".
+ 
+ config DRM_I915_LOW_LEVEL_TRACEPOINTS
+-        bool "Enable low level request tracing events"
+-        depends on DRM_I915
+-        default n
+-        help
+-          Choose this option to turn on low level request tracing events.
+-          This provides the ability to precisely monitor engine utilisation
+-          and also analyze the request dependency resolving timeline.
+-
+-          If in doubt, say "N".
++	bool "Enable low level request tracing events"
++	depends on DRM_I915
++	default n
++	help
++	  Choose this option to turn on low level request tracing events.
++	  This provides the ability to precisely monitor engine utilisation
++	  and also analyze the request dependency resolving timeline.
++
++	  If in doubt, say "N".
+ 
+ config DRM_I915_DEBUG_VBLANK_EVADE
+ 	bool "Enable extra debug warnings for vblank evasion"
+diff --git a/drivers/gpu/drm/lima/Kconfig b/drivers/gpu/drm/lima/Kconfig
+index bb4ddc6bb0a6..652af7f50ea9 100644
+--- a/drivers/gpu/drm/lima/Kconfig
++++ b/drivers/gpu/drm/lima/Kconfig
+@@ -10,4 +10,4 @@ config DRM_LIMA
+        depends on OF
+        select DRM_SCHED
+        help
+-         DRM driver for ARM Mali 400/450 GPUs.
++	 DRM driver for ARM Mali 400/450 GPUs.
+diff --git a/drivers/gpu/drm/mgag200/Kconfig b/drivers/gpu/drm/mgag200/Kconfig
+index 76fee0fbdcae..4b31ef376abc 100644
+--- a/drivers/gpu/drm/mgag200/Kconfig
++++ b/drivers/gpu/drm/mgag200/Kconfig
+@@ -6,8 +6,8 @@ config DRM_MGAG200
+ 	select DRM_VRAM_HELPER
+ 	help
+ 	 This is a KMS driver for the MGA G200 server chips, it
+-         does not support the original MGA G200 or any of the desktop
+-         chips. It requires 0.3.0 of the modesetting userspace driver,
+-         and a version of mga driver that will fail on KMS enabled
+-         devices.
++	 does not support the original MGA G200 or any of the desktop
++	 chips. It requires 0.3.0 of the modesetting userspace driver,
++	 and a version of mga driver that will fail on KMS enabled
++	 devices.
+ 
+diff --git a/drivers/gpu/drm/nouveau/Kconfig b/drivers/gpu/drm/nouveau/Kconfig
+index 3558df043592..9c990266e876 100644
+--- a/drivers/gpu/drm/nouveau/Kconfig
++++ b/drivers/gpu/drm/nouveau/Kconfig
+@@ -2,7 +2,7 @@
+ config DRM_NOUVEAU
+ 	tristate "Nouveau (NVIDIA) cards"
+ 	depends on DRM && PCI && MMU
+-        select FW_LOADER
++	select FW_LOADER
+ 	select DRM_KMS_HELPER
+ 	select DRM_TTM
+ 	select BACKLIGHT_CLASS_DEVICE if DRM_NOUVEAU_BACKLIGHT
+diff --git a/drivers/gpu/drm/omapdrm/displays/Kconfig b/drivers/gpu/drm/omapdrm/displays/Kconfig
+index 240dda102845..b562a8cd61bf 100644
+--- a/drivers/gpu/drm/omapdrm/displays/Kconfig
++++ b/drivers/gpu/drm/omapdrm/displays/Kconfig
+@@ -8,18 +8,18 @@ config DRM_OMAP_ENCODER_OPA362
+ 	  through a GPIO.
+ 
+ config DRM_OMAP_ENCODER_TPD12S015
+-        tristate "TPD12S015 HDMI ESD protection and level shifter"
++	tristate "TPD12S015 HDMI ESD protection and level shifter"
+ 	help
+ 	  Driver for TPD12S015, which offers HDMI ESD protection and level
+ 	  shifting.
+ 
+ config DRM_OMAP_CONNECTOR_HDMI
+-        tristate "HDMI Connector"
++	tristate "HDMI Connector"
+ 	help
+ 	  Driver for a generic HDMI connector.
+ 
+ config DRM_OMAP_CONNECTOR_ANALOG_TV
+-        tristate "Analog TV Connector"
++	tristate "Analog TV Connector"
+ 	help
+ 	  Driver for a generic analog TV connector.
+ 
+diff --git a/drivers/gpu/drm/omapdrm/dss/Kconfig b/drivers/gpu/drm/omapdrm/dss/Kconfig
+index 956f23e1452d..72ae79c0c9b4 100644
+--- a/drivers/gpu/drm/omapdrm/dss/Kconfig
++++ b/drivers/gpu/drm/omapdrm/dss/Kconfig
+@@ -6,12 +6,12 @@ config OMAP_DSS_BASE
+ 	tristate
+ 
+ menuconfig OMAP2_DSS
+-        tristate "OMAP2+ Display Subsystem support"
++	tristate "OMAP2+ Display Subsystem support"
+ 	select OMAP_DSS_BASE
+ 	select VIDEOMODE_HELPERS
+ 	select OMAP2_DSS_INIT
+ 	select HDMI
+-        help
++	help
+ 	  OMAP2+ Display Subsystem support.
+ 
+ if OMAP2_DSS
+@@ -52,7 +52,7 @@ config OMAP2_DSS_DPI
+ 
+ config OMAP2_DSS_VENC
+ 	bool "VENC support"
+-        default y
++	default y
+ 	help
+ 	  OMAP Video Encoder support for S-Video and composite TV-out.
+ 
+@@ -61,7 +61,7 @@ config OMAP2_DSS_HDMI_COMMON
+ 
+ config OMAP4_DSS_HDMI
+ 	bool "HDMI support for OMAP4"
+-        default y
++	default y
+ 	select OMAP2_DSS_HDMI_COMMON
+ 	help
+ 	  HDMI support for OMAP4 based SoCs.
+@@ -85,7 +85,7 @@ config OMAP5_DSS_HDMI
+ 
+ config OMAP2_DSS_SDI
+ 	bool "SDI support"
+-        default n
++	default n
+ 	help
+ 	  SDI (Serial Display Interface) support.
+ 
+@@ -94,7 +94,7 @@ config OMAP2_DSS_SDI
+ 
+ config OMAP2_DSS_DSI
+ 	bool "DSI support"
+-        default n
++	default n
+ 	help
+ 	  MIPI DSI (Display Serial Interface) support.
+ 
+diff --git a/drivers/gpu/drm/rockchip/Kconfig b/drivers/gpu/drm/rockchip/Kconfig
+index 6f4222f8beeb..1670a5cae3c7 100644
+--- a/drivers/gpu/drm/rockchip/Kconfig
++++ b/drivers/gpu/drm/rockchip/Kconfig
+@@ -28,17 +28,17 @@ config ROCKCHIP_ANALOGIX_DP
+ 	  on RK3288 or RK3399 based SoC, you should select this option.
+ 
+ config ROCKCHIP_CDN_DP
+-        bool "Rockchip cdn DP"
++	bool "Rockchip cdn DP"
+ 	depends on EXTCON=y || (EXTCON=m && DRM_ROCKCHIP=m)
+-        help
++	help
+ 	  This selects support for Rockchip SoC specific extensions
+ 	  for the cdn DP driver. If you want to enable Dp on
+ 	  RK3399 based SoC, you should select this
+ 	  option.
+ 
+ config ROCKCHIP_DW_HDMI
+-        bool "Rockchip specific extensions for Synopsys DW HDMI"
+-        help
++	bool "Rockchip specific extensions for Synopsys DW HDMI"
++	help
+ 	  This selects support for Rockchip SoC specific extensions
+ 	  for the Synopsys DesignWare HDMI driver. If you want to
+ 	  enable HDMI on RK3288 or RK3399 based SoC, you should select
+diff --git a/drivers/gpu/drm/udl/Kconfig b/drivers/gpu/drm/udl/Kconfig
+index b4d179b87f01..b13aa33990f3 100644
+--- a/drivers/gpu/drm/udl/Kconfig
++++ b/drivers/gpu/drm/udl/Kconfig
+@@ -8,4 +8,4 @@ config DRM_UDL
+ 	select DRM_KMS_HELPER
+ 	help
+ 	  This is a KMS driver for the USB displaylink video adapters.
+-          Say M/Y to add support for these devices via drm/kms interfaces.
++	  Say M/Y to add support for these devices via drm/kms interfaces.
+diff --git a/drivers/gpu/vga/Kconfig b/drivers/gpu/vga/Kconfig
+index c8c770b05ed9..1ad4c4ef0b5e 100644
+--- a/drivers/gpu/vga/Kconfig
++++ b/drivers/gpu/vga/Kconfig
+@@ -28,6 +28,6 @@ config VGA_SWITCHEROO
+ 	help
+ 	  Many laptops released in 2008/9/10 have two GPUs with a multiplexer
+ 	  to switch between them. This adds support for dynamic switching when
+-          X isn't running and delayed switching until the next logoff. This
++	  X isn't running and delayed switching until the next logoff. This
+ 	  feature is called hybrid graphics, ATI PowerXpress, and Nvidia
+ 	  HybridPower.
+-- 
+2.17.1
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
