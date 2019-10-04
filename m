@@ -2,52 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D76EECB20D
-	for <lists+linux-rockchip@lfdr.de>; Fri,  4 Oct 2019 00:50:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 835A6CB299
+	for <lists+linux-rockchip@lfdr.de>; Fri,  4 Oct 2019 02:01:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RIryyI6vYSFi09q+aFox8iI+rzVNKcXY8FIYcvOzjkU=; b=lY6wKSn3pkza3y
-	CoGUSLbe5RSMbQRIlGxqtn61W2bMClqE4FsteAdfsWDistowYcwHTgd68w2dvd36iBGF3XRprq+x4
-	/p4/iXFmbdZC/ljqnDA84oWr2jZZlWGHPCXKgOJ26eKSdRoOH3n5d74LUWpPkB8eLAlFgjWsx5Z1t
-	AW9nDXlsa5fOt7WvD097UG8w0D1VoXpsBURNH+r/3HPZ+pRypz68YbAAcLpyY+yZPldnPjVcul4IP
-	a6AwLhqGFxQmcHvbDhLXUP9Deco5exzC2ZSo6+FDtBnh3W+pSTwOtul9AbfGvsGsGWbZa7YKsax26
-	mu3n0fZEF003AAYVszPQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=VOJFdgKwpbfDm1L3KjUIS6Vv5/5OQC4oc1MEDTq6+t0=; b=eZcMp/H4CigIzeA0BiglgUJdT
+	qHlsL4sLNVpwxWUvWbAbakYLO7RobcBwL5nFCUMA/i/kRYEiEu+O/MlQnQNGh3i1ilQcBj0D30sWw
+	kh/qxEHzmexV3xTqyQScCVQqsIzpUqplzCvCpu/E1uNXEBTKl0EYn6a0Osh41+1IH59w6xZqHVRZk
+	oR2HwB/Uk4dOuIEOjGOFAfZhvhk+DQmIVmuzFYfyZQYH3q+dTRg/Tw/E9XBVUN41OB55uhZ6fLmuz
+	624nTC8poDXZ+55rt10bv+MQ/7UEk5nsfADMxrR0niCn8kobtMJD/5zQuoiLDzMLJuJniYPFiZhzD
+	NPg1mp9MQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG9vf-0001dK-Gk; Thu, 03 Oct 2019 22:50:35 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG9vH-0000mq-EZ; Thu, 03 Oct 2019 22:50:12 +0000
-Received: from p57b7758c.dip0.t-ipconnect.de ([87.183.117.140]
- helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iG9vA-0000up-PG; Fri, 04 Oct 2019 00:50:04 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH 6/6] arm64: dts: rockchip: Fix roc-rk3399-pc regulator
- input rails
-Date: Fri, 04 Oct 2019 00:50:03 +0200
-Message-ID: <3794940.QX3D9CpLXO@phil>
-In-Reply-To: <20190919052822.10403-7-jagan@amarulasolutions.com>
-References: <20190919052822.10403-1-jagan@amarulasolutions.com>
- <20190919052822.10403-7-jagan@amarulasolutions.com>
+	id 1iGB2E-0000Dn-Cv; Fri, 04 Oct 2019 00:01:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iGB25-00006H-Mn; Fri, 04 Oct 2019 00:01:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 144A915A1;
+ Thu,  3 Oct 2019 17:01:16 -0700 (PDT)
+Received: from [192.168.1.124] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 49D153F534;
+ Thu,  3 Oct 2019 17:01:15 -0700 (PDT)
+Subject: Re: [PATCH 3/3] arm64: dts: rockchip: fix RockPro64 sdmmc settings
+To: Soeren Moch <smoch@web.de>, Heiko Stuebner <heiko@sntech.de>
+References: <20191003215036.15023-1-smoch@web.de>
+ <20191003215036.15023-3-smoch@web.de>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <31181f3c-20ec-e717-1f7e-8b35cd54d96d@arm.com>
+Date: Fri, 4 Oct 2019 01:01:01 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
+In-Reply-To: <20191003215036.15023-3-smoch@web.de>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_155011_682736_69C553B0 
-X-CRM114-Status: UNSURE (   8.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191003_170117_786488_455C39D0 
+X-CRM114-Status: GOOD (  20.28  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,33 +62,73 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Da Xue <da@lessconfused.com>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Akash Gajjar <akash@openedev.com>, Levin Du <djw@t-chip.com.cn>,
- linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Donnerstag, 19. September 2019, 07:28:22 CEST schrieb Jagan Teki:
-> Few, know rk808 pmic regulators VCC[1-4], VCC[6-7], VCC[9-11],
-> VDD_LOG, VDD_GPU, VDD_CPU_B, VCC3V3_SYS are inputting with vcc_sys
-> which is 5V power rail from dc_12v.
+On 2019-10-03 10:50 pm, Soeren Moch wrote:
+> According to the RockPro64 schematic [1] the rk3399 sdmmc controller is
+> connected to a microSD (TF card) slot, which cannot be switched to 1.8V.
+
+Really? AFAICS the SDMMC0 wiring looks pretty much identical to the 
+NanoPC-T4 schematic (it's the same reference design, after all), and I 
+know that board can happily drive a UHS-I microSD card with 1.8v I/Os, 
+because mine's doing so right now.
+
+Robin.
+
+> So also configure the vcc_sdio regulator, which drives the i/o voltage
+> of the sdmmc controller, accordingly.
 > 
-> So, replace the vin-supply of above mentioned regulators
-> with vcc_sys as per the PMIC-RK808-D page of roc-rk3399-pc
-> schematics.
+> While at it, also remove the cap-mmc-highspeed property of the sdmmc
+> controller, since no mmc card can be connected here.
 > 
-> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-
-applied for 5.5 (with the filename changed to the current one of course)
-
-Thanks
-Heiko
-
-
+> [1] http://files.pine64.org/doc/rockpro64/rockpro64_v21-SCH.pdf
+> 
+> Fixes: e4f3fb490967 ("arm64: dts: rockchip: add initial dts support for Rockpro64")
+> Signed-off-by: Soeren Moch <smoch@web.de>
+> ---
+> Cc: Heiko Stuebner <heiko@sntech.de>
+> Cc: linux-rockchip@lists.infradead.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> ---
+>   arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts | 3 +--
+>   1 file changed, 1 insertion(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> index 2e44dae4865a..084f1d994a50 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> @@ -353,7 +353,7 @@
+>   				regulator-name = "vcc_sdio";
+>   				regulator-always-on;
+>   				regulator-boot-on;
+> -				regulator-min-microvolt = <1800000>;
+> +				regulator-min-microvolt = <3000000>;
+>   				regulator-max-microvolt = <3000000>;
+>   				regulator-state-mem {
+>   					regulator-on-in-suspend;
+> @@ -624,7 +624,6 @@
+> 
+>   &sdmmc {
+>   	bus-width = <4>;
+> -	cap-mmc-highspeed;
+>   	cap-sd-highspeed;
+>   	cd-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;
+>   	disable-wp;
+> --
+> 2.17.1
+> 
+> 
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
