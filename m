@@ -2,94 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F508CC70D
-	for <lists+linux-rockchip@lfdr.de>; Sat,  5 Oct 2019 02:52:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD902CC8A4
+	for <lists+linux-rockchip@lfdr.de>; Sat,  5 Oct 2019 09:51:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j0MemXAIvPAuegJ8FXXT0O83mzhFoiLZMgOyFgv4KOY=; b=cKBiTEyhi8roAK
-	cHb0p96t1UIJYQ5XBLQ+wU6E3wkIf+szxGRhQpVNAKoi/pPtBV5Rkef6nw0sqpvwrhwSg+3MdyXww
-	695AILaGq5cOQd2B5hihjnTp+FXWPVZzstzGgIbTHM0jLoStLfs0NC6Up+ijze9YkXIFv1QjnHMio
-	HZSD6lVVUO0XpcCCBAx1vTx1vkcA4MpwCfCJ0/11XTBil/tTJTPUkhQdO3uzQ59ganNE/n3tlzV9w
-	3ME/ap7d+NTs1Bc3PXfIHiWfMVHCOJXHYuGWw290G8cIMTLcnj0Tf0DTqspzSyEqpO3fFauCbAJ7X
-	tdQQOHvMhY2WxZzpn3tw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=SaJGYo9Zef+Fxa4AqDz4wTi1j0KPD2Moz5Kqbera8b8=; b=GM1uznmv8o5QoB
+	AzMczqiSLrdj8jOhtylq5qZ66Rn+w+d7Fj7neXw5LQWj6MbQyE/V0QkNf5WMyFb5JEiCkj8peU0OB
+	5vOyOCDC0yxLzt8Wq5X2KN4xERb31PvXCSgfFiUyYoY6YA1SpzHzoQZV2wRP8SLg7sMJ2iiGEuXrU
+	M8a5YzeqwNYN68DgNe+bMoacgUa0OrwXJOM5uY+xVNNTb+ks9JVA8hBoUVoPqYxjbyB5V+uisQLrD
+	l7S5ssvcSdOddILPWfpxbIMiZ0uVDeNfv75grQcZj2bOlRCuF3QRQSHcVTxOt9BKWNcgyLZ4ucTAY
+	K5mTdVETFN8h9O+FsATQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGYIx-0002JG-PM; Sat, 05 Oct 2019 00:52:15 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1iGeqD-0002Vy-9h; Sat, 05 Oct 2019 07:51:01 +0000
+Received: from mail-yb1-xb42.google.com ([2607:f8b0:4864:20::b42])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGYIo-0002Bc-R7; Sat, 05 Oct 2019 00:52:08 +0000
-Received: by mail-qt1-x844.google.com with SMTP id j31so11093905qta.5;
- Fri, 04 Oct 2019 17:52:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=4kfrSx9pecxmKTopMM3H10hlWnjEzdS6486P99JMZic=;
- b=A9r4usZDZI1XYmdWnzVDPjU28NFB618J3iWHmZTBuy82f9U3ecTW2gbZdbInrcGzjq
- fh5weVuLHOJQh3ffu4wX0tY03UT4iIYplzkz8+AdtxDomM4W9SXNj5GVzewfAaobZHII
- VMvttb3S/h9tbr/warC36/gJYESQvrSa9kA3qOn90t2DREceaqkikAiiGYnidiulC0TH
- 0j09D0Ta+TUUb1pwj1X9t+SiC4vMXpcgzdBSeb0MCpfoFpQ6GP83lrw3T9RWLiy6RCCZ
- lLnGsLenLxLGq5ul+nxXGy9KWX5XuE0YaYza/7kh9NXDBVjeuawDVIXPts7DnaOHK1nH
- ipSA==
+ id 1iGeqA-0002UM-B5
+ for linux-rockchip@lists.infradead.org; Sat, 05 Oct 2019 07:50:59 +0000
+Received: by mail-yb1-xb42.google.com with SMTP id w141so2358268ybe.0
+ for <linux-rockchip@lists.infradead.org>; Sat, 05 Oct 2019 00:50:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=helmpcb-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=CjoSwE787/jK5Jj7I+WK9vvEWgxrGvAZOtqdwG0M/F4=;
+ b=t+D28p0G3mdc25o4Sv8h77ivbb4FavgOUZPIOJQB2Y44c7uKqcwROVGfKLKLKF22oO
+ +PxfBfiU/1dk+VNsKR/nzBiHW9lqWaoO3TlzC9/fqgwWRBpS5vo+Jd+q0FwSShPNvy1i
+ yYQHmow8FWXyt0rnUJD2gDUCmN7U4/evPLR9OjDeGvzv52RWIt6dJ/oF1SUpI8GnT7Xu
+ 7jtPj2nHpQJAu+X041qhdDVYRhyodCvE8qQ0DFTkJuVKq3ihozbbdePnczv5EjeMNGDc
+ 1aM37/l6jHD6e5ciNPaK21lLpGtDX0MW9YA9lGr6BpdzruqfCfXIFHta9P+WnJDQsPBy
+ I4aA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=4kfrSx9pecxmKTopMM3H10hlWnjEzdS6486P99JMZic=;
- b=slCg7UuN1CNN6i/sbmxHzL5X10SLu42IQsRP4SurtVBohdvU+XRxbFXbI+FMMVS+Oo
- MyXCedlkDsC/LWZ+ZLDyvTqyGDGeuoGZoycsbub3C4ac5EIA/eEkimMXACGAGkAfn0OC
- kIc3TRPLYTRFnwlp2UnwCS4aQrsBpTkQhWu+2xhJWdBOkXT76Yjo2FyMz+77vaDwiGMn
- iUUAnidnoL9twNB2sLNxlU5e6QQByV3TKW7yxXWK+WImV/3JWdk506fVaPbX6cevl4bC
- TT4/G8ngm9Pizc9i6RntB8Gh3eelrIgsnRXQjpEzj/A9BKutST/q9YYjLsB42IGNGW/Z
- 3q1g==
-X-Gm-Message-State: APjAAAVpc6O4pOkdGSCWDJY4qm8CDFzH5+kLig9BiE3JH9D5efVioLgr
- namrAbuGgwGY+tMl0blxLZk=
-X-Google-Smtp-Source: APXvYqxe2v6jRShlgbNxkPA59YDigb42WrFKwpnJxW+Hl+XUgwGuTXMhgBPuZ2LJ/loDpT2Bd3iI7g==
-X-Received: by 2002:ad4:40c8:: with SMTP id x8mr16740235qvp.227.1570236725160; 
- Fri, 04 Oct 2019 17:52:05 -0700 (PDT)
-Received: from vivek-desktop (ool-457857f8.dyn.optonline.net. [69.120.87.248])
- by smtp.gmail.com with ESMTPSA id
- k2sm3492216qti.24.2019.10.04.17.52.03
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 04 Oct 2019 17:52:04 -0700 (PDT)
-Date: Fri, 4 Oct 2019 20:52:00 -0400
-From: Vivek Unune <npcomplete13@gmail.com>
-To: Heiko Stuebner <heiko@sntech.de>
-Subject: Re: [PATCH] arm64: dts: rockchip: Fix usb-c on Hugsun X99 TV Box
-Message-ID: <20191005005200.GA11418@vivek-desktop>
-References: <20190929032230.24628-1-npcomplete13@gmail.com>
- <54c67ca8-8428-48ee-9a96-e1216ba02839@gmail.com>
- <20190929234615.GA5355@vivek-desktop> <2223294.9I8gkMH88G@phil>
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=CjoSwE787/jK5Jj7I+WK9vvEWgxrGvAZOtqdwG0M/F4=;
+ b=Cv4O2fpXTjxuTeYJJPH4W1Mmc7jGT1qEqvY1S+w30ancVP8j9jJ9QfAaomnoYWPlus
+ U/J9uXxyfnrXd+k65yDrT3+GPJzV7ZBGsGAWEF1E6Badgw8gwp95SWWFER5lcVtDM7kN
+ i1MMNkvtk8eL+GFFxzaslqoqYlAqNDJrASnbXVgeTKThDkYk4qHUYcsNJ5GSdwxFIQ82
+ gF1tnMnMOLRJHdadKkaORwgtQ0wLz8y0DseRaVdVshRa8KynFkCkq6sjrYP8XW7LwKfT
+ x3Yc2u5xNj5xzWlgni8j+BR9hcTwIi0sgTerPnJc1ax+0Tgbe+NMjFpk1XMbVwPagaAV
+ jKgQ==
+X-Gm-Message-State: APjAAAU4zPsneqZfNoBgHXN2sTgmJOby/2jHX2ESOfGE98r9RBXOjJHg
+ LpWHPrgvPmvRZCROc5v9gb++r6+VQPNtmwr7RmVuEw+LvO4=
+X-Google-Smtp-Source: APXvYqw7kaBXzmp443sTZgcpOhgrEC5fnp13JCtJUBHj026FlK+8hkBAwZHMSCtdnw+v8aSjN4d1mJ0/baQ3tEmc7L8=
+X-Received: by 2002:a25:df97:: with SMTP id w145mr4441396ybg.424.1570261855353; 
+ Sat, 05 Oct 2019 00:50:55 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2223294.9I8gkMH88G@phil>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+From: Amr Bekhit <amr@helmpcb.com>
+Date: Sat, 5 Oct 2019 10:50:44 +0300
+Message-ID: <CAHmAUHKD90eibgj3JmHaJNduhrOQZUZBZixtZE+dWxR2L6Bq1Q@mail.gmail.com>
+Subject: [PATCH] rockchip_rk3288_efuse_read: Fix segfault in
+ rockchip_rk3288_efuse_read by using readl instead of readb when reading
+ REG_EFUSE_DOUT.
+To: heiko@sntech.de, wxt@rock-chips.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_175206_876978_1787AF77 
-X-CRM114-Status: GOOD (  21.94  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191005_005058_559420_3882B995 
+X-CRM114-Status: GOOD (  10.78  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (npcomplete13[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (npcomplete13[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:b42 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -104,121 +86,48 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Felipe Balbi <felipe.balbi@linux.intel.com>, Felipe Balbi <balbi@kernel.org>,
- linux-kernel@vger.kernel.org, Vicente Bergas <vicencb@gmail.com>,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org, akash@openedev.com,
- ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
- Roger Quadros <rogerq@ti.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, Oct 04, 2019 at 11:45:08PM +0200, Heiko Stuebner wrote:
-> Hi Vivek,
-> =
+When trying to read the efuse of the RK3188 a segfault is raised when
+the following line is called in rockchip_rk3288_efuse_read:
 
-> Am Montag, 30. September 2019, 01:46:15 CEST schrieb Vivek Unune:
-> > On Sun, Sep 29, 2019 at 01:22:17PM +0200, Vicente Bergas wrote:
-> > > On Sunday, September 29, 2019 5:22:30 AM CEST, Vivek Unune wrote:
-> > > > Fix usb-c on X99 TV Box. Tested with armbian w/ kernel 5.3
-> > > > =
+*buf++ = readb(efuse->base + REG_EFUSE_DOUT);
 
-> > > > Signed-off-by: Vivek Unune <npcomplete13@gmail.com>
-> > > > ---
-> > > >  arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts | 4 ++--
-> > > >  1 file changed, 2 insertions(+), 2 deletions(-)
-> > > > =
+It appears that the problem here might be the use of readb, which I
+suspect is triggering an unaligned access. Changing this to readl
+resolves the issue (as is done in rockchip_rk3399_efuse_read).
 
-> > > > diff --git a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-> > > > b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-> > > > index 0d1f5f9a0de9..c133e8d64b2a 100644
-> > > > --- a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-> > > > +++ b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-> > > > @@ -644,7 +644,7 @@
-> > > >  	status =3D "okay";
-> > > >  	u2phy0_host: host-port {
-> > > > -		phy-supply =3D <&vcc5v0_host>;
-> > > > +		phy-supply =3D <&vcc5v0_typec>;
-> > > >  		status =3D "okay";
-> > > >  	};
-> > > > @@ -712,7 +712,7 @@
-> > > >  &usbdrd_dwc3_0 {
-> > > >  	status =3D "okay";
-> > > > -	dr_mode =3D "otg";
-> > > > +	dr_mode =3D "host";
-> > > >  };
-> > > >  &usbdrd3_1 {
-> > > =
+From 9923a6889aa325faf842a6757c9f9bd0f0195acb Mon Sep 17 00:00:00 2001
+From: Amr Bekhit <amr@helmpcb.com>
+Date: Sat, 5 Oct 2019 10:45:17 +0300
+Subject: [PATCH] Fix segfault in rockchip_rk3288_efuse_read by using readl
+ instead of readb when reading REG_EFUSE_DOUT.
 
-> > > Hi Vivek,
-> > > =
+Signed-off-by: Amr Bekhit <amr@helmpcb.com>
+---
+ drivers/nvmem/rockchip-efuse.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-> > > which is the relationship of your patch and this commit:
-> > > =
-
-> > > e1d9149e8389f1690cdd4e4056766dd26488a0fe
-> > > arm64: dts: rockchip: Fix USB3 Type-C on rk3399-sapphire
-> > > =
-
-> > > with respect to this other commit:
-> > > =
-
-> > > c09b73cfac2a9317f1104169045c519c6021aa1d
-> > > usb: dwc3: don't set gadget->is_otg flag
-> > > =
-
-> > > ?
-> > > =
-
-> > > I did not test reverting e1d9149e since c09b73cf was applied.
-> > > =
-
-> > > Regards,
-> > >  Vicen=E7.
-> > > =
-
-> > =
-
-> > Hi Vicen=E7,
-> > =
-
-> > Indeed, I was motivated by e1d9149e ("arm64: dts: rockchip: Fix USB3 =
-
-> > Type-C on rk3399-sapphire"). X99 TV box showed exact same symptoms
-> > with usb-c port. After applying the fix, it worked.
-> > =
-
-> > I was not aware of c09b73cf ("usb: dwc3: don't set gadget->is_otg
-> >  flag") and it will be interesting to test it. This might render
-> > my fix unecessary.
-> =
-
-> So I'll let this patch sit here for now.
-> Once you've done the testing, can you please respond with the
-> result (both positive and negative results please).
-> =
-
-> Thanks
-> Heiko
-> =
-
-> =
-
-
-Hi Heiko,
-
-I tested the c09b73cf patch without modifying exsisting dts. I can confirm
-that that patch doesn't work for me. No usb-c devices were recognized.
-
-Vicen=E7 - were you able to test it?
-
-As soon as I apply dts patch, usb-c devices are recognized.
-
-Thanks,
-
-Vivek
+diff --git a/drivers/nvmem/rockchip-efuse.c b/drivers/nvmem/rockchip-efuse.c
+index e4579de5d014..f680a80d81cf 100644
+--- a/drivers/nvmem/rockchip-efuse.c
++++ b/drivers/nvmem/rockchip-efuse.c
+@@ -78,7 +78,7 @@ static int rockchip_rk3288_efuse_read(void *context,
+unsigned int offset,
+  writel(readl(efuse->base + REG_EFUSE_CTRL) |
+       RK3288_STROBE, efuse->base + REG_EFUSE_CTRL);
+  udelay(1);
+- *buf++ = readb(efuse->base + REG_EFUSE_DOUT);
++ *buf++ = readl(efuse->base + REG_EFUSE_DOUT);
+  writel(readl(efuse->base + REG_EFUSE_CTRL) &
+         (~RK3288_STROBE), efuse->base + REG_EFUSE_CTRL);
+  udelay(1);
+-- 
+2.20.1
 
 _______________________________________________
 Linux-rockchip mailing list
