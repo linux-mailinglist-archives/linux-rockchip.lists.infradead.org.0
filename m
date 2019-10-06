@@ -2,67 +2,92 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61E55CD61A
-	for <lists+linux-rockchip@lfdr.de>; Sun,  6 Oct 2019 19:43:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4066CD8FC
+	for <lists+linux-rockchip@lfdr.de>; Sun,  6 Oct 2019 21:50:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XO+jEe8NeJPYTGhUZpJaCgSj5svKJtbhB8DaH2n0TXc=; b=MJzSycniM/lnpN
-	5n80vSyhoF1FbAeOpjKwok/qE7GAc7yoErUz72qRbDP54+WwJvoeeD71yTOD2WxVsgE3ImG+P+i7t
-	VAk1b9cLEkoYaRkIVgp6I1UX/71NHVfFy6RVje1B6NDrXKzm/xK72uGrnHhnrabAq1cwavYVIRBBh
-	MKof567jtdanF7uyLa+1BM5ml0fZEe41xdyEsFlz2WE/VX41+lNP+RSJBTqFYSmApZINqdqp4EjtZ
-	idxkjXmQsymZrOnbWTT7kD7slBZG5dxSvF1gDxuWfClqyOtjFmOZTE5N4jZKQTNg3o1cfgqanF0UA
-	QJvr6lzxnJkjiaygqy5Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:References:In-Reply-To:Message-ID:MIME-Version:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=LGD0OB4/RhHioBvdKwu/fYmGif1PNLpDTqGSAUHIYdg=; b=XPKVeDgxp7G5xGjmD/W21QWXB
+	HQs8ryA0Hqqhyif6Lj5bOhWtsRdLEmrIzuRtUFuYO3xGGfEbmuYh+2YoYfAlXASj5gIi8fFMOMJjF
+	erzIWcO0ETZ9mTHyyS6pbE7UmSE9xZ1l2v2N8TuMCEEs5s4Ovyeyj/JYoLSHcWiusJfv84F1MBRsN
+	IPNcTEyY/+L7i2tYtlDFtCQkrixqEKmKJeCxDGR+GlcsfGtqUlej7gGYGKm1wTbPd+hbP9G2s7YA7
+	kKAZmCiBV1jf/GDUJ/SDZcOw1XHA/IgPV51TXtc08aEZ1uoaOHZukrowOyFafmUP5I4xA7cZV91S2
+	8TkXqQfVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHAZG-0006vc-ES; Sun, 06 Oct 2019 17:43:38 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iHCY7-0001L7-4g; Sun, 06 Oct 2019 19:50:35 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHAZC-0006uZ-MA
- for linux-rockchip@lists.infradead.org; Sun, 06 Oct 2019 17:43:36 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 940CC20700;
- Sun,  6 Oct 2019 17:43:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570383814;
- bh=q7LE7xSjAk2WfDmqoRiEwsDQ5sKIVq8bwyqwusRYBgk=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=XVXso4I+DhFirg+KpFkF2WG/Oj7FAJioNfwBKmMHgJhSHztHF7n+1vEgq0aWxGfUV
- kFDot18ADMbOA4hu5GawQaCVB7oKitqnMDigFm9trmAgjLqerkoGvyXbGMpS4QOmA9
- XQWCJTUiqivflVHRyI5NpGNA/+KE7oGb66ufrtLI=
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5.3 105/166] PCI: rockchip: Propagate errors for optional
- regulators
-Date: Sun,  6 Oct 2019 19:21:11 +0200
-Message-Id: <20191006171222.335656092@linuxfoundation.org>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191006171212.850660298@linuxfoundation.org>
-References: <20191006171212.850660298@linuxfoundation.org>
-User-Agent: quilt/0.66
+ id 1iHCXu-0001E8-4d; Sun, 06 Oct 2019 19:50:24 +0000
+Received: by mail-wr1-x441.google.com with SMTP id o18so12702792wrv.13;
+ Sun, 06 Oct 2019 12:50:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:mime-version:message-id:in-reply-to
+ :references:user-agent:content-transfer-encoding;
+ bh=SF3ve2/BTUkIULmgsBwIXtaoivMNXD9/DFfQmDFlSVM=;
+ b=WCb+t9jwEYGZQSJkSVHLE8EFck+4SgZCH15o1AjWwGVAVttdTdlgxF+XKZYy991Efi
+ 2l62TnJxPwv5rVodwo1DxxTQq8u4Ha/igbJxxJkqp/FTvZSJIzJa15SlpF0jtT+ihlrI
+ uxlujJ28cUf4Yk33siXsvvLBdSWz3kB2EVfeqyio4GxAVNllD38S2PSKwBNWfRzU82yP
+ nEJSKnl2roA1Kf5gYoLkvzIDo09z2ufMc6CUCUfYaXoiYDqJXAuXAc8+S9EMfDx++xLi
+ BYPNjy80Igjw7V2WjmPeRSxmGb7CeaTe25IXDwaC5kvEqCqMdNT7h5ywWBUw05jZtWHH
+ WF6Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
+ :in-reply-to:references:user-agent:content-transfer-encoding;
+ bh=SF3ve2/BTUkIULmgsBwIXtaoivMNXD9/DFfQmDFlSVM=;
+ b=JuaPycVLHUjiHls1UDWD5MOKqJZkexsyv5K3xR3BV+jNP9pPRcRuQbHQEFMNXoX499
+ zHb4wqjo8zR5lJZGmkixIbz5Xe9HFw3G/SVqyDtU0QeWCLgC57EUAe8YSb2cWKk3YeCK
+ 7DYCEuTh0j/fDMTwST4eaT3ntXd0ie3TpTc+NWqpEbLkaRNmbg2l+7QbaKC+N41Hpun7
+ F6v1cshk5TfhtOVSRp2JMrkTFZhb5REsnuYWgnu8zlbb3WvzeBM5BMjC9q++nOBUjYk6
+ FJj5TsfDUB7mm3M35uGUNakpMpV9N4Aro1tibcA3OubihDDuBJy228tyR3jNExnEmUjI
+ UdLA==
+X-Gm-Message-State: APjAAAVzJVUhLPtSlFeRRXO/0Err5h8EFlRj8vFx59RtndqWd1qk2sxG
+ qkbLZbOfiHbq+YUuyq28U68=
+X-Google-Smtp-Source: APXvYqxATYtyWsBwj3st87+ddDby4qJ5JPK9YSeU7U9c5UyOyXXi8fOFenqo8kZijK2LBkrzcVLj0A==
+X-Received: by 2002:a5d:63cb:: with SMTP id c11mr17998797wrw.281.1570391419078; 
+ Sun, 06 Oct 2019 12:50:19 -0700 (PDT)
+Received: from localhost ([94.73.41.211])
+ by smtp.gmail.com with ESMTPSA id u10sm13213035wmm.0.2019.10.06.12.50.17
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 06 Oct 2019 12:50:18 -0700 (PDT)
+From: Vicente Bergas <vicencb@gmail.com>
+To: Vivek Unune <npcomplete13@gmail.com>
+Subject: Re: [PATCH] arm64: dts: rockchip: Fix usb-c on Hugsun X99 TV Box
+Date: Sun, 06 Oct 2019 21:50:16 +0200
 MIME-Version: 1.0
+Message-ID: <4cb2b781-e177-4008-86ae-a9108bd303e4@gmail.com>
+In-Reply-To: <20191005005200.GA11418@vivek-desktop>
+References: <20190929032230.24628-1-npcomplete13@gmail.com>
+ <54c67ca8-8428-48ee-9a96-e1216ba02839@gmail.com>
+ <20190929234615.GA5355@vivek-desktop> <2223294.9I8gkMH88G@phil>
+ <20191005005200.GA11418@vivek-desktop>
+User-Agent: Trojita
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_104334_770526_91787F0D 
-X-CRM114-Status: GOOD (  13.26  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191006_125022_310692_317BD4B4 
+X-CRM114-Status: GOOD (  10.27  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (vicencb[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,97 +100,32 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Heiko Stuebner <heiko@sntech.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Shawn Lin <shawn.lin@rock-chips.com>, stable@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Andrew Murray <andrew.murray@arm.com>,
- Thierry Reding <treding@nvidia.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, Felipe Balbi <felipe.balbi@linux.intel.com>,
+ Felipe Balbi <balbi@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, akash@openedev.com,
+ ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
+ Roger Quadros <rogerq@ti.com>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Thierry Reding <treding@nvidia.com>
-
-[ Upstream commit 0e3ff0ac5f71bdb6be2a698de0ed0c7e6e738269 ]
-
-regulator_get_optional() can fail for a number of reasons besides probe
-deferral. It can for example return -ENOMEM if it runs out of memory as
-it tries to allocate data structures. Propagating only -EPROBE_DEFER is
-problematic because it results in these legitimately fatal errors being
-treated as "regulator not specified in DT".
-
-What we really want is to ignore the optional regulators only if they
-have not been specified in DT. regulator_get_optional() returns -ENODEV
-in this case, so that's the special case that we need to handle. So we
-propagate all errors, except -ENODEV, so that real failures will still
-cause the driver to fail probe.
-
-Tested-by: Heiko Stuebner <heiko@sntech.de>
-Signed-off-by: Thierry Reding <treding@nvidia.com>
-Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Reviewed-by: Andrew Murray <andrew.murray@arm.com>
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
-Acked-by: Shawn Lin <shawn.lin@rock-chips.com>
-Cc: Shawn Lin <shawn.lin@rock-chips.com>
-Cc: Heiko Stuebner <heiko@sntech.de>
-Cc: linux-rockchip@lists.infradead.org
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/pci/controller/pcie-rockchip-host.c | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
-
-diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
-index 8d20f1793a618..ef8e677ce9d11 100644
---- a/drivers/pci/controller/pcie-rockchip-host.c
-+++ b/drivers/pci/controller/pcie-rockchip-host.c
-@@ -608,29 +608,29 @@ static int rockchip_pcie_parse_host_dt(struct rockchip_pcie *rockchip)
- 
- 	rockchip->vpcie12v = devm_regulator_get_optional(dev, "vpcie12v");
- 	if (IS_ERR(rockchip->vpcie12v)) {
--		if (PTR_ERR(rockchip->vpcie12v) == -EPROBE_DEFER)
--			return -EPROBE_DEFER;
-+		if (PTR_ERR(rockchip->vpcie12v) != -ENODEV)
-+			return PTR_ERR(rockchip->vpcie12v);
- 		dev_info(dev, "no vpcie12v regulator found\n");
- 	}
- 
- 	rockchip->vpcie3v3 = devm_regulator_get_optional(dev, "vpcie3v3");
- 	if (IS_ERR(rockchip->vpcie3v3)) {
--		if (PTR_ERR(rockchip->vpcie3v3) == -EPROBE_DEFER)
--			return -EPROBE_DEFER;
-+		if (PTR_ERR(rockchip->vpcie3v3) != -ENODEV)
-+			return PTR_ERR(rockchip->vpcie3v3);
- 		dev_info(dev, "no vpcie3v3 regulator found\n");
- 	}
- 
- 	rockchip->vpcie1v8 = devm_regulator_get_optional(dev, "vpcie1v8");
- 	if (IS_ERR(rockchip->vpcie1v8)) {
--		if (PTR_ERR(rockchip->vpcie1v8) == -EPROBE_DEFER)
--			return -EPROBE_DEFER;
-+		if (PTR_ERR(rockchip->vpcie1v8) != -ENODEV)
-+			return PTR_ERR(rockchip->vpcie1v8);
- 		dev_info(dev, "no vpcie1v8 regulator found\n");
- 	}
- 
- 	rockchip->vpcie0v9 = devm_regulator_get_optional(dev, "vpcie0v9");
- 	if (IS_ERR(rockchip->vpcie0v9)) {
--		if (PTR_ERR(rockchip->vpcie0v9) == -EPROBE_DEFER)
--			return -EPROBE_DEFER;
-+		if (PTR_ERR(rockchip->vpcie0v9) != -ENODEV)
-+			return PTR_ERR(rockchip->vpcie0v9);
- 		dev_info(dev, "no vpcie0v9 regulator found\n");
- 	}
- 
--- 
-2.20.1
-
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gU2F0dXJkYXksIE9jdG9iZXIgNSwgMjAxOSAyOjUyOjAwIEFNIENFU1QsIFZpdmVrIFVudW5l
+IHdyb3RlOgo+IE9uIEZyaSwgT2N0IDA0LCAyMDE5IGF0IDExOjQ1OjA4UE0gKzAyMDAsIEhlaWtv
+IFN0dWVibmVyIHdyb3RlOgo+PiBIaSBWaXZlaywKPj4gCj4+IEFtIE1vbnRhZywgMzAuIFNlcHRl
+bWJlciAyMDE5LCAwMTo0NjoxNSBDRVNUIHNjaHJpZWIgVml2ZWsgVW51bmU6IC4uLgo+Cj4gSGkg
+SGVpa28sCj4KPiBJIHRlc3RlZCB0aGUgYzA5YjczY2YgcGF0Y2ggd2l0aG91dCBtb2RpZnlpbmcg
+ZXhzaXN0aW5nIGR0cy4gSSBjYW4gY29uZmlybQo+IHRoYXQgdGhhdCBwYXRjaCBkb2Vzbid0IHdv
+cmsgZm9yIG1lLiBObyB1c2ItYyBkZXZpY2VzIHdlcmUgcmVjb2duaXplZC4KPgo+IFZpY2Vuw6cg
+LSB3ZXJlIHlvdSBhYmxlIHRvIHRlc3QgaXQ/CgpJIGNhbiBhbHNvIGNvbmZpcm0gdGhhdAoKYzA5
+YjczY2ZhYzJhOTMxN2YxMTA0MTY5MDQ1YzUxOWM2MDIxYWExZAp1c2I6IGR3YzM6IGRvbid0IHNl
+dCBnYWRnZXQtPmlzX290ZyBmbGFnCgphbG9uZSBkb2VzIG5vdCBmaXggdGhlIGlzc3VlLgoKZTFk
+OTE0OWU4Mzg5ZjE2OTBjZGQ0ZTQwNTY3NjZkZDI2NDg4YTBmZQphcm02NDogZHRzOiByb2NrY2hp
+cDogRml4IFVTQjMgVHlwZS1DIG9uIHJrMzM5OS1zYXBwaGlyZQoKaXMgc3RpbGwgcmVxdWlyZWQg
+Zm9yIHRoZSBVU0ItQyB0byB3b3JrIG9uIHRoZSBTYXBwaGlyZSBib2FyZC4KClJlZ2FyZHMsCiAg
+VmljZW7Dpy4KCj4gQXMgc29vbiBhcyBJIGFwcGx5IGR0cyBwYXRjaCwgdXNiLWMgZGV2aWNlcyBh
+cmUgcmVjb2duaXplZC4KPgo+IFRoYW5rcywKPgo+IFZpdmVrCgoKX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0
+CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
