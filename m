@@ -2,53 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B690CD4C2
-	for <lists+linux-rockchip@lfdr.de>; Sun,  6 Oct 2019 19:30:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E9D2CD595
+	for <lists+linux-rockchip@lfdr.de>; Sun,  6 Oct 2019 19:37:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sLs+e+5c8g/FMMNM9u3kEfxKFgfnojrLzLZkfDNW72Y=; b=qDTnn7nF/qo9Ba
-	1UpTkc9pcyg0uL8M2EJAk3DozbM/y51Vicz/Tcx38uw/WL54Pzsb11XcNTJrkIOr0Vf2GIeNraf6Q
-	LTqhYyHgFDWhm1y4a5G7SEi+kQE6FUGMjlgkY+0srm9avs4vWZHFldTmL43hIDJWKIkMVP7mRvdtx
-	z2ijBVjlEOi7B8sXBWiEEEF4bCe0b4rtWzOztjOyE/xi5/nxkppcu51Tu/QzU9ZjjcVswTn8PoX3z
-	n+QngVSvgFci4TNI0jriZ+JNSL6gA4Q8wHXx02G3YE1cYN6rxAiGqm2g/mIAx13iPY4ZixERsTTbc
-	youHxNLNL5s3bBmg30cg==;
+	List-Owner; bh=XO+jEe8NeJPYTGhUZpJaCgSj5svKJtbhB8DaH2n0TXc=; b=HmZWWXMCjBCMag
+	cTzZTdRn6B8W18IaAjLHnnqf5dWe60i9PJnwCw+Ea0/a9rg8acYBhkvTEetRn9Qo6GgEN2cuGK4yO
+	yh8EiDqP89Zy3uJ/Z9+OvUtecoD8dXwro6Xce9GOZkeUO2pKORXbe3s0S2eLVuH36hKMrEwD/6YKM
+	+X8SIqaY53olp7QY66hANP1ZUslLAMI68/AdLmksSvqUCkY3N//E2qwjGhWdx2NxU0wGyDHII7TB5
+	/dhjnqmI2Z6VZlqNYU2+FVXt7I+dGfmAUsRiy11ecAe99Oo2wUTNzSTzxONs0tGOau/5kcZ4hQSxR
+	Eyn8+1PCat1g32G3jm5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHAMe-0002TL-EZ; Sun, 06 Oct 2019 17:30:36 +0000
+	id 1iHATR-0004m0-Al; Sun, 06 Oct 2019 17:37:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHAMb-0002Sl-9R
- for linux-rockchip@lists.infradead.org; Sun, 06 Oct 2019 17:30:34 +0000
+ id 1iHATP-0004lM-1b
+ for linux-rockchip@lists.infradead.org; Sun, 06 Oct 2019 17:37:36 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2937A2133F;
- Sun,  6 Oct 2019 17:30:32 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E8C792053B;
+ Sun,  6 Oct 2019 17:37:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570383032;
- bh=BlvHyFvAAZGnC7hOjDp5jrec36iSCywnYRv27tgvF7A=;
+ s=default; t=1570383454;
+ bh=q7LE7xSjAk2WfDmqoRiEwsDQ5sKIVq8bwyqwusRYBgk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=zC6vyocBNTQwUyjpr3JgLhgtXcvztFX6aeLZdrOFrCibNBePcgfAzWbBjgJ1W4Hwu
- 2disBdBkLtiPZCIxxq9fCS4xrGwEDV/xzZMiEUS98qDfy6IUsGAflGQAwf9HNPcRGF
- m310Mi3QndLOVjDdr5XZ4SyFX4lxTgt8JcoGpb70=
+ b=Owf0ASyOXQy7xkdhJYtyS/JB9hwKoHhB3MslZ0tdrqRFgFATsQjH+E++tna8c+LPN
+ 35Di2Tta2L7b1Bxx8DTY+ex/fDLYYm0LebE2dFFNb4EEpiyUAjmAuj3g2hpCtHTjnh
+ I8sTQp9HtZtqTh5CN/diWdv6CGbY72rL75t9SVuk=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.19 061/106] PCI: rockchip: Propagate errors for optional
+Subject: [PATCH 5.2 110/137] PCI: rockchip: Propagate errors for optional
  regulators
-Date: Sun,  6 Oct 2019 19:21:07 +0200
-Message-Id: <20191006171149.476262829@linuxfoundation.org>
+Date: Sun,  6 Oct 2019 19:21:34 +0200
+Message-Id: <20191006171218.188547549@linuxfoundation.org>
 X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191006171124.641144086@linuxfoundation.org>
-References: <20191006171124.641144086@linuxfoundation.org>
+In-Reply-To: <20191006171209.403038733@linuxfoundation.org>
+References: <20191006171209.403038733@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_103033_374142_0DCEDCA4 
+X-CRM114-CacheID: sfid-20191006_103735_124809_19AEDE60 
 X-CRM114-Status: GOOD (  13.16  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -118,7 +118,7 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 8 insertions(+), 8 deletions(-)
 
 diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
-index 1372d270764f9..5ce8e63756875 100644
+index 8d20f1793a618..ef8e677ce9d11 100644
 --- a/drivers/pci/controller/pcie-rockchip-host.c
 +++ b/drivers/pci/controller/pcie-rockchip-host.c
 @@ -608,29 +608,29 @@ static int rockchip_pcie_parse_host_dt(struct rockchip_pcie *rockchip)
