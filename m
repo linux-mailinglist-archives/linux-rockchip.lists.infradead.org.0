@@ -2,92 +2,75 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4066CD8FC
-	for <lists+linux-rockchip@lfdr.de>; Sun,  6 Oct 2019 21:50:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 443FFCDD41
+	for <lists+linux-rockchip@lfdr.de>; Mon,  7 Oct 2019 10:27:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:References:In-Reply-To:Message-ID:MIME-Version:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=LGD0OB4/RhHioBvdKwu/fYmGif1PNLpDTqGSAUHIYdg=; b=XPKVeDgxp7G5xGjmD/W21QWXB
-	HQs8ryA0Hqqhyif6Lj5bOhWtsRdLEmrIzuRtUFuYO3xGGfEbmuYh+2YoYfAlXASj5gIi8fFMOMJjF
-	erzIWcO0ETZ9mTHyyS6pbE7UmSE9xZ1l2v2N8TuMCEEs5s4Ovyeyj/JYoLSHcWiusJfv84F1MBRsN
-	IPNcTEyY/+L7i2tYtlDFtCQkrixqEKmKJeCxDGR+GlcsfGtqUlej7gGYGKm1wTbPd+hbP9G2s7YA7
-	kKAZmCiBV1jf/GDUJ/SDZcOw1XHA/IgPV51TXtc08aEZ1uoaOHZukrowOyFafmUP5I4xA7cZV91S2
-	8TkXqQfVA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BlOZGd4bEk/x2Q/hTu3dqBbbMs7L3UxCqCavvhk03LY=; b=eKmdk+g9YP4cqI
+	4ddXeDnleesMzgwZyycexHECER/0dxxrD/tnsYoWVMoOgWqv1KGhnWgHbGQlKfvLSqIAaRhzk9dR8
+	al2oRi1JcCgaz3UejynE0lrk1/DVSDrIVToHpkAXroWizt8MzO3nJCZj73u+DUsFZJh0orNhb10Ti
+	QEAG2j5Y8QdNWkp2YVW7n4p1FaCr8VlZtl/02ynPjI3pGNKmba5TXGqxcHfAtvziPuXURsD7b9VqQ
+	xFuME/iKw+K8sQIMyJ8uD1mLPdzTxSEaYd7ggzTPz9IZR4zI11ZIpW/LuT+4O/DUBVkj95Ep1Nrmv
+	P2/yIp8zT7/ek208Kdyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHCY7-0001L7-4g; Sun, 06 Oct 2019 19:50:35 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iHOMN-0000jG-Pl; Mon, 07 Oct 2019 08:27:15 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHCXu-0001E8-4d; Sun, 06 Oct 2019 19:50:24 +0000
-Received: by mail-wr1-x441.google.com with SMTP id o18so12702792wrv.13;
- Sun, 06 Oct 2019 12:50:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:mime-version:message-id:in-reply-to
- :references:user-agent:content-transfer-encoding;
- bh=SF3ve2/BTUkIULmgsBwIXtaoivMNXD9/DFfQmDFlSVM=;
- b=WCb+t9jwEYGZQSJkSVHLE8EFck+4SgZCH15o1AjWwGVAVttdTdlgxF+XKZYy991Efi
- 2l62TnJxPwv5rVodwo1DxxTQq8u4Ha/igbJxxJkqp/FTvZSJIzJa15SlpF0jtT+ihlrI
- uxlujJ28cUf4Yk33siXsvvLBdSWz3kB2EVfeqyio4GxAVNllD38S2PSKwBNWfRzU82yP
- nEJSKnl2roA1Kf5gYoLkvzIDo09z2ufMc6CUCUfYaXoiYDqJXAuXAc8+S9EMfDx++xLi
- BYPNjy80Igjw7V2WjmPeRSxmGb7CeaTe25IXDwaC5kvEqCqMdNT7h5ywWBUw05jZtWHH
- WF6Q==
+ id 1iHOMA-0000UG-Ah; Mon, 07 Oct 2019 08:27:03 +0000
+Received: by mail-ot1-f66.google.com with SMTP id 41so10217618oti.12;
+ Mon, 07 Oct 2019 01:27:02 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
- :in-reply-to:references:user-agent:content-transfer-encoding;
- bh=SF3ve2/BTUkIULmgsBwIXtaoivMNXD9/DFfQmDFlSVM=;
- b=JuaPycVLHUjiHls1UDWD5MOKqJZkexsyv5K3xR3BV+jNP9pPRcRuQbHQEFMNXoX499
- zHb4wqjo8zR5lJZGmkixIbz5Xe9HFw3G/SVqyDtU0QeWCLgC57EUAe8YSb2cWKk3YeCK
- 7DYCEuTh0j/fDMTwST4eaT3ntXd0ie3TpTc+NWqpEbLkaRNmbg2l+7QbaKC+N41Hpun7
- F6v1cshk5TfhtOVSRp2JMrkTFZhb5REsnuYWgnu8zlbb3WvzeBM5BMjC9q++nOBUjYk6
- FJj5TsfDUB7mm3M35uGUNakpMpV9N4Aro1tibcA3OubihDDuBJy228tyR3jNExnEmUjI
- UdLA==
-X-Gm-Message-State: APjAAAVzJVUhLPtSlFeRRXO/0Err5h8EFlRj8vFx59RtndqWd1qk2sxG
- qkbLZbOfiHbq+YUuyq28U68=
-X-Google-Smtp-Source: APXvYqxATYtyWsBwj3st87+ddDby4qJ5JPK9YSeU7U9c5UyOyXXi8fOFenqo8kZijK2LBkrzcVLj0A==
-X-Received: by 2002:a5d:63cb:: with SMTP id c11mr17998797wrw.281.1570391419078; 
- Sun, 06 Oct 2019 12:50:19 -0700 (PDT)
-Received: from localhost ([94.73.41.211])
- by smtp.gmail.com with ESMTPSA id u10sm13213035wmm.0.2019.10.06.12.50.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 06 Oct 2019 12:50:18 -0700 (PDT)
-From: Vicente Bergas <vicencb@gmail.com>
-To: Vivek Unune <npcomplete13@gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: Fix usb-c on Hugsun X99 TV Box
-Date: Sun, 06 Oct 2019 21:50:16 +0200
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=VKymJxaLp2SF18G9ExdMOsAdXsmgBDVfrU/If3JZGxo=;
+ b=mkZofDguwBO+rOy3/HkQJ1XcO06d3W7lMJsHjpK2xWKRGnvh7P+qkK/0QGNK86bur2
+ 1tV5XglofN/ZuUThdbBy514hxT5NR3bDKI5YOILA881pEN6t1nElF4773+XU7LVVT6Im
+ 8zygXzaW52yu0krDPMqYtXOwPX9mQuTuOyOwKvqyvF7VsBDwGEIg+oIXw2+iZ5x0kWd3
+ uhPpZIy9Plq0JYRuH1EOvdbJtwSuitLiPBgvQ6Mavnx9sdSGZt3PxOLhbyqhRbyjLChH
+ +DKoxhbk8g1ha6vrJJerHpj+mpyvH9O4PyNeZHyMJ0mDe4EtHE54tySYgAEA4peSchLr
+ hT1g==
+X-Gm-Message-State: APjAAAWx7PdoSvc3KOmCOM6HanCB2ITZDc7BS1PZpAiKjLFQyT2xv+RA
+ ir+VSFk/TmTMMB0Y2e8C7jl1bB/U8HXlGFiwsBw=
+X-Google-Smtp-Source: APXvYqxEOkV8nJCSllSqxdkQVypo90wcNgBvYDBNSKRgpoLJCvXTnmOdSLlUAojqzzfR9rCgupdlwodIFF5kpYpgt28=
+X-Received: by 2002:a9d:17e6:: with SMTP id j93mr20339687otj.297.1570436821298; 
+ Mon, 07 Oct 2019 01:27:01 -0700 (PDT)
 MIME-Version: 1.0
-Message-ID: <4cb2b781-e177-4008-86ae-a9108bd303e4@gmail.com>
-In-Reply-To: <20191005005200.GA11418@vivek-desktop>
-References: <20190929032230.24628-1-npcomplete13@gmail.com>
- <54c67ca8-8428-48ee-9a96-e1216ba02839@gmail.com>
- <20190929234615.GA5355@vivek-desktop> <2223294.9I8gkMH88G@phil>
- <20191005005200.GA11418@vivek-desktop>
-User-Agent: Trojita
+References: <20191004145544.5066-1-krzk@kernel.org>
+ <20191004145544.5066-3-krzk@kernel.org>
+In-Reply-To: <20191004145544.5066-3-krzk@kernel.org>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 7 Oct 2019 10:26:49 +0200
+Message-ID: <CAMuHMdW0DSujexoGq4CJAYP40DvMcigk08aEnyQ72haY6jds5Q@mail.gmail.com>
+Subject: Re: [RESEND TRIVIAL 3/3] treewide: arch: Fix Kconfig indentation
+To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_125022_310692_317BD4B4 
-X-CRM114-Status: GOOD (  10.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191007_012702_369334_0A0D0EE2 
+X-CRM114-Status: UNSURE (   6.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [209.85.210.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vicencb[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,32 +83,83 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, Felipe Balbi <felipe.balbi@linux.intel.com>,
- Felipe Balbi <balbi@kernel.org>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org, akash@openedev.com,
- ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
- Roger Quadros <rogerq@ti.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Linux Fbdev development list <linux-fbdev@vger.kernel.org>,
+ linux-efi <linux-efi@vger.kernel.org>,
+ Linux-sh list <linux-sh@vger.kernel.org>, linux-iio@vger.kernel.org,
+ linux-pci <linux-pci@vger.kernel.org>,
+ "open list:REMOTE PROCESSOR \(REMOTEPROC\) SUBSYSTEM"
+ <linux-remoteproc@vger.kernel.org>,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ platform-driver-x86@vger.kernel.org, linux-ide@vger.kernel.org,
+ dm-devel@redhat.com, keyrings@vger.kernel.org,
+ MTD Maling List <linux-mtd@lists.infradead.org>,
+ Linux I2C <linux-i2c@vger.kernel.org>, linux-riscv@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com, ac100@lists.launchpad.net,
+ linux-rtc@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ scsi <linux-scsi@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ linux-rdma <linux-rdma@vger.kernel.org>, esc.storagedev@microsemi.com,
+ linux-security-module@vger.kernel.org, linux-clk <linux-clk@vger.kernel.org>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ linux-input@vger.kernel.org, xen-devel@lists.xenproject.org,
+ virtualization@lists.linux-foundation.org,
+ Linux Media Mailing List <linux-media@vger.kernel.org>,
+ "moderated list:H8/300 ARCHITECTURE" <uclinux-h8-devel@lists.sourceforge.jp>,
+ driverdevel <devel@driverdev.osuosl.org>,
+ Linux PM list <linux-pm@vger.kernel.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>, linux-um@lists.infradead.org,
+ linux-block@vger.kernel.org,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Openrisc <openrisc@lists.librecores.org>, linux-mediatek@lists.infradead.org,
+ linux-rpi-kernel <linux-rpi-kernel@lists.infradead.org>,
+ linux-tegra <linux-tegra@vger.kernel.org>,
+ openipmi-developer@lists.sourceforge.net,
+ "open list:TI ETHERNET SWITCH DRIVER \(CPSW\)" <linux-omap@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-edac@vger.kernel.org,
+ linux-hwmon@vger.kernel.org, linux-raid@vger.kernel.org,
+ Jiri Kosina <trivial@kernel.org>, Linux MM <linux-mm@kvack.org>,
+ netdev <netdev@vger.kernel.org>, Linux MMC List <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-spi <linux-spi@vger.kernel.org>,
+ Linux IOMMU <iommu@lists.linux-foundation.org>,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
+ alpha <linux-alpha@vger.kernel.org>, dmaengine@vger.kernel.org,
+ linux-integrity <linux-integrity@vger.kernel.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gU2F0dXJkYXksIE9jdG9iZXIgNSwgMjAxOSAyOjUyOjAwIEFNIENFU1QsIFZpdmVrIFVudW5l
-IHdyb3RlOgo+IE9uIEZyaSwgT2N0IDA0LCAyMDE5IGF0IDExOjQ1OjA4UE0gKzAyMDAsIEhlaWtv
-IFN0dWVibmVyIHdyb3RlOgo+PiBIaSBWaXZlaywKPj4gCj4+IEFtIE1vbnRhZywgMzAuIFNlcHRl
-bWJlciAyMDE5LCAwMTo0NjoxNSBDRVNUIHNjaHJpZWIgVml2ZWsgVW51bmU6IC4uLgo+Cj4gSGkg
-SGVpa28sCj4KPiBJIHRlc3RlZCB0aGUgYzA5YjczY2YgcGF0Y2ggd2l0aG91dCBtb2RpZnlpbmcg
-ZXhzaXN0aW5nIGR0cy4gSSBjYW4gY29uZmlybQo+IHRoYXQgdGhhdCBwYXRjaCBkb2Vzbid0IHdv
-cmsgZm9yIG1lLiBObyB1c2ItYyBkZXZpY2VzIHdlcmUgcmVjb2duaXplZC4KPgo+IFZpY2Vuw6cg
-LSB3ZXJlIHlvdSBhYmxlIHRvIHRlc3QgaXQ/CgpJIGNhbiBhbHNvIGNvbmZpcm0gdGhhdAoKYzA5
-YjczY2ZhYzJhOTMxN2YxMTA0MTY5MDQ1YzUxOWM2MDIxYWExZAp1c2I6IGR3YzM6IGRvbid0IHNl
-dCBnYWRnZXQtPmlzX290ZyBmbGFnCgphbG9uZSBkb2VzIG5vdCBmaXggdGhlIGlzc3VlLgoKZTFk
-OTE0OWU4Mzg5ZjE2OTBjZGQ0ZTQwNTY3NjZkZDI2NDg4YTBmZQphcm02NDogZHRzOiByb2NrY2hp
-cDogRml4IFVTQjMgVHlwZS1DIG9uIHJrMzM5OS1zYXBwaGlyZQoKaXMgc3RpbGwgcmVxdWlyZWQg
-Zm9yIHRoZSBVU0ItQyB0byB3b3JrIG9uIHRoZSBTYXBwaGlyZSBib2FyZC4KClJlZ2FyZHMsCiAg
-VmljZW7Dpy4KCj4gQXMgc29vbiBhcyBJIGFwcGx5IGR0cyBwYXRjaCwgdXNiLWMgZGV2aWNlcyBh
-cmUgcmVjb2duaXplZC4KPgo+IFRoYW5rcywKPgo+IFZpdmVrCgoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0
-CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
+On Fri, Oct 4, 2019 at 4:57 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+> Adjust indentation from spaces to tab (+optional two spaces) as in
+> coding style with command like:
+>     $ sed -e 's/^        /\t/' -i */Kconfig
+>
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+
+>  arch/m68k/Kconfig.bus                  |  2 +-
+>  arch/m68k/Kconfig.debug                | 16 ++++++++--------
+>  arch/m68k/Kconfig.machine              |  8 ++++----
+
+For m68k:
+Acked-by: Geert Uytterhoeven <geert@linux-m68k.org>
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
