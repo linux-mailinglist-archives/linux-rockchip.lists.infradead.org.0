@@ -2,75 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 443FFCDD41
-	for <lists+linux-rockchip@lfdr.de>; Mon,  7 Oct 2019 10:27:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE082CE08E
+	for <lists+linux-rockchip@lfdr.de>; Mon,  7 Oct 2019 13:34:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BlOZGd4bEk/x2Q/hTu3dqBbbMs7L3UxCqCavvhk03LY=; b=eKmdk+g9YP4cqI
-	4ddXeDnleesMzgwZyycexHECER/0dxxrD/tnsYoWVMoOgWqv1KGhnWgHbGQlKfvLSqIAaRhzk9dR8
-	al2oRi1JcCgaz3UejynE0lrk1/DVSDrIVToHpkAXroWizt8MzO3nJCZj73u+DUsFZJh0orNhb10Ti
-	QEAG2j5Y8QdNWkp2YVW7n4p1FaCr8VlZtl/02ynPjI3pGNKmba5TXGqxcHfAtvziPuXURsD7b9VqQ
-	xFuME/iKw+K8sQIMyJ8uD1mLPdzTxSEaYd7ggzTPz9IZR4zI11ZIpW/LuT+4O/DUBVkj95Ep1Nrmv
-	P2/yIp8zT7/ek208Kdyw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+CXkZcFYzcNisTN31CNgvlh8kUb7pf8jL+RuDT9AGbs=; b=Zft8clwi3+5yaH
+	kh4kdwq/I/qjcgylKX2Q+RxradvvxDbJUBXqG9rvRL414JvOo1pkNSykETGLT+wMJt5F1DJnn0UKN
+	M7QyAw/8GjpfU/IpbHmW73kpQCo7lTA/PBQmYvAFA4SUx4MxP6dRPe4anqhpiUvvxtiTXybaZgBZ/
+	n1qtgMi3igcoKCqohLFBkOAAuqGMLypL6N8M8ITqw7rCqMOT1ZgsVfoswmYZWGn0c29cpeLD3UvUT
+	54XTYpYEwPN5bqmlgoEKJqKCBAjOfhmM3ltc+Rs3un4VkrVYCj2MDilHZM94HNkMpGSQhzYOIP3x6
+	B88p3Dc+Hz26KgKtKaEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHOMN-0000jG-Pl; Mon, 07 Oct 2019 08:27:15 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHOMA-0000UG-Ah; Mon, 07 Oct 2019 08:27:03 +0000
-Received: by mail-ot1-f66.google.com with SMTP id 41so10217618oti.12;
- Mon, 07 Oct 2019 01:27:02 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=VKymJxaLp2SF18G9ExdMOsAdXsmgBDVfrU/If3JZGxo=;
- b=mkZofDguwBO+rOy3/HkQJ1XcO06d3W7lMJsHjpK2xWKRGnvh7P+qkK/0QGNK86bur2
- 1tV5XglofN/ZuUThdbBy514hxT5NR3bDKI5YOILA881pEN6t1nElF4773+XU7LVVT6Im
- 8zygXzaW52yu0krDPMqYtXOwPX9mQuTuOyOwKvqyvF7VsBDwGEIg+oIXw2+iZ5x0kWd3
- uhPpZIy9Plq0JYRuH1EOvdbJtwSuitLiPBgvQ6Mavnx9sdSGZt3PxOLhbyqhRbyjLChH
- +DKoxhbk8g1ha6vrJJerHpj+mpyvH9O4PyNeZHyMJ0mDe4EtHE54tySYgAEA4peSchLr
- hT1g==
-X-Gm-Message-State: APjAAAWx7PdoSvc3KOmCOM6HanCB2ITZDc7BS1PZpAiKjLFQyT2xv+RA
- ir+VSFk/TmTMMB0Y2e8C7jl1bB/U8HXlGFiwsBw=
-X-Google-Smtp-Source: APXvYqxEOkV8nJCSllSqxdkQVypo90wcNgBvYDBNSKRgpoLJCvXTnmOdSLlUAojqzzfR9rCgupdlwodIFF5kpYpgt28=
-X-Received: by 2002:a9d:17e6:: with SMTP id j93mr20339687otj.297.1570436821298; 
- Mon, 07 Oct 2019 01:27:01 -0700 (PDT)
+	id 1iHRHY-0007fF-N5; Mon, 07 Oct 2019 11:34:28 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHRGn-00070Z-I3; Mon, 07 Oct 2019 11:33:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9B3661570;
+ Mon,  7 Oct 2019 04:33:35 -0700 (PDT)
+Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
+ [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 0ADC83F706;
+ Mon,  7 Oct 2019 04:33:33 -0700 (PDT)
+From: Robin Murphy <robin.murphy@arm.com>
+To: heiko@sntech.de
+Subject: [PATCH] arm64: dts: rockchip: Add Beelink A1
+Date: Mon,  7 Oct 2019 12:33:24 +0100
+Message-Id: <9037b7edbbb41cbbf699ebe3a511daf22d886e7d.1570444695.git.robin.murphy@arm.com>
+X-Mailer: git-send-email 2.21.0.dirty
 MIME-Version: 1.0
-References: <20191004145544.5066-1-krzk@kernel.org>
- <20191004145544.5066-3-krzk@kernel.org>
-In-Reply-To: <20191004145544.5066-3-krzk@kernel.org>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 7 Oct 2019 10:26:49 +0200
-Message-ID: <CAMuHMdW0DSujexoGq4CJAYP40DvMcigk08aEnyQ72haY6jds5Q@mail.gmail.com>
-Subject: Re: [RESEND TRIVIAL 3/3] treewide: arch: Fix Kconfig indentation
-To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_012702_369334_0A0D0EE2 
-X-CRM114-Status: UNSURE (   6.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191007_043341_681585_BCD53E4C 
+X-CRM114-Status: GOOD (  20.91  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,81 +58,476 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Fbdev development list <linux-fbdev@vger.kernel.org>,
- linux-efi <linux-efi@vger.kernel.org>,
- Linux-sh list <linux-sh@vger.kernel.org>, linux-iio@vger.kernel.org,
- linux-pci <linux-pci@vger.kernel.org>,
- "open list:REMOTE PROCESSOR \(REMOTEPROC\) SUBSYSTEM"
- <linux-remoteproc@vger.kernel.org>,
- DRI Development <dri-devel@lists.freedesktop.org>,
- platform-driver-x86@vger.kernel.org, linux-ide@vger.kernel.org,
- dm-devel@redhat.com, keyrings@vger.kernel.org,
- MTD Maling List <linux-mtd@lists.infradead.org>,
- Linux I2C <linux-i2c@vger.kernel.org>, linux-riscv@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com, ac100@lists.launchpad.net,
- linux-rtc@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- scsi <linux-scsi@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- linux-rdma <linux-rdma@vger.kernel.org>, esc.storagedev@microsemi.com,
- linux-security-module@vger.kernel.org, linux-clk <linux-clk@vger.kernel.org>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- bcm-kernel-feedback-list@broadcom.com,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- linux-input@vger.kernel.org, xen-devel@lists.xenproject.org,
- virtualization@lists.linux-foundation.org,
- Linux Media Mailing List <linux-media@vger.kernel.org>,
- "moderated list:H8/300 ARCHITECTURE" <uclinux-h8-devel@lists.sourceforge.jp>,
- driverdevel <devel@driverdev.osuosl.org>,
- Linux PM list <linux-pm@vger.kernel.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>, linux-um@lists.infradead.org,
- linux-block@vger.kernel.org,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Openrisc <openrisc@lists.librecores.org>, linux-mediatek@lists.infradead.org,
- linux-rpi-kernel <linux-rpi-kernel@lists.infradead.org>,
- linux-tegra <linux-tegra@vger.kernel.org>,
- openipmi-developer@lists.sourceforge.net,
- "open list:TI ETHERNET SWITCH DRIVER \(CPSW\)" <linux-omap@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-edac@vger.kernel.org,
- linux-hwmon@vger.kernel.org, linux-raid@vger.kernel.org,
- Jiri Kosina <trivial@kernel.org>, Linux MM <linux-mm@kvack.org>,
- netdev <netdev@vger.kernel.org>, Linux MMC List <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-spi <linux-spi@vger.kernel.org>,
- Linux IOMMU <iommu@lists.linux-foundation.org>,
- Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- alpha <linux-alpha@vger.kernel.org>, dmaengine@vger.kernel.org,
- linux-integrity <linux-integrity@vger.kernel.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, Oct 4, 2019 at 4:57 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> Adjust indentation from spaces to tab (+optional two spaces) as in
-> coding style with command like:
->     $ sed -e 's/^        /\t/' -i */Kconfig
->
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+Beelink A1 is a TV box implementing the higher-end options of the
+RK3328 reference design - the DTB from the stock Android firmware is
+clearly the "rk3328-box-plus" variant from the Rockchip 3.10 BSP with
+minor modifications to accommodate the USB WiFi module and additional
+VFD-style LED driver. It features:
 
->  arch/m68k/Kconfig.bus                  |  2 +-
->  arch/m68k/Kconfig.debug                | 16 ++++++++--------
->  arch/m68k/Kconfig.machine              |  8 ++++----
+- 4GB of 32-bit LPDDR3
+- 16GB of HS200 eMMC (newer models with 32GB also exist)
+- Realtek RTL8211F phy for gigabit ethernet
+- Fn-Link 6221E-UUC module (RealTek RTL8821CU) for 11ac WiFi and Bluetooth 4.2
+- HDMI and analog A/V
+- 1x USB 3.0 type A host, 1x USB 2.0 type A OTG, 1x micro SD
+- IR receiver and a neat little LED clock display.
 
-For m68k:
-Acked-by: Geert Uytterhoeven <geert@linux-m68k.org>
+Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+---
 
-Gr{oetje,eeting}s,
+One question I'm wondering about is whether it's worth pushing the HDMI
+and analog codec audio cards down into rk3328.dtsi (as with HDMI audio
+on RK3399), since those audio pipelines are internal to the SoC and the
+board only really governs whether the outputs are wired up or not.
 
-                        Geert
+ .../devicetree/bindings/arm/rockchip.yaml     |   5 +
+ arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+ arch/arm64/boot/dts/rockchip/rk3328-a1.dts    | 399 ++++++++++++++++++
+ 3 files changed, 405 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3328-a1.dts
 
+diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+index c82c5e57d44c..f27f7805f57e 100644
+--- a/Documentation/devicetree/bindings/arm/rockchip.yaml
++++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+@@ -40,6 +40,11 @@ properties:
+           - const: asus,rk3288-tinker-s
+           - const: rockchip,rk3288
+ 
++      - description: Beelink A1
++        items:
++          - const: azw,beelink-a1
++          - const: rockchip,rk3328
++
+       - description: bq Curie 2 tablet
+         items:
+           - const: mundoreader,bq-curie2
+diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
+index 1f18a9392d15..a6f250e7cde2 100644
+--- a/arch/arm64/boot/dts/rockchip/Makefile
++++ b/arch/arm64/boot/dts/rockchip/Makefile
+@@ -1,5 +1,6 @@
+ # SPDX-License-Identifier: GPL-2.0
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += px30-evb.dtb
++dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-a1.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-rock64.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-roc-cc.dtb
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328-a1.dts b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
+new file mode 100644
+index 000000000000..03ad663ff821
+--- /dev/null
++++ b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
+@@ -0,0 +1,399 @@
++// SPDX-License-Identifier: (GPL-2.0-only OR MIT)
++// Copyright (c) 2017-2019 Arm Ltd.
++
++/dts-v1/;
++#include "rk3328.dtsi"
++
++/ {
++	model = "Beelink A1";
++	compatible = "azw,beelink-a1", "rockchip,rk3328";
++
++	/*
++	 * UART pins, as viewed with bottom of case removed:
++	 *
++	 *           Front
++	 *        /-------
++	 *  L    / o <- Gnd
++	 *  e   / o <-- Rx
++	 *  f  / o <--- Tx
++	 *  t / o <---- +3.3v
++	 *    |
++	 */
++	chosen {
++		stdout-path = "serial2:1500000n8";
++	};
++
++	gmac_clkin: external-gmac-clock {
++		compatible = "fixed-clock";
++		clock-frequency = <125000000>;
++		clock-output-names = "gmac_clkin";
++		#clock-cells = <0>;
++	};
++
++	vcc_host_5v: usb3-current-switch {
++		compatible = "regulator-fixed";
++		enable-active-high;
++		gpio = <&gpio0 RK_PA0 GPIO_ACTIVE_HIGH>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&usb30_host_drv>;
++		regulator-name = "vcc_host_5v";
++		vin-supply = <&vcc_sys>;
++	};
++
++	vcc_sys: vcc-sys {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc_sys";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++	};
++
++	cpus {
++		idle-states {
++			entry-method = "arm,psci";
++
++			cpu_sleep: cpu-sleep {
++				compatible = "arm,idle-state";
++				arm,psci-suspend-param = <0x0010000>;
++				local-timer-stop;
++				entry-latency-us = <120>;
++				exit-latency-us = <250>;
++				min-residency-us = <900>;
++			};
++		};
++	};
++
++	analog-sound {
++		compatible = "simple-audio-card";
++		simple-audio-card,format = "i2s";
++		simple-audio-card,mclk-fs = <256>;
++		simple-audio-card,name = "Analog A/V";
++
++		simple-audio-card,cpu {
++			sound-dai = <&i2s1>;
++		};
++
++		simple-audio-card,codec {
++			sound-dai = <&codec>;
++		};
++	};
++
++	hdmi-sound {
++		compatible = "simple-audio-card";
++		simple-audio-card,format = "i2s";
++		simple-audio-card,mclk-fs = <256>;
++		simple-audio-card,name = "HDMI";
++
++		simple-audio-card,cpu {
++			sound-dai = <&i2s0>;
++		};
++
++		simple-audio-card,codec {
++			sound-dai = <&hdmi>;
++		};
++	};
++
++	ir-receiver {
++		compatible = "gpio-ir-receiver";
++		gpios = <&gpio2 RK_PA2 GPIO_ACTIVE_HIGH>;
++	};
++};
++
++&codec {
++	status = "okay";
++};
++
++&cpu0 {
++	cpu-idle-states = <&cpu_sleep>;
++	cpu-supply = <&vdd_arm>;
++};
++
++&cpu1 {
++	cpu-idle-states = <&cpu_sleep>;
++	cpu-supply = <&vdd_arm>;
++};
++
++&cpu2 {
++	cpu-idle-states = <&cpu_sleep>;
++	cpu-supply = <&vdd_arm>;
++};
++
++&cpu3 {
++	cpu-idle-states = <&cpu_sleep>;
++	cpu-supply = <&vdd_arm>;
++};
++
++&emmc {
++	bus-width = <8>;
++	cap-mmc-highspeed;
++	mmc-ddr-1_8v;
++	mmc-hs200-1_8v;
++	no-sd;
++	no-sdio;
++	non-removable;
++	pinctrl-names = "default";
++	pinctrl-0 = <&emmc_clk &emmc_cmd &emmc_bus8>;
++	vmmc-supply = <&vcc_io>;
++	vqmmc-supply = <&vcc18_emmc>;
++	status = "okay";
++};
++
++&gmac2io {
++	assigned-clocks = <&cru SCLK_MAC2IO>, <&cru SCLK_MAC2IO_EXT>;
++	assigned-clock-parents = <&gmac_clkin>, <&gmac_clkin>;
++	clock_in_out = "input";
++	phy-handle = <&rtl8211f>;
++	phy-mode = "rgmii";
++	phy-supply = <&vcc_io>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&rgmiim1_pins>;
++	snps,aal;
++	snps,pbl = <0x4>;
++	tx_delay = <0x26>;
++	rx_delay = <0x11>;
++	status = "okay";
++
++	mdio {
++		compatible = "snps,dwmac-mdio";
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		rtl8211f: phy@0 {
++			reg = <0>;
++			reset-assert-us = <10000>;
++			reset-deassert-us = <30000>;
++			reset-gpios = <&gpio2 RK_PC1 GPIO_ACTIVE_LOW>;
++		};
++	};
++};
++
++&gpu {
++	mali-supply = <&vdd_logic>;
++};
++
++&hdmi {
++	status = "okay";
++};
++
++&hdmiphy {
++	status = "okay";
++};
++
++&i2c1 {
++	clock-frequency = <1000000>;
++	i2c-scl-falling-time-ns = <5>;
++	i2c-scl-rising-time-ns = <83>;
++	status = "okay";
++
++	pmic@18 {
++		compatible = "rockchip,rk805";
++		reg = <0x18>;
++		interrupt-parent = <&gpio2>;
++		interrupts = <RK_PA6 IRQ_TYPE_LEVEL_LOW>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&pmic_int_l>;
++		rockchip,system-power-controller;
++		wakeup-source;
++
++		vcc1-supply = <&vcc_sys>;
++		vcc2-supply = <&vcc_sys>;
++		vcc3-supply = <&vcc_sys>;
++		vcc4-supply = <&vcc_sys>;
++		vcc5-supply = <&vcc_io>;
++		vcc6-supply = <&vcc_io>;
++
++		regulators {
++			vdd_logic: DCDC_REG1 {
++				regulator-name = "vdd_logic";
++				regulator-min-microvolt = <700000>;
++				regulator-max-microvolt = <1350000>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <1000000>;
++				};
++			};
++
++			vdd_arm: DCDC_REG2 {
++				regulator-name = "vdd_arm";
++				regulator-min-microvolt = <700000>;
++				regulator-max-microvolt = <1350000>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <950000>;
++				};
++			};
++
++			vcc_ddr: DCDC_REG3 {
++				regulator-name = "vcc_ddr";
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++				};
++			};
++
++			vcc_io: DCDC_REG4 {
++				regulator-name = "vcc_io";
++				regulator-min-microvolt = <3300000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <3300000>;
++				};
++			};
++
++			vdd_18: LDO_REG1 {
++				regulator-name = "vdd_18";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <1800000>;
++				};
++			};
++
++			vcc18_emmc: LDO_REG2 {
++				regulator-name = "vcc_18emmc";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <1800000>;
++				};
++			};
++
++			vdd_11: LDO_REG3 {
++				regulator-name = "vdd_11";
++				regulator-min-microvolt = <1100000>;
++				regulator-max-microvolt = <1100000>;
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <1100000>;
++				};
++			};
++		};
++	};
++};
++
++&i2s0 {
++	status = "okay";
++};
++
++&i2s1 {
++	status = "okay";
++};
++
++&io_domains {
++	vccio1-supply = <&vcc_io>;
++	vccio2-supply = <&vcc18_emmc>;
++	vccio3-supply = <&vcc_io>;
++	vccio4-supply = <&vdd_18>;
++	vccio5-supply = <&vcc_io>;
++	vccio6-supply = <&vdd_18>;
++	pmuio-supply = <&vcc_io>;
++	status = "okay";
++};
++
++&pinctrl {
++	pmic {
++		pmic_int_l: pmic-int-l {
++			rockchip,pins = <2 RK_PA6 RK_FUNC_GPIO &pcfg_pull_up>;
++		};
++	};
++
++	usb3 {
++		usb30_host_drv: usb30-host-drv {
++			rockchip,pins = <0 RK_PA0 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++
++	wifi {
++		bt_dis: bt-dis {
++			rockchip,pins = <2 RK_PC5 RK_FUNC_GPIO &pcfg_output_low>;
++		};
++
++		bt_wake_host: bt-wake-host {
++			rockchip,pins = <2 RK_PC0 RK_FUNC_GPIO &pcfg_pull_up>;
++		};
++
++		chip_en: chip-en {
++			rockchip,pins = <2 RK_PC3 RK_FUNC_GPIO &pcfg_output_low>;
++		};
++
++		host_wake_bt: host-wake-bt {
++			rockchip,pins = <2 RK_PB7 RK_FUNC_GPIO &pcfg_output_high>;
++		};
++
++		wl_dis: wl-dis {
++			rockchip,pins = <3 RK_PB0 RK_FUNC_GPIO &pcfg_output_low>;
++		};
++
++		wl_wake_host: wl-wake-host {
++			rockchip,pins = <3 RK_PA1 RK_FUNC_GPIO &pcfg_pull_up>;
++		};
++	};
++};
++
++&sdmmc {
++	bus-width = <4>;
++	cap-mmc-highspeed;
++	cap-sd-highspeed;
++	disable-wp;
++	pinctrl-names = "default";
++	pinctrl-0 = <&sdmmc0_clk &sdmmc0_cmd &sdmmc0_dectn &sdmmc0_bus4>;
++	vmmc-supply = <&vcc_io>;
++	vqmmc-supply = <&vcc_io>;
++	status = "okay";
++};
++
++&tsadc {
++	rockchip,hw-tshut-mode = <0>;
++	rockchip,hw-tshut-polarity = <0>;
++	status = "okay";
++};
++
++&uart2 {
++	status = "okay";
++};
++
++&u2phy {
++	status = "okay";
++};
++
++&u2phy_host {
++	status = "okay";
++};
++
++&u2phy_otg {
++	status = "okay";
++};
++
++&usb20_otg {
++	dr_mode = "host";
++	status = "okay";
++};
++
++&usb_host0_ehci {
++	pinctrl-names = "default";
++	pinctrl-0 = <&bt_dis &bt_wake_host &chip_en &host_wake_bt &wl_dis &wl_wake_host>;
++	status = "okay";
++};
++
++&vop {
++	status = "okay";
++};
++
++&vop_mmu {
++	status = "okay";
++};
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+2.21.0.dirty
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 _______________________________________________
 Linux-rockchip mailing list
