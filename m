@@ -2,43 +2,43 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FDF7CE08F
-	for <lists+linux-rockchip@lfdr.de>; Mon,  7 Oct 2019 13:34:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A66CCE089
+	for <lists+linux-rockchip@lfdr.de>; Mon,  7 Oct 2019 13:34:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=AfG4kiKjwrQ6kDbKRyj+i/GtIUiWlx1ECiPoPjA0f3Q=; b=tsgDY9Pf//3J+i
-	LluHTg1ePbTfjPXK4Gj45fB8i/mcGRiPQDtTmCOm74Z/3/qB72tZztYEtqI6VXXUrbMHu2y3+glJF
-	Z79ZHmGcNu/hlHPtKXr+yc/HdQOYobc5JTeEmzvAg6HwhKtcMRqSa8Y2DtZLF1j0M5KdpP3jPUfHB
-	rW5tBvSWOFs2JCmC41ooDSbN0LuIh+tR0oL213mS1dk3JJDVMdchCpoYAhWA652u1jOVXUKU+gNyV
-	38dHU10XmFIkQwd8vxPBn8MZiH07P5DwI0oVKZq0FtasHDKiPKQjSYmjtKpLA8TP4DbuazUof6Lux
-	xcqYCbBQY+ULXAEszRMg==;
+	List-Owner; bh=QAz72igQtwF4GpCvdimmnOBxMUyXsK5QOqGCd2gcVPg=; b=KXE0np/9Tfwve+
+	JDPFLezCnmZvvaHh8Rb905FptzL77PdJdA3QLfScRri4R7XPxxotnsEDtj9kZe6L/jSaYjnoffsdM
+	el4UEtPuEVZ7V+jN5Rlc+t56wA7g7/L0KsPlwSrOkE9KrI7lfB2HWz85QfnJ+BKx4fK0GVpySGeja
+	1IjM+qnr4/nNhFLk2z595otbZyyRsicngugpPL+Lfa+I395uziqezYkLrRs/3X1W920HIntNgJwFS
+	ByACl6WN7Xyb2pllgwo+zNiiufUk1fDtp1BWiF3ZLAVTEfs/NMkcrYQ9ZygEt4njMETeGmNB8zJxf
+	A7unpNOQxHBr2JxTthNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHRHb-0007i2-0S; Mon, 07 Oct 2019 11:34:31 +0000
+	id 1iHRH1-00078z-Nm; Mon, 07 Oct 2019 11:33:55 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHRGo-00070a-PP; Mon, 07 Oct 2019 11:33:44 +0000
+ id 1iHRGl-00070c-SE; Mon, 07 Oct 2019 11:33:41 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8A8F41576;
- Mon,  7 Oct 2019 04:33:36 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7AD6615A2;
+ Mon,  7 Oct 2019 04:33:37 -0700 (PDT)
 Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
  [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CE1B83F706;
- Mon,  7 Oct 2019 04:33:35 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id BEE433F706;
+ Mon,  7 Oct 2019 04:33:36 -0700 (PDT)
 From: Robin Murphy <robin.murphy@arm.com>
 To: heiko@sntech.de
-Subject: [PATCH] arm64: dts: rockchip: Enable nanopi4 HDMI audio
-Date: Mon,  7 Oct 2019 12:33:25 +0100
-Message-Id: <7fe6e94e4b9f5986f19f2637b7b716f0cb54de1b.1570444701.git.robin.murphy@arm.com>
+Subject: [PATCH] arm64: dts: rockchip: Update nanopi4 phy reset properties
+Date: Mon,  7 Oct 2019 12:33:26 +0100
+Message-Id: <4d16c24ae3651a2119cf5bb1213f46a9fce4b39a.1570444773.git.robin.murphy@arm.com>
 X-Mailer: git-send-email 2.21.0.dirty
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_043342_862297_271B3C78 
-X-CRM114-Status: GOOD (  14.40  )
+X-CRM114-CacheID: sfid-20191007_043339_955489_1A2B9643 
+X-CRM114-Status: GOOD (  15.71  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,39 +65,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-All the nanopi4 boards have HDMI, so let them make noise on it.
+Use the now-preferred generic phy reset properties instead of the
+dwmac-specific ones.
 
 Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 ---
- arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi
-index 170f7ed6d773..b788ae4f47f0 100644
+index dd16c80d923e..170f7ed6d773 100644
 --- a/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi
 +++ b/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi
-@@ -184,6 +184,10 @@
+@@ -152,9 +152,6 @@
+ 	phy-handle = <&rtl8211e>;
+ 	phy-mode = "rgmii";
+ 	phy-supply = <&vcc3v3_s3>;
+-	snps,reset-active-low;
+-	snps,reset-delays-us = <0 10000 30000>;
+-	snps,reset-gpio = <&gpio3 RK_PB7 GPIO_ACTIVE_LOW>;
+ 	tx_delay = <0x28>;
+ 	rx_delay = <0x11>;
  	status = "okay";
+@@ -168,6 +165,9 @@
+ 			reg = <1>;
+ 			interrupt-parent = <&gpio3>;
+ 			interrupts = <RK_PB2 IRQ_TYPE_LEVEL_LOW>;
++			reset-assert-us = <10000>;
++			reset-deassert-us = <30000>;
++			reset-gpios = <&gpio3 RK_PB7 GPIO_ACTIVE_LOW>;
+ 		};
+ 	};
  };
- 
-+&hdmi_sound {
-+	status = "okay";
-+};
-+
- &i2c0 {
- 	clock-frequency = <400000>;
- 	i2c-scl-rising-time-ns = <160>;
-@@ -459,6 +463,10 @@
- 	status = "okay";
- };
- 
-+&i2s2 {
-+	status = "okay";
-+};
-+
- &io_domains {
- 	bt656-supply = <&vcc_1v8>;
- 	audio-supply = <&vcca1v8_codec>;
 -- 
 2.21.0.dirty
 
