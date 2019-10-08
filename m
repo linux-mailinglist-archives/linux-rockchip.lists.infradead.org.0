@@ -2,106 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFAB0CF2C0
-	for <lists+linux-rockchip@lfdr.de>; Tue,  8 Oct 2019 08:31:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB220CF4A3
+	for <lists+linux-rockchip@lfdr.de>; Tue,  8 Oct 2019 10:09:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tGpGcGlBaT5TsVJ4XD8smo2lgxfJS6TocSTLYwQkUeg=; b=IGUjp0mTka4hVp
-	WXn7vKeeqt1m/YNh9sa8pgip6ZeC++PhZk6O4bldWEUlC0GUb3HtHN4BftXRRhnIeuS5gaLXQ4tJB
-	m3XfswWApp+AlU6F0KAr5X8IdPmOrM2K01HK2qVUAubgF2DU+FM916GSZA2SSACx7SfEbJGwSEc/c
-	eYZq22Nq51mzYfAsXealiJEGKNEplTBTqUrZCDh4+ZPBhml/Oys6i3L7i46fnOAvPT4xux+rO9SGg
-	DktfVX+e7cMBWcLfTGcLt4gQgLZKkKwJlV0vi2+CjPubmsH5pf/aMNurq6cjhVtAKNxOM1IB36u3N
-	U+LtP3un092Ljz1VgIXw==;
+	List-Owner; bh=EkD1Su6LuCqI6dagWhg+PZ0F18FwacmgDFgtIkZH0YQ=; b=gR8j000djvnvrf
+	vKZAJfBq6n/dJ3DBNKdkIZczWczptabXGPYYjothFX+4/hT/n9/NHTHlXftuCvM6rFW5KRiSrfIw+
+	max7VQVnG7OR94WPNTq5TGNKfjTFjrb2aaV7L2JuU9dci4ga4+MNmWTFPdah9VuRk7Rwjly1ku4wk
+	fP6gDmGrlUXGH20KlP6Eda/reYgfYtol3tZJXYUOM0nOWq/GkF52+xceRuamJbuRtYbk8jVIfw0f2
+	JiJuo0ySY3MGgLAb5gVaZ8UOO9HS75/QH7A4DwK3r680z1yRZ87xXt6TTij2D4VaDyeyf4nEcSRSK
+	SZYUr+kE85HA7Uwr22dA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHj26-0004PD-SZ; Tue, 08 Oct 2019 06:31:42 +0000
-Received: from mail-oln040092065026.outbound.protection.outlook.com
- ([40.92.65.26] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1iHkYJ-0002zv-AN; Tue, 08 Oct 2019 08:09:03 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHj23-0004Ni-FD
- for linux-rockchip@lists.infradead.org; Tue, 08 Oct 2019 06:31:41 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Pe9w1z2MReSrkD3k+eVAbiVsRmD5RmFQmLVqxu9rug0JdxwJa9dMD+4BvpMBA9n5fSyDIQv7RdeNtZWQa+dJJtm9+WNJwxH1NoUQ6AeDcSJOFu3GXaKvH3YtkCDHpNXW6F/mkxKp1gIc77KV4ZelV6IedVEgDqrwE+/1w0MlE6unbk28vWO4OE5c+lV6pJYy2ON/CkDRoeNpnDVNZrRxkj2fF/+2vvJHcIHM6WaZ3BEY3sHbig28fsP9Cmevj4dmH4s+9v9WOl7Wxo/JysfyspJRRN6D+2pABvwXG6a3Z+qFFLAH5HIswWzEPf6LUMWS0FJQdj4537eBeiZtaMCjQg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6gqdEB80K9SoY3kDFPxpeKqjNS4mjj8KPbgJPb7lotU=;
- b=m9bejfKdpqUegC7XqcBZfLrs+rp7jGDzirjd2TZpOCcwIw+UYAYqe0uJdb4n3cWzGgDwYkvBb+6P/O9CofG1YiOBn6fXmmNsL5LGbQS4+TH1K1KakZOfrgG+uX/ClNmH+tBYHvZy36PgN0lgBwkWkWHcBLTX/Dnjzj9bgDEVwOk5IZpz7ISMBee+q2u3bN1X8aAD2xkPCxSojOj5PSx9ERMAf6jZo9pK7rQVXd4lKLfseX/2vRaAiAWQ7QzQ4suUz6nolcKzT/y1PpVqHvDtDdtLjrJExM06iq8L14rQc7Z1UB6l53XDC48L8LqEA/ZQv13OigloielH+GlwulQ/Jw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-Received: from VE1EUR01FT008.eop-EUR01.prod.protection.outlook.com
- (10.152.2.54) by VE1EUR01HT037.eop-EUR01.prod.protection.outlook.com
- (10.152.3.128) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2327.20; Tue, 8 Oct
- 2019 06:31:34 +0000
-Received: from HE1PR06MB4011.eurprd06.prod.outlook.com (10.152.2.51) by
- VE1EUR01FT008.mail.protection.outlook.com (10.152.2.67) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.20.2327.20 via Frontend Transport; Tue, 8 Oct 2019 06:31:34 +0000
-Received: from HE1PR06MB4011.eurprd06.prod.outlook.com
- ([fe80::5c5a:1160:a2e0:43d8]) by HE1PR06MB4011.eurprd06.prod.outlook.com
- ([fe80::5c5a:1160:a2e0:43d8%4]) with mapi id 15.20.2305.023; Tue, 8 Oct 2019
- 06:31:34 +0000
-From: Jonas Karlman <jonas@kwiboo.se>
-To: Tomasz Figa <tfiga@chromium.org>, Ezequiel Garcia <ezequiel@collabora.com>
-Subject: Re: [PATCH v2 for 5.4 2/4] media: hantro: Fix H264 max frmsize
- supported on RK3288
-Thread-Topic: [PATCH v2 for 5.4 2/4] media: hantro: Fix H264 max frmsize
- supported on RK3288
-Thread-Index: AQHVfTc2RvTWvQQ6Z06gn22kTgvMXqdQN9WAgAARyQA=
-Date: Tue, 8 Oct 2019 06:31:34 +0000
-Message-ID: <HE1PR06MB4011EC9E93ECBB6773252247AC9A0@HE1PR06MB4011.eurprd06.prod.outlook.com>
-References: <20191007174505.10681-1-ezequiel@collabora.com>
- <20191007174505.10681-3-ezequiel@collabora.com>
- <CAAFQd5BNu2ea3ei_imHmEwmdna0+iiSbQSv_SBsdHfP4Uh1h4Q@mail.gmail.com>
-In-Reply-To: <CAAFQd5BNu2ea3ei_imHmEwmdna0+iiSbQSv_SBsdHfP4Uh1h4Q@mail.gmail.com>
-Accept-Language: sv-SE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: HE1PR0102CA0059.eurprd01.prod.exchangelabs.com
- (2603:10a6:7:7d::36) To HE1PR06MB4011.eurprd06.prod.outlook.com
- (2603:10a6:7:9c::32)
-x-incomingtopheadermarker: OriginalChecksum:281F0C36E430B8F36F04439000A3DBC16333D9CC187911F94A78B18B22AD256B;
- UpperCasedChecksum:C1A417F2D729E2DCD15B2C0D6BA3B5B330B226231AFD8AD3B0733E810954AA92;
- SizeAsReceived:8242; Count:50
-x-ms-exchange-messagesentrepresentingtype: 1
-x-tmn: [lvFo+0uTl8sYwypXXBa2TCKeqijFnHGw]
-x-microsoft-original-message-id: <1489a28d-66d8-7ef5-538a-578f47991801@kwiboo.se>
-x-ms-publictraffictype: Email
-x-incomingheadercount: 50
-x-eopattributedmessage: 0
-x-ms-traffictypediagnostic: VE1EUR01HT037:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: Vx6jkpNRG82vqj8k7nXsxg9kNuWK2eNTRoXBV5gVT7SP8OJ1vSLgnmZVs+gbYNeDJUo0DnFLYNcQy97Z4FfteR48lE+vCW3pFRRjq4QUTAG5Y/VlP9r2bHqOR/LQKDYFXM7kA2/XpoIQGe0keP3YvRopCWhpkFa0hDKDhyC6FtdD/0F53ur8w38q+V91yxocDgkjxZKunetW+hPfx0DGdLRoYxBDiOsc/YIFoPi0eoA=
-x-ms-exchange-transport-forked: True
-Content-ID: <10B199680F83BE4F8A7AF0D78CC0BF51@eurprd06.prod.outlook.com>
+ id 1iHkYF-0002zQ-7N; Tue, 08 Oct 2019 08:09:01 +0000
+Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iHkYA-0008Kn-Iv; Tue, 08 Oct 2019 10:08:54 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: =?ISO-8859-1?Q?Andr=E9?= Przywara <andre.przywara@arm.com>
+Subject: Re: aarch64 Kernel Panic Asynchronous SError Interrupt on large file
+ IO
+Date: Tue, 08 Oct 2019 10:08:53 +0200
+Message-ID: <5633427.HO9RFyXBYh@diego>
+In-Reply-To: <39265746.Q1QFhyvV51@diego>
+References: <CA+Vb7hpe_USzdCuTBHd8V-t6YeQ0oApiBrvM-D43JuhJda6eyQ@mail.gmail.com>
+ <0d1c5c50-6fb0-0154-26cc-c7823dd7ea26@arm.com> <39265746.Q1QFhyvV51@diego>
 MIME-Version: 1.0
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-Network-Message-Id: a4c415ce-de24-44a9-8a39-08d74bb929e3
-X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Oct 2019 06:31:34.2993 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Internet
-X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1EUR01HT037
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_233139_505845_A9385EA4 
-X-CRM114-Status: GOOD (  16.33  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191008_010859_418643_C3A65072 
+X-CRM114-Status: GOOD (  36.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.65.26 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,72 +59,236 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "fbuergisser@chromium.org" <fbuergisser@chromium.org>,
- "kernel@collabora.com" <kernel@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Douglas Anderson <dianders@chromium.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Nicolas Dufresne <nicolas.dufresne@collabora.com>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Robin Murphy <robin.murphy@arm.com>, vicencb@gmail.com,
+ linux-rockchip@lists.infradead.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Philipp Richter <richterphilipp.pops@gmail.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 2019-10-08 07:27, Tomasz Figa wrote:
-> Hi Ezequiel, Jonas,
->
-> On Tue, Oct 8, 2019 at 2:46 AM Ezequiel Garcia <ezequiel@collabora.com> wrote:
->> From: Jonas Karlman <jonas@kwiboo.se>
->>
->> TRM specify supported image size 48x48 to 4096x2304 at step size 16 pixels,
->> change frmsize max_width/max_height to match TRM.
->>
->> Fixes: 760327930e10 ("media: hantro: Enable H264 decoding on rk3288")
->> Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
->> ---
->> v2:
->> * No changes.
->>
->>  drivers/staging/media/hantro/rk3288_vpu_hw.c | 4 ++--
->>  1 file changed, 2 insertions(+), 2 deletions(-)
->>
->> diff --git a/drivers/staging/media/hantro/rk3288_vpu_hw.c b/drivers/staging/media/hantro/rk3288_vpu_hw.c
->> index 6bfcc47d1e58..ebb017b8a334 100644
->> --- a/drivers/staging/media/hantro/rk3288_vpu_hw.c
->> +++ b/drivers/staging/media/hantro/rk3288_vpu_hw.c
->> @@ -67,10 +67,10 @@ static const struct hantro_fmt rk3288_vpu_dec_fmts[] = {
->>                 .max_depth = 2,
->>                 .frmsize = {
->>                         .min_width = 48,
->> -                       .max_width = 3840,
->> +                       .max_width = 4096,
->>                         .step_width = H264_MB_DIM,
->>                         .min_height = 48,
->> -                       .max_height = 2160,
->> +                       .max_height = 2304,
-> This doesn't match the datasheet I have, which is RK3288 Datasheet Rev
-> 1.4 and which has the values as in current code. What's the one you
-> got the values from?
+Am Montag, 7. Oktober 2019, 16:06:44 CEST schrieb Heiko St=FCbner:
+> Am Montag, 7. Oktober 2019, 16:01:05 CEST schrieb Andr=E9 Przywara:
+> > On 07/10/2019 14:38, Heiko St=FCbner wrote:
+> > > Am Montag, 7. Oktober 2019, 13:51:37 CEST schrieb Robin Murphy:
+> > >> On 06/10/2019 14:13, Heiko Stuebner wrote:
+> > >>> Am Sonntag, 6. Oktober 2019, 01:45:23 CEST schrieb Robin Murphy:
+> > >>>> On 2019-08-19 11:43 am, Will Deacon wrote:
+> > >>>>> On Mon, Aug 19, 2019 at 11:07:14AM +0100, Catalin Marinas wrote:
+> > >>>>>> On Sat, Aug 17, 2019 at 03:12:41PM +0200, Philipp Richter wrote:
+> > >>>>>>> I added "memtest=3D4" to the kernel cmdline and I'm getting ver=
+y quicky
+> > >>>>>>> a "Internal error: synchronous external abort" panic.
+> > >>>>>> [...]
+> > >>>>>>> [    0.000000] early_memtest: # of tests: 4
+> > >>>>>>> [    0.000000]   0x0000000000200000 - 0x0000000002080000 patter=
+n aaaaaaaaaaaaaaaa
+> > >>>>>>> [    0.000000]   0x0000000003a95000 - 0x00000000f8400000 patter=
+n aaaaaaaaaaaaaaaa
+> > >>>>>>> [    0.000000] Internal error: synchronous external abort: 9600=
+0210 [#1] SMP
+> > >>>>>>
+> > >>>>>> At least it's a synchronous error ;).
+> > >>>>>>
+> > >>>>>>> [    0.000000] pc : early_memtest+0x16c/0x23c
+> > >>>>>> [...]
+> > >>>>>>> [    0.000000] Code: d2800002 d2800001 eb0400bf 54000309 (f9400=
+080)
+> > >>>>>>
+> > >>>>>> decodecode says:
+> > >>>>>>
+> > >>>>>>      0:   d2800002        mov     x2, #0x0                      =
+  // #0
+> > >>>>>>      4:   d2800001        mov     x1, #0x0                      =
+  // #0
+> > >>>>>>      8:   eb0400bf        cmp     x5, x4
+> > >>>>>>      c:   54000309        b.ls    0x6c  // b.plast
+> > >>>>>>     10:*  f9400080        ldr     x0, [x4]                <-- tr=
+apping instruction
+> > >>>>>>
+> > >>>>>> I guess that's the read of *p in memtest(). Writing *p probably
+> > >>>>>> generates asynchronous errors it you haven't seen it yet.
+> > >>>>>>
+> > >>>>>>> Is my board completely broken ? :(
+> > >>>>>>
+> > >>>>>> One possibility is that you don't have any memory where you thin=
+k there
+> > >>>>>> is, so the mapping just doesn't translate to any valid physical
+> > >>>>>> location.
+> > >>>>>>
+> > >>>>>> Can you add some printk(addr) in do_sea() to see if it always fa=
+ults on
+> > >>>>>> the same address?
+> > >>>>>
+> > >>>>> Alternatively, just run it a few more times and see if the regist=
+er dump
+> > >>>>> changes. Currently we've got:
+> > >>>>>
+> > >>>>> [    0.000000] x5 : ffff8000f8400000 x4 : ffff800008400000
+> > >>>>> [    0.000000] x3 : 0000000008400000 x2 : 0000000000000000
+> > >>>>> [    0.000000] x1 : 0000000000000000 x0 : aaaaaaaaaaaaaaaa
+> > >>>>>
+> > >>>>> so I'd guess that x3 is the faulting pa. The faulting (linear) VA=
+s in the
+> > >>>>> originl report were 0xffff800009c74aa8 and 0xffff800009c08390, wh=
+ich is
+> > >>>>> still a way way off from this one :/
+> > >>>>>
+> > >>>>> Looking at the TRM for the rk3328, there's 4gb of ram starting at=
+ pa 0x0,
+> > >>>>> so maybe some of it has been configured as secure or the memory c=
+ontroller
+> > >>>>> hasn't been properly initialised?
+> > >>>>
+> > >>>> FWIW I've noticed my RK3399 board doing this too, now that I've st=
+arted
+> > >>>> using it in anger. I'm using a hacky firmware comprising upstream =
+U-Boot
+> > >>>> munged with the Rockchip miniloader and downstream Trusted Firmware
+> > >>>> binaries,
+> > >>>
+> > >>> any reason for that combination? For example the rockpro64 got ddr4=
+ support
+> > >>> in upstream uboot recently.
+> > >>
+> > >> Not really; it's just the "works well enough" setup that made distro =
 
-The RK3288 TRM vcodec chapter from [1], unknown revision and date, lists 48x48 to 4096x2304 step size 16 pixels under 25.5.1 H.264 decoder.
+> > >> boot usable before the SPL support went upstream, and (other than =
 
-I can also confirm that one of my test samples (PUPPIES BATH IN 4K) is 4096x2304 and can be decoded after this patch.
-However the decoding speed is not optimal at 400Mhz, if I recall correctly you need to set the VPU1 clock to 600Mhz for 4K decoding on RK3288.
+> > >> hacking in the CPU PLL initialisation which otherwise gets lost in t=
+hat =
 
-I am not sure if I should include a v2 of this patch in my v2 series, as-is this patch do not apply on master (H264_MB_DIM has changed to MB_DIM in master).
+> > >> combination) I haven't touched it since.
+> > >>
+> > >> [ for now I've just hacked a reserved-memory node into my DT... one =
+day =
 
-[1] http://www.t-firefly.com/download/firefly-rk3288/docs/TRM/rk3288-chapter-25-video-encoder-decoder-unit-(vcodec).pdf
+> > >> I'll get round to firmware tinkering ;) ]
+> > >>
+> > >>
+> > >>>> and it looks like that mismatch is the root of this problem.
+> > >>>> Booting a different image based on the BSP U-boot shows that that's
+> > >>>> passing a memory node with the range 0x8400000-0x9600000 entirely =
+carved
+> > >>>> out, so this is presumably claimed by the secure firmware/TEE and =
+set to
+> > >>>> abort Non-Secure accesses.
+> > >>>
+> > >>> As TEE on PX30 is also one of my current projects, I've stumbled ov=
+er that
+> > >>> memory issue. At least OP-TEE can get passed a location for a dtb d=
+uring
+> > >>> startup which it then would modify to add a reserved section for it=
+s memory.
+> > >>>
+> > >>> But that dtb generally is not the one, the kernel will actually use=
+, but
+> > >>> instead only the one used by uboot. extlinux, tftp or whatever will=
+ normally
+> > >>> load and use a new dtb for the kernel which will likely not get tha=
+t memory
+> > >>> reservation automatically?
+> > >>>
+> > >>> I'm not yet sure how this is supposed to work in an all-upstream
+> > >>> configuration - I'm running upstream u-boot + upstream TF-A + upstr=
+eam
+> > >>> OP-Tee in my project environment right now.
+> > >>
+> > >> As far as I understand, U-Boot is still responsible for generating t=
+he =
 
-Regards,
-Jonas
+> > >> memory node in whatever DTB it loads and passes to the kernel, so it =
 
->
-> Best regards,
-> Tomasz
+> > >> should still be able to adjust that accordingly. Presumably U-Boot n=
+eeds =
+
+> > >> to discover any firmware/TEE reservations early on to avoid touching=
+ any =
+
+> > >> Secure memory itself, so it should just need to keep track of them u=
+ntil =
+
+> > >> finalising the kernel DTB.
+> > > =
+
+> > > Yeah, that's similar to what I discovered so far :-D .
+> > > =
+
+> > > SPL loads u-boot.itb which should contain, u-boot, tf-a, tee and dt.
+> > > [vendor tf-a might do that differently though]
+> > > =
+
+> > > It passes the dt-address as param to both tf-a and optee, which then
+> > > may add stuff, like optee adding the firmware-node + reserved-memory
+> > > sections.
+> > > =
+
+> > > This dt is then the basis for the main u-boot, to be found at gd->fdt=
+_blob.
+> > > So u-boot will need to discover and transplant optee-firmware + optee
+> > > reserved-memory sections to any later dt that gets loaded.
+> > =
+
+> > Indeed U-Boot is mostly ignoring both /memreserve/ and /reserved-memory
+> > for its own purposes so far. There is code
+> > (boot_fdt_add_mem_rsv_regions()) to parse those nodes and translate them
+> > into an lmb block, but this is then only used for relocating FDT and
+> > initrd when loading kernels, AFAICS. I think the idea is that the most
+> > of the memory setup (heap) is static anyway and you would take care of
+> > not placing any U-Boot components in reserved memory regions in the
+> > first place.
+> > Is U-Boot actually tripping over something? Or is this just to be safe
+> > for the future?
+> =
+
+> It's not u-boot that is tripping but a later loaded kernel. As I've writt=
+en
+> op-tee adds its nodes to the dt loaded by the SPL from a FIT image.
+> =
+
+> Which may not necessarily be the same dt that gets used by the later
+> kernel. PXE-boot for example may very well just load a different dt
+> from emmc / network than the one stored in the firmware image.
+> =
+
+> So the reserved memory sections will need to move over to that dt
+> as well if we're starting a kernel with a different dt, similar to how
+> u-boot will add the core memory there as well.
+
+Yesterday I did implement the relevant code to do this transfer in
+	https://patchwork.ozlabs.org/patch/1173030/
+
+This will work with a "regular" atf + optee bringup with optee given
+to TF-A as a bl32 param, as the other relevant patches do:
+	https://patchwork.ozlabs.org/patch/1172566/
+	https://patchwork.ozlabs.org/patch/1172565/
+
+Mileage may vary with Rockchip's binary ATF+Optee combination,
+as this is distributed as one image and thus likely does something
+strange during the jump from ATF to Optee.
+
+
+Reviews welcome ;-)
+
+Heiko
+
+
+> > And I have a gut feeling the implementing no-map will be tricky, AFAIK
+> > the page table setup is mostly static and won't change after the MMU is
+> > enabled. Which means we would need to do it before the MMU is enabled?
+> > =
+
+> > Cheers,
+> > Andre
+> > =
+
+> =
+
+
+
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
