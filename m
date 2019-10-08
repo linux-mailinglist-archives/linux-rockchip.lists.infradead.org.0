@@ -2,53 +2,90 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A543D03BD
-	for <lists+linux-rockchip@lfdr.de>; Wed,  9 Oct 2019 01:01:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B508CD0461
+	for <lists+linux-rockchip@lfdr.de>; Wed,  9 Oct 2019 01:46:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=So0sSi4jH1yRQlO1EYEiGDc8NahoCbzSfYPr15fg9GM=; b=SjeVBlUZE0GyxX
-	t/VJRHv5K3eGYnoC7I058pkONJEM4eJLv/qkBhJhmBmVf9aOtzK9Nbnp5i7x3byJ7VCv7jEqwo3ju
-	OMRumRbzTBmchkMqiyKlypXu0W8dxcIGz59WydNs7UfXlCSH1vF56RJUsyO1gI22QnCzXGn3pHOEW
-	0ayY3Y44MgyExX7PcT5AgV3pDPbJ5AI/lWVwx8hQPYqnc2bO3Jc6tRD7lBRjEkUR6ccUuOLneWy8m
-	mDZA59+/LIwv+QnvUEa0WSE1KHGuidafptu4YvgSGxfiatqfobn+4iW55o1vZhfqT5WGWgzP2DN9J
-	+MCzzpxPGHXeb4rDm3KQ==;
+	List-Owner; bh=tIsG/u34NUfU27mBmOBBDIp/rxJpnA+NbxpsEj7O+uY=; b=ZOKpuk3AtlTysr
+	qiMImXeJ9zRJ3Gf+uWTWbtNUfemHJfT/MDkk14b9mNabO9mZMJJ4vHU05cj2TZNDcLNsbkjpd3TTF
+	VeWP3LOhTiDPpujGzrXJpe4GSCXFXIj/Gm3HAQiy1erZD/hi188+VqCRlM+UYcyx3BoFpMmwKpOns
+	b0x1hY4806dQwvlqyxF3hZgJE+O/WagTCuf2EBs9ZI0ySZznVtnSsDt0cxsg13mDCzN8cYQ3NDjBi
+	Z/rMqHL5BoyOercFxzXIBO9MldznMgutqq4S2xHRMIgbT7CuQfOv4/OPvIGRYv6c4qe019q4ZEv8+
+	986r5ikdJ+nxtJnJWRfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHyTg-0002t1-Ih; Tue, 08 Oct 2019 23:01:12 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1iHzBX-0004Iv-4X; Tue, 08 Oct 2019 23:46:31 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHyTc-0002q3-RN
- for linux-rockchip@lists.infradead.org; Tue, 08 Oct 2019 23:01:10 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id C0F9D28D5F1
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v4 3/3] ARM: dts: rockchip: Add RK3288 VOP gamma LUT address
-Date: Tue,  8 Oct 2019 20:00:38 -0300
-Message-Id: <20191008230038.24037-4-ezequiel@collabora.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20191008230038.24037-1-ezequiel@collabora.com>
-References: <20191008230038.24037-1-ezequiel@collabora.com>
+ id 1iHzBG-0003zt-Lj
+ for linux-rockchip@lists.infradead.org; Tue, 08 Oct 2019 23:46:17 +0000
+Received: by mail-io1-xd41.google.com with SMTP id n26so856819ioj.8
+ for <linux-rockchip@lists.infradead.org>; Tue, 08 Oct 2019 16:46:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references
+ :user-agent:mime-version;
+ bh=SPl3L4+4Zy9QlJN3K7IuqOc2JedlA0ldY7i+AP0Siqo=;
+ b=I+N5hkvPCF8K1LY460NnH3Bs+ppv36e7pHAAko5cPGtVK7Q1xpMFtMk1sbwX3EL9Ae
+ UX5ufwjfjE2WsQxxVvaJrkkGtrrD1A1swJroeZ6oWYFiFUD/gbGKkY6710T0F0X5S5Xo
+ BF95rAFQKdDZy+9dBrgr05QKn2VguSytZtPaHPhpxauj1vAvK0o8UX1wBJzBZa1yl7EV
+ jLHoqHF7Hse1l/Ohr1dGC6ATYWRzE6EftbRk42hoGB79bBRXmsmPeyS2gmRpO97jk05b
+ X+CS58w6j5DGF3spjHV4AncNibrgaK8A9wTUdRqszmiSN3PwPwqQA/IsTfJ60gtOiuUB
+ 4Xrw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
+ :references:user-agent:mime-version;
+ bh=SPl3L4+4Zy9QlJN3K7IuqOc2JedlA0ldY7i+AP0Siqo=;
+ b=TpPAk+5RyGmVpaSh8jaSC66X0WNQUwudl6asUPcD2Y1c/pEPdolrL9fXN2NJivRv9/
+ DNhPHMqU/wLQIvN+9r/Q5cZ9HfbaHfUAcoTe35eVb+VC/ujxs34cbjqZPhGSVaeN8hRR
+ waJ/AyG8qo/kZEuZiNzmfRE3WWBBfCgB62oaYXxei/gjLRpxKA/EKDe+m2DzlRlxv7ft
+ YpnrCa4UTkE/oU8sMzmWA4GgWopAHyrSD+dDMxM9SlSiCl8O1eANqa2BoPmUg6mxr/h1
+ o9SMDie/zfRrfN85Pyvs9Lxt5HSfn84IaDdEvtgyykLX35PNqFj4RCeFEIqLjXaYzYuM
+ zsTA==
+X-Gm-Message-State: APjAAAWeFhfHRI4M26jvRxWjJLNTvvFgFj4XzJ+S7xdGyqsrxMIgUSFg
+ 4iY66ZoaQGG0QRzk8OvWyk4sRQ==
+X-Google-Smtp-Source: APXvYqz97nlCIt/+/P4PPfxa3nO+CVIeqE66+NVgtpZhnKj/IpAG2fhUxvCWOIqX/CoRt6DSjpBBFw==
+X-Received: by 2002:a92:d084:: with SMTP id h4mr287013ilh.223.1570578372595;
+ Tue, 08 Oct 2019 16:46:12 -0700 (PDT)
+Received: from localhost ([64.62.168.194])
+ by smtp.gmail.com with ESMTPSA id m11sm250603ioq.5.2019.10.08.16.46.10
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 08 Oct 2019 16:46:12 -0700 (PDT)
+Date: Tue, 8 Oct 2019 16:46:06 -0700 (PDT)
+From: Paul Walmsley <paul.walmsley@sifive.com>
+X-X-Sender: paulw@viisi.sifive.com
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v3 1/2] dt-bindings: pwm: Convert PWM bindings to
+ json-schema
+In-Reply-To: <20191002164047.14499-1-krzk@kernel.org>
+Message-ID: <alpine.DEB.2.21.9999.1910081643220.11044@viisi.sifive.com>
+References: <20191002164047.14499-1-krzk@kernel.org>
+User-Agent: Alpine 2.21.9999 (DEB 301 2018-08-15)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_160109_021304_75C1A9AB 
-X-CRM114-Status: UNSURE (   9.00  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191008_164614_723384_7D6F9C88 
+X-CRM114-Status: GOOD (  12.02  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,60 +99,52 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jacopo Mondi <jacopo@jmondi.org>,
- =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- linux-kernel@vger.kernel.org, Sandy Huang <hjc@rock-chips.com>,
- Rob Herring <robh+dt@kernel.org>, Douglas Anderson <dianders@chromium.org>,
- linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Sean Paul <seanpaul@chromium.org>, kernel@collabora.com,
- Ezequiel Garcia <ezequiel@collabora.com>, Ilia Mirkin <imirkin@alum.mit.edu>
+ linux-pwm@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ linux-arm-kernel@lists.infradead.org,
+ =?ISO-8859-15?Q?Uwe_Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+ linux-tegra@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-amlogic@lists.infradead.org, linux-riscv@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-leds@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-RK3288 SoC VOPs have optional support Gamma LUT setting,
-which requires specifying the Gamma LUT address in the devicetree.
+On Wed, 2 Oct 2019, Krzysztof Kozlowski wrote:
 
-Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-Reviewed-by: Douglas Anderson <dianders@chromium.org>
----
-Changes from v3:
-* None.
-Changes from v2:
-* None.
-Changes from v1:
-* Drop reg-names, as suggested by Doug.
----
- arch/arm/boot/dts/rk3288.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+> Convert generic PWM bindings to DT schema format using json-schema.  The
+> consumer bindings are split to separate file.
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> 
+> ---
+> 
 
-diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
-index cc893e154fe5..c6fc633ace80 100644
---- a/arch/arm/boot/dts/rk3288.dtsi
-+++ b/arch/arm/boot/dts/rk3288.dtsi
-@@ -1023,7 +1023,7 @@
- 
- 	vopb: vop@ff930000 {
- 		compatible = "rockchip,rk3288-vop";
--		reg = <0x0 0xff930000 0x0 0x19c>;
-+		reg = <0x0 0xff930000 0x0 0x19c>, <0x0 0xff931000 0x0 0x1000>;
- 		interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&cru ACLK_VOP0>, <&cru DCLK_VOP0>, <&cru HCLK_VOP0>;
- 		clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
-@@ -1073,7 +1073,7 @@
- 
- 	vopl: vop@ff940000 {
- 		compatible = "rockchip,rk3288-vop";
--		reg = <0x0 0xff940000 0x0 0x19c>;
-+		reg = <0x0 0xff940000 0x0 0x19c>, <0x0 0xff941000 0x0 0x1000>;
- 		interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&cru ACLK_VOP1>, <&cru DCLK_VOP1>, <&cru HCLK_VOP1>;
- 		clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
--- 
-2.22.0
+[ ... ]
 
+> diff --git a/Documentation/devicetree/bindings/pwm/pwm-sifive.txt b/Documentation/devicetree/bindings/pwm/pwm-sifive.txt
+> index 36447e3c9378..3d1dd7b06efc 100644
+> --- a/Documentation/devicetree/bindings/pwm/pwm-sifive.txt
+> +++ b/Documentation/devicetree/bindings/pwm/pwm-sifive.txt
+> @@ -17,7 +17,7 @@ Required properties:
+>    Please refer to sifive-blocks-ip-versioning.txt for details.
+>  - reg: physical base address and length of the controller's registers
+>  - clocks: Should contain a clock identifier for the PWM's parent clock.
+> -- #pwm-cells: Should be 3. See pwm.txt in this directory
+> +- #pwm-cells: Should be 3. See pwm.yaml in this directory
+>    for a description of the cell format.
+>  - interrupts: one interrupt per PWM channel
+
+For the SiFive PWM driver documentation:
+
+Acked-by: Paul Walmsley <paul.walmsley@sifive.com>
+
+
+- Paul
 
 _______________________________________________
 Linux-rockchip mailing list
