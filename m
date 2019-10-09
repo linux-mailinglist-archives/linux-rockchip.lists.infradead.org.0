@@ -2,85 +2,98 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B061CD0993
-	for <lists+linux-rockchip@lfdr.de>; Wed,  9 Oct 2019 10:22:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E15B4D0C7A
+	for <lists+linux-rockchip@lfdr.de>; Wed,  9 Oct 2019 12:19:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wv2c3JPdt0pzgkKZwgUEmScCEBk1QTxQGCyyBKEqrDw=; b=bnPNrXsTslqCSX
-	NpZxAY+Kn9Z1WyLc/gQknwZMRxTem8XMoI41RehfruVQQ8D65P1aAAAW9wyVY48pZm2PhIggeYvvB
-	E9aY+jtT4qvGjFF1IsE1uVAOoHnBNkihhXDPQlgCCZZbEeWuCAYqnXGOIdUqWMdHxr6Egh5TtDK+5
-	ZcTNNOpN/E++ob9/r71s+JiSgLMYOEG0fsMkJeQEK3kSkFZlKxiUkpqJLcpYQwwhDjFpaENI3qbxe
-	baEgGwWhqB8ocYp/aYcZNXrzqEndqDabG98felIMO7GVvP5iPi45i896mvd5oH8z3RWfhdD5u3xCf
-	SzU2nBRPc5c/oaY3cM6w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=j1LsWaIkairk+uojF+Pq2B/MlEgNJFmtHEbrACP3/E0=; b=cO/1vB6AWWQMiK
+	chV2wYmYk7qs79gKtAcPkX4jR5sVvOq9j1bz0EVNZszd7zpwicuw9HqwnjpQnVl+3kWnL/VehZQOr
+	B6g9Fnz2e5vtRkg7RMFZk+uBINMHlSCRVLNiKPJu+rK0vSGEGWgPRpoZeICJMNTeqeX9h0YaOYnOU
+	3vsHHH8dj/N4R/825O2gLPZWL8CL8IsoSoCo2evN5Yqhjd9xnnM8wRxAPyNdk/h+59m13YX1KNFDp
+	QtytGYmEcK/lb9UQPwtwjnN2t7EM7dubmzuon3Pc9H4KyKkjzsZUMpO6RdJr2g0ZUvV7k/+TpVx43
+	3TAxZVkLC4OWVNvvKFvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI7F4-0001H4-7H; Wed, 09 Oct 2019 08:22:42 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1iI93v-0000WQ-TS; Wed, 09 Oct 2019 10:19:19 +0000
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI7Ed-0000r7-Ml; Wed, 09 Oct 2019 08:22:17 +0000
-Received: by mail-qk1-x744.google.com with SMTP id u22so1373344qkk.11;
- Wed, 09 Oct 2019 01:22:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2vS6ftWv38t6sGsCONON8A/FlGoTEEeUhyw2u38Psys=;
- b=Cdi+f4aCoQax6/k08emQ2lJLcJma2WQWPj2sDWaUAIyNxc1z4FKB8BqfKmJ9Z5SarE
- DE3N/4o2O2mNISHES1onvLTvuRpQiyEXHitSlBua8rinA6JART4GoBf7vdEvu+n7rN9U
- XvCz6sm2vxFbnosUIiTDnUCTP07dZZ94GVayWBBS7bbGQdwhuhTe2jwZepH8sWdDtNgP
- G5SCwFbB+xNM+G2nK1s/aU9B2cvG+KpT0+/ggvOzIUE441IEmQK1CKPgRbnFUH/5+41b
- b45CSPFkm3mrlWBB2+nVpXXqESBNOTSmaanoB4L6eg4BXILbn5BcpREj3YdWgO9VnM0i
- 6Obg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=2vS6ftWv38t6sGsCONON8A/FlGoTEEeUhyw2u38Psys=;
- b=gR4CQe+Cw3FU1Syyp1KPJDRuaqFwKHYiZ/JcRNAn4SCZRvyYe2a6N4sGgryJWZbo/d
- YZ3jPcMGGkYYzpvgxdS++3VodU8EE8Xcl9aV+woyqxk8iFGpfvU0JPo+9z7zkfgr/hFA
- xjWiJnikTaQtC9OlosG8Vnuuhs2ThI8gUFCuZHmQ8D8I/WVS7wJ4/zLhdyiuu3cJjv93
- CzGSoEVULc/srvavCQN5GEIcBI7FYuKZsXq20cccvvOAG88pbcUONz0wm4sKTr6fJEmD
- l00YT2Q8Y0ZGOZIaeE/0aEzpKDv3JpaGge6+bEA6myHPPPMNBzPI2sc3PBVMXyPGpfcW
- 8O+w==
-X-Gm-Message-State: APjAAAXJ/nHSLagyPWTRGuYVtbqdA2Sr4Udc6UwYJRppWe5rJiL6IL2h
- XytGzaZuIWePh/B6NnxLpmIFpELSueHZeBatBFc=
-X-Google-Smtp-Source: APXvYqxsOXmemHID6heONiV8vI+KimCDKqoQrtNjmYG58JhuwE01IW+RdWPgGIjDI48XZ9ZREJZcjouZaIm3zI7sOfA=
-X-Received: by 2002:a05:620a:a55:: with SMTP id
- j21mr2361419qka.402.1570609334042; 
- Wed, 09 Oct 2019 01:22:14 -0700 (PDT)
+ id 1iI93f-0000Gy-Du
+ for linux-rockchip@lists.infradead.org; Wed, 09 Oct 2019 10:19:05 +0000
+Received: from 1.general.cking.uk.vpn ([10.172.193.212])
+ by youngberry.canonical.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
+ (envelope-from <colin.king@canonical.com>)
+ id 1iI93Y-00014K-Fc; Wed, 09 Oct 2019 10:18:56 +0000
+To: Shawn Lin <shawn.lin@rock-chips.com>, linux-rockchip@lists.infradead.org, 
+ Bjorn Helgaas <bhelgaas@google.com>
+From: Colin Ian King <colin.king@canonical.com>
+Autocrypt: addr=colin.king@canonical.com; prefer-encrypt=mutual; keydata=
+ mQINBE6TJCgBEACo6nMNvy06zNKj5tiwDsXXS+LhT+LwtEsy9EnraKYXAf2xwazcICSjX06e
+ fanlyhB0figzQO0n/tP7BcfMVNG7n1+DC71mSyRK1ZERcG1523ajvdZOxbBCTvTitYOy3bjs
+ +LXKqeVMhK3mRvdTjjmVpWnWqJ1LL+Hn12ysDVVfkbtuIm2NoaSEC8Ae8LSSyCMecd22d9Pn
+ LR4UeFgrWEkQsqROq6ZDJT9pBLGe1ZS0pVGhkRyBP9GP65oPev39SmfAx9R92SYJygCy0pPv
+ BMWKvEZS/7bpetPNx6l2xu9UvwoeEbpzUvH26PHO3DDAv0ynJugPCoxlGPVf3zcfGQxy3oty
+ dNTWkP6Wh3Q85m+AlifgKZudjZLrO6c+fAw/jFu1UMjNuyhgShtFU7NvEzL3RqzFf9O1qM2m
+ uj83IeFQ1FZ65QAiCdTa3npz1vHc7N4uEQBUxyXgXfCI+A5yDnjHwzU0Y3RYS52TA3nfa08y
+ LGPLTf5wyAREkFYou20vh5vRvPASoXx6auVf1MuxokDShVhxLpryBnlKCobs4voxN54BUO7m
+ zuERXN8kadsxGFzItAyfKYzEiJrpUB1yhm78AecDyiPlMjl99xXk0zs9lcKriaByVUv/NsyJ
+ FQj/kmdxox3XHi9K29kopFszm1tFiDwCFr/xumbZcMY17Yi2bQARAQABtCVDb2xpbiBLaW5n
+ IDxjb2xpbi5raW5nQGNhbm9uaWNhbC5jb20+iQI2BBMBCAAhBQJOkyQoAhsDBQsJCAcDBRUK
+ CQgLBRYCAwEAAh4BAheAAAoJEGjCh9/GqAImsBcP9i6C/qLewfi7iVcOwqF9avfGzOPf7CVr
+ n8CayQnlWQPchmGKk6W2qgnWI2YLIkADh53TS0VeSQ7Tetj8f1gV75eP0Sr/oT/9ovn38QZ2
+ vN8hpZp0GxOUrzkvvPjpH+zdmKSaUsHGp8idfPpZX7XeBO0yojAs669+3BrnBcU5wW45SjSV
+ nfmVj1ZZj3/yBunb+hgNH1QRcm8ZPICpjvSsGFClTdB4xu2AR28eMiL/TTg9k8Gt72mOvhf0
+ fS0/BUwcP8qp1TdgOFyiYpI8CGyzbfwwuGANPSupGaqtIRVf+/KaOdYUM3dx/wFozZb93Kws
+ gXR4z6tyvYCkEg3x0Xl9BoUUyn9Jp5e6FOph2t7TgUvv9dgQOsZ+V9jFJplMhN1HPhuSnkvP
+ 5/PrX8hNOIYuT/o1AC7K5KXQmr6hkkxasjx16PnCPLpbCF5pFwcXc907eQ4+b/42k+7E3fDA
+ Erm9blEPINtt2yG2UeqEkL+qoebjFJxY9d4r8PFbEUWMT+t3+dmhr/62NfZxrB0nTHxDVIia
+ u8xM+23iDRsymnI1w0R78yaa0Eea3+f79QsoRW27Kvu191cU7QdW1eZm05wO8QUvdFagVVdW
+ Zg2DE63Fiin1AkGpaeZG9Dw8HL3pJAJiDe0KOpuq9lndHoGHs3MSa3iyQqpQKzxM6sBXWGfk
+ EkK5Ag0ETpMkKAEQAMX6HP5zSoXRHnwPCIzwz8+inMW7mJ60GmXSNTOCVoqExkopbuUCvinN
+ 4Tg+AnhnBB3R1KTHreFGoz3rcV7fmJeut6CWnBnGBtsaW5Emmh6gZbO5SlcTpl7QDacgIUuT
+ v1pgewVHCcrKiX0zQDJkcK8FeLUcB2PXuJd6sJg39kgsPlI7R0OJCXnvT/VGnd3XPSXXoO4K
+ cr5fcjsZPxn0HdYCvooJGI/Qau+imPHCSPhnX3WY/9q5/WqlY9cQA8tUC+7mgzt2VMjFft1h
+ rp/CVybW6htm+a1d4MS4cndORsWBEetnC6HnQYwuC4bVCOEg9eXMTv88FCzOHnMbE+PxxHzW
+ 3Gzor/QYZGcis+EIiU6hNTwv4F6fFkXfW6611JwfDUQCAHoCxF3B13xr0BH5d2EcbNB6XyQb
+ IGngwDvnTyKHQv34wE+4KtKxxyPBX36Z+xOzOttmiwiFWkFp4c2tQymHAV70dsZTBB5Lq06v
+ 6nJs601Qd6InlpTc2mjd5mRZUZ48/Y7i+vyuNVDXFkwhYDXzFRotO9VJqtXv8iqMtvS4xPPo
+ 2DtJx6qOyDE7gnfmk84IbyDLzlOZ3k0p7jorXEaw0bbPN9dDpw2Sh9TJAUZVssK119DJZXv5
+ 2BSc6c+GtMqkV8nmWdakunN7Qt/JbTcKlbH3HjIyXBy8gXDaEto5ABEBAAGJAh8EGAEIAAkF
+ Ak6TJCgCGwwACgkQaMKH38aoAiZ4lg/+N2mkx5vsBmcsZVd3ys3sIsG18w6RcJZo5SGMxEBj
+ t1UgyIXWI9lzpKCKIxKx0bskmEyMy4tPEDSRfZno/T7p1mU7hsM4owi/ic0aGBKP025Iok9G
+ LKJcooP/A2c9dUV0FmygecRcbIAUaeJ27gotQkiJKbi0cl2gyTRlolKbC3R23K24LUhYfx4h
+ pWj8CHoXEJrOdHO8Y0XH7059xzv5oxnXl2SD1dqA66INnX+vpW4TD2i+eQNPgfkECzKzGj+r
+ KRfhdDZFBJj8/e131Y0t5cu+3Vok1FzBwgQqBnkA7dhBsQm3V0R8JTtMAqJGmyOcL+JCJAca
+ 3Yi81yLyhmYzcRASLvJmoPTsDp2kZOdGr05Dt8aGPRJL33Jm+igfd8EgcDYtG6+F8MCBOult
+ TTAu+QAijRPZv1KhEJXwUSke9HZvzo1tNTlY3h6plBsBufELu0mnqQvHZmfa5Ay99dF+dL1H
+ WNp62+mTeHsX6v9EACH4S+Cw9Q1qJElFEu9/1vFNBmGY2vDv14gU2xEiS2eIvKiYl/b5Y85Q
+ QLOHWV8up73KK5Qq/6bm4BqVd1rKGI9un8kezUQNGBKre2KKs6wquH8oynDP/baoYxEGMXBg
+ GF/qjOC6OY+U7kNUW3N/A7J3M2VdOTLu3hVTzJMZdlMmmsg74azvZDV75dUigqXcwjE=
+Subject: Potential issue setting vid_regs in Rockchip AXI PCIe endpoint
+ controller driver
+Message-ID: <cd70cd13-5b0e-ea14-f7b1-fb8866c4dbbf@canonical.com>
+Date: Wed, 9 Oct 2019 11:18:56 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
-References: <20190925184346.14121-1-heiko@sntech.de>
-In-Reply-To: <20190925184346.14121-1-heiko@sntech.de>
-From: Enric Balletbo Serra <eballetbo@gmail.com>
-Date: Wed, 9 Oct 2019 10:22:02 +0200
-Message-ID: <CAFqH_53xE7fH-Mf0_qokamUCBNDedadSLQa=uxiP_v7TW7DPfw@mail.gmail.com>
-Subject: Re: [PATCH] iommu/rockchip: don't use platform_get_irq to implicitly
- count irqs
-To: Heiko Stuebner <heiko@sntech.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_012215_755576_BBECCF67 
-X-CRM114-Status: GOOD (  20.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191009_031903_603122_FE4E07B8 
+X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (eballetbo[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [91.189.89.112 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,10 +106,7 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Joerg Roedel <joro@8bytes.org>, iommu@lists.linux-foundation.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-kernel <linux-kernel@vger.kernel.org>
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
@@ -104,111 +114,40 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 Hi,
 
-Missatge de Heiko Stuebner <heiko@sntech.de> del dia dc., 25 de set.
-2019 a les 20:44:
->
-> Till now the Rockchip iommu driver walked through the irq list via
-> platform_get_irq() until it encountered an ENXIO error. With the
-> recent change to add a central error message, this always results
-> in such an error for each iommu on probe and shutdown.
->
-> To not confuse people, switch to platform_count_irqs() to get the
-> actual number of interrupts before walking through them.
->
-> Fixes: 7723f4c5ecdb ("driver core: platform: Add an error message to platform_get_irq*()")
-> Signed-off-by: Heiko Stuebner <heiko@sntech.de>
-> ---
+Static analysis with Coverity has detected a potential issue in the
+Rockchip AXI PCIe endpoint controller driver.  The issue is in
+drivers/pci/controller/pcie-rockchip-ep.c, function
+rockchip_pcie_ep_write_header:
 
-This patch definitely removes the annoying messages on my Samsung
-Chromebook Plus like:
+The coverity report is as follows:
 
- rk_iommu ff924000.iommu: IRQ index 1 not found
- rk_iommu ff914000.iommu: IRQ index 1 not found
- rk_iommu ff903f00.iommu: IRQ index 1 not found
- rk_iommu ff8f3f00.iommu: IRQ index 1 not found
- rk_iommu ff650800.iommu: IRQ index 1 not found
+124 static int rockchip_pcie_ep_write_header(struct pci_epc *epc, u8 fn,
+125                                         struct pci_epf_header *hdr)
+126 {
+127        struct rockchip_pcie_ep *ep = epc_get_drvdata(epc);
+128        struct rockchip_pcie *rockchip = &ep->rockchip;
+129
+130        /* All functions share the same vendor ID with function 0 */
+131        if (fn == 0) {
+132                u32 vid_regs = (hdr->vendorid & GENMASK(15, 0)) |
 
-FWIW, I sent a similar patch [1] to fix this, but can be rejected in
-favour of the Heiko's patch. So,
+   CID 12883 (#1 of 1): Operands don't affect result
 
-Tested-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+(CONSTANT_EXPRESSION_RESULT) result_independent_of_operands:
 
-Thanks,
- Enric
+hdr->subsys_vendor_id & (4294901760UL /* ~0UL - (1UL << 16) + 1 & (~0UL
+>> 64 - 1 - 31) */) is always 0 regardless of the values of its
+operands. This occurs as a value.
 
-[1] https://lkml.org/lkml/2019/10/8/551
+133                               (hdr->subsys_vendor_id & GENMASK(31,
+16)) << 16;
 
->  drivers/iommu/rockchip-iommu.c | 19 ++++++++++++++-----
->  1 file changed, 14 insertions(+), 5 deletions(-)
->
-> diff --git a/drivers/iommu/rockchip-iommu.c b/drivers/iommu/rockchip-iommu.c
-> index 26290f310f90..4dcbf68dfda4 100644
-> --- a/drivers/iommu/rockchip-iommu.c
-> +++ b/drivers/iommu/rockchip-iommu.c
-> @@ -100,6 +100,7 @@ struct rk_iommu {
->         struct device *dev;
->         void __iomem **bases;
->         int num_mmu;
-> +       int num_irq;
->         struct clk_bulk_data *clocks;
->         int num_clocks;
->         bool reset_disabled;
-> @@ -1136,7 +1137,7 @@ static int rk_iommu_probe(struct platform_device *pdev)
->         struct rk_iommu *iommu;
->         struct resource *res;
->         int num_res = pdev->num_resources;
-> -       int err, i, irq;
-> +       int err, i;
->
->         iommu = devm_kzalloc(dev, sizeof(*iommu), GFP_KERNEL);
->         if (!iommu)
-> @@ -1163,6 +1164,10 @@ static int rk_iommu_probe(struct platform_device *pdev)
->         if (iommu->num_mmu == 0)
->                 return PTR_ERR(iommu->bases[0]);
->
-> +       iommu->num_irq = platform_irq_count(pdev);
-> +       if (iommu->num_irq < 0)
-> +               return iommu->num_irq;
-> +
->         iommu->reset_disabled = device_property_read_bool(dev,
->                                         "rockchip,disable-mmu-reset");
->
-> @@ -1219,8 +1224,9 @@ static int rk_iommu_probe(struct platform_device *pdev)
->
->         pm_runtime_enable(dev);
->
-> -       i = 0;
-> -       while ((irq = platform_get_irq(pdev, i++)) != -ENXIO) {
-> +       for (i = 0; i < iommu->num_irq; i++) {
-> +               int irq = platform_get_irq(pdev, i);
-> +
->                 if (irq < 0)
->                         return irq;
->
-> @@ -1245,10 +1251,13 @@ static int rk_iommu_probe(struct platform_device *pdev)
->  static void rk_iommu_shutdown(struct platform_device *pdev)
->  {
->         struct rk_iommu *iommu = platform_get_drvdata(pdev);
-> -       int i = 0, irq;
-> +       int i;
-> +
-> +       for (i = 0; i < iommu->num_irq; i++) {
-> +               int irq = platform_get_irq(pdev, i);
->
-> -       while ((irq = platform_get_irq(pdev, i++)) != -ENXIO)
->                 devm_free_irq(iommu->dev, irq, iommu);
-> +       }
->
->         pm_runtime_force_suspend(&pdev->dev);
->  }
-> --
-> 2.23.0
->
->
-> _______________________________________________
-> Linux-rockchip mailing list
-> Linux-rockchip@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+The expression (hdr->subsys_vendor_id & GENMASK(31, 16)) << 16 always
+results in zero. Since the GENMASK gets the top 16 bits of
+hdr->subsys_vendor_id then it looks like the 16 bit left shift is not
+required, but I don't know if that is a correct assumption or not.
+
+Colin
 
 _______________________________________________
 Linux-rockchip mailing list
