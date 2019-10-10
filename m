@@ -2,43 +2,45 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0D9AD3395
-	for <lists+linux-rockchip@lfdr.de>; Thu, 10 Oct 2019 23:42:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96686D3490
+	for <lists+linux-rockchip@lfdr.de>; Fri, 11 Oct 2019 01:46:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T87uaoyoNlEERqCooa0VS5DxJXghNGg+lzmRcXYoNog=; b=R/JahY61tN8ShH
-	l3IFET/DLMuIJhuYu0tA405ZAd2KMjk46EmhHUGeWYUtZw971sgBudSyhKjP/nzUDoRalN8oW09VH
-	ouaoWCkvHE8o92jV+PoPyTdFr6Iys7SQ6GVGh1bfCzCRtde+Ib053JZ+94aF9TGmXyXH9NeWZz5Sn
-	vBDDo7Cupo7cynWCVYrKmTeMyUpvMKeBmX7WqRear67CcEpdnMoVMFQMwIsXryleMM3V0OiisVqdO
-	BAx30/46udN/Ytg8hzM12O2JIAjXuTPmi8O9jQ9VOVp68I5iKI67dazNnKG8iTDc19NA7+we0VC4m
-	/6BEtuvSYE2KYoeNbnJg==;
+	List-Owner; bh=hKWgC7R/1XDdAeh/TFI7GyfTN1KzifejTNMMc9EQD4s=; b=kTMsNbe8fwrV2s
+	2cscd4yZO22qy3KBn1eU0oZKbmoc8sB003ZLHw7AT+1bClb1kRg4hgTiHuFoRGhh8ZWsFT3Emr2u4
+	9uyn+LT7aY4y9NUoUwd3n10mp+K70vhxnsZVjmpW7wZoidDUhZYeM5+O9Wf9B3SWaoK9NfpkrUizE
+	iwAP+V2GA6HL5+ByA0uimJkmz0X+f19IcV2Zr/8CqbhByPLpMIF4/navLASM6Ozhb0XC3bsLJrg47
+	Z/dzF7OTpt60YyWYPwTDyZ3DWtejUK3zPuKYvyVZtPaqce4VzKc7T0FQJfXT0EoVQ/GtB9+7AQGzp
+	+bEhHaET841TisP9soNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIgCg-0007Ci-AP; Thu, 10 Oct 2019 21:42:34 +0000
+	id 1iIi8m-000151-Ha; Thu, 10 Oct 2019 23:46:40 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIgCc-0007Aw-9t; Thu, 10 Oct 2019 21:42:31 +0000
+ id 1iIi8j-000147-Ru
+ for linux-rockchip@lists.infradead.org; Thu, 10 Oct 2019 23:46:39 +0000
 Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
- helo=phil.localnet)
+ helo=diego.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iIgCU-0007G3-KC; Thu, 10 Oct 2019 23:42:22 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Douglas Anderson <dianders@chromium.org>
-Subject: Re: [PATCH] arm64: dts: rockchip: Fix override mode for rk3399-kevin
- panel
-Date: Thu, 10 Oct 2019 23:42:21 +0200
-Message-ID: <29647267.xx61tplHq2@phil>
-In-Reply-To: <20191008124949.1.I674acd441997dd0690c86c9003743aacda1cf5dd@changeid>
-References: <20191008124949.1.I674acd441997dd0690c86c9003743aacda1cf5dd@changeid>
+ id 1iIi8a-0007dV-Is; Fri, 11 Oct 2019 01:46:28 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Nickey Yang <nickey.yang@rock-chips.com>
+Subject: Re: [PATCH 1/1] drm/rockchip: vop: add the definition of dclk_pol
+Date: Fri, 11 Oct 2019 01:46:28 +0200
+Message-ID: <6985432.6H6HJzKCHW@diego>
+In-Reply-To: <20191010034452.20260-2-nickey.yang@rock-chips.com>
+References: <20191010034452.20260-1-nickey.yang@rock-chips.com>
+ <20191010034452.20260-2-nickey.yang@rock-chips.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_144230_494777_B97B3A1D 
-X-CRM114-Status: GOOD (  15.06  )
+X-CRM114-CacheID: sfid-20191010_164638_052960_F671F958 
+X-CRM114-Status: UNSURE (   7.79  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,45 +60,27 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Viresh Kumar <viresh.kumar@linaro.org>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Sean Paul <seanpaul@chromium.org>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ seanpaul@chromium.org, laurent.pinchart@ideasonboard.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Dienstag, 8. Oktober 2019, 21:49:54 CEST schrieb Douglas Anderson:
-> When I re-posted Sean's original commit to add the override mode for
-> the kevin panel, for some reason I didn't notice that the pixel clock
-> wasn't quite right.  Looking at /sys/kernel/debug/clk/clk_summary on
-> downstream kernels it can be seen that the VOP clock is supposed to be
-> 266,666,667 Hz achieved by dividing the 800 MHz PLL by 3.
+Am Donnerstag, 10. Oktober 2019, 05:44:52 CEST schrieb Nickey Yang:
+> Some VOP's (such as px30) dclk_pol bit is at the last.
+> So it is necessary to distinguish dclk_pol and pin_pol.
 > 
-> Looking at history, it seems that even Sean's first patch [1] had this
-> funny clock rate.  I'm not sure where it came from since the commit
-> message specifically mentioned 26666 kHz and the Chrome OS tree [2]
-> can be seen to request 266667 kHz.
-> 
-> In any case, let's fix it up.  This together with my patch [3] to do
-> the proper rounding when setting the clock rate makes the VOP clock
-> more proper as seen in /sys/kernel/debug/clk/clk_summary.
-> 
-> [1] https://lore.kernel.org/r/20180206165626.37692-4-seanpaul@chromium.org
-> [2] https://chromium.googlesource.com/chromiumos/third_party/kernel/+/chromeos-4.4/drivers/gpu/drm/panel/panel-simple.c#1172
-> [3] https://lkml.kernel.org/r/20191003114726.v2.1.Ib233b3e706cf6317858384264d5b0ed35657456e@changeid
-> 
-> Fixes: 84ebd2da6d04 ("arm64: dts: rockchip: Specify override mode for kevin panel")
-> Cc: Sean Paul <seanpaul@chromium.org>
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
+> Signed-off-by: Nickey Yang <nickey.yang@rock-chips.com>
 
-applied as fix for 5.4
+on
+- px30 with dsi ... fixing the display issue I had
+- rk3328 with hdmi
+- rk3288 with edp
+- rk3399 with edp
 
-Thanks
-Heiko
+Tested-by: Heiko Stuebner <heiko@sntech.de>
 
 
 
