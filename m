@@ -2,83 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5353D1D9C
-	for <lists+linux-rockchip@lfdr.de>; Thu, 10 Oct 2019 02:46:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B6B9D1F11
+	for <lists+linux-rockchip@lfdr.de>; Thu, 10 Oct 2019 05:45:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9ZDH6R3U16iRBAuH6VZJh7VTjPhil226Vw5Sylpfc5I=; b=Q24bunDnR4kvdb
-	IG2ZXCmIo409Xd19RSNXzdgdNSOhCApilRdRyj1RQEOADGPYWCMq2DvPUUvXPvyKGc+VAhwitFRsY
-	jla6qnX97sCfd/Vy7SHZCNC6dfof2Y3sY+7waoGEbLxi9dLJIhwGlLx32Zaq6WzESKz7+sm6qAz+N
-	tUVyPEd2uUn3joHbJIoK9tuByPRWfA22taHFlWvOTxdsYPgQIHmehNB2wGvKrZj6p/O651XO7DxcH
-	8woorxZ05KhwCYEFlRdEIl3a4IK46Eo0CEeZlY8+JK/NbmwT+r/tb8+pjRWRo08h+6LC0McwMmT13
-	hO0xQjUjeqybbVSei/IQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Eo1rS/dmWgzJ8faIB/ZdoTolAICUeTbHTcCVPC+TubM=; b=ohj
+	f/yu4WueJRGqxq7ZdEU3dW02znLAEoNz05AOfbOXwLkuFqYo6hVR/Yb3yVb8I3zXpVccUFvHBquNE
+	m4clP/R6dKQiC1TCuGnMOM26K/Xg4X0TAF2UPx/44qG/nfCXNrmTrtkWELWbm3R293YZijEpsECf2
+	FD9qtixKFaUkPyYYRL0SUvIYyx7BoOgch7U9vnATQvJvUzyS+uJKIVPlsn/1CdG8kheCumMu5GGno
+	zklu6AHV4nlONxxe8augw4Dpqu2Hfk/mdaeadfgNkxZCuhBBMZ7hCDJ+gXDO+K0Po8Ik+wPD/WztS
+	KaHkqo29Zaq8XXE2VnEs8O8R0Zq5PGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIMao-0004KB-Bz; Thu, 10 Oct 2019 00:46:10 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1iIPNv-0007Ka-Rl; Thu, 10 Oct 2019 03:45:03 +0000
+Received: from mail-pf1-f174.google.com ([209.85.210.174])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIMak-0004Je-SJ
- for linux-rockchip@lists.infradead.org; Thu, 10 Oct 2019 00:46:08 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id z14so2736447vsz.13
- for <linux-rockchip@lists.infradead.org>; Wed, 09 Oct 2019 17:46:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=vanguardiasur-com-ar.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Jd6zv/jgUFv6Uo+8CynzJPGldhXHqgBv+Ky1v1k+Nuk=;
- b=iscNzzWLWcx0oCVq1jhdfQtsoDvqWFROyVb3ddID00ajMaSJM0Zy1lVPyfOO2TRGhU
- KLMncCT2yWC8FBys7/HgUv++l0GbRIAaSK0/gpNiFDWrcEyIz2N20E4LETCqJxFmjPn9
- g3ToYb+fEXGn1OUznhDaoTDSDZPmasSagoHCYHJoit7KuaiEYCwaYT/GYYVQZOFboT7U
- t95ukRhgcbt9VKjrrzQIAdIb92yS7W1Wlmq+4UIYcBc27Z4biow8ODlLc1BMw5rRWwka
- ahAt9hZoSKvavOjpNaYlfE5orR49QfNrLA9aQK7oLCrKK2rd/xB6H4HJ42U8pSifyIzT
- 4wcw==
+ id 1iIPNs-000746-Ba
+ for linux-rockchip@lists.infradead.org; Thu, 10 Oct 2019 03:45:01 +0000
+Received: by mail-pf1-f174.google.com with SMTP id a2so2968038pfo.10
+ for <linux-rockchip@lists.infradead.org>; Wed, 09 Oct 2019 20:44:59 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Jd6zv/jgUFv6Uo+8CynzJPGldhXHqgBv+Ky1v1k+Nuk=;
- b=F6Ba8gIE0OHpL6VPVaFa+NEc1c1tgwbHOq4tqLKhQ9x6TpStcNR1c9yw36udkTP79c
- w0jEWW9hrLNGOR0N460cHdJFn4tKbI1FAFT4LRLbgptF7TljfpGs5KVsgqULCT/H4u2S
- /1gfIeOpuPukmSgiAMyCq7No+A3HZmtTWVwLOvn7i3m0tJyVXtTVpf8MeGA6bdi9WRA+
- LWkNdDrXzbedLcLynNoBYmCp44xSCUCElIJ8Wb7Si2WYeR0RBdkrR2dlC0YRFdu1B0k4
- z/4ZNu7zE9jq7ZCouSyjrvyAqfEozQDhjwXqIF8KuF1LypRj/s5wvn9S5fc3SkJfZWZW
- KxaA==
-X-Gm-Message-State: APjAAAWK+lxGRSRRdsZliBXk+Ru2SoTV0IrvEV2HThJkp8/VxsqCuFq6
- r/6IeUqGU88L0iC9ozuzPnfWLkgfNfeEsNn325/Vmg==
-X-Google-Smtp-Source: APXvYqy0hr+gzGjZPMkosJiHcRGhgxWhmhs8dGdGo9Ng0LSLTb9Rzsa72w7qjVcDpCLRLk6Q2CTmValXnPQLm0zjvv4=
-X-Received: by 2002:a05:6102:115c:: with SMTP id
- j28mr3730813vsg.105.1570668365198; 
- Wed, 09 Oct 2019 17:46:05 -0700 (PDT)
-MIME-Version: 1.0
-References: <20191008230038.24037-1-ezequiel@collabora.com>
- <20191008230038.24037-3-ezequiel@collabora.com>
- <20191009180136.GE85762@art_vandelay>
-In-Reply-To: <20191009180136.GE85762@art_vandelay>
-From: Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>
-Date: Wed, 9 Oct 2019 21:45:54 -0300
-Message-ID: <CAAEAJfDP0PsGAoRfGyDyWj7DxgP6nwwwA1_gwLQuVy-fRDa-UA@mail.gmail.com>
-Subject: Re: [PATCH v4 2/3] drm/rockchip: Add optional support for CRTC gamma
- LUT
-To: Sean Paul <sean@poorly.run>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=550gxSeJhzNkTjxw5FC1sTsyheSIffBNoMopfL6z+Dk=;
+ b=Vw4rfEI8s89FCFuvjpgyDPn/7oFEZ/0O4jTg9yPgTjnMY9HfGJrZO9VyyO1ibVK0aw
+ t2W9jyZG4SZ3JxZPpEJwg+tGjTSuqeXdcvcSjGKb9gGIg9BYqTaBrWCIppM0S4Y8m/5G
+ 4Nb+gqh8iRdpghch8ofqhlhTvNcT4LNG/uWIPUwUJg9Te7O2oPspWLVJy5I/iJtW9BF+
+ l5rdr/Aek5eWKkO55muIgjoSNDIVMWgN+Eo0x4V/GcDKx+5qJBrxNjOr95oRdRRdPjJm
+ ov0RTsS6kGWbfAe+5N7CSeqI+uYbvLcSE617uHcwjjsbEqNEZSlmQCN/5Iu019wwu/0Z
+ lG6w==
+X-Gm-Message-State: APjAAAW6OXwR3zGEB39T5GkDEv/BRE8eX/ftYzW7nLSWPVEq0BvDHAmB
+ mWAgc31dAO9RCUcf+7kfqgk=
+X-Google-Smtp-Source: APXvYqyhwc9uPwrA9hTdDDMnfRt6Xj0TDI+CGUJ3ZOFD4r3TR+s2KL0z8X0HW/f8P7FsK5lk0ktDXQ==
+X-Received: by 2002:a62:38d5:: with SMTP id f204mr7933796pfa.100.1570679098883; 
+ Wed, 09 Oct 2019 20:44:58 -0700 (PDT)
+Received: from localhost.localdomain ([103.29.142.67])
+ by smtp.gmail.com with ESMTPSA id z13sm4552188pfq.121.2019.10.09.20.44.56
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 09 Oct 2019 20:44:58 -0700 (PDT)
+From: Nickey Yang <nickey.yang@rock-chips.com>
+To: heiko@sntech.de,
+	hjc@rock-chips.com
+Subject: [PATCH 0/1] drm/rockchip: vop: add the definition of dclk_pol
+Date: Thu, 10 Oct 2019 11:44:51 +0800
+Message-Id: <20191010034452.20260-1-nickey.yang@rock-chips.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_174607_096404_81140FBA 
-X-CRM114-Status: GOOD (  37.31  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191009_204500_394406_E0FF1F9D 
+X-CRM114-Status: UNSURE (   5.27  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.174 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.174 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (nickey.yang05[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (nickey.yang05[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,291 +87,27 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jacopo Mondi <jacopo@jmondi.org>, Rob Herring <robh+dt@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Douglas Anderson <dianders@chromium.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Sean Paul <seanpaul@chromium.org>, kernel@collabora.com,
- Ezequiel Garcia <ezequiel@collabora.com>
+Cc: linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-rockchip@lists.infradead.org, nickey.yang@rock-chips.com,
+ seanpaul@chromium.org, laurent.pinchart@ideasonboard.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hello Sean,
 
-Thanks for the thourough review.
+Nickey Yang (1):
+  drm/rockchip: vop: add the definition of dclk_pol
 
-On Wed, 9 Oct 2019 at 15:01, Sean Paul <sean@poorly.run> wrote:
->
-> On Tue, Oct 08, 2019 at 08:00:37PM -0300, Ezequiel Garcia wrote:
-> > Add an optional CRTC gamma LUT support, and enable it on RK3288.
-> > This is currently enabled via a separate address resource,
-> > which needs to be specified in the devicetree.
-> >
-> > The address resource is required because on some SoCs, such as
-> > RK3288, the LUT address is after the MMU address, and the latter
-> > is supported by a different driver. This prevents the DRM driver
-> > from requesting an entire register space.
-> >
-> > The current implementation works for RGB 10-bit tables, as that
-> > is what seems to work on RK3288.
-> >
-> > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
->
-> Hey Ezequiel,
-> Just a few comments on the actual content of the patch as opposed to my higher
-> level comments yesterday. I think we're almost there, thanks for sticking this
-> out!
->
-> > ---
-> > Changes from v3:
-> > * Move to atomic_enable and atomic_begin,
-> >   as discussed with Sean Paul.
-> > * Dropped the Reviewed-bys.
-> > Changes from v2:
-> > * None.
-> > Changes from v1:
-> > * drop explicit linear LUT after finding a proper
-> >   way to disable gamma correction.
-> > * avoid setting gamma is the CRTC is not active.
-> > * s/int/unsigned int as suggested by Jacopo.
-> > * only enable color management and set gamma size
-> >   if gamma LUT is supported, suggested by Doug.
-> > * drop the reg-names usage, and instead just use indexed reg
-> >   specifiers, suggested by Doug.
-> > Changes from RFC:
-> > * Request (an optional) address resource for the LUT.
-> > * Drop support for RK3399, which doesn't seem to work
-> >   out of the box and needs more research.
-> > * Support pass-thru setting when GAMMA_LUT is NULL.
-> > * Add a check for the gamma size, as suggested by Ilia.
-> > * Move gamma setting to atomic_commit_tail, as pointed
-> >   out by Jacopo/Laurent, is the correct way.
-> > ---
-> >  drivers/gpu/drm/rockchip/rockchip_drm_fb.c  |   1 +
-> >  drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 125 ++++++++++++++++++++
-> >  drivers/gpu/drm/rockchip/rockchip_drm_vop.h |   5 +
-> >  drivers/gpu/drm/rockchip/rockchip_vop_reg.c |   2 +
-> >  4 files changed, 133 insertions(+)
-> >
-> > diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
-> > index ca01234c037c..697ee04b85cf 100644
-> > --- a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
-> > +++ b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
-> > @@ -17,6 +17,7 @@
-> >  #include "rockchip_drm_drv.h"
-> >  #include "rockchip_drm_fb.h"
-> >  #include "rockchip_drm_gem.h"
-> > +#include "rockchip_drm_vop.h"
->
-> Leftover from the previous version?
->
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 12 +++---
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.h |  8 +++-
+ drivers/gpu/drm/rockchip/rockchip_vop_reg.c | 45 ++++++++++++++-------
+ 3 files changed, 43 insertions(+), 22 deletions(-)
 
-Yup.
+-- 
+2.17.1
 
-> >
-> >  static const struct drm_framebuffer_funcs rockchip_drm_fb_funcs = {
-> >       .destroy       = drm_gem_fb_destroy,
-> > diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> > index 613404f86668..85c1269a1218 100644
-> > --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> > +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> > @@ -139,6 +139,7 @@ struct vop {
-> >
-> >       uint32_t *regsbak;
-> >       void __iomem *regs;
-> > +     void __iomem *lut_regs;
-> >
-> >       /* physical map length of vop register */
-> >       uint32_t len;
-> > @@ -1048,6 +1049,84 @@ static bool vop_crtc_mode_fixup(struct drm_crtc *crtc,
-> >       return true;
-> >  }
-> >
-> > +static bool vop_dsp_lut_is_enable(struct vop *vop)
->
-> *enabled
->
-
-Good catch.
-
-> > +{
-> > +     return vop_read_reg(vop, 0, &vop->data->common->dsp_lut_en);
-> > +}
-> > +
-> > +static void vop_crtc_write_gamma_lut(struct vop *vop, struct drm_crtc *crtc)
-> > +{
-> > +     struct drm_color_lut *lut = crtc->state->gamma_lut->data;
-> > +     unsigned int i;
-> > +
-> > +     for (i = 0; i < crtc->gamma_size; i++) {
-> > +             u32 word;
-> > +
-> > +             word = (drm_color_lut_extract(lut[i].red, 10) << 20) |
-> > +                    (drm_color_lut_extract(lut[i].green, 10) << 10) |
-> > +                     drm_color_lut_extract(lut[i].blue, 10);
-> > +             writel(word, vop->lut_regs + i * 4);
-> > +     }
-> > +}
-> > +
-> > +static void vop_crtc_gamma_set(struct vop *vop, struct drm_crtc *crtc,
-> > +                            struct drm_crtc_state *old_crtc_state)
-> > +{
-> > +     unsigned int idle;
-> > +     int ret;
-> > +
->
-> How about:
->
->         if (!vop->lut_regs)
->                 return;
->
-> here and then you can remove that condition above the 2 callsites
->
-
-Yes, sounds good.
-
-> > +     /*
-> > +      * In order to write the LUT to the internal memory,
-> > +      * we need to first make sure the dsp_lut_en bit is cleared.
-> > +      */
-> > +     spin_lock(&vop->reg_lock);
-> > +     VOP_REG_SET(vop, common, dsp_lut_en, 0);
-> > +     vop_cfg_done(vop);
-> > +     spin_unlock(&vop->reg_lock);
-> > +
-> > +     /*
-> > +      * If the CRTC is not active, dsp_lut_en will not get cleared.
-> > +      * Apparently we still need to do the above step to for
-> > +      * gamma correction to be disabled.
-> > +      */
-> > +     if (!crtc->state->active)
-> > +             return;
-> > +
-
-I have realized that the above might no longer be needed,
-given we are now using atomic_enable and atomic_begin.
-
-Not sure if the CRTC is supposed to clear its GAMMA
-when disabled.
-
-> > +     ret = readx_poll_timeout(vop_dsp_lut_is_enable, vop,
-> > +                              idle, !idle, 5, 30 * 1000);
-> > +     if (ret) {
-> > +             DRM_DEV_ERROR(vop->dev, "display LUT RAM enable timeout!\n");
-> > +             return;
-> > +     }
-> > +
-> > +     if (crtc->state->gamma_lut &&
-> > +        (!old_crtc_state->gamma_lut || (crtc->state->gamma_lut->base.id !=
-> > +                                     old_crtc_state->gamma_lut->base.id))) {
->
-> Silly question, but isn't the second part of this check redundant since you need
-> color_mgmt_changed || active_changed to get into this function?
->
-> So maybe invert the conditional here and exit early (to save a level of
-> indentation in the block below):
->
-
-I took this from malidp_atomic_commit_update_gamma. I _believe_
-the rational for this is that color_mgmt_changed can be set by re-setting
-the gamma property, to the same property. But I admit I haven't
-tested it's the case.
-
-OTOH, it won't really affect much to re-write the table, if the user
-requested a change.
-
->         if (!crtc->state->gamma_lut)
->                 return;
->
-
-In any case, inverting the condition makes sense.
-
->         spin_lock(&vop->reg_lock);
->
->         vop_crtc_write_gamma_lut(vop, crtc);
->         VOP_REG_SET(vop, common, dsp_lut_en, 1);
->         vop_cfg_done(vop);
->
->         spin_unlock(&vop->reg_lock);
->
-> > +
-> > +             spin_lock(&vop->reg_lock);
-> > +
-> > +             vop_crtc_write_gamma_lut(vop, crtc);
-> > +             VOP_REG_SET(vop, common, dsp_lut_en, 1);
-> > +             vop_cfg_done(vop);
-> > +
-> > +             spin_unlock(&vop->reg_lock);
-> > +     }
-> > +}
-> > +
-> > +static void vop_crtc_atomic_begin(struct drm_crtc *crtc,
-> > +                                struct drm_crtc_state *old_crtc_state)
-> > +{
-> > +     struct vop *vop = to_vop(crtc);
-> > +
-> > +     /*
-> > +      * Only update GAMMA if the 'active' flag is not changed,
-> > +      * otherwise it's updated by .atomic_enable.
-> > +      */
-> > +     if (vop->lut_regs && crtc->state->color_mgmt_changed &&
-> > +         !crtc->state->active_changed)
-> > +             vop_crtc_gamma_set(vop, crtc, old_crtc_state);
-> > +}
-> > +
-> >  static void vop_crtc_atomic_enable(struct drm_crtc *crtc,
-> >                                  struct drm_crtc_state *old_state)
-> >  {
-> > @@ -1075,6 +1154,14 @@ static void vop_crtc_atomic_enable(struct drm_crtc *crtc,
-> >               return;
-> >       }
-> >
-> > +     /*
-> > +      * If we have a GAMMA LUT in the state, then let's make sure
-> > +      * it's updated. We might be coming out of suspend,
-> > +      * which means the LUT internal memory needs to be re-written.
-> > +      */
-> > +     if (vop->lut_regs && crtc->state->gamma_lut)
-> > +             vop_crtc_gamma_set(vop, crtc, old_state);
-> > +
-> >       mutex_lock(&vop->vop_lock);
-> >
-> >       WARN_ON(vop->event);
-> > @@ -1191,6 +1278,26 @@ static void vop_wait_for_irq_handler(struct vop *vop)
-> >       synchronize_irq(vop->irq);
-> >  }
-> >
-> > +static int vop_crtc_atomic_check(struct drm_crtc *crtc,
-> > +                              struct drm_crtc_state *crtc_state)
-> > +{
-> > +     struct vop *vop = to_vop(crtc);
-> > +
-> > +     if (vop->lut_regs && crtc_state->color_mgmt_changed &&
-> > +         crtc_state->gamma_lut) {
-> > +             unsigned int len;
-> > +
-> > +             len = drm_color_lut_size(crtc_state->gamma_lut);
-> > +             if (len != crtc->gamma_size) {
-> > +                     DRM_DEBUG_KMS("Invalid LUT size; got %d, expected %d\n",
-> > +                                   len, crtc->gamma_size);
-> > +                     return -EINVAL;
-> > +             }
->
-> Overflow is avoided in drm_mode_gamma_set_ioctl(), so I don't think you need
-> this function.
->
-
-But that only applies to the legacy path. Isn't this needed to ensure
-a gamma blob
-has the right size?
-
-Thanks,
-Ezequiel
 
 _______________________________________________
 Linux-rockchip mailing list
