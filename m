@@ -2,53 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 285A3D319A
-	for <lists+linux-rockchip@lfdr.de>; Thu, 10 Oct 2019 21:44:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44F18D3340
+	for <lists+linux-rockchip@lfdr.de>; Thu, 10 Oct 2019 23:21:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EKmDa7kKcfxB9bYWgS5GOe7wYe1ZJXBO8zwy3bUFOFo=; b=E+4QdQZis4MJv2
-	+nSyQGaFlXfDD+Jw0Jnno2sSX4f2m81V8T4NtdGrrV8v20s//jwcwVbVHmveVo6TW0XRVHZl88LxZ
-	c4qAV74Eso/1yvlbZ3e5ezAWEeBQMmt+Xl5SDD2zYF+7Zuyj+JLtsvhwC80FZI0pkoNAu7Nod2VDR
-	fGBHLThrxKwAgWHox4et2hTXMC6MQBL2sOqBtz+9abHRTMUdxQY88rGjsPQuKztUFAy32vaYAThh5
-	ZE8hrt9Cm/DBoPR3pSlbOVVhNC7ZhZjP3rSeq63hioDn86goyO61/gJZ5h8VR50K3BjFxyMMdf9zv
-	iWdip1S3Tm5W5ISFtiNQ==;
+	List-Owner; bh=BFJMl+/9KPLN0f46R4qaLbGFj/6Ts1kldnpfDoLsw6E=; b=FINekEQPeSB8bv
+	KWQ6ti95Vkx4tYkn1hxDq7tM6fIScrWRvLn6ocNXYW267J/0PoZQPFswlXDB/0mncKFJaqHDVDbHu
+	njJGkIdV1dO0LQnzU0t06k3hnk/Jes/JhGlZgMma7eJezRIog1f/bhIlxFpEZrkDcridN5Smfvmdt
+	6bOOAnbOMkgw+3qNdpK+KZDA+qUFTmj5n6fVyCGp+MAiX6Hd0eZVH8BmVhZAHwzY5xyC68iGlFzbP
+	m8o4TlM5Cv67S0lSRZLRcPQhWb5i+xZe8CViwJkYcKx6D0oYwl6bzcGi5IPNNBv/5CSpSYKGwb6R9
+	AVnnH3kNKVFFHgdjmxIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIeMJ-00066B-AU; Thu, 10 Oct 2019 19:44:23 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1iIfs9-0004Eu-6b; Thu, 10 Oct 2019 21:21:21 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIeMG-00063l-4T
- for linux-rockchip@lists.infradead.org; Thu, 10 Oct 2019 19:44:21 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 2DE062909A7
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v5 3/3] ARM: dts: rockchip: Add RK3288 VOP gamma LUT address
-Date: Thu, 10 Oct 2019 16:43:51 -0300
-Message-Id: <20191010194351.17940-4-ezequiel@collabora.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20191010194351.17940-1-ezequiel@collabora.com>
-References: <20191010194351.17940-1-ezequiel@collabora.com>
+ id 1iIfs5-0004ER-Q5; Thu, 10 Oct 2019 21:21:19 +0000
+Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iIfs2-000772-7z; Thu, 10 Oct 2019 23:21:14 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: linux-rockchip@lists.infradead.org
+Subject: Re: [PATCH] arm64: dts: rockchip: add cr50 tpm to rk3399-gru scarlet
+ and bob
+Date: Thu, 10 Oct 2019 23:21:13 +0200
+Message-ID: <1981411.DENka8z7px@phil>
+In-Reply-To: <20180822120925.12388-1-heiko@sntech.de>
+References: <20180822120925.12388-1-heiko@sntech.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_124420_304250_48E3EE68 
-X-CRM114-Status: UNSURE (   9.44  )
+X-CRM114-CacheID: sfid-20191010_142117_995954_F820BA7D 
+X-CRM114-Status: UNSURE (   8.52  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,62 +59,25 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jacopo Mondi <jacopo@jmondi.org>,
- =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- linux-kernel@vger.kernel.org, Sandy Huang <hjc@rock-chips.com>,
- Rob Herring <robh+dt@kernel.org>, Douglas Anderson <dianders@chromium.org>,
- linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Sean Paul <seanpaul@chromium.org>, kernel@collabora.com,
- Ezequiel Garcia <ezequiel@collabora.com>, Ilia Mirkin <imirkin@alum.mit.edu>
+Cc: amstan@chromium.org, sboyd@kernel.org, briannorris@chromium.org,
+ dianders@chromium.org, smbarber@chromium.org, apronin@chromium.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-RK3288 SoC VOPs have optional support Gamma LUT setting,
-which requires specifying the Gamma LUT address in the devicetree.
+Am Mittwoch, 22. August 2018, 14:09:25 CEST schrieb Heiko Stuebner:
+> Scarlet and Bob use the Google-developed cr50 chip to do things
+> like TPM and closed-case-debugging.
+> 
+> Add the nodes describing the cr50 and its spi-connection.
+> 
+> Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 
-Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-Reviewed-by: Douglas Anderson <dianders@chromium.org>
----
-Changes from v4:
-* None.
-Changes from v3:
-* None.
-Changes from v2:
-* None.
-Changes from v1:
-* Drop reg-names, as suggested by Doug.
----
- arch/arm/boot/dts/rk3288.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+with the cr50 now having reached a maintainer tree,
+applied for 5.5
 
-diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
-index cc893e154fe5..c6fc633ace80 100644
---- a/arch/arm/boot/dts/rk3288.dtsi
-+++ b/arch/arm/boot/dts/rk3288.dtsi
-@@ -1023,7 +1023,7 @@
- 
- 	vopb: vop@ff930000 {
- 		compatible = "rockchip,rk3288-vop";
--		reg = <0x0 0xff930000 0x0 0x19c>;
-+		reg = <0x0 0xff930000 0x0 0x19c>, <0x0 0xff931000 0x0 0x1000>;
- 		interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&cru ACLK_VOP0>, <&cru DCLK_VOP0>, <&cru HCLK_VOP0>;
- 		clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
-@@ -1073,7 +1073,7 @@
- 
- 	vopl: vop@ff940000 {
- 		compatible = "rockchip,rk3288-vop";
--		reg = <0x0 0xff940000 0x0 0x19c>;
-+		reg = <0x0 0xff940000 0x0 0x19c>, <0x0 0xff941000 0x0 0x1000>;
- 		interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&cru ACLK_VOP1>, <&cru DCLK_VOP1>, <&cru HCLK_VOP1>;
- 		clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
--- 
-2.22.0
 
 
 _______________________________________________
