@@ -2,73 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8DF3D2C2B
-	for <lists+linux-rockchip@lfdr.de>; Thu, 10 Oct 2019 16:11:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B93D9D2E3F
+	for <lists+linux-rockchip@lfdr.de>; Thu, 10 Oct 2019 18:01:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LKKO4QvqRWG8fcgRJONZTTv1jXOLfdgcBeZy2Uh/0Oc=; b=Ype4ZOiDLQBpuA
-	seEPJBU79SuSXXUUZVTpgZYL6ATZnKyAxN0mSKNvYzljvqVZrW8LfpabZ+veW9iKwWSlZRGr0EdpN
-	HpqdqWJMcY1Az2N/ovt+F5upUihtzfHus+fhii1YOGUZp7BJhUm3jB+wrOizS6tgv8w4L9/8vyaYe
-	lrEbVFEU66cTEbvNWpo9LPl84kpoYcyLGHZn5yT0x6Eo6HlFUcf5t2IgxxDqC8nC4krvwtI3xWWi+
-	63XzgALe6f+hJbP4P3A0Zw5SjscYiWic7FKGl6UPS/wR5BNuBAp1StjuI6vJC/U8ClIBPjh1PytAQ
-	CSygKC0EtUEyBUCHE07w==;
+	List-Owner; bh=X3AlhoNySGBi58BeFgh8GOKGoWDUhW/b+1yLC4V9RGA=; b=nBMox3i6cRGBDG
+	UJwOymPfUxVx6UAbXrH3mI5agcFhdSqwM6r9EwDirU4+nKiOj0mfZ+rqyr6hYIGo2U+lsIFaguEkR
+	iGodrgEcDDBGFU7l3sgtrvhdSXU7noAfzU5yu9FJfJzrDbOLHHQ6lZOqRKW09XcUhjJNCJwQCcuWq
+	9o85cgHPTci55wE3iYK6T7TvNGgcu40Askplh7ieDsh/8LwMV6N3ASyGcG11vyx7izD6ULhbCdG/m
+	a8CMFQGW5DxvI1soe95Easi2G1tYzzWLfErHEyluBGSqOvcTJ+8XTtnd57woHd4om8xTNhFbFUZ8f
+	vSQ5PrTr/bSyXpzV2gaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIZ9u-0000ja-H3; Thu, 10 Oct 2019 14:11:14 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1iIasJ-0008Su-Av; Thu, 10 Oct 2019 16:01:11 +0000
+Received: from mail-yw1-xc43.google.com ([2607:f8b0:4864:20::c43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIZ9r-0000hr-1p
- for linux-rockchip@lists.infradead.org; Thu, 10 Oct 2019 14:11:12 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id b123so3990475vsb.5
- for <linux-rockchip@lists.infradead.org>; Thu, 10 Oct 2019 07:11:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=gA5F+RboE/pq+skSstsxaptbKJRogDAxspae1hZdrlw=;
- b=r/LIxHSW9Hdinc+D0Q6ii6IgfODtEPA7DG+J3nI5G4dmTYbg0AE8kFbjz4uCjpx4tF
- QrLKKae+TVAOXVIm8ul1al4xJKrRBf4PHxbHxvzkzylS2dlImR5Ta9ZS8C8LOnIvCi8Z
- YT/DpA5D0z2tTsdrfvUKjoUGjElPqlkPMxF7J3/BaBDUsUQ+JXlh/jdLQqKjZ2y0T/SN
- LWPgem2QK0RVDs3oPjUFSY0OULoh/0Qonhqby6SdaZMcuFtH7hOoyOSaj2qJWVhkmJEq
- J6EH4NlsThcmjNlAM7KIo+XcHU1nBOjHN8nNi0cFMsvnIW5b1HABIkXZX3x+z3765HHV
- S6LQ==
+ id 1iIasC-0008Rb-EI
+ for linux-rockchip@lists.infradead.org; Thu, 10 Oct 2019 16:01:09 +0000
+Received: by mail-yw1-xc43.google.com with SMTP id m7so2356704ywe.4
+ for <linux-rockchip@lists.infradead.org>; Thu, 10 Oct 2019 09:01:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=HQEwz99zPiBamssWYWO0fAnZk+5TRNulHyEfs6Nv7lQ=;
+ b=T9ZeEHxgqp5RV8yKHwcvwPSxswMi3KrhA4RVWCWl1lX1KjOUzEzDxOFiBlk6Vjdvxi
+ 3CujVBdI37VPSKl11epmWWNLz5LJZFZfRCT8hkIlKvDnlK5bg/GNSqGP/TPg6e0JNj9Y
+ 1+YjwZc8P6H9Ms9ISF+33kFd8cR+Td+TXJICnLRVjIkuV8dtzGUv19F+CrD/DhXRGFFI
+ gBAXTZzCMiOoNFBdKUlWPc6VdOjjTmqKqdysQs8qyJZnPepivh3XXztUJCaDIO5VR9q9
+ wTmKBBK1RBIBUUECFCk2yaZ/0qzpMqCyPj8YoFtpQXBLSjC3+h7A7PfVmLB+AsQbzo1p
+ JSZw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=gA5F+RboE/pq+skSstsxaptbKJRogDAxspae1hZdrlw=;
- b=HnNLVzu2250bBPcuTuCVqjg2aSqIsA43hk2XDgH5CjrPZ7JeJqRrsPFBIwZifxuN+r
- Vvc+VMRzFJl7QrCIRLwIRQPU6QLOoUlnqdGKZVB4U+bRutg3rNNmakG+attLmOfVH2Zg
- xKzeqH4cSljeK9+mAwCn2VKXOoue7RbJlD2xtLAY6y3LhjPjB/kZ98gT8MFYN2DoVstY
- G0XonZyKdrtL0PFDH6E3E+J67HnED3KES8Aj3tpsL6jxg++ICP3IT7TKqxBMF+9ebqY8
- fkeyFvBpjoSkxwZAMmhjgww6moqujhm9SoHlGGUZTZuVKCvESi/LOmOiI4gQkBvKrJr8
- Z9Pg==
-X-Gm-Message-State: APjAAAUFU+abCQFz1ji7qNnLUgiduiu1IQrfp2EpGEpuP6AG4u+LBP+F
- HZuHrN27tZ6k0Pj46c6DymS7Q8QTZ/DKLoGELU6lgF88Sw0=
-X-Google-Smtp-Source: APXvYqx8YwXRB2hrYG/fdZo1ha3XH6HrALf+bCVpuuJw5+7mmU3wP8OnkTRknPuULXGYFLMFs7UbggxceKVIPmCeIC8=
-X-Received: by 2002:a67:ef89:: with SMTP id r9mr5830898vsp.200.1570716668861; 
- Thu, 10 Oct 2019 07:11:08 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=HQEwz99zPiBamssWYWO0fAnZk+5TRNulHyEfs6Nv7lQ=;
+ b=lsN2OCtpBKebwtYhUytqIuO0b8Nr/+NdraTJbyjLj1Xr2t9Ze9XdlLygyNgqRortAt
+ WT3Mxe6GeKmdKE0Wm4GgMx10/w/cm9/CiYa2VDmPvuuFe3EMu0kOOK1mxHW7+v8nWDxo
+ MJ2Ajvh7LJ+5AMnp5WDezFCvOEd+g+OEsZfX4+EZ8+MYGN9c+GjHZTaccI0mzwCuvz6x
+ w6CrZZ6QKJoavly5E9bf2oyWYpBmuiQy6Qr5mS69eyHDHsPq6Nf2TfrL5vSwNjZNnCtY
+ WuEX2zrc3EfXY3UYlGdNBK5OcrmxCKxej4fKFwmC2it/o7sS+PuU7/vmH5GJsDv6t0yR
+ eWJA==
+X-Gm-Message-State: APjAAAVnmqENr5u3zYrsFveRIqTE/ZCsRemnu0AtS0Ujq4b4tgrYFxel
+ /EEZ5aVTD5ZtEz7lPIz2fkJTcQ==
+X-Google-Smtp-Source: APXvYqxb64hp70dOFquHDwL8UKJFaRPdNP3F40h8/gcrg8O/05QjvwiergM305REWF9FAzhZBio0IA==
+X-Received: by 2002:a81:ee11:: with SMTP id l17mr7691414ywm.72.1570723261755; 
+ Thu, 10 Oct 2019 09:01:01 -0700 (PDT)
+Received: from localhost ([2620:0:1013:11:89c6:2139:5435:371d])
+ by smtp.gmail.com with ESMTPSA id p204sm1555743ywp.110.2019.10.10.09.00.59
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 10 Oct 2019 09:00:59 -0700 (PDT)
+Date: Thu, 10 Oct 2019 12:00:59 -0400
+From: Sean Paul <sean@poorly.run>
+To: Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>
+Subject: Re: [PATCH v4 2/3] drm/rockchip: Add optional support for CRTC gamma
+ LUT
+Message-ID: <20191010160059.GJ85762@art_vandelay>
+References: <20191008230038.24037-1-ezequiel@collabora.com>
+ <20191008230038.24037-3-ezequiel@collabora.com>
+ <20191009180136.GE85762@art_vandelay>
+ <CAAEAJfDP0PsGAoRfGyDyWj7DxgP6nwwwA1_gwLQuVy-fRDa-UA@mail.gmail.com>
 MIME-Version: 1.0
-References: <20190722193939.125578-1-dianders@chromium.org>
- <20190722193939.125578-2-dianders@chromium.org>
-In-Reply-To: <20190722193939.125578-2-dianders@chromium.org>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 10 Oct 2019 16:10:32 +0200
-Message-ID: <CAPDyKFpKWo4n+nmBXVcDc4TNzFV3vc+3aeKcu_nKaB=hj=RKUQ@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] mmc: core: Add sdio_trigger_replug() API
-To: Douglas Anderson <dianders@chromium.org>
+Content-Disposition: inline
+In-Reply-To: <CAAEAJfDP0PsGAoRfGyDyWj7DxgP6nwwwA1_gwLQuVy-fRDa-UA@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_071111_123493_3FD58F90 
-X-CRM114-Status: GOOD (  28.46  )
+X-CRM114-CacheID: sfid-20191010_090106_374342_966FF5CF 
+X-CRM114-Status: GOOD (  23.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c43 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,127 +101,184 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Ganapathi Bhat <gbhat@marvell.com>, Brian Norris <briannorris@chromium.org>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- Xinming Hu <huxinming820@gmail.com>, netdev <netdev@vger.kernel.org>,
- Andreas Fenkart <afenkart@gmail.com>,
- linux-wireless <linux-wireless@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>,
- Amitkumar Karwar <amitkarwar@gmail.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jacopo Mondi <jacopo@jmondi.org>, Rob Herring <robh+dt@kernel.org>,
+ Sean Paul <sean@poorly.run>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Douglas Anderson <dianders@chromium.org>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Nishant Sarmukadam <nishants@marvell.com>,
- Matthias Kaehlcke <mka@chromium.org>, Avri Altman <avri.altman@wdc.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, "David S. Miller" <davem@davemloft.net>,
- Kalle Valo <kvalo@codeaurora.org>
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Sean Paul <seanpaul@chromium.org>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, 22 Jul 2019 at 21:41, Douglas Anderson <dianders@chromium.org> wrote:
->
-> When using Marvell WiFi SDIO cards, it is not uncommon for Linux WiFi
-> driver to fully lose the communication channel to the firmware running
-> on the card.  Presumably the firmware on the card has a bug or two in
-> it and occasionally crashes.
->
-> The Marvell WiFi driver attempts to recover from this problem.
-> Specifically the driver has the function mwifiex_sdio_card_reset()
-> which is called when communcation problems are found.  That function
-> attempts to reset the state of things by utilizing the mmc_hw_reset()
-> function.
->
-> The current solution is a bit complex because the Marvell WiFi driver
-> needs to manually deinit and reinit the WiFi driver around the reset
-> call.  This means it's going through a bunch of code paths that aren't
-> normally tested.  However, complexity isn't our only problem.  The
-> other (bigger) problem is that Marvell WiFi cards are often combo
-> WiFi/Bluetooth cards and Bluetooth runs on a second SDIO func.  While
-> the WiFi driver knows that it should re-init its own state around the
-> mmc_hw_reset() call there is no good way to inform the Bluetooth
-> driver.  That means that in Linux today when you reset the Marvell
-> WiFi driver you lose all Bluetooth communication.  Doh!
 
-Thanks for a nice description to the problem!
+/snip
 
-In principle it makes mmc_hw_reset() quite questionable to use for
-SDIO func drivers, at all. However, let's consider that for later.
+> > > +static void vop_crtc_write_gamma_lut(struct vop *vop, struct drm_crtc *crtc)
+> > > +{
+> > > +     struct drm_color_lut *lut = crtc->state->gamma_lut->data;
+> > > +     unsigned int i;
+> > > +
+> > > +     for (i = 0; i < crtc->gamma_size; i++) {
+> > > +             u32 word;
+> > > +
+> > > +             word = (drm_color_lut_extract(lut[i].red, 10) << 20) |
+> > > +                    (drm_color_lut_extract(lut[i].green, 10) << 10) |
+> > > +                     drm_color_lut_extract(lut[i].blue, 10);
+> > > +             writel(word, vop->lut_regs + i * 4);
+> > > +     }
+> > > +}
+> > > +
+> > > +static void vop_crtc_gamma_set(struct vop *vop, struct drm_crtc *crtc,
+> > > +                            struct drm_crtc_state *old_crtc_state)
+> > > +{
+> > > +     unsigned int idle;
+> > > +     int ret;
+> > > +
+> >
+> > How about:
+> >
+> >         if (!vop->lut_regs)
+> >                 return;
+> >
+> > here and then you can remove that condition above the 2 callsites
+> >
+> 
+> Yes, sounds good.
+> 
+> > > +     /*
+> > > +      * In order to write the LUT to the internal memory,
+> > > +      * we need to first make sure the dsp_lut_en bit is cleared.
+> > > +      */
+> > > +     spin_lock(&vop->reg_lock);
+> > > +     VOP_REG_SET(vop, common, dsp_lut_en, 0);
+> > > +     vop_cfg_done(vop);
+> > > +     spin_unlock(&vop->reg_lock);
+> > > +
+> > > +     /*
+> > > +      * If the CRTC is not active, dsp_lut_en will not get cleared.
+> > > +      * Apparently we still need to do the above step to for
+> > > +      * gamma correction to be disabled.
+> > > +      */
+> > > +     if (!crtc->state->active)
+> > > +             return;
+> > > +
+> 
+> I have realized that the above might no longer be needed,
+> given we are now using atomic_enable and atomic_begin.
+> 
+> Not sure if the CRTC is supposed to clear its GAMMA
+> when disabled.
+> 
 
->
-> One way to fix the above problems is to leverage a more standard way
-> to reset the Marvell WiFi card where we go through the same code paths
-> as card unplug and the card plug.  In this patch we introduce a new
-> API call for doing just that: sdio_trigger_replug().  This API call
-> will trigger an unplug of the SDIO card followed by a plug of the
-> card.  As part of this the card will be nicely reset.
+Yep, good catch. Since we use commit_tail_rpm, atomic_begin won't be called in
+the disable path.
 
-I have been thinking back and forth on this, exploring various
-options, perhaps adding some callbacks that the core could invoke to
-inform the SDIO func drivers of what is going on.
+> > > +     ret = readx_poll_timeout(vop_dsp_lut_is_enable, vop,
+> > > +                              idle, !idle, 5, 30 * 1000);
+> > > +     if (ret) {
+> > > +             DRM_DEV_ERROR(vop->dev, "display LUT RAM enable timeout!\n");
+> > > +             return;
+> > > +     }
+> > > +
+> > > +     if (crtc->state->gamma_lut &&
+> > > +        (!old_crtc_state->gamma_lut || (crtc->state->gamma_lut->base.id !=
+> > > +                                     old_crtc_state->gamma_lut->base.id))) {
+> >
+> > Silly question, but isn't the second part of this check redundant since you need
+> > color_mgmt_changed || active_changed to get into this function?
+> >
+> > So maybe invert the conditional here and exit early (to save a level of
+> > indentation in the block below):
+> >
+> 
+> I took this from malidp_atomic_commit_update_gamma. I _believe_
+> the rational for this is that color_mgmt_changed can be set by re-setting
+> the gamma property, to the same property. But I admit I haven't
+> tested it's the case.
+> 
+> OTOH, it won't really affect much to re-write the table, if the user
+> requested a change.
+> 
 
-Although, in the end this boils done to complexity and I think your
-approach is simply the most superior in regards to this. However, I
-think there is a few things that we can do to even further simply your
-approach, let me comment on the code below.
+color_mgmt_changed is based on the output of drm_property_replace_blob() which
+should return false if the blob is unchanged. So I don't think that case is
+possible. 
 
->
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
-> ---
->
-> Changes in v2:
-> - s/routnine/routine (Brian Norris, Matthias Kaehlcke).
-> - s/contining/containing (Matthias Kaehlcke).
-> - Add Matthias Reviewed-by tag.
->
->  drivers/mmc/core/core.c       | 28 ++++++++++++++++++++++++++--
->  drivers/mmc/core/sdio_io.c    | 20 ++++++++++++++++++++
->  include/linux/mmc/host.h      | 15 ++++++++++++++-
->  include/linux/mmc/sdio_func.h |  2 ++
->  4 files changed, 62 insertions(+), 3 deletions(-)
->
-> diff --git a/drivers/mmc/core/core.c b/drivers/mmc/core/core.c
-> index 221127324709..5da365b1fdb4 100644
-> --- a/drivers/mmc/core/core.c
-> +++ b/drivers/mmc/core/core.c
-> @@ -2161,6 +2161,12 @@ int mmc_sw_reset(struct mmc_host *host)
->  }
->  EXPORT_SYMBOL(mmc_sw_reset);
->
-> +void mmc_trigger_replug(struct mmc_host *host)
-> +{
-> +       host->trigger_replug_state = MMC_REPLUG_STATE_UNPLUG;
-> +       _mmc_detect_change(host, 0, false);
-> +}
-> +
->  static int mmc_rescan_try_freq(struct mmc_host *host, unsigned freq)
->  {
->         host->f_init = freq;
-> @@ -2214,6 +2220,11 @@ int _mmc_detect_card_removed(struct mmc_host *host)
->         if (!host->card || mmc_card_removed(host->card))
->                 return 1;
->
-> +       if (host->trigger_replug_state == MMC_REPLUG_STATE_UNPLUG) {
-> +               mmc_card_set_removed(host->card);
-> +               return 1;
+Taking this a step further, this check could even be damaging since something
+in the atomic check path could set color_mgmt_changed in order to explicitly
+trigger a lut write and we'd be skipping it with the id check.
 
-Do you really need to set state of the card to "removed"?
 
-If I understand correctly, what you need is to allow mmc_rescan() to
-run a second time, in particular for non removable cards.
+> >         if (!crtc->state->gamma_lut)
+> >                 return;
+> >
+> 
+> In any case, inverting the condition makes sense.
+> 
+> >         spin_lock(&vop->reg_lock);
+> >
+> >         vop_crtc_write_gamma_lut(vop, crtc);
+> >         VOP_REG_SET(vop, common, dsp_lut_en, 1);
+> >         vop_cfg_done(vop);
+> >
+> >         spin_unlock(&vop->reg_lock);
+> >
+> > > +
+> > > +             spin_lock(&vop->reg_lock);
+> > > +
+> > > +             vop_crtc_write_gamma_lut(vop, crtc);
+> > > +             VOP_REG_SET(vop, common, dsp_lut_en, 1);
+> > > +             vop_cfg_done(vop);
+> > > +
+> > > +             spin_unlock(&vop->reg_lock);
+> > > +     }
+> > > +}
 
-In that path, mmc_rescan should find the card being non-functional,
-thus it should remove it and then try to re-initialize it again. Etc.
+/snip
 
-Do you want me to send a patch to show you what I mean!?
+> > > +static int vop_crtc_atomic_check(struct drm_crtc *crtc,
+> > > +                              struct drm_crtc_state *crtc_state)
+> > > +{
+> > > +     struct vop *vop = to_vop(crtc);
+> > > +
+> > > +     if (vop->lut_regs && crtc_state->color_mgmt_changed &&
+> > > +         crtc_state->gamma_lut) {
+> > > +             unsigned int len;
+> > > +
+> > > +             len = drm_color_lut_size(crtc_state->gamma_lut);
+> > > +             if (len != crtc->gamma_size) {
+> > > +                     DRM_DEBUG_KMS("Invalid LUT size; got %d, expected %d\n",
+> > > +                                   len, crtc->gamma_size);
+> > > +                     return -EINVAL;
+> > > +             }
+> >
+> > Overflow is avoided in drm_mode_gamma_set_ioctl(), so I don't think you need
+> > this function.
+> >
+> 
+> But that only applies to the legacy path. Isn't this needed to ensure
+> a gamma blob
+> has the right size?
 
-[...]
+Yeah, good point, we check the element size in the atomic path, but not the max
+size. I haven't looked at enough color lut stuff to have an opinion whether this
+check would be useful in a helper function or not, something to consider, I
+suppose.
 
-Kind regards
-Uffe
+Sean
+
+> 
+> Thanks,
+> Ezequiel
+
+-- 
+Sean Paul, Software Engineer, Google / Chromium OS
 
 _______________________________________________
 Linux-rockchip mailing list
