@@ -2,67 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08E11D2FAF
-	for <lists+linux-rockchip@lfdr.de>; Thu, 10 Oct 2019 19:36:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED527D30F2
+	for <lists+linux-rockchip@lfdr.de>; Thu, 10 Oct 2019 20:54:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EvpzAYzhzpTmvGb2u88cUridZORMpuhsAauQatV6pug=; b=sMUp6YCQpWAXHB
-	F8f4H3X0pR03uKnf3qrIf8bd3z/z/lBequbEREU+Fu0/Rk2RWoMFfzRREOQ++lk5TQG4U26DSTFlo
-	ieI8YDMVTqERFsoJP0/0HI2NvShZc62V7JsQKQO7v8BNPr2tfgVRZkhprEreuaKwA5XGlmqv65v3R
-	o7HHeYwtk3kowEA4yFGTEzz4os2gLBVYcBX5T1BYcXA6OONThhlEfbXrK8VtOlvaQbePPG3E3H5KK
-	TDkDjC5dUJ7FmYD7dhibZJRPeYgzk9D/I5TM1h9uZiIB5EP/12TfNV1fCGpPP0Waay0GHvwSaseF1
-	IqG3Ee3/KnfTIBjilNNw==;
+	List-Owner; bh=cvUKH4tYZbKtTdOcncP9nEgqlw0zthOQneMxeSyHHuY=; b=GamIDzLXs54Bi0
+	5Kz+KCuswwQdaAmP0fEn4K6iyy1UsstOQL17udLuosJsQe5pJY+w69eNQ75dG8jsclrz5Gxth77N2
+	VhiWeCCG2vvf8OGAD88pLhVf7PnxlBLsBcfZ/QI+GAMIGxzf4vLVoo8m1y6ntzGUdNwCAsF1Eg8ia
+	YkdK17uDs2yhvOMpDrpr9cRI1yKqwHOn48iJC6otFIWl4jt0OqYTW9bHfOo6G7pbMI96VlkgSfSvI
+	XJpBBgPJpsnNAQlQO7xpiJh/4t1q/0cv9lvjZd1BYdwA29wJrRzJB0XxsQfK1Rom5V8/Txcvm0vNq
+	J5K3F8IOInNbejwXSN1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIcMK-0008It-GK; Thu, 10 Oct 2019 17:36:16 +0000
-Received: from mga05.intel.com ([192.55.52.43])
+	id 1iIdaQ-0002fH-7j; Thu, 10 Oct 2019 18:54:54 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIcMH-0008Hs-Ff
- for linux-rockchip@lists.infradead.org; Thu, 10 Oct 2019 17:36:14 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 10 Oct 2019 10:36:12 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.67,281,1566889200"; d="scan'208";a="200538447"
-Received: from stinkbox.fi.intel.com (HELO stinkbox) ([10.237.72.174])
- by FMSMGA003.fm.intel.com with SMTP; 10 Oct 2019 10:36:08 -0700
-Received: by stinkbox (sSMTP sendmail emulation);
- Thu, 10 Oct 2019 20:36:07 +0300
-Date: Thu, 10 Oct 2019 20:36:07 +0300
-From: Ville =?iso-8859-1?Q?Syrj=E4l=E4?= <ville.syrjala@linux.intel.com>
-To: Ilia Mirkin <imirkin@alum.mit.edu>
-Subject: Re: [PATCH v4 2/3] drm/rockchip: Add optional support for CRTC gamma
- LUT
-Message-ID: <20191010173607.GH1208@intel.com>
-References: <20191008230038.24037-1-ezequiel@collabora.com>
- <20191008230038.24037-3-ezequiel@collabora.com>
- <20191009180136.GE85762@art_vandelay>
- <CAAEAJfDP0PsGAoRfGyDyWj7DxgP6nwwwA1_gwLQuVy-fRDa-UA@mail.gmail.com>
- <20191010160059.GJ85762@art_vandelay>
- <CAKb7UvhWWYcpmyMZgerdJiG=sZjQUBVkeEwev+PdYzBW6+xsbQ@mail.gmail.com>
+ id 1iIda7-0002Nr-Ks; Thu, 10 Oct 2019 18:54:37 +0000
+Received: by mail-ot1-f67.google.com with SMTP id z6so5833252otb.2;
+ Thu, 10 Oct 2019 11:54:34 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=o+zin2bL1A/EltcDjtt8OSEY4VLYK08n8Dj1hQ6Wf2k=;
+ b=nxafwnwjiwC0h3WJqamIpYCmQ8EnyjkZSrAKZbPMQREviRYqLXLtMR4iS3ycWZU95e
+ zjnTroaAY0R1gjOt61F0zCkJImfGpSzoKPvAJ966+TaRH2KDL8YgL4J9Vc90LZJgUdxO
+ 4QBXwnlzFP5iG5U4J3BjLqDiAOo72a1ZK+mSYkEog13Ak3N1hoiIrO72omGglwJFbCwe
+ 1ex6JbVv6fyeYl+inxkb3idX1MhxNNQuh2mDGS+NNHsVrCmNg6KghY45ViWRtrlcWRUJ
+ I9Tv0hMI4KKjg/Y1d05ricP+r5WKjVO2PIowCsdLTc/C4z6NAjLKeKZDhJ+lBvSPp4z5
+ /w0A==
+X-Gm-Message-State: APjAAAWD5kicquEJPH1hIRaeors0dStN1BcnLe9HRZgd6LNjhK5kwNBv
+ Pu5UIVg5HVSfsF9gj/REVQ==
+X-Google-Smtp-Source: APXvYqxQEXGO9Uc01zKUGpeB8t0R+xv3eN1jyvC9TPfe47vyIsyRP58qHhRhPLQG1SNW3RGl2mO7pw==
+X-Received: by 2002:a9d:73d8:: with SMTP id m24mr8810042otk.227.1570733674052; 
+ Thu, 10 Oct 2019 11:54:34 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id r19sm1846829ota.79.2019.10.10.11.54.33
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 10 Oct 2019 11:54:33 -0700 (PDT)
+Date: Thu, 10 Oct 2019 13:54:32 -0500
+From: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v3 1/2] dt-bindings: pwm: Convert PWM bindings to
+ json-schema
+Message-ID: <20191010185432.GA17457@bogus>
+References: <20191002164047.14499-1-krzk@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAKb7UvhWWYcpmyMZgerdJiG=sZjQUBVkeEwev+PdYzBW6+xsbQ@mail.gmail.com>
+In-Reply-To: <20191002164047.14499-1-krzk@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_103613_541801_FA9449AA 
-X-CRM114-Status: GOOD (  18.85  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191010_115435_683580_BCE7D178 
+X-CRM114-Status: GOOD (  19.42  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.43 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,106 +91,99 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Jacopo Mondi <jacopo@jmondi.org>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Douglas Anderson <dianders@chromium.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, Sean Paul <seanpaul@chromium.org>,
- Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>,
- Boris Brezillon <boris.brezillon@collabora.com>, kernel@collabora.com,
- Sean Paul <sean@poorly.run>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-pwm@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-rockchip@lists.infradead.org,
+ Thierry Reding <thierry.reding@gmail.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org,
+ Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+ linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-riscv@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-leds@vger.kernel.org, linux-rpi-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 12:23:05PM -0400, Ilia Mirkin wrote:
-> On Thu, Oct 10, 2019 at 12:01 PM Sean Paul <sean@poorly.run> wrote:
-> > > > > +static int vop_crtc_atomic_check(struct drm_crtc *crtc,
-> > > > > +                              struct drm_crtc_state *crtc_state)
-> > > > > +{
-> > > > > +     struct vop *vop =3D to_vop(crtc);
-> > > > > +
-> > > > > +     if (vop->lut_regs && crtc_state->color_mgmt_changed &&
-> > > > > +         crtc_state->gamma_lut) {
-> > > > > +             unsigned int len;
-> > > > > +
-> > > > > +             len =3D drm_color_lut_size(crtc_state->gamma_lut);
-> > > > > +             if (len !=3D crtc->gamma_size) {
-> > > > > +                     DRM_DEBUG_KMS("Invalid LUT size; got %d, ex=
-pected %d\n",
-> > > > > +                                   len, crtc->gamma_size);
-> > > > > +                     return -EINVAL;
-> > > > > +             }
-> > > >
-> > > > Overflow is avoided in drm_mode_gamma_set_ioctl(), so I don't think=
- you need
-> > > > this function.
-> > > >
-> > >
-> > > But that only applies to the legacy path. Isn't this needed to ensure
-> > > a gamma blob
-> > > has the right size?
-> >
-> > Yeah, good point, we check the element size in the atomic path, but not=
- the max
-> > size. I haven't looked at enough color lut stuff to have an opinion whe=
-ther this
-> > check would be useful in a helper function or not, something to conside=
-r, I
-> > suppose.
-> =
-
-> Some implementations support multiple sizes (e.g. 256 and 1024) but
-> not anything in between. It would be difficult to expose this
-> generically, I would imagine.
-> The 256 size is kind of special, since
-> basically all legacy usage assumes that 256 is the one true quantity
-> of LUT entries...
-
-What we do currently in i915 is:
-crtc->gamma_size =3D 256
-GAMMA_LUT_SIZE =3D platform specific (256, 129, 257, 2^10, or 2^18+1 (lol))
-DEGAMMA_LUT_SIZE =3D platform specific (0, 33, 65, or 2^10)
-
-i915 will accept:
-- gamma lut of size 256, iff ctm=3D=3DNULL and degamma=3D=3DNULL (the so
-  called "legacy gamma" mode)
-- (de)gamma_lut of size (DE)GAMMA_LUT_SIZE if it passes the
-  checks done by drm_color_lut_check()
-
-Ie. just one or two gamma modes per platform is exposed. And that's
-about all we can do with the current uapi even though our hardware
-supports many more modes.
-
-The resulting precision, interpolation vs. truncation behaviour,
-and handling of out of gamut values are all totally unspecified
-and userspace just has to make a guess.
-
-We also cheat with the 2^10 sized LUTs a bit due to the hw sharing
-the same LUT for gamma and degamma, and so if you enable both at
-the same time we throw away every second entry and each stage
-only gets a 2^9 entry LUT in the end.
-
-Oh and for the 2^18+1 monstrosity we cheat even more and
-throw away ~99.8% of the entries :(
+On Wed, Oct 02, 2019 at 06:40:46PM +0200, Krzysztof Kozlowski wrote:
+> Convert generic PWM bindings to DT schema format using json-schema.  The
+> consumer bindings are split to separate file.
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> 
+> ---
+> 
+> Changes since v2:
+> 1. Change also pwm-sprd.txt
+> 
+> Changes since v1:
+> 1. Indent example with four spaces (more readable),
+> 2. Change pattern for pwm nodes,
+> 3. Remove $ref from #cells.
+> ---
 
 
-This here was my idea for extending the uapi so that we
-could expose the full hw capabilities and let userspace
-decide which mode suits it best without having to guess
-what it'll get:
-https://github.com/vsyrjala/linux/commits/gamma_mode_prop
+> diff --git a/Documentation/devicetree/bindings/pwm/pwm-consumers.yaml b/Documentation/devicetree/bindings/pwm/pwm-consumers.yaml
+> new file mode 100644
+> index 000000000000..39c844fe6338
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/pwm/pwm-consumers.yaml
+> @@ -0,0 +1,76 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/pwm/pwm-consumers.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Specifying PWM information for devices
+> +
+> +maintainers:
+> +  - Thierry Reding <thierry.reding@gmail.com>
+> +
+> +description: |
+> +  PWM properties should be named "pwms". The exact meaning of each pwms
+> +  property must be documented in the device tree binding for each device.
+> +  An optional property "pwm-names" may contain a list of strings to label
+> +  each of the PWM devices listed in the "pwms" property. If no "pwm-names"
+> +  property is given, the name of the user node will be used as fallback.
+> +
+> +  Drivers for devices that use more than a single PWM device can use the
+> +  "pwm-names" property to map the name of the PWM device requested by the
+> +  pwm_get() call to an index into the list given by the "pwms" property.
+> +
+> +properties:
+> +  pwms:
+> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+> +    description: |
+> +      Phandle to PWM controller node and pwm-specifier (controller specific).
+> +      pwm-specifier typically encodes the chip-relative PWM number and the PWM
+> +      period in nanoseconds.
+> +      Optionally, the pwm-specifier can encode a number of flags (defined in
+> +      <dt-bindings/pwm/pwm.h>) in a third cell:
+> +        - PWM_POLARITY_INVERTED: invert the PWM signal polarity
+> +
+> +  pwm-names:
+> +    $ref: /schemas/types.yaml#/definitions/string-array
+> +    description:
+> +      A list of strings to label each of the PWM devices listed in the "pwms"
+> +      property. If no "pwm-names" property is given, the name of the user node
+> +      will be used as fallback.
+> +
+> +required:
+> +  - pwms
 
-Maybe in a few years I'll find time to get back to it...
+This schema is never applied because it has no 'select' which is only 
+automatic for $nodename or compatible. You could include this from other 
+schemas, but why? Any consumer still has to list these properties to 
+define their specific constraints.
 
--- =
+We already have a schema in dtschema for consumer side. It's just 
+missing descriptions which needs relicensing from this.
 
-Ville Syrj=E4l=E4
-Intel
+> +
+> +dependencies:
+> +  pwm-names: [ pwms ]
 
 _______________________________________________
 Linux-rockchip mailing list
