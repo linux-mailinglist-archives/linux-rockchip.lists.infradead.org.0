@@ -2,77 +2,49 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCD5ED310E
-	for <lists+linux-rockchip@lfdr.de>; Thu, 10 Oct 2019 20:59:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56EE0D3190
+	for <lists+linux-rockchip@lfdr.de>; Thu, 10 Oct 2019 21:44:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vQkqaLUeemUpnwKpxt6+i2E5wHA6ijKPsRXOQn6xEuc=; b=J3zxKkL3c9rARL
-	1MxXg/TL6Wlxenyi3HPjZyD5y2IgYxc19ZXmXCFIJ/WH85stN+0jUvdpY+fhKGilKpPFLWFmepmhd
-	hof7NvnwQXFEWFF/wvynhP1nEax+MsDnHkzCzkDRX/CDncDeBaMVQCtD/y5ohfjve1aMdZ3+4cCo7
-	YoR1I+MNlfaUhR1VZOL3Q0lyHE9Tb5DSVkJMrPjVVLxDJBuIjMqm62/dGQw7PVAGt9u8ywUU3wkla
-	rRu2rSmCKGpYpj6upQe5TfNjyvdreLnnHTdBx2OelWDUP/V1etuaXac00+OzLoHScIXxGxX7ijD03
-	z+hmRE3V7Ct25/D6Q4SA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4sW4h3zBzou+CMvFpoJWTm0D/LVIb45r0nq6/RXfqp4=; b=g2PTOdU4bLm3dW
+	F3ADmU66chmcPwkArvL1CK//1CnHhBvN8+FjTj2bnXkaAmZvBUznUSZ7PtAQF3vbIi1DlbPYzV3dC
+	VT6WowaSDLWd8CWvcTxG0OgNKnOOUPUvgVUAuqfNPKR6O0fkg04P0Wk2TEGtjtW33c3f5p/hLAk0a
+	NJfDp268dixh+nI9u9MUp74v72YmiUKCXrFUaG4Pb152bcSL5QyLH32ork8pLLDnUXJbKE2lyvn59
+	H1pk1lmWBoLmo8h2g9J+7ou7R3mz/L5OGn3mSPKqYbodNfC2blopfAz5EbMbxPuX+rgqiDUBGP4Xv
+	pgiyJCKNi/PP0wtzpR+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIdeS-0004sF-LD; Thu, 10 Oct 2019 18:59:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iIeM7-0005yB-J7; Thu, 10 Oct 2019 19:44:11 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIde7-0004Yh-5i; Thu, 10 Oct 2019 18:58:44 +0000
-Received: from mail-qt1-f172.google.com (mail-qt1-f172.google.com
- [209.85.160.172])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 16C3421A4A;
- Thu, 10 Oct 2019 18:58:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570733922;
- bh=C3qJQMyjD9A/GMvJ52P6U8GDKE7BNVgB4aq0nJUK3Tc=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=x9hnp5Xo4bB1M1JWF8/BAZab4UX1ziPUvnFgk/cPG/ZALiC2ezbfWSIK9WfrWnqxU
- Be8N6AeS7oihMOahkrPHOI0whlDuASFXutW+vuKo6b1R/NAzZ/WsV5JfutdIEk6dPX
- j9KYoQjQg6HQBC03nBIRN41NzOebPx9rSvB/Ja9M=
-Received: by mail-qt1-f172.google.com with SMTP id l51so9980029qtc.4;
- Thu, 10 Oct 2019 11:58:42 -0700 (PDT)
-X-Gm-Message-State: APjAAAVetRWIqqbGQNzHRFkNnBBSHasQoKdoD23L9/7wdTiWpZH5d60u
- PqVYP9TPE64RqnunwTRNlULJV4eXpU2mn/tB/w==
-X-Google-Smtp-Source: APXvYqzB5TzRKwoOcFcNVQukkGMmMU2iFIhyKCekwRBNJHWn3GTHP/CmHznLTqw+AnmCr8x0PiE1VBXV/9mGgldc2YU=
-X-Received: by 2002:ad4:5044:: with SMTP id m4mr12009044qvq.85.1570733921147; 
- Thu, 10 Oct 2019 11:58:41 -0700 (PDT)
+ id 1iIeM4-0005xT-Qx
+ for linux-rockchip@lists.infradead.org; Thu, 10 Oct 2019 19:44:10 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id DB451286280
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: dri-devel@lists.freedesktop.org
+Subject: [PATCH v5 0/3] RK3288 Gamma LUT
+Date: Thu, 10 Oct 2019 16:43:48 -0300
+Message-Id: <20191010194351.17940-1-ezequiel@collabora.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-References: <20191002164047.14499-1-krzk@kernel.org>
- <20191002164047.14499-2-krzk@kernel.org>
-In-Reply-To: <20191002164047.14499-2-krzk@kernel.org>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Thu, 10 Oct 2019 13:58:30 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq+Fa1+epSvDpSx4NdzOUohoJR+qR3-xyMTTw4LaOK7AbQ@mail.gmail.com>
-Message-ID: <CAL_Jsq+Fa1+epSvDpSx4NdzOUohoJR+qR3-xyMTTw4LaOK7AbQ@mail.gmail.com>
-Subject: Re: [PATCH v3 2/2] dt-bindings: pwm: Convert Samsung PWM bindings to
- json-schema
-To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_115843_236255_9E885257 
-X-CRM114-Status: GOOD (  10.31  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191010_124409_004980_A08B5A5E 
+X-CRM114-Status: UNSURE (   6.31  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,52 +58,43 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Linux PWM List <linux-pwm@vger.kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- linux-stm32@st-md-mailman.stormreply.com,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-riscv@lists.infradead.org, linux-clk <linux-clk@vger.kernel.org>,
- Linux LED Subsystem <linux-leds@vger.kernel.org>,
- "moderated list:BROADCOM BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>
+ Jacopo Mondi <jacopo@jmondi.org>,
+ =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ linux-kernel@vger.kernel.org, Sandy Huang <hjc@rock-chips.com>,
+ Rob Herring <robh+dt@kernel.org>, Douglas Anderson <dianders@chromium.org>,
+ linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Sean Paul <seanpaul@chromium.org>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>, Ilia Mirkin <imirkin@alum.mit.edu>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Oct 2, 2019 at 11:41 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
->
-> Convert Samsung PWM (S3C, S5P and Exynos SoCs) bindings to DT schema
-> format using json-schema.
->
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
->
-> ---
->
-> Changes since v2:
-> 1. Add additionalProperties: false.
->
-> Changes since v1:
-> 1. Indent example with four spaces (more readable),
-> 2. Fix samsung,pwm-outputs after review,
-> 3. Remove double-quotes from clock names.
-> ---
->  .../devicetree/bindings/pwm/pwm-samsung.txt   |  51 --------
->  .../devicetree/bindings/pwm/pwm-samsung.yaml  | 109 ++++++++++++++++++
->  2 files changed, 109 insertions(+), 51 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/pwm/pwm-samsung.txt
->  create mode 100644 Documentation/devicetree/bindings/pwm/pwm-samsung.yaml
+New iteration, seems that we are finally converging.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+For this v5, we are only doing some changes on
+the gamma_set implementation. As a result, the code
+is more readable. See the changelog in patch 2 for more
+information.
+
+Thanks!
+
+Ezequiel Garcia (3):
+  dt-bindings: display: rockchip: document VOP gamma LUT address
+  drm/rockchip: Add optional support for CRTC gamma LUT
+  ARM: dts: rockchip: Add RK3288 VOP gamma LUT address
+
+ .../display/rockchip/rockchip-vop.txt         |   6 +-
+ arch/arm/boot/dts/rk3288.dtsi                 |   4 +-
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.c   | 120 ++++++++++++++++++
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.h   |   2 +
+ drivers/gpu/drm/rockchip/rockchip_vop_reg.c   |   2 +
+ 5 files changed, 131 insertions(+), 3 deletions(-)
+
+-- 
+2.22.0
+
 
 _______________________________________________
 Linux-rockchip mailing list
