@@ -2,42 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 639A3D3366
-	for <lists+linux-rockchip@lfdr.de>; Thu, 10 Oct 2019 23:28:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9367ED3369
+	for <lists+linux-rockchip@lfdr.de>; Thu, 10 Oct 2019 23:29:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lcII9XBq1ZWczpMfCjZVOfFWi16HzdRHDCoA+8ykEJQ=; b=pNTucLAX0kZI3Q
-	hX/YdggMS0scKbVEjumaJXOxvGIudmtD3zpf3TCCHmRNel2R7iwAjHnlRoLM05fGTeo+SWqCFBUxr
-	VHLan2r2NynNu82yCAlJDzXmw7GcaEpkd56BHy4m8pRnt5zCZ4BizQwQnarRPLVCX1PJdcc7h/EyI
-	l7o4le8pjg0VNRuReThzcCKcwWO945hSGy3+NofxnqAI1PaZc4i5GzbhjRZ83guYUWZ/xb7wfL5PK
-	USoljZspjXUMUe6MEL+dc4a+9d5Xr77suWhbaCbHkYVjJUmGfqzASwV0r7zU53w/tsaGcnVxYpYoH
-	gcgFHDA1hFAi8+txEAlw==;
+	List-Owner; bh=npMF8D9DPihtxU95m55fO8WCmyT+FOiTjkG2io7lKyo=; b=lnS3whMyMwFVLZ
+	uVRCRBcwn/SZF3y+shSqgMJ5X9vVoQb7aV5qJS8CsCPctxtRl7Jq1iPLWvakB/S6cV6MdXcYsBYvP
+	VMxdPeovVjg8qysbfkLjEK/KoVgJpELff3gWvwm49uPT/KqxVjR2SGLRRiU/wRzDRu6QikZpATB0l
+	wTaRjuLZp6EM8wnmwwJWV3gJn19aunqwvHs0ScZQQD2keGr4ZBmU+VP0haK7P5EI2IEQ51UkjgS2V
+	8KgAzXFIge0sNK4NPuanH1ZLl4mNSJZnY3sbCfBWkbdeuGEsskT5FqBHctyWBJap8D3SVE50+KJmI
+	OjcKU1idCwIMKhBHkg1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIfye-00076B-Pk; Thu, 10 Oct 2019 21:28:04 +0000
+	id 1iIfzs-0007UC-A8; Thu, 10 Oct 2019 21:29:20 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIfyb-00075e-TG; Thu, 10 Oct 2019 21:28:03 +0000
+ id 1iIfzp-0007Tk-J2; Thu, 10 Oct 2019 21:29:18 +0000
 Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
  helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iIfyZ-0007AU-TP; Thu, 10 Oct 2019 23:27:59 +0200
+ id 1iIfzl-0007B2-J1; Thu, 10 Oct 2019 23:29:13 +0200
 From: Heiko Stuebner <heiko@sntech.de>
 To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: Enable nanopi4 HDMI audio
-Date: Thu, 10 Oct 2019 23:27:59 +0200
-Message-ID: <16038581.NyrPi82bol@phil>
-In-Reply-To: <7fe6e94e4b9f5986f19f2637b7b716f0cb54de1b.1570444701.git.robin.murphy@arm.com>
-References: <7fe6e94e4b9f5986f19f2637b7b716f0cb54de1b.1570444701.git.robin.murphy@arm.com>
+Subject: Re: [PATCH] arm64: dts: rockchip: Update nanopi4 phy reset properties
+Date: Thu, 10 Oct 2019 23:29:12 +0200
+Message-ID: <2606862.TP9lFruHDT@phil>
+In-Reply-To: <4d16c24ae3651a2119cf5bb1213f46a9fce4b39a.1570444773.git.robin.murphy@arm.com>
+References: <4d16c24ae3651a2119cf5bb1213f46a9fce4b39a.1570444773.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_142802_095290_7CE33B71 
-X-CRM114-Status: UNSURE (   9.09  )
+X-CRM114-CacheID: sfid-20191010_142917_775291_BE80C29E 
+X-CRM114-Status: UNSURE (   9.29  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -65,8 +65,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Montag, 7. Oktober 2019, 13:33:25 CEST schrieb Robin Murphy:
-> All the nanopi4 boards have HDMI, so let them make noise on it.
+Am Montag, 7. Oktober 2019, 13:33:26 CEST schrieb Robin Murphy:
+> Use the now-preferred generic phy reset properties instead of the
+> dwmac-specific ones.
 > 
 > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 
