@@ -2,53 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18C24D3C74
-	for <lists+linux-rockchip@lfdr.de>; Fri, 11 Oct 2019 11:33:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA549D3C73
+	for <lists+linux-rockchip@lfdr.de>; Fri, 11 Oct 2019 11:33:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bAd9m6bFs7DfstgQvyFCo46Aupq7DWP5MKKSNGb6hdI=; b=dH6bcYityW39Kq
-	XcS8WN5cEzSrWZXLv5VEky+pyegW+9JelgdxIXwC+m+ypFNoexbRaF2xUNWGPgWw9sEDkscIcvpYi
-	uPhHtEXGag+MuCc97dCScv3HiUzEzkeXHmv2iKuq8Bg+hcN1NOGU+xlPiFKNnHB+c0KoylTfs2XCR
-	VOjrRYWLwraGbf6ZZrsHdmGbbVr6GYaWIQE1f/eqNXVuEG/cBJtjtgw5dn2Chwk9rJKtqzP1Woyvu
-	5lvZOsHT9cW9ZZWufPhY24GPJxU5j+GZIu6xj04EPFwCJntPMfY6wBwv7EDtQXvqRa8gvpRon0GqI
-	AMJZQgCQDgX8EmT9wixA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AwebLsz5TAVy6Ja+KafAqRiqSjlVPRvphnWMuCP2mhI=; b=tb0tlrAlhc7q3j
+	X2LEd5Z6MzsVmEhf1nPSQGw6ovVdCTSc3E3ZR3ntEIZH88NKahIqIWUzKayOp4MMWODEoOv2D+60S
+	LPR1IHrQFZABkihj2qTXt3p8/hf0bvCzK1N4KWp6gvfKoc4uNI96dIywH+J4i4kp0yOLXFzZttOtx
+	Y6MoVcO9luS2D6MMJhlK6suRVCacHUnL9sCbrexlRwsGY0Jrkem8iAw3wifBjO6vTNz9tOnRUApkj
+	jVJpNGFKOfa9Fad5DtuiYXCrqIxj+vLmo/mTwngwzxAFf0mLBYmZxWomF12LJYG6++ItuDsjO7G2m
+	3lj4f0o4E5VBS+60ESZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIrJ2-0002XW-OU; Fri, 11 Oct 2019 09:33:52 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1iIrJ4-0002YB-AZ; Fri, 11 Oct 2019 09:33:54 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIrIy-0002Vf-8G
- for linux-rockchip@lists.infradead.org; Fri, 11 Oct 2019 09:33:49 +0000
+ id 1iIrIy-0002Vh-Kw
+ for linux-rockchip@lists.infradead.org; Fri, 11 Oct 2019 09:33:50 +0000
 Received: from localhost.localdomain (unknown
  [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 18E3F290D69;
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id AAF2D290D6A;
  Fri, 11 Oct 2019 10:33:46 +0100 (BST)
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: Mauro Carvalho Chehab <mchehab@kernel.org>,
  Hans Verkuil <hans.verkuil@cisco.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Sakari Ailus <sakari.ailus@iki.fi>, linux-media@vger.kernel.org
-Subject: [RESEND PATCH v2 0/4] media: rockchip: Add the rkvdec driver
-Date: Fri, 11 Oct 2019 11:33:38 +0200
-Message-Id: <20191011093342.3471-1-boris.brezillon@collabora.com>
+Subject: [RESEND PATCH v2 1/4] media: vb2: Add a helper to get the vb2 buffer
+ attached to a request
+Date: Fri, 11 Oct 2019 11:33:39 +0200
+Message-Id: <20191011093342.3471-2-boris.brezillon@collabora.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20191011093342.3471-1-boris.brezillon@collabora.com>
+References: <20191011093342.3471-1-boris.brezillon@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_023348_427765_CFA47471 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20191011_023348_812870_85F4FF50 
+X-CRM114-Status: GOOD (  12.22  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -75,60 +76,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hello,
+vb2_request_get_buf() returns the N-th buffer attached to a media
+request.
 
-Sorry for the noise, I forgot to Cc the DT maintainers/ML on my last
-attempt.
+Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+---
+Changes in v2:
+* Adjust the kernel doc as suggested by Hans
+---
+ .../media/common/videobuf2/videobuf2-core.c   | 23 +++++++++++++++++++
+ include/media/videobuf2-core.h                | 11 +++++++++
+ 2 files changed, 34 insertions(+)
 
-This is v2 of the rkvdec driver which was initially posted as part of
-my RFC adding codec helpers.
-For this version, I decided to get rid of the helper stuff which is
-likely to take some more time to settle. The patchset now contains a
-proper DT binding doc.
-
-Note that this implementation is likely to be adjusted based on the
-outcome of the 'scaling matrix order' [1] and 'dynamic resolution
-changes' [2] discussions, but I thought it'd be worth posting this
-version to start getting feeback.
-
-Regards,
-
-Boris
-
-[1]https://patchwork.kernel.org/cover/11125207/
-[2]https://lkml.org/lkml/2019/9/3/1033
-
-Boris Brezillon (4):
-  media: vb2: Add a helper to get the vb2 buffer attached to a request
-  media: dt-bindings: rockchip: Document RK3399 Video Decoder bindings
-  media: rockchip: Add the rkvdec driver
-  arm64: dts: rockchip: rk3399: Define the rockchip Video Decoder node
-
- .../bindings/media/rockchip,vdec.yaml         |   71 ++
- arch/arm64/boot/dts/rockchip/rk3399.dtsi      |   14 +-
- .../media/common/videobuf2/videobuf2-core.c   |   23 +
- drivers/staging/media/Kconfig                 |    2 +
- drivers/staging/media/Makefile                |    1 +
- drivers/staging/media/rockchip/Kconfig        |   16 +
- drivers/staging/media/rockchip/Makefile       |    2 +
- drivers/staging/media/rockchip/vdec/Kconfig   |   14 +
- drivers/staging/media/rockchip/vdec/Makefile  |    3 +
- .../staging/media/rockchip/vdec/rkvdec-h264.c |  960 +++++++++++++++
- .../staging/media/rockchip/vdec/rkvdec-regs.h |  306 +++++
- drivers/staging/media/rockchip/vdec/rkvdec.c  | 1089 +++++++++++++++++
- drivers/staging/media/rockchip/vdec/rkvdec.h  |  131 ++
- include/media/videobuf2-core.h                |   11 +
- 14 files changed, 2642 insertions(+), 1 deletion(-)
- create mode 100644 Documentation/devicetree/bindings/media/rockchip,vdec.yaml
- create mode 100644 drivers/staging/media/rockchip/Kconfig
- create mode 100644 drivers/staging/media/rockchip/Makefile
- create mode 100644 drivers/staging/media/rockchip/vdec/Kconfig
- create mode 100644 drivers/staging/media/rockchip/vdec/Makefile
- create mode 100644 drivers/staging/media/rockchip/vdec/rkvdec-h264.c
- create mode 100644 drivers/staging/media/rockchip/vdec/rkvdec-regs.h
- create mode 100644 drivers/staging/media/rockchip/vdec/rkvdec.c
- create mode 100644 drivers/staging/media/rockchip/vdec/rkvdec.h
-
+diff --git a/drivers/media/common/videobuf2/videobuf2-core.c b/drivers/media/common/videobuf2/videobuf2-core.c
+index 4489744fbbd9..c4c7980dcb0d 100644
+--- a/drivers/media/common/videobuf2/videobuf2-core.c
++++ b/drivers/media/common/videobuf2/videobuf2-core.c
+@@ -1416,6 +1416,29 @@ unsigned int vb2_request_buffer_cnt(struct media_request *req)
+ }
+ EXPORT_SYMBOL_GPL(vb2_request_buffer_cnt);
+ 
++struct vb2_buffer *vb2_request_get_buf(struct media_request *req,
++				       unsigned int n)
++{
++	struct media_request_object *obj;
++	struct vb2_buffer *buf = NULL;
++	unsigned int nbufs = 0;
++	unsigned long flags;
++
++	spin_lock_irqsave(&req->lock, flags);
++	list_for_each_entry(obj, &req->objects, list) {
++		if (!vb2_request_object_is_buffer(obj) ||
++		    nbufs++ < n)
++			continue;
++
++		buf = container_of(obj, struct vb2_buffer, req_obj);
++		break;
++	}
++	spin_unlock_irqrestore(&req->lock, flags);
++
++	return buf;
++}
++EXPORT_SYMBOL_GPL(vb2_request_get_buf);
++
+ int vb2_core_prepare_buf(struct vb2_queue *q, unsigned int index, void *pb)
+ {
+ 	struct vb2_buffer *vb;
+diff --git a/include/media/videobuf2-core.h b/include/media/videobuf2-core.h
+index 640aabe69450..d363476712dd 100644
+--- a/include/media/videobuf2-core.h
++++ b/include/media/videobuf2-core.h
+@@ -1222,4 +1222,15 @@ bool vb2_request_object_is_buffer(struct media_request_object *obj);
+  */
+ unsigned int vb2_request_buffer_cnt(struct media_request *req);
+ 
++/**
++ * vb2_request_get_buf() - return the buffer at index @idx
++ *
++ * @req:	the request.
++ * @n:		search for the Nth buffer in the req object list
++ *
++ * Return a vb2 buffer or NULL if there's no buffer at the specified position
++ */
++struct vb2_buffer *vb2_request_get_buf(struct media_request *req,
++				       unsigned int n);
++
+ #endif /* _MEDIA_VIDEOBUF2_CORE_H */
 -- 
 2.21.0
 
