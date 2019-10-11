@@ -2,55 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93C0AD4576
-	for <lists+linux-rockchip@lfdr.de>; Fri, 11 Oct 2019 18:30:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90A4CD46C0
+	for <lists+linux-rockchip@lfdr.de>; Fri, 11 Oct 2019 19:38:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Oi28EMzR/TMMtwNGKL8yv26z1993iKGpUsZjgGpXSwo=; b=m9/8kSYCOsFrLNn60B/36LYcl
-	kxVPLg66V0SIpmBu2LA+ZOxakI3dUgeFYYNeroCFr21GOdTrhF1FBIVpcji7hK9L/2jxEY5sRokqW
-	MjDCQgjWiMrTLkJGNKlxnMASTLCBFVaUyfs1yneMpKTTTQeiH4rskHwwNOJePmomRkqZdOTuOh7bA
-	H5n7CGIZArmjL2s4Opmc+dkhoLeAgbxfVIVls4a14DxKSYCmsF1CW8hEvheJMmHWAOUvjsTNyvlAp
-	batNFlnBqKVapMPOUlAkI3CiHY2KeugODgeIv3D7HyTT8fALxlBvK4oDCHvieiFc4NfYAej5r++Ww
-	CRsOxfyhg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bHau4D/ehIyNgGzb4BQxwjI+KiDZhFPbhC6IzxAdoDs=; b=KwDMHOFQaUXMTq
+	MZ15fEMaH+WAkhyIM/IodLPcVWGtsrjsUIXT7sNNEd1gvL3h/eUhcdHIWv2I/Ut/oczdfKPPkJW3Y
+	U8UPWeB6W0txQwrRMWbvEQccJg7TPwl4qKWk0hK1nSI/UJTTTN0JvmB5qtvsegK7o1sjgVR8sHAcr
+	+tsrlgBczar2UCXclR3e9z8ZUgpICiw+MXo7y/njJCX2LY5EcLJ3XaxIuH189qs3KibyjlNrdusKI
+	3n6pDqKMGkkEkubSD+PNaqySVwbt0RWfR0EsknfGOVtiym00gCm77Wnkw65KLNES0jW5bKNintjbH
+	vQ7XyIswOahpEDrarHKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIxoI-0000xy-Qi; Fri, 11 Oct 2019 16:30:34 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIxnn-0007jg-FI; Fri, 11 Oct 2019 16:30:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3AD8528;
- Fri, 11 Oct 2019 09:30:02 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5FBDA3F71A;
- Fri, 11 Oct 2019 09:30:01 -0700 (PDT)
-Subject: Re: [PATCH] arm64: dts: rockchip: Add Beelink A1
-To: =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>
-References: <9037b7edbbb41cbbf699ebe3a511daf22d886e7d.1570444695.git.robin.murphy@arm.com>
- <CAL_JsqKBy+i+=gGyYhBgcMUYsWd_CL_GnEoQqALBb+Gy7Ogb6A@mail.gmail.com>
- <4c490e48-7a85-4ef9-771c-165defde39cc@arm.com> <5779329.sYoq9m6zvk@diego>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <881153a5-3baf-3af1-2960-460abc83598d@arm.com>
-Date: Fri, 11 Oct 2019 17:30:00 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1iIyrm-00006o-O9; Fri, 11 Oct 2019 17:38:14 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIyrj-000066-Bl
+ for linux-rockchip@lists.infradead.org; Fri, 11 Oct 2019 17:38:12 +0000
+Received: from mail-qt1-f175.google.com (mail-qt1-f175.google.com
+ [209.85.160.175])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 949D42084C
+ for <linux-rockchip@lists.infradead.org>; Fri, 11 Oct 2019 17:38:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570815490;
+ bh=l+5ry87cxUtxYXHePyh81P8HafboxiTuOzmN9VqhiJk=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=LlRKD5M91iiGyBEiY0WgbIp+afnfa2s28rl6m3oq5svRoCoM77KNkx+KrFBm3Ouq5
+ bdOY6SCQO9x5JELKmu8F/X9Ea7kkjN8cLWRcL1t5EEABgYFVY9z3AOISoJAt5a9gCG
+ dNO3ih5J2s/JITd9OHnonOLX8bqXb1CI2muS/pSo=
+Received: by mail-qt1-f175.google.com with SMTP id t20so9646105qtr.10
+ for <linux-rockchip@lists.infradead.org>; Fri, 11 Oct 2019 10:38:10 -0700 (PDT)
+X-Gm-Message-State: APjAAAV8Dnn9GklMvdgEe/pSpSRuP2VATjddeGkIi+YmArHZtk1oWzTs
+ laC2Hf2Nkjfb5d6YPWcCLOqwwrl+pS6MHEHFdg==
+X-Google-Smtp-Source: APXvYqwefuFruP6xMHJnlcnKESPKmjjJZuruOEWzYmtK0vmrBCSga7oWWWnX/81OUdxUtsLgTzs6BSUeax/tyfAD1kQ=
+X-Received: by 2002:a05:6214:407:: with SMTP id
+ z7mr17009701qvx.79.1570815489727; 
+ Fri, 11 Oct 2019 10:38:09 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <5779329.sYoq9m6zvk@diego>
-Content-Language: en-GB
+References: <20191011093342.3471-1-boris.brezillon@collabora.com>
+ <20191011093342.3471-3-boris.brezillon@collabora.com>
+ <CAL_JsqL_6xPyb4kTDR3dbLc4Uptwox=1F4zaGjHVmahNyk25=w@mail.gmail.com>
+ <20191011145625.694238b1@dhcp-172-31-174-146.wireless.concordia.ca>
+In-Reply-To: <20191011145625.694238b1@dhcp-172-31-174-146.wireless.concordia.ca>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Fri, 11 Oct 2019 12:37:57 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqJYs3RaVqeFFuMbCSJMrWY7t=S=wWWpo5syL2ONag_woA@mail.gmail.com>
+Message-ID: <CAL_JsqJYs3RaVqeFFuMbCSJMrWY7t=S=wWWpo5syL2ONag_woA@mail.gmail.com>
+Subject: Re: [RESEND PATCH v2 2/4] media: dt-bindings: rockchip: Document
+ RK3399 Video Decoder bindings
+To: Boris Brezillon <boris.brezillon@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_093003_642881_9EEB6FCC 
-X-CRM114-Status: GOOD (  25.27  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191011_103811_447349_80D2E59E 
+X-CRM114-Status: GOOD (  14.98  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,182 +89,62 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ kernel@collabora.com, Heiko Stuebner <heiko@sntech.de>,
+ Jonas Karlman <jonas@kwiboo.se>, Tomasz Figa <tfiga@chromium.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, devicetree@vger.kernel.org
+ Sakari Ailus <sakari.ailus@iki.fi>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Nicolas Dufresne <nicolas@ndufresne.ca>, Hans Verkuil <hans.verkuil@cisco.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 11/10/2019 15:19,  wrote:
-> Am Freitag, 11. Oktober 2019, 14:20:38 CEST schrieb Robin Murphy:
->> On 07/10/2019 13:53, Rob Herring wrote:
->>> On Mon, Oct 7, 2019 at 6:33 AM Robin Murphy <robin.murphy@arm.com> wrote:
->>>>
->>>> Beelink A1 is a TV box implementing the higher-end options of the
->>>> RK3328 reference design - the DTB from the stock Android firmware is
->>>> clearly the "rk3328-box-plus" variant from the Rockchip 3.10 BSP with
->>>> minor modifications to accommodate the USB WiFi module and additional
->>>> VFD-style LED driver. It features:
->>>>
->>>> - 4GB of 32-bit LPDDR3
->>>> - 16GB of HS200 eMMC (newer models with 32GB also exist)
->>>> - Realtek RTL8211F phy for gigabit ethernet
->>>> - Fn-Link 6221E-UUC module (RealTek RTL8821CU) for 11ac WiFi and Bluetooth 4.2
->>>> - HDMI and analog A/V
->>>> - 1x USB 3.0 type A host, 1x USB 2.0 type A OTG, 1x micro SD
->>>> - IR receiver and a neat little LED clock display.
->>>>
->>>> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
->>>> ---
->>>>
->>>> One question I'm wondering about is whether it's worth pushing the HDMI
->>>> and analog codec audio cards down into rk3328.dtsi (as with HDMI audio
->>>> on RK3399), since those audio pipelines are internal to the SoC and the
->>>> board only really governs whether the outputs are wired up or not.
->>>
->>> Seems reasonable. One other candidate below.
->>>
->>>>
->>>>    .../devicetree/bindings/arm/rockchip.yaml     |   5 +
->>>
->>> In the future, please split bindings to a separate patch.
->>
->> Ha, busted! I thought this might be trivial enough to slip through, but
->> I'll split it out if you prefer.
->>
->>>>    arch/arm64/boot/dts/rockchip/Makefile         |   1 +
->>>>    arch/arm64/boot/dts/rockchip/rk3328-a1.dts    | 399 ++++++++++++++++++
->>>>    3 files changed, 405 insertions(+)
->>>>    create mode 100644 arch/arm64/boot/dts/rockchip/rk3328-a1.dts
->>>>
->>>> diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
->>>> index c82c5e57d44c..f27f7805f57e 100644
->>>> --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
->>>> +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
->>>> @@ -40,6 +40,11 @@ properties:
->>>>              - const: asus,rk3288-tinker-s
->>>>              - const: rockchip,rk3288
->>>>
->>>> +      - description: Beelink A1
->>>> +        items:
->>>> +          - const: azw,beelink-a1
->>>> +          - const: rockchip,rk3328
->>>> +
->>>>          - description: bq Curie 2 tablet
->>>>            items:
->>>>              - const: mundoreader,bq-curie2
->>>> diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
->>>> index 1f18a9392d15..a6f250e7cde2 100644
->>>> --- a/arch/arm64/boot/dts/rockchip/Makefile
->>>> +++ b/arch/arm64/boot/dts/rockchip/Makefile
->>>> @@ -1,5 +1,6 @@
->>>>    # SPDX-License-Identifier: GPL-2.0
->>>>    dtb-$(CONFIG_ARCH_ROCKCHIP) += px30-evb.dtb
->>>> +dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-a1.dtb
->>>>    dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb.dtb
->>>>    dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-rock64.dtb
->>>>    dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-roc-cc.dtb
->>>> diff --git a/arch/arm64/boot/dts/rockchip/rk3328-a1.dts b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
->>>> new file mode 100644
->>>> index 000000000000..03ad663ff821
->>>> --- /dev/null
->>>> +++ b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
->>>> @@ -0,0 +1,399 @@
->>>> +// SPDX-License-Identifier: (GPL-2.0-only OR MIT)
->>>> +// Copyright (c) 2017-2019 Arm Ltd.
->>>> +
->>>> +/dts-v1/;
->>>> +#include "rk3328.dtsi"
->>>> +
->>>> +/ {
->>>> +       model = "Beelink A1";
->>>> +       compatible = "azw,beelink-a1", "rockchip,rk3328";
->>>> +
->>>> +       /*
->>>> +        * UART pins, as viewed with bottom of case removed:
->>>> +        *
->>>> +        *           Front
->>>> +        *        /-------
->>>> +        *  L    / o <- Gnd
->>>> +        *  e   / o <-- Rx
->>>> +        *  f  / o <--- Tx
->>>> +        *  t / o <---- +3.3v
->>>> +        *    |
->>>> +        */
->>>> +       chosen {
->>>> +               stdout-path = "serial2:1500000n8";
->>>> +       };
->>>> +
->>>> +       gmac_clkin: external-gmac-clock {
->>>> +               compatible = "fixed-clock";
->>>> +               clock-frequency = <125000000>;
->>>> +               clock-output-names = "gmac_clkin";
->>>> +               #clock-cells = <0>;
->>>> +       };
->>>> +
->>>> +       vcc_host_5v: usb3-current-switch {
->>>> +               compatible = "regulator-fixed";
->>>> +               enable-active-high;
->>>> +               gpio = <&gpio0 RK_PA0 GPIO_ACTIVE_HIGH>;
->>>> +               pinctrl-names = "default";
->>>> +               pinctrl-0 = <&usb30_host_drv>;
->>>> +               regulator-name = "vcc_host_5v";
->>>> +               vin-supply = <&vcc_sys>;
->>>> +       };
->>>> +
->>>> +       vcc_sys: vcc-sys {
->>>> +               compatible = "regulator-fixed";
->>>> +               regulator-name = "vcc_sys";
->>>> +               regulator-min-microvolt = <5000000>;
->>>> +               regulator-max-microvolt = <5000000>;
->>>> +       };
->>>> +
->>>> +       cpus {
->>>> +               idle-states {
->>>> +                       entry-method = "arm,psci";
->>>> +
->>>> +                       cpu_sleep: cpu-sleep {
->>>> +                               compatible = "arm,idle-state";
->>>> +                               arm,psci-suspend-param = <0x0010000>;
->>>> +                               local-timer-stop;
->>>> +                               entry-latency-us = <120>;
->>>> +                               exit-latency-us = <250>;
->>>> +                               min-residency-us = <900>;
->>>
->>> This doesn't seem like something that's board specific, but I guess
->>> the regulator could have some influence on these times. If so, the
->>> board file could always override a default.
->>
->> True, this is traceable back to the Rockchip Android BSP where it's
->> actually applied to the entire SoC family[1]. I don't know if there's
->> likely to be any difference between the downstream "RKTRUST" firmware
->> binaries (which this nominally represents) and upstream ATF in terms of
->> their PSCI implementation/performance.
->>
->> I've not got round to properly tinkering with suspend/resume and power
->> management stuff yet, so I guess another option would be to just forget
->> about this part for now - Heiko, any opinions?
-> 
-> I think nobody actually knows what goes on in Rockchip's binary ATF
-> variant, which is the reason I dislike it so much ;-) .
-> 
-> What's in the upstream sources should always take precedent. Looking
-> at rk3399 as an example where they had oversight from ChromeOS people
-> there are idle-states in rk3399.dtsi and I guess there should be a
-> counterpart int ATF.
-> 
-> The idle-state values also match rk3399's cpu-sleep, so seem pretty
-> standard. So should just go into rk3328.dtsi after someone could verify
-> that this works with upstream ATF.
+On Fri, Oct 11, 2019 at 7:56 AM Boris Brezillon
+<boris.brezillon@collabora.com> wrote:
+>
+> On Fri, 11 Oct 2019 07:50:16 -0500
+> Rob Herring <robh+dt@kernel.org> wrote:
+>
+> > On Fri, Oct 11, 2019 at 4:33 AM Boris Brezillon
+> > <boris.brezillon@collabora.com> wrote:
+> > >
+> > > Document the Rockchip RK3399 Video Decoder bindings.
+> >
+> > You need some more headers for the example (or drop defines):
+> >
+> > Error: Documentation/devicetree/bindings/media/rockchip,vdec.example.dts:23.28-29
+> > syntax error
+> > FATAL ERROR: Unable to parse input tree
+> > scripts/Makefile.lib:321: recipe for target
+> > 'Documentation/devicetree/bindings/media/rockchip,vdec.example.dt.yaml'
+> > failed
+> > make[1]: *** [Documentation/devicetree/bindings/media/rockchip,vdec.example.dt.yaml]
+> > Error 1
+> > Makefile:1282: recipe for target 'dt_binding_check' failed
+> > make: *** [dt_binding_check] Error 2
+>
+> Will fix that. BTW, I tried running make dtbs_check and faced a few
+> errors on other yaml files (which is why I ended up sending the patch
+> without fully validating the schema). Maybe those have been fixed (I'm
+> based on the media tree which is based on 5.4-rc1).
 
-OK, I'll drop this from the board DTS and have a crack at building some 
-new firmware to investigate adding it to the SoC DTSI.
+Several fixes went into -rc2, but there's 2 fixes not in -rc2 (but are in next).
 
-Cheers,
-Robin.
+> Oh, and I also noticed that the generated example has
+> #address-cells = <1>, #size-cells = <1> in the parent node, while my
+> example expects <2>. Is there any way I can specify that somewhere, or
+> should I just tweak the example to use 1 cell instead?
+
+I think you can override it just adding '#address-cells = <2>;' or
+tweak the example.
+
+Rob
 
 _______________________________________________
 Linux-rockchip mailing list
