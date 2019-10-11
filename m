@@ -2,49 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8703BD3C05
-	for <lists+linux-rockchip@lfdr.de>; Fri, 11 Oct 2019 11:12:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18C24D3C74
+	for <lists+linux-rockchip@lfdr.de>; Fri, 11 Oct 2019 11:33:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Oo5syz5FNSqEskiRYD4iV4SJMoarBRahUP4001+LVG8=; b=eqR5h1FhK+UvWF
-	C9fvdlmh2z0u8ekwtCbZj2NXiAf0PuoEsHzrBW36SDFZXwPxfx9TuhZ6Jo1hYGm9+sihPM/+aXxej
-	ZUoRfWjo92NC97Fm+i83Ql9l6oWBEwJurOeyFk6u/wX2NF5Q28CPIe+jz5ci4ty4346g3hprproRC
-	uLsfQOqq1w81XkEyuZXA5gbDUbIZR3TdgKr/VT117jDmMRdMvpbfowP1A16fBdnId2Pw9ZzxgJHYg
-	vx4Yklu54xx4/+i3TzGKAIazV+rxFdBCoSYspWpf7k8Hg+m5OS/PEpNPu0+8rjhQi8WzHDB1b/FgV
-	fCMwl3TgJBGfNjr62Slw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bAd9m6bFs7DfstgQvyFCo46Aupq7DWP5MKKSNGb6hdI=; b=dH6bcYityW39Kq
+	XcS8WN5cEzSrWZXLv5VEky+pyegW+9JelgdxIXwC+m+ypFNoexbRaF2xUNWGPgWw9sEDkscIcvpYi
+	uPhHtEXGag+MuCc97dCScv3HiUzEzkeXHmv2iKuq8Bg+hcN1NOGU+xlPiFKNnHB+c0KoylTfs2XCR
+	VOjrRYWLwraGbf6ZZrsHdmGbbVr6GYaWIQE1f/eqNXVuEG/cBJtjtgw5dn2Chwk9rJKtqzP1Woyvu
+	5lvZOsHT9cW9ZZWufPhY24GPJxU5j+GZIu6xj04EPFwCJntPMfY6wBwv7EDtQXvqRa8gvpRon0GqI
+	AMJZQgCQDgX8EmT9wixA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIqya-0000QO-Q9; Fri, 11 Oct 2019 09:12:44 +0000
+	id 1iIrJ2-0002XW-OU; Fri, 11 Oct 2019 09:33:52 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIqyX-0000OD-Qp
- for linux-rockchip@lists.infradead.org; Fri, 11 Oct 2019 09:12:43 +0000
+ id 1iIrIy-0002Vf-8G
+ for linux-rockchip@lists.infradead.org; Fri, 11 Oct 2019 09:33:49 +0000
 Received: from localhost.localdomain (unknown
  [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 538F8290D4D;
- Fri, 11 Oct 2019 10:12:40 +0100 (BST)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 18E3F290D69;
+ Fri, 11 Oct 2019 10:33:46 +0100 (BST)
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: Mauro Carvalho Chehab <mchehab@kernel.org>,
  Hans Verkuil <hans.verkuil@cisco.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Sakari Ailus <sakari.ailus@iki.fi>, linux-media@vger.kernel.org
-Subject: [PATCH v2 4/4] arm64: dts: rockchip: rk3399: Define the rockchip
- Video Decoder node
-Date: Fri, 11 Oct 2019 11:12:36 +0200
-Message-Id: <20191011091236.1987-1-boris.brezillon@collabora.com>
+Subject: [RESEND PATCH v2 0/4] media: rockchip: Add the rkvdec driver
+Date: Fri, 11 Oct 2019 11:33:38 +0200
+Message-Id: <20191011093342.3471-1-boris.brezillon@collabora.com>
 X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20191011090939.1377-1-boris.brezillon@collabora.com>
-References: <20191011090939.1377-1-boris.brezillon@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_021241_999448_854C211E 
-X-CRM114-Status: GOOD (  12.26  )
+X-CRM114-CacheID: sfid-20191011_023348_427765_CFA47471 
+X-CRM114-Status: GOOD (  12.07  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -66,10 +63,11 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Tomasz Figa <tfiga@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
  Jonas Karlman <jonas@kwiboo.se>, Nicolas Dufresne <nicolas@ndufresne.ca>,
  Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
  Boris Brezillon <boris.brezillon@collabora.com>, kernel@collabora.com,
  Ezequiel Garcia <ezequiel@collabora.com>
 Content-Type: text/plain; charset="us-ascii"
@@ -77,40 +75,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-RK3399 has a Video decoder, define the node in the dtsi. We also add
-the missing power-domain in mmu node and enable the block.
+Hello,
 
-Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
----
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 14 +++++++++++++-
- 1 file changed, 13 insertions(+), 1 deletion(-)
+Sorry for the noise, I forgot to Cc the DT maintainers/ML on my last
+attempt.
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index cede1ad81be2..e00235109483 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -1276,8 +1276,20 @@
- 		interrupt-names = "vdec_mmu";
- 		clocks = <&cru ACLK_VDU>, <&cru HCLK_VDU>;
- 		clock-names = "aclk", "iface";
-+		power-domains = <&power RK3399_PD_VDU>;
- 		#iommu-cells = <0>;
--		status = "disabled";
-+	};
-+
-+	vdec: video-codec@ff660000 {
-+		compatible = "rockchip,rk3399-vdec";
-+		reg = <0x0 0xff660000 0x0 0x400>;
-+		interrupts = <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH 0>;
-+		interrupt-names = "vdpu";
-+		clocks = <&cru ACLK_VDU>, <&cru HCLK_VDU>,
-+			 <&cru SCLK_VDU_CA>, <&cru SCLK_VDU_CORE>;
-+		clock-names = "aclk", "iface", "cabac", "core";
-+		power-domains = <&power RK3399_PD_VDU>;
-+		iommus = <&vdec_mmu>;
- 	};
- 
- 	iep_mmu: iommu@ff670800 {
+This is v2 of the rkvdec driver which was initially posted as part of
+my RFC adding codec helpers.
+For this version, I decided to get rid of the helper stuff which is
+likely to take some more time to settle. The patchset now contains a
+proper DT binding doc.
+
+Note that this implementation is likely to be adjusted based on the
+outcome of the 'scaling matrix order' [1] and 'dynamic resolution
+changes' [2] discussions, but I thought it'd be worth posting this
+version to start getting feeback.
+
+Regards,
+
+Boris
+
+[1]https://patchwork.kernel.org/cover/11125207/
+[2]https://lkml.org/lkml/2019/9/3/1033
+
+Boris Brezillon (4):
+  media: vb2: Add a helper to get the vb2 buffer attached to a request
+  media: dt-bindings: rockchip: Document RK3399 Video Decoder bindings
+  media: rockchip: Add the rkvdec driver
+  arm64: dts: rockchip: rk3399: Define the rockchip Video Decoder node
+
+ .../bindings/media/rockchip,vdec.yaml         |   71 ++
+ arch/arm64/boot/dts/rockchip/rk3399.dtsi      |   14 +-
+ .../media/common/videobuf2/videobuf2-core.c   |   23 +
+ drivers/staging/media/Kconfig                 |    2 +
+ drivers/staging/media/Makefile                |    1 +
+ drivers/staging/media/rockchip/Kconfig        |   16 +
+ drivers/staging/media/rockchip/Makefile       |    2 +
+ drivers/staging/media/rockchip/vdec/Kconfig   |   14 +
+ drivers/staging/media/rockchip/vdec/Makefile  |    3 +
+ .../staging/media/rockchip/vdec/rkvdec-h264.c |  960 +++++++++++++++
+ .../staging/media/rockchip/vdec/rkvdec-regs.h |  306 +++++
+ drivers/staging/media/rockchip/vdec/rkvdec.c  | 1089 +++++++++++++++++
+ drivers/staging/media/rockchip/vdec/rkvdec.h  |  131 ++
+ include/media/videobuf2-core.h                |   11 +
+ 14 files changed, 2642 insertions(+), 1 deletion(-)
+ create mode 100644 Documentation/devicetree/bindings/media/rockchip,vdec.yaml
+ create mode 100644 drivers/staging/media/rockchip/Kconfig
+ create mode 100644 drivers/staging/media/rockchip/Makefile
+ create mode 100644 drivers/staging/media/rockchip/vdec/Kconfig
+ create mode 100644 drivers/staging/media/rockchip/vdec/Makefile
+ create mode 100644 drivers/staging/media/rockchip/vdec/rkvdec-h264.c
+ create mode 100644 drivers/staging/media/rockchip/vdec/rkvdec-regs.h
+ create mode 100644 drivers/staging/media/rockchip/vdec/rkvdec.c
+ create mode 100644 drivers/staging/media/rockchip/vdec/rkvdec.h
+
 -- 
 2.21.0
 
