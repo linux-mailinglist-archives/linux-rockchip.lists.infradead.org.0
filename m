@@ -2,80 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3611D3F1F
-	for <lists+linux-rockchip@lfdr.de>; Fri, 11 Oct 2019 13:59:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EC2BD3F5E
+	for <lists+linux-rockchip@lfdr.de>; Fri, 11 Oct 2019 14:20:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p4bIKSCVew1AdkLY8J013aZuvqwopM7yzDrbzFqokfo=; b=XDPHm2gVPa/HCZ
-	QCT7i/bnrwSJg3nZDZ5TPOI1oHyLN+TllA/K2i9g3QlR3pSoEPhKzUMLcGwVqtrysu95jCXQi01nh
-	mbG3YffG3cnZ8sCAYD6UpJ7ePiJTI1Y0AnNGPvIhltv+8kgaueu37WPpV/dn3b/zoco7gpcvEobvi
-	5uYuNyUAe/kZ2KILUml7CGsKeoi2lQN9RR4tTR2Wu5hQXZ3VYvWLEUa6hEODCZnXNjBCOy2Al4XeB
-	PsanTqjMhEIfjuS9nFdl49JoSmEgQOyXAfWT5uwwXBNkUfLdEHK/WOlEj9qojvjZPUk7qObutsxLH
-	NQqeJ4NeZq7HydwMxriA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=24atFqELD7Ktkruk9/OomDsaqcPf0XJUXGvMNWd/pMQ=; b=rGXsrenR3O9meaG2gRMI2JUK+
+	PSfMURRD3PuL4fPU997sSr0AhQw2uFOSQImKX9ousXVEjCnwd7mBhg4YwuFvm7KDTK820UOVJgd3G
+	CWli8mirLV+KfrN12hDzHEX7ySVmEJM6jQeq0ytZABn2oGFaLKrt9iZHeqKWCeghDpHENlUhBZ9E9
+	k7vErAWNgmhu0PN0nMwT0Of16rigkboB0/vcrBqWIRbM8z+aAXTBb3O+M2CDzw6SSK6JASTuKNwOj
+	kFgd3IIuoB2l4qW7BLaNfYgGGF1eyzEMhfJIZljpWtDuNBoJJPhJf1f3khk29/BZEfL1KAVxE1pGQ
+	qtrMLxQsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iItZw-0006EZ-Do; Fri, 11 Oct 2019 11:59:28 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iItZj-000665-LY
- for linux-rockchip@lists.infradead.org; Fri, 11 Oct 2019 11:59:16 +0000
-Received: by mail-lj1-x241.google.com with SMTP id l21so9566150lje.4
- for <linux-rockchip@lists.infradead.org>; Fri, 11 Oct 2019 04:59:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=fooishbar-org.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=qZxcysWcGBjK40AA/XUOIdw3iHtZgIgHG9FtdNWtwBI=;
- b=Zk7zrYDiiAloCyPwmmtaBGLskO2Fx1VMfLtS0bvFGEfrMXwqWjgwR0fLfvMCm0mhNb
- CvaDy0a+1pSt6z/9qZkexB2994P9n/iUPRpzZL7ZHOUacbuyY2ZAbPSQJQcTp3Xkl99p
- Py83bspMfff+i7yzB2pP/ZM5cHgVwagS0RKJHIFBsklI6O44CO+pY/NF8aZBbb+WT7Ep
- e3UTNNptN5s+r5NWbU+5gAv2U4bxSS2MOHZbK4rmM2X+fRvYidMhfxKcE3+6y+zc5SrG
- kSFEpHjXj3MNmevmM1KqxBJSl7swdsnabGzHoo9gG3j6zN818LNg0U24WI49R/W+Jq6d
- m+SA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=qZxcysWcGBjK40AA/XUOIdw3iHtZgIgHG9FtdNWtwBI=;
- b=C1jjRNpQEw8U8Kq7um+RFukryq70TF4SRMSixGjqfbbwn4R0+clJA1AOmoSv7ni7I1
- /JPQh7xU3DwlfrVxuGLh65mYv0wYLfFmg3GF7xm2IrulkD4/ydg/Vmy3U4Ez7nNXT2uf
- W7Bw44bLGj+Hl/9tJfXcWqUKEHoHkTv8hxvryeSPi9VAOuOCwHCRCqoDjf64iH5J8aAZ
- CcKP7LWsmSf2SADaeaKuwP83Mz1PFUSbcm+pZU0iAntiCleCOlnTHX7e3SBIPUJTmlpJ
- TTtEhjMcX1hb7gTJOcVvukNSfobMlbIPy8q7ydsahOspNQeIMFYDD9oYaxu1W5fc2S5I
- OLPQ==
-X-Gm-Message-State: APjAAAX6LgLfHLshd2AZe6p8Txk2/Pe0/oSpS5KjgK5qxkHjNy7Awr53
- nQQXhz8O0DH0PAEXyXzIrIpwrRquNerKMmhuFfDxsA==
-X-Google-Smtp-Source: APXvYqyu8ngFvs0Ijr0BcLjn77SktYZ8O5FQq+oWdsZebG5H9lIAvGxp6elULEAs295/M0RD9pF16TysYOraX+QU4KA=
-X-Received: by 2002:a2e:957:: with SMTP id 84mr8958337ljj.245.1570795153555;
- Fri, 11 Oct 2019 04:59:13 -0700 (PDT)
+	id 1iItuf-0007P6-JE; Fri, 11 Oct 2019 12:20:53 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iItuT-0007G3-6a; Fri, 11 Oct 2019 12:20:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4E98A28;
+ Fri, 11 Oct 2019 05:20:40 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 922D83F6C4;
+ Fri, 11 Oct 2019 05:20:39 -0700 (PDT)
+Subject: Re: [PATCH] arm64: dts: rockchip: Add Beelink A1
+To: Rob Herring <robh@kernel.org>, "heiko@sntech.de" <heiko@sntech.de>
+References: <9037b7edbbb41cbbf699ebe3a511daf22d886e7d.1570444695.git.robin.murphy@arm.com>
+ <CAL_JsqKBy+i+=gGyYhBgcMUYsWd_CL_GnEoQqALBb+Gy7Ogb6A@mail.gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <4c490e48-7a85-4ef9-771c-165defde39cc@arm.com>
+Date: Fri, 11 Oct 2019 13:20:38 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <20191011111813.20851-1-andrzej.p@collabora.com>
- <20191011111813.20851-3-andrzej.p@collabora.com>
-In-Reply-To: <20191011111813.20851-3-andrzej.p@collabora.com>
-From: Daniel Stone <daniel@fooishbar.org>
-Date: Fri, 11 Oct 2019 12:59:02 +0100
-Message-ID: <CAPj87rNb=Sa2Hg8KZK5ioocdv0BMj9c3NHK2v4UZibMmw2DdGA@mail.gmail.com>
-Subject: Re: [PATCH 2/2] drm/rockchip: Add support for afbc
-To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+In-Reply-To: <CAL_JsqKBy+i+=gGyYhBgcMUYsWd_CL_GnEoQqALBb+Gy7Ogb6A@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_045915_720845_AF5FB7BA 
-X-CRM114-Status: GOOD (  13.76  )
+X-CRM114-CacheID: sfid-20191011_052041_330408_ACA6E4D5 
+X-CRM114-Status: GOOD (  23.52  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,119 +62,168 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, Liviu Dudau <liviu.dudau@arm.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Sandy Huang <hjc@rock-chips.com>, Maxime Ripard <mripard@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-rockchip <linux-rockchip@lists.infradead.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Daniel Vetter <daniel@ffwll.ch>,
- kernel@collabora.com, Sean Paul <sean@poorly.run>,
- Brian Starkey <brian.starkey@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Andrzej,
+On 07/10/2019 13:53, Rob Herring wrote:
+> On Mon, Oct 7, 2019 at 6:33 AM Robin Murphy <robin.murphy@arm.com> wrote:
+>>
+>> Beelink A1 is a TV box implementing the higher-end options of the
+>> RK3328 reference design - the DTB from the stock Android firmware is
+>> clearly the "rk3328-box-plus" variant from the Rockchip 3.10 BSP with
+>> minor modifications to accommodate the USB WiFi module and additional
+>> VFD-style LED driver. It features:
+>>
+>> - 4GB of 32-bit LPDDR3
+>> - 16GB of HS200 eMMC (newer models with 32GB also exist)
+>> - Realtek RTL8211F phy for gigabit ethernet
+>> - Fn-Link 6221E-UUC module (RealTek RTL8821CU) for 11ac WiFi and Bluetooth 4.2
+>> - HDMI and analog A/V
+>> - 1x USB 3.0 type A host, 1x USB 2.0 type A OTG, 1x micro SD
+>> - IR receiver and a neat little LED clock display.
+>>
+>> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+>> ---
+>>
+>> One question I'm wondering about is whether it's worth pushing the HDMI
+>> and analog codec audio cards down into rk3328.dtsi (as with HDMI audio
+>> on RK3399), since those audio pipelines are internal to the SoC and the
+>> board only really governs whether the outputs are wired up or not.
+> 
+> Seems reasonable. One other candidate below.
+> 
+>>
+>>   .../devicetree/bindings/arm/rockchip.yaml     |   5 +
+> 
+> In the future, please split bindings to a separate patch.
 
-On Fri, 11 Oct 2019 at 12:18, Andrzej Pietrasiewicz
-<andrzej.p@collabora.com> wrote:
-> @@ -32,6 +35,46 @@ rockchip_fb_alloc(struct drm_device *dev, const struct drm_mode_fb_cmd2 *mode_cm
->         int ret;
->         int i;
->
-> +       if (mode_cmd->modifier[0]) {
-> +               const struct drm_format_info *info;
-> +               int bpp;
-> +
-> +               if (mode_cmd->modifier[0] &
+Ha, busted! I thought this might be trivial enough to slip through, but 
+I'll split it out if you prefer.
 
-Use != here, not &~.
+>>   arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+>>   arch/arm64/boot/dts/rockchip/rk3328-a1.dts    | 399 ++++++++++++++++++
+>>   3 files changed, 405 insertions(+)
+>>   create mode 100644 arch/arm64/boot/dts/rockchip/rk3328-a1.dts
+>>
+>> diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+>> index c82c5e57d44c..f27f7805f57e 100644
+>> --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
+>> +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+>> @@ -40,6 +40,11 @@ properties:
+>>             - const: asus,rk3288-tinker-s
+>>             - const: rockchip,rk3288
+>>
+>> +      - description: Beelink A1
+>> +        items:
+>> +          - const: azw,beelink-a1
+>> +          - const: rockchip,rk3328
+>> +
+>>         - description: bq Curie 2 tablet
+>>           items:
+>>             - const: mundoreader,bq-curie2
+>> diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
+>> index 1f18a9392d15..a6f250e7cde2 100644
+>> --- a/arch/arm64/boot/dts/rockchip/Makefile
+>> +++ b/arch/arm64/boot/dts/rockchip/Makefile
+>> @@ -1,5 +1,6 @@
+>>   # SPDX-License-Identifier: GPL-2.0
+>>   dtb-$(CONFIG_ARCH_ROCKCHIP) += px30-evb.dtb
+>> +dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-a1.dtb
+>>   dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb.dtb
+>>   dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-rock64.dtb
+>>   dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-roc-cc.dtb
+>> diff --git a/arch/arm64/boot/dts/rockchip/rk3328-a1.dts b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
+>> new file mode 100644
+>> index 000000000000..03ad663ff821
+>> --- /dev/null
+>> +++ b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
+>> @@ -0,0 +1,399 @@
+>> +// SPDX-License-Identifier: (GPL-2.0-only OR MIT)
+>> +// Copyright (c) 2017-2019 Arm Ltd.
+>> +
+>> +/dts-v1/;
+>> +#include "rk3328.dtsi"
+>> +
+>> +/ {
+>> +       model = "Beelink A1";
+>> +       compatible = "azw,beelink-a1", "rockchip,rk3328";
+>> +
+>> +       /*
+>> +        * UART pins, as viewed with bottom of case removed:
+>> +        *
+>> +        *           Front
+>> +        *        /-------
+>> +        *  L    / o <- Gnd
+>> +        *  e   / o <-- Rx
+>> +        *  f  / o <--- Tx
+>> +        *  t / o <---- +3.3v
+>> +        *    |
+>> +        */
+>> +       chosen {
+>> +               stdout-path = "serial2:1500000n8";
+>> +       };
+>> +
+>> +       gmac_clkin: external-gmac-clock {
+>> +               compatible = "fixed-clock";
+>> +               clock-frequency = <125000000>;
+>> +               clock-output-names = "gmac_clkin";
+>> +               #clock-cells = <0>;
+>> +       };
+>> +
+>> +       vcc_host_5v: usb3-current-switch {
+>> +               compatible = "regulator-fixed";
+>> +               enable-active-high;
+>> +               gpio = <&gpio0 RK_PA0 GPIO_ACTIVE_HIGH>;
+>> +               pinctrl-names = "default";
+>> +               pinctrl-0 = <&usb30_host_drv>;
+>> +               regulator-name = "vcc_host_5v";
+>> +               vin-supply = <&vcc_sys>;
+>> +       };
+>> +
+>> +       vcc_sys: vcc-sys {
+>> +               compatible = "regulator-fixed";
+>> +               regulator-name = "vcc_sys";
+>> +               regulator-min-microvolt = <5000000>;
+>> +               regulator-max-microvolt = <5000000>;
+>> +       };
+>> +
+>> +       cpus {
+>> +               idle-states {
+>> +                       entry-method = "arm,psci";
+>> +
+>> +                       cpu_sleep: cpu-sleep {
+>> +                               compatible = "arm,idle-state";
+>> +                               arm,psci-suspend-param = <0x0010000>;
+>> +                               local-timer-stop;
+>> +                               entry-latency-us = <120>;
+>> +                               exit-latency-us = <250>;
+>> +                               min-residency-us = <900>;
+> 
+> This doesn't seem like something that's board specific, but I guess
+> the regulator could have some influence on these times. If so, the
+> board file could always override a default.
 
-> +       case DRM_FORMAT_BGR888:
-> +               return AFBC_FMT_U8U8U8;
-> +       case DRM_FORMAT_RGB565:
-> +       case DRM_FORMAT_BGR565:
-> +               return AFBC_FMT_RGB565;
-> +       default:
-> +               DRM_ERROR("unsupported afbc format[%08x]\n", format);
+True, this is traceable back to the Rockchip Android BSP where it's 
+actually applied to the entire SoC family[1]. I don't know if there's 
+likely to be any difference between the downstream "RKTRUST" firmware 
+binaries (which this nominally represents) and upstream ATF in terms of 
+their PSCI implementation/performance.
 
-This should not be reachable, because you shouldn't be able to create
-a framebuffer with an unsupported format/modifier combination.
-
-> +static bool rockchip_mod_supported(struct drm_plane *plane,
-> +                                  u32 format, u64 modifier)
-> +{
-> +       const struct drm_format_info *info;
-> +
-> +       if (WARN_ON(modifier == DRM_FORMAT_MOD_INVALID))
-> +               return false;
-> +
-> +       if (modifier == DRM_FORMAT_MOD_LINEAR)
-> +               return true;
-> +
-> +       if (modifier & ~DRM_FORMAT_MOD_ARM_AFBC(
-
-Again use != here.
-
-> +                               AFBC_FORMAT_MOD_BLOCK_SIZE_16x16 |
-> +                               AFBC_FORMAT_MOD_SPARSE
-> +                       )
-> +       ) {
-> +               DRM_DEBUG_KMS("Unsupported format modifer 0x%llx\n", modifier);
-> +
-> +               return false;
-> +       }
-> +
-> +       info = drm_format_info(format);
-> +       if (info->num_planes != 1) {
-> +               DRM_DEBUG_KMS("AFBC buffers expect one plane\n");
-> +               return false;
-> +       }
-
-This is where you should reject unsupported format + AFBC
-combinations. Doing it here prevents it from ever being advertised to
-userspace in the first place.
-
-> @@ -808,6 +919,24 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
->
->         spin_lock(&vop->reg_lock);
->
-> +       if (fb->modifier == DRM_FORMAT_MOD_ARM_AFBC(
-> +               AFBC_FORMAT_MOD_BLOCK_SIZE_16x16 | AFBC_FORMAT_MOD_SPARSE)) {
-> +               int afbc_format = vop_convert_afbc_format(fb->format->format);
-> +
-> +               VOP_AFBC_SET(vop, format, afbc_format | 1 << 4);
-
-I assume the (1 << 4) programs the 16x16 block size. Can we support
-other block sizes?
-
-> +               VOP_AFBC_SET(vop, hreg_block_split, 0);
-
-Does this mean we can also support AFBC_FORMAT_MOD_SPLIT?
-
-> +               VOP_AFBC_SET(vop, win_sel, VOP_WIN_TO_INDEX(vop_win));
-> +               VOP_AFBC_SET(vop, hdr_ptr, dma_addr);
-> +               VOP_AFBC_SET(vop, pic_size, act_info);
-> +
-> +               /*
-> +                * The window being udated becomes the AFBC window
-> +                */
-> +               vop->afbc_win = vop_win;
-> +
-> +               pr_info("AFBC on plane %s\n", plane->name);
-
-Please do not use pr_info() here. Userspace should not be able to
-trigger logging, apart from DRM_DEBUG.
-
-> +static const uint64_t format_modifiers_win_full[] = {
-> +       DRM_FORMAT_MOD_NONE,
-
-*DRM_FORMAT_MOD_LINEAR
+I've not got round to properly tinkering with suspend/resume and power 
+management stuff yet, so I guess another option would be to just forget 
+about this part for now - Heiko, any opinions?
 
 Cheers,
-Daniel
+Robin.
+
+[1] 
+https://github.com/rockchip-linux/kernel/blob/release-3.10/arch/arm64/boot/dts/rk322xh.dtsi#L107-L118
 
 _______________________________________________
 Linux-rockchip mailing list
