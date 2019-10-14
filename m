@@ -2,83 +2,91 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61182D6A59
-	for <lists+linux-rockchip@lfdr.de>; Mon, 14 Oct 2019 21:50:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91F65D6B11
+	for <lists+linux-rockchip@lfdr.de>; Mon, 14 Oct 2019 23:06:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/e/BBlKdAokIA4oU50f5rjJMw0RO55vsiicQ/oFo4Mg=; b=RAncAxKC++tbK9
-	voC6F1LKIphPRL5ZF1O4yZCxnA5+ebbKft6GQKkVmXV7t2a2HNQj12VrtaoacZnNadyxUqZz3rLfg
-	wmlUMTL80eQF0ij8up2gX/ZTWEnfYSbbpHga79g0cZBoofCDMP1gomjTIf7eSBbFXTSrMY9DnZJtF
-	L6ULoDDKGLY4AasePPLhco13WUWqbdmClH8BjscW6s5yMMoTPgZCKSyh8hyIY+wTmV1mUsw7G2Ghe
-	ZY+jntX7d+MwAVu4K7iO8J6VRgRvlyKvVaKmKSeQye2WHhnDevT+fVC6+VUiDNBUWXGhLftPN0Yow
-	niP6Vz9eHEOqIiH0qufQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=wN+nhKzu6zZoICRCRjpBBZuGs2PglctWSd40Pc3isz0=; b=Wm8kblXywIxBwVuj1YuiTje6fU
+	A3uFn6cmoaZttA9FWRnl7t5bm2OmsmEdS6lKiDDaS21gRx3jhn0zE1p/2Qyhn49dqvErAE0ijk2mJ
+	eg3nV69/nEiA4vRco5ekT1Cx6PKrDev4dIJouZd+6X612dk4SSK4CJrq/Bck++x7X7KQcrOp/PpDs
+	0tDQj/Z9OJpDcB3O+arb5zoXkyfahKuuTqELlUa43EXFwC7C3x3xBK1nNHhIsR3VQ+7zYbp2pV6TX
+	hhfhDTRAqo/m9xLHS4qTQv7fj39C6k+ieSPmQhbV4V6tMttoevtu1EVejod1DEU874Wc8pCyjoKgP
+	hKbNu6GQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK6MD-0003oF-CC; Mon, 14 Oct 2019 19:50:17 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1iK7Y9-0005zW-RT; Mon, 14 Oct 2019 21:06:41 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK6Ly-0002UB-PF; Mon, 14 Oct 2019 19:50:04 +0000
-Received: by mail-oi1-f195.google.com with SMTP id t84so14752935oih.10;
- Mon, 14 Oct 2019 12:50:02 -0700 (PDT)
+ id 1iK7Xz-0005qL-IL; Mon, 14 Oct 2019 21:06:32 +0000
+Received: by mail-ed1-x542.google.com with SMTP id y91so15981910ede.9;
+ Mon, 14 Oct 2019 14:06:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=x9ockYP1+BmQj621KtYqZs8B3/GWqAGczAzI5iUAWRw=;
+ b=OEO9wXFnCJwat3sRy/K8V5vm/cPyvPBdevw/VU7ygiCSQzFodpMz0uiBqeZ3v/Wnrz
+ egb+i1v75SC/vErryPQ6upIFeR8Wviucv2h05Yu2WoVQxrXtTD+pPd9s70F207XrC2em
+ DzXSxRMgfwwv3urvWsyE8Rhd3Am0LNbYf+mL8UDC6p9O0NoYTbBzcX2A2PGN4bBuMAsh
+ Y+q3BgdLUI0crxlFo0183TNmH0oFRfh9pYOKioMRNJ7t35hkF3FZmk8jMJrh5Mfg/lj/
+ EJ3cSdWcGPzVRAxCMpqsERUAmrwRbrex1FkTxQsdv/oaykbZ8NOr30S4Tp93trMXfx8U
+ KYLg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=NxhCCxPZ2FpXlTCWZLPNlVYro5ejAF3sMPqwp32yhUc=;
- b=SjRo+XC7HfZT/AOWlmXtxPm00liRBCUGbXtZ3ToGjrPkEcaEKeE95Xa/qadqyzkKh5
- eVJbObQKbDHptE1lO8hMzRy4XRwZ26gTt1AQbFwOXnwMhBQS//gCkCyrHIoJZsVjnZss
- kG02w1m0lvWiUTHNm52OTeNlJfMiOuk2PbXfrpyJBxC0YYSRzDtweACcbpNealdquXL8
- e6UpveecYXJFM4SL3orkNYugr0HjJvJqORB5LNngxhRkAchHKm9JsMupHSBI+0jMy3XH
- nBStjsYJ7nCam72Sq2JRwrWFRs9NzowLpuT26XYp5NIFbV8jKpAmvgUGJpLLI313judp
- +zXA==
-X-Gm-Message-State: APjAAAU1yuiTvtOx2047GsW9FOwdLANnd9rsX3IYelQKh7vBTRmplkZ5
- NC434neOe0GSPsEkmcJZCQ==
-X-Google-Smtp-Source: APXvYqz8cLeQnVPXfJbn0yMhk9Ft8PU/gotpH8mO+4vzmJUPaFtR7C1fUMAwi6LrI3V2N7Rln4VRXw==
-X-Received: by 2002:aca:370b:: with SMTP id e11mr25053138oia.96.1571082601381; 
- Mon, 14 Oct 2019 12:50:01 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id f205sm5792922oib.11.2019.10.14.12.50.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 14 Oct 2019 12:50:00 -0700 (PDT)
-Date: Mon, 14 Oct 2019 14:50:00 -0500
-From: Rob Herring <robh@kernel.org>
-To: Heiko Stuebner <heiko@sntech.de>
-Subject: Re: [PATCH 1/2] dt-bindings: nvmem: add binding for Rockchip OTP
- controller
-Message-ID: <20191014195000.GA17233@bogus>
-References: <20190925184957.14338-1-heiko@sntech.de>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190925184957.14338-1-heiko@sntech.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=x9ockYP1+BmQj621KtYqZs8B3/GWqAGczAzI5iUAWRw=;
+ b=gJuooEadx8P14LXpyeHXlh8X57QCfKqkhcZz7pwmb9W6/JyzC99OfNiXRExPMoetss
+ fCVKSFuurkgtVS5K0HpHeq5WB7lNTLcUP6VVp9znzeHXy49BVW3Zc5KSlucDAt/WPsOl
+ CoJQvNafRuMUJgDHllWX3aYAup7U7vcVJIcxurBd6Jnyhiq/8PyBe7FdR0xUXHTqaDOB
+ obbPBkcQxupPea/cCMFQCjFOzDZNIfsneoonosY/05n057kVjLorSzuITKiu0PfwZL5D
+ 5iatv66Gd4BlBW/hMYBINNI6r/gzJwAr4rykHC0E9X41rfuZTefoil4pJVLQAaUI3TzG
+ PnFA==
+X-Gm-Message-State: APjAAAXDi1tWHxH2NohTNhj/b7z2GH2w31OMxUGqKResSJWGDE0qbPMr
+ A/EVr6kxY3z1gUSufGiJQun1lbmw
+X-Google-Smtp-Source: APXvYqy0OUC8jXYlII8DhITV2pund1WqtG58pZL6x+LXKrLsB325rkU4DCULRlppkR3UWN6HWRqqCQ==
+X-Received: by 2002:aa7:d5d3:: with SMTP id d19mr29637012eds.213.1571087189200; 
+ Mon, 14 Oct 2019 14:06:29 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id y29sm3366939edd.7.2019.10.14.14.06.28
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 14 Oct 2019 14:06:28 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH v2] ARM: dts: rockchip: remove some tabs and spaces from dtsi
+ files
+Date: Mon, 14 Oct 2019 23:06:19 +0200
+Message-Id: <20191014210619.12778-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20191014174521.11611-1-jbx6244@gmail.com>
+References: <20191014174521.11611-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_125002_841850_4BE9F979 
-X-CRM114-Status: UNSURE (   9.70  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191014_140631_635843_15AA43EA 
+X-CRM114-Status: GOOD (  11.31  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
+ provider (jbx6244[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ in digit (jbx6244[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,27 +100,110 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- srinivas.kandagatla@linaro.org, linux-arm-kernel@lists.infradead.org,
- christoph.muellner@theobroma-systems.com
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, 25 Sep 2019 20:49:56 +0200, Heiko Stuebner wrote:
-> Newer Rockchip SoCs use a different IP for accessing special one-
-> time-programmable memory, so add a binding for these controllers.
-> 
-> Signed-off-by: Heiko Stuebner <heiko@sntech.de>
-> ---
->  .../bindings/nvmem/rockchip-otp.txt           | 25 +++++++++++++++++++
->  1 file changed, 25 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/nvmem/rockchip-otp.txt
-> 
+Cleanup the Rockchip dtsi files a little bit
+by removing some tabs and spaces.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm/boot/dts/rk3036.dtsi           |  4 ++--
+ arch/arm/boot/dts/rk3288-rock2-som.dtsi |  8 ++++----
+ arch/arm/boot/dts/rk3288-tinker.dtsi    | 14 +++++---------
+ 3 files changed, 11 insertions(+), 15 deletions(-)
+
+diff --git a/arch/arm/boot/dts/rk3036.dtsi b/arch/arm/boot/dts/rk3036.dtsi
+index c776321b2..c70182c5a 100644
+--- a/arch/arm/boot/dts/rk3036.dtsi
++++ b/arch/arm/boot/dts/rk3036.dtsi
+@@ -696,8 +696,8 @@
+ 
+ 		hdmi {
+ 			hdmi_ctl: hdmi-ctl {
+-				rockchip,pins = <1 RK_PB0  1 &pcfg_pull_none>,
+-						<1 RK_PB1  1 &pcfg_pull_none>,
++				rockchip,pins = <1 RK_PB0 1 &pcfg_pull_none>,
++						<1 RK_PB1 1 &pcfg_pull_none>,
+ 						<1 RK_PB2 1 &pcfg_pull_none>,
+ 						<1 RK_PB3 1 &pcfg_pull_none>;
+ 			};
+diff --git a/arch/arm/boot/dts/rk3288-rock2-som.dtsi b/arch/arm/boot/dts/rk3288-rock2-som.dtsi
+index 9f9e2bfd1..44bb5e6f8 100644
+--- a/arch/arm/boot/dts/rk3288-rock2-som.dtsi
++++ b/arch/arm/boot/dts/rk3288-rock2-som.dtsi
+@@ -230,14 +230,14 @@
+ 	};
+ 
+ 	emmc {
+-			emmc_reset: emmc-reset {
+-				rockchip,pins = <3 RK_PB1 RK_FUNC_GPIO &pcfg_pull_none>;
+-			};
++		emmc_reset: emmc-reset {
++			rockchip,pins = <3 RK_PB1 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
+ 	};
+ 
+ 	gmac {
+ 		phy_rst: phy-rst {
+-			rockchip,pins = <4 RK_PB0 RK_FUNC_GPIO  &pcfg_output_high>;
++			rockchip,pins = <4 RK_PB0 RK_FUNC_GPIO &pcfg_output_high>;
+ 		};
+ 	};
+ };
+diff --git a/arch/arm/boot/dts/rk3288-tinker.dtsi b/arch/arm/boot/dts/rk3288-tinker.dtsi
+index 81e4e953d..0aeef23ca 100644
+--- a/arch/arm/boot/dts/rk3288-tinker.dtsi
++++ b/arch/arm/boot/dts/rk3288-tinker.dtsi
+@@ -382,18 +382,15 @@
+ 
+ 	pmic {
+ 		pmic_int: pmic-int {
+-			rockchip,pins = <0 RK_PA4 RK_FUNC_GPIO \
+-					&pcfg_pull_up>;
++			rockchip,pins = <0 RK_PA4 RK_FUNC_GPIO &pcfg_pull_up>;
+ 		};
+ 
+ 		dvs_1: dvs-1 {
+-			rockchip,pins = <0 RK_PB3 RK_FUNC_GPIO \
+-					&pcfg_pull_down>;
++			rockchip,pins = <0 RK_PB3 RK_FUNC_GPIO &pcfg_pull_down>;
+ 		};
+ 
+ 		dvs_2: dvs-2 {
+-			rockchip,pins = <0 RK_PB4 RK_FUNC_GPIO \
+-					&pcfg_pull_down>;
++			rockchip,pins = <0 RK_PB4 RK_FUNC_GPIO &pcfg_pull_down>;
+ 		};
+ 	};
+ 
+@@ -406,8 +403,7 @@
+ 		};
+ 
+ 		sdmmc_clk: sdmmc-clk {
+-			rockchip,pins = <6 RK_PC4 1 \
+-					&pcfg_pull_none_drv_8ma>;
++			rockchip,pins = <6 RK_PC4 1 &pcfg_pull_none_drv_8ma>;
+ 		};
+ 
+ 		sdmmc_cmd: sdmmc-cmd {
+@@ -432,7 +428,7 @@
+ 	sdio {
+ 		wifi_enable: wifi-enable {
+ 			rockchip,pins = <4 RK_PD3 RK_FUNC_GPIO &pcfg_pull_none>,
+-				<4 RK_PD4 RK_FUNC_GPIO &pcfg_pull_none>;
++					<4 RK_PD4 RK_FUNC_GPIO &pcfg_pull_none>;
+ 		};
+ 	};
+ };
+-- 
+2.11.0
+
 
 _______________________________________________
 Linux-rockchip mailing list
