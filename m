@@ -2,64 +2,63 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A03DD6945
-	for <lists+linux-rockchip@lfdr.de>; Mon, 14 Oct 2019 20:16:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61182D6A59
+	for <lists+linux-rockchip@lfdr.de>; Mon, 14 Oct 2019 21:50:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iiGtDIYuDmhLWut1irZdCmECCJ7TkCn4WOjZ0sseJ08=; b=uvEokkMgk4dwF8
-	jxZ46uVICZi8UwLASZymiDDWaMXAHR0Mh4M5kFbAo0g+1CXHcZyGkXJioStLFn3HMAtoaLLYvDS99
-	wAaXXqgE5No4Qq+Pti6HBg/XzoM9jmGiFPPEQAry5ZldFr3q31yFAbPngO4YMopBfCfde1nCkxi7d
-	QlC3ZCpqKrVTAvlGog871uOGIj4bFUx5fYuSzSIa1HtJmpgj7K3P/3mlzpEcN0sK4b6wHH5IOVfMA
-	QK2M0KSmAFapiPtYuYB1BIrZLP9DxvIuN1czFqUA6w/kXpAam1WiiHXHpvCApBzRZiu9T1htO4B7x
-	GxYKj4hL/+yip9+iRbDA==;
+	List-Owner; bh=/e/BBlKdAokIA4oU50f5rjJMw0RO55vsiicQ/oFo4Mg=; b=RAncAxKC++tbK9
+	voC6F1LKIphPRL5ZF1O4yZCxnA5+ebbKft6GQKkVmXV7t2a2HNQj12VrtaoacZnNadyxUqZz3rLfg
+	wmlUMTL80eQF0ij8up2gX/ZTWEnfYSbbpHga79g0cZBoofCDMP1gomjTIf7eSBbFXTSrMY9DnZJtF
+	L6ULoDDKGLY4AasePPLhco13WUWqbdmClH8BjscW6s5yMMoTPgZCKSyh8hyIY+wTmV1mUsw7G2Ghe
+	ZY+jntX7d+MwAVu4K7iO8J6VRgRvlyKvVaKmKSeQye2WHhnDevT+fVC6+VUiDNBUWXGhLftPN0Yow
+	niP6Vz9eHEOqIiH0qufQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK4t4-0000gS-4F; Mon, 14 Oct 2019 18:16:06 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1iK6MD-0003oF-CC; Mon, 14 Oct 2019 19:50:17 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK4ss-0000Y1-Fo; Mon, 14 Oct 2019 18:15:55 +0000
-Received: by mail-ot1-f68.google.com with SMTP id 67so14597398oto.3;
- Mon, 14 Oct 2019 11:15:53 -0700 (PDT)
+ id 1iK6Ly-0002UB-PF; Mon, 14 Oct 2019 19:50:04 +0000
+Received: by mail-oi1-f195.google.com with SMTP id t84so14752935oih.10;
+ Mon, 14 Oct 2019 12:50:02 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=TiZbwsrM4/f/r5LoaJ2jEpnL+9g4W53LGZPuPtXJ5LM=;
- b=pH+nSKx1fqtXS5VrLPflpTSiGfVcjekvYXic+MTeWHM+bT7Kg2NHAhi7qtghrD6dJ2
- C29HjrXaRgNbUv0y1bNOHlNJnWVgMxwZO6XaRZAJVufS3sF9nhd953Ur8QIH28PyyKJV
- LggqsgcyH1r/YdF0c1UCEYMhfbTOurE2gGTKoQFIq66sJc9rQjUC5lGBmSGcbtglovjl
- qoT0BhBoUDLEf4Rr/d8JfzUrlJ8YJaO9gP7XL/bUATUZjJbJLL9aaRmPzU+TQTx0Uk3I
- wMb+xswarxgp/zEBeQn30bmVduBr476qpmB2A2MN4twgQETeymQOgZvM4EY0LeRAQO20
- Xa1A==
-X-Gm-Message-State: APjAAAWWEi+OlzGJyKx1j2ty1r6vlId1J2sfCzKljQvqWc3iACL5VA+t
- U5mYUuOGkU8Amtnisfl4Eg==
-X-Google-Smtp-Source: APXvYqwwLBpes6pzkDEJ5uGNYvvOO1uZW4E2cZtm+9i7VdKdIHpEhdpbx+gD453w2aQEhuO6bNHFQw==
-X-Received: by 2002:a9d:5f0f:: with SMTP id f15mr23799786oti.251.1571076953138; 
- Mon, 14 Oct 2019 11:15:53 -0700 (PDT)
+ bh=NxhCCxPZ2FpXlTCWZLPNlVYro5ejAF3sMPqwp32yhUc=;
+ b=SjRo+XC7HfZT/AOWlmXtxPm00liRBCUGbXtZ3ToGjrPkEcaEKeE95Xa/qadqyzkKh5
+ eVJbObQKbDHptE1lO8hMzRy4XRwZ26gTt1AQbFwOXnwMhBQS//gCkCyrHIoJZsVjnZss
+ kG02w1m0lvWiUTHNm52OTeNlJfMiOuk2PbXfrpyJBxC0YYSRzDtweACcbpNealdquXL8
+ e6UpveecYXJFM4SL3orkNYugr0HjJvJqORB5LNngxhRkAchHKm9JsMupHSBI+0jMy3XH
+ nBStjsYJ7nCam72Sq2JRwrWFRs9NzowLpuT26XYp5NIFbV8jKpAmvgUGJpLLI313judp
+ +zXA==
+X-Gm-Message-State: APjAAAU1yuiTvtOx2047GsW9FOwdLANnd9rsX3IYelQKh7vBTRmplkZ5
+ NC434neOe0GSPsEkmcJZCQ==
+X-Google-Smtp-Source: APXvYqz8cLeQnVPXfJbn0yMhk9Ft8PU/gotpH8mO+4vzmJUPaFtR7C1fUMAwi6LrI3V2N7Rln4VRXw==
+X-Received: by 2002:aca:370b:: with SMTP id e11mr25053138oia.96.1571082601381; 
+ Mon, 14 Oct 2019 12:50:01 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id d95sm6216527otb.25.2019.10.14.11.15.52
+ by smtp.gmail.com with ESMTPSA id f205sm5792922oib.11.2019.10.14.12.50.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 14 Oct 2019 11:15:52 -0700 (PDT)
-Date: Mon, 14 Oct 2019 13:15:52 -0500
+ Mon, 14 Oct 2019 12:50:00 -0700 (PDT)
+Date: Mon, 14 Oct 2019 14:50:00 -0500
 From: Rob Herring <robh@kernel.org>
-To: Jianqun Xu <jay.xu@rock-chips.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: pinctrl: rockchip: add rk3308 SoC
- support
-Message-ID: <20191014181552.GA12199@bogus>
-References: <20191012061528.27821-1-jay.xu@rock-chips.com>
- <20191014030348.18860-1-jay.xu@rock-chips.com>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: Re: [PATCH 1/2] dt-bindings: nvmem: add binding for Rockchip OTP
+ controller
+Message-ID: <20191014195000.GA17233@bogus>
+References: <20190925184957.14338-1-heiko@sntech.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191014030348.18860-1-jay.xu@rock-chips.com>
+In-Reply-To: <20190925184957.14338-1-heiko@sntech.de>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_111554_527388_11DC5135 
-X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-CacheID: sfid-20191014_125002_841850_4BE9F979 
+X-CRM114-Status: UNSURE (   9.70  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -67,7 +66,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
+ no trust [209.85.167.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
@@ -76,11 +77,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,29 +91,28 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- linux-rockchip@lists.infradead.org, linus.walleij@linaro.org,
- linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org, robh+dt@kernel.org,
- Jianqun Xu <jay.xu@rock-chips.com>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ srinivas.kandagatla@linaro.org, linux-arm-kernel@lists.infradead.org,
+ christoph.muellner@theobroma-systems.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, 14 Oct 2019 11:03:48 +0800, Jianqun Xu wrote:
-> Add rk3308 SoC support to rockchip pinctrl.
+On Wed, 25 Sep 2019 20:49:56 +0200, Heiko Stuebner wrote:
+> Newer Rockchip SoCs use a different IP for accessing special one-
+> time-programmable memory, so add a binding for these controllers.
 > 
-> Reviewed-by: Heiko Stuebner <heiko@sntech.de>
-> Signed-off-by: Jianqun Xu <jay.xu@rock-chips.com>
+> Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 > ---
-> changes since v1:
-> - Add Reviewed-by: Heiko Stuebner <heiko@sntech.de>
-> 
->  Documentation/devicetree/bindings/pinctrl/rockchip,pinctrl.txt | 1 +
->  1 file changed, 1 insertion(+)
+>  .../bindings/nvmem/rockchip-otp.txt           | 25 +++++++++++++++++++
+>  1 file changed, 25 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/nvmem/rockchip-otp.txt
 > 
 
-Acked-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 Linux-rockchip mailing list
