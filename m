@@ -2,96 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41C15D80EF
-	for <lists+linux-rockchip@lfdr.de>; Tue, 15 Oct 2019 22:26:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1802ED8100
+	for <lists+linux-rockchip@lfdr.de>; Tue, 15 Oct 2019 22:29:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1xji4aVk1Sz0UNXoiSsiXzERDAMHiCuLYHtmVJxadFQ=; b=mw9RuE+hYd8b8p
-	zxFNW73vSzufeXZlT53SB2UrWwrEeoFeJmgytW/+HPvZbNmjOqcrYpjh33wGNVZkZnMUJlvgMuFEw
-	2OXjyjRRNp2w/biGjCsCWAf3vh31Kiw5AUQs5cBLTwP8N7hP19Bc+JF0dT4X35FIIWiRTgQIrSI75
-	wl3+oZLW/6988PraEMnFZ2rwK/ctQeFVzjEbURDEy8kI0Y1Yb2mlmyNye5etKI9aA/aaguaUhG1sI
-	yRcUnE1L/4IaeZCwVtWcJkQeS31/iVUrx0LUq12z3M2JxJsYHT6S0b7WRUAQffw1jszwJX4HMiLX7
-	qkWQPS8yJKLzsgL/quXA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=87DbP/A59yXP426QdjVyYffYLDTy/0ChWxCg+PiaL0k=; b=VJ42p0XmH97gs4
+	57ykqGZOvEzJB6wsCgk/1xARRl/fgArim+fxp4E+XL1U6HT4qV19u1ddb5Nhk55LiU7WugzNDezg5
+	R9s96TJzTTJvufyKhOQo1Ftf7egNgp7wH6lBqZJgunuYmOJme342QP5qjTARiko3OaRwK4ZYs1B+0
+	3bWoZ9xQSrYHMXvU3zZvkPzaoaEA0XYoc+cBmmGeHdfpTEv8h1UymnzY3O2xkDhhG9bgf71yqR3hq
+	SMlDtqpJCJN+8rUXKeM2Z7f8sKiWDC1RQGj2oU+AvGcPL37MrI3IgITO8fpFLcDIX0vCQXJSNCv5Q
+	3LPxurFeOFLjoKp/F+8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKTOf-00059X-Ik; Tue, 15 Oct 2019 20:26:21 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1iKTRi-00062R-BW; Tue, 15 Oct 2019 20:29:30 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKTOc-00058y-Mx; Tue, 15 Oct 2019 20:26:19 +0000
-Received: by mail-ed1-x544.google.com with SMTP id h33so19299966edh.12;
- Tue, 15 Oct 2019 13:26:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=dK3t9AxAtDqpmJRfjX81BITOjcQhY9SeVbBfeMuALZ4=;
- b=mZIQzB/PTEGfdZOyUPws2dWuOFpjB3wfSVVLSfgTbo2xLkMfjOTvL1yjasjGVEla6W
- yBCv4O4PayyPJ5o7mwhHBEv96UuapbXXeP69kIm3LjobI6e5uJouQXpe36oK1Mp2ZH7Y
- kyH6Hk7sJKEdZ4SEyMxZw2aDEEVewW5H3RKxMeS4WkdbYJ0zCoZ4xY+/rZeIYVTyU90e
- Mun9bLBYyGXNWA8vr3ZKlRxX3ZJB2YNrQpoxyNFR2eCyggDQ0TZ7MJq2H8AwYE1zxbNL
- FBZcKEwRwq6kR0zoG9pJQ9n7FDWBd+4GOi+yNBVOhy1Krf3K6JlxFR0yeJJseNmlZOV1
- 3i/w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=dK3t9AxAtDqpmJRfjX81BITOjcQhY9SeVbBfeMuALZ4=;
- b=e2wzlHfIMbO1iq5YTJ1W5TmcmNmJBkof98DszGK99ZL/XCdaGtpSnRCPRaMtYIvsW3
- x4Oakp148ETHYFxJHD8+f5YTd5KjJdeFl6UQgeC/zlYY02SW/cDWdnr897sEjDQauH2y
- 6ALZL1BvgG6hU+L90oiJ9ZvuGsAZD1VZ2cUHj+pwJ8sUMqETQqp/WLs1pOtKnUIRP3r4
- cIG70Bk0cH107Z9F9S5sGHRcEs97jfi0AM+4fR28n44eqa6FlOU2Nk5e+lL6GfGCdjTk
- 1Vs8QRZewYTlqajxZkzEnjjAY8zIZEEbyDTZmdTRINeWzgqg2zR739yNuLsrntG46y9W
- QXbA==
-X-Gm-Message-State: APjAAAUR+Sa4YMkxzzWJWvCRt8KMAR+XPJl25vLhudlztjfrjC8uUDV0
- n+FdXDBXKyJ4pKmF7thNZHEj4VSN
-X-Google-Smtp-Source: APXvYqzZfaog4m4XbjIi4VxCNQ4ywbycZoYkr4l2X5kIUkDKB5zTCm1Zz13b3xqBJ1L9KBMrpi+TvA==
-X-Received: by 2002:a05:6402:557:: with SMTP id
- i23mr35269304edx.71.1571171177323; 
- Tue, 15 Oct 2019 13:26:17 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id a36sm3909355edc.58.2019.10.15.13.26.16
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 15 Oct 2019 13:26:16 -0700 (PDT)
-Subject: Re: [PATCH 2/2] include: dt-bindings: rockchip: remove RK_FUNC defines
-To: Heiko Stuebner <heiko@sntech.de>
-References: <20191015191000.2890-1-jbx6244@gmail.com>
- <20191015191000.2890-2-jbx6244@gmail.com> <2236841.lnJlJmhppS@phil>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <29be43a3-516b-ce33-8a19-ffd8202d9c3a@gmail.com>
-Date: Tue, 15 Oct 2019 22:26:14 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iKTRM-0005qw-Df; Tue, 15 Oct 2019 20:29:09 +0000
+Received: from remote.shanghaihotelholland.com ([46.44.148.63]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iKTRI-00086W-DK; Tue, 15 Oct 2019 22:29:04 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Markus Elfring <Markus.Elfring@web.de>
+Subject: Re: clk: rockchip: Checking a kmemdup() call in
+ rockchip_clk_register_pll()
+Date: Tue, 15 Oct 2019 22:29:03 +0200
+Message-ID: <5173392.uhhkXBHGmO@phil>
+In-Reply-To: <45588ab8-2a6c-3f29-61ff-bccf8d6fb291@web.de>
+References: <e96505a8-b554-f61e-3940-0b9e9c7850ff@web.de>
+ <2588953.0pqkEXWxhN@phil> <45588ab8-2a6c-3f29-61ff-bccf8d6fb291@web.de>
 MIME-Version: 1.0
-In-Reply-To: <2236841.lnJlJmhppS@phil>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_132618_748065_0112797A 
-X-CRM114-Status: GOOD (  13.36  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191015_132908_611917_F4FD4AF9 
+X-CRM114-Status: GOOD (  16.23  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jbx6244[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jbx6244[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,38 +59,49 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Stephen Boyd <sboyd@kernel.org>, Kangjie Lu <kjlu@umn.edu>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Stephen McCamant <smccaman@umn.edu>, kernel-janitors@vger.kernel.org,
+ LKML <linux-kernel@vger.kernel.org>, linux-rockchip@lists.infradead.org,
+ Navid Emamdoost <emamd001@umn.edu>, Aditya Pakki <pakki001@umn.edu>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Heiko,
-
-What's the plan for RK_FUNC_GPIO ? Change all to '0' or keep it?
-
-On 10/15/19 10:10 PM, Heiko Stuebner wrote:
-> Hi Johan,
-> 
-> Am Dienstag, 15. Oktober 2019, 21:10:00 CEST schrieb Johan Jonker:
->> The defines RK_FUNC_1, RK_FUNC_2, RK_FUNC_3 and RK_FUNC_4
->> are no longer used, so remove them to prevent
->> that someone start using them again.
-> 
-> That won't work. Devicetree provides a slightly flexible promise of
-> backwards compatibilty. So a new kernel should still work old devicetrees.
-> (not exactly sure if this means dt-binaries and sources or only binaries)
-> 
-> So while I think RK_FUNC_0-n should not be used anymore, we should
-> probably just mark them as "deprecated" in a first step.
-> 
-> 
-> Heiko
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+QW0gTW9udGFnLCAxNC4gT2t0b2JlciAyMDE5LCAwOToyNjo0MSBDRVNUIHNjaHJpZWIgTWFya3Vz
+IEVsZnJpbmc6Cj4gPiBUaGUgb3RoZXIgb3B0aW9uIHdvdWxkIGJlIHRvIHBhbmljLCBidXQgdGhl
+IGtlcm5lbCBzaG91bGQgbm90Cj4gPiBwYW5pYyBpZiBvdGhlciBvcHRpb25zIGFyZSBhdmFpbGFi
+bGUgLSBhbmQgY29udGludWluZyB3aXRoIGEgc3RhdGljCj4gPiBwbGwgZnJlcXVlbmN5IGlzIGxl
+c3MgaW52YXNpdmUgaW4gdGhlIGVycm9yIGNhc2UuCj4gCj4gSSB3b3VsZCBsaWtlIHRvIHBvaW50
+IG91dCB0aGF0IHRoaXMgZnVuY3Rpb24gaW1wbGVtZW50YXRpb24gY29udGFpbnMKPiB0aGUgZm9s
+bG93aW5nIHNvdXJjZSBjb2RlIGFscmVhZHkuCj4gCj4g4oCmCj4gCS8qIG5hbWUgdGhlIGFjdHVh
+bCBwbGwgKi8KPiAJc25wcmludGYocGxsX25hbWUsIHNpemVvZihwbGxfbmFtZSksICJwbGxfJXMi
+LCBuYW1lKTsKPiAKPiAJcGxsID0ga3phbGxvYyhzaXplb2YoKnBsbCksIEdGUF9LRVJORUwpOwo+
+IAlpZiAoIXBsbCkKPiAJCXJldHVybiBFUlJfUFRSKC1FTk9NRU0pOwo+IOKApgo+IAo+IAo+IAo+
+IOKApgo+ID4gKysrIGIvZHJpdmVycy9jbGsvcm9ja2NoaXAvY2xrLXBsbC5jCj4gPiBAQCAtOTA5
+LDE0ICs5MDksMTYgQEAgc3RydWN0IGNsayAqcm9ja2NoaXBfY2xrX3JlZ2lzdGVyX3BsbChzdHJ1
+Y3Qgcm9ja2NoaXBfY2xrX3Byb3ZpZGVyICpjdHgsCj4g4oCmCj4gPiAtCQlwbGwtPnJhdGVfY291
+bnQgPSBsZW47Cj4gPiAgCQlwbGwtPnJhdGVfdGFibGUgPSBrbWVtZHVwKHJhdGVfdGFibGUsCj4g
+PiAgCQkJCQlwbGwtPnJhdGVfY291bnQgKgo+ID4gIAkJCQkJc2l6ZW9mKHN0cnVjdCByb2NrY2hp
+cF9wbGxfcmF0ZV90YWJsZSksCj4gPiAgCQkJCQlHRlBfS0VSTkVMKTsKPiA+IC0JCVdBUk4oIXBs
+bC0+cmF0ZV90YWJsZSwKPiA+IC0JCQkiJXM6IGNvdWxkIG5vdCBhbGxvY2F0ZSByYXRlIHRhYmxl
+IGZvciAlc1xuIiwKPiA+IC0JCQlfX2Z1bmNfXywgbmFtZSk7Cj4gPiArCj4gPiArCQkvKgo+ID4g
+KwkJICogU2V0IG51bSByYXRlcyB0byAwIGlmIGttZW1kdXAgZmFpbHMuIFRoYXQgd2F5IHRoZSBj
+bG9jawo+ID4gKwkJICogYXQgbGVhc3QgY2FuIHJlcG9ydCBpdHMgcmF0ZSBhbmQgc3RheXMgdXNh
+YmxlLgo+ID4gKwkJICovCj4gPiArCQlwbGwtPnJhdGVfY291bnQgPSBwbGwtPnJhdGVfdGFibGUg
+PyBsZW4gOiAwOwo+IAo+IENhbiBhbiBvdGhlciBlcnJvciBoYW5kbGluZyBzdHJhdGVneSBtYWtl
+IHNlbnNlIG9jY2FzaW9uYWxseT8KPgo+IAo+IOKApgo+IAkJaWYgKCFwbGwtPnJhdGVfdGFibGUp
+IHsKPiAJCQljbGtfdW5yZWdpc3RlcihtdXhfY2xrKTsKPiAJCQltdXhfY2xrID0gRVJSX1BUUigt
+RU5PTUVNKTsKPiAJCQlnb3RvIGVycl9tdXg7Cj4gCQl9Cj4g4oCmCj4gCj4gCj4gV291bGQgeW91
+IGxpa2UgdG8gYWRqdXN0IHN1Y2ggZXhjZXB0aW9uIGhhbmRsaW5nIGFub3RoZXIgYml0PwoKTm9w
+ZS4KClRoZSBiaWcgZGlmZmVyZW5jZSBpcyB0aGF0IGNsb2NrcyByZWx5IGhlYXZpbHkgb24gdGhl
+aXIgbmFtZXMgdG8gZXN0YWJsaXNoCnRoZSBjbG9jayB0cmVlIHBhcmVudHNoaXAuIFNvIHRoZSBQ
+TEwgY2Fubm90IHdvcmsgd2l0aG91dCB0aGUgbmFtZQpidXQgY2FuIHByb3ZpZGUgc29tZSBtZWFu
+cyBvZiBmdW5jdGlvbmFsaXR5IHdpdGhvdXQgdGhlIHJhdGUtdGFibGUKZXNwZWNpYWxseSBhcyBi
+b290bG9hZGVycyBkbyBnZW5lcmFsbHkgaW5pdGlhbGl6ZSBhIFBMTCB0byBzb21lIGZvcm0gb2YK
+c2FuZSBmcmVxdWVuY3kuCgpIZWlrbwoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2No
+aXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
+L2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
