@@ -2,71 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9494D9B8C
-	for <lists+linux-rockchip@lfdr.de>; Wed, 16 Oct 2019 22:20:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2968DD9B98
+	for <lists+linux-rockchip@lfdr.de>; Wed, 16 Oct 2019 22:21:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/mSZYtuXV2mDku9Tk6FrzgzL94lwaBJhI3tbeWkBEN4=; b=gO6dZrzlAR2nuT
-	dfchfM7LjzQigu2D22Z1cDg/sRB609SY1jrQYHjwFj68KCz5CiAKn+21ZwA2X+HgC8mHUo+tWIsiV
-	id7oltbdxgiHoDe8CkK3W9pg4YD1Iw/6gSXbYUMOwaSmDKy/sB9lf1TMXDtRs7IHThrsw20emjZsT
-	IzXENqlSNO/QBMHHS0OLZA3nxG3Lj4ewsBiPZ5kkeKd3kgBn7m9QxkCCukFlajXwnIb91OOFyY0Nb
-	NvwWOORj3RteAOB1oh4ldx+LDDCw/oTBaoXFijWoGCIRHak9qxt2azeoxTMvJdP9a6K79Xv6AhW1V
-	GfCBosQEuoZXKldvuV9Q==;
+	List-Owner; bh=te/5UYtirBjaYGmkdk+Up5h+xcckg4b50Rc59LjuIDU=; b=NonReoubZgJf/d
+	Usr2RG+T7fbmbh59m5uEv8Gr3s7/J26pMsEP6qOrcfZNPM+X3VGPm/Wj71cGck+Ln4h0tSLSXNBzm
+	uKDobhBHRWO0tSkblLKkMdgQ8yU0pM9oTwLmGcfNy4JSlEVlPlZrkot1qrE2x8voY6qbr958mXk0S
+	i1OMdAeGbs8nt5daoxE+9ftkAluQqF0+KZRcdl8j4EjRagGiL8ZpQ1+iRIRs0WNB1vHxycotqD4lt
+	Gc5fLxoQlhsgeQPSA1Tt0cI2nxjNlAcYZBGPJ+yW7w3lQJMAxW+cgQB1OLSxUtntzzptTXb6Ygogk
+	HZUHXk5baZ9OdSBFCfLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKpmB-0006sT-TX; Wed, 16 Oct 2019 20:20:07 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1iKpnf-00011j-Jc; Wed, 16 Oct 2019 20:21:39 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKpZr-0002Ix-Up; Wed, 16 Oct 2019 20:07:27 +0000
-Received: by mail-ot1-f65.google.com with SMTP id y39so21278597ota.7;
- Wed, 16 Oct 2019 13:07:23 -0700 (PDT)
+ id 1iKpZt-0002KP-Ib; Wed, 16 Oct 2019 20:07:35 +0000
+Received: by mail-ot1-f67.google.com with SMTP id 89so21273082oth.13;
+ Wed, 16 Oct 2019 13:07:24 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=8EjZCMf9X25YL2xnDGvatS6WOhekTnEbr44pTFr9BnI=;
- b=tJeHcKKblBF4Wztb3AqtLPlrVvnCTr2mJ4vix4rn+/5ycV0X2pAaxcojW8AR3pUoEv
- iAn047cKL82KyVgP3ljH65ox3TMPOtWFR63dsRZRPxcpgRQ7h6PhzyJJ8YnoKzDCV101
- 691IO06CtdphldhODYw6d2tFCTnduJ2PHuvCyh9CTys0nEsHUlqudRRrl90Xmkwno4PG
- MAw74bORdUiXlfq4UpiwjOzRHFy7QuxP+i56pT2Y1nSmiICDSf0eVvK0OK6OVorobtnb
- mQeogbhkb4mgCNLb5wKcGit2eF5+PQV4zFIzC8In+ouqIy7K0M0GndD9rgE7p+X+QYnh
- bv1A==
-X-Gm-Message-State: APjAAAWq4tpxihrPj8Fl3xgn7nV0YgcJqOq724htUgauo8rHD1a8liau
- KRUCSzmZmsGu1UnzqbsrTw==
-X-Google-Smtp-Source: APXvYqzTJeYoQM+BkZM8HRDuXdjqrFMtTYAuFWBkh10dsGSfzyliazEsJrxYjIRJ2m4HiNIDFy9TSw==
-X-Received: by 2002:a9d:5914:: with SMTP id t20mr35250oth.344.1571256442080;
- Wed, 16 Oct 2019 13:07:22 -0700 (PDT)
+ bh=3EQHmxhtyQ0FW8KKG3OU1ZuRq6/S0PaAKIhLXxkbZok=;
+ b=HhY/aILhIKum5bI3piqTF6Ux1VMJhE5aTrAWZuY+/gcTFAXU9QEBq99DvoGuH/Z4Ha
+ 8PV2zRM94MQMg0qHxkPHMSz0Botrevd29XsRgY29Dq807anDW9vjUTJ8nonmq0gWl0F6
+ geWphnwIolh+7xbFaumPyY4MiKjU6AehO8YTiPlrcPI/QpLQS6QF2OjeMjlBa+9/fzEo
+ tOzGQyw2jxte7oRBAquv6iR9y/9zFsMp82/VDBtw3tjXTHJBy/RFDfyLBEz38qvzRa7M
+ ncE3F5upH4OW23EeyhbvB998ond2oMWW5rlWhs/aVkOUkvNhTFVb6MngsK5DxhAH5zMP
+ IawQ==
+X-Gm-Message-State: APjAAAV+YWwmTx4VF+DOr7vger5JJ5zBTcxkYT18YYyFj/huBtiAefMc
+ tlOlmwzJOgsgFYtAMpveLZY6yj4=
+X-Google-Smtp-Source: APXvYqxfy07UxT1e2YWP1cod5gpc4Orw7/BMqXRZOexcKu0FIf+wZSpdoyf29cKC7t3/8xf0Exrt8g==
+X-Received: by 2002:a05:6830:12d6:: with SMTP id
+ a22mr47577otq.146.1571256443835; 
+ Wed, 16 Oct 2019 13:07:23 -0700 (PDT)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id a9sm7412463oie.7.2019.10.16.13.07.20
+ by smtp.googlemail.com with ESMTPSA id a9sm7412463oie.7.2019.10.16.13.07.22
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 13:07:21 -0700 (PDT)
+ Wed, 16 Oct 2019 13:07:23 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH v2 17/25] PCI: versatile: Remove usage of PHYS_OFFSET
-Date: Wed, 16 Oct 2019 15:06:39 -0500
-Message-Id: <20191016200647.32050-18-robh@kernel.org>
+Subject: [PATCH v2 18/25] PCI: versatile: Enable COMPILE_TEST
+Date: Wed, 16 Oct 2019 15:06:40 -0500
+Message-Id: <20191016200647.32050-19-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191016200647.32050-1-robh@kernel.org>
 References: <20191016200647.32050-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_130724_108013_BE0D9E97 
-X-CRM114-Status: GOOD (  14.51  )
+X-CRM114-CacheID: sfid-20191016_130725_704422_EFADC071 
+X-CRM114-Status: GOOD (  12.43  )
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
+ [209.85.210.67 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -111,53 +112,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-PHYS_OFFSET is not universally defined on all arches and using it prevents
-enabling COMPILE_TEST. PAGE_OFFSET and __pa() are always available, so use
-them to get the physical start of memory address.
+Since commit a574795bc383 ("PCI: generic,versatile: Remove unused
+pci_sys_data structures") the build dependency on ARM is gone, so let's
+enable COMPILE_TEST for versatile.
 
-This should have probably used 'dma-ranges' to get the address, but we
-don't want to force a DT update to do that. At least in QEMU, the SMAP
-registers have no effect (or perhaps the only value that is handled is 0).
-
+Reviewed-by: Andrew Murray <andrew.murray@arm.com>
 Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Cc: Andrew Murray <andrew.murray@arm.com>
 Cc: Bjorn Helgaas <bhelgaas@google.com>
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
-v2:
-- New patch to fix build failure on some arches.
+ drivers/pci/controller/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
- drivers/pci/controller/pci-versatile.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/pci/controller/pci-versatile.c b/drivers/pci/controller/pci-versatile.c
-index 18697f2ea345..eae1b859990b 100644
---- a/drivers/pci/controller/pci-versatile.c
-+++ b/drivers/pci/controller/pci-versatile.c
-@@ -99,7 +99,7 @@ static int versatile_pci_probe(struct platform_device *pdev)
- 	resource_list_for_each_entry(entry, &bridge->windows) {
- 		if (resource_type(entry->res) == IORESOURCE_MEM) {
- 			writel(entry->res->start >> 28, PCI_IMAP(mem));
--			writel(PHYS_OFFSET >> 28, PCI_SMAP(mem));
-+			writel(__pa(PAGE_OFFSET) >> 28, PCI_SMAP(mem));
- 			mem++;
- 		}
- 	}
-@@ -136,9 +136,9 @@ static int versatile_pci_probe(struct platform_device *pdev)
- 	/*
- 	 * Configure the PCI inbound memory windows to be 1:1 mapped to SDRAM
- 	 */
--	writel(PHYS_OFFSET, local_pci_cfg_base + PCI_BASE_ADDRESS_0);
--	writel(PHYS_OFFSET, local_pci_cfg_base + PCI_BASE_ADDRESS_1);
--	writel(PHYS_OFFSET, local_pci_cfg_base + PCI_BASE_ADDRESS_2);
-+	writel(__pa(PAGE_OFFSET), local_pci_cfg_base + PCI_BASE_ADDRESS_0);
-+	writel(__pa(PAGE_OFFSET), local_pci_cfg_base + PCI_BASE_ADDRESS_1);
-+	writel(__pa(PAGE_OFFSET), local_pci_cfg_base + PCI_BASE_ADDRESS_2);
-
- 	/*
- 	 * For many years the kernel and QEMU were symbiotically buggy
---
+diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
+index 70e078238899..f5de9119e8d3 100644
+--- a/drivers/pci/controller/Kconfig
++++ b/drivers/pci/controller/Kconfig
+@@ -135,7 +135,7 @@ config PCI_V3_SEMI
+ 
+ config PCI_VERSATILE
+ 	bool "ARM Versatile PB PCI controller"
+-	depends on ARCH_VERSATILE
++	depends on ARCH_VERSATILE || COMPILE_TEST
+ 
+ config PCIE_IPROC
+ 	tristate
+-- 
 2.20.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
