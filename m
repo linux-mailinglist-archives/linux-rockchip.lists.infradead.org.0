@@ -2,75 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D83B1D9152
-	for <lists+linux-rockchip@lfdr.de>; Wed, 16 Oct 2019 14:46:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93C60D9848
+	for <lists+linux-rockchip@lfdr.de>; Wed, 16 Oct 2019 19:09:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y/4ThAtAfTnC782sKqWdp464s73FVWANDhhvq6CB4u4=; b=g3h0RvJ+e732U2
-	f/moGZ38Xlp/uqPjpR5AwPrf/idzfRXM4+3WelQCgAMQ3Bgr94nx1fd6MXS/2uPadagPQlAfusdao
-	GNInbP8PlhQ31f8T/PKYbe+kWWUq9opv2HbebZvTDYiI+84dMHgp4JtXbnDg3k20/GQd6rhwCESUC
-	JWTjaiF9nc8gfgP4mscItgvPzv1oTLyNjNTE8q7PY04FKSEsC4BxPzChS5kR/aUIr9dbp83vOSQPb
-	pEmFvqMD2DBJk26A0YPEX4stQqIhkkTyYL1Huyepu+cgZDE7o9RZxUZNiRxtJM1Iw9t0QQBcNxaYO
-	0wY5uOb5ukYKIqrefCAg==;
+	List-Owner; bh=zP5GbazDjwGjKgwXUSYJct7/2COLP/JcolLxVeekH0M=; b=GVpGk8wmJIuQJs
+	qQcJqdHw2VRc6pjKENTB8N94II+QY3kNwId7QA/qZucek9z31AdcJzFbMaxUvJlPbkSzAdiUShqj2
+	M2K0GXqAdR8gEjO9NSdGA55tZ/iE5/7HuK/w4PwlBRMyjY7Jw/22aB/RHLTXDWJt33GZlMi37dWvd
+	o2KMEnSN+71UftMpggNAclR2v5CuQPlUoF4fJ6TDpGV9eB05Wsi8QmSkH7ao6Y2O7Xeuxy26BBnUT
+	Sdw3766YgtSZHZvybQyg1Rbl1NWU4NrFbMhSoBEJmBu2Gdt2RTJW2WcBbyiDnVjy/NHxQw8mvbsKT
+	Szrep8WCUew+fIjlCzlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKigm-0005BL-RL; Wed, 16 Oct 2019 12:46:04 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1iKmnk-0004m8-Op; Wed, 16 Oct 2019 17:09:32 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKigY-00051a-1X
- for linux-rockchip@lists.infradead.org; Wed, 16 Oct 2019 12:45:51 +0000
-Received: by mail-qk1-x743.google.com with SMTP id y189so22593814qkc.3
- for <linux-rockchip@lists.infradead.org>; Wed, 16 Oct 2019 05:45:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ id 1iKmnf-0004hG-1L
+ for linux-rockchip@lists.infradead.org; Wed, 16 Oct 2019 17:09:30 +0000
+Received: by mail-io1-xd41.google.com with SMTP id c25so54675100iot.12
+ for <linux-rockchip@lists.infradead.org>; Wed, 16 Oct 2019 10:09:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=i4Tlr8aaqHcqUHLIi1olwgg1FH4Wnc+VjJ6hwR+CHZ4=;
- b=UKDHkw+AsWNstYEdbran6nGCcRGuySyOhWzrs1M+lF6UxheGXfo+LcAWpEEbBx+GjI
- HjCtcPXBKQn4jwJy1cZJVsUKfW7IO6g+YkpfauBjo4HyT9qSp02EWBGyi3sOIeJrqugJ
- aNGP9AwBpU3FcCHdLXdwuvd0t0yyMgPBETbTKtu2DJj+lWiGvu+3fDWYAeAUK+WOEA4H
- F8rc+vcjQUPehy7NV4y5BA6xRXQqtAm5Nw1nm8zc582Y3Dcivh6Z7Y2lxO5s11cE/WnM
- Jkct9SJXs7YpPuGDgp+lQ+hSbBaEXPMKYZarrYIGCt8VYRjlw3XqOdiH5adCuAlguYgC
- XyWQ==
+ :cc; bh=xwCxUUjV/WWtVtkLQrc81XbqHdJCi8kT6J04rR+JzSM=;
+ b=IOujnRLxlKPoaPWR75FGkvjgqSoRhSb1XG7qPwi3oy3neKNnsG6g2iJm9mdC62eG4U
+ w9Or/1Ew0E2GNtQTdbkImrBBSm8RvvxlvH8sSZVfxvELKEkTZze0AP10e8yZkf4usEJS
+ sB1xMEfJpP+x4bnwk93isNxCW8UXRsHu1jlTw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=i4Tlr8aaqHcqUHLIi1olwgg1FH4Wnc+VjJ6hwR+CHZ4=;
- b=U6UvgDtFz8cvx+wTovtcJxlp2cbG5x7gZN+Yo+H7g12sHSonyxQxlodaY0pEOHmgh/
- GJuwiw/XEhBZvEUZWtCuGQYCz6pOH2t2k4JCx5mEvkPBfW9sQAC3xAGqMjjEF6TaR2/J
- GHaGWx9fQj6/IdU0cmeH0xgwhz0X++hb7OIvl7vxduC+YHg1HRjsuEhu62IE2B9nPTkF
- CrZ8sY5+K6hzERw6AGetw9Gg/fHX44SkjXXXLC6WJo+Xvurb/sbnWdGaEgyoUe9ZWn6g
- 4SEfgv5ZBVJZGFvAzR+QhqUkbhKEX1LnD9FTBOXvvw/36L9panmqB+d8R+FjglE4vyOJ
- GbXg==
-X-Gm-Message-State: APjAAAWtgyKFXt+ZCRX6M+7C1nEdsB0005tcqGhGfglaROs6E1Xt2GZy
- IkOl4Km2a3erkC4XB9MF0nGMFUiKkTZtRgDtEC133g==
-X-Google-Smtp-Source: APXvYqwOzWo5VbcvN0U8TDnN+1xwjUKgMyRheHPwsr6x9P70GL0NWL/tbYoCuW4aAJr51oKXjooJFWTyMu0zdWYL5a0=
-X-Received: by 2002:a05:620a:751:: with SMTP id
- i17mr39890335qki.340.1571229949254; 
- Wed, 16 Oct 2019 05:45:49 -0700 (PDT)
+ bh=xwCxUUjV/WWtVtkLQrc81XbqHdJCi8kT6J04rR+JzSM=;
+ b=ihsh76CjqtxxV8QD2SQrmRsbZ1op3aVXjbxlaxtkfxmTzO4VhMBTzcy/14uzv8nvX0
+ kFwhfZY2/IjAmq9Q1KKXo1q4//OOsLKNU0mCWb5qwO+Dg9FpteGmIiOGjFiE4Rora2QK
+ iFfLK/j2q/k/IuAA4eG1zYYWepjfz964+C/mE90VZ+1YqRNtvTFlCQ9jZJJ2MVFFIjWg
+ Ri9eljBJe+hvr0I/OcE5BELYHlIJFzsbggZnAThBv/f37cOTpPYNKVmH9m82Vf6/u3e1
+ TTusU4LRVMNSK3bt7lGan6NjXcvJHFSIluO2TTlkcWHkdWk5VIau7u23p15FqFbcN8H+
+ S0eg==
+X-Gm-Message-State: APjAAAXyWp+s+XBBIsLH4dh9xkwMZVCnw1VRJ393Aas1qNEByMtABj+I
+ sgTYoWtKGlx74TyW9u6U5OkWbIyMew5n+RDgidU5TA==
+X-Google-Smtp-Source: APXvYqwXM3D0W4/cfzsffh3JxHhnLGUHpZUbiwTI1st0K2tHjwZubNj/ZOkYEMgrbKiSdWBeO5xsKgO/UZEqnX4WX2o=
+X-Received: by 2002:a02:9a15:: with SMTP id b21mr3854078jal.103.1571245765494; 
+ Wed, 16 Oct 2019 10:09:25 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191015091708.7934-1-jay.xu@rock-chips.com>
- <20191015091708.7934-3-jay.xu@rock-chips.com>
-In-Reply-To: <20191015091708.7934-3-jay.xu@rock-chips.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 16 Oct 2019 14:45:38 +0200
-Message-ID: <CACRpkdbtfamz4H-RNUfdSz7eAOzRMgu-QPbVAVZKtC+Lg5VP9g@mail.gmail.com>
-Subject: Re: [PATCH v3 2/2] pinctrl: rockchip: add rk3308 SoC support
-To: Jianqun Xu <jay.xu@rock-chips.com>
+References: <20190919052822.10403-1-jagan@amarulasolutions.com>
+ <20190919052822.10403-2-jagan@amarulasolutions.com> <6797961.eJj5WIFbM9@phil>
+ <CAMty3ZDKaywoPxCSD-5N2pLjtGmZ-dZ7ZgUOJqiB1V_9rfR26A@mail.gmail.com>
+ <87eezolynl.fsf@archiso.i-did-not-set--mail-host-address--so-tickle-me>
+In-Reply-To: <87eezolynl.fsf@archiso.i-did-not-set--mail-host-address--so-tickle-me>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Wed, 16 Oct 2019 22:39:13 +0530
+Message-ID: <CAMty3ZD8uHsj0Jzs08sKG0JXfC6MU0MHdKs=kw4m5rupnoTtqg@mail.gmail.com>
+Subject: Re: [PATCH 1/6] arm64: dts: rockchip: Fix rk3399-roc-pc pwm2 pin
+To: Levin Du <djw@t-chip.com.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_054550_093235_8BA550CE 
-X-CRM114-Status: UNSURE (   7.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191016_100927_267534_EFF0A1DB 
+X-CRM114-Status: GOOD (  25.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -94,29 +92,181 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
+ devicetree <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
+ Da Xue <da@lessconfused.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Oct 15, 2019 at 11:17 AM Jianqun Xu <jay.xu@rock-chips.com> wrote:
+Hi Levin,
 
-> This patch do support pinctrl for RK3308 SoCs.
+On Tue, Oct 8, 2019 at 8:42 AM <djw@t-chip.com.cn> wrote:
 >
-> Reviewed-by: Heiko Stuebner <heiko@sntech.de>
-> Signed-off-by: Jianqun Xu <jay.xu@rock-chips.com>
+> Jagan Teki <jagan@amarulasolutions.com> writes:
+>
+> > Hi Heiko,
+> >
+> > On Mon, Sep 30, 2019 at 2:51 AM Heiko Stuebner <heiko@sntech.de> wrote:
+> >>
+> >> Hi Jagan,
+> >>
+> >> Am Donnerstag, 19. September 2019, 07:28:17 CEST schrieb Jagan Teki:
+> >> > ROC-PC is not able to boot linux console if PWM2_d is
+> >> > unattached to any pinctrl logic.
+> >> >
+> >> > To be precise the linux boot hang with last logs as,
+> >> > ...
+> >> > .....
+> >> > [    0.003367] Console: colour dummy device 80x25
+> >> > [    0.003788] printk: console [tty0] enabled
+> >> > [    0.004178] printk: bootconsole [uart8250] disabled
+> >> >
+> >> > In ROC-PC the PWM2_d pin is connected to LOG_DVS_PWM of
+> >> > VDD_LOG. So, for normal working operations this needs to
+> >> > active and pull-down.
+> >> >
+> >> > This patch fix, by attaching pinctrl active and pull-down
+> >> > the pwm2.
+> >>
+> >> This looks highly dubious on first glance. The pwm subsystem nor
+> >> the Rockchip pwm driver do not do any pinctrl handling.
+> >>
+> >> So I don't really see where that "active" pinctrl state is supposed
+> >> to come from.
+> >>
+> >> Comparing with the pwm driver in the vendor tree I see that there
+> >> is such a state defined there. But that code there also looks strange
+> >> as that driver never again leaves this active state after entering it.
+> >>
+> >> Also for example all the Gru devices run with quite a number of pwm-
+> >> regulators without needing additional fiddling with the pwm itself, so
+> >> I don't really see why that should be different here.
+> >
+> > I deed, I was supposed to think the same. but the vendor kernel dts
+> > from firefly do follow the pwm2 pinctrl [1]. I wouldn't find any
+> > information other than this vensor information, ie one of the reason I
+> > have marked "Levin Du" who initially supported this board.
+> >
+> > One, think I have seen was this pinctrl active fixed the boot hang.
+> > any inputs from would be very helpful.
+> >
+> > Levin Du, any inputs?
+> >
+> > [1] https://github.com/FireflyTeam/kernel/blob/stable-4.4-rk3399-linux/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi#L1184
+> >
+>
+> A grep of the `pwm2` shows that there's such block in rk3399-nanopi4.dtsi:
+>
+>     &pwm2 {
+>             pinctrl-names = "active";
+>             pinctrl-0 = <&pwm2_pin_pull_down>;
+>             status = "okay";
+>     };
+>
+> But last time I checked, using the mainline U-Boot (the roc-rk3399-pc is
+> in mainline now) with mainline linux v5.2-rc7, no such setting is
+> necessary, and the board boots happily.
+>
+> I cannot find the use of "active" pinctrl state in the
+> `drivers/pwm/pwm-rockchip.c`. If the pinctrl state needs to be setup as
+> default, the `pinctrl-names` needs to be "default" or "init" (see
+> `drivers/base/pinctrl.c`) .
+>
+> Jagan, what version of board do you use? I checked with
+> "ROC-RK3399-PC-V1.0-A 2018-07-12".
 
-Patch applied!
+I have ROC-RK3399-PC-V1.A 2018.09.25 and powering with TYPE-C0 port.
 
-Yours,
-Linus Walleij
+And here the boot log
+
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
+[    0.000000] Linux version 5.4.0-rc3-next-20191016
+(jagan@jagan-XPS-13-9350) (gcc version 6.3.1 20170109 (Linaro GCC
+6.3-2017.02)) #1 SMP PREEMPT Wed Oct 16 21:17:23 IST 2019
+[    0.000000] Machine model: Firefly ROC-RK3399-PC Board
+[    0.000000] earlycon: uart8250 at MMIO32 0x00000000ff1a0000 (options '')
+[    0.000000] printk: bootconsole [uart8250] enabled
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] cma: Reserved 32 MiB at 0x000000003e000000
+[    0.000000] NUMA: No NUMA configuration found
+[    0.000000] NUMA: Faking a node at [mem
+0x0000000000200000-0x00000000f7ffffff]
+[    0.000000] NUMA: NODE_DATA [mem 0xf77ef100-0xf77f0fff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000200000-0x000000003fffffff]
+[    0.000000]   DMA32    [mem 0x0000000040000000-0x00000000f7ffffff]
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000200000-0x00000000f7ffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000200000-0x00000000f7ffffff]
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+[    0.000000] psci: SMC Calling Convention v1.1
+[    0.000000] percpu: Embedded 22 pages/cpu s52952 r8192 d28968 u90112
+[    0.000000] Detected VIPT I-cache on CPU0
+[    0.000000] CPU features: detected: ARM erratum 845719
+[    0.000000] CPU features: detected: GIC system register CPU interface
+[    0.000000] Speculative Store Bypass Disable mitigation not required
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 999432
+[    0.000000] Policy zone: DMA32
+[    0.000000] Kernel command line:
+earlycon=uart8250,mmio32,0xff1a0000 root=/dev/mmcblk1p1 rootwait
+[    0.000000] Dentry cache hash table entries: 524288 (order: 10,
+4194304 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 262144 (order: 9,
+2097152 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] software IO TLB: mapped [mem 0x3a000000-0x3e000000] (64MB)
+[    0.000000] Memory: 3856004K/4061184K available (12028K kernel
+code, 1870K rwdata, 6440K rodata, 5056K init, 451K bss, 172412K
+reserved, 32768K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=6, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu:     RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=6.
+[    0.000000]  Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay
+is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=6
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GICv3: GIC: Using split EOI/Deactivate mode
+[    0.000000] GICv3: 256 SPIs implemented
+[    0.000000] GICv3: 0 Extended SPIs implemented
+[    0.000000] GICv3: Distributor has no Range Selector support
+[    0.000000] GICv3: 16 PPIs implemented
+[    0.000000] GICv3: no VLPI support, no direct LPI support
+[    0.000000] GICv3: CPU0: found redistributor 0 region 0:0x00000000fef00000
+[    0.000000] ITS [mem 0xfee20000-0xfee3ffff]
+[    0.000000] ITS@0x00000000fee20000: allocated 65536 Devices
+@f6880000 (flat, esz 8, psz 64K, shr 0)
+[    0.000000] ITS: using cache flushing for cmd queue
+[    0.000000] GICv3: using LPI property table @0x00000000f6840000
+[    0.000000] GIC: using cache flushing for LPI property table
+[    0.000000] GICv3: CPU0: using allocated LPI pending table
+@0x00000000f6850000
+[    0.000000] GICv3: GIC: PPI partition interrupt-partition-0[0] {
+/cpus/cpu@0[0] /cpus/cpu@1[1] /cpus/cpu@2[2] /cpus/cpu@3[3] }
+[    0.000000] GICv3: GIC: PPI partition interrupt-partition-1[1] {
+/cpus/cpu@100[4] /cpus/cpu@101[5] }
+[    0.000000] random: get_random_bytes called from
+start_kernel+0x2b8/0x454 with crng_init=0
+[    0.000000] arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff
+max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    0.000006] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps
+every 4398046511097ns
+[    0.003201] Console: colour dummy device 80x25
+[    0.003624] printk: console [tty0] enabled
+[    0.004020] printk: bootconsole [uart8250] disabled
 
 _______________________________________________
 Linux-rockchip mailing list
