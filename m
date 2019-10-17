@@ -2,85 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B529DAEBD
-	for <lists+linux-rockchip@lfdr.de>; Thu, 17 Oct 2019 15:49:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6E59DB238
+	for <lists+linux-rockchip@lfdr.de>; Thu, 17 Oct 2019 18:22:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eC5yZ2xvJm9jY3zA5EkYBqL9YmDtZ8eqSqwqhanopTg=; b=IVtwIvP8ObiE8C
-	dP6Qex8ernT1Acnl69qaxiiVLkaJvtexEuDAXsUaHBhiGcSpC+YZPEQ/SQdjEu4NhnK4jVmCfm2Jd
-	3VbHejjqmpdLh9/qYIj4ubGb/t3fYyiecvqyBaqeKhAHb5Abr4t/8J1Vx6PdZ48syp3rpYo/YPr0H
-	lIKLv52w5/IrIR7t0LXOUAomewS0j5XAKAC5Hx5nHkFBxSehnRhVM9SZeiN83jrQy/SdbqilzBTsQ
-	z6v/WJpFH80A4QzOt5tlm+cvOkW2Blfqt3qRopgCT8WwpdzVl8TvnwhoLmzYeyeQJ56s4oZ4mLchf
-	RkM0Lu9gNirfI3HUQZtw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-Id:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=mnFFWXgXQfEbBtlhN1ZPpg1AnGSWWYu0AFlg8FTX0c4=; b=fSgO3F4DvUmmD9utHuhcaNi3U
+	WKLI06tABrymaBTpxWBmCuzduYAurrdy4dDVndn4X548kX/6j/6NFhwF42pu2JkYF7c4raB99M4/H
+	qm4TL0X07pW86IaerMazM2CgChGADG46+ulIPW+90G+Y1zwFS/g2kJiHM3PnMwSI0ZMDtJgRkdMdu
+	qRAy6LsNGsT86EzBWPj2kXE4E3bvCs8nNWlQ46aLFRWwV/HWx76ctOSeibcTc+JrX0fcE8FCFuTVM
+	DumPYp//od2ScfSz8grKqSgxnZCTw/caRc24UW+yrTuY5GFzgQIhIcIoUGAxMG4as1Yhxc3hGC7Dj
+	9JoCVRypA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL69y-0004Kg-8x; Thu, 17 Oct 2019 13:49:46 +0000
-Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1iL8XK-0005Fe-Br; Thu, 17 Oct 2019 16:22:02 +0000
+Received: from tf.think-future.de ([193.7.177.246] helo=think-future.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL69V-0003yd-Nb
- for linux-rockchip@lists.infradead.org; Thu, 17 Oct 2019 13:49:20 +0000
-Received: by mail-il1-x141.google.com with SMTP id c12so2108533ilm.1
- for <linux-rockchip@lists.infradead.org>; Thu, 17 Oct 2019 06:49:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Son4OYF2Y1agrYSzVjXzdtqWR13KfwPc90XQEzvHzJY=;
- b=R5kUAa28wdXHnMAHTg1Cwt7oJ8I+/1ddwLuXV4RHs0SAknbj80dbqg5xu/VAf+D9k1
- RRmgg7qu3HyZJqMuguPBKjd67pJbQ7ZUdSgvMuYnwjnjfp6mjYkeDTSXirAxJSpKMJbl
- ZJoVz77GPl1uI99Vd03i/OxLtuao7qNL307jY=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Son4OYF2Y1agrYSzVjXzdtqWR13KfwPc90XQEzvHzJY=;
- b=ppJtJZFpd6iPZZ7AT7QV9B9b/kHmxaVvQly/Ow6vRmvbXs9Q+as7/5lHL5sIeU/NFl
- DZk7Uk1sH/TFSuEIZ/v9s2WPX0hYUpEehbs1zu40peOY3uBn4D4ewz5bbE3jh3pStjl/
- ksQAlFxhiI19yMKo17xvo115NEjxeRIR1eik4BiuaTpmcBlFN+3AOalqLjRscrBGrMMX
- +OLslM4OoTqJkyYKemGZGSW2k++w5llyq2aipqil9ZxF5X0EjkeilQRegSeKmFDhZ7sf
- xYnUzxz+r8cKI4eCV0uxyaymW5hgbkHVjQi2E/1ZFnCyyA8FENgRj5nQjsX1IgGqOed5
- z2SQ==
-X-Gm-Message-State: APjAAAVBiAbeaCM/cR+MpidEg1URAAQQ8W8bfseTFNmQ1Z489F3T12nH
- 6tGvXFAdT99B1YBsS53HBW72uWqI8MWFOcXjvdK2Tw==
-X-Google-Smtp-Source: APXvYqz6JUSGUI7GEkDLMmO5W2uSstaHjxwDXL88+sXpB3FTcGOaQSu5XtGh0s5YjrEy9ojzal0OC/Xpya/A553NzIo=
-X-Received: by 2002:a92:b604:: with SMTP id s4mr3858585ili.28.1571320156027;
- Thu, 17 Oct 2019 06:49:16 -0700 (PDT)
+ id 1iL8XH-0005F6-49
+ for linux-rockchip@lists.infradead.org; Thu, 17 Oct 2019 16:22:00 +0000
+Received: by tf.think-future.de (Postfix, from userid 114)
+ id 7B57B3FF29; Thu, 17 Oct 2019 18:21:56 +0200 (CEST)
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on tf.think-future.de
+X-Spam-Level: *
+X-Spam-Status: No, score=1.9 required=4.8 tests=BAYES_00, DKIM_ADSP_CUSTOM_MED,
+ FORGED_GMAIL_RCVD,FREEMAIL_FROM,NML_ADSP_CUSTOM_MED,NO_RECEIVED,
+ NO_RELAYS autolearn=no autolearn_force=no version=3.4.2
+X-Spam-Host: Think-Future.de
+X-Spam-Spammy: 
+X-Spam-Report: * -1.9 BAYES_00 BODY: Spamwahrscheinlichkeit nach Bayes-Test:
+ 0-1% *      [score: 0.0000]
+ * -0.0 NO_RELAYS Informational: message was not relayed via SMTP
+ *  1.0 FREEMAIL_FROM Sender email is commonly abused enduser mail
+ *      provider (4omecha[at]gmail.com)
+ *  0.0 DKIM_ADSP_CUSTOM_MED No valid author signature, adsp_override
+ *      is CUSTOM_MED
+ *  1.0 FORGED_GMAIL_RCVD 'From' gmail.com does not match 'Received'
+ *      headers
+ * -0.0 NO_RECEIVED Informational: message has no Received headers
+ *  1.8 NML_ADSP_CUSTOM_MED ADSP custom_med hit, and not from a mailing
+ *       list
+X-Spam-HP: BAYES_00=-1.9,DKIM_ADSP_CUSTOM_MED=0.001,FORGED_GMAIL_RCVD=1,
+ FREEMAIL_FROM=1,NML_ADSP_CUSTOM_MED=1.8,NO_RECEIVED=-0.001,
+ NO_RELAYS=-0.001
+X-Spam-Pyzor: Reported 0 times.
+X-Spam-Relay-Country: 
+Date: Thu, 17 Oct 2019 18:21:31 +0200
+From: 4omecha@gmail.com
+To: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+Subject: Re: rk3328 USB3 controller
+Message-Id: <20191017162131.GH14623@think-future.de>
+References: <CAMdYzYp9xdtb6eiUs-Tiq4jJ-jr31LTzng2o-qAbOfu_63zXVg@mail.gmail.com>
+ <1b0f65be-51b6-69dd-e204-6d168f17eb7d@think-future.de>
 MIME-Version: 1.0
-References: <20190919052822.10403-1-jagan@amarulasolutions.com>
- <20190919052822.10403-2-jagan@amarulasolutions.com> <6797961.eJj5WIFbM9@phil>
- <CAMty3ZDKaywoPxCSD-5N2pLjtGmZ-dZ7ZgUOJqiB1V_9rfR26A@mail.gmail.com>
- <87eezolynl.fsf@archiso.i-did-not-set--mail-host-address--so-tickle-me>
- <CAMty3ZD8uHsj0Jzs08sKG0JXfC6MU0MHdKs=kw4m5rupnoTtqg@mail.gmail.com>
- <109d708e-d182-fafa-44ad-0e6e0f813e0d@fivetechno.de>
-In-Reply-To: <109d708e-d182-fafa-44ad-0e6e0f813e0d@fivetechno.de>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Thu, 17 Oct 2019 19:19:04 +0530
-Message-ID: <CAMty3ZBu2WRJV9X6_ZAXBfpBs42p04Ph7amFpfO64iOQM-Sw_w@mail.gmail.com>
-Subject: Re: [PATCH 1/6] arm64: dts: rockchip: Fix rk3399-roc-pc pwm2 pin
-To: Markus Reichl <m.reichl@fivetechno.de>
+Content-Disposition: inline
+In-Reply-To: <1b0f65be-51b6-69dd-e204-6d168f17eb7d@think-future.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_064918_260063_FD2ADD39 
-X-CRM114-Status: GOOD (  28.66  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191017_092159_315061_FA990DF4 
+X-CRM114-Status: UNSURE (   7.96  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 4.6 (++++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (4.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
+ CUSTOM_MED
+ 1.0 FORGED_GMAIL_RCVD      'From' gmail.com does not match 'Received'
+ headers
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (4omecha[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 1.0 FORGED_SPF_HELO        No description available.
+ 1.2 NML_ADSP_CUSTOM_MED    ADSP custom_med hit, and not from a mailing
+ list
+ 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,206 +93,59 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Da Xue <da@lessconfused.com>,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
- Levin Du <djw@t-chip.com.cn>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-rockchip@lists.infradead.org, Peter Geis <pgwipeout@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Markus,
-
-On Thu, Oct 17, 2019 at 6:56 PM Markus Reichl <m.reichl@fivetechno.de> wrote:
+On 2019-10-17 14:07:43, Katsuhiro Suzuki wrote:
+>Hello Peter,
 >
-> Hi Jagan,
+>USB3 phy driver "rockchip,rk3328-u3phy" has not been implemented on
+>upstream linux kernel.
 >
-> your patch fixes booting my rk3399-roc-pc with 5.4.0-rc3-next-20191017.
-> Without your patch roc-pc hangs here:
-> [    9.703526] pwm-regulator: supplied by regulator-dummy
+>FireflyTeam use the special version of linux that is modified by Rockchip.
+>(It seems based on linux-4.4)
+>
+>rockchip,rk3328-u3phy is provided by
+>  https://github.com/FireflyTeam/kernel/drivers/phy/rockchip/phy-rockchip-inno-usb3.c
+That's a 404 over here.
 
-Thanks for testing this.
-
-Indeed the same change available in BSP
-https://github.com/FireflyTeam/kernel/blob/stable-4.4-rk3399-linux/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi#L1184
-
-I'm waiting for Levin response on this issue, need to update commit
-information accordingly.
 
 >
-> Am 16.10.19 um 19:09 schrieb Jagan Teki:
-> > Hi Levin,
-> >
-> > On Tue, Oct 8, 2019 at 8:42 AM <djw@t-chip.com.cn> wrote:
-> >>
-> >> Jagan Teki <jagan@amarulasolutions.com> writes:
-> >>
-> >> > Hi Heiko,
-> >> >
-> >> > On Mon, Sep 30, 2019 at 2:51 AM Heiko Stuebner <heiko@sntech.de> wrote:
-> >> >>
-> >> >> Hi Jagan,
-> >> >>
-> >> >> Am Donnerstag, 19. September 2019, 07:28:17 CEST schrieb Jagan Teki:
-> >> >> > ROC-PC is not able to boot linux console if PWM2_d is
-> >> >> > unattached to any pinctrl logic.
-> >> >> >
-> >> >> > To be precise the linux boot hang with last logs as,
-> >> >> > ...
-> >> >> > .....
-> >> >> > [    0.003367] Console: colour dummy device 80x25
-> >> >> > [    0.003788] printk: console [tty0] enabled
-> >> >> > [    0.004178] printk: bootconsole [uart8250] disabled
-> >> >> >
-> >> >> > In ROC-PC the PWM2_d pin is connected to LOG_DVS_PWM of
-> >> >> > VDD_LOG. So, for normal working operations this needs to
-> >> >> > active and pull-down.
-> >> >> >
-> >> >> > This patch fix, by attaching pinctrl active and pull-down
-> >> >> > the pwm2.
-> >> >>
-> >> >> This looks highly dubious on first glance. The pwm subsystem nor
-> >> >> the Rockchip pwm driver do not do any pinctrl handling.
-> >> >>
-> >> >> So I don't really see where that "active" pinctrl state is supposed
-> >> >> to come from.
-> >> >>
-> >> >> Comparing with the pwm driver in the vendor tree I see that there
-> >> >> is such a state defined there. But that code there also looks strange
-> >> >> as that driver never again leaves this active state after entering it.
-> >> >>
-> >> >> Also for example all the Gru devices run with quite a number of pwm-
-> >> >> regulators without needing additional fiddling with the pwm itself, so
-> >> >> I don't really see why that should be different here.
-> >> >
-> >> > I deed, I was supposed to think the same. but the vendor kernel dts
-> >> > from firefly do follow the pwm2 pinctrl [1]. I wouldn't find any
-> >> > information other than this vensor information, ie one of the reason I
-> >> > have marked "Levin Du" who initially supported this board.
-> >> >
-> >> > One, think I have seen was this pinctrl active fixed the boot hang.
-> >> > any inputs from would be very helpful.
-> >> >
-> >> > Levin Du, any inputs?
-> >> >
-> >> > [1] https://github.com/FireflyTeam/kernel/blob/stable-4.4-rk3399-linux/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi#L1184
-> >> >
-> >>
-> >> A grep of the `pwm2` shows that there's such block in rk3399-nanopi4.dtsi:
-> >>
-> >>     &pwm2 {
-> >>             pinctrl-names = "active";
-> >>             pinctrl-0 = <&pwm2_pin_pull_down>;
-> >>             status = "okay";
-> >>     };
-> >>
-> >> But last time I checked, using the mainline U-Boot (the roc-rk3399-pc is
-> >> in mainline now) with mainline linux v5.2-rc7, no such setting is
-> >> necessary, and the board boots happily.
-> >>
-> >> I cannot find the use of "active" pinctrl state in the
-> >> `drivers/pwm/pwm-rockchip.c`. If the pinctrl state needs to be setup as
-> >> default, the `pinctrl-names` needs to be "default" or "init" (see
-> >> `drivers/base/pinctrl.c`) .
-> >>
-> >> Jagan, what version of board do you use? I checked with
-> >> "ROC-RK3399-PC-V1.0-A 2018-07-12".
-> >
-> > I have ROC-RK3399-PC-V1.A 2018.09.25 and powering with TYPE-C0 port.
-> >
-> > And here the boot log
-> >
-> > [    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
-> > [    0.000000] Linux version 5.4.0-rc3-next-20191016
-> > (jagan@jagan-XPS-13-9350) (gcc version 6.3.1 20170109 (Linaro GCC
-> > 6.3-2017.02)) #1 SMP PREEMPT Wed Oct 16 21:17:23 IST 2019
-> > [    0.000000] Machine model: Firefly ROC-RK3399-PC Board
-> > [    0.000000] earlycon: uart8250 at MMIO32 0x00000000ff1a0000 (options '')
-> > [    0.000000] printk: bootconsole [uart8250] enabled
-> > [    0.000000] efi: Getting EFI parameters from FDT:
-> > [    0.000000] efi: UEFI not found.
-> > [    0.000000] cma: Reserved 32 MiB at 0x000000003e000000
-> > [    0.000000] NUMA: No NUMA configuration found
-> > [    0.000000] NUMA: Faking a node at [mem
-> > 0x0000000000200000-0x00000000f7ffffff]
-> > [    0.000000] NUMA: NODE_DATA [mem 0xf77ef100-0xf77f0fff]
-> > [    0.000000] Zone ranges:
-> > [    0.000000]   DMA      [mem 0x0000000000200000-0x000000003fffffff]
-> > [    0.000000]   DMA32    [mem 0x0000000040000000-0x00000000f7ffffff]
-> > [    0.000000]   Normal   empty
-> > [    0.000000] Movable zone start for each node
-> > [    0.000000] Early memory node ranges
-> > [    0.000000]   node   0: [mem 0x0000000000200000-0x00000000f7ffffff]
-> > [    0.000000] Initmem setup node 0 [mem 0x0000000000200000-0x00000000f7ffffff]
-> > [    0.000000] psci: probing for conduit method from DT.
-> > [    0.000000] psci: PSCIv1.1 detected in firmware.
-> > [    0.000000] psci: Using standard PSCI v0.2 function IDs
-> > [    0.000000] psci: MIGRATE_INFO_TYPE not supported.
-> > [    0.000000] psci: SMC Calling Convention v1.1
-> > [    0.000000] percpu: Embedded 22 pages/cpu s52952 r8192 d28968 u90112
-> > [    0.000000] Detected VIPT I-cache on CPU0
-> > [    0.000000] CPU features: detected: ARM erratum 845719
-> > [    0.000000] CPU features: detected: GIC system register CPU interface
-> > [    0.000000] Speculative Store Bypass Disable mitigation not required
-> > [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 999432
-> > [    0.000000] Policy zone: DMA32
-> > [    0.000000] Kernel command line:
-> > earlycon=uart8250,mmio32,0xff1a0000 root=/dev/mmcblk1p1 rootwait
-> > [    0.000000] Dentry cache hash table entries: 524288 (order: 10,
-> > 4194304 bytes, linear)
-> > [    0.000000] Inode-cache hash table entries: 262144 (order: 9,
-> > 2097152 bytes, linear)
-> > [    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
-> > [    0.000000] software IO TLB: mapped [mem 0x3a000000-0x3e000000] (64MB)
-> > [    0.000000] Memory: 3856004K/4061184K available (12028K kernel
-> > code, 1870K rwdata, 6440K rodata, 5056K init, 451K bss, 172412K
-> > reserved, 32768K cma-reserved)
-> > [    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=6, Nodes=1
-> > [    0.000000] rcu: Preemptible hierarchical RCU implementation.
-> > [    0.000000] rcu:     RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=6.
-> > [    0.000000]  Tasks RCU enabled.
-> > [    0.000000] rcu: RCU calculated value of scheduler-enlistment delay
-> > is 25 jiffies.
-> > [    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=6
-> > [    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
-> > [    0.000000] GICv3: GIC: Using split EOI/Deactivate mode
-> > [    0.000000] GICv3: 256 SPIs implemented
-> > [    0.000000] GICv3: 0 Extended SPIs implemented
-> > [    0.000000] GICv3: Distributor has no Range Selector support
-> > [    0.000000] GICv3: 16 PPIs implemented
-> > [    0.000000] GICv3: no VLPI support, no direct LPI support
-> > [    0.000000] GICv3: CPU0: found redistributor 0 region 0:0x00000000fef00000
-> > [    0.000000] ITS [mem 0xfee20000-0xfee3ffff]
-> > [    0.000000] ITS@0x00000000fee20000: allocated 65536 Devices
-> > @f6880000 (flat, esz 8, psz 64K, shr 0)
-> > [    0.000000] ITS: using cache flushing for cmd queue
-> > [    0.000000] GICv3: using LPI property table @0x00000000f6840000
-> > [    0.000000] GIC: using cache flushing for LPI property table
-> > [    0.000000] GICv3: CPU0: using allocated LPI pending table
-> > @0x00000000f6850000
-> > [    0.000000] GICv3: GIC: PPI partition interrupt-partition-0[0] {
-> > /cpus/cpu@0[0] /cpus/cpu@1[1] /cpus/cpu@2[2] /cpus/cpu@3[3] }
-> > [    0.000000] GICv3: GIC: PPI partition interrupt-partition-1[1] {
-> > /cpus/cpu@100[4] /cpus/cpu@101[5] }
-> > [    0.000000] random: get_random_bytes called from
-> > start_kernel+0x2b8/0x454 with crng_init=0
-> > [    0.000000] arch_timer: cp15 timer(s) running at 24.00MHz (phys).
-> > [    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff
-> > max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
-> > [    0.000006] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps
-> > every 4398046511097ns
-> > [    0.003201] Console: colour dummy device 80x25
-> > [    0.003624] printk: console [tty0] enabled
-> > [    0.004020] printk: bootconsole [uart8250] disabled
+>If you want to use USB 3.0 with upstream linux, we need to port this
+>USB3 phy driver from rockchip-linux to upstream kernel, I think.
 >
-> I had to put "console=ttyS2,1500000" in kernel command line to get further logging beyond this point.
+>Best Regards,
+>Katsuhiro Suzuki
+>
+>
+>On 2019/10/17 3:54, Peter Geis wrote:
+>>Good Afternoon,
+>>
+>>Is there a particular reason why the USB3 controller on the rk3328 has
+>>not been enabled?
+>>It's enabled on the TeamFirefly source [0].
+>>I pulled it in to my device tree and have been using a USB3 SSD as my
+>>boot device for over a year now.
+>>
+>>If I were to submit the patch, would y'all be open to pulling it in?
+>>
+>>[0] https://github.com/FireflyTeam/kernel/blob/roc-rk3328-cc/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+>>
+>>_______________________________________________
+>>Linux-rockchip mailing list
+>>Linux-rockchip@lists.infradead.org
+>>http://lists.infradead.org/mailman/listinfo/linux-rockchip
+>>
+>
+>
+>_______________________________________________
+>Linux-rockchip mailing list
+>Linux-rockchip@lists.infradead.org
+>http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
-Noted, thanks.
 
 _______________________________________________
 Linux-rockchip mailing list
