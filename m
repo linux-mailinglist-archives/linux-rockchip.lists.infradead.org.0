@@ -2,82 +2,93 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0612D9BAB
-	for <lists+linux-rockchip@lfdr.de>; Wed, 16 Oct 2019 22:22:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16B2ADA2AD
+	for <lists+linux-rockchip@lfdr.de>; Thu, 17 Oct 2019 02:27:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YKFOvPYrNcCnDF3l8DIlS+5Sco/Jg/9o5d68XN1+lUc=; b=bkcjTXzPOng60h
-	Z3Ukht15cB1sX9v3nAd0K4uDLv4zxEN1fftXQYyirPGHnhRiGVw55q5cVbclaTxtBqbG9cRw+VVz6
-	HIL//Dnm+5n07/2MbcuLEdLHMnF1QDhNYYANFJ60XS4m8Sr10lVTAD0gkS3917irC3bywPB9APo9F
-	8Lnb6/Ayr8Jk1zrA9GIMDVlDZJ7fGYoIl78TWsPl7YoWwLH0IET/lvv78XYuxCPRxRxg1gkcB1Aa8
-	zVWMRMnDg0tNSEtE/SsBsv1LxX5+1P0+aMOtfWxH6TyZbTGvZJZqDH9Va6ovPlJlTvf5GEYh7Pb6p
-	8kduZ3qwF5EgFnzVbB9g==;
+	List-Owner; bh=RifaoAKxJtJc7HSIb1+VahuvItuWld2Cnjc9IETjPXw=; b=fwkONcaCdTuzQG
+	eL0uYMY7+haPHjFKFqAuQp0edLmutqyUghQZD7KtsqNiddUMxxPluw1/zVD8k96Bhj606MaXFjzMM
+	lHzODXQTfChsOtCYeGl3WyRnMbTGzqIg7QyuGCXmUWrJ0BBVJrasCOHR6Rps9BgxaXNl82oPael0f
+	bnsvGCSOP+xi+5l92B17MzPF9jydQlo7rpS8erB2b/qWg+pyJVt858Dv8yC46EVEhssTGrsfhtPu8
+	Ys80JxTDWMdYhnLd28VmZUqlm7gU/IdmnUPc137CnEkfKAJojsOVuRiFY/G+ohNZBIm73VY8gjeKo
+	ycop69Gs3TTJGih4grvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKpoX-0001y2-Ms; Wed, 16 Oct 2019 20:22:33 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1iKtda-0003Bt-Jw; Thu, 17 Oct 2019 00:27:30 +0000
+Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKpa5-0002U9-5U; Wed, 16 Oct 2019 20:07:46 +0000
-Received: by mail-oi1-f193.google.com with SMTP id a15so152953oic.0;
- Wed, 16 Oct 2019 13:07:36 -0700 (PDT)
+ id 1iKtdX-0003BK-2J
+ for linux-rockchip@lists.infradead.org; Thu, 17 Oct 2019 00:27:28 +0000
+Received: by mail-il1-x142.google.com with SMTP id a5so296829ilh.6
+ for <linux-rockchip@lists.infradead.org>; Wed, 16 Oct 2019 17:27:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ssXZYIfbBoFlq5o8fLFe5texKrdyJMrZYOXv4r4D2eM=;
+ b=YaFT1Q5meCXdX8c6PZ7iRxWAGR3vsMIrZ4+0Y3+B6CPkpxiLnnwfpPv58dvBDfyB+J
+ 5KIa35vr8kmEsKqso7MTr5vdDzYVfXdtCbpprTk3yX+Lg6zsTkplbzXvre1UnbJI6hDe
+ PVkqbLvb1vrKxIFOxfVSIPBrqSFlFyecIo8f0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=5gD14iI8UpOKj376Bq/txSzTZsSs0VToSMrptEdmjdQ=;
- b=jk972yDEsFd7hvNNWtUZ9VpiAKxz4x8k0l4Qu5NrH03gMva8eQUcn4rPGrVG4lqC62
- SkpOFU0GgCY7c4Qc98yCu4UIBswcoWjF0Cu9cPzYcjsP0J3ELJq4iAvzbxr1ENjP6GL5
- Mj9gh18ft1sdYTAj+Z/E+sL1Z16Haj9ydh5N8vIzQuiF83XdU+tY3hrDuP1vIkuINxkn
- 2xu6E30qQ9fWT7vedDHw6/5OkRMebLxepnwbbg7OhQ2h+bd6lNQ9fYcQlmXDpNa4qqhy
- by1FxB3IsjGy4WmwEqp15Z8PJkQFMyJkHfTnkg9Vs9IzQ5dD4Zclecnm5UWtAXEThIjA
- b5GQ==
-X-Gm-Message-State: APjAAAXjIl3uTo+W7OwIpp736n4LuN84VJ3CxIeW63TS0s8TwW+IE5uX
- IMDkMnjICG8CXGqbIQ7PLw==
-X-Google-Smtp-Source: APXvYqwARWAGB+loxletdL6FrwiWyw5aEFkfQ6bbkwqrIvNHj0wJXVi7rbTCOJSVySk78uO9yqn8Ag==
-X-Received: by 2002:aca:df41:: with SMTP id w62mr110576oig.90.1571256456105;
- Wed, 16 Oct 2019 13:07:36 -0700 (PDT)
-Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id a9sm7412463oie.7.2019.10.16.13.07.34
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 13:07:35 -0700 (PDT)
-From: Rob Herring <robh@kernel.org>
-To: Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH v2 25/25] PCI: Make devm_of_pci_get_host_bridge_resources()
- static
-Date: Wed, 16 Oct 2019 15:06:47 -0500
-Message-Id: <20191016200647.32050-26-robh@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191016200647.32050-1-robh@kernel.org>
-References: <20191016200647.32050-1-robh@kernel.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ssXZYIfbBoFlq5o8fLFe5texKrdyJMrZYOXv4r4D2eM=;
+ b=YANMWROLZedWqAUmrhnS5OjX5a6TaGsKvC7acyhn+qTLhdgwcgEVMkJxjp0ffs8lbd
+ M5aSWWsBCPCcYv9b4zMt/4pSpJKtRwBaNw5Kx4ltlYEoMpM3R9o2+/7CE0TiqZhRSf0a
+ aQ4ZKeD6aKqwSo/ldlLJD2BptFuna1cwXgQ4PkLZkszttViYKujldn59MYCDhFtmg135
+ NBl0E8u6QZHVgPVUImQtkBwZWv3V8a2383TtCT0Fjt5oItBv93iOOUpXYffTCNtdux/2
+ xSPgkyl96BabQ3aYgjaqXsLMN2Hk4M7NK7a7qyxMifnFdK3PzHrf3p2RsfIEqZIU2696
+ EWIA==
+X-Gm-Message-State: APjAAAUyBPQkfxfo9BUCWkbxKLwe2DYE2STMjuSObCRPdUSoEkGT8qSQ
+ OokTTfh/7JeOK6D58/cF0EswJ5+su8U=
+X-Google-Smtp-Source: APXvYqwjif5SiZrSTotaHuQHASxyDVke003d5YIckK23eD+oFgSRPzboDFevJAtqNE/qqv64j1RRbA==
+X-Received: by 2002:a92:3c04:: with SMTP id j4mr742006ila.120.1571272043237;
+ Wed, 16 Oct 2019 17:27:23 -0700 (PDT)
+Received: from mail-il1-f170.google.com (mail-il1-f170.google.com.
+ [209.85.166.170])
+ by smtp.gmail.com with ESMTPSA id g87sm193986ild.79.2019.10.16.17.27.23
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 16 Oct 2019 17:27:23 -0700 (PDT)
+Received: by mail-il1-f170.google.com with SMTP id y5so301552ilb.5
+ for <linux-rockchip@lists.infradead.org>; Wed, 16 Oct 2019 17:27:23 -0700 (PDT)
+X-Received: by 2002:a92:819c:: with SMTP id q28mr703756ilk.269.1571271741101; 
+ Wed, 16 Oct 2019 17:22:21 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190722193939.125578-1-dianders@chromium.org>
+ <20190722193939.125578-2-dianders@chromium.org>
+ <CAPDyKFpKWo4n+nmBXVcDc4TNzFV3vc+3aeKcu_nKaB=hj=RKUQ@mail.gmail.com>
+In-Reply-To: <CAPDyKFpKWo4n+nmBXVcDc4TNzFV3vc+3aeKcu_nKaB=hj=RKUQ@mail.gmail.com>
+From: Doug Anderson <dianders@chromium.org>
+Date: Wed, 16 Oct 2019 17:22:08 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=WTKy3PmMSCbjKA_Ro_MP+dFE89oCzi_Bs7YeCrcD+3Xg@mail.gmail.com>
+Message-ID: <CAD=FV=WTKy3PmMSCbjKA_Ro_MP+dFE89oCzi_Bs7YeCrcD+3Xg@mail.gmail.com>
+Subject: Re: [PATCH v2 1/2] mmc: core: Add sdio_trigger_replug() API
+To: Ulf Hansson <ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_130737_250660_481BD134 
-X-CRM114-Status: GOOD (  12.20  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20191016_172727_111804_E17CD4BF 
+X-CRM114-Status: GOOD (  34.60  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,98 +101,142 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>, linux-pci@vger.kernel.org,
- Shawn Lin <shawn.lin@rock-chips.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
- Ryder Lee <ryder.lee@mediatek.com>, Michal Simek <michal.simek@xilinx.com>,
- linux-rockchip@lists.infradead.org, bcm-kernel-feedback-list@broadcom.com,
- Linus Walleij <linus.walleij@linaro.org>, Ray Jui <rjui@broadcom.com>,
- Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, Simon Horman <horms@verge.net.au>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Scott Branden <sbranden@broadcom.com>,
- Jingoo Han <jingoohan1@gmail.com>, rfi@lists.rocketboards.org,
- linux-renesas-soc@vger.kernel.org, Tom Joseph <tjoseph@cadence.com>,
- Srinath Mannam <srinath.mannam@broadcom.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Ley Foon Tan <lftan@altera.com>
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Ganapathi Bhat <gbhat@marvell.com>, Brian Norris <briannorris@chromium.org>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ Xinming Hu <huxinming820@gmail.com>, netdev <netdev@vger.kernel.org>,
+ Andreas Fenkart <afenkart@gmail.com>,
+ linux-wireless <linux-wireless@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Amitkumar Karwar <amitkarwar@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Nishant Sarmukadam <nishants@marvell.com>,
+ Matthias Kaehlcke <mka@chromium.org>, Avri Altman <avri.altman@wdc.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, "David S. Miller" <davem@davemloft.net>,
+ Kalle Valo <kvalo@codeaurora.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Now that all the PCI host drivers are using pci_parse_request_of_pci_ranges(),
-make devm_of_pci_get_host_bridge_resources() static.
+Hi,
 
-Cc: Bjorn Helgaas <bhelgaas@google.com>
-Signed-off-by: Rob Herring <robh@kernel.org>
----
- drivers/pci/of.c  |  5 +----
- drivers/pci/pci.h | 17 -----------------
- 2 files changed, 1 insertion(+), 21 deletions(-)
+On Thu, Oct 10, 2019 at 7:11 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+>
+> On Mon, 22 Jul 2019 at 21:41, Douglas Anderson <dianders@chromium.org> wrote:
+> >
+> > When using Marvell WiFi SDIO cards, it is not uncommon for Linux WiFi
+> > driver to fully lose the communication channel to the firmware running
+> > on the card.  Presumably the firmware on the card has a bug or two in
+> > it and occasionally crashes.
+> >
+> > The Marvell WiFi driver attempts to recover from this problem.
+> > Specifically the driver has the function mwifiex_sdio_card_reset()
+> > which is called when communcation problems are found.  That function
+> > attempts to reset the state of things by utilizing the mmc_hw_reset()
+> > function.
+> >
+> > The current solution is a bit complex because the Marvell WiFi driver
+> > needs to manually deinit and reinit the WiFi driver around the reset
+> > call.  This means it's going through a bunch of code paths that aren't
+> > normally tested.  However, complexity isn't our only problem.  The
+> > other (bigger) problem is that Marvell WiFi cards are often combo
+> > WiFi/Bluetooth cards and Bluetooth runs on a second SDIO func.  While
+> > the WiFi driver knows that it should re-init its own state around the
+> > mmc_hw_reset() call there is no good way to inform the Bluetooth
+> > driver.  That means that in Linux today when you reset the Marvell
+> > WiFi driver you lose all Bluetooth communication.  Doh!
+>
+> Thanks for a nice description to the problem!
+>
+> In principle it makes mmc_hw_reset() quite questionable to use for
+> SDIO func drivers, at all. However, let's consider that for later.
 
-diff --git a/drivers/pci/of.c b/drivers/pci/of.c
-index 0b1e4623dfcf..00e4b9fcb41d 100644
---- a/drivers/pci/of.c
-+++ b/drivers/pci/of.c
-@@ -236,7 +236,6 @@ void of_pci_check_probe_only(void)
- }
- EXPORT_SYMBOL_GPL(of_pci_check_probe_only);
- 
--#if defined(CONFIG_OF_ADDRESS)
- /**
-  * devm_of_pci_get_host_bridge_resources() - Resource-managed parsing of PCI
-  *                                           host bridge resources from DT
-@@ -255,7 +254,7 @@ EXPORT_SYMBOL_GPL(of_pci_check_probe_only);
-  * It returns zero if the range parsing has been successful or a standard error
-  * value if it failed.
-  */
--int devm_of_pci_get_host_bridge_resources(struct device *dev,
-+static int devm_of_pci_get_host_bridge_resources(struct device *dev,
- 			unsigned char busno, unsigned char bus_max,
- 			struct list_head *resources,
- 			struct list_head *ib_resources,
-@@ -384,8 +383,6 @@ int devm_of_pci_get_host_bridge_resources(struct device *dev,
- 	pci_free_resource_list(resources);
- 	return err;
- }
--EXPORT_SYMBOL_GPL(devm_of_pci_get_host_bridge_resources);
--#endif /* CONFIG_OF_ADDRESS */
- 
- #if IS_ENABLED(CONFIG_OF_IRQ)
- /**
-diff --git a/drivers/pci/pci.h b/drivers/pci/pci.h
-index 6692c4fe4290..118a4974537b 100644
---- a/drivers/pci/pci.h
-+++ b/drivers/pci/pci.h
-@@ -630,23 +630,6 @@ static inline void pci_set_bus_of_node(struct pci_bus *bus) { }
- static inline void pci_release_bus_of_node(struct pci_bus *bus) { }
- #endif /* CONFIG_OF */
- 
--#if defined(CONFIG_OF_ADDRESS)
--int devm_of_pci_get_host_bridge_resources(struct device *dev,
--			unsigned char busno, unsigned char bus_max,
--			struct list_head *resources,
--			struct list_head *ib_resources,
--			resource_size_t *io_base);
--#else
--static inline int devm_of_pci_get_host_bridge_resources(struct device *dev,
--			unsigned char busno, unsigned char bus_max,
--			struct list_head *resources,
--			struct list_head *ib_resources,
--			resource_size_t *io_base)
--{
--	return -EINVAL;
--}
--#endif
--
- #ifdef CONFIG_PCIEAER
- void pci_no_aer(void);
- void pci_aer_init(struct pci_dev *dev);
--- 
-2.20.1
+Yeah, unless you somehow knew that your card would only have one function.
 
+
+> > One way to fix the above problems is to leverage a more standard way
+> > to reset the Marvell WiFi card where we go through the same code paths
+> > as card unplug and the card plug.  In this patch we introduce a new
+> > API call for doing just that: sdio_trigger_replug().  This API call
+> > will trigger an unplug of the SDIO card followed by a plug of the
+> > card.  As part of this the card will be nicely reset.
+>
+> I have been thinking back and forth on this, exploring various
+> options, perhaps adding some callbacks that the core could invoke to
+> inform the SDIO func drivers of what is going on.
+>
+> Although, in the end this boils done to complexity and I think your
+> approach is simply the most superior in regards to this. However, I
+> think there is a few things that we can do to even further simply your
+> approach, let me comment on the code below.
+
+Right.  Unplugging / re-plugging is sorta gross / inelegant, but it is
+definitely simpler and nice that it doesn't add so many new code
+paths.  For cases where you're just trying to re-init things with a
+hammer it works pretty well.
+
+
+> > Signed-off-by: Douglas Anderson <dianders@chromium.org>
+> > Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
+> > ---
+> >
+> > Changes in v2:
+> > - s/routnine/routine (Brian Norris, Matthias Kaehlcke).
+> > - s/contining/containing (Matthias Kaehlcke).
+> > - Add Matthias Reviewed-by tag.
+> >
+> >  drivers/mmc/core/core.c       | 28 ++++++++++++++++++++++++++--
+> >  drivers/mmc/core/sdio_io.c    | 20 ++++++++++++++++++++
+> >  include/linux/mmc/host.h      | 15 ++++++++++++++-
+> >  include/linux/mmc/sdio_func.h |  2 ++
+> >  4 files changed, 62 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/drivers/mmc/core/core.c b/drivers/mmc/core/core.c
+> > index 221127324709..5da365b1fdb4 100644
+> > --- a/drivers/mmc/core/core.c
+> > +++ b/drivers/mmc/core/core.c
+> > @@ -2161,6 +2161,12 @@ int mmc_sw_reset(struct mmc_host *host)
+> >  }
+> >  EXPORT_SYMBOL(mmc_sw_reset);
+> >
+> > +void mmc_trigger_replug(struct mmc_host *host)
+> > +{
+> > +       host->trigger_replug_state = MMC_REPLUG_STATE_UNPLUG;
+> > +       _mmc_detect_change(host, 0, false);
+> > +}
+> > +
+> >  static int mmc_rescan_try_freq(struct mmc_host *host, unsigned freq)
+> >  {
+> >         host->f_init = freq;
+> > @@ -2214,6 +2220,11 @@ int _mmc_detect_card_removed(struct mmc_host *host)
+> >         if (!host->card || mmc_card_removed(host->card))
+> >                 return 1;
+> >
+> > +       if (host->trigger_replug_state == MMC_REPLUG_STATE_UNPLUG) {
+> > +               mmc_card_set_removed(host->card);
+> > +               return 1;
+>
+> Do you really need to set state of the card to "removed"?
+>
+> If I understand correctly, what you need is to allow mmc_rescan() to
+> run a second time, in particular for non removable cards.
+>
+> In that path, mmc_rescan should find the card being non-functional,
+> thus it should remove it and then try to re-initialize it again. Etc.
+>
+> Do you want me to send a patch to show you what I mean!?
+
+If you don't mind, that would probably be easiest.  I've totally
+swapped out all of the implementation details of this from my brain
+now, but if I saw a patch from you it would be easy for me to analyze
+it and test it.
+
+Thanks!
+
+-Doug
 
 _______________________________________________
 Linux-rockchip mailing list
