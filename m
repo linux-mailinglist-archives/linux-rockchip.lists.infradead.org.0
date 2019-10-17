@@ -2,87 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA956DB6DB
-	for <lists+linux-rockchip@lfdr.de>; Thu, 17 Oct 2019 21:08:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6142DBA2B
+	for <lists+linux-rockchip@lfdr.de>; Fri, 18 Oct 2019 01:30:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h7toJaFQS5NsTdN78qcfQ6Sok5nnSEz92nc0yaeBjeE=; b=Wd5BPTk8fdxZkM
-	OOUudONaCpZzVeFkaFViXnW8QYhDM3t+7c/RdxC9NkYg176oZmxZCgg+RYhMCF20BTduj5Un074/1
-	998cf+jRGb97dejHTPsuXh8+YogbKXRzqZsf6rovosy/5q25ChT0Q+r3ceKunAO1Bl78jNuXjtgL1
-	PbVGjNCMP+hGVwf/p02UOug8bTQL0VrEbS2cZ5Qhn8XJ+cmpo90haha3hMZ85y1LDDJs4Sm4p+tPf
-	muCg0yM4z9N3bD5tZtN/Fr/Bpq7gfY0fhXPtYSwlPJq5tz5jjuByLmWV5OKkkoNUc4F9OE/6/kV6a
-	PZMW8ntcyQAIEXOYmcMg==;
+	List-Owner; bh=U+uU8OcMKDDf+ikRzfXJ0lBv9q9wNRYxjSCKUo5jpjc=; b=G30AN98C86j5uE
+	2KQ6E7QWwEkrJASSb/r1RTBZuKneSxz9ol8o7OsXk6p9LELw3dxAtkrYefB24DO+ZKf40kZBjNBhQ
+	gVN3vMyfpuZ2TiT/GNM9dbICze13oLlY2GbYLd/YDiyKfK8jN9RVHaZT2XW/a/5wgkw0KAltbgZ6K
+	ZOFS1LVN72F1+x5v/CKIlW/RT4eOMPnvJVPDlznRJbJj3YzMJrLZ6BdY2iGZ0dutHoFP+anMHEO7P
+	35vx8mxRHRE6VdkYh+6cwvw7QE8KNuW9nmXomEswvYy7nYetlpeoYNqIzbq83CcsjwevEsfmSAwG5
+	l/LKAZuqkz7p3640oLfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLB85-0001Jf-DV; Thu, 17 Oct 2019 19:08:09 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iLFE6-0000tQ-6D; Thu, 17 Oct 2019 23:30:38 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLB82-0001HI-0l
- for linux-rockchip@lists.infradead.org; Thu, 17 Oct 2019 19:08:07 +0000
-Received: by mail-pg1-x541.google.com with SMTP id e10so1872513pgd.11
- for <linux-rockchip@lists.infradead.org>; Thu, 17 Oct 2019 12:08:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=/wGnggWrvG382A2BPL2imHgbeucx8RYhjd+hggml6Rw=;
- b=QLaelHh2K8UEAb67NhkrSBb5PwFkCGwGQ5q9EqAs9841oXpcDswyj2j+hY0HVx+U0B
- 2PpT06AYUfe36VtZaxH5ErbGBXABOxgaCeKm7JwBEw1GEOD2pQEORY6CmJtcBJQh7pGE
- M7Hx/TdZ1MAoH5zisKYqmm8FV63yB343dJy7I=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=/wGnggWrvG382A2BPL2imHgbeucx8RYhjd+hggml6Rw=;
- b=fSd3k5+5MRUfEnN7imFRJNqGRVvwnI46G2ho9kNfQfQf94P5nfbFPg6r0wVGI7RYSE
- CllxGKy5/dJaRdlrZ7WKsFaN1Kz9RuSbK+a9q8vD/WcFjeYXtp4GRP6KAjcr5isb1Bb5
- pzUUIf1MclQf3ARweGCV5D/4HR8n+OnNlQ1sXX2YhoJLwz4muhzWi33o17TRm/1YrFlm
- se48r+A1kG5lWrnqzdg41sn+0itHKWViYJfspagTuOwbhRrgBwpxOM5qFlpwcgHWn3tT
- AYYY4SW/XgFFeEbRkpfX7KLm24ahxZJZ6ctTy8WFEVLStcF7rq1iR1JQZmYCs5SH5py0
- 0HVg==
-X-Gm-Message-State: APjAAAVNrTGC1itbZpiljUV/unn9gQ/zIQkxBIc7PiPAXclFlyuZrd5a
- hrtDxCFXiRYHfTe0yNtDlRIfXA==
-X-Google-Smtp-Source: APXvYqx3uP1QpWMyokfQ2yO0U2LKFsB2UWszrtSK35VMvB81i/VESiVp7t9dA+R4m1DAFKCnc6WOYQ==
-X-Received: by 2002:aa7:9295:: with SMTP id j21mr1941741pfa.223.1571339284985; 
- Thu, 17 Oct 2019 12:08:04 -0700 (PDT)
-Received: from localhost.localdomain ([115.97.180.31])
- by smtp.gmail.com with ESMTPSA id y28sm4422736pfq.48.2019.10.17.12.08.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 17 Oct 2019 12:08:04 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v3 5/5] doc: boards: Add rockchip documentation
-Date: Fri, 18 Oct 2019 00:37:10 +0530
-Message-Id: <20191017190710.29985-6-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
-In-Reply-To: <20191017190710.29985-1-jagan@amarulasolutions.com>
-References: <20191017190710.29985-1-jagan@amarulasolutions.com>
+ id 1iLFE3-0000sc-5Y; Thu, 17 Oct 2019 23:30:36 +0000
+Received: from remote.shanghaihotelholland.com ([46.44.148.63]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iLFDw-0004Li-P4; Fri, 18 Oct 2019 01:30:28 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Andy Yan <andy.yan@rock-chips.com>
+Subject: Re: [PATCH 1/2] arm64: dts: rockchip: Add core dts for RK3308 SOC
+Date: Fri, 18 Oct 2019 01:30:22 +0200
+Message-ID: <5242916.cCMrPAA6xQ@phil>
+In-Reply-To: <20191017030449.32289-1-andy.yan@rock-chips.com>
+References: <20191017030242.32219-1-andy.yan@rock-chips.com>
+ <20191017030449.32289-1-andy.yan@rock-chips.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_120806_061465_20117CB3 
-X-CRM114-Status: GOOD (  11.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191017_163035_362990_40481B02 
+X-CRM114-Status: GOOD (  18.16  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,185 +58,231 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: u-boot@lists.denx.de, "Matwey V . Kornilov" <matwey.kornilov@gmail.com>,
- Jagan Teki <jagan@amarulasolutions.com>, linux-rockchip@lists.infradead.org
+Cc: devicetree@vger.kernel.org, kever.yang@rock-chips.com,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Rockchip has documentation file, doc/README.rockchip but
-which is not so readable to add or understand the existing
-contents. Even the format that support is legacy readme
-in U-Boot.
+Hi Andy,
 
-Add rockchip specific documentation file using new rst
-format, which describes the information about Rockchip
-supported boards and it's usage steps.
+Am Donnerstag, 17. Oktober 2019, 05:04:49 CEST schrieb Andy Yan:
 
-Added minimal information about rk3288, rk3328, rk3368
-and rk3399 boards and usage. This would indeed updated
-further based on the requirements and updates.
+> +	psci {
+> +		compatible = "arm,psci-1.0";
+> +		method = "smc";
+> +	};
 
-Cc: Kever Yang <kever.yang@rock-chips.com>
-Cc: Matwey V. Kornilov <matwey.kornilov@gmail.com>
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- doc/board/rockchip/index.rst    |  10 +++
- doc/board/rockchip/rockchip.rst | 125 ++++++++++++++++++++++++++++++++
- 2 files changed, 135 insertions(+)
- create mode 100644 doc/board/rockchip/index.rst
- create mode 100644 doc/board/rockchip/rockchip.rst
+Please also provide a ATF implementation for the rk3308 :-)
+[Not a requirement for getting this merged, but it would be
+really cool to have sources for the full stack]
 
-diff --git a/doc/board/rockchip/index.rst b/doc/board/rockchip/index.rst
-new file mode 100644
-index 0000000000..0c377e9bbb
---- /dev/null
-+++ b/doc/board/rockchip/index.rst
-@@ -0,0 +1,10 @@
-+.. SPDX-License-Identifier: GPL-2.0+
-+.. Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
-+
-+Rockchip
-+========
-+
-+.. toctree::
-+   :maxdepth: 2
-+
-+   rockchip
-diff --git a/doc/board/rockchip/rockchip.rst b/doc/board/rockchip/rockchip.rst
-new file mode 100644
-index 0000000000..782a0f1c7a
---- /dev/null
-+++ b/doc/board/rockchip/rockchip.rst
-@@ -0,0 +1,125 @@
-+.. SPDX-License-Identifier: GPL-2.0+
-+.. Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
-+
-+ROCKCHIP
-+========
-+
-+About this
-+----------
-+
-+This document describes the information about Rockchip supported boards
-+and it's usage steps.
-+
-+Rockchip boards
-+---------------
-+
-+Rockchip is SoC solutions provider for tablets & PCs, streaming media
-+TV boxes, AI audio & vision, IoT hardware.
-+
-+A wide range of Rockchip SoCs with associated boardsare supported in
-+mainline U-Boot.
-+
-+List of mainline supported rockchip boards:
-+
-+* rk3288
-+     - Evb-RK3288
-+     - Firefly-RK3288
-+     - mqmaker MiQi
-+     - Phytec RK3288 PCM-947
-+     - PopMetal-RK3288
-+     - Radxa Rock 2 Square
-+     - Tinker-RK3288
-+     - Google Jerry
-+     - Google Mickey
-+     - Google Minnie
-+     - Google Speedy
-+     - Amarula Vyasa-RK3288
-+* rk3328
-+     - Rockchip RK3328 EVB
-+     - Pine64 Rock64
-+* rk3368
-+     - GeekBox
-+     - PX5 EVB
-+     - Rockchip sheep board
-+     - Theobroma Systems RK3368-uQ7 SoM
-+* rk3399
-+     - 96boards RK3399 Ficus
-+     - 96boards Rock960
-+     - Firefly-RK3399 Board
-+     - Firefly ROC-RK3399-PC Board
-+     - FriendlyElec NanoPC-T4
-+     - FriendlyElec NanoPi M4
-+     - FriendlyARM NanoPi NEO4
-+     - Google Bob
-+     - Khadas Edge
-+     - Khadas Edge-Captain
-+     - Khadas Edge-V
-+     - Orange Pi RK3399 Board
-+     - Pine64 RockPro64
-+     - Radxa ROCK Pi 4
-+     - Rockchip RK3399 Evaluation Board
-+     - Theobroma Systems RK3399-Q7 SoM
-+
-+Building
-+--------
-+
-+TF-A
-+^^^^
-+
-+TF-A would require to build for ARM64 Rockchip SoCs platforms.
-+
-+To build TF-A::
-+
-+        git clone https://github.com/ARM-software/arm-trusted-firmware.git
-+        cd arm-trusted-firmware
-+        make realclean
-+        make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399
-+
-+Specify the PLAT= with desired rockchip platform to build TF-A for.
-+
-+U-Boot
-+^^^^^^
-+
-+To build rk3328 boards::
-+
-+        export BL31=/path/to/arm-trusted-firmware/to/bl31.elf
-+        make evb-rk3328_defconfig
-+        make
-+
-+To build rk3288 boards::
-+
-+        make evb-rk3288_defconfig
-+        make
-+
-+To build rk3368 boards::
-+
-+        export BL31=/path/to/arm-trusted-firmware/to/bl31.elf
-+        make evb-px5_defconfig
-+        make
-+
-+To build rk3399 boards::
-+
-+        export BL31=/path/to/arm-trusted-firmware/to/bl31.elf
-+        make evb-rk3399_defconfig
-+        make
-+
-+SD Card Flashing
-+----------------
-+
-+To write an image that boots from an SD card (assumed to be /dev/sda):
-+
-+TPL + SPL::
-+
-+        sudo dd if=u-boot-rockchip-with-tpl-spl.bin of=/dev/sda seek=64
-+        sync
-+
-+TODO
-+----
-+
-+- Add SPL-alone SD Card flashing steps
-+- Add rockchip idbloader image building
-+- Describe steps for eMMC flashing
-+- Add missing SoC's with it boards list
-+
-+.. Jagan Teki <jagan@amarulasolutions.com>
-+.. Thu Oct 17 22:36:14 IST 2019
--- 
-2.18.0.321.gffc6fa0e3
+> +
+> +	ramoops_mem: ramoops_mem {
+> +		reg = <0x0 0x110000 0x0 0xf0000>;
+> +		reg-names = "ramoops_mem";
+> +	};
+> +
+> +	ramoops: ramoops {
+> +		compatible = "ramoops";
+> +		record-size = <0x0 0x30000>;
+> +		console-size = <0x0 0xc0000>;
+> +		ftrace-size = <0x0 0x00000>;
+> +		pmsg-size = <0x0 0x00000>;
+> +		memory-region = <&ramoops_mem>;
+> +	};
+
+I think ramoops are more a per-board thing, like for the evb.
+As they'll require cooperation with bootloaders to not mangle that
+memory area. For this please also coordinate with Kever because
+I somehow remember we have u-boot sometimes at 0x100000.
+
+
+> +	grf: grf@ff000000 {
+> +		compatible = "rockchip,rk3308-grf", "syscon", "simple-mfd";
+
+Please add a patch adding the rockchip,rk3308-grf compatible to
+Documentation/devicetree/bindings/soc/rockchip/grf.txt
+
+> +		reg = <0x0 0xff000000 0x0 0x10000>;
+> +
+> +		reboot-mode {
+> +			compatible = "syscon-reboot-mode";
+> +			offset = <0x500>;
+> +			mode-bootloader = <BOOT_BL_DOWNLOAD>;
+> +			mode-loader = <BOOT_BL_DOWNLOAD>;
+> +			mode-normal = <BOOT_NORMAL>;
+> +			mode-recovery = <BOOT_RECOVERY>;
+> +			mode-fastboot = <BOOT_FASTBOOT>;
+> +		};
+> +	};
+> +
+> +	detect_grf: syscon@ff00b000 {
+> +		compatible = "syscon", "simple-mfd";
+
+	compatible = "rockchip,rk3308-detect-grf", "syscon"
++ add the rk3308-detect-grf to the binding
+
+> +		reg = <0x0 0xff00b000 0x0 0x1000>;
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +	};
+> +
+> +	core_grf: syscon@ff00c000 {
+> +		compatible = "syscon", "simple-mfd";
+
+same as detect_grf
+
+> +		reg = <0x0 0xff00c000 0x0 0x1000>;
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +
+> +	};
+> +
+> +	i2c0: i2c@ff040000 {
+> +		compatible = "rockchip,rk3399-i2c";
+
+	compatible = "rockchip,rk3308-i2c", "rockchip,rk3399-i2c";
+Same for all i2c controllers.
+
+> +		reg = <0x0 0xff040000 0x0 0x1000>;
+> +		clocks = <&cru SCLK_I2C0>, <&cru PCLK_I2C0>;
+> +		clock-names = "i2c", "pclk";
+> +		interrupts = <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&i2c0_xfer>;
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		status = "disabled";
+> +	};
+
+
+> +	spi0: spi@ff120000 {
+> +		compatible = "rockchip,rk3308-spi", "rockchip,rk3066-spi";
+> +		reg = <0x0 0xff120000 0x0 0x1000>;
+> +		interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		clocks = <&cru SCLK_SPI0>, <&cru PCLK_SPI0>;
+> +		clock-names = "spiclk", "apb_pclk";
+> +		dmas = <&dmac0 0>, <&dmac0 1>;
+> +		dma-names = "tx", "rx";
+> +		pinctrl-names = "default", "high_speed";
+
+there is no high_speed pinctrl defined for the Rockchip spi driver
+in mainline, so this part should go away in a first step.
+Same for the other spi controllers.
+
+> +		pinctrl-0 = <&spi0_clk &spi0_csn0 &spi0_miso &spi0_mosi>;
+> +		pinctrl-1 = <&spi0_clk_hs &spi0_csn0 &spi0_miso_hs &spi0_mosi_hs>;
+> +		status = "disabled";
+> +	};
+
+
+> +	rktimer: rktimer@ff1a0000 {
+> +		compatible = "rockchip,rk3288-timer";
+
+	compatible = "rockchip,rk3308-timer", "rockchip,rk3288-timer";
+
+> +		reg = <0x0 0xff1a0000 0x0 0x20>;
+> +		interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+> +		clocks = <&cru PCLK_TIMER>, <&cru SCLK_TIMER0>;
+> +		clock-names = "pclk", "timer";
+> +	};
+
+
+
+> +	amba {
+> +		compatible = "arm,amba-bus";
+
+compatible = "simple-bus";
+
+> +		#address-cells = <2>;
+> +		#size-cells = <2>;
+> +		ranges;
+> +
+> +		dmac0: dma-controller@ff2c0000 {
+> +			compatible = "arm,pl330", "arm,primecell";
+> +			reg = <0x0 0xff2c0000 0x0 0x4000>;
+> +			interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>;
+> +			#dma-cells = <1>;
+> +			clocks = <&cru ACLK_DMAC0>;
+> +			clock-names = "apb_pclk";
+> +			peripherals-req-type-burst;
+
+peripherals-req-type-burst is undocumented so likely some change to the
+dma driver not yet upstream?
+
+> +		};
+> +
+> +		dmac1: dma-controller@ff2d0000 {
+> +			compatible = "arm,pl330", "arm,primecell";
+> +			reg = <0x0 0xff2d0000 0x0 0x4000>;
+> +			interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>;
+> +			#dma-cells = <1>;
+> +			clocks = <&cru ACLK_DMAC1>;
+> +			clock-names = "apb_pclk";
+> +			peripherals-req-type-burst;
+> +		};
+> +	};
+> +
+> +	i2s_2ch_0: i2s@ff350000 {
+> +		compatible = "rockchip,rk3308-i2s", "rockchip,rk3066-i2s";
+> +		reg = <0x0 0xff350000 0x0 0x1000>;
+> +		interrupts = <GIC_SPI 52 IRQ_TYPE_LEVEL_HIGH>;
+> +		clocks = <&cru SCLK_I2S0_2CH>, <&cru HCLK_I2S0_2CH>;
+> +		clock-names = "i2s_clk", "i2s_hclk";
+> +		dmas = <&dmac1 8>, <&dmac1 9>;
+> +		dma-names = "tx", "rx";
+> +		resets = <&cru SRST_I2S0_2CH_M>, <&cru SRST_I2S0_2CH_H>;
+> +		reset-names = "reset-m", "reset-h";
+
+These resets don't seem to be defined in driver or binding?
+Same for other i2s
+
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&i2s_2ch_0_sclk
+> +			     &i2s_2ch_0_lrck
+> +			     &i2s_2ch_0_sdi
+> +			     &i2s_2ch_0_sdo>;
+> +		status = "disabled";
+> +	};
+
+
+> +
+> +	mac: ethernet@ff4e0000 {
+> +		compatible = "rockchip,rk3308-mac";
+
+Was this support to the network driver already submitted?
+Because I wasn't able to find it in the gmac driver.
+
+> +		reg = <0x0 0xff4e0000 0x0 0x10000>;
+> +		rockchip,grf = <&grf>;
+> +		interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
+> +		interrupt-names = "macirq";
+> +		clocks = <&cru SCLK_MAC>, <&cru SCLK_MAC_RX_TX>,
+> +			 <&cru SCLK_MAC_RX_TX>, <&cru SCLK_MAC_REF>,
+> +			 <&cru SCLK_MAC>, <&cru ACLK_MAC>,
+> +			 <&cru PCLK_MAC>, <&cru SCLK_MAC_RMII>;
+> +		clock-names = "stmmaceth", "mac_clk_rx",
+> +			      "mac_clk_tx", "clk_mac_ref",
+> +			      "clk_mac_refout", "aclk_mac",
+> +			      "pclk_mac", "clk_mac_speed";
+> +		phy-mode = "rmii";
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&rmii_pins &mac_refclk_12ma>;
+> +		resets = <&cru SRST_MAC_A>;
+> +		reset-names = "stmmaceth";
+> +		status = "disabled";
+> +	};
+
+
+Heiko
+
 
 
 _______________________________________________
