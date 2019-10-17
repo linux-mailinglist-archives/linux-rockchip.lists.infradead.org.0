@@ -2,71 +2,62 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0175DDA41C
-	for <lists+linux-rockchip@lfdr.de>; Thu, 17 Oct 2019 05:05:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4A5DDA4FD
+	for <lists+linux-rockchip@lfdr.de>; Thu, 17 Oct 2019 07:08:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=OyO7AanBKPn+m+MuLFW2i1wd6+MZtDGxNdm9gF433Xw=; b=bkhuPTx2/TFqyb9XTB0A1nQQ9O
-	sWgfnbVTPsIUnyQCW4Sm6Ga5lqvicLXz8KMt48IyPNt5Z+Xm+yNsAj4QmOZK0E0VoYs8W8maNOCdn
-	BHhXlYxKXtxAbyZmmzf3H3PPH66QlLTW82H2fnf7aLvwnIS4aBD4lfDykDawzBigSoiocDETfpphi
-	XPM7dXwZWjgp+lbjT2TDldxv+rzCpuALKVTtMgtfvcHkVS82h9DtfPFesl7NATpfQZr4h4LvwYjLZ
-	9wjEZb7J2BvTAQR50LY4Wxq4PCbS9iglvowhsm64+0em/hummOXZwOHyM0iwsJElG0i/LOfxcQJvg
-	tC0cXRCA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Fxy1BJ96toSTeTazkT0vCybl7xHhkmUV3elQhDkROhs=; b=RjS1kGL6plraFi0AAsBXZXxfL
+	YH6lV+EJB4Bo/v7hlrypYa8dcZnwFNyE4f+n+8+H1v5Vv7ejpwO3eMHloC6pT6sph+h6+9AZIFdOm
+	DzQmEKOqNdKAUNvUvmeaTaWF/7eduq+YvVM6jUyMhPBeIfcm9YVaAEX5DzqJQEG3hyfDlBbV0z1tb
+	EZ+Dkpa68I0ld6iX4yoEcS/QwymJFWZ04czcsOY1UOhsZvGhPoRf9CEEefEVI7e+JPZXLzyexU3PA
+	5bxfsvHSVO9J19GEzPC81j9jagkYJxefntvTKvP4ryzFVYIoZkdRx9c66RwMfDvktywM5Ly2HDxPh
+	L9HEBV9og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKw6r-0005hq-Cu; Thu, 17 Oct 2019 03:05:53 +0000
-Received: from lucky1.263xmail.com ([211.157.147.131])
+	id 1iKy1T-00047A-GO; Thu, 17 Oct 2019 05:08:27 +0000
+Received: from www1102.sakura.ne.jp ([219.94.129.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKw6U-0005O0-2s; Thu, 17 Oct 2019 03:05:31 +0000
-Received: from localhost (unknown [192.168.167.183])
- by lucky1.263xmail.com (Postfix) with ESMTP id A4E666A0A8;
- Thu, 17 Oct 2019 11:05:28 +0800 (CST)
-X-MAIL-GRAY: 1
-X-MAIL-DELIVERY: 0
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-ABS-CHECKED: 0
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P23000T139726864500480S1571281522323724_; 
- Thu, 17 Oct 2019 11:05:28 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <4f69502dd6d8ffa6e1d6a20ac9fbb4ec>
-X-RL-SENDER: andy.yan@rock-chips.com
-X-SENDER: yxj@rock-chips.com
-X-LOGIN-NAME: andy.yan@rock-chips.com
-X-FST-TO: heiko@sntech.de
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-From: Andy Yan <andy.yan@rock-chips.com>
-To: heiko@sntech.de, kever.yang@rock-chips.com,
- linux-rockchip@lists.infradead.org
-Subject: [PATCH 2/2] arm64: dts: rockchip: Add basic dts for RK3308 EVB
-Date: Thu, 17 Oct 2019 11:05:20 +0800
-Message-Id: <20191017030520.32420-1-andy.yan@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191017030242.32219-1-andy.yan@rock-chips.com>
-References: <20191017030242.32219-1-andy.yan@rock-chips.com>
+ id 1iKy0t-0003V8-TJ
+ for linux-rockchip@lists.infradead.org; Thu, 17 Oct 2019 05:07:54 +0000
+Received: from fsav305.sakura.ne.jp (fsav305.sakura.ne.jp [153.120.85.136])
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id x9H57h84077330;
+ Thu, 17 Oct 2019 14:07:44 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+Received: from www1102.sakura.ne.jp (219.94.129.142)
+ by fsav305.sakura.ne.jp (F-Secure/fsigk_smtp/550/fsav305.sakura.ne.jp);
+ Thu, 17 Oct 2019 14:07:43 +0900 (JST)
+X-Virus-Status: clean(F-Secure/fsigk_smtp/550/fsav305.sakura.ne.jp)
+Received: from [192.168.1.2] (121.252.232.153.ap.dti.ne.jp [153.232.252.121])
+ (authenticated bits=0)
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id x9H57hh1077327
+ (version=TLSv1.2 cipher=AES256-SHA bits=256 verify=NO);
+ Thu, 17 Oct 2019 14:07:43 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+Subject: Re: rk3328 USB3 controller
+To: Peter Geis <pgwipeout@gmail.com>, linux-rockchip@lists.infradead.org
+References: <CAMdYzYp9xdtb6eiUs-Tiq4jJ-jr31LTzng2o-qAbOfu_63zXVg@mail.gmail.com>
+From: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+Message-ID: <1b0f65be-51b6-69dd-e204-6d168f17eb7d@katsuster.net>
+Date: Thu, 17 Oct 2019 14:07:43 +0900
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <CAMdYzYp9xdtb6eiUs-Tiq4jJ-jr31LTzng2o-qAbOfu_63zXVg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_200530_466749_6979A62D 
-X-CRM114-Status: GOOD (  13.10  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20191016_220752_180674_6F84CD13 
+X-CRM114-Status: GOOD (  12.21  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.131 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,269 +70,47 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, obh+dt@kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Andy Yan <andy.yan@rock-chips.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This board use uart4 as debug port and arm core voltage
-is modulated by pwm.
+Hello Peter,
 
-Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
----
+USB3 phy driver "rockchip,rk3328-u3phy" has not been implemented on
+upstream linux kernel.
 
- .../devicetree/bindings/arm/rockchip.yaml     |   5 +
- arch/arm64/boot/dts/rockchip/Makefile         |   1 +
- arch/arm64/boot/dts/rockchip/rk3308-evb.dts   | 206 ++++++++++++++++++
- 3 files changed, 212 insertions(+)
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3308-evb.dts
+FireflyTeam use the special version of linux that is modified by Rockchip.
+(It seems based on linux-4.4)
 
-diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
-index c82c5e57d44c..b680c4b8b2c9 100644
---- a/Documentation/devicetree/bindings/arm/rockchip.yaml
-+++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
-@@ -447,6 +447,11 @@ properties:
-           - const: rockchip,r88
-           - const: rockchip,rk3368
- 
-+      - description: Rockchip RK3308 Evaluation board
-+        items:
-+          - const: rockchip,rk3308-evb
-+          - const: rockchip,rk3308
-+
-       - description: Rockchip RK3228 Evaluation board
-         items:
-           - const: rockchip,rk3228-evb
-diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
-index 1f18a9392d15..a959434ad46e 100644
---- a/arch/arm64/boot/dts/rockchip/Makefile
-+++ b/arch/arm64/boot/dts/rockchip/Makefile
-@@ -1,5 +1,6 @@
- # SPDX-License-Identifier: GPL-2.0
- dtb-$(CONFIG_ARCH_ROCKCHIP) += px30-evb.dtb
-+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-evb.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-rock64.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-roc-cc.dtb
-diff --git a/arch/arm64/boot/dts/rockchip/rk3308-evb.dts b/arch/arm64/boot/dts/rockchip/rk3308-evb.dts
-new file mode 100644
-index 000000000000..16be04f38b30
---- /dev/null
-+++ b/arch/arm64/boot/dts/rockchip/rk3308-evb.dts
-@@ -0,0 +1,206 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd
-+ *
-+ */
-+
-+/dts-v1/;
-+#include <dt-bindings/input/input.h>
-+#include "rk3308.dtsi"
-+
-+/ {
-+	model = "Rockchip RK3308 EVB";
-+	compatible = "rockchip,rk3308-evb", "rockchip,rk3308";
-+
-+	chosen {
-+		stdout-path = "serial4:1500000n8";
-+	};
-+
-+	adc-keys0 {
-+		compatible = "adc-keys";
-+		io-channels = <&saradc 0>;
-+		io-channel-names = "buttons";
-+		poll-interval = <100>;
-+		keyup-threshold-microvolt = <1800000>;
-+
-+		func-key {
-+			linux,code = <KEY_FN>;
-+			label = "function";
-+			press-threshold-microvolt = <18000>;
-+		};
-+	};
-+
-+	adc-keys1 {
-+		compatible = "adc-keys";
-+		io-channels = <&saradc 1>;
-+		io-channel-names = "buttons";
-+		poll-interval = <100>;
-+		keyup-threshold-microvolt = <1800000>;
-+
-+		esc-key {
-+			linux,code = <KEY_MICMUTE>;
-+			label = "micmute";
-+			press-threshold-microvolt = <1130000>;
-+		};
-+
-+		home-key {
-+			linux,code = <KEY_MODE>;
-+			label = "mode";
-+			press-threshold-microvolt = <901000>;
-+		};
-+
-+		menu-key {
-+			linux,code = <KEY_PLAY>;
-+			label = "play";
-+			press-threshold-microvolt = <624000>;
-+		};
-+
-+		vol-down-key {
-+			linux,code = <KEY_VOLUMEDOWN>;
-+			label = "volume down";
-+			press-threshold-microvolt = <300000>;
-+		};
-+
-+		vol-up-key {
-+			linux,code = <KEY_VOLUMEUP>;
-+			label = "volume up";
-+			press-threshold-microvolt = <18000>;
-+		};
-+	};
-+
-+	gpio-keys {
-+		compatible = "gpio-keys";
-+		autorepeat;
-+
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pwr_key>;
-+
-+		power {
-+			gpios = <&gpio0 RK_PA6 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_POWER>;
-+			label = "GPIO Key Power";
-+			wakeup-source;
-+			debounce-interval = <100>;
-+		};
-+	};
-+
-+	vdd_log: vdd_core: vdd-core {
-+		compatible = "pwm-regulator";
-+		pwms = <&pwm0 0 5000 1>;
-+		regulator-name = "vdd_core";
-+		regulator-min-microvolt = <827000>;
-+		regulator-max-microvolt = <1340000>;
-+		regulator-init-microvolt = <1015000>;
-+		regulator-early-min-microvolt = <1015000>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-settling-time-up-us = <250>;
-+		status = "okay";
-+	};
-+
-+	vdd_1v0: vdd-1v0 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vdd_1v0";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <1000000>;
-+		regulator-max-microvolt = <1000000>;
-+	};
-+
-+	vccio_sdio: vcc_1v8: vcc-1v8 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc_1v8";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+		vin-supply = <&vcc_io>;
-+	};
-+
-+	vcc_ddr: vcc-ddr {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc_ddr";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <1500000>;
-+		regulator-max-microvolt = <1500000>;
-+	};
-+
-+	vcc_io: vcc-io {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc_io";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+	};
-+
-+	vccio_flash: vccio-flash {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vccio_flash";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+	};
-+
-+	vcc_phy: vcc-phy-regulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc_phy";
-+		regulator-always-on;
-+		regulator-boot-on;
-+	};
-+
-+	vbus_host: vbus-host-regulator {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpio = <&gpio0 RK_PC5 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&usb_drv>;
-+		regulator-name = "vbus_host";
-+	};
-+};
-+
-+&cpu0 {
-+	cpu-supply = <&vdd_core>;
-+};
-+
-+&saradc {
-+	status = "okay";
-+	vref-supply = <&vcc_1v8>;
-+};
-+
-+&pinctrl {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&rtc_32k>;
-+
-+	buttons {
-+		pwr_key: pwr-key {
-+			rockchip,pins = <0 RK_PA6 0 &pcfg_pull_up>;
-+		};
-+	};
-+
-+	usb {
-+		usb_drv: usb-drv {
-+			rockchip,pins = <0 RK_PC5 0 &pcfg_pull_none>;
-+		};
-+	};
-+
-+	sdio-pwrseq {
-+		wifi_enable_h: wifi-enable-h {
-+			rockchip,pins = <0 RK_PA2 0 &pcfg_pull_none>;
-+		};
-+	};
-+};
-+
-+&pwm0 {
-+	status = "okay";
-+
-+	pinctrl-0 = <&pwm0_pin_pull_down>;
-+};
-+
-+&uart4 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart4_xfer &uart4_cts>;
-+	status = "okay";
-+};
--- 
-2.17.1
+rockchip,rk3328-u3phy is provided by
+   https://github.com/FireflyTeam/kernel/drivers/phy/rockchip/phy-rockchip-inno-usb3.c
+
+If you want to use USB 3.0 with upstream linux, we need to port this
+USB3 phy driver from rockchip-linux to upstream kernel, I think.
+
+Best Regards,
+Katsuhiro Suzuki
 
 
+On 2019/10/17 3:54, Peter Geis wrote:
+> Good Afternoon,
+> 
+> Is there a particular reason why the USB3 controller on the rk3328 has
+> not been enabled?
+> It's enabled on the TeamFirefly source [0].
+> I pulled it in to my device tree and have been using a USB3 SSD as my
+> boot device for over a year now.
+> 
+> If I were to submit the patch, would y'all be open to pulling it in?
+> 
+> [0] https://github.com/FireflyTeam/kernel/blob/roc-rk3328-cc/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+> 
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+> 
 
 
 _______________________________________________
