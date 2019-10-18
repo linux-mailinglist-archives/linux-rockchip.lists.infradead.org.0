@@ -2,43 +2,57 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9B84DBA3D
-	for <lists+linux-rockchip@lfdr.de>; Fri, 18 Oct 2019 01:40:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC061DBB66
+	for <lists+linux-rockchip@lfdr.de>; Fri, 18 Oct 2019 03:54:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r6w8N0XXJrwPtAhUWp+K5n8gRhMp0yc8NePnGREhE8c=; b=YMSj76RaAv/42N
-	qmO7V8bHtSLGU7E2mGM58bq04ZeCtI1hNBZTA+vpcH5tepF8o/LSkfyLSYxvmK6AxUEp2oKFbKYhO
-	Ki0ifIqtGF5ElitPVsc2Gp1emb1+M3DyeKpALicmNiwtIzPYPb8vmMT+A1ZjHalfmdvf+Y6Lcog9f
-	Q6JZiROKJxJO7mdmu3UWwQfrJSj9I2kHZKzH1YkU4OqBowNTZCKykNpvvbChjnsAeqQrb9YTXibuV
-	yFMZnlr4ebtL09cMNQYnJFVBMRdpLLeBwFNKt09oYkOwUYADLxEU3YzrHNqb47WugQuufVsofN+59
-	4Cp5H0T9zEXteohJoSGg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=11Q8hP7Cf20mH9Mv2WIDu5JHb2lQQXZktTatwcx8fkk=; b=TdW1dTfPhMtqi6o3SkHUXgGSf
+	Hcj8tFUadlc3Z981Gqrrpuh39SJxSKdwX1M8Q/Lrjot+LNupWAadHifEWsQhL2BIlBjQwFGFaHzUA
+	DiiwVGCRikfh1DJOHo3LkGUQx+zxEWkxpqOeeZ5dYn9dwb31KW4NvgVap1LYBQTHf6JQyu/eN0BHk
+	1J+UibxE1UWjR3kW7JJs+SR292EpZLqikA+QcX9dZA48h9lvQTK4RVWUW2cS6w7daqyN0SYfxyXRr
+	rnIn7kGOTDeKtmgYt2Keo7WPL/vkpwc/k7hPNs7fNg2JpXAIMA4GyBCyLseKpMggyMjZRstge2OGN
+	5KZURB7fA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLFNJ-0004EX-C5; Thu, 17 Oct 2019 23:40:09 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1iLHTV-0006p3-FQ; Fri, 18 Oct 2019 01:54:41 +0000
+Received: from www1102.sakura.ne.jp ([219.94.129.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLFNF-0003gr-Vt; Thu, 17 Oct 2019 23:40:07 +0000
-Received: from remote.shanghaihotelholland.com ([46.44.148.63]
- helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iLFNE-0004OT-M8; Fri, 18 Oct 2019 01:40:04 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Andy Yan <andy.yan@rock-chips.com>
-Subject: Re: [PATCH 2/2] arm64: dts: rockchip: Add basic dts for RK3308 EVB
-Date: Fri, 18 Oct 2019 01:39:58 +0200
-Message-ID: <120878573.PH0Dm224ES@phil>
-In-Reply-To: <20191017030520.32420-1-andy.yan@rock-chips.com>
-References: <20191017030242.32219-1-andy.yan@rock-chips.com>
- <20191017030520.32420-1-andy.yan@rock-chips.com>
+ id 1iLHTQ-0006nI-TV
+ for linux-rockchip@lists.infradead.org; Fri, 18 Oct 2019 01:54:39 +0000
+Received: from fsav303.sakura.ne.jp (fsav303.sakura.ne.jp [153.120.85.134])
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id x9I1sUbL089909;
+ Fri, 18 Oct 2019 10:54:30 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+Received: from www1102.sakura.ne.jp (219.94.129.142)
+ by fsav303.sakura.ne.jp (F-Secure/fsigk_smtp/550/fsav303.sakura.ne.jp);
+ Fri, 18 Oct 2019 10:54:30 +0900 (JST)
+X-Virus-Status: clean(F-Secure/fsigk_smtp/550/fsav303.sakura.ne.jp)
+Received: from [192.168.1.2] (121.252.232.153.ap.dti.ne.jp [153.232.252.121])
+ (authenticated bits=0)
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id x9I1sT6w089904
+ (version=TLSv1.2 cipher=AES256-SHA bits=256 verify=NO);
+ Fri, 18 Oct 2019 10:54:29 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+Subject: Re: rk3328 USB3 controller
+To: 4omecha@gmail.com
+References: <CAMdYzYp9xdtb6eiUs-Tiq4jJ-jr31LTzng2o-qAbOfu_63zXVg@mail.gmail.com>
+ <1b0f65be-51b6-69dd-e204-6d168f17eb7d@think-future.de>
+ <20191017162131.GH14623@think-future.de>
+From: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+Message-ID: <86b42c42-6f89-9773-4275-2fe93165a90f@katsuster.net>
+Date: Fri, 18 Oct 2019 10:54:29 +0900
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <20191017162131.GH14623@think-future.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_164006_194870_AA020F67 
-X-CRM114-Status: GOOD (  12.45  )
+X-CRM114-CacheID: sfid-20191017_185437_167984_9E3A2757 
+X-CRM114-Status: GOOD (  11.85  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,110 +72,43 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kever.yang@rock-chips.com,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-rockchip@lists.infradead.org, Peter Geis <pgwipeout@gmail.com>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Andy,
-
-Am Donnerstag, 17. Oktober 2019, 05:05:20 CEST schrieb Andy Yan:
-> diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
-> index c82c5e57d44c..b680c4b8b2c9 100644
-> --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
-> +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
-> @@ -447,6 +447,11 @@ properties:
->            - const: rockchip,r88
->            - const: rockchip,rk3368
->  
-> +      - description: Rockchip RK3308 Evaluation board
-> +        items:
-> +          - const: rockchip,rk3308-evb
-> +          - const: rockchip,rk3308
-> +
->        - description: Rockchip RK3228 Evaluation board
->          items:
->            - const: rockchip,rk3228-evb
-
-Rob likes the binding addition to be a separate patch.
-
-> +	vdd_log: vdd_core: vdd-core {
-> +		compatible = "pwm-regulator";
-> +		pwms = <&pwm0 0 5000 1>;
-> +		regulator-name = "vdd_core";
-> +		regulator-min-microvolt = <827000>;
-> +		regulator-max-microvolt = <1340000>;
-> +		regulator-init-microvolt = <1015000>;
-> +		regulator-early-min-microvolt = <1015000>;
-> +		regulator-always-on;
-> +		regulator-boot-on;
-> +		regulator-settling-time-up-us = <250>;
-> +		status = "okay";
-
-It's a board-regulator, so always "okay", no need for a status.
-
-In general for regulators, please create an actual regulator tree, with
-correctly modelled supply-chains following the naming according
-to the board schematics. See for example rk3399-gru for a nice example.
-
-> +	};
-> +
-> +	vdd_1v0: vdd-1v0 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "vdd_1v0";
-> +		regulator-always-on;
-> +		regulator-boot-on;
-> +		regulator-min-microvolt = <1000000>;
-> +		regulator-max-microvolt = <1000000>;
-
-As noted above, missing vin-supply
-
-> +	};
-> +
-
-> +	vccio_flash: vccio-flash {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "vccio_flash";
-> +		regulator-always-on;
-> +		regulator-boot-on;
-> +		regulator-min-microvolt = <1800000>;
-> +		regulator-max-microvolt = <1800000>;
-> +	};
-> +
-> +	vcc_phy: vcc-phy-regulator {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "vcc_phy";
-> +		regulator-always-on;
-> +		regulator-boot-on;
-
-This is the classic example of not following the schematics.
-I.e. no Rockchip board I know has a regulator named "vcc_phy"
-that is completely unconnected, yet all boards in the vendor tree
-have this regulator ;-) ... so as I said, please follow the schematics.
-
-> +	};
-> +
-> +	vbus_host: vbus-host-regulator {
-> +		compatible = "regulator-fixed";
-> +		enable-active-high;
-> +		gpio = <&gpio0 RK_PC5 GPIO_ACTIVE_HIGH>;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&usb_drv>;
-> +		regulator-name = "vbus_host";
-> +	};
-> +};
-> +
-
-
-Thanks
-Heiko
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGVsbG8sCgpPbiAyMDE5LzEwLzE4IDE6MjEsIDRvbWVjaGFAZ21haWwuY29tIHdyb3RlOgo+IE9u
+IDIwMTktMTAtMTcgMTQ6MDc6NDMsIEthdHN1aGlybyBTdXp1a2kgd3JvdGU6Cj4+IEhlbGxvIFBl
+dGVyLAo+Pgo+PiBVU0IzIHBoeSBkcml2ZXIgInJvY2tjaGlwLHJrMzMyOC11M3BoeSIgaGFzIG5v
+dCBiZWVuIGltcGxlbWVudGVkIG9uCj4+IHVwc3RyZWFtIGxpbnV4IGtlcm5lbC4KPj4KPj4gRmly
+ZWZseVRlYW0gdXNlIHRoZSBzcGVjaWFsIHZlcnNpb24gb2YgbGludXggdGhhdCBpcyBtb2RpZmll
+ZCBieSBSb2NrY2hpcC4KPj4gKEl0IHNlZW1zIGJhc2VkIG9uIGxpbnV4LTQuNCkKPj4KPj4gcm9j
+a2NoaXAscmszMzI4LXUzcGh5IGlzIHByb3ZpZGVkIGJ5Cj4+IMKgaHR0cHM6Ly9naXRodWIuY29t
+L0ZpcmVmbHlUZWFtL2tlcm5lbC9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5u
+by11c2IzLmMKPiBUaGF0J3MgYSA0MDQgb3ZlciBoZXJlLgo+IAo+IAoKT29wcywgdGhpcyBVUkwg
+aXMgY29ycmVjdC4KCmh0dHBzOi8vZ2l0aHViLmNvbS9GaXJlZmx5VGVhbS9rZXJuZWwvYmxvYi9y
+b2MtcmszMzI4LWNjL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1pbm5vLXVzYjMu
+YwoKCj4+Cj4+IElmIHlvdSB3YW50IHRvIHVzZSBVU0IgMy4wIHdpdGggdXBzdHJlYW0gbGludXgs
+IHdlIG5lZWQgdG8gcG9ydCB0aGlzCj4+IFVTQjMgcGh5IGRyaXZlciBmcm9tIHJvY2tjaGlwLWxp
+bnV4IHRvIHVwc3RyZWFtIGtlcm5lbCwgSSB0aGluay4KPj4KPj4gQmVzdCBSZWdhcmRzLAo+PiBL
+YXRzdWhpcm8gU3V6dWtpCj4+Cj4+Cj4+IE9uIDIwMTkvMTAvMTcgMzo1NCwgUGV0ZXIgR2VpcyB3
+cm90ZToKPj4+IEdvb2QgQWZ0ZXJub29uLAo+Pj4KPj4+IElzIHRoZXJlIGEgcGFydGljdWxhciBy
+ZWFzb24gd2h5IHRoZSBVU0IzIGNvbnRyb2xsZXIgb24gdGhlIHJrMzMyOCBoYXMKPj4+IG5vdCBi
+ZWVuIGVuYWJsZWQ/Cj4+PiBJdCdzIGVuYWJsZWQgb24gdGhlIFRlYW1GaXJlZmx5IHNvdXJjZSBb
+MF0uCj4+PiBJIHB1bGxlZCBpdCBpbiB0byBteSBkZXZpY2UgdHJlZSBhbmQgaGF2ZSBiZWVuIHVz
+aW5nIGEgVVNCMyBTU0QgYXMgbXkKPj4+IGJvb3QgZGV2aWNlIGZvciBvdmVyIGEgeWVhciBub3cu
+Cj4+Pgo+Pj4gSWYgSSB3ZXJlIHRvIHN1Ym1pdCB0aGUgcGF0Y2gsIHdvdWxkIHknYWxsIGJlIG9w
+ZW4gdG8gcHVsbGluZyBpdCBpbj8KPj4+Cj4+PiBbMF0gaHR0cHM6Ly9naXRodWIuY29tL0ZpcmVm
+bHlUZWFtL2tlcm5lbC9ibG9iL3JvYy1yazMzMjgtY2MvYXJjaC9hcm02NC9ib290L2R0cy9yb2Nr
+Y2hpcC9yazMzMjguZHRzaQo+Pj4KPj4+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCj4+PiBMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKPj4+IExpbnV4
+LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKPj4+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAKPj4+Cj4+Cj4+Cj4+IF9fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4+IExpbnV4LXJvY2tjaGlw
+IG1haWxpbmcgbGlzdAo+PiBMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCj4+IGh0
+dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+PiAKPiAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpM
+aW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJv
+Y2tjaGlwCg==
