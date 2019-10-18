@@ -2,47 +2,47 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D04FDC8EF
-	for <lists+linux-rockchip@lfdr.de>; Fri, 18 Oct 2019 17:42:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4E86DCA16
+	for <lists+linux-rockchip@lfdr.de>; Fri, 18 Oct 2019 17:59:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pNmbf3vnl0lAjcsHb3ifJZJGzL15JxVstkhPZ3a+WHM=; b=g29/4OhPygwXtU
-	a2Tg9a9wfPuDfF0Pd1aY8hlpjVRJ/7hDPGPbbJXJST4o5yqDdnvgvIHBr3QkGhFRug8is/QSlrybh
-	AmPrkI9JqHPlJmkVdtYSWo8DLG5OLrBfHF50y0raBUl9rw0BEvR4ELLrpcSfRVcj09hp0IA06rtNQ
-	lDKddvHzVepha+VWWQiWsyxR5ul8OjgrgP97ML0f+c7gmpKjV5f9XkjGlqtlHUp5cVR6TdfVXakrA
-	TbMBrSx8I9RkvoERg8m2vdzdqloeCcAW6BKR3n2Y03XpIAbJkBjyPpgSE9AjgYN4pMcMSbyx3TE5y
-	3fExA83AOI+vj8+aR2iw==;
+	List-Owner; bh=FVpAWy1wyTVlQsXeSs3qJ1Br40KYH6zdToQK2QLK8b0=; b=tdyTSKxx8fr0gV
+	zEvNEgNU6iTUydo3rjg3Zo5SxlR5/TnqvIAyYqeH6ecp1+txGi+bhf8YsccPlJ3avrT5/jX7J4uwp
+	T0BE0efYUwt0FPTGtS7PJVRBrrsTFL8ueqIOGMajpojMve5uuHhlzEN0S2+hcA2Tea9zWga2fVa2b
+	8Xx/wzcB3P/Hz1OZYgVR6O0NCzAbP1/JdmZ28GyDlOYmRRywQZgAOzuyXpCPQ0jbhZKECLYPlGS5d
+	s2n7EPD5EJgnysgeuYTHGnkZf1V+LUxGIkTUccSkj2ADpfEt9OzlCpx07G+DdBUwyMjE7UuxGK7tJ
+	gl95Fer6ItHyiGYDldaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLUOH-0007mL-9l; Fri, 18 Oct 2019 15:42:09 +0000
+	id 1iLUfG-0001LE-S5; Fri, 18 Oct 2019 15:59:42 +0000
 Received: from [217.140.110.172] (helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLUO2-0007b7-J9; Fri, 18 Oct 2019 15:41:56 +0000
+ id 1iLUXt-0001uZ-Fx; Fri, 18 Oct 2019 15:52:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 84B7FC8F;
- Fri, 18 Oct 2019 08:41:43 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5ED99C8F;
+ Fri, 18 Oct 2019 08:51:54 -0700 (PDT)
 Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DB5643F718;
- Fri, 18 Oct 2019 08:41:42 -0700 (PDT)
-Date: Fri, 18 Oct 2019 16:41:41 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B437C3F718;
+ Fri, 18 Oct 2019 08:51:53 -0700 (PDT)
+Date: Fri, 18 Oct 2019 16:51:52 +0100
 From: Andrew Murray <andrew.murray@arm.com>
 To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 09/25] PCI: mobiveil: Use
+Subject: Re: [PATCH v2 10/25] PCI: rockchip: Use
  pci_parse_request_of_pci_ranges()
-Message-ID: <20191018154141.GJ47056@e119886-lin.cambridge.arm.com>
+Message-ID: <20191018155152.GK47056@e119886-lin.cambridge.arm.com>
 References: <20191016200647.32050-1-robh@kernel.org>
- <20191016200647.32050-10-robh@kernel.org>
+ <20191016200647.32050-11-robh@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191016200647.32050-10-robh@kernel.org>
+In-Reply-To: <20191016200647.32050-11-robh@kernel.org>
 User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_084154_724772_A92F6CF6 
-X-CRM114-Status: GOOD (  21.13  )
+X-CRM114-CacheID: sfid-20191018_085205_660910_C084726D 
+X-CRM114-Status: GOOD (  19.82  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -87,132 +87,146 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Oct 16, 2019 at 03:06:31PM -0500, Rob Herring wrote:
-> Convert the Mobiveil host bridge to use the common
+On Wed, Oct 16, 2019 at 03:06:32PM -0500, Rob Herring wrote:
+> Convert the Rockchip host bridge to use the common
 > pci_parse_request_of_pci_ranges().
 > 
 > There's no need to assign the resources to a temporary list first. Just
 > use bridge->windows directly and remove all the temporary list handling.
 > 
-> Cc: Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>
-> Cc: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> Cc: Shawn Lin <shawn.lin@rock-chips.com>
 > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 > Cc: Andrew Murray <andrew.murray@arm.com>
 > Cc: Bjorn Helgaas <bhelgaas@google.com>
+> Cc: Heiko Stuebner <heiko@sntech.de>
+> Cc: linux-rockchip@lists.infradead.org
 > Signed-off-by: Rob Herring <robh@kernel.org>
 > ---
-
-Reviewed-by: Andrew Murray <andrew.murray@arm.com>
-
 > v2:
 > - New patch
 > 
->  drivers/pci/controller/pcie-mobiveil.c | 26 +++++++-------------------
->  1 file changed, 7 insertions(+), 19 deletions(-)
+>  drivers/pci/controller/pcie-rockchip-host.c | 36 ++++-----------------
+>  1 file changed, 7 insertions(+), 29 deletions(-)
 > 
-> diff --git a/drivers/pci/controller/pcie-mobiveil.c b/drivers/pci/controller/pcie-mobiveil.c
-> index a45a6447b01d..4eab8624ce4d 100644
-> --- a/drivers/pci/controller/pcie-mobiveil.c
-> +++ b/drivers/pci/controller/pcie-mobiveil.c
-> @@ -140,7 +140,6 @@ struct mobiveil_msi {			/* MSI information */
-> 
->  struct mobiveil_pcie {
->  	struct platform_device *pdev;
-> -	struct list_head resources;
->  	void __iomem *config_axi_slave_base;	/* endpoint config base */
->  	void __iomem *csr_axi_slave_base;	/* root port config base */
->  	void __iomem *apb_csr_base;	/* MSI register base */
-> @@ -575,6 +574,7 @@ static void mobiveil_pcie_enable_msi(struct mobiveil_pcie *pcie)
-> 
->  static int mobiveil_host_init(struct mobiveil_pcie *pcie)
->  {
-> +	struct pci_host_bridge *bridge = pci_host_bridge_from_priv(pcie);
->  	u32 value, pab_ctrl, type;
+> diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
+> index ef8e677ce9d1..8d2e6f2e141e 100644
+> --- a/drivers/pci/controller/pcie-rockchip-host.c
+> +++ b/drivers/pci/controller/pcie-rockchip-host.c
+> @@ -950,14 +950,10 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+>  	struct device *dev = &pdev->dev;
+>  	struct pci_bus *bus, *child;
+>  	struct pci_host_bridge *bridge;
+> +	struct resource *bus_res;
 >  	struct resource_entry *win;
+> -	resource_size_t io_base;
+> -	struct resource	*mem;
+> -	struct resource	*io;
+>  	int err;
 > 
-> @@ -631,7 +631,7 @@ static int mobiveil_host_init(struct mobiveil_pcie *pcie)
->  	program_ib_windows(pcie, WIN_NUM_0, 0, 0, MEM_WINDOW_TYPE, IB_WIN_SIZE);
+> -	LIST_HEAD(res);
+> -
+>  	if (!dev->of_node)
+>  		return -ENODEV;
+> 
+> @@ -995,29 +991,20 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+>  	if (err < 0)
+>  		goto err_deinit_port;
+> 
+> -	err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
+> -						    &res, &io_base);
+> +	err = pci_parse_request_of_pci_ranges(dev, &bridge->windows, &bus_res);
+>  	if (err)
+>  		goto err_remove_irq_domain;
+> 
+> -	err = devm_request_pci_bus_resources(dev, &res);
+> -	if (err)
+> -		goto err_free_res;
+> +	rockchip->root_bus_nr = bus_res->start;
 > 
 >  	/* Get the I/O and memory ranges from DT */
-> -	resource_list_for_each_entry(win, &pcie->resources) {
+> -	resource_list_for_each_entry(win, &res) {
 > +	resource_list_for_each_entry(win, &bridge->windows) {
->  		if (resource_type(win->res) == IORESOURCE_MEM)
->  			type = MEM_WINDOW_TYPE;
->  		else if (resource_type(win->res) == IORESOURCE_IO)
-> @@ -857,7 +857,6 @@ static int mobiveil_pcie_probe(struct platform_device *pdev)
->  	struct pci_bus *child;
->  	struct pci_host_bridge *bridge;
->  	struct device *dev = &pdev->dev;
-> -	resource_size_t iobase;
->  	int ret;
+>  		switch (resource_type(win->res)) {
+>  		case IORESOURCE_IO:
+>  			io = win->res;
+>  			io->name = "I/O";
+
+In some patches of this series we drop the custom naming of memory resources,
+yet in others, like this one, we preserve the custom naming.
+
+Should we be consistent in preserving the existing naming?
+
+Thanks,
+
+Andrew Murray
+
+>  			rockchip->io_size = resource_size(io);
+>  			rockchip->io_bus_addr = io->start - win->offset;
+> -			err = pci_remap_iospace(io, io_base);
+> -			if (err) {
+> -				dev_warn(dev, "error %d: failed to map resource %pR\n",
+> -					 err, io);
+> -				continue;
+> -			}
+>  			rockchip->io = io;
+>  			break;
+>  		case IORESOURCE_MEM:
+> @@ -1026,9 +1013,6 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+>  			rockchip->mem_size = resource_size(mem);
+>  			rockchip->mem_bus_addr = mem->start - win->offset;
+>  			break;
+> -		case IORESOURCE_BUS:
+> -			rockchip->root_bus_nr = win->res->start;
+> -			break;
+>  		default:
+>  			continue;
+>  		}
+> @@ -1036,15 +1020,14 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
 > 
->  	/* allocate the PCIe port */
-> @@ -875,11 +874,8 @@ static int mobiveil_pcie_probe(struct platform_device *pdev)
->  		return ret;
+>  	err = rockchip_pcie_cfg_atu(rockchip);
+>  	if (err)
+> -		goto err_unmap_iospace;
+> +		goto err_remove_irq_domain;
+> 
+>  	rockchip->msg_region = devm_ioremap(dev, rockchip->msg_bus_addr, SZ_1M);
+>  	if (!rockchip->msg_region) {
+>  		err = -ENOMEM;
+> -		goto err_unmap_iospace;
+> +		goto err_remove_irq_domain;
 >  	}
 > 
-> -	INIT_LIST_HEAD(&pcie->resources);
-> -
->  	/* parse the host bridge base addresses from the device tree file */
-> -	ret = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
-> -						    &pcie->resources, &iobase);
-> +	ret = pci_parse_request_of_pci_ranges(dev, &bridge->windows, NULL);
->  	if (ret) {
->  		dev_err(dev, "Getting bridge resources failed\n");
->  		return ret;
-> @@ -892,24 +888,19 @@ static int mobiveil_pcie_probe(struct platform_device *pdev)
->  	ret = mobiveil_host_init(pcie);
->  	if (ret) {
->  		dev_err(dev, "Failed to initialize host\n");
-> -		goto error;
-> +		return ret;
->  	}
-> 
->  	/* initialize the IRQ domains */
->  	ret = mobiveil_pcie_init_irq_domain(pcie);
->  	if (ret) {
->  		dev_err(dev, "Failed creating IRQ Domain\n");
-> -		goto error;
-> +		return ret;
->  	}
-> 
->  	irq_set_chained_handler_and_data(pcie->irq, mobiveil_pcie_isr, pcie);
-> 
-> -	ret = devm_request_pci_bus_resources(dev, &pcie->resources);
-> -	if (ret)
-> -		goto error;
-> -
->  	/* Initialize bridge */
-> -	list_splice_init(&pcie->resources, &bridge->windows);
+> -	list_splice_init(&res, &bridge->windows);
 >  	bridge->dev.parent = dev;
->  	bridge->sysdata = pcie;
->  	bridge->busnr = pcie->root_bus_nr;
-> @@ -920,13 +911,13 @@ static int mobiveil_pcie_probe(struct platform_device *pdev)
->  	ret = mobiveil_bringup_link(pcie);
->  	if (ret) {
->  		dev_info(dev, "link bring-up failed\n");
-> -		goto error;
-> +		return ret;
->  	}
+>  	bridge->sysdata = rockchip;
+>  	bridge->busnr = 0;
+> @@ -1054,7 +1037,7 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
 > 
->  	/* setup the kernel resources for the newly added PCIe root bus */
->  	ret = pci_scan_root_bus_bridge(bridge);
->  	if (ret)
-> -		goto error;
-> +		return ret;
+>  	err = pci_scan_root_bus_bridge(bridge);
+>  	if (err < 0)
+> -		goto err_unmap_iospace;
+> +		goto err_remove_irq_domain;
 > 
 >  	bus = bridge->bus;
 > 
-> @@ -936,9 +927,6 @@ static int mobiveil_pcie_probe(struct platform_device *pdev)
+> @@ -1068,10 +1051,6 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
 >  	pci_bus_add_devices(bus);
-> 
 >  	return 0;
-> -error:
-> -	pci_free_resource_list(&pcie->resources);
-> -	return ret;
->  }
 > 
->  static const struct of_device_id mobiveil_pcie_of_match[] = {
+> -err_unmap_iospace:
+> -	pci_unmap_iospace(rockchip->io);
+> -err_free_res:
+> -	pci_free_resource_list(&res);
+>  err_remove_irq_domain:
+>  	irq_domain_remove(rockchip->irq_domain);
+>  err_deinit_port:
+> @@ -1097,7 +1076,6 @@ static int rockchip_pcie_remove(struct platform_device *pdev)
+> 
+>  	pci_stop_root_bus(rockchip->root_bus);
+>  	pci_remove_root_bus(rockchip->root_bus);
+> -	pci_unmap_iospace(rockchip->io);
+>  	irq_domain_remove(rockchip->irq_domain);
+> 
+>  	rockchip_pcie_deinit_phys(rockchip);
 > --
 > 2.20.1
 
