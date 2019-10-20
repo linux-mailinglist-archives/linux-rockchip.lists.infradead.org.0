@@ -2,55 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4E86DCA16
-	for <lists+linux-rockchip@lfdr.de>; Fri, 18 Oct 2019 17:59:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A55DDE0BB
+	for <lists+linux-rockchip@lfdr.de>; Sun, 20 Oct 2019 23:37:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FVpAWy1wyTVlQsXeSs3qJ1Br40KYH6zdToQK2QLK8b0=; b=tdyTSKxx8fr0gV
-	zEvNEgNU6iTUydo3rjg3Zo5SxlR5/TnqvIAyYqeH6ecp1+txGi+bhf8YsccPlJ3avrT5/jX7J4uwp
-	T0BE0efYUwt0FPTGtS7PJVRBrrsTFL8ueqIOGMajpojMve5uuHhlzEN0S2+hcA2Tea9zWga2fVa2b
-	8Xx/wzcB3P/Hz1OZYgVR6O0NCzAbP1/JdmZ28GyDlOYmRRywQZgAOzuyXpCPQ0jbhZKECLYPlGS5d
-	s2n7EPD5EJgnysgeuYTHGnkZf1V+LUxGIkTUccSkj2ADpfEt9OzlCpx07G+DdBUwyMjE7UuxGK7tJ
-	gl95Fer6ItHyiGYDldaQ==;
+	List-Owner; bh=kOgisdkVlzs/3CC63VPZN7EILRS7nrc6uIvStbUHpm8=; b=qqhpOaNvbgaNrz
+	xSqL3fnMKjwl4PnXB1CZugJmznfTRrK4MEfW/JGRouw0j/sK06wvFO4GRBAtmKjMSIPOmFBf5i/En
+	xHtYVqwm1K8KvUobn/kJWu1ouE0Y0MSNMtp3DCEONNpdd7MqxLycHgrWQVlHigRhd7lGxmscswedG
+	YsgnOexgTAknH8NllVAa7+PIc1XxTEjKRpunVd7OQd5C2z+mcHmExq4/MjhM+xHNbQkavWHIe76S0
+	3OabkAm0vHmfO0GDgn3v/RLRZ7gMH1ec/1tqhIDUJok/JiWuWCF95uQ2z9MmK+z80yEXr9ZZ7yvRY
+	vGtmjj/e4r87MpItki3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLUfG-0001LE-S5; Fri, 18 Oct 2019 15:59:42 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLUXt-0001uZ-Fx; Fri, 18 Oct 2019 15:52:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5ED99C8F;
- Fri, 18 Oct 2019 08:51:54 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B437C3F718;
- Fri, 18 Oct 2019 08:51:53 -0700 (PDT)
-Date: Fri, 18 Oct 2019 16:51:52 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 10/25] PCI: rockchip: Use
- pci_parse_request_of_pci_ranges()
-Message-ID: <20191018155152.GK47056@e119886-lin.cambridge.arm.com>
+	id 1iMItI-00024j-S2; Sun, 20 Oct 2019 21:37:32 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iMIsr-0000Um-Ku; Sun, 20 Oct 2019 21:37:07 +0000
+Received: from mail-qt1-f169.google.com (mail-qt1-f169.google.com
+ [209.85.160.169])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 229E521929;
+ Sun, 20 Oct 2019 21:37:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571607424;
+ bh=oJ9t8UtXb7PRYsq3ePfq3A9aFk1ZN+i+OvWB9IzCOps=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=sFDrPikJCzwykX55SSurJgFmuuxOUHgZXuZlpY26FTjeHzgoQK+kZBQrEuQvrPZSl
+ swj3ol6RnlfGAvGIDnOSky1gkb+pI38z70kPryc5Ath1MqJxokc9LifxS+bE0bORD8
+ mRHyLXDF1rK1RrOrQoNT1T2ieNM+f/qGCMkH+144=
+Received: by mail-qt1-f169.google.com with SMTP id o25so4352695qtr.5;
+ Sun, 20 Oct 2019 14:37:04 -0700 (PDT)
+X-Gm-Message-State: APjAAAUOTH5pVJtHG9/BegYPKtUTWKkFoN52HUyQU16r3N8MpzpT7nhS
+ WEn0vSxXzguIG2dLNHgNA4WZh0wV85+GUu8Eeg==
+X-Google-Smtp-Source: APXvYqxapHq3qkRx86TykFEOegIN1VZm+E1xyc2NVyUchfsKxelq3sgZATdHJ8Qy+cPP9gdZ1ruTPx3i/ITuPkGPW3o=
+X-Received: by 2002:ac8:741a:: with SMTP id p26mr6882617qtq.143.1571607423322; 
+ Sun, 20 Oct 2019 14:37:03 -0700 (PDT)
+MIME-Version: 1.0
 References: <20191016200647.32050-1-robh@kernel.org>
  <20191016200647.32050-11-robh@kernel.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191016200647.32050-11-robh@kernel.org>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+ <20191018155152.GK47056@e119886-lin.cambridge.arm.com>
+In-Reply-To: <20191018155152.GK47056@e119886-lin.cambridge.arm.com>
+From: Rob Herring <robh@kernel.org>
+Date: Sun, 20 Oct 2019 16:36:50 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqLWuUhv1qb3Soo0xKGJ167SvV3rnr+c07j9x3FFPEc3YA@mail.gmail.com>
+Message-ID: <CAL_JsqLWuUhv1qb3Soo0xKGJ167SvV3rnr+c07j9x3FFPEc3YA@mail.gmail.com>
+Subject: Re: [PATCH v2 10/25] PCI: rockchip: Use
+ pci_parse_request_of_pci_ranges()
+To: Andrew Murray <andrew.murray@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_085205_660910_C084726D 
-X-CRM114-Status: GOOD (  19.82  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191020_143705_739156_32E146DF 
+X-CRM114-Status: GOOD (  19.72  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,20 +87,25 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Heiko Stuebner <heiko@sntech.de>,
- Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>, linux-pci@vger.kernel.org,
- Shawn Lin <shawn.lin@rock-chips.com>,
+ Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>,
+ PCI <linux-pci@vger.kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
  Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Michal Simek <michal.simek@xilinx.com>, linux-rockchip@lists.infradead.org,
- bcm-kernel-feedback-list@broadcom.com,
+ Michal Simek <michal.simek@xilinx.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>,
  Linus Walleij <linus.walleij@linaro.org>, Ray Jui <rjui@broadcom.com>,
  Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, Ryder Lee <ryder.lee@mediatek.com>,
- linux-mediatek@lists.infradead.org, Bjorn Helgaas <bhelgaas@google.com>,
- linux-arm-kernel@lists.infradead.org, Scott Branden <sbranden@broadcom.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Scott Branden <sbranden@broadcom.com>,
  Jingoo Han <jingoohan1@gmail.com>, rfi@lists.rocketboards.org,
- linux-renesas-soc@vger.kernel.org, Tom Joseph <tjoseph@cadence.com>,
+ "open list:MEDIA DRIVERS FOR RENESAS - FCP"
+ <linux-renesas-soc@vger.kernel.org>, Tom Joseph <tjoseph@cadence.com>,
  Simon Horman <horms@verge.net.au>,
  Srinath Mannam <srinath.mannam@broadcom.com>,
  Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
@@ -87,148 +115,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Oct 16, 2019 at 03:06:32PM -0500, Rob Herring wrote:
-> Convert the Rockchip host bridge to use the common
-> pci_parse_request_of_pci_ranges().
-> 
-> There's no need to assign the resources to a temporary list first. Just
-> use bridge->windows directly and remove all the temporary list handling.
-> 
-> Cc: Shawn Lin <shawn.lin@rock-chips.com>
-> Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Cc: Andrew Murray <andrew.murray@arm.com>
-> Cc: Bjorn Helgaas <bhelgaas@google.com>
-> Cc: Heiko Stuebner <heiko@sntech.de>
-> Cc: linux-rockchip@lists.infradead.org
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
-> v2:
-> - New patch
-> 
->  drivers/pci/controller/pcie-rockchip-host.c | 36 ++++-----------------
->  1 file changed, 7 insertions(+), 29 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
-> index ef8e677ce9d1..8d2e6f2e141e 100644
-> --- a/drivers/pci/controller/pcie-rockchip-host.c
-> +++ b/drivers/pci/controller/pcie-rockchip-host.c
-> @@ -950,14 +950,10 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
->  	struct device *dev = &pdev->dev;
->  	struct pci_bus *bus, *child;
->  	struct pci_host_bridge *bridge;
-> +	struct resource *bus_res;
->  	struct resource_entry *win;
-> -	resource_size_t io_base;
-> -	struct resource	*mem;
-> -	struct resource	*io;
->  	int err;
-> 
-> -	LIST_HEAD(res);
-> -
->  	if (!dev->of_node)
->  		return -ENODEV;
-> 
-> @@ -995,29 +991,20 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
->  	if (err < 0)
->  		goto err_deinit_port;
-> 
-> -	err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
-> -						    &res, &io_base);
-> +	err = pci_parse_request_of_pci_ranges(dev, &bridge->windows, &bus_res);
->  	if (err)
->  		goto err_remove_irq_domain;
-> 
-> -	err = devm_request_pci_bus_resources(dev, &res);
-> -	if (err)
-> -		goto err_free_res;
-> +	rockchip->root_bus_nr = bus_res->start;
-> 
->  	/* Get the I/O and memory ranges from DT */
-> -	resource_list_for_each_entry(win, &res) {
-> +	resource_list_for_each_entry(win, &bridge->windows) {
->  		switch (resource_type(win->res)) {
->  		case IORESOURCE_IO:
->  			io = win->res;
->  			io->name = "I/O";
+On Fri, Oct 18, 2019 at 10:52 AM Andrew Murray <andrew.murray@arm.com> wrote:
+>
+> On Wed, Oct 16, 2019 at 03:06:32PM -0500, Rob Herring wrote:
+> > Convert the Rockchip host bridge to use the common
+> > pci_parse_request_of_pci_ranges().
+> >
+> > There's no need to assign the resources to a temporary list first. Just
+> > use bridge->windows directly and remove all the temporary list handling.
+> >
+> > Cc: Shawn Lin <shawn.lin@rock-chips.com>
+> > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> > Cc: Andrew Murray <andrew.murray@arm.com>
+> > Cc: Bjorn Helgaas <bhelgaas@google.com>
+> > Cc: Heiko Stuebner <heiko@sntech.de>
+> > Cc: linux-rockchip@lists.infradead.org
+> > Signed-off-by: Rob Herring <robh@kernel.org>
+> > ---
+> > v2:
+> > - New patch
+> >
+> >  drivers/pci/controller/pcie-rockchip-host.c | 36 ++++-----------------
+> >  1 file changed, 7 insertions(+), 29 deletions(-)
+> >
+> > diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
+> > index ef8e677ce9d1..8d2e6f2e141e 100644
+> > --- a/drivers/pci/controller/pcie-rockchip-host.c
+> > +++ b/drivers/pci/controller/pcie-rockchip-host.c
+> > @@ -950,14 +950,10 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+> >       struct device *dev = &pdev->dev;
+> >       struct pci_bus *bus, *child;
+> >       struct pci_host_bridge *bridge;
+> > +     struct resource *bus_res;
+> >       struct resource_entry *win;
+> > -     resource_size_t io_base;
+> > -     struct resource *mem;
+> > -     struct resource *io;
+> >       int err;
+> >
+> > -     LIST_HEAD(res);
+> > -
+> >       if (!dev->of_node)
+> >               return -ENODEV;
+> >
+> > @@ -995,29 +991,20 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+> >       if (err < 0)
+> >               goto err_deinit_port;
+> >
+> > -     err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
+> > -                                                 &res, &io_base);
+> > +     err = pci_parse_request_of_pci_ranges(dev, &bridge->windows, &bus_res);
+> >       if (err)
+> >               goto err_remove_irq_domain;
+> >
+> > -     err = devm_request_pci_bus_resources(dev, &res);
+> > -     if (err)
+> > -             goto err_free_res;
+> > +     rockchip->root_bus_nr = bus_res->start;
+> >
+> >       /* Get the I/O and memory ranges from DT */
+> > -     resource_list_for_each_entry(win, &res) {
+> > +     resource_list_for_each_entry(win, &bridge->windows) {
+> >               switch (resource_type(win->res)) {
+> >               case IORESOURCE_IO:
+> >                       io = win->res;
+> >                       io->name = "I/O";
+>
+> In some patches of this series we drop the custom naming of memory resources,
+> yet in others, like this one, we preserve the custom naming.
 
-In some patches of this series we drop the custom naming of memory resources,
-yet in others, like this one, we preserve the custom naming.
+Actually, patch #11 drops it for rockchip.
 
-Should we be consistent in preserving the existing naming?
+> Should we be consistent in preserving the existing naming?
 
-Thanks,
+The custom naming seems a bit pointless IMO and something mindlessly
+copied and pasted around, so I'd rather see removing the remaining
+cases. The only ones left AFAICT are designware and V3.
 
-Andrew Murray
-
->  			rockchip->io_size = resource_size(io);
->  			rockchip->io_bus_addr = io->start - win->offset;
-> -			err = pci_remap_iospace(io, io_base);
-> -			if (err) {
-> -				dev_warn(dev, "error %d: failed to map resource %pR\n",
-> -					 err, io);
-> -				continue;
-> -			}
->  			rockchip->io = io;
->  			break;
->  		case IORESOURCE_MEM:
-> @@ -1026,9 +1013,6 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
->  			rockchip->mem_size = resource_size(mem);
->  			rockchip->mem_bus_addr = mem->start - win->offset;
->  			break;
-> -		case IORESOURCE_BUS:
-> -			rockchip->root_bus_nr = win->res->start;
-> -			break;
->  		default:
->  			continue;
->  		}
-> @@ -1036,15 +1020,14 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
-> 
->  	err = rockchip_pcie_cfg_atu(rockchip);
->  	if (err)
-> -		goto err_unmap_iospace;
-> +		goto err_remove_irq_domain;
-> 
->  	rockchip->msg_region = devm_ioremap(dev, rockchip->msg_bus_addr, SZ_1M);
->  	if (!rockchip->msg_region) {
->  		err = -ENOMEM;
-> -		goto err_unmap_iospace;
-> +		goto err_remove_irq_domain;
->  	}
-> 
-> -	list_splice_init(&res, &bridge->windows);
->  	bridge->dev.parent = dev;
->  	bridge->sysdata = rockchip;
->  	bridge->busnr = 0;
-> @@ -1054,7 +1037,7 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
-> 
->  	err = pci_scan_root_bus_bridge(bridge);
->  	if (err < 0)
-> -		goto err_unmap_iospace;
-> +		goto err_remove_irq_domain;
-> 
->  	bus = bridge->bus;
-> 
-> @@ -1068,10 +1051,6 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
->  	pci_bus_add_devices(bus);
->  	return 0;
-> 
-> -err_unmap_iospace:
-> -	pci_unmap_iospace(rockchip->io);
-> -err_free_res:
-> -	pci_free_resource_list(&res);
->  err_remove_irq_domain:
->  	irq_domain_remove(rockchip->irq_domain);
->  err_deinit_port:
-> @@ -1097,7 +1076,6 @@ static int rockchip_pcie_remove(struct platform_device *pdev)
-> 
->  	pci_stop_root_bus(rockchip->root_bus);
->  	pci_remove_root_bus(rockchip->root_bus);
-> -	pci_unmap_iospace(rockchip->io);
->  	irq_domain_remove(rockchip->irq_domain);
-> 
->  	rockchip_pcie_deinit_phys(rockchip);
-> --
-> 2.20.1
+Rob
 
 _______________________________________________
 Linux-rockchip mailing list
