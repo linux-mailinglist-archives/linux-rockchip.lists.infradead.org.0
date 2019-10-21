@@ -2,67 +2,68 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7A68DE17C
-	for <lists+linux-rockchip@lfdr.de>; Mon, 21 Oct 2019 02:38:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7251DE182
+	for <lists+linux-rockchip@lfdr.de>; Mon, 21 Oct 2019 02:39:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UEoGTk2vaJ1lzXmHUnfQBK61vJ3i2lp56+GX1ZgtDuI=; b=CM+cI3N7GCvGIR
-	E9sdxSfruTjby4LqUg90/PvaIh/+gn0nXKlMlES5qK+g9iaIvhj0r5GtDEmbNwCn9fmWUI8G+0o6x
-	x2y5q2BqdSN3pnS3B4Rbbd0/6ygZgyRB1expvs/S+Vd86Wu634JnPJSn3TjY7hHDWdw9a7x3TTsEh
-	7+vMvQh0nM8AqshmFD8MH/iat8/fB/zlJA9qo/2BpwULz2s+Qup8L6KRMdNLVmgJ+RbFkXw9gNA8z
-	2e9JAtfjZan0MsWVlyh2Srn8c0teOHavm3S/7rPr3JSkEKC4Mk14Xcza451D2i7iVh9KBTIkCsDM5
-	zL4ulm5GGOrWG26iupzw==;
+	List-Owner; bh=bKbdK2fXizdAHoqfDsF3/3qrLKItF60Xnf9EpnNvqzM=; b=kgmYo3yxcLT2As
+	u4lIvwspmdqQMlNk+lP6DprhFUSlDuDxOqrAS6bZdTkOUIMsNHr7klG1ljTEcJuSgTH0EUcNXRlmr
+	yG4BDMHYpB0Bb7a4FtA8UGD9bBKlKt16psUkR/VQTUz8pkZMFG86UfIquOi+bQvc86DX1f1dLNJHX
+	fC1SzutzwCtMsaIsZPODsB+32B4juheBp5EsDtCuprGoVs1Bvqqmdz6qbrF0DW6UQZBJSYx8QqwnK
+	DBcKGyNo8FWcehfHevivhQVD+zOewuULDL9qpAVCDBTAsqf3zXXujg8lOSMMBE6VL2u3J7cZGCYUT
+	8rwrGSRjlIblmTxIaSbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMLiY-0000ng-Gz; Mon, 21 Oct 2019 00:38:38 +0000
+	id 1iMLjK-000191-QJ; Mon, 21 Oct 2019 00:39:26 +0000
 Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMLiV-0000mk-Kx
- for linux-rockchip@lists.infradead.org; Mon, 21 Oct 2019 00:38:37 +0000
-Received: by mail-lj1-x244.google.com with SMTP id a22so11407219ljd.0
- for <linux-rockchip@lists.infradead.org>; Sun, 20 Oct 2019 17:38:34 -0700 (PDT)
+ id 1iMLjG-000179-R7
+ for linux-rockchip@lists.infradead.org; Mon, 21 Oct 2019 00:39:24 +0000
+Received: by mail-lj1-x244.google.com with SMTP id b20so11384422ljj.5
+ for <linux-rockchip@lists.infradead.org>; Sun, 20 Oct 2019 17:39:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=cUqtT92AZ9lrnd20Di/UpzfjLJC1pbg37G7/c5IKKgY=;
- b=p21Noq3CV55U0A8VkoqX9m278rUiKa/xxLlh7wdB854lwoLBsD/p2++t0xmNEycGIK
- ANYQQ14P9emosdRn1GHlGds1elZqSmc61JQxwsOk+HFpvm/lrsd1yD/4YJTzbmMzt+Q5
- KTMY/zdvQSJLiuV3K6AQ1QGcIBpkc4R37ftWyRLh9IAm8FQQEHlxsp1q6SfVBobY10Xw
- 7AExxFLYrCcP18tEtj8tAyDAm0jUCs4v0IoD/0RrJvvr1mMcc/9hWRivKyNDU07OfqMx
- gzbCsW2jvKPzSCUdmmeSrghFYS3dB0zTeJxQvDHXdK684lBmD+LdrJJQqxko/+eHauF9
- /HVg==
+ :cc; bh=9FExjd8Mw+5S7YMEqY/A4+by9kWereoTqCBatm9VlSY=;
+ b=bKfda/5lV6mWSWAiZpVxxNgMPBVwZY2DPWmhX6/nmnzg2UVxlImBP+/CfiJfb0DiYB
+ w9AfDMSY2xb7TJKWzJ0+yMgQCi8J1xBfKrV90PGs/IEDPvEiqamNKpZqVWxgVnPWKGYm
+ VN/CkYJn3XGCMykhmOivjJ0NuoUfJFVlSmhq7Xl76tAXV8UZroBJtxN4TpJwd1ySaSUC
+ AaUBJg36OCzkyyf51aFEd1O4z9D+UjGo/4Y2R/zIT6yqBY2hyQ2lWAyh03UyWv4Mk6X2
+ lSmCEqBEonc5NP58z1JO+HSpRadEiRVD11I6IW2n1nbWguPbe6WtLVRLwW/8m44zqXMN
+ cG7Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=cUqtT92AZ9lrnd20Di/UpzfjLJC1pbg37G7/c5IKKgY=;
- b=JxX3lVSpDpeOr01fjUUkmYK/jJOXTrei+vW+yNQyxK7FrAhV5NZ7+hOdl20QOyVVpk
- gx32RzXDR+wFR5/oEEB0Gp4Lor+a6C8TOntsuNjrQ3eobDqYODL0q6mfBlIjM6aTvI+D
- eR0D/WeDWNwyZ/K8iMeD6sx9pE0oSy2JUrxblDf069zrZaEN59sFTnPx3gldxftvjFPV
- jkiYkbmEgafQwcPk47rabrop295wj7nRo6ZS832y7BIVHXIgYMvTdXX9o3Ppy0QMl5rc
- fIC+apUBkKYw9C8sKXCZG/ibepIOFIe5Hm62UpVsBlNQ2LRFyeaSlZYntNEimEKiaKIL
- liYg==
-X-Gm-Message-State: APjAAAUqXxfew44AW3l7IwtjtNukynS8rUcUBTy/rTs4bI1Zf2yQtqh1
- u74eZ39NEZyv1lCL9+tB/e2Aci+uyqsY/mhjCYmckw==
-X-Google-Smtp-Source: APXvYqx+Sv2qws2AyWYB+jVZthwdqV3ztSd28/13A632cZQGo2Czb2JB4I8085joST3g83E93e5BoQ6uVRT+sDP11QY=
-X-Received: by 2002:a2e:9f4d:: with SMTP id v13mr12883755ljk.183.1571618313283; 
- Sun, 20 Oct 2019 17:38:33 -0700 (PDT)
+ bh=9FExjd8Mw+5S7YMEqY/A4+by9kWereoTqCBatm9VlSY=;
+ b=rijcl6vNSGytu84N9UOGbBhJw9grJOezSzi5KZnYCQVHcWmTbKjubWRa7BG/Y/uw+d
+ JytmtuwUkhQ+FqOS1PDDao4RF6F3VUJvFGmDw4sX0o/z1QQza2tFLwGAIx07IK1bAOtA
+ g6sHOZbYB+IBuXjL/QmlZ3DX2EkpVSjoGEfaMACANCjqNUzdJluLKC2qZP+AQT9Bt95i
+ JaU/IHsnL4ZnQulGc4V4cB3Ev4ZxnIrFjTrLkFmqBaqhCb77fk1jybhQ9pwYI0nXl2pr
+ H3ySYxKEGlgeEYzvviYUUqlzYrdrecTokDg0BC+TeKpoR83B4vQlxLPmfix1r5d22LGZ
+ t+iw==
+X-Gm-Message-State: APjAAAUfkuXui2klRMinIhMbFTZZM/wY6fSCy/J77HyTRYdXheXpqKqL
+ NXaqRpcrhhGB0rU0EUxCIlJDrSVwfRVAoCyJ0uzY0Q==
+X-Google-Smtp-Source: APXvYqzWOeDq45DqnffOCq2/ChHGoqMhScnvErLh5JbufOO4hYwyRCMdCCsjftBVaXnakQZF8XtaUFolXzMPZX14iKU=
+X-Received: by 2002:a05:651c:1202:: with SMTP id
+ i2mr6489156lja.218.1571618361501; 
+ Sun, 20 Oct 2019 17:39:21 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191016200647.32050-1-robh@kernel.org>
- <20191016200647.32050-13-robh@kernel.org>
-In-Reply-To: <20191016200647.32050-13-robh@kernel.org>
+ <20191016200647.32050-17-robh@kernel.org>
+In-Reply-To: <20191016200647.32050-17-robh@kernel.org>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 21 Oct 2019 02:38:20 +0200
-Message-ID: <CACRpkdaxm-mdULkgm3NwncizELJ14SgLAnGLVy6UE+dUXN2ynQ@mail.gmail.com>
-Subject: Re: [PATCH v2 12/25] PCI: v3-semi: Use
+Date: Mon, 21 Oct 2019 02:39:07 +0200
+Message-ID: <CACRpkdYjY0JZCCfb9r9A2GKmO03hHXNCqGmy6qqBkLfOdZZdEQ@mail.gmail.com>
+Subject: Re: [PATCH v2 16/25] PCI: versatile: Use
  pci_parse_request_of_pci_ranges()
 To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191020_173835_699248_0411E5B8 
-X-CRM114-Status: UNSURE (   9.13  )
+X-CRM114-CacheID: sfid-20191020_173922_876816_77D4E715 
+X-CRM114-Status: UNSURE (   9.61  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -121,17 +122,19 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 On Wed, Oct 16, 2019 at 10:07 PM Rob Herring <robh@kernel.org> wrote:
 
-> Convert V3 host bridge to use the common
+> Convert ARM Versatile host bridge to use the common
 > pci_parse_request_of_pci_ranges().
 >
-> Cc: Linus Walleij <linus.walleij@linaro.org>
+> There's no need to assign the resources to a temporary list first. Just
+> use bridge->windows directly and remove all the temporary list handling.
+>
 > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Cc: Andrew Murray <andrew.murray@arm.com>
 > Cc: Bjorn Helgaas <bhelgaas@google.com>
 > Signed-off-by: Rob Herring <robh@kernel.org>
 > ---
 > v2:
-> - New patch
+> - Fix 'mem' initial value to 1
+> - Remove temporary resource list
 
 Acked-by: Linus Walleij <linus.walleij@linaro.org>
 
