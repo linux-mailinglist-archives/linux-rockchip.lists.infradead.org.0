@@ -2,76 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7251DE182
-	for <lists+linux-rockchip@lfdr.de>; Mon, 21 Oct 2019 02:39:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E584DE189
+	for <lists+linux-rockchip@lfdr.de>; Mon, 21 Oct 2019 02:40:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bKbdK2fXizdAHoqfDsF3/3qrLKItF60Xnf9EpnNvqzM=; b=kgmYo3yxcLT2As
-	u4lIvwspmdqQMlNk+lP6DprhFUSlDuDxOqrAS6bZdTkOUIMsNHr7klG1ljTEcJuSgTH0EUcNXRlmr
-	yG4BDMHYpB0Bb7a4FtA8UGD9bBKlKt16psUkR/VQTUz8pkZMFG86UfIquOi+bQvc86DX1f1dLNJHX
-	fC1SzutzwCtMsaIsZPODsB+32B4juheBp5EsDtCuprGoVs1Bvqqmdz6qbrF0DW6UQZBJSYx8QqwnK
-	DBcKGyNo8FWcehfHevivhQVD+zOewuULDL9qpAVCDBTAsqf3zXXujg8lOSMMBE6VL2u3J7cZGCYUT
-	8rwrGSRjlIblmTxIaSbQ==;
+	List-Owner; bh=6IJX2Y500EsgeZ8fvwHQhiodt5O7oAmGIAJV7sMe2s4=; b=HnBrrh42KG06eW
+	U8Wesj2Gs2xmvs99L+jQhnzEJkI+sLlfJlU7S73icVxvnsS1QodMPVOwo2O9jTGztID1A5l5pNFcI
+	snha3v5bneDCEMYRDBAxuysuB09pj540l8S2MuQbHHSh6DKykEyUtMqPXQDya0XjLiQgfY87N/nq2
+	Ki5mvQHolDDa1ny7EEvvhzVtDUpl391aqzWhojZrC9PnOZJho2LmYyOfUg6CzubFEQIwvU+CL7oYX
+	BR/K4YbLP9EcD+QmGbvxcXB8HdtPq7JQ8tn2cV8J1xE2Kyrg+l7ZHnxKKfeSJq9PrhmGO5Ob+KqLy
+	5UHgqPheKilVHj0gAozA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMLjK-000191-QJ; Mon, 21 Oct 2019 00:39:26 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1iMLkn-00035z-HV; Mon, 21 Oct 2019 00:40:57 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMLjG-000179-R7
- for linux-rockchip@lists.infradead.org; Mon, 21 Oct 2019 00:39:24 +0000
-Received: by mail-lj1-x244.google.com with SMTP id b20so11384422ljj.5
- for <linux-rockchip@lists.infradead.org>; Sun, 20 Oct 2019 17:39:22 -0700 (PDT)
+ id 1iMLkX-0002tW-LN
+ for linux-rockchip@lists.infradead.org; Mon, 21 Oct 2019 00:40:44 +0000
+Received: by mail-lj1-x243.google.com with SMTP id n14so11368851ljj.10
+ for <linux-rockchip@lists.infradead.org>; Sun, 20 Oct 2019 17:40:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=9FExjd8Mw+5S7YMEqY/A4+by9kWereoTqCBatm9VlSY=;
- b=bKfda/5lV6mWSWAiZpVxxNgMPBVwZY2DPWmhX6/nmnzg2UVxlImBP+/CfiJfb0DiYB
- w9AfDMSY2xb7TJKWzJ0+yMgQCi8J1xBfKrV90PGs/IEDPvEiqamNKpZqVWxgVnPWKGYm
- VN/CkYJn3XGCMykhmOivjJ0NuoUfJFVlSmhq7Xl76tAXV8UZroBJtxN4TpJwd1ySaSUC
- AaUBJg36OCzkyyf51aFEd1O4z9D+UjGo/4Y2R/zIT6yqBY2hyQ2lWAyh03UyWv4Mk6X2
- lSmCEqBEonc5NP58z1JO+HSpRadEiRVD11I6IW2n1nbWguPbe6WtLVRLwW/8m44zqXMN
- cG7Q==
+ :cc; bh=m6Xo9B6o9SIZMKltywI4CiX1SZ99OwUFgC+m3ay2Ymo=;
+ b=zroUUUrfgfHLCjgOyR2uQ2lLhWyKSM7uEj1yfxnkSSToT1Elup+0aFqlDLFwh9G/n2
+ KmTyKhUQBndxk5V92CCxunqRlxvT1jz39Hi0bjTlcO8/JBejG5joPR6goquCAbY1q8r5
+ c4pKHfEl0bulWgTXTtr+82ImDmgMw2jNre53NjUrfx2uQJugQo9wuJWUaquqK5XdTNWa
+ wWxphcewpaq4w17KtJTsfDZ/G/9tO6b1j3OEyi+2KchtoK+DEqJnQ+3c6IUkzZHm7KCf
+ s5m8n4Dl+/ZQ+m8Jd5Kh/kDLz/KDGqnFn1t5nhMws+ktDfHLGN+r3tgJ4NqeOx0DdF9m
+ GLwQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=9FExjd8Mw+5S7YMEqY/A4+by9kWereoTqCBatm9VlSY=;
- b=rijcl6vNSGytu84N9UOGbBhJw9grJOezSzi5KZnYCQVHcWmTbKjubWRa7BG/Y/uw+d
- JytmtuwUkhQ+FqOS1PDDao4RF6F3VUJvFGmDw4sX0o/z1QQza2tFLwGAIx07IK1bAOtA
- g6sHOZbYB+IBuXjL/QmlZ3DX2EkpVSjoGEfaMACANCjqNUzdJluLKC2qZP+AQT9Bt95i
- JaU/IHsnL4ZnQulGc4V4cB3Ev4ZxnIrFjTrLkFmqBaqhCb77fk1jybhQ9pwYI0nXl2pr
- H3ySYxKEGlgeEYzvviYUUqlzYrdrecTokDg0BC+TeKpoR83B4vQlxLPmfix1r5d22LGZ
- t+iw==
-X-Gm-Message-State: APjAAAUfkuXui2klRMinIhMbFTZZM/wY6fSCy/J77HyTRYdXheXpqKqL
- NXaqRpcrhhGB0rU0EUxCIlJDrSVwfRVAoCyJ0uzY0Q==
-X-Google-Smtp-Source: APXvYqzWOeDq45DqnffOCq2/ChHGoqMhScnvErLh5JbufOO4hYwyRCMdCCsjftBVaXnakQZF8XtaUFolXzMPZX14iKU=
-X-Received: by 2002:a05:651c:1202:: with SMTP id
- i2mr6489156lja.218.1571618361501; 
- Sun, 20 Oct 2019 17:39:21 -0700 (PDT)
+ bh=m6Xo9B6o9SIZMKltywI4CiX1SZ99OwUFgC+m3ay2Ymo=;
+ b=ZXQxMTztqFYQwjqDtaurxP3o7EDBgVKghPdVtSvS16PKl5eOM16MaRVOp9NBcIU/pw
+ PE9dVTr0aNvNMH/m7u+1YWXY6LNXx+tQosY+aeFIYDvHSEo7UdFrMFInAz9sHJEjKofM
+ fahlGwOJDGT1HHkYGlPE+lFF9JPVBhH3D24rdcj6Jc3FCektnaJjSh4ndg685HgwUs0D
+ u++hl7o+sTgnTrXX88KKbWa6w90XrSadyfXmjtZl69MxAMkK3n+xAVPIMWCn+P5JvP7S
+ xWnhJ1QxLvno0QeTtrYD4Q9COQwW2QucrhTQmaaxf0x6b2sAUVjuGzB1hxTCDI2NYcpc
+ wfhg==
+X-Gm-Message-State: APjAAAUWpLvPgDilS1HEnAnlnVLgIqJois51/g5Zn+AR6qvZ2O/IvJ9z
+ g2SFQz6Z65eR8/8aZagGhzco7Q2xLxWt7f1fp4PLKQ==
+X-Google-Smtp-Source: APXvYqzrokn9M/Ubcg0CEqbAzJJBvsXnB3LI0TFr0LTW5W/Xiku2p7auDuAK7OWy/bhF9IEAr+uI2BTb4+ImUhUhYhk=
+X-Received: by 2002:a2e:a0c9:: with SMTP id f9mr13031793ljm.77.1571618440273; 
+ Sun, 20 Oct 2019 17:40:40 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191016200647.32050-1-robh@kernel.org>
- <20191016200647.32050-17-robh@kernel.org>
-In-Reply-To: <20191016200647.32050-17-robh@kernel.org>
+ <20191016200647.32050-18-robh@kernel.org>
+In-Reply-To: <20191016200647.32050-18-robh@kernel.org>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 21 Oct 2019 02:39:07 +0200
-Message-ID: <CACRpkdYjY0JZCCfb9r9A2GKmO03hHXNCqGmy6qqBkLfOdZZdEQ@mail.gmail.com>
-Subject: Re: [PATCH v2 16/25] PCI: versatile: Use
- pci_parse_request_of_pci_ranges()
+Date: Mon, 21 Oct 2019 02:40:27 +0200
+Message-ID: <CACRpkdbhPPRDixrR4rWSopFEd-5AKpjHF1-Su-ViAGMDLQiKkw@mail.gmail.com>
+Subject: Re: [PATCH v2 17/25] PCI: versatile: Remove usage of PHYS_OFFSET
 To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191020_173922_876816_77D4E715 
-X-CRM114-Status: UNSURE (   9.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191020_174041_733551_A3EAEB13 
+X-CRM114-Status: GOOD (  12.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -122,20 +119,23 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 On Wed, Oct 16, 2019 at 10:07 PM Rob Herring <robh@kernel.org> wrote:
 
-> Convert ARM Versatile host bridge to use the common
-> pci_parse_request_of_pci_ranges().
+> PHYS_OFFSET is not universally defined on all arches and using it prevents
+> enabling COMPILE_TEST. PAGE_OFFSET and __pa() are always available, so use
+> them to get the physical start of memory address.
 >
-> There's no need to assign the resources to a temporary list first. Just
-> use bridge->windows directly and remove all the temporary list handling.
+> This should have probably used 'dma-ranges' to get the address, but we
+> don't want to force a DT update to do that. At least in QEMU, the SMAP
+> registers have no effect (or perhaps the only value that is handled is 0).
 >
 > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> Cc: Andrew Murray <andrew.murray@arm.com>
 > Cc: Bjorn Helgaas <bhelgaas@google.com>
 > Signed-off-by: Rob Herring <robh@kernel.org>
 > ---
 > v2:
-> - Fix 'mem' initial value to 1
-> - Remove temporary resource list
+> - New patch to fix build failure on some arches.
 
+Always wondered how to do this right, now I can fix other stuff!
 Acked-by: Linus Walleij <linus.walleij@linaro.org>
 
 Yours,
