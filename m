@@ -2,54 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88C6DDF29A
-	for <lists+linux-rockchip@lfdr.de>; Mon, 21 Oct 2019 18:14:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BACEDF2AC
+	for <lists+linux-rockchip@lfdr.de>; Mon, 21 Oct 2019 18:15:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6SDuOvqbT/fOJlkyX16uuiZfMjipC3C/aRH3SxH6R9c=; b=iuKkUHKEuFbHGA
-	FXXeZFBEqBL86LfHsQJvzHwxNMoutzDOAuqjfcQLqU6c57A+y+JruUYrBz1su0PVK17o6J8S680Id
-	qOD9D20RS6ZVtci8gaNrOg5tccxaxwSxEKtC5PylhWW3bvchZBNv9UbtHv6x/tsztJJevTVczcPIN
-	8lvpYIuZml2Oqx7u7QZFG0dxevFmV57m3/YXysNoO241PCG/SbU2fZLctgEQNE2F7UaxrC2jXp9go
-	8WhADJTlTJTUuDxdwrd/+CDorLcefhm6ZeAIKu2DaMvZ/KgdU5FoGCtb9TqqxaksEK2MpvQbTSh2V
-	+bQmtZzfB7xI7TpQVCUQ==;
+	List-Owner; bh=oeRR9/lFBGMR2/kjys5wVARy0WgMedMyUC4XgWngLCk=; b=I4S60/VatnV7En
+	4/BbGX+6ZXzEiczPFjA3sopwEUs9Nvyke5CAJqyCc+SpC0iiF4xsLUllQ5kOFCbV6R2d43M0wizv/
+	XrrPJ6NW2HsIdKXIul35acHusan+fbbDzLog3QsJzsamfBNpwAEs0DFw02DwER/dn91gyu8VLnyNI
+	1tALF0LN3asrxa2RyPP9tfGPMOppt9xOFTjQJL7U5BvsnF1D7J0lmHjRzigjLy5uJYzNJfSsp7e1V
+	+e90+0n8/0jih4F4Wuj1fZgLEipoxn9RChZK/aD4nbr+xCCyHIG9FvJk8TGEnTmlZPnernijW5SQB
+	0LOGSwv3hNWwOwgq0goQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMaKY-0000xU-6Q; Mon, 21 Oct 2019 16:14:50 +0000
+	id 1iMaL3-0002iT-OU; Mon, 21 Oct 2019 16:15:21 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMaJp-0000Mo-6E; Mon, 21 Oct 2019 16:14:06 +0000
+ id 1iMaJs-0000RE-Vt; Mon, 21 Oct 2019 16:14:10 +0000
 Received: from localhost.localdomain (unknown [194.230.155.217])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 234182084B;
- Mon, 21 Oct 2019 16:14:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8024E2173B;
+ Mon, 21 Oct 2019 16:14:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571674444;
- bh=7SuovnyOFIDXjjAa3m7sCNKHcZazJdRm/MfbQcjj8bs=;
+ s=default; t=1571674448;
+ bh=PesYZ+HA875Gfaapu9lLXMBV2ZwPk+XBT+8vkmww23U=;
  h=From:To:Subject:Date:In-Reply-To:References:From;
- b=vlo+VW/blpqwBIg3aWdMxDXNV5PIPwffmgd93C+9tZN/RmPx7ujBNey4MEa52kuGn
- GKjoc5RKsfKjxkaxG8tM5BwUIxq888O5LUltOESit2hiLJDDlAraQGerHgy1nB/Ehb
- dM7w1tS7JXFuXswW0j7L7hqjn7kysDQy8jYZL0Yo=
+ b=RFRhPoEiZVxyEt90zQAwknCO80KBatrwuzdN+N1r1iIu4kq/cxQZ3RxBIcEARt+ON
+ DMnKUyONZ7WI75aa58PSKcXPuO1InU1lG/3tnFIR0IjC959EcC1dCHi3xsijoAms8o
+ b7Pi5/tbl/GwZE21/h703VJwZV2ulVnXyFOozE9E=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Heiko Stuebner <heiko@sntech.de>, Krzysztof Kozlowski <krzk@kernel.org>,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
-Subject: [PATCH v4 2/7] dt-bindings: sram: Merge Samsung SRAM bindings into
+Subject: [PATCH v4 3/7] dt-bindings: sram: Merge Amlogic SRAM bindings into
  generic
-Date: Mon, 21 Oct 2019 18:13:46 +0200
-Message-Id: <20191021161351.20789-2-krzk@kernel.org>
+Date: Mon, 21 Oct 2019 18:13:47 +0200
+Message-Id: <20191021161351.20789-3-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191021161351.20789-1-krzk@kernel.org>
 References: <20191021161351.20789-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_091405_282129_D0AEF83C 
-X-CRM114-Status: GOOD (  14.32  )
+X-CRM114-CacheID: sfid-20191021_091409_090042_4F9AC517 
+X-CRM114-Status: GOOD (  13.73  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,7 +85,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The Samsung SRAM bindings list only compatible so integrate them into
+The Amlogic SRAM bindings list only compatible so integrate them into
 generic SRAM bindings schema.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
@@ -95,112 +95,86 @@ Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 Changes since v3:
 1. New patch
 ---
- .../devicetree/bindings/sram/samsung-sram.txt | 38 -------------------
- .../devicetree/bindings/sram/sram.yaml        | 29 ++++++++++++++
- MAINTAINERS                                   |  1 -
- 3 files changed, 29 insertions(+), 39 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/sram/samsung-sram.txt
+ .../bindings/arm/amlogic/smp-sram.txt         | 32 -------------------
+ .../devicetree/bindings/sram/sram.yaml        | 22 +++++++++++++
+ 2 files changed, 22 insertions(+), 32 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/amlogic/smp-sram.txt
 
-diff --git a/Documentation/devicetree/bindings/sram/samsung-sram.txt b/Documentation/devicetree/bindings/sram/samsung-sram.txt
+diff --git a/Documentation/devicetree/bindings/arm/amlogic/smp-sram.txt b/Documentation/devicetree/bindings/arm/amlogic/smp-sram.txt
 deleted file mode 100644
-index 61a9bbed303d..000000000000
---- a/Documentation/devicetree/bindings/sram/samsung-sram.txt
+index 3473ddaadfac..000000000000
+--- a/Documentation/devicetree/bindings/arm/amlogic/smp-sram.txt
 +++ /dev/null
-@@ -1,38 +0,0 @@
--Samsung Exynos SYSRAM for SMP bringup:
--------------------------------------
+@@ -1,32 +0,0 @@
+-Amlogic Meson8 and Meson8b SRAM for smp bringup:
+-------------------------------------------------
 -
--Samsung SMP-capable Exynos SoCs use part of the SYSRAM for the bringup
--of the secondary cores. Once the core gets powered up it executes the
--code that is residing at some specific location of the SYSRAM.
+-Amlogic's SMP-capable SoCs use part of the sram for the bringup of the cores.
+-Once the core gets powered up it executes the code that is residing at a
+-specific location.
 -
--Therefore reserved section sub-nodes have to be added to the mmio-sram
--declaration. These nodes are of two types depending upon secure or
--non-secure execution environment.
+-Therefore a reserved section sub-node has to be added to the mmio-sram
+-declaration.
 -
 -Required sub-node properties:
--- compatible : depending upon boot mode, should be
--		"samsung,exynos4210-sysram" : for Secure SYSRAM
--		"samsung,exynos4210-sysram-ns" : for Non-secure SYSRAM
+-- compatible : depending on the SoC this should be one of:
+-		"amlogic,meson8-smp-sram"
+-		"amlogic,meson8b-smp-sram"
 -
 -The rest of the properties should follow the generic mmio-sram discription
--found in Documentation/devicetree/bindings/sram/sram.txt
+-found in ../../misc/sram.txt
 -
 -Example:
 -
--	sysram@2020000 {
+-	sram: sram@d9000000 {
 -		compatible = "mmio-sram";
--		reg = <0x02020000 0x54000>;
+-		reg = <0xd9000000 0x20000>;
 -		#address-cells = <1>;
 -		#size-cells = <1>;
--		ranges = <0 0x02020000 0x54000>;
+-		ranges = <0 0xd9000000 0x20000>;
 -
--		smp-sysram@0 {
--			compatible = "samsung,exynos4210-sysram";
--			reg = <0x0 0x1000>;
--		};
--
--		smp-sysram@53000 {
--			compatible = "samsung,exynos4210-sysram-ns";
--			reg = <0x53000 0x1000>;
+-		smp-sram@1ff80 {
+-			compatible = "amlogic,meson8b-smp-sram";
+-			reg = <0x1ff80 0x8>;
 -		};
 -	};
 diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
-index d338fcaa21ed..9ed94f8b0794 100644
+index 9ed94f8b0794..a78da7a686d0 100644
 --- a/Documentation/devicetree/bindings/sram/sram.yaml
 +++ b/Documentation/devicetree/bindings/sram/sram.yaml
-@@ -64,6 +64,9 @@ patternProperties:
-         description:
+@@ -65,6 +65,8 @@ patternProperties:
            Should contain a vendor specific string in the form
            <vendor>,[<device>-]<usage>
-+        enum:
-+          - samsung,exynos4210-sysram
-+          - samsung,exynos4210-sysram-ns
+         enum:
++          - amlogic,meson8-smp-sram
++          - amlogic,meson8b-smp-sram
+           - samsung,exynos4210-sysram
+           - samsung,exynos4210-sysram-ns
  
-       reg:
-         description:
-@@ -135,3 +138,29 @@ examples:
-             export;
+@@ -164,3 +166,23 @@ examples:
+             reg = <0x53000 0x1000>;
          };
      };
 +
 +  - |
-+    // Samsung SMP-capable Exynos SoCs use part of the SYSRAM for the bringup
-+    // of the secondary cores. Once the core gets powered up it executes the
-+    // code that is residing at some specific location of the SYSRAM.
++    // Amlogic's SMP-capable SoCs use part of the sram for the bringup of the cores.
++    // Once the core gets powered up it executes the code that is residing at a
++    // specific location.
 +    //
-+    // Therefore reserved section sub-nodes have to be added to the mmio-sram
-+    // declaration. These nodes are of two types depending upon secure or
-+    // non-secure execution environment.
-+    sram@2020000 {
++    // Therefore a reserved section sub-node has to be added to the mmio-sram
++    // declaration.
++    sram@d9000000 {
 +        compatible = "mmio-sram";
-+        reg = <0x02020000 0x54000>;
++        reg = <0xd9000000 0x20000>;
 +        #address-cells = <1>;
 +        #size-cells = <1>;
-+        ranges = <0 0x02020000 0x54000>;
++        ranges = <0 0xd9000000 0x20000>;
 +
-+        smp-sram@0 {
-+            compatible = "samsung,exynos4210-sysram";
-+            reg = <0x0 0x1000>;
-+        };
-+
-+        smp-sram@53000 {
-+            compatible = "samsung,exynos4210-sysram-ns";
-+            reg = <0x53000 0x1000>;
++        smp-sram@1ff80 {
++            compatible = "amlogic,meson8b-smp-sram";
++            reg = <0x1ff80 0x8>;
 +        };
 +    };
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 56c78eadfdc5..699ad8f1eb38 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -2235,7 +2235,6 @@ F:	drivers/soc/samsung/
- F:	include/linux/soc/samsung/
- F:	Documentation/arm/samsung/
- F:	Documentation/devicetree/bindings/arm/samsung/
--F:	Documentation/devicetree/bindings/sram/samsung-sram.txt
- F:	Documentation/devicetree/bindings/power/pd-samsung.txt
- N:	exynos
- 
 -- 
 2.17.1
 
