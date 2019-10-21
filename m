@@ -2,51 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17B95DF2BA
-	for <lists+linux-rockchip@lfdr.de>; Mon, 21 Oct 2019 18:18:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7854DF7A4
+	for <lists+linux-rockchip@lfdr.de>; Mon, 21 Oct 2019 23:46:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2gyI/fbd9RKaGKLjwMpVjqNSAbzwHcxzOCTqm/7teZQ=; b=dtKVXAGSiMr9A/
-	ZK73jZ8Hj9hI9ZwI1qOp5RUY/RD5VkvacEaKdXhHlR1mGI/fHT/uvxI+KXwqSVnYE2YYBrmga+Ubj
-	trLIN0vHKjTIJVqjDK2dUCujYveEBhNqj2uW4m6+47CiBVMbrKXJu1vWV/mrO9a1rNcBcziW5VXDu
-	c4jWXnUK17kE5aUj5247dBPuyb7BQArQpOH124hmupHHdR72FVQvxG8zwoFBKiRxpd+llYX5pQfDi
-	UG9aCt1ex0FDjwyhEXVEkrqX5a6VvmSEAb7ZYGflWcvabclKF9psRhj/O2RLN7W6/dbUoyYMrec8+
-	s4C9RkTTNrhGQICabCQQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fqPske7Yeq5cncmte1yTKN+gHy2ZJF7tKO3EzE81+y4=; b=iV2oIyDdY0WODF
+	JzRy/+OYAHwbus5l8OjbsaxXn6Kru4mLuCOfA45l5j8MSTi/c6ILcjCxDPELVKbdB1o2+9Ouu+iXG
+	62abuOPIUQu4GIl7jzFVwJx9nUysYTIXHchCvaVpbUneocAb9TcLQ+0B0uQL8pFh85jc7ZF11xXTj
+	/OXXFEmr4kiBAl0k4IhkmT5T7BczxoHd43OdVMxxNQH5/oBw3g8MUXQV09C1bQiunuZGm3huQ9f6D
+	puIhain8WCrnm592iiKK/i4LKRaDyXFfWbEBqDaji20CUcttYtOlPlrYQuJba8oBkLsPHIxbHMsUB
+	WKF/SCkpxvOv1h0tCRsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMaOG-0004Pl-53; Mon, 21 Oct 2019 16:18:40 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1iMfVK-0000SL-GL; Mon, 21 Oct 2019 21:46:18 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMaO1-00044z-SC; Mon, 21 Oct 2019 16:18:27 +0000
-Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iMaNr-0006nu-Mh; Mon, 21 Oct 2019 18:18:15 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH v4 5/7] dt-bindings: sram: Merge Rockchip SRAM bindings
- into generic
-Date: Mon, 21 Oct 2019 18:18:14 +0200
-Message-ID: <3101747.Dqu2aBfdh7@diego>
-In-Reply-To: <20191021161351.20789-5-krzk@kernel.org>
-References: <20191021161351.20789-1-krzk@kernel.org>
- <20191021161351.20789-5-krzk@kernel.org>
+ id 1iMfUw-0000C7-GQ; Mon, 21 Oct 2019 21:45:56 +0000
+Received: by mail-ot1-f67.google.com with SMTP id 21so12345581otj.11;
+ Mon, 21 Oct 2019 14:45:53 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=nqe5QILtIpNsEaGhkK4nGkXs8zLkefJgCA+oa+2s7ok=;
+ b=db9KTeYkpaYOOjZMgE35pgtZ2xKfjPyYyi819zk+e31lUGvdoPYUABDmCcMg9ZCdQv
+ oMw3u1ARKoFYi/t13JCiUu++uBUMQ1RZcYoSfcX4HuvWJm3wNk/bUK3n083UNoGzYUY5
+ +DcsHUqnQYaMKcZtqIrX6+G40IvrJ5p54a+olZL9ZwOENy5U10VU4pzP+RSYrjnTQFSv
+ 4aMdXl2snQ2zcPM3ZoSA/MZEofZOluh19/j//hAfQbrrtuaFZvBazgrAatl9X4y2XwLU
+ mAA9C3tIK56HmV6ZlBDcvnpWTXxXrvB7/zXdmWLRfRg38Q+p6Mja1ybJs4jcoFtQHjG7
+ XH+Q==
+X-Gm-Message-State: APjAAAWin4AyFyvNmQGDPktfeokkjWclpuZ9GcGJ2lZ7jHZsH1PAnTvW
+ liJr8DM5vqnQU0iCjZYt3w==
+X-Google-Smtp-Source: APXvYqxCs8yabMuTaUbUxDWWtS2Wplp/U09Sf75zVuQx5s+Q4uVctXMoxLgtzYEKbav8DT5Bobt0qg==
+X-Received: by 2002:a9d:3df7:: with SMTP id l110mr40031otc.245.1571694353132; 
+ Mon, 21 Oct 2019 14:45:53 -0700 (PDT)
+Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.googlemail.com with ESMTPSA id u130sm4122676oib.56.2019.10.21.14.45.51
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 21 Oct 2019 14:45:52 -0700 (PDT)
+From: Rob Herring <robh@kernel.org>
+To: dri-devel@lists.freedesktop.org
+Subject: [PATCH 0/6] drm: Support CMA per allocation kernel mappings
+Date: Mon, 21 Oct 2019 16:45:44 -0500
+Message-Id: <20191021214550.1461-1-robh@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_091826_059258_B905A3B4 
-X-CRM114-Status: GOOD (  17.06  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191021_144554_544317_B8C090D6 
+X-CRM114-Status: GOOD (  14.65  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,105 +87,101 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Liviu Dudau <liviu.dudau@arm.com>, Sandy Huang <hjc@rock-chips.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Yannick Fertre <yannick.fertre@st.com>, Kevin Hilman <khilman@baylibre.com>,
+ Xinwei Kong <kong.kongxinwei@hisilicon.com>,
+ Xinliang Liu <z.liuxinliang@hisilicon.com>, linux-rockchip@lists.infradead.org,
+ Chen-Yu Tsai <wens@csie.org>,
+ =?UTF-8?q?Noralf=20Tr=C3=B8nnes?= <noralf@tronnes.org>,
+ "James \(Qian\) Wang" <james.qian.wang@arm.com>, CK Hu <ck.hu@mediatek.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Chen Feng <puck.chen@hisilicon.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
+ Philippe Cornu <philippe.cornu@st.com>, Vincent Abriou <vincent.abriou@st.com>,
+ Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Rongrong Zou <zourongrong@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Montag, 21. Oktober 2019, 18:13:49 CEST schrieb Krzysztof Kozlowski:
-> The Rockchip SRAM bindings list only compatible so integrate them into
-> generic SRAM bindings schema.
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+This series adds support for CMA/DMA users to skip kernel mappings for
+GEM allocations. The DMA API only guarantees a kernel mapping at
+allocation time. Creating mappings with vmap() after allocation may or
+may not work as not all allocations have a struct page. As virtual
+memory space is limited on 32-bit systems some drivers will skip kernel
+mappings when possible. This prevents those drivers from using CMA
+helpers and the generic fbdev emulation which results in a lot of
+duplicated code.
 
-Acked-by: Heiko Stuebner <heiko@sntech.de>
+In order to distinguish between kernel and userspace allocations,
+a new flag, DRM_MODE_DUMB_KERNEL_MAP, for drm_mode_create_dumb() is
+introduced. This allows drivers to override the default behavior for
+CMA helpers of always creating a kernel mapping.
 
-> 
-> ---
-> 
-> Changes since v3:
-> 1. New patch
-> ---
->  .../bindings/sram/rockchip-smp-sram.txt       | 30 -------------------
->  .../devicetree/bindings/sram/sram.yaml        | 15 ++++++++++
->  2 files changed, 15 insertions(+), 30 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/sram/rockchip-smp-sram.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/sram/rockchip-smp-sram.txt b/Documentation/devicetree/bindings/sram/rockchip-smp-sram.txt
-> deleted file mode 100644
-> index 800701ecffca..000000000000
-> --- a/Documentation/devicetree/bindings/sram/rockchip-smp-sram.txt
-> +++ /dev/null
-> @@ -1,30 +0,0 @@
-> -Rockchip SRAM for smp bringup:
-> -------------------------------
-> -
-> -Rockchip's smp-capable SoCs use the first part of the sram for the bringup
-> -of the cores. Once the core gets powered up it executes the code that is
-> -residing at the very beginning of the sram.
-> -
-> -Therefore a reserved section sub-node has to be added to the mmio-sram
-> -declaration.
-> -
-> -Required sub-node properties:
-> -- compatible : should be "rockchip,rk3066-smp-sram"
-> -
-> -The rest of the properties should follow the generic mmio-sram discription
-> -found in Documentation/devicetree/bindings/sram/sram.txt
-> -
-> -Example:
-> -
-> -	sram: sram@10080000 {
-> -		compatible = "mmio-sram";
-> -		reg = <0x10080000 0x10000>;
-> -		#address-cells = <1>;
-> -		#size-cells = <1>;
-> -		ranges;
-> -
-> -		smp-sram@10080000 {
-> -			compatible = "rockchip,rk3066-smp-sram";
-> -			reg = <0x10080000 0x50>;
-> -		};
-> -	};
-> diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
-> index b92e3e10fbfc..1c2d8b0408c0 100644
-> --- a/Documentation/devicetree/bindings/sram/sram.yaml
-> +++ b/Documentation/devicetree/bindings/sram/sram.yaml
-> @@ -68,6 +68,7 @@ patternProperties:
->            - amlogic,meson8-smp-sram
->            - amlogic,meson8b-smp-sram
->            - renesas,smp-sram
-> +          - rockchip,rk3066-smp-sram
->            - samsung,exynos4210-sysram
->            - samsung,exynos4210-sysram-ns
->  
-> @@ -201,3 +202,17 @@ examples:
->              reg = <0 0x10>;
->          };
->      };
-> +
-> +  - |
-> +    sram@10080000 {
-> +        compatible = "mmio-sram";
-> +        reg = <0x10080000 0x10000>;
-> +        #address-cells = <1>;
-> +        #size-cells = <1>;
-> +        ranges;
-> +
-> +        smp-sram@10080000 {
-> +            compatible = "rockchip,rk3066-smp-sram";
-> +            reg = <0x10080000 0x50>;
-> +        };
-> +    };
-> 
+Mediatek is converted to CMA helpers and Rockchip is converted to generic
+fbdev support. I also have patches to convert Rockchip to CMA and shmem
+helpers, but they need a bit more work. Exynos can also probably be
+converted to use CMA helpers.
 
+Compile tested only. I did test fbdev on Rockchip, but the h/w I have
+has an IOMMU, so the CMA code path doesn't get tested.
 
+Rob
 
+Rob Herring (6):
+  drm/kirin: Use DRM_GEM_CMA_VMAP_DRIVER_OPS
+  drm: Introduce DRM_MODE_DUMB_KERNEL_MAP flag
+  drm/cma-helper: Use the dma_*_attr API variant
+  drm/cma-helper: Support DRM_MODE_DUMB_KERNEL_MAP flag
+  drm/mediatek: Convert to use CMA helpers
+  drm/rockchip: Convert to use generic fbdev emulation
 
+ .../gpu/drm/arm/display/komeda/komeda_kms.c   |   1 +
+ drivers/gpu/drm/arm/malidp_drv.c              |   1 +
+ drivers/gpu/drm/drm_client.c                  |   1 +
+ drivers/gpu/drm/drm_dumb_buffers.c            |   5 +-
+ drivers/gpu/drm/drm_gem_cma_helper.c          |  68 +++--
+ .../gpu/drm/hisilicon/kirin/kirin_drm_ade.c   |  11 +-
+ drivers/gpu/drm/mediatek/Makefile             |   1 -
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c       |   2 +-
+ drivers/gpu/drm/mediatek/mtk_drm_drv.c        |  28 +-
+ drivers/gpu/drm/mediatek/mtk_drm_fb.c         |   1 -
+ drivers/gpu/drm/mediatek/mtk_drm_gem.c        | 289 ------------------
+ drivers/gpu/drm/mediatek/mtk_drm_gem.h        |  51 ----
+ drivers/gpu/drm/mediatek/mtk_drm_plane.c      |   7 +-
+ drivers/gpu/drm/meson/meson_drv.c             |   1 +
+ drivers/gpu/drm/rcar-du/rcar_du_kms.c         |   1 +
+ drivers/gpu/drm/rockchip/Makefile             |   1 -
+ drivers/gpu/drm/rockchip/rockchip_drm_drv.c   |  10 +-
+ drivers/gpu/drm/rockchip/rockchip_drm_drv.h   |   2 -
+ drivers/gpu/drm/rockchip/rockchip_drm_fb.c    |  14 -
+ drivers/gpu/drm/rockchip/rockchip_drm_fb.h    |   6 -
+ drivers/gpu/drm/rockchip/rockchip_drm_fbdev.c | 170 -----------
+ drivers/gpu/drm/rockchip/rockchip_drm_fbdev.h |  24 --
+ drivers/gpu/drm/rockchip/rockchip_drm_gem.c   |   6 +-
+ drivers/gpu/drm/rockchip/rockchip_drm_gem.h   |   4 -
+ drivers/gpu/drm/stm/drv.c                     |   1 +
+ drivers/gpu/drm/sun4i/sun4i_drv.c             |   1 +
+ include/drm/drm_gem_cma_helper.h              |   1 +
+ include/uapi/drm/drm_mode.h                   |   2 +
+ 28 files changed, 78 insertions(+), 632 deletions(-)
+ delete mode 100644 drivers/gpu/drm/mediatek/mtk_drm_gem.c
+ delete mode 100644 drivers/gpu/drm/mediatek/mtk_drm_gem.h
+ delete mode 100644 drivers/gpu/drm/rockchip/rockchip_drm_fbdev.c
+ delete mode 100644 drivers/gpu/drm/rockchip/rockchip_drm_fbdev.h
+
+--
+2.20.1
 
 _______________________________________________
 Linux-rockchip mailing list
