@@ -2,60 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6F15DF25D
-	for <lists+linux-rockchip@lfdr.de>; Mon, 21 Oct 2019 18:03:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C1B3DF298
+	for <lists+linux-rockchip@lfdr.de>; Mon, 21 Oct 2019 18:14:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=fcdonKjd78mZodlIw0Y4x4WIBQyzJUDF+VDQYRjWLnM=; b=gaiD+3W4taLv35U4qHt/vCh46/
-	XiJ1Fh8X+9NWpvGrku0FvM9t/8KTQRpVP9N78TnyKofm9qxm8Wxg7r12SJnqupZ255+yelJ7sO2Yt
-	52pepwdd4bu+eyyc4oWY7f1MewyVkdu8EM3MAwOW0/Dm1sJpFUOMUs00/N2eyX2LPmNCa1b2NHptw
-	c7pohwvxMTykqjYG0lvpAj7UHpapaFQr01QUxeOhIAag421cKNwmWDkOuFePc+REx15sVvKYQvauy
-	RWAAVmKlRuEfcIQg4Ii7SGuZVlhMcfhvVIeRzGzV/VNB96u+F8KY1hPGL/xtWF4N7E9YIIzAKwY8u
-	y9o+63eQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=An5hO+LMfpDEZEDK2aKuz8laU2ndpDOpIpvBoBMjnNc=; b=HwpajQ7qgtm9Es
+	JBMK4mcAmeJ4MoUE5tsHAEexytZsEVsw2xYesj+h1n37MNw+59SrdhIFAxVzsDh2ZHy83Ej5Bw+pL
+	9KITZ+GBZnA0wO3OZoaeHHU1cgsnT0wchbnnBcvj/Va7t2mIJepHG15JNm65zbyaL3vV+R5xbgFbs
+	Cf2EW+eqh7FFGabCXXwnCYb8VXcwGRe/Eae1jN/jdwApUwAfjlg4Sju1eCOLzzMZhh+0S5LTZOGQs
+	BEVtU/meeTYot+bQ4hcv9Zubsy1SyQgc59QSOEFCcfBCKKJOk812GsItJSppUiXR42135kzqs9HM2
+	1Ww5QalI5CzcUJXpSa+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMa9Q-0004Wn-Aw; Mon, 21 Oct 2019 16:03:20 +0000
+	id 1iMaK8-0000cD-Bj; Mon, 21 Oct 2019 16:14:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMa8V-0003NI-OZ; Mon, 21 Oct 2019 16:02:25 +0000
+ id 1iMaJm-0000MC-15; Mon, 21 Oct 2019 16:14:03 +0000
 Received: from localhost.localdomain (unknown [194.230.155.217])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2C85F20B7C;
- Mon, 21 Oct 2019 16:02:18 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A42C6205C9;
+ Mon, 21 Oct 2019 16:13:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571673743;
- bh=9vUKs8pCzKFuQ7qoUJr6IKkD/Ix0T+CpovzK7sscdoY=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=YnuG4tgpME3kPNjXMpUARMsvb9tqSSpIBym0ehdPKylfYMgiqTnXeo27b5jdwh9dq
- qlPWNYYo7/4HpfxKy1fzneHlbFxhhI5aYIHBVsgbpVpZ8Yz2PkRaBWPAY7U+tvf0qO
- wKup6EQVUm2LRfxMmfeWS9uEP6d4M11xqW+icQ0U=
+ s=default; t=1571674441;
+ bh=AhhIphrZsU3paG9gZNMFHkP/psYcmn6qJp+VffmvIEY=;
+ h=From:To:Subject:Date:From;
+ b=r5WmYoWArKeRJ9JBETnn7vJcPTlYi52FsWKlrAUMdMO/o9LqGXBVmt1G+fUs2Nvy6
+ lbx5ERpAc5JcZtjkg8fOfXHDiioPKCTHP9vRt0fBdX/WCigfWGMDKNQPjNfoYHfWsU
+ unkDVSkO5xu3hdACaUTcmR2Bp168UNbGO3UzWyEQ=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-pwm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-tegra@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-mediatek@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-riscv@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com
-Subject: [PATCH v4 2/2] dt-bindings: pwm: Convert Samsung PWM bindings to
- json-schema
-Date: Mon, 21 Oct 2019 18:02:07 +0200
-Message-Id: <20191021160207.18026-2-krzk@kernel.org>
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Heiko Stuebner <heiko@sntech.de>, Krzysztof Kozlowski <krzk@kernel.org>,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
+Subject: [PATCH v4 1/7] dt-bindings: sram: Convert SRAM bindings to json-schema
+Date: Mon, 21 Oct 2019 18:13:45 +0200
+Message-Id: <20191021161351.20789-1-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191021160207.18026-1-krzk@kernel.org>
-References: <20191021160207.18026-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_090223_850606_7096C76E 
-X-CRM114-Status: GOOD (  14.85  )
+X-CRM114-CacheID: sfid-20191021_091402_115821_2A9A4B56 
+X-CRM114-Status: GOOD (  20.82  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,209 +76,273 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Convert Samsung PWM (S3C, S5P and Exynos SoCs) bindings to DT schema
-format using json-schema.
+Convert generic mmio-sram bindings to DT schema format using
+json-schema.  Require the address/size cells to be 1, not equal to root
+node.  This also fixes the check for clocks property to be in main root
+node instead of children.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-Reviewed-by: Rob Herring <robh@kernel.org>
 
 ---
 
 Changes since v3:
-1. Add reviewed-by.
+1. Integrate Samsung SRAM bindings here,
+2. Move 'clocks' one level up (error in previous bindings),
+3. Add 'additionalProperties: false',
+4. Fix names of children in examples,
+5. Fix children nodes address pattern,
+6. Address other review comments
 
 Changes since v2:
-1. Add additionalProperties: false.
+1. Add Rob as maintainer,
+2. Use "contains" for compatible,
+3. Fix address and size cells to 1,
+4. Add maxitems to reg under children,
+5. Remove unneeded string type from label.
 
 Changes since v1:
-1. Indent example with four spaces (more readable),
-2. Fix samsung,pwm-outputs after review,
-3. Remove double-quotes from clock names.
+1. Indent example with four spaces (more readable).
 ---
- .../devicetree/bindings/pwm/pwm-samsung.txt   |  51 --------
- .../devicetree/bindings/pwm/pwm-samsung.yaml  | 109 ++++++++++++++++++
- 2 files changed, 109 insertions(+), 51 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/pwm/pwm-samsung.txt
- create mode 100644 Documentation/devicetree/bindings/pwm/pwm-samsung.yaml
+ .../devicetree/bindings/sram/sram.txt         |  80 ----------
+ .../devicetree/bindings/sram/sram.yaml        | 137 ++++++++++++++++++
+ 2 files changed, 137 insertions(+), 80 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/sram/sram.txt
+ create mode 100644 Documentation/devicetree/bindings/sram/sram.yaml
 
-diff --git a/Documentation/devicetree/bindings/pwm/pwm-samsung.txt b/Documentation/devicetree/bindings/pwm/pwm-samsung.txt
+diff --git a/Documentation/devicetree/bindings/sram/sram.txt b/Documentation/devicetree/bindings/sram/sram.txt
 deleted file mode 100644
-index 5538de9c2007..000000000000
---- a/Documentation/devicetree/bindings/pwm/pwm-samsung.txt
+index e98908bd4227..000000000000
+--- a/Documentation/devicetree/bindings/sram/sram.txt
 +++ /dev/null
-@@ -1,51 +0,0 @@
--* Samsung PWM timers
+@@ -1,80 +0,0 @@
+-Generic on-chip SRAM
 -
--Samsung SoCs contain PWM timer blocks which can be used for system clock source
--and clock event timers, as well as to drive SoC outputs with PWM signal. Each
--PWM timer block provides 5 PWM channels (not all of them can drive physical
--outputs - see SoC and board manual).
--
--Be aware that the clocksource driver supports only uniprocessor systems.
+-Simple IO memory regions to be managed by the genalloc API.
 -
 -Required properties:
--- compatible : should be one of following:
--    samsung,s3c2410-pwm - for 16-bit timers present on S3C24xx SoCs
--    samsung,s3c6400-pwm - for 32-bit timers present on S3C64xx SoCs
--    samsung,s5p6440-pwm - for 32-bit timers present on S5P64x0 SoCs
--    samsung,s5pc100-pwm - for 32-bit timers present on S5PC100, S5PV210,
--			  Exynos4210 rev0 SoCs
--    samsung,exynos4210-pwm - for 32-bit timers present on Exynos4210,
--                          Exynos4x12, Exynos5250 and Exynos5420 SoCs
--- reg: base address and size of register area
--- interrupts: list of timer interrupts (one interrupt per timer, starting at
--  timer 0)
--- clock-names: should contain all following required clock names:
--    - "timers" - PWM base clock used to generate PWM signals,
--  and any subset of following optional clock names:
--    - "pwm-tclk0" - first external PWM clock source,
--    - "pwm-tclk1" - second external PWM clock source.
--  Note that not all IP variants allow using all external clock sources.
--  Refer to SoC documentation to learn which clock source configurations
--  are available.
--- clocks: should contain clock specifiers of all clocks, which input names
--  have been specified in clock-names property, in same order.
--- #pwm-cells: should be 3. See pwm.txt in this directory for a description of
--  the cells format. The only third cell flag supported by this binding is
--  PWM_POLARITY_INVERTED.
 -
--Optional properties:
--- samsung,pwm-outputs: list of PWM channels used as PWM outputs on particular
--    platform - an array of up to 5 elements being indices of PWM channels
--    (from 0 to 4), the order does not matter.
+-- compatible : mmio-sram or atmel,sama5d2-securam
+-
+-- reg : SRAM iomem address range
+-
+-Reserving sram areas:
+----------------------
+-
+-Each child of the sram node specifies a region of reserved memory. Each
+-child node should use a 'reg' property to specify a specific range of
+-reserved memory.
+-
+-Following the generic-names recommended practice, node names should
+-reflect the purpose of the node. Unit address (@<address>) should be
+-appended to the name.
+-
+-Required properties in the sram node:
+-
+-- #address-cells, #size-cells : should use the same values as the root node
+-- ranges : standard definition, should translate from local addresses
+-           within the sram to bus addresses
+-
+-Optional properties in the sram node:
+-
+-- no-memory-wc : the flag indicating, that SRAM memory region has not to
+-                 be remapped as write combining. WC is used by default.
+-
+-Required properties in the area nodes:
+-
+-- reg : iomem address range, relative to the SRAM range
+-
+-Optional properties in the area nodes:
+-
+-- compatible : standard definition, should contain a vendor specific string
+-               in the form <vendor>,[<device>-]<usage>
+-- pool : indicates that the particular reserved SRAM area is addressable
+-         and in use by another device or devices
+-- export : indicates that the reserved SRAM area may be accessed outside
+-           of the kernel, e.g. by bootloader or userspace
+-- protect-exec : Same as 'pool' above but with the additional
+-		 constraint that code wil be run from the region and
+-		 that the memory is maintained as read-only, executable
+-		 during code execution. NOTE: This region must be page
+-		 aligned on start and end in order to properly allow
+-		 manipulation of the page attributes.
+-- label : the name for the reserved partition, if omitted, the label
+-          is taken from the node name excluding the unit address.
+-- clocks : a list of phandle and clock specifier pair that controls the
+-	   single SRAM clock.
 -
 -Example:
--	pwm@7f006000 {
--		compatible = "samsung,s3c6400-pwm";
--		reg = <0x7f006000 0x1000>;
--		interrupt-parent = <&vic0>;
--		interrupts = <23>, <24>, <25>, <27>, <28>;
--		clocks = <&clock 67>;
--		clock-names = "timers";
--		samsung,pwm-outputs = <0>, <1>;
--		#pwm-cells = <3>;
--	}
-diff --git a/Documentation/devicetree/bindings/pwm/pwm-samsung.yaml b/Documentation/devicetree/bindings/pwm/pwm-samsung.yaml
+-
+-sram: sram@5c000000 {
+-	compatible = "mmio-sram";
+-	reg = <0x5c000000 0x40000>; /* 256 KiB SRAM at address 0x5c000000 */
+-
+-	#address-cells = <1>;
+-	#size-cells = <1>;
+-	ranges = <0 0x5c000000 0x40000>;
+-
+-	smp-sram@100 {
+-		compatible = "socvendor,smp-sram";
+-		reg = <0x100 0x50>;
+-	};
+-
+-	device-sram@1000 {
+-		reg = <0x1000 0x1000>;
+-		pool;
+-	};
+-
+-	exported@20000 {
+-		reg = <0x20000 0x20000>;
+-		export;
+-	};
+-};
+diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
 new file mode 100644
-index 000000000000..ea7f32905172
+index 000000000000..d338fcaa21ed
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/pwm/pwm-samsung.yaml
-@@ -0,0 +1,109 @@
++++ b/Documentation/devicetree/bindings/sram/sram.yaml
+@@ -0,0 +1,137 @@
 +# SPDX-License-Identifier: GPL-2.0
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/pwm/pwm-samsung.yaml#
++$id: http://devicetree.org/schemas/sram/sram.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Samsung SoC PWM timers
++title: Generic on-chip SRAM
 +
 +maintainers:
-+  - Thierry Reding <thierry.reding@gmail.com>
-+  - Krzysztof Kozlowski <krzk@kernel.org>
++  - Rob Herring <robh@kernel.org>
 +
 +description: |+
-+  Samsung SoCs contain PWM timer blocks which can be used for system clock source
-+  and clock event timers, as well as to drive SoC outputs with PWM signal. Each
-+  PWM timer block provides 5 PWM channels (not all of them can drive physical
-+  outputs - see SoC and board manual).
++  Simple IO memory regions to be managed by the genalloc API.
 +
-+  Be aware that the clocksource driver supports only uniprocessor systems.
++  Each child of the sram node specifies a region of reserved memory. Each
++  child node should use a 'reg' property to specify a specific range of
++  reserved memory.
 +
-+allOf:
-+  - $ref: pwm.yaml#
++  Following the generic-names recommended practice, node names should
++  reflect the purpose of the node. Unit address (@<address>) should be
++  appended to the name.
 +
 +properties:
++  $nodename:
++    pattern: "^sram(@.*)?"
++
 +  compatible:
-+    enum:
-+      - samsung,s3c2410-pwm             # 16-bit, S3C24xx
-+      - samsung,s3c6400-pwm             # 32-bit, S3C64xx
-+      - samsung,s5p6440-pwm             # 32-bit, S5P64x0
-+      - samsung,s5pc100-pwm             # 32-bit, S5PC100, S5PV210, Exynos4210 rev0 SoCs
-+      - samsung,exynos4210-pwm          # 32-bit, Exynos
++    contains:
++      enum:
++        - mmio-sram
++        - atmel,sama5d2-securam
 +
 +  reg:
 +    maxItems: 1
 +
 +  clocks:
-+    minItems: 1
-+    maxItems: 3
-+
-+  clock-names:
-+    description: |
-+      Should contain all following required clock names:
-+      - "timers" - PWM base clock used to generate PWM signals,
-+      and any subset of following optional clock names:
-+      - "pwm-tclk0" - first external PWM clock source,
-+      - "pwm-tclk1" - second external PWM clock source.
-+      Note that not all IP variants allow using all external clock sources.
-+      Refer to SoC documentation to learn which clock source configurations
-+      are available.
-+    oneOf:
-+      - items:
-+        - const: timers
-+      - items:
-+        - const: timers
-+        - const: pwm-tclk0
-+      - items:
-+        - const: timers
-+        - const: pwm-tclk1
-+      - items:
-+        - const: timers
-+        - const: pwm-tclk0
-+        - const: pwm-tclk1
-+
-+  interrupts:
 +    description:
-+      One interrupt per timer, starting at timer 0.
-+    minItems: 1
-+    maxItems: 5
++      A list of phandle and clock specifier pair that controls the single
++      SRAM clock.
 +
-+  "#pwm-cells":
-+    description:
-+      The only third cell flag supported by this binding
-+      is PWM_POLARITY_INVERTED.
-+    const: 3
++  "#address-cells":
++    const: 1
 +
-+  samsung,pwm-outputs:
++  "#size-cells":
++    const: 1
++
++  ranges:
 +    description:
-+      A list of PWM channels used as PWM outputs on particular platform.
-+      It is an array of up to 5 elements being indices of PWM channels
-+      (from 0 to 4), the order does not matter.
-+    allOf:
-+      - $ref: /schemas/types.yaml#/definitions/uint32-array
-+      - uniqueItems: true
-+      - items:
-+          minimum: 0
-+          maximum: 4
++      Should translate from local addresses within the sram to bus addresses.
++
++  no-memory-wc:
++    description:
++      The flag indicating, that SRAM memory region has not to be remapped
++      as write combining. WC is used by default.
++    type: boolean
++
++patternProperties:
++  "^([a-z]*-)?sram@[a-f0-9]+$":
++    type: object
++    description:
++      Each child of the sram node specifies a region of reserved memory.
++    properties:
++      compatible:
++        description:
++          Should contain a vendor specific string in the form
++          <vendor>,[<device>-]<usage>
++
++      reg:
++        description:
++          IO mem address range, relative to the SRAM range.
++        maxItems: 1
++
++      pool:
++        description:
++          Indicates that the particular reserved SRAM area is addressable
++          and in use by another device or devices.
++        type: boolean
++
++      export:
++        description:
++          Indicates that the reserved SRAM area may be accessed outside
++          of the kernel, e.g. by bootloader or userspace.
++        type: boolean
++
++      protect-exec:
++        description: |
++          Same as 'pool' above but with the additional constraint that code
++          will be run from the region and that the memory is maintained as
++          read-only, executable during code execution. NOTE: This region must
++          be page aligned on start and end in order to properly allow
++          manipulation of the page attributes.
++        type: boolean
++
++      label:
++        description:
++          The name for the reserved partition, if omitted, the label is taken
++          from the node name excluding the unit address.
++
++    required:
++      - reg
++
++    additionalProperties: false
 +
 +required:
-+  - clocks
-+  - clock-names
 +  - compatible
-+  - interrupts
-+  - "#pwm-cells"
 +  - reg
++  - "#address-cells"
++  - "#size-cells"
++  - ranges
 +
 +additionalProperties: false
 +
 +examples:
 +  - |
-+    pwm@7f006000 {
-+        compatible = "samsung,s3c6400-pwm";
-+        reg = <0x7f006000 0x1000>;
-+        interrupt-parent = <&vic0>;
-+        interrupts = <23>, <24>, <25>, <27>, <28>;
-+        clocks = <&clock 67>;
-+        clock-names = "timers";
-+        samsung,pwm-outputs = <0>, <1>;
-+        #pwm-cells = <3>;
++    sram@5c000000 {
++        compatible = "mmio-sram";
++        reg = <0x5c000000 0x40000>; /* 256 KiB SRAM at address 0x5c000000 */
++
++        #address-cells = <1>;
++        #size-cells = <1>;
++        ranges = <0 0x5c000000 0x40000>;
++
++        smp-sram@100 {
++            compatible = "socvendor,smp-sram";
++            reg = <0x100 0x50>;
++        };
++
++        device-sram@1000 {
++            reg = <0x1000 0x1000>;
++            pool;
++        };
++
++        exported-sram@20000 {
++            reg = <0x20000 0x20000>;
++            export;
++        };
 +    };
 -- 
 2.17.1
