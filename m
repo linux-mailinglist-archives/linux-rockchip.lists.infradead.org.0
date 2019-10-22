@@ -2,78 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61E96E0B0B
-	for <lists+linux-rockchip@lfdr.de>; Tue, 22 Oct 2019 19:55:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA975E0B0C
+	for <lists+linux-rockchip@lfdr.de>; Tue, 22 Oct 2019 19:55:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+twr5hKM/nb6pr2EAWTE/ZK1LjjhBcy3lgBQyQMHX40=; b=JmRWUTA9XF7eFU
-	pOlIPQiSjtLNVnKU4niIzjUaezz/0PqUTSYjQOjuubI2RAEkPHimbGjnhd+OFC7MAT+lrjcMiL3zj
-	Mqf2gknUAHO6T2VgxPDgxMkbV1cH1ny8jjO2p5dakTYrLsgtblfnomlHioAL+T8fsnrWGEvUjqFT9
-	XdMPq2ftUtEcB/HY4757FCDkZ73f7VLnXQELd9tAa9oy3NKEKXWic/epeWdxFyQOV+MDiexNxfXo6
-	tMOV6v6sunRmvb3XNtv7Z3EYsOaZ4DmWfeAWPLsjkybCOErnM/G6uLn4DpECV6fa53iKE6nt4zikh
-	7rlVS6psa1Or0RrKSuqw==;
+	List-Owner; bh=6Rbw3uEyLQem+38STiNMAYUcYMgZcU+P3uzOhM6sHXQ=; b=A5+ElpQuvCXBRl
+	4Iv7NhwIORsUTm8f8KI+TTp7Wgw8z0yaOt3vGe0psm7qOxo9uY70dDKPaEyZv2T7BZg69Lwg+Qmhj
+	kwJ/b4/fUiTgzqnyBP0Zv1p+d+4cfDAC+3UWKi9g+AywzoMPJFDq0McGZw6w/sRivqDHcqicEEWFC
+	21X71ntxwYTIA7BZxS+HQLNI04i5e+fsggkaP1UyfYyf9SLNaYXutPTdhm443tMY7jvQ7dcVdaHwa
+	EDdauve9wcyITmefXk67vx1FWFoN95EO24b4ZdoRUp1BBlZ7dYjL3evVhVObKxUHfJvmr6yvz7d71
+	rpURp4qv9pElZo+W4Heg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMyNl-0006Hi-Ds; Tue, 22 Oct 2019 17:55:45 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1iMyNo-0006KL-FG; Tue, 22 Oct 2019 17:55:48 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMyNh-0006FY-Bk
- for linux-rockchip@lists.infradead.org; Tue, 22 Oct 2019 17:55:42 +0000
-Received: by mail-pl1-x641.google.com with SMTP id q21so628972plr.13
- for <linux-rockchip@lists.infradead.org>; Tue, 22 Oct 2019 10:55:41 -0700 (PDT)
+ id 1iMyNk-0006Hc-SO
+ for linux-rockchip@lists.infradead.org; Tue, 22 Oct 2019 17:55:46 +0000
+Received: by mail-pf1-x444.google.com with SMTP id c184so1594907pfb.0
+ for <linux-rockchip@lists.infradead.org>; Tue, 22 Oct 2019 10:55:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=M3uVs6fLUV6Sa+n4FIF1RzYQSumPilQCihG7VaENJHw=;
- b=muO1CP3wO8BsXGGXlochPgEAJDEbbODHpkXAiz8xWoqmFFaST53f+5+A0QdJseThg7
- ZEHSedN1f2DCtZBpDtnN+NTItTYcbPq3zcfeSUowUCHqz0lXqaD1nTIT7brqjVgrHP6d
- hOMO23tt+qtgOkgB3zIBnY5tH+9Vfk21i2TS4=
+ bh=xaXVYnQV60TcMl3kjiVPjabM6ky1sc7ktGjIybdCnTE=;
+ b=neUGHhPUvCXGa8MadhGxoms20vwIucjtCafKtFueFLiC9nQzJa4nacnVMeYHhYZPpE
+ wjyO7s/Fi/gJ6Yz4yRA4WNJ6gMEiOhXHdw4w+zAda2K49pfiOcpb1ptLz26Ricm0tz58
+ pgamyMruHBe1q4WoD0heEnbWEpOlLvcFq9yhA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=M3uVs6fLUV6Sa+n4FIF1RzYQSumPilQCihG7VaENJHw=;
- b=ji32zmqQrBw2V24xcDxFrQGi0FoARRNFKvWJnObYmAoMzPdpyhxhvPiTPVqNYNFsrC
- Yzkj+rDuKuQmfuHsWvsgdy6/GsI2fjRN8wH25GlOjzgtCdfkwERVv0ot/u4PMKmZGjIl
- PN0JiJUZNzc/vzW4vj8t7ASIxS90PBBQ6wszBzb2JGVUTVu1/8GQq4Qk0UQ0VXYRLVRk
- gEw7Osb4Ykx/wPt4q8939TmBJtDHMr9swfYJhtmHdpqtVyrFvRwMp9fOjWAL3U0oG5xS
- +/E3fbyNKCwB4zWz3aViTMeSI2L0FMNY00FMCrLswnZtnJ04Rezx8FRo6m7sJA4Z+WnI
- VCzA==
-X-Gm-Message-State: APjAAAU7wjsUjhuHk/U7JSlX7iZFXdgoef4dEUI9ZqrdLHN6ILgwCxW7
- Nj0GJGNh9Ae8FdMtzGQTEKD/V4TAaeY=
-X-Google-Smtp-Source: APXvYqxpLirutpVFHLlIOWPptOxvlZMh/aFVFVCqc7jnaB+ybfTjJLZ5AJBkcRlH9P8o+SVS2YkeWg==
-X-Received: by 2002:a17:902:fe8c:: with SMTP id
- x12mr5207965plm.55.1571766940354; 
- Tue, 22 Oct 2019 10:55:40 -0700 (PDT)
+ bh=xaXVYnQV60TcMl3kjiVPjabM6ky1sc7ktGjIybdCnTE=;
+ b=BvzBLTJxgNAbqlqob6k2KWU7Tw2+Nivjs0xUcklLnjyuS7S/e5cpJ54giSaMDm+2eQ
+ 8h6w7llTZ849bdEGvcgoUbauzg7Yah2767ItBHoNa8n1mi3KgLUWwVQDmwqi9Z0HNd5l
+ ZWXfeFH82cx1Wv7cDJv2Pc/tQyLLeOvYSRTK5AqewG6JdDvjW9IhwNM0wkgpwoCsiY4t
+ /tUbZeXpNNS6f0Y0y5u7ORD9vFkInXvGVyZXk9L7JrV5a6QNl2CX28QEyWG2m8v9990f
+ cfKLVJHcJJBVXBwcRYbCJ06MwbV1iGwJRiFFsmhNoTCx5Sv+k3BZuGwDCrL/48t1LYfA
+ xb2w==
+X-Gm-Message-State: APjAAAWK4HnKB5S0JVyQ7887OXxDIwKJGXaGLnA8YresadGrL639fg6m
+ 3Ev1for+vo/CV0bxAScvInT2uA==
+X-Google-Smtp-Source: APXvYqwjOCleK17t+31WY2mK+v8ug/7seYgK+gHnftyQNfDXgOjQ242ne5h31koTnP1dpqzjiMX82w==
+X-Received: by 2002:a62:5284:: with SMTP id g126mr5686246pfb.95.1571766943815; 
+ Tue, 22 Oct 2019 10:55:43 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.180.31])
- by smtp.gmail.com with ESMTPSA id b3sm20454775pfd.125.2019.10.22.10.55.37
+ by smtp.gmail.com with ESMTPSA id b3sm20454775pfd.125.2019.10.22.10.55.40
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 22 Oct 2019 10:55:39 -0700 (PDT)
+ Tue, 22 Oct 2019 10:55:43 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH 6/9] usb: dwc3: Add phy interface for dwc3_uboot
-Date: Tue, 22 Oct 2019 23:24:55 +0530
-Message-Id: <20191022175458.22604-7-jagan@amarulasolutions.com>
+Subject: [PATCH 7/9] gadget: rockchip: Add rk3399 USB_GADGET_PRODUCT_NUM
+Date: Tue, 22 Oct 2019 23:24:56 +0530
+Message-Id: <20191022175458.22604-8-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20191022175458.22604-1-jagan@amarulasolutions.com>
 References: <20191022175458.22604-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_105541_403456_9C647A87 
-X-CRM114-Status: GOOD (  14.64  )
+X-CRM114-CacheID: sfid-20191022_105544_935036_4D9A98EA 
+X-CRM114-Status: GOOD (  10.35  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -96,153 +95,34 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, linux-rockchip@lists.infradead.org,
- u-boot@lists.denx.de, Jagan Teki <jagan@amarulasolutions.com>,
- Levin Du <djw@t-chip.com.cn>, linux-amarula@amarulasolutions.com
+Cc: u-boot@lists.denx.de, Levin Du <djw@t-chip.com.cn>,
+ linux-amarula@amarulasolutions.com, Jagan Teki <jagan@amarulasolutions.com>,
+ linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-U-Boot has two different variants of dwc3 initializations,
-- with dm variant gadget, so the respective dm driver would
-  call the dwc3_init in core.
-- with non-dm variant gadget, so the usage board file would
-  call dwc3_uboot_init in core.
+Add 0x330a for rk3399 gadget product number.
 
-The driver probe would handle all respective gadget properties
-including phy interface via phy_type property and then trigger
-dwc3_init for dm-variant gadgets.
-
-So, to support the phy interface for non-dm variant gadgets,
-the better option is dwc3_uboot_init since there is no
-dedicated controller for non-dm variant gadgets.
-
-This patch support for adding phy interface like 8/16-bit UTMI+
-code for dwc3_uboot.
-
-This change used Linux phy.h enum list, to make proper code
-compatibility.
-
-Cc: Marek Vasut <marex@denx.de>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- drivers/usb/dwc3/core.c | 26 ++++++++++++++++++++++++++
- drivers/usb/dwc3/core.h | 12 ++++++++++++
- include/dwc3-uboot.h    |  2 ++
- include/linux/usb/phy.h | 19 +++++++++++++++++++
- 4 files changed, 59 insertions(+)
- create mode 100644 include/linux/usb/phy.h
+ drivers/usb/gadget/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/usb/dwc3/core.c b/drivers/usb/dwc3/core.c
-index 2498f0efb1..3e2295d75c 100644
---- a/drivers/usb/dwc3/core.c
-+++ b/drivers/usb/dwc3/core.c
-@@ -600,6 +600,30 @@ static void dwc3_core_exit_mode(struct dwc3 *dwc)
- 	}
- }
- 
-+static void dwc3_uboot_hsphy_mode(struct dwc3_device *dwc3_dev, struct dwc3 *dwc)
-+{
-+	enum usb_phy_interface hsphy_mode = dwc3_dev->hsphy_mode;
-+	u32 reg;
-+
-+	/* Set dwc3 usb2 phy config */
-+	reg = dwc3_readl(dwc->regs, DWC3_GUSB2PHYCFG(0));
-+	reg |= DWC3_GUSB2PHYCFG_PHYIF;
-+	reg &= ~DWC3_GUSB2PHYCFG_USBTRDTIM_MASK;
-+
-+	switch (hsphy_mode) {
-+	case USBPHY_INTERFACE_MODE_UTMI:
-+		reg |= DWC3_GUSB2PHYCFG_USBTRDTIM_8BIT;
-+		break;
-+	case USBPHY_INTERFACE_MODE_UTMIW:
-+		reg |= DWC3_GUSB2PHYCFG_USBTRDTIM_16BIT;
-+		break;
-+	default:
-+		break;
-+	}
-+
-+	dwc3_writel(dwc->regs, DWC3_GUSB2PHYCFG(0), reg);
-+}
-+
- #define DWC3_ALIGN_MASK		(16 - 1)
- 
- /**
-@@ -708,6 +732,8 @@ int dwc3_uboot_init(struct dwc3_device *dwc3_dev)
- 		goto err0;
- 	}
- 
-+	dwc3_uboot_hsphy_mode(dwc3_dev, dwc);
-+
- 	ret = dwc3_event_buffers_setup(dwc);
- 	if (ret) {
- 		dev_err(dwc->dev, "failed to setup event buffers\n");
-diff --git a/drivers/usb/dwc3/core.h b/drivers/usb/dwc3/core.h
-index cfe29884e7..c6888064b4 100644
---- a/drivers/usb/dwc3/core.h
-+++ b/drivers/usb/dwc3/core.h
-@@ -162,6 +162,18 @@
- /* Global USB2 PHY Configuration Register */
- #define DWC3_GUSB2PHYCFG_PHYSOFTRST	(1 << 31)
- #define DWC3_GUSB2PHYCFG_SUSPHY		(1 << 6)
-+#define DWC3_GUSB2PHYCFG_PHYIF		(1 << 3)
-+
-+/* Global USB2 PHY Configuration Mask */
-+#define DWC3_GUSB2PHYCFG_USBTRDTIM_MASK		(0xf << 10)
-+
-+/* Global USB2 PHY Configuration Offset */
-+#define DWC3_GUSB2PHYCFG_USBTRDTIM_OFFSET	10
-+
-+#define DWC3_GUSB2PHYCFG_USBTRDTIM_16BIT	(0x5 << \
-+		DWC3_GUSB2PHYCFG_USBTRDTIM_OFFSET)
-+#define DWC3_GUSB2PHYCFG_USBTRDTIM_8BIT		(0x9 << \
-+		DWC3_GUSB2PHYCFG_USBTRDTIM_OFFSET)
- 
- /* Global USB3 PIPE Control Register */
- #define DWC3_GUSB3PIPECTL_PHYSOFTRST	(1 << 31)
-diff --git a/include/dwc3-uboot.h b/include/dwc3-uboot.h
-index 9941cc37a3..3c9e204cf0 100644
---- a/include/dwc3-uboot.h
-+++ b/include/dwc3-uboot.h
-@@ -10,10 +10,12 @@
- #define __DWC3_UBOOT_H_
- 
- #include <linux/usb/otg.h>
-+#include <linux/usb/phy.h>
- 
- struct dwc3_device {
- 	unsigned long base;
- 	enum usb_dr_mode dr_mode;
-+	enum usb_phy_interface hsphy_mode;
- 	u32 maximum_speed;
- 	unsigned tx_fifo_resize:1;
- 	unsigned has_lpm_erratum;
-diff --git a/include/linux/usb/phy.h b/include/linux/usb/phy.h
-new file mode 100644
-index 0000000000..158ca9cd85
---- /dev/null
-+++ b/include/linux/usb/phy.h
-@@ -0,0 +1,19 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * USB PHY defines
-+ *
-+ * These APIs may be used between USB controllers.  USB device drivers
-+ * (for either host or peripheral roles) don't use these calls; they
-+ * continue to use just usb_device and usb_gadget.
-+ */
-+
-+#ifndef __LINUX_USB_PHY_H
-+#define __LINUX_USB_PHY_H
-+
-+enum usb_phy_interface {
-+	USBPHY_INTERFACE_MODE_UNKNOWN,
-+	USBPHY_INTERFACE_MODE_UTMI,
-+	USBPHY_INTERFACE_MODE_UTMIW,
-+};
-+
-+#endif /* __LINUX_USB_PHY_H */
+diff --git a/drivers/usb/gadget/Kconfig b/drivers/usb/gadget/Kconfig
+index 2da8b40e05..b0e61f3fcd 100644
+--- a/drivers/usb/gadget/Kconfig
++++ b/drivers/usb/gadget/Kconfig
+@@ -61,7 +61,7 @@ config USB_GADGET_PRODUCT_NUM
+ 	default 0x310a if ROCKCHIP_RK3036
+ 	default 0x310c if ROCKCHIP_RK3128
+ 	default 0x320a if ROCKCHIP_RK3229 || ROCKCHIP_RK3288
+-	default 0x330a if ROCKCHIP_RK3328
++	default 0x330a if ROCKCHIP_RK3328 || ROCKCHIP_RK3399
+ 	default 0x0
+ 	help
+ 	  Product ID of the USB device emulated, reported to the host device.
 -- 
 2.18.0.321.gffc6fa0e3
 
