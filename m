@@ -2,65 +2,172 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF1B5DFA02
-	for <lists+linux-rockchip@lfdr.de>; Tue, 22 Oct 2019 03:02:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DFEADFD98
+	for <lists+linux-rockchip@lfdr.de>; Tue, 22 Oct 2019 08:13:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Type:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To
-	:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SC8P2twtBxr4aNrFZ0I5iaYqXvqzJNB7s7Y6DQzyFwU=; b=O3tOV6OB6R/kDPvfC5r9KlW+4
-	+GM2Xt6Dwoq+k0OEpyC5rPD/6Bzxve0EgfezJO95Yo5a8k9fSqLirOdN+ZmTFu+u1cWbu4IKjWlGz
-	/u4lJiNEp/dq3LPQzl778hiELtd3wc3bMgiPzhpGsrJKhuEuiCWAB8HnIfro48DdRTFUaN4tqaDC6
-	kGPC9eCKNspCFjNfvbUi6q9kUPA8t3rK2u2Ay7zHhM3XXX/+wbvpGy+221Bc/9lqvPACXW0dmhjkJ
-	HRAz1aMdTi76nFOCi/8Z+t1cAvN3cG+fkydV7UnyPE7oklBEQizph+Y5Jkk4nvvHJIi5SmqM3/LFl
-	tzEwBbVWw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AAg1LY0lGMKzdytA+uHynw2TAuhpct5e9xnPLbFA2m8=; b=lP05pE8OWflEde
+	rHF9YgI0Xqq+yFaIhW3kHXFFN+eGU/Ldx9VEw5/xq1p6k8H5m+6EEHe8GsicAtd1nw6G7ba9Y84FC
+	q8tQb03JmYQG36O++DDAbWSJXuZoMBNDZXV6+GQp0WpmKDrlFdjxmOg7Fn8CViqCYQ9DdzcNZKJ9K
+	Ksx3ELqA0GfcdeYx3c1JV7ctnHFUolUArRTxEdHvOOZY6eKMlOxEj/Ygs7G2XfeveLiZFg2zM4xVx
+	zwpw1y4B08WXoxL9riXxRO/AmVJWqWvaGfDTyzL6seeSodTiRizJ3a6Xfz21f0ha7j7aigEkHV3Jj
+	RwUCZl0A7Ogdvxr2QDAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMiYi-0002iI-QX; Tue, 22 Oct 2019 01:02:00 +0000
-Received: from mga17.intel.com ([192.55.52.151])
+	id 1iMnQP-0000Uj-Ha; Tue, 22 Oct 2019 06:13:45 +0000
+Received: from mail-eopbgr10083.outbound.protection.outlook.com ([40.107.1.83]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMiYd-0002hk-WC; Tue, 22 Oct 2019 01:01:58 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga007.fm.intel.com ([10.253.24.52])
- by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 21 Oct 2019 18:01:54 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.67,325,1566889200"; 
- d="gz'50?scan'50,208,50";a="196973159"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga007.fm.intel.com with ESMTP; 21 Oct 2019 18:01:50 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1iMiYX-00087V-Na; Tue, 22 Oct 2019 09:01:49 +0800
-Date: Tue, 22 Oct 2019 09:01:21 +0800
-From: kbuild test robot <lkp@intel.com>
+ id 1iMnQ8-0000HM-7V; Tue, 22 Oct 2019 06:13:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5GbJKUkPG3RcJEBjCMB+rANR/HZaXB5b+Cr7X95LjEE=;
+ b=48Dk3GduP5rAStkaH/Cpl3hBEo1VmF6KfJq9HHMzqZeECb72lp+VF7M6PHkLkZTQIUK06q1rxEsP1l0w4eV7MBPq3b8C+zCocVs8p6uwht+PS6WqXGo/6Mc+7cnR+mHDzNojhoCBAswUPgBimeV/aBVfvQ0N5+iwC/zoVPQSQpY=
+Received: from VI1PR08CA0233.eurprd08.prod.outlook.com (2603:10a6:802:15::42)
+ by VI1PR08MB2639.eurprd08.prod.outlook.com (2603:10a6:802:25::13)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2367.24; Tue, 22 Oct
+ 2019 06:13:18 +0000
+Received: from VE1EUR03FT021.eop-EUR03.prod.protection.outlook.com
+ (2a01:111:f400:7e09::202) by VI1PR08CA0233.outlook.office365.com
+ (2603:10a6:802:15::42) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2367.21 via Frontend
+ Transport; Tue, 22 Oct 2019 06:13:18 +0000
+Authentication-Results: spf=temperror (sender IP is 63.35.35.123)
+ smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
+ verified) header.d=armh.onmicrosoft.com;lists.infradead.org; dmarc=none
+ action=none header.from=arm.com;
+Received-SPF: TempError (protection.outlook.com: error in processing during
+ lookup of arm.com: DNS Timeout)
+Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
+ VE1EUR03FT021.mail.protection.outlook.com (10.152.18.117) with
+ Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2367.23 via Frontend Transport; Tue, 22 Oct 2019 06:13:16 +0000
+Received: ("Tessian outbound 6481c7fa5a3c:v33");
+ Tue, 22 Oct 2019 06:13:14 +0000
+X-CheckRecipientChecked: true
+X-CR-MTA-CID: d10b8234bfbb20e1
+X-CR-MTA-TID: 64aa7808
+Received: from 085b599e7582.1 (ip-172-16-0-2.eu-west-1.compute.internal
+ [104.47.4.55]) by 64aa7808-outbound-1.mta.getcheckrecipient.com id
+ 89BA12D9-596E-4F6A-BB45-80FAB1D18CB5.1; 
+ Tue, 22 Oct 2019 06:13:09 +0000
+Received: from EUR02-AM5-obe.outbound.protection.outlook.com
+ (mail-am5eur02lp2055.outbound.protection.outlook.com [104.47.4.55])
+ by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id 085b599e7582.1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
+ Tue, 22 Oct 2019 06:13:09 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=UTx+VYAtivY24J/22E1o2PHl7uExK1u91IUGKElszT/1PK537hUTYdqu5OusznsTaD3RHbgPoNcIb5yNQGYPelcKTSr3QpIx30p8dQyPdJqrwCca5rhJ79JDnRwDM1rgZ9LIW0c63W+gfObhdwJZs6OxrjbPOe1LvQGk1QhAhb1p8DZjlAbBQeh73hq/rjR0V7+KhnWBBz3vA8k2OM9Dx8qSS0vjZ4l9AWgPDwow9asH3jzP55IaBT8tfdmuGi9k54M88fAjfJxcRQ6Bdi2XkACxqX/loybZUtp3IUwlJ7lO6k8U1fpnxPlqufsZAQL+1XlFGxW89u1i4C53BXEuXw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5GbJKUkPG3RcJEBjCMB+rANR/HZaXB5b+Cr7X95LjEE=;
+ b=XMHavPQyETiT2E/l9Xa0gXr+MAjVZGLzGFDcy0kBOJ0WhKNZVr7fluKKOlR5upeu0xryCZZ7gGKwLAH1Tv37vHMheheqOHZfEcWiYV6AklOYfB2puC0CN3j5yRw1YXCKeelveOx+ltR8mWCsfLV94bUDAQ/vRRvBKe6j/DeNuOryIWqtleJTjqBgZsKpzuPRrRiFG7GKnks0PQU0DWcCvyh2uiT8+WDQJ24UeDAi/AlFD0yMIWp9excUMfkslGqzQmAHg/1uRKeVAPA8ttFrKRbzv7VyDe5J4qIifgJ7nN6E6zZiytrQt8nfbP0KhrQAk73MONjqyrfIouFrWPwRzg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
+ header.d=arm.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5GbJKUkPG3RcJEBjCMB+rANR/HZaXB5b+Cr7X95LjEE=;
+ b=48Dk3GduP5rAStkaH/Cpl3hBEo1VmF6KfJq9HHMzqZeECb72lp+VF7M6PHkLkZTQIUK06q1rxEsP1l0w4eV7MBPq3b8C+zCocVs8p6uwht+PS6WqXGo/6Mc+7cnR+mHDzNojhoCBAswUPgBimeV/aBVfvQ0N5+iwC/zoVPQSQpY=
+Received: from VE1PR08MB5006.eurprd08.prod.outlook.com (10.255.159.31) by
+ VE1PR08MB5215.eurprd08.prod.outlook.com (20.179.30.225) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2367.24; Tue, 22 Oct 2019 06:13:05 +0000
+Received: from VE1PR08MB5006.eurprd08.prod.outlook.com
+ ([fe80::40ed:7ed3:90cf:ece5]) by VE1PR08MB5006.eurprd08.prod.outlook.com
+ ([fe80::40ed:7ed3:90cf:ece5%3]) with mapi id 15.20.2367.022; Tue, 22 Oct 2019
+ 06:13:05 +0000
+From: "james qian wang (Arm Technology China)" <james.qian.wang@arm.com>
 To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 3/6] drm/cma-helper: Use the dma_*_attr API variant
-Message-ID: <201910220841.x66NHIfG%lkp@intel.com>
-References: <20191021214550.1461-4-robh@kernel.org>
+Subject: Re: [PATCH 4/6] drm/cma-helper: Support DRM_MODE_DUMB_KERNEL_MAP flag
+Thread-Topic: [PATCH 4/6] drm/cma-helper: Support DRM_MODE_DUMB_KERNEL_MAP flag
+Thread-Index: AQHViFjvrI6TSZ8K9kmI2e7gEmpbY6dmLsqA
+Date: Tue, 22 Oct 2019 06:13:05 +0000
+Message-ID: <20191022061255.GA7512@jamwan02-TSP300>
+References: <20191021214550.1461-1-robh@kernel.org>
+ <20191021214550.1461-5-robh@kernel.org>
+In-Reply-To: <20191021214550.1461-5-robh@kernel.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mutt/1.10.1 (2018-07-13)
+x-originating-ip: [113.29.88.7]
+x-clientproxiedby: HK2PR0401CA0004.apcprd04.prod.outlook.com
+ (2603:1096:202:2::14) To VE1PR08MB5006.eurprd08.prod.outlook.com
+ (2603:10a6:803:113::31)
+Authentication-Results-Original: spf=none (sender IP is )
+ smtp.mailfrom=james.qian.wang@arm.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 20533afa-c2be-4063-1d58-08d756b6edaa
+X-MS-TrafficTypeDiagnostic: VE1PR08MB5215:|VE1PR08MB5215:|VI1PR08MB2639:
+x-ms-exchange-transport-forked: True
+X-Microsoft-Antispam-PRVS: <VI1PR08MB26397F7A8D2292C82F730C0DB3680@VI1PR08MB2639.eurprd08.prod.outlook.com>
+x-checkrecipientrouted: true
+x-ms-oob-tlc-oobclassifiers: OLM:52;OLM:52;
+x-forefront-prvs: 01986AE76B
+X-Forefront-Antispam-Report-Untrusted: SFV:NSPM;
+ SFS:(10009020)(4636009)(7916004)(366004)(396003)(136003)(376002)(346002)(39860400002)(199004)(189003)(256004)(14444005)(186003)(26005)(446003)(66066001)(102836004)(55236004)(11346002)(6506007)(76176011)(386003)(486006)(476003)(1076003)(52116002)(66574012)(5660300002)(316002)(58126008)(54906003)(478600001)(14454004)(71190400001)(71200400001)(25786009)(305945005)(7416002)(7406005)(6486002)(81166006)(33716001)(8936002)(8676002)(86362001)(7736002)(81156014)(229853002)(4326008)(6246003)(99286004)(2906002)(9686003)(6512007)(6116002)(66446008)(6916009)(66946007)(66476007)(66556008)(6436002)(64756008)(3846002)(33656002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR08MB5215;
+ H:VE1PR08MB5006.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: arm.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original: 2lTtwbyEp136krTq0bT+VLjZ5ll/UXigxmmO5NbJPHW47JzbTiw5U5doGSu2k2uSCG5klXdwjQXppOzX15qpSIbx2ewfpTlhB0YCy6Byq8fbm2tKUFDdRKCJex6Qlxj+enc9VYZ/S2BQwecA4zjKjl1Iqv8jhonr8aIYsE07iFm5yutsOIoqiN8IY8rN/VLmYG+kN8ocbSqChvGoXDln/Wq7BGZ2qzVuqfMcpX6DEoUctzrY06N3uuVsegLXi2shqTRa51ZMRw5+WDtIo8ma8QI8CWEkMFN8B1+2PVSr+XdtA4b9bDGll7lP+W7T/sImmMa6U02L4AJXnhKA/OnrPGb0yk4q7vYdZUVhTKWib4PTspsjE4JJaMmtItoKkErpvDBN1l2vfz7DPFK49kD6MLR2aIEoyEdFhfA+Ggw2X5rK9m74x/hYGL3hx9SU03w+
+Content-ID: <68B64C555405DD408B961B43E6BC14EA@eurprd08.prod.outlook.com>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="7vk4t72xmgtthzvv"
-Content-Disposition: inline
-In-Reply-To: <20191021214550.1461-4-robh@kernel.org>
-X-Patchwork-Hint: ignore
-User-Agent: NeoMutt/20170113 (1.7.2)
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR08MB5215
+Original-Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=james.qian.wang@arm.com; 
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: VE1EUR03FT021.eop-EUR03.prod.protection.outlook.com
+X-Forefront-Antispam-Report: CIP:63.35.35.123; IPV:CAL; SCL:-1; CTRY:IE;
+ EFV:NLI; SFV:NSPM;
+ SFS:(10009020)(7916004)(4636009)(136003)(39860400002)(396003)(376002)(346002)(199004)(189003)(126002)(446003)(476003)(11346002)(486006)(186003)(58126008)(3846002)(6116002)(54906003)(36906005)(63350400001)(316002)(26005)(336012)(1076003)(66574012)(33656002)(2906002)(22756006)(66066001)(33716001)(5660300002)(47776003)(6512007)(9686003)(76130400001)(6486002)(86362001)(6862004)(356004)(50466002)(4326008)(6246003)(81166006)(81156014)(305945005)(8676002)(7736002)(8936002)(8746002)(70206006)(70586007)(229853002)(450100002)(6506007)(386003)(26826003)(23756003)(25786009)(478600001)(102836004)(14454004)(14444005)(99286004)(76176011);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR08MB2639;
+ H:64aa7808-outbound-1.mta.getcheckrecipient.com; FPR:; SPF:TempError; LANG:en;
+ PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; A:1; MX:1; 
+X-MS-Office365-Filtering-Correlation-Id-Prvs: a71d29fd-6417-46b7-a849-08d756b6e6b7
+NoDisclaimer: True
+X-Forefront-PRVS: 01986AE76B
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: pDO+lSimonUUmsaCGoO9H7ZyjVU9l/YJ6a8M4jrHSjBZ9Rkn/1LC/gHmYGagNlkmYIusNpNnq1rwtPSGIiNpJ/4XeArVhsmyBqM2gg/OW24xD9+ZeiIDgXXVwxHx/BoVVBADXuzqsxG7zHA+ON6sDSTy42KHr2aV1Fz9MXjDmCzT4V0Jh2en9EiDy+99TbRreZu3WDbHfdz0OI0xbhKgo27jTB3hh+Dp4G/tDpod+YlunDLoQGgQyOgF2JVbbG5wUmoWbypGiVMIOVgi41G56Nbx+cbK7eISz+4YvfLggqb/PpxhHwXY3yX5ouBdT49vEH54lAsLnNzMZvt12I2zQBFFlnQYneeqJOxhgj2ciKZOVis1ugV6WPxSOromfMFSdxKCpk2Og06KotYh0YovXm9MU9/zFN4IiaDw2sxMdIj5+SlnRyrRrNcwNyshsOyo
+X-OriginatorOrg: arm.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Oct 2019 06:13:16.5067 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 20533afa-c2be-4063-1d58-08d756b6edaa
+X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
+ Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR08MB2639
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_180156_099255_F6148C37 
-X-CRM114-Status: UNSURE (   9.58  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191021_231328_754794_9826FC5B 
+X-CRM114-Status: GOOD (  15.15  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.151 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.1.83 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,416 +180,335 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Liviu Dudau <liviu.dudau@arm.com>, dri-devel@lists.freedesktop.org,
+Cc: =?iso-8859-1?Q?Heiko_St=FCbner?= <heiko@sntech.de>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Liviu Dudau <Liviu.Dudau@arm.com>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ Sandy Huang <hjc@rock-chips.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Kevin Hilman <khilman@baylibre.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ "linux-amlogic@lists.infradead.org" <linux-amlogic@lists.infradead.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ Yannick Fertre <yannick.fertre@st.com>, Kevin Hilman <khilman@baylibre.com>,
  Xinwei Kong <kong.kongxinwei@hisilicon.com>,
- Xinliang Liu <z.liuxinliang@hisilicon.com>, linux-rockchip@lists.infradead.org,
- Chen-Yu Tsai <wens@csie.org>, "James \(Qian\) Wang" <james.qian.wang@arm.com>,
+ Xinliang Liu <z.liuxinliang@hisilicon.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Chen-Yu Tsai <wens@csie.org>,
+ =?iso-8859-1?Q?Noralf_Tr=F8nnes?= <noralf@tronnes.org>,
+ CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>,
  Alexandre Torgue <alexandre.torgue@st.com>,
- Chen Feng <puck.chen@hisilicon.com>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Vincent Abriou <vincent.abriou@st.com>, linux-arm-kernel@lists.infradead.org,
- Sean Paul <sean@poorly.run>, kbuild-all@lists.01.org,
- Philippe Cornu <philippe.cornu@st.com>, Yannick Fertre <yannick.fertre@st.com>,
+ Chen Feng <puck.chen@hisilicon.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ nd <nd@arm.com>, Sean Paul <sean@poorly.run>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Philippe Cornu <philippe.cornu@st.com>, Vincent Abriou <vincent.abriou@st.com>,
  Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Rongrong Zou <zourongrong@gmail.com>
+ Rongrong Zou <zourongrong@gmail.com>, Brian Starkey <Brian.Starkey@arm.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+On Mon, Oct 21, 2019 at 04:45:48PM -0500, Rob Herring wrote:
+> Add support in CMA helpers to handle callers specifying
+> DRM_MODE_DUMB_KERNEL_MAP flag. Existing behavior is maintained with this
+> change. drm_gem_cma_dumb_create() always creates a kernel mapping as
+> before. drm_gem_cma_dumb_create_internal() lets the caller set the flags
+> as desired. Therefore, update all the existing callers of
+> drm_gem_cma_dumb_create_internal() to also set the
+> DRM_MODE_DUMB_KERNEL_MAP flag.
+> =
 
---7vk4t72xmgtthzvv
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+> Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+> Cc: Maxime Ripard <mripard@kernel.org>
+> Cc: Sean Paul <sean@poorly.run>
+> Cc: David Airlie <airlied@linux.ie>
+> Cc: Daniel Vetter <daniel@ffwll.ch>
+> Cc: "James (Qian) Wang" <james.qian.wang@arm.com>
+> Cc: Liviu Dudau <liviu.dudau@arm.com>
+> Cc: Brian Starkey <brian.starkey@arm.com>
+> Cc: Neil Armstrong <narmstrong@baylibre.com>
+> Cc: Kevin Hilman <khilman@baylibre.com>
+> Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> Cc: Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>
+> Cc: Sandy Huang <hjc@rock-chips.com>
+> Cc: "Heiko St=FCbner" <heiko@sntech.de>
+> Cc: Yannick Fertre <yannick.fertre@st.com>
+> Cc: Philippe Cornu <philippe.cornu@st.com>
+> Cc: Benjamin Gaignard <benjamin.gaignard@linaro.org>
+> Cc: Vincent Abriou <vincent.abriou@st.com>
+> Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+> Cc: Alexandre Torgue <alexandre.torgue@st.com>
+> Cc: Chen-Yu Tsai <wens@csie.org>
+> Cc: linux-amlogic@lists.infradead.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-renesas-soc@vger.kernel.org
+> Cc: linux-rockchip@lists.infradead.org
+> Cc: linux-stm32@st-md-mailman.stormreply.com
+> Signed-off-by: Rob Herring <robh@kernel.org>
+> ---
+>  .../gpu/drm/arm/display/komeda/komeda_kms.c   |  1 +
+>  drivers/gpu/drm/arm/malidp_drv.c              |  1 +
+>  drivers/gpu/drm/drm_gem_cma_helper.c          | 48 +++++++++++--------
+>  drivers/gpu/drm/meson/meson_drv.c             |  1 +
+>  drivers/gpu/drm/rcar-du/rcar_du_kms.c         |  1 +
+>  drivers/gpu/drm/rockchip/rockchip_drm_gem.c   |  1 +
+>  drivers/gpu/drm/stm/drv.c                     |  1 +
+>  drivers/gpu/drm/sun4i/sun4i_drv.c             |  1 +
+>  8 files changed, 36 insertions(+), 19 deletions(-)
+> =
 
-Hi Rob,
+> diff --git a/drivers/gpu/drm/arm/display/komeda/komeda_kms.c b/drivers/gp=
+u/drm/arm/display/komeda/komeda_kms.c
+> index d49772de93e0..7cf0dc4cbfc1 100644
+> --- a/drivers/gpu/drm/arm/display/komeda/komeda_kms.c
+> +++ b/drivers/gpu/drm/arm/display/komeda/komeda_kms.c
+> @@ -31,6 +31,7 @@ static int komeda_gem_cma_dumb_create(struct drm_file *=
+file,
+>  	u32 pitch =3D DIV_ROUND_UP(args->width * args->bpp, 8);
+>  =
 
-I love your patch! Perhaps something to improve:
+>  	args->pitch =3D ALIGN(pitch, mdev->chip.bus_width);
+> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
+>
 
-[auto build test WARNING on linus/master]
-[cannot apply to v5.4-rc4 next-20191021]
-[if your patch is applied to the wrong git tree, please drop us a note to help
-improve the system. BTW, we also suggest to use '--base' option to specify the
-base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
+Hi Rob:
 
-url:    https://github.com/0day-ci/linux/commits/Rob-Herring/drm-Support-CMA-per-allocation-kernel-mappings/20191022-073347
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git 7d194c2100ad2a6dded545887d02754948ca5241
-reproduce: make htmldocs
+komeda doesn't need the kernel map either, so you can del this line for kom=
+eda.
+and with this.
 
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
+Reviewed-by: James Qian Wang (Arm Technology China) <james.qian.wang@arm.co=
+m>
 
-All warnings (new ones prefixed by >>):
 
-   include/linux/regulator/machine.h:196: warning: Function parameter or member 'max_uV_step' not described in 'regulation_constraints'
-   include/linux/regulator/driver.h:223: warning: Function parameter or member 'resume' not described in 'regulator_ops'
-   include/linux/spi/spi.h:190: warning: Function parameter or member 'driver_override' not described in 'spi_device'
-   drivers/usb/typec/bus.c:1: warning: 'typec_altmode_register_driver' not found
-   drivers/usb/typec/bus.c:1: warning: 'typec_altmode_unregister_driver' not found
-   drivers/usb/typec/class.c:1: warning: 'typec_altmode_register_notifier' not found
-   drivers/usb/typec/class.c:1: warning: 'typec_altmode_unregister_notifier' not found
-   drivers/gpio/gpiolib-of.c:92: warning: Excess function parameter 'dev' description in 'of_gpio_need_valid_mask'
-   include/linux/i2c.h:337: warning: Function parameter or member 'init_irq' not described in 'i2c_client'
-   fs/posix_acl.c:647: warning: Function parameter or member 'inode' not described in 'posix_acl_update_mode'
-   fs/posix_acl.c:647: warning: Function parameter or member 'mode_p' not described in 'posix_acl_update_mode'
-   fs/posix_acl.c:647: warning: Function parameter or member 'acl' not described in 'posix_acl_update_mode'
-   Error: Cannot open file drivers/dma-buf/reservation.c
-   Error: Cannot open file drivers/dma-buf/reservation.c
-   Error: Cannot open file drivers/dma-buf/reservation.c
-   Error: Cannot open file include/linux/reservation.h
-   Error: Cannot open file include/linux/reservation.h
-   kernel/dma/coherent.c:1: warning: no structured comments found
-   include/linux/input/sparse-keymap.h:43: warning: Function parameter or member 'sw' not described in 'key_entry'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'dev_scratch' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'list' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'ip_defrag_offset' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'skb_mstamp_ns' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member '__cloned_offset' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'head_frag' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member '__pkt_type_offset' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'encapsulation' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'encap_hdr_csum' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'csum_valid' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member '__pkt_vlan_present_offset' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'vlan_present' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'csum_complete_sw' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'csum_level' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'inner_protocol_type' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'remcsum_offload' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'sender_cpu' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'reserved_tailroom' not described in 'sk_buff'
-   include/linux/skbuff.h:888: warning: Function parameter or member 'inner_ipproto' not described in 'sk_buff'
-   include/net/sock.h:233: warning: Function parameter or member 'skc_addrpair' not described in 'sock_common'
-   include/net/sock.h:233: warning: Function parameter or member 'skc_portpair' not described in 'sock_common'
-   include/net/sock.h:233: warning: Function parameter or member 'skc_ipv6only' not described in 'sock_common'
-   include/net/sock.h:233: warning: Function parameter or member 'skc_net_refcnt' not described in 'sock_common'
-   include/net/sock.h:233: warning: Function parameter or member 'skc_v6_daddr' not described in 'sock_common'
-   include/net/sock.h:233: warning: Function parameter or member 'skc_v6_rcv_saddr' not described in 'sock_common'
-   include/net/sock.h:233: warning: Function parameter or member 'skc_cookie' not described in 'sock_common'
-   include/net/sock.h:233: warning: Function parameter or member 'skc_listener' not described in 'sock_common'
-   include/net/sock.h:233: warning: Function parameter or member 'skc_tw_dr' not described in 'sock_common'
-   include/net/sock.h:233: warning: Function parameter or member 'skc_rcv_wnd' not described in 'sock_common'
-   include/net/sock.h:233: warning: Function parameter or member 'skc_tw_rcv_nxt' not described in 'sock_common'
-   include/net/sock.h:515: warning: Function parameter or member 'sk_rx_skb_cache' not described in 'sock'
-   include/net/sock.h:515: warning: Function parameter or member 'sk_wq_raw' not described in 'sock'
-   include/net/sock.h:515: warning: Function parameter or member 'tcp_rtx_queue' not described in 'sock'
-   include/net/sock.h:515: warning: Function parameter or member 'sk_tx_skb_cache' not described in 'sock'
-   include/net/sock.h:515: warning: Function parameter or member 'sk_route_forced_caps' not described in 'sock'
-   include/net/sock.h:515: warning: Function parameter or member 'sk_txtime_report_errors' not described in 'sock'
-   include/net/sock.h:515: warning: Function parameter or member 'sk_validate_xmit_skb' not described in 'sock'
-   include/net/sock.h:515: warning: Function parameter or member 'sk_bpf_storage' not described in 'sock'
-   include/net/sock.h:2450: warning: Function parameter or member 'tcp_rx_skb_cache_key' not described in 'DECLARE_STATIC_KEY_FALSE'
-   include/net/sock.h:2450: warning: Excess function parameter 'sk' description in 'DECLARE_STATIC_KEY_FALSE'
-   include/net/sock.h:2450: warning: Excess function parameter 'skb' description in 'DECLARE_STATIC_KEY_FALSE'
-   include/linux/netdevice.h:2053: warning: Function parameter or member 'gso_partial_features' not described in 'net_device'
-   include/linux/netdevice.h:2053: warning: Function parameter or member 'l3mdev_ops' not described in 'net_device'
-   include/linux/netdevice.h:2053: warning: Function parameter or member 'xfrmdev_ops' not described in 'net_device'
-   include/linux/netdevice.h:2053: warning: Function parameter or member 'tlsdev_ops' not described in 'net_device'
-   include/linux/netdevice.h:2053: warning: Function parameter or member 'name_assign_type' not described in 'net_device'
-   include/linux/netdevice.h:2053: warning: Function parameter or member 'ieee802154_ptr' not described in 'net_device'
-   include/linux/netdevice.h:2053: warning: Function parameter or member 'mpls_ptr' not described in 'net_device'
-   include/linux/netdevice.h:2053: warning: Function parameter or member 'xdp_prog' not described in 'net_device'
-   include/linux/netdevice.h:2053: warning: Function parameter or member 'gro_flush_timeout' not described in 'net_device'
-   include/linux/netdevice.h:2053: warning: Function parameter or member 'nf_hooks_ingress' not described in 'net_device'
-   include/linux/netdevice.h:2053: warning: Function parameter or member '____cacheline_aligned_in_smp' not described in 'net_device'
-   include/linux/netdevice.h:2053: warning: Function parameter or member 'qdisc_hash' not described in 'net_device'
-   include/linux/netdevice.h:2053: warning: Function parameter or member 'xps_cpus_map' not described in 'net_device'
-   include/linux/netdevice.h:2053: warning: Function parameter or member 'xps_rxqs_map' not described in 'net_device'
-   include/linux/phylink.h:56: warning: Function parameter or member '__ETHTOOL_DECLARE_LINK_MODE_MASK(advertising' not described in 'phylink_link_state'
-   include/linux/phylink.h:56: warning: Function parameter or member '__ETHTOOL_DECLARE_LINK_MODE_MASK(lp_advertising' not described in 'phylink_link_state'
-   lib/genalloc.c:1: warning: 'gen_pool_add_virt' not found
-   lib/genalloc.c:1: warning: 'gen_pool_alloc' not found
-   lib/genalloc.c:1: warning: 'gen_pool_free' not found
-   lib/genalloc.c:1: warning: 'gen_pool_alloc_algo' not found
-   include/linux/rculist.h:374: warning: Excess function parameter 'cond' description in 'list_for_each_entry_rcu'
-   include/linux/rculist.h:651: warning: Excess function parameter 'cond' description in 'hlist_for_each_entry_rcu'
-   mm/util.c:1: warning: 'get_user_pages_fast' not found
-   drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.h:132: warning: Incorrect use of kernel-doc format:          * @atomic_obj
-   drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.h:238: warning: Incorrect use of kernel-doc format:          * gpu_info FW provided soc bounding box struct or 0 if not
-   drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.h:243: warning: Function parameter or member 'atomic_obj' not described in 'amdgpu_display_manager'
-   drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.h:243: warning: Function parameter or member 'backlight_link' not described in 'amdgpu_display_manager'
-   drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.h:243: warning: Function parameter or member 'backlight_caps' not described in 'amdgpu_display_manager'
-   drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.h:243: warning: Function parameter or member 'freesync_module' not described in 'amdgpu_display_manager'
-   drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.h:243: warning: Function parameter or member 'fw_dmcu' not described in 'amdgpu_display_manager'
-   drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.h:243: warning: Function parameter or member 'dmcu_fw_version' not described in 'amdgpu_display_manager'
-   drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.h:243: warning: Function parameter or member 'soc_bounding_box' not described in 'amdgpu_display_manager'
-   drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c:1: warning: 'register_hpd_handlers' not found
-   drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c:1: warning: 'dm_pflip_high_irq' not found
-   drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c:1: warning: 'dm_crtc_high_irq' not found
-   include/drm/drm_modeset_helper_vtables.h:1053: warning: Function parameter or member 'prepare_writeback_job' not described in 'drm_connector_helper_funcs'
-   include/drm/drm_modeset_helper_vtables.h:1053: warning: Function parameter or member 'cleanup_writeback_job' not described in 'drm_connector_helper_funcs'
-   include/drm/drm_atomic_state_helper.h:1: warning: no structured comments found
-   include/drm/drm_gem_shmem_helper.h:87: warning: Function parameter or member 'madv' not described in 'drm_gem_shmem_object'
-   include/drm/drm_gem_shmem_helper.h:87: warning: Function parameter or member 'madv_list' not described in 'drm_gem_shmem_object'
->> include/drm/drm_gem_cma_helper.h:29: warning: Function parameter or member 'dma_attrs' not described in 'drm_gem_cma_object'
-   drivers/gpu/drm/i915/display/intel_dpll_mgr.h:158: warning: Enum value 'DPLL_ID_TGL_MGPLL5' not described in enum 'intel_dpll_id'
-   drivers/gpu/drm/i915/display/intel_dpll_mgr.h:158: warning: Enum value 'DPLL_ID_TGL_MGPLL6' not described in enum 'intel_dpll_id'
-   drivers/gpu/drm/i915/display/intel_dpll_mgr.h:158: warning: Excess enum value 'DPLL_ID_TGL_TCPLL5' description in 'intel_dpll_id'
-   drivers/gpu/drm/i915/display/intel_dpll_mgr.h:158: warning: Excess enum value 'DPLL_ID_TGL_TCPLL6' description in 'intel_dpll_id'
-   drivers/gpu/drm/i915/display/intel_dpll_mgr.h:342: warning: Function parameter or member 'wakeref' not described in 'intel_shared_dpll'
-   Error: Cannot open file drivers/gpu/drm/i915/i915_gem_batch_pool.c
-   Error: Cannot open file drivers/gpu/drm/i915/i915_gem_batch_pool.c
-   Error: Cannot open file drivers/gpu/drm/i915/i915_gem_batch_pool.c
-   drivers/gpu/drm/i915/i915_drv.h:1129: warning: Incorrect use of kernel-doc format:          * The OA context specific information.
-   drivers/gpu/drm/i915/i915_drv.h:1143: warning: Incorrect use of kernel-doc format:          * State of the OA buffer.
-   drivers/gpu/drm/i915/i915_drv.h:1154: warning: Incorrect use of kernel-doc format:                  * Locks reads and writes to all head/tail state
-   drivers/gpu/drm/i915/i915_drv.h:1176: warning: Incorrect use of kernel-doc format:                  * One 'aging' tail pointer and one 'aged' tail pointer ready to
-   drivers/gpu/drm/i915/i915_drv.h:1188: warning: Incorrect use of kernel-doc format:                  * Index for the aged tail ready to read() data up to.
-   drivers/gpu/drm/i915/i915_drv.h:1193: warning: Incorrect use of kernel-doc format:                  * A monotonic timestamp for when the current aging tail pointer
-   drivers/gpu/drm/i915/i915_drv.h:1199: warning: Incorrect use of kernel-doc format:                  * Although we can always read back the head pointer register,
-   drivers/gpu/drm/i915/i915_drv.h:1207: warning: Function parameter or member 'pinned_ctx' not described in 'i915_perf_stream'
-   drivers/gpu/drm/i915/i915_drv.h:1207: warning: Function parameter or member 'specific_ctx_id' not described in 'i915_perf_stream'
-   drivers/gpu/drm/i915/i915_drv.h:1207: warning: Function parameter or member 'specific_ctx_id_mask' not described in 'i915_perf_stream'
-   drivers/gpu/drm/i915/i915_drv.h:1207: warning: Function parameter or member 'poll_check_timer' not described in 'i915_perf_stream'
-   drivers/gpu/drm/i915/i915_drv.h:1207: warning: Function parameter or member 'poll_wq' not described in 'i915_perf_stream'
-   drivers/gpu/drm/i915/i915_drv.h:1207: warning: Function parameter or member 'pollin' not described in 'i915_perf_stream'
-   drivers/gpu/drm/i915/i915_drv.h:1207: warning: Function parameter or member 'periodic' not described in 'i915_perf_stream'
-   drivers/gpu/drm/i915/i915_drv.h:1207: warning: Function parameter or member 'period_exponent' not described in 'i915_perf_stream'
-   drivers/gpu/drm/i915/i915_drv.h:1207: warning: Function parameter or member 'oa_buffer' not described in 'i915_perf_stream'
-   drivers/gpu/drm/i915/i915_drv.h:1129: warning: Incorrect use of kernel-doc format:          * The OA context specific information.
-   drivers/gpu/drm/i915/i915_drv.h:1143: warning: Incorrect use of kernel-doc format:          * State of the OA buffer.
-   drivers/gpu/drm/i915/i915_drv.h:1154: warning: Incorrect use of kernel-doc format:                  * Locks reads and writes to all head/tail state
-   drivers/gpu/drm/i915/i915_drv.h:1176: warning: Incorrect use of kernel-doc format:                  * One 'aging' tail pointer and one 'aged' tail pointer ready to
-   drivers/gpu/drm/i915/i915_drv.h:1188: warning: Incorrect use of kernel-doc format:                  * Index for the aged tail ready to read() data up to.
-   drivers/gpu/drm/i915/i915_drv.h:1193: warning: Incorrect use of kernel-doc format:                  * A monotonic timestamp for when the current aging tail pointer
-   drivers/gpu/drm/i915/i915_drv.h:1199: warning: Incorrect use of kernel-doc format:                  * Although we can always read back the head pointer register,
-   drivers/gpu/drm/i915/i915_drv.h:1129: warning: Incorrect use of kernel-doc format:          * The OA context specific information.
-   drivers/gpu/drm/i915/i915_drv.h:1143: warning: Incorrect use of kernel-doc format:          * State of the OA buffer.
-   drivers/gpu/drm/i915/i915_drv.h:1154: warning: Incorrect use of kernel-doc format:                  * Locks reads and writes to all head/tail state
-   drivers/gpu/drm/i915/i915_drv.h:1176: warning: Incorrect use of kernel-doc format:                  * One 'aging' tail pointer and one 'aged' tail pointer ready to
-   drivers/gpu/drm/i915/i915_drv.h:1188: warning: Incorrect use of kernel-doc format:                  * Index for the aged tail ready to read() data up to.
-   drivers/gpu/drm/i915/i915_drv.h:1193: warning: Incorrect use of kernel-doc format:                  * A monotonic timestamp for when the current aging tail pointer
-   drivers/gpu/drm/i915/i915_drv.h:1199: warning: Incorrect use of kernel-doc format:                  * Although we can always read back the head pointer register,
-   drivers/gpu/drm/mcde/mcde_drv.c:1: warning: 'ST-Ericsson MCDE DRM Driver' not found
-   include/net/cfg80211.h:1185: warning: Function parameter or member 'txpwr' not described in 'station_parameters'
-   include/net/mac80211.h:4056: warning: Function parameter or member 'sta_set_txpwr' not described in 'ieee80211_ops'
-   include/net/mac80211.h:2018: warning: Function parameter or member 'txpwr' not described in 'ieee80211_sta'
-   Documentation/admin-guide/perf/imx-ddr.rst:21: WARNING: Unexpected indentation.
-   Documentation/admin-guide/perf/imx-ddr.rst:34: WARNING: Unexpected indentation.
-   Documentation/admin-guide/perf/imx-ddr.rst:40: WARNING: Unexpected indentation.
-   Documentation/admin-guide/perf/imx-ddr.rst:45: WARNING: Unexpected indentation.
-   Documentation/admin-guide/perf/imx-ddr.rst:52: WARNING: Unexpected indentation.
-   Documentation/admin-guide/xfs.rst:257: WARNING: Block quote ends without a blank line; unexpected unindent.
-   Documentation/usb/index.rst:5: WARNING: toctree contains reference to nonexisting document 'usb/rio'
-   Documentation/usb/index.rst:5: WARNING: toctree contains reference to nonexisting document 'usb/wusb-design-overview'
-   Documentation/usb/text_files.rst:22: WARNING: Include file 'Documentation/usb/wusb-cbaf' not found or reading it failed
-   include/uapi/linux/firewire-cdev.h:312: WARNING: Inline literal start-string without end-string.
-   drivers/firewire/core-transaction.c:606: WARNING: Inline strong start-string without end-string.
-   Documentation/translations/it_IT/process/maintainer-pgp-guide.rst:458: WARNING: Unknown target name: "nitrokey pro".
-   Documentation/trace/kprobetrace.rst:100: WARNING: Explicit markup ends without a blank line; unexpected unindent.
-   Documentation/security/keys/core.rst:1110: WARNING: Inline emphasis start-string without end-string.
-   Documentation/security/keys/core.rst:1110: WARNING: Inline emphasis start-string without end-string.
-   Documentation/security/keys/core.rst:1108: WARNING: Inline emphasis start-string without end-string.
-   Documentation/security/keys/core.rst:1108: WARNING: Inline emphasis start-string without end-string.
-   Documentation/security/keys/core.rst:1108: WARNING: Inline emphasis start-string without end-string.
-   drivers/message/fusion/mptbase.c:5057: WARNING: Definition list ends without a blank line; unexpected unindent.
-   Documentation/filesystems/ubifs-authentication.rst:94: WARNING: Inline interpreted text or phrase reference start-string without end-string.
-   drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c:248: WARNING: Unexpected indentation.
-   drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c:251: WARNING: Block quote ends without a blank line; unexpected unindent.
-   drivers/gpu/drm/amd/amdgpu/amdgpu_ras.c:213: WARNING: Unexpected indentation.
-   drivers/gpu/drm/amd/amdgpu/amdgpu_ras.c:224: WARNING: Unexpected indentation.
-   drivers/gpu/drm/amd/amdgpu/amdgpu_ras.c:233: WARNING: Definition list ends without a blank line; unexpected unindent.
-   drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2199: WARNING: Inline emphasis start-string without end-string.
-   drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2201: WARNING: Inline emphasis start-string without end-string.
-   Documentation/misc-devices/index.rst:14: WARNING: toctree contains reference to nonexisting document 'misc-devices/xilinx_sdfec'
-   include/linux/regulator/driver.h:284: WARNING: Unknown target name: "regulator_regmap_x_voltage".
-   include/linux/spi/spi.h:382: WARNING: Unexpected indentation.
-   Documentation/driver-api/gpio/driver.rst:420: WARNING: Unexpected indentation.
-   Documentation/driver-api/gpio/driver.rst:418: WARNING: Inline emphasis start-string without end-string.
-   Documentation/driver-api/gpio/driver.rst:422: WARNING: Block quote ends without a blank line; unexpected unindent.
-   Documentation/driver-api/gpio/driver.rst:424: WARNING: Inline emphasis start-string without end-string.
-   Documentation/driver-api/gpio/driver.rst:424: WARNING: Inline emphasis start-string without end-string.
-   Documentation/driver-api/gpio/driver.rst:424: WARNING: Inline emphasis start-string without end-string.
-   Documentation/driver-api/gpio/driver.rst:428: WARNING: Inline emphasis start-string without end-string.
-   Documentation/driver-api/gpio/driver.rst:441: WARNING: Unexpected indentation.
-   Documentation/driver-api/gpio/driver.rst:435: WARNING: Inline emphasis start-string without end-string.
-   Documentation/driver-api/gpio/driver.rst:435: WARNING: Inline emphasis start-string without end-string.
-   Documentation/driver-api/gpio/driver.rst:442: WARNING: Block quote ends without a blank line; unexpected unindent.
-   Documentation/driver-api/gpio/driver.rst:444: WARNING: Definition list ends without a blank line; unexpected unindent.
-   Documentation/driver-api/gpio/driver.rst:455: WARNING: Unexpected indentation.
-   Documentation/driver-api/gpio/driver.rst:453: WARNING: Inline emphasis start-string without end-string.
-   Documentation/driver-api/gpio/driver.rst:455: WARNING: Inline emphasis start-string without end-string.
-   Documentation/driver-api/gpio/driver.rst:458: WARNING: Block quote ends without a blank line; unexpected unindent.
-   Documentation/driver-api/gpio/driver.rst:460: WARNING: Inline emphasis start-string without end-string.
-   Documentation/driver-api/gpio/driver.rst:460: WARNING: Inline emphasis start-string without end-string.
-   Documentation/driver-api/gpio/driver.rst:460: WARNING: Inline emphasis start-string without end-string.
-   Documentation/driver-api/gpio/driver.rst:464: WARNING: Inline emphasis start-string without end-string.
-   Documentation/driver-api/gpio/driver.rst:471: WARNING: Inline emphasis start-string without end-string.
-   include/linux/i2c.h:522: WARNING: Inline strong start-string without end-string.
-   fs/seq_file.c:40: WARNING: Inline strong start-string without end-string.
-   fs/seq_file.c:40: WARNING: Inline strong start-string without end-string.
-   fs/seq_file.c:40: WARNING: Inline strong start-string without end-string.
-   fs/seq_file.c:40: WARNING: Inline strong start-string without end-string.
-   fs/posix_acl.c:636: WARNING: Inline emphasis start-string without end-string.
-   fs/debugfs/inode.c:427: WARNING: Inline literal start-string without end-string.
+>  	return drm_gem_cma_dumb_create_internal(file, dev, args);
+>  }
+> diff --git a/drivers/gpu/drm/arm/malidp_drv.c b/drivers/gpu/drm/arm/malid=
+p_drv.c
+> index 8a76315aaa0f..aeb1a779ecc1 100644
+> --- a/drivers/gpu/drm/arm/malidp_drv.c
+> +++ b/drivers/gpu/drm/arm/malidp_drv.c
+> @@ -465,6 +465,7 @@ static int malidp_dumb_create(struct drm_file *file_p=
+riv,
+>  	u8 alignment =3D malidp_hw_get_pitch_align(malidp->dev, 1);
+>  =
 
-vim +29 include/drm/drm_gem_cma_helper.h
+>  	args->pitch =3D ALIGN(DIV_ROUND_UP(args->width * args->bpp, 8), alignme=
+nt);
+> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
+>  =
 
-b9d47450054616 Sascha Hauer 2012-06-27 @29  
+>  	return drm_gem_cma_dumb_create_internal(file_priv, drm, args);
+>  }
+> diff --git a/drivers/gpu/drm/drm_gem_cma_helper.c b/drivers/gpu/drm/drm_g=
+em_cma_helper.c
+> index 4cebfe01e6ea..f91e9e8adeaf 100644
+> --- a/drivers/gpu/drm/drm_gem_cma_helper.c
+> +++ b/drivers/gpu/drm/drm_gem_cma_helper.c
+> @@ -78,21 +78,8 @@ __drm_gem_cma_create(struct drm_device *drm, size_t si=
+ze)
+>  	return ERR_PTR(ret);
+>  }
+>  =
 
-:::::: The code at line 29 was first introduced by commit
-:::::: b9d474500546160dd6af35f60cd8bc20edd13807 DRM: Add DRM GEM CMA helper
+> -/**
+> - * drm_gem_cma_create - allocate an object with the given size
+> - * @drm: DRM device
+> - * @size: size of the object to allocate
+> - *
+> - * This function creates a CMA GEM object and allocates a contiguous chu=
+nk of
+> - * memory as backing store. The backing memory has the writecombine attr=
+ibute
+> - * set.
+> - *
+> - * Returns:
+> - * A struct drm_gem_cma_object * on success or an ERR_PTR()-encoded nega=
+tive
+> - * error code on failure.
+> - */
+> -struct drm_gem_cma_object *drm_gem_cma_create(struct drm_device *drm,
+> -					      size_t size)
+> +static struct drm_gem_cma_object *
+> +drm_gem_cma_create_flags(struct drm_device *drm, size_t size, u32 flags)
+>  {
+>  	struct drm_gem_cma_object *cma_obj;
+>  	int ret;
+> @@ -103,6 +90,9 @@ struct drm_gem_cma_object *drm_gem_cma_create(struct d=
+rm_device *drm,
+>  	if (IS_ERR(cma_obj))
+>  		return cma_obj;
+>  =
 
-:::::: TO: Sascha Hauer <s.hauer@pengutronix.de>
-:::::: CC: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> +	if (!(flags & DRM_MODE_DUMB_KERNEL_MAP))
+> +		cma_obj->dma_attrs |=3D DMA_ATTR_NO_KERNEL_MAPPING;
+> +
+>  	cma_obj->vaddr =3D dma_alloc_attrs(drm->dev, size, &cma_obj->paddr,
+>  					 GFP_KERNEL | __GFP_NOWARN,
+>  					 cma_obj->dma_attrs);
+> @@ -119,6 +109,25 @@ struct drm_gem_cma_object *drm_gem_cma_create(struct=
+ drm_device *drm,
+>  	drm_gem_object_put_unlocked(&cma_obj->base);
+>  	return ERR_PTR(ret);
+>  }
+> +
+> +/**
+> + * drm_gem_cma_create - allocate an object with the given size
+> + * @drm: DRM device
+> + * @size: size of the object to allocate
+> + *
+> + * This function creates a CMA GEM object and allocates a contiguous chu=
+nk of
+> + * memory as backing store. The backing memory has the writecombine attr=
+ibute
+> + * set.
+> + *
+> + * Returns:
+> + * A struct drm_gem_cma_object * on success or an ERR_PTR()-encoded nega=
+tive
+> + * error code on failure.
+> + */
+> +struct drm_gem_cma_object *drm_gem_cma_create(struct drm_device *drm,
+> +					      size_t size)
+> +{
+> +	return drm_gem_cma_create_flags(drm, size, DRM_MODE_DUMB_KERNEL_MAP);
+> +}
+>  EXPORT_SYMBOL_GPL(drm_gem_cma_create);
+>  =
 
----
-0-DAY kernel test infrastructure                Open Source Technology Center
-https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
+>  /**
+> @@ -139,14 +148,14 @@ EXPORT_SYMBOL_GPL(drm_gem_cma_create);
+>   */
+>  static struct drm_gem_cma_object *
+>  drm_gem_cma_create_with_handle(struct drm_file *file_priv,
+> -			       struct drm_device *drm, size_t size,
+> +			       struct drm_device *drm, size_t size, u32 flags,
+>  			       uint32_t *handle)
+>  {
+>  	struct drm_gem_cma_object *cma_obj;
+>  	struct drm_gem_object *gem_obj;
+>  	int ret;
+>  =
 
---7vk4t72xmgtthzvv
-Content-Type: application/gzip
-Content-Disposition: attachment; filename=".config.gz"
-Content-Transfer-Encoding: base64
+> -	cma_obj =3D drm_gem_cma_create(drm, size);
+> +	cma_obj =3D drm_gem_cma_create_flags(drm, size, flags);
+>  	if (IS_ERR(cma_obj))
+>  		return cma_obj;
+>  =
 
-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
+> @@ -225,7 +234,7 @@ int drm_gem_cma_dumb_create_internal(struct drm_file =
+*file_priv,
+>  		args->size =3D args->pitch * args->height;
+>  =
 
---7vk4t72xmgtthzvv
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>  	cma_obj =3D drm_gem_cma_create_with_handle(file_priv, drm, args->size,
+> -						 &args->handle);
+> +						 args->flags, &args->handle);
+>  	return PTR_ERR_OR_ZERO(cma_obj);
+>  }
+>  EXPORT_SYMBOL_GPL(drm_gem_cma_dumb_create_internal);
+> @@ -256,9 +265,10 @@ int drm_gem_cma_dumb_create(struct drm_file *file_pr=
+iv,
+>  =
+
+>  	args->pitch =3D DIV_ROUND_UP(args->width * args->bpp, 8);
+>  	args->size =3D args->pitch * args->height;
+> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
+>  =
+
+>  	cma_obj =3D drm_gem_cma_create_with_handle(file_priv, drm, args->size,
+> -						 &args->handle);
+> +						 args->flags, &args->handle);
+>  	return PTR_ERR_OR_ZERO(cma_obj);
+>  }
+>  EXPORT_SYMBOL_GPL(drm_gem_cma_dumb_create);
+> diff --git a/drivers/gpu/drm/meson/meson_drv.c b/drivers/gpu/drm/meson/me=
+son_drv.c
+> index 397c33182f4f..1593518dcbe4 100644
+> --- a/drivers/gpu/drm/meson/meson_drv.c
+> +++ b/drivers/gpu/drm/meson/meson_drv.c
+> @@ -81,6 +81,7 @@ static int meson_dumb_create(struct drm_file *file, str=
+uct drm_device *dev,
+>  	 */
+>  	args->pitch =3D ALIGN(DIV_ROUND_UP(args->width * args->bpp, 8), SZ_64);
+>  	args->size =3D PAGE_ALIGN(args->pitch * args->height);
+> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
+>  =
+
+>  	return drm_gem_cma_dumb_create_internal(file, dev, args);
+>  }
+> diff --git a/drivers/gpu/drm/rcar-du/rcar_du_kms.c b/drivers/gpu/drm/rcar=
+-du/rcar_du_kms.c
+> index 2dc9caee8767..c9b1f298ce7e 100644
+> --- a/drivers/gpu/drm/rcar-du/rcar_du_kms.c
+> +++ b/drivers/gpu/drm/rcar-du/rcar_du_kms.c
+> @@ -299,6 +299,7 @@ int rcar_du_dumb_create(struct drm_file *file, struct=
+ drm_device *dev,
+>  		align =3D 16 * args->bpp / 8;
+>  =
+
+>  	args->pitch =3D roundup(min_pitch, align);
+> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
+>  =
+
+>  	return drm_gem_cma_dumb_create_internal(file, dev, args);
+>  }
+> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c b/drivers/gpu/dr=
+m/rockchip/rockchip_drm_gem.c
+> index 7582d0e6a60a..f09b9a035376 100644
+> --- a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
+> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
+> @@ -419,6 +419,7 @@ int rockchip_gem_dumb_create(struct drm_file *file_pr=
+iv,
+>  	 * align to 64 bytes since Mali requires it.
+>  	 */
+>  	args->pitch =3D ALIGN(min_pitch, 64);
+> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
+>  	args->size =3D args->pitch * args->height;
+>  =
+
+>  	rk_obj =3D rockchip_gem_create_with_handle(file_priv, dev, args->size,
+> diff --git a/drivers/gpu/drm/stm/drv.c b/drivers/gpu/drm/stm/drv.c
+> index 5a9f9aca8bc2..0f76a4ac95b3 100644
+> --- a/drivers/gpu/drm/stm/drv.c
+> +++ b/drivers/gpu/drm/stm/drv.c
+> @@ -47,6 +47,7 @@ static int stm_gem_cma_dumb_create(struct drm_file *fil=
+e,
+>  	 */
+>  	args->pitch =3D roundup(min_pitch, 128);
+>  	args->height =3D roundup(args->height, 4);
+> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
+>  =
+
+>  	return drm_gem_cma_dumb_create_internal(file, dev, args);
+>  }
+> diff --git a/drivers/gpu/drm/sun4i/sun4i_drv.c b/drivers/gpu/drm/sun4i/su=
+n4i_drv.c
+> index a5757b11b730..f653a5d1e2d6 100644
+> --- a/drivers/gpu/drm/sun4i/sun4i_drv.c
+> +++ b/drivers/gpu/drm/sun4i/sun4i_drv.c
+> @@ -34,6 +34,7 @@ static int drm_sun4i_gem_dumb_create(struct drm_file *f=
+ile_priv,
+>  {
+>  	/* The hardware only allows even pitches for YUV buffers. */
+>  	args->pitch =3D ALIGN(DIV_ROUND_UP(args->width * args->bpp, 8), 2);
+> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
+>  =
+
+>  	return drm_gem_cma_dumb_create_internal(file_priv, drm, args);
+>  }
+> -- =
+
+> 2.20.1
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
---7vk4t72xmgtthzvv--
-
