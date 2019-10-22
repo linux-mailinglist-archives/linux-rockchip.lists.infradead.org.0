@@ -2,84 +2,67 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36426E03C6
-	for <lists+linux-rockchip@lfdr.de>; Tue, 22 Oct 2019 14:24:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD192E040D
+	for <lists+linux-rockchip@lfdr.de>; Tue, 22 Oct 2019 14:42:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ho/Bkz0FmvYKsrOFqPyBgYmDSFGSfRct1vjZgQp64rE=; b=gt+j2Cb4mXtY3OJjnKg5SGkQb
-	8TTd4c2SPEjfLvBfQA/wk+WnUGO31BY8vPs3xSOg7ZtBSYfVIHopUjVRovDEN4/zCRa68n3ppq1bo
-	DvW5w8yoQEAJAhHMtcN/wsto6tESexN0T9m6pedntU7KsxS0Zt/rnK5m6wbJCU5XGcKaSdbDOi4Mi
-	ROBRGxiDvxKtkAig+8QK7R8rKk7zt8uQkwxAX8LaNiQz0lzXRD4NOUIk7hi0allqDNh/n2FZghNQU
-	bWeOHTt6nsHE4Nn9GC90j8t3mCi4xOF9jaWmHgfdw2XhtwMJugwz1iqLlWwF15icw+XADoOpfb268
-	yd/LKSgLg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=piK/ixEA5vCGC9x+mmIFNwH5XKAFGBD0eR3fitGobJI=; b=ROgAm24NGykFTQ
+	kEer4GZHdiPRrZ2gxaJykIbr7sA3uSs1FqZZQdQnwJmSc8ZAGazqOHtpePdVpV5o0yGysjGI9HV15
+	mXN5QCul4zNrtWeVbVVMllt4fCUXeDJl04a0zDP6zqSmiDtbGnNXNcrRgsNoNJr+h0pu4g2hEsbTM
+	8NLSk5EOwr6eB/8wgsofaptqctXZF5cK4+TtJeoVAaPRNtcfjxnouDe0SELOgwlC3jRgUbIjUSYKx
+	Jc1opjVxoxQTIRrcWOxWPr/YyTXIqJenf8ALygz4/rNECoS7cGcJb16SD3oH6W7gNWAu4fciuTs68
+	KPt50/K73esB4dL2LInw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMtDG-0001DG-H6; Tue, 22 Oct 2019 12:24:34 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iMtUg-0000Ns-Ls; Tue, 22 Oct 2019 12:42:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMtD5-00011i-9X
- for linux-rockchip@lists.infradead.org; Tue, 22 Oct 2019 12:24:24 +0000
-Received: by mail-wm1-x344.google.com with SMTP id c22so6852046wmd.1
- for <linux-rockchip@lists.infradead.org>; Tue, 22 Oct 2019 05:24:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Ut7DiejZhR1eCG20yMrwS8a1hqYS2ddBi/U75ecWkFY=;
- b=jid6ntUK0esQpG508NqfQT8zlE0uB1es+ezydvxrncS5YL4nlvOrDTIZAThJNt1JBz
- UrQKQDEA9sdYPOvuhFTDlPdmpkopnU/enaASQsHEBQaqZrYTdNIQqGCDfElQymPwO8Ll
- s+thwC7xS0XKxFqUyXqcA73LqBGFRnP99zXtj2Vt+p5Zrbnmv+JAR3tbjblJ1nUHlgYu
- b9YpZJ97WC7Ig6r49FwggaBC2uFCe2oUjfQFjPdo0DFpaOBtfs5rwa92IUbItW9vWfPg
- z9+rRt5ubyBiRN150rIQRhZOKeDwPfYRcLpQVmo+SWKDJzrsxhT4se8JkiP5gzWwVAkg
- J93w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Ut7DiejZhR1eCG20yMrwS8a1hqYS2ddBi/U75ecWkFY=;
- b=N+gp6DTdXUccBTgy7HatSI7hqGWpdKTGKsYDtqd7O1p7mybJJZxxsI5HidY5ZRdKYH
- akv+5x/uiNdRoMMWfHdjYilz3OzXnZpTHhJd5buagfjToD3TvhI0N/kBYI1RdPNl/hhK
- z9CYyZeeupE+uy8XOPks8eFkO8Sm6IgeDYHVtpOYLtvl+rrSWjbzFWqeQIYQxm9I3YDb
- hdPcLViI6oHNnCvEXcA+F28FF5KtbFM/q8Wb9l/ZFHn2jdlrLbjDmfDgNedjMKuEqnWJ
- FDKBh0K50G6jjtZFwGo0V4fAbkfa0Rr7kAFFq04f+G4091x4cReV22LzJrXxidD8YJCB
- 06HA==
-X-Gm-Message-State: APjAAAXlLRVB7bxaSRhoemSV1IlpRV8/AgjUhooO066dWRx3RkbFGJPA
- D75V6lHJpEXuasoywpDT6pfULA==
-X-Google-Smtp-Source: APXvYqwgjPDPNW7a1xJ2Rc6OO4jAurB2ZpMNxcJUVeFXsu+xl+Or1DkHLx+C8XVRN8u73S9NUcWQwg==
-X-Received: by 2002:a7b:cb54:: with SMTP id v20mr2708736wmj.91.1571747060898; 
- Tue, 22 Oct 2019 05:24:20 -0700 (PDT)
-Received: from [192.168.86.34]
- (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
- by smtp.googlemail.com with ESMTPSA id u26sm19101660wrd.87.2019.10.22.05.24.19
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 22 Oct 2019 05:24:19 -0700 (PDT)
-Subject: Re: [PATCH 1/2] dt-bindings: nvmem: add binding for Rockchip OTP
- controller
-To: Heiko Stuebner <heiko@sntech.de>
-References: <20190925184957.14338-1-heiko@sntech.de>
-From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-Message-ID: <3b5f4018-82b1-946d-d81d-252eb872d5d1@linaro.org>
-Date: Tue, 22 Oct 2019 13:24:18 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iMtUS-0000CJ-4H; Tue, 22 Oct 2019 12:42:21 +0000
+Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
+ [209.85.160.170])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 596D7222C2;
+ Tue, 22 Oct 2019 12:42:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571748139;
+ bh=EM5Hd+W+Xbp28U+Qeo5Lp8facOPIzhF6X+VJbmFVCFE=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=w/zX1/Tg4kUp8ZsraDAtrm6nTJHzeZRRAQyBnvhIoxWOH+70wbRChvFYoclQzrAyx
+ t3pce/y+Pd+Gz2n8TXgw3ysqSr9+h3cV75SfJ1htirf+jlAvk1lKLvT4TRTokOffrM
+ DrmpGkHFokoIFCfb2flUsdsxd6OuxQnF7je6KEvA=
+Received: by mail-qt1-f170.google.com with SMTP id o49so18655106qta.7;
+ Tue, 22 Oct 2019 05:42:19 -0700 (PDT)
+X-Gm-Message-State: APjAAAXHJacavpAp9SIAG7tv6EmSny2pQNrtzJTiJeG1G1XhMv9UbbCO
+ z8EmvUdyjHELetUkpsPxm/NIYp3t3QaJUGNmWA==
+X-Google-Smtp-Source: APXvYqxf6MiuQdiT7Kz6alYW3lLAiryxko/xUIhWeHE6cCzheQDLOsAyk0cPSV/+Iz0r0zq3dgDPP+/dTRg57i4n7U8=
+X-Received: by 2002:a0c:add6:: with SMTP id x22mr781981qvc.79.1571748138355;
+ Tue, 22 Oct 2019 05:42:18 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190925184957.14338-1-heiko@sntech.de>
-Content-Language: en-US
+References: <20191021214550.1461-1-robh@kernel.org>
+ <20191021214550.1461-3-robh@kernel.org>
+ <20191022111443.GE4756@pendragon.ideasonboard.com>
+In-Reply-To: <20191022111443.GE4756@pendragon.ideasonboard.com>
+From: Rob Herring <robh@kernel.org>
+Date: Tue, 22 Oct 2019 07:42:06 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+kyLZ8LAVN-5UDJUy9nMLiAjN452HWg5WYAfLS7QD=Yw@mail.gmail.com>
+Message-ID: <CAL_Jsq+kyLZ8LAVN-5UDJUy9nMLiAjN452HWg5WYAfLS7QD=Yw@mail.gmail.com>
+Subject: Re: [PATCH 2/6] drm: Introduce DRM_MODE_DUMB_KERNEL_MAP flag
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_052423_367654_4DB0B41B 
-X-CRM114-Status: GOOD (  18.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191022_054220_205288_035841CC 
+X-CRM114-Status: GOOD (  26.83  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -89,6 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,63 +85,117 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org,
- christoph.muellner@theobroma-systems.com
+Cc: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Liviu Dudau <liviu.dudau@arm.com>, dri-devel <dri-devel@lists.freedesktop.org>,
+ Sandy Huang <hjc@rock-chips.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Yannick Fertre <yannick.fertre@st.com>, Kevin Hilman <khilman@baylibre.com>,
+ Xinwei Kong <kong.kongxinwei@hisilicon.com>,
+ Xinliang Liu <z.liuxinliang@hisilicon.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Chen-Yu Tsai <wens@csie.org>,
+ =?UTF-8?Q?Noralf_Tr=C3=B8nnes?= <noralf@tronnes.org>,
+ "James \(Qian\) Wang" <james.qian.wang@arm.com>, CK Hu <ck.hu@mediatek.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Chen Feng <puck.chen@hisilicon.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Sean Paul <sean@poorly.run>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Philippe Cornu <philippe.cornu@st.com>,
+ Vincent Abriou <vincent.abriou@st.com>,
+ Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Rongrong Zou <zourongrong@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+On Tue, Oct 22, 2019 at 6:14 AM Laurent Pinchart
+<laurent.pinchart@ideasonboard.com> wrote:
+>
+> Hi Rob,
+>
+> Thank you for the patch.
+>
+> On Mon, Oct 21, 2019 at 04:45:46PM -0500, Rob Herring wrote:
+> > Introduce a new flag, DRM_MODE_DUMB_KERNEL_MAP, for struct
+> > drm_mode_create_dumb. This flag is for internal kernel use to indicate
+> > if dumb buffer allocation needs a kernel mapping. This is needed only for
+> > CMA where creating a kernel mapping or not has to be decided at allocation
+> > time because creating a mapping on demand (with vmap()) is not guaranteed
+> > to work. Several drivers are using CMA, but not the CMA helpers because
+> > they distinguish between kernel and userspace allocations to create a
+> > kernel mapping or not.
+> >
+> > Update the callers of drm_mode_dumb_create() to set
+> > drm_mode_dumb_create.flags to appropriate defaults. Currently, flags can
+> > be set to anything by userspace, but is unused within the kernel. Let's
+> > force flags to zero (no kernel mapping) for userspace callers by default.
+> > For in kernel clients, set DRM_MODE_DUMB_KERNEL_MAP by default. Drivers
+> > can override this as needed.
+> >
+> > Cc: David Airlie <airlied@linux.ie>
+> > Cc: Daniel Vetter <daniel@ffwll.ch>
+> > Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+> > Cc: Maxime Ripard <mripard@kernel.org>
+> > Cc: Sean Paul <sean@poorly.run>
+> > Signed-off-by: Rob Herring <robh@kernel.org>
+> > ---
+> >  drivers/gpu/drm/drm_client.c       | 1 +
+> >  drivers/gpu/drm/drm_dumb_buffers.c | 5 ++++-
+> >  include/uapi/drm/drm_mode.h        | 2 ++
+> >  3 files changed, 7 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/gpu/drm/drm_client.c b/drivers/gpu/drm/drm_client.c
+> > index d9a2e3695525..dbfc8061b392 100644
+> > --- a/drivers/gpu/drm/drm_client.c
+> > +++ b/drivers/gpu/drm/drm_client.c
+> > @@ -264,6 +264,7 @@ drm_client_buffer_create(struct drm_client_dev *client, u32 width, u32 height, u
+> >       dumb_args.width = width;
+> >       dumb_args.height = height;
+> >       dumb_args.bpp = info->cpp[0] * 8;
+> > +     dumb_args.flags = DRM_MODE_DUMB_KERNEL_MAP;
+> >       ret = drm_mode_create_dumb(dev, &dumb_args, client->file);
+> >       if (ret)
+> >               goto err_delete;
+> > diff --git a/drivers/gpu/drm/drm_dumb_buffers.c b/drivers/gpu/drm/drm_dumb_buffers.c
+> > index d18a740fe0f1..74a13f14c173 100644
+> > --- a/drivers/gpu/drm/drm_dumb_buffers.c
+> > +++ b/drivers/gpu/drm/drm_dumb_buffers.c
+> > @@ -97,7 +97,10 @@ int drm_mode_create_dumb(struct drm_device *dev,
+> >  int drm_mode_create_dumb_ioctl(struct drm_device *dev,
+> >                              void *data, struct drm_file *file_priv)
+> >  {
+> > -     return drm_mode_create_dumb(dev, data, file_priv);
+> > +     struct drm_mode_create_dumb *args = data;
+> > +
+> > +     args->flags = 0;
+>
+> I would prefer returning an error if flags is set to a non-zero value,
+> to catch userspace errors early, but I'm also worried it would break
+> existing userspace by uncovering existing bugs. Still, if we later add
+> flags that userspace can set, those existing bugs will be triggered, so
+> we'll have to deal with them anyway, and we could already give it a try.
 
+I would like that too, but the comment just above this code tells me
+that's likely to break things:
 
-On 25/09/2019 19:49, Heiko Stuebner wrote:
-> Newer Rockchip SoCs use a different IP for accessing special one-
-> time-programmable memory, so add a binding for these controllers.
-> 
-> Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+        /*
+         * handle, pitch and size are output parameters. Zero them out to
+         * prevent drivers from accidentally using uninitialized data. Since
+         * not all existing userspace is clearing these fields properly we
+         * cannot reject IOCTL with garbage in them.
+         */
 
-Applied both, thanks,
-srini
+Maybe userspace does correctly zero out input params.
 
-> ---
->   .../bindings/nvmem/rockchip-otp.txt           | 25 +++++++++++++++++++
->   1 file changed, 25 insertions(+)
->   create mode 100644 Documentation/devicetree/bindings/nvmem/rockchip-otp.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/nvmem/rockchip-otp.txt b/Documentation/devicetree/bindings/nvmem/rockchip-otp.txt
-> new file mode 100644
-> index 000000000000..40f649f7c2e5
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/nvmem/rockchip-otp.txt
-> @@ -0,0 +1,25 @@
-> +Rockchip internal OTP (One Time Programmable) memory device tree bindings
-> +
-> +Required properties:
-> +- compatible: Should be one of the following.
-> +  - "rockchip,px30-otp" - for PX30 SoCs.
-> +  - "rockchip,rk3308-otp" - for RK3308 SoCs.
-> +- reg: Should contain the registers location and size
-> +- clocks: Must contain an entry for each entry in clock-names.
-> +- clock-names: Should be "otp", "apb_pclk" and "phy".
-> +- resets: Must contain an entry for each entry in reset-names.
-> +  See ../../reset/reset.txt for details.
-> +- reset-names: Should be "phy".
-> +
-> +See nvmem.txt for more information.
-> +
-> +Example:
-> +	otp: otp@ff290000 {
-> +		compatible = "rockchip,px30-otp";
-> +		reg = <0x0 0xff290000 0x0 0x4000>;
-> +		#address-cells = <1>;
-> +		#size-cells = <1>;
-> +		clocks = <&cru SCLK_OTP_USR>, <&cru PCLK_OTP_NS>,
-> +			 <&cru PCLK_OTP_PHY>;
-> +		clock-names = "otp", "apb_pclk", "phy";
-> +	};
-> 
+Rob
 
 _______________________________________________
 Linux-rockchip mailing list
