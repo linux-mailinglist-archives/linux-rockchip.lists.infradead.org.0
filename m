@@ -2,77 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1015AE0B0A
-	for <lists+linux-rockchip@lfdr.de>; Tue, 22 Oct 2019 19:55:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61E96E0B0B
+	for <lists+linux-rockchip@lfdr.de>; Tue, 22 Oct 2019 19:55:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mdvOpX4c8N7ZaHFyzg2zJDxrgCvqPgo2BN54x/tJtMc=; b=iCzEjG9ixXeaDQ
-	OoKiYVPX8+g4z+9IqWntE86jkpzTEA2DIDTB0HIWDqlJ9CzJRu33vOXYbkgy36ph15fGmaJrdl7rp
-	638g4S6klA02Rekqw2ZbvBkoskNiNXKWntpRmlIlmhAFr0ngthA17EfMvoq5MCzMu8sDE5RZMYeWr
-	M8jUeNBlbIirYOxMarnIwC+Ur49W0nGsu/OHJ2ypQnyUlkvBPhF2z3+DhelgYcjj+PBhXXI7CtwMb
-	2vEgiU6AjKWBjrlmog/YNDyPlxwcUDiEwEhhGR5/hRvTbRKgmAUxfKk2iLommRG+88rGtvDgfEVjH
-	2mk/tzjlQo327PxshhHQ==;
+	List-Owner; bh=+twr5hKM/nb6pr2EAWTE/ZK1LjjhBcy3lgBQyQMHX40=; b=JmRWUTA9XF7eFU
+	pOlIPQiSjtLNVnKU4niIzjUaezz/0PqUTSYjQOjuubI2RAEkPHimbGjnhd+OFC7MAT+lrjcMiL3zj
+	Mqf2gknUAHO6T2VgxPDgxMkbV1cH1ny8jjO2p5dakTYrLsgtblfnomlHioAL+T8fsnrWGEvUjqFT9
+	XdMPq2ftUtEcB/HY4757FCDkZ73f7VLnXQELd9tAa9oy3NKEKXWic/epeWdxFyQOV+MDiexNxfXo6
+	tMOV6v6sunRmvb3XNtv7Z3EYsOaZ4DmWfeAWPLsjkybCOErnM/G6uLn4DpECV6fa53iKE6nt4zikh
+	7rlVS6psa1Or0RrKSuqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMyNg-0006Eg-P6; Tue, 22 Oct 2019 17:55:40 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iMyNl-0006Hi-Ds; Tue, 22 Oct 2019 17:55:45 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMyNd-0006Cl-KW
- for linux-rockchip@lists.infradead.org; Tue, 22 Oct 2019 17:55:39 +0000
-Received: by mail-pg1-x543.google.com with SMTP id f14so10378603pgi.9
- for <linux-rockchip@lists.infradead.org>; Tue, 22 Oct 2019 10:55:37 -0700 (PDT)
+ id 1iMyNh-0006FY-Bk
+ for linux-rockchip@lists.infradead.org; Tue, 22 Oct 2019 17:55:42 +0000
+Received: by mail-pl1-x641.google.com with SMTP id q21so628972plr.13
+ for <linux-rockchip@lists.infradead.org>; Tue, 22 Oct 2019 10:55:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=zWRJz6rW2RQ3KTi2LD0pRPiuHfQYA+WsBHlu/vU4wOs=;
- b=TCTDvvGex5Tdt23Isv0AZREDTC3hv/OLy1oXjKfv/L1a5CORfVMNbh4jhAdAlGbdcq
- 5tRJtsVJiMyS+Hh7uZd1tG9HntP2NbfhT6GaWNlYxzcsM/z3Zoh9EN9vXRmw560/TUPx
- QCArOxMLRKpOlg0HdorLBZ+D2GgoV2rRdy68c=
+ bh=M3uVs6fLUV6Sa+n4FIF1RzYQSumPilQCihG7VaENJHw=;
+ b=muO1CP3wO8BsXGGXlochPgEAJDEbbODHpkXAiz8xWoqmFFaST53f+5+A0QdJseThg7
+ ZEHSedN1f2DCtZBpDtnN+NTItTYcbPq3zcfeSUowUCHqz0lXqaD1nTIT7brqjVgrHP6d
+ hOMO23tt+qtgOkgB3zIBnY5tH+9Vfk21i2TS4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=zWRJz6rW2RQ3KTi2LD0pRPiuHfQYA+WsBHlu/vU4wOs=;
- b=Zq80Ypyj0r5ZcstbtRL4CPvDTSNPX2vseD6HqnkUnfYSF1Mw986qUNvzcY05dQ+lt9
- VD2gjSsA8XPtBkfvgAYj4sxuzwiWC2lDUu9rvReEsu9O/3Rrd69TIMM+/6NA2Lp1ExSJ
- oJ0Y1OGvGuf8NcKKdj97oRGmVz/OtYBIxMEvjdki5SKoYaFEtJDCviOl59JBo2uwN2vN
- PRdOEyUWOmeNpvslV7sBI19xeJooWoailk9P8jyNLRUmkDl0q9ZbDSdH+8XXWgy2B22A
- XaKv/lprnYgsjf8jzOJxYca+nSUEkZfvsCfT6r02K50q4llwJLOBUbOOshHqVxBICGcv
- Pv/w==
-X-Gm-Message-State: APjAAAXZgq5/xdzyd6uhfrxYypbsNXqgoTQuDtkRys+XB1RoEdpjdQWJ
- GO2GuBdZM/3TEWLv6SZyeTYCSA==
-X-Google-Smtp-Source: APXvYqwfqbzdbwRIbc3Ebh1PmLdKFkY6I8DWT0fuoG9F/Dc69Th/pzL2pv/eHy1tpUW6eOVH0hvWnQ==
-X-Received: by 2002:a63:eb08:: with SMTP id t8mr5302110pgh.49.1571766936789;
- Tue, 22 Oct 2019 10:55:36 -0700 (PDT)
+ bh=M3uVs6fLUV6Sa+n4FIF1RzYQSumPilQCihG7VaENJHw=;
+ b=ji32zmqQrBw2V24xcDxFrQGi0FoARRNFKvWJnObYmAoMzPdpyhxhvPiTPVqNYNFsrC
+ Yzkj+rDuKuQmfuHsWvsgdy6/GsI2fjRN8wH25GlOjzgtCdfkwERVv0ot/u4PMKmZGjIl
+ PN0JiJUZNzc/vzW4vj8t7ASIxS90PBBQ6wszBzb2JGVUTVu1/8GQq4Qk0UQ0VXYRLVRk
+ gEw7Osb4Ykx/wPt4q8939TmBJtDHMr9swfYJhtmHdpqtVyrFvRwMp9fOjWAL3U0oG5xS
+ +/E3fbyNKCwB4zWz3aViTMeSI2L0FMNY00FMCrLswnZtnJ04Rezx8FRo6m7sJA4Z+WnI
+ VCzA==
+X-Gm-Message-State: APjAAAU7wjsUjhuHk/U7JSlX7iZFXdgoef4dEUI9ZqrdLHN6ILgwCxW7
+ Nj0GJGNh9Ae8FdMtzGQTEKD/V4TAaeY=
+X-Google-Smtp-Source: APXvYqxpLirutpVFHLlIOWPptOxvlZMh/aFVFVCqc7jnaB+ybfTjJLZ5AJBkcRlH9P8o+SVS2YkeWg==
+X-Received: by 2002:a17:902:fe8c:: with SMTP id
+ x12mr5207965plm.55.1571766940354; 
+ Tue, 22 Oct 2019 10:55:40 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.180.31])
- by smtp.gmail.com with ESMTPSA id b3sm20454775pfd.125.2019.10.22.10.55.33
+ by smtp.gmail.com with ESMTPSA id b3sm20454775pfd.125.2019.10.22.10.55.37
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 22 Oct 2019 10:55:36 -0700 (PDT)
+ Tue, 22 Oct 2019 10:55:39 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH 5/9] fastboot: rockchip: Select FASTBOOT_FLASH[_MMC_DEV]
-Date: Tue, 22 Oct 2019 23:24:54 +0530
-Message-Id: <20191022175458.22604-6-jagan@amarulasolutions.com>
+Subject: [PATCH 6/9] usb: dwc3: Add phy interface for dwc3_uboot
+Date: Tue, 22 Oct 2019 23:24:55 +0530
+Message-Id: <20191022175458.22604-7-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20191022175458.22604-1-jagan@amarulasolutions.com>
 References: <20191022175458.22604-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_105537_676966_C7EC80A0 
-X-CRM114-Status: GOOD (  10.74  )
+X-CRM114-CacheID: sfid-20191022_105541_403456_9C647A87 
+X-CRM114-Status: GOOD (  14.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -95,216 +96,153 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: u-boot@lists.denx.de, Levin Du <djw@t-chip.com.cn>,
- linux-amarula@amarulasolutions.com, Jagan Teki <jagan@amarulasolutions.com>,
- linux-rockchip@lists.infradead.org
+Cc: Marek Vasut <marex@denx.de>, linux-rockchip@lists.infradead.org,
+ u-boot@lists.denx.de, Jagan Teki <jagan@amarulasolutions.com>,
+ Levin Du <djw@t-chip.com.cn>, linux-amarula@amarulasolutions.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Select CONFIG_FASTBOOT_FLASH, CONFIG_FASTBOOT_FLASH_MMC_DEV
-for rockchip SoC plaforms in fastboot Kconfig file instead
-of defined it in board defconfig.
+U-Boot has two different variants of dwc3 initializations,
+- with dm variant gadget, so the respective dm driver would
+  call the dwc3_init in core.
+- with non-dm variant gadget, so the usage board file would
+  call dwc3_uboot_init in core.
 
-This eventually drop the explicit configs defined in
-supporting board defconfig files.
+The driver probe would handle all respective gadget properties
+including phy interface via phy_type property and then trigger
+dwc3_init for dm-variant gadgets.
 
+So, to support the phy interface for non-dm variant gadgets,
+the better option is dwc3_uboot_init since there is no
+dedicated controller for non-dm variant gadgets.
+
+This patch support for adding phy interface like 8/16-bit UTMI+
+code for dwc3_uboot.
+
+This change used Linux phy.h enum list, to make proper code
+compatibility.
+
+Cc: Marek Vasut <marex@denx.de>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- configs/evb-rk3036_defconfig      | 2 --
- configs/evb-rk3128_defconfig      | 2 --
- configs/evb-rk3229_defconfig      | 2 --
- configs/evb-rk3288_defconfig      | 2 --
- configs/evb-rk3328_defconfig      | 2 --
- configs/firefly-rk3288_defconfig  | 2 --
- configs/kylin-rk3036_defconfig    | 2 --
- configs/miqi-rk3288_defconfig     | 2 --
- configs/phycore-rk3288_defconfig  | 2 --
- configs/popmetal-rk3288_defconfig | 2 --
- configs/rock64-rk3328_defconfig   | 2 --
- configs/tinker-rk3288_defconfig   | 2 --
- drivers/fastboot/Kconfig          | 4 +++-
- 13 files changed, 3 insertions(+), 25 deletions(-)
+ drivers/usb/dwc3/core.c | 26 ++++++++++++++++++++++++++
+ drivers/usb/dwc3/core.h | 12 ++++++++++++
+ include/dwc3-uboot.h    |  2 ++
+ include/linux/usb/phy.h | 19 +++++++++++++++++++
+ 4 files changed, 59 insertions(+)
+ create mode 100644 include/linux/usb/phy.h
 
-diff --git a/configs/evb-rk3036_defconfig b/configs/evb-rk3036_defconfig
-index c02ef6af4e..ca2ba9d0d8 100644
---- a/configs/evb-rk3036_defconfig
-+++ b/configs/evb-rk3036_defconfig
-@@ -36,8 +36,6 @@ CONFIG_REGMAP=y
- CONFIG_SYSCON=y
- # CONFIG_SPL_BLK is not set
- CONFIG_CLK=y
--CONFIG_FASTBOOT_FLASH=y
--CONFIG_FASTBOOT_FLASH_MMC_DEV=0
- CONFIG_FASTBOOT_CMD_OEM_FORMAT=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-diff --git a/configs/evb-rk3128_defconfig b/configs/evb-rk3128_defconfig
-index a3189638a1..9d81d96e68 100644
---- a/configs/evb-rk3128_defconfig
-+++ b/configs/evb-rk3128_defconfig
-@@ -22,8 +22,6 @@ CONFIG_SYSCON=y
- CONFIG_CLK=y
- CONFIG_FASTBOOT_BUF_ADDR=0x60800800
- CONFIG_FASTBOOT_BUF_SIZE=0x04000000
--CONFIG_FASTBOOT_FLASH=y
--CONFIG_FASTBOOT_FLASH_MMC_DEV=0
- CONFIG_FASTBOOT_CMD_OEM_FORMAT=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-diff --git a/configs/evb-rk3229_defconfig b/configs/evb-rk3229_defconfig
-index e7b813d627..a365931e47 100644
---- a/configs/evb-rk3229_defconfig
-+++ b/configs/evb-rk3229_defconfig
-@@ -44,8 +44,6 @@ CONFIG_CLK=y
- CONFIG_SPL_CLK=y
- CONFIG_TPL_CLK=y
- CONFIG_FASTBOOT_BUF_SIZE=0x04000000
--CONFIG_FASTBOOT_FLASH=y
--CONFIG_FASTBOOT_FLASH_MMC_DEV=0
- CONFIG_FASTBOOT_CMD_OEM_FORMAT=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-diff --git a/configs/evb-rk3288_defconfig b/configs/evb-rk3288_defconfig
-index a6c57dfaa6..a88f391b96 100644
---- a/configs/evb-rk3288_defconfig
-+++ b/configs/evb-rk3288_defconfig
-@@ -44,8 +44,6 @@ CONFIG_SYSCON=y
- CONFIG_SPL_SYSCON=y
- CONFIG_CLK=y
- CONFIG_SPL_CLK=y
--CONFIG_FASTBOOT_FLASH=y
--CONFIG_FASTBOOT_FLASH_MMC_DEV=0
- CONFIG_FASTBOOT_CMD_OEM_FORMAT=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-diff --git a/configs/evb-rk3328_defconfig b/configs/evb-rk3328_defconfig
-index c9d056b4b9..d133477e62 100644
---- a/configs/evb-rk3328_defconfig
-+++ b/configs/evb-rk3328_defconfig
-@@ -48,8 +48,6 @@ CONFIG_CLK=y
- CONFIG_SPL_CLK=y
- CONFIG_TPL_CLK=y
- CONFIG_FASTBOOT_BUF_ADDR=0x800800
--CONFIG_FASTBOOT_FLASH=y
--CONFIG_FASTBOOT_FLASH_MMC_DEV=1
- CONFIG_FASTBOOT_CMD_OEM_FORMAT=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-diff --git a/configs/firefly-rk3288_defconfig b/configs/firefly-rk3288_defconfig
-index 2de166ae90..4bd81048e9 100644
---- a/configs/firefly-rk3288_defconfig
-+++ b/configs/firefly-rk3288_defconfig
-@@ -46,8 +46,6 @@ CONFIG_SPL_SYSCON=y
- # CONFIG_SPL_SIMPLE_BUS is not set
- CONFIG_CLK=y
- CONFIG_SPL_CLK=y
--CONFIG_FASTBOOT_FLASH=y
--CONFIG_FASTBOOT_FLASH_MMC_DEV=0
- CONFIG_FASTBOOT_CMD_OEM_FORMAT=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-diff --git a/configs/kylin-rk3036_defconfig b/configs/kylin-rk3036_defconfig
-index ff20dea0fc..79188c16b7 100644
---- a/configs/kylin-rk3036_defconfig
-+++ b/configs/kylin-rk3036_defconfig
-@@ -38,8 +38,6 @@ CONFIG_REGMAP=y
- CONFIG_SYSCON=y
- # CONFIG_SPL_BLK is not set
- CONFIG_CLK=y
--CONFIG_FASTBOOT_FLASH=y
--CONFIG_FASTBOOT_FLASH_MMC_DEV=0
- CONFIG_FASTBOOT_CMD_OEM_FORMAT=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-diff --git a/configs/miqi-rk3288_defconfig b/configs/miqi-rk3288_defconfig
-index fbafbb857a..1b55008a96 100644
---- a/configs/miqi-rk3288_defconfig
-+++ b/configs/miqi-rk3288_defconfig
-@@ -46,8 +46,6 @@ CONFIG_SPL_SYSCON=y
- # CONFIG_SPL_SIMPLE_BUS is not set
- CONFIG_CLK=y
- CONFIG_SPL_CLK=y
--CONFIG_FASTBOOT_FLASH=y
--CONFIG_FASTBOOT_FLASH_MMC_DEV=0
- CONFIG_FASTBOOT_CMD_OEM_FORMAT=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-diff --git a/configs/phycore-rk3288_defconfig b/configs/phycore-rk3288_defconfig
-index 70e3bdc621..f44974b191 100644
---- a/configs/phycore-rk3288_defconfig
-+++ b/configs/phycore-rk3288_defconfig
-@@ -48,8 +48,6 @@ CONFIG_SPL_SYSCON=y
- # CONFIG_SPL_SIMPLE_BUS is not set
- CONFIG_CLK=y
- CONFIG_SPL_CLK=y
--CONFIG_FASTBOOT_FLASH=y
--CONFIG_FASTBOOT_FLASH_MMC_DEV=0
- CONFIG_FASTBOOT_CMD_OEM_FORMAT=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-diff --git a/configs/popmetal-rk3288_defconfig b/configs/popmetal-rk3288_defconfig
-index 611aff5e1d..af70684045 100644
---- a/configs/popmetal-rk3288_defconfig
-+++ b/configs/popmetal-rk3288_defconfig
-@@ -46,8 +46,6 @@ CONFIG_SPL_SYSCON=y
- # CONFIG_SPL_SIMPLE_BUS is not set
- CONFIG_CLK=y
- CONFIG_SPL_CLK=y
--CONFIG_FASTBOOT_FLASH=y
--CONFIG_FASTBOOT_FLASH_MMC_DEV=0
- CONFIG_FASTBOOT_CMD_OEM_FORMAT=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-diff --git a/configs/rock64-rk3328_defconfig b/configs/rock64-rk3328_defconfig
-index 5e64003dd3..fc9079eb4e 100644
---- a/configs/rock64-rk3328_defconfig
-+++ b/configs/rock64-rk3328_defconfig
-@@ -51,8 +51,6 @@ CONFIG_CLK=y
- CONFIG_SPL_CLK=y
- CONFIG_TPL_CLK=y
- CONFIG_FASTBOOT_BUF_ADDR=0x800800
--CONFIG_FASTBOOT_FLASH=y
--CONFIG_FASTBOOT_FLASH_MMC_DEV=1
- CONFIG_FASTBOOT_CMD_OEM_FORMAT=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-diff --git a/configs/tinker-rk3288_defconfig b/configs/tinker-rk3288_defconfig
-index 467065e3ad..a624270aff 100644
---- a/configs/tinker-rk3288_defconfig
-+++ b/configs/tinker-rk3288_defconfig
-@@ -48,8 +48,6 @@ CONFIG_SPL_SYSCON=y
- # CONFIG_SPL_SIMPLE_BUS is not set
- CONFIG_CLK=y
- CONFIG_SPL_CLK=y
--CONFIG_FASTBOOT_FLASH=y
--CONFIG_FASTBOOT_FLASH_MMC_DEV=0
- CONFIG_FASTBOOT_CMD_OEM_FORMAT=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-diff --git a/drivers/fastboot/Kconfig b/drivers/fastboot/Kconfig
-index d63ecdd27e..34864ca613 100644
---- a/drivers/fastboot/Kconfig
-+++ b/drivers/fastboot/Kconfig
-@@ -64,7 +64,7 @@ config FASTBOOT_USB_DEV
+diff --git a/drivers/usb/dwc3/core.c b/drivers/usb/dwc3/core.c
+index 2498f0efb1..3e2295d75c 100644
+--- a/drivers/usb/dwc3/core.c
++++ b/drivers/usb/dwc3/core.c
+@@ -600,6 +600,30 @@ static void dwc3_core_exit_mode(struct dwc3 *dwc)
+ 	}
+ }
  
- config FASTBOOT_FLASH
- 	bool "Enable FASTBOOT FLASH command"
--	default y if ARCH_SUNXI
-+	default y if ARCH_SUNXI || ARCH_ROCKCHIP
- 	depends on MMC || (NAND && CMD_MTDPARTS)
- 	select IMAGE_SPARSE
- 	help
-@@ -89,6 +89,8 @@ endchoice
- config FASTBOOT_FLASH_MMC_DEV
- 	int "Define FASTBOOT MMC FLASH default device"
- 	depends on FASTBOOT_FLASH_MMC
-+	default 1 if ROCKCHIP_RK3328
-+	default 0 if ARCH_ROCKCHIP
- 	default 0 if ARCH_SUNXI && MMC_SUNXI_SLOT_EXTRA = -1
- 	default 1 if ARCH_SUNXI && MMC_SUNXI_SLOT_EXTRA != -1
- 	help
++static void dwc3_uboot_hsphy_mode(struct dwc3_device *dwc3_dev, struct dwc3 *dwc)
++{
++	enum usb_phy_interface hsphy_mode = dwc3_dev->hsphy_mode;
++	u32 reg;
++
++	/* Set dwc3 usb2 phy config */
++	reg = dwc3_readl(dwc->regs, DWC3_GUSB2PHYCFG(0));
++	reg |= DWC3_GUSB2PHYCFG_PHYIF;
++	reg &= ~DWC3_GUSB2PHYCFG_USBTRDTIM_MASK;
++
++	switch (hsphy_mode) {
++	case USBPHY_INTERFACE_MODE_UTMI:
++		reg |= DWC3_GUSB2PHYCFG_USBTRDTIM_8BIT;
++		break;
++	case USBPHY_INTERFACE_MODE_UTMIW:
++		reg |= DWC3_GUSB2PHYCFG_USBTRDTIM_16BIT;
++		break;
++	default:
++		break;
++	}
++
++	dwc3_writel(dwc->regs, DWC3_GUSB2PHYCFG(0), reg);
++}
++
+ #define DWC3_ALIGN_MASK		(16 - 1)
+ 
+ /**
+@@ -708,6 +732,8 @@ int dwc3_uboot_init(struct dwc3_device *dwc3_dev)
+ 		goto err0;
+ 	}
+ 
++	dwc3_uboot_hsphy_mode(dwc3_dev, dwc);
++
+ 	ret = dwc3_event_buffers_setup(dwc);
+ 	if (ret) {
+ 		dev_err(dwc->dev, "failed to setup event buffers\n");
+diff --git a/drivers/usb/dwc3/core.h b/drivers/usb/dwc3/core.h
+index cfe29884e7..c6888064b4 100644
+--- a/drivers/usb/dwc3/core.h
++++ b/drivers/usb/dwc3/core.h
+@@ -162,6 +162,18 @@
+ /* Global USB2 PHY Configuration Register */
+ #define DWC3_GUSB2PHYCFG_PHYSOFTRST	(1 << 31)
+ #define DWC3_GUSB2PHYCFG_SUSPHY		(1 << 6)
++#define DWC3_GUSB2PHYCFG_PHYIF		(1 << 3)
++
++/* Global USB2 PHY Configuration Mask */
++#define DWC3_GUSB2PHYCFG_USBTRDTIM_MASK		(0xf << 10)
++
++/* Global USB2 PHY Configuration Offset */
++#define DWC3_GUSB2PHYCFG_USBTRDTIM_OFFSET	10
++
++#define DWC3_GUSB2PHYCFG_USBTRDTIM_16BIT	(0x5 << \
++		DWC3_GUSB2PHYCFG_USBTRDTIM_OFFSET)
++#define DWC3_GUSB2PHYCFG_USBTRDTIM_8BIT		(0x9 << \
++		DWC3_GUSB2PHYCFG_USBTRDTIM_OFFSET)
+ 
+ /* Global USB3 PIPE Control Register */
+ #define DWC3_GUSB3PIPECTL_PHYSOFTRST	(1 << 31)
+diff --git a/include/dwc3-uboot.h b/include/dwc3-uboot.h
+index 9941cc37a3..3c9e204cf0 100644
+--- a/include/dwc3-uboot.h
++++ b/include/dwc3-uboot.h
+@@ -10,10 +10,12 @@
+ #define __DWC3_UBOOT_H_
+ 
+ #include <linux/usb/otg.h>
++#include <linux/usb/phy.h>
+ 
+ struct dwc3_device {
+ 	unsigned long base;
+ 	enum usb_dr_mode dr_mode;
++	enum usb_phy_interface hsphy_mode;
+ 	u32 maximum_speed;
+ 	unsigned tx_fifo_resize:1;
+ 	unsigned has_lpm_erratum;
+diff --git a/include/linux/usb/phy.h b/include/linux/usb/phy.h
+new file mode 100644
+index 0000000000..158ca9cd85
+--- /dev/null
++++ b/include/linux/usb/phy.h
+@@ -0,0 +1,19 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * USB PHY defines
++ *
++ * These APIs may be used between USB controllers.  USB device drivers
++ * (for either host or peripheral roles) don't use these calls; they
++ * continue to use just usb_device and usb_gadget.
++ */
++
++#ifndef __LINUX_USB_PHY_H
++#define __LINUX_USB_PHY_H
++
++enum usb_phy_interface {
++	USBPHY_INTERFACE_MODE_UNKNOWN,
++	USBPHY_INTERFACE_MODE_UTMI,
++	USBPHY_INTERFACE_MODE_UTMIW,
++};
++
++#endif /* __LINUX_USB_PHY_H */
 -- 
 2.18.0.321.gffc6fa0e3
 
