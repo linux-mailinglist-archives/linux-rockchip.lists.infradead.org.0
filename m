@@ -2,74 +2,93 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7046BE032F
-	for <lists+linux-rockchip@lfdr.de>; Tue, 22 Oct 2019 13:40:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36426E03C6
+	for <lists+linux-rockchip@lfdr.de>; Tue, 22 Oct 2019 14:24:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rZJmRyE/NQXNEu024PfnI8d3v7Rr9OoapZG+K10Rmmo=; b=Je820LSvzVij7z
-	CpTbi1EbAqUAKvQurho+lqjSWyX55WTFc/V5Z3lmQUc8rdt6d3f52qSakyQ9I8w+757mFixgyBbCT
-	03DUKM1KgBzZWEl/9VI9UYjzTsPxWwAOhVcpwKGWbyrgoa1Og1M2omUHuG6Sv3rgEm3sVbbQ8TqYm
-	+/pWDFPdO51ITBwiH0xthQ5ld3HYXUjGdHGWAIPDUxkCMVCXAPZyAqs5GxOUqFkIlJLtPYdgW2xPI
-	c0qWpK9r/j9/T9q3azbQttPlAXxUVRITfLDfSqykf+0II5KrHIskhf6KoLyo44OJk3S4g3UZTisZn
-	TwFtksXLXKyWG6GEsUlA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ho/Bkz0FmvYKsrOFqPyBgYmDSFGSfRct1vjZgQp64rE=; b=gt+j2Cb4mXtY3OJjnKg5SGkQb
+	8TTd4c2SPEjfLvBfQA/wk+WnUGO31BY8vPs3xSOg7ZtBSYfVIHopUjVRovDEN4/zCRa68n3ppq1bo
+	DvW5w8yoQEAJAhHMtcN/wsto6tESexN0T9m6pedntU7KsxS0Zt/rnK5m6wbJCU5XGcKaSdbDOi4Mi
+	ROBRGxiDvxKtkAig+8QK7R8rKk7zt8uQkwxAX8LaNiQz0lzXRD4NOUIk7hi0allqDNh/n2FZghNQU
+	bWeOHTt6nsHE4Nn9GC90j8t3mCi4xOF9jaWmHgfdw2XhtwMJugwz1iqLlWwF15icw+XADoOpfb268
+	yd/LKSgLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMsX0-0001s2-76; Tue, 22 Oct 2019 11:40:54 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1iMtDG-0001DG-H6; Tue, 22 Oct 2019 12:24:34 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMsWv-0001pj-1Q; Tue, 22 Oct 2019 11:40:50 +0000
-Received: by mail-oi1-f195.google.com with SMTP id a15so13893945oic.0;
- Tue, 22 Oct 2019 04:40:48 -0700 (PDT)
+ id 1iMtD5-00011i-9X
+ for linux-rockchip@lists.infradead.org; Tue, 22 Oct 2019 12:24:24 +0000
+Received: by mail-wm1-x344.google.com with SMTP id c22so6852046wmd.1
+ for <linux-rockchip@lists.infradead.org>; Tue, 22 Oct 2019 05:24:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=Ut7DiejZhR1eCG20yMrwS8a1hqYS2ddBi/U75ecWkFY=;
+ b=jid6ntUK0esQpG508NqfQT8zlE0uB1es+ezydvxrncS5YL4nlvOrDTIZAThJNt1JBz
+ UrQKQDEA9sdYPOvuhFTDlPdmpkopnU/enaASQsHEBQaqZrYTdNIQqGCDfElQymPwO8Ll
+ s+thwC7xS0XKxFqUyXqcA73LqBGFRnP99zXtj2Vt+p5Zrbnmv+JAR3tbjblJ1nUHlgYu
+ b9YpZJ97WC7Ig6r49FwggaBC2uFCe2oUjfQFjPdo0DFpaOBtfs5rwa92IUbItW9vWfPg
+ z9+rRt5ubyBiRN150rIQRhZOKeDwPfYRcLpQVmo+SWKDJzrsxhT4se8JkiP5gzWwVAkg
+ J93w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=MTkUrxhJaaygKpYFG6XKyORLB/6UsrnNnAcZ2HEl3vA=;
- b=j7e/zRyXU5L0j2HfQBbiPRz1FpuWUq8OpkY1fEgg+b6eFMpCFxxa0wxK5igcfbKDzn
- 0fjgfODFh85mRztti513M90VKEGQDozP6DZEl25T3X3Iy4djigU6eXU/ITq6h8aeyL7V
- LAqP5IUgr5LTF7qI4BZQslJBkP2eW6WxQGGtostoG6/DVsy3P5h9xgSsDzlmJEyhYhVT
- R3DD4GkxWGbDM8rVnTS3BTBcBpJaZrIy+uDLc1jivmv9cfCgMeyQZXYsVYHGxG1ICltD
- rGbvZyqQ4osi2/pZHZ/7Rnqd4CaUHgH/V8RoEwOMrreJvEqnOtXcypGTFGWJtrcb/lU0
- S17w==
-X-Gm-Message-State: APjAAAVeDIySB0nVGznHacrGOS95zpZ36M8Atl9htX5+7bGtkEjdRRjl
- eqn5OtYlv0a53ZuWqk0xefPqx+DbDNEiRGMbTxA=
-X-Google-Smtp-Source: APXvYqzhQ8cZ06PtyQQYS8VBvz7ZAfya04dDgTKpedBCyvYLKvYUP4z21wflkhBwZ+Lx/Betkfre5JCQCLddcCfBX8w=
-X-Received: by 2002:aca:882:: with SMTP id 124mr2542881oii.54.1571744447771;
- Tue, 22 Oct 2019 04:40:47 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Ut7DiejZhR1eCG20yMrwS8a1hqYS2ddBi/U75ecWkFY=;
+ b=N+gp6DTdXUccBTgy7HatSI7hqGWpdKTGKsYDtqd7O1p7mybJJZxxsI5HidY5ZRdKYH
+ akv+5x/uiNdRoMMWfHdjYilz3OzXnZpTHhJd5buagfjToD3TvhI0N/kBYI1RdPNl/hhK
+ z9CYyZeeupE+uy8XOPks8eFkO8Sm6IgeDYHVtpOYLtvl+rrSWjbzFWqeQIYQxm9I3YDb
+ hdPcLViI6oHNnCvEXcA+F28FF5KtbFM/q8Wb9l/ZFHn2jdlrLbjDmfDgNedjMKuEqnWJ
+ FDKBh0K50G6jjtZFwGo0V4fAbkfa0Rr7kAFFq04f+G4091x4cReV22LzJrXxidD8YJCB
+ 06HA==
+X-Gm-Message-State: APjAAAXlLRVB7bxaSRhoemSV1IlpRV8/AgjUhooO066dWRx3RkbFGJPA
+ D75V6lHJpEXuasoywpDT6pfULA==
+X-Google-Smtp-Source: APXvYqwgjPDPNW7a1xJ2Rc6OO4jAurB2ZpMNxcJUVeFXsu+xl+Or1DkHLx+C8XVRN8u73S9NUcWQwg==
+X-Received: by 2002:a7b:cb54:: with SMTP id v20mr2708736wmj.91.1571747060898; 
+ Tue, 22 Oct 2019 05:24:20 -0700 (PDT)
+Received: from [192.168.86.34]
+ (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
+ by smtp.googlemail.com with ESMTPSA id u26sm19101660wrd.87.2019.10.22.05.24.19
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 22 Oct 2019 05:24:19 -0700 (PDT)
+Subject: Re: [PATCH 1/2] dt-bindings: nvmem: add binding for Rockchip OTP
+ controller
+To: Heiko Stuebner <heiko@sntech.de>
+References: <20190925184957.14338-1-heiko@sntech.de>
+From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+Message-ID: <3b5f4018-82b1-946d-d81d-252eb872d5d1@linaro.org>
+Date: Tue, 22 Oct 2019 13:24:18 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20191021214550.1461-1-robh@kernel.org>
- <20191021214550.1461-5-robh@kernel.org>
- <20191022113001.GG4756@pendragon.ideasonboard.com>
-In-Reply-To: <20191022113001.GG4756@pendragon.ideasonboard.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 22 Oct 2019 13:40:36 +0200
-Message-ID: <CAMuHMdXCq9urRDCSmLueVpsv9-FxJ6pxQf-9Ua=vT-TrRs++fQ@mail.gmail.com>
-Subject: Re: [PATCH 4/6] drm/cma-helper: Support DRM_MODE_DUMB_KERNEL_MAP flag
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+In-Reply-To: <20190925184957.14338-1-heiko@sntech.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_044049_083408_F929B8F4 
-X-CRM114-Status: GOOD (  10.25  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191022_052423_367654_4DB0B41B 
+X-CRM114-Status: GOOD (  18.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,70 +101,63 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Vetter <daniel@ffwll.ch>,
- =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Liviu Dudau <liviu.dudau@arm.com>,
- DRI Development <dri-devel@lists.freedesktop.org>,
- Philippe Cornu <philippe.cornu@st.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- linux-stm32@st-md-mailman.stormreply.com, Rob Herring <robh@kernel.org>,
- Kevin Hilman <khilman@baylibre.com>, Chen-Yu Tsai <wens@csie.org>,
- Xinliang Liu <z.liuxinliang@hisilicon.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Xinwei Kong <kong.kongxinwei@hisilicon.com>,
- Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
- "James \(Qian\) Wang" <james.qian.wang@arm.com>, CK Hu <ck.hu@mediatek.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Chen Feng <puck.chen@hisilicon.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, linux-mediatek@lists.infradead.org,
- Vincent Abriou <vincent.abriou@st.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
- Sean Paul <sean@poorly.run>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, Sandy Huang <hjc@rock-chips.com>,
- Yannick Fertre <yannick.fertre@st.com>,
- =?UTF-8?Q?Noralf_Tr=C3=B8nnes?= <noralf@tronnes.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Rongrong Zou <zourongrong@gmail.com>,
- Brian Starkey <brian.starkey@arm.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org,
+ christoph.muellner@theobroma-systems.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Laurent,
 
-On Tue, Oct 22, 2019 at 1:30 PM Laurent Pinchart
-<laurent.pinchart@ideasonboard.com> wrote:
-> On Mon, Oct 21, 2019 at 04:45:48PM -0500, Rob Herring wrote:
 
-> > --- a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-> > +++ b/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-> > @@ -419,6 +419,7 @@ int rockchip_gem_dumb_create(struct drm_file *file_priv,
-> >        * align to 64 bytes since Mali requires it.
-> >        */
-> >       args->pitch = ALIGN(min_pitch, 64);
-> > +     args->flags = DRM_MODE_DUMB_KERNEL_MAP;
-> >       args->size = args->pitch * args->height;
->
-> My OCD gets triggered by flags appearing in the middle here while it is
-> at the end in other drivers :-)
+On 25/09/2019 19:49, Heiko Stuebner wrote:
+> Newer Rockchip SoCs use a different IP for accessing special one-
+> time-programmable memory, so add a binding for these controllers.
+> 
+> Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 
-... while "flags" appears before "pitch" and "size" in the actual struct
-definition... Aaarghl ;-)
+Applied both, thanks,
+srini
 
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+> ---
+>   .../bindings/nvmem/rockchip-otp.txt           | 25 +++++++++++++++++++
+>   1 file changed, 25 insertions(+)
+>   create mode 100644 Documentation/devicetree/bindings/nvmem/rockchip-otp.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/nvmem/rockchip-otp.txt b/Documentation/devicetree/bindings/nvmem/rockchip-otp.txt
+> new file mode 100644
+> index 000000000000..40f649f7c2e5
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/nvmem/rockchip-otp.txt
+> @@ -0,0 +1,25 @@
+> +Rockchip internal OTP (One Time Programmable) memory device tree bindings
+> +
+> +Required properties:
+> +- compatible: Should be one of the following.
+> +  - "rockchip,px30-otp" - for PX30 SoCs.
+> +  - "rockchip,rk3308-otp" - for RK3308 SoCs.
+> +- reg: Should contain the registers location and size
+> +- clocks: Must contain an entry for each entry in clock-names.
+> +- clock-names: Should be "otp", "apb_pclk" and "phy".
+> +- resets: Must contain an entry for each entry in reset-names.
+> +  See ../../reset/reset.txt for details.
+> +- reset-names: Should be "phy".
+> +
+> +See nvmem.txt for more information.
+> +
+> +Example:
+> +	otp: otp@ff290000 {
+> +		compatible = "rockchip,px30-otp";
+> +		reg = <0x0 0xff290000 0x0 0x4000>;
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +		clocks = <&cru SCLK_OTP_USR>, <&cru PCLK_OTP_NS>,
+> +			 <&cru PCLK_OTP_PHY>;
+> +		clock-names = "otp", "apb_pclk", "phy";
+> +	};
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
