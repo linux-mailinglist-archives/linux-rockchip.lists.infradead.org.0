@@ -2,41 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A23BFE2686
-	for <lists+linux-rockchip@lfdr.de>; Thu, 24 Oct 2019 00:41:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39387E2690
+	for <lists+linux-rockchip@lfdr.de>; Thu, 24 Oct 2019 00:44:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5o9FiDhyL19nWifr2yvE9ftn1z1QKgSi4HdwvkX7GRk=; b=aZ/Ap0pMiRJ66i
-	/PIy9dZBl5F/W5MaiFQb+WUVheU3YgD0NrhgyhjkTFsBw+IbqtEV7JXf8/YhZDrUkF7QglHBEQkZX
-	/ZBIJc3jZOPYdcC1cXuJmx+zCzKCbZJtvaiEuiNGDtpDouGZ84OVh9yn9dgNfyDQqtHyViuQ0G8r9
-	/O6yV3vvIxDa2ZXAPUKSht1c0Gha68e1kMj4p0k8rBzo7D0Fshhv3EKqbIeUqQ1URu6I0sZ65Heor
-	pmHwOFLHUzIBGcJ7/5v7SrHWD6tvzogqZvJfbyjaKlOQv2uagXmDE4vXsCEChk93dD8IO3LIJgQpk
-	D5CAWlfgQu6pOaSGV15g==;
+	List-Owner; bh=X1kzGb1eI4eR4N4710pCZ+fv17SqvE9gUn+Avad8Ars=; b=VQ01otYJA0p/Tz
+	qdflcw222XUagq7C965jEDRgVsLkpB7j82jpo7cNTwPuPHTTLfs4A9pq++QcrchISbqjUJCa2llVw
+	Z8bwslbNTDZrLj3qcnVMpxoxNFFVltIxq3XsfZDYCK5QJuigJglU9G8fsrt3DfGm+7nrOVJzw7Kkb
+	F1y3j9v/M7SGrddtmmVQ08Ivk6AEz+ROarqf4OV3iJ1zg7PUg3BpbpgNLWflv/npjKRv0xLSSRy7/
+	VvsOsjjVchiEBD9hC64OGFAVGhbY9Ac0moikGziDDOZXpCUQ/QjNLlTsMyTYMMZTfmoQe9N/s8ZOw
+	HYkXovzvNuc3EEdWQDWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNPJl-0000Zt-89; Wed, 23 Oct 2019 22:41:25 +0000
+	id 1iNPMc-0001BI-CV; Wed, 23 Oct 2019 22:44:22 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNPJi-0000Yr-7p; Wed, 23 Oct 2019 22:41:23 +0000
+ id 1iNPMY-00018C-Mc; Wed, 23 Oct 2019 22:44:20 +0000
 Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
  helo=phil.fritz.box)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iNPJg-0004Ia-RW; Thu, 24 Oct 2019 00:41:20 +0200
+ id 1iNPMX-0004JL-5g; Thu, 24 Oct 2019 00:44:17 +0200
 From: Heiko Stuebner <heiko@sntech.de>
 To: linux-rockchip@lists.infradead.org
-Subject: [PATCH] arm64: dts: rockchip: add px30 otp controller
-Date: Thu, 24 Oct 2019 00:41:13 +0200
-Message-Id: <20191023224113.3268-1-heiko@sntech.de>
+Subject: [PATCH] arm64: dts: rockchip: remove px30 default optee node
+Date: Thu, 24 Oct 2019 00:44:09 +0200
+Message-Id: <20191023224409.3550-1-heiko@sntech.de>
 X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_154122_426853_AF049599 
-X-CRM114-Status: GOOD (  10.53  )
+X-CRM114-CacheID: sfid-20191023_154418_889059_347B6EFB 
+X-CRM114-Status: UNSURE (   8.69  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,49 +64,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The px30 soc contains a controller for one-time-programmable memory,
-so add the necessary node for it and the fields defined in it by default.
+Having a default optee node in a soc devicetree is not really good.
+For one there is no guarantee that any tee got loaded and there's even
+the possibility that a completely different TEE got loaded.
+
+OP-Tee however will insert relevant nodes to the devicetree (firmware
++reserved memory sections) during its own startup, so there really is
+no need to provide a default node.
 
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 ---
- arch/arm64/boot/dts/rockchip/px30.dtsi | 24 ++++++++++++++++++++++++
- 1 file changed, 24 insertions(+)
+ arch/arm64/boot/dts/rockchip/px30.dtsi | 7 -------
+ 1 file changed, 7 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-index dd58b1bc5981..767f3ce6e9f7 100644
+index 767f3ce6e9f7..5ab281bb40a4 100644
 --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
 +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-@@ -664,6 +664,30 @@
+@@ -161,13 +161,6 @@
  		status = "disabled";
  	};
  
-+	otp: nvmem@ff290000 {
-+		compatible = "rockchip,px30-otp";
-+		reg = <0x0 0xff290000 0x0 0x4000>;
-+		clocks = <&cru SCLK_OTP_USR>, <&cru PCLK_OTP_NS>,
-+			 <&cru PCLK_OTP_PHY>;
-+		clock-names = "otp", "apb_pclk", "phy";
-+		resets = <&cru SRST_OTP_PHY>;
-+		reset-names = "phy";
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+
-+		/* Data cells */
-+		cpu_id: id@7 {
-+			reg = <0x07 0x10>;
-+		};
-+		cpu_leakage: cpu-leakage@17 {
-+			reg = <0x17 0x1>;
-+		};
-+		performance: performance@1e {
-+			reg = <0x1e 0x1>;
-+			bits = <4 3>;
-+		};
-+	};
-+
- 	cru: clock-controller@ff2b0000 {
- 		compatible = "rockchip,px30-cru";
- 		reg = <0x0 0xff2b0000 0x0 0x1000>;
+-	firmware {
+-		optee {
+-			compatible = "linaro,optee-tz";
+-			method = "smc";
+-		};
+-	};
+-
+ 	gmac_clkin: external-gmac-clock {
+ 		compatible = "fixed-clock";
+ 		clock-frequency = <50000000>;
 -- 
 2.23.0
 
