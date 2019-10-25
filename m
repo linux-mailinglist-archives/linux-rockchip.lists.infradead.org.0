@@ -2,76 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70C3FE4C48
-	for <lists+linux-rockchip@lfdr.de>; Fri, 25 Oct 2019 15:32:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5576BE4C4C
+	for <lists+linux-rockchip@lfdr.de>; Fri, 25 Oct 2019 15:32:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9XUZ9xYeqQJ6qJWlXvrzCqeJBanOrR0+aDZYNELiCZU=; b=gc7UzQxtEu93cb
-	quWyf8KcZTd4nK3fs730Azlw6TKGQto4NtL8ZX1jtCxqzwJ9lRSFhJqH9QRdiLVHCSNjqA9J7/mSR
-	rEnbZARZzZyy7yOzacbHTIPIcp/shDhSBNij0wScZsT6isHUDlLP8sj2phZxlsIzxFvtxsvMHGxF+
-	15j9/TBY7DBWBQGFpmtMcMG/gNtnUsaGQYUDsj4WyhENKgo7XdHKVJK9H+yaeZRkpi0Vvvaf9gN4l
-	6NAG91ChffzSDOxWS7dELzCDZ5v5plXYbY7dHjGNXJhIfmUhOxCpmbaXwV3teakxp7bF7USwzkBfy
-	kJB40/d6U17Krm1YvA5g==;
+	List-Owner; bh=s+UThBdBISnwUnlVmxHeEwHyXOWYjyggnp7XYLLFUPg=; b=QRtTCWm1faurGd
+	GeUpmzRn0znIIt+1iNFPpM3QHm6aeDgbp90pYJhjMs1eq1q7vCZc8j3QQiZLO957O60v2XV3DBYU+
+	exQyZabt8XToDWBbL1CihchvI9Npurkh/y+7rcENvUfvdsNNLCde/bOxRBDL6LeLVgNTMPDV+Llbg
+	UnsEJysNdQvjVIzVZ+mK70/opp8JSrcAaPSH/+eyP9OK1VEBoLhjXauXj1Zzb7Q6ItE6sYSFlOacF
+	uGrovdvTHjNuixExnY1rjdXoYnSlvHbbSQ4q5plYyH9yAKMw2mG18iFeGCtyUXJ28sM68N+LlLi8b
+	N4Gk+jCsYXXkIrsriNZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNzhO-000090-62; Fri, 25 Oct 2019 13:32:14 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iNzhv-0000g2-Js; Fri, 25 Oct 2019 13:32:47 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNzgV-0007sO-W1
- for linux-rockchip@lists.infradead.org; Fri, 25 Oct 2019 13:31:21 +0000
-Received: by mail-pf1-x442.google.com with SMTP id v4so1591821pff.6
- for <linux-rockchip@lists.infradead.org>; Fri, 25 Oct 2019 06:31:19 -0700 (PDT)
+ id 1iNzgh-00081l-T9
+ for linux-rockchip@lists.infradead.org; Fri, 25 Oct 2019 13:31:34 +0000
+Received: by mail-pg1-x541.google.com with SMTP id c8so1580104pgb.2
+ for <linux-rockchip@lists.infradead.org>; Fri, 25 Oct 2019 06:31:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=oNSnTAXUPLhOggYZsXmByzoHissc2cQrcW1ijnP3ewc=;
- b=cgKZg2IA8rLE/Gb1Fea2/UKtImFx1r+3/oLrUJKGJkgq3mqfzGP0fCzY87EqP9S0+0
- WQXRy0BralqXwRQgIPwF2wZyUs5/mIyBfACB/94kBYzmDeud7Zq9bMrWbAL3xy6flbQs
- pc4pHa+WCeiKDem2XAefpAmHZf6J9Dozhans0=
+ bh=z55UMaWEIEJNVekf1KUtXJqZFUzcCvdu1bfEeskovPo=;
+ b=VTVnd3DJJxvlTLtyPGznBCDcaWFHpqt3B2OWsYufUi5PjNkalSZF7zX2RHBscVJH34
+ NvmlefixU2wv6mbtZk2HQh7csJV0v1aqD+k6gpFFRvJ06om6HBZe7CBPz+9dC/yss4fK
+ lh1QNLMpzK6BbmRsTQuBp3GKYRt0JrHDTgHCA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=oNSnTAXUPLhOggYZsXmByzoHissc2cQrcW1ijnP3ewc=;
- b=eypKBt1vRixpkNqDX8RjF52wWBOfN3ortOj5FIaz2Es4YWmiOI0k4AEaXNfIyrY0lZ
- AhldXZFlnk0ayX8qP4R0LCUp3NLEwHqIM9JaZSTHKJzTzTkGOAz16CP8w/lGPtxUZKQ6
- 49StKti1am/jRCGHhMOLNDTu+AfY/UxBz9BGlL9VbCONZI6EairHfDYg5N3e6FCeo4u4
- 35Qlhnp34F7SyA83ooJx2UuaukbZG0j790RAUtl15GBBjMNJ6rA5NOnE7MDuE0TMRVtb
- hpiqaQ1eMc99D1RMJ/RJvKJT2Kotfue20H8HXnfoj+a9rOvJ2cmOsB/K0R+Mq6/mKRS4
- 8jqA==
-X-Gm-Message-State: APjAAAVPLcuXbSrfkBkQFeaILR0wYDs4plKkZdUXBFxR8IBaP5AiBq2e
- ClF5eXGGqrufb9NEJM7lh4b8LA==
-X-Google-Smtp-Source: APXvYqzbwsXWBs3ky/vHamL+ysr3yMSuWsGovFl/YV0ZreeaOiOp90nD6ACzcZJAlWwB0QQOpZKsVA==
-X-Received: by 2002:a63:4525:: with SMTP id s37mr4571578pga.148.1572010278731; 
- Fri, 25 Oct 2019 06:31:18 -0700 (PDT)
+ bh=z55UMaWEIEJNVekf1KUtXJqZFUzcCvdu1bfEeskovPo=;
+ b=B4rSvrTylyv+5AUa/ywlMffAh3ucs8RA6IdCEQM0/j4O5zZZR/8uRKod4IDLQSImI2
+ dvOr/nFZ680u2v9IOv3eqBru8niyQ63USkkN8I9MynWOsd4IjpekBtK5NLGvUoDF/wbY
+ tS72XS/TA2fWyGh+46/M7BJuoJhXDJCm6Nh+QS/gcHR3wdb2YbDJeR9N2y97fSCrAbGe
+ BTyWC11F+Uhg950MS/8Ch6VMcg2ZQT+WkEpFLcaTrocQO+0nJgcn2RZRbQOhS8EI1F0z
+ SB/AtqDvbSYYpVY2S/gI4f0bjd4v0J5hahk8vY/MVvrgqJ/P5BVCmMafAGFoiDqM9psR
+ lWJg==
+X-Gm-Message-State: APjAAAXuttGOluH0Y1JO4wNRlPGU6z6F8TlJvDtsuAQYyCfkjl8Wy66Z
+ cx+kNrlg//E9OLr1JqS/zq6P7A==
+X-Google-Smtp-Source: APXvYqzEBEK954f+cnTf4ONcLs7stQK9JprT2+giiC3WqbjcH+UZmlt6EYuRfIZ58RAxo7Z4G+ogsw==
+X-Received: by 2002:a17:90a:ff11:: with SMTP id
+ ce17mr4114202pjb.110.1572010290956; 
+ Fri, 25 Oct 2019 06:31:30 -0700 (PDT)
 Received: from localhost ([2401:fa00:1:10:79b4:bd83:e4a5:a720])
- by smtp.gmail.com with ESMTPSA id y36sm2379120pgk.66.2019.10.25.06.31.14
+ by smtp.gmail.com with ESMTPSA id z13sm3706421pgz.42.2019.10.25.06.31.26
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 25 Oct 2019 06:31:17 -0700 (PDT)
+ Fri, 25 Oct 2019 06:31:30 -0700 (PDT)
 From: Cheng-Yi Chiang <cychiang@chromium.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v8 5/6] ARM: dts: rockchip: Add HDMI support to
- rk3288-veyron-analog-audio
-Date: Fri, 25 Oct 2019 21:30:06 +0800
-Message-Id: <20191025133007.11190-6-cychiang@chromium.org>
+Subject: [PATCH v8 6/6] ARM: dts: rockchip: Add HDMI audio support to
+ rk3288-veyron-mickey.dts
+Date: Fri, 25 Oct 2019 21:30:07 +0800
+Message-Id: <20191025133007.11190-7-cychiang@chromium.org>
 X-Mailer: git-send-email 2.24.0.rc0.303.g954a862665-goog
 In-Reply-To: <20191025133007.11190-1-cychiang@chromium.org>
 References: <20191025133007.11190-1-cychiang@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_063120_264274_102BD430 
-X-CRM114-Status: GOOD (  12.41  )
+X-CRM114-CacheID: sfid-20191025_063131_971212_EA8101A1 
+X-CRM114-Status: UNSURE (   9.19  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -114,36 +116,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-All boards using rk3288-veyron-analog-audio.dtsi have HDMI audio.
-Specify the support of HDMI audio on machine driver using compatible
-string so machine driver creates HDMI audio device.
+Add HDMI audio support to veyron-mickey. The sound card should expose
+one audio device for HDMI.
 
 Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
 ---
- arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm/boot/dts/rk3288-veyron-mickey.dts | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-diff --git a/arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi b/arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi
-index 445270aa136e..92ea623401e9 100644
---- a/arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi
-+++ b/arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi
-@@ -8,7 +8,7 @@
- 
- / {
- 	sound {
--		compatible = "rockchip,rockchip-audio-max98090";
-+		compatible = "rockchip,rockchip-audio-max98090-hdmi";
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&mic_det>, <&hp_det>;
- 		rockchip,model = "VEYRON-I2S";
-@@ -17,6 +17,7 @@
- 		rockchip,hp-det-gpios = <&gpio6 RK_PA5 GPIO_ACTIVE_HIGH>;
- 		rockchip,mic-det-gpios = <&gpio6 RK_PB3 GPIO_ACTIVE_LOW>;
- 		rockchip,headset-codec = <&headsetcodec>;
-+		rockchip,hdmi-codec = <&hdmi>;
+diff --git a/arch/arm/boot/dts/rk3288-veyron-mickey.dts b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
+index aa352d40c991..98a2aee240f1 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-mickey.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
+@@ -28,6 +28,13 @@
+ 		regulator-boot-on;
+ 		vin-supply = <&vcc33_sys>;
  	};
++
++	sound {
++		compatible = "rockchip,rockchip-audio-hdmi";
++		rockchip,model = "VEYRON-HDMI";
++		rockchip,i2s-controller = <&i2s>;
++		rockchip,hdmi-codec = <&hdmi>;
++	};
  };
  
+ &cpu_thermal {
 -- 
 2.24.0.rc0.303.g954a862665-goog
 
