@@ -2,89 +2,60 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18784E3E40
-	for <lists+linux-rockchip@lfdr.de>; Thu, 24 Oct 2019 23:34:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A596EE488B
+	for <lists+linux-rockchip@lfdr.de>; Fri, 25 Oct 2019 12:25:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:Message-Id:
-	Mime-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=rWd0TiJt+fkIl5gcZE4R83a/OjqgQa8y7dkZkbuOmoI=; b=eHK
-	dFk0jsyK8hdY+Fb92vgQDKBiEAHXyQ127b62uqLd22vq4RueAWL2MaGIPSBdjC7ncuWerbm7X4/J5
-	yNLfKfXpa8QM9Dy+9w+o1EzHWs17GqqFp8gkxiCQLYjzZYxVNS7AosV1e8ZiXCH8WAJhivGZ30VzS
-	ifnrDYRXrefiQsgSdvNvy59B1VzaE/ZNG8B9pwAxqwGXLp3NtsOLSIJBAkZUEUdWjLMGP966y0Jtj
-	W/i9CQQKQ6tfKqCrKmkS/QTbXdXDtFoUGxXT+wmmAU+USl8x56JVPGzfxAsLO/Yk5TFdDqKCe90IZ
-	Q9JakCC+nFJ393AA/+q0dc0uGkR7Zew==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zEPSQTW+jz6z0+fmWBzDVrTKczpIeyl/ONCOf9iczpY=; b=L0410nS4azqDEQ
+	PaCIAiHkfY5gxeXcP4xJZDUl2+0pfC8fswtW1lNoAJsbY+PmTZNK7SoC7Fn7K2EmoqPDMG3+6WzDF
+	XXbxM93ecsKFQIlwp+eQbW7Bw56JIzQsazRhc5I4W+G6LHVJVxpDJG4Iv6drBRy/lDdYXp0oX1P66
+	qUfdZ0v7sD3Qm6PlDAVEkQ+fizKY9qX6kt7Ko9bRQRQAujp97QdyFKMF48M2mw/K7sXxd21aflr3S
+	8/D+5rGeR8N5CqNxiy4fYitemqt+LN3S7XlpfyTHYDIZLgXvxhuHjmwDwbbMLLXD+4FkCkWj2Asi9
+	vREyvlcoUVi0hYFqP3WQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNkko-0007vt-Pr; Thu, 24 Oct 2019 21:34:46 +0000
-Received: from out2-smtp.messagingengine.com ([66.111.4.26])
+	id 1iNwmb-0003eU-G9; Fri, 25 Oct 2019 10:25:25 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNkkb-0007nF-TQ; Thu, 24 Oct 2019 21:34:35 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 1B614200E3;
- Thu, 24 Oct 2019 17:34:29 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute3.internal (MEProxy); Thu, 24 Oct 2019 17:34:29 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jany.st; h=
- mime-version:message-id:date:from:to:subject:content-type; s=
- mesmtp; bh=3/LPx7xKSE7aQL6d8hYxygWw+WEn0fkBBBqOy943J3U=; b=lrsQG
- f5RfJnf7V9B8m8IBK8uMiwQnl7/nWYfrvlfW5DNdLENvG3Yov4Bl8zyWD0HmVNAX
- 2up2ssf18B/ca1uQStTzN4hr4SRy8EhTztjJauFVoHS3MAOzcBVVRxt1TkjOaHsy
- WphkDutWRytdbMfDUNSYi+qZ+5vWnMHQli6+KE=
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=content-type:date:from:message-id
- :mime-version:subject:to:x-me-proxy:x-me-proxy:x-me-sender
- :x-me-sender:x-sasl-enc; s=fm1; bh=3/LPx7xKSE7aQL6d8hYxygWw+WEn0
- fkBBBqOy943J3U=; b=nbku0FwZHe1JOnSMCyNnmukAi4DJ/PcoyAse5KIfQzNSe
- Gk1pssHOHLoAfrEXpmzZek9oVPounQWbclJkX0dFvKGCSRiKRXLFEwIEvo1tQQOD
- AE7was6Zr8culYjYO5unR8dvyfiGcLh/A+sRpsVLJErY+fhpiI/4uBc6eo24Hc2O
- FB0sH3DJctM63VJXngkFUVi7esBJhfGhxMFUVPPKrqG9tIPCIMK2AF1DthkK72rm
- XrjROUWQhAk98N2II8AHOkcHlpFt65AFOFWMYtAcb3TsYKKsioVLicbhdLmmRmyi
- 8lvLjlPiuH4bMoFjDAhWfgp0HJP4+ONAr1vCnvzLg==
-X-ME-Sender: <xms:4xiyXYn6-BG9NxxxJjkwZES8jJ_-QLfEb8g7MivY0vMs7rS0QpH5eQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrledugdduieefucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucenucfjughrpefofgggkfffhffvufgtsehttdertd
- erredtnecuhfhrohhmpedfnfhukhgrshiiucflrghnhihsthdfuceolhhukhgrshiisehj
- rghnhidrshhtqeenucffohhmrghinhepkhgvrhhnvghlrdhorhhgnecurfgrrhgrmhepmh
- grihhlfhhrohhmpehluhhkrghsiiesjhgrnhihrdhsthenucevlhhushhtvghrufhiiigv
- pedt
-X-ME-Proxy: <xmx:4xiyXVO55XKKfZgqrABAe5Q5vY2qGzsGI8NqWxLCG51me76ri9nXrQ>
- <xmx:4xiyXSpvtvd12BlBtgdG_lW7PmMZ2lfJfRhkfH-AGEEbaEKyB4jF5g>
- <xmx:4xiyXYSTD-kE0t6nw53nH0GKJp-2WpsHzZfPIjzy7PtSZhn6-erPCQ>
- <xmx:5RiyXQyv7tm2iXbTKan-AiawEpFU9Cz0KSVfDtGleRTdYtiht85PUg>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 8F30AE00A3; Thu, 24 Oct 2019 17:34:27 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-470-gedfae93-fmstable-20191021v4
-Mime-Version: 1.0
-Message-Id: <7a98e121-21e8-4b83-91e1-7b7002643ce1@www.fastmail.com>
-Date: Thu, 24 Oct 2019 23:34:07 +0200
-From: "Lukasz Janyst" <lukasz@jany.st>
-To: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Subject: Memory issues with NanoPi M4 (rk3399)
+ id 1iNwmZ-0003dr-3Z; Fri, 25 Oct 2019 10:25:24 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga003.jf.intel.com ([10.7.209.27])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 25 Oct 2019 03:25:23 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.68,228,1569308400"; d="scan'208";a="201773661"
+Received: from pipin.fi.intel.com (HELO pipin) ([10.237.72.175])
+ by orsmga003.jf.intel.com with ESMTP; 25 Oct 2019 03:25:18 -0700
+From: Felipe Balbi <balbi@kernel.org>
+To: Vicente Bergas <vicencb@gmail.com>
+Subject: Re: [PATCH] usb: dwc3: Add shutdown to platform_driver
+In-Reply-To: <fcddc3d9-f36a-4b7b-be3f-ee720fbacb05@gmail.com>
+References: <4d18d4f7-a00e-bd60-6361-51054eba3bca@arm.com>
+ <20190817174140.6394-1-vicencb@gmail.com>
+ <8d48017a-64c5-4b25-8d85-113ffcf502c9@gmail.com> <87v9uix1sv.fsf@gmail.com>
+ <645526b8-bfed-4cc6-9500-1843c5fe0da9@gmail.com>
+ <0edb55d4-3bad-47ac-9d29-8d994d182e67@gmail.com> <877e4wj7ly.fsf@gmail.com>
+ <fcddc3d9-f36a-4b7b-be3f-ee720fbacb05@gmail.com>
+Date: Fri, 25 Oct 2019 13:25:17 +0300
+Message-ID: <87pnil2kc2.fsf@gmail.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_143434_161766_85DC3A04 
-X-CRM114-Status: UNSURE (   6.01  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191025_032523_159289_AA2D5784 
+X-CRM114-Status: GOOD (  11.69  )
+X-Spam-Score: -4.0 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-4.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.26 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.115 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,23 +68,105 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
+Cc: Matthias Brugger <mbrugger@suse.com>, Heiko Stuebner <heiko@sntech.de>,
+ MarcZyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-usb@vger.kernel.org, Will Deacon <will.deacon@arm.com>,
+ linux-rockchip@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Dear mailing lists,
 
-I have been trying to install vanilla Debian on my NanoPi M4 with 4GB of RAM (rk3399) and I have been experiencing kernel panics in random places happening always under significant IO pressure. The panics occur mostly in different DMA handlers and the system can work fine for days if it's not under IO pressure.
+hi,
 
-My setup uses the master branch of uboot as of a couple of day ago. I also use the master branch of arm-trusted-firmware as BL31 with the 0aad563c commit reverted. I reverted this commit because the system fails to boot with it in even though all the addresses processed by arch/arm/mach-rockchip/make_fit_atf.py seem right. The kernel I try to boot is a couple days old version of linux-next with defconfig, but I see the same problems with any mainline kernel I tried.
+Vicente Bergas <vicencb@gmail.com> writes:
 
-Robin Murphy pointed me to this conversation: https://lore.kernel.org/linux-arm-kernel/006d3ee0-2711-1b4e-d8cf-6a226fcad0e4@arm.com/ Which led me to believe that the kernel indeed trips over some memory reserved by TF-A at EL3. Therefore, I started playing with memtest to identify the exact address of the problematic region and it turned out to be random. It's always about 300-500 MB in the 0x0000000040000000:0x00000000f5828000 region though.
+> On Wednesday, October 23, 2019 8:31:21 AM CEST, Felipe Balbi wrote:
+>> Hi,
+>>
+>> (sorry for the long delay)
+>>
+>> Vicente Bergas <vicencb@gmail.com> writes:
+>>
+>>> On Tuesday, August 27, 2019 2:16:20 PM CEST, Vicente Bergas wrote: ...
+>>
+>> I meant something like this:
+>>
+>> diff --git a/drivers/usb/dwc3/dwc3-of-simple.c 
+>> b/drivers/usb/dwc3/dwc3-of-simple.c
+>> index bdac3e7d7b18..e64754be47b4 100644
+>> --- a/drivers/usb/dwc3/dwc3-of-simple.c
+>> +++ b/drivers/usb/dwc3/dwc3-of-simple.c
+>> @@ -110,12 +110,9 @@ static int dwc3_of_simple_probe(struct 
+>> platform_device *pdev)
+>>  	return ret;
+>>  }
+>>  
+>> -static int dwc3_of_simple_remove(struct platform_device *pdev)
+>> +static void __dwc3_of_simple_teardown(struct dwc3_of_simple *simple)
+>>  {
+>> -	struct dwc3_of_simple	*simple = platform_get_drvdata(pdev);
+>> -	struct device		*dev = &pdev->dev;
+>> -
+>> -	of_platform_depopulate(dev);
+>> +	of_platform_depopulate(simple->dev);
+>>  
+>>  	clk_bulk_disable_unprepare(simple->num_clocks, simple->clks);
+>>  	clk_bulk_put_all(simple->num_clocks, simple->clks);
+>> @@ -126,13 +123,27 @@ static int dwc3_of_simple_remove(struct 
+>> platform_device *pdev)
+>>  
+>>  	reset_control_put(simple->resets);
+>>  
+>> -	pm_runtime_disable(dev);
+>> -	pm_runtime_put_noidle(dev);
+>> -	pm_runtime_set_suspended(dev);
+>> +	pm_runtime_disable(simple->dev);
+>> +	pm_runtime_put_noidle(simple->dev);
+>> +	pm_runtime_set_suspended(simple->dev);
+>> +}
+>> +
+>> +static int dwc3_of_simple_remove(struct platform_device *pdev)
+>> +{
+>> +	struct dwc3_of_simple	*simple = platform_get_drvdata(pdev);
+>> +
+>> +	__dwc3_of_simple_teardown(simple);
+>>  
+>>  	return 0;
+>>  }
+>>  
+>> +static void dwc3_of_simple_shutdown(struct platform_device *pdev)
+>> +{
+>> +	struct dwc3_of_simple	*simple = platform_get_drvdata(pdev);
+>> +
+>> +	__dwc3_of_simple_teardown(simple);
+>> +}
+>> +
+>>  static int __maybe_unused 
+>> dwc3_of_simple_runtime_suspend(struct device *dev)
+>>  {
+>>  	struct dwc3_of_simple	*simple = dev_get_drvdata(dev);
+>> @@ -190,6 +201,7 @@ MODULE_DEVICE_TABLE(of, of_dwc3_simple_match);
+>>  static struct platform_driver dwc3_of_simple_driver = {
+>>  	.probe		= dwc3_of_simple_probe,
+>>  	.remove		= dwc3_of_simple_remove,
+>> +	.shutdown	= dwc3_of_simple_shutdown,
+>>  	.driver		= {
+>>  		.name	= "dwc3-of-simple",
+>>  		.of_match_table = of_dwc3_simple_match,
+>>
+>> Can you make sure it works as you intended?
+>
+> Hi Felipe,
+> just applied your approach to v5.3.7 and it is working properly.
 
-My knowledge of the internal workings of DRAM is very limited, so I would very much appreciate any hints that may point me in the right direction.
+Do you want to send it as a formal patch or shall I do it?
 
-Kind Regards,
-Lukasz
+-- 
+balbi
 
 _______________________________________________
 Linux-rockchip mailing list
