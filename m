@@ -2,83 +2,63 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C97EE76E6
-	for <lists+linux-rockchip@lfdr.de>; Mon, 28 Oct 2019 17:43:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 372B1E7737
+	for <lists+linux-rockchip@lfdr.de>; Mon, 28 Oct 2019 18:03:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YKFOvPYrNcCnDF3l8DIlS+5Sco/Jg/9o5d68XN1+lUc=; b=QmFOzxrYomS28H
-	dRKYvOr0i9hpQdHh7jzSNJR8XjPLioRMYEf1rkuLZc8X69gAG4l9WrGbW+hLku2uKw5IGKepOTPg0
-	4fxVuk6TLe5wXpj65TFM+FxNRkyk4w9VRGm6KcCnKVglYe5rnEOc4Ose8PoiMNGRCKoM3z9pdvkuz
-	ryRWk0SApic5air9f/Z066Eeh4hJyf5WkhWGCbzaDlmf9FeTIS2SKtYC4Zl7bX7UHxlY/xdPmlrWm
-	4mZjwuQYx3gaVvUaiUgAv/niRkK/P72u6uM0I7XD4FQKhPTqQccmB8FJiRT1EetUPLtJpbBakrsyh
-	74eTaRg9FgtTfPAQXhOQ==;
+	List-Owner; bh=KRVEi/cINJFWvZt/BaeeEkgqdugEsjhPoxenUUCvwmM=; b=fO77sn1NDZHZ43
+	fgwRHatwm6iBV7oPqjI75JHeOd58WGAElYKUPVu2i3pY/0rcR9xa360G1KDr+iSNqK6D3DuW6Lzn1
+	HJscELy15or+yHmY+3k9zRBRdgK4kTmwP54VkmdkAZ/wy/4QKQDAoaXkStBUFSJW/VBdTRUEQkjyn
+	053fE32q2bpIrP/koUINERiJ8Yl0aPOi15enRc+m6oeWhs4t7WegRON7KQOoblHoaVndTraWhcsbS
+	nj79cMY6tzrg96Uv3evbrWJ5rFXuy+S2vZeOgrnFMmmK1mqEqZI5gwWVSSa4cjMKFEXu72SA57mPE
+	5QhA/L12FwDqan/TyCkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP87U-0001iR-Od; Mon, 28 Oct 2019 16:43:52 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1iP8Qf-00033Y-2K; Mon, 28 Oct 2019 17:03:41 +0000
+Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP7xx-0007Zi-2B; Mon, 28 Oct 2019 16:34:02 +0000
-Received: by mail-ot1-f66.google.com with SMTP id b19so4820317otq.10;
- Mon, 28 Oct 2019 09:34:00 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=5gD14iI8UpOKj376Bq/txSzTZsSs0VToSMrptEdmjdQ=;
- b=aIfRqPh3/FSG4OKFcJU4rrihPuhQelf0JRNLdEHPBoFOoQZtfmIn1j2NHxTWPqUDzY
- cEXULGf+RXwyP5BCGgsmq6tjEjZQ11WxA1FY3oMny5OMkzaHc89MVfn1Ih5IBBlIE/l3
- HIHzyE+26zU7i9g/kSHMI8l6i7VunjgjYFGa3HzEAAjEr/j72chZkt3N+8BxEaE3OIoQ
- qqDj2kESZYe45gVyScs8fi1NJn2+IJTxVUYiBzw0+7wqecl2qn/umYkH7jUWVsSjb6RC
- zREZDl/3NQU96TCIupLpXeCt5PskNukxcpCdnPLqku9ZVtBHZapY7cniT8wEyCpNATKh
- jvAQ==
-X-Gm-Message-State: APjAAAU+tDxeP1leKH2exw/TfVQ1CZIOLdF0PxcAhNwkYnAsL6dlXkt9
- dbp1q2vtVDxkgpHhl0tajQ==
-X-Google-Smtp-Source: APXvYqxwQvVW18ni2MGlR3yza3cM3F7fWkGTz5dS8pb+bIhSeEI2GqTMRaA5bo4tECabCiP8MTGJZA==
-X-Received: by 2002:a9d:4616:: with SMTP id y22mr13801201ote.319.1572280439895; 
- Mon, 28 Oct 2019 09:33:59 -0700 (PDT)
-Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id e186sm354991oia.47.2019.10.28.09.33.58
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Oct 2019 09:33:59 -0700 (PDT)
-From: Rob Herring <robh@kernel.org>
-To: Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH v3 25/25] PCI: Make devm_of_pci_get_host_bridge_resources()
- static
-Date: Mon, 28 Oct 2019 11:32:56 -0500
-Message-Id: <20191028163256.8004-26-robh@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191028163256.8004-1-robh@kernel.org>
-References: <20191028163256.8004-1-robh@kernel.org>
+ id 1iP8Q4-0002bG-17; Mon, 28 Oct 2019 17:03:05 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 28 Oct 2019 10:03:03 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.68,240,1569308400"; d="scan'208";a="210917617"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga001.fm.intel.com with ESMTP; 28 Oct 2019 10:02:57 -0700
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1iP8Pw-00099G-J0; Tue, 29 Oct 2019 01:02:56 +0800
+Date: Tue, 29 Oct 2019 01:02:45 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Cheng-Yi Chiang <cychiang@chromium.org>
+Subject: Re: [PATCH v8 3/6] ASoC: rockchip_max98090: Optionally support HDMI
+ use case
+Message-ID: <201910290006.S8dvoBpK%lkp@intel.com>
+References: <20191025133007.11190-4-cychiang@chromium.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191025133007.11190-4-cychiang@chromium.org>
+X-Patchwork-Hint: ignore
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_093401_185142_75D9990C 
-X-CRM114-Status: GOOD (  12.57  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191028_100304_085980_653E6126 
+X-CRM114-Status: GOOD (  14.57  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.151 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,99 +71,57 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>, linux-pci@vger.kernel.org,
- Shawn Lin <shawn.lin@rock-chips.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
- Ryder Lee <ryder.lee@mediatek.com>, Michal Simek <michal.simek@xilinx.com>,
- Christoph Hellwig <hch@infradead.org>, linux-rockchip@lists.infradead.org,
- bcm-kernel-feedback-list@broadcom.com,
- Linus Walleij <linus.walleij@linaro.org>, Ray Jui <rjui@broadcom.com>,
- Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, Simon Horman <horms@verge.net.au>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Scott Branden <sbranden@broadcom.com>,
- Jingoo Han <jingoohan1@gmail.com>, rfi@lists.rocketboards.org,
- linux-renesas-soc@vger.kernel.org, Tom Joseph <tjoseph@cadence.com>,
- Srinath Mannam <srinath.mannam@broadcom.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Ley Foon Tan <lftan@altera.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, alsa-devel@alsa-project.org,
+ Heiko Stuebner <heiko@sntech.de>, Neil Armstrong <narmstrong@baylibre.com>,
+ David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, Hans Verkuil <hverkuil@xs4all.nl>,
+ Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jerome Brunet <jbrunet@baylibre.com>, Takashi Iwai <tiwai@suse.com>,
+ linux-rockchip@lists.infradead.org, dgreid@chromium.org,
+ Cheng-Yi Chiang <cychiang@chromium.org>, devicetree@vger.kernel.org,
+ tzungbi@chromium.org, Jonas Karlman <jonas@kwiboo.se>,
+ Liam Girdwood <lgirdwood@gmail.com>, Russell King <rmk+kernel@armlinux.org.uk>,
+ Rob Herring <robh+dt@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
+ linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ kbuild-all@lists.01.org, dianders@chromium.org,
+ Mark Brown <broonie@kernel.org>, Daniel Vetter <daniel@ffwll.ch>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Now that all the PCI host drivers are using pci_parse_request_of_pci_ranges(),
-make devm_of_pci_get_host_bridge_resources() static.
+Hi Cheng-Yi,
 
-Cc: Bjorn Helgaas <bhelgaas@google.com>
-Signed-off-by: Rob Herring <robh@kernel.org>
+I love your patch! Perhaps something to improve:
+
+[auto build test WARNING on rockchip/for-next]
+[also build test WARNING on v5.4-rc5 next-20191028]
+[if your patch is applied to the wrong git tree, please drop us a note to help
+improve the system. BTW, we also suggest to use '--base' option to specify the
+base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
+
+url:    https://github.com/0day-ci/linux/commits/Cheng-Yi-Chiang/Add-HDMI-jack-support-on-RK3288/20191028-212502
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git for-next
+reproduce:
+        # apt-get install sparse
+        # sparse version: v0.6.1-dirty
+        make ARCH=x86_64 allmodconfig
+        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
+
+If you fix the issue, kindly add following tag
+Reported-by: kbuild test robot <lkp@intel.com>
+
+
+sparse warnings: (new ones prefixed by >>)
+
+>> sound/soc/rockchip/rockchip_max98090.c:475:23: sparse: sparse: symbol 'rk_card_configs' was not declared. Should it be static?
+
+Please review and possibly fold the followup patch.
+
 ---
- drivers/pci/of.c  |  5 +----
- drivers/pci/pci.h | 17 -----------------
- 2 files changed, 1 insertion(+), 21 deletions(-)
-
-diff --git a/drivers/pci/of.c b/drivers/pci/of.c
-index 0b1e4623dfcf..00e4b9fcb41d 100644
---- a/drivers/pci/of.c
-+++ b/drivers/pci/of.c
-@@ -236,7 +236,6 @@ void of_pci_check_probe_only(void)
- }
- EXPORT_SYMBOL_GPL(of_pci_check_probe_only);
- 
--#if defined(CONFIG_OF_ADDRESS)
- /**
-  * devm_of_pci_get_host_bridge_resources() - Resource-managed parsing of PCI
-  *                                           host bridge resources from DT
-@@ -255,7 +254,7 @@ EXPORT_SYMBOL_GPL(of_pci_check_probe_only);
-  * It returns zero if the range parsing has been successful or a standard error
-  * value if it failed.
-  */
--int devm_of_pci_get_host_bridge_resources(struct device *dev,
-+static int devm_of_pci_get_host_bridge_resources(struct device *dev,
- 			unsigned char busno, unsigned char bus_max,
- 			struct list_head *resources,
- 			struct list_head *ib_resources,
-@@ -384,8 +383,6 @@ int devm_of_pci_get_host_bridge_resources(struct device *dev,
- 	pci_free_resource_list(resources);
- 	return err;
- }
--EXPORT_SYMBOL_GPL(devm_of_pci_get_host_bridge_resources);
--#endif /* CONFIG_OF_ADDRESS */
- 
- #if IS_ENABLED(CONFIG_OF_IRQ)
- /**
-diff --git a/drivers/pci/pci.h b/drivers/pci/pci.h
-index 6692c4fe4290..118a4974537b 100644
---- a/drivers/pci/pci.h
-+++ b/drivers/pci/pci.h
-@@ -630,23 +630,6 @@ static inline void pci_set_bus_of_node(struct pci_bus *bus) { }
- static inline void pci_release_bus_of_node(struct pci_bus *bus) { }
- #endif /* CONFIG_OF */
- 
--#if defined(CONFIG_OF_ADDRESS)
--int devm_of_pci_get_host_bridge_resources(struct device *dev,
--			unsigned char busno, unsigned char bus_max,
--			struct list_head *resources,
--			struct list_head *ib_resources,
--			resource_size_t *io_base);
--#else
--static inline int devm_of_pci_get_host_bridge_resources(struct device *dev,
--			unsigned char busno, unsigned char bus_max,
--			struct list_head *resources,
--			struct list_head *ib_resources,
--			resource_size_t *io_base)
--{
--	return -EINVAL;
--}
--#endif
--
- #ifdef CONFIG_PCIEAER
- void pci_no_aer(void);
- void pci_aer_init(struct pci_dev *dev);
--- 
-2.20.1
-
+0-DAY kernel test infrastructure                Open Source Technology Center
+https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
 
 _______________________________________________
 Linux-rockchip mailing list
