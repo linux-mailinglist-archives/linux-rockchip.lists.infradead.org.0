@@ -2,70 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10B86E7423
-	for <lists+linux-rockchip@lfdr.de>; Mon, 28 Oct 2019 15:57:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14297E7650
+	for <lists+linux-rockchip@lfdr.de>; Mon, 28 Oct 2019 17:33:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=OiJrhtpnvIuwzv17sL2BXNdM+aVj8YbxUu9dILJG5BE=; b=TCI
-	FHupjBWCx5JMMG4K8W2LzfsGw6fgjhPR78r157Il4RYZYyzZLAd0B3WtQ9piOXqxX/BHWy3zpFIv7
-	NkxXxz3DQzsA4y4o1r2PM6rNAw2KzV/A53AUYWGyh5WrD2V5Xzg1Z76XglelFsb4ODfuy/a39hpv2
-	V5TVhpG6eqRu+PF+ZLZIVnPdggYJjMANAi8HetytggLTN8wIAlPmEjiuGEEd9F/dSfWbwHV/Fogk3
-	XHX4RWvcImEyITmeindkr7DzcW5RC+wCkF2lzfd5VaSBwNiRWq2LVVe5+kNXcfxFXCz1Zmr9/FiTB
-	arMbKyl3HOA6GEKztT8nqprbTKUXh9Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+vu5JREXYLmPzpAqVs9j8w+M5XvX3RQ/07tPkhKE4hk=; b=EapVXKjwBHHfwV
+	jZLXYQoDy7j11uBLXyPevT2jZILrcVF/HMFgm0DcJS1uKqL8VzKYEJKxMmyUrTaQxuRf7Mggeoatj
+	yqLgzZO1uIl10nclndirQrKPJS0nEoD4qpLe8iZG3txEYuVdoBodMXoysILoIPyZ2RvseLm0qsrg8
+	hwIEYwOSYDTdFD6pyFENOj7pK95Mgk7aB7fG6CPcDq51duSxvtdkopegiv8h3Z4c3McBAAmXtiFsU
+	hVtD6lxH7fLjOzk6wAQSk8td30Trcd2yAXQ9zXWFcg6SWAx0DeBnBzhbFVvmF79u2CEFHIRsbiZE9
+	tb4UyB5n/Dzoe3TbTBew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP6SA-0001fZ-Mc; Mon, 28 Oct 2019 14:57:06 +0000
-Received: from heliosphere.sirena.org.uk ([172.104.155.198])
+	id 1iP7xR-00071o-EM; Mon, 28 Oct 2019 16:33:29 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP6Ro-0001I0-14; Mon, 28 Oct 2019 14:56:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
- List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=aacqV5nj/gG01sskTrzwE2VcR2Ffj1PwXKPwaCUoKC4=; b=cK5vMjbVyFJ2
- PQ0lTJrK00lRYGa9l2T71D0ELFEg367gD6DCLfhJpFoG9Nv378r2InvxQnftVxnaAEkkSJv4SICgx
- e2AbvyvQV8W1Vl6tUsJc0fev2ElW1EGmijfYpSaCQl12wjXg9FjAeps6cwf/6iim8yRcNKk6RfUJO
- erUeM=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>)
- id 1iP6Rj-0008Rl-5g; Mon, 28 Oct 2019 14:56:39 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id BC4A127403E4; Mon, 28 Oct 2019 14:56:37 +0000 (GMT)
-From: Mark Brown <broonie@kernel.org>
-To: Cheng-Yi Chiang <cychiang@chromium.org>
-Subject: Applied "ASoC: rockchip: rockchip_max98090: Enable SHDN to fix
- headset detection" to the asoc tree
-In-Reply-To: <20191028095229.99438-1-cychiang@chromium.org>
-X-Patchwork-Hint: ignore
-Message-Id: <20191028145637.BC4A127403E4@ypsilon.sirena.org.uk>
-Date: Mon, 28 Oct 2019 14:56:37 +0000 (GMT)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ id 1iP7wy-0006eo-Ks; Mon, 28 Oct 2019 16:33:02 +0000
+Received: by mail-oi1-f196.google.com with SMTP id m193so1929540oig.0;
+ Mon, 28 Oct 2019 09:33:00 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=S4uLFulX8TejWtV4ZtyYdW8FASYgTH1zgpN3OAUfA44=;
+ b=R1Ta4Yi9jOWYwwkvDbiEYXMNbqG3y3PEUeikLEcMZSRM76WDsBcTtOUQ9RGRJspv3+
+ gTBXuQBjj5+wqYwd0+NOzao/LgLgHpOjoTUL7CLXzzE6D2ynP+0rPc9Mp0af2X4G7a0R
+ f6iyqFsEPeXHuod2m4gC21m0lWhJ01BUcoytY00XkNxuqmqcQ2A7Lyujr5ImPjYY0/Pn
+ Y4RjTnumHNoMGqtiv1SbO38Pfna5afka4GBt3t02hOmkrMCT9IbmEc5Py1X3bW3rxq0m
+ p1Yy+FWGlc/Darf50c6qp3FKn3yobqWbyD+/W3PsBF1DuBWCLPC8ocQ2xQiOIOQIpeXh
+ nJrg==
+X-Gm-Message-State: APjAAAUd2dIZOV/np6WNZZCjlTQ9GIgd7mZTh4cyZHshqRsliE9UAPrH
+ lYblOKk41hr2Im3nsGCrNA==
+X-Google-Smtp-Source: APXvYqyCyIe7/lBj2r50NZZKCcouW4Wf/nGhcgVbzzr1X9sEHMnBAu+xzJCM7OskSMNAePIBybe/OA==
+X-Received: by 2002:aca:5015:: with SMTP id e21mr137789oib.174.1572280379222; 
+ Mon, 28 Oct 2019 09:32:59 -0700 (PDT)
+Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.googlemail.com with ESMTPSA id e186sm354991oia.47.2019.10.28.09.32.57
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 28 Oct 2019 09:32:58 -0700 (PDT)
+From: Rob Herring <robh@kernel.org>
+To: Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Subject: [PATCH v3 00/25] PCI host resource consolidation
+Date: Mon, 28 Oct 2019 11:32:31 -0500
+Message-Id: <20191028163256.8004-1-robh@kernel.org>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_075644_077321_272D66A7 
-X-CRM114-Status: GOOD (  13.24  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191028_093300_686644_C13942D6 
+X-CRM114-Status: GOOD (  11.00  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [172.104.155.198 listed in list.dnswl.org]
+ no trust [209.85.167.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,93 +87,105 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, tzungbi@chromium.org,
- Heiko Stuebner <heiko@sntech.de>, Liam Girdwood <lgirdwood@gmail.com>,
- linux-kernel@vger.kernel.org, Takashi Iwai <tiwai@suse.com>,
- dianders@chromium.org, Jaroslav Kysela <perex@perex.cz>,
- linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
- enric.balletbo@collabora.com, dgreid@chromium.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Heiko Stuebner <heiko@sntech.de>,
+ Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>, linux-pci@vger.kernel.org,
+ Shawn Lin <shawn.lin@rock-chips.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
+ Ryder Lee <ryder.lee@mediatek.com>, Michal Simek <michal.simek@xilinx.com>,
+ Christoph Hellwig <hch@infradead.org>, linux-rockchip@lists.infradead.org,
+ bcm-kernel-feedback-list@broadcom.com,
+ Linus Walleij <linus.walleij@linaro.org>, Ray Jui <rjui@broadcom.com>,
+ Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, Simon Horman <horms@verge.net.au>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Scott Branden <sbranden@broadcom.com>,
+ Jingoo Han <jingoohan1@gmail.com>, rfi@lists.rocketboards.org,
+ linux-renesas-soc@vger.kernel.org, Tom Joseph <tjoseph@cadence.com>,
+ Srinath Mannam <srinath.mannam@broadcom.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Ley Foon Tan <lftan@altera.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The patch
+This started with just dma-ranges parsing consolidation, but has expanded
+to converting all host drivers to use pci_parse_request_of_pci_ranges()
+rather than devm_of_pci_get_host_bridge_resources(). This series moves
+the DT 'dma-ranges' parsing into common helpers utilizing a resource list.
+There's no (intended) functional change in this series though I'm also
+working on a separate series now in dt/next to improve the handling of
+'dma-ranges' and dma masks.
 
-   ASoC: rockchip: rockchip_max98090: Enable SHDN to fix headset detection
+The last patch may need to wait if there's any new users of
+devm_of_pci_get_host_bridge_resources.
 
-has been applied to the asoc tree at
+Only versatile has been tested (on QEMU). The rest is compiled only. A git
+branch is here[1].
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.4
+v3:
+- Fix >80 char lines
+- Rename resource_list_get_entry_of_type to resource_list_first_type
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
+Rob
 
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
+[1] git://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git pci-ranges-cleanup-v3
 
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
 
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
+Rob Herring (25):
+  resource: Add a resource_list_first_type helper
+  PCI: Export pci_parse_request_of_pci_ranges()
+  PCI: aardvark: Use pci_parse_request_of_pci_ranges()
+  PCI: altera: Use pci_parse_request_of_pci_ranges()
+  PCI: dwc: Use pci_parse_request_of_pci_ranges()
+  PCI: faraday: Use pci_parse_request_of_pci_ranges()
+  PCI: iproc: Use pci_parse_request_of_pci_ranges()
+  PCI: mediatek: Use pci_parse_request_of_pci_ranges()
+  PCI: mobiveil: Use pci_parse_request_of_pci_ranges()
+  PCI: rockchip: Use pci_parse_request_of_pci_ranges()
+  PCI: rockchip: Drop storing driver private outbound resource data
+  PCI: v3-semi: Use pci_parse_request_of_pci_ranges()
+  PCI: xgene: Use pci_parse_request_of_pci_ranges()
+  PCI: xilinx: Use pci_parse_request_of_pci_ranges()
+  PCI: xilinx-nwl: Use pci_parse_request_of_pci_ranges()
+  PCI: versatile: Use pci_parse_request_of_pci_ranges()
+  PCI: versatile: Remove usage of PHYS_OFFSET
+  PCI: versatile: Enable COMPILE_TEST
+  PCI: of: Add inbound resource parsing to helpers
+  PCI: ftpci100: Use inbound resources for setup
+  PCI: v3-semi: Use inbound resources for setup
+  PCI: xgene: Use inbound resources for setup
+  PCI: iproc: Use inbound resources for setup
+  PCI: rcar: Use inbound resources for setup
+  PCI: Make devm_of_pci_get_host_bridge_resources() static
 
-Thanks,
-Mark
+ drivers/pci/controller/Kconfig                |  2 +-
+ .../pci/controller/dwc/pcie-designware-host.c | 29 ++----
+ drivers/pci/controller/pci-aardvark.c         | 60 +------------
+ drivers/pci/controller/pci-ftpci100.c         | 79 +++++-----------
+ drivers/pci/controller/pci-host-common.c      |  2 +-
+ drivers/pci/controller/pci-v3-semi.c          | 74 +++++----------
+ drivers/pci/controller/pci-versatile.c        | 71 ++++-----------
+ drivers/pci/controller/pci-xgene.c            | 73 +++++----------
+ drivers/pci/controller/pcie-altera.c          | 41 +--------
+ drivers/pci/controller/pcie-cadence-host.c    |  2 +-
+ drivers/pci/controller/pcie-iproc-platform.c  |  9 +-
+ drivers/pci/controller/pcie-iproc.c           | 82 ++++-------------
+ drivers/pci/controller/pcie-mediatek.c        | 43 +++------
+ drivers/pci/controller/pcie-mobiveil.c        | 27 ++----
+ drivers/pci/controller/pcie-rcar.c            | 48 ++++------
+ drivers/pci/controller/pcie-rockchip-host.c   | 89 +++++++------------
+ drivers/pci/controller/pcie-rockchip.h        |  5 --
+ drivers/pci/controller/pcie-xilinx-nwl.c      | 21 ++---
+ drivers/pci/controller/pcie-xilinx.c          | 18 +---
+ drivers/pci/of.c                              | 51 +++++++++--
+ drivers/pci/pci.h                             | 13 ---
+ include/linux/pci.h                           |  9 +-
+ include/linux/resource_ext.h                  | 12 +++
+ 23 files changed, 261 insertions(+), 599 deletions(-)
 
-From 07c1b73e2a027ea9a52677beeb6a943a3e357139 Mon Sep 17 00:00:00 2001
-From: Cheng-Yi Chiang <cychiang@chromium.org>
-Date: Mon, 28 Oct 2019 17:52:29 +0800
-Subject: [PATCH] ASoC: rockchip: rockchip_max98090: Enable SHDN to fix headset
- detection
-
-max98090 spec states that chip needs to be in turned-on state to supply
-mic bias. Enable SHDN dapm widget along with MICBIAS widget to
-actually turn on mic bias for proper headset button detection.
-This is similar to cht_ti_jack_event in
-sound/soc/intel/boards/cht_bsw_max98090_ti.c.
-
-Note that due to ts3a227e reports the jack event right away before the
-notifier is registered, if headset is plugged on boot, headset button
-will not get detected until headset is unplugged and plugged. This is
-still an issue to be fixed.
-
-Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
-Link: https://lore.kernel.org/r/20191028095229.99438-1-cychiang@chromium.org
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- sound/soc/rockchip/rockchip_max98090.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
-
-diff --git a/sound/soc/rockchip/rockchip_max98090.c b/sound/soc/rockchip/rockchip_max98090.c
-index 0097df1fae66..e80b09143b63 100644
---- a/sound/soc/rockchip/rockchip_max98090.c
-+++ b/sound/soc/rockchip/rockchip_max98090.c
-@@ -66,10 +66,13 @@ static int rk_jack_event(struct notifier_block *nb, unsigned long event,
- 	struct snd_soc_jack *jack = (struct snd_soc_jack *)data;
- 	struct snd_soc_dapm_context *dapm = &jack->card->dapm;
- 
--	if (event & SND_JACK_MICROPHONE)
-+	if (event & SND_JACK_MICROPHONE) {
- 		snd_soc_dapm_force_enable_pin(dapm, "MICBIAS");
--	else
-+		snd_soc_dapm_force_enable_pin(dapm, "SHDN");
-+	} else {
- 		snd_soc_dapm_disable_pin(dapm, "MICBIAS");
-+		snd_soc_dapm_disable_pin(dapm, "SHDN");
-+	}
- 
- 	snd_soc_dapm_sync(dapm);
- 
--- 
+--
 2.20.1
-
 
 _______________________________________________
 Linux-rockchip mailing list
