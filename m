@@ -2,86 +2,99 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A76EAE6F64
-	for <lists+linux-rockchip@lfdr.de>; Mon, 28 Oct 2019 10:52:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 289BEE73F8
+	for <lists+linux-rockchip@lfdr.de>; Mon, 28 Oct 2019 15:47:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=eVtQxHOsnjHRRnq6i8mIzocielsVZuaI8kyEoSeuJnE=; b=GBzmSHNoNlwHDs
-	IOHcWFT+0kDzl5ne3xghjAkm5vWwzY02OmqL5WqAGSA0vd/ySya5/GnM4jUObjkgmExeTdLpZtPvx
-	8prCSTGncgPs4purLtAi24ax2N0WtMmNUSBkr1VAm7FvW1KaW2E6QukcD6dOuWYfFYUZSDFcuGUam
-	j301+Pp7XOUgqSB0IHzIjfmyfUDl//4w5ePot+BLQN7plyqT7NxUUUWpcHj+f06uydRYgjEVSS3j/
-	ZZgmF1ghPv+X9zClCblkFqDDkwbp19Ui+XOooGzMoBo8HMuRymMZbQSg3PAxxYutt2liXew03DgKh
-	uaB7zn0pztR1UistB2bQ==;
+	List-Owner; bh=PteiQsZWs4l/hQxF+yXrLMKRUPsOaoxjyCW1rsRWG6U=; b=mUk2gdAxaROXbf
+	IXJT+uJgK1LSKo0/uPry+vuZGtqG+dba/XDrMsuMBNqRKHqhwhZ0OLGf0sK13jgDdQXM0K9cvJ3cv
+	PXWxfKBUkd5r9oYQgpZzIXeoc10QZddqH6SSkd0ysFeV0cQjEarDBP4YT+r8T6ZdfGOET7SbXFVYq
+	T5eItmmGGr5NbEE+tTqx6ePjJAw0qGcbLiTAuS6SfWm/oZHrfbMq1Kf4wL9Lbysijw+gfh3CeGKZA
+	6JxwYHfH1CprhXLnNUKIDvOhxW7UQD6WV2Cv12IorlNhdAhpHXmOlKUgSPOMdwPICDpWmIDJ7RizG
+	T8+Cuy7PwikNZn6nBrMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP1hc-0002zL-IK; Mon, 28 Oct 2019 09:52:44 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iP6JD-0005QY-4M; Mon, 28 Oct 2019 14:47:51 +0000
+Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP1hZ-0002ye-U9
- for linux-rockchip@lists.infradead.org; Mon, 28 Oct 2019 09:52:43 +0000
-Received: by mail-pg1-x541.google.com with SMTP id w3so6567711pgt.5
- for <linux-rockchip@lists.infradead.org>; Mon, 28 Oct 2019 02:52:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=00GH+7MY7gv6VeGZTXVYIreq96BqJ0QE/x20tMZ+6ks=;
- b=Z2BgNGzJ7q4FPtJU4fW2x3DMrNZlTDM5dHyQ8Hf5kSrB3beK/s9ztKON5ojRLhAuMU
- Nyza/b0Moh08dmhqk8Sbj4HZo5KxZBPDr9IKjplFa2wWNOjsepMPXWzF68Gq1+GogWj3
- F5uKtCRH9q/B9Y/z0A5OS6pkzkgTaPndd1a/g=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=00GH+7MY7gv6VeGZTXVYIreq96BqJ0QE/x20tMZ+6ks=;
- b=O6isu6dcBtluYp5GINUgi+akpnw4ZfkrsN3jOjZ9WVmy/RUSrBSpDg44cNPZKoRphi
- R+TmHWW3bdfIdczg9vRqm9Cvqhqv+Sx0AkqVZyvClTPX9Amnp3EDBXJYi03oR++wPc3H
- WJTCkaz6+IlIgUPXgq8uFfvsh2akDcxQckTqhlMPIeIgv9egsoTjFApZO/2dIoELupA7
- jvS82F+2YRSSyf37qmI2lHJ+6KX8GJhrnrATSmtS59wk2OWRfCSvFY/I+BSKEsc2eeBo
- AKjQHNOnHhWDyvN6XgJozA4A5rjeSJX+uDOWme5FbuGb0eldNTD9dQVNzj+znIdWDWRg
- DDBw==
-X-Gm-Message-State: APjAAAVm4GzZbOYBho2GO84ZOv7+/TJM/bxhwTYvu1908xm8Xblb2gE6
- eBkHiN9CKVhXtz69hvveE+foiw==
-X-Google-Smtp-Source: APXvYqzdMK0gStf/HLg07oXhPJn5lFdaQhPuDeCWUTAcDq3Av+TyeUSuRXkSsM7OLCc3qJH164huew==
-X-Received: by 2002:a63:6901:: with SMTP id e1mr19755671pgc.373.1572256360802; 
- Mon, 28 Oct 2019 02:52:40 -0700 (PDT)
-Received: from localhost ([2401:fa00:1:10:79b4:bd83:e4a5:a720])
- by smtp.gmail.com with ESMTPSA id p3sm9897517pgp.41.2019.10.28.02.52.37
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 28 Oct 2019 02:52:40 -0700 (PDT)
-From: Cheng-Yi Chiang <cychiang@chromium.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH] ASoC: rockchip: rockchip_max98090: Enable SHDN to fix headset
- detection
-Date: Mon, 28 Oct 2019 17:52:29 +0800
-Message-Id: <20191028095229.99438-1-cychiang@chromium.org>
-X-Mailer: git-send-email 2.24.0.rc0.303.g954a862665-goog
+ id 1iP6J1-0005I6-Cu; Mon, 28 Oct 2019 14:47:41 +0000
+Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
+ (helo=hermes.fivetechno.de); authenticated
+ by wp126.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ id 1iP6Iu-0001Vm-4x; Mon, 28 Oct 2019 15:47:32 +0100
+X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
+ linuxbbg.five-lan.de
+Received: from [192.168.34.101] (p5098d998.dip0.t-ipconnect.de
+ [80.152.217.152]) (authenticated bits=0)
+ by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
+ x9SElRRZ013718
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
+ Mon, 28 Oct 2019 15:47:28 +0100
+From: Markus Reichl <m.reichl@fivetechno.de>
+Subject: [PATCH] arm64: dts: rockchip: Add PCIe node on rk3399-roc-pc
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Jagan Teki <jagan@amarulasolutions.com>,
+ Markus Reichl <m.reichl@fivetechno.de>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Autocrypt: addr=m.reichl@fivetechno.de; prefer-encrypt=mutual; keydata=
+ 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
+ eD/Xv4SsK2JTO4nkQYw8
+Organization: five technologies GmbH
+Message-ID: <09300c2d-4298-1b01-ac41-d1b2610589d4@fivetechno.de>
+Date: Mon, 28 Oct 2019 15:47:27 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
+Content-Language: de-DE
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1572274059;
+ 38797eff; 
+X-HE-SMSGID: 1iP6Iu-0001Vm-4x
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_025241_986416_9348E451 
-X-CRM114-Status: UNSURE (   8.96  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191028_074739_582813_97F47AD6 
+X-CRM114-Status: GOOD (  12.85  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,56 +107,85 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, dianders@chromium.org,
- Heiko Stuebner <heiko@sntech.de>, Takashi Iwai <tiwai@suse.com>,
- tzungbi@chromium.org, Liam Girdwood <lgirdwood@gmail.com>,
- linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
- enric.balletbo@collabora.com, dgreid@chromium.org,
- Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org,
- Cheng-Yi Chiang <cychiang@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-max98090 spec states that chip needs to be in turned-on state to supply
-mic bias. Enable SHDN dapm widget along with MICBIAS widget to
-actually turn on mic bias for proper headset button detection.
-This is similar to cht_ti_jack_event in
-sound/soc/intel/boards/cht_bsw_max98090_ti.c.
+rk3399-roc-pc has a PCIe interface. Enable it for use with
+the M.2 NGFF M_KEY slot on roc-rk3399-mezzanine board.
+Tested with Samsung 970 evo plus SSD.
 
-Note that due to ts3a227e reports the jack event right away before the
-notifier is registered, if headset is plugged on boot, headset button
-will not get detected until headset is unplugged and plugged. This is
-still an issue to be fixed.
-
-Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
 ---
- sound/soc/rockchip/rockchip_max98090.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+ .../arm64/boot/dts/rockchip/rk3399-roc-pc.dts | 38 +++++++++++++++++++
+ 1 file changed, 38 insertions(+)
 
-diff --git a/sound/soc/rockchip/rockchip_max98090.c b/sound/soc/rockchip/rockchip_max98090.c
-index 0097df1fae66..e80b09143b63 100644
---- a/sound/soc/rockchip/rockchip_max98090.c
-+++ b/sound/soc/rockchip/rockchip_max98090.c
-@@ -66,10 +66,13 @@ static int rk_jack_event(struct notifier_block *nb, unsigned long event,
- 	struct snd_soc_jack *jack = (struct snd_soc_jack *)data;
- 	struct snd_soc_dapm_context *dapm = &jack->card->dapm;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+index 9313251765c7..2d637d54994b 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+@@ -158,6 +158,21 @@
+ 		regulator-max-microvolt = <1400000>;
+ 		vin-supply = <&vcc_sys>;
+ 	};
++
++	/* on roc-rk3399-mezzanine board */
++	vcc3v3_pcie: vcc3v3-pcie {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc3v3_pcie";
++		enable-active-high;
++		gpio = <&gpio1 RK_PC1 GPIO_ACTIVE_HIGH>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&vcc3v3_pcie_en>;
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		vin-supply = <&dc_12v>;
++	};
+ };
  
--	if (event & SND_JACK_MICROPHONE)
-+	if (event & SND_JACK_MICROPHONE) {
- 		snd_soc_dapm_force_enable_pin(dapm, "MICBIAS");
--	else
-+		snd_soc_dapm_force_enable_pin(dapm, "SHDN");
-+	} else {
- 		snd_soc_dapm_disable_pin(dapm, "MICBIAS");
-+		snd_soc_dapm_disable_pin(dapm, "SHDN");
-+	}
+ &cpu_l0 {
+@@ -514,6 +529,19 @@
+ 	status = "okay";
+ };
  
- 	snd_soc_dapm_sync(dapm);
++&pcie_phy {
++	status = "okay";
++};
++
++&pcie0 {
++	ep-gpios = <&gpio4 RK_PD1 GPIO_ACTIVE_HIGH>;
++	num-lanes = <4>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pcie_perst>;
++	vpcie3v3-supply = <&vcc3v3_pcie>;
++	status = "okay";
++};
++
+ &pinctrl {
+ 	lcd-panel {
+ 		lcd_panel_reset: lcd-panel-reset {
+@@ -535,6 +563,16 @@
+ 		};
+ 	};
  
++	pcie {
++		vcc3v3_pcie_en: vcc3v3-pcie-en {
++			rockchip,pins = <1 RK_PC1 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++
++		pcie_perst: pcie-perst {
++			rockchip,pins = <4 RK_PD1 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++
+ 	pmic {
+ 		vsel1_gpio: vsel1-gpio {
+ 			rockchip,pins = <1 RK_PC2 RK_FUNC_GPIO &pcfg_pull_down>;
 -- 
-2.24.0.rc0.303.g954a862665-goog
+2.20.1
 
 
 _______________________________________________
