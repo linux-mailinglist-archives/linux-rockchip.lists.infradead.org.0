@@ -2,63 +2,62 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78C57E7677
-	for <lists+linux-rockchip@lfdr.de>; Mon, 28 Oct 2019 17:34:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 847E7E7690
+	for <lists+linux-rockchip@lfdr.de>; Mon, 28 Oct 2019 17:37:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WNlv7d9Pp4b4rUrq+hS588hV5IZFnSkuUpBdIeCWCrI=; b=CcQAOHjpB4ZQ8d
-	LTzNc9C/BBan8yc7HYb9+VzbX/UriUyeCw8iBMlnpWkFuBkbklu3IBHP4Ilz10TcWjzDpsCHYNETU
-	ld55K4DOrz+FSF7UakfpD+qVfWt5DNXLQeKRqkSmJf5Qgbtl5s6LL7BWUQdeBYj4o+27lVO/uamGh
-	UuMh4nUx0HPgs1S765i9BFpXXFoZh/aICPORuoOi3Ogq9z4q6M/boNU7VwI9AJlIzkaPaZtlqHo/d
-	x/KuCeiF7u5jWZayV44fleMa0T8XMlgDbZ9f6h/aYjj37VzyFzU5S0dYw0Zng0KnrzwLeAyMuf2XF
-	9waehBTjvHfNSgxDeWcg==;
+	List-Owner; bh=QtOwsrcF1W53XftK5Zfk3Hu9b2IduVBXuf5bq8Lf+NY=; b=UntVl/xcxLwkmv
+	YwX97JeTwRq9P0DGPjOxYY+scI2v9+uiG8eoQcTGmNIhf6i6ycx6C8ghTN8PjEz+5gmnxVnjcxn2W
+	BwMfH4ihjGiTF21Yv1jm+IlY3oFbcQf6eZI2YCOAcuN3i0g1pS/rtzpFKK9E8D353vgjUTbXlPNow
+	vuRjZeA8eDb6Q9ivQZC+TiDcHhzWa4EicSnECdIyuwCPULk4XFvResrSywCTCsxJKp2QVjZW6Vt7y
+	Q5rPsxQvMRAf9yR9BkdUAwNmFN0ZdeZhJOlDRTNAhZX/WI7aO83ewgEL54+unsHzLQ7bOgQPLEtaI
+	e0ITdtIUgHoYmf4rmzFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP7yl-0008OC-GN; Mon, 28 Oct 2019 16:34:51 +0000
+	id 1iP810-0002de-G8; Mon, 28 Oct 2019 16:37:10 +0000
 Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP7x3-0006ic-TE; Mon, 28 Oct 2019 16:33:07 +0000
-Received: by mail-oi1-f196.google.com with SMTP id k2so1284614oij.12;
- Mon, 28 Oct 2019 09:33:05 -0700 (PDT)
+ id 1iP7x6-0006lF-VP; Mon, 28 Oct 2019 16:33:10 +0000
+Received: by mail-oi1-f196.google.com with SMTP id s71so6390097oih.11;
+ Mon, 28 Oct 2019 09:33:08 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Y8FNka9VqW+GuyHhrg3YYeRr9rwrH+ifXsb5oKqpMlo=;
- b=s0hv/LWZ5D65LO7oJ1u4PNOSnHmMjZ18m2Wz4ACEIvYLtu9OoLTnp4xUqXXE9Rux4D
- bZI2Src0aDW8fEtbzEy8IY1Ge2nc+DPTGb19vae+fnoaklQ+0crT/IHxbFTSTvdE318y
- 79z6qKaFdyPr5n4IjXQ8XfSR7+m0s5TBtUXGugZu45/MQa6CayuA+4Ho9Jz+qKork1yY
- KOSep3ucpxt3SNFPA3L/X6yXnyuBF9SxlkfoP1tV8nTjMgj1T7/GNRDSN3d8lSjGB6Zd
- ErxXdeCrFK1B5SbYG3rP8e+vRin7PKG68HqPlFXj9kDqBHiB0mdzU7wRRomeFhsEH703
- 63Vg==
-X-Gm-Message-State: APjAAAVUgvr9c2gPZY3HEdGsfwtxyBPxsdHXG1IkVf4nCAADrI/7kcKC
- JUtpru3h6UvuBABNxv4cSA==
-X-Google-Smtp-Source: APXvYqyUIRHPK2FSnzpcsAJEGlsEmDJCiz/greX4s1l3COXvilcvI5rrPN21yJJxsAwhuvZFPOfz2Q==
-X-Received: by 2002:a05:6808:ab1:: with SMTP id
- r17mr118801oij.75.1572280385099; 
- Mon, 28 Oct 2019 09:33:05 -0700 (PDT)
+ bh=k2xpUbChHFjHyLZeTvcqjOOLjHW6EiB7rU1pguJS2Eg=;
+ b=IxFfAyPKAByOSO1HWmgyIFDsoMP9fRv3EGanzjAjXn+W8dEvHcveyESBIQKhvVspjI
+ Xebbk6EMUFzzLqK1nzvi47DyT3OEiNUxVXTwdegcyt/vcB20ETkPan7QiXG6puhYBa1l
+ vWZr/3lsl9LOy1ZVNxCbOVHElfFPNJHfjF36NioqLofIKrCAijwje3LRZezb5eeZjFFG
+ UOIM8L/kCAsvDog1To2OzU0UGlFCTHD4aYOWCs5/sJz43qe+5YbAlSGgFS0ZfhOpTY28
+ 9iqWQ+Z52Q789tJfXIG6WmSialR+aOp6+EGgfkEpkwbEKzqMXmw9cFKYdnggopHBmFUn
+ V0aQ==
+X-Gm-Message-State: APjAAAW5AiFp5GS6B7HAcN6j9HP5NVUACPd3ojBWwWV9KDUyV+D1y7i7
+ F5fKdX73O21vGZd+z/aWag==
+X-Google-Smtp-Source: APXvYqxZ8ey0YEh8bAOZGGeVRLpA2ZABAh6GC8RKam9rkxWgH4qFebetMS5T/qIzXrvDlJgloyLHhA==
+X-Received: by 2002:a05:6808:1c7:: with SMTP id x7mr122892oic.67.1572280387584; 
+ Mon, 28 Oct 2019 09:33:07 -0700 (PDT)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id e186sm354991oia.47.2019.10.28.09.33.03
+ by smtp.googlemail.com with ESMTPSA id e186sm354991oia.47.2019.10.28.09.33.05
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Oct 2019 09:33:04 -0700 (PDT)
+ Mon, 28 Oct 2019 09:33:06 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH v3 03/25] PCI: aardvark: Use pci_parse_request_of_pci_ranges()
-Date: Mon, 28 Oct 2019 11:32:34 -0500
-Message-Id: <20191028163256.8004-4-robh@kernel.org>
+Subject: [PATCH v3 04/25] PCI: altera: Use pci_parse_request_of_pci_ranges()
+Date: Mon, 28 Oct 2019 11:32:35 -0500
+Message-Id: <20191028163256.8004-5-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191028163256.8004-1-robh@kernel.org>
 References: <20191028163256.8004-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_093306_016519_3925A0B7 
-X-CRM114-Status: GOOD (  14.09  )
+X-CRM114-CacheID: sfid-20191028_093309_035563_CF2A33F6 
+X-CRM114-Status: GOOD (  14.94  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
@@ -112,50 +111,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Convert aardvark to use the common pci_parse_request_of_pci_ranges().
+Convert altera host bridge to use the common
+pci_parse_request_of_pci_ranges().
 
 There's no need to assign the resources to a temporary list first. Just
 use bridge->windows directly and remove all the temporary list handling.
 
+If an I/O range is present, then it will now be mapped. It's expected
+that h/w which doesn't support I/O range will not define one.
+
+Cc: Ley Foon Tan <lftan@altera.com>
 Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 Cc: Bjorn Helgaas <bhelgaas@google.com>
-Tested-by: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Cc: rfi@lists.rocketboards.org
 Reviewed-by: Andrew Murray <andrew.murray@arm.com>
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
 v2:
-- Remove the temporary list
+- Remove temporary resource list
 ---
- drivers/pci/controller/pci-aardvark.c | 60 ++-------------------------
- 1 file changed, 4 insertions(+), 56 deletions(-)
+ drivers/pci/controller/pcie-altera.c | 41 ++--------------------------
+ 1 file changed, 2 insertions(+), 39 deletions(-)
 
-diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
-index fc0fe4d4de49..9cbeba507f0c 100644
---- a/drivers/pci/controller/pci-aardvark.c
-+++ b/drivers/pci/controller/pci-aardvark.c
-@@ -186,7 +186,6 @@
- struct advk_pcie {
- 	struct platform_device *pdev;
- 	void __iomem *base;
--	struct list_head resources;
- 	struct irq_domain *irq_domain;
- 	struct irq_chip irq_chip;
- 	struct irq_domain *msi_domain;
-@@ -910,63 +909,11 @@ static irqreturn_t advk_pcie_irq_handler(int irq, void *arg)
- 	return IRQ_HANDLED;
+diff --git a/drivers/pci/controller/pcie-altera.c b/drivers/pci/controller/pcie-altera.c
+index d2497ca43828..ba025efeae28 100644
+--- a/drivers/pci/controller/pcie-altera.c
++++ b/drivers/pci/controller/pcie-altera.c
+@@ -92,7 +92,6 @@ struct altera_pcie {
+ 	u8			root_bus_nr;
+ 	struct irq_domain	*irq_domain;
+ 	struct resource		bus_range;
+-	struct list_head	resources;
+ 	const struct altera_pcie_data	*pcie_data;
+ };
+ 
+@@ -670,39 +669,6 @@ static void altera_pcie_isr(struct irq_desc *desc)
+ 	chained_irq_exit(chip, desc);
  }
  
--static int advk_pcie_parse_request_of_pci_ranges(struct advk_pcie *pcie)
+-static int altera_pcie_parse_request_of_pci_ranges(struct altera_pcie *pcie)
 -{
 -	int err, res_valid = 0;
 -	struct device *dev = &pcie->pdev->dev;
--	struct resource_entry *win, *tmp;
--	resource_size_t iobase;
--
--	INIT_LIST_HEAD(&pcie->resources);
+-	struct resource_entry *win;
 -
 -	err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
--						    &pcie->resources, &iobase);
+-						    &pcie->resources, NULL);
 -	if (err)
 -		return err;
 -
@@ -163,72 +164,55 @@ index fc0fe4d4de49..9cbeba507f0c 100644
 -	if (err)
 -		goto out_release_res;
 -
--	resource_list_for_each_entry_safe(win, tmp, &pcie->resources) {
+-	resource_list_for_each_entry(win, &pcie->resources) {
 -		struct resource *res = win->res;
 -
--		switch (resource_type(res)) {
--		case IORESOURCE_IO:
--			err = devm_pci_remap_iospace(dev, res, iobase);
--			if (err) {
--				dev_warn(dev, "error %d: failed to map resource %pR\n",
--					 err, res);
--				resource_list_destroy_entry(win);
--			}
--			break;
--		case IORESOURCE_MEM:
+-		if (resource_type(res) == IORESOURCE_MEM)
 -			res_valid |= !(res->flags & IORESOURCE_PREFETCH);
--			break;
--		case IORESOURCE_BUS:
--			pcie->root_bus_nr = res->start;
--			break;
--		}
 -	}
 -
--	if (!res_valid) {
--		dev_err(dev, "non-prefetchable memory resource required\n");
--		err = -EINVAL;
--		goto out_release_res;
--	}
+-	if (res_valid)
+-		return 0;
 -
--	return 0;
+-	dev_err(dev, "non-prefetchable memory resource required\n");
+-	err = -EINVAL;
 -
 -out_release_res:
 -	pci_free_resource_list(&pcie->resources);
 -	return err;
 -}
 -
- static int advk_pcie_probe(struct platform_device *pdev)
+ static int altera_pcie_init_irq_domain(struct altera_pcie *pcie)
  {
- 	struct device *dev = &pdev->dev;
- 	struct advk_pcie *pcie;
--	struct resource *res;
-+	struct resource *res, *bus;
- 	struct pci_host_bridge *bridge;
- 	int ret, irq;
- 
-@@ -991,11 +938,13 @@ static int advk_pcie_probe(struct platform_device *pdev)
+ 	struct device *dev = &pcie->pdev->dev;
+@@ -833,9 +799,8 @@ static int altera_pcie_probe(struct platform_device *pdev)
  		return ret;
  	}
  
--	ret = advk_pcie_parse_request_of_pci_ranges(pcie);
+-	INIT_LIST_HEAD(&pcie->resources);
+-
+-	ret = altera_pcie_parse_request_of_pci_ranges(pcie);
 +	ret = pci_parse_request_of_pci_ranges(dev, &bridge->windows,
-+					      &bus);
++					      NULL);
  	if (ret) {
- 		dev_err(dev, "Failed to parse resources\n");
+ 		dev_err(dev, "Failed add resources\n");
  		return ret;
- 	}
-+	pcie->root_bus_nr = bus->start;
- 
- 	advk_pcie_setup_hw(pcie);
- 
-@@ -1014,7 +963,6 @@ static int advk_pcie_probe(struct platform_device *pdev)
- 		return ret;
- 	}
+@@ -853,7 +818,6 @@ static int altera_pcie_probe(struct platform_device *pdev)
+ 	cra_writel(pcie, P2A_INT_ENA_ALL, P2A_INT_ENABLE);
+ 	altera_pcie_host_init(pcie);
  
 -	list_splice_init(&pcie->resources, &bridge->windows);
  	bridge->dev.parent = dev;
  	bridge->sysdata = pcie;
- 	bridge->busnr = 0;
+ 	bridge->busnr = pcie->root_bus_nr;
+@@ -884,7 +848,6 @@ static int altera_pcie_remove(struct platform_device *pdev)
+ 
+ 	pci_stop_root_bus(bridge->bus);
+ 	pci_remove_root_bus(bridge->bus);
+-	pci_free_resource_list(&pcie->resources);
+ 	altera_pcie_irq_teardown(pcie);
+ 
+ 	return 0;
 -- 
 2.20.1
 
