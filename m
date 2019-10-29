@@ -2,56 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F370DE88E8
-	for <lists+linux-rockchip@lfdr.de>; Tue, 29 Oct 2019 13:58:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 933A4E88DA
+	for <lists+linux-rockchip@lfdr.de>; Tue, 29 Oct 2019 13:57:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=KjU7+B5iQQFIYXOhsDtLJcyOw50fbZ9trMDrfQ58ukw=; b=GsQ
-	f6wgkpL6vfsauoQEYs0gDzr5KG0bGqDZW5R7lbhnv+jsSxSyoQ8Ie5KMH8GPR1vUmsziu8xL5JOst
-	Q+IU+j93fuKGR5R+9jIUUdSasb/JYIMvtJtXIb3o7I9jfCjVICMXw+D6YSoeu9b/+jUlHWQCY9CjL
-	asBfgtGepG3Kc2F5t9MeOsMGXspIP/SJyx9wBA5iZNFjwRqMuU/pX/wfKj37IqRry0a/ushVtGYzG
-	v2dZFCCVfx8Z3mwIINhVjD6o79r21mYDsmvYgAQ52JG5g5NDIK96Ym2PrPp1EwAjyAEB67EWGRTnz
-	bU2DXtCGopi+FZsoMjOfjebXkQewL+g==;
+	References:List-Owner; bh=JFyc6JQzteFD60SufyuuKPBtERRndBlG7GKvNJMVHcs=; b=PB7
+	BX7mwFT1k6zXj1y8NeGZ4cCWa3vgKCZvmc2MMpmQDlIOTmFL7Sm0aBWEL2qiFWQTNeSFYb51LSSAS
+	VSlXT7riOBKSalPSwPaZ5ZHPsGDz6vi6oGnhu0RZfGT5S5caPxsTw672Bik0aKcEKI+rG3DKG8I8W
+	p7RpioFdw33oOz1riM7DC4Fb6pDdBDYhqnm6dhwgXQ7PMiYZQKfRJVGoQMVjkTS5B2i0e/sHfg6ql
+	gqiDK/JqTboNZT6pVqgyMGw+YGuD/Z1VES7b+X6Hl6SQd1dJjXuFQo2m7bWBPrKfw3QcTJ8+6UKaY
+	iJHgLnK/jcepsQ4mDoub6rBAxD8IRyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPR54-0004XJ-SA; Tue, 29 Oct 2019 12:58:38 +0000
+	id 1iPR3u-0003UG-JP; Tue, 29 Oct 2019 12:57:26 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPR3h-0003J8-Ta; Tue, 29 Oct 2019 12:57:17 +0000
+ id 1iPR3g-0003Iv-Sr; Tue, 29 Oct 2019 12:57:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=Wl+5/Qj/XhSNlZehVwD9qVk1hUUvfQ5iMLqz0DQGd0E=; b=Enb9SgsKSwwH
- 4l7KNx3nuvInMfXC5o/09C023lh/1CtRMwg8irjeb2vSpFbbOqYD+Ag/wrCyTSljba7Rlv2UapKx+
- Mflf4De6z8aXfQL+mtEKqFpezAkzVPeLjL215UXSJYv03IcuePxdc9GTQImZKgbRi+oDJtic8qNUk
- BL3pY=;
+ List-Archive; bh=CBQLq/65CvGse5vZ5IhccpSwngNnItVee/+ILoQUur0=; b=NEe6XtxYcThn
+ bTmvcMIN1MnRHLAE6mcDNDsazPISqwuyVYdrzzrgGR+HvCwcXVZV2vxjLKF4FSZ0mFTHoV+xfLv4s
+ c/BOBFzrvWrbQvplTiRlCb4rfhIHMdrFXPtMS9+zJkSmWGuM3vVUGcGMw7kyuoEqZK35b97YdL9qC
+ upl4c=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iPR3U-0002DI-3j; Tue, 29 Oct 2019 12:57:00 +0000
+ id 1iPR3T-0002DG-Pu; Tue, 29 Oct 2019 12:56:59 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 98B622742990; Tue, 29 Oct 2019 12:56:59 +0000 (GMT)
+ id 5564627428D8; Tue, 29 Oct 2019 12:56:59 +0000 (GMT)
 From: Mark Brown <broonie@kernel.org>
 To: Cheng-Yi Chiang <cychiang@chromium.org>
-Subject: Applied "ASoC: rockchip-max98090: Support usage with and without
- HDMI" to the asoc tree
-In-Reply-To: <20191028071930.145899-3-cychiang@chromium.org>
+Subject: Applied "ASoC: rockchip_max98090: Optionally support HDMI use case"
+ to the asoc tree
+In-Reply-To: <20191028071930.145899-4-cychiang@chromium.org>
 X-Patchwork-Hint: ignore
-Message-Id: <20191029125659.98B622742990@ypsilon.sirena.org.uk>
+Message-Id: <20191029125659.5564627428D8@ypsilon.sirena.org.uk>
 Date: Tue, 29 Oct 2019 12:56:59 +0000 (GMT)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_055713_953158_3BB5FE97 
-X-CRM114-Status: GOOD (  14.87  )
+X-CRM114-CacheID: sfid-20191029_055713_242956_1D98CF0B 
+X-CRM114-Status: GOOD (  21.21  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -100,7 +100,7 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 The patch
 
-   ASoC: rockchip-max98090: Support usage with and without HDMI
+   ASoC: rockchip_max98090: Optionally support HDMI use case
 
 has been applied to the asoc tree at
 
@@ -125,80 +125,414 @@ to this mail.
 Thanks,
 Mark
 
-From f03412b78a947857bbd20899e1423482fba55761 Mon Sep 17 00:00:00 2001
+From 05b754f5f41c1ea5366c37c8f0ee04c4b4899ff9 Mon Sep 17 00:00:00 2001
 From: Cheng-Yi Chiang <cychiang@chromium.org>
-Date: Mon, 28 Oct 2019 15:19:26 +0800
-Subject: [PATCH] ASoC: rockchip-max98090: Support usage with and without HDMI
+Date: Mon, 28 Oct 2019 15:19:27 +0800
+Subject: [PATCH] ASoC: rockchip_max98090: Optionally support HDMI use case
 
-Add one optional property "rockchip,hdmi-codec" to let user specify HDMI
-device node in DTS so machine driver can find hdmi-codec device node for
-HDMI codec DAI.
+Support three different use cases with rockchip_max98090 driver.
 
-Use the presence of rockchip,audio-codec and rockchip,hdmi-codec to
-specify the use case.
+The three use cases:
+- max98090 only: Current usage, where HDMI link is missing.
+- HDMI only: Needed use case for veyron_mickey board.
+- max98090 + HDMI: Ideal use case for veyron_jerry, veyron_minnie..etc.
 
-Use max98090 only : specify rockchip,audio-codec.
-Use HDMI only: specify rockchip,hdmi-codec.
-Use both max98090 and HDMI: specify rockchip,audio-codec and
-rockchip,hdmi-codec.
+The presence of max98090 is determined by the presence of
+rockchip,audio-codec device property.
 
-Move these properties to optional because they are not needed for
-HDMI-only use case.
-"rockchip,audio-codec": The phandle of the MAX98090 audio codec
-"rockchip,headset-codec": The phandle of Ext chip for jack detection
+The presence of HDMI is determined by the presence of
+rockchip,hdmi-codec device property.
+
+Create different sound card based on the configuration.
+Note that we keep max98090 only usage for backward compatibility.
 
 Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
-Link: https://lore.kernel.org/r/20191028071930.145899-3-cychiang@chromium.org
+Link: https://lore.kernel.org/r/20191028071930.145899-4-cychiang@chromium.org
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- .../bindings/sound/rockchip-max98090.txt      | 27 +++++++++++++++++--
- 1 file changed, 25 insertions(+), 2 deletions(-)
+ sound/soc/rockchip/rockchip_max98090.c | 291 +++++++++++++++++++------
+ 1 file changed, 226 insertions(+), 65 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/sound/rockchip-max98090.txt b/Documentation/devicetree/bindings/sound/rockchip-max98090.txt
-index a805aa99ad75..e9c58b204399 100644
---- a/Documentation/devicetree/bindings/sound/rockchip-max98090.txt
-+++ b/Documentation/devicetree/bindings/sound/rockchip-max98090.txt
-@@ -5,15 +5,38 @@ Required properties:
- - rockchip,model: The user-visible name of this sound complex
- - rockchip,i2s-controller: The phandle of the Rockchip I2S controller that's
-   connected to the CODEC
--- rockchip,audio-codec: The phandle of the MAX98090 audio codec
--- rockchip,headset-codec: The phandle of Ext chip for jack detection
-+
-+Optional properties:
-+- rockchip,audio-codec: The phandle of the MAX98090 audio codec.
-+- rockchip,headset-codec: The phandle of Ext chip for jack detection. This is
-+                          required if there is rockchip,audio-codec.
-+- rockchip,hdmi-codec: The phandle of HDMI device for HDMI codec.
+diff --git a/sound/soc/rockchip/rockchip_max98090.c b/sound/soc/rockchip/rockchip_max98090.c
+index 0097df1fae66..50ef9b8e7ce4 100644
+--- a/sound/soc/rockchip/rockchip_max98090.c
++++ b/sound/soc/rockchip/rockchip_max98090.c
+@@ -6,6 +6,7 @@
+  */
  
- Example:
+ #include <linux/module.h>
++#include <linux/of_device.h>
+ #include <linux/platform_device.h>
+ #include <linux/slab.h>
+ #include <linux/gpio.h>
+@@ -36,28 +37,73 @@ static struct snd_soc_jack_pin headset_jack_pins[] = {
  
-+/* For max98090-only board. */
-+sound {
-+	compatible = "rockchip,rockchip-audio-max98090";
-+	rockchip,model = "ROCKCHIP-I2S";
-+	rockchip,i2s-controller = <&i2s>;
-+	rockchip,audio-codec = <&max98090>;
-+	rockchip,headset-codec = <&headsetcodec>;
-+};
-+
-+/* For HDMI-only board. */
-+sound {
-+	compatible = "rockchip,rockchip-audio-max98090";
-+	rockchip,model = "ROCKCHIP-I2S";
-+	rockchip,i2s-controller = <&i2s>;
-+	rockchip,hdmi-codec = <&hdmi>;
-+};
-+
-+/* For max98090 plus HDMI board. */
- sound {
- 	compatible = "rockchip,rockchip-audio-max98090";
- 	rockchip,model = "ROCKCHIP-I2S";
- 	rockchip,i2s-controller = <&i2s>;
- 	rockchip,audio-codec = <&max98090>;
- 	rockchip,headset-codec = <&headsetcodec>;
-+	rockchip,hdmi-codec = <&hdmi>;
  };
+ 
+-static const struct snd_soc_dapm_widget rk_dapm_widgets[] = {
+-	SND_SOC_DAPM_HP("Headphone", NULL),
+-	SND_SOC_DAPM_MIC("Headset Mic", NULL),
+-	SND_SOC_DAPM_MIC("Int Mic", NULL),
+-	SND_SOC_DAPM_SPK("Speaker", NULL),
++#define RK_MAX98090_WIDGETS \
++	SND_SOC_DAPM_HP("Headphone", NULL), \
++	SND_SOC_DAPM_MIC("Headset Mic", NULL), \
++	SND_SOC_DAPM_MIC("Int Mic", NULL), \
++	SND_SOC_DAPM_SPK("Speaker", NULL)
++
++#define RK_HDMI_WIDGETS \
++	SND_SOC_DAPM_LINE("HDMI", NULL)
++
++static const struct snd_soc_dapm_widget rk_max98090_dapm_widgets[] = {
++	RK_MAX98090_WIDGETS,
++};
++
++static const struct snd_soc_dapm_widget rk_hdmi_dapm_widgets[] = {
++	RK_HDMI_WIDGETS,
++};
++
++static const struct snd_soc_dapm_widget rk_max98090_hdmi_dapm_widgets[] = {
++	RK_MAX98090_WIDGETS,
++	RK_HDMI_WIDGETS,
++};
++
++#define RK_MAX98090_AUDIO_MAP \
++	{"IN34", NULL, "Headset Mic"}, \
++	{"Headset Mic", NULL, "MICBIAS"}, \
++	{"DMICL", NULL, "Int Mic"}, \
++	{"Headphone", NULL, "HPL"}, \
++	{"Headphone", NULL, "HPR"}, \
++	{"Speaker", NULL, "SPKL"}, \
++	{"Speaker", NULL, "SPKR"}
++
++#define RK_HDMI_AUDIO_MAP \
++	{"HDMI", NULL, "TX"}
++
++static const struct snd_soc_dapm_route rk_max98090_audio_map[] = {
++	RK_MAX98090_AUDIO_MAP,
++};
++
++static const struct snd_soc_dapm_route rk_hdmi_audio_map[] = {
++	RK_HDMI_AUDIO_MAP,
+ };
+ 
+-static const struct snd_soc_dapm_route rk_audio_map[] = {
+-	{"IN34", NULL, "Headset Mic"},
+-	{"Headset Mic", NULL, "MICBIAS"},
+-	{"DMICL", NULL, "Int Mic"},
+-	{"Headphone", NULL, "HPL"},
+-	{"Headphone", NULL, "HPR"},
+-	{"Speaker", NULL, "SPKL"},
+-	{"Speaker", NULL, "SPKR"},
++static const struct snd_soc_dapm_route rk_max98090_hdmi_audio_map[] = {
++	RK_MAX98090_AUDIO_MAP,
++	RK_HDMI_AUDIO_MAP,
++};
++
++#define RK_MAX98090_CONTROLS \
++	SOC_DAPM_PIN_SWITCH("Headphone"), \
++	SOC_DAPM_PIN_SWITCH("Headset Mic"), \
++	SOC_DAPM_PIN_SWITCH("Int Mic"), \
++	SOC_DAPM_PIN_SWITCH("Speaker")
++
++#define RK_HDMI_CONTROLS \
++	SOC_DAPM_PIN_SWITCH("HDMI")
++
++static const struct snd_kcontrol_new rk_max98090_controls[] = {
++	RK_MAX98090_CONTROLS,
+ };
+ 
+-static const struct snd_kcontrol_new rk_mc_controls[] = {
+-	SOC_DAPM_PIN_SWITCH("Headphone"),
+-	SOC_DAPM_PIN_SWITCH("Headset Mic"),
+-	SOC_DAPM_PIN_SWITCH("Int Mic"),
+-	SOC_DAPM_PIN_SWITCH("Speaker"),
++static const struct snd_kcontrol_new rk_hdmi_controls[] = {
++	RK_HDMI_CONTROLS,
++};
++
++static const struct snd_kcontrol_new rk_max98090_hdmi_controls[] = {
++	RK_MAX98090_CONTROLS,
++	RK_HDMI_CONTROLS,
+ };
+ 
+ static int rk_jack_event(struct notifier_block *nb, unsigned long event,
+@@ -122,15 +168,20 @@ static int rk_aif1_hw_params(struct snd_pcm_substream *substream,
+ 
+ 	ret = snd_soc_dai_set_sysclk(cpu_dai, 0, mclk,
+ 				     SND_SOC_CLOCK_OUT);
+-	if (ret < 0) {
+-		dev_err(codec_dai->dev, "Can't set codec clock %d\n", ret);
++	if (ret) {
++		dev_err(cpu_dai->dev, "Can't set cpu dai clock %d\n", ret);
+ 		return ret;
+ 	}
+ 
+ 	ret = snd_soc_dai_set_sysclk(codec_dai, 0, mclk,
+ 				     SND_SOC_CLOCK_IN);
+-	if (ret < 0) {
+-		dev_err(codec_dai->dev, "Can't set codec clock %d\n", ret);
++
++	/* HDMI codec dai does not need to set sysclk. */
++	if (!strcmp(rtd->dai_link->name, "HDMI"))
++		return 0;
++
++	if (ret) {
++		dev_err(codec_dai->dev, "Can't set codec dai clock %d\n", ret);
+ 		return ret;
+ 	}
+ 
+@@ -152,20 +203,67 @@ static const struct snd_soc_ops rk_aif1_ops = {
+ 	.startup = rk_aif1_startup,
+ };
+ 
+-SND_SOC_DAILINK_DEFS(hifi,
+-	DAILINK_COMP_ARRAY(COMP_EMPTY()),
+-	DAILINK_COMP_ARRAY(COMP_CODEC(NULL, "HiFi")),
+-	DAILINK_COMP_ARRAY(COMP_EMPTY()));
+-
+-static struct snd_soc_dai_link rk_dailink = {
+-	.name = "max98090",
+-	.stream_name = "Audio",
+-	.init = rk_init,
+-	.ops = &rk_aif1_ops,
+-	/* set max98090 as slave */
+-	.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
+-		SND_SOC_DAIFMT_CBS_CFS,
+-	SND_SOC_DAILINK_REG(hifi),
++SND_SOC_DAILINK_DEFS(analog,
++		     DAILINK_COMP_ARRAY(COMP_EMPTY()),
++		     DAILINK_COMP_ARRAY(COMP_CODEC(NULL, "HiFi")),
++		     DAILINK_COMP_ARRAY(COMP_EMPTY()));
++
++SND_SOC_DAILINK_DEFS(hdmi,
++		     DAILINK_COMP_ARRAY(COMP_EMPTY()),
++		     DAILINK_COMP_ARRAY(COMP_CODEC(NULL, "i2s-hifi")),
++		     DAILINK_COMP_ARRAY(COMP_EMPTY()));
++
++enum {
++	DAILINK_MAX98090,
++	DAILINK_HDMI,
++};
++
++/* max98090 dai_link */
++static struct snd_soc_dai_link rk_max98090_dailinks[] = {
++	{
++		.name = "max98090",
++		.stream_name = "Analog",
++		.init = rk_init,
++		.ops = &rk_aif1_ops,
++		/* set max98090 as slave */
++		.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
++			SND_SOC_DAIFMT_CBS_CFS,
++		SND_SOC_DAILINK_REG(analog),
++	},
++};
++
++/* HDMI codec dai_link */
++static struct snd_soc_dai_link rk_hdmi_dailinks[] = {
++	{
++		.name = "HDMI",
++		.stream_name = "HDMI",
++		.ops = &rk_aif1_ops,
++		.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
++			SND_SOC_DAIFMT_CBS_CFS,
++		SND_SOC_DAILINK_REG(hdmi),
++	}
++};
++
++/* max98090 and HDMI codec dai_link */
++static struct snd_soc_dai_link rk_max98090_hdmi_dailinks[] = {
++	[DAILINK_MAX98090] = {
++		.name = "max98090",
++		.stream_name = "Analog",
++		.init = rk_init,
++		.ops = &rk_aif1_ops,
++		/* set max98090 as slave */
++		.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
++			SND_SOC_DAIFMT_CBS_CFS,
++		SND_SOC_DAILINK_REG(analog),
++	},
++	[DAILINK_HDMI] = {
++		.name = "HDMI",
++		.stream_name = "HDMI",
++		.ops = &rk_aif1_ops,
++		.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
++			SND_SOC_DAIFMT_CBS_CFS,
++		SND_SOC_DAILINK_REG(hdmi),
++	}
+ };
+ 
+ static int rk_98090_headset_init(struct snd_soc_component *component);
+@@ -175,19 +273,47 @@ static struct snd_soc_aux_dev rk_98090_headset_dev = {
+ 	.init = rk_98090_headset_init,
+ };
+ 
+-static struct snd_soc_card snd_soc_card_rk = {
++static struct snd_soc_card rockchip_max98090_card = {
+ 	.name = "ROCKCHIP-I2S",
+ 	.owner = THIS_MODULE,
+-	.dai_link = &rk_dailink,
+-	.num_links = 1,
++	.dai_link = rk_max98090_dailinks,
++	.num_links = ARRAY_SIZE(rk_max98090_dailinks),
+ 	.aux_dev = &rk_98090_headset_dev,
+ 	.num_aux_devs = 1,
+-	.dapm_widgets = rk_dapm_widgets,
+-	.num_dapm_widgets = ARRAY_SIZE(rk_dapm_widgets),
+-	.dapm_routes = rk_audio_map,
+-	.num_dapm_routes = ARRAY_SIZE(rk_audio_map),
+-	.controls = rk_mc_controls,
+-	.num_controls = ARRAY_SIZE(rk_mc_controls),
++	.dapm_widgets = rk_max98090_dapm_widgets,
++	.num_dapm_widgets = ARRAY_SIZE(rk_max98090_dapm_widgets),
++	.dapm_routes = rk_max98090_audio_map,
++	.num_dapm_routes = ARRAY_SIZE(rk_max98090_audio_map),
++	.controls = rk_max98090_controls,
++	.num_controls = ARRAY_SIZE(rk_max98090_controls),
++};
++
++static struct snd_soc_card rockchip_hdmi_card = {
++	.name = "ROCKCHIP-HDMI",
++	.owner = THIS_MODULE,
++	.dai_link = rk_hdmi_dailinks,
++	.num_links = ARRAY_SIZE(rk_hdmi_dailinks),
++	.dapm_widgets = rk_hdmi_dapm_widgets,
++	.num_dapm_widgets = ARRAY_SIZE(rk_hdmi_dapm_widgets),
++	.dapm_routes = rk_hdmi_audio_map,
++	.num_dapm_routes = ARRAY_SIZE(rk_hdmi_audio_map),
++	.controls = rk_hdmi_controls,
++	.num_controls = ARRAY_SIZE(rk_hdmi_controls),
++};
++
++static struct snd_soc_card rockchip_max98090_hdmi_card = {
++	.name = "ROCKCHIP-MAX98090-HDMI",
++	.owner = THIS_MODULE,
++	.dai_link = rk_max98090_hdmi_dailinks,
++	.num_links = ARRAY_SIZE(rk_max98090_hdmi_dailinks),
++	.aux_dev = &rk_98090_headset_dev,
++	.num_aux_devs = 1,
++	.dapm_widgets = rk_max98090_hdmi_dapm_widgets,
++	.num_dapm_widgets = ARRAY_SIZE(rk_max98090_hdmi_dapm_widgets),
++	.dapm_routes = rk_max98090_hdmi_audio_map,
++	.num_dapm_routes = ARRAY_SIZE(rk_max98090_hdmi_audio_map),
++	.controls = rk_max98090_hdmi_controls,
++	.num_controls = ARRAY_SIZE(rk_max98090_hdmi_controls),
+ };
+ 
+ static int rk_98090_headset_init(struct snd_soc_component *component)
+@@ -195,7 +321,7 @@ static int rk_98090_headset_init(struct snd_soc_component *component)
+ 	int ret;
+ 
+ 	/* Enable Headset and 4 Buttons Jack detection */
+-	ret = snd_soc_card_jack_new(&snd_soc_card_rk, "Headset Jack",
++	ret = snd_soc_card_jack_new(component->card, "Headset Jack",
+ 				    SND_JACK_HEADSET |
+ 				    SND_JACK_BTN_0 | SND_JACK_BTN_1 |
+ 				    SND_JACK_BTN_2 | SND_JACK_BTN_3,
+@@ -210,41 +336,75 @@ static int rk_98090_headset_init(struct snd_soc_component *component)
+ 	return ret;
+ }
+ 
++static int rk_parse_headset_from_of(struct device *dev, struct device_node *np)
++{
++	rk_98090_headset_dev.dlc.of_node = of_parse_phandle(
++			np, "rockchip,headset-codec", 0);
++	if (!rk_98090_headset_dev.dlc.of_node) {
++		dev_err(dev,
++			"Property 'rockchip,headset-codec' missing/invalid\n");
++		return -EINVAL;
++	}
++	return 0;
++}
++
+ static int snd_rk_mc_probe(struct platform_device *pdev)
+ {
+ 	int ret = 0;
+-	struct snd_soc_card *card = &snd_soc_card_rk;
++	struct snd_soc_card *card;
++	struct device *dev = &pdev->dev;
+ 	struct device_node *np = pdev->dev.of_node;
++	struct device_node *np_cpu;
++	struct device_node *np_audio, *np_hdmi;
+ 
+-	/* register the soc card */
+-	card->dev = &pdev->dev;
++	/* Parse DTS for I2S controller. */
++	np_cpu = of_parse_phandle(np, "rockchip,i2s-controller", 0);
+ 
+-	rk_dailink.codecs->of_node = of_parse_phandle(np,
+-			"rockchip,audio-codec", 0);
+-	if (!rk_dailink.codecs->of_node) {
++	if (!np_cpu) {
+ 		dev_err(&pdev->dev,
+-			"Property 'rockchip,audio-codec' missing or invalid\n");
++			"Property 'rockchip,i2s-controller missing or invalid\n");
+ 		return -EINVAL;
+ 	}
+ 
+-	rk_dailink.cpus->of_node = of_parse_phandle(np,
+-			"rockchip,i2s-controller", 0);
+-	if (!rk_dailink.cpus->of_node) {
+-		dev_err(&pdev->dev,
+-			"Property 'rockchip,i2s-controller' missing or invalid\n");
++	/*
++	 * Find the card to use based on the presences of audio codec
++	 * and hdmi codec in device property. Set their of_node accordingly.
++	 */
++	np_audio = of_parse_phandle(np, "rockchip,audio-codec", 0);
++	np_hdmi = of_parse_phandle(np, "rockchip,hdmi-codec", 0);
++	if (np_audio && np_hdmi) {
++		card = &rockchip_max98090_hdmi_card;
++		card->dai_link[DAILINK_MAX98090].codecs->of_node = np_audio;
++		card->dai_link[DAILINK_HDMI].codecs->of_node = np_hdmi;
++		card->dai_link[DAILINK_MAX98090].cpus->of_node = np_cpu;
++		card->dai_link[DAILINK_MAX98090].platforms->of_node = np_cpu;
++		card->dai_link[DAILINK_HDMI].cpus->of_node = np_cpu;
++		card->dai_link[DAILINK_HDMI].platforms->of_node = np_cpu;
++	} else if (np_audio) {
++		card = &rockchip_max98090_card;
++		card->dai_link[0].codecs->of_node = np_audio;
++		card->dai_link[0].cpus->of_node = np_cpu;
++		card->dai_link[0].platforms->of_node = np_cpu;
++	} else if (np_hdmi) {
++		card = &rockchip_hdmi_card;
++		card->dai_link[0].codecs->of_node = np_hdmi;
++		card->dai_link[0].cpus->of_node = np_cpu;
++		card->dai_link[0].platforms->of_node = np_cpu;
++	} else {
++		dev_err(dev, "At least one of codecs should be specified\n");
+ 		return -EINVAL;
+ 	}
+ 
+-	rk_dailink.platforms->of_node = rk_dailink.cpus->of_node;
++	card->dev = dev;
+ 
+-	rk_98090_headset_dev.dlc.of_node = of_parse_phandle(np,
+-			"rockchip,headset-codec", 0);
+-	if (!rk_98090_headset_dev.dlc.of_node) {
+-		dev_err(&pdev->dev,
+-			"Property 'rockchip,headset-codec' missing/invalid\n");
+-		return -EINVAL;
++	/* Parse headset detection codec. */
++	if (np_audio) {
++		ret = rk_parse_headset_from_of(dev, np);
++		if (ret)
++			return ret;
+ 	}
+ 
++	/* Parse card name. */
+ 	ret = snd_soc_of_parse_card_name(card, "rockchip,model");
+ 	if (ret) {
+ 		dev_err(&pdev->dev,
+@@ -252,6 +412,7 @@ static int snd_rk_mc_probe(struct platform_device *pdev)
+ 		return ret;
+ 	}
+ 
++	/* register the soc card */
+ 	ret = devm_snd_soc_register_card(&pdev->dev, card);
+ 	if (ret) {
+ 		dev_err(&pdev->dev,
 -- 
 2.20.1
 
