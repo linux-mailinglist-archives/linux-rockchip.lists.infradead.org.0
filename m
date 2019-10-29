@@ -2,74 +2,143 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95842E8C49
-	for <lists+linux-rockchip@lfdr.de>; Tue, 29 Oct 2019 16:59:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86AEAE8DB0
+	for <lists+linux-rockchip@lfdr.de>; Tue, 29 Oct 2019 18:09:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MKz/FvE++9Ij51M/lajDTeqhrDX8vJf2BT0me4icO+w=; b=ZVzoAWc0dHpR24
-	rBMS4hdFHZ4+xpNP/UxMvH615w4HXKI5l271PED4ha4TyQQlWFDCr/2D8Wb16jagWS3TZNCIUfGP2
-	GGBp6koctg+MM5bxL633+XJf62O2x6fhx8gCbmCjiNX7mLB8Id+UJ3QrUfjFnbGneiaP9nVWMNV40
-	54KkixbUcMMSU1Mus89DmGup0jBgudKW+NiamkaWvSXf8a7jJIcWrda7rTfLvjYPT0fP8KPImylRF
-	VNiA6dOsSRbduK/Iwi1tQ9eyuuqWGfHsalY5VibH28Wq2N1xu0wfP3P0BEAoEL8RklvoSs1U7Y2S+
-	9/9dUjtv2uYO90UPNYNg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YkfCFv1EyERr0joCcPPTER+eRN6V9974Lmq87t3fr9Q=; b=k90Jea8wBgXvdW
+	Ey+lRWOJ7nqvME4PL9bD8+SIenB1z5KdE9zMtmV9UKV+50OdT1o4j5P+P67YvIWSpl3F4HCiy1yQR
+	cB755wrWZTxASoKkLrMGGsHroY5ksNtWSNLdvYzijwB881OtAwNhD/5HvN1Qus0p0sTekku4p/nyR
+	Q1rD7x2qDmNfNmKNnTDR1yIhe/zpaNVcRdfSfRUGOn1rRppj1R5AzBBn3evAeGpq2tuoBwjayMVB6
+	02TR1TUb7/TGLXqqL2oOizqx5Ex/lESJM98qVRs4+2nkptKY8QJKAnohyJtYBY1dabTpqOek2aMTt
+	IYYxpEtYOSsi8dXjbl7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPTuU-0001jE-Nd; Tue, 29 Oct 2019 15:59:54 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iPV08-0004Ma-JC; Tue, 29 Oct 2019 17:09:48 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPTuO-0001gj-0P
- for linux-rockchip@lists.infradead.org; Tue, 29 Oct 2019 15:59:50 +0000
-Received: by mail-wm1-x344.google.com with SMTP id q70so3182428wme.1
- for <linux-rockchip@lists.infradead.org>; Tue, 29 Oct 2019 08:59:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jW6z4fKWJsBlYxKn7twBcd7IWPitytMCLX6jbiyT3C8=;
- b=R58RieOynQzxeOkYflDGPYNaowJp2iGxd/hBMRiOQ6dXaUV6q/dEFJAfuprFleLnbr
- 2UZ5Py8YcpQPPN5KcmEqcPFoA8f7jGrIj/2s3Lca0AM9uzgIy+YlDBbF1PbzWdoY0MnS
- tbwtvlpJiWkIC5PmqYdS4J3BO6xh9HNEDLYkE=
+ id 1iPUzt-00047m-SS; Tue, 29 Oct 2019 17:09:35 +0000
+Received: by mail-ed1-x543.google.com with SMTP id e12so11239415edr.4;
+ Tue, 29 Oct 2019 10:09:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=2O8IL+ejqrHAt/B3T8PJtPkWmYd6qZ0pu3QY913ujZ4=;
+ b=I8podoTXJc72YKRax0xgaRJZf/wa98oKW3MDiklQqDPszLXm2BvvT9ccEsqBpZiPqo
+ lG+FUxIPruIO8zvYLFNRxQC0n6ASTTVYHerFfhi+i3lBUViLfyqiFnbAC5lXbgODIukV
+ 7KAGkO5aJ3hQhWTVs0eSrR8MHynPQgm4CEpcgKYVsizFew5Izwsh3ASpTjF+C3pnDV5i
+ YeygHTjYuf/r0fo6wqSWSgnsJN0boNA6XRfj2A+J+v0Jv+dYbhPJ0NLYK+ZaIk8GltwL
+ FiFWiXk+dpsp2skdqF6cjA2KyHbamnC2GKoFbItjKyT7Af3gi4YgU/5uOUqD8LqSogmo
+ /s8Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=jW6z4fKWJsBlYxKn7twBcd7IWPitytMCLX6jbiyT3C8=;
- b=e3pOJ+Zpnfalz6h3NHopd58JauIrhCS6kHZ0kiNB0a0Kgxty4Je+u0ak2gG8nlejWY
- SwbHLZp0EWxK4D4yoYvXOgQHP/oNMmIovQTTfq3woRrlMUTOwiz8AllpETIaxBc9sbV+
- z6UURv/1ts+MNoO4JvlpV2GGrp6svNJkg4oD+oiEyC+LFOG4AO0jrujah6XZC4/NEki2
- maWCvck/J1QX0NcjdWPQK9Jqy6PaJiSkqz8vH2jX7YzpMRA5ZT8IbtKsfueM+Qsn3D2r
- aFXe/xw2maDBOLkK51RkbWZHbS3cY8rNOkARJlh+kqoLagp+H/F14qP410Wp7eQY9g5K
- dbcw==
-X-Gm-Message-State: APjAAAVNyd4uJHquGkRhQ8No6HWxv65YvRc8RUX8e7y0uSuiQaP7D5Dg
- yEdWEf/m+1GIRMtjcsityq/ytqwhxZK+xOU9XA73bQ==
-X-Google-Smtp-Source: APXvYqyUalWNgn46AHsfEyAbE1JclhNBGQx9jhMwfsntmJynyRXE6Rw4WOC1O2HAw7rZ07ZQDAROcByNyjIizGr51ZM=
-X-Received: by 2002:a05:600c:142:: with SMTP id
- w2mr4773242wmm.121.1572364786709; 
- Tue, 29 Oct 2019 08:59:46 -0700 (PDT)
-MIME-Version: 1.0
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=2O8IL+ejqrHAt/B3T8PJtPkWmYd6qZ0pu3QY913ujZ4=;
+ b=gjv2usZhuWYwCzaM4bIH8qhGRpmPSJmZzTcgcF8xpTV3LdJpYjVUkHyVb9iTMfEqZ4
+ 7O6PAWuwjyYo+Vb07Z4XY57BZ4mgXxhRoSi2gviOFIWJHlmmOowsubm42fX2r+49JmxG
+ P0QXsY20qfOa7b6N4PZr+aYDFJH1yWzGW0FX4bytARNQ17Cvf/+P9CgOoMceiZK/XBQO
+ cCJeLIEJaeN+D8fJP/GND2dy4WGgcDu8k/eFOYXcQHq4hre9tKAtmm1TkKgLPcTbg8gn
+ ZIJG4QJW+lng3Iw83RzkKx9LucNFDUjuS+ON7ACRRIS7uL3vbmsX58TEGTl0Pc16maqo
+ 94eA==
+X-Gm-Message-State: APjAAAXEA+zn9L9V8q5T70AUmLgabr4fdPUQcKfIngimheVCJWcq6Y6e
+ NZYjbk/Z3JWVXsmprsiWcsA=
+X-Google-Smtp-Source: APXvYqzN6nO/rdvriDSOKfgs8ORvJ+YZoiUi1EOmiBvKDfzuhZ/MHuRR6HMaCrYDVfDmhiEPTwC5+g==
+X-Received: by 2002:a50:8dc5:: with SMTP id s5mr27163817edh.115.1572368971986; 
+ Tue, 29 Oct 2019 10:09:31 -0700 (PDT)
+Received: from [10.67.50.53] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id s8sm686953edj.6.2019.10.29.10.09.22
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 29 Oct 2019 10:09:30 -0700 (PDT)
+Subject: Re: [PATCH v3 07/25] PCI: iproc: Use pci_parse_request_of_pci_ranges()
+To: Srinath Mannam <srinath.mannam@broadcom.com>, Rob Herring <robh@kernel.org>
 References: <20191028163256.8004-1-robh@kernel.org>
- <20191028163256.8004-24-robh@kernel.org>
-In-Reply-To: <20191028163256.8004-24-robh@kernel.org>
-From: Srinath Mannam <srinath.mannam@broadcom.com>
-Date: Tue, 29 Oct 2019 21:29:35 +0530
-Message-ID: <CABe79T4p-YJp7nNx0iyyx46PFWBC57H-2+VL=RM9rKK-X4qdFg@mail.gmail.com>
-Subject: Re: [PATCH v3 23/25] PCI: iproc: Use inbound resources for setup
-To: Rob Herring <robh@kernel.org>
+ <20191028163256.8004-8-robh@kernel.org>
+ <CABe79T4uF0vnxAbbR-ckr4uBpni3KmD2RYqSS_jUh-KRDFLvzQ@mail.gmail.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
+Message-ID: <31166369-42a0-fe0b-8d6c-8c9486deb009@gmail.com>
+Date: Tue, 29 Oct 2019 10:09:18 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <CABe79T4uF0vnxAbbR-ckr4uBpni3KmD2RYqSS_jUh-KRDFLvzQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_085948_057938_A0627748 
-X-CRM114-Status: GOOD (  19.70  )
+X-CRM114-CacheID: sfid-20191029_100933_925061_CD043318 
+X-CRM114-Status: GOOD (  13.08  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -77,7 +146,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,167 +170,29 @@ Cc: Heiko Stuebner <heiko@sntech.de>,
  BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
  Shawn Lin <shawn.lin@rock-chips.com>, Ray Jui <rjui@broadcom.com>,
  Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, Ryder Lee <ryder.lee@mediatek.com>,
- linux-mediatek@lists.infradead.org, Andrew Murray <andrew.murray@arm.com>,
+ linux-mediatek@lists.infradead.org, Ley Foon Tan <lftan@altera.com>,
  Bjorn Helgaas <bhelgaas@google.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>,
  Scott Branden <sbranden@broadcom.com>, Jingoo Han <jingoohan1@gmail.com>,
  rfi@lists.rocketboards.org, linux-renesas-soc@vger.kernel.org,
  Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
  Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Ley Foon Tan <lftan@altera.com>
+ Andrew Murray <andrew.murray@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Rob,
+On 10/29/19 8:58 AM, Srinath Mannam wrote:
+> Hi Rob,
+> 
+> I reviewed and verified this change.. It is working fine.
 
-I reviewed and verified this change.. It is working fine.
-
-Regards,
-Srinath.
-
-On Mon, Oct 28, 2019 at 10:03 PM Rob Herring <robh@kernel.org> wrote:
->
-> Now that the helpers provide the inbound resources in the host bridge
-> 'dma_ranges' resource list, convert Broadcom iProc host bridge to use
-> the resource list to setup the inbound addresses.
->
-> Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Cc: Bjorn Helgaas <bhelgaas@google.com>
-> Cc: Ray Jui <rjui@broadcom.com>
-> Cc: Scott Branden <sbranden@broadcom.com>
-> Cc: bcm-kernel-feedback-list@broadcom.com
-> Reviewed-by: Andrew Murray <andrew.murray@arm.com>
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
-> v2:
->  - Fix iproc_pcie_paxb_v2_msi_steer() to use resource_entry
-> ---
->  drivers/pci/controller/pcie-iproc.c | 77 +++++++----------------------
->  1 file changed, 17 insertions(+), 60 deletions(-)
->
-> diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
-> index 223335ee791a..f4d78e66846e 100644
-> --- a/drivers/pci/controller/pcie-iproc.c
-> +++ b/drivers/pci/controller/pcie-iproc.c
-> @@ -1122,15 +1122,16 @@ static int iproc_pcie_ib_write(struct iproc_pcie *pcie, int region_idx,
->  }
->
->  static int iproc_pcie_setup_ib(struct iproc_pcie *pcie,
-> -                              struct of_pci_range *range,
-> +                              struct resource_entry *entry,
->                                enum iproc_pcie_ib_map_type type)
->  {
->         struct device *dev = pcie->dev;
->         struct iproc_pcie_ib *ib = &pcie->ib;
->         int ret;
->         unsigned int region_idx, size_idx;
-> -       u64 axi_addr = range->cpu_addr, pci_addr = range->pci_addr;
-> -       resource_size_t size = range->size;
-> +       u64 axi_addr = entry->res->start;
-> +       u64 pci_addr = entry->res->start - entry->offset;
-> +       resource_size_t size = resource_size(entry->res);
->
->         /* iterate through all IARR mapping regions */
->         for (region_idx = 0; region_idx < ib->nr_regions; region_idx++) {
-> @@ -1182,66 +1183,19 @@ static int iproc_pcie_setup_ib(struct iproc_pcie *pcie,
->         return ret;
->  }
->
-> -static int iproc_pcie_add_dma_range(struct device *dev,
-> -                                   struct list_head *resources,
-> -                                   struct of_pci_range *range)
-> -{
-> -       struct resource *res;
-> -       struct resource_entry *entry, *tmp;
-> -       struct list_head *head = resources;
-> -
-> -       res = devm_kzalloc(dev, sizeof(struct resource), GFP_KERNEL);
-> -       if (!res)
-> -               return -ENOMEM;
-> -
-> -       resource_list_for_each_entry(tmp, resources) {
-> -               if (tmp->res->start < range->cpu_addr)
-> -                       head = &tmp->node;
-> -       }
-> -
-> -       res->start = range->cpu_addr;
-> -       res->end = res->start + range->size - 1;
-> -
-> -       entry = resource_list_create_entry(res, 0);
-> -       if (!entry)
-> -               return -ENOMEM;
-> -
-> -       entry->offset = res->start - range->cpu_addr;
-> -       resource_list_add(entry, head);
-> -
-> -       return 0;
-> -}
-> -
->  static int iproc_pcie_map_dma_ranges(struct iproc_pcie *pcie)
->  {
->         struct pci_host_bridge *host = pci_host_bridge_from_priv(pcie);
-> -       struct of_pci_range range;
-> -       struct of_pci_range_parser parser;
-> -       int ret;
-> -       LIST_HEAD(resources);
-> -
-> -       /* Get the dma-ranges from DT */
-> -       ret = of_pci_dma_range_parser_init(&parser, pcie->dev->of_node);
-> -       if (ret)
-> -               return ret;
-> +       struct resource_entry *entry;
-> +       int ret = 0;
->
-> -       for_each_of_pci_range(&parser, &range) {
-> -               ret = iproc_pcie_add_dma_range(pcie->dev,
-> -                                              &resources,
-> -                                              &range);
-> -               if (ret)
-> -                       goto out;
-> +       resource_list_for_each_entry(entry, &host->dma_ranges) {
->                 /* Each range entry corresponds to an inbound mapping region */
-> -               ret = iproc_pcie_setup_ib(pcie, &range, IPROC_PCIE_IB_MAP_MEM);
-> +               ret = iproc_pcie_setup_ib(pcie, entry, IPROC_PCIE_IB_MAP_MEM);
->                 if (ret)
-> -                       goto out;
-> +                       break;
->         }
->
-> -       list_splice_init(&resources, &host->dma_ranges);
-> -
-> -       return 0;
-> -out:
-> -       pci_free_resource_list(&resources);
->         return ret;
->  }
->
-> @@ -1276,13 +1230,16 @@ static int iproce_pcie_get_msi(struct iproc_pcie *pcie,
->  static int iproc_pcie_paxb_v2_msi_steer(struct iproc_pcie *pcie, u64 msi_addr)
->  {
->         int ret;
-> -       struct of_pci_range range;
-> +       struct resource_entry entry;
-> +
-> +       memset(&entry, 0, sizeof(entry));
-> +       entry.res = &entry.__res;
->
-> -       memset(&range, 0, sizeof(range));
-> -       range.size = SZ_32K;
-> -       range.pci_addr = range.cpu_addr = msi_addr & ~(range.size - 1);
-> +       msi_addr &= ~(SZ_32K - 1);
-> +       entry.res->start = msi_addr;
-> +       entry.res->end = msi_addr + SZ_32K - 1;
->
-> -       ret = iproc_pcie_setup_ib(pcie, &range, IPROC_PCIE_IB_MAP_IO);
-> +       ret = iproc_pcie_setup_ib(pcie, &entry, IPROC_PCIE_IB_MAP_IO);
->         return ret;
->  }
->
-> --
-> 2.20.1
->
+You can make that more explicit with a Reviewed-by and Tested-by tag,
+that way it gets picked up by patchwork and can be part of the commit
+message when this gets applied.
+-- 
+Florian
 
 _______________________________________________
 Linux-rockchip mailing list
