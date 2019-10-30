@@ -2,75 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C348EA2BB
-	for <lists+linux-rockchip@lfdr.de>; Wed, 30 Oct 2019 18:47:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC8B4EA2C8
+	for <lists+linux-rockchip@lfdr.de>; Wed, 30 Oct 2019 18:50:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e95aoWOjZfpqhd/stzcsafi2uK41gOBgNIJaT9QRNhM=; b=tL4KBbO0HQNCLa
-	4b4tMdu90gWnI8IoiBwcVEBQYlL5LmfsBtlLxbTJeHcNHozkxyj1nw2Xg8mekCfJ4sgY9x6/vr+kg
-	QncLoBgNv6q7so9rBqeVch3T++f7Obp/s8swH6NyBBXSs95qyTpz1dGEJkLwes0vImkBXt9IB9UlM
-	kBmcqXQMssVcei8YCGKl5HizAv2CK7w78p2bbal7LkbOYiDdP4J5Tus29GoQ3QcSyCYWgNOePfutg
-	fTZ60dWCVZz2Af75UkCnwjFizm2tZIUMNlH/q+0KFm3lLIH/1bnH26CNC+POngxw1gIRVlwb02ZLS
-	3QbHdaVeboNq//fPoCEA==;
+	List-Owner; bh=AomvvmVDuj67OPIDtHY1mjfkFKpsLIVKLta2WNdnaOI=; b=C7KqVqJsGS/kAW
+	Wo3qDYBi9hzgIFuBa2pZhcgJxbpVCVp6C5kUFFgY+TLMwgfqqTeQyYpkswH7cezjs6kLdazaOy5QJ
+	mmwhM+CvykHBx+nqcePOPj44KLpop7P5wYlnOUW/N7NnJqEuZ5LEAM3yp8x4Z8sTWX/790FfZW88r
+	LJI9fZWcCY9J1+biHHCbFtP0ZW4iK9xCfNaVITF/E3HRn1AU3xf4EpaqI33JeNJvYlMhV8gfcHVQy
+	N4W55rczou1QXcSRl5b24eKrw0Y9oh6XE8oY1sH4VG2+rtt27b5063CFoZ1jKeRvFdORq5tLKE8n7
+	g6qSE2QZV3IQStTLgqyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPs3d-0000OJ-8R; Wed, 30 Oct 2019 17:46:57 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1iPs7S-0002BQ-VE; Wed, 30 Oct 2019 17:50:54 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPs3X-0000HJ-B9
- for linux-rockchip@lists.infradead.org; Wed, 30 Oct 2019 17:46:53 +0000
-Received: by mail-qk1-x743.google.com with SMTP id u184so3658488qkd.4
- for <linux-rockchip@lists.infradead.org>; Wed, 30 Oct 2019 10:46:50 -0700 (PDT)
+ id 1iPs7P-0002Ao-QL
+ for linux-rockchip@lists.infradead.org; Wed, 30 Oct 2019 17:50:53 +0000
+Received: by mail-qt1-x844.google.com with SMTP id b10so2604246qto.11
+ for <linux-rockchip@lists.infradead.org>; Wed, 30 Oct 2019 10:50:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ucIocynurZX+WNdITziqx8HGpkQurBpCPdDOY5bggKY=;
- b=Kmt9W75bDia/67F5McEm1WiU5E4DN8VImX7goNG/Bo6e4D5tHa+tAZJkDH2NU43FVe
- 3DWWkjAJXFZnq7XUPsZkpljuRahXrwx9o8AOj4eeBX5l3/gN5pHZmyagMT/rjEVc5JBq
- an/saC0K7/1YZQEH7jwv8cwP0bq7T40ydmzOTCQqTpPu87m6HwvU35uealADV1t24Ewm
- c2kfJk9fWPmqqVct25WKo1PjuQ/PXcqumrbdoimx5dO73UFwxAvlr/MBqZhWYJ3DlyNk
- 0/w3dDViid0yiroGYhiuy8BZkI+kSJotM+pwDzqxWPRPvsj9H9UmuZ/bcd2g+rtLz52X
- VUAg==
+ :cc; bh=aHAG5QGlfTZcV0ev6KxjaigdKgxCpJWBp61pmiRVhto=;
+ b=CCJNOLqBQ7EqfGi77fpKdyM+s/IREZlN72gGYoExLAMS5QR9PfLRsZnFmPWqbcc9Yp
+ GZKOU3a6pPPGt+6B6UqiXy0bsZzAmu89nQWybhiSY//73ztlC4Kv7S4zz840p5UBNi+4
+ MzEZGDILlOsGUnpPRUzIg6naA9LsGhvSV4ZrFJ3BxTL4qGeRpgHquplE22eYBuiny9XJ
+ UHk5MC5EvU4SqKjwDaaR+JnsTFiiPQS6LOfXn9SQrmEjlrvO21cU/cajfDMCKQHti+/z
+ /OHqy949GoLmJrxexRO0yn/kD6nNwbgsaR5F2WLRL5fXm9FxWO51e/Aj3OTcxdTfH6Tu
+ Mtaw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=ucIocynurZX+WNdITziqx8HGpkQurBpCPdDOY5bggKY=;
- b=g0AVJZvzvo7AJ/tgQKE6CNtRmFsXQXoyjiRMmq2nE1HG5j3vZQfbQjM+whYhI5GmZx
- z8DP746H0mJssKE2hjeyMorIijGrzfk1TZfDdA+dF7FhGd5v3P8OD5Ac1CACifFP+hWr
- xM5vCd1f4r7WImpZ5xoPFO3iTUEmINZVfQ9ymxnfp5GHdwc5mwAj4UCJclDcSlHoV7U6
- XuhDRtXo/4zrJ5e1EklklfQUg7G+Sw+SyR1rBCgXu/Pwgal21C3xzfARcu4ye/SNWhuY
- DWNbHvp4j6UUHovObmJKhFfp+UhXER2qDm3TeoJ2oak6ySosbu8oXiCyTdIT40CG6+8s
- snRg==
-X-Gm-Message-State: APjAAAUXZEkhp7X/G8fgQYqQFDXvJafTRvUeOF76uMJ97Sy6orJulrYE
- R2pPtLsZYQWj2+cmvWJRinRYTCTeVu5OuIDQRKzZMZ3zhUw=
-X-Google-Smtp-Source: APXvYqy85loESKPADojLzmsz9Pewy7Ser5st4huiypUxW1NmyHp+Pv+dfWbrl+BzcoW6eu7hRJSeTwYpossOBMT6cWg=
-X-Received: by 2002:a05:620a:237:: with SMTP id
- u23mr1186097qkm.484.1572457609542; 
- Wed, 30 Oct 2019 10:46:49 -0700 (PDT)
+ bh=aHAG5QGlfTZcV0ev6KxjaigdKgxCpJWBp61pmiRVhto=;
+ b=lO1NRK1Ej19kpMhRKwkOnoAteCsw3DTubq+oqGy/g60mSJ6oUMMXlN5Ynnj60FdYt5
+ nGWRjmdmrqlHuUZtRhzIfL7E4FneMJr1xjknOGRSSWMXRYtF4ZUSy6eeTuQ5yWp4dxtF
+ vMZecH33ZySFi1FiGPydrOu88Ujfoide9OvFL8rImKaRHaaqVTatEJdTugIgl2E4v0g7
+ tLFaRoUoE+Jl2G8l5QmSQGgv+djCOtKGrxNzGDxNhSmCNYDf4g/7n2vMRsldnSPt5rIf
+ jsOA6mMlhu7QEgOHIFDzAWsueYpEHfSlJD0CYsruu1u/wfkXyYTPGAtOP+2lwSRv/ZEw
+ M7jg==
+X-Gm-Message-State: APjAAAX5KWfTA3q29o0WsDMxMKW507MtfiOSRckDJT9aSqzOcVb8GsN5
+ 1FqROXojCUUwSmLZjgTaR8upUXwbj07uWR1+Euw=
+X-Google-Smtp-Source: APXvYqwT7Y4406iDzbNo0bjXF+UX1OQ/pkV18E5pWAQKCaZRYA0p+Aybj6lZFhHy2OVMPW4U6o8NmPJF0Qe1kBeTl6Q=
+X-Received: by 2002:ac8:80f:: with SMTP id u15mr1358783qth.193.1572457850268; 
+ Wed, 30 Oct 2019 10:50:50 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191028182254.30739-1-pgwipeout@gmail.com>
  <20191028182254.30739-2-pgwipeout@gmail.com>
- <10419898.gYlDFaIxON@phil>
-In-Reply-To: <10419898.gYlDFaIxON@phil>
+ <1572315115.18464.11.camel@mhfsdcap03>
+ <CAMdYzYoOQ_C_f2v-3XBid8X0fc6z3Bw0XqRi3CQiwCzRLT-_0g@mail.gmail.com>
+ <1572404361.18464.24.camel@mhfsdcap03>
+In-Reply-To: <1572404361.18464.24.camel@mhfsdcap03>
 From: Peter Geis <pgwipeout@gmail.com>
-Date: Wed, 30 Oct 2019 13:46:31 -0400
-Message-ID: <CAMdYzYqex=xoXR+Xhg=LNwEa0hobbSghRzj8AkmVOSNhp7x1-A@mail.gmail.com>
+Date: Wed, 30 Oct 2019 13:50:32 -0400
+Message-ID: <CAMdYzYphK=R-3tw67xrutRv-fxOq7=dPXg5=4kT6bkivH77E0w@mail.gmail.com>
 Subject: Re: [PATCH 1/5] phy: rockchip: add inno-usb3 phy driver
-To: Heiko Stuebner <heiko@sntech.de>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_104651_458721_B57099BE 
-X-CRM114-Status: GOOD (  12.43  )
+X-CRM114-CacheID: sfid-20191030_105051_853555_CE70BDDB 
+X-CRM114-Status: GOOD (  18.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -96,48 +97,109 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: katsuhiro@katsuster.net, linux-rockchip@lists.infradead.org,
- linux-usb@vger.kernel.org, Robin Murphy <robin.murphy@arm.com>
+ linux-usb@vger.kernel.org, Robin Murphy <robin.murphy@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Oct 30, 2019 at 4:15 AM Heiko Stuebner <heiko@sntech.de> wrote:
+On Tue, Oct 29, 2019 at 10:59 PM Chunfeng Yun <chunfeng.yun@mediatek.com> wrote:
 >
-> Am Montag, 28. Oktober 2019, 19:22:50 CET schrieb Peter Geis:
-> > Add the rockchip innosilicon usb3 phy driver, supporting devices such as the rk3328.
-> > Pulled from:
-> > https://github.com/FireflyTeam/kernel/blob/roc-rk3328-cc/drivers/phy/rockchip/phy-rockchip-inno-usb3.c
+> On Tue, 2019-10-29 at 11:26 -0400, Peter Geis wrote:
+> > On Mon, Oct 28, 2019 at 10:12 PM Chunfeng Yun <chunfeng.yun@mediatek.com> wrote:
+> > >
+> > > On Mon, 2019-10-28 at 18:22 +0000, Peter Geis wrote:
+> > > > Add the rockchip innosilicon usb3 phy driver, supporting devices such as the rk3328.
+> > > > Pulled from:
+> > > > https://github.com/FireflyTeam/kernel/blob/roc-rk3328-cc/drivers/phy/rockchip/phy-rockchip-inno-usb3.c
+> > > >
+> > > > Signed-off-by: Peter Geis <pgwipeout@gmail.com>
+> > > > ---
+> > > >  drivers/phy/rockchip/Kconfig                  |    9 +
+> > > >  drivers/phy/rockchip/Makefile                 |    1 +
+> > > >  drivers/phy/rockchip/phy-rockchip-inno-usb3.c | 1107 +++++++++++++++++
+> > > >  3 files changed, 1117 insertions(+)
+> > > >  create mode 100644 drivers/phy/rockchip/phy-rockchip-inno-usb3.c
+> > > >
+> ...
+> > > > +static int rk3328_u3phy_pipe_power(struct rockchip_u3phy *u3phy,
+> > > > +                                struct rockchip_u3phy_port *u3phy_port,
+> > > > +                                bool on)
+> > > > +{
+> > > > +     unsigned int reg;
+> > > > +
+> > > > +     if (on) {
+> > > > +             reg = readl(u3phy_port->base + 0x1a8);
+> > > > +             reg &= ~BIT(4); /* ldo power up */
+> > > > +             writel(reg, u3phy_port->base + 0x1a8);
+> > > > +
+> > > > +             reg = readl(u3phy_port->base + 0x044);
+> > > > +             reg &= ~BIT(4); /* bg power on */
+> > > > +             writel(reg, u3phy_port->base + 0x044);
+> > > > +
+> > > > +             reg = readl(u3phy_port->base + 0x150);
+> > > > +             reg |= BIT(6); /* tx bias enable */
+> > > > +             writel(reg, u3phy_port->base + 0x150);
+> > > > +
+> > > > +             reg = readl(u3phy_port->base + 0x080);
+> > > > +             reg &= ~BIT(2); /* tx cm power up */
+> > > > +             writel(reg, u3phy_port->base + 0x080);
+> > > > +
+> > > > +             reg = readl(u3phy_port->base + 0x0c0);
+> > > > +             /* tx obs enable and rx cm enable */
+> > > > +             reg |= (BIT(3) | BIT(4));
+> > > > +             writel(reg, u3phy_port->base + 0x0c0);
+> > > > +
+> > > > +             udelay(1);
+> > > > +     } else {
+> > > > +             reg = readl(u3phy_port->base + 0x1a8);
+> > > > +             reg |= BIT(4); /* ldo power down */
+> > > > +             writel(reg, u3phy_port->base + 0x1a8);
+> > > > +
+> > > > +             reg = readl(u3phy_port->base + 0x044);
+> > > > +             reg |= BIT(4); /* bg power down */
+> > > > +             writel(reg, u3phy_port->base + 0x044);
+> > > > +
+> > > > +             reg = readl(u3phy_port->base + 0x150);
+> > > > +             reg &= ~BIT(6); /* tx bias disable */
+> > > > +             writel(reg, u3phy_port->base + 0x150);
+> > > > +
+> > > > +             reg = readl(u3phy_port->base + 0x080);
+> > > > +             reg |= BIT(2); /* tx cm power down */
+> > > > +             writel(reg, u3phy_port->base + 0x080);
+> > > > +
+> > > > +             reg = readl(u3phy_port->base + 0x0c0);
+> > > > +             /* tx obs disable and rx cm disable */
+> > > > +             reg &= ~(BIT(3) | BIT(4));
+> > > > +             writel(reg, u3phy_port->base + 0x0c0);
+> > > > +     }
+> > > Try to avoid magic number
 > >
-> > Signed-off-by: Peter Geis <pgwipeout@gmail.com>
->
-> What happens on plug - unplug - plug?
->
-> I remember what kept me from pushing the usb3 stuff for rk3328
-> was the usbphy breaking hotplug after the first unplug.
->
-> Did this get fixed?
->
-> Thanks
-> Heiko
->
->
-It seems to have been corrected, at least partially.
-The hotplug issue may have been resolved by [0].
+> > Since this was not my driver, I only pulled it in and made the
+> > necessary changes to get it working, I tried to refrain from
+> > modifications as much as possible.
+> > Do you want me to convert these addresses to definitions based on the
+> > comments in the code?
+> It's better to follow register names defined in register map doc if you
+> have
 
-On my rk3328-roc-cc board, both USB2 and USB3 work correctly for
-hotplugging with this driver.
-I did encounter some odd behavior with the USB2HOST port, where it
-stopped reading FS devices when this was loaded.
-I'm wondering if we have a common clock problem or some other
-undocumented shared dependancy.
-
-Robin encountered some odd behavior when unplugging a USB3 device, the
-controller didn't recognize it for a while.
-I don't have that problem, but I don't know what board she's using.
-
-[0] commit fb903392131a324a243c7731389277db1cd9f8df
-clk: rockchip: fix wrong clock definitions for rk3328
+Some of these registers appear to be in the rk3328 TRM.
+Most, such as the tuning registers, are not documented anywhere I can find.
+:'( Why rockchip, why?!
+> >
+> > >
+> > > > +
+> > > > +     return 0;
+> > > > +}
+> > > > +
+>
+>
+>
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
 _______________________________________________
 Linux-rockchip mailing list
