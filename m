@@ -2,46 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A498E9FC0
-	for <lists+linux-rockchip@lfdr.de>; Wed, 30 Oct 2019 16:51:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35CECE9FC3
+	for <lists+linux-rockchip@lfdr.de>; Wed, 30 Oct 2019 16:52:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A9iFyDjo9OjwrVI6mn0ldobVsxuunU5RRPytOQK7DNQ=; b=LtoF3qPvIdBfNa
-	cbkJB6XyRvcjfgz7f7Cs1OQygrRIZRAiWTzcY8fr70BxU1u0rdq+uhova9KrtCweB8Wl1EDMvYUqg
-	nwHIDtl9wV3bZ61obkzdwiM15dKYLMyMjOC3hwgl3IQ3SqpWoz7L8qCk1EkSZWjvZmib+sw/RYi8e
-	pyBo38ENdh8FekPIUtcwjOajH8JynPKEqpzVwAclQksBgrIGcRRPuNHet+ojQnIwYQLuAS53WmaZi
-	6CbITvK8fT2ZrwbcU+PVJNLEwlW8xFvgGDl7zKfkVVtBmSwrARliWjhIMGvvvKALe1qMO6JDmzpJO
-	Fs3OV2Lh/T92VyByNFkA==;
+	List-Owner; bh=b5RdduPTbU4EBjjof4nAzgfYM8+7BFmQppoapnICfBQ=; b=S1i/jMB7awXxdM
+	aosgjAnudR2jxkUVQw2C07E+Skpw8tsbZraUt7uFqcen0owNR7Gv2ylVNicw523aSz8cyIF+UL3TV
+	9jMBZqoJQ6rFm+8tgc51DBj3m+F78Ayl372bciG5eP7SF23Qx1xBC/4GSVl3MCWbvuQPcguBzt3fA
+	jveUKuvQ/5xI6dqFwE2usdFwPBNaEImlTODfbBNxFKyBKDcIKjmDKNeD+KVQCldakrlclO2zv3x/U
+	W4x6W7tVXVLJu9c6wcpCCV0xV3LToom7WFlYYZapbGzARI1P2rmh6D/OFJ5vKyjVN9xSPGVP1A7fh
+	qo0vPltWw/osHVm2MmTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPqFy-0002BK-Cs; Wed, 30 Oct 2019 15:51:34 +0000
+	id 1iPqGt-0002t2-4k; Wed, 30 Oct 2019 15:52:31 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPqFv-00029q-NJ
- for linux-rockchip@lists.infradead.org; Wed, 30 Oct 2019 15:51:33 +0000
+ id 1iPqGo-0002rd-NB
+ for linux-rockchip@lists.infradead.org; Wed, 30 Oct 2019 15:52:28 +0000
 Received: from sasha-vm.mshome.net (100.50.158.77.rev.sfr.net [77.158.50.100])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E421D20874;
- Wed, 30 Oct 2019 15:51:29 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E1DC620856;
+ Wed, 30 Oct 2019 15:52:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572450691;
- bh=Du/6PTSuGoZ0Qf9UkdU/yHUEIgefC9EtDGfESH88STo=;
+ s=default; t=1572450746;
+ bh=eICZE3qefE9ZCdHbOAwX78xPp8umXPpj1jH6Sgk+c9w=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=1Nhr00SU9g5/5OehlzG6ky5i59mQSXgL3ph7dI/JwgDRToZgt1Muda3pXT1sqdoiZ
- KKtDm+OhXkoWJV9z62yhATfT4QTlnFd5J5m4neepOx13KIEj2mA1+krShk54rybakH
- d1+kfKIXGFgeiScc989HxFwICB3YUxjy2U/GKmpk=
+ b=LAwxMTJXJs99KBdfn7wz+6vXbxn9d39NMn8GVSZUg/XU2lsoBauu8Q10eA0CxdITi
+ rYJ5HMx8UqY99oQ523i9rjMB+PhXeFj9UVF+6Wil4njLoPw3DvXDHomAtpK9uJB5de
+ hA8cFkxi1Ms2QrFiPdSHHCUx2qcAUDGupXRy0UXE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.3 26/81] arm64: dts: rockchip: fix RockPro64 sdhci
+Subject: [PATCH AUTOSEL 5.3 41/81] arm64: dts: rockchip: fix RockPro64 sdmmc
  settings
-Date: Wed, 30 Oct 2019 11:48:32 -0400
-Message-Id: <20191030154928.9432-26-sashal@kernel.org>
+Date: Wed, 30 Oct 2019 11:48:47 -0400
+Message-Id: <20191030154928.9432-41-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191030154928.9432-1-sashal@kernel.org>
 References: <20191030154928.9432-1-sashal@kernel.org>
@@ -49,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_085131_781026_BE055068 
-X-CRM114-Status: GOOD (  11.89  )
+X-CRM114-CacheID: sfid-20191030_085226_786783_46CAE999 
+X-CRM114-Status: UNSURE (   8.94  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,39 +91,35 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Soeren Moch <smoch@web.de>
 
-[ Upstream commit 2558b3b1b11a1b32b336be2dd0aabfa6d35ddcb5 ]
+[ Upstream commit 5234c14531152702a9f3e575cb552b7e9cea9f94 ]
 
-The RockPro64 schematics [1], [2] show that the rk3399 EMMC_STRB pin is
-connected to the RESET pin instead of the DATA_STROBE pin of the eMMC module.
-So the data strobe cannot be used for its intended purpose on this board,
-and so the HS400 eMMC mode is not functional. Limit the controller to HS200.
+According to the RockPro64 schematic [1] the rk3399 sdmmc controller is
+connected to a microSD (TF card) slot. Remove the cap-mmc-highspeed
+property of the sdmmc controller, since no mmc card can be connected here.
 
 [1] http://files.pine64.org/doc/rockpro64/rockpro64_v21-SCH.pdf
-[2] http://files.pine64.org/doc/rock64/PINE64_eMMC_Module_20170719.pdf
 
 Fixes: e4f3fb490967 ("arm64: dts: rockchip: add initial dts support for Rockpro64")
 Signed-off-by: Soeren Moch <smoch@web.de>
-Link: https://lore.kernel.org/r/20191003215036.15023-2-smoch@web.de
+Link: https://lore.kernel.org/r/20191004203213.4995-1-smoch@web.de
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts | 1 -
+ 1 file changed, 1 deletion(-)
 
 diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-index cad314f708300..1ff617230f6c4 100644
+index 1ff617230f6c4..99d65d2fca5e1 100644
 --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
 +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-@@ -625,8 +625,7 @@
+@@ -613,7 +613,6 @@
  
- &sdhci {
- 	bus-width = <8>;
--	mmc-hs400-1_8v;
--	mmc-hs400-enhanced-strobe;
-+	mmc-hs200-1_8v;
- 	non-removable;
- 	status = "okay";
- };
+ &sdmmc {
+ 	bus-width = <4>;
+-	cap-mmc-highspeed;
+ 	cap-sd-highspeed;
+ 	cd-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;
+ 	disable-wp;
 -- 
 2.20.1
 
