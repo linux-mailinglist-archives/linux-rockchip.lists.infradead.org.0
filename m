@@ -2,72 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7EB6E9728
-	for <lists+linux-rockchip@lfdr.de>; Wed, 30 Oct 2019 08:28:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14775E986E
+	for <lists+linux-rockchip@lfdr.de>; Wed, 30 Oct 2019 09:47:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=BzGAbl3hnGnBl45OyIhoXip7zT/cW9iXCf3GC1N7KLs=; b=cd1EAeb4yhixTtz3FP5ouURUE4
-	N/b1C+iDKfSRDUlGnV39SUq/oIGMUcjGpfJrEc+i1atfDpYlo840ZBcBZMOrUp8Sb42Wg7gU5OwXT
-	x4HrFNcxRGT2EPL3YBz5Mpk16Y+sBeqYh1VibHz5s3t9dQ0tkXgzGG+X4TxNc93cGgG0CF5OeGDjV
-	SOZb75SIuX0V9+ovn8fNxlVlUprG8BnEmRsaKiebOW68GTB03pZMMoQ3kww7kdZm3nvy8lQfWSMsi
-	NLtdyFFcBibXl/I+q7jNOLSfMb3Vf8lHQUuRMuyjCYgofy5hl9zAfPBC0pMy1fueKsVChFcMl44Ei
-	XtmzU6vA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kQY81EQTlrq4XwDJ5PXoqzl0Gnu4ko4w1iMIkva0Ct4=; b=dlVxdoloa2E8/O
+	oGT5+l5U8RzOo/z61GltJajWp/i4jrIWTxaSLpzUIOO+3EDsy/mDxMzuAsr70TSh0yhBtKBxnIBVl
+	pOiqUH3Dp13TCjn/hE5WDBAzE9Q1RCr11bgo8+/S64T8Ac99Ik/f7eZ07ME2PgUZW59SVwDSJ6WKj
+	MoBAQnt0toxwVrMjPeF6vzcCNyBbAVRE4Ir1L8ZQXO/9qVAzdaTfsoyPAJiCGR3kwBa9lRIyWZL1N
+	5egO1I/TZiV1mlXRhR+HNibVjRR5fTLGxv00IQNNLCQILBvqoBk8CBQchiQQ3n8r+383ioSd7IrVh
+	tQeXukqXyIxjk4j4zghA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPiPC-0006ZG-OK; Wed, 30 Oct 2019 07:28:34 +0000
-Received: from lucky1.263xmail.com ([211.157.147.130])
+	id 1iPjdu-0005y5-8X; Wed, 30 Oct 2019 08:47:50 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPiP0-0006OL-2V; Wed, 30 Oct 2019 07:28:23 +0000
-Received: from localhost (unknown [192.168.167.235])
- by lucky1.263xmail.com (Postfix) with ESMTP id 869CC750B2;
- Wed, 30 Oct 2019 15:28:17 +0800 (CST)
-X-MAIL-GRAY: 1
-X-MAIL-DELIVERY: 0
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-ABS-CHECKED: 0
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P14182T139723234375424S1572420492941644_; 
- Wed, 30 Oct 2019 15:28:17 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <b22cd80876f92dc77e333184964d3eaa>
-X-RL-SENDER: andy.yan@rock-chips.com
-X-SENDER: yxj@rock-chips.com
-X-LOGIN-NAME: andy.yan@rock-chips.com
-X-FST-TO: heiko@sntech.de
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-From: Andy Yan <andy.yan@rock-chips.com>
-To: heiko@sntech.de,
-	robh+dt@kernel.org
-Subject: [PATCH 2/2] arm64: dts: rockchip: Add devicetree for board
- roc-rk3308-cc
-Date: Wed, 30 Oct 2019 15:28:11 +0800
-Message-Id: <20191030072811.29882-1-andy.yan@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191030072648.29738-1-andy.yan@rock-chips.com>
-References: <20191030072648.29738-1-andy.yan@rock-chips.com>
+ id 1iPjdr-0005xR-0S
+ for linux-rockchip@lists.infradead.org; Wed, 30 Oct 2019 08:47:48 +0000
+Received: from [91.217.168.176] (helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iPj8Y-0006sO-1G; Wed, 30 Oct 2019 09:15:26 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Peter Geis <pgwipeout@gmail.com>
+Subject: Re: [PATCH 1/5] phy: rockchip: add inno-usb3 phy driver
+Date: Wed, 30 Oct 2019 09:15:25 +0100
+Message-ID: <10419898.gYlDFaIxON@phil>
+In-Reply-To: <20191028182254.30739-2-pgwipeout@gmail.com>
+References: <20191028182254.30739-1-pgwipeout@gmail.com>
+ <20191028182254.30739-2-pgwipeout@gmail.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_002822_461420_3DD0B22D 
-X-CRM114-Status: GOOD (  14.64  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20191030_014747_196510_4519A449 
+X-CRM114-Status: UNSURE (   6.51  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 3.6 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (3.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.130 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [91.217.168.176 listed in zen.spamhaus.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,238 +61,29 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kever.yang@rock-chips.com,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Andy Yan <andy.yan@rock-chips.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: katsuhiro@katsuster.net, linux-rockchip@lists.infradead.org,
+ linux-usb@vger.kernel.org, robin.murphy@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-ROC-RK3308-CC is a rk3308 based board designed by Firelfy,
-with eMMC and 256MB DDR3 and RTL8188 Wifi on board.
+Am Montag, 28. Oktober 2019, 19:22:50 CET schrieb Peter Geis:
+> Add the rockchip innosilicon usb3 phy driver, supporting devices such as the rk3328.
+> Pulled from:
+> https://github.com/FireflyTeam/kernel/blob/roc-rk3328-cc/drivers/phy/rockchip/phy-rockchip-inno-usb3.c
+> 
+> Signed-off-by: Peter Geis <pgwipeout@gmail.com>
 
-Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
----
+What happens on plug - unplug - plug?
 
- arch/arm64/boot/dts/rockchip/Makefile         |   1 +
- .../arm64/boot/dts/rockchip/rk3308-roc-cc.dts | 191 ++++++++++++++++++
- 2 files changed, 192 insertions(+)
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts
+I remember what kept me from pushing the usb3 stuff for rk3328
+was the usbphy breaking hotplug after the first unplug.
 
-diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
-index a959434ad46e..cf69b0f33ecb 100644
---- a/arch/arm64/boot/dts/rockchip/Makefile
-+++ b/arch/arm64/boot/dts/rockchip/Makefile
-@@ -1,6 +1,7 @@
- # SPDX-License-Identifier: GPL-2.0
- dtb-$(CONFIG_ARCH_ROCKCHIP) += px30-evb.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-evb.dtb
-+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-roc-cc.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-rock64.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-roc-cc.dtb
-diff --git a/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts b/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts
-new file mode 100644
-index 000000000000..4f01d2f4da83
---- /dev/null
-+++ b/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts
-@@ -0,0 +1,191 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd
-+ */
-+
-+/dts-v1/;
-+#include "rk3308.dtsi"
-+
-+/ {
-+	model = "Firefly ROC-RK3308-CC board";
-+	compatible = "firefly,roc-rk3308-cc", "rockchip,rk3308";
-+	chosen {
-+		stdout-path = "serial2:1500000n8";
-+	};
-+
-+	ir_rx {
-+		compatible = "gpio-ir-receiver";
-+		gpios = <&gpio0 RK_PC0 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&ir_recv_pin>;
-+	};
-+
-+	ir_tx {
-+		compatible = "pwm-ir-tx";
-+		pwms = <&pwm5 0 25000 0>;
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+		power {
-+			label = "firefly:red:power";
-+			linux,default-trigger = "ir-power-click";
-+			default-state = "on";
-+			gpios = <&gpio0 RK_PA6 GPIO_ACTIVE_HIGH>;
-+		};
-+
-+		user {
-+			label = "firefly:blue:user";
-+			linux,default-trigger = "ir-user-click";
-+			default-state = "off";
-+			gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_HIGH>;
-+		};
-+	};
-+
-+	typec_vcc5v: typec-vcc5v {
-+		compatible = "regulator-fixed";
-+		regulator-name = "typec_vcc5v";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+	};
-+
-+	vcc5v0_sys: vcc5v0-sys {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc5v0_sys";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+		vin-supply = <&typec_vcc5v>;
-+	};
-+
-+	vdd_core: vdd-core {
-+		compatible = "pwm-regulator";
-+		pwms = <&pwm0 0 5000 1>;
-+		regulator-name = "vdd_core";
-+		regulator-min-microvolt = <827000>;
-+		regulator-max-microvolt = <1340000>;
-+		regulator-init-microvolt = <1015000>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-settling-time-up-us = <250>;
-+		pwm-supply = <&vcc5v0_sys>;
-+	};
-+
-+	vdd_log: vdd-log {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vdd_log";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <1050000>;
-+		regulator-max-microvolt = <1050000>;
-+		vin-supply = <&vcc5v0_sys>;
-+	};
-+
-+	vcc_io: vcc-io {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc_io";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+		vin-supply = <&vcc5v0_sys>;
-+	};
-+
-+	vcc_sdmmc: vcc-sdmmc {
-+		compatible = "regulator-gpio";
-+		regulator-name = "vcc_sdmmc";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <3300000>;
-+		gpios = <&gpio0 RK_PA7 GPIO_ACTIVE_HIGH>;
-+		states = <1800000 0x0
-+			  3300000 0x1>;
-+		vin-supply = <&vcc5v0_sys>;
-+	};
-+
-+	vcc_sd: vcc-sd {
-+		compatible = "regulator-fixed";
-+		gpio = <&gpio4 RK_PD6 GPIO_ACTIVE_LOW>;
-+		regulator-name = "vcc_sd";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+		vim-supply = <&vcc_io>;
-+	};
-+
-+};
-+
-+&cpu0 {
-+	cpu-supply = <&vdd_core>;
-+};
-+
-+&emmc {
-+	bus-width = <8>;
-+	cap-mmc-highspeed;
-+	mmc-hs200-1_8v;
-+	supports-emmc;
-+	disable-wp;
-+	non-removable;
-+	num-slots = <1>;
-+	status = "okay";
-+};
-+
-+&i2c1 {
-+	clock-frequency = <400000>;
-+	status = "okay";
-+
-+	rtc: rtc@51 {
-+		compatible = "nxp,pcf8563";
-+		reg = <0x51>;
-+		#clock-cells = <0>;
-+	};
-+};
-+
-+&pwm5 {
-+	status = "okay";
-+	pinctrl-names = "active";
-+	pinctrl-0 = <&pwm5_pin_pull_down>;
-+};
-+
-+&pinctrl {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&rtc_32k>;
-+
-+	ir-receiver {
-+		ir_recv_pin: ir-recv-pin  {
-+			rockchip,pins = <0 RK_PC0 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
-+
-+	buttons {
-+		pwr_key: pwr-key {
-+			rockchip,pins = <0 RK_PA6 RK_FUNC_GPIO &pcfg_pull_up>;
-+		};
-+	};
-+};
-+
-+&pwm0 {
-+	status = "okay";
-+	pinctrl-0 = <&pwm0_pin_pull_down>;
-+};
-+
-+&sdmmc {
-+	bus-width = <4>;
-+	cap-mmc-highspeed;
-+	cap-sd-highspeed;
-+	supports-sd;
-+	card-detect-delay = <300>;
-+	sd-uhs-sdr25;
-+	sd-uhs-sdr50;
-+	sd-uhs-sdr104;
-+	vmmc-supply = <&vcc_sd>;
-+	vqmmc-supply = <&vcc_sdmmc>;
-+	status = "okay";
-+};
-+
-+&uart2 {
-+	status = "okay";
-+};
--- 
-2.17.1
+Did this get fixed?
 
+Thanks
+Heiko
 
 
 
