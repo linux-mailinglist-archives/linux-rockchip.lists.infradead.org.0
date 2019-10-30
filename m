@@ -2,53 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68376E9FFF
-	for <lists+linux-rockchip@lfdr.de>; Wed, 30 Oct 2019 16:57:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26E80EA067
+	for <lists+linux-rockchip@lfdr.de>; Wed, 30 Oct 2019 16:58:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CNj6/nUtwFvITU1eJqyu/FYSlljqVDfmGQErwmBHPLo=; b=GLsqL6Z1tw6ly3
-	UkweDNOTc1qwqunSu0rtHiHsWqmLfpuR7Iy9xxxeQaWf+VI/GIJLXIXrBD7BKjgAqkzGR+1dXBPlN
-	EEkl4voDylLOyJuMvANJ3FHVEX1U0VY8r+si2bUS+ws9o20hWLv5ksjeFKGTVRyOay0lgCpAx6FF2
-	6XPwPmT8Y/Ky9OejvUSfLRF7AmmHjAvzsH93HjaMpFGnIfadDfFy52yrziV9Xp+RzRS6bgn+eBOCq
-	wJYbkstEzciJsMAT9u/2LymJcXxtATj+d/++X3149IVITxJma/UvPpW6+V6Pv3XUVluzJjzn8OArE
-	GaUqb8sg9FfKmG3qHvIQ==;
+	List-Owner; bh=uNP6SIVzP5HNJrx+F5oxKwp3pt1rfv4lDamI21NCV6w=; b=kng19mQiUvVOkA
+	z3x82YVyegDjAw9IHoH8ME3DjmyVPI9H31J6WqNCOFlaIoo1EOj15uIdJ9f7qwjNhAxLxCdhqLJ6t
+	SDfYg2fzXtoJ1YQPsSon1mvjf7RK6+4n2rTVdmBVdsLJvnKuPmsSlZWjL47oNwqVcWIyC1i2qO4rT
+	sCMkYqo3ziyRh3g4DHpsroWpoUDMignlATxp6FA6ndwEbVAyegEfipQsDl0Z16oCRL+xwi8OLqU13
+	dqIf6nXKsmS7wixBk+ffx4UTh6d7Lu4g8UyvEOsZVhRX8Nbz9fA5WlnJdG/VWGvx7ldeE72xSRGjb
+	jiUbu1EJL1h2G4mpSbQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPqLT-0006B7-9L; Wed, 30 Oct 2019 15:57:15 +0000
+	id 1iPqMF-0006JM-4b; Wed, 30 Oct 2019 15:58:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPqLQ-0006A7-3K
- for linux-rockchip@lists.infradead.org; Wed, 30 Oct 2019 15:57:13 +0000
+ id 1iPqMB-0006IQ-Fl
+ for linux-rockchip@lists.infradead.org; Wed, 30 Oct 2019 15:58:00 +0000
 Received: from sasha-vm.mshome.net (100.50.158.77.rev.sfr.net [77.158.50.100])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 77AD021835;
- Wed, 30 Oct 2019 15:57:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CBAA42190F;
+ Wed, 30 Oct 2019 15:57:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572451031;
- bh=b0x8Gs9Zpom0YF4Flfqrm3qMH3OCo1FV30kw02Qse9Q=;
+ s=default; t=1572451079;
+ bh=v3Vsq1jWVxR4xtDWLkdlbQS32M/Y8m4OfBUBuowFf88=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=HmuLSpNj9KS/dLW6MZPcnPnbt+GvgK8UDBgvg8xvJB3eQvtUKQc6T+PDD7cvgpt9s
- KLq2hqs8zfR6nRl2qEypcSNMQ0Qmy+AFpYW2JAd9YESaMKD2tZ4bW92jWzY84LcKif
- vGoVGo5lfLN5EQTRBTdKQcegeZbaDuQ6vpPI2dro=
+ b=Uim7f3BVIEVFJ6Vo2FTA6h0mSxJnXeofd+xL3RaBUBP/pYWWYBZ9HG2JcmQSULxVl
+ m5vLiKKOygEhw3gEsQ3hiqezZHU1BLKaV/qQjT+AvNPhTn2NoTm6JzqOobpJfisELL
+ Z6bJ083wMhsBToLXqwMHPxP95A1wfRY/A1CePn80=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 04/18] ASoc: rockchip: i2s: Fix RPM imbalance
-Date: Wed, 30 Oct 2019 11:56:46 -0400
-Message-Id: <20191030155700.10748-4-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 03/13] ASoc: rockchip: i2s: Fix RPM imbalance
+Date: Wed, 30 Oct 2019 11:57:41 -0400
+Message-Id: <20191030155751.10960-3-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191030155700.10748-1-sashal@kernel.org>
-References: <20191030155700.10748-1-sashal@kernel.org>
+In-Reply-To: <20191030155751.10960-1-sashal@kernel.org>
+References: <20191030155751.10960-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_085712_162484_F1BC1C1A 
+X-CRM114-CacheID: sfid-20191030_085759_547947_B6A15A91 
 X-CRM114-Status: GOOD (  11.04  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -105,10 +105,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/sound/soc/rockchip/rockchip_i2s.c b/sound/soc/rockchip/rockchip_i2s.c
-index 08bfee447a365..94b6f9c7dd6bb 100644
+index 58ee64594f075..f583f317644a1 100644
 --- a/sound/soc/rockchip/rockchip_i2s.c
 +++ b/sound/soc/rockchip/rockchip_i2s.c
-@@ -649,7 +649,7 @@ static int rockchip_i2s_probe(struct platform_device *pdev)
+@@ -530,7 +530,7 @@ static int rockchip_i2s_probe(struct platform_device *pdev)
  	ret = devm_snd_dmaengine_pcm_register(&pdev->dev, NULL, 0);
  	if (ret) {
  		dev_err(&pdev->dev, "Could not register PCM\n");
