@@ -2,51 +2,49 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23F9FEB2A8
-	for <lists+linux-rockchip@lfdr.de>; Thu, 31 Oct 2019 15:28:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA32FEB2AB
+	for <lists+linux-rockchip@lfdr.de>; Thu, 31 Oct 2019 15:28:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r9vn9tJkPMUJs8pu4Vy2EkdyYxIB63RHuq1YOvjzqhc=; b=VOHcOhIiQLAC6N
-	48a/i8jjfXGICZCRdA1x63a+WafG3pqmoBQUeHiA0J2RChChKtUSWe5DI8ssm/ws8TaHKqSYkPuJs
-	0HhogA6aqs1IFRlE0yyadlmrCe1LM0RBWeWSqs7Ky4GyE2fMJ0q2GS7WFEcoyL0GiNdHf8Hj1LXxo
-	PTPP7kIGAYiNYaVdB+zW8TBI2sEhUvR/27pDwwKAdId0eqAz+CYeARi7pBhPOD4jJSaeb/DYKkfxy
-	pDE7qvYwOJq9GFP5tEDpAndG7F6vJ9Atg78/bn2tHrdP27YoPp9tjmyRfsq9j5O2RXTqfmqp5P3zC
-	J4KJ6pVkTHd5dRrK68FA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NU+TDkyWpu+410vIPDLVBNvbCPioqUVvhwZPTaw5tBs=; b=d52hKoZrNIFJz4
+	etHisaT9aj1jjTd4Hlfo1eGIzD3+0eR9u4OfcEFwo4H9hrxmX5zyQ/nncXnyHZIS+tG5ZDtWc/SGa
+	noSJvBqhzdgaiUtmE9eXxTWu40Nt59ZvwKHgym71G30fo58x/PuilXp/NjPI1BmGlCLIv0x25coH6
+	Js3N14QAgKXqRLpbzUQrN6RQ9kAeZb8kpzCUxGn6vCgDiumPNYpzPXvB2j/As0sp7bfhwpqY/Xwxf
+	WX/JjRKCteDVS/C7LfMngrvROIpgi7mh1VlBUylj+F19Bfgu9tCg1J+ygyT4HtP0cZVCkaEtqTmQD
+	foV3BQIOgLgx+qbjPk1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQBQv-0006y5-K5; Thu, 31 Oct 2019 14:28:17 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1iQBRT-0007XG-Pl; Thu, 31 Oct 2019 14:28:51 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQBOL-0004hs-B7
- for linux-rockchip@lists.infradead.org; Thu, 31 Oct 2019 14:25:38 +0000
-Received: from dhcp-64-28.ens-lyon.fr ([140.77.64.28] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iQBOJ-0005ps-7A; Thu, 31 Oct 2019 15:25:35 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: Peter Geis <pgwipeout@gmail.com>
-Subject: Re: [PATCH 2/5] dt-bindings: clean up rockchip grf binding document
-Date: Thu, 31 Oct 2019 15:25:34 +0100
-Message-ID: <1871898.EhJZENLof5@phil>
-In-Reply-To: <20191028182254.30739-3-pgwipeout@gmail.com>
-References: <20191028182254.30739-1-pgwipeout@gmail.com>
- <20191028182254.30739-3-pgwipeout@gmail.com>
+ id 1iQBP6-0005Iz-TA; Thu, 31 Oct 2019 14:26:26 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: aratiu) with ESMTPSA id EE504290879
+From: Adrian Ratiu <adrian.ratiu@collabora.com>
+To: linux-arm-kernel@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ linux-rockchip@lists.infradead.org
+Subject: [PATCH 0/4] Genericize DW MIPI DSI bridge and add i.MX 6 driver
+Date: Thu, 31 Oct 2019 16:26:29 +0200
+Message-Id: <20191031142633.12460-1-adrian.ratiu@collabora.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_072537_685329_C4090B6B 
-X-CRM114-Status: UNSURE (   7.31  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191031_072625_183171_BBA4AC1D 
+X-CRM114-Status: GOOD (  12.60  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,23 +57,58 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: katsuhiro@katsuster.net, linux-rockchip@lists.infradead.org,
- linux-usb@vger.kernel.org, robin.murphy@arm.com
+Cc: kernel@collabora.com, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Montag, 28. Oktober 2019, 19:22:51 CET schrieb Peter Geis:
-> Fixup some typos and inconsistencies in the grf binding.
-> 
-> Signed-off-by: Peter Geis <pgwipeout@gmail.com>
+Having a generic Synopsis DesignWare MIPI-DSI host controller bridge
+driver is a very good idea, however the current implementation has
+hardcoded quite a lot of the register layouts used by the two supported
+SoC vendors, STM and Rockchip, which use IP cores v1.30 and v1.31.
 
-applied for 5.5
+This makes it hard to support other SoC vendors like the FSL/NXP i.MX 6
+which use older v1.01 cores or future versions because, based on history,
+layout changes should also be expected in new DSI versions / SoCs.
 
-Thanks
-Heiko
+This patch series converts the bridge and platform drivers to access
+registers via generic regmap APIs and allows each platform driver to
+configure its register layout via struct reg_fields, then adds support
+for the host controller found on i.MX 6.
 
+I only have i.MX hardware with MIPI-DSI panel and relevant documentation
+available for testing so I'll really appreciate it if someone could test
+the series on Rockchip and STM... eyeballing register fields could only
+get me so far, so sorry in advance for any breakage!
+
+Many thanks to Boris Brezillon <boris.brezillon@collabora.com> for
+suggesting the regmap solution and to Liu Ying <Ying.Liu@freescale.com>
+for doing the initial i.MX platform driver implementation.
+
+This series applies on top of latest linux-next tree, next-20191031.
+
+Adrian Ratiu (4):
+  drm: bridge: dw_mipi_dsi: access registers via a regmap
+  drm: bridge: dw_mipi_dsi: abstract register access using reg_fields
+  drm: imx: Add i.MX 6 MIPI DSI host driver
+  dt-bindings: display: add IMX MIPI DSI host controller doc
+
+ .../bindings/display/imx/mipi-dsi.txt         |  56 ++
+ drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 518 +++++++++---------
+ drivers/gpu/drm/imx/Kconfig                   |   7 +
+ drivers/gpu/drm/imx/Makefile                  |   1 +
+ drivers/gpu/drm/imx/dw_mipi_dsi-imx.c         | 502 +++++++++++++++++
+ .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   | 154 +++++-
+ drivers/gpu/drm/stm/dw_mipi_dsi-stm.c         | 160 +++++-
+ include/drm/bridge/dw_mipi_dsi.h              |  60 +-
+ 8 files changed, 1185 insertions(+), 273 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/display/imx/mipi-dsi.txt
+ create mode 100644 drivers/gpu/drm/imx/dw_mipi_dsi-imx.c
+
+-- 
+2.23.0
 
 
 _______________________________________________
