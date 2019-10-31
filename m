@@ -2,83 +2,64 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 365E2EB5D7
-	for <lists+linux-rockchip@lfdr.de>; Thu, 31 Oct 2019 18:09:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54B07EB6AB
+	for <lists+linux-rockchip@lfdr.de>; Thu, 31 Oct 2019 19:12:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FZNrOr7lOEEA5NEvRpEjbMZx//2nNqb21m/rfWtmxec=; b=VYtz9SCPg6tPOQ
-	atmSHi1Od0t8uByxQAc3evGnDg49WCX3uBRv8ZYGXw3Q0MkKQyiJ8/wA44n1SeNUDB8+mY5aUVwFw
-	VPLupGSx5wqshxADd2u/IHY+JTwDrBsipXoKAOXlh6ApQUlhZwb9kEnQbGWgMECAj2ArDhC00uuXI
-	udkm2qmRtDYtHFEMpzimfYZLQRHkBqNh9229SM+bTm69VWrtHV6Iz38WcjtQRRR7klj+G+f8lW+Yd
-	GAKRPcE6we8Sfzq+cOscmSY8WYNdPYA9GCkR1JLWz23wymMuW+zqYymVuaQTDKuw4/QcwMTJbNDwH
-	y1jaD85e/ISjC65gY/DA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hHvPpLNiubXvNnfb/Lhafb5+NcI2TkIJ3ALpwexiuDM=; b=VashJIPsGT8eV7
+	2Yg8B/hSJhTRONi09EJ2RS6U5C/5qO79PYGQIka/+KUDzGvWY0exxmXAT9eYheuSnGqtRNgDo9KbC
+	FrRe77Fs2ZVL5iDqHGfjdojABF0h0GBoAqQ1cclr7EAFCb8vLoPGoVIWLjfLUNVfqXo2KZf8fBXV6
+	+UNF/faFqSI1MIymM3jZuBF0yCjRSFQ+3duVIHyC2NKqMcG6Wtr20/VHkOFqPH3uG+srSahQFpbIH
+	YLpddQXeaKhmW/yeRiJjj1YFkDU5gQHJ/N8gIrQXw0AJqt6NWb5016lneLBZgMVx9gT1bRRRGblfl
+	joDGyVC6V7MR86klKhMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQDxF-0004IK-1l; Thu, 31 Oct 2019 17:09:49 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1iQEvo-0006Gz-UP; Thu, 31 Oct 2019 18:12:24 +0000
+Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQDx1-00046y-41; Thu, 31 Oct 2019 17:09:36 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id j85so4551983vsd.11;
- Thu, 31 Oct 2019 10:09:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=BbJu3UVGxb/D3O3Jaajy2yYceop1LdG6jIZpC2UGdME=;
- b=sILgo0ExuXrqJv9wUbE2Tumq0ELe9CBQDKkU77dnmj/RuVa26/zmecu0GpbeZGTHBM
- ePVf1uFkrSYmYYbtLs705cqb8LfV8HUlHunhiFQbAbOik3oQEtW7EJPpasqgTvjQ2TM0
- LIrREjmrFrRvjpBgBmRubuP6d0oRUxDI8Hc32Y4qIlmCaBj2B/JSC+PHwtXGcKgLiWus
- DEKo5bKI89SVAivdVDnQ+wCLFKmAm9oWYDSxKRXcB3/y3uZeqC/7CvcgrGjxfvkSWxoG
- TG6wKMt7wZHp7DAHNEHqrk4ygoaC3HxA8z/wUcmHdZrBvMtS821UR9VsV2r3le3tgedY
- vrJg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=BbJu3UVGxb/D3O3Jaajy2yYceop1LdG6jIZpC2UGdME=;
- b=X3F6ZYULWnhfUZhsmHYRf3McuoGeSiqSuXnN6wfvWBE3JvGky23q9MN/c6ISVdr/fa
- ZanOZQgd4IRA9ICVgPwUmkHNLU4pIEI8dsRajmIreV/hnawg1FyA7KNO5kxQFK1TY85p
- xjJJ02VRx9JwhPgahysBwYkMMGa2cJs5l/gtdh8+jxNMb8exR0sDceWf5MrkGjzH3Dhh
- JvkdT3vE8fk4T2tBeDOMqpPnArV6ADb++ah/NXhS/v8wZDneO8Vfh7rxwn3uQWsDmpcv
- F8tffpY9QB2WXHUNeRU//N/rVnacoE8rs6hB+Szzq+vNP29wrzbhCO9BPRRxRGYCbZOx
- rXFA==
-X-Gm-Message-State: APjAAAWMhfGIOUYteCnBCnEXGwWz5XuAWNvkaV/4ahi5lP2Sf0VRtbTK
- qYmMQ5l+I1B8rdjjP4Z1m0KvuC/Tm6NiwFVXYl36Ykku
-X-Google-Smtp-Source: APXvYqyLkkWgJ7ICTVfMGBOcq4S2OAn5nYpk6VJZW0O94lgZM/BCKp35+LK16Ms8/t5Z7RoL2Vj7T2VyJxX2Oc575EY=
-X-Received: by 2002:a67:77d4:: with SMTP id s203mr3435400vsc.118.1572541771757; 
- Thu, 31 Oct 2019 10:09:31 -0700 (PDT)
+ id 1iQEvk-0006Ff-FC; Thu, 31 Oct 2019 18:12:22 +0000
+Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
+ (helo=hermes.fivetechno.de); authenticated
+ by wp126.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ id 1iQEvg-000408-2i; Thu, 31 Oct 2019 19:12:16 +0100
+X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
+ linuxbbg.five-lan.de
+Received: from dell2.five-lan.de (pD9E89D59.dip0.t-ipconnect.de
+ [217.232.157.89]) (authenticated bits=0)
+ by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
+ x9VICB4k007592
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
+ Thu, 31 Oct 2019 19:12:11 +0100
+Subject: Re: [PATCH] arm64: dts: rockchip: Add PCIe node on rk3399-roc-pc
+To: Heiko Stuebner <heiko@sntech.de>
+References: <09300c2d-4298-1b01-ac41-d1b2610589d4@fivetechno.de>
+ <1719506.vT9a8mQdzu@phil>
+From: Markus Reichl <m.reichl@fivetechno.de>
+Message-ID: <f66fe5c3-6760-20b0-54cc-8f0c1a754bab@fivetechno.de>
+Date: Thu, 31 Oct 2019 19:12:10 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
-References: <20191031142633.12460-1-adrian.ratiu@collabora.com>
-In-Reply-To: <20191031142633.12460-1-adrian.ratiu@collabora.com>
-From: Emil Velikov <emil.l.velikov@gmail.com>
-Date: Thu, 31 Oct 2019 17:07:36 +0000
-Message-ID: <CACvgo50NmofJrCvADOTxJqJqKEWDsy8qD-1B6R356vFMcmdbWA@mail.gmail.com>
-Subject: Re: [PATCH 0/4] Genericize DW MIPI DSI bridge and add i.MX 6 driver
-To: Adrian Ratiu <adrian.ratiu@collabora.com>
+In-Reply-To: <1719506.vT9a8mQdzu@phil>
+Content-Language: de-DE
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1572545540;
+ a331687c; 
+X-HE-SMSGID: 1iQEvg-000408-2i
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_100935_182307_EF1A19AA 
-X-CRM114-Status: GOOD (  14.54  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191031_111220_663802_3C015411 
+X-CRM114-Status: GOOD (  18.96  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (emil.l.velikov[at]gmail.com)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,56 +72,120 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "Linux-Kernel@Vger. Kernel. Org" <linux-kernel@vger.kernel.org>,
- ML dri-devel <dri-devel@lists.freedesktop.org>,
- linux-rockchip <linux-rockchip@lists.infradead.org>, kernel@collabora.com,
- linux-stm32@st-md-mailman.stormreply.com,
- LAKML <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Adrian,
+Hi Heiko,
+Am 31.10.19 um 17:57 schrieb Heiko Stuebner:
+> Hi,
+> 
+> Am Montag, 28. Oktober 2019, 15:47:27 CET schrieb Markus Reichl:
+>> rk3399-roc-pc has a PCIe interface. Enable it for use with
+>> the M.2 NGFF M_KEY slot on roc-rk3399-mezzanine board.
+>> Tested with Samsung 970 evo plus SSD.
+>> 
+>> Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
+>> ---
+>>  .../arm64/boot/dts/rockchip/rk3399-roc-pc.dts | 38 +++++++++++++++++++
+>>  1 file changed, 38 insertions(+)
+>> 
+>> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+>> index 9313251765c7..2d637d54994b 100644
+>> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+>> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+>> @@ -158,6 +158,21 @@
+>>  		regulator-max-microvolt = <1400000>;
+>>  		vin-supply = <&vcc_sys>;
+>>  	};
+>> +
+>> +	/* on roc-rk3399-mezzanine board */
+> 
+> I'm undecided on this. From what I've seen that mezzanine board is some
+> sort of addon, like a raspberry pi hat. Therefore it's not always present,
+> so probably should not be part of the base board dts.
+> 
+> I'm thinking a dt-overlay that can then be activated might be the solution
+> of choice, but I've reached out to arm-soc poeple on irc to determine the
+> correct course.
+> 
+I have seen some board.dtsi with board_only.dts respective board_extension.dts
+in the arch/arm64/boot/dts/rockchip directory. Would that be ok?
 
-On Thu, 31 Oct 2019 at 14:26, Adrian Ratiu <adrian.ratiu@collabora.com> wrote:
->
-> Having a generic Synopsis DesignWare MIPI-DSI host controller bridge
-> driver is a very good idea, however the current implementation has
-> hardcoded quite a lot of the register layouts used by the two supported
-> SoC vendors, STM and Rockchip, which use IP cores v1.30 and v1.31.
->
-> This makes it hard to support other SoC vendors like the FSL/NXP i.MX 6
-> which use older v1.01 cores or future versions because, based on history,
-> layout changes should also be expected in new DSI versions / SoCs.
->
-> This patch series converts the bridge and platform drivers to access
-> registers via generic regmap APIs and allows each platform driver to
-> configure its register layout via struct reg_fields, then adds support
-> for the host controller found on i.MX 6.
->
-Have you considered keeping the difference internal to the dw-mipi-dsi driver?
-Say having the iMX6 module "request" the v1.01 regmap from the bridge
-driver, while rockchip/others doing the equivalent.
+Markus 
 
->  .../bindings/display/imx/mipi-dsi.txt         |  56 ++
->  drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 518 +++++++++---------
->  drivers/gpu/drm/imx/Kconfig                   |   7 +
->  drivers/gpu/drm/imx/Makefile                  |   1 +
->  drivers/gpu/drm/imx/dw_mipi_dsi-imx.c         | 502 +++++++++++++++++
->  .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   | 154 +++++-
->  drivers/gpu/drm/stm/dw_mipi_dsi-stm.c         | 160 +++++-
->  include/drm/bridge/dw_mipi_dsi.h              |  60 +-
->  8 files changed, 1185 insertions(+), 273 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/display/imx/mipi-dsi.txt
->  create mode 100644 drivers/gpu/drm/imx/dw_mipi_dsi-imx.c
->
-
-This should make the delta a lot smaller, avoiding the unnecessary
-copy of register fields and regmap.
-Plus plugging future users will be dead trivial.
-
--Emil
+> 
+> Heiko
+> 
+>> +	vcc3v3_pcie: vcc3v3-pcie {
+>> +		compatible = "regulator-fixed";
+>> +		regulator-name = "vcc3v3_pcie";
+>> +		enable-active-high;
+>> +		gpio = <&gpio1 RK_PC1 GPIO_ACTIVE_HIGH>;
+>> +		pinctrl-names = "default";
+>> +		pinctrl-0 = <&vcc3v3_pcie_en>;
+>> +		regulator-always-on;
+>> +		regulator-boot-on;
+>> +		regulator-min-microvolt = <3300000>;
+>> +		regulator-max-microvolt = <3300000>;
+>> +		vin-supply = <&dc_12v>;
+>> +	};
+>>  };
+>>  
+>>  &cpu_l0 {
+>> @@ -514,6 +529,19 @@
+>>  	status = "okay";
+>>  };
+>>  
+>> +&pcie_phy {
+>> +	status = "okay";
+>> +};
+>> +
+>> +&pcie0 {
+>> +	ep-gpios = <&gpio4 RK_PD1 GPIO_ACTIVE_HIGH>;
+>> +	num-lanes = <4>;
+>> +	pinctrl-names = "default";
+>> +	pinctrl-0 = <&pcie_perst>;
+>> +	vpcie3v3-supply = <&vcc3v3_pcie>;
+>> +	status = "okay";
+>> +};
+>> +
+>>  &pinctrl {
+>>  	lcd-panel {
+>>  		lcd_panel_reset: lcd-panel-reset {
+>> @@ -535,6 +563,16 @@
+>>  		};
+>>  	};
+>>  
+>> +	pcie {
+>> +		vcc3v3_pcie_en: vcc3v3-pcie-en {
+>> +			rockchip,pins = <1 RK_PC1 RK_FUNC_GPIO &pcfg_pull_none>;
+>> +		};
+>> +
+>> +		pcie_perst: pcie-perst {
+>> +			rockchip,pins = <4 RK_PD1 RK_FUNC_GPIO &pcfg_pull_none>;
+>> +		};
+>> +	};
+>> +
+>>  	pmic {
+>>  		vsel1_gpio: vsel1-gpio {
+>>  			rockchip,pins = <1 RK_PC2 RK_FUNC_GPIO &pcfg_pull_down>;
+>> 
+> 
+> 
+> 
+> 
+> 
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
