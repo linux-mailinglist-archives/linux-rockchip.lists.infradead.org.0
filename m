@@ -2,50 +2,74 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4EE0EBEDC
-	for <lists+linux-rockchip@lfdr.de>; Fri,  1 Nov 2019 09:06:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CCCAEC10C
+	for <lists+linux-rockchip@lfdr.de>; Fri,  1 Nov 2019 11:08:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LsZBIwkTYQsDSdW8JgLJ4xzS3P1iJ+Upu2dOoELtcrY=; b=i950siW4toQnTd
-	IQ0KDb5GA54Mvcl155ozP8uxrnQHVgVHv2ffpvqxXfYbaP8pUQ5C5aXbxLBOO0i1tsKBHJFnJB3QE
-	0U5QYiIuTavncbGvmz9lr3iDVneTykRqoEW0/eG7czWrb2InM5Svoq41cT+ZxzhkzXzVJYw6fTpPs
-	3h1DifnyCmYY7w4O7ksl8eVTx4x1IkABZtkQ++ws+q2rNp6ZAyqSYqQh62jNuZV+Ws/N9lkOMol/e
-	ALitJC4DoDs3y/LWPEX2TSkHKqdAgISKqL/Q5EexlKiXavwGy3zpQ80IUvVUapFGKm2+DERpcnWFv
-	s7Rdw1IGRCP8sVtcutgw==;
+	List-Owner; bh=F+o5vMTXcWY/hcUt0veOrdeKvOjuqyOIk8Tihl66AqA=; b=B++aDdwR/MxUc2
+	EmpUC+ALvkj8fKPqnkQJ6BHbfGyFaFlZ7lSW+eIZpe5E7BNmrFjb5KtFeTrw5VsnJx5vPJaUCPpHP
+	m8SaiHKrmeHnByx/PVqFMARcVYEI17WJPKg6Tf8ADIAkTlgnuy29p08ZqhzyQZfpS11Gt+jYxKw3I
+	hiiXT0aZqVRiXWJjspwnc/XP22Zos7zHM0BQXGBryhu0nNtE5d+JxIajeFyzgNSnj4ST4Zcmd9p9Z
+	CDiwrKqKgBUaIAU6efHRMiykcXd2Y3lz1BtSMg2gvd0Gk7RmUe9FEKKm7qDyb10q3PVBsoeLr5Lbs
+	hIfNnFy7AtTw3+hVfRpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQRxK-0000nX-JF; Fri, 01 Nov 2019 08:06:50 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1iQTr1-0001ZD-Rv; Fri, 01 Nov 2019 10:08:27 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQRxG-0000mZ-NB; Fri, 01 Nov 2019 08:06:48 +0000
-Received: from [46.218.74.72] (helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iQRx7-0001Qk-C2; Fri, 01 Nov 2019 09:06:37 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: Markus Reichl <m.reichl@fivetechno.de>
-Subject: Re: [PATCH] arm64: dts: rockchip: Add PCIe node on rk3399-roc-pc
-Date: Fri, 01 Nov 2019 09:06:36 +0100
-Message-ID: <2490852.kIovObk3uj@phil>
-In-Reply-To: <f66fe5c3-6760-20b0-54cc-8f0c1a754bab@fivetechno.de>
-References: <09300c2d-4298-1b01-ac41-d1b2610589d4@fivetechno.de>
- <1719506.vT9a8mQdzu@phil>
- <f66fe5c3-6760-20b0-54cc-8f0c1a754bab@fivetechno.de>
+ id 1iQTqu-0001Sl-5y; Fri, 01 Nov 2019 10:08:21 +0000
+Received: by mail-oi1-f196.google.com with SMTP id i185so7707240oif.9;
+ Fri, 01 Nov 2019 03:08:19 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=+I3xQl9ln+lrGFb5a1qNX1dE+zwF+Br3GKgAcoIpVg0=;
+ b=d2DByR5ZMRXHr+YEZ9ozLLeXTJe3QYWpLWLyCAU6DFIZA697tpwf5iNbrideKyCf6s
+ VWBjoALwWtfA/BCxIiHjXn37VrfjYp1eHhfSe1+nIbN5DTxPYuZrp8yGFuHmeZaKUR89
+ kFHheHDZqqz0JejP2PxQ9ne5NrEmM+CjUZyko0a/HpTgTrMWwEBlvQokxVUbmbX/noDi
+ Pyr8O2/qPYhUfEazinbD3bjnf4Qpd5fxZrpScqqozFgnlaLKQZYjPyp9a96X6OLmKAe2
+ kXdIb0/y7Cj1QY03C/rOLopFOPKymw6aRek5UkIscYk3a1QrKy2YW4Mz4ya+CIJEczKT
+ gjmA==
+X-Gm-Message-State: APjAAAXy6aZrIIIx61WjBWtjPuvQDbOXMVgsCIgk6lda9TsPJx7ZUNt5
+ V9/kfaj9pKC3SP5AjW7dXtOivtPm/6gdsSuL4YU=
+X-Google-Smtp-Source: APXvYqyFWgpB6XEGfMCjZsYPk2WDJOLqiGcZrURCT7LaEN/S0hFYXldPAmBySb2Ylqn/7Yv1GVxJdkW9M3x45yHrDHI=
+X-Received: by 2002:aca:4ac5:: with SMTP id x188mr3592931oia.148.1572602898727; 
+ Fri, 01 Nov 2019 03:08:18 -0700 (PDT)
 MIME-Version: 1.0
+References: <20191021161351.20789-1-krzk@kernel.org>
+ <20191021161351.20789-4-krzk@kernel.org>
+In-Reply-To: <20191021161351.20789-4-krzk@kernel.org>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Fri, 1 Nov 2019 11:08:07 +0100
+Message-ID: <CAMuHMdXr7_HP5NUQ_0D76N-eBuootQqyPusqmf6nyDnLN__ORA@mail.gmail.com>
+Subject: Re: [PATCH v4 4/7] dt-bindings: sram: Merge Renesas SRAM bindings
+ into generic
+To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_010646_908014_90F7AB3D 
-X-CRM114-Status: GOOD (  22.37  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191101_030820_221143_6C1F7C33 
+X-CRM114-Status: GOOD (  15.17  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,143 +82,99 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Markus,
+Hi Krzysztof,
 
-Am Donnerstag, 31. Oktober 2019, 19:12:10 CET schrieb Markus Reichl:
-> Am 31.10.19 um 17:57 schrieb Heiko Stuebner:
-> > Am Montag, 28. Oktober 2019, 15:47:27 CET schrieb Markus Reichl:
-> >> rk3399-roc-pc has a PCIe interface. Enable it for use with
-> >> the M.2 NGFF M_KEY slot on roc-rk3399-mezzanine board.
-> >> Tested with Samsung 970 evo plus SSD.
-> >> 
-> >> Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
-> >> ---
-> >>  .../arm64/boot/dts/rockchip/rk3399-roc-pc.dts | 38 +++++++++++++++++++
-> >>  1 file changed, 38 insertions(+)
-> >> 
-> >> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-> >> index 9313251765c7..2d637d54994b 100644
-> >> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-> >> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-> >> @@ -158,6 +158,21 @@
-> >>  		regulator-max-microvolt = <1400000>;
-> >>  		vin-supply = <&vcc_sys>;
-> >>  	};
-> >> +
-> >> +	/* on roc-rk3399-mezzanine board */
-> > 
-> > I'm undecided on this. From what I've seen that mezzanine board is some
-> > sort of addon, like a raspberry pi hat. Therefore it's not always present,
-> > so probably should not be part of the base board dts.
-> > 
-> > I'm thinking a dt-overlay that can then be activated might be the solution
-> > of choice, but I've reached out to arm-soc poeple on irc to determine the
-> > correct course.
-> > 
-> I have seen some board.dtsi with board_only.dts respective board_extension.dts
-> in the arch/arm64/boot/dts/rockchip directory. Would that be ok?
+On Mon, Oct 21, 2019 at 6:15 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+> The Renesas SRAM bindings list only compatible so integrate them into
+> generic SRAM bindings schema.
+>
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 
-The answer is twofold I guess ;-)
+Thanks for your patch, whcih is now commit 0759b09eadd0d9a1 ("dt-bindings:
+sram: Merge Renesas SRAM bindings into generic") in Rob's for-next branch.
 
-(1) The 100% correct way would probably be to use a devicetree overlay
-together with capemgr [0] to load the overlay from userspace, but
+> --- a/Documentation/devicetree/bindings/sram/renesas,smp-sram.txt
+> +++ /dev/null
+> @@ -1,27 +0,0 @@
+> -* Renesas SMP SRAM
+> -
+> -Renesas R-Car Gen2 and RZ/G1 SoCs need a small piece of SRAM for the jump stub
+> -for secondary CPU bringup and CPU hotplug.
+> -This memory is reserved by adding a child node to a "mmio-sram" node, cfr.
+> -Documentation/devicetree/bindings/sram/sram.txt.
+> -
+> -Required child node properties:
+> -  - compatible: Must be "renesas,smp-sram",
+> -  - reg: Address and length of the reserved SRAM.
+> -    The full physical (bus) address must be aligned to a 256 KiB boundary.
+> -
+> -
+> -Example:
+> -
+> -       icram1: sram@e63c0000 {
+> -               compatible = "mmio-sram";
+> -               reg = <0 0xe63c0000 0 0x1000>;
+> -               #address-cells = <1>;
+> -               #size-cells = <1>;
+> -               ranges = <0 0 0xe63c0000 0x1000>;
+> -
+> -               smp-sram@0 {
+> -                       compatible = "renesas,smp-sram";
+> -                       reg = <0 0x10>;
+> -               };
 
-(2a) The distinction between system-on-module + baseboard and
-board+cape is somewhat foggy I think and it really doesn't look like there
-will be a big plethora of capes for the roc-rk3399-pc
+> --- a/Documentation/devicetree/bindings/sram/sram.yaml
+> +++ b/Documentation/devicetree/bindings/sram/sram.yaml
 
-(2b) People may actually want to boot of that nvme pcie drive attached
-to the mezzanine, so it will be somewhat permanent connection anyway
-and also the system then cannot wait for userspace to come up first, if
-the userspace is sitting on that drive ;-) .
+> @@ -186,3 +187,17 @@ examples:
+>              reg = <0x1ff80 0x8>;
+>          };
+>      };
+> +
+> +  - |
+> +    sram@e63c0000 {
+> +        compatible = "mmio-sram";
+> +        reg = <0xe63c0000 0x1000>;
 
-So I think, going the dts+dts-extension is the best way to go.
+Is there any specific reason you converted the example from 64-bit to
+32-bit addressing?
+All Renesas SoCs using this have #address-cells and #size-cells = <2>.
 
-Heiko
+Thanks!
 
+> +        #address-cells = <1>;
+> +        #size-cells = <1>;
+> +        ranges = <0 0xe63c0000 0x1000>;
+> +
+> +        smp-sram@0 {
+> +            compatible = "renesas,smp-sram";
+> +            reg = <0 0x10>;
+> +        };
+> +    };
 
-[0] https://elinux.org/Capemgr
+Gr{oetje,eeting}s,
 
+                        Geert
 
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-> >> +	vcc3v3_pcie: vcc3v3-pcie {
-> >> +		compatible = "regulator-fixed";
-> >> +		regulator-name = "vcc3v3_pcie";
-> >> +		enable-active-high;
-> >> +		gpio = <&gpio1 RK_PC1 GPIO_ACTIVE_HIGH>;
-> >> +		pinctrl-names = "default";
-> >> +		pinctrl-0 = <&vcc3v3_pcie_en>;
-> >> +		regulator-always-on;
-> >> +		regulator-boot-on;
-> >> +		regulator-min-microvolt = <3300000>;
-> >> +		regulator-max-microvolt = <3300000>;
-> >> +		vin-supply = <&dc_12v>;
-> >> +	};
-> >>  };
-> >>  
-> >>  &cpu_l0 {
-> >> @@ -514,6 +529,19 @@
-> >>  	status = "okay";
-> >>  };
-> >>  
-> >> +&pcie_phy {
-> >> +	status = "okay";
-> >> +};
-> >> +
-> >> +&pcie0 {
-> >> +	ep-gpios = <&gpio4 RK_PD1 GPIO_ACTIVE_HIGH>;
-> >> +	num-lanes = <4>;
-> >> +	pinctrl-names = "default";
-> >> +	pinctrl-0 = <&pcie_perst>;
-> >> +	vpcie3v3-supply = <&vcc3v3_pcie>;
-> >> +	status = "okay";
-> >> +};
-> >> +
-> >>  &pinctrl {
-> >>  	lcd-panel {
-> >>  		lcd_panel_reset: lcd-panel-reset {
-> >> @@ -535,6 +563,16 @@
-> >>  		};
-> >>  	};
-> >>  
-> >> +	pcie {
-> >> +		vcc3v3_pcie_en: vcc3v3-pcie-en {
-> >> +			rockchip,pins = <1 RK_PC1 RK_FUNC_GPIO &pcfg_pull_none>;
-> >> +		};
-> >> +
-> >> +		pcie_perst: pcie-perst {
-> >> +			rockchip,pins = <4 RK_PD1 RK_FUNC_GPIO &pcfg_pull_none>;
-> >> +		};
-> >> +	};
-> >> +
-> >>  	pmic {
-> >>  		vsel1_gpio: vsel1-gpio {
-> >>  			rockchip,pins = <1 RK_PC2 RK_FUNC_GPIO &pcfg_pull_down>;
-> >> 
-> > 
-> > 
-> > 
-> > 
-> > 
-> > _______________________________________________
-> > Linux-rockchip mailing list
-> > Linux-rockchip@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-rockchip
-> > 
-> 
-
-
-
-
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 Linux-rockchip mailing list
