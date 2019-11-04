@@ -2,72 +2,88 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 312E9EE4E2
-	for <lists+linux-rockchip@lfdr.de>; Mon,  4 Nov 2019 17:40:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 919EFEE5F5
+	for <lists+linux-rockchip@lfdr.de>; Mon,  4 Nov 2019 18:27:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CUdMFmjHa+O/90WBiALLzARmhM1eGIoAjKUwPkVF3aQ=; b=O/Z2kl2zz80q2S
-	cosgUSqFqfzOuZysufHnMEjxfb18up4Ibf+6d19tjpfbGOfoT6r/e4Tqj51pBwuv0nhCJ8UTgCuRJ
-	W7SvOH4giGRDEcZm8fiws8JKdE6O+Koc/35BWK4m57E+OHCp9YSqKEvQAKCwQtX0CXkIkfnuqFw2A
-	47gSDv6qfJmfSAhv+6crruXGBD/Qdy4eU7gbyeFvZLyqpWXkzRJibcTFVOThwH2dlaqbCjGDqIbgN
-	a93Wjlj1RaBch0K4/Q8Mfe9Oki40ifO9p6kj71XOgSxAj92HosTKpXXTDgHMth9O+sRVWusaa0toW
-	8q8UJ213vf4HtJuKqXmA==;
+	List-Owner; bh=FXrq9Lm6gx+6KQ1H+1p5gYcPthnymfeTwQtofEjBvoE=; b=AD9/MEWoDGtdpe
+	aBKH0MDXyEKkIzgMbQSATReW8PAcqdZ3Z1lswH0mUKCHvxa63pVPQHHFCjlO1Z/RHaYKCaHl7OE+4
+	RTR1ZIEKq4uWvUSQXs4Qpd1IY7+lpzmPDENoH9FGlzwmdcDCaDXpdSyzMvz7sFCsfgdtZlfq0kifk
+	GJ24OVIKhGXK4ktUW1V7cRA+KvdoxcxDZJMzHWXIkSdCdEUB578JQycSrxn25aFzDiZ0jpK+3iyeu
+	uaVvZMtHn3VflF+aq82Plm5FfTHsG30VwGan/KAab9EKMUmYvUNQ5ITe1sYvwJazy4ECGX3iOWlqc
+	1BOyZCbJARn3sDKhrlsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRfOy-0000Ea-TV; Mon, 04 Nov 2019 16:40:24 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRfO4-0006gk-AL; Mon, 04 Nov 2019 16:39:33 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DEE5B68D;
- Mon,  4 Nov 2019 08:39:26 -0800 (PST)
-Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9FAFA3F71A;
- Mon,  4 Nov 2019 08:39:17 -0800 (PST)
-From: Andrew Murray <andrew.murray@arm.com>
-To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Ley Foon Tan <lftan@altera.com>, Jesper Nilsson <jesper.nilsson@axis.com>,
- Tom Joseph <tjoseph@cadence.com>, Richard Zhu <hongxing.zhu@nxp.com>,
- Lucas Stach <l.stach@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Zhou Wang <wangzhou1@hisilicon.com>,
- Will Deacon <will@kernel.org>, Xiaowei Song <songxiaowei@hisilicon.com>,
- Binghui Wang <wangbinghui@hisilicon.com>,
- Ryder Lee <ryder.lee@mediatek.com>,
- Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>,
- Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, David Daney <david.daney@cavium.com>,
- Jonathan Chocron <jonnyc@amazon.com>, Andy Gross <agross@kernel.org>,
- Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Toan Le <toan@os.amperecomputing.com>,
- Michal Simek <michal.simek@xilinx.com>,
- Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v1 7/7] dt-bindings: PCI: Use IRQ flags for legacy PCI IRQ
- interrupts
-Date: Mon,  4 Nov 2019 16:38:21 +0000
-Message-Id: <20191104163834.8932-8-andrew.murray@arm.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20191104163834.8932-1-andrew.murray@arm.com>
-References: <20191104163834.8932-1-andrew.murray@arm.com>
+	id 1iRg8B-00065c-GI; Mon, 04 Nov 2019 17:27:07 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iRg87-00064d-5Y; Mon, 04 Nov 2019 17:27:05 +0000
+Received: by mail-qk1-x744.google.com with SMTP id 71so18429447qkl.0;
+ Mon, 04 Nov 2019 09:27:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=45/7adduVbfCybhpUSufsa5tEcGQJGPhKcvkvde1T+A=;
+ b=WkfCr6DdW8EJ5kdnEDP7stKjTReDaByqfFYa7D2qfg3mFgFidDPWRDoCMckHNN3zi1
+ xrLw1Eq2RnCR+Sr8XAE1ZjnsJUuql1kbShr1K5rYKke8mJhdV7lQkNLhb0xG0hTPm+q/
+ /DFxWsXRBC6DjligyEZuu8OMug9be/7dqnfql7OuJ+oJox3KGOln9KSwxV9Y1IkMQMI5
+ zqaFrm5y/erjIBAeOaLDSkliSjVfaYUhqEaykXC4E8EZm1md34WIfG7Z6gn1VS+ISXIY
+ tTSuIzate1akVObhkKvcCJ+LTBNwlh2OLWWVqnicpZDxF5nXVO1iwDnBa8pJGx1+1maB
+ R2EQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=45/7adduVbfCybhpUSufsa5tEcGQJGPhKcvkvde1T+A=;
+ b=V7OI+9AindPN1Dvcjo99QDN1/+ltO5TRuCpwzgI/23e0/9LRqNld6RT/kjuFJSNTO1
+ bRrZTE16xc0P40lenaZ2lcqFCs72Si545c2k8kl1W609AneYf3tE+6lsYMDmaKghrQak
+ 5htmaEY4j8XBG0vNsk9bEdtJB/EpcOaK8uiRdRS8it8pVqsxUaROmUoE25ZvLEcbI0bw
+ 1Znj/MMyzd2aC7EekPNlyiDggxO61MjMXcdUuel2r5XBoR9VnJjcP24OdDMYCDmqfwOa
+ iwJSb/Bb//c6fJSHo0M62IlkpM5MtBfEYkf46e/XsvkMR74oHABlrpS2YkgfsYpoo1l/
+ U3TA==
+X-Gm-Message-State: APjAAAV0/v3wjus1Jw6nt+kEbcyNmQR/m5vxQ3/JJY8jjfe9FY5IHNOy
+ q5VTunIPbtF6d51si3XXNppJ1eK2+LnsJmEFKx4=
+X-Google-Smtp-Source: APXvYqzdTTpcsHI6p5KoQ1Upmj8w424Wf7YyKsfuAhROrqP0hh7ghRkoOMsJSGeI4zSkUnXSqitqck61MkK8d/V1woo=
+X-Received: by 2002:ae9:ed13:: with SMTP id c19mr11101534qkg.290.1572888421056; 
+ Mon, 04 Nov 2019 09:27:01 -0800 (PST)
 MIME-Version: 1.0
+References: <20190918200734.149876-1-sean@poorly.run>
+ <20190918200734.149876-2-sean@poorly.run>
+ <20190919141413.GU218215@art_vandelay>
+ <CAFqH_53iQt0o9keRQLyqx-B=bni37bkTACF=wBKgSLOLz-hw4g@mail.gmail.com>
+In-Reply-To: <CAFqH_53iQt0o9keRQLyqx-B=bni37bkTACF=wBKgSLOLz-hw4g@mail.gmail.com>
+From: Enric Balletbo Serra <eballetbo@gmail.com>
+Date: Mon, 4 Nov 2019 18:26:49 +0100
+Message-ID: <CAFqH_53nZMk04+2rDOoWXEfq3Zw=i+gBjMSGb93WBjww9ercnw@mail.gmail.com>
+Subject: Re: [PATCH v2 2/3] drm: Measure Self Refresh Entry/Exit times to
+ avoid thrashing
+To: Sean Paul <sean@poorly.run>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_083928_475552_5C67D355 
-X-CRM114-Status: GOOD (  14.82  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191104_092703_236606_EE5DC683 
+X-CRM114-Status: GOOD (  37.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (eballetbo[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,856 +96,284 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
- rfi@lists.rocketboards.org, linux-arm-kernel@axis.com,
- linux-rockchip@lists.infradead.org, linux-mediatek@lists.infradead.org,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
- linux-omap@vger.kernel.org, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel.vetter@ffwll.ch>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Sean Paul <seanpaul@chromium.org>, jekarl@iki.fi,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Replace magic numbers used to describe legacy PCI IRQ interrupts
-with #define.
-
-Signed-off-by: Andrew Murray <andrew.murray@arm.com>
----
- .../devicetree/bindings/pci/83xx-512x-pci.txt | 18 ++---
- .../devicetree/bindings/pci/aardvark-pci.txt  | 10 +--
- .../devicetree/bindings/pci/altera-pcie.txt   | 10 +--
- .../bindings/pci/axis,artpec6-pcie.txt        | 10 +--
- .../bindings/pci/cdns,cdns-pcie-host.txt      | 10 +--
- .../bindings/pci/faraday,ftpci100.txt         | 68 +++++++++----------
- .../bindings/pci/fsl,imx6q-pcie.txt           | 10 +--
- .../bindings/pci/hisilicon-pcie.txt           | 20 +++---
- .../bindings/pci/host-generic-pci.txt         | 10 +--
- .../devicetree/bindings/pci/kirin-pcie.txt    | 10 +--
- .../bindings/pci/layerscape-pci.txt           | 10 +--
- .../devicetree/bindings/pci/mediatek-pcie.txt | 40 +++++------
- .../devicetree/bindings/pci/mobiveil-pcie.txt |  8 +--
- .../devicetree/bindings/pci/pci-rcar-gen2.txt |  8 +--
- .../bindings/pci/pci-thunder-pem.txt          | 10 +--
- .../devicetree/bindings/pci/pcie-al.txt       |  4 +-
- .../devicetree/bindings/pci/qcom,pcie.txt     | 20 +++---
- .../bindings/pci/ralink,rt3883-pci.txt        | 18 ++---
- .../bindings/pci/rockchip-pcie-host.txt       | 10 +--
- .../devicetree/bindings/pci/ti-pci.txt        | 10 +--
- .../devicetree/bindings/pci/uniphier-pcie.txt | 10 +--
- .../bindings/pci/v3-v360epc-pci.txt           | 34 +++++-----
- .../devicetree/bindings/pci/versatile.txt     | 40 +++++------
- .../devicetree/bindings/pci/xgene-pci-msi.txt | 10 +--
- .../devicetree/bindings/pci/xgene-pci.txt     | 10 +--
- .../bindings/pci/xilinx-nwl-pcie.txt          | 10 +--
- .../devicetree/bindings/pci/xilinx-pcie.txt   | 20 +++---
- 27 files changed, 224 insertions(+), 224 deletions(-)
-
-diff --git a/Documentation/devicetree/bindings/pci/83xx-512x-pci.txt b/Documentation/devicetree/bindings/pci/83xx-512x-pci.txt
-index 3abeecf4983f..cb80b9e49a2b 100644
---- a/Documentation/devicetree/bindings/pci/83xx-512x-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/83xx-512x-pci.txt
-@@ -9,19 +9,19 @@ Freescale 83xx and 512x SOCs include the same PCI bridge core.
- 
- Example (MPC8313ERDB)
- 	pci0: pci@e0008500 {
--		interrupt-map-mask = <0xf800 0x0 0x0 0x7>;
-+		interrupt-map-mask = <0xf800 0x0 0x0 IRQ_INT_ALL>;
- 		interrupt-map = <
- 				/* IDSEL 0x0E -mini PCI */
--				 0x7000 0x0 0x0 0x1 &ipic 18 0x8
--				 0x7000 0x0 0x0 0x2 &ipic 18 0x8
--				 0x7000 0x0 0x0 0x3 &ipic 18 0x8
--				 0x7000 0x0 0x0 0x4 &ipic 18 0x8
-+				 0x7000 0x0 0x0 IRQ_INTA &ipic 18 0x8
-+				 0x7000 0x0 0x0 IRQ_INTB &ipic 18 0x8
-+				 0x7000 0x0 0x0 IRQ_INTC &ipic 18 0x8
-+				 0x7000 0x0 0x0 IRQ_INTD &ipic 18 0x8
- 
- 				/* IDSEL 0x0F - PCI slot */
--				 0x7800 0x0 0x0 0x1 &ipic 17 0x8
--				 0x7800 0x0 0x0 0x2 &ipic 18 0x8
--				 0x7800 0x0 0x0 0x3 &ipic 17 0x8
--				 0x7800 0x0 0x0 0x4 &ipic 18 0x8>;
-+				 0x7800 0x0 0x0 IRQ_INTA &ipic 17 0x8
-+				 0x7800 0x0 0x0 IRQ_INTB &ipic 18 0x8
-+				 0x7800 0x0 0x0 IRQ_INTC &ipic 17 0x8
-+				 0x7800 0x0 0x0 IRQ_INTD &ipic 18 0x8>;
- 		interrupt-parent = <&ipic>;
- 		interrupts = <66 0x8>;
- 		bus-range = <0x0 0x0>;
-diff --git a/Documentation/devicetree/bindings/pci/aardvark-pci.txt b/Documentation/devicetree/bindings/pci/aardvark-pci.txt
-index 310ef7145c47..ca8fe542edc9 100644
---- a/Documentation/devicetree/bindings/pci/aardvark-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/aardvark-pci.txt
-@@ -43,11 +43,11 @@ Example:
- 		msi-parent = <&pcie0>;
- 		ranges = <0x82000000 0 0xe8000000   0 0xe8000000 0 0x1000000 /* Port 0 MEM */
- 			  0x81000000 0 0xe9000000   0 0xe9000000 0 0x10000>; /* Port 0 IO*/
--		interrupt-map-mask = <0 0 0 7>;
--		interrupt-map = <0 0 0 1 &pcie_intc 0>,
--				<0 0 0 2 &pcie_intc 1>,
--				<0 0 0 3 &pcie_intc 2>,
--				<0 0 0 4 &pcie_intc 3>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &pcie_intc 0>,
-+				<0 0 0 IRQ_INTB &pcie_intc 1>,
-+				<0 0 0 IRQ_INTC &pcie_intc 2>,
-+				<0 0 0 IRQ_INTD &pcie_intc 3>;
- 		pcie_intc: interrupt-controller {
- 			interrupt-controller;
- 			#interrupt-cells = <1>;
-diff --git a/Documentation/devicetree/bindings/pci/altera-pcie.txt b/Documentation/devicetree/bindings/pci/altera-pcie.txt
-index 816b244a221e..f9902dca1a03 100644
---- a/Documentation/devicetree/bindings/pci/altera-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/altera-pcie.txt
-@@ -40,11 +40,11 @@ Example
- 		msi-parent = <&msi_to_gic_gen_0>;
- 		#address-cells = <3>;
- 		#size-cells = <2>;
--		interrupt-map-mask = <0 0 0 7>;
--		interrupt-map = <0 0 0 1 &pcie_0 1>,
--			            <0 0 0 2 &pcie_0 2>,
--			            <0 0 0 3 &pcie_0 3>,
--			            <0 0 0 4 &pcie_0 4>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &pcie_0 1>,
-+			            <0 0 0 IRQ_INTB &pcie_0 2>,
-+			            <0 0 0 IRQ_INTC &pcie_0 3>,
-+			            <0 0 0 IRQ_INTD &pcie_0 4>;
- 		ranges = <0x82000000 0x00000000 0x00000000 0xc0000000 0x00000000 0x10000000
- 			  0x82000000 0x00000000 0x10000000 0xd0000000 0x00000000 0x10000000>;
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/axis,artpec6-pcie.txt b/Documentation/devicetree/bindings/pci/axis,artpec6-pcie.txt
-index 979dc7b6cfe8..c71dbe94f0eb 100644
---- a/Documentation/devicetree/bindings/pci/axis,artpec6-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/axis,artpec6-pcie.txt
-@@ -41,10 +41,10 @@ Example:
- 		interrupts = <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>;
- 		interrupt-names = "msi";
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0 0 0 0x7>;
--		interrupt-map = <0 0 0 1 &intc GIC_SPI 144 IRQ_TYPE_LEVEL_HIGH>,
--		                <0 0 0 2 &intc GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>,
--		                <0 0 0 3 &intc GIC_SPI 146 IRQ_TYPE_LEVEL_HIGH>,
--		                <0 0 0 4 &intc GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &intc GIC_SPI 144 IRQ_TYPE_LEVEL_HIGH>,
-+		                <0 0 0 IRQ_INTB &intc GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>,
-+		                <0 0 0 IRQ_INTC &intc GIC_SPI 146 IRQ_TYPE_LEVEL_HIGH>,
-+		                <0 0 0 IRQ_INTD &intc GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>;
- 		axis,syscon-pcie = <&syscon>;
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-host.txt b/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-host.txt
-index 91de69c713a9..67845103c8f0 100644
---- a/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-host.txt
-+++ b/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-host.txt
-@@ -52,12 +52,12 @@ pcie@fb000000 {
- 
- 	#interrupt-cells = <0x1>;
- 
--	interrupt-map = <0x0 0x0 0x0  0x1  &gic  0x0 0x0 0x0 14 0x1
--			 0x0 0x0 0x0  0x2  &gic  0x0 0x0 0x0 15 0x1
--			 0x0 0x0 0x0  0x3  &gic  0x0 0x0 0x0 16 0x1
--			 0x0 0x0 0x0  0x4  &gic  0x0 0x0 0x0 17 0x1>;
-+	interrupt-map = <0x0 0x0 0x0  IRQ_INTA  &gic  0x0 0x0 0x0 14 0x1
-+			 0x0 0x0 0x0  IRQ_INTB  &gic  0x0 0x0 0x0 15 0x1
-+			 0x0 0x0 0x0  IRQ_INTC  &gic  0x0 0x0 0x0 16 0x1
-+			 0x0 0x0 0x0  IRQ_INTD  &gic  0x0 0x0 0x0 17 0x1>;
- 
--	interrupt-map-mask = <0x0 0x0 0x0  0x7>;
-+	interrupt-map-mask = <0x0 0x0 0x0 IRQ_INT_ALL>;
- 
- 	msi-parent = <&its_pci>;
- 
-diff --git a/Documentation/devicetree/bindings/pci/faraday,ftpci100.txt b/Documentation/devicetree/bindings/pci/faraday,ftpci100.txt
-index 5f8cb4962f8d..b267d4853773 100644
---- a/Documentation/devicetree/bindings/pci/faraday,ftpci100.txt
-+++ b/Documentation/devicetree/bindings/pci/faraday,ftpci100.txt
-@@ -61,24 +61,24 @@ variant) interrupts assigns the default interrupt mapping/swizzling has
- typically been like this, doing the swizzling on the interrupt controller side
- rather than in the interconnect:
- 
--interrupt-map-mask = <0xf800 0 0 7>;
-+interrupt-map-mask = <0xf800 0 0 IRQ_INT_ALL>;
- interrupt-map =
--	<0x4800 0 0 1 &pci_intc 0>, /* Slot 9 */
--	<0x4800 0 0 2 &pci_intc 1>,
--	<0x4800 0 0 3 &pci_intc 2>,
--	<0x4800 0 0 4 &pci_intc 3>,
--	<0x5000 0 0 1 &pci_intc 1>, /* Slot 10 */
--	<0x5000 0 0 2 &pci_intc 2>,
--	<0x5000 0 0 3 &pci_intc 3>,
--	<0x5000 0 0 4 &pci_intc 0>,
--	<0x5800 0 0 1 &pci_intc 2>, /* Slot 11 */
--	<0x5800 0 0 2 &pci_intc 3>,
--	<0x5800 0 0 3 &pci_intc 0>,
--	<0x5800 0 0 4 &pci_intc 1>,
--	<0x6000 0 0 1 &pci_intc 3>, /* Slot 12 */
--	<0x6000 0 0 2 &pci_intc 0>,
--	<0x6000 0 0 3 &pci_intc 1>,
--	<0x6000 0 0 4 &pci_intc 2>;
-+	<0x4800 0 0 IRQ_INTA &pci_intc 0>, /* Slot 9 */
-+	<0x4800 0 0 IRQ_INTB &pci_intc 1>,
-+	<0x4800 0 0 IRQ_INTC &pci_intc 2>,
-+	<0x4800 0 0 IRQ_INTD &pci_intc 3>,
-+	<0x5000 0 0 IRQ_INTA &pci_intc 1>, /* Slot 10 */
-+	<0x5000 0 0 IRQ_INTB &pci_intc 2>,
-+	<0x5000 0 0 IRQ_INTC &pci_intc 3>,
-+	<0x5000 0 0 IRQ_INTD &pci_intc 0>,
-+	<0x5800 0 0 IRQ_INTA &pci_intc 2>, /* Slot 11 */
-+	<0x5800 0 0 IRQ_INTB &pci_intc 3>,
-+	<0x5800 0 0 IRQ_INTC &pci_intc 0>,
-+	<0x5800 0 0 IRQ_INTD &pci_intc 1>,
-+	<0x6000 0 0 IRQ_INTA &pci_intc 3>, /* Slot 12 */
-+	<0x6000 0 0 IRQ_INTB &pci_intc 0>,
-+	<0x6000 0 0 IRQ_INTC &pci_intc 1>,
-+	<0x6000 0 0 IRQ_INTD &pci_intc 2>;
- 
- Example:
- 
-@@ -108,24 +108,24 @@ pci@50000000 {
- 	/* 64MiB at 0x00000000-0x03ffffff */
- 	<0x02000000 0 0x00000000 0x00000000 0 0x04000000>;
- 
--	interrupt-map-mask = <0xf800 0 0 7>;
-+	interrupt-map-mask = <0xf800 0 0 IRQ_INT_ALL>;
- 	interrupt-map =
--		<0x4800 0 0 1 &pci_intc 0>, /* Slot 9 */
--		<0x4800 0 0 2 &pci_intc 1>,
--		<0x4800 0 0 3 &pci_intc 2>,
--		<0x4800 0 0 4 &pci_intc 3>,
--		<0x5000 0 0 1 &pci_intc 1>, /* Slot 10 */
--		<0x5000 0 0 2 &pci_intc 2>,
--		<0x5000 0 0 3 &pci_intc 3>,
--		<0x5000 0 0 4 &pci_intc 0>,
--		<0x5800 0 0 1 &pci_intc 2>, /* Slot 11 */
--		<0x5800 0 0 2 &pci_intc 3>,
--		<0x5800 0 0 3 &pci_intc 0>,
--		<0x5800 0 0 4 &pci_intc 1>,
--		<0x6000 0 0 1 &pci_intc 3>, /* Slot 12 */
--		<0x6000 0 0 2 &pci_intc 0>,
--		<0x6000 0 0 3 &pci_intc 0>,
--		<0x6000 0 0 4 &pci_intc 0>;
-+		<0x4800 0 0 IRQ_INTA &pci_intc 0>, /* Slot 9 */
-+		<0x4800 0 0 IRQ_INTB &pci_intc 1>,
-+		<0x4800 0 0 IRQ_INTC &pci_intc 2>,
-+		<0x4800 0 0 IRQ_INTD &pci_intc 3>,
-+		<0x5000 0 0 IRQ_INTA &pci_intc 1>, /* Slot 10 */
-+		<0x5000 0 0 IRQ_INTB &pci_intc 2>,
-+		<0x5000 0 0 IRQ_INTC &pci_intc 3>,
-+		<0x5000 0 0 IRQ_INTD &pci_intc 0>,
-+		<0x5800 0 0 IRQ_INTA &pci_intc 2>, /* Slot 11 */
-+		<0x5800 0 0 IRQ_INTB &pci_intc 3>,
-+		<0x5800 0 0 IRQ_INTC &pci_intc 0>,
-+		<0x5800 0 0 IRQ_INTD &pci_intc 1>,
-+		<0x6000 0 0 IRQ_INTA &pci_intc 3>, /* Slot 12 */
-+		<0x6000 0 0 IRQ_INTB &pci_intc 0>,
-+		<0x6000 0 0 IRQ_INTC &pci_intc 0>,
-+		<0x6000 0 0 IRQ_INTD &pci_intc 0>;
- 	pci_intc: interrupt-controller {
- 		interrupt-parent = <&intcon>;
- 		interrupt-controller;
-diff --git a/Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt b/Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt
-index de4b2baf91e8..dc331885124a 100644
---- a/Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt
-@@ -77,11 +77,11 @@ Example:
- 		interrupts = <GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>;
- 		interrupt-names = "msi";
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0 0 0 0x7>;
--		interrupt-map = <0 0 0 1 &intc GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>,
--		                <0 0 0 2 &intc GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>,
--		                <0 0 0 3 &intc GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>,
--		                <0 0 0 4 &intc GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &intc GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>,
-+		                <0 0 0 IRQ_INTB &intc GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>,
-+		                <0 0 0 IRQ_INTC &intc GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>,
-+		                <0 0 0 IRQ_INTD &intc GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&clks 144>, <&clks 206>, <&clks 189>;
- 		clock-names = "pcie", "pcie_bus", "pcie_phy";
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/hisilicon-pcie.txt b/Documentation/devicetree/bindings/pci/hisilicon-pcie.txt
-index 0dcb87d6554f..3e809c7d9b07 100644
---- a/Documentation/devicetree/bindings/pci/hisilicon-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/hisilicon-pcie.txt
-@@ -35,11 +35,11 @@ Hip05 Example (note that Hip06 is the same except compatible):
- 		num-lanes = <8>;
- 		port-id = <1>;
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0xf800 0 0 7>;
--		interrupt-map = <0x0 0 0 1 &mbigen_pcie 1 10
--				 0x0 0 0 2 &mbigen_pcie 2 11
--				 0x0 0 0 3 &mbigen_pcie 3 12
--				 0x0 0 0 4 &mbigen_pcie 4 13>;
-+		interrupt-map-mask = <0xf800 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0x0 0 0 IRQ_INTA &mbigen_pcie 1 10
-+				 0x0 0 0 IRQ_INTB &mbigen_pcie 2 11
-+				 0x0 0 0 IRQ_INTC &mbigen_pcie 3 12
-+				 0x0 0 0 IRQ_INTD &mbigen_pcie 4 13>;
- 	};
- 
- HiSilicon Hip06/Hip07 PCIe host bridge DT (almost-ECAM) description.
-@@ -77,9 +77,9 @@ Example:
- 		ranges = <0x02000000 0 0xb2000000 0x0 0xb2000000 0 0x5ff0000
- 			  0x01000000 0 0 0 0xb7ff0000 0 0x10000>;
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0xf800 0 0 7>;
--		interrupt-map = <0x0 0 0 1 &mbigen_pcie0 650 4
--				 0x0 0 0 2 &mbigen_pcie0 650 4
--				 0x0 0 0 3 &mbigen_pcie0 650 4
--				 0x0 0 0 4 &mbigen_pcie0 650 4>;
-+		interrupt-map-mask = <0xf800 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0x0 0 0 IRQ_INTA &mbigen_pcie0 650 4
-+				 0x0 0 0 IRQ_INTB &mbigen_pcie0 650 4
-+				 0x0 0 0 IRQ_INTC &mbigen_pcie0 650 4
-+				 0x0 0 0 IRQ_INTD &mbigen_pcie0 650 4>;
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/host-generic-pci.txt b/Documentation/devicetree/bindings/pci/host-generic-pci.txt
-index 614b594f4e72..51a56ad3f1a9 100644
---- a/Documentation/devicetree/bindings/pci/host-generic-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/host-generic-pci.txt
-@@ -91,11 +91,11 @@ pci {
-     #interrupt-cells = <0x1>;
- 
-     // PCI_DEVICE(3)  INT#(1)  CONTROLLER(PHANDLE)  CONTROLLER_DATA(3)
--    interrupt-map = <  0x0 0x0 0x0  0x1  &gic  0x0 0x4 0x1
--                     0x800 0x0 0x0  0x1  &gic  0x0 0x5 0x1
--                    0x1000 0x0 0x0  0x1  &gic  0x0 0x6 0x1
--                    0x1800 0x0 0x0  0x1  &gic  0x0 0x7 0x1>;
-+    interrupt-map = <  0x0 0x0 0x0 IRQ_INTA  &gic  0x0 0x4 0x1
-+                     0x800 0x0 0x0 IRQ_INTA  &gic  0x0 0x5 0x1
-+                    0x1000 0x0 0x0 IRQ_INTA  &gic  0x0 0x6 0x1
-+                    0x1800 0x0 0x0 IRQ_INTA  &gic  0x0 0x7 0x1>;
- 
-     // PCI_DEVICE(3)  INT#(1)
--    interrupt-map-mask = <0xf800 0x0 0x0  0x7>;
-+    interrupt-map-mask = <0xf800 0x0 0x0 IRQ_MAP_ALL>;
- }
-diff --git a/Documentation/devicetree/bindings/pci/kirin-pcie.txt b/Documentation/devicetree/bindings/pci/kirin-pcie.txt
-index 6bbe43818ad5..7da640d6578e 100644
---- a/Documentation/devicetree/bindings/pci/kirin-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/kirin-pcie.txt
-@@ -34,11 +34,11 @@ Example based on kirin960:
- 		ranges = <0x02000000 0x0 0x00000000 0x0 0xf5000000 0x0 0x2000000>;
- 		num-lanes = <1>;
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0xf800 0 0 7>;
--		interrupt-map = <0x0 0 0 1 &gic 0 0 0  282 4>,
--				<0x0 0 0 2 &gic 0 0 0  283 4>,
--				<0x0 0 0 3 &gic 0 0 0  284 4>,
--				<0x0 0 0 4 &gic 0 0 0  285 4>;
-+		interrupt-map-mask = <0xf800 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0x0 0 0 IRQ_INTA &gic 0 0 0  282 4>,
-+				<0x0 0 0 IRQ_INTB &gic 0 0 0  283 4>,
-+				<0x0 0 0 IRQ_INTC &gic 0 0 0  284 4>,
-+				<0x0 0 0 IRQ_INTD &gic 0 0 0  285 4>;
- 		clocks = <&crg_ctrl HI3660_PCIEPHY_REF>,
- 			 <&crg_ctrl HI3660_CLK_GATE_PCIEAUX>,
- 			 <&crg_ctrl HI3660_PCLK_GATE_PCIE_PHY>,
-diff --git a/Documentation/devicetree/bindings/pci/layerscape-pci.txt b/Documentation/devicetree/bindings/pci/layerscape-pci.txt
-index e20ceaab9b38..1016e9f8982a 100644
---- a/Documentation/devicetree/bindings/pci/layerscape-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/layerscape-pci.txt
-@@ -56,9 +56,9 @@ Example:
- 			  0xc2000000 0x0 0x20000000 0x40 0x20000000 0x0 0x20000000   /* prefetchable memory */
- 			  0x82000000 0x0 0x40000000 0x40 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0 0 0 7>;
--		interrupt-map = <0000 0 0 1 &gic GIC_SPI 91  IRQ_TYPE_LEVEL_HIGH>,
--				<0000 0 0 2 &gic GIC_SPI 188 IRQ_TYPE_LEVEL_HIGH>,
--				<0000 0 0 3 &gic GIC_SPI 190 IRQ_TYPE_LEVEL_HIGH>,
--				<0000 0 0 4 &gic GIC_SPI 192 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0000 0 0 IRQ_INTA &gic GIC_SPI 91  IRQ_TYPE_LEVEL_HIGH>,
-+				<0000 0 0 IRQ_INTB &gic GIC_SPI 188 IRQ_TYPE_LEVEL_HIGH>,
-+				<0000 0 0 IRQ_INTC &gic GIC_SPI 190 IRQ_TYPE_LEVEL_HIGH>,
-+				<0000 0 0 IRQ_INTD &gic GIC_SPI 192 IRQ_TYPE_LEVEL_HIGH>;
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/mediatek-pcie.txt b/Documentation/devicetree/bindings/pci/mediatek-pcie.txt
-index 7468d666763a..00728cdad957 100644
---- a/Documentation/devicetree/bindings/pci/mediatek-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/mediatek-pcie.txt
-@@ -169,11 +169,11 @@ Examples for MT2712:
- 			#size-cells = <2>;
- 			#interrupt-cells = <1>;
- 			ranges;
--			interrupt-map-mask = <0 0 0 7>;
--			interrupt-map = <0 0 0 1 &pcie_intc0 0>,
--					<0 0 0 2 &pcie_intc0 1>,
--					<0 0 0 3 &pcie_intc0 2>,
--					<0 0 0 4 &pcie_intc0 3>;
-+			interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+			interrupt-map = <0 0 0 IRQ_INTA &pcie_intc0 0>,
-+					<0 0 0 IRQ_INTB &pcie_intc0 1>,
-+					<0 0 0 IRQ_INTC &pcie_intc0 2>,
-+					<0 0 0 IRQ_INTD &pcie_intc0 3>;
- 			pcie_intc0: interrupt-controller {
- 				interrupt-controller;
- 				#address-cells = <0>;
-@@ -187,11 +187,11 @@ Examples for MT2712:
- 			#size-cells = <2>;
- 			#interrupt-cells = <1>;
- 			ranges;
--			interrupt-map-mask = <0 0 0 7>;
--			interrupt-map = <0 0 0 1 &pcie_intc1 0>,
--					<0 0 0 2 &pcie_intc1 1>,
--					<0 0 0 3 &pcie_intc1 2>,
--					<0 0 0 4 &pcie_intc1 3>;
-+			interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+			interrupt-map = <0 0 0 IRQ_INTA &pcie_intc1 0>,
-+					<0 0 0 IRQ_INTB &pcie_intc1 1>,
-+					<0 0 0 IRQ_INTC &pcie_intc1 2>,
-+					<0 0 0 IRQ_INTD &pcie_intc1 3>;
- 			pcie_intc1: interrupt-controller {
- 				interrupt-controller;
- 				#address-cells = <0>;
-@@ -240,11 +240,11 @@ Examples for MT7622:
- 			#size-cells = <2>;
- 			#interrupt-cells = <1>;
- 			ranges;
--			interrupt-map-mask = <0 0 0 7>;
--			interrupt-map = <0 0 0 1 &pcie_intc0 0>,
--					<0 0 0 2 &pcie_intc0 1>,
--					<0 0 0 3 &pcie_intc0 2>,
--					<0 0 0 4 &pcie_intc0 3>;
-+			interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+			interrupt-map = <0 0 0 IRQ_INTA &pcie_intc0 0>,
-+					<0 0 0 IRQ_INTB &pcie_intc0 1>,
-+					<0 0 0 IRQ_INTC &pcie_intc0 2>,
-+					<0 0 0 IRQ_INTD &pcie_intc0 3>;
- 			pcie_intc0: interrupt-controller {
- 				interrupt-controller;
- 				#address-cells = <0>;
-@@ -258,11 +258,11 @@ Examples for MT7622:
- 			#size-cells = <2>;
- 			#interrupt-cells = <1>;
- 			ranges;
--			interrupt-map-mask = <0 0 0 7>;
--			interrupt-map = <0 0 0 1 &pcie_intc1 0>,
--					<0 0 0 2 &pcie_intc1 1>,
--					<0 0 0 3 &pcie_intc1 2>,
--					<0 0 0 4 &pcie_intc1 3>;
-+			interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+			interrupt-map = <0 0 0 IRQ_INTA &pcie_intc1 0>,
-+					<0 0 0 IRQ_INTB &pcie_intc1 1>,
-+					<0 0 0 IRQ_INTC &pcie_intc1 2>,
-+					<0 0 0 IRQ_INTD &pcie_intc1 3>;
- 			pcie_intc1: interrupt-controller {
- 				interrupt-controller;
- 				#address-cells = <0>;
-diff --git a/Documentation/devicetree/bindings/pci/mobiveil-pcie.txt b/Documentation/devicetree/bindings/pci/mobiveil-pcie.txt
-index 64156993e052..03070b3bfda1 100644
---- a/Documentation/devicetree/bindings/pci/mobiveil-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/mobiveil-pcie.txt
-@@ -62,11 +62,11 @@ Example:
- 		interrupt-parent = <&gic>;
- 		#interrupt-cells = <1>;
- 		interrupts = < 0 89 4 >;
--		interrupt-map-mask = <0 0 0 7>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
- 		interrupt-map = <0 0 0 0 &pci_express 0>,
--				<0 0 0 1 &pci_express 1>,
--				<0 0 0 2 &pci_express 2>,
--				<0 0 0 3 &pci_express 3>;
-+				<0 0 0 IRQ_INTA &pci_express 1>,
-+				<0 0 0 IRQ_INTB &pci_express 2>,
-+				<0 0 0 IRQ_INTC &pci_express 3>;
- 		ranges = < 0x83000000 0 0x00000000 0xa8000000 0 0x8000000>;
- 
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/pci-rcar-gen2.txt b/Documentation/devicetree/bindings/pci/pci-rcar-gen2.txt
-index b94078f58d8e..7c6a19e0b131 100644
---- a/Documentation/devicetree/bindings/pci/pci-rcar-gen2.txt
-+++ b/Documentation/devicetree/bindings/pci/pci-rcar-gen2.txt
-@@ -56,10 +56,10 @@ Example SoC configuration:
- 		#size-cells = <2>;
- 		#interrupt-cells = <1>;
- 		dma-ranges = <0x42000000 0 0x40000000 0 0x40000000 0 0x40000000>;
--		interrupt-map-mask = <0xff00 0 0 0x7>;
--		interrupt-map = <0x0000 0 0 1 &gic 0 108 IRQ_TYPE_LEVEL_HIGH
--				 0x0800 0 0 1 &gic 0 108 IRQ_TYPE_LEVEL_HIGH
--				 0x1000 0 0 2 &gic 0 108 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-map-mask = <0xff00 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0x0000 0 0 IRQ_INTA &gic 0 108 IRQ_TYPE_LEVEL_HIGH
-+				 0x0800 0 0 IRQ_INTA &gic 0 108 IRQ_TYPE_LEVEL_HIGH
-+				 0x1000 0 0 IRQ_INTB &gic 0 108 IRQ_TYPE_LEVEL_HIGH>;
- 
- 		usb@1,0 {
- 			reg = <0x800 0 0 0 0>;
-diff --git a/Documentation/devicetree/bindings/pci/pci-thunder-pem.txt b/Documentation/devicetree/bindings/pci/pci-thunder-pem.txt
-index f131faea3b7c..edfaedfe8c8c 100644
---- a/Documentation/devicetree/bindings/pci/pci-thunder-pem.txt
-+++ b/Documentation/devicetree/bindings/pci/pci-thunder-pem.txt
-@@ -35,9 +35,9 @@ Example:
- 		 <0x03000000 0x87e0 0xc2f00000 0x87e0 0xc2000000 0x00 0x00100000>; /* mem64 PEM BAR4 */
- 
- 	#interrupt-cells = <1>;
--	interrupt-map-mask = <0 0 0 7>;
--	interrupt-map = <0 0 0 1 &gic0 0 0 0 24 4>, /* INTA */
--			<0 0 0 2 &gic0 0 0 0 25 4>, /* INTB */
--			<0 0 0 3 &gic0 0 0 0 26 4>, /* INTC */
--			<0 0 0 4 &gic0 0 0 0 27 4>; /* INTD */
-+	interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+	interrupt-map = <0 0 0 IRQ_INTA &gic0 0 0 0 24 4>,
-+			<0 0 0 IRQ_INTB &gic0 0 0 0 25 4>,
-+			<0 0 0 IRQ_INTC &gic0 0 0 0 26 4>,
-+			<0 0 0 IRQ_INTD &gic0 0 0 0 27 4>;
-     };
-diff --git a/Documentation/devicetree/bindings/pci/pcie-al.txt b/Documentation/devicetree/bindings/pci/pcie-al.txt
-index 557a5089229d..8bb3d935d3fa 100644
---- a/Documentation/devicetree/bindings/pci/pcie-al.txt
-+++ b/Documentation/devicetree/bindings/pci/pcie-al.txt
-@@ -40,7 +40,7 @@ Example:
- 		#size-cells = <2>;
- 		#interrupt-cells = <1>;
- 		interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
--		interrupt-map-mask = <0x00 0 0 7>;
--		interrupt-map = <0x0000 0 0 1 &gic GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>; /* INTa */
-+		interrupt-map-mask = <0x00 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0x0000 0 0 IRQ_INTA &gic GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>;
- 		ranges = <0x02000000 0x0 0xc0010000 0x0 0xc0010000 0x0 0x07ff0000>;
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.txt b/Documentation/devicetree/bindings/pci/qcom,pcie.txt
-index ada80b01bf0c..898599eed2e5 100644
---- a/Documentation/devicetree/bindings/pci/qcom,pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/qcom,pcie.txt
-@@ -251,11 +251,11 @@
- 		interrupts = <GIC_SPI 238 IRQ_TYPE_NONE>;
- 		interrupt-names = "msi";
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0 0 0 0x7>;
--		interrupt-map = <0 0 0 1 &intc 0 36 IRQ_TYPE_LEVEL_HIGH>, /* int_a */
--				<0 0 0 2 &intc 0 37 IRQ_TYPE_LEVEL_HIGH>, /* int_b */
--				<0 0 0 3 &intc 0 38 IRQ_TYPE_LEVEL_HIGH>, /* int_c */
--				<0 0 0 4 &intc 0 39 IRQ_TYPE_LEVEL_HIGH>; /* int_d */
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &intc 0 36 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 0 IRQ_INTB &intc 0 37 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 0 IRQ_INTC &intc 0 38 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 0 IRQ_INTD &intc 0 39 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&gcc PCIE_A_CLK>,
- 			 <&gcc PCIE_H_CLK>,
- 			 <&gcc PCIE_PHY_CLK>;
-@@ -289,11 +289,11 @@
- 		interrupts = <GIC_SPI 243 IRQ_TYPE_NONE>;
- 		interrupt-names = "msi";
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0 0 0 0x7>;
--		interrupt-map = <0 0 0 1 &intc 0 244 IRQ_TYPE_LEVEL_HIGH>, /* int_a */
--				<0 0 0 2 &intc 0 245 IRQ_TYPE_LEVEL_HIGH>, /* int_b */
--				<0 0 0 3 &intc 0 247 IRQ_TYPE_LEVEL_HIGH>, /* int_c */
--				<0 0 0 4 &intc 0 248 IRQ_TYPE_LEVEL_HIGH>; /* int_d */
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &intc 0 244 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 0 IRQ_INTB &intc 0 245 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 0 IRQ_INTC &intc 0 247 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 0 IRQ_INTD &intc 0 248 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
- 			 <&gcc GCC_PCIE_0_MSTR_AXI_CLK>,
- 			 <&gcc GCC_PCIE_0_SLV_AXI_CLK>,
-diff --git a/Documentation/devicetree/bindings/pci/ralink,rt3883-pci.txt b/Documentation/devicetree/bindings/pci/ralink,rt3883-pci.txt
-index ffba4f63d71f..09a4a28fb472 100644
---- a/Documentation/devicetree/bindings/pci/ralink,rt3883-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/ralink,rt3883-pci.txt
-@@ -131,18 +131,18 @@
- 				0x01000000 0 0x00000000 0x10160000 0 0x00010000 /* io space */
- 			>;
- 
--			interrupt-map-mask = <0xf800 0 0 7>;
-+			interrupt-map-mask = <0xf800 0 0 IRQ_INT_ALL>;
- 			interrupt-map = <
- 				/* IDSEL 17 */
--				0x8800 0 0 1 &pciintc 18
--				0x8800 0 0 2 &pciintc 18
--				0x8800 0 0 3 &pciintc 18
--				0x8800 0 0 4 &pciintc 18
-+				0x8800 0 0 IRQ_INTA &pciintc 18
-+				0x8800 0 0 IRQ_INTB &pciintc 18
-+				0x8800 0 0 IRQ_INTC &pciintc 18
-+				0x8800 0 0 IRQ_INTD &pciintc 18
- 				/* IDSEL 18 */
--				0x9000 0 0 1 &pciintc 19
--				0x9000 0 0 2 &pciintc 19
--				0x9000 0 0 3 &pciintc 19
--				0x9000 0 0 4 &pciintc 19
-+				0x9000 0 0 IRQ_INTA &pciintc 19
-+				0x9000 0 0 IRQ_INTB &pciintc 19
-+				0x9000 0 0 IRQ_INTC &pciintc 19
-+				0x9000 0 0 IRQ_INTD &pciintc 19
- 			>;
- 
- 			pci-bridge@1 {
-diff --git a/Documentation/devicetree/bindings/pci/rockchip-pcie-host.txt b/Documentation/devicetree/bindings/pci/rockchip-pcie-host.txt
-index af34c65773fd..4538d18b4c3c 100644
---- a/Documentation/devicetree/bindings/pci/rockchip-pcie-host.txt
-+++ b/Documentation/devicetree/bindings/pci/rockchip-pcie-host.txt
-@@ -112,11 +112,11 @@ pcie0: pcie@f8000000 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pcie_clkreq>;
- 	#interrupt-cells = <1>;
--	interrupt-map-mask = <0 0 0 7>;
--	interrupt-map = <0 0 0 1 &pcie0_intc 0>,
--			<0 0 0 2 &pcie0_intc 1>,
--			<0 0 0 3 &pcie0_intc 2>,
--			<0 0 0 4 &pcie0_intc 3>;
-+	interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+	interrupt-map = <0 0 0 IRQ_INTA &pcie0_intc 0>,
-+			<0 0 0 IRQ_INTB &pcie0_intc 1>,
-+			<0 0 0 IRQ_INTC &pcie0_intc 2>,
-+			<0 0 0 IRQ_INTD &pcie0_intc 3>;
- 	pcie0_intc: interrupt-controller {
- 		interrupt-controller;
- 		#address-cells = <0>;
-diff --git a/Documentation/devicetree/bindings/pci/ti-pci.txt b/Documentation/devicetree/bindings/pci/ti-pci.txt
-index d5cbfe6b0d89..795b09755977 100644
---- a/Documentation/devicetree/bindings/pci/ti-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/ti-pci.txt
-@@ -88,11 +88,11 @@ axi {
- 		ti,hwmods = "pcie1";
- 		phys = <&pcie1_phy>;
- 		phy-names = "pcie-phy0";
--		interrupt-map-mask = <0 0 0 7>;
--		interrupt-map = <0 0 0 1 &pcie_intc 1>,
--				<0 0 0 2 &pcie_intc 2>,
--				<0 0 0 3 &pcie_intc 3>,
--				<0 0 0 4 &pcie_intc 4>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &pcie_intc 1>,
-+				<0 0 0 IRQ_INTB &pcie_intc 2>,
-+				<0 0 0 IRQ_INTC &pcie_intc 3>,
-+				<0 0 0 IRQ_INTD &pcie_intc 4>;
- 		pcie_intc: interrupt-controller {
- 			interrupt-controller;
- 			#address-cells = <0>;
-diff --git a/Documentation/devicetree/bindings/pci/uniphier-pcie.txt b/Documentation/devicetree/bindings/pci/uniphier-pcie.txt
-index 1fa2c5906d4d..b5416798a638 100644
---- a/Documentation/devicetree/bindings/pci/uniphier-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/uniphier-pcie.txt
-@@ -66,11 +66,11 @@ Example:
- 		#interrupt-cells = <1>;
- 		interrupt-names = "dma", "msi";
- 		interrupts = <0 224 4>, <0 225 4>;
--		interrupt-map-mask = <0 0 0  7>;
--		interrupt-map = <0 0 0  1  &pcie_intc 0>,	/* INTA */
--				<0 0 0  2  &pcie_intc 1>,	/* INTB */
--				<0 0 0  3  &pcie_intc 2>,	/* INTC */
--				<0 0 0  4  &pcie_intc 3>;	/* INTD */
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0  IRQ_INTA  &pcie_intc 0>,
-+				<0 0 0  IRQ_INTB  &pcie_intc 1>,
-+				<0 0 0  IRQ_INTC  &pcie_intc 2>,
-+				<0 0 0  IRQ_INTD  &pcie_intc 3>;
- 
- 		pcie_intc: legacy-interrupt-controller {
- 			interrupt-controller;
-diff --git a/Documentation/devicetree/bindings/pci/v3-v360epc-pci.txt b/Documentation/devicetree/bindings/pci/v3-v360epc-pci.txt
-index 11063293f761..bfa37aa4933d 100644
---- a/Documentation/devicetree/bindings/pci/v3-v360epc-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/v3-v360epc-pci.txt
-@@ -50,27 +50,27 @@ pci: pciv3@62000000 {
- 		0x20000000 0 0x20000000 /* 512 MB @ LB 20000000 1:1 */
- 		0x02000000 0 0x80000000 /* Core module alias memory */
- 		0x80000000 0 0x40000000>; /* 1GB @ LB 80000000 */
--	interrupt-map-mask = <0xf800 0 0 0x7>;
-+	interrupt-map-mask = <0xf800 0 0 IRQ_INT_ALL>;
- 	interrupt-map = <
- 	/* IDSEL 9 */
--	0x4800 0 0 1 &pic 13 /* INT A on slot 9 is irq 13 */
--	0x4800 0 0 2 &pic 14 /* INT B on slot 9 is irq 14 */
--	0x4800 0 0 3 &pic 15 /* INT C on slot 9 is irq 15 */
--	0x4800 0 0 4 &pic 16 /* INT D on slot 9 is irq 16 */
-+	0x4800 0 0 IRQ_INTA &pic 13 /* INT A on slot 9 is irq 13 */
-+	0x4800 0 0 IRQ_INTB &pic 14 /* INT B on slot 9 is irq 14 */
-+	0x4800 0 0 IRQ_INTC &pic 15 /* INT C on slot 9 is irq 15 */
-+	0x4800 0 0 IRQ_INTD &pic 16 /* INT D on slot 9 is irq 16 */
- 	/* IDSEL 10 */
--	0x5000 0 0 1 &pic 14 /* INT A on slot 10 is irq 14 */
--	0x5000 0 0 2 &pic 15 /* INT B on slot 10 is irq 15 */
--	0x5000 0 0 3 &pic 16 /* INT C on slot 10 is irq 16 */
--	0x5000 0 0 4 &pic 13 /* INT D on slot 10 is irq 13 */
-+	0x5000 0 0 IRQ_INTA &pic 14 /* INT A on slot 10 is irq 14 */
-+	0x5000 0 0 IRQ_INTB &pic 15 /* INT B on slot 10 is irq 15 */
-+	0x5000 0 0 IRQ_INTC &pic 16 /* INT C on slot 10 is irq 16 */
-+	0x5000 0 0 IRQ_INTD &pic 13 /* INT D on slot 10 is irq 13 */
- 	/* IDSEL 11 */
--	0x5800 0 0 1 &pic 15 /* INT A on slot 11 is irq 15 */
--	0x5800 0 0 2 &pic 16 /* INT B on slot 11 is irq 16 */
--	0x5800 0 0 3 &pic 13 /* INT C on slot 11 is irq 13 */
--	0x5800 0 0 4 &pic 14 /* INT D on slot 11 is irq 14 */
-+	0x5800 0 0 IRQ_INTA &pic 15 /* INT A on slot 11 is irq 15 */
-+	0x5800 0 0 IRQ_INTB &pic 16 /* INT B on slot 11 is irq 16 */
-+	0x5800 0 0 IRQ_INTC &pic 13 /* INT C on slot 11 is irq 13 */
-+	0x5800 0 0 IRQ_INTD &pic 14 /* INT D on slot 11 is irq 14 */
- 	/* IDSEL 12 */
--	0x6000 0 0 1 &pic 16 /* INT A on slot 12 is irq 16 */
--	0x6000 0 0 2 &pic 13 /* INT B on slot 12 is irq 13 */
--	0x6000 0 0 3 &pic 14 /* INT C on slot 12 is irq 14 */
--	0x6000 0 0 4 &pic 15 /* INT D on slot 12 is irq 15 */
-+	0x6000 0 0 IRQ_INTA &pic 16 /* INT A on slot 12 is irq 16 */
-+	0x6000 0 0 IRQ_INTB &pic 13 /* INT B on slot 12 is irq 13 */
-+	0x6000 0 0 IRQ_INTC &pic 14 /* INT C on slot 12 is irq 14 */
-+	0x6000 0 0 IRQ_INTD &pic 15 /* INT D on slot 12 is irq 15 */
- 	>;
- };
-diff --git a/Documentation/devicetree/bindings/pci/versatile.txt b/Documentation/devicetree/bindings/pci/versatile.txt
-index 0a702b13d2ac..a02c7b9683ac 100644
---- a/Documentation/devicetree/bindings/pci/versatile.txt
-+++ b/Documentation/devicetree/bindings/pci/versatile.txt
-@@ -36,24 +36,24 @@ pci-controller@10001000 {
- 		  0x02000000 0 0x50000000 0x50000000 0 0x10000000   /* non-prefetchable memory */
- 		  0x42000000 0 0x60000000 0x60000000 0 0x10000000>; /* prefetchable memory */
- 
--	interrupt-map-mask = <0x1800 0 0 7>;
--	interrupt-map = <0x1800 0 0 1 &sic 28
--			 0x1800 0 0 2 &sic 29
--			 0x1800 0 0 3 &sic 30
--			 0x1800 0 0 4 &sic 27
--
--			 0x1000 0 0 1 &sic 27
--			 0x1000 0 0 2 &sic 28
--			 0x1000 0 0 3 &sic 29
--			 0x1000 0 0 4 &sic 30
--
--			 0x0800 0 0 1 &sic 30
--			 0x0800 0 0 2 &sic 27
--			 0x0800 0 0 3 &sic 28
--			 0x0800 0 0 4 &sic 29
--
--			 0x0000 0 0 1 &sic 29
--			 0x0000 0 0 2 &sic 30
--			 0x0000 0 0 3 &sic 27
--			 0x0000 0 0 4 &sic 28>;
-+	interrupt-map-mask = <0x1800 0 0 IRQ_INT_ALL>;
-+	interrupt-map = <0x1800 0 0 IRQ_INTA &sic 28
-+			 0x1800 0 0 IRQ_INTB &sic 29
-+			 0x1800 0 0 IRQ_INTC &sic 30
-+			 0x1800 0 0 IRQ_INTD &sic 27
-+
-+			 0x1000 0 0 IRQ_INTA &sic 27
-+			 0x1000 0 0 IRQ_INTB &sic 28
-+			 0x1000 0 0 IRQ_INTC &sic 29
-+			 0x1000 0 0 IRQ_INTD &sic 30
-+
-+			 0x0800 0 0 IRQ_INTA &sic 30
-+			 0x0800 0 0 IRQ_INTB &sic 27
-+			 0x0800 0 0 IRQ_INTC &sic 28
-+			 0x0800 0 0 IRQ_INTD &sic 29
-+
-+			 0x0000 0 0 IRQ_INTA &sic 29
-+			 0x0000 0 0 IRQ_INTB &sic 30
-+			 0x0000 0 0 IRQ_INTC &sic 27
-+			 0x0000 0 0 IRQ_INTD &sic 28>;
- };
-diff --git a/Documentation/devicetree/bindings/pci/xgene-pci-msi.txt b/Documentation/devicetree/bindings/pci/xgene-pci-msi.txt
-index 85d9b95234f7..0e84e6621b4a 100644
---- a/Documentation/devicetree/bindings/pci/xgene-pci-msi.txt
-+++ b/Documentation/devicetree/bindings/pci/xgene-pci-msi.txt
-@@ -57,11 +57,11 @@ SoC DTSI:
- 			  0x02000000 0x00 0x80000000 0xe1 0x80000000 0x00 0x80000000>; /* mem */
- 		dma-ranges = <0x42000000 0x80 0x00000000 0x80 0x00000000 0x00 0x80000000
- 			      0x42000000 0x00 0x00000000 0x00 0x00000000 0x80 0x00000000>;
--		interrupt-map-mask = <0x0 0x0 0x0 0x7>;
--		interrupt-map = <0x0 0x0 0x0 0x1 &gic 0x0 0xc2 0x1
--				 0x0 0x0 0x0 0x2 &gic 0x0 0xc3 0x1
--				 0x0 0x0 0x0 0x3 &gic 0x0 0xc4 0x1
--				 0x0 0x0 0x0 0x4 &gic 0x0 0xc5 0x1>;
-+		interrupt-map-mask = <0x0 0x0 0x0 IRQ_INT_ALL>;
-+		interrupt-map = <0x0 0x0 0x0 IRQ_INTA &gic 0x0 0xc2 0x1
-+				 0x0 0x0 0x0 IRQ_INTB &gic 0x0 0xc3 0x1
-+				 0x0 0x0 0x0 IRQ_INTC &gic 0x0 0xc4 0x1
-+				 0x0 0x0 0x0 IRQ_INTD &gic 0x0 0xc5 0x1>;
- 		dma-coherent;
- 		clocks = <&pcie0clk 0>;
- 		msi-parent= <&msi>;
-diff --git a/Documentation/devicetree/bindings/pci/xgene-pci.txt b/Documentation/devicetree/bindings/pci/xgene-pci.txt
-index 92490330dc1c..0f0e3eb64101 100644
---- a/Documentation/devicetree/bindings/pci/xgene-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/xgene-pci.txt
-@@ -39,11 +39,11 @@ Example:
- 			  0x02000000 0x00 0x80000000 0xe1 0x80000000 0x00 0x80000000>; /* mem */
- 		dma-ranges = <0x42000000 0x80 0x00000000 0x80 0x00000000 0x00 0x80000000
- 			      0x42000000 0x00 0x00000000 0x00 0x00000000 0x80 0x00000000>;
--		interrupt-map-mask = <0x0 0x0 0x0 0x7>;
--		interrupt-map = <0x0 0x0 0x0 0x1 &gic 0x0 0xc2 0x1
--				 0x0 0x0 0x0 0x2 &gic 0x0 0xc3 0x1
--				 0x0 0x0 0x0 0x3 &gic 0x0 0xc4 0x1
--				 0x0 0x0 0x0 0x4 &gic 0x0 0xc5 0x1>;
-+		interrupt-map-mask = <0x0 0x0 0x0 IRQ_INT_ALL>;
-+		interrupt-map = <0x0 0x0 0x0 IRQ_INTA &gic 0x0 0xc2 0x1
-+				 0x0 0x0 0x0 IRQ_INTB &gic 0x0 0xc3 0x1
-+				 0x0 0x0 0x0 IRQ_INTC &gic 0x0 0xc4 0x1
-+				 0x0 0x0 0x0 IRQ_INTD &gic 0x0 0xc5 0x1>;
- 		dma-coherent;
- 		clocks = <&pcie0clk 0>;
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/xilinx-nwl-pcie.txt b/Documentation/devicetree/bindings/pci/xilinx-nwl-pcie.txt
-index 01bf7fdf4c19..5964fdf752bc 100644
---- a/Documentation/devicetree/bindings/pci/xilinx-nwl-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/xilinx-nwl-pcie.txt
-@@ -47,11 +47,11 @@ nwl_pcie: pcie@fd0e0000 {
- 	interrupt-parent = <&gic>;
- 	interrupts = <0 114 4>, <0 115 4>, <0 116 4>, <0 117 4>, <0 118 4>;
- 	interrupt-names = "msi0", "msi1", "intx", "dummy", "misc";
--	interrupt-map-mask = <0x0 0x0 0x0 0x7>;
--	interrupt-map = <0x0 0x0 0x0 0x1 &pcie_intc 0x1>,
--			<0x0 0x0 0x0 0x2 &pcie_intc 0x2>,
--			<0x0 0x0 0x0 0x3 &pcie_intc 0x3>,
--			<0x0 0x0 0x0 0x4 &pcie_intc 0x4>;
-+	interrupt-map-mask = <0x0 0x0 0x0 IRQ_INT_ALL>;
-+	interrupt-map = <0x0 0x0 0x0 IRQ_INTA &pcie_intc 0x1>,
-+			<0x0 0x0 0x0 IRQ_INTB &pcie_intc 0x2>,
-+			<0x0 0x0 0x0 IRQ_INTC &pcie_intc 0x3>,
-+			<0x0 0x0 0x0 IRQ_INTD &pcie_intc 0x4>;
- 
- 	msi-parent = <&nwl_pcie>;
- 	reg = <0x0 0xfd0e0000 0x0 0x1000>,
-diff --git a/Documentation/devicetree/bindings/pci/xilinx-pcie.txt b/Documentation/devicetree/bindings/pci/xilinx-pcie.txt
-index fd57a81180a4..82b7d07bda51 100644
---- a/Documentation/devicetree/bindings/pci/xilinx-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/xilinx-pcie.txt
-@@ -47,11 +47,11 @@ Zynq:
- 		reg = < 0x50000000 0x1000000 >;
- 		device_type = "pci";
- 		interrupts = < 0 52 4 >;
--		interrupt-map-mask = <0 0 0 7>;
--		interrupt-map = <0 0 0 1 &pcie_intc 1>,
--				<0 0 0 2 &pcie_intc 2>,
--				<0 0 0 3 &pcie_intc 3>,
--				<0 0 0 4 &pcie_intc 4>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &pcie_intc 1>,
-+				<0 0 0 IRQ_INTB &pcie_intc 2>,
-+				<0 0 0 IRQ_INTC &pcie_intc 3>,
-+				<0 0 0 IRQ_INTD &pcie_intc 4>;
- 		ranges = < 0x02000000 0 0x60000000 0x60000000 0 0x10000000 >;
- 
- 		pcie_intc: interrupt-controller {
-@@ -72,11 +72,11 @@ Microblaze:
- 		device_type = "pci";
- 		interrupt-parent = <&microblaze_0_intc>;
- 		interrupts = <1 2>;
--		interrupt-map-mask = <0 0 0 7>;
--		interrupt-map = <0 0 0 1 &pcie_intc 1>,
--				<0 0 0 2 &pcie_intc 2>,
--				<0 0 0 3 &pcie_intc 3>,
--				<0 0 0 4 &pcie_intc 4>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &pcie_intc 1>,
-+				<0 0 0 IRQ_INTB &pcie_intc 2>,
-+				<0 0 0 IRQ_INTC &pcie_intc 3>,
-+				<0 0 0 IRQ_INTD &pcie_intc 4>;
- 		ranges = <0x02000000 0x00000000 0x80000000 0x80000000 0x00000000 0x10000000>;
- 
- 		pcie_intc: interrupt-controller {
--- 
-2.21.0
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+TWlzc2F0Z2UgZGUgRW5yaWMgQmFsbGV0Ym8gU2VycmEgPGViYWxsZXRib0BnbWFpbC5jb20+IGRl
+bCBkaWEgZGMuLCAzMApk4oCZb2N0LiAyMDE5IGEgbGVzIDE3OjU5Ogo+Cj4gSGkgU2VhbiwKPgo+
+IFNpbmNlIDUuNC1yYzEgbXkgU2Ftc3VuZyBDaHJvbWVib29rIFBsdXMgKGtldmluKSBkb2Vzbid0
+Cj4gc3VzcGVuZC9yZXN1bWUgY29ycmVjdGx5LCBhdCBsZWFzdCBvbmNlIGV2ZXJ5IHRlbiBzdXNw
+ZW5kL3Jlc3VtZQo+IGN5Y2xlcyB0aGUgZGlzcGxheSBkb2Vzbid0IHR1cm4gb24sIGFuZCB3aGVu
+IHRoaXMgaGFwcGVucyB0aGUga2VybmVsCj4gbG9nIG1lc3NhZ2UgcmVwb3J0czoKPgo+IFsgICA2
+MC40MjAyMzBdIFBNOiBzdXNwZW5kIGV4aXQKPiBbICAgNjAuNDYzODY2XSByb2NrY2hpcC1kcCBm
+Zjk3MDAwMC5lZHA6IEFVWCBDSCBjbWQgcmVwbHkgdGltZW91dCEKPiBbICAgNjAuOTcxNjUzXSBy
+b2NrY2hpcC1kcCBmZjk3MDAwMC5lZHA6IEFVWCBDSCBlbmFibGUgdGltZW91dCEKPiBbICAgNjEu
+NDc4NjY4XSByb2NrY2hpcC1kcCBmZjk3MDAwMC5lZHA6IEFVWCBDSCBlbmFibGUgdGltZW91dCEK
+PiBbICAgNjEuOTg1NjYxXSByb2NrY2hpcC1kcCBmZjk3MDAwMC5lZHA6IEFVWCBDSCBlbmFibGUg
+dGltZW91dCEKPiBbICAgNjIuNDkyNjQ0XSByb2NrY2hpcC1kcCBmZjk3MDAwMC5lZHA6IEFVWCBD
+SCBlbmFibGUgdGltZW91dCEKPiBbICAgNjIuOTk5NjE3XSByb2NrY2hpcC1kcCBmZjk3MDAwMC5l
+ZHA6IEFVWCBDSCBlbmFibGUgdGltZW91dCEKPiBbICAgNjMuNTA2NTk1XSByb2NrY2hpcC1kcCBm
+Zjk3MDAwMC5lZHA6IEFVWCBDSCBlbmFibGUgdGltZW91dCEKPiBbICAgNjQuMDEzNjc4XSByb2Nr
+Y2hpcC1kcCBmZjk3MDAwMC5lZHA6IEFVWCBDSCBlbmFibGUgdGltZW91dCEKPiBbICAgNjQuNTIy
+ODU2XSByb2NrY2hpcC1kcCBmZjk3MDAwMC5lZHA6IEFVWCBDSCBlbmFibGUgdGltZW91dCEKPiBb
+ICAgNjAuNDYzODY2XSByb2NrY2hpcC1kcCBmZjk3MDAwMC5lZHA6IEFVWCBDSCBjbWQgcmVwbHkg
+dGltZW91dCEKPiBbICAgNjAuOTcxNjUzXSByb2NrY2hpcC1kcCBmZjk3MDAwMC5lZHA6IEFVWCBD
+SCBlbmFibGUgdGltZW91dCEKPiBbICAgNjEuNDc4NjY4XSByb2NrY2hpcC1kcCBmZjk3MDAwMC5l
+ZHA6IEFVWCBDSCBlbmFibGUgdGltZW91dCEKPiBbICAgNjEuOTg1NjYxXSByb2NrY2hpcC1kcCBm
+Zjk3MDAwMC5lZHA6IEFVWCBDSCBlbmFibGUgdGltZW91dCEKPiBbICAgNjIuNDkyNjQ0XSByb2Nr
+Y2hpcC1kcCBmZjk3MDAwMC5lZHA6IEFVWCBDSCBlbmFibGUgdGltZW91dCEKPiAuLi4KPgo+IFRv
+ZGF5IEkgYmlzZWN0ZWQgdGhlIHByb2JsZW0gYW5kIHBvaW50ZWQgbWUgdG8gdGhpcyBjb21taXQu
+IFJldmVydGluZwo+IHRoZSBjb21taXQgZml4ZXMgdGhlIGlzc3VlLCBidXQgZnJvbSBJIHF1aWNr
+IGxvb2sgSSBkb24ndCBzZWUgYW55Cj4gb2J2aW91cyBwcm9ibGVtLiBJJ2xsIHNwZW5kIG1vcmUg
+dGltZSB0b21vcnJvdyBsb29raW5nIGF0IHRoaXMgYnV0IGFueQo+IGlkZWEgd2lsbCBiZSB3ZWxj
+b21lLgo+CgpVcGRhdGUgZm9yIHRoZSByZWNvcmQuIEFmdGVyIGxvb2tpbmcgYSBiaXQgbW9yZSBJ
+IGRvbid0IHRoaW5rIHRoaXMKcGF0Y2ggaXMgcHJvYmxlbWF0aWMuIEkgdGhpbmsgdGhlIHByb2Js
+ZW0gd2FzIGFscmVhZHkgdGhlcmUgYnV0IGFmdGVyCnRoaXMgcGF0Y2ggaXMgZWFzaWVyIHRvIHJl
+cHJvZHVjZSBqdXN0IGJlY2F1c2UgdGhlIFBTUiBlbnRyeSBjb2RlIHdvcmsKaXMgZGVsYXllZCBh
+IGJpdCAoYmVmb3JlIHdhcyBjYWxsZWQgZXZlcnkgMTAwbXMpLiBJIHRoaW5rIHRoZSBwcm9ibGVt
+CmlzIG1vcmUgcmVsYXRlZCB3aXRoIHRoZSBjdXJyZW50IGVuYWJsZS9kaXNhYmxlIHBhdGggd2hl
+biBwYW5lbCBpcyBpbgpTUiBtb2RlIG9yIG5vdCBhZnRlciBhIHN1c3BlbmQvcmVzdW1lLgoKQW55
+d2F5LCBJIHdpbGwgY29udGludWUgdGhlIGRpc2N1c3Npb24gb24gYW5vdGhlciB0aHJlYWQgd2hl
+biBJIGZpbmQKdGhlIHJvb3QgY2F1c2UuCgpUaGFua3MsCiBFbnJpYwoKPiBUaGFua3MsCj4gIEVu
+cmljCj4KPiBNaXNzYXRnZSBkZSBTZWFuIFBhdWwgPHNlYW5AcG9vcmx5LnJ1bj4gZGVsIGRpYSBk
+ai4sIDE5IGRlIHNldC4gMjAxOSBhCj4gbGVzIDE2OjE0Ogo+ID4KPiA+IE9uIFdlZCwgU2VwIDE4
+LCAyMDE5IGF0IDA0OjA3OjI5UE0gLTA0MDAsIFNlYW4gUGF1bCB3cm90ZToKPiA+ID4gRnJvbTog
+U2VhbiBQYXVsIDxzZWFucGF1bEBjaHJvbWl1bS5vcmc+Cj4gPiA+Cj4gPiA+IEN1cnJlbnRseSB0
+aGUgc2VsZiByZWZyZXNoIGlkbGUgdGltZXIgaXMgYSBjb25zdCBzZXQgYnkgdGhlIGNydGMuIFRo
+aXMKPiA+ID4gaXMgZmluZSBpZiB0aGUgc2VsZiByZWZyZXNoIGVudHJ5L2V4aXQgdGltZXMgYXJl
+IHdlbGwta25vd24gZm9yIGFsbAo+ID4gPiBwYW5lbHMgdXNlZCBvbiB0aGF0IGNydGMuIEhvd2V2
+ZXIgcGFuZWxzIGFuZCB3b3JrbG9hZHMgY2FuIHZhcnkgcXVpdGUgYQo+ID4gPiBiaXQsIGFuZCBh
+IHRpbWVvdXQgd2hpY2ggd29ya3Mgd2VsbCBmb3Igb25lIGRvZXNuJ3Qgd29yayB3ZWxsIGZvcgo+
+ID4gPiBhbm90aGVyLgo+ID4gPgo+ID4gPiBJbiB0aGUgZXh0cmVtZSwgaWYgdGhlIHRpbWVvdXQg
+aXMgdG9vIHNob3J0IHdlIGNvdWxkIGdldCBpbiBhIHNpdHVhdGlvbgo+ID4gPiB3aGVyZSB0aGUg
+c2VsZiByZWZyZXNoIGV4aXRzIGFyZSB0YWtpbmcgc28gbG9uZyB3ZSBxdWV1ZSB1cCBhIHNlbGYg
+cmVmcmVzaAo+ID4gPiBlbnRyeSBiZWZvcmUgdGhlIGV4aXQgY29tbWl0IGlzIGV2ZW4gZmluaXNo
+ZWQuCj4gPiA+Cj4gPiA+IFRoaXMgcGF0Y2ggY2hhbmdlcyB0aGUgaWRsZSB0aW1lb3V0IHRvIGEg
+bW92aW5nIGF2ZXJhZ2Ugb2YgdGhlIGVudHJ5Cj4gPiA+IHRpbWVzICsgYSBtb3ZpbmcgYXZlcmFn
+ZSBvZiBleGl0IHRpbWVzICsgdGhlIGNydGMgY29uc3RhbnQuCj4gPiA+Cj4gPiA+IFRoaXMgcGF0
+Y2ggd2FzIHRlc3RlZCBvbiByb2NrY2hpcCwgd2l0aCBhIGtldmluIENyT1MgcGFuZWwgdGhlIGlk
+bGUKPiA+ID4gZGVsYXkgYXZlcmFnZXMgb3V0IHRvIGFib3V0IH4yMzVtcyAoMzUgZW50cnkgKyAx
+MDAgZXhpdCArIDEwMCBjb25zdCkuIE9uCj4gPiA+IHRoZSBzYW1lIGJvYXJkLCB0aGUgYm9iIHBh
+bmVsIGlkbGUgZGVsYXkgbGFuZHMgYXJvdW5kIH4zNDBtcyAoOTAgZW50cnkKPiA+ID4gKyAxNTAg
+ZXhpdCArIDEwMCBjb25zdCkuCj4gPiA+Cj4gPiA+IFdSVCB0aGUgZGVkaWNhdGVkIG11dGV4IGlu
+IHNlbGZfcmVmcmVzaF9kYXRhLCBpdCB3b3VsZCBiZSBuaWNlIGlmIHdlCj4gPiA+IGNvdWxkIHJl
+bHkgb24gZHJtX2NydGMubXV0ZXggdG8gcHJvdGVjdCB0aGUgYXZlcmFnZSB0aW1lcywgYnV0IHRo
+ZXJlIGFyZQo+ID4gPiBhIGZldyByZWFzb25zIHdoeSBhIHNlcGFyYXRlIGxvY2sgaXMgYSBiZXR0
+ZXIgY2hvaWNlOgo+ID4gPiAtIFdlIGNhbid0IHJlbHkgb24gZHJtX2NydGMubXV0ZXggYmVpbmcg
+aGVsZCBpZiB3ZSdyZSBkb2luZyBhIG5vbmJsb2NraW5nCj4gPiA+ICAgY29tbWl0Cj4gPiA+IC0g
+V2UgY2FuJ3QgZ3JhYiBkcm1fY3J0Yy5tdXRleCBzaW5jZSBkcm1fbW9kZXNldF9sb2NrKCkgZG9l
+c24ndCB0ZWxsIHVzCj4gPiA+ICAgd2hldGhlciB0aGUgbG9jayB3YXMgYWxyZWFkeSBoZWxkIGlu
+IHRoZSBhY3F1aXJlIGNvbnRleHQgKGl0IGVhdHMKPiA+ID4gICAtRUFMUkVBRFkpLCBzbyB3ZSBj
+YW4ndCB0ZWxsIGlmIHdlIHNob3VsZCBkcm9wIGl0IG9yIG5vdAo+ID4gPiAtIFdlIGRvbid0IG5l
+ZWQgc3VjaCBhIGhlYXZ5LWhhbmRlZCBsb2NrIGZvciB3aGF0IHdlJ3JlIHRyeWluZyB0byBkbywK
+PiA+ID4gICBjb21taXQgb3JkZXJpbmcgZG9lc24ndCBtYXR0ZXIsIHNvIGEgcG9pbnQtb2YtdXNl
+IGxvY2sgd2lsbCBiZSBsZXNzCj4gPiA+ICAgY29udGVudGlvdXMKPiA+ID4KPiA+ID4gUmV2aWV3
+ZWQtYnk6IERhbmllbCBWZXR0ZXIgPGRhbmllbC52ZXR0ZXJAZmZ3bGwuY2g+Cj4gPgo+ID4gUHVz
+aGVkIHRoZSBmaXJzdCAyIHRvIGRybS1taXNjLW5leHQtZml4ZXMgdG8gZml4IHRoZSBncnUtYm9i
+IHJlZ3Jlc3Npb24uIEknbGwKPiA+IGZpeCB1cCB0aGUgM3JkIHBhdGNoIHNlcGFyYXRlbHkuCj4g
+Pgo+ID4gVGhhbmsgeW91IGZvciB0aGUgcmV2aWV3cyEKPiA+Cj4gPiBTZWFuCj4gPgo+ID4gPiBT
+aWduZWQtb2ZmLWJ5OiBTZWFuIFBhdWwgPHNlYW5wYXVsQGNocm9taXVtLm9yZz4KPiA+ID4gTGlu
+ayB0byB2MTogaHR0cHM6Ly9wYXRjaHdvcmsuZnJlZWRlc2t0b3Aub3JnL3BhdGNoL21zZ2lkLzIw
+MTkwOTE3MjAwNDQzLjY0NDgxLTItc2VhbkBwb29ybHkucnVuCj4gPiA+Cj4gPiA+IENoYW5nZXMg
+aW4gdjI6Cj4gPiA+IC0gTWlncmF0ZSBsb2NraW5nIGV4cGxhbmF0aW9uIGZyb20gY29tbWVudCB0
+byBjb21taXQgbXNnIChEYW5pZWwpCj4gPiA+IC0gVHVyZiBjb25zdGFudCBlbnRyeSBkZWxheSBh
+bmQgbXVsdGlwbHkgdGhlIGF2ZyB0aW1lcyBieSAyIChEYW5pZWwpCj4gPiA+IC0tLQo+ID4gPiAg
+ZHJpdmVycy9ncHUvZHJtL2RybV9hdG9taWNfaGVscGVyLmMgICAgICAgICB8IDIwICsrKysrKwo+
+ID4gPiAgZHJpdmVycy9ncHUvZHJtL2RybV9zZWxmX3JlZnJlc2hfaGVscGVyLmMgICB8IDcyICsr
+KysrKysrKysrKysrKysrKystLQo+ID4gPiAgZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwL3JvY2tj
+aGlwX2RybV92b3AuYyB8ICA1ICstCj4gPiA+ICBpbmNsdWRlL2RybS9kcm1fc2VsZl9yZWZyZXNo
+X2hlbHBlci5oICAgICAgIHwgIDYgKy0KPiA+ID4gIDQgZmlsZXMgY2hhbmdlZCwgOTAgaW5zZXJ0
+aW9ucygrKSwgMTMgZGVsZXRpb25zKC0pCj4gPiA+Cj4gPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJz
+L2dwdS9kcm0vZHJtX2F0b21pY19oZWxwZXIuYyBiL2RyaXZlcnMvZ3B1L2RybS9kcm1fYXRvbWlj
+X2hlbHBlci5jCj4gPiA+IGluZGV4IDlkN2U0ZGE2YzI5Mi4uM2YxM2ZhOWE5ZTI0IDEwMDY0NAo+
+ID4gPiAtLS0gYS9kcml2ZXJzL2dwdS9kcm0vZHJtX2F0b21pY19oZWxwZXIuYwo+ID4gPiArKysg
+Yi9kcml2ZXJzL2dwdS9kcm0vZHJtX2F0b21pY19oZWxwZXIuYwo+ID4gPiBAQCAtMjYsNiArMjYs
+NyBAQAo+ID4gPiAgICovCj4gPiA+Cj4gPiA+ICAjaW5jbHVkZSA8bGludXgvZG1hLWZlbmNlLmg+
+Cj4gPiA+ICsjaW5jbHVkZSA8bGludXgva3RpbWUuaD4KPiA+ID4KPiA+ID4gICNpbmNsdWRlIDxk
+cm0vZHJtX2F0b21pYy5oPgo+ID4gPiAgI2luY2x1ZGUgPGRybS9kcm1fYXRvbWljX2hlbHBlci5o
+Pgo+ID4gPiBAQCAtMTU3MCw5ICsxNTcxLDIzIEBAIHN0YXRpYyB2b2lkIGNvbW1pdF90YWlsKHN0
+cnVjdCBkcm1fYXRvbWljX3N0YXRlICpvbGRfc3RhdGUpCj4gPiA+ICB7Cj4gPiA+ICAgICAgIHN0
+cnVjdCBkcm1fZGV2aWNlICpkZXYgPSBvbGRfc3RhdGUtPmRldjsKPiA+ID4gICAgICAgY29uc3Qg
+c3RydWN0IGRybV9tb2RlX2NvbmZpZ19oZWxwZXJfZnVuY3MgKmZ1bmNzOwo+ID4gPiArICAgICBr
+dGltZV90IHN0YXJ0Owo+ID4gPiArICAgICBzNjQgY29tbWl0X3RpbWVfbXM7Cj4gPiA+Cj4gPiA+
+ICAgICAgIGZ1bmNzID0gZGV2LT5tb2RlX2NvbmZpZy5oZWxwZXJfcHJpdmF0ZTsKPiA+ID4KPiA+
+ID4gKyAgICAgLyoKPiA+ID4gKyAgICAgICogV2UncmUgbWVhc3VyaW5nIHRoZSBfZW50aXJlXyBj
+b21taXQsIHNvIHRoZSB0aW1lIHdpbGwgdmFyeSBkZXBlbmRpbmcKPiA+ID4gKyAgICAgICogb24g
+aG93IG1hbnkgZmVuY2VzIGFuZCBvYmplY3RzIGFyZSBpbnZvbHZlZC4gRm9yIHRoZSBwdXJwb3Nl
+cyBvZiBzZWxmCj4gPiA+ICsgICAgICAqIHJlZnJlc2gsIHRoaXMgaXMgZGVzaXJhYmxlIHNpbmNl
+IGl0J2xsIGdpdmUgdXMgYW4gaWRlYSBvZiBob3cKPiA+ID4gKyAgICAgICogY29uZ2VzdGVkIHRo
+aW5ncyBhcmUuIFRoaXMgd2lsbCBpbmZvcm0gb3VyIGRlY2lzaW9uIG9uIGhvdyBvZnRlbiB3ZQo+
+ID4gPiArICAgICAgKiBzaG91bGQgZW50ZXIgc2VsZiByZWZyZXNoIGFmdGVyIGlkbGUuCj4gPiA+
+ICsgICAgICAqCj4gPiA+ICsgICAgICAqIFRoZXNlIHRpbWVzIHdpbGwgYmUgYXZlcmFnZWQgb3V0
+IGluIHRoZSBzZWxmIHJlZnJlc2ggaGVscGVycyB0byBhdm9pZAo+ID4gPiArICAgICAgKiBvdmVy
+cmVhY3Rpbmcgb3ZlciBvbmUgb3V0bGllciBmcmFtZQo+ID4gPiArICAgICAgKi8KPiA+ID4gKyAg
+ICAgc3RhcnQgPSBrdGltZV9nZXQoKTsKPiA+ID4gKwo+ID4gPiAgICAgICBkcm1fYXRvbWljX2hl
+bHBlcl93YWl0X2Zvcl9mZW5jZXMoZGV2LCBvbGRfc3RhdGUsIGZhbHNlKTsKPiA+ID4KPiA+ID4g
+ICAgICAgZHJtX2F0b21pY19oZWxwZXJfd2FpdF9mb3JfZGVwZW5kZW5jaWVzKG9sZF9zdGF0ZSk7
+Cj4gPiA+IEBAIC0xNTgyLDYgKzE1OTcsMTEgQEAgc3RhdGljIHZvaWQgY29tbWl0X3RhaWwoc3Ry
+dWN0IGRybV9hdG9taWNfc3RhdGUgKm9sZF9zdGF0ZSkKPiA+ID4gICAgICAgZWxzZQo+ID4gPiAg
+ICAgICAgICAgICAgIGRybV9hdG9taWNfaGVscGVyX2NvbW1pdF90YWlsKG9sZF9zdGF0ZSk7Cj4g
+PiA+Cj4gPiA+ICsgICAgIGNvbW1pdF90aW1lX21zID0ga3RpbWVfbXNfZGVsdGEoa3RpbWVfZ2V0
+KCksIHN0YXJ0KTsKPiA+ID4gKyAgICAgaWYgKGNvbW1pdF90aW1lX21zID4gMCkKPiA+ID4gKyAg
+ICAgICAgICAgICBkcm1fc2VsZl9yZWZyZXNoX2hlbHBlcl91cGRhdGVfYXZnX3RpbWVzKG9sZF9z
+dGF0ZSwKPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAodW5zaWduZWQgbG9uZyljb21taXRfdGltZV9tcyk7Cj4gPiA+ICsKPiA+ID4gICAgICAgZHJt
+X2F0b21pY19oZWxwZXJfY29tbWl0X2NsZWFudXBfZG9uZShvbGRfc3RhdGUpOwo+ID4gPgo+ID4g
+PiAgICAgICBkcm1fYXRvbWljX3N0YXRlX3B1dChvbGRfc3RhdGUpOwo+ID4gPiBkaWZmIC0tZ2l0
+IGEvZHJpdmVycy9ncHUvZHJtL2RybV9zZWxmX3JlZnJlc2hfaGVscGVyLmMgYi9kcml2ZXJzL2dw
+dS9kcm0vZHJtX3NlbGZfcmVmcmVzaF9oZWxwZXIuYwo+ID4gPiBpbmRleCA5MDk1Y2ViZjIxNDcu
+LjY4ZjQ3NjVhNTg5NiAxMDA2NDQKPiA+ID4gLS0tIGEvZHJpdmVycy9ncHUvZHJtL2RybV9zZWxm
+X3JlZnJlc2hfaGVscGVyLmMKPiA+ID4gKysrIGIvZHJpdmVycy9ncHUvZHJtL2RybV9zZWxmX3Jl
+ZnJlc2hfaGVscGVyLmMKPiA+ID4gQEAgLTUsNiArNSw3IEBACj4gPiA+ICAgKiBBdXRob3JzOgo+
+ID4gPiAgICogU2VhbiBQYXVsIDxzZWFucGF1bEBjaHJvbWl1bS5vcmc+Cj4gPiA+ICAgKi8KPiA+
+ID4gKyNpbmNsdWRlIDxsaW51eC9hdmVyYWdlLmg+Cj4gPiA+ICAjaW5jbHVkZSA8bGludXgvYml0
+b3BzLmg+Cj4gPiA+ICAjaW5jbHVkZSA8bGludXgvc2xhYi5oPgo+ID4gPiAgI2luY2x1ZGUgPGxp
+bnV4L3dvcmtxdWV1ZS5oPgo+ID4gPiBAQCAtNTAsMTAgKzUxLDE3IEBACj4gPiA+ICAgKiBhdG9t
+aWNfY2hlY2sgd2hlbiAmZHJtX2NydGNfc3RhdGUuc2VsZl9yZWZyZXNoX2FjdGl2ZSBpcyB0cnVl
+Lgo+ID4gPiAgICovCj4gPiA+Cj4gPiA+ICsjZGVmaW5lIFNFTEZfUkVGUkVTSF9BVkdfU0VFRF9N
+UyAyMDAKPiA+ID4gKwo+ID4gPiArREVDTEFSRV9FV01BKHBzcl90aW1lLCA0LCA0KQo+ID4gPiAr
+Cj4gPiA+ICBzdHJ1Y3QgZHJtX3NlbGZfcmVmcmVzaF9kYXRhIHsKPiA+ID4gICAgICAgc3RydWN0
+IGRybV9jcnRjICpjcnRjOwo+ID4gPiAgICAgICBzdHJ1Y3QgZGVsYXllZF93b3JrIGVudHJ5X3dv
+cms7Cj4gPiA+IC0gICAgIHVuc2lnbmVkIGludCBlbnRyeV9kZWxheV9tczsKPiA+ID4gKwo+ID4g
+PiArICAgICBzdHJ1Y3QgbXV0ZXggYXZnX211dGV4Owo+ID4gPiArICAgICBzdHJ1Y3QgZXdtYV9w
+c3JfdGltZSBlbnRyeV9hdmdfbXM7Cj4gPiA+ICsgICAgIHN0cnVjdCBld21hX3Bzcl90aW1lIGV4
+aXRfYXZnX21zOwo+ID4gPiAgfTsKPiA+ID4KPiA+ID4gIHN0YXRpYyB2b2lkIGRybV9zZWxmX3Jl
+ZnJlc2hfaGVscGVyX2VudHJ5X3dvcmsoc3RydWN0IHdvcmtfc3RydWN0ICp3b3JrKQo+ID4gPiBA
+QCAtMTIxLDYgKzEyOSw0NCBAQCBzdGF0aWMgdm9pZCBkcm1fc2VsZl9yZWZyZXNoX2hlbHBlcl9l
+bnRyeV93b3JrKHN0cnVjdCB3b3JrX3N0cnVjdCAqd29yaykKPiA+ID4gICAgICAgZHJtX21vZGVz
+ZXRfYWNxdWlyZV9maW5pKCZjdHgpOwo+ID4gPiAgfQo+ID4gPgo+ID4gPiArLyoqCj4gPiA+ICsg
+KiBkcm1fc2VsZl9yZWZyZXNoX2hlbHBlcl91cGRhdGVfYXZnX3RpbWVzIC0gVXBkYXRlcyBhIGNy
+dGMncyBTUiB0aW1lIGF2ZXJhZ2VzCj4gPiA+ICsgKiBAc3RhdGU6IHRoZSBzdGF0ZSB3aGljaCBo
+YXMganVzdCBiZWVuIGFwcGxpZWQgdG8gaGFyZHdhcmUKPiA+ID4gKyAqIEBjb21taXRfdGltZV9t
+czogdGhlIGFtb3VudCBvZiB0aW1lIGluIG1zIHRoYXQgdGhpcyBjb21taXQgdG9vayB0byBjb21w
+bGV0ZQo+ID4gPiArICoKPiA+ID4gKyAqIENhbGxlZCBhZnRlciAmZHJtX21vZGVfY29uZmlnX2Z1
+bmNzLmF0b21pY19jb21taXRfdGFpbCwgdGhpcyBmdW5jdGlvbiB3aWxsCj4gPiA+ICsgKiB1cGRh
+dGUgdGhlIGF2ZXJhZ2UgZW50cnkvZXhpdCBzZWxmIHJlZnJlc2ggdGltZXMgb24gc2VsZiByZWZy
+ZXNoIHRyYW5zaXRpb25zLgo+ID4gPiArICogVGhlc2UgYXZlcmFnZXMgd2lsbCBiZSB1c2VkIHdo
+ZW4gY2FsY3VsYXRpbmcgaG93IGxvbmcgdG8gZGVsYXkgYmVmb3JlCj4gPiA+ICsgKiBlbnRlcmlu
+ZyBzZWxmIHJlZnJlc2ggbW9kZSBhZnRlciBhY3Rpdml0eS4KPiA+ID4gKyAqLwo+ID4gPiArdm9p
+ZCBkcm1fc2VsZl9yZWZyZXNoX2hlbHBlcl91cGRhdGVfYXZnX3RpbWVzKHN0cnVjdCBkcm1fYXRv
+bWljX3N0YXRlICpzdGF0ZSwKPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICB1bnNpZ25lZCBpbnQgY29tbWl0X3RpbWVfbXMpCj4gPiA+ICt7Cj4gPiA+ICsg
+ICAgIHN0cnVjdCBkcm1fY3J0YyAqY3J0YzsKPiA+ID4gKyAgICAgc3RydWN0IGRybV9jcnRjX3N0
+YXRlICpvbGRfY3J0Y19zdGF0ZSwgKm5ld19jcnRjX3N0YXRlOwo+ID4gPiArICAgICBpbnQgaTsK
+PiA+ID4gKwo+ID4gPiArICAgICBmb3JfZWFjaF9vbGRuZXdfY3J0Y19pbl9zdGF0ZShzdGF0ZSwg
+Y3J0Yywgb2xkX2NydGNfc3RhdGUsCj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgIG5ld19jcnRjX3N0YXRlLCBpKSB7Cj4gPiA+ICsgICAgICAgICAgICAgc3RydWN0IGRy
+bV9zZWxmX3JlZnJlc2hfZGF0YSAqc3JfZGF0YSA9IGNydGMtPnNlbGZfcmVmcmVzaF9kYXRhOwo+
+ID4gPiArICAgICAgICAgICAgIHN0cnVjdCBld21hX3Bzcl90aW1lICp0aW1lOwo+ID4gPiArCj4g
+PiA+ICsgICAgICAgICAgICAgaWYgKG9sZF9jcnRjX3N0YXRlLT5zZWxmX3JlZnJlc2hfYWN0aXZl
+ID09Cj4gPiA+ICsgICAgICAgICAgICAgICAgIG5ld19jcnRjX3N0YXRlLT5zZWxmX3JlZnJlc2hf
+YWN0aXZlKQo+ID4gPiArICAgICAgICAgICAgICAgICAgICAgY29udGludWU7Cj4gPiA+ICsKPiA+
+ID4gKyAgICAgICAgICAgICBpZiAobmV3X2NydGNfc3RhdGUtPnNlbGZfcmVmcmVzaF9hY3RpdmUp
+Cj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICB0aW1lID0gJnNyX2RhdGEtPmVudHJ5X2F2Z19t
+czsKPiA+ID4gKyAgICAgICAgICAgICBlbHNlCj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICB0
+aW1lID0gJnNyX2RhdGEtPmV4aXRfYXZnX21zOwo+ID4gPiArCj4gPiA+ICsgICAgICAgICAgICAg
+bXV0ZXhfbG9jaygmc3JfZGF0YS0+YXZnX211dGV4KTsKPiA+ID4gKyAgICAgICAgICAgICBld21h
+X3Bzcl90aW1lX2FkZCh0aW1lLCBjb21taXRfdGltZV9tcyk7Cj4gPiA+ICsgICAgICAgICAgICAg
+bXV0ZXhfdW5sb2NrKCZzcl9kYXRhLT5hdmdfbXV0ZXgpOwo+ID4gPiArICAgICB9Cj4gPiA+ICt9
+Cj4gPiA+ICtFWFBPUlRfU1lNQk9MKGRybV9zZWxmX3JlZnJlc2hfaGVscGVyX3VwZGF0ZV9hdmdf
+dGltZXMpOwo+ID4gPiArCj4gPiA+ICAvKioKPiA+ID4gICAqIGRybV9zZWxmX3JlZnJlc2hfaGVs
+cGVyX2FsdGVyX3N0YXRlIC0gQWx0ZXJzIHRoZSBhdG9taWMgc3RhdGUgZm9yIFNSIGV4aXQKPiA+
+ID4gICAqIEBzdGF0ZTogdGhlIHN0YXRlIGN1cnJlbnRseSBiZWluZyBjaGVja2VkCj4gPiA+IEBA
+IC0xNTIsNiArMTk4LDcgQEAgdm9pZCBkcm1fc2VsZl9yZWZyZXNoX2hlbHBlcl9hbHRlcl9zdGF0
+ZShzdHJ1Y3QgZHJtX2F0b21pY19zdGF0ZSAqc3RhdGUpCj4gPiA+Cj4gPiA+ICAgICAgIGZvcl9l
+YWNoX25ld19jcnRjX2luX3N0YXRlKHN0YXRlLCBjcnRjLCBjcnRjX3N0YXRlLCBpKSB7Cj4gPiA+
+ICAgICAgICAgICAgICAgc3RydWN0IGRybV9zZWxmX3JlZnJlc2hfZGF0YSAqc3JfZGF0YTsKPiA+
+ID4gKyAgICAgICAgICAgICB1bnNpZ25lZCBpbnQgZGVsYXk7Cj4gPiA+Cj4gPiA+ICAgICAgICAg
+ICAgICAgLyogRG9uJ3QgdHJpZ2dlciB0aGUgZW50cnkgdGltZXIgd2hlbiB3ZSdyZSBhbHJlYWR5
+IGluIFNSICovCj4gPiA+ICAgICAgICAgICAgICAgaWYgKGNydGNfc3RhdGUtPnNlbGZfcmVmcmVz
+aF9hY3RpdmUpCj4gPiA+IEBAIC0xNjEsOCArMjA4LDEzIEBAIHZvaWQgZHJtX3NlbGZfcmVmcmVz
+aF9oZWxwZXJfYWx0ZXJfc3RhdGUoc3RydWN0IGRybV9hdG9taWNfc3RhdGUgKnN0YXRlKQo+ID4g
+PiAgICAgICAgICAgICAgIGlmICghc3JfZGF0YSkKPiA+ID4gICAgICAgICAgICAgICAgICAgICAg
+IGNvbnRpbnVlOwo+ID4gPgo+ID4gPiArICAgICAgICAgICAgIG11dGV4X2xvY2soJnNyX2RhdGEt
+PmF2Z19tdXRleCk7Cj4gPiA+ICsgICAgICAgICAgICAgZGVsYXkgPSAoZXdtYV9wc3JfdGltZV9y
+ZWFkKCZzcl9kYXRhLT5lbnRyeV9hdmdfbXMpICsKPiA+ID4gKyAgICAgICAgICAgICAgICAgICAg
+ICBld21hX3Bzcl90aW1lX3JlYWQoJnNyX2RhdGEtPmV4aXRfYXZnX21zKSkgKiAyOwo+ID4gPiAr
+ICAgICAgICAgICAgIG11dGV4X3VubG9jaygmc3JfZGF0YS0+YXZnX211dGV4KTsKPiA+ID4gKwo+
+ID4gPiAgICAgICAgICAgICAgIG1vZF9kZWxheWVkX3dvcmsoc3lzdGVtX3dxLCAmc3JfZGF0YS0+
+ZW50cnlfd29yaywKPiA+ID4gLSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1zZWNzX3Rv
+X2ppZmZpZXMoc3JfZGF0YS0+ZW50cnlfZGVsYXlfbXMpKTsKPiA+ID4gKyAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgIG1zZWNzX3RvX2ppZmZpZXMoZGVsYXkpKTsKPiA+ID4gICAgICAgfQo+
+ID4gPiAgfQo+ID4gPiAgRVhQT1JUX1NZTUJPTChkcm1fc2VsZl9yZWZyZXNoX2hlbHBlcl9hbHRl
+cl9zdGF0ZSk7Cj4gPiA+IEBAIC0xNzAsMTIgKzIyMiwxMCBAQCBFWFBPUlRfU1lNQk9MKGRybV9z
+ZWxmX3JlZnJlc2hfaGVscGVyX2FsdGVyX3N0YXRlKTsKPiA+ID4gIC8qKgo+ID4gPiAgICogZHJt
+X3NlbGZfcmVmcmVzaF9oZWxwZXJfaW5pdCAtIEluaXRpYWxpemVzIHNlbGYgcmVmcmVzaCBoZWxw
+ZXJzIGZvciBhIGNydGMKPiA+ID4gICAqIEBjcnRjOiB0aGUgY3J0YyB3aGljaCBzdXBwb3J0cyBz
+ZWxmIHJlZnJlc2ggc3VwcG9ydGVkIGRpc3BsYXlzCj4gPiA+IC0gKiBAZW50cnlfZGVsYXlfbXM6
+IGFtb3VudCBvZiBpbmFjdGl2aXR5IHRvIHdhaXQgYmVmb3JlIGVudGVyaW5nIHNlbGYgcmVmcmVz
+aAo+ID4gPiAgICoKPiA+ID4gICAqIFJldHVybnMgemVybyBpZiBzdWNjZXNzZnVsIG9yIC1lcnJu
+byBvbiBmYWlsdXJlCj4gPiA+ICAgKi8KPiA+ID4gLWludCBkcm1fc2VsZl9yZWZyZXNoX2hlbHBl
+cl9pbml0KHN0cnVjdCBkcm1fY3J0YyAqY3J0YywKPiA+ID4gLSAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgIHVuc2lnbmVkIGludCBlbnRyeV9kZWxheV9tcykKPiA+ID4gK2ludCBkcm1fc2Vs
+Zl9yZWZyZXNoX2hlbHBlcl9pbml0KHN0cnVjdCBkcm1fY3J0YyAqY3J0YykKPiA+ID4gIHsKPiA+
+ID4gICAgICAgc3RydWN0IGRybV9zZWxmX3JlZnJlc2hfZGF0YSAqc3JfZGF0YSA9IGNydGMtPnNl
+bGZfcmVmcmVzaF9kYXRhOwo+ID4gPgo+ID4gPiBAQCAtMTg5LDggKzIzOSwxOCBAQCBpbnQgZHJt
+X3NlbGZfcmVmcmVzaF9oZWxwZXJfaW5pdChzdHJ1Y3QgZHJtX2NydGMgKmNydGMsCj4gPiA+Cj4g
+PiA+ICAgICAgIElOSVRfREVMQVlFRF9XT1JLKCZzcl9kYXRhLT5lbnRyeV93b3JrLAo+ID4gPiAg
+ICAgICAgICAgICAgICAgICAgICAgICBkcm1fc2VsZl9yZWZyZXNoX2hlbHBlcl9lbnRyeV93b3Jr
+KTsKPiA+ID4gLSAgICAgc3JfZGF0YS0+ZW50cnlfZGVsYXlfbXMgPSBlbnRyeV9kZWxheV9tczsK
+PiA+ID4gICAgICAgc3JfZGF0YS0+Y3J0YyA9IGNydGM7Cj4gPiA+ICsgICAgIG11dGV4X2luaXQo
+JnNyX2RhdGEtPmF2Z19tdXRleCk7Cj4gPiA+ICsgICAgIGV3bWFfcHNyX3RpbWVfaW5pdCgmc3Jf
+ZGF0YS0+ZW50cnlfYXZnX21zKTsKPiA+ID4gKyAgICAgZXdtYV9wc3JfdGltZV9pbml0KCZzcl9k
+YXRhLT5leGl0X2F2Z19tcyk7Cj4gPiA+ICsKPiA+ID4gKyAgICAgLyoKPiA+ID4gKyAgICAgICog
+U2VlZCB0aGUgYXZlcmFnZXMgc28gdGhleSdyZSBub24temVybyAoYW5kIHN1ZmZpY2llbnRseSBs
+YXJnZQo+ID4gPiArICAgICAgKiBmb3IgZXZlbiBwb29ybHkgcGVyZm9ybWluZyBwYW5lbHMpLiBB
+cyB0aW1lIGdvZXMgb24sIHRoaXMgd2lsbCBiZQo+ID4gPiArICAgICAgKiBhdmVyYWdlZCBvdXQg
+YW5kIHRoZSB2YWx1ZXMgd2lsbCB0cmVuZCB0byB0aGVpciB0cnVlIHZhbHVlLgo+ID4gPiArICAg
+ICAgKi8KPiA+ID4gKyAgICAgZXdtYV9wc3JfdGltZV9hZGQoJnNyX2RhdGEtPmVudHJ5X2F2Z19t
+cywgU0VMRl9SRUZSRVNIX0FWR19TRUVEX01TKTsKPiA+ID4gKyAgICAgZXdtYV9wc3JfdGltZV9h
+ZGQoJnNyX2RhdGEtPmV4aXRfYXZnX21zLCBTRUxGX1JFRlJFU0hfQVZHX1NFRURfTVMpOwo+ID4g
+Pgo+ID4gPiAgICAgICBjcnRjLT5zZWxmX3JlZnJlc2hfZGF0YSA9IHNyX2RhdGE7Cj4gPiA+ICAg
+ICAgIHJldHVybiAwOwo+ID4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlw
+L3JvY2tjaGlwX2RybV92b3AuYyBiL2RyaXZlcnMvZ3B1L2RybS9yb2NrY2hpcC9yb2NrY2hpcF9k
+cm1fdm9wLmMKPiA+ID4gaW5kZXggMmY4MjFjNTgwMDdjLi42MTM0MDRmODY2NjggMTAwNjQ0Cj4g
+PiA+IC0tLSBhL2RyaXZlcnMvZ3B1L2RybS9yb2NrY2hpcC9yb2NrY2hpcF9kcm1fdm9wLmMKPiA+
+ID4gKysrIGIvZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwL3JvY2tjaGlwX2RybV92b3AuYwo+ID4g
+PiBAQCAtMzksOCArMzksNiBAQAo+ID4gPiAgI2luY2x1ZGUgInJvY2tjaGlwX2RybV92b3AuaCIK
+PiA+ID4gICNpbmNsdWRlICJyb2NrY2hpcF9yZ2IuaCIKPiA+ID4KPiA+ID4gLSNkZWZpbmUgVk9Q
+X1NFTEZfUkVGUkVTSF9FTlRSWV9ERUxBWV9NUyAxMDAKPiA+ID4gLQo+ID4gPiAgI2RlZmluZSBW
+T1BfV0lOX1NFVCh2b3AsIHdpbiwgbmFtZSwgdikgXAo+ID4gPiAgICAgICAgICAgICAgIHZvcF9y
+ZWdfc2V0KHZvcCwgJndpbi0+cGh5LT5uYW1lLCB3aW4tPmJhc2UsIH4wLCB2LCAjbmFtZSkKPiA+
+ID4gICNkZWZpbmUgVk9QX1NDTF9TRVQodm9wLCB3aW4sIG5hbWUsIHYpIFwKPiA+ID4gQEAgLTE1
+NjMsOCArMTU2MSw3IEBAIHN0YXRpYyBpbnQgdm9wX2NyZWF0ZV9jcnRjKHN0cnVjdCB2b3AgKnZv
+cCkKPiA+ID4gICAgICAgaW5pdF9jb21wbGV0aW9uKCZ2b3AtPmxpbmVfZmxhZ19jb21wbGV0aW9u
+KTsKPiA+ID4gICAgICAgY3J0Yy0+cG9ydCA9IHBvcnQ7Cj4gPiA+Cj4gPiA+IC0gICAgIHJldCA9
+IGRybV9zZWxmX3JlZnJlc2hfaGVscGVyX2luaXQoY3J0YywKPiA+ID4gLSAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICBWT1BfU0VMRl9SRUZSRVNIX0VOVFJZX0RFTEFZX01T
+KTsKPiA+ID4gKyAgICAgcmV0ID0gZHJtX3NlbGZfcmVmcmVzaF9oZWxwZXJfaW5pdChjcnRjKTsK
+PiA+ID4gICAgICAgaWYgKHJldCkKPiA+ID4gICAgICAgICAgICAgICBEUk1fREVWX0RFQlVHX0tN
+Uyh2b3AtPmRldiwKPiA+ID4gICAgICAgICAgICAgICAgICAgICAgICJGYWlsZWQgdG8gaW5pdCAl
+cyB3aXRoIFNSIGhlbHBlcnMgJWQsIGlnbm9yaW5nXG4iLAo+ID4gPiBkaWZmIC0tZ2l0IGEvaW5j
+bHVkZS9kcm0vZHJtX3NlbGZfcmVmcmVzaF9oZWxwZXIuaCBiL2luY2x1ZGUvZHJtL2RybV9zZWxm
+X3JlZnJlc2hfaGVscGVyLmgKPiA+ID4gaW5kZXggMzk3YTU4M2NjY2E3Li41Yjc5ZDI1M2ZiNDYg
+MTAwNjQ0Cj4gPiA+IC0tLSBhL2luY2x1ZGUvZHJtL2RybV9zZWxmX3JlZnJlc2hfaGVscGVyLmgK
+PiA+ID4gKysrIGIvaW5jbHVkZS9kcm0vZHJtX3NlbGZfcmVmcmVzaF9oZWxwZXIuaAo+ID4gPiBA
+QCAtMTIsOSArMTIsOSBAQCBzdHJ1Y3QgZHJtX2F0b21pY19zdGF0ZTsKPiA+ID4gIHN0cnVjdCBk
+cm1fY3J0YzsKPiA+ID4KPiA+ID4gIHZvaWQgZHJtX3NlbGZfcmVmcmVzaF9oZWxwZXJfYWx0ZXJf
+c3RhdGUoc3RydWN0IGRybV9hdG9taWNfc3RhdGUgKnN0YXRlKTsKPiA+ID4gK3ZvaWQgZHJtX3Nl
+bGZfcmVmcmVzaF9oZWxwZXJfdXBkYXRlX2F2Z190aW1lcyhzdHJ1Y3QgZHJtX2F0b21pY19zdGF0
+ZSAqc3RhdGUsCj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgdW5zaWduZWQgaW50IGNvbW1pdF90aW1lX21zKTsKPiA+ID4KPiA+ID4gLWludCBkcm1fc2Vs
+Zl9yZWZyZXNoX2hlbHBlcl9pbml0KHN0cnVjdCBkcm1fY3J0YyAqY3J0YywKPiA+ID4gLSAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgIHVuc2lnbmVkIGludCBlbnRyeV9kZWxheV9tcyk7Cj4g
+PiA+IC0KPiA+ID4gK2ludCBkcm1fc2VsZl9yZWZyZXNoX2hlbHBlcl9pbml0KHN0cnVjdCBkcm1f
+Y3J0YyAqY3J0Yyk7Cj4gPiA+ICB2b2lkIGRybV9zZWxmX3JlZnJlc2hfaGVscGVyX2NsZWFudXAo
+c3RydWN0IGRybV9jcnRjICpjcnRjKTsKPiA+ID4gICNlbmRpZgo+ID4gPiAtLQo+ID4gPiBTZWFu
+IFBhdWwsIFNvZnR3YXJlIEVuZ2luZWVyLCBHb29nbGUgLyBDaHJvbWl1bSBPUwo+ID4gPgo+ID4K
+PiA+IC0tCj4gPiBTZWFuIFBhdWwsIFNvZnR3YXJlIEVuZ2luZWVyLCBHb29nbGUgLyBDaHJvbWl1
+bSBPUwo+ID4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+PiA+IGRyaS1kZXZlbCBtYWlsaW5nIGxpc3QKPiA+IGRyaS1kZXZlbEBsaXN0cy5mcmVlZGVza3Rv
+cC5vcmcKPiA+IGh0dHBzOi8vbGlzdHMuZnJlZWRlc2t0b3Aub3JnL21haWxtYW4vbGlzdGluZm8v
+ZHJpLWRldmVsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LXJvY2tjaGlwCg==
