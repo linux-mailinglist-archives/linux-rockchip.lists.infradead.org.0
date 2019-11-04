@@ -2,7 +2,7 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D0F4EEDFF
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F002EEE00
 	for <lists+linux-rockchip@lfdr.de>; Mon,  4 Nov 2019 23:12:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -11,33 +11,33 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=5GO6A+/2xW7YWYusAJehfOqSQgKHmkZ8qL7bYZwhiB0=; b=iyOp41IXc+cNDLwSSk1xqGdMYE
-	ahH3vrfZYDG1rIY4tk37rHFYF+ojd7ugwgiB4ARbR5ocWlto2O8CMt5w//yopev7Wjcf8rJZ1HyR3
-	/J42IFvgEItNqHRqiVQKPIG8aJGRetIlIsjqOIRN42AF5UeRR3xKGagAQ3Bgx4u3LWTXsLXf4Ic2V
-	wn+xRTxGx3QRrFkE4heLq64zJQT0sZRwox46ljFBHSgoXre9Vd7XrYMzhCr+eAl8I5M0wUqJFjAKN
-	LHlK5eQxsZx1SfMFts0xkNK1VItKSDVCYauiMTMSAsltAimI/CssNC9P39uIvOGz0n4lPrjQ7I/m8
-	CcKTnDCw==;
+	bh=P/ua8U/yoTHUeHWAuGxbE6Uv3DgyUBRYIyijPAUOmgE=; b=LbWYRusKmA8RAn0H4w8cs/KrW8
+	aGCDvuNaoRB5U57Wpi6pW7G5DGUzb26n4g+/6TuGUUwGTN1Z2OK1CLDgqYbve8TnJ3gT4YbJusnuQ
+	2ZxXKdF3Gt6kyLj//xlccwaYSRCDvs3YGG1gx8EItGw/9QeqQjnBN/wfoWvZxHlwJXsULUtcA6xwJ
+	kdwEBaQoFWSn1+RXSKjlnxxiHH7onAzKooMbKteHLl4gCuUvwjv8mvM7h2tMVhz/nNK6wWoieC9RI
+	dVn8xWbQ+/lLbL6x4OcSUTX1UN5V11o0kRU2ZSGBFaDtck+zplYVdYbAUjs/d4p6iCeVcjbsxnz2a
+	CHrITtFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRkaZ-0006uA-Nt; Mon, 04 Nov 2019 22:12:43 +0000
+	id 1iRkaZ-0006tb-3V; Mon, 04 Nov 2019 22:12:43 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRkaV-0006rO-RV
+ id 1iRkaV-0006rS-E4
  for linux-rockchip@lists.infradead.org; Mon, 04 Nov 2019 22:12:41 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id D30DB28BA68
+ (Authenticated sender: andrzej.p) with ESMTPSA id A420228BA72
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCHv2 2/4] drm/malidp: use afbc helpers
-Date: Mon,  4 Nov 2019 23:12:26 +0100
-Message-Id: <20191104221228.3588-3-andrzej.p@collabora.com>
+Subject: [PATCHv2 3/4] drm/komeda: use afbc helpers
+Date: Mon,  4 Nov 2019 23:12:27 +0100
+Message-Id: <20191104221228.3588-4-andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191104221228.3588-1-andrzej.p@collabora.com>
 References: <2485717.1SzL54aMiy@e123338-lin>
  <20191104221228.3588-1-andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_141240_146783_EF2A625B 
-X-CRM114-Status: GOOD (  11.15  )
+X-CRM114-CacheID: sfid-20191104_141239_729928_141C2538 
+X-CRM114-Status: GOOD (  11.21  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -78,121 +78,100 @@ There are afbc helpers available.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- drivers/gpu/drm/arm/malidp_drv.c | 66 ++++++--------------------------
- 1 file changed, 12 insertions(+), 54 deletions(-)
+ .../arm/display/komeda/komeda_format_caps.h   |  1 -
+ .../arm/display/komeda/komeda_framebuffer.c   | 44 +++++++------------
+ 2 files changed, 17 insertions(+), 28 deletions(-)
 
-diff --git a/drivers/gpu/drm/arm/malidp_drv.c b/drivers/gpu/drm/arm/malidp_drv.c
-index 37d92a06318e..ab93588cc8eb 100644
---- a/drivers/gpu/drm/arm/malidp_drv.c
-+++ b/drivers/gpu/drm/arm/malidp_drv.c
-@@ -15,6 +15,7 @@
- #include <linux/pm_runtime.h>
- #include <linux/debugfs.h>
+diff --git a/drivers/gpu/drm/arm/display/komeda/komeda_format_caps.h b/drivers/gpu/drm/arm/display/komeda/komeda_format_caps.h
+index 32273cf18f7c..607eea80e60c 100644
+--- a/drivers/gpu/drm/arm/display/komeda/komeda_format_caps.h
++++ b/drivers/gpu/drm/arm/display/komeda/komeda_format_caps.h
+@@ -33,7 +33,6 @@
  
-+#include <drm/drm_afbc.h>
- #include <drm/drm_atomic.h>
- #include <drm/drm_atomic_helper.h>
- #include <drm/drm_crtc.h>
-@@ -35,8 +36,6 @@
- #include "malidp_hw.h"
- 
- #define MALIDP_CONF_VALID_TIMEOUT	250
--#define AFBC_HEADER_SIZE		16
+ #define AFBC_TH_LAYOUT_ALIGNMENT	8
+ #define AFBC_HEADER_SIZE		16
 -#define AFBC_SUPERBLK_ALIGNMENT		128
+ #define AFBC_SUPERBLK_PIXELS		256
+ #define AFBC_BODY_START_ALIGNMENT	1024
+ #define AFBC_TH_BODY_START_ALIGNMENT	4096
+diff --git a/drivers/gpu/drm/arm/display/komeda/komeda_framebuffer.c b/drivers/gpu/drm/arm/display/komeda/komeda_framebuffer.c
+index 1b01a625f40e..e9c87551a5b8 100644
+--- a/drivers/gpu/drm/arm/display/komeda/komeda_framebuffer.c
++++ b/drivers/gpu/drm/arm/display/komeda/komeda_framebuffer.c
+@@ -4,6 +4,7 @@
+  * Author: James.Qian.Wang <james.qian.wang@arm.com>
+  *
+  */
++#include <drm/drm_afbc.h>
+ #include <drm/drm_device.h>
+ #include <drm/drm_fb_cma_helper.h>
+ #include <drm/drm_gem.h>
+@@ -43,8 +44,7 @@ komeda_fb_afbc_size_check(struct komeda_fb *kfb, struct drm_file *file,
+ 	struct drm_framebuffer *fb = &kfb->base;
+ 	const struct drm_format_info *info = fb->format;
+ 	struct drm_gem_object *obj;
+-	u32 alignment_w = 0, alignment_h = 0, alignment_header, n_blocks, bpp;
+-	u64 min_size;
++	u32 alignment_w = 0, alignment_h = 0, alignment_header, bpp;
  
- static void malidp_write_gamma_table(struct malidp_hw_device *hwdev,
- 				     u32 data[MALIDP_COEFFTAB_NUM_COEFFS])
-@@ -277,24 +276,8 @@ malidp_verify_afbc_framebuffer_caps(struct drm_device *dev,
- 					mode_cmd->modifier[0]) == false)
- 		return false;
- 
--	if (mode_cmd->offsets[0] != 0) {
--		DRM_DEBUG_KMS("AFBC buffers' plane offset should be 0\n");
--		return false;
--	}
--
--	switch (mode_cmd->modifier[0] & AFBC_SIZE_MASK) {
--	case AFBC_SIZE_16X16:
--		if ((mode_cmd->width % 16) || (mode_cmd->height % 16)) {
--			DRM_DEBUG_KMS("AFBC buffers must be aligned to 16 pixels\n");
--			return false;
--		}
--		break;
--	default:
--		DRM_DEBUG_KMS("Unsupported AFBC block size\n");
--		return false;
--	}
--
--	return true;
-+	return drm_afbc_check_offset(dev, mode_cmd) &&
-+	       drm_afbc_check_size_align(dev, mode_cmd);
- }
- 
- static bool
-@@ -302,54 +285,29 @@ malidp_verify_afbc_framebuffer_size(struct drm_device *dev,
- 				    struct drm_file *file,
- 				    const struct drm_mode_fb_cmd2 *mode_cmd)
- {
--	int n_superblocks = 0;
- 	const struct drm_format_info *info;
- 	struct drm_gem_object *objs = NULL;
--	u32 afbc_superblock_size = 0, afbc_superblock_height = 0;
--	u32 afbc_superblock_width = 0, afbc_size = 0;
- 	int bpp = 0;
--
--	switch (mode_cmd->modifier[0] & AFBC_SIZE_MASK) {
--	case AFBC_SIZE_16X16:
--		afbc_superblock_height = 16;
--		afbc_superblock_width = 16;
--		break;
--	default:
--		DRM_DEBUG_KMS("AFBC superblock size is not supported\n");
--		return false;
--	}
-+	u32 w, h;
- 
- 	info = drm_get_format_info(dev, mode_cmd);
--
--	n_superblocks = (mode_cmd->width / afbc_superblock_width) *
--		(mode_cmd->height / afbc_superblock_height);
--
- 	bpp = malidp_format_get_bpp(info->format);
- 
--	afbc_superblock_size = (bpp * afbc_superblock_width * afbc_superblock_height)
--				/ BITS_PER_BYTE;
--
--	afbc_size = ALIGN(n_superblocks * AFBC_HEADER_SIZE, AFBC_SUPERBLK_ALIGNMENT);
--	afbc_size += n_superblocks * ALIGN(afbc_superblock_size, AFBC_SUPERBLK_ALIGNMENT);
--
--	if ((mode_cmd->width * bpp) != (mode_cmd->pitches[0] * BITS_PER_BYTE)) {
--		DRM_DEBUG_KMS("Invalid value of (pitch * BITS_PER_BYTE) (=%u) "
--			      "should be same as width (=%u) * bpp (=%u)\n",
--			      (mode_cmd->pitches[0] * BITS_PER_BYTE),
--			      mode_cmd->width, bpp);
--		return false;
--	}
--
- 	objs = drm_gem_object_lookup(file, mode_cmd->handles[0]);
- 	if (!objs) {
- 		DRM_DEBUG_KMS("Failed to lookup GEM object\n");
- 		return false;
+ 	obj = drm_gem_object_lookup(file, mode_cmd->handles[0]);
+ 	if (!obj) {
+@@ -52,19 +52,15 @@ komeda_fb_afbc_size_check(struct komeda_fb *kfb, struct drm_file *file,
+ 		return -ENOENT;
  	}
  
--	if (objs->size < afbc_size) {
--		DRM_DEBUG_KMS("buffer size (%zu) too small for AFBC buffer size = %u\n",
--			      objs->size, afbc_size);
-+	if (!drm_afbc_get_superblk_wh(mode_cmd->modifier[0], &w, &h))
-+		return false;
+-	switch (fb->modifier & AFBC_FORMAT_MOD_BLOCK_SIZE_MASK) {
+-	case AFBC_FORMAT_MOD_BLOCK_SIZE_32x8:
+-		alignment_w = 32;
+-		alignment_h = 8;
+-		break;
+-	case AFBC_FORMAT_MOD_BLOCK_SIZE_16x16:
+-		alignment_w = 16;
+-		alignment_h = 16;
+-		break;
+-	default:
+-		WARN(1, "Invalid AFBC_FORMAT_MOD_BLOCK_SIZE: %lld.\n",
+-		     fb->modifier & AFBC_FORMAT_MOD_BLOCK_SIZE_MASK);
+-		break;
++	if (!drm_afbc_get_superblk_wh(fb->modifier, &alignment_w, &alignment_h))
++		return -EINVAL;
++
++	if ((alignment_w != 16 || alignment_h != 16) &&
++	    (alignment_w != 32 || alignment_h != 8)) {
++		DRM_DEBUG_KMS("Unsupported afbc tile w/h [%d/%d]\n",
++			      alignment_w, alignment_h);
++
++		return -EINVAL;
+ 	}
+ 
+ 	/* tiled header afbc */
+@@ -84,20 +80,14 @@ komeda_fb_afbc_size_check(struct komeda_fb *kfb, struct drm_file *file,
+ 		goto check_failed;
+ 	}
+ 
+-	n_blocks = (kfb->aligned_w * kfb->aligned_h) / AFBC_SUPERBLK_PIXELS;
+-	kfb->offset_payload = ALIGN(n_blocks * AFBC_HEADER_SIZE,
+-				    alignment_header);
+-
+ 	bpp = komeda_get_afbc_format_bpp(info, fb->modifier);
+-	kfb->afbc_size = kfb->offset_payload + n_blocks *
+-			 ALIGN(bpp * AFBC_SUPERBLK_PIXELS / 8,
+-			       AFBC_SUPERBLK_ALIGNMENT);
+-	min_size = kfb->afbc_size + fb->offsets[0];
+-	if (min_size > obj->size) {
+-		DRM_DEBUG_KMS("afbc size check failed, obj_size: 0x%zx. min_size 0x%llx.\n",
+-			      obj->size, min_size);
 +
 +	if (!drm_afbc_check_fb_size(mode_cmd->pitches[0], bpp,
-+				    mode_cmd->width, mode_cmd->height, w, h,
-+				    objs->size, mode_cmd->offsets[0],
-+				    AFBC_SUPERBLK_ALIGNMENT)) {
- 		drm_gem_object_put_unlocked(objs);
-+
- 		return false;
- 	}
++				    mode_cmd->width, mode_cmd->height,
++				    alignment_w, alignment_h,
++				    obj->size, mode_cmd->offsets[0],
++				    AFBC_SUPERBLK_ALIGNMENT))
+ 		goto check_failed;
+-	}
  
+ 	fb->obj[0] = obj;
+ 	return 0;
 -- 
 2.17.1
 
