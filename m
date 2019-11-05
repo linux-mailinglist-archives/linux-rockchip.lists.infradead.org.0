@@ -2,78 +2,68 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EC21F00CE
-	for <lists+linux-rockchip@lfdr.de>; Tue,  5 Nov 2019 16:08:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FC03F01FC
+	for <lists+linux-rockchip@lfdr.de>; Tue,  5 Nov 2019 16:56:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8JbBlGTuaVbHxB+H9i1+FWlgBd2IM/b96QbkOrFuv6Q=; b=uJjzKeg7buUXg8
-	WOdJNM0ivclWrKjDhyoVWr6lOTsUH6c1RdkZ/zJqVrdshUO/+899vz6+PKEx1wYVKbEhrDIe0xO75
-	eLNpFdOKk6VL+9Lm/KU0dAoika44GKwFtSID75vb0Cw+hOl/ilhMoOasGRE5VPRLbLpbTh5SkwACu
-	NGF6kxS3geC/HgkmY5HI4irWLfTcxmgjzxtaTvT8kHPyXsApWFbqgKmd8WQoy9k5k/e17PBrfUQWh
-	gGve4jViV6hD2t3o0vGu5RdeFS4PHWfZZbwJnJSFGhe/m3BdvfYsBc6fdaTImTGvaRkfYDyV3UlFe
-	DSZuA07UYkUMHH2YGBGA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=sG2mpLcPzBiud8NQAt4/UPLA3BMNoarV2GD4lVsWYOY=; b=MB6
+	J6csWhtUYSRXTEx9+AdvIaAJHyLjGrn7XlNdHrjHmPNaFLswnYXMsdjTUA9NmWWlxTl1MgiIl5vFF
+	X5gqm/UF+ssPh147Liiki+9oWYqH+wXbYZ3+9L8o3Quu3vUX5t5LNrf2dPi4C29ZRZWxOjm9ocQlS
+	PUv+rlCw+nCouGNEemMxe/IQajGDB+BfWVlt/HFosC4lfUKO6r/l827DQ0RwAd9guN7fjsAe32nPw
+	4/uHPKL7UaiNYeKdq9H8YPfBO+IT/RSM5yqSB585Oqjg8Zx2LX4p4gsYyytoBFfM6AXz+KIp6H8Ct
+	cBQTCmeK24c6olEfkLfMvGo0Dx/uSgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS0Rq-0002nD-Kx; Tue, 05 Nov 2019 15:08:46 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS0Rn-0002lW-7J
- for linux-rockchip@lists.infradead.org; Tue, 05 Nov 2019 15:08:44 +0000
-Received: by mail-lj1-x243.google.com with SMTP id y23so11335877ljh.10
- for <linux-rockchip@lists.infradead.org>; Tue, 05 Nov 2019 07:08:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=QVqID83DP10XiL25090Kooovcd+jO11tv2frcA+Aozo=;
- b=IzWJ8eph2aMxyPkk5igmYy1MthwwzUaNNXGjE+UmXl4Ai8USe++fFWTr0NBUQsepvF
- LuDljy6BcLt5EAcx3M+jaBI+d0v0YH+d7sqVrZQOAvnT0ZX09AJNiygpNyxOxdMIwK9L
- IPh63EBPqTpUDyn+VeQbr4TTvs0f/TCY8wMi0tbqEi/G6nLyGm+B8sQR6j94wZhVSv2Y
- 1aT4qx8YL9Q0syw1LLSaEPv0h7lgfHRLVaZU1iW5/C7mFV2QWT02LHGkn1KP3/WRpFsI
- bO5d4/K1Y74cPxlotdLI6qruTOKAGs6Gf02Ck6aMvxR9mh4VkmpD1KsVZsIu2g0DA4Qj
- OdlQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=QVqID83DP10XiL25090Kooovcd+jO11tv2frcA+Aozo=;
- b=P4632OsZIxdKf9nUBqYbVLOWsrD+nRnmRzibwNkPTFZlg7RZ2YRepxkzlAEeyWZUB2
- kd8pggcZBYBEYiaSIMyOV6r8rOzmWVweNByBurmHgnrFo/VxbnxJs4W8vhMZnEFOCaVF
- 78VesjrFWV3P+G22X7Qa30fpM09/VYe5dP+wEcSZ/lbWQ0o8yu8gZdANCsa4CSn0PqTx
- A5XKO6fnb+3Qid+ccv3LryoZbBw3vBtZv4ExWiN5z3ZcD5R7AYZJkhfiLNMzQhALCkaf
- tdVvlrjOHa63Wo5rOZK14peb1GPtTeVXqlK4ODFCaT1WbfdYxgpbeIbCLDlRzImTNg+F
- nMfA==
-X-Gm-Message-State: APjAAAUpLtpz2atn0j1DuXEEuPrlsbVnVEWSOh1iERuMRuEcKjpxJiU+
- UgIiihcPia0taPQoadswcrikWRYbOMl7m4sEe+NIMQ==
-X-Google-Smtp-Source: APXvYqynNx7yVsamkmDQicrZYF0b3QMUV7NDAKJOqJVCjIt3Qt+Lg0xp+qeqgaKJN+sWlsoFYyEaDeJbse6mZMDwMIo=
-X-Received: by 2002:a2e:9a12:: with SMTP id o18mr16057690lji.191.1572966521035; 
- Tue, 05 Nov 2019 07:08:41 -0800 (PST)
-MIME-Version: 1.0
-References: <20191104163834.8932-1-andrew.murray@arm.com>
- <20191104163834.8932-8-andrew.murray@arm.com>
-In-Reply-To: <20191104163834.8932-8-andrew.murray@arm.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 5 Nov 2019 16:08:29 +0100
-Message-ID: <CACRpkdb=5i3+H3OtGXSYQEjSq5ROrysfmnG-koGck+chEEgLnQ@mail.gmail.com>
-Subject: Re: [PATCH v1 7/7] dt-bindings: PCI: Use IRQ flags for legacy PCI IRQ
- interrupts
-To: Andrew Murray <andrew.murray@arm.com>
+	id 1iS1CQ-0000lJ-Ch; Tue, 05 Nov 2019 15:56:54 +0000
+Received: from mail-m974.mail.163.com ([123.126.97.4])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iS1CG-0000aE-OO; Tue, 05 Nov 2019 15:56:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+ s=s110527; h=From:Subject:Date:Message-Id; bh=MEhTFHAycXqkTfqbe4
+ XX0vxC02FkcqiVe33GxCZFfQc=; b=FulfrviTwzzFd30cKiL95Hjs4+SCOuUM0Z
+ TFiky1RZS6jTn3NDhFr59vkCEeSlvZ1NjFBXi2Fj1mh8l6Johlv6VZbtYooWrdbK
+ aB6bjN7N47ug+7kZUx1NJVabxfVAmD3AgFj3KrZe13n9QOwo2QtiJhevXJvPXIgB
+ rFi9LWBv4=
+Received: from localhost.localdomain (unknown [202.112.113.212])
+ by smtp4 (Coremail) with SMTP id HNxpCgBXXrKbm8FdDyEQBQ--.364S3;
+ Tue, 05 Nov 2019 23:56:15 +0800 (CST)
+From: Pan Bian <bianpan2016@163.com>
+To: Jacob Chen <jacob-chen@iotwrt.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH] media: rockchip/rga: fix potential use after free
+Date: Tue,  5 Nov 2019 23:55:54 +0800
+Message-Id: <1572969354-8967-1-git-send-email-bianpan2016@163.com>
+X-Mailer: git-send-email 2.7.4
+X-CM-TRANSID: HNxpCgBXXrKbm8FdDyEQBQ--.364S3
+X-Coremail-Antispam: 1Uf129KBjvdXoWruw4UZr17Cr47Kr18XFW3GFg_yoWDJrbE93
+ y8XF4xuF4vgrn5K3WUCw1fu3yjya9F9ryfWFyftFWxZFW8Zw1DtFs8ZrZxXF1aqa1I9F9r
+ KF98XF17CrsxCjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+ 9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IUjAu4UUUUUU==
+X-Originating-IP: [202.112.113.212]
+X-CM-SenderInfo: held01tdqsiiqw6rljoofrz/1tbiQABkclSIdHYMpwABsi
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_070843_279557_BC5EE01D 
-X-CRM114-Status: UNSURE (   9.13  )
+X-CRM114-CacheID: sfid-20191105_075645_284154_01A62C13 
+X-CRM114-Status: UNSURE (   8.63  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ no trust [123.126.97.4 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (bianpan2016[at]163.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (bianpan2016[at]163.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -93,60 +83,43 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>,
- David Daney <david.daney@cavium.com>, linux-pci <linux-pci@vger.kernel.org>,
- Shawn Lin <shawn.lin@rock-chips.com>, Binghui Wang <wangbinghui@hisilicon.com>,
- Michal Simek <michal.simek@xilinx.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Jonathan Chocron <jonnyc@amazon.com>, Toan Le <toan@os.amperecomputing.com>,
- Will Deacon <will@kernel.org>, Jesper Nilsson <jesper.nilsson@axis.com>,
- Ryder Lee <ryder.lee@mediatek.com>,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- Fabio Estevam <festevam@gmail.com>, Tom Joseph <tjoseph@cadence.com>,
- linux-arm-kernel@axis.com, Kishon Vijay Abraham I <kishon@ti.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Andy Gross <agross@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>, Xiaowei Song <songxiaowei@hisilicon.com>,
- Hou Zhiqiang <Zhiqiang.Hou@nxp.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Richard Zhu <hongxing.zhu@nxp.com>,
- MSM <linux-arm-msm@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Bjorn Helgaas <bhelgaas@google.com>, Linux-OMAP <linux-omap@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, rfi@lists.rocketboards.org,
- Zhou Wang <wangzhou1@hisilicon.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Ley Foon Tan <lftan@altera.com>, Shawn Guo <shawnguo@kernel.org>,
- Lucas Stach <l.stach@pengutronix.de>
+Cc: linux-rockchip@lists.infradead.org, Pan Bian <bianpan2016@163.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Andrew,
+The variable vga->vfd is an alias for vfd. Therefore, releasing vfd and
+then unregister vga->vfd will lead to a use after free bug. In fact, the
+free operation and the unregister operation are reversed.
 
-thanks for your patch!
+Signed-off-by: Pan Bian <bianpan2016@163.com>
+---
+ drivers/media/platform/rockchip/rga/rga.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-On Mon, Nov 4, 2019 at 5:39 PM Andrew Murray <andrew.murray@arm.com> wrote:
+diff --git a/drivers/media/platform/rockchip/rga/rga.c b/drivers/media/platform/rockchip/rga/rga.c
+index e9ff12b6b5bb..613b868fce33 100644
+--- a/drivers/media/platform/rockchip/rga/rga.c
++++ b/drivers/media/platform/rockchip/rga/rga.c
+@@ -901,9 +901,9 @@ static int rga_probe(struct platform_device *pdev)
+ 	return 0;
+ 
+ rel_vdev:
+-	video_device_release(vfd);
+-unreg_video_dev:
+ 	video_unregister_device(rga->vfd);
++unreg_video_dev:
++	video_device_release(vfd);
+ unreg_v4l2_dev:
+ 	v4l2_device_unregister(&rga->v4l2_dev);
+ err_put_clk:
+-- 
+2.7.4
 
-> Replace magic numbers used to describe legacy PCI IRQ interrupts
-> with #define.
->
-> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-
-When I add examples I usually make sure that above the examples
-are the appropriate #include files, this is becoming more important
-as we convert to yaml, then you need the right includes because the
-examples will get compiled.
-
-With that taken into account:
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-
-Yours,
-Linus Walleij
 
 _______________________________________________
 Linux-rockchip mailing list
