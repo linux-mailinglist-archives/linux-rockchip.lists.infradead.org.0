@@ -2,75 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FC03F01FC
-	for <lists+linux-rockchip@lfdr.de>; Tue,  5 Nov 2019 16:56:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6DDEF0332
+	for <lists+linux-rockchip@lfdr.de>; Tue,  5 Nov 2019 17:43:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=sG2mpLcPzBiud8NQAt4/UPLA3BMNoarV2GD4lVsWYOY=; b=MB6
-	J6csWhtUYSRXTEx9+AdvIaAJHyLjGrn7XlNdHrjHmPNaFLswnYXMsdjTUA9NmWWlxTl1MgiIl5vFF
-	X5gqm/UF+ssPh147Liiki+9oWYqH+wXbYZ3+9L8o3Quu3vUX5t5LNrf2dPi4C29ZRZWxOjm9ocQlS
-	PUv+rlCw+nCouGNEemMxe/IQajGDB+BfWVlt/HFosC4lfUKO6r/l827DQ0RwAd9guN7fjsAe32nPw
-	4/uHPKL7UaiNYeKdq9H8YPfBO+IT/RSM5yqSB585Oqjg8Zx2LX4p4gsYyytoBFfM6AXz+KIp6H8Ct
-	cBQTCmeK24c6olEfkLfMvGo0Dx/uSgg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BwJxXeBUSC67bnjVatWF/OS5G4V6qTWp0NYdmufg8MM=; b=a5iGZ32jrb9d90
+	rdojH321y1eCbmfybFuNOinUfbpig21CL5qcZPXVH9NOYAGDKUgSAVFh1FLPaa+H4LJaUQSnwLsP2
+	AY+qWas2rIw3jerhMumylKY19m5GUtMeYqIJKmOXx5GN5XAcovusBR41AE47K1yeXXG+ywTcB94eU
+	rbm8OqQn+5hsVqlFW6aHcWy5BMu1OA268lZ/VmFm3DRipMyAYYklXr7VS4VZgu+of1fUjqLZkp1tk
+	fKu64TFMjGvJqYlaNcNitJ9F5BCpI1Hal2EcaOXnKlNFTMub6+YJlf5qJCihB/xHc0GXAmQ3+Ezhw
+	Q/IBb6HnOgEGIOP4u2pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS1CQ-0000lJ-Ch; Tue, 05 Nov 2019 15:56:54 +0000
-Received: from mail-m974.mail.163.com ([123.126.97.4])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS1CG-0000aE-OO; Tue, 05 Nov 2019 15:56:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
- s=s110527; h=From:Subject:Date:Message-Id; bh=MEhTFHAycXqkTfqbe4
- XX0vxC02FkcqiVe33GxCZFfQc=; b=FulfrviTwzzFd30cKiL95Hjs4+SCOuUM0Z
- TFiky1RZS6jTn3NDhFr59vkCEeSlvZ1NjFBXi2Fj1mh8l6Johlv6VZbtYooWrdbK
- aB6bjN7N47ug+7kZUx1NJVabxfVAmD3AgFj3KrZe13n9QOwo2QtiJhevXJvPXIgB
- rFi9LWBv4=
-Received: from localhost.localdomain (unknown [202.112.113.212])
- by smtp4 (Coremail) with SMTP id HNxpCgBXXrKbm8FdDyEQBQ--.364S3;
- Tue, 05 Nov 2019 23:56:15 +0800 (CST)
-From: Pan Bian <bianpan2016@163.com>
-To: Jacob Chen <jacob-chen@iotwrt.com>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH] media: rockchip/rga: fix potential use after free
-Date: Tue,  5 Nov 2019 23:55:54 +0800
-Message-Id: <1572969354-8967-1-git-send-email-bianpan2016@163.com>
-X-Mailer: git-send-email 2.7.4
-X-CM-TRANSID: HNxpCgBXXrKbm8FdDyEQBQ--.364S3
-X-Coremail-Antispam: 1Uf129KBjvdXoWruw4UZr17Cr47Kr18XFW3GFg_yoWDJrbE93
- y8XF4xuF4vgrn5K3WUCw1fu3yjya9F9ryfWFyftFWxZFW8Zw1DtFs8ZrZxXF1aqa1I9F9r
- KF98XF17CrsxCjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
- 9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IUjAu4UUUUUU==
-X-Originating-IP: [202.112.113.212]
-X-CM-SenderInfo: held01tdqsiiqw6rljoofrz/1tbiQABkclSIdHYMpwABsi
+	id 1iS1v7-0007Sz-Bs; Tue, 05 Nov 2019 16:43:05 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iS1v3-0007SP-Ja
+ for linux-rockchip@lists.infradead.org; Tue, 05 Nov 2019 16:43:03 +0000
+Received: from [94.134.91.242] (helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iS1uw-0000AX-It; Tue, 05 Nov 2019 17:42:54 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: philippe.cornu@st.com
+Subject: dw-dsi dphy timing calculations
+Date: Tue, 05 Nov 2019 17:42:53 +0100
+Message-ID: <19189086.sEj5AHWfUf@phil>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_075645_284154_01A62C13 
-X-CRM114-Status: UNSURE (   8.63  )
+X-CRM114-CacheID: sfid-20191105_084301_792933_349AA21F 
+X-CRM114-Status: UNSURE (   7.91  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [123.126.97.4 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (bianpan2016[at]163.com)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (bianpan2016[at]163.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,42 +56,46 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Pan Bian <bianpan2016@163.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-MIME-Version: 1.0
+Cc: linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ christoph.muellner@theobroma-systems.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The variable vga->vfd is an alias for vfd. Therefore, releasing vfd and
-then unregister vga->vfd will lead to a use after free bug. In fact, the
-free operation and the unregister operation are reversed.
+Hi Philippe,
 
-Signed-off-by: Pan Bian <bianpan2016@163.com>
----
- drivers/media/platform/rockchip/rga/rga.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+when you did the dd the dw-dsi generalization,
+dw_mipi_dsi_dphy_timing_config() did end up with static values and a
+comment stating "data & clock lane timers should be computed according
+to panel blankings and to the automatic clock lane control mode...".
 
-diff --git a/drivers/media/platform/rockchip/rga/rga.c b/drivers/media/platform/rockchip/rga/rga.c
-index e9ff12b6b5bb..613b868fce33 100644
---- a/drivers/media/platform/rockchip/rga/rga.c
-+++ b/drivers/media/platform/rockchip/rga/rga.c
-@@ -901,9 +901,9 @@ static int rga_probe(struct platform_device *pdev)
- 	return 0;
- 
- rel_vdev:
--	video_device_release(vfd);
--unreg_video_dev:
- 	video_unregister_device(rga->vfd);
-+unreg_video_dev:
-+	video_device_release(vfd);
- unreg_v4l2_dev:
- 	v4l2_device_unregister(&rga->v4l2_dev);
- err_put_clk:
--- 
-2.7.4
+Especially with the PHY_HS2LP_TIME(0x60) I ran into problems.
+On the Google-Gru-Scarlet (ChromeOS tablet with a highres display)
+everything works nicely (panel clock 229MHz) but on the device I'm
+on right now (panel clock 64MHz) I end up with broken output (pixel
+garbage).
+
+When I set it to the value found in the Rockchip vendor kernel
+PHY_HS2LP_TIME(0x14) that display works as expected.
+
+The Rockchip SoC manual is pretty sparse on what this value should
+actually be, so I'm hoping that you may have some insights ;-) .
+
+So far I have found 
+	https://github.com/surdupetru/huawei-p6/blob/master/kernel/huawei/hwp6_u06/drivers/video/k3/mipi_dsi.c#L97
+and
+	https://github.com/torvalds/linux/blob/master/drivers/gpu/drm/hisilicon/kirin/dw_drm_dsi.c#L276
+
+but simply copying strange calculatons seems wrong, similarly
+to just swapping the hardcoded value from 0x40 to my needed 0x14 ;-) .
+
+So if you have some insights I would be most grateful :-D .
+
+Thanks
+Heiko
+
+
 
 
 _______________________________________________
