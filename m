@@ -2,60 +2,90 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F8D5F16A0
-	for <lists+linux-rockchip@lfdr.de>; Wed,  6 Nov 2019 14:06:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49D44F16FE
+	for <lists+linux-rockchip@lfdr.de>; Wed,  6 Nov 2019 14:28:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CZkSHK72XxEAkVofAeQugxO8EPspmW4CsWDmWtRNijc=; b=DERW8YH57/xTaV
-	/2zSe9H728m8ed6Nn16TmQcogshj8JU15CS2JdxDD7v2FlJE+/I5KBQCboU193p2rEXNT6VpofMJd
-	HbHhtesNtKqAaQKT1gCr3qHec4C/NJ+M3qTVk0PcBnqjWtDktz2wO0cTV8zbTDqA4HeeznsV51AtD
-	emDRkmdGWy0H72Atp3XbafnYzCnZXtEfGnoTq0DqdDTEVwvJG3JVyQbhDmhOsRVgpNEdEwYp5Ezz8
-	0maS52OPQ/V9T3O2ZteEq1VMX2UbQSqjwpbD4smNIr6B8SeDfsaNnqMamjrooIxgYnzE12ojJQfYt
-	FEzi5NAmtFzPtGjGca7w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5JmDC3bQCNEJ+oCQTbLM6leg70NEwYMXmrgHdlMsgmU=; b=lhA
+	visWPtSo25Stu5KUpmlWtMcuKV3D9Vy2HddiFSMhKOqelJzAIhpB/b4qSwHlPpIJSVg413p7XH5L1
+	xJ7Af6N0cETAp3tLwvRK4eYd/mzn2CaMpyvEyEjbALOV/cy41aZQGUWN95RC9NirPaWvwu0DCeJhI
+	wJsBlW5MUCqYoRp9kKZKox4BziIoziVPwYsQLsvptp9Zx+N9mTRiowxS7l9BSyudzKtST0s/JNqkV
+	kYsJ7icIegDZV0DXZXxNZ7RkvZfzgNZFQFTVL5QlvzXgOkNxwkyQACojX5bFCVWnuGqeX847TesGm
+	KbLLZQ9dVD0cWHfuOpBtlSehRf4W1rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSL0x-0004Dk-FR; Wed, 06 Nov 2019 13:06:23 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1iSLMZ-0003Fk-2j; Wed, 06 Nov 2019 13:28:43 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSL0n-00045W-Vg; Wed, 06 Nov 2019 13:06:15 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 3F66D52C;
- Wed,  6 Nov 2019 14:06:06 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1573045566;
- bh=rwBoN4G+nIkI+5mwwd3pzYuox8k2CBX+v3Hd1yQBQGw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=aNPiEWK3sndyfV2uKQzJt9vYTAKeVjELD9xjz1RZxQvRYlrfizq8BhE5JMF7786tS
- yiP/KIA0+YSBYXx1Hg+0yQgUK9i/MD9DcTyQGguIJInQ00TU9Df+thxLlpRs9wTZom
- 9fPWxbx8TEzZc2kktPxlbJbZqNHSFhNTwyXaCCq8=
-Date: Wed, 6 Nov 2019 15:05:57 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
-Subject: Re: [PATCH 2/3] drm/rockchip: add ability to handle external dphys
- in mipi-dsi
-Message-ID: <20191106130557.GF4878@pendragon.ideasonboard.com>
-References: <20191106112650.8365-1-heiko.stuebner@theobroma-systems.com>
- <20191106112650.8365-2-heiko.stuebner@theobroma-systems.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191106112650.8365-2-heiko.stuebner@theobroma-systems.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1iSLMS-0003Cb-IB
+ for linux-rockchip@lists.infradead.org; Wed, 06 Nov 2019 13:28:40 +0000
+Received: by mail-pl1-x641.google.com with SMTP id y24so11418252plr.12
+ for <linux-rockchip@lists.infradead.org>; Wed, 06 Nov 2019 05:28:35 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=1g5bmlvDJmzq0j8rw+Hyiq1h7w7jIJ4WDcwt2PpU20g=;
+ b=Mo4TAU7fRjbhRaWWEK1LJyvn+DSxubqpdHRD94G9troWEwzLz8YYrBRIS2KdSpX3dT
+ FeMeoDlj7TwE3SHuoLTBKK+WrPKt4gh0PazZ1g5ozZLTZDY1XPVJRgI7Y3gApyFnHK/1
+ 3cFeLTF1BcFuj3Ip+HCsBdu5/XN6JIT4IO2nzkU8wdkue1G52cekATxLLxxMGq70HiPj
+ KD2SMv14UvZ/GkEikI7a62KpToNHUOtEaKhrhhq5wGD66CXnWhHliySQH/pY23OEUsqG
+ 8z4GOFi9XOisHIgTNfRfMeAu0z6FY4WyKVzYa8WTLixMCLiMNJsQHO1OZjQ+X00OG6p4
+ 2vrQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=1g5bmlvDJmzq0j8rw+Hyiq1h7w7jIJ4WDcwt2PpU20g=;
+ b=cHKtp+KMdOYHG0oc2AVUCjB3G1VmlFJCwOFKRQ1sdnRRmkcmnFCRZrP5/5JMX0idUz
+ nvryktR4muo5sWxTzbmUMLVDtwA/eoHgrhFr772vf+Y19tieixT7XgxH4ZGKjoAW7Hg9
+ EgCKu9xBzGarP5HklpBzN9hNi1rkqtQqvJPCHA5wpDBj0GvrYsgAvDJJ4CXRl+l7uvRE
+ O6Ov0h6iuvYWCKSPRHmjzWgtUUYN7yMgkohEmbOEp4BBuNpMSk8VQ/kaW5eJLphFlDsp
+ MKOX61hgqIf89Hy1ePjt0+g4FJadXzgUgffgS8ykK566LypC60+seFxLzzJfJZtzqENc
+ ciOg==
+X-Gm-Message-State: APjAAAVhSXvgmCTIWiMTNWos8SCyYTELYbU8pu/YBVJPTMI2U9ki3epu
+ hGYtPxiJfLdiLfOcVrYdLIjZRQ==
+X-Google-Smtp-Source: APXvYqyAyMf4Opoy7bESQRlotkkR0kSWU/mPg+gqk7EyqL30BQrBho6L7bwwesWM6v5WR7oQnljBAw==
+X-Received: by 2002:a17:902:ac90:: with SMTP id
+ h16mr2681286plr.147.1573046915172; 
+ Wed, 06 Nov 2019 05:28:35 -0800 (PST)
+Received: from localhost ([49.248.202.230])
+ by smtp.gmail.com with ESMTPSA id x20sm23085573pfa.186.2019.11.06.05.28.34
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 06 Nov 2019 05:28:34 -0800 (PST)
+From: Amit Kucheria <amit.kucheria@linaro.org>
+To: linux-kernel@vger.kernel.org, edubezval@gmail.com,
+ Amit Daniel Kachhap <amit.kachhap@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Guillaume La Roque <glaroque@baylibre.com>,
+ Heiko Stuebner <heiko@sntech.de>, Javi Merino <javi.merino@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Jun Nie <jun.nie@linaro.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Zhang Rui <rui.zhang@intel.com>
+Subject: [PATCH 00/11] thermal: clean up output of make W=1
+Date: Wed,  6 Nov 2019 18:58:16 +0530
+Message-Id: <cover.1573046440.git.amit.kucheria@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_050614_310643_92224243 
-X-CRM114-Status: GOOD (  24.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191106_052836_620993_03567CBF 
+X-CRM114-Status: GOOD (  10.22  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [49.248.202.230 listed in dnsbl.sorbs.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -75,179 +105,57 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, jernej.skrabec@siol.net,
- heiko@sntech.de, narmstrong@baylibre.com, linux-kernel@vger.kernel.org,
- jonas@kwiboo.se, hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
- philippe.cornu@st.com, yannick.fertre@st.com, a.hajda@samsung.com,
- robh+dt@kernel.org, linux-rockchip@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, christoph.muellner@theobroma-systems.com
+Cc: linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Heiko,
+Cleanup output of make W=1 inside drivers/thermal. This should allow us to
+focus on real issues that tend to get lost in the noise much better.
 
-Thank you for the patch.
+There is no functional change. This series was generate on top of
+linux-next from 20191105.
 
-On Wed, Nov 06, 2019 at 12:26:49PM +0100, Heiko Stuebner wrote:
-> While the common case is that the dsi controller uses an internal dphy,
-> accessed through the phy registers inside the dsi controller, there is
-> also the possibility to use a separate dphy from a different vendor.
-> 
-> One such case is the Rockchip px30 that uses a Innosilicon Mipi dphy,
-> so add the support for handling such a constellation, including the pll
-> also getting generated inside that external phy.
-> 
-> Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
-> ---
->  .../display/rockchip/dw_mipi_dsi_rockchip.txt |  7 ++-
->  .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   | 54 ++++++++++++++++++-
->  2 files changed, 57 insertions(+), 4 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt b/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt
-> index ce4c1fc9116c..8b25156a9dcf 100644
-> --- a/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt
-> +++ b/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt
-> @@ -8,8 +8,9 @@ Required properties:
->  	      "rockchip,rk3399-mipi-dsi", "snps,dw-mipi-dsi".
->  - reg: Represent the physical address range of the controller.
->  - interrupts: Represent the controller's interrupt to the CPU(s).
-> -- clocks, clock-names: Phandles to the controller's pll reference
-> -  clock(ref) and APB clock(pclk). For RK3399, a phy config clock
-> +- clocks, clock-names: Phandles to the controller's and APB clock(pclk)
-> +  and either a pll reference clock(ref) (internal dphy) or pll clock(pll)
-> +  (when connected to an external phy). For RK3399, a phy config clock
+Regards,
+Amit
 
-Why does external PHY clock need to be specified here ? Shouldn't it be
-handled by the PHY instead ?
+Amit Kucheria (11):
+  thermal: of-thermal: Appease the kernel-doc deity
+  thermal: cpu_cooling: Appease the kernel-doc deity
+  thermal: step_wise: Appease the kernel-doc deity
+  thermal: devfreq_cooling: Appease the kernel-doc deity
+  thermal: max77620: Appease the kernel-doc deity
+  thermal: mediatek: Appease the kernel-doc deity
+  thermal: rockchip: Appease the kernel-doc deity
+  thermal: samsung: Appease the kernel-doc deity
+  thermal: tegra: Appease the kernel-doc deity
+  thermal: amlogic: Appease the kernel-doc deity
+  thermal: zx2967: Appease the kernel-doc deity
 
->    (phy_cfg) and a grf clock(grf) are required. As described in [1].
->  - rockchip,grf: this soc should set GRF regs to mux vopl/vopb.
->  - ports: contain a port node with endpoint definitions as defined in [2].
-> @@ -18,6 +19,8 @@ Required properties:
->  - video port 1 for either a panel or subsequent encoder
->  
->  Optional properties:
-> +- phys: from general PHY binding: the phandle for the PHY device.
-> +- phy-names: Should be "dphy" if phys references an external phy.
->  - power-domains: a phandle to mipi dsi power domain node.
->  - resets: list of phandle + reset specifier pairs, as described in [3].
->  - reset-names: string reset name, must be "apb".
-> diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-> index bc073ec5c183..99ec625e0448 100644
-> --- a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-> +++ b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-> @@ -12,6 +12,7 @@
->  #include <linux/mfd/syscon.h>
->  #include <linux/module.h>
->  #include <linux/of_device.h>
-> +#include <linux/phy/phy.h>
->  #include <linux/pm_runtime.h>
->  #include <linux/regmap.h>
->  
-> @@ -223,6 +224,9 @@ struct dw_mipi_dsi_rockchip {
->  	bool is_slave;
->  	struct dw_mipi_dsi_rockchip *slave;
->  
-> +	/* optional external dphy */
-> +	struct phy *phy;
-> +
->  	unsigned int lane_mbps; /* per lane */
->  	u16 input_div;
->  	u16 feedback_div;
-> @@ -359,6 +363,9 @@ static int dw_mipi_dsi_phy_init(void *priv_data)
->  	struct dw_mipi_dsi_rockchip *dsi = priv_data;
->  	int ret, i, vco;
->  
-> +	if (dsi->phy)
-> +		return 0;
-> +
->  	/*
->  	 * Get vco from frequency(lane_mbps)
->  	 * vco	frequency table
-> @@ -467,6 +474,27 @@ static int dw_mipi_dsi_phy_init(void *priv_data)
->  	return ret;
->  }
->  
-> +static void dw_mipi_dsi_phy_power_on(void *priv_data)
-> +{
-> +	struct dw_mipi_dsi_rockchip *dsi = priv_data;
-> +	int ret;
-> +
-> +	ret = phy_set_mode(dsi->phy, PHY_MODE_MIPI_DPHY);
-> +	if (ret) {
-> +		DRM_DEV_ERROR(dsi->dev, "failed to set phy mode: %d\n", ret);
-> +		return;
-> +	}
-> +
-> +	phy_power_on(dsi->phy);
-> +}
-> +
-> +static void dw_mipi_dsi_phy_power_off(void *priv_data)
-> +{
-> +	struct dw_mipi_dsi_rockchip *dsi = priv_data;
-> +
-> +	phy_power_off(dsi->phy);
-> +}
-> +
->  static int
->  dw_mipi_dsi_get_lane_mbps(void *priv_data, const struct drm_display_mode *mode,
->  			  unsigned long mode_flags, u32 lanes, u32 format,
-> @@ -504,9 +532,21 @@ dw_mipi_dsi_get_lane_mbps(void *priv_data, const struct drm_display_mode *mode,
->  				      "DPHY clock frequency is out of range\n");
->  	}
->  
-> -	fin = clk_get_rate(dsi->pllref_clk);
->  	fout = target_mbps * USEC_PER_SEC;
->  
-> +	/* an external phy does have a controllable pll clk */
-> +	if (dsi->phy) {
-> +		fout = clk_round_rate(dsi->pllref_clk, fout);
-> +		clk_set_rate(dsi->pllref_clk, fout);
-> +
-> +		dsi->lane_mbps = target_mbps;
-> +		*lane_mbps = dsi->lane_mbps;
-> +
-> +		return 0;
-> +	}
-> +
-> +	fin = clk_get_rate(dsi->pllref_clk);
-> +
->  	/* constraint: 5Mhz <= Fref / N <= 40MHz */
->  	min_prediv = DIV_ROUND_UP(fin, 40 * USEC_PER_SEC);
->  	max_prediv = fin / (5 * USEC_PER_SEC);
-> @@ -561,6 +601,8 @@ dw_mipi_dsi_get_lane_mbps(void *priv_data, const struct drm_display_mode *mode,
->  
->  static const struct dw_mipi_dsi_phy_ops dw_mipi_dsi_rockchip_phy_ops = {
->  	.init = dw_mipi_dsi_phy_init,
-> +	.power_on = dw_mipi_dsi_phy_power_on,
-> +	.power_off = dw_mipi_dsi_phy_power_off,
->  	.get_lane_mbps = dw_mipi_dsi_get_lane_mbps,
->  };
->  
-> @@ -920,7 +962,15 @@ static int dw_mipi_dsi_rockchip_probe(struct platform_device *pdev)
->  		return -EINVAL;
->  	}
->  
-> -	dsi->pllref_clk = devm_clk_get(dev, "ref");
-> +	/* try to get a possible external dphy */
-> +	dsi->phy = devm_phy_optional_get(dev, "dphy");
-> +	if (IS_ERR(dsi->phy)) {
-> +		ret = PTR_ERR(dsi->phy);
-> +		DRM_DEV_ERROR(dev, "failed to get mipi dphy: %d\n", ret);
-> +		return ret;
-> +	}
-> +
-> +	dsi->pllref_clk = devm_clk_get(dev, dsi->phy ? "pll" : "ref");
->  	if (IS_ERR(dsi->pllref_clk)) {
->  		ret = PTR_ERR(dsi->pllref_clk);
->  		DRM_DEV_ERROR(dev,
+ drivers/thermal/amlogic_thermal.c    |  6 +++++-
+ drivers/thermal/cpu_cooling.c        |  1 +
+ drivers/thermal/devfreq_cooling.c    |  3 ++-
+ drivers/thermal/fair_share.c         |  4 ++--
+ drivers/thermal/gov_bang_bang.c      |  4 ++--
+ drivers/thermal/max77620_thermal.c   |  2 +-
+ drivers/thermal/mtk_thermal.c        | 12 ++++++------
+ drivers/thermal/of-thermal.c         |  2 +-
+ drivers/thermal/rockchip_thermal.c   | 22 ++++++++++++++++------
+ drivers/thermal/samsung/exynos_tmu.c |  5 ++++-
+ drivers/thermal/step_wise.c          |  4 ++--
+ drivers/thermal/tegra/soctherm.c     | 15 +++++++++++++--
+ drivers/thermal/user_space.c         |  4 ++--
+ drivers/thermal/zx2967_thermal.c     |  1 +
+ 14 files changed, 58 insertions(+), 27 deletions(-)
 
 -- 
-Regards,
+2.17.1
 
-Laurent Pinchart
 
 _______________________________________________
 Linux-rockchip mailing list
