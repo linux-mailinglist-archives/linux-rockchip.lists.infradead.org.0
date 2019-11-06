@@ -2,157 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF814F179F
-	for <lists+linux-rockchip@lfdr.de>; Wed,  6 Nov 2019 14:50:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C24BBF1A99
+	for <lists+linux-rockchip@lfdr.de>; Wed,  6 Nov 2019 16:59:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RM2CZvcyD3sa5t+/qnK3W04jUbquq33kiIGGVXVRQ0M=; b=RMxyhSx5PoXLLh
-	LhEwJNb/nwBNU522mOgCsOpGz0C37yfuubTa7HWrLCEXguVmPKNfNZFrAabpcFKYnyMpMjl9u3cgf
-	UBLUTwTBE6jLpS/MpWOjz0ZvNYQWzB9BOdBzvWrJ58mem8O//2hZMgv5lnbbW/OwbsOPpjcEksaDV
-	5F/j1IcOfRuvvli1HvQrZMDzdraJRsPtmphZ994qXCMcHsqj7oHUyfoj8h5VABQ9fOsJNinGslZ9p
-	bO/jdImNSXXPznBDOcfWYN9FDT2mrQrEsGpRYQ093d0Rl+z8sC52YOOt+MrN43vd4ScNXG9Vam/7O
-	T5Ik1CH9AWMlnkA1NBiA==;
+	List-Owner; bh=JyV6Dk/J0iqlDzmdzLydhKvGCMMnL9vIdbwF3Ib3Gik=; b=D5YC7lweBJRMDh
+	tttHzHHIwR5IvEEh0n8XGIsW50OEv1GBH8kFV/vHsMuEf1087RPMhuXuBTsGjI5hdQC+LIXWXoga0
+	Ukd94FFWJtQBXHiwxbh827myHVhFBv/ccAElGzv/R6of/DgalikXHJOVLPC0HyKks3ga9gPpRDlVi
+	U3bgeQmmU2g1G70ZZW+jw8EQ7z05WE5CkSI5hlioNwMcvparZixs5N16+pfgxvt0Lv1aEL4abE7ZG
+	hzZLQGCHST4AwRFHrMkbJTMeC4Ih3Vbhfm/NMTnk+VOlS6/ag3S6vycfTAtqhMZ+8bfwiSlT2eWRP
+	CW18/aHUjgcJ7n3wG6pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSLhB-0006At-EQ; Wed, 06 Nov 2019 13:50:01 +0000
-Received: from rcdn-iport-3.cisco.com ([173.37.86.74])
+	id 1iSNi8-0007Uo-2m; Wed, 06 Nov 2019 15:59:08 +0000
+Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSLgz-00062Y-HA; Wed, 06 Nov 2019 13:49:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
- d=cisco.com; i=@cisco.com; l=4870; q=dns/txt; s=iport;
- t=1573048189; x=1574257789;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-id:content-transfer-encoding: mime-version;
- bh=svN6cFwx804hBErcQBK4s2MIwLiLUcsoWgbTbckAcGA=;
- b=AmRgjlEUNhx9ECnh0YA/8fHlILRftoX3LKfy0OUrwt/8DhjtErEP6Kbu
- /tc0wJ1r4If+nphyVGBqmxspaJ42xJolpIQOs1NBwAAvk0ReTgajEnACu
- c3B44NC+KLNvi+/i+yL4qMxvHXCSp9MLFz6rV+i33kLOAwvDOlfkjpg4r c=;
-IronPort-PHdr: =?us-ascii?q?9a23=3AAYeG5ROs7inDE1SbYHMl6mtXPHoupqn0MwgJ65?=
- =?us-ascii?q?Eul7NJdOG58o//OFDEu6w/l0fHCIPc7f8My/HbtaztQyQh2d6AqzhDFf4ETB?=
- =?us-ascii?q?oZkYMTlg0kDtSCDBj7JfjxcSEgH+xJVURu+DewNk0GUMs=3D?=
-X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0ATAQDszsJd/5JdJa1lGQEBAQEBAQE?=
- =?us-ascii?q?BAQEBAQEBAQEBEQEBAQEBAQEBAQEBgX6BS1AFbFggBAsqCoQfg0YDin5OgWs?=
- =?us-ascii?q?ll36CUgNUCQEBAQwBARgLCgIBAYRAAheDdyQ4EwIDCwEBBAEBAQIBBQRthTc?=
- =?us-ascii?q?MhVEBAQEBAwEREQQNDAEBNwEPAgEIFQMCAiYCAgImChUQAgQBDAEFAgEBHoM?=
- =?us-ascii?q?AAYJGAy4BDqYeAoE4iGB1fzOCfgEBBYUHGIIXAwaBDiiMFBiBQD+BOAyCXz6?=
- =?us-ascii?q?CYgOBd4J5gl6Me1aBfTedfwqCJJAKhSwGG4I8lzCOQ4FAmCQCBAIEBQIOAQE?=
- =?us-ascii?q?FgWkigVhwFYMnUBEUgwYMFxWDO4RZhXp0AYEnj1MBgQ4BAQ?=
-X-IronPort-AV: E=Sophos;i="5.68,274,1569283200"; d="scan'208";a="646478144"
-Received: from rcdn-core-10.cisco.com ([173.37.93.146])
- by rcdn-iport-3.cisco.com with ESMTP/TLS/DHE-RSA-SEED-SHA;
- 06 Nov 2019 13:49:45 +0000
-Received: from XCH-RCD-014.cisco.com (xch-rcd-014.cisco.com [173.37.102.24])
- by rcdn-core-10.cisco.com (8.15.2/8.15.2) with ESMTPS id xA6DnjtG031290
- (version=TLSv1.2 cipher=AES256-SHA bits=256 verify=FAIL);
- Wed, 6 Nov 2019 13:49:46 GMT
-Received: from xhs-rcd-002.cisco.com (173.37.227.247) by XCH-RCD-014.cisco.com
- (173.37.102.24) with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Wed, 6 Nov 2019 07:49:45 -0600
-Received: from xhs-rtp-002.cisco.com (64.101.210.229) by xhs-rcd-002.cisco.com
- (173.37.227.247) with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Wed, 6 Nov 2019 07:49:44 -0600
-Received: from NAM05-CO1-obe.outbound.protection.outlook.com (64.101.32.56) by
- xhs-rtp-002.cisco.com (64.101.210.229) with Microsoft SMTP Server
- (TLS) id
- 15.0.1473.3 via Frontend Transport; Wed, 6 Nov 2019 08:49:44 -0500
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BiFjiJPL2cJIdiI2RQGQ+ref+JilTXxsbs5PgJ8fRSyDaoxieUzQJ8buERqSiO1VUmpBkS3Q7HuHwE4wmS6T3sXuB5v2t+/aVNU+SK4Kr2dmr4Fo4vZTBUvav+s3j3i9tZzraGWaeFgkFWjy3IOP75HewW1x7NiLag2BVY8hOZGea0Iu/84sy40uAMhv/LRFm5RYb4GTSE1RCE/oYsqaRL7tumHs7vPi9LybXluEUFwpL3TNhSqk/xPMDIq0r1dOt9iwTDXEK0rhR2iInRZtVBjwJ7jY9gE3Tp/TM2l0d3z8oshp8dzUQLXdpxe/ltC56g6b+0IyKxCftDYVGsgAgg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=svN6cFwx804hBErcQBK4s2MIwLiLUcsoWgbTbckAcGA=;
- b=ZGMvZM5nNK+pL8gJNivYZUWnIw5c7k8B6GOFcvGW0B33/p70HIwTgUCa2VVXoaG+OcZs9Lx0jG6DgrN/738kgMOW7Q1VpgCFFJGj25N0y4O/H/ODNLzgqeaDDlv+Y+x6KyHYVv8Kk7Q2dp/Svzh9jGDW1X58kJrBHjXsrUoj7DU8h5CbfJhH/Hn6Z4IpGN5UHjL3N51bX22ZDGplI66YQPmAXgw1C7Cm7APdQjX9pgQDheZePGzwnoeLJgtT/4waSZ1BVjRREAyK2la4gKpCr3K44pup5/rLVXnJLpXb8q9j6LysZC16130WA5zeDqpSf8D7ekWiOF5z9gxcuUBuFw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=cisco.com; dmarc=pass action=none header.from=cisco.com;
- dkim=pass header.d=cisco.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cisco.onmicrosoft.com; 
- s=selector2-cisco-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=svN6cFwx804hBErcQBK4s2MIwLiLUcsoWgbTbckAcGA=;
- b=CB88RV7lolJ13cWr5/PniYP0hVCMq5xH9xuiFrOl4s+GXN+xf/PWh0X0qF6hqLq+OKRoCMntGMlSrRH0PUZLsH68MwGEXLs8D//UloloBDGoGMlE1U/0nwvrpc13J8Stm2ziAdvqWYR+rCgai3MfiS4Djgqu4JRiYih57Nn6yGA=
-Received: from MWHPR11MB0062.namprd11.prod.outlook.com (10.164.204.34) by
- MWHPR11MB1376.namprd11.prod.outlook.com (10.169.230.140) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2408.24; Wed, 6 Nov 2019 13:49:42 +0000
-Received: from MWHPR11MB0062.namprd11.prod.outlook.com
- ([fe80::915:6397:4683:34e0]) by MWHPR11MB0062.namprd11.prod.outlook.com
- ([fe80::915:6397:4683:34e0%3]) with mapi id 15.20.2408.024; Wed, 6 Nov 2019
- 13:49:42 +0000
-From: "Hans Verkuil (hansverk)" <hansverk@cisco.com>
-To: Ezequiel Garcia <ezequiel@collabora.com>, Helen Koike
- <helen.koike@collabora.com>, "linux-rockchip@lists.infradead.org"
- <linux-rockchip@lists.infradead.org>
-Subject: Re: [PATCH v9 1/4] media: videodev2.h, v4l2-ioctl: add rkisp1 meta
- buffer format
-Thread-Topic: [PATCH v9 1/4] media: videodev2.h, v4l2-ioctl: add rkisp1 meta
- buffer format
-Thread-Index: AQHVlJoMoe3KhuzWQE6zp8GXlxAXY6d+EJqAgAACQYCAABShgIAAAWOA
-Date: Wed, 6 Nov 2019 13:49:42 +0000
-Message-ID: <91be7929-7130-1d52-7058-bbfa84cde90b@cisco.com>
-References: <20191106120132.6876-1-helen.koike@collabora.com>
- <20191106120132.6876-2-helen.koike@collabora.com>
- <9102bcf8-0279-7972-daff-b15aaf98804d@cisco.com>
- <28cff7ab-ef56-791e-0342-571f64cb9807@collabora.com>
- <b1a8fa60a3c8922c364a18b0583dab55660f2fb4.camel@collabora.com>
-In-Reply-To: <b1a8fa60a3c8922c364a18b0583dab55660f2fb4.camel@collabora.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=hansverk@cisco.com; 
-x-originating-ip: [173.38.220.39]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 3de01ee9-bd96-4a3a-4e97-08d762c02d27
-x-ms-traffictypediagnostic: MWHPR11MB1376:
-x-ms-exchange-purlcount: 1
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <MWHPR11MB1376CFF73B90B87BB30F33EBDE790@MWHPR11MB1376.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-forefront-prvs: 02135EB356
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(396003)(39860400002)(366004)(376002)(136003)(189003)(199004)(66066001)(71200400001)(58126008)(71190400001)(316002)(65956001)(65806001)(3846002)(305945005)(36756003)(54906003)(91956017)(66946007)(66556008)(64756008)(6116002)(66476007)(6486002)(76116006)(14454004)(478600001)(7736002)(99286004)(6436002)(66446008)(966005)(2501003)(7416002)(486006)(476003)(110136005)(25786009)(8676002)(229853002)(186003)(26005)(14444005)(5660300002)(256004)(2906002)(6306002)(81166006)(11346002)(81156014)(31696002)(86362001)(8936002)(446003)(4326008)(53546011)(6506007)(6512007)(2616005)(31686004)(6246003)(102836004)(76176011);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR11MB1376;
- H:MWHPR11MB0062.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: cisco.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: bYfYlrcmu0sYA/P9pi4vHW63WKGRMoxb8ErDzvhx5QXGrziT1wEym3wckNBiRqorWy7oYx4n7in9tBqnAtw9YksuYedIqBohDyySZ0jI+MiW6zjD/wTQd90Oueu6OnWx1MxinAtAtbQ7HVLPrVHArcfLdxG9Swpx/LIUD1oD37bCsURIIZCzdTDdTFzXC4b9KkU6U0CXRtFep8za/Xzj7rqSohQTnwVwylOqRdQ4ndJ63iyXBZzW4Gw7/tEZegBAhjFA+25iX1aFUgjhkDtavhjqpu03t8ctcQ8x69f8HKyRiBe4xUZo/Z8BH9KbBwAB9oC2emAPVDuooRTCTKjDy+7ew7/tm9XsL4u18a91mi7K02PNMPveD3wU5evdQh8iIwztjgQjEMILQoTfBGUE4KF/T2NODqbehFiTzZWmpqGorMU0f+WVGyVKIovcz2kynCFVAmcHAj6A/rcGT4hY+eaem9JE0DNuUufWWo7KJLM=
-Content-ID: <1CD43328575457449B5419540669A812@namprd11.prod.outlook.com>
+ id 1iSNi4-0007Rj-0i
+ for linux-rockchip@lists.infradead.org; Wed, 06 Nov 2019 15:59:05 +0000
+Received: by mail-il1-x144.google.com with SMTP id i6so3614100ilr.11
+ for <linux-rockchip@lists.infradead.org>; Wed, 06 Nov 2019 07:59:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=eTmvNusWN2c5MG6/BAIqeUf6hIHOhMcF2KJYDtbtvt8=;
+ b=ccpy+gS6IGTTaTTSYtiJSpGEcbiv5wNleb628bgUAiGfYG8qovcbis91IrjxFSiyph
+ 3HfZZ8GEZqfFDt+kARDudOi3bo/7aW5DX4U8dH7bmhH4S/eOuaKOUrpahD82A4roSaH4
+ 4Pun2YIuRJIp54fpdSGnX2nYGvSWTZEm3inBN/1Y6y0NIlKCePzb4aQJX28WK/S6qIWG
+ BRP0UWMYmC09tCUEXIt5L+5zb7GH36OBmpYYHGpmQl7imB48wFOElu0AlSBGt7dZxZM2
+ V8oXCdqUbqkoa4VEY33b9E3erwZvhwW5kdZkadudfGVr4QJqNqKkA1333pCAgqQR6nT3
+ /I6Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=eTmvNusWN2c5MG6/BAIqeUf6hIHOhMcF2KJYDtbtvt8=;
+ b=DbBBhI6V6haaTlZq4RDF9v1+r84ft5M6fXSnrqJEJ2Xi1rLCHj9M2ysTOml3P9V4CM
+ 7XbhAQ7AqW9lnniCyYKUflqY2EMTtd5szAj3GKEyj5K+i5zqTf2/9VvujJsjZ8OjUSra
+ 80hivsuHecqY3cNAd4H7zl6vHA5YrOkbXEtXFFkXloYShd+f/O8ym+/IL8M7yN353UBg
+ 9k0U6sdBWuTBuGy8JHoy+emVGR5YmC3mTi4hyIq7frd8wXrwzZl5hvaW84Nu5DHW6llB
+ 6X7ibF33phvvbLWPgPs7QDGxKKXYba1H4yIGkdRwBAS8hglScDCKNrOvGKd2e45cdKNm
+ xt8w==
+X-Gm-Message-State: APjAAAVvwmB5g3gfyw5S8Lmm73kshFXG0v7zLFo80YoN1galicntdBYs
+ 8cMQrfx0QYY2+HwD4FELfDLKQW7owqKxhz4C+LcGQQ==
+X-Google-Smtp-Source: APXvYqyHPDXVunridE8njdx3JYwMYmzHl/72SZR5GTwewyAfNZD7ZXTP+VI3OOz5z37EYlrRoJTSjm4/xhly3AA6geo=
+X-Received: by 2002:a92:4596:: with SMTP id z22mr3427340ilj.75.1573055942733; 
+ Wed, 06 Nov 2019 07:59:02 -0800 (PST)
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3de01ee9-bd96-4a3a-4e97-08d762c02d27
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Nov 2019 13:49:42.5129 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 5ae1af62-9505-4097-a69a-c1553ef7840e
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: aDq6W9aJzvKvxf95AXQVSbkfjYZAyLLdVFNrz+pYObxYiCKFrvqcCt0/LKCi4wEKMAUVq7IcaV8mMFBg73glUA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB1376
-X-OriginatorOrg: cisco.com
-X-Outbound-SMTP-Client: 173.37.102.24, xch-rcd-014.cisco.com
-X-Outbound-Node: rcdn-core-10.cisco.com
+References: <cover.1566845537.git.andrzej.p@collabora.com>
+ <1e343b02195757bfbf60ca8999cadeb376db204e.1566845537.git.andrzej.p@collabora.com>
+In-Reply-To: <1e343b02195757bfbf60ca8999cadeb376db204e.1566845537.git.andrzej.p@collabora.com>
+From: Sean Paul <sean@poorly.run>
+Date: Wed, 6 Nov 2019 10:58:26 -0500
+Message-ID: <CAMavQKJhC==nDFFqCXK-J-VLdDkZHUCoSLe6KgALLSYR7kFDfw@mail.gmail.com>
+Subject: Re: [PATCH RESEND 07/14] drm/msm/hdmi: Provide ddc symlink in hdmi
+ connector sysfs directory
+To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_054949_714827_EFF7943D 
-X-CRM114-Status: GOOD (  16.57  )
-X-Spam-Score: -12.7 (------------)
+X-CRM114-CacheID: sfid-20191106_075904_105661_35A0F2D5 
+X-CRM114-Status: GOOD (  14.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-12.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [173.37.86.74 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -172,129 +92,91 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "eddie.cai.linux@gmail.com" <eddie.cai.linux@gmail.com>,
- "kernel@collabora.com" <kernel@collabora.com>,
- "heiko@sntech.de" <heiko@sntech.de>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "jeffy.chen@rock-chips.com" <jeffy.chen@rock-chips.com>,
- "zyc@rock-chips.com" <zyc@rock-chips.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "tfiga@chromium.org" <tfiga@chromium.org>,
- "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
- "laurent.pinchart@ideasonboard.com" <laurent.pinchart@ideasonboard.com>,
- "sakari.ailus@linux.intel.com" <sakari.ailus@linux.intel.com>,
- Jacob Chen <jacob2.chen@rock-chips.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "zhengsq@rock-chips.com" <zhengsq@rock-chips.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
+ Sam Ravnborg <sam@ravnborg.org>, Neil Armstrong <narmstrong@baylibre.com>,
+ David Airlie <airlied@linux.ie>, Ramalingam C <ramalingam.c@intel.com>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Chris Wilson <chris@chris-wilson.co.uk>, Andrzej Hajda <a.hajda@samsung.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
+ Anthony Koo <Anthony.Koo@amd.com>,
+ =?UTF-8?B?VmlsbGUgU3lyasOkbMOk?= <ville.syrjala@linux.intel.com>,
+ "David \(ChunMing\) Zhou" <David1.Zhou@amd.com>,
+ Mario Kleiner <mario.kleiner.de@gmail.com>, linux-samsung-soc@vger.kernel.org,
+ Joonyoung Shim <jy0922.shim@samsung.com>,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, David Francis <David.Francis@amd.com>,
+ Rob Clark <robdclark@gmail.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>, CK Hu <ck.hu@mediatek.com>,
+ Harry Wentland <harry.wentland@amd.com>, Uma Shankar <uma.shankar@intel.com>,
+ Shashank Sharma <shashank.sharma@intel.com>,
+ freedreno <freedreno@lists.freedesktop.org>, linux-tegra@vger.kernel.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, Jonas Karlman <jonas@kwiboo.se>,
+ Leo Li <sunpeng.li@amd.com>, LKML <linux-kernel@vger.kernel.org>,
+ Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Jani Nikula <jani.nikula@linux.intel.com>, Inki Dae <inki.dae@samsung.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ Mamta Shukla <mamtashukla555@gmail.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Jyri Sarha <jsarha@ti.com>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Bhawanpreet Lakha <Bhawanpreet.Lakha@amd.com>,
+ Allison Randal <allison@lohutok.net>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ amd-gfx list <amd-gfx@lists.freedesktop.org>, Eric Anholt <eric@anholt.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
+ Nicholas Kazlauskas <nicholas.kazlauskas@amd.com>,
+ Todor Tomov <todor.tomov@linaro.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
+ =?UTF-8?Q?Christian_K=C3=B6nig?= <christian.koenig@amd.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 11/6/19 2:44 PM, Ezequiel Garcia wrote:
-> Hi Hans, Helen:
-> 
-> On Wed, 2019-11-06 at 09:30 -0300, Helen Koike wrote:
->>
->> On 11/6/19 10:22 AM, Hans Verkuil (hansverk) wrote:
->>> On 11/6/19 1:01 PM, Helen Koike wrote:
->>>> From: Shunqian Zheng <zhengsq@rock-chips.com>
->>>>
->>>> Add the Rockchip ISP1 specific processing parameter format
->>>> V4L2_META_FMT_RK_ISP1_PARAMS and metadata format
->>>> V4L2_META_FMT_RK_ISP1_STAT_3A for 3A.
->>>>
->>>> Signed-off-by: Shunqian Zheng <zhengsq@rock-chips.com>
->>>> Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
->>>> Acked-by: Hans Verkuil <hans.verkuil@cisco.com>
->>>
->>> I acked this? It is missing documentation for these new formats.
->>
->> I think so https://www.spinics.net/lists/linux-rockchip/msg18999.html :)
+On Mon, Aug 26, 2019 at 3:27 PM Andrzej Pietrasiewicz
+<andrzej.p@collabora.com> wrote:
+>
+> Use the ddc pointer provided by the generic connector.
+>
+> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+> Acked-by: Sam Ravnborg <sam@ravnborg.org>
+> Reviewed-by: Emil Velikov <emil.velikov@collabora.com>
 
-Hmm, I probably had an off-day :-)
+Acked-by: Sean Paul <sean@poorly.run>
 
-I noticed that the documentation was included in patch 3/4 (which didn't
-reach the ML because it was too big), but I asked Helen to split off the
-documentation into a separate patch (or add it to this patch).
+> ---
+>  drivers/gpu/drm/msm/hdmi/hdmi_connector.c | 6 ++++--
+>  1 file changed, 4 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/msm/hdmi/hdmi_connector.c b/drivers/gpu/drm/msm/hdmi/hdmi_connector.c
+> index 07b4cb877d82..1f03262b8a52 100644
+> --- a/drivers/gpu/drm/msm/hdmi/hdmi_connector.c
+> +++ b/drivers/gpu/drm/msm/hdmi/hdmi_connector.c
+> @@ -450,8 +450,10 @@ struct drm_connector *msm_hdmi_connector_init(struct hdmi *hdmi)
+>
+>         connector = &hdmi_connector->base;
+>
+> -       drm_connector_init(hdmi->dev, connector, &hdmi_connector_funcs,
+> -                       DRM_MODE_CONNECTOR_HDMIA);
+> +       drm_connector_init_with_ddc(hdmi->dev, connector,
+> +                                   &hdmi_connector_funcs,
+> +                                   DRM_MODE_CONNECTOR_HDMIA,
+> +                                   hdmi->i2c);
+>         drm_connector_helper_add(connector, &msm_hdmi_connector_helper_funcs);
+>
+>         connector->polled = DRM_CONNECTOR_POLL_CONNECT |
+> --
+> 2.17.1
+>
 
-Regards,
-
-	Hans
-
->>
->> I'll update the docs and the fixes you pointed below.
->>
->> Thanks.
->> Helen
->>
->>>> [refactored for upstream]
->>>> Signed-off-by: Helen Koike <helen.koike@collabora.com>
->>>> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
->>>>
->>>> ---
->>>>
->>>> Changes in v9:
->>>> - Add reviewed-by tag from Laurent
->>>>
->>>> Changes in v8: None
->>>> Changes in v7:
->>>> - s/IPU3/RK_ISP1
->>>>
->>>>  drivers/media/v4l2-core/v4l2-ioctl.c | 2 ++
->>>>  include/uapi/linux/videodev2.h       | 4 ++++
->>>>  2 files changed, 6 insertions(+)
->>>>
->>>> diff --git a/drivers/media/v4l2-core/v4l2-ioctl.c b/drivers/media/v4l2-core/v4l2-ioctl.c
->>>> index 315ac12c3e0a..ade990554caf 100644
->>>> --- a/drivers/media/v4l2-core/v4l2-ioctl.c
->>>> +++ b/drivers/media/v4l2-core/v4l2-ioctl.c
->>>> @@ -1341,6 +1341,8 @@ static void v4l_fill_fmtdesc(struct v4l2_fmtdesc *fmt)
->>>>  	case V4L2_META_FMT_UVC:		descr = "UVC Payload Header Metadata"; break;
->>>>  	case V4L2_META_FMT_D4XX:	descr = "Intel D4xx UVC Metadata"; break;
->>>>  	case V4L2_META_FMT_VIVID:       descr = "Vivid Metadata"; break;
->>>> +	case V4L2_META_FMT_RK_ISP1_PARAMS:	descr = "Rockchip ISP1 3A params"; break;
->>>
->>> params -> Params
->>>
->>>> +	case V4L2_META_FMT_RK_ISP1_STAT_3A:	descr = "Rockchip ISP1 3A statistics"; break;
->>>
->>> statistics -> Statistics
->>>
->>>>  
->>>>  	default:
->>>>  		/* Compressed formats */
->>>> diff --git a/include/uapi/linux/videodev2.h b/include/uapi/linux/videodev2.h
->>>> index f98bbcced8ff..56798b09cd85 100644
->>>> --- a/include/uapi/linux/videodev2.h
->>>> +++ b/include/uapi/linux/videodev2.h
-> 
-> Can we avoid touching videodev2.h, as we did for the stateless codec pixfmts?
-> 
-> Thanks,
-> Ezequiel
-> 
->>>> @@ -762,6 +762,10 @@ struct v4l2_pix_format {
->>>>  #define V4L2_META_FMT_D4XX        v4l2_fourcc('D', '4', 'X', 'X') /* D4XX Payload Header metadata */
->>>>  #define V4L2_META_FMT_VIVID	  v4l2_fourcc('V', 'I', 'V', 'D') /* Vivid Metadata */
->>>>  
->>>> +/* Vendor specific - used for RK_ISP1 camera sub-system */
->>>> +#define V4L2_META_FMT_RK_ISP1_PARAMS	v4l2_fourcc('R', 'K', '1', 'P') /* Rockchip ISP1 params */
->>>> +#define V4L2_META_FMT_RK_ISP1_STAT_3A	v4l2_fourcc('R', 'K', '1', 'S') /* Rockchip ISP1 3A statistics */
->>>> +
->>>>  /* priv field value to indicates that subsequent fields are valid. */
->>>>  #define V4L2_PIX_FMT_PRIV_MAGIC		0xfeedcafe
->>>>  
->>>>
->>>
->>> Regards,
->>>
->>> 	Hans
->>>
-> 
-> 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
