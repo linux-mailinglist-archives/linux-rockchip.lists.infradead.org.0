@@ -2,57 +2,67 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55C78F163F
-	for <lists+linux-rockchip@lfdr.de>; Wed,  6 Nov 2019 13:45:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F8D5F16A0
+	for <lists+linux-rockchip@lfdr.de>; Wed,  6 Nov 2019 14:06:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=X/wMADnNbfozR9QLJnuH/JNAHli24VMjjR3oUZTH/o0=; b=tzTk/4TEgDQbe8thltu2dPemw
-	xSE36vB3hNsdK8tFlHqjx19S345VEM7i5tVttfOELMY8au+i0/OsVHtTYUSSeDwIrDoC0yrNWJ97a
-	t1hLcGwtn5p8eBIrdt1Aiqvuknxils7gc78UEYDfZGRqVx6+7nhG4UvoEWSWF5JCX66SzzLRhNk/M
-	Tb+kP26XllzhsE/0VoKGBanTQ8rlI1xIxLEjwrCWohiTcblJWtCe9ZsDHIVmf+yYsQglxYB6QX3rR
-	6hRjnjlIfkt1RLYYGBO7NtBcUQvQlDk1AooTLHEZtSV8SLgQYkyRq+BT3vZPgr8pr6cGp6ZIqbqmn
-	IxFoGCD0A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CZkSHK72XxEAkVofAeQugxO8EPspmW4CsWDmWtRNijc=; b=DERW8YH57/xTaV
+	/2zSe9H728m8ed6Nn16TmQcogshj8JU15CS2JdxDD7v2FlJE+/I5KBQCboU193p2rEXNT6VpofMJd
+	HbHhtesNtKqAaQKT1gCr3qHec4C/NJ+M3qTVk0PcBnqjWtDktz2wO0cTV8zbTDqA4HeeznsV51AtD
+	emDRkmdGWy0H72Atp3XbafnYzCnZXtEfGnoTq0DqdDTEVwvJG3JVyQbhDmhOsRVgpNEdEwYp5Ezz8
+	0maS52OPQ/V9T3O2ZteEq1VMX2UbQSqjwpbD4smNIr6B8SeDfsaNnqMamjrooIxgYnzE12ojJQfYt
+	FEzi5NAmtFzPtGjGca7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSKgU-0004Uf-Bi; Wed, 06 Nov 2019 12:45:14 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1iSL0x-0004Dk-FR; Wed, 06 Nov 2019 13:06:23 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSKgQ-0004U2-Sv
- for linux-rockchip@lists.infradead.org; Wed, 06 Nov 2019 12:45:12 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 9DA8F28C246
-Subject: Re: [PATCHv2 1/4] drm/arm: Factor out generic afbc helpers
-To: Daniel Vetter <daniel@ffwll.ch>
-References: <2485717.1SzL54aMiy@e123338-lin>
- <20191104221228.3588-1-andrzej.p@collabora.com>
- <20191104221228.3588-2-andrzej.p@collabora.com>
- <20191105092232.GV10326@phenom.ffwll.local>
-From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Message-ID: <d4828420-6109-ff93-e0da-d0493cf3aef5@collabora.com>
-Date: Wed, 6 Nov 2019 13:45:05 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iSL0n-00045W-Vg; Wed, 06 Nov 2019 13:06:15 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 3F66D52C;
+ Wed,  6 Nov 2019 14:06:06 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1573045566;
+ bh=rwBoN4G+nIkI+5mwwd3pzYuox8k2CBX+v3Hd1yQBQGw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=aNPiEWK3sndyfV2uKQzJt9vYTAKeVjELD9xjz1RZxQvRYlrfizq8BhE5JMF7786tS
+ yiP/KIA0+YSBYXx1Hg+0yQgUK9i/MD9DcTyQGguIJInQ00TU9Df+thxLlpRs9wTZom
+ 9fPWxbx8TEzZc2kktPxlbJbZqNHSFhNTwyXaCCq8=
+Date: Wed, 6 Nov 2019 15:05:57 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+Subject: Re: [PATCH 2/3] drm/rockchip: add ability to handle external dphys
+ in mipi-dsi
+Message-ID: <20191106130557.GF4878@pendragon.ideasonboard.com>
+References: <20191106112650.8365-1-heiko.stuebner@theobroma-systems.com>
+ <20191106112650.8365-2-heiko.stuebner@theobroma-systems.com>
 MIME-Version: 1.0
-In-Reply-To: <20191105092232.GV10326@phenom.ffwll.local>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191106112650.8365-2-heiko.stuebner@theobroma-systems.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_044511_066428_65830B61 
-X-CRM114-Status: GOOD (  12.94  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191106_050614_310643_92224243 
+X-CRM114-Status: GOOD (  24.74  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,62 +75,181 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@collabora.com, Mihail Atanassov <mihail.atanassov@arm.com>,
- David Airlie <airlied@linux.ie>, Liviu Dudau <liviu.dudau@arm.com>,
- dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
- James Wang <james.qian.wang@arm.com>, Ayan Halder <Ayan.Halder@arm.com>,
- Sean Paul <sean@poorly.run>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, jernej.skrabec@siol.net,
+ heiko@sntech.de, narmstrong@baylibre.com, linux-kernel@vger.kernel.org,
+ jonas@kwiboo.se, hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
+ philippe.cornu@st.com, yannick.fertre@st.com, a.hajda@samsung.com,
+ robh+dt@kernel.org, linux-rockchip@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, christoph.muellner@theobroma-systems.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgRGFuaWVsLAoKVGhhbmsgeW91IGZvciByZXZpZXcsCgpXIGRuaXUgMDUuMTEuMjAxOSBvwqAx
-MDoyMiwgRGFuaWVsIFZldHRlciBwaXN6ZToKPiBPbiBNb24sIE5vdiAwNCwgMjAxOSBhdCAxMTox
-MjoyNVBNICswMTAwLCBBbmRyemVqIFBpZXRyYXNpZXdpY3ogd3JvdGU6Cj4+IFRoZXNlIGFyZSB1
-c2VmdWwgZm9yIG90aGVyIHVzZXJzIG9mIGFmYmMsIGUuZy4gcm9ja2NoaXAuCj4+Cgo8c25pcD4K
-Cj4+ICsKPj4gK2Jvb2wgZHJtX2FmYmNfY2hlY2tfZmJfc2l6ZV9yZXQodTMyIHBpdGNoLCBpbnQg
-YnBwLAo+PiArCQkJCXUzMiB3LCB1MzIgaCwgdTMyIHN1cGVyYmxrX3csIHUzMiBzdXBlcmJsa19o
-LAo+PiArCQkJCXNpemVfdCBzaXplLCB1MzIgb2Zmc2V0LCB1MzIgaGRyX2FsaWduLAo+PiArCQkJ
-CXUzMiAqcGF5bG9hZF9vZmYsIHUzMiAqdG90YWxfc2l6ZSkKPj4gK3sKPj4gKwlpbnQgbl9zdXBl
-cmJsa3MgPSAwOwo+PiArCXUzMiBzdXBlcmJsa19zeiA9IDA7Cj4+ICsJdTMyIGFmYmNfc2l6ZSA9
-IDA7Cj4+ICsKPj4gKwluX3N1cGVyYmxrcyA9ICh3IC8gc3VwZXJibGtfdykgKiAoaCAvIHN1cGVy
-YmxrX2gpOwo+PiArCXN1cGVyYmxrX3N6ID0gKGJwcCAqIHN1cGVyYmxrX3cgKiBzdXBlcmJsa19o
-KSAvIEJJVFNfUEVSX0JZVEU7Cj4+ICsJYWZiY19zaXplID0gQUxJR04obl9zdXBlcmJsa3MgKiBB
-RkJDX0hFQURFUl9TSVpFLCBoZHJfYWxpZ24pOwo+PiArCSpwYXlsb2FkX29mZiA9IGFmYmNfc2l6
-ZTsKPj4gKwo+PiArCWFmYmNfc2l6ZSArPSBuX3N1cGVyYmxrcyAqIEFMSUdOKHN1cGVyYmxrX3N6
-LCBBRkJDX1NVUEVSQkxLX0FMSUdOTUVOVCk7Cj4+ICsJKnRvdGFsX3NpemUgPSBhZmJjX3NpemUg
-KyBvZmZzZXQ7Cj4+ICsKPj4gKwlpZiAoKHcgKiBicHApICE9IChwaXRjaCAqIEJJVFNfUEVSX0JZ
-VEUpKSB7Cj4+ICsJCURSTV9ERUJVR19LTVMoIkludmFsaWQgdmFsdWUgb2YgKHBpdGNoICogQklU
-U19QRVJfQllURSkgKD0ldSkgc2hvdWxkIGJlIHNhbWUgYXMgd2lkdGggKD0ldSkgKiBicHAgKD0l
-dSlcbiIsCj4+ICsJCQkgICAgICBwaXRjaCAqIEJJVFNfUEVSX0JZVEUsIHcsIGJwcAo+PiArCQkp
-Owo+PiArCQlyZXR1cm4gZmFsc2U7Cj4+ICsJfQo+PiArCj4+ICsJaWYgKHNpemUgPCBhZmJjX3Np
-emUpIHsKPj4gKwkJRFJNX0RFQlVHX0tNUygiYnVmZmVyIHNpemUgKCV6dSkgdG9vIHNtYWxsIGZv
-ciBBRkJDIGJ1ZmZlciBzaXplID0gJXVcbiIsCj4+ICsJCQkgICAgICBzaXplLCBhZmJjX3NpemUK
-Pj4gKwkJKTsKPj4gKwo+PiArCQlyZXR1cm4gZmFsc2U7Cj4+ICsJfQo+PiArCj4+ICsJcmV0dXJu
-IHRydWU7Cj4+ICt9Cj4+ICtFWFBPUlRfU1lNQk9MKGRybV9hZmJjX2NoZWNrX2ZiX3NpemVfcmV0
-KTsKPj4gKwo+PiArYm9vbCBkcm1fYWZiY19jaGVja19mYl9zaXplKHUzMiBwaXRjaCwgaW50IGJw
-cCwKPj4gKwkJCSAgICB1MzIgdywgdTMyIGgsIHUzMiBzdXBlcmJsa193LCB1MzIgc3VwZXJibGtf
-aCwKPj4gKwkJCSAgICBzaXplX3Qgc2l6ZSwgdTMyIG9mZnNldCwgdTMyIGhkcl9hbGlnbikKPj4g
-K3sKPj4gKwl1MzIgcGF5bG9hZF9vZmZzZXQsIHRvdGFsX3NpemU7Cj4+ICsKPj4gKwlyZXR1cm4g
-ZHJtX2FmYmNfY2hlY2tfZmJfc2l6ZV9yZXQocGl0Y2gsIGJwcCwgdywgaCwKPj4gKwkJCQkJICBz
-dXBlcmJsa193LCBzdXBlcmJsa19oLAo+PiArCQkJCQkgIHNpemUsIG9mZnNldCwgaGRyX2FsaWdu
-LAo+PiArCQkJCQkgICZwYXlsb2FkX29mZnNldCwgJnRvdGFsX3NpemUpOwo+PiArfQo+PiArRVhQ
-T1JUX1NZTUJPTChkcm1fYWZiY19jaGVja19mYl9zaXplKTsKPiAKPiBXaHkgZG9uJ3Qgd2UgaGF2
-ZSBvbmUgb3ZlcmFsbCAiY2hlY2sgYWZiYyBwYXJhbWV0ZXJzIGFnYWluc3QgYnVmZmVyIgo+IGZ1
-bmN0aW9uPwo+IAoKSSBub3RpY2VkIHRoYXQgZGlmZmVyZW50IGRyaXZlcnMgaGF2ZSBkaWZmZXJl
-bnQgbmVlZHMgKG1hbGlkcAphbmQgcm9ja2NoaXAgYXJlIGtpbmQgb2Ygc2ltaWxhciwgYnV0IGtv
-bWVkYSBpcyBhIGJpdCBkaWZmZXJlbnQpLgpUaGF0IGlzIHdoeSB0aGUgaGVscGVycyBhcmUgb25s
-eSBidWlsZGluZyBibG9ja3Mgb3V0IG9mIHdoaWNoCmVhY2ggZHJpdmVyIGJ1aWxkcyBpdHMgb3du
-IGNoZWNraW5nIGxvZ2ljLiBJbiBwYXJ0aWN1bGFyIGtvbWVkYQp3YW50cyBzb21lIGJ5LXByb2R1
-Y3RzIG9mIHRoZSBjaGVjayBzdG9yZWQgaW4gaXRzIGludGVybmFsIGRhdGEKc3RydWN0dXJlcywg
-aGVuY2UgZHJtX2FmYmNfY2hlY2tfZmJfc2l6ZV9yZXQoKSBhbmQgaXRzIHdyYXBwZXIKZHJtX2Fm
-YmNfY2hlY2tfZmJfc2l6ZSgpIHdoaWNoIGlnbm9yZXMgdGhlICJvdXQiIHBhcmFtZXRlcnMuCgpJ
-ZiBJIHdhbnRlZCB0byBjcmVhdGUgb25lIG92ZXJhbGwgImNoZWNrIGFmYmMgcGFyYW1ldGVycyIg
-SSdkIGhhdmUKdG8gY29tZSB1cCB3aXRoIGEgd2F5IHRvIHBhc3MgZHJpdmVyLXNwZWNpZmljIHJl
-cXVpcmVtZW50cyB0byBpdAphbmQgdGhlbiBpbnNpZGUgdGhlIGZ1bmN0aW9uIGhhdmUgc29tZSBs
-b2dpYyB0byBkZWNpZGUgd2hhdCB0bwpjaGVjayBhZ2FpbnN0IHdoYXQuIERvIHlvdSB0aGluayBp
-dCBpcyB3b3J0aCBpdD8KCkFuZHJ6ZWoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hp
-cEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+Hi Heiko,
+
+Thank you for the patch.
+
+On Wed, Nov 06, 2019 at 12:26:49PM +0100, Heiko Stuebner wrote:
+> While the common case is that the dsi controller uses an internal dphy,
+> accessed through the phy registers inside the dsi controller, there is
+> also the possibility to use a separate dphy from a different vendor.
+> 
+> One such case is the Rockchip px30 that uses a Innosilicon Mipi dphy,
+> so add the support for handling such a constellation, including the pll
+> also getting generated inside that external phy.
+> 
+> Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+> ---
+>  .../display/rockchip/dw_mipi_dsi_rockchip.txt |  7 ++-
+>  .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   | 54 ++++++++++++++++++-
+>  2 files changed, 57 insertions(+), 4 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt b/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt
+> index ce4c1fc9116c..8b25156a9dcf 100644
+> --- a/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt
+> +++ b/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt
+> @@ -8,8 +8,9 @@ Required properties:
+>  	      "rockchip,rk3399-mipi-dsi", "snps,dw-mipi-dsi".
+>  - reg: Represent the physical address range of the controller.
+>  - interrupts: Represent the controller's interrupt to the CPU(s).
+> -- clocks, clock-names: Phandles to the controller's pll reference
+> -  clock(ref) and APB clock(pclk). For RK3399, a phy config clock
+> +- clocks, clock-names: Phandles to the controller's and APB clock(pclk)
+> +  and either a pll reference clock(ref) (internal dphy) or pll clock(pll)
+> +  (when connected to an external phy). For RK3399, a phy config clock
+
+Why does external PHY clock need to be specified here ? Shouldn't it be
+handled by the PHY instead ?
+
+>    (phy_cfg) and a grf clock(grf) are required. As described in [1].
+>  - rockchip,grf: this soc should set GRF regs to mux vopl/vopb.
+>  - ports: contain a port node with endpoint definitions as defined in [2].
+> @@ -18,6 +19,8 @@ Required properties:
+>  - video port 1 for either a panel or subsequent encoder
+>  
+>  Optional properties:
+> +- phys: from general PHY binding: the phandle for the PHY device.
+> +- phy-names: Should be "dphy" if phys references an external phy.
+>  - power-domains: a phandle to mipi dsi power domain node.
+>  - resets: list of phandle + reset specifier pairs, as described in [3].
+>  - reset-names: string reset name, must be "apb".
+> diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+> index bc073ec5c183..99ec625e0448 100644
+> --- a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+> +++ b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+> @@ -12,6 +12,7 @@
+>  #include <linux/mfd/syscon.h>
+>  #include <linux/module.h>
+>  #include <linux/of_device.h>
+> +#include <linux/phy/phy.h>
+>  #include <linux/pm_runtime.h>
+>  #include <linux/regmap.h>
+>  
+> @@ -223,6 +224,9 @@ struct dw_mipi_dsi_rockchip {
+>  	bool is_slave;
+>  	struct dw_mipi_dsi_rockchip *slave;
+>  
+> +	/* optional external dphy */
+> +	struct phy *phy;
+> +
+>  	unsigned int lane_mbps; /* per lane */
+>  	u16 input_div;
+>  	u16 feedback_div;
+> @@ -359,6 +363,9 @@ static int dw_mipi_dsi_phy_init(void *priv_data)
+>  	struct dw_mipi_dsi_rockchip *dsi = priv_data;
+>  	int ret, i, vco;
+>  
+> +	if (dsi->phy)
+> +		return 0;
+> +
+>  	/*
+>  	 * Get vco from frequency(lane_mbps)
+>  	 * vco	frequency table
+> @@ -467,6 +474,27 @@ static int dw_mipi_dsi_phy_init(void *priv_data)
+>  	return ret;
+>  }
+>  
+> +static void dw_mipi_dsi_phy_power_on(void *priv_data)
+> +{
+> +	struct dw_mipi_dsi_rockchip *dsi = priv_data;
+> +	int ret;
+> +
+> +	ret = phy_set_mode(dsi->phy, PHY_MODE_MIPI_DPHY);
+> +	if (ret) {
+> +		DRM_DEV_ERROR(dsi->dev, "failed to set phy mode: %d\n", ret);
+> +		return;
+> +	}
+> +
+> +	phy_power_on(dsi->phy);
+> +}
+> +
+> +static void dw_mipi_dsi_phy_power_off(void *priv_data)
+> +{
+> +	struct dw_mipi_dsi_rockchip *dsi = priv_data;
+> +
+> +	phy_power_off(dsi->phy);
+> +}
+> +
+>  static int
+>  dw_mipi_dsi_get_lane_mbps(void *priv_data, const struct drm_display_mode *mode,
+>  			  unsigned long mode_flags, u32 lanes, u32 format,
+> @@ -504,9 +532,21 @@ dw_mipi_dsi_get_lane_mbps(void *priv_data, const struct drm_display_mode *mode,
+>  				      "DPHY clock frequency is out of range\n");
+>  	}
+>  
+> -	fin = clk_get_rate(dsi->pllref_clk);
+>  	fout = target_mbps * USEC_PER_SEC;
+>  
+> +	/* an external phy does have a controllable pll clk */
+> +	if (dsi->phy) {
+> +		fout = clk_round_rate(dsi->pllref_clk, fout);
+> +		clk_set_rate(dsi->pllref_clk, fout);
+> +
+> +		dsi->lane_mbps = target_mbps;
+> +		*lane_mbps = dsi->lane_mbps;
+> +
+> +		return 0;
+> +	}
+> +
+> +	fin = clk_get_rate(dsi->pllref_clk);
+> +
+>  	/* constraint: 5Mhz <= Fref / N <= 40MHz */
+>  	min_prediv = DIV_ROUND_UP(fin, 40 * USEC_PER_SEC);
+>  	max_prediv = fin / (5 * USEC_PER_SEC);
+> @@ -561,6 +601,8 @@ dw_mipi_dsi_get_lane_mbps(void *priv_data, const struct drm_display_mode *mode,
+>  
+>  static const struct dw_mipi_dsi_phy_ops dw_mipi_dsi_rockchip_phy_ops = {
+>  	.init = dw_mipi_dsi_phy_init,
+> +	.power_on = dw_mipi_dsi_phy_power_on,
+> +	.power_off = dw_mipi_dsi_phy_power_off,
+>  	.get_lane_mbps = dw_mipi_dsi_get_lane_mbps,
+>  };
+>  
+> @@ -920,7 +962,15 @@ static int dw_mipi_dsi_rockchip_probe(struct platform_device *pdev)
+>  		return -EINVAL;
+>  	}
+>  
+> -	dsi->pllref_clk = devm_clk_get(dev, "ref");
+> +	/* try to get a possible external dphy */
+> +	dsi->phy = devm_phy_optional_get(dev, "dphy");
+> +	if (IS_ERR(dsi->phy)) {
+> +		ret = PTR_ERR(dsi->phy);
+> +		DRM_DEV_ERROR(dev, "failed to get mipi dphy: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	dsi->pllref_clk = devm_clk_get(dev, dsi->phy ? "pll" : "ref");
+>  	if (IS_ERR(dsi->pllref_clk)) {
+>  		ret = PTR_ERR(dsi->pllref_clk);
+>  		DRM_DEV_ERROR(dev,
+
+-- 
+Regards,
+
+Laurent Pinchart
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
