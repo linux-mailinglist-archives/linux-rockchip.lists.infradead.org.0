@@ -2,133 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19238F228B
-	for <lists+linux-rockchip@lfdr.de>; Thu,  7 Nov 2019 00:26:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C588AF22D4
+	for <lists+linux-rockchip@lfdr.de>; Thu,  7 Nov 2019 00:47:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NGMFhv4j6AzzRLP+C6w9fVtplGGtPLKBwuWFvrftfwU=; b=I8dRxMZipEsMw9
-	q9lxUdl5RJ69EFbNddApTCAVci6De9/Dl23bcFu8YkveXAHig7QdnWR1PdzNQ37Wgz3a8wArITQMj
-	/gpy4WK7sf5kApq8S3l0hwycTAQuwXxiG02RkxfmHe1Oc3Yxf1nnYnfC+S7YTokWC2Ta22CHNke/U
-	Nrl/VE5SHg3UmPQk0/cJ6jRmZa3Rwtxn/+Uos1FTgdiZ7eb/8E4qaG6h54e/8bTRS6joYaWOIUJFF
-	KQKjON/dJJYCtVtDTs8jI+jRwWpfxC0hx+r41Oq71SawcWM3Rp73fXmz2KVCM13ADXqCvqL6ybadZ
-	q6p1JB/9x4GKn6BPUQmA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bkPl1bFyX17CISrdnhBrjrWkmEGoi1jy84xxgmfteW4=; b=oIg+1YWNtTFlW2
+	jSlrBsiW0KO9oajGDebzC1jWDtlVDnEMONepDALhl1WVV89eXCNivDsAsqXrdRqMV2qJqBKLqjZVC
+	KR44F1cEXSdHE9yyOfC3CCcX+UBNFXU5lUsJwMd2NeixTdw2ypus+tFlYfyLLFS1bpKMGkRqQdVVI
+	rc/ZB6DEuLv5vDavGiP+nqlZvfHSFC1qRovRKaKDvZFWpHKGFoTcD2lfQPW7Z/QVlC8WUTMRLtEea
+	7NslbhIQyVs44UkoR8BmlFiNg2Hm0/+0tvmxPvEiinPfOjOks2nLljEhnR2WnU+c1dgFJXAu6Cl70
+	SUkD8kwhK8mZZiiy/LLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSUh6-00022s-Ni; Wed, 06 Nov 2019 23:26:32 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1iSV1T-0002P1-5H; Wed, 06 Nov 2019 23:47:35 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSUgx-0001v7-O7; Wed, 06 Nov 2019 23:26:25 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id D3722289FDA
-Subject: Re: [PATCH v9 1/4] media: videodev2.h, v4l2-ioctl: add rkisp1 meta
- buffer format
-To: Ezequiel Garcia <ezequiel@collabora.com>,
- "Hans Verkuil (hansverk)" <hansverk@cisco.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>
-References: <20191106120132.6876-1-helen.koike@collabora.com>
- <20191106120132.6876-2-helen.koike@collabora.com>
- <9102bcf8-0279-7972-daff-b15aaf98804d@cisco.com>
- <28cff7ab-ef56-791e-0342-571f64cb9807@collabora.com>
- <b1a8fa60a3c8922c364a18b0583dab55660f2fb4.camel@collabora.com>
-From: Helen Koike <helen.koike@collabora.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=helen.koike@collabora.com; keydata=
- mQINBFmOMD4BEADb2nC8Oeyvklh+ataw2u/3mrl+hIHL4WSWtii4VxCapl9+zILuxFDrxw1p
- XgF3cfx7g9taWBrmLE9VEPwJA6MxaVnQuDL3GXxTxO/gqnOFgT3jT+skAt6qMvoWnhgurMGH
- wRaA3dO4cFrDlLsZIdDywTYcy7V2bou81ItR5Ed6c5UVX7uTTzeiD/tUi8oIf0XN4takyFuV
- Rf09nOhi24bn9fFN5xWHJooFaFf/k2Y+5UTkofANUp8nn4jhBUrIr6glOtmE0VT4pZMMLT63
- hyRB+/s7b1zkOofUGW5LxUg+wqJXZcOAvjocqSq3VVHcgyxdm+Nv0g9Hdqo8bQHC2KBK86VK
- vB+R7tfv7NxVhG1sTW3CQ4gZb0ZugIWS32Mnr+V+0pxci7QpV3jrtVp5W2GA5HlXkOyC6C7H
- Ao7YhogtvFehnlUdG8NrkC3HhCTF8+nb08yGMVI4mMZ9v/KoIXKC6vT0Ykz434ed9Oc9pDow
- VUqaKi3ey96QczfE4NI029bmtCY4b5fucaB/aVqWYRH98Jh8oIQVwbt+pY7cL5PxS7dQ/Zuz
- 6yheqDsUGLev1O3E4R8RZ8jPcfCermL0txvoXXIA56t4ZjuHVcWEe2ERhLHFGq5Zw7KC6u12
- kJoiZ6WDBYo4Dp+Gd7a81/WsA33Po0j3tk/8BWoiJCrjXzhtRwARAQABtCdIZWxlbiBLb2lr
- ZSA8aGVsZW4ua29pa2VAY29sbGFib3JhLmNvbT6JAlQEEwEKAD4CGwEFCwkIBwMFFQoJCAsF
- FgIDAQACHgECF4AWIQSofQA6zrItXEgHWTzAfqwo9yFiXQUCXEz3bwUJBKaPRQAKCRDAfqwo
- 9yFiXdUCD/4+WZr503hQ13KB4DijOW76ju8JDPp4p++qoPxtoAsld3yROoTI+VPWmt7ojHrr
- TZc7sTLxOFzaUC8HjGTb3r9ilIhIKf/M9KRLkpIJ+iLA+VoUbcSOMYWoVNfgLmbnqoezjPcy
- OHJwVw9dzEeYpvG6nkY6E4UktANySp27AniSXNuHOvYsOsXmUOqU1ScdsrQ9s732p/OGdTyw
- 1yd3gUMLZvCKFOBVHILH59HCRJgpwUPiws8G4dGMs4GTRvHT2s2mDQdQ0HEvcM9rvCRVixuC
- 5ZeOymZNi6lDIUIysgiZ+yzk6i5l/Ni6r7v20N3JppZvhPK6LqtaYceyAGyc3jjnOqoHT/qR
- kPjCwzmKiPtXjLw6HbRXtGgGtP5m3y8v6bfHH+66zd2vGCY0Z9EsqcnK4DCqRkLncFLPM2gn
- 9cZcCmO4ZqXUhTyn1nHM494kd5NX1Op4HO+t9ErnpufkVjoMUeBwESdQwwwHT3rjUueGmCrn
- VJK69/qhA4La72VTxHutl+3Z0Xy20HWsZS8Gsam39f95/LtPLzbBwnOOi5ZoXnm97tF8HrAZ
- 2h+kcRLMWw3BXy5q4gic+oFZMZP9oq1G9XTFld4FGgJ9ys8aGmhLM+uB1pFxb3XFtWQ2z4AJ
- iEp2VLl34quwfD6Gg4csiZe2KzvQHUe0w8SJ9LplrHPPprkCDQRZjjChARAAzISLQaHzaDOv
- ZxcoCNBk/hUGo2/gsmBW4KSj73pkStZ+pm3Yv2CRtOD4jBlycXjzhwBV7/70ZMH70/Y25dJa
- CnJKl/Y76dPPn2LDWrG/4EkqUzoJkhRIYFUTpkPdaVYznqLgsho19j7HpEbAum8r3jemYBE1
- AIuVGg4bqY3UkvuHWLVRMuaHZNy55aYwnUvd46E64JH7O990mr6t/nu2a1aJ0BDdi8HZ0RMo
- Eg76Avah+YR9fZrhDFmBQSL+mcCVWEbdiOzHmGYFoToqzM52wsNEpo2aStH9KLk8zrCXGx68
- ohJyQoALX4sS03RIWh1jFjnlw2FCbEdj/HDX0+U0i9COtanm54arYXiBTnAnx0F7LW7pv7sb
- 6tKMxsMLmprP/nWyV5AfFRi3jxs5tdwtDDk/ny8WH6KWeLR/zWDwpYgnXLBCdg8l97xUoPQO
- 0VkKSa4JEXUZWZx9q6kICzFGsuqApqf9gIFJZwUmirsxH80Fe04Tv+IqIAW7/djYpOqGjSyk
- oaEVNacwLLgZr+/j69/1ZwlbS8K+ChCtyBV4kEPzltSRZ4eU19v6sDND1JSTK9KSDtCcCcAt
- VGFlr4aE00AD/aOkHSylc93nPinBFO4AGhcs4WypZ3GGV6vGWCpJy9svfWsUDhSwI7GS/i/v
- UQ1+bswyYEY1Q3DjJqT7fXcAEQEAAYkEcgQYAQoAJgIbAhYhBKh9ADrOsi1cSAdZPMB+rCj3
- IWJdBQJcTPfVBQkEpo7hAkDBdCAEGQEKAB0WIQSomGMEg78Cd/pMshveCRfNeJ05lgUCWY4w
- oQAKCRDeCRfNeJ05lp0gD/49i95kPKjpgjUbYeidjaWuINXMCA171KyaBAp+Jp2Qrun4sIJB
- Z6srMj6O/gC34AhZln2sXeQdxe88sNbg6HjlN+4AkhTd6DttjOfUwnamLDA7uw+YIapGgsgN
- lznjLnqOaQ9mtEwRbZMUOdyRf9osSuL14vHl4ia3bYNJ52WYre6gLMu4K+Ghd02og+ILgIio
- Q827h0spqIJYHrR3Ynnhxdlv5GPCobh+AKsQMdTIuCzR6JSCBk6GHkg33SiWScKMUzT8B/cn
- ypLfGnfV/LDZ9wS2TMzIlK/uv0Vd4C0OGDd/GCi5Gwu/Ot0aY7fzZo2CiRV+/nJBWPRRBTji
- bE4FG2rt7WSRLO/QmH2meIW4f0USDiHeNwznHkPei59vRdlMyQdsxrmgSRDuX9Y3UkERxbgd
- uscqC8Cpcy5kpF11EW91J8aGpcxASc+5Pa66/+7CrpBC2DnfcfACdMAje7yeMn9XlHrqXNlQ
- GaglEcnGN2qVqRcKgcjJX+ur8l56BVpBPFYQYkYkIdQAuhlPylxOvsMcqI6VoEWNt0iFF3dA
- //0MNb8fEqw5TlxDPOt6BDhDKowkxOGIA9LOcF4PkaR9Qkvwo2P4vA/8fhCnMqlSPom4xYdk
- Ev8P554zDoL/XMHl+s7A0MjIJzT253ejZKlWeO68pAbNy/z7QRn2lFDnjwkQwH6sKPchYl2f
- 0g//Yu3vDkqk8+mi2letP3XBl2hjv2eCZjTh34VvtgY5oeL2ROSJWNd18+7O6q3hECZ727EW
- gIb3LK9g4mKF6+Rch6Gwz1Y4fmC5554fd2Y2XbVzzz6AGUC6Y+ohNg7lTAVO4wu43+IyTB8u
- ip5rX/JDGFv7Y1sl6tQJKAVIKAJE+Z3Ncqh3doQr9wWHl0UiQYKbSR9HpH1lmC1C3EEbTpwK
- fUIpZd1eQNyNJl1jHsZZIBYFsAfVNH/u6lB1TU+9bSOsV5SepdIb88d0fm3oZ4KzjhRHLFQF
- RwNUNn3ha6x4fbxYcwbvu5ZCiiX6yRTPoage/LUNkgQNX2PtPcur6CdxK6Pqm8EAI7PmYLfN
- NY3y01XhKNRvaVZoH2FugfUkhsBITglTIpI+n6YU06nDAcbeINFo67TSE0iL6Pek5a6gUQQC
- 6w+hJCaMr8KYud0q3ccHyU3TlAPDe10En3GsVz7Y5Sa3ODGdbmkfjK8Af3ogGNBVmpV16Xl8
- 4rETFv7POSUB2eMtbpmBopd+wKqHCwUEy3fx1zDbM9mp+pcDoL73rRZmlgmNfW/4o4qBzxRf
- FYTQLE69wAFU2IFce9PjtUAlBdC+6r3X24h3uD+EC37s/vWhxuKj2glaU9ONrVJ/SPvlqXOO
- WR1Zqw57vHMKimLdG3c24l8PkSw1usudgAA5OyO5Ag0EWY4wyQEQAMVp0U38Le7d80Mu6AT+
- 1dMes87iKn30TdMuLvSg2uYqJ1T2riRBF7zU6u74HF6zps0rPQviBXOgoSuKa1hnS6OwFb9x
- yQPlk76LY96SUB5jPWJ3fO78ZGSwkVbJFuG9gpD/41n8Unn1hXgDb2gUaxD0oXv/723EmTYC
- vSo3z6Y8A2aBQNr+PyhQAPDazvVQ+P7vnZYq1oK0w+D7aIix/Bp4mo4VbgAeAeMxXWSZs8N5
- NQtXeTBgB7DqrfJP5wWwgCsROfeds6EoddcYgqhG0zVU9E54C8JcPOA0wKVs+9+gt2eyRNtx
- 0UhFbah7qXuJGhWy/0CLXvVoCoS+7qpWz070TBAlPZrg9D0o2gOw01trQgoKAYBKKgJhxaX/
- 4gzi+5Ccm33LYH9lAVTdzdorejuV1xWdsnNyc8OAPeoXBf9RIIWfQVmbhVXBp2DAPjV6/kIJ
- Eml7MNJfEvqjV9zKsWF9AFlsqDWZDCyUdqR96ahTSD34pRwb6a9H99/GrjeowKaaL95DIVZT
- C6STvDNL6kpys4sOe2AMmQGv2MMcJB3aYLzH8f1sEQ9S0UMX7/6CifEG6JodG6Y/W/lLo1Vv
- DxeDA+u4Lgq6qxlksp8M78FjcmxFVlf4cpCi2ucbZxurhlBkjtZZ8MVAEde3hlqjcBl2Ah6Q
- D826FTxscOGlHEfNABEBAAGJAjwEGAEKACYCGwwWIQSofQA6zrItXEgHWTzAfqwo9yFiXQUC
- XEz31QUJBKaOuQAKCRDAfqwo9yFiXUvnEACBWe8wSnIvSX+9k4LxuLq6GQTOt+RNfliZQkCW
- 5lT3KL1IJyzzOm4x+/slHRBl8bF7KEZyOPinXQXyJ/vgIdgSYxDqoZ7YZn3SvuNe4aT6kGwL
- EYYEV8Ecj4ets15FR2jSUNnVv5YHWtZ7bP/oUzr2LT54fjRcstYxgwzoj8AREtHQ4EJWAWCO
- ZuEHTSm5clMFoi41CmG4DlJbzbo4YfilKYm69vwh50Y8WebcRN31jh0g8ufjOJnBldYYBLwN
- Obymhlfy/HKBDIbyCGBuwYoAkoJ6LR/cqzl/FuhwhuDocCGlXyYaJOwXgHaCvVXI3PLQPxWZ
- +vPsD+TSVHc9m/YWrOiYDnZn6aO0Uk1Zv/m9+BBkWAwsreLJ/evn3SsJV1omNBTITG+uxXcf
- JkgmmesIAw8mpI6EeLmReUJLasz8QkzhZIC7t5rGlQI94GQG3Jg2dC+kpaGWOaT5G4FVMcBj
- iR1nXfMxENVYnM5ag7mBZyD/kru5W1Uj34L6AFaDMXFPwedSCpzzqUiHb0f+nYkfOodf5xy0
- 46+3THy/NUS/ZZp/rI4F7Y77+MQPVg7vARfHHX1AxYUKfRVW5j88QUB70txn8Vgi1tDrOr4J
- eD+xr0CvIGa5lKqgQacQtGkpOpJ8zY4ObSvpNubey/qYUE3DCXD0n2Xxk4muTvqlkFpOYA==
-Message-ID: <c3b03fc7-100d-4c16-f561-b26969d13fea@collabora.com>
-Date: Wed, 6 Nov 2019 20:26:11 -0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1iSV1G-0002Em-N6; Wed, 06 Nov 2019 23:47:23 +0000
+Received: by mail-ot1-f66.google.com with SMTP id z6so396936otb.2;
+ Wed, 06 Nov 2019 15:47:22 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=OhvMwzjLJJk+Opkedo2FzZT49wBAToYYlbi+l98niDU=;
+ b=IJMtLOTWAejtY6qY5B/iVHADw2VGNmjWsvRBvwP7MJjciGys5RSb7AFDvbNoQoiOth
+ Gis1rFGJqPbQY/W+Zwz5roWuI1BHtwY70w8aGtgGoV/hUcwCFHKfEpDbu/stYyBEHZL9
+ zNVCcxulJS34nmRtmWKj5zik9kPh278JXsEFRlyS/v+GrYlz8JQNmXDtbi1JL7jMXESp
+ 6lKvCiPcffBAuFJ5fpeGgtIgxBOGr8V+HLaGygrEu15hZ0eStEwbiVKDC1aad4JW/V7f
+ IgkpYTwYQpqvaQyHQxcQGLu8VJj/V02CoiLNnriH5V3dGyRKjgAxQxP/DbqmlW3rzkjP
+ APZQ==
+X-Gm-Message-State: APjAAAV0I9BFPa51Ud0JQ+lZz0ExRb5ZSELbOp96Fv3yYgVnN8A+5GDh
+ 0biaT9XgI63MiOWMUtAFKA==
+X-Google-Smtp-Source: APXvYqwXXl9PdvHuNaY2+1epy0scUXC1o7/ARTIzt7q0aSxaAky+4OlJjSZj4YK0CDFyaIUB6lOHYg==
+X-Received: by 2002:a9d:7642:: with SMTP id o2mr355916otl.66.1573084041390;
+ Wed, 06 Nov 2019 15:47:21 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id r14sm87057oij.6.2019.11.06.15.47.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 06 Nov 2019 15:47:20 -0800 (PST)
+Date: Wed, 6 Nov 2019 17:47:19 -0600
+From: Rob Herring <robh@kernel.org>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v1 7/7] dt-bindings: PCI: Use IRQ flags for legacy PCI
+ IRQ interrupts
+Message-ID: <20191106234719.GA23983@bogus>
+References: <20191104163834.8932-1-andrew.murray@arm.com>
+ <20191104163834.8932-8-andrew.murray@arm.com>
+ <CACRpkdb=5i3+H3OtGXSYQEjSq5ROrysfmnG-koGck+chEEgLnQ@mail.gmail.com>
+ <20191105151622.GN9723@e119886-lin.cambridge.arm.com>
 MIME-Version: 1.0
-In-Reply-To: <b1a8fa60a3c8922c364a18b0583dab55660f2fb4.camel@collabora.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191105151622.GN9723@e119886-lin.cambridge.arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_152624_045756_FFC51A67 
-X-CRM114-Status: GOOD (  16.23  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191106_154722_754108_411D6000 
+X-CRM114-Status: GOOD (  16.27  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,128 +94,69 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "eddie.cai.linux@gmail.com" <eddie.cai.linux@gmail.com>,
- "kernel@collabora.com" <kernel@collabora.com>,
- "heiko@sntech.de" <heiko@sntech.de>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "jeffy.chen@rock-chips.com" <jeffy.chen@rock-chips.com>,
- "zyc@rock-chips.com" <zyc@rock-chips.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "tfiga@chromium.org" <tfiga@chromium.org>,
- "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
- "laurent.pinchart@ideasonboard.com" <laurent.pinchart@ideasonboard.com>,
- "sakari.ailus@linux.intel.com" <sakari.ailus@linux.intel.com>,
- Jacob Chen <jacob2.chen@rock-chips.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "zhengsq@rock-chips.com" <zhengsq@rock-chips.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Heiko Stuebner <heiko@sntech.de>,
+ Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>,
+ David Daney <david.daney@cavium.com>, linux-pci <linux-pci@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Binghui Wang <wangbinghui@hisilicon.com>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Jonathan Chocron <jonnyc@amazon.com>, Toan Le <toan@os.amperecomputing.com>,
+ Will Deacon <will@kernel.org>, Jesper Nilsson <jesper.nilsson@axis.com>,
+ Ryder Lee <ryder.lee@mediatek.com>,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ Fabio Estevam <festevam@gmail.com>, Tom Joseph <tjoseph@cadence.com>,
+ linux-arm-kernel@axis.com, Kishon Vijay Abraham I <kishon@ti.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Andy Gross <agross@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Xiaowei Song <songxiaowei@hisilicon.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Richard Zhu <hongxing.zhu@nxp.com>,
+ MSM <linux-arm-msm@vger.kernel.org>, Hou Zhiqiang <Zhiqiang.Hou@nxp.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Bjorn Helgaas <bhelgaas@google.com>, Linux-OMAP <linux-omap@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, rfi@lists.rocketboards.org,
+ Zhou Wang <wangzhou1@hisilicon.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Ley Foon Tan <lftan@altera.com>, Shawn Guo <shawnguo@kernel.org>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+On Tue, Nov 05, 2019 at 03:16:23PM +0000, Andrew Murray wrote:
+> On Tue, Nov 05, 2019 at 04:08:29PM +0100, Linus Walleij wrote:
+> > Hi Andrew,
+> > 
+> > thanks for your patch!
+> 
+> Thanks for the review.
+> 
+> > 
+> > On Mon, Nov 4, 2019 at 5:39 PM Andrew Murray <andrew.murray@arm.com> wrote:
+> > 
+> > > Replace magic numbers used to describe legacy PCI IRQ interrupts
+> > > with #define.
+> > >
+> > > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> > 
+> > When I add examples I usually make sure that above the examples
+> > are the appropriate #include files, this is becoming more important
+> > as we convert to yaml, then you need the right includes because the
+> > examples will get compiled.
+> 
+> OK thanks - I can see other files in Documentation that take this approach
+> I'll update this patch on my respin.
 
+FYI, It's been on my todo to add common includes like irq.h and gpio.h 
+to the example template used to compile the examples, so everyone 
+doesn't have to add them.
 
-On 11/6/19 11:44 AM, Ezequiel Garcia wrote:
-> Hi Hans, Helen:
-> 
-> On Wed, 2019-11-06 at 09:30 -0300, Helen Koike wrote:
->>
->> On 11/6/19 10:22 AM, Hans Verkuil (hansverk) wrote:
->>> On 11/6/19 1:01 PM, Helen Koike wrote:
->>>> From: Shunqian Zheng <zhengsq@rock-chips.com>
->>>>
->>>> Add the Rockchip ISP1 specific processing parameter format
->>>> V4L2_META_FMT_RK_ISP1_PARAMS and metadata format
->>>> V4L2_META_FMT_RK_ISP1_STAT_3A for 3A.
->>>>
->>>> Signed-off-by: Shunqian Zheng <zhengsq@rock-chips.com>
->>>> Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
->>>> Acked-by: Hans Verkuil <hans.verkuil@cisco.com>
->>>
->>> I acked this? It is missing documentation for these new formats.
->>
->> I think so https://www.spinics.net/lists/linux-rockchip/msg18999.html :)
->>
->> I'll update the docs and the fixes you pointed below.
->>
->> Thanks.
->> Helen
->>
->>>> [refactored for upstream]
->>>> Signed-off-by: Helen Koike <helen.koike@collabora.com>
->>>> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
->>>>
->>>> ---
->>>>
->>>> Changes in v9:
->>>> - Add reviewed-by tag from Laurent
->>>>
->>>> Changes in v8: None
->>>> Changes in v7:
->>>> - s/IPU3/RK_ISP1
->>>>
->>>>  drivers/media/v4l2-core/v4l2-ioctl.c | 2 ++
->>>>  include/uapi/linux/videodev2.h       | 4 ++++
->>>>  2 files changed, 6 insertions(+)
->>>>
->>>> diff --git a/drivers/media/v4l2-core/v4l2-ioctl.c b/drivers/media/v4l2-core/v4l2-ioctl.c
->>>> index 315ac12c3e0a..ade990554caf 100644
->>>> --- a/drivers/media/v4l2-core/v4l2-ioctl.c
->>>> +++ b/drivers/media/v4l2-core/v4l2-ioctl.c
->>>> @@ -1341,6 +1341,8 @@ static void v4l_fill_fmtdesc(struct v4l2_fmtdesc *fmt)
->>>>  	case V4L2_META_FMT_UVC:		descr = "UVC Payload Header Metadata"; break;
->>>>  	case V4L2_META_FMT_D4XX:	descr = "Intel D4xx UVC Metadata"; break;
->>>>  	case V4L2_META_FMT_VIVID:       descr = "Vivid Metadata"; break;
->>>> +	case V4L2_META_FMT_RK_ISP1_PARAMS:	descr = "Rockchip ISP1 3A params"; break;
->>>
->>> params -> Params
->>>
->>>> +	case V4L2_META_FMT_RK_ISP1_STAT_3A:	descr = "Rockchip ISP1 3A statistics"; break;
->>>
->>> statistics -> Statistics
->>>
->>>>  
->>>>  	default:
->>>>  		/* Compressed formats */
->>>> diff --git a/include/uapi/linux/videodev2.h b/include/uapi/linux/videodev2.h
->>>> index f98bbcced8ff..56798b09cd85 100644
->>>> --- a/include/uapi/linux/videodev2.h
->>>> +++ b/include/uapi/linux/videodev2.h
-> 
-> Can we avoid touching videodev2.h, as we did for the stateless codec pixfmts?
-
-I think it should be part of the uapi, as it is the metadata format used in the video output device.
-I propose to leave it inside drivers/staging/media/rkisp1/uapi/rkisp1-config.h while the driver is in staging,
-then we expose it later with a better documentation too. Make sense?
-
-Thanks,
-Helen
-
-> 
-> Thanks,
-> Ezequiel
-> 
->>>> @@ -762,6 +762,10 @@ struct v4l2_pix_format {
->>>>  #define V4L2_META_FMT_D4XX        v4l2_fourcc('D', '4', 'X', 'X') /* D4XX Payload Header metadata */
->>>>  #define V4L2_META_FMT_VIVID	  v4l2_fourcc('V', 'I', 'V', 'D') /* Vivid Metadata */
->>>>  
->>>> +/* Vendor specific - used for RK_ISP1 camera sub-system */
->>>> +#define V4L2_META_FMT_RK_ISP1_PARAMS	v4l2_fourcc('R', 'K', '1', 'P') /* Rockchip ISP1 params */
->>>> +#define V4L2_META_FMT_RK_ISP1_STAT_3A	v4l2_fourcc('R', 'K', '1', 'S') /* Rockchip ISP1 3A statistics */
->>>> +
->>>>  /* priv field value to indicates that subsequent fields are valid. */
->>>>  #define V4L2_PIX_FMT_PRIV_MAGIC		0xfeedcafe
->>>>  
->>>>
->>>
->>> Regards,
->>>
->>> 	Hans
->>>
-> 
-> 
+Rob
 
 _______________________________________________
 Linux-rockchip mailing list
