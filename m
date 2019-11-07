@@ -2,86 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1C91F2AB0
-	for <lists+linux-rockchip@lfdr.de>; Thu,  7 Nov 2019 10:30:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39EDAF2B8B
+	for <lists+linux-rockchip@lfdr.de>; Thu,  7 Nov 2019 10:55:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LrGfkhrpOqZG0VhzzKoyOLwXzXO7qk5nfsHDCMCudWY=; b=NMfLAzFpFkpaRH
-	pAnDqwPadOYHTGXjRm0Dt3sf5NiGWAnHxO94IQjXFNjeevm/3n34OHlwtFcNJZ85DgAbBk3f8avee
-	vCm9TzbSyg19lqDa4+dr5TeG6KQoO3LNZes+XvpW/zpG2M7j68s0A+Xx3w9Pn+raVxt0Sg8e2T42q
-	lOde8Fihw3gH7ax9jZ8NvPlm75MkDbTDn07WKugX7ZFMobS6jrkQNbtyrSy8KcPgtgZLkhhnZRck0
-	SUMOu/byRHQ9ztDZOwuUKUp7DqOKIdPm50H/L1YeuVEJwPeq43i6PJH14bMRJFsgcBshkFY1RuugF
-	Rxssu96nztQw26Rozp2Q==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rIQOqKi2utSMI5F9xn8pP5J3z3M780LSaoKiHNGHFtM=; b=L8y7b4ggOHI/wl
+	4G193Sfk7u/i3yZyH4swNkJ2BWtj3AzP9EqpusjsKm6Cy4CB/7IsMt+eJFuqP9vITzydSBHM0i2hk
+	0/w7u1Us6W9pmZWonve5eadXHNqSPYBgqBWsFwYWloJQPKgsr4llBy15z3w00sV81HUXfqxKxHtSi
+	extlj1YgXMjkepkxTx8Tql5SRtRk2k0tvDv5QJiM8+tSzyAurHGFCuB+ft7jT2qzBNxxngXjatCv8
+	Bi2GHB56f+7IyMs9nP5VRRc5DWTO34ksTRL8yjp4QnxNhYfQQ5Ao5MtkouhIpMncOiM2sfAttbUVS
+	iXEROXGO5qbKkHr6dErg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSe7j-0000sh-HB; Thu, 07 Nov 2019 09:30:39 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iSeVD-000373-IX; Thu, 07 Nov 2019 09:54:55 +0000
+Received: from smtprelay0119.hostedemail.com ([216.40.44.119]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSe74-0007XR-4S; Thu, 07 Nov 2019 09:29:59 +0000
-Received: by mail-wr1-x441.google.com with SMTP id j15so2170578wrw.5;
- Thu, 07 Nov 2019 01:29:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id;
- bh=O+PJ1ZZn/46Tl9iY76CTFXkJGMuUClMcIKHPnfX67PU=;
- b=ExSSkNBMRaqpENwcyHoUMKVHRx3ERHMBPqqA7vNtUGEM8uyNE+q89FAIx4p/bXQ80y
- xuuu2alYaeIc/YDffYAgPI/VkJ9LWRJrTxHFGX8VWQwysDcT+y1iZ0LXPGqx00A3yVUI
- 0VXzjUXBPH0RN7eascN/a8xn9B+qwMneU0yD8OKnU5gMKBaaBfvomqid6hshuXeTbDMB
- +VXKMjc2+5O0+iCl8fM083zJgKxW+htnmS36fEw+vt+5jfq6OYKIEJ8ddX6lXd5Y3pPY
- EWUw/neg7duyc37aqN/EAe7EW/YXhUU08xGynlny2LoQgwIOXX6phgXUqroQbuYk/JGa
- eZvg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id;
- bh=O+PJ1ZZn/46Tl9iY76CTFXkJGMuUClMcIKHPnfX67PU=;
- b=N2uB95is4PJr/xiOx80p1VtzL+XjQYY3IRKffHIH8lDViRlVERpBKY1HTQOMW5+ffD
- XPAm+atOzTx6bbY0CDOX5IVp9HLlI/U1re+51AZFvIVClJWOTzdOmm3vSbcKj94nPAzl
- FVPaqZ4/z3qM5I+UiDOC1nH50LRXmdgJeXDibao8mLbFN7fuLVL/JBQCDgWSfB7zHaLb
- 4TH9s5G2qvGzMyLvs/9i9PrDwpWcB+ghdFSs84evLhPfx21N1/Oknbo3aNX2mVzfebTF
- KbXHo3AY2h5hIAb1+btA+WDmQ/xJ/eKOpBb3pX11bab0gb4rHftjli8dg+G5d3oam5j7
- bDlA==
-X-Gm-Message-State: APjAAAVPPIVZkbgesT1yEMGYnWfvuJl4pW1oeNHQ1vY+OpB87cRm7bMw
- fqRIBOZ1mykXt+thD1W9NtE=
-X-Google-Smtp-Source: APXvYqwiYbI6O8+aUPp6Ep2W/Inr6Kp4MKn0CHA3p1g484JYEvk7zEomTG0WmL9mVQ81Yz5M61a3fA==
-X-Received: by 2002:adf:9d87:: with SMTP id p7mr1829599wre.11.1573118995612;
- Thu, 07 Nov 2019 01:29:55 -0800 (PST)
-Received: from localhost.localdomain ([197.254.95.38])
- by smtp.googlemail.com with ESMTPSA id v8sm2323607wra.79.2019.11.07.01.29.53
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 Nov 2019 01:29:54 -0800 (PST)
-From: Wambui Karuga <wambui.karugax@gmail.com>
-To: hjc@rock-chips.com, heiko@sntech.de, airlied@linux.ie, daniel@ffwll.ch,
- dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
+ id 1iSeUz-0002sH-U9; Thu, 07 Nov 2019 09:54:43 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay08.hostedemail.com (Postfix) with ESMTP id F0F76182CED34;
+ Thu,  7 Nov 2019 09:54:36 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 13, 1.2, 0, , d41d8cd98f00b204, joe@perches.com,
+ :::::::::::::::::,
+ RULES_HIT:41:355:379:599:973:988:989:1260:1277:1311:1313:1314:1345:1359:1381:1437:1515:1516:1518:1534:1540:1593:1594:1711:1730:1747:1777:1792:2393:2559:2562:2828:3138:3139:3140:3141:3142:3352:3622:3653:3865:3866:3870:3871:3872:3873:3874:4321:5007:6119:6691:7903:10008:10400:10848:11026:11232:11473:11657:11658:11914:12043:12048:12049:12296:12297:12438:12740:12760:12895:13019:13069:13095:13161:13229:13311:13357:13439:14659:14721:21080:21433:21627:30029:30054:30091,
+ 0,
+ RBL:47.151.135.224:@perches.com:.lbl8.mailshell.net-62.8.0.100 64.201.201.201,
+ CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none, DomainCache:0,
+ MSF:not bulk, SPF:fn, MSBL:0, DNSBL:neutral, Custom_rules:0:1:0, LFtime:25,
+ LUA_SUMMARY:none
+X-HE-Tag: ring31_45311ab5a8d41
+X-Filterd-Recvd-Size: 1775
+Received: from XPS-9350.home (unknown [47.151.135.224])
+ (Authenticated sender: joe@perches.com)
+ by omf20.hostedemail.com (Postfix) with ESMTPA;
+ Thu,  7 Nov 2019 09:54:35 +0000 (UTC)
+Message-ID: <4c74db2614cefe23f888d0643c2d7c356086745a.camel@perches.com>
+Subject: Re: [PATCH] drm/rockchip: use DRM_DEV_ERROR for log output
+From: Joe Perches <joe@perches.com>
+To: Wambui Karuga <wambui.karugax@gmail.com>, hjc@rock-chips.com, 
+ heiko@sntech.de, airlied@linux.ie, daniel@ffwll.ch, 
+ dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org, 
  linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] drm/rockchip: use DRM_DEV_ERROR for log output
-Date: Thu,  7 Nov 2019 12:29:45 +0300
-Message-Id: <20191107092945.15513-1-wambui.karugax@gmail.com>
-X-Mailer: git-send-email 2.17.1
+Date: Thu, 07 Nov 2019 01:54:22 -0800
+In-Reply-To: <20191107092945.15513-1-wambui.karugax@gmail.com>
+References: <20191107092945.15513-1-wambui.karugax@gmail.com>
+User-Agent: Evolution 3.34.1-2 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_012958_282146_A16C95BA 
-X-CRM114-Status: GOOD (  10.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191107_015442_038894_FCDED43C 
+X-CRM114-Status: UNSURE (   8.07  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [216.40.44.119 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wambui.karugax[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,35 +79,37 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Replace the use of the dev_err macro with the DRM_DEV_ERROR
-DRM helper macro.
+On Thu, 2019-11-07 at 12:29 +0300, Wambui Karuga wrote:
+> Replace the use of the dev_err macro with the DRM_DEV_ERROR
+> DRM helper macro.
 
-Signed-off-by: Wambui Karuga <wambui.karugax@gmail.com>
----
- drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+The commit message should show the reason _why_ you are doing
+this instead of just stating that you are doing this.
 
-diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-index bc073ec5c183..5f23cf702cb4 100644
---- a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-+++ b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-@@ -916,7 +916,7 @@ static int dw_mipi_dsi_rockchip_probe(struct platform_device *pdev)
- 	}
- 
- 	if (!dsi->cdata) {
--		dev_err(dev, "no dsi-config for %s node\n", np->name);
-+		DRM_DEV_ERROR(dev, "no dsi-config for %s node\n", np->name);
- 		return -EINVAL;
- 	}
- 
--- 
-2.17.1
+It's not that dev_err is uncommon in drivers/gpu/drm.
+
+$ git grep -w dev_err drivers/gpu/drm | wc -l
+1950
+$ git grep -w DRM_DEV_ERROR drivers/gpu/drm | wc -l
+756
+
+> diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+[]
+> @@ -916,7 +916,7 @@ static int dw_mipi_dsi_rockchip_probe(struct platform_device *pdev)
+>  	}
+>  
+>  	if (!dsi->cdata) {
+> -		dev_err(dev, "no dsi-config for %s node\n", np->name);
+> +		DRM_DEV_ERROR(dev, "no dsi-config for %s node\n", np->name);
+>  		return -EINVAL;
+>  	}
+
+
 
 
 _______________________________________________
