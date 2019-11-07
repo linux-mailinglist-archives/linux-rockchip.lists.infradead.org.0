@@ -2,89 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18414F25D5
-	for <lists+linux-rockchip@lfdr.de>; Thu,  7 Nov 2019 04:08:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5B99F2910
+	for <lists+linux-rockchip@lfdr.de>; Thu,  7 Nov 2019 09:27:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0vtyHCuSKW8ttDN8CK75ysctU5uoUgBa/OHueAMdN34=; b=RTYGtdqcpI+x5G
-	ps9tPXY3XMYRGxl3IJ+3QfPr15TdStJ1CS5p86dd+mN+pjsmvYc6ma3IIGv2Bbyt5cX2TxL1La6K3
-	AvXT0MoQClp0UpOwKwY3orrhcubdMKx0POo7eEVXEucm5Ti8B35m/4dQfiE+b+EauTdXv1NGtafm1
-	hnwLbTkH5fnnDkqaKX+Ukf93AqDVA1rLgggn8WPb5QL+fMPJ7rTFn8fu79JbpMb3EoBbvY6pO+1BS
-	HM+NrSgPM17LkuNbXgwNQsY1mUIomUs2lyj4qr5ncrlzfeqbsgmf+hP4lsYhK7PRHSvtscTEgRTml
-	Zc20i3pLH+4y3TMKNerg==;
+	List-Owner; bh=/68tbfy1x1h3q1tlpS+5sHDY3JbwyJn54KNaNCw6Uag=; b=WwDn10GzIw+d22
+	DL2QxOc6+u3K0JvCFmNf8k72/ne7GhbMld/PB1WS/PMh/YYjY3QzhiINpEcVRrGFlsfG2W8tJnLbZ
+	k5e6Gcx3drN1st1XMz/15J2eDpv4PUcISRrlv+Ht7Bcg38SDS4M7mS+wBimk4bzLGzNXUhwuU9Rm8
+	BZSlZIBwB49PBSHbZuOkIDVI9Ehvuw+DoH97Gy+BYOLeCH06SFeIWaZMbMHSwBrMDkzVjsmXeffeU
+	dP9IQYAcIEiTW3CmrJM1+kpUOVdpWsrk7YZmcDv+PMs8AIm8sXczzyjJtsq7/opIPx9Iw8yzRKc8I
+	VO1XDjKtgF632UKf5YxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSYAE-0000dU-19; Thu, 07 Nov 2019 03:08:50 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1iSd8n-0001e9-Ba; Thu, 07 Nov 2019 08:27:41 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSYA9-0000ck-WF
- for linux-rockchip@lists.infradead.org; Thu, 07 Nov 2019 03:08:47 +0000
-Received: by mail-ed1-x542.google.com with SMTP id f7so646920edq.3
- for <linux-rockchip@lists.infradead.org>; Wed, 06 Nov 2019 19:08:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AAfjo+6GX40N8x/qOoAPJLTNhLDPy6SYwK6lSBU1urk=;
- b=YMfJpiCN4Ig8D+LLOBNrepFfMz7Ze5j63f+c9Uw8V5q9niZmdpwGA+CXuQuw5PrWS3
- 7dTE+HC+yEBDy3rtNxNpUJeDPn2L8svDkdkUHIxc9CIRoxICSYDdy1kzKdOnOPS2U2cX
- ak6fy7fMi6PIbdJJLXbqqFBQHk80kW0gbEpmk=
+ id 1iSd8k-0001do-Qc
+ for linux-rockchip@lists.infradead.org; Thu, 07 Nov 2019 08:27:40 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id a15so1920402wrf.9
+ for <linux-rockchip@lists.infradead.org>; Thu, 07 Nov 2019 00:27:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=h4K7TfJavvavtarTw//D0rJYwTw3W9sc+VxHibBMIh0=;
+ b=eOmVSaD7IS19hDgEpPxBVKet3+9nAmXbB4y8KiLMpRA/go9xNdbDgH3c6a+CYSLMdE
+ fmzo/om/CvQPeSGdxroqImiXi2JTjr+YL9qJAlPdSg+cvagFRrs90p0HH3qLPvssLpRS
+ 4NM1IxbQG9CWMN8mQS+vA4gNXZhBDUvpQTyXE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=AAfjo+6GX40N8x/qOoAPJLTNhLDPy6SYwK6lSBU1urk=;
- b=VISkmRDKuktzsQJvIBYAKlGS7duINtG5HDmtocMFd70LrZjVF++KFtSCHGldyFyRnk
- Y5KXYJTy5UO1winWKui6TpZPP40rFw1TB7cZnMQxm7/UyXfl8QE4q0QL6KABPySrxeY4
- GwW87T8FHGwrxtEZegr+b+TpYKZ/SbEeok1XkaCr4IAiJfbVrHpZ1LigYQFJY42i08Zx
- AsK+3HQLTjWVOjAP6OqCV900LMjMMrzVwkCyVTihQVYAcLoNloXeXVb7YW0S+j6TePpc
- Vydv4WsjEZM++pwE7xcTOORjUJDn6yHdq8n6f432hPFiRjxGyPBlIbWtVqbMbaF94WAl
- sqFg==
-X-Gm-Message-State: APjAAAU9JPyDhGI6FtetcQHKg7T1ar+eGN0W1xEIDoDsjmeN3lUCuzRm
- 0Jata/a3iwyZanU96vRcVZfDJYwVjb2pRw==
-X-Google-Smtp-Source: APXvYqwGOE1cIcuBeFzIPff880sIK/sqDboY56ZyblJgFW9v+Kde45u6lG3n8SSng/6r2S4aJrXsWg==
-X-Received: by 2002:aa7:c44a:: with SMTP id n10mr1166338edr.282.1573096123928; 
- Wed, 06 Nov 2019 19:08:43 -0800 (PST)
-Received: from mail-wr1-f50.google.com (mail-wr1-f50.google.com.
- [209.85.221.50])
- by smtp.gmail.com with ESMTPSA id b22sm16723edj.25.2019.11.06.19.08.40
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 06 Nov 2019 19:08:41 -0800 (PST)
-Received: by mail-wr1-f50.google.com with SMTP id t1so1282201wrv.4
- for <linux-rockchip@lists.infradead.org>; Wed, 06 Nov 2019 19:08:40 -0800 (PST)
-X-Received: by 2002:a5d:4946:: with SMTP id r6mr52152wrs.155.1573096120434;
- Wed, 06 Nov 2019 19:08:40 -0800 (PST)
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition
+ :content-transfer-encoding:in-reply-to:user-agent;
+ bh=h4K7TfJavvavtarTw//D0rJYwTw3W9sc+VxHibBMIh0=;
+ b=czaAcG11T2KMEyAibRtt3Op6gwEVMACmBggHsiDJgFMm2QejxgCgHaB3N9O2yw0CbT
+ 5UrBvY4MxJr2YiKn0yAfrozJlscJSevAd77JycHQm6XWrcMpNrN9eklnMBNmUuF+AiQB
+ S6zNkO0PQwqfcZ9IVigUS0SMytbDA9r0YbSTx05EMeF/JRyEoIjCTrxdpTno0IpVJCda
+ xzFI9uf3qYHhLDwv14atjFIlF70JC4TOEmTc+eWGXYpdZQE3pfr4ZHyZq+gDoGLQlS2T
+ psXG8y72YULU2B+uEgDJFcC6cqPT71cbwMTqki+7J2LRuwyM4ZX575B6Y11NU11bpinp
+ gkxg==
+X-Gm-Message-State: APjAAAUFg1O30svBpE4ZefJ3afZE7/X9weRtCSgK/NTugofEZ4wbTXMH
+ gsZUZTeDc1szcWESOkqIbD14hf/oS50=
+X-Google-Smtp-Source: APXvYqw9LlvGfiySmP5xOuhfh34kHBu0sjeBpgLZBX2QP9XgxvtQK1pzXbNC7BGKJ59VBjSTUXb0Ug==
+X-Received: by 2002:a5d:62cd:: with SMTP id o13mr1663268wrv.367.1573115256958; 
+ Thu, 07 Nov 2019 00:27:36 -0800 (PST)
+Received: from phenom.ffwll.local (212-51-149-96.fiber7.init7.net.
+ [212.51.149.96])
+ by smtp.gmail.com with ESMTPSA id h140sm1564232wme.22.2019.11.07.00.27.35
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 07 Nov 2019 00:27:35 -0800 (PST)
+Date: Thu, 7 Nov 2019 09:27:33 +0100
+From: Daniel Vetter <daniel@ffwll.ch>
+To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Subject: Re: [PATCHv2 1/4] drm/arm: Factor out generic afbc helpers
+Message-ID: <20191107082733.GI23790@phenom.ffwll.local>
+References: <2485717.1SzL54aMiy@e123338-lin>
+ <20191104221228.3588-1-andrzej.p@collabora.com>
+ <20191104221228.3588-2-andrzej.p@collabora.com>
+ <20191105092232.GV10326@phenom.ffwll.local>
+ <d4828420-6109-ff93-e0da-d0493cf3aef5@collabora.com>
 MIME-Version: 1.0
-References: <20191106120132.6876-1-helen.koike@collabora.com>
- <20191106120132.6876-2-helen.koike@collabora.com>
- <9102bcf8-0279-7972-daff-b15aaf98804d@cisco.com>
- <28cff7ab-ef56-791e-0342-571f64cb9807@collabora.com>
- <b1a8fa60a3c8922c364a18b0583dab55660f2fb4.camel@collabora.com>
- <c3b03fc7-100d-4c16-f561-b26969d13fea@collabora.com>
-In-Reply-To: <c3b03fc7-100d-4c16-f561-b26969d13fea@collabora.com>
-From: Tomasz Figa <tfiga@chromium.org>
-Date: Thu, 7 Nov 2019 12:08:27 +0900
-X-Gmail-Original-Message-ID: <CAAFQd5AtZ+MiAWVDVkE3PLj-TuwjZd=zg9ozE6P_6bNW_o0oBg@mail.gmail.com>
-Message-ID: <CAAFQd5AtZ+MiAWVDVkE3PLj-TuwjZd=zg9ozE6P_6bNW_o0oBg@mail.gmail.com>
-Subject: Re: [PATCH v9 1/4] media: videodev2.h, v4l2-ioctl: add rkisp1 meta
- buffer format
-To: Helen Koike <helen.koike@collabora.com>
+Content-Disposition: inline
+In-Reply-To: <d4828420-6109-ff93-e0da-d0493cf3aef5@collabora.com>
+X-Operating-System: Linux phenom 5.2.0-3-amd64 
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_190846_063741_A0DDC997 
-X-CRM114-Status: GOOD (  20.01  )
+X-CRM114-CacheID: sfid-20191107_002738_916204_5521E525 
+X-CRM114-Status: GOOD (  17.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:42c listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -92,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,142 +101,128 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "eddie.cai.linux@gmail.com" <eddie.cai.linux@gmail.com>,
- "kernel@collabora.com" <kernel@collabora.com>,
- "heiko@sntech.de" <heiko@sntech.de>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "jeffy.chen@rock-chips.com" <jeffy.chen@rock-chips.com>,
- "zyc@rock-chips.com" <zyc@rock-chips.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jacob Chen <jacob2.chen@rock-chips.com>,
- "Hans Verkuil \(hansverk\)" <hansverk@cisco.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
- "laurent.pinchart@ideasonboard.com" <laurent.pinchart@ideasonboard.com>,
- "sakari.ailus@linux.intel.com" <sakari.ailus@linux.intel.com>,
- "zhengsq@rock-chips.com" <zhengsq@rock-chips.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kernel@collabora.com, Mihail Atanassov <mihail.atanassov@arm.com>,
+ David Airlie <airlied@linux.ie>, Liviu Dudau <liviu.dudau@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+ James Wang <james.qian.wang@arm.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Ayan Halder <Ayan.Halder@arm.com>, Sean Paul <sean@poorly.run>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, Nov 7, 2019 at 8:26 AM Helen Koike <helen.koike@collabora.com> wrote:
->
->
->
-> On 11/6/19 11:44 AM, Ezequiel Garcia wrote:
-> > Hi Hans, Helen:
-> >
-> > On Wed, 2019-11-06 at 09:30 -0300, Helen Koike wrote:
-> >>
-> >> On 11/6/19 10:22 AM, Hans Verkuil (hansverk) wrote:
-> >>> On 11/6/19 1:01 PM, Helen Koike wrote:
-> >>>> From: Shunqian Zheng <zhengsq@rock-chips.com>
-> >>>>
-> >>>> Add the Rockchip ISP1 specific processing parameter format
-> >>>> V4L2_META_FMT_RK_ISP1_PARAMS and metadata format
-> >>>> V4L2_META_FMT_RK_ISP1_STAT_3A for 3A.
-> >>>>
-> >>>> Signed-off-by: Shunqian Zheng <zhengsq@rock-chips.com>
-> >>>> Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
-> >>>> Acked-by: Hans Verkuil <hans.verkuil@cisco.com>
-> >>>
-> >>> I acked this? It is missing documentation for these new formats.
-> >>
-> >> I think so https://www.spinics.net/lists/linux-rockchip/msg18999.html :)
-> >>
-> >> I'll update the docs and the fixes you pointed below.
-> >>
-> >> Thanks.
-> >> Helen
-> >>
-> >>>> [refactored for upstream]
-> >>>> Signed-off-by: Helen Koike <helen.koike@collabora.com>
-> >>>> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-> >>>>
-> >>>> ---
-> >>>>
-> >>>> Changes in v9:
-> >>>> - Add reviewed-by tag from Laurent
-> >>>>
-> >>>> Changes in v8: None
-> >>>> Changes in v7:
-> >>>> - s/IPU3/RK_ISP1
-> >>>>
-> >>>>  drivers/media/v4l2-core/v4l2-ioctl.c | 2 ++
-> >>>>  include/uapi/linux/videodev2.h       | 4 ++++
-> >>>>  2 files changed, 6 insertions(+)
-> >>>>
-> >>>> diff --git a/drivers/media/v4l2-core/v4l2-ioctl.c b/drivers/media/v4l2-core/v4l2-ioctl.c
-> >>>> index 315ac12c3e0a..ade990554caf 100644
-> >>>> --- a/drivers/media/v4l2-core/v4l2-ioctl.c
-> >>>> +++ b/drivers/media/v4l2-core/v4l2-ioctl.c
-> >>>> @@ -1341,6 +1341,8 @@ static void v4l_fill_fmtdesc(struct v4l2_fmtdesc *fmt)
-> >>>>    case V4L2_META_FMT_UVC:         descr = "UVC Payload Header Metadata"; break;
-> >>>>    case V4L2_META_FMT_D4XX:        descr = "Intel D4xx UVC Metadata"; break;
-> >>>>    case V4L2_META_FMT_VIVID:       descr = "Vivid Metadata"; break;
-> >>>> +  case V4L2_META_FMT_RK_ISP1_PARAMS:      descr = "Rockchip ISP1 3A params"; break;
-> >>>
-> >>> params -> Params
-> >>>
-> >>>> +  case V4L2_META_FMT_RK_ISP1_STAT_3A:     descr = "Rockchip ISP1 3A statistics"; break;
-> >>>
-> >>> statistics -> Statistics
-> >>>
-> >>>>
-> >>>>    default:
-> >>>>            /* Compressed formats */
-> >>>> diff --git a/include/uapi/linux/videodev2.h b/include/uapi/linux/videodev2.h
-> >>>> index f98bbcced8ff..56798b09cd85 100644
-> >>>> --- a/include/uapi/linux/videodev2.h
-> >>>> +++ b/include/uapi/linux/videodev2.h
-> >
-> > Can we avoid touching videodev2.h, as we did for the stateless codec pixfmts?
->
-> I think it should be part of the uapi, as it is the metadata format used in the video output device.
-> I propose to leave it inside drivers/staging/media/rkisp1/uapi/rkisp1-config.h while the driver is in staging,
-> then we expose it later with a better documentation too. Make sense?
+On Wed, Nov 06, 2019 at 01:45:05PM +0100, Andrzej Pietrasiewicz wrote:
+> Hi Daniel,
+> =
 
-Makes sense, as it's also what we've done for ipu3, +/- a slightly
-different path:
-https://elixir.bootlin.com/linux/latest/source/drivers/staging/media/ipu3/include/intel-ipu3.h#L12
+> Thank you for review,
+> =
 
-We could possibly move the header to include/rockchip-isp1.h to be consistent.
+> W dniu 05.11.2019 o=A010:22, Daniel Vetter pisze:
+> > On Mon, Nov 04, 2019 at 11:12:25PM +0100, Andrzej Pietrasiewicz wrote:
+> > > These are useful for other users of afbc, e.g. rockchip.
+> > > =
 
-Best regards,
-Tomasz
+> =
 
->
-> Thanks,
-> Helen
->
-> >
-> > Thanks,
-> > Ezequiel
-> >
-> >>>> @@ -762,6 +762,10 @@ struct v4l2_pix_format {
-> >>>>  #define V4L2_META_FMT_D4XX        v4l2_fourcc('D', '4', 'X', 'X') /* D4XX Payload Header metadata */
-> >>>>  #define V4L2_META_FMT_VIVID         v4l2_fourcc('V', 'I', 'V', 'D') /* Vivid Metadata */
-> >>>>
-> >>>> +/* Vendor specific - used for RK_ISP1 camera sub-system */
-> >>>> +#define V4L2_META_FMT_RK_ISP1_PARAMS      v4l2_fourcc('R', 'K', '1', 'P') /* Rockchip ISP1 params */
-> >>>> +#define V4L2_META_FMT_RK_ISP1_STAT_3A     v4l2_fourcc('R', 'K', '1', 'S') /* Rockchip ISP1 3A statistics */
-> >>>> +
-> >>>>  /* priv field value to indicates that subsequent fields are valid. */
-> >>>>  #define V4L2_PIX_FMT_PRIV_MAGIC           0xfeedcafe
-> >>>>
-> >>>>
-> >>>
-> >>> Regards,
-> >>>
-> >>>     Hans
-> >>>
-> >
-> >
+> <snip>
+> =
+
+> > > +
+> > > +bool drm_afbc_check_fb_size_ret(u32 pitch, int bpp,
+> > > +				u32 w, u32 h, u32 superblk_w, u32 superblk_h,
+> > > +				size_t size, u32 offset, u32 hdr_align,
+> > > +				u32 *payload_off, u32 *total_size)
+> > > +{
+> > > +	int n_superblks =3D 0;
+> > > +	u32 superblk_sz =3D 0;
+> > > +	u32 afbc_size =3D 0;
+> > > +
+> > > +	n_superblks =3D (w / superblk_w) * (h / superblk_h);
+> > > +	superblk_sz =3D (bpp * superblk_w * superblk_h) / BITS_PER_BYTE;
+> > > +	afbc_size =3D ALIGN(n_superblks * AFBC_HEADER_SIZE, hdr_align);
+> > > +	*payload_off =3D afbc_size;
+> > > +
+> > > +	afbc_size +=3D n_superblks * ALIGN(superblk_sz, AFBC_SUPERBLK_ALIGN=
+MENT);
+> > > +	*total_size =3D afbc_size + offset;
+> > > +
+> > > +	if ((w * bpp) !=3D (pitch * BITS_PER_BYTE)) {
+> > > +		DRM_DEBUG_KMS("Invalid value of (pitch * BITS_PER_BYTE) (=3D%u) sh=
+ould be same as width (=3D%u) * bpp (=3D%u)\n",
+> > > +			      pitch * BITS_PER_BYTE, w, bpp
+> > > +		);
+> > > +		return false;
+> > > +	}
+> > > +
+> > > +	if (size < afbc_size) {
+> > > +		DRM_DEBUG_KMS("buffer size (%zu) too small for AFBC buffer size =
+=3D %u\n",
+> > > +			      size, afbc_size
+> > > +		);
+> > > +
+> > > +		return false;
+> > > +	}
+> > > +
+> > > +	return true;
+> > > +}
+> > > +EXPORT_SYMBOL(drm_afbc_check_fb_size_ret);
+> > > +
+> > > +bool drm_afbc_check_fb_size(u32 pitch, int bpp,
+> > > +			    u32 w, u32 h, u32 superblk_w, u32 superblk_h,
+> > > +			    size_t size, u32 offset, u32 hdr_align)
+> > > +{
+> > > +	u32 payload_offset, total_size;
+> > > +
+> > > +	return drm_afbc_check_fb_size_ret(pitch, bpp, w, h,
+> > > +					  superblk_w, superblk_h,
+> > > +					  size, offset, hdr_align,
+> > > +					  &payload_offset, &total_size);
+> > > +}
+> > > +EXPORT_SYMBOL(drm_afbc_check_fb_size);
+> > =
+
+> > Why don't we have one overall "check afbc parameters against buffer"
+> > function?
+> > =
+
+> =
+
+> I noticed that different drivers have different needs (malidp
+> and rockchip are kind of similar, but komeda is a bit different).
+> That is why the helpers are only building blocks out of which
+> each driver builds its own checking logic. In particular komeda
+> wants some by-products of the check stored in its internal data
+> structures, hence drm_afbc_check_fb_size_ret() and its wrapper
+> drm_afbc_check_fb_size() which ignores the "out" parameters.
+> =
+
+> If I wanted to create one overall "check afbc parameters" I'd have
+> to come up with a way to pass driver-specific requirements to it
+> and then inside the function have some logic to decide what to
+> check against what. Do you think it is worth it?
+
+Hm I figured there's at least two parts of this:
+- Generic checking of afbc against the fb parameters, i.e. is it big
+  enough, correctly aligned, all that.
+- Additional driver checks, which might need some of the same parameters
+  again.
+
+The idea behind asking for the first part is that maybe we should put that
+into the core as part of the addfb checks (like we do for the tiled NV12
+thing already). Then drivers only need to do additional checks on top for
+their specific constraints. For that you could expose some helpers ofc (to
+get the payload_offset and anything else computed you might need).
+
+But the basic drm_afbc_check_fb_size() should imo be done unconditionally
+for any afbc modifier. To make sure we don't have lots of drivers with
+different bugs in that thing.
+-Daniel
+-- =
+
+Daniel Vetter
+Software Engineer, Intel Corporation
+http://blog.ffwll.ch
 
 _______________________________________________
 Linux-rockchip mailing list
