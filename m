@@ -2,81 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48060F2538
-	for <lists+linux-rockchip@lfdr.de>; Thu,  7 Nov 2019 03:20:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18414F25D5
+	for <lists+linux-rockchip@lfdr.de>; Thu,  7 Nov 2019 04:08:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=msQXcgcNmqZafYQgSDCA6nZmdQnRnvw+BKx9c4iEUU8=; b=ULFp2GHG2TdKFA
-	VANe/WWEN973Ur1id6uLBCYtjaIOZ4VnQ9WfkmDmpohX0PQXHkbPYTp1DrwQjPFXW02RENaIZwImT
-	SexhAA6ScSSZBZX5dRbCYihKtwkbrcq5lzy1eRZc0en+/DwJTmhC0mjsUQGFyEbkSpAqavvyqA7qj
-	uk69Oxk7iajUeUKiVbAFzKvxPI5EiYmLn4PBhXeEK+KSSjzNUrD8Db/9Y1QxGHExUKBGsoItDlvht
-	BAuerlgKk5c9DTkKqU8LDipTPI1ryIUrMbLrdz/DbWubslBPBolyK9mhmJVf4sCbukaGNN8v6SEgo
-	9jC5bg+EsNB+l4Cx+bCA==;
+	List-Owner; bh=0vtyHCuSKW8ttDN8CK75ysctU5uoUgBa/OHueAMdN34=; b=RTYGtdqcpI+x5G
+	ps9tPXY3XMYRGxl3IJ+3QfPr15TdStJ1CS5p86dd+mN+pjsmvYc6ma3IIGv2Bbyt5cX2TxL1La6K3
+	AvXT0MoQClp0UpOwKwY3orrhcubdMKx0POo7eEVXEucm5Ti8B35m/4dQfiE+b+EauTdXv1NGtafm1
+	hnwLbTkH5fnnDkqaKX+Ukf93AqDVA1rLgggn8WPb5QL+fMPJ7rTFn8fu79JbpMb3EoBbvY6pO+1BS
+	HM+NrSgPM17LkuNbXgwNQsY1mUIomUs2lyj4qr5ncrlzfeqbsgmf+hP4lsYhK7PRHSvtscTEgRTml
+	Zc20i3pLH+4y3TMKNerg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSXPp-0001f0-5w; Thu, 07 Nov 2019 02:20:53 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iSYAE-0000dU-19; Thu, 07 Nov 2019 03:08:50 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSXPZ-0001UK-Ep
- for linux-rockchip@lists.infradead.org; Thu, 07 Nov 2019 02:20:39 +0000
-Received: by mail-pg1-x544.google.com with SMTP id l24so750306pgh.10
- for <linux-rockchip@lists.infradead.org>; Wed, 06 Nov 2019 18:20:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=7nVUVPTizlGkprPOHGMGuKiTavG+4pamQJDarm5kvv0=;
- b=G4sld1CnF+WGUMEYhkeg7b2c/ddWHkENgd9t/sjURqESd/spTRn3DckkUV+ggVqpxs
- DX9+prVgoROWZ5ZTikOoUSh3NE/f56x4Np5XPl2GPeFRBsBi+riqR1pLcOWV0xUehBKf
- wmp5tm/wSCDSFyRRXxKDWl6js6NUHbeQ5AnxmEHoYGfK13eYs+rAXMrJjSP7M7pX2ldn
- i0v+116tgdd7LnHQ8iJ9Grkx8U7+zNxOumG3V2S6JaYKQm/sTmaVAi9KggcL62NTKoNH
- sKC2yS3w1LireYqKif9W7OwD+6eWDWBfqJVc/eB1HBlNPY0DLVBj4/tFqdZKKbhpfWpk
- /BoA==
+ id 1iSYA9-0000ck-WF
+ for linux-rockchip@lists.infradead.org; Thu, 07 Nov 2019 03:08:47 +0000
+Received: by mail-ed1-x542.google.com with SMTP id f7so646920edq.3
+ for <linux-rockchip@lists.infradead.org>; Wed, 06 Nov 2019 19:08:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=AAfjo+6GX40N8x/qOoAPJLTNhLDPy6SYwK6lSBU1urk=;
+ b=YMfJpiCN4Ig8D+LLOBNrepFfMz7Ze5j63f+c9Uw8V5q9niZmdpwGA+CXuQuw5PrWS3
+ 7dTE+HC+yEBDy3rtNxNpUJeDPn2L8svDkdkUHIxc9CIRoxICSYDdy1kzKdOnOPS2U2cX
+ ak6fy7fMi6PIbdJJLXbqqFBQHk80kW0gbEpmk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=7nVUVPTizlGkprPOHGMGuKiTavG+4pamQJDarm5kvv0=;
- b=dYzWSYUGT3rQ+FDYXKeX6IPrxsh+DFmu/YPM4ZNz3uqE+PjgxIbpf2nlkeHbQvj1lr
- /1fhOHfJsCB96Ot7wzG2Eib7D9v9iAbr6ju9xc/mQHzypglh2Hr416dWP/iSU64AmvWF
- YlH8bXD3Yj4V9FQqXR/uEQiKIeakXBNkLtFoJxnO9fxCihb2I9PmJaJEePXqejomcidS
- Myy2wYcl0Ja/d5kP1n5pD799e378OiMgGFIra7MvNPiIAaUC3gGdlfLD8O1THKGrDcYC
- cLWQe8LmYQy6NgQt2ohKq8S6QP0LIueiFS+uG1c1EJdf+ghpceSRkMlGR5H2xptgudXq
- Q7Uw==
-X-Gm-Message-State: APjAAAXTRQZ+9uIzUtHQ3610ax5lnQdZhp3AJ8X+quiAy3syvKVEI74W
- Y8+V/4rXWWZfEMqEYIiKh98Xsw==
-X-Google-Smtp-Source: APXvYqwONm0UK9rYybGAoObi3hSqRbZAToeZCLsdFmnHfwr+0izG5T3e9gW6wi0eJH6dtm/LZyXAwg==
-X-Received: by 2002:a17:90a:634c:: with SMTP id
- v12mr1614939pjs.27.1573093236794; 
- Wed, 06 Nov 2019 18:20:36 -0800 (PST)
-Received: from localhost ([122.171.110.253])
- by smtp.gmail.com with ESMTPSA id w2sm342736pfj.22.2019.11.06.18.20.35
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 06 Nov 2019 18:20:36 -0800 (PST)
-Date: Thu, 7 Nov 2019 07:50:32 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Amit Kucheria <amit.kucheria@linaro.org>
-Subject: Re: [PATCH 07/11] thermal: rockchip: Appease the kernel-doc deity
-Message-ID: <20191107022032.feqnv3gguywai6cj@vireshk-i7>
-References: <cover.1573046440.git.amit.kucheria@linaro.org>
- <290895a22aa8a13c13b3a4ae77c13244b4ecee58.1573046440.git.amit.kucheria@linaro.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=AAfjo+6GX40N8x/qOoAPJLTNhLDPy6SYwK6lSBU1urk=;
+ b=VISkmRDKuktzsQJvIBYAKlGS7duINtG5HDmtocMFd70LrZjVF++KFtSCHGldyFyRnk
+ Y5KXYJTy5UO1winWKui6TpZPP40rFw1TB7cZnMQxm7/UyXfl8QE4q0QL6KABPySrxeY4
+ GwW87T8FHGwrxtEZegr+b+TpYKZ/SbEeok1XkaCr4IAiJfbVrHpZ1LigYQFJY42i08Zx
+ AsK+3HQLTjWVOjAP6OqCV900LMjMMrzVwkCyVTihQVYAcLoNloXeXVb7YW0S+j6TePpc
+ Vydv4WsjEZM++pwE7xcTOORjUJDn6yHdq8n6f432hPFiRjxGyPBlIbWtVqbMbaF94WAl
+ sqFg==
+X-Gm-Message-State: APjAAAU9JPyDhGI6FtetcQHKg7T1ar+eGN0W1xEIDoDsjmeN3lUCuzRm
+ 0Jata/a3iwyZanU96vRcVZfDJYwVjb2pRw==
+X-Google-Smtp-Source: APXvYqwGOE1cIcuBeFzIPff880sIK/sqDboY56ZyblJgFW9v+Kde45u6lG3n8SSng/6r2S4aJrXsWg==
+X-Received: by 2002:aa7:c44a:: with SMTP id n10mr1166338edr.282.1573096123928; 
+ Wed, 06 Nov 2019 19:08:43 -0800 (PST)
+Received: from mail-wr1-f50.google.com (mail-wr1-f50.google.com.
+ [209.85.221.50])
+ by smtp.gmail.com with ESMTPSA id b22sm16723edj.25.2019.11.06.19.08.40
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 06 Nov 2019 19:08:41 -0800 (PST)
+Received: by mail-wr1-f50.google.com with SMTP id t1so1282201wrv.4
+ for <linux-rockchip@lists.infradead.org>; Wed, 06 Nov 2019 19:08:40 -0800 (PST)
+X-Received: by 2002:a5d:4946:: with SMTP id r6mr52152wrs.155.1573096120434;
+ Wed, 06 Nov 2019 19:08:40 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <290895a22aa8a13c13b3a4ae77c13244b4ecee58.1573046440.git.amit.kucheria@linaro.org>
-User-Agent: NeoMutt/20180716-391-311a52
+References: <20191106120132.6876-1-helen.koike@collabora.com>
+ <20191106120132.6876-2-helen.koike@collabora.com>
+ <9102bcf8-0279-7972-daff-b15aaf98804d@cisco.com>
+ <28cff7ab-ef56-791e-0342-571f64cb9807@collabora.com>
+ <b1a8fa60a3c8922c364a18b0583dab55660f2fb4.camel@collabora.com>
+ <c3b03fc7-100d-4c16-f561-b26969d13fea@collabora.com>
+In-Reply-To: <c3b03fc7-100d-4c16-f561-b26969d13fea@collabora.com>
+From: Tomasz Figa <tfiga@chromium.org>
+Date: Thu, 7 Nov 2019 12:08:27 +0900
+X-Gmail-Original-Message-ID: <CAAFQd5AtZ+MiAWVDVkE3PLj-TuwjZd=zg9ozE6P_6bNW_o0oBg@mail.gmail.com>
+Message-ID: <CAAFQd5AtZ+MiAWVDVkE3PLj-TuwjZd=zg9ozE6P_6bNW_o0oBg@mail.gmail.com>
+Subject: Re: [PATCH v9 1/4] media: videodev2.h, v4l2-ioctl: add rkisp1 meta
+ buffer format
+To: Helen Koike <helen.koike@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_182037_497683_013F6D38 
-X-CRM114-Status: GOOD (  21.41  )
+X-CRM114-CacheID: sfid-20191106_190846_063741_A0DDC997 
+X-CRM114-Status: GOOD (  20.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -87,6 +92,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,178 +105,142 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Amit Kucheria <amit.kucheria@verdurent.com>,
- Heiko Stuebner <heiko@sntech.de>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Amit Daniel Kachhap <amit.kachhap@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- edubezval@gmail.com, linux-rockchip@lists.infradead.org,
- Kukjin Kim <kgene@kernel.org>, Guillaume La Roque <glaroque@baylibre.com>,
- linux-pm@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Thierry Reding <thierry.reding@gmail.com>, Jun Nie <jun.nie@linaro.org>,
- Javi Merino <javi.merino@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- Zhang Rui <rui.zhang@intel.com>, linux-arm-kernel@lists.infradead.org
+Cc: "eddie.cai.linux@gmail.com" <eddie.cai.linux@gmail.com>,
+ "kernel@collabora.com" <kernel@collabora.com>,
+ "heiko@sntech.de" <heiko@sntech.de>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "jeffy.chen@rock-chips.com" <jeffy.chen@rock-chips.com>,
+ "zyc@rock-chips.com" <zyc@rock-chips.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jacob Chen <jacob2.chen@rock-chips.com>,
+ "Hans Verkuil \(hansverk\)" <hansverk@cisco.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
+ "laurent.pinchart@ideasonboard.com" <laurent.pinchart@ideasonboard.com>,
+ "sakari.ailus@linux.intel.com" <sakari.ailus@linux.intel.com>,
+ "zhengsq@rock-chips.com" <zhengsq@rock-chips.com>,
+ "mchehab@kernel.org" <mchehab@kernel.org>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 06-11-19, 18:58, Amit Kucheria wrote:
-> Replace a comment starting with /** by simply /* to avoid having it
-> interpreted as a kernel-doc comment. Describe missing function
-> parameters where needed.
-> 
-> Fixes up the following warnings when compiled with make W=1:
-> 
-> linux.git/drivers/thermal/rockchip_thermal.c:27: warning: cannot
-> understand function prototype: 'enum tshut_mode '
-> linux.git/drivers/thermal/rockchip_thermal.c:37: warning: cannot
-> understand function prototype: 'enum tshut_polarity '
-> linux.git/drivers/thermal/rockchip_thermal.c:46: warning: cannot
-> understand function prototype: 'enum sensor_id '
-> linux.git/drivers/thermal/rockchip_thermal.c:56: warning: cannot
-> understand function prototype: 'enum adc_sort_mode '
-> linux.git/drivers/thermal/rockchip_thermal.c:123: warning: Function
-> parameter or member 'chn_id' not described in 'rockchip_tsadc_chip'
-> linux.git/drivers/thermal/rockchip_thermal.c:123: warning: Function
-> parameter or member 'control' not described in 'rockchip_tsadc_chip'
-> linux.git/drivers/thermal/rockchip_thermal.c:167: warning: Function
-> parameter or member 'sensors' not described in 'rockchip_thermal_data'
-> linux.git/drivers/thermal/rockchip_thermal.c:608: warning: Function
-> parameter or member 'grf' not described in 'rk_tsadcv2_initialize'
-> linux.git/drivers/thermal/rockchip_thermal.c:608: warning: Function
-> parameter or member 'regs' not described in 'rk_tsadcv2_initialize'
-> linux.git/drivers/thermal/rockchip_thermal.c:608: warning: Function
-> parameter or member 'tshut_polarity' not described in
-> 'rk_tsadcv2_initialize'
-> linux.git/drivers/thermal/rockchip_thermal.c:644: warning: Function
-> parameter or member 'grf' not described in 'rk_tsadcv3_initialize'
-> linux.git/drivers/thermal/rockchip_thermal.c:644: warning: Function
-> parameter or member 'regs' not described in 'rk_tsadcv3_initialize'
-> linux.git/drivers/thermal/rockchip_thermal.c:644: warning: Function
-> parameter or member 'tshut_polarity' not described in
-> 'rk_tsadcv3_initialize'
-> linux.git/drivers/thermal/rockchip_thermal.c:732: warning: Function
-> parameter or member 'regs' not described in 'rk_tsadcv3_control'
-> linux.git/drivers/thermal/rockchip_thermal.c:732: warning: Function
-> parameter or member 'enable' not described in 'rk_tsadcv3_control'
-> linux.git/drivers/thermal/rockchip_thermal.c:1211: warning: Function
-> parameter or member 'reset' not described in
-> 'rockchip_thermal_reset_controller'
-> 
-> Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
-> ---
->  drivers/thermal/rockchip_thermal.c | 22 ++++++++++++++++------
->  1 file changed, 16 insertions(+), 6 deletions(-)
-> 
-> diff --git a/drivers/thermal/rockchip_thermal.c b/drivers/thermal/rockchip_thermal.c
-> index 343c2f5c5a259..9ed8085bb7924 100644
-> --- a/drivers/thermal/rockchip_thermal.c
-> +++ b/drivers/thermal/rockchip_thermal.c
-> @@ -19,7 +19,7 @@
->  #include <linux/mfd/syscon.h>
->  #include <linux/pinctrl/consumer.h>
->  
-> -/**
-> +/*
->   * If the temperature over a period of time High,
->   * the resulting TSHUT gave CRU module,let it reset the entire chip,
->   * or via GPIO give PMIC.
-> @@ -29,7 +29,7 @@ enum tshut_mode {
->  	TSHUT_MODE_GPIO,
->  };
->  
-> -/**
-> +/*
->   * The system Temperature Sensors tshut(tshut) polarity
->   * the bit 8 is tshut polarity.
->   * 0: low active, 1: high active
-> @@ -39,7 +39,7 @@ enum tshut_polarity {
->  	TSHUT_HIGH_ACTIVE,
->  };
->  
-> -/**
-> +/*
->   * The system has two Temperature Sensors.
->   * sensor0 is for CPU, and sensor1 is for GPU.
->   */
-> @@ -48,7 +48,7 @@ enum sensor_id {
->  	SENSOR_GPU,
->  };
->  
-> -/**
-> +/*
->   * The conversion table has the adc value and temperature.
->   * ADC_DECREMENT: the adc value is of diminishing.(e.g. rk3288_code_table)
->   * ADC_INCREMENT: the adc value is incremental.(e.g. rk3368_code_table)
-> @@ -80,13 +80,14 @@ struct chip_tsadc_table {
->  
->  /**
->   * struct rockchip_tsadc_chip - hold the private data of tsadc chip
-> - * @chn_id[SOC_MAX_SENSORS]: the sensor id of chip correspond to the channel
-> + * @chn_id: array of sensor ids of chip corresponding to the channel
->   * @chn_num: the channel number of tsadc chip
->   * @tshut_temp: the hardware-controlled shutdown temperature value
->   * @tshut_mode: the hardware-controlled shutdown mode (0:CRU 1:GPIO)
->   * @tshut_polarity: the hardware-controlled active polarity (0:LOW 1:HIGH)
->   * @initialize: SoC special initialize tsadc controller method
->   * @irq_ack: clear the interrupt
-> + * @control: enable/disable method for the tsadc controller
->   * @get_temp: get the temperature
->   * @set_alarm_temp: set the high temperature interrupt
->   * @set_tshut_temp: set the hardware-controlled shutdown temperature
-> @@ -139,7 +140,7 @@ struct rockchip_thermal_sensor {
->   * @chip: pointer to the platform/configuration data
->   * @pdev: platform device of thermal
->   * @reset: the reset controller of tsadc
-> - * @sensors[SOC_MAX_SENSORS]: the thermal sensor
-> + * @sensors: array of thermal sensors
->   * @clk: the controller clock is divided by the exteral 24MHz
->   * @pclk: the advanced peripherals bus clock
->   * @grf: the general register file will be used to do static set by software
-> @@ -590,6 +591,9 @@ static int rk_tsadcv2_code_to_temp(const struct chip_tsadc_table *table,
->  
->  /**
->   * rk_tsadcv2_initialize - initialize TASDC Controller.
-> + * @grf: the general register file will be used to do static set by software
-> + * @regs: the base address of tsadc controller
-> + * @tshut_polarity: the hardware-controlled active polarity (0:LOW 1:HIGH)
->   *
->   * (1) Set TSADC_V2_AUTO_PERIOD:
->   *     Configure the interleave between every two accessing of
-> @@ -624,6 +628,9 @@ static void rk_tsadcv2_initialize(struct regmap *grf, void __iomem *regs,
->  
->  /**
->   * rk_tsadcv3_initialize - initialize TASDC Controller.
-> + * @grf: the general register file will be used to do static set by software
-> + * @regs: the base address of tsadc controller
-> + * @tshut_polarity: the hardware-controlled active polarity (0:LOW 1:HIGH)
->   *
->   * (1) The tsadc control power sequence.
->   *
-> @@ -723,6 +730,8 @@ static void rk_tsadcv2_control(void __iomem *regs, bool enable)
->  
->  /**
->   * rk_tsadcv3_control - the tsadc controller is enabled or disabled.
-> + * @regs: the base address of tsadc controller
-> + * @enable: boolean flag to enable the controller
->   *
->   * NOTE: TSADC controller works at auto mode, and some SoCs need set the
->   * tsadc_q_sel bit on TSADCV2_AUTO_CON[1]. The (1024 - tsadc_q) as output
-> @@ -1206,6 +1215,7 @@ rockchip_thermal_register_sensor(struct platform_device *pdev,
->  
->  /**
->   * Reset TSADC Controller, reset all tsadc registers.
-> + * @reset: the reset controller of tsadc
->   */
->  static void rockchip_thermal_reset_controller(struct reset_control *reset)
->  {
+On Thu, Nov 7, 2019 at 8:26 AM Helen Koike <helen.koike@collabora.com> wrote:
+>
+>
+>
+> On 11/6/19 11:44 AM, Ezequiel Garcia wrote:
+> > Hi Hans, Helen:
+> >
+> > On Wed, 2019-11-06 at 09:30 -0300, Helen Koike wrote:
+> >>
+> >> On 11/6/19 10:22 AM, Hans Verkuil (hansverk) wrote:
+> >>> On 11/6/19 1:01 PM, Helen Koike wrote:
+> >>>> From: Shunqian Zheng <zhengsq@rock-chips.com>
+> >>>>
+> >>>> Add the Rockchip ISP1 specific processing parameter format
+> >>>> V4L2_META_FMT_RK_ISP1_PARAMS and metadata format
+> >>>> V4L2_META_FMT_RK_ISP1_STAT_3A for 3A.
+> >>>>
+> >>>> Signed-off-by: Shunqian Zheng <zhengsq@rock-chips.com>
+> >>>> Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
+> >>>> Acked-by: Hans Verkuil <hans.verkuil@cisco.com>
+> >>>
+> >>> I acked this? It is missing documentation for these new formats.
+> >>
+> >> I think so https://www.spinics.net/lists/linux-rockchip/msg18999.html :)
+> >>
+> >> I'll update the docs and the fixes you pointed below.
+> >>
+> >> Thanks.
+> >> Helen
+> >>
+> >>>> [refactored for upstream]
+> >>>> Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> >>>> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> >>>>
+> >>>> ---
+> >>>>
+> >>>> Changes in v9:
+> >>>> - Add reviewed-by tag from Laurent
+> >>>>
+> >>>> Changes in v8: None
+> >>>> Changes in v7:
+> >>>> - s/IPU3/RK_ISP1
+> >>>>
+> >>>>  drivers/media/v4l2-core/v4l2-ioctl.c | 2 ++
+> >>>>  include/uapi/linux/videodev2.h       | 4 ++++
+> >>>>  2 files changed, 6 insertions(+)
+> >>>>
+> >>>> diff --git a/drivers/media/v4l2-core/v4l2-ioctl.c b/drivers/media/v4l2-core/v4l2-ioctl.c
+> >>>> index 315ac12c3e0a..ade990554caf 100644
+> >>>> --- a/drivers/media/v4l2-core/v4l2-ioctl.c
+> >>>> +++ b/drivers/media/v4l2-core/v4l2-ioctl.c
+> >>>> @@ -1341,6 +1341,8 @@ static void v4l_fill_fmtdesc(struct v4l2_fmtdesc *fmt)
+> >>>>    case V4L2_META_FMT_UVC:         descr = "UVC Payload Header Metadata"; break;
+> >>>>    case V4L2_META_FMT_D4XX:        descr = "Intel D4xx UVC Metadata"; break;
+> >>>>    case V4L2_META_FMT_VIVID:       descr = "Vivid Metadata"; break;
+> >>>> +  case V4L2_META_FMT_RK_ISP1_PARAMS:      descr = "Rockchip ISP1 3A params"; break;
+> >>>
+> >>> params -> Params
+> >>>
+> >>>> +  case V4L2_META_FMT_RK_ISP1_STAT_3A:     descr = "Rockchip ISP1 3A statistics"; break;
+> >>>
+> >>> statistics -> Statistics
+> >>>
+> >>>>
+> >>>>    default:
+> >>>>            /* Compressed formats */
+> >>>> diff --git a/include/uapi/linux/videodev2.h b/include/uapi/linux/videodev2.h
+> >>>> index f98bbcced8ff..56798b09cd85 100644
+> >>>> --- a/include/uapi/linux/videodev2.h
+> >>>> +++ b/include/uapi/linux/videodev2.h
+> >
+> > Can we avoid touching videodev2.h, as we did for the stateless codec pixfmts?
+>
+> I think it should be part of the uapi, as it is the metadata format used in the video output device.
+> I propose to leave it inside drivers/staging/media/rkisp1/uapi/rkisp1-config.h while the driver is in staging,
+> then we expose it later with a better documentation too. Make sense?
 
-Reviewed-by: Viresh Kumar <viresh.kumar@linaro.org>
+Makes sense, as it's also what we've done for ipu3, +/- a slightly
+different path:
+https://elixir.bootlin.com/linux/latest/source/drivers/staging/media/ipu3/include/intel-ipu3.h#L12
 
--- 
-viresh
+We could possibly move the header to include/rockchip-isp1.h to be consistent.
+
+Best regards,
+Tomasz
+
+>
+> Thanks,
+> Helen
+>
+> >
+> > Thanks,
+> > Ezequiel
+> >
+> >>>> @@ -762,6 +762,10 @@ struct v4l2_pix_format {
+> >>>>  #define V4L2_META_FMT_D4XX        v4l2_fourcc('D', '4', 'X', 'X') /* D4XX Payload Header metadata */
+> >>>>  #define V4L2_META_FMT_VIVID         v4l2_fourcc('V', 'I', 'V', 'D') /* Vivid Metadata */
+> >>>>
+> >>>> +/* Vendor specific - used for RK_ISP1 camera sub-system */
+> >>>> +#define V4L2_META_FMT_RK_ISP1_PARAMS      v4l2_fourcc('R', 'K', '1', 'P') /* Rockchip ISP1 params */
+> >>>> +#define V4L2_META_FMT_RK_ISP1_STAT_3A     v4l2_fourcc('R', 'K', '1', 'S') /* Rockchip ISP1 3A statistics */
+> >>>> +
+> >>>>  /* priv field value to indicates that subsequent fields are valid. */
+> >>>>  #define V4L2_PIX_FMT_PRIV_MAGIC           0xfeedcafe
+> >>>>
+> >>>>
+> >>>
+> >>> Regards,
+> >>>
+> >>>     Hans
+> >>>
+> >
+> >
 
 _______________________________________________
 Linux-rockchip mailing list
