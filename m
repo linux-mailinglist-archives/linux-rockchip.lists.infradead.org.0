@@ -2,56 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A204F445A
-	for <lists+linux-rockchip@lfdr.de>; Fri,  8 Nov 2019 11:20:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE8DBF4643
+	for <lists+linux-rockchip@lfdr.de>; Fri,  8 Nov 2019 12:41:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PHqnd2yLHNNei+MkHOty+BLu6amkDAOEYnCkvSRZwp8=; b=Tbswu1PpFPNpHp
-	pv199lrUNWNgnDcgYCgvt7MRly3L3uE0ajlZc0IWQIEmjSlnIz8hJlhqI97LFhGkpwPT0wUESqUM2
-	U3n2enshltOEkIfUr/t4UQcNVtyFtcMYHTKJepO1nRLNxfMftcxeRM/vgjk0hxdZmzLkClGOvX93o
-	hj0wnfso+zbUiqdIIcHRBPnq1dHU856sP5eiWYhubvEKMYR1Kee/s81/v0EY24jvwpnSetHHseQTj
-	yg5steSR3SUno8IqEhr8Dm635lzYKFbOEZOuVuaJveRz/DlqwK+9OpiN+AGwl21ATHUcf4zzsRzgH
-	omqg6ccJsWhYUVj61BVA==;
+	List-Owner; bh=8DyovqBRlfroxBFV8eDT6cUjBHsAZa9B9JqyhO7MMgo=; b=FnPgey1vQKv4v0
+	S2+KtMOHNzQR4uKxSWpXVJr/Ta5qJiZpHya9ZK3HaZ1OPaAUbZG2UCAJxmE+2K99BOnyopB1nJnvL
+	WViR4PJOI4En5sfRK6IOat9Y9eYkqNwRKAPskx0k7VT5BBw+zRqS05nx992cBkwIe+Kb8cqRhFFsO
+	wX394ynO9AyfQsdwU1So82A1rDeYVr5whb9dZtdU3uaNvHo99acduAM8GkxZQP+7eciDzG/NYJ1DW
+	sx8+S6HY9tE2/PrOwaKF8NVzAqi19/9gZPfT3ICEvKKf0Nko+NxBnQ5kBHZdtYHIOhqQ40rEvQm33
+	mvXEE7pt8fyVQaoRURKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT1N9-0005x6-QY; Fri, 08 Nov 2019 10:20:07 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1iT2dm-0001tu-Mp; Fri, 08 Nov 2019 11:41:22 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT1N5-0004x4-OA
- for linux-rockchip@lists.infradead.org; Fri, 08 Nov 2019 10:20:05 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id D8B0828EE5A;
- Fri,  8 Nov 2019 10:19:55 +0000 (GMT)
-Date: Fri, 8 Nov 2019 11:19:50 +0100
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Ezequiel Garcia <ezequiel@collabora.com>, Tomasz Figa
- <tfiga@chromium.org>, Hans Verkuil <hverkuil@xs4all.nl>
-Subject: Re: [PATCH v2 for 5.4 1/4] media: hantro: Fix s_fmt for dynamic
- resolution changes
-Message-ID: <20191108111950.717db5ce@collabora.com>
-In-Reply-To: <20191007174505.10681-2-ezequiel@collabora.com>
-References: <20191007174505.10681-1-ezequiel@collabora.com>
- <20191007174505.10681-2-ezequiel@collabora.com>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1iT2dH-0001SS-W9
+ for linux-rockchip@lists.infradead.org; Fri, 08 Nov 2019 11:40:53 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C7DC5222CD;
+ Fri,  8 Nov 2019 11:40:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1573213251;
+ bh=a8iXu8RnT4u8d3wUf+Xu8tDfl5Vhe4ENrPCED6Q5Btk=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=Y8+43vhvCSyTkqgzyBHReF05H+Ezkcwl4m4l5SG/PJ9sdi/WDDfcavTJTNJrYunYW
+ 1tXyH5Brrru/jMgg11VkZjN/xyqv+ZMeZJiphrtcP/Zv7dCs7sVTIRgnDtRAoBPvIQ
+ c+gQstsel3rz4j9xRvJy5ZcW7Sux9Wgg4GhIyms8=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 4.19 117/205] arm64: dts: rockchip: Fix VCC5V0_HOST_EN
+ on rk3399-sapphire
+Date: Fri,  8 Nov 2019 06:36:24 -0500
+Message-Id: <20191108113752.12502-117-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191108113752.12502-1-sashal@kernel.org>
+References: <20191108113752.12502-1-sashal@kernel.org>
 MIME-Version: 1.0
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_022004_052237_3948BFBC 
-X-CRM114-Status: GOOD (  22.68  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191108_034052_087303_76E7936B 
+X-CRM114-Status: GOOD (  10.98  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,116 +81,43 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: fbuergisser@chromium.org, kernel@collabora.com,
- Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
- Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Nicolas Dufresne <nicolas.dufresne@collabora.com>, linux-media@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, Vicente Bergas <vicencb@gmail.com>,
+ linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon,  7 Oct 2019 14:45:02 -0300
-Ezequiel Garcia <ezequiel@collabora.com> wrote:
+From: Vicente Bergas <vicencb@gmail.com>
 
-> Commit 953aaa1492c53 ("media: rockchip/vpu: Prepare things to support decoders")
-> changed the conditions under S_FMT was allowed for OUTPUT
-> CAPTURE buffers.
-> 
-> However, and according to the mem-to-mem stateless decoder specification,
-> in order to support dynamic resolution changes, S_FMT should be allowed
-> even if OUTPUT buffers have been allocated.
-> 
-> Relax decoder S_FMT restrictions on OUTPUT buffers, allowing a resolution
-> modification, provided the pixel format stays the same.
-> 
-> Tested on RK3288 platforms using ChromiumOS Video Decode/Encode Accelerator Unittests.
-> 
-> Fixes: 953aaa1492c53 ("media: rockchip/vpu: Prepare things to support decoders")
-> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-> --
-> v2:
-> * Call try_fmt_out before using the format,
->   pointed out by Philipp.
-> 
->  drivers/staging/media/hantro/hantro_v4l2.c | 28 +++++++++++++++-------
->  1 file changed, 19 insertions(+), 9 deletions(-)
-> 
-> diff --git a/drivers/staging/media/hantro/hantro_v4l2.c b/drivers/staging/media/hantro/hantro_v4l2.c
-> index 3dae52abb96c..586d243cc3cc 100644
-> --- a/drivers/staging/media/hantro/hantro_v4l2.c
-> +++ b/drivers/staging/media/hantro/hantro_v4l2.c
-> @@ -367,19 +367,26 @@ vidioc_s_fmt_out_mplane(struct file *file, void *priv, struct v4l2_format *f)
->  {
->  	struct v4l2_pix_format_mplane *pix_mp = &f->fmt.pix_mp;
->  	struct hantro_ctx *ctx = fh_to_ctx(priv);
-> +	struct vb2_queue *vq = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, f->type);
->  	const struct hantro_fmt *formats;
->  	unsigned int num_fmts;
-> -	struct vb2_queue *vq;
->  	int ret;
->  
-> -	/* Change not allowed if queue is busy. */
-> -	vq = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, f->type);
-> -	if (vb2_is_busy(vq))
-> -		return -EBUSY;
-> +	ret = vidioc_try_fmt_out_mplane(file, priv, f);
-> +	if (ret)
-> +		return ret;
->  
->  	if (!hantro_is_encoder_ctx(ctx)) {
->  		struct vb2_queue *peer_vq;
->  
-> +		/*
-> +		 * In other to support dynamic resolution change,
+[ Upstream commit bcdb578a5f5b4aea79441606ab7f0a2e076b4474 ]
 
-		      ^ order
+The pin is GPIO4-D1 not GPIO1-D1, see schematic, page 15 for reference.
 
-> +		 * the decoder admits a resolution change, as long
-> +		 * as the pixelformat remains. Can't be done if streaming.
-> +		 */
-> +		if (vb2_is_streaming(vq) || (vb2_is_busy(vq) &&
-> +		    pix_mp->pixelformat != ctx->src_fmt.pixelformat))
-> +			return -EBUSY;
+Signed-off-by: Vicente Bergas <vicencb@gmail.com>
+Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Sorry to chime in only now, but I'm currently looking at the VP9 spec
-and it seems the resolution is allowed to change dynamically [1] (I
-guess the same applies to VP8). IIU the spec correctly, coded frames
-using the new resolution can reference decoded frames using the old
-one (can be higher or lower res BTW). If we force a streamoff to change
-the resolution (as seems to be the case here), we'll lose those ref
-frames (see the hantro_return_bufs() in stop streaming), right?
-Hans, Tomasz, any idea how this dynamic resolution change could/should
-be supported?
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
+index 36b60791c156d..8b33ef3306820 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
+@@ -116,7 +116,7 @@
+ 	vcc5v0_host: vcc5v0-host-regulator {
+ 		compatible = "regulator-fixed";
+ 		enable-active-high;
+-		gpio = <&gpio1 RK_PD1 GPIO_ACTIVE_HIGH>;
++		gpio = <&gpio4 RK_PD1 GPIO_ACTIVE_HIGH>;
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&vcc5v0_host_en>;
+ 		regulator-name = "vcc5v0_host";
+-- 
+2.20.1
 
->  		/*
->  		 * Since format change on the OUTPUT queue will reset
->  		 * the CAPTURE queue, we can't allow doing so
-> @@ -389,12 +396,15 @@ vidioc_s_fmt_out_mplane(struct file *file, void *priv, struct v4l2_format *f)
->  					  V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE);
->  		if (vb2_is_busy(peer_vq))
->  			return -EBUSY;
-> +	} else {
-> +		/*
-> +		 * The encoder doesn't admit a format change if
-> +		 * there are OUTPUT buffers allocated.
-> +		 */
-> +		if (vb2_is_busy(vq))
-> +			return -EBUSY;
->  	}
->  
-> -	ret = vidioc_try_fmt_out_mplane(file, priv, f);
-> -	if (ret)
-> -		return ret;
-> -
->  	formats = hantro_get_formats(ctx, &num_fmts);
->  	ctx->vpu_src_fmt = hantro_find_format(formats, num_fmts,
->  					      pix_mp->pixelformat);
-
-[1] Section "5.16 Reference frame scaling" of
-    https://storage.googleapis.com/downloads.webmproject.org/docs/vp9/vp9-bitstream-specification-v0.6-20160331-draft.pdf
 
 _______________________________________________
 Linux-rockchip mailing list
