@@ -2,47 +2,47 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43981F46B5
-	for <lists+linux-rockchip@lfdr.de>; Fri,  8 Nov 2019 12:44:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0329F46CC
+	for <lists+linux-rockchip@lfdr.de>; Fri,  8 Nov 2019 12:45:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QKSNUdjq/eInYlyW+kxY98U7Ftlgbvn8HBrs5S+TpDQ=; b=SvyX+U+xu1YNwW
-	cbV7VqFF5rSLIkJS/AD64+4TzaDGAR1YYweCnm9GMiMTw4T+nC5CCvjF/fAZyNmA0L53FSdJ4TC4j
-	ULdzCmY7JuCVt2Jc9RKpyM2N5T+HLMkrVEh5LbkjyP5HNZXMrDI6K+GUF8/tdY2kenXDffRWRRv8y
-	TCjqgU8a9HE4YxYSg6wwKJZKDcQJuN+KWDCKHNNiy0psdPEbRvh8vSu/RFaUjncLj0htZWPBu/o0r
-	Sz/+y0Oyy1O3o2kfp4mvgTRi55cthq3xLb5BhWrl+jESqL2W8Y5xdyavxoY1FD2hHEhrkKBMEmnrT
-	TyrXTbWOgyS4R1YALKFA==;
+	List-Owner; bh=UYfctmEAqpbwUjq5iSox9lhk8mrTo+tUO1+vcO4irvw=; b=N15sseEQTgy+fI
+	5uN+Uu/53svU9ZvCJM6IAkFYjgL3xH79Zi5tMzD88XZ11cGI2QUgMEINWBmv+FNPTkkXz8FZPBU9D
+	OTnqSGLdyxTwdtHK8gu1KrjLVZybJ+pSAgh7JLdajlV6lzjg84LVszUCJ/TxMJHH15VdaNsLm7jvY
+	ddOQj4isEXZ8ghMgrRJn4PfllJqaQ9IOd61NSxD872fCFfyfsnpX+9jEFPwvwpv07Rww27uT6GO6P
+	MmGbZif14IdXTlau7w7hLI6Uzdw1FoHc9qXgHo9YOzz+QWdbgGNQTG+PTiox+WifKOdEJsdbhSURb
+	7I2msAGDZUxUsVunt/QQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT2gv-0003pb-5L; Fri, 08 Nov 2019 11:44:37 +0000
+	id 1iT2hy-0005X2-Nt; Fri, 08 Nov 2019 11:45:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT2gr-0003oh-TM
- for linux-rockchip@lists.infradead.org; Fri, 08 Nov 2019 11:44:35 +0000
+ id 1iT2hu-0005W3-WA
+ for linux-rockchip@lists.infradead.org; Fri, 08 Nov 2019 11:45:40 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D40B221D82;
- Fri,  8 Nov 2019 11:44:32 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id EAB4E222CB;
+ Fri,  8 Nov 2019 11:45:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573213473;
- bh=HdPHDp3BlBc7LAHKrrfU2bGbLW19OD8QFTgc6uk6uuQ=;
+ s=default; t=1573213538;
+ bh=F0f1DFQic3UsgOCXhcyyXPEfDgitzNZkVWAjT/PbzZY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=x8w/eX+6Fsu9a4UThHjjnT5DN5F5kjJq9GykO3C1rbjmwMKcu8emauQ/xA6pWV7Hu
- OwcAyIw0GsXnn+cN4xvkJaOO/TcEUj38l1kGMg8t9A2LWQ69FGXFFdtcXPlFi0njG8
- 3G7aWV6yqB9a2bTlvHOML4hAtpvd3eNquldKQ9sw=
+ b=xUWNqVkZLyvbq9UUMBsY6fM9DSzhUnJBa1MW75U/jQnVSknWW42PX9Ur6M90bzT2A
+ J81+BBdF4edQENgeELqxUdj3QEP4fScl4eUBuafnWvADYfleEZjJVNmNqmkysNjowQ
+ WzfDYxkBj4FSGSLWNUdzLSyk6okn0XLjkC9NXkxE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 056/103] arm64: dts: rockchip: Fix VCC5V0_HOST_EN
- on rk3399-sapphire
-Date: Fri,  8 Nov 2019 06:42:21 -0500
-Message-Id: <20191108114310.14363-56-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 101/103] ARM: dts: rockchip: Fix erroneous SPI
+ bus dtc warnings on rk3036
+Date: Fri,  8 Nov 2019 06:43:06 -0500
+Message-Id: <20191108114310.14363-101-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191108114310.14363-1-sashal@kernel.org>
 References: <20191108114310.14363-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_034433_963279_A404DDB5 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20191108_034539_053898_FFBD0286 
+X-CRM114-Status: GOOD (  11.24  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,40 +81,49 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, Vicente Bergas <vicencb@gmail.com>,
+Cc: Sasha Levin <sashal@kernel.org>, Rob Herring <robh@kernel.org>,
+ devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
  linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Vicente Bergas <vicencb@gmail.com>
+From: Rob Herring <robh@kernel.org>
 
-[ Upstream commit bcdb578a5f5b4aea79441606ab7f0a2e076b4474 ]
+[ Upstream commit 131c3eb428ccd5f0c784b9edb4f72ec296a045d2 ]
 
-The pin is GPIO4-D1 not GPIO1-D1, see schematic, page 15 for reference.
+dtc has new checks for SPI buses. The rk3036 dts file has a node named
+spi' which causes false positive warnings. As the node is a pinctrl child
+node, change the node name to be 'spi-pins' to fix the warnings.
 
-Signed-off-by: Vicente Bergas <vicencb@gmail.com>
+arch/arm/boot/dts/rk3036-evb.dtb: Warning (spi_bus_bridge): /pinctrl/spi: incorrect #address-cells for SPI bus
+arch/arm/boot/dts/rk3036-kylin.dtb: Warning (spi_bus_bridge): /pinctrl/spi: incorrect #address-cells for SPI bus
+arch/arm/boot/dts/rk3036-evb.dtb: Warning (spi_bus_bridge): /pinctrl/spi: incorrect #size-cells for SPI bus
+arch/arm/boot/dts/rk3036-kylin.dtb: Warning (spi_bus_bridge): /pinctrl/spi: incorrect #size-cells for SPI bus
+
+Cc: Heiko Stuebner <heiko@sntech.de>
+Cc: linux-rockchip@lists.infradead.org
+Signed-off-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi | 2 +-
+ arch/arm/boot/dts/rk3036.dtsi | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
-index ce592a4c0c4cd..82576011b959b 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
-@@ -136,7 +136,7 @@
- 	vcc5v0_host: vcc5v0-host-regulator {
- 		compatible = "regulator-fixed";
- 		enable-active-high;
--		gpio = <&gpio1 RK_PD1 GPIO_ACTIVE_HIGH>;
-+		gpio = <&gpio4 RK_PD1 GPIO_ACTIVE_HIGH>;
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&vcc5v0_host_en>;
- 		regulator-name = "vcc5v0_host";
+diff --git a/arch/arm/boot/dts/rk3036.dtsi b/arch/arm/boot/dts/rk3036.dtsi
+index 5c0a76493d22a..03cf0c84ac0aa 100644
+--- a/arch/arm/boot/dts/rk3036.dtsi
++++ b/arch/arm/boot/dts/rk3036.dtsi
+@@ -750,7 +750,7 @@
+ 			/* no rts / cts for uart2 */
+ 		};
+ 
+-		spi {
++		spi-pins {
+ 			spi_txd:spi-txd {
+ 				rockchip,pins = <1 29 RK_FUNC_3 &pcfg_pull_default>;
+ 			};
 -- 
 2.20.1
 
