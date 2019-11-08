@@ -2,52 +2,97 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2252F519D
-	for <lists+linux-rockchip@lfdr.de>; Fri,  8 Nov 2019 17:53:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC635F580D
+	for <lists+linux-rockchip@lfdr.de>; Fri,  8 Nov 2019 21:08:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TjwUCGM3c2x5aTI3sP0ismPCtITWo871UZkHkcziv2M=; b=WuhPPZm8uNx4PI
-	FdqZkF8D5a9KIq0nN42qCq2nxAhqpdoyGtInn/FRdBRateU2RjEPPHoXldI13gTmwlcGXxpYkmoCT
-	Wi7pjDJ/mfcuyyYsSgeKDheeI5Dcl0Y5gh46k+HDLlFE77yuN/7A5te1K/gwKV2V2uEX0HD7K80Z3
-	TXcUor2wco0S3abPml946XaWGXNb3lKNazyGKv7orZJ+TkQ0nwShLB7wysH3H5DFcQr0tAw/Qr/kg
-	IAkuVHdG+BlUmawA7G/EJ9CtFAkgnIR8B/D5pZk8frSAdXIwL6JJOArI12SKzh/1y2XkNBAg5dvFV
-	on6g+zMPPOHQayqJ05zg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	MIME-Version:References:Message-ID:In-Reply-To:Subject:To:Date:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=d06mTXr7xkqC22RuKE+vWV4NPlTj5+Y1vZYf9yaiZ+w=; b=RV2BFnJmRbZsRTDCVo6AGizB8
+	F6vvVsh3PHCevB24yiyhz4QlsQnIqEs9w2ewQvVx49XGVQlPW78SIk9xWL5/2Y40v4S7ief/w36mH
+	uy5XbcjonWzqia45+Hqb3600g/7aLBKIpiGw1ZrtiFruGzzD0cBBP2WimlVi43RRhCJKNv6brmB4Y
+	cFkIeVgB9EnTCFDa5gNvhSFdB/69wEtxrc/aA+IFLnBvRsQsvWISo6S4t3OFYXOuM05XsYjM5237m
+	9WG3nnBDHlXvGYAlz88oUyLOGZ8n93ZiPTRB+5BlxiX5VZRt7+mBlfjdRXdiGF3qW/V0iVjWjN8lJ
+	uFSSVZD+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT7VL-0001ci-EU; Fri, 08 Nov 2019 16:52:59 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1iTAYE-0000WK-Tt; Fri, 08 Nov 2019 20:08:10 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT7V2-0001NK-SF; Fri, 08 Nov 2019 16:52:42 +0000
-Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iT7Uy-0002QA-3f; Fri, 08 Nov 2019 17:52:36 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Markus Reichl <m.reichl@fivetechno.de>
-Subject: Re: [PATCH v3] arm64: dts: rockchip: Split rk3399-roc-pc for with and
- without mezzanine board.
-Date: Fri, 08 Nov 2019 17:52:35 +0100
-Message-ID: <4421021.f1aGTiCmcP@diego>
-In-Reply-To: <616df0fa-a503-1a57-12b6-43bcd674db8c@fivetechno.de>
-References: <7293c5f6-a07f-cf51-954f-92907879eea2@fivetechno.de>
- <1628743.87kQKnQNn8@diego>
- <616df0fa-a503-1a57-12b6-43bcd674db8c@fivetechno.de>
+ id 1iTAY2-0000Le-5p; Fri, 08 Nov 2019 20:07:59 +0000
+Received: by mail-wm1-x344.google.com with SMTP id z26so7379189wmi.4;
+ Fri, 08 Nov 2019 12:07:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:from:date:to:cc:subject:in-reply-to:message-id:references
+ :user-agent:mime-version;
+ bh=gwf03HQCJcAeKeVV6CDOtpVEM+58xqWFoXIO9s1VR2c=;
+ b=NhDzQyPS3minpgWDPizoGqVOo5LUY7O8ofGjJhFjcBBc0tuZyxmovgfXtvEDtqm6kt
+ mAbUOvYMvXf6r2wubPDvUB5Yy3AuG+0bILmDhgKGK5M2SBO6rwpXTQ7ANTanZxpnp9lY
+ shWw618Egw0M0qmXLUzqP+VotL72Rbxwo6IsH2N98Kyn3NkwIvaMArjnlkWRPdhIxNzn
+ 5oSRjKXnIf9Y/nBgd1/K/sQHSg84VlklYgJ8zAs0ELzIRHZ4z1bHMUutqq9VixeCCrKU
+ jlUpsfARXvnewUQy2MH2twYVu5srqi8+rErn3h1EFc/y6nouyas0WjWayb5/VMAHwpDi
+ gLdA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:from:date:to:cc:subject:in-reply-to
+ :message-id:references:user-agent:mime-version;
+ bh=gwf03HQCJcAeKeVV6CDOtpVEM+58xqWFoXIO9s1VR2c=;
+ b=UiExlKkMa5z0aq5CRAWsxabrxSEJToR3hXDTWw6JO7R6d5iKiuUcoi9b+d+p89yIhi
+ jmAUd1yMz0qjYhHuq0YwO6VidVBqb0cbr2ZsYWAefMcfdDddATTbRgjHYTNtXclaMM0G
+ IFwTE4mbQG3IdeDA5l8VGda4TR8FpVPT/btom0TwOOhg+XtjqRz2Ok10QuCxVtyoD9+5
+ JLsk81SmBua3OhEd8g9f6wuw84krimnKE3Sr/hfadK38bDaSbbnGL6gcDNA/XXotNqjE
+ vedPAqKSrQ/jhMizvck95HNNM0IY9OxDxlPa+mrrzdOL3qMcJxZ1mmCBTOvK2jeN0sgc
+ /3EQ==
+X-Gm-Message-State: APjAAAUO0EvSMT4U2i1aF2PXpPzxVDMlnDxghf07GkuY65S+PqBgsP3v
+ Ai/OfFkx2/G/ZxWgEomuxYc=
+X-Google-Smtp-Source: APXvYqwl9KXzZZqdsQGTX5vggm4+Gvse6h9VoWpyn33lsaQWOqOG4teXB3ND+xZvvQYUQa2fmHTr9A==
+X-Received: by 2002:a1c:b1c3:: with SMTP id a186mr10052449wmf.10.1573243675924; 
+ Fri, 08 Nov 2019 12:07:55 -0800 (PST)
+Received: from wambui.local ([197.237.61.225])
+ by smtp.googlemail.com with ESMTPSA id f13sm6612474wrq.96.2019.11.08.12.07.53
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 08 Nov 2019 12:07:55 -0800 (PST)
+From: Wambui Karuga <wambui@karuga.xyz>
+X-Google-Original-From: Wambui Karuga <wambui@wambui>
+Date: Fri, 8 Nov 2019 23:07:44 +0300 (EAT)
+To: Sean Paul <sean@poorly.run>
+Subject: Re: [PATCH] drm/rockchip: use DRM_DEV_ERROR for log output
+In-Reply-To: <20191108160602.GG63329@art_vandelay>
+Message-ID: <alpine.LNX.2.21.99999.375.1911082306460.13123@wambui>
+References: <20191107092945.15513-1-wambui.karugax@gmail.com>
+ <20191107133851.GF63329@art_vandelay> <20191108124630.GA10207@wambui>
+ <4996186.DxzAFJqeGu@diego> <20191108160602.GG63329@art_vandelay>
+User-Agent: Alpine 2.21.99999 (LNX 375 2019-10-29)
 MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="8323329-1284482943-1573243675=:13123"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_085241_060553_5BBF6428 
-X-CRM114-Status: GOOD (  14.96  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191108_120758_219171_671BB9F6 
+X-CRM114-Status: GOOD (  14.37  )
+X-Spam-Score: 2.1 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wambui.karugax[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org] 0.5 FROM_SUSPICIOUS_NTLD   From abused NTLD
+ 1.3 MALFORMED_FREEMAIL     Bad headers on message from free email
+ service
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,77 +105,126 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+Cc: =?ISO-8859-15?Q?Heiko_St=FCbner?= <heiko@sntech.de>, airlied@linux.ie,
+ hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
  linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+ daniel@ffwll.ch, linux-arm-kernel@lists.infradead.org,
+ Wambui Karuga <wambui.karugax@gmail.com>
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Markus,
+  This message is in MIME format.  The first part should be readable text,
+  while the remaining parts are likely unreadable without MIME-aware tools.
 
-Am Freitag, 8. November 2019, 16:18:39 CET schrieb Markus Reichl:
-> Am 08.11.19 um 15:41 schrieb Heiko St=FCbner:
-> > Am Montag, 4. November 2019, 16:22:25 CET schrieb Markus Reichl:
-> >> For rk3399-roc-pc is a mezzanine board available that carries M.2 and
-> >> POE interfaces. Use it with a separate dts.
-> >> =
-
-> >> ---
-> >> v3: Use enum in binding and full name in compatible string and file na=
-me.
-> >> v2: Add new compatible string for roc-pc with mezzanine board.
-> >> --
-> >> =
-
-> >> Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
-> >> ---
-> >>  .../devicetree/bindings/arm/rockchip.yaml     |   4 +-
-> >>  arch/arm64/boot/dts/rockchip/Makefile         |   1 +
-> >>  .../dts/rockchip/rk3399-roc-pc-mezzanine.dts  |  72 ++
-> >>  .../arm64/boot/dts/rockchip/rk3399-roc-pc.dts | 757 +----------------
-> >>  .../boot/dts/rockchip/rk3399-roc-pc.dtsi      | 770 ++++++++++++++++++
-> >>  5 files changed, 847 insertions(+), 757 deletions(-)
-> >>  create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzani=
-ne.dts
-> >>  create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-> >> =
-
-> > =
-
-> >> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts b/arch/arm=
-64/boot/dts/rockchip/rk3399-roc-pc.dts
-> >> index 7e07dae33d0f..cd4195425309 100644
-> >> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-> >> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-> >> @@ -4,764 +4,9 @@
-> > =
-
-> > This whole hunk fails to apply against my current branch for 5.5
-> > which contain your other patches [0].
-> > =
-
-> > And the moved block is obviously so big that I can't really check
-> > which part is somehow different, so I'd ask you to rebase this
-> > patch accordingly, so that it applies again.
-> =
-
-> Yes, will rebase and come with v4.
-
-Not wanting to put any pressure on you, but do you have an estimate
-for this? I need to do my second (and final) round of pull requests for
-v5.5, so it would of course be interesting if it's sensible to wait for
-your respin ;-)
-
-Thanks
-Heiko
+--8323329-1284482943-1573243675=:13123
+Content-Type: text/plain; charset=iso-8859-1; format=flowed
+Content-Transfer-Encoding: 8BIT
 
 
 
+On Fri, 8 Nov 2019, Sean Paul wrote:
+
+> On Fri, Nov 08, 2019 at 03:06:44PM +0100, Heiko Stübner wrote:
+>> Hi,
+>>
+>> [it seems your Reply-To mail header is set strangely as
+>> Reply-To: 20191107133851.GF63329@art_vandelay
+>> which confuses my MTA]
+>>
+>> Am Freitag, 8. November 2019, 13:46:30 CET schrieb Wambui Karuga:
+>>> On Thu, Nov 07, 2019 at 08:38:51AM -0500, Sean Paul wrote:
+>>>> On Thu, Nov 07, 2019 at 01:54:22AM -0800, Joe Perches wrote:
+>>>>> On Thu, 2019-11-07 at 12:29 +0300, Wambui Karuga wrote:
+>>>>>> Replace the use of the dev_err macro with the DRM_DEV_ERROR
+>>>>>> DRM helper macro.
+>>>>>
+>>>>> The commit message should show the reason _why_ you are doing
+>>>>> this instead of just stating that you are doing this.
+>>>>>
+>>>>> It's not that dev_err is uncommon in drivers/gpu/drm.
+>>>>>
+>>>>
+>>>> It is uncommon (this is the sole instance) in rockchip, however. So it makes
+>>>> sense to convert the dev_* prints in rockchip to DRM_DEV for consistency.
+>>>>
+>>>> Wambui, could you also please convert the dev_warn instance as well?
+>>>>
+>>> Hey, Sean.
+>>> Trying to convert this dev_warn instance, but the corresponding DRM_WARN
+>>> macro does not take the dev parameter which seems to be useful in the
+>>> original output.
+>>> Should I still convert it to DRM_WARN without the hdmi->dev parameter?
+>>
+>> There exists DRM_DEV_ERROR, DRM_DEV_INFO and DRM_DEV_DEBUG to
+>> handle actual devices. Interestingly there is no DRM_DEV_WARN though.
+>>
+>> So depending on what Sean suggest another option would be to add the
+>> missing DRM_DEV_WARN and then use it to replace the dev_warn.
+>
+> Yep, this sounds good to me me.
+>
+> Sean
+>
+Okay, I can add DRM_DEV_WARN and replace it there.
+
+wambui
+>>
+>>
+>> Heiko
+>>
+>>
+>>
+>>>
+>>> Thanks,
+>>> wambui
+>>>> I'll apply this to drm-misc-next and expand on the commit message a bit.
+>>>>
+>>>> Thanks,
+>>>>
+>>>> Sean
+>>>>
+>>>>> $ git grep -w dev_err drivers/gpu/drm | wc -l
+>>>>> 1950
+>>>>> $ git grep -w DRM_DEV_ERROR drivers/gpu/drm | wc -l
+>>>>> 756
+>>>>>
+>>>>>> diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+>>>>> []
+>>>>>> @@ -916,7 +916,7 @@ static int dw_mipi_dsi_rockchip_probe(struct platform_device *pdev)
+>>>>>>  	}
+>>>>>>
+>>>>>>  	if (!dsi->cdata) {
+>>>>>> -		dev_err(dev, "no dsi-config for %s node\n", np->name);
+>>>>>> +		DRM_DEV_ERROR(dev, "no dsi-config for %s node\n", np->name);
+>>>>>>  		return -EINVAL;
+>>>>>>  	}
+>>>>>
+>>>>>
+>>>>>
+>>>>> _______________________________________________
+>>>>> dri-devel mailing list
+>>>>> dri-devel@lists.freedesktop.org
+>>>>> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+>>>>
+>>>
+>>
+>>
+>>
+>>
+>
+> -- 
+> Sean Paul, Software Engineer, Google / Chromium OS
+>
+--8323329-1284482943-1573243675=:13123
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--8323329-1284482943-1573243675=:13123--
+
