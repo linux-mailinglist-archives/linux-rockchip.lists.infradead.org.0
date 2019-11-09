@@ -2,69 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC937F5C6E
-	for <lists+linux-rockchip@lfdr.de>; Sat,  9 Nov 2019 01:43:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 737E1F5C9E
+	for <lists+linux-rockchip@lfdr.de>; Sat,  9 Nov 2019 02:09:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CDgp2sdazga3lQH6UpgDysE/Au4mafhQjdzfTPdWZNo=; b=hpDBNdTXa4QnMi
-	VetpRpnuGG4S5FJm0rCQ4ZH3lOogVcrMMMHhL44spjQckSF+z/tyr3kkIbJfCmKk+SlmwAlE56qpH
-	gxUzIiaXMFHPYuxCtyhzKSMcFD7V6N6vvfDRIAWknp0v9350OXuKSvMcTXlG3fstv9OKuBRzWQ+i0
-	HsXPMGiseNc0RS7EurHcfol6LJ8WDMbe88vDltRSJ6mwlRGq4i5v2xZ4Q+BzeqlPsAYxmvJBVn1Hz
-	ciAGsMjOH1k1yLMieGzrxiNJBKts6SzJV0ic/neBhHemLm1OE51xrI7GDPJRe5GRbGmACcnzYnfcZ
-	HEBsnBYFZqZ0y4v+ek1w==;
+	List-Owner; bh=X8vgtklp98JHD1Fl5KNiLItJ6dxp7FKBwKuXLAMghjI=; b=RHN4cNbul6BdNN
+	10JV3wC3XKGwydxAOLzer2YlVr6mL5rGWrGChZQMbQweywfYdStHP6DuUk7O2FKsTIGyYiciB4Ywe
+	5mG86di8XaflQ/NeVqcgje8d74aUO8WFsF6r9+fIsw5jQ0wCtO3Alb1zQn4uYhPDn9rpJRYFfib+f
+	/g501k52/uM06ozjbZ6cQv9bD6moo8ojUY4alidOQ7LAgtE00QksQAQ/fl0enHqeGSAzBUiX+b02O
+	PMDmiClYi2/RCynnuXxo3TI7WmyeYNyH4w0H1RNCn1JtDqr5j6Zfrjq2g6WYH7JuWhmdZlqzsssSH
+	5rOE2Wb+V5WdNroLdu/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTEqR-0000Z8-12; Sat, 09 Nov 2019 00:43:15 +0000
-Received: from smtprelay0018.hostedemail.com ([216.40.44.18]
- helo=smtprelay.hostedemail.com)
+	id 1iTFFV-0001Hl-MK; Sat, 09 Nov 2019 01:09:09 +0000
+Received: from mail-qv1-xf41.google.com ([2607:f8b0:4864:20::f41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTEq7-0000IW-Tz; Sat, 09 Nov 2019 00:42:57 +0000
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
- [216.40.38.60])
- by smtprelay04.hostedemail.com (Postfix) with ESMTP id AB635180AA507;
- Sat,  9 Nov 2019 00:42:49 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-Spam-Summary: 13, 1.2, 0, , d41d8cd98f00b204, joe@perches.com,
- :::::::::::::::::::,
- RULES_HIT:1:2:41:355:379:599:960:973:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1593:1594:1605:1730:1747:1777:1792:2393:2553:2559:2562:2828:3138:3139:3140:3141:3142:3622:3865:3866:3867:3868:3870:3871:3872:3873:3874:4052:4321:4559:4605:5007:6119:6691:7903:8603:10008:10848:11026:11232:11473:11658:11914:12043:12296:12297:12438:12555:12740:12760:12895:12986:13439:14659:21080:21433:21451:21627:30054:30070:30090:30091,
- 0,
- RBL:47.151.135.224:@perches.com:.lbl8.mailshell.net-62.8.0.100 64.201.201.201,
- CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none, DomainCache:0,
- MSF:not bulk, SPF:fn, MSBL:0, DNSBL:neutral, Custom_rules:0:1:0, LFtime:26,
- LUA_SUMMARY:none
-X-HE-Tag: frog72_1876ec24ece58
-X-Filterd-Recvd-Size: 10549
-Received: from XPS-9350.home (unknown [47.151.135.224])
- (Authenticated sender: joe@perches.com)
- by omf16.hostedemail.com (Postfix) with ESMTPA;
- Sat,  9 Nov 2019 00:42:47 +0000 (UTC)
-Message-ID: <14f8e1441396d19bdec30f0db6f995145c132672.camel@perches.com>
-Subject: Re: [PATCH] drm/rockchip: use DRM_DEV_ERROR for log output
-From: Joe Perches <joe@perches.com>
-To: Sean Paul <sean@poorly.run>
-Date: Fri, 08 Nov 2019 16:42:33 -0800
-In-Reply-To: <20191107133851.GF63329@art_vandelay>
-References: <20191107092945.15513-1-wambui.karugax@gmail.com>
- <4c74db2614cefe23f888d0643c2d7c356086745a.camel@perches.com>
- <20191107133851.GF63329@art_vandelay>
-User-Agent: Evolution 3.34.1-2 
+ id 1iTFFS-0001HM-Bd
+ for linux-rockchip@lists.infradead.org; Sat, 09 Nov 2019 01:09:08 +0000
+Received: by mail-qv1-xf41.google.com with SMTP id d3so1405807qvs.11
+ for <linux-rockchip@lists.infradead.org>; Fri, 08 Nov 2019 17:09:05 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=gpBuz6aPoo6cpSt6n0KAMaxmx/aj/3j95L1PqQ6HjMU=;
+ b=revBIHIe44NjvcgoYQW81pD8SjCQMlWo23yln7MqLPK11d87hu+mrO6MO0zZOjssB9
+ VnUleDpGUcXv+2vhQFMxk0ACptGd3ZID3NMiBAp7Iir5XQCJQcAKMtSiotchssaoKyrt
+ lTYnPNc2r77VfSoiTuu08cWWviHEn8Y7zldIrfVLkrMZHSYQuvfcT6P7TFj906Bfwpcc
+ LDvSEE3NKUzoavI6+0ZAFTUHgGRKr8NlVJoUiTuycaK9u4++ineHcOPjU4pinpyjp7Si
+ P30LVPwzJZ92Le4gy7YIu7ychYlFW9Ldk2cDzuFW3f/xuSFjuPWy8QuWx2iW8Yr5OARQ
+ FFuQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=gpBuz6aPoo6cpSt6n0KAMaxmx/aj/3j95L1PqQ6HjMU=;
+ b=fhqoR6sQ8Fw6ZyHzCSRRBjMWvLNRwSISAlp73m0qqcRT1g1dVUMZGqDlJnoaKJ8MFQ
+ jg8uFzndu+f11XJ6WlZZY8/xVchm+WfpDbZdhIVv7PabY/dR74JsucDI0QY+v0HQUZ4j
+ NoD2RPVp1bjlGje/WTIkYP0f7ccdowp0rXOyT5lN6iZt6I2r1otXGoE8Mk39sVL9730O
+ 6ohEMvMH4zHrGjbevPdkPuRzEn6XW9IraCQ0jrsnS6SYE97sL67IxK0iODHf69+V26C2
+ vCqeWRlwesYaUrVzCCIDH+I8VkmgcodnV05OC/GQJECa2mZB0thZjJviDRJBTdZXebX7
+ PmZg==
+X-Gm-Message-State: APjAAAVuZ4zKml//wInddIVJheUGERJGJgJMta/BP2slMZ6F7yaRhllO
+ +KH1+vYApFu3mlFkbHVE8PN3YBWxGAh7SQ0m1jI=
+X-Google-Smtp-Source: APXvYqwZfSrL21F4GO14++c52sIOk2Y1CSXhjRpJTGV9Jhunt5JG6UdNwCp+5lS31zc9SplxlIj9FfjB2IHE/5gkZXs=
+X-Received: by 2002:ad4:5891:: with SMTP id
+ dz17mr12957943qvb.160.1573261744301; 
+ Fri, 08 Nov 2019 17:09:04 -0800 (PST)
 MIME-Version: 1.0
+References: <CAMdYzYoTwjKz4EN8PtD5pZfu3+SX+68JL+dfvmCrSnLL=K6Few@mail.gmail.com>
+In-Reply-To: <CAMdYzYoTwjKz4EN8PtD5pZfu3+SX+68JL+dfvmCrSnLL=K6Few@mail.gmail.com>
+From: Peter Geis <pgwipeout@gmail.com>
+Date: Fri, 8 Nov 2019 20:08:54 -0500
+Message-ID: <CAMdYzYqQpVrA9DpN5GRc2RqvsShSamw2EBJDxwng1aE3sfpfdg@mail.gmail.com>
+Subject: Re: [BUG] rk3399-rockpro64 pcie synchronous external abort
+To: shawn.lin@rock-chips.com, Heiko Stuebner <heiko@sntech.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_164256_109231_500D252A 
-X-CRM114-Status: GOOD (  17.69  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191108_170906_425429_E2050595 
+X-CRM114-Status: GOOD (  17.93  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.40.44.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pgwipeout[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,207 +90,164 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: heiko@sntech.de, airlied@linux.ie, hjc@rock-chips.com,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, daniel@ffwll.ch,
- linux-arm-kernel@lists.infradead.org, Wambui Karuga <wambui.karugax@gmail.com>
+Cc: linux-pci@vger.kernel.org, linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, 2019-11-07 at 08:38 -0500, Sean Paul wrote:
-> On Thu, Nov 07, 2019 at 01:54:22AM -0800, Joe Perches wrote:
-> > On Thu, 2019-11-07 at 12:29 +0300, Wambui Karuga wrote:
-> > > Replace the use of the dev_err macro with the DRM_DEV_ERROR
-> > > DRM helper macro.
-> > 
-> > The commit message should show the reason _why_ you are doing
-> > this instead of just stating that you are doing this.
-> > 
-> > It's not that dev_err is uncommon in drivers/gpu/drm.
-> > 
-> 
-> It is uncommon (this is the sole instance) in rockchip, however. So it makes
-> sense to convert the dev_* prints in rockchip to DRM_DEV for consistency.
-> 
-> Wambui, could you also please convert the dev_warn instance as well?
-> 
-> I'll apply this to drm-misc-next and expand on the commit message a bit.
+Good Evening,
 
-Here's a patch that reduces the size of a defconfig arm build
-for drivers/gpu/drm by about 4k by removing the separate
-KERN_<LEVEL> argument from drm_dev_printk and change the macros
-to prefix the KERN_<LEVEL> to the format.
+I'm not sure, but I believe the pcie address space built into the
+rk3399 is not large enough to accommodate the pcie addresses the card
+requires.
+I've been trying to figure out if it's possible to use system ram
+instead, but so far I haven't been successful.
+Also, the ram layout for the rk3399 is odd considering the TRM, if
+anyone has any insights in to that, I'd be grateful.
 
-It also trivially reduces an x86 defconfig.
-
-Here are the arm object size changes: (only files with size deltas)
-
-     old      new  savings filename
-
-    4521     4505       16 drivers/gpu/drm/panel/panel-raydium-rm68200.o
-   14003    13983       20 drivers/gpu/drm/drm_fb_helper.o
-    2946     3122     -176 drivers/gpu/drm/drm_print.o
-   29656    29644       12 drivers/gpu/drm/panfrost/panfrost.o
-    1012     1000       12 drivers/gpu/drm/panfrost/panfrost_devfreq.o
-    3184     3144       40 drivers/gpu/drm/rockchip/analogix_dp-rockchip.o
-   11780    11772        8 drivers/gpu/drm/rockchip/rockchip_vop_reg.o
-    3860     3836       24 drivers/gpu/drm/rockchip/dw_hdmi-rockchip.o
-    6832     6748       84 drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.o
-   19247    19167       80 drivers/gpu/drm/rockchip/rockchip_drm_vop.o
-    3449     3433       16 drivers/gpu/drm/rockchip/rockchip_drm_drv.o
-   57144    56824      320 drivers/gpu/drm/rockchip/rockchipdrm.o
-     820      800       20 drivers/gpu/drm/rockchip/rockchip_drm_fb.o
-    1032     1012       20 drivers/gpu/drm/rockchip/rockchip_drm_fbdev.o
-    4248     4220       28 drivers/gpu/drm/rockchip/inno_hdmi.o
-    3088     3076       12 drivers/gpu/drm/vc4/vc4_hvs.o
-  113808   113796       12 drivers/gpu/drm/vc4/vc4.o
-    2506     2478       28 drivers/gpu/drm/drm_client.o
-   19059    19027       32 drivers/gpu/drm/bridge/analogix/analogix_dp.o
-   11387    11355       32 drivers/gpu/drm/bridge/analogix/analogix_dp_core.o
-    3060     3020       40 drivers/gpu/drm/exynos/exynos_drm_gem.o
-   17928    17864       64 drivers/gpu/drm/exynos/exynos_hdmi.o
-     536      528        8 drivers/gpu/drm/exynos/exynos_drm_dma.o
-     981      957       24 drivers/gpu/drm/exynos/exynos_drm_fb.o
-    1556     1524       32 drivers/gpu/drm/exynos/exynos_drm_fbdev.o
-    8932     8888       44 drivers/gpu/drm/exynos/exynos_drm_fimd.o
-    2021     1997       24 drivers/gpu/drm/exynos/exynos_dp.o
-    1172     1148       24 drivers/gpu/drm/exynos/exynos_drm_dpi.o
-   66538    66214      324 drivers/gpu/drm/exynos/exynosdrm.o
-   11982    11950       32 drivers/gpu/drm/exynos/exynos_mixer.o
-    1528     1512       16 drivers/gpu/drm/exynos/exynos_drm_plane.o
-   11534    11518       16 drivers/gpu/drm/exynos/exynos_drm_dsi.o
-    1263     1255        8 drivers/gpu/drm/drm_gem_framebuffer_helper.o
-    8085     8057       28 drivers/gpu/drm/msm/adreno/adreno_gpu.o
-    1656     1640       16 drivers/gpu/drm/msm/adreno/a5xx_preempt.o
-   10581    10481      100 drivers/gpu/drm/msm/adreno/a6xx_gmu.o
-   14722    14694       28 drivers/gpu/drm/msm/adreno/a5xx_gpu.o
-    4608     4592       16 drivers/gpu/drm/msm/adreno/adreno_device.o
-    2486     2466       20 drivers/gpu/drm/msm/adreno/a6xx_hfi.o
-    5190     5182        8 drivers/gpu/drm/msm/adreno/a3xx_gpu.o
-    5942     5934        8 drivers/gpu/drm/msm/adreno/a4xx_gpu.o
-    8900     8860       40 drivers/gpu/drm/msm/adreno/a6xx_gpu.o
-    1432     1420       12 drivers/gpu/drm/msm/adreno/a5xx_debugfs.o
-  558494   556918     1576 drivers/gpu/drm/msm/msm.o
-    8461     8389       72 drivers/gpu/drm/msm/msm_gpu.o
-    1616     1596       20 drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.o
-   12377    12353       24 drivers/gpu/drm/msm/disp/mdp5/mdp5_crtc.o
-   16950    16930       20 drivers/gpu/drm/msm/disp/mdp5/mdp5_plane.o
-    1768     1760        8 drivers/gpu/drm/msm/disp/mdp5/mdp5_mdss.o
-    1320     1308       12 drivers/gpu/drm/msm/disp/mdp5/mdp5_irq.o
-    8228     8212       16 drivers/gpu/drm/msm/disp/mdp5/mdp5_cfg.o
-    8307     8271       36 drivers/gpu/drm/msm/disp/mdp5/mdp5_ctl.o
-    8252     8152      100 drivers/gpu/drm/msm/disp/mdp5/mdp5_kms.o
-    2883     2855       28 drivers/gpu/drm/msm/disp/mdp5/mdp5_cmd_encoder.o
-    4538     4518       20 drivers/gpu/drm/msm/disp/mdp5/mdp5_smp.o
-    4916     4852       64 drivers/gpu/drm/msm/disp/mdp4/mdp4_kms.o
-    2896     2856       40 drivers/gpu/drm/msm/disp/mdp4/mdp4_lcdc_encoder.o
-    1844     1820       24 drivers/gpu/drm/msm/disp/mdp4/mdp4_dtv_encoder.o
-     836      824       12 drivers/gpu/drm/msm/disp/mdp4/mdp4_irq.o
-    6529     6525        4 drivers/gpu/drm/msm/disp/mdp4/mdp4_crtc.o
-    2616     2600       16 drivers/gpu/drm/msm/disp/mdp4/mdp4_plane.o
-    1896     1872       24 drivers/gpu/drm/msm/msm_fb.o
-    1748     1732       16 drivers/gpu/drm/msm/edp/edp.o
-    1724     1708       16 drivers/gpu/drm/msm/msm_debugfs.o
-    8390     8334       56 drivers/gpu/drm/msm/msm_gem.o
-    5316     5304       12 drivers/gpu/drm/msm/dsi/dsi_manager.o
-    2212     2188       24 drivers/gpu/drm/msm/dsi/dsi.o
-    5240     5224       16 drivers/gpu/drm/msm/dsi/pll/dsi_pll_10nm.o
-     968      960        8 drivers/gpu/drm/msm/dsi/pll/dsi_pll.o
-    2768     2740       28 drivers/gpu/drm/msm/dsi/pll/dsi_pll_28nm_8960.o
-    6276     6244       32 drivers/gpu/drm/msm/dsi/pll/dsi_pll_14nm.o
-    4908     4864       44 drivers/gpu/drm/msm/dsi/pll/dsi_pll_28nm.o
-   16704    16672       32 drivers/gpu/drm/msm/dsi/dsi_host.o
-    1392     1380       12 drivers/gpu/drm/msm/dsi/phy/dsi_phy_28nm_8960.o
-    1264     1252       12 drivers/gpu/drm/msm/dsi/phy/dsi_phy_20nm.o
-    2208     2188       20 drivers/gpu/drm/msm/dsi/phy/dsi_phy_10nm.o
-   10536    10456       80 drivers/gpu/drm/msm/dsi/phy/dsi_phy.o
-    1520     1500       20 drivers/gpu/drm/msm/dsi/phy/dsi_phy_14nm.o
-    2100     2088       12 drivers/gpu/drm/msm/dsi/phy/dsi_phy_28nm.o
-   11032    10984       48 drivers/gpu/drm/msm/msm_drv.o
-    1328     1308       20 drivers/gpu/drm/msm/msm_fbdev.o
-    2892     2848       44 drivers/gpu/drm/msm/hdmi/hdmi_phy.o
-    6448     6436       12 drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.o
-    3872     3860       12 drivers/gpu/drm/msm/hdmi/hdmi_pll_8960.o
-    7052     6932      120 drivers/gpu/drm/msm/hdmi/hdmi.o
-    2216     2164       52 drivers/gpu/drm/msm/hdmi/hdmi_bridge.o
-    1652     1640       12 drivers/gpu/drm/msm/hdmi/hdmi_i2c.o
- 6236178  6231730     4448 (TOTALS)
----
- drivers/gpu/drm/drm_print.c | 19 +++++++++++++++----
- include/drm/drm_print.h     |  9 ++++-----
- 2 files changed, 19 insertions(+), 9 deletions(-)
-
-diff --git a/drivers/gpu/drm/drm_print.c b/drivers/gpu/drm/drm_print.c
-index 9a25d7..fd6a3a9 100644
---- a/drivers/gpu/drm/drm_print.c
-+++ b/drivers/gpu/drm/drm_print.c
-@@ -235,14 +235,25 @@ void drm_print_bits(struct drm_printer *p, unsigned long value,
- }
- EXPORT_SYMBOL(drm_print_bits);
- 
--void drm_dev_printk(const struct device *dev, const char *level,
--		    const char *format, ...)
-+void drm_dev_printk(const struct device *dev, const char *fmt, ...)
- {
-+	char level[PRINTK_MAX_SINGLE_HEADER_LEN + 1] = {0};
-+	int kern_level;
- 	struct va_format vaf;
- 	va_list args;
- 
--	va_start(args, format);
--	vaf.fmt = format;
-+	va_start(args, fmt);
-+
-+	kern_level = printk_get_level(fmt);
-+	if (kern_level >= '0' && kern_level <= '7') {
-+		size_t size = printk_skip_level(fmt) - fmt;
-+
-+		memcpy(level, fmt, size);
-+		level[size] = '\0';
-+		fmt += size;
-+	}
-+
-+	vaf.fmt = fmt;
- 	vaf.va = &args;
- 
- 	if (dev)
-diff --git a/include/drm/drm_print.h b/include/drm/drm_print.h
-index 5b8049..fa0c12 100644
---- a/include/drm/drm_print.h
-+++ b/include/drm/drm_print.h
-@@ -298,9 +298,8 @@ static inline bool drm_debug_enabled(unsigned int category)
- 	return unlikely(drm_debug & category);
- }
- 
--__printf(3, 4)
--void drm_dev_printk(const struct device *dev, const char *level,
--		    const char *format, ...);
-+__printf(2, 3)
-+void drm_dev_printk(const struct device *dev, const char *fmt, ...);
- __printf(3, 4)
- void drm_dev_dbg(const struct device *dev, unsigned int category,
- 		 const char *format, ...);
-@@ -336,7 +335,7 @@ void drm_err(const char *format, ...);
-  * @fmt: printf() like format string.
-  */
- #define DRM_DEV_ERROR(dev, fmt, ...)					\
--	drm_dev_printk(dev, KERN_ERR, "*ERROR* " fmt, ##__VA_ARGS__)
-+	drm_dev_printk(dev, KERN_ERR "*ERROR* " fmt, ##__VA_ARGS__)
- #define DRM_ERROR(fmt, ...)						\
- 	drm_err(fmt, ##__VA_ARGS__)
- 
-@@ -359,7 +358,7 @@ void drm_err(const char *format, ...);
- 	DRM_DEV_ERROR_RATELIMITED(NULL, fmt, ##__VA_ARGS__)
- 
- #define DRM_DEV_INFO(dev, fmt, ...)					\
--	drm_dev_printk(dev, KERN_INFO, fmt, ##__VA_ARGS__)
-+	drm_dev_printk(dev, KERN_INFO fmt, ##__VA_ARGS__)
- 
- #define DRM_DEV_INFO_ONCE(dev, fmt, ...)				\
- ({									\
-
+On Mon, Nov 4, 2019 at 1:55 PM Peter Geis <pgwipeout@gmail.com> wrote:
+>
+> Good Morning,
+>
+> I'm attempting to debug an issue with the rockpro64 pcie port.
+> It would appear that the port does not like various cards, including
+> cards of the same make that randomly work or do not work, such as
+> Intel i340 based NICs.
+> I'm experiencing it with a GTX645 gpu.
+>
+> This seems to be a long running issue, referenced both at [0], and [1].
+> There was an attempt to rectify it, by adding a delay between training
+> and probing [2], but that doesn't seem to be the issue here.
+> It appears that when we probe further into the card, such as devfn >
+> 1, we trigger the bug.
+> I've added a print statement that prints the devfn, address, and size
+> information, which you can see below.
+>
+> I've attempted setting the available number of lanes to 1 as well, to
+> no difference.
+>
+> If anyone could point me in the right direction as to where to
+> continue debugging, I'd greatly appreciate it.
+>
+> [0] https://github.com/ayufan-rock64/linux-build/issues/254
+> [1] https://github.com/rockchip-linux/kernel/issues/116
+> [2] https://github.com/ayufan-rock64/linux-kernel/commit/3cde5c624c9c39aa03251a55c2d26a48b5bdca5b
+>
+> [  198.491458] rockchip-pcie f8000000.pcie: missing legacy phy; search
+> for per-lane PHY
+> [  198.492986] rockchip-pcie f8000000.pcie: no vpcie1v8 regulator found
+> [  198.493060] rockchip-pcie f8000000.pcie: no vpcie0v9 regulator found
+> [  198.550444] rockchip-pcie f8000000.pcie: current link width is x1
+> [  198.550458] rockchip-pcie f8000000.pcie: idling lane 1
+> [  198.550479] rockchip-pcie f8000000.pcie: idling lane 2
+> [  198.550490] rockchip-pcie f8000000.pcie: idling lane 3
+> [  198.550608] rockchip-pcie f8000000.pcie: host bridge /pcie@f8000000 ranges:
+> [  198.550625] rockchip-pcie f8000000.pcie: Parsing ranges property...
+> [  198.550656] rockchip-pcie f8000000.pcie:   MEM
+> 0xfa000000..0xfbdfffff -> 0xfa000000
+> [  198.550676] rockchip-pcie f8000000.pcie:    IO
+> 0xfbe00000..0xfbefffff -> 0xfbe00000
+> [  198.552908] rockchip-pcie f8000000.pcie: PCI host bridge to bus 0000:00
+> [  198.552933] pci_bus 0000:00: root bus resource [bus 00-1f]
+> [  198.552943] pci_bus 0000:00: root bus resource [mem 0xfa000000-0xfbdfffff]
+> [  198.552954] pci_bus 0000:00: root bus resource [io  0x0000-0xfffff]
+> (bus address [0xfbe00000-0xfbefffff])
+> [  198.552965] pci_bus 0000:00: scanning bus
+> [  198.554198] pci 0000:00:00.0: [1d87:0100] type 01 class 0x060400
+> [  198.555508] pci 0000:00:00.0: supports D1
+> [  198.555516] pci 0000:00:00.0: PME# supported from D0 D1 D3hot
+> [  198.556023] pci 0000:00:00.0: PME# disabled
+> [  198.561245] pci_bus 0000:00: fixups for bus
+> [  198.561269] pci 0000:00:00.0: scanning [bus 00-00] behind bridge, pass 0
+> [  198.561277] pci 0000:00:00.0: bridge configuration invalid ([bus
+> 00-00]), reconfiguring
+> [  198.566429] pci 0000:00:00.0: scanning [bus 00-00] behind bridge, pass 1
+> [  198.567008] pci_bus 0000:01: scanning bus
+> [  198.567171] pci 0000:01:00.0: [10de:11c4] type 00 class 0x030000
+> [  198.567420] pci 0000:01:00.0: reg 0x10: [mem 0x00000000-0x00ffffff]
+> [  198.567515] pci 0000:01:00.0: reg 0x14: [mem 0x00000000-0x07ffffff
+> 64bit pref]
+> [  198.567608] pci 0000:01:00.0: reg 0x1c: [mem 0x00000000-0x01ffffff
+> 64bit pref]
+> [  198.567665] pci 0000:01:00.0: reg 0x24: initial BAR value 0x00000000 invalid
+> [  198.567673] pci 0000:01:00.0: reg 0x24: [io  size 0x0080]
+> [  198.567730] pci 0000:01:00.0: reg 0x30: [mem 0x00000000-0x0007ffff pref]
+> [  198.567815] pci 0000:01:00.0: Max Payload Size set to 256 (was 128, max 256)
+> [  198.569051] pci 0000:01:00.0: 2.000 Gb/s available PCIe bandwidth,
+> limited by 2.5 GT/s x1 link at 0000:00:00.0 (capable of 126.016 Gb/s
+> with 8 GT/s x16 link)
+> [  198.570225] pci 0000:01:00.0: vgaarb: VGA device added:
+> decodes=io+mem,owns=none,locks=none
+> [  198.570481] pci 0000:01:00.1: [10de:0e0b] type 00 class 0x040300
+> [  198.570663] pci 0000:01:00.1: reg 0x10: [mem 0x00000000-0x00003fff]
+> [  198.571039] pci 0000:01:00.1: Max Payload Size set to 256 (was 128, max 256)
+> <snip>
+> [  198.749857] pci_bus 0000:01: read pcie, devfn 1, at 100, size 2
+> [  198.750252] pci_bus 0000:01: read pcie, devfn 2, at 0, size 4
+> [  198.750881] Internal error: synchronous external abort: 96000210
+> [#1] PREEMPT SMP
+> [  198.751581] Modules linked in: drm_panel_orientation_quirks
+> pcie_rockchip_host(+) cpufreq_dt sch_fq_codel ip_tables x_tables ipv6
+> crc_ccitt nf_defrag_ipv6
+> [  198.752861] CPU: 1 PID: 1686 Comm: systemd-udevd Not tainted
+> 5.4.0-rc5-next-20191031-00001-gddbfb17ac1c4-dirty #5
+> [  198.753791] Hardware name: Pine64 RockPro64 (DT)
+> [  198.754215] pstate: 60400085 (nZCv daIf +PAN -UAO)
+> [  198.754672] pc : __raw_readl+0x0/0x8 [pcie_rockchip_host]
+> [  198.755172] lr : rockchip_pcie_rd_conf+0x140/0x1dc [pcie_rockchip_host]
+> [  198.755773] sp : ffff8000132af530
+> [  198.756079] x29: ffff8000132af530 x28: 0000000000000000
+> [  198.756565] x27: 0000000000000001 x26: 0000000000000000
+> [  198.757049] x25: ffff0000c20ac000 x24: 0000000000002000
+> [  198.757534] x23: ffff0000c20ae5c0 x22: ffff8000132af5d4
+> [  198.758018] x21: 0000000000002000 x20: 0000000000000004
+> [  198.758502] x19: 0000000000102000 x18: 0000000000000001
+> [  198.758987] x17: 0000000000000000 x16: 0000000000000000
+> [  198.759472] x15: ffffffffffffffff x14: ffff80001159bcc8
+> [  198.759957] x13: 0000000000000000 x12: ffff800011b2c000
+> [  198.760441] x11: ffff8000115bf000 x10: ffff800011310018
+> [  198.760926] x9 : 00000000fffb9fff x8 : 0000000000000001
+> [  198.761410] x7 : 0000000000000000 x6 : ffff0000f7492548
+> [  198.761894] x5 : 0000000000000001 x4 : ffff0000f7492548
+> [  198.762379] x3 : 0000000000000000 x2 : 0000000000c00008
+> [  198.762863] x1 : ffff80001dc00008 x0 : ffff80001a102000
+> [  198.763348] Call trace:
+> [  198.763583]  __raw_readl+0x0/0x8 [pcie_rockchip_host]
+> [  198.764057]  pci_bus_read_config_dword+0x88/0xd0
+> [  198.764484]  pci_bus_generic_read_dev_vendor_id+0x40/0x1b8
+> [  198.764982]  pci_bus_read_dev_vendor_id+0x58/0x88
+> [  198.765413]  pci_scan_single_device+0x84/0xf8
+> [  198.765812]  pci_scan_slot+0x7c/0x120
+> [  198.766149]  pci_scan_child_bus_extend+0x68/0x2dc
+> [  198.766579]  pci_scan_bridge_extend+0x350/0x588
+> [  198.766992]  pci_scan_child_bus_extend+0x21c/0x2dc
+> [  198.767430]  pci_scan_child_bus+0x24/0x30
+> [  198.767797]  pci_scan_root_bus_bridge+0xc4/0xd0
+> [  198.768215]  rockchip_pcie_probe+0x610/0x74c [pcie_rockchip_host]
+> [  198.768770]  platform_drv_probe+0x58/0xa8
+> [  198.769139]  really_probe+0xe0/0x318
+> [  198.769468]  driver_probe_device+0x5c/0xf0
+> [  198.769844]  device_driver_attach+0x74/0x80
+> [  198.770227]  __driver_attach+0x64/0xe8
+> [  198.770572]  bus_for_each_dev+0x84/0xd8
+> [  198.770924]  driver_attach+0x30/0x40
+> [  198.771253]  bus_add_driver+0x188/0x1e8
+> [  198.771605]  driver_register+0x64/0x110
+> [  198.771956]  __platform_driver_register+0x54/0x60
+> [  198.772388]  rockchip_pcie_driver_init+0x28/0x10000 [pcie_rockchip_host]
+> [  198.772998]  do_one_initcall+0x94/0x390
+> [  198.773353]  do_init_module+0x88/0x268
+> [  198.773697]  load_module+0x1e18/0x2198
+> [  198.774043]  __do_sys_finit_module+0xd0/0xe8
+> [  198.774435]  __arm64_sys_finit_module+0x28/0x38
+> [  198.774858]  el0_svc_common.constprop.3+0xa4/0x1d8
+> [  198.775297]  el0_svc_handler+0x34/0xa0
+> [  198.775645]  el0_svc+0x14/0x40
+> [  198.775928]  el0_sync_handler+0x118/0x290
+> [  198.776295]  el0_sync+0x164/0x180
+> [  198.776609] Code: bad PC value
+> [  198.776897] ---[ end trace 88fc77651b5e2909 ]---
 
 _______________________________________________
 Linux-rockchip mailing list
