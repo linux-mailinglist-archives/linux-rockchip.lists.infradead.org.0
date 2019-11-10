@@ -2,47 +2,47 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 460A6F62F8
-	for <lists+linux-rockchip@lfdr.de>; Sun, 10 Nov 2019 03:47:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC3FBF62FA
+	for <lists+linux-rockchip@lfdr.de>; Sun, 10 Nov 2019 03:47:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0MUL5Fx3anh5U+uS808etCUg6GraBkrJEzMiatoTSxE=; b=sbgCnpz/3gXS7d
-	1w9SoZYiMx14zgisSoPdyFkc2IXwlXCtXhS5MRu8OoAiqi9DggKZy4ZoY4SB37iSCXU8YMyOk1t0P
-	e5yvrVvIzDFjS9VG7B3VFJGqP2TREqH+1WGPSUG4oJcGKWq1Q9ktYlQv52+IxbkVvIruU8L0hU/Kj
-	IxK4nfztudhGz5fLQCyxQ1df8HSm0p9cU7kok1HAQYqesjSlPSMmpeaYEAGbVarfNJi7VkCIEo/cr
-	CGq6KZTwI9DFQX5sPP5cBn/4aRHVAH5VhRhozmGMVI0w9gf7FNZ1qInn6omSbXcCU28kAXf5ZQIzS
-	eE0xzxQEQFZbj7GEALfg==;
+	List-Owner; bh=m59j2dpOYObDrOioPkKOIE0wK8mxpb2aCedGzbww3L8=; b=NieZLlH7aLxsWx
+	EP71gkYga1mkWwe8bDDZ1KQnIp7lQ6pcB9ecSkHCUpxYcjU83Gu7cf6iFs2Q+L+t8NB7KhijjNMur
+	QF65FN/qYMnPR5MRGQBkP+0h3pdshDX8gxhd+rJz3SQ6N/SFoQdW5kXaocv15ZbV3eSc3LEUCVFSH
+	pZPJ/d+Szy0hyUASBZxdlPhCTiqFPespzW2XziTNU77ITPmdTcYvmoDi3lFa88fRznXfl3dpAjYft
+	if5AA6kyGPsHBwNqn8ssk8e7Y7BnfxzSr+kaS0TAnEDf/krvw3JRem/DEvhD3mLIjuYt8YwerI2j6
+	cSkmMYpoDuu8OX8wiqrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTdG3-0003ks-6o; Sun, 10 Nov 2019 02:47:19 +0000
+	id 1iTdG8-0003nj-UC; Sun, 10 Nov 2019 02:47:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTdFz-0003k6-M0
- for linux-rockchip@lists.infradead.org; Sun, 10 Nov 2019 02:47:17 +0000
+ id 1iTdG5-0003mN-AK
+ for linux-rockchip@lists.infradead.org; Sun, 10 Nov 2019 02:47:22 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9866321924;
- Sun, 10 Nov 2019 02:47:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 47B7821D7E;
+ Sun, 10 Nov 2019 02:47:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573354035;
- bh=gSm9oRdRrYfITQXHwTWIL/rl9M+mtIAsSkvM8yEWsCg=;
+ s=default; t=1573354040;
+ bh=5DLZxx+XkJtsu61XyqZjuPUSFXnrVTk7JiK1SjKEoNE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=O+9xt3jivdyOCthtOZUbw38c+NCtZthnN9YhQeR2Aicv4+x+aiooCPQpGH/4jH3cs
- WD01cVPhck84Pt4ZZKQoce8XlmMHfNSc7LvWvWWdWDMHefKbKP7uA3AFVkkiGyVtYk
- kRItv0Q1lox4FJlO35GI7NBBuN9EJ24/hI1Tp1G8=
+ b=QEcro/+jEpVRvMGeSbMO5+fC5CsxfW6YLIBJK142in2IKg1GkOnAzwAzChOvpnAtO
+ 5Pl4bSlHybrlna6s8KFERQ8l22BjIU4NOUxEfH40qHyO1RXsx+PmNH/rF8n0G4OWyC
+ SihJh0jNFQo7mPgzGJprPaF6Q0DoWLNZ0ilBvkL0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 049/109] arm64: dts: rockchip: Fix microSD in
- rk3399 sapphire board
-Date: Sat,  9 Nov 2019 21:44:41 -0500
-Message-Id: <20191110024541.31567-49-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 053/109] ARM: dts: rockchip: explicitly set
+ vcc_sd0 pin to gpio on rk3188-radxarock
+Date: Sat,  9 Nov 2019 21:44:45 -0500
+Message-Id: <20191110024541.31567-53-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191110024541.31567-1-sashal@kernel.org>
 References: <20191110024541.31567-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191109_184715_767462_A61122BB 
-X-CRM114-Status: GOOD (  14.62  )
+X-CRM114-CacheID: sfid-20191109_184721_385301_F4613CEC 
+X-CRM114-Status: GOOD (  12.22  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,102 +81,61 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, Vicente Bergas <vicencb@gmail.com>,
- linux-rockchip@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-rockchip@lists.infradead.org,
+ Heiko Stuebner <heiko@sntech.de>, devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Vicente Bergas <vicencb@gmail.com>
+From: Heiko Stuebner <heiko@sntech.de>
 
-[ Upstream commit 88a20edf76091ee7f1bb459b89d714d53f0f8940 ]
+[ Upstream commit a2df0984e73fd9e1dad5fc3f1c307ec3de395e30 ]
 
-The microSD card slot in the Sapphire board is not working because of
-several issues:
- 1.- The vmmc power supply is missing in the DTS. It is capable of 3.0V
- and has a GPIO-based enable control.
- 2.- The vqmmc power supply can provide up to 3.3V, but it is capped in
- the DTS to just 3.0V because of the vmmc capability. This results in a
- conflict from the mmc driver requesting an unsupportable voltage range
- from 3.3V to 3.0V (min > max) as reported in dmesg. So, extend the
- range up to 3.3V. The hw should be able to stand this 0.3V tolerance.
- See mmc_regulator_set_vqmmc in drivers/mmc/core/core.c.
- 3.- The card detect signal is non-working. There is a known conflict
- with jtag, but the workaround in drivers/soc/rockchip/grf.c does not
- work. Adding the broken-cd attribute to the DTS fixes the issue.
+It is good practice to make the setting of gpio-pinctrls explicitly in the
+devicetree, and in this case even necessary.
+Rockchip boards start with iomux settings set to gpio for most pins and
+while the linux pinctrl driver also implicitly sets the gpio function if
+a pin is requested as gpio that is not necessarily true for other drivers.
 
-Signed-off-by: Vicente Bergas <vicencb@gmail.com>
+The issue in question stems from uboot, where the sdmmc_pwr pin is set
+to function 1 (sdmmc-power) by the bootrom when reading the 1st-stage
+loader. The regulator controlled by the pin is active-low though, so
+when the dwmmc hw-block sets its enabled bit, it actually disables the
+regulator. By changing the pin back to gpio we fix that behaviour.
+
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- .../boot/dts/rockchip/rk3399-sapphire.dtsi    | 24 ++++++++++++++++++-
- 1 file changed, 23 insertions(+), 1 deletion(-)
+ arch/arm/boot/dts/rk3188-radxarock.dts | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
-index ce592a4c0c4cd..6e40133372a80 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
-@@ -113,6 +113,19 @@
- 		vin-supply = <&vcc_1v8>;
- 	};
- 
-+	vcc3v0_sd: vcc3v0-sd {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpio = <&gpio0 RK_PA1 GPIO_ACTIVE_HIGH>;
+diff --git a/arch/arm/boot/dts/rk3188-radxarock.dts b/arch/arm/boot/dts/rk3188-radxarock.dts
+index 53d6fc2fdbce8..541a798d3d202 100644
+--- a/arch/arm/boot/dts/rk3188-radxarock.dts
++++ b/arch/arm/boot/dts/rk3188-radxarock.dts
+@@ -130,6 +130,8 @@
+ 		regulator-min-microvolt = <3300000>;
+ 		regulator-max-microvolt = <3300000>;
+ 		gpio = <&gpio3 RK_PA1 GPIO_ACTIVE_LOW>;
 +		pinctrl-names = "default";
-+		pinctrl-0 = <&sdmmc0_pwr_h>;
-+		regulator-always-on;
-+		regulator-max-microvolt = <3000000>;
-+		regulator-min-microvolt = <3000000>;
-+		regulator-name = "vcc3v0_sd";
-+		vin-supply = <&vcc3v3_sys>;
-+	};
-+
- 	vcc3v3_sys: vcc3v3-sys {
- 		compatible = "regulator-fixed";
- 		regulator-name = "vcc3v3_sys";
-@@ -315,7 +328,7 @@
- 				regulator-always-on;
- 				regulator-boot-on;
- 				regulator-min-microvolt = <1800000>;
--				regulator-max-microvolt = <3000000>;
-+				regulator-max-microvolt = <3300000>;
- 				regulator-state-mem {
- 					regulator-on-in-suspend;
- 					regulator-suspend-microvolt = <3000000>;
-@@ -490,6 +503,13 @@
++		pinctrl-0 = <&sdmmc_pwr>;
+ 		startup-delay-us = <100000>;
+ 		vin-supply = <&vcc_io>;
+ 	};
+@@ -348,6 +350,12 @@
  		};
  	};
  
-+	sd {
-+		sdmmc0_pwr_h: sdmmc0-pwr-h {
-+			rockchip,pins =
-+				<RK_GPIO0 RK_PA1 RK_FUNC_GPIO &pcfg_pull_none>;
++	sd0 {
++		sdmmc_pwr: sdmmc-pwr {
++			rockchip,pins = <RK_GPIO3 1 RK_FUNC_GPIO &pcfg_pull_none>;
 +		};
 +	};
 +
- 	usb2 {
- 		vcc5v0_host_en: vcc5v0-host-en {
- 			rockchip,pins =
-@@ -537,6 +557,7 @@
- };
- 
- &sdmmc {
-+	broken-cd;
- 	bus-width = <4>;
- 	cap-mmc-highspeed;
- 	cap-sd-highspeed;
-@@ -545,6 +566,7 @@
- 	max-frequency = <150000000>;
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd &sdmmc_bus4>;
-+	vmmc-supply = <&vcc3v0_sd>;
- 	vqmmc-supply = <&vcc_sdio>;
- 	status = "okay";
- };
+ 	usb {
+ 		host_vbus_drv: host-vbus-drv {
+ 			rockchip,pins = <0 3 RK_FUNC_GPIO &pcfg_pull_none>;
 -- 
 2.20.1
 
