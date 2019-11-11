@@ -2,90 +2,63 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A0B0F6C12
-	for <lists+linux-rockchip@lfdr.de>; Mon, 11 Nov 2019 01:53:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AB40F6D4E
+	for <lists+linux-rockchip@lfdr.de>; Mon, 11 Nov 2019 04:30:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=jyujo7sLD1IBmICryLmxyKju+vHzkPp1R0EpATeu/tg=; b=FindiC8kTN4gjg6/Uoj2Kjt/e6
-	70rRhHC6811o9TnTLqy1t63CoG+ySTLrEH/C9h5PphCnMtRyLiITrNA7/nqn4nkCyJ/+HCDy9Oir/
-	fYSJfCoQkXNS+B6ZgoCso2BI2TUogzLlbn6QoW0ooY1VnYqCcUS/WtnHQkXNgtzf9KBxyo16Ilk1H
-	T0i38O7oq1LJZ+vezYmptOtslm4qnJ94k+Zdq8DVLo33OeOcil0CY4+Gij9j4MsHqBOw/eVX7xRHp
-	Sj1p9XfD0g+a2yq6L59HRusq/Hn9xxKU2kSKLFX3goYaBjDCchOzz4GtMfXCSnE9YnE1HSChbg0AJ
-	DjyVofTw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=cet7Dm9Hlh6GY9gibnKCorFgYTc6n+P+mL3Hdd1X/wg=; b=pZC7y9Zy5T8L1BsViLE6nX0to
+	jJmGRj4jfoHklY92etv6Btw5ZtwQa/eOkPtV6jbQoOW1f1FGNe5AYqJ8DYjYkg7tBL3/qXvDOAMBl
+	oza5AlA91KvJyTyPPkl5WdNjmecXToZ8QMKJXJgYbxG2GE+SHUGkyQUyflG9bdk/Av22OsOtfWBjw
+	ckiaFoPHFe/QhM2jlODhfiOvkBhK+D3a9CG3wUa3Bbgk+6iWFtVvRPZrbE/baURZGxuux7NgxxhDk
+	mQeYEe/MVY+Iw1FvHfzmrnErze1JFVM68dyCBAhWxTvm11pWTJyRU0WT1Rv6nrupgiCYDoy4bqt5G
+	xqQVg65lA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTxwx-0003tn-Rd; Mon, 11 Nov 2019 00:52:59 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1iU0PE-00067S-Gt; Mon, 11 Nov 2019 03:30:20 +0000
+Received: from www1102.sakura.ne.jp ([219.94.129.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTxwS-0003Qx-14; Mon, 11 Nov 2019 00:52:29 +0000
-Received: by mail-pf1-x443.google.com with SMTP id r4so9456870pfl.7;
- Sun, 10 Nov 2019 16:52:27 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=xYVsNMrMtkwvfwvE55iDXEc/0l3/pWmx2NHWuQN41yw=;
- b=nt1fK+gox6il/z0hOVtieY6g0sPXcUzqeuQj03ZA/asU0uWpnFTgOI4SpKsrPIheh9
- g3NMtgawH6CkXRhIMErwYad5jbVclB4+Gwd6cw5SE8AOQZgdYuTN5f5NkDoxwoDFiDCD
- lxJuto0FER2+NKf2ownfFUrJochZz7baaQ0JXAt5jWOm9e/TSR3xOwYu2of/y/9BcVfx
- ynl0N3SSWzdWTIbSKuq6v/kpMV78Yf/HKEAMRGDTwTHmXmae2hdE5d/MCBY1RC5JC8pi
- NK0LljHTXjKIyXRRub8kzblF8Ks31j2zdt707lEgzMPvzLyRpU0Be/4SUXiGCaFL3Imy
- OcVQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :in-reply-to:references;
- bh=xYVsNMrMtkwvfwvE55iDXEc/0l3/pWmx2NHWuQN41yw=;
- b=HbB4ihkvcvoRgbEzlb4JHxOAulkpJDrxTcPhKYbtX0f6GiIJq8CAeN4ZMxE/GX1lvq
- XqJQNd1lPnvQSss1ssbMJAqvpe9Fn5HRMfGVhYqVZ1maYFF8F6zGxbHyYZqiarEsBd1p
- 3QMLEO4J7tC9Fp7L+0CpFSLd1jkKm7JS/ExNH5bMZTZc3fj/nslTw1ae2nhFJlknkvWl
- RJbpRutMVv1qbWpshn/kvNMbiQTSMSETT7NRZnvnic7+o7ag1DaEweF6q5wByadgIyjp
- GoUbAOjj4zSv7i8fxSNzSYMFWbT90KKg3DmDFZ4fW+GFBBM0d6Ecj3D9xAMK0lBaj+A0
- bANQ==
-X-Gm-Message-State: APjAAAVNRsTEdWWQLCpyw4f4qoja+h3dcc/vc50qMvhx6+aD4S3GXUJ9
- V3lM2OuPuKX8SsI+Cdm8TYWU10Lt
-X-Google-Smtp-Source: APXvYqyDnNrIq2s09BxFo2ZrvC/Ca6XsjHDrsYlX4ajb6ZtC25zUb/GHmP8nX9AC8PR3KkOCpUREVg==
-X-Received: by 2002:a63:ae02:: with SMTP id q2mr26208411pgf.210.1573433547047; 
- Sun, 10 Nov 2019 16:52:27 -0800 (PST)
-Received: from localhost.localdomain ([103.29.142.67])
- by smtp.gmail.com with ESMTPSA id e8sm12449215pga.17.2019.11.10.16.52.22
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 10 Nov 2019 16:52:26 -0800 (PST)
-From: Kever Yang <kever.yang@rock-chips.com>
-To: heiko@sntech.de
-Subject: [PATCH 3/3] arm64: dts: rk3399: Add init voltage for vdd_log
-Date: Mon, 11 Nov 2019 08:51:58 +0800
-Message-Id: <20191111005158.25070-3-kever.yang@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191111005158.25070-1-kever.yang@rock-chips.com>
-References: <20191111005158.25070-1-kever.yang@rock-chips.com>
+ id 1iU0P2-0005O0-Eu; Mon, 11 Nov 2019 03:30:10 +0000
+Received: from fsav108.sakura.ne.jp (fsav108.sakura.ne.jp [27.133.134.235])
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id xAB3U1uw022710;
+ Mon, 11 Nov 2019 12:30:01 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+Received: from www1102.sakura.ne.jp (219.94.129.142)
+ by fsav108.sakura.ne.jp (F-Secure/fsigk_smtp/550/fsav108.sakura.ne.jp);
+ Mon, 11 Nov 2019 12:30:01 +0900 (JST)
+X-Virus-Status: clean(F-Secure/fsigk_smtp/550/fsav108.sakura.ne.jp)
+Received: from [192.168.1.2] (121.252.232.153.ap.dti.ne.jp [153.232.252.121])
+ (authenticated bits=0)
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id xAB3U0F8022658
+ (version=TLSv1.2 cipher=AES256-SHA bits=256 verify=NO);
+ Mon, 11 Nov 2019 12:30:01 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+Subject: Re: [PATCH] arm64: dts: rockchip: add analog audio nodes on
+ rk3399-rockpro64
+To: Vasily Khoruzhick <anarsoul@gmail.com>
+References: <20190907174833.19957-1-katsuhiro@katsuster.net>
+ <CA+E=qVdvKxzFcU-09Ucn1Fr0FdkwSsPcLr8vPn2wsu6-DD1gqg@mail.gmail.com>
+From: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+Message-ID: <abc648cc-0b5d-b407-b74b-639833ba196b@katsuster.net>
+Date: Mon, 11 Nov 2019 12:30:00 +0900
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
+MIME-Version: 1.0
+In-Reply-To: <CA+E=qVdvKxzFcU-09Ucn1Fr0FdkwSsPcLr8vPn2wsu6-DD1gqg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_165228_160481_1CC8534A 
-X-CRM114-Status: GOOD (  10.75  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191110_193008_825150_C2D53007 
+X-CRM114-Status: GOOD (  19.78  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kever.yang[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,160 +71,152 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Alexis Ballier <aballier@gentoo.org>,
- Kever Yang <kever.yang@rock-chips.com>, Soeren Moch <smoch@web.de>,
- Hugh Cole-Baker <sigmaris@gmail.com>, Andy Yan <andyshrk@gmail.com>,
- Katsuhiro Suzuki <katsuhiro@katsuster.net>, linux-rockchip@lists.infradead.org,
- Pragnesh Patel <Pragnesh_Patel@mentor.com>,
- Peter Robinson <pbrobinson@gmail.com>, Nick Xie <nick@khadas.com>,
- devicetree@vger.kernel.org, Elaine Zhang <zhangqing@rock-chips.com>,
- Vicente Bergas <vicencb@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- Akash Gajjar <akash@openedev.com>, Ezequiel Garcia <ezequiel@collabora.com>,
- linux-arm-kernel@lists.infradead.org,
- =?UTF-8?q?Andrius=20=C5=A0tikonas?= <andrius@stikonas.eu>,
- linux-kernel@vger.kernel.org, Oskari Lemmela <oskari@lemmela.net>,
- Robin Murphy <robin.murphy@arm.com>, Vivek Unune <npcomplete13@gmail.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-rockchip@lists.infradead.org, Heiko Stuebner <heiko@sntech.de>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Since there is no devfreq used for vdd_log, so the vdd_log(pwm regulator)
-will be 'enable' with the dts node at a default PWM state with high or low
-output. Both too high or too low for vdd_log is not good for the board,
-add init voltage for driver to make the regulator get into a know output.
+Hello Vasily,
 
-Note that this will be used by U-Boot for init voltage output, and this
-is very important for it may get system hang somewhere during system
-boot up with regulator enable and without this init value.
+Thank you for reporting.
 
-CC: Elaine Zhang <zhangqing@rock-chips.com>
-CC: Peter Robinson <pbrobinson@gmail.com>
-Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
----
+On 2019/11/11 9:17, Vasily Khoruzhick wrote:
+> On Sat, Sep 7, 2019 at 10:48 AM Katsuhiro Suzuki
+> <katsuhiro@katsuster.net> wrote:
+>>
+>> This patch adds audio codec (Everest ES8316) and I2S audio nodes for
+>> RK3399 RockPro64.
+> 
+> Hi Katsuhiro,
+> 
+> I tested your patch with my rockpro64 on 5.4-rc6 which has your other
+> patches to es8316 driver, but apparently it doesn't work.
+> 
+> 'alsamixer' complains 'cannot load mixer controls: No such device or
+> address' and if I try to play audio with mpg123 it pretends that it
+> plays something but there's no sound.
+> 
+> Any idea what can be wrong?
+> 
 
- arch/arm64/boot/dts/rockchip/rk3399-evb.dts          | 1 +
- arch/arm64/boot/dts/rockchip/rk3399-firefly.dts      | 1 +
- arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts   | 1 +
- arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi | 1 +
- arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts    | 1 +
- arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts     | 1 +
- arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts       | 1 +
- arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts    | 1 +
- arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi    | 1 +
- 9 files changed, 9 insertions(+)
+Do you use defconfig? If so I guess we need turn on more configs:
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-evb.dts b/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
-index 77008dca45bc..fa241aeb11b0 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
-@@ -65,6 +65,7 @@
- 		regulator-name = "vdd_center";
- 		regulator-min-microvolt = <800000>;
- 		regulator-max-microvolt = <1400000>;
-+		regulator-init-microvolt = <950000>;
- 		regulator-always-on;
- 		regulator-boot-on;
- 		status = "okay";
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
-index 92de83dd4dbc..4e45269fcdff 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
-@@ -208,6 +208,7 @@
- 		regulator-boot-on;
- 		regulator-min-microvolt = <430000>;
- 		regulator-max-microvolt = <1400000>;
-+		regulator-init-microvolt = <950000>;
- 		vin-supply = <&vcc_sys>;
- 	};
- };
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-index c133e8d64b2a..692f3154edc3 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-@@ -100,6 +100,7 @@
- 		regulator-name = "vdd_log";
- 		regulator-min-microvolt = <800000>;
- 		regulator-max-microvolt = <1400000>;
-+		regulator-init-microvolt = <950000>;
- 		regulator-always-on;
- 		regulator-boot-on;
- 	};
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
-index 4944d78a0a1c..c2ac80d99301 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
-@@ -79,6 +79,7 @@
- 		regulator-boot-on;
- 		regulator-min-microvolt = <800000>;
- 		regulator-max-microvolt = <1400000>;
-+		regulator-init-microvolt = <950000>;
- 		vin-supply = <&vsys_3v3>;
- 	};
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts b/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
-index 73be38a53796..c32abcc4ddc1 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
-@@ -101,6 +101,7 @@
- 		regulator-boot-on;
- 		regulator-min-microvolt = <800000>;
- 		regulator-max-microvolt = <1400000>;
-+		regulator-init-microvolt = <950000>;
- 		vin-supply = <&vcc5v0_sys>;
- 	};
- };
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts b/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
-index 0541dfce924d..9d674c51f025 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
-@@ -164,6 +164,7 @@
- 		regulator-boot-on;
- 		regulator-min-microvolt = <800000>;
- 		regulator-max-microvolt = <1400000>;
-+		regulator-init-microvolt = <950000>;
- 		vin-supply = <&vcc_sys>;
- 	};
- };
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-index 19f7732d728c..7d856ce1d156 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-@@ -129,6 +129,7 @@
- 		regulator-boot-on;
- 		regulator-min-microvolt = <800000>;
- 		regulator-max-microvolt = <1400000>;
-+		regulator-init-microvolt = <950000>;
- 		vin-supply = <&vcc3v3_sys>;
- 	};
- };
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-index e544deb61d28..8fbccbc8bf47 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-@@ -174,6 +174,7 @@
- 		regulator-boot-on;
- 		regulator-min-microvolt = <800000>;
- 		regulator-max-microvolt = <1700000>;
-+		regulator-init-microvolt = <950000>;
- 		vin-supply = <&vcc5v0_sys>;
- 	};
- };
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
-index 1bc1579674e5..f8e2cb8c0624 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
-@@ -133,6 +133,7 @@
- 		regulator-boot-on;
- 		regulator-min-microvolt = <800000>;
- 		regulator-max-microvolt = <1400000>;
-+		regulator-init-microvolt = <950000>;
- 		vin-supply = <&vcc_sys>;
- 	};
- };
--- 
-2.17.1
+- simple-graph-card driver (CONFIG_SND_AUDIO_GRAPH_CARD)
+- ES8316 (SND_SOC_ES8316)
+
+
+FYI) ASoC related status or logs in my environment as follows:
+
+root@rockpro64:~# uname -a
+Linux rockpro64 5.4.0-rc6-next-20191108 #169 SMP PREEMPT Mon Nov 11 12:21:44 JST 2019 aarch64 GNU/Linux
+
+root@rockpro64:~# dmesg | grep -i asoc
+[   21.509903] asoc-simple-card hdmi-sound: i2s-hifi <-> ff8a0000.i2s mapping ok
+[   21.510550] asoc-simple-card hdmi-sound: ASoC: no DMI vendor name!
+[   21.567906] asoc-audio-graph-card sound: ES8316 HiFi <-> ff890000.i2s mapping ok
+[   21.568565] asoc-audio-graph-card sound: ASoC: no DMI vendor name!
+
+root@rockpro64:~# cat /proc/asound/pcm
+00-00: ff8a0000.i2s-i2s-hifi i2s-hifi-0 : ff8a0000.i2s-i2s-hifi i2s-hifi-0 : playback 1
+01-00: ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : playback 1 : capture 1
+
+root@rockpro64:~# cat /sys/kernel/debug/asoc/components
+hdmi-audio-codec.3.auto
+ff8a0000.i2s
+ff8a0000.i2s
+ff890000.i2s
+ff890000.i2s
+ff880000.i2s
+ff880000.i2s
+es8316.1-0011
+snd-soc-dummy
+snd-soc-dummy
+
+root@rockpro64:~# cat /sys/kernel/debug/asoc/dais
+i2s-hifi
+ff8a0000.i2s
+ff890000.i2s
+ff880000.i2s
+ES8316 HiFi
+snd-soc-dummy-dai
+
+Best Regards,
+Katsuhiro Suzuki
+
+
+> Regards,
+> Vasily
+> 
+>> Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+>> ---
+>>   .../boot/dts/rockchip/rk3399-rockpro64.dts    | 28 +++++++++++++++++++
+>>   1 file changed, 28 insertions(+)
+>>
+>> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+>> index 0401d4ec1f45..8b1e6382b140 100644
+>> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+>> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+>> @@ -81,6 +81,12 @@
+>>                  reset-gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
+>>          };
+>>
+>> +       sound {
+>> +               compatible = "audio-graph-card";
+>> +               label = "rockchip,rk3399";
+>> +               dais = <&i2s1_p0>;
+>> +       };
+>> +
+>>          vcc12v_dcin: vcc12v-dcin {
+>>                  compatible = "regulator-fixed";
+>>                  regulator-name = "vcc12v_dcin";
+>> @@ -470,6 +476,20 @@
+>>          i2c-scl-rising-time-ns = <300>;
+>>          i2c-scl-falling-time-ns = <15>;
+>>          status = "okay";
+>> +
+>> +       es8316: codec@11 {
+>> +               compatible = "everest,es8316";
+>> +               reg = <0x11>;
+>> +               clocks = <&cru SCLK_I2S_8CH_OUT>;
+>> +               clock-names = "mclk";
+>> +               #sound-dai-cells = <0>;
+>> +
+>> +               port {
+>> +                       es8316_p0_0: endpoint {
+>> +                               remote-endpoint = <&i2s1_p0_0>;
+>> +                       };
+>> +               };
+>> +       };
+>>   };
+>>
+>>   &i2c3 {
+>> @@ -505,6 +525,14 @@
+>>          rockchip,playback-channels = <2>;
+>>          rockchip,capture-channels = <2>;
+>>          status = "okay";
+>> +
+>> +       i2s1_p0: port {
+>> +               i2s1_p0_0: endpoint {
+>> +                       dai-format = "i2s";
+>> +                       mclk-fs = <256>;
+>> +                       remote-endpoint = <&es8316_p0_0>;
+>> +               };
+>> +       };
+>>   };
+>>
+>>   &i2s2 {
+>> --
+>> 2.23.0.rc1
+>>
+>>
+>> _______________________________________________
+>> linux-arm-kernel mailing list
+>> linux-arm-kernel@lists.infradead.org
+>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
 
 
 _______________________________________________
