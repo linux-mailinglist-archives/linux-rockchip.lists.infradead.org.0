@@ -2,67 +2,84 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0905F6FB4
-	for <lists+linux-rockchip@lfdr.de>; Mon, 11 Nov 2019 09:29:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE9EBF6FDC
+	for <lists+linux-rockchip@lfdr.de>; Mon, 11 Nov 2019 09:44:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=+UD0TE8QxQ59YnoVciQXpwR2ucWE/+umlOgpkOBhEKI=; b=h69
-	X/eh99/Qame85tEmG+TTz0QtvCLmFdq4WQN/xrtBkh9y65QBAy4wzk4NKgQK7F9cTSW/RjsWCyQGa
-	g1PvCtHMzeBkUoPx/BeIMTwj7pO/7yTUOYLMBjeyOfAylaujCYcAUAIZzmmD+y6wkyYDHCyJq5+K9
-	yjPjiKuPbkPqMRz3mCxBuLcPFRLFhPO6HqWKZFq5r7uB+WScSIAsD+boLNJ8UWLUZx+aDQK61dv7b
-	bhEUAiTsPC1jutjfTfpRh2StA4aqeahJ2Rx8DySY3oMsp4HcwTx6kYid42JV76Fjd0B20yTaba50P
-	Mbq6t3BFCkgnw2B77r4OrVl6ahgjFQg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xIijki9AW40w/zMmLoHKi3ONUxQdFUOJYt/UCQrkk5U=; b=pVwi4nQssqELpC
+	CxXZceuLqyM6JlY2uBucLnfC/ulEe7TSvnv9ZhLOC9zsBJzKpYohVPqcAS2TQx9kAIK8/hEHXGwVu
+	ck+6ferE/Bfdl8cnHjL/DjxOLuVCcmEF2hBMIEkHJ4nkoHNEZq6zqXsIW0n17MMKp8tVhb87P1S/9
+	dQyqI3u+mCT9F6WkfLzzkjMNk+TO6IM5MqJ/vC8U8pOjC4Z5ZfuGtW+zVoHLEUKrhqbo7C81bGrsV
+	um8JmTQkxOKDPDPrnjLdufLdI/BcZs3jvcSgejK6uNJxDzixM/H+aQx3RMY6YbyQdI3DJ542BmZRk
+	fONkcRZ+QhOkm0XEvI2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU54R-0004aI-TJ; Mon, 11 Nov 2019 08:29:11 +0000
-Received: from mail-m972.mail.163.com ([123.126.97.2])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU54G-0004Qt-0Q; Mon, 11 Nov 2019 08:29:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
- s=s110527; h=From:Subject:Date:Message-Id; bh=IXLiI1+30Yp1RuwY8a
- 32SvH9+dLBFK6vlJn+vl0EBD4=; b=jhlJHk32iaOL14/7IKFs9pVbyX4D/1jRo4
- OXp1ELbN0c78vZb76E9lhgCTrKrgTejCqJ5h8HJGTROMBBS8GW1IECYYfzQZ5FL6
- vgfMmJax8Xs5oKHB21V1VC9ySa39QDiPTXeF1RLOSnmhE491JH2x0gtPMLuXEG90
- OpCM8x3xQ=
-Received: from localhost.localdomain (unknown [202.112.113.212])
- by smtp2 (Coremail) with SMTP id GtxpCgDXMCOsG8ld_t9zAg--.4268S3;
- Mon, 11 Nov 2019 16:28:35 +0800 (CST)
-From: Pan Bian <bianpan2016@163.com>
-To: Jacob Chen <jacob-chen@iotwrt.com>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH v2] media: rockchip/rga: fix potential use after free
-Date: Mon, 11 Nov 2019 16:28:22 +0800
-Message-Id: <1573460902-18563-1-git-send-email-bianpan2016@163.com>
-X-Mailer: git-send-email 2.7.4
-X-CM-TRANSID: GtxpCgDXMCOsG8ld_t9zAg--.4268S3
-X-Coremail-Antispam: 1Uf129KBjvJXoW7Ar4DAr4ruFW3urW8KFWUCFg_yoW8WF15pa
- 1kGa4xKFWFg3yUuwsrJr4DuFyrGa4Iya1FkrW3G34SkFy3KryDt34xJFyFqFWUZ3s7CFWa
- yw43tr47Ca10vFJanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
- 9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07UJgA7UUUUU=
-X-Originating-IP: [202.112.113.212]
-X-CM-SenderInfo: held01tdqsiiqw6rljoofrz/xtbBZBNqclQHHkd+IQAAs6
+	id 1iU5Ih-0001Ga-VG; Mon, 11 Nov 2019 08:43:55 +0000
+Received: from mout.web.de ([212.227.15.4])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iU5IX-00018r-PF; Mon, 11 Nov 2019 08:43:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1573461759;
+ bh=0J3c8iXj6IK/Il74rucQQ6zV7qAU3Woh4DCZdChB76U=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=Xmhd3mlpf/GxVFUQ1nCaQImC+wY/SH8thCkkD7Qg/ov4s6mrFGikofNJxbg/tauoH
+ IkmdT9s0DyingbfbqrANeGQyxXtxcgPAoIMdPYZ/+06tqLOS0jZdhPB8fhJMgA8y+3
+ x2+D84QJdi5MncxlLQSbrBLxcyAoFbh2pmzfTkLc=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from [10.9.8.2] ([80.130.117.228]) by smtp.web.de (mrweb003
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 0Lh6PP-1i9bp33LAF-00oYPt; Mon, 11
+ Nov 2019 09:42:39 +0100
+Subject: Re: [PATCH 3/3] arm64: dts: rk3399: Add init voltage for vdd_log
+To: Kever Yang <kever.yang@rock-chips.com>, heiko@sntech.de
+References: <20191111005158.25070-1-kever.yang@rock-chips.com>
+ <20191111005158.25070-3-kever.yang@rock-chips.com>
+From: Soeren Moch <smoch@web.de>
+Message-ID: <ef8830f3-10d1-7b71-0e18-232f2eaeef2d@web.de>
+Date: Mon, 11 Nov 2019 09:42:24 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <20191111005158.25070-3-kever.yang@rock-chips.com>
+Content-Language: en-GB
+X-Provags-ID: V03:K1:uKVi7Jd/flif9wD0aTOO4Rct22jlxJlLpyYMD2lCtDTB92+H+qM
+ iTK2J4wnku5T8oDPML/7gsACuYmZqME02y/zekk4hAZTqggqNXRCnJJvP+nd8z+FSW/GuHz
+ i5WDx+h2qbV5shdLRUCDQV5yZEBO4R0xzOq9I3NNuU5gw7+Fe4CbHHI6ijhsYomP0/IOgpT
+ k6F9wx6Yufdo3CyjlWULQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:zc0nUcVttNU=:2UP8emA8JD8vTiy+255QQU
+ yY9SBU42UfednHSTTZXYUtZ94Af+MDx+VnfHxBaHO5lobUpY4MOIkKqhkqy4BW+xKKOx/BmIK
+ q89Oj8l+KCs4tRg/C9y07M7Gtd0YiYdEVeH0UagIYBfmTkh8bTidttX69wjU9jnGKNXa0e4Fs
+ ySLqdO9QYSX3zEEfR1N2MMGbzKAUdW0BtpA5+AMAXIUTfOr84oTPYyFfDpexqh5okPGVah7ls
+ zjlR3lD5S8Jbg6keKcw7H+tC0lYDkbTgbqGcWwbhY62ELZ9M7n5Wqwq1Lf5kGXhh8vDaGjf/k
+ ApwBvQ+/HFpjqg8CuXvPHGe8w3WzT5vyKa3OWJPiRmeosNTWlLF/3b0b1C8M6vIcppUCp7bB0
+ pZb9drBvDYumrurtYZcWblRoTzRXNiHly1mmGLwXSRFwIbGdkIQiWSPLUVX76sdMszU01EicS
+ 40eDdlgfTZgUp6iKAgQckD1LXO/fhmvV3M+aOl6dXmFrLgXNDoWKLPJLT6P4JlhQ8rQhWVoOL
+ tYR9SE92+vgJmHztH8MsNAJQTdE4YAA4vskdLxD93nS5tfHk69y3KRMbRxtyt8uvr8sZZ+Frk
+ +VFwTRTJ2P9LnabUiyeYkPc3C1FJFUFthO8ExDM8oqviyZLbOd9XLWZMTDxPjvl9j4cyPV9rx
+ RgzyA13Ji8t+Ffid+ljUSOOQj9s99OPehLmEGqlpbqcqUwLPLYUQy/2pdP7wOh66wwj1O/Hle
+ 4rPk49rQaeDD90InhCegZvyGQBSK7ShSu07PbNmKLmKejHfJPj7L2akBrS+wb1gw4pvKOZ//E
+ yWxzA0MZ67swu52Mk3xfS69hBkEv1CbTwXECcZCLNYQPcwMlJ6Lcaq4noDD76QmKrHvAC5E0d
+ UVVSy0TXJ4YnpSyv6ahdY26/KLB01LNUd8Cu86cmWFR2caa0/qtWMVWUtkDozzYd78R+oHESV
+ 7erhF0XnkdBw13dxBIdx0Vy0B8wa9iOtUO3qlkY0nPoEst0AZJNZKtDBBf/6BV+uB6fTnvACP
+ 7rxmbg36qN0IBjRVh05SyOxraZQjYeU6auJMp99BGst3fTImRRyZMmWDa57oZvEQbno322Inx
+ UjdlpNBtHiiPk/hFHqwg1qVHdW7K1FxJcq51cjhQRy5rYVgp6OGWpztnLvIG9GDfVYsjckehp
+ oFHIuHMe2lpbiRan7xHyevJ0JE9t/Dz6bwWrXtkrUG10YIsriO1ADrJBB1g/fsyJheqIMU9Zf
+ OLb0lQj0xVMp84l5aDqSZ8Tq2hc9N8vQfjeua2A==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_002900_597767_92071DCE 
-X-CRM114-Status: UNSURE (   8.73  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191111_004346_114641_C3ED09B8 
+X-CRM114-Status: GOOD (  15.59  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [123.126.97.2 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (bianpan2016[at]163.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (bianpan2016[at]163.com)
+ provider (smoch[at]web.de)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -83,63 +100,165 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Pan Bian <bianpan2016@163.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ =?UTF-8?Q?Andrius_=c5=a0tikonas?= <andrius@stikonas.eu>,
+ linux-kernel@vger.kernel.org, Alexis Ballier <aballier@gentoo.org>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ Katsuhiro Suzuki <katsuhiro@katsuster.net>,
+ Hugh Cole-Baker <sigmaris@gmail.com>, Elaine Zhang <zhangqing@rock-chips.com>,
+ Andy Yan <andyshrk@gmail.com>, Robin Murphy <robin.murphy@arm.com>,
+ Vicente Bergas <vicencb@gmail.com>, Oskari Lemmela <oskari@lemmela.net>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Pragnesh Patel <Pragnesh_Patel@mentor.com>,
+ Peter Robinson <pbrobinson@gmail.com>, Nick Xie <nick@khadas.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>, Vivek Unune <npcomplete13@gmail.com>,
+ Akash Gajjar <akash@openedev.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The variable vga->vfd is an alias for vfd. Therefore, releasing vfd and
-then unregister vga->vfd will lead to a use after free bug. In fact, the
-free operation and the unregister operation are reversed.
+On 11.11.19 01:51, Kever Yang wrote:
+> Since there is no devfreq used for vdd_log, so the vdd_log(pwm regulator)
+> will be 'enable' with the dts node at a default PWM state with high or low
+> output. Both too high or too low for vdd_log is not good for the board,
+> add init voltage for driver to make the regulator get into a know output.
+>
+> Note that this will be used by U-Boot for init voltage output, and this
+> is very important for it may get system hang somewhere during system
+> boot up with regulator enable and without this init value.
+I think it's a good idea to include this setting in the main dts for the
+boards (not in u-boot specific additions as is done now). But there is
+(for some reason?) no documented binding for regulator-init-microvolt in
+linux.
 
-Signed-off-by: Pan Bian <bianpan2016@163.com>
----
-v2: update the goto label names consistently
----
- drivers/media/platform/rockchip/rga/rga.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/media/platform/rockchip/rga/rga.c b/drivers/media/platform/rockchip/rga/rga.c
-index e9ff12b6b5bb..d2297abafc69 100644
---- a/drivers/media/platform/rockchip/rga/rga.c
-+++ b/drivers/media/platform/rockchip/rga/rga.c
-@@ -863,7 +863,7 @@ static int rga_probe(struct platform_device *pdev)
- 	if (IS_ERR(rga->m2m_dev)) {
- 		v4l2_err(&rga->v4l2_dev, "Failed to init mem2mem device\n");
- 		ret = PTR_ERR(rga->m2m_dev);
--		goto unreg_video_dev;
-+		goto rel_vdev;
- 	}
- 
- 	pm_runtime_get_sync(rga->dev);
-@@ -892,7 +892,7 @@ static int rga_probe(struct platform_device *pdev)
- 	ret = video_register_device(vfd, VFL_TYPE_GRABBER, -1);
- 	if (ret) {
- 		v4l2_err(&rga->v4l2_dev, "Failed to register video device\n");
--		goto rel_vdev;
-+		goto unreg_dev;
- 	}
- 
- 	v4l2_info(&rga->v4l2_dev, "Registered %s as /dev/%s\n",
-@@ -900,10 +900,10 @@ static int rga_probe(struct platform_device *pdev)
- 
- 	return 0;
- 
-+unreg_dev:
-+	video_unregister_device(rga->vfd);
- rel_vdev:
- 	video_device_release(vfd);
--unreg_video_dev:
--	video_unregister_device(rga->vfd);
- unreg_v4l2_dev:
- 	v4l2_device_unregister(&rga->v4l2_dev);
- err_put_clk:
--- 
-2.7.4
+Regards,
+Soeren
+>
+> CC: Elaine Zhang <zhangqing@rock-chips.com>
+> CC: Peter Robinson <pbrobinson@gmail.com>
+> Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
+> ---
+>
+>  arch/arm64/boot/dts/rockchip/rk3399-evb.dts          | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-firefly.dts      | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts   | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts    | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts     | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts       | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts    | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi    | 1 +
+>  9 files changed, 9 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-evb.dts b/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
+> index 77008dca45bc..fa241aeb11b0 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
+> @@ -65,6 +65,7 @@
+>  		regulator-name = "vdd_center";
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		regulator-always-on;
+>  		regulator-boot-on;
+>  		status = "okay";
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+> index 92de83dd4dbc..4e45269fcdff 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+> @@ -208,6 +208,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <430000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		vin-supply = <&vcc_sys>;
+>  	};
+>  };
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
+> index c133e8d64b2a..692f3154edc3 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
+> @@ -100,6 +100,7 @@
+>  		regulator-name = "vdd_log";
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		regulator-always-on;
+>  		regulator-boot-on;
+>  	};
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
+> index 4944d78a0a1c..c2ac80d99301 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
+> @@ -79,6 +79,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		vin-supply = <&vsys_3v3>;
+>  	};
+>
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts b/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
+> index 73be38a53796..c32abcc4ddc1 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
+> @@ -101,6 +101,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		vin-supply = <&vcc5v0_sys>;
+>  	};
+>  };
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts b/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
+> index 0541dfce924d..9d674c51f025 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
+> @@ -164,6 +164,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		vin-supply = <&vcc_sys>;
+>  	};
+>  };
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+> index 19f7732d728c..7d856ce1d156 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+> @@ -129,6 +129,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		vin-supply = <&vcc3v3_sys>;
+>  	};
+>  };
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> index e544deb61d28..8fbccbc8bf47 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> @@ -174,6 +174,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1700000>;
+> +		regulator-init-microvolt = <950000>;
+>  		vin-supply = <&vcc5v0_sys>;
+>  	};
+>  };
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
+> index 1bc1579674e5..f8e2cb8c0624 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
+> @@ -133,6 +133,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		vin-supply = <&vcc_sys>;
+>  	};
+>  };
 
 
 _______________________________________________
