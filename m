@@ -2,87 +2,65 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB6F1F7FDB
-	for <lists+linux-rockchip@lfdr.de>; Mon, 11 Nov 2019 20:26:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAE55F7FFC
+	for <lists+linux-rockchip@lfdr.de>; Mon, 11 Nov 2019 20:32:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZOU8vPlfLO5ZnnsiKyKLRAqLKBs9i9/VTp0LJdaf1z8=; b=C5baQDyGYD0dLn
-	vyapbf4xL0xhZWQGb6Rbo1q0RxwXKhAgkChahpVTNaj5oyIk++V0PTnjpctg/uOkaxJ1sDMzGEqNA
-	/CFED1u45DXyhRNq1Di69Sl/Wgzc07XkNhwCUre+Qg0jUQ3JW2zfryQ5/8lMgN04CWif/Rn6yebfK
-	+zIr65dXLQI5cCCMlIt0/44G/Vth7X1IfnicthSJN88bEGZ4x6mzHPxb+hhKKXfHyiAjfd1UqHeF1
-	ZO86pjbktdCqdBF6SGlfGzwPcLmD7cHl+eApDsBk2rjkjBiXkvCTqm8zERUIR9+UjiMkk3d41IS22
-	5VQtboQJERxa0D7LKXgA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YXS4E+PWwW486wZ3bX3rqHhX2aeG8MeRCbZm0zjo158=; b=MDKn2ZIfAybH7R
+	mjaC2pUFvTJHLzgud8Ln5O/yLXqR5Ib69q3bpXKkW8JidJ9AM0F+hXuWRJuqT8fSymecTJEK0vq23
+	BEK1uH8FTucRMo2zI9kKq+4ltp+DdaOrwLbZ8UO1vKBpleV7KumDbJa40cPeMA9Pj9PPgAvzC1y0B
+	iBRqvdStBCj0tD43JhMdj7teOKk4jhwU0zHWMFlQazosBWQblC6q4/sSYLyJcX3lB2OCadso1GQN7
+	C8QOpk9G7/7DMSHVnVFUS7Wv/R/IkANVLCz0bi/9cCcbL0Ek87HmKXKF5ukKZh7Czhib/9JQTpWmd
+	LfewKou/GcXVeM6Xg03g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUFKc-0006nG-Ok; Mon, 11 Nov 2019 19:26:34 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1iUFQC-0001Q7-0q; Mon, 11 Nov 2019 19:32:20 +0000
+Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUFKS-0006b6-Ob; Mon, 11 Nov 2019 19:26:26 +0000
-Received: by mail-oi1-x243.google.com with SMTP id l20so12497227oie.10;
- Mon, 11 Nov 2019 11:26:24 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tZzh1Ex9ZdXCo9TXeCCIknPHlre0k+c4oPEzpW65C30=;
- b=S6Qh/qIU+Y1N82mm958h1PBbGUral3TH1yFTB7b5i1T02F2nMJ5/MS1daY11cKqUzJ
- bvag4kgaJyCeBv94BgfK5TVojYsFoEhcqf+o0qGJ6oRdpqGDxWd6DqeUqd1ne/I1FUfj
- y8CsCvNxAAZUzk7bZZrqSfiLo8ByC7SEDDWFJ/wnH8BiKXwDoC5/vKcosm+wo0u6pPXn
- vXvc4BCKP15K+ofeXxnwNfRZCyfCSa1RyD+inrAIPAc28thGpUNy05cZcJqtbjBvqcmv
- iXkxc0ovV33KbqbSvMnqewrEctZd4syiVTZ3peVkDRAdo4EGOcH+pnhb4diGHoNMVCvt
- 75Og==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=tZzh1Ex9ZdXCo9TXeCCIknPHlre0k+c4oPEzpW65C30=;
- b=B78ZmDizpO7W9kmm2Ok4+bwETwgFBp4QBNuen8kUaZ+46/TRv+lwP7YG6z06eTLceA
- rLw7zwElLhBzat8dXH4sfhhiKv1bE3hhzC41e41wSXLa8tBVnpvAw7exSyXKLYrPBRb0
- 2jtxwkymcusH+bb7eluWyDq8w1OmI8yvUhs7ozfCL2YW6NeJM2fO/yO4bEAH2ORyuuDb
- BlsBUpjoRnKNXUETRiErbXBBHIrU8jkjG00Tmh2FNrQhnPWvAsYOw5Rn//BH4cTOFgJ0
- 9iURs9DXRAXoBaH4+zRAeqGsakM1JhJ0RlQsCJEAJ/7ntLCE9087eUJroim6xwk4szsu
- 1dVw==
-X-Gm-Message-State: APjAAAWziVmtpRaEPySYcLsng4X1qqFg43MgmtZJRRTKiOCAjOdjbEH2
- ohEvbIqin6OFcFI+v8nvWHdsugjB/DPDbp4JZQs=
-X-Google-Smtp-Source: APXvYqycLeytYmMe71q7G23bQ7Ku/ehgUySrFtbrdw+1tpqpbASH71BGLABOtIFpVmbsi5fGIZ433uPaxD0juq+3BWY=
-X-Received: by 2002:aca:6547:: with SMTP id j7mr529837oiw.98.1573500383120;
- Mon, 11 Nov 2019 11:26:23 -0800 (PST)
+ id 1iUFPw-0001Cc-2o; Mon, 11 Nov 2019 19:32:06 +0000
+Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
+ (helo=hermes.fivetechno.de); authenticated
+ by wp126.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ id 1iUFPr-00017a-Bc; Mon, 11 Nov 2019 20:31:59 +0100
+X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
+ linuxbbg.five-lan.de
+Received: from dell2.five-lan.de (pD9E89174.dip0.t-ipconnect.de
+ [217.232.145.116]) (authenticated bits=0)
+ by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
+ xABJVvBQ021691
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
+ Mon, 11 Nov 2019 20:31:58 +0100
+Subject: Re: arm64: dts: rockchip: Add SDR104 mode to SD-card I/F on
+ rk3399-roc-pc
+To: Ulf Hansson <ulf.hansson@linaro.org>
+References: <f03c978c-86de-b8bb-22c2-177d7fafed94@fivetechno.de>
+ <CAPDyKFqn06LZZMXLD2o-M6A0R6KU97PFUTN=NgYnMtf=ESULTA@mail.gmail.com>
+From: Markus Reichl <m.reichl@fivetechno.de>
+Message-ID: <e69268d2-4a3f-3cd8-fc2e-57ae52ad337a@fivetechno.de>
+Date: Mon, 11 Nov 2019 20:31:57 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-References: <20190907174833.19957-1-katsuhiro@katsuster.net>
- <CA+E=qVdvKxzFcU-09Ucn1Fr0FdkwSsPcLr8vPn2wsu6-DD1gqg@mail.gmail.com>
- <abc648cc-0b5d-b407-b74b-639833ba196b@katsuster.net>
- <CA+E=qVdy-wqmR+XOms5S2zMp+B0vM7Dj_fk9N=08-1WjfKDm0Q@mail.gmail.com>
-In-Reply-To: <CA+E=qVdy-wqmR+XOms5S2zMp+B0vM7Dj_fk9N=08-1WjfKDm0Q@mail.gmail.com>
-From: Vasily Khoruzhick <anarsoul@gmail.com>
-Date: Mon, 11 Nov 2019 11:25:57 -0800
-Message-ID: <CA+E=qVdLzHbNTemMSmhA=-0dsNumQZJhjE-EnXBDu+j7sXTnVw@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: add analog audio nodes on
- rk3399-rockpro64
-To: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+In-Reply-To: <CAPDyKFqn06LZZMXLD2o-M6A0R6KU97PFUTN=NgYnMtf=ESULTA@mail.gmail.com>
+Content-Language: de-DE
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1573500724;
+ a73da61f; 
+X-HE-SMSGID: 1iUFPr-00017a-Bc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_112624_837825_B02E86D9 
-X-CRM114-Status: GOOD (  27.63  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191111_113204_271389_6A892002 
+X-CRM114-Status: GOOD (  16.56  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (anarsoul[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,221 +73,58 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Heiko Stuebner <heiko@sntech.de>,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- linux-kernel <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sun, Nov 10, 2019 at 9:40 PM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
->
-> On Sun, Nov 10, 2019 at 7:30 PM Katsuhiro Suzuki
-> <katsuhiro@katsuster.net> wrote:
-> >
-> > Hello Vasily,
->
-> Hi Katsuhiro,
->
-> Thanks for response!
-
-Looks like on my board codec sits at address 0x10, and according to
-schematics that's what its address is supposed to be.
-
-See http://files.pine64.org/doc/rockpro64/rockpro64_v21-SCH.pdf
-
-Codec address is selected by pin CE of ES8316, and on rockpro64 it
-goes to GND through R226. So address should be 0x10.
-
-> > Thank you for reporting.
-> >
-> > On 2019/11/11 9:17, Vasily Khoruzhick wrote:
-> > > On Sat, Sep 7, 2019 at 10:48 AM Katsuhiro Suzuki
-> > > <katsuhiro@katsuster.net> wrote:
-> > >>
-> > >> This patch adds audio codec (Everest ES8316) and I2S audio nodes for
-> > >> RK3399 RockPro64.
-> > >
-> > > Hi Katsuhiro,
-> > >
-> > > I tested your patch with my rockpro64 on 5.4-rc6 which has your other
-> > > patches to es8316 driver, but apparently it doesn't work.
-> > >
-> > > 'alsamixer' complains 'cannot load mixer controls: No such device or
-> > > address' and if I try to play audio with mpg123 it pretends that it
-> > > plays something but there's no sound.
-> > >
-> > > Any idea what can be wrong?
-> > >
-> >
-> > Do you use defconfig? If so I guess we need turn on more configs:
-> >
-> > - simple-graph-card driver (CONFIG_SND_AUDIO_GRAPH_CARD)
-> > - ES8316 (SND_SOC_ES8316)
->
-> I have these enabled, card is present in /proc/asound/cards, but
-> alsamixer doesn't work with it.
->
-> > FYI) ASoC related status or logs in my environment as follows:
-> >
-> > root@rockpro64:~# uname -a
-> > Linux rockpro64 5.4.0-rc6-next-20191108 #169 SMP PREEMPT Mon Nov 11 12:21:44 JST 2019 aarch64 GNU/Linux
->
-> I'm running 5.4.0-rc6  (commit
-> 00aff6836241ae5654895dcea10e6d4fc5878ca6) with your patch "arm64: dts:
-> rockchip: add analog audio nodes on rk3399-rockpro64" on top of it.
->
-> > root@rockpro64:~# dmesg | grep -i asoc
-> > [   21.509903] asoc-simple-card hdmi-sound: i2s-hifi <-> ff8a0000.i2s mapping ok
-> > [   21.510550] asoc-simple-card hdmi-sound: ASoC: no DMI vendor name!
-> > [   21.567906] asoc-audio-graph-card sound: ES8316 HiFi <-> ff890000.i2s mapping ok
-> > [   21.568565] asoc-audio-graph-card sound: ASoC: no DMI vendor name!
->
-> Similar here:
->
-> [vasilykh@rockpro64 ~]$ dmesg | grep -i asoc
-> [   15.627685] asoc-audio-graph-card sound: ES8316 HiFi <->
-> ff890000.i2s mapping ok
-> [   16.250196] asoc-simple-card hdmi-sound: i2s-hifi <-> ff8a0000.i2s mapping ok
->
-> > root@rockpro64:~# cat /proc/asound/pcm
-> > 00-00: ff8a0000.i2s-i2s-hifi i2s-hifi-0 : ff8a0000.i2s-i2s-hifi i2s-hifi-0 : playback 1
-> > 01-00: ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : playback 1 : capture 1
->
-> Same here:
->
-> [vasilykh@rockpro64 ~]$ cat /proc/asound/pcm
-> 00-00: ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : ff890000.i2s-ES8316
-> HiFi ES8316 HiFi-0 : playback 1 : capture 1
-> 01-00: ff8a0000.i2s-i2s-hifi i2s-hifi-0 : ff8a0000.i2s-i2s-hifi
-> i2s-hifi-0 : playback
->
-> > root@rockpro64:~# cat /sys/kernel/debug/asoc/components
-> > hdmi-audio-codec.3.auto
-> > ff8a0000.i2s
-> > ff8a0000.i2s
-> > ff890000.i2s
-> > ff890000.i2s
-> > ff880000.i2s
-> > ff880000.i2s
-> > es8316.1-0011
-> > snd-soc-dummy
-> > snd-soc-dummy
->
-> Same here.
->
-> > root@rockpro64:~# cat /sys/kernel/debug/asoc/dais
-> > i2s-hifi
-> > ff8a0000.i2s
-> > ff890000.i2s
-> > ff880000.i2s
-> > ES8316 HiFi
-> > snd-soc-dummy-dai
->
-> Same here.
->
-> Yet alsamixer doesn't work for me. It terminates with 'cannot load
-> mixer controls: No such device or address'. Strace shows that fails
-> here:
->
-> openat(AT_FDCWD, "/dev/snd/controlC0", O_RDWR|O_CLOEXEC) = 3
-> fcntl(3, F_SETFD, FD_CLOEXEC)           = 0
-> ioctl(3, SNDRV_CTL_IOCTL_PVERSION, 0xfffffd3ad04c) = 0
-> fcntl(3, F_GETFL)                       = 0x20002 (flags O_RDWR|O_LARGEFILE)
-> fcntl(3, F_SETFL, O_RDWR|O_NONBLOCK|O_LARGEFILE) = 0
-> ioctl(3, SNDRV_CTL_IOCTL_ELEM_LIST, 0xfffffd3ad228) = 0
-> ioctl(3, SNDRV_CTL_IOCTL_ELEM_LIST, 0xfffffd3ad228) = 0
-> ioctl(3, SNDRV_CTL_IOCTL_ELEM_INFO, 0xfffffd3ace38) = 0
-> ioctl(3, SNDRV_CTL_IOCTL_ELEM_READ, 0xfffffd3ac160) = -1 ENXIO (No
-> such device or address)
->
-> Looks like it fails to talk to the codec?
->
-> mpg123 thinks that it's playing audio, but my headphones connected to
-> 3.5mm output are silent.
->
-> Regards,
-> Vasily
->
->
-> > Best Regards,
-> > Katsuhiro Suzuki
-> >
-> >
-> > > Regards,
-> > > Vasily
-> > >
-> > >> Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
-> > >> ---
-> > >>   .../boot/dts/rockchip/rk3399-rockpro64.dts    | 28 +++++++++++++++++++
-> > >>   1 file changed, 28 insertions(+)
-> > >>
-> > >> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> > >> index 0401d4ec1f45..8b1e6382b140 100644
-> > >> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> > >> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> > >> @@ -81,6 +81,12 @@
-> > >>                  reset-gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
-> > >>          };
-> > >>
-> > >> +       sound {
-> > >> +               compatible = "audio-graph-card";
-> > >> +               label = "rockchip,rk3399";
-> > >> +               dais = <&i2s1_p0>;
-> > >> +       };
-> > >> +
-> > >>          vcc12v_dcin: vcc12v-dcin {
-> > >>                  compatible = "regulator-fixed";
-> > >>                  regulator-name = "vcc12v_dcin";
-> > >> @@ -470,6 +476,20 @@
-> > >>          i2c-scl-rising-time-ns = <300>;
-> > >>          i2c-scl-falling-time-ns = <15>;
-> > >>          status = "okay";
-> > >> +
-> > >> +       es8316: codec@11 {
-> > >> +               compatible = "everest,es8316";
-> > >> +               reg = <0x11>;
-> > >> +               clocks = <&cru SCLK_I2S_8CH_OUT>;
-> > >> +               clock-names = "mclk";
-> > >> +               #sound-dai-cells = <0>;
-> > >> +
-> > >> +               port {
-> > >> +                       es8316_p0_0: endpoint {
-> > >> +                               remote-endpoint = <&i2s1_p0_0>;
-> > >> +                       };
-> > >> +               };
-> > >> +       };
-> > >>   };
-> > >>
-> > >>   &i2c3 {
-> > >> @@ -505,6 +525,14 @@
-> > >>          rockchip,playback-channels = <2>;
-> > >>          rockchip,capture-channels = <2>;
-> > >>          status = "okay";
-> > >> +
-> > >> +       i2s1_p0: port {
-> > >> +               i2s1_p0_0: endpoint {
-> > >> +                       dai-format = "i2s";
-> > >> +                       mclk-fs = <256>;
-> > >> +                       remote-endpoint = <&es8316_p0_0>;
-> > >> +               };
-> > >> +       };
-> > >>   };
-> > >>
-> > >>   &i2s2 {
-> > >> --
-> > >> 2.23.0.rc1
-> > >>
-> > >>
-> > >> _______________________________________________
-> > >> linux-arm-kernel mailing list
-> > >> linux-arm-kernel@lists.infradead.org
-> > >> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> > >
-> >
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgVWxmLAoKQW0gMTEuMTEuMTkgdW0gMTg6Mjcgc2NocmllYiBVbGYgSGFuc3NvbjoKPiBPbiBN
+b24sIDExIE5vdiAyMDE5IGF0IDE1OjEzLCBNYXJrdXMgUmVpY2hsIDxtLnJlaWNobEBmaXZldGVj
+aG5vLmRlPiB3cm90ZToKPj4KPj4gQWRkIFNEUjEwNCBjYXBhYmlsaXR5IGFuZCByZWd1bGF0b3Jz
+IHRvIFNEIGNhcmQgbm9kZS4KPj4gV2hpbGUgYXQgaXQsIGZpeCBhIHR5cG8gaW4gbGNkIHBpbmN0
+cmwgYW5kIHJlbW92ZSB0d28KPj4gdW5kb2N1bWVudGVkIGJpbmRpbmdzIGZyb20gcG1pYy4KPj4K
+Pj4gU2lnbmVkLW9mZi1ieTogTWFya3VzIFJlaWNobCA8bS5yZWljaGxAZml2ZXRlY2huby5kZT4K
+Pj4gLS0tCj4+ICAuLi4vYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJvYy1wYy5kdHNpICAgICAg
+fCAzMSArKysrKysrKysrKysrKystLS0tCj4+ICAxIGZpbGUgY2hhbmdlZCwgMjUgaW5zZXJ0aW9u
+cygrKSwgNiBkZWxldGlvbnMoLSkKPj4KPj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9k
+dHMvcm9ja2NoaXAvcmszMzk5LXJvYy1wYy5kdHNpIGIvYXJjaC9hcm02NC9ib290L2R0cy9yb2Nr
+Y2hpcC9yazMzOTktcm9jLXBjLmR0c2kKPj4gaW5kZXggMzNkZjk1ZTM4NGI0Li5lODZhNmRiNTQ0
+OTkgMTAwNjQ0Cj4+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJv
+Yy1wYy5kdHNpCj4+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJv
+Yy1wYy5kdHNpCj4+IEBAIC0xMzUsNiArMTM1LDIwIEBACj4+ICAgICAgICAgICAgICAgICB2aW4t
+c3VwcGx5ID0gPCZ2Y2NfMXY4PjsKPj4gICAgICAgICB9Owo+Pgo+PiArICAgICAgIHZjYzN2MF9z
+ZDogdmNjM3YwLXNkIHsKPj4gKyAgICAgICAgICAgICAgIGNvbXBhdGlibGUgPSAicmVndWxhdG9y
+LWZpeGVkIjsKPj4gKyAgICAgICAgICAgICAgIGVuYWJsZS1hY3RpdmUtaGlnaDsKPj4gKyAgICAg
+ICAgICAgICAgIGdwaW8gPSA8JmdwaW80IFJLX1BENiBHUElPX0FDVElWRV9ISUdIPjsKPj4gKyAg
+ICAgICAgICAgICAgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+ICsgICAgICAgICAgICAg
+ICBwaW5jdHJsLTAgPSA8JnZjYzN2MF9zZF9lbj47Cj4+ICsgICAgICAgICAgICAgICByZWd1bGF0
+b3ItbmFtZSA9ICJ2Y2MzdjBfc2QiOwo+PiArICAgICAgICAgICAgICAgcmVndWxhdG9yLWFsd2F5
+cy1vbjsKPiAKPiBUaGlzIGxvb2tzIG9kZC4gQSBHUElPIHJlZ3VsYXRvciBiZWluZyBhbHdheXMg
+b24/CgpUaGlzIGlzIGEgc3RhbmRhcmQgbWljcm8gU0QgY2FyZCBzb2NrZXQgdGhhdCBjYW4gYWxz
+byBiZSB1c2VkIGZvcgpib290aW5nIHRoZSBib2FyZC4gSSB3YW50ZWQgdG8gYmUgY2F1dGlvdXMg
+YW5kIHN0YXJ0Cndvcmtpbmcgd2l0aCBpdCBhbmQgc2V2ZXJhbCBTRCBjYXJkcyBhbmQgZXhwbG9y
+ZSB0aGUgY2FwYWJpbGl0aWVzLgoKT24gdGhpcyBib2FyZCBuZWFybHkgYWxsIHJlZ3VsYXRvcnMg
+YXJlIHN0aWxsIGNvbnRpbm91c2x5CnN3aXRjaGVkIG9uLiBJIHBsYW4gdG8gcmVtb3ZlIHRoZSBh
+bHdheXMtb24gcHJvcGVydGllcyBzdGVwCmJ5IHN0ZXAgZnJvbSB0aGUgcmVndWxhdG9ycyB3aGVu
+IHRoZSBib2FyZCBydW5zIHN0YWJsZSB3aXRoIGl0J3MKY29tcG9uZW50cyBhbGwgZW5ibGVkLiAK
+Cj4gCj4+ICsgICAgICAgICAgICAgICByZWd1bGF0b3ItYm9vdC1vbjsKPj4gKyAgICAgICAgICAg
+ICAgIHJlZ3VsYXRvci1taW4tbWljcm92b2x0ID0gPDMwMDAwMDA+Owo+PiArICAgICAgICAgICAg
+ICAgcmVndWxhdG9yLW1heC1taWNyb3ZvbHQgPSA8MzAwMDAwMD47Cj4+ICsgICAgICAgICAgICAg
+ICB2aW4tc3VwcGx5ID0gPCZ2Y2MzdjNfc3lzPjsKPj4gKyAgICAgICB9Owo+IAo+IEFzc3VtZXMg
+dGhpcyBwb3dlcnMgYW4gU0RJTyBlbWJlZGRlZCBjYXJkLiBPZnRlbiB0aG9zZSBoYXZlIGEgc3Bl
+Y2lmaWMKPiBwb3dlciBzZXF1ZW5jZSwganVzdCB3YW50ZWQgdG8gbWFrZSBzdXJlIHRoZSBhYm92
+ZSBhcmUgcmVhbGx5Cj4gc3VmZmljaWVudD8gTm8gZGVsYXlzIG9yIGV4dGVybmFsIGNsb2NrIG5l
+ZWRlZD8KCkl0J3Mgbm90IGVtYmVkZGVkLCBqdXN0IGEgc3RhbmRhcmQgwrVTRCBwbHVnLiBJdCBp
+cyBhbHJlYWR5IGVuYWJsZWQKYnkgbWFpbmxpbmUgVS1Cb290IGFuZCBlamVjdGluZyBhbmQgaW5z
+ZXJ0aW5nIHRoZSBjYXJkIHdvcmtzIGZpbmUuCgotLQpHcnXDnywKTWFya3VzCj4gCj4gWy4uLl0K
+PiAKPiBLaW5kIHJlZ2FyZHMKPiBVZmZlCj4gCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9j
+a2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
