@@ -2,84 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DD6EF6BEA
-	for <lists+linux-rockchip@lfdr.de>; Mon, 11 Nov 2019 01:17:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B562BF6BFF
+	for <lists+linux-rockchip@lfdr.de>; Mon, 11 Nov 2019 01:43:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XbeJ+s0sb+rtOTk+BSxH1u8+bugaFZF+WeuQWSuQ5JI=; b=eAlf1pDVll92Qq
-	UGS2/QvcUj3BqasuljwtqJ3gUzaYzz17AoZZb+3CE9fQ2YBWl0wxhFguk0qKmIHnZXWI9J3KX/Sv1
-	wlelCrZLsEze9MiI/vayknKAXf8InGyl4/WQl/r5DAMCtF19OJ9aiscTAraVOQMWhnOTZUeXhOux0
-	gGZjlhDqliDU1lj4+/Pnv8/nu36W46VDdsEhyVzUpRQCImRw8a6eWxbXsjlJwoq4qyYy2ow7xYGFc
-	6Jo+6IozHXg9jmu5S38cMzVO7L/brPsVIekRDBFXzB6ZHV1zzqiJM4GQlTuZezmehQRmChYERrgcl
-	VFq2oTizUp8xzyFrROHw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=SzXelMlpGxwmx3iRF6I0/hBMtff7xvVDnGgo0978Egw=; b=B8uU9J52IULQzF
+	71ZAK2RTr10IbDKNbmYzsTqg3aOE1uEN/tmQbCLQiqzX4TAnFJKsPRAhgbU/d6wtLekBxbE5NMHa7
+	88FNHHa9S7pGp/Ye8nqRycDYZH0FV92rsGFyOinTYzcIAbcA5Y2npqjoZ7GhZiByyU9ahk9aML3+d
+	yoio+DpCojYar0jADsTbnNCjPbtc1i3hoGAjwqXpk6hRY4McU8cAA+diNBinl5EQIJCuHTjr+6Cg8
+	8CGJ2CHcth/YOvLsm0sK1cFmUJS0TAUAoYsrAI1raxdeTFgNDje5UExBPvOLCvH1/kwt79sPIfzmT
+	PQ2RC5qTOjcb1ELuEM6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTxOh-0007nx-Ew; Mon, 11 Nov 2019 00:17:35 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1iTxnE-0007td-Cm; Mon, 11 Nov 2019 00:42:56 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTxOd-0007nS-Ju; Mon, 11 Nov 2019 00:17:33 +0000
-Received: by mail-ot1-x343.google.com with SMTP id r24so9828875otk.12;
- Sun, 10 Nov 2019 16:17:29 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OhsOaebOhYHxMqV94r7kcc7AguzKN+Auyp31Rb0JoVw=;
- b=VLqkOMy2tquWHF8n6MZVAyJAvFHR0phqMcphKQflrGGjpZIOOMR1yBz1OFjChXHI08
- LOOF0UBMVw5bh3yyxo1H0G6j0qq+FCiK+BHRqoFh0AVkGS4xuOUs9QvI+zhdvSSJFQU+
- sexHjtR9jcULiSuImK3zbEdSPqs0rWuHD4Af/CrAuevFmjuKp+8S2QV9rSt+mMUwyCuA
- YwC7xjT8znKBbbIVHWk5TFFDHvftedEqKxf3b5KumvKRwGiaQlNPdl4tA9UNVtOSnL2o
- OvzHWnjaVU7U3UEKq3OHVHyNbEFvo9PFDfwwR330hH1mKfxLMdED7OdK+CrDqM9LCFY4
- eiow==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=OhsOaebOhYHxMqV94r7kcc7AguzKN+Auyp31Rb0JoVw=;
- b=d7aHrGN94E8agbE/GcnY4/Qa+REcqWeuny4P/akAjKiLhTaoz+pX3uHJsFGLumGReT
- mgelvceYo5GzMqKTASyOY2TzkSyYPTrnwywJDJLX3Zhw9JzQJM/XWQxtZgawjAM/M8oe
- XLv4m8LHe8XvtvlmE3BO9rzlTD4kULKUQZzR2wDsuRCxsppNYDZ6q48q0RHSJmWGfY6h
- CifwNv707X+M4gx6WKWO8D3yu2XUGRc2Rxf7cquc9p4zw4WiWpxVhzRj2+3yzfcW4W8x
- NTkvy4m0J4bu70+MxYS+KVtjdR7epOOcb3QF7xx01nc7+NSrKG9hc/XX1QHn2A0cpV3u
- QV1Q==
-X-Gm-Message-State: APjAAAX9IS7unVjOFbt8aQ8FD9LnOOZWLc3nNROYinY2kgmlnAwRp29q
- APM7gSMyY1pivZpGFsDOEaGkyFrSFfs03uOY96E=
-X-Google-Smtp-Source: APXvYqxomRIDMbxqMNubEdeNxZm86L5SYvCuTsFQa329n7usrb8jndKJc4nwmJinhIsr7BKQK5hy3XbrWXUiVrMroM0=
-X-Received: by 2002:a9d:4b86:: with SMTP id k6mr18409215otf.353.1573431448777; 
- Sun, 10 Nov 2019 16:17:28 -0800 (PST)
+ id 1iTxnB-0007sl-H6; Mon, 11 Nov 2019 00:42:54 +0000
+Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iTxn7-000616-Qx; Mon, 11 Nov 2019 01:42:49 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: arm@kernel.org
+Subject: [GIT PULL 1/2] Rockchip dts32 changes for 5.5 - round 2
+Date: Mon, 11 Nov 2019 01:42:49 +0100
+Message-ID: <1926436.N9mSsAMzn9@phil>
 MIME-Version: 1.0
-References: <20190907174833.19957-1-katsuhiro@katsuster.net>
-In-Reply-To: <20190907174833.19957-1-katsuhiro@katsuster.net>
-From: Vasily Khoruzhick <anarsoul@gmail.com>
-Date: Sun, 10 Nov 2019 16:17:02 -0800
-Message-ID: <CA+E=qVdvKxzFcU-09Ucn1Fr0FdkwSsPcLr8vPn2wsu6-DD1gqg@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: add analog audio nodes on
- rk3399-rockpro64
-To: Katsuhiro Suzuki <katsuhiro@katsuster.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_161731_679894_8ABA6928 
-X-CRM114-Status: GOOD (  15.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191110_164253_718687_0A53D30F 
+X-CRM114-Status: UNSURE (   9.37  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (anarsoul[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,100 +56,49 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Heiko Stuebner <heiko@sntech.de>,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- linux-kernel <linux-kernel@vger.kernel.org>
+Cc: linux-rockchip@lists.infradead.org, soc@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sat, Sep 7, 2019 at 10:48 AM Katsuhiro Suzuki
-<katsuhiro@katsuster.net> wrote:
->
-> This patch adds audio codec (Everest ES8316) and I2S audio nodes for
-> RK3399 RockPro64.
+Hi (arm-)soc people,
 
-Hi Katsuhiro,
+please find below and in the reply mail round 2 of devicetree patches
+targettted at 5.5. The signed tags should summarize the contents
+hopefully nicely :-) .
 
-I tested your patch with my rockpro64 on 5.4-rc6 which has your other
-patches to es8316 driver, but apparently it doesn't work.
+Please pull
+Thanks
+Heiko
 
-'alsamixer' complains 'cannot load mixer controls: No such device or
-address' and if I try to play audio with mpg123 it pretends that it
-plays something but there's no sound.
+The following changes since commit a562a8acccb3070155aad3db5ac97a80aed2a24b:
 
-Any idea what can be wrong?
+  ARM: dts: rockchip: remove some tabs and spaces from dtsi files (2019-10-16 21:26:03 +0200)
 
-Regards,
-Vasily
+are available in the Git repository at:
 
-> Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
-> ---
->  .../boot/dts/rockchip/rk3399-rockpro64.dts    | 28 +++++++++++++++++++
->  1 file changed, 28 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> index 0401d4ec1f45..8b1e6382b140 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> @@ -81,6 +81,12 @@
->                 reset-gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
->         };
->
-> +       sound {
-> +               compatible = "audio-graph-card";
-> +               label = "rockchip,rk3399";
-> +               dais = <&i2s1_p0>;
-> +       };
-> +
->         vcc12v_dcin: vcc12v-dcin {
->                 compatible = "regulator-fixed";
->                 regulator-name = "vcc12v_dcin";
-> @@ -470,6 +476,20 @@
->         i2c-scl-rising-time-ns = <300>;
->         i2c-scl-falling-time-ns = <15>;
->         status = "okay";
-> +
-> +       es8316: codec@11 {
-> +               compatible = "everest,es8316";
-> +               reg = <0x11>;
-> +               clocks = <&cru SCLK_I2S_8CH_OUT>;
-> +               clock-names = "mclk";
-> +               #sound-dai-cells = <0>;
-> +
-> +               port {
-> +                       es8316_p0_0: endpoint {
-> +                               remote-endpoint = <&i2s1_p0_0>;
-> +                       };
-> +               };
-> +       };
->  };
->
->  &i2c3 {
-> @@ -505,6 +525,14 @@
->         rockchip,playback-channels = <2>;
->         rockchip,capture-channels = <2>;
->         status = "okay";
-> +
-> +       i2s1_p0: port {
-> +               i2s1_p0_0: endpoint {
-> +                       dai-format = "i2s";
-> +                       mclk-fs = <256>;
-> +                       remote-endpoint = <&es8316_p0_0>;
-> +               };
-> +       };
->  };
->
->  &i2s2 {
-> --
-> 2.23.0.rc1
->
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+  git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.5-rockchip-dts32-2
+
+for you to fetch changes up to bbf8f6fef71a02b297de532364b5217d34f01582:
+
+  ARM: dts: rockchip: Add HDMI audio support to rk3288-veyron-mickey (2019-10-31 11:49:56 +0100)
+
+----------------------------------------------------------------
+HDMI-audio support for Veyron devices.
+
+----------------------------------------------------------------
+Cheng-Yi Chiang (2):
+      ARM: dts: rockchip: Add HDMI support to rk3288-veyron-analog-audio
+      ARM: dts: rockchip: Add HDMI audio support to rk3288-veyron-mickey
+
+ arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi | 1 +
+ arch/arm/boot/dts/rk3288-veyron-mickey.dts        | 7 +++++++
+ 2 files changed, 8 insertions(+)
+
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
