@@ -2,41 +2,41 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 849A3F768D
-	for <lists+linux-rockchip@lfdr.de>; Mon, 11 Nov 2019 15:38:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CB12F77DD
+	for <lists+linux-rockchip@lfdr.de>; Mon, 11 Nov 2019 16:38:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5dcWBxKtl1lDUuUiFWnrOzH6KFXbnj3KNvXKyNCLZfE=; b=U8pxkmTRhVXf5P
-	O+ko720pg/s6RQuF95J3Ga7QyXqs+N1fXRVxjMMVr/oa2SwUjHA63EMdonTyjTG0iu79A1I3avq0l
-	MhQMxhMR6ZlgjK1em/PFVmwa79Z5OAuLnUfkbgmMkpfYOX7Lx+Ky/HEqXyBrI/6U4nl3zt3pVuUQu
-	83EE3a0FrV5FxUc5l2wtDG6yKFUqwSZY1U8OMPwLOJNf282pZyL/Yo0RGwz2GgL4vXeT2YBct70D1
-	9mN4FzAEy4KF9Ms8IoVLPh2E9s4F50aELDZIu067vXmnVnJIhK4aE/9G8l6Hk6vCZz+kTTAKulP4Z
-	7yiLTI4rKg3WUY8UbB5w==;
+	List-Owner; bh=fxBVaEvFv9Dq0/qCGExfVe4sEhBZ7ABsuHKIB2G6dps=; b=dsDGPe7MQWqL9i
+	Cn5zcAwrDoPGXQvOROBZratVoOU/U0UvJri7x6Fm8Pboom6f2eRx7AhNNohxiF9wC++7qVYXwi4U4
+	SHpnqlz3l2mNMe6KkAp+BZ0oqZ0VBEK+YcbANLKaG/lr9I6jNgUFVptHYuSG/KDacX5rZzAsTmT0L
+	Qw2e3YvJ7W+DrSPICizmMJ0Dlrtay81bc91t1nZhycsgYvN/WgAsdwhb47Wxdji2p+uzbWT6ueCk+
+	07LYH7sdVtC2rCwAV9HKMMFUw5qsv2CwKEF3rrFp0LRPCLrGrUjL+4SS7yEO3lZj2jyG+hy5gonI5
+	Kja6ppvF/hASbBnzsrdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUApZ-00084w-CX; Mon, 11 Nov 2019 14:38:13 +0000
+	id 1iUBm5-0008HP-Vl; Mon, 11 Nov 2019 15:38:42 +0000
 Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUAp7-0007cq-B8; Mon, 11 Nov 2019 14:37:47 +0000
+ id 1iUBlx-00089o-BH; Mon, 11 Nov 2019 15:38:34 +0000
 Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
  (helo=hermes.fivetechno.de); authenticated
  by wp126.webpack.hosteurope.de running ExIM with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- id 1iUAp5-0004t9-0d; Mon, 11 Nov 2019 15:37:43 +0100
+ id 1iUBls-00041I-3p; Mon, 11 Nov 2019 16:38:28 +0100
 X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
  linuxbbg.five-lan.de
 Received: from [192.168.34.101] (p5098d998.dip0.t-ipconnect.de
  [80.152.217.152]) (authenticated bits=0)
  by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
- xABEbfUW012133
+ xABFcQon014343
  (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
- Mon, 11 Nov 2019 15:37:42 +0100
+ Mon, 11 Nov 2019 16:38:26 +0100
 From: Markus Reichl <m.reichl@fivetechno.de>
-Subject: [PATCH] arm64: dts: rockchip: Enable HDMI Sound on rk3399-roc-pc
+Subject: [PATCH] arm64: dts: rockchip: Add node for gpu on rk3399-roc-pc
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Heiko Stuebner <heiko@sntech.de>, Jagan Teki <jagan@amarulasolutions.com>,
  Markus Reichl <m.reichl@fivetechno.de>, devicetree@vger.kernel.org,
@@ -76,18 +76,18 @@ Autocrypt: addr=m.reichl@fivetechno.de; prefer-encrypt=mutual; keydata=
  Dm43HZwTBXPwasFHnGkF10N7aXf3r8WYpctbZYlcT5EV9m9i4jfWoGzHS5V4DXmv6OBmdLYk
  eD/Xv4SsK2JTO4nkQYw8
 Organization: five technologies GmbH
-Message-ID: <c9db5599-743b-bb90-999e-5989be6556ac@fivetechno.de>
-Date: Mon, 11 Nov 2019 15:37:41 +0100
+Message-ID: <c2b88509-129d-46d4-9e23-15d0482951be@fivetechno.de>
+Date: Mon, 11 Nov 2019 16:38:26 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
 Content-Language: de-DE
-X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1573483065;
- 9de06bc1; 
-X-HE-SMSGID: 1iUAp5-0004t9-0d
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1573486713;
+ 1549676c; 
+X-HE-SMSGID: 1iUBls-00041I-3p
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_063745_544784_F4E246DE 
-X-CRM114-Status: GOOD (  10.39  )
+X-CRM114-CacheID: sfid-20191111_073833_529749_B61052BB 
+X-CRM114-Status: GOOD (  13.03  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -112,28 +112,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-HDMI-Sound is the only available sound card on rk3399-roc-pc, enable it.
+rk3399-roc-pc has a Mali gpu, enable it for use with panfrost and mesa >19.2.
 
 Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
 ---
- arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi | 4 ++++
- 1 file changed, 4 insertions(+)
+Based on v5.5-armsoc/dts64/75aa5678
+If applied with other patches in between, the second hunk
+offsets and may patch vdd_cpu_b instead of vdd_gpu.
+---
+ arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-index 2ef8ee2eae02..40f446c77e89 100644
+index 7e07dae33d0f..287f97488f65 100644
 --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
 +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-@@ -260,6 +260,10 @@
+@@ -238,6 +238,11 @@
  	status = "okay";
  };
  
-+&hdmi_sound {
++&gpu {
++	mali-supply = <&vdd_gpu>;
 +	status = "okay";
 +};
 +
- &i2c0 {
- 	clock-frequency = <400000>;
- 	i2c-scl-rising-time-ns = <168>;
+ &hdmi {
+ 	ddc-i2c-bus = <&i2c3>;
+ 	pinctrl-names = "default";
+@@ -465,8 +470,6 @@
+ 		regulator-min-microvolt = <712500>;
+ 		regulator-max-microvolt = <1500000>;
+ 		regulator-ramp-delay = <1000>;
+-		regulator-always-on;
+-		regulator-boot-on;
+ 		vin-supply = <&vcc3v3_sys>;
+ 
+ 		regulator-state-mem {
 -- 
 2.20.1
 
