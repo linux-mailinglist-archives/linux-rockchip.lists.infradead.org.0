@@ -2,103 +2,104 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A39E1F8CD1
-	for <lists+linux-rockchip@lfdr.de>; Tue, 12 Nov 2019 11:27:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C75FF8D93
+	for <lists+linux-rockchip@lfdr.de>; Tue, 12 Nov 2019 12:07:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3dUWy1P4RuVUZ8kfh96iPA3SIjpsB/5mhZ5ISCPgaI8=; b=qzenlKivterq2Z
-	J4dF5HDJbtDV6jSdbacKX+xM8po89HrusTuZXH1YW9EAHdtRnN+hot/tje9o/2QjSSANXCXyDZWg6
-	Enqwha01frGfys0pEF+M7kKDDhCp7xzm1apD8RK1dk43CXf15VAdoIgKXmxrpHwp0gGY+qmH6o5sS
-	hqPgTgM+pja170w029X/C+pL0bgmhgTk25rMC8NwqqcaOuAeMRMg7ea2NAODaPeFK7qbA5eHRX6h0
-	rcnwlKZdozWi+oCg+AuuYsvjUoEL1XKXYd0hXvpqMJrIRmKSwQXl8cTAP++tOUbonD4Lng3xu7b/l
-	4ycWoaaQI7T1Rr+ZuzBA==;
+	List-Owner; bh=O6rllJhC7dYvV2BV0C1SgrXX0SdP1ALs5y1NKzrsrbs=; b=BglpQemFCwKi+f
+	68vz67DWw5wjTkQPMS7gp8Ip6/UVj8FscrsAJEM0K7BWOt6rAz/8SADlnZmpJo/Raxgx1lsPuJEWk
+	4miQiRR9NOAyRUyRlmg7IoNvcRoB7cpz52dtpHctDCIYRyMyDqZId3MhmsCGDBbDiL2KSLoK1CXGw
+	O9bICN1Cu7uFIrzitMnAsNAuucJRIJqv6EvVe+6Uehdt9/wl/uaFfd90h5CouNCqc3aCfTpAq0RHi
+	0RrZWeQeav6KbnoGipBb7JbxTdy6Ab3FhBt0PtXRkUX1CZh0q/hyhVo4rmBbA48EYtsj9UfJHE02y
+	VEaL5MSczlqj/lyftpbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUTOl-0000Wf-3e; Tue, 12 Nov 2019 10:27:47 +0000
-Received: from mout.web.de ([212.227.15.3])
+	id 1iUU0i-0008Vp-5m; Tue, 12 Nov 2019 11:07:00 +0000
+Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUTOi-0000WD-0V; Tue, 12 Nov 2019 10:27:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1573554458;
- bh=zKVb9WMuQ7zRQYv1GZLrzWxEJS3VRLzbpd64rrU9ml8=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=HfR9J5b/gmhapoL2sT51uQh6y+xnNwBW4ssabaqMG4N1N0fY0zyAtG0yuC6Dhkfj7
- Nndrt5ainx8lVQi45ovWdYkC3C3WZ64v29SCvBohPrkTMawXWnAHYocxBWtGumDOMK
- lNzOAMX8lL2JHSKZWju/leD0+CGsY4ILFJLWkf/o=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.43.108] ([89.204.137.77]) by smtp.web.de (mrweb001
- [213.165.67.108]) with ESMTPSA (Nemesis) id 0MDgPG-1ig4gE0LSY-00H9Ox; Tue, 12
- Nov 2019 11:21:24 +0100
+ id 1iUU0e-0008Uj-49; Tue, 12 Nov 2019 11:06:57 +0000
+Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
+ (helo=hermes.fivetechno.de); authenticated
+ by wp126.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ id 1iUU0Q-0007lz-FV; Tue, 12 Nov 2019 12:06:42 +0100
+X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
+ linuxbbg.five-lan.de
+Received: from [192.168.34.101] (p5098d998.dip0.t-ipconnect.de
+ [80.152.217.152]) (authenticated bits=0)
+ by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
+ xACB6ahL019198
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
+ Tue, 12 Nov 2019 12:06:37 +0100
 Subject: Re: [PATCH 3/3] arm64: dts: rk3399: Add init voltage for vdd_log
-To: Kever Yang <kever.yang@rock-chips.com>,
- Markus Reichl <m.reichl@fivetechno.de>, heiko@sntech.de
+To: Soeren Moch <smoch@web.de>, Kever Yang <kever.yang@rock-chips.com>,
+ heiko@sntech.de
 References: <20191111005158.25070-1-kever.yang@rock-chips.com>
  <20191111005158.25070-3-kever.yang@rock-chips.com>
  <ef8830f3-10d1-7b71-0e18-232f2eaeef2d@web.de>
  <1eaef5d5-c923-da56-b9c4-48d517b3c969@rock-chips.com>
  <acbab893-9e9a-cfe1-67bf-a9e2b2e50114@fivetechno.de>
  <17e14b30-02ee-2379-8891-088677924479@rock-chips.com>
-From: Soeren Moch <smoch@web.de>
-Message-ID: <fd9ee2bc-9dfb-1aa2-f00f-add9b3069876@web.de>
-Date: Tue, 12 Nov 2019 11:19:19 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ <fd9ee2bc-9dfb-1aa2-f00f-add9b3069876@web.de>
+From: Markus Reichl <m.reichl@fivetechno.de>
+Autocrypt: addr=m.reichl@fivetechno.de; prefer-encrypt=mutual; keydata=
+ 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
+ eD/Xv4SsK2JTO4nkQYw8
+Organization: five technologies GmbH
+Message-ID: <f2c34d85-4d71-d9ff-99ea-044e6354fc87@fivetechno.de>
+Date: Tue, 12 Nov 2019 12:06:36 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <17e14b30-02ee-2379-8891-088677924479@rock-chips.com>
-Content-Language: en-GB
-X-Provags-ID: V03:K1:dSsn12ZY5BPyYvsi5lOeFhAuWonqE2SikhTXUxedBa/QOws+FOu
- Lwoaiezl4xgI1mVpEmVtCXu1r3/IWm0Mpa/jX8cRphuYEKuHOBLd3Ln5wP3NL9qZQH3xQ5E
- So6xWNQ6sErfO9qtb+M64aJo8Qk8imKVclSLc97xLYfJrlZHzDePPQQkF/Z/xys1w5ZsA/a
- XDJ43CAYOO5lvaP7IR8HA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:pbgGik7jPIU=:Muz22WWDhXzySJvrwHAv4J
- 5MNm+tXgj+VPhBFHhpLsdQrRIx7ZkFng9RcKY9PTzDsIbTrnAzkO4TVtg9zLsA11WOt4/suTK
- 3zZvjIN9Ms6yV/+bCbiuiNBLlULsC+DTK5iDsvYuVqJR6lT9tjO2tG80EK3G/pMQJjp7sMpke
- BxC6T8e8f/9uJDzlgskjcCRPfpfPEtQeuUDUlBS/6w2Dfx1hXKuYRFvHFICV43qpbXUl0WCpD
- PD1ci1dBlq4NRMKoDcWlYMseZXlaJ1g/jmCbnQWV+rj/Kq4tsID2FwLJBfknyeAvFQwQF4HVO
- emDxZ1kz3FTc3CpDb3A/bJDyUrsAt+l/CYq3aY84eqSudTgZzVZl5cu5fLBqd2YfysppkY6Sd
- 1Vr7CzGcxD41l7WEcskSjQLcwQDwxMiJaML4gvrqYneotg9U9Y2H/tNTu/JntdSeu/CdlB1pp
- KSLVjqZuW69rp0dxfB+abMtw5YUujVM31wDJ3zhILT0p6viebfWpgE0V6m5n9ibCL58Y0/a+R
- 68YwFJXKoeE64yWioF22aq7cQNG2tHAKyZaNFxINVL9jmUvtwBBRJ/eMC4UgmM0j22F6EjZUt
- uEonbz0pmPUQwHImYWFHeEYMykF6gU0xC+cCRHXLkdAen9aoJHQFfRdgGnplgeggaDDOr5jjC
- sTjkXZrvHu8hhQeIzN0v68xzZevjKiV6l0gp64yfyKsW5o5/yQ2nFSoEPojwLf2NhIXZJtEBO
- P3MuivR9ogX8LziD77sQRl2vdUp4KGTS/o6ccv5s0jJYX25WabePsKydrjyluCoFiqp2MLMA5
- y0y08KPL7oxHlQq1Ms3rExjfjkN1alQm1xjUIrATTpKqcbAFhUt+laVztVZp0V9Ale/IEFdGr
- nvUho45s9cQMInkcVLrDJza5Xszpy2XYEJW0wvGuKCkDQKASYf2XdGlyrJ5ddWrDp6UXXBqrr
- 83af95atc5j4Twr6ls2juJvjVlEc/OugNVnA3nKPtku/RZL8WLvdnbA8cvzJyiALuzw4S5Bt8
- t0796xVQaDxdGMqr3je7YQWICGDE40P5OHlQh/isiAeOD26Noan1zsZkqZXgBUbjhY43jdWdY
- pnPFmyXrc07iDcaS2+MNkOdj8WAM9kdwG0P3pXLqESif/QViUGlff8iVuiGDIJ1rxa/VsiW78
- 5OVilXY2LTnSXVYoAf1H+WkcVWI/MAuu2hVMuC4gx/aSYi/qeuN/CaLTDbYANnFlCfa2fiYCW
- mB96OSlyL5CgYuhw4hls76etct9TLRQhPpmgjV2Ew1NDisdeLubKVcl88LtCgwBN1hSYOulM0
- /V+9Z/wN8392867sOlJWwe9EoKWgACDJpdY3A4Pfu0bhDEeIjddzWvbLaDlmFsoX01gW7pseX
- ESTqvf4+Wa6WuPfd+m86WBseGNN5dcjQ1zmzJP4w5Ogov5OZkFv8rgqQY5g4mSbh7sG5XnUZp
- hwsMqhVivuawCdBrVXl5TVl/kHMP8W08MUYH0f13YqBcd/frZS1muWhxv5Wwl5uxcw2GRDGtM
- B4mZYKPtBLkDLTCsUWB5wx9c=
+In-Reply-To: <fd9ee2bc-9dfb-1aa2-f00f-add9b3069876@web.de>
+Content-Language: de-DE
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1573556816;
+ e4b06f6e; 
+X-HE-SMSGID: 1iUU0Q-0007lz-FV
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_022744_344817_96CD37F7 
-X-CRM114-Status: GOOD (  17.35  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191112_030656_306457_E71E9BC5 
+X-CRM114-Status: GOOD (  17.01  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [89.204.137.77 listed in dnsbl.sorbs.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (smoch[at]web.de)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,42 +114,50 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
  =?UTF-8?Q?Andrius_=c5=a0tikonas?= <andrius@stikonas.eu>,
- Vivek Unune <npcomplete13@gmail.com>, Alexis Ballier <aballier@gentoo.org>,
+ Alexis Ballier <aballier@gentoo.org>, linux-arm-kernel@lists.infradead.org,
  devicetree@vger.kernel.org, Katsuhiro Suzuki <katsuhiro@katsuster.net>,
- Robin Murphy <robin.murphy@arm.com>, Elaine Zhang <zhangqing@rock-chips.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Elaine Zhang <zhangqing@rock-chips.com>, Andy Yan <andyshrk@gmail.com>,
  linux-kernel@vger.kernel.org, Vicente Bergas <vicencb@gmail.com>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-rockchip@lists.infradead.org,
+ Hugh Cole-Baker <sigmaris@gmail.com>, linux-rockchip@lists.infradead.org,
  Rob Herring <robh+dt@kernel.org>, Pragnesh Patel <Pragnesh_Patel@mentor.com>,
- Oskari Lemmela <oskari@lemmela.net>, Akash Gajjar <akash@openedev.com>,
- Nick Xie <nick@khadas.com>, Peter Robinson <pbrobinson@gmail.com>,
- Hugh Cole-Baker <sigmaris@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Andy Yan <andyshrk@gmail.com>
+ Oskari Lemmela <oskari@lemmela.net>, Nick Xie <nick@khadas.com>,
+ Peter Robinson <pbrobinson@gmail.com>, Robin Murphy <robin.murphy@arm.com>,
+ Vivek Unune <npcomplete13@gmail.com>, Akash Gajjar <akash@openedev.com>
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-CgpPbiAxMi4xMS4xOSAxMTowMiwgS2V2ZXIgWWFuZyB3cm90ZToKPiBNYXJrdXMsCj4KPgo+IE9u
-IDIwMTkvMTEvMTIg5LiL5Y2INDoxNiwgTWFya3VzIFJlaWNobCB3cm90ZToKPj4gSGkgS2V2ZXIs
-Cj4+Cj4+IGhhdmUgYSByazMzOTktcm9jLXBjIHJ1bm5pbmcgbWFpbmxpbmUgVS1Cb290IGFuZCBr
-ZXJuZWwgYW5kIHZkZF9sb2cgaXMKPj4gc2hvd2luZyAxMTE4IG1WLgo+Cj4gVGhlIHJrMzM5OS1y
-b2MtcGMgaGF2ZSB0aGUgc2FtZSB2ZGRfbG9nIGNpcmN1aXQgaW4gc2NoZW1hdGljLCBzbyBpdAo+
-IHNob3VsZCBsaWtlIHRoZSBwYXRjaCAxLzMgb2YKPgo+IHRoaXMgcGF0Y2ggc2V0Lgo+Cj4gSSBk
-b24ndCB1bmRlcnN0YW5kIHdobyBpcyBzZXR0aW5nIHRoaXMgdmFsdWUsIG1heWJlIHRoZSBkZWZh
-dWx0IHZhbHVlCj4gd2l0aG91dCBwd20gcmVndWxhdG9yIGVuYWJsZWQ/Cj4KPj4gSXMgdGhpcyBh
-IGRhbmdlciBmb3IgdGhlIGJvYXJkPwo+PiBIb3cgdG8gZml4IGl0Pwo+Cj4gVGhlIGJlc3Qgd2F5
-IGlzIHRvIHNldCBjb3JyZWN0IG1pbi9tYXggbWljcm92b2x0IG9mIHRoZQo+IHJlZ3VsYXRvciht
-ZWFzdXJlIHdpdGggUFdNIG91dHB1dCBsb3cgYW5kIGhpZ2gpLApJIGRpZG4ndCBsb29rIGludG8g
-dGhlIHNjaGVtYXRpYyBvZiB0aGlzIGJvYXJkLCBidXQgaWYgaXQgaXMgc2ltaWxhciB0bwpSb2Nr
-UHJvNjQsIHNldHRpbmcgdGhlIHB3bSByZWd1bGF0b3IgdG8gdGhlIG1heCB2b2x0YWdlIG9mIDEu
-N1Ygd2lsbApwcm9iYWJseSBraWxsIHRoZSByazMzOTkgaW1tZWRpYXRlbHkuIFNvIEkgcmVjb21t
-ZW5kIG5vdCB0byBkbyB0aGlzLi4uCgpSZWdhcmRzLApTb2VyZW4KPgo+IChub3RlIHRoYXQgaWbC
-oCBubyBkcml2ZXIgdG91Y2ggdGhlIHJlZ3VsYXRvciwgdGhlIFBXTSBpcyBkZWZhdWx0Cj4gaW5w
-dXQsIG5vdCBvdXRwdXQ7KQo+IHRvCj4gYW5kIHNldCBhIGluaXQtbWljcm92b2x0IGZvciBVLUJv
-b3QgZHJpdmVyLCBhbmQgSSB0aGluayBubyBrZXJuZWwKPiBkcml2ZXIgdG91Y2ggdGhpcyByZWd1
-bGF0b3Igbm93Lgo+Cj4KPiBUaGFua3MsCj4KPiAtIEtldmVyCj4KPj4gQnR3LiB2aW4tc3VwcGx5
-IGZvciB0aGlzIHB3bS1yZWd1bGF0b3IgaXMgaWdub3JlZCBhbmQgSSBjb3VsZCBub3QKPj4gZmlu
-ZCBpdAo+PiBpbiBiaW5kaW5ncyBkb2MuCj4+Cj4+IEdydcOfLAo+Cj4KCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5n
-IGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
+RGVhciBTb3JlLCBLZXZlciwKCkFtIDEyLjExLjE5IHVtIDExOjE5IHNjaHJpZWIgU29lcmVuIE1v
+Y2g6Cj4gCj4gCj4gT24gMTIuMTEuMTkgMTE6MDIsIEtldmVyIFlhbmcgd3JvdGU6Cj4+IE1hcmt1
+cywKPj4KPj4KPj4gT24gMjAxOS8xMS8xMiDkuIvljYg0OjE2LCBNYXJrdXMgUmVpY2hsIHdyb3Rl
+Ogo+Pj4gSGkgS2V2ZXIsCj4+Pgo+Pj4gaGF2ZSBhIHJrMzM5OS1yb2MtcGMgcnVubmluZyBtYWlu
+bGluZSBVLUJvb3QgYW5kIGtlcm5lbCBhbmQgdmRkX2xvZyBpcwo+Pj4gc2hvd2luZyAxMTE4IG1W
+Lgo+Pgo+PiBUaGUgcmszMzk5LXJvYy1wYyBoYXZlIHRoZSBzYW1lIHZkZF9sb2cgY2lyY3VpdCBp
+biBzY2hlbWF0aWMsIHNvIGl0Cj4+IHNob3VsZCBsaWtlIHRoZSBwYXRjaCAxLzMgb2YKPj4KPj4g
+dGhpcyBwYXRjaCBzZXQuCj4+Cj4+IEkgZG9uJ3QgdW5kZXJzdGFuZCB3aG8gaXMgc2V0dGluZyB0
+aGlzIHZhbHVlLCBtYXliZSB0aGUgZGVmYXVsdCB2YWx1ZQo+PiB3aXRob3V0IHB3bSByZWd1bGF0
+b3IgZW5hYmxlZD8KPj4KPj4+IElzIHRoaXMgYSBkYW5nZXIgZm9yIHRoZSBib2FyZD8KPj4+IEhv
+dyB0byBmaXggaXQ/Cj4+Cj4+IFRoZSBiZXN0IHdheSBpcyB0byBzZXQgY29ycmVjdCBtaW4vbWF4
+IG1pY3Jvdm9sdCBvZiB0aGUKPj4gcmVndWxhdG9yKG1lYXN1cmUgd2l0aCBQV00gb3V0cHV0IGxv
+dyBhbmQgaGlnaCksCj4gSSBkaWRuJ3QgbG9vayBpbnRvIHRoZSBzY2hlbWF0aWMgb2YgdGhpcyBi
+b2FyZCwgYnV0IGlmIGl0IGlzIHNpbWlsYXIgdG8KPiBSb2NrUHJvNjQsIHNldHRpbmcgdGhlIHB3
+bSByZWd1bGF0b3IgdG8gdGhlIG1heCB2b2x0YWdlIG9mIDEuN1Ygd2lsbAo+IHByb2JhYmx5IGtp
+bGwgdGhlIHJrMzM5OSBpbW1lZGlhdGVseS4gU28gSSByZWNvbW1lbmQgbm90IHRvIGRvIHRoaXMu
+Li4KPiAKSXQgaGFzIHRvIGJlIHNldCB0byA0NTBtViAtIDE0MDBtViB0byBnaXZlIDk1M21WLgpJ
+IHdpbGwgY29tZSBvdXQgd2l0aCBhIHBhdGNoIHRoYXQgZml4ZXMgdGhpcy4KCj4gUmVnYXJkcywK
+PiBTb2VyZW4KPj4KPj4gKG5vdGUgdGhhdCBpZsKgIG5vIGRyaXZlciB0b3VjaCB0aGUgcmVndWxh
+dG9yLCB0aGUgUFdNIGlzIGRlZmF1bHQKPj4gaW5wdXQsIG5vdCBvdXRwdXQ7KQo+PiB0bwo+PiBh
+bmQgc2V0IGEgaW5pdC1taWNyb3ZvbHQgZm9yIFUtQm9vdCBkcml2ZXIsIGFuZCBJIHRoaW5rIG5v
+IGtlcm5lbAo+PiBkcml2ZXIgdG91Y2ggdGhpcyByZWd1bGF0b3Igbm93Lgo+Pgo+Pgo+PiBUaGFu
+a3MsCj4+Cj4+IC0gS2V2ZXIKPj4KPj4+IEJ0dy4gdmluLXN1cHBseSBmb3IgdGhpcyBwd20tcmVn
+dWxhdG9yIGlzIGlnbm9yZWQgYW5kIEkgY291bGQgbm90Cj4+PiBmaW5kIGl0Cj4+PiBpbiBiaW5k
+aW5ncyBkb2MuCj4+Pgo+Pj4gR3J1w58sCj4+Cj4+Cj4gCj4gCj4gX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiBMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxp
+c3QKPiBMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo+IAoKR3J1w58sCi0t
+IApNYXJrdXMgUmVpY2hsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LXJvY2tjaGlwCg==
