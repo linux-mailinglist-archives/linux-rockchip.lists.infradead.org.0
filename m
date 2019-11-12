@@ -2,46 +2,45 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDDB4F8AEA
-	for <lists+linux-rockchip@lfdr.de>; Tue, 12 Nov 2019 09:45:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39C5EF8AFE
+	for <lists+linux-rockchip@lfdr.de>; Tue, 12 Nov 2019 09:47:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hAN9wdpImYztOWpneobcO/DQ9Nzyb8JhJ2TyHdlvvUk=; b=I2bhRbnqiAbsyR
-	TYEgXICctw/2SZU9n6pNZWyHeYj/RZD39zu1Nac0Ka8bpFGuySvUdn/gFMMInBlAynNZs8CbycC82
-	/MYaLdReKDGp10eS6lClGQuXOimYYCB28WeVsYaMbfsco6+JzgiIcEkvZIKdDdJr7us0FQSq+gyMC
-	kPoV94ORjlgCilMiQz8ey1u/Pii3fP93kp01B47F5wohMl/xUIps1aBSS0Q9kjB/v6FgN75z1c42P
-	NecLLeqcg1j85YbBjmgXbkY/FS2n4h0F6QqpydgHEfyXWLabFaPUaKvi/BwEU1whcGztk8EHUmIh+
-	ygN1B/zyNxFxQRCG5hnA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LSzZDgo6/kx7iJ6RNZ5nMcYi5N4Qfr3ySYpJ5366oM8=; b=YB20r1JIlODcSL
+	NCzcqcd9ayKTHVwCvcYCz3bnOT9YNqbl3OAfHY1sgftLp1ELsJ/2zIPcD+AqPWuyHm8ON9+tf8XXb
+	m2wj1xGY+Df1tsh8AOgtHqtkm2SsdCoac4OXTScyXA0G03VnHjNHTyegJmoy7z8BnDkoMUI4np4se
+	KVpDXIgW/qMWhmoRS0CKH7JQp3ViMOqGwmkJe4oBiku2F11nmaYKhQfSYAch+qcshuGARnXEebOyF
+	R7zDJLi1x+e/uBO3fNI8OxBok6KMlaIIcH5Okh8kKgNk/VsaOXx3jMU9wPyogL4JSWMIAw2wEnIVU
+	1QMh5v9KKR34m97DdZrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iURo7-0001QH-1t; Tue, 12 Nov 2019 08:45:51 +0000
+	id 1iURpD-0001hZ-3v; Tue, 12 Nov 2019 08:46:59 +0000
 Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iURnx-0001I0-FL; Tue, 12 Nov 2019 08:45:43 +0000
+ id 1iURp9-0001gz-0j; Tue, 12 Nov 2019 08:46:56 +0000
 Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
  (helo=hermes.fivetechno.de); authenticated
  by wp126.webpack.hosteurope.de running ExIM with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- id 1iURnt-0001V4-Nn; Tue, 12 Nov 2019 09:45:37 +0100
+ id 1iURp7-00020s-1K; Tue, 12 Nov 2019 09:46:53 +0100
 X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
  linuxbbg.five-lan.de
 Received: from [192.168.34.101] (p5098d998.dip0.t-ipconnect.de
  [80.152.217.152]) (authenticated bits=0)
  by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
- xAC8jaTj012944
+ xAC8kpAN012974
  (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
- Tue, 12 Nov 2019 09:45:36 +0100
-From: Markus Reichl <m.reichl@fivetechno.de>
-Subject: [PATCH v2] arm64: dts: rockchip: Add SDR104 mode to SD-card I/F on
+ Tue, 12 Nov 2019 09:46:52 +0100
+Subject: Re: arm64: dts: rockchip: Add SDR104 mode to SD-card I/F on
  rk3399-roc-pc
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, Jagan Teki <jagan@amarulasolutions.com>,
- Markus Reichl <m.reichl@fivetechno.de>,
- "'Ulf Hansson'" <ulf.hansson@linaro.org>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+References: <f03c978c-86de-b8bb-22c2-177d7fafed94@fivetechno.de>
+ <CAPDyKFqn06LZZMXLD2o-M6A0R6KU97PFUTN=NgYnMtf=ESULTA@mail.gmail.com>
+From: Markus Reichl <m.reichl@fivetechno.de>
 Autocrypt: addr=m.reichl@fivetechno.de; prefer-encrypt=mutual; keydata=
  xsDNBFs02GcBDADRBOYE75/gs54okjHfQ1LK8FfNH5yMq1/3MxhqP7gsCol5ZGbdNhJ7lnxX
  jIEIlYfd6EgJMJV6E69uHe4JF9RO0BDdIy79ruoxnYaurxB40qPtb+YyTy3YjeNF3NBRE+4E
@@ -76,18 +75,19 @@ Autocrypt: addr=m.reichl@fivetechno.de; prefer-encrypt=mutual; keydata=
  Dm43HZwTBXPwasFHnGkF10N7aXf3r8WYpctbZYlcT5EV9m9i4jfWoGzHS5V4DXmv6OBmdLYk
  eD/Xv4SsK2JTO4nkQYw8
 Organization: five technologies GmbH
-Message-ID: <25466090-3b24-2695-10fb-88c59be3f149@fivetechno.de>
-Date: Tue, 12 Nov 2019 09:45:36 +0100
+Message-ID: <3ebbea5b-0bda-3528-344d-d717889e6fec@fivetechno.de>
+Date: Tue, 12 Nov 2019 09:46:51 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
+In-Reply-To: <CAPDyKFqn06LZZMXLD2o-M6A0R6KU97PFUTN=NgYnMtf=ESULTA@mail.gmail.com>
 Content-Language: de-DE
-X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1573548341;
- 6398de21; 
-X-HE-SMSGID: 1iURnt-0001V4-Nn
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1573548415;
+ f078bd3a; 
+X-HE-SMSGID: 1iURp7-00020s-1K
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_004541_662436_B0ECD3AA 
-X-CRM114-Status: GOOD (  12.75  )
+X-CRM114-CacheID: sfid-20191112_004655_205087_66C9D58C 
+X-CRM114-Status: GOOD (  15.22  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -107,107 +107,53 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>,
  "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add SDR104 capability and regulators to SD card node.
-While at it, fix a typo in lcd pinctrl and remove two
-undocumented bindings from pmic.
-
-Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
----
-v2: Remove always-on from vcc3v0_sd
----
- .../boot/dts/rockchip/rk3399-roc-pc.dtsi      | 30 +++++++++++++++----
- 1 file changed, 24 insertions(+), 6 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-index d1eb55c855b3..a31099f7620b 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-@@ -135,6 +135,19 @@
- 		vin-supply = <&vcc_1v8>;
- 	};
- 
-+	vcc3v0_sd: vcc3v0-sd {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpio = <&gpio4 RK_PD6 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&vcc3v0_sd_en>;
-+		regulator-name = "vcc3v0_sd";
-+		regulator-boot-on;
-+		regulator-min-microvolt = <3000000>;
-+		regulator-max-microvolt = <3000000>;
-+		vin-supply = <&vcc3v3_sys>;
-+	};
-+
- 	vcc3v3_sys: vcc3v3-sys {
- 		compatible = "regulator-fixed";
- 		regulator-name = "vcc3v3_sys";
-@@ -293,8 +306,6 @@
- 		vcc10-supply = <&vcc3v3_sys>;
- 		vcc11-supply = <&vcc3v3_sys>;
- 		vcc12-supply = <&vcc3v3_sys>;
--		vcc13-supply = <&vcc3v3_sys>;
--		vcc14-supply = <&vcc3v3_sys>;
- 		vddio-supply = <&vcc_3v0>;
- 
- 		regulators {
-@@ -576,7 +587,7 @@
- 
- 	lcd-panel {
- 		lcd_panel_reset: lcd-panel-reset {
--			rockchip,pins = <4 RK_PD6 RK_FUNC_GPIO &pcfg_pull_up>;
-+			rockchip,pins = <4 RK_PD5 RK_FUNC_GPIO &pcfg_pull_up>;
- 		};
- 	};
- 
-@@ -602,6 +613,10 @@
- 		vsel2_gpio: vsel2-gpio {
- 			rockchip,pins = <1 RK_PB6 RK_FUNC_GPIO &pcfg_pull_down>;
- 		};
-+
-+		pmic_int_l: pmic-int-l {
-+			rockchip,pins = <1 RK_PC5 RK_FUNC_GPIO &pcfg_pull_up>;
-+		};
- 	};
- 
- 	sdio-pwrseq {
-@@ -610,9 +625,9 @@
- 		};
- 	};
- 
--	pmic {
--		pmic_int_l: pmic-int-l {
--			rockchip,pins = <1 RK_PC5 RK_FUNC_GPIO &pcfg_pull_up>;
-+	sdmmc {
-+		vcc3v0_sd_en: vcc3v0-sd-en {
-+			rockchip,pins = <4 RK_PD6 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
- 	};
- 
-@@ -667,6 +682,9 @@
- 	cd-gpios = <&gpio0 RK_PA7 GPIO_ACTIVE_LOW>;
- 	disable-wp;
- 	max-frequency = <150000000>;
-+	sd-uhs-sdr104;
-+	vmmc-supply = <&vcc3v0_sd>;
-+	vqmmc-supply = <&vcc_sdio>;
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_bus4>;
- 	status = "okay";
--- 
-2.20.1
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgVWxmLAoKQW0gMTEuMTEuMTkgdW0gMTg6Mjcgc2NocmllYiBVbGYgSGFuc3NvbjoKPiBPbiBN
+b24sIDExIE5vdiAyMDE5IGF0IDE1OjEzLCBNYXJrdXMgUmVpY2hsIDxtLnJlaWNobEBmaXZldGVj
+aG5vLmRlPiB3cm90ZToKPj4KPj4gQWRkIFNEUjEwNCBjYXBhYmlsaXR5IGFuZCByZWd1bGF0b3Jz
+IHRvIFNEIGNhcmQgbm9kZS4KPj4gV2hpbGUgYXQgaXQsIGZpeCBhIHR5cG8gaW4gbGNkIHBpbmN0
+cmwgYW5kIHJlbW92ZSB0d28KPj4gdW5kb2N1bWVudGVkIGJpbmRpbmdzIGZyb20gcG1pYy4KPj4K
+Pj4gU2lnbmVkLW9mZi1ieTogTWFya3VzIFJlaWNobCA8bS5yZWljaGxAZml2ZXRlY2huby5kZT4K
+Pj4gLS0tCj4+ICAuLi4vYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJvYy1wYy5kdHNpICAgICAg
+fCAzMSArKysrKysrKysrKysrKystLS0tCj4+ICAxIGZpbGUgY2hhbmdlZCwgMjUgaW5zZXJ0aW9u
+cygrKSwgNiBkZWxldGlvbnMoLSkKPj4KPj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9k
+dHMvcm9ja2NoaXAvcmszMzk5LXJvYy1wYy5kdHNpIGIvYXJjaC9hcm02NC9ib290L2R0cy9yb2Nr
+Y2hpcC9yazMzOTktcm9jLXBjLmR0c2kKPj4gaW5kZXggMzNkZjk1ZTM4NGI0Li5lODZhNmRiNTQ0
+OTkgMTAwNjQ0Cj4+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJv
+Yy1wYy5kdHNpCj4+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJv
+Yy1wYy5kdHNpCj4+IEBAIC0xMzUsNiArMTM1LDIwIEBACj4+ICAgICAgICAgICAgICAgICB2aW4t
+c3VwcGx5ID0gPCZ2Y2NfMXY4PjsKPj4gICAgICAgICB9Owo+Pgo+PiArICAgICAgIHZjYzN2MF9z
+ZDogdmNjM3YwLXNkIHsKPj4gKyAgICAgICAgICAgICAgIGNvbXBhdGlibGUgPSAicmVndWxhdG9y
+LWZpeGVkIjsKPj4gKyAgICAgICAgICAgICAgIGVuYWJsZS1hY3RpdmUtaGlnaDsKPj4gKyAgICAg
+ICAgICAgICAgIGdwaW8gPSA8JmdwaW80IFJLX1BENiBHUElPX0FDVElWRV9ISUdIPjsKPj4gKyAg
+ICAgICAgICAgICAgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+ICsgICAgICAgICAgICAg
+ICBwaW5jdHJsLTAgPSA8JnZjYzN2MF9zZF9lbj47Cj4+ICsgICAgICAgICAgICAgICByZWd1bGF0
+b3ItbmFtZSA9ICJ2Y2MzdjBfc2QiOwo+PiArICAgICAgICAgICAgICAgcmVndWxhdG9yLWFsd2F5
+cy1vbjsKPiAKPiBUaGlzIGxvb2tzIG9kZC4gQSBHUElPIHJlZ3VsYXRvciBiZWluZyBhbHdheXMg
+b24/CgpXb3JrcyBmaW5lIHdpdGhvdXQgYWx3YXlzLW9uLiBIYXZlIHNlbnQgdjIuIFRoYW5rcy4K
+Cj4gCj4+ICsgICAgICAgICAgICAgICByZWd1bGF0b3ItYm9vdC1vbjsKPj4gKyAgICAgICAgICAg
+ICAgIHJlZ3VsYXRvci1taW4tbWljcm92b2x0ID0gPDMwMDAwMDA+Owo+PiArICAgICAgICAgICAg
+ICAgcmVndWxhdG9yLW1heC1taWNyb3ZvbHQgPSA8MzAwMDAwMD47Cj4+ICsgICAgICAgICAgICAg
+ICB2aW4tc3VwcGx5ID0gPCZ2Y2MzdjNfc3lzPjsKPj4gKyAgICAgICB9Owo+IAo+IEFzc3VtZXMg
+dGhpcyBwb3dlcnMgYW4gU0RJTyBlbWJlZGRlZCBjYXJkLiBPZnRlbiB0aG9zZSBoYXZlIGEgc3Bl
+Y2lmaWMKPiBwb3dlciBzZXF1ZW5jZSwganVzdCB3YW50ZWQgdG8gbWFrZSBzdXJlIHRoZSBhYm92
+ZSBhcmUgcmVhbGx5Cj4gc3VmZmljaWVudD8gTm8gZGVsYXlzIG9yIGV4dGVybmFsIGNsb2NrIG5l
+ZWRlZD8KPiAKPiBbLi4uXQo+IAo+IEtpbmQgcmVnYXJkcwo+IFVmZmUKPiAKPiBfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IExpbnV4LXJvY2tjaGlwIG1h
+aWxpbmcgbGlzdAo+IExpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKPiBodHRwOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCj4gCgpH
+cnXDnywKLS0gCk1hcmt1cyBSZWljaGwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hp
+cEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtcm9ja2NoaXAK
