@@ -2,65 +2,69 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAE55F7FFC
-	for <lists+linux-rockchip@lfdr.de>; Mon, 11 Nov 2019 20:32:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22CD6F83D4
+	for <lists+linux-rockchip@lfdr.de>; Tue, 12 Nov 2019 01:03:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YXS4E+PWwW486wZ3bX3rqHhX2aeG8MeRCbZm0zjo158=; b=MDKn2ZIfAybH7R
-	mjaC2pUFvTJHLzgud8Ln5O/yLXqR5Ib69q3bpXKkW8JidJ9AM0F+hXuWRJuqT8fSymecTJEK0vq23
-	BEK1uH8FTucRMo2zI9kKq+4ltp+DdaOrwLbZ8UO1vKBpleV7KumDbJa40cPeMA9Pj9PPgAvzC1y0B
-	iBRqvdStBCj0tD43JhMdj7teOKk4jhwU0zHWMFlQazosBWQblC6q4/sSYLyJcX3lB2OCadso1GQN7
-	C8QOpk9G7/7DMSHVnVFUS7Wv/R/IkANVLCz0bi/9cCcbL0Ek87HmKXKF5ukKZh7Czhib/9JQTpWmd
-	LfewKou/GcXVeM6Xg03g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=bEPoxayHlUMUJt4NLzo/+KZfQrI9y8GFJ2sHja21NOM=; b=fpK5Uk2Yk/4Cjh
+	2ILgzQDbA23LoJvARxZJrgu1WaZaFZpIuArBhCJcN7z1dbQh8OYJjcPjshVerBCdSDZ1s/NTFKc0U
+	WD8exarFwZpZAt0hNVUpndXZvpc/YZiNq5Lfruk1aqStvjhjBufhG76+nnWeeT0elJjJNNQrkoiSz
+	Xwux/enqoWNycqlZbNFNhgg5BEZDSPKp6hEmmtzaDA2tM1pQd2594hSUG0Q9viNMOk/z0S0Rmkyu+
+	f2j9E6/7mIToQ+u10fCSGSj++Gbd+JQJpq6t/QyhYWRfWpmBNmKfhQDXqzhMOj0a6EDwD5TjOb8L4
+	3ghwrTv4V188DlpeC33g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUFQC-0001Q7-0q; Mon, 11 Nov 2019 19:32:20 +0000
-Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
+	id 1iUJem-00082w-9V; Tue, 12 Nov 2019 00:03:40 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUFPw-0001Cc-2o; Mon, 11 Nov 2019 19:32:06 +0000
-Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
- (helo=hermes.fivetechno.de); authenticated
- by wp126.webpack.hosteurope.de running ExIM with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- id 1iUFPr-00017a-Bc; Mon, 11 Nov 2019 20:31:59 +0100
-X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
- linuxbbg.five-lan.de
-Received: from dell2.five-lan.de (pD9E89174.dip0.t-ipconnect.de
- [217.232.145.116]) (authenticated bits=0)
- by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
- xABJVvBQ021691
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
- Mon, 11 Nov 2019 20:31:58 +0100
-Subject: Re: arm64: dts: rockchip: Add SDR104 mode to SD-card I/F on
- rk3399-roc-pc
-To: Ulf Hansson <ulf.hansson@linaro.org>
-References: <f03c978c-86de-b8bb-22c2-177d7fafed94@fivetechno.de>
- <CAPDyKFqn06LZZMXLD2o-M6A0R6KU97PFUTN=NgYnMtf=ESULTA@mail.gmail.com>
-From: Markus Reichl <m.reichl@fivetechno.de>
-Message-ID: <e69268d2-4a3f-3cd8-fc2e-57ae52ad337a@fivetechno.de>
-Date: Mon, 11 Nov 2019 20:31:57 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1iUJej-00082c-JV
+ for linux-rockchip@lists.infradead.org; Tue, 12 Nov 2019 00:03:38 +0000
+Received: from localhost (unknown [69.71.4.100])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 298B62184C;
+ Tue, 12 Nov 2019 00:03:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1573517016;
+ bh=mTb3POXhOlsPBq7spO5FYEZfdRp43fDidFNghcrVcr8=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=UKoWBDNivTk54+l8dAeSA6ZXxx3vnKhMmj8VSDEvEZqGFEYueTUmBYGRBrlJxYtVU
+ Dgi6kt/wewbRGc5ebpjaoQc/wrRcoy+Pbfxd68orIyN2LmfVA2bQq46TkL7BgFD/h/
+ NZJm13PcaM06aGorDCp/RuigmAOQOCV9XaALi6p8=
+Date: Mon, 11 Nov 2019 18:03:34 -0600
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Peter Geis <pgwipeout@gmail.com>
+Subject: Re: [BUG] rk3399-rockpro64 pcie synchronous external abort
+Message-ID: <20191112000334.GA69183@google.com>
 MIME-Version: 1.0
-In-Reply-To: <CAPDyKFqn06LZZMXLD2o-M6A0R6KU97PFUTN=NgYnMtf=ESULTA@mail.gmail.com>
-Content-Language: de-DE
-X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1573500724;
- a73da61f; 
-X-HE-SMSGID: 1iUFPr-00017a-Bc
+Content-Disposition: inline
+In-Reply-To: <CAMdYzYo6mKSMXoDR7St1ynUJ9f3sh=0rgNAbbVvFAfJn82VvVQ@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_113204_271389_6A892002 
-X-CRM114-Status: GOOD (  16.56  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191111_160337_663809_896ACCB5 
+X-CRM114-Status: GOOD (  11.68  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 FAKE_REPLY_C           No description available.
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,58 +77,61 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Heiko Stuebner <heiko@sntech.de>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ linux-pci@vger.kernel.org, Shawn Lin <shawn.lin@rock-chips.com>,
+ Doug Anderson <dianders@chromium.org>, Heiko Stuebner <heiko@sntech.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgVWxmLAoKQW0gMTEuMTEuMTkgdW0gMTg6Mjcgc2NocmllYiBVbGYgSGFuc3NvbjoKPiBPbiBN
-b24sIDExIE5vdiAyMDE5IGF0IDE1OjEzLCBNYXJrdXMgUmVpY2hsIDxtLnJlaWNobEBmaXZldGVj
-aG5vLmRlPiB3cm90ZToKPj4KPj4gQWRkIFNEUjEwNCBjYXBhYmlsaXR5IGFuZCByZWd1bGF0b3Jz
-IHRvIFNEIGNhcmQgbm9kZS4KPj4gV2hpbGUgYXQgaXQsIGZpeCBhIHR5cG8gaW4gbGNkIHBpbmN0
-cmwgYW5kIHJlbW92ZSB0d28KPj4gdW5kb2N1bWVudGVkIGJpbmRpbmdzIGZyb20gcG1pYy4KPj4K
-Pj4gU2lnbmVkLW9mZi1ieTogTWFya3VzIFJlaWNobCA8bS5yZWljaGxAZml2ZXRlY2huby5kZT4K
-Pj4gLS0tCj4+ICAuLi4vYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJvYy1wYy5kdHNpICAgICAg
-fCAzMSArKysrKysrKysrKysrKystLS0tCj4+ICAxIGZpbGUgY2hhbmdlZCwgMjUgaW5zZXJ0aW9u
-cygrKSwgNiBkZWxldGlvbnMoLSkKPj4KPj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9k
-dHMvcm9ja2NoaXAvcmszMzk5LXJvYy1wYy5kdHNpIGIvYXJjaC9hcm02NC9ib290L2R0cy9yb2Nr
-Y2hpcC9yazMzOTktcm9jLXBjLmR0c2kKPj4gaW5kZXggMzNkZjk1ZTM4NGI0Li5lODZhNmRiNTQ0
-OTkgMTAwNjQ0Cj4+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJv
-Yy1wYy5kdHNpCj4+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJv
-Yy1wYy5kdHNpCj4+IEBAIC0xMzUsNiArMTM1LDIwIEBACj4+ICAgICAgICAgICAgICAgICB2aW4t
-c3VwcGx5ID0gPCZ2Y2NfMXY4PjsKPj4gICAgICAgICB9Owo+Pgo+PiArICAgICAgIHZjYzN2MF9z
-ZDogdmNjM3YwLXNkIHsKPj4gKyAgICAgICAgICAgICAgIGNvbXBhdGlibGUgPSAicmVndWxhdG9y
-LWZpeGVkIjsKPj4gKyAgICAgICAgICAgICAgIGVuYWJsZS1hY3RpdmUtaGlnaDsKPj4gKyAgICAg
-ICAgICAgICAgIGdwaW8gPSA8JmdwaW80IFJLX1BENiBHUElPX0FDVElWRV9ISUdIPjsKPj4gKyAg
-ICAgICAgICAgICAgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+ICsgICAgICAgICAgICAg
-ICBwaW5jdHJsLTAgPSA8JnZjYzN2MF9zZF9lbj47Cj4+ICsgICAgICAgICAgICAgICByZWd1bGF0
-b3ItbmFtZSA9ICJ2Y2MzdjBfc2QiOwo+PiArICAgICAgICAgICAgICAgcmVndWxhdG9yLWFsd2F5
-cy1vbjsKPiAKPiBUaGlzIGxvb2tzIG9kZC4gQSBHUElPIHJlZ3VsYXRvciBiZWluZyBhbHdheXMg
-b24/CgpUaGlzIGlzIGEgc3RhbmRhcmQgbWljcm8gU0QgY2FyZCBzb2NrZXQgdGhhdCBjYW4gYWxz
-byBiZSB1c2VkIGZvcgpib290aW5nIHRoZSBib2FyZC4gSSB3YW50ZWQgdG8gYmUgY2F1dGlvdXMg
-YW5kIHN0YXJ0Cndvcmtpbmcgd2l0aCBpdCBhbmQgc2V2ZXJhbCBTRCBjYXJkcyBhbmQgZXhwbG9y
-ZSB0aGUgY2FwYWJpbGl0aWVzLgoKT24gdGhpcyBib2FyZCBuZWFybHkgYWxsIHJlZ3VsYXRvcnMg
-YXJlIHN0aWxsIGNvbnRpbm91c2x5CnN3aXRjaGVkIG9uLiBJIHBsYW4gdG8gcmVtb3ZlIHRoZSBh
-bHdheXMtb24gcHJvcGVydGllcyBzdGVwCmJ5IHN0ZXAgZnJvbSB0aGUgcmVndWxhdG9ycyB3aGVu
-IHRoZSBib2FyZCBydW5zIHN0YWJsZSB3aXRoIGl0J3MKY29tcG9uZW50cyBhbGwgZW5ibGVkLiAK
-Cj4gCj4+ICsgICAgICAgICAgICAgICByZWd1bGF0b3ItYm9vdC1vbjsKPj4gKyAgICAgICAgICAg
-ICAgIHJlZ3VsYXRvci1taW4tbWljcm92b2x0ID0gPDMwMDAwMDA+Owo+PiArICAgICAgICAgICAg
-ICAgcmVndWxhdG9yLW1heC1taWNyb3ZvbHQgPSA8MzAwMDAwMD47Cj4+ICsgICAgICAgICAgICAg
-ICB2aW4tc3VwcGx5ID0gPCZ2Y2MzdjNfc3lzPjsKPj4gKyAgICAgICB9Owo+IAo+IEFzc3VtZXMg
-dGhpcyBwb3dlcnMgYW4gU0RJTyBlbWJlZGRlZCBjYXJkLiBPZnRlbiB0aG9zZSBoYXZlIGEgc3Bl
-Y2lmaWMKPiBwb3dlciBzZXF1ZW5jZSwganVzdCB3YW50ZWQgdG8gbWFrZSBzdXJlIHRoZSBhYm92
-ZSBhcmUgcmVhbGx5Cj4gc3VmZmljaWVudD8gTm8gZGVsYXlzIG9yIGV4dGVybmFsIGNsb2NrIG5l
-ZWRlZD8KCkl0J3Mgbm90IGVtYmVkZGVkLCBqdXN0IGEgc3RhbmRhcmQgwrVTRCBwbHVnLiBJdCBp
-cyBhbHJlYWR5IGVuYWJsZWQKYnkgbWFpbmxpbmUgVS1Cb290IGFuZCBlamVjdGluZyBhbmQgaW5z
-ZXJ0aW5nIHRoZSBjYXJkIHdvcmtzIGZpbmUuCgotLQpHcnXDnywKTWFya3VzCj4gCj4gWy4uLl0K
-PiAKPiBLaW5kIHJlZ2FyZHMKPiBVZmZlCj4gCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9j
-a2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
+On Sun, Nov 10, 2019 at 10:43:48AM -0500, Peter Geis wrote:
+
+> I plugged in an i350 two port nic and examined the assigned address spaces.
+> I've attached it below.
+> Judging by the usage, I think this controller has enough address space
+> for another two port NIC, and that's about it.
+> I'm pretty sure now that the rk3399 controller just doesn't have the
+> address space to map larger devices.
+> I'm pretty sure the IOMMU would allow us to address system memory as
+> pcie address space and overcome this limitation, but I don't know how
+> to do that.
+
+I don't think you're out of MMIO space, at least in this instance.  It
+looks like you have 32MB available and the two-port NIC on bus 01 only
+takes 5MB.
+
+The IOMMU is used for DMA (e.g., reads/writes initiated by the NIC),
+while the MMIO space is used for CPU programmed I/O (reads/writes done
+by the driver running on the CPU).
+
+> The address space for the nic is below:
+> f8000000-f8ffffff : axi-base
+> fa000000-fbdfffff : MEM
+
+32MB.
+
+>   fa000000-fa4fffff : PCI Bus 0000:01
+
+5MB.
+
+>     fa000000-fa07ffff : 0000:01:00.0
+>       fa000000-fa07ffff : igb
+>     fa080000-fa0fffff : 0000:01:00.0
+>     fa100000-fa17ffff : 0000:01:00.1
+>       fa100000-fa17ffff : igb
+>     fa180000-fa1fffff : 0000:01:00.1
+>     fa200000-fa27ffff : 0000:01:00.0
+>     fa280000-fa2fffff : 0000:01:00.0
+>     fa300000-fa37ffff : 0000:01:00.1
+>     fa380000-fa3fffff : 0000:01:00.1
+>     fa400000-fa403fff : 0000:01:00.0
+>       fa400000-fa403fff : igb
+>     fa404000-fa407fff : 0000:01:00.1
+>       fa404000-fa407fff : igb
+> fd000000-fdffffff : f8000000.pcie
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
