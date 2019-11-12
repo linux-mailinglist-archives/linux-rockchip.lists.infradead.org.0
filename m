@@ -2,59 +2,103 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 950E9F8E9E
-	for <lists+linux-rockchip@lfdr.de>; Tue, 12 Nov 2019 12:31:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97EE5F8ECA
+	for <lists+linux-rockchip@lfdr.de>; Tue, 12 Nov 2019 12:42:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7c68HHgT6ISTxsGATxVNu3xtW9jxgE4wtoGRyAPYRcg=; b=BQkl6olwqo9uZlQTkrN9gmfId
-	16LC/hBka3mBpYTNhZXhnREveL6b2wVqYu6+rg5W1Wf/P7koEi7DKBVhpHBvaUF6I/SdVr736kzM1
-	5y3exPRZii6Sb2T8KKSviqOo7n7n+dDlxZglJd0CwnsTzXp6M3XbKwyabOgJk8BcEG+ceRvicO6CH
-	ZoEmDpXfsPAGOQBnxEq8++tBcnSWa3hxvJrEvMrXsN+NFlXseFvf+7mE1n+72S5y7QMs47/JLaFX6
-	rgMwO86UtF8ecGDKf5guBuL4tLkwbvSwyPUEJNfj6LO6Zutwfa2yj5I26BVpFv01qmoPIoIUQYVKr
-	4lLzZQbfg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cdObf7W34Qq//nwC78ldPQCbuZ4v+BSZWAgYTn36To0=; b=fSdV2xTbnisRHx
+	9Sr0dhQMObEEb9NFnrJF1tJHCVnMrDJNKQAWLKu9LWpUPI13mRjAzQPvPd7cT+n18/g90cY/aaD+w
+	D2qNXhn07KJG76kgKM9RGnhV3hECYCFXUxit/XhuqeC+kuu3BgnHGhKXvzN+UDYhCVnNmRkAyX7yz
+	gPmpKoaJ1LpS7tdbUWO8IYUWTm7/rfHKGtuE4gd58h+2sJ7SXHmjJEI/AMxZarUkZ7Ggl/IvnTDFl
+	PLNF6GfjqKlwfdzoQY+/LPrQdK6LkI4C453NJ9dvNY8o3V8sYgc+djuYo5VgUzqV0x2GzhCgcP2ho
+	K5WSlEkt+zXKncoutuGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUUO3-0001Zy-HD; Tue, 12 Nov 2019 11:31:07 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iUUZ4-0005ET-OE; Tue, 12 Nov 2019 11:42:30 +0000
+Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUUO1-0001Zb-3A; Tue, 12 Nov 2019 11:31:06 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iUUNw-00062q-I5; Tue, 12 Nov 2019 12:31:00 +0100
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH] iommu/rockchip: Don't provoke WARN for harmless IRQs
-X-PHP-Originating-Script: 0:main.inc
+ id 1iUUYt-00057B-Gs; Tue, 12 Nov 2019 11:42:20 +0000
+Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
+ (helo=hermes.fivetechno.de); authenticated
+ by wp126.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ id 1iUUYm-0005pH-4o; Tue, 12 Nov 2019 12:42:12 +0100
+X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
+ linuxbbg.five-lan.de
+Received: from [192.168.34.101] (p5098d998.dip0.t-ipconnect.de
+ [80.152.217.152]) (authenticated bits=0)
+ by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
+ xACBgA3Z020834
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
+ Tue, 12 Nov 2019 12:42:10 +0100
+From: Markus Reichl <m.reichl@fivetechno.de>
+Subject: [PATCH] arm64: dts: rockchip: Fix vdd_log on rk3399-roc-pc
+To: Soeren Moch <smoch@web.de>, Kever Yang <kever.yang@rock-chips.com>,
+ heiko@sntech.de
+References: <20191111005158.25070-1-kever.yang@rock-chips.com>
+ <20191111005158.25070-3-kever.yang@rock-chips.com>
+ <ef8830f3-10d1-7b71-0e18-232f2eaeef2d@web.de>
+ <1eaef5d5-c923-da56-b9c4-48d517b3c969@rock-chips.com>
+ <acbab893-9e9a-cfe1-67bf-a9e2b2e50114@fivetechno.de>
+ <17e14b30-02ee-2379-8891-088677924479@rock-chips.com>
+ <fd9ee2bc-9dfb-1aa2-f00f-add9b3069876@web.de>
+Autocrypt: addr=m.reichl@fivetechno.de; prefer-encrypt=mutual; keydata=
+ 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
+ eD/Xv4SsK2JTO4nkQYw8
+Organization: five technologies GmbH
+Message-ID: <d786ef47-eda8-3994-2ef2-fc4a584bcdcc@fivetechno.de>
+Date: Tue, 12 Nov 2019 12:42:09 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-Date: Tue, 12 Nov 2019 12:40:21 +0109
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <82cba203551939399d219e4cb6c602315fd0c410.1573498518.git.robin.murphy@arm.com>
-References: <82cba203551939399d219e4cb6c602315fd0c410.1573498518.git.robin.murphy@arm.com>
-Message-ID: <45975bd87e34e9ff6e9656a3235fe074@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: robin.murphy@arm.com, joro@8bytes.org, heiko@sntech.de,
- iommu@lists.linux-foundation.org, linux-rockchip@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, anarsoul@gmail.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <fd9ee2bc-9dfb-1aa2-f00f-add9b3069876@web.de>
+Content-Language: de-DE
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1573558939;
+ 3444d808; 
+X-HE-SMSGID: 1iUUYm-0005pH-4o
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_033105_281747_A8417830 
-X-CRM114-Status: GOOD (  15.06  )
-X-Spam-Score: 1.7 (+)
+X-CRM114-CacheID: sfid-20191112_034219_708144_F5978ECF 
+X-CRM114-Status: GOOD (  12.90  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.1 BUG6152_INVALID_DATE_TZ_ABSURD No description available.
- 0.6 INVALID_DATE_TZ_ABSURD Invalid Date: header (timezone does not
- exist)
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -68,53 +112,52 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: heiko@sntech.de, joro@8bytes.org, Vasily Khoruzhick <anarsoul@gmail.com>,
- linux-rockchip@lists.infradead.org, iommu@lists.linux-foundation.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ =?UTF-8?Q?Andrius_=c5=a0tikonas?= <andrius@stikonas.eu>,
+ Vivek Unune <npcomplete13@gmail.com>, Alexis Ballier <aballier@gentoo.org>,
+ devicetree@vger.kernel.org, Katsuhiro Suzuki <katsuhiro@katsuster.net>,
+ Hugh Cole-Baker <sigmaris@gmail.com>, Elaine Zhang <zhangqing@rock-chips.com>,
+ linux-kernel@vger.kernel.org, Vicente Bergas <vicencb@gmail.com>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Oskari Lemmela <oskari@lemmela.net>, Akash Gajjar <akash@openedev.com>,
+ Nick Xie <nick@khadas.com>, Peter Robinson <pbrobinson@gmail.com>,
+ Robin Murphy <robin.murphy@arm.com>, Ezequiel Garcia <ezequiel@collabora.com>,
+ linux-arm-kernel@lists.infradead.org, Andy Yan <andyshrk@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 2019-11-11 20:04, Robin Murphy wrote:
-> Although we don't generally expect IRQs to fire for a suspended 
-> IOMMU,
-> there are certain situations (particularly with debug options) where
-> we might legitimately end up with the pm_runtime_get_if_in_use() call
-> from rk_iommu_irq() returning 0. Since this doesn't represent an 
-> actual
-> error, follow the other parts of the driver and save the WARN_ON()
-> condition for a genuine negative value. Even if we do have spurious
-> IRQs due to a wedged VOP asserting the shared line, it's not this
-> driver's job to try to second-guess the IRQ core to warn about that.
->
-> Reported-by: Vasily Khoruzhick <anarsoul@gmail.com>
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> ---
->  drivers/iommu/rockchip-iommu.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/drivers/iommu/rockchip-iommu.c 
-> b/drivers/iommu/rockchip-iommu.c
-> index 4dcbf68dfda4..bd7e9b1e40ac 100644
-> --- a/drivers/iommu/rockchip-iommu.c
-> +++ b/drivers/iommu/rockchip-iommu.c
-> @@ -527,7 +527,7 @@ static irqreturn_t rk_iommu_irq(int irq, void 
-> *dev_id)
->  	int i, err;
->
->  	err = pm_runtime_get_if_in_use(iommu->dev);
-> -	if (WARN_ON_ONCE(err <= 0))
-> +	if (!err || WARN_ON_ONCE(err < 0))
->  		return ret;
->
->  	if (WARN_ON(clk_bulk_enable(iommu->num_clocks, iommu->clocks)))
+On rk3399 vdd_log shall not exceed 1.0 V. On rk3399-roc-pc
+vdd_log is presently 1118 mV. Fix by setting the min voltage
+of the respective pwm-regulator down to 450 mV.
+This results in a vdd_log of 953 mV.
+Specify the supply to silence warning.
 
-Acked-by: Marc Zyngier <maz@kernel.org>
+Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
+---
+ arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-         M.
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+index a31099f7620b..4dac88ef7e72 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+@@ -211,9 +211,9 @@
+ 		regulator-name = "vdd_log";
+ 		regulator-always-on;
+ 		regulator-boot-on;
+-		regulator-min-microvolt = <800000>;
++		regulator-min-microvolt = <450000>;
+ 		regulator-max-microvolt = <1400000>;
+-		vin-supply = <&vcc3v3_sys>;
++		pwm-supply = <&vcc3v3_sys>;
+ 	};
+ };
+ 
 -- 
-Jazz is not dead. It just smells funny...
+2.20.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
