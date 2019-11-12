@@ -2,78 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98889F8838
-	for <lists+linux-rockchip@lfdr.de>; Tue, 12 Nov 2019 06:50:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7C1DF89C7
+	for <lists+linux-rockchip@lfdr.de>; Tue, 12 Nov 2019 08:39:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GURlR9/OcuTwP3ogCN+U7Sfi0i+AJi2QzgC9Cf8jMIE=; b=SoZsmYjcoGmVMO
-	PumL4kPIyqIKU0SUmBHJQObqDDPI7fV+BXX1mhLbJgmDxf/0qfZWnxESoeMYdy6Ho1Q01JzGWbWnQ
-	f95Wd+/H2AuOtH1L9JiWnx0PJ2GBGVlS22N6INF5jifu35uavqw2aiPyEgutZDVIlzgclCl4nBYDK
-	35pP95NHUwj4mxvByfLTX8ablSFxtM1b5aJpRZure3XB9ZQZgqYiK0tCbWI+D7sf3DwZg0joX/qmN
-	y3Kh9g84W+DIPrWn+NU5DuXfpa032KMXb9enDub6KqvlYlPsl5pI1UektjsQQznYfGe6c0nOmftaB
-	ZbIaeyspcM7BsVVuf4lA==;
+	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=+RVSSAKd+KW22ga/51rmG4qfzXdZYTTiJCK1i66/tGI=; b=EitmmPYhujrabwW9J49du3/eCZ
+	13UR1fmWDCIlqF2BEoPSvmr8mYfMu8Eym5abxDCMfEhA/3KRg1/1mfZZch0CA6jVEqqK5OCZlrrgg
+	mKIb3tdywPL31vfvxeT2QsjOVFkz8GGgjXDKd3DGBloO0tI2lfL6yzJj8msInNpMVsiheAfgEAPoF
+	CDT4AvvrqiMGYmVtAvvblx4InP91XEDpJ4qtMokY2AtMmtCglX3JKQ/aQ5xgd4On9w+PkNUnOT8sk
+	UqCALcd1I4VYGIZYOyl+pbLY2UmY5RTuAQHuZIazgoRY1LBMHZ2AtknJPpjbku2ReYmP+3IW5p5Fw
+	2G6QyaFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUP3u-00047Z-6a; Tue, 12 Nov 2019 05:49:58 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1iUQlO-0002iz-0v; Tue, 12 Nov 2019 07:38:58 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUP3r-00046l-6f; Tue, 12 Nov 2019 05:49:57 +0000
-Received: by mail-oi1-x243.google.com with SMTP id 22so13755437oip.7;
- Mon, 11 Nov 2019 21:49:54 -0800 (PST)
+ id 1iUQlB-0002c4-Jt; Tue, 12 Nov 2019 07:38:47 +0000
+Received: by mail-ot1-x343.google.com with SMTP id z6so13524106otb.2;
+ Mon, 11 Nov 2019 23:38:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=F7OGsdO2VbLEy7022hu/ffUq8d11VfcJnuAfwqP4bjw=;
- b=GmZ05pZVFWQYw5Cc7rmmqJEXJiVOGEiN7mjBfcE+5JrwhMU4SZDuIDs5VyLHG4HsdC
- ip5ONqRF27d43gnq0F/m375dkDOypulgy0ZD2AKWWFReOUdq4DUV2eAK5FFizL7J1zrr
- M8dxD5p3Q/WZqv6VGhze98DyPKYLCC5SPdv+XFWuMKaqy7rd/OXmQX5+7cPpNqDzNS5A
- zlCgd0P6WI+UjkaAXlI/0E3w7Adn0aczIZ/JqRzYeGlZOaTf7Tv5fvhfAZYBIYBY6X8Y
- dMvLP3YXPrsjPJvfoSerAO/AE7Yd/9kK/DWFRWyNjENeX3g8jnbWVbuwt+TcUBWYQwoA
- /mIw==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+ bh=LYwXn2wDJ/t906ceQ84HTpG6OQ0aMpCTjyUpk+qqT9Q=;
+ b=dJt5I+jwVZhkK0y/I3bKHdNpPlveRMW+JVFfpsUVkwgx4iQhuImWgMlsTyUe3+rx1Z
+ OHyAwBDF5GqFxY6Ym40g3r7xnT+JDSIgbLhZvzyzLjcJXuFR5/lBBU90Wkd/COqqg/Aa
+ VInUbxcH4q+N7ZoaLlMr1KTPpJvfgQRU04d2xWrSxsxo2SbRuieKJigYo/4dEacll9qX
+ E47i1THS/DgWCjThyaOcnhfIIr0F1u1lgVWGW8U02Fgq2hSSYhWaRW6AqxUQKVPtoFaF
+ yL5098idTxHUoF6kaU9aQKG42M1vUYcXpafAE+Vol9P5JtpNdX61AsjfnCKGScnrHDAq
+ JTTg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=F7OGsdO2VbLEy7022hu/ffUq8d11VfcJnuAfwqP4bjw=;
- b=ZGjSGcCvm6I7jogMZDGKqrQ7DB5XU+xax+hZdjcawZsBi9yjcpwJPDfaHVNVF3fB8I
- rbctZbe1oqJNy40TNT/6rCNsz7SkEREjTLU1pVHP72u/ZfvP1tGCjB5Av10d0q14trUw
- UVxXjnAEL/u9h3qQ/m8oREG1o2GEGEECVFKwa3oECDshJbQI22lUA3rOeqKK1A0Q2U4s
- 6S0Icqxy8IRNbyUoZrt9PAuMDSL74GAyRatkpV/xHA97o3QtebvGRjkK1+Sg5rGfmFVm
- V1tG7B4WuIKGVZW5rxZySD4iN/DaMS29r42eR8OJsuJHkz3jyK82Y27HV32mZIw9lM5s
- UphA==
-X-Gm-Message-State: APjAAAUaPeYh7oSftlz+6EA7SCKnr8k/XbfNbqIvB7rywHLyNaXLgVVR
- /UMMlcYbzWYw0oVb8ReP3Ddx4194/xp5ufTKn5YulQ==
-X-Google-Smtp-Source: APXvYqxv8NiTo1l3ovTjO2t2TROPS4E7UMnCTcFUmgnhxHjgD4s94Nba6pIpF6ISkkboTuZeV3xWFXuvTRL4XH8zy+s=
-X-Received: by 2002:aca:5e03:: with SMTP id s3mr2535116oib.88.1573537793880;
- Mon, 11 Nov 2019 21:49:53 -0800 (PST)
+ :message-id:subject:to;
+ bh=LYwXn2wDJ/t906ceQ84HTpG6OQ0aMpCTjyUpk+qqT9Q=;
+ b=HKpiSct1TKDdhY45el9ib5gYkGb0zNd6B30kntZ4JLFuQ78Q54KnRG9OhBx8UpqL3s
+ /rv6GwFAAfyhXX3ze8b1ts2Bm5qeCYCZctI6zGikyIUkX7kLwxZpx+7BjASicKw7FnzR
+ nxKeYrpkoYmvVIsGxQP9KeRIFdpUZtoRQ2oQ/4N5/4AHifM/zPcpCK+Yhx0J3gzjM71E
+ YJxZjitVEemkki7iaek/Ml4rhYRCzo2GS76fxElPGpgRqUn7mH2MatF2/Fvyvx2rYQH/
+ EMl3OsK7OL8ZdNQpk1+bmAZliLDcSVJVqBc0E5anfDg6X+Yj2BgMgZ36BUZrSaYWCZWp
+ eGUw==
+X-Gm-Message-State: APjAAAXynppSMyp18BYSdUvqkvXOyPvny/jITrVcrntvYAzLuX9LtlS/
+ 94uYWMY9fUd3hJ+cBs3vX4CRKwplrmwaWr2jV1k=
+X-Google-Smtp-Source: APXvYqxai8BzwvjzK/jdGkp5vdi4N2wR8OwpCZJs9mV8OHZisCAlPNHUhLhlNHiUNV9XfQBpv5mV5UCQKMNuviqIztQ=
+X-Received: by 2002:a9d:4b86:: with SMTP id k6mr23252891otf.353.1573544324493; 
+ Mon, 11 Nov 2019 23:38:44 -0800 (PST)
 MIME-Version: 1.0
-References: <20190907174833.19957-1-katsuhiro@katsuster.net>
- <CA+E=qVdvKxzFcU-09Ucn1Fr0FdkwSsPcLr8vPn2wsu6-DD1gqg@mail.gmail.com>
- <abc648cc-0b5d-b407-b74b-639833ba196b@katsuster.net>
- <CA+E=qVdy-wqmR+XOms5S2zMp+B0vM7Dj_fk9N=08-1WjfKDm0Q@mail.gmail.com>
- <CA+E=qVdLzHbNTemMSmhA=-0dsNumQZJhjE-EnXBDu+j7sXTnVw@mail.gmail.com>
- <81666aeb-f3d0-e653-6597-0711a05f9b8d@katsuster.net>
- <CA+E=qVcgs=2T_9axUCJwTKgmKhjsJJ9mUfvYJbyjg59rGGjcTg@mail.gmail.com>
-In-Reply-To: <CA+E=qVcgs=2T_9axUCJwTKgmKhjsJJ9mUfvYJbyjg59rGGjcTg@mail.gmail.com>
+References: <20191112011521.3155504-1-anarsoul@gmail.com>
+In-Reply-To: <20191112011521.3155504-1-anarsoul@gmail.com>
 From: Vasily Khoruzhick <anarsoul@gmail.com>
-Date: Mon, 11 Nov 2019 21:49:28 -0800
-Message-ID: <CA+E=qVe5QmJ8-zSbKj23mb-GksjD+qN=aFaCT7OGUYPYc9Y_ow@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: add analog audio nodes on
- rk3399-rockpro64
-To: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+Date: Mon, 11 Nov 2019 23:38:18 -0800
+Message-ID: <CA+E=qVc+yzVj7dyp9jpeuif5K3dVMEDSiCTG-zSuzLt0intMsw@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: rockchip: rockpro64: fix ES8316 i2c address
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, 
+ Heiko Stuebner <heiko@sntech.de>, Akash Gajjar <Akash_Gajjar@mentor.com>, 
+ Katsuhiro Suzuki <katsuhiro@katsuster.net>,
+ devicetree <devicetree@vger.kernel.org>, 
+ arm-linux <linux-arm-kernel@lists.infradead.org>,
+ linux-rockchip@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_214955_270500_A917E9C2 
-X-CRM114-Status: GOOD (  33.69  )
+X-CRM114-CacheID: sfid-20191111_233845_674080_D3945DA0 
+X-CRM114-Status: GOOD (  14.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (anarsoul[at]gmail.com)
@@ -98,268 +97,46 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Heiko Stuebner <heiko@sntech.de>,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- linux-kernel <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Nov 11, 2019 at 9:43 PM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
+On Mon, Nov 11, 2019 at 5:15 PM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
 >
-> On Mon, Nov 11, 2019 at 9:34 PM Katsuhiro Suzuki
-> <katsuhiro@katsuster.net> wrote:
-> >
-> > Hello Vasily,
-> >
-> > Thank you for valuable information.
-> >
-> > On 2019/11/12 4:25, Vasily Khoruzhick wrote:
-> > > On Sun, Nov 10, 2019 at 9:40 PM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
-> > >>
-> > >> On Sun, Nov 10, 2019 at 7:30 PM Katsuhiro Suzuki
-> > >> <katsuhiro@katsuster.net> wrote:
-> > >>>
-> > >>> Hello Vasily,
-> > >>
-> > >> Hi Katsuhiro,
-> > >>
-> > >> Thanks for response!
-> > >
-> > > Looks like on my board codec sits at address 0x10, and according to
-> > > schematics that's what its address is supposed to be.
-> > >
-> > > See http://files.pine64.org/doc/rockpro64/rockpro64_v21-SCH.pdf
-> > >
-> > > Codec address is selected by pin CE of ES8316, and on rockpro64 it
-> > > goes to GND through R226. So address should be 0x10.
-> > >
-> >
-> > Yes, I agree. The schematics both v2.0 and v2.1 say that ES8316
-> > address is 0x10. Thank you for pointing.
-> >
-> > But I wonder that my RockPro64 behavior is strange, he is in address
-> > 0x11. (R226 on my board is broken...??)
-> >
-> > root@rockpro64:~# i2cdetect 1
-> > WARNING! This program can confuse your I2C bus, cause data loss and worse!
-> > I will probe file /dev/i2c-1.
-> > I will probe address range 0x03-0x77.
-> > Continue? [Y/n] y
-> >       0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-> > 00:          -- -- -- -- -- -- -- -- -- -- -- -- --
-> > 10: -- UU -- -- -- -- -- -- -- -- -- -- -- -- -- --
-> > 20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-> > 30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-> > 40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-> > 50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-> > 60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-> > 70: -- -- -- -- -- -- -- --
-> >
-> > I plan to check R226 resistance value to judge R226 is broken or not
-> > after return to home. And share the result with you.
-> > Please give me a time.
+> According to Rockpro64 schematics [1] CE pin of ES8316 is wired
+> to ground, so codec address should be 0x10.
 >
-> Thanks for confirming that on your board it's on address 0x11. I
-> checked with some other rockpro64 owners and they have it on 0x10, but
-> looks like we have boards with codec on different address in the wild.
+> [1] http://files.pine64.org/doc/rockpro64/rockpro64_v21-SCH.pdf
 
-Another datapoint is that my board is 2.0. If yours is 2.1 it can be a
-difference between 2.0 and 2.1.
+Please don't merge it yet, it appears that on Katsuhiro's board codec
+is at address 0x11.
 
-> > Best Regards,
-> > Katsuhiro Suzuki
-> >
-> >
-> > >>> Thank you for reporting.
-> > >>>
-> > >>> On 2019/11/11 9:17, Vasily Khoruzhick wrote:
-> > >>>> On Sat, Sep 7, 2019 at 10:48 AM Katsuhiro Suzuki
-> > >>>> <katsuhiro@katsuster.net> wrote:
-> > >>>>>
-> > >>>>> This patch adds audio codec (Everest ES8316) and I2S audio nodes for
-> > >>>>> RK3399 RockPro64.
-> > >>>>
-> > >>>> Hi Katsuhiro,
-> > >>>>
-> > >>>> I tested your patch with my rockpro64 on 5.4-rc6 which has your other
-> > >>>> patches to es8316 driver, but apparently it doesn't work.
-> > >>>>
-> > >>>> 'alsamixer' complains 'cannot load mixer controls: No such device or
-> > >>>> address' and if I try to play audio with mpg123 it pretends that it
-> > >>>> plays something but there's no sound.
-> > >>>>
-> > >>>> Any idea what can be wrong?
-> > >>>>
-> > >>>
-> > >>> Do you use defconfig? If so I guess we need turn on more configs:
-> > >>>
-> > >>> - simple-graph-card driver (CONFIG_SND_AUDIO_GRAPH_CARD)
-> > >>> - ES8316 (SND_SOC_ES8316)
-> > >>
-> > >> I have these enabled, card is present in /proc/asound/cards, but
-> > >> alsamixer doesn't work with it.
-> > >>
-> > >>> FYI) ASoC related status or logs in my environment as follows:
-> > >>>
-> > >>> root@rockpro64:~# uname -a
-> > >>> Linux rockpro64 5.4.0-rc6-next-20191108 #169 SMP PREEMPT Mon Nov 11 12:21:44 JST 2019 aarch64 GNU/Linux
-> > >>
-> > >> I'm running 5.4.0-rc6  (commit
-> > >> 00aff6836241ae5654895dcea10e6d4fc5878ca6) with your patch "arm64: dts:
-> > >> rockchip: add analog audio nodes on rk3399-rockpro64" on top of it.
-> > >>
-> > >>> root@rockpro64:~# dmesg | grep -i asoc
-> > >>> [   21.509903] asoc-simple-card hdmi-sound: i2s-hifi <-> ff8a0000.i2s mapping ok
-> > >>> [   21.510550] asoc-simple-card hdmi-sound: ASoC: no DMI vendor name!
-> > >>> [   21.567906] asoc-audio-graph-card sound: ES8316 HiFi <-> ff890000.i2s mapping ok
-> > >>> [   21.568565] asoc-audio-graph-card sound: ASoC: no DMI vendor name!
-> > >>
-> > >> Similar here:
-> > >>
-> > >> [vasilykh@rockpro64 ~]$ dmesg | grep -i asoc
-> > >> [   15.627685] asoc-audio-graph-card sound: ES8316 HiFi <->
-> > >> ff890000.i2s mapping ok
-> > >> [   16.250196] asoc-simple-card hdmi-sound: i2s-hifi <-> ff8a0000.i2s mapping ok
-> > >>
-> > >>> root@rockpro64:~# cat /proc/asound/pcm
-> > >>> 00-00: ff8a0000.i2s-i2s-hifi i2s-hifi-0 : ff8a0000.i2s-i2s-hifi i2s-hifi-0 : playback 1
-> > >>> 01-00: ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : playback 1 : capture 1
-> > >>
-> > >> Same here:
-> > >>
-> > >> [vasilykh@rockpro64 ~]$ cat /proc/asound/pcm
-> > >> 00-00: ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : ff890000.i2s-ES8316
-> > >> HiFi ES8316 HiFi-0 : playback 1 : capture 1
-> > >> 01-00: ff8a0000.i2s-i2s-hifi i2s-hifi-0 : ff8a0000.i2s-i2s-hifi
-> > >> i2s-hifi-0 : playback
-> > >>
-> > >>> root@rockpro64:~# cat /sys/kernel/debug/asoc/components
-> > >>> hdmi-audio-codec.3.auto
-> > >>> ff8a0000.i2s
-> > >>> ff8a0000.i2s
-> > >>> ff890000.i2s
-> > >>> ff890000.i2s
-> > >>> ff880000.i2s
-> > >>> ff880000.i2s
-> > >>> es8316.1-0011
-> > >>> snd-soc-dummy
-> > >>> snd-soc-dummy
-> > >>
-> > >> Same here.
-> > >>
-> > >>> root@rockpro64:~# cat /sys/kernel/debug/asoc/dais
-> > >>> i2s-hifi
-> > >>> ff8a0000.i2s
-> > >>> ff890000.i2s
-> > >>> ff880000.i2s
-> > >>> ES8316 HiFi
-> > >>> snd-soc-dummy-dai
-> > >>
-> > >> Same here.
-> > >>
-> > >> Yet alsamixer doesn't work for me. It terminates with 'cannot load
-> > >> mixer controls: No such device or address'. Strace shows that fails
-> > >> here:
-> > >>
-> > >> openat(AT_FDCWD, "/dev/snd/controlC0", O_RDWR|O_CLOEXEC) = 3
-> > >> fcntl(3, F_SETFD, FD_CLOEXEC)           = 0
-> > >> ioctl(3, SNDRV_CTL_IOCTL_PVERSION, 0xfffffd3ad04c) = 0
-> > >> fcntl(3, F_GETFL)                       = 0x20002 (flags O_RDWR|O_LARGEFILE)
-> > >> fcntl(3, F_SETFL, O_RDWR|O_NONBLOCK|O_LARGEFILE) = 0
-> > >> ioctl(3, SNDRV_CTL_IOCTL_ELEM_LIST, 0xfffffd3ad228) = 0
-> > >> ioctl(3, SNDRV_CTL_IOCTL_ELEM_LIST, 0xfffffd3ad228) = 0
-> > >> ioctl(3, SNDRV_CTL_IOCTL_ELEM_INFO, 0xfffffd3ace38) = 0
-> > >> ioctl(3, SNDRV_CTL_IOCTL_ELEM_READ, 0xfffffd3ac160) = -1 ENXIO (No
-> > >> such device or address)
-> > >>
-> > >> Looks like it fails to talk to the codec?
-> > >>
-> > >> mpg123 thinks that it's playing audio, but my headphones connected to
-> > >> 3.5mm output are silent.
-> > >>
-> > >> Regards,
-> > >> Vasily
-> > >>
-> > >>
-> > >>> Best Regards,
-> > >>> Katsuhiro Suzuki
-> > >>>
-> > >>>
-> > >>>> Regards,
-> > >>>> Vasily
-> > >>>>
-> > >>>>> Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
-> > >>>>> ---
-> > >>>>>    .../boot/dts/rockchip/rk3399-rockpro64.dts    | 28 +++++++++++++++++++
-> > >>>>>    1 file changed, 28 insertions(+)
-> > >>>>>
-> > >>>>> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> > >>>>> index 0401d4ec1f45..8b1e6382b140 100644
-> > >>>>> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> > >>>>> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> > >>>>> @@ -81,6 +81,12 @@
-> > >>>>>                   reset-gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
-> > >>>>>           };
-> > >>>>>
-> > >>>>> +       sound {
-> > >>>>> +               compatible = "audio-graph-card";
-> > >>>>> +               label = "rockchip,rk3399";
-> > >>>>> +               dais = <&i2s1_p0>;
-> > >>>>> +       };
-> > >>>>> +
-> > >>>>>           vcc12v_dcin: vcc12v-dcin {
-> > >>>>>                   compatible = "regulator-fixed";
-> > >>>>>                   regulator-name = "vcc12v_dcin";
-> > >>>>> @@ -470,6 +476,20 @@
-> > >>>>>           i2c-scl-rising-time-ns = <300>;
-> > >>>>>           i2c-scl-falling-time-ns = <15>;
-> > >>>>>           status = "okay";
-> > >>>>> +
-> > >>>>> +       es8316: codec@11 {
-> > >>>>> +               compatible = "everest,es8316";
-> > >>>>> +               reg = <0x11>;
-> > >>>>> +               clocks = <&cru SCLK_I2S_8CH_OUT>;
-> > >>>>> +               clock-names = "mclk";
-> > >>>>> +               #sound-dai-cells = <0>;
-> > >>>>> +
-> > >>>>> +               port {
-> > >>>>> +                       es8316_p0_0: endpoint {
-> > >>>>> +                               remote-endpoint = <&i2s1_p0_0>;
-> > >>>>> +                       };
-> > >>>>> +               };
-> > >>>>> +       };
-> > >>>>>    };
-> > >>>>>
-> > >>>>>    &i2c3 {
-> > >>>>> @@ -505,6 +525,14 @@
-> > >>>>>           rockchip,playback-channels = <2>;
-> > >>>>>           rockchip,capture-channels = <2>;
-> > >>>>>           status = "okay";
-> > >>>>> +
-> > >>>>> +       i2s1_p0: port {
-> > >>>>> +               i2s1_p0_0: endpoint {
-> > >>>>> +                       dai-format = "i2s";
-> > >>>>> +                       mclk-fs = <256>;
-> > >>>>> +                       remote-endpoint = <&es8316_p0_0>;
-> > >>>>> +               };
-> > >>>>> +       };
-> > >>>>>    };
-> > >>>>>
-> > >>>>>    &i2s2 {
-> > >>>>> --
-> > >>>>> 2.23.0.rc1
-> > >>>>>
-> > >>>>>
-> > >>>>> _______________________________________________
-> > >>>>> linux-arm-kernel mailing list
-> > >>>>> linux-arm-kernel@lists.infradead.org
-> > >>>>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> > >>>>
-> > >>>
-> > >
-> >
+> Fixes: 6860769ea771 ("arm64: dts: rockchip: add analog audio nodes on rk3399-rockpro64")
+> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+> ---
+>  arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+>
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> index 7f4b2eba31d4..18bbe548839b 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> @@ -477,9 +477,9 @@
+>         i2c-scl-falling-time-ns = <15>;
+>         status = "okay";
+>
+> -       es8316: codec@11 {
+> +       es8316: codec@10 {
+>                 compatible = "everest,es8316";
+> -               reg = <0x11>;
+> +               reg = <0x10>;
+>                 clocks = <&cru SCLK_I2S_8CH_OUT>;
+>                 clock-names = "mclk";
+>                 #sound-dai-cells = <0>;
+> --
+> 2.23.0
+>
 
 _______________________________________________
 Linux-rockchip mailing list
