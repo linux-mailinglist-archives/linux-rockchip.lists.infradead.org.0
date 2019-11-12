@@ -2,142 +2,100 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77ABAF9290
-	for <lists+linux-rockchip@lfdr.de>; Tue, 12 Nov 2019 15:30:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 882C0F947C
+	for <lists+linux-rockchip@lfdr.de>; Tue, 12 Nov 2019 16:37:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sIOeZp6/zTX9G6kdU4afSsVd0XpsH9XSs+S66x+0ok0=; b=RUy4SBAdjnwUGq
-	6b2dnk254cp0xesN60qcponFiXcyqpJS8QQR+eV4rmh04zla4Sv59OL0ZJM5NB99uXElBZex3BvHl
-	Xzbqc4RQO3BHB0HbKHmL/EP1M+JjPXcvG07Blwxd8ofr4x75UDgD3gMrx+RR/zc42z/Os75+Sy0em
-	lCanHIFaMXoQ7u4zvLe4AQANCbcWNO72QoDglQqIiGvccXBSuShBVGcvZZzbwVd/z3p1LToYZKO6M
-	7JbvBAiKzuUtg8AMcDUtiWTkWRa7avvgdZv9hwykp1sEnaIYrfDee248Tjo5QzzUnr/h4rX5hLT8m
-	ZamTsq56dhVhdfI/6Fyg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JeWL2HSLHvGFoJgnprp8MGoltr6mF5PYAf8C1pj8GNA=; b=pARW7gm8ue9x61
+	SK6vus1Tc6RidcfdUr+AYeMcwcdXUiZKE1wqe9Jbv3u/janD/3cbI8XkoH78gGs7R3C4m+EYKVm8E
+	ZA7v+woGKOLT8pb7qkZPfiKdR/I/P2BMq0cTaPOCMJkVqGdA+B9qPM8FFJz8ttWD8+G1RUkFE/z0q
+	vNjZV4BbobA2ifJLMDXaT+AJOSEf8RVcwS8VmLI8hNeX0VE1E5ZQUJU8lPAYzqIbUMOj5fUWdVaU7
+	oYIynBeGa/2jit50isMxchDnwQfU8vIo34eQtq4OEOgu2s8G20qZwXKdn9HZGW9DeTQm83CHBudNq
+	ui+bPBDgDniUmJs90xWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUXBn-0006Ze-S5; Tue, 12 Nov 2019 14:30:39 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iUYEc-0004NU-Fy; Tue, 12 Nov 2019 15:37:38 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUX7z-0001dS-4H
- for linux-rockchip@lists.infradead.org; Tue, 12 Nov 2019 14:26:45 +0000
-Received: by mail-wm1-x342.google.com with SMTP id l17so3421830wmh.0
- for <linux-rockchip@lists.infradead.org>; Tue, 12 Nov 2019 06:26:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=HwAdfhIitfcvpFjEunj/32j/tCIUn5eee0pERZjRVjE=;
- b=uipUgxqyeE0KHXL6ubhaAYxNl7gHKal9kFDPZKyC/mOcCSq/qqD4JI0HWLZCCL1D9L
- UoWifxltVooIF807CohBVKrrB4e8teUC8z4m5DcySXJPPcUV7Ioel38sWe2pBgqh8Sha
- w3eQSePVSSeLBhsFdb3L80gqQNgPUsxBZ3VS9Qn83lDTTQqu77datEQYFnGmdRg4Sm9J
- k3OgtpKUSu47ZFS+9l79UXYMEKpdDHNlb/nTlYUJEj/J5Ys8y8T4FztsP4l+5j3O3SSS
- P1AYwPTr5GZw/ZnYGnqhIqKXYvyYq5jThwVLL5tvv91hKaUS4s3gL9lZhyDk2map/Ho0
- RWHw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=HwAdfhIitfcvpFjEunj/32j/tCIUn5eee0pERZjRVjE=;
- b=Bi11y6Bi96T4QKeR8InJhpXB+KCHUkU93SO4Q5kbnvTWjE0suNnXbKa+jVYqh/SHNR
- du3cuAAwYlkOFKmHAYzU40ebvnCjOx3OlOk0iyq8E2L5LnqvG/uUvwjGPc4SWu6Ts9Ku
- eywReNqDEbGrRQWEfIy4vmCf8lYuce+Yw7Gq+oS6Om/0uSVLqjfIIbago/p9XqgpTK0X
- ncvsyg+2I3E1wr+pzdzA+f6oYGpbRZmzkpO1rcKZT+YfeNUC94UIl201IylA+uYvHyPz
- vBlJ8KsQKcDX3e/iVh/WWgJF0C8VpygRjcR+0Q1mO47f/OJTU1gcGOUnyWFNDfQyauL+
- L16A==
-X-Gm-Message-State: APjAAAUne/RefFGjWU0sZboSl5Z7IlR1me2fWhPRNL3AsjQzGnCHNUt9
- 0lMC2UHyQwvpOinPH10ZN5FurQ==
-X-Google-Smtp-Source: APXvYqxckmcNBpy72Qpot+ikOCMpk6nDsafZH9hp9iZSZmb+C4cx7cr8Lnq9JsDuf1l4mrUm/lUcjw==
-X-Received: by 2002:a7b:c08f:: with SMTP id r15mr4093427wmh.45.1573568800830; 
- Tue, 12 Nov 2019 06:26:40 -0800 (PST)
-Received: from [10.1.2.12] (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id j63sm4525489wmj.46.2019.11.12.06.26.39
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 12 Nov 2019 06:26:40 -0800 (PST)
+ id 1iUYEZ-0004Mv-71; Tue, 12 Nov 2019 15:37:37 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xACFRtdl018129; Tue, 12 Nov 2019 16:37:20 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=kaFjGOKCQM/FJHZr1FNHSIjQAeAuSTc0Kd4hNmaNfVo=;
+ b=n8SC89Aj8wVgWFJsfYhHOiepQeSYjmLEK89tFRAgoBYBq2LXLSMu+dphIY9qkNyO3HwR
+ TEbbeGtEfU+/qBQYbpi4VxFId5zQc8aVKiOR4GFAmLvLEK0yg39DISmoiTiukgsZkXbQ
+ XE+nQyzUmTmm2h8E8D6qK+CDxisKR623e8Ilh13z+WO6THp2CoBj5j6dom5jkynW/RDh
+ 440JJGOAEVN+GFSvyQZ/4cy4zPYZgVG2vnq3qlwwH2dkRXzpbJfoUSWSsUN7sbOO00GC
+ axxB9X8uP7ltkSsthF7eev0aMrHSn8W+DohV4ziL87Co4yEqpMnGSLm0OPTCS78Rrnr8 JQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2w7psf2yec-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 12 Nov 2019 16:37:20 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id F1EDF10003A;
+ Tue, 12 Nov 2019 16:37:17 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B65FD2FF5E8;
+ Tue, 12 Nov 2019 16:37:17 +0100 (CET)
+Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG6NODE2.st.com
+ (10.75.127.17) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 12 Nov
+ 2019 16:37:17 +0100
+Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
+ SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
+ 15.00.1473.003; Tue, 12 Nov 2019 16:37:17 +0100
+From: Philippe CORNU <philippe.cornu@st.com>
+To: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "a.hajda@samsung.com" <a.hajda@samsung.com>
 Subject: Re: [PATCH v2 1/5] drm/bridge/synopsys: dsi: move phy_ops callbacks
  around panel enablement
-To: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
- dri-devel@lists.freedesktop.org, a.hajda@samsung.com
+Thread-Topic: [PATCH v2 1/5] drm/bridge/synopsys: dsi: move phy_ops callbacks
+ around panel enablement
+Thread-Index: AQHVlcfsJMoaERwdz0+0Ar27W0nWUqeHocsA
+Date: Tue, 12 Nov 2019 15:37:17 +0000
+Message-ID: <49f6386b-30c8-a181-5785-2ecdf5f95d2a@st.com>
 References: <20191108000253.8560-1-heiko.stuebner@theobroma-systems.com>
  <20191108000253.8560-2-heiko.stuebner@theobroma-systems.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <4b311fe6-2105-c96c-f7d4-ac3535616690@baylibre.com>
-Date: Tue, 12 Nov 2019 15:26:39 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
 In-Reply-To: <20191108000253.8560-2-heiko.stuebner@theobroma-systems.com>
+Accept-Language: fr-FR, en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.48]
+Content-ID: <9B4E026D2A0B2A4BAC8B6BBE5F14BEA6@st.com>
+MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-12_05:2019-11-11,2019-11-12 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_062643_299593_63AEA317 
-X-CRM114-Status: GOOD (  18.50  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191112_073735_726057_B9D3AED5 
+X-CRM114-Status: GOOD (  21.18  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -152,18 +110,28 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, jernej.skrabec@siol.net,
- heiko@sntech.de, jonas@kwiboo.se, linux-kernel@vger.kernel.org,
- hjc@rock-chips.com, philippe.cornu@st.com, yannick.fertre@st.com,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- Laurent.pinchart@ideasonboard.com, linux-arm-kernel@lists.infradead.org,
- christoph.muellner@theobroma-systems.com
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "jernej.skrabec@siol.net" <jernej.skrabec@siol.net>,
+ "heiko@sntech.de" <heiko@sntech.de>, "jonas@kwiboo.se" <jonas@kwiboo.se>,
+ "narmstrong@baylibre.com" <narmstrong@baylibre.com>,
+ "hjc@rock-chips.com" <hjc@rock-chips.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Yannick FERTRE <yannick.fertre@st.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "Laurent.pinchart@ideasonboard.com" <Laurent.pinchart@ideasonboard.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "christoph.muellner@theobroma-systems.com"
+ <christoph.muellner@theobroma-systems.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 08/11/2019 01:02, Heiko Stuebner wrote:
+Hi Heiko,
+
+On 11/8/19 1:02 AM, Heiko Stuebner wrote:
 > If implementation-specific phy_ops need to be defined they probably
 > should be enabled before trying to talk to the panel and disabled only
 > after the panel was disabled.
@@ -177,63 +145,66 @@ On 08/11/2019 01:02, Heiko Stuebner wrote:
 > 
 > Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 > ---
->  drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 13 ++++++-------
->  1 file changed, 6 insertions(+), 7 deletions(-)
+>   drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 13 ++++++-------
+>   1 file changed, 6 insertions(+), 7 deletions(-)
 > 
 > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
 > index 675442bfc1bd..49f5600a1dea 100644
 > --- a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
 > +++ b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
 > @@ -797,9 +797,6 @@ static void dw_mipi_dsi_bridge_post_disable(struct drm_bridge *bridge)
->  	struct dw_mipi_dsi *dsi = bridge_to_dsi(bridge);
->  	const struct dw_mipi_dsi_phy_ops *phy_ops = dsi->plat_data->phy_ops;
->  
+>   	struct dw_mipi_dsi *dsi = bridge_to_dsi(bridge);
+>   	const struct dw_mipi_dsi_phy_ops *phy_ops = dsi->plat_data->phy_ops;
+>   
 > -	if (phy_ops->power_off)
 > -		phy_ops->power_off(dsi->plat_data->priv_data);
 > -
->  	/*
->  	 * Switch to command mode before panel-bridge post_disable &
->  	 * panel unprepare.
+>   	/*
+>   	 * Switch to command mode before panel-bridge post_disable &
+>   	 * panel unprepare.
 > @@ -816,6 +813,9 @@ static void dw_mipi_dsi_bridge_post_disable(struct drm_bridge *bridge)
->  	 */
->  	dsi->panel_bridge->funcs->post_disable(dsi->panel_bridge);
->  
+>   	 */
+>   	dsi->panel_bridge->funcs->post_disable(dsi->panel_bridge);
+>   
 > +	if (phy_ops->power_off)
 > +		phy_ops->power_off(dsi->plat_data->priv_data);
 > +
->  	if (dsi->slave) {
->  		dw_mipi_dsi_disable(dsi->slave);
->  		clk_disable_unprepare(dsi->slave->pclk);
+>   	if (dsi->slave) {
+>   		dw_mipi_dsi_disable(dsi->slave);
+>   		clk_disable_unprepare(dsi->slave->pclk);
 > @@ -882,6 +882,9 @@ static void dw_mipi_dsi_mode_set(struct dw_mipi_dsi *dsi,
->  
->  	/* Switch to cmd mode for panel-bridge pre_enable & panel prepare */
->  	dw_mipi_dsi_set_mode(dsi, 0);
+>   
+>   	/* Switch to cmd mode for panel-bridge pre_enable & panel prepare */
+>   	dw_mipi_dsi_set_mode(dsi, 0);
 > +
 > +	if (phy_ops->power_on)
 > +		phy_ops->power_on(dsi->plat_data->priv_data);
->  }
->  
->  static void dw_mipi_dsi_bridge_mode_set(struct drm_bridge *bridge,
+>   }
+>   
+>   static void dw_mipi_dsi_bridge_mode_set(struct drm_bridge *bridge,
 > @@ -898,15 +901,11 @@ static void dw_mipi_dsi_bridge_mode_set(struct drm_bridge *bridge,
->  static void dw_mipi_dsi_bridge_enable(struct drm_bridge *bridge)
->  {
->  	struct dw_mipi_dsi *dsi = bridge_to_dsi(bridge);
+>   static void dw_mipi_dsi_bridge_enable(struct drm_bridge *bridge)
+>   {
+>   	struct dw_mipi_dsi *dsi = bridge_to_dsi(bridge);
 > -	const struct dw_mipi_dsi_phy_ops *phy_ops = dsi->plat_data->phy_ops;
->  
->  	/* Switch to video mode for panel-bridge enable & panel enable */
->  	dw_mipi_dsi_set_mode(dsi, MIPI_DSI_MODE_VIDEO);
->  	if (dsi->slave)
->  		dw_mipi_dsi_set_mode(dsi->slave, MIPI_DSI_MODE_VIDEO);
+>   
+>   	/* Switch to video mode for panel-bridge enable & panel enable */
+>   	dw_mipi_dsi_set_mode(dsi, MIPI_DSI_MODE_VIDEO);
+>   	if (dsi->slave)
+>   		dw_mipi_dsi_set_mode(dsi->slave, MIPI_DSI_MODE_VIDEO);
 > -
 > -	if (phy_ops->power_on)
 > -		phy_ops->power_on(dsi->plat_data->priv_data);
->  }
->  
->  static enum drm_mode_status
+>   }
+>   
+>   static enum drm_mode_status
 > 
 
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+Tested-by: Yannick Fertre <yannick.fertre@st.com>
+Reviewed-by: Philippe Cornu <philippe.cornu@st.com>
 
+Many thanks,
+Philippe :-)
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
