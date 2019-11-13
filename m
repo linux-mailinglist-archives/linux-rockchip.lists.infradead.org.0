@@ -2,91 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B93DEFB69B
-	for <lists+linux-rockchip@lfdr.de>; Wed, 13 Nov 2019 18:51:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F657FB6BB
+	for <lists+linux-rockchip@lfdr.de>; Wed, 13 Nov 2019 18:57:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:References:In-Reply-To:Message-ID:MIME-Version:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=JTYdFAue6EjM58i3yQKbwmHzDwyRWlfEfHadEPMaE54=; b=kpPB/tjIRQ0lhpA9kPyhUip7+
-	VJwhtw7+TAZyYYWQDEM27J2M/UjqylEVKpvO33bV49J3crHhojfvP5bgyIrEWzN3/eGOpt0J7/QFA
-	4wpkZRgoa9uL6gJ0uFfZxO8ZKPiCQ5WJcnqeZVykIH6EUsoA3vEWxIkvl1VY6q3q4xubYX0pQ2IeU
-	Qmt9J+Qnf1/YMaC4E7cIIkaDYHl1LTfrC1UZNHZLq2UvRfTyU2rPu5zrbBNf4MVkJYcUm05B12IhP
-	L/64pB9NWZMop5Nx3z4m4C5dJe/AtTvWinWkwqoY+I1/kbeWzN24h3I0NGJclqdGRBgnjcltZBvyj
-	o9l2kh6qw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mc0i6UOqPF7Hn+QCSjIip/DYdBQry/6jFlOJqXg0C+8=; b=RTSyJBH1FYnazN
+	aRy/Qn2b5WqbgXOiOW5T94Melqwn0bgA2bzY1VwkN5HTejGfKugOcR7a2kIoHr+EbSrAgjcTmUyWt
+	6bxmomzGbnf0IdovbQipTIuxIBhsy2E1Mbeo8cCXKC+fgP7kktUX0zm7RlBhG/d1fAwTN1IeHXrux
+	X8fkXOQm+zQwV6Vf5pvbg5S3H+VV3mU3cxaalkensYSIopZ/rr+9KcU3TzvDapoR9aW2GIhmlfJxb
+	cJKih8sqn8xSfA3QQbVR+TWOmaXyFgY4qsZqwCaT/Iu6aAEKMASKZEGDigtDSK1gBb9bKuLdA7ouC
+	678g48F1stDeTKECC+Ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUwnM-0001xC-JE; Wed, 13 Nov 2019 17:51:08 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iUwtV-0004g5-Av; Wed, 13 Nov 2019 17:57:29 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUwnH-0001w9-A5; Wed, 13 Nov 2019 17:51:07 +0000
-Received: by mail-wm1-x342.google.com with SMTP id a17so5503223wmb.0;
- Wed, 13 Nov 2019 09:51:02 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:mime-version:message-id:in-reply-to
- :references:user-agent:content-transfer-encoding;
- bh=qzzDBOvLkhrbh494Qc4Z0VlfmRg1EJQ03rXnO9Mftjk=;
- b=Ckz+TG9tYlw0m9OttsGTs9nJCH7TOKM4uTw+Sa1nNydaUzRdKKXD1V4Buf42LHGqAe
- iE2FkSfzKvj6vYGAsui4uPedXV0/g94qdd492aWhhMIzPyzugnvALXv1DN8sIbGJGBC0
- NE51Ne1wBWIhu/FNZzS1s/P0BEwbdzrbtplWTY5NWzVYN/edYprM9kjqpWWTXpbXY9EV
- 8LVPC6CrfzSPdoHCDXkSdds9fr8i5ZaBAG6Bjmcpp7s9sNDUVW5+ZrR6lquD8xI8KXjm
- 5z6P9t72BlMdlR1dqIZChQbDAqLKh3ZSGLHTEO9eGCi6DtcaQ+TPM7kzHPgabJj7Qhlk
- eYzA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
- :in-reply-to:references:user-agent:content-transfer-encoding;
- bh=qzzDBOvLkhrbh494Qc4Z0VlfmRg1EJQ03rXnO9Mftjk=;
- b=DlGXoq1XBxwyc7nSXIdoweOPi+S/VS8CsZdocHOFa2hw5T6FpCQzF59oIGatPjBZj/
- Y6lSeI9YtzrtKHSvgFwigP+hsv6Y/Vhznm2TFr8ac2FO+uMj8LLYEoEuSdlup1zCvd7G
- zMBtp+aKsvkLrhdwWLbPHp6FJP30hjw+DjuyXei1VZeCrMKkvvQXRhXirjHQsnMK0Eo8
- jGo/G5VH4WxGp/bGz02eHmvSO/hlxbo0yc9elHH2nyXUXHXIYUlZMPsdq34/XDNIUygI
- EkKG9i+5ILTUiYTUMqkvbKoW9jKfdq0BxnzrmxGhLWP4Mkjmyuv8Whyf6nTAQKpBw1pB
- HO0A==
-X-Gm-Message-State: APjAAAW7OFVSpjp3Nh19ZhnqRUa/2ItPu0ah0pbDLgmyGhs/i19V3nJv
- gQ8ib4DLVbx/elr+oEnpI38=
-X-Google-Smtp-Source: APXvYqxY92gjSsnH0FK0MObe+RVUZHrJMUlsHR/YtNeM6aP9bJMWxET2pTpHVRrEZmpw+lSUgwKswg==
-X-Received: by 2002:a7b:ce11:: with SMTP id m17mr3554877wmc.123.1573667461198; 
- Wed, 13 Nov 2019 09:51:01 -0800 (PST)
-Received: from localhost ([94.73.41.211])
- by smtp.gmail.com with ESMTPSA id m187sm391448wmf.35.2019.11.13.09.50.58
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 13 Nov 2019 09:51:00 -0800 (PST)
-From: Vicente Bergas <vicencb@gmail.com>
-To: Kever Yang <kever.yang@rock-chips.com>
-Subject: Re: [PATCH 3/3] arm64: dts: rk3399: Add init voltage for
- =?iso-8859-1?Q?vdd=5Flog?=
-Date: Wed, 13 Nov 2019 18:50:57 +0100
+ id 1iUwtP-0004Y1-NC
+ for linux-rockchip@lists.infradead.org; Wed, 13 Nov 2019 17:57:25 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 168D628A9C8
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: linux-media@vger.kernel.org
+Subject: [PATCH v3 0/3] Enable Hantro G1 post-processor
+Date: Wed, 13 Nov 2019 14:56:00 -0300
+Message-Id: <20191113175603.24742-1-ezequiel@collabora.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-Message-ID: <977a15a9-8469-4821-ba13-8c2c59a145e7@gmail.com>
-In-Reply-To: <20191111005158.25070-3-kever.yang@rock-chips.com>
-References: <20191111005158.25070-1-kever.yang@rock-chips.com>
- <20191111005158.25070-3-kever.yang@rock-chips.com>
-User-Agent: Trojita
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_095103_377905_7AA19AE9 
-X-CRM114-Status: GOOD (  15.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191113_095724_035387_3ECDF634 
+X-CRM114-Status: GOOD (  12.44  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vicencb[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,186 +56,118 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Alexis Ballier <aballier@gentoo.org>,
- Soeren Moch <smoch@web.de>, Hugh Cole-Baker <sigmaris@gmail.com>,
- Andy Yan <andyshrk@gmail.com>, Katsuhiro Suzuki <katsuhiro@katsuster.net>,
- linux-rockchip@lists.infradead.org, Pragnesh Patel <Pragnesh_Patel@mentor.com>,
- Peter Robinson <pbrobinson@gmail.com>, Nick Xie <nick@khadas.com>,
- devicetree@vger.kernel.org, Elaine Zhang <zhangqing@rock-chips.com>,
- Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
- =?utf-8?B?QW5kcml1cyDFoHRpa29uYXM=?= <andrius@stikonas.eu>, heiko@sntech.de,
- linux-kernel@vger.kernel.org, Oskari Lemmela <oskari@lemmela.net>,
- Robin Murphy <robin.murphy@arm.com>, Vivek Unune <npcomplete13@gmail.com>
+Cc: Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-kernel@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
+ linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>, Chris Healy <cphealy@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Monday, November 11, 2019 1:51:58 AM CET, Kever Yang wrote:
-> Since there is no devfreq used for vdd_log, so the vdd_log(pwm regulator)
-> will be 'enable' with the dts node at a default PWM state with high or low
-> output. Both too high or too low for vdd_log is not good for the board,
-> add init voltage for driver to make the regulator get into a know output.
->
-> Note that this will be used by U-Boot for init voltage output, and this
-> is very important for it may get system hang somewhere during system
-> boot up with regulator enable and without this init value.
+Hi all,
 
-Hi, just for reference: doing the math based on the Sapphire board
-schematic, the values for vdd_log are:
-|------|-------|
-| PWM  | Volts |
-|------|-------|
-| Hi-Z | 1.136 |
-|   0% | 1.356 |
-| 100% | .9167 |
-|------|-------|
-The datasheet states that the acceptable range for vdd_log is 0.8 .. 1.0
-So, an option could be to configure GPIO1_C3 as output high and vdd_log
-would be at the range's center.
+The Hantro G1 VPU post-processor block can be pipelined with
+the decoder hardware, allowing to perform operations such as
+color conversion, scaling, rotation, cropping, among others.
 
-Aside from math on paper, it has been tested. Setting GPIO1_C3 as output
-high gives a vdd_log of 0.922 measured volts and the board, so far, works
-fine.
+When the post-processor is enabled, the decoder hardware
+needs its own set of NV12 buffers (the native decoder format),
+and the post-processor is the owner of the CAPTURE buffers,
+allocated for the post-processed format.
 
-Regards,
-  Vicente.
+This way, applications obtain post-processed
+(scaled, converted, etc) buffers transparently.
 
-> CC: Elaine Zhang <zhangqing@rock-chips.com>
-> CC: Peter Robinson <pbrobinson@gmail.com>
-> Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
-> ---
->
->  arch/arm64/boot/dts/rockchip/rk3399-evb.dts          | 1 +
->  arch/arm64/boot/dts/rockchip/rk3399-firefly.dts      | 1 +
->  arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts   | 1 +
->  arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi | 1 +
->  arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts    | 1 +
->  arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts     | 1 +
->  arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts       | 1 +
->  arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts    | 1 +
->  arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi    | 1 +
->  9 files changed, 9 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-evb.dts 
-> b/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
-> index 77008dca45bc..fa241aeb11b0 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
-> @@ -65,6 +65,7 @@
->  		regulator-name = "vdd_center";
->  		regulator-min-microvolt = <800000>;
->  		regulator-max-microvolt = <1400000>;
-> +		regulator-init-microvolt = <950000>;
->  		regulator-always-on;
->  		regulator-boot-on;
->  		status = "okay";
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts 
-> b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
-> index 92de83dd4dbc..4e45269fcdff 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
-> @@ -208,6 +208,7 @@
->  		regulator-boot-on;
->  		regulator-min-microvolt = <430000>;
->  		regulator-max-microvolt = <1400000>;
-> +		regulator-init-microvolt = <950000>;
->  		vin-supply = <&vcc_sys>;
->  	};
->  };
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts 
-> b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-> index c133e8d64b2a..692f3154edc3 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-> @@ -100,6 +100,7 @@
->  		regulator-name = "vdd_log";
->  		regulator-min-microvolt = <800000>;
->  		regulator-max-microvolt = <1400000>;
-> +		regulator-init-microvolt = <950000>;
->  		regulator-always-on;
->  		regulator-boot-on;
->  	};
-> diff --git 
-> a/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi 
-> b/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
-> index 4944d78a0a1c..c2ac80d99301 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
-> @@ -79,6 +79,7 @@
->  		regulator-boot-on;
->  		regulator-min-microvolt = <800000>;
->  		regulator-max-microvolt = <1400000>;
-> +		regulator-init-microvolt = <950000>;
->  		vin-supply = <&vsys_3v3>;
->  	};
->  
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts 
-> b/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
-> index 73be38a53796..c32abcc4ddc1 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
-> @@ -101,6 +101,7 @@
->  		regulator-boot-on;
->  		regulator-min-microvolt = <800000>;
->  		regulator-max-microvolt = <1400000>;
-> +		regulator-init-microvolt = <950000>;
->  		vin-supply = <&vcc5v0_sys>;
->  	};
->  };
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts 
-> b/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
-> index 0541dfce924d..9d674c51f025 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
-> @@ -164,6 +164,7 @@
->  		regulator-boot-on;
->  		regulator-min-microvolt = <800000>;
->  		regulator-max-microvolt = <1400000>;
-> +		regulator-init-microvolt = <950000>;
->  		vin-supply = <&vcc_sys>;
->  	};
->  };
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts 
-> b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-> index 19f7732d728c..7d856ce1d156 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-> @@ -129,6 +129,7 @@
->  		regulator-boot-on;
->  		regulator-min-microvolt = <800000>;
->  		regulator-max-microvolt = <1400000>;
-> +		regulator-init-microvolt = <950000>;
->  		vin-supply = <&vcc3v3_sys>;
->  	};
->  };
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts 
-> b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> index e544deb61d28..8fbccbc8bf47 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> @@ -174,6 +174,7 @@
->  		regulator-boot-on;
->  		regulator-min-microvolt = <800000>;
->  		regulator-max-microvolt = <1700000>;
-> +		regulator-init-microvolt = <950000>;
->  		vin-supply = <&vcc5v0_sys>;
->  	};
->  };
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi 
-> b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
-> index 1bc1579674e5..f8e2cb8c0624 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
-> @@ -133,6 +133,7 @@
->  		regulator-boot-on;
->  		regulator-min-microvolt = <800000>;
->  		regulator-max-microvolt = <1400000>;
-> +		regulator-init-microvolt = <950000>;
->  		vin-supply = <&vcc_sys>;
->  	};
->  };
+This feature is implemented by exposing the post-processed pixel
+formats on ENUM_FMT, ordered as "preferred pixelformat first":
+
+v4l2-ctl -d 1 --list-formats
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'NV12' (Y/CbCr 4:2:0)
+	[1]: 'YUYV' (YUYV 4:2:2)
+
+The order of preference in ENUM_FMT can be used as a hint
+by applications. This series updates the uAPI specification
+accordingly.
+
+When the application sets a pixel format other than NV12,
+the post-processor is transparently enabled.
+
+Patch 1 is a cleanups needed to easier integrate the post-processor.
+Patch 2 introduces the post-processing support.
+Patch 3 updates the uAPI specification.
+
+This is tested on RK3288 platforms with MPEG-2, VP8 and
+H264 streams, decoding to YUY2 surfaces. For now, this series
+is only adding support for NV12-to-YUY2 conversion.
+
+Applies to media/master.
+
+Future plans
+------------
+
+It seems to me that we should start moving this driver to use
+regmap-based access to registers. However, such move is out of scope
+and not entirely related to this post-processor enablement.
+
+We'll work on that as follow-up patches.
+
+Changelog
+---------
+
+Changes v3:
+
+* After discussing with Hans and Tomasz during the media summit
+in ELCE, we decided to go back on the MC changes. The MC topology
+is now untouched. This means the series is now similar to v1,
+except we explicitly use the ENUM_FMT to hint about the post-processed
+formats.
+
+Changes v2:
+
+* The decoder->post-processor topology is now exposed
+  explicitly and applications need to configure the pipeline.
+  By default, the decoder is enabled and the post-processor
+  is disabled.
+
+* RGB post-processing output has been dropped. We might
+  add this in the future, but for now, it seems it would
+  make the code more complex without a use-case in mind.
+  RGB is much more memory-consuming so less attractive
+  than YUV, and modern GPUs and display controllers support YUV.
+
+* The post-processor implementation still supports RK3288
+  only. However, a generic register infrastructure is introduced
+  to make addition of other variants such as RK3399 really easy.
+
+Ezequiel Garcia (3):
+  media: hantro: Cleanup format negotiation helpers
+  media: hantro: Support color conversion via post-processing
+  media: vidioc-enum-fmt.rst: clarify format preference
+
+ .../media/uapi/v4l/vidioc-enum-fmt.rst        |   4 +-
+ drivers/staging/media/hantro/Makefile         |   1 +
+ drivers/staging/media/hantro/hantro.h         |  64 +++++++-
+ drivers/staging/media/hantro/hantro_drv.c     |   8 +-
+ .../staging/media/hantro/hantro_g1_h264_dec.c |   2 +-
+ .../media/hantro/hantro_g1_mpeg2_dec.c        |   2 +-
+ drivers/staging/media/hantro/hantro_g1_regs.h |  53 +++++++
+ .../staging/media/hantro/hantro_g1_vp8_dec.c  |   2 +-
+ drivers/staging/media/hantro/hantro_h264.c    |   6 +-
+ drivers/staging/media/hantro/hantro_hw.h      |  13 ++
+ .../staging/media/hantro/hantro_postproc.c    | 141 ++++++++++++++++++
+ drivers/staging/media/hantro/hantro_v4l2.c    | 105 ++++++++-----
+ drivers/staging/media/hantro/rk3288_vpu_hw.c  |  10 ++
+ 13 files changed, 366 insertions(+), 45 deletions(-)
+ create mode 100644 drivers/staging/media/hantro/hantro_postproc.c
+
+-- 
+2.22.0
 
 
 _______________________________________________
