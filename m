@@ -2,84 +2,92 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93554FAE07
-	for <lists+linux-rockchip@lfdr.de>; Wed, 13 Nov 2019 11:06:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F02E4FAFD4
+	for <lists+linux-rockchip@lfdr.de>; Wed, 13 Nov 2019 12:40:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1XNiFtPYqdM5sZVl8DuNAwCaAOEPwDQzkTzJgIz5Z4o=; b=lao8kwyCY59zOE
-	NyUK8Kx0rmZYLMV7HY1DwTZwCIarKbyLSNCT0URqsvaZ2Rcm7AeKN55Y6OoOR0XXCRTjf7aSDUdyA
-	3wz1vzKpRu7Vq27+UGQo2IlCE2YA6V193RcDnDDb2snIUjzjAAaLw+aKIhQEs6GatPyaVQ7q9gDc9
-	rU7ThwDuIvcyStrhFmJ2Y359nMO9IwbX1ZXySQ+jpiFASEJLdh5UPsW0FQWRj8SeIiZh56y4hFMp8
-	uSpk2XRQaVNSA1B8T6FXIb6/gh20g1HqHUoJgt4SoZ9gDPzAAeA0Dw4khqNr3MIhYBhVezin3BYl3
-	32W5adJJx3HLKvYxJEfg==;
+	List-Owner; bh=1iWfJsFNV90bX7D1GzScLLNvP5g9QLaIveDoivmnGWw=; b=eBZA8CyoPleynx
+	B6PqubPyjk/XvJaSamZU6EdRq3nnTvs5uGY9l8vXXRPpGgAsyBhEEJPOZEh1k8GicF7Uy/3zbKKY9
+	dJz9cT9e1L0BjcyDDDYhyI+WCP18kypSNJ5KXqJJaDgQJieGB5DwK2JLqkGG/nBGC7kyQ63NbjHbv
+	Av8I2fc21sutCGrC/QRbnYkBV0yiX1zqmaUf2tcfb/F5pTVLa84yQOk4WS2Ur4yr9oDlx9MZG+bcN
+	kg0NHry9eovG5EJ14OXhA1AM8ZozuyRHq3y9IrYVxE7GQ0VuOmh42TrL5wQh5Tb70n0A4BcECoebn
+	CUzaySdKJBQVVgRJdLZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUpXv-0004AP-9d; Wed, 13 Nov 2019 10:06:43 +0000
-Received: from mailgate1.rohmeurope.com ([178.15.145.194])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUpXr-00048u-8f; Wed, 13 Nov 2019 10:06:40 +0000
-X-AuditID: c0a8fbf4-183ff70000001fa6-35-5dcbd5aad21d
-Received: from smtp.reu.rohmeu.com (will-cas001.reu.rohmeu.com
- [192.168.251.177])
- by mailgate1.rohmeurope.com (Symantec Messaging Gateway) with SMTP id
- 09.3A.08102.AA5DBCD5; Wed, 13 Nov 2019 11:06:34 +0100 (CET)
-Received: from WILL-MAIL002.REu.RohmEu.com ([fe80::e0c3:e88c:5f22:d174]) by
- WILL-CAS001.REu.RohmEu.com ([fe80::d57e:33d0:7a5d:f0a6%16]) with mapi id
- 14.03.0439.000; Wed, 13 Nov 2019 11:06:30 +0100
-From: "Vaittinen, Matti" <Matti.Vaittinen@fi.rohmeurope.com>
-To: "linus.walleij@linaro.org" <linus.walleij@linaro.org>
-Subject: Re: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
-Thread-Topic: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
-Thread-Index: AQHVmWQOgs5cHlsmlU+Vdtkf5ZbC06eIlAaAgAAGWoCAAC7LgIAAB1AA
-Date: Wed, 13 Nov 2019 10:06:29 +0000
-Message-ID: <b67faf875fd0060ad36db04b29c109f01e58ab1a.camel@fi.rohmeurope.com>
-References: <20191112141819.GA22076@localhost.localdomain>
- <201911131438.KT6pnFZ7%lkp@intel.com>
- <ac16492e11899ef4ec981f7f2e84714c7d61d2a7.camel@fi.rohmeurope.com>
- <CACRpkdYAmye8wT39fqy=LN+6pXDvrcQ0SyDTCvG7aSgea3Uumw@mail.gmail.com>
-In-Reply-To: <CACRpkdYAmye8wT39fqy=LN+6pXDvrcQ0SyDTCvG7aSgea3Uumw@mail.gmail.com>
-Accept-Language: en-US, de-DE
-Content-Language: de-DE
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [213.255.186.46]
-Content-ID: <754252B81D9D734D9DE00A1EDD014380@de.rohmeurope.com>
+	id 1iUr0F-0001bT-L5; Wed, 13 Nov 2019 11:40:03 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUr0B-0001TN-Pw
+ for linux-rockchip@lists.infradead.org; Wed, 13 Nov 2019 11:40:02 +0000
+Received: by mail-wm1-x344.google.com with SMTP id a17so4692675wmb.0
+ for <linux-rockchip@lists.infradead.org>; Wed, 13 Nov 2019 03:39:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=bq2qqZ+oRNm6IhsGbtwHKkXsgoKbiieO+lh693Hy/5A=;
+ b=jVf25n0VkCSWVBetXRGkI3EPM9F5+MCLmEplwI6oPgBrr6YR94FijjSpwZk5Fqjocs
+ 19ZrJtUO/NL+Z42kVkMFlb6cUhCVfQE8xSNHgKfHyqVGqcSSHAgTZyrajx7hdYyNlghV
+ Hw03iSa6FUoVIPSWzJc/45rfmX44rQCR9MLU4=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=bq2qqZ+oRNm6IhsGbtwHKkXsgoKbiieO+lh693Hy/5A=;
+ b=aYcUscl/FzYD+8HE5ZBCv9OEM0TcxmWb/ikQykwfBm+TC9Of3nHuyopomb/rVTcmXw
+ sITd9nCNm2sb0iD/aV6yxQhSB6rG8NPM5oaihGWdd0umicZZ8pP6utxfuVD2mFr1HzC9
+ xTR9uD8KpH3yLKNHZODbK+q04XKUHYwvYkcY7CAhCfstQuRHjKhYUmLwpO09Rusv4EYY
+ FD529lTHXAFdIqcEqKZo2K/NfoP+KxKtm0oagePX58Y5JnqL0TyXx4g2cy4Hp+OLA5TR
+ WwRy9MVhePmMjYijyVKR7Y8vHMu6ypV0dJOHsB07lQQ0j7SyonTc85Jro9jxUM4JD8Ef
+ qBdg==
+X-Gm-Message-State: APjAAAVnuO5FxVIkuxCZOqGxIfp5Ep5YXZDvXNZsVmxALFaNTf7yAoHs
+ ly6SZyWOzLaYy+su+4UDvpic4A==
+X-Google-Smtp-Source: APXvYqw2osMighHWX0smB/bHd/0+vzAZloHlG9oAPkIM5DdQ/SxmcjE8Rggd1q4hePOK/L9F/YQMrA==
+X-Received: by 2002:a05:600c:cb:: with SMTP id u11mr2304359wmm.5.1573645197535; 
+ Wed, 13 Nov 2019 03:39:57 -0800 (PST)
+Received: from phenom.ffwll.local (212-51-149-96.fiber7.init7.net.
+ [212.51.149.96])
+ by smtp.gmail.com with ESMTPSA id w4sm1793035wmi.39.2019.11.13.03.39.56
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 13 Nov 2019 03:39:56 -0800 (PST)
+Date: Wed, 13 Nov 2019 12:39:54 +0100
+From: Daniel Vetter <daniel@ffwll.ch>
+To: "james qian wang (Arm Technology China)" <james.qian.wang@arm.com>
+Subject: Re: [PATCHv2 3/4] drm/komeda: use afbc helpers
+Message-ID: <20191113113954.GN23790@phenom.ffwll.local>
+References: <2485717.1SzL54aMiy@e123338-lin>
+ <20191104221228.3588-1-andrzej.p@collabora.com>
+ <20191104221228.3588-4-andrzej.p@collabora.com>
+ <20191108160954.GA17321@arm.com>
+ <20191113020146.GB2746@jamwan02-TSP300>
 MIME-Version: 1.0
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Tb0wbZRzHfe6ud0dZx1EYfUR9YaNjc7K5OJPHiMs0uhxvpovyRkPYMW4U
- By25lgku0Y6yLS06KRAjpbCNP9uyDoFWNsYwxYJa12BdG0ACRAtlG9WVYJbMbox6t7LBq+f3
- PN/v9/f5vfg9NK4MUJl0idbAC1quVE3KiaELD3qzHWO+/FfmD6Pf5h4Q6GT0HIV6wz6A/DMe
- HHV99ROBfO4ogYaOBQG6Hx2hUEtzPUD2C1UoPvu3DB3rCBJotHYcoMbl8xhyzo3LkNU9SiHX
- 6WWAggN2EgVNNwDyxRw46luIYujfv+I4sk71UMgyHpahiGmWRLe7JmSouuZVZO/0Eqj1YZcM
- eU59jK64zuLI7h0D6Ov2AIHmm1wkijrCADV8l4sWY2+hX7xmHMU8fmxPFlu9+DPJLv5xnGJb
- Lx1lbX+OkqwjcJJke2YdMtY6ms1etc1QbLvTTbKnzfcwtn1wAWOdF80kaxzyE+z0+CDJ1jav
- EKyr44v3Mz5KzinkDEc+KCnW7th9IFnTerMOlE/LK6dq2jAj6JdbQBINmV1wxVwHLEBOK5kx
- AEPnXXji4gUwuLwiXmiaZHKgZZKSAunM63DYayekGmfqU2FkeItUpzFvwqkTAVKypzO7oev7
- 5IR9L7QPXHpkJ5gXoXFkDJdqBbMPOtp9q6glACduzwNJSGL2w8t246MAYJ6DZmMUS7BU0Hnz
- niwxNAM7Bv14ot4EF+ZWVt/V8IdYiJBmwJmtsHtgRyK6B070nltt8zxsrA1RiRlS4a9NYaIO
- ZNjWEWxradu6tG1d2rYufQbILgJYxpWUFnMGfud2ga/YLug0ZeJxUFfmBIkdvdsP4p5cD8Bo
- 4AFP05h6k+KKyZev3FioK6rScHpNgVBRyus9ANK4Ol3RX+nNVyqKuKrPeEH3WHqGJtQqRVbI
- mq9kJNZhni/nhcfqszSthop3R8SmqQJfzFceKik1rMkYnSQ1l2em63ltES9wFQZNgbQeBXpx
- PyRpg8id/F2MK/TlXJn4moheB9vouoWWNpweaelsw5WEVqflM1WK/ZKVkayaCu0TUASoaKBO
- U3T5RXWD+FGf9ImICExE1AxflxAGbk3KNIIvp0/NvEyH4ku3Ck3/dBT2ma66c+OpB7NTfjy6
- Me+hMLv0uc2w+eydyTx397W0N0IpkeMZmhdU751omG+g+preob79sNpx40j4WiPrfeqTCbx2
- 73Bng1WV1bprc/PdKU/4P139Hbvy7X15t1LOLFlyAlvsNQdiPZ92Fye9Vn2/vu2bbjWh13A7
- X8IFPfc/bnCeumUEAAA=
+Content-Disposition: inline
+In-Reply-To: <20191113020146.GB2746@jamwan02-TSP300>
+X-Operating-System: Linux phenom 5.2.0-3-amd64 
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_020639_457851_F8690253 
-X-CRM114-Status: GOOD (  12.16  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191113_033959_901694_D5FF0508 
+X-CRM114-Status: GOOD (  25.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.15.145.194 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,75 +100,174 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "andrew@lunn.ch" <andrew@lunn.ch>,
- "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "heiko@sntech.de" <heiko@sntech.de>,
- "geert+renesas@glider.be" <geert+renesas@glider.be>,
- "narmstrong@baylibre.com" <narmstrong@baylibre.com>,
- "patrice.chotard@st.com" <patrice.chotard@st.com>,
- "paul@crapouillou.net" <paul@crapouillou.net>,
- "eric@anholt.net" <eric@anholt.net>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "jason@lakedaemon.net" <jason@lakedaemon.net>,
- "f.fainelli@gmail.com" <f.fainelli@gmail.com>, "lkp@intel.com" <lkp@intel.com>,
- "gregory.clement@bootlin.com" <gregory.clement@bootlin.com>,
- "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
+Cc: nd <nd@arm.com>, Mihail Atanassov <Mihail.Atanassov@arm.com>,
+ "kernel@collabora.com" <kernel@collabora.com>,
+ Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
+ David Airlie <airlied@linux.ie>, Liviu Dudau <Liviu.Dudau@arm.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Sandy Huang <hjc@rock-chips.com>, Maxime Ripard <mripard@kernel.org>,
+ Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
  "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "wens@csie.org" <wens@csie.org>, "agross@kernel.org" <agross@kernel.org>,
- "bcm-kernel-feedback-list@broadcom.com"
- <bcm-kernel-feedback-list@broadcom.com>,
- "rjui@broadcom.com" <rjui@broadcom.com>,
- "sebastian.hesselbarth@gmail.com" <sebastian.hesselbarth@gmail.com>,
- "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
- "mazziesaccount@gmail.com" <mazziesaccount@gmail.com>,
- "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
- "nicolas.ferre@microchip.com" <nicolas.ferre@microchip.com>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "linux-rpi-kernel@lists.infradead.org" <linux-rpi-kernel@lists.infradead.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "kbuild-all@lists.01.org" <kbuild-all@lists.01.org>,
- "sbranden@broadcom.com" <sbranden@broadcom.com>,
- "sean.wang@kernel.org" <sean.wang@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- "wahrenst@gmx.net" <wahrenst@gmx.net>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "linux-oxnas@groups.io" <linux-oxnas@groups.io>
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Ayan Halder <Ayan.Halder@arm.com>,
+ Sean Paul <sean@poorly.run>, Brian Starkey <Brian.Starkey@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-
-On Wed, 2019-11-13 at 10:40 +0100, Linus Walleij wrote:
-> On Wed, Nov 13, 2019 at 7:52 AM Vaittinen, Matti
-> <Matti.Vaittinen@fi.rohmeurope.com> wrote:
-> > On Wed, 2019-11-13 at 14:30 +0800, kbuild test robot wrote:
-> > Right. Return is missing. I think I already fixed this - I guess I
-> > sent
-> > wrong version... Sorry guys. I'll do v3 with only this return added
-> > -
-> > and I'll send it to limited amount of recipients as I think most of
-> > you
-> > guys may not be interested. Probably to Linus W, Geert and GPIO
-> > list
-> > only. Let me know if you want to see the v3 (or other subsequent
-> > patches)
+On Wed, Nov 13, 2019 at 02:01:53AM +0000, james qian wang (Arm Technology China) wrote:
+> On Fri, Nov 08, 2019 at 04:09:54PM +0000, Ayan Halder wrote:
+> > On Mon, Nov 04, 2019 at 11:12:27PM +0100, Andrzej Pietrasiewicz wrote:
+> > > There are afbc helpers available.
+> > > 
+> > > Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+> > > ---
+> > >  .../arm/display/komeda/komeda_format_caps.h   |  1 -
+> > >  .../arm/display/komeda/komeda_framebuffer.c   | 44 +++++++------------
+> > >  2 files changed, 17 insertions(+), 28 deletions(-)
+> > > 
+> > > diff --git a/drivers/gpu/drm/arm/display/komeda/komeda_format_caps.h b/drivers/gpu/drm/arm/display/komeda/komeda_format_caps.h
+> > > index 32273cf18f7c..607eea80e60c 100644
+> > > --- a/drivers/gpu/drm/arm/display/komeda/komeda_format_caps.h
+> > > +++ b/drivers/gpu/drm/arm/display/komeda/komeda_format_caps.h
+> > > @@ -33,7 +33,6 @@
+> > >  
+> > >  #define AFBC_TH_LAYOUT_ALIGNMENT	8
+> > >  #define AFBC_HEADER_SIZE		16
+> > > -#define AFBC_SUPERBLK_ALIGNMENT		128
+> > >  #define AFBC_SUPERBLK_PIXELS		256
+> > >  #define AFBC_BODY_START_ALIGNMENT	1024
+> > >  #define AFBC_TH_BODY_START_ALIGNMENT	4096
+> > > diff --git a/drivers/gpu/drm/arm/display/komeda/komeda_framebuffer.c b/drivers/gpu/drm/arm/display/komeda/komeda_framebuffer.c
+> > > index 1b01a625f40e..e9c87551a5b8 100644
+> > > --- a/drivers/gpu/drm/arm/display/komeda/komeda_framebuffer.c
+> > > +++ b/drivers/gpu/drm/arm/display/komeda/komeda_framebuffer.c
+> > > @@ -4,6 +4,7 @@
+> > >   * Author: James.Qian.Wang <james.qian.wang@arm.com>
+> > >   *
+> > >   */
+> > > +#include <drm/drm_afbc.h>
+> > >  #include <drm/drm_device.h>
+> > >  #include <drm/drm_fb_cma_helper.h>
+> > >  #include <drm/drm_gem.h>
+> > > @@ -43,8 +44,7 @@ komeda_fb_afbc_size_check(struct komeda_fb *kfb, struct drm_file *file,
+> > >  	struct drm_framebuffer *fb = &kfb->base;
+> > >  	const struct drm_format_info *info = fb->format;
+> > >  	struct drm_gem_object *obj;
+> > > -	u32 alignment_w = 0, alignment_h = 0, alignment_header, n_blocks, bpp;
+> > > -	u64 min_size;
+> > > +	u32 alignment_w = 0, alignment_h = 0, alignment_header, bpp;
+> > >  
+> > >  	obj = drm_gem_object_lookup(file, mode_cmd->handles[0]);
+> > >  	if (!obj) {
+> > > @@ -52,19 +52,15 @@ komeda_fb_afbc_size_check(struct komeda_fb *kfb, struct drm_file *file,
+> > >  		return -ENOENT;
+> > >  	}
+> > >  
+> > > -	switch (fb->modifier & AFBC_FORMAT_MOD_BLOCK_SIZE_MASK) {
+> > > -	case AFBC_FORMAT_MOD_BLOCK_SIZE_32x8:
+> > > -		alignment_w = 32;
+> > > -		alignment_h = 8;
+> > > -		break;
+> > > -	case AFBC_FORMAT_MOD_BLOCK_SIZE_16x16:
+> > > -		alignment_w = 16;
+> > > -		alignment_h = 16;
+> > > -		break;
+> > > -	default:
+> > > -		WARN(1, "Invalid AFBC_FORMAT_MOD_BLOCK_SIZE: %lld.\n",
+> > > -		     fb->modifier & AFBC_FORMAT_MOD_BLOCK_SIZE_MASK);
+> > > -		break;
+> > > +	if (!drm_afbc_get_superblk_wh(fb->modifier, &alignment_w, &alignment_h))
+> > > +		return -EINVAL;
+> > > +
+> > > +	if ((alignment_w != 16 || alignment_h != 16) &&
+> > > +	    (alignment_w != 32 || alignment_h != 8)) {
+> > > +		DRM_DEBUG_KMS("Unsupported afbc tile w/h [%d/%d]\n",
+> > > +			      alignment_w, alignment_h);
+> > > +
+> > > +		return -EINVAL;
+> > To be honest, the previous code looks much more readable
+> > >  	}
+> > >  
+> > >  	/* tiled header afbc */
+> > > @@ -84,20 +80,14 @@ komeda_fb_afbc_size_check(struct komeda_fb *kfb, struct drm_file *file,
+> > >  		goto check_failed;
+> > >  	}
+> > >  
+> > > -	n_blocks = (kfb->aligned_w * kfb->aligned_h) / AFBC_SUPERBLK_PIXELS;
+> > > -	kfb->offset_payload = ALIGN(n_blocks * AFBC_HEADER_SIZE,
+> > > -				    alignment_header);
+> > > -
+> > >  	bpp = komeda_get_afbc_format_bpp(info, fb->modifier);
+> > > -	kfb->afbc_size = kfb->offset_payload + n_blocks *
+> > > -			 ALIGN(bpp * AFBC_SUPERBLK_PIXELS / 8,
+> > > -			       AFBC_SUPERBLK_ALIGNMENT);
+> > > -	min_size = kfb->afbc_size + fb->offsets[0];
+> > > -	if (min_size > obj->size) {
+> > > -		DRM_DEBUG_KMS("afbc size check failed, obj_size: 0x%zx. min_size 0x%llx.\n",
+> > > -			      obj->size, min_size);
+> > We need kfb->offset_payload and kfb->afbc_size to set some registers
+> > in d71_layer_update(). At this moment I feel like punching myself for
+> > making the suggestion to consider abstracting some of the komeda's afbc
+> > checks. To me it does not look like komeda(in the current shape) can take
+> > much advantage of the generic _afbc_fb_check() function (as was suggested
+> > previously by Danvet).
+> > 
+> > However, I will let james.qian.wang@arm.com,
+> > Mihail.Atanassov@arm.com, Ben.Davis@arm.com comment here to see if
+> > there could be a way of abstracting the afbc bits from komeda.
+> >
 > 
-> I think I already merged it, just send a new patch on top fixing the
-> problem.
+> Hi all:
+> 
+> Since the current generic drm_afbc helpers only support afbc_1.1, but
+> komeda needs support both afbc1.1/1.2, so I think we can:
+> - Add afbc1.2 support to drm afbc helpers.
+> - for the afbc_payload_offset, can we add this member to
+>   drm_framebuffer ?
+> - The aligned_w/h are important for afbc, so can we have them in
+>   drm_framebuffer ?  
 
-Hmm. Are you sure you did merge the pincontrol part already? I don't
-see it in your GPIO tree, devel or for-next branches. Can you please
-point me the branch - I already destroyed my original pincontrol commit
-which had the bug when I created the v2.
+How expensive is it to recompute these from a struct drm_framebuffer?
 
-Br,
-	Matti Vaittinen
+I'd just go with one function which computes all these derived values, and
+stuffs them into a struct drm_afbc. Then drivers call that once or so.
+
+For reworking drm_framebuffer itself I think it's probably a bit too
+earlier. And if we do it, we should maybe go a bit more bold, aiming to
+property-fy all the framebuffer settings, maybe even making it extensible,
+and have drivers handle a corresponding drm_framebuffer_state.
+
+A third option would be to create a drm_afbc_framebuffer which embeds
+drm_framebuffer and which drivers would need to use. But also feels a bit
+like too much churn. Recomputing should be quick enough and much easier.
+-Daniel
+
+> 
+> Thanks
+> James
+> 
+> > Thanks anyways for taking a stab at this.
+> > -Ayan
+> > > +
+> > > +	if (!drm_afbc_check_fb_size(mode_cmd->pitches[0], bpp,
+> > > +				    mode_cmd->width, mode_cmd->height,
+> > > +				    alignment_w, alignment_h,
+> > > +				    obj->size, mode_cmd->offsets[0],
+> > > +				    AFBC_SUPERBLK_ALIGNMENT))
+> > >  		goto check_failed;
+> > > -	}
+> > >  
+> > >  	fb->obj[0] = obj;
+> > >  	return 0;
+> > > -- 
+> > > 2.17.1
+
+-- 
+Daniel Vetter
+Software Engineer, Intel Corporation
+http://blog.ffwll.ch
 
 _______________________________________________
 Linux-rockchip mailing list
