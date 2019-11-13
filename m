@@ -2,81 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A216FB5F2
-	for <lists+linux-rockchip@lfdr.de>; Wed, 13 Nov 2019 18:08:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECCABFB635
+	for <lists+linux-rockchip@lfdr.de>; Wed, 13 Nov 2019 18:18:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EeS6vDscJALVopoAFIgoUgD0DYiBsngtHLfYODYo1fo=; b=F3jM35ZHvGGpAo
-	BYVWO1dy+gSJzdz/ookSG2Cdk8+HBR+fm89kaUQHi+FdIb7z+qwr1cln9cjLPZDIiqxXLO4CLKpy7
-	foCdVA1A0WrfEr8UVu4hH6pw9HCH8wZbUwTEO8XyV/tY/wG7VN65YHDd4NSC83i47gMsn16MtzsbR
-	cmxNMKfkIfuadIyg0zneUGyQcXsMlQfuCDG+uOKGLemPpD6vmINj9cBl79jX9XINJcp1dSp8F3aab
-	iMQLzwCORwNHVmOn/hUfdM8HhOV6vrWnyOc9EY9nIt7hYNaVaZB8XG2MXSc6RZh4f3ao1RhaM4mvr
-	ToOZhN4SEVbDveQbvY2Q==;
+	List-Owner; bh=pOBlIs5fjt8twpuMC2i/6FaV2M+cLXaUrQ/wOfCODSs=; b=h854ITlzMhWG0X
+	0TAViOVBo/DM8CQrv3gJE2mrQL8kr1wbEEUMKVy7JlFBHERV5xexZhg2en4AJQQ5KMrYU3vceLKN2
+	5zd3VH7gT3FDjubwMXEKBNNeCHaYMEj0b9fLnGX2gA2PznrrYfyfkzdIvnw6+ibiL5Hjgp47jQNhM
+	Bzf2fxaZ0AShSVWf/rlrs9il752rhfdfGubluiMBA55cn2ztd1KsaNOfcxxKkwz94H2Y/Tj3In7aC
+	XJBHJjxfnv+sjME1BZHmsqeWO9puYJJAwm80Izj3iJpigLfb/iZdjsPSXSEk9UAQChEJH7DeiTRFv
+	C56i2A646nOb76+qP/iw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUw7m-0005cL-Lp; Wed, 13 Nov 2019 17:08:10 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iUwHm-0003G1-Dk; Wed, 13 Nov 2019 17:18:30 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUw7j-0005c2-Iu
- for linux-rockchip@lists.infradead.org; Wed, 13 Nov 2019 17:08:08 +0000
-Received: by mail-pg1-x541.google.com with SMTP id q17so1742165pgt.9
- for <linux-rockchip@lists.infradead.org>; Wed, 13 Nov 2019 09:08:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ id 1iUwHj-0003DY-5B
+ for linux-rockchip@lists.infradead.org; Wed, 13 Nov 2019 17:18:28 +0000
+Received: by mail-lj1-x244.google.com with SMTP id d22so3450380lji.8
+ for <linux-rockchip@lists.infradead.org>; Wed, 13 Nov 2019 09:18:25 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=bBWxzsZRUXKbQzzivFjemLaJtwPKdmL9lKnNHf/rwAM=;
- b=N89l11BmZ7KDAZGxB47EC1AYg6Yxy1wBxilJdrAUL+wf60hooxylxjDXwTs3ZVa8fV
- IOzY9jFb4SoA5B5B7Qk2dV9Etb0EBG2TyXo3kUXsOy96E/uTaBK4m8IcyQUhs07AZbRX
- J5TON/jLYKd7nEgPCtKqNRlZagzwmWje7FBDE=
+ :cc; bh=WgpjeDP92LtqHtJXxSWI//ZDvUBHvFnRmWqhhvkv3sU=;
+ b=KvuV0fh/hJQyvRYAMyLtyX7TtdrS4cRfCetdL0REIkE+MZASromLfykUpUl271O+CX
+ vFdpD6FCntAze0eiaLeCGewSPBYzWcMyf8dAip0r8ZYXAdwDlGykLbTwiivROOyI2jcu
+ UqZ9m0g904KiBxG4PAMdp1dQu69o/iLfXSGCuUSWnkAM1RZk4SKm02qXOtPg478nMo1w
+ 2u+noeVIBVZdLdjiJORmfrpGe4D8XpbYfR67n+nowmC4HyebMgPh4pG3a2eeWqFYwJwr
+ JuqVAGOMP2v4G0vVkcsS9JARWxnX0VZhRa5GgVLcIqhEySXkSYAdEzE9f/BdNMWNDQFQ
+ 6eXw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=bBWxzsZRUXKbQzzivFjemLaJtwPKdmL9lKnNHf/rwAM=;
- b=KvLSY9+ZOhGkOk0bdcemAXPBZyjVVWKKtFFcbHNUBmJR5lja/ptY3CnC2C5bpEOFUf
- lA7XtxI7iU3lX12Q7lNrOKfI6hl3+WZW1SYf9rYHz5sKwOBQwrCwX0+MWfJDx7h5dPhz
- IWW6HHIw864pRp8fLkhKN9ucIdYLJcZM+0zC5283MKmN5n0zHlKgIPhS7drNyRr1x5WC
- xbOedOuNTHXaw7CuXTsB7XNkARPKBr2BEbdhbELdwYdHOLpeua8VHSKJluuvmz4TYusl
- jQu1KVb/+CCCboNYY4zee+4D0u3gx1/goGqeA0RpFzQgDDdgFdkXsH/c6pY+EYoWKxBd
- C1wg==
-X-Gm-Message-State: APjAAAX2k0Lr3Fq6N1oZsGp/eL5voiNOcuNqYeU7VirDZ7fPLznIV8dL
- bAUXVv+tV1dS+UNOSy5Og37JPQr3ouOCpg==
-X-Google-Smtp-Source: APXvYqyMA4oIVMvWUn+gW8/Gz8OzntcoN1K5ZhoKAs6G6RkXErItUpIWw9siR42J2x7DsndF/6wkFA==
-X-Received: by 2002:a62:1bd0:: with SMTP id b199mr5788528pfb.44.1573664886392; 
- Wed, 13 Nov 2019 09:08:06 -0800 (PST)
-Received: from mail-pg1-f177.google.com (mail-pg1-f177.google.com.
- [209.85.215.177])
- by smtp.gmail.com with ESMTPSA id k190sm4731363pga.12.2019.11.13.09.08.06
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 13 Nov 2019 09:08:06 -0800 (PST)
-Received: by mail-pg1-f177.google.com with SMTP id k1so436226pgg.12
- for <linux-rockchip@lists.infradead.org>; Wed, 13 Nov 2019 09:08:06 -0800 (PST)
-X-Received: by 2002:a5d:8953:: with SMTP id b19mr4637156iot.168.1573664490254; 
- Wed, 13 Nov 2019 09:01:30 -0800 (PST)
+ bh=WgpjeDP92LtqHtJXxSWI//ZDvUBHvFnRmWqhhvkv3sU=;
+ b=UtVPPeBz+6NWDslf8yAwHQ4qT/dJAPojDvqoSaB7UPbjo2FsVwVBLuAeJXLJOBOwUL
+ TjzlUXWaDd+sLrUcJUK1a8aBvIpUpYA9GxxQLpdXaPuq2zaViaSbXNSWAYJny57fiGDY
+ z5ZRlQ/2+b/XKJN9PHL6b+UGA4KpJjfQeN4ee1fYhut0LeCvlE1FOFTEf2hnuiAG3hzi
+ KnXgaLVlY1Uhi54UNJtuRmcu3FiwcxoM7DHWbZlyqiOUgvAGmaJrh5VtWNSqD11Aog14
+ mq2iGFJWxey2r4kal1Hx/Cfu5iN2pyRlzHGCDcExSFjtb50jV0qXn/w8W9JdZwTJOEhT
+ wySg==
+X-Gm-Message-State: APjAAAXnzAH2LCQOnLuOgLTF0jMqnYkOvwFq8QRrAsRLmS8Gj+B19i3l
+ suqy2luR+/DOS4dFuvIiErOJMixh6+kCglmHGNfEdQ==
+X-Google-Smtp-Source: APXvYqzb9LSbjvyTYyJro6roGfmfcXuB5wD3OhRztdb8g4aem5VqSxWcjf73KgosmX+l6Ndl56jWPa35+BrI2knRZzU=
+X-Received: by 2002:a2e:5c46:: with SMTP id q67mr3315497ljb.42.1573665504123; 
+ Wed, 13 Nov 2019 09:18:24 -0800 (PST)
 MIME-Version: 1.0
-References: <20191111005158.25070-1-kever.yang@rock-chips.com>
- <20191111005158.25070-3-kever.yang@rock-chips.com>
-In-Reply-To: <20191111005158.25070-3-kever.yang@rock-chips.com>
-From: Doug Anderson <dianders@chromium.org>
-Date: Wed, 13 Nov 2019 09:01:16 -0800
-X-Gmail-Original-Message-ID: <CAD=FV=UjbPALRU2r0s27F4RxjsbDyQ+horUBezVQejk1pT=vqA@mail.gmail.com>
-Message-ID: <CAD=FV=UjbPALRU2r0s27F4RxjsbDyQ+horUBezVQejk1pT=vqA@mail.gmail.com>
-Subject: Re: [PATCH 3/3] arm64: dts: rk3399: Add init voltage for vdd_log
-To: Kever Yang <kever.yang@rock-chips.com>
+References: <20191112141819.GA22076@localhost.localdomain>
+ <201911131438.KT6pnFZ7%lkp@intel.com>
+ <ac16492e11899ef4ec981f7f2e84714c7d61d2a7.camel@fi.rohmeurope.com>
+ <CACRpkdYAmye8wT39fqy=LN+6pXDvrcQ0SyDTCvG7aSgea3Uumw@mail.gmail.com>
+ <b67faf875fd0060ad36db04b29c109f01e58ab1a.camel@fi.rohmeurope.com>
+In-Reply-To: <b67faf875fd0060ad36db04b29c109f01e58ab1a.camel@fi.rohmeurope.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Wed, 13 Nov 2019 18:18:11 +0100
+Message-ID: <CACRpkdZy73oFmHcjGuxCCYD0kxWuAi4xp9s+fHVLcGXwPzc5TQ@mail.gmail.com>
+Subject: Re: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
+To: "Vaittinen, Matti" <Matti.Vaittinen@fi.rohmeurope.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_090807_645465_56D67AF8 
-X-CRM114-Status: GOOD (  13.98  )
+X-CRM114-CacheID: sfid-20191113_091827_212212_BBF38D23 
+X-CRM114-Status: UNSURE (   8.64  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -87,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,59 +95,64 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Alexis Ballier <aballier@gentoo.org>,
- Soeren Moch <smoch@web.de>, Hugh Cole-Baker <sigmaris@gmail.com>,
- Andy Yan <andyshrk@gmail.com>, Katsuhiro Suzuki <katsuhiro@katsuster.net>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Pragnesh Patel <Pragnesh_Patel@mentor.com>,
- Peter Robinson <pbrobinson@gmail.com>, Nick Xie <nick@khadas.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Elaine Zhang <zhangqing@rock-chips.com>,
- Vicente Bergas <vicencb@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- Akash Gajjar <akash@openedev.com>, Ezequiel Garcia <ezequiel@collabora.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- =?UTF-8?Q?Andrius_=C5=A0tikonas?= <andrius@stikonas.eu>,
- =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
- LKML <linux-kernel@vger.kernel.org>, Oskari Lemmela <oskari@lemmela.net>,
- Robin Murphy <robin.murphy@arm.com>, Vivek Unune <npcomplete13@gmail.com>
+Cc: "andrew@lunn.ch" <andrew@lunn.ch>,
+ "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+ "heiko@sntech.de" <heiko@sntech.de>,
+ "geert+renesas@glider.be" <geert+renesas@glider.be>,
+ "narmstrong@baylibre.com" <narmstrong@baylibre.com>,
+ "patrice.chotard@st.com" <patrice.chotard@st.com>,
+ "paul@crapouillou.net" <paul@crapouillou.net>,
+ "eric@anholt.net" <eric@anholt.net>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "jason@lakedaemon.net" <jason@lakedaemon.net>,
+ "f.fainelli@gmail.com" <f.fainelli@gmail.com>, "lkp@intel.com" <lkp@intel.com>,
+ "gregory.clement@bootlin.com" <gregory.clement@bootlin.com>,
+ "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "wens@csie.org" <wens@csie.org>, "agross@kernel.org" <agross@kernel.org>,
+ "bcm-kernel-feedback-list@broadcom.com"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "rjui@broadcom.com" <rjui@broadcom.com>,
+ "sebastian.hesselbarth@gmail.com" <sebastian.hesselbarth@gmail.com>,
+ "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
+ "mazziesaccount@gmail.com" <mazziesaccount@gmail.com>,
+ "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
+ "nicolas.ferre@microchip.com" <nicolas.ferre@microchip.com>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "linux-rpi-kernel@lists.infradead.org" <linux-rpi-kernel@lists.infradead.org>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "kbuild-all@lists.01.org" <kbuild-all@lists.01.org>,
+ "sbranden@broadcom.com" <sbranden@broadcom.com>,
+ "sean.wang@kernel.org" <sean.wang@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ "wahrenst@gmx.net" <wahrenst@gmx.net>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ "linux-oxnas@groups.io" <linux-oxnas@groups.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+On Wed, Nov 13, 2019 at 11:06 AM Vaittinen, Matti
+<Matti.Vaittinen@fi.rohmeurope.com> wrote:
+> On Wed, 2019-11-13 at 10:40 +0100, Linus Walleij wrote:
 
-On Sun, Nov 10, 2019 at 4:52 PM Kever Yang <kever.yang@rock-chips.com> wrote:
+> > I think I already merged it, just send a new patch on top fixing the
+> > problem.
 >
-> Since there is no devfreq used for vdd_log, so the vdd_log(pwm regulator)
-> will be 'enable' with the dts node at a default PWM state with high or low
-> output. Both too high or too low for vdd_log is not good for the board,
-> add init voltage for driver to make the regulator get into a know output.
->
-> Note that this will be used by U-Boot for init voltage output, and this
-> is very important for it may get system hang somewhere during system
-> boot up with regulator enable and without this init value.
+> Hmm. Are you sure you did merge the pincontrol part already?
 
-I'm a tad bit confused here.  When U-Boot boots the kernel, how is the
-PWM configured?
+No I confused it for the GPIO part. Sorry!
 
-I remember folks going through a lot of work to make sure that we
-could actually _read_ the PWM state that the bootloader gave us and
-report it as the initial voltage.  If the kernel ends up needing to
-configure the PWM regulator's period for some reason, I remember it
-would actually pick something close.  Is that not working for you?
+Please keep iterarating this patch.
 
-For instance, on rk3288-veyron when I boot up mainline (no devfreq on
-rk3288-veyron on mainline) the vdd_logic reports 1.2 volts because it
-read what the bootloader left it as.
-
-...are you saying that U-Boot doesn't configure the PWM and you're
-trying to fix it up in the kernel?
-
--Doug
-
-
--Doug
+Yours,
+Linus Walleij
 
 _______________________________________________
 Linux-rockchip mailing list
