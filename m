@@ -2,84 +2,84 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C302FAD24
-	for <lists+linux-rockchip@lfdr.de>; Wed, 13 Nov 2019 10:40:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2811FADA7
+	for <lists+linux-rockchip@lfdr.de>; Wed, 13 Nov 2019 10:53:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oRdhiMU4dYNVrDekwr2TX/zIuv8Viv/P9wkFiGyVyNA=; b=BHYt1m1SUPz5Ys
-	zi7DmKvA7uR3KQH1bSjHMTaxJ40tBQk3I6LX33zt0iXJtuX2ntHln8vT8qPt6R9T5hurgg+vw6zWl
-	rJ4goKo0+C+X6DeXsYeBZ+QiakNRaTz9A5wEaASqR1g/So+7/zRR3DIRYsX5BjUuZ8AE+ZNOAGwN6
-	0Rftohvtwt/C4vP3pDuTVCGeAZHULwTQnux1QrtWeJfp1nf7PHreOeSNydyXhP2pk/NFlbPqDFdVU
-	y4CAp9DPvHpbLudij5Cg4Qli4ZEWyQ+3VQ9c87XQf2CE4ldqckFDUcBH3B9osuHOB8/cqzPkaLZBX
-	VR1jg/69Njed1syI5Sig==;
+	List-Owner; bh=AAwQSn1OUUxZxpv1ZmR48O9oLheGVb3nqaYoGFh6nRw=; b=Gt8ulBlaqPQg5O
+	j+iH9rALhKJKagPlkWbp6FDAHT4p15HwJio9AO8nGnFsh1hZ803uNj8NNtgDFxYgjM+He2pnF2YaI
+	g55pZGKhl7BfVwIdAVKF9IZSuyGeRN3f8JZ+xpG/NBdLuxj7WkUTu2mG84cddFTgIt9JUlbqpteiG
+	xp5ykFp0yLKZB9jBCpObpuLefdM8xD7V5IDslilMaT2YfdIA9lSmZOA7q2m80nOxsOoyZLQumhgsr
+	M7aWJZNZlN+xTDZ5Ivca0BODN7q3o35wyjpnJ5Vb59ps5b7XuOrwj1qXwgBxmc68iTKms29t20zUL
+	GM1boi5kNATlG1PvLcDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUp8f-0007MI-J7; Wed, 13 Nov 2019 09:40:37 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUp8b-0007K9-FR
- for linux-rockchip@lists.infradead.org; Wed, 13 Nov 2019 09:40:34 +0000
-Received: by mail-lj1-x244.google.com with SMTP id n21so1750303ljg.12
- for <linux-rockchip@lists.infradead.org>; Wed, 13 Nov 2019 01:40:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OrN8x9LyxKD7Xl1d/h9oz7KZmMmc0A5znbrf73E9+bA=;
- b=a676ZUZ7j8Q/YVK0Bi4A2cENhUW9DTDHjr8EReuSTbfFGUvF8kqNCs8Bo51EzHCTfr
- +kz0MvywQjdwCzed5RVZ/ltsXL1ng8RXtD1/6GPl8H7lg6uitxQgbRh7337hfbTPpxi7
- c0MPzJXnqSmZh5BK1mNl7g00o+3ot7uwReiUDx8mf+Xz1Qmy/8XCuM5WWG4bdkpxJ5O9
- LYO93Tg8FD4Z9PTaV5yL+ij91p4VjwPnYIyaurBh2OCqLjLQFUa58DJr7ylP/keLOwt9
- NA1P+BqzIB/OLwx5vA0TxDOn2k4Vuj1byrU1h72J11w+AOeOqJ3Z0rsAXcI5encccpgy
- Splg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=OrN8x9LyxKD7Xl1d/h9oz7KZmMmc0A5znbrf73E9+bA=;
- b=rTtTVaFcYUG7hlUj7FP6e03LJLehXKhWo9wPhCYHARDLi6Es1XmKoHT/2Cr0plb5jv
- FkcD6UtAGqy9r7u1/lY8H62DedAl+aT7AtzSkafzefKwcc1YTAz7gGL46WbvaJAogv5w
- mpYUxkdGG3EHwL1mQiZg1YbS41MxnWCtQ5XJgJBSRPEsViIoyDrfWo1Bok75Z5bzSzz5
- yxA9fJEIXJAwmPGVL0X1K2FbFLZ/EnDoMKGKmCsv/23w4wwSdULU8br/GN+yIcs4umBB
- V71HCqZF5gwbpnr1QAPuVVZ3hh8SIPDnHKxBjFLrsF9/y2i96XqXJ66raTIAeITnVaQp
- GA5A==
-X-Gm-Message-State: APjAAAWd9eH5iNBvjO2uJ1XWVFHaHE4YxGl8D/uKGFY8ag6NVTDyZqK5
- l9W2yupZkNU0ksrb+SIXJiM9APG9bSFzZd4u7MgS+g==
-X-Google-Smtp-Source: APXvYqyOFp98GI7jY2XSDtkSfkrTqobC6IABhD/Iv9amdhinzj3w5mpyUY8ScymlvcvvrEEwwPsb6sgbGb33/qncEqU=
-X-Received: by 2002:a2e:5c46:: with SMTP id q67mr1815120ljb.42.1573638029531; 
- Wed, 13 Nov 2019 01:40:29 -0800 (PST)
-MIME-Version: 1.0
+	id 1iUpLW-0005sJ-RW; Wed, 13 Nov 2019 09:53:54 +0000
+Received: from mailgate1.rohmeurope.com ([178.15.145.194])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUpLI-0005jF-7H; Wed, 13 Nov 2019 09:53:41 +0000
+X-AuditID: c0a8fbf4-199ff70000001fa6-4f-5dcbd29e1ef3
+Received: from smtp.reu.rohmeu.com (will-cas002.reu.rohmeu.com
+ [192.168.251.178])
+ by mailgate1.rohmeurope.com (Symantec Messaging Gateway) with SMTP id
+ AB.1A.08102.E92DBCD5; Wed, 13 Nov 2019 10:53:35 +0100 (CET)
+Received: from WILL-MAIL002.REu.RohmEu.com ([fe80::e0c3:e88c:5f22:d174]) by
+ WILL-CAS002.REu.RohmEu.com ([fe80::fc24:4cbc:e287:8659%12]) with mapi id
+ 14.03.0439.000; Wed, 13 Nov 2019 10:53:30 +0100
+From: "Vaittinen, Matti" <Matti.Vaittinen@fi.rohmeurope.com>
+To: "linus.walleij@linaro.org" <linus.walleij@linaro.org>
+Subject: Re: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
+Thread-Topic: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
+Thread-Index: AQHVmWQOgs5cHlsmlU+Vdtkf5ZbC06eIlAaAgAAGWoCAAC7LgIAAA7CA
+Date: Wed, 13 Nov 2019 09:53:29 +0000
+Message-ID: <dbe9aee7fba2b1745cb09c8aa998c875f38b0f36.camel@fi.rohmeurope.com>
 References: <20191112141819.GA22076@localhost.localdomain>
  <201911131438.KT6pnFZ7%lkp@intel.com>
  <ac16492e11899ef4ec981f7f2e84714c7d61d2a7.camel@fi.rohmeurope.com>
-In-Reply-To: <ac16492e11899ef4ec981f7f2e84714c7d61d2a7.camel@fi.rohmeurope.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 13 Nov 2019 10:40:17 +0100
-Message-ID: <CACRpkdYAmye8wT39fqy=LN+6pXDvrcQ0SyDTCvG7aSgea3Uumw@mail.gmail.com>
-Subject: Re: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
-To: "Vaittinen, Matti" <Matti.Vaittinen@fi.rohmeurope.com>
+ <CACRpkdYAmye8wT39fqy=LN+6pXDvrcQ0SyDTCvG7aSgea3Uumw@mail.gmail.com>
+In-Reply-To: <CACRpkdYAmye8wT39fqy=LN+6pXDvrcQ0SyDTCvG7aSgea3Uumw@mail.gmail.com>
+Accept-Language: en-US, de-DE
+Content-Language: de-DE
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [213.255.186.46]
+Content-ID: <8D9C4E9DDE4F5A4F822964BEFBCFD58A@de.rohmeurope.com>
+MIME-Version: 1.0
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Tf0wbVRzPu7tejx9HjlLggc7EJjrdwubijG/JtkD8dTNmGS7GOK14kxsl
+ 9gdpiykaYxmbpCVuA4mGrgxdgZF16NYyYQQHtMjqaq1rpYiUbAU2KWYlMyqpQ/BuZYO/3ue9
+ z6/vH99H4bJr0kKqUmvk9VpOrSDTiaGuu66itpBf+VTITaCfZu4SqD7RKUUXZv0ABac8OOr+
+ 9HsC+QcTBBqqDQP0b2JEilpPNgFk76pBK9N/SFBte5hAgYYIQM1LZzDkmolIUONgQIrcbUsA
+ hfvtJArXXQPIn3Ti6GI8gaE/b6zgqHHyvBRZI7MSNF83TaK57nEJOnzkaWTv8BHo1H/dEuQ5
+ 9ibqdX+FI7tvDKDjjhCBbra4SZRwzgL02dd70EKyBF3xWXCU9ASx4o3s4YVRkl349aiUPXXu
+ Q9Z2PUCyzlA9yZ6fdkrYxkARe8k2JWUdrkGSbbMsYqxjII6xrrMWkjUPBQk2Ghkg2YaTywTr
+ bv94X96BjJ0HOeP7+ysrtFt3v5OhCnsvkFXRXFP41gJuBs25VpBGQWY7XL4RwKwgnZIxYwC6
+ I52rFx+ArZ1uYAUURTI7oXVCKhrkzA7o9dkJEeNMUzac9z4h4hxmF5z8JESKcjmzG7p7MlLy
+ F2FzkwUTMcE8BtvPJO7F0Mxe2OYYlaSq7gA4PncTiEQaUwq/tZvv5QNmA7SYE1iqKx+6bi1K
+ UkMzsH0giKdwLozPLK++K+B3yRghzoAzT8Jv+remYDH83AFTKY/C5obY6gjZ8IeWWeIEyLOt
+ K7CtmW1rZts6s22d+UsgOQughqtUV3BGftsWPV+9Ra9TaYTjXZ3GBVIr+lcfWPHs8QCMAh5Q
+ QGGKXLq3zq+UZR3UldeoOIOqTF+t5g0eAClcIaf7TD6ljC7naj7g9br71EMUocinN8YalTJG
+ 7HqP56t4/X32YYpSQPqFESE0W89X8KZDlWrjGo1RaWJ4eqHcwGvLeT1XbVSVictRZhC2Q6Qy
+ hd6JnwU7bajiNMJrynoVbKZOxFtP49RIa8dpXEZodVq+MJ8uFaWMKFVVax8UzYN8Cihy6O6g
+ wGYK//RBzrxQgQkVR7xXxQojt0YVmkHWI75XN/32z2uFw8+WevYnc+Z+p3+JXZ45Gl0aL4km
+ zT9qPzKNqt/qTy8nlDvennzl+ERM/1LDF8NO9+X+kucUB5r6ZNc3345SFwfleduvPNPz8uPF
+ BWneiZzhor1jmcOu1y/1ZD0/ZDr0RkHvbY1uV0d9X+056bE7yrhnQ9dUy9+L9UkFYVBx2zbh
+ egP3P0by8N9kBAAA
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_014033_541291_AE15883B 
-X-CRM114-Status: GOOD (  12.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191113_015340_415003_897A1C8A 
+X-CRM114-Status: GOOD (  15.84  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ no trust [178.15.145.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,11 +110,11 @@ Cc: "andrew@lunn.ch" <andrew@lunn.ch>,
  "wens@csie.org" <wens@csie.org>, "agross@kernel.org" <agross@kernel.org>,
  "bcm-kernel-feedback-list@broadcom.com"
  <bcm-kernel-feedback-list@broadcom.com>,
- "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
+ "rjui@broadcom.com" <rjui@broadcom.com>,
  "sebastian.hesselbarth@gmail.com" <sebastian.hesselbarth@gmail.com>,
  "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
  "mazziesaccount@gmail.com" <mazziesaccount@gmail.com>,
- "rjui@broadcom.com" <rjui@broadcom.com>,
+ "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
  "nicolas.ferre@microchip.com" <nicolas.ferre@microchip.com>,
  "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
  "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
@@ -135,43 +135,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Nov 13, 2019 at 7:52 AM Vaittinen, Matti
-<Matti.Vaittinen@fi.rohmeurope.com> wrote:
-> On Wed, 2019-11-13 at 14:30 +0800, kbuild test robot wrote:
-> > Hi Matti,
-> >
-> > Thank you for the patch! Perhaps something to improve:
-> >
-> > [auto build test WARNING on 70d97e099bb426ecb3ad4bf31e88dbf2ef4b2e4c]
-> >
->
-> >    480        static int wmt_gpio_get_direction(struct gpio_chip
-> > *chip, unsigned offset)
-> >    481        {
-> >    482                struct wmt_pinctrl_data *data =
-> > gpiochip_get_data(chip);
-> >    483                u32 bank = WMT_BANK_FROM_PIN(offset);
-> >    484                u32 bit = WMT_BIT_FROM_PIN(offset);
-> >    485                u32 reg_dir = data->banks[bank].reg_dir;
-> >    486                u32 val;
-> >    487
-> >    488                val = readl_relaxed(data->base + reg_dir);
-> >    489                if (val & BIT(bit))
-> >  > 490                        GPIO_LINE_DIRECTION_OUT;
->
-> Right. Return is missing. I think I already fixed this - I guess I sent
-> wrong version... Sorry guys. I'll do v3 with only this return added -
-> and I'll send it to limited amount of recipients as I think most of you
-> guys may not be interested. Probably to Linus W, Geert and GPIO list
-> only. Let me know if you want to see the v3 (or other subsequent
-> patches)
+Hello Linus,
 
-I think I already merged it, just send a new patch on top fixing the
-problem.
+On Wed, 2019-11-13 at 10:40 +0100, Linus Walleij wrote:
+> On Wed, Nov 13, 2019 at 7:52 AM Vaittinen, Matti
+> <Matti.Vaittinen@fi.rohmeurope.com> wrote:
+> > On Wed, 2019-11-13 at 14:30 +0800, kbuild test robot wrote:
+> > > Hi Matti,
+> > > 
+> > > Thank you for the patch! Perhaps something to improve:
+> > > 
+> > > [auto build test WARNING on
+> > > 70d97e099bb426ecb3ad4bf31e88dbf2ef4b2e4c]
+> > > 
+> > >    480        static int wmt_gpio_get_direction(struct gpio_chip
+> > > *chip, unsigned offset)
+> > >    481        {
+> > >    482                struct wmt_pinctrl_data *data =
+> > > gpiochip_get_data(chip);
+> > >    483                u32 bank = WMT_BANK_FROM_PIN(offset);
+> > >    484                u32 bit = WMT_BIT_FROM_PIN(offset);
+> > >    485                u32 reg_dir = data->banks[bank].reg_dir;
+> > >    486                u32 val;
+> > >    487
+> > >    488                val = readl_relaxed(data->base + reg_dir);
+> > >    489                if (val & BIT(bit))
+> > >  > 490                        GPIO_LINE_DIRECTION_OUT;
+> > 
+> > Right. Return is missing. I think I already fixed this - I guess I
+> > sent
+> > wrong version... Sorry guys. I'll do v3 with only this return added
 
-Yours,
-Linus Walleij
+It appears I didn't send wrong patch. The whole wmt was left uncompiled
+as the folder was excluded from my build by arch and I didn't spot
+that. So I'll humbly raise my arm as a sign of an error ;)
 
+> > -
+> > and I'll send it to limited amount of recipients as I think most of
+> > you
+> > guys may not be interested. Probably to Linus W, Geert and GPIO
+> > list
+> > only. Let me know if you want to see the v3 (or other subsequent
+> > patches)
+> 
+> I think I already merged it, just send a new patch on top fixing the
+> problem.
+
+Hmmm. I don't think I received notification about the patch being
+applied... But in that case, please ignore v2 I sent some time ago -
+I'll do a fix patch on top of the already applied one then. I'll send
+it out soon(ish).
+
+Br,
+	Matti
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
