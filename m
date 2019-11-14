@@ -2,85 +2,131 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DB90FC3C0
-	for <lists+linux-rockchip@lfdr.de>; Thu, 14 Nov 2019 11:12:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 481E5FC4E7
+	for <lists+linux-rockchip@lfdr.de>; Thu, 14 Nov 2019 11:59:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wcWpQlCymmwVq20AzZysmLrzdegMHdBS5db+wAsdikQ=; b=FgEQ1CTCGRD2iT
-	sQlTvRPVNRX5ZkuZgGy/nNB1OTYDtSvof5FLQMuxUac/S0abZMthG6vOn6kUPVNLTIa1X9yTZMp7w
-	TDJ6faqvm/zzY6W9DYFqsUoaWA++elQwWIPoXGPaj+630bFefQgh8oDEXOz5jrAXLg4zI41f5zgtj
-	bb6CfnnmGWoZlVYM36JwWY9X5QDNWHTDewRKnH5J52THJTj+QVSUFIYv+yXTJn6vkHzCIFxcSKGS3
-	KzXIah/EujDv57t2p2pO3ErX2XrbhHoSACAiBoeMI7CDRZvKQkAIx8uCb4VfFC0bFdELQlaxGtmNJ
-	JYP7JAs+vUNTaGNLhnWg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7YicGkIcHE4XVCkxZ7MUQ8nYLQ8wkBMNsbeO1Wz6mKs=; b=D1zMgsLbxlHO7m
+	Q7jBFxF/8qqDayKccfaG7Wzdu/AGK2Y7wWvsnF5a38DLfBkI0Tg7z0iZhSfmvnL1ffSWtUI/odXZ3
+	z8eQN5+it5RkXCTqGlUPFkcO3YvubwIh33ZWaTXH9TH9PrNVDJKRkNsKkaGOTkBEzFvveFF61pxE2
+	yQS3BUujDqqmP7IQ1hjZSadp1wjj0Xk6QXIKhuhoGXGUhCSG98qWZrZoJ93MfdZp64yyDPQr0HILR
+	2jb7AXEj+qt3hC2TtjNOqqqb32bjt7N5b9M4ENx8IqiEY0HDubxW4lKZIvQmumMey1tU712Jw7Qoz
+	hbIxMyowJRaNi9CTRaFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVC76-0005JJ-6q; Thu, 14 Nov 2019 10:12:32 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+	id 1iVCqX-0001jg-Iq; Thu, 14 Nov 2019 10:59:29 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVC70-0005IW-J8
- for linux-rockchip@lists.infradead.org; Thu, 14 Nov 2019 10:12:30 +0000
-Received: by mail-oi1-x244.google.com with SMTP id n16so4782304oig.2
- for <linux-rockchip@lists.infradead.org>; Thu, 14 Nov 2019 02:12:25 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=czlgr7HU7Vvx1oz4YcL++jzJA41dhdHs3kwlTjDH3Qw=;
- b=jpVFC4gQHpnv2YRlpGvWyK5thx10fVRT+NQ3I0g6embi2RjqIxz0KiDcsJHGE9FKKV
- XEd1fe7T42B0VbI/Sj0u4wiKaYiYYlVO7HnMjRht9+3fpuNNuKYKHo1YO9L/idn9N9km
- ECq1Z+iwWU4/kfrNW/BypQ3FUhA1jnsvoOet8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=czlgr7HU7Vvx1oz4YcL++jzJA41dhdHs3kwlTjDH3Qw=;
- b=JN7Fo+1u71O9CiQc6l7HvPyvQc31dq7+++gaXpZD/uTTwUa9fE+mSWpnH+YvNGkkII
- zWBelrasB6XR0YWmqDN9I3GhAvKdPwMg9xbrLhGjMxMeRJ7LSjygs/pJPqqlINO3QJ5R
- mjitmcr2aHs8hRbTmnRLanc/v91DrSCT6Ul+ktEQQHu5gytOqEY1TW/S1TFcPC5AOnRb
- Pv2l0ssplmZWozNyazhyv9IU2PJLRNDuQbtkggx9FKm7aQySe5N0OoVxY9am2XlO7pGe
- fChOMwhtOwwb5GLxQtdg5B92fGlh7dBeZyTXcskVnAW5q2v7oN+x2yqEXt4Ms7wkiycf
- IcQQ==
-X-Gm-Message-State: APjAAAWWiwkR21PxR1roKAkYsEXYRx5G/osvF/1U1VPQ7OKyUCvhRva2
- 2sUQ9grhjF2kI6tReMYcQu4WhTasMs8KQ6/TAk9KKw==
-X-Google-Smtp-Source: APXvYqyM/a5Zkj393VW+Fl4/5pJ3GUCJw7Qd7KGh/KDrgVKYT73ao2RaSpKSdAA1ee8O2esuBU+/ytVhjYH3QpsBRWw=
-X-Received: by 2002:aca:39d7:: with SMTP id g206mr2666631oia.101.1573726344499; 
- Thu, 14 Nov 2019 02:12:24 -0800 (PST)
+ id 1iVCqE-0001VA-Ua; Thu, 14 Nov 2019 10:59:13 +0000
+Received: from [IPv6:2804:431:c7f0:da1c:a086:2727:e196:fd8a] (unknown
+ [IPv6:2804:431:c7f0:da1c:a086:2727:e196:fd8a])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: koike)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 6CDCA291662;
+ Thu, 14 Nov 2019 10:59:01 +0000 (GMT)
+Subject: Re: [PATCH v11 02/11] media: staging: rkisp1: add document for rkisp1
+ meta buffer format
+To: Hans Verkuil <hverkuil@xs4all.nl>, linux-rockchip@lists.infradead.org
+References: <20191114051242.14651-1-helen.koike@collabora.com>
+ <20191114051242.14651-3-helen.koike@collabora.com>
+ <09d4f683-d03d-46c9-e9d2-b8cceb72446e@xs4all.nl>
+From: Helen Koike <helen.koike@collabora.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=helen.koike@collabora.com; keydata=
+ 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
+Message-ID: <9cb116f6-64f4-1510-b128-8657d6d4889b@collabora.com>
+Date: Thu, 14 Nov 2019 07:58:56 -0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-References: <2485717.1SzL54aMiy@e123338-lin>
- <20191104221228.3588-1-andrzej.p@collabora.com>
- <20191104221228.3588-4-andrzej.p@collabora.com>
- <20191108160954.GA17321@arm.com>
- <20191113020146.GB2746@jamwan02-TSP300>
- <20191113113954.GN23790@phenom.ffwll.local>
- <20191114015220.GA16456@jamwan02-TSP300>
-In-Reply-To: <20191114015220.GA16456@jamwan02-TSP300>
-From: Daniel Vetter <daniel@ffwll.ch>
-Date: Thu, 14 Nov 2019 11:12:13 +0100
-Message-ID: <CAKMK7uH06iu9OTz-1ZTbv6oVBHtBojSQE6sUu1GWfWk1om8LQQ@mail.gmail.com>
-Subject: Re: [PATCHv2 3/4] drm/komeda: use afbc helpers
-To: "james qian wang (Arm Technology China)" <james.qian.wang@arm.com>
+In-Reply-To: <09d4f683-d03d-46c9-e9d2-b8cceb72446e@xs4all.nl>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_021226_691415_9447F884 
-X-CRM114-Status: GOOD (  31.99  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191114_025911_274931_7514ED6F 
+X-CRM114-Status: GOOD (  16.16  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,204 +139,142 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: nd <nd@arm.com>, Mihail Atanassov <Mihail.Atanassov@arm.com>,
- "kernel@collabora.com" <kernel@collabora.com>,
- =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, Liviu Dudau <Liviu.Dudau@arm.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Sandy Huang <hjc@rock-chips.com>, Maxime Ripard <mripard@kernel.org>,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- Ayan Halder <Ayan.Halder@arm.com>, Sean Paul <sean@poorly.run>,
- Brian Starkey <Brian.Starkey@arm.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
+ kernel@collabora.com, heiko@sntech.de, Jacob Chen <jacob-chen@rock-chips.com>,
+ jacob-chen@iotwrt.com, gregkh@linuxfoundation.org, jeffy.chen@rock-chips.com,
+ zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ robh+dt@kernel.org, hans.verkuil@cisco.com, laurent.pinchart@ideasonboard.com,
+ sakari.ailus@linux.intel.com, zhengsq@rock-chips.com, mchehab@kernel.org,
+ ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, Nov 14, 2019 at 2:52 AM james qian wang (Arm Technology China)
-<james.qian.wang@arm.com> wrote:
-> On Wed, Nov 13, 2019 at 12:39:54PM +0100, Daniel Vetter wrote:
-> > On Wed, Nov 13, 2019 at 02:01:53AM +0000, james qian wang (Arm Technology China) wrote:
-> > > On Fri, Nov 08, 2019 at 04:09:54PM +0000, Ayan Halder wrote:
-> > > > On Mon, Nov 04, 2019 at 11:12:27PM +0100, Andrzej Pietrasiewicz wrote:
-> > > > > There are afbc helpers available.
-> > > > >
-> > > > > Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-> > > > > ---
-> > > > >  .../arm/display/komeda/komeda_format_caps.h   |  1 -
-> > > > >  .../arm/display/komeda/komeda_framebuffer.c   | 44 +++++++------------
-> > > > >  2 files changed, 17 insertions(+), 28 deletions(-)
-> > > > >
-> > > > > diff --git a/drivers/gpu/drm/arm/display/komeda/komeda_format_caps.h b/drivers/gpu/drm/arm/display/komeda/komeda_format_caps.h
-> > > > > index 32273cf18f7c..607eea80e60c 100644
-> > > > > --- a/drivers/gpu/drm/arm/display/komeda/komeda_format_caps.h
-> > > > > +++ b/drivers/gpu/drm/arm/display/komeda/komeda_format_caps.h
-> > > > > @@ -33,7 +33,6 @@
-> > > > >
-> > > > >  #define AFBC_TH_LAYOUT_ALIGNMENT       8
-> > > > >  #define AFBC_HEADER_SIZE               16
-> > > > > -#define AFBC_SUPERBLK_ALIGNMENT                128
-> > > > >  #define AFBC_SUPERBLK_PIXELS           256
-> > > > >  #define AFBC_BODY_START_ALIGNMENT      1024
-> > > > >  #define AFBC_TH_BODY_START_ALIGNMENT   4096
-> > > > > diff --git a/drivers/gpu/drm/arm/display/komeda/komeda_framebuffer.c b/drivers/gpu/drm/arm/display/komeda/komeda_framebuffer.c
-> > > > > index 1b01a625f40e..e9c87551a5b8 100644
-> > > > > --- a/drivers/gpu/drm/arm/display/komeda/komeda_framebuffer.c
-> > > > > +++ b/drivers/gpu/drm/arm/display/komeda/komeda_framebuffer.c
-> > > > > @@ -4,6 +4,7 @@
-> > > > >   * Author: James.Qian.Wang <james.qian.wang@arm.com>
-> > > > >   *
-> > > > >   */
-> > > > > +#include <drm/drm_afbc.h>
-> > > > >  #include <drm/drm_device.h>
-> > > > >  #include <drm/drm_fb_cma_helper.h>
-> > > > >  #include <drm/drm_gem.h>
-> > > > > @@ -43,8 +44,7 @@ komeda_fb_afbc_size_check(struct komeda_fb *kfb, struct drm_file *file,
-> > > > >         struct drm_framebuffer *fb = &kfb->base;
-> > > > >         const struct drm_format_info *info = fb->format;
-> > > > >         struct drm_gem_object *obj;
-> > > > > -       u32 alignment_w = 0, alignment_h = 0, alignment_header, n_blocks, bpp;
-> > > > > -       u64 min_size;
-> > > > > +       u32 alignment_w = 0, alignment_h = 0, alignment_header, bpp;
-> > > > >
-> > > > >         obj = drm_gem_object_lookup(file, mode_cmd->handles[0]);
-> > > > >         if (!obj) {
-> > > > > @@ -52,19 +52,15 @@ komeda_fb_afbc_size_check(struct komeda_fb *kfb, struct drm_file *file,
-> > > > >                 return -ENOENT;
-> > > > >         }
-> > > > >
-> > > > > -       switch (fb->modifier & AFBC_FORMAT_MOD_BLOCK_SIZE_MASK) {
-> > > > > -       case AFBC_FORMAT_MOD_BLOCK_SIZE_32x8:
-> > > > > -               alignment_w = 32;
-> > > > > -               alignment_h = 8;
-> > > > > -               break;
-> > > > > -       case AFBC_FORMAT_MOD_BLOCK_SIZE_16x16:
-> > > > > -               alignment_w = 16;
-> > > > > -               alignment_h = 16;
-> > > > > -               break;
-> > > > > -       default:
-> > > > > -               WARN(1, "Invalid AFBC_FORMAT_MOD_BLOCK_SIZE: %lld.\n",
-> > > > > -                    fb->modifier & AFBC_FORMAT_MOD_BLOCK_SIZE_MASK);
-> > > > > -               break;
-> > > > > +       if (!drm_afbc_get_superblk_wh(fb->modifier, &alignment_w, &alignment_h))
-> > > > > +               return -EINVAL;
-> > > > > +
-> > > > > +       if ((alignment_w != 16 || alignment_h != 16) &&
-> > > > > +           (alignment_w != 32 || alignment_h != 8)) {
-> > > > > +               DRM_DEBUG_KMS("Unsupported afbc tile w/h [%d/%d]\n",
-> > > > > +                             alignment_w, alignment_h);
-> > > > > +
-> > > > > +               return -EINVAL;
-> > > > To be honest, the previous code looks much more readable
-> > > > >         }
-> > > > >
-> > > > >         /* tiled header afbc */
-> > > > > @@ -84,20 +80,14 @@ komeda_fb_afbc_size_check(struct komeda_fb *kfb, struct drm_file *file,
-> > > > >                 goto check_failed;
-> > > > >         }
-> > > > >
-> > > > > -       n_blocks = (kfb->aligned_w * kfb->aligned_h) / AFBC_SUPERBLK_PIXELS;
-> > > > > -       kfb->offset_payload = ALIGN(n_blocks * AFBC_HEADER_SIZE,
-> > > > > -                                   alignment_header);
-> > > > > -
-> > > > >         bpp = komeda_get_afbc_format_bpp(info, fb->modifier);
-> > > > > -       kfb->afbc_size = kfb->offset_payload + n_blocks *
-> > > > > -                        ALIGN(bpp * AFBC_SUPERBLK_PIXELS / 8,
-> > > > > -                              AFBC_SUPERBLK_ALIGNMENT);
-> > > > > -       min_size = kfb->afbc_size + fb->offsets[0];
-> > > > > -       if (min_size > obj->size) {
-> > > > > -               DRM_DEBUG_KMS("afbc size check failed, obj_size: 0x%zx. min_size 0x%llx.\n",
-> > > > > -                             obj->size, min_size);
-> > > > We need kfb->offset_payload and kfb->afbc_size to set some registers
-> > > > in d71_layer_update(). At this moment I feel like punching myself for
-> > > > making the suggestion to consider abstracting some of the komeda's afbc
-> > > > checks. To me it does not look like komeda(in the current shape) can take
-> > > > much advantage of the generic _afbc_fb_check() function (as was suggested
-> > > > previously by Danvet).
-> > > >
-> > > > However, I will let james.qian.wang@arm.com,
-> > > > Mihail.Atanassov@arm.com, Ben.Davis@arm.com comment here to see if
-> > > > there could be a way of abstracting the afbc bits from komeda.
-> > > >
-> > >
-> > > Hi all:
-> > >
-> > > Since the current generic drm_afbc helpers only support afbc_1.1, but
-> > > komeda needs support both afbc1.1/1.2, so I think we can:
-> > > - Add afbc1.2 support to drm afbc helpers.
-> > > - for the afbc_payload_offset, can we add this member to
-> > >   drm_framebuffer ?
-> > > - The aligned_w/h are important for afbc, so can we have them in
-> > >   drm_framebuffer ?
-> >
-> > How expensive is it to recompute these from a struct drm_framebuffer?
-> >
-> > I'd just go with one function which computes all these derived values, and
-> > stuffs them into a struct drm_afbc. Then drivers call that once or so.
-> >
->
-> A struct drm_afbc, good idea, I like it. :-)
->
-> and we can compute it when do the afbc size check like
->
->   drm_afbc_check_fb_size(..., &komeda_fb->drm_afbc);
-
-Discussed this also with Andrzej on irc on where exactly to place
-stuff. I think ideally we'd be able to get rid of the custom
-malidp_fb_create completely, and komeda should also be able to get rid
-of most of the open-coded checks (it's largely reinveting
-drm_gem_fb_create_with_funcs, imo better to just call that first, then
-then do a few more calls of the specific things you need to have
-computed in addition).
--Daniel
-
->
-> Thanks.
-> James
->
-> > For reworking drm_framebuffer itself I think it's probably a bit too
-> > earlier. And if we do it, we should maybe go a bit more bold, aiming to
-> > property-fy all the framebuffer settings, maybe even making it extensible,
-> > and have drivers handle a corresponding drm_framebuffer_state.
-> >
-> > A third option would be to create a drm_afbc_framebuffer which embeds
-> > drm_framebuffer and which drivers would need to use. But also feels a bit
-> > like too much churn. Recomputing should be quick enough and much easier.
-> > -Daniel
-> >
-> > >
-> > > Thanks
-> > > James
-> > >
-> > > > Thanks anyways for taking a stab at this.
-> > > > -Ayan
-> > > > > +
-> > > > > +       if (!drm_afbc_check_fb_size(mode_cmd->pitches[0], bpp,
-> > > > > +                                   mode_cmd->width, mode_cmd->height,
-> > > > > +                                   alignment_w, alignment_h,
-> > > > > +                                   obj->size, mode_cmd->offsets[0],
-> > > > > +                                   AFBC_SUPERBLK_ALIGNMENT))
-> > > > >                 goto check_failed;
-> > > > > -       }
-> > > > >
-> > > > >         fb->obj[0] = obj;
-> > > > >         return 0;
-> > > > > --
-> > > > > 2.17.1
-> >
-> > --
-> > Daniel Vetter
-> > Software Engineer, Intel Corporation
-> > http://blog.ffwll.ch
 
 
+On 11/14/19 6:21 AM, Hans Verkuil wrote:
+> On 11/14/19 6:12 AM, Helen Koike wrote:
+>> From: Jacob Chen <jacob2.chen@rock-chips.com>
+>>
+>> This commit add document for rkisp1 meta buffer format
+>>
+>> Signed-off-by: Jacob Chen <jacob-chen@rock-chips.com>
+>> [refactored for upstream]
+>> Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> 
+> checkpatch gives me:
+> 
+> WARNING: Missing Signed-off-by: line by nominal patch author 'Jacob Chen <jacob2.chen@rock-chips.com>'
+> 
+> Looking at this series I see duplicate Signed-off-by entries for Jacob Chen and a total
+> of three different email addresses:
+> 
+> jacob2.chen@rock-chips.com
+> jacob-chen@rock-chips.com
+> cc@rock-chips.com
 
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-+41 (0) 79 365 57 48 - http://blog.ffwll.ch
+And I see a name in the Maintainers file as Jacob Chen <jacob-chen@iotwrt.com>.
+I was wondering if I could replace the email by jacob-chen@iotwrt.com, or if I should
+keep the original ones.
+
+Helen
+
+> 
+> It's confusing.
+> 
+> Regards,
+> 
+> 	Hans
+> 
+>>
+>> ---
+>>
+>> Changes in v11: None
+>> Changes in v10:
+>> - unsquash
+>>
+>> Changes in v9:
+>> - squash
+>> - migrate to staging
+>> - remove meta-formats.rst update
+>>
+>> Changes in v8:
+>> - Add SPDX in the header
+>> - Remove emacs configs
+>> - Fix doc style
+>>
+>> Changes in v7:
+>> - s/correspond/corresponding
+>> - s/use/uses
+>> - s/docuemnt/document
+>>
+>>  .../uapi/v4l/pixfmt-meta-rkisp1-params.rst    | 23 +++++++++++++++++++
+>>  .../uapi/v4l/pixfmt-meta-rkisp1-stat.rst      | 22 ++++++++++++++++++
+>>  2 files changed, 45 insertions(+)
+>>  create mode 100644 drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst
+>>  create mode 100644 drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst
+>>
+>> diff --git a/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst b/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst
+>> new file mode 100644
+>> index 000000000000..103b5cb79b7c
+>> --- /dev/null
+>> +++ b/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst
+>> @@ -0,0 +1,23 @@
+>> +.. SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+>> +
+>> +.. _v4l2-meta-fmt-rkisp1-params:
+>> +
+>> +============================
+>> +V4L2_META_FMT_RK_ISP1_PARAMS
+>> +============================
+>> +
+>> +Rockchip ISP1 Parameters Data
+>> +
+>> +Description
+>> +===========
+>> +
+>> +This format describes input parameters for the Rockchip ISP1.
+>> +
+>> +It uses c-struct :c:type:`rkisp1_isp_params_cfg`, which is defined in
+>> +the ``linux/rkisp1-config.h`` header file.
+>> +
+>> +The parameters consist of multiple modules.
+>> +The module won't be updated if the corresponding bit was not set in module_*_update.
+>> +
+>> +.. kernel-doc:: include/uapi/linux/rkisp1-config.h
+>> +   :functions: rkisp1_isp_params_cfg
+>> diff --git a/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst b/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst
+>> new file mode 100644
+>> index 000000000000..4ad303f96421
+>> --- /dev/null
+>> +++ b/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst
+>> @@ -0,0 +1,22 @@
+>> +.. SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+>> +
+>> +.. _v4l2-meta-fmt-rkisp1-stat:
+>> +
+>> +=============================
+>> +V4L2_META_FMT_RK_ISP1_STAT_3A
+>> +=============================
+>> +
+>> +
+>> +Rockchip ISP1 Statistics Data
+>> +
+>> +Description
+>> +===========
+>> +
+>> +This format describes image color statistics information generated by the Rockchip
+>> +ISP1.
+>> +
+>> +It uses c-struct :c:type:`rkisp1_stat_buffer`, which is defined in
+>> +the ``linux/rkisp1-config.h`` header file.
+>> +
+>> +.. kernel-doc:: include/uapi/linux/rkisp1-config.h
+>> +   :functions: rkisp1_stat_buffer
+>>
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
