@@ -2,42 +2,41 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 422D8FC75F
-	for <lists+linux-rockchip@lfdr.de>; Thu, 14 Nov 2019 14:26:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B71D2FC80E
+	for <lists+linux-rockchip@lfdr.de>; Thu, 14 Nov 2019 14:45:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oi1hSkgk1Ri+rJTXrgwjfvcmo0lWQ+w4ORlGiE+1lik=; b=crQF+66NgBNqhW
-	hgiJYBVACHLPkBvf7eo7qKizTkF1ICQm64u4/SLQmnL/FKAeY/23FXK115eEhLJX8lIWD2pgPVl4G
-	ololGl1PAP2GHl3yfFNhT3wr14dPpZpAxNkCRDUkZe1AwwKOMazMrtaZ+BbTklr1Fu4zCoJMLjuoF
-	IPOkdqvlfMovg6g/r9KScIVTGFc3zZK9cXzVjHrdU8296SW9dmAMLbJIqqG3ISNodR0EmjqibSt+o
-	vQicxm57aKuNXWH06H4hKhrCjW243aMvwoSWkGyr5XeU4zR4LfMGkFwEeInkel7TWK715tqPbPdIW
-	eqkLIEhbGBhlWVtLioTQ==;
+	List-Owner; bh=dJFVHWHB7qrqxMFxfMB6Mf0Z73h3XbYxn1oA+MzwePk=; b=jXd+Wc11nq8q6H
+	NtuPMmp5Izi1yG1m71vMpnf2/AEdz4L+TzYX7pYBUlHC+ZtwhYLR2gLS5CYfm89ZaNu3Knsaf6SZZ
+	G39sdXNa4dWeA2SsqFGKBqjiTXZKmK12J+4pBhYu/ZascfH+jdUUzVIpvqNMRv4snSXg4w7SB3jdu
+	GqXg58QCG6ZlyqgnlwDlxRe518jPa06rAugYezk5L4ks5OQ7j8rVpp+nCZ6uB6kGCl0aH6YzUYmC6
+	B4sLzGHJGLLHXazlEdRvnLzs33pIlcerWI8kBlozmMYx+LwHD32PA5oF4RojHPuDwUxhcZJjJ8dTL
+	DlzuegvoujJmpiT4c4uA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVF8b-0001EM-93; Thu, 14 Nov 2019 13:26:17 +0000
+	id 1iVFRL-0001wX-0y; Thu, 14 Nov 2019 13:45:39 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVF8M-000119-G9; Thu, 14 Nov 2019 13:26:05 +0000
+ id 1iVFRG-0001va-TY; Thu, 14 Nov 2019 13:45:37 +0000
 Received: from wf0530.dip.tu-dresden.de ([141.76.182.18] helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iVF8H-0002V4-Fs; Thu, 14 Nov 2019 14:25:57 +0100
+ id 1iVFRA-0002bz-Dj; Thu, 14 Nov 2019 14:45:28 +0100
 From: Heiko Stuebner <heiko@sntech.de>
-To: Markus Reichl <m.reichl@fivetechno.de>
-Subject: Re: [PATCH v2] arm64: dts: rockchip: Add SDR104 mode to SD-card I/F
- on rk3399-roc-pc
-Date: Thu, 14 Nov 2019 14:25:56 +0100
-Message-ID: <1918981.kTmXGv9Lqf@phil>
-In-Reply-To: <25466090-3b24-2695-10fb-88c59be3f149@fivetechno.de>
-References: <25466090-3b24-2695-10fb-88c59be3f149@fivetechno.de>
+To: Abhishek Pandit-Subedi <abhishekpandit@chromium.org>
+Subject: Re: [PATCH] ARM: dts: rockchip: Add brcm bluetooth for rk3288-veyron
+Date: Thu, 14 Nov 2019 14:45:22 +0100
+Message-ID: <3639233.d3cbfcQTlM@phil>
+In-Reply-To: <20191112004700.185304-1-abhishekpandit@chromium.org>
+References: <20191112004700.185304-1-abhishekpandit@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_052602_699073_94DCC47E 
-X-CRM114-Status: GOOD (  15.79  )
+X-CRM114-CacheID: sfid-20191114_054535_256767_55CDF814 
+X-CRM114-Status: GOOD (  30.32  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,131 +57,488 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- 'Ulf Hansson' <ulf.hansson@linaro.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- linux-arm-kernel@lists.infradead.org
+ linux-rockchip@lists.infradead.org, dianders@chromium.org,
+ linux-kernel@vger.kernel.org, linux-bluetooth@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Markus,
+Hi,
 
-Am Dienstag, 12. November 2019, 09:45:36 CET schrieb Markus Reichl:
-> Add SDR104 capability and regulators to SD card node.
-
-> While at it, fix a typo in lcd pinctrl and remove two
-> undocumented bindings from pmic.
-
-A commit message like this always is a good indicator that this wants to
-be multiple patches ;-) [Keywords: "While at it", "And", ...]
-
-
-> Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
-> ---
-> v2: Remove always-on from vcc3v0_sd
-> ---
->  .../boot/dts/rockchip/rk3399-roc-pc.dtsi      | 30 +++++++++++++++----
->  1 file changed, 24 insertions(+), 6 deletions(-)
+Am Dienstag, 12. November 2019, 01:47:00 CET schrieb Abhishek Pandit-Subedi:
+> This enables the Broadcom uart bluetooth driver on uart0 and gives it
+> ownership of its gpios. In order to use this, you must enable the
+> following kconfig options:
+> - CONFIG_BT_HCIUART_BCM
+> - CONFIG_SERIAL_DEV
 > 
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-> index d1eb55c855b3..a31099f7620b 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-> @@ -135,6 +135,19 @@
->  		vin-supply = <&vcc_1v8>;
->  	};
->  
-> +	vcc3v0_sd: vcc3v0-sd {
-> +		compatible = "regulator-fixed";
-> +		enable-active-high;
-> +		gpio = <&gpio4 RK_PD6 GPIO_ACTIVE_HIGH>;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&vcc3v0_sd_en>;
-> +		regulator-name = "vcc3v0_sd";
-> +		regulator-boot-on;
-> +		regulator-min-microvolt = <3000000>;
-> +		regulator-max-microvolt = <3000000>;
-> +		vin-supply = <&vcc3v3_sys>;
-> +	};
-> +
->  	vcc3v3_sys: vcc3v3-sys {
->  		compatible = "regulator-fixed";
->  		regulator-name = "vcc3v3_sys";
-> @@ -293,8 +306,6 @@
->  		vcc10-supply = <&vcc3v3_sys>;
->  		vcc11-supply = <&vcc3v3_sys>;
->  		vcc12-supply = <&vcc3v3_sys>;
-> -		vcc13-supply = <&vcc3v3_sys>;
-> -		vcc14-supply = <&vcc3v3_sys>;
-
-Separate patch with nice description perhaps? (remove undocumented inputs)
-
-
->  		vddio-supply = <&vcc_3v0>;
->  
->  		regulators {
-> @@ -576,7 +587,7 @@
->  
->  	lcd-panel {
->  		lcd_panel_reset: lcd-panel-reset {
-> -			rockchip,pins = <4 RK_PD6 RK_FUNC_GPIO &pcfg_pull_up>;
-> +			rockchip,pins = <4 RK_PD5 RK_FUNC_GPIO &pcfg_pull_up>;
-
-Separate patch please, "use correct pin for lcd-reset pinctrl" or so.
-
->  		};
->  	};
->  
-> @@ -602,6 +613,10 @@
->  		vsel2_gpio: vsel2-gpio {
->  			rockchip,pins = <1 RK_PB6 RK_FUNC_GPIO &pcfg_pull_down>;
->  		};
-> +
-> +		pmic_int_l: pmic-int-l {
-> +			rockchip,pins = <1 RK_PC5 RK_FUNC_GPIO &pcfg_pull_up>;
-> +		};
->  	};
->  
->  	sdio-pwrseq {
-> @@ -610,9 +625,9 @@
->  		};
->  	};
->  
-> -	pmic {
-> -		pmic_int_l: pmic-int-l {
-> -			rockchip,pins = <1 RK_PC5 RK_FUNC_GPIO &pcfg_pull_up>;
-
-separate patch please talking about regrouping the two
-separate pmic pin-groups.
-
-
-> +	sdmmc {
-> +		vcc3v0_sd_en: vcc3v0-sd-en {
-> +			rockchip,pins = <4 RK_PD6 RK_FUNC_GPIO &pcfg_pull_none>;
->  		};
->  	};
->  
-> @@ -667,6 +682,9 @@
->  	cd-gpios = <&gpio0 RK_PA7 GPIO_ACTIVE_LOW>;
->  	disable-wp;
->  	max-frequency = <150000000>;
-> +	sd-uhs-sdr104;
-> +	vmmc-supply = <&vcc3v0_sd>;
-> +	vqmmc-supply = <&vcc_sdio>;
-
-Alphabetical sorting of new properties please
-(status staying at the bottom though)
-
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_bus4>;
->  	status = "okay";
+> This is applicable to rk3288-veyron series boards that use the bcm43540
+> wifi+bt chips.
 > 
+> As part of this change, also refactor the pinctrl across the various
+> boards. All the boards using broadcom bluetooth shouldn't touch the
+> bt_dev_wake pin.
+> 
+> Signed-off-by: Abhishek Pandit-Subedi <abhishekpandit@chromium.org>
+
+looks good to me
+@dianders: does this look ok to you too?
+
+Just to confirm, I guess mickey and brain do not have the suspend_l pin
+settings? [They only seem to get the default pinctrl state but not the
+sleep state in @pinctrl]
 
 Thanks
 Heiko
+
+
+> ---
+> 
+> This patch enables using the Broadcom HCI UART driver with the
+> BCM43540 Wi-Fi + Bluetooth chip. This chip is used on a RK3288 based
+> board (Veyron) and these changes have been tested on the Minnie variant
+> of the board (i.e. rk3288-veyron-minnie.dts).
+> 
+> The changes are applicable to the minnie, mickey, speedy and brain
+> variants (all of which use the Broadcom chips). The bt-activity node was
+> removed for all Veyron boards and shouldn't affect the boards using
+> Marvell chips since they aren't using this out-of-band wakeup gpio.
+> 
+> A previous portion of this series adding the compatible string to the
+> hci_bcm driver has already been merged into bluetooth-next:
+> https://lore.kernel.org/r/4680AA6A-599F-4D5E-9A96-0655569BAE94@holtmann.org
+> 
+> There is also an ongoing series to fix up the baudrate settings and
+> configure the PCM parameters on bluetooth-next:
+> https://lore.kernel.org/linux-bluetooth/20191112001949.136377-1-abhishekpandit@chromium.org/
+> 
+> 
+>  arch/arm/boot/dts/rk3288-veyron-brain.dts     |  9 +++
+>  .../dts/rk3288-veyron-broadcom-bluetooth.dtsi | 26 ++++++++
+>  .../boot/dts/rk3288-veyron-chromebook.dtsi    | 21 -------
+>  arch/arm/boot/dts/rk3288-veyron-fievel.dts    |  2 -
+>  arch/arm/boot/dts/rk3288-veyron-jaq.dts       | 22 +++++++
+>  arch/arm/boot/dts/rk3288-veyron-jerry.dts     | 22 +++++++
+>  arch/arm/boot/dts/rk3288-veyron-mickey.dts    |  9 +++
+>  arch/arm/boot/dts/rk3288-veyron-minnie.dts    | 21 +++++++
+>  arch/arm/boot/dts/rk3288-veyron-pinky.dts     | 22 +++++++
+>  arch/arm/boot/dts/rk3288-veyron-speedy.dts    | 21 +++++++
+>  arch/arm/boot/dts/rk3288-veyron.dtsi          | 59 +++----------------
+>  11 files changed, 159 insertions(+), 75 deletions(-)
+>  create mode 100644 arch/arm/boot/dts/rk3288-veyron-broadcom-bluetooth.dtsi
+> 
+> diff --git a/arch/arm/boot/dts/rk3288-veyron-brain.dts b/arch/arm/boot/dts/rk3288-veyron-brain.dts
+> index 406146cbff29..aa33d09184ad 100644
+> --- a/arch/arm/boot/dts/rk3288-veyron-brain.dts
+> +++ b/arch/arm/boot/dts/rk3288-veyron-brain.dts
+> @@ -7,6 +7,7 @@
+>  
+>  /dts-v1/;
+>  #include "rk3288-veyron.dtsi"
+> +#include "rk3288-veyron-broadcom-bluetooth.dtsi"
+>  
+>  / {
+>  	model = "Google Brain";
+> @@ -40,6 +41,14 @@
+>  };
+>  
+>  &pinctrl {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <
+> +		/* Common for sleep and wake, but no owners */
+> +		&ddr0_retention
+> +		&ddrio_pwroff
+> +		&global_pwroff
+> +	>;
+> +
+>  	hdmi {
+>  		vcc50_hdmi_en: vcc50-hdmi-en {
+>  			rockchip,pins = <7 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
+> diff --git a/arch/arm/boot/dts/rk3288-veyron-broadcom-bluetooth.dtsi b/arch/arm/boot/dts/rk3288-veyron-broadcom-bluetooth.dtsi
+> new file mode 100644
+> index 000000000000..ffa14049c3b5
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/rk3288-veyron-broadcom-bluetooth.dtsi
+> @@ -0,0 +1,26 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Google Veyron (and derivatives) fragment for the Broadcom 43450 bluetooth
+> + * chip.
+> + *
+> + * Copyright 2019 Google, Inc
+> + */
+> +
+> +&uart0 {
+> +	bluetooth {
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&bt_host_wake_l>, <&bt_enable_l>,
+> +			    <&bt_dev_wake>;
+> +
+> +		compatible = "brcm,bcm43540-bt";
+> +		host-wakeup-gpios	= <&gpio4 RK_PD7 GPIO_ACTIVE_HIGH>;
+> +		shutdown-gpios		= <&gpio4 RK_PD5 GPIO_ACTIVE_HIGH>;
+> +		device-wakeup-gpios	= <&gpio4 RK_PD2 GPIO_ACTIVE_HIGH>;
+> +		max-speed		= <3000000>;
+> +
+> +		brcm,bt-sco-routing	= [01];
+> +		brcm,pcm-interface-rate	= [02];
+> +		brcm,pcm-sync-mode	= [01];
+> +		brcm,pcm-clock-mode	= [01];
+> +	};
+> +};
+> diff --git a/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi b/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi
+> index ffb60f880b39..05112c25176d 100644
+> --- a/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi
+> +++ b/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi
+> @@ -136,27 +136,6 @@
+>  };
+>  
+>  &pinctrl {
+> -	pinctrl-0 = <
+> -		/* Common for sleep and wake, but no owners */
+> -		&ddr0_retention
+> -		&ddrio_pwroff
+> -		&global_pwroff
+> -
+> -		/* Wake only */
+> -		&suspend_l_wake
+> -		&bt_dev_wake_awake
+> -	>;
+> -	pinctrl-1 = <
+> -		/* Common for sleep and wake, but no owners */
+> -		&ddr0_retention
+> -		&ddrio_pwroff
+> -		&global_pwroff
+> -
+> -		/* Sleep only */
+> -		&suspend_l_sleep
+> -		&bt_dev_wake_sleep
+> -	>;
+> -
+>  	buttons {
+>  		ap_lid_int_l: ap-lid-int-l {
+>  			rockchip,pins = <0 RK_PA6 RK_FUNC_GPIO &pcfg_pull_up>;
+> diff --git a/arch/arm/boot/dts/rk3288-veyron-fievel.dts b/arch/arm/boot/dts/rk3288-veyron-fievel.dts
+> index 9a0f55085839..7e7ef8e06b8d 100644
+> --- a/arch/arm/boot/dts/rk3288-veyron-fievel.dts
+> +++ b/arch/arm/boot/dts/rk3288-veyron-fievel.dts
+> @@ -18,8 +18,6 @@
+>  		     "google,veyron-fievel-rev0", "google,veyron-fievel",
+>  		     "google,veyron", "rockchip,rk3288";
+>  
+> -	/delete-node/ bt-activity;
+> -
+>  	vccsys: vccsys {
+>  		compatible = "regulator-fixed";
+>  		regulator-name = "vccsys";
+> diff --git a/arch/arm/boot/dts/rk3288-veyron-jaq.dts b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
+> index a4966e505a2f..171ba6185b6d 100644
+> --- a/arch/arm/boot/dts/rk3288-veyron-jaq.dts
+> +++ b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
+> @@ -273,6 +273,28 @@
+>  };
+>  
+>  &pinctrl {
+> +	pinctrl-names = "default", "sleep";
+> +	pinctrl-0 = <
+> +		/* Common for sleep and wake, but no owners */
+> +		&ddr0_retention
+> +		&ddrio_pwroff
+> +		&global_pwroff
+> +
+> +		/* Wake only */
+> +		&suspend_l_wake
+> +		&bt_dev_wake_awake
+> +	>;
+> +	pinctrl-1 = <
+> +		/* Common for sleep and wake, but no owners */
+> +		&ddr0_retention
+> +		&ddrio_pwroff
+> +		&global_pwroff
+> +
+> +		/* Sleep only */
+> +		&suspend_l_sleep
+> +		&bt_dev_wake_sleep
+> +	>;
+> +
+>  	buck-5v {
+>  		drv_5v: drv-5v {
+>  			rockchip,pins = <7 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
+> diff --git a/arch/arm/boot/dts/rk3288-veyron-jerry.dts b/arch/arm/boot/dts/rk3288-veyron-jerry.dts
+> index a6ee44f0fe13..66f00d28801a 100644
+> --- a/arch/arm/boot/dts/rk3288-veyron-jerry.dts
+> +++ b/arch/arm/boot/dts/rk3288-veyron-jerry.dts
+> @@ -418,6 +418,28 @@
+>  };
+>  
+>  &pinctrl {
+> +	pinctrl-names = "default", "sleep";
+> +	pinctrl-0 = <
+> +		/* Common for sleep and wake, but no owners */
+> +		&ddr0_retention
+> +		&ddrio_pwroff
+> +		&global_pwroff
+> +
+> +		/* Wake only */
+> +		&suspend_l_wake
+> +		&bt_dev_wake_awake
+> +	>;
+> +	pinctrl-1 = <
+> +		/* Common for sleep and wake, but no owners */
+> +		&ddr0_retention
+> +		&ddrio_pwroff
+> +		&global_pwroff
+> +
+> +		/* Sleep only */
+> +		&suspend_l_sleep
+> +		&bt_dev_wake_sleep
+> +	>;
+> +
+>  	buck-5v {
+>  		drv_5v: drv-5v {
+>  			rockchip,pins = <7 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
+> diff --git a/arch/arm/boot/dts/rk3288-veyron-mickey.dts b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
+> index 06a6a9554c48..ffd1121d19be 100644
+> --- a/arch/arm/boot/dts/rk3288-veyron-mickey.dts
+> +++ b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
+> @@ -7,6 +7,7 @@
+>  
+>  /dts-v1/;
+>  #include "rk3288-veyron.dtsi"
+> +#include "rk3288-veyron-broadcom-bluetooth.dtsi"
+>  
+>  / {
+>  	model = "Google Mickey";
+> @@ -411,6 +412,14 @@
+>  };
+>  
+>  &pinctrl {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <
+> +		/* Common for sleep and wake, but no owners */
+> +		&ddr0_retention
+> +		&ddrio_pwroff
+> +		&global_pwroff
+> +	>;
+> +
+>  	hdmi {
+>  		power_hdmi_on: power-hdmi-on {
+>  			rockchip,pins = <7 RK_PB3 RK_FUNC_GPIO &pcfg_pull_none>;
+> diff --git a/arch/arm/boot/dts/rk3288-veyron-minnie.dts b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+> index c833716dbe48..39f76e02875f 100644
+> --- a/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+> +++ b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+> @@ -7,6 +7,7 @@
+>  
+>  /dts-v1/;
+>  #include "rk3288-veyron-chromebook.dtsi"
+> +#include "rk3288-veyron-broadcom-bluetooth.dtsi"
+>  
+>  / {
+>  	model = "Google Minnie";
+> @@ -344,6 +345,26 @@
+>  };
+>  
+>  &pinctrl {
+> +	pinctrl-names = "default", "sleep";
+> +	pinctrl-0 = <
+> +		/* Common for sleep and wake, but no owners */
+> +		&ddr0_retention
+> +		&ddrio_pwroff
+> +		&global_pwroff
+> +
+> +		/* Wake only */
+> +		&suspend_l_wake
+> +	>;
+> +	pinctrl-1 = <
+> +		/* Common for sleep and wake, but no owners */
+> +		&ddr0_retention
+> +		&ddrio_pwroff
+> +		&global_pwroff
+> +
+> +		/* Sleep only */
+> +		&suspend_l_sleep
+> +	>;
+> +
+>  	buck-5v {
+>  		drv_5v: drv-5v {
+>  			rockchip,pins = <7 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
+> diff --git a/arch/arm/boot/dts/rk3288-veyron-pinky.dts b/arch/arm/boot/dts/rk3288-veyron-pinky.dts
+> index f420499f300a..71e6629cc208 100644
+> --- a/arch/arm/boot/dts/rk3288-veyron-pinky.dts
+> +++ b/arch/arm/boot/dts/rk3288-veyron-pinky.dts
+> @@ -64,6 +64,28 @@
+>  };
+>  
+>  &pinctrl {
+> +	pinctrl-names = "default", "sleep";
+> +	pinctrl-0 = <
+> +		/* Common for sleep and wake, but no owners */
+> +		&ddr0_retention
+> +		&ddrio_pwroff
+> +		&global_pwroff
+> +
+> +		/* Wake only */
+> +		&suspend_l_wake
+> +		&bt_dev_wake_awake
+> +	>;
+> +	pinctrl-1 = <
+> +		/* Common for sleep and wake, but no owners */
+> +		&ddr0_retention
+> +		&ddrio_pwroff
+> +		&global_pwroff
+> +
+> +		/* Sleep only */
+> +		&suspend_l_sleep
+> +		&bt_dev_wake_sleep
+> +	>;
+> +
+>  	/delete-node/ lcd;
+>  
+>  	backlight {
+> diff --git a/arch/arm/boot/dts/rk3288-veyron-speedy.dts b/arch/arm/boot/dts/rk3288-veyron-speedy.dts
+> index 2f2989bc3f9c..e354c61a45e7 100644
+> --- a/arch/arm/boot/dts/rk3288-veyron-speedy.dts
+> +++ b/arch/arm/boot/dts/rk3288-veyron-speedy.dts
+> @@ -7,6 +7,7 @@
+>  
+>  /dts-v1/;
+>  #include "rk3288-veyron-chromebook.dtsi"
+> +#include "rk3288-veyron-broadcom-bluetooth.dtsi"
+>  #include "cros-ec-sbs.dtsi"
+>  
+>  / {
+> @@ -279,6 +280,26 @@
+>  };
+>  
+>  &pinctrl {
+> +	pinctrl-names = "default", "sleep";
+> +	pinctrl-0 = <
+> +		/* Common for sleep and wake, but no owners */
+> +		&ddr0_retention
+> +		&ddrio_pwroff
+> +		&global_pwroff
+> +
+> +		/* Wake only */
+> +		&suspend_l_wake
+> +	>;
+> +	pinctrl-1 = <
+> +		/* Common for sleep and wake, but no owners */
+> +		&ddr0_retention
+> +		&ddrio_pwroff
+> +		&global_pwroff
+> +
+> +		/* Sleep only */
+> +		&suspend_l_sleep
+> +	>;
+> +
+>  	buck-5v {
+>  		drv_5v: drv-5v {
+>  			rockchip,pins = <7 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
+> diff --git a/arch/arm/boot/dts/rk3288-veyron.dtsi b/arch/arm/boot/dts/rk3288-veyron.dtsi
+> index 7525e3dd1fc1..54a6838d73f5 100644
+> --- a/arch/arm/boot/dts/rk3288-veyron.dtsi
+> +++ b/arch/arm/boot/dts/rk3288-veyron.dtsi
+> @@ -23,30 +23,6 @@
+>  		reg = <0x0 0x0 0x0 0x80000000>;
+>  	};
+>  
+> -	bt_activity: bt-activity {
+> -		compatible = "gpio-keys";
+> -		pinctrl-names = "default";
+> -		pinctrl-0 = <&bt_host_wake>;
+> -
+> -		/*
+> -		 * HACK: until we have an LPM driver, we'll use an
+> -		 * ugly GPIO key to allow Bluetooth to wake from S3.
+> -		 * This is expected to only be used by BT modules that
+> -		 * use UART for comms.  For BT modules that talk over
+> -		 * SDIO we should use a wakeup mechanism related to SDIO.
+> -		 *
+> -		 * Use KEY_RESERVED here since that will work as a wakeup but
+> -		 * doesn't get reported to higher levels (so doesn't confuse
+> -		 * Chrome).
+> -		 */
+> -		bt-wake {
+> -			label = "BT Wakeup";
+> -			gpios = <&gpio4 RK_PD7 GPIO_ACTIVE_HIGH>;
+> -			linux,code = <KEY_RESERVED>;
+> -			wakeup-source;
+> -		};
+> -
+> -	};
+>  
+>  	power_button: power-button {
+>  		compatible = "gpio-keys";
+> @@ -82,22 +58,17 @@
+>  		clocks = <&rk808 RK808_CLKOUT1>;
+>  		clock-names = "ext_clock";
+>  		pinctrl-names = "default";
+> -		pinctrl-0 = <&bt_enable_l>, <&wifi_enable_h>;
+> +		pinctrl-0 = <&wifi_enable_h>;
+>  
+>  		/*
+> -		 * Depending on the actual card populated GPIO4 D4 and D5
+> +		 * Depending on the actual card populated GPIO4 D4
+>  		 * correspond to one of these signals on the module:
+>  		 *
+>  		 * D4:
+>  		 * - SDIO_RESET_L_WL_REG_ON
+>  		 * - PDN (power down when low)
+> -		 *
+> -		 * D5:
+> -		 * - BT_I2S_WS_BT_RFDISABLE_L
+> -		 * - No connect
+>  		 */
+> -		reset-gpios = <&gpio4 RK_PD4 GPIO_ACTIVE_LOW>,
+> -			      <&gpio4 RK_PD5 GPIO_ACTIVE_LOW>;
+> +		reset-gpios = <&gpio4 RK_PD4 GPIO_ACTIVE_LOW>;
+>  	};
+>  
+>  	vcc_5v: vcc-5v {
+> @@ -481,26 +452,6 @@
+>  };
+>  
+>  &pinctrl {
+> -	pinctrl-names = "default", "sleep";
+> -	pinctrl-0 = <
+> -		/* Common for sleep and wake, but no owners */
+> -		&ddr0_retention
+> -		&ddrio_pwroff
+> -		&global_pwroff
+> -
+> -		/* Wake only */
+> -		&bt_dev_wake_awake
+> -	>;
+> -	pinctrl-1 = <
+> -		/* Common for sleep and wake, but no owners */
+> -		&ddr0_retention
+> -		&ddrio_pwroff
+> -		&global_pwroff
+> -
+> -		/* Sleep only */
+> -		&bt_dev_wake_sleep
+> -	>;
+> -
+>  	pcfg_pull_none_drv_8ma: pcfg-pull-none-drv-8ma {
+>  		bias-disable;
+>  		drive-strength = <8>;
+> @@ -622,6 +573,10 @@
+>  		bt_dev_wake_awake: bt-dev-wake-awake {
+>  			rockchip,pins = <4 RK_PD2 RK_FUNC_GPIO &pcfg_output_high>;
+>  		};
+> +
+> +		bt_dev_wake: bt-dev-wake {
+> +			rockchip,pins = <4 RK_PD2 RK_FUNC_GPIO &pcfg_pull_none>;
+> +		};
+>  	};
+>  
+>  	tpm {
+> 
+
+
 
 
 
