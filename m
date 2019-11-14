@@ -2,66 +2,66 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BABA9FC74F
-	for <lists+linux-rockchip@lfdr.de>; Thu, 14 Nov 2019 14:25:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03120FC756
+	for <lists+linux-rockchip@lfdr.de>; Thu, 14 Nov 2019 14:25:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Y+LLKckI+mzpk198aGxfqT7FPJLscXIzpwb8N5gmT0E=; b=JWC
-	EmmjGfvGbkHgSWBbj9wgmQnCe2Ahtgiih6hFlYmxwtmQtcA7IvMp2EV1au0xDofj+3YU2yuvMntG4
-	0xQHWERBHB3gi0Gb6Sw8lUfbzvUGE/rR0k4mnEIWpRt3N0blC8IaFkjBIyE55I9ukaL2o3UwLzygN
-	PZy6QBbiCQSSeLY+yZuPNmZEBtc874UANY2+PiQth6cwNU0qc6aD4VqSKiqcF1y8mSNqb4ELoD8AZ
-	/WMFP90TEbNxEgAGkk5syKEDmTlbxas94K7Ar3+sJNlo0i9kpaLAsmBOsCfXjoQFCi28Srqsu4g+O
-	ZdW584h+M0CH3Pv6z9VhgswnjDPsYqg==;
+	References:List-Owner; bh=5P4XtGO+McP/g+Ih4HSPD3ixT5qZuZlrI5suAi/2Eqk=; b=JLt
+	FGWzPoMVTmVq39E+PBtkRY4BGt+6kWiRF8nHKNauJS1AjsPXbo2a4sRpc9H9lAAKiIfGzmmY5CXga
+	a1c+ENbydmLwWYX2sX8S5LCYjFcRQuChJDJA0IoJ9bbFXHtW9ITE4IwiM64w5G+QDSJlM7QNNkO1v
+	xbtYY3ljbZBWb8MX8FMpo3V8G+iCcL7YQG+zDv4N9/Icot+CfgutBOSME6in7sGRUPMzBVarBw6I8
+	XYfOUDg5kF/M68Q5hwGS3mdze2eS171ctyCO02FhzlqEE9Z0s8UGHTfM8i7ojNktXjLs/WH78/+5x
+	DRR0qnsPO/R8Y2xObdZIVBseR8h5KYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVF7L-0007WK-6k; Thu, 14 Nov 2019 13:24:59 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iVF84-0000jY-FW; Thu, 14 Nov 2019 13:25:44 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVF7B-0007Mk-KO; Thu, 14 Nov 2019 13:24:50 +0000
-Received: by mail-wm1-x342.google.com with SMTP id l17so5662588wmh.0;
- Thu, 14 Nov 2019 05:24:48 -0800 (PST)
+ id 1iVF7n-0000WN-B6; Thu, 14 Nov 2019 13:25:28 +0000
+Received: by mail-wm1-x343.google.com with SMTP id 8so5891261wmo.0;
+ Thu, 14 Nov 2019 05:25:26 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
- bh=mH8gSNIgKvgPetxbf7rz5MC4m16Vu7th8OeEJ1GZ3WA=;
- b=Bpr0h/OXlj7EmeJlqKo5Wxz48vyUoDHAdh0gSAeyCXdohmi5MPgIVj/TyCBuekAhF3
- gFp1ZwAyxRa3FeV7WaFB4OKxsHBcczf9n3bWeyGQocy/bQpENfSzWnxjFeLPkLUP7jZh
- oXApnfs7K0AeY1U4I6hYhIp5y1GAq+mMdoRjK7tzUcYNP0BghxA71HMGPkO9ouzmzmOk
- UgAOfc4VFrmZUladOiDb+8iL6BPdGlzmcCH2CRPNVHF5OY/2EoZBPhJRAaJWei+bhj1j
- Q25DDOekDlNrc0KXWe7VfOidfEK0JbYFGucPhFe/0fHohJAUZ/Sz5oOEHXwPXmvYmEMc
- +Mrw==
+ bh=q25FqYYq1HlyGPjqgeEbhuqnD600bhraE2cbn15efDk=;
+ b=Rds8wS/qzXNcvC3Yd9f/9XdyvTQZ3Uht/UdVssSaiVWMebYp+LefE9/zU1mQKhPYcG
+ rqPaBRv9FIUj1gh70+cLk7DG/OrEI9Zf+eFRgqaRCH+dZam7uZLaGPgmIGf4MQz6UeNy
+ BtAq2oFoy958LNz9eMEe0z+wc4DgSymvgksD4Oh9j846cWK2FiE2j66n2K13H+fgH8Y1
+ P5Qss2xAvPiMNCGzltZv3vh8w0Kgclob0u9jLh9M2yumRm2YjnEDIOc+njNf16DNfWuP
+ nWHjjdqV1qnlKajPHaqXymwBjZ3sKCpaT6Kd70M99pjohJRP0RP0Pf2lcpfp4LdLUw3i
+ VPQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=mH8gSNIgKvgPetxbf7rz5MC4m16Vu7th8OeEJ1GZ3WA=;
- b=gwiRhVcz1QMOQ20UlG/Xcq8GXmBmcINHxcng3bXS0h1goTDdS/QDAm5M7MLMdVW0nm
- CpvPpbvPqWpZoEMD3T2UhabAXS99jSuL/VUYah6r3CWoZvF+VDxhEeTxoYuRkUP2aTRb
- YjOjrEGPXneeKIa6q2UQV5vr3RiahAZHE5X+5luQ/im/7qNeP25C4EQ63mMuif4qhtm1
- 6cYzjcScu2NAtt7CwORpocelNgVU5Tw6HBNEK5Fbm082er6Bh6RseU+AfjRoeSW8XNfg
- /u7CuxjJVK6bNODKpEiLRU38rpzJ5gCctXKisk6rslxhHFX8qwnxFldzPbbTFLScvH2P
- njYQ==
-X-Gm-Message-State: APjAAAUGxH+VZi3rOv+f/3NToKtlPmlMTTWIDOnVeYi70cnxsnGXdZEp
- UIM1+2JLxrJxepPGqS6aFVc=
-X-Google-Smtp-Source: APXvYqy0OzeEgjEqEz2o9WYlfcRhLzpSJymbbl4yemx7SJZX9xmA8PesRQtNcL6r6/RyfFNg5SDURQ==
-X-Received: by 2002:a1c:5fc4:: with SMTP id t187mr8347004wmb.142.1573737887726; 
- Thu, 14 Nov 2019 05:24:47 -0800 (PST)
+ bh=q25FqYYq1HlyGPjqgeEbhuqnD600bhraE2cbn15efDk=;
+ b=it1lhfxfkKJcDRakCCAxeqiM0lsU9dDw5RF3ZIE4ppRveP3TyDCZz5xClIwbgkxhya
+ 1ViTU9Bua6+S2TLbMzzokcgOXKz8uWA5M/ua+OR3aa18lnjbhdUa36jwc7ioVFQM2bRW
+ IbAijBPJTxUn+9vctO8xEHeur6MVE6zJQzC6Pok6/suWo4UgEqsorP7LNouGwgJusl2h
+ U4BpeO4TTRGkJTna6Ng4XXvF+3v+Jolx5F+/d26p8yiV/iGsHblzBW1+SSc8Ap2IAOEL
+ e1zDgq6hH7TLdzNM0h/wet6NkGyONFO2rkti0ieXlBCZMeXOSrwoXRgDc+fvAm+unrjR
+ /O+Q==
+X-Gm-Message-State: APjAAAU9Ns+GuPpZb/MXtq+IzXdwyNaT9dStVJR1maSumUVnhIYruvpX
+ UzGDZjq/pIX6WMGh+0eIrZsomWpW53Y=
+X-Google-Smtp-Source: APXvYqxDxppIeOPFqQWV1zapmmqSUALzzrPUav1RgTbEN138v5mV58ouZdmPPao15Uvzkn43K/TCWg==
+X-Received: by 2002:a1c:e386:: with SMTP id a128mr8279022wmh.52.1573737925338; 
+ Thu, 14 Nov 2019 05:25:25 -0800 (PST)
 Received: from localhost.localdomain ([197.254.95.38])
- by smtp.googlemail.com with ESMTPSA id a8sm5838054wme.11.2019.11.14.05.24.44
+ by smtp.googlemail.com with ESMTPSA id l4sm5897905wme.4.2019.11.14.05.25.22
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 14 Nov 2019 05:24:46 -0800 (PST)
+ Thu, 14 Nov 2019 05:25:24 -0800 (PST)
 From: Wambui Karuga <wambui.karugax@gmail.com>
 To: maarten.lankhorst@linux.intel.com, mripard@kernel.org, sean@poorly.run,
  airlied@linux.ie, daniel@ffwll.ch, hjc@rock-chips.com
-Subject: [PATCH 0/2] add new DRM_DEV_WARN macro
-Date: Thu, 14 Nov 2019 16:24:34 +0300
-Message-Id: <20191114132436.7232-1-wambui.karugax@gmail.com>
+Subject: [PATCH 1/2] drm/print: add DRM_DEV_WARN macro
+Date: Thu, 14 Nov 2019 16:25:19 +0300
+Message-Id: <20191114132520.7323-1-wambui.karugax@gmail.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_052449_692671_487D9236 
-X-CRM114-Status: UNSURE (   7.35  )
+X-CRM114-CacheID: sfid-20191114_052527_383770_CC3B6936 
+X-CRM114-Status: UNSURE (   7.74  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -69,7 +69,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (wambui.karugax[at]gmail.com)
@@ -102,18 +102,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This adds a new DRM_DEV_WARN helper macro for warnings log output that include
-device pointers. It also includes the use of the DRM_DEV_WARN macro in
-drm/rockchip to replace dev_warn.
+Add the DRM_DEV_WARN helper macro for printing warnings
+that use device pointers in their log output format.
+DRM_DEV_WARN can replace the use of dev_warn in such cases.
 
-Wambui Karuga (2):
-  drm/print: add DRM_DEV_WARN macro
-  drm/rockchip: use DRM_DEV_WARN macro in debug output
+Signed-off-by: Wambui Karuga <wambui.karugax@gmail.com>
+---
+ include/drm/drm_print.h | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
- drivers/gpu/drm/rockchip/inno_hdmi.c | 3 ++-
- include/drm/drm_print.h              | 9 +++++++++
- 2 files changed, 11 insertions(+), 1 deletion(-)
-
+diff --git a/include/drm/drm_print.h b/include/drm/drm_print.h
+index 5b8049992c24..6ddf91c0cb29 100644
+--- a/include/drm/drm_print.h
++++ b/include/drm/drm_print.h
+@@ -329,6 +329,15 @@ void drm_err(const char *format, ...);
+ #define DRM_WARN_ONCE(fmt, ...)						\
+ 	_DRM_PRINTK(_once, WARNING, fmt, ##__VA_ARGS__)
+ 
++/**
++ * Warning output.
++ *
++ * @dev: device pointer
++ * @fmt: printf() like format string.
++ */
++#define DRM_DEV_WARN(dev, fmt, ...)					\
++	drm_dev_printk(dev, KERN_WARNING, fmt, ##__VA_ARGS__)
++
+ /**
+  * Error output.
+  *
 -- 
 2.17.1
 
