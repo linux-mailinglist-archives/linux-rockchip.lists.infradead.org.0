@@ -2,54 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62D91FC0B0
-	for <lists+linux-rockchip@lfdr.de>; Thu, 14 Nov 2019 08:23:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F042BFC175
+	for <lists+linux-rockchip@lfdr.de>; Thu, 14 Nov 2019 09:22:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CtqLp3NW0Esf+8E/LAZn68317YwfxHZvavt3j0wBQac=; b=eyblMZU1Y61y78
-	Xr06PpAPB1klJRY8rr3tIJM9g+JPZX9j/qS6pePYwAUlvwKTbMpQL8+4UezoObipvl5jhnhYPMk8M
-	eFe5D4lcQgm4vb7dRKj4gBrIytEJPirVSy3eK9SkKp4ohH2l4IytK+mSSnfUquEHaEVNkkGTOt1le
-	o2LsRyOKfb75E3oSfqOfAE543ys/P0NL1NmzR6omF8a0dWS7NX62Lg/LMv4clatWpH3QwC3kh3vQ0
-	uVKzWGgLfOy/XHdaP6tRqFw3jkcmpDHAq6wjHZlKfwOMSbjdJ7v2mJ4E7o6FtDNx6wrL3f9f7PLDI
-	2z6HMxzO/A6ec37LSS3g==;
+	List-Owner; bh=zKX5gurUi4gw6G+XBbAbH8/Ifl1oakw6p2mQxn5dfm4=; b=AAqPqBtP8PpNjR
+	D/UxfijTIng+WlrrgDoGWQPjDmph890Zj85tuDzieYUD0jhELxsSUuSiv4t9PvNKEtHW8z5OIlehv
+	Xb23vCg1Yuy6uuvM56oeVfBfI9TFDFU497yx8zoLb3UT7dF2nLnpEeH2Gr3RKjY4CzYPoIUKUPQr0
+	VfnR6v3Db9gn22kWVpdsx8OdlIqFdNxyebN9tyaisXt59XRausbkdeyvuR0fa9i4BKaLF3vTXH8cp
+	4IynFPPDxI6JyjP7INnBnPQ/jTnaREiaHH52HgC1oY8SG7GEq78V8WaBu4qWBi6sPDxOe7aNsFIZA
+	UrZKXcsyJ5sOg/tp4g/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iV9TR-0005Vf-H7; Thu, 14 Nov 2019 07:23:25 +0000
+	id 1iVAOD-00039V-Gd; Thu, 14 Nov 2019 08:22:05 +0000
 Received: from lb1-smtp-cloud9.xs4all.net ([194.109.24.22])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iV9TF-0005KR-Mi; Thu, 14 Nov 2019 07:23:15 +0000
+ id 1iVANz-0002vP-S5; Thu, 14 Nov 2019 08:21:53 +0000
 Received: from [192.168.2.10] ([46.9.232.237])
  by smtp-cloud9.xs4all.net with ESMTPA
- id V9Sti8HvZ5b4MV9Swimr8r; Thu, 14 Nov 2019 08:23:03 +0100
-Subject: Re: [PATCH v11 00/11] Rockchip ISP Driver
-To: Greg KH <gregkh@linuxfoundation.org>,
- Helen Koike <helen.koike@collabora.com>
+ id VANri8XnO5b4MVANvin0UB; Thu, 14 Nov 2019 09:21:48 +0100
+Subject: Re: [PATCH v11 02/11] media: staging: rkisp1: add document for rkisp1
+ meta buffer format
+To: Helen Koike <helen.koike@collabora.com>, linux-rockchip@lists.infradead.org
 References: <20191114051242.14651-1-helen.koike@collabora.com>
- <20191114051722.GA316916@kroah.com>
+ <20191114051242.14651-3-helen.koike@collabora.com>
 From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <835e058f-59b7-32e8-8fc9-d5adeacfe021@xs4all.nl>
-Date: Thu, 14 Nov 2019 08:22:51 +0100
+Message-ID: <09d4f683-d03d-46c9-e9d2-b8cceb72446e@xs4all.nl>
+Date: Thu, 14 Nov 2019 09:21:43 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191114051722.GA316916@kroah.com>
+In-Reply-To: <20191114051242.14651-3-helen.koike@collabora.com>
 Content-Language: en-US
-X-CMAE-Envelope: MS4wfI3GlCbcBMayGg/klLN5FyDQG84A1RgsYbiEg9uA16/LV3+EqUHoZg0tkqv+XfUdnHqxFiujQbQ3G/7OMMMBGzw4rF20cRBB+tz3F9fKOOkErIqHV6i6
- IMFdoCJqMAeHc77G7PaZnfkTSShQb8FatH40pGaAi/dC2hng91vpPBiAb9fqhw6y7lKdgizL2QxfkUJ64CpDS1x6hFRHSL9wnHwNBByAQ8/4dkkELjHN/tGP
- GLdSnRlmXkuMGD9fLZlIXBnH9+GCd2pPTsQ+MNVhlhyUXi0/CWwonLvGaP4E+YBi4JOE+c+WhXTLnxpntEcPaYgJNnmDpbk1/8OqCcpj+1KLKQNMn6Ova8fj
- v9HyC6NRGhhkNsO/XU1saX5MGI7d6/bas0eoPLrvWaDZBTNHiS3G1Mhcob8OT53AvayR3qy/gp/IsEve37TEoSBk0mFKjApoBzo1iII0/wdzZ5GH1LAb/+bu
- tfCk7F/wJ4hWfkl0wFHrzbqB19tloyGLaEHvvPczy7pjtQmTHjuzoUPXqmE7pjuJrajn0HAZx39iL8FaYybg9RZaMzieMtN/0QGyijGMHCbKPMyK3jqOCsaI
- TW7IxyDQKF0g69q06Ma2EkTyugMAaAbGO5cjR+aVfl1Yh9lXaB4NEMGY95NjtG0WiJbcTnjfZqbyGQVmd5R+HTql0+bJ0Ouh5BHW61q/ZQcHkvTn49aOBQOe
- mQNcIxFIjSAbc1CHhU9D5clOmVN+7f3gh/fTdD5QnVEMFkoPz0wz5x48cXdDkT+UKhpmC6yBD3TN3hAHjWJ4qa51RBgQkw1sQbbxb9USb3pAiUs8Jrc2YLT/
- nIyAGiRYzG25zrsWVpQMrCBj28xKKSqSJA8tTCSsK2ff6e1qQshIjF27mSYYLUQXtYCBioMfAFgOb/t45L7hhqQcg3VgJm0NoAgpbg5+4Pt2PycBnCVkiqRh
- sIrsqA==
+X-CMAE-Envelope: MS4wfFzl5hYLISanSAOy5YJH10k6V2JleNvifodOgbTuK7g2UOD60o4XUFaAYIOZAvR1InLiLVdHYCzJ9Z6L6C4CnUomR6mLGajHDaCkCg396LZ1f9r9aQ+G
+ gN2iuawntRhSMYngC9fhq8AECGbNTg3V3xInnxIzl684TY5H1o0tGVd26/PLCaKf37Av7VC7bjkT9tsdSXH49eqV9zMWLaumD9vOrLehmSYa6q2rELD35Ohr
+ bKxEUaVDQtO9hDAAbwXrR7DiVBDDo+Svsjs1aHgObyJgvDxo8Vx5hqnvP7JSFye3t96/G9ZNbsiQ9lskGUJ2gZiWdAGyFA3v7XXSYTyvODNRvD5yq0Uu4WCL
+ 00cqCxXWvysVU7BTzFcUcxwKgqZrOEUVnqql4YG0Un+IX9IkdtP/z/ojRRRqQ3ihHxExeNC8OLk9AyvkYAcXefryb2YA2fbIqtHsi0OHkqn4nOYiymNuHYq9
+ nC4eSS+K/38be8Su3mgOtYdQuFFnCKgYQOlAc8epdCCRDNaqrKKIHafQc2jEedzhXAw5OULgDoI2+MKnXSu52RCRO+h0aaMkf0SVP0NH8qUPNAM+DTYCqyvZ
+ ejppe1um+UzFoGDaIJ2s+t6IGO7JI0EbP9YDvhg/H0xYE1rMBur8sN0W26zN6pVgkd3iC2glZk92UCJD8gYbV2muAxNldIvcoqlxht07xn1q72CJhXSPP+/1
+ Bd3SO97hTE65lZzn8Clp7AClF1ITCc8HwVnVmmUp9cHEje9RGLKDwCwqW5bX1lbhbIRAuhYI9SGnDX7nTuVTC3fn2kHIiGr4PTyQg00JqoKj4IPtdvlhfX15
+ Gu8UzEiCgEfC2/ey6PHQ+Sx1aYo+uX8fiwpBk2Lj1x4dHanYS3zayIeRUdlcBRYvXqKLnCR3cPXAgbh3TmcXcgee4AEozxdMc9T1ZtVbfForxx6qAfvLrxLP
+ lRF/uWKSvM8qLQYIS6Yf5/ATxospbYafk/bdIu5LzLvBuN8qXdd8oimrMY6GmiFjG6VauawshMbMMhZEKvWF7fh0n/Y=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_232313_900698_5DA77E35 
-X-CRM114-Status: GOOD (  13.23  )
+X-CRM114-CacheID: sfid-20191114_002152_066824_4DF91A02 
+X-CRM114-Status: GOOD (  16.69  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -57,8 +57,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [194.109.24.22 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,55 +71,133 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
- kernel@collabora.com, heiko@sntech.de, jacob-chen@iotwrt.com,
- zhengsq@rock-chips.com, jeffy.chen@rock-chips.com, zyc@rock-chips.com,
- linux-kernel@vger.kernel.org, tfiga@chromium.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org, hans.verkuil@cisco.com,
- laurent.pinchart@ideasonboard.com, sakari.ailus@linux.intel.com,
- mchehab@kernel.org, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: mark.rutland@arm.com, eddie.cai.linux@gmail.com, heiko@sntech.de,
+ laurent.pinchart@ideasonboard.com, kernel@collabora.com, zyc@rock-chips.com,
+ jacob-chen@iotwrt.com, hans.verkuil@cisco.com, zhengsq@rock-chips.com,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ jeffy.chen@rock-chips.com, robh+dt@kernel.org,
+ Jacob Chen <jacob-chen@rock-chips.com>, mchehab@kernel.org,
+ ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ sakari.ailus@linux.intel.com, Jacob Chen <jacob2.chen@rock-chips.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 11/14/19 6:17 AM, Greg KH wrote:
-> On Thu, Nov 14, 2019 at 02:12:31AM -0300, Helen Koike wrote:
->> Hello,
->>
->> This series adds the Rockchip Image Signal Processing Unit v1 driver to
->> staging.
->>
->> The main reason to be in staging is that people are already using it from the
->> mailing list (including libcamera), and having it in mainline makes the workflow
->> easier. Also, it is easier for other people to contribute back (with code
->> or testing the driver).
->>
->> We plan to actively work on this driver to get it our of staging.
->>
->> This patchset is also available at:
->> https://gitlab.collabora.com/koike/linux/tree/rockchip/isp/v11
->>
->> Libcamera patched to work with this version:
->> https://gitlab.collabora.com/koike/libcamera
->> (also sent to the mailing list)
->>
->> The major difference in v11 are:
->> - Fixed compiling warnings found with W=1
->> - Fixed checkpatch errors
->> - Add clock-names values in dt-bindings
->>
->> This series only touches MAINTAINERS file and drivers/staging/
+On 11/14/19 6:12 AM, Helen Koike wrote:
+> From: Jacob Chen <jacob2.chen@rock-chips.com>
 > 
-> Looks sane, but as this is drivers/staging/media I am guessing this will
-> go through the media kernel tree, not my staging tree, right?
+> This commit add document for rkisp1 meta buffer format
+> 
+> Signed-off-by: Jacob Chen <jacob-chen@rock-chips.com>
+> [refactored for upstream]
+> Signed-off-by: Helen Koike <helen.koike@collabora.com>
 
-Right, I'll take care of this.
+checkpatch gives me:
+
+WARNING: Missing Signed-off-by: line by nominal patch author 'Jacob Chen <jacob2.chen@rock-chips.com>'
+
+Looking at this series I see duplicate Signed-off-by entries for Jacob Chen and a total
+of three different email addresses:
+
+jacob2.chen@rock-chips.com
+jacob-chen@rock-chips.com
+cc@rock-chips.com
+
+It's confusing.
 
 Regards,
 
 	Hans
+
+> 
+> ---
+> 
+> Changes in v11: None
+> Changes in v10:
+> - unsquash
+> 
+> Changes in v9:
+> - squash
+> - migrate to staging
+> - remove meta-formats.rst update
+> 
+> Changes in v8:
+> - Add SPDX in the header
+> - Remove emacs configs
+> - Fix doc style
+> 
+> Changes in v7:
+> - s/correspond/corresponding
+> - s/use/uses
+> - s/docuemnt/document
+> 
+>  .../uapi/v4l/pixfmt-meta-rkisp1-params.rst    | 23 +++++++++++++++++++
+>  .../uapi/v4l/pixfmt-meta-rkisp1-stat.rst      | 22 ++++++++++++++++++
+>  2 files changed, 45 insertions(+)
+>  create mode 100644 drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst
+>  create mode 100644 drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst
+> 
+> diff --git a/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst b/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst
+> new file mode 100644
+> index 000000000000..103b5cb79b7c
+> --- /dev/null
+> +++ b/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst
+> @@ -0,0 +1,23 @@
+> +.. SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +
+> +.. _v4l2-meta-fmt-rkisp1-params:
+> +
+> +============================
+> +V4L2_META_FMT_RK_ISP1_PARAMS
+> +============================
+> +
+> +Rockchip ISP1 Parameters Data
+> +
+> +Description
+> +===========
+> +
+> +This format describes input parameters for the Rockchip ISP1.
+> +
+> +It uses c-struct :c:type:`rkisp1_isp_params_cfg`, which is defined in
+> +the ``linux/rkisp1-config.h`` header file.
+> +
+> +The parameters consist of multiple modules.
+> +The module won't be updated if the corresponding bit was not set in module_*_update.
+> +
+> +.. kernel-doc:: include/uapi/linux/rkisp1-config.h
+> +   :functions: rkisp1_isp_params_cfg
+> diff --git a/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst b/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst
+> new file mode 100644
+> index 000000000000..4ad303f96421
+> --- /dev/null
+> +++ b/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst
+> @@ -0,0 +1,22 @@
+> +.. SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +
+> +.. _v4l2-meta-fmt-rkisp1-stat:
+> +
+> +=============================
+> +V4L2_META_FMT_RK_ISP1_STAT_3A
+> +=============================
+> +
+> +
+> +Rockchip ISP1 Statistics Data
+> +
+> +Description
+> +===========
+> +
+> +This format describes image color statistics information generated by the Rockchip
+> +ISP1.
+> +
+> +It uses c-struct :c:type:`rkisp1_stat_buffer`, which is defined in
+> +the ``linux/rkisp1-config.h`` header file.
+> +
+> +.. kernel-doc:: include/uapi/linux/rkisp1-config.h
+> +   :functions: rkisp1_stat_buffer
+> 
+
 
 _______________________________________________
 Linux-rockchip mailing list
