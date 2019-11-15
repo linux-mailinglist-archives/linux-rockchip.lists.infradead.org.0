@@ -2,51 +2,59 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7886CFDC24
-	for <lists+linux-rockchip@lfdr.de>; Fri, 15 Nov 2019 12:19:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AD8AFDCB9
+	for <lists+linux-rockchip@lfdr.de>; Fri, 15 Nov 2019 12:53:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bODzPhXk3qA94KF7Ah5LxheSb1eZ0GmZ9JW6ctfHHOw=; b=Ja2hYEw0QyAul4
-	nMZtJi5yz72+kON4+VDVwp4/x3P8JtcoN5ujXKJqB3CitYARC2p8gubGF6Bh67gQuZ8nJshrKmY6f
-	r0rkJac5BJOjgUdS09w7r0FDvyn2549CiLrHJbAEcjt0wBWXMWYV0/YADQyw2j9U7XKxQQEjSH6NL
-	747q01qgSJQV5vrL065xvUt7YGh4UtP0JALfyoE0YKKsuA5ZGcLLdaKBI0igl0Zv76JMKQF4k7Uuo
-	Kw8kS28MHC+bd9af/a6I0un6qfCOWPBuDaQTG3pPXHicB2hsmUW+OJ+Wo27sWQdeWOCk0wENkbKXL
-	qbnI7l+iaUiwtpQCrP4Q==;
+	List-Owner; bh=T4HiM8EvMcb5qBscV9qht5qbA1l/q+cXGRNPDZ25r44=; b=Ji0RJzxGao8WNZ
+	t3sAhIq2EPLqorQN5YqjksF9E6p0mmTd3Am50jxDRdVlmPwGN1v8ktRBB0GMgP2EVtgo0qN9/reB+
+	ijBm9rCuEsrzi2LhjtOCag9s6LxQjuRiF7BHBp7O7uZ3eHxPDdF6V7W8DdT58No2kyQlCVPukBjju
+	Fag3iti2cZVdTRwDCfhV6uvO9G1RblH6l0aboRq5jdaU66ef1T5r5bjdThX1tmamHRdEy9xC5ofCl
+	POU1oqmZswvA0NR/VtW/Y3/eOrxHTH6UwENz8zRx3fgzf2b3O9ZejR8Ik8ZHSeGp5/DQK3Syv2Tf3
+	b+dLMckhbEMdXxVYq/eQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVZdj-0008MP-Ju; Fri, 15 Nov 2019 11:19:47 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1iVaA3-0004UQ-2F; Fri, 15 Nov 2019 11:53:11 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVZdf-0008Ia-0A; Fri, 15 Nov 2019 11:19:45 +0000
-Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iVZdC-0008IT-Uf; Fri, 15 Nov 2019 12:19:14 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Markus Reichl <m.reichl@fivetechno.de>
-Subject: Re: arm64: dts: rockchip: Disable HS400 for mmc on rk3399-roc-pc
-Date: Fri, 15 Nov 2019 12:19:13 +0100
-Message-ID: <3460135.SDF8zhHPq4@diego>
-In-Reply-To: <69472c06-8b21-c3d8-acad-1a0a292c0fa2@fivetechno.de>
-References: <20190301153348.29870-1-christoph.muellner@theobroma-systems.com>
- <2766673.iMURPl8gB5@phil>
- <69472c06-8b21-c3d8-acad-1a0a292c0fa2@fivetechno.de>
+ id 1iVa9t-0004MJ-Vp; Fri, 15 Nov 2019 11:53:03 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga008.jf.intel.com ([10.7.209.65])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 15 Nov 2019 03:53:00 -0800
+X-IronPort-AV: E=Sophos;i="5.68,308,1569308400"; d="scan'208";a="199178566"
+Received: from jnikula-mobl3.fi.intel.com (HELO localhost) ([10.237.66.161])
+ by orsmga008-auth.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 15 Nov 2019 03:52:56 -0800
+From: Jani Nikula <jani.nikula@linux.intel.com>
+To: Wambui Karuga <wambui.karugax@gmail.com>, maarten.lankhorst@linux.intel.com,
+ mripard@kernel.org, sean@poorly.run, airlied@linux.ie, daniel@ffwll.ch,
+ hjc@rock-chips.com
+Subject: Re: [PATCH 0/2] add new DRM_DEV_WARN macro
+In-Reply-To: <20191114132436.7232-1-wambui.karugax@gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+References: <20191114132436.7232-1-wambui.karugax@gmail.com>
+Date: Fri, 15 Nov 2019 13:52:53 +0200
+Message-ID: <8736ep1hm2.fsf@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_031943_198039_0C198C58 
-X-CRM114-Status: GOOD (  18.74  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191115_035302_038149_A99208B2 
+X-CRM114-Status: UNSURE (   8.07  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.115 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,233 +67,41 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Jeffy Chen <jeffy.chen@rock-chips.com>, robh+dt@kernel.org,
- Kishon Vijay Abraham I <kishon@ti.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- shawn.lin@rock-chips.com, Brian Norris <briannorris@chromium.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- linux-kernel@vger.kernel.org, Vicente Bergas <vicencb@gmail.com>,
- Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
- Tony Xie <tony.xie@rock-chips.com>,
- Klaus Goger <klaus.goger@theobroma-systems.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Randy Li <ayaka@soulik.info>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
- Christoph Muellner <christoph.muellner@theobroma-systems.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Markus,
+On Thu, 14 Nov 2019, Wambui Karuga <wambui.karugax@gmail.com> wrote:
+> This adds a new DRM_DEV_WARN helper macro for warnings log output that include
+> device pointers. It also includes the use of the DRM_DEV_WARN macro in
+> drm/rockchip to replace dev_warn.
 
-Am Freitag, 15. November 2019, 11:37:58 CET schrieb Markus Reichl:
-> Am 14.11.19 um 14:10 schrieb Heiko Stuebner:
-> > $subject is missing the [PATCH] prefix
-> will fix.
+I'm trying to solicit new struct drm_device based logging macros, and
+starting to convert to those. [1]
 
-no need to resend just for this ... just to keep in mind for future patches=
- ;-)
-
-
-> > Am Montag, 11. November 2019, 10:51:04 CET schrieb Markus Reichl:
-> >> Working with rootfs on two 128GB mmcs on rk3399-roc-pc.
-> >> =
-
-> >> One (mmc name 128G72, one screw hole) works fine in HS400 mode.
-> >> Other (mmc name DJNB4R, firefly on pcb, two screw holes) gets lots of
-> >> mmc1: "running CQE recovery", even hangs with damaged fs,
-> >> when running under heavy load, e.g. compiling kernel.
-> >> Both run fine with HS200.
-> >> =
-
-> >> Disabling CQ with patch mmc: core: Add MMC Command Queue Support kerne=
-l parameter [0] did not help.
-> >> [0] https://gitlab.com/ayufan-repos/rock64/linux-mainline-kernel/commi=
-t/54e264154b87dfe32a8359b2726e2d5611adbaf3
-> > =
-
-> > I'm hoping for some input from other people in Cc but your mail headers
-> > also referenced the drive-impendance series from Christoph [0], which
-> > it seems we need to poke the phy maintainer again.
-> > =
-
-> > Did you check if changing the impedance helped (like the signal dampeni=
-ng
-> > Philipp described in one of the replies there).
-> =
-
-> checked with
-> =
-
-> &emmc_phy {
-> +       drive-impedance-ohm =3D <33>;
-> =
-
-> gives no improvement:
-
-That is sad ... I guess we really should disable hs400 then ...
-that may give others more incentive to dive deeper ;-)
+BR,
+Jani.
 
 
-Heiko
-
-
-> [    1.688590] mmc1: CQHCI version 5.10
-> [    1.714157] mmc1: SDHCI controller on fe330000.sdhci [fe330000.sdhci] =
-using ADMA
-> [    1.797822] mmc1: Command Queue Engine enabled
-> [    1.798259] mmc1: new HS400 Enhanced strobe MMC card at address 0001
-> [    1.800034] mmcblk1: mmc1:0001 DJNB4R 116 GiB =
-
-> [    1.800643] mmcblk1boot0: mmc1:0001 DJNB4R partition 1 4.00 MiB
-> [    1.801408] mmcblk1boot1: mmc1:0001 DJNB4R partition 2 4.00 MiB
-> [    1.802886] mmcblk1rpmb: mmc1:0001 DJNB4R partition 3 4.00 MiB, charde=
-v (246:0)
-> ...
-> [  100.118020] mmc1: running CQE recovery
-> [  100.120890] ------------[ cut here ]------------
-> [  100.121310] mmc1: cqhci: spurious TCN for tag 2
-> [  100.121802] WARNING: CPU: 0 PID: 232 at drivers/mmc/host/cqhci.c:729 c=
-qhci_irq+0x30c/0x480
-> [  100.122530] Modules linked in: rfkill snd_soc_hdmi_codec dw_hdmi_i2s_a=
-udio dw_hdmi_cec rockchipdrm crct10dif_ce analogix_dp dw_mipi_dsi snd_soc_s=
-imple_card dw_hdmi cec snd_soc_rockchip_i2s snd_soc_simple_card_utils panfr=
-ost snd_soc_rockchip_pcm drm_kms_helper snd_soc_core gpu_sched snd_pcm_dmae=
-ngine syscopyarea sysfillrect sysimgblt snd_pcm fb_sys_fops snd_timer snd d=
-rm soundcore fusb302 tcpm typec rockchip_saradc drm_panel_orientation_quirk=
-s ipv6
-> [  100.126097] CPU: 0 PID: 232 Comm: kworker/0:2H Not tainted 5.4.0-rc7-n=
-ext-20191112-00007-g2ad177c77749 #44
-> [  100.126946] Hardware name: Firefly ROC-RK3399-PC Board (DT)
-> [  100.127454] Workqueue: kblockd blk_mq_run_work_fn
-> [  100.127885] pstate: 20000085 (nzCv daIf -PAN -UAO)
-> [  100.128318] pc : cqhci_irq+0x30c/0x480
-> [  100.128660] lr : cqhci_irq+0x30c/0x480
-> [  100.128997] sp : ffff800010003d10
-> [  100.129298] x29: ffff800010003d10 x28: 0000000000000000 =
-
-> [  100.129777] x27: 0000000000000001 x26: ffff8000108e0fe8 =
-
-> [  100.130257] x25: ffff0000f5ae5c98 x24: ffff800010b7e1a8 =
-
-> [  100.130737] x23: ffff800010b198c8 x22: ffff0000f5a80000 =
-
-> [  100.131216] x21: 0000000000000002 x20: 0000000000000002 =
-
-> [  100.131694] x19: ffff0000f5ae5c80 x18: 0000000000000010 =
-
-> [  100.132173] x17: 0000000000000000 x16: 0000000000000000 =
-
-> [  100.132653] x15: ffffffffffffffff x14: ffff800010b198c8 =
-
-> [  100.133132] x13: ffff800090003a77 x12: ffff800010003a7f =
-
-> [  100.133612] x11: ffff800010b30000 x10: ffff800010003a00 =
-
-> [  100.134092] x9 : 00000000ffffffd0 x8 : ffff80001045a060 =
-
-> [  100.134571] x7 : 000000000000025f x6 : ffff800010b979e2 =
-
-> [  100.135050] x5 : 0000000000000001 x4 : 0000000000000000 =
-
-> [  100.135529] x3 : 0000000000000000 x2 : 0000000000000000 =
-
-> [  100.136007] x1 : e005989da46f2500 x0 : 0000000000000000 =
-
-> [  100.136486] Call trace:
-> [  100.136719]  cqhci_irq+0x30c/0x480
-> [  100.137033]  sdhci_arasan_cqhci_irq+0x58/0x80
-> [  100.137430]  sdhci_irq+0xb8/0xbb8
-> [  100.137742]  __handle_irq_event_percpu+0x6c/0x170
-> [  100.138169]  handle_irq_event_percpu+0x34/0x88
-> [  100.138575]  handle_irq_event+0x44/0xc8
-> [  100.138927]  handle_fasteoi_irq+0xb4/0x160
-> [  100.139302]  generic_handle_irq+0x24/0x38
-> [  100.139670]  __handle_domain_irq+0x60/0xb8
-> [  100.140045]  gic_handle_irq+0xc0/0x158
-> [  100.140389]  el1_irq+0xb8/0x180
-> [  100.140684]  _raw_spin_unlock_irqrestore+0x20/0x48
-> [  100.141119]  sdhci_cqe_enable+0xec/0x108
-> [  100.141478]  sdhci_arasan_cqe_enable+0x4c/0x58
-> [  100.141880]  cqhci_request+0x2d0/0x500
-> [  100.142226]  mmc_cqe_start_req+0x50/0x60
-> [  100.142585]  mmc_blk_mq_issue_rq+0x430/0x794
-> [  100.142974]  mmc_mq_queue_rq+0x104/0x270
-> [  100.143332]  blk_mq_dispatch_rq_list+0xa8/0x580
-> [  100.143746]  blk_mq_sched_dispatch_requests+0xf4/0x1d8
-> [  100.144210]  __blk_mq_run_hw_queue+0xac/0x120
-> [  100.144605]  blk_mq_run_work_fn+0x1c/0x28
-> [  100.144974]  process_one_work+0x1e0/0x358
-> [  100.145340]  worker_thread+0x40/0x488
-> [  100.145679]  kthread+0x118/0x120
-> [  100.145977]  ret_from_fork+0x10/0x18
-> [  100.146302] ---[ end trace 6277099ad751ed64 ]---
-> [  100.213815] mmc1: running CQE recovery
-> [  100.413933] mmc1: running CQE recovery
-> =
-
-> > =
-
-> > [0] https://patchwork.kernel.org/patch/10835567/
-> > most current v2 it seems is https://patchwork.kernel.org/patch/10842421/
-> > =
-
-> >> Therefore I propose to disable HS400 mode on roc-pc for now.
-> > =
-
-> > Hoping for more input :-)
-> =
-
-> Hoping, too.
-> =
-
-> =
-
-> Gru=DF,
-> > =
-
-> > =
-
-> > Heiko
-> > =
-
-> > =
-
-> >> Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
-> >> ---
-> >>  arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi | 2 --
-> >>  1 file changed, 2 deletions(-)
-> >> =
-
-> >> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/ar=
-m64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-> >> index 29a50a083c42..33df95e384b4 100644
-> >> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-> >> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-> >> @@ -660,8 +660,6 @@
-> >>  =
-
-> >>  &sdhci {
-> >>  	bus-width =3D <8>;
-> >> -	mmc-hs400-1_8v;
-> >> -	mmc-hs400-enhanced-strobe;
-> >>  	non-removable;
-> >>  	status =3D "okay";
-> >>  };
-> >> =
-
-> > =
-
-> =
-
-> =
+[1] http://patchwork.freedesktop.org/patch/msgid/63d1e72b99e9c13ee5b1b362a653ff9c21e19124.1572258936.git.jani.nikula@intel.com
 
 
 
 
+>
+> Wambui Karuga (2):
+>   drm/print: add DRM_DEV_WARN macro
+>   drm/rockchip: use DRM_DEV_WARN macro in debug output
+>
+>  drivers/gpu/drm/rockchip/inno_hdmi.c | 3 ++-
+>  include/drm/drm_print.h              | 9 +++++++++
+>  2 files changed, 11 insertions(+), 1 deletion(-)
 
+-- 
+Jani Nikula, Intel Open Source Graphics Center
 
 _______________________________________________
 Linux-rockchip mailing list
