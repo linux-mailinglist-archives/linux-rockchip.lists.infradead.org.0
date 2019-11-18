@@ -2,52 +2,68 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D082F100BDF
-	for <lists+linux-rockchip@lfdr.de>; Mon, 18 Nov 2019 19:53:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F5C8100BF9
+	for <lists+linux-rockchip@lfdr.de>; Mon, 18 Nov 2019 20:05:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TaXAh82A4A/L34oqQnBRDsuS/dfTPupyuqNWTWq3CEA=; b=CUqAyPYnMIwVN4
-	jy4b1gp8z9y9zG7aMTfliiOvm5h/Ajsi7wZ7SKR/4NQApl7lag0EqO5Bx71uxQKqcyficf9AS4AOr
-	e6Y+LGp8zudCVbCCOJnZ5TqX6iPf/ynwHANItj2vx+EaPLM4eHh/KmiS7o+AL2dhsEgXcFCtyYCzR
-	2ZIvpHqMeFm5MFWs3nonBo14Mwq0Ff2rB6g75qJj4TPG3DQsKncvKZZ07LYZiXFXTEeJ1yQHA12d5
-	zVoZmqaSlRYnspQzgXBGMcdV1FApJPWZdOoDwYzhugsU0CjeonXeRczlPtVd3Nb7UJQ9xIlYX6NFr
-	UncTNo9q8HiFvHIFDNpg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n5TXGPnUfVNKkq/3f9gx7+yp8WjGhh6dneULe2eu4Ls=; b=U4ez3HBJPKrEhT
+	slq02+VMcBpe6p06EZ/Rjubf3NsoXe6UMPaonSnoxk9L5Gm1gn299l0Atu2cMr9r/i0d3N2g6dzld
+	53Ka4EEsufwfZG94fGUutCV8eZLzxtY6uhmMgQYemXsCjNGN34x45ma71l9vK9EcgwxJ4Az3kVK/D
+	VFQuP7wRJNEY5j55HRskzGgs/2lTJWqZ10U7OK6bE49iMplGJHNzotIWCmgdc2qic1uiPKq8r6nvg
+	A46fbyNr/vEGXcjl7Sd1dmcNPxW8XMBsRC0+PgRSYoJRXONP3qLTWaF56YPUUkwzPXDTswovrXtvk
+	9gJgx19dVNByrUF+g63A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWm99-0002Rp-2A; Mon, 18 Nov 2019 18:53:11 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1iWmL0-0007CB-In; Mon, 18 Nov 2019 19:05:26 +0000
+Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWm8Q-0001fe-Dv; Mon, 18 Nov 2019 18:52:28 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 1042F29051B
-Message-ID: <7fd4bf99fd6316da8acaf0a27b6845bedbf4b25f.camel@collabora.com>
-Subject: Re: [PATCH v11 00/11] Rockchip ISP Driver
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Hans Verkuil <hverkuil@xs4all.nl>, Helen Koike
- <helen.koike@collabora.com>,  linux-rockchip@lists.infradead.org
-Date: Mon, 18 Nov 2019 15:52:01 -0300
-In-Reply-To: <996a9b6a-0e45-d627-9263-539c22e5f1c0@xs4all.nl>
-References: <20191114051242.14651-1-helen.koike@collabora.com>
- <996a9b6a-0e45-d627-9263-539c22e5f1c0@xs4all.nl>
-Organization: Collabora
-User-Agent: Evolution 3.34.1-2 
+ id 1iWmKx-0007B8-6a; Mon, 18 Nov 2019 19:05:25 +0000
+Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
+ (helo=hermes.fivetechno.de); authenticated
+ by wp126.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ id 1iWmKl-000530-T0; Mon, 18 Nov 2019 20:05:12 +0100
+X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
+ linuxbbg.five-lan.de
+Received: from dell2.five-lan.de (p508F31A5.dip0.t-ipconnect.de
+ [80.143.49.165]) (authenticated bits=0)
+ by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
+ xAIJ59Ku008128
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
+ Mon, 18 Nov 2019 20:05:10 +0100
+Subject: Re: arm64: dts: rockchip: Disable HS400 for mmc on rk3399-roc-pc
+To: Doug Anderson <dianders@chromium.org>, =?UTF-8?Q?Heiko_St=c3=bcbner?=
+ <heiko@sntech.de>
+References: <20190301153348.29870-1-christoph.muellner@theobroma-systems.com>
+ <2766673.iMURPl8gB5@phil>
+ <69472c06-8b21-c3d8-acad-1a0a292c0fa2@fivetechno.de>
+ <3460135.SDF8zhHPq4@diego>
+ <CAD=FV=VnjyQJpRcW6P1f4+ZrSOzAe2Cnoej=it4aCz+F_ozukw@mail.gmail.com>
+From: Markus Reichl <m.reichl@fivetechno.de>
+Message-ID: <2db7a63f-a091-db8d-3414-cac289011878@fivetechno.de>
+Date: Mon, 18 Nov 2019 20:05:09 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
+In-Reply-To: <CAD=FV=VnjyQJpRcW6P1f4+ZrSOzAe2Cnoej=it4aCz+F_ozukw@mail.gmail.com>
+Content-Language: de-DE
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1574103923;
+ 5eb49a01; 
+X-HE-SMSGID: 1iWmKl-000530-T0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_105226_754374_19F029C7 
-X-CRM114-Status: GOOD (  15.22  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191118_110523_387395_7928BD4F 
+X-CRM114-Status: GOOD (  18.96  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,89 +76,72 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
- kernel@collabora.com, heiko@sntech.de, jacob-chen@iotwrt.com,
- gregkh@linuxfoundation.org, jeffy.chen@rock-chips.com, zyc@rock-chips.com,
- linux-kernel@vger.kernel.org, tfiga@chromium.org, robh+dt@kernel.org,
- hans.verkuil@cisco.com, laurent.pinchart@ideasonboard.com,
- sakari.ailus@linux.intel.com, mchehab@kernel.org, zhengsq@rock-chips.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Jeffy Chen <jeffy.chen@rock-chips.com>,
+ Rob Herring <robh+dt@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Brian Norris <briannorris@chromium.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, Vicente Bergas <vicencb@gmail.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Tony Xie <tony.xie@rock-chips.com>,
+ Klaus Goger <klaus.goger@theobroma-systems.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Randy Li <ayaka@soulik.info>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Christoph Muellner <christoph.muellner@theobroma-systems.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Hans,
-
-Thanks for taking care of this.
-
-On Thu, 2019-11-14 at 09:42 +0100, Hans Verkuil wrote:
-> On 11/14/19 6:12 AM, Helen Koike wrote:
-> > Hello,
-> > 
-> > This series adds the Rockchip Image Signal Processing Unit v1 driver to
-> > staging.
-> > 
-> > The main reason to be in staging is that people are already using it from the
-> > mailing list (including libcamera), and having it in mainline makes the workflow
-> > easier. Also, it is easier for other people to contribute back (with code
-> > or testing the driver).
-> > 
-> > We plan to actively work on this driver to get it our of staging.
-> > 
-> > This patchset is also available at:
-> > https://gitlab.collabora.com/koike/linux/tree/rockchip/isp/v11
-> > 
-> > Libcamera patched to work with this version:
-> > https://gitlab.collabora.com/koike/libcamera
-> > (also sent to the mailing list)
-> > 
-> > The major difference in v11 are:
-> > - Fixed compiling warnings found with W=1
-> > - Fixed checkpatch errors
-> > - Add clock-names values in dt-bindings
-> 
-> Looking at checkpatch I see a few remaining issues that I believe should be
-> fixed before merging this:
-> 
-> CHECK: spinlock_t definition without comment
-> #575: FILE: drivers/staging/media/rkisp1/isp_stats.h:43:
-> +       spinlock_t irq_lock;
-> 
-> CHECK: struct mutex definition without comment
-> #581: FILE: drivers/staging/media/rkisp1/isp_stats.h:49:
-> +       struct mutex wq_lock;
-> 
-> CHECK: spinlock_t definition without comment
-> #1648: FILE: drivers/staging/media/rkisp1/isp_params.h:25:
-> +       spinlock_t config_lock;
-> 
-> CHECK: spinlock_t definition without comment
-> #2058: FILE: drivers/staging/media/rkisp1/capture.h:145:
-> +       spinlock_t vbq_lock;
-> 
-
-I'd rather merge this as-is, adding a TODO entry stating
-we need to revisit locking specifically, because I'd like
-to take a close look at these spinlocks/mutex,
-instead of just addding comments for then.
-
-> Once this is done together with the Jacob Chen email clarification
-> it is ready to be merged for v5.6.
-> 
-
-I'll find out more about this.
-
-> It passes all the sparse/smatch tests, so that's very good.
-> 
-
-Great!
-
-Thanks,
-Ezequiel
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgRG91ZywKCkFtIDE4LjExLjE5IHVtIDE3OjA4IHNjaHJpZWIgRG91ZyBBbmRlcnNvbjoKPiBI
+aSwKPiAKPiAKPiBPbiBGcmksIE5vdiAxNSwgMjAxOSBhdCAzOjE5IEFNIEhlaWtvIFN0w7xibmVy
+IDxoZWlrb0BzbnRlY2guZGU+IHdyb3RlOgo+Pgo+PiBIaSBNYXJrdXMsCj4+Cj4+IEFtIEZyZWl0
+YWcsIDE1LiBOb3ZlbWJlciAyMDE5LCAxMTozNzo1OCBDRVQgc2NocmllYiBNYXJrdXMgUmVpY2hs
+Ogo+PiA+IEFtIDE0LjExLjE5IHVtIDE0OjEwIHNjaHJpZWIgSGVpa28gU3R1ZWJuZXI6Cj4+ID4g
+PiAkc3ViamVjdCBpcyBtaXNzaW5nIHRoZSBbUEFUQ0hdIHByZWZpeAo+PiA+IHdpbGwgZml4Lgo+
+Pgo+PiBubyBuZWVkIHRvIHJlc2VuZCBqdXN0IGZvciB0aGlzIC4uLiBqdXN0IHRvIGtlZXAgaW4g
+bWluZCBmb3IgZnV0dXJlIHBhdGNoZXMgOy0pCj4+Cj4+Cj4+ID4gPiBBbSBNb250YWcsIDExLiBO
+b3ZlbWJlciAyMDE5LCAxMDo1MTowNCBDRVQgc2NocmllYiBNYXJrdXMgUmVpY2hsOgo+PiA+ID4+
+IFdvcmtpbmcgd2l0aCByb290ZnMgb24gdHdvIDEyOEdCIG1tY3Mgb24gcmszMzk5LXJvYy1wYy4K
+Pj4gPiA+Pgo+PiA+ID4+IE9uZSAobW1jIG5hbWUgMTI4RzcyLCBvbmUgc2NyZXcgaG9sZSkgd29y
+a3MgZmluZSBpbiBIUzQwMCBtb2RlLgo+PiA+ID4+IE90aGVyIChtbWMgbmFtZSBESk5CNFIsIGZp
+cmVmbHkgb24gcGNiLCB0d28gc2NyZXcgaG9sZXMpIGdldHMgbG90cyBvZgo+PiA+ID4+IG1tYzE6
+ICJydW5uaW5nIENRRSByZWNvdmVyeSIsIGV2ZW4gaGFuZ3Mgd2l0aCBkYW1hZ2VkIGZzLAo+PiA+
+ID4+IHdoZW4gcnVubmluZyB1bmRlciBoZWF2eSBsb2FkLCBlLmcuIGNvbXBpbGluZyBrZXJuZWwu
+Cj4+ID4gPj4gQm90aCBydW4gZmluZSB3aXRoIEhTMjAwLgo+PiA+ID4+Cj4+ID4gPj4gRGlzYWJs
+aW5nIENRIHdpdGggcGF0Y2ggbW1jOiBjb3JlOiBBZGQgTU1DIENvbW1hbmQgUXVldWUgU3VwcG9y
+dCBrZXJuZWwgcGFyYW1ldGVyIFswXSBkaWQgbm90IGhlbHAuCj4+ID4gPj4gWzBdIGh0dHBzOi8v
+Z2l0bGFiLmNvbS9heXVmYW4tcmVwb3Mvcm9jazY0L2xpbnV4LW1haW5saW5lLWtlcm5lbC9jb21t
+aXQvNTRlMjY0MTU0Yjg3ZGZlMzJhODM1OWIyNzI2ZTJkNTYxMWFkYmFmMwo+PiA+ID4KPj4gPiA+
+IEknbSBob3BpbmcgZm9yIHNvbWUgaW5wdXQgZnJvbSBvdGhlciBwZW9wbGUgaW4gQ2MgYnV0IHlv
+dXIgbWFpbCBoZWFkZXJzCj4+ID4gPiBhbHNvIHJlZmVyZW5jZWQgdGhlIGRyaXZlLWltcGVuZGFu
+Y2Ugc2VyaWVzIGZyb20gQ2hyaXN0b3BoIFswXSwgd2hpY2gKPj4gPiA+IGl0IHNlZW1zIHdlIG5l
+ZWQgdG8gcG9rZSB0aGUgcGh5IG1haW50YWluZXIgYWdhaW4uCj4+ID4gPgo+PiA+ID4gRGlkIHlv
+dSBjaGVjayBpZiBjaGFuZ2luZyB0aGUgaW1wZWRhbmNlIGhlbHBlZCAobGlrZSB0aGUgc2lnbmFs
+IGRhbXBlbmluZwo+PiA+ID4gUGhpbGlwcCBkZXNjcmliZWQgaW4gb25lIG9mIHRoZSByZXBsaWVz
+IHRoZXJlKS4KPj4gPgo+PiA+IGNoZWNrZWQgd2l0aAo+PiA+Cj4+ID4gJmVtbWNfcGh5IHsKPj4g
+PiArICAgICAgIGRyaXZlLWltcGVkYW5jZS1vaG0gPSA8MzM+Owo+PiA+Cj4+ID4gZ2l2ZXMgbm8g
+aW1wcm92ZW1lbnQ6Cj4+Cj4+IFRoYXQgaXMgc2FkIC4uLiBJIGd1ZXNzIHdlIHJlYWxseSBzaG91
+bGQgZGlzYWJsZSBoczQwMCB0aGVuIC4uLgo+PiB0aGF0IG1heSBnaXZlIG90aGVycyBtb3JlIGlu
+Y2VudGl2ZSB0byBkaXZlIGRlZXBlciA7LSkKPiAKPiBKdXN0IG91dCBvZiBjdXJpb3NpdHksIGlz
+IHRoZSBwcm9ibGVtIHdpdGggdGhlIHN0cm9iZSBsaW5lLCBvciB3aXRoCj4gaHM0MDA/ICBIYXZl
+IHlvdSB0cmllZCB1c2luZyB0aGUgc29sdXRpb24gZnJvbSAicmszMzk5LWdydS5kdHNpIj8KPiBO
+YW1lbHk6Cj4gCj4gICAgICAgICAvKgo+ICAgICAgICAgICogU2lnbmFsIGludGVncml0eSBpc24n
+dCBncmVhdCBhdCAyMDAgTUh6IGFuZCAxNTAgTUh6IChERFIpIGdpdmVzIHRoZQo+ICAgICAgICAg
+ICogc2FtZSAob3IgbmVhcmx5IHRoZSBzYW1lKSBwZXJmb3JtYW5jZSBmb3IgYWxsIGVNTUMgdGhh
+dCBhcmUgaW50ZW5kZWQKPiAgICAgICAgICAqIHRvIGJlIHVzZWQuCj4gICAgICAgICAgKi8KPiAg
+ICAgICAgIGFzc2lnbmVkLWNsb2NrLXJhdGVzID0gPDE1MDAwMDAwMD47Cj4gCj4gSUlSQyBoczQw
+MCBvbiByazMzOTkgd2FzIGEgYml0IGlmZnkgYnV0IHJ1bm5pbmcgYXQgMTUwIE1IeiBtYWRlIGl0
+Cj4gbXVjaCBtb3JlIHJlbGlhYmxlIGFuZCBzdGlsbCBnYXZlIHlvdSAzMDAgTUIvcyB0cmFuc2Zl
+ciByYXRlIChzbyBtdWNoCj4gYmV0dGVyIHRoYW4gaHMyMDApLiAgSW4gcmVhbGl0eSBtYW55IGVN
+TUMgY2hpcHMgY2FuJ3QgZG8gPiAzMDAgTUIvcwo+IGFueXdheS4KPiAKSSB0cmllZCAxNTAwMDAw
+MDAgYW5kIDEwMDAwMDAwMCwgYnV0IGl0IGRpZCBub3QgaGVscC4KCkdydcOfLAotLQpNYXJrdXMK
+Cj4gLURvdWcKPiAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
+dXgtcm9ja2NoaXAK
