@@ -2,45 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 383A810059E
-	for <lists+linux-rockchip@lfdr.de>; Mon, 18 Nov 2019 13:29:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC0011005C0
+	for <lists+linux-rockchip@lfdr.de>; Mon, 18 Nov 2019 13:40:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QH/4BEgCTu2Z4Q5ihRg6nA9NFm53mDIvRGQmOauXSLg=; b=FIwX53ZnVNCtxL
-	x68vuuwMoDlAV+MLmGoHgX3+1s95unaVGQ4rSg2b5+CV9de2TWEgsvRlO9aaxWgAjFIpJh6mIzQJ9
-	+Rk2bwt0K13LrbG7u80Ye9jG+Zh9iEjx41bFrGkCGO4PyX/kcfuMiUdS5aU0KlEYFPWV72oIzSWvm
-	d4xEgJAI8A+b+DFADkiE+RpMkqTepSaSn4diRHf/FD0YYHTujunsEb2l+EcBv0+H/AJuo6PcUppzc
-	hnN0TlmMzCvYbi/MAW9KMUAjbzUKGLluC9harmw2jKwCpZQWxodJqGxh6t5HB/YctJTC/vKR9p6ET
-	XGxLfK814wMWLzRB/nfQ==;
+	List-Owner; bh=pKLa5UMGWfUP12TKZRvY/+5de6NLXQPrVMIdUTNuHcE=; b=Ff7XvnHs0T1HdE
+	BRgyN5CKwT0vzrRH376D1tmzkbmvO0ujouiofQquyz5+gCDGj7CSBGBC66kxMzeobJaJMSOP216uf
+	HOLtrH0kcjLoZByduoGPj0/HNeJUAiXBmwgD8E3syGHo7M0H+uT47R6ymB+s5WKoHnyFF+Zdiss2z
+	Y8PxC6+HkOJk5edKbk52OnQc/woIMtjh0eH3MUIbECbbaU6iFzNc/YrlBlEI1IELzaZqpbNmKUSxl
+	v0PIhw77z8FDnGr9YtoMTYTBWWXozsnTbe9olYVdOM6PyBRUvruZVJzEdlkDXR30bys2GAjerQ1+N
+	2SZJLHSY76xTV2+cbJVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWg9l-0001BY-Ba; Mon, 18 Nov 2019 12:29:25 +0000
+	id 1iWgKE-0006Nc-Rf; Mon, 18 Nov 2019 12:40:14 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWg9Q-0000vS-6L; Mon, 18 Nov 2019 12:29:06 +0000
+ id 1iWgJv-0004uw-8a; Mon, 18 Nov 2019 12:39:56 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 88ADA1FB;
- Mon, 18 Nov 2019 04:29:01 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4EB901FB;
+ Mon, 18 Nov 2019 04:39:54 -0800 (PST)
 Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E77D83F6C4;
- Mon, 18 Nov 2019 04:29:00 -0800 (PST)
-Date: Mon, 18 Nov 2019 12:28:59 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AEE583F6C4;
+ Mon, 18 Nov 2019 04:39:53 -0800 (PST)
+Date: Mon, 18 Nov 2019 12:39:51 +0000
 From: Andrew Murray <andrew.murray@arm.com>
 To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 1/2] PCI: rockchip: Make some regulators non-optional
-Message-ID: <20191118122858.GL43905@e119886-lin.cambridge.arm.com>
+Subject: Re: [PATCH 2/2] PCI: rockchip: Simplify optional regulator handling
+Message-ID: <20191118123951.GM43905@e119886-lin.cambridge.arm.com>
 References: <1eebc002101931012d337cda23d18f85b0326361.1573908530.git.robin.murphy@arm.com>
+ <347bc3ef8399577e4cef3fdbf3af34d20b4ad27e.1573908530.git.robin.murphy@arm.com>
+ <20191118115930.GC9761@sirena.org.uk>
+ <a59da4a4-de88-62a5-5f44-001f8e30221e@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1eebc002101931012d337cda23d18f85b0326361.1573908530.git.robin.murphy@arm.com>
+In-Reply-To: <a59da4a4-de88-62a5-5f44-001f8e30221e@arm.com>
 User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_042904_614797_2D940E3D 
-X-CRM114-Status: GOOD (  18.32  )
+X-CRM114-CacheID: sfid-20191118_043955_346239_06BDE76B 
+X-CRM114-Status: GOOD (  14.78  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,160 +65,52 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: lorenzo.pieralisi@arm.com, heiko@sntech.de, linux-pci@vger.kernel.org,
  shawn.lin@rock-chips.com, lgirdwood@gmail.com,
- linux-rockchip@lists.infradead.org, broonie@kernel.org, bhelgaas@google.com,
- linux-arm-kernel@lists.infradead.org
+ linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
+ bhelgaas@google.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sat, Nov 16, 2019 at 12:54:19PM +0000, Robin Murphy wrote:
-> The 0V9 and 1V8 supplies power the PCIe block in the SoC itself, and
-> are thus fundamental to PCIe being usable at all. As such, it makes
-> sense to treat them as non-optional and rely on dummy regulators if
-> not explicitly described.
+On Mon, Nov 18, 2019 at 12:20:10PM +0000, Robin Murphy wrote:
+> On 18/11/2019 11:59 am, Mark Brown wrote:
+> > On Sat, Nov 16, 2019 at 12:54:20PM +0000, Robin Murphy wrote:
+> > > Null checks are both cheaper and more readable than having !IS_ERR()
+> > > splattered everywhere.
+> > 
+> > > -	if (IS_ERR(rockchip->vpcie3v3))
+> > > +	if (!rockchip->vpcie3v3)
+> > >   		return;
+> > >   	/*
+> > > @@ -611,6 +611,7 @@ static int rockchip_pcie_parse_host_dt(struct rockchip_pcie *rockchip)
+> > >   		if (PTR_ERR(rockchip->vpcie12v) != -ENODEV)
+> > >   			return PTR_ERR(rockchip->vpcie12v);
+> > >   		dev_info(dev, "no vpcie12v regulator found\n");
+> > > +		rockchip->vpcie12v = NULL;
+> > 
+> > According to the API NULL is a valid regulator.  We don't currently
+> > actually do this but it's storing up surprises if you treat it as
+> > invalid.
 > 
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> Ah, OK - I'd assumed NULL wasn't valid based on regulator_enable()
+> immediately dereferencing its argument without any checks. If we'd rather
+> not bake in that assumption then this patch can happily be ignored.
 
-Reviewed-by: Andrew Murray <andrew.murray@arm.com>
+I'd suggest we drop this patch.
 
-> ---
->  drivers/pci/controller/pcie-rockchip-host.c | 69 ++++++++-------------
->  1 file changed, 25 insertions(+), 44 deletions(-)
+"IS_ERR(ptr)" is not the same as "!ptr", for values of ptr between 0 and
+-4095 inclusive.
+
+Regardless the effect of this patch with the regulator framework, I don't
+think we want to create an example that others may follow.
+
+Thanks,
+
+Andrew Murray
+
 > 
-> diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
-> index ef8e677ce9d1..68525f8ac4d9 100644
-> --- a/drivers/pci/controller/pcie-rockchip-host.c
-> +++ b/drivers/pci/controller/pcie-rockchip-host.c
-> @@ -620,19 +620,13 @@ static int rockchip_pcie_parse_host_dt(struct rockchip_pcie *rockchip)
->  		dev_info(dev, "no vpcie3v3 regulator found\n");
->  	}
->  
-> -	rockchip->vpcie1v8 = devm_regulator_get_optional(dev, "vpcie1v8");
-> -	if (IS_ERR(rockchip->vpcie1v8)) {
-> -		if (PTR_ERR(rockchip->vpcie1v8) != -ENODEV)
-> -			return PTR_ERR(rockchip->vpcie1v8);
-> -		dev_info(dev, "no vpcie1v8 regulator found\n");
-> -	}
-> +	rockchip->vpcie1v8 = devm_regulator_get(dev, "vpcie1v8");
-> +	if (IS_ERR(rockchip->vpcie1v8))
-> +		return PTR_ERR(rockchip->vpcie1v8);
->  
-> -	rockchip->vpcie0v9 = devm_regulator_get_optional(dev, "vpcie0v9");
-> -	if (IS_ERR(rockchip->vpcie0v9)) {
-> -		if (PTR_ERR(rockchip->vpcie0v9) != -ENODEV)
-> -			return PTR_ERR(rockchip->vpcie0v9);
-> -		dev_info(dev, "no vpcie0v9 regulator found\n");
-> -	}
-> +	rockchip->vpcie0v9 = devm_regulator_get(dev, "vpcie0v9");
-> +	if (IS_ERR(rockchip->vpcie0v9))
-> +		return PTR_ERR(rockchip->vpcie0v9);
->  
->  	return 0;
->  }
-> @@ -658,27 +652,22 @@ static int rockchip_pcie_set_vpcie(struct rockchip_pcie *rockchip)
->  		}
->  	}
->  
-> -	if (!IS_ERR(rockchip->vpcie1v8)) {
-> -		err = regulator_enable(rockchip->vpcie1v8);
-> -		if (err) {
-> -			dev_err(dev, "fail to enable vpcie1v8 regulator\n");
-> -			goto err_disable_3v3;
-> -		}
-> +	err = regulator_enable(rockchip->vpcie1v8);
-> +	if (err) {
-> +		dev_err(dev, "fail to enable vpcie1v8 regulator\n");
-> +		goto err_disable_3v3;
->  	}
->  
-> -	if (!IS_ERR(rockchip->vpcie0v9)) {
-> -		err = regulator_enable(rockchip->vpcie0v9);
-> -		if (err) {
-> -			dev_err(dev, "fail to enable vpcie0v9 regulator\n");
-> -			goto err_disable_1v8;
-> -		}
-> +	err = regulator_enable(rockchip->vpcie0v9);
-> +	if (err) {
-> +		dev_err(dev, "fail to enable vpcie0v9 regulator\n");
-> +		goto err_disable_1v8;
->  	}
->  
->  	return 0;
->  
->  err_disable_1v8:
-> -	if (!IS_ERR(rockchip->vpcie1v8))
-> -		regulator_disable(rockchip->vpcie1v8);
-> +	regulator_disable(rockchip->vpcie1v8);
->  err_disable_3v3:
->  	if (!IS_ERR(rockchip->vpcie3v3))
->  		regulator_disable(rockchip->vpcie3v3);
-> @@ -897,8 +886,7 @@ static int __maybe_unused rockchip_pcie_suspend_noirq(struct device *dev)
->  
->  	rockchip_pcie_disable_clocks(rockchip);
->  
-> -	if (!IS_ERR(rockchip->vpcie0v9))
-> -		regulator_disable(rockchip->vpcie0v9);
-> +	regulator_disable(rockchip->vpcie0v9);
->  
->  	return ret;
->  }
-> @@ -908,12 +896,10 @@ static int __maybe_unused rockchip_pcie_resume_noirq(struct device *dev)
->  	struct rockchip_pcie *rockchip = dev_get_drvdata(dev);
->  	int err;
->  
-> -	if (!IS_ERR(rockchip->vpcie0v9)) {
-> -		err = regulator_enable(rockchip->vpcie0v9);
-> -		if (err) {
-> -			dev_err(dev, "fail to enable vpcie0v9 regulator\n");
-> -			return err;
-> -		}
-> +	err = regulator_enable(rockchip->vpcie0v9);
-> +	if (err) {
-> +		dev_err(dev, "fail to enable vpcie0v9 regulator\n");
-> +		return err;
->  	}
->  
->  	err = rockchip_pcie_enable_clocks(rockchip);
-> @@ -939,8 +925,7 @@ static int __maybe_unused rockchip_pcie_resume_noirq(struct device *dev)
->  err_pcie_resume:
->  	rockchip_pcie_disable_clocks(rockchip);
->  err_disable_0v9:
-> -	if (!IS_ERR(rockchip->vpcie0v9))
-> -		regulator_disable(rockchip->vpcie0v9);
-> +	regulator_disable(rockchip->vpcie0v9);
->  	return err;
->  }
->  
-> @@ -1081,10 +1066,8 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
->  		regulator_disable(rockchip->vpcie12v);
->  	if (!IS_ERR(rockchip->vpcie3v3))
->  		regulator_disable(rockchip->vpcie3v3);
-> -	if (!IS_ERR(rockchip->vpcie1v8))
-> -		regulator_disable(rockchip->vpcie1v8);
-> -	if (!IS_ERR(rockchip->vpcie0v9))
-> -		regulator_disable(rockchip->vpcie0v9);
-> +	regulator_disable(rockchip->vpcie1v8);
-> +	regulator_disable(rockchip->vpcie0v9);
->  err_set_vpcie:
->  	rockchip_pcie_disable_clocks(rockchip);
->  	return err;
-> @@ -1108,10 +1091,8 @@ static int rockchip_pcie_remove(struct platform_device *pdev)
->  		regulator_disable(rockchip->vpcie12v);
->  	if (!IS_ERR(rockchip->vpcie3v3))
->  		regulator_disable(rockchip->vpcie3v3);
-> -	if (!IS_ERR(rockchip->vpcie1v8))
-> -		regulator_disable(rockchip->vpcie1v8);
-> -	if (!IS_ERR(rockchip->vpcie0v9))
-> -		regulator_disable(rockchip->vpcie0v9);
-> +	regulator_disable(rockchip->vpcie1v8);
-> +	regulator_disable(rockchip->vpcie0v9);
->  
->  	return 0;
->  }
-> -- 
-> 2.17.1
-> 
+> Thanks,
+> Robin.
 
 _______________________________________________
 Linux-rockchip mailing list
