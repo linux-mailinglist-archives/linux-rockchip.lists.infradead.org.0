@@ -2,67 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A105610162E
-	for <lists+linux-rockchip@lfdr.de>; Tue, 19 Nov 2019 06:51:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE939101D2F
+	for <lists+linux-rockchip@lfdr.de>; Tue, 19 Nov 2019 09:26:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SVAsQtjc6iCEdijq8qjxkFdt15MF6l4EgymUo3VZBTQ=; b=mRo/RYGehjWJyJ
-	zeFc0OMqT35pMM6nDGonqp48xLJZU1eRyE7VDhaNPqDbyXx4lLqIeW2wEj/NsdKq4807HrKHV3504
-	lcMZeE+YzRCG+aCLne2jA6R0C27N/OTFaz62DxIDCI9OVPgyjFmLKZnrCNTwRs1kFlMx8RG0kX7fy
-	HCl6WigHwLwlGKJQu+utcF3DVjrelyVzv980ae4LVQLWutl7IWStWmvzoV2E6ejUiwGwTYMBqNywW
-	KYaD4828aG2b5Qkghyor2g98Ok7TwJGg60Rn0B93rDnXtnFhcmC5L6wktnJxFWxBZ1oL6L0Ax9EWY
-	cSntRmdw/Lrtx6jjbjyA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QyPTRQP6GTIZQSk+RsC3C0gVz2RypHskqiUKI9ZoxQo=; b=aCl2wR0vVuQ0ve
+	fu27myR46mn61vcIKdXAXm27u9uG3aCc/ai1Gwke041lSEck3i09DLnqu/lFCK1nRGRoQ7wF74Cc0
+	UywT4GYraMORMf9hEpm5q9mpRQHdnKDxNuOF0Cez5TXEgZyUTZMKO2QEoNlzRfabaygxFa2bxf0at
+	Wh9OzVO+75+KQMxo1fZK1EN0ffXMFQvMs+nJQBRvEbG5vq3Sr0KKbLzXP9iC/NVqA2SHEv3zd6Lfs
+	+p/AV8QOewmRbP34BKaZkm0ggJv7K3QyWCBwlJev1cFjctrPR2CGJupzXR2+ZkJQkCB41c4sXYkbE
+	QgQ9OqHDgR83WIGTmCww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWwPi-0005W3-Pl; Tue, 19 Nov 2019 05:50:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iWyqO-0001eA-Vt; Tue, 19 Nov 2019 08:26:40 +0000
+Received: from mail-pg1-x52c.google.com ([2607:f8b0:4864:20::52c])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWwPd-0005UZ-2f
- for linux-rockchip@lists.infradead.org; Tue, 19 Nov 2019 05:50:57 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3E33A20862;
- Tue, 19 Nov 2019 05:50:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574142652;
- bh=F0f1DFQic3UsgOCXhcyyXPEfDgitzNZkVWAjT/PbzZY=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=WGh+PI6lCV3mqCjsmoByJ/PxeTVrSrKzZ1muIOtQ576rsaSCa/IgjRQKY5vh6Hd1e
- XP1F1pFrrgaMRpHFFrIJWNBNcu2cXCct3rG9cBQodI9Vc9PQ6VEaY4GlVXH0Qwo8iD
- JMn82u5I3XaNAt5SVtQCnsN9p2b0h6GsGCVXGGD0=
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.14 127/239] ARM: dts: rockchip: Fix erroneous SPI bus dtc
- warnings on rk3036
-Date: Tue, 19 Nov 2019 06:18:47 +0100
-Message-Id: <20191119051330.458418476@linuxfoundation.org>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191119051255.850204959@linuxfoundation.org>
-References: <20191119051255.850204959@linuxfoundation.org>
-User-Agent: quilt/0.66
+ id 1iWyqJ-0001dW-BP
+ for linux-rockchip@lists.infradead.org; Tue, 19 Nov 2019 08:26:39 +0000
+Received: by mail-pg1-x52c.google.com with SMTP id k32so5283895pgl.2
+ for <linux-rockchip@lists.infradead.org>; Tue, 19 Nov 2019 00:26:34 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=0jzcsQL7X9uXyRzO1HHA95zvKPXeBG7xR+XHJn4gpSs=;
+ b=CBV978NKRVDSF8PYthVKRzaGRitwU/rDL7gSivsRRiF60T3tQeE6Mlc/4Jn811b8AK
+ zbexGPSxShgHQOKTOVf7Fs+TiO/f9Rvnt1ZWNwCitrTY/ZFeFF9pbPkWsZqw3gvmSGvt
+ mG2Jc8AAtnJYVJfK2e+/NzDc1FwLlQ1QW8RpM=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=0jzcsQL7X9uXyRzO1HHA95zvKPXeBG7xR+XHJn4gpSs=;
+ b=sc06GCA+pkTX5y1IRmchFygO+CGBzX1s8IS9qERtIk4vdhuj6lwdVvZdZjlwfkgwQr
+ FPH9oHcGj47pyMF4KUx1Pyv5XVdaeS1WFn+5zEZUK/bu36+Ta7th55kApfbGCKrjxMSm
+ wkSLCAFlsFzd8mCikCjcoiFuHqnmvb9HOwVnVW87Bcexz/cqs5NrzfpbthvCjtBI5D5x
+ Vei9gFt1Y69HYwOOs5UZ4Wi7nVdbJOatT4E8IeXLz5KVEuGgafSx62z2d9ZPQijE40wX
+ Drw83CH1D5E2+aCdcLSn/TyxGh2JvH8nkhXXre2UtFynYVoEGNDQIz9zdiGJKC032KcG
+ ayCg==
+X-Gm-Message-State: APjAAAWTrJJmVPb7VLe5/CjYcpBrw8K6IY71hIGdv1YjJmS32BINGOT8
+ ph7tEPUXVLYDrgbgxhsP0lAySg==
+X-Google-Smtp-Source: APXvYqyS60dCuMaplzO3hTzwNc2PnUFETPW6SKXP+kG03BcwBDySkKKvGQkc4xPqDywvoAWYKx4FxQ==
+X-Received: by 2002:a63:1042:: with SMTP id 2mr4365515pgq.59.1574151993411;
+ Tue, 19 Nov 2019 00:26:33 -0800 (PST)
+Received: from localhost.localdomain ([115.97.180.31])
+ by smtp.gmail.com with ESMTPSA id u7sm2312221pjx.19.2019.11.19.00.26.30
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 19 Nov 2019 00:26:32 -0800 (PST)
+From: Jagan Teki <jagan@amarulasolutions.com>
+To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
+Subject: [PATCH v2 00/10] rockchip: rk3399: Add fastboot support
+Date: Tue, 19 Nov 2019 13:56:13 +0530
+Message-Id: <20191119082623.6165-1-jagan@amarulasolutions.com>
+X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_215053_138243_2E1C1F1C 
-X-CRM114-Status: GOOD (  12.22  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191119_002635_531609_86746E98 
+X-CRM114-Status: UNSURE (   8.93  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:52c listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,54 +94,71 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Rob Herring <robh@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, stable@vger.kernel.org,
+Cc: u-boot@lists.denx.de, Levin Du <djw@t-chip.com.cn>,
+ linux-amarula@amarulasolutions.com, Jagan Teki <jagan@amarulasolutions.com>,
  linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Rob Herring <robh@kernel.org>
+This is v2 set for fastboot support on rk3399, tested on
+rock960 and rebased on u-boot-rockchip/master
 
-[ Upstream commit 131c3eb428ccd5f0c784b9edb4f72ec296a045d2 ]
+Changes for v2:
+- collect Levin Du Tested-by
+- fix rk3399 product number (Thanks to Levin Du)
+- add patch to fix fastboot flash device num for rk3328
+- add patch to enable gadget on rock960
+- rebased on u-boot-rockchip/master
 
-dtc has new checks for SPI buses. The rk3036 dts file has a node named
-spi' which causes false positive warnings. As the node is a pinctrl child
-node, change the node name to be 'spi-pins' to fix the warnings.
+[1] https://patchwork.ozlabs.org/cover/1181569/
 
-arch/arm/boot/dts/rk3036-evb.dtb: Warning (spi_bus_bridge): /pinctrl/spi: incorrect #address-cells for SPI bus
-arch/arm/boot/dts/rk3036-kylin.dtb: Warning (spi_bus_bridge): /pinctrl/spi: incorrect #address-cells for SPI bus
-arch/arm/boot/dts/rk3036-evb.dtb: Warning (spi_bus_bridge): /pinctrl/spi: incorrect #size-cells for SPI bus
-arch/arm/boot/dts/rk3036-kylin.dtb: Warning (spi_bus_bridge): /pinctrl/spi: incorrect #size-cells for SPI bus
+Any inputs?
+Jagan.
 
-Cc: Heiko Stuebner <heiko@sntech.de>
-Cc: linux-rockchip@lists.infradead.org
-Signed-off-by: Rob Herring <robh@kernel.org>
-Signed-off-by: Heiko Stuebner <heiko@sntech.de>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- arch/arm/boot/dts/rk3036.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Jagan Teki (10):
+  gadget: Select USB_GADGET_MANUFACTURER for rockchip
+  gadget: Select USB_GADGET_VENDOR_NUM for rockchip
+  gadget: rockchip: USB_GADGET_PRODUCT_NUM
+  gadget: rockchip: Add rk3128 USB_GADGET_PRODUCT_NUM
+  fastboot: rockchip: Select FASTBOOT_FLASH[_MMC_DEV]
+  fastboot: rockchip: Fix rk3328 default mmc device
+  usb: dwc3: Add phy interface for dwc3_uboot
+  gadget: rockchip: Add rk3399 USB_GADGET_PRODUCT_NUM
+  rockchip: Setup dwc3_device (for non-dm gadgets)
+  rock960: Enable USB Gadget
 
-diff --git a/arch/arm/boot/dts/rk3036.dtsi b/arch/arm/boot/dts/rk3036.dtsi
-index 5c0a76493d22a..03cf0c84ac0aa 100644
---- a/arch/arm/boot/dts/rk3036.dtsi
-+++ b/arch/arm/boot/dts/rk3036.dtsi
-@@ -750,7 +750,7 @@
- 			/* no rts / cts for uart2 */
- 		};
- 
--		spi {
-+		spi-pins {
- 			spi_txd:spi-txd {
- 				rockchip,pins = <1 29 RK_FUNC_3 &pcfg_pull_default>;
- 			};
+ arch/arm/mach-rockchip/board.c    | 32 +++++++++++++++++++++++++++++--
+ configs/elgin-rv1108_defconfig    |  2 --
+ configs/evb-rk3036_defconfig      |  5 -----
+ configs/evb-rk3128_defconfig      |  2 --
+ configs/evb-rk3229_defconfig      |  5 -----
+ configs/evb-rk3288_defconfig      |  5 -----
+ configs/evb-rk3328_defconfig      |  5 -----
+ configs/evb-rv1108_defconfig      |  2 --
+ configs/firefly-rk3288_defconfig  |  5 -----
+ configs/kylin-rk3036_defconfig    |  5 -----
+ configs/miqi-rk3288_defconfig     |  5 -----
+ configs/phycore-rk3288_defconfig  |  5 -----
+ configs/popmetal-rk3288_defconfig |  5 -----
+ configs/rock2_defconfig           |  2 --
+ configs/rock64-rk3328_defconfig   |  5 -----
+ configs/rock960-rk3399_defconfig  |  2 ++
+ configs/tinker-rk3288_defconfig   |  5 -----
+ configs/tinker-s-rk3288_defconfig |  5 -----
+ configs/vyasa-rk3288_defconfig    |  3 ---
+ drivers/fastboot/Kconfig          |  3 ++-
+ drivers/usb/dwc3/core.c           | 27 ++++++++++++++++++++++++++
+ drivers/usb/dwc3/core.h           | 12 ++++++++++++
+ drivers/usb/gadget/Kconfig        |  7 +++++++
+ include/dwc3-uboot.h              |  2 ++
+ include/linux/usb/phy.h           | 19 ++++++++++++++++++
+ 25 files changed, 101 insertions(+), 74 deletions(-)
+ create mode 100644 include/linux/usb/phy.h
+
 -- 
-2.20.1
-
-
+2.18.0.321.gffc6fa0e3
 
 
 _______________________________________________
