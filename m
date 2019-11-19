@@ -2,77 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 611BA101D34
-	for <lists+linux-rockchip@lfdr.de>; Tue, 19 Nov 2019 09:26:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E2C4101D35
+	for <lists+linux-rockchip@lfdr.de>; Tue, 19 Nov 2019 09:26:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H3sQOzDJVuaDqLtnic3F2innWc560lvmFtWHropoSCE=; b=rHY16uKZUj9fNy
-	OAxoVeGW/UPkM1TF+BVndJ6cgcbIoUMwgP5R8qOHq8gMsAOlT6ToulmkQbwZE56rmN92icF/keBw3
-	6zokYQqWGSQu9BZkya3X/2ekuOQsxsvGJ4fBuDu3TiEb1hEy9JHrWB7vBDfzLg2Jsw/Mj/0Ku7XWy
-	jVAuJQ7M+xHY9TaeELtH5VEUBApfjSc3nkp+CLxbQAYxSK2Bdmey6f7fIMl/HVg/CVmGKkkmsfVRV
-	mIgsoq1Wm1r89RmMACxdGmHMoX3O7u4u6o6b/pDTstuHGSc7zSR4t/gjIcR8hOIuPciOQmcf2kq5Q
-	sHUlDhwtjqZ+1vym82hA==;
+	List-Owner; bh=GuK6/SGFww8EcScNjlG/KG/wrBt0aOobKwfbIoexDzE=; b=sthZJA0yC3MyWd
+	hGqnYT9H4braWBpaWYeaP6WGixvlIQcHjkpvmyynrbYo77Uu5nHyfoY6VKChvIr+yttIpFwMSLBsi
+	nqCIm44TEUng4MOy/4fihEGpJrCg9Z/iUy1WJE5+90LiAGcxiqoRjQhMIbKu8eExL2l4tdv5ocxRk
+	h8TH4x+2MgH5oxwZJH9oJ862bcgo4InWjEZezkc7xCWGoS9S24FAE+WEUdaH6fSVKuA7JfLWF7Udf
+	ASCygvbNFb6CYTCxs4mBC+JAVeS57Lv4ZmzkJeafUuIlbMvmxJ6rlTYLqAsot7h0Q02LVlszCm4Bt
+	nt3fYAsrqQReTQZgtjNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWyqU-0001gY-EB; Tue, 19 Nov 2019 08:26:46 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iWyqV-0001hI-8k; Tue, 19 Nov 2019 08:26:47 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWyqO-0001e2-Ks
- for linux-rockchip@lists.infradead.org; Tue, 19 Nov 2019 08:26:44 +0000
-Received: by mail-pg1-x544.google.com with SMTP id b1so1505112pgq.10
- for <linux-rockchip@lists.infradead.org>; Tue, 19 Nov 2019 00:26:37 -0800 (PST)
+ id 1iWyqP-0001e9-8K
+ for linux-rockchip@lists.infradead.org; Tue, 19 Nov 2019 08:26:45 +0000
+Received: by mail-pl1-x642.google.com with SMTP id d7so11370053pls.3
+ for <linux-rockchip@lists.infradead.org>; Tue, 19 Nov 2019 00:26:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=31T9LySzCPlpUq5lEEELkUot8yqL39B+l57TFVtFUMU=;
- b=DikEjt9z2URq08bEvIyvApbF7Ea9wn8axOObumpzouHAMHwxYsdhL64NVRGoICXJRm
- EAewrHo31AP3WSALGZXxZxUiPun6wdzmECTyGfR7Us1D1Sc43gCd+LwWholuIU053xY6
- s2c8DyszpYYn3wNyHTkCQvipckHXAAhoBVEBM=
+ bh=+sOKpbGGDX9ppnghR7ZITJFjQMSASVJcPIq+9OwxT7U=;
+ b=r0LT9XUuYkUI04ubiUXD74wO3lPNvR3k2mFF5doTLQlIyRb/t/1M2dJ/43TmiDOy30
+ T3UBibvTgqkBoHk1f+66hJtnFyRtUjHTsznYukvkN6sCjQaDnYsx8QTWL/jqatHhB6jN
+ QvxS2jY4iJlRlJB7wLYxUQOCzkgowXo9yDerQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=31T9LySzCPlpUq5lEEELkUot8yqL39B+l57TFVtFUMU=;
- b=qJXltCZLBhk9QwFTxVmNEe2I7dfmywIdo0FA6+dcrGpJm4ZP5Pw31gBvQwkp9c5DCP
- JyMOH+Nr+MXyDQ2JB9EA4EQ6hZhczdUa0e3OS77K4MA/xr0IuVUe3ljoElzJuqwnWhMy
- +rmE3z0AIv/XQTzXAC0AX3l20sx+V3q5ZkEik8JPKwwIqyne/EKbYUB7x9XLGFxRVHmx
- r76WFjuiGkaxTlOXmctRTzrLbBf0T2aBQ1BOAO8wu564BEYQMo+d8nlvjathsIeaBbR0
- mYX5rqmQ/EsBnBtGJtgyVE4nIpsgI7ufhuxy8wySvd3FxV8xWTYSO3wulp3N4YYTIgAn
- h/Fw==
-X-Gm-Message-State: APjAAAU3/bjX8IPerSWgWw0x0RVG97w0lWnReU4UldVIWtkZOnOv6DHC
- cB3pZh/kPDpB6Ua0teG+RS5OVZmy6O/MSw==
-X-Google-Smtp-Source: APXvYqyw2xlhmei361Ka7rEIHWEa9pqTFvG2D1bIUKMzjIr6MYvDBwMk6L7SqEu6RGa1BXYr8Yk1dw==
-X-Received: by 2002:a63:5c46:: with SMTP id n6mr4096255pgm.75.1574151996395;
- Tue, 19 Nov 2019 00:26:36 -0800 (PST)
+ bh=+sOKpbGGDX9ppnghR7ZITJFjQMSASVJcPIq+9OwxT7U=;
+ b=uFsIcD4QSz5KYAwjS3tOU+HlFQr81QRrCv8e5nx9G/tB8o5P75PZ+idfB8Lnks9IhV
+ lktZsxZC0qvRyjA5Y9YjYsdJexvy8Wkx+/IgOUpNS7M1gcBOvVMYSXHImtCqVvhIwm78
+ ZQ3eAvlDrS06bUgz9lik6sVH36NUI2Yw4i+VPgmBVpGob0EN+tiNrgSQo7zSSEPbArV2
+ NYPpXi4gj6Xv3Hlp21D7hoqswEuigowe0E6OhjIxSYuBXPLSwHmPRj05ePxOz6uJx9Pj
+ R/Z/pg+8oItdhizLAr+P4JRU6GWtSUhJz6d5CefzcE3pSD/pRdhHw66Zvn1sIg0QpB2N
+ StBg==
+X-Gm-Message-State: APjAAAWu4+Sc2fZc6CWpB1WOAf72J+fUdmu/Gwk62YORXW3dlp8WWS+C
+ +M5BQCjv5GFfkicpkwR1ri8Hhw==
+X-Google-Smtp-Source: APXvYqwSVnVBml0XB1Z//w5UajXe3SXoM2YSIiyFkamv7/u2M5Wgs50p5WB6NUL/MEXVwTSH3gMmXg==
+X-Received: by 2002:a17:90a:d352:: with SMTP id
+ i18mr4886823pjx.42.1574151999618; 
+ Tue, 19 Nov 2019 00:26:39 -0800 (PST)
 Received: from localhost.localdomain ([115.97.180.31])
- by smtp.gmail.com with ESMTPSA id u7sm2312221pjx.19.2019.11.19.00.26.33
+ by smtp.gmail.com with ESMTPSA id u7sm2312221pjx.19.2019.11.19.00.26.36
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 19 Nov 2019 00:26:35 -0800 (PST)
+ Tue, 19 Nov 2019 00:26:39 -0800 (PST)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v2 01/10] gadget: Select USB_GADGET_MANUFACTURER for rockchip
-Date: Tue, 19 Nov 2019 13:56:14 +0530
-Message-Id: <20191119082623.6165-2-jagan@amarulasolutions.com>
+Subject: [PATCH v2 02/10] gadget: Select USB_GADGET_VENDOR_NUM for rockchip
+Date: Tue, 19 Nov 2019 13:56:15 +0530
+Message-Id: <20191119082623.6165-3-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20191119082623.6165-1-jagan@amarulasolutions.com>
 References: <20191119082623.6165-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_002640_690022_AE5E0005 
-X-CRM114-Status: GOOD (  10.47  )
+X-CRM114-CacheID: sfid-20191119_002641_294733_99F1E432 
+X-CRM114-Status: GOOD (  11.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,11 +104,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Select the gadget manufacturer as 'Rockchip' for
-all rockchip platform SoC's.
+Gadget vendor number, 0x2207 is common across all platfroms
+supported in Rockchip SoC.
 
-This eventually drop the explicit defined added
-on supported board defconfig files.
+So, select the same number globally, if ARCH_ROCKCHIP.
+
+This eventually drop the explicit configs defined in supported
+board defconfig files.
 
 Tested-by: Levin Du <djw@t-chip.com.cn>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
@@ -132,209 +135,209 @@ Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
  17 files changed, 1 insertion(+), 16 deletions(-)
 
 diff --git a/configs/elgin-rv1108_defconfig b/configs/elgin-rv1108_defconfig
-index b3d8d28bea..c9d703a0f5 100644
+index c9d703a0f5..48351bb1dd 100644
 --- a/configs/elgin-rv1108_defconfig
 +++ b/configs/elgin-rv1108_defconfig
 @@ -49,7 +49,6 @@ CONFIG_USB_OHCI_HCD=y
  CONFIG_USB_OHCI_GENERIC=y
  CONFIG_USB_DWC2=y
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x110a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_ERRNO_STR=y
 diff --git a/configs/evb-rk3036_defconfig b/configs/evb-rk3036_defconfig
-index 5dd5f43f7c..c9882ded98 100644
+index c9882ded98..bb3e2c8f7d 100644
 --- a/configs/evb-rk3036_defconfig
 +++ b/configs/evb-rk3036_defconfig
 @@ -52,7 +52,6 @@ CONFIG_SYSRESET=y
  # CONFIG_SPL_SYSRESET is not set
  CONFIG_USB=y
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x310a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_SPL_TINY_MEMSET=y
 diff --git a/configs/evb-rk3229_defconfig b/configs/evb-rk3229_defconfig
-index 745fdd1c0f..38b2660fb3 100644
+index 38b2660fb3..7bf26f7497 100644
 --- a/configs/evb-rk3229_defconfig
 +++ b/configs/evb-rk3229_defconfig
 @@ -64,7 +64,6 @@ CONFIG_DEBUG_UART_SHIFT=2
  CONFIG_SYSRESET=y
  CONFIG_USB=y
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x320a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_TPL_TINY_MEMSET=y
 diff --git a/configs/evb-rk3288_defconfig b/configs/evb-rk3288_defconfig
-index c2a78bd065..12d454b410 100644
+index 12d454b410..8f2f13adae 100644
 --- a/configs/evb-rk3288_defconfig
 +++ b/configs/evb-rk3288_defconfig
 @@ -71,7 +71,6 @@ CONFIG_USB=y
  CONFIG_USB_DWC2=y
  CONFIG_ROCKCHIP_USB2_PHY=y
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x320a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_DM_VIDEO=y
 diff --git a/configs/evb-rk3328_defconfig b/configs/evb-rk3328_defconfig
-index a59dab4853..8f97ef2c34 100644
+index 8f97ef2c34..747089435d 100644
 --- a/configs/evb-rk3328_defconfig
 +++ b/configs/evb-rk3328_defconfig
 @@ -86,7 +86,6 @@ CONFIG_USB_DWC2=y
  CONFIG_USB_DWC3=y
  # CONFIG_USB_DWC3_GADGET is not set
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x330a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_SPL_TINY_MEMSET=y
 diff --git a/configs/evb-rv1108_defconfig b/configs/evb-rv1108_defconfig
-index 037715cbc0..18bc6529ac 100644
+index 18bc6529ac..c9cad2bb4a 100644
 --- a/configs/evb-rv1108_defconfig
 +++ b/configs/evb-rv1108_defconfig
 @@ -44,7 +44,6 @@ CONFIG_USB_OHCI_HCD=y
  CONFIG_USB_OHCI_GENERIC=y
  CONFIG_USB_DWC2=y
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x110a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_ERRNO_STR=y
 diff --git a/configs/firefly-rk3288_defconfig b/configs/firefly-rk3288_defconfig
-index 65e839214c..fa3715cf7e 100644
+index fa3715cf7e..92eeffda01 100644
 --- a/configs/firefly-rk3288_defconfig
 +++ b/configs/firefly-rk3288_defconfig
 @@ -75,7 +75,6 @@ CONFIG_USB_DWC2=y
  CONFIG_ROCKCHIP_USB2_PHY=y
  CONFIG_USB_KEYBOARD=y
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x320a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_USB_HOST_ETHER=y
 diff --git a/configs/kylin-rk3036_defconfig b/configs/kylin-rk3036_defconfig
-index 1906d1d93f..4fc0c3e491 100644
+index 4fc0c3e491..08b47c84ef 100644
 --- a/configs/kylin-rk3036_defconfig
 +++ b/configs/kylin-rk3036_defconfig
 @@ -56,7 +56,6 @@ CONFIG_SYSRESET=y
  CONFIG_USB=y
  CONFIG_USB_DWC2=y
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x310a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_USB_HOST_ETHER=y
 diff --git a/configs/miqi-rk3288_defconfig b/configs/miqi-rk3288_defconfig
-index 30b05ecf44..c007c90a90 100644
+index c007c90a90..b06175958e 100644
 --- a/configs/miqi-rk3288_defconfig
 +++ b/configs/miqi-rk3288_defconfig
 @@ -71,7 +71,6 @@ CONFIG_USB=y
  CONFIG_USB_DWC2=y
  CONFIG_ROCKCHIP_USB2_PHY=y
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x320a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_USB_HOST_ETHER=y
 diff --git a/configs/phycore-rk3288_defconfig b/configs/phycore-rk3288_defconfig
-index d33f079dac..0329a8aa55 100644
+index 0329a8aa55..a86f689858 100644
 --- a/configs/phycore-rk3288_defconfig
 +++ b/configs/phycore-rk3288_defconfig
 @@ -75,7 +75,6 @@ CONFIG_USB=y
  CONFIG_USB_DWC2=y
  CONFIG_ROCKCHIP_USB2_PHY=y
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x320a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_USB_HOST_ETHER=y
 diff --git a/configs/popmetal-rk3288_defconfig b/configs/popmetal-rk3288_defconfig
-index 7642ea38b1..95a0a4b4d1 100644
+index 95a0a4b4d1..0cb67f33fe 100644
 --- a/configs/popmetal-rk3288_defconfig
 +++ b/configs/popmetal-rk3288_defconfig
 @@ -71,7 +71,6 @@ CONFIG_USB=y
  CONFIG_USB_DWC2=y
  CONFIG_ROCKCHIP_USB2_PHY=y
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x320a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_USB_HOST_ETHER=y
 diff --git a/configs/rock2_defconfig b/configs/rock2_defconfig
-index 3723a7e0dd..b7f6646381 100644
+index b7f6646381..1afb12d015 100644
 --- a/configs/rock2_defconfig
 +++ b/configs/rock2_defconfig
 @@ -72,7 +72,6 @@ CONFIG_USB=y
  CONFIG_USB_DWC2=y
  CONFIG_ROCKCHIP_USB2_PHY=y
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x320a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_DM_VIDEO=y
 diff --git a/configs/rock64-rk3328_defconfig b/configs/rock64-rk3328_defconfig
-index 021f982e68..d9a170ba26 100644
+index d9a170ba26..ec13a7710a 100644
 --- a/configs/rock64-rk3328_defconfig
 +++ b/configs/rock64-rk3328_defconfig
 @@ -87,7 +87,6 @@ CONFIG_USB_DWC2=y
  CONFIG_USB_DWC3=y
  # CONFIG_USB_DWC3_GADGET is not set
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x330a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_SPL_TINY_MEMSET=y
 diff --git a/configs/tinker-rk3288_defconfig b/configs/tinker-rk3288_defconfig
-index 0fd1612f87..bb561fac23 100644
+index bb561fac23..e46eb1cd91 100644
 --- a/configs/tinker-rk3288_defconfig
 +++ b/configs/tinker-rk3288_defconfig
 @@ -77,7 +77,6 @@ CONFIG_USB=y
  CONFIG_USB_DWC2=y
  CONFIG_ROCKCHIP_USB2_PHY=y
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x320a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_USB_HOST_ETHER=y
 diff --git a/configs/tinker-s-rk3288_defconfig b/configs/tinker-s-rk3288_defconfig
-index c851a93f31..38cb1984d8 100644
+index 38cb1984d8..3acb2ac5f5 100644
 --- a/configs/tinker-s-rk3288_defconfig
 +++ b/configs/tinker-s-rk3288_defconfig
 @@ -83,7 +83,6 @@ CONFIG_USB=y
  CONFIG_USB_DWC2=y
  CONFIG_ROCKCHIP_USB2_PHY=y
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x320a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_USB_HOST_ETHER=y
 diff --git a/configs/vyasa-rk3288_defconfig b/configs/vyasa-rk3288_defconfig
-index 6611080784..081e32d67d 100644
+index 081e32d67d..997d9a3877 100644
 --- a/configs/vyasa-rk3288_defconfig
 +++ b/configs/vyasa-rk3288_defconfig
 @@ -69,7 +69,6 @@ CONFIG_USB_DWC2=y
  CONFIG_ROCKCHIP_USB2_PHY=y
  CONFIG_USB_KEYBOARD=y
  CONFIG_USB_GADGET=y
--CONFIG_USB_GADGET_MANUFACTURER="Rockchip"
- CONFIG_USB_GADGET_VENDOR_NUM=0x2207
+-CONFIG_USB_GADGET_VENDOR_NUM=0x2207
  CONFIG_USB_GADGET_PRODUCT_NUM=0x320a
  CONFIG_USB_GADGET_DWC2_OTG=y
+ CONFIG_USB_FUNCTION_MASS_STORAGE=y
 diff --git a/drivers/usb/gadget/Kconfig b/drivers/usb/gadget/Kconfig
-index 26b4d12a09..1959a390f3 100644
+index 1959a390f3..844c3be16f 100644
 --- a/drivers/usb/gadget/Kconfig
 +++ b/drivers/usb/gadget/Kconfig
-@@ -39,6 +39,7 @@ if USB_GADGET
- config USB_GADGET_MANUFACTURER
- 	string "Vendor name of the USB device"
- 	default "Allwinner Technology" if ARCH_SUNXI
-+	default "Rockchip" if ARCH_ROCKCHIP
- 	default "U-Boot"
+@@ -48,6 +48,7 @@ config USB_GADGET_MANUFACTURER
+ config USB_GADGET_VENDOR_NUM
+ 	hex "Vendor ID of the USB device"
+ 	default 0x1f3a if ARCH_SUNXI
++	default 0x2207 if ARCH_ROCKCHIP
+ 	default 0x0
  	help
- 	  Vendor name of the USB device emulated, reported to the host device.
+ 	  Vendor ID of the USB device emulated, reported to the host device.
 -- 
 2.18.0.321.gffc6fa0e3
 
