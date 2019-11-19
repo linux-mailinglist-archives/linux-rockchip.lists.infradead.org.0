@@ -2,65 +2,70 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 674B7102BA8
-	for <lists+linux-rockchip@lfdr.de>; Tue, 19 Nov 2019 19:21:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CF1A102C26
+	for <lists+linux-rockchip@lfdr.de>; Tue, 19 Nov 2019 19:58:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D1kEqgqeVFolke6QAGBUO3NWZhT1QfdLeLe+xLvAiy8=; b=Qwq4/k2ZJqrgu9
-	Z0udoDGErXd8j9WlM9r9p2RHQIIJ2MCi55n3/Jm5Z0aTNQyXgt9KXhizZVq8HrTh0wfOkoVsH/LDk
-	J+Wr8GcqWRXR4tKipr/m2dtEaaczvFMEbe02+CLDBBpG9F6J1gXvqYg7FI/WXTThOElbGXvSg4Pm6
-	UZLZKSaUoasuoQd9MEJ1y3gA73+ccUkvSeO2PUmggHM4/hPwTtjYA7m7PGSTlfDQUofudkiPqT56H
-	JeZJvAYUpkbyRrzw7YT04QY1UsgQA9IcbTCSbbABbfZam0xwe2Dr2ZYHI8Aswn/yxwEo5d4Kz/W3J
-	3NHULeoG05JUxkplZ1lQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CbDuhXxFGI6USw6oH+kLNU1W86kusQHbaOdUQm1XjBE=; b=jLyp9nNSptcsO/
+	HVH8Ryx8SJSnnFRiBmGLxraJDRy0Ab6IKqNdPG8XbW32bvTJU6kCAW9wncK4LY4jrWiXhJi/CmULi
+	U/UNpLqV3kXw7EHHP+hPdAJICuokNOLWIYafDV+YxuhPVSXBBCkozxPrO1dJaCy5CC1mUaJPvlGoJ
+	UPUHI52Zs/KI0uOcYvJsJGMbgf+4clYkdcF10UmrbHSmpTsioyby3FyRJA1pU7a2MUbxuVBZfmiF1
+	/xe9UDs36Uhqopp732ttctSBxGMjBAqbWt0EziBFJBbR7OG45Q1ofOLeG9QhlhlNcFGcqQ8pimHk3
+	EFYhmUSzIeajcWZ/vKUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX884-0003HU-Qg; Tue, 19 Nov 2019 18:21:32 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iX8hu-0007NE-UB; Tue, 19 Nov 2019 18:58:34 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX87t-00037x-0r; Tue, 19 Nov 2019 18:21:22 +0000
-Received: by mail-lf1-x143.google.com with SMTP id 203so1996943lfa.12;
- Tue, 19 Nov 2019 10:21:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0dUXKYCswQ0fk3ChDtCHMcNLvLahQKNVxckNHbLK62U=;
- b=e5lESrFN8MyoYepnYPws1P7yf4C1dXiYfMOkmezNqIXAiZCpH6SxlKI9ix3SlSORNf
- /5JsXZyp1E+IjqGqwMhUYHulRiSh9QJkMf1GIFQllRE77579xVcB4EDXytX2AWhcMFvQ
- 1ksK6LpTugAMceaAYTPHCvwtSWDKN7rqeIueDTbWQtIHR4HQydG5oXkfTtYGFdaIoyjU
- CylOl88XU0mV6aCUOh7u/8Q+Yga6rgxzX3jS4Uzen0MivFUrqkq6uYhpdWXn0ASFSQew
- 25whUzIeI6GQW/U3sk+CCl9AnoSAUrolJLK0fI3TEVzTWkTXjIjQqrrTPxWQjG7LKd5E
- juzg==
+ id 1iX8hr-0007Ma-B4
+ for linux-rockchip@lists.infradead.org; Tue, 19 Nov 2019 18:58:33 +0000
+Received: by mail-pg1-x541.google.com with SMTP id k32so6093039pgl.2
+ for <linux-rockchip@lists.infradead.org>; Tue, 19 Nov 2019 10:58:30 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Y9nqNj4GquRt57X05X0WfujOjp8Op8DDDIt0VSOi728=;
+ b=B5Aknp7zhIjV0TcCd1gLIqTsG/ZVJD82Lg7Z/gRutcByoB8/oqLjqupp9e6X2p5Jxf
+ aB0E8gdat11VgjQqhbLO67MdbwQMV4wAjmoSxtqFtSwrFk+d4isJg5ifHKdyEEgkz0vA
+ h2pt7HFkU7mu2TYP+7VjwgRGlL9lc59AzLURM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=0dUXKYCswQ0fk3ChDtCHMcNLvLahQKNVxckNHbLK62U=;
- b=JSpo3VWqeYkz7svFdm46uuab9e5mUUGN5dvH5OoIb7CVaWtN7j5iD21QibyTD/7/w1
- r8zolMChgeF6bPWCdTa4BnEl8b9coV/EmIvP6ov0d3YwkzMk2InHdJDVKDapH1vb+k6g
- AJgg0LvKHN4OA0cI43iUM0A1PvfntIQEgiIzQsmS30veHmcwkI0vNr63e6qJ1cfDY0rn
- igdk7ehPVGwJLxxg1GYRsUUIurzFTuqVKon5ghZDgerenLROXGw51TsBAUZuJEDNpkI1
- y1Yi9/xrPQOPd1+dWBKpTKE30U002fYX069WJGj9uyRQ8uFOjJ3N3XoQKDME8AATqw1h
- IA0g==
-X-Gm-Message-State: APjAAAUgGmdALLXCUrBESQB9dkQTQ+PH/0ceoqAUMGTDLVPTtKaPxBjD
- dEOOk3ZOywdMZ3zZSK7FzPWKGeI/fHkUpdTnLl8=
-X-Google-Smtp-Source: APXvYqzVzn1n+QdLBDwkgCKvCRCAJA5gUf/1Cpb09fd0k1gg5uwHXZcpoFJbgiH7FOKqOuf17TVa1Ixb5NlB5WAK620=
-X-Received: by 2002:a19:4318:: with SMTP id q24mr5172404lfa.12.1574187679050; 
- Tue, 19 Nov 2019 10:21:19 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Y9nqNj4GquRt57X05X0WfujOjp8Op8DDDIt0VSOi728=;
+ b=MyLtdStMNU//5DY6AIxW3W2/apOf0CJDm5CI4HbYsd809gB+5gIIdqKdKgRuHNQkC/
+ i4iBIRUGbu+HRkmUFrHL/HGSwSjWsnz16WeYqDfupie57Rvvbg1GyYiecj+HTd8pfayK
+ 9/GR/i+Iegt5UzLhc89d0XWeO45M4pSymBhgGslgm0WOHESQmZ8hBfXFcY/4BSsslab4
+ mFYw4iS/EOPNd4SDMHKdi9G/XDGXd1Ozb1rOCgSVsPmKkvLDM3veY3WE6JkupWAhR1zq
+ 8Qijlrl88jpRdzJFCOySloeNXGYqvw7IAOYPhrjG/6n3ldWESowPf3IJqA2JuH1CH1mW
+ R+1g==
+X-Gm-Message-State: APjAAAVdMN27UPIYrkg8UMBkTGAZTntSrRbMHkczdYro5pBHGGuyz66D
+ qv5VFE2jErZjI00l3kEre4JsCg==
+X-Google-Smtp-Source: APXvYqw86InbWs2GTOT0dpGYsI8/Ms3OejAuSyTvrx28igz5AHPOGWioboph+YitaeLi2+JazgTLJw==
+X-Received: by 2002:a65:4907:: with SMTP id p7mr7125684pgs.327.1574189910148; 
+ Tue, 19 Nov 2019 10:58:30 -0800 (PST)
+Received: from localhost.localdomain ([115.97.180.31])
+ by smtp.gmail.com with ESMTPSA id y24sm28017581pfr.116.2019.11.19.10.58.25
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 19 Nov 2019 10:58:29 -0800 (PST)
+From: Jagan Teki <jagan@amarulasolutions.com>
+To: Heiko Stuebner <heiko@sntech.de>, Levin Du <djw@t-chip.com.cn>,
+ Akash Gajjar <akash@openedev.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH v2 1/2] dt-bindings: arm: rockchip: Add libretech for roc-pc
+ binding
+Date: Wed, 20 Nov 2019 00:28:16 +0530
+Message-Id: <20191119185817.11216-1-jagan@amarulasolutions.com>
+X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 MIME-Version: 1.0
-References: <20191118152518.3374263-1-adrian.ratiu@collabora.com>
- <20191118152518.3374263-4-adrian.ratiu@collabora.com>
-In-Reply-To: <20191118152518.3374263-4-adrian.ratiu@collabora.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Tue, 19 Nov 2019 15:21:14 -0300
-Message-ID: <CAOMZO5C5gpW6KF9d-79wd=-7ZGAbXQLAXw3kLi+_5DBW_DYrTw@mail.gmail.com>
-Subject: Re: [PATCH v3 3/4] drm: imx: Add i.MX 6 MIPI DSI host driver
-To: Adrian Ratiu <adrian.ratiu@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_102121_086996_387E2CCA 
-X-CRM114-Status: UNSURE (   5.96  )
+X-CRM114-CacheID: sfid-20191119_105831_944589_115C5C01 
+X-CRM114-Status: UNSURE (   8.95  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -68,11 +73,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -93,42 +96,43 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Martyn Welch <martyn.welch@collabora.com>,
- Sjoerd Simons <sjoerd.simons@collabora.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- DRI mailing list <dri-devel@lists.freedesktop.org>,
- linux-rockchip@lists.infradead.org, NXP Linux Team <linux-imx@nxp.com>,
- kernel@collabora.com, linux-stm32@st-md-mailman.stormreply.com,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Emil Velikov <emil.velikov@collabora.com>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Jagan Teki <jagan@amarulasolutions.com>,
+ Da Xue <da@lessconfused.com>, linux-amarula@amarulasolutions.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Adrian,
+Though the ROC-PC is manufactured by firefly, it is co-designed
+by libretch like other Libretech computer boards from allwinner,
+amlogic does.
 
-On Mon, Nov 18, 2019 at 12:25 PM Adrian Ratiu
-<adrian.ratiu@collabora.com> wrote:
+It is always meaningful to keep maintain those vendors who are
+part of design participation, so add libretech roc-pc compatible
+with existing binding.
 
-Some nitpicks:
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ Documentation/devicetree/bindings/arm/rockchip.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-> +
-> +config DRM_IMX_MIPI_DSI
-> +       tristate "Freescale i.MX DRM MIPI DSI"
+diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+index f7470ed1e17d..45728fd22af8 100644
+--- a/Documentation/devicetree/bindings/arm/rockchip.yaml
++++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+@@ -100,6 +100,7 @@ properties:
+       - description: Firefly ROC-RK3399-PC
+         items:
+           - enum:
++              - libretech,roc-rk3399-pc
+               - firefly,roc-rk3399-pc
+               - firefly,roc-rk3399-pc-mezzanine
+           - const: rockchip,rk3399
+-- 
+2.18.0.321.gffc6fa0e3
 
-This text seems too generic as there are i.MX SoCs that use different
-MIPI DSI IP.
-
-Maybe "Freescale i.MX6 DRM MIPI DSI" instead?
-
-> +module_platform_driver(imx_mipi_dsi_driver);
-> +
-> +MODULE_DESCRIPTION("i.MX MIPI DSI host controller driver");
-
-i.MX6 MIPI DSI, please.
 
 _______________________________________________
 Linux-rockchip mailing list
