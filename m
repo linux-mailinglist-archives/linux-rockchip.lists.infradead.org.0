@@ -2,54 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 905F51014A4
-	for <lists+linux-rockchip@lfdr.de>; Tue, 19 Nov 2019 06:36:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A105610162E
+	for <lists+linux-rockchip@lfdr.de>; Tue, 19 Nov 2019 06:51:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=85CKHprGNfOvsMx/yb+Kpn54Djh33GjEBaNAH4ciwrs=; b=OfnkfdOj9poITp
-	dy9vemVS1Q6ShlDYrYPQRE8ECqWPhRO3WUn1Gu6yxLzqNI4RdlyF2gymHWWVeMvZsCsfWEYCb8HMe
-	qRnWeRPPslkUYe+/8ux4hcNuUGOf11jkcoppuGOoIuBovb1TI2GR6d964fAhYZHxUKfzWBat/G4D2
-	xL6e6OcqQrPUWF3eOzqoc1GXEVO/p9EViOgeONWIi9VsYCXV0TGhYOzPRGowEJ+4hr7Ol3azwBp2N
-	RnkY9jssxvA4V3WwE1ntnemLre2V3ER7sESVahPYdzSbkl9QGfU/acyciSTitXEudCX8zcpl+Xhur
-	u/F1liMd5ieghX6NiIZQ==;
+	List-Owner; bh=SVAsQtjc6iCEdijq8qjxkFdt15MF6l4EgymUo3VZBTQ=; b=mRo/RYGehjWJyJ
+	zeFc0OMqT35pMM6nDGonqp48xLJZU1eRyE7VDhaNPqDbyXx4lLqIeW2wEj/NsdKq4807HrKHV3504
+	lcMZeE+YzRCG+aCLne2jA6R0C27N/OTFaz62DxIDCI9OVPgyjFmLKZnrCNTwRs1kFlMx8RG0kX7fy
+	HCl6WigHwLwlGKJQu+utcF3DVjrelyVzv980ae4LVQLWutl7IWStWmvzoV2E6ejUiwGwTYMBqNywW
+	KYaD4828aG2b5Qkghyor2g98Ok7TwJGg60Rn0B93rDnXtnFhcmC5L6wktnJxFWxBZ1oL6L0Ax9EWY
+	cSntRmdw/Lrtx6jjbjyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWwBJ-00070B-Kz; Tue, 19 Nov 2019 05:36:05 +0000
+	id 1iWwPi-0005W3-Pl; Tue, 19 Nov 2019 05:50:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWwBE-0006yc-1f
- for linux-rockchip@lists.infradead.org; Tue, 19 Nov 2019 05:36:04 +0000
+ id 1iWwPd-0005UZ-2f
+ for linux-rockchip@lists.infradead.org; Tue, 19 Nov 2019 05:50:57 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 393CB20672;
- Tue, 19 Nov 2019 05:35:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3E33A20862;
+ Tue, 19 Nov 2019 05:50:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574141759;
- bh=hF3+0/awYwGTiTMznroF4fqR9vXqdkxIXXDkxWqji8s=;
+ s=default; t=1574142652;
+ bh=F0f1DFQic3UsgOCXhcyyXPEfDgitzNZkVWAjT/PbzZY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=En0wh7odoUIxKO5TgjNH+TqDQeg6JAbE2ODAh3XNbIkMAvXfW+On2FGULtE2+Gtrr
- 3Y3UyM4dg1qP0xnygfwYftbyToML4Ny818egLeyB5in4imbGGgtlTJC8jB3r6Ru42x
- VOfMZM21WN4P7ad5nT/C4CpGOP26mYMO4PrlUGHI=
+ b=WGh+PI6lCV3mqCjsmoByJ/PxeTVrSrKzZ1muIOtQ576rsaSCa/IgjRQKY5vh6Hd1e
+ XP1F1pFrrgaMRpHFFrIJWNBNcu2cXCct3rG9cBQodI9Vc9PQ6VEaY4GlVXH0Qwo8iD
+ JMn82u5I3XaNAt5SVtQCnsN9p2b0h6GsGCVXGGD0=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.19 231/422] arm64: dts: rockchip: Fix I2C bus unit-address
- error on rk3399-puma-haikou
-Date: Tue, 19 Nov 2019 06:17:08 +0100
-Message-Id: <20191119051414.015045393@linuxfoundation.org>
+Subject: [PATCH 4.14 127/239] ARM: dts: rockchip: Fix erroneous SPI bus dtc
+ warnings on rk3036
+Date: Tue, 19 Nov 2019 06:18:47 +0100
+Message-Id: <20191119051330.458418476@linuxfoundation.org>
 X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191119051400.261610025@linuxfoundation.org>
-References: <20191119051400.261610025@linuxfoundation.org>
+In-Reply-To: <20191119051255.850204959@linuxfoundation.org>
+References: <20191119051255.850204959@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_213600_104953_AFC8ECEB 
-X-CRM114-Status: GOOD (  11.84  )
+X-CRM114-CacheID: sfid-20191118_215053_138243_2E1C1F1C 
+X-CRM114-Status: GOOD (  12.22  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -86,11 +86,16 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Rob Herring <robh@kernel.org>
 
-[ Upstream commit 501500e65fa96f899230d66153fefd780f08dd34 ]
+[ Upstream commit 131c3eb428ccd5f0c784b9edb4f72ec296a045d2 ]
 
-dtc has new checks for I2C buses. Fix the warnings in unit-addresses.
+dtc has new checks for SPI buses. The rk3036 dts file has a node named
+spi' which causes false positive warnings. As the node is a pinctrl child
+node, change the node name to be 'spi-pins' to fix the warnings.
 
-arch/arm64/boot/dts/rockchip/rk3399-puma-haikou.dtb: Warning (i2c_bus_reg): /i2c@ff3d0000/codec@0a: I2C bus unit address format error, expected "a"
+arch/arm/boot/dts/rk3036-evb.dtb: Warning (spi_bus_bridge): /pinctrl/spi: incorrect #address-cells for SPI bus
+arch/arm/boot/dts/rk3036-kylin.dtb: Warning (spi_bus_bridge): /pinctrl/spi: incorrect #address-cells for SPI bus
+arch/arm/boot/dts/rk3036-evb.dtb: Warning (spi_bus_bridge): /pinctrl/spi: incorrect #size-cells for SPI bus
+arch/arm/boot/dts/rk3036-kylin.dtb: Warning (spi_bus_bridge): /pinctrl/spi: incorrect #size-cells for SPI bus
 
 Cc: Heiko Stuebner <heiko@sntech.de>
 Cc: linux-rockchip@lists.infradead.org
@@ -98,22 +103,22 @@ Signed-off-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/rockchip/rk3399-puma-haikou.dts | 2 +-
+ arch/arm/boot/dts/rk3036.dtsi | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-puma-haikou.dts b/arch/arm64/boot/dts/rockchip/rk3399-puma-haikou.dts
-index 8ce4a79d9360f..1e6a71066c163 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-puma-haikou.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-puma-haikou.dts
-@@ -131,7 +131,7 @@
- 	status = "okay";
- 	clock-frequency = <400000>;
+diff --git a/arch/arm/boot/dts/rk3036.dtsi b/arch/arm/boot/dts/rk3036.dtsi
+index 5c0a76493d22a..03cf0c84ac0aa 100644
+--- a/arch/arm/boot/dts/rk3036.dtsi
++++ b/arch/arm/boot/dts/rk3036.dtsi
+@@ -750,7 +750,7 @@
+ 			/* no rts / cts for uart2 */
+ 		};
  
--	sgtl5000: codec@0a {
-+	sgtl5000: codec@a {
- 		compatible = "fsl,sgtl5000";
- 		reg = <0x0a>;
- 		clocks = <&sgtl5000_clk>;
+-		spi {
++		spi-pins {
+ 			spi_txd:spi-txd {
+ 				rockchip,pins = <1 29 RK_FUNC_3 &pcfg_pull_default>;
+ 			};
 -- 
 2.20.1
 
