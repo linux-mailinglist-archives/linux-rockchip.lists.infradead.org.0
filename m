@@ -2,86 +2,65 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7C37101D42
-	for <lists+linux-rockchip@lfdr.de>; Tue, 19 Nov 2019 09:27:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D988101D7C
+	for <lists+linux-rockchip@lfdr.de>; Tue, 19 Nov 2019 09:31:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mbztQg/NvB5yhS706IqN6lblQ3quV76UyzfLeDK+ye4=; b=aOOzbMbA7eZTAU
-	YOi1Wto5QDDPTJ0+zYHBTEjEYCIL1dR/wkCRS/Gzxb95pIAj3x0TSZhzcpWJVZRvlj/lzOzERiOCj
-	zQwoy5YcN/gq8mdqEQdoCnMYposaL4nEdoPyo9a9xFcL06OvD5hCvcukRnIdWqNxYN/LzayfjRmWI
-	vI/tUSijusPsrksCw6sNEsmhxvIVSTqdRrbjhocb/NDGiYaLbFcfr/Nv74gwKYwzL2zUB25bMwooM
-	qoyQPkOPP88RuOFJLdnhJcnkyVATauehajUkOxTRBgUVxskKJmbIPuMRVjJBDynVNU1xbWu9yJZGr
-	9RKfZBB7IvWqhnxrfq0g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5jq8xZdYXFeMYw+v9w7zQ6bE3CPKlh5bpgwCIngqES8=; b=kMTeuOnysF4jqI
+	Ch9jkA19Cqa3sPMuaktNKV96ho+0liA3UjiD6ggfQhdJEq2xb4IsuoNHpOJ3Impzsz+pZXUInfJFe
+	W35PCHSQUyjCTAeG0nup+cJ1Pk3A6bfuMof3epcFdQ3WsxGud7G+FNNZ6L6dD0iY4BQPVADwy6zfx
+	S2PEW3MsujXCkrIxlhhDyl++7oHdYxGnT984vzIEzTGWb2kvdB5z8EWQ99l/6plH3+Pmhj9+YEZOo
+	4BzG2JRtgz801nk+QLcBpwiYJ/da1EJVf6QAj/ln2x6NtTF7eJtjm5qQAzdRaVw4NLf12UmekCZ7l
+	xS0j5fHo+q6hVJ/Ix7eQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWyqs-00023m-NC; Tue, 19 Nov 2019 08:27:10 +0000
-Received: from mail-pj1-x102f.google.com ([2607:f8b0:4864:20::102f])
+	id 1iWyv0-0003xv-Ax; Tue, 19 Nov 2019 08:31:26 +0000
+Received: from lb2-smtp-cloud7.xs4all.net ([194.109.24.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWyqm-0001yc-RW
- for linux-rockchip@lists.infradead.org; Tue, 19 Nov 2019 08:27:08 +0000
-Received: by mail-pj1-x102f.google.com with SMTP id s8so2385326pji.2
- for <linux-rockchip@lists.infradead.org>; Tue, 19 Nov 2019 00:27:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=8o7coaIQPe7QB3fuJO1ULMoonw3x0xMnjKhtjDwulfg=;
- b=C5gIZVna/6rkEmBAYvl8vRHgFvyRsxT20kPKYLE329WdRkIsqKEiX2z15bYnzvsfLk
- 8HMOWOcl/LfdFczKZQOsouPVoJ37lofuJ5PnS2TaaiH5fIUbKBgFz7zg9PkmW1CnhptF
- I3g6EzXSnplsv6t9ggpSX8NFLgl1RcJ12PNk4=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=8o7coaIQPe7QB3fuJO1ULMoonw3x0xMnjKhtjDwulfg=;
- b=aZJMyozkE2HCuaRQSOLddTEaBSf9TVAXU7MM8eHtqO+RRUabViuFzpA9ihnSiAMYjp
- AiwKXcVeVYCwYMMN4rpq+epZBbvZfRdgFlb98GmeusVSUT/ALtik1YmKFnkXbTgfEEMn
- WlJtJETV3XdAVV7D854DMWNwc5NAdM3FKkC4xddFZlwv18f7ONHYTLF8CUafsbvee/8g
- m1NzfJ87d/Ue5zrWSuyQ/WkR0mlJoHz1RGsR6tgptAPxkY6/6pSx9tAizaSskTqYLXZI
- TTBxGj9z+nEgiW4xc8z36XwnpsqwjJ/YTCDsgRvx1V4g6BMgQjCvuVox7idIswX0XioT
- j32Q==
-X-Gm-Message-State: APjAAAXgMnjKw45ShCzkJGx8QaoGywoybCYehNx34Rq1MaWha7HEm1tk
- nKAfvOFSC+uxKOy5reYN+wVcBA==
-X-Google-Smtp-Source: APXvYqw9dawgzIVgd9d+Bg0h+iZuKdUosLXpO/UGqb3xJV5UC0aq3VpESpTxIO5/wz8Axqx4O+Rurw==
-X-Received: by 2002:a17:90b:30ca:: with SMTP id
- hi10mr4717512pjb.143.1574152024028; 
- Tue, 19 Nov 2019 00:27:04 -0800 (PST)
-Received: from localhost.localdomain ([115.97.180.31])
- by smtp.gmail.com with ESMTPSA id u7sm2312221pjx.19.2019.11.19.00.27.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 19 Nov 2019 00:27:03 -0800 (PST)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v2 10/10] rock960: Enable USB Gadget
-Date: Tue, 19 Nov 2019 13:56:23 +0530
-Message-Id: <20191119082623.6165-11-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
-In-Reply-To: <20191119082623.6165-1-jagan@amarulasolutions.com>
-References: <20191119082623.6165-1-jagan@amarulasolutions.com>
+ id 1iWyum-0003pQ-Ti; Tue, 19 Nov 2019 08:31:17 +0000
+Received: from [IPv6:2001:983:e9a7:1:9879:d2e2:f0e2:9c7]
+ ([IPv6:2001:983:e9a7:1:9879:d2e2:f0e2:9c7])
+ by smtp-cloud7.xs4all.net with ESMTPA
+ id WyuXiBiMtcs92WyuYixyxi; Tue, 19 Nov 2019 09:31:03 +0100
+Subject: Re: [PATCH v11 00/11] Rockchip ISP Driver
+To: Ezequiel Garcia <ezequiel@collabora.com>,
+ Helen Koike <helen.koike@collabora.com>, linux-rockchip@lists.infradead.org
+References: <20191114051242.14651-1-helen.koike@collabora.com>
+ <996a9b6a-0e45-d627-9263-539c22e5f1c0@xs4all.nl>
+ <7fd4bf99fd6316da8acaf0a27b6845bedbf4b25f.camel@collabora.com>
+From: Hans Verkuil <hverkuil@xs4all.nl>
+Message-ID: <eafffc6f-061e-65ab-079b-b2bd613d61cb@xs4all.nl>
+Date: Tue, 19 Nov 2019 09:30:57 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <7fd4bf99fd6316da8acaf0a27b6845bedbf4b25f.camel@collabora.com>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfMGsN9TkGwtzRSuVMeonrxJLrUw1XmSkg4IsuhBSRsDFrLC11ivzCFX8aJcfdWeCV5jNkPvVEVJSSeMksMMXQZnuPOLV3vA0z47kH28NIXezbzRMwJVm
+ i0kEQCLAGczqiaGYtSeRJesLq8/NrrPpGhMsD5vDBBc/iagU+JIHt8BmMKjF2tn59ibNsHaMuAnmFWra4a3gUMCdRT/gdrQnHJnrgik0lQofZ0esyk/Nu/DX
+ D65EhczIhRRFxGvaB1eAhJi/v0F6Ozd1KE9URen/4s2vGTWfsgIEnqi5DQRRBJ3pKz0y7XeprGFaVM8esUrwKqcOaItP9rvtsxQLOCB1suLvdupJrx6pZYcd
+ iWWSqkh2ooYO5vpz+kAD70HUg1T9njp9gUjPEB1af8RTf1yux/jSVXu9QBMou3ErrndZ/+b7CCQUyjSvRcI54ZJ1qKKEogk7KHzRN5GuJiW4izKHthrhtquJ
+ lJRTd5LRqspOvFC13to5LvBSzTB/A6dc8kERZs3++ygx9drc3Pfswnzxjv4UFLAzJgD55HoGwrTnTGGiqk/0l76+4P1eGQqy+V5z6BSX/MQz/uqOVmkwIQvh
+ WgyLG9k1iJZt7GaX1QAUCU60ghZsWb2U2SbFm4CfNmutP3mOH2/S5S80JOkq+4SDt7GapP1ysMdumPOfxMrNrOWP3GIS/LD3j0ezNW201zm+k+NTVxtsn0Ya
+ HkMF0ziheb1qenYexxUxz7vlP/y+71YSjuoQNMyW3snuPKVVdh+soPSbqcn6vYv63+ZXtP1L1lQMPl2DcMxoJ49vEp/WW69/QbpDfkwNJBrK6Kl2rOoTW8dY
+ NPEIK9sFKpczRAj9HHUjgeBUW0rX4OPH1vKozIZYCDVG7Zps434Nnr/angm3ZTcstyAS+glPSm0Fhg5fLeXjIzwqwsxsE9veXu/iHB5znhQFN0JBAly+qNUa
+ gx9OZhTsTsatruBMqPo8WnJkJQ+8GIKhvtmPx37mkaMGy+AWBhswC+PNn0A7UhKlvALCrAZCqGTq1XPM00wI+N0yrzK9CsIKHTUokmZ2MZc3b8Kf
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_002704_902903_568811CD 
-X-CRM114-Status: UNSURE (   8.17  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191119_003113_114154_8C2A1449 
+X-CRM114-Status: GOOD (  16.28  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,38 +73,101 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: u-boot@lists.denx.de, Levin Du <djw@t-chip.com.cn>,
- linux-amarula@amarulasolutions.com, Jagan Teki <jagan@amarulasolutions.com>,
- linux-rockchip@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
+ kernel@collabora.com, heiko@sntech.de, jacob-chen@iotwrt.com,
+ gregkh@linuxfoundation.org, jeffy.chen@rock-chips.com, zyc@rock-chips.com,
+ linux-kernel@vger.kernel.org, tfiga@chromium.org, robh+dt@kernel.org,
+ hans.verkuil@cisco.com, laurent.pinchart@ideasonboard.com,
+ sakari.ailus@linux.intel.com, mchehab@kernel.org, zhengsq@rock-chips.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Enable DWC3 core, gadget for rock960 board.
+On 11/18/19 7:52 PM, Ezequiel Garcia wrote:
+> Hi Hans,
+> 
+> Thanks for taking care of this.
+> 
+> On Thu, 2019-11-14 at 09:42 +0100, Hans Verkuil wrote:
+>> On 11/14/19 6:12 AM, Helen Koike wrote:
+>>> Hello,
+>>>
+>>> This series adds the Rockchip Image Signal Processing Unit v1 driver to
+>>> staging.
+>>>
+>>> The main reason to be in staging is that people are already using it from the
+>>> mailing list (including libcamera), and having it in mainline makes the workflow
+>>> easier. Also, it is easier for other people to contribute back (with code
+>>> or testing the driver).
+>>>
+>>> We plan to actively work on this driver to get it our of staging.
+>>>
+>>> This patchset is also available at:
+>>> https://gitlab.collabora.com/koike/linux/tree/rockchip/isp/v11
+>>>
+>>> Libcamera patched to work with this version:
+>>> https://gitlab.collabora.com/koike/libcamera
+>>> (also sent to the mailing list)
+>>>
+>>> The major difference in v11 are:
+>>> - Fixed compiling warnings found with W=1
+>>> - Fixed checkpatch errors
+>>> - Add clock-names values in dt-bindings
+>>
+>> Looking at checkpatch I see a few remaining issues that I believe should be
+>> fixed before merging this:
+>>
+>> CHECK: spinlock_t definition without comment
+>> #575: FILE: drivers/staging/media/rkisp1/isp_stats.h:43:
+>> +       spinlock_t irq_lock;
+>>
+>> CHECK: struct mutex definition without comment
+>> #581: FILE: drivers/staging/media/rkisp1/isp_stats.h:49:
+>> +       struct mutex wq_lock;
+>>
+>> CHECK: spinlock_t definition without comment
+>> #1648: FILE: drivers/staging/media/rkisp1/isp_params.h:25:
+>> +       spinlock_t config_lock;
+>>
+>> CHECK: spinlock_t definition without comment
+>> #2058: FILE: drivers/staging/media/rkisp1/capture.h:145:
+>> +       spinlock_t vbq_lock;
+>>
+> 
+> I'd rather merge this as-is, adding a TODO entry stating
+> we need to revisit locking specifically, because I'd like
+> to take a close look at these spinlocks/mutex,
+> instead of just addding comments for then.
 
-This would help to use fastboot by default.
+Fair enough! Just as long as it is mentioned somewhere.
 
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- configs/rock960-rk3399_defconfig | 2 ++
- 1 file changed, 2 insertions(+)
+> 
+>> Once this is done together with the Jacob Chen email clarification
+>> it is ready to be merged for v5.6.
+>>
+> 
+> I'll find out more about this.
 
-diff --git a/configs/rock960-rk3399_defconfig b/configs/rock960-rk3399_defconfig
-index 979ca0f93b..d0ad6865cf 100644
---- a/configs/rock960-rk3399_defconfig
-+++ b/configs/rock960-rk3399_defconfig
-@@ -57,6 +57,8 @@ CONFIG_USB_ETHER_ASIX88179=y
- CONFIG_USB_ETHER_MCS7830=y
- CONFIG_USB_ETHER_RTL8152=y
- CONFIG_USB_ETHER_SMSC95XX=y
-+CONFIG_USB_GADGET=y
-+CONFIG_USB_DWC3=y
- CONFIG_USE_TINY_PRINTF=y
- CONFIG_SPL_TINY_MEMSET=y
- CONFIG_ERRNO_STR=y
--- 
-2.18.0.321.gffc6fa0e3
+Thanks!
+
+Remember that we are in the code freeze until v5.5-rc1 is released,
+so you have time to make more adjustments if you want to.
+
+Regards,
+
+	Hans
+
+> 
+>> It passes all the sparse/smatch tests, so that's very good.
+>>
+> 
+> Great!
+> 
+> Thanks,
+> Ezequiel
+> 
 
 
 _______________________________________________
