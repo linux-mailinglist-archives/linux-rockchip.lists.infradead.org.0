@@ -2,70 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50545101D41
-	for <lists+linux-rockchip@lfdr.de>; Tue, 19 Nov 2019 09:27:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7C37101D42
+	for <lists+linux-rockchip@lfdr.de>; Tue, 19 Nov 2019 09:27:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ep5/lJniFtdS9rJt/+UpEQ+nax9gq/qyEz1nZt7zQtA=; b=oHe9xCuVT2L9Xa
-	qK9O6Ppu5LJF3gEn+1TdBuj0OBfIFARUInrLLRIcavwZE1Gx9Yqtb/IAXE/3XXUrYNrBxVsZ2by/D
-	2V1geae4B1aLR25yAKQrhKUs+z70+YoOSTdoxcwnFty9Kxpk3gu4SnBXPmvlFuwwxobCTtwQM8qEc
-	TzDwQtdvboRhhWaGTRCAc5a8GIAv8N7O8DlZEAf1cDbhHysq3EQ323R59Gid3+CXf9v2k513ZgqgJ
-	eLH8yjpv6V8sUN3/eZBWUssWV36eQfq5DR2EzZ9P/v0q7ILxHSUrhpuFaDLmnOXf0Q8pici22BaCH
-	pTc+9ZZKjSRbznwhoc+g==;
+	List-Owner; bh=mbztQg/NvB5yhS706IqN6lblQ3quV76UyzfLeDK+ye4=; b=aOOzbMbA7eZTAU
+	YOi1Wto5QDDPTJ0+zYHBTEjEYCIL1dR/wkCRS/Gzxb95pIAj3x0TSZhzcpWJVZRvlj/lzOzERiOCj
+	zQwoy5YcN/gq8mdqEQdoCnMYposaL4nEdoPyo9a9xFcL06OvD5hCvcukRnIdWqNxYN/LzayfjRmWI
+	vI/tUSijusPsrksCw6sNEsmhxvIVSTqdRrbjhocb/NDGiYaLbFcfr/Nv74gwKYwzL2zUB25bMwooM
+	qoyQPkOPP88RuOFJLdnhJcnkyVATauehajUkOxTRBgUVxskKJmbIPuMRVjJBDynVNU1xbWu9yJZGr
+	9RKfZBB7IvWqhnxrfq0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWyqp-00020g-E7; Tue, 19 Nov 2019 08:27:07 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1iWyqs-00023m-NC; Tue, 19 Nov 2019 08:27:10 +0000
+Received: from mail-pj1-x102f.google.com ([2607:f8b0:4864:20::102f])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWyqj-0001w5-Vd
- for linux-rockchip@lists.infradead.org; Tue, 19 Nov 2019 08:27:05 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id y21so2387748pjn.9
- for <linux-rockchip@lists.infradead.org>; Tue, 19 Nov 2019 00:27:01 -0800 (PST)
+ id 1iWyqm-0001yc-RW
+ for linux-rockchip@lists.infradead.org; Tue, 19 Nov 2019 08:27:08 +0000
+Received: by mail-pj1-x102f.google.com with SMTP id s8so2385326pji.2
+ for <linux-rockchip@lists.infradead.org>; Tue, 19 Nov 2019 00:27:04 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ERUG8BZ0QuZnGE3F6ql5Lg29BeT9X+LCUpVkl19Pg68=;
- b=gYPpV/k9vxq0A05Quy8oXkBa2poIolJ7DjdoKCXwoHzE89zBXibfJ9vDg76yJoRDl7
- US13DDOyPPeXhJESOr2Auj+5HdBGDDcfm5igreun2YS1ZNORl1oSQfLG2qC7UIKXjIJO
- cxt9u3/6TSBjEU+B0WWOO9ywP4HvprFMOLxmI=
+ bh=8o7coaIQPe7QB3fuJO1ULMoonw3x0xMnjKhtjDwulfg=;
+ b=C5gIZVna/6rkEmBAYvl8vRHgFvyRsxT20kPKYLE329WdRkIsqKEiX2z15bYnzvsfLk
+ 8HMOWOcl/LfdFczKZQOsouPVoJ37lofuJ5PnS2TaaiH5fIUbKBgFz7zg9PkmW1CnhptF
+ I3g6EzXSnplsv6t9ggpSX8NFLgl1RcJ12PNk4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ERUG8BZ0QuZnGE3F6ql5Lg29BeT9X+LCUpVkl19Pg68=;
- b=joQqs+Vko/LuRbjjthL246ScogVXzUKU0tjvKE1Aue5GMUoqzOK96kyUgVXKnqgXcW
- qxMGl1kMX4h6psfrOYS9yQjudOVozwdnZPnuWY+oUKvfTQNh9ngbaHwn/69soVCGHnIp
- fKkd0D5U7wj9r6t+1PCbbOpmzKhrPZi3F2Vdpx9LjetL7bx6GYq6WNfuwwnH4Yvom9VL
- gUmQ+y7UQZY92wRT25iiQ5ZGQYFJSWXWJfDRfoXJy36rCPlOz/KkkBEzG+v6ZsX+i6yA
- XAwApt39XAmT66Z96MCgU2g1Kx34aXffCi9HkvfurH4sr2Jw/tedyfc3r9I3K1Y8zclX
- b/IA==
-X-Gm-Message-State: APjAAAWwq4RVEe7QLY+rccEQ/zkZyvkU1nMJ8RaX736j+4KqckTnfDsq
- Mdc5E/wFRBCDtqGPhyZBR5Nceg==
-X-Google-Smtp-Source: APXvYqwgOT+9ta3r2yAvYyEadOfDr6tl9seFPxjzhmaN2QYqcNSUj2nMMenSfY3VldgyQTUyU8/c0Q==
-X-Received: by 2002:a17:902:349:: with SMTP id 67mr187750pld.80.1574152021041; 
- Tue, 19 Nov 2019 00:27:01 -0800 (PST)
+ bh=8o7coaIQPe7QB3fuJO1ULMoonw3x0xMnjKhtjDwulfg=;
+ b=aZJMyozkE2HCuaRQSOLddTEaBSf9TVAXU7MM8eHtqO+RRUabViuFzpA9ihnSiAMYjp
+ AiwKXcVeVYCwYMMN4rpq+epZBbvZfRdgFlb98GmeusVSUT/ALtik1YmKFnkXbTgfEEMn
+ WlJtJETV3XdAVV7D854DMWNwc5NAdM3FKkC4xddFZlwv18f7ONHYTLF8CUafsbvee/8g
+ m1NzfJ87d/Ue5zrWSuyQ/WkR0mlJoHz1RGsR6tgptAPxkY6/6pSx9tAizaSskTqYLXZI
+ TTBxGj9z+nEgiW4xc8z36XwnpsqwjJ/YTCDsgRvx1V4g6BMgQjCvuVox7idIswX0XioT
+ j32Q==
+X-Gm-Message-State: APjAAAXgMnjKw45ShCzkJGx8QaoGywoybCYehNx34Rq1MaWha7HEm1tk
+ nKAfvOFSC+uxKOy5reYN+wVcBA==
+X-Google-Smtp-Source: APXvYqw9dawgzIVgd9d+Bg0h+iZuKdUosLXpO/UGqb3xJV5UC0aq3VpESpTxIO5/wz8Axqx4O+Rurw==
+X-Received: by 2002:a17:90b:30ca:: with SMTP id
+ hi10mr4717512pjb.143.1574152024028; 
+ Tue, 19 Nov 2019 00:27:04 -0800 (PST)
 Received: from localhost.localdomain ([115.97.180.31])
- by smtp.gmail.com with ESMTPSA id u7sm2312221pjx.19.2019.11.19.00.26.58
+ by smtp.gmail.com with ESMTPSA id u7sm2312221pjx.19.2019.11.19.00.27.01
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 19 Nov 2019 00:27:00 -0800 (PST)
+ Tue, 19 Nov 2019 00:27:03 -0800 (PST)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v2 09/10] rockchip: Setup dwc3_device (for non-dm gadgets)
-Date: Tue, 19 Nov 2019 13:56:22 +0530
-Message-Id: <20191119082623.6165-10-jagan@amarulasolutions.com>
+Subject: [PATCH v2 10/10] rock960: Enable USB Gadget
+Date: Tue, 19 Nov 2019 13:56:23 +0530
+Message-Id: <20191119082623.6165-11-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20191119082623.6165-1-jagan@amarulasolutions.com>
 References: <20191119082623.6165-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_002702_029410_98904CF4 
-X-CRM114-Status: GOOD (  10.52  )
+X-CRM114-CacheID: sfid-20191119_002704_902903_568811CD 
+X-CRM114-Status: UNSURE (   8.17  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -92,78 +94,36 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, linux-rockchip@lists.infradead.org,
- u-boot@lists.denx.de, Jagan Teki <jagan@amarulasolutions.com>,
- Levin Du <djw@t-chip.com.cn>, linux-amarula@amarulasolutions.com
+Cc: u-boot@lists.denx.de, Levin Du <djw@t-chip.com.cn>,
+ linux-amarula@amarulasolutions.com, Jagan Teki <jagan@amarulasolutions.com>,
+ linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Setup dwc3_device structure for non-dm gadgets, which is used
-in rk3399 platforms.
+Enable DWC3 core, gadget for rock960 board.
 
-dwc3_device would have basic regbase, dr_mode, high speed
-and 16-bit UTMI+ etc.
+This would help to use fastboot by default.
 
-Cc: Marek Vasut <marex@denx.de>
-Tested-by: Levin Du <djw@t-chip.com.cn>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- arch/arm/mach-rockchip/board.c | 32 ++++++++++++++++++++++++++++++--
- 1 file changed, 30 insertions(+), 2 deletions(-)
+ configs/rock960-rk3399_defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm/mach-rockchip/board.c b/arch/arm/mach-rockchip/board.c
-index c90eb976d0..542823b8cd 100644
---- a/arch/arm/mach-rockchip/board.c
-+++ b/arch/arm/mach-rockchip/board.c
-@@ -49,8 +49,10 @@ void enable_caches(void)
- }
- #endif
- 
--#if defined(CONFIG_USB_GADGET) && defined(CONFIG_USB_GADGET_DWC2_OTG)
-+#if defined(CONFIG_USB_GADGET)
- #include <usb.h>
-+
-+#if defined(CONFIG_USB_GADGET_DWC2_OTG)
- #include <usb/dwc2_udc.h>
- 
- static struct dwc2_plat_otg_data otg_data = {
-@@ -117,7 +119,33 @@ int board_usb_cleanup(int index, enum usb_init_type init)
- {
- 	return 0;
- }
--#endif
-+#endif /* CONFIG_USB_GADGET_DWC2_OTG */
-+
-+#if defined(CONFIG_USB_DWC3) && !defined(CONFIG_DM_USB_GADGET)
-+#include <dwc3-uboot.h>
-+
-+static struct dwc3_device dwc3_device_data = {
-+	.maximum_speed = USB_SPEED_HIGH,
-+	.base = 0xfe800000,
-+	.dr_mode = USB_DR_MODE_PERIPHERAL,
-+	.index = 0,
-+	.dis_u2_susphy_quirk = 1,
-+	.hsphy_mode = USBPHY_INTERFACE_MODE_UTMIW,
-+};
-+
-+int usb_gadget_handle_interrupts(void)
-+{
-+	dwc3_uboot_handle_interrupt(0);
-+	return 0;
-+}
-+
-+int board_usb_init(int index, enum usb_init_type init)
-+{
-+	return dwc3_uboot_init(&dwc3_device_data);
-+}
-+#endif /* CONFIG_USB_DWC3 */
-+
-+#endif /* CONFIG_USB_GADGET */
- 
- #if CONFIG_IS_ENABLED(FASTBOOT)
- int fastboot_set_reboot_flag(void)
+diff --git a/configs/rock960-rk3399_defconfig b/configs/rock960-rk3399_defconfig
+index 979ca0f93b..d0ad6865cf 100644
+--- a/configs/rock960-rk3399_defconfig
++++ b/configs/rock960-rk3399_defconfig
+@@ -57,6 +57,8 @@ CONFIG_USB_ETHER_ASIX88179=y
+ CONFIG_USB_ETHER_MCS7830=y
+ CONFIG_USB_ETHER_RTL8152=y
+ CONFIG_USB_ETHER_SMSC95XX=y
++CONFIG_USB_GADGET=y
++CONFIG_USB_DWC3=y
+ CONFIG_USE_TINY_PRINTF=y
+ CONFIG_SPL_TINY_MEMSET=y
+ CONFIG_ERRNO_STR=y
 -- 
 2.18.0.321.gffc6fa0e3
 
