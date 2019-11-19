@@ -2,87 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 858DD102C2A
-	for <lists+linux-rockchip@lfdr.de>; Tue, 19 Nov 2019 19:58:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8444102D68
+	for <lists+linux-rockchip@lfdr.de>; Tue, 19 Nov 2019 21:18:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fs/8dEw555gWwddNXHDxYXtcdIoL2aaVjjnrO1Bil/Q=; b=KE8THY3xnDPLLT
-	ftchi35y0FOlK4TopArLyrIVEo/0LaYoDNt4EauPlt1K4nArDJ1hieWlV+eCyEmsccdTPUGk0akIx
-	i8uD3IyEOSFOZ9Ajtq8kkAAHa3FC/7eEYqXrmBmz2YERa2Fpfl94UL2rrjjaciqc3jrcBq0+c4Gab
-	s+tMlxAIW2MqzTaYddkiFnMEo540TQX02yDl2JdVUjZ/1h8S2hEzgrbEt8EJYlxrahUs3DU8W1xs0
-	FZxmLA6kwtyN1UgXlG2GTNiQfBqOxT0YpS+n4RhUKzRAfvT0ymysnuOBQJob8qn1xm1gnPTDYRuh3
-	dnVnGbvJHo7RzQb7bBYA==;
+	List-Owner; bh=1ps4lRxuE9xbDH8RG51Oi2lB939mAK4dUZPVrAZxPqY=; b=FKI8821Le8HFq/
+	hfJzVu8haz25+W0lG+cmHKmsIBzUW3dyiptZF98pIFLp9ugyWrUZO0Ne/GQUOZ+DE9D0HoIkTx5pB
+	m5p2ayzN0sM+m74QvZv9Zaf6PkbZtDpWfKlmmujNQ+ECTYZ3gKgzAR2gOm5+R6Cfiq8jdgO26/Nr0
+	H3djt7mADnCR1XR8nUE5n3gMn05ctpegoG2TysHApwdaAmyRf5fPu9X8NzO680/uPHuoaV1IG0faj
+	PWtCJo+Movc6h9VrqG1jP8pzWquOzZ9GCV1lAKPbhMC+uz73Qf9zXWCXhhd2SeJMF3pHOfMmpUp0i
+	pP6ySo3LnmNPEFCso3AA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX8i9-0007aL-Av; Tue, 19 Nov 2019 18:58:49 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1iX9xP-0002ij-AK; Tue, 19 Nov 2019 20:18:39 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX8hw-0007Nm-QB
- for linux-rockchip@lists.infradead.org; Tue, 19 Nov 2019 18:58:38 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id gc1so2979866pjb.8
- for <linux-rockchip@lists.infradead.org>; Tue, 19 Nov 2019 10:58:35 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=tCrU7kMtOhnJwNIZxfz0SZJ0AKq1g5JZVrjQTxHcuS4=;
- b=hwh9vxCU2MJkwDgYPUI84hzOt7qhmc+CdovSRIV3pSu7WrmNbWx60wYUeYsB1Kaw5j
- Vkozznd7ocVPn2yiTH/c/09in9bcd1n2P6s/+xRlNGog+zIVuJ4ZcHFh+FU9ML+L00RO
- 7trPFH1QWPt3v2pZhWacMpyA2S+kLOvMSczd8=
+ id 1iX9x6-0002UB-Sw; Tue, 19 Nov 2019 20:18:22 +0000
+Received: by mail-ot1-f68.google.com with SMTP id 94so19086213oty.8;
+ Tue, 19 Nov 2019 12:18:20 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=tCrU7kMtOhnJwNIZxfz0SZJ0AKq1g5JZVrjQTxHcuS4=;
- b=fkuCNruLKe03t2VzG1LWghCpLnracs4zDx8pjpF9cqq4ykxdy7ZGFKLZTYT5GzEHjs
- a0RewZmsXZ1TVl5Z0tiv/VCIDPBWqX3SyQleHu/rzbewqEuyXPZua2uF7Mx86So0fhhz
- KLUkrdT0Wet0VL33YGD+XzXe95iZFwfc8TYHAEAzrQ9rqrSJkmno423ejCP7fJzsQyJ5
- deLPAxYWvaid3VNvhVaYD2xyvsYXFWzP7Gd8QgbvJFB94G8qBk+0QRxA9nE+459F6fee
- 9EGfdy0McpAHEgTfWabUs0bpqt+2/HK2dRvXXT4nXF1skP7NnJI8bp+mUgQJ6NiQszND
- IGKg==
-X-Gm-Message-State: APjAAAWmAO523Dna09OKkuYnnqQRRgHBLADnSllL8hLsb30fKaB58pRF
- y3bgo0qDILZLIE2Elh/03wswCQ==
-X-Google-Smtp-Source: APXvYqw3ksX3/scZkZrClNcQI4wINkcNVOzF9sTBjirib0yItcf3MYqd2S8L7QGc6k8nAcGm7H1WcA==
-X-Received: by 2002:a17:90a:8995:: with SMTP id
- v21mr8517928pjn.109.1574189914762; 
- Tue, 19 Nov 2019 10:58:34 -0800 (PST)
-Received: from localhost.localdomain ([115.97.180.31])
- by smtp.gmail.com with ESMTPSA id y24sm28017581pfr.116.2019.11.19.10.58.30
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=onoq+Z2JcZ0wm7xV09BtvAAc615BtbBWD3mKE843QYY=;
+ b=QZ3UWizso//X/ZDJPEEQpF87NRsFi7sXEhOi2sFJmbNqMDXL/XtfJBhB+YGaHjjfzg
+ idgMv2/Ig1lOz/Z5Jj8ixFZFKM9AoHCvq7gKCsUEtBxlT9A7xR0sBR+lu1s+HAU8swNv
+ nYPsbXSAdbjczHT9eYHc5t/3K1PdAkVlgASWyMMbI8eRlRZuTGNK8iF1X8MmNL7I/gBa
+ +feEVYH2r4mFiz8AgUm/cFmk3IMpXogtp9CWAPzMJjoAZ123tUlqK4D7z8JQDTy14eYy
+ bLkbvZ/nXhT/MsbH2+nPph3RXrwaWH+OS6MPpm3QEr51cc5MBmRgR3tDv9OOPqFh1dFv
+ AKNw==
+X-Gm-Message-State: APjAAAWH/FNefMCRKbsYvPOeZfsU29Ws8n8bXn3GWjULJ65s5SjyGD4F
+ njW1LzTzifx83N8P5HUMIQ==
+X-Google-Smtp-Source: APXvYqzk50DUwK44cVAQKNTxSjvx/DhWiu+LrLwLviaKJdBnE6+0GzA6D87C87M4wXVUnS//c5dHvg==
+X-Received: by 2002:a05:6830:15a:: with SMTP id
+ j26mr5085138otp.342.1574194699323; 
+ Tue, 19 Nov 2019 12:18:19 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id u1sm7574771otk.33.2019.11.19.12.18.18
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 19 Nov 2019 10:58:34 -0800 (PST)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Heiko Stuebner <heiko@sntech.de>, Levin Du <djw@t-chip.com.cn>,
- Akash Gajjar <akash@openedev.com>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 2/2] arm64: dts: rockchip: Add libretech compatible for
- ROC-PC
-Date: Wed, 20 Nov 2019 00:28:17 +0530
-Message-Id: <20191119185817.11216-2-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
-In-Reply-To: <20191119185817.11216-1-jagan@amarulasolutions.com>
-References: <20191119185817.11216-1-jagan@amarulasolutions.com>
+ Tue, 19 Nov 2019 12:18:18 -0800 (PST)
+Date: Tue, 19 Nov 2019 14:18:17 -0600
+From: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v4 1/2] dt-bindings: pwm: Convert PWM bindings to
+ json-schema
+Message-ID: <20191119201817.GA17082@bogus>
+References: <20191021160207.18026-1-krzk@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191021160207.18026-1-krzk@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_105836_887891_859E8C83 
-X-CRM114-Status: GOOD (  11.06  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191119_121820_935627_F5898237 
+X-CRM114-Status: UNSURE (   8.64  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,43 +93,33 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Jagan Teki <jagan@amarulasolutions.com>,
- Da Xue <da@lessconfused.com>, linux-amarula@amarulasolutions.com,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-pwm@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-rockchip@lists.infradead.org, Thierry Reding <thierry.reding@gmail.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+ linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-riscv@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Though the ROC-PC is manufactured by firefly, it is co-designed
-by libretch like other Libretech computer boards from allwinner,
-amlogic does.
+On Mon, Oct 21, 2019 at 06:02:06PM +0200, Krzysztof Kozlowski wrote:
+> Convert generic PWM controller bindings to DT schema format using
+> json-schema.  The consumer bindings are provided by dt-schema.
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> Acked-by: Stephen Boyd <sboyd@kernel.org>
+> Acked-by: Paul Walmsley <paul.walmsley@sifive.com>
 
-So, it is always meaningful to keep maintain those vendors who
-are part of design participation so append the compatible
-"libretech,roc-rk3399-pc" to existing roc-pc dts file.
+Looks like I missed this one somehow.
 
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+I've applied the series now.
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-index cd4195425309..6a909e4eefd2 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-@@ -8,5 +8,6 @@
- 
- / {
- 	model = "Firefly ROC-RK3399-PC Board";
--	compatible = "firefly,roc-rk3399-pc", "rockchip,rk3399";
-+	compatible = "libretech,roc-rk3399-pc", "firefly,roc-rk3399-pc",
-+		     "rockchip,rk3399";
- };
--- 
-2.18.0.321.gffc6fa0e3
-
+Rob
 
 _______________________________________________
 Linux-rockchip mailing list
