@@ -2,85 +2,52 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8444102D68
-	for <lists+linux-rockchip@lfdr.de>; Tue, 19 Nov 2019 21:18:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 496DF10359E
+	for <lists+linux-rockchip@lfdr.de>; Wed, 20 Nov 2019 08:51:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1ps4lRxuE9xbDH8RG51Oi2lB939mAK4dUZPVrAZxPqY=; b=FKI8821Le8HFq/
-	hfJzVu8haz25+W0lG+cmHKmsIBzUW3dyiptZF98pIFLp9ugyWrUZO0Ne/GQUOZ+DE9D0HoIkTx5pB
-	m5p2ayzN0sM+m74QvZv9Zaf6PkbZtDpWfKlmmujNQ+ECTYZ3gKgzAR2gOm5+R6Cfiq8jdgO26/Nr0
-	H3djt7mADnCR1XR8nUE5n3gMn05ctpegoG2TysHApwdaAmyRf5fPu9X8NzO680/uPHuoaV1IG0faj
-	PWtCJo+Movc6h9VrqG1jP8pzWquOzZ9GCV1lAKPbhMC+uz73Qf9zXWCXhhd2SeJMF3pHOfMmpUp0i
-	pP6ySo3LnmNPEFCso3AA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1N5HBg03gyg1w30gkRKWSa7FzGTqC6oGHrBg7gxMUy4=; b=uMwKrsw2Q73Bq80XLiCiDORWx
+	4gWXn0hWLQzk80EGV8lc1GG9Jka1zS9LSYFEexhwlTm1n2VpEnOobLGl9jaCF6h1XaTDO8IjZIsC5
+	+ipbt0ZcJvK0hbXaxBDUeIzYwbRZmGLFcPoZbEUv1Ba5KdeSs/cc2T+scCCEQZsDjGF1Vot72tUWZ
+	ZJww3i/5P/mILHHsy4Fe7b0AFJF620o+OQyPVMwRcQfyoyvWTMPwunJlSrqzkt3MN4XzQ0VC+J3XM
+	S1t5BhmaqcMfGTVqH2xNSTXqD15v2w3VQ3FKPVxUsIWCRVz6ZZtyZEX8iK93bZGdazZiaT1Nuv6Eg
+	Xf09Oepsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX9xP-0002ij-AK; Tue, 19 Nov 2019 20:18:39 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1iXKm8-0006if-Lk; Wed, 20 Nov 2019 07:51:44 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX9x6-0002UB-Sw; Tue, 19 Nov 2019 20:18:22 +0000
-Received: by mail-ot1-f68.google.com with SMTP id 94so19086213oty.8;
- Tue, 19 Nov 2019 12:18:20 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=onoq+Z2JcZ0wm7xV09BtvAAc615BtbBWD3mKE843QYY=;
- b=QZ3UWizso//X/ZDJPEEQpF87NRsFi7sXEhOi2sFJmbNqMDXL/XtfJBhB+YGaHjjfzg
- idgMv2/Ig1lOz/Z5Jj8ixFZFKM9AoHCvq7gKCsUEtBxlT9A7xR0sBR+lu1s+HAU8swNv
- nYPsbXSAdbjczHT9eYHc5t/3K1PdAkVlgASWyMMbI8eRlRZuTGNK8iF1X8MmNL7I/gBa
- +feEVYH2r4mFiz8AgUm/cFmk3IMpXogtp9CWAPzMJjoAZ123tUlqK4D7z8JQDTy14eYy
- bLkbvZ/nXhT/MsbH2+nPph3RXrwaWH+OS6MPpm3QEr51cc5MBmRgR3tDv9OOPqFh1dFv
- AKNw==
-X-Gm-Message-State: APjAAAWH/FNefMCRKbsYvPOeZfsU29Ws8n8bXn3GWjULJ65s5SjyGD4F
- njW1LzTzifx83N8P5HUMIQ==
-X-Google-Smtp-Source: APXvYqzk50DUwK44cVAQKNTxSjvx/DhWiu+LrLwLviaKJdBnE6+0GzA6D87C87M4wXVUnS//c5dHvg==
-X-Received: by 2002:a05:6830:15a:: with SMTP id
- j26mr5085138otp.342.1574194699323; 
- Tue, 19 Nov 2019 12:18:19 -0800 (PST)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id u1sm7574771otk.33.2019.11.19.12.18.18
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 19 Nov 2019 12:18:18 -0800 (PST)
-Date: Tue, 19 Nov 2019 14:18:17 -0600
-From: Rob Herring <robh@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH v4 1/2] dt-bindings: pwm: Convert PWM bindings to
- json-schema
-Message-ID: <20191119201817.GA17082@bogus>
-References: <20191021160207.18026-1-krzk@kernel.org>
+ id 1iXKly-0006a4-NU; Wed, 20 Nov 2019 07:51:36 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: aratiu) with ESMTPSA id 4C0C72813B8
+From: Adrian Ratiu <adrian.ratiu@collabora.com>
+To: Fabio Estevam <festevam@gmail.com>, Adrian Ratiu
+ <adrian.ratiu@collabora.com>
+Subject: Re: [PATCH v3 3/4] drm: imx: Add i.MX 6 MIPI DSI host driver
+In-Reply-To: <CAOMZO5C5gpW6KF9d-79wd=-7ZGAbXQLAXw3kLi+_5DBW_DYrTw@mail.gmail.com>
+References: <20191118152518.3374263-1-adrian.ratiu@collabora.com>
+ <20191118152518.3374263-4-adrian.ratiu@collabora.com>
+ <CAOMZO5C5gpW6KF9d-79wd=-7ZGAbXQLAXw3kLi+_5DBW_DYrTw@mail.gmail.com>
+Date: Wed, 20 Nov 2019 09:51:56 +0200
+Message-ID: <87o8x7dlyb.fsf@iwork.i-did-not-set--mail-host-address--so-tickle-me>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191021160207.18026-1-krzk@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_121820_935627_F5898237 
-X-CRM114-Status: UNSURE (   8.64  )
+X-CRM114-CacheID: sfid-20191119_235134_895937_81222F7B 
+X-CRM114-Status: UNSURE (   7.06  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,33 +60,56 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-pwm@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-rockchip@lists.infradead.org, Thierry Reding <thierry.reding@gmail.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
- linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-riscv@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Martyn Welch <martyn.welch@collabora.com>,
+ Sjoerd Simons <sjoerd.simons@collabora.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ DRI mailing list <dri-devel@lists.freedesktop.org>,
+ linux-rockchip@lists.infradead.org, NXP Linux Team <linux-imx@nxp.com>,
+ kernel@collabora.com, linux-stm32@st-md-mailman.stormreply.com,
+ "moderated list:ARM/FREESCALE
+ IMX / MXC ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
+ Emil Velikov <emil.velikov@collabora.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Oct 21, 2019 at 06:02:06PM +0200, Krzysztof Kozlowski wrote:
-> Convert generic PWM controller bindings to DT schema format using
-> json-schema.  The consumer bindings are provided by dt-schema.
+On Tue, 19 Nov 2019, Fabio Estevam <festevam@gmail.com> wrote:
+> Hi Adrian, 
+
+Hi Fabio,
+
 > 
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> Acked-by: Stephen Boyd <sboyd@kernel.org>
-> Acked-by: Paul Walmsley <paul.walmsley@sifive.com>
+> On Mon, Nov 18, 2019 at 12:25 PM Adrian Ratiu 
+> <adrian.ratiu@collabora.com> wrote: 
+> 
+> Some nitpicks: 
+> 
+>> + +config DRM_IMX_MIPI_DSI +       tristate "Freescale i.MX DRM 
+>> MIPI DSI" 
+> 
+> This text seems too generic as there are i.MX SoCs that use 
+> different MIPI DSI IP. 
+> 
+> Maybe "Freescale i.MX6 DRM MIPI DSI" instead? 
 
-Looks like I missed this one somehow.
+Yes, this is a good idea, will update in a newer version to make 
+it more specific. I'll let this version sit a little more on 
+review so others also have time to review.
 
-I've applied the series now.
+Thank you!
 
-Rob
+> 
+>> +module_platform_driver(imx_mipi_dsi_driver); + 
+>> +MODULE_DESCRIPTION("i.MX MIPI DSI host controller driver"); 
+> 
+> i.MX6 MIPI DSI, please.
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 Linux-rockchip mailing list
