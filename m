@@ -2,48 +2,47 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CFC9103B91
-	for <lists+linux-rockchip@lfdr.de>; Wed, 20 Nov 2019 14:34:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 907FA103BF5
+	for <lists+linux-rockchip@lfdr.de>; Wed, 20 Nov 2019 14:39:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=zMOzj0MgpjmEhOt6Ak5WqAqsc/xtlgblp+PjCE2QM90=; b=ENq
-	t/EtdG4354szybIzXGmmP5OzmNrDwH8KeclbvaJ5ZQU+xlz+noPE4/NUfl4vhELBqoECaKjW0F7dn
-	+o+LEpLqMbc6HMah6mfpsoDmozaxpjczXVg9A1oEsvBgOgaI6cHSjmmYcm9f4upfhsUWXatsPeCFs
-	8Zd2PI9q9nk95yjJ/RJAl3zrsoQNgtD+fOohYjWbPlmBo9cB+j0QMfHJJkYxFsYADYY/+McMyjm7u
-	JcTrSmxffNXK2sp5sBBNzI51aqDV4H3L0Yyos6ZUqO73RIoyz0DHbMwctUwESzirHA8XihIb4GfoZ
-	esY6vzpG8aQRkAJKVb7U8pnR7xpb3tg==;
+	References:List-Owner; bh=ITJ8+EZ8ePxZkbfmYS0L115+x4SaFRPjdvvHg7YW8Dw=; b=CoU
+	Mt2CyUIkV8cdPsPRPxVcXSpBwXNjFVQ7vJjSMwtEO6aJLzaZnhC+Cn6rgJQ6BmyF+16CksWEs03gf
+	/LT4RJXC4ew2zErWse4IzYEdgY2lGa712w/r6GjwDfamboWkAsBN1oGXqLlIGmEo4ZOHDMX0PJu7x
+	1ueuGHGsgMDe1wAjN1F3n7NEO/0D+lZKV1oKx9ZD0sKGQX3E4pEpC0jirpj0DbPFxhiSiCYq7gXaf
+	BXL7RbyJOztUnehS9M6sPGGFQS02BT88uys0IQu79r3S/BMGpxrYJI92Nt1L0Mh7iaFEWez4IEMiX
+	M5poRcSCG9gcn4KwcvNlttIRDI2OY4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXQ7h-0008RL-K8; Wed, 20 Nov 2019 13:34:21 +0000
+	id 1iXQCn-0003sv-Hk; Wed, 20 Nov 2019 13:39:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXQ7G-000805-Db; Wed, 20 Nov 2019 13:33:57 +0000
+ id 1iXQCb-0003iG-66; Wed, 20 Nov 2019 13:39:27 +0000
 Received: from localhost.localdomain (unknown [118.189.143.39])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 87976219FA;
- Wed, 20 Nov 2019 13:33:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1A342224FA;
+ Wed, 20 Nov 2019 13:39:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574256833;
- bh=I2ItxMWjRTEwYmAhHosn5S3+pzi92xqBKTYGklWPoUI=;
+ s=default; t=1574257164;
+ bh=WxqSkloPNvIniE0B1PNU8Et/vKN6RNMG2IiFN6/e2mA=;
  h=From:To:Cc:Subject:Date:From;
- b=DXLsXb1V6t+zEdcUm0IV+EcRRH5mN6kgkgu5xpppSYvdEfjEDweqKnvvNe2Jq1PgL
- UyiNDWj3EFBVqrvpPkA5X0jWyW2Zc8pS0qkrN+NMx7QBl5WukUMYSnzLE2Q9kSWchf
- 3sk5RnjK+QqRXtVk5CA8HYUnBzW9Z8m4aAOz0tQ4=
+ b=Y7TZ4KjgFZ6iZsKf3fXADVSsXbBnSEvM1WHpXoXZlFnTvrMf9gpXFBft+G+AzBRvj
+ dlKzVqlpbYFZoKDZbcO3SB3UTnEIP2uaLHCvILtjduJXmAMKJJeQIOKe1bAGDMWUSx
+ PFc3TnB2NuCvbQalMLbptes5BnOo1mo7JCevaRYk=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH] drm/rockchip: Fix Kconfig indentation
-Date: Wed, 20 Nov 2019 21:33:48 +0800
-Message-Id: <20191120133348.6640-1-krzk@kernel.org>
+Subject: [PATCH] soc: rockchip: Fix Kconfig indentation
+Date: Wed, 20 Nov 2019 21:39:20 +0800
+Message-Id: <20191120133920.13657-1-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_053355_748268_9A56A93B 
-X-CRM114-Status: UNSURE (   9.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191120_053926_166533_CBCE91C8 
+X-CRM114-Status: GOOD (  10.15  )
 X-Spam-Score: -1.6 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-1.6 points)
@@ -75,11 +74,8 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, Sandy Huang <hjc@rock-chips.com>,
- dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ Heiko Stuebner <heiko@sntech.de>, Krzysztof Kozlowski <krzk@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -92,35 +88,38 @@ coding style with command like:
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 ---
- drivers/gpu/drm/rockchip/Kconfig | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ drivers/soc/rockchip/Kconfig | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/gpu/drm/rockchip/Kconfig b/drivers/gpu/drm/rockchip/Kconfig
-index 6f4222f8beeb..1670a5cae3c7 100644
---- a/drivers/gpu/drm/rockchip/Kconfig
-+++ b/drivers/gpu/drm/rockchip/Kconfig
-@@ -28,17 +28,17 @@ config ROCKCHIP_ANALOGIX_DP
- 	  on RK3288 or RK3399 based SoC, you should select this option.
+diff --git a/drivers/soc/rockchip/Kconfig b/drivers/soc/rockchip/Kconfig
+index b71b73bf5fc5..3e2057f22bbc 100644
+--- a/drivers/soc/rockchip/Kconfig
++++ b/drivers/soc/rockchip/Kconfig
+@@ -15,15 +15,15 @@ config ROCKCHIP_GRF
+ 	  to make some of them conform to expectations of the kernel.
  
- config ROCKCHIP_CDN_DP
--        bool "Rockchip cdn DP"
-+	bool "Rockchip cdn DP"
- 	depends on EXTCON=y || (EXTCON=m && DRM_ROCKCHIP=m)
+ config ROCKCHIP_PM_DOMAINS
+-        bool "Rockchip generic power domain"
+-        depends on PM
+-        select PM_GENERIC_DOMAINS
 -        help
+-          Say y here to enable power domain support.
+-          In order to meet high performance and low power requirements, a power
+-          management unit is designed or saving power when RK3288 in low power
+-          mode. The RK3288 PMU is dedicated for managing the power of the whole chip.
++	bool "Rockchip generic power domain"
++	depends on PM
++	select PM_GENERIC_DOMAINS
 +	help
- 	  This selects support for Rockchip SoC specific extensions
- 	  for the cdn DP driver. If you want to enable Dp on
- 	  RK3399 based SoC, you should select this
- 	  option.
++	  Say y here to enable power domain support.
++	  In order to meet high performance and low power requirements, a power
++	  management unit is designed or saving power when RK3288 in low power
++	  mode. The RK3288 PMU is dedicated for managing the power of the whole chip.
  
- config ROCKCHIP_DW_HDMI
--        bool "Rockchip specific extensions for Synopsys DW HDMI"
--        help
-+	bool "Rockchip specific extensions for Synopsys DW HDMI"
-+	help
- 	  This selects support for Rockchip SoC specific extensions
- 	  for the Synopsys DesignWare HDMI driver. If you want to
- 	  enable HDMI on RK3288 or RK3399 based SoC, you should select
+-          If unsure, say N.
++	  If unsure, say N.
+ 
+ endif
 -- 
 2.17.1
 
