@@ -2,91 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EE9D103FC0
-	for <lists+linux-rockchip@lfdr.de>; Wed, 20 Nov 2019 16:46:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 534C4104002
+	for <lists+linux-rockchip@lfdr.de>; Wed, 20 Nov 2019 16:51:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mUBFErwusELtQ1lUD4mit9jA3mV+WsqNnxQyUOniya0=; b=j2GQY44j+osLNzZiLdTy34ONSM
-	k9N2cJYUIAP/SiyM9QVy6AmiC8VWxaH+umRWqgnxbKOrfW/oacyQEPWSF4h9tib3FxIbbdC1TrZ3e
-	onk/NMk4Bm+xKQ1xvagq/e/GD5oIC7qq1M1/LO2eyxWNa874i28odELV+l9wUf9ZZMUZQTQrCoVQ6
-	B6QwHGBzyb3zsM0xhexew+JxBewLAl3B9CROvxciNNCv8CjTrRzKi9+xxvhIT2ZXQrjYldBiVrJVw
-	o9bOda9tkb5FhIimiwqtwnKokW8O4Sr38ISw5Qp8c9yI0mkn9HYftalyEIDqBusG/tns3RbN3lHD1
-	f02TYu6w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5gaO/tAxlhwsFKjJW/pBanutJSoXT2Wh3C9ZSvzqDXw=; b=sMkkJgbXEFxK46
+	J75Mcxs6HNuLHpyj74YTe11VKszUg+DzIdDQ/Z3t/xyDtNtmIJHP2lrGvNa2WlYWDIw60IsxAsl8s
+	dJ5MAmODqdgBLPs++AS0Q0Y6WuYrMc6XstBxZBg/+UBYVMVnOOaCAXR6yukTvGlj6RTJaf+mlN7hf
+	XaKj5yZoQs1xbr7EuIo1sBB702pbcDx1P+xrBUAgSBVKouLijodvP8r1uMhjxAgIjVgrAVn8rSQZo
+	Y4hVZTH7Ws/BatxWogpzVrG91qFt95zMJJ6N27zVuhbmwX76lund8ImaSbHAEyfUlIu071g4STBRS
+	wsGb45iA1JNF2QmW4lBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXSBO-0003Tx-8g; Wed, 20 Nov 2019 15:46:18 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iXSGK-0006IE-Nv; Wed, 20 Nov 2019 15:51:24 +0000
+Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXSB0-0003Ck-RG
- for linux-rockchip@lists.infradead.org; Wed, 20 Nov 2019 15:45:57 +0000
-Received: by mail-pf1-x441.google.com with SMTP id n13so14419980pff.1
- for <linux-rockchip@lists.infradead.org>; Wed, 20 Nov 2019 07:45:54 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :in-reply-to:references;
- bh=v3CJPtWLFIAdj/z5fwUlZLLT5DwATGfWb2hJrMtJGHc=;
- b=CNEfZPSc00pRWoq84G/7TVzpTaMRm4f05LM6FCV1VOsDJFHTamkVpCGFoDhuONbHLF
- fGQ3QFgk9JrPR5QovNQuEOktGYhLYyTUE7QqhttLNJJdgBfd6K9y7RNy2qQC6NTZ6nRK
- GyGT0usaaxjppXXdsYbHxQFzFo9OPWes7B+dx92L2sMB9Vhg1yAPcqyE9s6iUHHmbKYK
- aklatOW98Mb6E08K/ThSluXkneUIGi6JY2HhTal3fJc3GrEpmH7Lik/cfIOPa3HokwwS
- lfBHdgSAEUCuwhZWoNPvdJewIftJz5en5zEsLR1GM8W1VyVpFp5cK9/DVMtFBlsySZ/7
- dKgw==
+ id 1iXSGH-0006GH-03
+ for linux-rockchip@lists.infradead.org; Wed, 20 Nov 2019 15:51:23 +0000
+Received: by mail-il1-x141.google.com with SMTP id p6so101809ilp.1
+ for <linux-rockchip@lists.infradead.org>; Wed, 20 Nov 2019 07:51:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=V9ocHos4mEPx/cXUTF0dJh2q+Dfua495g56A4DiYMvM=;
+ b=DA3GASR2Yz29peYkU/JxCycyhe0pntz2I8oB4TnZKHaznQQ/3dZagFl7mz/6uQHJW5
+ GrRIPKUtWuu9jAaJ2X5b0MVGuDe5OcswfXx1wbPb8m7uCfMIJmc9IPC5IS0lBPUTGROo
+ mDAdsl7e6tN7R+gpDhb9im2LWKYDM4jMwbQzQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:in-reply-to:references;
- bh=v3CJPtWLFIAdj/z5fwUlZLLT5DwATGfWb2hJrMtJGHc=;
- b=bNnHSFeh0KL2uhQMGTCgWzmJF5iukvmBBFRvQUoi2cy+sOWKQf2Wi/33Fsm815yqrF
- dfQQAKqI5gx1p5UIVM/PEXSVNxFAiGajDr5GW863fnz8umOCCmMfd9oRCfTfubc1BIPs
- JdbFhyVsXISQxOCFZ8i6PNq8n31ktRAFQgpAFoICzb2SzeZr4vw5Ws8Kw41uEmmD2UAW
- O+KZ7V1g2tQbvHVYKk14HDGPzAMyVbWvaOZ4CzOAm/+lDO9/BkJyOMI1v16pNoO8c2n6
- KXBjcIBx+14Ojq2DH87xtfCa6eCBpc14rVuBWSl8CxWutuZcBgsIEiEBIbjvDNB+tUYh
- QQrA==
-X-Gm-Message-State: APjAAAW8nnubnuz4FhlXJkJeWblgbCApRBEvcdKbrorZ1qblGr0nQsje
- 4/8OpnQQcpnTW3YT+zGkNRhO2Q==
-X-Google-Smtp-Source: APXvYqxTZ7gTIsjV9nk438TlBRqYyZMMBLSDJ7P/pE/AYAB1y/QGOt8ZB8aniHR4LsuEnlOE8F3Ukg==
-X-Received: by 2002:a63:a804:: with SMTP id o4mr3735957pgf.401.1574264753964; 
- Wed, 20 Nov 2019 07:45:53 -0800 (PST)
-Received: from localhost ([14.96.110.98])
- by smtp.gmail.com with ESMTPSA id 67sm7938816pjz.27.2019.11.20.07.45.52
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 20 Nov 2019 07:45:53 -0800 (PST)
-From: Amit Kucheria <amit.kucheria@linaro.org>
-To: linux-kernel@vger.kernel.org, edubezval@gmail.com,
- Amit Daniel Kachhap <amit.kachhap@gmail.com>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Guillaume La Roque <glaroque@baylibre.com>,
- Heiko Stuebner <heiko@sntech.de>, Javi Merino <javi.merino@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, Jun Nie <jun.nie@linaro.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Viresh Kumar <viresh.kumar@linaro.org>, Zhang Rui <rui.zhang@intel.com>
-Subject: [PATCH v2 07/11] thermal: rockchip: Appease the kernel-doc deity
-Date: Wed, 20 Nov 2019 21:15:16 +0530
-Message-Id: <c3cbdb0619fec602668ba7ae703ba49d67e30b33.1574242756.git.amit.kucheria@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1574242756.git.amit.kucheria@linaro.org>
-References: <cover.1574242756.git.amit.kucheria@linaro.org>
-In-Reply-To: <cover.1574242756.git.amit.kucheria@linaro.org>
-References: <cover.1574242756.git.amit.kucheria@linaro.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=V9ocHos4mEPx/cXUTF0dJh2q+Dfua495g56A4DiYMvM=;
+ b=cj6FidcrFtpqw4kccU5zAigwcCEymU8ubmPGFEu2tuSpLt1Nz8/6NQ1+oQsT2LHT82
+ IE2mZuR8sPrs/AkxGVcVALvlav7b5lxyYPJ6DKe5kKWa5cUiTrv9SLGBA4Tn7rWq2vYZ
+ 3ibmV9cwBMMcUqcbn3a2D6jgvg+tisUCXahXuVHkAI/ZCiwyCt+cqqWE4ffw8b+2TiX+
+ o3QQwY49AQtiRFZxKujq/bF1GX8yKXa/6IJEAbEQWVHJS/uGOjDyRb7/A58NkD/puR7Q
+ XdL4liDY99HO08p3NkU9OufkkeIi+z9YVbyjxDR4bTU2jRwQX3F3Y/iVPERBCaGZSwi5
+ 1Xxw==
+X-Gm-Message-State: APjAAAUnu4+WQ3eCHCnvHxkXUTSnWGwKVr3PlMtinhQFJLqTwL/ofBTY
+ LMlK2iE+/tLkumJZdorq4rzr1Ha2mqcSCYNolkSKAw==
+X-Google-Smtp-Source: APXvYqxEiRL48js6ZDjxRjcSKNXQCeEpejajn5en3dkyccGBO7qEMLPuZspPilOntqUDYF2mK0Y10om7k0o+Lm+FniU=
+X-Received: by 2002:a92:5d8f:: with SMTP id e15mr4268209ilg.173.1574265079598; 
+ Wed, 20 Nov 2019 07:51:19 -0800 (PST)
+MIME-Version: 1.0
+References: <20191120113923.11685-1-jagan@amarulasolutions.com>
+ <20191120113923.11685-3-jagan@amarulasolutions.com> <1707486.7nrk6WTBgP@diego>
+In-Reply-To: <1707486.7nrk6WTBgP@diego>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Wed, 20 Nov 2019 21:21:08 +0530
+Message-ID: <CAMty3ZC2NzTWq8YPbePRyPdixxMO7mrPZrzagwjrTkhGHGRR=g@mail.gmail.com>
+Subject: Re: [PATCH 2/5] arm64: dts: rockchip: Add VMARC RK3399Pro SOM initial
+ support
+To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_074554_894355_41F9A98E 
-X-CRM114-Status: GOOD (  15.57  )
+X-CRM114-CacheID: sfid-20191120_075121_182829_E534486E 
+X-CRM114-Status: GOOD (  19.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,169 +91,78 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Tom Cubie <tom@radxa.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Replace a comment starting with /** by simply /* to avoid having it
-interpreted as a kernel-doc comment. Describe missing function
-parameters where needed.
-
-Fixes up the following warnings when compiled with make W=1:
-
-linux.git/drivers/thermal/rockchip_thermal.c:27: warning: cannot
-understand function prototype: 'enum tshut_mode '
-linux.git/drivers/thermal/rockchip_thermal.c:37: warning: cannot
-understand function prototype: 'enum tshut_polarity '
-linux.git/drivers/thermal/rockchip_thermal.c:46: warning: cannot
-understand function prototype: 'enum sensor_id '
-linux.git/drivers/thermal/rockchip_thermal.c:56: warning: cannot
-understand function prototype: 'enum adc_sort_mode '
-linux.git/drivers/thermal/rockchip_thermal.c:123: warning: Function
-parameter or member 'chn_id' not described in 'rockchip_tsadc_chip'
-linux.git/drivers/thermal/rockchip_thermal.c:123: warning: Function
-parameter or member 'control' not described in 'rockchip_tsadc_chip'
-linux.git/drivers/thermal/rockchip_thermal.c:167: warning: Function
-parameter or member 'sensors' not described in 'rockchip_thermal_data'
-linux.git/drivers/thermal/rockchip_thermal.c:608: warning: Function
-parameter or member 'grf' not described in 'rk_tsadcv2_initialize'
-linux.git/drivers/thermal/rockchip_thermal.c:608: warning: Function
-parameter or member 'regs' not described in 'rk_tsadcv2_initialize'
-linux.git/drivers/thermal/rockchip_thermal.c:608: warning: Function
-parameter or member 'tshut_polarity' not described in
-'rk_tsadcv2_initialize'
-linux.git/drivers/thermal/rockchip_thermal.c:644: warning: Function
-parameter or member 'grf' not described in 'rk_tsadcv3_initialize'
-linux.git/drivers/thermal/rockchip_thermal.c:644: warning: Function
-parameter or member 'regs' not described in 'rk_tsadcv3_initialize'
-linux.git/drivers/thermal/rockchip_thermal.c:644: warning: Function
-parameter or member 'tshut_polarity' not described in
-'rk_tsadcv3_initialize'
-linux.git/drivers/thermal/rockchip_thermal.c:732: warning: Function
-parameter or member 'regs' not described in 'rk_tsadcv3_control'
-linux.git/drivers/thermal/rockchip_thermal.c:732: warning: Function
-parameter or member 'enable' not described in 'rk_tsadcv3_control'
-linux.git/drivers/thermal/rockchip_thermal.c:1211: warning: Function
-parameter or member 'reset' not described in
-'rockchip_thermal_reset_controller'
-
-Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
-Reviewed-by: Viresh Kumar <viresh.kumar@linaro.org>
----
- drivers/thermal/rockchip_thermal.c | 22 ++++++++++++++++------
- 1 file changed, 16 insertions(+), 6 deletions(-)
-
-diff --git a/drivers/thermal/rockchip_thermal.c b/drivers/thermal/rockchip_thermal.c
-index 343c2f5c5a25..9ed8085bb792 100644
---- a/drivers/thermal/rockchip_thermal.c
-+++ b/drivers/thermal/rockchip_thermal.c
-@@ -19,7 +19,7 @@
- #include <linux/mfd/syscon.h>
- #include <linux/pinctrl/consumer.h>
- 
--/**
-+/*
-  * If the temperature over a period of time High,
-  * the resulting TSHUT gave CRU module,let it reset the entire chip,
-  * or via GPIO give PMIC.
-@@ -29,7 +29,7 @@ enum tshut_mode {
- 	TSHUT_MODE_GPIO,
- };
- 
--/**
-+/*
-  * The system Temperature Sensors tshut(tshut) polarity
-  * the bit 8 is tshut polarity.
-  * 0: low active, 1: high active
-@@ -39,7 +39,7 @@ enum tshut_polarity {
- 	TSHUT_HIGH_ACTIVE,
- };
- 
--/**
-+/*
-  * The system has two Temperature Sensors.
-  * sensor0 is for CPU, and sensor1 is for GPU.
-  */
-@@ -48,7 +48,7 @@ enum sensor_id {
- 	SENSOR_GPU,
- };
- 
--/**
-+/*
-  * The conversion table has the adc value and temperature.
-  * ADC_DECREMENT: the adc value is of diminishing.(e.g. rk3288_code_table)
-  * ADC_INCREMENT: the adc value is incremental.(e.g. rk3368_code_table)
-@@ -80,13 +80,14 @@ struct chip_tsadc_table {
- 
- /**
-  * struct rockchip_tsadc_chip - hold the private data of tsadc chip
-- * @chn_id[SOC_MAX_SENSORS]: the sensor id of chip correspond to the channel
-+ * @chn_id: array of sensor ids of chip corresponding to the channel
-  * @chn_num: the channel number of tsadc chip
-  * @tshut_temp: the hardware-controlled shutdown temperature value
-  * @tshut_mode: the hardware-controlled shutdown mode (0:CRU 1:GPIO)
-  * @tshut_polarity: the hardware-controlled active polarity (0:LOW 1:HIGH)
-  * @initialize: SoC special initialize tsadc controller method
-  * @irq_ack: clear the interrupt
-+ * @control: enable/disable method for the tsadc controller
-  * @get_temp: get the temperature
-  * @set_alarm_temp: set the high temperature interrupt
-  * @set_tshut_temp: set the hardware-controlled shutdown temperature
-@@ -139,7 +140,7 @@ struct rockchip_thermal_sensor {
-  * @chip: pointer to the platform/configuration data
-  * @pdev: platform device of thermal
-  * @reset: the reset controller of tsadc
-- * @sensors[SOC_MAX_SENSORS]: the thermal sensor
-+ * @sensors: array of thermal sensors
-  * @clk: the controller clock is divided by the exteral 24MHz
-  * @pclk: the advanced peripherals bus clock
-  * @grf: the general register file will be used to do static set by software
-@@ -590,6 +591,9 @@ static int rk_tsadcv2_code_to_temp(const struct chip_tsadc_table *table,
- 
- /**
-  * rk_tsadcv2_initialize - initialize TASDC Controller.
-+ * @grf: the general register file will be used to do static set by software
-+ * @regs: the base address of tsadc controller
-+ * @tshut_polarity: the hardware-controlled active polarity (0:LOW 1:HIGH)
-  *
-  * (1) Set TSADC_V2_AUTO_PERIOD:
-  *     Configure the interleave between every two accessing of
-@@ -624,6 +628,9 @@ static void rk_tsadcv2_initialize(struct regmap *grf, void __iomem *regs,
- 
- /**
-  * rk_tsadcv3_initialize - initialize TASDC Controller.
-+ * @grf: the general register file will be used to do static set by software
-+ * @regs: the base address of tsadc controller
-+ * @tshut_polarity: the hardware-controlled active polarity (0:LOW 1:HIGH)
-  *
-  * (1) The tsadc control power sequence.
-  *
-@@ -723,6 +730,8 @@ static void rk_tsadcv2_control(void __iomem *regs, bool enable)
- 
- /**
-  * rk_tsadcv3_control - the tsadc controller is enabled or disabled.
-+ * @regs: the base address of tsadc controller
-+ * @enable: boolean flag to enable the controller
-  *
-  * NOTE: TSADC controller works at auto mode, and some SoCs need set the
-  * tsadc_q_sel bit on TSADCV2_AUTO_CON[1]. The (1024 - tsadc_q) as output
-@@ -1206,6 +1215,7 @@ rockchip_thermal_register_sensor(struct platform_device *pdev,
- 
- /**
-  * Reset TSADC Controller, reset all tsadc registers.
-+ * @reset: the reset controller of tsadc
-  */
- static void rockchip_thermal_reset_controller(struct reset_control *reset)
- {
--- 
-2.20.1
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgSGVpa28sCgpPbiBXZWQsIE5vdiAyMCwgMjAxOSBhdCA2OjU5IFBNIEhlaWtvIFN0w7xibmVy
+IDxoZWlrb0BzbnRlY2guZGU+IHdyb3RlOgo+Cj4gSGkgSmFnYW4sCj4KPiBsb29rcyBnb29kIGlu
+IGdlbmVyYWwsIGp1c3Qgc29tZSBzbWFsbCB0aGluZ3MgYmVsb3c6Cj4KPiBBbSBNaXR0d29jaCwg
+MjAuIE5vdmVtYmVyIDIwMTksIDEyOjM5OjIwIENFVCBzY2hyaWViIEphZ2FuIFRla2k6Cj4gPiBW
+TUFSQyBSSzMzOTlQcm8gU09NIGlzIGEgc3RhbmRhcmQgU01BUkMgU09NIGRlc2lnbiB3aXRoCj4g
+PiBSb2NrY2hpcCBSSzMzOTlQcm8gU29DLCB3aGljaCBpcyBkZXNpZ25lZCBieSBWYW1ycy4KPiA+
+Cj4gPiBTcGVjaWZpY2F0aW9uOgo+ID4gLSBSb2NrY2hpcCBSSzMzOTlQcm8KPiA+IC0gUE1JQzog
+Uks4MDktMwo+ID4gLSBTRCBzbG90LCAxNkdpQiBlTU1DCj4gPiAtIDJ4VVNCLTIuMCwgMXhVU0Iz
+LjAKPiA+IC0gVVNCLUMgZm9yIHBvd2VyIHN1cHBseQo+ID4gLSBFdGhlcm5ldCwgUENJZQo+ID4g
+LSBIRE1JLCBNSVBJLURTSS9DU0ksIGVEUAo+ID4KPiA+IEFkZCBpbml0aWFsIHN1cHBvcnQgZm9y
+IFZNQVJDIFJLMzM5OVBybyBTT00sIHRoaXMgd291bGQgdXNlCj4gPiB3aXRoIGFzc29jaWF0ZWQg
+Y2FycmllciBib2FyZC4KPiA+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBKYWdhbiBUZWtpIDxqYWdhbkBh
+bWFydWxhc29sdXRpb25zLmNvbT4KPiA+IC0tLQo+ID4gIC4uLi9kdHMvcm9ja2NoaXAvcmszMzk5
+cHJvLXZtYXJjLXNvbS5kdHNpICAgICB8IDMzOSArKysrKysrKysrKysrKysrKysKPiA+ICAxIGZp
+bGUgY2hhbmdlZCwgMzM5IGluc2VydGlvbnMoKykKPiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgYXJj
+aC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzOTlwcm8tdm1hcmMtc29tLmR0c2kKPiA+Cj4g
+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzOTlwcm8tdm1h
+cmMtc29tLmR0c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5OXByby12bWFy
+Yy1zb20uZHRzaQo+ID4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiA+IGluZGV4IDAwMDAwMDAwMDAw
+MC4uZGRmNmViYzlmYmUzCj4gPiAtLS0gL2Rldi9udWxsCj4gPiArKysgYi9hcmNoL2FybTY0L2Jv
+b3QvZHRzL3JvY2tjaGlwL3JrMzM5OXByby12bWFyYy1zb20uZHRzaQo+ID4gQEAgLTAsMCArMSwz
+MzkgQEAKPiA+ICsvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogKEdQTC0yLjArIE9SIE1JVCkK
+PiA+ICsvKgo+ID4gKyAqIENvcHlyaWdodCAoYykgMjAxOSBGdXpob3UgUm9ja2NoaXAgRWxlY3Ry
+b25pY3MgQ28uLCBMdGQKPiA+ICsgKiBDb3B5cmlnaHQgKGMpIDIwMTkgVmFtcnMgTGltaXRlZAo+
+ID4gKyAqIENvcHlyaWdodCAoYykgMjAxOSBBbWFydWxhIFNvbHV0aW9ucyhJbmRpYSkKPiA+ICsg
+Ki8KPiA+ICsKPiA+ICsjaW5jbHVkZSA8ZHQtYmluZGluZ3MvZ3Bpby9ncGlvLmg+Cj4gPiArI2lu
+Y2x1ZGUgPGR0LWJpbmRpbmdzL3BpbmN0cmwvcm9ja2NoaXAuaD4KPiA+ICsjaW5jbHVkZSA8ZHQt
+YmluZGluZ3MvcHdtL3B3bS5oPgo+ID4gKwo+ID4gKy8gewo+ID4gKyAgICAgY29tcGF0aWJsZSA9
+ICJ2YW1ycyxyazMzOTlwcm8tdm1hcmMtc29tIiwgInJvY2tjaGlwLHJrMzM5OXBybyI7Cj4gPiAr
+Cj4gPiArICAgICBjbGtpbl9nbWFjOiBleHRlcm5hbC1nbWFjLWNsb2NrIHsKPiA+ICsgICAgICAg
+ICAgICAgY29tcGF0aWJsZSA9ICJmaXhlZC1jbG9jayI7Cj4gPiArICAgICAgICAgICAgIGNsb2Nr
+LWZyZXF1ZW5jeSA9IDwxMjUwMDAwMDA+Owo+ID4gKyAgICAgICAgICAgICBjbG9jay1vdXRwdXQt
+bmFtZXMgPSAiY2xraW5fZ21hYyI7Cj4gPiArICAgICAgICAgICAgICNjbG9jay1jZWxscyA9IDww
+PjsKPiA+ICsgICAgIH07Cj4gPiArCj4gPiArICAgICB2Y2M1djBfc3lzOiB2Y2M1djAtc3lzLXJl
+Z3VsYXRvciB7Cj4gPiArICAgICAgICAgICAgIGNvbXBhdGlibGUgPSAicmVndWxhdG9yLWZpeGVk
+IjsKPiA+ICsgICAgICAgICAgICAgcmVndWxhdG9yLW5hbWUgPSAidmNjNXYwX3N5cyI7Cj4gPiAr
+ICAgICAgICAgICAgIHJlZ3VsYXRvci1hbHdheXMtb247Cj4gPiArICAgICAgICAgICAgIHJlZ3Vs
+YXRvci1ib290LW9uOwo+ID4gKyAgICAgICAgICAgICByZWd1bGF0b3ItbWluLW1pY3Jvdm9sdCA9
+IDw1MDAwMDAwPjsKPiA+ICsgICAgICAgICAgICAgcmVndWxhdG9yLW1heC1taWNyb3ZvbHQgPSA8
+NTAwMDAwMD47Cj4KPiBJcyB2Y2M1djBfc3lzIHJlYWxseSB0aGUgdG9wbW9zdCByZWd1bGF0b3Ig
+Z2V0dGluZyB0aGUgb3V0c2lkZQo+IHBvd2VyLXN1cHBseT8KClRoYW5rcyBmb3IgcG9pbnRpbmcg
+dGhpcywgSSBmb3Jnb3QgdG8gY2hlY2sgdGhlIHZpbiBzdXBwbHkgaW4gY2Fycmllcgpib2FyZCBz
+Y2hlbWF0aWNzLCB5ZXMgaXQgaXMgVkNDMTJWX0RDSU4gKHdpdGggNVYgdG8gMjRWIHJhbmdlKSBs
+aWtlCnJvY2stcGktNC4gV2lsbCB1cGRhdGUgdGhlIHNhbWUuCgo+Cj4KPiA+ICsgICAgIH07Cj4g
+PiArCj4gPiArICAgICB2Y2NfbGFuOiB2Y2MzdjMtcGh5LXJlZ3VsYXRvciB7Cj4gPiArICAgICAg
+ICAgICAgIGNvbXBhdGlibGUgPSAicmVndWxhdG9yLWZpeGVkIjsKPiA+ICsgICAgICAgICAgICAg
+cmVndWxhdG9yLW5hbWUgPSAidmNjX2xhbiI7Cj4KPiB2Y2NfbGFuIC8gdmNjX3BoeSBpcyBtb3N0
+bHkgY29taW5nIGZyb20gdGhlIHZlbmRvciBic3AgaW4gc29tZSB3YXkKPiBhbmQgd2lsbCBiZSBu
+YW1lZCBkaWZmZXJlbnRseSBpbiBzY2hlbWF0aWNzIC4uLiBhbHNvIGl0IHNob3VsZCBiZSBjb25u
+ZWN0ZWQKPiB0byB0aGUgcmVndWxhdG9yIHRyZWUuCgpJbmZhY3QgYnNwIG5hbWVkIHRoaXMgYXMg
+dmNjX3BoeSwgSSBnb3QgdGhlIHZjY19sYW4gZnJvbSBzY2hlbWF0aWNzWzFdCnBhZ2UgMTYuIFll
+cyBpdCBpcyB1c2luZyBWQ0NJT18zVjNfUzAgKFNXT1VUMiBmcm9tIHJlZ3VsYXRvciB0cmVlKSwg
+SQp3aWxsIG1hcmsgdGhpcyByZWd1bGF0b3IuCgo+Cj4gWy4uLl0KPgo+ID4gKyZ0c2FkYyB7Cj4g
+PiArICAgICBzdGF0dXMgPSAib2theSI7Cj4gPiArCj4gPiArICAgICAvKiB0c2h1dCBtb2RlIDA6
+Q1JVIDE6R1BJTyAqLwo+Cj4gSSB0aGluayB3ZSBjYW4gbGl2ZSB3aXRob3V0IHRoZSBhZGRpdGlv
+bmFsIGNvbW1lbnRzIGZvciBwcm9wZXJ0aWVzIDotKQoKVHJ1ZSwgSSBoYXZlIHJldXNlZCBpdCBm
+cm9tIHJvY2stcGktNCB0aG91Z2h0IHRoYXQgaXQgd291bGQgY29tcGF0aWJsZQp3aXRoIG9sZC4g
+d2lsbCByZW1vdmUuCgpbMV0gaHR0cHM6Ly9kbC5yYWR4YS5jb20vcm9ja3BpbjEwL2RvY3MvaHcv
+Vk1BUkNfUkszMzk5UHJvX3NjaF9WMS4xXzIwMTkwNjE5LnBkZgoKSmFnYW4uCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWls
+aW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
