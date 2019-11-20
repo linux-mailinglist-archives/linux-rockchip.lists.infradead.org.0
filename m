@@ -2,145 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF3FB103608
-	for <lists+linux-rockchip@lfdr.de>; Wed, 20 Nov 2019 09:32:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90CBB1038E3
+	for <lists+linux-rockchip@lfdr.de>; Wed, 20 Nov 2019 12:41:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ub/i0XDkjynPymuhP3JMOKY1XlOP9sn4rsvQ5LP/Ye0=; b=pdfNDuLs8YBf4Z
-	i6D+a9uSXUmYFPP/NXNhLyR4jhw66EUtA+xLWa4uYndfY3P0giCJxfQl3Y7AxpomDdspBxVYdLW6Z
-	0zpO/qH7dZPDwNYw1LZz+Erqf6yKDkoqy5akKKWUAl/k8xKALsHcxhaJj28XChIvdmg2egfosN52a
-	oPbcCtoAWrb1rcu7rj3lJXugm+0LCZB3+Gjo8sAMb01DFAVNBs8k9T5oSYhERpJ96fpsfFAHAjO8R
-	2fkYZ9tE00f67x9j6POpuhBHxqNGdtMKrOOMlA0offEcSQz7OmnJHbmpSFqwpQfEZUQaOqiB0s/Ki
-	osk7HXVWu+/gsphv/lRg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=70pxBdIKMHivFJVK6fkYO9sYD9TUIoGM+nhpH8NCNsI=; b=nBtIyuo5zz+eJf
+	EYIual7cVMNW2tdflpwawO+WGC7DMWhLz9czbif8mCPDDuRdxTuq41TAebRlyM/vGICgOSZN82z0k
+	Oq/Dlqisk5kq8r22K0pcegi1c5pnZLRYO0IKnONQEzE5luGBDhpQvh6RHaYNfZp1ibAV53WP7nMD+
+	YsoaFGx8L8NIRVwrpqakvZTMsFEhusZq29AG9c9ANLSecdKyRjDHPvsRlukdKDELh0xpGiK5xJ5jG
+	nlY3v3q5tkD0VWqI2KbRw+1eNPann7LpyhBqi6G1BdbYclXbVEmotxRB6OEy3Oq5v0ijV/wcn1JEb
+	7OTWXrcEgWuD6ve+XIRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXLPC-00040o-Fn; Wed, 20 Nov 2019 08:32:06 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iXOM3-0002nS-D4; Wed, 20 Nov 2019 11:41:03 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXLOy-0003sN-SP
- for linux-rockchip@lists.infradead.org; Wed, 20 Nov 2019 08:31:55 +0000
-Received: by mail-wr1-x441.google.com with SMTP id q15so14219846wrw.7
- for <linux-rockchip@lists.infradead.org>; Wed, 20 Nov 2019 00:31:52 -0800 (PST)
+ id 1iXOLs-0002e6-R6
+ for linux-rockchip@lists.infradead.org; Wed, 20 Nov 2019 11:40:54 +0000
+Received: by mail-pf1-x444.google.com with SMTP id n13so14113507pff.1
+ for <linux-rockchip@lists.infradead.org>; Wed, 20 Nov 2019 03:40:52 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=38z6RyjMyXCUIeOwwLykSbeDE8sPTFCwnDO3EjCpWOA=;
- b=mhOwiYOke8BRLMgtIyxZPbnidW28nPO4gCUBE0cIZL3O+K4vUilbkglAPxuXKXEBEL
- YG/Un3TWx3XrCCO0Rd39GaDIn34GfSfMW9ETB41HKfLLkoYxx3nfGrRUsgvz5wzAkHNb
- 2nkMJWCw4H5LJ/AVLzUqynWYJg89ZbZiRXpcgiuV6nwCguK1oSdL7UVAoL5MV8Ay6GfZ
- aB3AFGVdZa6L/0pgsnrWUQ/AJohW6fvbkDoFeQVSSqt7y/Jo5BEkIY8qtnrtZbbROg/Y
- ieH0XYJmbJYGDCtZM+ah9eXHI4Ch1VNkhkX8fxf9biO77ryRMaclLxiPj779CcdH5dWd
- 7Lpw==
+ d=amarulasolutions.com; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=EPJkuGz+JSjzJ50nZ26ldWX3k6k/FLUFZmlBSMSkXIM=;
+ b=GtZuKo/YXhZDfFx2Fg6eTUxxwhtdrqfhNSiftIvxAboMj7Abz8xhbA6gApZCbFjKhx
+ 6++Cl8pLFZDZ+HgBc2POt6G2l1ZCWOYmPlqQwsubN7RSEa7EtG3XmIAtld4tulVCrEBP
+ oSBFwZNYGG/AP89b5q2JMQOwDl/CE1NVR36xE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=38z6RyjMyXCUIeOwwLykSbeDE8sPTFCwnDO3EjCpWOA=;
- b=Y9zgzke4I1xcoNpDDZNbU3A/sxK3jYTUXi7qplq9iHqvZvDDJlKnnTZQLjkmJbKo/v
- /HvMlPHA11hRjnouHODp6u0HgttRK2g6HwzWeqmph+9t0438gJv3rs0NuJPmZGwGtCyh
- 3VU2lRkhDm0IUMWhSoQUhfaD/fZf9Tx8By+xFgMkmTe331EVkugBUlk9YfrGNIWxz3F3
- 1fe2QByNof0OWUWlS9blttLp1vB6axPmc2tARD6Wl4tr2thVWfcbzUtc21TwmqTxSIga
- 21EWeIl1uiW/ywfv+qjiQeCHxumOOVVW//VkhwKw8wu0R8n6vvN/jzRdbiY95Dz90Ef7
- g9iQ==
-X-Gm-Message-State: APjAAAXSI5XeEGu7DyNfFup2hQTtmaTN3QMHswLHv+7T4hAeriqPe0Np
- 8oFVYQ0XiDpxgVtanFtIC7DJmA==
-X-Google-Smtp-Source: APXvYqzkhtlhPBQtXB7GC0rslGbZ3YyeTfH9T+nKnWCBFlSSTNa8sH6AHhqdy9PppQPxS0gPUPoVJA==
-X-Received: by 2002:a5d:5687:: with SMTP id f7mr1682422wrv.384.1574238710636; 
- Wed, 20 Nov 2019 00:31:50 -0800 (PST)
-Received: from [10.1.2.12] (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id x205sm6414418wmb.5.2019.11.20.00.31.49
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 20 Nov 2019 00:31:49 -0800 (PST)
-Subject: Re: [PATCH v3 4/4] dt-bindings: display: add IMX MIPI DSI host
- controller doc
-To: Adrian Ratiu <adrian.ratiu@collabora.com>,
- linux-arm-kernel@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com,
- linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org
-References: <20191118152518.3374263-1-adrian.ratiu@collabora.com>
- <20191118152518.3374263-5-adrian.ratiu@collabora.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <e19aca1f-842d-a5b4-6fc1-02f7f6dd136d@baylibre.com>
-Date: Wed, 20 Nov 2019 09:31:49 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=EPJkuGz+JSjzJ50nZ26ldWX3k6k/FLUFZmlBSMSkXIM=;
+ b=RRJyz3Pj3A8syumkSEdfZPFkjAhNiOJQsiX4HPRQR6lU9S2R2rbrvCXri5AO7EZOBR
+ c8zTN0dweas5WsarKGOeSwTzBpPA5w1m1BM2s1lYLY0B4eQU9KMoz90f/8PvjjpF/W1g
+ CAc4jtySUEEKUimBR912MThcLDmTk6k8HnIs16Oy1E1a3FFYuSAsQornei5G1P6HGAJ5
+ 5TY0JbZY8LzdiMGM7u9+hmLmxCGXmkxTGMZfLcue4eYOhJTttC+FHvuek3Nq3vF1BgHA
+ G6unYlW4tK8hDVB0BiBI+SFyJc7cXxG4NZqHKEbGJmJLRcxYy93vd7NxI5jq+RuwKnQu
+ Rasg==
+X-Gm-Message-State: APjAAAUwTXMUBhn15WrZpKPtiDgKygTMgD5L4eqUuyzNDMzng7umGnmg
+ BBSknWQIuQ9BMQo4TTCEP/MzGQ==
+X-Google-Smtp-Source: APXvYqwEZ56JDZTPJcrZRd6NoxeRu3wg9RK57Xc3CqoGcBA0SsoP47nnmr5ufV5AVYg+p5xqSb8IRg==
+X-Received: by 2002:a62:e818:: with SMTP id c24mr3459856pfi.125.1574250051807; 
+ Wed, 20 Nov 2019 03:40:51 -0800 (PST)
+Received: from localhost.localdomain ([115.97.180.31])
+ by smtp.gmail.com with ESMTPSA id h185sm13492850pgc.87.2019.11.20.03.40.45
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 20 Nov 2019 03:40:50 -0800 (PST)
+From: Jagan Teki <jagan@amarulasolutions.com>
+To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH 0/5] arm64: dts: rockchip: Add Rock Pi N10 support
+Date: Wed, 20 Nov 2019 17:09:18 +0530
+Message-Id: <20191120113923.11685-1-jagan@amarulasolutions.com>
+X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 MIME-Version: 1.0
-In-Reply-To: <20191118152518.3374263-5-adrian.ratiu@collabora.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_003152_979492_4AB432E3 
-X-CRM114-Status: GOOD (  16.17  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191120_034053_060279_3C7E2D92 
+X-CRM114-Status: UNSURE (   8.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -154,96 +94,60 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Martyn Welch <martyn.welch@collabora.com>,
- Sjoerd Simons <sjoerd.simons@collabora.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-imx@nxp.com, kernel@collabora.com
+Cc: devicetree@vger.kernel.org, Tom Cubie <tom@radxa.com>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Akash Gajjar <akash@openedev.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org,
+ Jagan Teki <jagan@amarulasolutions.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+Unlike, other Rock PI boards from radxa, Rock Pi N10 SBC is based
+on SOM + Carrier board combination.
 
-On 18/11/2019 16:25, Adrian Ratiu wrote:
+Rock Pi N10 is a Rockchip RK3399Pro based SBC, which has
+- VMARC RK3399Pro SOM (as per SMARC standard) from Vamrs.
+- Compatible carrier board from Radxa.
 
-A small commit log would be welcome here.
+This series add initial support for Rock Pi N10.
 
-> Signed-off-by: Sjoerd Simons <sjoerd.simons@collabora.com>
-> Signed-off-by: Martyn Welch <martyn.welch@collabora.com>
-> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
-> ---
->  .../bindings/display/imx/mipi-dsi.txt         | 56 +++++++++++++++++++
->  1 file changed, 56 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/imx/mipi-dsi.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/display/imx/mipi-dsi.txt b/Documentation/devicetree/bindings/display/imx/mipi-dsi.txt
-> new file mode 100644
-> index 000000000000..3f05c32ef963
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/imx/mipi-dsi.txt
+patch 0001: dt-bindings for VMARC RK3399Pro SOM
 
-New bindings should use the yaml dt-schema format, could you convert it ?
+patch 0002: VMARC RK3399Pro SOM dtsi support
 
-Neil
+patch 0003: dt-bindings for Rock Pi N10
 
-> @@ -0,0 +1,56 @@
-> +Freescale i.MX6 DW MIPI DSI Host Controller
-> +===========================================
-> +
-> +The DSI host controller is a Synopsys DesignWare MIPI DSI v1.01 IP
-> +with a companion PHY IP.
-> +
-> +These DT bindings follow the Synopsys DW MIPI DSI bindings defined in
-> +Documentation/devicetree/bindings/display/bridge/dw_mipi_dsi.txt with
-> +the following device-specific properties.
-> +
-> +Required properties:
-> +
-> +- #address-cells: Should be <1>.
-> +- #size-cells: Should be <0>.
-> +- compatible: "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi".
-> +- reg: See dw_mipi_dsi.txt.
-> +- interrupts: The controller's CPU interrupt.
-> +- clocks, clock-names: Phandles to the controller's pll reference
-> +  clock(ref) and APB clock(pclk), as described in [1].
-> +- ports: a port node with endpoint definitions as defined in [2].
-> +- gpr: Should be <&gpr>.
-> +       Phandle to the iomuxc-gpr region containing the multiplexer
-> +       control register.
-> +
-> +[1] Documentation/devicetree/bindings/clock/clock-bindings.txt
-> +[2] Documentation/devicetree/bindings/media/video-interfaces.txt
-> +
-> +Example:
-> +
-> +	mipi_dsi: mipi@21e0000 {
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +		compatible = "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi";
-> +		reg = <0x021e0000 0x4000>;
-> +		interrupts = <0 102 IRQ_TYPE_LEVEL_HIGH>;
-> +		gpr = <&gpr>;
-> +		clocks = <&clks IMX6QDL_CLK_MIPI_CORE_CFG>,
-> +			 <&clks IMX6QDL_CLK_MIPI_IPG>;
-> +		clock-names = "ref", "pclk";
-> +		status = "okay";
-> +
-> +		ports {
-> +			port@0 {
-> +				reg = <0>;
-> +				mipi_mux_0: endpoint {
-> +					remote-endpoint = <&ipu1_di0_mipi>;
-> +				};
-> +			};
-> +			port@1 {
-> +				reg = <1>;
-> +				mipi_mux_1: endpoint {
-> +					remote-endpoint = <&ipu1_di1_mipi>;
-> +				};
-> +			};
-> +		};
-> +        };
-> 
+patch 0004: Radxa carrier board dtsi support
+
+patch 0005: Rock Pi N10 dts support
+
+Tested basic peripherals and will all more in future patches.
+
+Any inputs?
+Jagan.
+
+Jagan Teki (5):
+  dt-bindings: arm: rockchip: Add VMARC RK3399Pro SOM binding
+  arm64: dts: rockchip: Add VMARC RK3399Pro SOM initial support
+  dt-bindings: arm: rockchip: Add Rock Pi N10 binding
+  ARM: dts: rockchip: Add Radxa Carrier board
+  arm64: dts: rockchip: Add Radxa Rock Pi N10 initial support
+
+ .../devicetree/bindings/arm/rockchip.yaml     |  10 +
+ .../boot/dts/rockchip-radxa-carrierboard.dtsi |  81 +++++
+ arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+ .../dts/rockchip/rk3399pro-rock-pi-n10.dts    |  17 +
+ .../dts/rockchip/rk3399pro-vmarc-som.dtsi     | 339 ++++++++++++++++++
+ 5 files changed, 448 insertions(+)
+ create mode 100644 arch/arm/boot/dts/rockchip-radxa-carrierboard.dtsi
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro-vmarc-som.dtsi
+
+-- 
+2.18.0.321.gffc6fa0e3
 
 
 _______________________________________________
