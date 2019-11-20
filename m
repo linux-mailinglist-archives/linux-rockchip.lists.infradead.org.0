@@ -2,74 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4ECD2103ECF
-	for <lists+linux-rockchip@lfdr.de>; Wed, 20 Nov 2019 16:34:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8D55103FA9
+	for <lists+linux-rockchip@lfdr.de>; Wed, 20 Nov 2019 16:45:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hKv8cXKqlOCcus5JZSjE9/VJj7r6LwkRhqwK+JRAHoU=; b=JxFNARftUPpKbk
-	C9dpO430omS5eew31Fs8TKVBe/OBmq/gycJFHS2dhjIn8+Vu8tyO78Q3cjrM60gCaZg7KLWpijHLb
-	Qqmx89bjD1ElMp/vAJiHKgB6Rc4Zl5hpLkeYERZJW0GXI9nJENny31hw2A2NWwEIUYHx23telyeOG
-	QBqBWQ9Qtk7MGdi8UmnoZzpD3DyMOp5gMR7dGLSmgJTR1ThEP+nRO1onvltxMenXqFYbCuMgbCiqh
-	WZO9U1tUKB1CyW5I5Zt2Uw5DpHNJl1WdHsUbO0hMXJqUlD+mGFCoVoh5gjyx3tfmq5M8x2cthASHk
-	SW0zcBcjj0vf3qFN4iYQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=SHYwNUl2KO1DWi16QmV66tIBngv0OcZIcTKVxVoxSig=; b=DHg
+	yUQJzUneih5MBOgnXS/CEJEaVOILMt4VA5EC7kKJ424BVExTnBFmj9g7zNmxpEEJyKBQXABCRIWm6
+	PvMkdZd+qzPtPFc9FUz7Fo4N7XpaD03247mWAIVsxOe6TM9CuEP0FIAl7i79jYO0AMfcjUkKOdiSO
+	7v5Jh34MQ6gs7zr8kuvXADfvi6Eh/P1y2Pk+QTWMP12wNIvPlWYJ+WPW3LWcc2/wfeypHD9lP01gK
+	SamoW90BKFN1Z+NPTb/JEHdeMt78JGfOLDpNVy9QgGor8eSzowoPFfgcaYK7b7HAhwYbP+WR9BPRP
+	HLlCaS/cVnFGNNisBGFn9EOsLo/5GWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXRzV-0004oS-Bu; Wed, 20 Nov 2019 15:34:01 +0000
-Received: from mail-oi1-x234.google.com ([2607:f8b0:4864:20::234])
+	id 1iXSAs-00032B-3G; Wed, 20 Nov 2019 15:45:46 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXRzG-0004gC-Hg
- for linux-rockchip@lists.infradead.org; Wed, 20 Nov 2019 15:33:52 +0000
-Received: by mail-oi1-x234.google.com with SMTP id n16so139340oig.2
- for <linux-rockchip@lists.infradead.org>; Wed, 20 Nov 2019 07:33:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=XIz71A93vT2GZir/cbd6mjWyCS4Rwn+5UeGeUtq83rI=;
- b=XhcSuygsIBwuCOL9xXeVVWfKx6OA4pTVpYUr5oiWXKDaiMqAXeLa0e4xJYBglzpgLi
- /r50b5WVPxR45+xRT0n1oir0gfEkbzcVd2at+obobIM1v+1voNKef59puPe7oDc0pqZw
- I1kaR9TPOL61ysviDLLLtf8BsXgRYZaBPZF0I=
+ id 1iXSAa-0002mx-Pj
+ for linux-rockchip@lists.infradead.org; Wed, 20 Nov 2019 15:45:31 +0000
+Received: by mail-pl1-x641.google.com with SMTP id q18so10301144pls.5
+ for <linux-rockchip@lists.infradead.org>; Wed, 20 Nov 2019 07:45:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=p1oQ2/ApuLBZfJjzJxbReeEfweEJSenuiYCAOd26jOY=;
+ b=sx33veXRT/WG71DXlr2LQUN/kHNNUnPt88phqsfsYVlAgZGxBvXbK0fqchczHwjND/
+ 1EGPyi7lDPIkCrm+8jV6C6faKYzD2LwCZtawDM48VNil5JrKDFYq/j92RN3POFavam4Q
+ 3M+Tutp1fhrWLVf5po3HELVk4FWWjzopaxpiuFaSbEUlC19y3zCMMjRiDRAIjNgB3Vs4
+ BX5kbPUQ3ld73hsLb3GuVJmcROm71Vb4Y1uWFMHNmbnhMSz53nFcT9/CBimpRqCrj33I
+ 3/U1bD9M8Kdjx6Vb62TMyRxIX5ab6z88+AMp21kU32iV1Yznt8pQb9jqRWu7JaM6XwcU
+ sQwg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=XIz71A93vT2GZir/cbd6mjWyCS4Rwn+5UeGeUtq83rI=;
- b=aKkSF1064BLni5NCydmejqSkHadV51AKIe3J2SFezLvlY6hBou0f1Pmd2LzVRKeLnS
- Yygv1UbNcrxRjH8gtq73piugsUs2uVPkV7GBjaONBJWaxZjleYtxyKyEYMZdMwjNQQ76
- bBvUrgaVALi71gTQDRgiGbpxIRu8okpDnEnfCO8xsLiWXg4f3z/9rR7oLjAEqxcujzj9
- aZuj7hNLn5UZ7Ck48gRVTQ6a5y9wzp0EvLGPqDOlQpAJYnkOyQtVNh4rLxrhnxm4X8sd
- O/In3awJvvxhVWBG9zLTO0Bh8kQEH6NumDrdHJPUJTHFdY6UVb0K/nieyLET8YSQWnh5
- 7dTA==
-X-Gm-Message-State: APjAAAUem/xdkseXhUhglr1zNhcvK9SUcFnnf/AjoyxDFuj63wR83rXB
- WxHBbg9RxPDLL7ExcxmJEwdHpJTrKN7P249746PAsg==
-X-Google-Smtp-Source: APXvYqzFZ1Nv/DhX4G1ZPrfrmut25uY1BdnJKjyKvD6eMew7XmgYRuai2w90HTpHiKhhksOu8ivhmtv9cpmYUF09//4=
-X-Received: by 2002:aca:320a:: with SMTP id y10mr3250705oiy.152.1574264024897; 
- Wed, 20 Nov 2019 07:33:44 -0800 (PST)
-MIME-Version: 1.0
-References: <20191120113923.11685-1-jagan@amarulasolutions.com>
- <5644395.EDGZVd1YuU@diego>
- <CAMty3ZA+p2pWokLrwnkv6_q0G8d76AntE5Kar4JN8MN48O9VSw@mail.gmail.com>
- <12496011.EUIoF19S7S@diego>
-In-Reply-To: <12496011.EUIoF19S7S@diego>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Wed, 20 Nov 2019 21:03:33 +0530
-Message-ID: <CAMty3ZCLYQYvOuOzRXjxDmLsFbYBYOQjymsn+pCvctTaQG2Y0g@mail.gmail.com>
-Subject: Re: [PATCH 4/5] ARM: dts: rockchip: Add Radxa Carrier board
-To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=p1oQ2/ApuLBZfJjzJxbReeEfweEJSenuiYCAOd26jOY=;
+ b=tZmROjJ4p9PPVCZZ/NsUWlWXRc+72DGkqjobB9vdfyRIMqTPP0TpPLsHNyAFU8Fql3
+ Y/JaLjKE7QCMb105VVTsye0zJ7Dso+xhMMFFwqUah/YD4/UO7bFE9EWqDoxJ8ETGQ2cI
+ 0N+GR0waTi6bKETjNeTpNldlsa0x5ytbhrsWWIWaAB5IkDGN1vdzVZjkAhNc9nRzF5FS
+ Vh25x1//c0YC1A0+DfkO5CUNes3kNynhLajI+xzWyqSym2Pxtnj2XTTd/3/3ZQVnv+Bs
+ rK3XtuZKntlJgfjnzLJnzwsymeYbcSXuTcTkRcIv2qWWqswFAU3PeTkzqF+SuCDO29wA
+ /uog==
+X-Gm-Message-State: APjAAAU8iDFxasDEVDsBIyFUbtyzq0t5XY34uPsCqYo+K6iu1vr5z1kM
+ 0o6UGoGfXGFLslZZuFWxyaypdA==
+X-Google-Smtp-Source: APXvYqxogLp6gc4NSWr1kl81LqhVaiFMVmTnBYfJTGwLUMofS4/vu9+JzshkluAWJdxeFvOnWyJZAQ==
+X-Received: by 2002:a17:90a:bb82:: with SMTP id
+ v2mr5064560pjr.62.1574264727478; 
+ Wed, 20 Nov 2019 07:45:27 -0800 (PST)
+Received: from localhost ([14.96.110.98])
+ by smtp.gmail.com with ESMTPSA id q41sm7643756pja.20.2019.11.20.07.45.25
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 20 Nov 2019 07:45:26 -0800 (PST)
+From: Amit Kucheria <amit.kucheria@linaro.org>
+To: linux-kernel@vger.kernel.org, edubezval@gmail.com,
+ Amit Daniel Kachhap <amit.kachhap@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Guillaume La Roque <glaroque@baylibre.com>,
+ Heiko Stuebner <heiko@sntech.de>, Javi Merino <javi.merino@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Jun Nie <jun.nie@linaro.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Zhang Rui <rui.zhang@intel.com>
+Subject: [PATCH v2 00/11] thermal: clean up output of make W=1 
+Date: Wed, 20 Nov 2019 21:15:09 +0530
+Message-Id: <cover.1574242756.git.amit.kucheria@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_073349_377163_C17483FB 
-X-CRM114-Status: GOOD (  23.04  )
+X-CRM114-CacheID: sfid-20191120_074528_852652_FDAC9C14 
+X-CRM114-Status: GOOD (  10.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:234 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -92,71 +103,64 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Tom Cubie <tom@radxa.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sCgpPbiBXZWQsIE5vdiAyMCwgMjAxOSBhdCA3OjIzIFBNIEhlaWtvIFN0w7xibmVy
-IDxoZWlrb0BzbnRlY2guZGU+IHdyb3RlOgo+Cj4gSGkgSmFnYW4sCj4KPiBBbSBNaXR0d29jaCwg
-MjAuIE5vdmVtYmVyIDIwMTksIDE0OjQ1OjM1IENFVCBzY2hyaWViIEphZ2FuIFRla2k6Cj4gPiBP
-biBXZWQsIE5vdiAyMCwgMjAxOSBhdCA2OjU1IFBNIEhlaWtvIFN0w7xibmVyIDxoZWlrb0BzbnRl
-Y2guZGU+IHdyb3RlOgo+ID4gPiBBbSBNaXR0d29jaCwgMjAuIE5vdmVtYmVyIDIwMTksIDEyOjM5
-OjIyIENFVCBzY2hyaWViIEphZ2FuIFRla2k6Cj4gPiA+ID4gQ2FycmllciBib2FyZCBvZnRlbiBy
-ZWZlcnJlZCBhcyBiYXNlYm9hcmQuIEZvciBtYWtpbmcKPiA+ID4gPiBjb21wbGV0ZSBTQkMsIHRo
-ZSBhc3NvY2lhdGVkIFNPTSB3aWxsIG1vdW50IG9uIHRvcCBvZgo+ID4gPiA+IHRoaXMgY2Fycmll
-ciBib2FyZC4KPiA+ID4gPgo+ID4gPiA+IFJhZHhhIGhhcyBhIGNhcnJpZXIgYm9hcmQgd2hpY2gg
-c3VwcG9ydHMgb24gYm9hcmQKPiA+ID4gPiBwZXJpcGhlcmFscywgcG9ydHMgbGlrZSBVU0ItMi4w
-LCBVU0ItMy4wLCBIRE1JLCBNSVBJIERTSS9DU0ksCj4gPiA+ID4gZURQLCBFdGhlcm5ldCwgUENJ
-ZSwgVVNCLUMsIDQwLVBpbiBHUElPIGhlYWRlciBhbmQgZXRjLgo+ID4gPiA+Cj4gPiA+ID4gQ3Vy
-cmVudGx5IHRoaXMgY2FycmllciBib2FyZCBjYW4gYmUgdXNlZCB0b2dldGhlciB3aXRoCj4gPiA+
-ID4gVk1BUkMgUkszMzk5UG9yIFNPTSBmb3IgbWFraW5nIFJvY2sgUEkgTjEwIFNCQy4KPiA+ID4g
-Pgo+ID4gPiA+IFNvIGFkZCB0aGlzIGNhcnJpZXIgYm9hcmQgZHRzaSBhcyBhIHNlcGFyYXRlIGZp
-bGUgaW4KPiA+ID4gPiBBUk0gZGlyZWN0b3J5LCBzby10aGF0IHRoZSBzYW1lIGNhbiByZXVzZSBp
-dCBpbiBib3RoCj4gPiA+ID4gYXJtMzIgYW5kIGFybTY0IHZhcmlhbnRzIG9mIFJvY2tjaGlwIFNP
-TXMuCj4gPiA+Cj4gPiA+IERvIHlvdSByZWFsbHkgdGhpbmsgc29tZW9uZSB3aWxsIGNyZWF0ZSBh
-biBhcm0zMiBzb2MgdXNpbmcgdGhhdAo+ID4gPiBjYXJyaWVyIGJvYXJkPwo+ID4KPiA+IFllcywg
-d2UgaGF2ZSBSb2NrIFBpIE44IHdoaWNoIGlzIHVzaW5nIHNhbWUgY2FycmllciBib2FyZCBkZXNp
-Z24gd2l0aAo+ID4gKCsgZXh0ZXJuYWwgY29kZWMpIG9uIHRvcCBvZiBSSzMyODggU09NLiBJIGRp
-ZG4ndCBtZW50aW9uZWQgb24gdGhlCj4gPiBjb21taXQgbWVzc2FnZSBzaW5jZSByYWR4YSBkb2Vz
-bid0IG9mZmljaWFsbHkgYW5ub3VuY2VkIG9uIHRoZQo+ID4gd2Vic2l0ZS4KPiA+Cj4gPiA+Cj4g
-PiA+IFNpbWlsYXJseSBzbyBmYXIgSSBkb24ndCB0aGluayB3ZSBoYXZlbid0IGV2ZW4gc2VlbiBh
-IGxvdCBvZiByZXVzZQo+ID4gPiBvZiBleGlzdGluZyBjYXJyaWVyIGJvYXJkcyBhdCBhbGwsIG90
-aGVyIHRoYW4gdGhlaXIgaW5pdGlhbCBjb21iaW5hdGlvbi4KPiA+ID4KPiA+ID4gU28gbWF5YmUg
-anVzdCBoYXZpbmcgdGhlIGNvbnRlbnQgb2YgeW91cgo+ID4gPiAgICAgICAgIHJvY2tjaGlwLXJh
-ZHhhLWNhcnJpZXJib2FyZC5kdHNpCj4gPiA+IGluCj4gPiA+ICAgICAgICAgcm9ja2NoaXAvcmsz
-Mzk5cHJvLXJvY2stcGktbjEwLmR0cwo+ID4gPiBmcm9tIHBhdGNoIDUgbWlnaHQgYmUgYSBiZXR0
-ZXIgc3RhcnQgLSBhdCBsZWFzdCB1bnRpbCB0aGVyZSBpcyBhbnkKPiA+ID4gZnVydGhlciB1c2Fn
-ZSAtIGlmIGF0IGFsbD8KPiA+Cj4gPiBCdXQsIHRoaXMgcGFydGljdWxhciBkZXNpZ24gaGFzIHBy
-b3BlciB1c2UgY2FzZS4KPiA+IDEuIHJrMzM5OXBybyBTT00gKyBjYXJyaWVyIGJvYXJkIChSb2Nr
-IFBpIE4xMCkKPiA+IDIuIHJrMzI4OCBTT00gKyBjYXJyaWVyIGJvYXJkIChSb2NrIFBpIE44KQo+
-ID4KPiA+ID4KPiA+ID4gQWxzbyByb2NrY2hpcC1yYWR4YS1jYXJyaWVyYm9hcmQgbWlnaHQgZXZl
-biBiZSBvdmVybHkgZ2VuZXJpYwo+ID4gPiBhcyB0aGVyZSBtYXkgYmUgbXVsdGlwbGUgY2Fycmll
-cmJvYXJkcyBmcm9tIFJhZHhhIGxhdGVyIG9uLgo+ID4KPiA+IEknbSBzbGlnaHRseSBkaXNhZ3Jl
-ZSBvZiBoYXZpbmcgb3ZlcmxheSBoZXJlLCBzaW5jZSB0aGVzZSBhcmUgZml4ZWQKPiA+IGRlc2ln
-biBjb21iaW5hdGlvbnMuIHdoZXJlIFNPTSB3aXRoIHJlc3BlY3RpdmUgY2FycmllciBib2FyZCBp
-cwo+ID4gbWFuZGF0b3J5IHRvIG1ha2UgZmluYWwgYm9hcmQuIFVuZGVyc3RhbmQgdGhhdCB3ZSBj
-YW4gaGF2ZSBhCj4gPiBtYWludGVuYW5jZSBvdmVyLWFoZWFkIGlmIHdlIGhhdmUgbXVsdGlwbGUg
-Y2FycmllciBib2FyZHMsIGJ1dCByaWdodAo+ID4gbm93IHJhZHhhIGhhcyBvbmx5IG9uZSBjYXJy
-aWVyIGJvYXJkIHdpdGggMiBzZXRzIG9mIFNPTSdzIGNvbWJpbmF0aW9ucwo+ID4gdGhhdCBpbmRl
-ZWQgZml0IGxpa2UgYSBkZXYgYm9hcmQsIHNvIHRoZXJlIGlzIHVudXNlZCBjYXJyaWVyIGJvYXJk
-Lgo+Cj4gQWxsIGlzIGdvb2QgLi4uIHdpdGggdGhhdCBpbmZvcm1hdGlvbiBmcm9tIGFib3ZlIChy
-azMyODgpIHRoaXMgZGVmaW5pdGx5Cj4gbWFrZXMgbW9yZSBzZW5zZSA6LSkKPgo+IFRoZSBuYW1p
-bmcgb2YgdGhlIGZpbGUgaXMgc3RpbGwgYSB0aW55IHN0cnVnZ2xlIHRob3VnaC4gRG9lcyB0aGlz
-IGJvYXJkCj4gbWF5YmUgaGF2ZSBzb21lIGFjdHVhbCBwcm9kdWN0IG5hbWUgb3IgaXMgaXQgcmVh
-bGx5IGp1c3QgY2FsbGVkCj4gImNhcnJpZXJib2FyZCI/IDotKQoKVHJ1ZSwgSSBmZWx0IHRoZSBz
-YW1lLiBKdXN0IG5vdyBUb20gaGFzIG5hbWVkIHRoaXMgYXMgJ0RhbGFuZyBDYXJyaWVyCmJvYXJk
-JyBzbyB3ZSBjYW4gaGF2ZSByb2NrY2hpcC1yYWR4YS1kYWxhbmcuZHRzaSBvcgpyb2NrY2hpcC1y
-YWR4YS1kYWxhbmctY2Fycmllci5kdHNpIGFzIGZpbGUgbmFtZXMuIG9yIGxldCBtZSBrbm93IGlm
-CnlvdSBoYXZlIGFueSBzdWdnZXN0aW9ucyBvbiB0aGUgZmlsZSBuYW1lPwoKSmFnYW4uCgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hp
-cCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
+Cleanup output of make W=1 inside drivers/thermal. This should allow us to
+focus on real issues that tend to get lost in the noise much better.
+
+There is no functional change. This series was generate on top of
+linux-next from 20191119.
+
+Changes since v1:
+- Add review tags
+- Fixed up commit message for devfreq_cooling and samsung changes
+
+Regards,
+Amit
+
+
+Amit Kucheria (11):
+  thermal: of-thermal: Appease the kernel-doc deity
+  thermal: cpu_cooling: Appease the kernel-doc deity
+  thermal: step_wise: Appease the kernel-doc deity
+  thermal: devfreq_cooling: Appease the kernel-doc deity
+  thermal: max77620: Appease the kernel-doc deity
+  thermal: mediatek: Appease the kernel-doc deity
+  thermal: rockchip: Appease the kernel-doc deity
+  thermal: samsung: Appease the kernel-doc deity
+  thermal: tegra: Appease the kernel-doc deity
+  thermal: amlogic: Appease the kernel-doc deity
+  thermal: zx2967: Appease the kernel-doc deity
+
+ drivers/thermal/amlogic_thermal.c    |  6 +++++-
+ drivers/thermal/cpu_cooling.c        |  1 +
+ drivers/thermal/devfreq_cooling.c    |  3 ++-
+ drivers/thermal/fair_share.c         |  4 ++--
+ drivers/thermal/gov_bang_bang.c      |  4 ++--
+ drivers/thermal/max77620_thermal.c   |  2 +-
+ drivers/thermal/mtk_thermal.c        | 12 ++++++------
+ drivers/thermal/of-thermal.c         |  2 +-
+ drivers/thermal/rockchip_thermal.c   | 22 ++++++++++++++++------
+ drivers/thermal/samsung/exynos_tmu.c |  5 ++++-
+ drivers/thermal/step_wise.c          |  4 ++--
+ drivers/thermal/tegra/soctherm.c     | 15 +++++++++++++--
+ drivers/thermal/user_space.c         |  4 ++--
+ drivers/thermal/zx2967_thermal.c     |  1 +
+ 14 files changed, 58 insertions(+), 27 deletions(-)
+
+-- 
+2.20.1
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
