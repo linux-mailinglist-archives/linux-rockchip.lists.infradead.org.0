@@ -2,68 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 101B4105419
-	for <lists+linux-rockchip@lfdr.de>; Thu, 21 Nov 2019 15:15:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2D1E10542D
+	for <lists+linux-rockchip@lfdr.de>; Thu, 21 Nov 2019 15:15:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=htQS89GxUOfaYvbx+aK/1VQUw7V2vW4wsUotkPnXzDo=; b=H9wUVhRgbYVwdD
-	RxXciwJjMlColCEjRk0Ezkpo2jBPNZbn2/zRK4cSbMkyqbxI1V0DYLuob1O4bvarmhslG/MdeDt8+
-	mzfRaZRyrudKw44f+LTqdFVUf2rctCc0c7iqnzYlITPARw4/0Wn9Wsu4PhDs4NekpThJ+a6LEwE1O
-	odBnEYsyRzDlQ9Z2FoDcjKgL84kLlwnWGNv5I5vU96J1Ahx3d+rp7sm0IlL6GvE1KZFhJBiTtcaeh
-	R2URFK7wUJ56Q5YxsUf18JI+5CBWsj/0+cMtNjMnC0OG9WlnmP7n7ZrqOFRbh19dTe4jnIe1VfZIg
-	95nxVJ0jXtaIYimCeYVg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rkg5RkAadFQ3Ll8yM85YXm0mCgJpVX5Zz+JtBcSpZ0E=; b=gr8o81Y9DhbGQB
+	YHfXF/dGh53y6J7CRC0ciCrCAcyrbkKPBILZhW1QTuNPL/eGy+eNiJiIwr69URaujLRK67+CquKZf
+	W9YHch/0T5HflcGftq3S9x4/4niiumo4xjquriEmdfzsH52Yr+YJpiVRgHTBsEQF4R3UshoFikEIf
+	yWibbsNrYfBjL4g0iuQ3I48303P9mAvnwe84wvjA7m2gzNXNSn2ThXroDhbBJylHC3PCQEWrAn+A6
+	wguYmWz0xQZg/7ZFdRpAVUOemHW1PLfjAwObyp0UWTDEGSW/3nURR2qmeQIeM9MvBpcIAW/hnPiWT
+	ftHOVp/MrdKrmS3/9iYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXnEw-0001u3-Ee; Thu, 21 Nov 2019 14:15:22 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iXnFO-0002FM-BY; Thu, 21 Nov 2019 14:15:50 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXnEg-0000ar-4I
- for linux-rockchip@lists.infradead.org; Thu, 21 Nov 2019 14:15:08 +0000
-Received: by mail-pg1-x544.google.com with SMTP id r18so1636389pgu.13
- for <linux-rockchip@lists.infradead.org>; Thu, 21 Nov 2019 06:15:03 -0800 (PST)
+ id 1iXnEi-0001M2-Jv
+ for linux-rockchip@lists.infradead.org; Thu, 21 Nov 2019 14:15:09 +0000
+Received: by mail-pl1-x641.google.com with SMTP id bb5so1633394plb.4
+ for <linux-rockchip@lists.infradead.org>; Thu, 21 Nov 2019 06:15:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=0lg7xoqCU9griTX07bOPborDv4xC+ndaqpkFXe9TjLg=;
- b=Dn06DFYADguxXrNrHFoCiFbFd1uG/ryAw8ky8mYHCn9oUzVz9hB2yMDAu5ULjtXAI0
- hqC4JRrQZa8CXukoaP5Y2URVyXUjUpoKO7Lgzizd9Bp5vGOLa8HrAUeWBKmfT0wOmT1z
- p43ut5Cy5wBhePmkmrvHQVgasIXEG9iPq+vVA=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=KGzksxC3NHCBGYXLvWDH+iGdDwwXfnJhqh1w+RnVanc=;
+ b=XaZsFsA+H3APrLs4/4C1VvAbNkguZdBO0cdjt38HSm0TtTBuvIEVqdYMSLRc7qsUZ0
+ TTkFJQsWWY0rJ9XwAhp65jWXiwEwp4JbDv3fWTOMD8bZoVuccJJ4kwlPMQxKbMT63fq/
+ CDDC5M2TKZq2/h0rxvIiF2SM/UsQWvLHAUBN0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=0lg7xoqCU9griTX07bOPborDv4xC+ndaqpkFXe9TjLg=;
- b=pqK88ibP+WF77sWIKdn+kJGqyY2sG+vkicKgR0q2v+taO6fJCVGRClS5Vnl86Xo7tt
- lzPFe4akGAf8PgZMFzvTaZrosNyy8ObkDV/roT8wgGoTxduwYYZn+eGIdkFjbF/G/u5a
- qzWzieC+M3BssjXNtqJKM9crJhq1+RwQbkcucfrS5gTzlXnbuPCcfoyCqeezz8eHoUIx
- 2t4g2OlQT3N79ysn1sIntInXPIlwPkbj8mUzWJmAEu0BtdlukG7FE4sfLcaN69au7DGu
- l9AI3FnYpZsphcmYpe5CSL4m30lJNcqwjCyTmrHNvmO/JmivIq7gmtxl3/TDsz3NUQYi
- JYxA==
-X-Gm-Message-State: APjAAAXVVtcltL/b+VeBL6k7NRvEOv3ODXa30hrzFa+BmUITuRQQK4lG
- Yp8NuF56Ni3y3ag3rvintcFxfVtEj5Kutw==
-X-Google-Smtp-Source: APXvYqwuTjhpD/waPmGZkM+fuBj2AUAa0JiWceYv23FKWcp+RSP3vrbjA1wVoDSX04kNhqg5Ck74hQ==
-X-Received: by 2002:a63:1303:: with SMTP id i3mr9710113pgl.430.1574345702647; 
- Thu, 21 Nov 2019 06:15:02 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=KGzksxC3NHCBGYXLvWDH+iGdDwwXfnJhqh1w+RnVanc=;
+ b=g7sxJ2Io9NMlhprxVdjRVz3RqIizMjvgLJaUu3OqKMumhjsBXVWvEN/mDHttLsua7Q
+ 5pbywZIvFGMAbyvic4tsmRLWGRzYf1RHEcyG1puxJZCTk5Fih8njs+IsxO4OSiVXSQDz
+ 4UZkPRjBdQPEyFEOfYvIBiY1F5ZCcRBovwNvL8R5J9ePRuwzuqrtsLH26CleUOf3VGhn
+ Iq3vNq5FI27IdM2yfHNzegG+RJBg354uGq0GxMol4lg+pUNd6JUlQC9c57MVGrBcZhAh
+ 346xYYszV2nk9jeg/IZo+yFvCaq7YmFhAyuwB5hWpPBla5Y/3ssH0NzgYAeb20cemkKy
+ 6DeQ==
+X-Gm-Message-State: APjAAAUl/k/ElqF4yy4GC81F2o0HrzC8LtoCpH2gF96eb+u/j0quEYER
+ NfigYSVlXbWJdlMpL4r2GDFKdg==
+X-Google-Smtp-Source: APXvYqxpFu0QFdEqmYmMyXZkzw3516FXyoTT5uH4u8N5dkaFnOuJ8uIoxJBB06PvcglL3PV2cQ7eIQ==
+X-Received: by 2002:a17:90a:380d:: with SMTP id
+ w13mr11702168pjb.133.1574345707390; 
+ Thu, 21 Nov 2019 06:15:07 -0800 (PST)
 Received: from localhost.localdomain ([115.97.180.31])
- by smtp.gmail.com with ESMTPSA id w138sm4072304pfc.68.2019.11.21.06.14.57
+ by smtp.gmail.com with ESMTPSA id w138sm4072304pfc.68.2019.11.21.06.15.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 Nov 2019 06:15:01 -0800 (PST)
+ Thu, 21 Nov 2019 06:15:06 -0800 (PST)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 0/5] arm64: dts: rockchip: Add Rock Pi N10 support
-Date: Thu, 21 Nov 2019 19:44:40 +0530
-Message-Id: <20191121141445.28712-1-jagan@amarulasolutions.com>
+Subject: [PATCH v2 1/5] dt-bindings: arm: rockchip: Add VMARC RK3399Pro SOM
+ binding
+Date: Thu, 21 Nov 2019 19:44:41 +0530
+Message-Id: <20191121141445.28712-2-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
+In-Reply-To: <20191121141445.28712-1-jagan@amarulasolutions.com>
+References: <20191121141445.28712-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_061506_338843_FD2D0F06 
-X-CRM114-Status: UNSURE (   8.64  )
+X-CRM114-CacheID: sfid-20191121_061508_659442_9051D009 
+X-CRM114-Status: UNSURE (   9.04  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,50 +109,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Unlike, other Rock PI boards from radxa, Rock Pi N10 SBC is based
-on SOM + Carrier board combination.
+VMARC RK3399Pro SOM is a standard SMARC SOM design with
+Rockchip RK3399Pro SoC, which is designed by Vamrs.
 
-Rock Pi N10 is a Rockchip RK3399Pro based SBC, which has
-- VMARC RK3399Pro SOM (as per SMARC standard) from Vamrs.
-- Dalang carrier board from Radxa.
+Since it is a standard SMARC design, it can be easily
+mounted on the supporting Carrier board. Radxa has
+suitable carrier board to mount and use it as a final
+version board.
 
-This series add initial support for Rock Pi N10 and fixes comments 
-from Heiko from v1[1].
+Add dt-bindings for it.
 
-patch 0001: dt-bindings for VMARC RK3399Pro SOM
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+Changes for v2:
+- none
 
-patch 0002: VMARC RK3399Pro SOM dtsi support
+ Documentation/devicetree/bindings/arm/rockchip.yaml | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-patch 0003: dt-bindings for Rock Pi N10
-
-patch 0004: Radxa Dalang carrier board dtsi support
-
-patch 0005: Rock Pi N10 dts support
-
-Tested basic peripherals and will all more in future patches.
-
-[1] https://patchwork.kernel.org/cover/11253649/
-
-Any inputs?
-Jagan.
-
-Jagan Teki (5):
-  dt-bindings: arm: rockchip: Add VMARC RK3399Pro SOM binding
-  arm64: dts: rockchip: Add VMARC RK3399Pro SOM initial support
-  dt-bindings: arm: rockchip: Add Rock Pi N10 binding
-  ARM: dts: rockchip: Add Radxa Dalang Carrier board
-  arm64: dts: rockchip: Add Radxa Rock Pi N10 initial support
-
- .../devicetree/bindings/arm/rockchip.yaml     |  10 +
- .../dts/rockchip-radxa-dalang-carrier.dtsi    |  81 +++++
- arch/arm64/boot/dts/rockchip/Makefile         |   1 +
- .../dts/rockchip/rk3399pro-rock-pi-n10.dts    |  17 +
- .../dts/rockchip/rk3399pro-vmarc-som.dtsi     | 333 ++++++++++++++++++
- 5 files changed, 442 insertions(+)
- create mode 100644 arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro-vmarc-som.dtsi
-
+diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+index 45728fd22af8..51aa458833a9 100644
+--- a/Documentation/devicetree/bindings/arm/rockchip.yaml
++++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+@@ -526,4 +526,9 @@ properties:
+         items:
+           - const: tronsmart,orion-r68-meta
+           - const: rockchip,rk3368
++
++      - description: Vamrs VMARC RK3399Pro SOM
++        items:
++          - const: vamrs,rk3399pro-vmarc-som
++          - const: rockchip,rk3399pro
+ ...
 -- 
 2.18.0.321.gffc6fa0e3
 
