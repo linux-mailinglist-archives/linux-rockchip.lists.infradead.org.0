@@ -2,56 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EB2C104C90
-	for <lists+linux-rockchip@lfdr.de>; Thu, 21 Nov 2019 08:29:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECF1A10522F
+	for <lists+linux-rockchip@lfdr.de>; Thu, 21 Nov 2019 13:18:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=lA64Ll4SawE0bU7WR9GLky+SwDmBIHP4uSW2vaLtqgI=; b=aYfk1Y8KF/r1yhlgrCuK3d8uQ
-	S3eDHtY7p3zmSUccdMJE5v3N++NeQQRZfwaPTRaCqa9ATKwkY2T6N7pQPehdfFW8S5rd3/MxA6sxd
-	k/dZSxxyNpd8ZJGMCCEKL/murIxII7atEzkd72aI9k54Ke9rqojIcyuHo/HqFt4p8u35LOKXGAdwY
-	FbKfQNjfcNL+MvLhJZ+EHpevRR1ow/6pjSbBboqXxqU0BzDmdRjPzfN3SaniqsA2dlfukc39Blcme
-	OVXa/QzgibIFfRxdDuPDen4fRr+1V9pv/wn4vTvTTyu+Ua0amUIoLOD/cAmTvOFK2zguHEkDCljV1
-	UJ3/3ICaA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=T0la5CByM10nU+z9j+hkYLQZwbcZM5TbRDFtbB6ttXM=; b=BI8vx+B4fochbG
+	9gAUgyYcSPpFL36QmE1zvSXmMXpYyjui2Wh2zvGMvQDpu+vepuMJzJ8hbhdTk1+BZgoRrDXnwHLUI
+	zDpqE4bqD7/BIRUWsHWoFgSugRXvm8N7+jjSTvfVeZGju4b3Jhime5m8wsKxCngQBMkg56qJu9qxf
+	mWWrd4XGFVy+bdNSUvarnicYkOaDvHL6IZQEn1lDzXGYQ7sSEd2lp9hPlEQIeHX7zJYy4f52Oa2Jk
+	GkhB1yjRt7jN5vsZGw/2VxzAe/jN6xWUMM8txEvZN6pGUm9OaIpJ9QBwfKjr8BHjVfBH0uZpLVnhF
+	NIjGImM10Iy8g36WBxBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXguF-0002C7-EI; Thu, 21 Nov 2019 07:29:35 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXgtw-00020L-Bh; Thu, 21 Nov 2019 07:29:18 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: aratiu) with ESMTPSA id DD3A028DB43
-From: Adrian Ratiu <adrian.ratiu@collabora.com>
-To: Neil Armstrong <narmstrong@baylibre.com>, Adrian Ratiu
- <adrian.ratiu@collabora.com>, linux-arm-kernel@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com,
- linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH v3 4/4] dt-bindings: display: add IMX MIPI DSI host
- controller doc
-In-Reply-To: <e19aca1f-842d-a5b4-6fc1-02f7f6dd136d@baylibre.com>
-References: <20191118152518.3374263-1-adrian.ratiu@collabora.com>
- <20191118152518.3374263-5-adrian.ratiu@collabora.com>
- <e19aca1f-842d-a5b4-6fc1-02f7f6dd136d@baylibre.com>
-Date: Thu, 21 Nov 2019 09:29:39 +0200
-Message-ID: <87a78p7km4.fsf@iwork.i-did-not-set--mail-host-address--so-tickle-me>
+	id 1iXlPl-0007ay-L1; Thu, 21 Nov 2019 12:18:25 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iXlPU-00073l-8U; Thu, 21 Nov 2019 12:18:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 895F61045;
+ Thu, 21 Nov 2019 04:18:07 -0800 (PST)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CF27B3F703;
+ Thu, 21 Nov 2019 04:18:06 -0800 (PST)
+Date: Thu, 21 Nov 2019 12:18:05 +0000
+From: Andrew Murray <andrew.murray@arm.com>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: Re: [PATCH v2 0/6] Raspberry Pi 4 PCIe support
+Message-ID: <20191121121804.GY43905@e119886-lin.cambridge.arm.com>
+References: <20191112155926.16476-1-nsaenzjulienne@suse.de>
+ <20191119111848.GR43905@e119886-lin.cambridge.arm.com>
+ <1b116fabe85a324e2d05a593d38811467f43fb91.camel@suse.de>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1b116fabe85a324e2d05a593d38811467f43fb91.camel@suse.de>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_232916_663437_0EDA0480 
-X-CRM114-Status: GOOD (  12.40  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191121_041808_342075_50FDF69F 
+X-CRM114-Status: GOOD (  20.67  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,114 +62,62 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Martyn Welch <martyn.welch@collabora.com>,
- Sjoerd Simons <sjoerd.simons@collabora.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-imx@nxp.com, kernel@collabora.com
+Cc: devicetree@vger.kernel.org, f.fainelli@gmail.com,
+ linux-rdma@vger.kernel.org, maz@kernel.org, phil@raspberrypi.org,
+ linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
+ linux-rockchip@lists.infradead.org, iommu@lists.linux-foundation.org,
+ mbrugger@suse.com, bcm-kernel-feedback-list@broadcom.com, wahrenst@gmx.net,
+ james.quinlan@broadcom.com, linux-pci@vger.kernel.org,
+ Robin Murphy <robin.murphy@arm.com>, netdev@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, 20 Nov 2019, Neil Armstrong <narmstrong@baylibre.com> 
-wrote:
-> Hi, 
+On Tue, Nov 19, 2019 at 12:49:24PM +0100, Nicolas Saenz Julienne wrote:
+> On Tue, 2019-11-19 at 11:18 +0000, Andrew Murray wrote:
+> > On Tue, Nov 12, 2019 at 04:59:19PM +0100, Nicolas Saenz Julienne wrote:
+> > > This series aims at providing support for Raspberry Pi 4's PCIe
+> > > controller, which is also shared with the Broadcom STB family of
+> > > devices.
+> > > 
+> > > There was a previous attempt to upstream this some years ago[1] but was
+> > > blocked as most STB PCIe integrations have a sparse DMA mapping[2] which
+> > > is something currently not supported by the kernel.  Luckily this is not
+> > > the case for the Raspberry Pi 4.
+> > > 
+> > > Note that the driver code is to be based on top of Rob Herring's series
+> > > simplifying inbound and outbound range parsing.
+> > > 
+> > > [1] https://patchwork.kernel.org/cover/10605933/
+> > > [2] https://patchwork.kernel.org/patch/10605957/
+> > > 
+> > 
+> > What happened to patch 3? I can't see it on the list or in patchwork?
 > 
-> On 18/11/2019 16:25, Adrian Ratiu wrote: 
+> For some reason the script I use to call get_maintainer.sh or git send-mail
+> failed to add linux-pci@vger.kernel.org and linux-kernel@vger.kernel.org as
+> recipients. I didn't do anything different between v1 and v2 as far as mailing
+> is concerned.
 > 
-> A small commit log would be welcome here. 
+> Nevertheless it's here: https://www.spinics.net/lists/arm-kernel/msg768461.html
+> and should be present in the linux-arm-kernel list.
 > 
->> Signed-off-by: Sjoerd Simons <sjoerd.simons@collabora.com> 
->> Signed-off-by: Martyn Welch <martyn.welch@collabora.com> 
->> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com> --- 
->>  .../bindings/display/imx/mipi-dsi.txt         | 56 
->>  +++++++++++++++++++ 1 file changed, 56 insertions(+) create 
->>  mode 100644 
->>  Documentation/devicetree/bindings/display/imx/mipi-dsi.txt 
->>  diff --git 
->> a/Documentation/devicetree/bindings/display/imx/mipi-dsi.txt 
->> b/Documentation/devicetree/bindings/display/imx/mipi-dsi.txt 
->> new file mode 100644 index 000000000000..3f05c32ef963 --- 
->> /dev/null +++ 
->> b/Documentation/devicetree/bindings/display/imx/mipi-dsi.txt 
+> I'll look in to it and make sure this doesn't happen in v3.
+
+No problem.
+
+Thanks,
+
+Andrew Murray
+
 > 
-> New bindings should use the yaml dt-schema format, could you 
-> convert it ?
+> Regards,
+> Nicolas
+> 
 
-Yes, I will convert to yaml and add a commit log in the next 
-version.
 
-Will leave the current patches a little more on review to give 
-others a chance to see them.
-
-Thank you!
-
->
-> Neil
->
->> @@ -0,0 +1,56 @@
->> +Freescale i.MX6 DW MIPI DSI Host Controller
->> +===========================================
->> +
->> +The DSI host controller is a Synopsys DesignWare MIPI DSI v1.01 IP
->> +with a companion PHY IP.
->> +
->> +These DT bindings follow the Synopsys DW MIPI DSI bindings defined in
->> +Documentation/devicetree/bindings/display/bridge/dw_mipi_dsi.txt with
->> +the following device-specific properties.
->> +
->> +Required properties:
->> +
->> +- #address-cells: Should be <1>.
->> +- #size-cells: Should be <0>.
->> +- compatible: "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi".
->> +- reg: See dw_mipi_dsi.txt.
->> +- interrupts: The controller's CPU interrupt.
->> +- clocks, clock-names: Phandles to the controller's pll reference
->> +  clock(ref) and APB clock(pclk), as described in [1].
->> +- ports: a port node with endpoint definitions as defined in [2].
->> +- gpr: Should be <&gpr>.
->> +       Phandle to the iomuxc-gpr region containing the multiplexer
->> +       control register.
->> +
->> +[1] Documentation/devicetree/bindings/clock/clock-bindings.txt
->> +[2] Documentation/devicetree/bindings/media/video-interfaces.txt
->> +
->> +Example:
->> +
->> +	mipi_dsi: mipi@21e0000 {
->> +		#address-cells = <1>;
->> +		#size-cells = <0>;
->> +		compatible = "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi";
->> +		reg = <0x021e0000 0x4000>;
->> +		interrupts = <0 102 IRQ_TYPE_LEVEL_HIGH>;
->> +		gpr = <&gpr>;
->> +		clocks = <&clks IMX6QDL_CLK_MIPI_CORE_CFG>,
->> +			 <&clks IMX6QDL_CLK_MIPI_IPG>;
->> +		clock-names = "ref", "pclk";
->> +		status = "okay";
->> +
->> +		ports {
->> +			port@0 {
->> +				reg = <0>;
->> +				mipi_mux_0: endpoint {
->> +					remote-endpoint = <&ipu1_di0_mipi>;
->> +				};
->> +			};
->> +			port@1 {
->> +				reg = <1>;
->> +				mipi_mux_1: endpoint {
->> +					remote-endpoint = <&ipu1_di1_mipi>;
->> +				};
->> +			};
->> +		};
->> +        };
->> 
->
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 Linux-rockchip mailing list
