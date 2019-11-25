@@ -2,62 +2,63 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE2461091CE
-	for <lists+linux-rockchip@lfdr.de>; Mon, 25 Nov 2019 17:29:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AEED1091EA
+	for <lists+linux-rockchip@lfdr.de>; Mon, 25 Nov 2019 17:35:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BTdcZ+H46ciAPU8kG/LGfuGLZz+Y+3wBXBlKgmUHlJ4=; b=ixvNJN6xh6wo0g
-	O5WDAsVVDLegnMWQVPkg1/rUe/6xkJv7jNoIPtUdxPAUliHadE6amjo8sy3H+6wOFpkR6g2OeBS+q
-	LG4xtK+s5hDruvTFOzd0NqIlSD2FbP9mypygKOuw9KtCQrC5CglfPUNXx605i6xczWzjvO11v6rSg
-	HAJxNsWGz2XbyYObwrAo/vQri8mU97/sZ84HDLz1xP33pthsh0/yjcgk1b8vf0LOIvAoHqUn++R+V
-	ROHOUnsgptFU6CLP1PlBd+A2t8Nx6JP7FYUPZOmQPKaAybBOrLKo/b622dgjWh5oO26YwT6cQ2paC
-	RJXrITTvHCvQMyRZofRg==;
+	List-Owner; bh=G6nclh7KYpnORZIAivps+d/6wsTINYmTFbMCumFyQcs=; b=fUAxq+PWQDaIxu
+	L/DUG/cksbBafPYAkbVDxECGsWxDEg0RlcxnAeBaYsBL0ZsEBfB/c+2lUY8OGRTLv3ZMLK6C+zby6
+	zmlB7zUA8QT/9mO9FiSB8L/dXGo5brJ5p2nW7dqPZvGVUPmHQTAMWx4TMVyoRdOGdKbA55LmYMP24
+	DxRgzHyLxboIl6MQ67py+HYzRDX+IPgLX3T6EhI8+dEB6h1SA0gDTNWvvsYaOv7Nmtz7DFGQ4jsjr
+	ZLbFzFpWdu5u516BIJqP8wtUIZ0A0zY0Hy5xSOw2/34HE4ta5ssiZSQRN/vpAFlFKP+eztYIiB++B
+	nc9BUXlwIIEZ1GzmiINg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZHEl-00031L-SL; Mon, 25 Nov 2019 16:29:19 +0000
-Received: from mail-qk1-x733.google.com ([2607:f8b0:4864:20::733])
+	id 1iZHKV-0006js-Fr; Mon, 25 Nov 2019 16:35:15 +0000
+Received: from mail-qv1-xf2b.google.com ([2607:f8b0:4864:20::f2b])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZHEi-000310-Hl
- for linux-rockchip@lists.infradead.org; Mon, 25 Nov 2019 16:29:17 +0000
-Received: by mail-qk1-x733.google.com with SMTP id e187so13285058qkf.4
- for <linux-rockchip@lists.infradead.org>; Mon, 25 Nov 2019 08:29:15 -0800 (PST)
+ id 1iZHKR-0006j9-Ds
+ for linux-rockchip@lists.infradead.org; Mon, 25 Nov 2019 16:35:13 +0000
+Received: by mail-qv1-xf2b.google.com with SMTP id cv8so5978520qvb.3
+ for <linux-rockchip@lists.infradead.org>; Mon, 25 Nov 2019 08:35:11 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:from:date:message-id:subject:to:cc;
- bh=ruFw6LEi3lJBm9o1EDD/YfPur3uYdaZ3CkAILbdKHVs=;
- b=BHD9xpEzSCtIWCDjlfxJ30Zjgpgr1ge+IGUOQT4OfgpA+2/LojqeQbUkl52gxCBfpw
- JChV63bgN1NQ9DOuwA6nAB1FaQnjB6ngKWqtEcNjxMxJp8j4hX1jo8TP6jxSLE+xqu8x
- Vbl+RIYo8ixus1RrYL9GnuzohF8bgmwVwUNvrK3SfaqJ/hDVvd/uU6fjHTgJZNOg1S57
- 0b+fTuKzpEaYT/+PFIhx0opyhG67SW9ulBScjTzwbUGH90d5KpPZ9HBPLhLKUF/upsMM
- 9bUtg9t6ttvdU1o7+Y1eaLGVld69z1oiew86mty/mSDE1BwANp0odZoFflmhRe3Lh0Wb
- P9Kw==
+ bh=WPQIqvxAfQiqyBpfjn04eG5LOmRRnOH3SKi0PIFJmyY=;
+ b=siAnd5A13DlEWjb2qzI0c3ulVaZ+d5g+jGt91tv7Mt7C1CGC/66lvdKlHk8WjBrGgT
+ fFEWCeGNiDdedxcN8OmbRvq3c/mFFHrCJLWwEBvOveFISkoyf15Ki8vSIdIBgvvKMiR8
+ OD4xxL+W+ZcCg6tKx2oWhvWVqNulTyzHplB1wQDzQoC+XYj87lTDepB055G4+1ZKP2RB
+ yyr97RF8y7GRMPtgR2plGw81BbW0foUGmKqyiGT4PkTqr44T7jWiwTXodpQ7ZjfVgxVk
+ wH3tH0OlFAhdMtCaKSfuy27+371NPWA1EkaC7MZM2m2oMKYhbFMMGC+PfRm3nYU4lO6P
+ GNzg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
- bh=ruFw6LEi3lJBm9o1EDD/YfPur3uYdaZ3CkAILbdKHVs=;
- b=rNo4JLsGcvRnRBopr4WVfDnucU2cJ8/PNQJqo15EReLJRP7OvvNnLTQlh5Ikf6xfKK
- HqTyiGIRsQlqG8Dno4VLpIF39qjYJdIY+PMiAhhrqT2cv4lQrP0boUI65zT5gOAUmCwL
- ZCuU+ChHSApApcfSbhgODlVAdCW8r+sd/D4zVaLtqySF+Vhl4biFRa5qMrqk36P//3pb
- M9vxNvSE5koVZCvrp8xO57kPXWZyHkpIEPTcoz6qZ9hfs2SsyQFLhxK182PjLY1/4I8s
- vO0lTKOdhw60i80Kj0FwzHuwu/o33DznJy6nVbfzx84hG3B13bLEzFNiQ3XOIIn68P1n
- FUMA==
-X-Gm-Message-State: APjAAAXogL8KQ50NA0ZOI/zIJpcLSFhC3evxfNqCusus9YywtqChqw/5
- tUE060qlvW9844uTTiveKEarzprOMWeU6DM0hgZCxyrS
-X-Google-Smtp-Source: APXvYqwX3C4etuK7FU8nYuedyyF5ydcczSmUPsW7ZlEBKYJiVb5TEqh9ISSgpmwAwdEoSclROktgw62zvIN/QRKv7rA=
-X-Received: by 2002:a37:cd4:: with SMTP id 203mr15355114qkm.224.1574699354425; 
- Mon, 25 Nov 2019 08:29:14 -0800 (PST)
+ bh=WPQIqvxAfQiqyBpfjn04eG5LOmRRnOH3SKi0PIFJmyY=;
+ b=TQHrrJlgVIbO+JSrKYfTBQ1650jKcW6tdd9Ma+EsYd+aqQQ5MUooxmRyZEOp8WaptN
+ 3w28u1N5kMNGWQ4uuMXzLT/BcdLOgN+WUCkeArTlmHfw34YdJI+llq3onPRlGO+LOX5X
+ uDRKXdZJqtrOB9KWykrHVLxGRimRuhgxEbukGNWEF88dxtIKifJAJ3sWGHjxLnON65X+
+ e7K06KXkApGOv+CWBQ9YEV6B6v1LJP5Q5gX/Bfs186xXM76fwKrRsGxCATjuji+vErWP
+ Oer5daJX3merehURhNi+78wZzBb8NR8w+0VJMkX7RLN7EuY8Y3jtMlIIqOi9VLFn2Abj
+ EDIg==
+X-Gm-Message-State: APjAAAXUkoQTRh2BzuSSgcH68PQPzH1UlSQrrzI/ovnUXTXWlSe3pRlF
+ sUKoHu1+jbhzfk1zgKtoJtzfKV1msJfZ99EFEyy5Ww==
+X-Google-Smtp-Source: APXvYqy1VyP2xuMZOji6JpZnSUFJQUTXmdZNnFpfaEGHsF0FlQbRFZC0iVu2vuQ/n9A9jVj5svvDEsj1wePq/mCVmHQ=
+X-Received: by 2002:a05:6214:164:: with SMTP id
+ y4mr13248992qvs.148.1574699710045; 
+ Mon, 25 Nov 2019 08:35:10 -0800 (PST)
 MIME-Version: 1.0
 From: Peter Geis <pgwipeout@gmail.com>
-Date: Mon, 25 Nov 2019 11:28:53 -0500
-Message-ID: <CAMdYzYrLX=z-OVoW9RVecjoYK1J8EfLQ=cV1aNUqPsXqiOU+2g@mail.gmail.com>
-Subject: [BUG] rk3399 fails to reboot correctly with PCIE device inserted
+Date: Mon, 25 Nov 2019 11:34:49 -0500
+Message-ID: <CAMdYzYpi-wAsUu92gJUF3CMm7dDd8yFCAV-yDpuy=d7ZBGoZnA@mail.gmail.com>
+Subject: [BUG] rk3399 rockpro64 fails to power off
 To: heiko.stuebner@theobroma-systems.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_082916_613395_2F46FBF2 
-X-CRM114-Status: UNSURE (   6.23  )
+X-CRM114-CacheID: sfid-20191125_083511_496282_EFACEF6B 
+X-CRM114-Status: UNSURE (   7.70  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,9 +76,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:733 listed in]
- [list.dnswl.org]
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,25 +96,21 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 Good Morning,
 
-Another issue I've come across while testing PCIE on the rockpro64.
-When a PCIE device is inserted into the board, and it enumerates
-successfully, the board will not reset.
-I've tried various states of u-boot-rockchip, u-boot-mainline, with
-both miniloader and TPL/SPL.
+Another issue I've come across with the rockpro64.
+When issuing a shutdown command, the board will halt, but never powers off.
 
-With miniloader and both variants of u-boot, if you attempt a reboot
-it never fires the "reboot: Restarting system" message.
-If you trigger a sysrq reboot at this stage, it will reboot, but fails
-to start up the two a72 cores and subsequently hangs a second later
-when it loads the first dma driver.
+While the rk808 is assigned as the rockchip,system-power-controller in
+the devicetree, it is not binding to the pm-poweroff command.
+This is due to the psci driver already binding to the pm-poweroff command.
 
-With TPL/SPL on mainline-u-boot (I can't get rockchip-u-boot to work
-with TPL/SPL), it fires the "reboot: Restarting system" message, but
-never reboots.
-sysrq does not function at this point.
-
-I believe the pcie controller is not being halted, and gets stuck in a
-loop with the two a72 cores.
+I have only managed to test this with the rockchip miniloader, both on
+rockchip-u-boot and mainline-u-boot, the behavior is the same.
+I'm not sure if this is a bootloader issue, atf issue, or psci driver
+misbehavior.
+As atf should be handling the psci command, it should be powering off
+the board, but I am unsure if it has the capability of doing so.
+If it does not, then the rk808 driver should be assigned to
+pm-poweroff, but it does not because psci already claimed it.
 
 _______________________________________________
 Linux-rockchip mailing list
