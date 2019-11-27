@@ -2,51 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A87110A9DD
-	for <lists+linux-rockchip@lfdr.de>; Wed, 27 Nov 2019 06:15:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1C3110AA86
+	for <lists+linux-rockchip@lfdr.de>; Wed, 27 Nov 2019 07:06:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fYcHbsLjYWE4llEeApiKvABocW3dwLW/DKoYOeCYwd0=; b=g1MCJPidA7yyIP
-	O2owDmboXopg6uzfcBj8HopEq8MVVgbVZuIf1RsnTsIhZoWfVDIFED7yzz8DS8AmnQCzlPT3emGoy
-	WWyl0+ozFQyo6peaU3m021nYtUvnTKhDEkorgllLm2PDBZzgUNicOv6U9pNZJdNk896xQlnCfom5u
-	diU38zKIA+9WnRSpRWmNuNvsdq4rILOM4kbT+qvmdtEcM+pchIb0GsJJEL6q87cxgvl90FcSNtdzz
-	tJjdQDzc9bJap/R3yJUz+LPq4+omz3srssqznTLtOULknjj1+NS8c2w9CQ+3Y2XALJUPGoGH7J+2r
-	K6YelAptZHp7jbnaJeQQ==;
+	List-Owner; bh=bcosU4ZzB7cpxO579u+k8kF30J3dkRe/5bYvPhoDsGk=; b=n1W6Dg+uWPWfbM
+	3mx0NcUKjMOrQHKrtmH79mLkHNqkkU+ZAJw1KmeQcoSImsuWENGmes12h7Aeb/wyKkAFYfUAUWigI
+	3WcU2gbxtah1lvywzhQz6cmbgKzDIOwxK1nyaHAge9rLG4Dnl5q5jLvne0+ipknlNcKLKImy7Dd93
+	xNFmftg9dTyJ4FCslNh35UNKEcYlYjdq0kXCjH9/mo+QYzMYJdvPFLRaRjkoQLkxDFGzSni8qbOSR
+	acmKF1rZDyoGMTBQN00JkqSjv2bi98N01p+u5RDVop79cQ1WJVBWekePR8EyhgKnMAzfjf42Z4BeY
+	mzZ3fWBwHCMuWHdQwH8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZpfp-0004nv-Ri; Wed, 27 Nov 2019 05:15:33 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1iZqT7-0007AM-Mb; Wed, 27 Nov 2019 06:06:29 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZpfj-0004nP-0a; Wed, 27 Nov 2019 05:15:31 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xAR5F798043309;
- Tue, 26 Nov 2019 23:15:07 -0600
+ id 1iZqT3-00079l-Ab; Wed, 27 Nov 2019 06:06:28 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xAR667Dw026326;
+ Wed, 27 Nov 2019 00:06:07 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1574831707;
- bh=5mw5IZBQ9/u6YSKJZl5UBpozZsePr7gukMNlthKJiR4=;
+ s=ti-com-17Q1; t=1574834767;
+ bh=gtuxN7XUN2cz1m9niC5Rtzh/VQ2wPTBJLhZUpjJtuwo=;
  h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=lRvPsUrp6rfNIes3P1N4YgCT6IW4qcaQG/YxLkUWXYeKlJxO/yripY4hXUCCKTzEe
- hZzEv8elIlxxl0yXuIoNxXRTtGTTOOdBCIjCKsB+VUjsG9849gElb7iQgLu4G0L66K
- nNXvLvAAUno3q4ejyXZwui8abZhgMSZ1NnUQ6opQ=
-Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xAR5F7gX064172
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 26 Nov 2019 23:15:07 -0600
-Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 26
- Nov 2019 23:15:07 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ b=TV+1RzKV2xFPXfOVdI5y/vrCFyAcmQd64AN3iE1BJqTtAIjuXkObK0eiwhb40JshR
+ mfzpVMGF5jmpKbo2hC7M1h5Zr9XjNjNZGC4FJj2qD+o3b1w8VIs+Mvr+wswmN7biPR
+ cRO1lU2uSqr7OSfQAbKBJudLZC2kPMZKGNXrHVM4=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAR667EF106584;
+ Wed, 27 Nov 2019 00:06:07 -0600
+Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 27
+ Nov 2019 00:06:07 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 26 Nov 2019 23:15:06 -0600
+ Frontend Transport; Wed, 27 Nov 2019 00:06:07 -0600
 Received: from [10.24.69.157] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAR5EsK4100868;
- Tue, 26 Nov 2019 23:14:55 -0600
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAR65sdl023033;
+ Wed, 27 Nov 2019 00:05:55 -0600
 Subject: Re: [PATCH 2/5] pci: endpoint: add support to handle multiple base
  for mapping outbound memory
 To: Lad Prabhakar <prabhakar.csengg@gmail.com>, Bjorn Helgaas
@@ -59,8 +58,8 @@ To: Lad Prabhakar <prabhakar.csengg@gmail.com>, Bjorn Helgaas
 References: <20191106193609.19645-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
  <20191106193609.19645-3-prabhakar.mahadev-lad.rj@bp.renesas.com>
 From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <8564ee76-1da6-9b7c-01f2-7cda0cd3b3dc@ti.com>
-Date: Wed, 27 Nov 2019 10:44:12 +0530
+Message-ID: <51563ddf-381f-3290-d9c0-82eb23aaa674@ti.com>
+Date: Wed, 27 Nov 2019 11:35:12 +0530
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
@@ -68,15 +67,15 @@ In-Reply-To: <20191106193609.19645-3-prabhakar.mahadev-lad.rj@bp.renesas.com>
 Content-Language: en-US
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_211527_147750_E781ADC5 
-X-CRM114-Status: GOOD (  25.54  )
+X-CRM114-CacheID: sfid-20191126_220625_455082_5A908240 
+X-CRM114-Status: GOOD (  26.81  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -127,6 +126,29 @@ On 07/11/19 1:06 AM, Lad Prabhakar wrote:
 > endpoint framework. In case of multiple memory regions only chunk
 > or complete region can be mapped and this window needs to be
 > passed to the controller driver.
+
+Wouldn't this result in lot of unused address and exhausting the memory regions
+quickly? I think we could have a "type" associated with each of these regions
+and smaller allocations could use one "type" and larger allocation could use a
+different "type"? For instance we allocate memory regions for MSI interrupt and
+for data transfer. We could use smaller allocations for MSI and larger
+allocations for data transfers.
+
+We could also extend the "type" for certain special requirements. For instance
+I've seen platforms which have dedicated address space for high priority data
+transfers (uses higher virtual channel numbers) and dedicated address space for
+low priority data transfers (uses lower virtual channel numbers).
+
+Here too we could give a special flag or type for higher priority address
+regions and different type for lower priority address. While allocating, the
+function drivers should provide a flag specifying the region where memory
+should be allocated.
+
+Can you add flags in struct pci_epc_mem_window and see how that comes out?
+
+Thanks
+Kishon
+
 > 
 > Signed-off-by: Lad, Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 > Cc: <linux-rockchip@lists.infradead.org>
@@ -482,8 +504,6 @@ On 07/11/19 1:06 AM, Lad Prabhakar wrote:
 >   * @phys_base: the physical address of the base
 > - * @size: the size of the address space
 > + * @num_windows: number of windows device supports
-
-struct pci_epc_mem_window is missing here.
 >   * @page_size: size of each page
 >   *
 >   * Invoke to initialize the pci_epc_mem structure used by the
@@ -679,13 +699,182 @@ struct pci_epc_mem_window is missing here.
 >  	size = ALIGN(size, mem->page_size);
 > +	if (size > (mem->window.size - mem->window.map_size))
 > +		return NULL;
-
-Assume I have two mem regions, first region is of size 128MB and the second
-region is of size 4GB. If there is a allocation request for 4GB, will the
-allocation succeed?
-
-Thanks
-Kishon
+> +	page_shift = ilog2(mem->page_size);
+>  	order = pci_epc_mem_get_order(mem, size);
+>  
+>  	pageno = bitmap_find_free_region(mem->bitmap, mem->pages, order);
+>  	if (pageno < 0)
+>  		return NULL;
+>  
+> -	*phys_addr = mem->phys_base + ((phys_addr_t)pageno << page_shift);
+> +	*phys_addr = mem->window.phys_base + (pageno << page_shift);
+>  	virt_addr = ioremap(*phys_addr, size);
+> -	if (!virt_addr)
+> +	if (!virt_addr) {
+>  		bitmap_release_region(mem->bitmap, pageno, order);
+> +	} else {
+> +		mem->window.map_size += size;
+> +		*window = best_fit;
+> +	}
+>  
+>  	return virt_addr;
+>  }
+>  EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
+>  
+> +static int pci_epc_get_matching_window(struct pci_epc *epc,
+> +				       phys_addr_t phys_addr)
+> +{
+> +	struct pci_epc_mem *mem;
+> +	int i;
+> +
+> +	for (i = 0; i < epc->mem_windows; i++) {
+> +		mem = epc->mem[i];
+> +
+> +		if (mem->window.phys_base == phys_addr)
+> +			return i;
+> +	}
+> +
+> +	return -EINVAL;
+> +}
+> +
+>  /**
+>   * pci_epc_mem_free_addr() - free the allocated memory address
+>   * @epc: the EPC device on which memory was allocated
+> @@ -155,16 +254,26 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
+>  void pci_epc_mem_free_addr(struct pci_epc *epc, phys_addr_t phys_addr,
+>  			   void __iomem *virt_addr, size_t size)
+>  {
+> +	struct pci_epc_mem *mem;
+> +	unsigned int page_shift;
+> +	int window = 0;
+>  	int pageno;
+> -	struct pci_epc_mem *mem = epc->mem;
+> -	unsigned int page_shift = ilog2(mem->page_size);
+>  	int order;
+>  
+> +	if (epc->mem_windows > 1) {
+> +		window = pci_epc_get_matching_window(epc, phys_addr);
+> +		if (window < 0)
+> +			return;
+> +	}
+> +
+> +	mem = epc->mem[window];
+> +	page_shift = ilog2(mem->page_size);
+>  	iounmap(virt_addr);
+> -	pageno = (phys_addr - mem->phys_base) >> page_shift;
+> +	pageno = (phys_addr - mem->window.phys_base) >> page_shift;
+>  	size = ALIGN(size, mem->page_size);
+>  	order = pci_epc_mem_get_order(mem, size);
+>  	bitmap_release_region(mem->bitmap, pageno, order);
+> +	mem->window.map_size -= size;
+>  }
+>  EXPORT_SYMBOL_GPL(pci_epc_mem_free_addr);
+>  
+> diff --git a/include/linux/pci-epc.h b/include/linux/pci-epc.h
+> index 56f1846b9d39..5e86d22dd5c5 100644
+> --- a/include/linux/pci-epc.h
+> +++ b/include/linux/pci-epc.h
+> @@ -48,7 +48,8 @@ struct pci_epc_ops {
+>  	void	(*clear_bar)(struct pci_epc *epc, u8 func_no,
+>  			     struct pci_epf_bar *epf_bar);
+>  	int	(*map_addr)(struct pci_epc *epc, u8 func_no,
+> -			    phys_addr_t addr, u64 pci_addr, size_t size);
+> +			    phys_addr_t addr, int window,
+> +			    u64 pci_addr, size_t size);
+>  	void	(*unmap_addr)(struct pci_epc *epc, u8 func_no,
+>  			      phys_addr_t addr);
+>  	int	(*set_msi)(struct pci_epc *epc, u8 func_no, u8 interrupts);
+> @@ -64,17 +65,28 @@ struct pci_epc_ops {
+>  	struct module *owner;
+>  };
+>  
+> +#define PCI_EPC_DEFAULT_WINDOW		0
+> +
+> +/**
+> + * struct pci_epc_mem_window - address window of the endpoint controller
+> + * @phys_base: physical base address of the PCI address window
+> + * @size: the size of the PCI address window
+> + */
+> +struct pci_epc_mem_window {
+> +	phys_addr_t	phys_base;
+> +	size_t		size;
+> +	size_t		map_size;
+> +};
+> +
+>  /**
+>   * struct pci_epc_mem - address space of the endpoint controller
+> - * @phys_base: physical base address of the PCI address space
+> - * @size: the size of the PCI address space
+> + * @window: address window of the endpoint controller
+>   * @bitmap: bitmap to manage the PCI address space
+> - * @pages: number of bits representing the address region
+>   * @page_size: size of each page
+> + * @pages: number of bits representing the address region
+>   */
+>  struct pci_epc_mem {
+> -	phys_addr_t	phys_base;
+> -	size_t		size;
+> +	struct pci_epc_mem_window window;
+>  	unsigned long	*bitmap;
+>  	size_t		page_size;
+>  	int		pages;
+> @@ -85,7 +97,8 @@ struct pci_epc_mem {
+>   * @dev: PCI EPC device
+>   * @pci_epf: list of endpoint functions present in this EPC device
+>   * @ops: function pointers for performing endpoint operations
+> - * @mem: address space of the endpoint controller
+> + * @mem: array of address space of the endpoint controller
+> + * @mem_windows: number of windows supported by device
+>   * @max_functions: max number of functions that can be configured in this EPC
+>   * @group: configfs group representing the PCI EPC device
+>   * @lock: spinlock to protect pci_epc ops
+> @@ -94,7 +107,8 @@ struct pci_epc {
+>  	struct device			dev;
+>  	struct list_head		pci_epf;
+>  	const struct pci_epc_ops	*ops;
+> -	struct pci_epc_mem		*mem;
+> +	struct pci_epc_mem		**mem;
+> +	int				mem_windows;
+>  	u8				max_functions;
+>  	struct config_group		*group;
+>  	/* spinlock to protect against concurrent access of EP controller */
+> @@ -128,8 +142,8 @@ struct pci_epc_features {
+>  #define devm_pci_epc_create(dev, ops)    \
+>  		__devm_pci_epc_create((dev), (ops), THIS_MODULE)
+>  
+> -#define pci_epc_mem_init(epc, phys_addr, size)	\
+> -		__pci_epc_mem_init((epc), (phys_addr), (size), PAGE_SIZE)
+> +#define pci_epc_mem_init(epc, windows, num_windows)	\
+> +		__pci_epc_mem_init((epc), windows, num_windows, PAGE_SIZE)
+>  
+>  static inline void epc_set_drvdata(struct pci_epc *epc, void *data)
+>  {
+> @@ -159,7 +173,7 @@ int pci_epc_set_bar(struct pci_epc *epc, u8 func_no,
+>  void pci_epc_clear_bar(struct pci_epc *epc, u8 func_no,
+>  		       struct pci_epf_bar *epf_bar);
+>  int pci_epc_map_addr(struct pci_epc *epc, u8 func_no,
+> -		     phys_addr_t phys_addr,
+> +		     phys_addr_t phys_addr, int window,
+>  		     u64 pci_addr, size_t size);
+>  void pci_epc_unmap_addr(struct pci_epc *epc, u8 func_no,
+>  			phys_addr_t phys_addr);
+> @@ -178,11 +192,12 @@ unsigned int pci_epc_get_first_free_bar(const struct pci_epc_features
+>  struct pci_epc *pci_epc_get(const char *epc_name);
+>  void pci_epc_put(struct pci_epc *epc);
+>  
+> -int __pci_epc_mem_init(struct pci_epc *epc, phys_addr_t phys_addr, size_t size,
+> -		       size_t page_size);
+> +int __pci_epc_mem_init(struct pci_epc *epc, struct pci_epc_mem_window *window,
+> +		       int num_windows, size_t page_size);
+>  void pci_epc_mem_exit(struct pci_epc *epc);
+>  void __iomem *pci_epc_mem_alloc_addr(struct pci_epc *epc,
+> -				     phys_addr_t *phys_addr, size_t size);
+> +				     phys_addr_t *phys_addr,
+> +				     int *window, size_t size);
+>  void pci_epc_mem_free_addr(struct pci_epc *epc, phys_addr_t phys_addr,
+>  			   void __iomem *virt_addr, size_t size);
+>  #endif /* __LINUX_PCI_EPC_H */
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
