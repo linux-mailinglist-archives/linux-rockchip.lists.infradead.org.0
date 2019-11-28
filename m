@@ -2,50 +2,93 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34FDF10CF9B
-	for <lists+linux-rockchip@lfdr.de>; Thu, 28 Nov 2019 22:53:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB2C910CFDF
+	for <lists+linux-rockchip@lfdr.de>; Fri, 29 Nov 2019 00:00:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rS1SuItTfR3KLfBXnnwg/uZrByz4XM5iyEl0UuiK4bU=; b=XzJ5NeZ9lXJMLL
-	KmZ9X4CVbaN6/WHz70BItLjUTHKB7AASbb40m42SaGq7fsMz5vgMRJ5SPoihg8qGk4sBjLBQI0XrS
-	789rQ5Hqk1Z3+h4A/yTmdbCD/+vDm/Ye9XloytBPeTk1j8JqiEEnC2lCpDOz3abtCkPcIn/f0M2DQ
-	WI2ZvM/hIlmw9DC5mCO2j76roPA9VhunnPV2f1GjBuGjt6hiHUvUmP229qDZX1TVX32v/F9EmHffG
-	9d3X6gyniIVF/nSkno8jIDbrgXWfZjpC42d9/W/yJ9bb/iOQDPdGbRR4PT/4t67Vt4+h7OgsfpQuT
-	Ey75jBAtjWkrGbRFgeNA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8j9w9xYd7KgoJSU4tKw9qsCN42xTb02BL1WIU0sx4As=; b=QTjGUwjwjrf1Os
+	4D3aAb/zsvS59XVsZoEGA3OyAX43C4t5c08gA8kOCwQg6G5Ik4oEAecU3bgeInO9EvPpTVoK6lkJl
+	DWjZT8KYDO8917zhROrCTcz3XqLUm2jmEK+mnYb6t2ieS68n9rSepKft+khN8U5YJQrQPiBB9Qs5g
+	QzGRxx9JQ5aT6yP+MSHj/eb0x2hcKx8QcAYPYjoz/N+cGTuJanDE5djmVmuxp+u0ag5BUC5qVf9p5
+	VC7oLkxFmoh5preSwtN/XDEkoYwjsz0M+zhz2Tdt+6wLJfIKN7Iz3o5y3FyY4hihes7BVjuunBhlW
+	tk4Bx7dr0l0tXgxm6ImA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaRiq-0001XD-Pd; Thu, 28 Nov 2019 21:53:12 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1iaSld-0005lu-HZ; Thu, 28 Nov 2019 23:00:09 +0000
+Received: from mout.web.de ([212.227.15.3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaRio-0001Wd-4D; Thu, 28 Nov 2019 21:53:11 +0000
-Received: from p5b127cfe.dip0.t-ipconnect.de ([91.18.124.254]
- helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iaRii-0005Hu-IH; Thu, 28 Nov 2019 22:53:04 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: Soeren Moch <smoch@web.de>
-Subject: Re: [PATCH v2] arm64: dts: rockchip: split rk3399-rockpro64,
- for v2 and v2.1 boards
-Date: Thu, 28 Nov 2019 22:53:03 +0100
-Message-ID: <9133677.cKcSbgiQdr@phil>
-In-Reply-To: <3fa2e3df-221b-99a8-796a-2e21f75cf706@web.de>
+ id 1iaSlL-0005eW-6I; Thu, 28 Nov 2019 22:59:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1574981980;
+ bh=EvEfm6y/RB5YckvRo/5+L6OhoAw+x433Z/iu5wl68Pc=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=ECzHCdVK8KEUyJtqZfSrrZ5rMAtWX3SXgA7dsUO7RQnH+R2aRMLB+bBZpeGDyeK99
+ 4ZVrDNHAQIW5cWGZRGvXZ//9OeKLiD2G1naPwu4sXD1PnxoEvZsjvYhFzSBKZH6+x8
+ VImnQiStQr+/dzVtdkkAz58VQAZRug68v1MOy/OE=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from [192.168.43.108] ([89.204.139.119]) by smtp.web.de (mrweb002
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 0LZvrx-1hwDzy32eD-00ll8L; Thu, 28
+ Nov 2019 23:59:39 +0100
+Subject: Re: [PATCH v2] arm64: dts: rockchip: split rk3399-rockpro64, for v2
+ and v2.1 boards
+To: Heiko Stuebner <heiko@sntech.de>
 References: <3fa2e3df-221b-99a8-796a-2e21f75cf706@web.de>
+ <9133677.cKcSbgiQdr@phil>
+From: Soeren Moch <smoch@web.de>
+Message-ID: <f6dc3daf-7cfb-0ac2-99ee-1c691eaf2ef0@web.de>
+Date: Thu, 28 Nov 2019 23:59:37 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <9133677.cKcSbgiQdr@phil>
+Content-Language: en-US
+X-Provags-ID: V03:K1:GTMg10fwIdQgUypiLStUkuDQaNnuemDGISy4kPeso8Aml2Yiy3J
+ XtmDMK1Ck9OCIgB4gsvXpwluyfHEvVL6odI13iVUGcJkp8gIKMkbhpmj22h0kwTZ0gpG1iQ
+ hwb/wytSRQ4Fv3jJZaoAPEiNtYb7IWNr/qszbQWVTWnWM+BcdH7Wf2IQ39U68XlEdl1lWJg
+ JrMLLTWCDs1r/aF2CwWNA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:tNqU8rJXfoE=:L/TF0Z0VappKZaTu5kUmcC
+ Y3w/seh85+uHhb3ZXodgr/DvZRVReMe09Nyb+V+oyWBETEvRbbL++HbPRFpk4M4XMUdjf76t+
+ pz1C0ILVqt/+8MFw+sP/Us5zWWdxDhPHQJA00ax2196FxN/9PYQwaeCBu6oA44P3f2WMxMQ1p
+ myRG9gtl3lGk4QLJcH2avmBUJAWuTpcOQcRbz3sbgN9acOTXVoxC04USTcUUmFz3d4ufnJIOi
+ WBklHLLxWVP0o8agZ+MYDxcX+thhsFnvzm+w7ofrdly7xfv/Jbi4Mf86fdStI4zS0x184dYC3
+ y+JwBVbNewVz/+iXUhc1bHdocbk6vdP78ZHLl5Oevgd/t/+ATFhV96y0i26KnXRk/IGb0s7+X
+ qAMUYXcA9XdpG1W7YWybCRpgzklqAXW1l6a8GqDqaPzIoow4mZN9SNNXU1dUdpS4JoPDh0Go0
+ HLuVQPgr3mVe02rFsa2NAyAskoaeQO/XB10r8DqOwejooToermq3y0t13+f642w8L4iJO/oqw
+ maqIFEsGkpGFDgcZlYiC6/XRqFlSLhJ+jylXXsCxKOiyBU9Bzz32OYXejcGRfGQJxo5V+RF51
+ 2VSMynG3lG0f7iaI2FAogltuzCLzzGGCOXgQSX6DMhTDeSUZ5wuHPkQfCdsjBsrKp8RmEM2D9
+ ebM0azGWsik6XZh1ecCcDCg+G/DcI//khthFQCPCaE0RF3CBNfB/zFwMJYxC+nRkTAbXyzKBE
+ 1cTWCWfH9usk5q3EW54j/GVBXhIM0q9ZmggCtTvINVDyVG80Z60x6Py4ZwcPYPcEcHPM2wC/3
+ JtY8UtwMgHW5ObswoItIU4+IOEnk5lWpb8nAZdksuSoochBX4fT/bHHGclCGZv9xOVlesslVV
+ 35DaV5YDxVxyBYczKnf2wrnXNbyD2FyHDUJvRYA6lqesBPipVlsFvxbvxdlaK+Kx0jWXBl0/I
+ OPRImOfES5z49bbvgkCBixNUvVM3muvShFLz6c3k6nbknNTKZzTLEHUCvFM5f2E38z3WRmedm
+ PYQyDHtQL0M8+gbDS0YrFMZjDrrsUakq9vfchxmRNn8ol0PooEArQ0ahHc1dzrgZfN5uTQQXC
+ hXI7+kLzgGOJCaPZw46Mitg+fP+Z7jgPo1YIl5UPksBeMiZz/xkwE5Sq07iQDM6WnU+62ly4f
+ sarMThs25UovzQSHKseDrDgV3OHbButJ1PBfF5GfiP9KVGSkbKZM+ygvLU+NvCD2WJOuPNUNK
+ Gn6ERpHWFPHsd+wlg855oiXLLJu5BCKDhIs0coA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_135310_319457_AC9A3CA7 
-X-CRM114-Status: GOOD (  17.53  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191128_145951_565202_44472261 
+X-CRM114-Status: GOOD (  16.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (smoch[at]web.de)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,65 +111,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Donnerstag, 28. November 2019, 20:55:54 CET schrieb Soeren Moch:
-> > On Thu, Nov 28, 2019 at 6:02 AM Katsuhiro Suzuki
-> > <katsuhiro@katsuster.net> wrote:
-> >> This patch splits rk3399-rockpro64 dts file to 2 files for v2 and
-> >> v2.1 boards.
-> >>
-> >> Both v2 and v2.1 boards can use almost same settings but we find a
-> >> difference in I2C address of audio CODEC ES8136.
-> >>
-> >> Reported-by: Vasily Khoruzhick <anarsoul@gmail.com>
-> >> Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
-> >>
-> >> ---
+On 28.11.19 22:53, Heiko Stuebner wrote:
+> Am Donnerstag, 28. November 2019, 20:55:54 CET schrieb Soeren Moch:
+>>> On Thu, Nov 28, 2019 at 6:02 AM Katsuhiro Suzuki
+>>> <katsuhiro@katsuster.net> wrote:
+>>>> This patch splits rk3399-rockpro64 dts file to 2 files for v2 and
+>>>> v2.1 boards.
+>>>>
+>>>> Both v2 and v2.1 boards can use almost same settings but we find a
+>>>> difference in I2C address of audio CODEC ES8136.
+>>>>
+>>>> Reported-by: Vasily Khoruzhick <anarsoul@gmail.com>
+>>>> Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+>>>>
+>>>> ---
+> [...]
+>
+>>>> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi
+>>>> new file mode 100644
+>>>> index 000000000000..183eda4ffb9c
+>>>> --- /dev/null
+>> If we add this as new file, should we sort handles and properties
+>> alphabetically, where it is not done yet?
+> I'm torn here ... on one side, doing missing sorting might be nice
+> on the other hand, there is the moving without functional changes
+> paradigm, which is generally nice to adhere to.
+Agreed. Since we don't move a file, but most of it's content, it was not
+clear to me what's more important.
+>
+> But I guess sorting would generally be ok.
+>
+>> I'm not sure about all the exceptions that usually apply for rockchip
+>> devicetrees, status property at the end, also the pinctrl node?
+> In general I don't "enforce" the sorting, so don't reject patches but instead
+> just do sorting myself if necessary ;-).
+>
+> The general rule-of-thumb for nodes we came up with during the rk3288-veyron
+> era is something like:
+>
+> compatible
+> reg
+> interrupts
+> [alphabetical properties]
+> status
+>
+> as this makes it somewhat easier to parse the core properties (compatible,
+> reg, ints, status] when scrolling through a devicetree :-) .
+Thanks for your explanation, perfectly makes sense.
+>
+> Pinctrl position is at the discretion of the dt author :-D .
+> Position at the end has just the advantage that a long pin-group list does
+> not get in the way so much.
+>
+>> What about unused references, e.g. "fan"?
+> Don't change too much when moving stuff around :-)
+Yes, good compromise to do some sorting, but no other changes.
 
-[...]
-
-> >> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi
-> >> new file mode 100644
-> >> index 000000000000..183eda4ffb9c
-> >> --- /dev/null
-> If we add this as new file, should we sort handles and properties
-> alphabetically, where it is not done yet?
-
-I'm torn here ... on one side, doing missing sorting might be nice
-on the other hand, there is the moving without functional changes
-paradigm, which is generally nice to adhere to.
-
-But I guess sorting would generally be ok.
-
-> I'm not sure about all the exceptions that usually apply for rockchip
-> devicetrees, status property at the end, also the pinctrl node?
-
-In general I don't "enforce" the sorting, so don't reject patches but instead
-just do sorting myself if necessary ;-).
-
-The general rule-of-thumb for nodes we came up with during the rk3288-veyron
-era is something like:
-
-compatible
-reg
-interrupts
-[alphabetical properties]
-status
-
-as this makes it somewhat easier to parse the core properties (compatible,
-reg, ints, status] when scrolling through a devicetree :-) .
-
-Pinctrl position is at the discretion of the dt author :-D .
-Position at the end has just the advantage that a long pin-group list does
-not get in the way so much.
-
-> What about unused references, e.g. "fan"?
-
-Don't change too much when moving stuff around :-)
-
-
-Heiko
-
-
+Thanks,
+Soeren
 
 _______________________________________________
 Linux-rockchip mailing list
