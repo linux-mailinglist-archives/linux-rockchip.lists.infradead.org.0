@@ -2,79 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 951C210F0C2
-	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Dec 2019 20:39:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10BE110F0C8
+	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Dec 2019 20:41:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OC8DV+yWAaGmAcQQHKz7dfYFvMEx/AHY3kDGix+Vo50=; b=BZlMe7CoqD/87W
-	Cq8oG985SaGu1/C8cvDxPAh4xVm5fEBFUcgrqYtY5L5kJM4Hl8EmGy4OvH836S6NJyMG5XZ99suFo
-	zHFq5BPk2dXBEtF133LZzHFNi+7tpP0XvOS2/m4VOoAYd++Ie6NSvBXJ+NpO2qvS524jhd8GIP9R7
-	JEjgH3Qnxxj4ncJjyRSlSbBwmOQMgeUUI781EEp+wM4dB9F6wQNcOxvhLllNjxUxHWD0UVa8QJ6bT
-	3FkucFGFUZOTlApU8KWMCDsu8KMI5tBAb2fahPbixfR+hEv+UycE0u6m7O4t9LUBSK2+uR24+7/2c
-	Wb1Zo+q4SccwuwxJHLOQ==;
+	List-Owner; bh=HWDGPReT+KpARVmhsFJYZJoaLT3zRgxy4I9ZLWZbnwg=; b=SToZJ7C6a+e/ab
+	NlmG5wf7VZUeWn7Y8+F6ivJrbjSkZTm2RPMuJSFTpm5cEUS4AYGI5kfwVr7uzeJ7AFfiDdlR4dnTw
+	Mra5lWUGz0uQJMlJUzcPgn7iFnaOJ0J9rk/OFi8aYS0owipLZ6csgSW86kcm+l3/qaM8Qt1x+tzT0
+	F7UDkn5wdywHv1OPimWUOGz4kRlGA6GUQiiHI4/Whp/kCwrcCQTYABB9S4nGm6AXHVOTjdUlXFElp
+	xfIBIILasMaKcWN2IVAZfyKC4H5Q6sqCD6eoC8Ix0SqB/PuEn8Lnsdu0TARXZofpIaPiWh9tv+QEP
+	a8jDe/pdOQuy4Ml6qxmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibrXy-0006FB-Qw; Mon, 02 Dec 2019 19:39:50 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1ibrZ2-0008OM-Rk; Mon, 02 Dec 2019 19:40:56 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibrRr-0007gL-Gf; Mon, 02 Dec 2019 19:33:37 +0000
-Received: by mail-lj1-x243.google.com with SMTP id h23so806539ljc.8;
- Mon, 02 Dec 2019 11:33:31 -0800 (PST)
+ id 1ibrRt-0007hl-AP; Mon, 02 Dec 2019 19:33:39 +0000
+Received: by mail-lj1-x241.google.com with SMTP id m6so868913ljc.1;
+ Mon, 02 Dec 2019 11:33:33 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=R0f42CF+zwCz/GYqQyt+Coe4IA7I6q2AFYs8+413zO0=;
- b=lnMtfHUcqZMMTnJ9gMhihKsg3Z/0eU6Y56rSI1jYsRkXy2EkvUclqmRZIEdI6SSSls
- wPP140xvr7sa1QlrV1iWDGiJ2sjuOkm5L3jQ7FOprQIYggBuzus2yGc1yji7zTj2Nl/O
- cAGOkgbft8rYkYZO8jIVy0IlYiloAfroxD7cWixqmRgTvqmKArka4CvLU0mzj499zQx8
- FJXuUfypTKn7fF2KJwWXlBTvu/WBeYYZxkGmc2iVRMKkGl5lbRPz/4sYiwtyYzLrQxsq
- B9WctI7d/M9bU3H43w9MGzdywkaqP47fHiAPW0Iet8HaUHiDfVL5BPF4qETjJfe8WPzZ
- LLog==
+ bh=+5RYUpfQaHxKRkMXMkrP8oHu/MU7hdMpYDFxNzucUWs=;
+ b=FxrKOZXvIF29xM5J+pbmyhXLfeQ1nklAk2wjlXyurWeQsWf2xXMKDXqzoBzjlf8k4h
+ sPXZBUKfoTu2+QPSuB1Mun/NjlwEGG6y4s2LuJC2ikplHxAIxTxYdo0/pT+lQxVE/Dqe
+ Q+qDzTGbtGOUWoFMzbsYsrXtMhBrHPAbakZ4oo4+KxLNrE9+Vhsr57kf756kruBBfiwo
+ fnvVT2HrnRTkdac8TGx+bWQLxc5opFap8I718aRsVi5UBY2ky009OO8SgyF0Ws/zpy+y
+ t4dIPeOh16FHiRVp976VpPmmC4FK7tfYfhZNi1xoQOGrwALJKP5AAjb0a2R93fuuE4wZ
+ p52g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=R0f42CF+zwCz/GYqQyt+Coe4IA7I6q2AFYs8+413zO0=;
- b=gw8a3e9TzbYUMgaKYoRKBVFy1VddDJTFauc3yUfINke1ptBnheR3WaZNhlqZZsuj27
- 9fB45IrTd7LCFuw7vOKQK6zP5U3n6lq+jO6J1WD9sEhrVrJbdV7Ub06HWidFY00yDamN
- MV4jzNy/HFQ3jSHMhvPSzBYAyuWdw9OO18iLpZ2uhPO1DJoWDumuOMxjfQl0Cpnm22MK
- Pdj3HEYJvW5nOt7NE2No8OLRuSbaX3jjd5pnbY7US9xLjl6bu/k8lw+2GmgdLvJBoBgm
- b8mHFkqMoJea596IU5d5zd935tAuRjfxacFP+sfN4JCuNd7limIBZhjPM3hd7daKYyhk
- BLaQ==
-X-Gm-Message-State: APjAAAUERETn2XZP+NpNRavih8Wy40T+PzLGi9xz5UUBWGM1usxYeEeu
- ndTwNSNLyl8ggAoO7r2jAP4=
-X-Google-Smtp-Source: APXvYqwxAoUwLTLEkQUfJnM7DgssO8M84iKQHSB7L3N4qws7EummnIVscFtc8tlydjwAe0u9VpqMAA==
-X-Received: by 2002:a2e:b61a:: with SMTP id r26mr271701ljn.72.1575315209849;
- Mon, 02 Dec 2019 11:33:29 -0800 (PST)
+ bh=+5RYUpfQaHxKRkMXMkrP8oHu/MU7hdMpYDFxNzucUWs=;
+ b=VLX/da3eSf7kVFpfeivAVk/nYz+9lX6KBleiYOsInZGxi0dUBYMBxJUrU9BOsuZJci
+ lZVLCZvX3Mmp/KRR9kDp527PrYLIR/DJoKRXp6Js6dKW9vRn/dou1yLWRWEUxgyyYWiH
+ GEDXHp449X3zKK5ReW1IgVvcnd61SiHEuglq7oWZOjnCj3RZlZtXS15tZRsbcgJNdsWA
+ uSWqGRaY61oBNePaCLomYNPgUX0Gu0sDQ/3yQXFRtwFmOF15/dnb/g1hytsWT6QZfL2n
+ 8EZVvlwuKvFHK+n7Wt18Ajba1eqLjnDfJhM2aNCqhohz4IbfIMPPxN0D/Y27S5IaChBX
+ YssA==
+X-Gm-Message-State: APjAAAUQBHeniLDrzOBctRt+a7lTt09MhY5Q20znNPuL17uF1JxZhF8W
+ nTxIOYmCQAuM+aiWT+c+hjc=
+X-Google-Smtp-Source: APXvYqw6xZ1V1bDQy1s46yIVtGq4D/aLE8LZc7NwSI+fkDGgYQgqenzANQAALXlLLg5Wahg+qt2cSA==
+X-Received: by 2002:a2e:3a15:: with SMTP id h21mr266843lja.256.1575315211669; 
+ Mon, 02 Dec 2019 11:33:31 -0800 (PST)
 Received: from saturn.lan (18.158-248-194.customer.lyse.net. [158.248.194.18])
  by smtp.gmail.com with ESMTPSA id
- g13sm79482lfb.74.2019.12.02.11.33.28
+ g13sm79482lfb.74.2019.12.02.11.33.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Dec 2019 11:33:29 -0800 (PST)
+ Mon, 02 Dec 2019 11:33:31 -0800 (PST)
 From: Sam Ravnborg <sam@ravnborg.org>
 To: dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: [PATCH v1 13/26] drm/panel: lvds: use drm_panel backlight support
-Date: Mon,  2 Dec 2019 20:32:17 +0100
-Message-Id: <20191202193230.21310-14-sam@ravnborg.org>
+Subject: [PATCH v1 14/26] drm/panel: olimex-lcd-olinuxino: use drm_panel
+ backlight support
+Date: Mon,  2 Dec 2019 20:32:18 +0100
+Message-Id: <20191202193230.21310-15-sam@ravnborg.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191202193230.21310-1-sam@ravnborg.org>
 References: <20191202193230.21310-1-sam@ravnborg.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_113331_796590_296AA254 
-X-CRM114-Status: GOOD (  12.70  )
+X-CRM114-CacheID: sfid-20191202_113333_489093_98724C98 
+X-CRM114-Status: GOOD (  11.18  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -106,7 +107,8 @@ Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
  Andrzej Hajda <a.hajda@samsung.com>,
  Benjamin Gaignard <benjamin.gaignard@linaro.org>,
  Sam Ravnborg <sam@ravnborg.org>, linux-samsung-soc@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Stefan Mavrodiev <stefan@olimex.com>, linux-rockchip@lists.infradead.org,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>,
  Jagan Teki <jagan@amarulasolutions.com>, NXP Linux Team <linux-imx@nxp.com>,
  Jitao Shi <jitao.shi@mediatek.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
@@ -125,111 +127,77 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 Use the backlight support in drm_panel to simplify the driver
 
 Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
+Cc: Stefan Mavrodiev <stefan@olimex.com>
 Cc: Thierry Reding <thierry.reding@gmail.com>
 Cc: Sam Ravnborg <sam@ravnborg.org>
 ---
- drivers/gpu/drm/panel/panel-lvds.c | 40 ++++--------------------------
- 1 file changed, 5 insertions(+), 35 deletions(-)
+ .../gpu/drm/panel/panel-olimex-lcd-olinuxino.c | 18 ++++++------------
+ 1 file changed, 6 insertions(+), 12 deletions(-)
 
-diff --git a/drivers/gpu/drm/panel/panel-lvds.c b/drivers/gpu/drm/panel/panel-lvds.c
-index 5e40b674bb15..5ce3f4a2b7a1 100644
---- a/drivers/gpu/drm/panel/panel-lvds.c
-+++ b/drivers/gpu/drm/panel/panel-lvds.c
-@@ -8,7 +8,6 @@
-  * Contact: Laurent Pinchart (laurent.pinchart@ideasonboard.com)
+diff --git a/drivers/gpu/drm/panel/panel-olimex-lcd-olinuxino.c b/drivers/gpu/drm/panel/panel-olimex-lcd-olinuxino.c
+index e553e584399b..09deb99981a4 100644
+--- a/drivers/gpu/drm/panel/panel-olimex-lcd-olinuxino.c
++++ b/drivers/gpu/drm/panel/panel-olimex-lcd-olinuxino.c
+@@ -6,7 +6,6 @@
+  *   Author: Stefan Mavrodiev <stefan@olimex.com>
   */
  
 -#include <linux/backlight.h>
+ #include <linux/crc32.h>
  #include <linux/gpio/consumer.h>
- #include <linux/module.h>
- #include <linux/of_platform.h>
-@@ -34,7 +33,6 @@ struct panel_lvds {
- 	unsigned int bus_format;
- 	bool data_mirror;
+ #include <linux/i2c.h>
+@@ -68,7 +67,6 @@ struct lcd_olinuxino {
+ 	bool prepared;
+ 	bool enabled;
  
 -	struct backlight_device *backlight;
  	struct regulator *supply;
- 
  	struct gpio_desc *enable_gpio;
-@@ -46,19 +44,6 @@ static inline struct panel_lvds *to_panel_lvds(struct drm_panel *panel)
- 	return container_of(panel, struct panel_lvds, panel);
- }
  
--static int panel_lvds_disable(struct drm_panel *panel)
--{
--	struct panel_lvds *lvds = to_panel_lvds(panel);
+@@ -87,8 +85,6 @@ static int lcd_olinuxino_disable(struct drm_panel *panel)
+ 	if (!lcd->enabled)
+ 		return 0;
+ 
+-	backlight_disable(lcd->backlight);
 -
--	if (lvds->backlight) {
--		lvds->backlight->props.power = FB_BLANK_POWERDOWN;
--		lvds->backlight->props.state |= BL_CORE_FBBLANK;
--		backlight_update_status(lvds->backlight);
--	}
--
--	return 0;
--}
--
- static int panel_lvds_unprepare(struct drm_panel *panel)
- {
- 	struct panel_lvds *lvds = to_panel_lvds(panel);
-@@ -93,19 +78,6 @@ static int panel_lvds_prepare(struct drm_panel *panel)
+ 	lcd->enabled = false;
+ 
  	return 0;
- }
+@@ -134,8 +130,6 @@ static int lcd_olinuxino_enable(struct drm_panel *panel)
+ 	if (lcd->enabled)
+ 		return 0;
  
--static int panel_lvds_enable(struct drm_panel *panel)
--{
--	struct panel_lvds *lvds = to_panel_lvds(panel);
+-	backlight_enable(lcd->backlight);
 -
--	if (lvds->backlight) {
--		lvds->backlight->props.state &= ~BL_CORE_FBBLANK;
--		lvds->backlight->props.power = FB_BLANK_UNBLANK;
--		backlight_update_status(lvds->backlight);
--	}
+ 	lcd->enabled = true;
+ 
+ 	return 0;
+@@ -283,13 +277,13 @@ static int lcd_olinuxino_probe(struct i2c_client *client,
+ 	if (IS_ERR(lcd->enable_gpio))
+ 		return PTR_ERR(lcd->enable_gpio);
+ 
+-	lcd->backlight = devm_of_find_backlight(dev);
+-	if (IS_ERR(lcd->backlight))
+-		return PTR_ERR(lcd->backlight);
 -
--	return 0;
--}
--
- static int panel_lvds_get_modes(struct drm_panel *panel,
- 				struct drm_connector *connector)
- {
-@@ -132,10 +104,8 @@ static int panel_lvds_get_modes(struct drm_panel *panel,
- }
+ 	drm_panel_init(&lcd->panel, dev, &lcd_olinuxino_funcs,
+ 		       DRM_MODE_CONNECTOR_DPI);
  
- static const struct drm_panel_funcs panel_lvds_funcs = {
--	.disable = panel_lvds_disable,
- 	.unprepare = panel_lvds_unprepare,
- 	.prepare = panel_lvds_prepare,
--	.enable = panel_lvds_enable,
- 	.get_modes = panel_lvds_get_modes,
- };
- 
-@@ -242,10 +212,6 @@ static int panel_lvds_probe(struct platform_device *pdev)
- 		return ret;
- 	}
- 
--	lvds->backlight = devm_of_find_backlight(lvds->dev);
--	if (IS_ERR(lvds->backlight))
--		return PTR_ERR(lvds->backlight);
--
- 	/*
- 	 * TODO: Handle all power supplies specified in the DT node in a generic
- 	 * way for panels that don't care about power supply ordering. LVDS
-@@ -257,6 +223,10 @@ static int panel_lvds_probe(struct platform_device *pdev)
- 	drm_panel_init(&lvds->panel, lvds->dev, &panel_lvds_funcs,
- 		       DRM_MODE_CONNECTOR_LVDS);
- 
-+	ret = drm_panel_of_backlight(&lvds->panel);
++	ret = drm_panel_of_backlight(&lcd->panel);
 +	if (ret)
 +		return ret;
 +
- 	ret = drm_panel_add(&lvds->panel);
- 	if (ret < 0)
- 		return ret;
-@@ -271,7 +241,7 @@ static int panel_lvds_remove(struct platform_device *pdev)
+ 	return drm_panel_add(&lcd->panel);
+ }
  
- 	drm_panel_remove(&lvds->panel);
+@@ -299,8 +293,8 @@ static int lcd_olinuxino_remove(struct i2c_client *client)
  
--	panel_lvds_disable(&lvds->panel);
-+	drm_panel_disable(&lvds->panel);
+ 	drm_panel_remove(&panel->panel);
+ 
+-	lcd_olinuxino_disable(&panel->panel);
+-	lcd_olinuxino_unprepare(&panel->panel);
++	drm_panel_disable(&panel->panel);
++	drm_panel_unprepare(&panel->panel);
  
  	return 0;
  }
