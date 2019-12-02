@@ -2,54 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 120F610F0EE
-	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Dec 2019 20:44:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91B2710F138
+	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Dec 2019 20:59:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/6fBD6wMaCUqTqpMp5TTCKsNe1pol42lxSPCetnSAh0=; b=rFBCQrQH97rLjR
-	xC1a/6DGHBT8zsSiRz8RrvG3aRzBrndNjWGntE4CqdEDqu8nFcC+lDr9yWEKQoGouxIFI5OuXrAQC
-	RZUca4JAo4PFTlLNZ+qeUvxI4RYFbaZKZJlSRbnz139vw2wcMOQ4qzUmwDS861wKU1+cmf/Oeby9W
-	1FQRJhopULCAvCKxYUjG2AZ0qbXSZMqPnXBl7tcR+jiGSpFapoCaQqQVGcCHc+QYfS+Hb1l7g/FgK
-	DgnSOsasw1iLN03m/rC2Yo65dkjBLnbfTdLBq8P+ZWOzgGQBsURzphi8Yfz9dJRB8TM9xDsg5g59Z
-	pPn4xFzvohrxBrl3l/3Q==;
+	List-Owner; bh=N/1Qv2cEPB6hCxsM5q8miOLgfISGcoQTjR9eeLvss5g=; b=h/PEBBjYxl0cJh
+	Bn66A22iFklSVa7wmWvLp/xcu28Ywn/a0hbRMLpzVmlVdEd9CpqnxWjA6uL84fwuuyFD8qKOawb1c
+	DHKwrKpcOUK4FSCDrcYShtnioRfLJicn32hPaNxMSRbyd4KR0Th2fYH1ox7YGtw/tZs8fm66WqFcj
+	paBDRyFbZKU8VL2TDuBrraZkmhn0+4ZBEEo9iByZITHGyVgUejEgjyu5/x/oFkgSl6XbLluiGANhi
+	dbZXml0GrGa9Ub38ZOUDPo796EfPL21EMdnLHrKIGZCyYKmsxZVnzDnliXO8J0cGC/XioLte2Zj9i
+	ZmiA64lsyHPNcL8Ua/8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibrck-0003oE-AU; Mon, 02 Dec 2019 19:44:46 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1ibrrH-0001mf-Bp; Mon, 02 Dec 2019 19:59:47 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibrS9-0007u3-7M; Mon, 02 Dec 2019 19:33:57 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: aratiu) with ESMTPSA id DC0E4290514
-From: Adrian Ratiu <adrian.ratiu@collabora.com>
-To: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com,
- linux-rockchip@lists.infradead.org
-Subject: [PATCH v4 4/4] dt-bindings: display: add i.MX6 MIPI DSI host
- controller doc
-Date: Mon,  2 Dec 2019 21:33:59 +0200
-Message-Id: <20191202193359.703709-5-adrian.ratiu@collabora.com>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191202193359.703709-1-adrian.ratiu@collabora.com>
-References: <20191202193359.703709-1-adrian.ratiu@collabora.com>
+ id 1ibrrD-0001li-VY; Mon, 02 Dec 2019 19:59:45 +0000
+Received: by mail-il1-x143.google.com with SMTP id w13so886503ilo.1;
+ Mon, 02 Dec 2019 11:59:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=/1GIiVAt9IkBpoZ9Uj4zenbh/EnV7XYXqjcP5Gkayek=;
+ b=InHq5aiL3hR9tFDnhuqx6aayq30VOPnHw69PCMZh0fSzKM55HtwqVJl0b4YhHu7o0S
+ +vKSRzTuJwrb/lXpHGExaIBaelO+6e1no2J7UB2BWeJc2O8zSrV6zrjf11Joenv7+K+O
+ bIOK66rwnalFLRsaiCMoP1L5Q+Gri2cgksvOUQua6x2NZ9JNO0modjT5LhxhvqbmC8dc
+ 2FZZWCxZ4UxsFPSHkDVN45m1Rxjv8DMuTLQZdROk5eqrpDHYKSl4SPzzPtiTLnQvNG4L
+ Gdc25pYlvp0qSQqCaGqVXUgLhtnumBY8uup6p7tMk8yK2DpH0DcOK17AODcn1FefgjKv
+ oLRA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=/1GIiVAt9IkBpoZ9Uj4zenbh/EnV7XYXqjcP5Gkayek=;
+ b=q+hO3jzAUPXrexqIFoFOJMuCDVrKsXsOwEApr79wxzos+xjyTV2zZobjwt2yCQINDl
+ USckEEkCVGNiH++rzB6fylOepLWebIw8HRgD+wpjgPk9+pkgDZgrylchBwQPUCUNK2iD
+ GpvWoYu7AOixTBzpN6WKlHkP9IOqUST+4ccRILUHnwrUgENS93sQ3rG9UhEwfUKqHZQw
+ QSyk5zCNosec5PvaM4TmJgfgPVocn/hPoFN5HUASy/QG9MaNrDGhDxBiCH2zJ+pVGwUN
+ vr/fqixKZhmki7UGHGfL0Vi+XFIS8vbiJIsEHz+yDavvayS9Nv/uyQQQ5PeGgfSWh3TW
+ m68w==
+X-Gm-Message-State: APjAAAXeivuTcXrFyLDRIGodBDPNnSkNDvwA4rUCYQfqw78Y++FNrkpo
+ aiFVbs8cqtsYuBhIwIhhA+UIjlk/hUyLgXFp5Po=
+X-Google-Smtp-Source: APXvYqx6YUMOUm+z16ig9xldwuTeM19+Bd22B3aBAblOLhFaOGglg7N1XrSehMoTWzvuuSea3OH9TLlXRGuqdFXhTE0=
+X-Received: by 2002:a92:4891:: with SMTP id j17mr565262ilg.33.1575316780879;
+ Mon, 02 Dec 2019 11:59:40 -0800 (PST)
 MIME-Version: 1.0
+References: <20191202193230.21310-1-sam@ravnborg.org>
+In-Reply-To: <20191202193230.21310-1-sam@ravnborg.org>
+From: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
+Date: Mon, 2 Dec 2019 12:59:29 -0700
+Message-ID: <CAOCk7NoKPoxcETLYQ4CyAtYGnPwvYapdSavZM=aRdswDydTLEA@mail.gmail.com>
+Subject: Re: [PATCH v1 0/26] drm/panel infrastructure + backlight update
+To: Sam Ravnborg <sam@ravnborg.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_113349_738216_143FC8C6 
-X-CRM114-Status: GOOD (  11.12  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191202_115944_020011_0AA751B6 
+X-CRM114-Status: GOOD (  19.87  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jeffrey.l.hugo[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,173 +91,114 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Neil Armstrong <narmstrong@baylibre.com>,
- Martyn Welch <martyn.welch@collabora.com>,
- Sjoerd Simons <sjoerd.simons@collabora.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-imx@nxp.com, kernel@collabora.com
+Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Linus Walleij <linus.walleij@linaro.org>, Stefan Agner <stefan@agner.ch>,
+ Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ linux-samsung-soc@vger.kernel.org, Abhinav Kumar <abhinavk@codeaurora.org>,
+ linux-rockchip@lists.infradead.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Jagan Teki <jagan@amarulasolutions.com>,
+ Jitao Shi <jitao.shi@mediatek.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, linux-mediatek@lists.infradead.org,
+ "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
+ linux-tegra@vger.kernel.org, Sean Paul <sean@poorly.run>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Purism Kernel Team <kernel@puri.sm>, linux-renesas-soc@vger.kernel.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This provides an example DT binding for the MIPI DSI host controller
-present on the i.MX6 SoC based on Synopsis DesignWare v1.01 IP.
+On Mon, Dec 2, 2019 at 12:33 PM Sam Ravnborg <sam@ravnborg.org> wrote:
+>
+> This patchset include a couple of different
+> things - all related to panels.
+>
+> - The panel callbacks are optional - so drop error if
+>   callback is not present.
+>
+> - Add support for backlight in drm_panel.
+>   This allows us to make much simpler backlight
+>   support to most panels.
+>   The patchset include conversion of most of the
+>   trivial cases.
+>
+> - Drop drm_connector from drm_panel.
+>   This change required many changes to most
+>   panels and many bridges and display drivers.
+>   This is by far the most invasive change in this patchset.
+>
+> - Drop the unused get_timings() callback.
+>   No users, so no need to keep it around.
+>
+> With this patchset drm_panel_(attach|detach) are nop's
+> but they are kept for now.
+>
+> A few of these patches has been sent out before - but versioning
+> started again from v1 - as the most patches are new.
+>
+> I have tested the panel-simple changes, and thus some
+> of the infrastructure changes.
+> The testing was done on an earlier iteration - and I ended
+> up submitting this as Laurent and others started to depend on it.
+> Jitao has a patch to add more callbacks, and I wanted the
+> simplification of the callbacks before we add more callbacks.
+>
+>         Sam
+>
+>
+> Sam Ravnborg (26):
+>       drm/drm_panel: no error when no callback
+>       drm/panel: add backlight support
+>       drm/panel: simple: use drm_panel backlight support
+>       drm: get drm_bridge_panel connector via helper
+>       drm/panel: add drm_connector argument to get_modes()
+>       drm/panel: decouple connector from drm_panel
+>       drm/panel: remove get_timings
+>       drm/panel: drop drm_device from drm_panel
+>       drm/panel: feiyang-fy07024di26a30d: use drm_panel backlight support
+>       drm/panel: ilitek-ili9881c: use drm_panel backlight support
+>       drm/panel: innolux-p079zca: use drm_panel backlight support
+>       drm/panel: kingdisplay-kd097d04: use drm_panel backlight support
+>       drm/panel: lvds: use drm_panel backlight support
+>       drm/panel: olimex-lcd-olinuxino: use drm_panel backlight support
+>       drm/panel: osd-osd101t2587-53ts: use drm_panel backlight support
+>       drm/panel: panasonic-vvx10f034n00: use drm_panel backlight support
+>       drm/panel: raydium-rm68200: use drm_panel backlight support
+>       drm/panel: rocktech-jh057n00900: use drm_panel backlight support
+>       drm/panel: ronbo-rb070d30: use drm_panel backlight support
+>       drm/panel: seiko-43wvf1g: use drm_panel backlight support
+>       drm/panel: sharp-lq101r1sx01: use drm_panel backlight support
+>       drm/panel: sharp-ls043t1le01: use drm_panel backlight support
+>       drm/panel: sitronix-st7701: use drm_panel backlight support
+>       drm/panel: sitronix-st7789v: use drm_panel backlight support
+>       drm/panel: tpo-td028ttec1: use drm_panel backlight support
+>       drm/panel: tpo-tpg110: use drm_panel backlight support
+>
+>  drivers/gpu/drm/bridge/analogix/analogix-anx6345.c |   2 +-
+>  drivers/gpu/drm/bridge/analogix/analogix_dp_core.c |   2 +-
+>  drivers/gpu/drm/bridge/panel.c                     |  18 +++-
+>  drivers/gpu/drm/bridge/parade-ps8622.c             |   2 +-
+>  drivers/gpu/drm/bridge/tc358764.c                  |   2 +-
+>  drivers/gpu/drm/bridge/tc358767.c                  |   2 +-
+>  drivers/gpu/drm/bridge/ti-sn65dsi86.c              |   2 +-
+>  drivers/gpu/drm/drm_panel.c                        |  96 ++++++++++++++----
+>  drivers/gpu/drm/exynos/exynos_drm_dpi.c            |   2 +-
+>  drivers/gpu/drm/exynos/exynos_drm_dsi.c            |   2 +-
+>  drivers/gpu/drm/fsl-dcu/fsl_dcu_drm_rgb.c          |   2 +-
+>  drivers/gpu/drm/imx/imx-ldb.c                      |   2 +-
+>  drivers/gpu/drm/imx/parallel-display.c             |   2 +-
+>  drivers/gpu/drm/mediatek/mtk_dsi.c                 |   2 +-
+>  .../gpu/drm/msm/disp/mdp4/mdp4_lvds_connector.c    |   2 +-
+>  drivers/gpu/drm/msm/dsi/dsi_manager.c              |   2 +-
 
-Cc: Rob Herring <robh@kernel.org>
-Cc: Neil Armstrong <narmstrong@baylibre.com>
-Signed-off-by: Sjoerd Simons <sjoerd.simons@collabora.com>
-Signed-off-by: Martyn Welch <martyn.welch@collabora.com>
-Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
----
- .../display/imx/fsl,mipi-dsi-imx6.yaml        | 136 ++++++++++++++++++
- 1 file changed, 136 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
-
-diff --git a/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
-new file mode 100644
-index 000000000000..8c9603c28240
---- /dev/null
-+++ b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
-@@ -0,0 +1,136 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/display/fsl,mipi-dsi-imx6.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Freescale i.MX6 DW MIPI DSI Host Controller
-+
-+description:
-+  The DSI host controller is a Synopsys DesignWare MIPI DSI v1.01 IP with a companion PHY IP.
-+
-+  These DT bindings follow the Synopsys DW MIPI DSI bindings defined in
-+  Documentation/devicetree/bindings/display/bridge/dw_mipi_dsi.txt with
-+  the following device-specific properties.
-+
-+properties:
-+  compatible:
-+    const: [ "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi" ]
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: Module Clock
-+      - description: DSI bus clock
-+    minItems: 2
-+    maxItems: 2
-+
-+  clock-names:
-+    items:
-+      - const: pclk
-+      - const: ref
-+    minItems: 2
-+    maxItems: 2
-+
-+  fsl,gpr:
-+    description: Phandle to the iomuxc-gpr region containing the multiplexer control register.
-+    const: *gpr
-+
-+  ports:
-+    type: object
-+    description:
-+      A node containing DSI input & output port nodes with endpoint
-+      definitions as documented in
-+      Documentation/devicetree/bindings/media/video-interfaces.txt
-+      Documentation/devicetree/bindings/graph.txt
-+    properties:
-+      port@0:
-+        type: object
-+        description:
-+          DSI input port node, connected to the ltdc rgb output port.
-+
-+      port@1:
-+        type: object
-+        description:
-+          DSI output port node, connected to a panel or a bridge input port"
-+
-+patternProperties:
-+  "^(panel|panel-dsi)@[0-9]$":
-+    type: object
-+    description:
-+      A node containing the panel or bridge description as documented in
-+      Documentation/devicetree/bindings/display/mipi-dsi-bus.txt
-+    properties:
-+      port:
-+        type: object
-+        description:
-+          Panel or bridge port node, connected to the DSI output port (port@1)
-+
-+  "#address-cells":
-+    const: 1
-+
-+  "#size-cells":
-+    const: 0
-+
-+required:
-+  - "#address-cells"
-+  - "#size-cells"
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+  - ports
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    dsi: dsi@21e0000 {
-+        #address-cells = <1>;
-+        #size-cells = <0>;
-+        compatible = "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi";
-+        reg = <0x021e0000 0x4000>;
-+        interrupts = <0 102 IRQ_TYPE_LEVEL_HIGH>;
-+        fsl,gpr = <&gpr>;
-+        clocks = <&clks IMX6QDL_CLK_MIPI_CORE_CFG>,
-+                 <&clks IMX6QDL_CLK_MIPI_IPG>;
-+        clock-names = "ref", "pclk";
-+
-+        ports {
-+            port@0 {
-+                reg = <0>;
-+                dsi_in: endpoint {
-+                    remote-endpoint = <&ltdc_ep1_out>;
-+                };
-+            };
-+
-+            port@1 {
-+                reg = <1>;
-+                dsi_out: endpoint {
-+                    remote-endpoint = <&panel_in>;
-+                };
-+            };
-+        };
-+
-+        panel@0 {
-+            compatible = "sharp,ls032b3sx01";
-+            reg = <0>;
-+            reset-gpios = <&gpio6 8 GPIO_ACTIVE_LOW>;
-+
-+            ports {
-+                port@0 {
-+                    panel_in: endpoint {
-+                        remote-endpoint = <&dsi_out>;
-+                    };
-+                };
-+            };
-+        };
-+    };
-+
-+...
--- 
-2.24.0
-
+How come the diff stat in the cover letter here indicates a change to
+this file, yet I cannot find a change to this file in any of the
+patches?  What am I missing?
 
 _______________________________________________
 Linux-rockchip mailing list
