@@ -2,54 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 889741101D3
-	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Dec 2019 17:07:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 501D3111BC5
+	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Dec 2019 23:37:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YSDI2PRIOTphhR+uYB4M7uJ5zq9+WmrKoHTNjBfdDl4=; b=tIFmD/bnQxqu65+YbdoRRtDVE
-	8pLOyM7fy9YuQ3BV8lzKtiu/B8g/EjbZf2sJuhPlsriv0dWS8hgWLrj1jzFwsHzSirhqNLhznJKk1
-	199f15hrX3+XRoQmGgao1XVh081XcSJO1QItrtbDv4WkWUNpdP8zDKVHG9AH4iH+hDCJCx3kAtDsQ
-	Xlf8csjlQ0MycxGMKnLRKvt8LHAeZMiQfOzWEAHxcxsXqn64KlS3MzODdJXILBo3qFst71TXA8mjc
-	xr4e92YfqmNS1QbnUjWidsaOWndXmWZV9dLJ0v9NwkH6ENFqwC21X8BReycOZvhemNLbwNhjZOKqX
-	wyhR7qZDQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tjeJsLVG4VXld8BojS0NmbKI5B2ml/mogxUeVWSRtEo=; b=O8d1vSks3rVOZ9
+	cgMxV5G+vMOPFpUIsJH9mF4P03Htkh/wnA3hXwnfMnlEST/aaPZIE+V5eh1w2I4gV4di1OfETU0DG
+	/0oVXGGP3sEOrS67myakgdCHYQ3yVBcdpYDp45egKyjedQbEPi3fn+zjc8hTXRdkce15TsqkpHIZ0
+	eggmfY3FVI6dF2edwXIaNHp/s163uWf51/n6qqryClEZRpJ3VKmFDfUHbpWLxmk2FBGjyugV4fxfR
+	FYPkYzA8En7y+vusl1idoe+p/NN3hd34Zdvj2mLGiMJ6C3SHXzSAz/KbUJmlMptol9K32wLcdZ5ph
+	QGLZDbAB5+skZ3RyZGEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icAhb-0008KO-Rd; Tue, 03 Dec 2019 16:07:03 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1icGnE-0005H4-8k; Tue, 03 Dec 2019 22:37:16 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icAhN-0008D8-R6; Tue, 03 Dec 2019 16:06:56 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id AD9186A2F7;
- Tue,  3 Dec 2019 16:06:47 +0000 (UTC)
-Message-ID: <d1c87c83f38e74f0c6b0692248fe88dfd2bdec3e.camel@suse.de>
-Subject: Re: [PATCH v4 8/8] linux/log2.h: Use roundup/dow_pow_two() on 64bit
- calculations
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 03 Dec 2019 17:06:43 +0100
-In-Reply-To: <CAL_JsqLMCXdnZag3jihV_dzuR+wFaVKFb7q_PdKTxTg0LVA6cw@mail.gmail.com>
-References: <20191203114743.1294-1-nsaenzjulienne@suse.de>
- <20191203114743.1294-9-nsaenzjulienne@suse.de>
- <CAL_JsqLMCXdnZag3jihV_dzuR+wFaVKFb7q_PdKTxTg0LVA6cw@mail.gmail.com>
-User-Agent: Evolution 3.34.1 
+ id 1icGn3-00055v-SM; Tue, 03 Dec 2019 22:37:07 +0000
+Received: by mail-oi1-f196.google.com with SMTP id 6so4967651oix.7;
+ Tue, 03 Dec 2019 14:37:05 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=NnWqN+v6idF+rYohPBc8yK8WHdS4XunbYI4eJ0qCx44=;
+ b=R50tlexcX0fIWyvZrOSQXVmGxQ8r/JqJTo18Sy4bUwV2fVpBr0jJ8A49tyXvgDZ5Ye
+ y80P8NpqtT7SFD6b7yX9z3L9t39BAdMGp53aDqsFnZFJHojLCI+lQGVk/kPOkwZWfKvw
+ 0jlgM6QPstOZKEVz6djimG5Ssb8ll8jJ8tAekqjDAJiSBzSlxL6LZz950obyTX8UXaQ5
+ hgJjZTCj7JhksQU32GXbreDSvXKvsRlqfhxc2Hn8d23gSTUr3tZ0UsTYXLWYQSvEZGLU
+ AzZQHdkaivp4NHrVzc4UuJbGYP1tMC6eDTzA95G0gRrjgOCh9ZcS/T3Im03AqKUY4mKf
+ xHHA==
+X-Gm-Message-State: APjAAAXvkk6dWtq2pWVdbc4/xWFgQZfnCNqjLRQhzfj9PylV6BfkfchW
+ 1N1u+sXSGnqIiBLL+wEVxQ==
+X-Google-Smtp-Source: APXvYqyY+MvnuM+hiACvXhy/3tKtbTc72UkG95+81S0zipokTze6+5MxpHqRBYpAnCxnfaY6IROUJQ==
+X-Received: by 2002:aca:4cc7:: with SMTP id z190mr996oia.10.1575412625132;
+ Tue, 03 Dec 2019 14:37:05 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id m2sm1615150oim.13.2019.12.03.14.37.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 03 Dec 2019 14:37:04 -0800 (PST)
+Date: Tue, 3 Dec 2019 16:37:04 -0600
+From: Rob Herring <robh@kernel.org>
+To: Jagan Teki <jagan@amarulasolutions.com>
+Subject: Re: [PATCH v2 1/2] dt-bindings: arm: rockchip: Add libretech for
+ roc-pc binding
+Message-ID: <20191203223704.GA29109@bogus>
+References: <20191119185817.11216-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191119185817.11216-1-jagan@amarulasolutions.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_080652_002580_030767FC 
-X-CRM114-Status: GOOD (  12.19  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191203_143705_917439_3C4696A7 
+X-CRM114-Status: GOOD (  16.67  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,118 +90,54 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, PCI <linux-pci@vger.kernel.org>,
- Shawn Lin <shawn.lin@rock-chips.com>, Eric Anholt <eric@anholt.net>,
- Hanjun Guo <guohanjun@huawei.com>, Frank Rowand <frowand.list@gmail.com>,
- Christoph Hellwig <hch@lst.de>, Marek Szyprowski <m.szyprowski@samsung.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- linux-rdma@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
- Phil Elwell <phil@raspberrypi.org>, linux-acpi@vger.kernel.org,
- "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>, Len Brown <lenb@kernel.org>,
- devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- "moderated list:BROADCOM BCM2835 ARM
- ARCHITECTURE" <linux-rpi-kernel@lists.infradead.org>,
- Bjorn Helgaas <bhelgaas@google.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM
- ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
- Matthias Brugger <mbrugger@suse.com>, netdev <netdev@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jeremy Linton <jeremy.linton@arm.com>,
- Linux IOMMU <iommu@lists.linux-foundation.org>,
- Stefan Wahren <wahrenst@gmx.net>, james.quinlan@broadcom.com,
- Sudeep Holla <sudeep.holla@arm.com>, Andrew Murray <andrew.murray@arm.com>,
- Robin Murphy <robin.murphy@arm.com>, "David S. Miller" <davem@davemloft.net>,
- Tariq Toukan <tariqt@mellanox.com>
-Content-Type: multipart/mixed; boundary="===============0954460006094564949=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Da Xue <da@lessconfused.com>, Heiko Stuebner <heiko@sntech.de>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Akash Gajjar <akash@openedev.com>, Levin Du <djw@t-chip.com.cn>,
+ linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+On Wed, Nov 20, 2019 at 12:28:16AM +0530, Jagan Teki wrote:
+> Though the ROC-PC is manufactured by firefly, it is co-designed
+> by libretch like other Libretech computer boards from allwinner,
+> amlogic does.
+> 
+> It is always meaningful to keep maintain those vendors who are
+> part of design participation, so add libretech roc-pc compatible
+> with existing binding.
 
---===============0954460006094564949==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-VHC+bPmpbRjqhnK2ykxw"
+Maybe so, but this is pretty pointless if it's not different h/w. 
+Compatible strings are simply a h/w identifier.
 
+> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> ---
+>  Documentation/devicetree/bindings/arm/rockchip.yaml | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+> index f7470ed1e17d..45728fd22af8 100644
+> --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
+> +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+> @@ -100,6 +100,7 @@ properties:
+>        - description: Firefly ROC-RK3399-PC
+>          items:
+>            - enum:
+> +              - libretech,roc-rk3399-pc
+>                - firefly,roc-rk3399-pc
+>                - firefly,roc-rk3399-pc-mezzanine
 
---=-VHC+bPmpbRjqhnK2ykxw
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+This doesn't match your change in the dts. file. The schema says there 
+are 2 strings with the first one being 1 of these 3.
 
-Hi Rob,
-
-On Tue, 2019-12-03 at 09:53 -0600, Rob Herring wrote:
-> On Tue, Dec 3, 2019 at 5:48 AM Nicolas Saenz Julienne
-> <nsaenzjulienne@suse.de> wrote:
-> > The function now is safe to use while expecting a 64bit value. Use it
-> > where relevant.
->=20
-> What was wrong with the existing code? This is missing some context.
-
-You're right, I'll update it.
-
-For most of files changed the benefit here is factoring out a common patter=
-n
-using the standard function roundup/down_pow_two() which now provides corre=
-ct
-64bit results.
-
-As for of/device.c and arm64/iort.c it's more of a readability enhancement.=
- I
-consider it's easier to understand than the current calculation as it abstr=
-acts
-the math.
-
-> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> > ---
-> >  drivers/acpi/arm64/iort.c                        | 2 +-
-> >  drivers/net/ethernet/mellanox/mlx4/en_clock.c    | 3 ++-
-> >  drivers/of/device.c                              | 3 ++-
->=20
-> In any case,
->=20
-> Acked-by: Rob Herring <robh@kernel.org>
->=20
-
-Thanks!
-
-Regards,
-Nicolas
-
-
---=-VHC+bPmpbRjqhnK2ykxw
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3miBMACgkQlfZmHno8
-x/5s+Af/a2icSd66GHrsABoMtUfJXpQclSae81ThRP5Bfx6+mK4Ty4en3T+IxOK+
-NPmneod0gjSfyqqQniFbEcmlKAd8wXyUnBCCi6urRvuqOWcw65h10DA3fQCivaOt
-NWn3FRWMlPZbBIAYr/XOcsdOOkbD+VaFE/PaBYmxU/rWaCLGMWpYYBhF/Vcm+ASd
-VPQ4g8AfxyGvQW9EgbmRTMC0k7kMP6qrpmgIjNWvUPyJ+8ytD2Zly2xvbVf9TqhX
-/PP/t19fWayTqhsg+B04K0aN0oriRqSFX44yvCOApKhLBSsF6Nyc40m2sreqKMYY
-98kwrOrux/Fb3OeV/Wzdhhh8VhH+Sg==
-=4wmf
------END PGP SIGNATURE-----
-
---=-VHC+bPmpbRjqhnK2ykxw--
-
-
-
---===============0954460006094564949==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>            - const: rockchip,rk3399
+> -- 
+> 2.18.0.321.gffc6fa0e3
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
---===============0954460006094564949==--
-
-
