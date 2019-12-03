@@ -2,57 +2,59 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31D2A10F8A9
-	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Dec 2019 08:25:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44A2210F949
+	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Dec 2019 08:48:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SNMy51XCEWHnzbqClE+lI9NAN+/EXX5qoHTMNvcKHFw=; b=Q8nxFmGLRH6136
-	U8863AkPUDTWQFFLbpe+3Kznh21fQXnCZMzpOGhrF0uDP5wLpxETweQmorACZKFQWviPhMF+eDnQ/
-	ntsaCPIYak+Re99Qi7yXkYjGbmKWxDK5IoCQRhhOsGQRMSoSmbSiqFqUlKfU1JOgn0HlCFNjc1O5j
-	8kblBpfjFVkvKLHZ5tXM3/aOZEF57oMSP5k/Fbo6gzfMen/a+bd32oofgayaoDQ1X8kJxHCnfPLd8
-	51/nOgLPvm6TYPrqOtsNIInrqk9XMAPsnCYkZ8ytLoTRrHqNs9wzLP48cmjjKLFlRSh1VsvZV9FBD
-	iTw6wjzI7N6936VmDxrA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RRpa3DcPIxWttgC7YCqCKZjCiizFXr2DjCFs/QecM+E=; b=PJAYwe2V3JnyOUZV1N6eVzHRd
+	7AIdc4bwdLkeeYohHVkdJUB0qdri9E62MQqMe4eb6yY/hnE9d7bbd9OpvJNj2HnpxiSnRkvayxIOF
+	UQ10IlVO1qy+9WWBI4sDKstb4Qa3M1Z2+gkV8B6ENs2TCIaPFjewRiz1mLmS0zgTA9cPPxFhDNzeR
+	hHSqL8o47bohawJNOqQClDnsTL162OP+QwuvoxjJBxQa0zDHbimHtdFzUSSkyF4Sw0esSnvuBOg1f
+	IODMVgt9zxMxpwFfs/d7OWNo0RytvR0rCNcr+VXi6IZp2IMGfBFd4aKTTKqgdXH92q9Du3mShbR8p
+	yt09E+nsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic2Ye-0004T1-88; Tue, 03 Dec 2019 07:25:16 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1ic2v8-0001oS-PD; Tue, 03 Dec 2019 07:48:30 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic2YG-00031F-Ug; Tue, 03 Dec 2019 07:24:54 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id D0E87309;
- Tue,  3 Dec 2019 08:24:50 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1575357891;
- bh=sAQFNNZ440Vab1+8Na2Bxa9TGm6vttJhJrontuPgDZA=;
+ id 1ic2ti-0000a3-Px; Tue, 03 Dec 2019 07:47:04 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9F4CE2053B;
+ Tue,  3 Dec 2019 07:47:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575359222;
+ bh=zBfUPG4hr6cz9CjSTGXeqEKcIeEi2W+pTBEFRrNagxk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=YD9x8SmLLYHikneU71eOyZ8x2fR/msfR6zJzJz8pqI9yULDm3Gmv01HVjW8BqAEU/
- TLO3y1j77KJFRcRvihUH6UIEo9145O7D9VROBibD3cpUSdelgQQzNQhWX9rzGc8OaV
- hQhTcoJxvfBQ7AjDlKEU0/lyx+8KH10mW6epkakg=
-Date: Tue, 3 Dec 2019 09:24:43 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+ b=FJcAU9P+z4a0TjRbXzmJTn5pxxrG++bII3OcgV8W3lHBCpgWqkSBw6j/9MG/nKgUn
+ CA+ACwvDPHjLylSA0jGJ+T6BB+MgOW1qltCFkpOqY85/AeM8kpbMy2a7KNdtprE8Yh
+ gRZBIBlwAFpGvYXVoPw3Rq/30T5g2LIP5yFDY9Ag=
+Date: Tue, 3 Dec 2019 08:46:59 +0100
+From: Maxime Ripard <mripard@kernel.org>
 To: Sam Ravnborg <sam@ravnborg.org>
-Subject: Re: [PATCH v1 0/26] drm/panel infrastructure + backlight update
-Message-ID: <20191203072443.GK4730@pendragon.ideasonboard.com>
+Subject: Re: [PATCH v1 07/26] drm/panel: remove get_timings
+Message-ID: <20191203074659.ilsyv4yx7pzw5vax@gilmour.lan>
 References: <20191202193230.21310-1-sam@ravnborg.org>
+ <20191202193230.21310-8-sam@ravnborg.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191202193230.21310-1-sam@ravnborg.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191202193230.21310-8-sam@ravnborg.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_232453_285945_D8903DB5 
-X-CRM114-Status: GOOD (  21.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191202_234702_900066_5A411F74 
+X-CRM114-Status: GOOD (  21.53  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -60,6 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,171 +78,147 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
 Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
  Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
  Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Stefan Agner <stefan@agner.ch>, linux-samsung-soc@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
- NXP Linux Team <linux-imx@nxp.com>, Jagan Teki <jagan@amarulasolutions.com>,
- Jitao Shi <jitao.shi@mediatek.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
+ linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Jagan Teki <jagan@amarulasolutions.com>, Jitao Shi <jitao.shi@mediatek.com>,
+ Daniel Vetter <daniel@ffwll.ch>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, linux-mediatek@lists.infradead.org,
- Abhinav Kumar <abhinavk@codeaurora.org>, linux-tegra@vger.kernel.org,
+ Abhinav Kumar <abhinavk@codeaurora.org>, linux-mediatek@lists.infradead.org,
+ Stefan Agner <stefan@agner.ch>, linux-tegra@vger.kernel.org,
  Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
  Purism Kernel Team <kernel@puri.sm>, linux-renesas-soc@vger.kernel.org,
  Boris Brezillon <boris.brezillon@collabora.com>,
- Daniel Vetter <daniel@ffwll.ch>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Pengutronix Kernel Team <kernel@pengutronix.de>
+Content-Type: multipart/mixed; boundary="===============1589207947972990935=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Sam,
 
-On Mon, Dec 02, 2019 at 08:32:04PM +0100, Sam Ravnborg wrote:
-> This patchset include a couple of different
-> things - all related to panels.
-> 
-> - The panel callbacks are optional - so drop error if
->   callback is not present.
->  
-> - Add support for backlight in drm_panel.
->   This allows us to make much simpler backlight
->   support to most panels.
->   The patchset include conversion of most of the
->   trivial cases.
-> 
-> - Drop drm_connector from drm_panel.
->   This change required many changes to most
->   panels and many bridges and display drivers.
->   This is by far the most invasive change in this patchset.
-> 
-> - Drop the unused get_timings() callback.
->   No users, so no need to keep it around.
-> 
-> With this patchset drm_panel_(attach|detach) are nop's
-> but they are kept for now.
-> 
-> A few of these patches has been sent out before - but versioning
-> started again from v1 - as the most patches are new.
-> 
-> I have tested the panel-simple changes, and thus some
-> of the infrastructure changes.
-> The testing was done on an earlier iteration - and I ended
-> up submitting this as Laurent and others started to depend on it.
-> Jitao has a patch to add more callbacks, and I wanted the
-> simplification of the callbacks before we add more callbacks.
+--===============1589207947972990935==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="mbec6vlpl4zotrv3"
+Content-Disposition: inline
 
-Great series !!! Thanks for working on this.
 
-> Sam Ravnborg (26):
->       drm/drm_panel: no error when no callback
->       drm/panel: add backlight support
->       drm/panel: simple: use drm_panel backlight support
->       drm: get drm_bridge_panel connector via helper
->       drm/panel: add drm_connector argument to get_modes()
->       drm/panel: decouple connector from drm_panel
->       drm/panel: remove get_timings
->       drm/panel: drop drm_device from drm_panel
->       drm/panel: feiyang-fy07024di26a30d: use drm_panel backlight support
->       drm/panel: ilitek-ili9881c: use drm_panel backlight support
->       drm/panel: innolux-p079zca: use drm_panel backlight support
->       drm/panel: kingdisplay-kd097d04: use drm_panel backlight support
->       drm/panel: lvds: use drm_panel backlight support
->       drm/panel: olimex-lcd-olinuxino: use drm_panel backlight support
->       drm/panel: osd-osd101t2587-53ts: use drm_panel backlight support
->       drm/panel: panasonic-vvx10f034n00: use drm_panel backlight support
->       drm/panel: raydium-rm68200: use drm_panel backlight support
->       drm/panel: rocktech-jh057n00900: use drm_panel backlight support
->       drm/panel: ronbo-rb070d30: use drm_panel backlight support
->       drm/panel: seiko-43wvf1g: use drm_panel backlight support
->       drm/panel: sharp-lq101r1sx01: use drm_panel backlight support
->       drm/panel: sharp-ls043t1le01: use drm_panel backlight support
->       drm/panel: sitronix-st7701: use drm_panel backlight support
->       drm/panel: sitronix-st7789v: use drm_panel backlight support
->       drm/panel: tpo-td028ttec1: use drm_panel backlight support
->       drm/panel: tpo-tpg110: use drm_panel backlight support
+--mbec6vlpl4zotrv3
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-For patches 09/26 to 26/26,
+Hi,
 
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+On Mon, Dec 02, 2019 at 08:32:11PM +0100, Sam Ravnborg wrote:
+> There was no users - so remove it.
+> The callback was implemented in two drivers - deleted.
+>
+> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
+> Cc: Thierry Reding <thierry.reding@gmail.com>
+> Cc: Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+> Cc: Sam Ravnborg <sam@ravnborg.org>
+> Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+> Cc: Maxime Ripard <mripard@kernel.org>
+> Cc: David Airlie <airlied@linux.ie>
+> Cc: Daniel Vetter <daniel@ffwll.ch>
+> ---
+>  drivers/gpu/drm/panel/panel-seiko-43wvf1g.c | 18 ------------------
+>  drivers/gpu/drm/panel/panel-simple.c        | 18 ------------------
+>  include/drm/drm_panel.h                     |  9 ---------
+>  3 files changed, 45 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c b/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c
+> index b878930b17e4..3bcba64235c4 100644
+> --- a/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c
+> +++ b/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c
+> @@ -217,30 +217,12 @@ static int seiko_panel_get_modes(struct drm_panel *panel,
+>  	return seiko_panel_get_fixed_modes(p, connector);
+>  }
+>
+> -static int seiko_panel_get_timings(struct drm_panel *panel,
+> -				    unsigned int num_timings,
+> -				    struct display_timing *timings)
+> -{
+> -	struct seiko_panel *p = to_seiko_panel(panel);
+> -	unsigned int i;
+> -
+> -	if (p->desc->num_timings < num_timings)
+> -		num_timings = p->desc->num_timings;
+> -
+> -	if (timings)
+> -		for (i = 0; i < num_timings; i++)
+> -			timings[i] = p->desc->timings[i];
+> -
+> -	return p->desc->num_timings;
+> -}
+> -
+>  static const struct drm_panel_funcs seiko_panel_funcs = {
+>  	.disable = seiko_panel_disable,
+>  	.unprepare = seiko_panel_unprepare,
+>  	.prepare = seiko_panel_prepare,
+>  	.enable = seiko_panel_enable,
+>  	.get_modes = seiko_panel_get_modes,
+> -	.get_timings = seiko_panel_get_timings,
+>  };
 
-> 
->  drivers/gpu/drm/bridge/analogix/analogix-anx6345.c |   2 +-
->  drivers/gpu/drm/bridge/analogix/analogix_dp_core.c |   2 +-
->  drivers/gpu/drm/bridge/panel.c                     |  18 +++-
->  drivers/gpu/drm/bridge/parade-ps8622.c             |   2 +-
->  drivers/gpu/drm/bridge/tc358764.c                  |   2 +-
->  drivers/gpu/drm/bridge/tc358767.c                  |   2 +-
->  drivers/gpu/drm/bridge/ti-sn65dsi86.c              |   2 +-
->  drivers/gpu/drm/drm_panel.c                        |  96 ++++++++++++++----
->  drivers/gpu/drm/exynos/exynos_drm_dpi.c            |   2 +-
->  drivers/gpu/drm/exynos/exynos_drm_dsi.c            |   2 +-
->  drivers/gpu/drm/fsl-dcu/fsl_dcu_drm_rgb.c          |   2 +-
->  drivers/gpu/drm/imx/imx-ldb.c                      |   2 +-
->  drivers/gpu/drm/imx/parallel-display.c             |   2 +-
->  drivers/gpu/drm/mediatek/mtk_dsi.c                 |   2 +-
->  .../gpu/drm/msm/disp/mdp4/mdp4_lvds_connector.c    |   2 +-
->  drivers/gpu/drm/msm/dsi/dsi_manager.c              |   2 +-
->  drivers/gpu/drm/mxsfb/mxsfb_out.c                  |   2 +-
->  drivers/gpu/drm/omapdrm/omap_connector.c           |   3 +-
->  drivers/gpu/drm/panel/panel-arm-versatile.c        |   6 +-
->  .../gpu/drm/panel/panel-feiyang-fy07024di26a30d.c  |  16 ++-
->  drivers/gpu/drm/panel/panel-ilitek-ili9322.c       |  20 ++--
->  drivers/gpu/drm/panel/panel-ilitek-ili9881c.c      |  29 ++----
->  drivers/gpu/drm/panel/panel-innolux-p079zca.c      |  45 +++------
->  drivers/gpu/drm/panel/panel-jdi-lt070me05000.c     |  11 ++-
->  drivers/gpu/drm/panel/panel-kingdisplay-kd097d04.c |  43 +++-----
->  drivers/gpu/drm/panel/panel-lg-lb035q02.c          |   6 +-
->  drivers/gpu/drm/panel/panel-lg-lg4573.c            |  12 +--
->  drivers/gpu/drm/panel/panel-lvds.c                 |  46 ++-------
->  drivers/gpu/drm/panel/panel-nec-nl8048hl11.c       |   6 +-
->  drivers/gpu/drm/panel/panel-novatek-nt39016.c      |   6 +-
->  drivers/gpu/drm/panel/panel-olimex-lcd-olinuxino.c |  27 ++---
->  drivers/gpu/drm/panel/panel-orisetech-otm8009a.c   |  11 ++-
->  drivers/gpu/drm/panel/panel-osd-osd101t2587-53ts.c |  37 +++----
->  .../gpu/drm/panel/panel-panasonic-vvx10f034n00.c   |  58 +++--------
->  .../gpu/drm/panel/panel-raspberrypi-touchscreen.c  |   9 +-
->  drivers/gpu/drm/panel/panel-raydium-rm67191.c      |   8 +-
->  drivers/gpu/drm/panel/panel-raydium-rm68200.c      |  26 +++--
->  drivers/gpu/drm/panel/panel-rocktech-jh057n00900.c |  35 +++----
->  drivers/gpu/drm/panel/panel-ronbo-rb070d30.c       |  31 ++----
->  drivers/gpu/drm/panel/panel-samsung-ld9040.c       |   4 +-
->  drivers/gpu/drm/panel/panel-samsung-s6d16d0.c      |   6 +-
->  drivers/gpu/drm/panel/panel-samsung-s6e3ha2.c      |   6 +-
->  drivers/gpu/drm/panel/panel-samsung-s6e63j0x03.c   |   6 +-
->  drivers/gpu/drm/panel/panel-samsung-s6e63m0.c      |   6 +-
->  drivers/gpu/drm/panel/panel-samsung-s6e8aa0.c      |   4 +-
->  drivers/gpu/drm/panel/panel-seiko-43wvf1g.c        |  72 +++-----------
->  drivers/gpu/drm/panel/panel-sharp-lq101r1sx01.c    |  34 +++----
->  drivers/gpu/drm/panel/panel-sharp-ls037v7dw01.c    |   6 +-
->  drivers/gpu/drm/panel/panel-sharp-ls043t1le01.c    |  33 +++----
->  drivers/gpu/drm/panel/panel-simple.c               | 110 ++++++---------------
->  drivers/gpu/drm/panel/panel-sitronix-st7701.c      |  23 ++---
->  drivers/gpu/drm/panel/panel-sitronix-st7789v.c     |  49 ++-------
->  drivers/gpu/drm/panel/panel-sony-acx565akm.c       |   6 +-
->  drivers/gpu/drm/panel/panel-tpo-td028ttec1.c       |  20 ++--
->  drivers/gpu/drm/panel/panel-tpo-td043mtea1.c       |   6 +-
->  drivers/gpu/drm/panel/panel-tpo-tpg110.c           |  26 ++---
->  drivers/gpu/drm/panel/panel-truly-nt35597.c        |   4 +-
->  drivers/gpu/drm/pl111/pl111_drv.c                  |   2 +-
->  drivers/gpu/drm/rcar-du/rcar_lvds.c                |   2 +-
->  drivers/gpu/drm/rockchip/rockchip_lvds.c           |   2 +-
->  drivers/gpu/drm/sti/sti_dvo.c                      |   2 +-
->  drivers/gpu/drm/sun4i/sun4i_lvds.c                 |   2 +-
->  drivers/gpu/drm/sun4i/sun4i_rgb.c                  |   2 +-
->  drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c             |   2 +-
->  drivers/gpu/drm/tegra/output.c                     |   2 +-
->  drivers/gpu/drm/tve200/tve200_drv.c                |   2 +-
->  include/drm/drm_bridge.h                           |   1 +
->  include/drm/drm_panel.h                            |  49 ++++-----
->  68 files changed, 460 insertions(+), 664 deletions(-)
+If anything, I think we should grow the usage of timings and / or make
+it usable by everyone.
 
--- 
-Regards,
+Using only the mode as we do currently has a bunch of shortcomings as
+almost no encoder will be able to provide the typical pixel clock, and
+that situation leads to multiple things:
 
-Laurent Pinchart
+  - If someone working on one encoder wants to upstream a panel they
+    have tested, chances are this will not be the typical pixel clock
+    / timings being used but rather the one that will match what that
+    SoC is capable of. Trouble comes when a second user comes in with
+    a different encoder and different capabilities, and then we have a
+    maintainance fight over which timing is the true timing (with a
+    significant chance that none of them are).
+
+  - If we can't match the pixel clock, we currently have no easy way
+    to make the usual measures of reducing / growing the porches and
+    blankings areas to match the pixel clock we can provide, since we
+    don't have an easy way to get the tolerance on those timings for a
+    given panel. There's some ad hoc solutions on some drivers (I
+    think vc4 has that?) to ignore the panel and just play around with
+    the timings, but I think this should be generalised.
+
+Timings solves the first case since we have the operating range now
+and not a single set of timings, and it solves the second since we can
+use that range to take those measures instead of taking a shot in the
+dark.
+
+I appreciate that it's pretty far from where we are today, but
+removing the get_timings means that all the timings already defined in
+the panel drivers are becoming useless too, and that eventually it
+will get removed.
+
+Maxime
+
+--mbec6vlpl4zotrv3
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXeYS8wAKCRDj7w1vZxhR
+xeBxAP9ee3FFwY4sVlAfBJhuRT34erKIih4z1areuTzVSIN+dQD/fzdVxhMZTPAY
+gvh8rpUVFlo152hrZ+11FZmcFestiwc=
+=ElRy
+-----END PGP SIGNATURE-----
+
+--mbec6vlpl4zotrv3--
+
+
+--===============1589207947972990935==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============1589207947972990935==--
+
