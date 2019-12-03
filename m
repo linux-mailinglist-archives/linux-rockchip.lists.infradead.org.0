@@ -2,62 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6166D10FA0A
-	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Dec 2019 09:40:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3323E10FCB4
+	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Dec 2019 12:48:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/WQiqBPgqrW2n4x/RvAe1ItmHEOSqcf6kg6g7NPODgw=; b=KmAkvE0IGQIKia
-	u5636U4fkxpMUk64lXg4kpXqD6K8lrSINjRnKP3NS/bnSgWPCr99zeU/aB3hU2r0ptxobee6iOe22
-	ANc2kzlhegHdR89GSukaQVPTQT2L80/OvBlkxUcOzsmQgFLjOZvB6kZ1TS18BnBgJ5N+pzoiZU9XP
-	RQY9PDE3TckjpML/5ysG5Fe00zGg6xVRf3RjrTmk1nTK5kRk0XTBe/9UiZObUEUmwV+/QiWEvhNXU
-	xX2Fz4cHGaAXmILwgeJokXWnbpPk/YnafGHMBGwFT6IDju1rUkwTxfsb7k/8j8wScaDxJ8wmQIbjV
-	FNuprAdWwotrvlm6EtYA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PghR+jjQZ0smf6xkNHBg7Ii+szg2uQ0V5aqAKsn8g6U=; b=l3z0UTEcg82BeH
+	EoxFLm1lweIlZK9tr3qfmSdy9siN9/KzZvgXqzobUHShRwDulm8v9Y4DWQYx1Jf34FKWj6X8FoUZV
+	/DfeY/94SpAACH1PGUsNvPZY/AeQd/xkwihI6J8G0XMXDg4mG7Gy9wh7N140yt3YOYZpgMiQCkCHr
+	6kgZeFhmfAiC8sVyd7E2l9lCu372dfzEfV4RizxRYDCnk8TuJQ4tWfmuV6tONXyUa5cVu8clgWzWW
+	S+9vUHkZ7H+xiJbwq41iR85lJz1x4yLWYnABrUZi/it4bHxYc514Oq+FnLJ3Y6hl0toseMterYllZ
+	9K29EzrkPM1Wv/P4ChFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic3iw-0003cR-UO; Tue, 03 Dec 2019 08:39:58 +0000
-Received: from asavdk4.altibox.net ([109.247.116.15])
+	id 1ic6fW-0001Pq-G1; Tue, 03 Dec 2019 11:48:38 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic3ie-0003SH-QM; Tue, 03 Dec 2019 08:39:45 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk4.altibox.net (Postfix) with ESMTPS id 5E20E80477;
- Tue,  3 Dec 2019 09:39:37 +0100 (CET)
-Date: Tue, 3 Dec 2019 09:39:36 +0100
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Maxime Ripard <mripard@kernel.org>
-Subject: Re: [PATCH v1 07/26] drm/panel: remove get_timings
-Message-ID: <20191203083935.GB30687@ravnborg.org>
-References: <20191202193230.21310-1-sam@ravnborg.org>
- <20191202193230.21310-8-sam@ravnborg.org>
- <20191203074659.ilsyv4yx7pzw5vax@gilmour.lan>
+ id 1ic6en-0000lW-55; Tue, 03 Dec 2019 11:47:55 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 6C137B183;
+ Tue,  3 Dec 2019 11:47:49 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: andrew.murray@arm.com,
+	maz@kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v4 0/8] Raspberry Pi 4 PCIe support
+Date: Tue,  3 Dec 2019 12:47:33 +0100
+Message-Id: <20191203114743.1294-1-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191203074659.ilsyv4yx7pzw5vax@gilmour.lan>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=VcLZwmh9 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=7gkXJVJtAAAA:8
- a=pGLkceISAAAA:8 a=P1BnusSwAAAA:8 a=QyXUC8HyAAAA:8 a=VwQbUJbxAAAA:8
- a=-nbbn2pJxVWvY7Vi8LwA:9 a=Vfx8YJUf9hFrv8O-:21 a=HM9-6MrTAUSx7c7w:21
- a=CjuIK1q_8ugA:10 a=E9Po1WZjFZOl8hwRPBS3:22 a=D0XLA9XvdZm18NrgonBM:22
- a=AjGcO6oz07-iQ99wixmX:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_003941_216206_895D252C 
-X-CRM114-Status: GOOD (  29.73  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191203_034753_489942_6CA8CE7C 
+X-CRM114-Status: GOOD (  15.30  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.15 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -71,124 +59,122 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
- Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Tomi Valkeinen <tomi.valkeinen@ti.com>, NXP Linux Team <linux-imx@nxp.com>,
- Jagan Teki <jagan@amarulasolutions.com>, Jitao Shi <jitao.shi@mediatek.com>,
- Daniel Vetter <daniel@ffwll.ch>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Abhinav Kumar <abhinavk@codeaurora.org>, linux-mediatek@lists.infradead.org,
- Stefan Agner <stefan@agner.ch>, linux-tegra@vger.kernel.org,
- Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
- Purism Kernel Team <kernel@puri.sm>, linux-renesas-soc@vger.kernel.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>
+Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-nfs@vger.kernel.org, f.fainelli@gmail.com,
+ linux-rockchip@lists.infradead.org, linux-rdma@vger.kernel.org,
+ linux-pci@vger.kernel.org, phil@raspberrypi.org, jeremy.linton@arm.com,
+ kexec@lists.infradead.org, linux-acpi@vger.kernel.org,
+ iommu@lists.linux-foundation.org, mbrugger@suse.com,
+ bcm-kernel-feedback-list@broadcom.com, wahrenst@gmx.net,
+ james.quinlan@broadcom.com, netdev@vger.kernel.org,
+ Robin Murphy <robin.murphy@arm.com>, linux-clk@vger.kernel.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Maxime.
+This series aims at providing support for Raspberry Pi 4's PCIe
+controller, which is also shared with the Broadcom STB family of
+devices.
 
-On Tue, Dec 03, 2019 at 08:46:59AM +0100, Maxime Ripard wrote:
-> Hi,
-> 
-> On Mon, Dec 02, 2019 at 08:32:11PM +0100, Sam Ravnborg wrote:
-> > There was no users - so remove it.
-> > The callback was implemented in two drivers - deleted.
-> >
-> > Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
-> > Cc: Thierry Reding <thierry.reding@gmail.com>
-> > Cc: Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
-> > Cc: Sam Ravnborg <sam@ravnborg.org>
-> > Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
-> > Cc: Maxime Ripard <mripard@kernel.org>
-> > Cc: David Airlie <airlied@linux.ie>
-> > Cc: Daniel Vetter <daniel@ffwll.ch>
-> > ---
-> >  drivers/gpu/drm/panel/panel-seiko-43wvf1g.c | 18 ------------------
-> >  drivers/gpu/drm/panel/panel-simple.c        | 18 ------------------
-> >  include/drm/drm_panel.h                     |  9 ---------
-> >  3 files changed, 45 deletions(-)
-> >
-> > diff --git a/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c b/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c
-> > index b878930b17e4..3bcba64235c4 100644
-> > --- a/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c
-> > +++ b/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c
-> > @@ -217,30 +217,12 @@ static int seiko_panel_get_modes(struct drm_panel *panel,
-> >  	return seiko_panel_get_fixed_modes(p, connector);
-> >  }
-> >
-> > -static int seiko_panel_get_timings(struct drm_panel *panel,
-> > -				    unsigned int num_timings,
-> > -				    struct display_timing *timings)
-> > -{
-> > -	struct seiko_panel *p = to_seiko_panel(panel);
-> > -	unsigned int i;
-> > -
-> > -	if (p->desc->num_timings < num_timings)
-> > -		num_timings = p->desc->num_timings;
-> > -
-> > -	if (timings)
-> > -		for (i = 0; i < num_timings; i++)
-> > -			timings[i] = p->desc->timings[i];
-> > -
-> > -	return p->desc->num_timings;
-> > -}
-> > -
-> >  static const struct drm_panel_funcs seiko_panel_funcs = {
-> >  	.disable = seiko_panel_disable,
-> >  	.unprepare = seiko_panel_unprepare,
-> >  	.prepare = seiko_panel_prepare,
-> >  	.enable = seiko_panel_enable,
-> >  	.get_modes = seiko_panel_get_modes,
-> > -	.get_timings = seiko_panel_get_timings,
-> >  };
-> 
-> If anything, I think we should grow the usage of timings and / or make
-> it usable by everyone.
-> 
-> Using only the mode as we do currently has a bunch of shortcomings as
-> almost no encoder will be able to provide the typical pixel clock, and
-> that situation leads to multiple things:
-> 
->   - If someone working on one encoder wants to upstream a panel they
->     have tested, chances are this will not be the typical pixel clock
->     / timings being used but rather the one that will match what that
->     SoC is capable of. Trouble comes when a second user comes in with
->     a different encoder and different capabilities, and then we have a
->     maintainance fight over which timing is the true timing (with a
->     significant chance that none of them are).
-> 
->   - If we can't match the pixel clock, we currently have no easy way
->     to make the usual measures of reducing / growing the porches and
->     blankings areas to match the pixel clock we can provide, since we
->     don't have an easy way to get the tolerance on those timings for a
->     given panel. There's some ad hoc solutions on some drivers (I
->     think vc4 has that?) to ignore the panel and just play around with
->     the timings, but I think this should be generalised.
-> 
-> Timings solves the first case since we have the operating range now
-> and not a single set of timings, and it solves the second since we can
-> use that range to take those measures instead of taking a shot in the
-> dark.
-> 
-> I appreciate that it's pretty far from where we are today, but
-> removing the get_timings means that all the timings already defined in
-> the panel drivers are becoming useless too, and that eventually it
-> will get removed.
+There was a previous attempt to upstream this some years ago[1] but was
+blocked as most STB PCIe integrations have a sparse DMA mapping[2] which
+is something currently not supported by the kernel.  Luckily this is not
+the case for the Raspberry Pi 4.
 
-Thanks for this nice explanation. I will drop the patch,
-and add an entry to my TODO list to look closer at this later.
-There are things to improve in this area.
+Note that the driver code is to be based on top of Rob Herring's series
+simplifying inbound and outbound range parsing.
 
-So the conclusion is more work rather than removing code :-)
+[1] https://patchwork.kernel.org/cover/10605933/
+[2] https://patchwork.kernel.org/patch/10605957/
 
-	Sam
+---
+
+Changes since v3:
+  - Moved all the log2.h related changes at the end of the series, as I
+    presume they will be contentious and I don't want the PCIe patches
+    to depend on them. Ultimately I think I'll respin them on their own
+    series but wanted to keep them in for this submission just for the
+    sake of continuity.
+  - Addressed small nits here and there.
+
+Changes since v2:
+  - Redo register access in driver avoiding indirection while keeping
+    the naming intact
+  - Add patch editing ARM64's config
+  - Last MSI cleanups, notably removing MSIX flag
+  - Got rid of all _RB writes
+  - Got rid of all of_data
+  - Overall churn removal
+  - Address the rest of Andrew's comments
+
+Changes since v1:
+  - add generic rounddown/roundup_pow_two64() patch
+  - Add MAINTAINERS patch
+  - Fix Kconfig
+  - Cleanup probe, use up to date APIs, exit on MSI failure
+  - Get rid of linux,pci-domain and other unused constructs
+  - Use edge triggered setup for MSI
+  - Cleanup MSI implementation
+  - Fix multiple cosmetic issues
+  - Remove supend/resume code
+
+Jim Quinlan (3):
+  dt-bindings: PCI: Add bindings for brcmstb's PCIe device
+  PCI: brcmstb: Add Broadcom STB PCIe host controller driver
+  PCI: brcmstb: Add MSI support
+
+Nicolas Saenz Julienne (5):
+  ARM: dts: bcm2711: Enable PCIe controller
+  MAINTAINERS: Add brcmstb PCIe controller
+  arm64: defconfig: Enable Broadcom's STB PCIe controller
+  linux/log2.h: Fix 64bit calculations in roundup/down_pow_two()
+  linux/log2.h: Use roundup/dow_pow_two() on 64bit calculations
+
+ .../bindings/pci/brcm,stb-pcie.yaml           |   97 ++
+ MAINTAINERS                                   |    4 +
+ arch/arm/boot/dts/bcm2711.dtsi                |   37 +
+ arch/arm64/configs/defconfig                  |    1 +
+ drivers/acpi/arm64/iort.c                     |    2 +-
+ drivers/clk/clk-divider.c                     |    8 +-
+ drivers/clk/sunxi/clk-sunxi.c                 |    2 +-
+ drivers/infiniband/hw/hfi1/chip.c             |    4 +-
+ drivers/infiniband/hw/hfi1/init.c             |    4 +-
+ drivers/infiniband/hw/mlx4/srq.c              |    2 +-
+ drivers/infiniband/hw/mthca/mthca_srq.c       |    2 +-
+ drivers/infiniband/sw/rxe/rxe_qp.c            |    4 +-
+ drivers/iommu/intel-iommu.c                   |    4 +-
+ drivers/iommu/intel-svm.c                     |    4 +-
+ drivers/iommu/intel_irq_remapping.c           |    2 +-
+ drivers/net/ethernet/amd/xgbe/xgbe-ethtool.c  |    4 +-
+ drivers/net/ethernet/marvell/sky2.c           |    2 +-
+ drivers/net/ethernet/mellanox/mlx4/en_clock.c |    3 +-
+ drivers/net/ethernet/rocker/rocker_hw.h       |    4 +-
+ drivers/net/ethernet/sfc/ef10.c               |    2 +-
+ drivers/net/ethernet/sfc/efx.h                |    2 +-
+ drivers/net/ethernet/sfc/falcon/efx.h         |    2 +-
+ drivers/of/device.c                           |    3 +-
+ drivers/pci/controller/Kconfig                |    9 +
+ drivers/pci/controller/Makefile               |    1 +
+ .../pci/controller/cadence/pcie-cadence-ep.c  |    3 +-
+ drivers/pci/controller/cadence/pcie-cadence.c |    3 +-
+ drivers/pci/controller/pcie-brcmstb.c         | 1008 +++++++++++++++++
+ drivers/pci/controller/pcie-rockchip-ep.c     |    5 +-
+ drivers/pci/msi.c                             |    2 +-
+ include/linux/log2.h                          |   44 +-
+ kernel/dma/direct.c                           |    2 +-
+ kernel/kexec_core.c                           |    3 +-
+ lib/rhashtable.c                              |    2 +-
+ net/sunrpc/xprtrdma/verbs.c                   |    2 +-
+ 35 files changed, 1211 insertions(+), 72 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
+ create mode 100644 drivers/pci/controller/pcie-brcmstb.c
+
+-- 
+2.24.0
+
 
 _______________________________________________
 Linux-rockchip mailing list
