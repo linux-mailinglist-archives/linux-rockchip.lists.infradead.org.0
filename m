@@ -2,77 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76E7F11019D
-	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Dec 2019 16:54:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 889741101D3
+	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Dec 2019 17:07:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o3nlGFglI77uq8alcFzImeTRsAxehI344uang6h3x4w=; b=r87+SEM/1Ajgng
-	VV4dpU+Hj8P9J+r0rCxV2Pxd9UwL357tD+RR7lOQnZ3O4ZNQ/5f3VO/LKfZluqt6rw60sA63Fa0EB
-	lif6ckEBUbo6wfHndscvt7CAxEhHCMqT58fNAibWNYSHkwPv0h9usq9bw45/w0ONTHV0V56cfDKIt
-	xt5nFB6LHxTuDaXdi3Ji61yypX8k6WLsp8soiHuKXWrGv16PnqeKQVLi1ox1ZQKmpV0osi9wKf/5H
-	l1cZy69h4eGi606EekHl9dqWDIp8S0FQpJLG2MAVq8y4jB+qRCZCzdLE6JgcJ69kfO7kNAytuA8wC
-	tAfI7150PymKt6cDPVgg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=YSDI2PRIOTphhR+uYB4M7uJ5zq9+WmrKoHTNjBfdDl4=; b=tIFmD/bnQxqu65+YbdoRRtDVE
+	8pLOyM7fy9YuQ3BV8lzKtiu/B8g/EjbZf2sJuhPlsriv0dWS8hgWLrj1jzFwsHzSirhqNLhznJKk1
+	199f15hrX3+XRoQmGgao1XVh081XcSJO1QItrtbDv4WkWUNpdP8zDKVHG9AH4iH+hDCJCx3kAtDsQ
+	Xlf8csjlQ0MycxGMKnLRKvt8LHAeZMiQfOzWEAHxcxsXqn64KlS3MzODdJXILBo3qFst71TXA8mjc
+	xr4e92YfqmNS1QbnUjWidsaOWndXmWZV9dLJ0v9NwkH6ENFqwC21X8BReycOZvhemNLbwNhjZOKqX
+	wyhR7qZDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icAUW-00025y-Qt; Tue, 03 Dec 2019 15:53:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1icAhb-0008KO-Rd; Tue, 03 Dec 2019 16:07:03 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icAUK-0001vC-IQ; Tue, 03 Dec 2019 15:53:21 +0000
-Received: from mail-qv1-f43.google.com (mail-qv1-f43.google.com
- [209.85.219.43])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 069D32080F;
- Tue,  3 Dec 2019 15:53:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575388400;
- bh=cKUlQJxyEbNNE534SxNpTQSfjp4RJhfRU1TUcm+QH08=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Nm1H73YFEpWiEJ7OcGsNEJd3BOuiFHQOpmau/UXVgeM0A3bJ4zEmI/hHgl2R62C1y
- Ms62vpk7yOnX3u1BuWQss6CwRWnVQXsDzid8yYPpfAB1VJO4Tgm8AGk7nzJRGSJKld
- i6dHTj8CNyyW9bPfXgUO/tMXqTZtxcPv3D8aWTdQ=
-Received: by mail-qv1-f43.google.com with SMTP id b18so1714222qvy.3;
- Tue, 03 Dec 2019 07:53:19 -0800 (PST)
-X-Gm-Message-State: APjAAAUmezBDTOoR0W5yXJEPvwxFYWaQu6isDtHodv7q7MkNyIk9mlyX
- V3Bb2JA7lrrGZa21toBkwth7Lt94c8lUpvTE0Q==
-X-Google-Smtp-Source: APXvYqyICjW3HYnUPFqTgR4rEp2A1uuQE3BOephqhDMI2H3gFhNk2aTw/xPKbNHQEIKUpgOnuSfcOdrza+JvE1yn/H8=
-X-Received: by 2002:ad4:450a:: with SMTP id k10mr5459306qvu.136.1575388397912; 
- Tue, 03 Dec 2019 07:53:17 -0800 (PST)
-MIME-Version: 1.0
-References: <20191203114743.1294-1-nsaenzjulienne@suse.de>
- <20191203114743.1294-9-nsaenzjulienne@suse.de>
-In-Reply-To: <20191203114743.1294-9-nsaenzjulienne@suse.de>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 3 Dec 2019 09:53:05 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLMCXdnZag3jihV_dzuR+wFaVKFb7q_PdKTxTg0LVA6cw@mail.gmail.com>
-Message-ID: <CAL_JsqLMCXdnZag3jihV_dzuR+wFaVKFb7q_PdKTxTg0LVA6cw@mail.gmail.com>
+ id 1icAhN-0008D8-R6; Tue, 03 Dec 2019 16:06:56 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id AD9186A2F7;
+ Tue,  3 Dec 2019 16:06:47 +0000 (UTC)
+Message-ID: <d1c87c83f38e74f0c6b0692248fe88dfd2bdec3e.camel@suse.de>
 Subject: Re: [PATCH v4 8/8] linux/log2.h: Use roundup/dow_pow_two() on 64bit
  calculations
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Rob Herring <robh+dt@kernel.org>
+Date: Tue, 03 Dec 2019 17:06:43 +0100
+In-Reply-To: <CAL_JsqLMCXdnZag3jihV_dzuR+wFaVKFb7q_PdKTxTg0LVA6cw@mail.gmail.com>
+References: <20191203114743.1294-1-nsaenzjulienne@suse.de>
+ <20191203114743.1294-9-nsaenzjulienne@suse.de>
+ <CAL_JsqLMCXdnZag3jihV_dzuR+wFaVKFb7q_PdKTxTg0LVA6cw@mail.gmail.com>
+User-Agent: Evolution 3.34.1 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_075320_652690_CEA4144B 
-X-CRM114-Status: GOOD (  12.26  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191203_080652_002580_030767FC 
+X-CRM114-Status: GOOD (  12.19  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,11 +73,13 @@ Cc: Heiko Stuebner <heiko@sntech.de>, PCI <linux-pci@vger.kernel.org>,
  "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
  <bcm-kernel-feedback-list@broadcom.com>, Len Brown <lenb@kernel.org>,
  devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- "moderated list:BROADCOM BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Matthias Brugger <mbrugger@suse.com>,
- netdev <netdev@vger.kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ "moderated list:BROADCOM BCM2835 ARM
+ ARCHITECTURE" <linux-rpi-kernel@lists.infradead.org>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM
+ ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
+ Matthias Brugger <mbrugger@suse.com>, netdev <netdev@vger.kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  Jeremy Linton <jeremy.linton@arm.com>,
  Linux IOMMU <iommu@lists.linux-foundation.org>,
@@ -108,37 +87,93 @@ Cc: Heiko Stuebner <heiko@sntech.de>, PCI <linux-pci@vger.kernel.org>,
  Sudeep Holla <sudeep.holla@arm.com>, Andrew Murray <andrew.murray@arm.com>,
  Robin Murphy <robin.murphy@arm.com>, "David S. Miller" <davem@davemloft.net>,
  Tariq Toukan <tariqt@mellanox.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0954460006094564949=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Dec 3, 2019 at 5:48 AM Nicolas Saenz Julienne
-<nsaenzjulienne@suse.de> wrote:
->
-> The function now is safe to use while expecting a 64bit value. Use it
-> where relevant.
 
-What was wrong with the existing code? This is missing some context.
+--===============0954460006094564949==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-VHC+bPmpbRjqhnK2ykxw"
 
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> ---
->  drivers/acpi/arm64/iort.c                        | 2 +-
->  drivers/net/ethernet/mellanox/mlx4/en_clock.c    | 3 ++-
->  drivers/of/device.c                              | 3 ++-
 
-In any case,
+--=-VHC+bPmpbRjqhnK2ykxw
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-Acked-by: Rob Herring <robh@kernel.org>
+Hi Rob,
 
->  drivers/pci/controller/cadence/pcie-cadence-ep.c | 3 ++-
->  drivers/pci/controller/cadence/pcie-cadence.c    | 3 ++-
->  drivers/pci/controller/pcie-brcmstb.c            | 3 ++-
->  drivers/pci/controller/pcie-rockchip-ep.c        | 5 +++--
->  kernel/dma/direct.c                              | 2 +-
->  8 files changed, 15 insertions(+), 9 deletions(-)
+On Tue, 2019-12-03 at 09:53 -0600, Rob Herring wrote:
+> On Tue, Dec 3, 2019 at 5:48 AM Nicolas Saenz Julienne
+> <nsaenzjulienne@suse.de> wrote:
+> > The function now is safe to use while expecting a 64bit value. Use it
+> > where relevant.
+>=20
+> What was wrong with the existing code? This is missing some context.
+
+You're right, I'll update it.
+
+For most of files changed the benefit here is factoring out a common patter=
+n
+using the standard function roundup/down_pow_two() which now provides corre=
+ct
+64bit results.
+
+As for of/device.c and arm64/iort.c it's more of a readability enhancement.=
+ I
+consider it's easier to understand than the current calculation as it abstr=
+acts
+the math.
+
+> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> > ---
+> >  drivers/acpi/arm64/iort.c                        | 2 +-
+> >  drivers/net/ethernet/mellanox/mlx4/en_clock.c    | 3 ++-
+> >  drivers/of/device.c                              | 3 ++-
+>=20
+> In any case,
+>=20
+> Acked-by: Rob Herring <robh@kernel.org>
+>=20
+
+Thanks!
+
+Regards,
+Nicolas
+
+
+--=-VHC+bPmpbRjqhnK2ykxw
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3miBMACgkQlfZmHno8
+x/5s+Af/a2icSd66GHrsABoMtUfJXpQclSae81ThRP5Bfx6+mK4Ty4en3T+IxOK+
+NPmneod0gjSfyqqQniFbEcmlKAd8wXyUnBCCi6urRvuqOWcw65h10DA3fQCivaOt
+NWn3FRWMlPZbBIAYr/XOcsdOOkbD+VaFE/PaBYmxU/rWaCLGMWpYYBhF/Vcm+ASd
+VPQ4g8AfxyGvQW9EgbmRTMC0k7kMP6qrpmgIjNWvUPyJ+8ytD2Zly2xvbVf9TqhX
+/PP/t19fWayTqhsg+B04K0aN0oriRqSFX44yvCOApKhLBSsF6Nyc40m2sreqKMYY
+98kwrOrux/Fb3OeV/Wzdhhh8VhH+Sg==
+=4wmf
+-----END PGP SIGNATURE-----
+
+--=-VHC+bPmpbRjqhnK2ykxw--
+
+
+
+--===============0954460006094564949==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============0954460006094564949==--
+
+
