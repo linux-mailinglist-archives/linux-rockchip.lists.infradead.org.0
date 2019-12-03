@@ -2,42 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3323E10FCB4
-	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Dec 2019 12:48:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D53F10FCD7
+	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Dec 2019 12:50:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=PghR+jjQZ0smf6xkNHBg7Ii+szg2uQ0V5aqAKsn8g6U=; b=l3z0UTEcg82BeH
-	EoxFLm1lweIlZK9tr3qfmSdy9siN9/KzZvgXqzobUHShRwDulm8v9Y4DWQYx1Jf34FKWj6X8FoUZV
-	/DfeY/94SpAACH1PGUsNvPZY/AeQd/xkwihI6J8G0XMXDg4mG7Gy9wh7N140yt3YOYZpgMiQCkCHr
-	6kgZeFhmfAiC8sVyd7E2l9lCu372dfzEfV4RizxRYDCnk8TuJQ4tWfmuV6tONXyUa5cVu8clgWzWW
-	S+9vUHkZ7H+xiJbwq41iR85lJz1x4yLWYnABrUZi/it4bHxYc514Oq+FnLJ3Y6hl0toseMterYllZ
-	9K29EzrkPM1Wv/P4ChFw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yWPhwvQQNXCrtngFxQAI95VVea69RReFpeRp21l6phQ=; b=VpDcSP8NKG9VOx
+	i1NeKfOonlnmaPAaApxprjfB6OzuA9ZwMMj8e9Rp42418YvXJ8D/cD8nSgm2uiSKTXg2pNqodVhdl
+	j0gzhe0Midqo7/QQd3ZxIp6AskCpOMuFmuVh+rHJlDR9PZvSofoi4eF4ta3GTJSBzLWELPBvpy5a2
+	eakDIIioeNt9zwlnBYJQ5ObtIcC111PxUx4zBGGW1Ll39N8M8SQK3LL8KcdErtTO+B3cvY+qY5deO
+	BnosWJj95xsAqhDQnwswGFGfTEOk6qMbxfYyGZCXjUs2wVUFpc0/9uHnXyjTHPHg6Wb25wxB7zA1I
+	PniRBs1NSKTHBFlBfOhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic6fW-0001Pq-G1; Tue, 03 Dec 2019 11:48:38 +0000
+	id 1ic6gr-0002rL-3P; Tue, 03 Dec 2019 11:50:01 +0000
 Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic6en-0000lW-55; Tue, 03 Dec 2019 11:47:55 +0000
+ id 1ic6ez-0000vS-1z; Tue, 03 Dec 2019 11:48:08 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 6C137B183;
- Tue,  3 Dec 2019 11:47:49 +0000 (UTC)
+ by mx1.suse.de (Postfix) with ESMTP id 523B6AF93;
+ Tue,  3 Dec 2019 11:48:03 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: andrew.murray@arm.com,
-	maz@kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v4 0/8] Raspberry Pi 4 PCIe support
-Date: Tue,  3 Dec 2019 12:47:33 +0100
-Message-Id: <20191203114743.1294-1-nsaenzjulienne@suse.de>
+To: andrew.murray@arm.com, maz@kernel.org, linux-kernel@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Hanjun Guo <guohanjun@huawei.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ Tariq Toukan <tariqt@mellanox.com>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ bcm-kernel-feedback-list@broadcom.com, Eric Anholt <eric@anholt.net>,
+ Stefan Wahren <wahrenst@gmx.net>, Shawn Lin <shawn.lin@rock-chips.com>,
+ Heiko Stuebner <heiko@sntech.de>, Christoph Hellwig <hch@lst.de>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Robin Murphy <robin.murphy@arm.com>
+Subject: [PATCH v4 8/8] linux/log2.h: Use roundup/dow_pow_two() on 64bit
+ calculations
+Date: Tue,  3 Dec 2019 12:47:41 +0100
+Message-Id: <20191203114743.1294-9-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191203114743.1294-1-nsaenzjulienne@suse.de>
+References: <20191203114743.1294-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_034753_489942_6CA8CE7C 
-X-CRM114-Status: GOOD (  15.30  )
+X-CRM114-CacheID: sfid-20191203_034805_570753_8A2C30E4 
+X-CRM114-Status: GOOD (  15.85  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -59,119 +70,189 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-nfs@vger.kernel.org, f.fainelli@gmail.com,
- linux-rockchip@lists.infradead.org, linux-rdma@vger.kernel.org,
+Cc: linux-arm-kernel@lists.infradead.org,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, mbrugger@suse.com,
+ devicetree@vger.kernel.org, linux-rdma@vger.kernel.org,
  linux-pci@vger.kernel.org, phil@raspberrypi.org, jeremy.linton@arm.com,
- kexec@lists.infradead.org, linux-acpi@vger.kernel.org,
- iommu@lists.linux-foundation.org, mbrugger@suse.com,
- bcm-kernel-feedback-list@broadcom.com, wahrenst@gmx.net,
- james.quinlan@broadcom.com, netdev@vger.kernel.org,
- Robin Murphy <robin.murphy@arm.com>, linux-clk@vger.kernel.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-rpi-kernel@lists.infradead.org
+ linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org,
+ linux-rpi-kernel@lists.infradead.org, james.quinlan@broadcom.com,
+ netdev@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
+ linux-rockchip@lists.infradead.org, "David S. Miller" <davem@davemloft.net>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, Len Brown <lenb@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This series aims at providing support for Raspberry Pi 4's PCIe
-controller, which is also shared with the Broadcom STB family of
-devices.
+The function now is safe to use while expecting a 64bit value. Use it
+where relevant.
 
-There was a previous attempt to upstream this some years ago[1] but was
-blocked as most STB PCIe integrations have a sparse DMA mapping[2] which
-is something currently not supported by the kernel.  Luckily this is not
-the case for the Raspberry Pi 4.
-
-Note that the driver code is to be based on top of Rob Herring's series
-simplifying inbound and outbound range parsing.
-
-[1] https://patchwork.kernel.org/cover/10605933/
-[2] https://patchwork.kernel.org/patch/10605957/
-
+Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
+ drivers/acpi/arm64/iort.c                        | 2 +-
+ drivers/net/ethernet/mellanox/mlx4/en_clock.c    | 3 ++-
+ drivers/of/device.c                              | 3 ++-
+ drivers/pci/controller/cadence/pcie-cadence-ep.c | 3 ++-
+ drivers/pci/controller/cadence/pcie-cadence.c    | 3 ++-
+ drivers/pci/controller/pcie-brcmstb.c            | 3 ++-
+ drivers/pci/controller/pcie-rockchip-ep.c        | 5 +++--
+ kernel/dma/direct.c                              | 2 +-
+ 8 files changed, 15 insertions(+), 9 deletions(-)
 
-Changes since v3:
-  - Moved all the log2.h related changes at the end of the series, as I
-    presume they will be contentious and I don't want the PCIe patches
-    to depend on them. Ultimately I think I'll respin them on their own
-    series but wanted to keep them in for this submission just for the
-    sake of continuity.
-  - Addressed small nits here and there.
-
-Changes since v2:
-  - Redo register access in driver avoiding indirection while keeping
-    the naming intact
-  - Add patch editing ARM64's config
-  - Last MSI cleanups, notably removing MSIX flag
-  - Got rid of all _RB writes
-  - Got rid of all of_data
-  - Overall churn removal
-  - Address the rest of Andrew's comments
-
-Changes since v1:
-  - add generic rounddown/roundup_pow_two64() patch
-  - Add MAINTAINERS patch
-  - Fix Kconfig
-  - Cleanup probe, use up to date APIs, exit on MSI failure
-  - Get rid of linux,pci-domain and other unused constructs
-  - Use edge triggered setup for MSI
-  - Cleanup MSI implementation
-  - Fix multiple cosmetic issues
-  - Remove supend/resume code
-
-Jim Quinlan (3):
-  dt-bindings: PCI: Add bindings for brcmstb's PCIe device
-  PCI: brcmstb: Add Broadcom STB PCIe host controller driver
-  PCI: brcmstb: Add MSI support
-
-Nicolas Saenz Julienne (5):
-  ARM: dts: bcm2711: Enable PCIe controller
-  MAINTAINERS: Add brcmstb PCIe controller
-  arm64: defconfig: Enable Broadcom's STB PCIe controller
-  linux/log2.h: Fix 64bit calculations in roundup/down_pow_two()
-  linux/log2.h: Use roundup/dow_pow_two() on 64bit calculations
-
- .../bindings/pci/brcm,stb-pcie.yaml           |   97 ++
- MAINTAINERS                                   |    4 +
- arch/arm/boot/dts/bcm2711.dtsi                |   37 +
- arch/arm64/configs/defconfig                  |    1 +
- drivers/acpi/arm64/iort.c                     |    2 +-
- drivers/clk/clk-divider.c                     |    8 +-
- drivers/clk/sunxi/clk-sunxi.c                 |    2 +-
- drivers/infiniband/hw/hfi1/chip.c             |    4 +-
- drivers/infiniband/hw/hfi1/init.c             |    4 +-
- drivers/infiniband/hw/mlx4/srq.c              |    2 +-
- drivers/infiniband/hw/mthca/mthca_srq.c       |    2 +-
- drivers/infiniband/sw/rxe/rxe_qp.c            |    4 +-
- drivers/iommu/intel-iommu.c                   |    4 +-
- drivers/iommu/intel-svm.c                     |    4 +-
- drivers/iommu/intel_irq_remapping.c           |    2 +-
- drivers/net/ethernet/amd/xgbe/xgbe-ethtool.c  |    4 +-
- drivers/net/ethernet/marvell/sky2.c           |    2 +-
- drivers/net/ethernet/mellanox/mlx4/en_clock.c |    3 +-
- drivers/net/ethernet/rocker/rocker_hw.h       |    4 +-
- drivers/net/ethernet/sfc/ef10.c               |    2 +-
- drivers/net/ethernet/sfc/efx.h                |    2 +-
- drivers/net/ethernet/sfc/falcon/efx.h         |    2 +-
- drivers/of/device.c                           |    3 +-
- drivers/pci/controller/Kconfig                |    9 +
- drivers/pci/controller/Makefile               |    1 +
- .../pci/controller/cadence/pcie-cadence-ep.c  |    3 +-
- drivers/pci/controller/cadence/pcie-cadence.c |    3 +-
- drivers/pci/controller/pcie-brcmstb.c         | 1008 +++++++++++++++++
- drivers/pci/controller/pcie-rockchip-ep.c     |    5 +-
- drivers/pci/msi.c                             |    2 +-
- include/linux/log2.h                          |   44 +-
- kernel/dma/direct.c                           |    2 +-
- kernel/kexec_core.c                           |    3 +-
- lib/rhashtable.c                              |    2 +-
- net/sunrpc/xprtrdma/verbs.c                   |    2 +-
- 35 files changed, 1211 insertions(+), 72 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
- create mode 100644 drivers/pci/controller/pcie-brcmstb.c
-
+diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+index 33f71983e001..9950c9757092 100644
+--- a/drivers/acpi/arm64/iort.c
++++ b/drivers/acpi/arm64/iort.c
+@@ -1090,7 +1090,7 @@ void iort_dma_setup(struct device *dev, u64 *dma_addr, u64 *dma_size)
+ 		 * firmware.
+ 		 */
+ 		end = dmaaddr + size - 1;
+-		mask = DMA_BIT_MASK(ilog2(end) + 1);
++		mask = roundup_pow_of_two(end) - 1;
+ 		dev->bus_dma_limit = end;
+ 		dev->coherent_dma_mask = mask;
+ 		*dev->dma_mask = mask;
+diff --git a/drivers/net/ethernet/mellanox/mlx4/en_clock.c b/drivers/net/ethernet/mellanox/mlx4/en_clock.c
+index 024788549c25..23dcb18224d4 100644
+--- a/drivers/net/ethernet/mellanox/mlx4/en_clock.c
++++ b/drivers/net/ethernet/mellanox/mlx4/en_clock.c
+@@ -33,6 +33,7 @@
+ 
+ #include <linux/mlx4/device.h>
+ #include <linux/clocksource.h>
++#include <linux/log2.h>
+ 
+ #include "mlx4_en.h"
+ 
+@@ -252,7 +253,7 @@ static u32 freq_to_shift(u16 freq)
+ {
+ 	u32 freq_khz = freq * 1000;
+ 	u64 max_val_cycles = freq_khz * 1000 * MLX4_EN_WRAP_AROUND_SEC;
+-	u64 max_val_cycles_rounded = 1ULL << fls64(max_val_cycles - 1);
++	u64 max_val_cycles_rounded = roundup_pow_of_two(max_val_cycles);
+ 	/* calculate max possible multiplier in order to fit in 64bit */
+ 	u64 max_mul = div64_u64(ULLONG_MAX, max_val_cycles_rounded);
+ 
+diff --git a/drivers/of/device.c b/drivers/of/device.c
+index e9127db7b067..7259922d2078 100644
+--- a/drivers/of/device.c
++++ b/drivers/of/device.c
+@@ -11,6 +11,7 @@
+ #include <linux/mod_devicetable.h>
+ #include <linux/slab.h>
+ #include <linux/platform_device.h>
++#include <linux/log2.h>
+ 
+ #include <asm/errno.h>
+ #include "of_private.h"
+@@ -149,7 +150,7 @@ int of_dma_configure(struct device *dev, struct device_node *np, bool force_dma)
+ 	 * set by the driver.
+ 	 */
+ 	end = dma_addr + size - 1;
+-	mask = DMA_BIT_MASK(ilog2(end) + 1);
++	mask = roundup_pow_of_two(end) - 1;
+ 	dev->coherent_dma_mask &= mask;
+ 	*dev->dma_mask &= mask;
+ 	/* ...but only set bus limit if we found valid dma-ranges earlier */
+diff --git a/drivers/pci/controller/cadence/pcie-cadence-ep.c b/drivers/pci/controller/cadence/pcie-cadence-ep.c
+index 1c173dad67d1..72eda0b2f939 100644
+--- a/drivers/pci/controller/cadence/pcie-cadence-ep.c
++++ b/drivers/pci/controller/cadence/pcie-cadence-ep.c
+@@ -10,6 +10,7 @@
+ #include <linux/platform_device.h>
+ #include <linux/pm_runtime.h>
+ #include <linux/sizes.h>
++#include <linux/log2.h>
+ 
+ #include "pcie-cadence.h"
+ 
+@@ -65,7 +66,7 @@ static int cdns_pcie_ep_set_bar(struct pci_epc *epc, u8 fn,
+ 	 * roundup_pow_of_two() returns an unsigned long, which is not suited
+ 	 * for 64bit values.
+ 	 */
+-	sz = 1ULL << fls64(sz - 1);
++	sz = roundup_pow_of_two(sz);
+ 	aperture = ilog2(sz) - 7; /* 128B -> 0, 256B -> 1, 512B -> 2, ... */
+ 
+ 	if ((flags & PCI_BASE_ADDRESS_SPACE) == PCI_BASE_ADDRESS_SPACE_IO) {
+diff --git a/drivers/pci/controller/cadence/pcie-cadence.c b/drivers/pci/controller/cadence/pcie-cadence.c
+index cd795f6fc1e2..b1689f725b41 100644
+--- a/drivers/pci/controller/cadence/pcie-cadence.c
++++ b/drivers/pci/controller/cadence/pcie-cadence.c
+@@ -4,6 +4,7 @@
+ // Author: Cyrille Pitchen <cyrille.pitchen@free-electrons.com>
+ 
+ #include <linux/kernel.h>
++#include <linux/log2.h>
+ 
+ #include "pcie-cadence.h"
+ 
+@@ -15,7 +16,7 @@ void cdns_pcie_set_outbound_region(struct cdns_pcie *pcie, u8 fn,
+ 	 * roundup_pow_of_two() returns an unsigned long, which is not suited
+ 	 * for 64bit values.
+ 	 */
+-	u64 sz = 1ULL << fls64(size - 1);
++	u64 sz = roundup_pow_of_two(size);
+ 	int nbits = ilog2(sz);
+ 	u32 addr0, addr1, desc0, desc1;
+ 
+diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
+index 7ba06a0e1a71..e705d9d73030 100644
+--- a/drivers/pci/controller/pcie-brcmstb.c
++++ b/drivers/pci/controller/pcie-brcmstb.c
+@@ -627,7 +627,8 @@ static inline int brcm_pcie_get_rc_bar2_size_and_offset(struct brcm_pcie *pcie,
+ 		return -ENODEV;
+ 
+ 	*rc_bar2_offset = -entry->offset;
+-	*rc_bar2_size = 1ULL << fls64(entry->res->end - entry->res->start);
++	*rc_bar2_size = roundup_pow_of_two(entry->res->end -
++					   entry->res->start + 1);
+ 
+ 	/*
+ 	 * We validate the inbound memory view even though we should trust
+diff --git a/drivers/pci/controller/pcie-rockchip-ep.c b/drivers/pci/controller/pcie-rockchip-ep.c
+index d743b0a48988..83665f5f804a 100644
+--- a/drivers/pci/controller/pcie-rockchip-ep.c
++++ b/drivers/pci/controller/pcie-rockchip-ep.c
+@@ -16,6 +16,7 @@
+ #include <linux/platform_device.h>
+ #include <linux/pci-epf.h>
+ #include <linux/sizes.h>
++#include <linux/log2.h>
+ 
+ #include "pcie-rockchip.h"
+ 
+@@ -70,7 +71,7 @@ static void rockchip_pcie_prog_ep_ob_atu(struct rockchip_pcie *rockchip, u8 fn,
+ 					 u32 r, u32 type, u64 cpu_addr,
+ 					 u64 pci_addr, size_t size)
+ {
+-	u64 sz = 1ULL << fls64(size - 1);
++	u64 sz = roundup_pow_of_two(size);
+ 	int num_pass_bits = ilog2(sz);
+ 	u32 addr0, addr1, desc0, desc1;
+ 	bool is_nor_msg = (type == AXI_WRAPPER_NOR_MSG);
+@@ -176,7 +177,7 @@ static int rockchip_pcie_ep_set_bar(struct pci_epc *epc, u8 fn,
+ 	 * roundup_pow_of_two() returns an unsigned long, which is not suited
+ 	 * for 64bit values.
+ 	 */
+-	sz = 1ULL << fls64(sz - 1);
++	sz = roundup_pow_of_two(sz);
+ 	aperture = ilog2(sz) - 7; /* 128B -> 0, 256B -> 1, 512B -> 2, ... */
+ 
+ 	if ((flags & PCI_BASE_ADDRESS_SPACE) == PCI_BASE_ADDRESS_SPACE_IO) {
+diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
+index 6af7ae83c4ad..056886c4efec 100644
+--- a/kernel/dma/direct.c
++++ b/kernel/dma/direct.c
+@@ -53,7 +53,7 @@ u64 dma_direct_get_required_mask(struct device *dev)
+ {
+ 	u64 max_dma = phys_to_dma_direct(dev, (max_pfn - 1) << PAGE_SHIFT);
+ 
+-	return (1ULL << (fls64(max_dma) - 1)) * 2 - 1;
++	return rounddown_pow_of_two(max_dma) * 2 - 1;
+ }
+ 
+ static gfp_t __dma_direct_optimal_gfp_mask(struct device *dev, u64 dma_mask,
 -- 
 2.24.0
 
