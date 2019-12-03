@@ -2,78 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4888610F1C5
-	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Dec 2019 21:52:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44BF810F7C6
+	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Dec 2019 07:25:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t8QmC0Z2o2cWYUTV8Wxmfy9skjho1sns3arjSYyKW/M=; b=Q9J8S7FfuOVQPQ
-	nCFNe4u6q3xLs9KyD3ml4496ZGKTdQfcGwoXW3FsCNkV1XFIZgIjOgaxnl1hs3/g17cA5i5t4cQ4r
-	PYaK5ASm+etHe+v0/2mdkNkrRUI2T/bs8/gUXnFw1vIlPJ68E+sQ60LtjZOsVeJlKd27l/klyvpAT
-	Hxw/+u9nNat+9RR1cnZZyY1cv/xXo9vMHUTy6P8+hxcv8sOPeVBX6Dq/9TcWvrt/xWeF2s/wJGcQ3
-	dJe7PsP8g0vDgndAJh6yqfi2azZ66SNFC/PepoC4lTiDkVvKu7rkv1KWKt8bPA7cRJXvTsm/Qjncp
-	UL6sjq65inLsiA/g1Hqw==;
+	List-Owner; bh=wdIRF2vyTv4P12zO1bWk5r9MzPtVYtrlSBJteX6TTfE=; b=Ze+4K+OSeAeEu/
+	P4yfdqb0oaJh9h8TGbLch6g2l2P7iy5RfUWQxvdz7AZRaK298i94bRZbzb5Z25fk++qy2TfleN50s
+	OJaY49hD6wnrHHVMKdyb4QxQrytIFYB8knFaMnpOKSiMcp6fynG0Hs7h+V16r3GOogGdiBdDk2WHp
+	oCRssyfkmxMNIT50OcIBukvcIzFYmF3itZ7Ia4xMmsWSJqgI6ICRoe/e7ZruToekoqWI/qnk6DcxK
+	SHTVuq8rJBL8/fWHdWxXUOfoj9j0xK9+eVecW1sF4xxQuUiEPQOvUES2SP8WFVBICEabpUIR2SZ4a
+	tm2KA7/yikb0uMs3f48Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibsfx-0006Fs-3x; Mon, 02 Dec 2019 20:52:09 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1ic1cx-0003ng-52; Tue, 03 Dec 2019 06:25:39 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibsft-0006F5-DV; Mon, 02 Dec 2019 20:52:07 +0000
-Received: by mail-io1-xd42.google.com with SMTP id i11so927791iol.13;
- Mon, 02 Dec 2019 12:52:05 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yKoJSkDsfIMrRW3jw85HKe2BQZ9NViBue+DgpdqXPJk=;
- b=jn5nPOdzEW+w5jzVGwuZ5oFeYEJf8WBlojzcbzo0FpQpz8lU3xlwetOymXe33RV0vU
- rZIUB8uzWSed5dAOZ1mQV8JCVBog+b8KG4/DzRaXJXK6jqkoWbOhqSlwP5HgyP7tpA1F
- sZOxbnADrE1RzNLnPdosncLvIUYhSNdiY5DzW7oxY59mP20Eg/u0Prwm4gBh32Q/n4J9
- GV8x5s3ajEkkySKLDzpqU3t0idoZb/hk/zqyucuqOWZLmopIcohvyGZ0mCdu/5Fjm4V6
- 91n5ODv3rGa/fc60puo1AB0cc1S+Tf15xJgp0UInowtD9CGErLbGPkAFEeLQiB55Jmxs
- HKBQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yKoJSkDsfIMrRW3jw85HKe2BQZ9NViBue+DgpdqXPJk=;
- b=UfjDp/BTmkm29hldXeYlwfy49yOR7ntcqd0xU1SaFj7X0tMGsFKWvqWNvwLKMpWYGJ
- O3xFNSaUUYmvh11NqsgspL1hpHyeT6eh4X7s7l/aX8lwnTQ5oVxyZtjUfc28ndFqHHgM
- fxszwGCcXyY6zBkMCZwgJSjVy4+mierCTKmvGpXE13tsYpjqx+x1VhQCZcefQSEsQ0Xu
- 2wei1ryJBPBlGtuKQEfJvXRs5NwDfLG7n13IcYSQzXC1Ltu9IJC/FICBk+ZlWkeBnL0B
- UOnd8GbsoPdZd0Bb0uigHJA9+t+dRcH93V/4aiWqa6yyhhqrqRxG60EX8nmdLcMWLof1
- 3QUw==
-X-Gm-Message-State: APjAAAVnAHOqJcpRl6Ds2iH4wA+aasGDYQNJii4csL15WHCqtMqmCdH/
- p/hIjrRd2XrmK0FGuUS+C8+ipcNf/ZDs5llqxRg=
-X-Google-Smtp-Source: APXvYqzWJF+0Ki7M75FXoNw5UEUbhPWmgMVsemvAdnlzFn4gnf/vkOuGYX8u/xhrshBT2ODP7R8nZZfzmzkVwC/iQMQ=
-X-Received: by 2002:a6b:5914:: with SMTP id n20mr744400iob.42.1575319924442;
- Mon, 02 Dec 2019 12:52:04 -0800 (PST)
-MIME-Version: 1.0
-References: <20191202193230.21310-1-sam@ravnborg.org>
- <CAOCk7NoKPoxcETLYQ4CyAtYGnPwvYapdSavZM=aRdswDydTLEA@mail.gmail.com>
- <20191202204802.GA23600@ravnborg.org>
-In-Reply-To: <20191202204802.GA23600@ravnborg.org>
-From: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
-Date: Mon, 2 Dec 2019 13:51:53 -0700
-Message-ID: <CAOCk7NogV39X2QMabv1naso4r7T_EkdzajcbtoPzQnJQ5T7WoQ@mail.gmail.com>
-Subject: Re: [PATCH v1 0/26] drm/panel infrastructure + backlight update
+ id 1ic1cW-00039B-Sv; Tue, 03 Dec 2019 06:25:15 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id ED8F8309;
+ Tue,  3 Dec 2019 07:25:05 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1575354306;
+ bh=xMhIy5HaiSKkNSrpN5V89DDzQfYcJU5ugOWimrHaPOs=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=h6qBeI/WhmgWblAgjLQFXmZpvICtdJ7ang5ZAu5QF/RWsHFhxgfKLrUQgLiN0ZySP
+ te8cQY0l0xw5SKujiIaFAPliBjJuQRSuy8VjWqLPVlmREWdKpCygHfjb38yR1iYlaQ
+ x2aoQRv36caeBrjXBdi/fF336MdBMzwTFlpaN1nk=
+Date: Tue, 3 Dec 2019 08:24:59 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 To: Sam Ravnborg <sam@ravnborg.org>
+Subject: Re: [PATCH v1 01/26] drm/drm_panel: no error when no callback
+Message-ID: <20191203062459.GA4730@pendragon.ideasonboard.com>
+References: <20191202193230.21310-1-sam@ravnborg.org>
+ <20191202193230.21310-2-sam@ravnborg.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191202193230.21310-2-sam@ravnborg.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_125205_482176_413851FE 
-X-CRM114-Status: GOOD (  11.45  )
+X-CRM114-CacheID: sfid-20191202_222513_390710_20B987CC 
+X-CRM114-Status: GOOD (  17.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jeffrey.l.hugo[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -94,49 +74,150 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Linus Walleij <linus.walleij@linaro.org>, Stefan Agner <stefan@agner.ch>,
+ Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
  Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- linux-samsung-soc@vger.kernel.org, Abhinav Kumar <abhinavk@codeaurora.org>,
+ Stefan Agner <stefan@agner.ch>, linux-samsung-soc@vger.kernel.org,
  linux-rockchip@lists.infradead.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
  NXP Linux Team <linux-imx@nxp.com>, Jagan Teki <jagan@amarulasolutions.com>,
- Jitao Shi <jitao.shi@mediatek.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Jitao Shi <jitao.shi@mediatek.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Maxime Ripard <mripard@kernel.org>, linux-mediatek@lists.infradead.org,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- linux-tegra@vger.kernel.org, Sean Paul <sean@poorly.run>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Abhinav Kumar <abhinavk@codeaurora.org>, linux-tegra@vger.kernel.org,
+ Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
  Purism Kernel Team <kernel@puri.sm>, linux-renesas-soc@vger.kernel.org,
  Boris Brezillon <boris.brezillon@collabora.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>
+ Daniel Vetter <daniel@ffwll.ch>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Dec 2, 2019 at 1:48 PM Sam Ravnborg <sam@ravnborg.org> wrote:
->
-> Hi Jeffrey.
->
-> > >  drivers/gpu/drm/msm/dsi/dsi_manager.c              |   2 +-
-> >
-> > How come the diff stat in the cover letter here indicates a change to
-> > this file, yet I cannot find a change to this file in any of the
-> > patches?  What am I missing?
->
-> This file is patched in "[PATCH v1 06/26] drm/panel: decouple connector
-> from drm_panel"
->
-> See: https://lists.freedesktop.org/archives/dri-devel/2019-December/247186.html
->
-> The above patch touches a lot of files/drivers so it was cc: to
-> a lot of people. Maybe is was considered as spam?
+Hi Sam,
 
-Interesting.  I missed that I didn't have patch 6 in the series in my
-inbox.  Its also not in my spam box.  I wonder where it went.
+Thank you for the patch.
 
-Thanks for the direct link to the patch.  I saw no concerns.
+On Mon, Dec 02, 2019 at 08:32:05PM +0100, Sam Ravnborg wrote:
+> The callbacks in drm_panel_funcs are optional, so do not
+> return an error just because no callback is assigned.
+
+Unless I'm mistaken the callbacks are not documented as optional. Should
+this be fixed too ?
+
+> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
+> Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+> Cc: Maxime Ripard <mripard@kernel.org>
+> Cc: Thierry Reding <thierry.reding@gmail.com>
+> Cc: Sam Ravnborg <sam@ravnborg.org>
+> Cc: David Airlie <airlied@linux.ie>
+> Cc: Daniel Vetter <daniel@ffwll.ch>
+> ---
+>  drivers/gpu/drm/drm_panel.c | 35 +++++++++++++++++++++++++----------
+>  1 file changed, 25 insertions(+), 10 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/drm_panel.c b/drivers/gpu/drm/drm_panel.c
+> index ed7985c0535a..2d59cdd05e50 100644
+> --- a/drivers/gpu/drm/drm_panel.c
+> +++ b/drivers/gpu/drm/drm_panel.c
+> @@ -151,10 +151,13 @@ EXPORT_SYMBOL(drm_panel_detach);
+>   */
+>  int drm_panel_prepare(struct drm_panel *panel)
+>  {
+> -	if (panel && panel->funcs && panel->funcs->prepare)
+> +	if (!panel)
+> +		return -EINVAL;
+> +
+> +	if (panel->funcs && panel->funcs->prepare)
+>  		return panel->funcs->prepare(panel);
+>  
+> -	return panel ? -ENOSYS : -EINVAL;
+> +	return 0;
+>  }
+>  EXPORT_SYMBOL(drm_panel_prepare);
+>  
+> @@ -171,10 +174,13 @@ EXPORT_SYMBOL(drm_panel_prepare);
+>   */
+>  int drm_panel_unprepare(struct drm_panel *panel)
+>  {
+> -	if (panel && panel->funcs && panel->funcs->unprepare)
+> +	if (!panel)
+> +		return -EINVAL;
+> +
+> +	if (panel->funcs && panel->funcs->unprepare)
+>  		return panel->funcs->unprepare(panel);
+>  
+> -	return panel ? -ENOSYS : -EINVAL;
+> +	return 0;
+>  }
+>  EXPORT_SYMBOL(drm_panel_unprepare);
+>  
+> @@ -190,10 +196,13 @@ EXPORT_SYMBOL(drm_panel_unprepare);
+>   */
+>  int drm_panel_enable(struct drm_panel *panel)
+>  {
+> -	if (panel && panel->funcs && panel->funcs->enable)
+> +	if (!panel)
+> +		return -EINVAL;
+> +
+> +	if (panel->funcs && panel->funcs->enable)
+>  		return panel->funcs->enable(panel);
+>  
+> -	return panel ? -ENOSYS : -EINVAL;
+> +	return 0;
+>  }
+>  EXPORT_SYMBOL(drm_panel_enable);
+>  
+> @@ -209,10 +218,13 @@ EXPORT_SYMBOL(drm_panel_enable);
+>   */
+>  int drm_panel_disable(struct drm_panel *panel)
+>  {
+> -	if (panel && panel->funcs && panel->funcs->disable)
+> +	if (!panel)
+> +		return -EINVAL;
+> +
+> +	if (panel->funcs && panel->funcs->disable)
+>  		return panel->funcs->disable(panel);
+>  
+> -	return panel ? -ENOSYS : -EINVAL;
+> +	return 0;
+>  }
+>  EXPORT_SYMBOL(drm_panel_disable);
+>  
+> @@ -228,10 +240,13 @@ EXPORT_SYMBOL(drm_panel_disable);
+>   */
+>  int drm_panel_get_modes(struct drm_panel *panel)
+>  {
+> -	if (panel && panel->funcs && panel->funcs->get_modes)
+> +	if (!panel)
+> +		return -EINVAL;
+> +
+> +	if (panel->funcs && panel->funcs->get_modes)
+>  		return panel->funcs->get_modes(panel);
+
+Should get_modes() be optional ? As far as I can tell all the panel
+drivers in drivers/gpu/drm/panel/ implement it, and I'm not sure to see
+how a panel could be usable if it can't return its mode.
+
+On the other hand you return 0 if the callback isn't implemented, which
+doesn't mean success here, so I suppose that's fine, but I don't think
+we should document .get_modes() as being optional.
+
+With these issues addressed (if they need to be),
+
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+
+>  
+> -	return panel ? -ENOSYS : -EINVAL;
+> +	return 0;
+>  }
+>  EXPORT_SYMBOL(drm_panel_get_modes);
+>  
+
+-- 
+Regards,
+
+Laurent Pinchart
 
 _______________________________________________
 Linux-rockchip mailing list
