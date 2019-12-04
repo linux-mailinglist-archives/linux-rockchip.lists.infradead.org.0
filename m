@@ -2,57 +2,61 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28A5D11296D
-	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Dec 2019 11:40:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3ADA112AEC
+	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Dec 2019 13:04:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RTUcEEvmw9Ix7UpXSB9po1nPWrVGyUClV78tE1EskMw=; b=mMOBNVjHKYH1eV
-	D1zIU2ZcbMOgbPUJ2Eire+uwyNIcwjn0klBhEL8HHTI3SX7Z/PWCFIvC0VsWe8/k8JLSqthXojJng
-	xrKfhZaiweOzo+IcUCJFVtYW00U8MYfbXBIBKIgZ4WKamFLtWLKPNNzioL4CV3pfEWFr1VWYgVTcW
-	IIeSqGdtikgBnc/T6oo1F2/51JtOlyS0zOcYjq6Gp/W9fWrqAs4/s74+CumxYQaaZiZJfJm1hBdkO
-	dlmtrctpG+rtFowoY5y0SGqBpeuCwEVwyoPqbCcf5BfaNK06KgaulInAw4m4xXKgwhTJ3YsmF9gXY
-	SaK5SpQfkO/HbrNTvg5A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U6rki3SQt9j87CgitRKE1QLRFiryse02ZoephG0wwzQ=; b=XfUcO6m2z3oVdL
+	S6ABCjKImd0gALWccBt/qoEuPK5B/3EgvaappHfBKyMOKBdYKmgBwUw4/cYqaJniEHtAUlw/p60A2
+	TkE7V6dns8/SxIM6Uj1Fh5R93PTuqPte3bMKn899pkUj5QWAvIk0wcgljX6VX7mjvcY8xPVa2ASGs
+	l4zBKdyJ4Ez0DWhoY+q157smWSSifmXcnVdaiQu/UXlbTNo86vNhiD3mCp5GXOu1Yats9J1L8MjxK
+	g0oS66rR5RnEePxe3PPUT9MaOoDqgAAZVFnqxACbjQQweVj8j650odgjA08gqdr337qgOm7ih3kL4
+	mQPXoqWOY3V3a6pIylqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icS4c-0000Go-9t; Wed, 04 Dec 2019 10:39:58 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1icTOb-0003u9-EP; Wed, 04 Dec 2019 12:04:41 +0000
+Received: from honk.sigxcpu.org ([24.134.29.49])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icS4Y-0000GN-PN
- for linux-rockchip@lists.infradead.org; Wed, 04 Dec 2019 10:39:56 +0000
-X-Originating-IP: 91.224.148.103
-Received: from localhost.localdomain (unknown [91.224.148.103])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id DA0A9E0012;
- Wed,  4 Dec 2019 10:39:42 +0000 (UTC)
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Heiko Stuebner <heiko@sntech.de>, <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- <devicetree@vger.kernel.org>
-Subject: [PATCH] arm64: dts: rockchip: Describe PX30 caches
-Date: Wed,  4 Dec 2019 11:39:40 +0100
-Message-Id: <20191204103940.22050-1-miquel.raynal@bootlin.com>
-X-Mailer: git-send-email 2.20.1
+ id 1icTOM-0003iy-D7; Wed, 04 Dec 2019 12:04:28 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by honk.sigxcpu.org (Postfix) with ESMTP id 0BFEDFB04;
+ Wed,  4 Dec 2019 13:04:18 +0100 (CET)
+X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
+Received: from honk.sigxcpu.org ([127.0.0.1])
+ by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id 1P6AeK0vdY6H; Wed,  4 Dec 2019 13:04:16 +0100 (CET)
+Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
+ id 4AAF84964C; Wed,  4 Dec 2019 13:04:16 +0100 (CET)
+Date: Wed, 4 Dec 2019 13:04:16 +0100
+From: Guido =?iso-8859-1?Q?G=FCnther?= <guido.gunther@puri.sm>
+To: Sam Ravnborg <sam@ravnborg.org>
+Subject: Re: [PATCH v1 18/26] drm/panel: rocktech-jh057n00900: use drm_panel
+ backlight support
+Message-ID: <20191204120416.GA18094@bogon.m.sigxcpu.org>
+References: <20191202193230.21310-1-sam@ravnborg.org>
+ <20191202193230.21310-19-sam@ravnborg.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191202193230.21310-19-sam@ravnborg.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_023954_961612_B6AC9B27 
-X-CRM114-Status: UNSURE (   7.34  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191204_040426_606169_318EFEC6 
+X-CRM114-Status: GOOD (  15.40  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.196 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [24.134.29.49 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,108 +69,143 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
+ Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Stefan Agner <stefan@agner.ch>, linux-samsung-soc@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Jagan Teki <jagan@amarulasolutions.com>,
+ Jitao Shi <jitao.shi@mediatek.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, linux-mediatek@lists.infradead.org,
+ Abhinav Kumar <abhinavk@codeaurora.org>, linux-tegra@vger.kernel.org,
+ Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
+ Purism Kernel Team <kernel@puri.sm>, linux-renesas-soc@vger.kernel.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Daniel Vetter <daniel@ffwll.ch>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-PX30 SoCs feature 4 Cortex-A35 CPUs with each of them a L1 data and
-instruction cache. Both are 32kiB wide (PX30 TRM) and made of 64-bit
-lines (ARM Cortex-A35 manual). I-cache is 2-way set associative (ARM
-Cortex-A35 manual), D-cache is 4-way set associative (ARM
-Cortex-A35manual).
+Hi,
+On Mon, Dec 02, 2019 at 08:32:22PM +0100, Sam Ravnborg wrote:
+> Use the backlight support in drm_panel to simplify the driver.
+> While touching the include files sort them
+> and divide them up in blocks.
+> =
 
-An L2 cache is placed after these 4 L1 caches (PX30 TRM), is 256kiB
-wide (PX30 TRM) and made of 64-bit lines (ARM Cortex-A35 manual) and
-is 8-way set associative (ARM Cortex-A35 manual).
+> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
+> Cc: "Guido G=FCnther" <agx@sigxcpu.org>
+> Cc: Purism Kernel Team <kernel@puri.sm>
+> Cc: Thierry Reding <thierry.reding@gmail.com>
+> Cc: Sam Ravnborg <sam@ravnborg.org>
+> ---
+>  .../drm/panel/panel-rocktech-jh057n00900.c    | 24 +++++++++----------
+>  1 file changed, 12 insertions(+), 12 deletions(-)
+> =
 
-Describe all of them in the PX30 DTSI.
+> diff --git a/drivers/gpu/drm/panel/panel-rocktech-jh057n00900.c b/drivers=
+/gpu/drm/panel/panel-rocktech-jh057n00900.c
+> index 3a4f1c0fce86..38ff742bc120 100644
+> --- a/drivers/gpu/drm/panel/panel-rocktech-jh057n00900.c
+> +++ b/drivers/gpu/drm/panel/panel-rocktech-jh057n00900.c
+> @@ -5,20 +5,22 @@
+>   * Copyright (C) Purism SPC 2019
+>   */
+>  =
 
-Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
----
- arch/arm64/boot/dts/rockchip/px30.dtsi | 35 ++++++++++++++++++++++++++
- 1 file changed, 35 insertions(+)
+> -#include <drm/drm_mipi_dsi.h>
+> -#include <drm/drm_modes.h>
+> -#include <drm/drm_panel.h>
+> -#include <drm/drm_print.h>
+> -#include <linux/backlight.h>
+>  #include <linux/debugfs.h>
+>  #include <linux/delay.h>
+>  #include <linux/gpio/consumer.h>
+>  #include <linux/media-bus-format.h>
+> +#include <linux/mod_devicetable.h>
+>  #include <linux/module.h>
+>  #include <linux/regulator/consumer.h>
+> +
+>  #include <video/display_timing.h>
+>  #include <video/mipi_display.h>
+>  =
 
-diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-index 1fd12bd09e83..0e10a224a84b 100644
---- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-@@ -48,6 +48,13 @@
- 			cpu-idle-states = <&CPU_SLEEP &CLUSTER_SLEEP>;
- 			dynamic-power-coefficient = <90>;
- 			operating-points-v2 = <&cpu0_opp_table>;
-+			i-cache-size = <0x8000>;
-+			i-cache-line-size = <64>;
-+			i-cache-sets = <256>;
-+			d-cache-size = <0x8000>;
-+			d-cache-line-size = <64>;
-+			d-cache-sets = <128>;
-+			next-level-cache = <&l2>;
- 		};
- 
- 		cpu1: cpu@1 {
-@@ -60,6 +67,13 @@
- 			cpu-idle-states = <&CPU_SLEEP &CLUSTER_SLEEP>;
- 			dynamic-power-coefficient = <90>;
- 			operating-points-v2 = <&cpu0_opp_table>;
-+			i-cache-size = <0x8000>;
-+			i-cache-line-size = <64>;
-+			i-cache-sets = <256>;
-+			d-cache-size = <0x8000>;
-+			d-cache-line-size = <64>;
-+			d-cache-sets = <128>;
-+			next-level-cache = <&l2>;
- 		};
- 
- 		cpu2: cpu@2 {
-@@ -72,6 +86,13 @@
- 			cpu-idle-states = <&CPU_SLEEP &CLUSTER_SLEEP>;
- 			dynamic-power-coefficient = <90>;
- 			operating-points-v2 = <&cpu0_opp_table>;
-+			i-cache-size = <0x8000>;
-+			i-cache-line-size = <64>;
-+			i-cache-sets = <256>;
-+			d-cache-size = <0x8000>;
-+			d-cache-line-size = <64>;
-+			d-cache-sets = <128>;
-+			next-level-cache = <&l2>;
- 		};
- 
- 		cpu3: cpu@3 {
-@@ -84,6 +105,13 @@
- 			cpu-idle-states = <&CPU_SLEEP &CLUSTER_SLEEP>;
- 			dynamic-power-coefficient = <90>;
- 			operating-points-v2 = <&cpu0_opp_table>;
-+			i-cache-size = <0x8000>;
-+			i-cache-line-size = <64>;
-+			i-cache-sets = <256>;
-+			d-cache-size = <0x8000>;
-+			d-cache-line-size = <64>;
-+			d-cache-sets = <128>;
-+			next-level-cache = <&l2>;
- 		};
- 
- 		idle-states {
-@@ -107,6 +135,13 @@
- 				min-residency-us = <2000>;
- 			};
- 		};
-+
-+		l2: l2-cache {
-+			compatible = "cache";
-+			cache-size = <0x40000>;
-+			cache-line-size = <64>;
-+			cache-sets = <512>;
-+		};
- 	};
- 
- 	cpu0_opp_table: cpu0-opp-table {
--- 
-2.20.1
+> +#include <drm/drm_mipi_dsi.h>
+> +#include <drm/drm_modes.h>
+> +#include <drm/drm_panel.h>
+> +#include <drm/drm_print.h>
+> +
+>  #define DRV_NAME "panel-rocktech-jh057n00900"
+>  =
+
+>  /* Manufacturer specific Commands send via DSI */
+> @@ -47,7 +49,6 @@ struct jh057n {
+>  	struct device *dev;
+>  	struct drm_panel panel;
+>  	struct gpio_desc *reset_gpio;
+> -	struct backlight_device *backlight;
+>  	struct regulator *vcc;
+>  	struct regulator *iovcc;
+>  	bool prepared;
+> @@ -152,7 +153,7 @@ static int jh057n_enable(struct drm_panel *panel)
+>  		return ret;
+>  	}
+>  =
+
+> -	return backlight_enable(ctx->backlight);
+> +	return 0;
+>  }
+>  =
+
+>  static int jh057n_disable(struct drm_panel *panel)
+> @@ -160,7 +161,6 @@ static int jh057n_disable(struct drm_panel *panel)
+>  	struct jh057n *ctx =3D panel_to_jh057n(panel);
+>  	struct mipi_dsi_device *dsi =3D to_mipi_dsi_device(ctx->dev);
+>  =
+
+> -	backlight_disable(ctx->backlight);
+>  	return mipi_dsi_dcs_set_display_off(dsi);
+>  }
+>  =
+
+> @@ -321,10 +321,6 @@ static int jh057n_probe(struct mipi_dsi_device *dsi)
+>  	dsi->mode_flags =3D MIPI_DSI_MODE_VIDEO |
+>  		MIPI_DSI_MODE_VIDEO_BURST | MIPI_DSI_MODE_VIDEO_SYNC_PULSE;
+>  =
+
+> -	ctx->backlight =3D devm_of_find_backlight(dev);
+> -	if (IS_ERR(ctx->backlight))
+> -		return PTR_ERR(ctx->backlight);
+> -
+>  	ctx->vcc =3D devm_regulator_get(dev, "vcc");
+>  	if (IS_ERR(ctx->vcc)) {
+>  		ret =3D PTR_ERR(ctx->vcc);
+> @@ -347,6 +343,10 @@ static int jh057n_probe(struct mipi_dsi_device *dsi)
+>  	drm_panel_init(&ctx->panel, dev, &jh057n_drm_funcs,
+>  		       DRM_MODE_CONNECTOR_DSI);
+>  =
+
+> +	ret =3D drm_panel_of_backlight(&ctx->panel);
+> +	if (ret)
+> +		return ret;
+> +
+>  	drm_panel_add(&ctx->panel);
+>  =
+
+>  	ret =3D mipi_dsi_attach(dsi);
+
+Reviewed-by: Guido G=FCnther <agx@sigxcpu.org> =
+
+
+> -- =
+
+> 2.20.1
+> =
 
 
 _______________________________________________
