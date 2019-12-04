@@ -2,52 +2,52 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AFF8112424
-	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Dec 2019 09:05:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A45011244B
+	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Dec 2019 09:17:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3OnttlSTTT2bVK5yfv7BiJHFg65EnB0o7YdkzZLQcI8=; b=lqOha5XL7KBZJDiJUyw9igEMd
-	e/zsgEjB10CL/4qm4zrV8GZCXPOQJrfO9kmOCkoQ4s1mbyb0zOtgXeP5zM+3F50/zw37/5cVRJ0rZ
-	4/xdVUJ7hWcvlLMjk88XiRzt8Ybrp9GseiICxEji8pDbnJnQ3goKZXWHatGakFwgrYdd2ESkZ9bGi
-	it9BRTOUOyJc/0OrRITAJkURouMB8LC/2nXSua3xmOwkFvQiiEgL5vYT0Z29v0ls6Ws9w1wUcvmch
-	UGu5FloDPBJoNknJcf15+Qs0MzIo5u/g2aAI9oXn4gtGGb+Hrg30eY/p50X1mcsZpIb+Ufv4DtHEr
-	V3tqC+erA==;
+	 bh=hSICctCmCrL1asUUSw/6iYRRGCiEczp13hSe3onTISU=; b=KfWhAlzpCPgh8BmIPLRsJ+C2T
+	iHirqp7E0PAnrUyn9DyzujSOCf5dPS7dfXZTBiL75QUX/0ewp4j+uXFzKGYLg1asHDJmFHTKif+XD
+	Exo8ASu3vmwvik+1o8Cv+YL+R3Pj7N4348Bg1yDh5o/Ui6B7yQIIEHf/8bbu1H8h8T7iILZ1pybNp
+	VOD5x1w35bJyH4wPz0GA+zu9LDtf+XC3iC6erOIaXpHgQOlHpsarlYdslC5JjgvNu5OgqWTV3twjB
+	ISJ+bCg1FHh9VqbcGzsa2R59Q3oQjFub4BM3oEBRDdxrWuOTJK4q8mqHNtFRdYcD8MEA6f09DlF4Y
+	6bHw2QBiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icPfV-0006QP-7K; Wed, 04 Dec 2019 08:05:53 +0000
+	id 1icPqN-00029H-S6; Wed, 04 Dec 2019 08:17:07 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icPfK-0006Im-Jd; Wed, 04 Dec 2019 08:05:44 +0000
+ id 1icPq8-0001yE-Vr; Wed, 04 Dec 2019 08:16:54 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1CB2F20640;
- Wed,  4 Dec 2019 08:05:41 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1E5F420675;
+ Wed,  4 Dec 2019 08:16:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575446741;
- bh=4Hw9lWp6MYS1roMlvPfnLEYA+bo3DC0x2fFPmKaOglE=;
+ s=default; t=1575447412;
+ bh=Yt0CUSJagubBAQX6uTNxcqQuzIkcBfH1t8baRs8SOlk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=uEtCVoaJMD09CukTvWhpr/nzDplQfjsDB5w2UaNVVWgDqza0H6Hj4ABJvg9t8ESLw
- wS0IqF2JWtyueuaBHYQ6v+E9IDoVDHfBlYOva15UOKiltZqM3UDsxN2PJ4FyZiCqlJ
- uHxe4taqacBg7dEZj+qNssQ2EXeHaxU/JRMI+uk8=
-Date: Wed, 4 Dec 2019 09:05:39 +0100
+ b=E7fxNlrEVB9EFySevdXDf/z1CiVsGMDm92rYyWGExuFhs6ZLSvzTMxb3W7ZP8iQKM
+ t280I+jOCHgM+lbLKFrmTg6FtfFK/0Gq1JvHNCiIy/ZAMC9E6CKo77Ffp3D3fPMKgc
+ 6P4rFJIt7apu1ThmX6/Oic+NdqU7qv/8yiQX7ZkA=
+Date: Wed, 4 Dec 2019 09:16:50 +0100
 From: Maxime Ripard <mripard@kernel.org>
-To: Sam Ravnborg <sam@ravnborg.org>
+To: Linus Walleij <linus.walleij@linaro.org>
 Subject: Re: [PATCH v1 07/26] drm/panel: remove get_timings
-Message-ID: <20191204080539.z2ovccj4kjsrpttm@gilmour.lan>
+Message-ID: <20191204081650.4n4ehbub4n7pxdom@gilmour.lan>
 References: <20191202193230.21310-1-sam@ravnborg.org>
  <20191202193230.21310-8-sam@ravnborg.org>
  <20191203074659.ilsyv4yx7pzw5vax@gilmour.lan>
- <20191203083935.GB30687@ravnborg.org>
+ <CACRpkdZrReQs08+bXS7s7eJ-K76nMGvRgQ-L-1-baunEtiF40g@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20191203083935.GB30687@ravnborg.org>
+In-Reply-To: <CACRpkdZrReQs08+bXS7s7eJ-K76nMGvRgQ-L-1-baunEtiF40g@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_000542_689210_D1F73B1E 
-X-CRM114-Status: GOOD (  32.03  )
+X-CRM114-CacheID: sfid-20191204_001653_068043_1E67B8E6 
+X-CRM114-Status: GOOD (  27.59  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,95 +78,45 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
+ "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
  Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Sam Ravnborg <sam@ravnborg.org>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
  Tomi Valkeinen <tomi.valkeinen@ti.com>, NXP Linux Team <linux-imx@nxp.com>,
  Jagan Teki <jagan@amarulasolutions.com>, Jitao Shi <jitao.shi@mediatek.com>,
- Daniel Vetter <daniel@ffwll.ch>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Abhinav Kumar <abhinavk@codeaurora.org>, linux-mediatek@lists.infradead.org,
+ Abhinav Kumar <abhinavk@codeaurora.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
  Stefan Agner <stefan@agner.ch>, linux-tegra@vger.kernel.org,
- Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
- Purism Kernel Team <kernel@puri.sm>, linux-renesas-soc@vger.kernel.org,
+ Sean Paul <sean@poorly.run>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Purism Kernel Team <kernel@puri.sm>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
  Boris Brezillon <boris.brezillon@collabora.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>
-Content-Type: multipart/mixed; boundary="===============7839090813101429103=="
+ Daniel Vetter <daniel@ffwll.ch>
+Content-Type: multipart/mixed; boundary="===============4029696087742763550=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
 
---===============7839090813101429103==
+--===============4029696087742763550==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="zbo7byqykz6hibco"
+	protocol="application/pgp-signature"; boundary="voqjdysu66o2gyxb"
 Content-Disposition: inline
 
 
---zbo7byqykz6hibco
+--voqjdysu66o2gyxb
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Tue, Dec 03, 2019 at 09:39:36AM +0100, Sam Ravnborg wrote:
-> On Tue, Dec 03, 2019 at 08:46:59AM +0100, Maxime Ripard wrote:
-> > Hi,
-> >
-> > On Mon, Dec 02, 2019 at 08:32:11PM +0100, Sam Ravnborg wrote:
-> > > There was no users - so remove it.
-> > > The callback was implemented in two drivers - deleted.
-> > >
-> > > Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
-> > > Cc: Thierry Reding <thierry.reding@gmail.com>
-> > > Cc: Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
-> > > Cc: Sam Ravnborg <sam@ravnborg.org>
-> > > Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
-> > > Cc: Maxime Ripard <mripard@kernel.org>
-> > > Cc: David Airlie <airlied@linux.ie>
-> > > Cc: Daniel Vetter <daniel@ffwll.ch>
-> > > ---
-> > >  drivers/gpu/drm/panel/panel-seiko-43wvf1g.c | 18 ------------------
-> > >  drivers/gpu/drm/panel/panel-simple.c        | 18 ------------------
-> > >  include/drm/drm_panel.h                     |  9 ---------
-> > >  3 files changed, 45 deletions(-)
-> > >
-> > > diff --git a/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c b/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c
-> > > index b878930b17e4..3bcba64235c4 100644
-> > > --- a/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c
-> > > +++ b/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c
-> > > @@ -217,30 +217,12 @@ static int seiko_panel_get_modes(struct drm_panel *panel,
-> > >  	return seiko_panel_get_fixed_modes(p, connector);
-> > >  }
-> > >
-> > > -static int seiko_panel_get_timings(struct drm_panel *panel,
-> > > -				    unsigned int num_timings,
-> > > -				    struct display_timing *timings)
-> > > -{
-> > > -	struct seiko_panel *p = to_seiko_panel(panel);
-> > > -	unsigned int i;
-> > > -
-> > > -	if (p->desc->num_timings < num_timings)
-> > > -		num_timings = p->desc->num_timings;
-> > > -
-> > > -	if (timings)
-> > > -		for (i = 0; i < num_timings; i++)
-> > > -			timings[i] = p->desc->timings[i];
-> > > -
-> > > -	return p->desc->num_timings;
-> > > -}
-> > > -
-> > >  static const struct drm_panel_funcs seiko_panel_funcs = {
-> > >  	.disable = seiko_panel_disable,
-> > >  	.unprepare = seiko_panel_unprepare,
-> > >  	.prepare = seiko_panel_prepare,
-> > >  	.enable = seiko_panel_enable,
-> > >  	.get_modes = seiko_panel_get_modes,
-> > > -	.get_timings = seiko_panel_get_timings,
-> > >  };
-> >
-> > If anything, I think we should grow the usage of timings and / or make
-> > it usable by everyone.
-> >
+Hi Linus,
+
+On Tue, Dec 03, 2019 at 04:20:24PM +0100, Linus Walleij wrote:
+> On Tue, Dec 3, 2019 at 8:47 AM Maxime Ripard <mripard@kernel.org> wrote:
+>
 > > Using only the mode as we do currently has a bunch of shortcomings as
 > > almost no encoder will be able to provide the typical pixel clock, and
 > > that situation leads to multiple things:
@@ -186,42 +136,59 @@ On Tue, Dec 03, 2019 at 09:39:36AM +0100, Sam Ravnborg wrote:
 > >     given panel. There's some ad hoc solutions on some drivers (I
 > >     think vc4 has that?) to ignore the panel and just play around with
 > >     the timings, but I think this should be generalised.
-> >
-> > Timings solves the first case since we have the operating range now
-> > and not a single set of timings, and it solves the second since we can
-> > use that range to take those measures instead of taking a shot in the
-> > dark.
-> >
-> > I appreciate that it's pretty far from where we are today, but
-> > removing the get_timings means that all the timings already defined in
-> > the panel drivers are becoming useless too, and that eventually it
-> > will get removed.
 >
-> Thanks for this nice explanation. I will drop the patch,
-> and add an entry to my TODO list to look closer at this later.
-> There are things to improve in this area.
+> I've been confused with these things as they look today and it seems
+> the whole struct drm_display_mode could need some improvement?
 >
-> So the conclusion is more work rather than removing code :-)
+> If .clock is supposed to be htotal * vtotal * vrefresh, what is the
+> .clock doing there anyway.
 
-Yeah, unfortunately.. :)
+It's one thing I wonder as well. I guess it's just more convenient for
+everyone, since it's exposed by the VESA modes (iirc) and a lot of
+drivers really care about the clock.
+
+> Sadly I am too inexperienced to realize where the tolerances should
+> be stated, but I guess just stating that hsync_start etc are typical,
+> then specify some tolerance for each would help a bit?
+
+The timings structure discussed in the patch that started this
+discussion is actually doing this nicely, you have for each timing the
+minimum, typical and maximum value. The current issue with it though
+is that it's pretty difficult to use it, since it's not really tied to
+any of the panel code (or DRM helpers). The only driver that was
+supporting it was omapdrm and it was removed recently.
+
+If we really wanted to support it, one path forward I can see would be
+to make the timings structure the primary one, and only use
+drm_display_mode for userspace facing code, and generate it from the
+timings. This would be a pretty invasive change though...
+
+> On the DSI displays in video mode there is also this EOL area
+> which seems to be where the logic is normally just idling for a
+> while, that can be adjusted on some hardware as well, but
+> I don't quite understand it admittedly. Sometimes I wonder if
+> anyone really understands DSI... :/
+
+I'm not aware of any EOL area in MIPI-DSI that would make the hardware
+idle, don't you mean LP-11?
 
 Maxime
 
---zbo7byqykz6hibco
+--voqjdysu66o2gyxb
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXedo0wAKCRDj7w1vZxhR
-xfd0AP9Vt4GkG6OTb63xkfVRNr+vESfQY3qRIc1RQUyo98hYNAD/VlGCgKCQh5F4
-erCNwUBYU5DZjrI9H+0p1o4neRRPMQM=
-=tp+8
+iHQEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXedrcgAKCRDj7w1vZxhR
+xdavAPjzTTCvwouCytfXW/t4u+SVB9rmOV3G+YlNApkfwiGrAP9ZY7cFIlhaaHR6
+KPuqccewYOnD4eU7PSrJ9ryTiv4jDA==
+=P7Ao
 -----END PGP SIGNATURE-----
 
---zbo7byqykz6hibco--
+--voqjdysu66o2gyxb--
 
 
---===============7839090813101429103==
+--===============4029696087742763550==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -232,5 +199,5 @@ Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
---===============7839090813101429103==--
+--===============4029696087742763550==--
 
