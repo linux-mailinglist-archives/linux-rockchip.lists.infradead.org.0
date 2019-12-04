@@ -2,84 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3546112E95
-	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Dec 2019 16:36:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18504112EDF
+	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Dec 2019 16:44:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NsxSucnsMZbU0qFKpT++5IWGyWNz0W2sNOka+79Bi9M=; b=PdmaoDrMJ8eK5K
-	vbJBphLWMkmNqn6xOxCu0+w3vAG0W0aYlxhXWuuScs8tf4docc1Kd/+U3+1syoBe1BZ1UN43+hrnO
-	TsLKSD31A9NmDR0PIDActypScaWjIS62fdz/RIHy9OZrdCVp047NOdsvUbjW0D217IjGOTGR6jiTm
-	NedZUf8By80jbASRQn4hrPrMV2k2lTLl5he4VPc1cuzps8bdkq7ugFHYoB56rkSoVJGnoaatmkwz5
-	TlETWf/9GXxDun2tbWFQ1kBADI+E+Surs3HFGk/MMzRC7xOLdrnIKAzI1Oz1HkCBKf4J1FQwfBsRl
-	nJ58Ji96m6frmFgl0+oA==;
+	List-Owner; bh=6nFz3phINXMmuKvadzjxgwmyFd2xj6Rh+maRgJKjEew=; b=BKRDnl7tnzncCm
+	eP1MwYaqqtL26w3HqT+zjJeK31+eafdTPWgx6oR7jy5F5akz0ENsjaaeVbwYfbqRWwNjRpbSYULOR
+	teSq8b4t5Ys3xjlc1PxXfW3ItK5QbZ3acVdxkck0Em/WsrVKTwTMp/Ye39JXtrMeJk8hOOOFTq/Ua
+	q3yVln4M+D9t5w4aE1eIb9SojFKANgEZ1c4pBX7fL3SCf07PCvcAm9m/YgLfmqndtXdLhNXlMpXQN
+	9PX+YfewcH2SNji+N36RajCLxx4Ay5nc2Qx9ILQkWIq/RSwVep/WCm5H9nKJQVNwSD6VS/QfhBN++
+	7kwJX1umZlgK4iQJUh8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icWhg-0005vu-Dt; Wed, 04 Dec 2019 15:36:36 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1icWpi-0001Sj-5S; Wed, 04 Dec 2019 15:44:54 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icWhd-0005va-0v
- for linux-rockchip@lists.infradead.org; Wed, 04 Dec 2019 15:36:34 +0000
-Received: by mail-qt1-x843.google.com with SMTP id 38so91329qtb.13
- for <linux-rockchip@lists.infradead.org>; Wed, 04 Dec 2019 07:36:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=YNh/gbbmWRgHkbHGfxQ5xOBFieH2xGvQqMmiNQHDLT0=;
- b=jukLGhV+8R8k8f29WiBkYubuL4CzavtAmcHjIr6vtqBVZ3bsQjy4hutLuInhLUjh9u
- 8CJsCgPKD5jJeijeL+JQC6JCpIwI9MbHAeKyjBlVh006dy30WghM58/EPkGH0Be06Fid
- b/7qWEf27WZkxmQSxXxHpGv9ekHgX1KorhWzTn5obmfKfwrKxbkDjMnNNactM8o7hP4x
- eAAs8fW9J8DgYlY8tejeV7r7p9H6ZeNoQhIg8dXoBdGk3KG7K+ODsEY57kyH/TG9qrD2
- 8MXPdk9zNa9sgkn5Jw5IfnoZui4bUrlRkcnWsbEncO+au9CHmgQOkTrUIWoL78+j3O/Y
- OOFQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=YNh/gbbmWRgHkbHGfxQ5xOBFieH2xGvQqMmiNQHDLT0=;
- b=o7+Jww+RZIJzg7RvKEyBokqz+Ir81PLuvThgkPsOdwjdyQyJFMWpz7gz6YiOUQdI3R
- FyuAazEpJr2GJeVEqHswbzOJVCVTcpX6bs4lr5c+WFZGjo0+d4fh69ZGO3M9VW52288Z
- KBHVtTKJy+g95XiuqpbGZyngMMclbTpU8iFNhWsyMls/W6jYg5ELEWC/VxPfm7IA7az8
- gHYl9ibMioJRsB5H9R4dqSc8TZEj0aT1sic8lq+DVv25RhzfBpSfKC1w0eddXZFNeB/Z
- uvFfcsAOmeuABxSBGd6+LIqsSMGc9bYwyjUuGxuJN9ZBh5H/54SoFwmlUTMbI6pspOQH
- t4pA==
-X-Gm-Message-State: APjAAAVZfXdAiMarEX5EGVFeyQ8vNjNAXA1IC3E3MiKHYmYtfDdQ/TV4
- n38GtM0L/A84GN3AO7k05xle+agKxeF01uXiEPTAPg==
-X-Google-Smtp-Source: APXvYqzUpz7kRayiI1Tw/Pfmt8JgMzT5TG0GjLQ638rS/KA5BxIubo5kP0KfMWuC/foYdyXWCMO42hh+Jpms1/xSkSI=
-X-Received: by 2002:ac8:1494:: with SMTP id l20mr3241584qtj.356.1575473791024; 
- Wed, 04 Dec 2019 07:36:31 -0800 (PST)
-MIME-Version: 1.0
-References: <20191204103940.22050-1-miquel.raynal@bootlin.com>
-In-Reply-To: <20191204103940.22050-1-miquel.raynal@bootlin.com>
-From: Peter Geis <pgwipeout@gmail.com>
-Date: Wed, 4 Dec 2019 10:36:19 -0500
-Message-ID: <CAMdYzYrEmTqvJ6m54EADxLDf70duCtdz3pesV3EZmt67=cbs5g@mail.gmail.com>
+ id 1icWpY-0001J9-9b
+ for linux-rockchip@lists.infradead.org; Wed, 04 Dec 2019 15:44:47 +0000
+Received: from xps13 (unknown [91.224.148.103])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 16C7F20000E;
+ Wed,  4 Dec 2019 15:44:36 +0000 (UTC)
+Date: Wed, 4 Dec 2019 16:44:35 +0100
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Peter Geis <pgwipeout@gmail.com>
 Subject: Re: [PATCH] arm64: dts: rockchip: Describe PX30 caches
-To: Miquel Raynal <miquel.raynal@bootlin.com>
+Message-ID: <20191204164435.2dd1b4fe@xps13>
+In-Reply-To: <CAMdYzYrEmTqvJ6m54EADxLDf70duCtdz3pesV3EZmt67=cbs5g@mail.gmail.com>
+References: <20191204103940.22050-1-miquel.raynal@bootlin.com>
+ <CAMdYzYrEmTqvJ6m54EADxLDf70duCtdz3pesV3EZmt67=cbs5g@mail.gmail.com>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_073633_090448_3C603F48 
-X-CRM114-Status: GOOD (  15.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191204_074444_472318_B92D4744 
+X-CRM114-Status: GOOD (  16.57  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.232 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.178.232 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pgwipeout[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,118 +71,53 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
  Rob Herring <robh+dt@kernel.org>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Dec 4, 2019 at 5:40 AM Miquel Raynal <miquel.raynal@bootlin.com> wrote:
->
-> PX30 SoCs feature 4 Cortex-A35 CPUs with each of them a L1 data and
-> instruction cache. Both are 32kiB wide (PX30 TRM) and made of 64-bit
-> lines (ARM Cortex-A35 manual). I-cache is 2-way set associative (ARM
-> Cortex-A35 manual), D-cache is 4-way set associative (ARM
-> Cortex-A35manual).
->
-> An L2 cache is placed after these 4 L1 caches (PX30 TRM), is 256kiB
-> wide (PX30 TRM) and made of 64-bit lines (ARM Cortex-A35 manual) and
-> is 8-way set associative (ARM Cortex-A35 manual).
->
-> Describe all of them in the PX30 DTSI.
->
-> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-> ---
->  arch/arm64/boot/dts/rockchip/px30.dtsi | 35 ++++++++++++++++++++++++++
->  1 file changed, 35 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-> index 1fd12bd09e83..0e10a224a84b 100644
-> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-> @@ -48,6 +48,13 @@
->                         cpu-idle-states = <&CPU_SLEEP &CLUSTER_SLEEP>;
->                         dynamic-power-coefficient = <90>;
->                         operating-points-v2 = <&cpu0_opp_table>;
-> +                       i-cache-size = <0x8000>;
-> +                       i-cache-line-size = <64>;
-> +                       i-cache-sets = <256>;
-> +                       d-cache-size = <0x8000>;
-> +                       d-cache-line-size = <64>;
-> +                       d-cache-sets = <128>;
-> +                       next-level-cache = <&l2>;
-
-If the i-cache is 2-way associative and the d-cache is 4-way, wouldn't
-that mean these two values are backwards?
-
->                 };
->
->                 cpu1: cpu@1 {
-> @@ -60,6 +67,13 @@
->                         cpu-idle-states = <&CPU_SLEEP &CLUSTER_SLEEP>;
->                         dynamic-power-coefficient = <90>;
->                         operating-points-v2 = <&cpu0_opp_table>;
-> +                       i-cache-size = <0x8000>;
-> +                       i-cache-line-size = <64>;
-> +                       i-cache-sets = <256>;
-> +                       d-cache-size = <0x8000>;
-> +                       d-cache-line-size = <64>;
-> +                       d-cache-sets = <128>;
-> +                       next-level-cache = <&l2>;
->                 };
->
->                 cpu2: cpu@2 {
-> @@ -72,6 +86,13 @@
->                         cpu-idle-states = <&CPU_SLEEP &CLUSTER_SLEEP>;
->                         dynamic-power-coefficient = <90>;
->                         operating-points-v2 = <&cpu0_opp_table>;
-> +                       i-cache-size = <0x8000>;
-> +                       i-cache-line-size = <64>;
-> +                       i-cache-sets = <256>;
-> +                       d-cache-size = <0x8000>;
-> +                       d-cache-line-size = <64>;
-> +                       d-cache-sets = <128>;
-> +                       next-level-cache = <&l2>;
->                 };
->
->                 cpu3: cpu@3 {
-> @@ -84,6 +105,13 @@
->                         cpu-idle-states = <&CPU_SLEEP &CLUSTER_SLEEP>;
->                         dynamic-power-coefficient = <90>;
->                         operating-points-v2 = <&cpu0_opp_table>;
-> +                       i-cache-size = <0x8000>;
-> +                       i-cache-line-size = <64>;
-> +                       i-cache-sets = <256>;
-> +                       d-cache-size = <0x8000>;
-> +                       d-cache-line-size = <64>;
-> +                       d-cache-sets = <128>;
-> +                       next-level-cache = <&l2>;
->                 };
->
->                 idle-states {
-> @@ -107,6 +135,13 @@
->                                 min-residency-us = <2000>;
->                         };
->                 };
-> +
-> +               l2: l2-cache {
-> +                       compatible = "cache";
-> +                       cache-size = <0x40000>;
-> +                       cache-line-size = <64>;
-> +                       cache-sets = <512>;
-> +               };
->         };
->
->         cpu0_opp_table: cpu0-opp-table {
-> --
-> 2.20.1
->
->
-> _______________________________________________
-> Linux-rockchip mailing list
-> Linux-rockchip@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgUGV0ZXIsCgpQZXRlciBHZWlzIDxwZ3dpcGVvdXRAZ21haWwuY29tPiB3cm90ZSBvbiBXZWQs
+IDQgRGVjIDIwMTkgMTA6MzY6MTkKLTA1MDA6Cgo+IE9uIFdlZCwgRGVjIDQsIDIwMTkgYXQgNTo0
+MCBBTSBNaXF1ZWwgUmF5bmFsIDxtaXF1ZWwucmF5bmFsQGJvb3RsaW4uY29tPiB3cm90ZToKPiA+
+Cj4gPiBQWDMwIFNvQ3MgZmVhdHVyZSA0IENvcnRleC1BMzUgQ1BVcyB3aXRoIGVhY2ggb2YgdGhl
+bSBhIEwxIGRhdGEgYW5kCj4gPiBpbnN0cnVjdGlvbiBjYWNoZS4gQm90aCBhcmUgMzJraUIgd2lk
+ZSAoUFgzMCBUUk0pIGFuZCBtYWRlIG9mIDY0LWJpdAo+ID4gbGluZXMgKEFSTSBDb3J0ZXgtQTM1
+IG1hbnVhbCkuIEktY2FjaGUgaXMgMi13YXkgc2V0IGFzc29jaWF0aXZlIChBUk0KPiA+IENvcnRl
+eC1BMzUgbWFudWFsKSwgRC1jYWNoZSBpcyA0LXdheSBzZXQgYXNzb2NpYXRpdmUgKEFSTQo+ID4g
+Q29ydGV4LUEzNW1hbnVhbCkuCj4gPgo+ID4gQW4gTDIgY2FjaGUgaXMgcGxhY2VkIGFmdGVyIHRo
+ZXNlIDQgTDEgY2FjaGVzIChQWDMwIFRSTSksIGlzIDI1NmtpQgo+ID4gd2lkZSAoUFgzMCBUUk0p
+IGFuZCBtYWRlIG9mIDY0LWJpdCBsaW5lcyAoQVJNIENvcnRleC1BMzUgbWFudWFsKSBhbmQKPiA+
+IGlzIDgtd2F5IHNldCBhc3NvY2lhdGl2ZSAoQVJNIENvcnRleC1BMzUgbWFudWFsKS4KPiA+Cj4g
+PiBEZXNjcmliZSBhbGwgb2YgdGhlbSBpbiB0aGUgUFgzMCBEVFNJLgo+ID4KPiA+IFNpZ25lZC1v
+ZmYtYnk6IE1pcXVlbCBSYXluYWwgPG1pcXVlbC5yYXluYWxAYm9vdGxpbi5jb20+Cj4gPiAtLS0K
+PiA+ICBhcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3B4MzAuZHRzaSB8IDM1ICsrKysrKysr
+KysrKysrKysrKysrKysrKysrCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDM1IGluc2VydGlvbnMoKykK
+PiA+Cj4gPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9weDMwLmR0
+c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3B4MzAuZHRzaQo+ID4gaW5kZXggMWZk
+MTJiZDA5ZTgzLi4wZTEwYTIyNGE4NGIgMTAwNjQ0Cj4gPiAtLS0gYS9hcmNoL2FybTY0L2Jvb3Qv
+ZHRzL3JvY2tjaGlwL3B4MzAuZHRzaQo+ID4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9yb2Nr
+Y2hpcC9weDMwLmR0c2kKPiA+IEBAIC00OCw2ICs0OCwxMyBAQAo+ID4gICAgICAgICAgICAgICAg
+ICAgICAgICAgY3B1LWlkbGUtc3RhdGVzID0gPCZDUFVfU0xFRVAgJkNMVVNURVJfU0xFRVA+Owo+
+ID4gICAgICAgICAgICAgICAgICAgICAgICAgZHluYW1pYy1wb3dlci1jb2VmZmljaWVudCA9IDw5
+MD47Cj4gPiAgICAgICAgICAgICAgICAgICAgICAgICBvcGVyYXRpbmctcG9pbnRzLXYyID0gPCZj
+cHUwX29wcF90YWJsZT47Cj4gPiArICAgICAgICAgICAgICAgICAgICAgICBpLWNhY2hlLXNpemUg
+PSA8MHg4MDAwPjsKPiA+ICsgICAgICAgICAgICAgICAgICAgICAgIGktY2FjaGUtbGluZS1zaXpl
+ID0gPDY0PjsKPiA+ICsgICAgICAgICAgICAgICAgICAgICAgIGktY2FjaGUtc2V0cyA9IDwyNTY+
+Owo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgZC1jYWNoZS1zaXplID0gPDB4ODAwMD47Cj4g
+PiArICAgICAgICAgICAgICAgICAgICAgICBkLWNhY2hlLWxpbmUtc2l6ZSA9IDw2ND47Cj4gPiAr
+ICAgICAgICAgICAgICAgICAgICAgICBkLWNhY2hlLXNldHMgPSA8MTI4PjsKPiA+ICsgICAgICAg
+ICAgICAgICAgICAgICAgIG5leHQtbGV2ZWwtY2FjaGUgPSA8JmwyPjsgIAo+IAo+IElmIHRoZSBp
+LWNhY2hlIGlzIDItd2F5IGFzc29jaWF0aXZlIGFuZCB0aGUgZC1jYWNoZSBpcyA0LXdheSwgd291
+bGRuJ3QKPiB0aGF0IG1lYW4gdGhlc2UgdHdvIHZhbHVlcyBhcmUgYmFja3dhcmRzPwoKV2hpY2gg
+dmFsdWUgYXJlIHlvdSByZWZlcnJpbmcgdG8/IERvIHlvdSBtZWFuIGNhY2hlLXNldHM/IFRoZSBm
+b2xsb3dpbmcKY2FsY3VsYXRpb24gaXMgbXkgdW5kZXJzdGFuZGluZyBvZiB0aGUgc2l0dWF0aW9u
+IGJ1dCBpdCBpcyB0aGUgZmlyc3QKdGltZSBJIGFtIGRvaW5nIGl0IHNvIEkgbWlnaHQgYmUgdG90
+YWxseSB3cm9uZy4KCk15IHVuZGVyc3RhbmRpbmcgaXMgdGhhdCBpZiB0aGVyZSBhcmUgMzI3Njgg
+Y2FjaGUgYnl0ZXMgbWFkZSBvZiA2NC1ieXRlCmxpbmVzLCBzbyB0aGVyZSBhcmUgNTEyIGxpbmVz
+IGluIGJvdGggY2FzZXMuCgpUaGVuLCBpZiB0aGUgaW5zdHJ1Y3Rpb24gY2FjaGUgaXMgMi13YXkg
+YXNzb2NpYXRpdmUsIGl0IG1lYW5zIHRoZXJlIGFyZQo1MTIgLyAyID0gMjU2IHNldHMuIEZvciB0
+aGUgZGF0YSBjYWNoZSAoNC13YXkpLCBpdCB3b3VsZCBiZSA1MTIgLyA0ID0KMTI4LiBBbSBJIHdy
+b25nPwoKVGhhbmtzLApNaXF1w6hsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
