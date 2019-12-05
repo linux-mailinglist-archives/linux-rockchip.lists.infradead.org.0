@@ -2,52 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2414C11363E
-	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Dec 2019 21:15:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF7AB1139B9
+	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Dec 2019 03:19:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n/GStPT/KOWEQ8axSeU8OM4+WhMOX3/uzFvvjDRNDoM=; b=JAEo5/c1+E7dMz
-	6Lu7tV6Y04W6drrgW8bx0VXOSVclDReCN5+4yN5xXIEaS00Fs75kk5TyogN2MOIKK4jPN0j4XI8Ua
-	Ki3LUcvgSa7RPFg7Gni7Ou2iWSWA/s3r2PU8Vij4HfhQZdl3+0uTWyGWCMNeQsrMeO3uDOaeiFhZs
-	uqGfIkH/FSOc4cIh5ELnmGp/w7zY8zzOoUNEqpA8Lt+wj9qjJtaiO9SiQTH8lNVV3R99Azlf62z6V
-	y5+x0VxMHy3HKiy4b4lQGGHzBraYsxB/TBbeX/Ug/hzoRR2QZ6z+WHEJ1mwgo08ufedsUVWdb6U5H
-	uZkXP/QOL+QnmivhSF2Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=v9w3utf8nnoW3vNmNBh0hhgOkWKNa9mFSYpMu6BRrt4=; b=Hjo4aB3c2pqXzo
+	ah8+fGP6TK+1z5sHxERiJ6nIcI9TUif/52D+jR6SfEOeBTkvp5QHJ7tC4sGAq8IDfAUHrj0i8D6sP
+	goofWtW9Xt/GSTdVfmxDLL79Tlo0HQT7Q/SBbASMUb/NMThtBkfbvA727tQEQwdnb+sIbgE54gz9z
+	OkzkuieLvv1Ny3xb8BBQzIodMHtmGx98GtXYRZx4NYW4ciussI4UJyVS+Ro9ykbT6r32vPy6UQKoa
+	VcU6zmUj95xhuAQ5sPksqpQC5wYI5H7Kt3afS+yAphDOB6Nq1t7sEIlDdTonfXe64gx830HAt5mAz
+	0RQnhpIdjoZlx2/vkPlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icb3M-0000mY-G0; Wed, 04 Dec 2019 20:15:16 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1icgje-0007xX-Rc; Thu, 05 Dec 2019 02:19:18 +0000
+Received: from mail-qt1-x836.google.com ([2607:f8b0:4864:20::836])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icb35-0007pb-DP; Wed, 04 Dec 2019 20:15:00 +0000
-Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1icb2t-0001Zb-KG; Wed, 04 Dec 2019 21:14:47 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 1/5] dt-bindings: arm: rockchip: Add VMARC RK3399Pro
- SOM binding
-Date: Wed, 04 Dec 2019 21:14:46 +0100
-Message-ID: <5408424.xnnVrITuBQ@diego>
-In-Reply-To: <20191204193240.GA6772@bogus>
-References: <20191121141445.28712-1-jagan@amarulasolutions.com>
- <20191121141445.28712-2-jagan@amarulasolutions.com>
- <20191204193240.GA6772@bogus>
+ id 1icgjb-0007x0-8M
+ for linux-rockchip@lists.infradead.org; Thu, 05 Dec 2019 02:19:16 +0000
+Received: by mail-qt1-x836.google.com with SMTP id b5so1953666qtt.11
+ for <linux-rockchip@lists.infradead.org>; Wed, 04 Dec 2019 18:19:14 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=K5bOX7sd5sca4fthU2fQI9UseNw4Qy4m7Dkb0D0edjI=;
+ b=M7VmJLkpbDSwW4QHZqXCIE/AknX9ht5aDukciIPehit3I7c92Tbm7MLTcLKIRV+i2c
+ lgqIu1SbqB0kSqN3onuYd6Y0ZPJuCcXNOqAMaoJKHRv1ancpfjuyqRuv63TYs0se1i4m
+ c1pxmxRgh+AGHwmcf36hkQkgCbZNBZ4Pbqxe7dK0u2j1ZLyOxmuTGqIk1D4qdS+/B//k
+ umU91/KWn+d9c3GNroAEZvE108S0GBSexoBdgf2zGUCghmPVkj8Mhngm8NRE7l19PjSd
+ GX+JK3mUSv65xEGEQ0GfeFCZqomPrmksMCYzoWjIaCOlI0t8Q1P9jRlGt5paFlXfeIYB
+ ohxg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=K5bOX7sd5sca4fthU2fQI9UseNw4Qy4m7Dkb0D0edjI=;
+ b=m39a099NTx6ARvb7kT4S24bPRl9FI67sbt4KqZ41Du0ynPYcbXMLhP2M4S8t9wwsHN
+ ApvO9u0LBb7Bj7QHDO5I+39XoZmvla+yDZZyPbRxgt1WpyYsPzE7XHQ7sh40EDCvjqT1
+ h7Oo8N9NWDZHAX0ZTyWCvtM7VreK6cm/9E7J9sgHSZWArThKT3MkJMxsb/hKULXMPxUp
+ f1vvC0UU8eXXwC8Xz/Fz7D2C+wvU1XLgb31lpptfa18FxjwfBnZfoJq+naNwkTK0X7b4
+ DCQOTqgeZqnekc0TrCMtAbErE5xdmt4fkLYV8+Udb9dtB38JT9j39lyamWTrQZMbsHi+
+ mVyA==
+X-Gm-Message-State: APjAAAWP3uOuY3Kl3yoY2PcZM3akwZ7mzi+xTgGlASCZi5mrXAmclJWg
+ IvGKPadNIdC93IfXqhUIDeouNw8q6ziGQ7HLF1dZMSaJTcf7ng==
+X-Google-Smtp-Source: APXvYqzQmsb7PQo2ir0kmUjDOnaTpl/D9xialMW9j+Q28oNIZpk4RftdtUMSvR0B0AWIzIFoW4DrXz2SZa/X+rq1IYo=
+X-Received: by 2002:ac8:75d8:: with SMTP id z24mr5558000qtq.193.1575512352841; 
+ Wed, 04 Dec 2019 18:19:12 -0800 (PST)
 MIME-Version: 1.0
+From: Peter Geis <pgwipeout@gmail.com>
+Date: Wed, 4 Dec 2019 21:19:02 -0500
+Message-ID: <CAMdYzYpbhAT5EfJv2SuC8GZE3q3juUXCwtbAX8SW9eXiC5AP2g@mail.gmail.com>
+Subject: rk3328-firefly ddr4 tpl init
+To: u-boot@lists.denx.de
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_121459_600808_9CE241A6 
-X-CRM114-Status: GOOD (  18.73  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191204_181915_344753_02AAAEA2 
+X-CRM114-Status: UNSURE (   3.45  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:836 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pgwipeout[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,72 +90,38 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Tom Cubie <tom@radxa.com>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Jagan Teki <jagan@amarulasolutions.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org,
- Akash Gajjar <akash@openedev.com>
+Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Mittwoch, 4. Dezember 2019, 20:32:40 CET schrieb Rob Herring:
-> On Thu, Nov 21, 2019 at 07:44:41PM +0530, Jagan Teki wrote:
-> > VMARC RK3399Pro SOM is a standard SMARC SOM design with
-> > Rockchip RK3399Pro SoC, which is designed by Vamrs.
-> > 
-> > Since it is a standard SMARC design, it can be easily
-> > mounted on the supporting Carrier board. Radxa has
-> > suitable carrier board to mount and use it as a final
-> > version board.
-> > 
-> > Add dt-bindings for it.
-> > 
-> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > ---
-> > Changes for v2:
-> > - none
-> > 
-> >  Documentation/devicetree/bindings/arm/rockchip.yaml | 5 +++++
-> >  1 file changed, 5 insertions(+)
-> > 
-> > diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
-> > index 45728fd22af8..51aa458833a9 100644
-> > --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
-> > +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
-> > @@ -526,4 +526,9 @@ properties:
-> >          items:
-> >            - const: tronsmart,orion-r68-meta
-> >            - const: rockchip,rk3368
-> > +
-> > +      - description: Vamrs VMARC RK3399Pro SOM
-> > +        items:
-> > +          - const: vamrs,rk3399pro-vmarc-som
-> 
-> Why do you need this? You just override it in your dts files, so it is 
-> not really used. Perhaps the top-level should have all 3 compatibles? If 
-> so, then the schemas are wrong.
+Good Evening,
 
-In the past we had SOMs that _could_ function alone, but looking at the
-announcement for this one [0] suggests that the SOM always needs a carrier
-board, so I don't think the SOM actually needs a separate entry but instead
-should be part of the carrier-board compatible list, as Rob suggested.
+I am trying to get TPL/SPL working on the rk3328-firefly ddr4 4gb board.
+I've pulled the ddr4 dtsi from the rockchip u-boot repository [0].
 
-So I guess we should only have (from patch 3):
-  - description: Radxa ROCK Pi N10
-        items:
-          - const: radxa,rockpi-n10
-          - const: vamrs,rk3399pro-vmarc-som
-          - const: rockchip,rk3399pro
+Unfortunately I cannot get the ddr4 to detect correctly.
 
+With the u-boot tpl, I get the following:
+U-Boot TPL 2020.01-rc3-00072-g1a1bea82b2-dirty (Dec 04 2019 - 08:33:54)
+data training error
+row errordata training error
+DDR4, 333MHz
+BW=16 Col=10 Bk=4 BG=2 CS0 Row=17 CS=1 Die BW=16 Size=2048MB
 
-Heiko
+With the rk3328_ddr_333MHz_v1.16.bin, I get the following:
+DDR version 1.16 20190528
+ID:0x805 N
+In
+DDR4
+333MHz
+Bus Width=32 Col=10 Bank=4 Bank Group=2 Row=16/16 CS=2 Die
+Bus-Width=16 Size=4096MB
+ddrconfig:19
+OUT
 
-[0] https://www.96rocks.com/blog/2019/09/11/introduce-vamrc-rk3399pro-som-and-ficus2-carrier-board/
-
-
+[0] https://github.com/rockchip-linux/u-boot/blob/next-dev/arch/arm/dts/rk3328-sdram-ddr4-666.dtsi
 
 _______________________________________________
 Linux-rockchip mailing list
