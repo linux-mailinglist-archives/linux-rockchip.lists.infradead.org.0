@@ -2,57 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A72981154A4
-	for <lists+linux-rockchip@lfdr.de>; Fri,  6 Dec 2019 16:53:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 639581154C7
+	for <lists+linux-rockchip@lfdr.de>; Fri,  6 Dec 2019 17:02:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EuwnQUeTxUHG++0CunooNgmEt/ypNp6J+cOSIgr8J/g=; b=uXqj8jmJnjRI97
-	6KkzTqdl/F17OG2d3ZMEBIkbM+VURUC4+NuzKb3A8jNuu0B+fDpxNBMOSwGjo8b4yOTABlghlFX6K
-	cLAll08px6IQT8hJXxaT+WLTlq9t7gHI/pM2NTTxojABDUBg1jP+fJJ61H4CYxPNwVRA/qqCLcV7L
-	qGzsEmKVyNvEu0IRE1Umf91oKxVNnz5SJwKJWYIlghnbDmM9tjAv78r5K64iCeB4+hQ13QvWp/LU6
-	19eqJVl207bwSPW5l0IilcFWYnfJ5Qs7F69pO3XhZzti9Dr92toI3H1cRlbsRP3WO+GUl9lB92D/B
-	G73jSgP9AnKb/FDouiGQ==;
+	List-Owner; bh=EfXaYTkhtaIYFKS7AZaNyxHg6brS/occ1gc++A9jyoM=; b=kZWPmPWImc9oGm
+	WyN0COHE6OVd10i9jfZ5N2tk2T9CFJABBDtZBvIfRuvAaECMfF0A+sTzS9WJpGK2q58s/577h7NGv
+	RQNWaBSV5NKnoYnH8WZsQbwuAgIOKdq5QpqHTwCWNsPW0fIUZehyMky/op1/OW1rCP5YGzLY47AMs
+	J1g/TupNm1ozvaDBCRuhYFeoWVq3P8ePdL69w2tp7TtiTVzGg7RNnN9WnyLzUdLLR/SwpmhyYjfXA
+	/3n3Q7QXna+d9J2o6j+SVtOybkrasfWCDBHRMTKQYVaF/D2gt5z7nmqZNbErARM16CmOn2AsA5CXn
+	RpeKYv0WA3EIcTqp1teg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idFuj-0000mN-Nb; Fri, 06 Dec 2019 15:53:05 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1idG3Q-0003fM-HP; Fri, 06 Dec 2019 16:02:04 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idFug-0000m1-Vv
- for linux-rockchip@lists.infradead.org; Fri, 06 Dec 2019 15:53:04 +0000
-X-Originating-IP: 91.224.148.103
-Received: from xps13 (unknown [91.224.148.103])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 15AF0E0015;
- Fri,  6 Dec 2019 15:52:51 +0000 (UTC)
-Date: Fri, 6 Dec 2019 16:52:50 +0100
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Heiko Stuebner <heiko@sntech.de>
+ id 1idG3N-0003ez-RY
+ for linux-rockchip@lists.infradead.org; Fri, 06 Dec 2019 16:02:03 +0000
+Received: from p57b772b2.dip0.t-ipconnect.de ([87.183.114.178]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1idG3K-0003JS-JN; Fri, 06 Dec 2019 17:01:58 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
 Subject: Re: [PATCH] arm64: dts: rockchip: Change RK809 PMIC interrupt polarity
-Message-ID: <20191206165250.5877dec8@xps13>
-In-Reply-To: <3285991.EbEXlA3CnX@phil>
+Date: Fri, 06 Dec 2019 17:01:58 +0100
+Message-ID: <1601413.9zADmrJRdp@phil>
+In-Reply-To: <20191206165250.5877dec8@xps13>
 References: <20191206154247.28057-1-miquel.raynal@bootlin.com>
- <3285991.EbEXlA3CnX@phil>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ <3285991.EbEXlA3CnX@phil> <20191206165250.5877dec8@xps13>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_075303_163777_52CD1750 
-X-CRM114-Status: GOOD (  13.59  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191206_080202_039674_A43EA98D 
+X-CRM114-Status: GOOD (  17.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.196 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,38 +64,102 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sCgpIZWlrbyBTdHVlYm5lciA8aGVpa29Ac250ZWNoLmRlPiB3cm90ZSBvbiBGcmks
-IDA2IERlYyAyMDE5IDE2OjQ4OjAwCiswMTAwOgoKPiBIaSBNaXF1ZWwsCj4gCj4gQW0gRnJlaXRh
-ZywgNi4gRGV6ZW1iZXIgMjAxOSwgMTY6NDI6NDcgQ0VUIHNjaHJpZWIgTWlxdWVsIFJheW5hbDoK
-PiA+IFBNSUMgaW50ZXJydXB0IGNhbiBiZSBhY3RpdmUgaGlnaCBvciBhY3RpdmUgbG93IGRlcGVu
-ZGluZyBvbiBCSVQoMSkgb2YKPiA+IHRoZSBHUElPX0lOVF9DRkcgcGluLiBUaGUgZGVmYXVsdCBp
-cyAweDEsIHdoaWNoIG1lYW5zIGFjdGl2ZQo+ID4gaGlnaC4gQ2hhbmdlIHRoZSBwb2xhcml0eSBp
-biB0aGUgZGV2aWNlIHRyZWUgdG8gcmVmbGVjdCB0aGUgZGVmYXVsdAo+ID4gc3RhdGUuCj4gPiAK
-PiA+IFdpdGhvdXQgdGhpcyBhbmQgd2l0aCB0aGUgY3VycmVudCBjb2RlIGJhc2UsIHRoZSBpbnRl
-cnJ1cHQgbmV2ZXIgc3RvcHMKPiA+IHRyaWdnZXJpbmcgd2hpbGUgdGhlIE1GRCBkcml2ZXIgZG9l
-cyBub3Qgc2VlIGFueXRoaW5nIHRvCj4gPiBjaGVjay9jbGVhci9tYXNrIHNvIGFmdGVyIDEwMDAw
-MCBzcHVyaW91cyBJUlFzLCB0aGUga2VybmVsIHNpbXBseQo+ID4gZGVzYWN0aXZhdGVzIHRoZSBp
-bnRlcnJ1cHQ6Cj4gPiAKPiA+ICAgICAgICAgaXJxIDM2OiBub2JvZHkgY2FyZWQgKHRyeSBib290
-aW5nIHdpdGggdGhlICJpcnFwb2xsIiBvcHRpb24pCj4gPiAgICAgICAgIFsuLi5dCj4gPiAgICAg
-ICAgIGhhbmRsZXJzOgo+ID4gICAgICAgICBbPChfX19fcHRydmFsX19fXyk+XSBpcnFfZGVmYXVs
-dF9wcmltYXJ5X2hhbmRsZXIgdGhyZWFkZWQKPiA+IAlbPChfX19fcHRydmFsX19fXyk+XSByZWdt
-YXBfaXJxX3RocmVhZAo+ID4gICAgICAgICBEaXNhYmxpbmcgSVJRICMzNgo+ID4gCj4gPiBTaWdu
-ZWQtb2ZmLWJ5OiBNaXF1ZWwgUmF5bmFsIDxtaXF1ZWwucmF5bmFsQGJvb3RsaW4uY29tPiAgCj4g
-Cj4gKmNvdWdocyBzbGlnaHRseSoKPiAKPiBtZmQ6IHJrODA4OiBTZXQgUks4MTcgaW50ZXJydXB0
-IHBvbGFyaXR5IHRvIGxvdwo+IGh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9r
-ZXJuZWwvZ2l0L2xlZS9tZmQuZ2l0L2NvbW1pdC9kcml2ZXJzL21mZC9yazgwOC5jP2g9Zm9yLW1m
-ZC1uZXh0JmlkPWRiZDE2ZWY1MzQ4NzA4NDgxNmEyMGY2NjI0MjNhYjU0M2E3NWZjODMKPiAKPiBT
-aG91bGQgYmUgaW4gdGhlIGN1cnJlbnQgbWVyZ2Ugd2luZG93IGFscmVhZHkgSSBndWVzcyA7LSkK
-ClRoaXMgdGltZSBJIHN3ZWFyIEkgY2hlY2tlZCB5b3VyIHRyZWUuIEJ1dCB0aGlzIHRpbWUgd2Ug
-ZGlkIG5vdCBlbmRlZAp3aXRoIHRoZSBzYW1lIGZpeCBzbyBJIG1pc3NlZCB0aGlzIG9uZSAqYWdh
-aW4qIDopCgo+IAo+IEhhdmluZyB0aGlzIGNvbnNpc3RlbnQgb3ZlciBhbGwgcms4eHggc2VlbWVk
-IG5pY2VyLgoKSSdtIGZpbmUgd2l0aCB0aGlzIGFwcHJvYWNoIHRvby4KClRoYW5rcywKTWlxdcOo
-bAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgt
-cm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hp
-cAo=
+Am Freitag, 6. Dezember 2019, 16:52:50 CET schrieb Miquel Raynal:
+> Hi Heiko,
+> =
+
+> Heiko Stuebner <heiko@sntech.de> wrote on Fri, 06 Dec 2019 16:48:00
+> +0100:
+> =
+
+> > Hi Miquel,
+> > =
+
+> > Am Freitag, 6. Dezember 2019, 16:42:47 CET schrieb Miquel Raynal:
+> > > PMIC interrupt can be active high or active low depending on BIT(1) of
+> > > the GPIO_INT_CFG pin. The default is 0x1, which means active
+> > > high. Change the polarity in the device tree to reflect the default
+> > > state.
+> > > =
+
+> > > Without this and with the current code base, the interrupt never stops
+> > > triggering while the MFD driver does not see anything to
+> > > check/clear/mask so after 100000 spurious IRQs, the kernel simply
+> > > desactivates the interrupt:
+> > > =
+
+> > >         irq 36: nobody cared (try booting with the "irqpoll" option)
+> > >         [...]
+> > >         handlers:
+> > >         [<(____ptrval____)>] irq_default_primary_handler threaded
+> > > 	[<(____ptrval____)>] regmap_irq_thread
+> > >         Disabling IRQ #36
+> > > =
+
+> > > Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>  =
+
+> > =
+
+> > *coughs slightly*
+> > =
+
+> > mfd: rk808: Set RK817 interrupt polarity to low
+> > https://git.kernel.org/pub/scm/linux/kernel/git/lee/mfd.git/commit/driv=
+ers/mfd/rk808.c?h=3Dfor-mfd-next&id=3Ddbd16ef53487084816a20f662423ab543a75f=
+c83
+> > =
+
+> > Should be in the current merge window already I guess ;-)
+> =
+
+> This time I swear I checked your tree. But this time we did not ended
+> with the same fix so I missed this one *again* :)
+
+No worries ... I guess I should check where I hid additional patches ;-)
+
+So right now px30 stuff is in the trees:
+- mine
+- mfd
+- phy (first round of dsi phy, refinement pending on the list)
+- nvmem (for the otp controller)
+- drm (drm/rockchip: vop: add the definition of dclk_pol)
+- clk
+
+and pending on lists:
+- drm (dsi support + timings)
+- phy (refinement as mentioned above)
+
+not submitted yet but planning to get this done this weekend:
+- panel driver for px30-evb
+- dsi devicetree stuff
+
+
+Hope this helps a bit to prevent more double work ;-)
+Heiko
+
+> =
+
+> > =
+
+> > Having this consistent over all rk8xx seemed nicer.
+> =
+
+> I'm fine with this approach too.
+> =
+
+> Thanks,
+> Miqu=E8l
+
+
+
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
