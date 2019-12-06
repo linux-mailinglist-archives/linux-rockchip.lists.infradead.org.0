@@ -2,80 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE9DF11575E
-	for <lists+linux-rockchip@lfdr.de>; Fri,  6 Dec 2019 19:47:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FB07115760
+	for <lists+linux-rockchip@lfdr.de>; Fri,  6 Dec 2019 19:47:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9+fdeNOKCd02NFXGSJMGeT07lGohBFGCnqVZ9x+Rfws=; b=eTVCzgSxIgu0bU
-	OxmmkhKXL7VeHsiMiGOtqEUrOoX822QXcwI6u5X1WhJV0L70VlxdbjVzf3H1eAm+j+eQvsRiTyK54
-	I3cACdZxE7Rsdt5er4eVlMaraHnVvWtzd/5ohnr8qyhMu6Fhqd0E4n/FovN+iYT/tK4UE5eWxcFZO
-	mY595KczuxRi/63+daDi807mSceK5SyAE2LMO4SuaN4RTsnFKRV9vAV/39IsmCXF/VOz79WIZju3e
-	9Umoq42IJx4njswifQ6hW7ySG6JuL+ZGmpm36GgXVoPafYtrex7v4CO0+jr2eGnkxsKwuo0hQ4KIk
-	BHpv5Rx+Bv018ttWlTFQ==;
+	List-Owner; bh=WLJ0BO0vsSzM7NTswAiNKmNkuBjROQLQ+vxa2zxqj9E=; b=nlZazJF2z7ezFa
+	cR2JhHQgCXtmYfwzdSe2kd0ZVJSgGKQca4uwla/a+jQeU4tpYqMjMRvSG9mSOfbS/SwrAliHjzcH/
+	IB09nrwZduO+VyhnAzdehAAnB5EHEmT4lWG3GO6p5SyIIf1BA3qsScX0mNLGJRPBuGfGtq9xZE490
+	XOtNcCaec9TrMHrQVI4Z5WwwdBuTS2Hmbb8QSb2iJqCJhfoyngh+JDvKyJh6SSMzAb+RVU2OhuoAx
+	C2nij3PTWQmptdo2IiFT8/IjzX1DckFgqrIU/9ECX3081qtDjtyIXmetUkIuYPJ1Cavikex7BD7IG
+	K0ImqI0xAkW1l1DJmTfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idIdF-00042x-Ji; Fri, 06 Dec 2019 18:47:13 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1idIdY-0004NF-0d; Fri, 06 Dec 2019 18:47:32 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idIcY-0003NR-1t; Fri, 06 Dec 2019 18:46:31 +0000
-Received: by mail-pf1-x442.google.com with SMTP id 4so3758159pfz.9;
- Fri, 06 Dec 2019 10:46:29 -0800 (PST)
+ id 1idIca-0003Qo-Lt; Fri, 06 Dec 2019 18:46:34 +0000
+Received: by mail-pf1-x443.google.com with SMTP id h14so3760110pfe.10;
+ Fri, 06 Dec 2019 10:46:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=9W7WPwjnJHtC/naxP3RfV5CxVXsAP5EpT3Px9490LQY=;
- b=NavYeQqvP2q3kvmYn9yXI7GVvVVwsk9RcyYQZAKX0qJZTpUmu7ccQJx8ZddSpP4rdN
- YbN4EHyYXmDe45mcoHsauFp99puj08zDp/HbL7hnWV6GlGyfUNPEXAFH3SESYIjUD2sx
- rbBcvEfRW54cgJgRMK9gM+kv7OJEYudOZ4UM8xnW+LP9g8x51gMC6cBDcxwAJBOsFjxu
- dVFP9hUKstU4PS/1LMjhG45yxL1G8igQeVf5MluEs+B196KekbXrndPv+YboAn3kVfEa
- HSOsQj1y141VQLNUZB8P/4uu1iV0FyNquhRWmZrej0SSlGTEwj110Rrj9NvyfcUW6Oq7
- OZIQ==
+ bh=I11/1g/9q+frAVf8+DPvgghH4KQ81JT2S0kbypabsyc=;
+ b=VMnp87KdtKaHKbIdIynQJjnh6Rwx73cgOqHapRh8B69i4jp/3sjISCsxhLktJIGkSy
+ ZNe1M/lVfmzI6SIW2RwIZd/xu5yFsCzRRZOmM7mhk/UlM0bWSQrRNUBxQQnAmPprF42J
+ sZVVochTM/CWvOunmhgF/FvGmCl+XtfvNxs2ZmvDeqHmpb2EX5Y08QJCJDs4qAD+fRjo
+ Y5ojsHjT4xc3OK5ssN763cBtqpVYzc7Ec4VqydoM4Jlmha7xuedeCW5Fl0Hr23YdJxPt
+ ChmAu38tXs01yOllIWYQTSVi32qxfNHAoT1Gj3Ikgiy6PR1RCo+9jbDRygLnTxTKky6a
+ aHGw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=9W7WPwjnJHtC/naxP3RfV5CxVXsAP5EpT3Px9490LQY=;
- b=Adjq58GiDyyH30m3G5WTPSYrlTLp0M8Pkzcmz1EoREXr2xWIzdxC5Rf5TaHdbpvZGj
- G9rsKCDJa/Lc+sHG9cKOJOTXT5a35D0Qh0Npzx/d1EUT2Pn/LUb38t+VBbq+WP3g+zIr
- at6/t9m7ytV4Yf2dSgKljP3sist7ysZaJmuwD1hf40zdd5fVBAcXruTiwRCUKq3D5sZy
- 6PFf7edKRbe2ttlSfCNTkP8X2djDhLZGMyD/w68pAj408xL3DvyFaEAqtnR8anQX6MUq
- bqigUNU8XMsrmst7SeNgupKKABsdIniR8hDFUiMgCmKKNFN5rM0a87Z2O8grONgO/WNb
- TK4w==
-X-Gm-Message-State: APjAAAUC/mmDttYi8RSXBLWqqVLWcOldODxZ+j6ZPm8To/aYLpP/o9qd
- Z3U3sUaD5TyHLAFOQ3D6PxU=
-X-Google-Smtp-Source: APXvYqzz67JrfhxkW/+t3kgMvplm4CMLvf6iCKoVJbY3ACxHKyUocDE0Q5QdpDqkNJjvaZcvGlM2WQ==
-X-Received: by 2002:a63:483:: with SMTP id 125mr5032698pge.217.1575657987999; 
- Fri, 06 Dec 2019 10:46:27 -0800 (PST)
+ bh=I11/1g/9q+frAVf8+DPvgghH4KQ81JT2S0kbypabsyc=;
+ b=T8H6cJG3+9qB+7KLCioJaQ7JnYWwQuKYoGTa+8Hjr2Y+lTJCLJB8ilK8sojunl7j7m
+ o/S6DBbuVImifw7VzMJA3LW2v/l6dIraAwPe8bR9NtQafK+YIwrcxdGeMF4caaljHeyS
+ zOS2y3PlD1wXtQtxHs6Kd9ZpOESZPkZ6+NYxPQlhuqcVIDZLm+6J6b82ct4VswSEQ9Xf
+ /QTz+2bgXZgTANR5XWlWq8ESKbTP5uzXU96LjOil9LesVZ8s2Wd0WK1aqsqe4j85jvpP
+ dS1zog3c3Hao8pvobjyvw0JkH1cafSP4MTKLvAUXmUyp+VZLSCsALAfQGoXJDaxPe2QW
+ JOdw==
+X-Gm-Message-State: APjAAAWrnAm0z8Cp3Ey9c0YqWM63sWUrc+nJxMV6613dMgl8Mjxhju2M
+ QKjDGaUR3Z+02r2ocNmqVpc=
+X-Google-Smtp-Source: APXvYqwoypDoF4nKIA4Nt1tXSNz7e6TbMFkJOI8WhnkDVk2bs1ION4YrEP1wl6B0klb7gqb3Vn4+mA==
+X-Received: by 2002:aa7:90c4:: with SMTP id k4mr15684240pfk.216.1575657991783; 
+ Fri, 06 Dec 2019 10:46:31 -0800 (PST)
 Received: from localhost.localdomain ([103.51.73.190])
- by smtp.gmail.com with ESMTPSA id p4sm16777039pfb.157.2019.12.06.10.46.24
+ by smtp.gmail.com with ESMTPSA id p4sm16777039pfb.157.2019.12.06.10.46.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 06 Dec 2019 10:46:27 -0800 (PST)
+ Fri, 06 Dec 2019 10:46:31 -0800 (PST)
 From: Anand Moon <linux.amoon@gmail.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Heiko Stuebner <heiko@sntech.de>, Jagan Teki <jagan@amarulasolutions.com>,
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
  Robin Murphy <robin.murphy@arm.com>, Daniel Schultz <d.schultz@phytec.de>
-Subject: [RFCv1 3/8] mfd: rk808: use syscore for RK808 PMIC shutdown
-Date: Fri,  6 Dec 2019 18:45:31 +0000
-Message-Id: <20191206184536.2507-4-linux.amoon@gmail.com>
+Subject: [RFCv1 4/8] mfd: rk808: use syscore for RK818 PMIC shutdown
+Date: Fri,  6 Dec 2019 18:45:32 +0000
+Message-Id: <20191206184536.2507-5-linux.amoon@gmail.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191206184536.2507-1-linux.amoon@gmail.com>
 References: <20191206184536.2507-1-linux.amoon@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_104630_143501_AAB284EC 
-X-CRM114-Status: GOOD (  11.28  )
+X-CRM114-CacheID: sfid-20191206_104632_727679_4BAD2534 
+X-CRM114-Status: GOOD (  11.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,51 +107,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Use common syscore_shutdown for RK808 PMIC to do
+Use common syscore_shutdown for RK818 PMIC to do
 clean I2C shutdown, drop the unused pm_pwroff_fn
 function pointers.
 
 Cc: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Anand Moon <linux.amoon@gmail.com>
 ---
- drivers/mfd/rk808.c | 10 ++++------
- 1 file changed, 4 insertions(+), 6 deletions(-)
+ drivers/mfd/rk808.c | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/mfd/rk808.c b/drivers/mfd/rk808.c
-index 713d989064ba..0a098fbdf112 100644
+index 0a098fbdf112..4b3b90dad4f8 100644
 --- a/drivers/mfd/rk808.c
 +++ b/drivers/mfd/rk808.c
 @@ -467,11 +467,6 @@ static void rk808_update_bits(unsigned int reg, unsigned int mask,
  			"can't write to register 0x%x: %x!\n", reg, ret);
  }
  
--static void rk808_device_shutdown(void)
+-static void rk818_device_shutdown(void)
 -{
--	rk808_update_bits(RK808_DEVCTRL_REG, DEV_OFF_RST, DEV_OFF_RST);
+-	rk808_update_bits(RK818_DEVCTRL_REG, DEV_OFF, DEV_OFF);
 -}
 -
- static void rk818_device_shutdown(void)
+ static void rk8xx_syscore_shutdown(void)
  {
- 	rk808_update_bits(RK818_DEVCTRL_REG, DEV_OFF, DEV_OFF);
-@@ -490,6 +485,10 @@ static void rk8xx_syscore_shutdown(void)
- 					SLP_SD_MSK, SHUTDOWN_FUN);
- 			rk808_update_bits(RK805_DEV_CTRL_REG, DEV_OFF, DEV_OFF);
- 			break;
-+		case RK808_ID:
-+			rk808_update_bits(RK808_DEVCTRL_REG,
-+					DEV_OFF_RST, DEV_OFF_RST);
-+			break;
- 		case RK809_ID:
- 		case RK817_ID:
+ 	struct rk808 *rk808 = i2c_get_clientdata(rk808_i2c_client);
+@@ -494,6 +489,9 @@ static void rk8xx_syscore_shutdown(void)
  			rk808_update_bits(RK817_SYS_CFG(3),
-@@ -576,7 +575,6 @@ static int rk808_probe(struct i2c_client *client,
- 		nr_pre_init_regs = ARRAY_SIZE(rk808_pre_init_reg);
- 		cells = rk808s;
- 		nr_cells = ARRAY_SIZE(rk808s);
--		rk808->pm_pwroff_fn = rk808_device_shutdown;
+ 					RK817_SLPPIN_FUNC_MSK, SLPPIN_DN_FUN);
+ 			break;
++		case RK818_ID:
++			rk808_update_bits(RK818_DEVCTRL_REG, DEV_OFF, DEV_OFF);
++			break;
+ 		default:
+ 			break;
+ 		}
+@@ -583,7 +581,6 @@ static int rk808_probe(struct i2c_client *client,
+ 		nr_pre_init_regs = ARRAY_SIZE(rk818_pre_init_reg);
+ 		cells = rk818s;
+ 		nr_cells = ARRAY_SIZE(rk818s);
+-		rk808->pm_pwroff_fn = rk818_device_shutdown;
  		break;
- 	case RK818_ID:
- 		rk808->regmap_cfg = &rk818_regmap_config;
+ 	case RK809_ID:
+ 	case RK817_ID:
 -- 
 2.24.0
 
