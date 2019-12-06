@@ -2,69 +2,103 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9210E114839
-	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Dec 2019 21:39:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F0E5114F09
+	for <lists+linux-rockchip@lfdr.de>; Fri,  6 Dec 2019 11:29:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=1gYF6j7+/lMnokKlKbnNRXNwgraSypGKL9KMrGFMXOA=; b=OHvcepIx3MvF3B
-	q+vK+z8CzBYnxCaOqUGxRu44Fd1C3Y7SryOGMdcU8mOxRUgaXDb3SO1jxXOfpQsI2Txr0lMg12Pwe
-	A66vi5hK/P43ZCUGdE2cFsxAz+isaA4O5TW09NBLUYmJuliOZWOHKJ6p1iYJKZ0YpPP0LvBd6mzMM
-	+Mzm4qr9dFK67AA6buaR76JH22oOy7AyyAIjqtJsXdi6evUx36tOSUfwcLd2EhOJRo8p7uY+Yyt2u
-	TGDHr0SEmVs0nqG83tBl1GyK7/0pFRGLbjt7yyx52gGVupgyUAMdXH03Qjv6i0J48/8BgK7f2zDoR
-	UTDM+fX9vqTmrDJc7UlA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v94Ou7VHlfGaHai3ciHENixqb/cAOggheTsrhcMvT6A=; b=AT3N2ADsgXFZ57
+	gIzJKF0a+nt94JXiN2Zj8GUX6tUoibXQ4JQ8hmyNfqLwEZMoOk3x2DzwP3tHQFMsPaVwS6B7hyOYp
+	4sUZMJizBrmKNfWjDa53+B4ZIE8LdeZiczEbCThs+UInAf7le9XZk/tK4MXXp9JJfym6JGT7JKYER
+	hONKMP7TT29RAUZWhkPL+8OHQ0ABr05K8im8TqkIG8UBFx9S1r9wFUCE/JSFjPfAzX9gksW3Yiw+T
+	26fHyR+NuTaOrfE3Ce3HeYYmKccgSvB3BwRqr1g8OXaBxwY/B0pDqbuA2WxCAC6Qf86XAfDeJCSg/
+	WP/geZSMUauZ4tqwYyxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icxts-0005o4-Pk; Thu, 05 Dec 2019 20:39:00 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1idArN-0003yI-QT; Fri, 06 Dec 2019 10:29:17 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icxth-0005eW-5c; Thu, 05 Dec 2019 20:38:50 +0000
-Received: from localhost (mobile-166-170-221-197.mycingular.net
- [166.170.221.197])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B455D205F4;
- Thu,  5 Dec 2019 20:38:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575578328;
- bh=K7c3qaYFnXWMMqmwVGrwX7rG4+uwWtUsCcODfBtRF1k=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=NWmiSx+ex1TjiKC4MaIx3xgvijveWrSbxbs+XjqnQh8NtXiBsDxOC54dxgdSCwY2Q
- JFbBLgr1/UwBKIqUKv7MLbUuUhoa33JyMTyHQS/JVBgESXzRhy4V3aJStQ6g6aSYgd
- BMEn5r9MAm2BdXlEKpf1Z9W0pYFSQT6+AX76sG20=
-Date: Thu, 5 Dec 2019 14:38:45 -0600
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH v4 8/8] linux/log2.h: Use roundup/dow_pow_two() on 64bit
- calculations
-Message-ID: <20191205203845.GA243596@google.com>
+ id 1idArK-0003x7-6j; Fri, 06 Dec 2019 10:29:16 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xB6AM7u0010137; Fri, 6 Dec 2019 11:29:05 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=ho/sbuk46SVZEILtxoh1iWZ9PESL2p1iRVEuMafk6NI=;
+ b=MCJ6e8Wk7J6ysXSdJgo6QfQY0bCfzfPUq8JNcGrn9a1fyOgjFOwGp3/X7PaunmJIlwdL
+ TDM0ecGlMLDP/G8v8V6E9NFqiWSPYZdF5gq62dsUex4EI0wEhtiy0WhkQI3R0DW8tpUz
+ KQvfMgjsvzIeiVh/IuzFw757ZrSNjWmQIlsjVxH2UMaDb2+C8xkxu1EynJL4AlMDGYH2
+ R8kJyazXc4H4EoXIzT+0AviFcXLyA8NP9yMPVWwSaJlHuDmI3ZJ7nO/k0ZhiWVIV4e5F
+ IA2cqhIEhglAQHcYbT1CPgw2TsBRUspmbAv0iScqNkimmgrYxA37gJwHYRIqZIDI8mJ/ gQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2wkes3817u-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 06 Dec 2019 11:29:05 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 885C110002A;
+ Fri,  6 Dec 2019 11:29:03 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node3.st.com [10.75.127.18])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 562252AE75F;
+ Fri,  6 Dec 2019 11:29:03 +0100 (CET)
+Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG6NODE3.st.com
+ (10.75.127.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 6 Dec
+ 2019 11:29:03 +0100
+Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
+ SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
+ 15.00.1473.003; Fri, 6 Dec 2019 11:29:02 +0100
+From: Philippe CORNU <philippe.cornu@st.com>
+To: Adrian Ratiu <adrian.ratiu@collabora.com>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>
+Subject: Re: [Linux-stm32] [PATCH v4 0/4] Genericize DW MIPI DSI bridge and
+ add i.MX 6 driver
+Thread-Topic: [Linux-stm32] [PATCH v4 0/4] Genericize DW MIPI DSI bridge and
+ add i.MX 6 driver
+Thread-Index: AQHVrB/6dEkIz1e2jUeb7WXRJ/4vMA==
+Date: Fri, 6 Dec 2019 10:29:02 +0000
+Message-ID: <a356df00-e321-ab8c-61e9-f179cb1f8e12@st.com>
+References: <20191202193359.703709-1-adrian.ratiu@collabora.com>
+In-Reply-To: <20191202193359.703709-1-adrian.ratiu@collabora.com>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.51]
+Content-ID: <2AFA399042EFAD419166C5E33226D3E5@st.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191203114743.1294-9-nsaenzjulienne@suse.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-12-06_02:2019-12-05,2019-12-06 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_123849_259389_247C79D5 
-X-CRM114-Status: GOOD (  19.41  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191206_022914_610616_E1536373 
+X-CRM114-Status: GOOD (  24.37  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 FAKE_REPLY_C           No description available.
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,158 +111,87 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, linux-pci@vger.kernel.org,
- Shawn Lin <shawn.lin@rock-chips.com>, Eric Anholt <eric@anholt.net>,
- Hanjun Guo <guohanjun@huawei.com>, Frank Rowand <frowand.list@gmail.com>,
- Christoph Hellwig <hch@lst.de>, Marek Szyprowski <m.szyprowski@samsung.com>,
- Florian Fainelli <f.fainelli@gmail.com>, linux-rockchip@lists.infradead.org,
- linux-rdma@vger.kernel.org, maz@kernel.org, phil@raspberrypi.org,
- linux-acpi@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- Len Brown <lenb@kernel.org>, devicetree@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- mbrugger@suse.com, netdev@vger.kernel.org,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- jeremy.linton@arm.com, iommu@lists.linux-foundation.org,
- Rob Herring <robh+dt@kernel.org>, Stefan Wahren <wahrenst@gmx.net>,
- james.quinlan@broadcom.com, Sudeep Holla <sudeep.holla@arm.com>,
- andrew.murray@arm.com, Robin Murphy <robin.murphy@arm.com>,
- "David S. Miller" <davem@davemloft.net>, Tariq Toukan <tariqt@mellanox.com>
+Cc: "kernel@collabora.com" <kernel@collabora.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The subject contains a couple typos: it's missing "of" and it's
-missing the "n" on "down".
+Hi Adrian,
 
-On Tue, Dec 03, 2019 at 12:47:41PM +0100, Nicolas Saenz Julienne wrote:
-> The function now is safe to use while expecting a 64bit value. Use it
-> where relevant.
+And sorry for this late reply.
+Your patches look good and we ("stm guys") understand that v1.01 is very 
+different to v1.30/31.
 
-Please include the function names ("roundup_pow_of_two()",
-"rounddown_pow_of_two()") in the changelog so it is self-contained and
-doesn't depend on the subject.
+We are doing our best to review & test your patches and we will go back 
+to you asap.
+Many thanks,
+Philippe :-)
 
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 
-With the nits above and below addressed,
-
-Acked-by: Bjorn Helgaas <bhelgaas@google.com>	# drivers/pci
-
-> ---
->  drivers/acpi/arm64/iort.c                        | 2 +-
->  drivers/net/ethernet/mellanox/mlx4/en_clock.c    | 3 ++-
->  drivers/of/device.c                              | 3 ++-
->  drivers/pci/controller/cadence/pcie-cadence-ep.c | 3 ++-
->  drivers/pci/controller/cadence/pcie-cadence.c    | 3 ++-
->  drivers/pci/controller/pcie-brcmstb.c            | 3 ++-
->  drivers/pci/controller/pcie-rockchip-ep.c        | 5 +++--
->  kernel/dma/direct.c                              | 2 +-
->  8 files changed, 15 insertions(+), 9 deletions(-)
-
-> --- a/drivers/pci/controller/cadence/pcie-cadence-ep.c
-> +++ b/drivers/pci/controller/cadence/pcie-cadence-ep.c
-> @@ -10,6 +10,7 @@
->  #include <linux/platform_device.h>
->  #include <linux/pm_runtime.h>
->  #include <linux/sizes.h>
-> +#include <linux/log2.h>
->  
->  #include "pcie-cadence.h"
->  
-> @@ -65,7 +66,7 @@ static int cdns_pcie_ep_set_bar(struct pci_epc *epc, u8 fn,
->  	 * roundup_pow_of_two() returns an unsigned long, which is not suited
->  	 * for 64bit values.
->  	 */
-
-Please remove the comment above since it no longer applies.
-
-> -	sz = 1ULL << fls64(sz - 1);
-> +	sz = roundup_pow_of_two(sz);
->  	aperture = ilog2(sz) - 7; /* 128B -> 0, 256B -> 1, 512B -> 2, ... */
->  
->  	if ((flags & PCI_BASE_ADDRESS_SPACE) == PCI_BASE_ADDRESS_SPACE_IO) {
-> diff --git a/drivers/pci/controller/cadence/pcie-cadence.c b/drivers/pci/controller/cadence/pcie-cadence.c
-> index cd795f6fc1e2..b1689f725b41 100644
-> --- a/drivers/pci/controller/cadence/pcie-cadence.c
-> +++ b/drivers/pci/controller/cadence/pcie-cadence.c
-> @@ -4,6 +4,7 @@
->  // Author: Cyrille Pitchen <cyrille.pitchen@free-electrons.com>
->  
->  #include <linux/kernel.h>
-> +#include <linux/log2.h>
->  
->  #include "pcie-cadence.h"
->  
-> @@ -15,7 +16,7 @@ void cdns_pcie_set_outbound_region(struct cdns_pcie *pcie, u8 fn,
->  	 * roundup_pow_of_two() returns an unsigned long, which is not suited
->  	 * for 64bit values.
->  	 */
-
-Same here.
-
-> -	u64 sz = 1ULL << fls64(size - 1);
-> +	u64 sz = roundup_pow_of_two(size);
->  	int nbits = ilog2(sz);
->  	u32 addr0, addr1, desc0, desc1;
->  
-> --- a/drivers/pci/controller/pcie-rockchip-ep.c
-> +++ b/drivers/pci/controller/pcie-rockchip-ep.c
-> @@ -16,6 +16,7 @@
->  #include <linux/platform_device.h>
->  #include <linux/pci-epf.h>
->  #include <linux/sizes.h>
-> +#include <linux/log2.h>
->  
->  #include "pcie-rockchip.h"
->  
-> @@ -70,7 +71,7 @@ static void rockchip_pcie_prog_ep_ob_atu(struct rockchip_pcie *rockchip, u8 fn,
->  					 u32 r, u32 type, u64 cpu_addr,
->  					 u64 pci_addr, size_t size)
->  {
-> -	u64 sz = 1ULL << fls64(size - 1);
-> +	u64 sz = roundup_pow_of_two(size);
->  	int num_pass_bits = ilog2(sz);
->  	u32 addr0, addr1, desc0, desc1;
->  	bool is_nor_msg = (type == AXI_WRAPPER_NOR_MSG);
-> @@ -176,7 +177,7 @@ static int rockchip_pcie_ep_set_bar(struct pci_epc *epc, u8 fn,
->  	 * roundup_pow_of_two() returns an unsigned long, which is not suited
->  	 * for 64bit values.
->  	 */
-
-And here.
-
-> -	sz = 1ULL << fls64(sz - 1);
-> +	sz = roundup_pow_of_two(sz);
->  	aperture = ilog2(sz) - 7; /* 128B -> 0, 256B -> 1, 512B -> 2, ... */
->  
->  	if ((flags & PCI_BASE_ADDRESS_SPACE) == PCI_BASE_ADDRESS_SPACE_IO) {
-> diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
-> index 6af7ae83c4ad..056886c4efec 100644
-> --- a/kernel/dma/direct.c
-> +++ b/kernel/dma/direct.c
-> @@ -53,7 +53,7 @@ u64 dma_direct_get_required_mask(struct device *dev)
->  {
->  	u64 max_dma = phys_to_dma_direct(dev, (max_pfn - 1) << PAGE_SHIFT);
->  
-> -	return (1ULL << (fls64(max_dma) - 1)) * 2 - 1;
-> +	return rounddown_pow_of_two(max_dma) * 2 - 1;
-
-Personally I would probably make this one a separate patch since it's
-qualitatively different than the others and it would avoid the slight
-awkwardness of the non-greppable "roundup/down_pow_of_two()"
-construction in the commit subject.
-
-But it's fine either way.
-
->  }
->  
->  static gfp_t __dma_direct_optimal_gfp_mask(struct device *dev, u64 dma_mask,
-> -- 
-> 2.24.0
+On 12/2/19 8:33 PM, Adrian Ratiu wrote:
+> Having a generic Synopsis DesignWare MIPI-DSI host controller bridge
+> driver is a very good idea, however the current implementation has
+> hardcoded quite a lot of the register layouts used by the two supported
+> SoC vendors, STM and Rockchip, which use IP cores v1.30 and v1.31.
 > 
-
+> This makes it hard to support other SoC vendors like the FSL/NXP i.MX 6
+> which use older v1.01 cores or future versions because, based on history,
+> layout changes should also be expected in new DSI versions / SoCs.
+> 
+> This patch series converts the bridge and platform drivers to access
+> registers via generic regmap APIs and allows each platform driver to
+> configure its register layout via struct reg_fields, then adds support
+> for the host controller found on i.MX 6.
+> 
+> I only have i.MX hardware with MIPI-DSI panel and relevant documentation
+> available for testing so I'll really appreciate it if someone could test
+> the series on Rockchip and STM... eyeballing register fields could only
+> get me so far, so sorry in advance for any breakage!
+> 
+> Many thanks to Boris Brezillon <boris.brezillon@collabora.com> for
+> suggesting the regmap solution and to Liu Ying <Ying.Liu@freescale.com>
+> for doing the initial i.MX platform driver implementation.
+> 
+> This series applies on top of latest linux-next tree, next-20191202.
+> 
+> v3 -> v4:
+>    * Added commmit message to dt-binding patch (Neil)
+>    * Converted the dt-binding to yaml dt-schema format (Neil)
+>    * Small DT node + driver fixes (Rob)
+>    * Renamed platform driver to reflect it's only for i.MX v6 (Fabio)
+>    * Added small panel example to the host controller DT binding
+> 
+> v2 -> v3:
+>    * Added const declarations to dw-mipi-dsi.c structs (Emil)
+>    * Fixed Reviewed-by tags and cc'd some more relevant ML (Emil)
+> 
+> v1 -> v2:
+>    * Moved register definitions & regmap initialization into bridge
+>    module. Platform drivers get the regmap via plat_data after calling
+>    the bridge probe (Emil).
+> 
+> Adrian Ratiu (4):
+>    drm: bridge: dw_mipi_dsi: access registers via a regmap
+>    drm: bridge: dw_mipi_dsi: abstract register access using reg_fields
+>    drm: imx: Add i.MX 6 MIPI DSI host driver
+>    dt-bindings: display: add i.MX6 MIPI DSI host controller doc
+> 
+>   .../display/imx/fsl,mipi-dsi-imx6.yaml        | 136 ++++
+>   drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 699 +++++++++++++-----
+>   drivers/gpu/drm/imx/Kconfig                   |   7 +
+>   drivers/gpu/drm/imx/Makefile                  |   1 +
+>   drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c        | 378 ++++++++++
+>   .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   |  17 +-
+>   drivers/gpu/drm/stm/dw_mipi_dsi-stm.c         |  34 +-
+>   include/drm/bridge/dw_mipi_dsi.h              |   2 +-
+>   8 files changed, 1067 insertions(+), 207 deletions(-)
+>   create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
+>   create mode 100644 drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c
+> 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
