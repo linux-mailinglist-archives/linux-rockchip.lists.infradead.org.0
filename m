@@ -2,57 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 096E2115465
-	for <lists+linux-rockchip@lfdr.de>; Fri,  6 Dec 2019 16:36:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 756C4115478
+	for <lists+linux-rockchip@lfdr.de>; Fri,  6 Dec 2019 16:43:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zereciTDPqmDo6z0RV02oZW/JrfY+ecNUQCXGsR5KnA=; b=ceCJXRPXL885++
-	+qYqHmZmr0RH9Hgw0x6OWErPi3Oe7lrqtBU+U8th7G6R3ApPfgNcCoNbCBV3Y1Pz32Wu4akkqxtwV
-	f6Ia2iLHkpuf1tBB3NaqClZm1LbF/hQ9wkQ3ajHIx/TS+HyN6YLNsSzfH1qkckmm/EqsM5JZpCf9a
-	ZDL1yAU0ATcSZig8vEFzI3Gy7ieBQU28OOoLRBCaR8ufOUs2fcgcmKC8Do24D3WeRrM9eMt7b69Tz
-	kiLCLM2gisEPjznxmxaGhxRz3Xnq7Je2A6UiWqJbhRjlPHkjUcdzjv8YklAU1eYZM9HSkn99bqJI9
-	kxWgfEPSZs6s5kDyM2Dw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CZLefBwksYW8b++1hkxhN1ZwX/7xza01sd5BgACPGSg=; b=njszhjd/y9m+Qt
+	joHrmRqLZQChZ/WJzVl8gcb9pDNvDdL/YOKvivj+d2bTVfHRereEUaMfrgwRmP5HY0junxP4eYbI9
+	ib6GOqJO1DPy1bAiLa5//dyMJ0Pn5FyB7hCkLBdif4BrcPdxECgAD4S+wTnVdldBh1vda2tjU3mUQ
+	GJdlCchLk4OmH2npb2lMtps4VNpCLxSscBhgwb4Hize9uIBQqmbhJFsoClixac3MpBESApPr7CxVC
+	vA/iYMkgee/P0cJtR2rWcztdzpYFgMNGq9W6yj09wvOoO9EcTzXp7WIirdsY4M0m9bs2ilKjkUKzz
+	Z+uhtCMoB1iums0YQPwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idFf2-0004I7-O0; Fri, 06 Dec 2019 15:36:52 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idFet-0004Av-3Q; Fri, 06 Dec 2019 15:36:44 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BB8D031B;
- Fri,  6 Dec 2019 07:36:41 -0800 (PST)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 25D843F718;
- Fri,  6 Dec 2019 07:36:38 -0800 (PST)
-Date: Fri, 6 Dec 2019 15:36:33 +0000
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v3 11/25] PCI: rockchip: Drop storing driver private
- outbound resource data
-Message-ID: <20191206153633.GA18142@e121166-lin.cambridge.arm.com>
-References: <20191028163256.8004-1-robh@kernel.org>
- <20191028163256.8004-12-robh@kernel.org>
+	id 1idFl4-000635-EQ; Fri, 06 Dec 2019 15:43:06 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1idFl0-00062Y-NQ
+ for linux-rockchip@lists.infradead.org; Fri, 06 Dec 2019 15:43:05 +0000
+X-Originating-IP: 91.224.148.103
+Received: from localhost.localdomain (unknown [91.224.148.103])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 20E62240003;
+ Fri,  6 Dec 2019 15:42:50 +0000 (UTC)
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ <linux-rockchip@lists.infradead.org>
+Subject: [PATCH] arm64: dts: rockchip: Change RK809 PMIC interrupt polarity
+Date: Fri,  6 Dec 2019 16:42:47 +0100
+Message-Id: <20191206154247.28057-1-miquel.raynal@bootlin.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191028163256.8004-12-robh@kernel.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_073643_230050_72185049 
-X-CRM114-Status: GOOD (  20.52  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191206_074302_897302_3F5A1CAA 
+X-CRM114-Status: GOOD (  13.20  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,196 +64,53 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>, linux-pci@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
- Ryder Lee <ryder.lee@mediatek.com>, Michal Simek <michal.simek@xilinx.com>,
- Christoph Hellwig <hch@infradead.org>, linux-rockchip@lists.infradead.org,
- bcm-kernel-feedback-list@broadcom.com, Shawn Lin <shawn.lin@rock-chips.com>,
- eballetbo@gmail.com, Ray Jui <rjui@broadcom.com>,
- Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, Simon Horman <horms@verge.net.au>,
- linux-mediatek@lists.infradead.org, Andrew Murray <andrew.murray@arm.com>,
- Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org,
- Scott Branden <sbranden@broadcom.com>, Jingoo Han <jingoohan1@gmail.com>,
- rfi@lists.rocketboards.org, linux-renesas-soc@vger.kernel.org,
- Tom Joseph <tjoseph@cadence.com>, Srinath Mannam <srinath.mannam@broadcom.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Ley Foon Tan <lftan@altera.com>
+ Maxime Chevallier <maxime.chevallier@bootlin.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-[+Eric]
+PMIC interrupt can be active high or active low depending on BIT(1) of
+the GPIO_INT_CFG pin. The default is 0x1, which means active
+high. Change the polarity in the device tree to reflect the default
+state.
 
-On Mon, Oct 28, 2019 at 11:32:42AM -0500, Rob Herring wrote:
-> The Rockchip host bridge driver doesn't need to store outboard resources
-> in its private struct as they are already stored in struct
-> pci_host_bridge.
-> 
-> Cc: Shawn Lin <shawn.lin@rock-chips.com>
-> Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Cc: Andrew Murray <andrew.murray@arm.com>
-> Cc: Bjorn Helgaas <bhelgaas@google.com>
-> Cc: Heiko Stuebner <heiko@sntech.de>
-> Cc: linux-rockchip@lists.infradead.org
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
->  drivers/pci/controller/pcie-rockchip-host.c | 54 +++++++++------------
->  drivers/pci/controller/pcie-rockchip.h      |  5 --
->  2 files changed, 23 insertions(+), 36 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
-> index 8d2e6f2e141e..f375e55ea02e 100644
-> --- a/drivers/pci/controller/pcie-rockchip-host.c
-> +++ b/drivers/pci/controller/pcie-rockchip-host.c
-> @@ -806,19 +806,28 @@ static int rockchip_pcie_prog_ib_atu(struct rockchip_pcie *rockchip,
->  static int rockchip_pcie_cfg_atu(struct rockchip_pcie *rockchip)
->  {
->  	struct device *dev = rockchip->dev;
-> +	struct pci_host_bridge *bridge = pci_host_bridge_from_priv(rockchip);
-> +	struct resource_entry *entry;
-> +	u64 pci_addr, size;
->  	int offset;
->  	int err;
->  	int reg_no;
->  
->  	rockchip_pcie_cfg_configuration_accesses(rockchip,
->  						 AXI_WRAPPER_TYPE0_CFG);
-> +	entry = resource_list_first_type(&bridge->windows, IORESOURCE_MEM);
-> +	if (!entry)
-> +		return -ENODEV;
-> +
-> +	size = resource_size(entry->res);
-> +	pci_addr = entry->res->start - entry->offset;
-> +	rockchip->msg_bus_addr = pci_addr;
->  
-> -	for (reg_no = 0; reg_no < (rockchip->mem_size >> 20); reg_no++) {
-> +	for (reg_no = 0; reg_no < (size >> 20); reg_no++) {
->  		err = rockchip_pcie_prog_ob_atu(rockchip, reg_no + 1,
->  						AXI_WRAPPER_MEM_WRITE,
->  						20 - 1,
-> -						rockchip->mem_bus_addr +
-> -						(reg_no << 20),
-> +						pci_addr + (reg_no << 20),
->  						0);
->  		if (err) {
->  			dev_err(dev, "program RC mem outbound ATU failed\n");
-> @@ -832,14 +841,20 @@ static int rockchip_pcie_cfg_atu(struct rockchip_pcie *rockchip)
->  		return err;
->  	}
->  
-> -	offset = rockchip->mem_size >> 20;
-> -	for (reg_no = 0; reg_no < (rockchip->io_size >> 20); reg_no++) {
-> +	entry = resource_list_first_type(&bridge->windows, IORESOURCE_IO);
-> +	if (!entry)
-> +		return -ENODEV;
-> +
-> +	size = resource_size(entry->res);
-> +	pci_addr = entry->res->start - entry->offset;
-> +
-> +	offset = size >> 20;
+Without this and with the current code base, the interrupt never stops
+triggering while the MFD driver does not see anything to
+check/clear/mask so after 100000 spurious IRQs, the kernel simply
+desactivates the interrupt:
 
-Just trying to find what triggers:
+        irq 36: nobody cared (try booting with the "irqpoll" option)
+        [...]
+        handlers:
+        [<(____ptrval____)>] irq_default_primary_handler threaded
+	[<(____ptrval____)>] regmap_irq_thread
+        Disabling IRQ #36
 
-https://lore.kernel.org/linux-pci/CAFqH_52BiQJzNEzd_0pB3K+JmzVOVikYQo0xfiC0J-DwiXdtqw@mail.gmail.com/T/#u
+Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+---
+ arch/arm64/boot/dts/rockchip/px30-evb.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-I think this offset calculation changed the behaviour:
+diff --git a/arch/arm64/boot/dts/rockchip/px30-evb.dts b/arch/arm64/boot/dts/rockchip/px30-evb.dts
+index 869f90cbf0da..a922ea75639d 100644
+--- a/arch/arm64/boot/dts/rockchip/px30-evb.dts
++++ b/arch/arm64/boot/dts/rockchip/px30-evb.dts
+@@ -138,7 +138,7 @@
+ 		compatible = "rockchip,rk809";
+ 		reg = <0x20>;
+ 		interrupt-parent = <&gpio0>;
+-		interrupts = <7 IRQ_TYPE_LEVEL_LOW>;
++		interrupts = <7 IRQ_TYPE_LEVEL_HIGH>;
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&pmic_int>;
+ 		rockchip,system-power-controller;
+-- 
+2.20.1
 
-Before:
-
-> -	offset = rockchip->mem_size >> 20;
-
-Now:
-
-> +	offset = size >> 20;
-
-size must be the IORESOURCE_MEM resource size instead we are using the
-IORESOURCE_IO size so IIUC the ATU window setup may be compromised.
-
-Lorenzo
-
-> +	for (reg_no = 0; reg_no < (size >> 20); reg_no++) {
->  		err = rockchip_pcie_prog_ob_atu(rockchip,
->  						reg_no + 1 + offset,
->  						AXI_WRAPPER_IO_WRITE,
->  						20 - 1,
-> -						rockchip->io_bus_addr +
-> -						(reg_no << 20),
-> +						pci_addr + (reg_no << 20),
->  						0);
->  		if (err) {
->  			dev_err(dev, "program RC io outbound ATU failed\n");
-> @@ -852,8 +867,7 @@ static int rockchip_pcie_cfg_atu(struct rockchip_pcie *rockchip)
->  				  AXI_WRAPPER_NOR_MSG,
->  				  20 - 1, 0, 0);
->  
-> -	rockchip->msg_bus_addr = rockchip->mem_bus_addr +
-> -					((reg_no + offset) << 20);
-> +	rockchip->msg_bus_addr += ((reg_no + offset) << 20);
->  	return err;
->  }
->  
-> @@ -951,7 +965,6 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
->  	struct pci_bus *bus, *child;
->  	struct pci_host_bridge *bridge;
->  	struct resource *bus_res;
-> -	struct resource_entry *win;
->  	int err;
->  
->  	if (!dev->of_node)
-> @@ -997,27 +1010,6 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
->  
->  	rockchip->root_bus_nr = bus_res->start;
->  
-> -	/* Get the I/O and memory ranges from DT */
-> -	resource_list_for_each_entry(win, &bridge->windows) {
-> -		switch (resource_type(win->res)) {
-> -		case IORESOURCE_IO:
-> -			io = win->res;
-> -			io->name = "I/O";
-> -			rockchip->io_size = resource_size(io);
-> -			rockchip->io_bus_addr = io->start - win->offset;
-> -			rockchip->io = io;
-> -			break;
-> -		case IORESOURCE_MEM:
-> -			mem = win->res;
-> -			mem->name = "MEM";
-> -			rockchip->mem_size = resource_size(mem);
-> -			rockchip->mem_bus_addr = mem->start - win->offset;
-> -			break;
-> -		default:
-> -			continue;
-> -		}
-> -	}
-> -
->  	err = rockchip_pcie_cfg_atu(rockchip);
->  	if (err)
->  		goto err_remove_irq_domain;
-> diff --git a/drivers/pci/controller/pcie-rockchip.h b/drivers/pci/controller/pcie-rockchip.h
-> index 8e87a059ce73..bef42a803b56 100644
-> --- a/drivers/pci/controller/pcie-rockchip.h
-> +++ b/drivers/pci/controller/pcie-rockchip.h
-> @@ -304,13 +304,8 @@ struct rockchip_pcie {
->  	struct	irq_domain *irq_domain;
->  	int     offset;
->  	struct pci_bus *root_bus;
-> -	struct resource *io;
-> -	phys_addr_t io_bus_addr;
-> -	u32     io_size;
->  	void    __iomem *msg_region;
-> -	u32     mem_size;
->  	phys_addr_t msg_bus_addr;
-> -	phys_addr_t mem_bus_addr;
->  	bool is_rc;
->  	struct resource *mem_res;
->  };
-> -- 
-> 2.20.1
-> 
 
 _______________________________________________
 Linux-rockchip mailing list
