@@ -2,86 +2,99 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F3B61170AF
-	for <lists+linux-rockchip@lfdr.de>; Mon,  9 Dec 2019 16:38:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3085111726A
+	for <lists+linux-rockchip@lfdr.de>; Mon,  9 Dec 2019 18:05:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YLCj2WNCnzWVow4AXpvWd/0b9A3lEiOfMxgRaQUutdw=; b=c1UXpLK3wSjG2X
-	soQUUu98JqPUiH97hHiBlWDpj9dN4x0zQvGzLZk3+3TRfZOe43JK5LK+hAU7nx0cC+dPjB4cXKEQh
-	u80jQd6AhxBvNEBpdPuxs/wA4QcmWImEbFcrxYlz8KCtrw5iZ4chcq+AoYJ2LUzEuzdiZ9Pgp2fEk
-	sNoTD9s9e9eXJL2Thdvp2JMyPF9n8cEf7iNBntDNyVWNp/thW23OeqKsH+gDSKjg600BVKdPh+hUp
-	AbTIlELd7XZfXeTIWrFFgMCFxB9tUYTi/Glk9wjATnF7LZEkARcNDTP5HeatD2Prm9UQv+TrfCKA5
-	iSRfSwwFtJxerLv5y5cg==;
+	List-Owner; bh=9l7asQh0aITd33pZt+MmfqvqmiM7lbNUp2/Ul6Nv/BU=; b=bQBY4p8rj9ORCJ
+	+q3DdK2nrQa0JNs715Zw9qZEILU7q+fKfnCtcavA8jYZjk7mzHL3eBR764orhT7dT7udUq6w+M9nO
+	ef1WQQBEj1DONbcSaOKU3gzBb/szX0A/xnT2RXdSThZXES9Vc5Bm/HX9QRJaVENDyJohqbmEqHNW9
+	NBok3+yPEJ6L47KJI2VTEVHjuGxe9bBWVtOjSSCh8hErpIWoFIQsrJEUSFScz3luNpebVDWj+wC/F
+	EnKfPoDdqBNySf9rsNdesZwYZrhMwwTeOf2CznBQtdONrQBg8IrFtC99FaUWGPQK9wSFhk5xCBVl1
+	4+V29tJP2EW5Hfev0Mbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieL7c-0001Se-NM; Mon, 09 Dec 2019 15:38:52 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1ieMTl-0003NX-OW; Mon, 09 Dec 2019 17:05:49 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieL7U-0001MI-KG; Mon, 09 Dec 2019 15:38:46 +0000
-Received: by mail-io1-xd41.google.com with SMTP id z26so15196662iot.8;
- Mon, 09 Dec 2019 07:38:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=ZJHtdl64eSg7tX1bls5wY/hgwg2SeBy1mqhpZlCukvg=;
- b=sYWBiNewuyqeitxp4PMfrWb8D5LArfvGYVlnna4mBtaRMWcybALmK4TSqg7M/HKA1i
- 85aVtTxdrFrUZO5be9qMmHnxoj2f16hCkwRN6gtWVx+L9JUsxL5DLcePNscgNynYhloC
- VEm6MCqqrVLY1aRK63NYHp9pg3+pwb5JS4nOdvLU+JWQh1qcMOXZjhrE9qxaP0Q4BehK
- Gsn2K/LiOp2/s0TUyEEvu1PvhZpNTUN8pemOAMe5iT4VX7Ac1b2opKqp8pl7TSLhmffY
- HobeBr/5FkeX5fDbHWmaxUGCJKWKMFHairadzP8yQM6TqaCNEtvIec58Uw99BqricfOM
- k+iQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=ZJHtdl64eSg7tX1bls5wY/hgwg2SeBy1mqhpZlCukvg=;
- b=nZE4K33EUEHTwbhUzw+wnk2KTPT2YaiZZrHMWDQ1VJ5GxykFA0Du8xuZaWbnP00ayA
- 6jHRtB/+qVrotYv1ygIIOqSvpP65kW9nJGepgw5D9pmkX8rUx4wZMlTfBbBmz4355bq1
- d4/LymNdN9XwcM772f47UFCQq+4bo1pXmxqK8wxEKPyidLaVXHCi2/CF2FA41vb6GEU7
- w8BzgQGUdLuUiBTb50T6++leFzStSFU03MvtiQBtlRoUE37AOJU4PClUFnwcRcYrM8pa
- KAdFUPfZxjCG1tdScIlYS02pRAjiysvgaJZFClo/C4prVg//Mk2CcZdtztCbnV0Rp6iM
- zWOA==
-X-Gm-Message-State: APjAAAXxoQAOgvpU0a4o50VFGvbXOdQq/SBOiuY1bX4vxBfMl1RqT65+
- iFw+s/5NFde2YyV2qBblWAITigjijsMGTt7ZwaM=
-X-Google-Smtp-Source: APXvYqyKe81SV620SWPT3vlC+s2nmZV57gLiyzYp6LoXO4TmESagI9KWQZJxUmkLqawCteKkmS0vffcB403S2IYmD8Y=
-X-Received: by 2002:a02:8817:: with SMTP id r23mr28310766jai.120.1575905923417; 
- Mon, 09 Dec 2019 07:38:43 -0800 (PST)
-MIME-Version: 1.0
-References: <20191206184536.2507-1-linux.amoon@gmail.com>
- <20191206184536.2507-3-linux.amoon@gmail.com>
- <f1327196-66c9-d152-c0ca-914d43d6f55e@arm.com>
-In-Reply-To: <f1327196-66c9-d152-c0ca-914d43d6f55e@arm.com>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Mon, 9 Dec 2019 21:08:31 +0530
-Message-ID: <CANAwSgTSDX=36eF3UxVyVykguRjd90=x4iT27s=nJg5ezG_V7w@mail.gmail.com>
-Subject: Re: [RFCv1 2/8] mfd: rk808: use syscore for RK805 PMIC shutdown
+ id 1ieMTj-0003Mu-Pj
+ for linux-rockchip@bombadil.infradead.org; Mon, 09 Dec 2019 17:05:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=YU2tYXsp2GBBsr4G0U6n0fc7yLb4kMLHpVFrZEia0zU=; b=jfhsYQtb06cQ5geTnBTucievdH
+ oVVutQ774c4DtRBi3ma1et0enWCF5YsZk2hg8AMZba6BZiFz+kL8oeV8sRACTtyRJfReTNfweBrRV
+ kTFIJo/oRJ3m+zQqPaCSEhVVIvoBt1OSLvBM3wGguudC5mjqqXaz7cPwl+bq0gBBOxFsldbvAUpNs
+ G+ZbC4lCS8aabFo+/Wu+iTuT1K1cdKp6YIXiTP2GrLhbiMoQ6ZMoSyOVKqvQM+p5NELySJgsijrLb
+ ZvINac7hO56bNBqQYcdYFO/GRkockH9EI0ci9/9lA65UTTr4axua6NJMAyr9EUgM/2Sn4oRp1anvm
+ 3/zpfpVA==;
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ieMU9-0000IE-KP
+ for linux-rockchip@lists.infradead.org; Mon, 09 Dec 2019 17:06:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1575911124;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=YU2tYXsp2GBBsr4G0U6n0fc7yLb4kMLHpVFrZEia0zU=;
+ b=h3uL0UIJb4pic8WSeKwbBCAXv4Q8sxPveIWwPdtmZzDelIpAj2rcVx2WTT5gyq2j0r0H/S
+ 38hAI08ASkXvai7hR9+gRdlGFmNwK4OzjDXZZ85pwjAQLbnQk8+R7fdk0oXRdWYKOGQziu
+ 7pQRx+jsnhPnSPqTQJHq6ItCnJNloF4=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-332-PdEyLpJ7Md-RN-yy8qvTJQ-1; Mon, 09 Dec 2019 12:05:11 -0500
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 3E427106B1DD;
+ Mon,  9 Dec 2019 17:05:10 +0000 (UTC)
+Received: from x1.home (ovpn04.gateway.prod.ext.phx2.redhat.com [10.5.9.4])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 8B05D60C84;
+ Mon,  9 Dec 2019 17:05:09 +0000 (UTC)
+Date: Mon, 9 Dec 2019 10:05:09 -0700
+From: Alex Williamson <alex.williamson@redhat.com>
 To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [Question] rk3399 vfio-pci/sr-iov support
+Message-ID: <20191209100509.5cb950ac@x1.home>
+In-Reply-To: <b597b9a6-870a-8fbd-6490-59734c04367f@arm.com>
+References: <CAMdYzYoPXWbv4zXet6c9JQEMbqcJi6ZEOui_n82NVmrqNLy_pw@mail.gmail.com>
+ <b597b9a6-870a-8fbd-6490-59734c04367f@arm.com>
+Organization: Red Hat
+MIME-Version: 1.0
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-MC-Unique: PdEyLpJ7Md-RN-yy8qvTJQ-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_073844_690358_63A36C75 
-X-CRM114-Status: GOOD (  16.08  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-CRM114-CacheID: sfid-20191209_170613_789990_6E9510AC 
+X-CRM114-Status: GOOD (  17.82  )
+X-Spam-Score: -2.5 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-2.5 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (linux.amoon[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,67 +107,55 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Daniel Schultz <d.schultz@phytec.de>,
- Heiko Stuebner <heiko@sntech.de>, Linux Kernel <linux-kernel@vger.kernel.org>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Heiko Stuebner <heiko@sntech.de>, Peter Geis <pgwipeout@gmail.com>,
+ linux-pci@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgUm9iaW4sCgpPbiBNb24sIDkgRGVjIDIwMTkgYXQgMTk6MDQsIFJvYmluIE11cnBoeSA8cm9i
-aW4ubXVycGh5QGFybS5jb20+IHdyb3RlOgo+Cj4gT24gMDYvMTIvMjAxOSA2OjQ1IHBtLCBBbmFu
-ZCBNb29uIHdyb3RlOgo+ID4gVXNlIGNvbW1vbiBzeXNjb3JlX3NodXRkb3duIGZvciBSSzgwNSBQ
-TUlDIHRvIGRvCj4gPiBjbGVhbiBJMkMgc2h1dGRvd24sIGRyb3AgdGhlIHVudXNlZCBwbV9wd3Jv
-ZmZfcHJlcF9mbgo+ID4gYW5kIHBtX3B3cm9mZl9mbiBmdW5jdGlvbiBwb2ludGVycy4KPgo+IENv
-aW5jaWRlbnRhbGx5LCBJJ3ZlIGFsc28gYmVlbiBsb29raW5nIGF0IFJLODA1IGZvciB0aGUgc2Fr
-ZSBvZiB0cnlpbmcKPiB0byBnZXQgc3VzcGVuZCB0byBiZWhhdmUgb24gbXkgUkszMzI4IGJveCwg
-YW5kIEkndmUgZW5kZWQgdXAgd2l0aCBzb21lCj4gc2xpZ2h0bHkgZGlmZmVyZW50IGNsZWFudXAg
-cGF0Y2hlcyAtIEknbGwgdGlkeSB0aGVtIHVwIGFuZCBwb3N0IHRoZW0gZm9yCj4gY29tcGFyaXNv
-biBhcyBzb29uIGFzIEkgY2FuLgoKTm8gaXNzdWUgaWYgdGhlaXIgaXMgYmV0dGVyIGNsZWFuIGFw
-cHJvYWNoLCBJIHdpbGwgZGVmaW5pdGVseSB0ZXN0IHRoYXQgc2VyaWVzLgo+Cj4gPiBDYzogSGVp
-a28gU3R1ZWJuZXIgPGhlaWtvQHNudGVjaC5kZT4KPiA+IFNpZ25lZC1vZmYtYnk6IEFuYW5kIE1v
-b24gPGxpbnV4LmFtb29uQGdtYWlsLmNvbT4KPiA+IC0tLQo+ID4gICBkcml2ZXJzL21mZC9yazgw
-OC5jIHwgMzMgKysrKysrKysrKysrKysrKystLS0tLS0tLS0tLS0tLS0tCj4gPiAgIDEgZmlsZSBj
-aGFuZ2VkLCAxNyBpbnNlcnRpb25zKCspLCAxNiBkZWxldGlvbnMoLSkKPiA+Cj4gPiBkaWZmIC0t
-Z2l0IGEvZHJpdmVycy9tZmQvcms4MDguYyBiL2RyaXZlcnMvbWZkL3JrODA4LmMKPiA+IGluZGV4
-IGU2MzdmNWJjYzhiYi4uNzEzZDk4OTA2NGJhIDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVycy9tZmQv
-cms4MDguYwo+ID4gKysrIGIvZHJpdmVycy9tZmQvcms4MDguYwo+ID4gQEAgLTQ2NywxNiArNDY3
-LDYgQEAgc3RhdGljIHZvaWQgcms4MDhfdXBkYXRlX2JpdHModW5zaWduZWQgaW50IHJlZywgdW5z
-aWduZWQgaW50IG1hc2ssCj4gPiAgICAgICAgICAgICAgICAgICAgICAgImNhbid0IHdyaXRlIHRv
-IHJlZ2lzdGVyIDB4JXg6ICV4IVxuIiwgcmVnLCByZXQpOwo+ID4gICB9Cj4gPgo+ID4gLXN0YXRp
-YyB2b2lkIHJrODA1X2RldmljZV9zaHV0ZG93bih2b2lkKQo+ID4gLXsKPiA+IC0gICAgIHJrODA4
-X3VwZGF0ZV9iaXRzKFJLODA1X0RFVl9DVFJMX1JFRywgREVWX09GRiwgREVWX09GRik7Cj4gPiAt
-fQo+ID4gLQo+ID4gLXN0YXRpYyB2b2lkIHJrODA1X2RldmljZV9zaHV0ZG93bl9wcmVwYXJlKHZv
-aWQpCj4gPiAtewo+ID4gLSAgICAgcms4MDhfdXBkYXRlX2JpdHMoUks4MDVfR1BJT19JT19QT0xf
-UkVHLCBTTFBfU0RfTVNLLCBTSFVURE9XTl9GVU4pOwo+ID4gLX0KPiA+IC0KPiA+ICAgc3RhdGlj
-IHZvaWQgcms4MDhfZGV2aWNlX3NodXRkb3duKHZvaWQpCj4gPiAgIHsKPiA+ICAgICAgIHJrODA4
-X3VwZGF0ZV9iaXRzKFJLODA4X0RFVkNUUkxfUkVHLCBERVZfT0ZGX1JTVCwgREVWX09GRl9SU1Qp
-Owo+ID4gQEAgLTQ5MSwxMCArNDgxLDIzIEBAIHN0YXRpYyB2b2lkIHJrOHh4X3N5c2NvcmVfc2h1
-dGRvd24odm9pZCkKPiA+ICAgewo+ID4gICAgICAgc3RydWN0IHJrODA4ICpyazgwOCA9IGkyY19n
-ZXRfY2xpZW50ZGF0YShyazgwOF9pMmNfY2xpZW50KTsKPiA+Cj4gPiAtICAgICBpZiAoc3lzdGVt
-X3N0YXRlID09IFNZU1RFTV9QT1dFUl9PRkYgJiYKPiA+IC0gICAgICAgICAocms4MDgtPnZhcmlh
-bnQgPT0gUks4MDlfSUQgfHwgcms4MDgtPnZhcmlhbnQgPT0gUks4MTdfSUQpKSB7Cj4gPiAtICAg
-ICAgICAgICAgIHJrODA4X3VwZGF0ZV9iaXRzKFJLODE3X1NZU19DRkcoMyksIFJLODE3X1NMUFBJ
-Tl9GVU5DX01TSywKPiA+IC0gICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNMUFBJTl9ETl9G
-VU4pOwo+ID4gKyAgICAgaWYgKHN5c3RlbV9zdGF0ZSA9PSBTWVNURU1fUE9XRVJfT0ZGKSB7Cj4g
-PiArICAgICAgICAgICAgIGRldl9pbmZvKCZyazgwOF9pMmNfY2xpZW50LT5kZXYsICJTeXN0ZW0g
-U2h1dGRvd24gRXZlbnRcbiIpOwo+ID4gKwo+ID4gKyAgICAgICAgICAgICBzd2l0Y2ggKHJrODA4
-LT52YXJpYW50KSB7Cj4gPiArICAgICAgICAgICAgIGNhc2UgUks4MDVfSUQ6Cj4gPiArICAgICAg
-ICAgICAgICAgICAgICAgcms4MDhfdXBkYXRlX2JpdHMoUks4MDVfR1BJT19JT19QT0xfUkVHLAo+
-ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTTFBfU0RfTVNLLCBTSFVU
-RE9XTl9GVU4pOwo+ID4gKyAgICAgICAgICAgICAgICAgICAgIHJrODA4X3VwZGF0ZV9iaXRzKFJL
-ODA1X0RFVl9DVFJMX1JFRywgREVWX09GRiwgREVWX09GRik7Cj4KPiBXaHkgdGhpcyBjaGFuZ2U/
-IFNodXRkb3duIHZpYSB0aGUgU0xFRVAgcGluIGlzIHdvcmtpbmcganVzdCBmaW5lIG9uIG15Cj4g
-Ym94IDovCj4KPiBSb2Jpbi4KCkFzIHBlciBSSy04MDUgZGF0YXNoZWV0IFswXSBiZWxvdy4KRm9y
-IGNsZWFuIHBvd2Vyb2ZmIHdlIG5lZWQgdG8gc2V0IGluIERFVl9DVFJMX1JFRyByZWcKQml0IDAg
-REVWX09GRjogd3JpdGUg4oCcMeKAnSB0byB0dXJuIGRvd24gdGhlIFBNVS4KClswXSBodHRwOi8v
-ZmlsZXMucGluZTY0Lm9yZy9kb2Mvcm9jazY0L1JvY2tjaGlwX1JLODA1X0RhdGFzaGVldF9WMS4x
-JUMyJUEwMjAxNjA5MjEucGRmCgotQW5hbmQKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2Nr
-Y2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+On Mon, 9 Dec 2019 14:07:02 +0000
+Robin Murphy <robin.murphy@arm.com> wrote:
+
+> On 09/12/2019 1:28 pm, Peter Geis wrote:
+> > Good Morning,
+> > 
+> > I'm back with more pcie fun on the rk3399.
+> > I'm trying to get pcie passthrough working for a vm on the rk3399, and
+> > have encountered some roadblocks.
+> > 
+> > First, vfio-pci doesn't work on the rk3399, as the pcie controller
+> > doesn't bind explicitly to a iommu.
+> > [37528.138212] vfio-pci 0000:01:00.0: assign IRQ: got 226
+> > [37528.138254] vfio-pci: probe of 0000:01:00.0 failed with error -22
+> > 
+> > # find /sys/kernel/iommu_groups/ -type l
+> > /sys/kernel/iommu_groups/1/devices/ff8f0000.vop
+> > /sys/kernel/iommu_groups/2/devices/ff900000.vop
+> > 
+> > # virsh start openwrt
+> > error: Failed to start domain openwrt
+> > error: internal error: Process exited prior to exec: libvirt:  error :
+> > internal error: Invalid device 0000:01:00.0 iommu_group file
+> > /sys/bus/pci/devices/0000:01:00.0/iommu_group is not a symlink  
+> 
+> That much I can help with somewhat: the major impediment is that RK3399 
+> doesn't have an IOMMU in front of PCIe. As far as I'm aware your only 
+> option is to resort to the "here be dragons" CONFIG_VFIO_NOIOMMU mode 
+> (which I don't know an awful lot about beyond that it's a thing).
+
+And it's a thing that's really only useful if your motivation is to run
+something like DPDK in the host and you're not concerned about
+isolation between userspace drivers and the host kernel, and you don't
+mind tainting the kernel.  It's not useful for things like assigning a
+device to a VM as we can't readily do that without an IOMMU for
+translation.  Thanks,
+
+Alex
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
