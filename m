@@ -2,51 +2,84 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4540B116FA8
-	for <lists+linux-rockchip@lfdr.de>; Mon,  9 Dec 2019 15:53:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64481116FC7
+	for <lists+linux-rockchip@lfdr.de>; Mon,  9 Dec 2019 15:57:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TqApu0QZp8EowL4u8YVajYD/6mmo7BfwbkCiiRolwC4=; b=E/x4rQsrVUc8Y5
-	H+fT2oHUYeKtmdWoQH29sDx8F2MRSpyFGcILqoQNLbjIufKjP1s457oytdiP5qJBzLX/pomFwGOrh
-	OWLbve9NNWDQaDrnrgeecBCvCJvKQnrujU4QmJSycdKSnhb8wAazy2XUQa+4zXOvCkAkL472GItBz
-	uF0KPln0tYs71B1SJ2hQMlPCIeIzWHe1oMSfcdNdWI7Gt11gDo+2Febgah6ZtaRSwkG3MOUheH/x4
-	u+DbavVaI/sS84QJRJ4WwitC9edbqP4TKaettARLPEutSyQdFKQ4bFScBXVcCiGjft6vzkLSv0xga
-	91493aDTcNPxyRpuNiVQ==;
+	List-Owner; bh=qmIV4t/7FZjiUy19/Yys/utXltxXObiLhjfE52dHJnA=; b=G07NWLwShMsjTe
+	OyiFsn0wn0o+Xm3QVQCDq1u3Xbbz/vNlWsHseaO+8nclwM+bms0qS1Y2l4O4403OurbrX6bPmSWJB
+	E/rE7Fh3j68+t3kJETKJ5fq6GyR3nOhl+D0KGmiAFw7m3gQFiKCkFzNF0u0iisc+Hl6sEM2sFNvUJ
+	EOhy9VBycBx4rtqzOKNl73x/8Wb2IQLQ1oyvak/Rs6tV57zI8zurD06O3k5HFWgL8k5zc9EAstVon
+	7wnZjpZhT6GBxLi/CRsiqA6lIdBNvqnwxlRxFqsA5NCs0h7FiaEqN1pUxqLI6XGO4he0yzoNF6jdr
+	xguNqew0hQiQtAM9VWDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieKPS-0001PZ-Vh; Mon, 09 Dec 2019 14:53:14 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1ieKTF-0003YW-Dl; Mon, 09 Dec 2019 14:57:09 +0000
+Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieKPP-0001OG-4K; Mon, 09 Dec 2019 14:53:12 +0000
-Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
- helo=phil.lan)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1ieKPN-0001Ca-Pw; Mon, 09 Dec 2019 15:53:09 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: linux-rockchip@lists.infradead.org
-Subject: [PATCH 2/2] arm64: dts: rockchip: hook up the px30-evb dsi display
-Date: Mon,  9 Dec 2019 15:53:01 +0100
-Message-Id: <20191209145301.5307-2-heiko@sntech.de>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191209145301.5307-1-heiko@sntech.de>
-References: <20191209145301.5307-1-heiko@sntech.de>
+ id 1ieKT3-0003Oh-5q; Mon, 09 Dec 2019 14:56:58 +0000
+Received: by mail-il1-x142.google.com with SMTP id f6so12943645ilh.9;
+ Mon, 09 Dec 2019 06:56:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=GZjkca3Zp9sYYYIS/QPCEF0H2DGmE3kQodC7U7RI6jg=;
+ b=Jo1DFtbfEqbVJQq5XZ5LYzCv5LfIMXre5rs2IBqXAEswSM4ZyGHTOACUpAWl/JxobF
+ HLX/pPfXm0RL9M3l645yavzaROmAbjPrumBgCxOs+qt0jECTLvAP2saRGhxDiE4oVabe
+ x5ksCotFtF8bz+kAXYWj99jBeJUme6AdylQlFhZHK5Pd5Gk1t3eZiddRZuYK0LK40RxD
+ YSVYDjyxUtLqzzIQK4xOZoi+glaFkyr5SiLcxWGHnk44UhVVdqwlxJe//NV2RaRGPTNP
+ gl8tmVv118OmwBXVwaHHpaVbbEq1vi6cVvltYUcazpnix7+plbZ6LF5IODbwmjQ4/C3R
+ 9miQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=GZjkca3Zp9sYYYIS/QPCEF0H2DGmE3kQodC7U7RI6jg=;
+ b=CQnoLY2AIiinvXXOJHg20vyTFgScMhGs/G42CXO+rhE369Qj2EYDU/AIEmP/u3/O+x
+ +UrcUyYxMmnf6dj+uqPUXNOfud6k2GX+B/v26A+Lnpy9B5kcp4yS++bXDdRt6xnNzs7V
+ kyXqZTnQmUsPQUTa8zLFVG7ahUu0zkzQSibntUamn05d90b2FItihEQgA44uwFGr78PM
+ YT6HNuHyI99rr9RVK4SwA/UK26/2bl0p8zwLW41uURNfSDcBKXP3rsnyKjDxWcuv0vRE
+ hkVnmaMkcOW1LnmUsqSXvtxIpLtcJLlS4hpDBgyl8yM7dorjjKHPGu+OkovJJGLKHXPo
+ OIAQ==
+X-Gm-Message-State: APjAAAWEAuQV5+3be/JmJfnylYvaPsfZ0RdXVDp2Jt9hcxZxMFY2O+kJ
+ /SH1+WUovBd1ZT0VhjWtVP9tTZ4tI73tFnG5CJY=
+X-Google-Smtp-Source: APXvYqxlvrvi0P/1yFULp5Ov9uTz23XUXUnTAB4CPJ8ux5bZ/ALMike0pN8bBYyFrKhz/ds6VBHl/XO9ocuzIVo34UE=
+X-Received: by 2002:a92:3919:: with SMTP id g25mr10786954ila.221.1575903414183; 
+ Mon, 09 Dec 2019 06:56:54 -0800 (PST)
 MIME-Version: 1.0
+References: <20191206184536.2507-1-linux.amoon@gmail.com>
+ <724aa7db-3838-16f9-d344-1789ae2a5746@arm.com>
+In-Reply-To: <724aa7db-3838-16f9-d344-1789ae2a5746@arm.com>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Mon, 9 Dec 2019 20:26:42 +0530
+Message-ID: <CANAwSgTPrP5FS3xb7SadZ+BwASWQxfO8rBmno8ZW0JzAxcqWKA@mail.gmail.com>
+Subject: Re: [RFCv1 0/8] RK3399 clean shutdown issue
+To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_065311_317994_B62B7E04 
-X-CRM114-Status: UNSURE (   9.44  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191209_065657_254599_EDD3D2AE 
+X-CRM114-Status: GOOD (  14.16  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (linux.amoon[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,71 +92,70 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org, christoph.muellner@theobroma-systems.com
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Daniel Schultz <d.schultz@phytec.de>,
+ Heiko Stuebner <heiko@sntech.de>, Linux Kernel <linux-kernel@vger.kernel.org>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Jagan Teki <jagan@amarulasolutions.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+Hi Robin,
 
-Create the necessary display nodes to activate the Xingpeng XPP055C272
-dsi display that can be found on the px30-evb.
+On Mon, 9 Dec 2019 at 18:59, Robin Murphy <robin.murphy@arm.com> wrote:
+>
+> On 06/12/2019 6:45 pm, Anand Moon wrote:
+> > Most of the RK3399 SBC boards do not perform clean
+> > shutdown and clean reboot.
+>
+> FWIW reboot problems on RK3399 have been tracked down to issues in
+> upstream ATF, and are unrelated to the PMIC.
 
-Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
----
- arch/arm64/boot/dts/rockchip/px30-evb.dts | 32 +++++++++++++++++++++++
- 1 file changed, 32 insertions(+)
+Yes I am aware of this changes.
+But, I have tired to study *RK808 datasheet V1.4* [0] below section
+*5.2.3 Power Channel Control/Monitor Registers*
+for clean reboot I was going to try disable some bit in below
+into reboot handle in the future patch.
 
-diff --git a/arch/arm64/boot/dts/rockchip/px30-evb.dts b/arch/arm64/boot/dts/rockchip/px30-evb.dts
-index 180995a590c1..0a680257d9c2 100644
---- a/arch/arm64/boot/dts/rockchip/px30-evb.dts
-+++ b/arch/arm64/boot/dts/rockchip/px30-evb.dts
-@@ -112,6 +112,38 @@ &display_subsystem {
- 	status = "okay";
- };
- 
-+&dsi {
-+	status = "okay";
-+
-+	ports {
-+		mipi_out: port@1 {
-+			reg = <1>;
-+
-+			mipi_out_panel: endpoint {
-+				remote-endpoint = <&mipi_in_panel>;
-+			};
-+		};
-+	};
-+
-+	panel@0 {
-+		compatible = "xinpeng,xpp055c272";
-+		reg = <0>;
-+		backlight = <&backlight>;
-+		iovcc-supply = <&vcc_1v8>;
-+		vci-supply = <&vcc3v3_lcd>;
-+
-+		port {
-+			mipi_in_panel: endpoint {
-+				remote-endpoint = <&mipi_out_panel>;
-+			};
-+		};
-+	};
-+};
-+
-+&dsi_dphy {
-+	status = "okay";
-+};
-+
- &emmc {
- 	bus-width = <8>;
- 	cap-mmc-highspeed;
--- 
-2.24.0
+DCDC_EN_REG
+SLEEP_SET_OFF_REG1
+SLEEP_SET_OFF_REG2
+DCDC_UV_STS_REG
 
+I was going see if this helps to do clean reboot.
+further more use this in suspend/resume operation.
+
+[0] http://rockchip.fr/RK808%20datasheet%20V1.4.pdf
+
+But I feed that their is some more issue with related to mmc or PCIe
+not able to cleanly release the resources while reboot which caused
+then to disable after reboot.
+
+>
+> > These patches try to help resolve the issue with proper
+> > shutdown by turning off the PMIC.
+>
+> As mentioned elsewhere[1], although this is what the BSP kernel seems to
+> do, and in practice it's unlikely to matter for the majority of devboard
+> users like you and me, I still feel a bit uncomfortable with this
+> solution for systems using ATF as in principle the secure world might
+> want to know about orderly shutdowns, and this effectively makes every
+> shutdown an unexpected power loss from secure software's point of view.
+>
+> Robin.
+>
+> [1]
+> http://lists.infradead.org/pipermail/linux-rockchip/2019-December/028183.html
+>
+
+Yes I have follow the mailing list and I read this thread.
+I am not aware of ATF complete architecture.
+
+-Anand
 
 _______________________________________________
 Linux-rockchip mailing list
