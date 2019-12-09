@@ -2,56 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47D4F116FF4
-	for <lists+linux-rockchip@lfdr.de>; Mon,  9 Dec 2019 16:10:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F3B61170AF
+	for <lists+linux-rockchip@lfdr.de>; Mon,  9 Dec 2019 16:38:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ahOKnTDwvY5A+Zbs0Sr4Uo9RzYTOrXRuK5jI1JX38x4=; b=OGWpKW2/lutXJtVhZU3/hrNau
-	4V8OkvCD+gRIuPfGzIcAq3GaL6LD9Fyn9T2SzQPEF0XXi/9Oa0CiAY3WaWuWR/yHcu3+WIzETsZRP
-	pL0y3gf3Ojs1hhcIHvR53cg3zQAn0Dxo3APJO3yvPecqH6zrqKY08O3faoZF+pLzVkNff0nqutPb0
-	dum0FMykkJMvPpPuME3ooVwceRVEJq/+Y/goUDkhyzB2+TVH4a7/zSHPyi27arcRQe1wHpYw2UXFe
-	aH+EnNqXRUnQSnhDMJQZg8DfnJddLH6TalIKkfkDpfphseAV5KUJvjEMqvRCdUbHzOPrKJZP3U6UM
-	JnPEZ5D9A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YLCj2WNCnzWVow4AXpvWd/0b9A3lEiOfMxgRaQUutdw=; b=c1UXpLK3wSjG2X
+	soQUUu98JqPUiH97hHiBlWDpj9dN4x0zQvGzLZk3+3TRfZOe43JK5LK+hAU7nx0cC+dPjB4cXKEQh
+	u80jQd6AhxBvNEBpdPuxs/wA4QcmWImEbFcrxYlz8KCtrw5iZ4chcq+AoYJ2LUzEuzdiZ9Pgp2fEk
+	sNoTD9s9e9eXJL2Thdvp2JMyPF9n8cEf7iNBntDNyVWNp/thW23OeqKsH+gDSKjg600BVKdPh+hUp
+	AbTIlELd7XZfXeTIWrFFgMCFxB9tUYTi/Glk9wjATnF7LZEkARcNDTP5HeatD2Prm9UQv+TrfCKA5
+	iSRfSwwFtJxerLv5y5cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieKfy-0000qC-7f; Mon, 09 Dec 2019 15:10:18 +0000
-Received: from mail.manjaro.org ([176.9.38.148] helo=manjaro.org)
+	id 1ieL7c-0001Se-NM; Mon, 09 Dec 2019 15:38:52 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieKfm-0007yd-LO; Mon, 09 Dec 2019 15:10:08 +0000
-Received: from localhost (localhost [127.0.0.1])
- by manjaro.org (Postfix) with ESMTP id ED77136E3C6B;
- Mon,  9 Dec 2019 15:52:06 +0100 (CET)
-X-Virus-Scanned: Debian amavisd-new at manjaro.org
-Received: from manjaro.org ([127.0.0.1])
- by localhost (manjaro.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id ROUn39D3oXYX; Mon,  9 Dec 2019 15:52:04 +0100 (CET)
-From: Tobias Schramm <t.schramm@manjaro.org>
-Subject: Re: [RFCv1 0/8] RK3399 clean shutdown issue
-To: Peter Geis <pgwipeout@gmail.com>, Robin Murphy <robin.murphy@arm.com>
-References: <20191206184536.2507-1-linux.amoon@gmail.com>
- <724aa7db-3838-16f9-d344-1789ae2a5746@arm.com>
- <CAMdYzYoZY5gau=DGtPhk9CPV_WcyM4wjR9o+rPyaQfOzoy2Y=Q@mail.gmail.com>
-Message-ID: <5baf8423-8aa6-21a4-b066-71e3d12330cd@manjaro.org>
-Date: Mon, 9 Dec 2019 15:51:04 +0100
+ id 1ieL7U-0001MI-KG; Mon, 09 Dec 2019 15:38:46 +0000
+Received: by mail-io1-xd41.google.com with SMTP id z26so15196662iot.8;
+ Mon, 09 Dec 2019 07:38:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=ZJHtdl64eSg7tX1bls5wY/hgwg2SeBy1mqhpZlCukvg=;
+ b=sYWBiNewuyqeitxp4PMfrWb8D5LArfvGYVlnna4mBtaRMWcybALmK4TSqg7M/HKA1i
+ 85aVtTxdrFrUZO5be9qMmHnxoj2f16hCkwRN6gtWVx+L9JUsxL5DLcePNscgNynYhloC
+ VEm6MCqqrVLY1aRK63NYHp9pg3+pwb5JS4nOdvLU+JWQh1qcMOXZjhrE9qxaP0Q4BehK
+ Gsn2K/LiOp2/s0TUyEEvu1PvhZpNTUN8pemOAMe5iT4VX7Ac1b2opKqp8pl7TSLhmffY
+ HobeBr/5FkeX5fDbHWmaxUGCJKWKMFHairadzP8yQM6TqaCNEtvIec58Uw99BqricfOM
+ k+iQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=ZJHtdl64eSg7tX1bls5wY/hgwg2SeBy1mqhpZlCukvg=;
+ b=nZE4K33EUEHTwbhUzw+wnk2KTPT2YaiZZrHMWDQ1VJ5GxykFA0Du8xuZaWbnP00ayA
+ 6jHRtB/+qVrotYv1ygIIOqSvpP65kW9nJGepgw5D9pmkX8rUx4wZMlTfBbBmz4355bq1
+ d4/LymNdN9XwcM772f47UFCQq+4bo1pXmxqK8wxEKPyidLaVXHCi2/CF2FA41vb6GEU7
+ w8BzgQGUdLuUiBTb50T6++leFzStSFU03MvtiQBtlRoUE37AOJU4PClUFnwcRcYrM8pa
+ KAdFUPfZxjCG1tdScIlYS02pRAjiysvgaJZFClo/C4prVg//Mk2CcZdtztCbnV0Rp6iM
+ zWOA==
+X-Gm-Message-State: APjAAAXxoQAOgvpU0a4o50VFGvbXOdQq/SBOiuY1bX4vxBfMl1RqT65+
+ iFw+s/5NFde2YyV2qBblWAITigjijsMGTt7ZwaM=
+X-Google-Smtp-Source: APXvYqyKe81SV620SWPT3vlC+s2nmZV57gLiyzYp6LoXO4TmESagI9KWQZJxUmkLqawCteKkmS0vffcB403S2IYmD8Y=
+X-Received: by 2002:a02:8817:: with SMTP id r23mr28310766jai.120.1575905923417; 
+ Mon, 09 Dec 2019 07:38:43 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <CAMdYzYoZY5gau=DGtPhk9CPV_WcyM4wjR9o+rPyaQfOzoy2Y=Q@mail.gmail.com>
-Content-Language: en-US
+References: <20191206184536.2507-1-linux.amoon@gmail.com>
+ <20191206184536.2507-3-linux.amoon@gmail.com>
+ <f1327196-66c9-d152-c0ca-914d43d6f55e@arm.com>
+In-Reply-To: <f1327196-66c9-d152-c0ca-914d43d6f55e@arm.com>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Mon, 9 Dec 2019 21:08:31 +0530
+Message-ID: <CANAwSgTSDX=36eF3UxVyVykguRjd90=x4iT27s=nJg5ezG_V7w@mail.gmail.com>
+Subject: Re: [RFCv1 2/8] mfd: rk808: use syscore for RK805 PMIC shutdown
+To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_071006_862005_F0ABCC49 
-X-CRM114-Status: GOOD (  15.19  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191209_073844_690358_63A36C75 
+X-CRM114-Status: GOOD (  16.08  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [176.9.38.148 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (linux.amoon[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,67 +94,67 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Daniel Schultz <d.schultz@phytec.de>, Heiko Stuebner <heiko@sntech.de>,
- Anand Moon <linux.amoon@gmail.com>, linux-kernel@vger.kernel.org,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Daniel Schultz <d.schultz@phytec.de>,
+ Heiko Stuebner <heiko@sntech.de>, Linux Kernel <linux-kernel@vger.kernel.org>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Jagan Teki <jagan@amarulasolutions.com>,
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
-
-> On Mon, Dec 9, 2019 at 8:29 AM Robin Murphy <robin.murphy@arm.com> wrote:
->> On 06/12/2019 6:45 pm, Anand Moon wrote:
->>> Most of the RK3399 SBC boards do not perform clean
->>> shutdown and clean reboot.
->> FWIW reboot problems on RK3399 have been tracked down to issues in
->> upstream ATF, and are unrelated to the PMIC.
->>
->>> These patches try to help resolve the issue with proper
->>> shutdown by turning off the PMIC.
->> As mentioned elsewhere[1], although this is what the BSP kernel seems to
->> do, and in practice it's unlikely to matter for the majority of devboard
->> users like you and me, I still feel a bit uncomfortable with this
->> solution for systems using ATF as in principle the secure world might
->> want to know about orderly shutdowns, and this effectively makes every
->> shutdown an unexpected power loss from secure software's point of view.
->>
->> Robin.
-> Since ATF is operating completely in volatile memory, and shouldn't be
-> touching hardware once it passes off control to the kernel anyways,
-> what is the harm of pulling the rug out from under it?
-> If this idea is to prevent issues in the future, such as if ATF does
-> gain the ability to preempt hardware control, then at that time ATF
-> will need to be able to handle actually powering off devices using the
-> same functionality.
-
-As far as I know ATF implements PSCI, doesn't it? Thus I would assume 
-that it should most definitely handle power off for all platforms as 
-indicated by the presence of platform handlers in [1].
-
-> But as we discussed previously, ATF doesn't have this capability, so
-> in this case any board without a dedicated power-off gpio will be
-> unable to power off at all.
-> Also it seems that giving ATF this functionality, with the current
-> state of ATF, would be cost prohibitive.
->
-> I personally feel that allowing the kernel to do this is a solution to
-> the problem we have now.
-
-Maybe I'm missing something here but I'd suggest that implementing an 
-i2c driver in the rockchip platform part of ATF using libfdt to find the 
-PMIC from the devicetree would be the way to go.
-
-[1] 
-https://github.com/ARM-software/arm-trusted-firmware/blob/master/lib/psci/psci_system_off.c#L31
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgUm9iaW4sCgpPbiBNb24sIDkgRGVjIDIwMTkgYXQgMTk6MDQsIFJvYmluIE11cnBoeSA8cm9i
+aW4ubXVycGh5QGFybS5jb20+IHdyb3RlOgo+Cj4gT24gMDYvMTIvMjAxOSA2OjQ1IHBtLCBBbmFu
+ZCBNb29uIHdyb3RlOgo+ID4gVXNlIGNvbW1vbiBzeXNjb3JlX3NodXRkb3duIGZvciBSSzgwNSBQ
+TUlDIHRvIGRvCj4gPiBjbGVhbiBJMkMgc2h1dGRvd24sIGRyb3AgdGhlIHVudXNlZCBwbV9wd3Jv
+ZmZfcHJlcF9mbgo+ID4gYW5kIHBtX3B3cm9mZl9mbiBmdW5jdGlvbiBwb2ludGVycy4KPgo+IENv
+aW5jaWRlbnRhbGx5LCBJJ3ZlIGFsc28gYmVlbiBsb29raW5nIGF0IFJLODA1IGZvciB0aGUgc2Fr
+ZSBvZiB0cnlpbmcKPiB0byBnZXQgc3VzcGVuZCB0byBiZWhhdmUgb24gbXkgUkszMzI4IGJveCwg
+YW5kIEkndmUgZW5kZWQgdXAgd2l0aCBzb21lCj4gc2xpZ2h0bHkgZGlmZmVyZW50IGNsZWFudXAg
+cGF0Y2hlcyAtIEknbGwgdGlkeSB0aGVtIHVwIGFuZCBwb3N0IHRoZW0gZm9yCj4gY29tcGFyaXNv
+biBhcyBzb29uIGFzIEkgY2FuLgoKTm8gaXNzdWUgaWYgdGhlaXIgaXMgYmV0dGVyIGNsZWFuIGFw
+cHJvYWNoLCBJIHdpbGwgZGVmaW5pdGVseSB0ZXN0IHRoYXQgc2VyaWVzLgo+Cj4gPiBDYzogSGVp
+a28gU3R1ZWJuZXIgPGhlaWtvQHNudGVjaC5kZT4KPiA+IFNpZ25lZC1vZmYtYnk6IEFuYW5kIE1v
+b24gPGxpbnV4LmFtb29uQGdtYWlsLmNvbT4KPiA+IC0tLQo+ID4gICBkcml2ZXJzL21mZC9yazgw
+OC5jIHwgMzMgKysrKysrKysrKysrKysrKystLS0tLS0tLS0tLS0tLS0tCj4gPiAgIDEgZmlsZSBj
+aGFuZ2VkLCAxNyBpbnNlcnRpb25zKCspLCAxNiBkZWxldGlvbnMoLSkKPiA+Cj4gPiBkaWZmIC0t
+Z2l0IGEvZHJpdmVycy9tZmQvcms4MDguYyBiL2RyaXZlcnMvbWZkL3JrODA4LmMKPiA+IGluZGV4
+IGU2MzdmNWJjYzhiYi4uNzEzZDk4OTA2NGJhIDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVycy9tZmQv
+cms4MDguYwo+ID4gKysrIGIvZHJpdmVycy9tZmQvcms4MDguYwo+ID4gQEAgLTQ2NywxNiArNDY3
+LDYgQEAgc3RhdGljIHZvaWQgcms4MDhfdXBkYXRlX2JpdHModW5zaWduZWQgaW50IHJlZywgdW5z
+aWduZWQgaW50IG1hc2ssCj4gPiAgICAgICAgICAgICAgICAgICAgICAgImNhbid0IHdyaXRlIHRv
+IHJlZ2lzdGVyIDB4JXg6ICV4IVxuIiwgcmVnLCByZXQpOwo+ID4gICB9Cj4gPgo+ID4gLXN0YXRp
+YyB2b2lkIHJrODA1X2RldmljZV9zaHV0ZG93bih2b2lkKQo+ID4gLXsKPiA+IC0gICAgIHJrODA4
+X3VwZGF0ZV9iaXRzKFJLODA1X0RFVl9DVFJMX1JFRywgREVWX09GRiwgREVWX09GRik7Cj4gPiAt
+fQo+ID4gLQo+ID4gLXN0YXRpYyB2b2lkIHJrODA1X2RldmljZV9zaHV0ZG93bl9wcmVwYXJlKHZv
+aWQpCj4gPiAtewo+ID4gLSAgICAgcms4MDhfdXBkYXRlX2JpdHMoUks4MDVfR1BJT19JT19QT0xf
+UkVHLCBTTFBfU0RfTVNLLCBTSFVURE9XTl9GVU4pOwo+ID4gLX0KPiA+IC0KPiA+ICAgc3RhdGlj
+IHZvaWQgcms4MDhfZGV2aWNlX3NodXRkb3duKHZvaWQpCj4gPiAgIHsKPiA+ICAgICAgIHJrODA4
+X3VwZGF0ZV9iaXRzKFJLODA4X0RFVkNUUkxfUkVHLCBERVZfT0ZGX1JTVCwgREVWX09GRl9SU1Qp
+Owo+ID4gQEAgLTQ5MSwxMCArNDgxLDIzIEBAIHN0YXRpYyB2b2lkIHJrOHh4X3N5c2NvcmVfc2h1
+dGRvd24odm9pZCkKPiA+ICAgewo+ID4gICAgICAgc3RydWN0IHJrODA4ICpyazgwOCA9IGkyY19n
+ZXRfY2xpZW50ZGF0YShyazgwOF9pMmNfY2xpZW50KTsKPiA+Cj4gPiAtICAgICBpZiAoc3lzdGVt
+X3N0YXRlID09IFNZU1RFTV9QT1dFUl9PRkYgJiYKPiA+IC0gICAgICAgICAocms4MDgtPnZhcmlh
+bnQgPT0gUks4MDlfSUQgfHwgcms4MDgtPnZhcmlhbnQgPT0gUks4MTdfSUQpKSB7Cj4gPiAtICAg
+ICAgICAgICAgIHJrODA4X3VwZGF0ZV9iaXRzKFJLODE3X1NZU19DRkcoMyksIFJLODE3X1NMUFBJ
+Tl9GVU5DX01TSywKPiA+IC0gICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNMUFBJTl9ETl9G
+VU4pOwo+ID4gKyAgICAgaWYgKHN5c3RlbV9zdGF0ZSA9PSBTWVNURU1fUE9XRVJfT0ZGKSB7Cj4g
+PiArICAgICAgICAgICAgIGRldl9pbmZvKCZyazgwOF9pMmNfY2xpZW50LT5kZXYsICJTeXN0ZW0g
+U2h1dGRvd24gRXZlbnRcbiIpOwo+ID4gKwo+ID4gKyAgICAgICAgICAgICBzd2l0Y2ggKHJrODA4
+LT52YXJpYW50KSB7Cj4gPiArICAgICAgICAgICAgIGNhc2UgUks4MDVfSUQ6Cj4gPiArICAgICAg
+ICAgICAgICAgICAgICAgcms4MDhfdXBkYXRlX2JpdHMoUks4MDVfR1BJT19JT19QT0xfUkVHLAo+
+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTTFBfU0RfTVNLLCBTSFVU
+RE9XTl9GVU4pOwo+ID4gKyAgICAgICAgICAgICAgICAgICAgIHJrODA4X3VwZGF0ZV9iaXRzKFJL
+ODA1X0RFVl9DVFJMX1JFRywgREVWX09GRiwgREVWX09GRik7Cj4KPiBXaHkgdGhpcyBjaGFuZ2U/
+IFNodXRkb3duIHZpYSB0aGUgU0xFRVAgcGluIGlzIHdvcmtpbmcganVzdCBmaW5lIG9uIG15Cj4g
+Ym94IDovCj4KPiBSb2Jpbi4KCkFzIHBlciBSSy04MDUgZGF0YXNoZWV0IFswXSBiZWxvdy4KRm9y
+IGNsZWFuIHBvd2Vyb2ZmIHdlIG5lZWQgdG8gc2V0IGluIERFVl9DVFJMX1JFRyByZWcKQml0IDAg
+REVWX09GRjogd3JpdGUg4oCcMeKAnSB0byB0dXJuIGRvd24gdGhlIFBNVS4KClswXSBodHRwOi8v
+ZmlsZXMucGluZTY0Lm9yZy9kb2Mvcm9jazY0L1JvY2tjaGlwX1JLODA1X0RhdGFzaGVldF9WMS4x
+JUMyJUEwMjAxNjA5MjEucGRmCgotQW5hbmQKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2Nr
+Y2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
