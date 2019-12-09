@@ -2,60 +2,92 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0371E117901
-	for <lists+linux-rockchip@lfdr.de>; Mon,  9 Dec 2019 23:05:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BEF111796E
+	for <lists+linux-rockchip@lfdr.de>; Mon,  9 Dec 2019 23:39:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=66/mSpRdtTRdk99UIL48vlXQ4UmdZ1+tBNMMI/sYps8=; b=NMA67LDe1RGg5N
-	kVkCU1GemtIRtphLpi5Ox4mf9A3Tp2c6ClONcF0t3sB2E8u6yzbx6DAk/ADDS+X7g+Czq3mCL23jk
-	XOKFHt7JaMGADlX1f2n3+DOEP48gX9623qcf50ZqLsshr0NwtV4AgmGJQMzMrGybxOvRxxNRW/c4c
-	SugiVrZUiHcC/FspwOPVplrFMI1Gd3B8wUiwo0NbUr8nhrERq9bee/5apDr68FMnXt48SearU9xW4
-	iCrxO1wufH8Hs9sExf+c0hH9G97TvLoiXklmkve12wqXIk59SWDTwJb4ql1uY8znHEXzqULYlOeZz
-	d7s0gtYuFLJcVOTlo3gw==;
+	List-Owner; bh=UIh6uTLa0tliAaNQ6bKZ89rzARuOCvResYo7sMwcWOo=; b=dcAdPy7O/VIF/M
+	ziR8NDcTpsgPt8ShLXaG5SM4j3WWlX3pQnGgOSLP1uGw+tBRI++82MJqWevNBjAboyTI1qulGzL70
+	MbybK+qEiugH1TiMxJJbKcIJyU68Lh99/JNl8JToLggKYz+2FT2rVGeggyESW1hrt49cbpoCzJXxw
+	svVWpTsMNKjY8JF80lRTcCBsSpKih19sZBStCnVI7RqS5cMzN6gJbVSUV6mAetxI4oeBX0hcLacrp
+	d1bMG4/En9FZfGpRTUMEhNKnLUWZIGCa19BUvxJc2SI0NMsvprvcuaOHiSNtb8P/Tbc5ziMERdHI3
+	Yi7/0QJOi6h2MXyZjafg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieR9i-0004BH-Lo; Mon, 09 Dec 2019 22:05:26 +0000
-Received: from asavdk4.altibox.net ([109.247.116.15])
+	id 1ieRg6-0000Ba-Hd; Mon, 09 Dec 2019 22:38:54 +0000
+Received: from mout.web.de ([212.227.15.14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieR9U-0003BU-RG; Mon, 09 Dec 2019 22:05:15 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk4.altibox.net (Postfix) with ESMTPS id 9E94580514;
- Mon,  9 Dec 2019 23:05:01 +0100 (CET)
-Date: Mon, 9 Dec 2019 23:04:59 +0100
-From: Sam Ravnborg <sam@ravnborg.org>
-To: dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH v2 0/25] drm/panel infrastructure + backlight update
-Message-ID: <20191209220459.GA11015@ravnborg.org>
-References: <20191207140353.23967-1-sam@ravnborg.org>
+ id 1ieRfx-0008UX-Gi; Mon, 09 Dec 2019 22:38:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1575931116;
+ bh=iIcwtGZ7q6+1IJH8HBswoh2M79f+M/HgGj3GZwWb4cU=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=dXkT1kvsdkuwRbOxQScIQBPCRrzbGwdWzLu4BQCSuuEj0kG8RHK0rIZWCiDspQd5M
+ 9amJoQ4CO5o7MG1TqhSYNwStoZZaHhMfqf0uvPjX5XoLlHJHLLDT2eQt3yi4GDBgEL
+ kBbqE8GEr5gRE6W7jq5qBAxRSxnzotqcIuYJsxEs=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from localhost.localdomain ([89.204.137.56]) by smtp.web.de
+ (mrweb004 [213.165.67.108]) with ESMTPSA (Nemesis) id
+ 0MhOpG-1iQe9W21cg-00MaZJ; Mon, 09 Dec 2019 23:38:36 +0100
+From: Soeren Moch <smoch@web.de>
+To: Kalle Valo <kvalo@codeaurora.org>
+Subject: [PATCH 8/8] arm64: dts: rockchip: RockPro64: enable wifi module at
+ sdio0
+Date: Mon,  9 Dec 2019 23:38:22 +0100
+Message-Id: <20191209223822.27236-8-smoch@web.de>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191209223822.27236-1-smoch@web.de>
+References: <20191209223822.27236-1-smoch@web.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191207140353.23967-1-sam@ravnborg.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=VcLZwmh9 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10
- a=-e7YKnP9ej6YZVhYjlAA:9 a=CjuIK1q_8ugA:10
+X-Provags-ID: V03:K1:JKaU5d2nwpiRHKBLzQOON+w/GWu5jnq3s0cFpfDnyxfLY+ReLv/
+ t12RKSkr3wPF+ZXfo6jgBaaUs/Sr54X1V8eD6PJaFVY+DgTx6VMLMd7g5I7Hayx91AKGzYd
+ k5/EMQWsoV/viwnF71yh4jM1+SfgE876IVxnXgsSOJm4pDiJ4rGfqvo34S7gD5Dz5PhDPdm
+ O10Y1Wx3Kr3rFf+Er7VvQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:0gjPZqsxZ3Y=:xsl37Z8u/T3zQJLs0iGiK/
+ StbtdO1MulGqkOI+0tC3R05+D2BpUsATmsbUwYvMTdMJ3OpzKLHfRDd68+QV3PPw2PgMwxOMQ
+ VpBEc4yTRu71nhJLg1dVBwXFQKswD++aPVZhORWRtZJVzyTlFbMoSj0esJ/iZbsqUYZi7wfIY
+ awg05E6yD76DgI1dWcu8OJpCiBzEaAEw+RnKQ5Xpf5AA9ej53O0JN2HEg2b6U45PBW3lbO6Ld
+ zvq/bDtAcgnIZWEHx9AGXTGCsg70Rmy/+3Qg+wFhKx6jUDZPfoS6G3Dkffhedq/KZPF8nK7iG
+ eomxsBW5LqiZjeiWZ8g5RP4GYJs3pDo3c5+wZSkHcBbKn6MV/2ho41pbe7wBQsau0fxnx5zv1
+ 6Lv3jRNvabGS9On3sGpkBLqoAF6Z/mHjLQFoMJBo4YSbAIFyFCeNEXqFbaGdkK5romGqZtMnx
+ G7t+nZERHayx5lS9jwBxfDjSfrsCRmPCiif7i+7LCvm8yXr0Xg6PVN7vckZ3As7TUSn6MK4ws
+ XLlY7Pxi7yL39FL5e0T4DMS8iQm07ItTBluliHakdLdY9uVnd5kNJK3w/9rdFMo0yeGuGDgxg
+ 7y4KDtPKk6CA5Y4lJaeuQnIAwwqX2eRCZMv6ybx01MK/VJTALX4Gq+yacxQF0ugsgEOOM227D
+ jWiLxIeaxUJ3uNIME4qiGPQsbre8UoL4ktZzkrqhmda3AQXQMRhB1utmVP5I55YJWB6FQ1BfR
+ Mr5iI1kkSe8S90bv1BYE+RLxrcyW15NuOPGvjA6rILHH7iespmAjLPpZuWX9UbQPPEABU/l+b
+ 5t6txaPL48St70RlCaXyt7hZTvBW7zqM0m97OM2TkTG9y7GhdvZlDEdKZCTlsBt90P/4b3+K5
+ zV8Hj/s8t3J8Qwgcbjl0hzuZrSqySpjqixTY+UChyQCn5mWzv9XbbeSAim3v/pr0dUvUh6A9W
+ ke1lp7aR6krzNhehMW425OFITdJLWWRuNxuJZ5W6Y5BqCdtk0N3eD6mxMrfY1E4iLL2uIFMI6
+ xkRoqTp4UpoTsXLD7uuaLOZtv7VBPFaeAqhgNX9U57R1HKY2gqEtzc5v8QvODnm4tqkCbJbUe
+ x7LcBmKEXxNOayGev5jeN0fv/PdgLlSuzuF7/uSs+LkiMuoa81CQHIGEth1eoBf1hqhQgQtZf
+ Nov8rQce8IcauTPloExst3Jp5mukVxxMTCBUioixs79KP1H3m+8rsf2p07s9mkEvvhVNyS/DA
+ S0zQ1hJ9bCHz3dLOuyHMO/ZL6CGjuHij7UNTIMA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_140514_037362_6D9F781A 
-X-CRM114-Status: GOOD (  20.06  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191209_143845_847018_3C82B9CC 
+X-CRM114-Status: GOOD (  11.29  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.15 listed in list.dnswl.org]
+ no trust [212.227.15.14 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (smoch[at]web.de)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,71 +100,85 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Stefan Agner <stefan@agner.ch>, Andrzej Hajda <a.hajda@samsung.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Tomi Valkeinen <tomi.valkeinen@ti.com>,
- Jagan Teki <jagan@amarulasolutions.com>, NXP Linux Team <linux-imx@nxp.com>,
- Jitao Shi <jitao.shi@mediatek.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, linux-mediatek@lists.infradead.org,
- Abhinav Kumar <abhinavk@codeaurora.org>, linux-tegra@vger.kernel.org,
- Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
- Purism Kernel Team <kernel@puri.sm>, linux-renesas-soc@vger.kernel.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Daniel Vetter <daniel@ffwll.ch>
+Cc: brcm80211-dev-list.pdl@broadcom.com, Heiko Stuebner <heiko@sntech.de>,
+ netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Soeren Moch <smoch@web.de>, brcm80211-dev-list@cypress.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sat, Dec 07, 2019 at 03:03:28PM +0100, Sam Ravnborg wrote:
-> This patchset include a couple of different
-> things - all related to panels.
-> 
-> - The callbacks are optional - so drop error if
->   callback is not present.
->  
-> - Add support for backlight in drm_panel.
->   This allows us to make much simpler backlight
->   support to most panels.
->   The patchset include conversion of most of the
->   trivial cases.
-> 
-> - Drop drm_connector from drm_panel.
->   This change required many changes to most
->   panels and many bridges and display drivers.
->   This is by far the most invasive change in this patchset.
-> 
-> With this patchset drm_panel_(attach|detach) are nop's
-> but they are kept for now.
-> 
-> A few of these patches has been sent out before - but versioning
-> started again from v1 - as the most patches are new.
-> 
-> I have tested the panel-simple changes, and thus some
-> of the infrastructure changes.
-> The testing was done on an earlier iteration - and I ended
-> up submitting this as Laurent and others started to depend on it.
-> 
-> v2:
->   This is mostly addressing comments from Laurent.
->   - drop get_timings removal, we should start using it
->   - do not fail in drm_panel_of_backlight() if DT is not enabled
->   - updated changelogs and code comments in many places (thanks Laurent!)
->   - get_modes is a mandatory callback - return -EOPNOTSUPP if not specified
->   - log if backlight update fails
->   - added a-b/r-bs
->     o thanks to Laurent and Linus for the prompt reviews!
-> 
-> When "drm/panel: add backlight support" is reviewed I plan to
-> apply the full series to drm-misc-next.
+RockPro64 supports an Ampak AP6359SA based wifi/bt combo module.
+The BCM4359/9 wifi controller in this module is connected to sdio0,
+enable this interface.
 
-Fixed the last bits pointed out by Laurent and pushed to drm-misc-next.
+Signed-off-by: Soeren Moch <smoch@web.de>
+---
+Not sure where to place exactly the sdio0 node in the dts because
+existing sd nodes are not sorted alphabetically.
 
-	Sam
+This last patch in this brcmfmac patch series probably should be picked
+up by Heiko independently of the rest of this series. It was sent together
+to show how this brcmfmac extension for 4359-sdio support with RSDB is
+used and tested.
+
+Cc: Heiko Stuebner <heiko@sntech.de>
+Cc: Kalle Valo <kvalo@codeaurora.org>
+Cc: linux-wireless@vger.kernel.org
+Cc: brcm80211-dev-list.pdl@broadcom.com
+Cc: brcm80211-dev-list@cypress.com
+Cc: netdev@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-rockchip@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
+ .../boot/dts/rockchip/rk3399-rockpro64.dts    | 21 ++++++++++++-------
+ 1 file changed, 14 insertions(+), 7 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+index 7f4b2eba31d4..9fa92790d6e0 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+@@ -71,13 +71,6 @@
+ 		clock-names = "ext_clock";
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&wifi_enable_h>;
+-
+-		/*
+-		 * On the module itself this is one of these (depending
+-		 * on the actual card populated):
+-		 * - SDIO_RESET_L_WL_REG_ON
+-		 * - PDN (power down when low)
+-		 */
+ 		reset-gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
+ 	};
+
+@@ -650,6 +643,20 @@
+ 	status = "okay";
+ };
+
++&sdio0 {
++	bus-width = <4>;
++	cap-sd-highspeed;
++	cap-sdio-irq;
++	disable-wp;
++	keep-power-in-suspend;
++	mmc-pwrseq = <&sdio_pwrseq>;
++	non-removable;
++	pinctrl-names = "default";
++	pinctrl-0 = <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
++	sd-uhs-sdr104;
++	status = "okay";
++};
++
+ &sdmmc {
+ 	bus-width = <4>;
+ 	cap-sd-highspeed;
+--
+2.17.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
