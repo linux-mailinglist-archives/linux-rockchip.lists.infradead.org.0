@@ -2,83 +2,59 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE001116DEF
-	for <lists+linux-rockchip@lfdr.de>; Mon,  9 Dec 2019 14:29:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2CDF116DF6
+	for <lists+linux-rockchip@lfdr.de>; Mon,  9 Dec 2019 14:29:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+F3xrCBRlcen0ECvMWgseT82KS4EOk3XFkk76TPZOWk=; b=Qno+LFSPg/Y50p
-	7JQ3JIRUDTNJMadp/nt16QOva/drSl0OZNuxL3hs3zKhI2JDhwSJFn2PUSJjbKbzqHaAahUaX2QdH
-	6OaFX08UxwtS3c2L88LdAgSuoUkwkyFQuYjhvbXG/BXHRzSqk1WvSVOgUfskzKOAVQx2TOVEMpzhb
-	M/wcRRUNAtxVFbxY9CX0Sdig31293oeZxFpGUUTgSTMecRtKV06OSlt+EBLZedxsltPWgnZgGVHRG
-	R5J8c/NlJZjllPPHCrn914k/9D5XAf7ZQDHcPrJ2gTJBZg79IFvf76eKbq5hwMHQP+eLnp1SwzPvY
-	AC0CpwOrAdjN4M8TT4ng==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8DrnsR2dnDw9ouhO+SfgbI3v5Kdz0HToJ7w4ZF2guV8=; b=j1wCPUs3akFvHlwEXXN8gwyY6
+	YT93/nc/zyd3DRhZxNPKE7llNCq4mQhTFutXncr9bQneiS3Pw/KGMkl3p3OCAY/Xy/CqWnLOkHf6R
+	bFRxDwKL3N9YNMyXt9nE+FVqvrKo7zyFi3BRgk+XEIecunsHJm1Z3IrcyYnT8nxXNxhBUt1egcHlP
+	vmnPfzQaxL6jhhxaokvmte3SZYiNTLHF6ImwJFAke5r+zGn7HLQ1mK18/bUa8vE1JESeyDRFnwEAq
+	316gYz57o9FCxIli4SV8NZ796AgThjY9XonTNe4ggItnT3YdNzaxrvVdfyPG6psplQJjtvEX+5tLo
+	dVSiZ0llw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieJ5z-0005hh-0p; Mon, 09 Dec 2019 13:29:03 +0000
-Received: from mail-qk1-x734.google.com ([2607:f8b0:4864:20::734])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieJ5w-0005h7-1l
- for linux-rockchip@lists.infradead.org; Mon, 09 Dec 2019 13:29:01 +0000
-Received: by mail-qk1-x734.google.com with SMTP id w127so1174361qkb.11
- for <linux-rockchip@lists.infradead.org>; Mon, 09 Dec 2019 05:28:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to:cc;
- bh=AgznpJEZii1uXl48aeyj5GcVq44ls9B/7hXfmXRmw0k=;
- b=u2dmZF3Iyv+uVclwNEr1zsgYnyNCRNU1xxIiWaEzj+8zpAmPu6cDu5JkIctm4NHDtG
- lBVfcohVyisdNbesT9nL9EMjnRJRLl5inphqLd08UTL+l3CC3b0cJWcvSFtItspRXlns
- uUQ7+azOLxHZSSOeTHFmBRxzSLyEFQIVZU7O0YaCnJ1KFrwMuCS8a9WieCWW7VHeQito
- rcSTdw4ZeJ6etSvir3g7tuqxlZEPnNOwX9ECRmmEEyG3r2ThDI3kwrcQD7BIaVTppmJu
- tv+7hPikjY/CrUwp9Q+KalcsXtaYV05rELcZmEP8wOVqIYpsg7sziGstg5znYHwIWVIM
- KzsA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
- bh=AgznpJEZii1uXl48aeyj5GcVq44ls9B/7hXfmXRmw0k=;
- b=cbiMlyMo/zyRiGqWcQmUt7wOCBz/iwLAMhOczr9HZps3PgfKkLRe1vuBrEP2rYBPsb
- x1UeA8wkaaK/nU+rTpr0+b6aUc6ozssBkvhFv4V1/BXEB2e6KURA1R+0nXrpRXfynlad
- 9xUj3Jju6s7FDIOIdUYh+3z5gVnA/KRGqs7MCJ54SD5QVpClVKHAn/xYDsyY4NVIy3Ep
- zEGH1NQ5z3p5489ALWjvvo3+h2JjXyUmINpJ0lD+Me5gocYQpGTW1ZadvTuzuHo0S62F
- esC4Wb7DdFk6OEQEISUS+EB1gCFNUiBHSlv+TOWR9oaTYshVesc0tCBeKCETbj4AmJBl
- ye7g==
-X-Gm-Message-State: APjAAAWxcVABehIU38kqb1ZktRbqlUklTq6SHOyCJdfqAXPJCGrd2+cx
- SDC50j08lxNyoQuarm+Fel53yeLHNxR36LCa+k8=
-X-Google-Smtp-Source: APXvYqyRSD9LPYpc9tChgo6bbl0SC7yFXlKlhlffzXu3ftiVRF3Jyg0IqI+K5OqVXBGEX7XCA1PzcZhxHEaMglT4LJ0=
-X-Received: by 2002:a05:620a:143b:: with SMTP id
- k27mr26196001qkj.262.1575898138300; 
- Mon, 09 Dec 2019 05:28:58 -0800 (PST)
+	id 1ieJ6K-0005sS-Il; Mon, 09 Dec 2019 13:29:24 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ieJ6B-0005k0-Hj; Mon, 09 Dec 2019 13:29:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2DC39328;
+ Mon,  9 Dec 2019 05:29:13 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1F2943F718;
+ Mon,  9 Dec 2019 05:29:09 -0800 (PST)
+Subject: Re: [RFCv1 0/8] RK3399 clean shutdown issue
+To: Anand Moon <linux.amoon@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Jagan Teki <jagan@amarulasolutions.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ Daniel Schultz <d.schultz@phytec.de>
+References: <20191206184536.2507-1-linux.amoon@gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <724aa7db-3838-16f9-d344-1789ae2a5746@arm.com>
+Date: Mon, 9 Dec 2019 13:29:08 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-From: Peter Geis <pgwipeout@gmail.com>
-Date: Mon, 9 Dec 2019 08:28:43 -0500
-Message-ID: <CAMdYzYoPXWbv4zXet6c9JQEMbqcJi6ZEOui_n82NVmrqNLy_pw@mail.gmail.com>
-Subject: [Question] rk3399 vfio-pci/sr-iov support
-To: Heiko Stuebner <heiko@sntech.de>
+In-Reply-To: <20191206184536.2507-1-linux.amoon@gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_052900_114429_AD1CAC9A 
-X-CRM114-Status: UNSURE (   3.88  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191209_052915_679910_E721F80B 
+X-CRM114-Status: GOOD (  15.77  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:734 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pgwipeout[at]gmail.com)
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,41 +67,102 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- linux-pci@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Good Morning,
+On 06/12/2019 6:45 pm, Anand Moon wrote:
+> Most of the RK3399 SBC boards do not perform clean
+> shutdown and clean reboot.
 
-I'm back with more pcie fun on the rk3399.
-I'm trying to get pcie passthrough working for a vm on the rk3399, and
-have encountered some roadblocks.
+FWIW reboot problems on RK3399 have been tracked down to issues in 
+upstream ATF, and are unrelated to the PMIC.
 
-First, vfio-pci doesn't work on the rk3399, as the pcie controller
-doesn't bind explicitly to a iommu.
-[37528.138212] vfio-pci 0000:01:00.0: assign IRQ: got 226
-[37528.138254] vfio-pci: probe of 0000:01:00.0 failed with error -22
+> These patches try to help resolve the issue with proper
+> shutdown by turning off the PMIC.
 
-# find /sys/kernel/iommu_groups/ -type l
-/sys/kernel/iommu_groups/1/devices/ff8f0000.vop
-/sys/kernel/iommu_groups/2/devices/ff900000.vop
+As mentioned elsewhere[1], although this is what the BSP kernel seems to 
+do, and in practice it's unlikely to matter for the majority of devboard 
+users like you and me, I still feel a bit uncomfortable with this 
+solution for systems using ATF as in principle the secure world might 
+want to know about orderly shutdowns, and this effectively makes every 
+shutdown an unexpected power loss from secure software's point of view.
 
-# virsh start openwrt
-error: Failed to start domain openwrt
-error: internal error: Process exited prior to exec: libvirt:  error :
-internal error: Invalid device 0000:01:00.0 iommu_group file
-/sys/bus/pci/devices/0000:01:00.0/iommu_group is not a symlink
+Robin.
 
-Second, sr-iov support is broken.
-root@rockpro64:/sys/bus/pci/devices/0000:01:00.0# echo 1 > sriov_numvfs
-bash: echo: write error: Input/output error
-[37352.907558] pci 0000:01:10.0: [8086:1520] type 7f class 0xffffff
-[37352.907578] pci 0000:01:10.0: unknown header type 7f, ignoring device
+[1] 
+http://lists.infradead.org/pipermail/linux-rockchip/2019-December/028183.html
 
-Do any of y'all have some insight into these issues?
+> For reference
+> RK805 PMCI data sheet:
+> [0] http://rockchip.fr/RK805%20datasheet%20V1.3.pdf
+> RK808 PMIC data sheet:
+> [1] http://rockchip.fr/RK808%20datasheet%20V1.4.pdf
+> RK817 PMIC data sheet:
+> [2] http://rockchip.fr/RK817%20datasheet%20V1.01.pdf
+> RK818 PMIC data sheet:
+> [3] http://rockchip.fr/RK818%20datasheet%20V1.0.pdf
+> 
+> Reboot issue:
+> My guess is that we need to some proper sequence of
+> setting to PMCI to perform clean.
+> 
+> If you have any input please share them.
+> 
+> Tested on SBC
+> Rock960 Model A
+> Odroid N1
+> Rock64
+> 
+> -Anand Moon
+> 
+> Anand Moon (8):
+>    mfd: rk808: Refactor shutdown functions
+>    mfd: rk808: use syscore for RK805 PMIC shutdown
+>    mfd: rk808: use syscore for RK808 PMIC shutdown
+>    mfd: rk808: use syscore for RK818 PMIC shutdown
+>    mfd: rk808: cleanup unused function pointer
+>    mfd: rk808: use common syscore for all PMCI for clean shutdown
+>    arm64: rockchip: drop unused field from rk8xx i2c node
+>    arm: rockchip: drop unused field from rk8xx i2c node
+> 
+>   arch/arm/boot/dts/rk3036-kylin.dts            |   1 -
+>   arch/arm/boot/dts/rk3188-px3-evb.dts          |   1 -
+>   arch/arm/boot/dts/rk3288-evb-rk808.dts        |   1 -
+>   arch/arm/boot/dts/rk3288-phycore-som.dtsi     |   1 -
+>   arch/arm/boot/dts/rk3288-popmetal.dts         |   1 -
+>   arch/arm/boot/dts/rk3288-tinker.dtsi          |   1 -
+>   arch/arm/boot/dts/rk3288-veyron.dtsi          |   1 -
+>   arch/arm/boot/dts/rk3288-vyasa.dts            |   1 -
+>   arch/arm/boot/dts/rv1108-elgin-r1.dts         |   1 -
+>   arch/arm/boot/dts/rv1108-evb.dts              |   1 -
+>   arch/arm64/boot/dts/rockchip/px30-evb.dts     |   1 -
+>   arch/arm64/boot/dts/rockchip/rk3328-a1.dts    |   1 -
+>   arch/arm64/boot/dts/rockchip/rk3328-evb.dts   |   1 -
+>   .../arm64/boot/dts/rockchip/rk3328-roc-cc.dts |   1 -
+>   .../arm64/boot/dts/rockchip/rk3328-rock64.dts |   1 -
+>   .../boot/dts/rockchip/rk3368-geekbox.dts      |   1 -
+>   arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi |   1 -
+>   .../boot/dts/rockchip/rk3368-px5-evb.dts      |   1 -
+>   .../boot/dts/rockchip/rk3399-firefly.dts      |   1 -
+>   .../boot/dts/rockchip/rk3399-hugsun-x99.dts   |   1 -
+>   .../boot/dts/rockchip/rk3399-khadas-edge.dtsi |   1 -
+>   .../boot/dts/rockchip/rk3399-leez-p710.dts    |   1 -
+>   .../boot/dts/rockchip/rk3399-nanopi4.dtsi     |   1 -
+>   .../boot/dts/rockchip/rk3399-orangepi.dts     |   1 -
+>   arch/arm64/boot/dts/rockchip/rk3399-puma.dtsi |   1 -
+>   .../boot/dts/rockchip/rk3399-roc-pc.dtsi      |   1 -
+>   .../boot/dts/rockchip/rk3399-rock-pi-4.dts    |   1 -
+>   .../boot/dts/rockchip/rk3399-rock960.dtsi     |   1 -
+>   .../boot/dts/rockchip/rk3399-rockpro64.dts    |   1 -
+>   .../boot/dts/rockchip/rk3399-sapphire.dtsi    |   1 -
+>   drivers/mfd/rk808.c                           | 144 +++++-------------
+>   include/linux/mfd/rk808.h                     |   2 -
+>   32 files changed, 42 insertions(+), 134 deletions(-)
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
