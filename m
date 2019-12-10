@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D339A1189B9
-	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 14:27:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF0D61189BB
+	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 14:27:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=KFygfPL/Jwt/MGWnxGDFL/u2/yApnTlK8o2eILtqKTI=; b=tK3eZdHTGeCOmgxHmoPAuuwzGi
-	XoZz1AAi1a1BxhcWWSDlh6F/CPx2k0bagCYl3Dyp3tLyzIQUNf1y93J+eS5JFGUlIGurlsYyW5ZQN
-	kXKPVab0CAebnBTjnCf8hDhddL0QZmiHo1Q3+h33UvYcq+gppGbAQub5+RgqBDhYf6VlxvDYwW6s9
-	xRUz5lveaG0lYT4+0rL5RMO/QEYhw6JornENc/bH4CrhtpS4jIbLKLhgfv+sJaH1PO6AcKLBiX1Na
-	bUrAdh/8vCCud9BeZRjZXGSAbwWVzsm1HomSW7+Uo0adoPDhL4DRgWn5MsA/3tL+PR4EnQU3sm9cx
-	Y3T04Ecg==;
+	bh=86YvTN7JOKLHZXRpfU0bjavFPz0JT1UXwey0vYhbENk=; b=PsTs5hGeiWO8ipuPbXcRbSqEl2
+	3tYxA8qYzzuqMrf8ABZCjkKD2vv1KpGKZfes5/RYe36X2rxYyOIHOpBv8/2H1xLNMUzisLKgVEuzl
+	Ua9FyTTeXELgm11Wt9Hnbx+OSrG8N1BMCNVtdFJphEwy3g62wJS1+cYj76x9lSiuK6RR9Y75PTOaU
+	WBWa+o1CeYnWBz8djTdFzf6KIXCIIlOerh46JSRFJI9kafD3Dd1tU1TuKsUSzVOWf0X3WVWvi8M4Q
+	fYMxpgrnvsu0+5ALKo5wBYmoUERnNQg/L5R0DegJU9CL/E/wZLGjYdaINIKKbVA2amYbc86yP1m2O
+	oy0emDSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iefXu-0006Ek-Sp; Tue, 10 Dec 2019 13:27:22 +0000
+	id 1iefY2-0006Kj-9O; Tue, 10 Dec 2019 13:27:30 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iefV6-000277-F5
- for linux-rockchip@lists.infradead.org; Tue, 10 Dec 2019 13:24:29 +0000
+ id 1iefV7-00028O-HS
+ for linux-rockchip@lists.infradead.org; Tue, 10 Dec 2019 13:24:31 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 96F3E1045;
- Tue, 10 Dec 2019 05:24:27 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D18F2113E;
+ Tue, 10 Dec 2019 05:24:28 -0800 (PST)
 Received: from DESKTOP-VLO843J.cambridge.arm.com
  (DESKTOP-VLO843J.cambridge.arm.com [10.1.26.198])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A23853F52E;
- Tue, 10 Dec 2019 05:24:26 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id E38343F52E;
+ Tue, 10 Dec 2019 05:24:27 -0800 (PST)
 From: Robin Murphy <robin.murphy@arm.com>
 To: lee.jones@linaro.org
-Subject: [PATCH 1/4] mfd: rk808: Set global instance unconditionally
-Date: Tue, 10 Dec 2019 13:24:30 +0000
-Message-Id: <f55d95c36ac21c4eeef38f5a17035574049a5f03.1575932654.git.robin.murphy@arm.com>
+Subject: [PATCH 2/4] mfd: rk808: Always register syscore ops
+Date: Tue, 10 Dec 2019 13:24:31 +0000
+Message-Id: <b59f9861afd658008fbc4f58b75a995bfe00d6ae.1575932654.git.robin.murphy@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1575932654.git.robin.murphy@arm.com>
 References: <cover.1575932654.git.robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_052428_591322_8D7240A8 
-X-CRM114-Status: GOOD (  11.79  )
+X-CRM114-CacheID: sfid-20191210_052429_643436_D6049A8E 
+X-CRM114-Status: GOOD (  11.42  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,38 +71,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The RK817 syscore ops rely on the global rk808_i2c_client being set,
-but are essentially independent of whether this driver has authority
-over system power control - indeed, setting the SLEEP pin functionality
-is most likely wanted when firmware is in charge of power via PSCI.
-There's also no harm in setting it unconditionally anyway, so do it.
+Registering the syscore shutdown notifier even when it's a
+no-op for the given RK8xx variant should be harmless, and
+saves a lot of bother in handling unregistering on probe
+failure or module removal, which has been woefully lacking.
 
 Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 ---
- drivers/mfd/rk808.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/mfd/rk808.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/mfd/rk808.c b/drivers/mfd/rk808.c
-index 616e44e7ef98..f2f2f98552a0 100644
+index f2f2f98552a0..387105830736 100644
 --- a/drivers/mfd/rk808.c
 +++ b/drivers/mfd/rk808.c
-@@ -666,6 +666,8 @@ static int rk808_probe(struct i2c_client *client,
- 		}
+@@ -623,7 +623,6 @@ static int rk808_probe(struct i2c_client *client,
+ 		nr_pre_init_regs = ARRAY_SIZE(rk817_pre_init_reg);
+ 		cells = rk817s;
+ 		nr_cells = ARRAY_SIZE(rk817s);
+-		register_syscore_ops(&rk808_syscore_ops);
+ 		break;
+ 	default:
+ 		dev_err(&client->dev, "Unsupported RK8XX ID %lu\n",
+@@ -667,6 +666,7 @@ static int rk808_probe(struct i2c_client *client,
  	}
  
-+	rk808_i2c_client = client;
-+
+ 	rk808_i2c_client = client;
++	register_syscore_ops(&rk808_syscore_ops);
+ 
  	ret = devm_mfd_add_devices(&client->dev, PLATFORM_DEVID_NONE,
  			      cells, nr_cells, NULL, 0,
- 			      regmap_irq_get_domain(rk808->irq_data));
-@@ -675,7 +677,6 @@ static int rk808_probe(struct i2c_client *client,
- 	}
+@@ -684,6 +684,7 @@ static int rk808_probe(struct i2c_client *client,
+ 	return 0;
  
- 	if (of_property_read_bool(np, "rockchip,system-power-controller")) {
--		rk808_i2c_client = client;
- 		pm_power_off = rk808->pm_pwroff_fn;
- 		pm_power_off_prepare = rk808->pm_pwroff_prep_fn;
- 	}
+ err_irq:
++	unregister_syscore_ops(&rk808_syscore_ops);
+ 	regmap_del_irq_chip(client->irq, rk808->irq_data);
+ 	return ret;
+ }
+@@ -694,6 +695,8 @@ static int rk808_remove(struct i2c_client *client)
+ 
+ 	regmap_del_irq_chip(client->irq, rk808->irq_data);
+ 
++	unregister_syscore_ops(&rk808_syscore_ops);
++
+ 	/**
+ 	 * pm_power_off may points to a function from another module.
+ 	 * Check if the pointer is set by us and only then overwrite it.
 -- 
 2.17.1
 
