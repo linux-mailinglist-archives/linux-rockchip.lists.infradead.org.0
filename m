@@ -2,55 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5F921186B4
-	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 12:42:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA9461188A3
+	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 13:42:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8+HEKsUiSwJ6jKpHiR/XbaCBFOTiIXVr8CwOtxAyOSY=; b=n8FCi3v15qOPJenSLNrEJyMvv
-	SaEMOpuhfXqj6A0qKC7YVNR4/uf8XpCqhEFmBxCwFmSIMlipBf1a+5D6EcuoucDzje3sMRAIgEbW7
-	4hWGMQbDdCBMkuTcRNum4Vma+j3Sk9oIiyn3kNsOBa/9cU7mA+lWkmGlrPe4C4YmhX3gww2c778ZU
-	0YgrZghht1Z9dG/VbX6k2tCkC0Dqo9VrTsq6t9ihPqRxfseMy94l2zSADZam8ogY9//5xejw2L9Sl
-	cnB1GeqOVGCsFEp+AmCiP7Y4VkExKtlICKp4VaRWt2aF2xerV29z+7eGuErXm+OD9F969YZEHRLUF
-	W7ku3+JZA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UYmSOegRGDF/vkVyTehf1rqDAzyMX51ITnVw31ayEuw=; b=Df+snJPs6nwdc6
+	cPXyO42k/oENZfan9Yh9yCl6//maRTu26Q9Mcn3elMSU8DJEPEyTreIdYi3AyyaGq93ZrAGTf7onj
+	AOJiC219bxCjO0IW/3hmdm4UiiU498DkgGexV+rmeKLTPZ4TIptxOjcrdW4yKxUG6XUoa3H9mLQup
+	5Iq/W2C+VA04TCytqiG7w9+i/g2F+K/XLU8A4z3mtYs+RW77KzGnjcqkSSeSUtYu8f1T+d20A7DWZ
+	hDr1L2A7pyvG7WXU/sSCBvynahuYRIrx+d7ykjyvPKnjAAabwvM7/h1umyXqdp77MJTGaT70oPJKa
+	SNEP8kR1ppUgNs1z8/Aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieduo-0003wq-Mx; Tue, 10 Dec 2019 11:42:54 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1ieeqY-00020g-0q; Tue, 10 Dec 2019 12:42:34 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iedub-0003dL-Dl; Tue, 10 Dec 2019 11:42:43 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: aratiu) with ESMTPSA id 92096291A06
-From: Adrian Ratiu <adrian.ratiu@collabora.com>
-To: Philippe CORNU <philippe.cornu@st.com>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>
-Subject: Re: [Linux-stm32] [PATCH v4 0/4] Genericize DW MIPI DSI bridge and
- add i.MX 6 driver
-In-Reply-To: <a356df00-e321-ab8c-61e9-f179cb1f8e12@st.com>
-References: <20191202193359.703709-1-adrian.ratiu@collabora.com>
- <a356df00-e321-ab8c-61e9-f179cb1f8e12@st.com>
-Date: Tue, 10 Dec 2019 13:43:03 +0200
-Message-ID: <87y2vk1k54.fsf@collabora.com>
+ id 1ieeqV-00020K-Az; Tue, 10 Dec 2019 12:42:32 +0000
+Received: by mail-io1-xd44.google.com with SMTP id v3so1580084ioj.5;
+ Tue, 10 Dec 2019 04:42:30 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=j/7EAXBbAI9svJUE6Ry0Bg/seucFpEnJxo4ekf7aJOI=;
+ b=oK8ybPB7IYFS3Y3T981GNgQnegvjgi6OuXwcNFvcpzUEZ6PK8kKdlYZRrc2HqtRk4F
+ hbtFgXXKawlstDH3S+o99QU/LTIg9XPTPn+9gAfg4zl7CdRV/UhdCgIkDJn3IWLHqX9/
+ 4ttPtAOsOu+cate051ojE7eukka6BIqFfTTTdjXp9NbQI73Yro0uM66YOHlfEPCpcBN9
+ QhbXZbRmbx4do2sHD/W6loGQizm3bfvzBB6Lgt03nVQeyE0AVB1qSwgX5SKdn7KpvNyG
+ vmd7Zn57RPiFWmMHEkzDRUsmmEXaIkGM2WNIg8ipePWbJ8yytCd4R3IJ3Qk6pruUVaa8
+ t39g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=j/7EAXBbAI9svJUE6Ry0Bg/seucFpEnJxo4ekf7aJOI=;
+ b=SdBVLZsD3fvPHGrCO3wF9VDHQPB9bAa4Fvb0jxeuGPV4R+MAgyVfjDX5DCkD1JfAuA
+ A3OxZVSQT5OARoZA4gmk/lRTz0xDbLkDthPWC5Bb7mAf5CP1i8aFhsVRCJ5+w034xjEN
+ EL2EDGEhw9P2185jTyT2ysAJfKoYNaMf99dsUhXap1MA2e5m6h1z03pYiYlUCi/Y/uM5
+ Eq+MxZS9lO/vxCOY0Rx97RRXrnuy0qGM27bYUAs7Uc3WK+gRXpSqcJ7m2ZXwDt9l27Fo
+ 6m2tIptDNK/RhQyN+mUtU/I2SUDxrzYWaETT9MBv/3qEa9YvG41xzSZDFqs5fccb9nJD
+ EEAA==
+X-Gm-Message-State: APjAAAUEWxFCq/PHjkzeK/B/1MzxUmU58zmBRagqT28KSKk+Tl4a/CiQ
+ BF5gJQxvpN2kDdGINU3i1va6k8rj/28zgeamYV8=
+X-Google-Smtp-Source: APXvYqz+qMFJ87NylUe5wIjXuGUxrXXeja9olnlnqivXwq7Y7INQY12Pm708Ay2NrACQD5W3YKFCPTM3PJ3+dslJLEg=
+X-Received: by 2002:a5e:9314:: with SMTP id k20mr20961740iom.6.1575981749724; 
+ Tue, 10 Dec 2019 04:42:29 -0800 (PST)
 MIME-Version: 1.0
+References: <20191209115746.12953-1-smoch@web.de>
+In-Reply-To: <20191209115746.12953-1-smoch@web.de>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Tue, 10 Dec 2019 18:12:18 +0530
+Message-ID: <CANAwSgS9ixhyOE2QYQ3CetA=BUVebMan2=9xBKF=U3YXAwCHNQ@mail.gmail.com>
+Subject: Re: [PATCH] mfd: rk808: Always use poweroff when requested
+To: Soeren Moch <smoch@web.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_034241_724266_4436ADDA 
-X-CRM114-Status: GOOD (  16.88  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191210_044231_408650_445AC37F 
+X-CRM114-Status: GOOD (  16.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (linux.amoon[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,94 +91,124 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "kernel@collabora.com" <kernel@collabora.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "linux-imx@nxp.com" <linux-imx@nxp.com>
+Cc: linux-rockchip@lists.infradead.org, Lee Jones <lee.jones@linaro.org>,
+ Heiko Stuebner <heiko@sntech.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, 06 Dec 2019, Philippe CORNU <philippe.cornu@st.com> wrote:
-> Hi Adrian, 
-> 
-> And sorry for this late reply.  Your patches look good and we 
-> ("stm guys") understand that v1.01 is very  different to 
-> v1.30/31. 
-> 
-> We are doing our best to review & test your patches and we will 
-> go back  to you asap.  Many thanks, Philippe :-) 
+Hi Soeren,
 
-Hi Philippe,
-
-Thank you for taking the time to test this, I really appreciate 
-it.
-
-Adrian
-
+On Mon, 9 Dec 2019 at 17:28, Soeren Moch <smoch@web.de> wrote:
 >
+> With the device tree property "rockchip,system-power-controller" we
+> explicitly request to use this PMIC to power off the system. So always
+> register our poweroff function, even if some other handler (probably
+> PSCI poweroff) was registered before.
 >
-> On 12/2/19 8:33 PM, Adrian Ratiu wrote:
->> Having a generic Synopsis DesignWare MIPI-DSI host controller bridge
->> driver is a very good idea, however the current implementation has
->> hardcoded quite a lot of the register layouts used by the two supported
->> SoC vendors, STM and Rockchip, which use IP cores v1.30 and v1.31.
->> 
->> This makes it hard to support other SoC vendors like the FSL/NXP i.MX 6
->> which use older v1.01 cores or future versions because, based on history,
->> layout changes should also be expected in new DSI versions / SoCs.
->> 
->> This patch series converts the bridge and platform drivers to access
->> registers via generic regmap APIs and allows each platform driver to
->> configure its register layout via struct reg_fields, then adds support
->> for the host controller found on i.MX 6.
->> 
->> I only have i.MX hardware with MIPI-DSI panel and relevant documentation
->> available for testing so I'll really appreciate it if someone could test
->> the series on Rockchip and STM... eyeballing register fields could only
->> get me so far, so sorry in advance for any breakage!
->> 
->> Many thanks to Boris Brezillon <boris.brezillon@collabora.com> for
->> suggesting the regmap solution and to Liu Ying <Ying.Liu@freescale.com>
->> for doing the initial i.MX platform driver implementation.
->> 
->> This series applies on top of latest linux-next tree, next-20191202.
->> 
->> v3 -> v4:
->>    * Added commmit message to dt-binding patch (Neil)
->>    * Converted the dt-binding to yaml dt-schema format (Neil)
->>    * Small DT node + driver fixes (Rob)
->>    * Renamed platform driver to reflect it's only for i.MX v6 (Fabio)
->>    * Added small panel example to the host controller DT binding
->> 
->> v2 -> v3:
->>    * Added const declarations to dw-mipi-dsi.c structs (Emil)
->>    * Fixed Reviewed-by tags and cc'd some more relevant ML (Emil)
->> 
->> v1 -> v2:
->>    * Moved register definitions & regmap initialization into bridge
->>    module. Platform drivers get the regmap via plat_data after calling
->>    the bridge probe (Emil).
->> 
->> Adrian Ratiu (4):
->>    drm: bridge: dw_mipi_dsi: access registers via a regmap
->>    drm: bridge: dw_mipi_dsi: abstract register access using reg_fields
->>    drm: imx: Add i.MX 6 MIPI DSI host driver
->>    dt-bindings: display: add i.MX6 MIPI DSI host controller doc
->> 
->>   .../display/imx/fsl,mipi-dsi-imx6.yaml        | 136 ++++
->>   drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 699 +++++++++++++-----
->>   drivers/gpu/drm/imx/Kconfig                   |   7 +
->>   drivers/gpu/drm/imx/Makefile                  |   1 +
->>   drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c        | 378 ++++++++++
->>   .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   |  17 +-
->>   drivers/gpu/drm/stm/dw_mipi_dsi-stm.c         |  34 +-
->>   include/drm/bridge/dw_mipi_dsi.h              |   2 +-
->>   8 files changed, 1067 insertions(+), 207 deletions(-)
->>   create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
->>   create mode 100644 drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c
->> 
+> Signed-off-by: Soeren Moch <smoch@web.de>
+> ---
+> Cc: Lee Jones <lee.jones@linaro.org>
+> Cc: Heiko Stuebner <heiko@sntech.de>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-rockchip@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> ---
+>  drivers/mfd/rk808.c | 11 ++---------
+>  1 file changed, 2 insertions(+), 9 deletions(-)
+>
+> diff --git a/drivers/mfd/rk808.c b/drivers/mfd/rk808.c
+> index a69a6742ecdc..616e44e7ef98 100644
+> --- a/drivers/mfd/rk808.c
+> +++ b/drivers/mfd/rk808.c
+> @@ -550,7 +550,7 @@ static int rk808_probe(struct i2c_client *client,
+>         const struct mfd_cell *cells;
+>         int nr_pre_init_regs;
+>         int nr_cells;
+> -       int pm_off = 0, msb, lsb;
+> +       int msb, lsb;
+>         unsigned char pmic_id_msb, pmic_id_lsb;
+>         int ret;
+>         int i;
+> @@ -674,16 +674,9 @@ static int rk808_probe(struct i2c_client *client,
+>                 goto err_irq;
+>         }
+>
+> -       pm_off = of_property_read_bool(np,
+> -                               "rockchip,system-power-controller");
+> -       if (pm_off && !pm_power_off) {
+> +       if (of_property_read_bool(np, "rockchip,system-power-controller")) {
+>                 rk808_i2c_client = client;
+>                 pm_power_off = rk808->pm_pwroff_fn;
+> -       }
+> -
+> -       if (pm_off && !pm_power_off_prepare) {
+> -               if (!rk808_i2c_client)
+> -                       rk808_i2c_client = client;
+>                 pm_power_off_prepare = rk808->pm_pwroff_prep_fn;
+>         }
+>
+
+I gave this a try on my Rock960 and Odroid N1
+both got kernel panic below.
+
+[   58.305868] xhci-hcd xhci-hcd.0.auto: USB bus 5 deregistered
+[   58.306747] reboot: Power down
+[   58.307106] ------------[ cut here ]------------
+[   58.307510] No atomic I2C transfer handler for 'i2c-0'
+[   58.308007] WARNING: CPU: 0 PID: 1 at drivers/i2c/i2c-core.h:41
+i2c_transfer+0xe4/0xf8
+[   58.308696] Modules linked in: snd_soc_hdmi_codec dw_hdmi_i2s_audio
+rockchipdrm analogix_dp brcmfmac nvme dw_mipi_dsi nvme_core dw_hdmi
+panfrost cec brcmutil drm_kms_helper gpu_sched cfg80211 hci_uart drm
+btbcm crct10dif_ce snd_soc_simple_card bluetooth snd_soc_rockchip_i2s
+snd_soc_simple_card_utils snd_soc_rockchip_pcm phy_rockchip_pcie
+ecdh_generic rtc_rk808 ecc pcie_rockchip_host rfkill rockchip_thermal
+ip_tables x_tables ipv6 nf_defrag_ipv6
+[   58.312150] CPU: 0 PID: 1 Comm: shutdown Not tainted 5.5.0-rc1-dirty #1
+[   58.312725] Hardware name: 96boards Rock960 (DT)
+[   58.313131] pstate: 60000085 (nZCv daIf -PAN -UAO)
+[   58.313551] pc : i2c_transfer+0xe4/0xf8
+[   58.313889] lr : i2c_transfer+0xe4/0xf8
+[   58.314225] sp : ffff80001004bb00
+[   58.314516] x29: ffff80001004bb00 x28: ffff00007d208000
+[   58.314981] x27: 0000000000000000 x26: 0000000000000000
+[   58.315446] x25: 0000000000000000 x24: 0000000000000008
+[   58.315910] x23: 0000000000000000 x22: ffff80001004bc74
+[   58.316375] x21: 0000000000000002 x20: ffff80001004bb58
+[   58.316841] x19: ffff0000784f0880 x18: 0000000000000010
+[   58.317305] x17: 0000000000000001 x16: 0000000000000019
+[   58.317770] x15: ffffffffffffffff x14: ffff8000118398c8
+[   58.318236] x13: ffff80009004b867 x12: ffff80001004b86f
+[   58.318701] x11: ffff800011851000 x10: ffff80001004b7f0
+[   58.319166] x9 : 00000000ffffffd0 x8 : ffff800010699ad8
+[   58.319631] x7 : 0000000000000265 x6 : ffff800011a20be9
+[   58.320096] x5 : 0000000000000000 x4 : 0000000000000000
+[   58.320561] x3 : 00000000ffffffff x2 : ffff800011851ab8
+[   58.321026] x1 : d375c0d4f4751f00 x0 : 0000000000000000
+[   58.321491] Call trace:
+[   58.321710]  i2c_transfer+0xe4/0xf8
+[   58.322020]  regmap_i2c_read+0x5c/0x98
+[   58.322350]  _regmap_raw_read+0xcc/0x138
+[   58.322694]  _regmap_bus_read+0x3c/0x70
+[   58.323034]  _regmap_read+0x60/0xe0
+[   58.323341]  _regmap_update_bits+0xc8/0x108
+[   58.323707]  regmap_update_bits_base+0x60/0x90
+[   58.324099]  rk808_device_shutdown+0x38/0x50
+[   58.324476]  machine_power_off+0x24/0x30
+[   58.324823]  kernel_power_off+0x64/0x70
+[   58.325159]  __do_sys_reboot+0x15c/0x240
+[   58.325504]  __arm64_sys_reboot+0x20/0x28
+[   58.325858]  el0_svc_common.constprop.2+0x88/0x150
+[   58.326279]  el0_svc_handler+0x20/0x80
+[   58.326607]  el0_sync_handler+0x118/0x188
+[   58.326960]  el0_sync+0x140/0x180
+[   58.327251] ---[ end trace b1de39d03d724d01 ]---
+
+-Anand
 
 _______________________________________________
 Linux-rockchip mailing list
