@@ -2,56 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C822118178
-	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 08:44:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E7DC11833C
+	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 10:15:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JzJMNf19aAH1m27gD7UOmH5gEaqfj6BC5+fxp3IciVc=; b=Sd8GfxbD8TItvH
-	P+qZPF/m75Ky2RudEhaXzOwkKaJGtAygzSQDW3goeav2mp7FC0E3f3Ts1eL5E7OefFEY2+BbMuih/
-	Gsyu5fJoOQN+hw1M57/+0QuF0mFE7uOpbwTPo6zTtXLFrBfUkX1b1Yb6B0Ew/E8nVMapgWNRwUbnX
-	cGYczCLX28pps4l6SaxcssqzWg8JTD2n/SkOTRlmBJaiO80481If7xn8GVJ8CBOHiaz+wQEeD/x4G
-	OzlfmJwQbvjEY5/g/QKaUj0ncQEGBbCMnznO7dhRzml82ZEg3fVEPogr4U1y0pxWwmved4EWPbvXw
-	lVP68SdTQlkV9+3B97KA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WW4zNJDy4UpxB70fMpElBBJYp2j/J28Spcz3y8JI0ak=; b=hylc++FNUPZgXU
+	uKbhC/AvHVGvcaR9sOxHzSCFXgwJG6+jvBCjpsKiuBYE+ex+gMVCo418R/7SkrrObfPd1gcHcN7bV
+	mUBvVlqV4G1iEeDBJ8vk5nC/kgFEmXVMx35ZKFaj3XKHsA2K7DRp6WfG9Qvlyso2g8AQKWab4GrfW
+	C6+1GE6ILGXWCadtgirZmBMMQvqY9I2QVwf9C0x4Mqz1SGDTcd9tr5Jily1rbhsTKC6ypjTkf7oUB
+	Hp+eclDaxU5gEG+eNMJdMW8M9PAWZ9eeyaQ+vUm+7gaFRds2CFJb5+m8m+14TNfR2CSVKgkQU2to+
+	ZEh3q0o3k2pRN5TxQgEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieaBz-0005eY-PV; Tue, 10 Dec 2019 07:44:23 +0000
-Received: from coyote.holtmann.net ([212.227.132.17] helo=mail.holtmann.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieaBs-0005YF-HM; Tue, 10 Dec 2019 07:44:18 +0000
-Received: from marcel-macbook.fritz.box (p4FF9F0D1.dip0.t-ipconnect.de
- [79.249.240.209])
- by mail.holtmann.org (Postfix) with ESMTPSA id 9618DCED2A;
- Tue, 10 Dec 2019 08:53:16 +0100 (CET)
-Mime-Version: 1.0 (Mac OS X Mail 13.0 \(3601.0.10\))
-Subject: Re: [PATCH v2 1/1] ARM: dts: rockchip: Add brcm bluetooth for
- rk3288-veyron
-From: Marcel Holtmann <marcel@holtmann.org>
-In-Reply-To: <1788857.Va9C3Z3akr@diego>
-Date: Tue, 10 Dec 2019 08:44:05 +0100
-Message-Id: <B42F187B-C289-4140-841D-D1BF219E72D7@holtmann.org>
-References: <20191127223909.253873-1-abhishekpandit@chromium.org>
- <20191127223909.253873-2-abhishekpandit@chromium.org>
- <61639BAF-5AA0-4264-906F-E24E2A30088D@holtmann.org>
- <1788857.Va9C3Z3akr@diego>
-To: =?utf-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
-X-Mailer: Apple Mail (2.3601.0.10)
+	id 1iebbj-0006Bq-L6; Tue, 10 Dec 2019 09:15:03 +0000
+Received: from a27-11.smtp-out.us-west-2.amazonses.com ([54.240.27.11])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iebbf-0006A9-PB; Tue, 10 Dec 2019 09:15:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+ s=zsmsymrwgfyinv5wlfyidntwsjeeldzt; d=codeaurora.org; t=1575969297;
+ h=From:To:Cc:Subject:References:Date:In-Reply-To:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding;
+ bh=Ujunv0R/WM+sahEPNbxCRS3Q2pY5WCU98/q3fvcKML8=;
+ b=FurnRi/rf6sfEqmGHgzzny9K1UPyYS5COjPBRL96qm/bOPAfltKnUsRUXBei2dSp
+ ERFfH7AXujYb7a1352NYc1mThMN3OJ+qfJfxOQs17AvXX1l8A+m58gO4Rhwx+EVlG49
+ bhKDtujZSNdQ5T8cuhE+tEaKmlsk/b2xp8AZvBfo=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+ s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1575969297;
+ h=From:To:Cc:Subject:References:Date:In-Reply-To:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Feedback-ID;
+ bh=Ujunv0R/WM+sahEPNbxCRS3Q2pY5WCU98/q3fvcKML8=;
+ b=BBjPvf5dtQVdT7WuaWtd+QlR8uBBQFeOvmA3E4FJtT2TaEMvSG90rVgKMpnDL875
+ dkWLtMzukbFPiTw8mnZ0CLYbPpiNg1KKaau1WA2yyf6IciA9HV57YUM25w/0BUSV7cJ
+ XG4GyPK4GEplchvGkbOUS/b/17MDL1iQzKCOwsRk=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 279BBC447BC
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=kvalo@codeaurora.org
+From: Kalle Valo <kvalo@codeaurora.org>
+To: Heiko =?utf-8?Q?St=C3=BCbner?= <heiko@sntech.de>
+Subject: Re: [PATCH 8/8] arm64: dts: rockchip: RockPro64: enable wifi module
+ at sdio0
+References: <20191209223822.27236-1-smoch@web.de> <2668270.pdtvSLGib8@diego>
+ <2cf70216-8d98-4122-4f4e-b8254089a017@web.de>
+ <6162240.GiEx4hqPFh@diego>
+Date: Tue, 10 Dec 2019 09:14:57 +0000
+In-Reply-To: <6162240.GiEx4hqPFh@diego> ("Heiko
+ \=\?utf-8\?Q\?St\=C3\=BCbner\=22'\?\=
+ \=\?utf-8\?Q\?s\?\= message of "Tue, 10 Dec 2019 02:18:24 +0100")
+Message-ID: <0101016eef17156c-201eba4e-5e80-44aa-ad35-5f34fc616021-000000@us-west-2.amazonses.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
+MIME-Version: 1.0
+X-SES-Outgoing: 2019.12.10-54.240.27.11
+Feedback-ID: 1.us-west-2.CZuq2qbDmUIuT3qdvXlRHZZCpfZqZ4GtG9v3VKgRyF0=:AmazonSES
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_234416_725869_212C9257 
-X-CRM114-Status: UNSURE (   7.30  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191210_011459_845712_20D12C56 
+X-CRM114-Status: GOOD (  20.57  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.132.17 listed in list.dnswl.org]
+ no trust [54.240.27.11 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,47 +95,56 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, linux-rockchip@lists.infradead.org,
- Douglas Anderson <dianders@chromium.org>, linux-kernel@vger.kernel.org,
- BlueZ <linux-bluetooth@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Abhishek Pandit-Subedi <abhishekpandit@chromium.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: brcm80211-dev-list.pdl@broadcom.com, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Soeren Moch <smoch@web.de>,
+ brcm80211-dev-list@cypress.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Heiko,
-
->>> This enables the Broadcom uart bluetooth driver on uart0 and gives it
->>> ownership of its gpios. In order to use this, you must enable the
->>> following kconfig options:
->>> - CONFIG_BT_HCIUART_BCM
->>> - CONFIG_SERIAL_DEV
->>> 
->>> This is applicable to rk3288-veyron series boards that use the bcm43540
->>> wifi+bt chips.
->>> 
->>> As part of this change, also refactor the pinctrl across the various
->>> boards. All the boards using broadcom bluetooth shouldn't touch the
->>> bt_dev_wake pin.
->> 
->> so have these changes being merged?
-> 
-> not yet
-> 
-> Doug wanted to give a Reviewed-by, once the underlying bluetooth
-> changes got merged - not sure what the status is though.
-
-the Bluetooth changes have been merged into net-next.
-
-Regards
-
-Marcel
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGVpa28gU3TDvGJuZXIgPGhlaWtvQHNudGVjaC5kZT4gd3JpdGVzOgoKPiBIaSBTb2VyZW4sCj4K
+PiBBbSBEaWVuc3RhZywgMTAuIERlemVtYmVyIDIwMTksIDAwOjI5OjIxIENFVCBzY2hyaWViIFNv
+ZXJlbiBNb2NoOgo+PiBPbiAxMC4xMi4xOSAwMDowOCwgSGVpa28gU3TDvGJuZXIgd3JvdGU6Cj4+
+ID4gQW0gTW9udGFnLCA5LiBEZXplbWJlciAyMDE5LCAyMzozODoyMiBDRVQgc2NocmllYiBTb2Vy
+ZW4gTW9jaDoKPj4gPj4gUm9ja1BybzY0IHN1cHBvcnRzIGFuIEFtcGFrIEFQNjM1OVNBIGJhc2Vk
+IHdpZmkvYnQgY29tYm8gbW9kdWxlLgo+PiA+PiBUaGUgQkNNNDM1OS85IHdpZmkgY29udHJvbGxl
+ciBpbiB0aGlzIG1vZHVsZSBpcyBjb25uZWN0ZWQgdG8gc2RpbzAsCj4+ID4+IGVuYWJsZSB0aGlz
+IGludGVyZmFjZS4KPj4gPj4KPj4gPj4gU2lnbmVkLW9mZi1ieTogU29lcmVuIE1vY2ggPHNtb2No
+QHdlYi5kZT4KPj4gPj4gLS0tCj4+ID4+IE5vdCBzdXJlIHdoZXJlIHRvIHBsYWNlIGV4YWN0bHkg
+dGhlIHNkaW8wIG5vZGUgaW4gdGhlIGR0cyBiZWNhdXNlCj4+ID4+IGV4aXN0aW5nIHNkIG5vZGVz
+IGFyZSBub3Qgc29ydGVkIGFscGhhYmV0aWNhbGx5Lgo+PiA+Pgo+PiA+PiBUaGlzIGxhc3QgcGF0
+Y2ggaW4gdGhpcyBicmNtZm1hYyBwYXRjaCBzZXJpZXMgcHJvYmFibHkgc2hvdWxkIGJlIHBpY2tl
+ZAo+PiA+PiB1cCBieSBIZWlrbyBpbmRlcGVuZGVudGx5IG9mIHRoZSByZXN0IG9mIHRoaXMgc2Vy
+aWVzLiBJdCB3YXMgc2VudCB0b2dldGhlcgo+PiA+PiB0byBzaG93IGhvdyB0aGlzIGJyY21mbWFj
+IGV4dGVuc2lvbiBmb3IgNDM1OS1zZGlvIHN1cHBvcnQgd2l0aCBSU0RCIGlzCj4+ID4+IHVzZWQg
+YW5kIHRlc3RlZC4KPj4gPiBub2RlIHBsYWNlbWVudCBsb29rcyBnb29kIHNvIEkgY2FuIGFwcGx5
+IGl0LCBqdXN0IGEgZ2VuZXJhbCBxdWVzdGlvbnMKPj4gPiBJIG9ubHkgZ290IHBhdGNoIDgvOCBh
+cmUgcGF0Y2hlcyAxLTcgcmVsZXZhbnQgZm9yIHRoaXMgb25lIGFuZCB3aGF0IGFyZSB0aGV5Pwo+
+PiBQYXRjaGVzIDEtNyBhcmUgdGhlIHBhdGNoZXMgdG8gc3VwcG9ydCB0aGUgQkNNNDM1OSBjaGlw
+c2V0IHdpdGggU0RJTwo+PiBpbnRlcmZhY2UgaW4gdGhlIGxpbnV4IGJyY21mbWFjIG5ldC13aXJl
+bGVzcyBkcml2ZXIsIHNlZSBbMV0uCj4+IAo+PiBTbyB0aGlzIHBhdGNoIHNlcmllcyBoYXMgMiBw
+YXJ0czoKPj4gcGF0Y2hlcyAxLTc6IGFkZCBzdXBwb3J0IGZvciB0aGUgd2lmaSBjaGlwc2V0IGlu
+IHRoZSB3aXJlbGVzcyBkcml2ZXIsCj4+IHRoaXMgaGFzIHRvIGdvIHRocm91Z2ggbmV0LXdpcmVs
+ZXNzCj4+IHBhdGNoIDg6IGVuYWJsZSB0aGUgd2lmaSBtb2R1bGUgd2l0aCB0aGlzIGNoaXBzZXQg
+b24gUm9ja1BybzY0LCB0aGlzIHBhdGNoCj4KPiBUaGFua3MgZm9yIHRoZSBjbGFyaWZpY2F0aW9u
+IDotKSAuCj4KPiBBcyBwYXRjaCA4ICJvbmx5IiBkb2VzIHRoZSBjb3JlIHNkaW8gbm9kZSwgaXQg
+ZG9lc24ndCByZWFsbHkgZGVwZW5kIG9uIHRoZQo+IGVhcmxpZXIgb25lcyBhbmQgeW91IGNhbiBz
+dWJtaXQgYW55IHVhcnQtaG9va3MgZm9yIGJsdWV0b290aCBvbmNlIHRoZQo+IG90aGVyIHBhdGNo
+ZXMgbGFuZCBJIGd1ZXNzLgo+Cj4KPj4gSWYgdGhpcyB3YXMgY29uZnVzaW5nLCB3aGF0IHdvdWxk
+IGJlIHRoZSBpZGVhbCB3YXkgdG8gcG9zdCBzdWNoIHNlcmllcz8KPgo+IEkgdGhpbmsgZXZlcnkg
+bWFpbnRhaW5lciBoYXMgc29tZSBzbGlnaHRseSBkaWZmZXJlbnQgcGVyc3BlY3RpdmUgb24gdGhp
+cywKPiBidXQgcGVyc29uYWxseSBJIGxpa2UgZ2V0dGluZyB0aGUgd2hvbGUgc2VyaWVzIHRvIGZv
+bGxvdyB0aGUgZGlzY3Vzc2lvbiBidXQKPiBhbHNvIHRvIGp1c3Qgc2VlIHdoZW4gdGhlIGRyaXZl
+ci1zaWRlIGNoYW5nZXMgZ2V0IG1lcmdlZCwgYXMgdGhlIGR0cy1wYXJ0cwo+IG5lZWQgdG8gd2Fp
+dCBmb3IgdGhhdCBpbiBhIGxvdCBvZiBjYXNlcy4KCkZXSVcgSSBwcmVmZXIgdGhlIHNhbWUgYXMg
+SGVpa28uIElmIEkgZG9uJ3Qgc2VlIGFsbCB0aGUgcGF0Y2hlcyBpbiB0aGUKcGF0Y2hzZXQgSSBz
+dGFydCB3b3JyeWluZyBpZiBwYXRjaHdvcmsgbG9zdCB0aGVtLCBvciBzb21ldGhpbmcsIGFuZCB0
+aGVuCml0IHRha2VzIG1vcmUgdGltZSBmcm9tIG1lIHRvIGludmVzdGlnYXRlIHdoYXQgaGFwcGVu
+ZWQuIFNvIEkgc3Ryb25nbHkKcmVjb21tZW5kIHNlbmRpbmcgdGhlIHdob2xlIHNlcmllcyB0byBl
+dmVyeW9uZSBhcyBpdCBzYXZlcyB0aW1lLgoKLS0gCmh0dHBzOi8vd2lyZWxlc3Mud2lraS5rZXJu
+ZWwub3JnL2VuL2RldmVsb3BlcnMvZG9jdW1lbnRhdGlvbi9zdWJtaXR0aW5ncGF0Y2hlcwoKX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2No
+aXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
