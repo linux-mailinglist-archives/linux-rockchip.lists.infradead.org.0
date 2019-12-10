@@ -2,51 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95D47117D13
-	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 02:18:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26635117D1D
+	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 02:23:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X+c3LwKNziOq7OnUP3d1EcfDmTyxDYOidoI5Gz9flzc=; b=r65D1YSJhT4Zre
-	pl1JQpDwdKnogLWLPiNJEOWoPMZwBJqRPdnNdPaihEMQOOnkyeN99NYWRDJx48FhrGBOKR1lYOrCa
-	pnjfRQPXAUV+qqMJ38ER6F2pli6Do74enTdFA/3vUoS2hT7wKL+Ln0jq9SgqHFnyQVlElZpDbxhWs
-	gROgOMrYj9LB5YbYgBrYmvYp4xCw8VMfGNsqgO6FYxy0v8JiGbSaPff7sY2GdG3LVMmzYIxH5Is72
-	eIvgJmam/D96gTDkx5ah/n8SCc0dL1Wgzp4WaOsh0ur74vN6DRbg+6CANZ7zoqcdl4w4GRtRR8/Q/
-	4CRARcjSy7ItOdK6Ca0w==;
+	List-Owner; bh=0YJx09Ru3FF06MWIfKQokfbZhyZ5QA+NAEK1PN2MTgs=; b=DiNhIgcuCk7vgZ
+	3IeaMM7sDyKM7AlPVuECU0OODiMzjT2MbKq7JBW1l00+BZgtGRiknhiK+1s3OGIKfIEFPPRWJSMQ3
+	ZfukjwpRDQuNobIo08X2DptzJOY+qgl9fVDM4uIatAdD9U1fOgh6Glf8svwFynyMeQjWTV0TFth+N
+	8V9hRvd0ogrPQ0oG7nJaDRdvRj5gu0V0K07jArzunl2jnlPPpyh7hjsF9j6b/ojBFjk9VXH6StmuT
+	2IcL9mgvO2MacBPgUG6IuzUOROSEqotaNruE1dzUXcXovqhLsE3RrmbcY4Xyo3Y4FrLVckRsijx9E
+	JHM3PrZfbdIgC4v7n00w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieUAn-0007Kb-5k; Tue, 10 Dec 2019 01:18:45 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1ieUFR-0000fd-4L; Tue, 10 Dec 2019 01:23:33 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieUAb-0007CL-7B; Tue, 10 Dec 2019 01:18:35 +0000
-Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1ieUAT-00042d-A7; Tue, 10 Dec 2019 02:18:25 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Soeren Moch <smoch@web.de>
-Subject: Re: [PATCH 8/8] arm64: dts: rockchip: RockPro64: enable wifi module
- at sdio0
-Date: Tue, 10 Dec 2019 02:18:24 +0100
-Message-ID: <6162240.GiEx4hqPFh@diego>
-In-Reply-To: <2cf70216-8d98-4122-4f4e-b8254089a017@web.de>
-References: <20191209223822.27236-1-smoch@web.de> <2668270.pdtvSLGib8@diego>
- <2cf70216-8d98-4122-4f4e-b8254089a017@web.de>
+ id 1ieUFO-0000f4-0A
+ for linux-rockchip@lists.infradead.org; Tue, 10 Dec 2019 01:23:31 +0000
+Received: by mail-qk1-x743.google.com with SMTP id r14so6874459qke.13
+ for <linux-rockchip@lists.infradead.org>; Mon, 09 Dec 2019 17:23:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=8LLOsXJUguuY43ARhOMf4LcyiwTN1Y1LouDaq9UTc8c=;
+ b=l8IHO2F4OBehQ6RAeYuFdapsotQ8TbHCUSczGIhRxnhEq63hJyqhL9pn2DQtqSkF9M
+ LM6Rq29oeSkI0g9+nCmMtEx5u6cJlfuqncrzHsNcTs4bH0LG2bnogzxyvf+rFJisHr0W
+ ycWJmaanWMACBvkOxa7Z/dsq05RBZaZ00qqr2lcrUNYaw/sXuPSvqpbtuZas91tE89vc
+ aQTyA7b0v6dn+AJXYl0Giv+OCgFzcMzuMRYkOpE5cMgmwqxcsdcSnBIOISuxeCwAB9Gi
+ UTUhFXM/CjoSrAvlHZ9rPIRKrVLb3cYDf7UGOGfSalXSbv2cfsymq+Xc8sCixLqAC8fK
+ Q2/w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=8LLOsXJUguuY43ARhOMf4LcyiwTN1Y1LouDaq9UTc8c=;
+ b=XHGXqtNhD7jbd8SFglt6r1vE4szRYUr3/uodC2E9vIMmhC19zZhi8sXO64PV5VKm/9
+ US3gfcq48UJUbZxo3jOQVKLH5WYppDzn0Fk6XfQy571fvGhu9JoJvjYQnpOyEVua51ng
+ 038wp4sdttDCgLI09T6+E+GBiHMNToc4gmugPnWjG9geo/c4aFROMa8+rXyHslksQAhz
+ dR44zchd5Kxx8wz7BN+9oCxE9FroYquTVnVTf583Os46xxiiLSjpH0zPaQ+erKUaYpeK
+ aF604wnzgi3Q8x9cFcy2XBHh2NDAmBxsaMGHGrDqqiQ+xH/yaOee/WcNXqRn7MbH83dO
+ Rmzw==
+X-Gm-Message-State: APjAAAWJjO6QAR89EQ1T6hZrt/CU0UZkSgS/wVV8g2B+3A6kLudozeKN
+ ElBq9TmnT5b2eQEwCGNWQixHs8MjGjr5iNhVBaull9tNkKA=
+X-Google-Smtp-Source: APXvYqzjXWJqiDvR4XrOmnS/wwxe/dqN3HQtt1l0npmtzq6c5YYzy4nb95gspjCoW42IMFsqRnkta9h4meyYzRNee7o=
+X-Received: by 2002:a05:620a:143b:: with SMTP id
+ k27mr29231855qkj.262.1575941008186; 
+ Mon, 09 Dec 2019 17:23:28 -0800 (PST)
 MIME-Version: 1.0
+References: <CAMdYzYoPXWbv4zXet6c9JQEMbqcJi6ZEOui_n82NVmrqNLy_pw@mail.gmail.com>
+ <b597b9a6-870a-8fbd-6490-59734c04367f@arm.com>
+ <20191209100509.5cb950ac@x1.home>
+In-Reply-To: <20191209100509.5cb950ac@x1.home>
+From: Peter Geis <pgwipeout@gmail.com>
+Date: Mon, 9 Dec 2019 20:23:18 -0500
+Message-ID: <CAMdYzYpVoB4tPWcgOCTbxjCfSpYtWKzG_6ucgasJqZynUrqhcA@mail.gmail.com>
+Subject: Re: [Question] rk3399 vfio-pci/sr-iov support
+To: Alex Williamson <alex.williamson@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_171833_408835_37C99191 
-X-CRM114-Status: GOOD (  25.83  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191209_172330_042922_CBAB6391 
+X-CRM114-Status: GOOD (  15.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pgwipeout[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,137 +95,63 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: brcm80211-dev-list.pdl@broadcom.com, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Kalle Valo <kvalo@codeaurora.org>,
- brcm80211-dev-list@cypress.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Robin Murphy <robin.murphy@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ linux-pci@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Soeren,
-
-Am Dienstag, 10. Dezember 2019, 00:29:21 CET schrieb Soeren Moch:
-> On 10.12.19 00:08, Heiko St=FCbner wrote:
-> > Am Montag, 9. Dezember 2019, 23:38:22 CET schrieb Soeren Moch:
-> >> RockPro64 supports an Ampak AP6359SA based wifi/bt combo module.
-> >> The BCM4359/9 wifi controller in this module is connected to sdio0,
-> >> enable this interface.
-> >>
-> >> Signed-off-by: Soeren Moch <smoch@web.de>
-> >> ---
-> >> Not sure where to place exactly the sdio0 node in the dts because
-> >> existing sd nodes are not sorted alphabetically.
-> >>
-> >> This last patch in this brcmfmac patch series probably should be picked
-> >> up by Heiko independently of the rest of this series. It was sent toge=
-ther
-> >> to show how this brcmfmac extension for 4359-sdio support with RSDB is
-> >> used and tested.
-> > node placement looks good so I can apply it, just a general questions
-> > I only got patch 8/8 are patches 1-7 relevant for this one and what are=
- they?
-> Patches 1-7 are the patches to support the BCM4359 chipset with SDIO
-> interface in the linux brcmfmac net-wireless driver, see [1].
-> =
-
-> So this patch series has 2 parts:
-> patches 1-7: add support for the wifi chipset in the wireless driver,
-> this has to go through net-wireless
-> patch 8: enable the wifi module with this chipset on RockPro64, this patch
-
-Thanks for the clarification :-) .
-
-As patch 8 "only" does the core sdio node, it doesn't really depend on the
-earlier ones and you can submit any uart-hooks for bluetooth once the
-other patches land I guess.
-
-
-> If this was confusing, what would be the ideal way to post such series?
-
-I think every maintainer has some slightly different perspective on this,
-but personally I like getting the whole series to follow the discussion but
-also to just see when the driver-side changes get merged, as the dts-parts
-need to wait for that in a lot of cases.
-
-Heiko
-
-
-> [1] https://patchwork.kernel.org/project/linux-wireless/list/?series=3D21=
-3951
+On Mon, Dec 9, 2019 at 12:05 PM Alex Williamson
+<alex.williamson@redhat.com> wrote:
+>
+> On Mon, 9 Dec 2019 14:07:02 +0000
+> Robin Murphy <robin.murphy@arm.com> wrote:
+>
+> > On 09/12/2019 1:28 pm, Peter Geis wrote:
+> > > Good Morning,
+> > >
+> > > I'm back with more pcie fun on the rk3399.
+> > > I'm trying to get pcie passthrough working for a vm on the rk3399, and
+> > > have encountered some roadblocks.
+> > >
+> > > First, vfio-pci doesn't work on the rk3399, as the pcie controller
+> > > doesn't bind explicitly to a iommu.
+> > > [37528.138212] vfio-pci 0000:01:00.0: assign IRQ: got 226
+> > > [37528.138254] vfio-pci: probe of 0000:01:00.0 failed with error -22
+> > >
+> > > # find /sys/kernel/iommu_groups/ -type l
+> > > /sys/kernel/iommu_groups/1/devices/ff8f0000.vop
+> > > /sys/kernel/iommu_groups/2/devices/ff900000.vop
+> > >
+> > > # virsh start openwrt
+> > > error: Failed to start domain openwrt
+> > > error: internal error: Process exited prior to exec: libvirt:  error :
+> > > internal error: Invalid device 0000:01:00.0 iommu_group file
+> > > /sys/bus/pci/devices/0000:01:00.0/iommu_group is not a symlink
 > >
-> > Thanks
-> > Heiko
-> >
-> >
-> >> Cc: Heiko Stuebner <heiko@sntech.de>
-> >> Cc: Kalle Valo <kvalo@codeaurora.org>
-> >> Cc: linux-wireless@vger.kernel.org
-> >> Cc: brcm80211-dev-list.pdl@broadcom.com
-> >> Cc: brcm80211-dev-list@cypress.com
-> >> Cc: netdev@vger.kernel.org
-> >> Cc: linux-arm-kernel@lists.infradead.org
-> >> Cc: linux-rockchip@lists.infradead.org
-> >> Cc: linux-kernel@vger.kernel.org
-> >> ---
-> >>  .../boot/dts/rockchip/rk3399-rockpro64.dts    | 21 ++++++++++++-------
-> >>  1 file changed, 14 insertions(+), 7 deletions(-)
-> >>
-> >> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/=
-arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> >> index 7f4b2eba31d4..9fa92790d6e0 100644
-> >> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> >> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> >> @@ -71,13 +71,6 @@
-> >>  		clock-names =3D "ext_clock";
-> >>  		pinctrl-names =3D "default";
-> >>  		pinctrl-0 =3D <&wifi_enable_h>;
-> >> -
-> >> -		/*
-> >> -		 * On the module itself this is one of these (depending
-> >> -		 * on the actual card populated):
-> >> -		 * - SDIO_RESET_L_WL_REG_ON
-> >> -		 * - PDN (power down when low)
-> >> -		 */
-> >>  		reset-gpios =3D <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
-> >>  	};
-> >>
-> >> @@ -650,6 +643,20 @@
-> >>  	status =3D "okay";
-> >>  };
-> >>
-> >> +&sdio0 {
-> >> +	bus-width =3D <4>;
-> >> +	cap-sd-highspeed;
-> >> +	cap-sdio-irq;
-> >> +	disable-wp;
-> >> +	keep-power-in-suspend;
-> >> +	mmc-pwrseq =3D <&sdio_pwrseq>;
-> >> +	non-removable;
-> >> +	pinctrl-names =3D "default";
-> >> +	pinctrl-0 =3D <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
-> >> +	sd-uhs-sdr104;
-> >> +	status =3D "okay";
-> >> +};
-> >> +
-> >>  &sdmmc {
-> >>  	bus-width =3D <4>;
-> >>  	cap-sd-highspeed;
-> >> --
-> >> 2.17.1
-> >>
-> >
-> >
-> >
-> =
+> > That much I can help with somewhat: the major impediment is that RK3399
+> > doesn't have an IOMMU in front of PCIe. As far as I'm aware your only
+> > option is to resort to the "here be dragons" CONFIG_VFIO_NOIOMMU mode
+> > (which I don't know an awful lot about beyond that it's a thing).
+>
+> And it's a thing that's really only useful if your motivation is to run
+> something like DPDK in the host and you're not concerned about
+> isolation between userspace drivers and the host kernel, and you don't
+> mind tainting the kernel.  It's not useful for things like assigning a
+> device to a VM as we can't readily do that without an IOMMU for
+> translation.  Thanks,
+>
+> Alex
 
-> =
+Thanks Robin,
 
-
-
-
-
+That is an unfortunate limitation, especially considering the device
+is supposed to support sr-iov.
+I did try getting VFIO_NOIOMMU to work, but qemu does not like it, at
+least for pci devices.
+>
 
 _______________________________________________
 Linux-rockchip mailing list
