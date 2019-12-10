@@ -2,93 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9D51117C71
-	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 01:32:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95D47117D13
+	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 02:18:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4EKJ4rEQM9TApjNif3N4v+G3PYbPNE+VJIRuEmipJ6s=; b=TvMK0+gezxixSG
-	Jw4Jdfeq0YM+EfXdFZb9BZttc7QK8X0lVCvlBiflude5Fcgm1IoerWmE+QIYzR/QAozRGrq6XGHwo
-	SRrmh4f+d6PeH8sgggKRGSd/d5C6ZGKeVCnqQZhGjl7M6Pe0eFfTPKqRRlqyxCNCpFf9I09qvV6mB
-	CpmQCCuLDgFawUhUgE4TPek3UdIUpa7c97EvJU/pfM6t0jokgbEKzrImfpwliWNbowi9c9IMOrzCP
-	NysVE1APHC9tx6un/1OmRsdrAWUwYuh4vGLBBhXg22cjwP+vyxrhR7ltUjAKkCEDv+YYltw0Ikrf+
-	L6vsRM0q3nnySST1ZK8Q==;
+	List-Owner; bh=X+c3LwKNziOq7OnUP3d1EcfDmTyxDYOidoI5Gz9flzc=; b=r65D1YSJhT4Zre
+	pl1JQpDwdKnogLWLPiNJEOWoPMZwBJqRPdnNdPaihEMQOOnkyeN99NYWRDJx48FhrGBOKR1lYOrCa
+	pnjfRQPXAUV+qqMJ38ER6F2pli6Do74enTdFA/3vUoS2hT7wKL+Ln0jq9SgqHFnyQVlElZpDbxhWs
+	gROgOMrYj9LB5YbYgBrYmvYp4xCw8VMfGNsqgO6FYxy0v8JiGbSaPff7sY2GdG3LVMmzYIxH5Is72
+	eIvgJmam/D96gTDkx5ah/n8SCc0dL1Wgzp4WaOsh0ur74vN6DRbg+6CANZ7zoqcdl4w4GRtRR8/Q/
+	4CRARcjSy7ItOdK6Ca0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieTRq-0001ch-4s; Tue, 10 Dec 2019 00:32:18 +0000
-Received: from mail-pg1-x52a.google.com ([2607:f8b0:4864:20::52a])
+	id 1ieUAn-0007Kb-5k; Tue, 10 Dec 2019 01:18:45 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieTRd-0001U6-VU
- for linux-rockchip@lists.infradead.org; Tue, 10 Dec 2019 00:32:07 +0000
-Received: by mail-pg1-x52a.google.com with SMTP id k25so7962781pgt.7
- for <linux-rockchip@lists.infradead.org>; Mon, 09 Dec 2019 16:32:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=8evBcz4lmmsnelwBpdcYncDfyag5sO5/iQnS/q4ZdNE=;
- b=BqPM+szUPCtHdlyak+LwpzgEOtKX16NXvlBrqw1oVUryWfUXIp90VOF1E3XkoVSLjL
- v43BwyV/WnDbyLBsEZMyFSgvd8sh7K15AHZDwGGW9fVSBDAMrcJfF4lspFglA1wMfeNw
- Qwfz05tPp/L9QkOyXdxyRhCYxNV9FKbcWrf3M=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=8evBcz4lmmsnelwBpdcYncDfyag5sO5/iQnS/q4ZdNE=;
- b=cPrpY/WnifPYIGWCR1I3mcu5I8QWlYVDG7bKA6HgKmty3mX0JavPBKNP0T6F1bhjKW
- R1cyiQNc05U+95ChUuXZ74j2NXGY1Fn1b2BOGHsch02ENfWue0FJ0Lq6mILPM316y8xA
- fy6VVgjM6rZKEzkW7tNO0yM+k9CYVZuyofE9i6HA8l3YfyZR6lQnqbKPoZpnihrcXNJ3
- 91/k7TjC7DvMvY0mAdba4+fbo2TPkEI/+643LqyLLfNecVyfBswi3jxuwk2cjoL4Yvdx
- w5lbPUCACRFCWUElYPJpmQhOsxHxHWsGwTdd3/nJXF/9kgApPWkJRtkRbf3Vw5MHqp89
- endQ==
-X-Gm-Message-State: APjAAAWIDUgRpQFfxmmfjYj92naLFPfIX6BbTzEHAxCIqrs6YX3ul3aj
- fwXX+CEBuNLDk0y6tyuJhgsiVw==
-X-Google-Smtp-Source: APXvYqy4D9BE4heIvg/4fO4ARmu8vxDMpm3JJunhQwLtFR2lpNylP9ta2onTMh67OOu6CvvoPTIJWg==
-X-Received: by 2002:a62:a117:: with SMTP id b23mr33014552pff.174.1575937923008; 
- Mon, 09 Dec 2019 16:32:03 -0800 (PST)
-Received: from localhost ([2620:15c:202:1:4fff:7a6b:a335:8fde])
- by smtp.gmail.com with ESMTPSA id m45sm461387pje.32.2019.12.09.16.32.02
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 09 Dec 2019 16:32:02 -0800 (PST)
-Date: Mon, 9 Dec 2019 16:32:01 -0800
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Doug Anderson <dianders@chromium.org>
-Subject: Re: [PATCH v2 1/1] ARM: dts: rockchip: Add brcm bluetooth for
- rk3288-veyron
-Message-ID: <20191210003201.GR228856@google.com>
-References: <20191127223909.253873-1-abhishekpandit@chromium.org>
- <20191127223909.253873-2-abhishekpandit@chromium.org>
- <61639BAF-5AA0-4264-906F-E24E2A30088D@holtmann.org>
- <1788857.Va9C3Z3akr@diego>
- <CAD=FV=Xdrw1FC=DktQ8HjdEJcCKvdA3sx78gg-rn8=bBq=WrEw@mail.gmail.com>
+ id 1ieUAb-0007CL-7B; Tue, 10 Dec 2019 01:18:35 +0000
+Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1ieUAT-00042d-A7; Tue, 10 Dec 2019 02:18:25 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Soeren Moch <smoch@web.de>
+Subject: Re: [PATCH 8/8] arm64: dts: rockchip: RockPro64: enable wifi module
+ at sdio0
+Date: Tue, 10 Dec 2019 02:18:24 +0100
+Message-ID: <6162240.GiEx4hqPFh@diego>
+In-Reply-To: <2cf70216-8d98-4122-4f4e-b8254089a017@web.de>
+References: <20191209223822.27236-1-smoch@web.de> <2668270.pdtvSLGib8@diego>
+ <2cf70216-8d98-4122-4f4e-b8254089a017@web.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAD=FV=Xdrw1FC=DktQ8HjdEJcCKvdA3sx78gg-rn8=bBq=WrEw@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_163206_040571_F163CE40 
-X-CRM114-Status: GOOD (  18.40  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191209_171833_408835_37C99191 
+X-CRM114-Status: GOOD (  25.83  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:52a listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,45 +59,139 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Heiko =?utf-8?Q?St=C3=BCbner?= <heiko@sntech.de>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Marcel Holtmann <marcel@holtmann.org>, LKML <linux-kernel@vger.kernel.org>,
- BlueZ <linux-bluetooth@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Abhishek Pandit-Subedi <abhishekpandit@chromium.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: brcm80211-dev-list.pdl@broadcom.com, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Kalle Valo <kvalo@codeaurora.org>,
+ brcm80211-dev-list@cypress.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBEZWMgMDksIDIwMTkgYXQgMDM6NTY6MTRQTSAtMDgwMCwgRG91ZyBBbmRlcnNvbiB3
-cm90ZToKPiBIaSwKPiAKPiBPbiBTdW4sIERlYyA4LCAyMDE5IGF0IDQ6MDMgUE0gSGVpa28gU3TD
-vGJuZXIgPGhlaWtvQHNudGVjaC5kZT4gd3JvdGU6Cj4gPgo+ID4gQW0gTW9udGFnLCA5LiBEZXpl
-bWJlciAyMDE5LCAwMDo0ODozMSBDRVQgc2NocmllYiBNYXJjZWwgSG9sdG1hbm46Cj4gPiA+ID4g
-VGhpcyBlbmFibGVzIHRoZSBCcm9hZGNvbSB1YXJ0IGJsdWV0b290aCBkcml2ZXIgb24gdWFydDAg
-YW5kIGdpdmVzIGl0Cj4gPiA+ID4gb3duZXJzaGlwIG9mIGl0cyBncGlvcy4gSW4gb3JkZXIgdG8g
-dXNlIHRoaXMsIHlvdSBtdXN0IGVuYWJsZSB0aGUKPiA+ID4gPiBmb2xsb3dpbmcga2NvbmZpZyBv
-cHRpb25zOgo+ID4gPiA+IC0gQ09ORklHX0JUX0hDSVVBUlRfQkNNCj4gPiA+ID4gLSBDT05GSUdf
-U0VSSUFMX0RFVgo+ID4gPiA+Cj4gPiA+ID4gVGhpcyBpcyBhcHBsaWNhYmxlIHRvIHJrMzI4OC12
-ZXlyb24gc2VyaWVzIGJvYXJkcyB0aGF0IHVzZSB0aGUgYmNtNDM1NDAKPiA+ID4gPiB3aWZpK2J0
-IGNoaXBzLgo+ID4gPiA+Cj4gPiA+ID4gQXMgcGFydCBvZiB0aGlzIGNoYW5nZSwgYWxzbyByZWZh
-Y3RvciB0aGUgcGluY3RybCBhY3Jvc3MgdGhlIHZhcmlvdXMKPiA+ID4gPiBib2FyZHMuIEFsbCB0
-aGUgYm9hcmRzIHVzaW5nIGJyb2FkY29tIGJsdWV0b290aCBzaG91bGRuJ3QgdG91Y2ggdGhlCj4g
-PiA+ID4gYnRfZGV2X3dha2UgcGluLgo+ID4gPgo+ID4gPiBzbyBoYXZlIHRoZXNlIGNoYW5nZXMg
-YmVpbmcgbWVyZ2VkPwo+ID4KPiA+IG5vdCB5ZXQKPiA+Cj4gPiBEb3VnIHdhbnRlZCB0byBnaXZl
-IGEgUmV2aWV3ZWQtYnksIG9uY2UgdGhlIHVuZGVybHlpbmcgYmx1ZXRvb3RoCj4gPiBjaGFuZ2Vz
-IGdvdCBtZXJnZWQgLSBub3Qgc3VyZSB3aGF0IHRoZSBzdGF0dXMgaXMgdGhvdWdoLgo+IAo+IEkg
-aGF2ZSBiZWVuIG91dCBmb3IgdGhlIGxhc3Qgd2VlayBhbmQgYW0gYSBiaXQgYmFja2xvZ2dlZC4K
-PiAKPiBJIG5vdGljZSB0aGF0IHRoaXMgbGFuZGVkIGluIG91ciA0LjE5IGtlcm5lbCB3aXRoICtN
-YXR0aGlhcydzCj4gUmV2aWV3ZWQtYnkgYXQgPGh0dHBzOi8vY3JyZXYuY29tL2MvMTc3MjI2MT4u
-ICBJIGRvbid0IGZlZWwgYW55IG5lZWQKPiB0byByZS1yZXZpZXcgdGhpcyBteXNlbGYgaWYgTWF0
-dGhpYXMgaGFzIHRha2VuIGEgZmluYWwgbG9vayBvbiBpdCwgc28KPiB1bmxlc3MgaGUga25vd3Mg
-YSByZWFzb24gd2h5IGl0IHNob3VsZG4ndCBsYW5kIHRoZW4gSSdkIHNheSBnbyBhaGVhZAo+IGFu
-ZCBsYW5kIGl0LgoKU29ycnksIHNob3VsZCBoYXZlIHJlcGxpZWQgaGVyZSBpbiB0aGUgZmlyc3Qg
-cGxhY2UuIFRoZSBjaGFuZ2VzIGxvb2sKZ29vZCB0byBtZS4KClJldmlld2VkLWJ5OiBNYXR0aGlh
-cyBLYWVobGNrZSA8bWthQGNocm9taXVtLm9yZz4KCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1y
-b2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+Hi Soeren,
+
+Am Dienstag, 10. Dezember 2019, 00:29:21 CET schrieb Soeren Moch:
+> On 10.12.19 00:08, Heiko St=FCbner wrote:
+> > Am Montag, 9. Dezember 2019, 23:38:22 CET schrieb Soeren Moch:
+> >> RockPro64 supports an Ampak AP6359SA based wifi/bt combo module.
+> >> The BCM4359/9 wifi controller in this module is connected to sdio0,
+> >> enable this interface.
+> >>
+> >> Signed-off-by: Soeren Moch <smoch@web.de>
+> >> ---
+> >> Not sure where to place exactly the sdio0 node in the dts because
+> >> existing sd nodes are not sorted alphabetically.
+> >>
+> >> This last patch in this brcmfmac patch series probably should be picked
+> >> up by Heiko independently of the rest of this series. It was sent toge=
+ther
+> >> to show how this brcmfmac extension for 4359-sdio support with RSDB is
+> >> used and tested.
+> > node placement looks good so I can apply it, just a general questions
+> > I only got patch 8/8 are patches 1-7 relevant for this one and what are=
+ they?
+> Patches 1-7 are the patches to support the BCM4359 chipset with SDIO
+> interface in the linux brcmfmac net-wireless driver, see [1].
+> =
+
+> So this patch series has 2 parts:
+> patches 1-7: add support for the wifi chipset in the wireless driver,
+> this has to go through net-wireless
+> patch 8: enable the wifi module with this chipset on RockPro64, this patch
+
+Thanks for the clarification :-) .
+
+As patch 8 "only" does the core sdio node, it doesn't really depend on the
+earlier ones and you can submit any uart-hooks for bluetooth once the
+other patches land I guess.
+
+
+> If this was confusing, what would be the ideal way to post such series?
+
+I think every maintainer has some slightly different perspective on this,
+but personally I like getting the whole series to follow the discussion but
+also to just see when the driver-side changes get merged, as the dts-parts
+need to wait for that in a lot of cases.
+
+Heiko
+
+
+> [1] https://patchwork.kernel.org/project/linux-wireless/list/?series=3D21=
+3951
+> >
+> > Thanks
+> > Heiko
+> >
+> >
+> >> Cc: Heiko Stuebner <heiko@sntech.de>
+> >> Cc: Kalle Valo <kvalo@codeaurora.org>
+> >> Cc: linux-wireless@vger.kernel.org
+> >> Cc: brcm80211-dev-list.pdl@broadcom.com
+> >> Cc: brcm80211-dev-list@cypress.com
+> >> Cc: netdev@vger.kernel.org
+> >> Cc: linux-arm-kernel@lists.infradead.org
+> >> Cc: linux-rockchip@lists.infradead.org
+> >> Cc: linux-kernel@vger.kernel.org
+> >> ---
+> >>  .../boot/dts/rockchip/rk3399-rockpro64.dts    | 21 ++++++++++++-------
+> >>  1 file changed, 14 insertions(+), 7 deletions(-)
+> >>
+> >> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/=
+arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> >> index 7f4b2eba31d4..9fa92790d6e0 100644
+> >> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> >> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> >> @@ -71,13 +71,6 @@
+> >>  		clock-names =3D "ext_clock";
+> >>  		pinctrl-names =3D "default";
+> >>  		pinctrl-0 =3D <&wifi_enable_h>;
+> >> -
+> >> -		/*
+> >> -		 * On the module itself this is one of these (depending
+> >> -		 * on the actual card populated):
+> >> -		 * - SDIO_RESET_L_WL_REG_ON
+> >> -		 * - PDN (power down when low)
+> >> -		 */
+> >>  		reset-gpios =3D <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
+> >>  	};
+> >>
+> >> @@ -650,6 +643,20 @@
+> >>  	status =3D "okay";
+> >>  };
+> >>
+> >> +&sdio0 {
+> >> +	bus-width =3D <4>;
+> >> +	cap-sd-highspeed;
+> >> +	cap-sdio-irq;
+> >> +	disable-wp;
+> >> +	keep-power-in-suspend;
+> >> +	mmc-pwrseq =3D <&sdio_pwrseq>;
+> >> +	non-removable;
+> >> +	pinctrl-names =3D "default";
+> >> +	pinctrl-0 =3D <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
+> >> +	sd-uhs-sdr104;
+> >> +	status =3D "okay";
+> >> +};
+> >> +
+> >>  &sdmmc {
+> >>  	bus-width =3D <4>;
+> >>  	cap-sd-highspeed;
+> >> --
+> >> 2.17.1
+> >>
+> >
+> >
+> >
+> =
+
+> =
+
+
+
+
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
