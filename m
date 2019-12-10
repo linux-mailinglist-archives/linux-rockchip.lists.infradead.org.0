@@ -2,86 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13526118DCB
-	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 17:40:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69FFC118F19
+	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 18:34:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LgdG5SjbaWZOm8C9GzKxd+I6K63gyVW1B8LTJ6mD+70=; b=jgDxGOFzDqmLj3
-	km81a7C3QY+zJWoybltkkSQCWr2ozRPRFcUi5g/fP4lDPdeMYGKxl3k4lX0e4f+tSOLjp9+ogRrNg
-	OBZyLURQUmwT63ZupcdJfpkVTFCzrIoI+iVV30vvwQFGKtdpM1cOzm7KD/6vQwjTzppqoJ+VWBXCd
-	RIw642SsalxDCihp2zSf9uSV2dJ3Cvz4cU9H6Iz4let/B0l2Ai1C/QELDjvxdjQxgI0VEdwtV2pht
-	TrYkHtksPvis+VeRtsdmBWeKQg4/fb8n5HZd5I+PrtJ9zvRAuW+OUpoBYNu+WxstIP58Z8RmTdJwj
-	saTWKx49E5vSytmvDW9w==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4ntL3AQnab6FfZzKSh4+z1ABAVCLm0RbamfjugEN4Ik=; b=tfHG6iapo2ICwa
+	HhFhx6qHqI7sC9ZeL9kc6eHGUOVeINLICJVfuKLjkTfX3iIBHIwLv2Aa1g1Bm3fM53yGuDiFElYiF
+	bxe6ZzhuvDfgHdup9zKeuiCDj5czguSjaaG0Sw65z2wGBalffy5L9BFHSaZKqPJL9vAdF3dNmgQVq
+	8dPa0zcmgq5Dq8rEqYXtFrn/AMUeWCvZEfq2zZb6SXq0x7zeFKFRyg3cQsprqEI+B9Llc8rSc/Kku
+	xAcCi5dS4aY8L146FBv0kBTWPRe0pf6ei+wWWWjL4j2enVZE4LJDrzLN3DVJjtREl3FnxFN71q9aL
+	NFFnntaInDdX8osWq/cA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieiZ9-0003mN-OG; Tue, 10 Dec 2019 16:40:51 +0000
-Received: from mout.web.de ([212.227.17.12])
+	id 1iejOp-0001M0-5r; Tue, 10 Dec 2019 17:34:15 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieiYx-0003cY-9P; Tue, 10 Dec 2019 16:40:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1575996028;
- bh=jvBxKea/ywk876Ln2ZWd62u/vI+Q343YD2tWSrxYKzo=;
- h=X-UI-Sender-Class:From:Subject:To:Cc:References:Date:In-Reply-To;
- b=UDDkrkcqOe82YGqnL8KMAliw3/RAYRM8kL7Vb2cZwYv4wFp1oUxXtigj+DnDTeNuy
- ity8UB/0HQJ7z50igmjBQXoc+t7jhLgzE5SNjT8jdGYv5gy5bcYxfWIuKKWtH2fZeZ
- BJ2pI0mtcmvPFRngmfZ62AElsvvRRFsDWBOImfQ4=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.58.50] ([80.130.119.216]) by smtp.web.de (mrweb101
- [213.165.67.124]) with ESMTPSA (Nemesis) id 0LoHTx-1i7JkD19hJ-00gFDK; Tue, 10
- Dec 2019 17:40:28 +0100
-From: Soeren Moch <smoch@web.de>
-Subject: Re: [PATCH] mfd: rk808: Always use poweroff when requested
-To: Markus Reichl <m.reichl@fivetechno.de>, Anand Moon <linux.amoon@gmail.com>
-References: <20191209115746.12953-1-smoch@web.de>
- <CANAwSgS9ixhyOE2QYQ3CetA=BUVebMan2=9xBKF=U3YXAwCHNQ@mail.gmail.com>
- <6e380c0a-007d-22db-af26-19defaf1ae83@fivetechno.de>
-Message-ID: <8377b8d6-8b4d-0605-4c61-fb61b4aebf91@web.de>
-Date: Tue, 10 Dec 2019 17:40:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1iejOQ-0000wc-JY; Tue, 10 Dec 2019 17:33:53 +0000
+Received: by mail-qt1-x844.google.com with SMTP id i12so2344528qtp.6;
+ Tue, 10 Dec 2019 09:33:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=bynIErLNBlB92x5ntLmPPlvU7muN8l4GAC/bEBaefYo=;
+ b=O9qgebLMf8mkxzuEi3jcRh8lUhC+or6jckvWtxxYK2f5ovrd3xuQ9vVwXezxLvwNH9
+ RVBpaCKIOOxBsH+m1f1FuOMxyPUC7ZsaP71k9sU1iNxpB3IYwkoPuHGWv3XIbfAIxWTr
+ PBlnI7vDMXZYgZ45x0SSjQmGzRx/7jMSy8MorehCjY7cPXAkqIlAhTnmD/Qm/pIOZtnr
+ qS8OrFzUqTnkSbxW65sm4GLZTFosVbQe2VV0wR4gC3z/IFdcuWN3eDZdlk5wCUp9CmQs
+ linjEtobGzCedSTTF9k9ZBkftyg09rJcN8NfwCBbFCIFIgWTqERmFLPGAw+mJXYKUJCf
+ esSg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=bynIErLNBlB92x5ntLmPPlvU7muN8l4GAC/bEBaefYo=;
+ b=RqbT0PNP5d41SPRKfEz8HSrrW/4zCVE03CtT6J8A5YJ6fvAdOiaB9AICjq0qf9FgkR
+ XgC9jGVb9jdyLYUQ3VWWHc0rv/y/pMyK8ZSWUtaDaCsqG9/EO0ks6MaV4z1eltiXiif7
+ uL8OpuNexh7Qy0/pw+Na6v0Fl/MbDNHJRBHWfzSpJvwW6jBYbICyzsI0nwev7eqDPmvp
+ LRH9a9FYTOx6qhFIEYtHeqK0rVa2Zv2/wUo+jLW3pKjSjHY5O2VwRnNxBObrafavHoDv
+ q7qfd6bACmBvioNgQtUdcbv+Idr08ba0BIgES69wo5Z/LI49dlq9CQ+j/ey//K78R0NG
+ Gwcw==
+X-Gm-Message-State: APjAAAWd4zyUDEx9IJU2QtR208W1/43LF14PHWIVuCbvg3S//ww+AGfl
+ fM8cyJunJDSjQ1IlETPXXsXzniEQg/e4eoouwXk=
+X-Google-Smtp-Source: APXvYqyvf2ncQmsBuOdQcfUdcDXLi4gyc8GHOcsttBii5RgFwT7Lu6CMRWNBWntvdYfl3VkyWSrtOunBnuovVP0XaKY=
+X-Received: by 2002:aed:3fb7:: with SMTP id s52mr5722106qth.311.1575999227782; 
+ Tue, 10 Dec 2019 09:33:47 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <6e380c0a-007d-22db-af26-19defaf1ae83@fivetechno.de>
-Content-Language: en-US
-X-Provags-ID: V03:K1:Z7alPqcTNnZPzmAqXbSiNaJsfhw/zO+XCpFIPrik5MOlI9lE4+y
- WjG2xzstnsVWIGNcww2X19uNcaPUkG8rpQzFDl7jiBZF3F1A1PN4MkUHAnULynA948vc8Px
- pm9qjIYnlJC+FO8e96jXrfHvZlfD6Z7JiUWmSUblT2mv/M7r+7ePDwIWMZG4BY3eYzri4MT
- qDrD2FxMiNj1uW1YmSs0w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Rya/UKPottQ=:9ljsoHZATbr6EpFHf6Q9Ej
- t8V3aNaSA3nxzvUo9aWLxAUOUUEf5UdMx8sjW7vwGYVxfS2n45NqPwuR/F7CTz97m9r8KKovB
- OYcVk8WXtBcbO7TInZn8P4YiBwOErP19LIpVCCopvZYqzelM4XgsUZnNe9nncTLLGZ5NJUr3k
- O0jDTCDJ8a5LLOuZ01GBlTuWFQif3ZOJpoX7t8q0Z/MPxFIspBEk//iLcAPYMh1btAUt6Z8gK
- AaCJIRDmd1BF1DoFeUIU1JCDe/WBYUCyQbr/37+Xufz1QWQygJICt5BbSFeQEPydmtQFe8lVS
- R7hlSuWOubKVZjnUySgJeqoFkYbXf6eLtln4SDXBIqxFyQZGq0E0pY4Ne42mIwUtce7aLm0d4
- osKfwHGGC9RWxqJEBvOHI3J0wegaw7iI+1T0HNOQBcgFEW2lVCneoAMC2xFx1RT/Zo4cBoxbz
- ricLl8nt9tMn4XvhNpVx5yXsRw8TK3fs3mNumiEou3zXerh6V7rdmfXyclza7GC0JsrtsUBMf
- GFzyEcI/2FR4xQczarEeA6+BXIu+IdeqFEboKLzJ8tGdIscgH6vQtic97WWLFfeR8/DM+LySt
- jqGVCyiDw1aBzgwsBbg+BbyMXL7O9pADPno4Fldejsn6h21/xbUteqqQ5gdsh0/rOUC+/bpFL
- 2bXLKHOMGtcoCj4D4hZYCsNZ5dSXsPAcZBulRnjTbRK3jIaqVYTIPpIC5aoyeRwvj50DbuDTk
- EhCRvX6kIgPYvv2XWM7tQaAcrEerCNUAw/HyRQf/0CB+ILYlm5JoSBn9We+6p9w6zsbU7tF95
- R1mDM1ypBMkdvA9AWe1tHhQXewuXet5tA4DygLv7R0f3oE1H2APRkducp02KNV4GTm56fCr7J
- oG3+bXpmJzzeJv2spp2jObRANP2hjcsNT1Jg1JAtr8cLyNlVwEZZmAdcHNvUl59sPrIPmyDlN
- X3gEDB7b0QAdkkMhBD15eG0PJ3vEfwIeMf+jU3ck/Ulh4bdTVwJqNm29UWh92bJtrXpBjCsYM
- i8xHO1veQZ8Wqpo+1aoGSmhAzToRG6+r7B7iN8Y9ylk62kZEIgW/m3H52fDWrfCvnJPEYhg53
- E38XnTYvZBRvCfnOLMq/TbUAznuXYCK85jQ406IpG4aJaHWKZ/r3BIbGsE6rytzi4DbF6D9tv
- pa/t9jQyuBGUUp9sMKaDVPWlL+Aq+0OS5Vku4Gg+zclqJ2eWkUh69sPJujmAs3z0KtaxiygFR
- 8xQgEfTAjARTww1XeoK24OsV34fqJ8ec0hah/Xg==
+References: <20191028163256.8004-1-robh@kernel.org>
+ <20191028163256.8004-12-robh@kernel.org>
+ <20191206153633.GA18142@e121166-lin.cambridge.arm.com>
+In-Reply-To: <20191206153633.GA18142@e121166-lin.cambridge.arm.com>
+From: Enric Balletbo Serra <eballetbo@gmail.com>
+Date: Tue, 10 Dec 2019 18:33:36 +0100
+Message-ID: <CAFqH_53nX74vD6-T2ao0x540wq_NbN671H5i2fwbo6NaCgc4KQ@mail.gmail.com>
+Subject: Re: [PATCH v3 11/25] PCI: rockchip: Drop storing driver private
+ outbound resource data
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_084039_663569_A361CDA7 
-X-CRM114-Status: GOOD (  16.70  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191210_093350_692483_E5CCA669 
+X-CRM114-Status: GOOD (  24.08  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.12 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (smoch[at]web.de)
+ provider (eballetbo[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -103,128 +94,219 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Lee Jones <lee.jones@linaro.org>,
- Heiko Stuebner <heiko@sntech.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux Kernel <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Heiko Stuebner <heiko@sntech.de>,
+ Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>, linux-pci@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
+ Rob Herring <robh@kernel.org>, Ryder Lee <ryder.lee@mediatek.com>,
+ Michal Simek <michal.simek@xilinx.com>, Christoph Hellwig <hch@infradead.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ bcm-kernel-feedback-list@broadcom.com, Shawn Lin <shawn.lin@rock-chips.com>,
+ Ray Jui <rjui@broadcom.com>, Hou Zhiqiang <Zhiqiang.Hou@nxp.com>,
+ Simon Horman <horms@verge.net.au>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Scott Branden <sbranden@broadcom.com>, Jingoo Han <jingoohan1@gmail.com>,
+ rfi@lists.rocketboards.org, linux-renesas-soc@vger.kernel.org,
+ Tom Joseph <tjoseph@cadence.com>, Srinath Mannam <srinath.mannam@broadcom.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Ley Foon Tan <lftan@altera.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-CgpPbiAxMC4xMi4xOSAxMzo1NSwgTWFya3VzIFJlaWNobCB3cm90ZToKPiBIaSBBbmFuZCwKPgo+
-IEFtIDEwLjEyLjE5IHVtIDEzOjQyIHNjaHJpZWIgQW5hbmQgTW9vbjoKPj4gSGkgU29lcmVuLAo+
-Pgo+PiBPbiBNb24sIDkgRGVjIDIwMTkgYXQgMTc6MjgsIFNvZXJlbiBNb2NoIDxzbW9jaEB3ZWIu
-ZGU+IHdyb3RlOgo+Pj4KPj4+IFdpdGggdGhlIGRldmljZSB0cmVlIHByb3BlcnR5ICJyb2NrY2hp
-cCxzeXN0ZW0tcG93ZXItY29udHJvbGxlciIgd2UKPj4+IGV4cGxpY2l0bHkgcmVxdWVzdCB0byB1
-c2UgdGhpcyBQTUlDIHRvIHBvd2VyIG9mZiB0aGUgc3lzdGVtLiBTbyBhbHdheXMKPj4+IHJlZ2lz
-dGVyIG91ciBwb3dlcm9mZiBmdW5jdGlvbiwgZXZlbiBpZiBzb21lIG90aGVyIGhhbmRsZXIgKHBy
-b2JhYmx5Cj4+PiBQU0NJIHBvd2Vyb2ZmKSB3YXMgcmVnaXN0ZXJlZCBiZWZvcmUuCj4+Pgo+Pj4g
-U2lnbmVkLW9mZi1ieTogU29lcmVuIE1vY2ggPHNtb2NoQHdlYi5kZT4KPj4+IC0tLQo+Pj4gQ2M6
-IExlZSBKb25lcyA8bGVlLmpvbmVzQGxpbmFyby5vcmc+Cj4+PiBDYzogSGVpa28gU3R1ZWJuZXIg
-PGhlaWtvQHNudGVjaC5kZT4KPj4+IENjOiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKPj4+IENjOiBsaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCj4+PiBDYzog
-bGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZwo+Pj4gLS0tCj4+PiDCoGRyaXZlcnMvbWZkL3Jr
-ODA4LmMgfCAxMSArKy0tLS0tLS0tLQo+Pj4gwqAxIGZpbGUgY2hhbmdlZCwgMiBpbnNlcnRpb25z
-KCspLCA5IGRlbGV0aW9ucygtKQo+Pj4KPj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL21mZC9yazgw
-OC5jIGIvZHJpdmVycy9tZmQvcms4MDguYwo+Pj4gaW5kZXggYTY5YTY3NDJlY2RjLi42MTZlNDRl
-N2VmOTggMTAwNjQ0Cj4+PiAtLS0gYS9kcml2ZXJzL21mZC9yazgwOC5jCj4+PiArKysgYi9kcml2
-ZXJzL21mZC9yazgwOC5jCj4+PiBAQCAtNTUwLDcgKzU1MCw3IEBAIHN0YXRpYyBpbnQgcms4MDhf
-cHJvYmUoc3RydWN0IGkyY19jbGllbnQgKmNsaWVudCwKPj4+IMKgwqDCoMKgwqDCoMKgIGNvbnN0
-IHN0cnVjdCBtZmRfY2VsbCAqY2VsbHM7Cj4+PiDCoMKgwqDCoMKgwqDCoCBpbnQgbnJfcHJlX2lu
-aXRfcmVnczsKPj4+IMKgwqDCoMKgwqDCoMKgIGludCBucl9jZWxsczsKPj4+IC3CoMKgwqDCoMKg
-wqAgaW50IHBtX29mZiA9IDAsIG1zYiwgbHNiOwo+Pj4gK8KgwqDCoMKgwqDCoCBpbnQgbXNiLCBs
-c2I7Cj4+PiDCoMKgwqDCoMKgwqDCoCB1bnNpZ25lZCBjaGFyIHBtaWNfaWRfbXNiLCBwbWljX2lk
-X2xzYjsKPj4+IMKgwqDCoMKgwqDCoMKgIGludCByZXQ7Cj4+PiDCoMKgwqDCoMKgwqDCoCBpbnQg
-aTsKPj4+IEBAIC02NzQsMTYgKzY3NCw5IEBAIHN0YXRpYyBpbnQgcms4MDhfcHJvYmUoc3RydWN0
-IGkyY19jbGllbnQgKmNsaWVudCwKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBn
-b3RvIGVycl9pcnE7Cj4+PiDCoMKgwqDCoMKgwqDCoCB9Cj4+Pgo+Pj4gLcKgwqDCoMKgwqDCoCBw
-bV9vZmYgPSBvZl9wcm9wZXJ0eV9yZWFkX2Jvb2wobnAsCj4+PiAtwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICJyb2NrY2hpcCxzeXN0
-ZW0tcG93ZXItY29udHJvbGxlciIpOwo+Pj4gLcKgwqDCoMKgwqDCoCBpZiAocG1fb2ZmICYmICFw
-bV9wb3dlcl9vZmYpIHsKPj4+ICvCoMKgwqDCoMKgwqAgaWYgKG9mX3Byb3BlcnR5X3JlYWRfYm9v
-bChucCwKPj4+ICJyb2NrY2hpcCxzeXN0ZW0tcG93ZXItY29udHJvbGxlciIpKSB7Cj4+PiDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcms4MDhfaTJjX2NsaWVudCA9IGNsaWVudDsKPj4+
-IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwbV9wb3dlcl9vZmYgPSByazgwOC0+cG1f
-cHdyb2ZmX2ZuOwo+Pj4gLcKgwqDCoMKgwqDCoCB9Cj4+PiAtCj4+PiAtwqDCoMKgwqDCoMKgIGlm
-IChwbV9vZmYgJiYgIXBtX3Bvd2VyX29mZl9wcmVwYXJlKSB7Cj4+PiAtwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCBpZiAoIXJrODA4X2kyY19jbGllbnQpCj4+PiAtwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcms4MDhfaTJjX2NsaWVudCA9IGNsaWVudDsK
-Pj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwbV9wb3dlcl9vZmZfcHJlcGFyZSA9
-IHJrODA4LT5wbV9wd3JvZmZfcHJlcF9mbjsKPj4+IMKgwqDCoMKgwqDCoMKgIH0KPj4+Cj4+Cj4+
-IEkgZ2F2ZSB0aGlzIGEgdHJ5IG9uIG15IFJvY2s5NjAgYW5kIE9kcm9pZCBOMQo+PiBib3RoIGdv
-dCBrZXJuZWwgcGFuaWMgYmVsb3cuCj4KPiBJIHNlZSB0aGUgc2FtZSBvbiByazMzOTktcm9jLXBj
-LgpUaGlzIGlzIG5vIHBhbmljLCBpdCdzIGEgaGFybWxlc3Mgd2FybmluZy4KVGhlIGkyYyBjb3Jl
-IG5vd2FkYXlzIGV4cGVjdHMgYSBzcGVjaWFsbHkgbWFya2VkIGkyYyB0cmFuc2ZlciBmdW5jdGlv
-bgpsYXRlIGluIHRoZSBwb3dlcmRvd24gY3ljbGU6CgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9pMmMv
-YnVzc2VzL2kyYy1yazN4LmMgYi9kcml2ZXJzL2kyYy9idXNzZXMvaTJjLXJrM3guYwppbmRleCAx
-YTMzMDA3YjAzZTkuLmNlYzExNWUwYWZhNCAxMDA2NDQKLS0tIGEvZHJpdmVycy9pMmMvYnVzc2Vz
-L2kyYy1yazN4LmMKKysrIGIvZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1yazN4LmMKQEAgLTExMjYs
-NiArMTEyNiw3IEBAIHN0YXRpYyB1MzIgcmszeF9pMmNfZnVuYyhzdHJ1Y3QgaTJjX2FkYXB0ZXIg
-KmFkYXApCsKgCsKgc3RhdGljIGNvbnN0IHN0cnVjdCBpMmNfYWxnb3JpdGhtIHJrM3hfaTJjX2Fs
-Z29yaXRobSA9IHsKwqDCoMKgwqAgLm1hc3Rlcl94ZmVywqDCoMKgIMKgwqDCoCA9IHJrM3hfaTJj
-X3hmZXIsCivCoMKgwqAgLm1hc3Rlcl94ZmVyX2F0b21pY8KgwqDCoCA9IHJrM3hfaTJjX3hmZXIs
-IC8qIHVzYWJsZSBmb3IgUE1JQyBwb3dlcm9mZiAqLwrCoMKgwqDCoCAuZnVuY3Rpb25hbGl0ecKg
-wqDCoCDCoMKgwqAgPSByazN4X2kyY19mdW5jLArCoH07CsKgCi0tLQpJdCBpcyBvbmx5IHVzZWQg
-Zm9yIHBvd2VyZG93bi4gVGhlIHJlZ3VsYXIgaTJjIHhmZXIgZnVuY3Rpb24gd29ya3MuCgpIZWlr
-bywgc2hvdWxkIEkgc2VuZCBhIGZvcm1hbCBwYXRjaCBmb3IgdGhhdD8KClNvZXJlbgoKPgo+Pgo+
-PiBbwqDCoCA1OC4zMDU4NjhdIHhoY2ktaGNkIHhoY2ktaGNkLjAuYXV0bzogVVNCIGJ1cyA1IGRl
-cmVnaXN0ZXJlZAo+PiBbwqDCoCA1OC4zMDY3NDddIHJlYm9vdDogUG93ZXIgZG93bgo+PiBbwqDC
-oCA1OC4zMDcxMDZdIC0tLS0tLS0tLS0tLVsgY3V0IGhlcmUgXS0tLS0tLS0tLS0tLQo+PiBbwqDC
-oCA1OC4zMDc1MTBdIE5vIGF0b21pYyBJMkMgdHJhbnNmZXIgaGFuZGxlciBmb3IgJ2kyYy0wJwo+
-PiBbwqDCoCA1OC4zMDgwMDddIFdBUk5JTkc6IENQVTogMCBQSUQ6IDEgYXQgZHJpdmVycy9pMmMv
-aTJjLWNvcmUuaDo0MQo+PiBpMmNfdHJhbnNmZXIrMHhlNC8weGY4Cj4+IFvCoMKgIDU4LjMwODY5
-Nl0gTW9kdWxlcyBsaW5rZWQgaW46IHNuZF9zb2NfaGRtaV9jb2RlYyBkd19oZG1pX2kyc19hdWRp
-bwo+PiByb2NrY2hpcGRybSBhbmFsb2dpeF9kcCBicmNtZm1hYyBudm1lIGR3X21pcGlfZHNpIG52
-bWVfY29yZSBkd19oZG1pCj4+IHBhbmZyb3N0IGNlYyBicmNtdXRpbCBkcm1fa21zX2hlbHBlciBn
-cHVfc2NoZWQgY2ZnODAyMTEgaGNpX3VhcnQgZHJtCj4+IGJ0YmNtIGNyY3QxMGRpZl9jZSBzbmRf
-c29jX3NpbXBsZV9jYXJkIGJsdWV0b290aCBzbmRfc29jX3JvY2tjaGlwX2kycwo+PiBzbmRfc29j
-X3NpbXBsZV9jYXJkX3V0aWxzIHNuZF9zb2Nfcm9ja2NoaXBfcGNtIHBoeV9yb2NrY2hpcF9wY2ll
-Cj4+IGVjZGhfZ2VuZXJpYyBydGNfcms4MDggZWNjIHBjaWVfcm9ja2NoaXBfaG9zdCByZmtpbGwg
-cm9ja2NoaXBfdGhlcm1hbAo+PiBpcF90YWJsZXMgeF90YWJsZXMgaXB2NiBuZl9kZWZyYWdfaXB2
-Ngo+PiBbwqDCoCA1OC4zMTIxNTBdIENQVTogMCBQSUQ6IDEgQ29tbTogc2h1dGRvd24gTm90IHRh
-aW50ZWQKPj4gNS41LjAtcmMxLWRpcnR5ICMxCj4+IFvCoMKgIDU4LjMxMjcyNV0gSGFyZHdhcmUg
-bmFtZTogOTZib2FyZHMgUm9jazk2MCAoRFQpCj4+IFvCoMKgIDU4LjMxMzEzMV0gcHN0YXRlOiA2
-MDAwMDA4NSAoblpDdiBkYUlmIC1QQU4gLVVBTykKPj4gW8KgwqAgNTguMzEzNTUxXSBwYyA6IGky
-Y190cmFuc2ZlcisweGU0LzB4ZjgKPj4gW8KgwqAgNTguMzEzODg5XSBsciA6IGkyY190cmFuc2Zl
-cisweGU0LzB4ZjgKPj4gW8KgwqAgNTguMzE0MjI1XSBzcCA6IGZmZmY4MDAwMTAwNGJiMDAKPj4g
-W8KgwqAgNTguMzE0NTE2XSB4Mjk6IGZmZmY4MDAwMTAwNGJiMDAgeDI4OiBmZmZmMDAwMDdkMjA4
-MDAwCj4+IFvCoMKgIDU4LjMxNDk4MV0geDI3OiAwMDAwMDAwMDAwMDAwMDAwIHgyNjogMDAwMDAw
-MDAwMDAwMDAwMAo+PiBbwqDCoCA1OC4zMTU0NDZdIHgyNTogMDAwMDAwMDAwMDAwMDAwMCB4MjQ6
-IDAwMDAwMDAwMDAwMDAwMDgKPj4gW8KgwqAgNTguMzE1OTEwXSB4MjM6IDAwMDAwMDAwMDAwMDAw
-MDAgeDIyOiBmZmZmODAwMDEwMDRiYzc0Cj4+IFvCoMKgIDU4LjMxNjM3NV0geDIxOiAwMDAwMDAw
-MDAwMDAwMDAyIHgyMDogZmZmZjgwMDAxMDA0YmI1OAo+PiBbwqDCoCA1OC4zMTY4NDFdIHgxOTog
-ZmZmZjAwMDA3ODRmMDg4MCB4MTg6IDAwMDAwMDAwMDAwMDAwMTAKPj4gW8KgwqAgNTguMzE3MzA1
-XSB4MTc6IDAwMDAwMDAwMDAwMDAwMDEgeDE2OiAwMDAwMDAwMDAwMDAwMDE5Cj4+IFvCoMKgIDU4
-LjMxNzc3MF0geDE1OiBmZmZmZmZmZmZmZmZmZmZmIHgxNDogZmZmZjgwMDAxMTgzOThjOAo+PiBb
-wqDCoCA1OC4zMTgyMzZdIHgxMzogZmZmZjgwMDA5MDA0Yjg2NyB4MTI6IGZmZmY4MDAwMTAwNGI4
-NmYKPj4gW8KgwqAgNTguMzE4NzAxXSB4MTE6IGZmZmY4MDAwMTE4NTEwMDAgeDEwOiBmZmZmODAw
-MDEwMDRiN2YwCj4+IFvCoMKgIDU4LjMxOTE2Nl0geDkgOiAwMDAwMDAwMGZmZmZmZmQwIHg4IDog
-ZmZmZjgwMDAxMDY5OWFkOAo+PiBbwqDCoCA1OC4zMTk2MzFdIHg3IDogMDAwMDAwMDAwMDAwMDI2
-NSB4NiA6IGZmZmY4MDAwMTFhMjBiZTkKPj4gW8KgwqAgNTguMzIwMDk2XSB4NSA6IDAwMDAwMDAw
-MDAwMDAwMDAgeDQgOiAwMDAwMDAwMDAwMDAwMDAwCj4+IFvCoMKgIDU4LjMyMDU2MV0geDMgOiAw
-MDAwMDAwMGZmZmZmZmZmIHgyIDogZmZmZjgwMDAxMTg1MWFiOAo+PiBbwqDCoCA1OC4zMjEwMjZd
-IHgxIDogZDM3NWMwZDRmNDc1MWYwMCB4MCA6IDAwMDAwMDAwMDAwMDAwMDAKPj4gW8KgwqAgNTgu
-MzIxNDkxXSBDYWxsIHRyYWNlOgo+PiBbwqDCoCA1OC4zMjE3MTBdwqAgaTJjX3RyYW5zZmVyKzB4
-ZTQvMHhmOAo+PiBbwqDCoCA1OC4zMjIwMjBdwqAgcmVnbWFwX2kyY19yZWFkKzB4NWMvMHg5OAo+
-PiBbwqDCoCA1OC4zMjIzNTBdwqAgX3JlZ21hcF9yYXdfcmVhZCsweGNjLzB4MTM4Cj4+IFvCoMKg
-IDU4LjMyMjY5NF3CoCBfcmVnbWFwX2J1c19yZWFkKzB4M2MvMHg3MAo+PiBbwqDCoCA1OC4zMjMw
-MzRdwqAgX3JlZ21hcF9yZWFkKzB4NjAvMHhlMAo+PiBbwqDCoCA1OC4zMjMzNDFdwqAgX3JlZ21h
-cF91cGRhdGVfYml0cysweGM4LzB4MTA4Cj4+IFvCoMKgIDU4LjMyMzcwN13CoCByZWdtYXBfdXBk
-YXRlX2JpdHNfYmFzZSsweDYwLzB4OTAKPj4gW8KgwqAgNTguMzI0MDk5XcKgIHJrODA4X2Rldmlj
-ZV9zaHV0ZG93bisweDM4LzB4NTAKPj4gW8KgwqAgNTguMzI0NDc2XcKgIG1hY2hpbmVfcG93ZXJf
-b2ZmKzB4MjQvMHgzMAo+PiBbwqDCoCA1OC4zMjQ4MjNdwqAga2VybmVsX3Bvd2VyX29mZisweDY0
-LzB4NzAKPj4gW8KgwqAgNTguMzI1MTU5XcKgIF9fZG9fc3lzX3JlYm9vdCsweDE1Yy8weDI0MAo+
-PiBbwqDCoCA1OC4zMjU1MDRdwqAgX19hcm02NF9zeXNfcmVib290KzB4MjAvMHgyOAo+PiBbwqDC
-oCA1OC4zMjU4NThdwqAgZWwwX3N2Y19jb21tb24uY29uc3Rwcm9wLjIrMHg4OC8weDE1MAo+PiBb
-wqDCoCA1OC4zMjYyNzldwqAgZWwwX3N2Y19oYW5kbGVyKzB4MjAvMHg4MAo+PiBbwqDCoCA1OC4z
-MjY2MDddwqAgZWwwX3N5bmNfaGFuZGxlcisweDExOC8weDE4OAo+PiBbwqDCoCA1OC4zMjY5NjBd
-wqAgZWwwX3N5bmMrMHgxNDAvMHgxODAKPj4gW8KgwqAgNTguMzI3MjUxXSAtLS1bIGVuZCB0cmFj
-ZSBiMWRlMzlkMDNkNzI0ZDAxIF0tLS0KPj4KPj4gLUFuYW5kCj4+Cj4+IF9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4+IExpbnV4LXJvY2tjaGlwIG1haWxp
-bmcgbGlzdAo+PiBMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCj4+IGh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAKPj4KPgo+
-IEdydcOfLAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRl
-YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-cm9ja2NoaXAK
+Hi Lorenzo,
+
+Many thanks to look at this.
+
+Missatge de Lorenzo Pieralisi <lorenzo.pieralisi@arm.com> del dia dv.,
+6 de des. 2019 a les 16:36:
+>
+> [+Eric]
+>
+> On Mon, Oct 28, 2019 at 11:32:42AM -0500, Rob Herring wrote:
+> > The Rockchip host bridge driver doesn't need to store outboard resources
+> > in its private struct as they are already stored in struct
+> > pci_host_bridge.
+> >
+> > Cc: Shawn Lin <shawn.lin@rock-chips.com>
+> > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> > Cc: Andrew Murray <andrew.murray@arm.com>
+> > Cc: Bjorn Helgaas <bhelgaas@google.com>
+> > Cc: Heiko Stuebner <heiko@sntech.de>
+> > Cc: linux-rockchip@lists.infradead.org
+> > Signed-off-by: Rob Herring <robh@kernel.org>
+> > ---
+> >  drivers/pci/controller/pcie-rockchip-host.c | 54 +++++++++------------
+> >  drivers/pci/controller/pcie-rockchip.h      |  5 --
+> >  2 files changed, 23 insertions(+), 36 deletions(-)
+> >
+> > diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
+> > index 8d2e6f2e141e..f375e55ea02e 100644
+> > --- a/drivers/pci/controller/pcie-rockchip-host.c
+> > +++ b/drivers/pci/controller/pcie-rockchip-host.c
+> > @@ -806,19 +806,28 @@ static int rockchip_pcie_prog_ib_atu(struct rockchip_pcie *rockchip,
+> >  static int rockchip_pcie_cfg_atu(struct rockchip_pcie *rockchip)
+> >  {
+> >       struct device *dev = rockchip->dev;
+> > +     struct pci_host_bridge *bridge = pci_host_bridge_from_priv(rockchip);
+> > +     struct resource_entry *entry;
+> > +     u64 pci_addr, size;
+> >       int offset;
+> >       int err;
+> >       int reg_no;
+> >
+> >       rockchip_pcie_cfg_configuration_accesses(rockchip,
+> >                                                AXI_WRAPPER_TYPE0_CFG);
+> > +     entry = resource_list_first_type(&bridge->windows, IORESOURCE_MEM);
+> > +     if (!entry)
+> > +             return -ENODEV;
+> > +
+> > +     size = resource_size(entry->res);
+> > +     pci_addr = entry->res->start - entry->offset;
+> > +     rockchip->msg_bus_addr = pci_addr;
+> >
+> > -     for (reg_no = 0; reg_no < (rockchip->mem_size >> 20); reg_no++) {
+> > +     for (reg_no = 0; reg_no < (size >> 20); reg_no++) {
+> >               err = rockchip_pcie_prog_ob_atu(rockchip, reg_no + 1,
+> >                                               AXI_WRAPPER_MEM_WRITE,
+> >                                               20 - 1,
+> > -                                             rockchip->mem_bus_addr +
+> > -                                             (reg_no << 20),
+> > +                                             pci_addr + (reg_no << 20),
+> >                                               0);
+> >               if (err) {
+> >                       dev_err(dev, "program RC mem outbound ATU failed\n");
+> > @@ -832,14 +841,20 @@ static int rockchip_pcie_cfg_atu(struct rockchip_pcie *rockchip)
+> >               return err;
+> >       }
+> >
+> > -     offset = rockchip->mem_size >> 20;
+> > -     for (reg_no = 0; reg_no < (rockchip->io_size >> 20); reg_no++) {
+> > +     entry = resource_list_first_type(&bridge->windows, IORESOURCE_IO);
+> > +     if (!entry)
+> > +             return -ENODEV;
+> > +
+> > +     size = resource_size(entry->res);
+> > +     pci_addr = entry->res->start - entry->offset;
+> > +
+> > +     offset = size >> 20;
+>
+> Just trying to find what triggers:
+>
+> https://lore.kernel.org/linux-pci/CAFqH_52BiQJzNEzd_0pB3K+JmzVOVikYQo0xfiC0J-DwiXdtqw@mail.gmail.com/T/#u
+>
+> I think this offset calculation changed the behaviour:
+>
+> Before:
+>
+> > -     offset = rockchip->mem_size >> 20;
+>
+> Now:
+>
+> > +     offset = size >> 20;
+>
+> size must be the IORESOURCE_MEM resource size instead we are using the
+> IORESOURCE_IO size so IIUC the ATU window setup may be compromised.
+>
+
+Are you suggesting that something like this [1] fixes the issue?
+
+Indeed,I don't see the warning with this applied and wifi which is
+connected via pcie is working. But I don't get why the offset should
+be from the MEM resource instead of the IO resource.
+
+[1] https://pastebin.com/FBj95gNR
+
+Thanks,
+ Enric
+
+> Lorenzo
+>
+> > +     for (reg_no = 0; reg_no < (size >> 20); reg_no++) {
+> >               err = rockchip_pcie_prog_ob_atu(rockchip,
+> >                                               reg_no + 1 + offset,
+> >                                               AXI_WRAPPER_IO_WRITE,
+> >                                               20 - 1,
+> > -                                             rockchip->io_bus_addr +
+> > -                                             (reg_no << 20),
+> > +                                             pci_addr + (reg_no << 20),
+> >                                               0);
+> >               if (err) {
+> >                       dev_err(dev, "program RC io outbound ATU failed\n");
+> > @@ -852,8 +867,7 @@ static int rockchip_pcie_cfg_atu(struct rockchip_pcie *rockchip)
+> >                                 AXI_WRAPPER_NOR_MSG,
+> >                                 20 - 1, 0, 0);
+> >
+> > -     rockchip->msg_bus_addr = rockchip->mem_bus_addr +
+> > -                                     ((reg_no + offset) << 20);
+> > +     rockchip->msg_bus_addr += ((reg_no + offset) << 20);
+> >       return err;
+> >  }
+> >
+> > @@ -951,7 +965,6 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+> >       struct pci_bus *bus, *child;
+> >       struct pci_host_bridge *bridge;
+> >       struct resource *bus_res;
+> > -     struct resource_entry *win;
+> >       int err;
+> >
+> >       if (!dev->of_node)
+> > @@ -997,27 +1010,6 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+> >
+> >       rockchip->root_bus_nr = bus_res->start;
+> >
+> > -     /* Get the I/O and memory ranges from DT */
+> > -     resource_list_for_each_entry(win, &bridge->windows) {
+> > -             switch (resource_type(win->res)) {
+> > -             case IORESOURCE_IO:
+> > -                     io = win->res;
+> > -                     io->name = "I/O";
+> > -                     rockchip->io_size = resource_size(io);
+> > -                     rockchip->io_bus_addr = io->start - win->offset;
+> > -                     rockchip->io = io;
+> > -                     break;
+> > -             case IORESOURCE_MEM:
+> > -                     mem = win->res;
+> > -                     mem->name = "MEM";
+> > -                     rockchip->mem_size = resource_size(mem);
+> > -                     rockchip->mem_bus_addr = mem->start - win->offset;
+> > -                     break;
+> > -             default:
+> > -                     continue;
+> > -             }
+> > -     }
+> > -
+> >       err = rockchip_pcie_cfg_atu(rockchip);
+> >       if (err)
+> >               goto err_remove_irq_domain;
+> > diff --git a/drivers/pci/controller/pcie-rockchip.h b/drivers/pci/controller/pcie-rockchip.h
+> > index 8e87a059ce73..bef42a803b56 100644
+> > --- a/drivers/pci/controller/pcie-rockchip.h
+> > +++ b/drivers/pci/controller/pcie-rockchip.h
+> > @@ -304,13 +304,8 @@ struct rockchip_pcie {
+> >       struct  irq_domain *irq_domain;
+> >       int     offset;
+> >       struct pci_bus *root_bus;
+> > -     struct resource *io;
+> > -     phys_addr_t io_bus_addr;
+> > -     u32     io_size;
+> >       void    __iomem *msg_region;
+> > -     u32     mem_size;
+> >       phys_addr_t msg_bus_addr;
+> > -     phys_addr_t mem_bus_addr;
+> >       bool is_rc;
+> >       struct resource *mem_res;
+> >  };
+> > --
+> > 2.20.1
+> >
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
