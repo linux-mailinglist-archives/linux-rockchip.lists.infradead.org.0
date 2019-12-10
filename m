@@ -2,55 +2,95 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 265201189BE
-	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 14:27:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13526118DCB
+	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 17:40:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=DWXepmcTEUiFYB8Mo0MQNseJKhuSl4VuSh2aTmfl2PI=; b=qUaf5C2Srfuhtp/naG9xAFuQE1
-	hLIbCx/5HYTpccJCtSc+FTeD5QFNmGTogGlplmRF713dV4+J8Sh1q4C5SGg3HrsB8v1Vy6JsbR+hf
-	Njkbun8Y+uu5t78N3Tpk7O0urk5DehIJ880y1GS2CyyXA/L6dQfRXVgLJPWmNx0U7n5DosbQt9FZp
-	Q9rkXAPwl8u1vtUVpjM7BulLHoX9N1puOxgqC3/DUgycwzznFMQHxdIWSdp3R/1lFCrh8LgyFQhsw
-	2d6ar0yIQQs79I3pIjRECwUOHhRHgfGTttdfv8gdieap6PEldMNAWETWQneMC35/GtMgxOTC1wAbP
-	0vQeBtJA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LgdG5SjbaWZOm8C9GzKxd+I6K63gyVW1B8LTJ6mD+70=; b=jgDxGOFzDqmLj3
+	km81a7C3QY+zJWoybltkkSQCWr2ozRPRFcUi5g/fP4lDPdeMYGKxl3k4lX0e4f+tSOLjp9+ogRrNg
+	OBZyLURQUmwT63ZupcdJfpkVTFCzrIoI+iVV30vvwQFGKtdpM1cOzm7KD/6vQwjTzppqoJ+VWBXCd
+	RIw642SsalxDCihp2zSf9uSV2dJ3Cvz4cU9H6Iz4let/B0l2Ai1C/QELDjvxdjQxgI0VEdwtV2pht
+	TrYkHtksPvis+VeRtsdmBWeKQg4/fb8n5HZd5I+PrtJ9zvRAuW+OUpoBYNu+WxstIP58Z8RmTdJwj
+	saTWKx49E5vSytmvDW9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iefY9-0006Rd-31; Tue, 10 Dec 2019 13:27:37 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iefV9-0002At-TP
- for linux-rockchip@lists.infradead.org; Tue, 10 Dec 2019 13:24:33 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 39A411045;
- Tue, 10 Dec 2019 05:24:31 -0800 (PST)
-Received: from DESKTOP-VLO843J.cambridge.arm.com
- (DESKTOP-VLO843J.cambridge.arm.com [10.1.26.198])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 4DD263F52E;
- Tue, 10 Dec 2019 05:24:30 -0800 (PST)
-From: Robin Murphy <robin.murphy@arm.com>
-To: lee.jones@linaro.org
-Subject: [PATCH 4/4] mfd: rk808: Convert RK805 to syscore/PM ops
-Date: Tue, 10 Dec 2019 13:24:33 +0000
-Message-Id: <8642045f0657c9e782cd698eb08777c9d4c10c8d.1575932654.git.robin.murphy@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1575932654.git.robin.murphy@arm.com>
-References: <cover.1575932654.git.robin.murphy@arm.com>
+	id 1ieiZ9-0003mN-OG; Tue, 10 Dec 2019 16:40:51 +0000
+Received: from mout.web.de ([212.227.17.12])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ieiYx-0003cY-9P; Tue, 10 Dec 2019 16:40:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1575996028;
+ bh=jvBxKea/ywk876Ln2ZWd62u/vI+Q343YD2tWSrxYKzo=;
+ h=X-UI-Sender-Class:From:Subject:To:Cc:References:Date:In-Reply-To;
+ b=UDDkrkcqOe82YGqnL8KMAliw3/RAYRM8kL7Vb2cZwYv4wFp1oUxXtigj+DnDTeNuy
+ ity8UB/0HQJ7z50igmjBQXoc+t7jhLgzE5SNjT8jdGYv5gy5bcYxfWIuKKWtH2fZeZ
+ BJ2pI0mtcmvPFRngmfZ62AElsvvRRFsDWBOImfQ4=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from [192.168.58.50] ([80.130.119.216]) by smtp.web.de (mrweb101
+ [213.165.67.124]) with ESMTPSA (Nemesis) id 0LoHTx-1i7JkD19hJ-00gFDK; Tue, 10
+ Dec 2019 17:40:28 +0100
+From: Soeren Moch <smoch@web.de>
+Subject: Re: [PATCH] mfd: rk808: Always use poweroff when requested
+To: Markus Reichl <m.reichl@fivetechno.de>, Anand Moon <linux.amoon@gmail.com>
+References: <20191209115746.12953-1-smoch@web.de>
+ <CANAwSgS9ixhyOE2QYQ3CetA=BUVebMan2=9xBKF=U3YXAwCHNQ@mail.gmail.com>
+ <6e380c0a-007d-22db-af26-19defaf1ae83@fivetechno.de>
+Message-ID: <8377b8d6-8b4d-0605-4c61-fb61b4aebf91@web.de>
+Date: Tue, 10 Dec 2019 17:40:15 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
+MIME-Version: 1.0
+In-Reply-To: <6e380c0a-007d-22db-af26-19defaf1ae83@fivetechno.de>
+Content-Language: en-US
+X-Provags-ID: V03:K1:Z7alPqcTNnZPzmAqXbSiNaJsfhw/zO+XCpFIPrik5MOlI9lE4+y
+ WjG2xzstnsVWIGNcww2X19uNcaPUkG8rpQzFDl7jiBZF3F1A1PN4MkUHAnULynA948vc8Px
+ pm9qjIYnlJC+FO8e96jXrfHvZlfD6Z7JiUWmSUblT2mv/M7r+7ePDwIWMZG4BY3eYzri4MT
+ qDrD2FxMiNj1uW1YmSs0w==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Rya/UKPottQ=:9ljsoHZATbr6EpFHf6Q9Ej
+ t8V3aNaSA3nxzvUo9aWLxAUOUUEf5UdMx8sjW7vwGYVxfS2n45NqPwuR/F7CTz97m9r8KKovB
+ OYcVk8WXtBcbO7TInZn8P4YiBwOErP19LIpVCCopvZYqzelM4XgsUZnNe9nncTLLGZ5NJUr3k
+ O0jDTCDJ8a5LLOuZ01GBlTuWFQif3ZOJpoX7t8q0Z/MPxFIspBEk//iLcAPYMh1btAUt6Z8gK
+ AaCJIRDmd1BF1DoFeUIU1JCDe/WBYUCyQbr/37+Xufz1QWQygJICt5BbSFeQEPydmtQFe8lVS
+ R7hlSuWOubKVZjnUySgJeqoFkYbXf6eLtln4SDXBIqxFyQZGq0E0pY4Ne42mIwUtce7aLm0d4
+ osKfwHGGC9RWxqJEBvOHI3J0wegaw7iI+1T0HNOQBcgFEW2lVCneoAMC2xFx1RT/Zo4cBoxbz
+ ricLl8nt9tMn4XvhNpVx5yXsRw8TK3fs3mNumiEou3zXerh6V7rdmfXyclza7GC0JsrtsUBMf
+ GFzyEcI/2FR4xQczarEeA6+BXIu+IdeqFEboKLzJ8tGdIscgH6vQtic97WWLFfeR8/DM+LySt
+ jqGVCyiDw1aBzgwsBbg+BbyMXL7O9pADPno4Fldejsn6h21/xbUteqqQ5gdsh0/rOUC+/bpFL
+ 2bXLKHOMGtcoCj4D4hZYCsNZ5dSXsPAcZBulRnjTbRK3jIaqVYTIPpIC5aoyeRwvj50DbuDTk
+ EhCRvX6kIgPYvv2XWM7tQaAcrEerCNUAw/HyRQf/0CB+ILYlm5JoSBn9We+6p9w6zsbU7tF95
+ R1mDM1ypBMkdvA9AWe1tHhQXewuXet5tA4DygLv7R0f3oE1H2APRkducp02KNV4GTm56fCr7J
+ oG3+bXpmJzzeJv2spp2jObRANP2hjcsNT1Jg1JAtr8cLyNlVwEZZmAdcHNvUl59sPrIPmyDlN
+ X3gEDB7b0QAdkkMhBD15eG0PJ3vEfwIeMf+jU3ck/Ulh4bdTVwJqNm29UWh92bJtrXpBjCsYM
+ i8xHO1veQZ8Wqpo+1aoGSmhAzToRG6+r7B7iN8Y9ylk62kZEIgW/m3H52fDWrfCvnJPEYhg53
+ E38XnTYvZBRvCfnOLMq/TbUAznuXYCK85jQ406IpG4aJaHWKZ/r3BIbGsE6rytzi4DbF6D9tv
+ pa/t9jQyuBGUUp9sMKaDVPWlL+Aq+0OS5Vku4Gg+zclqJ2eWkUh69sPJujmAs3z0KtaxiygFR
+ 8xQgEfTAjARTww1XeoK24OsV34fqJ8ec0hah/Xg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_052432_046693_7D0F4B08 
-X-CRM114-Status: GOOD (  16.80  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191210_084039_663569_A361CDA7 
+X-CRM114-Status: GOOD (  16.70  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.12 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (smoch[at]web.de)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,158 +103,128 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux.amoon@gmail.com, linux-rockchip@lists.infradead.org, smoch@web.de,
- linux-kernel@vger.kernel.org, heiko@sntech.de
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-rockchip@lists.infradead.org, Lee Jones <lee.jones@linaro.org>,
+ Heiko Stuebner <heiko@sntech.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-RK805 has the same kind of dual-role sleep/shutdown pin as RK809/RK817,
-so it makes little sense for the driver to have to have two completely
-different mechanisms to handle essentially the same thing. Bring RK805
-in line with the RK809/RK817 flow to clean things up.
-
-Signed-off-by: Robin Murphy <robin.murphy@arm.com>
----
- drivers/mfd/rk808.c       | 58 +++++++++++++++++----------------------
- include/linux/mfd/rk808.h |  1 -
- 2 files changed, 25 insertions(+), 34 deletions(-)
-
-diff --git a/drivers/mfd/rk808.c b/drivers/mfd/rk808.c
-index 657b8baa3b8a..e88bdb889d3a 100644
---- a/drivers/mfd/rk808.c
-+++ b/drivers/mfd/rk808.c
-@@ -186,7 +186,6 @@ static const struct rk808_reg_data rk805_pre_init_reg[] = {
- 	{RK805_BUCK4_CONFIG_REG, RK805_BUCK3_4_ILMAX_MASK,
- 				 RK805_BUCK4_ILMAX_3500MA},
- 	{RK805_BUCK4_CONFIG_REG, BUCK_ILMIN_MASK, BUCK_ILMIN_400MA},
--	{RK805_GPIO_IO_POL_REG, SLP_SD_MSK, SLEEP_FUN},
- 	{RK805_THERMAL_REG, TEMP_HOTDIE_MSK, TEMP115C},
- };
- 
-@@ -449,21 +448,6 @@ static const struct regmap_irq_chip rk818_irq_chip = {
- 
- static struct i2c_client *rk808_i2c_client;
- 
--static void rk805_device_shutdown_prepare(void)
--{
--	int ret;
--	struct rk808 *rk808 = i2c_get_clientdata(rk808_i2c_client);
--
--	if (!rk808)
--		return;
--
--	ret = regmap_update_bits(rk808->regmap,
--				 RK805_GPIO_IO_POL_REG,
--				 SLP_SD_MSK, SHUTDOWN_FUN);
--	if (ret)
--		dev_err(&rk808_i2c_client->dev, "Failed to shutdown device!\n");
--}
--
- static void rk808_device_shutdown(void)
- {
- 	int ret;
-@@ -499,17 +483,29 @@ static void rk8xx_syscore_shutdown(void)
- 	struct rk808 *rk808 = i2c_get_clientdata(rk808_i2c_client);
- 	int ret;
- 
--	if (system_state == SYSTEM_POWER_OFF &&
--	    (rk808->variant == RK809_ID || rk808->variant == RK817_ID)) {
-+	if (system_state != SYSTEM_POWER_OFF)
-+	       return;
-+
-+	switch (rk808->variant) {
-+	case RK805_ID:
-+		ret = regmap_update_bits(rk808->regmap,
-+					 RK805_GPIO_IO_POL_REG,
-+					 SLP_SD_MSK,
-+					 SHUTDOWN_FUN);
-+		break;
-+	case RK809_ID:
-+	case RK817_ID:
- 		ret = regmap_update_bits(rk808->regmap,
- 					 RK817_SYS_CFG(3),
- 					 RK817_SLPPIN_FUNC_MSK,
- 					 SLPPIN_DN_FUN);
--		if (ret) {
--			dev_warn(&rk808_i2c_client->dev,
--				 "Cannot switch to power down function\n");
--		}
-+		break;
-+	default:
-+		return;
- 	}
-+	if (ret)
-+		dev_warn(&rk808_i2c_client->dev,
-+			 "Cannot switch to power down function\n");
- }
- 
- static struct syscore_ops rk808_syscore_ops = {
-@@ -579,7 +575,6 @@ static int rk808_probe(struct i2c_client *client,
- 		nr_pre_init_regs = ARRAY_SIZE(rk805_pre_init_reg);
- 		cells = rk805s;
- 		nr_cells = ARRAY_SIZE(rk805s);
--		rk808->pm_pwroff_prep_fn = rk805_device_shutdown_prepare;
- 		break;
- 	case RK808_ID:
- 		rk808->regmap_cfg = &rk808_regmap_config;
-@@ -658,10 +653,8 @@ static int rk808_probe(struct i2c_client *client,
- 		goto err_irq;
- 	}
- 
--	if (of_property_read_bool(np, "rockchip,system-power-controller")) {
-+	if (of_property_read_bool(np, "rockchip,system-power-controller"))
- 		pm_power_off = rk808_device_shutdown;
--		pm_power_off_prepare = rk808->pm_pwroff_prep_fn;
--	}
- 
- 	return 0;
- 
-@@ -686,13 +679,6 @@ static int rk808_remove(struct i2c_client *client)
- 	if (pm_power_off == rk808_device_shutdown)
- 		pm_power_off = NULL;
- 
--	/**
--	 * As above, check if the pointer is set by us before overwrite.
--	 */
--	if (rk808->pm_pwroff_prep_fn &&
--	    pm_power_off_prepare == rk808->pm_pwroff_prep_fn)
--		pm_power_off_prepare = NULL;
--
- 	return 0;
- }
- 
-@@ -702,6 +688,12 @@ static int __maybe_unused rk8xx_suspend(struct device *dev)
- 	int ret = 0;
- 
- 	switch (rk808->variant) {
-+	case RK805_ID:
-+		ret = regmap_update_bits(rk808->regmap,
-+					 RK805_GPIO_IO_POL_REG,
-+					 SLP_SD_MSK,
-+					 SLEEP_FUN);
-+		break;
- 	case RK809_ID:
- 	case RK817_ID:
- 		ret = regmap_update_bits(rk808->regmap,
-diff --git a/include/linux/mfd/rk808.h b/include/linux/mfd/rk808.h
-index b038653fa87e..e07f6e61cd38 100644
---- a/include/linux/mfd/rk808.h
-+++ b/include/linux/mfd/rk808.h
-@@ -620,6 +620,5 @@ struct rk808 {
- 	long				variant;
- 	const struct regmap_config	*regmap_cfg;
- 	const struct regmap_irq_chip	*regmap_irq_chip;
--	void				(*pm_pwroff_prep_fn)(void);
- };
- #endif /* __LINUX_REGULATOR_RK808_H */
--- 
-2.17.1
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+CgpPbiAxMC4xMi4xOSAxMzo1NSwgTWFya3VzIFJlaWNobCB3cm90ZToKPiBIaSBBbmFuZCwKPgo+
+IEFtIDEwLjEyLjE5IHVtIDEzOjQyIHNjaHJpZWIgQW5hbmQgTW9vbjoKPj4gSGkgU29lcmVuLAo+
+Pgo+PiBPbiBNb24sIDkgRGVjIDIwMTkgYXQgMTc6MjgsIFNvZXJlbiBNb2NoIDxzbW9jaEB3ZWIu
+ZGU+IHdyb3RlOgo+Pj4KPj4+IFdpdGggdGhlIGRldmljZSB0cmVlIHByb3BlcnR5ICJyb2NrY2hp
+cCxzeXN0ZW0tcG93ZXItY29udHJvbGxlciIgd2UKPj4+IGV4cGxpY2l0bHkgcmVxdWVzdCB0byB1
+c2UgdGhpcyBQTUlDIHRvIHBvd2VyIG9mZiB0aGUgc3lzdGVtLiBTbyBhbHdheXMKPj4+IHJlZ2lz
+dGVyIG91ciBwb3dlcm9mZiBmdW5jdGlvbiwgZXZlbiBpZiBzb21lIG90aGVyIGhhbmRsZXIgKHBy
+b2JhYmx5Cj4+PiBQU0NJIHBvd2Vyb2ZmKSB3YXMgcmVnaXN0ZXJlZCBiZWZvcmUuCj4+Pgo+Pj4g
+U2lnbmVkLW9mZi1ieTogU29lcmVuIE1vY2ggPHNtb2NoQHdlYi5kZT4KPj4+IC0tLQo+Pj4gQ2M6
+IExlZSBKb25lcyA8bGVlLmpvbmVzQGxpbmFyby5vcmc+Cj4+PiBDYzogSGVpa28gU3R1ZWJuZXIg
+PGhlaWtvQHNudGVjaC5kZT4KPj4+IENjOiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKPj4+IENjOiBsaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCj4+PiBDYzog
+bGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZwo+Pj4gLS0tCj4+PiDCoGRyaXZlcnMvbWZkL3Jr
+ODA4LmMgfCAxMSArKy0tLS0tLS0tLQo+Pj4gwqAxIGZpbGUgY2hhbmdlZCwgMiBpbnNlcnRpb25z
+KCspLCA5IGRlbGV0aW9ucygtKQo+Pj4KPj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL21mZC9yazgw
+OC5jIGIvZHJpdmVycy9tZmQvcms4MDguYwo+Pj4gaW5kZXggYTY5YTY3NDJlY2RjLi42MTZlNDRl
+N2VmOTggMTAwNjQ0Cj4+PiAtLS0gYS9kcml2ZXJzL21mZC9yazgwOC5jCj4+PiArKysgYi9kcml2
+ZXJzL21mZC9yazgwOC5jCj4+PiBAQCAtNTUwLDcgKzU1MCw3IEBAIHN0YXRpYyBpbnQgcms4MDhf
+cHJvYmUoc3RydWN0IGkyY19jbGllbnQgKmNsaWVudCwKPj4+IMKgwqDCoMKgwqDCoMKgIGNvbnN0
+IHN0cnVjdCBtZmRfY2VsbCAqY2VsbHM7Cj4+PiDCoMKgwqDCoMKgwqDCoCBpbnQgbnJfcHJlX2lu
+aXRfcmVnczsKPj4+IMKgwqDCoMKgwqDCoMKgIGludCBucl9jZWxsczsKPj4+IC3CoMKgwqDCoMKg
+wqAgaW50IHBtX29mZiA9IDAsIG1zYiwgbHNiOwo+Pj4gK8KgwqDCoMKgwqDCoCBpbnQgbXNiLCBs
+c2I7Cj4+PiDCoMKgwqDCoMKgwqDCoCB1bnNpZ25lZCBjaGFyIHBtaWNfaWRfbXNiLCBwbWljX2lk
+X2xzYjsKPj4+IMKgwqDCoMKgwqDCoMKgIGludCByZXQ7Cj4+PiDCoMKgwqDCoMKgwqDCoCBpbnQg
+aTsKPj4+IEBAIC02NzQsMTYgKzY3NCw5IEBAIHN0YXRpYyBpbnQgcms4MDhfcHJvYmUoc3RydWN0
+IGkyY19jbGllbnQgKmNsaWVudCwKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBn
+b3RvIGVycl9pcnE7Cj4+PiDCoMKgwqDCoMKgwqDCoCB9Cj4+Pgo+Pj4gLcKgwqDCoMKgwqDCoCBw
+bV9vZmYgPSBvZl9wcm9wZXJ0eV9yZWFkX2Jvb2wobnAsCj4+PiAtwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICJyb2NrY2hpcCxzeXN0
+ZW0tcG93ZXItY29udHJvbGxlciIpOwo+Pj4gLcKgwqDCoMKgwqDCoCBpZiAocG1fb2ZmICYmICFw
+bV9wb3dlcl9vZmYpIHsKPj4+ICvCoMKgwqDCoMKgwqAgaWYgKG9mX3Byb3BlcnR5X3JlYWRfYm9v
+bChucCwKPj4+ICJyb2NrY2hpcCxzeXN0ZW0tcG93ZXItY29udHJvbGxlciIpKSB7Cj4+PiDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcms4MDhfaTJjX2NsaWVudCA9IGNsaWVudDsKPj4+
+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwbV9wb3dlcl9vZmYgPSByazgwOC0+cG1f
+cHdyb2ZmX2ZuOwo+Pj4gLcKgwqDCoMKgwqDCoCB9Cj4+PiAtCj4+PiAtwqDCoMKgwqDCoMKgIGlm
+IChwbV9vZmYgJiYgIXBtX3Bvd2VyX29mZl9wcmVwYXJlKSB7Cj4+PiAtwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCBpZiAoIXJrODA4X2kyY19jbGllbnQpCj4+PiAtwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcms4MDhfaTJjX2NsaWVudCA9IGNsaWVudDsK
+Pj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwbV9wb3dlcl9vZmZfcHJlcGFyZSA9
+IHJrODA4LT5wbV9wd3JvZmZfcHJlcF9mbjsKPj4+IMKgwqDCoMKgwqDCoMKgIH0KPj4+Cj4+Cj4+
+IEkgZ2F2ZSB0aGlzIGEgdHJ5IG9uIG15IFJvY2s5NjAgYW5kIE9kcm9pZCBOMQo+PiBib3RoIGdv
+dCBrZXJuZWwgcGFuaWMgYmVsb3cuCj4KPiBJIHNlZSB0aGUgc2FtZSBvbiByazMzOTktcm9jLXBj
+LgpUaGlzIGlzIG5vIHBhbmljLCBpdCdzIGEgaGFybWxlc3Mgd2FybmluZy4KVGhlIGkyYyBjb3Jl
+IG5vd2FkYXlzIGV4cGVjdHMgYSBzcGVjaWFsbHkgbWFya2VkIGkyYyB0cmFuc2ZlciBmdW5jdGlv
+bgpsYXRlIGluIHRoZSBwb3dlcmRvd24gY3ljbGU6CgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9pMmMv
+YnVzc2VzL2kyYy1yazN4LmMgYi9kcml2ZXJzL2kyYy9idXNzZXMvaTJjLXJrM3guYwppbmRleCAx
+YTMzMDA3YjAzZTkuLmNlYzExNWUwYWZhNCAxMDA2NDQKLS0tIGEvZHJpdmVycy9pMmMvYnVzc2Vz
+L2kyYy1yazN4LmMKKysrIGIvZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1yazN4LmMKQEAgLTExMjYs
+NiArMTEyNiw3IEBAIHN0YXRpYyB1MzIgcmszeF9pMmNfZnVuYyhzdHJ1Y3QgaTJjX2FkYXB0ZXIg
+KmFkYXApCsKgCsKgc3RhdGljIGNvbnN0IHN0cnVjdCBpMmNfYWxnb3JpdGhtIHJrM3hfaTJjX2Fs
+Z29yaXRobSA9IHsKwqDCoMKgwqAgLm1hc3Rlcl94ZmVywqDCoMKgIMKgwqDCoCA9IHJrM3hfaTJj
+X3hmZXIsCivCoMKgwqAgLm1hc3Rlcl94ZmVyX2F0b21pY8KgwqDCoCA9IHJrM3hfaTJjX3hmZXIs
+IC8qIHVzYWJsZSBmb3IgUE1JQyBwb3dlcm9mZiAqLwrCoMKgwqDCoCAuZnVuY3Rpb25hbGl0ecKg
+wqDCoCDCoMKgwqAgPSByazN4X2kyY19mdW5jLArCoH07CsKgCi0tLQpJdCBpcyBvbmx5IHVzZWQg
+Zm9yIHBvd2VyZG93bi4gVGhlIHJlZ3VsYXIgaTJjIHhmZXIgZnVuY3Rpb24gd29ya3MuCgpIZWlr
+bywgc2hvdWxkIEkgc2VuZCBhIGZvcm1hbCBwYXRjaCBmb3IgdGhhdD8KClNvZXJlbgoKPgo+Pgo+
+PiBbwqDCoCA1OC4zMDU4NjhdIHhoY2ktaGNkIHhoY2ktaGNkLjAuYXV0bzogVVNCIGJ1cyA1IGRl
+cmVnaXN0ZXJlZAo+PiBbwqDCoCA1OC4zMDY3NDddIHJlYm9vdDogUG93ZXIgZG93bgo+PiBbwqDC
+oCA1OC4zMDcxMDZdIC0tLS0tLS0tLS0tLVsgY3V0IGhlcmUgXS0tLS0tLS0tLS0tLQo+PiBbwqDC
+oCA1OC4zMDc1MTBdIE5vIGF0b21pYyBJMkMgdHJhbnNmZXIgaGFuZGxlciBmb3IgJ2kyYy0wJwo+
+PiBbwqDCoCA1OC4zMDgwMDddIFdBUk5JTkc6IENQVTogMCBQSUQ6IDEgYXQgZHJpdmVycy9pMmMv
+aTJjLWNvcmUuaDo0MQo+PiBpMmNfdHJhbnNmZXIrMHhlNC8weGY4Cj4+IFvCoMKgIDU4LjMwODY5
+Nl0gTW9kdWxlcyBsaW5rZWQgaW46IHNuZF9zb2NfaGRtaV9jb2RlYyBkd19oZG1pX2kyc19hdWRp
+bwo+PiByb2NrY2hpcGRybSBhbmFsb2dpeF9kcCBicmNtZm1hYyBudm1lIGR3X21pcGlfZHNpIG52
+bWVfY29yZSBkd19oZG1pCj4+IHBhbmZyb3N0IGNlYyBicmNtdXRpbCBkcm1fa21zX2hlbHBlciBn
+cHVfc2NoZWQgY2ZnODAyMTEgaGNpX3VhcnQgZHJtCj4+IGJ0YmNtIGNyY3QxMGRpZl9jZSBzbmRf
+c29jX3NpbXBsZV9jYXJkIGJsdWV0b290aCBzbmRfc29jX3JvY2tjaGlwX2kycwo+PiBzbmRfc29j
+X3NpbXBsZV9jYXJkX3V0aWxzIHNuZF9zb2Nfcm9ja2NoaXBfcGNtIHBoeV9yb2NrY2hpcF9wY2ll
+Cj4+IGVjZGhfZ2VuZXJpYyBydGNfcms4MDggZWNjIHBjaWVfcm9ja2NoaXBfaG9zdCByZmtpbGwg
+cm9ja2NoaXBfdGhlcm1hbAo+PiBpcF90YWJsZXMgeF90YWJsZXMgaXB2NiBuZl9kZWZyYWdfaXB2
+Ngo+PiBbwqDCoCA1OC4zMTIxNTBdIENQVTogMCBQSUQ6IDEgQ29tbTogc2h1dGRvd24gTm90IHRh
+aW50ZWQKPj4gNS41LjAtcmMxLWRpcnR5ICMxCj4+IFvCoMKgIDU4LjMxMjcyNV0gSGFyZHdhcmUg
+bmFtZTogOTZib2FyZHMgUm9jazk2MCAoRFQpCj4+IFvCoMKgIDU4LjMxMzEzMV0gcHN0YXRlOiA2
+MDAwMDA4NSAoblpDdiBkYUlmIC1QQU4gLVVBTykKPj4gW8KgwqAgNTguMzEzNTUxXSBwYyA6IGky
+Y190cmFuc2ZlcisweGU0LzB4ZjgKPj4gW8KgwqAgNTguMzEzODg5XSBsciA6IGkyY190cmFuc2Zl
+cisweGU0LzB4ZjgKPj4gW8KgwqAgNTguMzE0MjI1XSBzcCA6IGZmZmY4MDAwMTAwNGJiMDAKPj4g
+W8KgwqAgNTguMzE0NTE2XSB4Mjk6IGZmZmY4MDAwMTAwNGJiMDAgeDI4OiBmZmZmMDAwMDdkMjA4
+MDAwCj4+IFvCoMKgIDU4LjMxNDk4MV0geDI3OiAwMDAwMDAwMDAwMDAwMDAwIHgyNjogMDAwMDAw
+MDAwMDAwMDAwMAo+PiBbwqDCoCA1OC4zMTU0NDZdIHgyNTogMDAwMDAwMDAwMDAwMDAwMCB4MjQ6
+IDAwMDAwMDAwMDAwMDAwMDgKPj4gW8KgwqAgNTguMzE1OTEwXSB4MjM6IDAwMDAwMDAwMDAwMDAw
+MDAgeDIyOiBmZmZmODAwMDEwMDRiYzc0Cj4+IFvCoMKgIDU4LjMxNjM3NV0geDIxOiAwMDAwMDAw
+MDAwMDAwMDAyIHgyMDogZmZmZjgwMDAxMDA0YmI1OAo+PiBbwqDCoCA1OC4zMTY4NDFdIHgxOTog
+ZmZmZjAwMDA3ODRmMDg4MCB4MTg6IDAwMDAwMDAwMDAwMDAwMTAKPj4gW8KgwqAgNTguMzE3MzA1
+XSB4MTc6IDAwMDAwMDAwMDAwMDAwMDEgeDE2OiAwMDAwMDAwMDAwMDAwMDE5Cj4+IFvCoMKgIDU4
+LjMxNzc3MF0geDE1OiBmZmZmZmZmZmZmZmZmZmZmIHgxNDogZmZmZjgwMDAxMTgzOThjOAo+PiBb
+wqDCoCA1OC4zMTgyMzZdIHgxMzogZmZmZjgwMDA5MDA0Yjg2NyB4MTI6IGZmZmY4MDAwMTAwNGI4
+NmYKPj4gW8KgwqAgNTguMzE4NzAxXSB4MTE6IGZmZmY4MDAwMTE4NTEwMDAgeDEwOiBmZmZmODAw
+MDEwMDRiN2YwCj4+IFvCoMKgIDU4LjMxOTE2Nl0geDkgOiAwMDAwMDAwMGZmZmZmZmQwIHg4IDog
+ZmZmZjgwMDAxMDY5OWFkOAo+PiBbwqDCoCA1OC4zMTk2MzFdIHg3IDogMDAwMDAwMDAwMDAwMDI2
+NSB4NiA6IGZmZmY4MDAwMTFhMjBiZTkKPj4gW8KgwqAgNTguMzIwMDk2XSB4NSA6IDAwMDAwMDAw
+MDAwMDAwMDAgeDQgOiAwMDAwMDAwMDAwMDAwMDAwCj4+IFvCoMKgIDU4LjMyMDU2MV0geDMgOiAw
+MDAwMDAwMGZmZmZmZmZmIHgyIDogZmZmZjgwMDAxMTg1MWFiOAo+PiBbwqDCoCA1OC4zMjEwMjZd
+IHgxIDogZDM3NWMwZDRmNDc1MWYwMCB4MCA6IDAwMDAwMDAwMDAwMDAwMDAKPj4gW8KgwqAgNTgu
+MzIxNDkxXSBDYWxsIHRyYWNlOgo+PiBbwqDCoCA1OC4zMjE3MTBdwqAgaTJjX3RyYW5zZmVyKzB4
+ZTQvMHhmOAo+PiBbwqDCoCA1OC4zMjIwMjBdwqAgcmVnbWFwX2kyY19yZWFkKzB4NWMvMHg5OAo+
+PiBbwqDCoCA1OC4zMjIzNTBdwqAgX3JlZ21hcF9yYXdfcmVhZCsweGNjLzB4MTM4Cj4+IFvCoMKg
+IDU4LjMyMjY5NF3CoCBfcmVnbWFwX2J1c19yZWFkKzB4M2MvMHg3MAo+PiBbwqDCoCA1OC4zMjMw
+MzRdwqAgX3JlZ21hcF9yZWFkKzB4NjAvMHhlMAo+PiBbwqDCoCA1OC4zMjMzNDFdwqAgX3JlZ21h
+cF91cGRhdGVfYml0cysweGM4LzB4MTA4Cj4+IFvCoMKgIDU4LjMyMzcwN13CoCByZWdtYXBfdXBk
+YXRlX2JpdHNfYmFzZSsweDYwLzB4OTAKPj4gW8KgwqAgNTguMzI0MDk5XcKgIHJrODA4X2Rldmlj
+ZV9zaHV0ZG93bisweDM4LzB4NTAKPj4gW8KgwqAgNTguMzI0NDc2XcKgIG1hY2hpbmVfcG93ZXJf
+b2ZmKzB4MjQvMHgzMAo+PiBbwqDCoCA1OC4zMjQ4MjNdwqAga2VybmVsX3Bvd2VyX29mZisweDY0
+LzB4NzAKPj4gW8KgwqAgNTguMzI1MTU5XcKgIF9fZG9fc3lzX3JlYm9vdCsweDE1Yy8weDI0MAo+
+PiBbwqDCoCA1OC4zMjU1MDRdwqAgX19hcm02NF9zeXNfcmVib290KzB4MjAvMHgyOAo+PiBbwqDC
+oCA1OC4zMjU4NThdwqAgZWwwX3N2Y19jb21tb24uY29uc3Rwcm9wLjIrMHg4OC8weDE1MAo+PiBb
+wqDCoCA1OC4zMjYyNzldwqAgZWwwX3N2Y19oYW5kbGVyKzB4MjAvMHg4MAo+PiBbwqDCoCA1OC4z
+MjY2MDddwqAgZWwwX3N5bmNfaGFuZGxlcisweDExOC8weDE4OAo+PiBbwqDCoCA1OC4zMjY5NjBd
+wqAgZWwwX3N5bmMrMHgxNDAvMHgxODAKPj4gW8KgwqAgNTguMzI3MjUxXSAtLS1bIGVuZCB0cmFj
+ZSBiMWRlMzlkMDNkNzI0ZDAxIF0tLS0KPj4KPj4gLUFuYW5kCj4+Cj4+IF9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4+IExpbnV4LXJvY2tjaGlwIG1haWxp
+bmcgbGlzdAo+PiBMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCj4+IGh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAKPj4KPgo+
+IEdydcOfLAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+CkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRl
+YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+cm9ja2NoaXAK
