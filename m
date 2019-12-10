@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8BF01189BC
-	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 14:27:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 265201189BE
+	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Dec 2019 14:27:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=s3jv7fzULu+C5iZ9VcniI2OqgHjb2poPyqy4XseTAdY=; b=d4tYWdvN+Ne8cleoxUScvqUINB
-	pauKMej9PgXspBRNWY34q59+S1tjwIaI73P/rd6ELF/Hix2qVwMd9XXj8USjGDNp5VqPHggogZ+NG
-	+priUKTO3PqnV+NtuwiAwjCXAfP2UJiwyu7yVJ0xwIxl/XzoUw3H0LOwoaVd2IasEeie1Jz+yqKoQ
-	1Vr30x3kTPqHaRPF5CelG2b+bb3qbgs1J39ivlM1l1GBgRGnV5nQcxjqW7Z7NQ+wmtG8dD2P8rDYU
-	Yidr79wQmLg6ObwOlvahItKODVHqE1ZZOcAFT3J8URTR8NHKP3jk8XjMLvTYRLC8S/s/JTnbfjnMD
-	taeA9ZdQ==;
+	bh=DWXepmcTEUiFYB8Mo0MQNseJKhuSl4VuSh2aTmfl2PI=; b=qUaf5C2Srfuhtp/naG9xAFuQE1
+	hLIbCx/5HYTpccJCtSc+FTeD5QFNmGTogGlplmRF713dV4+J8Sh1q4C5SGg3HrsB8v1Vy6JsbR+hf
+	Njkbun8Y+uu5t78N3Tpk7O0urk5DehIJ880y1GS2CyyXA/L6dQfRXVgLJPWmNx0U7n5DosbQt9FZp
+	Q9rkXAPwl8u1vtUVpjM7BulLHoX9N1puOxgqC3/DUgycwzznFMQHxdIWSdp3R/1lFCrh8LgyFQhsw
+	2d6ar0yIQQs79I3pIjRECwUOHhRHgfGTttdfv8gdieap6PEldMNAWETWQneMC35/GtMgxOTC1wAbP
+	0vQeBtJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iefY6-0006Pd-LD; Tue, 10 Dec 2019 13:27:34 +0000
+	id 1iefY9-0006Rd-31; Tue, 10 Dec 2019 13:27:37 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iefV8-00029c-M5
- for linux-rockchip@lists.infradead.org; Tue, 10 Dec 2019 13:24:32 +0000
+ id 1iefV9-0002At-TP
+ for linux-rockchip@lists.infradead.org; Tue, 10 Dec 2019 13:24:33 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0C03D328;
- Tue, 10 Dec 2019 05:24:30 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 39A411045;
+ Tue, 10 Dec 2019 05:24:31 -0800 (PST)
 Received: from DESKTOP-VLO843J.cambridge.arm.com
  (DESKTOP-VLO843J.cambridge.arm.com [10.1.26.198])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 1EE7B3F52E;
- Tue, 10 Dec 2019 05:24:29 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 4DD263F52E;
+ Tue, 10 Dec 2019 05:24:30 -0800 (PST)
 From: Robin Murphy <robin.murphy@arm.com>
 To: lee.jones@linaro.org
-Subject: [PATCH 3/4] mfd: rk808: Reduce shutdown duplication
-Date: Tue, 10 Dec 2019 13:24:32 +0000
-Message-Id: <2376f722b917f55cbf49c5f3da0c341457900dee.1575932654.git.robin.murphy@arm.com>
+Subject: [PATCH 4/4] mfd: rk808: Convert RK805 to syscore/PM ops
+Date: Tue, 10 Dec 2019 13:24:33 +0000
+Message-Id: <8642045f0657c9e782cd698eb08777c9d4c10c8d.1575932654.git.robin.murphy@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1575932654.git.robin.murphy@arm.com>
 References: <cover.1575932654.git.robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_052430_862434_A8CE8BDB 
-X-CRM114-Status: GOOD (  15.61  )
+X-CRM114-CacheID: sfid-20191210_052432_046693_7D0F4B08 
+X-CRM114-Status: GOOD (  16.80  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,25 +71,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Rather than having 3 almost-identical functions plus the machinery to
-keep track of them, it's far simpler to just dynamically select the
-appropriate register field per variant.
+RK805 has the same kind of dual-role sleep/shutdown pin as RK809/RK817,
+so it makes little sense for the driver to have to have two completely
+different mechanisms to handle essentially the same thing. Bring RK805
+in line with the RK809/RK817 flow to clean things up.
 
 Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 ---
- drivers/mfd/rk808.c       | 56 +++++++++++++--------------------------
+ drivers/mfd/rk808.c       | 58 +++++++++++++++++----------------------
  include/linux/mfd/rk808.h |  1 -
- 2 files changed, 19 insertions(+), 38 deletions(-)
+ 2 files changed, 25 insertions(+), 34 deletions(-)
 
 diff --git a/drivers/mfd/rk808.c b/drivers/mfd/rk808.c
-index 387105830736..657b8baa3b8a 100644
+index 657b8baa3b8a..e88bdb889d3a 100644
 --- a/drivers/mfd/rk808.c
 +++ b/drivers/mfd/rk808.c
-@@ -449,21 +449,6 @@ static const struct regmap_irq_chip rk818_irq_chip = {
+@@ -186,7 +186,6 @@ static const struct rk808_reg_data rk805_pre_init_reg[] = {
+ 	{RK805_BUCK4_CONFIG_REG, RK805_BUCK3_4_ILMAX_MASK,
+ 				 RK805_BUCK4_ILMAX_3500MA},
+ 	{RK805_BUCK4_CONFIG_REG, BUCK_ILMIN_MASK, BUCK_ILMIN_400MA},
+-	{RK805_GPIO_IO_POL_REG, SLP_SD_MSK, SLEEP_FUN},
+ 	{RK805_THERMAL_REG, TEMP_HOTDIE_MSK, TEMP115C},
+ };
+ 
+@@ -449,21 +448,6 @@ static const struct regmap_irq_chip rk818_irq_chip = {
  
  static struct i2c_client *rk808_i2c_client;
  
--static void rk805_device_shutdown(void)
+-static void rk805_device_shutdown_prepare(void)
 -{
 -	int ret;
 -	struct rk808 *rk808 = i2c_get_clientdata(rk808_i2c_client);
@@ -98,114 +107,107 @@ index 387105830736..657b8baa3b8a 100644
 -		return;
 -
 -	ret = regmap_update_bits(rk808->regmap,
--				 RK805_DEV_CTRL_REG,
--				 DEV_OFF, DEV_OFF);
+-				 RK805_GPIO_IO_POL_REG,
+-				 SLP_SD_MSK, SHUTDOWN_FUN);
 -	if (ret)
 -		dev_err(&rk808_i2c_client->dev, "Failed to shutdown device!\n");
 -}
 -
- static void rk805_device_shutdown_prepare(void)
- {
- 	int ret;
-@@ -482,29 +467,29 @@ static void rk805_device_shutdown_prepare(void)
  static void rk808_device_shutdown(void)
  {
  	int ret;
-+	unsigned int reg, bit;
+@@ -499,17 +483,29 @@ static void rk8xx_syscore_shutdown(void)
  	struct rk808 *rk808 = i2c_get_clientdata(rk808_i2c_client);
+ 	int ret;
  
- 	if (!rk808)
- 		return;
- 
--	ret = regmap_update_bits(rk808->regmap,
--				 RK808_DEVCTRL_REG,
--				 DEV_OFF_RST, DEV_OFF_RST);
--	if (ret)
--		dev_err(&rk808_i2c_client->dev, "Failed to shutdown device!\n");
--}
--
--static void rk818_device_shutdown(void)
--{
--	int ret;
--	struct rk808 *rk808 = i2c_get_clientdata(rk808_i2c_client);
--
--	if (!rk808)
+-	if (system_state == SYSTEM_POWER_OFF &&
+-	    (rk808->variant == RK809_ID || rk808->variant == RK817_ID)) {
++	if (system_state != SYSTEM_POWER_OFF)
++	       return;
++
 +	switch (rk808->variant) {
 +	case RK805_ID:
-+		reg = RK805_DEV_CTRL_REG;
-+		bit = DEV_OFF;
++		ret = regmap_update_bits(rk808->regmap,
++					 RK805_GPIO_IO_POL_REG,
++					 SLP_SD_MSK,
++					 SHUTDOWN_FUN);
 +		break;
-+	case RK808_ID:
-+		reg = RK808_DEVCTRL_REG,
-+		bit = DEV_OFF_RST;
-+		break;
-+	case RK818_ID:
-+		reg = RK818_DEVCTRL_REG;
-+		bit = DEV_OFF;
++	case RK809_ID:
++	case RK817_ID:
+ 		ret = regmap_update_bits(rk808->regmap,
+ 					 RK817_SYS_CFG(3),
+ 					 RK817_SLPPIN_FUNC_MSK,
+ 					 SLPPIN_DN_FUN);
+-		if (ret) {
+-			dev_warn(&rk808_i2c_client->dev,
+-				 "Cannot switch to power down function\n");
+-		}
 +		break;
 +	default:
- 		return;
--
--	ret = regmap_update_bits(rk808->regmap,
--				 RK818_DEVCTRL_REG,
--				 DEV_OFF, DEV_OFF);
-+	}
-+	ret = regmap_update_bits(rk808->regmap, reg, bit, bit);
- 	if (ret)
- 		dev_err(&rk808_i2c_client->dev, "Failed to shutdown device!\n");
++		return;
+ 	}
++	if (ret)
++		dev_warn(&rk808_i2c_client->dev,
++			 "Cannot switch to power down function\n");
  }
-@@ -594,7 +579,6 @@ static int rk808_probe(struct i2c_client *client,
+ 
+ static struct syscore_ops rk808_syscore_ops = {
+@@ -579,7 +575,6 @@ static int rk808_probe(struct i2c_client *client,
  		nr_pre_init_regs = ARRAY_SIZE(rk805_pre_init_reg);
  		cells = rk805s;
  		nr_cells = ARRAY_SIZE(rk805s);
--		rk808->pm_pwroff_fn = rk805_device_shutdown;
- 		rk808->pm_pwroff_prep_fn = rk805_device_shutdown_prepare;
+-		rk808->pm_pwroff_prep_fn = rk805_device_shutdown_prepare;
  		break;
  	case RK808_ID:
-@@ -604,7 +588,6 @@ static int rk808_probe(struct i2c_client *client,
- 		nr_pre_init_regs = ARRAY_SIZE(rk808_pre_init_reg);
- 		cells = rk808s;
- 		nr_cells = ARRAY_SIZE(rk808s);
--		rk808->pm_pwroff_fn = rk808_device_shutdown;
- 		break;
- 	case RK818_ID:
- 		rk808->regmap_cfg = &rk818_regmap_config;
-@@ -613,7 +596,6 @@ static int rk808_probe(struct i2c_client *client,
- 		nr_pre_init_regs = ARRAY_SIZE(rk818_pre_init_reg);
- 		cells = rk818s;
- 		nr_cells = ARRAY_SIZE(rk818s);
--		rk808->pm_pwroff_fn = rk818_device_shutdown;
- 		break;
- 	case RK809_ID:
- 	case RK817_ID:
-@@ -677,7 +659,7 @@ static int rk808_probe(struct i2c_client *client,
+ 		rk808->regmap_cfg = &rk808_regmap_config;
+@@ -658,10 +653,8 @@ static int rk808_probe(struct i2c_client *client,
+ 		goto err_irq;
  	}
  
- 	if (of_property_read_bool(np, "rockchip,system-power-controller")) {
--		pm_power_off = rk808->pm_pwroff_fn;
-+		pm_power_off = rk808_device_shutdown;
- 		pm_power_off_prepare = rk808->pm_pwroff_prep_fn;
- 	}
+-	if (of_property_read_bool(np, "rockchip,system-power-controller")) {
++	if (of_property_read_bool(np, "rockchip,system-power-controller"))
+ 		pm_power_off = rk808_device_shutdown;
+-		pm_power_off_prepare = rk808->pm_pwroff_prep_fn;
+-	}
  
-@@ -701,7 +683,7 @@ static int rk808_remove(struct i2c_client *client)
- 	 * pm_power_off may points to a function from another module.
- 	 * Check if the pointer is set by us and only then overwrite it.
- 	 */
--	if (rk808->pm_pwroff_fn && pm_power_off == rk808->pm_pwroff_fn)
-+	if (pm_power_off == rk808_device_shutdown)
+ 	return 0;
+ 
+@@ -686,13 +679,6 @@ static int rk808_remove(struct i2c_client *client)
+ 	if (pm_power_off == rk808_device_shutdown)
  		pm_power_off = NULL;
  
- 	/**
+-	/**
+-	 * As above, check if the pointer is set by us before overwrite.
+-	 */
+-	if (rk808->pm_pwroff_prep_fn &&
+-	    pm_power_off_prepare == rk808->pm_pwroff_prep_fn)
+-		pm_power_off_prepare = NULL;
+-
+ 	return 0;
+ }
+ 
+@@ -702,6 +688,12 @@ static int __maybe_unused rk8xx_suspend(struct device *dev)
+ 	int ret = 0;
+ 
+ 	switch (rk808->variant) {
++	case RK805_ID:
++		ret = regmap_update_bits(rk808->regmap,
++					 RK805_GPIO_IO_POL_REG,
++					 SLP_SD_MSK,
++					 SLEEP_FUN);
++		break;
+ 	case RK809_ID:
+ 	case RK817_ID:
+ 		ret = regmap_update_bits(rk808->regmap,
 diff --git a/include/linux/mfd/rk808.h b/include/linux/mfd/rk808.h
-index a59bf323f713..b038653fa87e 100644
+index b038653fa87e..e07f6e61cd38 100644
 --- a/include/linux/mfd/rk808.h
 +++ b/include/linux/mfd/rk808.h
-@@ -620,7 +620,6 @@ struct rk808 {
+@@ -620,6 +620,5 @@ struct rk808 {
  	long				variant;
  	const struct regmap_config	*regmap_cfg;
  	const struct regmap_irq_chip	*regmap_irq_chip;
--	void				(*pm_pwroff_fn)(void);
- 	void				(*pm_pwroff_prep_fn)(void);
+-	void				(*pm_pwroff_prep_fn)(void);
  };
  #endif /* __LINUX_REGULATOR_RK808_H */
 -- 
