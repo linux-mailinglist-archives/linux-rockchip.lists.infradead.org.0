@@ -2,87 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB00111AC07
-	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Dec 2019 14:26:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F16311AC36
+	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Dec 2019 14:40:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VKiIFIjXgEe/blLJInwgGjZQc6om0z4nAXqhZEKI/TY=; b=QLAEKdKtVk8NKj
-	kmR2JRV/U35eflnKGuX5nJlG63hOeGCY7thNxk+ZJyniuvrw1M5370r1Zej5L/3tpuxPI1x5cqdod
-	WIkPzVw0l/8gqOHZG3XthVm6lo9w2Zo5tIxT3KpjOQlWyryho+hW6kOYtYKAC13SUheg6gMQkr5OT
-	cKBdsGumngXovQS5K+0Wl9hJWS0af1hWBR8YpKW8yx0MuiDXaKUhR4Lj0EvthvHWaXLpfiRUU2gHJ
-	cnvilAoakoqEEOf8Vbv+SEVzmb7M0JlvCfpj1QgcILO3Ln2/CYKDbViaAgw5hWS0p8eYbasPx/dnP
-	/ljuXPrmWP88fYh5r4Dg==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/4vgQnhtViZQSdYo6INgtAW1br53bKyZmGqAUufrVf4=; b=mp+lYP6N1JcUgc
+	uHKp3j7PTPgCjf7RykR9oGAxU6NZGbGPZd+6ud1xAxX5hsoWTDxVwZZRoxGirNp+xYQPiHnic/efM
+	fIA0UXnurlQyOds+zXGHqyc1zA/O6EKOZkWxEv6YgikRxunydJoR3/p1O/66UdRohWfHH6+GC8tDb
+	6S9xYiib165+cYJWMq3SO7Fby0gzqori8KVNR0OHJ2B0JLlqdWflP4EcNEh6MGxb3lcVQcYvWsGNg
+	TpdHXPKCHOZSYzW2W6pXXecvZVjrsvaa9prVpw4NHu5ItIr4zQxjBB66dBuTXFixZxLRKNFeIRIKe
+	0EjLVe3hmYxwKwK5bmMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if20n-0007aE-5L; Wed, 11 Dec 2019 13:26:41 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1if2ED-0005QG-En; Wed, 11 Dec 2019 13:40:33 +0000
+Received: from vegas.theobroma-systems.com ([144.76.126.164]
+ helo=mail.theobroma-systems.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if20j-0007Y1-VR
- for linux-rockchip@lists.infradead.org; Wed, 11 Dec 2019 13:26:39 +0000
-Received: by mail-pf1-x442.google.com with SMTP id x185so1824262pfc.5
- for <linux-rockchip@lists.infradead.org>; Wed, 11 Dec 2019 05:26:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=ObG5oFXVgbJieCK61dlo5Mt5bEHKF5QSUTpfYMRFq74=;
- b=I+EFHP+dGfyQ+yElnzPem3XNKdvDDJ1k1RKkuGDLp4ikG2a8EFZYPE0FjtJx/4YLcP
- uQhztAX+uI9YczdqteV7KNygwOPTWxgycycdM+S/i+ucWDt6e19EWe9iokfASSuyBJuS
- aSYpCBADsuue7eZuUx+8P14N+aGQeCMQ2FTBc=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=ObG5oFXVgbJieCK61dlo5Mt5bEHKF5QSUTpfYMRFq74=;
- b=Z+5pBolsFWECajHT764tUCrI32bc3PpzXaN+gVIwy3usex+T84ESJYGfZFSlSZx5m2
- GLFeM4n3d8ZR6smD61AKyvVSuHq8JNt553iQSbvLoel5eeE5UvxjLi715qW5Ky12I35b
- imm9iGjNrto4OaHMIdc7jRRwncvo6w6p0kzWVN58ADSqzfvHZjmfPs/4yVgcHRRpkQ9m
- dv8Vmb/BzTDB3GWFyFoz6vjZDwTk6wGnP3kA01DaVqBSaWctVIXc0K5Bdw5hjYVvwqmd
- XkoKWGb/dMbAlKKRzr5ZkAt+qkMJFPR4PnHUSnzzAbCZmZqBWdS/zqxNpDhq4A95dUsL
- 75PA==
-X-Gm-Message-State: APjAAAWnjuhvkjlhr9wvnDJl4C7SQeICJ0XUQsZrkpH2UV9FrwIXhWmx
- c4R8glIbG4ZIcQPnhB2vYO8pfg==
-X-Google-Smtp-Source: APXvYqwjCl5uFhWzaGrTZeEj6ejcJHd2Qhh7hVvyeS9g5X9qNJXzCKqPvUApRRlKL9jTCSwg6f+x7g==
-X-Received: by 2002:aa7:9808:: with SMTP id e8mr3822249pfl.32.1576070797214;
- Wed, 11 Dec 2019 05:26:37 -0800 (PST)
-Received: from localhost.localdomain ([49.206.200.202])
- by smtp.gmail.com with ESMTPSA id e23sm2716145pjt.23.2019.12.11.05.26.34
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Dec 2019 05:26:36 -0800 (PST)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Simon Glass <sjg@chromium.org>, Kever Yang <kever.yang@rock-chips.com>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH 2/2] spi: rk_spi: Fix overflow max chunk size
-Date: Wed, 11 Dec 2019 18:56:23 +0530
-Message-Id: <20191211132623.430-3-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
-In-Reply-To: <20191211132623.430-1-jagan@amarulasolutions.com>
+ id 1if2E9-0005FM-8e
+ for linux-rockchip@lists.infradead.org; Wed, 11 Dec 2019 13:40:31 +0000
+Received: from ip092042140082.rev.nessus.at ([92.42.140.82]:54201
+ helo=[10.4.9.214]) by mail.theobroma-systems.com with esmtpsa
+ (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256) (Exim 4.80)
+ (envelope-from <philipp.tomsich@theobroma-systems.com>)
+ id 1if2Dz-0007mD-Px; Wed, 11 Dec 2019 14:40:19 +0100
+Mime-Version: 1.0 (Mac OS X Mail 13.0 \(3601.0.10\))
+Subject: Re: [PATCH 1/2] Revert "rockchip: spi: fix off-by-one in chunk size
+ computation"
+From: Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
+In-Reply-To: <20191211132623.430-2-jagan@amarulasolutions.com>
+Date: Wed, 11 Dec 2019 14:40:19 +0100
+Message-Id: <1E12E6D7-5401-4EF5-9D74-DFC6F8216799@theobroma-systems.com>
 References: <20191211132623.430-1-jagan@amarulasolutions.com>
-MIME-Version: 1.0
+ <20191211132623.430-2-jagan@amarulasolutions.com>
+To: Jagan Teki <jagan@amarulasolutions.com>
+X-Mailer: Apple Mail (2.3601.0.10)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_052638_024314_83DBCA14 
-X-CRM114-Status: GOOD (  11.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191211_054029_490903_CA2050A3 
+X-CRM114-Status: GOOD (  16.03  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,55 +62,45 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: u-boot@lists.denx.de, linux-amarula <linux-amarula@amarulasolutions.com>,
- Jagan Teki <jagan@amarulasolutions.com>, linux-rockchip@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: u-boot@lists.denx.de, Simon Glass <sjg@chromium.org>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ Kever Yang <kever.yang@rock-chips.com>, linux-rockchip@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The max chunk size (in a single transaction) for the Rockchip
-SPI controller is 64Kframes (i.e. 0x10000 frames) of 8bit or 16bit
-frames and is encoded as (num_frames - 1) in CTRLR1.
-
-So the 0x10000 is offset value for 64K but the actual size value would
-be 'minus 1' from 0x10000.
-
-With the existing code of 0x10000 max chunk size leads to read
-failure when we try to read the flash with > 0x10000 size like,
-
-1. sf read failure when with > 0x10000
-
-2. Boot from SPI flash failed during spi_flash_read call in
-   common/spl/spl_spi.c
-
-Observed and Tested in
-- Rockpro64 with Gigadevice flash
-- ROC-RK3399-PC with Winbond flash
-
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- drivers/spi/rk_spi.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/spi/rk_spi.c b/drivers/spi/rk_spi.c
-index d9a310ce80..6059f2415a 100644
---- a/drivers/spi/rk_spi.c
-+++ b/drivers/spi/rk_spi.c
-@@ -367,7 +367,7 @@ static inline int rockchip_spi_16bit_reader(struct udevice *dev,
- 	 * represented in CTRLR1.
- 	 */
- 	if (data && data->master_manages_fifo)
--		max_chunk_size = 0x10000;
-+		max_chunk_size = 0xffff;
- 
- 	// rockchip_spi_configure(dev, mode, size)
- 	rkspi_enable_chip(regs, false);
--- 
-2.18.0.321.gffc6fa0e3
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+Cgo+IE9uIDExLjEyLjIwMTksIGF0IDE0OjI2LCBKYWdhbiBUZWtpIDxqYWdhbkBhbWFydWxhc29s
+dXRpb25zLmNvbT4gd3JvdGU6Cj4gCj4gVGhlIG1heGltdW0gdHJhbnNmZXIgbGVuZ3RoIChpbiBh
+IHNpbmdsZSB0cmFuc2FjdGlvbikgZm9yIHRoZSBSb2NrY2hpcAo+IFNQSSBjb250cm9sbGVyIGlz
+IDY0S2ZyYW1lcyAoaS5lLiAweDEwMDAwIGZyYW1lcykgb2YgOGJpdCBvciAxNmJpdAo+IGZyYW1l
+cyBhbmQgaXMgZW5jb2RlZCBhcyAobnVtX2ZyYW1lcyAtIDEpIGluIENUUkxSMS4KPiAKPiBTbyB0
+aGUgMHgxMDAwMCBpcyBvZmZzZXQgdmFsdWUgZm9yIDY0SyBidXQgdGhlIGFjdHVhbCBzaXplIHZh
+bHVlIHdvdWxkCj4gYmUgJ21pbnVzIDEnIGZyb20gMHgxMDAwMC4KCk5BSy4gUGxlYXNlIHNlZSAy
+IGNvZGUgbGluZXMgYmVsb3cgeW91ciBjaGFuZ2UgdG8gc2VlIHRoYXQgdGhlIOKAnG1pbnVzIDHi
+gJ0KaXMgYXBwbGllZCB0aGVyZeKApiBzbyBhIHRvZG8gb2YgMHgxMDAwMCB3aWxsIHdyaXRlIDB4
+ZmZmZiB0byByZWdzLT5jdHJscjEuCgpUaGUgcHJvYmxlbSBtdXN0IGJlIHNvbWV3aGVyZSBlbHNl
+IGFuZCB0aGlzIHBhdGNoIHdpbGwgb25seSBtYXNrIHRoZQp1bmRlcmx5aW5nIGlzc3VlLgoKPiAK
+PiBXaXRoIHRoZSBleGlzdGluZyBjb2RlIG9mIDB4MTAwMDAgdHJhbnNmZXIgbGVuZ3RoIGxlYWRz
+IHRvIHJlYWQKPiBmYWlsdXJlIHdoZW4gd2UgdHJ5IHRvIHJlYWQgdGhlIGZsYXNoIHdpdGggPiAw
+eDEwMDAwIHNpemUgbGlrZSwKPiAKPiAxLiBzZiByZWFkIGZhaWx1cmUgd2hlbiB3aXRoID4gMHgx
+MDAwMAo+IAo+IDIuIEJvb3QgZnJvbSBTUEkgZmxhc2ggZmFpbGVkIGR1cmluZyBzcGlfZmxhc2hf
+cmVhZCBjYWxsIGluCj4gICBjb21tb24vc3BsL3NwbF9zcGkuYwo+IAo+IE9ic2VydmVkIGFuZCBU
+ZXN0ZWQgaW4KPiAtIFJvY2twcm82NCB3aXRoIEdpZ2FkZXZpY2UgZmxhc2gKPiAtIFJPQy1SSzMz
+OTktUEMgd2l0aCBXaW5ib25kIGZsYXNoCj4gCj4gVGhpcyByZXZlcnRzIGNvbW1pdCBlNjQ3ZGVj
+ZGQ5M2M3NDA4NzQxMzI5NDMyZjI2NzU4ZmJlYzA0YzdhLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEph
+Z2FuIFRla2kgPGphZ2FuQGFtYXJ1bGFzb2x1dGlvbnMuY29tPgo+IC0tLQo+IGRyaXZlcnMvc3Bp
+L3JrX3NwaS5jIHwgMiArLQo+IDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxl
+dGlvbigtKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3NwaS9ya19zcGkuYyBiL2RyaXZlcnMv
+c3BpL3JrX3NwaS5jCj4gaW5kZXggYzA0NTM1YWM0NC4uZDlhMzEwY2U4MCAxMDA2NDQKPiAtLS0g
+YS9kcml2ZXJzL3NwaS9ya19zcGkuYwo+ICsrKyBiL2RyaXZlcnMvc3BpL3JrX3NwaS5jCj4gQEAg
+LTQ1MSw3ICs0NTEsNyBAQCBzdGF0aWMgaW50IHJvY2tjaGlwX3NwaV94ZmVyKHN0cnVjdCB1ZGV2
+aWNlICpkZXYsIHVuc2lnbmVkIGludCBiaXRsZW4sCj4gCj4gCS8qIFRoaXMgaXMgdGhlIG9yaWdp
+bmFsIDhiaXQgcmVhZGVyL3dyaXRlciBjb2RlICovCj4gCXdoaWxlIChsZW4gPiAwKSB7Cj4gLQkJ
+aW50IHRvZG8gPSBtaW4obGVuLCAweDEwMDAwKTsKPiArCQlpbnQgdG9kbyA9IG1pbihsZW4sIDB4
+ZmZmZik7Cj4gCj4gCQlya3NwaV9lbmFibGVfY2hpcChyZWdzLCBmYWxzZSk7Cj4gCQl3cml0ZWwo
+dG9kbyAtIDEsICZyZWdzLT5jdHJscjEpOwo+IC0tIAo+IDIuMTguMC4zMjEuZ2ZmYzZmYTBlMwo+
+IAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4
+LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2No
+aXAK
