@@ -2,54 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A73E211AF37
-	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Dec 2019 16:12:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9179211B0D7
+	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Dec 2019 16:27:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fkT/K8mBdrryFZqhlmwRy5M842VVDdG1EaRDG4rY83w=; b=e6di2t98nK7Il7
-	r4Y2Hqpfft1n9USwBGfd4rbsBpM4w2ivjcnqwQE0BHGK43SudryT4vazHlsc6I1zQu+hMWhnSaYHK
-	G1D/Z3phPy0xGP8a89JxmpVA7Fp8BYdfGAwyRcUBUqpFks7PQaX96+rbPCDnbSeY4dhZuAGRpqgwf
-	Eh1yHTsPkMIEZo3I7czuvEty4HbPNfRayjzahhiVmH4KgNcEhbZN+n1kxLLfvjuZkyjyYbYdn6+/T
-	6SOmzOoJN1SMzk4wF4QDQsDU3XfheYFQ79KvFMV63Ufu7TI2ImBmQZsq/mCAFCWyphJkNUIfc2Awe
-	hW88o8ca5e++mmGUlVxg==;
+	List-Owner; bh=wLVwUoHzqPsoCqZkM2C/7VSUvgCULKXLVvmFLTHU1qg=; b=NhJXGDaOtdRO8k
+	+d1n1Sv1SyZLOG1tk3/H6MJyi6ZfpFhJbPJ7cz805IoBtK79NkEkCBfRoRQ9cFoCYNT9bw0ce7jLW
+	OjmofX5npKmU0610xGS1c1rtGktuq+T+qU0lcRZDjDZYpfWiyl9ys0cG/tB91EINs2O/YXzWf6gjr
+	KsqaAoZ7X7wWb8f8oAQxAIGCMS7pmJVbgk3788JA6DAxoR5uY/aJbRr1TlG4U+OgGdzAzQOc+0bb/
+	5tFXxXvhNY+IPG3Prkz90NeuDVP59ZkiR1EZvDkbSPnl0GExIm/jXeieqmMI4374BbI5TDzMctTMu
+	Wc12ym8r4r/uK/8fm0xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if3f1-0002Kn-4I; Wed, 11 Dec 2019 15:12:19 +0000
+	id 1if3tG-0003ud-6J; Wed, 11 Dec 2019 15:27:02 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if3eo-00027k-L7; Wed, 11 Dec 2019 15:12:07 +0000
+ id 1if3t5-0003kC-Fw; Wed, 11 Dec 2019 15:26:52 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2F5C724658;
- Wed, 11 Dec 2019 15:12:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2011324679;
+ Wed, 11 Dec 2019 15:26:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576077126;
- bh=IEDH//bhdQztlOqOo+cfwWB4wM8CT2ZDR64ODrpGXpU=;
+ s=default; t=1576078011;
+ bh=sjnsZOZDsbB53F4dQC13LCsU2cKRuRJiJyKpA1cHH6A=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ASfCZsr8aNmgPSL1M+6kupNFfLQJvSZgKsM//pdyMqHr1sDp/5vZb7GauO0pEltxE
- 7H1gJwjf/cng57mgJFVyGVCowkZrx8HoMgglqGjQmgPom2nTTxVg+RAByr3/PNkkeL
- V0vRDMZlBUgiZtzbv9e9MOQCM6l7v2sryYUu260k=
+ b=OucdVJEryUoi5pX7FhunvSWO+pTtXWUtOtUEuHXq71ZXdo5A9NAr8NxaScj4/v5na
+ 2jPbMUADQRSvnSwEkflFtlyapqmpr0vUEx47t+oLCQTZ/irdMXt7I3JrAqT6lQVjaC
+ q5J/1My5J1NpT+iUOulkSmRsrYGb7Cb7/u7x4Tsw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 014/134] iommu: rockchip: Free domain on
+Subject: [PATCH AUTOSEL 4.19 06/79] iommu: rockchip: Free domain on
  .domain_free
-Date: Wed, 11 Dec 2019 10:09:50 -0500
-Message-Id: <20191211151150.19073-14-sashal@kernel.org>
+Date: Wed, 11 Dec 2019 10:25:30 -0500
+Message-Id: <20191211152643.23056-6-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191211151150.19073-1-sashal@kernel.org>
-References: <20191211151150.19073-1-sashal@kernel.org>
+In-Reply-To: <20191211152643.23056-1-sashal@kernel.org>
+References: <20191211152643.23056-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_071206_711466_CD38DF3A 
+X-CRM114-CacheID: sfid-20191211_072651_554877_FD5C5279 
 X-CRM114-Status: GOOD (  12.45  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -109,10 +109,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 5 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/iommu/rockchip-iommu.c b/drivers/iommu/rockchip-iommu.c
-index 4dcbf68dfda43..0df091934361b 100644
+index ad3e2b97469ed..140b287e886c8 100644
 --- a/drivers/iommu/rockchip-iommu.c
 +++ b/drivers/iommu/rockchip-iommu.c
-@@ -980,13 +980,13 @@ static struct iommu_domain *rk_iommu_domain_alloc(unsigned type)
+@@ -977,13 +977,13 @@ static struct iommu_domain *rk_iommu_domain_alloc(unsigned type)
  	if (!dma_dev)
  		return NULL;
  
@@ -128,7 +128,7 @@ index 4dcbf68dfda43..0df091934361b 100644
  
  	/*
  	 * rk32xx iommus use a 2 level pagetable.
-@@ -1021,6 +1021,8 @@ err_free_dt:
+@@ -1018,6 +1018,8 @@ err_free_dt:
  err_put_cookie:
  	if (type == IOMMU_DOMAIN_DMA)
  		iommu_put_dma_cookie(&rk_domain->domain);
@@ -137,7 +137,7 @@ index 4dcbf68dfda43..0df091934361b 100644
  
  	return NULL;
  }
-@@ -1049,6 +1051,7 @@ static void rk_iommu_domain_free(struct iommu_domain *domain)
+@@ -1046,6 +1048,7 @@ static void rk_iommu_domain_free(struct iommu_domain *domain)
  
  	if (domain->type == IOMMU_DOMAIN_DMA)
  		iommu_put_dma_cookie(&rk_domain->domain);
