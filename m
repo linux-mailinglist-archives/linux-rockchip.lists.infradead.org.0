@@ -2,78 +2,97 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 812F711CF8A
-	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Dec 2019 15:16:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52DC911D146
+	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Dec 2019 16:46:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:To:Date:From:Subject:
+	MIME-Version:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AExx9ABLLGvmeWN/3LqE4WPBb8vXWKkqzmwufEe+/7Y=; b=co5OqXNOZ9Rplh
-	rxEYanWADYYO/Of7Nzuu77nvIMqYekJT3a/g9qXiYSvnMUiq22v1lAxwMtza6vK5fGr0TTwBr9b8s
-	11NgOerjoLtJWdB7Ar37XLWLX80cgm7CE4Oj5dplCBv42kDsUiYQfBFY9V8SaPxoN98nuD2DsjyT2
-	TkSXvb+zHkjzYONlJFNYk4zdlCKeJ4jpe/dcb/LnxkqruX2l8ThcwunZoIcm9FJi58XyBjl3om19g
-	a3YuMy3sZ9hYmlLHvz8MrTq6hcJ41Ml0xa9EI/31T8hPkU527jrf5ZOVTZlHWeWVhnnjRZaR6/o9R
-	m82X3HuecDVKXGHB2AwQ==;
+	List-Owner; bh=JrZW/Mk2etKPoOgwhg1l1keWuFuzjhTApXkRRTOqbZk=; b=N6iU6EcGVSWmIl
+	c1YYnR0V5H3neTJizdNLm5Pc0j9/8zZtA4DLYN8eywDmvxKV/7ZFCeruJjXSorLdf+i4k0wSK57zu
+	8IZOJxTqAHWDDAmAnsTYoziGkDmEfXH9xTz4P5fF3YXFdRRrTlXBLk4k2d5IFuba44g1GkbqJpwsE
+	XPckbNO9Td3FBDnwjqHUX4TPhe19Xt54OEREiffG01S/UbV6qowQiwosInhUyNQBeMCp0gQD7FsK6
+	FnjmwyXzS6ZwddlTGOd4eC3PLkWC0w2S8bUQNgAnlPSkbAdP9CV/BUWRRx6VPS/OCRg/Quo1beTEc
+	O5DMPaKW96qM6pwav5eQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifPGj-0006Lu-TP; Thu, 12 Dec 2019 14:16:41 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1ifQfc-0002XB-TB; Thu, 12 Dec 2019 15:46:28 +0000
+Received: from gateway31.websitewelcome.com ([192.185.143.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifPGg-0006Kw-By; Thu, 12 Dec 2019 14:16:39 +0000
-Received: by mail-qk1-x743.google.com with SMTP id l124so1690911qkf.8;
- Thu, 12 Dec 2019 06:16:38 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6GBGCKakEwAi+SxuWUfOkadj0n7loMWnfnQvA8ShRvQ=;
- b=syayC1RvNDxvD18+kTX/JNogom/aWz14yGuOHeDLj5KjomPtSd37PoGodtbiCvOpdE
- vGIaVlQeTXfMsf9yVKonxDTBX2DP2xlnGPfieK+nH8CDudRSroy1R7g3EVhDc/DfhJ24
- FzrwYjcvm7+7WFEo6oRj4dM8wmPiCC4wedPnKXsxCGCk7S4dIWZF0fodt1DxRPkW9T9l
- CZc/iztXwUpiJe86KApaizcy2cEnJa8T7CFnVOiAfJBtiTZXw8Iu5hXIB/fNwqN+qQEy
- k+VIRKMpPtu/KpcQrMOb3nzGuE9cgLSMypnGsqstWYmxBlvVj99j8AVObaopHS+/5ajL
- vQrw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6GBGCKakEwAi+SxuWUfOkadj0n7loMWnfnQvA8ShRvQ=;
- b=iTBaAgRzgIACDnE+DDwyYGSNgdMHYIEzaCseKmcti0MkkfmcByRBpB6X47AnCWSXiu
- ZRYcML7wcapaerjk5/2sym2I9RsqOjbMB+mcBYVHLnBWI6jr0EHsd/+cUcZNRLsEhTcv
- bQMsc8J9aTqFrBZoowBdKjUqa82Ui0BK+s6UKTCtyUuGNj4M6yNwqfm+tiECk3acEffC
- oNvseEU2DFG+TytMMAHXo3DmMojhTCG/AtpzCs4uL4HRxyy8H7xBp9yeDY3JffG32UGh
- GdM8L3plMh9N3gNT//d5+ErpfrcdZ9uam/y5ym5c7a/IImSdp3m3wh+ayWCJKck7lUlj
- pDKA==
-X-Gm-Message-State: APjAAAWk5hoEvYnXvAy0ptWseB4YckRcLuZqAUUuIFY4gGlGtAep9Vro
- EB8ea3G63Na32BK7r8uI/iZMmuMsIqEuh1XwCJ0=
-X-Google-Smtp-Source: APXvYqy3LZbmIJZqWEtZQRAxI8xuryqKsLm5wgMvxsNC8rWduFKgN8bZg4xqtDDT3Ra7L0z4cOoXyw9CsE4XvMKt3OQ=
-X-Received: by 2002:a37:a642:: with SMTP id p63mr8470433qke.85.1576160197345; 
- Thu, 12 Dec 2019 06:16:37 -0800 (PST)
+ id 1ifQfa-0002Vc-3J
+ for linux-rockchip@lists.infradead.org; Thu, 12 Dec 2019 15:46:27 +0000
+Received: from cm14.websitewelcome.com (cm14.websitewelcome.com [100.42.49.7])
+ by gateway31.websitewelcome.com (Postfix) with ESMTP id EC98175185
+ for <linux-rockchip@lists.infradead.org>; Thu, 12 Dec 2019 09:46:11 -0600 (CST)
+Received: from e36.ehosts.com ([192.185.128.17]) by cmsmtp with SMTP
+ id fQfLiG6Qs4kpjfQfLipDFw; Thu, 12 Dec 2019 09:46:11 -0600
+X-Authority-Reason: nr=8
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=singleboardsolutions.com; s=default; h=Message-ID:CC:To:Date:From:Subject:
+ Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
+ Sender:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=UMrk7SVJBaZoF5+E4IWNlDb5JQkYTRr384MzHtkSMNA=; b=Z6F45GnZxN2pseuh0IHHkf69/s
+ ZLOxtsygVBMQDpO7ull4wMLqcSmdySbPZvytspNyu2pUslfuHN/55s2KRqikKLBC5+E5gapNgaaXl
+ NAknwJTUy7yBoxUao54lCEhsviPaOlUAFap8Ls3ZQ7zGD04OjmJjFdakIOnDIAgOkGblTHOpaKUT7
+ GGxhZmp2azaq1Yd6hLkYjDBMnUAuljMr/tgsucpANmmnJAwdndG6GDFTNKm68bwyqQ7U/+Om0ahbG
+ 5/4QYPZzmFm75kkCvNBRN3X/3NRJvQnmkWKmlccw/oAe1JruqtpbPQdf2pErpAlMCdRfUTE3lSC2T
+ vkLtKQHA==;
+Received: from [172.58.138.77] (port=57064
+ helo=[IPV6:2607:fb90:1784:5f4e:a5d4:b11d:2550:9cec])
+ by e36.ehosts.com with esmtpa (Exim 4.92)
+ (envelope-from <tmckahan@singleboardsolutions.com>)
+ id 1ifQfL-001viD-Fm; Thu, 12 Dec 2019 08:46:11 -0700
+In-Reply-To: <678df227-38be-47af-7ee3-741a391a196c@fivetechno.de>
+References: <678df227-38be-47af-7ee3-741a391a196c@fivetechno.de>
+X-Referenced-Uid: 55
+Thread-Topic: [PATCH 2/3] arm64: dts: rockchip: Enable PD for USB-C-Port on
+ rk3399-roc-pc.
+X-Is-Generated-Message-Id: true
+X-Blue-Identity: !l=635&o=43&fo=3004&pl=525&po=0&qs=PREFIX&f=HTML&n=Thomas%20McKahan&e=tmckahan%40singleboardsolutions.com&m=!%3ANDg0ODA5OGEtZmVjOS00NjIyLTkwMTUtZGI5MTM5OGY1ZGU3%3ASU5CT1g%3D%3ANTU%3D%3AANSWERED&p=491&q=SHOW
+User-Agent: Android
 MIME-Version: 1.0
-References: <58ce5534-64bd-4b4b-bd60-ed4e0c71b20f@gmail.com>
- <166f0016-7061-be5c-660d-0499f74e8697@arm.com>
- <20191212005254.GE24359@e119886-lin.cambridge.arm.com>
-In-Reply-To: <20191212005254.GE24359@e119886-lin.cambridge.arm.com>
-From: Enric Balletbo Serra <eballetbo@gmail.com>
-Date: Thu, 12 Dec 2019 15:16:25 +0100
-Message-ID: <CAFqH_50pJVQT3uqtpVgqn4ijfdPMzHoE1ns_KARH+_cKe+3NRg@mail.gmail.com>
-Subject: Re: [REGRESSION] PCI v5.5-rc1 breaks google kevin
-To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH 2/3] arm64: dts: rockchip: Enable PD for USB-C-Port on
+ rk3399-roc-pc.
+From: Thomas McKahan <tmckahan@singleboardsolutions.com>
+Date: Thu, 12 Dec 2019 10:46:09 -0500
+To: Markus Reichl <m.reichl@fivetechno.de>
+Message-ID: <84920a36-230f-42a6-a960-a71e685be99f@singleboardsolutions.com>
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - e36.ehosts.com
+X-AntiAbuse: Original Domain - lists.infradead.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - singleboardsolutions.com
+X-BWhitelist: no
+X-Source-IP: 172.58.138.77
+X-Source-L: No
+X-Exim-ID: 1ifQfL-001viD-Fm
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Source-Sender: ([IPV6:2607:fb90:1784:5f4e:a5d4:b11d:2550:9cec])
+ [172.58.138.77]:57064
+X-Source-Auth: tmckahan@singleboardsolutions.com
+X-Email-Count: 3
+X-Source-Cap: ZWxlY3RyaTk7ZWxlY3RyaTk7ZTM2LmVob3N0cy5jb20=
+X-Local-Domain: yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_061638_435829_D35983D1 
-X-CRM114-Status: GOOD (  16.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191212_074626_250789_9347F656 
+X-CRM114-Status: UNSURE (   7.12  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (eballetbo[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [192.185.143.43 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -93,105 +112,72 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Mika Westerberg <mika.westerberg@linux.intel.com>,
- Heiko Stuebner <heiko@sntech.de>, Frederick Lawler <fred@fredlawl.com>,
- linux-pci@vger.kernel.org, Shawn Lin <shawn.lin@rock-chips.com>,
- "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Vicente Bergas <vicencb@gmail.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Mark Brown <broonie@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Robin Murphy <robin.murphy@arm.com>,
- =?UTF-8?Q?Stefan_M=C3=A4tje?= <stefan.maetje@esd.eu>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Heiner Kallweit <hkallweit1@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, narmstrong@baylibre.com,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Vicente,
-
-Missatge de Andrew Murray <andrew.murray@arm.com> del dia dj., 12 de
-des. 2019 a les 1:53:
->
-> On Thu, Dec 12, 2019 at 12:12:56AM +0000, Robin Murphy wrote:
-> > Hi Vicente,
-> >
-> > On 2019-12-11 11:38 pm, Vicente Bergas wrote:
-> > > Hi,
-> > > since v5.5-rc1 the google kevin chromebook does not boot.
-> > > Git bisect reports 5e0c21c75e8c PCI/ASPM: Remove pcie_aspm_enabled()
-> > > unnecessary locking
-> > > as the first bad commit.
-> > >
-> > > In order to revert it from v5.5-rc1 i had to also revert some dependencies:
-> > > 5e0c21c75e8c08375a69710527e4a921b897cb7e
-> > > aff5d0552da4055da3faa27ee4252e48bb1f5821
-> > > 35efea32b26f9aacc99bf07e0d2cdfba2028b099
-> > > 687aaf386aeb551130f31705ce40d1341047a936
-> > > 72ea91afbfb08619696ccde610ee4d0d29cf4a1d
-> > > 87e90283c94c76ee11d379ab5a0973382bbd0baf
-> > > After reverting all of this, still no luck.
-> > > So, either the results of git bisect are not to be trusted, or
-> > > there are more bad commits.
-> > >
-> > > By "does not boot" i mean that the display fails to start and
-> > > the display is the only output device, so debugging is quite difficult.
-> >
-
-Another issue that is affecting current mainline for kevin is fixed
-with [1]. As usual, I have a tracking branch for 5.5 for different
-Chromebooks with some not yet merged patches that makes things work
-while are not fixed [2]. For kevin only the mentioned ASoC patch [1]
-and the pcie fix [3] should be needed. Other than that display is
-working for me on Kevin.
-
-Cheers,
- Enric
-
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git/commit/?h=for-5.5&id=4bf2e385aa59c2fae5f880aa25cfd2b470109093
-[2] https://gitlab.collabora.com/eballetbo/linux/commits/topic/chromeos/somewhat-stable-5.5
-[3]  https://lkml.org/lkml/2019/12/11/199
-
-> > Assuming it's a manifestation of the same PCI breakage that Enric and
-> > Lorenzo figured out, there's a proposed fix here:
-> > https://lkml.org/lkml/2019/12/11/199
->
-> It's likely that any PCI driver that uses PCI IO with that controller will
-> suffer the same fate.
->
-> Vicente - can you try the patch that has been proposed and verify it fixes
-> the issue for you?
->
-> Thanks,
->
-> Andrew Murray
->
-> >
-> > Robin.
-> >
-> > > v5.5-rc1 as is (reverting no commits at all) works fine when disabling PCI:
-> > > # CONFIG_PCI is not set
-> > >
-> > > Regards,
-> > >   Vicente.
-> > >
-> > >
-> > > _______________________________________________
-> > > Linux-rockchip mailing list
-> > > Linux-rockchip@lists.infradead.org
-> > > http://lists.infradead.org/mailman/listinfo/linux-rockchip
->
-> _______________________________________________
-> Linux-rockchip mailing list
-> Linux-rockchip@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGVsbG8gTWFya3VzLAoKwqDCoMKgIEkgaGF2ZSBiZWVuIHdvcmtpbmcgd2l0aCB0aGlzIGFzIHdl
+bGwsIGNhbWUgYWNyb3NzIGl0IG9uIEFybWJpYW4uIEkgd2FzIGFsc28gdHJ5aW5nIHRvIGVsaW1p
+bmF0ZSB0aGUgd2FybmluZyBjb25jZXJuaW5nIHRoZSBsYWNrIG9mIHBvcnQgd2l0aCBsaW1pdGVk
+IHN1Y2Nlc3MuwqAgSSBhbHNvIG1pc3NlZCB0aGUgaW50ZXJydXB0IHBpbiBkZWZpbml0aW9uIEkg
+c2VlLsKgIEkgd2lsbCB0ZXN0IHRoaXMgbGF0ZXIgdG9kYXkuwqAgCgrCoMKgIEkndmUgYWRkZWQg
+TmVpbCBBcm1zdHJvbmcgZm9yIGluZm9ybWF0aW9uIGluIGNhc2UgYW55IGJvYXJkcyBvbiB0aGUg
+QW1sb2dpYyBzaWRlIGFyZSBzaW1pbGFybHkgY29uZmlndXJlZCwgSSB0aGluayBhIGZldyBvdGhl
+ciBSb2NrY2hpcCBvbmVzIGF0IGxlYXN0IGFyZSBtaXNzaW5nIGNvbm5lY3RvciBub2RlcywgaXQg
+YXBwZWFycyB0byBiZSBhIGNvbnNpc3RlbnQgaXNzdWUgcHJlc3VtYWJseSBkdWUgdG8gZHJpdmVy
+IGNoYW5nZXMuCgotVG9ueQoKCuKBowoKT24gRGVjIDEwLCAyMDE5LCA3OjQ1IEFNLCBhdCA3OjQ1
+IEFNLCBNYXJrdXMgUmVpY2hsIDxtLnJlaWNobEBmaXZldGVjaG5vLmRlPiB3cm90ZToKPlVTQi1D
+LVBvcnQgMCBvbiByazMzOTktcm9jLXBjIGlzIGRlc2lnbmVkIHRvIHN1cHBseSB0aGUgYm9hcmQu
+Cj5UbyBtZWV0IHRoZSBwb3dlciByZXF1aXJlbWVudHMgb2YgdXAgdG8gNDVXIGEgcG93ZXIgZGVs
+aXZlcnkgKFBEKQo+Y29tcGF0aWJsZSBzdXBwbHkgaXMgbmVlZGVkLiBUbyBjb25maWd1cmUgdGhl
+IFBEIHRoZSBub2RlIG9mIHRoZQo+ZnVzYjMwMiBuZWVkcyBhIGNvbm5lY3RvciBwcm9wZXJ0eSB3
+aXRoIGRlc2lyZWQgUEQgZGVzY3JpcHRpb24uCj4KPlNpZ25lZC1vZmYtYnk6IE1hcmt1cyBSZWlj
+aGwgPG0ucmVpY2hsQGZpdmV0ZWNobm8uZGU+Cj4tLS0KPlByZXNlbnRseSB0aGUgYm9hcmQgaW4g
+bWFpbmxpbmUgaGFzIHRvIGJlIHBvd2VyZWQgZnJvbSBhIDEyViBzdXBwbHksCj5jb25uZWN0ZWQg
+dG8gdHdvIHBpbnMgb24gdGhlIGV4cGFuc2lvbiBoZWFkZXIgYXMgdGhlIHN0YW5kYXJkIDVWCj5k
+ZWxpdmVyZWQgYnkgdGhlIHVuY29uZmlndXJlZCBVU0ItQyBwbHVnIGlzIG5vdCBlbm91Z2ggZm9y
+IGhpZ2hlcgo+bG9hZHMgb3IgcGVyaXBoZXJhbHMgb24gVVNCIG9yIE0uMi4KPgo+V2l0aCB0aGlz
+IHBhdGNoIHRoZSBib2FyZCByZXF1ZXN0cyAxNVYgZnJvbSB0aGUgUEQgYW5kIHJ1bnMgZmluZQo+
+b24gaGlnaCBsb2FkcyB3aXRoIE5WTUUgU1NELCBFdGhlcm5ldCwgU0RJTyBXTEFOIGFuZCBVU0Ig
+cGVyaXBoZXJhbHMuCj5EdXJpbmcgYm9vdCB0aGUgMTJWIHN1cHBseSBpcyBzdGlsbCBuZWVkZWQg
+Zm9yIHNvbWUgc2Vjb25kcywKPmFzIHRoZSBmdXNiMzAyIHNodXRzIGRvd24gb3IgcmVzZXRzIHRo
+ZSBQRCBzaG9ydGx5IHdoZW4gaW5pdGlhbGl6aW5nCj4oQlVHPykuCj4KPlRoZSBib2FyZCdzIDEy
+ViBsaW5lIGlzIHJ1bm5pbmcgcHJlc2VudGx5IG9uIDVWLCB0aGUgZGVmYXVsdCBvdXRwdXQKPnZv
+bHRhZ2Ugb2YgdGhlIE1QODg1OSBvbiBJMkMtNywgZm9yIHdpY2ggbm8gbWFpbmxpbmUga2VybmVs
+IGRyaXZlcgo+ZXhpc3RzIHlldC4KPi0tLQo+ICBhcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlw
+L3JrMzM5OS1yb2MtcGMuZHRzaSB8IDE2ICsrKysrKysrKysrKysrLS0KPiAgMSBmaWxlIGNoYW5n
+ZWQsIDE0IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCj4KPmRpZmYgLS1naXQgYS9hcmNo
+L2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5OS1yb2MtcGMuZHRzaQo+Yi9hcmNoL2FybTY0
+L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5OS1yb2MtcGMuZHRzaQo+aW5kZXggOGUwMWIwNDE0NGI3
+Li45MDc4M2IyYjFkMWYgMTAwNjQ0Cj4tLS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlw
+L3JrMzM5OS1yb2MtcGMuZHRzaQo+KysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9y
+azMzOTktcm9jLXBjLmR0c2kKPkBAIC02LDYgKzYsNyBAQAo+ICAvZHRzLXYxLzsKPiAgI2luY2x1
+ZGUgPGR0LWJpbmRpbmdzL2lucHV0L2xpbnV4LWV2ZW50LWNvZGVzLmg+Cj4gICNpbmNsdWRlIDxk
+dC1iaW5kaW5ncy9wd20vcHdtLmg+Cj4rI2luY2x1ZGUgPGR0LWJpbmRpbmdzL3VzYi9wZC5oPgo+
+ICAjaW5jbHVkZSAicmszMzk5LmR0c2kiCj4gICNpbmNsdWRlICJyazMzOTktb3BwLmR0c2kiCj4g
+IAo+QEAgLTU0MCwxMSArNTQxLDIyIEBAIGZ1c2IwOiB1c2ItdHlwZWNAMjIgewo+ICAJCWNvbXBh
+dGlibGUgPSAiZmNzLGZ1c2IzMDIiOwo+ICAJCXJlZyA9IDwweDIyPjsKPiAgCQlpbnRlcnJ1cHQt
+cGFyZW50ID0gPCZncGlvMT47Cj4tCQlpbnRlcnJ1cHRzID0gPDIgSVJRX1RZUEVfTEVWRUxfTE9X
+PjsKPisJCWludGVycnVwdHMgPSA8UktfUEEyIElSUV9UWVBFX0xFVkVMX0xPVz47Cj4gIAkJcGlu
+Y3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPiAgCQlwaW5jdHJsLTAgPSA8JmZ1c2IwX2ludD47Cj4g
+IAkJdmJ1cy1zdXBwbHkgPSA8JnZjY192YnVzX3R5cGVjMD47Cj4tCQlzdGF0dXMgPSAib2theSI7
+Cj4rCj4rCQl1c2JfY29uOiBjb25uZWN0b3Igewo+KwkJCWNvbXBhdGlibGUgPSAidXNiLWMtY29u
+bmVjdG9yIjsKPisJCQlsYWJlbCA9ICJVU0ItQy0wIjsKPisJCQlwb3dlci1yb2xlID0gImR1YWwi
+Owo+KwkJCXRyeS1wb3dlci1yb2xlID0gInNpbmsiOwo+KwkJCXNvdXJjZS1wZG9zID0gPFBET19G
+SVhFRCg1MDAwLCAzMDAwLCBQRE9fRklYRURfVVNCX0NPTU0pPjsKPisJCQlzaW5rLXBkb3MgPSA8
+UERPX0ZJWEVEKDUwMDAsIDMwMDAsIFBET19GSVhFRF9VU0JfQ09NTSkKPisJCQkJICAgICBQRE9f
+VkFSKDUwMDAsIDE1MDAwLCAzMDAwKQo+KwkJCQkgICAgIFBET19QUFNfQVBETyg1MDAwLCAxNTAw
+MCwgMzAwMCk+Owo+KwkJCW9wLXNpbmstbWljcm93YXR0ID0gPDQ1MDAwMDAwPjsKPisJCX07Cj4g
+IAl9Owo+ICB9Owo+ICAKPi0tIAo+Mi4yNC4wCj4KPgo+X19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KPkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdAo+TGlu
+dXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwo+aHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAoKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApM
+aW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
