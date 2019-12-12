@@ -2,46 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A358F11C19B
-	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Dec 2019 01:44:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5530A11C1AD
+	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Dec 2019 01:53:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ncBZQJIhR8zZ7ieNJQOIqcRZPSzNBrb3InfhUGHdjRk=; b=aKwFkesjK03Sgn
-	cBxcw/H0sVCaAoKmnstVi7LzjdY+xmamkxnw14hz3498AahxW2r27egkdJeKevFq8oz8TlVLl1W0Q
-	N2i/8n8kE5+xehcGmn3amN0yfR0wgLujIYLvqxjojivj8lqu+Wq3VDjbfximdA6jI/d6fy50V3awy
-	VfGTIQfRL+Wp2MbmruUnAMigBgcxcQ8Xbo+8TgHRbbrNbbiUuaajP2E3lg2H0tajealQYnATu8pth
-	U0ixDKPoLocwcqjDxDV2MKG8jRaxyNqo8ZahL9YApgViMALIrq69DibmiHfEbzwcOqhiYFy4Of942
-	3SWSoCKfzraD9F9PkgZA==;
+	List-Owner; bh=ekEupn8MNSBMOqpkzhah7ajhGFAl3v4U61/hnDAwBng=; b=Br6aefD48niYl+
+	7CcmyBgpILWQpzBNaB5nALa3Vmzh8LfObzWfU3CytyLriIa06IxCVdceoWRch+dTHBqDV3mv1YlOn
+	qRYc/7b57Jh3Nle9m0anXGvmv0igVErA3s/vWwRSEuEhDopsbDeS2vVVs4lnWZLc/YUC2IYsiurLr
+	q93BNnpmSEhtBNlpvjNgmD0VqLyE0/Jb/HkTN1RcxTltAOSdpOtlu8FOp//yxsGA5ET2JCHfGFhH7
+	rYK5MekfK9n5CRWPOGsP/aQIVNTwWLZOaETtL8QHf21EFgfgHAVovjFsaG60vs56zmVLL4tduJZhu
+	a4Qa79rv9o8WWcAc4GXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifCaS-0003gF-Jd; Thu, 12 Dec 2019 00:44:12 +0000
+	id 1ifCj9-0007kv-2k; Thu, 12 Dec 2019 00:53:11 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifCaF-0003XK-V3; Thu, 12 Dec 2019 00:44:01 +0000
+ id 1ifCiw-0007ae-7R; Thu, 12 Dec 2019 00:52:59 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 753E11FB;
- Wed, 11 Dec 2019 16:43:54 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8AAB431B;
+ Wed, 11 Dec 2019 16:52:57 -0800 (PST)
 Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E1D0D3F52E;
- Wed, 11 Dec 2019 16:43:53 -0800 (PST)
-Date: Thu, 12 Dec 2019 00:43:52 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D035B3F52E;
+ Wed, 11 Dec 2019 16:52:56 -0800 (PST)
+Date: Thu, 12 Dec 2019 00:52:55 +0000
 From: Andrew Murray <andrew.murray@arm.com>
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Subject: Re: [PATCH] PCI: rockchip: Fix register number offset to program IO
- outbound ATU
-Message-ID: <20191212004347.GD24359@e119886-lin.cambridge.arm.com>
-References: <20191211093450.7481-1-enric.balletbo@collabora.com>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [REGRESSION] PCI v5.5-rc1 breaks google kevin
+Message-ID: <20191212005254.GE24359@e119886-lin.cambridge.arm.com>
+References: <58ce5534-64bd-4b4b-bd60-ed4e0c71b20f@gmail.com>
+ <166f0016-7061-be5c-660d-0499f74e8697@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191211093450.7481-1-enric.balletbo@collabora.com>
+In-Reply-To: <166f0016-7061-be5c-660d-0499f74e8697@arm.com>
 User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_164400_089948_B4974FEC 
-X-CRM114-Status: GOOD (  21.20  )
+X-CRM114-CacheID: sfid-20191211_165258_311646_A995830B 
+X-CRM114-Status: GOOD (  15.48  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,125 +63,86 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, gwendal@chromium.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, dtor@chromium.org,
- Shawn Lin <shawn.lin@rock-chips.com>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, linux-pci@vger.kernel.org,
- Bjorn Helgaas <bhelgaas@google.com>, groeck@chromium.org,
- Collabora Kernel ML <kernel@collabora.com>, bleung@chromium.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Frederick Lawler <fred@fredlawl.com>,
+ linux-pci@vger.kernel.org, Shawn Lin <shawn.lin@rock-chips.com>,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, Vicente Bergas <vicencb@gmail.com>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Mark Brown <broonie@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Mika Westerberg <mika.westerberg@linux.intel.com>,
+ Stefan =?iso-8859-1?Q?M=E4tje?= <stefan.maetje@esd.eu>,
+ linux-arm-kernel@lists.infradead.org, Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 10:34:50AM +0100, Enric Balletbo i Serra wrote:
-> Since commit '62240a88004b ("PCI: rockchip: Drop storing driver private
-> outbound resource data)' the offset calculation is wrong to access the
-> register number to program the IO outbound ATU. The offset should be
-> based on the IORESOURCE_MEM resource size instead of the IORESOURCE_IO
-> size.
-> 
-> This patch fixes the following 'synchronous external abort' bug:
-> 
-> [   15.362128] mwifiex_pcie 0000:01:00.0: enabling device (0000 -> 0002)
-> [   15.369655] mwifiex_pcie: PCI memory map Virt0: 00000000a573ad00 PCI memory map Virt2: 00000000783126c4
-> [   15.381466] Internal error: synchronous external abort: 96000210 [#1] PREEMPT SMP
-> [   15.389965] Modules linked in: mwifiex_pcie(+) mwifiex uvcvideo cfg80211 atmel_mxt_ts videobuf2_vmalloc ...
-> [   15.461095] CPU: 2 PID: 269 Comm: systemd-udevd Not tainted 5.4.0+ #327
-> [   15.461097] Hardware name: Google Kevin (DT)
-> [   15.461101] pstate: 60000005 (nZCv daif -PAN -UAO)
-> [   15.461116] pc : mwifiex_register_dev+0x264/0x3f8 [mwifiex_pcie]
-> [   15.461121] lr : mwifiex_register_dev+0x150/0x3f8 [mwifiex_pcie]
-> [   15.461123] sp : ffff800012073860
-> [   15.461128] x29: ffff800012073860 x28: ffff8000100a2e28
-> [   15.509043] x27: ffff8000118b6210 x26: ffff800008f57458
-> [   15.515055] x25: ffff0000ecfda000 x24: 0000000000000001
-> [   15.521069] x23: ffff0000e9905080 x22: ffff800008f5d000
-> [   15.527082] x21: ffff0000eecea078 x20: ffff0000e9905080
-> [   15.533096] x19: ffff0000eecea000 x18: 0000000000000001
-> [   15.539108] x17: 0000000000000000 x16: 0000000000000000
-> [   15.545118] x15: ffffffffffffffff x14: ffff8000118998c8
-> [   15.551128] x13: ffff000000000000 x12: 0000000000000008
-> [   15.557138] x11: 0101010101010101 x10: ffff7f7fffff7fff
-> [   15.563148] x9 : 0000000000000000 x8 : ffff0000e3c24240
-> [   15.569159] x7 : 0000000000000000 x6 : ffff0000e3c24148
-> [   15.575169] x5 : ffff0000e3c24148 x4 : ffff0000e7975ec8
-> [   15.581178] x3 : 0000000000000001 x2 : 0000000000002b42
-> [   15.587188] x1 : ffff800012c00008 x0 : ffff0000e9905080
-> [   15.593200] Call trace:
-> [   15.595970]  mwifiex_register_dev+0x264/0x3f8 [mwifiex_pcie]
-> [   15.602398]  mwifiex_add_card+0x2f8/0x430 [mwifiex]
-> [   15.607920]  mwifiex_pcie_probe+0x98/0x148 [mwifiex_pcie]
-> [   15.614033]  local_pci_probe+0x3c/0xa0
-> [   15.618275]  pci_device_probe+0x110/0x1a8
-> [   15.622812]  really_probe+0xd4/0x308
-> [   15.626856]  driver_probe_device+0x54/0xe8
-> [   15.631491]  device_driver_attach+0x6c/0x78
-> [   15.636224]  __driver_attach+0x54/0xd0
-> [   15.640465]  bus_for_each_dev+0x70/0xc0
-> [   15.644804]  driver_attach+0x20/0x28
-> [   15.648847]  bus_add_driver+0x178/0x1d8
-> [   15.653186]  driver_register+0x60/0x110
-> [   15.657525]  __pci_register_driver+0x40/0x48
-> [   15.662359]  mwifiex_pcie_init+0x24/0x1000 [mwifiex_pcie]
-> [   15.668469]  do_one_initcall+0x74/0x1a8
-> [   15.672810]  do_init_module+0x50/0x208
-> [   15.677050]  load_module+0x1a78/0x1d18
-> [   15.681290]  __do_sys_finit_module+0xd0/0xe8
-> [   15.686120]  __arm64_sys_finit_module+0x1c/0x28
-> [   15.691247]  el0_svc_common.constprop.2+0x88/0x150
-> [   15.696668]  el0_svc_handler+0x20/0x80
-> [   15.700909]  el0_sync_handler+0x118/0x188
-> [   15.705444]  el0_sync+0x140/0x180
-> [   15.716955] Code: a8c67bfd d65f03c0 f942ac01 91002021 (b9400021)
-> [   15.731548] ---[ end trace 1488ca6d6b162849 ]---
-> 
-> Fixes: 62240a88004b ("PCI: rockchip: Drop storing driver private outbound resource data)
-> Reported-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-> Suggested-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-> ---
-> 
->  drivers/pci/controller/pcie-rockchip-host.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
-> index d9b63bfa5dd7..94af6f5828a3 100644
-> --- a/drivers/pci/controller/pcie-rockchip-host.c
-> +++ b/drivers/pci/controller/pcie-rockchip-host.c
-> @@ -834,10 +834,12 @@ static int rockchip_pcie_cfg_atu(struct rockchip_pcie *rockchip)
->  	if (!entry)
->  		return -ENODEV;
->  
-> +	/* store the register number offset to program RC io outbound ATU */
+On Thu, Dec 12, 2019 at 12:12:56AM +0000, Robin Murphy wrote:
+> Hi Vicente,
+> =
 
-Thanks for this fix. I've read your previous thread with Lorenzo and I can see
-that this restores the logic of the original code.
+> On 2019-12-11 11:38 pm, Vicente Bergas wrote:
+> > Hi,
+> > since v5.5-rc1 the google kevin chromebook does not boot.
+> > Git bisect reports 5e0c21c75e8c PCI/ASPM: Remove pcie_aspm_enabled()
+> > unnecessary locking
+> > as the first bad commit.
+> > =
 
-If I understand correctly - the intent of offset is to ensure that when we
-start programming the ATU for IO, we don't overwrite the windows we've already
-written for MEMORY. Thus we need to calculate offset for the old (MEMORY) size.
+> > In order to revert it from v5.5-rc1 i had to also revert some dependenc=
+ies:
+> > 5e0c21c75e8c08375a69710527e4a921b897cb7e
+> > aff5d0552da4055da3faa27ee4252e48bb1f5821
+> > 35efea32b26f9aacc99bf07e0d2cdfba2028b099
+> > 687aaf386aeb551130f31705ce40d1341047a936
+> > 72ea91afbfb08619696ccde610ee4d0d29cf4a1d
+> > 87e90283c94c76ee11d379ab5a0973382bbd0baf
+> > After reverting all of this, still no luck.
+> > So, either the results of git bisect are not to be trusted, or
+> > there are more bad commits.
+> > =
 
-Acked-by: Andrew Murray <andrew.murray@arm.com>
+> > By "does not boot" i mean that the display fails to start and
+> > the display is the only output device, so debugging is quite difficult.
+> =
+
+> Assuming it's a manifestation of the same PCI breakage that Enric and
+> Lorenzo figured out, there's a proposed fix here:
+> https://lkml.org/lkml/2019/12/11/199
+
+It's likely that any PCI driver that uses PCI IO with that controller will
+suffer the same fate.
+
+Vicente - can you try the patch that has been proposed and verify it fixes
+the issue for you?
 
 Thanks,
 
 Andrew Murray
 
-> +	offset = size >> 20;
-> +
->  	size = resource_size(entry->res);
->  	pci_addr = entry->res->start - entry->offset;
->  
-> -	offset = size >> 20;
->  	for (reg_no = 0; reg_no < (size >> 20); reg_no++) {
->  		err = rockchip_pcie_prog_ob_atu(rockchip,
->  						reg_no + 1 + offset,
-> -- 
-> 2.20.1
-> 
+> =
+
+> Robin.
+> =
+
+> > v5.5-rc1 as is (reverting no commits at all) works fine when disabling =
+PCI:
+> > # CONFIG_PCI is not set
+> > =
+
+> > Regards,
+> >  =A0Vicente.
+> > =
+
+> > =
+
+> > _______________________________________________
+> > Linux-rockchip mailing list
+> > Linux-rockchip@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
 _______________________________________________
 Linux-rockchip mailing list
