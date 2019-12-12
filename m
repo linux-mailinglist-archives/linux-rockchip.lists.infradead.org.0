@@ -2,68 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 665DC11CB53
-	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Dec 2019 11:54:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC6AC11CBA2
+	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Dec 2019 11:59:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=El9SHUP034ICNvW7NZyy+Y6zylAMIJvpKM0NsFZPYjU=; b=r0+KTK4wjLQw+a
-	Ewh5YVJwZdC9kFLGBMOJrvFSBGd2uMuUJSUyxmJdHPklwg80LhNer6El0hLr1SdG9Anehdipq9ayd
-	CkcxakSBXSQGBf7UHFsshZsjP4//G46l2K5vC2fnOQZ0gsDxSEQKFRk7CkMJwOoeLqvMnh27T+/pb
-	3GeAkk2DhK/EQuG1Zqc9ri9aaurfOuCISPnT068RVFeHlJTY+nAzHoFQ5z48EJmuZn5sXY6ZkwJVE
-	ONeKS7Xd0ewA9vXvJtez0HYAGYBP+LXJWJ5EK8gOArLpDPadEhLKKbGNh3m4wUYzSdDJPGtkBncg1
-	KW9RQjUMzs2OMFOIL1UQ==;
+	List-Owner; bh=7/9O3312Ti7jXgCU9yZymwRXyUBbricCB9r2QT1AVvM=; b=cACFjJsgMbhmFS
+	mrI7HFRwOA/WKDCfyzkeD8BREuf4CHcuQkt+v6t027tJJ2WBSMdEh1haKKkbiWDKsT6kg4jy30S7y
+	v85YMqDT9+5wvy7E0oTMqvS+hb6E6hIgFBmmg6QRzQT4zciZ7Ni7/iuc2qPv20WFJS/Vfj5OlHBug
+	88cizDWgDxFFgSH7BeombjNhPEIMigucmYimd2pmhEjH93XLpbQeDBHNepT+NNpSoA7hNhzOoP7zY
+	4e/h5EXIXpRZR1OVbX0n0/Sf6HS6D9+FzOywH9Ggvyc7ERAGNA7wwKeebuu4/LUWTRhEMh5sDVJ8v
+	/h2GYgiEV1GZauQ9ZoSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifM6e-0000wJ-Ts; Thu, 12 Dec 2019 10:54:04 +0000
-Received: from lb3-smtp-cloud9.xs4all.net ([194.109.24.30])
+	id 1ifMC8-0003Yk-BW; Thu, 12 Dec 2019 10:59:44 +0000
+Received: from mout.web.de ([217.72.192.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifM6V-0000nr-40; Thu, 12 Dec 2019 10:53:56 +0000
-Received: from [IPv6:2001:983:e9a7:1:1c4a:480a:7ba1:9c65]
- ([IPv6:2001:983:e9a7:1:1c4a:480a:7ba1:9c65])
- by smtp-cloud9.xs4all.net with ESMTPA
- id fM6PiYxUsGyJwfM6QixnEp; Thu, 12 Dec 2019 11:53:51 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
- t=1576148031; bh=ROStJouVqhVsP5J9ci4Y267yUDuKeyjWctRsCaVL77w=;
- h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
- Subject;
- b=C1L5vTPGU3fPI3fOyh1BRDJRLCYLHA4je8t88FmEFBe9e1BEbdj1j6rPUm9nCXPFk
- U4gdtrvy7Wa7/j5D+AUWy+5l7Y+laknWOqw8AENKVGhFVDlK+lt1C0C+5fEfFpas/y
- 0zVENOp/g1+PyUX7m4hMSEXOjaCWp24/cRlt0m9owhW9xloX0bLC/V6W9e0pAySGAk
- zDvgR2LPoUX9/RMlkT0WOudlFxBy6asaiR8/QfBut9pFcr3GeB+HnExkAq6vQhr06B
- 0oRXaLtXmoOhnuRX24POEWY3+ysqqiO+CJQUmBoySx2Cdx3rrHeQZnvMKiiRWS9W9M
- ISYUMcfdi3BYQ==
-Subject: Re: [PATCH v2] media: rockchip/rga: fix potential use after free
-To: Pan Bian <bianpan2016@163.com>, Jacob Chen <jacob-chen@iotwrt.com>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Heiko Stuebner <heiko@sntech.de>
-References: <1573460902-18563-1-git-send-email-bianpan2016@163.com>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <5c170dd7-17b4-cef6-4f77-253aabb6ebbe@xs4all.nl>
-Date: Thu, 12 Dec 2019 11:53:49 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1ifMBr-0003PJ-TK; Thu, 12 Dec 2019 10:59:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1576148357;
+ bh=keZMm0sbIdLHuKg2ERn1DL+jHDL/cWURqxHw0Hu/p0A=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=aA2fwg0bcpAURby5zURwZamBbgaMsktdVD6saMWtZuaoSVSoxO+4Pyc/8/4jwG2BV
+ 1ejH7AznNmia67ny1h1ssx6Z01fXY6xjLka1D3VvwWmLBWQBKtVZPYE+UNnwhMb01M
+ aznF098xbi3gBtnkhRv3JV/5OHkbvFg4yxJQnTPM=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from [192.168.43.108] ([89.204.139.166]) by smtp.web.de (mrweb101
+ [213.165.67.124]) with ESMTPSA (Nemesis) id 0M3Bhz-1hpaVu0SM3-00szdL; Thu, 12
+ Dec 2019 11:59:17 +0100
+Subject: Re: [PATCH v2 0/9] brcmfmac: add support for BCM4359 SDIO chipset
+To: Kalle Valo <kvalo@codeaurora.org>
+References: <20191211235253.2539-1-smoch@web.de>
+ <0101016ef97cf6b5-2552a5e4-12de-4616-94d6-b63d9c795ed6-000000@us-west-2.amazonses.com>
+From: Soeren Moch <smoch@web.de>
+Message-ID: <1daadfe0-5964-db9b-818c-6e4c75ac6a69@web.de>
+Date: Thu, 12 Dec 2019 11:59:13 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <1573460902-18563-1-git-send-email-bianpan2016@163.com>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfKNLwEa+Bj8J5UZXJfZGi1ZFzAkRCEfeLRfCvHKHgOKNi9pfN/d0LU7IAMsjFKbRJjTDbht7MfbsOAksr/GZcvjMbBd1pLRVupXd0+xx6/J4u6bWT92F
- qUX2HT9t+q4mkxYjAFi/McW72YgOQYidciIdqKk0/mD2BRymPC64wttN1A/2fLaf3+BdCv7Yg/9MQWSHTt9GVsnWmIQpPdYXQ1aiMk1JCfS5cR5f6rKzn0FJ
- ZwvD3/yBukNZ0lzIugc5yvn8EOW9HYrqriON9kBqSs/H4XgN3Wti1X2jJBK/IIdvrXTNG3nnladv4uohwV4Qubs2WAdk9ruqW+l748Bvwfj1zzWYwUzfA4qi
- aj9Hm6mMdHb5HipgWPPc31WlUnaJhiaJgVgr17tnKfxn0CxsEt7xa1+mDAVBlhyQeEXw5cyQY8Tv0ddCsjJAKYd18AkaM3milWF+rvvK2iLI1TSEvNv84wvs
- tZMLYfcL3MUnzpFOQZul48Jqr7ZLQrg6IeEMlWmoDAduRDhfxy9Z/oRQcalmCpUuytj6QEJpdo/TxFD3EpDtMJzQeyZQAmjvMwXgBg==
+In-Reply-To: <0101016ef97cf6b5-2552a5e4-12de-4616-94d6-b63d9c795ed6-000000@us-west-2.amazonses.com>
+Content-Language: en-GB
+X-Provags-ID: V03:K1:X1VXSbz0SVvWmuA9nSQSUNDgrZCFbxASzXxbWmYUVAixHdeM2ap
+ 5jmIj84J8M/PXs/xv2KPflfJqUt1QNjJv5GJgJoLMLXyLiCjk0/Q3dLXeNg9mRE5SgJDMrp
+ lMtjGHcpWNZZDPCuLLeuS1tRI3rHa+cB30xT2NU+YYo77xPbDHOD+6iyqP03+Hh+I890Zym
+ DY/WgF90Ef1JOL5NUpYVA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:nlKbbsRR7i0=:E+Q+EdeHtqjknVu7hYEK3S
+ euzrTVn88dNTLxE8S8Bmf9etZpvuQ+ug2P/QlYtYWAvl6n5LeLFWYDUeZP8pMmhaW7kqTgs3V
+ lT4dRgdn+ljCmrzCfjae5wbBHgUiv94nXEYCLSyRbUNi0w9+hMrjcobzp0HP8SZ3BaHb/Y/bS
+ p1M8vXBKf3J17rBwRBwldk++//LFDOwBMSH1NJ1dl8wVua+01mQftvDogUSvv9JjSS7f/3URL
+ Q6NNd7m+Umlw4wjz3wBbUDrFis01Cx6GzsDc/CVo0oNcUctbNrkFtmrbrNhcP32+zgg0SJsDR
+ KjRIASeSNRRQKvnUhdNpwDvGaxz0d67FjGG9tg9L6T0wri4W+osqi7/S7CVq6P6ilteV9EY5j
+ Joh3ig7b0psa4p8iR0vdKRjujfAtljo2MvB9JySRM6g6Jzy6p/4mBL2TswUxHssyzVdJhadEr
+ VOnFagxMXcJD6/Bt6qkqk1sc4VBXHLE+y7mUvlcq8X1yxEE+GP1IWTOEHyFpJQVlgcxHf/bH4
+ ezYtSPRp/55TUrUQsEULFDJIBHwKtLN0n2nWB2rc0xL1vDkVWCUGIiqtWUJlCQbvmxradRvzf
+ 3IhC9nMdlUiwiq1J4IrSYRrI05627W4XAqLE9sCyQjbXTxaXvuiif5sQJYARAM46Qw8Pu8hQR
+ q3ota1qXM6Vim/0XSoZGFcX0puCW+hfgx3ih4lat3dZhzbycUMyG/ZUg6AcEs9BAQAlAjB4/r
+ qPYF5YDnohZEXMHPsLhIS14+NFQSPr9K5JzQZdix4QrggGcD1nU+RBXrKvzPuJuSz/Ybf8Bng
+ OUCNE3nwUMqKDKMqwPPyONgbRFxmnsXYxBXSNlEZhQNzyQmpBWTzuMJyxgdxpcRGgWLhErbf3
+ E17Z5TA64ZVTUX7PByWYChmwPpkDvVvJGdLGIw76hrdxs18tLy/57MY4TWunoefJS2TMplt15
+ DGNeV1Bdaee9swC9w1PWtu03rqkXFIz2g1T0XDwqpxW6BnzbGdG3/xjCKiutsAEmKPfFvr71g
+ egloZRpK3i3UQ1CEJn39vavZWYF/sxNfCwvz1OHafER/+PYgKcGXhZxgvj0xMTTiw/u+GQWuo
+ sQvb15A1OdGWKK+cwMPCVOdWDSZc/XjeKojhCrY2891siO4IVsFQA24CScAYCM1YLSG+CVO47
+ IPuicuo1OFqGIe23wysjRGfQsXbfw1Tm9KiqGCTFrymq0rv6+ZAnb+WDhf96GNsGKctmuxT7C
+ lsN0L8y2/vEhLWXhXuLVXJE2s7y783NfGiXTdYQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_025355_332075_E8604258 
-X-CRM114-Status: GOOD (  17.19  )
+X-CRM114-CacheID: sfid-20191212_025928_247583_964D0109 
+X-CRM114-Status: GOOD (  12.71  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.30 listed in list.dnswl.org]
+ low trust [217.72.192.78 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (smoch[at]web.de)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,73 +102,61 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: brcm80211-dev-list.pdl@broadcom.com, Heiko Stuebner <heiko@sntech.de>,
+ netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ brcm80211-dev-list@cypress.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 11/11/19 9:28 AM, Pan Bian wrote:
-> The variable vga->vfd is an alias for vfd. Therefore, releasing vfd and
-> then unregister vga->vfd will lead to a use after free bug. In fact, the
-> free operation and the unregister operation are reversed.
-> 
-> Signed-off-by: Pan Bian <bianpan2016@163.com>
-> ---
-> v2: update the goto label names consistently
-> ---
->  drivers/media/platform/rockchip/rga/rga.c | 8 ++++----
->  1 file changed, 4 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/media/platform/rockchip/rga/rga.c b/drivers/media/platform/rockchip/rga/rga.c
-> index e9ff12b6b5bb..d2297abafc69 100644
-> --- a/drivers/media/platform/rockchip/rga/rga.c
-> +++ b/drivers/media/platform/rockchip/rga/rga.c
-> @@ -863,7 +863,7 @@ static int rga_probe(struct platform_device *pdev)
->  	if (IS_ERR(rga->m2m_dev)) {
->  		v4l2_err(&rga->v4l2_dev, "Failed to init mem2mem device\n");
->  		ret = PTR_ERR(rga->m2m_dev);
-> -		goto unreg_video_dev;
-> +		goto rel_vdev;
->  	}
->  
->  	pm_runtime_get_sync(rga->dev);
-> @@ -892,7 +892,7 @@ static int rga_probe(struct platform_device *pdev)
->  	ret = video_register_device(vfd, VFL_TYPE_GRABBER, -1);
->  	if (ret) {
->  		v4l2_err(&rga->v4l2_dev, "Failed to register video device\n");
-> -		goto rel_vdev;
-> +		goto unreg_dev;
->  	}
->  
->  	v4l2_info(&rga->v4l2_dev, "Registered %s as /dev/%s\n",
-> @@ -900,10 +900,10 @@ static int rga_probe(struct platform_device *pdev)
->  
->  	return 0;
->  
-> +unreg_dev:
-> +	video_unregister_device(rga->vfd);
+On 12.12.19 10:42, Kalle Valo wrote:
+> Soeren Moch <smoch@web.de> writes:
+>
+>> Add support for the BCM4359 chipset with SDIO interface and RSDB support
+>> to the brcmfmac wireless network driver in patches 1-7.
+>>
+>> Enhance devicetree of the RockPro64 arm64/rockchip board to use an
+>> AP6359SA based wifi/bt combo module with this chipset in patches 8-9.
+>>
+>>
+>> Chung-Hsien Hsu (1):
+>>   brcmfmac: set F2 blocksize and watermark for 4359
+>>
+>> Soeren Moch (5):
+>>   brcmfmac: fix rambase for 4359/9
+>>   brcmfmac: make errors when setting roaming parameters non-fatal
+>>   brcmfmac: add support for BCM4359 SDIO chipset
+>>   arm64: dts: rockchip: RockPro64: enable wifi module at sdio0
+>>   arm64: dts: rockchip: RockPro64: hook up bluetooth at uart0
+>>
+>> Wright Feng (3):
+>>   brcmfmac: reset two D11 cores if chip has two D11 cores
+>>   brcmfmac: add RSDB condition when setting interface combinations
+>>   brcmfmac: not set mbss in vif if firmware does not support MBSS
+>>
+>>  .../boot/dts/rockchip/rk3399-rockpro64.dts    | 50 +++++++++++---
+>>  .../broadcom/brcm80211/brcmfmac/bcmsdh.c      |  8 ++-
+>>  .../broadcom/brcm80211/brcmfmac/cfg80211.c    | 68 +++++++++++++++----
+>>  .../broadcom/brcm80211/brcmfmac/chip.c        | 54 ++++++++++++++-
+>>  .../broadcom/brcm80211/brcmfmac/chip.h        |  1 +
+>>  .../broadcom/brcm80211/brcmfmac/pcie.c        |  2 +-
+>>  .../broadcom/brcm80211/brcmfmac/sdio.c        | 17 +++++
+>>  include/linux/mmc/sdio_ids.h                  |  2 +
+>>  8 files changed, 176 insertions(+), 26 deletions(-)
+> Just to make sure we are on the same page, I will apply patches 1-7 to
+> wireless-drivers-next and patches 8-9 go to some other tree? And there
+> are no dependencies between the brcmfmac patches and dts patches?
+>
+Yes, this also is my understanding. I'm glad if you are fine with
+patches 1-7.
+Heiko will pick up patches 8-9 later for linux-rockchip independently.
+And if we need another round of review for patches 8-9, I think we don't
+need to bother linux-wireless with this.
 
-This is wrong. If video_register_device fails, then you call video_device_release,
-not video_unregister_device. The unreg_video_dev case is bogus and should be removed.
-
-Instead you need a v4l2_m2m_release() call to clean up the v4l2_m2m_init() result
-if there is an error.
-
-Regards,
-
-	Hans
-
->  rel_vdev:
->  	video_device_release(vfd);
-> -unreg_video_dev:
-> -	video_unregister_device(rga->vfd);
->  unreg_v4l2_dev:
->  	v4l2_device_unregister(&rga->v4l2_dev);
->  err_put_clk:
-> 
-
+Thanks,
+Soeren
 
 _______________________________________________
 Linux-rockchip mailing list
