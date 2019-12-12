@@ -2,83 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E199811C9B2
-	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Dec 2019 10:42:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B50D611CA86
+	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Dec 2019 11:22:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H86k/HJ+qtI2hi0ztUyCqQmfxzvgHqfypT3J+aaOZ/o=; b=umz4OwzRyZMQsg
-	d6FX5kOGT6EW3qj1XRjLlYTv97LemYEiRV1nhgUg7miz8vCVXMmr8hxy6OJLmMx6J/cO1nqV+1m4n
-	8KPJ3FbaASYKD7dcjqBiY+h0jk53Y0f4kQfCo2vQBprJ6mpR5ExbG+Z1EiocICu2lUuh2EV15hd86
-	nIPeFMDNS1TPUf/hrDaUKIYaIbhei6X1O/qr7tnRVAZf/BvtIn/mwg3Pii46uXARKlVwkZZlZsbQG
-	htTEPBWRQ2OpxwktvuG31vQuBTSIRdVd0ZhKBxWYyva2HM/WPlIG6MbzMOw3+g6TDrTgxUW//7ln1
-	4OYfBc1I8+EtZ+k3yaHg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=cWDGRX7eYxFl8kIbzJsLHIKiIYN5ynebQcYsvdKQn2w=; b=VPMUPh1Y8OgxkKZBOXz5UHy/6
+	kKLfScQehK1pLavsbC25PHUzjVnBs/2KEBQt1ZjZr0MxF8tpc1W+WLmRJ3+G9ImQXBxq0ONq4ZXnL
+	b6zmvO3vIkBUfQuFaKjf6i3IZ7Eto2eDYyZVJUfK2SP/Pl308bltevqhTQq0uONpCwkTdET4SiM/S
+	YtPRWc+M76J44R3paiJLfUhHpRmDt5/WRA4KzBGMTZrJAUrQgHHaAHTA0kqMYOuJCqskfTpB5DPTz
+	dQQDCewb3Dl5wqnR4eTLjtrchL/5WyEfHw7RcmQs7d4XXAJ0cLaNUBfwq5Hk736URquQEOviUZ4l5
+	i5hhLiDxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifKzR-0002a4-25; Thu, 12 Dec 2019 09:42:33 +0000
-Received: from a27-18.smtp-out.us-west-2.amazonses.com ([54.240.27.18])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifKzM-0002Z7-Vj; Thu, 12 Dec 2019 09:42:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
- s=zsmsymrwgfyinv5wlfyidntwsjeeldzt; d=codeaurora.org; t=1576143746;
- h=From:To:Cc:Subject:References:Date:In-Reply-To:Message-ID:MIME-Version:Content-Type;
- bh=i0FaJubDuJMbNyKma+XSBPHXvIJXRnamxfGjizAg5l4=;
- b=joBdw2U47skEzTWQsIBsuU18qjWbgQ3l4GW+wCBhj3pBO6hPKy4NETmO4/e24qV5
- Z3xYhCTcWhCgoaFyV91UhaWHBIvTwrB7csVhPbaPZjUIxBwaNlhmx+SMsdd/OqbcENx
- GWWqeTxaAOUyBG4aD/u4YKvYYkpZ2w/8KU0OusVM=
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
- s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1576143746;
- h=From:To:Cc:Subject:References:Date:In-Reply-To:Message-ID:MIME-Version:Content-Type:Feedback-ID;
- bh=i0FaJubDuJMbNyKma+XSBPHXvIJXRnamxfGjizAg5l4=;
- b=O9a3ks7ehxWurNXvWOBcxj/zIsgvXsxuK8UptAX+yeQOCfA4JjjHYCbZYkFDMTAU
- YMVvBh7QeOCKhUbbqEX1puFMbS2llvG13J4gEwR9wUkq5EPJVVhtyzzYKKcU1JtfUJO
- BnpXXBKoVClmv1dN1Rv9nwSxkxlKKt6uqMiXBsAU=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=ham autolearn_force=no version=3.4.0
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 06A7FC433CB
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=kvalo@codeaurora.org
-From: Kalle Valo <kvalo@codeaurora.org>
-To: Soeren Moch <smoch@web.de>
-Subject: Re: [PATCH v2 0/9] brcmfmac: add support for BCM4359 SDIO chipset
+	id 1ifLcS-00030t-Du; Thu, 12 Dec 2019 10:22:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifLcC-0002nK-3C; Thu, 12 Dec 2019 10:22:37 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 64FED328;
+ Thu, 12 Dec 2019 02:22:35 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CF0D23F6CF;
+ Thu, 12 Dec 2019 02:22:33 -0800 (PST)
+Subject: Re: [PATCH v2 9/9] arm64: dts: rockchip: RockPro64: hook up bluetooth
+ at uart0
+To: Soeren Moch <smoch@web.de>, Kalle Valo <kvalo@codeaurora.org>,
+ Heiko Stuebner <heiko@sntech.de>
 References: <20191211235253.2539-1-smoch@web.de>
-Date: Thu, 12 Dec 2019 09:42:26 +0000
-In-Reply-To: <20191211235253.2539-1-smoch@web.de> (Soeren Moch's message of
- "Thu, 12 Dec 2019 00:52:44 +0100")
-Message-ID: <0101016ef97cf6b5-2552a5e4-12de-4616-94d6-b63d9c795ed6-000000@us-west-2.amazonses.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
+ <20191211235253.2539-10-smoch@web.de>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <a0ad4723-db85-0eda-efb5-f0c9a2a6aec3@arm.com>
+Date: Thu, 12 Dec 2019 10:22:27 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-SES-Outgoing: 2019.12.12-54.240.27.18
-Feedback-ID: 1.us-west-2.CZuq2qbDmUIuT3qdvXlRHZZCpfZqZ4GtG9v3VKgRyF0=:AmazonSES
+In-Reply-To: <20191211235253.2539-10-smoch@web.de>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_014229_044968_BAD54033 
-X-CRM114-Status: GOOD (  13.97  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191212_022236_182691_8AE4DA94 
+X-CRM114-Status: GOOD (  18.88  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [54.240.27.18 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,55 +66,105 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: brcm80211-dev-list.pdl@broadcom.com, Heiko Stuebner <heiko@sntech.de>,
- netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- brcm80211-dev-list@cypress.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: brcm80211-dev-list.pdl@broadcom.com, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, brcm80211-dev-list@cypress.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Soeren Moch <smoch@web.de> writes:
+Hi Soeren,
 
-> Add support for the BCM4359 chipset with SDIO interface and RSDB support
-> to the brcmfmac wireless network driver in patches 1-7.
->
-> Enhance devicetree of the RockPro64 arm64/rockchip board to use an
-> AP6359SA based wifi/bt combo module with this chipset in patches 8-9.
->
->
-> Chung-Hsien Hsu (1):
->   brcmfmac: set F2 blocksize and watermark for 4359
->
-> Soeren Moch (5):
->   brcmfmac: fix rambase for 4359/9
->   brcmfmac: make errors when setting roaming parameters non-fatal
->   brcmfmac: add support for BCM4359 SDIO chipset
->   arm64: dts: rockchip: RockPro64: enable wifi module at sdio0
->   arm64: dts: rockchip: RockPro64: hook up bluetooth at uart0
->
-> Wright Feng (3):
->   brcmfmac: reset two D11 cores if chip has two D11 cores
->   brcmfmac: add RSDB condition when setting interface combinations
->   brcmfmac: not set mbss in vif if firmware does not support MBSS
->
->  .../boot/dts/rockchip/rk3399-rockpro64.dts    | 50 +++++++++++---
->  .../broadcom/brcm80211/brcmfmac/bcmsdh.c      |  8 ++-
->  .../broadcom/brcm80211/brcmfmac/cfg80211.c    | 68 +++++++++++++++----
->  .../broadcom/brcm80211/brcmfmac/chip.c        | 54 ++++++++++++++-
->  .../broadcom/brcm80211/brcmfmac/chip.h        |  1 +
->  .../broadcom/brcm80211/brcmfmac/pcie.c        |  2 +-
->  .../broadcom/brcm80211/brcmfmac/sdio.c        | 17 +++++
->  include/linux/mmc/sdio_ids.h                  |  2 +
->  8 files changed, 176 insertions(+), 26 deletions(-)
+On 11/12/2019 11:52 pm, Soeren Moch wrote:
+> With enabled wifi support (required for firmware loading) for the
+> Ampak AP6359SA based wifi/bt combo module we now also can enable
+> the bluetooth part.
+> 
+> Suggested-by: Heiko Stuebner <heiko@sntech.de>
+> Signed-off-by: Soeren Moch <smoch@web.de>
+> ---
+> changes in v2:
+> - new patch
+> 
+> Cc: Heiko Stuebner <heiko@sntech.de>
+> Cc: Kalle Valo <kvalo@codeaurora.org>
+> Cc: linux-wireless@vger.kernel.org
+> Cc: brcm80211-dev-list.pdl@broadcom.com
+> Cc: brcm80211-dev-list@cypress.com
+> Cc: netdev@vger.kernel.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-rockchip@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> ---
+>   .../boot/dts/rockchip/rk3399-rockpro64.dts    | 29 ++++++++++++++++++-
+>   1 file changed, 28 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> index 9fa92790d6e0..94cc462e234d 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> @@ -561,6 +561,20 @@
+>   };
+> 
+>   &pinctrl {
+> +	bt {
+> +		bt_enable_h: bt-enable-h {
+> +			rockchip,pins = <0 RK_PB1 RK_FUNC_GPIO &pcfg_pull_none>;
+> +		};
+> +
+> +		bt_host_wake_l: bt-host-wake-l {
+> +			rockchip,pins = <0 RK_PA4 RK_FUNC_GPIO &pcfg_pull_down>;
+> +		};
+> +
+> +		bt_wake_l: bt-wake-l {
+> +			rockchip,pins = <2 RK_PD3 RK_FUNC_GPIO &pcfg_pull_none>;
+> +		};
+> +	};
+> +
+>   	buttons {
+>   		pwrbtn: pwrbtn {
+>   			rockchip,pins = <0 RK_PA5 RK_FUNC_GPIO &pcfg_pull_up>;
+> @@ -729,8 +743,21 @@
+> 
+>   &uart0 {
+>   	pinctrl-names = "default";
+> -	pinctrl-0 = <&uart0_xfer &uart0_cts>;
+> +	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
+>   	status = "okay";
+> +
+> +	bluetooth {
+> +		compatible = "brcm,bcm43438-bt";
+> +		clocks = <&rk808 1>;
+> +		clock-names = "extclk";
 
-Just to make sure we are on the same page, I will apply patches 1-7 to
-wireless-drivers-next and patches 8-9 go to some other tree? And there
-are no dependencies between the brcmfmac patches and dts patches?
+Is this right? Comparing the binding and the naming on the schematics, 
+it seems more likely that this might be the LPO clock rather than the 
+TXCO clock.
 
--- 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+Robin.
+
+> +		device-wakeup-gpios = <&gpio2 RK_PD3 GPIO_ACTIVE_HIGH>;
+> +		host-wakeup-gpios = <&gpio0 RK_PA4 GPIO_ACTIVE_HIGH>;
+> +		shutdown-gpios = <&gpio0 RK_PB1 GPIO_ACTIVE_HIGH>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&bt_host_wake_l &bt_wake_l &bt_enable_h>;
+> +		vbat-supply = <&vcc3v3_sys>;
+> +		vddio-supply = <&vcc_1v8>;
+> +	};
+>   };
+> 
+>   &uart2 {
+> --
+> 2.17.1
+> 
+> 
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
