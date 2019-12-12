@@ -2,56 +2,96 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B2CC11D93D
-	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Dec 2019 23:18:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3180211D9FF
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 00:30:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1pe4K/bCXtjN4Ln4xglxEM3HQDXOSDmHYJ0jD4EddIU=; b=dNzuY2iuKPtwT7
-	ALCeScA/DtfhGRjh/2DKdbvMfCr8uvu+XWHf8jEgbXtqY4qiy2ybPxQfIv88WYRAcWdYYjuHbWiTq
-	nTdgXpVscxEDj3dluXRvW4hLz6v846aOMarAlq262lsDTwKbhKATHDYn6e02vKC+BS3hxZglpCZTP
-	rUfL3Ug6M2viWd4xTOKgz4f8oOhoH1eFsP2R5fzmiy5MQiSJcipKmGw0JgJ/8FaLfktGqnEz/k6gk
-	HrLPy9vsTWuOCKK5y++VlFS4755abalT6sU1UvNHxQjGYe2w6neHbgN3YQ/c0ptGszDZ//PSbLgHm
-	FeAaM8zr/wBRUcZKulZQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:Reply-To:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date
+	:Message-Id:References:Subject:In-reply-to:To:From:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=q9RZobMKDcRQ7jf36BRnIvNwLJdsa4GfCXpATuBEMhU=; b=DyV15G3AcKHKlbJkgLHXHeB2iX
+	w9RlkiuR4VXfUC2ynV6K7+5HEs3HPT5YddixHmb0Yh2eW+DIsjzO9x6quYNG7IFEqPZxwrKGZB/nR
+	h6LQu5km9KRgnBSsJ1P88va/j39YxZYXfmse80x4WruWGficUsaGwuo2/xZR1l0rIsX4edfRAJHQh
+	2/zu63gao1DcF/QXp0qz9pT4MW7LTMAp/f4BDpdNib9IaFLnVcEw4pljUVE2KSLFQZcn4xCaQ8o+o
+	htU168Hf0h49gQwwo/B/O7NtKyOvHLBLfyyGw8VfJTKIPqM0AN+nHINN8T5qtn1vcLhMX6gD0BCH3
+	UAbsKpjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifWnN-0005OM-T4; Thu, 12 Dec 2019 22:18:54 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifWmz-00053V-HE; Thu, 12 Dec 2019 22:18:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DB618328;
- Thu, 12 Dec 2019 14:18:27 -0800 (PST)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 539803F52E;
- Thu, 12 Dec 2019 14:18:27 -0800 (PST)
-Date: Thu, 12 Dec 2019 22:18:25 +0000
-From: Andrew Murray <andrew.murray@arm.com>
-To: Bjorn Helgaas <helgaas@kernel.org>
-Subject: Re: [PATCH] PCI: rockchip: Fix register number offset to program IO
- outbound ATU
-Message-ID: <20191212221824.GK24359@e119886-lin.cambridge.arm.com>
-References: <20191211093450.7481-1-enric.balletbo@collabora.com>
- <20191212212936.GA13645@google.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191212212936.GA13645@google.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+	id 1ifXuA-0003kw-Cx; Thu, 12 Dec 2019 23:29:58 +0000
+Received: from mout.gmx.net ([212.227.15.19])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifXu6-0003kA-DM; Thu, 12 Dec 2019 23:29:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1576193386;
+ bh=gtNiGOMaG+hrEDMSnjfH4TheHPrFaKjLS4DfvxSWQJ4=;
+ h=X-UI-Sender-Class:From:To:CC:In-reply-to:Subject:Reply-to:
+ References:Date;
+ b=SYROU9ETIvP5wm/aUkZXv30zCbFjChykztWSkke0CbCHwhC53OxPu1rkVmkikl+qi
+ hih6PfRlB4qoDBhJmywBm2O1F51TtXsvyN7cvTJ5Bc3jbeq7sOf50M+8W9Wi4KdlYU
+ hKqhurSuymWjvsSn1nwL7CMw0cyd/IpLAjX7HFbY=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from corona.crabdance.com ([173.228.106.20]) by mail.gmx.com
+ (mrgmx004 [212.227.17.190]) with ESMTPSA (Nemesis) id
+ 1N3se2-1hfmIb1iwi-00zjUB; Fri, 13 Dec 2019 00:29:46 +0100
+Received: by corona.crabdance.com (Postfix, from userid 1001)
+ id E09FC6E85603; Thu, 12 Dec 2019 15:28:59 -0800 (PST)
+From: Stefan Schaeckeler <schaecsn@gmx.net>
+To: amit.kucheria@verdurent.com
+In-reply-to: <CAHLCerOHjAEEA1BpUqPdZvFwHMy11SqC+ZtjdFyManu7iOpBXA@mail.gmail.com>
+ (message from Amit Kucheria on Thu, 12 Dec 2019 13:58:52 +0530)
+Subject: Re: [RESEND PATCH] thermal: rockchip: enable hwmon
+References: <20191212061702.BFE2D6E85603@corona.crabdance.com>
+ <CAHLCerOHjAEEA1BpUqPdZvFwHMy11SqC+ZtjdFyManu7iOpBXA@mail.gmail.com>
+Message-Id: <20191212232859.E09FC6E85603@corona.crabdance.com>
+Date: Thu, 12 Dec 2019 15:28:59 -0800 (PST)
+X-Provags-ID: V03:K1:DwsCsXOuYOhJw8V89QklRZ9osgYgHSIQVBXq4pgiRwhkFFmltBi
+ 3kcHnOCi6FRrCnoXmJm90yFyU6q+EVM3zS/paOZUwCbEjkicKJDTl5vaAIgAP+dE0J7/f13
+ TI34F5ggu2CqpTP5XDijGLe2GuipTAa5rtvO4v9gt5QK1hGJHu3pZlAzlPrN6TKfVizJ/Qk
+ vSBkzo1D2fH+o/uW3R1dw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:B/jaoG6pxyc=:m7iFg/yWoVMNeBlPMGdFNd
+ PY6SNewXxM1s6K5Arb8uvuHEQdAP18gNudbqORo5F23TWR/WJUxzA1UtNu3AII2JRXnco1yP9
+ 34E6Cnm1PP53ryOE+uq9HjbrpfehMMscaG3MZBNMcc3Zgn4Rc18fRsL0hsO+u9XL3fe23yKPJ
+ OZZYBvMynzgA3u5ysEcRwA1vn+2hG0dszBEIt4cpfY7+4hDY+90iNpVbakRPsbyZzRpTGNWoU
+ 6p0WD3BrfWNXLocPrjW9RhCzWYIQPprmNYmQVuVkygvF6If4z7EREYIvVgZ/CJoCxpqAp4WZ7
+ Ox6lH2ZuCxJJMLctljuOsNdsYy3sG6hw61KDw95Qr6Ls45uoo67LD0WGXX0oC+5shUeWS4TYu
+ 9xmPTJG4koOIMz/3EZb7W8D9tdqmtwS6ciXJ2vPyLEUTA7TvPqITm4XBGHFsQRnKnvZP3MX4J
+ JCXVRtf0xCZcSjtiYScV271xpHQSB4vXpresTWxFQz5KcfDt0CxsMPnNzKw5F0WKkg5C7Oikp
+ CZtwRerVP3yiYk3Gg6LasW4esN+RGOSMbA4m+UE2Ywr3fghXsw+oSq8KlRk964qrl+1FnESta
+ HajOPrIF+/KNsyIXh+PCM5v2DczQcrQ6zQ1uciBHmqO5oZjPT6er2HCYpiOoMxGXoJxaOdt/C
+ sdLuC5tK6PSfZgVTdZDu0WJrshGUnGlUpRYdqdIG76bKFFd0kHFVJYfoP5TW3IF6h2DXwBTrv
+ qKZf74Qv0jYdYI52FcCW1fqhcRs77Dp6c7+vmK1yrbRfPkzFWmajQ+4/7qY5geIMgf1lAg/11
+ 3nVXSxdV0CBKiFTHI2fexaxrM7FFym7dcx/4yYFRbq4AIzmuBn9x0a5EHn5Gob5N08nhJRY+2
+ nU4ZvtXJ9bS0wD7w6dEzdUMoIQrYBraeg3quxdz0Uy1kVR+uznUXu9X4hpjKd5QOvNCrX1l2t
+ TxKRoc8STqNtg53tX5ZbckBNykUlx3ys7hB4MFwBhJymQ6tRuvq14HTve65dhAjozMZ/EVX3F
+ DPww8RJdp91u9nJGV68FU10GcQlq4uFG5lqYTkFCPonxAVMu5MD0RYvHb/bj9AU8vwadn2h9h
+ pL87dBWLNCJOeeJz50kSTPAD9zvDj2J0lei3KhX4GLeLCzjcPQGmonkOMrfGAZw6nLpDzfvPC
+ GFQwe7yvcIdSSF3XammtNlbqWI7GBvu9JKcHXHpCMw33JgV0IuYVhs0DlEFx2slndXIJ3VoDr
+ 4Xxp4DHhycRuYKL89sd0EIbC6e8RzRIE1VqN8Ct1D7sTpr83r5BivjKLwxBI=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_141829_693437_E753B392 
-X-CRM114-Status: GOOD (  26.41  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191212_152954_784000_D721C129 
+X-CRM114-Status: UNSURE (   6.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [212.227.15.19 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (schaecsn[at]gmx.net)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,134 +104,49 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, gwendal@chromium.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, dtor@chromium.org,
- Shawn Lin <shawn.lin@rock-chips.com>, linux-kernel@vger.kernel.org,
- Vicente Bergas <vicencb@gmail.com>, linux-rockchip@lists.infradead.org,
- linux-pci@vger.kernel.org,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>, groeck@chromium.org,
- Collabora Kernel ML <kernel@collabora.com>, bleung@chromium.org,
+Reply-To: schaecsn@gmx.net
+Cc: heiko@sntech.de, linux-pm@vger.kernel.org, daniel.lezcano@linaro.org,
+ linux-kernel@vger.kernel.org, edubezval@gmail.com,
+ linux-rockchip@lists.infradead.org, rui.zhang@intel.com,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, Dec 12, 2019 at 03:29:36PM -0600, Bjorn Helgaas wrote:
-> [+cc Vicente]
-> 
-> On Wed, Dec 11, 2019 at 10:34:50AM +0100, Enric Balletbo i Serra wrote:
-> > Since commit '62240a88004b ("PCI: rockchip: Drop storing driver private
-> > outbound resource data)' the offset calculation is wrong to access the
-> > register number to program the IO outbound ATU. The offset should be
-> > based on the IORESOURCE_MEM resource size instead of the IORESOURCE_IO
-> > size.
+Hello Amit,
+
+> On Thu, Dec 12, 2019 at 11:47 AM Stefan Schaeckeler <schaecsn@gmx.net> wrote:
 > >
-> > ...
-> 
-> > Fixes: 62240a88004b ("PCI: rockchip: Drop storing driver private outbound resource data)
-> > Reported-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-> > Suggested-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-> 
-> Thanks, I applied this with Vicente's reported-by and tested-by and
-> Andrew's ack to for-linus for v5.5.
-> 
-> I'm confused about "msg_bus_addr".  It is computed as
-> "entry->res->start - entry->offset + <other stuff>".  A struct
-> resource contains a CPU physical address, and adding entry->offset
-> gets you a PCI bus address.  But later rockchip_pcie_probe() calls
-> devm_ioremap(rockchip->msg_bus_addr), which expects a CPU physical
-> address.  So it looks like we're passing a PCI bus address when we
-> should be passing a CPU physical address.  What am I missing?
+> > By default, of-based thermal drivers do not enable hwmon.
+> > Explicitly enable hwmon for both, the soc and gpu temperature
+> > sensor.
+>
+> Is there any reason you need to expose this in hwmon?
 
-With a quick glance it does look like that is incorrect.
+Why hwmon:
 
-It's likely to have never been a problem because the only DT user
-has an identity map as its MEM range:
+The soc embedds temperature sensors and hwmon is the standard way to expose
+sensors.
 
-ranges = <0x83000000 0x0 0xfa000000 0x0 0xfa000000 0x0 0x1e00000...
+Sensors exposed by hwmon are automagically found by userland clients. Users
+want to run sensors(1) and expect them to show up.
 
-It doesn't help that it is called msg_bus_addr and not msg_cpu_addr.
 
-Thanks,
+Why in rockchip_thermal.c:
 
-Andrew Murray
+drivers/thermal/ provides a high-level hwmon api in thermal_hwmon.[hc] which is
+used by at least these thermal drivers: rcar_gen3_thermal.c, rcar_thermal.c,
+st/stm_thermal.c, and broadcom/bcm2835_thermal.c. I want to hook up
+rockchip_thermal.c exactly the same way.
 
-> 
-> For the future, I do think we should consider:
-> 
->   - Renaming rockchip_pcie_prog_ob_atu() and
->     rockchip_pcie_prog_ib_atu() so they match
->     dw_pcie_prog_outbound_atu() and dw_pcie_prog_inbound_atu().
-> 
->   - Changing the rockchip_pcie_prog_ob_atu() and
->     rockchip_pcie_prog_ib_atu() interfaces so they take a 64-bit
->     pci_addr/cpu_addr instead of 32-bit lower_addr and upper_addr,
->     also to follow the dw examples.
-> 
->   - Renaming the rockchip_pcie_cfg_atu() local "offset" to "index" or
->     similar since it's a register number, not a memory or I/O space
->     offset.
-> 
->   - Reworking the rockchip_pcie_cfg_atu() loops.  Currently there are
->     three different ways to compute the register number.  The
->     msg_bus_addr computation is split between the top and bottom of
->     the function and uses "reg_no" left over from the IO loop and
->     "offset" left from the memory loop.  Maybe something like this:
-> 
->       rockchip_pcie_prog_inbound_atu(rockchip, 2, 32 - 1, 0);
-> 
->       atu_idx = 1;
-> 
->       mem = resource_list_first_type(&bridge->windows, IORESOURCE_MEM);
->       mem_entries = resource_size(mem->res) >> 20;
->       mem_pci_addr = mem->res->start - mem->offset;
->       for (i = 0; i < mem_entries; i++, atu_idx++)
->         rockchip_pcie_prog_outbound_atu(rockchip, atu_idx,
->                                         AXI_WRAPPER_MEM_WRITE, 20 - 1,
->                                         mem_pci_addr + (i << 20));
-> 
->       io = resource_list_first_type(&bridge->windows, IORESOURCE_IO);
->       io_entries = resource_size(entry->res) >> 20;
->       io_pci_addr = io->res->start - io->offset;
->       for (i = 0; i < io_entries; i++, atu_idx++)
->         rockchip_pcie_prog_outbound_atu(rockchip, atu_idx,
->                                         AXI_WRAPPER_IO_WRITE, 20 - 1,
->                                         io_pci_addr + (i << 20));
-> 
->       rockchip_pcie_prog_outbound_atu(rockchip, atu_idx,
->                                       AXI_WRAPPER_NOR_MSG, 20 - 1, 0);
->       rockchip->msg_bus_addr = mem_pci_addr +
->         (mem_entries + io_entries) << 20);
-> 
-> > ---
-> > 
-> >  drivers/pci/controller/pcie-rockchip-host.c | 4 +++-
-> >  1 file changed, 3 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
-> > index d9b63bfa5dd7..94af6f5828a3 100644
-> > --- a/drivers/pci/controller/pcie-rockchip-host.c
-> > +++ b/drivers/pci/controller/pcie-rockchip-host.c
-> > @@ -834,10 +834,12 @@ static int rockchip_pcie_cfg_atu(struct rockchip_pcie *rockchip)
-> >  	if (!entry)
-> >  		return -ENODEV;
-> >  
-> > +	/* store the register number offset to program RC io outbound ATU */
-> > +	offset = size >> 20;
-> > +
-> >  	size = resource_size(entry->res);
-> >  	pci_addr = entry->res->start - entry->offset;
-> >  
-> > -	offset = size >> 20;
-> >  	for (reg_no = 0; reg_no < (size >> 20); reg_no++) {
-> >  		err = rockchip_pcie_prog_ob_atu(rockchip,
-> >  						reg_no + 1 + offset,
-> > -- 
-> > 2.20.1
-> > 
+Apparently, other architectures hook up the cpu temperature sensors to hwmon
+elsewhere. Most seem to do this in hwmon/, e.g. hwmon/coretemp.c. These drivers
+are written from scratch. Utilizing thermal_hwmon.[ch] for chips which have
+already drivers in drivers/thermal/ seems to be more elegant.
+
+ Stefan
 
 _______________________________________________
 Linux-rockchip mailing list
