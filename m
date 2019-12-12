@@ -2,88 +2,68 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCFF211CB3D
-	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Dec 2019 11:47:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 665DC11CB53
+	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Dec 2019 11:54:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0cJ/BYV3P1yYFQIraV8zAsxyVDHryhCR7SAm+CS3bHs=; b=m9MYCVQz/dWDir
-	ynuhmSrlkG8QTj1znbSok9aIIl3r/mesD0qMBDM4LpEdVXYf2uAkdGaYw/AgjVS/Br5lLoQuHPiD4
-	GnQu3Wg16HQskjj19VtlcJxk7Q+vy/q1jurlY8qeExRtAiYUGoR0W9KI3iO9DTNT4n3jF9gqgggBi
-	6lLeL55Uw+pvxxLt5A+JbT2RxqjeXpmkQk5mHPI0jgfRdGh5vnfJ2rsYzNsWdoMSa6XhL3fjdKDW2
-	8Qs3yROUEvd7tkUR1DANgePgoBd2IgO5p5tl1oTx4k039Uz9us6D2YByd0r9VII1y68h72/dI2OYJ
-	UnKdnkRxXvJBDhv8eR2Q==;
+	List-Owner; bh=El9SHUP034ICNvW7NZyy+Y6zylAMIJvpKM0NsFZPYjU=; b=r0+KTK4wjLQw+a
+	Ewh5YVJwZdC9kFLGBMOJrvFSBGd2uMuUJSUyxmJdHPklwg80LhNer6El0hLr1SdG9Anehdipq9ayd
+	CkcxakSBXSQGBf7UHFsshZsjP4//G46l2K5vC2fnOQZ0gsDxSEQKFRk7CkMJwOoeLqvMnh27T+/pb
+	3GeAkk2DhK/EQuG1Zqc9ri9aaurfOuCISPnT068RVFeHlJTY+nAzHoFQ5z48EJmuZn5sXY6ZkwJVE
+	ONeKS7Xd0ewA9vXvJtez0HYAGYBP+LXJWJ5EK8gOArLpDPadEhLKKbGNh3m4wUYzSdDJPGtkBncg1
+	KW9RQjUMzs2OMFOIL1UQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifM0G-00075i-2E; Thu, 12 Dec 2019 10:47:28 +0000
-Received: from mout.web.de ([212.227.17.12])
+	id 1ifM6e-0000wJ-Ts; Thu, 12 Dec 2019 10:54:04 +0000
+Received: from lb3-smtp-cloud9.xs4all.net ([194.109.24.30])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifM0C-00075F-Fc; Thu, 12 Dec 2019 10:47:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1576147629;
- bh=iU0ev7VoC1TijGDuRwLbBpmGPdY4l6wXakXHGIG0OlE=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=XCLwiiEEagsVPHcOL/uDVAZyOVwelM3Mmf+s8rJu111S4kNmasEi4MnhCfyYOhU44
- r57699Z5UhuLNEwD9+MXtCTqyrrym0CJMQruVAKxT2cj+SoFGNviQG2EuoUbqJct1C
- oUEZqZCCIzcGVFA2/PJ9pc6sGMk/YlBmAK94bZfw=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.43.108] ([89.204.139.166]) by smtp.web.de (mrweb103
- [213.165.67.124]) with ESMTPSA (Nemesis) id 0M6UxL-1hmGH82HNL-00yUj1; Thu, 12
- Dec 2019 11:47:09 +0100
-Subject: Re: [PATCH v2 9/9] arm64: dts: rockchip: RockPro64: hook up bluetooth
- at uart0
-To: Robin Murphy <robin.murphy@arm.com>, Kalle Valo <kvalo@codeaurora.org>,
- Heiko Stuebner <heiko@sntech.de>
-References: <20191211235253.2539-1-smoch@web.de>
- <20191211235253.2539-10-smoch@web.de>
- <a0ad4723-db85-0eda-efb5-f0c9a2a6aec3@arm.com>
-From: Soeren Moch <smoch@web.de>
-Message-ID: <b859b9f1-2d89-ddef-df26-724ac4ffb088@web.de>
-Date: Thu, 12 Dec 2019 11:47:06 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1ifM6V-0000nr-40; Thu, 12 Dec 2019 10:53:56 +0000
+Received: from [IPv6:2001:983:e9a7:1:1c4a:480a:7ba1:9c65]
+ ([IPv6:2001:983:e9a7:1:1c4a:480a:7ba1:9c65])
+ by smtp-cloud9.xs4all.net with ESMTPA
+ id fM6PiYxUsGyJwfM6QixnEp; Thu, 12 Dec 2019 11:53:51 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
+ t=1576148031; bh=ROStJouVqhVsP5J9ci4Y267yUDuKeyjWctRsCaVL77w=;
+ h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
+ Subject;
+ b=C1L5vTPGU3fPI3fOyh1BRDJRLCYLHA4je8t88FmEFBe9e1BEbdj1j6rPUm9nCXPFk
+ U4gdtrvy7Wa7/j5D+AUWy+5l7Y+laknWOqw8AENKVGhFVDlK+lt1C0C+5fEfFpas/y
+ 0zVENOp/g1+PyUX7m4hMSEXOjaCWp24/cRlt0m9owhW9xloX0bLC/V6W9e0pAySGAk
+ zDvgR2LPoUX9/RMlkT0WOudlFxBy6asaiR8/QfBut9pFcr3GeB+HnExkAq6vQhr06B
+ 0oRXaLtXmoOhnuRX24POEWY3+ysqqiO+CJQUmBoySx2Cdx3rrHeQZnvMKiiRWS9W9M
+ ISYUMcfdi3BYQ==
+Subject: Re: [PATCH v2] media: rockchip/rga: fix potential use after free
+To: Pan Bian <bianpan2016@163.com>, Jacob Chen <jacob-chen@iotwrt.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Heiko Stuebner <heiko@sntech.de>
+References: <1573460902-18563-1-git-send-email-bianpan2016@163.com>
+From: Hans Verkuil <hverkuil@xs4all.nl>
+Message-ID: <5c170dd7-17b4-cef6-4f77-253aabb6ebbe@xs4all.nl>
+Date: Thu, 12 Dec 2019 11:53:49 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <a0ad4723-db85-0eda-efb5-f0c9a2a6aec3@arm.com>
-Content-Language: en-GB
-X-Provags-ID: V03:K1:GxvXISq/vQUw0CF4n7qCFX0ucOQQ/WrciDDXrMEuGYWZVSa/9hB
- QAPsZtpo3t9v0XTThIaCt5DvRpmp3fB8lWb//T5QodTKvZBcSVje+4mohTMLZVqN14UT3pS
- 7KHQIMGBpf7mjeu1cNFW5zYEmU4IgvkoM+2RAsdoSGfHlZ5dlnc9cwEZ1igGGrszaSoUP4z
- Om2pt6sOQlrqUGzy7+qTA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:tJ/tdq6fCbM=:+dw/5RxWG7gW0S7c717i5c
- qC/iLBFbuQhEZZoUY63jeayspCCRnlOuPytTsAlvpqNVatg++A2+MLAvjAG8zF3zBVe+Hhqcl
- YNsC5cTWfmNCsMOcMVdDVSGW46PPg3pW3AR7C850a2BlmmYj07PtIw84iCFGFyREwQ0bc9kFJ
- c3QPlG/1cbtv/7AXiRzHXEiqpMthD24Yst0DkfvB8JAWdEcAbVQnoeDHiuY8PxSyfB3hMCIMy
- otycqOrN5n4Av+3ebRscHZ4WOcPL0X9DZxmnW8B30wUv2ei1DQ7hLAesX8KklGAHtG/aMGyrG
- mDNNt8C2Fk2AI4OO7Yud4vFPf8QWWchLzeTzoIBEj/3Krm2p59MNAgr2RHbRVhJZqb+498iKr
- bZzTR4KbPUpmZ96FQ+zi+8h14ZFetc0ukHrepY3eAGXcYTGTMVVdqEp4clUe28GSuafEeeNW5
- I1HXygTosgqvCX64VTQzRxOXOPBFqtpEeYF9ViEwm7NXyQK5RxCpucdcd7Uq1aeosZG3i+F/9
- F/A+7CbF9I2VAZ2aXijdMuXVoKf8cNG2bfGhLkws086VBHDCBNz1GZfU9/p1tjC9XAt8vkRED
- zUuAVdNBpR9oHsfT4/99nHFTeaMK1rUwekofczJXDsCXpgOwQlJuTWEaoz0iU0iva6LL87G72
- vo9TLiBgRMpZRqtEWNKn90/Q5gXWrxMPDiUvFeNtnskT/tISY1yrCO4N2wuiM3cuddKZ74DGR
- TYfGnwGCx3ApOFNz2aqs6KchFirYOCV76JzQtPL7xKMWSbh0tJcZ9xOwgVna5Nt64d/DlyNfa
- 0G3kb0+wCwqahGqe0OOVvSGbecFFZ9c3Bx4VnIdT/yVrxoLNe8jrSSsQpt6EVXlVJOr/TYhwz
- X3Mg4FjBYjBt0uBljQU+I1peJwQ9dv2YS0rc34Oj1VAYc72Pf2bjlWKJ/iWNY5POzGXgMfi03
- Sqp8etxIB5Ir0w3k8oeIfBT1nOMt04uqhRadIq8uHlWbCZxjHO5hGN30CaIr8LEft4ghCv/9H
- alWWN2FexeAEFSz/aqV4oAmraMzBWsN0M+QxgHVMZbOHgNCZL7iVMKFNgNlA/efAUjfVl++2X
- n85ZSqEvUFoJVJvJ1JXvONkqNFdCYgWBpci68KdZi3jiDAGndXMKHvTzcypFLMMfFoDkcD0Ab
- YQ/TQLlCGs50yQTK89k5h881RUrBCZVItewkt1NKp2QWPlxIbyK2iWIPjOci+RbyLOiSgtiA4
- 3Yl5Q5K/y93xVK4y3b/JrFYO9mCnk3w3uPsN7Ow==
+In-Reply-To: <1573460902-18563-1-git-send-email-bianpan2016@163.com>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfKNLwEa+Bj8J5UZXJfZGi1ZFzAkRCEfeLRfCvHKHgOKNi9pfN/d0LU7IAMsjFKbRJjTDbht7MfbsOAksr/GZcvjMbBd1pLRVupXd0+xx6/J4u6bWT92F
+ qUX2HT9t+q4mkxYjAFi/McW72YgOQYidciIdqKk0/mD2BRymPC64wttN1A/2fLaf3+BdCv7Yg/9MQWSHTt9GVsnWmIQpPdYXQ1aiMk1JCfS5cR5f6rKzn0FJ
+ ZwvD3/yBukNZ0lzIugc5yvn8EOW9HYrqriON9kBqSs/H4XgN3Wti1X2jJBK/IIdvrXTNG3nnladv4uohwV4Qubs2WAdk9ruqW+l748Bvwfj1zzWYwUzfA4qi
+ aj9Hm6mMdHb5HipgWPPc31WlUnaJhiaJgVgr17tnKfxn0CxsEt7xa1+mDAVBlhyQeEXw5cyQY8Tv0ddCsjJAKYd18AkaM3milWF+rvvK2iLI1TSEvNv84wvs
+ tZMLYfcL3MUnzpFOQZul48Jqr7ZLQrg6IeEMlWmoDAduRDhfxy9Z/oRQcalmCpUuytj6QEJpdo/TxFD3EpDtMJzQeyZQAmjvMwXgBg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_024724_855669_F4D53179 
-X-CRM114-Status: GOOD (  12.92  )
+X-CRM114-CacheID: sfid-20191212_025355_332075_E8604258 
+X-CRM114-Status: GOOD (  17.19  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.12 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (smoch[at]web.de)
+ low trust [194.109.24.30 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -105,72 +85,75 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: brcm80211-dev-list.pdl@broadcom.com, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, brcm80211-dev-list@cypress.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-CgpPbiAxMi4xMi4xOSAxMToyMiwgUm9iaW4gTXVycGh5IHdyb3RlOgo+IEhpIFNvZXJlbiwKPgo+
-IE9uIDExLzEyLzIwMTkgMTE6NTIgcG0sIFNvZXJlbiBNb2NoIHdyb3RlOgo+PiBXaXRoIGVuYWJs
-ZWQgd2lmaSBzdXBwb3J0IChyZXF1aXJlZCBmb3IgZmlybXdhcmUgbG9hZGluZykgZm9yIHRoZQo+
-PiBBbXBhayBBUDYzNTlTQSBiYXNlZCB3aWZpL2J0IGNvbWJvIG1vZHVsZSB3ZSBub3cgYWxzbyBj
-YW4gZW5hYmxlCj4+IHRoZSBibHVldG9vdGggcGFydC4KPj4KPj4gU3VnZ2VzdGVkLWJ5OiBIZWlr
-byBTdHVlYm5lciA8aGVpa29Ac250ZWNoLmRlPgo+PiBTaWduZWQtb2ZmLWJ5OiBTb2VyZW4gTW9j
-aCA8c21vY2hAd2ViLmRlPgo+PiAtLS0KPj4gY2hhbmdlcyBpbiB2MjoKPj4gLSBuZXcgcGF0Y2gK
-Pj4KPj4gQ2M6IEhlaWtvIFN0dWVibmVyIDxoZWlrb0BzbnRlY2guZGU+Cj4+IENjOiBLYWxsZSBW
-YWxvIDxrdmFsb0Bjb2RlYXVyb3JhLm9yZz4KPj4gQ2M6IGxpbnV4LXdpcmVsZXNzQHZnZXIua2Vy
-bmVsLm9yZwo+PiBDYzogYnJjbTgwMjExLWRldi1saXN0LnBkbEBicm9hZGNvbS5jb20KPj4gQ2M6
-IGJyY204MDIxMS1kZXYtbGlzdEBjeXByZXNzLmNvbQo+PiBDYzogbmV0ZGV2QHZnZXIua2VybmVs
-Lm9yZwo+PiBDYzogbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCj4+IENjOiBs
-aW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCj4+IENjOiBsaW51eC1rZXJuZWxAdmdl
-ci5rZXJuZWwub3JnCj4+IC0tLQo+PiDCoCAuLi4vYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJv
-Y2twcm82NC5kdHPCoMKgwqAgfCAyOSArKysrKysrKysrKysrKysrKystCj4+IMKgIDEgZmlsZSBj
-aGFuZ2VkLCAyOCBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCj4+Cj4+IGRpZmYgLS1naXQg
-YS9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5OS1yb2NrcHJvNjQuZHRzCj4+IGIv
-YXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzOTktcm9ja3BybzY0LmR0cwo+PiBpbmRl
-eCA5ZmE5Mjc5MGQ2ZTAuLjk0Y2M0NjJlMjM0ZCAxMDA2NDQKPj4gLS0tIGEvYXJjaC9hcm02NC9i
-b290L2R0cy9yb2NrY2hpcC9yazMzOTktcm9ja3BybzY0LmR0cwo+PiArKysgYi9hcmNoL2FybTY0
-L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5OS1yb2NrcHJvNjQuZHRzCj4+IEBAIC01NjEsNiArNTYx
-LDIwIEBACj4+IMKgIH07Cj4+Cj4+IMKgICZwaW5jdHJsIHsKPj4gK8KgwqDCoCBidCB7Cj4+ICvC
-oMKgwqDCoMKgwqDCoCBidF9lbmFibGVfaDogYnQtZW5hYmxlLWggewo+PiArwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoCByb2NrY2hpcCxwaW5zID0gPDAgUktfUEIxIFJLX0ZVTkNfR1BJTyAmcGNmZ19w
-dWxsX25vbmU+Owo+PiArwqDCoMKgwqDCoMKgwqAgfTsKPj4gKwo+PiArwqDCoMKgwqDCoMKgwqAg
-YnRfaG9zdF93YWtlX2w6IGJ0LWhvc3Qtd2FrZS1sIHsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKg
-wqAgcm9ja2NoaXAscGlucyA9IDwwIFJLX1BBNCBSS19GVU5DX0dQSU8gJnBjZmdfcHVsbF9kb3du
-PjsKPj4gK8KgwqDCoMKgwqDCoMKgIH07Cj4+ICsKPj4gK8KgwqDCoMKgwqDCoMKgIGJ0X3dha2Vf
-bDogYnQtd2FrZS1sIHsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcm9ja2NoaXAscGlucyA9
-IDwyIFJLX1BEMyBSS19GVU5DX0dQSU8gJnBjZmdfcHVsbF9ub25lPjsKPj4gK8KgwqDCoMKgwqDC
-oMKgIH07Cj4+ICvCoMKgwqAgfTsKPj4gKwo+PiDCoMKgwqDCoMKgIGJ1dHRvbnMgewo+PiDCoMKg
-wqDCoMKgwqDCoMKgwqAgcHdyYnRuOiBwd3JidG4gewo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoCByb2NrY2hpcCxwaW5zID0gPDAgUktfUEE1IFJLX0ZVTkNfR1BJTyAmcGNmZ19wdWxsX3Vw
-PjsKPj4gQEAgLTcyOSw4ICs3NDMsMjEgQEAKPj4KPj4gwqAgJnVhcnQwIHsKPj4gwqDCoMKgwqDC
-oCBwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwo+PiAtwqDCoMKgIHBpbmN0cmwtMCA9IDwmdWFy
-dDBfeGZlciAmdWFydDBfY3RzPjsKPj4gK8KgwqDCoCBwaW5jdHJsLTAgPSA8JnVhcnQwX3hmZXIg
-JnVhcnQwX2N0cyAmdWFydDBfcnRzPjsKPj4gwqDCoMKgwqDCoCBzdGF0dXMgPSAib2theSI7Cj4+
-ICsKPj4gK8KgwqDCoCBibHVldG9vdGggewo+PiArwqDCoMKgwqDCoMKgwqAgY29tcGF0aWJsZSA9
-ICJicmNtLGJjbTQzNDM4LWJ0IjsKPj4gK8KgwqDCoMKgwqDCoMKgIGNsb2NrcyA9IDwmcms4MDgg
-MT47Cj4+ICvCoMKgwqDCoMKgwqDCoCBjbG9jay1uYW1lcyA9ICJleHRjbGsiOwo+Cj4gSXMgdGhp
-cyByaWdodD8gQ29tcGFyaW5nIHRoZSBiaW5kaW5nIGFuZCB0aGUgbmFtaW5nIG9uIHRoZSBzY2hl
-bWF0aWNzLAo+IGl0IHNlZW1zIG1vcmUgbGlrZWx5IHRoYXQgdGhpcyBtaWdodCBiZSB0aGUgTFBP
-IGNsb2NrIHJhdGhlciB0aGFuIHRoZQo+IFRYQ08gY2xvY2suCj4KPiBSb2Jpbi4KT24gc2Vjb25k
-IHRob3VnaHQgSSBoYXZlIHRvIGFncmVlLiBTbyB3ZSBuZWVkIGFub3RoZXIgcm91bmQgb24gdGhp
-cy4KClRoYW5rcyBmb3IgeW91ciByZXZpZXcgYW5kIGJ1ZyByZXBvcnQsClNvZXJlbgo+Cj4+ICvC
-oMKgwqDCoMKgwqDCoCBkZXZpY2Utd2FrZXVwLWdwaW9zID0gPCZncGlvMiBSS19QRDMgR1BJT19B
-Q1RJVkVfSElHSD47Cj4+ICvCoMKgwqDCoMKgwqDCoCBob3N0LXdha2V1cC1ncGlvcyA9IDwmZ3Bp
-bzAgUktfUEE0IEdQSU9fQUNUSVZFX0hJR0g+Owo+PiArwqDCoMKgwqDCoMKgwqAgc2h1dGRvd24t
-Z3Bpb3MgPSA8JmdwaW8wIFJLX1BCMSBHUElPX0FDVElWRV9ISUdIPjsKPj4gK8KgwqDCoMKgwqDC
-oMKgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+ICvCoMKgwqDCoMKgwqDCoCBwaW5jdHJs
-LTAgPSA8JmJ0X2hvc3Rfd2FrZV9sICZidF93YWtlX2wgJmJ0X2VuYWJsZV9oPjsKPj4gK8KgwqDC
-oMKgwqDCoMKgIHZiYXQtc3VwcGx5ID0gPCZ2Y2MzdjNfc3lzPjsKPj4gK8KgwqDCoMKgwqDCoMKg
-IHZkZGlvLXN1cHBseSA9IDwmdmNjXzF2OD47Cj4+ICvCoMKgwqAgfTsKPj4gwqAgfTsKPj4KPj4g
-wqAgJnVhcnQyIHsKPj4gLS0KPj4gMi4xNy4xCj4+Cj4+Cj4+IF9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCj4+IExpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlz
-dAo+PiBMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCj4+IGh0dHA6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAKPj4KCgpfX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBt
-YWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
+On 11/11/19 9:28 AM, Pan Bian wrote:
+> The variable vga->vfd is an alias for vfd. Therefore, releasing vfd and
+> then unregister vga->vfd will lead to a use after free bug. In fact, the
+> free operation and the unregister operation are reversed.
+> 
+> Signed-off-by: Pan Bian <bianpan2016@163.com>
+> ---
+> v2: update the goto label names consistently
+> ---
+>  drivers/media/platform/rockchip/rga/rga.c | 8 ++++----
+>  1 file changed, 4 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/media/platform/rockchip/rga/rga.c b/drivers/media/platform/rockchip/rga/rga.c
+> index e9ff12b6b5bb..d2297abafc69 100644
+> --- a/drivers/media/platform/rockchip/rga/rga.c
+> +++ b/drivers/media/platform/rockchip/rga/rga.c
+> @@ -863,7 +863,7 @@ static int rga_probe(struct platform_device *pdev)
+>  	if (IS_ERR(rga->m2m_dev)) {
+>  		v4l2_err(&rga->v4l2_dev, "Failed to init mem2mem device\n");
+>  		ret = PTR_ERR(rga->m2m_dev);
+> -		goto unreg_video_dev;
+> +		goto rel_vdev;
+>  	}
+>  
+>  	pm_runtime_get_sync(rga->dev);
+> @@ -892,7 +892,7 @@ static int rga_probe(struct platform_device *pdev)
+>  	ret = video_register_device(vfd, VFL_TYPE_GRABBER, -1);
+>  	if (ret) {
+>  		v4l2_err(&rga->v4l2_dev, "Failed to register video device\n");
+> -		goto rel_vdev;
+> +		goto unreg_dev;
+>  	}
+>  
+>  	v4l2_info(&rga->v4l2_dev, "Registered %s as /dev/%s\n",
+> @@ -900,10 +900,10 @@ static int rga_probe(struct platform_device *pdev)
+>  
+>  	return 0;
+>  
+> +unreg_dev:
+> +	video_unregister_device(rga->vfd);
+
+This is wrong. If video_register_device fails, then you call video_device_release,
+not video_unregister_device. The unreg_video_dev case is bogus and should be removed.
+
+Instead you need a v4l2_m2m_release() call to clean up the v4l2_m2m_init() result
+if there is an error.
+
+Regards,
+
+	Hans
+
+>  rel_vdev:
+>  	video_device_release(vfd);
+> -unreg_video_dev:
+> -	video_unregister_device(rga->vfd);
+>  unreg_v4l2_dev:
+>  	v4l2_device_unregister(&rga->v4l2_dev);
+>  err_put_clk:
+> 
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
