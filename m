@@ -2,96 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BBD011C5E4
-	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Dec 2019 07:18:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAEAD11C833
+	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Dec 2019 09:29:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	Subject:To:From:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=K7QeParfo2TuboPZbkPibLvozbjrk8oskDu3fVXTwHQ=; b=Jd1fGuXneHl+YR
-	EugnDkb4twUm4WlyT/1zhiE9hgZkGdqV4LcqUlPHpphjk7kKK1g6p3ejume9IJ5IlGtO7RfIaDhOE
-	vBc2/RucCGasl+EDCjGKBu85T74K+yeGwgh2P02jtWdCUpbO4zauSA/I9MSd26nDrhe4vylZ9l179
-	exZ1xEi6cIsxHwqLGO8Gf1Wlvk7Dl7FBaDKIyYHlSNwWxKNVd+xkUYm22uXZxq9CJaif7d8wEwpfO
-	O8kLDktX5efSVxIaxjOdO6TmL3/6bPao/oYlSZWV9CeMaJ9p6bdqy8hBpv/HY6isezhKIdmz8Loe7
-	lG3W7kRdsvY4WGqSyghw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WVdqSeKK5EXTSHaYM1CioAYoUw6xdP3gL1QBe5bcWAc=; b=nlbLQLEB0IwKP9
+	dKN7taxsnAVxjVjd2tMFmcfXVYbc1hI2R/qqDF3tvY9pXmEG38KR4wcMdXAhz1nneK/SADbXGINH5
+	DRQUmFNe8fUMGGACOkSVoHas+4wXMne6bwxPIlcee5DEx+xxN4vOPT7LL0iCr7WJbWllfRRS56xZ6
+	W60gBp7GSRj3ILZnKVY/VLJkjR7/RGhA5UB5lQKFkK0IuGZmPxKmYxS6hJAd/g3k6wceAeukBmWWW
+	ZbDGwI4LahsKoXHbIfOGu+GK+XGJA95hhr4DDmpNrdhxW624kaxheumRFDdZdvfvYW3Mw+zX7DXeC
+	dxkfZT2LFUJ2QM/bohxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifHnX-0000JM-ED; Thu, 12 Dec 2019 06:18:03 +0000
-Received: from mout.gmx.net ([212.227.15.15])
+	id 1ifJqY-0004nT-1c; Thu, 12 Dec 2019 08:29:18 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifHnN-0000Cc-2T; Thu, 12 Dec 2019 06:17:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1576131461;
- bh=KL73YRrT7LLHVsznmPTHt/klCRSoc1CVMKSMBDmBo6I=;
- h=X-UI-Sender-Class:From:To:Subject:Reply-to:Date;
- b=Tpc3ARXxO+7BOveLypF/SVr8mN0m+AgXaOl5a/zuwIZlfLxkuOvwxPmPNtZTI8OmQ
- nDRZjvPdrzU/X4npI+hF0EyGJwd5ehZq1GlZxO5AxGFBzuVzlmxWmnPGmnlGHdYwb1
- HYnuKO8tdTiqRXa1KWzBzRHzBv9dUZucJV/kZpbQ=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from corona.crabdance.com ([173.228.106.20]) by mail.gmx.com
- (mrgmx004 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 1MKbgE-1iQujo3OOq-00KwkB; Thu, 12 Dec 2019 07:17:41 +0100
-Received: by corona.crabdance.com (Postfix, from userid 1001)
- id BFE2D6E85603; Wed, 11 Dec 2019 22:17:02 -0800 (PST)
-From: Stefan Schaeckeler <schaecsn@gmx.net>
-To: Zhang Rui <rui.zhang@intel.com>, Eduardo Valentin <edubezval@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Amit Kucheria <amit.kucheria@verdurent.com>, Heiko Stuebner <heiko@sntech.de>,
- linux-pm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [RESEND PATCH] thermal: rockchip: enable hwmon
-Message-Id: <20191212061702.BFE2D6E85603@corona.crabdance.com>
-Date: Wed, 11 Dec 2019 22:17:02 -0800 (PST)
-X-Provags-ID: V03:K1:kW48YWv2at+CtoZ29KlwFzvfojnYn+Z2kTPJCrfxCVA5Rh90eXV
- aM0gPv8hwKLUJ2iDVrZbWVOWIqDS4KVTl38TNMvJV32rVUullnP6dlrbKMYeIcndtHucyom
- MSUCZDZU+Xu4+kEiA13utXDD/2NBQynNtjXJeU09nBD+OkbsLck4KpO2RGz+HrIqDiZSCgj
- fKIBwKd4KkB87Z94yizRg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:8lU53RZXNGc=:sHRJzAdIaFHRXzs8mtVvzs
- f6InwGCn/l5BZMSCxMyTXAhaoZ7dS9F6qxUBsgCvr3SSROiqGwCvMl5Qe9plRrS0XFICiO4lr
- dyCIIF/Qk0ByJPzjOC/m+CA203m/i2Qu0Qve5T9s/k/MCXqsov2QFvZ6na17H1rYprH91OSe8
- g68xOoJIFDDEJDGSI4v8DA3hg0MbacLSrkpP4GUeJEOpXWFUT9NAIyHSa+iIIH+SCUQn/doqy
- BZzt4R6NvLndpk3bNnjgYWOgVqUakjsPdsacPEQOQk10BpQhiqYwi+lMIITxLyty2F/v0Y/Ww
- rnnobEPvXAZsbYJV3e9j5dpWQCCOeAqIGeKbgavxyNXA8DP+gIodRZc05eoovlGpaHXuAza82
- fyhnX9zAg3YvOPcYglyMFHBlGytIgwyKBIPld5+cqtUJ0HH5vQF1JQKwHSQSEX0zBIEQO/rdB
- 4dKC3BWAkssdJrJXpRsAR0Dil7A3WBWpxtsBdRy4t04OuhlBKAnmdh6cjHwR5pWTDPIt7zWYU
- v1CQwY1XY15Cu+upIUnbPmxEx+DCYxYwr5xn++HpuCvY5w/bukbqw/S0k66g1icYQm/seM0Fa
- 3ziE1uH00dSP1q7pQ/3MQ5NvPyMEFGQSQMBt4ZtHb6ByFABsEAK+pRD8a7YtkI7P+IxDkK9d5
- IFpBK4OryV0yYSWKuqxS3y6aoTYOKN8Qi36v3Ji9dGZiwOf5e9fxwvnHbBADNqd6LclyTRrVJ
- svdqUX0ikEm9/aCN/mGbnzEunSwrd2m0EX0z6taP58gWYUqJ5WWSl3RSDW28B5FUB+A4pbR5i
- U7d9h33aiVTOG/ffx3xnq8skbj9jCt2VVwk7i1OXlFXD0Dt0532yR//0rifOqE5bp3h89p5BC
- WeB2dzdi/yFIfVfUaSMhB8h9M48KK9D/IKtiUKaIxBA6tTVKzSwHk7NucxKfoI70T0p5QUfho
- obCWmGjdX/KP25fo3T3fFJXPQqyn6ERXmeToAhWnq1s+GgT77LuWVWRuXuSWbJCTWTB6bdI97
- HI7hCrFDAhnhgJJ9bjjD7/qMnBpk5/GjlNuzPZBOQpIgZCx85l7Fm58MU+aViFSzB4fcP9glY
- uftxD3KXeknjou9mPmBr3Xbg3xsY+mb0fN1zgs5z1VzvJhIVAja8gZernjZ/rNZk9jsg4bD5B
- vG+uAdgqho/YkxhO6smQ4268B3zsB2vUx5EXqIBVHhrpZ+0fs9WmbFoWTI3nF9EbwivaZZq7A
- tRfztC7BrfN3WKncCMrtszSwpEAy4cdLGOJFu0nXcrIKT+YanoRLnHNl8dNk=
+ id 1ifJqV-0004lU-4z
+ for linux-rockchip@lists.infradead.org; Thu, 12 Dec 2019 08:29:16 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id g15so986294vsf.1
+ for <linux-rockchip@lists.infradead.org>; Thu, 12 Dec 2019 00:29:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=verdurent-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=XgxCnRiTfja1L+B6Xn0JuIUwn0x0QrtKVBtLGuTEljg=;
+ b=gVztby/BHQJ9PZBKa3D0z7om1skfkDzVsuhBRH82k9/hXT9aRdfZ6KGtjWHOutFleq
+ uF1WSfJ8tUrou3WPu+hDg5If+SNIO2Ufb6a+9pPgHemfEqDmvBGYc79gx+x1N0w8G0b1
+ l1mEnz/PBcmVnZppUrc7t6d4FNIcEk6K6weCBa6/VehlKZP6Ob5UcMo1iORqF65cBM/c
+ Iv41qh9jbeSX7tFgULRbU1bGCyznTNPQrmyJqJoywgSrOx082uCOuDCRoTAmQ/wANuxW
+ GK/IyyFBIHd5E9Li4OslsbEGWt4pWiS40vkZpksi5880AnShIACe0dpD/onBAzjlkhvw
+ nHlg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=XgxCnRiTfja1L+B6Xn0JuIUwn0x0QrtKVBtLGuTEljg=;
+ b=K/muK/2iDzZxQe4j4Wy+huk7kQCbYFmWp5xsLYSgdQuiECl/h9940M9JMyBNuIM638
+ yS1zPD+exvmPuGIwMPljC1mfqV9yVQRm3BFA88Njd+h7RCumMCx0IrPEXmjYPCOnHPfb
+ zxjo9DLs/UirSG6JRuCoHIboMBrigGaboPP2G0KDhtw/J6p2vLE2pi6HiAra/Ol6QsKN
+ yUqYciEp4Pznzk6c8wykPh3MAwmsZgx9YBfRxf1N8iaJ3sb5IXAV6SKTxYX6xiWvuM9e
+ 3m8Z9+WWIMfirbG7nLg4ZFPePLZXcwFKcAXeZ5W2n37D4vRhRs8Jm8G3LeP83nSrmfR+
+ fTRA==
+X-Gm-Message-State: APjAAAW5Pdf1eumXluyBolHYBf/9T0T9Rv9jdEz4rk5PdS7pMf0hapCB
+ ZTV3j+0vv1JkSVVgmhh071N5rVwhnRatOiS3v8YOCg==
+X-Google-Smtp-Source: APXvYqxwBVwLqxEvOxIflOhsGsMSkYb6lfxJt1tosG6/eY6xpGyjucXTvEj741coTmOODqT107Q/DNxtylHdDzMIdYA=
+X-Received: by 2002:a67:7acd:: with SMTP id v196mr5961661vsc.95.1576139344363; 
+ Thu, 12 Dec 2019 00:29:04 -0800 (PST)
+MIME-Version: 1.0
+References: <20191212061702.BFE2D6E85603@corona.crabdance.com>
+In-Reply-To: <20191212061702.BFE2D6E85603@corona.crabdance.com>
+From: Amit Kucheria <amit.kucheria@verdurent.com>
+Date: Thu, 12 Dec 2019 13:58:52 +0530
+Message-ID: <CAHLCerOHjAEEA1BpUqPdZvFwHMy11SqC+ZtjdFyManu7iOpBXA@mail.gmail.com>
+Subject: Re: [RESEND PATCH] thermal: rockchip: enable hwmon
+To: schaecsn@gmx.net
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_221753_443246_7A905B63 
-X-CRM114-Status: UNSURE (   9.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191212_002915_195629_62D38D77 
+X-CRM114-Status: GOOD (  15.26  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (schaecsn[at]gmx.net)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.15.15 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.15 listed in list.dnswl.org]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,64 +87,71 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Reply-To: schaecsn@gmx.net
-MIME-Version: 1.0
+Cc: Heiko Stuebner <heiko@sntech.de>, Linux PM list <linux-pm@vger.kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ LKML <linux-kernel@vger.kernel.org>, Eduardo Valentin <edubezval@gmail.com>,
+ linux-rockchip@lists.infradead.org, Zhang Rui <rui.zhang@intel.com>,
+ lakml <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-By default, of-based thermal drivers do not enable hwmon.
-Explicitly enable hwmon for both, the soc and gpu temperature
-sensor.
+On Thu, Dec 12, 2019 at 11:47 AM Stefan Schaeckeler <schaecsn@gmx.net> wrote:
+>
+> By default, of-based thermal drivers do not enable hwmon.
+> Explicitly enable hwmon for both, the soc and gpu temperature
+> sensor.
 
-Signed-off-by: Stefan Schaeckeler <schaecsn@gmx.net>
+Is there any reason you need to expose this in hwmon?
 
----
- drivers/thermal/rockchip_thermal.c | 12 +++++++++++-
- 1 file changed, 11 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/thermal/rockchip_thermal.c b/drivers/thermal/rockchip_thermal.c
-index 343c2f5c5a25..e47c60010259 100644
---- a/drivers/thermal/rockchip_thermal.c
-+++ b/drivers/thermal/rockchip_thermal.c
-@@ -19,6 +19,8 @@
- #include <linux/mfd/syscon.h>
- #include <linux/pinctrl/consumer.h>
-
-+#include "thermal_hwmon.h"
-+
- /**
-  * If the temperature over a period of time High,
-  * the resulting TSHUT gave CRU module,let it reset the entire chip,
-@@ -1321,8 +1323,15 @@ static int rockchip_thermal_probe(struct platform_device *pdev)
-
- 	thermal->chip->control(thermal->regs, true);
-
--	for (i = 0; i < thermal->chip->chn_num; i++)
-+	for (i = 0; i < thermal->chip->chn_num; i++) {
- 		rockchip_thermal_toggle_sensor(&thermal->sensors[i], true);
-+		thermal->sensors[i].tzd->tzp->no_hwmon = false;
-+		error = thermal_add_hwmon_sysfs(thermal->sensors[i].tzd);
-+		if (error)
-+			dev_warn(&pdev->dev,
-+				 "failed to register sensor %d with hwmon: %d\n",
-+				 i, error);
-+	}
-
- 	platform_set_drvdata(pdev, thermal);
-
-@@ -1344,6 +1353,7 @@ static int rockchip_thermal_remove(struct platform_device *pdev)
- 	for (i = 0; i < thermal->chip->chn_num; i++) {
- 		struct rockchip_thermal_sensor *sensor = &thermal->sensors[i];
-
-+		thermal_remove_hwmon_sysfs(sensor->tzd);
- 		rockchip_thermal_toggle_sensor(sensor, false);
- 	}
-
---
-2.24.0
-
+> Signed-off-by: Stefan Schaeckeler <schaecsn@gmx.net>
+>
+> ---
+>  drivers/thermal/rockchip_thermal.c | 12 +++++++++++-
+>  1 file changed, 11 insertions(+), 1 deletion(-)
+>
+> diff --git a/drivers/thermal/rockchip_thermal.c b/drivers/thermal/rockchip_thermal.c
+> index 343c2f5c5a25..e47c60010259 100644
+> --- a/drivers/thermal/rockchip_thermal.c
+> +++ b/drivers/thermal/rockchip_thermal.c
+> @@ -19,6 +19,8 @@
+>  #include <linux/mfd/syscon.h>
+>  #include <linux/pinctrl/consumer.h>
+>
+> +#include "thermal_hwmon.h"
+> +
+>  /**
+>   * If the temperature over a period of time High,
+>   * the resulting TSHUT gave CRU module,let it reset the entire chip,
+> @@ -1321,8 +1323,15 @@ static int rockchip_thermal_probe(struct platform_device *pdev)
+>
+>         thermal->chip->control(thermal->regs, true);
+>
+> -       for (i = 0; i < thermal->chip->chn_num; i++)
+> +       for (i = 0; i < thermal->chip->chn_num; i++) {
+>                 rockchip_thermal_toggle_sensor(&thermal->sensors[i], true);
+> +               thermal->sensors[i].tzd->tzp->no_hwmon = false;
+> +               error = thermal_add_hwmon_sysfs(thermal->sensors[i].tzd);
+> +               if (error)
+> +                       dev_warn(&pdev->dev,
+> +                                "failed to register sensor %d with hwmon: %d\n",
+> +                                i, error);
+> +       }
+>
+>         platform_set_drvdata(pdev, thermal);
+>
+> @@ -1344,6 +1353,7 @@ static int rockchip_thermal_remove(struct platform_device *pdev)
+>         for (i = 0; i < thermal->chip->chn_num; i++) {
+>                 struct rockchip_thermal_sensor *sensor = &thermal->sensors[i];
+>
+> +               thermal_remove_hwmon_sysfs(sensor->tzd);
+>                 rockchip_thermal_toggle_sensor(sensor, false);
+>         }
+>
+> --
+> 2.24.0
+>
 
 _______________________________________________
 Linux-rockchip mailing list
