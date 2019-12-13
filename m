@@ -2,82 +2,97 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8500D11DD30
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 05:40:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5642E11DFB4
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 09:48:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hwnzUlBctDo1m+utKcchoT99fzcyLVH/qWs6q8/oTA0=; b=YBw7ouwV51e2oe
-	RckZSIxWxp0NnoVMaxFZ+vks/PrSI5kTuRucZ3faKqSSMXY0mpC0gYwSfnitRfZnH8tz5z1LV63cK
-	4WzOIRkPJf/3WKosU1D0W+A7rKklWUUSTSeIxhL5ksOwms0ve2OM0hMaU0hjevANLQdBf5XDbQonH
-	+aHpKVYyRwOTVJ15D481m924WwOAdBFwKfAzOiW1ocA5r8UzszsJcz64ihP8J1Xrks37A/404Qy18
-	mOI7t8vO0THwCmNdwo/pmXIUAvv+164dv8/jQhv3yHCnM0T2tb9hoWzkBi45HbxZBzBqsR7LEIxWY
-	M/RDCqpsjE7s64DEbNDA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1KroRYKSoDHlbFcNmzpHUXsz+yJ7gNwZc5GmLlg6iew=; b=SZdkzQZb2xFacm
+	uWGBedSt2S9cSAIs1HR+j4hy2mXcM7epBn4MKz/YFviX9Jem6tTz6uVoqsUQhfqw681W370EB7wqj
+	iRWepOQIhQVHRiHFDL1lfcOLu4ucaKoiUeYWDrkHyvWl76Jd6iiD88mo3D7/WaZZW4Vyg8GXw7c+e
+	hR6xt9fyeW4WZKPq5pH+QUJK7EA2NJFi+YTGX8vX8jHrBZB+5hd073mLijP2cRWwf9y7xS1NlHxWU
+	5s3mTo7RrWTBhdqfbynYmCAXaize0rqzXTQ5gwJJdfALTultgPLYydptvzIuoIJtGByg7DntZjsHf
+	U8zMHPD45L5q/I4Z2Xfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifckI-0005eW-QC; Fri, 13 Dec 2019 04:40:06 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1ifgcS-000648-CI; Fri, 13 Dec 2019 08:48:16 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifckE-00056y-0r
- for linux-rockchip@lists.infradead.org; Fri, 13 Dec 2019 04:40:03 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id b79so682927vsd.9
- for <linux-rockchip@lists.infradead.org>; Thu, 12 Dec 2019 20:40:01 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=verdurent-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=CxeVqN7WWZohGfBayl/KWuS+nYYVkIE8W26755ehKCA=;
- b=Xd8DQt15TEBmxWpqEeFCaZoe21s55+mSfnHvGFbeg9bLiJ4j2h7SwH/XTEnp71SZ73
- ZycLWokcoyu6sa1FpY+Cp/3bpEv6zhBoxym148EovHuBbxuNKgMQ3HWQ4/pGAW/uLys1
- EjlFXNvx268C+i6hj8eUxzu6EhiaZpm2FXPGeQisLNs1x9n9fA+S4tIy/K9NHr8HqDul
- i+xP23j6KawDG6n3PHOzmU5XCvlvLmK+bI73YmqPxIqiqX2mHYKcgr5vWMpd4/8+P5kD
- QBDviVVz2Bm3DBv/4SWXC7IX0nsU58spJx/zGps/ni5b++qgOVZ8QyJDKph5jCvl/hXk
- VqiA==
+ id 1ifgcD-0005tQ-QA; Fri, 13 Dec 2019 08:48:03 +0000
+Received: by mail-pl1-x643.google.com with SMTP id bc8so943404plb.12;
+ Fri, 13 Dec 2019 00:48:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=faCBlmgTPQdYlEVpkeE4GNu+nPqEqsfQJpXTYDba5FY=;
+ b=razj/7vZ+JbucAknGmxck6+vSzm5wRHRzOWy+lxigo91chdg+RZNqKWqZLz5UnasAa
+ nM3svl9rWcegDadG0F32DfWvS3lwWb+b7IiieoollGSgm4Ru1LxV4Sz++ZwCxL199eqY
+ 5AYzdVnOM8vPrMqe4NtHYIS/2wzqsHoTSMBr8yQJ+Z2kVgsE79bSBkXH5tkLkmSYASb5
+ VkSgCiGgWUBq6b73uhCHrvEW+2++cB/P+pC3wleeDo5AYqaLCuOr3eaxYjIa3Yzxwzjz
+ lfPNR64+8x3FaUI+krXPecsw7dSiNmwBpJl71Tcu9qxBDLq2WDxU4lqKHyDiDJVhnq8O
+ iEJw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=CxeVqN7WWZohGfBayl/KWuS+nYYVkIE8W26755ehKCA=;
- b=aUzkENHhHBWIWq4c1FHkPRTpiuOgm4XdlSx+SxfE4y/Bu6Vk09Pf+wACHg58XACOD8
- k04ix1EHy6LrmVvV7J/kWt8OS3trfncjC1UwSrXmf6OxtVGxMTlr6071SR5o9b7uEzzO
- GvMcVfFBCFEmDlZNaZMn88dXDSGGGfms0GLt4qfaLfQPho8VoZtv0iLod0DUPcht+9J2
- gNJEDTK0HTpac5VdAd8W2ikVwyxm1rdBdGtQfS25b+Y6xY9Ysbcnn/ySlkWaCfvZZonz
- XPf0EyX4hQXHYg0kMpCpzXhi6rbQXv3y3mv0F+mR+hv6PtWil+M1i0yKvEVVxL+nICKu
- +HEg==
-X-Gm-Message-State: APjAAAWyji3sgWjBEVK27ybfordnT9Rul+h9BKApwuraIvNVp5cMGyMp
- gDTdC9e5724jl+WGdOt+VqobjuUTn7Xxkfo7O/swPA==
-X-Google-Smtp-Source: APXvYqxUYboYxgAx3u/cwl+SWhpsV25Tto1uX65RitUNLoAbztqqRzfRir+y4ljY/5uoG9B0ULKQhDBoKIKecfbYkX0=
-X-Received: by 2002:a67:fb41:: with SMTP id e1mr9415848vsr.159.1576212000836; 
- Thu, 12 Dec 2019 20:40:00 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=faCBlmgTPQdYlEVpkeE4GNu+nPqEqsfQJpXTYDba5FY=;
+ b=W4vy757FpJHid90FFAuTrumwjeUNnmUf/Gy3fDYt3H2y+rxmHWht2nuv4EQXedm53/
+ F8kIV0BQdx3x6P/JTL1a/T4ptu6IVbpUeLTTWsDFfkRRq097CR20RGzY5tm5nZJtv+dy
+ DAlOWkEsYK13uI4NSXc2qQv/wVC+fbvg/yQ/sGuhNCHfhLV8sGe5x6+KfR1PzT3qMbT2
+ 6DZbWhESHjiL5no0nqPSAcD4sXmb4MX8EFEpMc+EIKx/Hh9kZi1+pFHtO3BK45yRROPv
+ xuADiFsptDSgmPkXQQYoLosTYPh0kUZNE8qHDoFCvYdHU2aifXN2nk0PXxbkyLkVHp0V
+ CcAQ==
+X-Gm-Message-State: APjAAAWn+NMS7vPFa01rbPTPJzNXykSY3pshWKTuqcHC4KI6CShNbQxL
+ iyD3LZ9Ge01xc2HLDNNbNQ4=
+X-Google-Smtp-Source: APXvYqxLS8SmpcnrtfIR9E7GHF2j8As78boRZwVuSxFdSNtc8n66W9/XnnKOusFfrKiYhQE90NkjzQ==
+X-Received: by 2002:a17:902:8bc4:: with SMTP id
+ r4mr14931561plo.82.1576226879597; 
+ Fri, 13 Dec 2019 00:47:59 -0800 (PST)
+Received: from prasmi.domain.name ([103.219.60.167])
+ by smtp.gmail.com with ESMTPSA id 68sm9985632pge.14.2019.12.13.00.47.51
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 13 Dec 2019 00:47:58 -0800 (PST)
+From: Lad Prabhakar <prabhakar.csengg@gmail.com>
+X-Google-Original-From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Magnus Damm <magnus.damm@gmail.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ linux-pci@vger.kernel.org
+Subject: [v2 0/6] Add support for PCIe controller to work in endpoint mode on
+ R-Car SoCs
+Date: Fri, 13 Dec 2019 08:47:42 +0000
+Message-Id: <20191213084748.11210-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20191212061702.BFE2D6E85603@corona.crabdance.com>
- <CAHLCerOHjAEEA1BpUqPdZvFwHMy11SqC+ZtjdFyManu7iOpBXA@mail.gmail.com>
- <20191212232859.E09FC6E85603@corona.crabdance.com>
- <CAHLCerN9jc94ydKKoaDZPoTy=LmVZti6UUpND5aK3FMzTkCmoA@mail.gmail.com>
-In-Reply-To: <CAHLCerN9jc94ydKKoaDZPoTy=LmVZti6UUpND5aK3FMzTkCmoA@mail.gmail.com>
-From: Amit Kucheria <amit.kucheria@verdurent.com>
-Date: Fri, 13 Dec 2019 10:09:49 +0530
-Message-ID: <CAHLCerMf1nbuxjZz81QnE6jXeQ5UvB=R18SDu69cE9Q6rQp8+w@mail.gmail.com>
-Subject: Re: [RESEND PATCH] thermal: rockchip: enable hwmon
-To: schaecsn@gmx.net, jdelvare@suse.com, linux@roeck-us.net
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_204002_072995_2D478107 
-X-CRM114-Status: GOOD (  15.17  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191213_004801_877460_5256FA40 
+X-CRM114-Status: GOOD (  16.77  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (prabhakar.csengg[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,66 +105,191 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, Linux PM list <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- LKML <linux-kernel@vger.kernel.org>, Eduardo Valentin <edubezval@gmail.com>,
- linux-rockchip@lists.infradead.org, Zhang Rui <rui.zhang@intel.com>,
- lakml <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
+ Jingoo Han <jingoohan1@gmail.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
+ linux-kernel@vger.kernel.org, "Lad,
+ Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Fix Guenter's email.
+From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
 
-On Fri, Dec 13, 2019 at 10:08 AM Amit Kucheria
-<amit.kucheria@verdurent.com> wrote:
->
-> Hi Stefan,
->
-> On Fri, Dec 13, 2019 at 4:59 AM Stefan Schaeckeler <schaecsn@gmx.net> wrote:
-> >
-> > Hello Amit,
-> >
-> > > On Thu, Dec 12, 2019 at 11:47 AM Stefan Schaeckeler <schaecsn@gmx.net> wrote:
-> > > >
-> > > > By default, of-based thermal drivers do not enable hwmon.
-> > > > Explicitly enable hwmon for both, the soc and gpu temperature
-> > > > sensor.
-> > >
-> > > Is there any reason you need to expose this in hwmon?
-> >
-> > Why hwmon:
-> >
-> > The soc embedds temperature sensors and hwmon is the standard way to expose
-> > sensors.
->
-> Let me rephrase - is there something in the hwmon subsystem that is
-> needed that isn't provided by the thermal subsystem inside
-> /sys/class/thermal?
->
-> > Sensors exposed by hwmon are automagically found by userland clients. Users
-> > want to run sensors(1) and expect them to show up.
-> >
->
-> That is a good point. In which case, I wonder if we should just fix
-> this in of-thermal.c instead of requiring individual drivers to do
-> write boilerplate code. I'm thinking of a flag that the driver could
-> set to enable the thermal_hwmon interface for of-thermal drivers.
->
-> > Why in rockchip_thermal.c:
-> >
-> > drivers/thermal/ provides a high-level hwmon api in thermal_hwmon.[hc] which is
-> > used by at least these thermal drivers: rcar_gen3_thermal.c, rcar_thermal.c,
-> > st/stm_thermal.c, and broadcom/bcm2835_thermal.c. I want to hook up
-> > rockchip_thermal.c exactly the same way.
-> >
-> > Apparently, other architectures hook up the cpu temperature sensors to hwmon
-> > elsewhere. Most seem to do this in hwmon/, e.g. hwmon/coretemp.c. These drivers
-> > are written from scratch. Utilizing thermal_hwmon.[ch] for chips which have
-> > already drivers in drivers/thermal/ seems to be more elegant.
-> >
-> >  Stefan
+This patch series adds support for PCIe controller on rcar to work in endpoint mode,
+this also extends the epf framework to handle features of outbound regions.
+
+Note:
+The cadence/rockchip/designware endpoint drivers are build tested only.
+
+Changes for v2:
+1] Fixed review comments from Biju for dt-bindings to include an example
+   for a tested platform.
+2] Fixed review comments from Kishon to extend the features of outbound
+   regions in epf framework.
+3] Added support to parse outbound-ranges in OF.
+
+lspci output on host:
+====================
+
+01:00.0 Unassigned class [ff00]: Renesas Technology Corp. Device 002d
+        Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx-
+        Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+        Latency: 0
+        Interrupt: pin A routed to IRQ 152
+        Region 0: Memory at fe200200 (64-bit, non-prefetchable) [size=128]
+        Region 2: Memory at fe200000 (64-bit, non-prefetchable) [size=256]
+        Region 4: Memory at fe200100 (64-bit, non-prefetchable) [size=256]
+        Capabilities: [40] Power Management version 3
+                Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0+,D1-,D2-,D3hot+,D3cold+)
+                Status: D0 NoSoftRst- PME-Enable- DSel=0 DScale=0 PME-
+        Capabilities: [50] MSI: Enable- Count=1/1 Maskable+ 64bit+
+                Address: 00000004fa36f000  Data: 0001
+                Masking: fffffffe  Pending: 00000000
+        Capabilities: [70] Express (v2) Endpoint, MSI 00
+                DevCap: MaxPayload 128 bytes, PhantFunc 0, Latency L0s unlimited, L1 unlimited
+                        ExtTag+ AttnBtn- AttnInd- PwrInd- RBE+ FLReset- SlotPowerLimit 0.000W
+                DevCtl: Report errors: Correctable- Non-Fatal- Fatal- Unsupported-
+                        RlxdOrd- ExtTag+ PhantFunc- AuxPwr- NoSnoop+
+                        MaxPayload 128 bytes, MaxReadReq 128 bytes
+                DevSta: CorrErr+ UncorrErr+ FatalErr- UnsuppReq+ AuxPwr- TransPend-
+                LnkCap: Port #0, Speed 5GT/s, Width x1, ASPM L0s, Exit Latency L0s unlimited
+                        ClockPM- Surprise- LLActRep- BwNot- ASPMOptComp-
+                LnkCtl: ASPM Disabled; RCB 64 bytes Disabled- CommClk-
+                        ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
+                LnkSta: Speed 5GT/s, Width x1, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+                DevCap2: Completion Timeout: Not Supported, TimeoutDis+, LTR-, OBFF Not Supported
+                         AtomicOpsCap: 32bit- 64bit- 128bitCAS-
+                DevCtl2: Completion Timeout: 50us to 50ms, TimeoutDis-, LTR-, OBFF Disabled
+                         AtomicOpsCtl: ReqEn-
+                LnkCtl2: Target Link Speed: 5GT/s, EnterCompliance- SpeedDis-
+                         Transmit Margin: Normal Operating Range, EnterModifiedCompliance- ComplianceSOS-
+                         Compliance De-emphasis: -6dB
+                LnkSta2: Current De-emphasis Level: -6dB, EqualizationComplete-, EqualizationPhase1-
+                         EqualizationPhase2-, EqualizationPhase3-, LinkEqualizationRequest-
+        Capabilities: [100 v1] Virtual Channel
+                Caps:   LPEVC=0 RefClk=100ns PATEntryBits=1
+                Arb:    Fixed- WRR32- WRR64- WRR128-
+                Ctrl:   ArbSelect=Fixed
+                Status: InProgress-
+                VC0:    Caps:   PATOffset=00 MaxTimeSlots=1 RejSnoopTrans-
+                        Arb:    Fixed- WRR32- WRR64- WRR128- TWRR128- WRR256-
+                        Ctrl:   Enable+ ID=0 ArbSelect=Fixed TC/VC=ff
+                        Status: NegoPending- InProgress-
+        Kernel driver in use: pci-endpoint-test
+00: 12 19 2d 00 06 00 10 00 00 00 00 ff 00 00 00 00
+10: 04 02 20 fe 00 00 00 00 04 00 20 fe 00 00 00 00
+20: 04 01 20 fe 00 00 00 00 00 00 00 00 00 00 00 00
+30: 00 00 00 00 40 00 00 00 00 00 00 00 98 01 00 00
+
+BAR Test
+========
+root@g2e:~# pcitest -b 0
+BAR0:           OKAY
+root@g2e:~# pcitest -b 1
+BAR1:           NOT OKAY
+root@g2e:~# pcitest -b 2
+BAR2:           OKAY
+root@g2e:~# pcitest -b 3
+BAR3:           NOT OKAY
+root@g2e:~# pcitest -b 4
+BAR4:           OKAY
+root@g2e:~# pcitest -b 5
+BAR5:           NOT OKAY
+
+Note: BAR test for 1/3/5 fail because they are configured to be 64bits
+
+Interrupt Test
+==============
+root@g2e:~# pcitest -i 0
+SET IRQ TYPE TO LEGACY:         OKAY
+root@g2e:~# pcitest -l
+LEGACY IRQ:     OKAY
+
+Read Test
+=========
+root@g2e:~# pcitest -r -s 1
+READ (      1 bytes):           OKAY
+root@g2e:~# pcitest -r -s 1024
+READ (   1024 bytes):           OKAY
+root@g2e:~# pcitest -r -s 1025
+READ (   1025 bytes):           OKAY
+root@g2e:~# pcitest -r -s 1024000
+READ (1024000 bytes):           OKAY
+root@g2e:~# pcitest -r -s 1024001
+READ (1024001 bytes):           OKAY
+
+Write Test
+==========
+root@g2e:~# pcitest -w -s 1
+WRITE (      1 bytes):          OKAY
+root@g2e:~# pcitest -w -s 1024
+WRITE (   1024 bytes):          OKAY
+root@g2e:~# pcitest -w -s 1025
+WRITE (   1025 bytes):          OKAY
+root@g2e:~# pcitest -w -s 1024000
+WRITE (1024000 bytes):          OKAY
+root@g2e:~# pcitest -w -s 1024001
+WRITE (1024001 bytes):          OKAY
+
+Copy Test
+=========
+root@g2e:~# pcitest -c -s 1
+COPY (      1 bytes):           OKAY
+root@g2e:~# pcitest -c -s 1024
+COPY (   1024 bytes):           OKAY
+root@g2e:~# pcitest -c -s 1025
+COPY (   1025 bytes):           OKAY
+root@g2e:~# pcitest -c -s 1024000
+COPY (1024000 bytes):           OKAY
+root@g2e:~# pcitest -c -s 1024001
+COPY (1024001 bytes):           OKAY
+
+Lad, Prabhakar (6):
+  pci: pcie-rcar: preparation for adding endpoint support
+  pci: endpoint: add support to handle features of outbound memory
+  of: address: add support to parse PCI outbound-ranges
+  dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
+    controller
+  pci: rcar: add support for rcar pcie controller in endpoint mode
+  misc: pci_endpoint_test: add device-id for RZ/G2E pcie controller
+
+ .../devicetree/bindings/pci/rcar-pci-ep.txt        |   37 +
+ arch/arm64/configs/defconfig                       |    2 +-
+ drivers/misc/pci_endpoint_test.c                   |    3 +
+ drivers/of/address.c                               |   44 +-
+ drivers/pci/controller/Kconfig                     |   11 +-
+ drivers/pci/controller/Makefile                    |    3 +-
+ drivers/pci/controller/dwc/pcie-designware-ep.c    |   30 +-
+ drivers/pci/controller/pcie-cadence-ep.c           |   11 +-
+ drivers/pci/controller/pcie-rcar-ep.c              |  494 ++++++++
+ drivers/pci/controller/pcie-rcar-host.c            | 1056 +++++++++++++++++
+ drivers/pci/controller/pcie-rcar.c                 | 1229 +-------------------
+ drivers/pci/controller/pcie-rcar.h                 |  129 ++
+ drivers/pci/controller/pcie-rockchip-ep.c          |   13 +-
+ drivers/pci/endpoint/functions/pci-epf-test.c      |   47 +-
+ drivers/pci/endpoint/pci-epc-core.c                |    7 +-
+ drivers/pci/endpoint/pci-epc-mem.c                 |  216 +++-
+ include/linux/of_address.h                         |   21 +
+ include/linux/pci-epc.h                            |   72 +-
+ 18 files changed, 2152 insertions(+), 1273 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
+ create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
+ create mode 100644 drivers/pci/controller/pcie-rcar-host.c
+ create mode 100644 drivers/pci/controller/pcie-rcar.h
+
+-- 
+2.7.4
+
 
 _______________________________________________
 Linux-rockchip mailing list
