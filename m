@@ -2,96 +2,75 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3180211D9FF
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 00:30:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2FAB11DC96
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 04:23:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:Reply-To:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date
-	:Message-Id:References:Subject:In-reply-to:To:From:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=q9RZobMKDcRQ7jf36BRnIvNwLJdsa4GfCXpATuBEMhU=; b=DyV15G3AcKHKlbJkgLHXHeB2iX
-	w9RlkiuR4VXfUC2ynV6K7+5HEs3HPT5YddixHmb0Yh2eW+DIsjzO9x6quYNG7IFEqPZxwrKGZB/nR
-	h6LQu5km9KRgnBSsJ1P88va/j39YxZYXfmse80x4WruWGficUsaGwuo2/xZR1l0rIsX4edfRAJHQh
-	2/zu63gao1DcF/QXp0qz9pT4MW7LTMAp/f4BDpdNib9IaFLnVcEw4pljUVE2KSLFQZcn4xCaQ8o+o
-	htU168Hf0h49gQwwo/B/O7NtKyOvHLBLfyyGw8VfJTKIPqM0AN+nHINN8T5qtn1vcLhMX6gD0BCH3
-	UAbsKpjw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JextHXOvkOzmqMI4DGuvdiDoyjhuQ+h7T6fwtHppJQ4=; b=Lu+kks5DEI4VCwnDsBPrYftIV
+	LQJ+4g5axQZF4Txf6LFcQD+nP7fZ3cBfukt3EIVJFWGb5uVmjbATXO8tmVdtjLbObjqdFEGkZI661
+	+KNdvsq4+KmCs86R2/CLpCmVy+MNh3RcUUruHKKEblRls3TDDSCfYUNLKyEpjrZXyg9yptoZtfqSR
+	FVwjRChLbzSnFoMqgTGCuxDbxn5lzWA19+v1ML+0YJSrX4fwFy/GfOj/PHAWhI1qu6IdP808cRrSK
+	LO8osKNdNozgoTE/kXtz00HZ7kkyKZFqHuOE2VuqZdlOFWFNKql76hLhrA8/kwUo2JoKfolwmlb+y
+	44dkNBQSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifXuA-0003kw-Cx; Thu, 12 Dec 2019 23:29:58 +0000
-Received: from mout.gmx.net ([212.227.15.19])
+	id 1ifbXm-0003gt-Vz; Fri, 13 Dec 2019 03:23:06 +0000
+Received: from regular1.263xmail.com ([211.150.70.202])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifXu6-0003kA-DM; Thu, 12 Dec 2019 23:29:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1576193386;
- bh=gtNiGOMaG+hrEDMSnjfH4TheHPrFaKjLS4DfvxSWQJ4=;
- h=X-UI-Sender-Class:From:To:CC:In-reply-to:Subject:Reply-to:
- References:Date;
- b=SYROU9ETIvP5wm/aUkZXv30zCbFjChykztWSkke0CbCHwhC53OxPu1rkVmkikl+qi
- hih6PfRlB4qoDBhJmywBm2O1F51TtXsvyN7cvTJ5Bc3jbeq7sOf50M+8W9Wi4KdlYU
- hKqhurSuymWjvsSn1nwL7CMw0cyd/IpLAjX7HFbY=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from corona.crabdance.com ([173.228.106.20]) by mail.gmx.com
- (mrgmx004 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 1N3se2-1hfmIb1iwi-00zjUB; Fri, 13 Dec 2019 00:29:46 +0100
-Received: by corona.crabdance.com (Postfix, from userid 1001)
- id E09FC6E85603; Thu, 12 Dec 2019 15:28:59 -0800 (PST)
-From: Stefan Schaeckeler <schaecsn@gmx.net>
-To: amit.kucheria@verdurent.com
-In-reply-to: <CAHLCerOHjAEEA1BpUqPdZvFwHMy11SqC+ZtjdFyManu7iOpBXA@mail.gmail.com>
- (message from Amit Kucheria on Thu, 12 Dec 2019 13:58:52 +0530)
-Subject: Re: [RESEND PATCH] thermal: rockchip: enable hwmon
-References: <20191212061702.BFE2D6E85603@corona.crabdance.com>
- <CAHLCerOHjAEEA1BpUqPdZvFwHMy11SqC+ZtjdFyManu7iOpBXA@mail.gmail.com>
-Message-Id: <20191212232859.E09FC6E85603@corona.crabdance.com>
-Date: Thu, 12 Dec 2019 15:28:59 -0800 (PST)
-X-Provags-ID: V03:K1:DwsCsXOuYOhJw8V89QklRZ9osgYgHSIQVBXq4pgiRwhkFFmltBi
- 3kcHnOCi6FRrCnoXmJm90yFyU6q+EVM3zS/paOZUwCbEjkicKJDTl5vaAIgAP+dE0J7/f13
- TI34F5ggu2CqpTP5XDijGLe2GuipTAa5rtvO4v9gt5QK1hGJHu3pZlAzlPrN6TKfVizJ/Qk
- vSBkzo1D2fH+o/uW3R1dw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:B/jaoG6pxyc=:m7iFg/yWoVMNeBlPMGdFNd
- PY6SNewXxM1s6K5Arb8uvuHEQdAP18gNudbqORo5F23TWR/WJUxzA1UtNu3AII2JRXnco1yP9
- 34E6Cnm1PP53ryOE+uq9HjbrpfehMMscaG3MZBNMcc3Zgn4Rc18fRsL0hsO+u9XL3fe23yKPJ
- OZZYBvMynzgA3u5ysEcRwA1vn+2hG0dszBEIt4cpfY7+4hDY+90iNpVbakRPsbyZzRpTGNWoU
- 6p0WD3BrfWNXLocPrjW9RhCzWYIQPprmNYmQVuVkygvF6If4z7EREYIvVgZ/CJoCxpqAp4WZ7
- Ox6lH2ZuCxJJMLctljuOsNdsYy3sG6hw61KDw95Qr6Ls45uoo67LD0WGXX0oC+5shUeWS4TYu
- 9xmPTJG4koOIMz/3EZb7W8D9tdqmtwS6ciXJ2vPyLEUTA7TvPqITm4XBGHFsQRnKnvZP3MX4J
- JCXVRtf0xCZcSjtiYScV271xpHQSB4vXpresTWxFQz5KcfDt0CxsMPnNzKw5F0WKkg5C7Oikp
- CZtwRerVP3yiYk3Gg6LasW4esN+RGOSMbA4m+UE2Ywr3fghXsw+oSq8KlRk964qrl+1FnESta
- HajOPrIF+/KNsyIXh+PCM5v2DczQcrQ6zQ1uciBHmqO5oZjPT6er2HCYpiOoMxGXoJxaOdt/C
- sdLuC5tK6PSfZgVTdZDu0WJrshGUnGlUpRYdqdIG76bKFFd0kHFVJYfoP5TW3IF6h2DXwBTrv
- qKZf74Qv0jYdYI52FcCW1fqhcRs77Dp6c7+vmK1yrbRfPkzFWmajQ+4/7qY5geIMgf1lAg/11
- 3nVXSxdV0CBKiFTHI2fexaxrM7FFym7dcx/4yYFRbq4AIzmuBn9x0a5EHn5Gob5N08nhJRY+2
- nU4ZvtXJ9bS0wD7w6dEzdUMoIQrYBraeg3quxdz0Uy1kVR+uznUXu9X4hpjKd5QOvNCrX1l2t
- TxKRoc8STqNtg53tX5ZbckBNykUlx3ys7hB4MFwBhJymQ6tRuvq14HTve65dhAjozMZ/EVX3F
- DPww8RJdp91u9nJGV68FU10GcQlq4uFG5lqYTkFCPonxAVMu5MD0RYvHb/bj9AU8vwadn2h9h
- pL87dBWLNCJOeeJz50kSTPAD9zvDj2J0lei3KhX4GLeLCzjcPQGmonkOMrfGAZw6nLpDzfvPC
- GFQwe7yvcIdSSF3XammtNlbqWI7GBvu9JKcHXHpCMw33JgV0IuYVhs0DlEFx2slndXIJ3VoDr
- 4Xxp4DHhycRuYKL89sd0EIbC6e8RzRIE1VqN8Ct1D7sTpr83r5BivjKLwxBI=
+ id 1ifbXk-0003gZ-Co
+ for linux-rockchip@lists.infradead.org; Fri, 13 Dec 2019 03:23:06 +0000
+Received: from localhost (unknown [192.168.167.69])
+ by regular1.263xmail.com (Postfix) with ESMTP id 18EE52B8;
+ Fri, 13 Dec 2019 11:22:54 +0800 (CST)
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-ADDR-CHECKED4: 1
+X-ANTISPAM-LEVEL: 2
+X-SKE-CHECKED: 1
+X-ABS-CHECKED: 1
+Received: from [192.168.60.65] (unknown [103.29.142.67])
+ by smtp.263.net (postfix) whith ESMTP id
+ P8805T140486939494144S1576207368597654_; 
+ Fri, 13 Dec 2019 11:22:53 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <53b5f513ab3dd8d292277d98f6ae4c13>
+X-RL-SENDER: kever.yang@rock-chips.com
+X-SENDER: yk@rock-chips.com
+X-LOGIN-NAME: kever.yang@rock-chips.com
+X-FST-TO: linux-rockchip@lists.infradead.org
+X-SENDER-IP: 103.29.142.67
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+Subject: =?UTF-8?B?UmU6IHJrMzMyOC1maXJlZmx5IGRkcjQgdHBsIGluaXTjgJDor7fms6g=?=
+ =?UTF-8?B?5oSP77yM6YKu5Lu255SxbGludXgtcm9ja2NoaXAtYm91bmNlcytrZXZlci55YW5n?=
+ =?UTF-8?B?PXJvY2stY2hpcHMuY29tQGxpc3RzLmluZnJhZGVhZC5vcmfku6Plj5HjgJE=?=
+To: Peter Geis <pgwipeout@gmail.com>, u-boot@lists.denx.de
+References: <CAMdYzYpbhAT5EfJv2SuC8GZE3q3juUXCwtbAX8SW9eXiC5AP2g@mail.gmail.com>
+From: Kever Yang <kever.yang@rock-chips.com>
+Message-ID: <70b1e484-2909-8296-bbd7-3026bf3b576c@rock-chips.com>
+Date: Fri, 13 Dec 2019 11:22:46 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
+MIME-Version: 1.0
+In-Reply-To: <CAMdYzYpbhAT5EfJv2SuC8GZE3q3juUXCwtbAX8SW9eXiC5AP2g@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_152954_784000_D721C129 
-X-CRM114-Status: UNSURE (   6.88  )
+X-CRM114-CacheID: sfid-20191212_192304_650722_E7F2CB02 
+X-CRM114-Status: UNSURE (   9.08  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.19 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (schaecsn[at]gmx.net)
+ no trust [211.150.70.202 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,51 +83,33 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Reply-To: schaecsn@gmx.net
-Cc: heiko@sntech.de, linux-pm@vger.kernel.org, daniel.lezcano@linaro.org,
- linux-kernel@vger.kernel.org, edubezval@gmail.com,
- linux-rockchip@lists.infradead.org, rui.zhang@intel.com,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hello Amit,
-
-> On Thu, Dec 12, 2019 at 11:47 AM Stefan Schaeckeler <schaecsn@gmx.net> wrote:
-> >
-> > By default, of-based thermal drivers do not enable hwmon.
-> > Explicitly enable hwmon for both, the soc and gpu temperature
-> > sensor.
->
-> Is there any reason you need to expose this in hwmon?
-
-Why hwmon:
-
-The soc embedds temperature sensors and hwmon is the standard way to expose
-sensors.
-
-Sensors exposed by hwmon are automagically found by userland clients. Users
-want to run sensors(1) and expect them to show up.
-
-
-Why in rockchip_thermal.c:
-
-drivers/thermal/ provides a high-level hwmon api in thermal_hwmon.[hc] which is
-used by at least these thermal drivers: rcar_gen3_thermal.c, rcar_thermal.c,
-st/stm_thermal.c, and broadcom/bcm2835_thermal.c. I want to hook up
-rockchip_thermal.c exactly the same way.
-
-Apparently, other architectures hook up the cpu temperature sensors to hwmon
-elsewhere. Most seem to do this in hwmon/, e.g. hwmon/coretemp.c. These drivers
-are written from scratch. Utilizing thermal_hwmon.[ch] for chips which have
-already drivers in drivers/thermal/ seems to be more elegant.
-
- Stefan
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgUGV0ZXIsCgpPbiAyMDE5LzEyLzUg5LiK5Y2IMTA6MTksIFBldGVyIEdlaXMgd3JvdGU6Cj4g
+R29vZCBFdmVuaW5nLAo+Cj4gSSBhbSB0cnlpbmcgdG8gZ2V0IFRQTC9TUEwgd29ya2luZyBvbiB0
+aGUgcmszMzI4LWZpcmVmbHkgZGRyNCA0Z2IgYm9hcmQuCj4gSSd2ZSBwdWxsZWQgdGhlIGRkcjQg
+ZHRzaSBmcm9tIHRoZSByb2NrY2hpcCB1LWJvb3QgcmVwb3NpdG9yeSBbMF0uCj4KPiBVbmZvcnR1
+bmF0ZWx5IEkgY2Fubm90IGdldCB0aGUgZGRyNCB0byBkZXRlY3QgY29ycmVjdGx5LgoKClllcywg
+dGhlIGRkcjQgc3VwcG9ydCBmb3IgcmszMzI4IGlzIG1pc3Npbmcgbm93LCB3ZSB3aWxsIHVwZGF0
+ZSBpdCBzb21lIAp0aW1lIGxhdGVyLgoKClRoYW5rcywKCi0gS2V2ZXIKCj4KPiBXaXRoIHRoZSB1
+LWJvb3QgdHBsLCBJIGdldCB0aGUgZm9sbG93aW5nOgo+IFUtQm9vdCBUUEwgMjAyMC4wMS1yYzMt
+MDAwNzItZzFhMWJlYTgyYjItZGlydHkgKERlYyAwNCAyMDE5IC0gMDg6MzM6NTQpCj4gZGF0YSB0
+cmFpbmluZyBlcnJvcgo+IHJvdyBlcnJvcmRhdGEgdHJhaW5pbmcgZXJyb3IKPiBERFI0LCAzMzNN
+SHoKPiBCVz0xNiBDb2w9MTAgQms9NCBCRz0yIENTMCBSb3c9MTcgQ1M9MSBEaWUgQlc9MTYgU2l6
+ZT0yMDQ4TUIKPgo+IFdpdGggdGhlIHJrMzMyOF9kZHJfMzMzTUh6X3YxLjE2LmJpbiwgSSBnZXQg
+dGhlIGZvbGxvd2luZzoKPiBERFIgdmVyc2lvbiAxLjE2IDIwMTkwNTI4Cj4gSUQ6MHg4MDUgTgo+
+IEluCj4gRERSNAo+IDMzM01Iego+IEJ1cyBXaWR0aD0zMiBDb2w9MTAgQmFuaz00IEJhbmsgR3Jv
+dXA9MiBSb3c9MTYvMTYgQ1M9MiBEaWUKPiBCdXMtV2lkdGg9MTYgU2l6ZT00MDk2TUIKPiBkZHJj
+b25maWc6MTkKPiBPVVQKPgo+IFswXSBodHRwczovL2dpdGh1Yi5jb20vcm9ja2NoaXAtbGludXgv
+dS1ib290L2Jsb2IvbmV4dC1kZXYvYXJjaC9hcm0vZHRzL3JrMzMyOC1zZHJhbS1kZHI0LTY2Ni5k
+dHNpCj4KPiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+
+IExpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdAo+IExpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKPiBodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
+bnV4LXJvY2tjaGlwCj4KPgoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LXJvY2tjaGlwCg==
