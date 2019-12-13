@@ -2,43 +2,45 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBA9F11E177
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 11:05:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABC8911E1A9
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 11:08:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wLLHvTu3IlUDOJoXS7gj23nC+PO9gZWPJ4c53E1j/ic=; b=YbxjzNb2Llvj6K
-	yXoCSTpWtJaTtsEF73wBk1uGG7jW9Eb6u4ParFwqAGJs/WXCxATa6WhH3JVNGji2dkc8II6jUl/Bm
-	0I0fqNsDbCKw7F0A9sdAI9DIw2bS09L6I3J2R/Crr6rV0CBqRgBqfSmR9XQc91O3eeqxUtYeo/3Ji
-	80vpNJ7AF7ide+0nRHiyAHOVuiCZWIEgH0d7gvFpChV0nAtIcbdk7GBNrSl+pgx+YQykednfH+DiY
-	mwHWv3vqAJ++Swlx6LBmtTzfhq7nEayKLTxd/NH4BevrPtkZ0icgugCLB5sFfujbRPP/qDqdhSa54
-	t/TJB81mN4aX5MBkOy/Q==;
+	List-Owner; bh=btyw0tKqHCg+zIc2lOzkbcu3Q1XunEqObKTkq/mD0QE=; b=iAaAJQA+AKDkxi
+	M/4RO1qdy2N9D9Xd7ItxMgdeiRhhV6TcjV4amU09ShtmhCbUSv+GMeQwSiTOGC7jVe8V1CogpyCQ7
+	QCU4l19ddq3QdXeqZJ5Onw8lHz3xljr5T4lSmocwA2cQCc6Accjrx+/h8LTsVdwx3IOYzdkceu4iM
+	jlTUh6svXXbnFRFkVqiEHT6MWBC9eda3y/52/McVQ8E8k1jftnwpRinUzKma2HCxU4cuKMpSqyLoq
+	TUMJ+6nMGWBU3PcjNunnEaWlukodKtK/P4MteC6MFf7NMSQVFo7Nb7Lo3jEvL1ZhAiH0zMtz9h8KI
+	sq0CxJjzBxhjME2DHJ5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifhoh-00060q-Kb; Fri, 13 Dec 2019 10:04:59 +0000
+	id 1ifhsI-0000Gn-GC; Fri, 13 Dec 2019 10:08:42 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifhoT-0005o3-CQ; Fri, 13 Dec 2019 10:04:46 +0000
+ id 1ifhs8-00009U-Le; Fri, 13 Dec 2019 10:08:34 +0000
 Received: from wf0651.dip.tu-dresden.de ([141.76.182.139] helo=phil.localnet)
  by gloria.sntech.de with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
  (envelope-from <heiko@sntech.de>)
- id 1ifhoC-0000yW-Aw; Fri, 13 Dec 2019 11:04:28 +0100
+ id 1ifhrt-000106-VL; Fri, 13 Dec 2019 11:08:17 +0100
 From: Heiko Stuebner <heiko@sntech.de>
-To: Jack Chen <redchenjs@foxmail.com>
-Subject: Re: [PATCH] ARM: dts: rockchip: Add missing cpu operating points for
- rk3288-tinker
-Date: Fri, 13 Dec 2019 11:04:27 +0100
-Message-ID: <47785260.740ClddZN9@phil>
-In-Reply-To: <20191202153540.26143-1-redchenjs@foxmail.com>
-References: <20191202153540.26143-1-redchenjs@foxmail.com>
+To: "Matwey V. Kornilov" <matwey@sai.msu.ru>
+Subject: Re: [PATCH] arm64: dts: rockchip: Add regulators for PCIe for Radxa
+ Rock Pi 4 board
+Date: Fri, 13 Dec 2019 11:08:17 +0100
+Message-ID: <2621713.C5CYpBeeQa@phil>
+In-Reply-To: <20191120161302.5157-1-matwey@sai.msu.ru>
+References: <CAFjve-AT6c-yweF0mOPea-caG3n43nZzVPcwef-qp+n35JN9ig@mail.gmail.com>
+ <20191120161302.5157-1-matwey@sai.msu.ru>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_020445_569914_E03686AD 
-X-CRM114-Status: GOOD (  10.45  )
+X-CRM114-CacheID: sfid-20191213_020832_859548_8516FC03 
+X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,26 +60,25 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, Jack Chen <redchenjs@live.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, tom@radxa.com,
+ open list <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC support" <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>, Pragnesh Patel <Pragnesh_Patel@mentor.com>,
+ Akash Gajjar <akash@openedev.com>, matwey.kornilov@gmail.com,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ "moderated list:ARM/Rockchip SoC support"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Montag, 2. Dezember 2019, 16:35:40 CET schrieb Jack Chen:
-> From: Jack Chen <redchenjs@live.com>
+Am Mittwoch, 20. November 2019, 17:12:54 CET schrieb Matwey V. Kornilov:
+> Add 0.9V and 1.8V voltage regulators for Radxa Rock Pi 4 board PCIe.
 > 
-> The Tinker Board / S devices use a special chip variant called rk3288-c
-> and use different operating points with a higher max frequency.
-> 
-> So add the missing operating points for Tinker Board / S devices, also
-> increase the vdd_cpu regulator-max-microvolt to 1400000 uV so that the
-> cpu can operate at 1.8 GHz.
-> 
-> Signed-off-by: Jack Chen <redchenjs@live.com>
+> Signed-off-by: Matwey V. Kornilov <matwey@sai.msu.ru>
 
 applied for 5.6
 
