@@ -2,56 +2,59 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E278D11E20C
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 11:35:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD6AD11E2BA
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 12:24:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6unzG3fECxHidI6Er46VjHxUbr3v/Ly1fbYE5zuFWEk=; b=hs1VH93flv0zC/
-	dqUz0QWJJidaX6SvwtgHsYQHsdCkR726lIXB796rwRk0yq8kQgig2ELPZJ7RXqgMv8lj3Ln3LHkXX
-	QLb9k+XhHsB5JYrDqMtT4RTdmaDsEusZf3IvuQW2bpXKPeptmiqRljKQe9H73KvF3sJOO2P+bdM/K
-	Cj3mCGpk7f9npTPLcmvm/b7moW7dr2l8/13eYL1/dYKrPZvavI6dYCOFJuDmEScgC/bkjhWX7gMis
-	IUasD1sKIiLp1ROB48se3Yhh99KzwVimjBkusVYrHb4Ti8D3PIwTHpgokXOk3Cv3Kcrb1a+WzWrik
-	TaBNRF0Kq1ZcXoZdT6fA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gZMagrP+jcDPMVg6wtJgneAXO42fbzMOWVVpjQAV6RA=; b=BNC4Qza8kGEK1/
+	tzhx5Br7l4zwNC6ZITMQ4p71l7TjZc8/cOGmn3rq5faH8Obzbyv87CWRH3dr3/p1ggzsUTxmlifj3
+	OH1NC3WR9whG2k1Pf8HML/gMsSlD2PAh6MfNKtvt3GW4bP/zrRwTSvRAEhUdH80+IZ3oIPlojWacZ
+	0Pf8sfPcu9q6UokKS2v+9cT6e5Yx4YU/6ASAHrpcFq4VdqcMXZJIli0Pf1dHZ1pv8DOSGVD4qMKVx
+	SOqDXhr3X1tfhfBmBAaKdMEHkyUVmomWxDdKyxjB3pJE45c9Kq/X7V3hviwWqHKLKWlNMeT5oOUnR
+	aTBDIo1YI1ftzGFNfjlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifiIR-0001f2-Ev; Fri, 13 Dec 2019 10:35:43 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1ifj3P-0003B0-2J; Fri, 13 Dec 2019 11:24:15 +0000
+Received: from outbound.soverin.net ([2a01:4f8:fff0:2d:8::215])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifiIN-0001eU-9F
- for linux-rockchip@lists.infradead.org; Fri, 13 Dec 2019 10:35:41 +0000
-X-Originating-IP: 91.224.148.103
-Received: from xps13 (unknown [91.224.148.103])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id C3164E0007;
- Fri, 13 Dec 2019 10:35:29 +0000 (UTC)
-Date: Fri, 13 Dec 2019 11:35:28 +0100
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Heiko Stuebner <heiko@sntech.de>
-Subject: Re: [PATCH] MAINTAINERS: rockchip: Track more files
-Message-ID: <20191213113528.2e06e1f4@xps13>
-In-Reply-To: <3160577.NKkQCOVCmZ@phil>
-References: <20191204090710.11646-1-miquel.raynal@bootlin.com>
- <e4dc0f27-6a26-3b29-11fd-231f686fce91@rock-chips.com>
- <3160577.NKkQCOVCmZ@phil>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1ifj3K-00037r-LK
+ for linux-rockchip@lists.infradead.org; Fri, 13 Dec 2019 11:24:13 +0000
+Received: from smtp.soverin.net (unknown [10.10.3.28])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by outbound.soverin.net (Postfix) with ESMTPS id 1A68262AD5;
+ Fri, 13 Dec 2019 11:24:06 +0000 (UTC)
+Received: from smtp.soverin.net (smtp.soverin.net [159.69.232.142]) by
+ soverin.net
+Subject: Re: RK3288 dwc2 USB OTG + macOS
+To: Minas Harutyunyan <Minas.Harutyunyan@synopsys.com>,
+ Jack Mitchell <ml@embed.me.uk>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>
+References: <e6321abc-1d3a-cfa1-638a-6051719462ad@embed.me.uk>
+ <bcda1da2-fcdf-2c5b-d07b-5cf397571eb7@embed.me.uk>
+ <3e45e70d-1e59-373d-76b7-b6a8a6320514@synopsys.com>
+From: Jack Mitchell <ml@embed.me.uk>
+Message-ID: <8a2341be-7b34-54d1-83aa-d8961d2c1618@embed.me.uk>
+Date: Fri, 13 Dec 2019 11:24:01 +0000
 MIME-Version: 1.0
+In-Reply-To: <3e45e70d-1e59-373d-76b7-b6a8a6320514@synopsys.com>
+Content-Language: en-US-large
+X-Virus-Scanned: clamav-milter 0.101.4 at c03mi01
+X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_023539_813065_3D015D90 
-X-CRM114-Status: GOOD (  21.26  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191213_032410_868127_FF213960 
+X-CRM114-Status: GOOD (  16.32  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,66 +67,77 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, Kever Yang <kever.yang@rock-chips.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Phillip Karls <prkarls@gmail.com>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sCgpIZWlrbyBTdHVlYm5lciA8aGVpa29Ac250ZWNoLmRlPiB3cm90ZSBvbiBGcmks
-IDEzIERlYyAyMDE5IDExOjI3OjI5CiswMTAwOgoKPiBBbSBNb250YWcsIDkuIERlemVtYmVyIDIw
-MTksIDA5OjE4OjAwIENFVCBzY2hyaWViIEtldmVyIFlhbmc6Cj4gPiBIaSBNaXF1ZWwsCj4gPiAK
-PiA+IE9uIDIwMTkvMTIvNCDkuIvljYg1OjA3LCBNaXF1ZWwgUmF5bmFsIHdyb3RlOiAgCj4gPiA+
-IFRoZSBjdXJyZW50IGxpc3QgbWlzc2VzIGEgbG90IG9mIGRyaXZlcnMgbm90IHByZWZpeGVkIG9y
-IHN1ZmZpeGVkIGJ5Cj4gPiA+ICJyb2NrY2hpcCIuIEZvciBpbnN0YW5jZSwgdGhlcmUgYXJlIHBs
-ZW50eSBkcml2ZXJzIGNhbGxlZCByazgwOCBhbmQKPiA+ID4gcms4MDUgd2hpY2ggYXJlIGN1cnJl
-bnRseSBub3QgdHJhY2tlZCAoY2xrLCByZWd1bGF0b3IsIHBpbmN0cmwsIFJUQywKPiA+ID4gTUZE
-LCBpbmNsdWRlcywgYmluZGluZ3MpLiBBZGQgdGhlbSB0byB0aGUgbGlzdCB1bmRlciB0aGUgUm9j
-a2NoaXAKPiA+ID4gZW50cnkuCj4gPiA+Cj4gPiA+IFNpZ25lZC1vZmYtYnk6IE1pcXVlbCBSYXlu
-YWwgPG1pcXVlbC5yYXluYWxAYm9vdGxpbi5jb20+Cj4gPiA+IC0tLQo+ID4gPgo+ID4gPiBIaSBI
-ZWlrbywKPiA+ID4KPiA+ID4gWW91IGFyZSByaWdodCB3ZSBzaG91bGQgdHJ5IHRvIGNoZWNrIG1v
-cmUgb2Z0ZW4geW91ciB0cmVlLiBBbHNvLCBoZXJlCj4gPiA+IGlzIGEgcGF0Y2ggc28gdGhhdCB5
-b3UgYXJlIENjJ2VkIGZvciBhbGwgUm9ja2NoaXAgcmVsYXRlZCBwYXRjaGVzCj4gPiA+IGJlY2F1
-c2UgdGhlIGN1cnJlbnQgbGlzdCBpcyBub3QgZXhoYXVzdGl2ZSBhdCBhbGwgKG5vdCBzdXJlIGl0
-IGlzCj4gPiA+IHZvbHVudGFyeSBvciBub3QgdGhvdWdoKS4KPiA+ID4KPiA+ID4gQ2hlZXJzLAo+
-ID4gPiBNaXF1w6hsCj4gPiA+Cj4gPiA+ICAgTUFJTlRBSU5FUlMgfCA0ICsrKysKPiA+ID4gICAx
-IGZpbGUgY2hhbmdlZCwgNCBpbnNlcnRpb25zKCspCj4gPiA+Cj4gPiA+IGRpZmYgLS1naXQgYS9N
-QUlOVEFJTkVSUyBiL01BSU5UQUlORVJTCj4gPiA+IGluZGV4IGNiYTEwOTU1NDdmZC4uYTk1NjRl
-NmNiODcyIDEwMDY0NAo+ID4gPiAtLS0gYS9NQUlOVEFJTkVSUwo+ID4gPiArKysgYi9NQUlOVEFJ
-TkVSUwo+ID4gPiBAQCAtMjE5OCwxMiArMjE5OCwxNiBAQCBMOglsaW51eC1yb2NrY2hpcEBsaXN0
-cy5pbmZyYWRlYWQub3JnCj4gPiA+ICAgVDoJZ2l0IGdpdDovL2dpdC5rZXJuZWwub3JnL3B1Yi9z
-Y20vbGludXgva2VybmVsL2dpdC9tbWluZC9saW51eC1yb2NrY2hpcC5naXQKPiA+ID4gICBTOglN
-YWludGFpbmVkCj4gPiA+ICAgRjoJRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2ky
-Yy9pMmMtcmszeC50eHQKPiA+ID4gK0Y6CURvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
-cy8qLypyazgwKgo+ID4gPiAgIEY6CWFyY2gvYXJtL2Jvb3QvZHRzL3JrMyoKPiA+ID4gICBGOglh
-cmNoL2FybS9ib290L2R0cy9ydjExMDgqCj4gPiA+ICAgRjoJYXJjaC9hcm0vbWFjaC1yb2NrY2hp
-cC8KPiA+ID4gK0Y6CWluY2x1ZGUvKi8qL3JrODA4LmgKPiA+ID4gK0Y6CWluY2x1ZGUvKi8qLyov
-cms4MDguaAo+ID4gPiAgIEY6CWRyaXZlcnMvY2xrL3JvY2tjaGlwLwo+ID4gPiAgIEY6CWRyaXZl
-cnMvaTJjL2J1c3Nlcy9pMmMtcmszeC5jCj4gPiA+ICAgRjoJZHJpdmVycy8qLypyb2NrY2hpcCoK
-PiA+ID4gK0Y6CWRyaXZlcnMvKi8qcms4MCoKPiA+ID4gICBGOglkcml2ZXJzLyovKi8qcm9ja2No
-aXAqCj4gPiA+ICAgRjoJc291bmQvc29jL3JvY2tjaGlwLwo+ID4gPiAgIE46CXJvY2tjaGlwICAK
-PiA+IEZvciB0aGUgUm9ja2NoaXAgUE1JQywgaXMgaXQgYmV0dGVyIHRvIGhhdmUgYSBORVcgTUFJ
-TlRBSU5FUiBlbnRyeSBsaWtlIAo+ID4gIlJPQ0tDSElQIFBNSUMgRFJJVkVSIgo+ID4gd2hpY2gg
-c2hhcmUgdGhlIHNhbWUgbWFpbGluZyBsaXN0IGxpbnV4LXJvY2tjaGlwQCwgYmVjYXVzZSB0aGVy
-ZSBpcyBub3QgCj4gPiBvbmx5IHJrODA4LAo+ID4gYnV0IGFsc28gcms4MDUsIHJrODA5LCByazgx
-Nywgcms4MTgsIGFuZCBtYXkgYmUgbW9yZSB0byBjb21lLgo+ID4gCj4gPiBCVFcsIHdlIHNob3Vs
-ZCB1c2UgJ3JrOCcgaW5zdGVhZCBvZiAncms4MCcgdG8gbWF0Y2ggYWxsIHRoZSBSb2NrY2hpcCBQ
-TUlDcy4gIAo+IAo+IHllcCwgSSBhZ3JlZSB3aXRoIEtldmVyIG9uIHRoaXMgLi4uIGFsc28gdGhh
-dCBuZXcgcG1pYy1yZWxhdGVkIGVudHJ5IHNob3VsZAo+IG5vdCByZWFsbHkgbGluayB0byBhIGdp
-dCB0cmVlIGFzIHBhdGNoZXMgZm9yIGl0IHdpbGwgZ2V0IGRpc3RyaWJ1dGVkIHRocm91Z2gKPiBt
-dWx0aXBsZSB0cmVlcyAobWZkLCByZWd1bGF0b3IsIHJ0YykgbW9zdCBvZiB0aGUgdGltZS4KCkkg
-dGhpbmsgaXQgaXMgaW1wb3J0YW50IHRoYXQgdGhlIG1haW50YWluZXIgcmVjZWl2ZSBhbGwgUm9j
-a2NoaXAKcmVsYXRlZCBwYXRjaGVzLCBhcyBoZSBoYXMgdGhlIGJpZ2dlciBwaWN0dXJlIGluIG1p
-bmQuIE9mIGNvdXJzZSBpdCBpcwpwb3NzaWJsZSB0byBhZGQgYW4gYWRkaXRpb25hbCBNQUlOVEFJ
-TkVSIGVudHJ5IGZvciBSb2NrY2hpcCBQTUlDCmRyaXZlcnMgc3BlY2lmaWNhbGx5LgoKU28gaW4g
-dGhlIGVuZCwgSSB3aWxsIHMvcms4MC9yazgvLCBzaGFsbCBJIHJlbW92ZSBhIHNwZWNpZmljIGVu
-dHJ5IGZyb20KdGhlIDQgYWRkZWQ/Cgo+IAo+IE1pcXVlbCBjYW4geW91IGRvIGEgdjIgcGxlYXNl
-PwoKT2YgY291cnNlLCB0aGlzIGlzIHBsYW5uZWQsIEknbSBqdXN0IGEgYml0IGxhdGUgaW4gbXkg
-ZS1tYWlsIGJhY2tsb2chCgpDaGVlcnMsCk1pcXXDqGwKCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51
-eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+Hi Minas,
+
+On 28/11/2019 11:29, Minas Harutyunyan wrote:
+> Hi Jack,
+> 
+> 
+> On 8/30/2019 2:49 PM, Jack Mitchell wrote:
+>> On 22/08/2019 17:06, Jack Mitchell wrote:
+>>> I'm having issues on a Firefly rk3288 board when trying to use USB
+>>> gadget ethernet on macOS. The dr_mode is set to "otg" and it works fine
+>>> with my Linux desktop.
+>>>
+>>> If I set the dr_mode to "peripheral" macOS will work, but still takes
+>>> around 10 seconds to enumerate the device which makes me think it's only
+>>> just working. However, I need the port to be in "otg" mode as it will
+>>> switch between peripheral/host use cases.
+>>>
+>>> I've attached a log from the dwc2 driver from mainline Linux 5.2 when
+>>> being plugged into the macOS device for 30 seconds, then removed. The
+>>> mac in this case is a 2013 macbook pro. Any pointers in the right
+>>> direction would be greatly appreciated.
+>>>
+>>> Regards,
+>>> Jack.
+>>>
+> Sorry, for late response.
+> 
+> Could you please apply recently submitted patch "[PATCH] usb: dwc2: Fix 
+> SET/CLEAR_FEATURE and GET_STATUS flows" and test again.
+> 
+
+Tested and confirmed working, many thanks.
+
+Tested-By: Jack Mitchell <ml@embed.me.uk>
+
+>>
+>> I've been poking about with this some more and I've managed to bisect
+>> the issue down to the following commit
+>>
+>> 729cac693eecfebdb9e152eaddddd358ae2decb7 usb: dwc2: Change ISOC DDMA flow
+>>
+>> If I build before this commit everything works fine with a g_ether
+>> gadget device on mac. Unfortunately it's a rather large change which I
+>> can't just revert in master as it's got multiple dependant commits
+>> later. So, any advice on what could be causing this or how to help debug
+>> it would be much appreciated, as at the moment I've just forward ported
+>> the working 4.16 version of the driver over the 5.3-rc6 broken driver
+>> which isn't very sustainable in the long run.
+> 
+> I don't think that issue root cause coming from mentioned by you above 
+> patch. Based on log you provided, SET_FEATURE control transfer not 
+> completed by gadget - ZLP on status stage not sent to host.
+> 
+>>
+>> Regards,
+>> Jack.
+>>
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+> 
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
