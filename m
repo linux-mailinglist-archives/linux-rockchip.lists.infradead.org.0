@@ -2,56 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5134011E3F4
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 13:54:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97D0C11E3F7
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 13:54:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6Ai6F4dRheMj7mLhIUJgSPcWFUcVggXZyWPk0Oe/ns0=; b=VwQUT31sXlf1FX
-	cEgjdbYWAPDl03+rdOCXpsQVG4qYOyXi3f7r5ndGhZXXqGvKz0ZTzNCo6h6n5wnUhCEGrigVwXZBr
-	LtUuc86jZFD4QXL3T8EmYoGsJjM+I7SaV1/aoU8vTOvy12RgsLOrnk0erI/OHpNmXMjT8l7GKvOq6
-	OfF98xPWrfmKVCVT27XSvPYf/Wk1Ia97uzoNLx5PcthX9xg1r1K6uupF0zKq3ufg+RAdDqgFJxP5r
-	tAtiP0uUaFtwzVXPMevvXBC8XyHS4hdf/ib0oSbcZWfeuhB7Ksjo1OhBGAevK9lgQ0q+z9Qbkninz
-	xN7rmChWZ8jWx18Cj7ZA==;
+	List-Owner; bh=YR+m3xGNWxkYqcn4idD77yKdbn/VD6CUI7rbHkgm8vQ=; b=UkP0BvbTdkvk5T
+	PrC5qPTr3lhoerlLNsYfLFVmrIogyxLnfTLkDBTpAOCjNvGIH2Lsd+cXGJ324mr3HXixo/J4yNXsO
+	E+9XEYCcCMNjXpLtl+dYDCqqnrZM91JeEmZp3QZ1zxpHTFFXdioI8X5+FleUtTR0ZZE9NMssy8/kG
+	DqhHBIcMdh8dhvpvWNg5b0ir96+NQJ8SKe+PWLlJ8oR98JaCEwlb+PamiB0I4++Q2h8mXt4sEVlvw
+	bnXkg7KbEcFhVsU5Y4wbWkUNbulS0a6BtbNub54DwyKUj2ZKxkzPmuYPldgFopCKtc5qLXD3RFcaA
+	PmqMqi63kbhz6tYpsGZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifkSu-0000dA-2o; Fri, 13 Dec 2019 12:54:40 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1ifkSz-0000kp-89; Fri, 13 Dec 2019 12:54:45 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifkSj-0000Wv-6O
- for linux-rockchip@lists.infradead.org; Fri, 13 Dec 2019 12:54:32 +0000
+ id 1ifkSl-0000YU-Nt
+ for linux-rockchip@lists.infradead.org; Fri, 13 Dec 2019 12:54:34 +0000
 Received: from localhost.localdomain (unknown
  [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 4C806292CD5;
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id C190C292CD9;
  Fri, 13 Dec 2019 12:54:21 +0000 (GMT)
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: Mauro Carvalho Chehab <mchehab@kernel.org>,
  Hans Verkuil <hans.verkuil@cisco.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Sakari Ailus <sakari.ailus@iki.fi>, linux-media@vger.kernel.org
-Subject: [PATCH v3 4/7] media: hantro: h264: Use the generic H264 reflist
- builder
-Date: Fri, 13 Dec 2019 13:54:11 +0100
-Message-Id: <20191213125414.90725-5-boris.brezillon@collabora.com>
+Subject: [PATCH v3 5/7] media: dt-bindings: rockchip: Document RK3399 Video
+ Decoder bindings
+Date: Fri, 13 Dec 2019 13:54:12 +0100
+Message-Id: <20191213125414.90725-6-boris.brezillon@collabora.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191213125414.90725-1-boris.brezillon@collabora.com>
 References: <20191213125414.90725-1-boris.brezillon@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_045429_503432_9339F4A5 
-X-CRM114-Status: GOOD (  15.58  )
+X-CRM114-CacheID: sfid-20191213_045431_903835_A60F898E 
+X-CRM114-Status: GOOD (  11.87  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -78,286 +76,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Now that the core provides generic reflist builders, we can use them
-instead of implementing our own.
+Document the Rockchip RK3399 Video Decoder bindings.
 
 Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
 ---
 Changes in v3:
-* New patch
+* Fix dtbs_check failures
 ---
- drivers/staging/media/hantro/hantro_h264.c | 237 +--------------------
- 1 file changed, 8 insertions(+), 229 deletions(-)
+ .../bindings/media/rockchip,vdec.yaml         | 71 +++++++++++++++++++
+ 1 file changed, 71 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/rockchip,vdec.yaml
 
-diff --git a/drivers/staging/media/hantro/hantro_h264.c b/drivers/staging/media/hantro/hantro_h264.c
-index 568640eab3a6..d998272d20e6 100644
---- a/drivers/staging/media/hantro/hantro_h264.c
-+++ b/drivers/staging/media/hantro/hantro_h264.c
-@@ -11,7 +11,7 @@
-  */
- 
- #include <linux/types.h>
--#include <linux/sort.h>
-+#include <media/v4l2-h264.h>
- #include <media/v4l2-mem2mem.h>
- 
- #include "hantro.h"
-@@ -240,229 +240,6 @@ static void prepare_table(struct hantro_ctx *ctx)
- 	reorder_scaling_list(ctx);
- }
- 
--struct hantro_h264_reflist_builder {
--	const struct v4l2_h264_dpb_entry *dpb;
--	s32 pocs[HANTRO_H264_DPB_SIZE];
--	u8 unordered_reflist[HANTRO_H264_DPB_SIZE];
--	int frame_nums[HANTRO_H264_DPB_SIZE];
--	s32 curpoc;
--	u8 num_valid;
--};
--
--static s32 get_poc(enum v4l2_field field, s32 top_field_order_cnt,
--		   s32 bottom_field_order_cnt)
--{
--	switch (field) {
--	case V4L2_FIELD_TOP:
--		return top_field_order_cnt;
--	case V4L2_FIELD_BOTTOM:
--		return bottom_field_order_cnt;
--	default:
--		break;
--	}
--
--	return min(top_field_order_cnt, bottom_field_order_cnt);
--}
--
--static void
--init_reflist_builder(struct hantro_ctx *ctx,
--		     struct hantro_h264_reflist_builder *b)
--{
--	const struct v4l2_ctrl_h264_slice_params *slice_params;
--	const struct v4l2_ctrl_h264_decode_params *dec_param;
--	const struct v4l2_ctrl_h264_sps *sps;
--	struct vb2_v4l2_buffer *buf = hantro_get_dst_buf(ctx);
--	const struct v4l2_h264_dpb_entry *dpb = ctx->h264_dec.dpb;
--	struct vb2_queue *cap_q = &ctx->fh.m2m_ctx->cap_q_ctx.q;
--	int cur_frame_num, max_frame_num;
--	unsigned int i;
--
--	dec_param = ctx->h264_dec.ctrls.decode;
--	slice_params = &ctx->h264_dec.ctrls.slices[0];
--	sps = ctx->h264_dec.ctrls.sps;
--	max_frame_num = 1 << (sps->log2_max_frame_num_minus4 + 4);
--	cur_frame_num = slice_params->frame_num;
--
--	memset(b, 0, sizeof(*b));
--	b->dpb = dpb;
--	b->curpoc = get_poc(buf->field, dec_param->top_field_order_cnt,
--			    dec_param->bottom_field_order_cnt);
--
--	for (i = 0; i < ARRAY_SIZE(ctx->h264_dec.dpb); i++) {
--		int buf_idx;
--
--		if (!(dpb[i].flags & V4L2_H264_DPB_ENTRY_FLAG_ACTIVE))
--			continue;
--
--		buf_idx = vb2_find_timestamp(cap_q, dpb[i].reference_ts, 0);
--		if (buf_idx < 0)
--			continue;
--
--		buf = to_vb2_v4l2_buffer(vb2_get_buffer(cap_q, buf_idx));
--
--		/*
--		 * Handle frame_num wraparound as described in section
--		 * '8.2.4.1 Decoding process for picture numbers' of the spec.
--		 * TODO: This logic will have to be adjusted when we start
--		 * supporting interlaced content.
--		 */
--		if (dpb[i].frame_num > cur_frame_num)
--			b->frame_nums[i] = (int)dpb[i].frame_num - max_frame_num;
--		else
--			b->frame_nums[i] = dpb[i].frame_num;
--
--		b->pocs[i] = get_poc(buf->field, dpb[i].top_field_order_cnt,
--				     dpb[i].bottom_field_order_cnt);
--		b->unordered_reflist[b->num_valid] = i;
--		b->num_valid++;
--	}
--
--	for (i = b->num_valid; i < ARRAY_SIZE(ctx->h264_dec.dpb); i++)
--		b->unordered_reflist[i] = i;
--}
--
--static int p_ref_list_cmp(const void *ptra, const void *ptrb, const void *data)
--{
--	const struct hantro_h264_reflist_builder *builder = data;
--	const struct v4l2_h264_dpb_entry *a, *b;
--	u8 idxa, idxb;
--
--	idxa = *((u8 *)ptra);
--	idxb = *((u8 *)ptrb);
--	a = &builder->dpb[idxa];
--	b = &builder->dpb[idxb];
--
--	if ((a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM) !=
--	    (b->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM)) {
--		/* Short term pics firt. */
--		if (!(a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM))
--			return -1;
--		else
--			return 1;
--	}
--
--	/*
--	 * Short term pics in descending pic num order, long term ones in
--	 * ascending order.
--	 */
--	if (!(a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM))
--		return HANTRO_CMP(builder->frame_nums[idxb],
--				  builder->frame_nums[idxa]);
--
--	return HANTRO_CMP(a->pic_num, b->pic_num);
--}
--
--static int b0_ref_list_cmp(const void *ptra, const void *ptrb, const void *data)
--{
--	const struct hantro_h264_reflist_builder *builder = data;
--	const struct v4l2_h264_dpb_entry *a, *b;
--	s32 poca, pocb;
--	u8 idxa, idxb;
--
--	idxa = *((u8 *)ptra);
--	idxb = *((u8 *)ptrb);
--	a = &builder->dpb[idxa];
--	b = &builder->dpb[idxb];
--
--	if ((a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM) !=
--	    (b->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM)) {
--		/* Short term pics firt. */
--		if (!(a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM))
--			return -1;
--		else
--			return 1;
--	}
--
--	/* Long term pics in ascending pic num order. */
--	if (a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM)
--		return HANTRO_CMP(a->pic_num, b->pic_num);
--
--	poca = builder->pocs[idxa];
--	pocb = builder->pocs[idxb];
--
--	/*
--	 * Short term pics with POC < cur POC first in POC descending order
--	 * followed by short term pics with POC > cur POC in POC ascending
--	 * order.
--	 */
--	if ((poca < builder->curpoc) != (pocb < builder->curpoc))
--		return HANTRO_CMP(poca, pocb);
--	else if (poca < builder->curpoc)
--		return HANTRO_CMP(pocb, poca);
--
--	return HANTRO_CMP(poca, pocb);
--}
--
--static int b1_ref_list_cmp(const void *ptra, const void *ptrb, const void *data)
--{
--	const struct hantro_h264_reflist_builder *builder = data;
--	const struct v4l2_h264_dpb_entry *a, *b;
--	s32 poca, pocb;
--	u8 idxa, idxb;
--
--	idxa = *((u8 *)ptra);
--	idxb = *((u8 *)ptrb);
--	a = &builder->dpb[idxa];
--	b = &builder->dpb[idxb];
--
--	if ((a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM) !=
--	    (b->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM)) {
--		/* Short term pics firt. */
--		if (!(a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM))
--			return -1;
--		else
--			return 1;
--	}
--
--	/* Long term pics in ascending pic num order. */
--	if (a->flags & V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM)
--		return HANTRO_CMP(a->pic_num, b->pic_num);
--
--	poca = builder->pocs[idxa];
--	pocb = builder->pocs[idxb];
--
--	/*
--	 * Short term pics with POC > cur POC first in POC ascending order
--	 * followed by short term pics with POC < cur POC in POC descending
--	 * order.
--	 */
--	if ((poca < builder->curpoc) != (pocb < builder->curpoc))
--		return HANTRO_CMP(pocb, poca);
--	else if (poca < builder->curpoc)
--		return HANTRO_CMP(pocb, poca);
--
--	return HANTRO_CMP(poca, pocb);
--}
--
--static void
--build_p_ref_list(const struct hantro_h264_reflist_builder *builder,
--		 u8 *reflist)
--{
--	memcpy(reflist, builder->unordered_reflist,
--	       sizeof(builder->unordered_reflist));
--	sort_r(reflist, builder->num_valid, sizeof(*reflist),
--	       p_ref_list_cmp, NULL, builder);
--}
--
--static void
--build_b_ref_lists(const struct hantro_h264_reflist_builder *builder,
--		  u8 *b0_reflist, u8 *b1_reflist)
--{
--	memcpy(b0_reflist, builder->unordered_reflist,
--	       sizeof(builder->unordered_reflist));
--	sort_r(b0_reflist, builder->num_valid, sizeof(*b0_reflist),
--	       b0_ref_list_cmp, NULL, builder);
--
--	memcpy(b1_reflist, builder->unordered_reflist,
--	       sizeof(builder->unordered_reflist));
--	sort_r(b1_reflist, builder->num_valid, sizeof(*b1_reflist),
--	       b1_ref_list_cmp, NULL, builder);
--
--	if (builder->num_valid > 1 &&
--	    !memcmp(b1_reflist, b0_reflist, builder->num_valid))
--		swap(b1_reflist[0], b1_reflist[1]);
--}
--
- static bool dpb_entry_match(const struct v4l2_h264_dpb_entry *a,
- 			    const struct v4l2_h264_dpb_entry *b)
- {
-@@ -560,7 +337,7 @@ int hantro_h264_dec_prepare_run(struct hantro_ctx *ctx)
- {
- 	struct hantro_h264_dec_hw_ctx *h264_ctx = &ctx->h264_dec;
- 	struct hantro_h264_dec_ctrls *ctrls = &h264_ctx->ctrls;
--	struct hantro_h264_reflist_builder reflist_builder;
-+	struct v4l2_h264_reflist_builder reflist_builder;
- 
- 	hantro_prepare_run(ctx);
- 
-@@ -596,10 +373,12 @@ int hantro_h264_dec_prepare_run(struct hantro_ctx *ctx)
- 	prepare_table(ctx);
- 
- 	/* Build the P/B{0,1} ref lists. */
--	init_reflist_builder(ctx, &reflist_builder);
--	build_p_ref_list(&reflist_builder, h264_ctx->reflists.p);
--	build_b_ref_lists(&reflist_builder, h264_ctx->reflists.b0,
--			  h264_ctx->reflists.b1);
-+	v4l2_h264_init_reflist_builder(&reflist_builder, ctrls->decode,
-+				       &ctrls->slices[0], ctrls->sps,
-+				       ctx->h264_dec.dpb);
-+	v4l2_h264_build_p_ref_list(&reflist_builder, h264_ctx->reflists.p);
-+	v4l2_h264_build_b_ref_lists(&reflist_builder, h264_ctx->reflists.b0,
-+				    h264_ctx->reflists.b1);
- 	return 0;
- }
- 
+diff --git a/Documentation/devicetree/bindings/media/rockchip,vdec.yaml b/Documentation/devicetree/bindings/media/rockchip,vdec.yaml
+new file mode 100644
+index 000000000000..7167c3d6a389
+--- /dev/null
++++ b/Documentation/devicetree/bindings/media/rockchip,vdec.yaml
+@@ -0,0 +1,71 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/media/rockchip,vdec.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip Video Decoder (VDec) Device Tree Bindings
++
++maintainers:
++  - Heiko Stuebner <heiko@sntech.de>
++
++description: |-
++  The Rockchip rk3399 has a stateless Video Decoder that can decodes H.264,
++  HEVC an VP9 streams.
++
++properties:
++  compatible:
++    const: rockchip,rk3399-vdec
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: The Video Decoder AXI interface clock
++      - description: The Video Decoder AHB interface clock
++      - description: The Video Decoded CABAC clock
++      - description: The Video Decoder core clock
++
++  clock-names:
++    items:
++      - const: aclk
++      - const: iface
++      - const: cabac
++      - const: core
++
++  power-domains:
++    maxItems: 1
++
++  iommus:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - power-domains
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++
++    vdec: video-codec@ff660000 {
++        compatible = "rockchip,rk3399-vdec";
++        reg = <0x0 0xff660000 0x0 0x400>;
++        interrupts = <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH 0>;
++        clocks = <&cru ACLK_VDU>, <&cru HCLK_VDU>,
++                 <&cru SCLK_VDU_CA>, <&cru SCLK_VDU_CORE>;
++        clock-names = "aclk", "iface", "cabac", "core";
++        power-domains = <&power RK3399_PD_VDU>;
++        iommus = <&vdec_mmu>;
++    };
++
++...
 -- 
 2.23.0
 
