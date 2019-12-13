@@ -2,55 +2,67 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC28B11E612
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 16:05:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4F1C11E638
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 16:10:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dONHg5WTawElWH/owz0OAxg76btw5wTuFMj5Sqnry1k=; b=RsYfD6D5ZiUrlD
-	wJfavqS2LbYbgpuhzMSlkD8tRT6u4jnKnEA0MY56dmij5SQY2qaYNtxGLvI2cqilC5tyQsZo6+DjU
-	Xzz+MtQj/px4uRPAcXbgPEMZCp3AddRYzDf8o3+/K67h21Ubl/rkOumlVg2lVQUiyNsCtKQisvHSS
-	nnkwbzDBAfHdwppbrifjvaOwcI0Jucyro3BlcmehqLvJ+rxoWQ2rBx4F2oVxXSFYZwIpdF3vAhMgI
-	0JAZDtDnR7V5h7kx7fPDeqd2a7NA8KU48M2SZziVkUQngffV65GPftO6GCSFO6D8wF9XB+r2O6egj
-	rTWOaXrunZ8Bnt1ZeG/A==;
+	List-Owner; bh=VbJPKZBBkI1fCV3EkNzNFV2WLMflkd1z6inMwI5zRfQ=; b=OmtVeU5TH9rEG3
+	7uejtCvIWcyVA4K1l6BDhCdwBr9Ud3hhLSkfiOz94fbr1t7NQyYyCwBNNbINuB239pdZES1y0PezI
+	NbL5bHeG2r8YmNKdcsLkuUUdePlsOjnWEIqqyf+uAPo/1SdvvF/qXyzrZvA8k07MXldCOtN4cfq4a
+	Mcw4w4KuED5HDa/Qfdi1TL8eoAzigxwiG4XgpvSbsLFDVIvpkFvV66II7gyYf0uvlXy4u3O96/0SH
+	+qJsOuoANr+puPzXbdxY+rL0+XtvrWHnrqP6LHvfySXNgGqhpxuL85IYkOcX5iNZInUoD+r/7W0oX
+	oGh6Dm1W5fpzMbXk1k2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifmVs-0007iM-8o; Fri, 13 Dec 2019 15:05:52 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1ifmZy-0001g1-CY; Fri, 13 Dec 2019 15:10:06 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifmVH-0007Ch-9R
- for linux-rockchip@lists.infradead.org; Fri, 13 Dec 2019 15:05:17 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 36FEE2924C9;
- Fri, 13 Dec 2019 15:05:12 +0000 (GMT)
-Date: Fri, 13 Dec 2019 16:05:08 +0100
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Hans Verkuil <hverkuil@xs4all.nl>
-Subject: Re: [PATCH v3 6/7] media: rkvdec: Add the rkvdec driver
-Message-ID: <20191213160508.0b9c9019@collabora.com>
-In-Reply-To: <036d3ecb-2307-4e8c-eaad-3c70c8cbda22@xs4all.nl>
+ id 1ifmZt-0001AW-Te
+ for linux-rockchip@lists.infradead.org; Fri, 13 Dec 2019 15:10:03 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 312F7E00;
+ Fri, 13 Dec 2019 16:09:45 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1576249785;
+ bh=o0CHrYc/I6WkpvTk7+BesHWKBfYO6bupATH/o75dbwU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=mDAhW94IwncfLplmU4vn8//7eN/1PBQpAfRa6g+02MsXGWgvOlLAWSlNlB5ip3tyw
+ 7jySM6NlCLHobkLpS4V2XvoClJQiu4zmNpvXFxOkdIfEAFaKiTXrdx+jFCImi4u4Hb
+ lalLOR5/uDbq2GZcZN5F78GoizUvG8WavsE1/5lM=
+Date: Fri, 13 Dec 2019 17:09:35 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Boris Brezillon <boris.brezillon@collabora.com>
+Subject: Re: [PATCH v3 1/7] media: vb2: Add a helper to get the vb2 buffer
+ attached to a request
+Message-ID: <20191213150935.GC24654@pendragon.ideasonboard.com>
 References: <20191213125414.90725-1-boris.brezillon@collabora.com>
- <20191213125414.90725-7-boris.brezillon@collabora.com>
- <036d3ecb-2307-4e8c-eaad-3c70c8cbda22@xs4all.nl>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ <20191213125414.90725-2-boris.brezillon@collabora.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191213125414.90725-2-boris.brezillon@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_070515_602355_808D5F3D 
-X-CRM114-Status: GOOD (  15.01  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191213_071002_424849_C95BDD51 
+X-CRM114-Status: GOOD (  16.31  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,9 +80,8 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Jonas Karlman <jonas@kwiboo.se>, Tomasz Figa <tfiga@chromium.org>,
  Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Sakari Ailus <sakari.ailus@iki.fi>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Nicolas Dufresne <nicolas@ndufresne.ca>, Hans Verkuil <hans.verkuil@cisco.com>,
+ Sakari Ailus <sakari.ailus@iki.fi>, Nicolas Dufresne <nicolas@ndufresne.ca>,
+ Hans Verkuil <hans.verkuil@cisco.com>,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
  Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
@@ -78,106 +89,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, 13 Dec 2019 15:21:05 +0100
-Hans Verkuil <hverkuil@xs4all.nl> wrote:
+Hi Boris,
 
+On Fri, Dec 13, 2019 at 01:54:08PM +0100, Boris Brezillon wrote:
+> vb2_request_get_buf() returns the N-th buffer attached to a media
+> request.
 > 
-> > +/*
-> > + * dpb poc related registers table
-> > + */  
+> Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+> ---
+> Changes in v3:
+> * None
 > 
-> Shouldn't the next two arrays be const?
-
-Absolutely. I'll fix that in v4.
-
+> Changes in v2:
+> * Adjust the kernel doc as suggested by Hans
+> ---
+>  .../media/common/videobuf2/videobuf2-core.c   | 23 +++++++++++++++++++
+>  include/media/videobuf2-core.h                | 11 +++++++++
+>  2 files changed, 34 insertions(+)
 > 
-> > +static u32 poc_reg_tbl_top_field[16] = {
-> > +	RKVDEC_REG_H264_POC_REFER0(0),
-> > +	RKVDEC_REG_H264_POC_REFER0(2),
-> > +	RKVDEC_REG_H264_POC_REFER0(4),
-> > +	RKVDEC_REG_H264_POC_REFER0(6),
-> > +	RKVDEC_REG_H264_POC_REFER0(8),
-> > +	RKVDEC_REG_H264_POC_REFER0(10),
-> > +	RKVDEC_REG_H264_POC_REFER0(12),
-> > +	RKVDEC_REG_H264_POC_REFER0(14),
-> > +	RKVDEC_REG_H264_POC_REFER1(1),
-> > +	RKVDEC_REG_H264_POC_REFER1(3),
-> > +	RKVDEC_REG_H264_POC_REFER1(5),
-> > +	RKVDEC_REG_H264_POC_REFER1(7),
-> > +	RKVDEC_REG_H264_POC_REFER1(9),
-> > +	RKVDEC_REG_H264_POC_REFER1(11),
-> > +	RKVDEC_REG_H264_POC_REFER1(13),
-> > +	RKVDEC_REG_H264_POC_REFER2(0)
-> > +};
-> > +
-> > +static u32 poc_reg_tbl_bottom_field[16] = {
-> > +	RKVDEC_REG_H264_POC_REFER0(1),
-> > +	RKVDEC_REG_H264_POC_REFER0(3),
-> > +	RKVDEC_REG_H264_POC_REFER0(5),
-> > +	RKVDEC_REG_H264_POC_REFER0(7),
-> > +	RKVDEC_REG_H264_POC_REFER0(9),
-> > +	RKVDEC_REG_H264_POC_REFER0(11),
-> > +	RKVDEC_REG_H264_POC_REFER0(13),
-> > +	RKVDEC_REG_H264_POC_REFER1(0),
-> > +	RKVDEC_REG_H264_POC_REFER1(2),
-> > +	RKVDEC_REG_H264_POC_REFER1(4),
-> > +	RKVDEC_REG_H264_POC_REFER1(6),
-> > +	RKVDEC_REG_H264_POC_REFER1(8),
-> > +	RKVDEC_REG_H264_POC_REFER1(10),
-> > +	RKVDEC_REG_H264_POC_REFER1(12),
-> > +	RKVDEC_REG_H264_POC_REFER1(14),
-> > +	RKVDEC_REG_H264_POC_REFER2(1)
-> > +};  
+> diff --git a/drivers/media/common/videobuf2/videobuf2-core.c b/drivers/media/common/videobuf2/videobuf2-core.c
+> index 4489744fbbd9..c4c7980dcb0d 100644
+> --- a/drivers/media/common/videobuf2/videobuf2-core.c
+> +++ b/drivers/media/common/videobuf2/videobuf2-core.c
+> @@ -1416,6 +1416,29 @@ unsigned int vb2_request_buffer_cnt(struct media_request *req)
+>  }
+>  EXPORT_SYMBOL_GPL(vb2_request_buffer_cnt);
+>  
+> +struct vb2_buffer *vb2_request_get_buf(struct media_request *req,
+> +				       unsigned int n)
+> +{
+> +	struct media_request_object *obj;
+> +	struct vb2_buffer *buf = NULL;
+> +	unsigned int nbufs = 0;
+> +	unsigned long flags;
+> +
+> +	spin_lock_irqsave(&req->lock, flags);
+> +	list_for_each_entry(obj, &req->objects, list) {
+> +		if (!vb2_request_object_is_buffer(obj) ||
+> +		    nbufs++ < n)
+> +			continue;
+> +
+> +		buf = container_of(obj, struct vb2_buffer, req_obj);
+> +		break;
+> +	}
+> +	spin_unlock_irqrestore(&req->lock, flags);
+> +
+> +	return buf;
+> +}
+> +EXPORT_SYMBOL_GPL(vb2_request_get_buf);
+> +
+>  int vb2_core_prepare_buf(struct vb2_queue *q, unsigned int index, void *pb)
+>  {
+>  	struct vb2_buffer *vb;
+> diff --git a/include/media/videobuf2-core.h b/include/media/videobuf2-core.h
+> index a2b2208b02da..6206e25df764 100644
+> --- a/include/media/videobuf2-core.h
+> +++ b/include/media/videobuf2-core.h
+> @@ -1225,4 +1225,15 @@ bool vb2_request_object_is_buffer(struct media_request_object *obj);
+>   */
+>  unsigned int vb2_request_buffer_cnt(struct media_request *req);
+>  
+> +/**
+> + * vb2_request_get_buf() - return the buffer at index @idx
+> + *
+> + * @req:	the request.
+> + * @n:		search for the Nth buffer in the req object list
 
-[...]
+It's not very clear to me what "n" is here. Wouldn't it be better to
+pass the queue pointer instead, to get a buffer for a given queue ?
 
-> > +static int rkvdec_queue_setup(struct vb2_queue *vq, unsigned int *num_buffers,
-> > +			      unsigned int *num_planes, unsigned int sizes[],
-> > +			      struct device *alloc_devs[])
-> > +{
-> > +	struct rkvdec_ctx *ctx = vb2_get_drv_priv(vq);
-> > +	struct v4l2_pix_format_mplane *pixfmt;
-> > +	struct v4l2_format *f;
-> > +	unsigned int i;
-> > +
-> > +	if (V4L2_TYPE_IS_OUTPUT(vq->type))
-> > +		f = &ctx->coded_fmt;
-> > +	else
-> > +		f = &ctx->decoded_fmt;
-> > +
-> > +	if (*num_planes) {
-> > +		if (*num_planes != f->fmt.pix_mp.num_planes)
-> > +			return -EINVAL;
-> > +
-> > +		for (i = 0; i < f->fmt.pix_mp.num_planes; i++) {
-> > +			if (sizes[i] < f->fmt.pix_mp.plane_fmt[i].sizeimage)
-> > +				return -EINVAL;
-> > +		}  
-> 
-> Shouldn't there be a 'return 0' here? In the CREATE_BUFS case all you do is check
-> if the given size is large enough, and if so then you are done.
+> + *
+> + * Return a vb2 buffer or NULL if there's no buffer at the specified position
+> + */
+> +struct vb2_buffer *vb2_request_get_buf(struct media_request *req,
+> +				       unsigned int n);
+> +
+>  #endif /* _MEDIA_VIDEOBUF2_CORE_H */
 
-I end up returning 0 anyway, it's just that size[0] is updated to
-account for the extra MV size, is that a problem?
+-- 
+Regards,
 
-> 
-> > +	} else {
-> > +		*num_planes = f->fmt.pix_mp.num_planes;
-> > +		for (i = 0; i < f->fmt.pix_mp.num_planes; i++)
-> > +			sizes[i] = f->fmt.pix_mp.plane_fmt[i].sizeimage;
-> > +	}
-> > +
-> > +	if (V4L2_TYPE_IS_OUTPUT(vq->type))
-> > +		return 0;
-> > +
-> > +	pixfmt = &ctx->decoded_fmt.fmt.pix_mp;
-> > +	sizes[0] += 128 * DIV_ROUND_UP(pixfmt->width, 16) *
-> > +		    DIV_ROUND_UP(pixfmt->height, 16);
-
-This makes me realize we decided to take the MV extra size into account
-in our ->sizeimage calculation in the hantro driver, so I should
-probably move this code to try_s_capture_fmt().
-
+Laurent Pinchart
 
 _______________________________________________
 Linux-rockchip mailing list
