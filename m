@@ -2,59 +2,59 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1628711DFD5
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 09:49:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5888711DFDA
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 09:50:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8QqbsHNFuqh5fTmBiM9Yy/4JT+b6D9VJjr/oYWmXWsI=; b=RiGIkvUL9O0Es9
-	D0WggNXKnExoY0qf7D2MtE5b6SdO2u22wUv6sEK3wEp7WfGI/oq2PtFYgAE2+ugIzGs7KYiIMTQqS
-	OsPbi2/jK9wAVNZqPRZZNTnap1gKLNQZRCoPy22vdw2TBhjKxwjawQIro/MHStMmMoTdc53dKRSbj
-	UT1jgzjV9cgEe+XlgCa4uFWY8sLI3sAoANPbYphtAieG3USrYZKK7o2A5h4DNArKxQSXEA/x4kOfE
-	aciY+AUWWZi+5dbh2t4oxuEm+cXnpuXtgo0uOV2c6HtpiLMpvvlga1cWVjRd/jBOex42/6NiCdTIG
-	e/agPgEbj9dZM2c++C6w==;
+	List-Owner; bh=7SGpJKIEcTpYdbudYveWougb7pLfTCR7vrXN2pF0LZA=; b=ZysZUYonEr4UE9
+	RH4lXWyZdk+F+4ve80hu0rEDEbBcDW47R52tunzAZahYiurjxE+6IPAqiUwPbycOa6Ix3NEQORyqd
+	q3S0/JcA2He+K9bo2ImPqo7VRK6PjJpE3W1o8b5HPS+/W37p3V+8AP/d31pu4lVcmO94IjcZyWi2n
+	HhNIVGqoiTt91lCkWQVReZAzu4v0faRyEzUHBrnBBUoX9CWzAKxtmL7Q82rIU03NI1OfC3buFoHGG
+	Tw3KKNc6m6VUdZCYp09zS1+qXgjVRBRLw4U9cOSGo7JoaUZt4NWHHSnFM9f0sQI7DhjoKPuMdmW+J
+	2X8Uz7YMvdQh6eUAf68Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifgdt-00078n-Gi; Fri, 13 Dec 2019 08:49:45 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1ifgeI-0007Mr-Nx; Fri, 13 Dec 2019 08:50:10 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifgcd-0006Dl-Ak; Fri, 13 Dec 2019 08:48:29 +0000
-Received: by mail-pl1-x643.google.com with SMTP id d15so963769pll.3;
- Fri, 13 Dec 2019 00:48:27 -0800 (PST)
+ id 1ifgcl-0006L3-Nl; Fri, 13 Dec 2019 08:48:37 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id l4so911645pjt.5;
+ Fri, 13 Dec 2019 00:48:35 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=fPnTIRMILPqM0UWzvBdt6uVoOYvVzYGaVnz/AEQ+U64=;
- b=rLyeugVoRkoz0+Y06IdS4Wvj9dz3kH+OIbgNdfHC9yIGa3u21GzMr6ebQ+/spw5NL8
- T4JsouxJ5/nenY7TSf/8u+jxvvDelNJFFAx/qthYc3UEVoDaYOf1kyUbN3ABNGkgFyF8
- n5q3zbhI2px3oFghB7KFH7Sfi1nVSLGgN3xGxrtqk9bGH3guYHeVBQRtsFUBZktDEm9i
- j7pm72vvgeWvvo5qppTXv1/rkXkkFD8tEtdyUUSuud+XjCSTneFTmeb6McaQLhEPPUj6
- rPXePpFahsxF7SSb1JOnfGWLWy57Z+NpW2RLNcRMC+XfPRc6C6JO9+vSj9Jpev3w5yOz
- uCdw==
+ bh=0o2WJ0k/dFGgYEVYb9lTf6IgcR1UsXhdlPgkIAlPrXo=;
+ b=o/MiNlBV3uFbxQ8l5rsULvY9OfMmoxiD0+Ojr2yUMDGOXKfUr1aQP2FtDnI/04RU9W
+ OeW6jTavgoBI+fdF98xZt3NyfAgtEEnBL7HlKiq3zqvIxFCsdLR7gsaMkVZVrW6haAaI
+ 7wlEPq5VAFIVC4oMUhj3VUJhnnxXFiv5EGCGxdqT/z7Xel2tEAZ577OWJigyD1onNcoP
+ W/9wUhOl2lRPSiq6WfXYmg6ThHpG5YDiydbQ6O/PHD5ST45vx0H4V+fKaqDaF3pJBi2D
+ FYj/9ynztA1ftiXFZZo03heN1sj9mNLg1AwsOZHT8M75Q8w8r1WIS4mQ3VApakhVEUQ3
+ T2JA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=fPnTIRMILPqM0UWzvBdt6uVoOYvVzYGaVnz/AEQ+U64=;
- b=MQOwDa5ApIQEfZs5mdDin+3xuZMh9oCnR4KvZ9BCEUezV1pfpRqtG3YgaSCNpbo+hK
- 0N1N1yoSZucpNKtDcgYNIdK8hPrV0H3HSdKpIVlKDdRJc5zfDbbI5/uvb1sAGa7bOqGW
- Qz/6XQXRH2gXJomauvOe4sClh1ZMOqONgCx60VJpLKhmcEY2vKK3KzxhLoLVsNV7F+ag
- EaLn9GyNJpHy3I52cTuP0SZLHDGwCYw/0fb1kPgYNC88CfUErR4b2NYXv+dhJlrGcUEr
- jllP/gE5DHpsvdQw5nfHjgNjsknF0Qknxyf+uC0fhtat9iiGj8rtr1NSTeoxvGjL6ECm
- +nUg==
-X-Gm-Message-State: APjAAAXYBvwmOSons6eOA6jeTGZpiwcAo/nJO5bO3f9xucCxl7sU9rR5
- Qk1B3jSJ/IsBqJ8oWDpTlaM=
-X-Google-Smtp-Source: APXvYqzwxhAdN8PIyYKjnZsJFAh7Bv/fqcmv6xcJ6UgbSFsLrvOIj5VeKYAqdC0FsVvdvWEhwz3COA==
-X-Received: by 2002:a17:902:8b86:: with SMTP id
- ay6mr14490650plb.223.1576226906585; 
- Fri, 13 Dec 2019 00:48:26 -0800 (PST)
+ bh=0o2WJ0k/dFGgYEVYb9lTf6IgcR1UsXhdlPgkIAlPrXo=;
+ b=ST7HtNdDFJK5vCiIF3O70ekhMBcZ7yleuYcmmxfEiCEkpoLiN55a0CBc8XyZwuWAUM
+ JauWJkhsOpVB/W88k3fxneIRLOcxicMAkXkpurA7LJ+0ff5urtyd1SgtxYb1jui4983u
+ QujCMkm/YZjDKEkBvn7oL+toDtZ7DK0PB9mPsF4dMXUzJ52+VYfcBAWLKclPLp8aQab6
+ Dd0kRdjGs3q7WRKEQsLlADI5oZi0zyNViQ6A6sIuFZgs8rzkdmzNG3n0uZI+HNhDojm5
+ B/4rCoUUDAoe6KahEEKP0D4M2uQySjn/+SHLIceVYw4CgI5Uu0ui26eqhBgNfHrDYHyb
+ vRTQ==
+X-Gm-Message-State: APjAAAWXIOicvQkpW9uH7ZPs6frqyUdg4LeEktwcCVBstB+X1HL2Wddq
+ es3ErSZSErOUH9cMpFIR8YzfdvxjIjN2WQ==
+X-Google-Smtp-Source: APXvYqx3CBPs5CiTHbJaTZiz/1F1M0U10K5CQO0kJsbSdQ5viEx76NO4a+RVs6U23XLqRUKHVyojOg==
+X-Received: by 2002:a17:90a:28a1:: with SMTP id
+ f30mr15310586pjd.77.1576226914896; 
+ Fri, 13 Dec 2019 00:48:34 -0800 (PST)
 Received: from prasmi.domain.name ([103.219.60.167])
- by smtp.gmail.com with ESMTPSA id 68sm9985632pge.14.2019.12.13.00.48.18
+ by smtp.gmail.com with ESMTPSA id 68sm9985632pge.14.2019.12.13.00.48.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Dec 2019 00:48:25 -0800 (PST)
+ Fri, 13 Dec 2019 00:48:34 -0800 (PST)
 From: Lad Prabhakar <prabhakar.csengg@gmail.com>
 X-Google-Original-From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
@@ -65,24 +65,22 @@ To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
  Marek Vasut <marek.vasut+renesas@gmail.com>,
  Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
  linux-pci@vger.kernel.org
-Subject: [v2 3/6] of: address: add support to parse PCI outbound-ranges
-Date: Fri, 13 Dec 2019 08:47:45 +0000
-Message-Id: <20191213084748.11210-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [v2 4/6] dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
+ controller
+Date: Fri, 13 Dec 2019 08:47:46 +0000
+Message-Id: <20191213084748.11210-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191213084748.11210-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
 References: <20191213084748.11210-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_004827_426879_7144A414 
-X-CRM114-Status: GOOD (  15.62  )
+X-CRM114-CacheID: sfid-20191213_004835_826076_83F66E37 
+X-CRM114-Status: GOOD (  13.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -126,150 +124,57 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
 
-this patch adds support to parse PCI outbound-ranges, the
-outbound-regions are similar to pci ranges except it doesn't
-have pci address, below is the format for bar-ranges:
-
-outbound-ranges = <flags upper32_cpuaddr lower32_cpuaddr
-                   upper32_size lower32_size>;
+This patch adds the bindings for the R-Car PCIe endpoint driver.
 
 Signed-off-by: Lad, Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 ---
- drivers/of/address.c       | 44 ++++++++++++++++++++++++++++++++++++++++----
- include/linux/of_address.h | 21 +++++++++++++++++++++
- 2 files changed, 61 insertions(+), 4 deletions(-)
+ .../devicetree/bindings/pci/rcar-pci-ep.txt        | 37 ++++++++++++++++++++++
+ 1 file changed, 37 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
 
-diff --git a/drivers/of/address.c b/drivers/of/address.c
-index 978427a..ca4643c 100644
---- a/drivers/of/address.c
-+++ b/drivers/of/address.c
-@@ -233,9 +233,9 @@ int of_pci_address_to_resource(struct device_node *dev, int bar,
- EXPORT_SYMBOL_GPL(of_pci_address_to_resource);
- 
- static int parser_init(struct of_pci_range_parser *parser,
--			struct device_node *node, const char *name)
-+		       struct device_node *node, const char *name,
-+		       const int na, const int ns)
- {
--	const int na = 3, ns = 2;
- 	int rlen;
- 
- 	parser->node = node;
-@@ -254,17 +254,30 @@ static int parser_init(struct of_pci_range_parser *parser,
- int of_pci_range_parser_init(struct of_pci_range_parser *parser,
- 				struct device_node *node)
- {
--	return parser_init(parser, node, "ranges");
-+	const int na = 3, ns = 2;
+diff --git a/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt b/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
+new file mode 100644
+index 0000000..7f0a97e
+--- /dev/null
++++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
+@@ -0,0 +1,37 @@
++* Renesas R-Car PCIe Endpoint Controller DT description
 +
-+	return parser_init(parser, node, "ranges", na, ns);
- }
- EXPORT_SYMBOL_GPL(of_pci_range_parser_init);
- 
- int of_pci_dma_range_parser_init(struct of_pci_range_parser *parser,
- 				struct device_node *node)
- {
--	return parser_init(parser, node, "dma-ranges");
-+	const int na = 3, ns = 2;
++Required properties:
++	    "renesas,pcie-ep-r8a774c0" for the R8A774C0 SoC;
++	    "renesas,pcie-ep-rcar-gen3" for a generic R-Car Gen3 or
++				     RZ/G2 compatible device.
 +
-+	return parser_init(parser, node, "dma-ranges", na, ns);
- }
- EXPORT_SYMBOL_GPL(of_pci_dma_range_parser_init);
- 
-+int of_pci_outbound_range_parser_init(struct of_pci_range_parser *parser,
-+				      struct device_node *node)
-+{
-+	const int na = 1, ns = 2;
++	    When compatible with the generic version, nodes must list the
++	    SoC-specific version corresponding to the platform first
++	    followed by the generic version.
 +
-+	return parser_init(parser, node, "outbound-ranges", na, ns);
-+}
-+EXPORT_SYMBOL_GPL(of_pci_outbound_range_parser_init);
++- reg: base address and length of the PCIe controller registers.
++- outbound-ranges: outbound windows base address and length including the flags.
++- resets: Must contain phandles to PCIe-related reset lines exposed by IP block
++- clocks: from common clock binding: clock specifiers for the PCIe controller
++	 clock.
++- clock-names: from common clock binding: should be "pcie".
 +
- struct of_pci_range *of_pci_range_parser_one(struct of_pci_range_parser *parser,
- 						struct of_pci_range *range)
- {
-@@ -310,6 +323,29 @@ struct of_pci_range *of_pci_range_parser_one(struct of_pci_range_parser *parser,
- }
- EXPORT_SYMBOL_GPL(of_pci_range_parser_one);
- 
-+struct of_pci_outbound_range
-+*of_pci_outbound_range_parser_one(struct of_pci_range_parser *parser,
-+				  struct of_pci_outbound_range *range)
-+{
-+	const int na = 1, ns = 2;
++Optional Property:
++- max-functions: Maximum number of functions that can be configured (default 1).
 +
-+	if (!range)
-+		return NULL;
++Example:
 +
-+	if (!parser->range || parser->range + parser->np > parser->end)
-+		return NULL;
++SoC-specific DT Entry:
 +
-+	range->flags = be32_to_cpup(parser->range);
-+	range->cpu_addr = of_translate_address(parser->node,
-+					       parser->range + na);
-+	range->size = of_read_number(parser->range + parser->pna + na, ns);
-+
-+	parser->range += parser->np;
-+
-+	return range;
-+}
-+EXPORT_SYMBOL_GPL(of_pci_outbound_range_parser_one);
-+
- /*
-  * of_pci_range_to_resource - Create a resource from an of_pci_range
-  * @range:	the PCI range that describes the resource
-diff --git a/include/linux/of_address.h b/include/linux/of_address.h
-index 30e40fb..93b3be3 100644
---- a/include/linux/of_address.h
-+++ b/include/linux/of_address.h
-@@ -22,9 +22,18 @@ struct of_pci_range {
- 	u32 flags;
- };
- 
-+struct of_pci_outbound_range {
-+	u32 flags;
-+	u64 cpu_addr;
-+	u64 size;
-+};
-+
- #define for_each_of_pci_range(parser, range) \
- 	for (; of_pci_range_parser_one(parser, range);)
- 
-+#define for_each_of_pci_outbound_range(parser, range) \
-+	for (; of_pci_outbound_range_parser_one(parser, range);)
-+
- /* Translate a DMA address from device space to CPU space */
- extern u64 of_translate_dma_address(struct device_node *dev,
- 				    const __be32 *in_addr);
-@@ -52,9 +61,14 @@ extern int of_pci_range_parser_init(struct of_pci_range_parser *parser,
- 			struct device_node *node);
- extern int of_pci_dma_range_parser_init(struct of_pci_range_parser *parser,
- 			struct device_node *node);
-+extern int of_pci_outbound_range_parser_init(struct of_pci_range_parser *parser,
-+					     struct device_node *node);
- extern struct of_pci_range *of_pci_range_parser_one(
- 					struct of_pci_range_parser *parser,
- 					struct of_pci_range *range);
-+extern struct of_pci_outbound_range
-+*of_pci_outbound_range_parser_one(struct of_pci_range_parser *parser,
-+				  struct of_pci_outbound_range *range);
- extern int of_dma_get_range(struct device_node *np, u64 *dma_addr,
- 				u64 *paddr, u64 *size);
- extern bool of_dma_is_coherent(struct device_node *np);
-@@ -97,6 +111,13 @@ static inline int of_pci_dma_range_parser_init(struct of_pci_range_parser *parse
- 	return -ENOSYS;
- }
- 
-+static inline int
-+of_pci_outbound_range_parser_init(struct of_pci_range_parser *parser,
-+				  struct device_node *node)
-+{
-+	return -ENOSYS;
-+}
-+
- static inline struct of_pci_range *of_pci_range_parser_one(
- 					struct of_pci_range_parser *parser,
- 					struct of_pci_range *range)
++	pcie_ep: pcie_ep@fe000000 {
++		compatible = "renesas,pcie-ep-r8a774c0", "renesas,pcie-rcar-gen2";
++		reg = <0 0xfe000000 0 0x80000>;
++		outbound-ranges = <0xa 0x0 0xfe100000 0 0x000100000
++				   0xa 0x0 0xfe200000 0 0x000200000
++				   0x6 0x0 0x30000000 0 0x008000000
++				   0x6 0x0 0x38000000 0 0x008000000>;
++		clocks = <&cpg CPG_MOD 319>;
++		clock-names = "pcie";
++		power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
++		resets = <&cpg 319>;
++	};
 -- 
 2.7.4
 
