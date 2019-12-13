@@ -2,58 +2,68 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 224DB11E66B
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 16:22:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA92F11E67A
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 16:23:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fvxJzesQa+Hu/DrTgUlSB9Prb11XVo/Ccv8T3otSaxo=; b=TB1/2ojDvbPQ9n
-	8WgJbBE1r2ddx9JdvgtHMOD1pkBvdrwIJStJSbKQ7pVOI86qCGtRk5WqCnNwBMzXdDsJsmqcIq0k8
-	YFxOn0+yMMtAPpMkKM4fK7DwXac6uSHOO9DuSJ1uuWwfIf5OmxcKrVh/1lPSpxIOdSxq9bo5vYok9
-	QJOne71AT1l5XVLMp5u7GygyMoT7/JBPdDq9l7QuIBJddh3c6LBmguxCXYorq97nOMEX+Pua3soQz
-	J38PKXoTrhw9wpweaUZbmr4urof+jvc/Bvzp0kXDR+wKMR2UIT6g9asVlQK8h+JXI4OatJHf/taXJ
-	ZIhdu5hd8qk5ravFEflg==;
+	List-Owner; bh=g/M1bM+d3tZMwbr5iQsgKhLhUihAqj12J8EjconN9yI=; b=bvzAO2F2DXEBH3
+	5fy0pdw2aML/asIIAiUFleNbBuTl1zl14uRhWX0JPbE101lbXvKVjSJKAzE6n4zU52eUsvB54tB7Z
+	KNEI7wP/L9jh+b5k38lDozhD6fR5qxUyYMN6dAOZGoVL4fCbCawrbm7CWyLi837eanJ9rnXjuzwDP
+	o/Fk1SGfvUt4GzO75emkDdu0ZbmjUirvuRhiOjH6zW41wnrJJQ/dnaeSt20N6dipGjN7+0K/ECU4M
+	5f/+uZ58X6618h+q8dZsv0ntHE03k1ralzzs/NpbZxsKgb5wL6Q4nqv89ZFrkvNbwy1Tw1DUG6CQn
+	nOiprGHvLjyzzUIWF/Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifmlO-0005qp-PY; Fri, 13 Dec 2019 15:21:54 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1ifmnH-0006MJ-Ch; Fri, 13 Dec 2019 15:23:51 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifmlL-0005qB-2s
- for linux-rockchip@lists.infradead.org; Fri, 13 Dec 2019 15:21:52 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id A1DFD292A9A;
- Fri, 13 Dec 2019 15:21:48 +0000 (GMT)
-Date: Fri, 13 Dec 2019 16:21:45 +0100
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: Re: [PATCH v3 1/7] media: vb2: Add a helper to get the vb2 buffer
- attached to a request
-Message-ID: <20191213162145.6bb10078@collabora.com>
-In-Reply-To: <20191213150935.GC24654@pendragon.ideasonboard.com>
+ id 1ifmnA-0006Iz-Po
+ for linux-rockchip@lists.infradead.org; Fri, 13 Dec 2019 15:23:48 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 02C04E41;
+ Fri, 13 Dec 2019 16:23:41 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1576250622;
+ bh=9YNy9xTU5XimeURCP7Sp1qumv4WSHztJ66YuDPP2q/M=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=lP57kF262X0/Yg4V8og2glamOK5n6U+VScNg78VEBGo7DcBAmygHqGH8IFR720RiQ
+ GuVYu1QoCorwQP3984jpVDTfsdzttoem/n3xSoLfNXXnvvgdWlwmQjeWA7Xv7q2Fpw
+ PPZ6vsIVlhxpqgDBg8v/fViFeBorsDzRjx7UyCmI=
+Date: Fri, 13 Dec 2019 17:23:32 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Boris Brezillon <boris.brezillon@collabora.com>
+Subject: Re: [PATCH v3 5/7] media: dt-bindings: rockchip: Document RK3399
+ Video Decoder bindings
+Message-ID: <20191213152332.GF4860@pendragon.ideasonboard.com>
 References: <20191213125414.90725-1-boris.brezillon@collabora.com>
- <20191213125414.90725-2-boris.brezillon@collabora.com>
- <20191213150935.GC24654@pendragon.ideasonboard.com>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ <20191213125414.90725-6-boris.brezillon@collabora.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191213125414.90725-6-boris.brezillon@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_072151_392257_D3992815 
-X-CRM114-Status: GOOD (  19.13  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191213_072345_144700_AA9B7476 
+X-CRM114-Status: GOOD (  15.47  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,80 +90,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, 13 Dec 2019 17:09:35 +0200
-Laurent Pinchart <laurent.pinchart@ideasonboard.com> wrote:
+Hi Boris,
 
-> Hi Boris,
-> 
-> On Fri, Dec 13, 2019 at 01:54:08PM +0100, Boris Brezillon wrote:
-> > vb2_request_get_buf() returns the N-th buffer attached to a media
-> > request.
-> > 
-> > Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
-> > ---
-> > Changes in v3:
-> > * None
-> > 
-> > Changes in v2:
-> > * Adjust the kernel doc as suggested by Hans
-> > ---
-> >  .../media/common/videobuf2/videobuf2-core.c   | 23 +++++++++++++++++++
-> >  include/media/videobuf2-core.h                | 11 +++++++++
-> >  2 files changed, 34 insertions(+)
-> > 
-> > diff --git a/drivers/media/common/videobuf2/videobuf2-core.c b/drivers/media/common/videobuf2/videobuf2-core.c
-> > index 4489744fbbd9..c4c7980dcb0d 100644
-> > --- a/drivers/media/common/videobuf2/videobuf2-core.c
-> > +++ b/drivers/media/common/videobuf2/videobuf2-core.c
-> > @@ -1416,6 +1416,29 @@ unsigned int vb2_request_buffer_cnt(struct media_request *req)
-> >  }
-> >  EXPORT_SYMBOL_GPL(vb2_request_buffer_cnt);
-> >  
-> > +struct vb2_buffer *vb2_request_get_buf(struct media_request *req,
-> > +				       unsigned int n)
-> > +{
-> > +	struct media_request_object *obj;
-> > +	struct vb2_buffer *buf = NULL;
-> > +	unsigned int nbufs = 0;
-> > +	unsigned long flags;
-> > +
-> > +	spin_lock_irqsave(&req->lock, flags);
-> > +	list_for_each_entry(obj, &req->objects, list) {
-> > +		if (!vb2_request_object_is_buffer(obj) ||
-> > +		    nbufs++ < n)
-> > +			continue;
-> > +
-> > +		buf = container_of(obj, struct vb2_buffer, req_obj);
-> > +		break;
-> > +	}
-> > +	spin_unlock_irqrestore(&req->lock, flags);
-> > +
-> > +	return buf;
-> > +}
-> > +EXPORT_SYMBOL_GPL(vb2_request_get_buf);
-> > +
-> >  int vb2_core_prepare_buf(struct vb2_queue *q, unsigned int index, void *pb)
-> >  {
-> >  	struct vb2_buffer *vb;
-> > diff --git a/include/media/videobuf2-core.h b/include/media/videobuf2-core.h
-> > index a2b2208b02da..6206e25df764 100644
-> > --- a/include/media/videobuf2-core.h
-> > +++ b/include/media/videobuf2-core.h
-> > @@ -1225,4 +1225,15 @@ bool vb2_request_object_is_buffer(struct media_request_object *obj);
-> >   */
-> >  unsigned int vb2_request_buffer_cnt(struct media_request *req);
-> >  
-> > +/**
-> > + * vb2_request_get_buf() - return the buffer at index @idx
-> > + *
-> > + * @req:	the request.
-> > + * @n:		search for the Nth buffer in the req object list  
-> 
-> It's not very clear to me what "n" is here. Wouldn't it be better to
-> pass the queue pointer instead, to get a buffer for a given queue ?
+Thank you for the patch.
 
-Yep, that would work too and would be much clearer. I'll do that,
-thanks for the suggestion.
+On Fri, Dec 13, 2019 at 01:54:12PM +0100, Boris Brezillon wrote:
+> Document the Rockchip RK3399 Video Decoder bindings.
+> 
+> Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+> ---
+> Changes in v3:
+> * Fix dtbs_check failures
+> ---
+>  .../bindings/media/rockchip,vdec.yaml         | 71 +++++++++++++++++++
+>  1 file changed, 71 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/rockchip,vdec.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/media/rockchip,vdec.yaml b/Documentation/devicetree/bindings/media/rockchip,vdec.yaml
+> new file mode 100644
+> index 000000000000..7167c3d6a389
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/rockchip,vdec.yaml
+> @@ -0,0 +1,71 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/media/rockchip,vdec.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Rockchip Video Decoder (VDec) Device Tree Bindings
+> +
+> +maintainers:
+> +  - Heiko Stuebner <heiko@sntech.de>
+> +
+> +description: |-
+> +  The Rockchip rk3399 has a stateless Video Decoder that can decodes H.264,
+> +  HEVC an VP9 streams.
+> +
+> +properties:
+> +  compatible:
+> +    const: rockchip,rk3399-vdec
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: The Video Decoder AXI interface clock
+> +      - description: The Video Decoder AHB interface clock
+> +      - description: The Video Decoded CABAC clock
+> +      - description: The Video Decoder core clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: aclk
+
+How about calling it "axi" ? None of the other clock names have "clk".
+
+> +      - const: iface
+
+And "ahb" here, as the AXI interface clock is also an interface clock ?
+
+> +      - const: cabac
+> +      - const: core
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  iommus:
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - power-domains
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +    vdec: video-codec@ff660000 {
+> +        compatible = "rockchip,rk3399-vdec";
+> +        reg = <0x0 0xff660000 0x0 0x400>;
+> +        interrupts = <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH 0>;
+> +        clocks = <&cru ACLK_VDU>, <&cru HCLK_VDU>,
+> +                 <&cru SCLK_VDU_CA>, <&cru SCLK_VDU_CORE>;
+> +        clock-names = "aclk", "iface", "cabac", "core";
+> +        power-domains = <&power RK3399_PD_VDU>;
+> +        iommus = <&vdec_mmu>;
+> +    };
+> +
+> +...
+
+-- 
+Regards,
+
+Laurent Pinchart
 
 _______________________________________________
 Linux-rockchip mailing list
