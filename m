@@ -2,50 +2,57 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66C4E11EA50
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 19:29:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C4A811EA8B
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 19:39:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iclB01e8SoTnKNJMYwFxq7WNL8n41eCr2Bv/pg9AxbY=; b=HFQ3Amcs4GS0u/
-	trM1Ua+Ij0EvYt9n4omHFrVdC8oKG+Xj6psIiskPR+1B8ZuvfwJf18kdmeIf8XJBXMxkDCxOdQh9A
-	Zeulsa4Bfpi3zIjAZHRUvWkehBfzPCx0Goj2F0q4+k6RP1B18maDNxCY4OGagdaQ4sMg8cgohkkcK
-	9iOGY69dAeTdoNgtFnjhgoypp4SGpE8pCJkBe4KZOF1ZDN3gTl2YATdrbvyT68prm37g+gkxYbGgH
-	UB+IARJw4pKta+OnsDb/Ad/hTPibZpseZWM1HOTp1GUY9idLPxSc3H/G8DfdrAYSV7pF2kNfYMiMX
-	oMbS9pvwLBGe9ynnXSbQ==;
+	List-Owner; bh=97S6LKtGhZxH3lOfk2POvXYy0xXAmR0+GLdc6X/zO1U=; b=eoOf9IzgyVD91U
+	K30GythVGlOyOGDgmJX50pFDLp3qBBzVotaRaEmiww3eAeBySeGmc84AiLBibKlTtzJlOxAXPF+a6
+	D2LnG1mcIWRAjmguEqnBkoHgCtWTCXFS9A+NCEEIgoOSd9yVVWDyjBMNTOnuamDDVbpLTmFQEYIKw
+	V02uOOPSqhImhHBKCri/DoyCnITfos7ekRseFQYKuO3H64pnL3gKWkgXffCJ9xixq79bdLB/TkenZ
+	SBNaJYSkXFUJYw1gQHKuoB08DwT+N27wHLKSAhR9hGlguwSu6ZG3tYmjFHSoO0o9J08W5WM5oE8o5
+	rxHWdVxqzQswWe8A1Pyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifph9-0001pD-OJ; Fri, 13 Dec 2019 18:29:43 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1ifpqE-0007kf-Ec; Fri, 13 Dec 2019 18:39:06 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifpg1-0000o7-RL; Fri, 13 Dec 2019 18:28:39 +0000
-Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1ifpfq-0003GI-A5; Fri, 13 Dec 2019 19:28:22 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Miquel Raynal <miquel.raynal@bootlin.com>
+ id 1ifpq5-0007cr-0x; Fri, 13 Dec 2019 18:38:58 +0000
+X-Originating-IP: 91.224.148.103
+Received: from xps13 (unknown [91.224.148.103])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 75350C0002;
+ Fri, 13 Dec 2019 18:38:47 +0000 (UTC)
+Date: Fri, 13 Dec 2019 19:38:46 +0100
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Heiko =?UTF-8?B?U3TDvGJuZXI=?= <heiko@sntech.de>
 Subject: Re: [PATCH 10/12] arm64: dts: rockchip: Add PX30 CRTCs graph LVDS
  endpoints
-Date: Fri, 13 Dec 2019 19:28:21 +0100
-Message-ID: <1933192.L6hp5CucIl@diego>
-In-Reply-To: <20191213181051.25983-11-miquel.raynal@bootlin.com>
+Message-ID: <20191213193846.5d28cc97@xps13>
+In-Reply-To: <1933192.L6hp5CucIl@diego>
 References: <20191213181051.25983-1-miquel.raynal@bootlin.com>
  <20191213181051.25983-11-miquel.raynal@bootlin.com>
+ <1933192.L6hp5CucIl@diego>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_102834_058603_C14CD11E 
-X-CRM114-Status: GOOD (  14.95  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191213_103857_206729_75AED270 
+X-CRM114-Status: GOOD (  15.85  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -67,89 +74,54 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
  Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Miquel,
-
-Am Freitag, 13. Dezember 2019, 19:10:49 CET schrieb Miquel Raynal:
-> Add the display subsystem routes with the two available CRTCs: vopb
-> and vopl (big and little). For each CRTC, add the LVDS endpoints. MIPI
-> DSI endpoints will come later.
-> 
-> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-> ---
->  arch/arm64/boot/dts/rockchip/px30.dtsi | 20 ++++++++++++++++++++
->  1 file changed, 20 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-> index b2af0f02ecbe..1c96ba556daf 100644
-> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-> @@ -190,6 +190,16 @@
->  		compatible = "rockchip,display-subsystem";
->  		ports = <&vopb_out>, <&vopl_out>;
->  		status = "disabled";
-> +
-> +		route {
-> +			route_vopb_lvds: route-vopb-lvds {
-> +				connect = <&vopb_out_lvds>;
-> +			};
-> +
-> +			route_vopl_lvds: route-vopl-lvds {
-> +				connect = <&vopl_out_lvds>;
-> +			};
-> +		};
-
-where does this route-stuff come from?
-The vendor tree? Because so far I've not seen this in mainline-drm
-in general nor the Rockchip drm driver itself.
-
-
->  	};
->  
->  	gmac_clkin: external-gmac-clock {
-> @@ -976,6 +986,11 @@
->  		vopb_out: port {
->  			#address-cells = <1>;
->  			#size-cells = <0>;
-> +
-> +			vopb_out_lvds: endpoint@0 {
-> +				reg = <0>;
-> +				remote-endpoint = <&lvds_vopb_in>;
-> +			};
-
-This (and the one below) would create dangling phandle references
-and compile errors, because the referenced phandles only get introduced
-in patch12. So ideally merge this into the last patch.
-
-
-Heiko
-
->  		};
->  	};
->  
-> @@ -1008,6 +1023,11 @@
->  		vopl_out: port {
->  			#address-cells = <1>;
->  			#size-cells = <0>;
-> +
-> +			vopl_out_lvds: endpoint@0 {
-> +				reg = <0>;
-> +				remote-endpoint = <&lvds_vopl_in>;
-> +			};
->  		};
->  	};
->  
-> 
-
-
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgSGVpa28sCgpIZWlrbyBTdMO8Ym5lciA8aGVpa29Ac250ZWNoLmRlPiB3cm90ZSBvbiBGcmks
+IDEzIERlYyAyMDE5IDE5OjI4OjIxCiswMTAwOgoKPiBIaSBNaXF1ZWwsCj4gCj4gQW0gRnJlaXRh
+ZywgMTMuIERlemVtYmVyIDIwMTksIDE5OjEwOjQ5IENFVCBzY2hyaWViIE1pcXVlbCBSYXluYWw6
+Cj4gPiBBZGQgdGhlIGRpc3BsYXkgc3Vic3lzdGVtIHJvdXRlcyB3aXRoIHRoZSB0d28gYXZhaWxh
+YmxlIENSVENzOiB2b3BiCj4gPiBhbmQgdm9wbCAoYmlnIGFuZCBsaXR0bGUpLiBGb3IgZWFjaCBD
+UlRDLCBhZGQgdGhlIExWRFMgZW5kcG9pbnRzLiBNSVBJCj4gPiBEU0kgZW5kcG9pbnRzIHdpbGwg
+Y29tZSBsYXRlci4KPiA+IAo+ID4gU2lnbmVkLW9mZi1ieTogTWlxdWVsIFJheW5hbCA8bWlxdWVs
+LnJheW5hbEBib290bGluLmNvbT4KPiA+IC0tLQo+ID4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvcm9j
+a2NoaXAvcHgzMC5kdHNpIHwgMjAgKysrKysrKysrKysrKysrKysrKysKPiA+ICAxIGZpbGUgY2hh
+bmdlZCwgMjAgaW5zZXJ0aW9ucygrKQo+ID4gCj4gPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9i
+b290L2R0cy9yb2NrY2hpcC9weDMwLmR0c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlw
+L3B4MzAuZHRzaQo+ID4gaW5kZXggYjJhZjBmMDJlY2JlLi4xYzk2YmE1NTZkYWYgMTAwNjQ0Cj4g
+PiAtLS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3B4MzAuZHRzaQo+ID4gKysrIGIv
+YXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9weDMwLmR0c2kKPiA+IEBAIC0xOTAsNiArMTkw
+LDE2IEBACj4gPiAgCQljb21wYXRpYmxlID0gInJvY2tjaGlwLGRpc3BsYXktc3Vic3lzdGVtIjsK
+PiA+ICAJCXBvcnRzID0gPCZ2b3BiX291dD4sIDwmdm9wbF9vdXQ+Owo+ID4gIAkJc3RhdHVzID0g
+ImRpc2FibGVkIjsKPiA+ICsKPiA+ICsJCXJvdXRlIHsKPiA+ICsJCQlyb3V0ZV92b3BiX2x2ZHM6
+IHJvdXRlLXZvcGItbHZkcyB7Cj4gPiArCQkJCWNvbm5lY3QgPSA8JnZvcGJfb3V0X2x2ZHM+Owo+
+ID4gKwkJCX07Cj4gPiArCj4gPiArCQkJcm91dGVfdm9wbF9sdmRzOiByb3V0ZS12b3BsLWx2ZHMg
+ewo+ID4gKwkJCQljb25uZWN0ID0gPCZ2b3BsX291dF9sdmRzPjsKPiA+ICsJCQl9Owo+ID4gKwkJ
+fTsgIAo+IAo+IHdoZXJlIGRvZXMgdGhpcyByb3V0ZS1zdHVmZiBjb21lIGZyb20/Cj4gVGhlIHZl
+bmRvciB0cmVlPyBCZWNhdXNlIHNvIGZhciBJJ3ZlIG5vdCBzZWVuIHRoaXMgaW4gbWFpbmxpbmUt
+ZHJtCj4gaW4gZ2VuZXJhbCBub3IgdGhlIFJvY2tjaGlwIGRybSBkcml2ZXIgaXRzZWxmLgoKWWVz
+IGl0IGNvbWVzIGZyb20gdGhlIHZlbmRvciB0cmVlLCBJIGFkZGVkIGEgZmV3IHRoaW5ncyBmcm9t
+IHRoZSB2ZW5kb3IKdHJlZSBpbiB0aGUgIkkgcmVhbGx5IHdhbnQgdGhpcyBwYW5lbCB0byB3b3Jr
+IiBwaGFzZSBhbmQgSSBmb3Jnb3QgdG8KY2hlY2sgaWYgaXQgY291bGQgYmUgcmVtb3ZlZCwgSSds
+bCBwcm9iYWJseSBkcm9wIHRoaXMuCiAKPiAKPiAKPiA+ICAJfTsKPiA+ICAKPiA+ICAJZ21hY19j
+bGtpbjogZXh0ZXJuYWwtZ21hYy1jbG9jayB7Cj4gPiBAQCAtOTc2LDYgKzk4NiwxMSBAQAo+ID4g
+IAkJdm9wYl9vdXQ6IHBvcnQgewo+ID4gIAkJCSNhZGRyZXNzLWNlbGxzID0gPDE+Owo+ID4gIAkJ
+CSNzaXplLWNlbGxzID0gPDA+Owo+ID4gKwo+ID4gKwkJCXZvcGJfb3V0X2x2ZHM6IGVuZHBvaW50
+QDAgewo+ID4gKwkJCQlyZWcgPSA8MD47Cj4gPiArCQkJCXJlbW90ZS1lbmRwb2ludCA9IDwmbHZk
+c192b3BiX2luPjsKPiA+ICsJCQl9OyAgCj4gCj4gVGhpcyAoYW5kIHRoZSBvbmUgYmVsb3cpIHdv
+dWxkIGNyZWF0ZSBkYW5nbGluZyBwaGFuZGxlIHJlZmVyZW5jZXMKPiBhbmQgY29tcGlsZSBlcnJv
+cnMsIGJlY2F1c2UgdGhlIHJlZmVyZW5jZWQgcGhhbmRsZXMgb25seSBnZXQgaW50cm9kdWNlZAo+
+IGluIHBhdGNoMTIuIFNvIGlkZWFsbHkgbWVyZ2UgdGhpcyBpbnRvIHRoZSBsYXN0IHBhdGNoLgoK
+QWN0dWFsbHkgcGF0Y2ggMTIgYWxzbyByZWZlcmVuY2VzIHRoZXNlIG5vZGVzIHNvIEkgc2hvdWxk
+IG1lcmdlIHRoZW0uCgo+IAo+IAo+IEhlaWtvCj4gCj4gPiAgCQl9Owo+ID4gIAl9Owo+ID4gIAo+
+ID4gQEAgLTEwMDgsNiArMTAyMywxMSBAQAo+ID4gIAkJdm9wbF9vdXQ6IHBvcnQgewo+ID4gIAkJ
+CSNhZGRyZXNzLWNlbGxzID0gPDE+Owo+ID4gIAkJCSNzaXplLWNlbGxzID0gPDA+Owo+ID4gKwo+
+ID4gKwkJCXZvcGxfb3V0X2x2ZHM6IGVuZHBvaW50QDAgewo+ID4gKwkJCQlyZWcgPSA8MD47Cj4g
+PiArCQkJCXJlbW90ZS1lbmRwb2ludCA9IDwmbHZkc192b3BsX2luPjsKPiA+ICsJCQl9Owo+ID4g
+IAkJfTsKPiA+ICAJfTsKPiA+ICAKPiA+ICAgCj4gCj4gCj4gCj4gCgpUaGFua3MgZm9yIHRoZSBy
+ZXZpZXchCk1pcXXDqGwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtcm9ja2NoaXAK
