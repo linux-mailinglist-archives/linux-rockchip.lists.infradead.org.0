@@ -2,84 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C415411E576
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 15:21:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D0AC11E5B5
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Dec 2019 15:37:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JjaIU1BZfoxnu+wYUxUZn2lmAKMHNKXfz8xogPwBEwk=; b=POc+S7Jr8TN5yg
-	l8KE3BTdiBIFz67hlvcFvPD/QrH4ZeTK4yQn8xI2pQnbk5Jnnn+3tuNH5It0pSVTBJeL+lr6aFrG3
-	09X8G8Qn3Yum6nVwPvN5wTY78MvWkRgu1Y+MzEpvlLxy9VezxYFRFORnBH0TX72S9FCpphT+HhJtd
-	0ffVZsTLWwIdV8pNZYXOw/srGrgN2NMA8UvpbeOOo6mpfDhP38AH03BQV+lMmcDLXmbZJOJliNhYD
-	E4RJ2sxM2MDUWOlJWdN/Fp8LkWojRcFmDSbw8gML541+5xWOVVhB3Y76qFCmiBa4L7owQc9Najcj+
-	MOrnsxz4BfgDzYiv4YOQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xnDZn5hkRf9Uth4fdL29xtzga5oBhMt79SPqv2Wcf80=; b=iVy5RokXCxxevV
+	sDu8lYAGoJgxcKA8gmjEZ7Q0PRUtyDINT94OhRtIIN+tynm2vz9i5AFMW+05Yk8GwFNx6dSxzY1ua
+	+zpS6n8PUiajuVcXjHog89hHWhMzzP77E/DBz9m/Mty0uztOSaSWKs4fEiVLD+6gBajmCGe9Uknti
+	dsHy47UPc1YBTlFZoVtTQ3zVI1YKGRaX1Ee24flwhzdOeccuSnPGoFTspxEDsRaUnvlxo6Aq2zLd3
+	2WGuqvTpfcuzdh7QcBw7AAs0DjQwYkhEiOuYTuDrsGwjT0jAKPCoYhptrsbBCmw3ezhCPxZ36L4Xu
+	3CtC//Ztrra5HuEDml5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iflog-0004ol-T9; Fri, 13 Dec 2019 14:21:14 +0000
-Received: from lb3-smtp-cloud9.xs4all.net ([194.109.24.30])
+	id 1ifm3p-0002RZ-6e; Fri, 13 Dec 2019 14:36:53 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iflod-0004o9-0W
- for linux-rockchip@lists.infradead.org; Fri, 13 Dec 2019 14:21:13 +0000
-Received: from [IPv6:2001:983:e9a7:1:c93c:45bd:1710:e478]
- ([IPv6:2001:983:e9a7:1:c93c:45bd:1710:e478])
- by smtp-cloud9.xs4all.net with ESMTPA
- id floXiiAUNGyJwfloZi1Qyu; Fri, 13 Dec 2019 15:21:08 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
- t=1576246868; bh=EVs39wM1SwWqHyQP+lYgjYWUHJlRDdSAOaHxxT//L8A=;
- h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
- Subject;
- b=CIrxn26H0loiThE1yt7dbDn4i72GENeo8RIsif2X1PfAFJEbKLiauLUyJye5kEw5G
- 9AnCLDwePcQM+az04XhwwJSLCJcOWxowEyBzuZgFGuNS91Il+PKPSP9sDaRLue1IOj
- R2rpi//Eq1qzdZM6Vf0yg3w+jBrJ3lrTXxL+IIjMIfp6zIDr3ZfRg3YnCTTuGmhDhM
- BVMAD+s5IXaRhP1CR963pR5xXjoV6bbhHxiyZdlSVsbfK6VnhB0I4XvUTxGU/Ulw6r
- jgOOuLaZxEbCMP8z50Mb2xuT29ziMc0dpPjY8lBFV0B46ROeTX/tIcKkmaQo+saX3K
- IiP4L1HutrJDQ==
-Subject: Re: [PATCH v3 6/7] media: rkvdec: Add the rkvdec driver
-To: Boris Brezillon <boris.brezillon@collabora.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Hans Verkuil <hans.verkuil@cisco.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Sakari Ailus <sakari.ailus@iki.fi>, linux-media@vger.kernel.org
-References: <20191213125414.90725-1-boris.brezillon@collabora.com>
- <20191213125414.90725-7-boris.brezillon@collabora.com>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <036d3ecb-2307-4e8c-eaad-3c70c8cbda22@xs4all.nl>
-Date: Fri, 13 Dec 2019 15:21:05 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1ifm3Y-0002Bh-Py; Fri, 13 Dec 2019 14:36:41 +0000
+Received: by mail-ot1-f68.google.com with SMTP id g18so6654289otj.13;
+ Fri, 13 Dec 2019 06:36:35 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=GGDHCjU3MM6dIoUZbPeaqvOt8azxG8D7bJ42yMYhguQ=;
+ b=K6JNAh8KHY/2MGxpBASKzIufM0LrT8Y1JDjYrkb7OW9ssyPpu186y8m8wVhxRz18Tn
+ xpLkhvtMwx3lZ+VMWoiGgTxaUj/JKZV2N+X3ug3J1Y9+kYe48BttazVnJhzimECnsMSN
+ UapTHwBLgl/RYO+vXLRNB13PfNdbE2qIrnJxygMVQGrMefBaAuPdyir/ZNoa+63goaoc
+ lzG0C/GEa8p0AVLrUNpEGVdkV6PjvO9xy0CUpjmObh/0f424DspbHjGJzfLaaU81eWwg
+ Fmmb5iidSB0+5HIuWZGGS3eAuxiha/orkS1RkAfsqbpn6nGN7cX2qMDqZq82YJoVctdf
+ a/yA==
+X-Gm-Message-State: APjAAAUZTyEqaZWk10yqyPt/rXt5gXC7bZSrGK97MIJdUCRCUMA4EN8s
+ q+YKTDh0yeFfHE1tt9bBB+IjTPfuJAcOsWshuLo=
+X-Google-Smtp-Source: APXvYqwKdL1VCGK4Oe8rL01hvhyHoDgd/HFUlME0PAelLe/cixzON7bfU2Iq4k7pCixPL7UT2s6qDca45N2N5QcrkBo=
+X-Received: by 2002:a9d:7984:: with SMTP id h4mr15219004otm.297.1576247795212; 
+ Fri, 13 Dec 2019 06:36:35 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191213125414.90725-7-boris.brezillon@collabora.com>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfNNDQz/4AyS67jgm+85BN/fuNAN4iC7sM/1YLh40BBLBYzRZt5j0NxbH/OFEYSAVp1XE9YFzzjwMyc0k8W7qAuN3yMATA2ew6dcFIoQVZMcggh2IUzMW
- N2zm+5S0EEQF8njxUnE/2xY7dMiXc936HQ2i29C2NnuR0muZQkW7TqG1tesE3MHGIrZ2wV4pOzN5PbtTplZ4USBavZzSWxws3O8q6rNfp1eEJXSGpa+uSaNK
- 1+3iRbFWmiRWV8dkWqd1bRCdSn6wz+epA+S1xRvdKkvPUsIQXdPbRGVaVTC1rbLFHBgDbYnrJEHaDz230kybJLgKJI73pVZ9OppbgODCjNpb099zTcSuHg4s
- lWPv6xdDmG7ytipehZlEXmj8JGeFFHlgqyaKkv41cnNqwfBB1t3cbpl9nf9bxAaFDoPQDchv0qtOoC96+ZsMxR1yU+P6Mxf7VaFJBdHIqf+DqzppEGf0NzFX
- mzqolGYjUZwNOd9DvFKLVsTausOnizB8TxWg8ceX1MKizhXzbzq278/wV9eN6q5thi4v/9sic57E1dHhDYRbZa7Errr0Yyp3UftLsGFXdWDQwZkrSDERakFS
- Ua7filIWcn2z4QQbSRBJqGv31W93k3TBhlVjnNMLKyhxC1SMndA1cuAbpcVNMMgRE/Szf6UenGZYdaTlI1E11BW/ssjU4sLZ4O3QxetDqkSzoxSWuZZ26b8p
- Kq/fCMhCSOYzEWUTGIWUH1IGUY5RbfaadbAVK1GtFBrwyjt6/ZCfORQHqC8dmy6GAcuPAWxFmC7YePO/Fcy68JiKqhAz/JgaS3dy3zrbyLhugQ/BkJJPBqT1
- QrfaSmUt1ML6HTJY5Kw=
+References: <20191212033952.5967-1-afaerber@suse.de>
+ <7110806f-ddbd-f055-e107-7a1f7e223102@arm.com>
+ <c86c6bc0-b0e5-c46e-da87-9d910b95f9f3@suse.de>
+ <04e7d7cd-a8bc-621b-9205-1a058521cabe@arm.com>
+In-Reply-To: <04e7d7cd-a8bc-621b-9205-1a058521cabe@arm.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Fri, 13 Dec 2019 15:36:24 +0100
+Message-ID: <CAMuHMdXddQ4v8-by_SmcS09EYykoBZ2G2vcFUpqPadHFaasy7A@mail.gmail.com>
+Subject: Re: [RFC 00/25] arm64: realtek: Add Xnano X5 and implement
+ TM1628/FD628/AiP1618 LED controllers
+To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_062111_212224_6B1970D3 
-X-CRM114-Status: GOOD (  21.06  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191213_063636_844219_A0E6B6E9 
+X-CRM114-Status: GOOD (  17.47  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.30 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,170 +85,63 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
- Jonas Karlman <jonas@kwiboo.se>, Nicolas Dufresne <nicolas@ndufresne.ca>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- kernel@collabora.com, Ezequiel Garcia <ezequiel@collabora.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, csd@princeton.com.tw,
+ linux-realtek-soc@lists.infradead.org,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ sales@fdhisi.com, Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-spi <linux-spi@vger.kernel.org>,
+ Dan Murphy <dmurphy@ti.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
+ Jacek Anaszewski <jacek.anaszewski@gmail.com>, Pavel Machek <pavel@ucw.cz>,
+ zypeng@titanmec.com,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>, linux-leds@vger.kernel.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Boris,
-
-A few small comments:
-
-On 12/13/19 1:54 PM, Boris Brezillon wrote:
-> The rockchip vdec block is a stateless decoder that's able to decode
-> H264, HEVC and VP9 content. This commit adds the core infrastructure
-> and the H264 backend. Support for VP9 and HEVS will be added later on.
-> 
-> Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
-> ---
-> Changes in v3:
-> * Move the driver to drivers/staging/media/rkvdec/
-> * Fix copy&paste error in the Kconfig desc
-> * Use REC709 color space when resetting the capture format
-> * Prepare things to support VP9
-> * Move H264 priv-table field definition out of rkvdec-regs.h
-> * Clarify the provenance of the CABAC table
-> * Ease RPS,PPS_FIELD() definition/manipulation
-> * Take DPB field flags into account
-> * Use the generic H264 helpers to build the reflists
-> ---
->  drivers/staging/media/Kconfig              |    2 +
->  drivers/staging/media/Makefile             |    1 +
->  drivers/staging/media/rkvdec/Kconfig       |   15 +
->  drivers/staging/media/rkvdec/Makefile      |    3 +
->  drivers/staging/media/rkvdec/rkvdec-h264.c | 1154 ++++++++++++++++++++
->  drivers/staging/media/rkvdec/rkvdec-regs.h |  239 ++++
->  drivers/staging/media/rkvdec/rkvdec.c      | 1130 +++++++++++++++++++
->  drivers/staging/media/rkvdec/rkvdec.h      |  124 +++
->  8 files changed, 2668 insertions(+)
->  create mode 100644 drivers/staging/media/rkvdec/Kconfig
->  create mode 100644 drivers/staging/media/rkvdec/Makefile
->  create mode 100644 drivers/staging/media/rkvdec/rkvdec-h264.c
->  create mode 100644 drivers/staging/media/rkvdec/rkvdec-regs.h
->  create mode 100644 drivers/staging/media/rkvdec/rkvdec.c
->  create mode 100644 drivers/staging/media/rkvdec/rkvdec.h
-> 
-
-<snip>
-
-> diff --git a/drivers/staging/media/rkvdec/rkvdec-h264.c b/drivers/staging/media/rkvdec/rkvdec-h264.c
-> new file mode 100644
-> index 000000000000..6de4bd39f286
-> --- /dev/null
-> +++ b/drivers/staging/media/rkvdec/rkvdec-h264.c
-
-<snip>
-
-> +/*
-> + * dpb poc related registers table
-> + */
-
-Shouldn't the next two arrays be const?
-
-> +static u32 poc_reg_tbl_top_field[16] = {
-> +	RKVDEC_REG_H264_POC_REFER0(0),
-> +	RKVDEC_REG_H264_POC_REFER0(2),
-> +	RKVDEC_REG_H264_POC_REFER0(4),
-> +	RKVDEC_REG_H264_POC_REFER0(6),
-> +	RKVDEC_REG_H264_POC_REFER0(8),
-> +	RKVDEC_REG_H264_POC_REFER0(10),
-> +	RKVDEC_REG_H264_POC_REFER0(12),
-> +	RKVDEC_REG_H264_POC_REFER0(14),
-> +	RKVDEC_REG_H264_POC_REFER1(1),
-> +	RKVDEC_REG_H264_POC_REFER1(3),
-> +	RKVDEC_REG_H264_POC_REFER1(5),
-> +	RKVDEC_REG_H264_POC_REFER1(7),
-> +	RKVDEC_REG_H264_POC_REFER1(9),
-> +	RKVDEC_REG_H264_POC_REFER1(11),
-> +	RKVDEC_REG_H264_POC_REFER1(13),
-> +	RKVDEC_REG_H264_POC_REFER2(0)
-> +};
-> +
-> +static u32 poc_reg_tbl_bottom_field[16] = {
-> +	RKVDEC_REG_H264_POC_REFER0(1),
-> +	RKVDEC_REG_H264_POC_REFER0(3),
-> +	RKVDEC_REG_H264_POC_REFER0(5),
-> +	RKVDEC_REG_H264_POC_REFER0(7),
-> +	RKVDEC_REG_H264_POC_REFER0(9),
-> +	RKVDEC_REG_H264_POC_REFER0(11),
-> +	RKVDEC_REG_H264_POC_REFER0(13),
-> +	RKVDEC_REG_H264_POC_REFER1(0),
-> +	RKVDEC_REG_H264_POC_REFER1(2),
-> +	RKVDEC_REG_H264_POC_REFER1(4),
-> +	RKVDEC_REG_H264_POC_REFER1(6),
-> +	RKVDEC_REG_H264_POC_REFER1(8),
-> +	RKVDEC_REG_H264_POC_REFER1(10),
-> +	RKVDEC_REG_H264_POC_REFER1(12),
-> +	RKVDEC_REG_H264_POC_REFER1(14),
-> +	RKVDEC_REG_H264_POC_REFER2(1)
-> +};
-
-<snip>
-
-
-> diff --git a/drivers/staging/media/rkvdec/rkvdec.c b/drivers/staging/media/rkvdec/rkvdec.c
-> new file mode 100644
-> index 000000000000..97698be9072e
-> --- /dev/null
-> +++ b/drivers/staging/media/rkvdec/rkvdec.c
-> @@ -0,0 +1,1130 @@
-
-<snip>
-
-> +static int rkvdec_queue_setup(struct vb2_queue *vq, unsigned int *num_buffers,
-> +			      unsigned int *num_planes, unsigned int sizes[],
-> +			      struct device *alloc_devs[])
-> +{
-> +	struct rkvdec_ctx *ctx = vb2_get_drv_priv(vq);
-> +	struct v4l2_pix_format_mplane *pixfmt;
-> +	struct v4l2_format *f;
-> +	unsigned int i;
-> +
-> +	if (V4L2_TYPE_IS_OUTPUT(vq->type))
-> +		f = &ctx->coded_fmt;
-> +	else
-> +		f = &ctx->decoded_fmt;
-> +
-> +	if (*num_planes) {
-> +		if (*num_planes != f->fmt.pix_mp.num_planes)
-> +			return -EINVAL;
-> +
-> +		for (i = 0; i < f->fmt.pix_mp.num_planes; i++) {
-> +			if (sizes[i] < f->fmt.pix_mp.plane_fmt[i].sizeimage)
-> +				return -EINVAL;
-> +		}
-
-Shouldn't there be a 'return 0' here? In the CREATE_BUFS case all you do is check
-if the given size is large enough, and if so then you are done.
-
-> +	} else {
-> +		*num_planes = f->fmt.pix_mp.num_planes;
-> +		for (i = 0; i < f->fmt.pix_mp.num_planes; i++)
-> +			sizes[i] = f->fmt.pix_mp.plane_fmt[i].sizeimage;
-> +	}
-> +
-> +	if (V4L2_TYPE_IS_OUTPUT(vq->type))
-> +		return 0;
-> +
-> +	pixfmt = &ctx->decoded_fmt.fmt.pix_mp;
-> +	sizes[0] += 128 * DIV_ROUND_UP(pixfmt->width, 16) *
-> +		    DIV_ROUND_UP(pixfmt->height, 16);
-> +	return 0;
-> +}
-
-<snip>
-
-Regards,
-
-	Hans
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgUm9iaW4sCgpPbiBGcmksIERlYyAxMywgMjAxOSBhdCAzOjA4IFBNIFJvYmluIE11cnBoeSA8
+cm9iaW4ubXVycGh5QGFybS5jb20+IHdyb3RlOgo+IE9uIDEyLzEyLzIwMTkgODo1NSBwbSwgQW5k
+cmVhcyBGw6RyYmVyIHdyb3RlOgo+ID4gQW0gMTIuMTIuMTkgdW0gMTQ6MTQgc2NocmllYiBSb2Jp
+biBNdXJwaHk6Cj4gPj4gYW5kIGFzIGZhciBhcyBJCj4gPj4gY291bGQgdGVsbCB0aGUgY29tbWFu
+ZCBzZXQgYXBwZWFycyB0byBkZXJpdmUgZnJvbSAob3IgaXMgYXQgbGVhc3QgY29tbW9uCj4gPj4g
+dG8pIHNvbWUgb2xkIEhvbHRlayBWRkQgY29udHJvbGxlcnMuCj4gPgo+ID4gSG1tLCBIVDE2NTE1
+IGxvb2tzIHNpbWlsYXIgYW5kIGhhcyBtb3JlIGxpbmVzLCBSQU0gYW5kIG1vZGUgYml0cyB0aGFu
+IEkKPiA+IHByZXBhcmVkIGhlcmUuCj4gPiBodHRwczovL3d3dy5ob2x0ZWsuY29tL3Byb2R1Y3Rk
+ZXRhaWwvLS92Zy9odDE2NTE1Cj4gPgo+ID4gU28gSSdkIG5lZWQgdG8gbWFrZSBtb3JlIG51bWJl
+cnMgbW9kZWwtZGVwZW5kZW50IGFuZCBhbGxvY2F0ZSB0aGUKPiA+IERpc3BsYXkgUkFNIGJ1ZmZl
+ciBkeW5hbWljYWxseS4KPiA+Cj4gPiBXaGVyZWFzIEhUMTZEMzVBIHNlZW1zIGluY29tcGF0aWJs
+ZSBjb21tYW5kLXdpc2UsIGFuZCBIVDE2NTI4IGFwcGVhcnMgdG8KPiA+IGJlIG91dCBvZiBzY29w
+ZSwgZm9yIGRvdCBkaXNwbGF5cyBhbmQgd2l0aCBmYW5jeSBlbWJlZGRlZCBjaGFyYWN0ZXIgbWFw
+Lgo+ID4KPiA+IE5vIEhvbHRlayBlbWFpbCBhbGlhcyB0aGF0IEkgY2FuIHF1aWNrbHkgc3BvdC4K
+PiA+Cj4gPiBCdXQgZ2l2ZW4gdGhhdCBJJ20gcHJvcG9zaW5nIHZlbmRvci1zcGVjaWZpYyBjb21w
+YXRpYmxlcyBqdXN0IGluIGNhc2UsCj4gPiB0aGUgbWFpbiBkZWNpc2lvbnMgd2lsbCBiZSB0aGUg
+S2NvbmZpZyBzeW1ib2wgYW5kIG1vZHVsZSBuYW1lLiBUaGUKPiA+IGRyaXZlciBjb2RlIGl0c2Vs
+ZiB3ZSBjb3VsZCBhbHdheXMgcmVmYWN0b3IgYWZ0ZXIgbWVyZ2luZywgYW5kIHJlbmFtaW5nCj4g
+PiB0aGUgc2NoZW1hIGZpbGUgKGFzIG9wcG9zZWQgdG8gY29tcGF0aWJsZSkgc2hvdWxkIGFsc28g
+YmUgcG9zc2libGUuCj4KPiBZZWFoLCBJJ20gbm90IHN1cmUgdGhhdCBpdCByZWFsbHkgbWF0dGVy
+cywgYXMgSSBkb3VidCB0aGVyZSBhcmUgbWFueQo+IExpbnV4LWNhcGFibGUgZGV2aWNlcyB3aXRo
+IGEgcmVhbCBWRkQgYW55d2F5OyBpdCBqdXN0IHNlZW1lZCBsaWtlIGFuCj4gaW50ZXJlc3Rpbmcg
+ZGF0YXBvaW50IHRoYXQgZmVsbCBvdXQgb2Ygc2NvdXJpbmcgdGhlIHdlYiB0cnlpbmcgdG8gZmlu
+ZAo+IGFueSBldmlkZW5jZSBmb3Igd2hpY2ggdGhlICJjYW5vbmljYWwiIDE2MTggbWlnaHQgYmUg
+KGFuZCB0aGUgSG9sdGVrCj4gY29ubmVjdGlvbiB3YXMgYWN0dWFsbHkgYSBjb2luY2lkZW5jZSBm
+cm9tIGEgbWlzaWRlbnRpZmljYXRpb24gb2YgdGhlCj4gQVJUU0NISVAgcGFydCBudW1iZXIpLgoK
+TXkgU29ueSBCbHUtUmF5L0hvbWUgVGhlYXRyZSBoYXMgYSBuaWNlIG9uZSAoMTQtc2VnbWVudCEp
+LCBhbHNvIGRyaXZlbgpieSBhbiBIVDE2NTE1LiAgV2hpbGUgdGhlIHNwZWNpZmljIG1vZGVsIHBy
+ZWRhdGVzIHRoZSBhcnJpdmFsIG9mIExpbnV4CmluIHRoZSBuZXh0IHN0ZXBwaW5nIG9mIHRoZSBo
+YXJkd2FyZSwgaXQgc2hvdWxkIGJlIHN1ZmZpY2llbnRseSBwb3dlcmZ1bAp0byBydW4gTGludXgu
+CgpVbmZvcnR1bmF0ZWx5IGl0J3MgaW4gYWN0aXZlIHVzZSwgc28gaGFja2luZyBleHBlcmltZW50
+cyB3b3VsZCBiZSB2ZXRvZWQgYnkKdGhlIGZhbWlseSA7LSkKCkdye29ldGplLGVldGluZ31zLAoK
+ICAgICAgICAgICAgICAgICAgICAgICAgR2VlcnQKCi0tIApHZWVydCBVeXR0ZXJob2V2ZW4gLS0g
+VGhlcmUncyBsb3RzIG9mIExpbnV4IGJleW9uZCBpYTMyIC0tIGdlZXJ0QGxpbnV4LW02OGsub3Jn
+CgpJbiBwZXJzb25hbCBjb252ZXJzYXRpb25zIHdpdGggdGVjaG5pY2FsIHBlb3BsZSwgSSBjYWxs
+IG15c2VsZiBhIGhhY2tlci4gQnV0CndoZW4gSSdtIHRhbGtpbmcgdG8gam91cm5hbGlzdHMgSSBq
+dXN0IHNheSAicHJvZ3JhbW1lciIgb3Igc29tZXRoaW5nIGxpa2UgdGhhdC4KICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAtLSBMaW51cyBUb3J2YWxkcwoKX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0
+CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
