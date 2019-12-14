@@ -2,79 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B20211F209
-	for <lists+linux-rockchip@lfdr.de>; Sat, 14 Dec 2019 15:31:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAF7D11F299
+	for <lists+linux-rockchip@lfdr.de>; Sat, 14 Dec 2019 16:46:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
 	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GEH5I/QMp+efy+Rjofsz+NmMakEu9wXpAT5a7ppuUzw=; b=r2XgOv9R7gnySC
-	tF8FnIMe05k2hZuVL0bcGXSg3OLM03jJl1WjKlW0szWrCFLyn9hr3qGEl3PyxLncWGrdwWFFkqW/X
-	dwKzuIEt49sdpxvihkdzouhGU8M/aeGuP9vptunYYYTrDH3h64XIWzCrwLKnlwxR79k2xZg81e0UO
-	CXj0lCiOM4Kb8O27j3lR/zOuMUgBzfdXRT2c6/v/CEbVQL9Fok8T6F4kJiD5eIn3YcFC9TfUGVzqS
-	flT5oEfC/oHHboKSfDSg6aV0QYNOsZ80gCY5Dbz2fG8ac29zVkc2z4ckJgHC4tvcMECubwA5wAU5z
-	hGyGdxoGfjXXCIswcE5A==;
+	List-Owner; bh=D6ZcFuHMM5psU6Ggr014AwOyqUMboUqjVZYiD/hOsoc=; b=LZbhFdTNK/2wE8
+	aeNkXDB/AdEIxO072qC6ooV73xZgamqAmj94e12awJe2+LaX8EKxnzqY5wLB8ZCBFO27sMlxUfJUK
+	zrsprYnGsP6oOCH9rY4DaEGYBOoeRvF101jv52wD4Lr3sv+h5IJkNFxlPWSDD4WsqHIoxLRwkq9n8
+	GGPVa83LTfd+WBHR+crZ8YDl9G7Vz6aqYl0EANYgmaawNG7lqQsp39JtBxS69vl0PVEEdr733ZUxu
+	h4oL49y2qaOOJc34f/6Yx0hvdnGWmM12D3AX6O4cJbWIkT9GXHPZaCg1EdhpnjuorlUqoVFZA0Fwl
+	nl9GseIuZZGeRV3exNUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ig8Rg-0002qW-L3; Sat, 14 Dec 2019 14:31:00 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1ig9d2-000859-D4; Sat, 14 Dec 2019 15:46:48 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ig8Rc-0002py-9m
- for linux-rockchip@lists.infradead.org; Sat, 14 Dec 2019 14:30:57 +0000
-Received: by mail-wm1-x341.google.com with SMTP id f4so1498541wmj.1
- for <linux-rockchip@lists.infradead.org>; Sat, 14 Dec 2019 06:30:53 -0800 (PST)
+ id 1ig9cy-00084c-MY
+ for linux-rockchip@lists.infradead.org; Sat, 14 Dec 2019 15:46:46 +0000
+Received: by mail-wr1-x444.google.com with SMTP id y17so2009748wrh.5
+ for <linux-rockchip@lists.infradead.org>; Sat, 14 Dec 2019 07:46:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:subject:from:in-reply-to:date:cc
  :content-transfer-encoding:message-id:references:to;
- bh=EsBHkS5OunME09EdADsJcqw1iqNBCf/uxN0yt7oQz44=;
- b=FLJQB5QmJbcutzUJzrF4TSzZtSGGjE4D4UY06E21T61JMPYeZjsrnOuleuNmFjUttQ
- 9K39dxc8GQGJBglvjJA33MJbjLa3k1JCHjzhqZxAwuTmSFhl9pPeMY+MwRlMHMcLGv9h
- MP1aSmU/2FLxV+tulPRIGwNzHqNXN0yFe0qmfogmCtl/xvRGVgQdOadhu7jK+GIdmYYk
- SIRbml7Xh+lWyg6dB5AIUMqWrCSlsY9lACmbb1FNf2pLiN9CuyzC/Y43RQRSOxDK2rS/
- l5/OcEZlNEor08dRD7S7tWB9aupSZp9K1SUvvjNNrkkx5QlgVKIELF5XXH2aMfMC2dRY
- vssg==
+ bh=4ZheM6H1IJf91c1ZceviNMo0bD3V67BjHbfGbfFZiDQ=;
+ b=c+R88c7R0IFMXSgL7bFY3SG0xEGz8jTGqMRLXSXdSgjMZ8NzhFr4pyDNFM52Qlx3aC
+ gVryr6ldpTFFY+5iU+28QaPoRQdhYp8sHsQpLHI4VnnmlK6u4OgEUR3ryfQR48fMi8Kf
+ PRnDK8ddLTvbgvD4gxLJM5yJw44sNPM3b3dF9wZshjKCZ35oqSt3k8aVT01azxClcdSr
+ JXv52XWrTwgiJUpVd/1hlwVHM7vm/vO8+f+n8aR954H8PAFCEKa47zgKNdF71jaCuD3a
+ J3K5/9p4qwEpShcI7qCNAWJ+d5NBmc44qKSBJx05XhcDKSfRdPPl4bSuQ4wSUMuts9WI
+ /pDQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:subject:from:in-reply-to:date:cc
  :content-transfer-encoding:message-id:references:to;
- bh=EsBHkS5OunME09EdADsJcqw1iqNBCf/uxN0yt7oQz44=;
- b=Z/bZRRyz+/MKNn/T0pPdv0eN9jrhcYNLSt9WwvF2SiTGhp2VXG0/zuwiBxStyqriMv
- XcsQewf4EV0CtD5fFc5P8AWLgWtOl61mTerEDiYHBrKLR4ltZBhnWCj7yYWGglqfsyQG
- 4ZBPNkStxq5/nDWS/G0RD6dwERjDJv2LfqDBRsvQRxi9juXV468ZtReCpZ42VrQOoNXd
- eeJKpRXcwxnYskydA+h6J9puKJQV1V7qA/sJvV5s841esh1mPWnvMv/OmE+RDJkx+oAq
- V+Hg6bw3tAa0adqrHLGVVfiWlmZzXhAxk9xMDeHR08rd6SKnHVhvrJ0CSPCyO6Lrhv16
- 0zBg==
-X-Gm-Message-State: APjAAAXXHDrOOHqML6hEptkyEcIo1IuET4NqLVuWva7TPNumFeIdJL60
- 9wxuE5L9dNY8mcrXqGp8CQ0=
-X-Google-Smtp-Source: APXvYqzx0JksAsQQ97DQqEb2sLqwf6uTosItYFSeWnv0S8zv0aUgRIDohyYm5HSjcz7D371pzxAoLw==
-X-Received: by 2002:a1c:4e10:: with SMTP id g16mr19412260wmh.94.1576333852103; 
- Sat, 14 Dec 2019 06:30:52 -0800 (PST)
-Received: from apple.sigmaris.info (ebrouter.sigmaris.info. [82.69.107.165])
- by smtp.gmail.com with ESMTPSA id x11sm14580451wre.68.2019.12.14.06.30.51
+ bh=4ZheM6H1IJf91c1ZceviNMo0bD3V67BjHbfGbfFZiDQ=;
+ b=qripDTIMAFQhOsM+mLj2DoBHZslRffXvquCWHVwy3PCcUg+DAmixN/1XLkblZ+FIRZ
+ WSR0V0/jqVOBQ6NZdSrxnCyxpmveqTf0F0GrhPLT7lVAcbf1LOSCGJk/Z6tPXYxEJydb
+ Vu5DnVN/OdwxfXodK9/OqkQVfWO+sjjjTbhFtnXZIMR0k0dKJwQdqo0up+L/ouTFNaMn
+ FbOvuN4bcJwdH3L4UJmq8SOxxMPef5T5rEcXi8VtXqJfvf7JRcX9Yg+kX2D4U8M34T5i
+ o08u7XqWKgsTbRBQqS02Y4/wZdzvDYDlIVy5jsd8978NwF4rpKdpP/FT+N9ABLB98jpR
+ SE4Q==
+X-Gm-Message-State: APjAAAXmYQctIT210Q38knjt26Gu2KObAH3RCEePiq/jkUL+1ctB71hY
+ w3QM1HEC0T83si9gQJ27MyM=
+X-Google-Smtp-Source: APXvYqxUWjq2pg/m7vAarnMa01TbxmF7dhf3iGJcVpBhIKgU/YHr0zB5TJ8QARwhlC7PuseFZK7R2Q==
+X-Received: by 2002:adf:df0e:: with SMTP id y14mr18158363wrl.377.1576338398416; 
+ Sat, 14 Dec 2019 07:46:38 -0800 (PST)
+Received: from apple.sigmaris.info (apple.sigmaris.info.
+ [2a02:8010:6606:0:feaa:14ff:fe20:9878])
+ by smtp.gmail.com with ESMTPSA id s65sm14819596wmf.48.2019.12.14.07.46.37
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 14 Dec 2019 06:30:51 -0800 (PST)
+ Sat, 14 Dec 2019 07:46:37 -0800 (PST)
 Mime-Version: 1.0 (Mac OS X Mail 11.5 \(3445.9.1\))
-Subject: Re: [RFC] Permanent Fix for RK33 gmac 1500 mtu bug
+Subject: Re: [PATCH v3 4/7] media: hantro: h264: Use the generic H264 reflist
+ builder
 From: Hugh Cole-Baker <sigmaris@gmail.com>
-In-Reply-To: <CAMdYzYo6HG+NK2BHNaULtD=Lu=Ozd6pFW4YRXF8QF_UGLjJN_w@mail.gmail.com>
-Date: Sat, 14 Dec 2019 14:30:50 +0000
-Message-Id: <E3092315-8D1F-4A43-B485-02D526F57B21@gmail.com>
-References: <CAMdYzYpHxMELdB4HzsViFvrLcDzG0A4000PJU6wHTaq4V9c1Nw@mail.gmail.com>
- <CAMdYzYo6HG+NK2BHNaULtD=Lu=Ozd6pFW4YRXF8QF_UGLjJN_w@mail.gmail.com>
-To: Peter Geis <pgwipeout@gmail.com>
+In-Reply-To: <20191213125414.90725-5-boris.brezillon@collabora.com>
+Date: Sat, 14 Dec 2019 15:46:35 +0000
+Message-Id: <24EFC68C-CF34-4D6E-8927-1CFA0CE81F45@gmail.com>
+References: <20191213125414.90725-1-boris.brezillon@collabora.com>
+ <20191213125414.90725-5-boris.brezillon@collabora.com>
+To: Boris Brezillon <boris.brezillon@collabora.com>
 X-Mailer: Apple Mail (2.3445.9.1)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191214_063056_365594_0E85CECF 
-X-CRM114-Status: GOOD (  14.43  )
+X-CRM114-CacheID: sfid-20191214_074644_760353_9872C075 
+X-CRM114-Status: GOOD (  15.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -99,79 +101,62 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ kernel@collabora.com, Heiko Stuebner <heiko@sntech.de>,
+ Jonas Karlman <jonas@kwiboo.se>, Tomasz Figa <tfiga@chromium.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Sakari Ailus <sakari.ailus@iki.fi>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Nicolas Dufresne <nicolas@ndufresne.ca>, Hans Verkuil <hans.verkuil@cisco.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Peter,
+Hi Boris,
 
-> On 13 Dec 2019, at 12:48, Peter Geis <pgwipeout@gmail.com> wrote:
+> On 13 Dec 2019, at 12:54, Boris Brezillon <boris.brezillon@collabora.com> wrote:
 > 
-> On Thu, Dec 12, 2019 at 8:21 AM Peter Geis <pgwipeout@gmail.com> wrote:
->> 
->> Good Morning,
->> 
->> So I've continued work on fixing the rk3328/rk3399 gmac mtu tx coe offload bug.
->> I've found two fixes that maintain full performance and work consistently.
->> 
->> First, is ayufan's tx coe patch [0], which takes the bugged_jumbo
->> concept introduced in [1] and applies it to 1498 and above, vice 1500
->> and above.
->> 
->> The only downside is this disables tx coe for full size packets, which
->> has a negligible performance impact in my testing.
->> 
->> The other option I've found that reliably works is bringing the mtu
->> down to 1498.
->> This allows tx coe to remain enabled, but with the downside of total
->> loss of jumbo frames.
->> The reduction in size has a negligible performance impact in my testing.
+> Now that the core provides generic reflist builders, we can use them
+> instead of implementing our own.
 > 
-> Shortly after sending this I discovered that setting the mtu lower is
-> not sufficient in some corner cases.
-> I managed to make offload break even at a 1496 mtu by `apt install
-> kubuntu-desktop` over ssh on a gigabit internet connection.
+> Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+> ---
+> Changes in v3:
+> * New patch
+> ---
+> drivers/staging/media/hantro/hantro_h264.c | 237 +--------------------
+> 1 file changed, 8 insertions(+), 229 deletions(-)
 > 
-> After porting ayufan's patch the issue went away.
-> So unless we can fix this by axi tuning, his patch seems to be the
-> most viable option.
+> diff --git a/drivers/staging/media/hantro/hantro_h264.c b/drivers/staging/media/hantro/hantro_h264.c
+> index 568640eab3a6..d998272d20e6 100644
+> --- a/drivers/staging/media/hantro/hantro_h264.c
+> +++ b/drivers/staging/media/hantro/hantro_h264.c
+> @@ -11,7 +11,7 @@
+>  */
 > 
+> #include <linux/types.h>
+> -#include <linux/sort.h>
+> +#include <media/v4l2-h264.h>
 
-Have you tried suggestions from Jose in https://lkml.org/lkml/2019/4/1/1382?
-I've added "snps,no-pbl-x8;" and "snps,txpbl = <0x20>;" to the
-gmac in the DT, on rk3399-rockpro64. This seems to fix the slow performance
-on IPv6 specifically that I was seeing.
+With this patch, CONFIG_VIDEO_HANTRO needs to depend on CONFIG_V4L2_H264,
+without that it can encounter linking errors due to missing symbols for
+v4l2_h264_init_reflist_builder, etc.
 
-I haven't done exhaustive testing beyond a few runs of iperf3, which seem
-to show OK performance for a gigabit link on home networking hardware.
-874 Mbits/sec for IPv4, 856 Mbits/sec for IPv6, with MTU 1500.
+> #include <media/v4l2-mem2mem.h>
+> #include "hantro.h"
+> @@ -240,229 +240,6 @@ static void prepare_table(struct hantro_ctx *ctx)
+> 	reorder_scaling_list(ctx);
+> }
+> ..snip..
 
->> 
->> 
->> I have also discovered that the rockchip implementation of the stmmac
->> driver does not process flags such as max-frame-size.
->> 
->> A third option, which I haven't explored because I don't know enough
->> about how it works, is possibly tuning the axi settings, via the
->> snps,axi-config and snps,mtl-tx-config handles.
->> I don't know if this is feasible, but since tuning the dma settings
->> affects the rk3328 I have hope.
->> I do know that my current fix for the rk3328 does not provide full
->> performance and does not work at all on the rk3399.
->> 
->> Thoughts?
->> 
->> [0] https://github.com/ayufan-rock64/linux-kernel/commit/8a41c672dd77e48b06c1b2dec3aa9db4bad30b49#diff-c897c0b53bd633240f4b12c4d29a5ff1
->> [1] https://github.com/torvalds/linux/commit/ebbb293f8b3021ae2009fcb7cb3b8a52fb5fd06a
-> 
-> _______________________________________________
-> Linux-rockchip mailing list
-> Linux-rockchip@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+--
+Regards,
 
-
+Hugh Cole-Baker
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
