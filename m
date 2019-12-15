@@ -2,80 +2,68 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A86F211F80D
-	for <lists+linux-rockchip@lfdr.de>; Sun, 15 Dec 2019 14:53:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB6AC11F87A
+	for <lists+linux-rockchip@lfdr.de>; Sun, 15 Dec 2019 16:31:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=aQbXIX4yQnsgrEPrkQ3Sxt0ZFARhpE67sZb8JHEwzoc=; b=U/M
-	+/MPFHb7S/xEwi12vO+2A6CrIFj77NeRKml/+uZuslML7e/0Qyy7LQSAsjru0fKl5WmuO6VXJfe+5
-	wo+Gzl0cU1TUwq0TzfnhDDEx8j9NB/j1Pr8Tm0SoF9Xk18LrM+4QI4bHYcZbO79AaZUkrFv5NEMZf
-	u3P+3ks6Kv6d+ZvgPTMLrshGAjyrEAXm9+sAKLw+iOO4+jP4Rdk5E+7OWME4Y8TYnrlWRmD9e8JyW
-	dOQ3/zNGYoX3Qdh8GK4uT/BCyw4OxWQtnPhe0DWCd9LpoLWyFZg3uQCuZdCh06Gyg6LgbhjInkziV
-	vyqTF1JyNTmV39FnFZOrlB/JCBhsMFA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=g9MeTf+v4m9OWkQFZ2aFFdNHzjIE+lugUtybkgjjkqA=; b=mNeA3P54CqNfDl
+	7gCQ1Bi1y+ggUgUrHyignCirdyUX0HWECH3jmiVyrDndVEOyEdW4rpqkrumqoeb1wDW8n8/gLI/4W
+	kDp2PDPo3ComfAjdEBvUcDUV0P50FOumit5n0V4eznb55VDcLOPrlV+qv0EOIJ3K5enX29R+VBWET
+	X1eXd/toB1ZDojjaUzJJmMxeR7JzEHhZnt5dxJn3NemaSqxcaYk/CnNXkwycftRPWUrdIXd/6imIg
+	gb8BEcKezYdO1vXm+kOP+Wzzz8t/vs+VS4zMcjhiQmUp+q0cdbfQZMFOb0aJccqmH2Kd7D717aFlw
+	zD9t+iJspwE71qyzGKgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igUKv-0006Na-1s; Sun, 15 Dec 2019 13:53:29 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1igVs5-0003Iy-So; Sun, 15 Dec 2019 15:31:49 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igUKl-0006FN-0K; Sun, 15 Dec 2019 13:53:20 +0000
-Received: by mail-pg1-x543.google.com with SMTP id z124so2132445pgb.13;
- Sun, 15 Dec 2019 05:53:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=F+7PYqMmtcZUrcYIJM/i90K58GWESr+2/oVNmo6E2TM=;
- b=GweBf684G0VM3rBai6Cr2ab3OMQJwlkinQuGIWtcWn/srhjrmrA/slPrMrg1+EiBy4
- Rmn1eMVfS5LEKL+G0W4GEAKhAXl3hSOkWhlUAeZDNMQnMp2TsPyXD/Glq/xykBeugbEw
- nvCEi0dqz5FwIAZ4AIV7EAZC00Y+IkUIqXcPYsR/iK4pykrpk0WDli1j7IuxDtUJIppv
- N97Ohd8T4r3+yzzlEBemMbyLbQ19ZM63TA+U+vJqQ1K6yqBsBN1JwIoFfRMshd/GshNK
- RH4/4N1OSuq+5DOolt+LJS5G8K0LmOXdoLjH/BN2kyvaig0H8MBuKZZKrC6j7GUDWHaa
- tEiw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=F+7PYqMmtcZUrcYIJM/i90K58GWESr+2/oVNmo6E2TM=;
- b=b72FNQzwX9GQtRLj4tehjMyuY6JVdvDcbQAvOql3Ib8vOhuBCeTxI9J/rdhdZAJi9i
- ui0OKRyRneeF9lMVVctCW0Oz6fdvr9nSJ65ujtRaHDo/quS9dJvIvYONLgroiH7C6hhd
- 2USWC0XG+yhY2ROuKSysT3EWwRbMnT61h4K0xqXxGMDVBojV8XBsamYahxYvCLkOiZYs
- eN6rLsbXyiNZO1Kam55Zzv++QzFW15xdmJbdCa49PSILJMf783pOFnO7t0gfYO0RNG4p
- XIdsa+fAs/lEVElhFGqXnp6tX6rCpIHBvFWBIhHegpcl6xXM1oFnAbv9ZoETnns4gBP7
- GbfQ==
-X-Gm-Message-State: APjAAAUtC+ETWNS6cIabKtVq2/teHuGJCwdapzC69iAnXu9toL6oeJb/
- 30YQn082grmQZmGzYlx/k7Q=
-X-Google-Smtp-Source: APXvYqxXJkAsV8yHg1GoZBKuVsSVXvzUxrMPybKz+apkWNWpA09kgmFG+igs8TzNO6i+vyRPtp+h7w==
-X-Received: by 2002:aa7:9839:: with SMTP id q25mr11101715pfl.161.1576417998524; 
- Sun, 15 Dec 2019 05:53:18 -0800 (PST)
-Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id a10sm18291446pfc.35.2019.12.15.05.53.17
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 15 Dec 2019 05:53:17 -0800 (PST)
-From: Yangtao Li <tiny.windzz@gmail.com>
-To: cw00.choi@samsung.com, myungjoo.ham@samsung.com, kyungmin.park@samsung.com,
- heiko@sntech.de
-Subject: [PATCH] PM / devfreq: rockchip-dfi: convert to
- devm_platform_ioremap_resource
-Date: Sun, 15 Dec 2019 13:53:15 +0000
-Message-Id: <20191215135315.30656-1-tiny.windzz@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1igVrt-0003AM-1F; Sun, 15 Dec 2019 15:31:38 +0000
+Received: from mail-lj1-f180.google.com (mail-lj1-f180.google.com
+ [209.85.208.180])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 793A520866;
+ Sun, 15 Dec 2019 15:31:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576423895;
+ bh=LgHeGbyJrYWU3ryipXZAEWbKr4XnV0pc7CZo8nwe71o=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=i5Cutc5J5C/5aYfb3pnqldlule1dkMTiFtdLJQQf0csa7oyzCh7cQOCYG07GcSVZ9
+ IqhCNmw8CkN/a/xa4PpC8UyV1eVrvlsHUwUDR3+xpHamO7llyTLZV0IjgaarW3NFPu
+ smNpvbffdnRweEOQ/u/ZeoB1inTYavFVuPAUA4iU=
+Received: by mail-lj1-f180.google.com with SMTP id r19so3998018ljg.3;
+ Sun, 15 Dec 2019 07:31:35 -0800 (PST)
+X-Gm-Message-State: APjAAAWwu+HasMUhkttBJEHSCTvlYzHmI6OMFhxq3Xmf8A7UPtfea2MM
+ cENJjYpCxrhU0l7OfFU0QbuKInS+HewvLqM7T8A=
+X-Google-Smtp-Source: APXvYqw2DbqZ9mPFhwyFC3xGwQKN0FgHbG3yv4TEKTv/RS3DYTfQCkrygxKAvb9/4K7Pve0MBgrcu0ELakg7Nt6nOu8=
+X-Received: by 2002:a05:651c:208:: with SMTP id
+ y8mr16919184ljn.36.1576423893690; 
+ Sun, 15 Dec 2019 07:31:33 -0800 (PST)
+MIME-Version: 1.0
+References: <20191214181130.25808-1-tiny.windzz@gmail.com>
+In-Reply-To: <20191214181130.25808-1-tiny.windzz@gmail.com>
+From: Chanwoo Choi <chanwoo@kernel.org>
+Date: Mon, 16 Dec 2019 00:30:57 +0900
+X-Gmail-Original-Message-ID: <CAGTfZH2CS6o-zaHXReKJXzxsU_jfYKg2WL7uGpzyaFNhgTSVbg@mail.gmail.com>
+Message-ID: <CAGTfZH2CS6o-zaHXReKJXzxsU_jfYKg2WL7uGpzyaFNhgTSVbg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] PM / devfreq: rockchip-dfi: add missing of_node_put()
+To: Yangtao Li <tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_055319_072385_65EC6E21 
-X-CRM114-Status: UNSURE (   9.89  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191215_073137_100079_CD57294E 
+X-CRM114-Status: GOOD (  15.02  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -83,6 +71,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,49 +84,38 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Yangtao Li <tiny.windzz@gmail.com>, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
+ Linux PM list <linux-pm@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Use devm_platform_ioremap_resource() to simplify code.
-
-Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
----
- drivers/devfreq/event/rockchip-dfi.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
-
-diff --git a/drivers/devfreq/event/rockchip-dfi.c b/drivers/devfreq/event/rockchip-dfi.c
-index 5d1042188727..cc5d4c01af0b 100644
---- a/drivers/devfreq/event/rockchip-dfi.c
-+++ b/drivers/devfreq/event/rockchip-dfi.c
-@@ -177,7 +177,6 @@ static int rockchip_dfi_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
- 	struct rockchip_dfi *data;
--	struct resource *res;
- 	struct devfreq_event_desc *desc;
- 	struct device_node *np = pdev->dev.of_node, *node;
- 
-@@ -185,8 +184,7 @@ static int rockchip_dfi_probe(struct platform_device *pdev)
- 	if (!data)
- 		return -ENOMEM;
- 
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	data->regs = devm_ioremap_resource(&pdev->dev, res);
-+	data->regs = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(data->regs))
- 		return PTR_ERR(data->regs);
- 
--- 
-2.17.1
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+MjAxOeuFhCAxMuyblCAxNeydvCAo7J28KSDsmKTsoIQgMzoxMiwgWWFuZ3RhbyBMaSA8dGlueS53
+aW5kenpAZ21haWwuY29tPuuLmOydtCDsnpHshLE6Cj4KPiBvZl9ub2RlX3B1dCBuZWVkcyB0byBi
+ZSBjYWxsZWQgd2hlbiB0aGUgZGV2aWNlIG5vZGUgd2hpY2ggaXMgZ290Cj4gZnJvbSBvZl9wYXJz
+ZV9waGFuZGxlIGhhcyBmaW5pc2hlZCB1c2luZy4KPgo+IFNpZ25lZC1vZmYtYnk6IFlhbmd0YW8g
+TGkgPHRpbnkud2luZHp6QGdtYWlsLmNvbT4KPiAtLS0KPiAgZHJpdmVycy9kZXZmcmVxL2V2ZW50
+L3JvY2tjaGlwLWRmaS5jIHwgMSArCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKQo+
+Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZGV2ZnJlcS9ldmVudC9yb2NrY2hpcC1kZmkuYyBiL2Ry
+aXZlcnMvZGV2ZnJlcS9ldmVudC9yb2NrY2hpcC1kZmkuYwo+IGluZGV4IDVkMTA0MjE4ODcyNy4u
+NDViMTkwZTQ0M2Q4IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvZGV2ZnJlcS9ldmVudC9yb2NrY2hp
+cC1kZmkuYwo+ICsrKyBiL2RyaXZlcnMvZGV2ZnJlcS9ldmVudC9yb2NrY2hpcC1kZmkuYwo+IEBA
+IC0yMDAsNiArMjAwLDcgQEAgc3RhdGljIGludCByb2NrY2hpcF9kZmlfcHJvYmUoc3RydWN0IHBs
+YXRmb3JtX2RldmljZSAqcGRldikKPiAgICAgICAgIG5vZGUgPSBvZl9wYXJzZV9waGFuZGxlKG5w
+LCAicm9ja2NoaXAscG11IiwgMCk7Cj4gICAgICAgICBpZiAobm9kZSkgewo+ICAgICAgICAgICAg
+ICAgICBkYXRhLT5yZWdtYXBfcG11ID0gc3lzY29uX25vZGVfdG9fcmVnbWFwKG5vZGUpOwo+ICsg
+ICAgICAgICAgICAgICBvZl9ub2RlX3B1dChub2RlKTsKPiAgICAgICAgICAgICAgICAgaWYgKElT
+X0VSUihkYXRhLT5yZWdtYXBfcG11KSkKPiAgICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4g
+UFRSX0VSUihkYXRhLT5yZWdtYXBfcG11KTsKPiAgICAgICAgIH0KPiAtLQo+IDIuMTcuMQo+CgpB
+cHBsaWVkIGl0LiBCZXR0ZXIgdG8gdXNlIHRoZSBjYXBpdGFsIGxldHRlciBmb3IgZmlyc3QgY2hh
+ciBvZiBzZW50ZW5jZS4KCi0tIApCZXN0IFJlZ2FyZHMsCkNoYW53b28gQ2hvaQoKX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFp
+bGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
