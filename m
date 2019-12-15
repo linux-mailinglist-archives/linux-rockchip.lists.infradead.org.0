@@ -2,88 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00E0511F371
-	for <lists+linux-rockchip@lfdr.de>; Sat, 14 Dec 2019 19:12:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A86F211F80D
+	for <lists+linux-rockchip@lfdr.de>; Sun, 15 Dec 2019 14:53:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=OJnQ2WmZT1Tf3nYJsCAWbjAZ8//D7eKv3fexSvZcjEI=; b=qGAV3glQhQPd56LS2Dd0joSgBX
-	7BkVf8k/noKpNxFJ7nv+yu64GmRhwdUOC5kvhPqVjpf64T7PrwQuDv8+qxCssnRNcmENcOZtYmxTU
-	qr8YVYQiKmHDg8bwHR42XGOYk0AtYjo/wB4ANx3+mqfYrpl7ZmsSTXR6aN5bUfglV/x99bmcOck0E
-	XGiSizwHE/nzuY48+ftmnjETaLnG1+dNuIi8Y+lk0nFN1GVfRCEeJA3MbsCFq5Y9wYkkClg9s0MlC
-	By+NlgxseKtAwdYh8/o1pr+RVTxAy6XWJrUL6tyn9qFRB8IbngD3O6JN6MpLTr1s1Eot5KEKT6DcI
-	dNY8J3NQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=aQbXIX4yQnsgrEPrkQ3Sxt0ZFARhpE67sZb8JHEwzoc=; b=U/M
+	+/MPFHb7S/xEwi12vO+2A6CrIFj77NeRKml/+uZuslML7e/0Qyy7LQSAsjru0fKl5WmuO6VXJfe+5
+	wo+Gzl0cU1TUwq0TzfnhDDEx8j9NB/j1Pr8Tm0SoF9Xk18LrM+4QI4bHYcZbO79AaZUkrFv5NEMZf
+	u3P+3ks6Kv6d+ZvgPTMLrshGAjyrEAXm9+sAKLw+iOO4+jP4Rdk5E+7OWME4Y8TYnrlWRmD9e8JyW
+	dOQ3/zNGYoX3Qdh8GK4uT/BCyw4OxWQtnPhe0DWCd9LpoLWyFZg3uQCuZdCh06Gyg6LgbhjInkziV
+	vyqTF1JyNTmV39FnFZOrlB/JCBhsMFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igBtf-00053B-0k; Sat, 14 Dec 2019 18:12:07 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1igUKv-0006Na-1s; Sun, 15 Dec 2019 13:53:29 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igBtA-0004T9-TH; Sat, 14 Dec 2019 18:11:38 +0000
-Received: by mail-pl1-x641.google.com with SMTP id x17so2643309pln.1;
- Sat, 14 Dec 2019 10:11:36 -0800 (PST)
+ id 1igUKl-0006FN-0K; Sun, 15 Dec 2019 13:53:20 +0000
+Received: by mail-pg1-x543.google.com with SMTP id z124so2132445pgb.13;
+ Sun, 15 Dec 2019 05:53:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=SvTdvPiQ4xS/R0i2wr0OUTzm/R634IQg+liWq51l5qI=;
- b=GjJhF1CAXzdxoO+FucPX1sTsI0/8x0LFMpCRzTIKTB81SGg0MRkFv1GuE/kKOUL7UM
- 6xh1yviwLoQNhqQclDhr0qbETgbrQEG3Ud5h6lssD5CihvWHgbVvX6aL1znY47R16vE/
- ni44huX7x6QKD+AxFPeFCEPoWTnbtgzVWNKv8UqHGkmTqwiSPs5E+KsZp2EXozsYAOhX
- 3hYprEBKDcQcZKcQD4ARCH0TFznsrlG/fZGamrUOwgWtiiVSUq8eqaX6lUkslUZDWMwO
- X6+igpp4YIpotZWdWePFhV80TtqzIO+7MiGcJ+TpQj+fIBok9XfGdQvGdXu+alQtEHut
- 4SGg==
+ h=from:to:cc:subject:date:message-id;
+ bh=F+7PYqMmtcZUrcYIJM/i90K58GWESr+2/oVNmo6E2TM=;
+ b=GweBf684G0VM3rBai6Cr2ab3OMQJwlkinQuGIWtcWn/srhjrmrA/slPrMrg1+EiBy4
+ Rmn1eMVfS5LEKL+G0W4GEAKhAXl3hSOkWhlUAeZDNMQnMp2TsPyXD/Glq/xykBeugbEw
+ nvCEi0dqz5FwIAZ4AIV7EAZC00Y+IkUIqXcPYsR/iK4pykrpk0WDli1j7IuxDtUJIppv
+ N97Ohd8T4r3+yzzlEBemMbyLbQ19ZM63TA+U+vJqQ1K6yqBsBN1JwIoFfRMshd/GshNK
+ RH4/4N1OSuq+5DOolt+LJS5G8K0LmOXdoLjH/BN2kyvaig0H8MBuKZZKrC6j7GUDWHaa
+ tEiw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=SvTdvPiQ4xS/R0i2wr0OUTzm/R634IQg+liWq51l5qI=;
- b=Ok2Vmmkf7urqLIStQBRMsIJ7xQIAAsvDQKiHnRp3UJnVBVh2IDC+y29+c8HAMvBUkW
- bG5a6Skgx1rw9bbYHDivADiTsV2CaXn0cGzcxmdx5zJ2wz1krwX8Em+HlNSv2Eu1v23r
- nnIV8jQZvymjtybxa7eU3mgh3Q+tSIBGyclBG9OkgFW+YRM8NFQZDp+Yo0kAdYOBFKpv
- dKX+/PlcT15Sqnzc+YAxJWqHk4F4rzOOkYvOjQWC2ov1PS8jd9tFgKKLK3ukj0uk0kHP
- BEfTI1cFzNA3DjzuCTjl+00R1y1IE1yR1L/sJ2M35sf9WJDF/KwS1oO7ianHD9CdwZzF
- EuGQ==
-X-Gm-Message-State: APjAAAVIttndz34aSmogDUOwt+A5iiFp+rY+9NF/B3J9KCPsAfJCwDk0
- 6SrnjL8oWRKg8nrdkk7bD8Y=
-X-Google-Smtp-Source: APXvYqwO9rgNZe3r1YYJXfOMjUaz6xLzQB0K3HMgzzIWBQTtDHfKH5LltW8bhA04msSercIVr4AEHw==
-X-Received: by 2002:a17:902:8541:: with SMTP id
- d1mr6447836plo.57.1576347096300; 
- Sat, 14 Dec 2019 10:11:36 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=F+7PYqMmtcZUrcYIJM/i90K58GWESr+2/oVNmo6E2TM=;
+ b=b72FNQzwX9GQtRLj4tehjMyuY6JVdvDcbQAvOql3Ib8vOhuBCeTxI9J/rdhdZAJi9i
+ ui0OKRyRneeF9lMVVctCW0Oz6fdvr9nSJ65ujtRaHDo/quS9dJvIvYONLgroiH7C6hhd
+ 2USWC0XG+yhY2ROuKSysT3EWwRbMnT61h4K0xqXxGMDVBojV8XBsamYahxYvCLkOiZYs
+ eN6rLsbXyiNZO1Kam55Zzv++QzFW15xdmJbdCa49PSILJMf783pOFnO7t0gfYO0RNG4p
+ XIdsa+fAs/lEVElhFGqXnp6tX6rCpIHBvFWBIhHegpcl6xXM1oFnAbv9ZoETnns4gBP7
+ GbfQ==
+X-Gm-Message-State: APjAAAUtC+ETWNS6cIabKtVq2/teHuGJCwdapzC69iAnXu9toL6oeJb/
+ 30YQn082grmQZmGzYlx/k7Q=
+X-Google-Smtp-Source: APXvYqxXJkAsV8yHg1GoZBKuVsSVXvzUxrMPybKz+apkWNWpA09kgmFG+igs8TzNO6i+vyRPtp+h7w==
+X-Received: by 2002:aa7:9839:: with SMTP id q25mr11101715pfl.161.1576417998524; 
+ Sun, 15 Dec 2019 05:53:18 -0800 (PST)
 Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id f8sm13276261pfn.2.2019.12.14.10.11.35
+ by smtp.gmail.com with ESMTPSA id a10sm18291446pfc.35.2019.12.15.05.53.17
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 14 Dec 2019 10:11:35 -0800 (PST)
+ Sun, 15 Dec 2019 05:53:17 -0800 (PST)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: cw00.choi@samsung.com, myungjoo.ham@samsung.com, kyungmin.park@samsung.com,
  heiko@sntech.de
-Subject: [PATCH 2/2] PM / devfreq: rk3399_dmc: add missing of_node_put()
-Date: Sat, 14 Dec 2019 18:11:30 +0000
-Message-Id: <20191214181130.25808-2-tiny.windzz@gmail.com>
+Subject: [PATCH] PM / devfreq: rockchip-dfi: convert to
+ devm_platform_ioremap_resource
+Date: Sun, 15 Dec 2019 13:53:15 +0000
+Message-Id: <20191215135315.30656-1-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191214181130.25808-1-tiny.windzz@gmail.com>
-References: <20191214181130.25808-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191214_101136_952576_E817D1EF 
-X-CRM114-Status: GOOD (  10.75  )
+X-CRM114-CacheID: sfid-20191215_055319_072385_65EC6E21 
+X-CRM114-Status: UNSURE (   9.89  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (tiny.windzz[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -107,26 +104,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-of_node_put() needs to be called when the device node which is got
-from of_parse_phandle has finished using.
+Use devm_platform_ioremap_resource() to simplify code.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- drivers/devfreq/rk3399_dmc.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/devfreq/event/rockchip-dfi.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/devfreq/rk3399_dmc.c b/drivers/devfreq/rk3399_dmc.c
-index 2e65d7279d79..2f1027c5b647 100644
---- a/drivers/devfreq/rk3399_dmc.c
-+++ b/drivers/devfreq/rk3399_dmc.c
-@@ -372,6 +372,7 @@ static int rk3399_dmcfreq_probe(struct platform_device *pdev)
- 	node = of_parse_phandle(np, "rockchip,pmu", 0);
- 	if (node) {
- 		data->regmap_pmu = syscon_node_to_regmap(node);
-+		of_node_put(node);
- 		if (IS_ERR(data->regmap_pmu))
- 			return PTR_ERR(data->regmap_pmu);
- 	}
+diff --git a/drivers/devfreq/event/rockchip-dfi.c b/drivers/devfreq/event/rockchip-dfi.c
+index 5d1042188727..cc5d4c01af0b 100644
+--- a/drivers/devfreq/event/rockchip-dfi.c
++++ b/drivers/devfreq/event/rockchip-dfi.c
+@@ -177,7 +177,6 @@ static int rockchip_dfi_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+ 	struct rockchip_dfi *data;
+-	struct resource *res;
+ 	struct devfreq_event_desc *desc;
+ 	struct device_node *np = pdev->dev.of_node, *node;
+ 
+@@ -185,8 +184,7 @@ static int rockchip_dfi_probe(struct platform_device *pdev)
+ 	if (!data)
+ 		return -ENOMEM;
+ 
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	data->regs = devm_ioremap_resource(&pdev->dev, res);
++	data->regs = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(data->regs))
+ 		return PTR_ERR(data->regs);
+ 
 -- 
 2.17.1
 
