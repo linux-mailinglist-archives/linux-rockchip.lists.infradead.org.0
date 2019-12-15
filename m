@@ -2,52 +2,91 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE73E11FB13
-	for <lists+linux-rockchip@lfdr.de>; Sun, 15 Dec 2019 21:28:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BA3111FB6A
+	for <lists+linux-rockchip@lfdr.de>; Sun, 15 Dec 2019 22:12:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BPKK9cnn3aewbj6H1v4i3w1BRWtg9vu5OhXI2+g6Fzk=; b=OsAryHu5WPNM0m
-	c7nAdlhgl/zcovyFTjgtLP4xVDkd32b2NGOYd9BjODoWTwlFEVGTfTeVNbMf5mN6tmRBKHzgdd9Uj
-	eaMaaFdnDKkVe7YyZ53smvXnUmcp7OMGBIU3iIfXPN65UHLkSY3ZL8/m3+qmrEGRlgO0IsZx9YJ0U
-	6mHFVxN+7bpYb/4DrMIvPKP6eKhkKKC0PWwEKOzvd65vH9xFXA3DNdys05F3OKH6tyA/X94Eb8mt+
-	+6UQq0pj6FTiXL+JjOcqQUpXhx6Zb89HJkx+VAFozCmXvFaMjmayHbbbjlyqeWFRdJBHaHGC4Vbjs
-	xBu6foQQxlzzZUKDlPzg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZPNu7jjTcfDQXudJL4lXr6UYD45w/MTmaOBcrPNsaho=; b=oHrVEBzh9BYjNe
+	JxRVsnQKuSFXWUUjS0wu/R4a7SOYXsHMg2+5k9CvoLPpp5c3hKPoSCsAu2jGAv6wKwTE7hBY3Scqk
+	YQS0VkfLNMScVKgKu/Gvapw3BSELy/5xMsMVaz2fa5LSiCyx0aRh+L/57gihTcdwllZH77HrK53KJ
+	vch6+d3BZj9+A67W6+PCFRWRaZpqYznk5ay8RXTv40IsF2O9AiIvqWRTz6J+2254++zZUrIzkDbiE
+	6qE9Yt67qAdIiH1xczULU2VeZ5cJtOPVHeKFTJk2Uj5y5zXihoHzL3wPZlpG+ZYreSwW99x9TD43d
+	Mlo2p00GdFSw65hFCt+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igaUd-00057w-Ap; Sun, 15 Dec 2019 20:27:55 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1igbBw-0003S5-KO; Sun, 15 Dec 2019 21:12:40 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igaUY-000577-HO
- for linux-rockchip@lists.infradead.org; Sun, 15 Dec 2019 20:27:53 +0000
-Received: from ip5f5a5f74.dynamic.kabel-deutschland.de ([95.90.95.116]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1igaUO-00045X-OG; Sun, 15 Dec 2019 21:27:40 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Anand Moon <linux.amoon@gmail.com>
-Subject: Re: [PATCH 4/4] mfd: rk808: Convert RK805 to syscore/PM ops
-Date: Sun, 15 Dec 2019 21:27:40 +0100
-Message-ID: <2681192.H4ySjFOPB8@diego>
-In-Reply-To: <CANAwSgTtzAZJqpsD7uVKskTnDmrT1bs=JuHxnPrkpQKtnZLhvQ@mail.gmail.com>
-References: <cover.1575932654.git.robin.murphy@arm.com>
- <8642045f0657c9e782cd698eb08777c9d4c10c8d.1575932654.git.robin.murphy@arm.com>
- <CANAwSgTtzAZJqpsD7uVKskTnDmrT1bs=JuHxnPrkpQKtnZLhvQ@mail.gmail.com>
+ id 1igbBs-0003Qo-JU; Sun, 15 Dec 2019 21:12:37 +0000
+Received: by mail-wm1-x344.google.com with SMTP id b72so2499006wme.4;
+ Sun, 15 Dec 2019 13:12:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Y3g/A/VhKALqZSKzxwKBBQCqFaLT6bu0ReDrDf4DLQc=;
+ b=ZCtFipn4ACffkMmwhawkSiNoVgx0+1I/zetuvwljhG+tWyZ0QQPaYyTf0tYB3xkngk
+ 6Zdhi3lnfLaSVuaQ1DqhKu1f/SKPj5x54V3ruUFI3TrsEfeMqsB2gcJLKV59QYW9WVrS
+ Tf8W2Vez+GWK2BdLTjqd69ZTyInxjiH22HRxCj3h2cYInl4jj2OhyBxX+t1t8OIcaBPU
+ d8YwQjidrlvmNzBDYimEfKgMzxiXGIffGNSy509VGvm+HlZ5Yy9P3bC9XKTeKsS2VAR5
+ tuUCD+Wzn/d1Wq8Qko4UIOccdH5ozey4wwt1KKWzVwWjaCUvOt2jN1q22S5O/YmLQMQR
+ GrFA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Y3g/A/VhKALqZSKzxwKBBQCqFaLT6bu0ReDrDf4DLQc=;
+ b=KuakcfMRhXSOuCSNF+2gft6XnvQgoJSLSxo9x6b19nJv1dmK7DXKthU5iNpdoy/gGY
+ 05mbiDOvTjBfRvtGSLtxsyVb6FZwwUATLO5Hh7eXZupcDR/OBdGKMWFfpjCoLeo5pva7
+ bKuMV0gvIWC8GjI500sEP3p8jpLAp9yNLhHN9IehFbOl11ap2tO7UrApc8yioNALdeOU
+ +h9Qa5zlzbJ5yGqTJloHhY6zeq9YIclnPgZbZjEdrTzCjwod1taUGXO7tnMNk/OtHZ1x
+ G0EtezQMO2oYj2xwjkJpswkEVzNrfVFBya2S6lVye76t1ky4Fq3fDjDN6OzCflC6WfaB
+ q1Ag==
+X-Gm-Message-State: APjAAAWxYpV1sl6CN+T8AA5vP+a/F2GMONC08316zmAXTaWfQojhKgkR
+ 69IOoPwH2/anP+5tlOEhbe4=
+X-Google-Smtp-Source: APXvYqxJS/WP2zOOmRW0orqTzZD1jmdig6IvEjlAtgAQFwQIvIMmtkBtCQxOdm7tqfX0VPIRQxJT0Q==
+X-Received: by 2002:a7b:c342:: with SMTP id l2mr27920141wmj.20.1576444354953; 
+ Sun, 15 Dec 2019 13:12:34 -0800 (PST)
+Received: from localhost.localdomain
+ (p200300F1370FCC00428D5CFFFEB99DB8.dip0.t-ipconnect.de.
+ [2003:f1:370f:cc00:428d:5cff:feb9:9db8])
+ by smtp.googlemail.com with ESMTPSA id j12sm19888598wrw.54.2019.12.15.13.12.33
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 15 Dec 2019 13:12:34 -0800 (PST)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: yuq825@gmail.com, dri-devel@lists.freedesktop.org,
+ lima@lists.freedesktop.org
+Subject: [RFC v1 0/1] drm: lima: devfreq and cooling device support
+Date: Sun, 15 Dec 2019 22:12:22 +0100
+Message-Id: <20191215211223.1451499-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_122750_728840_5EE73E1D 
-X-CRM114-Status: GOOD (  14.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191215_131236_665623_F42EE624 
+X-CRM114-Status: GOOD (  13.05  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,120 +99,57 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Lee Jones <lee.jones@linaro.org>, Soeren Moch <smoch@web.de>,
- Robin Murphy <robin.murphy@arm.com>,
- Linux Kernel <linux-kernel@vger.kernel.org>,
- linux-rockchip@lists.infradead.org
+Cc: robh@kernel.org, tomeu.vizoso@collabora.com, airlied@linux.ie,
+ linux-kernel@vger.kernel.org, steven.price@arm.com,
+ linux-rockchip@lists.infradead.org, wens@csie.org,
+ alyssa.rosenzweig@collabora.com, daniel@ffwll.ch,
+ linux-amlogic@lists.infradead.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Anand,
+This is my attempt at adding devfreq (and cooling device) support to
+the lima driver.
+I didn't have much time to do in-depth testing. However, I'm sending
+this out early because there are many SoCs with Mali-400/450 GPU so
+I want to avoid duplicating the work with somebody else.
 
-Am Sonntag, 15. Dezember 2019, 19:51:50 CET schrieb Anand Moon:
-> On Tue, 10 Dec 2019 at 18:54, Robin Murphy <robin.murphy@arm.com> wrote:
-> >
-> > RK805 has the same kind of dual-role sleep/shutdown pin as RK809/RK817,
-> > so it makes little sense for the driver to have to have two completely
-> > different mechanisms to handle essentially the same thing. Bring RK805
-> > in line with the RK809/RK817 flow to clean things up.
-> >
-> > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> > ---
+The code is derived from panfrost_devfreq.c which is why I kept the
+Collabora copyright in lima_devfreq.c. Please let me know if I should
+drop this or how I can make it more clear that I "borrowed" the code
+from panfrost.
 
-[...]
+I am seeking comments in two general areas:
+- regarding the integration into the existing lima code
+- for the actual devfreq code (I had to adapt the panfrost code
+  slightly, because lima uses a bus and a GPU/core clock)
 
-> I am sill getting the kernel warning on issue poweroff see below.
-> on my Rock960 Model A
-> I feel the reason for this is we now have two poweroff callback
-> 1  pm_power_off = rk808_device_shutdown
-> 2  rk8xx_syscore_shutdown
-
-Nope, the issue is just the i2c subsystem complaining that the
-Rocckhip i2c drives does not provide an atomic-transfer function, see
-	"No atomic I2C transfer handler for 'i2c-0'"
-in your warning.
-
-Somewhere it was suggested that the current transfer function just
-works as atomic as well.
+My own TODO list includes "more" testing on various Amlogic SoCs.
+So far I have tested this on Meson8b and Meson8m2 (which both have a
+GPU OPP table defined). However, I still need to test this on a GXL
+board (which is currently missing the GPU OPP table).
 
 
-> In my investigation earlier common function for shutdown solve
-> the issue of clean shutdown.
+Martin Blumenstingl (1):
+  drm/lima: Add optional devfreq support
 
-This is simply a result of your syscore-shutdown function running way to
-early, before the i2c subsystem switched to using atomic transfers.
+ drivers/gpu/drm/lima/Kconfig        |   1 +
+ drivers/gpu/drm/lima/Makefile       |   3 +-
+ drivers/gpu/drm/lima/lima_devfreq.c | 162 ++++++++++++++++++++++++++++
+ drivers/gpu/drm/lima/lima_devfreq.h |  15 +++
+ drivers/gpu/drm/lima/lima_device.c  |   4 +
+ drivers/gpu/drm/lima/lima_device.h  |  11 ++
+ drivers/gpu/drm/lima/lima_drv.c     |  14 ++-
+ drivers/gpu/drm/lima/lima_sched.c   |   7 ++
+ drivers/gpu/drm/lima/lima_sched.h   |   3 +
+ 9 files changed, 217 insertions(+), 3 deletions(-)
+ create mode 100644 drivers/gpu/drm/lima/lima_devfreq.c
+ create mode 100644 drivers/gpu/drm/lima/lima_devfreq.h
 
-This also indicates that this would really be way to early, as other parts
-of the kernel could also still be running.
-
-Heiko
-
-
-> for *rockchip,system-power-controller* dts property
-> we can used flags if check if this property support clean shutdown
-> for that device.
-> 
-> [  565.009291] xhci-hcd xhci-hcd.0.auto: USB bus 5 deregistered
-> [  565.010179] reboot: Power down
-> [  565.010536] ------------[ cut here ]------------
-> [  565.010940] No atomic I2C transfer handler for 'i2c-0'
-> [  565.011437] WARNING: CPU: 0 PID: 1 at drivers/i2c/i2c-core.h:40
-> i2c_transfer+0xe4/0xf8
-> [  565.012126] Modules linked in: snd_soc_hdmi_codec dw_hdmi_i2s_audio
-> rockchipdrm nvme analogix_dp nvme_core brcmfmac hci_uart dw_mipi_dsi
-> dw_hdmi btbcm cec panfrost bluetooth drm_kms_helper brcmutil gpu_sched
-> cfg80211 crct10dif_ce snd_soc_rockchip_i2s snd_soc_simple_card drm
-> ecdh_generic snd_soc_rockchip_pcm snd_soc_simple_card_utils
-> phy_rockchip_pcie ecc rtc_rk808 rfkill rockchip_thermal
-> pcie_rockchip_host ip_tables x_tables ipv6 nf_defrag_ipv6
-> [  565.015578] CPU: 0 PID: 1 Comm: shutdown Not tainted
-> 5.5.0-rc1-00292-gd46dd6369c55 #7
-> [  565.016260] Hardware name: 96boards Rock960 (DT)
-> [  565.016666] pstate: 60000085 (nZCv daIf -PAN -UAO)
-> [  565.017087] pc : i2c_transfer+0xe4/0xf8
-> [  565.017425] lr : i2c_transfer+0xe4/0xf8
-> [  565.017762] sp : ffff80001004baf0
-> [  565.018052] x29: ffff80001004baf0 x28: ffff00007d208000
-> [  565.018517] x27: 0000000000000000 x26: 0000000000000000
-> [  565.018982] x25: 0000000000000008 x24: 0000000000000000
-> [  565.019447] x23: ffff00007d208000 x22: ffff80001004bc64
-> [  565.019912] x21: ffff80001004bb48 x20: 0000000000000002
-> [  565.020377] x19: ffff000078502080 x18: 0000000000000010
-> [  565.020842] x17: 0000000000000001 x16: 0000000000000019
-> [  565.021307] x15: ffff00007d208470 x14: ffffffffffffffff
-> [  565.021772] x13: ffff80009004b857 x12: ffff80001004b860
-> [  565.022237] x11: ffff800011841000 x10: ffff800011a10658
-> [  565.022702] x9 : 0000000000000000 x8 : ffff800011a11000
-> [  565.023167] x7 : ffff800010697c78 x6 : 0000000000000262
-> [  565.023632] x5 : 0000000000000000 x4 : 0000000000000000
-> [  565.024096] x3 : 00000000ffffffff x2 : ffff800011841ab8
-> [  565.024561] x1 : 7b11701b0ae78800 x0 : 0000000000000000
-> [  565.025027] Call trace:
-> [  565.025246]  i2c_transfer+0xe4/0xf8
-> [  565.025556]  regmap_i2c_read+0x5c/0xa0
-> [  565.025886]  _regmap_raw_read+0xcc/0x138
-> [  565.026230]  _regmap_bus_read+0x3c/0x70
-> [  565.026568]  _regmap_read+0x60/0xe0
-> [  565.026875]  _regmap_update_bits+0xc8/0x108
-> [  565.027241]  regmap_update_bits_base+0x60/0x90
-> [  565.027633]  rk808_device_shutdown+0x6c/0x88
-> [  565.028010]  machine_power_off+0x24/0x30
-> [  565.028356]  kernel_power_off+0x64/0x70
-> [  565.028693]  __do_sys_reboot+0x15c/0x240
-> [  565.029038]  __arm64_sys_reboot+0x20/0x28
-> [  565.029390]  el0_svc_common.constprop.0+0x68/0x160
-> [  565.029811]  el0_svc_handler+0x20/0x80
-> [  565.030141]  el0_sync_handler+0x10c/0x180
-> [  565.030493]  el0_sync+0x140/0x180
-> [  565.030785] ---[ end trace 5167e842ce15f686 ]---
-> 
-> -Anand
-> 
-
-
-
+-- 
+2.24.1
 
 
 _______________________________________________
