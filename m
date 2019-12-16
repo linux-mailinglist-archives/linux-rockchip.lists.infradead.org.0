@@ -2,68 +2,67 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B49D1202C3
-	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Dec 2019 11:39:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 787991202C6
+	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Dec 2019 11:39:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LAvviI57WyAe4zcmUqnZjt6ZJL4WzYDtxtSU+0wzCyo=; b=MZK0AtFAxTgJmP
-	27kfkQ+pxuXh2lv2hqMvb2Mdl3lA97g32AHQXaKmq7aunV9pcQ8rImYzVkawgHWgBrAbitbnKgXfp
-	NQgiEz+OjSz9+FTwGrUQ/E3FovgS57ip3zApL31IXNCTnDyac1T8g6vfRfFREsGQKhQjp4LZnl7SG
-	T0hEDVHwuBJgYMvEmM5jpX173FVK7LH0jxtGBek6396ZwAm15to4Kx3S23JGpOFbB7PTFOAdXHZnw
-	f5ggwjIKA0niTULMO2a5pbI5h02uKEIWtFP1WWgnSrbqYbtePEkhIamrczJzCaBG/7Fx57xRJOtMa
-	v7fRJFNYprdJZWENkYsg==;
+	List-Owner; bh=lieYgXHG44azaSSh7BpKQa+XqSvzlAiUEvI/LgWK7hc=; b=b8yS/SHoifPFLj
+	QGV86YdkPi8MTl38uODY//ko9vyax9+TY+bTGZF1B70FY8ChoTDFssSBmRwASa+WPH1gtdWWIlV2s
+	FjwLEqGCtaREyYq4ToNFS9VzfbqGSwXO30st99MmwyIF6VLZwq6EtRcPPqppKX463CgChOz3c++M9
+	HdgGCX7/1/eYEsLI61wb6Do5ws3eSR+RrMOxhIdLyMCkkbjmR9uOzMaaSHbEgS/j599eOh7XtG/Lr
+	o1EjLmq5R30g4V7IoI4YzlNwtJga7Ce2PCwDAEEVwh03j9gBZleqGRR3Vpfl6+z4iK8WmSXdrss4l
+	pifIx7yZii2KlXNb8OJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ignmZ-0002AS-VM; Mon, 16 Dec 2019 10:39:19 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1ignn4-0002Fu-NL; Mon, 16 Dec 2019 10:39:50 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ignmW-00029m-VX
- for linux-rockchip@lists.infradead.org; Mon, 16 Dec 2019 10:39:18 +0000
-Received: by mail-wr1-x444.google.com with SMTP id b6so6638841wrq.0
- for <linux-rockchip@lists.infradead.org>; Mon, 16 Dec 2019 02:39:16 -0800 (PST)
+ id 1ignn1-0002FK-0D
+ for linux-rockchip@lists.infradead.org; Mon, 16 Dec 2019 10:39:48 +0000
+Received: by mail-wr1-x441.google.com with SMTP id t2so6632345wrr.1
+ for <linux-rockchip@lists.infradead.org>; Mon, 16 Dec 2019 02:39:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=iUEj1Sq+gPRazKsZFaCSsJgKA7ZuTEYORKqousBx8Ic=;
- b=X+Mm74liExH2eRr5JZcJ9Key/NLzp99hzDGz8AdYTGsSJbtMDb3BG9CclOL7N4CYps
- SYY9sxJR/odN0RMlZoDCsMPRbjjYu69XNg1ahUtd/I95xE/fUojoIwB3u04nGXzh8whp
- d865IGhvJuzoLn5ygc5bWy31ijZlHHib9hpnC5rop78cXJHkljFyh5YfGlHvPuo+qXSm
- oOh6Puhn8dDWQJWK2Sx/B/NMuPTbkd4dNOjW3bTBxwB4qeSUERN4TfAKwbvrv0L1Pvvz
- GZs5hOIwZaDFjZlJbZjHLvoZ1fLNiA/J94MZk/Aiwcu6/ftLloC+eJBpDegjTWOdlMw1
- kmYg==
+ bh=ii06wxcb9L021v3GgtcqEZ9AgzJ8e/NMKTcA4UTvOEY=;
+ b=uFI9httlI4FlbYf3pq+TtooCL62GDwlyjemmEDfVia8KyutxATi+dhuUXCXWIB2JSB
+ aRmhPcJdb37Kz2FUUa/+aYJVivDdu+l8aAwpTFLxLOzPzuqSS5Y0gkceb4fmooFcZdbk
+ RWfD06QSJ/HYJUZRNRxB57N9mavB+Zncfqh8E7b8ZxHsbvC2pXudNdHP+RrUJcxzihPz
+ NBoGZxawdSOiEPwmO5SAhFZIE57Vk0vxa+CpSXSkOBQwrcZ9g9ImxMCHvowidHKvO5YX
+ 0vx1oLrINJuUskf1MD5Td+w4E9hYV9VFFpmOPkEeOb2B94YLmhFntXMCfZf9U7TKpcwr
+ hzrA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=iUEj1Sq+gPRazKsZFaCSsJgKA7ZuTEYORKqousBx8Ic=;
- b=KUnguBzIJccin8W+JF3Ar7zbEIr9ehmR2OXZtAbkgzQ+Y79d0TtsuSz/Glm7du52EX
- CeRZtyKmLk4PPcYRncu9YV5qt0aJk9PrQzzb9nkWQbmjwCUZmHabOydHdEBlrs8c2g9w
- xOFlmB/8neOduY3yj2qjf2GiFaFiY4wOnepHyFkL1QDud1KbV91zb92O3q2F+GJEf0sJ
- 4/6VncFjnUBWBu3zDCCmiWDhq7i4PBpPIiQI0Wd+3JLGfvsId4ZRP43Kz2fvpx9SMxeM
- pnpZlWW+Pzy9aj9Bn4RzM47QXUUmLS069HQbPxJ/Aq7t699/1F/L8Y49DxWt67NW3d2W
- tbFQ==
-X-Gm-Message-State: APjAAAWJovI41k836xfWtnLInJBvQidKRZ8eaS2NMHg/2JJSD/7PVR/E
- BEEQFPiOLb006sUMVjnH4YgZWA==
-X-Google-Smtp-Source: APXvYqzfzYiDgn55zkTvomEaxMD9mGfFM0wVVmu7MRPFRotExPDnBBd+hOxaAFEbe4TeMBs1P5eCjA==
-X-Received: by 2002:adf:fe90:: with SMTP id l16mr31043802wrr.265.1576492755275; 
- Mon, 16 Dec 2019 02:39:15 -0800 (PST)
+ bh=ii06wxcb9L021v3GgtcqEZ9AgzJ8e/NMKTcA4UTvOEY=;
+ b=a5ajuQJpwPBRizP8dxjzs/bisKRj8Xy14MOeD9DD90rcWfsp2OEWc7l3+7MN0RDP/a
+ T7262jyUnjZMO35p/0qxGpvCX6zoubbclZ8IFOjDxH4yoOibUcc95PgYkinvFbR3ngYu
+ xzFjWOrpuFRjMBs2q1/mA748+SoiQDYqbjBVeSuJyXpp5MPPnx8YpNg0vsBJ61Lievig
+ byLm6RA5tTJCAJkRy2hcubtkzS75RdyeLqIN4ZI9Ep9d8i5gHoulm7pOJknhloriYZNg
+ s8fp2v6M+oUtyqB1ZJDhcg04uS9ZXwv9pH6hJqz1vvyKLXYi5PkBJs0CDN8scW+w2kcP
+ RZIg==
+X-Gm-Message-State: APjAAAUEDpkHq7HKK8T0OMPXqCbexmxlmjhaqd0Km+mFJY3fUrJ4C2bx
+ Yp98fjM1NiizYmx/bwtRtdw5Mw==
+X-Google-Smtp-Source: APXvYqxVGQvgWvVnRxy9bC1AGO790BmKTAc01FS7CV0llqhz8LkqEFIJgHcJfzxc8yn5yPgOOPLiuQ==
+X-Received: by 2002:adf:e3d0:: with SMTP id k16mr30082646wrm.241.1576492785196; 
+ Mon, 16 Dec 2019 02:39:45 -0800 (PST)
 Received: from [10.2.4.230] (lfbn-nic-1-505-157.w90-116.abo.wanadoo.fr.
  [90.116.92.157])
- by smtp.gmail.com with ESMTPSA id x18sm20857268wrr.75.2019.12.16.02.39.14
+ by smtp.gmail.com with ESMTPSA id k13sm20958632wrx.59.2019.12.16.02.39.44
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 16 Dec 2019 02:39:14 -0800 (PST)
-Subject: Re: [PATCH v5 4/6] drm/rockchip: add ability to handle external dphys
- in mipi-dsi
+ Mon, 16 Dec 2019 02:39:44 -0800 (PST)
+Subject: Re: [PATCH v5 6/6] drm/rockchip: dsi: add px30 support
 To: Heiko Stuebner <heiko@sntech.de>, a.hajda@samsung.com
 References: <20191209143130.4553-1-heiko@sntech.de>
- <20191209143130.4553-5-heiko@sntech.de>
+ <20191209143130.4553-7-heiko@sntech.de>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -116,23 +115,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <b53704e5-83eb-3dcf-60d8-f21ef51859ee@baylibre.com>
-Date: Mon, 16 Dec 2019 11:39:13 +0100
+Message-ID: <99e4a800-fa12-9d64-3ceb-99b961a9f3d3@baylibre.com>
+Date: Mon, 16 Dec 2019 11:39:43 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191209143130.4553-5-heiko@sntech.de>
+In-Reply-To: <20191209143130.4553-7-heiko@sntech.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_023917_020674_C706E1D7 
-X-CRM114-Status: GOOD (  25.08  )
+X-CRM114-CacheID: sfid-20191216_023947_043658_F5C20E33 
+X-CRM114-Status: GOOD (  18.31  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -167,13 +166,7 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 On 09/12/2019 15:31, Heiko Stuebner wrote:
 > From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 > 
-> While the common case is that the dsi controller uses an internal dphy,
-> accessed through the phy registers inside the dsi controller, there is
-> also the possibility to use a separate dphy from a different vendor.
-> 
-> One such case is the Rockchip px30 that uses a Innosilicon Mipi dphy,
-> so add the support for handling such a constellation, including the pll
-> also getting generated inside that external phy.
+> Add the compatible and GRF definitions for the PX30 soc.
 > 
 > changes in v5:
 > - rebased on top of 5.5-rc1
@@ -181,132 +174,61 @@ On 09/12/2019 15:31, Heiko Stuebner wrote:
 > 
 > Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 > ---
->  .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   | 68 +++++++++++++++++--
->  1 file changed, 64 insertions(+), 4 deletions(-)
+>  .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   | 27 +++++++++++++++++++
+>  1 file changed, 27 insertions(+)
 > 
 > diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-> index 9406effe8077..f16bd1e9b633 100644
+> index f16bd1e9b633..f04b5064974d 100644
 > --- a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
 > +++ b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-> @@ -12,6 +12,7 @@
->  #include <linux/mfd/syscon.h>
->  #include <linux/module.h>
->  #include <linux/of_device.h>
-> +#include <linux/phy/phy.h>
->  #include <linux/pm_runtime.h>
->  #include <linux/regmap.h>
+> @@ -140,6 +140,12 @@
+>  #define DW_MIPI_NEEDS_PHY_CFG_CLK	BIT(0)
+>  #define DW_MIPI_NEEDS_GRF_CLK		BIT(1)
 >  
-> @@ -223,6 +224,10 @@ struct dw_mipi_dsi_rockchip {
->  	bool is_slave;
->  	struct dw_mipi_dsi_rockchip *slave;
->  
-> +	/* optional external dphy */
-> +	struct phy *phy;
-> +	union phy_configure_opts phy_opts;
+> +#define PX30_GRF_PD_VO_CON1		0x0438
+> +#define PX30_DSI_FORCETXSTOPMODE	(0xf << 7)
+> +#define PX30_DSI_FORCERXMODE		BIT(6)
+> +#define PX30_DSI_TURNDISABLE		BIT(5)
+> +#define PX30_DSI_LCDC_SEL		BIT(0)
 > +
->  	unsigned int lane_mbps; /* per lane */
->  	u16 input_div;
->  	u16 feedback_div;
-> @@ -359,6 +364,9 @@ static int dw_mipi_dsi_phy_init(void *priv_data)
->  	struct dw_mipi_dsi_rockchip *dsi = priv_data;
->  	int ret, i, vco;
->  
-> +	if (dsi->phy)
-> +		return 0;
-> +
->  	/*
->  	 * Get vco from frequency(lane_mbps)
->  	 * vco	frequency table
-> @@ -467,6 +475,28 @@ static int dw_mipi_dsi_phy_init(void *priv_data)
->  	return ret;
+>  #define RK3288_GRF_SOC_CON6		0x025c
+>  #define RK3288_DSI0_LCDC_SEL		BIT(6)
+>  #define RK3288_DSI1_LCDC_SEL		BIT(9)
+> @@ -1127,6 +1133,24 @@ static int dw_mipi_dsi_rockchip_remove(struct platform_device *pdev)
+>  	return 0;
 >  }
 >  
-> +static void dw_mipi_dsi_phy_power_on(void *priv_data)
-> +{
-> +	struct dw_mipi_dsi_rockchip *dsi = priv_data;
-> +	int ret;
+> +static const struct rockchip_dw_dsi_chip_data px30_chip_data[] = {
+> +	{
+> +		.reg = 0xff450000,
+> +		.lcdsel_grf_reg = PX30_GRF_PD_VO_CON1,
+> +		.lcdsel_big = HIWORD_UPDATE(0, PX30_DSI_LCDC_SEL),
+> +		.lcdsel_lit = HIWORD_UPDATE(PX30_DSI_LCDC_SEL,
+> +					    PX30_DSI_LCDC_SEL),
 > +
-> +	ret = phy_set_mode(dsi->phy, PHY_MODE_MIPI_DPHY);
-> +	if (ret) {
-> +		DRM_DEV_ERROR(dsi->dev, "failed to set phy mode: %d\n", ret);
-> +		return;
-> +	}
+> +		.lanecfg1_grf_reg = PX30_GRF_PD_VO_CON1,
+> +		.lanecfg1 = HIWORD_UPDATE(0, PX30_DSI_TURNDISABLE |
+> +					     PX30_DSI_FORCERXMODE |
+> +					     PX30_DSI_FORCETXSTOPMODE),
 > +
-> +	phy_configure(dsi->phy, &dsi->phy_opts);
-> +	phy_power_on(dsi->phy);
-> +}
+> +		.max_data_lanes = 4,
+> +	},
+> +	{ /* sentinel */ }
+> +};
 > +
-> +static void dw_mipi_dsi_phy_power_off(void *priv_data)
-> +{
-> +	struct dw_mipi_dsi_rockchip *dsi = priv_data;
-> +
-> +	phy_power_off(dsi->phy);
-> +}
-> +
->  static int
->  dw_mipi_dsi_get_lane_mbps(void *priv_data, const struct drm_display_mode *mode,
->  			  unsigned long mode_flags, u32 lanes, u32 format,
-> @@ -504,6 +534,17 @@ dw_mipi_dsi_get_lane_mbps(void *priv_data, const struct drm_display_mode *mode,
->  				      "DPHY clock frequency is out of range\n");
->  	}
+>  static const struct rockchip_dw_dsi_chip_data rk3288_chip_data[] = {
+>  	{
+>  		.reg = 0xff960000,
+> @@ -1195,6 +1219,9 @@ static const struct rockchip_dw_dsi_chip_data rk3399_chip_data[] = {
 >  
-> +	/* for external phy only a the mipi_dphy_config is necessary */
-> +	if (dsi->phy) {
-> +		phy_mipi_dphy_get_default_config(mode->clock * 1000 * 10 / 8,
-> +						 bpp, lanes,
-> +						 &dsi->phy_opts.mipi_dphy);
-> +		dsi->lane_mbps = target_mbps;
-> +		*lane_mbps = dsi->lane_mbps;
-> +
-> +		return 0;
-> +	}
-> +
->  	fin = clk_get_rate(dsi->pllref_clk);
->  	fout = target_mbps * USEC_PER_SEC;
->  
-> @@ -638,6 +679,8 @@ dw_mipi_dsi_phy_get_timing(void *priv_data, unsigned int lane_mbps,
->  
->  static const struct dw_mipi_dsi_phy_ops dw_mipi_dsi_rockchip_phy_ops = {
->  	.init = dw_mipi_dsi_phy_init,
-> +	.power_on = dw_mipi_dsi_phy_power_on,
-> +	.power_off = dw_mipi_dsi_phy_power_off,
->  	.get_lane_mbps = dw_mipi_dsi_get_lane_mbps,
->  	.get_timing = dw_mipi_dsi_phy_get_timing,
->  };
-> @@ -998,12 +1041,29 @@ static int dw_mipi_dsi_rockchip_probe(struct platform_device *pdev)
->  		return -EINVAL;
->  	}
->  
-> +	/* try to get a possible external dphy */
-> +	dsi->phy = devm_phy_optional_get(dev, "dphy");
-> +	if (IS_ERR(dsi->phy)) {
-> +		ret = PTR_ERR(dsi->phy);
-> +		DRM_DEV_ERROR(dev, "failed to get mipi dphy: %d\n", ret);
-> +		return ret;
-> +	}
-> +
->  	dsi->pllref_clk = devm_clk_get(dev, "ref");
->  	if (IS_ERR(dsi->pllref_clk)) {
-> -		ret = PTR_ERR(dsi->pllref_clk);
-> -		DRM_DEV_ERROR(dev,
-> -			      "Unable to get pll reference clock: %d\n", ret);
-> -		return ret;
-> +		if (dsi->phy) {
-> +			/*
-> +			 * if external phy is present, pll will be
-> +			 * generated there.
-> +			 */
-> +			dsi->pllref_clk = NULL;
-> +		} else {
-> +			ret = PTR_ERR(dsi->pllref_clk);
-> +			DRM_DEV_ERROR(dev,
-> +				      "Unable to get pll reference clock: %d\n",
-> +				      ret);
-> +			return ret;
-> +		}
->  	}
->  
->  	if (dsi->cdata->flags & DW_MIPI_NEEDS_PHY_CFG_CLK) {
+>  static const struct of_device_id dw_mipi_dsi_rockchip_dt_ids[] = {
+>  	{
+> +	 .compatible = "rockchip,px30-mipi-dsi",
+> +	 .data = &px30_chip_data,
+> +	}, {
+>  	 .compatible = "rockchip,rk3288-mipi-dsi",
+>  	 .data = &rk3288_chip_data,
+>  	}, {
 > 
 
 Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
