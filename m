@@ -2,67 +2,66 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 787991202C6
-	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Dec 2019 11:39:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72D3A1202C9
+	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Dec 2019 11:40:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lieYgXHG44azaSSh7BpKQa+XqSvzlAiUEvI/LgWK7hc=; b=b8yS/SHoifPFLj
-	QGV86YdkPi8MTl38uODY//ko9vyax9+TY+bTGZF1B70FY8ChoTDFssSBmRwASa+WPH1gtdWWIlV2s
-	FjwLEqGCtaREyYq4ToNFS9VzfbqGSwXO30st99MmwyIF6VLZwq6EtRcPPqppKX463CgChOz3c++M9
-	HdgGCX7/1/eYEsLI61wb6Do5ws3eSR+RrMOxhIdLyMCkkbjmR9uOzMaaSHbEgS/j599eOh7XtG/Lr
-	o1EjLmq5R30g4V7IoI4YzlNwtJga7Ce2PCwDAEEVwh03j9gBZleqGRR3Vpfl6+z4iK8WmSXdrss4l
-	pifIx7yZii2KlXNb8OJg==;
+	List-Owner; bh=zQ8j/ui+8jCuYeXE4qRHDjQvO2Soic/Cq4XnjXBTS1s=; b=ct2MXWA0moerm9
+	9Q6Q7EF2wG2hHpYvWDGhFu+8ONTlwhLb5Y2HKpKy5x6MzEU5QWJcMs6Di7bE9hdGqF5jqMabn2L3a
+	Ou0sf1ELe2timqwcYOw7yYRXcot/fWpv0LF1YmT4EurC0xa/noJXN20N2/13WPIu0XkPHKWb29Mjb
+	lGfae2OjjBjDSDoR+/OP5gMBuYOBvp5ZduU9gzZ5wMTTPBsxyIBF+dh3ygN2ybDbOknC+B3VucZ5x
+	TyhZe3O3Y9qB4d/lMqzKV/dQIUIzxgmrPHQVxFCtnuZdh+Go49alQdyqIm3rFC8D/JsID0WOcaIQL
+	AR9qazY0lVrsVBjRUaZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ignn4-0002Fu-NL; Mon, 16 Dec 2019 10:39:50 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1ignnL-0002xx-CB; Mon, 16 Dec 2019 10:40:07 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ignn1-0002FK-0D
- for linux-rockchip@lists.infradead.org; Mon, 16 Dec 2019 10:39:48 +0000
-Received: by mail-wr1-x441.google.com with SMTP id t2so6632345wrr.1
- for <linux-rockchip@lists.infradead.org>; Mon, 16 Dec 2019 02:39:46 -0800 (PST)
+ id 1ignnH-0002Nx-HN
+ for linux-rockchip@lists.infradead.org; Mon, 16 Dec 2019 10:40:04 +0000
+Received: by mail-wm1-x341.google.com with SMTP id a5so6165836wmb.0
+ for <linux-rockchip@lists.infradead.org>; Mon, 16 Dec 2019 02:40:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=ii06wxcb9L021v3GgtcqEZ9AgzJ8e/NMKTcA4UTvOEY=;
- b=uFI9httlI4FlbYf3pq+TtooCL62GDwlyjemmEDfVia8KyutxATi+dhuUXCXWIB2JSB
- aRmhPcJdb37Kz2FUUa/+aYJVivDdu+l8aAwpTFLxLOzPzuqSS5Y0gkceb4fmooFcZdbk
- RWfD06QSJ/HYJUZRNRxB57N9mavB+Zncfqh8E7b8ZxHsbvC2pXudNdHP+RrUJcxzihPz
- NBoGZxawdSOiEPwmO5SAhFZIE57Vk0vxa+CpSXSkOBQwrcZ9g9ImxMCHvowidHKvO5YX
- 0vx1oLrINJuUskf1MD5Td+w4E9hYV9VFFpmOPkEeOb2B94YLmhFntXMCfZf9U7TKpcwr
- hzrA==
+ bh=7PTuzJelOJRB+7PSGLaS3CVxqQUxash9p56aA9gua7Y=;
+ b=z+6ptBDS1IwpharQmuiMSme2zoIOMNKuV40UPEGQQ6V+urgPVReQo8pVxyN1B++6L9
+ zzTGd+XTkGbL6FOdBNFvkQ0xIIgD5KNZWbt70GaJCM66ah5VrsTbbRPOGvLJI0DqRrmQ
+ ZJgwJWjAyS9lrDvDlUP5WHwH4iBGqmwUtB3TFUDxZBT9jNE07+mO1meSfxF9QVgMH/FH
+ CLADbGwAcIrvy+JoPowKLE+auZaBA6sC01cDzW+LHFiq0o9cBq82i6MENsRQY1rSwTpx
+ 8dT7fPc2KKvsq9ZkN0NJOfDpZ4cBdmErx+OrCuLiRotI1Ub/GPliHhqAVSL8ips9U0gW
+ 11pA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=ii06wxcb9L021v3GgtcqEZ9AgzJ8e/NMKTcA4UTvOEY=;
- b=a5ajuQJpwPBRizP8dxjzs/bisKRj8Xy14MOeD9DD90rcWfsp2OEWc7l3+7MN0RDP/a
- T7262jyUnjZMO35p/0qxGpvCX6zoubbclZ8IFOjDxH4yoOibUcc95PgYkinvFbR3ngYu
- xzFjWOrpuFRjMBs2q1/mA748+SoiQDYqbjBVeSuJyXpp5MPPnx8YpNg0vsBJ61Lievig
- byLm6RA5tTJCAJkRy2hcubtkzS75RdyeLqIN4ZI9Ep9d8i5gHoulm7pOJknhloriYZNg
- s8fp2v6M+oUtyqB1ZJDhcg04uS9ZXwv9pH6hJqz1vvyKLXYi5PkBJs0CDN8scW+w2kcP
- RZIg==
-X-Gm-Message-State: APjAAAUEDpkHq7HKK8T0OMPXqCbexmxlmjhaqd0Km+mFJY3fUrJ4C2bx
- Yp98fjM1NiizYmx/bwtRtdw5Mw==
-X-Google-Smtp-Source: APXvYqxVGQvgWvVnRxy9bC1AGO790BmKTAc01FS7CV0llqhz8LkqEFIJgHcJfzxc8yn5yPgOOPLiuQ==
-X-Received: by 2002:adf:e3d0:: with SMTP id k16mr30082646wrm.241.1576492785196; 
- Mon, 16 Dec 2019 02:39:45 -0800 (PST)
+ bh=7PTuzJelOJRB+7PSGLaS3CVxqQUxash9p56aA9gua7Y=;
+ b=B9m7sUFjAqvhDSpTSXAEX5he5EeAOM5OIadPJfGAc2FlFcZCQGG19HsibdYU7jqBnh
+ NKjm9VnCMJwuPA0V+1MOUl7JYgf781WdxRS37JpXL1RF2+krPdwlIl24con38Y8l74X6
+ 7o4Ydlo9BbAE3Q0JdNLMyTmrP0T2a1qOr7ljihrzvn38xfy7YklvVqv1c7i7ofL8Jjhd
+ mD/X42L0209OmeYojDZ+HyJaVonX6AwmtgOwBHi4sfNXUS5jQwj6ZTsBcJI59mFrGmAz
+ ivrAynMwAl8dWtalYaQPGxMdZ9CRlDdsodJ+JGKliWrXOZNItf2F12Vu2Du3kwWVOQ6o
+ g95Q==
+X-Gm-Message-State: APjAAAWlhI0wy/yEqcjKUwCLi/JbSMUvI1wTiwkmZf3+IzomKW3WeS9r
+ kN+ttDD0BaqIzIBpEnpWzjGXFNaASZ8r0Q==
+X-Google-Smtp-Source: APXvYqz/Ya4Q0+9C4oe7VM7a//tlck/psjtb+fafAvCFpUAVGtQEBACvwMoZSuZaPpP1GmXtICCtPQ==
+X-Received: by 2002:a1c:ddc5:: with SMTP id u188mr16162733wmg.83.1576492801797; 
+ Mon, 16 Dec 2019 02:40:01 -0800 (PST)
 Received: from [10.2.4.230] (lfbn-nic-1-505-157.w90-116.abo.wanadoo.fr.
  [90.116.92.157])
- by smtp.gmail.com with ESMTPSA id k13sm20958632wrx.59.2019.12.16.02.39.44
+ by smtp.gmail.com with ESMTPSA id j2sm20722998wmk.23.2019.12.16.02.40.00
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 16 Dec 2019 02:39:44 -0800 (PST)
-Subject: Re: [PATCH v5 6/6] drm/rockchip: dsi: add px30 support
+ Mon, 16 Dec 2019 02:40:01 -0800 (PST)
+Subject: Re: [PATCH v5 0/6] drm/rockchip: px30 dsi support
 To: Heiko Stuebner <heiko@sntech.de>, a.hajda@samsung.com
 References: <20191209143130.4553-1-heiko@sntech.de>
- <20191209143130.4553-7-heiko@sntech.de>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -115,23 +114,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <99e4a800-fa12-9d64-3ceb-99b961a9f3d3@baylibre.com>
-Date: Mon, 16 Dec 2019 11:39:43 +0100
+Message-ID: <8a071340-6452-4de3-10c9-393bce815ad7@baylibre.com>
+Date: Mon, 16 Dec 2019 11:40:00 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191209143130.4553-7-heiko@sntech.de>
+In-Reply-To: <20191209143130.4553-1-heiko@sntech.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_023947_043658_F5C20E33 
-X-CRM114-Status: GOOD (  18.31  )
+X-CRM114-CacheID: sfid-20191216_024003_588349_006F7F84 
+X-CRM114-Status: GOOD (  14.83  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -163,75 +162,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+Hi,
+
 On 09/12/2019 15:31, Heiko Stuebner wrote:
 > From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 > 
-> Add the compatible and GRF definitions for the PX30 soc.
+> This series addes support for the px30 Rockchip soc to the dsi driver.
+> This includes support for external dsi-phys like used on the px30.
 > 
-> changes in v5:
-> - rebased on top of 5.5-rc1
-> - merged with dsi timing change to prevent ordering conflicts
+> What happened between v1 and v5? The then separate dsi hs2lp timing
+> patch happened ;-) . As both it and this series touch similar areas
+> in the dsi driver ordering becomes an issue and so combining them to
+> make ordering explicit is helpful. v2-v4 where then iterations of the
+> timing patch.
 > 
-> Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
-> ---
->  .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   | 27 +++++++++++++++++++
->  1 file changed, 27 insertions(+)
+> So this v5 is mainly rebased on 5.5-rc1 and rechecked against drm-misc.
 > 
-> diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-> index f16bd1e9b633..f04b5064974d 100644
-> --- a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-> +++ b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-> @@ -140,6 +140,12 @@
->  #define DW_MIPI_NEEDS_PHY_CFG_CLK	BIT(0)
->  #define DW_MIPI_NEEDS_GRF_CLK		BIT(1)
->  
-> +#define PX30_GRF_PD_VO_CON1		0x0438
-> +#define PX30_DSI_FORCETXSTOPMODE	(0xf << 7)
-> +#define PX30_DSI_FORCERXMODE		BIT(6)
-> +#define PX30_DSI_TURNDISABLE		BIT(5)
-> +#define PX30_DSI_LCDC_SEL		BIT(0)
-> +
->  #define RK3288_GRF_SOC_CON6		0x025c
->  #define RK3288_DSI0_LCDC_SEL		BIT(6)
->  #define RK3288_DSI1_LCDC_SEL		BIT(9)
-> @@ -1127,6 +1133,24 @@ static int dw_mipi_dsi_rockchip_remove(struct platform_device *pdev)
->  	return 0;
->  }
->  
-> +static const struct rockchip_dw_dsi_chip_data px30_chip_data[] = {
-> +	{
-> +		.reg = 0xff450000,
-> +		.lcdsel_grf_reg = PX30_GRF_PD_VO_CON1,
-> +		.lcdsel_big = HIWORD_UPDATE(0, PX30_DSI_LCDC_SEL),
-> +		.lcdsel_lit = HIWORD_UPDATE(PX30_DSI_LCDC_SEL,
-> +					    PX30_DSI_LCDC_SEL),
-> +
-> +		.lanecfg1_grf_reg = PX30_GRF_PD_VO_CON1,
-> +		.lanecfg1 = HIWORD_UPDATE(0, PX30_DSI_TURNDISABLE |
-> +					     PX30_DSI_FORCERXMODE |
-> +					     PX30_DSI_FORCETXSTOPMODE),
-> +
-> +		.max_data_lanes = 4,
-> +	},
-> +	{ /* sentinel */ }
-> +};
-> +
->  static const struct rockchip_dw_dsi_chip_data rk3288_chip_data[] = {
->  	{
->  		.reg = 0xff960000,
-> @@ -1195,6 +1219,9 @@ static const struct rockchip_dw_dsi_chip_data rk3399_chip_data[] = {
->  
->  static const struct of_device_id dw_mipi_dsi_rockchip_dt_ids[] = {
->  	{
-> +	 .compatible = "rockchip,px30-mipi-dsi",
-> +	 .data = &px30_chip_data,
-> +	}, {
->  	 .compatible = "rockchip,rk3288-mipi-dsi",
->  	 .data = &rk3288_chip_data,
->  	}, {
+> Heiko Stuebner (6):
+>   drm/bridge/synopsys: dsi: driver-specific configuration of phy timings
+>   drm/bridge/synopsys: dsi: move phy_ops callbacks around panel
+>     enablement
+>   dt-bindings: display: rockchip-dsi: document external phys
+>   drm/rockchip: add ability to handle external dphys in mipi-dsi
+>   dt-bindings: display: rockchip-dsi: add px30 compatible
+>   drm/rockchip: dsi: add px30 support
+> 
+>  .../display/rockchip/dw_mipi_dsi_rockchip.txt |  13 +-
+>  drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c |  40 ++--
+>  drivers/gpu/drm/rockchip/Kconfig              |   1 +
+>  .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   | 173 +++++++++++++++++-
+>  drivers/gpu/drm/stm/dw_mipi_dsi-stm.c         |  13 ++
+>  include/drm/bridge/dw_mipi_dsi.h              |   9 +
+>  6 files changed, 227 insertions(+), 22 deletions(-)
 > 
 
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+You can go ahead and merge the whole serie with bridge stuff into drm-misc-next if you want,
+or I can do it.
+
+Neil
 
 _______________________________________________
 Linux-rockchip mailing list
