@@ -2,78 +2,90 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 238B4120069
-	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Dec 2019 09:56:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68F061200E1
+	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Dec 2019 10:21:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cLWAxmKGLrz424KrDIdEPp3Ed+TxVu5qPPA1UzrZCwQ=; b=a+hzpdVCJ1HxEh
-	aS7AIrEHXcsJBhEdmvAZy1CL1tf5XGAzQiYJXxFlob3FhLbhfFS6sYh8uhNrRcCfIdGGahgkjqy4r
-	Ydm4P1ocysbK7CfyHJyjULjU2M3nsDk1Pi7EQW6z1A4+0uaq4HS7wUvkODLV/2DeJdXqhwacvAdtL
-	d7RT7hlRmzyLwug6t0Nw4bNU/wdhuT121I+O6Rch/QXhl1zoqJveV/nI02zupZTZq5lcWdizGcUH2
-	RAfBLUGDAniev3VrAq2aHaCVlFhwEXbooB+/MdSVouQvrTaMhjypXYexKayn4dJGczBr8fYPcN65W
-	4kGikPGg+qxe+d9bXOPA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:Subject:References:To:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=nBBxX5Zv5Yf2/i4uROWoXr5dMBI6vkhV9QsK+cZC8Cw=; b=a3gssDg5kooycwCHesvuTSkwr6
+	7eK1/j6D7EVRTAYAaVsq+x3mVk2wg9Lrireootq6otQG1Re+CrNgJSEZwe5U77Pj/dseMLaFXrhn9
+	rs+L+mMxYxVPGXZUwneAaNVyemAxNwPsFVW4SRDQGdwonMTcpzkDCHf1m7a1XjXyLb27H6mxOAfZ9
+	3aVpLUOFlqAa3crxpuPenv5A9Qwh9kWPo7C9Rmq8kS/1TLfccOuqoZCRzkIJr2LWzN/v34ekZjZfZ
+	K8XeFkWRFsDAj9f33XLOVOdTqbAkG7XzMr7f5rMcK3Ok6N4DcgLQwPvgJ+F2+F62Zb+2GbWvFMm/a
+	iOOqxw7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igmAt-0004pX-L5; Mon, 16 Dec 2019 08:56:19 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1igmZ1-0007mn-CB; Mon, 16 Dec 2019 09:21:15 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igmAc-0004ej-Ns; Mon, 16 Dec 2019 08:56:04 +0000
-Received: by mail-ot1-x341.google.com with SMTP id h20so8269768otn.5;
- Mon, 16 Dec 2019 00:56:02 -0800 (PST)
+ id 1igmYp-0007aZ-IV
+ for linux-rockchip@lists.infradead.org; Mon, 16 Dec 2019 09:21:05 +0000
+Received: by mail-wr1-x444.google.com with SMTP id y17so6309226wrh.5
+ for <linux-rockchip@lists.infradead.org>; Mon, 16 Dec 2019 01:21:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kYtpzi4OVKtcejBRTQymtnHqpwZ9IMOgfskqRMoMYJk=;
- b=FjlOHfjUAfcuD6g8sPuagxsQz5NN8GYgQkKB5eMFUDSFQVwSP89GYTqlut3C2mn/YS
- eBOmWEFi3DmQuTp/qkgihQaDk97WF8xOzKLyWA49CUntFhQp+iGILFSDaYtSjG/0u4Wj
- LxTSyOx9E//ppj6YpXZ9za8Llr1VmVC8BQXLoBKo0CW3HilP1RhaTFw1FQjulLbUp223
- mcF16tAkJWH/7f/hSfMy6k/MJDZnaM06WaiErKL/enY0E/Lb5Y7170h/2S8KarFCyZDD
- CgTiwf8HwXNonQvRTdFiPmrTUBGgr+ds+XVrfdLY1VYSxeJGxr4PI7XI3xP99XeFpSks
- XLNw==
+ h=to:references:subject:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=acm7Id7USaJtEmCQkuW6DFZ00yyoOpt5ngMKDZzxL9c=;
+ b=ACingUp/4JomHLigeEHrTR77VwUuUn3sEJorJwv7hFAZDkUJkSmMWArwpTVnakrlJa
+ vIUqAq8n04FcfoOmlfI7/sasSXXNnHYnnCz7KFkSzDyvQMeTKYwSyYOGHyl1QPXuSdBZ
+ 8R/Bo+anmOQ3xrdUUZm6Lg4psWeNmSmDfiwmPn4jkPbAFGt8UuCcS3/IiR962O3hbiyi
+ YHlJ9nDHcjKPaY+nKCnOhfCH0OTAYdcTw6X2Z42wzsy5PW7o0ZjwGWpzkny0k6jJspci
+ TjcfSpJh68byvYJyMBYjPdqPmzKvYPK3jPgSPWoKrmqIQ4jtNPiNa0H0nX6sVpWp5kEx
+ M5LA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kYtpzi4OVKtcejBRTQymtnHqpwZ9IMOgfskqRMoMYJk=;
- b=mu97z2Jth1lCR1Wd5mSDq+kP25Y49+W5Kgl/u4XwbxZPypetrml8ZxGMRoyvlc3k3j
- a2miAlwEFfmaviub87h7JMb8j1U9R0lzIJDQdqpYnleqAX8ABjSwAjc9mGHUmUXWLg9Z
- nPuxmOOBl/H/LURiLMb2lfo8bEXhr9JV7RUMPrxHrskqnZr3gEQYWJxtRuSnWSHHSF2B
- YuKn8++lJytAUuqwuqnL2sjwu5xg+EY8dQh5zhsTh4aqkY2B0YpFRjpTwrkhLbG1UzPp
- g4K7IKN9YyhBA6FDRe8DJcN6xFJ4JfkmX+nnfgwo8QUfcd1GCsw9nGdDYp5yrFXVQxxE
- UymA==
-X-Gm-Message-State: APjAAAUaMX9VjEAvcHzFub+QMmkaodL0D/p43v9/HmQBppW6ijAqYXGP
- 8y9oTGXNisvbb4nTjb1SA7f5MtHUK5yXnm8t7lM=
-X-Google-Smtp-Source: APXvYqxuG1NFvuEk8dd9qCJss5ujNitykdgf+GtcWeO9MK3yKpQRtT4rBhNxc5bDbHMtxvDMRwurT0NSEqfrjfpI+2g=
-X-Received: by 2002:a05:6830:147:: with SMTP id
- j7mr15118795otp.44.1576486562033; 
- Mon, 16 Dec 2019 00:56:02 -0800 (PST)
+ h=x-gm-message-state:to:references:subject:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=acm7Id7USaJtEmCQkuW6DFZ00yyoOpt5ngMKDZzxL9c=;
+ b=CkKWy0f65BJgi3EMD34PEVAAn7NBn9GJ1k02eAP6n+V3TKX6Zcd7c2YeDu2d8CrkMP
+ Z+IceRaDwg2NSYO7/VTU3VKzH/4Dd6FCeWw23tfUAz8sv5g7XJjmnGyKSMeo3jaz003U
+ MH7f7zrz8LqgMrE9VJ+7hd818fgKu16HWz1CDRQFtgRd4cqDVP4oUEbTgeRCHO7phXdO
+ 4+fcGYTB7V5BzAhHceSk9DZkatADDxDEUCsAU4/QpYdfMs8pqYELXN49hA+uI2j3ndmL
+ bGHyL1JEUw27BL0OjDT6BexEyIzT1uqp2N3/Uyd/ocKCIwgMy2ehAyoBWxKc0XakP9yF
+ sROA==
+X-Gm-Message-State: APjAAAXzXT/UbJa82TTslLnEZhj7LWE9UnOCYgjSmBT7Beio4Rhfrzk7
+ W7O6/XVv7E/lkegsUNW6WXPORYw6
+X-Google-Smtp-Source: APXvYqzV3cR76+zhWF5op43CVL8QXhDXO2K8hKdiF89DtxZkEXBuwwL/bLwLhiMSOXsgKNtp91jM8w==
+X-Received: by 2002:adf:dfd2:: with SMTP id q18mr28794391wrn.152.1576488057699; 
+ Mon, 16 Dec 2019 01:20:57 -0800 (PST)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id u16sm1479927wmj.41.2019.12.16.01.20.57
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 16 Dec 2019 01:20:57 -0800 (PST)
+To: linux-rockchip@lists.infradead.org
+References: <20191215173318.16385-1-akash@openedev.com>
+Subject: Re: Re: [PATCH] arm64: dts: rockchip: add ROCK Pi S DTS support
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <ea6d2f0d-450c-f0ee-6150-65a6855b7546@gmail.com>
+Date: Mon, 16 Dec 2019 10:20:55 +0100
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-References: <20191213084748.11210-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20191213201944.GA190383@google.com>
-In-Reply-To: <20191213201944.GA190383@google.com>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Mon, 16 Dec 2019 08:55:35 +0000
-Message-ID: <CA+V-a8sd1c_8-weQjn6_UbAmVELLQa=3Fe+0cdXSm2Sif0HDRQ@mail.gmail.com>
-Subject: Re: [v2 3/6] of: address: add support to parse PCI outbound-ranges
-To: Bjorn Helgaas <helgaas@kernel.org>
+In-Reply-To: <20191215173318.16385-1-akash@openedev.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_005602_798916_C78B66C2 
-X-CRM114-Status: GOOD (  15.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191216_012103_668021_442FE25A 
+X-CRM114-Status: GOOD (  12.00  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (prabhakar.csengg[at]gmail.com)
+ provider (jbx6244[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (jbx6244[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,72 +105,54 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-pci <linux-pci@vger.kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
- Frank Rowand <frowand.list@gmail.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
- Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-rockchip@lists.infradead.org, Catalin Marinas <catalin.marinas@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
- Arnd Bergmann <arnd@arndb.de>, "Lad,
- Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Rob Herring <robh+dt@kernel.org>, LAK <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
- Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Bjorn,
+Hi Akash,
 
-Thank you for the review.
+See commit below.
 
-On Fri, Dec 13, 2019 at 9:05 PM Bjorn Helgaas <helgaas@kernel.org> wrote:
->
-> On Fri, Dec 13, 2019 at 08:47:45AM +0000, Lad Prabhakar wrote:
-> > From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
->
-> $ git log --oneline drivers/of/address.c
-> 951d48855d86 of: Make of_dma_get_range() work on bus nodes
-> 645c138636de of/address: Fix of_pci_range_parser_one translation of DMA addresses
-> 81db12ee15cb of/address: Translate 'dma-ranges' for parent nodes missing 'dma-ranges'
-> b68ac8dc22eb of: Factor out #{addr,size}-cells parsing
-> c60bf3eb888a of: address: Follow DMA parent for "dma-coherent"
-> 862ab5578f75 of/address: Introduce of_get_next_dma_parent() helper
->
-> Make yours match.  There are a few "of: address: " subjects, but the
-> ones from Rob (the maintainer) use "of/address: ", so I'd use that.
->
-will do the same for next iteration.
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3308-rock-pi-S.dts b/arch/arm64/boot/dts/rockchip/rk3308-rock-pi-S.dts
+> new file mode 100644
+> index 000000000000..e5fae451c631
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/rockchip/rk3308-rock-pi-S.dts
 
-> > this patch adds support to parse PCI outbound-ranges, the
-> > outbound-regions are similar to pci ranges except it doesn't
-> > have pci address, below is the format for bar-ranges:
->
-> s/pci/PCI/
-> Capitalize sentences.
->
-will fix that.
 
-> Is "bar-range" an actual DT property?  If it's supposed to be a
-> generic description, "BAR range" would be better.
->
-my bad, it should be outbound-range.
+> +
+> +&emmc {
+> +	bus-width = <4>;
+> +	cap-mmc-highspeed;
+> +	mmc-hs200-1_8v;
+> +	supports-sd;
 
-Cheers,
---Prabhakar
+> +	disable-wp;
 
-> > outbound-ranges = <flags upper32_cpuaddr lower32_cpuaddr
-> >                    upper32_size lower32_size>;
+The mmc.txt didn't explicitly say disable-wp is for SD card slot only,
+but that is what it was designed for in the first place.
+Remove all disable-wp from emmc or sdio controllers.
+
+> +	non-removable;
+> +	num-slots = <1>;
+> +	vin-supply = <&vcc_io>;
+> +	status = "okay";
+> +};
+
+> +
+> +&sdmmc {
+> +	bus-width = <4>;
+> +	cap-mmc-highspeed;
+> +	cap-sd-highspeed;
+> +	max-frequeency = <150000000>;
+> +	supports-sd;
+> +	disable-wp;
+> +	num-slots = <1>;
+> +	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_det &sdmmc_bus4>;
+> +	card-detect-delay = <800>;
+> +	status = "okay";
+> +};
 
 _______________________________________________
 Linux-rockchip mailing list
