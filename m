@@ -2,85 +2,84 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6391A11FD10
-	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Dec 2019 04:03:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9F3C11FF3C
+	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Dec 2019 08:53:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HQme7eOgZSx+U/eiPv86MzCjqlv5EuFE1N/2D1NgUn4=; b=QH7xm9YR45cPDT
-	EGoUJlQPPxoW9/PrtsHImwYnLptsJyr5SER6gGQQgl0N646CL0lPkP+Q1wssmhjNrI0/GEefXZ3eP
-	gtltpBjFZT1Lq9kxmYHmacgOhIrwsPDabOYRG/mDfohAdVhOAVBhwVD+G6vOKWxpVxaxs9iiJPQLb
-	7v6LRTdPkJp4O4aybUcz+llQ/BBjEIGnjVS4OV64k494s4OmfdIufqeglXmkk7VUt71Yjh9g9SHB3
-	KcKB8vvKKHldY2eCken7uUCIbHYNBVJjmFLUYFCw+40oqzUWhIosLjFzibh5oNh7CW6XCcvuQpaES
-	Dhg4QrnG8/0DRz+DVeXg==;
+	List-Owner; bh=x8I6QQrH9VJ6lrpW5egSs+7+p2Eb2Kehx6aPONJ0Ff0=; b=h48fyWCggSizKa
+	+nVLzd8RqL6fz3BTrJS5WNUwSLzV6Y84kyHnOiPKU7rxXVlqLEILYGNs2ROndJOadHpduWcMbfwyy
+	OoO/b3Pwncd8QO7RfsfB8THsAzmAB3IPcOcv8BGlQIqn4TNZI0KzDPnwdVhQs/18PHS0tyraYlKni
+	g+544PL8avo7f4zL5G2B74jgBo8YX5kp0DwGZHHA9c7L17vmkQay6/QPXaspP7QlfGwmrVgxGPbrX
+	cMk/kvJx99SgXXZDWTI9CiP/prcgK4y7Tn5H9wnNTofk7DwOEItstNiG56YLNaz4G/ZMwoS7Y9Htr
+	f4/Yzk+BGM4VtaMWtXaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iggfg-0000Fr-Fl; Mon, 16 Dec 2019 03:03:44 +0000
-Received: from mail-ed1-f65.google.com ([209.85.208.65])
+	id 1iglBa-0007n0-NB; Mon, 16 Dec 2019 07:52:58 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iggfc-0000Eo-Bx; Mon, 16 Dec 2019 03:03:41 +0000
-Received: by mail-ed1-f65.google.com with SMTP id dc19so3761810edb.10;
- Sun, 15 Dec 2019 19:03:39 -0800 (PST)
+ id 1iglBQ-0007fJ-KD; Mon, 16 Dec 2019 07:52:49 +0000
+Received: by mail-ot1-x343.google.com with SMTP id 59so7975478otp.12;
+ Sun, 15 Dec 2019 23:52:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=teaKbuiwSImi7RfIBsT5A595WaRZ9qMw7uZTBvgzoPo=;
+ b=T9+hyjIOYswgHEv4Tk1y+UNP7CGTbnEox9pCdGBWORd9ZZ8iJyE++oJ17Ew7Pahdw8
+ eV4gf9dCyNCNDRSAH/6T+z2+0xICmVRXxTvFJK3lXXeCq+konXyjj9WGgZhxkc3ABdiF
+ JEM7Gm1bSUKBl2NJoGdxXv/p/bAUz4rzX+FTOUyLZb6hIqR2WQMjUJNm42ULZRiJZZoc
+ ga24v8E8mr7DcvLxPW8MMCvY2OXxWEnyGfPcU+z0xN5sXyUwN7CB3kpXsWqkjc+ot3QR
+ 6s8GOULh2ygu7Y0nuPsI8e9UL1ThafpjTBl47lNjqSxsBLfirQSGATt1hukDBeom5QaS
+ NYZw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=FENccwgG3uhDFjFer/TFmu057ClxmW4CVGbxtoIFMB4=;
- b=OKiw/3vViTRUmmw7TrQv4lMqLd9UxJeKXh3GEnO630OAucAdF+4hJLBXdIWsTM200V
- LmWw7waEwdG+/FueEPUemcl86OdPAF/tkIweFftbzKFxoMbE5B+t+H37tGr9qObxWopm
- afaKbVjxpUCVHDCELffEsKxyaWhvZLUTIWkcwgsY6D7DbvbTnslJOCwU66MY1bYk0B4H
- YVIkY0CaXxe/uLJSKgjGsxIwbW5w49S2ilmjluY/SrJGMsNlQLCJLsEslEYxaK7GuUR/
- 6Bvco00pehyddrxJPW5WhxB5/jViFBShx69sN+Q/iM6RMDy6679P/ik6O5RUzHOD4trB
- QbJQ==
-X-Gm-Message-State: APjAAAUH8GfuI0Xo49n48VHgETln2WFUVSs7scmLCa6CqhLD5N6lYpMM
- 2PJzqQ8RUVooSi95K9DM+Wc8J/MKNaA=
-X-Google-Smtp-Source: APXvYqyu9q3VZXqysBLPVvk7Ai93wo73NvjY1PVPNz3BJIqe/LaBRzrxtjXUO0Wvvz+us7eQXNPpYg==
-X-Received: by 2002:a17:906:5808:: with SMTP id
- m8mr23898628ejq.1.1576465417737; 
- Sun, 15 Dec 2019 19:03:37 -0800 (PST)
-Received: from mail-wm1-f48.google.com (mail-wm1-f48.google.com.
- [209.85.128.48])
- by smtp.gmail.com with ESMTPSA id x20sm1067599ejo.36.2019.12.15.19.03.37
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 15 Dec 2019 19:03:37 -0800 (PST)
-Received: by mail-wm1-f48.google.com with SMTP id p17so5080721wma.1;
- Sun, 15 Dec 2019 19:03:37 -0800 (PST)
-X-Received: by 2002:a7b:cf12:: with SMTP id l18mr29527605wmg.66.1576465416941; 
- Sun, 15 Dec 2019 19:03:36 -0800 (PST)
+ bh=teaKbuiwSImi7RfIBsT5A595WaRZ9qMw7uZTBvgzoPo=;
+ b=t8D8b7rvWOX8CB6wEXz/LXwTHyS8P6AXkEXnIj7M0rskIORtEYaIYDahKdO9e6Atf3
+ 2SADEGaK9P65KMVirKVHdFN0SluRU5dVi/DIY+dbxrG4IJ1qql9BmL5zOnMnTyFGvomz
+ YYIJy4mU/lqB3I4g2xFqJvLHhgcmOQzSODJC4oSAP/w+xNx6jYQf08KdzQM9pJMGYkUq
+ 9c/p3iRXHSwuFD9HEMxXC5cniWUMQ7Ghqu4fJ0vAYryNSj1nEdIpx+F2kwuU84P3Zyj/
+ /T5B6pBkwXKCE5vQMOZ3cPNjxxUVCaQPFdDkK8YgnwC5D/0GkmhoDOUlazCugcmtWuSo
+ UntQ==
+X-Gm-Message-State: APjAAAWF2BAOfOy20w1i6uf4B3WvQTygvs99RXOyvt8YbxopNaBvvTCd
+ fafWRqVRWrAelkl67Ju46eeQsyW3CFoBAS7q2Vo=
+X-Google-Smtp-Source: APXvYqzJWsrCKHBWPt/+qDVqGaXSw/dwYOelFmuU1LMlbhh0onKHLZCdb9U0GQHZ+rXpK2GlmhJM1lVnV2qMLZqENUI=
+X-Received: by 2002:a9d:175:: with SMTP id 108mr30137165otu.325.1576482767410; 
+ Sun, 15 Dec 2019 23:52:47 -0800 (PST)
 MIME-Version: 1.0
-References: <20191215211223.1451499-1-martin.blumenstingl@googlemail.com>
-In-Reply-To: <20191215211223.1451499-1-martin.blumenstingl@googlemail.com>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Mon, 16 Dec 2019 11:03:25 +0800
-X-Gmail-Original-Message-ID: <CAGb2v6528SUOyefhsnjEwG7vfud3+Ce+_=CM3cM4vKiRcmNXAA@mail.gmail.com>
-Message-ID: <CAGb2v6528SUOyefhsnjEwG7vfud3+Ce+_=CM3cM4vKiRcmNXAA@mail.gmail.com>
-Subject: Re: [RFC v1 0/1] drm: lima: devfreq and cooling device support
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+References: <20191213084748.11210-2-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20191213185011.GA170447@google.com>
+In-Reply-To: <20191213185011.GA170447@google.com>
+From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Date: Mon, 16 Dec 2019 07:52:20 +0000
+Message-ID: <CA+V-a8u7RO1L1ExPXwHuSpKrCA47iRPFySUn1royEGoOxy0=2A@mail.gmail.com>
+Subject: Re: [v2 1/6] pci: pcie-rcar: preparation for adding endpoint support
+To: Bjorn Helgaas <helgaas@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_190340_409012_CA4EA219 
-X-CRM114-Status: GOOD (  19.06  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191215_235248_688869_96E23BEA 
+X-CRM114-Status: GOOD (  18.89  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.65 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.65 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wens213[at]gmail.com)
+ provider (prabhakar.csengg[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (wens213[at]gmail.com)
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,69 +92,68 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
- lima@lists.freedesktop.org, David Airlie <airlied@linux.ie>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, steven.price@arm.com,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- yuq825@gmail.com, Daniel Vetter <daniel@ffwll.ch>,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
- alyssa.rosenzweig@collabora.com
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-pci <linux-pci@vger.kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
+ Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+ linux-rockchip@lists.infradead.org, Catalin Marinas <catalin.marinas@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Arnd Bergmann <arnd@arndb.de>, "Lad,
+ Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Rob Herring <robh+dt@kernel.org>, LAK <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
+ Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Dec 16, 2019 at 5:12 AM Martin Blumenstingl
-<martin.blumenstingl@googlemail.com> wrote:
->
-> This is my attempt at adding devfreq (and cooling device) support to
-> the lima driver.
-> I didn't have much time to do in-depth testing. However, I'm sending
-> this out early because there are many SoCs with Mali-400/450 GPU so
-> I want to avoid duplicating the work with somebody else.
->
-> The code is derived from panfrost_devfreq.c which is why I kept the
-> Collabora copyright in lima_devfreq.c. Please let me know if I should
-> drop this or how I can make it more clear that I "borrowed" the code
-> from panfrost.
+Hi Bjorn,
 
-I think it's more common to have separate copyright notices. First you
-have yours, then a second paragraph stating the code is derived from
-foo, and then attach the copyright statements for foo.
+On Fri, Dec 13, 2019 at 9:06 PM Bjorn Helgaas <helgaas@kernel.org> wrote:
+>
+> On Fri, Dec 13, 2019 at 08:47:43AM +0000, Lad Prabhakar wrote:
+> > From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> >
+> > this patch prepares for adding endpoint support to rcar controller,
+> > there are no functional changes with this patch, a common file is
+> > created so that it can be shared with endpoint driver. Alongside
+> > this patch fixes checkpatch reported issues.
+>
+> Can you please split this into:
+>
+>   - a patch that moves code only, with no other changes except any
+>     necessary Kconfig and Makefile changes
+>   - another patch that fixes the checkpatch things
+>
+> When the checkpatch fixes are buried in the code move, it's impossible
+> to review them.
+>
+thank you for the review.sure I'll split up the patches and resend.
 
-ChenYu
+Cheers,
+--Prabhakar
 
-> I am seeking comments in two general areas:
-> - regarding the integration into the existing lima code
-> - for the actual devfreq code (I had to adapt the panfrost code
->   slightly, because lima uses a bus and a GPU/core clock)
->
-> My own TODO list includes "more" testing on various Amlogic SoCs.
-> So far I have tested this on Meson8b and Meson8m2 (which both have a
-> GPU OPP table defined). However, I still need to test this on a GXL
-> board (which is currently missing the GPU OPP table).
->
->
-> Martin Blumenstingl (1):
->   drm/lima: Add optional devfreq support
->
->  drivers/gpu/drm/lima/Kconfig        |   1 +
->  drivers/gpu/drm/lima/Makefile       |   3 +-
->  drivers/gpu/drm/lima/lima_devfreq.c | 162 ++++++++++++++++++++++++++++
->  drivers/gpu/drm/lima/lima_devfreq.h |  15 +++
->  drivers/gpu/drm/lima/lima_device.c  |   4 +
->  drivers/gpu/drm/lima/lima_device.h  |  11 ++
->  drivers/gpu/drm/lima/lima_drv.c     |  14 ++-
->  drivers/gpu/drm/lima/lima_sched.c   |   7 ++
->  drivers/gpu/drm/lima/lima_sched.h   |   3 +
->  9 files changed, 217 insertions(+), 3 deletions(-)
->  create mode 100644 drivers/gpu/drm/lima/lima_devfreq.c
->  create mode 100644 drivers/gpu/drm/lima/lima_devfreq.h
->
-> --
-> 2.24.1
->
+> > Signed-off-by: Lad, Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> > ---
+> >  arch/arm64/configs/defconfig            |    2 +-
+> >  drivers/pci/controller/Kconfig          |    4 +-
+> >  drivers/pci/controller/Makefile         |    2 +-
+> >  drivers/pci/controller/pcie-rcar-host.c | 1056 ++++++++++++++++++++++++++
+> >  drivers/pci/controller/pcie-rcar.c      | 1229 ++-----------------------------
+> >  drivers/pci/controller/pcie-rcar.h      |  129 ++++
+> >  6 files changed, 1242 insertions(+), 1180 deletions(-)
+> >  create mode 100644 drivers/pci/controller/pcie-rcar-host.c
+> >  create mode 100644 drivers/pci/controller/pcie-rcar.h
 
 _______________________________________________
 Linux-rockchip mailing list
