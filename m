@@ -2,74 +2,74 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7090211FF8C
-	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Dec 2019 09:22:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1588120052
+	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Dec 2019 09:53:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+8dDYAVHzOjmijtiALcJGJkHV4zgqQ16uVzbYCxlMKk=; b=bgy3mcICmTdFgm
-	xfTXKrkwQoXENbm/Iy1CrpKYAykQrEe/KRFYHmJWdvDWHKweylUdcyqyCVH6zJn7m+En6gwe3I1Lr
-	zPHRxaMdQrG8y8Dnis6NOe3uE2c9vRUED2EHf7grQI6N+OqbbwlDgVDfJ3lkgZQIItrA0oQKYVH56
-	vW84jaLWbEqGwU7uniJ2yLwVSiPJVm5ZH6W5Pez1ZNquIPrTVnbTb/Nb/BLcYknd+24PAH7E1GKrP
-	kJbj5FgMI8hSHUn/jtT+h3+bqFE+/vRXpIC2mzLodooYyIOsuAJNQNEs7xVK6bWP6eXVClJ8yKUEu
-	im6092mGHG6HQZZEntEQ==;
+	List-Owner; bh=eXJEo6nV4H8SDAPFcVYksbdUeHU6HWAT0nu4gb3NVEo=; b=RGt9wBZope4Ldn
+	jn1iAXdvF865DZyshkK9taILd49DCgEmLPRt7Df+lhmBR4XyWxiWHMOGmBklPTP48nR4vpaSdh60V
+	tQXcVvdM0anUJGnYqfUFiY3TZbsqIYnp42lyzbSy5pNSOc8PD+WkUCkA0knXtcwa63+9WPtzDbDGz
+	fXqV309b6wZ0lfIKsj/BCMgGWTnIbvOrv2QDL9ikNghbtWGrdgHVqmkpmWWiiuyMpHXLSYmezB2B7
+	CXb9pL/iZHGR+o7p+7vaxTz/SrIM+BkqbgB8bX+DEDOoh7QjmwxaeYpSi7Nw8NykxVqKSwRcdFzIQ
+	jpooNX5CKR+N9ku5IlZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igldw-0002ZY-Kq; Mon, 16 Dec 2019 08:22:16 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1igm8T-0002Py-US; Mon, 16 Dec 2019 08:53:49 +0000
+Received: from mail-ot1-x336.google.com ([2607:f8b0:4864:20::336])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igldf-0002KO-FP; Mon, 16 Dec 2019 08:22:01 +0000
-Received: by mail-ot1-x343.google.com with SMTP id k14so8148512otn.4;
- Mon, 16 Dec 2019 00:21:59 -0800 (PST)
+ id 1igm4d-0005yt-Hw; Mon, 16 Dec 2019 08:49:59 +0000
+Received: by mail-ot1-x336.google.com with SMTP id i15so8226393oto.7;
+ Mon, 16 Dec 2019 00:49:50 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=B2zr+SxGgQJRKPjCI0ZlCNLHKl8Hq+JbhUCM9tDaYbk=;
- b=duCNJEibi83CQtLO3lJy8ZeTakoP8uvN3rYY/wkMtOGdcEAoS3hikmezHKWm0CA5Pm
- 9dL0Oz8Qoh2fSfXuethC2UUonF9dhfVvzIhos/7OF5APUXaGD+ozKlWRvy5oN71OKV97
- O9chmuVrwmzS6M/f8BQsn6RDt+beAkjXHGQHMEqlTRiRl7F4YpovwtXu3z01fBv9t/JU
- m1RwuykieOwvhYNmnGjevq6+CmQSVn9QW96K+HLJbb3UkIfaKwPx/jivTNNGnMj89B0I
- oZ7BHnvjJJS4ZrWzDkrsyxIX+gEODf8o+n/a9w5+NEi4szuQ5RjtJHNummuyoNBNNIDb
- /spw==
+ :cc; bh=4xOLwi7XGa06O+FcZfECpskN3Lf2VXslN2VEftJlRvg=;
+ b=dJ58NKxpobcoCFcVrixIygWkFd2lRYRcK62+F0oqTQy0PfcLrohbjZ/4794t+zXWew
+ 6YLPUjhuSc++1fWNSHL/u93PNyCv2AvGz6o5coEvJZP3/hXPveU7fhP50DZUhQl1cz7m
+ V5fbw5287Yw5Yh7oHOP+LKFl2v6NCNjzpdDHSpDJqcHwSxuqAjcA54zuTxIvsu+dfUvy
+ UjipEEgIYB2tmihK3Vq8xjpTJ7WIBIUSWu1i2WoVVYyGSEL2gBFGJRoiUBwuf9+OYdfq
+ fv/+7QQ5mAQxYsEukysEKYsNNsRRs/bU9NflxHI5EA4lz+ZI6DUvHdRkPSA7tteynrLD
+ HAbA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=B2zr+SxGgQJRKPjCI0ZlCNLHKl8Hq+JbhUCM9tDaYbk=;
- b=eX9xLl4kCNNsNwtyKN4cZyw+izM7LSsxSfZUDA+Zq+K/9CBQZXz2gEskC2CtBGICG6
- HQFoRWDSG6Fd5uPPffL/Z9sD9w9eamK8dqMrN5xYlAj7tpOtLabpOrh2aNeDwY/yg2iz
- n0halDxlf0dKxi+neN4vi0wLoJzDW/AHX5nCc4ePRQEqb4iu8IA15nmzqaNZfabcK3Qh
- dtrhKT3i9Ejkm1t/UAwoWvxzwnliY0xW9c6EYI7PoVMBSgWFUtk40b04Eahw3PdS2fsC
- uxAnbahQ21FzWa4JG/ZYgVr6x2cr/MI+RBRSWjNQcy2kASIQNX8IcqKGwb2VklCrzGrd
- 42iA==
-X-Gm-Message-State: APjAAAVxkawk5WPawDp4w1k0ntS+sr1NSBiPOFe/+H8F9vIYkqhixpYQ
- wgNvyZoEQHkDiuOJGk1J8LzRC1A7OW8V67hvyXc=
-X-Google-Smtp-Source: APXvYqxQ2QA/IJOqMGi2skPvLoXCAHWfqvnNsrhuIWnq8ZJXE69aNr5mcARZx/rneXf34MbVxtEMNdjkpDEu0iV67GE=
-X-Received: by 2002:a05:6830:147:: with SMTP id
- j7mr14990640otp.44.1576484518648; 
- Mon, 16 Dec 2019 00:21:58 -0800 (PST)
+ bh=4xOLwi7XGa06O+FcZfECpskN3Lf2VXslN2VEftJlRvg=;
+ b=pLXvhFvaACXNuRmoIZq5SMcLVako6u8YYF2WLBQrVz/hcPGV9eie/Qk4UZdYot5aFW
+ NI3GDAjcsaQy2FrrJWY9qQfAnzoD9sG4fWd/GHXigLVNPaoYl4JfCLwy+qyef7svITxg
+ 4hYKP8ObRNynFqns2UcTv2mEE768Vx0lMJocMh67+nhTvbD4Q0OQEZ+Gmm+Q/0ozQZpJ
+ Ealksq65GiS5tTzdGKuFAH7v8kaGdmO+fg9u2stovrTyWl+66BeIt9D25NKUCkVjcFai
+ wPW+zJSoSVWKu57qzpnNfee/RnptrB5oU7oZkibeNhWr3MJekCN87IfVRANnAth/kJ6h
+ 7oLg==
+X-Gm-Message-State: APjAAAVwrare+YSl5nMy22LivmdoUnGzogUinILJC+h//hAAxPFawxOa
+ 4ASfMRpu00yrEFfzm4RgCyJXvSMkdttmvxSi5l0=
+X-Google-Smtp-Source: APXvYqwlbGXOP54hraUBXqLyvcB1sZC55s35DdLDVTvMlWDnFYSYzIpnhC0yoc7BBbnE7hMFzhGGWwdDVzlod+Kll6g=
+X-Received: by 2002:a05:6830:16d0:: with SMTP id
+ l16mr31683433otr.176.1576486189948; 
+ Mon, 16 Dec 2019 00:49:49 -0800 (PST)
 MIME-Version: 1.0
-References: <20191213084748.11210-3-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20191213195727.GA170874@google.com>
-In-Reply-To: <20191213195727.GA170874@google.com>
+References: <20191213084748.11210-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20191213084748.11210-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <CAL_JsqLSYroDZGWksJJ=E+01X=3Tji4+GmK8s3i+d2BJphqiLQ@mail.gmail.com>
+In-Reply-To: <CAL_JsqLSYroDZGWksJJ=E+01X=3Tji4+GmK8s3i+d2BJphqiLQ@mail.gmail.com>
 From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Mon, 16 Dec 2019 08:21:31 +0000
-Message-ID: <CA+V-a8saLrvuTiQWaSGK9j6BA=waOSAwNdm_2Ae-EpMKOq-73A@mail.gmail.com>
-Subject: Re: [v2 2/6] pci: endpoint: add support to handle features of
- outbound memory
-To: Bjorn Helgaas <helgaas@kernel.org>
+Date: Mon, 16 Dec 2019 08:49:23 +0000
+Message-ID: <CA+V-a8uKBuVUQvkoJ9pJYX97Qy3JazTyLCy-2T35gOX77AP8vg@mail.gmail.com>
+Subject: Re: [v2 3/6] of: address: add support to parse PCI outbound-ranges
+To: Rob Herring <robh+dt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_002159_544932_C0493172 
-X-CRM114-Status: GOOD (  32.76  )
+X-CRM114-CacheID: sfid-20191216_004951_702573_72C39D96 
+X-CRM114-Status: GOOD (  14.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:336 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -95,23 +95,25 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-pci <linux-pci@vger.kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
- Frank Rowand <frowand.list@gmail.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, PCI <linux-pci@vger.kernel.org>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
  Marek Vasut <marek.vasut+renesas@gmail.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
  Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-rockchip@lists.infradead.org, Catalin Marinas <catalin.marinas@arm.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
  "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
  <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
  Arnd Bergmann <arnd@arndb.de>, "Lad,
  Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Rob Herring <robh+dt@kernel.org>, LAK <linux-arm-kernel@lists.infradead.org>,
+ Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:MEDIA DRIVERS FOR RENESAS - FCP"
+ <linux-renesas-soc@vger.kernel.org>, Tom Joseph <tjoseph@cadence.com>,
  Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
  Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
@@ -119,323 +121,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Bjorn,
+Hi Rob,
 
-thank you for the review.
+Thank you for the review.
 
-On Fri, Dec 13, 2019 at 9:06 PM Bjorn Helgaas <helgaas@kernel.org> wrote:
+On Fri, Dec 13, 2019 at 8:37 PM Rob Herring <robh+dt@kernel.org> wrote:
 >
-> On Fri, Dec 13, 2019 at 08:47:44AM +0000, Lad Prabhakar wrote:
+> On Fri, Dec 13, 2019 at 2:48 AM Lad Prabhakar
+> <prabhakar.csengg@gmail.com> wrote:
+> >
 > > From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
 > >
-> > rcar pcie controller has support to map multiple memory regions
-> > for mapping the outbound memory in local system, this feature
-> > inspires to add support for handling such features in endpoint
-> > framework. similar features exists on other controllers where
-> > outbound regions can be specifically used for low/high priority
-> > transactions, and regions can be flagged and used for allocation
-> > of large/small memory allocations.
-> > This patch adds support to handle such features, where the
-> > properties described for outbound regions are used whenever a
-> > request to memory is made.
+> > this patch adds support to parse PCI outbound-ranges, the
+> > outbound-regions are similar to pci ranges except it doesn't
+> > have pci address, below is the format for bar-ranges:
+> >
+> > outbound-ranges = <flags upper32_cpuaddr lower32_cpuaddr
+> >                    upper32_size lower32_size>;
 >
-> For this and the other patches, please:
+> You can't just make up a new ranges property. Especially one that
+> doesn't follow how 'ranges' works. We already have 'dma-ranges' to
+> translate device to memory addresses.
 >
->   - start sentences with a capital letter
->   - leave a blank line between paragraphs
->   - wrap commit log text to use the whole 80 character line (I wrap to
->     75 characters to account for "git log" indenting by 4 spaces)
->   - check your signed-off-by: it shows your name as "Lad, Prabhakar",
->     while your email From: line shows "Lad Prabhakar".  Choose one :)
+> Explain the problem or feature you need, not the solution you came up
+> with. Why do you need this and other endpoint bindings haven't?
 >
-sure will fix it next version.
+rcar SoC's supports multiple outbound region for mapping the PCI address
+locally to the system. This lead to discussion where there exist controllers
+which support regions for high/low priority transfer and similarly regions
+for large/small memory allocations, as a result a new ranges property was
+added, where we can specify the flags which would indicate how the outbound
+region can be used during requests.
 
-> > diff --git a/drivers/pci/endpoint/pci-epc-mem.c b/drivers/pci/endpoint/pci-epc-mem.c
-> > index 2bf8bd1..4b610cd 100644
-> > --- a/drivers/pci/endpoint/pci-epc-mem.c
-> > +++ b/drivers/pci/endpoint/pci-epc-mem.c
->
-> > -int __pci_epc_mem_init(struct pci_epc *epc, phys_addr_t phys_base, size_t size,
-> > -                    size_t page_size)
-> > +int __pci_epc_mem_init(struct pci_epc *epc, struct pci_epc_mem_window *windows,
-> > +                    int num_windows, size_t page_size)
-> >  {
-> > -     int ret;
-> > -     struct pci_epc_mem *mem;
-> > -     unsigned long *bitmap;
-> > +     struct pci_epc_mem *mem = NULL;
-> > +     unsigned long *bitmap = NULL;
-> >       unsigned int page_shift;
-> > -     int pages;
-> >       int bitmap_size;
-> > +     int pages;
-> > +     int ret;
-> > +     int i;
-> > +
-> > +     epc->mem_windows = 0;
-> > +
-> > +     if (!windows)
-> > +             return -EINVAL;
-> > +
-> > +     if (num_windows <= 0)
-> > +             return -EINVAL;
->
-> Why is num_windows signed?
->
-> >  void pci_epc_mem_exit(struct pci_epc *epc)
-> >  {
-> > -     struct pci_epc_mem *mem = epc->mem;
-> > +     struct pci_epc_mem *mem;
-> > +     int i;
-> > +
-> > +     if (!epc->mem_windows)
-> > +             return;
->
-> If you fix the loop below, why do you even need to test this?
->
-yes makes sense will drop this check.
-
-> > +     for (i = 0; i <= epc->mem_windows; i--) {
->
-> Huh?  "<="?  "i--"?  Surely you mean
->
->         for (i = 0; i < epc->mem_windows; i++) {
->
-oops my bad, will fix it.
-
-> > +             mem = epc->mem[i];
-> > +             kfree(mem->bitmap);
-> > +             kfree(epc->mem[i]);
-> > +     }
-> > +     kfree(epc->mem);
-> >
-> >       epc->mem = NULL;
-> > -     kfree(mem->bitmap);
-> > -     kfree(mem);
-> > +     epc->mem_windows = 0;
-> >  }
-> >  EXPORT_SYMBOL_GPL(pci_epc_mem_exit);
-> >
-> > +static int pci_epc_find_best_fit_window(struct pci_epc *epc, size_t size,
-> > +                                     u32 flags)
->
-> Can this just return a struct pci_epc_mem *, so the caller doesn't
-> have to lookup epc->mem[i] again?
->
-yes makes sense will change it to return struct pci_epc_mem *
-
-> > +{
-> > +     size_t window_least_size = 0;
-> > +     int best_fit_window = -1;
-> > +     struct pci_epc_mem *mem;
-> > +     size_t actual_size;
-> > +     size_t avail_size;
-> > +     u32 win_flags;
-> > +     int i;
-> > +
-> > +     for (i = 0; i < epc->mem_windows; i++) {
-> > +             mem = epc->mem[i];
-> > +             win_flags = mem->window.flags;
-> > +
-> > +             actual_size = ALIGN(size, mem->page_size);
-> > +             avail_size = mem->window.size - mem->window.map_size;
-> > +
-> > +             if (win_flags == 0x0) {
-> > +                     if (best_fit_window == -1) {
-> > +                             if (actual_size <= avail_size) {
-> > +                                     best_fit_window = i;
-> > +                                     window_least_size = mem->window.size;
-> > +                             }
-> > +                     } else {
-> > +                             if (actual_size <= avail_size &&
-> > +                                 mem->window.size < window_least_size) {
-> > +                                     best_fit_window = i;
-> > +                                     window_least_size = mem->window.size;
-> > +                             }
-> > +                     }
-> > +             } else {
-> > +                     if (mem->window.map_size &&
-> > +                         (win_flags | PCI_EPC_WINDOW_FLAG_NON_MULTI_ALLOC))
-> > +                             continue;
-> > +
-> > +                     if (!(win_flags | flags))
-> > +                             continue;
-> > +
-> > +                     if (best_fit_window == -1) {
-> > +                             if (actual_size <= avail_size) {
-> > +                                     best_fit_window = i;
-> > +                                     window_least_size = mem->window.size;
-> > +                             }
-> > +                     } else {
-> > +                             if (actual_size <= avail_size &&
-> > +                                 mem->window.size < window_least_size) {
-> > +                                     best_fit_window = i;
-> > +                                     window_least_size = mem->window.size;
-> > +                             }
-> > +                     }
-> > +             }
-> > +     }
-> > +
-> > +     return best_fit_window;
-> > +}
-> > +
-> >  /**
-> >   * pci_epc_mem_alloc_addr() - allocate memory address from EPC addr space
-> >   * @epc: the EPC device on which memory has to be allocated
-> >   * @phys_addr: populate the allocated physical address here
-> > + * @window: populate the window here which will be used to map PCI address
-> >   * @size: the size of the address space that has to be allocated
-> > + * @flags: look for window as requested in flags
-> >   *
-> >   * Invoke to allocate memory address from the EPC address space. This
-> >   * is usually done to map the remote RC address into the local system.
-> >   */
-> >  void __iomem *pci_epc_mem_alloc_addr(struct pci_epc *epc,
-> > -                                  phys_addr_t *phys_addr, size_t size)
-> > +                                  phys_addr_t *phys_addr,
-> > +                                  int *window, size_t size, uint32_t flags)
-> >  {
-> > +     int best_fit = PCI_EPC_DEFAULT_WINDOW;
-> > +     void __iomem *virt_addr = NULL;
-> > +     struct pci_epc_mem *mem;
-> > +     unsigned int page_shift;
-> >       int pageno;
-> > -     void __iomem *virt_addr;
-> > -     struct pci_epc_mem *mem = epc->mem;
-> > -     unsigned int page_shift = ilog2(mem->page_size);
-> >       int order;
-> >
-> > +     if (epc->mem_windows <= 0)
-> > +             return NULL;
-> > +
-> > +     if (epc->mem_windows > 1) {
->
-> Why bother testing epc->mem_windows here?  Just make sure
-> pci_epc_find_best_fit_window() returns the correct thing for
-> "mem_windows == 0" and "mem_windows == 1", and remove both the tests
-> above.
->
-will fix that.
-
-> > +             best_fit = pci_epc_find_best_fit_window(epc, size, flags);
-> > +             if (best_fit < 0)
-> > +                     return NULL;
-> > +     }
-> > +
-> > +     mem = epc->mem[best_fit];
-> >       size = ALIGN(size, mem->page_size);
-> > +     if (size > (mem->window.size - mem->window.map_size))
-> > +             return NULL;
-> > +     page_shift = ilog2(mem->page_size);
-> >       order = pci_epc_mem_get_order(mem, size);
-> >
-> >       pageno = bitmap_find_free_region(mem->bitmap, mem->pages, order);
-> >       if (pageno < 0)
-> >               return NULL;
-> >
-> > -     *phys_addr = mem->phys_base + (pageno << page_shift);
-> > +     *phys_addr = mem->window.phys_base + (pageno << page_shift);
-> >       virt_addr = ioremap(*phys_addr, size);
-> > -     if (!virt_addr)
-> > +     if (!virt_addr) {
-> >               bitmap_release_region(mem->bitmap, pageno, order);
-> > +     } else {
-> > +             mem->window.map_size += size;
-> > +             *window = best_fit;
-> > +     }
-> >
-> >       return virt_addr;
-> >  }
-> >  EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
-> >
-> > +static int pci_epc_get_matching_window(struct pci_epc *epc,
-> > +                                    phys_addr_t phys_addr)
->
-> Return struct pci_epc_mem * again?
->
-yes makes sense.
-
-> > +{
-> > +     struct pci_epc_mem *mem;
-> > +     int i;
-> > +
-> > +     for (i = 0; i < epc->mem_windows; i++) {
-> > +             mem = epc->mem[i];
-> > +
-> > +             if (mem->window.phys_base == phys_addr)
-> > +                     return i;
-> > +     }
-> > +
-> > +     return -EINVAL;
-> > +}
-> > +
-> >  /**
-> >   * pci_epc_mem_free_addr() - free the allocated memory address
-> >   * @epc: the EPC device on which memory was allocated
-> > @@ -155,16 +281,26 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
-> >  void pci_epc_mem_free_addr(struct pci_epc *epc, phys_addr_t phys_addr,
-> >                          void __iomem *virt_addr, size_t size)
-> >  {
-> > +     struct pci_epc_mem *mem;
-> > +     unsigned int page_shift;
-> > +     int window = 0;
-> >       int pageno;
-> > -     struct pci_epc_mem *mem = epc->mem;
-> > -     unsigned int page_shift = ilog2(mem->page_size);
-> >       int order;
-> >
-> > +     if (epc->mem_windows > 1) {
->
-> Same here (unnecessary test).
->
-will drop it.
-
-> > +             window = pci_epc_get_matching_window(epc, phys_addr);
-> > +             if (window < 0)
-> > +                     return;
-> > +     }
-> > +
-> > +     mem = epc->mem[window];
-> > +     page_shift = ilog2(mem->page_size);
-> >       iounmap(virt_addr);
-> > -     pageno = (phys_addr - mem->phys_base) >> page_shift;
-> > +     pageno = (phys_addr - mem->window.phys_base) >> page_shift;
-> >       size = ALIGN(size, mem->page_size);
-> >       order = pci_epc_mem_get_order(mem, size);
-> >       bitmap_release_region(mem->bitmap, pageno, order);
-> > +     mem->window.map_size -= size;
-> >  }
-> >  EXPORT_SYMBOL_GPL(pci_epc_mem_free_addr);
->
-> > @@ -85,7 +126,8 @@ struct pci_epc_mem {
-> >   * @dev: PCI EPC device
-> >   * @pci_epf: list of endpoint functions present in this EPC device
-> >   * @ops: function pointers for performing endpoint operations
-> > - * @mem: address space of the endpoint controller
-> > + * @mem: array of address space of the endpoint controller
-> > + * @mem_windows: number of windows supported by device
-> >   * @max_functions: max number of functions that can be configured in this EPC
-> >   * @group: configfs group representing the PCI EPC device
-> >   * @lock: spinlock to protect pci_epc ops
-> > @@ -94,7 +136,8 @@ struct pci_epc {
-> >       struct device                   dev;
-> >       struct list_head                pci_epf;
-> >       const struct pci_epc_ops        *ops;
-> > -     struct pci_epc_mem              *mem;
-> > +     struct pci_epc_mem              **mem;
-> > +     int                             mem_windows;
->
-> Can't this be unsigned int and then there's no need to check
-> "mem_windows < 0"?
->
-yes will change it unsigned int.
+The current endpoint controller drivers just support  single region.
 
 Cheers,
 --Prabhakar
-
-> >       u8                              max_functions;
-> >       struct config_group             *group;
-> >       /* spinlock to protect against concurrent access of EP controller */
 
 _______________________________________________
 Linux-rockchip mailing list
