@@ -2,102 +2,60 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2CE81227DF
-	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Dec 2019 10:45:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15BEB122977
+	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Dec 2019 12:04:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Q/Nj4cA3Ar089LVWROsykEMMmCxMJNvpkS75SzgeG/Y=; b=TpW
-	s2M1Tye0OC1z/Ezf4oDTjc3zk9LHbkcgQSA8tQ0QtBD0br5ORAXfw0lTbYm642IHeOTd13y+B0tJd
-	HZ5wGLaqyDRNadKWjcmhLGcqFFv5HJgZuIudhNNxmJ75/ZndAJweTXs3zf/DKHSSFZ5nZra5rxPPk
-	7qw0XW+fPPa1j6w7iKMjmXlcoQOQHhUVwYVFMtlSHniK7lL2Jy8Jdy6KnV2nT4l4s2dVxHzMnVZEH
-	Ymv5YRrDQWcuJKjbxTqzz/DJB+QofOqmblwXOEerGGckoXFo/YfPSGOxnDAVy0J21vzIzJwebdqyZ
-	Lz/S5ZTPLdbawoqQ+PTKAxwmyHkj53w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tFLecy/KcJbodP81Q5dXgqMZ+5vJEVLtnU2DjbzkgTQ=; b=VSu4DBX5ogjoPS8J1oRQuP6dz
+	9EjOA19Dg7Ymrzwez9eWtYsZ3XIIEN7mCljvVS8lR0nBo26GzujTXGZL3B+KHiGfUR2/wxePB4Dgn
+	nECDzu1zYo6EuiZ8H1zSZi0y4bTjjTjCTI9SpuStNvqZv6snlPu5PW7ZoZNX6spgWJA+RWD7JB2HQ
+	c71Z/CgzdAd3DBEeGg6b2r0sy18OPrYYkrloMX/kPRntZBQofQc+lR/37MbZhldRIjq8GozG7zPpb
+	O61BodaW0B7NNzC0x1NB4vYF+D9zTOVzyOKJiH4B56BnCP2LRlEYGlR7qJT74jAkoWC5dkVth9PMQ
+	AjgldXenA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih9QD-0002Ek-3p; Tue, 17 Dec 2019 09:45:41 +0000
-Received: from se15e.web-hosting.com ([198.54.122.209])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih9Q3-00026Y-NJ; Tue, 17 Dec 2019 09:45:32 +0000
-Received: from [68.65.123.203] (helo=server153.web-hosting.com)
- by se15.registrar-servers.com with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.89)
- (envelope-from <akash@openedev.com>)
- id 1ih7kO-000174-Op; Mon, 16 Dec 2019 23:58:33 -0800
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=openedev.com; s=default; h=Message-Id:Date:Subject:Cc:To:From:Sender:
- Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=pf6lwI0OtmTw6cMfHbrk+qj1Co4LlkApAh8zixkmj40=; b=gMWbLiCUrgpFV2mLT55GYt+kQt
- W+3mjSNGqA3ZwchmQTxXLw4zT9tayMndh+SCTzwuWHa2aR1WImhBcI76VpNnT+YB6KmK+Ec9ipFZl
- 5TMseLhoWbSrxD/kIg55vAY6eHm3voNmj5IzLdKcBMaLa2eJiAUlB80AutuBfZkMh55+KAziq3aZS
- iUlEjGQFyngbUyT8PmPcNQtXDs+40sijdeFPOjx8u4cgcuPepsbeiXLoRiJqeg2ZU4bo0n4tVLV1T
- W++z5bXu3bv2/Zejaj+fENCUQIZ5/i7dscZwuNe2RonNVoRbGyo0OeP3kEjC+qfnU9G8CbSYAShUz
- ZIjZ8O3w==;
-Received: from nat-inn.mentorg.com ([192.94.34.34]:44656
- helo=akash-vm.inn-wifi.mentorg.com)
- by server153.web-hosting.com with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
- (envelope-from <akash@openedev.com>)
- id 1ih7k8-003CWq-7t; Tue, 17 Dec 2019 02:58:20 -0500
-From: Akash Gajjar <akash@openedev.com>
-To: heiko@sntech.de
-Subject: [PATCH 0/2] add usb2-phy support for RK3308 SoC
-Date: Tue, 17 Dec 2019 13:27:13 +0530
-Message-Id: <20191217075722.11646-1-akash@openedev.com>
-X-Mailer: git-send-email 2.17.1
-X-OutGoing-Spam-Status: No, score=-1.0
-X-Originating-IP: 68.65.123.203
-X-SpamExperts-Domain: nctest.net
-X-SpamExperts-Username: whmcalls3
-Authentication-Results: registrar-servers.com;
- auth=pass (login) smtp.auth=whmcalls3@nctest.net
-X-SpamExperts-Outgoing-Class: ham
-X-SpamExperts-Outgoing-Evidence: Combined (0.02)
-X-Recommended-Action: accept
-X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0c2Pj46HODYmpAMVAv0J1pOpSDasLI4SayDByyq9LIhVGTtulVTIveB2
- 2GkZx2Xv70TNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3Kk502M/hntTzIKfCMISdhHQGg
- t7nAtP8WjkKKy9v/mXRkty7kshl0qfjNTiHz6D+lTs1OFZCJnqICuBP35KwNAmisedSHrV8USIJy
- ZKu4Q0eBPJf4fBJswECxJoMRbkC3SF2DuTVJlHUR2BtY80W8dG60QfvEMzMeJ6Rw9B2oZpcFefeT
- nKVTea+Z7pU/97kaMRINxtYvoDPmxBEirO18GFgbEtxGbfWvsckv3Tqu01KJGGjsNnBvKhksFPgp
- Ju7VRAUaZyvXYsGqun+gsnRrw40vpN++k/mRssszRiW/L+aVL5CXNSk/AzmiJysF8dLHRyryw85/
- rAZb27+VZ3biGtaW8qQvbDNe5IP3ZP124DrwHHYNWMFQ3rxmq0HUMfG+c6Hob6r/eV86ndcww4rw
- I7v+rPO4bNDPm0iPpRI8tT6nvHgTJm4rUod0ueKDsCR8lJjuWToZaiaFIvhnz77Y+k6uhs/Q2KE1
- Lby4XA9T8Bmj3saNZ0eUp3kqVmG1d7Vk0NCCILyLLaQ9eQTOszvxQTkjHv8L1XCo8f/lClCdnQEw
- egH725V8o9NmtwsOgq00IT3zX/Zzh6cpDYUl6c6Y0/5r1yWIc3jXLVN/s8cHerYtW55yLfDen/wr
- oS11FXNac8XwfSk5a6wPi3PS+6vBhpISIqK1GdyQE0WyMBODOy30v1Op0AWqhD2stjbU32pojN4X
- 8zAZfIZ8CjT9GInTMPN38Uyq3PQ8yDScr+8662B3D4UT/bdQYZMqtJwVgGaPV8GdcLPofFI165s+
- Fi8oQNCwxvxuh+xtfMocbqMn/Qow8uvbAccZ4WWjZTIX9MhLKTjECb0PwpN4olPuA0AI93gbcx8Z
- jKXXCSz+ofgapDj5Myrxgk8zlzkZR8hg4/tjCwvQy21RlJtzRtySOaj2KF+AYvFFhaUnET8cMwHU
- FSFp/ySXGPBwab3MRSsiX4HiRnxfIvD0xWRSasqqxNnWfwc3A8r6JfNzxEm+Adh5Il9bsJFhaqar
- dOLrAnCsmfJ3HSl/Lt1pDXWpU9yav05pkh6OyKSeNsS3Px6flMhiWi1AgZXOLlKfgzwl5b96WfO9
- Z3+qi/5h4DZCfPGWm7MoPBOavov9A2tPRpxsJ/Ez2OT1H/aAwarQpYDOYx/6JtUOkfNK1xk8kTd1
- Ny+HuiOkN2mAdCO+RVfxIo7mcAZ9GMPEl9B+0hmmdOnbSMz7Y9ZIgfFrL3927nPLXidUYhzTL/6b
- zJY8ZLbVls9GTjTyP2j0DLjHCOlbYrvqvTn3lmAWHSgj8REt1LPAYpi/k8cuog==
-X-Report-Abuse-To: spam@se16.registrar-servers.com
+	id 1ihAeR-0007GW-I8; Tue, 17 Dec 2019 11:04:27 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ihAe5-00075g-Vr; Tue, 17 Dec 2019 11:04:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0095031B;
+ Tue, 17 Dec 2019 03:04:04 -0800 (PST)
+Received: from [10.37.12.145] (unknown [10.37.12.145])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5F8933F6CF;
+ Tue, 17 Dec 2019 03:04:00 -0800 (PST)
+Subject: Re: [PATCH 7/9] memory: samsung: exynos5422-dmc: Replace deprecated
+ 'devfreq-events' property
+To: Chanwoo Choi <cw00.choi@samsung.com>, krzk@kernel.org,
+ robh+dt@kernel.org, mark.rutland@arm.com, heiko@sntech.de,
+ leonard.crestez@nxp.com
+References: <20191217055738.28445-1-cw00.choi@samsung.com>
+ <CGME20191217055106epcas1p2c43a45e34983c1b3e60cc6fd842dd33e@epcas1p2.samsung.com>
+ <20191217055738.28445-8-cw00.choi@samsung.com>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <500aaeb0-85ca-c1f5-2f30-a7b1e95810b6@arm.com>
+Date: Tue, 17 Dec 2019 11:03:58 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <20191217055738.28445-8-cw00.choi@samsung.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_014531_806827_1D936310 
-X-CRM114-Status: UNSURE (   9.45  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191217_030406_114212_760DC199 
+X-CRM114-Status: GOOD (  26.54  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,35 +68,124 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- tom@radxa.com, linux-kernel@vger.kernel.org, kever.yang@rock-chips.com,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
- Andy Yan <andy.yan@rock-chips.com>, jagan@openedev.com,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-pm@vger.kernel.org, a.swigon@samsung.com, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, kyungmin.park@samsung.com,
+ myungjoo.ham@samsung.com, kgene@kernel.org,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add usb2-phy support in RK3308 SoC dtsi
-Add usb2-phy support for RK3308 SoC in Rockchip USB driver
+Hi Chanwoo,
 
-- Tested USB2.0 with these patches on RockPiS board and Mainline Linux kernel
+On 12/17/19 5:57 AM, Chanwoo Choi wrote:
+> In order to remove the deprecated 'devfreq-events' property, replace with
+> new 'exynos,ppmu-device' property in order to get the devfreq-event device
+> in devicetree file instead of 'devfreq-events' property. But, to guarantee
+> the backward-compatibility, keep the support 'devfreq-events' property.
+> 
+> Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
+> ---
+>   .../memory-controllers/exynos5422-dmc.txt     |  6 ++--
+>   drivers/memory/samsung/exynos5422-dmc.c       | 29 +++++++++++++++----
+>   2 files changed, 26 insertions(+), 9 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt b/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt
+> index 02e4a1f862f1..1e1b3702f045 100644
+> --- a/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt
+> +++ b/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt
+> @@ -17,14 +17,14 @@ Required properties for DMC device for Exynos5422:
+>   - clock-names : should include "fout_spll", "mout_sclk_spll", "ff_dout_spll2",
+>     "fout_bpll", "mout_bpll", "sclk_bpll", "mout_mx_mspll_ccore",
+>     "mout_mclk_cdrex"  entries
+> -- devfreq-events : phandles for PPMU devices connected to this DMC.
+> +- exynos,ppmu-device : phandles for PPMU devices connected to this DMC.
+>   - vdd-supply : phandle for voltage regulator which is connected.
+>   - reg : registers of two CDREX controllers.
+>   - operating-points-v2 : phandle for OPPs described in v2 definition.
+>   - device-handle : phandle of the connected DRAM memory device. For more
+>   	information please refer to documentation file:
+>   	Documentation/devicetree/bindings/ddr/lpddr3.txt
+> -- devfreq-events : phandles of the PPMU events used by the controller.
+> +- exynos,ppmu-device : phandles of the PPMU events used by the controller.
+>   - samsung,syscon-clk : phandle of the clock register set used by the controller,
+>   	these registers are used for enabling a 'pause' feature and are not
+>   	exposed by clock framework but they must be used in a safe way.
+> @@ -73,7 +73,7 @@ Example:
+>   			      "mout_mx_mspll_ccore",
+>   			      "mout_mclk_cdrex";
+>   		operating-points-v2 = <&dmc_opp_table>;
+> -		devfreq-events = <&ppmu_event3_dmc0_0>,	<&ppmu_event3_dmc0_1>,
+> +		exynos,ppmu-device = <&ppmu_event3_dmc0_0>, <&ppmu_event3_dmc0_1>,
+>   				 <&ppmu_event3_dmc1_0>, <&ppmu_event3_dmc1_1>;
+>   		device-handle = <&samsung_K3QF2F20DB>;
+>   		vdd-supply = <&buck1_reg>;
+> diff --git a/drivers/memory/samsung/exynos5422-dmc.c b/drivers/memory/samsung/exynos5422-dmc.c
+> index c3195111d646..96593f37a478 100644
+> --- a/drivers/memory/samsung/exynos5422-dmc.c
+> +++ b/drivers/memory/samsung/exynos5422-dmc.c
+> @@ -1270,10 +1270,17 @@ static int exynos5_dmc_init_clks(struct exynos5_dmc *dmc)
+>   static struct devfreq_event_dev *get_edev_by_node(struct device_node *np,
+>   							int index)
+>   {
+> -	struct device_node *node = of_parse_phandle(np, "devfreq-events",
+> +	struct device_node *node = of_parse_phandle(np, "exynos,ppmu-device",
+>   							index);
+> -	if (!node)
+> -		return ERR_PTR(-ENODEV);
+> +	if (!node) {
+> +		 /*
+> +		  * Check the deprecated 'devfreq-events' property
+> +		  * to support backward-compatibility.
+> +		 */
+> +		node = of_parse_phandle(np, "devfreq-events", index);
+> +		if (!node)
+> +			return ERR_PTR(-ENODEV);
+> +	}
+>   	return devfreq_event_get_edev_by_node(node);
+>   }
+>   
+> @@ -1292,10 +1299,20 @@ static int exynos5_performance_counters_init(struct exynos5_dmc *dmc)
+>   	int ret, i;
+>   
+>   	dmc->num_counters = of_property_count_elems_of_size(dmc->dev->of_node,
+> -					"devfreq-events", sizeof(u32));
+> +					"exynos,ppmu-device", sizeof(u32));
+>   	if (dmc->num_counters < 0) {
+> -		dev_err(dmc->dev, "could not get devfreq-event counters\n");
+> -		return dmc->num_counters;
+> +		 /*
+> +		  * Check the deprecated 'devfreq-events' property
+> +		  * to support backward-compatibility.
+> +		 */
+> +		dmc->num_counters = of_property_count_elems_of_size(
+> +					dmc->dev->of_node,
+> +					"devfreq-events", sizeof(u32));
+> +		if (dmc->num_counters < 0) {
+> +			dev_err(dmc->dev,
+> +				"could not get devfreq-event counters\n");
+> +			return dmc->num_counters;
+> +		}
+>   	}
+>   
+>   	counters_size = sizeof(struct devfreq_event_dev) * dmc->num_counters;
+> 
 
-Akash Gajjar (2):
-  arch: arm64: rockchip: add usb node for RK3308
-  phy: phy-rockchip-inno-usb2: add usb2-phy support for RK3308 SoC
+Looks good to me. The fallback with backward-compatibility is a good
+idea in my opinion. Thank you for the change and feel free to and my:
 
- .../bindings/phy/phy-rockchip-inno-usb2.txt   |  1 +
- arch/arm64/boot/dts/rockchip/rk3308.dtsi      | 49 +++++++++++++++++++
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 44 +++++++++++++++++
- 3 files changed, 94 insertions(+)
+Reviewed-by: Lukasz Luba <lukasz.luba@arm.com>
 
--- 
-2.17.1
 
+Regarding the whole patch set, for the first glance it looks reasonable
+and good. AIRC some developers were arguing for the "devfreq-events"
+entry in DT. Now it should be fine. I will spend more time today for
+reviewing the whole patch set.
+
+Regards,
+Lukasz
 
 _______________________________________________
 Linux-rockchip mailing list
