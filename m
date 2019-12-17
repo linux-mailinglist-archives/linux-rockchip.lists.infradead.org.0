@@ -2,62 +2,61 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 906D612214B
-	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Dec 2019 02:12:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC73812239B
+	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Dec 2019 06:24:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XQCYVMCL0iiGjJi1oQsG8iMiVcFZvN88INgBl2swuWI=; b=Yq2xDeV9rxavG1
-	YEbhTySushbtkDjVoaol96WSoVfknS/mshR8ay73T5Qh+m5LaBDikm6fPYUB9CSvxUwnradWFAgi6
-	KBZdwvS8lvB47bYKZB9Q+JVb/LBFbCQ3SRFwTL6jIaszrE3lAZ8le0AU6KaxPmxoCwU8NACp+I2Qj
-	foi29qSnZiKIWtPrFuHtsnz6Jpm3XoLTYsTZ/4q7v+I/mb+TniEilfjnHJGr3lx6sBN+gvLqE9Oaf
-	kivCLlXEP7MCjHzC5Y2A+QsYVd4geA3AmOp2qENGawJsQ9warDLiDJZmojj7HcYS8BW6POAzJFw0j
-	UbamsblyFDHDv8pgCsXA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YgJokwu+08rcgFeVYFEr0yG9qMLM91eogsZMvXOq/MI=; b=YTc0+VncCZQvm0
+	iRzJjp9xS3QizI5DttZ3xnK8A/4E9vfCDrKM7ej3xazO+6302wjvWKXkSKejzvLFq+FKLdorV6HGI
+	heQA8Wy3JQ4Q+HDVy8YmCVDuAGleAR9IzIDo4bx4h50Ajl2dMPR3QAjG/WTKh5VP+h87+WZdWAsvG
+	Va3CUHsTcnI/X/DSse2jhsnvX0OmZc+u9WIgvnO1ULqyc2kIArv6P0HBn0b+nBAcjpkVbG9sej0kU
+	jX6lVuuwSfU79g5jgXstq9egSkZ/Az8WlyIpqyG2PjG3ThdDMBtbPhqQfq56XrUjHRFfL5i36pD+G
+	XcwuJT17ZjmvKCj7Wd5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih1Px-0000pe-0r; Tue, 17 Dec 2019 01:12:53 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1ih5Ku-0007Jh-RH; Tue, 17 Dec 2019 05:23:56 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih1Pl-0000fW-8R; Tue, 17 Dec 2019 01:12:43 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 93CEC9C5;
- Tue, 17 Dec 2019 02:12:26 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1576545147;
- bh=KcjcirugnejZF/v8qYCaUPEjRMBZVSzSBT527du65ro=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Ud8Pp6GNKk4VcnODZGhTIPdvic9f0EE0uzu/AAfk2bEcRKWujIP+SVNygSd9k21Gb
- DVO6vq1bgcVLDVrJXIgx0bDBc93dTNvbxS9tvJFvDxOuW3JTGYv0dIsw5Z0diCsI6L
- 9RMPQHAJ8kEN1Gd9ZH6orkpF5w+Ad7q9Pquc6Yuo=
-Date: Tue, 17 Dec 2019 03:12:15 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 5/6] drm/mediatek: Convert to use CMA helpers
-Message-ID: <20191217011215.GM4856@pendragon.ideasonboard.com>
-References: <20191021214550.1461-1-robh@kernel.org>
- <20191021214550.1461-6-robh@kernel.org>
- <1cbca96c-19dd-1d15-949c-7fbcc15369b4@gmail.com>
- <CAL_JsqL6G=F45G+-QXF6T1269f9YquXfYtjoUkCpAoNartxM=Q@mail.gmail.com>
- <1571864784.19128.8.camel@mtksdaap41>
- <CAL_JsqJJ2ET2oCCkE=fqk7PWTWp3xiMRiMM_AmxRDws-NaKoOg@mail.gmail.com>
- <1571900577.27203.6.camel@mtksdaap41>
+ id 1ih5Ke-0007Bk-VP; Tue, 17 Dec 2019 05:23:42 +0000
+Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 889B12072B;
+ Tue, 17 Dec 2019 05:23:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576560218;
+ bh=gTBRUZTAj08OEJZUmrm/ewxMPRPrawoPjsr3dDQQ800=;
+ h=From:To:Cc:Subject:Date:From;
+ b=SSPOk5UWGjZTQF6arwuC5jG8hGqYNW46VN3fEW/EXcGphRgBAd8SLL9XMd9oAqlYc
+ 5Uo82aPrM4+6gfnmxEVTCypMUFrPpQO2lb1/Bg8Sx8DHftePSkav+lA3nXRYLGUSQM
+ DUYxQIXqlSuL6dT78rQO6yCxRJfX0bvcZJZmzS50=
+Received: by wens.tw (Postfix, from userid 1000)
+ id 57AA75FCA8; Tue, 17 Dec 2019 13:23:36 +0800 (CST)
+From: Chen-Yu Tsai <wens@kernel.org>
+To: Zhang Rui <rui.zhang@intel.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH] thermal: rockchip: enable hwmon
+Date: Tue, 17 Dec 2019 13:23:28 +0800
+Message-Id: <20191217052328.25633-1-wens@kernel.org>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1571900577.27203.6.camel@mtksdaap41>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_171241_605458_033A6210 
-X-CRM114-Status: GOOD (  26.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191216_212341_031063_FE16DCA5 
+X-CRM114-Status: GOOD (  10.79  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -66,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,105 +78,58 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko =?utf-8?Q?St=C3=BCbner?= <heiko@sntech.de>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Liviu Dudau <liviu.dudau@arm.com>, Daniel Kurtz <djkurtz@chromium.org>,
- Sandy Huang <hjc@rock-chips.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Yannick Fertre <yannick.fertre@st.com>,
- Nicolas Boichat <drinkcat@chromium.org>, Kevin Hilman <khilman@baylibre.com>,
- Xinwei Kong <kong.kongxinwei@hisilicon.com>,
- Xinliang Liu <z.liuxinliang@hisilicon.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Chen-Yu Tsai <wens@csie.org>,
- Noralf =?utf-8?Q?Tr=C3=B8nnes?= <noralf@tronnes.org>,
- "James \(Qian\) Wang" <james.qian.wang@arm.com>, CK Hu <ck.hu@mediatek.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Ulrich Hecht <uli@fpond.eu>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Chen Feng <puck.chen@hisilicon.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Sean Paul <sean@poorly.run>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Philippe Cornu <philippe.cornu@st.com>,
- Vincent Abriou <vincent.abriou@st.com>,
- Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Rongrong Zou <zourongrong@gmail.com>
+Cc: linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Rob,
+From: Chen-Yu Tsai <wens@csie.org>
 
-On Thu, Oct 24, 2019 at 03:02:57PM +0800, CK Hu wrote:
-> On Wed, 2019-10-23 at 17:56 -0500, Rob Herring wrote:
-> > On Wed, Oct 23, 2019 at 4:06 PM CK Hu wrote:
-> > > On Wed, 2019-10-23 at 12:42 -0500, Rob Herring wrote:
-> > > > On Tue, Oct 22, 2019 at 12:07 PM Matthias Brugger wrote:
-> > > > > On 21/10/2019 23:45, Rob Herring wrote:
-> > > > > > The only reason the Mediatek driver doesn't use the CMA helpers is it
-> > > > > > sets DMA_ATTR_NO_KERNEL_MAPPING and does a vmap() on demand. Using
-> > > > > > vmap() is not even guaranteed to work as DMA buffers may not have a
-> > > > > > struct page. Now that the CMA helpers support setting
-> > > > > > DMA_ATTR_NO_KERNEL_MAPPING as needed or not, convert Mediatek driver to
-> > > > > > use CMA helpers.
-> > > > > >
-> > > > > > Cc: CK Hu <ck.hu@mediatek.com>
-> > > > > > Cc: Philipp Zabel <p.zabel@pengutronix.de>
-> > > > > > Cc: David Airlie <airlied@linux.ie>
-> > > > > > Cc: Daniel Vetter <daniel@ffwll.ch>
-> > > > > > Cc: Matthias Brugger <matthias.bgg@gmail.com>
-> > > > > > Cc: linux-arm-kernel@lists.infradead.org
-> > > > > > Cc: linux-mediatek@lists.infradead.org
-> > > > > > Signed-off-by: Rob Herring <robh@kernel.org>
-> > > > > > ---
-> > > > >
-> > > > > I tested this on my Chromebook with some patches on top of v5.4-rc1 [1], which
-> > > > > work. If I add your patches on top of that, the system does not boot up.
-> > > > > Unfortunately I don't have a serial console, so I wasn't able to see if there is
-> > > > > any error message.
-> > > >
-> > > > Thanks for testing. I'm based on drm-misc-next, but don't see anything
-> > > > obvious there that would matter. There are some mmap changes, but I
-> > > > think they shouldn't matter.
-> > > >
-> > > > Did you have fbcon enabled? That may give more clues about where the problem is.
-> > >
-> > > There are priv->dma_dev for dma device, but it is not drm device. In
-> > > mt8173.dtsi [1], there are mmsys device and ovl device, mmsys device is
-> > > drm device and ovl device is mmsys's sub device which provide dma
-> > > function, so ovl is the priv->dma_dev. I think your patch directly use
-> > > drm device for dma operation and this would cause dma function fail.
-> > > Please use priv->dma_dev for dma operation.
-> > 
-> > Right, thanks for catching that. Either we'll need to make CMA GEM
-> > object have a struct device ptr or adjust the drm_device.dev to have
-> > the necessary DMA setup.
-> > 
-> > One question though, why do you use CMA when you have an IOMMU? That's
-> > not optimal as CMA size may be limited. Or you don't always have an
-> > IOMMU?
+By default of-based thermal driver do not have hwmon entries registered.
 
-Please note that the DRM GEM CMA helpers are misnamed, they use the DMA
-coherent allocation API, and thus don't use CMA if the device is backed
-by an IOMMU. They should really have been named DRM GEM DMA helpers.
+Do this explicitly so users can use standard hwmon interfaces and tools
+to read the temperature.
 
-> For all upstreamed mediatek SoC, all has IOMMU, so it does not need CMA.
-> I think we use CMA just because we refer to other drm driver to
-> implement mediatek drm driver and we misused CMA helper function but it
-> works. I think we should change to more accurate implementation. If you
-> want, you could modify it in this series.
-> 
+This is based on similar changes for bcm2835_thermal in commit
+d56c19d07e0b ("thermal: bcm2835: enable hwmon explicitly").
 
+Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+---
+ drivers/thermal/rockchip_thermal.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/thermal/rockchip_thermal.c b/drivers/thermal/rockchip_thermal.c
+index 9ed8085bb792..d53ba7dabf16 100644
+--- a/drivers/thermal/rockchip_thermal.c
++++ b/drivers/thermal/rockchip_thermal.c
+@@ -19,6 +19,8 @@
+ #include <linux/mfd/syscon.h>
+ #include <linux/pinctrl/consumer.h>
+ 
++#include "thermal_hwmon.h"
++
+ /*
+  * If the temperature over a period of time High,
+  * the resulting TSHUT gave CRU module,let it reset the entire chip,
+@@ -1210,7 +1212,11 @@ rockchip_thermal_register_sensor(struct platform_device *pdev,
+ 		return error;
+ 	}
+ 
+-	return 0;
++	/* thermal_zone doesn't enable hwmon as default, enable it here */
++	sensor->tzd->tzp->no_hwmon = false;
++	error = thermal_add_hwmon_sysfs(sensor->tzd);
++
++	return error;
+ }
+ 
+ /**
 -- 
-Regards,
+2.24.0
 
-Laurent Pinchart
 
 _______________________________________________
 Linux-rockchip mailing list
