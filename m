@@ -2,90 +2,108 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 481B8122A94
-	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Dec 2019 12:49:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25CBD122ED5
+	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Dec 2019 15:34:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:Subject:References:To:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=fJ2giJFbh2OjrrW1pt7Sqoa+wZoRQMAs2DF1wNx+xNI=; b=p1B3AwUXlbso1XszczaPTy7/gd
-	qGjyUSBjDevPCh9Vguk/IXpgbHCtCGNjlqoZIuPcFj1RBXAXb66bq7CJrm0Ok6pG8qI2oQjlWbjCq
-	wthNeo1PEXGUNBNyQXX1gnWg2DBkqDoKAXlz7dWH9TXxVG4oytRWNPNx886VGOr6+2g97CK+tJEdf
-	eet7i4gxz6GNt4bdmyzlAOsuPWG38eMHcGutshTiBTL+GbDHp9B7i/u3+jMCywEQC/H1soYl+RNSl
-	R5SyqepNHDWR2pAj5gLBUgBAKsAICiSoaS5PhFQBujxj8a1NLAQxVLI0o9HUPQOSs4HB0Yjoa4AwB
-	U2BZ8lAQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=ueApdfe09beqo1ZE218JkwI+3tfd//+sTs4jZJJysfI=; b=V26lKn+/H5556N
+	I5+i4JlqKmLbW9GIsByZfwvrp9I86/K6KaJKtwdd2ZSyNn6Z1Vev1lY3USwW8FwvHP2+EI2fZJBNG
+	5HUa8nDVVGqlJZeOUku+20boG7MJWc0fya+svqMXpzlAre2o0WaqwUT1QnLmwAIyvaVJqMfiRlo50
+	rJboIjPvuakwGc6dKcc4yKDAbsLazKgNWBDYO6Va5IQwC0UlTyp/L8bPQsQUWUo7PsE7Gavdm0fNa
+	U2KbYmzmkvoKl80hfCFkhP0Ck7Al7E5FBV7hQu5tx0TJbuzldGnFnWsMpE4PRJb/l1ffd+VKYUHJ3
+	Uoh6kcNKQxFbdu7/lTuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihBLU-0004v5-TS; Tue, 17 Dec 2019 11:48:56 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1ihDvL-0001E2-4e; Tue, 17 Dec 2019 14:34:07 +0000
+Received: from mail-eopbgr70075.outbound.protection.outlook.com ([40.107.7.75]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihBLR-0004uf-Ks
- for linux-rockchip@lists.infradead.org; Tue, 17 Dec 2019 11:48:55 +0000
-Received: by mail-wr1-x441.google.com with SMTP id y11so10955495wrt.6
- for <linux-rockchip@lists.infradead.org>; Tue, 17 Dec 2019 03:48:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:references:subject:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=vKL/qBrqkJWUKUt16Um6W8EUzvFu5xAqAnsM7HaP3eY=;
- b=KK8NbWwQ6asYNvlzh/jpZoq6Sw1VsVSnVHahEXzpk7bGxfPMuZFic7yw7/Wi6WsIRe
- d1z0J2BbWho6oknv/CFVyJ8cWzk4YSRA3KcIgCVeIym7Cs1z3DO4MRxGBHqGMCV6dmcs
- fWj0PereIdE4pGZoeq3Qrs10fOVHi8F7ObVmVLZMdQ3Y5G/5EZonvK9/fSIlNvf0KqJh
- NWyeynoz6GKRiu5dwQdJaG/tdAjqpZ993VSBPJXEyitptWA5M34vJlZX2z2OG/ECR7uz
- LUWmZFhGEiYbZ8QdQnHRahdrRysba8x/oFCM1xtutORSus9sT54FFPsgm7Y4g7ZWZ5ZY
- FSfw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:to:references:subject:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=vKL/qBrqkJWUKUt16Um6W8EUzvFu5xAqAnsM7HaP3eY=;
- b=J8CTcSP5jYUPMjG5yzPF1/G8axlbVbsY+Uev26zaKLJNKEAznZVAC8hWicFz+wP6hu
- zCRrtEMzocZ+SoGG360x8rCRoSwKCj2yfQisGp9OunpJWsQ1KvRx92XVBqJiKex2Ht5Z
- R/lMCnCmLGAIsGwGxP1h/02BZ/Oos/7M0QQYcv7/MZRnWWplfkXi8r3Vos4E0lU4HC1X
- b2lKf4plsg3RiBC4+60iFi+4T4qnJnblXXEsHzf2wmE5ayFX4G3WeT505YQjAU3pV0vK
- 9pU2yqC7MwFGvmhSf3VUv7Ty6o8Gw4CSKSGTLGByRiUbkDCPGVO7ourKJIctNvuSzZji
- CKZg==
-X-Gm-Message-State: APjAAAVreGPD4sVDyXEiytAV6jX5k2jm1hW2pdnt5KR8/BMUZDYMR7pj
- 7pGAvZJw5VknG1Aew/mmAuVQwPrz
-X-Google-Smtp-Source: APXvYqzJah/EtXThGbMp9HsfFIY5TgqTcfkPwXCwmfWol5ggwd0ts0N3im1IqPND+IMBZhOwcuAk1Q==
-X-Received: by 2002:adf:fc0c:: with SMTP id i12mr38655326wrr.74.1576583331609; 
- Tue, 17 Dec 2019 03:48:51 -0800 (PST)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id b16sm25694183wrj.23.2019.12.17.03.48.50
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 17 Dec 2019 03:48:51 -0800 (PST)
-To: linux-rockchip@lists.infradead.org
-References: <20191217080014.11756-1-akash@openedev.com>
-Subject: Re: Re: [V2 1/1 PATCH] arm64: dts: rockchip: add ROCK Pi S DTS support
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <80ca8b77-6a55-ef33-b772-eccaad8871e6@gmail.com>
-Date: Tue, 17 Dec 2019 12:48:49 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
-MIME-Version: 1.0
-In-Reply-To: <20191217080014.11756-1-akash@openedev.com>
+ id 1ihDv9-00014w-Dg; Tue, 17 Dec 2019 14:33:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=iAFNgzKIJoRvNuhTqtN+AEnIfYt3BaHIb1xlz63RafhKFB2Py6AkQXj/+SbW/pxo6Q+8rGUAkhEB+kRuRewuw+3d17s2pyGE28rt+vJ5FNq1D5rIlJh9aiduIXfPI/R1rEicjACSg7qaBvc4Am3WlM2epSseZPZc3BsT0CkcHUnCyFoM4GpsiwXmRfOQld1dFZurCwg2kJ60O9IbgOP/MOfe0l92y7YIJEu2BqlBKSA1iFg+TJzSqBwLmCbLRvmQO1gRg0G07bnQktg11SJABmQGz8zYW/NhB8YvUyJT0YXkrpticDkElEFy1C80f1YgC+Vb5tAvwkp8vkkDhV347Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=a67BXvFyL5lSprSXzZpMAHmyDRdW/sb9BrE3UvsM554=;
+ b=m8zkFz++YpeGQyTjQQPJqRfzZGfJbPM+sVDcbR2yRbsWQgBIfAMVEWmrFioHaPDpPMjINNOfJ/x9eifLUqpSDypc/wXlykBqumV4i3kcPUKD+hsjDiBWbfyffw2hKlL4mfXlKM2V9ekZNWoqa059342EOREogCyipKX/owCec5r2kKi65ysSHvhcMnX8uQ+WfA92bDuuSpf9njNcHBejpE1wnyHvzXQrZGgv++QZZVp69EQQT/2NmQXAkI/uC9zwNRNMqKAstjhUDMAuTek/u1T/q40mctWEZSb1VCCZ8h6fdk4pmIMZdFa0tV23puBpyZvzIWPRKGzjcpUTnQ+hyw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=a67BXvFyL5lSprSXzZpMAHmyDRdW/sb9BrE3UvsM554=;
+ b=VZf0Iayo2fYacEUCid43vgViRZXQiK8CcDk2PbIhvsAGmu4PPoTG8Hfg7vvU7CPbpBVuTzMUJ4thqz+m+rWw0LCWrRb6ziP2aHyDZ9NGUZdX5GCRvoCVWIdPoSamG6meOZpoTlt3AoZWIxdarLULrVPhxApFPDoSDj4JjMSAkEo=
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
+ VI1PR04MB5359.eurprd04.prod.outlook.com (20.178.122.92) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2538.17; Tue, 17 Dec 2019 14:33:52 +0000
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::2c49:44c8:2c02:68b1]) by VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::2c49:44c8:2c02:68b1%5]) with mapi id 15.20.2538.019; Tue, 17 Dec 2019
+ 14:33:52 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Chanwoo Choi <cw00.choi@samsung.com>, "krzk@kernel.org" <krzk@kernel.org>, 
+ "robh+dt@kernel.org" <robh+dt@kernel.org>
+Subject: Re: [PATCH 2/9] PM / devfreq: Remove devfreq_get_devfreq_by_phandle
+ function
+Thread-Topic: [PATCH 2/9] PM / devfreq: Remove devfreq_get_devfreq_by_phandle
+ function
+Thread-Index: AQHVtJ3+QgbB6+oDD0SBl418fSrNCQ==
+Date: Tue, 17 Dec 2019 14:33:52 +0000
+Message-ID: <VI1PR04MB70231FA16F12ACA3A3C01772EE500@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <20191217055738.28445-1-cw00.choi@samsung.com>
+ <CGME20191217055105epcas1p2d2930402a559e381a7854f515a683d15@epcas1p2.samsung.com>
+ <20191217055738.28445-3-cw00.choi@samsung.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 87c4335f-9303-4162-ffab-08d782fe2352
+x-ms-traffictypediagnostic: VI1PR04MB5359:
+x-microsoft-antispam-prvs: <VI1PR04MB53598C0A2E09F242C3EBE713EE500@VI1PR04MB5359.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2958;
+x-forefront-prvs: 02543CD7CD
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(346002)(396003)(136003)(366004)(39860400002)(199004)(189003)(8676002)(478600001)(6506007)(53546011)(86362001)(52536014)(5660300002)(186003)(8936002)(4326008)(81156014)(91956017)(55016002)(316002)(7416002)(76116006)(54906003)(110136005)(66946007)(66446008)(9686003)(64756008)(26005)(66556008)(66476007)(2906002)(44832011)(33656002)(7696005)(71200400001)(81166006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5359;
+ H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: kaGmMq+qiqRfPVQdn72HkdkScAhoAYVLa3DcRyr26+4wclZT/udrnlICDOwuJOQqkqtzG7CjIGdL/xd4wPPMoFdH+kPvaR6QCkX5ya+reIsDyD3Fr9YjVgnuxlgCNu8+YByclMIf9eGhjMDVvwtFuLY3BdryN/2Nasdawn81ZRyegeSJptP0puza1I0c2bTUPcear6VZwEYt5jfwIkrENCrxdyav2YCA7IXzFzZJ3ji6XZi5r7inpnSAlEMZt2Wsg0gUBwmyMI849UyT2j9n3j83CsXwCj9tJEe6gKms8JtmhbV96xaOp2u44cwVSyQ6lS89E8LxK8ogXmrnv5dUN/LfcLWnZlkFAq21h1IKutnIWV7PQwS9MrvDz/YCO+GRINmssKz97y/Pfub4QksBK+fBpIbpuUDEOHjUr7gTmVM9VAlw7g/kFvh9OEKZ3Q+V
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 87c4335f-9303-4162-ffab-08d782fe2352
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Dec 2019 14:33:52.0428 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: hD8RERiaMu7LEB27PHVR24KtbWvJDBWmUGf0gwwyfvvy1uHj12fk8lTfZXyEPD8VpnL3ycjOkskGVRqsYz35yQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5359
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_034853_685677_28E232A5 
-X-CRM114-Status: GOOD (  13.57  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191217_063355_460835_16EC9712 
+X-CRM114-Status: GOOD (  16.83  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [40.107.7.75 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jbx6244[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jbx6244[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -105,204 +123,162 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ "heiko@sntech.de" <heiko@sntech.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "a.swigon@samsung.com" <a.swigon@samsung.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "kyungmin.park@samsung.com" <kyungmin.park@samsung.com>,
+ "kgene@kernel.org" <kgene@kernel.org>,
+ "myungjoo.ham@samsung.com" <myungjoo.ham@samsung.com>,
+ "lukasz.luba@arm.com" <lukasz.luba@arm.com>,
+ "m.szyprowski@samsung.com" <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Akash,
+On 17.12.2019 07:51, Chanwoo Choi wrote:
+> Previously, devfreq core support 'devfreq' property in order to get
+> the devfreq device by phandle. But, 'devfreq' property name is not proper
+> on devicetree binding because this name doesn't mean the any h/w attribute.
+> 
+> The devfreq core hand over the right to decide the property name
+> for getting the devfreq device on devicetree. Each devfreq driver
+> will decide the property name on devicetree binding and then get
+> the devfreq device by using devfreq_get_devfreq_by_node().
+> 
+> Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
+> ---
+>   drivers/devfreq/devfreq.c    | 35 -----------------------------------
+>   drivers/devfreq/exynos-bus.c | 14 ++++++++++++--
+>   include/linux/devfreq.h      |  8 --------
+>   3 files changed, 12 insertions(+), 45 deletions(-)
+> 
+> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
+> index cb8ca81c8973..c3d3c7c802a0 100644
+> --- a/drivers/devfreq/devfreq.c
+> +++ b/drivers/devfreq/devfreq.c
+> @@ -991,48 +991,13 @@ struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
+>   
+>   	return ERR_PTR(-ENODEV);
+>   }
+> -
+> -/*
+> - * devfreq_get_devfreq_by_phandle - Get the devfreq device from devicetree
+> - * @dev - instance to the given device
+> - * @index - index into list of devfreq
+> - *
+> - * return the instance of devfreq device
+> - */
+> -struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev, int index)
+> -{
+> -	struct device_node *node;
+> -	struct devfreq *devfreq;
+> -
+> -	if (!dev)
+> -		return ERR_PTR(-EINVAL);
+> -
+> -	if (!dev->of_node)
+> -		return ERR_PTR(-EINVAL);
+> -
+> -	node = of_parse_phandle(dev->of_node, "devfreq", index);
+> -	if (!node)
+> -		return ERR_PTR(-ENODEV);
+> -
+> -	devfreq = devfreq_get_devfreq_by_node(node);
+> -	of_node_put(node);
+> -
+> -	return devfreq;
+> -}
+> -
+>   #else
+>   struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
+>   {
+>   	return ERR_PTR(-ENODEV);
+>   }
+> -
+> -struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev, int index)
+> -{
+> -	return ERR_PTR(-ENODEV);
+> -}
+>   #endif /* CONFIG_OF */
+>   EXPORT_SYMBOL_GPL(devfreq_get_devfreq_by_node);
+> -EXPORT_SYMBOL_GPL(devfreq_get_devfreq_by_phandle);
+>   
+>   /**
+>    * devm_devfreq_remove_device() - Resource-managed devfreq_remove_device()
+> diff --git a/drivers/devfreq/exynos-bus.c b/drivers/devfreq/exynos-bus.c
+> index 7f5917d59072..9aac2db956d5 100644
+> --- a/drivers/devfreq/exynos-bus.c
+> +++ b/drivers/devfreq/exynos-bus.c
+> @@ -146,6 +146,16 @@ static int exynos_bus_get_dev_status(struct device *dev,
+>   	return ret;
+>   }
+>   
+> +static struct devfreq *get_parent_devfreq_by_node(struct device_node *np)
+> +{
+> +	struct device_node *node = of_parse_phandle(np, "devfreq", 0);
+> +
+> +	if (!node)
+> +		return ERR_PTR(-ENODEV);
+> +
+> +	return devfreq_get_devfreq_by_node(node);
+> +}
 
-My commit for the second time! Reply!
+The _by_node suffix here is confusing because it actually fetches a 
+property of the node unlike devfreq_get_devfreq_by_node. Maybe call this 
+get_parent_devfreq_from_node?
 
-Question for Heiko:
-Should bus-width be defined all in the rk3308 core dtsi or
-move them to dts like the rest?
+Since it's a static function it could just be called get_parent_devfreq?
 
-> +&emmc {
-> +	bus-width = <4>;
+> +
+>   static void exynos_bus_exit(struct device *dev)
+>   {
+>   	struct exynos_bus *bus = dev_get_drvdata(dev);
+> @@ -353,8 +363,8 @@ static int exynos_bus_profile_init_passive(struct exynos_bus *bus,
+>   	profile->exit = exynos_bus_passive_exit;
+>   
+>   	/* Get the instance of parent devfreq device */
+> -	parent_devfreq = devfreq_get_devfreq_by_phandle(dev, 0);
+> -	if (IS_ERR(parent_devfreq))
+> +	parent_devfreq = get_parent_devfreq_by_node(dev->of_node);
+> +	if (IS_ERR(parent_devfreq)) {
+>   		return -EPROBE_DEFER;
+>   
+>   	passive_data = devm_kzalloc(dev, sizeof(*passive_data), GFP_KERNEL);
+> diff --git a/include/linux/devfreq.h b/include/linux/devfreq.h
+> index e3633ae43349..3ed96426302e 100644
+> --- a/include/linux/devfreq.h
+> +++ b/include/linux/devfreq.h
+> @@ -254,8 +254,6 @@ extern void devm_devfreq_unregister_notifier(struct device *dev,
+>   				struct notifier_block *nb,
+>   				unsigned int list);
+>   extern struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node);
+> -extern struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev,
+> -						int index);
+>   
+>   #if IS_ENABLED(CONFIG_DEVFREQ_GOV_SIMPLE_ONDEMAND)
+>   /**
+> @@ -413,12 +411,6 @@ struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
+>   	return ERR_PTR(-ENODEV);
+>   }
+>   
+> -static inline struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev,
+> -							int index)
+> -{
+> -	return ERR_PTR(-ENODEV);
+> -}
+> -
+>   static inline int devfreq_update_stats(struct devfreq *df)
+>   {
+>   	return -EINVAL;
+> 
 
-Is this value correct for emmc?
-bus-width = <8> is already defined in rk3308.dtsi,
-so remove or change value.
-
-> +	cap-mmc-highspeed;
-> +	mmc-hs200-1_8v;
-
-> +	supports-sd;
-
-supports-sd is not mentioned in mmc-controller.yaml
-
-> +	disable-wp;
-
-The mmc.txt didn't explicitly say disable-wp is for SD card slot only,
-but that is what it was designed for in the first place.
-Remove all disable-wp from emmc or sdio controllers.
-
-> +	non-removable;
-> +	num-slots = <1>;
-> +	vin-supply = <&vcc_io>;
-> +	status = "okay";
-> +};
-
-> +&sdmmc {
-> +	bus-width = <4>;
-
-bus-width = <4> is already defined in rk3308.dtsi,
-so remove or change value.
-
-> +	cap-mmc-highspeed;
-> +	cap-sd-highspeed;
-
-> +	max-frequeency = <150000000>;
-
-replace max-frequeency by max-frequency
-max-frequency = <150000000> is already defined in rk3308.dtsi,
-so remove or change value.
-
-> +	supports-sd;
-
-supports-sd is not mentioned in mmc-controller.yaml
-
-> +	disable-wp;
-> +	num-slots = <1>;
-> +	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_det &sdmmc_bus4>;
-> +	card-detect-delay = <800>;
-
-Why is this value set to 800? All other dts use 200.
-What changed in the specifications?
-
-> +	status = "okay";
-> +};
-
-> +&sdio {
-> +	#address-cells = <1>;
-> +	#size-cells = <0>;
-> +	bus-width = <4>;
-
-bus-width = <4> is already defined in rk3308.dtsi,
-so remove or change value.
-
-> +	max-frequency = <1000000>;
-> +	cap-sd-highspeed;
-> +	cap-sdio-irq;
-
-> +	supports-sdio;
-
-supports-sdio is not mentioned in mmc-controller.yaml
-
-> +	keep-power-in-suspend;
-> +	mmc-pwrseq = <&sdio_pwrseq>;
-> +	non-removable;
-> +	sd-uhs-sdr104;
-> +	status = "okay";
-> +};
-
-From rk3308.dtsi:
-
-	emmc: dwmmc@ff490000 {
-		compatible = "rockchip,rk3308-dw-mshc", "rockchip,rk3288-dw-mshc";
-		reg = <0x0 0xff490000 0x0 0x4000>;
-		interrupts = <GIC_SPI 77 IRQ_TYPE_LEVEL_HIGH>;
-		bus-width = <8>;
-		clocks = <&cru HCLK_EMMC>, <&cru SCLK_EMMC>,
-			 <&cru SCLK_EMMC_DRV>, <&cru SCLK_EMMC_SAMPLE>;
-		clock-names = "biu", "ciu", "ciu-drv", "ciu-sample";
-		fifo-depth = <0x100>;
-		max-frequency = <150000000>;
-		status = "disabled";
-	};
-
-	sdmmc: dwmmc@ff480000 {
-		compatible = "rockchip,rk3308-dw-mshc", "rockchip,rk3288-dw-mshc";
-		reg = <0x0 0xff480000 0x0 0x4000>;
-		interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH>;
-		bus-width = <4>;
-		clocks = <&cru HCLK_SDMMC>, <&cru SCLK_SDMMC>,
-			 <&cru SCLK_SDMMC_DRV>, <&cru SCLK_SDMMC_SAMPLE>;
-		clock-names = "biu", "ciu", "ciu-drv", "ciu-sample";
-		fifo-depth = <0x100>;
-		max-frequency = <150000000>;
-		pinctrl-names = "default";
-		pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_det &sdmmc_bus4>;
-		status = "disabled";
-	};
-
-	sdio: dwmmc@ff4a0000 {
-		compatible = "rockchip,rk3308-dw-mshc", "rockchip,rk3288-dw-mshc";
-		reg = <0x0 0xff4a0000 0x0 0x4000>;
-		interrupts = <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
-		bus-width = <4>;
-		clocks = <&cru HCLK_SDIO>, <&cru SCLK_SDIO>,
-			 <&cru SCLK_SDIO_DRV>, <&cru SCLK_SDIO_SAMPLE>;
-		clock-names = "biu", "ciu", "ciu-drv", "ciu-sample";
-		fifo-depth = <0x100>;
-		max-frequency = <150000000>;
-		pinctrl-names = "default";
-		pinctrl-0 = <&sdio_bus4 &sdio_cmd &sdio_clk>;
-		status = "disabled";
-	};
-
-From host.c:
-
-	device_property_read_bool(dev, "non-removable");
-	device_property_read_bool(dev, "cd-inverted");
-	device_property_read_bool(dev, "broken-cd");
-	device_property_read_bool(dev, "wp-inverted");
-	device_property_read_bool(dev, "disable-wp");
-	device_property_read_u32(dev, "bus-width", &bus_width);
-	device_property_read_u32(dev, "max-frequency", &host->f_max);
-	if (device_property_read_bool(dev, "cap-sd-highspeed"))
-		host->caps |= MMC_CAP_SD_HIGHSPEED;
-	if (device_property_read_bool(dev, "cap-mmc-highspeed"))
-		host->caps |= MMC_CAP_MMC_HIGHSPEED;
-	if (device_property_read_bool(dev, "sd-uhs-sdr12"))
-		host->caps |= MMC_CAP_UHS_SDR12;
-	if (device_property_read_bool(dev, "sd-uhs-sdr25"))
-		host->caps |= MMC_CAP_UHS_SDR25;
-	if (device_property_read_bool(dev, "sd-uhs-sdr50"))
-		host->caps |= MMC_CAP_UHS_SDR50;
-	if (device_property_read_bool(dev, "sd-uhs-sdr104"))
-		host->caps |= MMC_CAP_UHS_SDR104;
-	if (device_property_read_bool(dev, "sd-uhs-ddr50"))
-		host->caps |= MMC_CAP_UHS_DDR50;
-	if (device_property_read_bool(dev, "cap-power-off-card"))
-		host->caps |= MMC_CAP_POWER_OFF_CARD;
-	if (device_property_read_bool(dev, "cap-mmc-hw-reset"))
-		host->caps |= MMC_CAP_HW_RESET;
-	if (device_property_read_bool(dev, "cap-sdio-irq"))
-		host->caps |= MMC_CAP_SDIO_IRQ;
-	if (device_property_read_bool(dev, "full-pwr-cycle"))
-		host->caps2 |= MMC_CAP2_FULL_PWR_CYCLE;
-	if (device_property_read_bool(dev, "keep-power-in-suspend"))
-		host->pm_caps |= MMC_PM_KEEP_POWER;
-	if (device_property_read_bool(dev, "wakeup-source") ||
-	    device_property_read_bool(dev, "enable-sdio-wakeup")) /* legacy */
-		host->pm_caps |= MMC_PM_WAKE_SDIO_IRQ;
-	if (device_property_read_bool(dev, "mmc-ddr-3_3v"))
-		host->caps |= MMC_CAP_3_3V_DDR;
-	if (device_property_read_bool(dev, "mmc-ddr-1_8v"))
-		host->caps |= MMC_CAP_1_8V_DDR;
-	if (device_property_read_bool(dev, "mmc-ddr-1_2v"))
-		host->caps |= MMC_CAP_1_2V_DDR;
-	if (device_property_read_bool(dev, "mmc-hs200-1_8v"))
-		host->caps2 |= MMC_CAP2_HS200_1_8V_SDR;
-	if (device_property_read_bool(dev, "mmc-hs200-1_2v"))
-		host->caps2 |= MMC_CAP2_HS200_1_2V_SDR;
-	if (device_property_read_bool(dev, "mmc-hs400-1_8v"))
-		host->caps2 |= MMC_CAP2_HS400_1_8V | MMC_CAP2_HS200_1_8V_SDR;
-	if (device_property_read_bool(dev, "mmc-hs400-1_2v"))
-		host->caps2 |= MMC_CAP2_HS400_1_2V | MMC_CAP2_HS200_1_2V_SDR;
-	if (device_property_read_bool(dev, "mmc-hs400-enhanced-strobe"))
-		host->caps2 |= MMC_CAP2_HS400_ES;
-	if (device_property_read_bool(dev, "no-sdio"))
-		host->caps2 |= MMC_CAP2_NO_SDIO;
-	if (device_property_read_bool(dev, "no-sd"))
-		host->caps2 |= MMC_CAP2_NO_SD;
-	if (device_property_read_bool(dev, "no-mmc"))
-		host->caps2 |= MMC_CAP2_NO_MMC;
-	device_property_read_u32(dev, "fixed-emmc-driver-type", &drv_type);
-	device_property_read_u32(dev, "post-power-on-delay-ms",
-				 &host->ios.power_delay_ms);
 
 _______________________________________________
 Linux-rockchip mailing list
