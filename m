@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BD94122416
-	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Dec 2019 06:51:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF861122607
+	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Dec 2019 08:59:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,119 +11,88 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Sf2UIo2GsoiZDZ9E5WgryaWTH6N/OWQVIxjcL+wUWEA=; b=AwZhNBx6VUj0Kz2JyfKBYhcBYq
-	CU/iKpJttAEZWg9F268YnEGkpxYTxDxM8sS/7Aw3CnEAbFH/Dhksfl2rW7hq6TTE1uUBtIY+YTdIY
-	ShXwAwGV0so+EGP72FctyyM8QJJIFR9odJrqm5FfhD2LJYvyACjnfvTTA5i4hyppi12LMA5B0iUVB
-	vc51Py/4kdxtlHhm9ytXHCdDenURw2EozvBKH0tUT+ieW7xvCw4iyIWYUzhsHZ6weg9J8lo9EQBYS
-	gjVRJky2XqW472A6/npHAqVOaPVtP6l+FSiCg8VcgFlZEnklN7peuzuPvrv6eEwVXQ09KVYXzaaHa
-	Bn1RdBvQ==;
+	bh=JOGgEGCp6Mg4jNlNxzQOqAZDGqNlFKTgHrixeDVgyyU=; b=cAoXRQVZd0czweYaVOkP/kuFsD
+	/xuuGVjgthswQRX6v8GEtu9koEJohP+SpHEFGG7J0KPS9isGmAY4OMCsj4OnbnbpP8wJ+hJQCSSJH
+	C+tckAPmwOlMuu3q5tijZX/GBkcIsEDlYPMQ1IyXK0nuEJ02SWrx2Y6+KkBoS1KWw224knCjQ2jfG
+	z+U1WQV8LDToYepTWZfZwOf8tGCZyK01ScD1uZUTBtCM/H5E7DPashGmZftKFIGtdZM35gt863Dkl
+	94tJAjhEWuYw+7oYJfQmgU13nW4pd7snOBY3VtMjYwAhsEiODgE+xE/RKSnGM9pHaFHEuCAAUJOfX
+	np8Jyx2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih5lt-0000lp-I3; Tue, 17 Dec 2019 05:51:49 +0000
-Received: from mailout1.samsung.com ([203.254.224.24])
+	id 1ih7lM-00018T-Se; Tue, 17 Dec 2019 07:59:24 +0000
+Received: from se14o.web-hosting.com ([198.54.122.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih5lM-0000KM-BO
- for linux-rockchip@lists.infradead.org; Tue, 17 Dec 2019 05:51:20 +0000
-Received: from epcas1p4.samsung.com (unknown [182.195.41.48])
- by mailout1.samsung.com (KnoxPortal) with ESMTP id
- 20191217055110epoutp01fa56f994b50f279c3740a4524155f1e1~hEqsQbU350956309563epoutp01G
- for <linux-rockchip@lists.infradead.org>; Tue, 17 Dec 2019 05:51:10 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com
- 20191217055110epoutp01fa56f994b50f279c3740a4524155f1e1~hEqsQbU350956309563epoutp01G
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1576561870;
- bh=X+3c4eWtnhc/wznu8yi8b2cClbqwmxlDm2znKapn0f8=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=HK0PttloJPSZGkm2HOam4m6COdIFX3az4tH/84FvBuGkNxvnn1MOv7vtj9VCP7/e8
- yFLcGhWxFGc5NqNkKVpCZ75rGORaTTtVRE0LJlqUMpay5zVqYCBGb1wbONBf5MVjuK
- ZN643ehFHJe+JzIlzhh2ICc1dG2pW4M+3P6iMkGY=
-Received: from epsnrtp4.localdomain (unknown [182.195.42.165]) by
- epcas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20191217055109epcas1p2fe070e79dde850225f8097f2757ef8b6~hEqrjfr242687526875epcas1p2g;
- Tue, 17 Dec 2019 05:51:09 +0000 (GMT)
-Received: from epsmges1p5.samsung.com (unknown [182.195.40.158]) by
- epsnrtp4.localdomain (Postfix) with ESMTP id 47cS1R3lVjzMqYkq; Tue, 17 Dec
- 2019 05:51:07 +0000 (GMT)
-Received: from epcas1p1.samsung.com ( [182.195.41.45]) by
- epsmges1p5.samsung.com (Symantec Messaging Gateway) with SMTP id
- BC.0D.51241.BCC68FD5; Tue, 17 Dec 2019 14:51:07 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas1p4.samsung.com (KnoxPortal) with ESMTPA id
- 20191217055107epcas1p44d46bdea7b326b86689f326742f5444a~hEqpBiy6C1997419974epcas1p4a;
- Tue, 17 Dec 2019 05:51:07 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20191217055106epsmtrp2474ac40aa2f41c24ce1585a5371746bf~hEqpAprtW1905819058epsmtrp2A;
- Tue, 17 Dec 2019 05:51:06 +0000 (GMT)
-X-AuditID: b6c32a39-163ff7000001c829-4d-5df86ccb17e9
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 7F.5D.10238.ACC68FD5; Tue, 17 Dec 2019 14:51:06 +0900 (KST)
-Received: from localhost.localdomain (unknown [10.113.221.102]) by
- epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20191217055106epsmtip15cd0260d03155575fcab99c904638b56~hEqolNbTZ3193831938epsmtip1Y;
- Tue, 17 Dec 2019 05:51:06 +0000 (GMT)
-From: Chanwoo Choi <cw00.choi@samsung.com>
-To: krzk@kernel.org, robh+dt@kernel.org, mark.rutland@arm.com,
- heiko@sntech.de, leonard.crestez@nxp.com, lukasz.luba@arm.com
-Subject: [PATCH 9/9] arm64: dts: exynos: Replace deprecated property for
- Exynos bus
-Date: Tue, 17 Dec 2019 14:57:38 +0900
-Message-Id: <20191217055738.28445-10-cw00.choi@samsung.com>
+ id 1ih7lD-0000zu-BY; Tue, 17 Dec 2019 07:59:16 +0000
+Received: from [68.65.123.203] (helo=server153.web-hosting.com)
+ by se17.registrar-servers.com with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.89)
+ (envelope-from <akash@openedev.com>)
+ id 1ih7kq-0001qs-Vx; Mon, 16 Dec 2019 23:59:03 -0800
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=openedev.com; s=default; h=References:In-Reply-To:Message-Id:Date:Subject:
+ Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=R87a5RKkPMIXSDaMNn8B5V31G8d9qxBmgAHocZfiGXE=; b=b1T/pbK6+PUKG4pumNpmxYKYL
+ 7CCgmSqVSwcxKOwKi968iCUa6Bi+i/iFRtctA8YHkU1ghnoWBT9BCHt42LAPYE5UJ6cgsSwAtXcZt
+ 2awgCvs/12QVwTyXyu0o70mrLRHUoXoB5trLPd1sSA4YviuYORcv87h4YfFtM7gFSrm3g6VFZH621
+ m5bTd53otp5FqRxjfqRBRq14m33BXqtUCSpK+qYqEIvbtGCmxHIEaxBHk71XCO/wzpCdPy3lYgXVb
+ 5TVVWJ9utg886vf45jnowyLI832oBKmrGrQKtkH9LpLj/La1Dcn5JuGxXXM1874qAbZnSmSxpy1BK
+ QjUFNQecw==;
+Received: from nat-inn.mentorg.com ([192.94.34.34]:44656
+ helo=akash-vm.inn-wifi.mentorg.com)
+ by server153.web-hosting.com with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
+ (envelope-from <akash@openedev.com>)
+ id 1ih7kj-003CWq-Tv; Tue, 17 Dec 2019 02:58:50 -0500
+From: Akash Gajjar <akash@openedev.com>
+To: heiko@sntech.de
+Subject: [PATCH 1/2] arch: arm64: rockchip: add usb node for RK3308
+Date: Tue, 17 Dec 2019 13:27:14 +0530
+Message-Id: <20191217075722.11646-2-akash@openedev.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191217055738.28445-1-cw00.choi@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrDJsWRmVeSWpSXmKPExsWy7bCmru7pnB+xBnNuy1jcn9fKaHH9y3NW
- i/lHzrFa/H/0mtWi//FrZovz5zewW5xtesNuseLuR1aLTY+vsVpc3jWHzeJz7xFGi08P/jNb
- zDi/j8liYVMLu8XaI3fZLZZev8hkcbtxBZtF694j7A5CHmvmrWH02LSqk81j85J6j43vdjB5
- 9G1Zxeix/do8Zo/Pm+QC2KOybTJSE1NSixRS85LzUzLz0m2VvIPjneNNzQwMdQ0tLcyVFPIS
- c1NtlVx8AnTdMnOA3lBSKEvMKQUKBSQWFyvp29kU5ZeWpCpk5BeX2CqlFqTkFFgW6BUn5haX
- 5qXrJefnWhkaGBiZAhUmZGe8WLeQueC0QMWUDyvZGxiP8HYxcnJICJhI/Lx2ha2LkYtDSGAH
- o8T1BVdYIZxPjBLzzs5mhnC+MUq83P+WBaald+stdojEXkaJ7zePQVV9YZQ4tOcsM0gVm4CW
- xP4XN9hAbBGBOon5h3cwgRQxC9xkkthz6RYrSEJYIFTix5l7YEUsAqoS/9u/gDXzClhL/Jq1
- hglinbzE6g0HwOKcQPHn216DDZIQ+M0m8WvydUaIIheJrpdLoWxhiVfHt7BD2FISn9/tZYOw
- qyVWnjzCBtHcwSixZf8FVoiEscT+pZOBpnIAnacpsX6XPkRYUWLn77lgM5kF+CTefe1hBSmR
- EOCV6GgTgihRlrj84C7UnZISi9s7oVZ5SNzfPQEakH2MErPWPmKcwCg3C2HDAkbGVYxiqQXF
- uempxYYFpsiRtokRnFK1LHcwHjvnc4hRgINRiYdXouR7rBBrYllxZe4hRgkOZiUR3h0KQCHe
- lMTKqtSi/Pii0pzU4kOMpsCgnMgsJZqcD0z3eSXxhqZGxsbGFiaGZqaGhkrivBw/LsYKCaQn
- lqRmp6YWpBbB9DFxcEo1MNpymfLu4D6ZuErzxNLtrz94W/opvctPqTphlXPUXaF934RKsfev
- ZzRKL5F6KSIpxqIv/M41vPXmYvNGH5tVrVeP+zz0Pb2ZJbJc5fyU129v7TWdfrpqdu0r+4W3
- XONDLXivRql6mZ3qre7ZcSvlS/mZ7y9FXVbGKUpKSHTmbPkw7WGE/AvlvUosxRmJhlrMRcWJ
- ALLxzCa/AwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrELMWRmVeSWpSXmKPExsWy7bCSnO6pnB+xBg/eWFjcn9fKaHH9y3NW
- i/lHzrFa/H/0mtWi//FrZovz5zewW5xtesNuseLuR1aLTY+vsVpc3jWHzeJz7xFGi08P/jNb
- zDi/j8liYVMLu8XaI3fZLZZev8hkcbtxBZtF694j7A5CHmvmrWH02LSqk81j85J6j43vdjB5
- 9G1Zxeix/do8Zo/Pm+QC2KO4bFJSczLLUov07RK4Ml6sW8hccFqgYsqHlewNjEd4uxg5OSQE
- TCR6t95iB7GFBHYzSjzpMoWIS0pMu3iUuYuRA8gWljh8uLiLkQuo5BOjxKMr78Hq2QS0JPa/
- uMEGYosItDFKLPkuB2IzCzxnktjXZQZiCwsES3RcOMYKYrMIqEr8b//CDGLzClhL/Jq1hgli
- l7zE6g0HwOKcQPHn214zQdxjJfFz6jPWCYx8CxgZVjFKphYU56bnFhsWGOallusVJ+YWl+al
- 6yXn525iBIe8luYOxstL4g8xCnAwKvHwSpR8jxViTSwrrsw9xCjBwawkwrtDASjEm5JYWZVa
- lB9fVJqTWnyIUZqDRUmc92nesUghgfTEktTs1NSC1CKYLBMHp1QDY9/qFp1Dv7qNp5/du/f0
- DN3NjEYf10ldVg6bt+b9rsemyTz6mjfls4/8KHONW/Iuy95aWy8n06htfZR80PR/f09P2BGj
- sMGI2fbW5dBPLku7K6SV9YpmX1ZU7J3Nvmhlt2CCU52RANNFs97KgP5bfUvCQ+cbxEo9D+7K
- PXyDT833ymzmr1G9SizFGYmGWsxFxYkArvwDlnUCAAA=
-X-CMS-MailID: 20191217055107epcas1p44d46bdea7b326b86689f326742f5444a
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20191217055107epcas1p44d46bdea7b326b86689f326742f5444a
-References: <20191217055738.28445-1-cw00.choi@samsung.com>
- <CGME20191217055107epcas1p44d46bdea7b326b86689f326742f5444a@epcas1p4.samsung.com>
+In-Reply-To: <20191217075722.11646-1-akash@openedev.com>
+References: <20191217075722.11646-1-akash@openedev.com>
+X-OutGoing-Spam-Status: No, score=-0.5
+X-Originating-IP: 68.65.123.203
+X-SpamExperts-Domain: nctest.net
+X-SpamExperts-Username: whmcalls3
+Authentication-Results: registrar-servers.com;
+ auth=pass (login) smtp.auth=whmcalls3@nctest.net
+X-SpamExperts-Outgoing-Class: ham
+X-SpamExperts-Outgoing-Evidence: Combined (0.02)
+X-Recommended-Action: accept
+X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0c2Pj46HODYmpAMVAv0J1pOpSDasLI4SayDByyq9LIhVkl0/6mQtv7IQ
+ 5XyI/N9/JkTNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3Kk502M/hntTzIKfCMISdhHQGg
+ t7nAtP8WjkKKy9v/mXRkty7kshl0qfjNTiHz6D+lTs1OFZCJnqICuBP35KwNAmisedSHrV8USIJy
+ ZKu4Q0eBPJf4fBJswECxJoMRbkC3SF2DuTVJlHUR2BtY80W8dG60QfvEMzMeJ6Rw9B2oZpcFefeT
+ nKVTea+Z7pU/97kaMRINxtYvoDPmxBEirO18GFgbEtxGbfWvsckv3Tqu01KJGGjsNnBvKhksFPgp
+ Ju7VRAUaZyvXYsGqun+gsnRrw40vpN++k/mRssszRiW/L+aVL5CXNSk/AzmiJysF8dLHRyryw85/
+ rAZb27+VZ3biGtaW8qQvbDNe5IP3ZP124DrwHHYNWMFQ3rxmq0HUMfG+c6Hob6r/eV86ndcww4rw
+ I1KDXPI3WaJIMv23OVswOmanvHgTJm4rUod0ueKDsCR8lJjuWToZaiaFIvhnz77Y+k6uhs/Q2KE1
+ Lby4XA9T8Bmj3saNZ0eUp3kqVmG1d7Vk62I39gyxRzRbm/p7lH0AcjkjHv8L1XCo8f/lClCdnQEw
+ egH725V8o9NmtwsOgq00IT3zX/Zzh6cpDYUl6c6Y0/5r1yWIc3jXLVN/s8cHerYtW55yLfDen/wr
+ oS11FXNac8XwfSk5a6wPi3PS+6vBhpISIqK1GdyQE0WyMBODOy30v1Op0AWqhD2stjbU32pojN4X
+ 8zAZfIZ8CjT9GInTMPN38Uyq3PQ8yDScr+8662B3D4UT/bdQYZMqtJwVgGaPV8GdcLPofFI165s+
+ Fi8oQNCwxvxuh+xtfMocbqMn/Qow8uvbAccZ4WWjZTIX9MhLKTjECb0PwpN4olPuA0AI93gbcx8Z
+ jKXXCSz+ofgapDj5Myrxgk8zlzkZR8hg4/tjCwvQy21RlJtzRtySOaj2KCrPuddk5deGGf9NlAkc
+ UjHoLHmfXm3j/a1RIl7l4OMYRnxfIvD0xWRSasqqxNnWfwc3A8r6JfNzxEm+Adh5Il9bsJFhaqar
+ dOLrAnCsmfJ3HSl/Lt1pDXWpU9yav05pkpLqd/jLmlb2xnK8kGSBOf+0oVhjP8JfMDDGeyVJfXrM
+ Z3+qi/5h4DZCfPGWm7MoPBOavov9A2tPRpxsJ/Ez2OT1H/aAwarQpYDOYx/6JtUOkfNK1xk8kTd1
+ Ny+HuiOkN2mAdCO+RVfxIo7mcAZ9GMPEl9B+0hmmdOnbSMz7Y9ZIgfFrL3927nPLXidUYhzTL/6b
+ zJY8ZLbVls9GTjTyP2j0DLjHCOlbYrvqvTn3lmAWHSgj8REt1LPAYpi/k8cuog==
+X-Report-Abuse-To: spam@se16.registrar-servers.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_215116_742055_0B2D08D8 
-X-CRM114-Status: GOOD (  16.02  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191216_235915_398743_AE16A64A 
+X-CRM114-Status: GOOD (  11.86  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.24 listed in wl.mailspike.net]
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.24 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -131,8 +100,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -145,98 +112,92 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-pm@vger.kernel.org, a.swigon@samsung.com, linux-kernel@vger.kernel.org,
- cw00.choi@samsung.com, kyungmin.park@samsung.com, myungjoo.ham@samsung.com,
- kgene@kernel.org, linux-rockchip@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ tom@radxa.com, linux-kernel@vger.kernel.org, kever.yang@rock-chips.com,
+ Kishon Vijay Abraham I <kishon@ti.com>, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
+ Andy Yan <andy.yan@rock-chips.com>, jagan@openedev.com,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Replace the property related to devfreq and devfreq-event device
-to remove the deprecated property name.
-- Replace 'devfreq' with 'exynos,parent-bus' property
-  for getting the parent devfreq device of exynos-bus.
-- Replace 'devfreq-events' with 'exynos,ppmu-device' property
-  for getting the devfreq-event device to monitor bus utilization.
+Add the ehci/ochi usb node support for the RK3308 soc.
 
-Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
+Signed-off-by: Akash Gajjar <akash@openedev.com>
 ---
- .../dts/exynos/exynos5433-tm2-common.dtsi     | 20 +++++++++----------
- 1 file changed, 10 insertions(+), 10 deletions(-)
+ arch/arm64/boot/dts/rockchip/rk3308.dtsi | 49 ++++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/exynos/exynos5433-tm2-common.dtsi b/arch/arm64/boot/dts/exynos/exynos5433-tm2-common.dtsi
-index 6f90b0e62cba..6bdd5b0940a5 100644
---- a/arch/arm64/boot/dts/exynos/exynos5433-tm2-common.dtsi
-+++ b/arch/arm64/boot/dts/exynos/exynos5433-tm2-common.dtsi
-@@ -166,54 +166,54 @@
- };
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+index 8bdc66c62975..4e51362b5373 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+@@ -243,6 +243,33 @@
+ 		status = "disabled";
+ 	};
  
- &bus_g2d_400 {
--	devfreq-events = <&ppmu_event0_d0_general>, <&ppmu_event0_d1_general>;
-+	exynos,ppmu-device = <&ppmu_event0_d0_general>, <&ppmu_event0_d1_general>;
- 	vdd-supply = <&buck4_reg>;
- 	exynos,saturation-ratio = <10>;
- 	status = "okay";
- };
++	usb2phy_grf: syscon@ff008000 {
++		compatible = "rockchip,rk3308-usb2phy-grf", "syscon",
++			"simple-mfd";
++		reg = <0x0 0xff008000 0x0 0x4000>;
++		#address-cells = <1>;
++		#size-cells = <1>;
++
++		u2phy: usb2-phy@100 {
++			compatible = "rockchip,rk3308-usb2phy";
++			reg = <0x100 0x10>;
++			clocks = <&cru SCLK_USBPHY_REF>;
++			clock-names = "phyclk";
++			#clock-cells = <0>;
++			assigned-clocks = <&cru USB480M>;
++			assigned-clock-parents = <&u2phy>;
++			clock-output-names = "usb480m_phy";
++			status = "disabled";
++
++			u2phy_host: host-port {
++				#phy-cells = <0>;
++				interrupts = <GIC_SPI 74 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-names = "linestate";
++				status = "disabled";
++			};
++		};
++	};
++
+ 	wdt: watchdog@ff080000 {
+ 		compatible = "snps,dw-wdt";
+ 		reg = <0x0 0xff080000 0x0 0x100>;
+@@ -584,6 +611,28 @@
+ 		status = "disabled";
+ 	};
  
- &bus_g2d_266 {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_gscl {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_hevc {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_jpeg {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_mfc {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_mscl {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_noc0 {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_noc1 {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_noc2 {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
++	usb_host_ehci: usb@ff440000 {
++		compatible = "generic-ehci";
++		reg = <0x0 0xff440000 0x0 0x10000>;
++		interrupts = <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&cru HCLK_HOST>, <&cru HCLK_HOST_ARB>, <&u2phy>;
++		clock-names = "usbhost", "arbiter", "utmi";
++		phys = <&u2phy_host>;
++		phy-names = "usb";
++		status = "disabled";
++	};
++
++	usb_host_ohci: usb@ff450000 {
++		compatible = "generic-ohci";
++		reg = <0x0 0xff450000 0x0 0x10000>;
++		interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&cru HCLK_HOST>, <&cru HCLK_HOST_ARB>, <&u2phy>;
++		clock-names = "usbhost", "arbiter", "utmi";
++		phys = <&u2phy_host>;
++		phy-names = "usb";
++		status = "disabled";
++	};
++
+ 	sdmmc: dwmmc@ff480000 {
+ 		compatible = "rockchip,rk3308-dw-mshc", "rockchip,rk3288-dw-mshc";
+ 		reg = <0x0 0xff480000 0x0 0x4000>;
 -- 
 2.17.1
 
