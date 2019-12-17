@@ -2,61 +2,123 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC73812239B
-	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Dec 2019 06:24:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90C8312241A
+	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Dec 2019 06:52:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YgJokwu+08rcgFeVYFEr0yG9qMLM91eogsZMvXOq/MI=; b=YTc0+VncCZQvm0
-	iRzJjp9xS3QizI5DttZ3xnK8A/4E9vfCDrKM7ej3xazO+6302wjvWKXkSKejzvLFq+FKLdorV6HGI
-	heQA8Wy3JQ4Q+HDVy8YmCVDuAGleAR9IzIDo4bx4h50Ajl2dMPR3QAjG/WTKh5VP+h87+WZdWAsvG
-	Va3CUHsTcnI/X/DSse2jhsnvX0OmZc+u9WIgvnO1ULqyc2kIArv6P0HBn0b+nBAcjpkVbG9sej0kU
-	jX6lVuuwSfU79g5jgXstq9egSkZ/Az8WlyIpqyG2PjG3ThdDMBtbPhqQfq56XrUjHRFfL5i36pD+G
-	XcwuJT17ZjmvKCj7Wd5g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	In-Reply-To:List-Owner; bh=Rjxp8+P/2ebC12QWEEj5pZlojpqmacAeKbxmeWfrdT0=; b=Kg
+	diKJrIL77nOlZrh7e9D8yxM2CIfZy4oY34zc8GNFrIgLZPWGVn7E7bZSFosBmJ3L2Oyz1vLuekqn0
+	kY3nzUx61nNBiRnQFXux33cJlWTEUXRBYrgQJRnzfmZzn0VBgAXIhnnWl+dLX03ZHWAiHtJCmcY1v
+	b2gnBY3Dl0DnRgrYXj1bGbaIeGSmFBXkP9L1WjZFiYaVIABuTaEZ2N+R5bhKwJ0Nrm3HHC+axNSWJ
+	kujb7lcZeTuR/eNJMzeCYIHhXVbLQAOei87AmQvGClFcJHf6wYLancCeJqORCDnbhhnsy+tYygr5U
+	QWc2NX8Af9HxDi6048E9w4BG6FgnQfYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih5Ku-0007Jh-RH; Tue, 17 Dec 2019 05:23:56 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ih5mT-0001Ik-HG; Tue, 17 Dec 2019 05:52:25 +0000
+Received: from mailout1.samsung.com ([203.254.224.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih5Ke-0007Bk-VP; Tue, 17 Dec 2019 05:23:42 +0000
-Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 889B12072B;
- Tue, 17 Dec 2019 05:23:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576560218;
- bh=gTBRUZTAj08OEJZUmrm/ewxMPRPrawoPjsr3dDQQ800=;
- h=From:To:Cc:Subject:Date:From;
- b=SSPOk5UWGjZTQF6arwuC5jG8hGqYNW46VN3fEW/EXcGphRgBAd8SLL9XMd9oAqlYc
- 5Uo82aPrM4+6gfnmxEVTCypMUFrPpQO2lb1/Bg8Sx8DHftePSkav+lA3nXRYLGUSQM
- DUYxQIXqlSuL6dT78rQO6yCxRJfX0bvcZJZmzS50=
-Received: by wens.tw (Postfix, from userid 1000)
- id 57AA75FCA8; Tue, 17 Dec 2019 13:23:36 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Zhang Rui <rui.zhang@intel.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH] thermal: rockchip: enable hwmon
-Date: Tue, 17 Dec 2019 13:23:28 +0800
-Message-Id: <20191217052328.25633-1-wens@kernel.org>
-X-Mailer: git-send-email 2.24.0
-MIME-Version: 1.0
+ id 1ih5lM-0000KN-CF
+ for linux-rockchip@lists.infradead.org; Tue, 17 Dec 2019 05:51:20 +0000
+Received: from epcas1p1.samsung.com (unknown [182.195.41.45])
+ by mailout1.samsung.com (KnoxPortal) with ESMTP id
+ 20191217055109epoutp010add0c4fb086d50c601e2408425e7829~hEqrOTkV70851208512epoutp01Z
+ for <linux-rockchip@lists.infradead.org>; Tue, 17 Dec 2019 05:51:09 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com
+ 20191217055109epoutp010add0c4fb086d50c601e2408425e7829~hEqrOTkV70851208512epoutp01Z
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1576561869;
+ bh=8KCqrRiUEVLa3021FF4CS5+nZP/tWBbnEr5rHbveB7c=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=feSl2LeYSKIJz2vnNOgg+fCucOp2aP4P9huSrsEQBoXjlmGy8lVVJ0fjTsIPThBZE
+ 4Z1pfbn++btNOwlPpRhEb1xsc2Or/LRBGJIs5JCpNkUK4hF5STm5+l3nTd2n1sMePF
+ ab8uoaF7HHQJC11merFhlx/naXuIsLwdwP1tgbTo=
+Received: from epsnrtp4.localdomain (unknown [182.195.42.165]) by
+ epcas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20191217055108epcas1p1218b944d39a70168aff3d834376885e4~hEqqmUrkv2681226812epcas1p1q;
+ Tue, 17 Dec 2019 05:51:08 +0000 (GMT)
+Received: from epsmges1p2.samsung.com (unknown [182.195.40.153]) by
+ epsnrtp4.localdomain (Postfix) with ESMTP id 47cS1P6jsDzMqYks; Tue, 17 Dec
+ 2019 05:51:05 +0000 (GMT)
+Received: from epcas1p4.samsung.com ( [182.195.41.48]) by
+ epsmges1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 36.C7.48498.9CC68FD5; Tue, 17 Dec 2019 14:51:05 +0900 (KST)
+Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
+ epcas1p3.samsung.com (KnoxPortal) with ESMTPA id
+ 20191217055105epcas1p365e306f27fd53852b793155c929ee634~hEqnhLQga1365213652epcas1p3m;
+ Tue, 17 Dec 2019 05:51:05 +0000 (GMT)
+Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
+ epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20191217055105epsmtrp27b2b1099645bc64a87516a9a1d1703dc~hEqngVJu31905819058epsmtrp27;
+ Tue, 17 Dec 2019 05:51:05 +0000 (GMT)
+X-AuditID: b6c32a36-a3dff7000001bd72-50-5df86cc990b4
+Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
+ epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ E9.7E.06569.9CC68FD5; Tue, 17 Dec 2019 14:51:05 +0900 (KST)
+Received: from localhost.localdomain (unknown [10.113.221.102]) by
+ epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20191217055105epsmtip1b7ee68403bfad60ee2748cfe982f1131~hEqnUMcXt3103131031epsmtip1Z;
+ Tue, 17 Dec 2019 05:51:05 +0000 (GMT)
+From: Chanwoo Choi <cw00.choi@samsung.com>
+To: krzk@kernel.org, robh+dt@kernel.org, mark.rutland@arm.com,
+ heiko@sntech.de, leonard.crestez@nxp.com, lukasz.luba@arm.com
+Subject: [PATCH 0/9] PM / devfreq: Remove deprecated 'devfreq' and
+ 'devfreq-events' properties
+Date: Tue, 17 Dec 2019 14:57:29 +0900
+Message-Id: <20191217055738.28445-1-cw00.choi@samsung.com>
+X-Mailer: git-send-email 2.17.1
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Sa0hTYRjuO2fn7BSuDrPLl1GtI0UK6o46/ZSUKI2V/hBCAmnZYTs4cbd2
+ 5rpSanZRspsFpWmZiZfKdI1ckS10IUVpppUZpmVROBNNraCgNk9R/57nfZ7nffne76VweQUZ
+ RGWbbLzVxBkYco7kVnuIMuyh4btG6e2IRYOVhwB6OfWRQBc9nQT69c5LoBPDXhx1dTVJ0ZOC
+ USmqG5ggkGP4BYF67lwg0WSJB6AvQ79wdK7rHoaqCgql6LpnQIpqXnZj6HV+HYkOtXqka+Xq
+ a5XXgNrRUESqb145oG4ec2Hq484GoG55UYmrJx3L0qQZOWv0PKfjrQrepDXrsk1ZCUzK5sz1
+ maoYJRvGxqFYRmHijHwCk5SaFrYh2+B7BqOwc4ZcXymNEwQmInGN1Zxr4xV6s2BLYHiLzmCJ
+ s4QLnFHINWWFa83GeFapjFT5jNtz9IPlVZjlBNw18mCSzAO98mIwm4J0NHzsrQTFYA4lp10A
+ dleMEiL5AmDZwUZSJF8B7B1xYn8jl8reSEShFcDPZz9hIpkCsK30sMTvIulQ6P7UR/rxfHo/
+ vNjumjHh9CsM3n3WT/iFQHo7/NlxeiYgoVfCluZx4McyOh4+GmwE4rjl8GrTfdwfhvRHErYP
+ tfgEykeS4NR4uugJhCMdTqmIg+DkWCsp4r2w/qGHFLNHAXS6nxKiEAXdNaWYvw9Oh8AbdyLE
+ 8gp4+0fFzFycngvHpo8R4igZPHr4z8KCYc/QwJ9NLIbVR4pI0aKG/cM5/rKc1sD3E4+wk2Bp
+ 2b/+lwBoAAt5i2DM4gXWEvn/LznAzGmGxrjA5c7UNkBTgAmQWezfNHKCswu7jW0AUjgzX+ZS
+ +EoyHbd7D281Z1pzDbzQBlS+3Z3CgxZozb5DN9kyWVVkVFQUimZjVCzLLJJR37s1cjqLs/E5
+ PG/hrX9zGDU7KA9E8/YMY9/Wqr6A6jOO1GfHUgpLpatbX5cnJ2ZHBmt76ULdpqTYVM1Eb+ee
+ 6RL3krnF294KG3d0ro119yRjtSUcmWwPnDiftqy51qtch0ZTirbM+1Afh83aX/r8p3ajJl3S
+ LDn57sN1/ai+ydkfIDy15zN3962aDh9ZELFzfF3iFCMR9BwbilsF7jdnY8IWsAMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrNLMWRmVeSWpSXmKPExsWy7bCSnO7JnB+xBkfeiVjcn9fKaHH9y3NW
+ i/lHzrFa/H/0mtWi//FrZovz5zewW5xtesNuseLuR1aLTY+vsVpc3jWHzeJz7xFGi08P/jNb
+ zDi/j8liYVMLu8XaI3fZLZZev8hkcbtxBZtF694j7A5CHmvmrWH02LSqk81j85J6j43vdjB5
+ 9G1Zxeix/do8Zo/Pm+QC2KO4bFJSczLLUov07RK4Mu7PXshU0C9R8eroZ7YGxitCXYycHBIC
+ JhILZt1j6WLk4hAS2M0ocfTUFFaIhKTEtItHmbsYOYBsYYnDh4shaj4xSrxbOA2shk1AS2L/
+ ixtsILaIQBujxJLvciA2s8BzJol9XWYgtrBAnETrqtOMIDaLgKrE9o0fwGxeASuJU/fXMULs
+ kpdYveEA8wRGngWMDKsYJVMLinPTc4sNC4zyUsv1ihNzi0vz0vWS83M3MYKDWEtrB+OJE/GH
+ GAU4GJV4eCVKvscKsSaWFVfmHmKU4GBWEuHdoQAU4k1JrKxKLcqPLyrNSS0+xCjNwaIkziuf
+ fyxSSCA9sSQ1OzW1ILUIJsvEwSnVwGgZ+XOS5/TFibt2n2neM2N2oOZPpr+py+5+eGw7+93S
+ zryYHyavv0zbMpdpb5DRueCCVmddq8L7lzw4SwVtsjJvcBhq73w5vXdR126W2b8yDjq0XH74
+ ov7CrJ+TtW96V9redl3BbPu+9/N7p/PxsnXC6h4S7/+oet+oCQyb+kZYsWpZQWT57WAlluKM
+ REMt5qLiRAABxhNSXgIAAA==
+X-CMS-MailID: 20191217055105epcas1p365e306f27fd53852b793155c929ee634
+X-Msg-Generator: CA
+X-Sendblock-Type: SVC_REQ_APPROVE
+CMS-TYPE: 101P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20191217055105epcas1p365e306f27fd53852b793155c929ee634
+References: <CGME20191217055105epcas1p365e306f27fd53852b793155c929ee634@epcas1p3.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_212341_031063_FE16DCA5 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20191216_215116_609527_3F48C58C 
+X-CRM114-Status: GOOD (  14.28  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [203.254.224.24 listed in wl.mailspike.net]
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ high trust [203.254.224.24 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -65,6 +127,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -78,57 +141,74 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-pm@vger.kernel.org, a.swigon@samsung.com, linux-kernel@vger.kernel.org,
+ cw00.choi@samsung.com, kyungmin.park@samsung.com, myungjoo.ham@samsung.com,
+ kgene@kernel.org, linux-rockchip@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Chen-Yu Tsai <wens@csie.org>
+The devfreq and devfreq-event subsystem provided the following two properties:
+- Provide 'devfreq' property in order to get the parent devfreq device
+  by devfreq_get_devfreq_by_phandle() if devfreq device use passive governor.
+- Provide 'devfreq-events' property in order to get the devfreq-event device
+  by devfreq_event_get_edev_by_phandle().
 
-By default of-based thermal driver do not have hwmon entries registered.
+But, two properties name is not proper expressing the h/w
+and 'devfreq' word is name of linux subsystem intead of any h/w name.
 
-Do this explicitly so users can use standard hwmon interfaces and tools
-to read the temperature.
+Hand over the rights for deciding the property name for getting
+the devfreq/devfreq-event device on devicetree, to each devfreq driver.
 
-This is based on similar changes for bcm2835_thermal in commit
-d56c19d07e0b ("thermal: bcm2835: enable hwmon explicitly").
+So, replace 'devfreq' and 'devfreq-events' property with following property
+name according to each devfreq driver:
+--------------------------------------------------------------------
+Old property  | New propert        | Device driver name            |
+--------------------------------------------------------------------
+devfreq       | exynos,parent-bus  | exynos-bus.c                  |
+              |                    |                               |
+devfreq-events| exynos,ppmu-device | exynos-bus.c, exynos5422-dmc.c|
+              | rockchip,dfi-device| rk3399_dmc.c                  |
+--------------------------------------------------------------------
 
-Signed-off-by: Chen-Yu Tsai <wens@csie.org>
----
- drivers/thermal/rockchip_thermal.c | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+Chanwoo Choi (8):
+  PM / devfreq: Remove devfreq_get_devfreq_by_phandle function
+  PM / devfreq: event: Add devfreq_event_get_edev_by_node function
+  PM / devfreq: exynos-bus: Replace deprecated 'devfreq' property
+  PM / devfreq: exynos-bus: Replace deprecated 'devfreq-events' property
+  PM / devfreq: rk3399_dmc: Replace deprecated 'devfreq-events' property
+  memory: samsung: exynos5422-dmc: Replace deprecated 'devfreq-events' property
+  ARM: dts: exynos: Replace deprecated property for Exynos bus and DMC
+  arm64: dts: exynos: Replace deprecated property for Exynos bus
 
-diff --git a/drivers/thermal/rockchip_thermal.c b/drivers/thermal/rockchip_thermal.c
-index 9ed8085bb792..d53ba7dabf16 100644
---- a/drivers/thermal/rockchip_thermal.c
-+++ b/drivers/thermal/rockchip_thermal.c
-@@ -19,6 +19,8 @@
- #include <linux/mfd/syscon.h>
- #include <linux/pinctrl/consumer.h>
- 
-+#include "thermal_hwmon.h"
-+
- /*
-  * If the temperature over a period of time High,
-  * the resulting TSHUT gave CRU module,let it reset the entire chip,
-@@ -1210,7 +1212,11 @@ rockchip_thermal_register_sensor(struct platform_device *pdev,
- 		return error;
- 	}
- 
--	return 0;
-+	/* thermal_zone doesn't enable hwmon as default, enable it here */
-+	sensor->tzd->tzp->no_hwmon = false;
-+	error = thermal_add_hwmon_sysfs(sensor->tzd);
-+
-+	return error;
- }
- 
- /**
+Leonard Crestez (1):
+  PM / devfreq: Add devfreq_get_devfreq_by_node function
+
+ .../bindings/devfreq/exynos-bus.txt           | 22 +++----
+ .../bindings/devfreq/rk3399_dmc.txt           |  4 +-
+ .../memory-controllers/exynos5422-dmc.txt     |  6 +-
+ arch/arm/boot/dts/exynos3250-monk.dts         |  2 +-
+ arch/arm/boot/dts/exynos3250-rinato.dts       | 18 +++---
+ .../boot/dts/exynos4412-itop-scp-core.dtsi    | 16 ++---
+ arch/arm/boot/dts/exynos4412-midas.dtsi       | 18 +++---
+ .../boot/dts/exynos4412-odroid-common.dtsi    | 18 +++---
+ arch/arm/boot/dts/exynos5422-odroid-core.dtsi | 34 +++++------
+ .../dts/exynos/exynos5433-tm2-common.dtsi     | 20 +++----
+ drivers/devfreq/devfreq-event.c               | 53 +++--------------
+ drivers/devfreq/devfreq.c                     | 25 +++-----
+ drivers/devfreq/exynos-bus.c                  | 58 ++++++++++++++++---
+ drivers/devfreq/rk3399_dmc.c                  | 16 ++++-
+ drivers/memory/samsung/exynos5422-dmc.c       | 37 ++++++++++--
+ include/linux/devfreq-event.h                 | 14 ++---
+ include/linux/devfreq.h                       |  6 +-
+ 17 files changed, 197 insertions(+), 170 deletions(-)
+
 -- 
-2.24.0
+2.17.1
 
 
 _______________________________________________
