@@ -2,69 +2,98 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4029512262A
-	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Dec 2019 09:03:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E94531226BF
+	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Dec 2019 09:35:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7obWFUNLe+Y7KI/zncNJkhRmPA74G4gOj8YbiJO/Pww=; b=l4NovwOLQhkGeR
-	ZBBK8R+R2LNKS/+3jkEvGh4gCFESTbTHi+K5llNhzOQIBAgf3DcuPaNPoIAFt2tR6P3w48TmEURiK
-	I0oeDZvOg2fErVrn70LH9gR9D1Ifw/hY4hNkZkn75nrskbZcwz9s5PVPkQb5Ks75cLKIQHY/rv/ag
-	4r+zuQRivnL7inqxPt0RW/nTMEaVt2VkmNb4p3jnfiScpai1r/MZzdJy9LoaYpWGtuALqbimD3xZM
-	K/KIGWBomICKNENbSTM+69Pxy3X1cb07ujmlhE00TNBR7En12WXzZPsOMvh46qIpo4ly9QJnrzps8
-	+1Kli7heBGamY3x0Ekqw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=n9+OYdMJZibQsL5qsYImCig7VLIifa67RpqGXrA/TUY=; b=k6F4yerMpecX9ZTBuH7r1yVFu3
+	faR7mrlWqB19vCmQUJUBxb/WVDZeLovay0FI1yrGfqLKZD+3/IJlaPH8bU+IiOSvLcpUTCABotmcW
+	pBAK+n9KhZrh5MCx1a234wlY2/XJ/ini5thwUnUcXVYrkbn+7y5B/XFRseYk/jOtoR7xuKprqMLo4
+	0HSt46PclqlRmo09c4rEn3xE2TXQq0jxhfCI0xdtGBE0yUfmz4Wf2luo97c6qao1tlhYW4yVVwpla
+	O6DNJrZuVT+ofHUM13OxTgKz2f2pe1JJX7yfiL9eCJxPuF8p7lUFKwdWQy1n+36t7+pGTl7Lg9JSJ
+	nWlQtj0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih7pD-0004As-UX; Tue, 17 Dec 2019 08:03:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ih8K2-00074b-9G; Tue, 17 Dec 2019 08:35:14 +0000
+Received: from se15e.web-hosting.com ([198.54.122.209])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih7oy-0003zn-1l; Tue, 17 Dec 2019 08:03:09 +0000
-Received: from mail-wr1-f42.google.com (mail-wr1-f42.google.com
- [209.85.221.42])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 74F2924676;
- Tue, 17 Dec 2019 08:03:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576569787;
- bh=25HsI9t+Bqog4y9A5SHa9MC0k7uJ8M9CNTOiEeQd6Js=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=DvMpZbB7IMXqeX4QWcO8IidCczC9xn9mkLwwqoYLgM5vsug6dsyrsPkNlUjElcdjj
- o7hy5AimWrV23+EW+uPpkq77mQ7qWPhxDGeFqm4k5dgwaFkhibUekR6YfYCfhrZZsp
- wyJwXhekHJQfP01vpqFUQkUgm9WV1sjfrFo2bYIw=
-Received: by mail-wr1-f42.google.com with SMTP id y17so10201143wrh.5;
- Tue, 17 Dec 2019 00:03:07 -0800 (PST)
-X-Gm-Message-State: APjAAAWt4LWBLoSeKCualy9pEtTQhfkNr5A2I8rliES8X/4NOuhwyRO+
- xQm7kClLxEjhd6psmcxE/6nIHaoyDLho6r+tCWE=
-X-Google-Smtp-Source: APXvYqzf3OsaJa9aVxYfyxYMjeroNjRrzOjIIzFzUrGof8GRCCHuk/JVJP69n/Ph+I/wKcqIgvXDGi2L7XlZJ9tfLAY=
-X-Received: by 2002:a05:6000:11c6:: with SMTP id
- i6mr36083863wrx.178.1576569785910; 
- Tue, 17 Dec 2019 00:03:05 -0800 (PST)
-MIME-Version: 1.0
-References: <20191217052328.25633-1-wens@kernel.org>
- <7f2be28d-9bf5-79a8-8720-4615a4e9f463@linaro.org>
-In-Reply-To: <7f2be28d-9bf5-79a8-8720-4615a4e9f463@linaro.org>
-From: Chen-Yu Tsai <wens@kernel.org>
-Date: Tue, 17 Dec 2019 16:02:53 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65TA0patyNO_xw0gpWR62N4Q_40amFW9OUh7jat3f9J8g@mail.gmail.com>
-Message-ID: <CAGb2v65TA0patyNO_xw0gpWR62N4Q_40amFW9OUh7jat3f9J8g@mail.gmail.com>
-Subject: Re: [PATCH] thermal: rockchip: enable hwmon
-To: Daniel Lezcano <daniel.lezcano@linaro.org>
+ id 1ih8Jl-0005l2-Az; Tue, 17 Dec 2019 08:34:58 +0000
+Received: from [68.65.123.203] (helo=server153.web-hosting.com)
+ by se15.registrar-servers.com with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.89)
+ (envelope-from <akash@openedev.com>)
+ id 1ih7l4-0002DN-R6; Mon, 16 Dec 2019 23:59:09 -0800
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=openedev.com; s=default; h=References:In-Reply-To:Message-Id:Date:Subject:
+ Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=diOgM+1bEFTCStq0UeCQsuK8N2c5AS/suGJiaKd7qsU=; b=gBTyf2nP2LL9YXnxdGBwJQCDY
+ rUG9U4ZtV2zu5fEnIaDyZSCWJewbmuOjZm+77bZxtWH0peTGJlsfIG7v46+eGsLUCk+303YmG8EFH
+ YQb8VB/UDqcbETISz5g/TpY010Iu+GYMR0tp2fqZsztVIfcRRrGbwBO6FmbZ/D6X7Lq/H6MWhKbvL
+ uBguk72zOaKAdMionpcrnd4qBYtUg7eRMYDA8dQ/1wMUmlEah0PxbjqbeLSll2W8PIGC3I2ysgzlK
+ qBTMUSHNBak1pDeZFxHkP1lMm8xWldrGDgC6Qtze810vzVY9YhaRACBORzf7s7B9+8TIsC4bqjzI9
+ U2icuvKtA==;
+Received: from nat-inn.mentorg.com ([192.94.34.34]:44656
+ helo=akash-vm.inn-wifi.mentorg.com)
+ by server153.web-hosting.com with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
+ (envelope-from <akash@openedev.com>)
+ id 1ih7kz-003CWq-MW; Tue, 17 Dec 2019 02:59:06 -0500
+From: Akash Gajjar <akash@openedev.com>
+To: heiko@sntech.de
+Subject: [PATCH 2/2] phy: phy-rockchip-inno-usb2: add usb2-phy support for
+ RK3308 SoC
+Date: Tue, 17 Dec 2019 13:27:15 +0530
+Message-Id: <20191217075722.11646-3-akash@openedev.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191217075722.11646-1-akash@openedev.com>
+References: <20191217075722.11646-1-akash@openedev.com>
+X-OutGoing-Spam-Status: No, score=-1.0
+X-Originating-IP: 68.65.123.203
+X-SpamExperts-Domain: nctest.net
+X-SpamExperts-Username: whmcalls3
+Authentication-Results: registrar-servers.com;
+ auth=pass (login) smtp.auth=whmcalls3@nctest.net
+X-SpamExperts-Outgoing-Class: ham
+X-SpamExperts-Outgoing-Evidence: Combined (0.02)
+X-Recommended-Action: accept
+X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0c2Pj46HODYmpAMVAv0J1pOpSDasLI4SayDByyq9LIhV5dqwct359/CV
+ xZICQFYJSkTNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3Kk502M/hntTzIKfCMISdhHQGg
+ t7nAtP8WjkKKy9v/mXRkty7kshl0qfjNTiHz6D+lTs1OFZCJnqICuBP35KwNAmisedSHrV8USIJy
+ ZKu4Q0eBPJf4fBJswECxJoMRbkC3SF2DuTVJlHUR2BtY80W8dG60QfvEMzMeJ6Rw9B2oZpcFefeT
+ nKVTea+Z7pU/97kaMRINxtYvoDPmxBEirO18GFgbEtxGbfWvsckv3Tqu01KJGGjsNnBvKhksFPgp
+ Ju7VRAUaZyvXYsGqun+gsnRrw40vpN++k/mRssszRiW/L+aVL5CXNSk/AzmiJysF8dLHRyryw85/
+ rAZb27+VZ3biGtaW8qQvbDNe5IP3ZP124DrwHHYNWMFQ3rxmq0HUMfG+c6Hob6r/eV86ndcww4rw
+ IzAvtpjiIeRlwI+LpEJwnKenvHgTJm4rUod0ueKDsCR8lJjuWToZaiaFIvhnz77Y+k6uhs/Q2KE1
+ Lby4XA9T8Bmj3saNZ0eUp3kqVmG1d7Vk0NCCILyLLaQ9eQTOszvxQTkjHv8L1XCo8f/lClCdnQEw
+ egH725V8o9NmtwsOgq00IT3zX/Zzh6cpDYUl6c6Y0/5r1yWIc3jXLVN/s8cHerYtW55yLfDen/wr
+ oS11FXNac8XwfSk5a6wPi3PS+6vBhpISIqK1GdyQE0WyMBODOy30v1Op0AWqhD2stjbU32pojN4X
+ 8zAZfIZ8CjT9GInTMPN38Uyq3PQ8yDScr+8662B3D4UT/bdQYZMqtJwVgGaPV8GdcLPofFI165s+
+ Fi8oQNCwxvxuh+xtfMocbqMn/Qow8uvbAccZ4WWjZTIX9MhLKTjECb0PwpN4olPuA0AI93gbcx8Z
+ jKXXCSz+ofgapDj5Myrxgk8zlzkZR8hg4/tjCwvQy21RlJtzRtySOaj2KPqMwd2r4+trrKXkWu7f
+ x8D6z8uZdl1/53Cf3G9hN76KRnxfIvD0xWRSasqqxNnWfwc3A8r6JfNzxEm+Adh5Il9bsJFhaqar
+ dOLrAnCsmfJ3HSl/Lt1pDXWpU9yav05pkiyHpQ9cOADsvE/xCV8jXdQF5Hew752uew/O2uwTJhUB
+ Z3+qi/5h4DZCfPGWm7MoPBOavov9A2tPRpxsJ/Ez2OT1H/aAwarQpYDOYx/6JtUOkfNK1xk8kTd1
+ Ny+HuiOkN2mAdCO+RVfxIo7mcAZ9GMPEl9B+0hmmdOnbSMz7Y9ZIgfFrL3927nPLXidUYhzTL/6b
+ zJY8ZLbVls9GTjTyP2j0DLjHCOlbYrvqvTn3lmAWHSgj8REt1LPAYpi/k8cuog==
+X-Report-Abuse-To: spam@se16.registrar-servers.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_000308_133111_CAC167BD 
-X-CRM114-Status: GOOD (  20.16  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191217_003457_432043_01016526 
+X-CRM114-Status: GOOD (  13.74  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -72,7 +101,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,55 +113,105 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Amit Kucheria <amit.kucheria@verdurent.com>,
- Heiko Stuebner <heiko@sntech.de>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Zhang Rui <rui.zhang@intel.com>, Chen-Yu Tsai <wens@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ tom@radxa.com, linux-kernel@vger.kernel.org, kever.yang@rock-chips.com,
+ Kishon Vijay Abraham I <kishon@ti.com>, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
+ Andy Yan <andy.yan@rock-chips.com>, jagan@openedev.com,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBEZWMgMTcsIDIwMTkgYXQgNDowMSBQTSBEYW5pZWwgTGV6Y2Fubwo8ZGFuaWVsLmxl
-emNhbm9AbGluYXJvLm9yZz4gd3JvdGU6Cj4KPgo+IEhpIENoZW4tWXUsCj4KPiBPbiAxNy8xMi8y
-MDE5IDA2OjIzLCBDaGVuLVl1IFRzYWkgd3JvdGU6Cj4gPiBGcm9tOiBDaGVuLVl1IFRzYWkgPHdl
-bnNAY3NpZS5vcmc+Cj4gPgo+ID4gQnkgZGVmYXVsdCBvZi1iYXNlZCB0aGVybWFsIGRyaXZlciBk
-byBub3QgaGF2ZSBod21vbiBlbnRyaWVzIHJlZ2lzdGVyZWQuCj4gPgo+ID4gRG8gdGhpcyBleHBs
-aWNpdGx5IHNvIHVzZXJzIGNhbiB1c2Ugc3RhbmRhcmQgaHdtb24gaW50ZXJmYWNlcyBhbmQgdG9v
-bHMKPiA+IHRvIHJlYWQgdGhlIHRlbXBlcmF0dXJlLgo+ID4KPiA+IFRoaXMgaXMgYmFzZWQgb24g
-c2ltaWxhciBjaGFuZ2VzIGZvciBiY20yODM1X3RoZXJtYWwgaW4gY29tbWl0Cj4gPiBkNTZjMTlk
-MDdlMGIgKCJ0aGVybWFsOiBiY20yODM1OiBlbmFibGUgaHdtb24gZXhwbGljaXRseSIpLgo+Cj4g
-VGhhbmtzIGZvciBzdWJtaXR0aW5nIHRoaXMgcGF0Y2gsIGJ1dCBpdCBpcyBkdXBsaWNhdGUgd2l0
-aDoKPgo+IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xpbnV4LWFybS1rZXJuZWwvMjAxOTEyMTIw
-NjE3MDIuQkZFMkQ2RTg1NjAzQGNvcm9uYS5jcmFiZGFuY2UuY29tLwo+Cj4gd2hpY2ggSSBwaWNr
-ZWQgdXAuCgpObyBwcm9ibGVtLiBUaGFua3MgZm9yIHRoZSBwb2ludGVyLgoKQ2hlbll1Cgo+ICAg
-LS0gRGFuaWVsCj4KPgo+ID4gU2lnbmVkLW9mZi1ieTogQ2hlbi1ZdSBUc2FpIDx3ZW5zQGNzaWUu
-b3JnPgo+ID4gLS0tCj4gPiAgZHJpdmVycy90aGVybWFsL3JvY2tjaGlwX3RoZXJtYWwuYyB8IDgg
-KysrKysrKy0KPiA+ICAxIGZpbGUgY2hhbmdlZCwgNyBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9u
-KC0pCj4gPgo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvdGhlcm1hbC9yb2NrY2hpcF90aGVybWFs
-LmMgYi9kcml2ZXJzL3RoZXJtYWwvcm9ja2NoaXBfdGhlcm1hbC5jCj4gPiBpbmRleCA5ZWQ4MDg1
-YmI3OTIuLmQ1M2JhN2RhYmYxNiAxMDA2NDQKPiA+IC0tLSBhL2RyaXZlcnMvdGhlcm1hbC9yb2Nr
-Y2hpcF90aGVybWFsLmMKPiA+ICsrKyBiL2RyaXZlcnMvdGhlcm1hbC9yb2NrY2hpcF90aGVybWFs
-LmMKPiA+IEBAIC0xOSw2ICsxOSw4IEBACj4gPiAgI2luY2x1ZGUgPGxpbnV4L21mZC9zeXNjb24u
-aD4KPiA+ICAjaW5jbHVkZSA8bGludXgvcGluY3RybC9jb25zdW1lci5oPgo+ID4KPiA+ICsjaW5j
-bHVkZSAidGhlcm1hbF9od21vbi5oIgo+ID4gKwo+ID4gIC8qCj4gPiAgICogSWYgdGhlIHRlbXBl
-cmF0dXJlIG92ZXIgYSBwZXJpb2Qgb2YgdGltZSBIaWdoLAo+ID4gICAqIHRoZSByZXN1bHRpbmcg
-VFNIVVQgZ2F2ZSBDUlUgbW9kdWxlLGxldCBpdCByZXNldCB0aGUgZW50aXJlIGNoaXAsCj4gPiBA
-QCAtMTIxMCw3ICsxMjEyLDExIEBAIHJvY2tjaGlwX3RoZXJtYWxfcmVnaXN0ZXJfc2Vuc29yKHN0
-cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYsCj4gPiAgICAgICAgICAgICAgIHJldHVybiBlcnJv
-cjsKPiA+ICAgICAgIH0KPiA+Cj4gPiAtICAgICByZXR1cm4gMDsKPiA+ICsgICAgIC8qIHRoZXJt
-YWxfem9uZSBkb2Vzbid0IGVuYWJsZSBod21vbiBhcyBkZWZhdWx0LCBlbmFibGUgaXQgaGVyZSAq
-Lwo+ID4gKyAgICAgc2Vuc29yLT50emQtPnR6cC0+bm9faHdtb24gPSBmYWxzZTsKPiA+ICsgICAg
-IGVycm9yID0gdGhlcm1hbF9hZGRfaHdtb25fc3lzZnMoc2Vuc29yLT50emQpOwo+ID4gKwo+ID4g
-KyAgICAgcmV0dXJuIGVycm9yOwo+ID4gIH0KPiA+Cj4gPiAgLyoqCj4gPgo+Cj4KPiAtLQo+ICA8
-aHR0cDovL3d3dy5saW5hcm8ub3JnLz4gTGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ugc29mdHdh
-cmUgZm9yIEFSTSBTb0NzCj4KPiBGb2xsb3cgTGluYXJvOiAgPGh0dHA6Ly93d3cuZmFjZWJvb2su
-Y29tL3BhZ2VzL0xpbmFybz4gRmFjZWJvb2sgfAo+IDxodHRwOi8vdHdpdHRlci5jb20vIyEvbGlu
-YXJvb3JnPiBUd2l0dGVyIHwKPiA8aHR0cDovL3d3dy5saW5hcm8ub3JnL2xpbmFyby1ibG9nLz4g
-QmxvZwo+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpM
-aW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJv
-Y2tjaGlwCg==
+This patch adds usb2-phy support for RK3308 SoCs and amend phy Documentation.
+
+Signed-off-by: Akash Gajjar <akash@openedev.com>
+---
+ .../bindings/phy/phy-rockchip-inno-usb2.txt   |  1 +
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 44 +++++++++++++++++++
+ 2 files changed, 45 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt b/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt
+index 541f5298827c..e978aad34d3f 100644
+--- a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt
++++ b/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt
+@@ -5,6 +5,7 @@ Required properties (phy (parent) node):
+ 	* "rockchip,px30-usb2phy"
+ 	* "rockchip,rk3228-usb2phy"
+ 	* "rockchip,rk3328-usb2phy"
++	* "rockchip,rk3308-usb2phy"
+ 	* "rockchip,rk3366-usb2phy"
+ 	* "rockchip,rk3399-usb2phy"
+ 	* "rockchip,rv1108-usb2phy"
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+index 680cc0c8825c..9fe817486ea1 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+@@ -1256,6 +1256,49 @@ static const struct rockchip_usb2phy_cfg rk3228_phy_cfgs[] = {
+ 	{ /* sentinel */ }
+ };
+ 
++static const struct rockchip_usb2phy_cfg rk3308_phy_cfgs[] = {
++	{
++		.reg = 0x100,
++		.num_ports	= 2,
++		.clkout_ctl	= { 0x0108, 4, 4, 1, 0 },
++		.port_cfgs	= {
++			[USB2PHY_PORT_OTG] = {
++				.phy_sus	= { 0x0100, 8, 0, 0, 0x1d1 },
++				.bvalid_det_en	= { 0x3020, 2, 2, 0, 1 },
++				.bvalid_det_st	= { 0x3024, 2, 2, 0, 1 },
++				.bvalid_det_clr = { 0x3028, 2, 2, 0, 1 },
++				.ls_det_en	= { 0x3020, 0, 0, 0, 1 },
++				.ls_det_st	= { 0x3024, 0, 0, 0, 1 },
++				.ls_det_clr	= { 0x3028, 0, 0, 0, 1 },
++				.utmi_avalid	= { 0x0120, 10, 10, 0, 1 },
++				.utmi_bvalid	= { 0x0120, 9, 9, 0, 1 },
++				.utmi_ls	= { 0x0120, 5, 4, 0, 1 },
++			},
++			[USB2PHY_PORT_HOST] = {
++				.phy_sus	= { 0x0104, 8, 0, 0, 0x1d1 },
++				.ls_det_en	= { 0x3020, 1, 1, 0, 1 },
++				.ls_det_st	= { 0x3024, 1, 1, 0, 1 },
++				.ls_det_clr	= { 0x3028, 1, 1, 0, 1 },
++				.utmi_ls	= { 0x120, 17, 16, 0, 1 },
++				.utmi_hstdet	= { 0x120, 19, 19, 0, 1 }
++			}
++		},
++		.chg_det = {
++			.opmode		= { 0x0100, 3, 0, 5, 1 },
++			.cp_det		= { 0x0120, 24, 24, 0, 1 },
++			.dcp_det	= { 0x0120, 23, 23, 0, 1 },
++			.dp_det		= { 0x0120, 25, 25, 0, 1 },
++			.idm_sink_en	= { 0x0108, 8, 8, 0, 1 },
++			.idp_sink_en	= { 0x0108, 7, 7, 0, 1 },
++			.idp_src_en	= { 0x0108, 9, 9, 0, 1 },
++			.rdm_pdwn_en	= { 0x0108, 10, 10, 0, 1 },
++			.vdm_src_en	= { 0x0108, 12, 12, 0, 1 },
++			.vdp_src_en	= { 0x0108, 11, 11, 0, 1 },
++		},
++	},
++	{ /* sentinel */ }
++};
++
+ static const struct rockchip_usb2phy_cfg rk3328_phy_cfgs[] = {
+ 	{
+ 		.reg = 0x100,
+@@ -1425,6 +1468,7 @@ static const struct rockchip_usb2phy_cfg rv1108_phy_cfgs[] = {
+ static const struct of_device_id rockchip_usb2phy_dt_match[] = {
+ 	{ .compatible = "rockchip,px30-usb2phy", .data = &rk3328_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3228-usb2phy", .data = &rk3228_phy_cfgs },
++	{ .compatible = "rockchip,rk3308-usb2phy", .data = &rk3308_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3328-usb2phy", .data = &rk3328_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3366-usb2phy", .data = &rk3366_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3399-usb2phy", .data = &rk3399_phy_cfgs },
+-- 
+2.17.1
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
