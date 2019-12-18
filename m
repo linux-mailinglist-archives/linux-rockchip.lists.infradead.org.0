@@ -2,83 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEADA12564F
-	for <lists+linux-rockchip@lfdr.de>; Wed, 18 Dec 2019 23:09:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1DF412565E
+	for <lists+linux-rockchip@lfdr.de>; Wed, 18 Dec 2019 23:15:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WN8zyAbaN3H+xi1tIds+izV8iYSNe+0N66WMd6JUFzk=; b=n7zCJmluJQO+fM
-	PGnBc5oagXH+VXqqbI64yogfxwtqYxM7R4qvRNbx75BcFXIghta0h9ZmJy9IP08f6KakTcYeRZsD3
-	czpJ2V64HuN1ObK3ypWgY24HakvyZzmC5wKz5oDT6zx5Wb75M8EWQmx2U1w1n3pKypADD8/i2+0GO
-	ohzniMnveamajsrQl/IKlq4Go8W8DRokKLW7EH9eMFuOXXrZ9AZTypz5fN99IEBZsBXiP2as/NZHp
-	aFoHeu5f6dTfhYRArZWEtxn0KYcEEZkOIutHBgxiReGt9JjrQ70qK/FzjDNHY+WkvbpgcSQT4/yKe
-	Fh7o0xGzSRKYyte8Y/GA==;
+	List-Owner; bh=2Les8p/fdXsghOcPOSaJgXWIdwnBEE83P6RMM1b9zMI=; b=bJ41UgkAbZyscF
+	miyVNHymG0BocLREJO5MN0Ez/BrSSHy+lguNUwNC2xKyKMapBjwhyhIIZLc9l2XMXFYqtop5J2XLP
+	N8Afl0oHiH44IdcpsXTl7M6v26SdEv8KPLdSDLNEY1tg36ob5bXQE3YixwJdKOGT7z+2OHBkYrENJ
+	rn1+hAQtRGrhMJjFH+Zdfmo8exaMdGEkYb5W8S7a0HsxNMRQF6b1sAfoMcsvpqdM5I5zMTIUrV2Rt
+	MvAeyaDQ12UsR+F+NZrB/m+0FvT6nRyziXezTCX6XdNUZFzhMKcUGcpMmutAZqEErBXBAbv5eQdFa
+	nhFbwb4tHId3bnXtoakQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihhVo-0003Ey-5D; Wed, 18 Dec 2019 22:09:44 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1ihhbj-0007Kb-7L; Wed, 18 Dec 2019 22:15:51 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihhPr-0004k7-9U
- for linux-rockchip@lists.infradead.org; Wed, 18 Dec 2019 22:03:37 +0000
-Received: by mail-ot1-f65.google.com with SMTP id 59so4298617otp.12
- for <linux-rockchip@lists.infradead.org>; Wed, 18 Dec 2019 14:03:34 -0800 (PST)
+ id 1ihhbX-0007Ay-6w; Wed, 18 Dec 2019 22:15:40 +0000
+Received: by mail-ot1-f68.google.com with SMTP id p8so4342157oth.10;
+ Wed, 18 Dec 2019 14:15:38 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=qCCYItpj+3VsG3DKSCp5gCe88YZojJMWbpQw+wbr1Yw=;
- b=eLg/PJG8rPaxDVf1OlMjjL2Bj3Sc3VEH87T6otupi7o7BYsWDbRGY8Wz2dj64uoDop
- iKChQaFR662j8Kc1dHMNtzI06b/kK9+YN7YklwsgxzyWFvlQe7X2xS9PccepStE0Bc6T
- 2/gzJOCS1MOOTU7ek5JJJ6qUKQ+a/EqdS/NG60e8bvpDY4g3k1k0JwZETN9QemGiFH4h
- LCJBZ9EZmrZ/+FZs8rFPdtD4OBXcvIoMARbghyjTuDUuqgM8pulMJgP+Ct5AZAUB8fqb
- SIq26hXWlz3nb0uuw/7F+JnUI1dj80HLemlNAXOVYoiiKP2R42j/D0Iy/6sqfnQxHIZH
- BnHw==
-X-Gm-Message-State: APjAAAWxTwvW2i7Aroq2e98y2UnJ4QQTRGHoGyeaaXdm7Qi5uICqdLDE
- d4na49VKT0LejyILG22SHg==
-X-Google-Smtp-Source: APXvYqwkQ1gEbk+bOgm2/fXfvDu4L5fE9n6LUxXNNWIUZdfBZtYFpFr/3T3xbcmVF7Tzj5vHc26FTg==
-X-Received: by 2002:a05:6830:1499:: with SMTP id
- s25mr4838252otq.223.1576706614162; 
- Wed, 18 Dec 2019 14:03:34 -0800 (PST)
+ bh=E8QNYLhSSLLibIm1kZjDoiOQpQC1DNZLoqpFwXuZW3A=;
+ b=k50Das+poY7fvqOAQBT/K7XYaaXL7w+Yh7AdHnjoaM070DOYwTsGcomHwBFvYp2GeJ
+ nMAvK8gVERHAGliynal29ZI96PvkmIUBpffqOjCZV+P9OGr3dGps0CaUtBwLmVz94D9h
+ HASIRoEf0Cnp03q4g0FJPLM9MSecLu3FK89Q4XlO8wFhoL0723Bkyamrn4XtRJUMdfBa
+ WEjoL2zQonocyDaa0yv8UIZVMvjE+k140pCRMXl/n6bqsH6bO+7gD0jkBCpywXI+33oV
+ IhXyskViez80UT91jrUz3inRz7tM6z6yAIeoQ6q5bgvpbDtTy11ruPb0c+FY2xRL/9rZ
+ w/nQ==
+X-Gm-Message-State: APjAAAU3z8N4hLnWtubTufld5MhS+SQTF46hvbASQD8q/an0Yg/cujYr
+ RM8JoBOV5z4YTOTeWIEcDA==
+X-Google-Smtp-Source: APXvYqxbsuqp+Q5pltR9/cjYWkBjYlpqcAOa2oySxbaVfYzkDPTaEZs731kr8mefYacuVUAq7T78Yg==
+X-Received: by 2002:a9d:6396:: with SMTP id w22mr5120271otk.364.1576707338086; 
+ Wed, 18 Dec 2019 14:15:38 -0800 (PST)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id m2sm1253207oim.13.2019.12.18.14.03.33
+ by smtp.gmail.com with ESMTPSA id w8sm1270084ote.80.2019.12.18.14.15.37
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Dec 2019 14:03:33 -0800 (PST)
-Date: Wed, 18 Dec 2019 16:03:32 -0600
+ Wed, 18 Dec 2019 14:15:37 -0800 (PST)
+Date: Wed, 18 Dec 2019 16:15:36 -0600
 From: Rob Herring <robh@kernel.org>
-To: Boris Brezillon <boris.brezillon@collabora.com>
-Subject: Re: [PATCH v3 5/7] media: dt-bindings: rockchip: Document RK3399
- Video Decoder bindings
-Message-ID: <20191218220332.GA3813@bogus>
-References: <20191213125414.90725-1-boris.brezillon@collabora.com>
- <20191213125414.90725-6-boris.brezillon@collabora.com>
+To: Jagan Teki <jagan@amarulasolutions.com>
+Subject: Re: [PATCH v3 1/4] dt-bindings: arm: rockchip: Add Rock Pi N10 binding
+Message-ID: <20191218221536.GA20127@bogus>
+References: <20191216174711.17856-1-jagan@amarulasolutions.com>
+ <20191216174711.17856-2-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191213125414.90725-6-boris.brezillon@collabora.com>
+In-Reply-To: <20191216174711.17856-2-jagan@amarulasolutions.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_140335_338270_D85C9AA5 
-X-CRM114-Status: GOOD (  10.46  )
+X-CRM114-CacheID: sfid-20191218_141539_252565_8A79C7FF 
+X-CRM114-Status: GOOD (  10.83  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
+ no trust [209.85.210.68 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
@@ -95,32 +92,34 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- kernel@collabora.com, Heiko Stuebner <heiko@sntech.de>,
- Jonas Karlman <jonas@kwiboo.se>, Tomasz Figa <tfiga@chromium.org>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Sakari Ailus <sakari.ailus@iki.fi>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Nicolas Dufresne <nicolas@ndufresne.ca>, Hans Verkuil <hans.verkuil@cisco.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
+ Heiko Stuebner <heiko@sntech.de>, Tom Cubie <tom@radxa.com>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Akash Gajjar <akash@openedev.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org,
+ Jagan Teki <jagan@amarulasolutions.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, 13 Dec 2019 13:54:12 +0100, Boris Brezillon wrote:
-> Document the Rockchip RK3399 Video Decoder bindings.
+On Mon, 16 Dec 2019 23:17:08 +0530, Jagan Teki wrote:
+> Rock Pi N10 is a Rockchip RK3399Pro based SBC, which has
+> - VMARC RK3399Pro SOM (as per SMARC standard) from Vamrs.
+> - Compatible carrier board from Radxa.
 > 
-> Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+> VMARC RK3399Pro SOM need to mount on top of dalang carrier
+> board for making Rock PI N10 SBC.
+> 
+> Add dt-bindings for it.
+> 
+> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 > ---
-> Changes in v3:
-> * Fix dtbs_check failures
-> ---
->  .../bindings/media/rockchip,vdec.yaml         | 71 +++++++++++++++++++
->  1 file changed, 71 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/rockchip,vdec.yaml
+> Changes for v3:
+> - Move som binding on board side
+> 
+>  Documentation/devicetree/bindings/arm/rockchip.yaml | 6 ++++++
+>  1 file changed, 6 insertions(+)
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
