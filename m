@@ -2,72 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CC65126E9C
-	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Dec 2019 21:19:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFFC2126EAA
+	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Dec 2019 21:21:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P3Thw8ZRaIDR2JFIBVM/ODk4/1o+ZgVtutWq4b5Rydc=; b=aEtRG2zQeuErJ0
-	KT5RsFuEdwySFtR3EHSSUVsfLAwmPoa5fsbZEnChljsJ8sx8jbBxKJsgDdhe0N7xHkn7Bk1UWvFQn
-	BYciYQjC0I6FcTUHLg2je+9Mx0LeBUruBTGLaVZUEQVggbt+ueQJ4AfbdboMDjEz7vW95ANv9SFXC
-	/izp1tMy/9IfvHl0J/xzHeEGqEWQ38D17mJN9AK2YRh4F3DSuYFwhSmAruaTW5iFWZShX0ifBZVu3
-	/03US0MXU+K3KNvB7gw7uWUMJ203tTGxUqWFrEv/bcgwj5Ah+DWT++fcmWyo/6TI6OUKhi14VeFZG
-	O+7M3XDe3ENR50d8dNZQ==;
+	List-Owner; bh=j/ek9qyD10ulXKwCuNlLjWlKyzkCf3nfAqIYwekM63o=; b=HbwLBW3LYGANMY
+	/MOEd4NErEzfUBUL2G3P8Xaaqj3l7B/taX1uOKD4hWD0ipwBMG8ShEX8xdOotHKbGG49WGSw7bHP6
+	lHxUDF5jCr/1cI0HaScMgQjpUm6//ulqBN/h67PRwnzPQ6IMffirHd95A5c31EKt4AdivcZWQJLJp
+	BawYKfDl0XISJ0AbRM4b84A/2OaUiwNHG8jg71/kvFkkpAtfZjpBBBliA0F7sb6x1djQcZsnLcIjw
+	OCbUNHVYnoqO1Mww9MKxisix/qCc59oGV87dntTY2xFEV2l3Rtlusd3qyrxgYsZhL931D2PjvGUn9
+	e5Y48n7a/CStz+9Dq7zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii2Gm-00068r-Si; Thu, 19 Dec 2019 20:19:36 +0000
-Received: from mail-ed1-f67.google.com ([209.85.208.67])
+	id 1ii2Iq-0007qH-7Z; Thu, 19 Dec 2019 20:21:44 +0000
+Received: from mail-ed1-f66.google.com ([209.85.208.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii2GZ-0005zi-Qo; Thu, 19 Dec 2019 20:19:25 +0000
-Received: by mail-ed1-f67.google.com with SMTP id j17so6150521edp.3;
- Thu, 19 Dec 2019 12:19:22 -0800 (PST)
+ id 1ii2Ic-0007fE-VH; Thu, 19 Dec 2019 20:21:32 +0000
+Received: by mail-ed1-f66.google.com with SMTP id r21so6158760edq.0;
+ Thu, 19 Dec 2019 12:21:30 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=1z6z1Ui8LL1nkwwIvcM2qSFeAknNPztf5Dw5KcO2dK8=;
- b=hWSm16Dfjp9rzpPZ9Gl1+pffSeWis4vvNVLytCCBBYfena5kMNmHy+WuxgD9DzKDhE
- Sd1dmqQ94gzEh6IwBE3s9jIiTzdy7codpGdYHvCnGxzyDn75ima6R+ndIM4sZg18wDUM
- 7BgpAoUGlkkwn6vdDBef/+fERqSwtP02UyzxFuaSsN0g28S68Maa6or+FC/IHvyW3fr6
- AYtiOa06L3Vhn8MEFiaVkGGrLJ/X65yMPGg+h/qPXzgNIWJXRu5FmlXVBLgBgYD4VRGw
- hUwV5gwXLdEq6mC45sBeTI9mrlybNN/F8PRkAsN6ddHMaQkM7ygv6mJxBipFXMEO+I/4
- t7cg==
-X-Gm-Message-State: APjAAAU+lTmXstJ35722+54mC/eKYRfYuWRl6fbwvCcGr5Od8XILaW5k
- AqRxK1BdCKq+qDbQAfokZsw=
-X-Google-Smtp-Source: APXvYqwwejroRBv27RRKI+KjHOuS4q02b2b9jWEyzsgC2C9l3pOef3KwtMfRZqXDwDfmgHuveS0ogQ==
-X-Received: by 2002:a17:906:5606:: with SMTP id
- f6mr11822819ejq.179.1576786761612; 
- Thu, 19 Dec 2019 12:19:21 -0800 (PST)
+ bh=GR1PmJOvhGpPpzVfO8kgGmz6p0Ok+BYanL+ypVYCuIo=;
+ b=n4YrVpEBwbvFXgItQxDtiZzaSAn0IcEeyTe5ChiPeptQ1sjhYZArK5zn+4FyHHCWIi
+ fuPFLtNQ/XKmDJqodPX5fl2EhFcNlbYW2rS+tl6m7Rpzsfe/xiApY0o0NcRCWZbyjQ3J
+ r0A9IohjdlpRL7YOyzh4zS/3PLF2VQYjDnZzfWpJMVvMApYHNFYsHy/Qyx8wgDDppuRD
+ 41gbd66HCQb0A8Dsrv4k6sGWsbO4fH9xR6LgNnu67aBQT2lEqHTZMf4XzCJHxX08FqPP
+ Mhs5CfCPzuKJb+h3r9dRHO55yJlw6a4DpyKfZre8vFkP5iSkqoPbC+l7zEdkY0seXQuP
+ TW9Q==
+X-Gm-Message-State: APjAAAWOoqXUm9ZTlb6IMutBEh8iR2HwLIwczVJ31ZFHfbFowJBhDxL4
+ wPo52/bGHP3xriNjnHUvWO7dL0Yr
+X-Google-Smtp-Source: APXvYqwZwMHJTRig+SXE0kz2DegMMU7qPuSgopAX7Pwr9Y8S6Q8VfZ+NYpDzWXBIncow4tB/gDtDLA==
+X-Received: by 2002:a17:906:4a12:: with SMTP id
+ w18mr11475789eju.321.1576786889413; 
+ Thu, 19 Dec 2019 12:21:29 -0800 (PST)
 Received: from kozik-lap ([194.230.155.234])
- by smtp.googlemail.com with ESMTPSA id m2sm626166edp.85.2019.12.19.12.19.19
+ by smtp.googlemail.com with ESMTPSA id u25sm722974ejb.53.2019.12.19.12.21.27
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 19 Dec 2019 12:19:20 -0800 (PST)
-Date: Thu, 19 Dec 2019 21:19:17 +0100
+ Thu, 19 Dec 2019 12:21:28 -0800 (PST)
+Date: Thu, 19 Dec 2019 21:21:26 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Chanwoo Choi <cw00.choi@samsung.com>
-Subject: Re: [PATCH 7/9] memory: samsung: exynos5422-dmc: Replace deprecated
- 'devfreq-events' property
-Message-ID: <20191219201917.GA21576@kozik-lap>
+Subject: Re: [PATCH 8/9] ARM: dts: exynos: Replace deprecated property for
+ Exynos bus and DMC
+Message-ID: <20191219202126.GB21576@kozik-lap>
 References: <20191217055738.28445-1-cw00.choi@samsung.com>
- <CGME20191217055106epcas1p2c43a45e34983c1b3e60cc6fd842dd33e@epcas1p2.samsung.com>
- <20191217055738.28445-8-cw00.choi@samsung.com>
+ <CGME20191217055106epcas1p4c0f65bec74e53b38d95e984e146bf8b6@epcas1p4.samsung.com>
+ <20191217055738.28445-9-cw00.choi@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191217055738.28445-8-cw00.choi@samsung.com>
+In-Reply-To: <20191217055738.28445-9-cw00.choi@samsung.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_121923_868854_1BF0A705 
-X-CRM114-Status: GOOD (  19.31  )
+X-CRM114-CacheID: sfid-20191219_122131_005670_CB95D1FB 
+X-CRM114-Status: GOOD (  12.62  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.67 listed in list.dnswl.org]
+ no trust [209.85.208.66 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -75,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  provider (k.kozlowski.k[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.67 listed in wl.mailspike.net]
+ [209.85.208.66 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -102,56 +102,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Dec 17, 2019 at 02:57:36PM +0900, Chanwoo Choi wrote:
-> In order to remove the deprecated 'devfreq-events' property, replace with
-> new 'exynos,ppmu-device' property in order to get the devfreq-event device
-> in devicetree file instead of 'devfreq-events' property. But, to guarantee
-> the backward-compatibility, keep the support 'devfreq-events' property.
+On Tue, Dec 17, 2019 at 02:57:37PM +0900, Chanwoo Choi wrote:
+> Replace the property related to devfreq and devfreq-event device
+> to remove the deprecated property name.
+> - Replace 'devfreq' with 'exynos,parent-bus' property
+>   for getting the parent devfreq device of exynos-bus.
+> - Replace 'devfreq-events' with 'exynos,ppmu-device' property
+>   for getting the devfreq-event device to monitor bus utilization.
 > 
 > Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
 > ---
->  .../memory-controllers/exynos5422-dmc.txt     |  6 ++--
->  drivers/memory/samsung/exynos5422-dmc.c       | 29 +++++++++++++++----
->  2 files changed, 26 insertions(+), 9 deletions(-)
-
-In general looks good for me but I need an ack from Rob.  Patch should
-be also split and sent as one of first in the series (before code).
-
+>  arch/arm/boot/dts/exynos3250-monk.dts         |  2 +-
+>  arch/arm/boot/dts/exynos3250-rinato.dts       | 18 +++++-----
+>  .../boot/dts/exynos4412-itop-scp-core.dtsi    | 16 ++++-----
+>  arch/arm/boot/dts/exynos4412-midas.dtsi       | 18 +++++-----
+>  .../boot/dts/exynos4412-odroid-common.dtsi    | 18 +++++-----
+>  arch/arm/boot/dts/exynos5422-odroid-core.dtsi | 34 +++++++++----------
+>  6 files changed, 53 insertions(+), 53 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt b/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt
-> index 02e4a1f862f1..1e1b3702f045 100644
-> --- a/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt
-> +++ b/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt
-> @@ -17,14 +17,14 @@ Required properties for DMC device for Exynos5422:
->  - clock-names : should include "fout_spll", "mout_sclk_spll", "ff_dout_spll2",
->    "fout_bpll", "mout_bpll", "sclk_bpll", "mout_mx_mspll_ccore",
->    "mout_mclk_cdrex"  entries
-> -- devfreq-events : phandles for PPMU devices connected to this DMC.
-> +- exynos,ppmu-device : phandles for PPMU devices connected to this DMC.
->  - vdd-supply : phandle for voltage regulator which is connected.
->  - reg : registers of two CDREX controllers.
->  - operating-points-v2 : phandle for OPPs described in v2 definition.
->  - device-handle : phandle of the connected DRAM memory device. For more
->  	information please refer to documentation file:
->  	Documentation/devicetree/bindings/ddr/lpddr3.txt
-> -- devfreq-events : phandles of the PPMU events used by the controller.
-> +- exynos,ppmu-device : phandles of the PPMU events used by the controller.
->  - samsung,syscon-clk : phandle of the clock register set used by the controller,
->  	these registers are used for enabling a 'pause' feature and are not
->  	exposed by clock framework but they must be used in a safe way.
-> @@ -73,7 +73,7 @@ Example:
->  			      "mout_mx_mspll_ccore",
->  			      "mout_mclk_cdrex";
->  		operating-points-v2 = <&dmc_opp_table>;
-> -		devfreq-events = <&ppmu_event3_dmc0_0>,	<&ppmu_event3_dmc0_1>,
-> +		exynos,ppmu-device = <&ppmu_event3_dmc0_0>, <&ppmu_event3_dmc0_1>,
->  				 <&ppmu_event3_dmc1_0>, <&ppmu_event3_dmc1_1>;
 
-Indentation is broken here.
+It will have to wait till next release, after driver changes get
+accepted.
 
 Best regards,
 Krzysztof
-
 
 _______________________________________________
 Linux-rockchip mailing list
