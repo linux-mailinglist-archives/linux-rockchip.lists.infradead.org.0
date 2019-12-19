@@ -2,69 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 496ED1260E5
-	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Dec 2019 12:35:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90CB212621A
+	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Dec 2019 13:23:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EZdey3V4GdSB/pdUTdDZCxBxgTozfQMNRsnPdy5yPFA=; b=ZjkWi7WzxizhBO
-	Km1QhVYADa9DU+1CGVQP4dAUqn4HQ13/yt2I5lsw/+bPE0FMNt5f7bou2CQKY7k47/8tTfY/m3To4
-	s5473/5rGug8LWfO3USybUTVM6IQcEigfBMs7vUgC+pyOGesWeT1JGzLdS6O8PgVxoamPwajHNpyc
-	2so0W+3RxXcN99IukV2es+eo9kS8rOLaill5re4kuFzITcxqCCBTaSc79EK/y142Vtg+iPGUTe5pG
-	TitYG1iDO/oE7qjG1hwt/9UEp9sC4nscIgmWV8IPGK6me7oobLkCSpAfq4qTSePnaojnBkzHQoHRr
-	sCbxqNQyHGM+r5d3c3AA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=HOLLkPG/ebm52xOwHlbDUZ4S3ANK+m3ZAfGnf43QNok=; b=pmn
+	eq5SVoZNXN7WNxS+YVchgeOg6EjjXjYjjzG3zcFSBaLCOp7flX4qfnV0NEGa9xPwLRpiHhUViBr4P
+	qFV2IZU8ekTjNSTAFbQp/YIfM1AgbFjA6Fa2xNoWF3c9xLZvJtkeZ37elcXkoB3g98VYI6sHTBXFl
+	7skT41fyArm6aSuTS+JWPT2hOXpFqBG+o/jMUOA7U1cG3eVHTiuil++XwMqFeBbm/dtrkq2GhJ6L0
+	XnoSyP+vMS7tmxp7o2VkvONEXLZE4pb/03RZmcDz9M0l9XwCvS7esiTOVVCO2r65Rdpngn7Ht2le2
+	e4AIfyUdhbHUYMqlTFZi610ZCj9pGtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihu50-0002Ju-La; Thu, 19 Dec 2019 11:34:54 +0000
-Received: from dougal.metanate.com ([90.155.101.14] helo=metanate.com)
+	id 1ihuqN-000790-Vu; Thu, 19 Dec 2019 12:23:51 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihu4y-0002JK-7S
- for linux-rockchip@lists.infradead.org; Thu, 19 Dec 2019 11:34:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=simple/simple; d=metanate.com; 
- s=stronger;
- h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=+t6meyLimxsT415ahj+53VXcHIGJZ/WJo/94BvkPdTY=; b=UlGRgHp21+xHu2nMO7AWkfEW4A
- mDEXjAbJflenPqPZLThzcCYXiA70nWlPSpejUMm9Jcsvml+WyBVWjOXD4eosyP1uYGWuIfROYCC06
- zinHZgjgBhQZ8WcGHE9c8NQFqbilFl5FGF0sw/lZ2Jz4+g0cjJ7j/uqu2LweRSCoDVfh3rVBC+WaU
- +IJcBeNvDZdbOKOxBKpBKKrt8BHf4ED2A1yj7UuBgrSv41+HDCpDl3yOZxjAc3dGQ+24A9z5DnVnW
- JrY93X8Es0bzPFnrils6GJxnstoRzH9Q96pgh2vwsV/ruk5O8m67ERaGHKMPgjnKNvhri5baM3skh
- ZrRIiehA==;
-Received: from 188-39-28-98.static.enta.net ([188.39.28.98]
- helo=donbot.metanate.com)
- by email.metanate.com with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
- (Exim 4.93) (envelope-from <john@metanate.com>)
- id 1ihu4k-00024T-7h; Thu, 19 Dec 2019 11:34:38 +0000
-From: John Keeping <john@metanate.com>
-To: Minas Harutyunyan <hminas@synopsys.com>
-Subject: [PATCH 2/2] usb: dwc2: fix debugfs FIFO count
-Date: Thu, 19 Dec 2019 11:34:32 +0000
-Message-Id: <20191219113432.1229852-2-john@metanate.com>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20191219113432.1229852-1-john@metanate.com>
-References: <20191219113432.1229852-1-john@metanate.com>
-MIME-Version: 1.0
-X-Authenticated: YES
+ id 1ihumj-0002b3-Gv; Thu, 19 Dec 2019 12:20:07 +0000
+Received: by mail-wr1-x442.google.com with SMTP id t2so5789381wrr.1;
+ Thu, 19 Dec 2019 04:20:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=aNzr7uADzXwgMWgQOC3rwaap/EsCtVbWxu1DV9lbYTI=;
+ b=AQL19xGMDNf8Su966j6w9GZkLDtN0SklpROZhSdWqJfzPIyEYM2Ay5BVpI/Bb7SxFc
+ HoEofmHrKU9MxPo+feUmp3iulC6Fz2Kevlg4GEt1lUjpF1VZvnLx9stP6WC8tEEm5WTK
+ AWfpIRnMZt50mCdM4J2DSNL7P9vD+6tImOat8RkpHJcaC1Ad4FU1DhR7/+KZd6c8aasA
+ LPmYguFz/URpNAOL3AC0Z4oaUZrbSv5os/aXWmxlLhWxOOAQ5tIZg8obquNKuDm8mACJ
+ kzlMVrBInvbEevv+j0/Q9q0YQVXbGBPiX+SIBbKpF5Hm7wfXvkus4Ap/2Imx1ySA0XrA
+ d9NA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=aNzr7uADzXwgMWgQOC3rwaap/EsCtVbWxu1DV9lbYTI=;
+ b=C6DazULUcnk664/1Prjokeg/QwYgaJy5Mp9+De/T8UCGfdo4PF3qu2V4bTY9TRbXmD
+ KDHGLsQndFdMFX8spJf0Uo280BZdo8lc3lOEQrEgr5m92gsibxp3FC71AHpxT8zec84d
+ gBwDPD0O7HMgP5xgoLuhNZ870AlNHCSwttf0MkfRLvtnldv9ZhFWosMzYq3DGjpfu2/G
+ 94b3Gv13n4vh+S3SGqSwzDNBTMTzk4ZYYSzV6/gz7fxiGVkVnfmQRhr4XdsF03XM2sU0
+ Aj3NJ+6arF5ZPgUlPzDTfaHQ9cdygJ8Kimg5ld8DEePoAqffL9DjJi9Ak4ITO1UIX13Q
+ qEbA==
+X-Gm-Message-State: APjAAAX8l1/KVcE8fYz87Z1hchxAbRfuvQ5nCQ+PWQM6lcufXkdHHT60
+ Qn2GaVJx7sCfLlw/UvNm/Og=
+X-Google-Smtp-Source: APXvYqyM3rObdh2zrtMyax+r4jGia6vz+7rratVPDgZ7CSMUV9HDNGUZ1rDlGNQBSxwCcM7wyW8/zw==
+X-Received: by 2002:adf:ef0b:: with SMTP id e11mr9111224wro.128.1576758002289; 
+ Thu, 19 Dec 2019 04:20:02 -0800 (PST)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id t8sm6237738wrp.69.2019.12.19.04.20.01
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 19 Dec 2019 04:20:01 -0800 (PST)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] arm64: dts: rockchip: remove disable-wp from rk3308-roc-cc
+ emmc node
+Date: Thu, 19 Dec 2019 13:19:54 +0100
+Message-Id: <20191219121954.2450-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_033452_262883_A7B1DAB3 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191219_042005_672816_0108440B 
+X-CRM114-Status: GOOD (  11.27  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jbx6244[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (jbx6244[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,45 +95,39 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- John Keeping <john@metanate.com>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The number of FIFOs may be lower than the number of endpoints.  Use the
-correct total when printing FIFO details in debugfs.
+The mmc-controller.yaml didn't explicitly say disable-wp is
+for SD card slot only, but that is what it was designed for
+in the first place.
+Remove all disable-wp from emmc or sdio controllers.
 
-Signed-off-by: John Keeping <john@metanate.com>
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- drivers/usb/dwc2/debugfs.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/drivers/usb/dwc2/debugfs.c b/drivers/usb/dwc2/debugfs.c
-index b8f2790abf91..3a0dcbfbc827 100644
---- a/drivers/usb/dwc2/debugfs.c
-+++ b/drivers/usb/dwc2/debugfs.c
-@@ -183,6 +183,7 @@ DEFINE_SHOW_ATTRIBUTE(state);
- static int fifo_show(struct seq_file *seq, void *v)
- {
- 	struct dwc2_hsotg *hsotg = seq->private;
-+	int fifo_count = dwc2_hsotg_tx_fifo_count(hsotg);
- 	u32 val;
- 	int idx;
- 
-@@ -196,7 +197,7 @@ static int fifo_show(struct seq_file *seq, void *v)
- 
- 	seq_puts(seq, "\nPeriodic TXFIFOs:\n");
- 
--	for (idx = 1; idx < hsotg->num_of_eps; idx++) {
-+	for (idx = 1; idx <= fifo_count; idx++) {
- 		val = dwc2_readl(hsotg, DPTXFSIZN(idx));
- 
- 		seq_printf(seq, "\tDPTXFIFO%2d: Size %d, Start 0x%08x\n", idx,
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts b/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts
+index aa256350b..23527daa7 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts
+@@ -125,7 +125,6 @@
+ &emmc {
+ 	bus-width = <8>;
+ 	cap-mmc-highspeed;
+-	disable-wp;
+ 	mmc-hs200-1_8v;
+ 	non-removable;
+ 	status = "okay";
 -- 
-2.24.1
+2.11.0
 
 
 _______________________________________________
