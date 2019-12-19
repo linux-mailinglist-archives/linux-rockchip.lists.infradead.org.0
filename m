@@ -2,68 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 441891268BC
-	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Dec 2019 19:11:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CC65126E9C
+	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Dec 2019 21:19:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PI4mQWHmn9epSi4Lnc+mQUCs5iFLltfxXUBx0tCgRfU=; b=lUaovd7dZKQgs3
-	VPuYx/MuFTXtiZGBHAjpus8n+Kbkb39OWXYLzxO42aMdGt19jkR7RzJrvD1c9guzAI5rFpiPlcy2W
-	Kl+5UXvue+XoDxTfzC3mo/LXwztnszjwytSBZqJWGGvw5mTaRzVu0CsD3aM0MJHOr3Pc9y44E0aik
-	tDH5r+F1ZnOTl1gyxLqoRvlADcbTqcqaqHNbWIgXMdE4P4DxN8238sfkAvhOPzCcau3oewVBLJC0Q
-	fGvXuWoVR4oKTr2cdf4g1Ny6h0hQuPj1thiHhsdcnLAKl84G6ykgVyS4B6OICyuaKYq5q5uKWxIWD
-	Lpk9THIUAx/1bJoLD7Ig==;
+	List-Owner; bh=P3Thw8ZRaIDR2JFIBVM/ODk4/1o+ZgVtutWq4b5Rydc=; b=aEtRG2zQeuErJ0
+	KT5RsFuEdwySFtR3EHSSUVsfLAwmPoa5fsbZEnChljsJ8sx8jbBxKJsgDdhe0N7xHkn7Bk1UWvFQn
+	BYciYQjC0I6FcTUHLg2je+9Mx0LeBUruBTGLaVZUEQVggbt+ueQJ4AfbdboMDjEz7vW95ANv9SFXC
+	/izp1tMy/9IfvHl0J/xzHeEGqEWQ38D17mJN9AK2YRh4F3DSuYFwhSmAruaTW5iFWZShX0ifBZVu3
+	/03US0MXU+K3KNvB7gw7uWUMJ203tTGxUqWFrEv/bcgwj5Ah+DWT++fcmWyo/6TI6OUKhi14VeFZG
+	O+7M3XDe3ENR50d8dNZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii0GE-0005et-QC; Thu, 19 Dec 2019 18:10:54 +0000
-Received: from dougal.metanate.com ([90.155.101.14] helo=metanate.com)
+	id 1ii2Gm-00068r-Si; Thu, 19 Dec 2019 20:19:36 +0000
+Received: from mail-ed1-f67.google.com ([209.85.208.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii0GB-0005eM-L6
- for linux-rockchip@lists.infradead.org; Thu, 19 Dec 2019 18:10:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=simple/simple; d=metanate.com; 
- s=stronger;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References
- :In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=PevvDITatxiAlN3atocvLzTHAwrwFg9O4wZbwmFmYqM=; b=E/Hm2Yao8lWuw/TCl7/+S+k1to
- YuS4SC/XK/1HKS3lA0Sqbxxm2MSaLZZLhmU1ncUqGwbzNyeHftAnAM3K9PYneO66ZNhj8BMh54H62
- XXQwR8Y2+MLZJyHQFuySqj81deIZRs7CRKI/cOorJyl6qWgGgJ868r/THEsrTLCHPr7V3v5lNV9mi
- F5Oqpup/wOp7RO36HDAN4Gp/GunOolZudl8OajSUWvomLncMiYx9U4inmb4bWZYvLzNCMFP236RlV
- u3bHz6T1lzlCHPl0xJZaSofO18ikq9D0WRz1dtH3C2vfu3OyPsUWnEdfE7LtVn2bBaw/1SvH6s/pt
- rI9XZwNg==;
-Received: from johnkeeping.plus.com ([81.174.171.191] helo=donbot)
- by email.metanate.com with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
- (Exim 4.93) (envelope-from <john@metanate.com>)
- id 1ii0Fy-0004dr-JH; Thu, 19 Dec 2019 18:10:38 +0000
-Date: Thu, 19 Dec 2019 18:10:36 +0000
-From: John Keeping <john@metanate.com>
-To: Minas Harutyunyan <Minas.Harutyunyan@synopsys.com>
-Subject: Re: [PATCH 1/2] usb: dwc2: Fix IN FIFO allocation
-Message-ID: <20191219181036.1f3d9183.john@metanate.com>
-In-Reply-To: <69ae7364-391d-6075-27d8-7ed7c4aae2ff@synopsys.com>
-References: <20191219113432.1229852-1-john@metanate.com>
- <69ae7364-391d-6075-27d8-7ed7c4aae2ff@synopsys.com>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1ii2GZ-0005zi-Qo; Thu, 19 Dec 2019 20:19:25 +0000
+Received: by mail-ed1-f67.google.com with SMTP id j17so6150521edp.3;
+ Thu, 19 Dec 2019 12:19:22 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=1z6z1Ui8LL1nkwwIvcM2qSFeAknNPztf5Dw5KcO2dK8=;
+ b=hWSm16Dfjp9rzpPZ9Gl1+pffSeWis4vvNVLytCCBBYfena5kMNmHy+WuxgD9DzKDhE
+ Sd1dmqQ94gzEh6IwBE3s9jIiTzdy7codpGdYHvCnGxzyDn75ima6R+ndIM4sZg18wDUM
+ 7BgpAoUGlkkwn6vdDBef/+fERqSwtP02UyzxFuaSsN0g28S68Maa6or+FC/IHvyW3fr6
+ AYtiOa06L3Vhn8MEFiaVkGGrLJ/X65yMPGg+h/qPXzgNIWJXRu5FmlXVBLgBgYD4VRGw
+ hUwV5gwXLdEq6mC45sBeTI9mrlybNN/F8PRkAsN6ddHMaQkM7ygv6mJxBipFXMEO+I/4
+ t7cg==
+X-Gm-Message-State: APjAAAU+lTmXstJ35722+54mC/eKYRfYuWRl6fbwvCcGr5Od8XILaW5k
+ AqRxK1BdCKq+qDbQAfokZsw=
+X-Google-Smtp-Source: APXvYqwwejroRBv27RRKI+KjHOuS4q02b2b9jWEyzsgC2C9l3pOef3KwtMfRZqXDwDfmgHuveS0ogQ==
+X-Received: by 2002:a17:906:5606:: with SMTP id
+ f6mr11822819ejq.179.1576786761612; 
+ Thu, 19 Dec 2019 12:19:21 -0800 (PST)
+Received: from kozik-lap ([194.230.155.234])
+ by smtp.googlemail.com with ESMTPSA id m2sm626166edp.85.2019.12.19.12.19.19
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 19 Dec 2019 12:19:20 -0800 (PST)
+Date: Thu, 19 Dec 2019 21:19:17 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Chanwoo Choi <cw00.choi@samsung.com>
+Subject: Re: [PATCH 7/9] memory: samsung: exynos5422-dmc: Replace deprecated
+ 'devfreq-events' property
+Message-ID: <20191219201917.GA21576@kozik-lap>
+References: <20191217055738.28445-1-cw00.choi@samsung.com>
+ <CGME20191217055106epcas1p2c43a45e34983c1b3e60cc6fd842dd33e@epcas1p2.samsung.com>
+ <20191217055738.28445-8-cw00.choi@samsung.com>
 MIME-Version: 1.0
-X-Authenticated: YES
+Content-Disposition: inline
+In-Reply-To: <20191217055738.28445-8-cw00.choi@samsung.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_101051_687343_2B3BCD11 
-X-CRM114-Status: GOOD (  20.67  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191219_121923_868854_1BF0A705 
+X-CRM114-Status: GOOD (  19.31  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.67 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.67 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,130 +90,67 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, heiko@sntech.de,
+ linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org,
+ a.swigon@samsung.com, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, myungjoo.ham@samsung.com,
+ robh+dt@kernel.org, kgene@kernel.org, kyungmin.park@samsung.com,
+ leonard.crestez@nxp.com, lukasz.luba@arm.com, m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Minas,
-
-On Thu, 19 Dec 2019 12:34:59 +0000
-Minas Harutyunyan <Minas.Harutyunyan@synopsys.com> wrote:
-
-> On 12/19/2019 3:34 PM, John Keeping wrote:
-> > On chips with fewer FIFOs than endpoints (for example RK3288 which has 9
-> > endpoints, but only 6 which are cabable of input), the DPTXFSIZN
-> > registers above the FIFO count may return invalid values.
-> > 
+On Tue, Dec 17, 2019 at 02:57:36PM +0900, Chanwoo Choi wrote:
+> In order to remove the deprecated 'devfreq-events' property, replace with
+> new 'exynos,ppmu-device' property in order to get the devfreq-event device
+> in devicetree file instead of 'devfreq-events' property. But, to guarantee
+> the backward-compatibility, keep the support 'devfreq-events' property.
 > 
-> RK3288 (rev.2.2 Mar.2017) databook says:
-> - Support up to 9 device mode endpoints in addition to control endpoint 0
-> - Support up to 6 device mode IN endpoints including control endpoint 0
-> - Endpoints 1/3/5/7 can be used only as data IN endpoint
-> - Endpoints 2/4/6 can be used only as data OUT endpoint
-> - Endpoints 8/9 can be used as data OUT and IN endpoint
->
-> 6 IN EP's (incl.EP0) mean that TxFIFO count should be 5. For EP0 using 
-> NPTXFIFO. On other hand 6 EP's 1/3/5/7/8/9 are IN endpoints.
+> Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
+> ---
+>  .../memory-controllers/exynos5422-dmc.txt     |  6 ++--
+>  drivers/memory/samsung/exynos5422-dmc.c       | 29 +++++++++++++++----
+>  2 files changed, 26 insertions(+), 9 deletions(-)
 
-I think this is from the RK3288 Datasheet.  I also have the RK3288
-Technical Reference Manual Revision 2.0 Feb 2014, which is older, but
-says:
+In general looks good for me but I need an ack from Rob.  Patch should
+be also split and sent as one of first in the series (before code).
 
-- 9 Device mode endpoints in addition to control endpoint 0, 4 in, 3 out
-  and 2 IN/OUT
+> 
+> diff --git a/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt b/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt
+> index 02e4a1f862f1..1e1b3702f045 100644
+> --- a/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt
+> +++ b/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt
+> @@ -17,14 +17,14 @@ Required properties for DMC device for Exynos5422:
+>  - clock-names : should include "fout_spll", "mout_sclk_spll", "ff_dout_spll2",
+>    "fout_bpll", "mout_bpll", "sclk_bpll", "mout_mx_mspll_ccore",
+>    "mout_mclk_cdrex"  entries
+> -- devfreq-events : phandles for PPMU devices connected to this DMC.
+> +- exynos,ppmu-device : phandles for PPMU devices connected to this DMC.
+>  - vdd-supply : phandle for voltage regulator which is connected.
+>  - reg : registers of two CDREX controllers.
+>  - operating-points-v2 : phandle for OPPs described in v2 definition.
+>  - device-handle : phandle of the connected DRAM memory device. For more
+>  	information please refer to documentation file:
+>  	Documentation/devicetree/bindings/ddr/lpddr3.txt
+> -- devfreq-events : phandles of the PPMU events used by the controller.
+> +- exynos,ppmu-device : phandles of the PPMU events used by the controller.
+>  - samsung,syscon-clk : phandle of the clock register set used by the controller,
+>  	these registers are used for enabling a 'pause' feature and are not
+>  	exposed by clock framework but they must be used in a safe way.
+> @@ -73,7 +73,7 @@ Example:
+>  			      "mout_mx_mspll_ccore",
+>  			      "mout_mclk_cdrex";
+>  		operating-points-v2 = <&dmc_opp_table>;
+> -		devfreq-events = <&ppmu_event3_dmc0_0>,	<&ppmu_event3_dmc0_1>,
+> +		exynos,ppmu-device = <&ppmu_event3_dmc0_0>, <&ppmu_event3_dmc0_1>,
+>  				 <&ppmu_event3_dmc1_0>, <&ppmu_event3_dmc1_1>;
 
-This matches what I'm seeing on the hardware.
+Indentation is broken here.
 
-> Something not clear to me. Could you please provide me your HSOTG core's 
-> GHWCFG1-4 registers values.
-
-Here are the configuration registers:
-
-GHWCFG1 = 0x00006664
-GHWCFG2 = 0x228e2450
-GHWCFG3 = 0x03cc90e8
-GHWCFG4 = 0xdbf04030
-
-> One more stuff. You didn't send patch series cover letter ([PATCH 0/2]) 
-> or I didn't received it?
-
-I didn't send a cover letter, it would mostly have repeated the commit
-message from this patch.
-
-
-Regards,
-John
-
-> > With logging added on startup, I see:
-> > 
-> > 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=1 sz=256
-> > 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=2 sz=128
-> > 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=3 sz=128
-> > 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=4 sz=64
-> > 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=5 sz=64
-> > 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=6 sz=32
-> > 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=7 sz=0
-> > 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=8 sz=0
-> > 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=9 sz=0
-> > 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=10 sz=0
-> > 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=11 sz=0
-> > 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=12 sz=0
-> > 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=13 sz=0
-> > 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=14 sz=0
-> > 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=15 sz=0
-> > 
-> > but:
-> > 
-> > 	# cat /sys/kernel/debug/ff580000.usb/fifo
-> > 	Non-periodic FIFOs:
-> > 	RXFIFO: Size 275
-> > 	NPTXFIFO: Size 16, Start 0x00000113
-> > 
-> > 	Periodic TXFIFOs:
-> > 		DPTXFIFO 1: Size 256, Start 0x00000123
-> > 		DPTXFIFO 2: Size 128, Start 0x00000223
-> > 		DPTXFIFO 3: Size 128, Start 0x000002a3
-> > 		DPTXFIFO 4: Size 64, Start 0x00000323
-> > 		DPTXFIFO 5: Size 64, Start 0x00000363
-> > 		DPTXFIFO 6: Size 32, Start 0x000003a3
-> > 		DPTXFIFO 7: Size 0, Start 0x000003e3
-> > 		DPTXFIFO 8: Size 0, Start 0x000003a3
-> > 		DPTXFIFO 9: Size 256, Start 0x00000123
-> > 
-> > so it seems that FIFO 9 is mirroring FIFO 1.
-> > 
-> > Fix the allocation by using the FIFO count instead of the endpoint count
-> > when selecting a FIFO for an endpoint.
-> > 
-> > Signed-off-by: John Keeping <john@metanate.com>
-> > ---
-> >   drivers/usb/dwc2/gadget.c | 3 ++-
-> >   1 file changed, 2 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/usb/dwc2/gadget.c b/drivers/usb/dwc2/gadget.c
-> > index 92e8de9cb45c..911b950ef25e 100644
-> > --- a/drivers/usb/dwc2/gadget.c
-> > +++ b/drivers/usb/dwc2/gadget.c
-> > @@ -4059,11 +4059,12 @@ static int dwc2_hsotg_ep_enable(struct usb_ep *ep,
-> >   	 * a unique tx-fifo even if it is non-periodic.
-> >   	 */
-> >   	if (dir_in && hsotg->dedicated_fifos) {
-> > +		unsigned fifo_count = dwc2_hsotg_tx_fifo_count(hsotg);
-> >   		u32 fifo_index = 0;
-> >   		u32 fifo_size = UINT_MAX;
-> >   
-> >   		size = hs_ep->ep.maxpacket * hs_ep->mc;
-> > -		for (i = 1; i < hsotg->num_of_eps; ++i) {
-> > +		for (i = 1; i <= fifo_count; ++i) {
-> >   			if (hsotg->fifo_map & (1 << i))
-> >   				continue;
-> >   			val = dwc2_readl(hsotg, DPTXFSIZN(i));
-> > 
+Best regards,
+Krzysztof
 
 
 _______________________________________________
