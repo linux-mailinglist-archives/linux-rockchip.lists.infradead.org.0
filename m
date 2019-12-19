@@ -2,81 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 731DD127192
-	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Dec 2019 00:35:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B20A1271B7
+	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Dec 2019 00:45:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VQLDuAuOyupH5kH36hM90IDjQ/jDTN7aRMSR3RLNiJ4=; b=Q5ZpBVMoJ0La/g
-	+JNiUdHq5xiP9ZlxgVF2dqJf3K/HKZMLB6pKDjtacIpeHkaET6NcxeESGsaOD/d09/4YnIEABNFVA
-	V/x7L2etda0mEHFLwoX8eFBkuVJSuyRXAcnt3+pjvET4JeXPzfC3eHB0urq7bJ2RcguJsBTFR1ogr
-	O35OYf0QhC1L8nLbZFJ58MsJArOFneyRTDobIjcIF/aJ9fUDVt9IsmeCRlZloBziN0NHQkRThS3sa
-	IVSxQMLG7LdSXbYy//+L0QfA1jSuoU8PH4VDRV30SF2frIhgVZCMbOsdIT1NUeIxT9Avqqn0qgDSQ
-	16N3CSKj8vV66KgERH4A==;
+	List-Owner; bh=yMeeKjwhuNGsB81mICuB99zQu7P2mk+vWQOb8oz9uks=; b=SulwyENi9zCbO5
+	BVUFg/eOyEM0t5XRRXsPAMEaflpfXU3n5fUCIYKltnJTH5cR0YwbzBZXdtZIHOmOv4d7OhprGFl1O
+	Wb4iUA3PycH8r0RBmBuKeZC0DokzCSQHh/USmR8zogKTS5EJVAm3+Kli3Ayv9F4kkEblpd0R4jCNM
+	rzevZ0/CAJ3Aoo+OobiX/1Gzk47bPyEV1FQNaUH/dfPRRMbT/mk7SRFZFT2LfJvNRkXci3l7RPKjD
+	PQZ5qKKvI51teWvWwg78UeDYuTvpGIpBJlJ7AYY6vsY73p2BQPA7CcIx8FLkpQl4+53+tsjiYNoJu
+	3z1S9upRTOZcicXcA++w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii5KY-0006tD-75; Thu, 19 Dec 2019 23:35:42 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1ii5U1-0002YJ-6r; Thu, 19 Dec 2019 23:45:29 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii5KL-0006jV-PV; Thu, 19 Dec 2019 23:35:31 +0000
-Received: by mail-ot1-f68.google.com with SMTP id 66so9314658otd.9;
- Thu, 19 Dec 2019 15:35:29 -0800 (PST)
+ id 1ii5Ty-0002Xt-IC; Thu, 19 Dec 2019 23:45:27 +0000
+Received: by mail-ot1-f66.google.com with SMTP id b18so9381877otp.0;
+ Thu, 19 Dec 2019 15:45:26 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=RRqDAkLWobOuOYSCFG7J0bbEa5xYLcQverv9nWpPuIA=;
- b=LsxGoIORoRLixK9c8gPuPP8YJ+rGN15MTFeh8T/0HhKYnFz0xBU07T1zpqxJIeuhHh
- mpzZ+jlox4OKd8GAmNFnAFbCXmyBVIJEVzHA/qrrCtWn/LWnub9qEWqsbdYcXwms8ip6
- onzL93Dp4as8v6TxXHYlEs9cYjf9lxOzXbrO4dAvErvKFZC6HrJsrdEjx+jx//D+Yq6E
- 8Ap7fXHc6Uda+gVX1SreEV6ZzyTjcCse4lrpPUKLhkypsVTlKEEeGzcMWkxIoJX+G+31
- znl57GxXwU1qPZI4eNbo5MhpgN1BfghgATuczUJZW2yZjNm+h62b5dUwsNB9EdI3xNBQ
- 8oBA==
-X-Gm-Message-State: APjAAAUqSRP+I6AeoehIkLGFu/71C0U2FyYEeAe84l+kGGej6tNLcfp1
- rq80MDZO5eixNbpVztjHJQ==
-X-Google-Smtp-Source: APXvYqzP7ZyQmIJlVYu5boWchd07kvVVJcGu77F6fpUDlaRoVSLg9EHtJ3yKHNipgk1av59pNOCtIg==
-X-Received: by 2002:a9d:7b4e:: with SMTP id f14mr11756439oto.355.1576798528860; 
- Thu, 19 Dec 2019 15:35:28 -0800 (PST)
+ bh=CPTZbnsZwMAdm3+ywA9AmFZNzHoVlF3t8i/+Bbatuus=;
+ b=rypDJPNonrrTyqbODgncdIexOUoK3dIfJr+FZgBR0rmBwcgn+50Jnf8tc3BhfU/m7e
+ AtL25A+XWxko9fg3WOVF/p8m+SivIPTQKJsbnMc/jM/qcoW3QRBEIfDzHC203TpfSJap
+ zkalbyFGj151Xp0PHojJyzwyO+efziLd6jFu2xiMf2DgqvtbdBVQzipVoTNQuj9rG8c+
+ sZr9M7ex9HDlOeRSKCLVvL5xwtAxF6fP/2OqLk3ILnO+tBPebA7k6TJpMz2XeCvEsPQ6
+ HE/xs07bZ8z5eLuwSA33BmoEaVwXOOW6eBOL788HJwG/16QXssaLKUdOfmOW8nwrxqvA
+ I7lg==
+X-Gm-Message-State: APjAAAUjDHhTKmmkn1cbEWL9nth+lV6rcNTUKzCoUIkDEohYu7BgS0aY
+ 5WGA5MSOT3Pzcf+8INYxoQ==
+X-Google-Smtp-Source: APXvYqzPrntJQUPYSBFKGHAAmivi/dtE3tpOOaqLhKu8OeZYLW39N4PiJJx99SeXD52l7Rmf2JkyHg==
+X-Received: by 2002:a05:6830:1116:: with SMTP id
+ w22mr11981631otq.216.1576799125808; 
+ Thu, 19 Dec 2019 15:45:25 -0800 (PST)
 Received: from localhost (ip-184-205-174-147.ftwttx.spcsdns.net.
  [184.205.174.147])
- by smtp.gmail.com with ESMTPSA id m68sm2525707oig.50.2019.12.19.15.35.26
+ by smtp.gmail.com with ESMTPSA id 47sm2730192otf.54.2019.12.19.15.45.24
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Dec 2019 15:35:27 -0800 (PST)
-Date: Thu, 19 Dec 2019 17:35:25 -0600
+ Thu, 19 Dec 2019 15:45:25 -0800 (PST)
+Date: Thu, 19 Dec 2019 17:45:22 -0600
 From: Rob Herring <robh@kernel.org>
-To: Lad Prabhakar <prabhakar.csengg@gmail.com>
-Subject: Re: [v2 4/6] dt-bindings: PCI: rcar: Add bindings for R-Car PCIe
- endpoint controller
-Message-ID: <20191219233525.GA9478@bogus>
-References: <20191213084748.11210-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20191213084748.11210-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH 2/2] dt-bindings: phy: Use a real life PX30 DSI PHY example
+Message-ID: <20191219234415.GA22014@bogus>
+References: <20191213180019.25080-1-miquel.raynal@bootlin.com>
+ <20191213180019.25080-2-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191213084748.11210-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <20191213180019.25080-2-miquel.raynal@bootlin.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_153529_830891_2764F335 
-X-CRM114-Status: GOOD (  20.26  )
+X-CRM114-CacheID: sfid-20191219_154526_602351_2EB430BB 
+X-CRM114-Status: GOOD (  15.37  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
+ no trust [209.85.210.66 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
@@ -92,97 +92,49 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Geert Uytterhoeven <geert+renesas@glider.be>, linux-pci@vger.kernel.org,
- Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
- Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-rockchip@lists.infradead.org, Catalin Marinas <catalin.marinas@arm.com>,
- devicetree@vger.kernel.org, Chris Paterson <Chris.Paterson2@renesas.com>,
- Arnd Bergmann <arnd@arndb.de>, "Lad,
- Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
- linux-arm-kernel@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- Tom Joseph <tjoseph@cadence.com>, Jingoo Han <jingoohan1@gmail.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, Dec 13, 2019 at 08:47:46AM +0000, Lad Prabhakar wrote:
-> From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
+On Fri, Dec 13, 2019 at 07:00:19PM +0100, Miquel Raynal wrote:
+> Update the example phandles to reference actual nodes and give a
+> working starting point.
 > 
-> This patch adds the bindings for the R-Car PCIe endpoint driver.
-> 
-> Signed-off-by: Lad, Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 > ---
->  .../devicetree/bindings/pci/rcar-pci-ep.txt        | 37 ++++++++++++++++++++++
->  1 file changed, 37 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
-
-Please make this a DT schema.
-
+>  .../devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml       | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt b/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
-> new file mode 100644
-> index 0000000..7f0a97e
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
-> @@ -0,0 +1,37 @@
-> +* Renesas R-Car PCIe Endpoint Controller DT description
-> +
-> +Required properties:
-> +	    "renesas,pcie-ep-r8a774c0" for the R8A774C0 SoC;
+> diff --git a/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml b/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml
+> index 72aca81e8959..2e35bfdf47a1 100644
+> --- a/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml
+> @@ -60,9 +60,9 @@ examples:
+>      dsi_dphy: phy@ff2e0000 {
+>          compatible = "rockchip,px30-dsi-dphy";
+>          reg = <0x0 0xff2e0000 0x0 0x10000>;
+> -        clocks = <&pmucru 13>, <&cru 12>;
+> +        clocks = <&pmucru SCLK_MIPIDSIPHY_REF>, <&cru PCLK_MIPIDSIPHY>;
+>          clock-names = "ref", "pclk";
+> -        resets = <&cru 12>;
+> +        resets = <&cru SRST_MIPIDSIPHY_P>;
 
-Normal ordering is: renesas,r8a774c0-pcie-ep
+Without the appropriate include files, this will break building the 
+example.
 
-> +	    "renesas,pcie-ep-rcar-gen3" for a generic R-Car Gen3 or
-> +				     RZ/G2 compatible device.
-> +
-> +	    When compatible with the generic version, nodes must list the
-> +	    SoC-specific version corresponding to the platform first
-> +	    followed by the generic version.
-> +
-> +- reg: base address and length of the PCIe controller registers.
-> +- outbound-ranges: outbound windows base address and length including the flags.
-> +- resets: Must contain phandles to PCIe-related reset lines exposed by IP block
-
-How many?
-
-> +- clocks: from common clock binding: clock specifiers for the PCIe controller
-> +	 clock.
-> +- clock-names: from common clock binding: should be "pcie".
-> +
-> +Optional Property:
-> +- max-functions: Maximum number of functions that can be configured (default 1).
-> +
-> +Example:
-> +
-> +SoC-specific DT Entry:
-> +
-> +	pcie_ep: pcie_ep@fe000000 {
-
-pcie-ep@ 
-
-> +		compatible = "renesas,pcie-ep-r8a774c0", "renesas,pcie-rcar-gen2";
-> +		reg = <0 0xfe000000 0 0x80000>;
-> +		outbound-ranges = <0xa 0x0 0xfe100000 0 0x000100000
-> +				   0xa 0x0 0xfe200000 0 0x000200000
-> +				   0x6 0x0 0x30000000 0 0x008000000
-> +				   0x6 0x0 0x38000000 0 0x008000000>;
-> +		clocks = <&cpg CPG_MOD 319>;
-> +		clock-names = "pcie";
-> +		power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
-> +		resets = <&cpg 319>;
-> +	};
+>          reset-names = "apb";
+>          #phy-cells = <0>;
+>      };
 > -- 
-> 2.7.4
+> 2.20.1
 > 
 
 _______________________________________________
