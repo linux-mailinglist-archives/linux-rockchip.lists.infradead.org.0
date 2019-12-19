@@ -2,99 +2,67 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DEB912607C
-	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Dec 2019 12:08:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 535421260E6
+	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Dec 2019 12:35:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=K6S/DYq0Znzpqh7q2d3FxQl9dcTNtbMYkxfMLYhNCIQ=; b=JAiSSWWhT7NuVQYUvT3XikpzY2
-	0DKukLpPOHqRQzc9AoJLGaV5RqxKXfUETjOuHirlraYQxMMzcRLnpoBDAR8oE+DS7fjiFA+d0lNxl
-	C+hIhbh6qpmjo5gt5eEtUm5Iu4DehzwBZs0UpATebtZ4FTgrfq1Pct4UQXxO/J/ZVLo/Gt59rio9E
-	3dN61HRrtS+VDgbeAKmSge6cP09wLbH5Zyr6L6BwXhQOmDbHDMwLPhWoV8eX+xTHFIWt44bq6GjP1
-	VWM52bO1OxJUrWLFXo4oqnfuaXmQnxjCqOcindZonoe8WzhIrhq+DNlEioF7qVHS8ZAqoNpOmx+FE
-	bzYDHWOA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uf8JIIh2tijJKTODPC3bpaX27/AO5PQPZSmwPG2Odf8=; b=nyRsS+G64ewIAZ
+	CoXaTec5+dWQonXvlEQSMzIvnu17jQyce7O1DLlrznQFvhG+euXtShPA4oa0vBvd55KmZi4lN55QF
+	Nu05xc7XtmN2e2Z1ylxWxff3VNipqwXrIjat35ebEu1LrX3tlkvXAFbmKJ3towHDh3N7hOvp+ANxW
+	cX68TfjHK4h96GPkgpq3BgEQqBRM16/ijyR8riO8p8yNEdilSMUYCx45tX4sZ5stwenRUNumEja4E
+	agL6D2IsDcxNUieQlp9iwWLPaw1jFfeArdgjJiTAbEW8jy1lKciFaX4dlxq+LwBX9Mguuh5zb3TkY
+	8v2vEPeG5qa3FaW459ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihtet-0002MJ-0v; Thu, 19 Dec 2019 11:07:55 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1ihu51-0002KR-DP; Thu, 19 Dec 2019 11:34:55 +0000
+Received: from dougal.metanate.com ([90.155.101.14] helo=metanate.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihteq-0002Lk-HI
- for linux-rockchip@lists.infradead.org; Thu, 19 Dec 2019 11:07:53 +0000
-Received: by mail-wr1-x443.google.com with SMTP id q6so5517095wro.9
- for <linux-rockchip@lists.infradead.org>; Thu, 19 Dec 2019 03:07:51 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:from:to:references:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=Y8f2bX26xETxLdPFNjzsuoxmPNkTnlyN++rTG5oCUMs=;
- b=CuDXosOqgeF3aAa7N1LIOMD7cwK1z985Ff8HA6kRW1PnMYAPwLi84h/Ud0uzOxlq9k
- UMtasVPRqi1jPueKAB/RP49oaKsCVlGGma6erDHJtMMRi+q7zT5VGU0+l3Yw0WhXSlUy
- x5rGxfn+c3vrGMZOEUd0TkPBafMzNJQvd4nyVC2XFlg+lciyW3eahxB3RsoFtI1cyiWl
- TeLcd6tjqyQHTCa1DvDyTHB/KeqX6boKyBGbTYldNW3XcLrRVNUR66iVdOvySZv8uH4w
- bqvpCxAG8CORfKqG3/fpTi89laGTfYEwvPT2FszWscYdA84lJOiTSXBXzpmZC+Xm3Sh5
- H7fw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:from:to:references:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Y8f2bX26xETxLdPFNjzsuoxmPNkTnlyN++rTG5oCUMs=;
- b=ZSNTxlIf7Xx+4rEYfYQBDcL521tW02FPMOIny4tg+W/uszj+IEX4x+ar6b8ru1+zgQ
- iqhT2RNgv9FoFcsKxZfexBZNp5JrCSV/4CeoIiBZ48TzBYydgHgJgCXXKR/g3A7NAsM5
- AfsP415ZxMrOUzNNPd8+qahAl1ElBPvH2Hrxv6YFiXIGVT51/Repz7yxfLyldNCzK7Vu
- hwJxdH4wK8up3V5cCcXIlkKO3pHEYoeCFrvbH7HZla1YzoIThW2DTJOa5AO2O/AgbUNH
- NJgHt/Y5har5lV8G1wxsrZTnxO/UjLy15sPTg3cY8Jl3QNIJ7qzbdMMX5cOEvkTJMWqq
- sjpw==
-X-Gm-Message-State: APjAAAWMhuVGrvlFQTBU1FblKc2O3OycJbvHgnPbj9wlnAzYw+SolV/B
- eKpGMvPdGwSg4JMzfjv/F8vWCBI7
-X-Google-Smtp-Source: APXvYqwK3PhOvn/Jodp66qkyj6dqHUmO+W8s5L+BnbnzXr+2zmCpYdBCp4A11tAzblSuP/+EzIo2Jw==
-X-Received: by 2002:a5d:4602:: with SMTP id t2mr8573441wrq.37.1576753670050;
- Thu, 19 Dec 2019 03:07:50 -0800 (PST)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id q3sm5641755wmj.38.2019.12.19.03.07.49
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 19 Dec 2019 03:07:49 -0800 (PST)
-Subject: Re: [V2 1/1 PATCH] arm64: dts: rockchip: add ROCK Pi S DTS support
-From: Johan Jonker <jbx6244@gmail.com>
-To: linux-rockchip@lists.infradead.org
-References: <20191217080014.11756-1-akash@openedev.com>
- <80ca8b77-6a55-ef33-b772-eccaad8871e6@gmail.com>
-Message-ID: <c76b4cbc-5a3b-679b-aaf7-fcdb6e655078@gmail.com>
-Date: Thu, 19 Dec 2019 12:07:47 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1ihu4y-0002JL-7R
+ for linux-rockchip@lists.infradead.org; Thu, 19 Dec 2019 11:34:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=simple/simple; d=metanate.com; 
+ s=stronger;
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject
+ :Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=tmKdpt8FfuaV6nRnJAttHNQVsa8S40+mibR855aHQJg=; b=wACAMuy2aD0a0GYTT1d2De4df5
+ Osp+Jt0hP6KqVmVaP4NXmXxS2prRPv5FjUW8XIudomRk3VnUCQBbpXyPbFQ0kkRNrxVnjTqwpOsGj
+ oUY5SoF3GZ05cXNgDxNhpVSFanqqcroaox+vRe0JFXequ5RRDnm5nun2VViGeOHXXyShM6uD9erSI
+ jXtWi2fPTtVooOUmTtXLaI/Y88p+GxN9lz7HSQOLmy9ykBdtC6Cr3dSTtv8ribR4ifiLkCWJe/Ead
+ +lIjqdjyybE0XhlRRLRwiQTpuOkd0Xf8sEopsR0K/GRH6DlG4lmSq7haV+BoxWTIVlrf/hIjLLSO6
+ 2ws5Curw==;
+Received: from 188-39-28-98.static.enta.net ([188.39.28.98]
+ helo=donbot.metanate.com)
+ by email.metanate.com with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+ (Exim 4.93) (envelope-from <john@metanate.com>)
+ id 1ihu4j-00024T-UX; Thu, 19 Dec 2019 11:34:38 +0000
+From: John Keeping <john@metanate.com>
+To: Minas Harutyunyan <hminas@synopsys.com>
+Subject: [PATCH 1/2] usb: dwc2: Fix IN FIFO allocation
+Date: Thu, 19 Dec 2019 11:34:31 +0000
+Message-Id: <20191219113432.1229852-1-john@metanate.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-In-Reply-To: <80ca8b77-6a55-ef33-b772-eccaad8871e6@gmail.com>
-Content-Language: en-US
+X-Authenticated: YES
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_030752_604092_801CCA68 
-X-CRM114-Status: UNSURE (   7.53  )
+X-CRM114-CacheID: sfid-20191219_033452_266164_96062BB9 
+X-CRM114-Status: UNSURE (   9.36  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jbx6244[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jbx6244[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,28 +75,84 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ John Keeping <john@metanate.com>, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Akash,
+On chips with fewer FIFOs than endpoints (for example RK3288 which has 9
+endpoints, but only 6 which are cabable of input), the DPTXFSIZN
+registers above the FIFO count may return invalid values.
 
-In a dtsi file nodes are sort in reg order.
-In a dts file nodes are sort in alphabetical order.
-Place &sdmmc and &spi2 below &sdio.
+With logging added on startup, I see:
 
-&sdio {
+	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=1 sz=256
+	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=2 sz=128
+	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=3 sz=128
+	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=4 sz=64
+	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=5 sz=64
+	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=6 sz=32
+	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=7 sz=0
+	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=8 sz=0
+	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=9 sz=0
+	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=10 sz=0
+	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=11 sz=0
+	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=12 sz=0
+	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=13 sz=0
+	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=14 sz=0
+	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=15 sz=0
 
-};
+but:
 
-&sdmmc {
+	# cat /sys/kernel/debug/ff580000.usb/fifo
+	Non-periodic FIFOs:
+	RXFIFO: Size 275
+	NPTXFIFO: Size 16, Start 0x00000113
 
-};
+	Periodic TXFIFOs:
+		DPTXFIFO 1: Size 256, Start 0x00000123
+		DPTXFIFO 2: Size 128, Start 0x00000223
+		DPTXFIFO 3: Size 128, Start 0x000002a3
+		DPTXFIFO 4: Size 64, Start 0x00000323
+		DPTXFIFO 5: Size 64, Start 0x00000363
+		DPTXFIFO 6: Size 32, Start 0x000003a3
+		DPTXFIFO 7: Size 0, Start 0x000003e3
+		DPTXFIFO 8: Size 0, Start 0x000003a3
+		DPTXFIFO 9: Size 256, Start 0x00000123
 
-&spi2 {
+so it seems that FIFO 9 is mirroring FIFO 1.
 
-};
+Fix the allocation by using the FIFO count instead of the endpoint count
+when selecting a FIFO for an endpoint.
+
+Signed-off-by: John Keeping <john@metanate.com>
+---
+ drivers/usb/dwc2/gadget.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/usb/dwc2/gadget.c b/drivers/usb/dwc2/gadget.c
+index 92e8de9cb45c..911b950ef25e 100644
+--- a/drivers/usb/dwc2/gadget.c
++++ b/drivers/usb/dwc2/gadget.c
+@@ -4059,11 +4059,12 @@ static int dwc2_hsotg_ep_enable(struct usb_ep *ep,
+ 	 * a unique tx-fifo even if it is non-periodic.
+ 	 */
+ 	if (dir_in && hsotg->dedicated_fifos) {
++		unsigned fifo_count = dwc2_hsotg_tx_fifo_count(hsotg);
+ 		u32 fifo_index = 0;
+ 		u32 fifo_size = UINT_MAX;
+ 
+ 		size = hs_ep->ep.maxpacket * hs_ep->mc;
+-		for (i = 1; i < hsotg->num_of_eps; ++i) {
++		for (i = 1; i <= fifo_count; ++i) {
+ 			if (hsotg->fifo_map & (1 << i))
+ 				continue;
+ 			val = dwc2_readl(hsotg, DPTXFSIZN(i));
+-- 
+2.24.1
 
 
 _______________________________________________
