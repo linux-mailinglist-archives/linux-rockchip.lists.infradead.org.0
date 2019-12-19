@@ -2,80 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFFC2126EAA
-	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Dec 2019 21:21:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 124BA126EDC
+	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Dec 2019 21:25:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j/ek9qyD10ulXKwCuNlLjWlKyzkCf3nfAqIYwekM63o=; b=HbwLBW3LYGANMY
-	/MOEd4NErEzfUBUL2G3P8Xaaqj3l7B/taX1uOKD4hWD0ipwBMG8ShEX8xdOotHKbGG49WGSw7bHP6
-	lHxUDF5jCr/1cI0HaScMgQjpUm6//ulqBN/h67PRwnzPQ6IMffirHd95A5c31EKt4AdivcZWQJLJp
-	BawYKfDl0XISJ0AbRM4b84A/2OaUiwNHG8jg71/kvFkkpAtfZjpBBBliA0F7sb6x1djQcZsnLcIjw
-	OCbUNHVYnoqO1Mww9MKxisix/qCc59oGV87dntTY2xFEV2l3Rtlusd3qyrxgYsZhL931D2PjvGUn9
-	e5Y48n7a/CStz+9Dq7zg==;
+	List-Owner; bh=O+iq89WP8LAiOr3s51Jj2WYfadI3DGPARaEDzCFJPoE=; b=eVFnXTyUSk6b0g
+	3w49ygQTz7KqOajX6DgJp0o1Qtr17h4kIC32oIUoulKhO0Xwn8/6H5VkdsmVvxl82Yy2i49BsJq7i
+	ztX1N9j3/HbIFpRdEL4ILoO9MG678asMB6kRPpu7TK4iu630mWyxL0DS2j073MHUKX72CBAkOmF4T
+	gQJW+IMDnu84ysK1mwCts+nskH1yYuxr+xUDU7r6lZaWaJkcAEIsojDyP58QoCJsRMRk3So6SdMq/
+	Wms0bEQCmUPHXFQkU0IrUvso2jZTJnYppZs46O3yXqqcBpNk0/AjISzLpF0mGzNbYwf+IrubgVzl3
+	/AsNtuQGEtludiB1fobQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii2Iq-0007qH-7Z; Thu, 19 Dec 2019 20:21:44 +0000
-Received: from mail-ed1-f66.google.com ([209.85.208.66])
+	id 1ii2ML-00040v-LB; Thu, 19 Dec 2019 20:25:21 +0000
+Received: from mail-ed1-f67.google.com ([209.85.208.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii2Ic-0007fE-VH; Thu, 19 Dec 2019 20:21:32 +0000
-Received: by mail-ed1-f66.google.com with SMTP id r21so6158760edq.0;
- Thu, 19 Dec 2019 12:21:30 -0800 (PST)
+ id 1ii2JV-0008Rd-Km; Thu, 19 Dec 2019 20:22:27 +0000
+Received: by mail-ed1-f67.google.com with SMTP id dc19so6136749edb.10;
+ Thu, 19 Dec 2019 12:22:25 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=GR1PmJOvhGpPpzVfO8kgGmz6p0Ok+BYanL+ypVYCuIo=;
- b=n4YrVpEBwbvFXgItQxDtiZzaSAn0IcEeyTe5ChiPeptQ1sjhYZArK5zn+4FyHHCWIi
- fuPFLtNQ/XKmDJqodPX5fl2EhFcNlbYW2rS+tl6m7Rpzsfe/xiApY0o0NcRCWZbyjQ3J
- r0A9IohjdlpRL7YOyzh4zS/3PLF2VQYjDnZzfWpJMVvMApYHNFYsHy/Qyx8wgDDppuRD
- 41gbd66HCQb0A8Dsrv4k6sGWsbO4fH9xR6LgNnu67aBQT2lEqHTZMf4XzCJHxX08FqPP
- Mhs5CfCPzuKJb+h3r9dRHO55yJlw6a4DpyKfZre8vFkP5iSkqoPbC+l7zEdkY0seXQuP
- TW9Q==
-X-Gm-Message-State: APjAAAWOoqXUm9ZTlb6IMutBEh8iR2HwLIwczVJ31ZFHfbFowJBhDxL4
- wPo52/bGHP3xriNjnHUvWO7dL0Yr
-X-Google-Smtp-Source: APXvYqwZwMHJTRig+SXE0kz2DegMMU7qPuSgopAX7Pwr9Y8S6Q8VfZ+NYpDzWXBIncow4tB/gDtDLA==
-X-Received: by 2002:a17:906:4a12:: with SMTP id
- w18mr11475789eju.321.1576786889413; 
- Thu, 19 Dec 2019 12:21:29 -0800 (PST)
+ bh=+XwXmMLYM0uNSnbJNWZYduJB3McxlK0rmyyXpOOOY+E=;
+ b=J33OsD2pFIwad5XLjg0ST3gfEMU9mKVuN5iEE+OX4RD3CHtmaBapsoWkvP/DTlHzTY
+ +vbNBZyabIqjWB30J6IAE607GMxXJ8gx1/zHR1wQVew6Liolzr4T31sr7KVcfLeRmpQa
+ rNxXmvN/M0B8083JMMrdaTTWSHz2s3SYawh4f4ZMP0midTPl9agVcxcoJByrheILDHJE
+ cwGQlG6Bnh0bmbQrCy/wXiABEknJvC/6jnSvrtgUuqmuCJyXNOX1CS4GDKEqNhjXXg2k
+ f6rJzNZ76uaBxoCOGQOIVmeRllCcPH77N95peMNF+9JE/WkG/6gf/cLzsI9knyKt+5AY
+ baFw==
+X-Gm-Message-State: APjAAAWOvoKMaBsdYgDbEDVDRt/DgsVyTfW3yhtpg3auJNtWD47azjnv
+ AZsvMJWOo8LoJ8HdLPisxvI=
+X-Google-Smtp-Source: APXvYqyvXs1b77JsdU/bIq/7bJEZPvD05zPHc+WyTqQxuAEMRrkLbVyqmxjhV8KF6k+gHok+ePJnvg==
+X-Received: by 2002:a17:907:20a8:: with SMTP id
+ pw8mr11469298ejb.248.1576786944265; 
+ Thu, 19 Dec 2019 12:22:24 -0800 (PST)
 Received: from kozik-lap ([194.230.155.234])
- by smtp.googlemail.com with ESMTPSA id u25sm722974ejb.53.2019.12.19.12.21.27
+ by smtp.googlemail.com with ESMTPSA id s15sm626909edc.22.2019.12.19.12.22.22
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 19 Dec 2019 12:21:28 -0800 (PST)
-Date: Thu, 19 Dec 2019 21:21:26 +0100
+ Thu, 19 Dec 2019 12:22:23 -0800 (PST)
+Date: Thu, 19 Dec 2019 21:22:20 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Chanwoo Choi <cw00.choi@samsung.com>
-Subject: Re: [PATCH 8/9] ARM: dts: exynos: Replace deprecated property for
- Exynos bus and DMC
-Message-ID: <20191219202126.GB21576@kozik-lap>
+Subject: Re: [PATCH 9/9] arm64: dts: exynos: Replace deprecated property for
+ Exynos bus
+Message-ID: <20191219202220.GC21576@kozik-lap>
 References: <20191217055738.28445-1-cw00.choi@samsung.com>
- <CGME20191217055106epcas1p4c0f65bec74e53b38d95e984e146bf8b6@epcas1p4.samsung.com>
- <20191217055738.28445-9-cw00.choi@samsung.com>
+ <CGME20191217055107epcas1p44d46bdea7b326b86689f326742f5444a@epcas1p4.samsung.com>
+ <20191217055738.28445-10-cw00.choi@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191217055738.28445-9-cw00.choi@samsung.com>
+In-Reply-To: <20191217055738.28445-10-cw00.choi@samsung.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_122131_005670_CB95D1FB 
-X-CRM114-Status: GOOD (  12.62  )
+X-CRM114-CacheID: sfid-20191219_122225_772725_CE78C356 
+X-CRM114-Status: GOOD (  12.55  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.66 listed in list.dnswl.org]
+ no trust [209.85.208.67 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.67 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (k.kozlowski.k[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.66 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -102,7 +102,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Dec 17, 2019 at 02:57:37PM +0900, Chanwoo Choi wrote:
+On Tue, Dec 17, 2019 at 02:57:38PM +0900, Chanwoo Choi wrote:
 > Replace the property related to devfreq and devfreq-event device
 > to remove the deprecated property name.
 > - Replace 'devfreq' with 'exynos,parent-bus' property
@@ -112,20 +112,14 @@ On Tue, Dec 17, 2019 at 02:57:37PM +0900, Chanwoo Choi wrote:
 > 
 > Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
 > ---
->  arch/arm/boot/dts/exynos3250-monk.dts         |  2 +-
->  arch/arm/boot/dts/exynos3250-rinato.dts       | 18 +++++-----
->  .../boot/dts/exynos4412-itop-scp-core.dtsi    | 16 ++++-----
->  arch/arm/boot/dts/exynos4412-midas.dtsi       | 18 +++++-----
->  .../boot/dts/exynos4412-odroid-common.dtsi    | 18 +++++-----
->  arch/arm/boot/dts/exynos5422-odroid-core.dtsi | 34 +++++++++----------
->  6 files changed, 53 insertions(+), 53 deletions(-)
-> 
+>  .../dts/exynos/exynos5433-tm2-common.dtsi     | 20 +++++++++----------
+>  1 file changed, 10 insertions(+), 10 deletions(-)
 
-It will have to wait till next release, after driver changes get
-accepted.
+I'll pick it up the next cycle after driver get merged.
 
 Best regards,
 Krzysztof
+
 
 _______________________________________________
 Linux-rockchip mailing list
