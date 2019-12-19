@@ -2,64 +2,64 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4127E1271C4
-	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Dec 2019 00:47:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A0321271C8
+	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Dec 2019 00:47:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5DJJ4b2xWvnG44uGYFhcFXt0RZlHNFn2rDi0yvYLuzk=; b=d9H9pq9HSwysA4
-	vlKGB4krFfb6SfKamGq+j42nuN9X88+nx0lFhoAJ+OAH2kJVE1O+m+tk8PJ5ObmyAbjWsJmNSFQz4
-	4cPYjvcxjmnvrclwc/WLKBfmo3uBc6Z8dZQd0ni1P+uNTfG866Y9flLDKxct3/h86tmXuRaaiPmWK
-	ujXCJ4SSfvs+UaPwLo0GVnAAU//+6W4LHZDxIYCPN4GmvbOgwfMJV53cP28UJkSW+HaDYOxod0UGp
-	WaYFe+CuGNrsyATmwrn/r+Jkn5UMcd54GFI25fTzxNcdwm6erDgfs4a2ovjh83rPafyV63fozfWCm
-	OmqTGDfcGlYNZxCvG1Og==;
+	List-Owner; bh=R8kb2e7Dtsf5k4oXikVYYb4FcAlyCqTpe6h/ppLMkd0=; b=f+M/L3Xg6CRrtO
+	50/ei4s90r5TGFkdsA0+SEGZPq9A2a3tAw8zAirgy7b4sH201JLVV7XqV9bUmmrWAzCxJG91I5+c9
+	SHgadNt5QPGALk1aNE0MKQ/vzvXjer5rmoRU03oQnTcaAVuWV/F/kmb7D6+g/7lyM2Mk9sPLAtBCP
+	StX82DTHrK5O5TPbctKKDQoEF+iv2y9ouRErvZYr1xmw9Vt053umElvO67kWs0FJyG/u/sLsBlP5+
+	bkIYYYMxnCAIjnLvMyO9JvkckQZczt7lHGZxtxDFgBPFvxB1c28c3NBpZ0/w6xFm1nX7u3ul7GYpA
+	/m430JW9R8l7hhSaSRsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii5Vj-00036N-1t; Thu, 19 Dec 2019 23:47:15 +0000
+	id 1ii5WM-0003Qa-LI; Thu, 19 Dec 2019 23:47:54 +0000
 Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii5Vg-00035q-E0; Thu, 19 Dec 2019 23:47:14 +0000
-Received: by mail-ot1-f65.google.com with SMTP id h9so6785115otj.11;
- Thu, 19 Dec 2019 15:47:12 -0800 (PST)
+ id 1ii5WJ-0003Pv-Bm; Thu, 19 Dec 2019 23:47:52 +0000
+Received: by mail-ot1-f65.google.com with SMTP id d7so4979766otf.5;
+ Thu, 19 Dec 2019 15:47:51 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Zcnv3gHHJuKh2Cmz3rCYr47I2ejU2zRvjV1FXxWug6Y=;
- b=jFEcItNqsW6qbdCOD9pLFUq3RFxQaJCvklGmanacmqc0KF4oqh6JAlhMkahOXcjLN/
- EzE3e6D7UJmTrWm1IflhrmtM0ljyUktoE90VjpFChEi/7qiBcV0H3xsnLPedWz7gvD4o
- iCzX/D/TQEfVkd+ZoAjiJLi0o9gs3UNfkaTeqY022Z2n4Wh8D790zQIlFSEIg373WlY0
- PrRLwkZ9kX+93hzRqp7byBuaJ6l7r1IRm86aPKss/prbym2rHoBcy6lHni7c6cFSA3KB
- gSnjkA8jkViMIQ5o7eVyI19UB66YYJYRNaRDaobw3kgE5OvM86JsQPSMTvcf+ZtAH5pV
- g1zw==
-X-Gm-Message-State: APjAAAWgv+hm6VKLxtP+5w2o1Du70ynmJdvt9bysVwi+5iXQdsSAjTcA
- 8In2VdeSjFsigRgRb3Elv5LK6dY=
-X-Google-Smtp-Source: APXvYqxT11s+igvaaRYXdU0m5rUSQPEA7PDPbe1s0vfatDy3m3p85R9FShINqEQSNREFrNp6nsFjEQ==
-X-Received: by 2002:a05:6830:1289:: with SMTP id
- z9mr11961396otp.317.1576799231523; 
- Thu, 19 Dec 2019 15:47:11 -0800 (PST)
+ bh=18UcAb5rbPMss22Ho10Y3g3P3ch3yNs8mlHDvPuR4oU=;
+ b=cEJa1eiLvsxnAEg5bONEEGdg4AR9RP88VoJKfyuihztOVbx3HJmwj0AjZ5KOFk+FNv
+ Cr2Zutj76zuAnBZA1/Mt6ra9lwIHfalT7Rffd//GFzg/k6PyKrw7uWRL/kM4WBQRqUYV
+ uCQqUd2SwOgYSFADncAJE0mddwo4u1kMZQph1RpG7E2qeRoh0YGRs2LtXmI/BIzDjhQt
+ MHtcbSBH54CtYF+6seSqzjJPulbdIHarD4zyt2V0O5WkbE2CoXkV79VeBeYeeVJ6AyQL
+ FqFG11OAzV721W9tmnJFYD8qu/l+0/BMDzm3E7EKwrZ9aoCbeUAucz4UN8O5/bA6RObR
+ jNzQ==
+X-Gm-Message-State: APjAAAUQ1vp3Rqv5HZ165HQHfkA3Z/JMCDt+b904LeYmt/lOU9JDuW7M
+ kZemIPmivGDots8ri07MTPs5h4s=
+X-Google-Smtp-Source: APXvYqwn2zt/hEoslzgFitK7qNptvvyashP6FwXW1JD5npPwJGdehqnhGdzJkgQ1XfMc2/ZX5+wl9Q==
+X-Received: by 2002:a9d:6b17:: with SMTP id g23mr11137126otp.265.1576799270756; 
+ Thu, 19 Dec 2019 15:47:50 -0800 (PST)
 Received: from localhost (ip-184-205-174-147.ftwttx.spcsdns.net.
  [184.205.174.147])
- by smtp.gmail.com with ESMTPSA id e6sm2696345otl.12.2019.12.19.15.47.10
+ by smtp.gmail.com with ESMTPSA id n22sm2712400otj.36.2019.12.19.15.47.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Dec 2019 15:47:11 -0800 (PST)
-Date: Thu, 19 Dec 2019 17:47:09 -0600
+ Thu, 19 Dec 2019 15:47:50 -0800 (PST)
+Date: Thu, 19 Dec 2019 17:47:47 -0600
 From: Rob Herring <robh@kernel.org>
 To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Re: [PATCH 1/2] dt-bindings: phy: Fix the PX30 DSI PHY compatible in
- the example
-Message-ID: <20191219234621.GA28252@bogus>
-References: <20191213180019.25080-1-miquel.raynal@bootlin.com>
+Subject: Re: [PATCH 01/12] dt-bindings: display: rockchip-lvds: Declare PX30
+ compatible
+Message-ID: <20191219234747.GA30229@bogus>
+References: <20191213181051.25983-1-miquel.raynal@bootlin.com>
+ <20191213181051.25983-2-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191213180019.25080-1-miquel.raynal@bootlin.com>
+In-Reply-To: <20191213181051.25983-2-miquel.raynal@bootlin.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_154712_473107_255A3DF9 
-X-CRM114-Status: GOOD (  12.80  )
+X-CRM114-CacheID: sfid-20191219_154751_399740_2BD52BD8 
+X-CRM114-Status: GOOD (  10.03  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
@@ -67,6 +67,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [209.85.210.65 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -75,8 +77,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
@@ -93,32 +93,29 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, Kishon Vijay Abraham I <kishon@ti.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
+ Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
+ Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
  Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, 13 Dec 2019 19:00:18 +0100, Miquel Raynal wrote:
-> Use the upstream compatible instead of the BSP one in the example
-> section of the DT bindings for this IP.
+On Fri, 13 Dec 2019 19:10:40 +0100, Miquel Raynal wrote:
+> Document the PX30 LVDS compatible.
 > 
-> Fixes: 3200df7fa1d6 ("dt-bindings: phy: add yaml binding for rockchip,px30-dsi-dphy")
 > Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 > ---
->  .../devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml         | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  .../devicetree/bindings/display/rockchip/rockchip-lvds.txt       | 1 +
+>  1 file changed, 1 insertion(+)
 > 
 
-Applied, thanks.
-
-Rob
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 Linux-rockchip mailing list
