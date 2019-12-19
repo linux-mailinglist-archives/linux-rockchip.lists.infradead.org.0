@@ -2,80 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 124BA126EDC
-	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Dec 2019 21:25:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17CE6127188
+	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Dec 2019 00:31:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O+iq89WP8LAiOr3s51Jj2WYfadI3DGPARaEDzCFJPoE=; b=eVFnXTyUSk6b0g
-	3w49ygQTz7KqOajX6DgJp0o1Qtr17h4kIC32oIUoulKhO0Xwn8/6H5VkdsmVvxl82Yy2i49BsJq7i
-	ztX1N9j3/HbIFpRdEL4ILoO9MG678asMB6kRPpu7TK4iu630mWyxL0DS2j073MHUKX72CBAkOmF4T
-	gQJW+IMDnu84ysK1mwCts+nskH1yYuxr+xUDU7r6lZaWaJkcAEIsojDyP58QoCJsRMRk3So6SdMq/
-	Wms0bEQCmUPHXFQkU0IrUvso2jZTJnYppZs46O3yXqqcBpNk0/AjISzLpF0mGzNbYwf+IrubgVzl3
-	/AsNtuQGEtludiB1fobQ==;
+	List-Owner; bh=DFic1iah+jaSDw4v4BVdphefpwmmi9VXKpknEIAt3B0=; b=he5sgUBnvaoiZu
+	+AWl6CK11EnLhcjWzltLTDe7zxSrNqejL62viK++NQlMM1uvLF00cDFRrc9HlFXH9rtYflf7+u0y1
+	pMBW+69ON9hLjxlSYxcr/udrQijLiruopTGWVo4pUebcUxD3TlJgNWVHjF0cbl8+BM1GjFq9FfVNt
+	b2wZE5Vk7Ei+KiKExuvuKJ7Td0BagatMG+Q4zOJ5e/ie4g0X4vqD9VQ3VKYEBcSyZG1YeVDwds0rP
+	YvemaP95CPMNECp9OVo59BBNM4dPkvI7ON/KgRvRJ6XgE7PAPB6ZyjsEYVH/5Aj8VKzEPSHnGvF9d
+	Q+vb3hLfLgjh4qpD78ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii2ML-00040v-LB; Thu, 19 Dec 2019 20:25:21 +0000
-Received: from mail-ed1-f67.google.com ([209.85.208.67])
+	id 1ii5Gk-000568-Ac; Thu, 19 Dec 2019 23:31:46 +0000
+Received: from mail-ot1-f44.google.com ([209.85.210.44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii2JV-0008Rd-Km; Thu, 19 Dec 2019 20:22:27 +0000
-Received: by mail-ed1-f67.google.com with SMTP id dc19so6136749edb.10;
- Thu, 19 Dec 2019 12:22:25 -0800 (PST)
+ id 1ii5GX-0004wn-EF; Thu, 19 Dec 2019 23:31:35 +0000
+Received: by mail-ot1-f44.google.com with SMTP id 59so9295273otp.12;
+ Thu, 19 Dec 2019 15:31:32 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=+XwXmMLYM0uNSnbJNWZYduJB3McxlK0rmyyXpOOOY+E=;
- b=J33OsD2pFIwad5XLjg0ST3gfEMU9mKVuN5iEE+OX4RD3CHtmaBapsoWkvP/DTlHzTY
- +vbNBZyabIqjWB30J6IAE607GMxXJ8gx1/zHR1wQVew6Liolzr4T31sr7KVcfLeRmpQa
- rNxXmvN/M0B8083JMMrdaTTWSHz2s3SYawh4f4ZMP0midTPl9agVcxcoJByrheILDHJE
- cwGQlG6Bnh0bmbQrCy/wXiABEknJvC/6jnSvrtgUuqmuCJyXNOX1CS4GDKEqNhjXXg2k
- f6rJzNZ76uaBxoCOGQOIVmeRllCcPH77N95peMNF+9JE/WkG/6gf/cLzsI9knyKt+5AY
- baFw==
-X-Gm-Message-State: APjAAAWOvoKMaBsdYgDbEDVDRt/DgsVyTfW3yhtpg3auJNtWD47azjnv
- AZsvMJWOo8LoJ8HdLPisxvI=
-X-Google-Smtp-Source: APXvYqyvXs1b77JsdU/bIq/7bJEZPvD05zPHc+WyTqQxuAEMRrkLbVyqmxjhV8KF6k+gHok+ePJnvg==
-X-Received: by 2002:a17:907:20a8:: with SMTP id
- pw8mr11469298ejb.248.1576786944265; 
- Thu, 19 Dec 2019 12:22:24 -0800 (PST)
-Received: from kozik-lap ([194.230.155.234])
- by smtp.googlemail.com with ESMTPSA id s15sm626909edc.22.2019.12.19.12.22.22
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 19 Dec 2019 12:22:23 -0800 (PST)
-Date: Thu, 19 Dec 2019 21:22:20 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Chanwoo Choi <cw00.choi@samsung.com>
-Subject: Re: [PATCH 9/9] arm64: dts: exynos: Replace deprecated property for
- Exynos bus
-Message-ID: <20191219202220.GC21576@kozik-lap>
-References: <20191217055738.28445-1-cw00.choi@samsung.com>
- <CGME20191217055107epcas1p44d46bdea7b326b86689f326742f5444a@epcas1p4.samsung.com>
- <20191217055738.28445-10-cw00.choi@samsung.com>
+ bh=cHN0yTmRtblTpyKmg4iRlUo8Qwlh54zEqesHcqtc4tw=;
+ b=Awm6U31MoSXzoUS+Rac0SxEkV3KBOEciKBwjT91HLngnnhz07akQzJWJI6pj4vJvbd
+ Nv9jdJ7pWea7mrTSwMzNYZhmRVRO8DUnU6n9AmnEO7qwAE1/rjX73vkr4vZCeXfgP23e
+ 4r1SAKcr1kQpo5kGF+9sJVXAtxQjwaWDAAZshiTqzi0nN90YFGKvxjtiuL2GwBJPaAjL
+ yGE+earbXMlXrCOYh+pTqaTBY/emt+2wHQAM9QomAOUMqXkDABcZW34NlmStGyy0nDdi
+ SkjlBBM+RjYeLlytXn0AxLu3T1dHzos55sYvX9nHxskg1NPa6ukam5H3d6R8XR/1LuX6
+ dUwg==
+X-Gm-Message-State: APjAAAXIOHzI1HcKi4b11jOmXm9GkO3h0lM44fmYki+N/CXkMybnuFtq
+ Ljza1yfiDIRsW5hROhw9OA==
+X-Google-Smtp-Source: APXvYqyjZvh03uk/NUEQwvqjY4ru5OS3ZB9R5H2+OfsQFZsDDFfjxfktkVMWSrQ5ILJVZfDTUO1a6Q==
+X-Received: by 2002:a9d:1e4:: with SMTP id e91mr5962233ote.324.1576798292085; 
+ Thu, 19 Dec 2019 15:31:32 -0800 (PST)
+Received: from localhost (ip-184-205-174-147.ftwttx.spcsdns.net.
+ [184.205.174.147])
+ by smtp.gmail.com with ESMTPSA id n7sm2524611oij.14.2019.12.19.15.31.30
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 19 Dec 2019 15:31:31 -0800 (PST)
+Date: Thu, 19 Dec 2019 17:31:29 -0600
+From: Rob Herring <robh@kernel.org>
+To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Subject: Re: [v2 3/6] of: address: add support to parse PCI outbound-ranges
+Message-ID: <20191219233129.GA5484@bogus>
+References: <20191213084748.11210-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20191213084748.11210-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <CAL_JsqLSYroDZGWksJJ=E+01X=3Tji4+GmK8s3i+d2BJphqiLQ@mail.gmail.com>
+ <CA+V-a8uKBuVUQvkoJ9pJYX97Qy3JazTyLCy-2T35gOX77AP8vg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191217055738.28445-10-cw00.choi@samsung.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <CA+V-a8uKBuVUQvkoJ9pJYX97Qy3JazTyLCy-2T35gOX77AP8vg@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_122225_772725_CE78C356 
-X-CRM114-Status: GOOD (  12.55  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191219_153133_478117_48C45D60 
+X-CRM114-Status: GOOD (  18.78  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.67 listed in list.dnswl.org]
+ no trust [209.85.210.44 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.67 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.44 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -90,36 +93,69 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, heiko@sntech.de,
- linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org,
- a.swigon@samsung.com, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, myungjoo.ham@samsung.com,
- robh+dt@kernel.org, kgene@kernel.org, kyungmin.park@samsung.com,
- leonard.crestez@nxp.com, lukasz.luba@arm.com, m.szyprowski@samsung.com
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, PCI <linux-pci@vger.kernel.org>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
+ Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Arnd Bergmann <arnd@arndb.de>, "Lad,
+ Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:MEDIA DRIVERS FOR RENESAS - FCP"
+ <linux-renesas-soc@vger.kernel.org>, Tom Joseph <tjoseph@cadence.com>,
+ Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Dec 17, 2019 at 02:57:38PM +0900, Chanwoo Choi wrote:
-> Replace the property related to devfreq and devfreq-event device
-> to remove the deprecated property name.
-> - Replace 'devfreq' with 'exynos,parent-bus' property
->   for getting the parent devfreq device of exynos-bus.
-> - Replace 'devfreq-events' with 'exynos,ppmu-device' property
->   for getting the devfreq-event device to monitor bus utilization.
+On Mon, Dec 16, 2019 at 08:49:23AM +0000, Lad, Prabhakar wrote:
+> Hi Rob,
 > 
-> Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
-> ---
->  .../dts/exynos/exynos5433-tm2-common.dtsi     | 20 +++++++++----------
->  1 file changed, 10 insertions(+), 10 deletions(-)
+> Thank you for the review.
+> 
+> On Fri, Dec 13, 2019 at 8:37 PM Rob Herring <robh+dt@kernel.org> wrote:
+> >
+> > On Fri, Dec 13, 2019 at 2:48 AM Lad Prabhakar
+> > <prabhakar.csengg@gmail.com> wrote:
+> > >
+> > > From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> > >
+> > > this patch adds support to parse PCI outbound-ranges, the
+> > > outbound-regions are similar to pci ranges except it doesn't
+> > > have pci address, below is the format for bar-ranges:
+> > >
+> > > outbound-ranges = <flags upper32_cpuaddr lower32_cpuaddr
+> > >                    upper32_size lower32_size>;
+> >
+> > You can't just make up a new ranges property. Especially one that
+> > doesn't follow how 'ranges' works. We already have 'dma-ranges' to
+> > translate device to memory addresses.
+> >
+> > Explain the problem or feature you need, not the solution you came up
+> > with. Why do you need this and other endpoint bindings haven't?
+> >
+> rcar SoC's supports multiple outbound region for mapping the PCI address
+> locally to the system. This lead to discussion where there exist controllers
+> which support regions for high/low priority transfer and similarly regions
+> for large/small memory allocations, as a result a new ranges property was
+> added, where we can specify the flags which would indicate how the outbound
+> region can be used during requests.
 
-I'll pick it up the next cycle after driver get merged.
+What are the flags?
 
-Best regards,
-Krzysztof
-
+Rob
 
 _______________________________________________
 Linux-rockchip mailing list
