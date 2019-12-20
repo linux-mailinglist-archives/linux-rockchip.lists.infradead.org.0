@@ -2,86 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30B6B1279DD
-	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Dec 2019 12:20:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5744127A15
+	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Dec 2019 12:37:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q037FZdBx4P6yV9/Sy0+VP63LLKI3oD0cuU5DQUwbxc=; b=PuHBNV4wBw+f8Z
-	k0b/4ruUz17l1fkYMPYSGnGlSUfkoo4P2qLABlSwvZvbNvq3XQKjYNBilsKv/2/J8AdApeaWk6FaN
-	mDQEpqXqWacY5RDw4pU+vXRCN7Cu4UP8MTCSzV2kAodNqLgHHJT36oEh6xf6uhkhykTd+6ptr5MCR
-	cfc4rr2jLPxZZzzQGD8IWmUiz9phsVHky/z8ptATOtNdhtoMMLf761H9fQZwh0Tp5+Y6elurdNnh9
-	YTMsh+ZOSN9ny1G36bREmcOoTGARw56RqbZqcPs3r7VkJO14+USxcL6pLcH1+QT0mDJDTjLdeydds
-	Nnv4vHR+LWmQWHo7ceTw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ew9Fi/V70cQ3cPmF0Gtu8HD3gVJNCRhMYG3eMNtRLc0=; b=KCLEo5rwv4RjjH
+	aoLf4FbZxE6hz/C2+fkpZ0RzWb66kNuG6fPcax8J/UaGblFwG8chVQyyWM5FLCcgz3Jx7X2Xk+Sz/
+	lT59+K8A/3rG9uhuKpIRBRGQmJrAmM9XCM1/pvgsH2ywFYmgPXVwoTpRkg2OXbpyWAZ3CrRuuD/9P
+	hj0J+VhEwCPLBTXIXwT2x7Hw0PFAJVHym7nTXkj0dH/MrERKILHzCIQI72pNUwbTx4ZpvuE/9UbR1
+	VtFi+WldOhYFmHLL8d3yLvIlOJdg4UQUJpUu+byji5PwxGU0QYAciImwTpQDmJRXqdSppYlUPvD3B
+	ozC1fUpRHGJQihxK/qEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiGKc-00041O-2V; Fri, 20 Dec 2019 11:20:30 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1iiGbJ-0003k2-Iz; Fri, 20 Dec 2019 11:37:45 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiGK2-0002bF-7g; Fri, 20 Dec 2019 11:19:55 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBKBJmXY077739;
- Fri, 20 Dec 2019 05:19:48 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576840788;
- bh=sV3c+XTjU6aaDgJfY7gJXAPn3MoQyP4XcBTQ4wW8CWU=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=N5vzaNYomMJrZf76bXGsjV9Vbe67kUiYs1nsjBwSVIvnr0cTxNjVgELhywMYIQaxO
- DFIETdi7iNmJVAXN91D7TFZbdzquhbau0dVuc4ebkpbZJk9dKvJKqwzJ2yjaV8LdcV
- xd4pkU5SNL7PVwe3muXBTr7jYZXn3hFwoGOTut6w=
-Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBKBJmMK110425
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 20 Dec 2019 05:19:48 -0600
-Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 20
- Dec 2019 05:19:48 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 20 Dec 2019 05:19:48 -0600
-Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBKBJjTc112304;
- Fri, 20 Dec 2019 05:19:45 -0600
+ id 1iiGb6-0003Xe-Iu; Fri, 20 Dec 2019 11:37:34 +0000
+Received: from ip5f5a5f74.dynamic.kabel-deutschland.de ([95.90.95.116]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iiGb0-0000CY-Vd; Fri, 20 Dec 2019 12:37:27 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Kishon Vijay Abraham I <kishon@ti.com>
 Subject: Re: [PATCH RESEND 1/2] dt-bindings: phy: drop #clock-cells from
- rockchip,px30-dsi-dphy
-To: =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>, Rob Herring
- <robh@kernel.org>
+ rockchip, px30-dsi-dphy
+Date: Fri, 20 Dec 2019 12:37:26 +0100
+Message-ID: <3795174.JdKOkfR0EK@diego>
+In-Reply-To: <45c59145-5705-90f9-ff0e-c84cf8d17e8b@ti.com>
 References: <20191216122448.27867-1-heiko@sntech.de>
- <20191216175615.GA23392@bogus> <12525836.FhlgEYrHGb@diego>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <45c59145-5705-90f9-ff0e-c84cf8d17e8b@ti.com>
-Date: Fri, 20 Dec 2019 16:51:28 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ <12525836.FhlgEYrHGb@diego> <45c59145-5705-90f9-ff0e-c84cf8d17e8b@ti.com>
 MIME-Version: 1.0
-In-Reply-To: <12525836.FhlgEYrHGb@diego>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_031954_355277_47165E94 
-X-CRM114-Status: GOOD (  14.33  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191220_033732_776151_0C57890E 
+X-CRM114-Status: GOOD (  15.61  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,42 +59,83 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+Cc: mark.rutland@arm.com, Rob Herring <robh@kernel.org>,
+ devicetree@vger.kernel.org,
  Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
  linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
  robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-CgpPbiAxNi8xMi8xOSAxMTozMSBwbSwgSGVpa28gU3TDvGJuZXIgd3JvdGU6Cj4gSGkgUm9iLAo+
-IAo+IEFtIE1vbnRhZywgMTYuIERlemVtYmVyIDIwMTksIDE4OjU2OjE1IENFVCBzY2hyaWViIFJv
-YiBIZXJyaW5nOgo+PiBPbiBNb24sIDE2IERlYyAyMDE5IDEzOjI0OjQ3ICswMTAwLCBIZWlrbyBT
-dHVlYm5lciB3cm90ZToKPj4+IEZyb206IEhlaWtvIFN0dWVibmVyIDxoZWlrby5zdHVlYm5lckB0
-aGVvYnJvbWEtc3lzdGVtcy5jb20+Cj4+Pgo+Pj4gRnVydGhlciByZXZpZXcgb2YgdGhlIGRzaSBj
-b21wb25lbnRzIGZvciB0aGUgcHgzMCByZXZlYWxlZCB0aGF0IHRoZQo+Pj4gcGh5IHNob3VsZG4n
-dCBleHBvc2UgdGhlIHBsbCBhcyBjbG9jayBidXQgaW5zdGVhZCBoYW5kbGUgc2V0dGluZ3MKPj4+
-IHZpYSBwaHkgcGFyYW1ldGVycy4KPj4+Cj4+PiBBcyB0aGUgcGh5IGJpbmRpbmcgaXMgbmV3IGFu
-ZCBub3QgdXNlZCBhbnl3aGVyZSB5ZXQsIGp1c3QgZHJvcCB0aGVtCj4+PiBzbyB0aGV5IGRvbid0
-IGdldCB1c2VkLgo+Pj4KPj4+IEZpeGVzOiAzODE3Yzc5NjExNzkgKCJkdC1iaW5kaW5nczogcGh5
-OiBhZGQgeWFtbCBiaW5kaW5nIGZvciByb2NrY2hpcCxweDMwLWRzaS1kcGh5IikKPj4+IFNpZ25l
-ZC1vZmYtYnk6IEhlaWtvIFN0dWVibmVyIDxoZWlrby5zdHVlYm5lckB0aGVvYnJvbWEtc3lzdGVt
-cy5jb20+Cj4+PiAtLS0KPj4+IEhpIEtpc2hvbiwKPj4+Cj4+PiBtYXliZSBzdWl0YWJsZSBhcyBh
-IGZpeCBmb3IgNS41LXJjPwo+Pj4KPj4+IFRoYW5rcwo+Pj4gSGVpa28KPj4+Cj4+PiAgLi4uL2Rl
-dmljZXRyZWUvYmluZGluZ3MvcGh5L3JvY2tjaGlwLHB4MzAtZHNpLWRwaHkueWFtbCAgICAgIHwg
-NSAtLS0tLQo+Pj4gIDEgZmlsZSBjaGFuZ2VkLCA1IGRlbGV0aW9ucygtKQo+Pj4KPj4KPj4gUGxl
-YXNlIGFkZCBBY2tlZC1ieS9SZXZpZXdlZC1ieSB0YWdzIHdoZW4gcG9zdGluZyBuZXcgdmVyc2lv
-bnMuIEhvd2V2ZXIsCj4+IHRoZXJlJ3Mgbm8gbmVlZCB0byByZXBvc3QgcGF0Y2hlcyAqb25seSog
-dG8gYWRkIHRoZSB0YWdzLiBUaGUgdXBzdHJlYW0KPj4gbWFpbnRhaW5lciB3aWxsIGRvIHRoYXQg
-Zm9yIGFja3MgcmVjZWl2ZWQgb24gdGhlIHZlcnNpb24gdGhleSBhcHBseS4KPj4KPj4gSWYgYSB0
-YWcgd2FzIG5vdCBhZGRlZCBvbiBwdXJwb3NlLCBwbGVhc2Ugc3RhdGUgd2h5IGFuZCB3aGF0IGNo
-YW5nZWQuCj4gCj4gc29ycnkgYWJvdXQgdGhhdC4gVGhlIG9yaWdpbmFsIHJlc3BvbnNlIHNvbWVo
-b3cgZGlkIG5vdCB0aHJlYWQgY29ycmVjdGx5Cj4gaW4gbXkgbWFpbCBjbGllbnQsIHByb2JhYmx5
-IHNvbWUgZmF1bHQgb24gbXkgc2lkZSwgc28gSSd2ZSBvbmx5IGZvdW5kIHlvdXIKPiBtYWlsIGp1
-c3Qgbm93IGJ5IGRpZ2dpbmcgaGFyZC4KPiAKPiBAS2lzaG9uLCB0aGUgb3JpZ2luYWwgbWFpbCBh
-bHJlYWR5IGdvdCBhbgo+IAo+IEFja2VkLWJ5OiBSb2IgSGVycmluZyA8cm9iaEBrZXJuZWwub3Jn
-PgoKbWVyZ2VkIG5vdywgVGhhbmtzIQoKLUtpc2hvbgoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4
-LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
+Hi Kishon,
+
+Am Freitag, 20. Dezember 2019, 12:21:28 CET schrieb Kishon Vijay Abraham I:
+> =
+
+> On 16/12/19 11:31 pm, Heiko St=FCbner wrote:
+> > Hi Rob,
+> > =
+
+> > Am Montag, 16. Dezember 2019, 18:56:15 CET schrieb Rob Herring:
+> >> On Mon, 16 Dec 2019 13:24:47 +0100, Heiko Stuebner wrote:
+> >>> From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+> >>>
+> >>> Further review of the dsi components for the px30 revealed that the
+> >>> phy shouldn't expose the pll as clock but instead handle settings
+> >>> via phy parameters.
+> >>>
+> >>> As the phy binding is new and not used anywhere yet, just drop them
+> >>> so they don't get used.
+> >>>
+> >>> Fixes: 3817c7961179 ("dt-bindings: phy: add yaml binding for rockchip=
+,px30-dsi-dphy")
+> >>> Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+> >>> ---
+> >>> Hi Kishon,
+> >>>
+> >>> maybe suitable as a fix for 5.5-rc?
+> >>>
+> >>> Thanks
+> >>> Heiko
+> >>>
+> >>>  .../devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml      | 5 ---=
+--
+> >>>  1 file changed, 5 deletions(-)
+> >>>
+> >>
+> >> Please add Acked-by/Reviewed-by tags when posting new versions. Howeve=
+r,
+> >> there's no need to repost patches *only* to add the tags. The upstream
+> >> maintainer will do that for acks received on the version they apply.
+> >>
+> >> If a tag was not added on purpose, please state why and what changed.
+> > =
+
+> > sorry about that. The original response somehow did not thread correctly
+> > in my mail client, probably some fault on my side, so I've only found y=
+our
+> > mail just now by digging hard.
+> > =
+
+> > @Kishon, the original mail already got an
+> > =
+
+> > Acked-by: Rob Herring <robh@kernel.org>
+> =
+
+> merged now, Thanks!
+
+thanks ... just to make sure, did you also see the driver changes in patch2?
+As I don't see them in either of your branches :-)
+
+Thanks
+Heiko
+
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
