@@ -2,84 +2,134 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A0321271C8
-	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Dec 2019 00:47:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 858F5127228
+	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Dec 2019 01:18:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R8kb2e7Dtsf5k4oXikVYYb4FcAlyCqTpe6h/ppLMkd0=; b=f+M/L3Xg6CRrtO
-	50/ei4s90r5TGFkdsA0+SEGZPq9A2a3tAw8zAirgy7b4sH201JLVV7XqV9bUmmrWAzCxJG91I5+c9
-	SHgadNt5QPGALk1aNE0MKQ/vzvXjer5rmoRU03oQnTcaAVuWV/F/kmb7D6+g/7lyM2Mk9sPLAtBCP
-	StX82DTHrK5O5TPbctKKDQoEF+iv2y9ouRErvZYr1xmw9Vt053umElvO67kWs0FJyG/u/sLsBlP5+
-	bkIYYYMxnCAIjnLvMyO9JvkckQZczt7lHGZxtxDFgBPFvxB1c28c3NBpZ0/w6xFm1nX7u3ul7GYpA
-	/m430JW9R8l7hhSaSRsQ==;
+	In-Reply-To:List-Owner; bh=M8JPZ+6Tx/in7ciL4ppayYkJnlLVokTpCv/zAuoZxvQ=; b=BU
+	2SZycAXNiuYDzPDw0wP1gqk54cAfXjLW1jzWCgF7XxPwpg80LbIFKHZY8E604g/bQCl6wroEGg95F
+	kQbCH/Cf3jjvKPcBsiY0lErj1B58jDvrK8Pook8SJuH+zrNatgx1Q1jvErjiDoM+9/iunr34Bta5F
+	EHsNlceW7aax5LvTqJ8OyMV6vEB1QPEMonqLYKLuHbaO3Ezl02SWnJ6dXc7CCRMYibImpupQBN738
+	zk5zAzSKFABjVAsSsDjLw7C3jFOUXIoYw8E36EWS2OvRZEzg6LOWSrPv/SjVH8GrtaRj34U6seNVN
+	jxW9c1uYIGmSZlshp/k2EnnvbCjV/Uuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii5WM-0003Qa-LI; Thu, 19 Dec 2019 23:47:54 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1ii5zm-0007Sh-IM; Fri, 20 Dec 2019 00:18:18 +0000
+Received: from mailout1.samsung.com ([203.254.224.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii5WJ-0003Pv-Bm; Thu, 19 Dec 2019 23:47:52 +0000
-Received: by mail-ot1-f65.google.com with SMTP id d7so4979766otf.5;
- Thu, 19 Dec 2019 15:47:51 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=18UcAb5rbPMss22Ho10Y3g3P3ch3yNs8mlHDvPuR4oU=;
- b=cEJa1eiLvsxnAEg5bONEEGdg4AR9RP88VoJKfyuihztOVbx3HJmwj0AjZ5KOFk+FNv
- Cr2Zutj76zuAnBZA1/Mt6ra9lwIHfalT7Rffd//GFzg/k6PyKrw7uWRL/kM4WBQRqUYV
- uCQqUd2SwOgYSFADncAJE0mddwo4u1kMZQph1RpG7E2qeRoh0YGRs2LtXmI/BIzDjhQt
- MHtcbSBH54CtYF+6seSqzjJPulbdIHarD4zyt2V0O5WkbE2CoXkV79VeBeYeeVJ6AyQL
- FqFG11OAzV721W9tmnJFYD8qu/l+0/BMDzm3E7EKwrZ9aoCbeUAucz4UN8O5/bA6RObR
- jNzQ==
-X-Gm-Message-State: APjAAAUQ1vp3Rqv5HZ165HQHfkA3Z/JMCDt+b904LeYmt/lOU9JDuW7M
- kZemIPmivGDots8ri07MTPs5h4s=
-X-Google-Smtp-Source: APXvYqwn2zt/hEoslzgFitK7qNptvvyashP6FwXW1JD5npPwJGdehqnhGdzJkgQ1XfMc2/ZX5+wl9Q==
-X-Received: by 2002:a9d:6b17:: with SMTP id g23mr11137126otp.265.1576799270756; 
- Thu, 19 Dec 2019 15:47:50 -0800 (PST)
-Received: from localhost (ip-184-205-174-147.ftwttx.spcsdns.net.
- [184.205.174.147])
- by smtp.gmail.com with ESMTPSA id n22sm2712400otj.36.2019.12.19.15.47.49
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Dec 2019 15:47:50 -0800 (PST)
-Date: Thu, 19 Dec 2019 17:47:47 -0600
-From: Rob Herring <robh@kernel.org>
-To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Re: [PATCH 01/12] dt-bindings: display: rockchip-lvds: Declare PX30
- compatible
-Message-ID: <20191219234747.GA30229@bogus>
-References: <20191213181051.25983-1-miquel.raynal@bootlin.com>
- <20191213181051.25983-2-miquel.raynal@bootlin.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191213181051.25983-2-miquel.raynal@bootlin.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1ii5zd-0007OL-Pl
+ for linux-rockchip@lists.infradead.org; Fri, 20 Dec 2019 00:18:11 +0000
+Received: from epcas1p3.samsung.com (unknown [182.195.41.47])
+ by mailout1.samsung.com (KnoxPortal) with ESMTP id
+ 20191220001803epoutp01919bd9eb69782447d88e7b075458a041~h7Ds_iKfs2265522655epoutp01T
+ for <linux-rockchip@lists.infradead.org>; Fri, 20 Dec 2019 00:18:03 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com
+ 20191220001803epoutp01919bd9eb69782447d88e7b075458a041~h7Ds_iKfs2265522655epoutp01T
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1576801083;
+ bh=LsS7Y5v4gHckhscaO7bdEkbINdoC+Eq455a3ddtFDaw=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=KCLa9sKpoVl5USantYCzF0kCOE10VqlAPnQO8bG43OIz7Bowz38KdMOAgMElV5PrT
+ CdZ3KfyhNqVzywda8JlGnUwgzmkgBjelMJvjPRnGzO7a+zYWP3hm5uSIuQbpVaJW8P
+ xSR4OshR8cxg/40M9Auv4SqUsCzfrd+0VrNJzM/M=
+Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
+ epcas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20191220001803epcas1p15df8d25bf26bac9f895d5955d02f1478~h7DsZMUeR3044730447epcas1p1O;
+ Fri, 20 Dec 2019 00:18:03 +0000 (GMT)
+Received: from epsmges1p2.samsung.com (unknown [182.195.40.152]) by
+ epsnrtp1.localdomain (Postfix) with ESMTP id 47f8Th2gQZzMqYm1; Fri, 20 Dec
+ 2019 00:18:00 +0000 (GMT)
+Received: from epcas1p2.samsung.com ( [182.195.41.46]) by
+ epsmges1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+ A0.14.48498.8331CFD5; Fri, 20 Dec 2019 09:18:00 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+ epcas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20191220001759epcas1p131a41a619847d80c64470f7c1920121f~h7Do4W95c3044730447epcas1p1F;
+ Fri, 20 Dec 2019 00:17:59 +0000 (GMT)
+Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
+ epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20191220001759epsmtrp1ebc539bbaf257bc316b74055d8111222~h7Do3UZVZ1705617056epsmtrp1N;
+ Fri, 20 Dec 2019 00:17:59 +0000 (GMT)
+X-AuditID: b6c32a36-a3dff7000001bd72-5b-5dfc1338e161
+Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
+ epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 6B.6C.06569.7331CFD5; Fri, 20 Dec 2019 09:17:59 +0900 (KST)
+Received: from localhost.localdomain (unknown [10.113.221.102]) by
+ epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20191220001759epsmtip15e131ad165cc815dec38651f097c191a~h7DomX5g82050220502epsmtip1x;
+ Fri, 20 Dec 2019 00:17:59 +0000 (GMT)
+From: Chanwoo Choi <cw00.choi@samsung.com>
+To: robh+dt@kernel.org, krzk@kernel.org, heiko@sntech.de,
+ leonard.crestez@nxp.com, lukasz.luba@arm.com
+Subject: [PATCH v2 00/11] PM / devfreq: Remove deprecated 'devfreq' and
+ 'devfreq-events' properties
+Date: Fri, 20 Dec 2019 09:24:19 +0900
+Message-Id: <20191220002430.11995-1-cw00.choi@samsung.com>
+X-Mailer: git-send-email 2.17.1
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrOJsWRmVeSWpSXmKPExsWy7bCmnq6F8J9YgycrBSzuz2tltNj+rovJ
+ 4vqX56wW84+cY7X4/+g1q0X/49fMFufPb2C3ONv0ht1ixd2PrBabHl9jtbi8aw6bxefeI4wW
+ nx78Z7aYcX4fk8XCphZ2i7VH7rJbLL1+kcniduMKNovWvUfYHYQ91sxbw+ixaVUnm8fmJfUe
+ G9/tYPK4ffAzs0ffllWMHtuvzWP2+LxJLoAjKtsmIzUxJbVIITUvOT8lMy/dVsk7ON453tTM
+ wFDX0NLCXEkhLzE31VbJxSdA1y0zB+ghJYWyxJxSoFBAYnGxkr6dTVF+aUmqQkZ+cYmtUmpB
+ Sk6BZYFecWJucWleul5yfq6VoYGBkSlQYUJ2xo3OrUwF16UrFn5cz9LAeE20i5GTQ0LARGLG
+ sk8sXYxcHEICOxgl/l3cxwjhfGKUeLf4AhuE841RYtGMFcwwLd2HZkMl9jJKLJ42mR0kISTw
+ hVHi6h8ZEJtNQEti/4sbbCC2iECGxMzXl1lBGpgFpjFLNN/7xNTFyMEhLJAqcX9nDkgNi4Cq
+ RH/XGbB6XgErict/Z7JDLJOXWL3hADNIr4TAdzaJTefOsUAkXCT+rP0PZQtLvDq+BapBSuJl
+ fxuUXS2x8uQRNojmDkaJLfsvsEIkjCX2L50MdgSzgKbE+l36EGFFiZ2/5zKC2MwCfBLvvvaw
+ gpRICPBKdLQJQZQoS1x+cJcJwpaUWNzeyQZhe0jsOTOFBRIOsRJLHn1gnMAoOwthwQJGxlWM
+ YqkFxbnpqcWGBUbIsbSJEZxItcx2MC4653OIUYCDUYmH1yHtd6wQa2JZcWXuIUYJDmYlEd7b
+ HT9jhXhTEiurUovy44tKc1KLDzGaAkNvIrOUaHI+MMnnlcQbmhoZGxtbmBiamRoaKonzcvy4
+ GCskkJ5YkpqdmlqQWgTTx8TBKdXA6LK0ZF2ovPAd99/V1z9WaD9mP37k84NFR+x2KMQcuq+o
+ FhK/7SGnhG4A8+ZQwZreu/9iziRd+5B74OpD9Yfn/q7/dtBymxn/Ut+FUQ378rfWPF6nqVmc
+ nDmRZ9+hXXu7xVNPvdA7lynPeqcnZmXf9EhxZmcWwz6N31NKJzic/v+w5J6k4JVaJSWW4oxE
+ Qy3mouJEAHN6TIm6AwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrGLMWRmVeSWpSXmKPExsWy7bCSnK658J9Yg1VXeS3uz2tltNj+rovJ
+ 4vqX56wW84+cY7X4/+g1q0X/49fMFufPb2C3ONv0ht1ixd2PrBabHl9jtbi8aw6bxefeI4wW
+ nx78Z7aYcX4fk8XCphZ2i7VH7rJbLL1+kcniduMKNovWvUfYHYQ91sxbw+ixaVUnm8fmJfUe
+ G9/tYPK4ffAzs0ffllWMHtuvzWP2+LxJLoAjissmJTUnsyy1SN8ugSvjRudWpoLr0hULP65n
+ aWC8JtrFyMkhIWAi0X1oNlsXIxeHkMBuRok9t78zQiQkJaZdPMrcxcgBZAtLHD5cDFHziVHi
+ y/8nrCA1bAJaEvtf3GADsUUE8iQ2bfzKDFLELLCMWWLC62awhLBAssS+T9PBGlgEVCX6u86A
+ xXkFrCQu/53JDrFMXmL1hgPMExh5FjAyrGKUTC0ozk3PLTYsMMpLLdcrTswtLs1L10vOz93E
+ CA5tLa0djCdOxB9iFOBgVOLhdUj7HSvEmlhWXJl7iFGCg1lJhPd2x89YId6UxMqq1KL8+KLS
+ nNTiQ4zSHCxK4rzy+ccihQTSE0tSs1NTC1KLYLJMHJxSDYyxO4KtbmndfTbX9f4JZ9Hk34tb
+ jVm3bdIx9nPhr5bf7rnY3yUwaONbrpTGvS9k+W+sf7T31tIfZsJTHt/f8fTCrvMpZ4/n2dld
+ +9o+IUdX9LJ9SlHYzrSFqwy/8q6fd07+/fxT57aGeU9emlVYvTx11rnHGkqvDi2vOLbu4F6d
+ xcrp9Ts/fL3yT4mlOCPRUIu5qDgRABu9dCZpAgAA
+X-CMS-MailID: 20191220001759epcas1p131a41a619847d80c64470f7c1920121f
+X-Msg-Generator: CA
+X-Sendblock-Type: SVC_REQ_APPROVE
+CMS-TYPE: 101P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20191220001759epcas1p131a41a619847d80c64470f7c1920121f
+References: <CGME20191220001759epcas1p131a41a619847d80c64470f7c1920121f@epcas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_154751_399740_2BD52BD8 
-X-CRM114-Status: GOOD (  10.03  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191219_161810_179060_FB7EA51E 
+X-CRM114-Status: GOOD (  16.78  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.24 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ [203.254.224.24 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,30 +142,85 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
- Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
+ a.swigon@samsung.com, linux-kernel@vger.kernel.org, cw00.choi@samsung.com,
+ kyungmin.park@samsung.com, myungjoo.ham@samsung.com, kgene@kernel.org,
+ linux-rockchip@lists.infradead.org, Chanwoo Choi <cw00.choi@samsun.com>,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, 13 Dec 2019 19:10:40 +0100, Miquel Raynal wrote:
-> Document the PX30 LVDS compatible.
-> 
-> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-> ---
->  .../devicetree/bindings/display/rockchip/rockchip-lvds.txt       | 1 +
->  1 file changed, 1 insertion(+)
-> 
+From: Chanwoo Choi <cw00.choi@samsun.com>
 
-Acked-by: Rob Herring <robh@kernel.org>
+The devfreq and devfreq-event subsystem provided the following two properties:
+- Provide 'devfreq' property in order to get the parent devfreq device
+  by devfreq_get_devfreq_by_phandle() if devfreq device use passive governor.
+- Provide 'devfreq-events' property in order to get the devfreq-event device
+  by devfreq_event_get_edev_by_phandle().
+
+But, two properties name is not proper expressing the h/w
+and 'devfreq' word is name of linux subsystem instead of any h/w name.
+
+Hand over the rights for deciding the property name for getting
+the devfreq/devfreq-event device on devicetree, to each devfreq driver.
+
+So, replace 'devfreq' and 'devfreq-events' property with following property
+name according to each devfreq driver:
+--------------------------------------------------------------------
+Old property  | New property       | Device driver name            |
+--------------------------------------------------------------------
+devfreq       | exynos,parent-bus  | exynos-bus.c                  |
+              |                    |                               |
+devfreq-events| exynos,ppmu-device | exynos-bus.c, exynos5422-dmc.c|
+              | rockchip,dfi-device| rk3399_dmc.c                  |
+--------------------------------------------------------------------
+
+Changes from v1:
+- Edit function name by removing '_by_node' postfix.
+- Split out dt-binding patch to make it the separte patch.j
+- Add Lukasz's tag for exynos5422-dmc
+
+Chanwoo Choi (10):
+  PM / devfreq: Remove devfreq_get_devfreq_by_phandle function
+  PM / devfreq: event: Add devfreq_event_get_edev_by_node function
+  dt-bindings: devfreq: exynos-bus: Replace deprecated 'devfreq' and 'devfreq-events' property
+  dt-bindings: devfreq: rk3399_dmc:  Replace deprecated 'devfreq-events' property
+  dt-bindings: memory: exynos5422-dmc: Replace the deprecated 'devfreq-events' property
+  PM / devfreq: exynos-bus: Replace the deprecated 'devfreq' and 'devfreq-events' property
+  PM / devfreq: rk3399_dmc: Replace the deprecated 'devfreq-events' property
+  memory: samsung: exynos5422-dmc: Replace the deprecated 'devfreq-events' property
+  ARM: dts: exynos: Replace deprecated property for Exynos bus and DMC
+  arm64: dts: exynos: Replace deprecated property for Exynos bus on TM2
+
+Leonard Crestez (1):
+  PM / devfreq: Add devfreq_get_devfreq_by_node function
+
+ .../bindings/devfreq/exynos-bus.txt           | 22 +++----
+ .../bindings/devfreq/rk3399_dmc.txt           |  4 +-
+ .../memory-controllers/exynos5422-dmc.txt     |  8 +--
+ arch/arm/boot/dts/exynos3250-monk.dts         |  2 +-
+ arch/arm/boot/dts/exynos3250-rinato.dts       | 18 +++---
+ .../boot/dts/exynos4412-itop-scp-core.dtsi    | 16 ++---
+ arch/arm/boot/dts/exynos4412-midas.dtsi       | 18 +++---
+ .../boot/dts/exynos4412-odroid-common.dtsi    | 18 +++---
+ arch/arm/boot/dts/exynos5422-odroid-core.dtsi | 34 +++++------
+ .../dts/exynos/exynos5433-tm2-common.dtsi     | 20 +++----
+ drivers/devfreq/devfreq-event.c               | 53 +++--------------
+ drivers/devfreq/devfreq.c                     | 25 +++-----
+ drivers/devfreq/exynos-bus.c                  | 58 ++++++++++++++++---
+ drivers/devfreq/rk3399_dmc.c                  | 16 ++++-
+ drivers/memory/samsung/exynos5422-dmc.c       | 37 ++++++++++--
+ include/linux/devfreq-event.h                 | 14 ++---
+ include/linux/devfreq.h                       |  6 +-
+ 17 files changed, 198 insertions(+), 171 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
