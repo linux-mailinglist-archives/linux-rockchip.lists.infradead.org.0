@@ -2,126 +2,105 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51E77127258
-	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Dec 2019 01:20:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CADDB12728B
+	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Dec 2019 01:47:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Sf2UIo2GsoiZDZ9E5WgryaWTH6N/OWQVIxjcL+wUWEA=; b=RogASbzeQIfBmZ7dKH6eNaqPrU
-	JdkHmrRrCBUgV3/dkKLNidoDx/oePwgkCMh3ys7SQhmMVMzw9sIdaYeTLYw5yMq9VgQUT8S/PF9H9
-	oA4rYm7VKKBSs9BXGghSxNmJsiIEUw864reTEHidRVuXuYBkKXj3TtgMiWe3FPV8AiWqUkaAN9bZX
-	DP+2cOSaubqw3qjKhClNpm8C+S3ojN27yVeVCWLRnDqH2aXnqjn3OBMJX9wlF6/3zjCmZ4ED6Xqx/
-	Fg1R8tKblkmMx2zDheONYBEujYCaJ4+Tp59Kh/kdWScgkaNEDXHEGtVmtHIA8tXK+ZwjhOBRhHH6V
-	MNL4ImfA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=H1AUcVse5mgrsweqIdBOu6juxbjpPYYvFUXq2sWclYw=; b=IZFLc3OQFXKt5P
+	oJsg0sHiT0VCIiZ37x83xUm+MlXOEU5SZmiGXNp6pHh/88MTsQiVfFRMHkQSWVqus1kx5q8y+9Kez
+	4W0PU+j/jJ8WZGGx3DSGsVow7KQJ4UDYSvkWeLi+L+YQDZ+VD+Sd6OTobZ7t1fokY5pK37An3JRgp
+	AheRqgnVdNCUh+mmZPGUb5ilqH5JQrqPidnkRISKGmPas44j6PclYn7OwpC5peqHSZrz7bZGePvA/
+	yaogixLtG3JvH4VuFyEbNb3gjhcz+CAJ33KUlkoz0ojXTH9uYSkzHE0C17dCztyUddi+1+xk5dE86
+	f3UTe6Eoj9Z0hQSXFjug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii61r-00029s-Rt; Fri, 20 Dec 2019 00:20:27 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1ii6Rm-0003pw-M8; Fri, 20 Dec 2019 00:47:14 +0000
+Received: from mail-eopbgr80073.outbound.protection.outlook.com ([40.107.8.73]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii5zl-0007V4-IM
- for linux-rockchip@lists.infradead.org; Fri, 20 Dec 2019 00:18:23 +0000
-Received: from epcas1p2.samsung.com (unknown [182.195.41.46])
- by mailout3.samsung.com (KnoxPortal) with ESMTP id
- 20191220001804epoutp0337958db760823c560089dcd85c2c37cf~h7DuE7KDC1389513895epoutp03X
- for <linux-rockchip@lists.infradead.org>; Fri, 20 Dec 2019 00:18:04 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
- 20191220001804epoutp0337958db760823c560089dcd85c2c37cf~h7DuE7KDC1389513895epoutp03X
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1576801084;
- bh=X+3c4eWtnhc/wznu8yi8b2cClbqwmxlDm2znKapn0f8=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=IUvkeAWo6LpnDRHd+QT5dqXOJMdaEGje+uADwMMQp0UZ+oTWrhsRgS+sAbA0BDzpF
- ZeJotKTtgUcG8DQ4Ptc0ZD20or26vjFl4lg1q6y4T/tKOCfC3tqA7d9gCv6vgQ3CaS
- ySgCahu5rar+1WA9VRLgJUmmUf09PNBMM465HA3M=
-Received: from epsnrtp3.localdomain (unknown [182.195.42.164]) by
- epcas1p3.samsung.com (KnoxPortal) with ESMTP id
- 20191220001804epcas1p3e2b76ae36447fc53d7cc23897e5a458c~h7DtqGA0b1379413794epcas1p3b;
- Fri, 20 Dec 2019 00:18:04 +0000 (GMT)
-Received: from epsmges1p1.samsung.com (unknown [182.195.40.157]) by
- epsnrtp3.localdomain (Postfix) with ESMTP id 47f8Tj3XDHzMqYks; Fri, 20 Dec
- 2019 00:18:01 +0000 (GMT)
-Received: from epcas1p4.samsung.com ( [182.195.41.48]) by
- epsmges1p1.samsung.com (Symantec Messaging Gateway) with SMTP id
- 37.E5.57028.9331CFD5; Fri, 20 Dec 2019 09:18:01 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20191220001800epcas1p13d5f4ff181c10a118e151a86891a7130~h7DqMcQuI0248302483epcas1p1m;
- Fri, 20 Dec 2019 00:18:00 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20191220001800epsmtrp137795fa8ccc38d84bbebd812ec3bb576~h7DqLk-GK1705617056epsmtrp1b;
- Fri, 20 Dec 2019 00:18:00 +0000 (GMT)
-X-AuditID: b6c32a35-4f3ff7000001dec4-1a-5dfc13393711
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- C3.CA.10238.8331CFD5; Fri, 20 Dec 2019 09:18:00 +0900 (KST)
-Received: from localhost.localdomain (unknown [10.113.221.102]) by
- epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20191220001800epsmtip1c0d85f62e3a18f1dd3ec9f557ce34298~h7Dp76vdw2050220502epsmtip10;
- Fri, 20 Dec 2019 00:18:00 +0000 (GMT)
-From: Chanwoo Choi <cw00.choi@samsung.com>
-To: robh+dt@kernel.org, krzk@kernel.org, heiko@sntech.de,
- leonard.crestez@nxp.com, lukasz.luba@arm.com
-Subject: [PATCH v2 11/11] arm64: dts: exynos: Replace deprecated property
- for Exynos bus on TM2
-Date: Fri, 20 Dec 2019 09:24:30 +0900
-Message-Id: <20191220002430.11995-12-cw00.choi@samsung.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191220002430.11995-1-cw00.choi@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrDJsWRmVeSWpSXmKPExsWy7bCmga6l8J9Yg2vfpS3uz2tltLj+5Tmr
- xfwj51gt/j96zWrR//g1s8X58xvYLc42vWG3WHH3I6vFpsfXWC0u75rDZvG59wijxacH/5kt
- Zpzfx2SxsKmF3WLtkbvsFkuvX2SyuN24gs2ide8RdgchjzXz1jB6bFrVyeaxeUm9x8Z3O5g8
- +rasYvTYfm0es8fnTXIB7FHZNhmpiSmpRQqpecn5KZl56bZK3sHxzvGmZgaGuoaWFuZKCnmJ
- uam2Si4+AbpumTlAbygplCXmlAKFAhKLi5X07WyK8ktLUhUy8otLbJVSC1JyCiwL9IoTc4tL
- 89L1kvNzrQwNDIxMgQoTsjNerFvIXHBaoGLKh5XsDYxHeLsYOTkkBEwkThz7zdzFyMUhJLCD
- UeL7hh4WCOcTo8Sqna+gnG+MEicnvGOGabny/C0bRGIvo8TbTQuZIJwvjBKTOq+zgVSxCWhJ
- 7H9xA8wWEciQmPn6MitIEbPARyaJrm13wRLCAokS6/tmgNksAqoS57ZdYgexeQWsJQ4dOgm1
- Tl5i9YYDYDYnUHzLs4fsIIMkBP6zSbQ/egJV5CKxd2sHE4QtLPHq+BZ2CFtK4mV/G5RdLbHy
- 5BE2iOYORokt+y+wQiSMJfYvnQzUzAF0nqbE+l36EGFFiZ2/5zKC2MwCfBLvvvawgpRICPBK
- dLQJQZQoS1x+cBdqraTE4vZONgjbQ2Jj21JGSKj0MUpcefidZQKj3CyEDQsYGVcxiqUWFOem
- pxYbFhgiR9omRnBK1TLdwTjlnM8hRgEORiUeXoe037FCrIllxZW5hxglOJiVRHhvd/yMFeJN
- SaysSi3Kjy8qzUktPsRoCgzKicxSosn5wHSfVxJvaGpkbGxsYWJoZmpoqCTOy/HjYqyQQHpi
- SWp2ampBahFMHxMHp1QDIx9nsKem5KoNK6ZlyGewvp2/7eSRty4bfdifOeiZBjEEZeaHPlbh
- i9wi2SDNKMU9YeJZhQ7Du4XvLO7db8u6X3b4q8OTOUyunazlrIt1PXsnqqSVvZ824bvwnTMC
- wpXbcq2TmpkX7VXfou+oPyd+YvKHhxsXZ/a9XX1wmfDcoLkBujd6nFasU2Ipzkg01GIuKk4E
- ANzYs4y/AwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrCLMWRmVeSWpSXmKPExsWy7bCSnK6F8J9Yg1dX1C3uz2tltLj+5Tmr
- xfwj51gt/j96zWrR//g1s8X58xvYLc42vWG3WHH3I6vFpsfXWC0u75rDZvG59wijxacH/5kt
- Zpzfx2SxsKmF3WLtkbvsFkuvX2SyuN24gs2ide8RdgchjzXz1jB6bFrVyeaxeUm9x8Z3O5g8
- +rasYvTYfm0es8fnTXIB7FFcNimpOZllqUX6dglcGS/WLWQuOC1QMeXDSvYGxiO8XYycHBIC
- JhJXnr9l62Lk4hAS2M0osbt9ARtEQlJi2sWjzF2MHEC2sMThw8UQNZ8YJW4ePsACUsMmoCWx
- /8UNsHoRgTyJTRu/MoMUMQv8Z5L4fvIBI0hCWCBeonHBRSYQm0VAVeLctkvsIDavgLXEoUMn
- mSGWyUus3nAAzOYEim959hCsRkjASuLl+QusExj5FjAyrGKUTC0ozk3PLTYsMMxLLdcrTswt
- Ls1L10vOz93ECA57Lc0djJeXxB9iFOBgVOLhdUj7HSvEmlhWXJl7iFGCg1lJhPd2x89YId6U
- xMqq1KL8+KLSnNTiQ4zSHCxK4rxP845FCgmkJ5akZqemFqQWwWSZODilGhiNNp8ov+TxRLYk
- MGxfRGjFnp+hV09oyYtkVfcxebIzKnt9qixVv7ze6u7EAo4ggyXlCyd5Fm7YxnSXzSLyp/G0
- iKCqyS2J3gyHGM+88Y97cTC6i/FJRfrXqreNi4Ne+mpZ6Zb66tYVaQbqh+h5dHVcuqnRrdO4
- 9oze3l/cKzqvzDlddGfreyWW4oxEQy3mouJEAJUT7m93AgAA
-X-CMS-MailID: 20191220001800epcas1p13d5f4ff181c10a118e151a86891a7130
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20191220001800epcas1p13d5f4ff181c10a118e151a86891a7130
+ id 1ii6RZ-0003fv-Bm; Fri, 20 Dec 2019 00:47:03 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=AmQ3X+Jub1TiczYr/rs2cEpD8gyE98ozKlvAPewzURVJ+tgcDd/utsc4hv0fnkMRaYuxu0oGzgDvdHv5bHUm6fMe2kxvTuW4gLGlYsg6kkDKc8ZbWlW+W6sHMMxUGgHhm8r3Ev/ZkVd+dpzSRj+G6JoMsaS6ewi+7eFT1MOcTHL9aOk5k/+PgxJu3KQJnX5jwuMuh+HdmAPjD6G6qBuGWalv8PaPMCdLV1Ra4nkr7i2SifMTToFOLP+3BFZDM62X/o1SQewyZntOzgxIwiYNIafd1eKcLIWpPR+w2HEI7aIIAs7ETqX2ck/ocj/R6YB82FO2jhqTvZUlvlzvsznLow==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=6IYQhJ5t8iIeO1QLyP707096MFdjnkNprb9e5jTf9Vs=;
+ b=Us8jGh07DfD40S/H0ckJMDHsfMrnOeklm7ztiGEn3f+pThVMfuE/gCQSB5t/m6t6r4fQzLm6+so0ZJqxHXBErOUhbg8pqpLvnC1KCcdnE2cfHvw0vL700Y/2DVoBB2BBz/l8I2OU1OVW8+eii0fKUtd9hp/sHREA9WTdQtDX1axyCO0xifqG5NuNsAm47qevPOcT/B3UhzLZVNXmYuv3REl+DsohbCg/0gGzI5s9hRnYxSL4aSZqmXqMnvJ2gy9kr0PadCBqn7bnFRlLaj1hzXjEXxIPh0ygi9MyeeXcgY8JzIU7NwxlGfyIWz6EBTVo9/FmAhf5+57Pr9FZppv3JQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=6IYQhJ5t8iIeO1QLyP707096MFdjnkNprb9e5jTf9Vs=;
+ b=KDAyDJt0j2Y1eIwDGck6pOndv3XP5jzODbxVo1hQpP57nLUalQNXAeL/q1E66riE8eHKdykrmU1iBFBvGo7N5gSO9VyASsLKY8J8i7oPY8K+MsMkRKgwrc04axep3SudNZw7XryIEv5CaqlITvh3jLZ9DjMPP4P0w8bVGXQot0Y=
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
+ VI1PR04MB4813.eurprd04.prod.outlook.com (20.177.48.92) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2559.15; Fri, 20 Dec 2019 00:46:56 +0000
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::2c49:44c8:2c02:68b1]) by VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::2c49:44c8:2c02:68b1%5]) with mapi id 15.20.2559.015; Fri, 20 Dec 2019
+ 00:46:56 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Chanwoo Choi <cw00.choi@samsung.com>, "krzk@kernel.org" <krzk@kernel.org>
+Subject: Re: [PATCH v2 02/11] PM / devfreq: Remove
+ devfreq_get_devfreq_by_phandle function
+Thread-Topic: [PATCH v2 02/11] PM / devfreq: Remove
+ devfreq_get_devfreq_by_phandle function
+Thread-Index: AQHVtsr1Ef7RVp7/TE+8KfVTQarunQ==
+Date: Fri, 20 Dec 2019 00:46:55 +0000
+Message-ID: <VI1PR04MB70235291D8E40CB6225A0AF0EE2D0@VI1PR04MB7023.eurprd04.prod.outlook.com>
 References: <20191220002430.11995-1-cw00.choi@samsung.com>
- <CGME20191220001800epcas1p13d5f4ff181c10a118e151a86891a7130@epcas1p1.samsung.com>
+ <CGME20191220001759epcas1p4ce1c2017937a35de84eab720b9732df0@epcas1p4.samsung.com>
+ <20191220002430.11995-3-cw00.choi@samsung.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [2a04:241e:500:9200:f805:7bf1:bfb9:4857]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: c6f70206-b096-4fe2-2e45-08d784e61d0f
+x-ms-traffictypediagnostic: VI1PR04MB4813:
+x-microsoft-antispam-prvs: <VI1PR04MB4813879429BF351C8A62246BEE2D0@VI1PR04MB4813.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6108;
+x-forefront-prvs: 025796F161
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(346002)(376002)(39860400002)(136003)(396003)(189003)(199004)(6506007)(53546011)(54906003)(5660300002)(2906002)(76116006)(66946007)(66476007)(7416002)(478600001)(186003)(7696005)(4326008)(44832011)(8676002)(8936002)(86362001)(81156014)(33656002)(81166006)(64756008)(52536014)(316002)(66446008)(66556008)(55016002)(9686003)(110136005)(71200400001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4813;
+ H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: I2lpvE5Z2Vg/tuhjjk0FI8Vu0SBeqtpeQSzAC8/JegKrepEKxkmf3kox//m/mi0L2cQR7ec/dPEGySlOkY8luARpqHj4McvZ8OX7JF+tuDd1UaWkO8L2lEH7bhlMOeHBbVOoX6neCt6+jpX0fm+BOxDrGNlUBDZLFsvNGHu5cEiDtRv1flnZfPYar6Ib3mEMTK4gVuWsQ6OjdD/OIMW4mbnQbL1HF2unsdLKaNGwtIJou8hOFml/Kqc1zXalAK0g4PQmyDE2VMDlrfFSAVbuxS+avCkbeJ0JWG0B+NIObPNswEst7X1jHcTW27MUFRpRaKtHFrOFAwm4s+pV8YVkqPZEWRbmKuAKyqcQj2o0Eh2KARWsRAhTy6jDuxHhBPKY4kWK4ZwESEFs8VUu8MAbsMrpAyoZkuZkK4+ejp0uRt/EcV75dyl74mn4jwdXn9Mr
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: c6f70206-b096-4fe2-2e45-08d784e61d0f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Dec 2019 00:46:55.9818 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: j21ZvpiOti20U8qq9H2DNxfyWiOA4g2hempYu20DHj6Tojn90aXvpJ1ox6mLg0FiZkHWU+ywqo/NkJViHihQeQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4813
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_161818_002265_941F1D88 
-X-CRM114-Status: GOOD (  13.75  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191219_164701_720337_9310E933 
+X-CRM114-Status: GOOD (  15.52  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.33 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.33 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.8.73 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -131,8 +110,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -145,101 +122,162 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
- a.swigon@samsung.com, linux-kernel@vger.kernel.org, cw00.choi@samsung.com,
- kyungmin.park@samsung.com, myungjoo.ham@samsung.com, kgene@kernel.org,
- linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- m.szyprowski@samsung.com
-MIME-Version: 1.0
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ "heiko@sntech.de" <heiko@sntech.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "a.swigon@samsung.com" <a.swigon@samsung.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "myungjoo.ham@samsung.com" <myungjoo.ham@samsung.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "kgene@kernel.org" <kgene@kernel.org>,
+ "kyungmin.park@samsung.com" <kyungmin.park@samsung.com>,
+ "lukasz.luba@arm.com" <lukasz.luba@arm.com>,
+ "m.szyprowski@samsung.com" <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Replace the property related to devfreq and devfreq-event device
-to remove the deprecated property name.
-- Replace 'devfreq' with 'exynos,parent-bus' property
-  for getting the parent devfreq device of exynos-bus.
-- Replace 'devfreq-events' with 'exynos,ppmu-device' property
-  for getting the devfreq-event device to monitor bus utilization.
+On 20.12.2019 02:18, Chanwoo Choi wrote:
+> Previously, devfreq core support 'devfreq' property in order to get
+> the devfreq device by phandle. But, 'devfreq' property name is not proper
+> on devicetree binding because this name doesn't mean the any h/w attribute.
+> 
+> The devfreq core hand over the right to decide the property name
+> for getting the devfreq device on devicetree. Each devfreq driver
+> will decide the property name on devicetree binding and then get
+> the devfreq device by using devfreq_get_devfreq_by_node().
+> 
+> Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
+> ---
+>   drivers/devfreq/devfreq.c    | 35 -----------------------------------
+>   drivers/devfreq/exynos-bus.c | 12 +++++++++++-
+>   include/linux/devfreq.h      |  8 --------
+>   3 files changed, 11 insertions(+), 44 deletions(-)
+> 
+> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
+> index cb8ca81c8973..c3d3c7c802a0 100644
+> --- a/drivers/devfreq/devfreq.c
+> +++ b/drivers/devfreq/devfreq.c
+> @@ -991,48 +991,13 @@ struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
+>   
+>   	return ERR_PTR(-ENODEV);
+>   }
+> -
+> -/*
+> - * devfreq_get_devfreq_by_phandle - Get the devfreq device from devicetree
+> - * @dev - instance to the given device
+> - * @index - index into list of devfreq
+> - *
+> - * return the instance of devfreq device
+> - */
+> -struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev, int index)
+> -{
+> -	struct device_node *node;
+> -	struct devfreq *devfreq;
+> -
+> -	if (!dev)
+> -		return ERR_PTR(-EINVAL);
+> -
+> -	if (!dev->of_node)
+> -		return ERR_PTR(-EINVAL);
+> -
+> -	node = of_parse_phandle(dev->of_node, "devfreq", index);
+> -	if (!node)
+> -		return ERR_PTR(-ENODEV);
+> -
+> -	devfreq = devfreq_get_devfreq_by_node(node);
+> -	of_node_put(node);
+> -
+> -	return devfreq;
+> -}
+> -
+>   #else
+>   struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
+>   {
+>   	return ERR_PTR(-ENODEV);
+>   }
+> -
+> -struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev, int index)
+> -{
+> -	return ERR_PTR(-ENODEV);
+> -}
+>   #endif /* CONFIG_OF */
+>   EXPORT_SYMBOL_GPL(devfreq_get_devfreq_by_node);
+> -EXPORT_SYMBOL_GPL(devfreq_get_devfreq_by_phandle);
+>   
+>   /**
+>    * devm_devfreq_remove_device() - Resource-managed devfreq_remove_device()
+> diff --git a/drivers/devfreq/exynos-bus.c b/drivers/devfreq/exynos-bus.c
+> index 7f5917d59072..1bc4e3c81115 100644
+> --- a/drivers/devfreq/exynos-bus.c
+> +++ b/drivers/devfreq/exynos-bus.c
+> @@ -86,6 +86,16 @@ static int exynos_bus_get_event(struct exynos_bus *bus,
+>   	return ret;
+>   }
+>   
+> +static struct devfreq *exynos_bus_get_parent_devfreq(struct device_node *np)
+> +{
+> +	struct device_node *node = of_parse_phandle(np, "devfreq", 0);
+> +
+> +	if (!node)
+> +		return ERR_PTR(-ENODEV);
+> +
+> +	return devfreq_get_devfreq_by_node(node);
 
-Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
----
- .../dts/exynos/exynos5433-tm2-common.dtsi     | 20 +++++++++----------
- 1 file changed, 10 insertions(+), 10 deletions(-)
+You need to call of_node_put(node) here and in several other places.
 
-diff --git a/arch/arm64/boot/dts/exynos/exynos5433-tm2-common.dtsi b/arch/arm64/boot/dts/exynos/exynos5433-tm2-common.dtsi
-index 6f90b0e62cba..6bdd5b0940a5 100644
---- a/arch/arm64/boot/dts/exynos/exynos5433-tm2-common.dtsi
-+++ b/arch/arm64/boot/dts/exynos/exynos5433-tm2-common.dtsi
-@@ -166,54 +166,54 @@
- };
- 
- &bus_g2d_400 {
--	devfreq-events = <&ppmu_event0_d0_general>, <&ppmu_event0_d1_general>;
-+	exynos,ppmu-device = <&ppmu_event0_d0_general>, <&ppmu_event0_d1_general>;
- 	vdd-supply = <&buck4_reg>;
- 	exynos,saturation-ratio = <10>;
- 	status = "okay";
- };
- 
- &bus_g2d_266 {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_gscl {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_hevc {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_jpeg {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_mfc {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_mscl {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_noc0 {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_noc1 {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
- &bus_noc2 {
--	devfreq = <&bus_g2d_400>;
-+	exynos,parent-bus = <&bus_g2d_400>;
- 	status = "okay";
- };
- 
--- 
-2.17.1
+The old devfreq_get_devfreq_by_phandle API handled this internally but 
+devfreq_get_devfreq_by_node doesn't.
+
+Maybe the _by_phandle API could be kept and just take the property name 
+instead of always using "devfreq"?
+
+> +}
+> +
+>   /*
+>    * devfreq function for both simple-ondemand and passive governor
+>    */
+> @@ -353,7 +363,7 @@ static int exynos_bus_profile_init_passive(struct exynos_bus *bus,
+>   	profile->exit = exynos_bus_passive_exit;
+>   
+>   	/* Get the instance of parent devfreq device */
+> -	parent_devfreq = devfreq_get_devfreq_by_phandle(dev, 0);
+> +	parent_devfreq = exynos_bus_get_parent_devfreq(dev->of_node);
+>   	if (IS_ERR(parent_devfreq))
+>   		return -EPROBE_DEFER;
+>   
+> diff --git a/include/linux/devfreq.h b/include/linux/devfreq.h
+> index 1dccc47acbce..a4351698fb64 100644
+> --- a/include/linux/devfreq.h
+> +++ b/include/linux/devfreq.h
+> @@ -254,8 +254,6 @@ extern void devm_devfreq_unregister_notifier(struct device *dev,
+>   				struct notifier_block *nb,
+>   				unsigned int list);
+>   extern struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node);
+> -extern struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev,
+> -						int index);
+>   
+>   #if IS_ENABLED(CONFIG_DEVFREQ_GOV_SIMPLE_ONDEMAND)
+>   /**
+> @@ -413,12 +411,6 @@ static inline struct devfreq *devfreq_get_devfreq_by_node(struct device_node *no
+>   	return ERR_PTR(-ENODEV);
+>   }
+>   
+> -static inline struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev,
+> -							int index)
+> -{
+> -	return ERR_PTR(-ENODEV);
+> -}
+> -
+>   static inline int devfreq_update_stats(struct devfreq *df)
+>   {
+>   	return -EINVAL;
+> 
 
 
 _______________________________________________
