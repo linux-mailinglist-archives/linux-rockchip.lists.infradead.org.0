@@ -2,82 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EBFD127764
-	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Dec 2019 09:44:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE0841277BC
+	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Dec 2019 10:08:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IX51RNeINLz7ZE4XhU3BQimol5ocdyXFBebCU4Bj52A=; b=nf3r1Y1ajC/yBD
-	V6GuWSOJ6+LTpFUzSW4yrc0taYJw8QBCuo02c9u9Xf++za0Sj5UN/Q1hbByF8D7uLzefMTPTwQDJn
-	D+YSEvpNgA9nILmL9Qzr3JIS+MWm4trqaGnjFTqkNcGOwsHbsVOUD1Z+E9NHpce3Q+022sKjnUIG1
-	u+WwnBv7XlofbZmdCw/Npvh0oJ99LKtJuuPipIzg7a4SSBcH+BWTS1Sp9K7T0MSlp8mZfCEbD5i8B
-	xbhxsFASOIVnDAf8dsVZd08Y1uuhW1i34udsWo7ucLmah+I4MsES7FBJ6JpV9CNLXqDBKWrvhRtt6
-	65+B9eTkvKSkPeNx8EFg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9dBz5FdMxJcSLb6/z7fxWLyt6b/PmeCGeJF18WxsLU8=; b=V483A/nyGrz2BC
+	Bc5aLodOauY4gWnQqjuS8zR4BPQlgN7pQTasU3KiLkLA/CwmnmPa/506IWDEMR8ii9rgfauyT0+QM
+	jJYxOTE5WU4eEeth5XvpLLB79M96CePDnlTU/acKG98+JCQtFkKKX9Msv1F7rpw0vLHuNpMXy14D0
+	sOezZ1JpfYMBXzPDlWYBF5UW9pyIPNPvLpPW87Tsv2wGDQyeaiwxZABUCM0Y6TBNwv0RJ8PEtBl3C
+	y41yvoxEqPElIPzepC5Xpg3ie6f0XHMpxgHUAqlGbKlzRvYh6fNDJrC3B/oSx/GKcBmAo50XfJDbL
+	NtDpkjec5tJRfkk5dv6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiDtH-0002dq-P9; Fri, 20 Dec 2019 08:44:07 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1iiEH3-00061d-Ts; Fri, 20 Dec 2019 09:08:41 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiDt5-0002U4-Vd; Fri, 20 Dec 2019 08:43:57 +0000
-Received: by mail-ed1-f68.google.com with SMTP id e10so7476504edv.9;
- Fri, 20 Dec 2019 00:43:55 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=IXbuaf/Cq2tGfd6OZrRmEJyDn3Ce5xlbWFBppOEzCYc=;
- b=Ez2dDxxuvHv+1EOIG9LKlBbzKSc3gSydt5G7cFNdQknaZG+lSpz6c5803QbW5VkV42
- uKz8QGuEu9ubkABhcto8ETuH4mV3t0PlFuYWtwiP5FyLwNPcK5CtYK5+w1+cMfJPjrLk
- pl/9vlTNTCd0tx2ql3hGeif/GSr8tHkeEvfF9YJYDGNxC2MYK4GNhIb14g0Q7BrTBZRk
- 2LNVS85tEzppqFPPW9uJZiryEVpbSlLu9PnZ1XeP4Xv2C9Sq7ZMeGSWxpAJVxYpBN4Ru
- 6P9149l+l+I/Jc+zXblmTfqMxAK4mKLiQGWzlzTkeUV0T9RU+GIQM3MJPzgDnQxoW/FI
- YoGw==
-X-Gm-Message-State: APjAAAUpMHzKoR67Fy9YGizmpP1Z/Sz1ZLfyHtjrbVyrmf1q8sU7friD
- zOO9d2ncuehsL19XwbBjDDI=
-X-Google-Smtp-Source: APXvYqxp9hgF9PmaT2oTuADAB64PkgIFMZvrclHRsxE6EbN2yuHZHHK9cKtisRYEhpTDGewTtbAR7A==
-X-Received: by 2002:a17:906:b797:: with SMTP id
- dt23mr14655260ejb.241.1576831434074; 
- Fri, 20 Dec 2019 00:43:54 -0800 (PST)
-Received: from pi3 ([194.230.155.234])
- by smtp.googlemail.com with ESMTPSA id u23sm842501edq.74.2019.12.20.00.43.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 20 Dec 2019 00:43:53 -0800 (PST)
-Date: Fri, 20 Dec 2019 09:43:50 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Chanwoo Choi <cw00.choi@samsung.com>
-Subject: Re: [PATCH v2 04/11] dt-bindings: devfreq: exynos-bus: Replace
- deprecated 'devfreq' and 'devfreq-events' property
-Message-ID: <20191220084350.GA20583@pi3>
-References: <20191220002430.11995-1-cw00.choi@samsung.com>
- <CGME20191220001759epcas1p3051f7916542b7234aac5273e0baab83b@epcas1p3.samsung.com>
- <20191220002430.11995-5-cw00.choi@samsung.com>
+ id 1iiEH0-00061I-Ct
+ for linux-rockchip@lists.infradead.org; Fri, 20 Dec 2019 09:08:40 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 205C7283C51
+Subject: Re: RK3399 display flickering after kexec
+To: Vicente Bergas <vicencb@gmail.com>,
+ Douglas Anderson <dianders@chromium.org>, Sean Paul <seanpaul@chromium.org>
+References: <934ab507-6501-455d-b3d6-3585d94d81f6@gmail.com>
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Message-ID: <61cd89ec-e505-6a2b-d43f-da74850d1b95@collabora.com>
+Date: Fri, 20 Dec 2019 10:08:33 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191220002430.11995-5-cw00.choi@samsung.com>
+In-Reply-To: <934ab507-6501-455d-b3d6-3585d94d81f6@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_004356_018068_9EA4706B 
-X-CRM114-Status: UNSURE (   8.72  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191220_010838_567839_A0A9CF79 
+X-CRM114-Status: GOOD (  16.89  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,36 +63,41 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, heiko@sntech.de,
- linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org,
- a.swigon@samsung.com, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, myungjoo.ham@samsung.com,
- robh+dt@kernel.org, kgene@kernel.org, kyungmin.park@samsung.com,
- leonard.crestez@nxp.com, lukasz.luba@arm.com, m.szyprowski@samsung.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-rockchip@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, Dec 20, 2019 at 09:24:23AM +0900, Chanwoo Choi wrote:
-> In order to remove the deprecated 'devfreq' and 'devfreq-events' property,
-> replace with new following properties
-> - Replace 'devfreq' with 'exynos,parent-bus' property
-> - Replace 'devfreq-events' with 'exynos,ppmu-device' property
-> 
-> Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
-> ---
->  .../bindings/devfreq/exynos-bus.txt           | 22 +++++++++----------
->  1 file changed, 11 insertions(+), 11 deletions(-)
-
-Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
-
-Best regards,
-Krzysztof
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgVmljZW7DpywKCk9uIDEyLzEyLzE5IDIzOjA0LCBWaWNlbnRlIEJlcmdhcyB3cm90ZToKPiBI
+aSBFbnJpYywgRG91Z2xhcywgU2VhbiwKPiB0aGVyZSBpcyBhbiBpc3N1ZSBvbiBSSzMzOTktYmFz
+ZWQgcGxhdGZvcm1zIHdpdGggZGlzcGxheSBmbGlja2VyaW5nLgo+IEkgaGF2ZSBzZWFyY2hlZCBt
+YWlsaW5nIGxpc3QgYW5kIGZvdW5kIHlvdSBoYXZlIG1lbnRpb25lZCBvciB3ZXJlCj4gaW52b2x2
+ZWQgaW4gcmVsYXRlZCBpc3N1ZXMsIHNvLCB5b3UgbWF5IGJlIGFibGUgdG8gaGVscC4KPiAKPiBU
+aGUgaXNzdWUgaGFzIGJlZW4gb2JzZXJ2ZWQgb24gdGhlIFNhcHBoaXJlIGJvYXJkIGFuZCBvbiBn
+b29nbGUga2V2aW4sCj4gYm90aCBhcmUgYmFzZWQgb24gdGhlIFJLMzM5OS4gVGhlIGRpc3BsYXkg
+b24gU2FwcGhpcmUgaXMgY29ubmVjdGVkCj4gdGhyb3VnaCBIRE1JIGFuZCBvbiBnb29nbGUga2V2
+aW4gaXQncyB0aGUgYnVpbHQtaW4gZURQIHBhbmVsLgo+IAo+IE9uIHRoZSBTYXBwaGlyZSBib2Fy
+ZCBpIGhhdmUgdHdvIGJvb3Rsb2FkZXJzIGF2YWlsYWJsZTogdS1ib290IGFuZAo+IGFuIGFkYXB0
+YXRpb24gb2YKPiBodHRwczovL2dpdGxhYi5jb20vdmljZW5jYi9rZXZpbmJvb3QKPiB3aGljaCBp
+cyBhIGxpbnV4LWJhc2VkIGJvb3Rsb2FkZXIgYnkgbWVhbnMgb2Yga2V4ZWMuCj4gCj4gT24gZ29v
+Z2xlIGtldmluIGkgb25seSBoYXZlIG9uZSBib290bG9hZGVyOiBrZXZpbmJvb3Qgd2l0aCBrZXhl
+Yy4KPiAKPiBXaGVuIHJ1bm5pbmcgdGhlIGZpcnN0IGtlcm5lbCAoYmVmb3JlIGtleGVjKSBvciB3
+aGVuIGJvb3Rpbmcgd2l0aAo+IHUtYm9vdCB0aGUgZGlzcGxheSB3b3JrcyBmaW5lLgo+IAo+IFRo
+ZSBpc3N1ZSBhcHBlYXJzIHdoZW4gcnVubmluZyB0aGUgc2Vjb25kIGtlcm5lbCAoYWZ0ZXIga2V4
+ZWMpLgo+IEkgaGF2ZSBvYnNlcnZlZCB0d28ga2luZHMgb2YgZmxpY2tlcmluZywgc29tZXRpbWVz
+IGl0IGlzIGp1c3QgYnVyc3RzCj4gb2YgaG9yaXpvbnRhbCBkYXJrIGxpbmVzIGFuZCBzb21ldGlt
+ZXMgaXQgaXMgdGhlIHdob2xlIHNjcmVlbgo+IGJlY29taW5nIGJsYWNrIGZvciBsZXNzIHRoYW4g
+YSBzZWNvbmQuCj4gSXQgaGFwcGVucyB2ZXJ5IG9mdGVuLCBlYWNoIHRpbWUgdGhlcmUgaXMgYSBi
+aWcgcG9ydGlvbiBvZiB0aGUgc2NyZWVuCj4gYmVpbmcgdXBkYXRlZCwgbGlrZSwgZS5nLiBzY3Jv
+bGxpbmcgYSB0ZXh0IGZpbGUgb3IgYSB3ZWIgcGFnZSBpbiBmdWxsCj4gc2NyZWVuIG1vZGUuCj4g
+Cj4gRG8geW91IGhhdmUgYW55IGlkZWFzIG9uIHdoYXQgdGhlIHJvb3QgY2F1c2Ugb2YgdGhlIGlz
+c3VlIGNvdWxkIGJlPwo+IAoKVG8gYmUgaG9uZXN0LCBJIGRvbid0IGhhdmUgaWRlYSwgbG9va3Mg
+bGlrZSBzb21lIGNsb2NrIGNvbmZpZ3VyYXRpb24gaXNzdWU/IERpZAp5b3UgY2hlY2sgdGhlIGNs
+b2NrIGFmdGVyIGFuZCBiZWZvcmU/IEkgbWlnaHQgYmUgaW50ZXJlc3RlZCB0byBsb29rIGEgYml0
+IG1vcmUKaW50byB0aGUgaXNzdWUgaWYgdGhpcyBpcyByZXByb2R1Y2libGUgdXNpbmcgdGhlIGNv
+cmVib290IGJvb3Rsb2FkZXIuIERvIHlvdQprbm93IGlmIHRoaXMgaGFwcGVucyB3aXRoIHN0b2Nr
+IGJvb3Rsb2FkZXI/CgpUaGFua3MsCiBFbnJpYwoKPiBSZWdhcmRzLAo+IMKgVmljZW7Dpy4KPiAK
+Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJv
+Y2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
