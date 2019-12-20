@@ -2,51 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5744127A15
-	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Dec 2019 12:37:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57BC0127A3D
+	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Dec 2019 12:50:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ew9Fi/V70cQ3cPmF0Gtu8HD3gVJNCRhMYG3eMNtRLc0=; b=KCLEo5rwv4RjjH
-	aoLf4FbZxE6hz/C2+fkpZ0RzWb66kNuG6fPcax8J/UaGblFwG8chVQyyWM5FLCcgz3Jx7X2Xk+Sz/
-	lT59+K8A/3rG9uhuKpIRBRGQmJrAmM9XCM1/pvgsH2ywFYmgPXVwoTpRkg2OXbpyWAZ3CrRuuD/9P
-	hj0J+VhEwCPLBTXIXwT2x7Hw0PFAJVHym7nTXkj0dH/MrERKILHzCIQI72pNUwbTx4ZpvuE/9UbR1
-	VtFi+WldOhYFmHLL8d3yLvIlOJdg4UQUJpUu+byji5PwxGU0QYAciImwTpQDmJRXqdSppYlUPvD3B
-	ozC1fUpRHGJQihxK/qEg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HOhtoY7NzYjBM/bX621Ph/r2/nR7alZylfZ0+1TtO+E=; b=quo1T0J5xXGfit
+	eL39+C1mt9jp8DoQc53nHrull4MMiMl0aU/N18cRG0iXuesN2LzfKamzvrNe3gNpFhCbA/G7L13sY
+	+TqqaezVZRHPi0Ct2oSgRXy7hCWy1xkCRtybyACB8aIBFKsmXInPlwrqMs6KpBgWTW4z250AACeXX
+	Nz+7oQ942Or5Dh3r0VesHn+G3ae+/hHtg/IK+/OsXzfZlq4GGHif9/5Hi6F0ez6+7CaN8/QH7mhVn
+	lbv5HnEuDRN/SbxibxiMYayR6kukQPbvxfbll7QifSP49R3+MEGtRiwfwkat9mBueonYerl9YmI0M
+	AHgWQFrbf72jnpu0wTSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiGbJ-0003k2-Iz; Fri, 20 Dec 2019 11:37:45 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1iiGnz-0000qE-4f; Fri, 20 Dec 2019 11:50:51 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiGb6-0003Xe-Iu; Fri, 20 Dec 2019 11:37:34 +0000
-Received: from ip5f5a5f74.dynamic.kabel-deutschland.de ([95.90.95.116]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iiGb0-0000CY-Vd; Fri, 20 Dec 2019 12:37:27 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Kishon Vijay Abraham I <kishon@ti.com>
+ id 1iiGnl-0000hi-Vf; Fri, 20 Dec 2019 11:50:39 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBKBoYQM012834;
+ Fri, 20 Dec 2019 05:50:34 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1576842634;
+ bh=F5NzVoBOc0H3AQcimqUogeBFtzoUavarjXQ1aoFfC+w=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=UAzsxaeaHZa/6OX3d/fo2uAFhLLjO25PaTZG0YDWhMMaGMH8rWWv2O57BRHwOpUVh
+ jQDc/OO/rXAXHSTHRlez4SQRqn+b+T7pNdCF3LGEdy8bvbRKJ0qdQvjIGky9milvMu
+ vpfzhb3uZC1jmi57D40RpZ5qWbFHJ9XGlyFHix+A=
+Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBKBoX41111098
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 20 Dec 2019 05:50:34 -0600
+Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 20
+ Dec 2019 05:50:33 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE108.ent.ti.com
+ (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Fri, 20 Dec 2019 05:50:33 -0600
+Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBKBoUCE033381;
+ Fri, 20 Dec 2019 05:50:31 -0600
 Subject: Re: [PATCH RESEND 1/2] dt-bindings: phy: drop #clock-cells from
- rockchip, px30-dsi-dphy
-Date: Fri, 20 Dec 2019 12:37:26 +0100
-Message-ID: <3795174.JdKOkfR0EK@diego>
-In-Reply-To: <45c59145-5705-90f9-ff0e-c84cf8d17e8b@ti.com>
+ rockchip,px30-dsi-dphy
+To: =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>
 References: <20191216122448.27867-1-heiko@sntech.de>
  <12525836.FhlgEYrHGb@diego> <45c59145-5705-90f9-ff0e-c84cf8d17e8b@ti.com>
+ <3795174.JdKOkfR0EK@diego>
+From: Kishon Vijay Abraham I <kishon@ti.com>
+Message-ID: <400d28a9-6ae3-5ff3-8d95-005714cfca33@ti.com>
+Date: Fri, 20 Dec 2019 17:22:14 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
+In-Reply-To: <3795174.JdKOkfR0EK@diego>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_033732_776151_0C57890E 
-X-CRM114-Status: GOOD (  15.61  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191220_035038_103247_320F4AEB 
+X-CRM114-Status: GOOD (  17.66  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,78 +99,48 @@ Cc: mark.rutland@arm.com, Rob Herring <robh@kernel.org>,
  Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
  linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
  robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Kishon,
-
-Am Freitag, 20. Dezember 2019, 12:21:28 CET schrieb Kishon Vijay Abraham I:
-> =
-
-> On 16/12/19 11:31 pm, Heiko St=FCbner wrote:
-> > Hi Rob,
-> > =
-
-> > Am Montag, 16. Dezember 2019, 18:56:15 CET schrieb Rob Herring:
-> >> On Mon, 16 Dec 2019 13:24:47 +0100, Heiko Stuebner wrote:
-> >>> From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
-> >>>
-> >>> Further review of the dsi components for the px30 revealed that the
-> >>> phy shouldn't expose the pll as clock but instead handle settings
-> >>> via phy parameters.
-> >>>
-> >>> As the phy binding is new and not used anywhere yet, just drop them
-> >>> so they don't get used.
-> >>>
-> >>> Fixes: 3817c7961179 ("dt-bindings: phy: add yaml binding for rockchip=
-,px30-dsi-dphy")
-> >>> Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
-> >>> ---
-> >>> Hi Kishon,
-> >>>
-> >>> maybe suitable as a fix for 5.5-rc?
-> >>>
-> >>> Thanks
-> >>> Heiko
-> >>>
-> >>>  .../devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml      | 5 ---=
---
-> >>>  1 file changed, 5 deletions(-)
-> >>>
-> >>
-> >> Please add Acked-by/Reviewed-by tags when posting new versions. Howeve=
-r,
-> >> there's no need to repost patches *only* to add the tags. The upstream
-> >> maintainer will do that for acks received on the version they apply.
-> >>
-> >> If a tag was not added on purpose, please state why and what changed.
-> > =
-
-> > sorry about that. The original response somehow did not thread correctly
-> > in my mail client, probably some fault on my side, so I've only found y=
-our
-> > mail just now by digging hard.
-> > =
-
-> > @Kishon, the original mail already got an
-> > =
-
-> > Acked-by: Rob Herring <robh@kernel.org>
-> =
-
-> merged now, Thanks!
-
-thanks ... just to make sure, did you also see the driver changes in patch2?
-As I don't see them in either of your branches :-)
-
-Thanks
-Heiko
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGksCgpPbiAyMC8xMi8xOSA1OjA3IHBtLCBIZWlrbyBTdMO8Ym5lciB3cm90ZToKPiBIaSBLaXNo
+b24sCj4gCj4gQW0gRnJlaXRhZywgMjAuIERlemVtYmVyIDIwMTksIDEyOjIxOjI4IENFVCBzY2hy
+aWViIEtpc2hvbiBWaWpheSBBYnJhaGFtIEk6Cj4+Cj4+IE9uIDE2LzEyLzE5IDExOjMxIHBtLCBI
+ZWlrbyBTdMO8Ym5lciB3cm90ZToKPj4+IEhpIFJvYiwKPj4+Cj4+PiBBbSBNb250YWcsIDE2LiBE
+ZXplbWJlciAyMDE5LCAxODo1NjoxNSBDRVQgc2NocmllYiBSb2IgSGVycmluZzoKPj4+PiBPbiBN
+b24sIDE2IERlYyAyMDE5IDEzOjI0OjQ3ICswMTAwLCBIZWlrbyBTdHVlYm5lciB3cm90ZToKPj4+
+Pj4gRnJvbTogSGVpa28gU3R1ZWJuZXIgPGhlaWtvLnN0dWVibmVyQHRoZW9icm9tYS1zeXN0ZW1z
+LmNvbT4KPj4+Pj4KPj4+Pj4gRnVydGhlciByZXZpZXcgb2YgdGhlIGRzaSBjb21wb25lbnRzIGZv
+ciB0aGUgcHgzMCByZXZlYWxlZCB0aGF0IHRoZQo+Pj4+PiBwaHkgc2hvdWxkbid0IGV4cG9zZSB0
+aGUgcGxsIGFzIGNsb2NrIGJ1dCBpbnN0ZWFkIGhhbmRsZSBzZXR0aW5ncwo+Pj4+PiB2aWEgcGh5
+IHBhcmFtZXRlcnMuCj4+Pj4+Cj4+Pj4+IEFzIHRoZSBwaHkgYmluZGluZyBpcyBuZXcgYW5kIG5v
+dCB1c2VkIGFueXdoZXJlIHlldCwganVzdCBkcm9wIHRoZW0KPj4+Pj4gc28gdGhleSBkb24ndCBn
+ZXQgdXNlZC4KPj4+Pj4KPj4+Pj4gRml4ZXM6IDM4MTdjNzk2MTE3OSAoImR0LWJpbmRpbmdzOiBw
+aHk6IGFkZCB5YW1sIGJpbmRpbmcgZm9yIHJvY2tjaGlwLHB4MzAtZHNpLWRwaHkiKQo+Pj4+PiBT
+aWduZWQtb2ZmLWJ5OiBIZWlrbyBTdHVlYm5lciA8aGVpa28uc3R1ZWJuZXJAdGhlb2Jyb21hLXN5
+c3RlbXMuY29tPgo+Pj4+PiAtLS0KPj4+Pj4gSGkgS2lzaG9uLAo+Pj4+Pgo+Pj4+PiBtYXliZSBz
+dWl0YWJsZSBhcyBhIGZpeCBmb3IgNS41LXJjPwo+Pj4+Pgo+Pj4+PiBUaGFua3MKPj4+Pj4gSGVp
+a28KPj4+Pj4KPj4+Pj4gIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9yb2NrY2hpcCxweDMw
+LWRzaS1kcGh5LnlhbWwgICAgICB8IDUgLS0tLS0KPj4+Pj4gIDEgZmlsZSBjaGFuZ2VkLCA1IGRl
+bGV0aW9ucygtKQo+Pj4+Pgo+Pj4+Cj4+Pj4gUGxlYXNlIGFkZCBBY2tlZC1ieS9SZXZpZXdlZC1i
+eSB0YWdzIHdoZW4gcG9zdGluZyBuZXcgdmVyc2lvbnMuIEhvd2V2ZXIsCj4+Pj4gdGhlcmUncyBu
+byBuZWVkIHRvIHJlcG9zdCBwYXRjaGVzICpvbmx5KiB0byBhZGQgdGhlIHRhZ3MuIFRoZSB1cHN0
+cmVhbQo+Pj4+IG1haW50YWluZXIgd2lsbCBkbyB0aGF0IGZvciBhY2tzIHJlY2VpdmVkIG9uIHRo
+ZSB2ZXJzaW9uIHRoZXkgYXBwbHkuCj4+Pj4KPj4+PiBJZiBhIHRhZyB3YXMgbm90IGFkZGVkIG9u
+IHB1cnBvc2UsIHBsZWFzZSBzdGF0ZSB3aHkgYW5kIHdoYXQgY2hhbmdlZC4KPj4+Cj4+PiBzb3Jy
+eSBhYm91dCB0aGF0LiBUaGUgb3JpZ2luYWwgcmVzcG9uc2Ugc29tZWhvdyBkaWQgbm90IHRocmVh
+ZCBjb3JyZWN0bHkKPj4+IGluIG15IG1haWwgY2xpZW50LCBwcm9iYWJseSBzb21lIGZhdWx0IG9u
+IG15IHNpZGUsIHNvIEkndmUgb25seSBmb3VuZCB5b3VyCj4+PiBtYWlsIGp1c3Qgbm93IGJ5IGRp
+Z2dpbmcgaGFyZC4KPj4+Cj4+PiBAS2lzaG9uLCB0aGUgb3JpZ2luYWwgbWFpbCBhbHJlYWR5IGdv
+dCBhbgo+Pj4KPj4+IEFja2VkLWJ5OiBSb2IgSGVycmluZyA8cm9iaEBrZXJuZWwub3JnPgo+Pgo+
+PiBtZXJnZWQgbm93LCBUaGFua3MhCj4gCj4gdGhhbmtzIC4uLiBqdXN0IHRvIG1ha2Ugc3VyZSwg
+ZGlkIHlvdSBhbHNvIHNlZSB0aGUgZHJpdmVyIGNoYW5nZXMgaW4gcGF0Y2gyPwo+IEFzIEkgZG9u
+J3Qgc2VlIHRoZW0gaW4gZWl0aGVyIG9mIHlvdXIgYnJhbmNoZXMgOi0pCgpGb3Igc29tZSByZWFz
+b24sIHBhdGNoIDIgb2YgdGhlICJSRVNFTkQiIHNlcmllcyBpcyBub3QgaW4gbXkgaW5ib3guCkhv
+d2V2ZXIgbG9va2luZyBhdCB5b3VyIG9yaWdpbmFsIHNlcmllcywgbG9va3MgbGlrZSB0aGlzIGlz
+IGEgY2FuZGlkYXRlCmZvciA1LjYuIEknbGwgdGFrZSBwYXRjaCAyIGZyb20geW91ciBvcmlnaW5h
+bCBzZXJpZXMuCgpUaGFua3MKS2lzaG9uCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2No
+aXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
+L2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
