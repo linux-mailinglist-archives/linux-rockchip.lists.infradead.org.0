@@ -2,41 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA51D1288EC
-	for <lists+linux-rockchip@lfdr.de>; Sat, 21 Dec 2019 12:59:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 698C9128909
+	for <lists+linux-rockchip@lfdr.de>; Sat, 21 Dec 2019 13:16:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wcSxguZ59Ao7reFHwIayR+h4qIYLe7QvYegSeOsmoBo=; b=TtubAJZ1qi9mDf
-	OrBjzvaO9T4hxfIWh9elcP8JTZgMobSWtKNB06O0rMshH9Y1PCNIVKtd5gcNVrGzngsA7lI2+blWf
-	QqukSDqJcqXsIrsCiDWkemULG9V14Vt+MYPxCad87DocXYZXwvfKOpBy+ys9RIDIbVnDjFzukZuBz
-	QlP0oe2MVbXbSIyZSDRf3oovBzETS6uEj8ti6WxeKbYtKHprAaGGFSvBqkrviqp0+KzvK45vx9OO8
-	i3y8nsmJ2sBlFFSo6fPkdAQimlowFxWR9nZa6VNTKPcIXak3lLCh/+XaQRZRpMxCUVb3hUpWwIvYF
-	9wsQiwGYCAl7plxjeoWw==;
+	List-Owner; bh=SlUhXRlkMzvXrfUUCFv6+ivaouCwGVQzhpgZVPH7X+8=; b=gI56jR0vw3ORze
+	q7pnaJiGh+cg4OoAin9vKQotKRVMTQ7v0nakQxWPxGc1Zbvizt3764Rmt3I3ZJyiP4it8dbBnJDY5
+	xt6EKof1NB1703WfzouDM95qvsg6DZnzgI8zxdo27k2JoDYR4PdjqL7oQ2Cjrqc49ltMyosGcBVPw
+	ProkqgYzzdPOdaS5Fw+5wMXuv/qn46pFqcRpb/9slZfiDNZ6yUEp3/UOz1GPhP8IBpKq5rB1MNu5/
+	aiG0St/uoppWGA7KnJOvkOzi2IwH/Lu07VYO6tp1KTLODpAIxJdincu1tqxStW4v/Sl3L6+6btYs8
+	eoMjPX94uDDtPt5osL5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iidPk-0006xH-LO; Sat, 21 Dec 2019 11:59:20 +0000
+	id 1iidgG-0004iO-9E; Sat, 21 Dec 2019 12:16:24 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iidPX-0006np-Ci; Sat, 21 Dec 2019 11:59:08 +0000
+ id 1iidg3-0004ai-TU; Sat, 21 Dec 2019 12:16:13 +0000
 Received: from [195.37.15.138] (helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iidPR-0004n3-CJ; Sat, 21 Dec 2019 12:59:01 +0100
+ id 1iidfu-0004rE-Np; Sat, 21 Dec 2019 13:16:02 +0100
 From: Heiko Stuebner <heiko@sntech.de>
-To: Soeren Moch <smoch@web.de>
-Subject: Re: [PATCH v3 0/2] arm64: dts: rockchip: RockPro64: enable wifi/bt
-Date: Sat, 21 Dec 2019 12:58:54 +0100
-Message-ID: <12929824.v0dLTkq57a@phil>
-In-Reply-To: <20191218223523.30154-1-smoch@web.de>
-References: <20191218223523.30154-1-smoch@web.de>
+To: Jagan Teki <jagan@amarulasolutions.com>
+Subject: Re: [PATCH v3 0/4] arm64: dts: rockchip: Add Rock Pi N10 support
+Date: Sat, 21 Dec 2019 13:15:59 +0100
+Message-ID: <2568287.AjJObobGxI@phil>
+In-Reply-To: <20191216174711.17856-1-jagan@amarulasolutions.com>
+References: <20191216174711.17856-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191221_035907_582030_20CE9298 
-X-CRM114-Status: GOOD (  10.65  )
+X-CRM114-CacheID: sfid-20191221_041612_103340_B3824A68 
+X-CRM114-Status: UNSURE (   8.55  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -56,24 +57,38 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Robin Murphy <robin.murphy@arm.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Tom Cubie <tom@radxa.com>, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Akash Gajjar <akash@openedev.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Mittwoch, 18. Dezember 2019, 23:35:21 CET schrieb Soeren Moch:
-> Enhance devicetree of the RockPro64 arm64/rockchip board to use an
-> AP6359SA based wifi/bt combo module.
+Am Montag, 16. Dezember 2019, 18:47:07 CET schrieb Jagan Teki:
+> Unlike, other Rock PI boards from radxa, Rock Pi N10 SBC is based
+> on SOM + Carrier board combination.
 > 
-> Patches 1-7 of version 2 of this patch series (to add support for the
-> BCM4359 chipset with SDIO interface to the brcmfmac wireless network
-> driver) are already picked up for wireless-drivers-next. So this
-> version 3 only contains the patches 8-9 from v2.
+> Rock Pi N10 is a Rockchip RK3399Pro based SBC, which has
+> - VMARC RK3399Pro SOM (as per SMARC standard) from Vamrs.
+> - Dalang carrier board from Radxa.
 > 
+> patch 0001: dt-bindings for Rock Pi N10
+> 
+> patch 0002: VMARC RK3399Pro SOM dtsi support
+> 
+> patch 0003: Radxa Dalang carrier board dtsi support
+> 
+> patch 0004: Rock Pi N10 dts support
+> 
+> Tested basic peripherals and will all more in future patches.
 
-applied both for 5.6
+applied all 4 for 5.6
+
+And looking for to seeing the rk3288-variant as well :-D .
 
 Thanks
 Heiko
