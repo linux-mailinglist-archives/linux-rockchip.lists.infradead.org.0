@@ -2,73 +2,140 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D096B129376
-	for <lists+linux-rockchip@lfdr.de>; Mon, 23 Dec 2019 10:04:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DCE13129380
+	for <lists+linux-rockchip@lfdr.de>; Mon, 23 Dec 2019 10:11:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FvHywKmEscCZCwG1rPd+BN8CbG7/L4lHMuQLezDMve8=; b=shee66yLgY023p
-	0BW1uTEelBmVp8XgjaOtdSGHIMwKpIXUdJKbedbclR+NaEwui8W+Ol3S8gTP8gFZ3QHqrR0GawOTV
-	60KcFkDZy0Thn+YU81o/hlRacnYnrhkjhLwfCTL7BeQVn+Oxi+7B92hQaujQDVn9LQtFRJnCIzXZ7
-	0dmBYh2OPGrR3edFqjegp2eJiSTsOeZor5R4eJex4Hg/J76QmSgPCK/oDH/d3S2wkAgVSqSzl+/82
-	3p4Ui3UqmcAvCVEG/Iad7Q/o44Ye2D56b5/1HEfwB4SJpLrtuXPUsKZX4TybvtKZsKCBLTATn0rHG
-	aeCXhlfjPh395g1OhUKg==;
+	List-Owner; bh=Yk8ba+u9ByrtPZryE7T2BaKOUX76qbwlqOYDCN6JAuA=; b=jkuG/St4ceIttK
+	7R5uYn85ly9h1YxkfT0Lg2tWHmvbdwkfyPh3ddA8yboYVMY669B/GkzSomUkitY5x28eAQs4Rt1rE
+	Yvpi4U0lKaawxdiq9gretyL/pRIozNN8cn/kIIiOabwHHCWOlaP02NaBfal39dwf3QUwxlMH8oiGJ
+	kjpy4DUyhmxDnCYAKXqxglymp+OIEQ+FUubqn0dgSJtRL+Q7+ITfQ2N5nyuRxkQruFuBPzsE4D2d9
+	6P0p5rUblkXNHsWXz/BPhyK8WboZm6597qlLI1qsS7wp4YiPdeecgUMGH2VrAQihh0S6BdRP2thrZ
+	55wZ/9SQDMLW8CSpw7QA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijJdD-0008C2-P5; Mon, 23 Dec 2019 09:04:03 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1ijJk4-0002tD-Uf; Mon, 23 Dec 2019 09:11:08 +0000
+Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijJdC-0008Bs-At
- for linux-rockchip@bombadil.infradead.org; Mon, 23 Dec 2019 09:04:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
- MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=RstlLIQZjhRNJg5vYT/DdlwWii42xYMZnrsSP57hIyg=; b=jTMh1IEJc3UxVaxBv5s1D8kkzL
- c32u2bNcFZp8tKLMdeE4N94qXjaFG8lCvcjocWv+gsmUx9nytjqrBV0LcU47bBSaScXfgJ2jUbAg6
- 7JYhbhCHEqOQeit85/WuDizEbILGtWPo64nG1unxrBh2B6BCBMVIAmk8cCv4ZTCB/2B+ROlMkAA52
- xOfXr22xG2V/DmylfUxrKdAIEwSymnmoRRR49duqLqXyQKTrbZ2NWVUHWD5O28FmSviaT37XBgBPP
- V25l8qJ1djEaqHlE9UhG/ekUHbso+rV0h/2EYSKONYWV2ADh4WfrYIWLzn2Tf+ETCp7N1SH87S/Qt
- mCg+UTtA==;
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijJdb-0006BV-67
- for linux-rockchip@lists.infradead.org; Mon, 23 Dec 2019 09:04:29 +0000
-X-Originating-IP: 90.76.211.102
-Received: from xps13 (lfbn-tou-1-1151-102.w90-76.abo.wanadoo.fr
- [90.76.211.102]) (Authenticated sender: miquel.raynal@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id C0EFA1BF206;
- Mon, 23 Dec 2019 09:03:21 +0000 (UTC)
-Date: Mon, 23 Dec 2019 10:03:20 +0100
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Heiko =?UTF-8?B?U3TDvGJuZXI=?= <heiko@sntech.de>
-Subject: Re: [PATCH] arm64: dts: rockchip: Describe PX30 caches
-Message-ID: <20191223100320.3b852485@xps13>
-In-Reply-To: <1982322.8UTTk47u2F@diego>
-References: <20191204103940.22050-1-miquel.raynal@bootlin.com>
- <1982322.8UTTk47u2F@diego>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1ijJk0-0002s1-Op
+ for linux-rockchip@lists.infradead.org; Mon, 23 Dec 2019 09:11:06 +0000
+Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
+ [10.192.0.17])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 85DB3C045A;
+ Mon, 23 Dec 2019 09:10:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1577092262; bh=hX7shpgTccywnc8twj72NX/Q1JW+Bz6pG/gkgdsD7+o=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=QdHxf/cVlmtlQmZIn91VCQPuDA6tMRYUf7ffwDqTlweyn/9/p7GFqlvErOzySsf/Q
+ 9z86OpIQ0Q6H0LhU3lsm8O+6gUXzovMCZFhMAcktjmVNKCP3vkikGZZK66LQDagzjW
+ 6kOn8xVhqOWCeHM7kYvQLIQjjQbSrNqGFK2wTgQF47PQdJHQNlpM0gPt5bd+Vpd8fR
+ Enz5TydR78Wbd23afx5PwKXh5VBscmhBF9TgDNr5r7DTVMftgD5q/m3omuC0ZYGUbS
+ YveOovCIHTSaCO3rsE0uChZE6ZO37hIz1/oSsSteCNtPY4OODiv7LVL7L28ZLLTC6B
+ pYDlHfe8h2rOQ==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 54861A0079;
+ Mon, 23 Dec 2019 09:10:54 +0000 (UTC)
+Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Mon, 23 Dec 2019 01:10:54 -0800
+Received: from NAM02-CY1-obe.outbound.protection.outlook.com (10.202.3.67) by
+ mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Mon, 23 Dec 2019 01:10:53 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=dgxddfKpPYc5Fnsq5bqTeIXjgE7hO8w4cs5EnkK3Nkt+BuREU6uGGHkcVi7HtOcBW+UEjEQMWy//8UJeeLGMAmiaboPfRgGi4IWxvNaFQvM/wkr4lwRCtNCbsyDsPZPEA/+TOfkkvO83rQgXcgCU2dIcyfkToHRuP0bgVxfgsOlbEbdm4tJRxtbI4S400Q6CicfryiTKRX6U7QCza4UP/53QgkS1C/ETGF5SrNm3MumpPZeDLg6ihlxaYtlbRb34zJPxODJxtfJoc2xRgFj/8sC/b6I03EkQ7q6uj0ud9G6XBHJMf20WY7pwiu1J0RyiFeMPmnad2E6YsYGw3+5fMg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hX7shpgTccywnc8twj72NX/Q1JW+Bz6pG/gkgdsD7+o=;
+ b=EfwLM66SBwSwCZGf5mN8h0RZPr+74AlNjBHfEQ96DlCrg+T3M6RndKZAOZSt2sYvxcgHBKcFFHpKgCIX3yy4orK35WnPXGvBQ+2Mr47LZdbLPCfO5PZW4cI0bhUXVJEKQcy4qSaJ0qtfRz/zhTj5A+10S7Qqk5LaigLtgfMM49VgpT7nr2ycHwqoGWkRvCANVAdZobhLg3FI6CsEJY/ya7hU3tsmu8GSOhgnma8yObhCbDCX2iIqcu+0GMruygOwem+ezdyC5ZMybzu9ooCS5M3aTU7u1T12b7mfo8myJ3tHHfHkUJdiIvMf4JHkBVCX29LO6mzprRVQklyQxVY51w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
+ dkim=pass header.d=synopsys.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hX7shpgTccywnc8twj72NX/Q1JW+Bz6pG/gkgdsD7+o=;
+ b=VP+cXv4zI1g08FLfcdknw7wD3LRzQFQ1XHMtWclT7ZWHoUTf5i1o/TPbpx5f0JQVo+zCOYgOo31l+M2aZgKVl1XbqI6S+9aUEolFQZpvlUC5hV207fbtWj8Jw7DJm/ZkDXs2L4jkrYUrXdIHbHaiQ5JrmN207ZWvLGecn2vYp9s=
+Received: from MN2PR12MB4093.namprd12.prod.outlook.com (52.135.51.203) by
+ MN2PR12MB3821.namprd12.prod.outlook.com (10.255.239.146) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2559.16; Mon, 23 Dec 2019 09:10:51 +0000
+Received: from MN2PR12MB4093.namprd12.prod.outlook.com
+ ([fe80::35cf:644a:cfa6:72f8]) by MN2PR12MB4093.namprd12.prod.outlook.com
+ ([fe80::35cf:644a:cfa6:72f8%7]) with mapi id 15.20.2559.017; Mon, 23 Dec 2019
+ 09:10:51 +0000
+From: Minas Harutyunyan <Minas.Harutyunyan@synopsys.com>
+To: John Keeping <john@metanate.com>
+Subject: Re: [PATCH 1/2] usb: dwc2: Fix IN FIFO allocation
+Thread-Topic: [PATCH 1/2] usb: dwc2: Fix IN FIFO allocation
+Thread-Index: AQHVtmBmfU6CbvSImkS5xZoCE5ywbqfHdPwA
+Date: Mon, 23 Dec 2019 09:10:51 +0000
+Message-ID: <b2ecd22a-63b2-1da7-3ab9-5a3eb423c07a@synopsys.com>
+References: <20191219113432.1229852-1-john@metanate.com>
+In-Reply-To: <20191219113432.1229852-1-john@metanate.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=hminas@synopsys.com; 
+x-originating-ip: [46.162.196.54]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 1ba625a4-bc96-4961-2fca-08d7878801f9
+x-ms-traffictypediagnostic: MN2PR12MB3821:
+x-microsoft-antispam-prvs: <MN2PR12MB3821494E3303DA98EFAE745BA72E0@MN2PR12MB3821.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5797;
+x-forefront-prvs: 0260457E99
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(366004)(39860400002)(396003)(136003)(376002)(346002)(199004)(189003)(86362001)(316002)(36756003)(71200400001)(26005)(5660300002)(8676002)(2616005)(6916009)(186003)(2906002)(478600001)(91956017)(81156014)(66946007)(76116006)(66446008)(31696002)(81166006)(66476007)(66556008)(53546011)(8936002)(6506007)(64756008)(54906003)(6486002)(4326008)(31686004)(6512007);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:MN2PR12MB3821;
+ H:MN2PR12MB4093.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: OdWOe1xjMiEpQj8sUFdIAxgezIvR+vQ8VuX7Z2TZiIMrUORdAaS0ctdZo0WO1+fHORavnUZBimdZYMG02BcCYdERS+g4hgRB3PyAFtlLWE00ukOPIWDp6es614sPOkiU7KdtJW8QdHsDu1NlgEZWkDEay0+jhxY9mBxf8U0ycjUYNT0Rm2/T+os6PCotktivg1M5kR+wkPjpOvDyX/vU0d8dIv21UIbS2kV9DaX/3mkHFn4GN/j51X/aJEATyANDhC+g3jpWZh+n8FyKwC3IkijJUoa1JUGD1oe2gtENPgN9Jes9ilCFsNneyX9ur/37SGQsV65L9k1hruoktLgP7Blr8Z0cbVgoMzxVGBon4jvtg3wednJCALzDKBUxaGJKvViuNXN8jInlEob8rfaH9eoI5LakAgcWjuB0ra4MF96K3GeVBIuJK0fJWr8lwazs
+x-ms-exchange-transport-forked: True
+Content-ID: <C665A604595EAE42A2E5DD49A3244268@namprd12.prod.outlook.com>
 MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1ba625a4-bc96-4961-2fca-08d7878801f9
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Dec 2019 09:10:51.3718 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: ZOZVRb5JlPEA98DEPsMn0jYvF4DcyyMUwsVeTVJbzyO+efU1VKQZtNmQBCUaw6/bZf/B6Gt16T5mJ16yTEY4/Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR12MB3821
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_090427_308164_5492E8D4 
-X-CRM114-Status: GOOD (  20.19  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.7 points, 5.0 required)
+X-CRM114-CacheID: sfid-20191223_011104_937880_2EF19F74 
+X-CRM114-Status: GOOD (  18.74  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.201 listed in wl.mailspike.net]
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,85 +148,91 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sCgpIZWlrbyBTdMO8Ym5lciA8aGVpa29Ac250ZWNoLmRlPiB3cm90ZSBvbiBGcmks
-IDIwIERlYyAyMDE5IDAxOjU1OjU4CiswMTAwOgoKPiBBbSBNaXR0d29jaCwgNC4gRGV6ZW1iZXIg
-MjAxOSwgMTE6Mzk6NDAgQ0VUIHNjaHJpZWIgTWlxdWVsIFJheW5hbDoKPiA+IFBYMzAgU29DcyBm
-ZWF0dXJlIDQgQ29ydGV4LUEzNSBDUFVzIHdpdGggZWFjaCBvZiB0aGVtIGEgTDEgZGF0YSBhbmQK
-PiA+IGluc3RydWN0aW9uIGNhY2hlLiBCb3RoIGFyZSAzMmtpQiB3aWRlIChQWDMwIFRSTSkgYW5k
-IG1hZGUgb2YgNjQtYml0Cj4gPiBsaW5lcyAoQVJNIENvcnRleC1BMzUgbWFudWFsKS4gSS1jYWNo
-ZSBpcyAyLXdheSBzZXQgYXNzb2NpYXRpdmUgKEFSTQo+ID4gQ29ydGV4LUEzNSBtYW51YWwpLCBE
-LWNhY2hlIGlzIDQtd2F5IHNldCBhc3NvY2lhdGl2ZSAoQVJNCj4gPiBDb3J0ZXgtQTM1bWFudWFs
-KS4KPiA+IAo+ID4gQW4gTDIgY2FjaGUgaXMgcGxhY2VkIGFmdGVyIHRoZXNlIDQgTDEgY2FjaGVz
-IChQWDMwIFRSTSksIGlzIDI1NmtpQgo+ID4gd2lkZSAoUFgzMCBUUk0pIGFuZCBtYWRlIG9mIDY0
-LWJpdCBsaW5lcyAoQVJNIENvcnRleC1BMzUgbWFudWFsKSBhbmQKPiA+IGlzIDgtd2F5IHNldCBh
-c3NvY2lhdGl2ZSAoQVJNIENvcnRleC1BMzUgbWFudWFsKS4KPiA+IAo+ID4gRGVzY3JpYmUgYWxs
-IG9mIHRoZW0gaW4gdGhlIFBYMzAgRFRTSS4KPiA+IAo+ID4gU2lnbmVkLW9mZi1ieTogTWlxdWVs
-IFJheW5hbCA8bWlxdWVsLnJheW5hbEBib290bGluLmNvbT4KPiA+IC0tLQo+ID4gIGFyY2gvYXJt
-NjQvYm9vdC9kdHMvcm9ja2NoaXAvcHgzMC5kdHNpIHwgMzUgKysrKysrKysrKysrKysrKysrKysr
-KysrKysKPiA+ICAxIGZpbGUgY2hhbmdlZCwgMzUgaW5zZXJ0aW9ucygrKQo+ID4gCj4gPiBkaWZm
-IC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9weDMwLmR0c2kgYi9hcmNoL2Fy
-bTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3B4MzAuZHRzaQo+ID4gaW5kZXggMWZkMTJiZDA5ZTgzLi4w
-ZTEwYTIyNGE4NGIgMTAwNjQ0Cj4gPiAtLS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlw
-L3B4MzAuZHRzaQo+ID4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9weDMwLmR0
-c2kKPiA+IEBAIC00OCw2ICs0OCwxMyBAQAo+ID4gIAkJCWNwdS1pZGxlLXN0YXRlcyA9IDwmQ1BV
-X1NMRUVQICZDTFVTVEVSX1NMRUVQPjsKPiA+ICAJCQlkeW5hbWljLXBvd2VyLWNvZWZmaWNpZW50
-ID0gPDkwPjsKPiA+ICAJCQlvcGVyYXRpbmctcG9pbnRzLXYyID0gPCZjcHUwX29wcF90YWJsZT47
-Cj4gPiArCQkJaS1jYWNoZS1zaXplID0gPDB4ODAwMD47Cj4gPiArCQkJaS1jYWNoZS1saW5lLXNp
-emUgPSA8NjQ+Owo+ID4gKwkJCWktY2FjaGUtc2V0cyA9IDwyNTY+Owo+ID4gKwkJCWQtY2FjaGUt
-c2l6ZSA9IDwweDgwMDA+Owo+ID4gKwkJCWQtY2FjaGUtbGluZS1zaXplID0gPDY0PjsKPiA+ICsJ
-CQlkLWNhY2hlLXNldHMgPSA8MTI4PjsKPiA+ICsJCQluZXh0LWxldmVsLWNhY2hlID0gPCZsMj47
-Cj4gPiAgCQl9Owo+ID4gIAo+ID4gIAkJY3B1MTogY3B1QDEgewo+ID4gQEAgLTYwLDYgKzY3LDEz
-IEBACj4gPiAgCQkJY3B1LWlkbGUtc3RhdGVzID0gPCZDUFVfU0xFRVAgJkNMVVNURVJfU0xFRVA+
-Owo+ID4gIAkJCWR5bmFtaWMtcG93ZXItY29lZmZpY2llbnQgPSA8OTA+Owo+ID4gIAkJCW9wZXJh
-dGluZy1wb2ludHMtdjIgPSA8JmNwdTBfb3BwX3RhYmxlPjsKPiA+ICsJCQlpLWNhY2hlLXNpemUg
-PSA8MHg4MDAwPjsKPiA+ICsJCQlpLWNhY2hlLWxpbmUtc2l6ZSA9IDw2ND47Cj4gPiArCQkJaS1j
-YWNoZS1zZXRzID0gPDI1Nj47Cj4gPiArCQkJZC1jYWNoZS1zaXplID0gPDB4ODAwMD47Cj4gPiAr
-CQkJZC1jYWNoZS1saW5lLXNpemUgPSA8NjQ+Owo+ID4gKwkJCWQtY2FjaGUtc2V0cyA9IDwxMjg+
-Owo+ID4gKwkJCW5leHQtbGV2ZWwtY2FjaGUgPSA8JmwyPjsKPiA+ICAJCX07Cj4gPiAgCj4gPiAg
-CQljcHUyOiBjcHVAMiB7Cj4gPiBAQCAtNzIsNiArODYsMTMgQEAKPiA+ICAJCQljcHUtaWRsZS1z
-dGF0ZXMgPSA8JkNQVV9TTEVFUCAmQ0xVU1RFUl9TTEVFUD47Cj4gPiAgCQkJZHluYW1pYy1wb3dl
-ci1jb2VmZmljaWVudCA9IDw5MD47Cj4gPiAgCQkJb3BlcmF0aW5nLXBvaW50cy12MiA9IDwmY3B1
-MF9vcHBfdGFibGU+Owo+ID4gKwkJCWktY2FjaGUtc2l6ZSA9IDwweDgwMDA+Owo+ID4gKwkJCWkt
-Y2FjaGUtbGluZS1zaXplID0gPDY0PjsKPiA+ICsJCQlpLWNhY2hlLXNldHMgPSA8MjU2PjsKPiA+
-ICsJCQlkLWNhY2hlLXNpemUgPSA8MHg4MDAwPjsKPiA+ICsJCQlkLWNhY2hlLWxpbmUtc2l6ZSA9
-IDw2ND47Cj4gPiArCQkJZC1jYWNoZS1zZXRzID0gPDEyOD47Cj4gPiArCQkJbmV4dC1sZXZlbC1j
-YWNoZSA9IDwmbDI+Owo+ID4gIAkJfTsKPiA+ICAKPiA+ICAJCWNwdTM6IGNwdUAzIHsKPiA+IEBA
-IC04NCw2ICsxMDUsMTMgQEAKPiA+ICAJCQljcHUtaWRsZS1zdGF0ZXMgPSA8JkNQVV9TTEVFUCAm
-Q0xVU1RFUl9TTEVFUD47Cj4gPiAgCQkJZHluYW1pYy1wb3dlci1jb2VmZmljaWVudCA9IDw5MD47
-Cj4gPiAgCQkJb3BlcmF0aW5nLXBvaW50cy12MiA9IDwmY3B1MF9vcHBfdGFibGU+Owo+ID4gKwkJ
-CWktY2FjaGUtc2l6ZSA9IDwweDgwMDA+Owo+ID4gKwkJCWktY2FjaGUtbGluZS1zaXplID0gPDY0
-PjsKPiA+ICsJCQlpLWNhY2hlLXNldHMgPSA8MjU2PjsKPiA+ICsJCQlkLWNhY2hlLXNpemUgPSA8
-MHg4MDAwPjsKPiA+ICsJCQlkLWNhY2hlLWxpbmUtc2l6ZSA9IDw2ND47Cj4gPiArCQkJZC1jYWNo
-ZS1zZXRzID0gPDEyOD47Cj4gPiArCQkJbmV4dC1sZXZlbC1jYWNoZSA9IDwmbDI+Owo+ID4gIAkJ
-fTsKPiA+ICAKPiA+ICAJCWlkbGUtc3RhdGVzIHsKPiA+IEBAIC0xMDcsNiArMTM1LDEzIEBACj4g
-PiAgCQkJCW1pbi1yZXNpZGVuY3ktdXMgPSA8MjAwMD47Cj4gPiAgCQkJfTsKPiA+ICAJCX07Cj4g
-PiArCj4gPiArCQlsMjogbDItY2FjaGUgewo+ID4gKwkJCWNvbXBhdGlibGUgPSAiY2FjaGUiOwo+
-ID4gKwkJCWNhY2hlLXNpemUgPSA8MHg0MDAwMD47Cj4gPiArCQkJY2FjaGUtbGluZS1zaXplID0g
-PDY0PjsKPiA+ICsJCQljYWNoZS1zZXRzID0gPDUxMj47Cj4gPiArCQl9Owo+ID4gIAl9OyAgCj4g
-Cj4gTG9va3MgbGlrZSBSb2IgZGlkIGFuc3dlciBteSB1bnNwb2tlbiBxdWVzdGlvbiwgY2l0aW5n
-IGhpcyByZXBseSB0bwo+IAkiYXJtNjQ6IGR0czogYW1hem9uOiBhZGQgQW1hem9uJ3MgQW5uYXB1
-cm5hIExhYnMgQWxwaW5lIHYzIHN1cHBvcnQiIFswXQo+IAo+ICJXZSBvbmx5IGRlZmluZSBjYWNo
-ZSBhdHRyaWJ1dGVzIGlmIG5vdCBkaXNjb3ZlcmFibGUgb3IgdGhlIGNhY2hlIElEIAo+IHJlZ2lz
-dGVycyBhcmUgd3JvbmcgYW5kIHlvdSBuZWVkIHRvIG92ZXJyaWRlIHdoYXQncyBkaXNjb3ZlcmFi
-bGUuIgo+IAo+IFNvIHVubGVzcyB0aGUgY2FjaGUgaW5mb3JtYXRpb24gcmVhZCBkdXJpbmcgYm9v
-dCBpcyB3cm9uZywgaXQgbG9va3MKPiBsaWtlIHdlIGRvbid0IG5lZWQgdGhpcy4KCldlbGwsIEkg
-YWN0dWFsbHkgbWV0IHRoZToKCiAgICAgICAgICJVbmFibGUgdG8gZGV0ZWN0IGNhY2hlIGhpZXJh
-cmNoeSBmb3IgQ1BVIDx4PiIKCndhcm5pbmcgaW4gdGhlIGRtZXNnLiBEbyB5b3Uga25vdyBhbnl0
-aGluZyBhYm91dCBjYWNoZSBJRCByZWdpc3RlcnM/CgpUaGVyZSBpcyBzb21lIGtpbmQgb2YgImkt
-Y2FjaGUiIGluZm9zIFtUUk0gcGFnZSAzOTFdIGJ1dCBpdCBkb2Vzbid0CnNlZW0gZW5vdWdoIHRv
-IGRlc2NyaWJlIHRoZSBjYWNoZSBoaWVyYXJjaHkuCgo+IAo+IEhlaWtvCj4gCj4gCj4gWzBdIGh0
-dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5vcmcvcGF0Y2gvMTEyNzk3MDUvCgpUaGFua3MsCk1pcXXD
-qGwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4
-LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2No
-aXAK
+
+
+On 12/19/2019 3:34 PM, John Keeping wrote:
+> On chips with fewer FIFOs than endpoints (for example RK3288 which has 9
+> endpoints, but only 6 which are cabable of input), the DPTXFSIZN
+> registers above the FIFO count may return invalid values.
+> 
+> With logging added on startup, I see:
+> 
+> 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=1 sz=256
+> 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=2 sz=128
+> 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=3 sz=128
+> 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=4 sz=64
+> 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=5 sz=64
+> 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=6 sz=32
+> 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=7 sz=0
+> 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=8 sz=0
+> 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=9 sz=0
+> 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=10 sz=0
+> 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=11 sz=0
+> 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=12 sz=0
+> 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=13 sz=0
+> 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=14 sz=0
+> 	dwc2 ff580000.usb: dwc2_hsotg_init_fifo: ep=15 sz=0
+> 
+> but:
+> 
+> 	# cat /sys/kernel/debug/ff580000.usb/fifo
+> 	Non-periodic FIFOs:
+> 	RXFIFO: Size 275
+> 	NPTXFIFO: Size 16, Start 0x00000113
+> 
+> 	Periodic TXFIFOs:
+> 		DPTXFIFO 1: Size 256, Start 0x00000123
+> 		DPTXFIFO 2: Size 128, Start 0x00000223
+> 		DPTXFIFO 3: Size 128, Start 0x000002a3
+> 		DPTXFIFO 4: Size 64, Start 0x00000323
+> 		DPTXFIFO 5: Size 64, Start 0x00000363
+> 		DPTXFIFO 6: Size 32, Start 0x000003a3
+> 		DPTXFIFO 7: Size 0, Start 0x000003e3
+> 		DPTXFIFO 8: Size 0, Start 0x000003a3
+> 		DPTXFIFO 9: Size 256, Start 0x00000123
+> 
+> so it seems that FIFO 9 is mirroring FIFO 1.
+> 
+> Fix the allocation by using the FIFO count instead of the endpoint count
+> when selecting a FIFO for an endpoint.
+> 
+> Signed-off-by: John Keeping <john@metanate.com>
+> ---
+
+Acked-by: Minas Harutyunyan <hminas@synopsys.com>
+
+>   drivers/usb/dwc2/gadget.c | 3 ++-
+>   1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/usb/dwc2/gadget.c b/drivers/usb/dwc2/gadget.c
+> index 92e8de9cb45c..911b950ef25e 100644
+> --- a/drivers/usb/dwc2/gadget.c
+> +++ b/drivers/usb/dwc2/gadget.c
+> @@ -4059,11 +4059,12 @@ static int dwc2_hsotg_ep_enable(struct usb_ep *ep,
+>   	 * a unique tx-fifo even if it is non-periodic.
+>   	 */
+>   	if (dir_in && hsotg->dedicated_fifos) {
+> +		unsigned fifo_count = dwc2_hsotg_tx_fifo_count(hsotg);
+>   		u32 fifo_index = 0;
+>   		u32 fifo_size = UINT_MAX;
+>   
+>   		size = hs_ep->ep.maxpacket * hs_ep->mc;
+> -		for (i = 1; i < hsotg->num_of_eps; ++i) {
+> +		for (i = 1; i <= fifo_count; ++i) {
+>   			if (hsotg->fifo_map & (1 << i))
+>   				continue;
+>   			val = dwc2_readl(hsotg, DPTXFSIZN(i));
+> 
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
