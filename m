@@ -2,76 +2,63 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 635481290F0
-	for <lists+linux-rockchip@lfdr.de>; Mon, 23 Dec 2019 03:34:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E185912910C
+	for <lists+linux-rockchip@lfdr.de>; Mon, 23 Dec 2019 04:02:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GW/Kwck45ORrZU01DkItfn8C4K87dUWjkLD4Fj7WluQ=; b=IaNJCrlQczruKVfIH9ZmB2pz5
-	VIoR19HNuJwNtakdl/rb8N3H74JEb19F25+TFNPdUp/I8n7rMJxVB15C0tyitfrs98Ja5fe9DdswL
-	33oX02a4E+YuVx+ZzyDO6MXluiZUmBVQFFFVqmlxiA6zdHFnZDL7W5g4MypXY8A3JmNGWtzYHlYTF
-	mVavgdhh3xD5eqrmq6hHOn0Bea4c7V53YLH8DhuiLq6csjqOQTD8rJQRyHi07UAhI3sN5YXdpUA2Z
-	5kcJI5qrSFpcnlp7v715bT2kwj1VJjSi4u6J6XmYYp1hkDcPboPIAdHWsmDvIyk1hhEar7QgLNzyY
-	b40uZ01Ww==;
+	 bh=NIaB4JL7XpbC0TZIvELcmWmXzwPMpWIINgwh26YXla0=; b=QYY+lfHafpefM313Ey8UXZGm5
+	Q9x86wJUiWrjTk+QNzMkzOoI6953put5URKtHjz/dkf9Zz5UlyxTktGxhdTp8P5/sJIY6eijPa/Wv
+	4GXTpL84OSAEe8npYK/vHx1eYBkgT0fN1jiv+33G64JDuLif/sMK6if1TymQlouA/xVmGinF4JXAP
+	8cYYlyYc6IAyJe/IfHnLsbWCAo02ho7u4RdcnFAPGPUHeS5qdvLoH2xeuaA+5S++xST75nG64Gi4a
+	ABhKUmqSxnI0CIA0n191KulvaN/DO9CWpqK9O13DOFyRqkpn5qmEDJCS+OCyUV34gaB52Qh2kzcLA
+	YnobJ7c1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijDYZ-0003Ah-DE; Mon, 23 Dec 2019 02:34:51 +0000
-Received: from regular1.263xmail.com ([211.150.70.196])
+	id 1ijDz0-00043C-3g; Mon, 23 Dec 2019 03:02:10 +0000
+Received: from mga02.intel.com ([134.134.136.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijDYX-0003AK-48
- for linux-rockchip@lists.infradead.org; Mon, 23 Dec 2019 02:34:50 +0000
-Received: from localhost (unknown [192.168.167.16])
- by regular1.263xmail.com (Postfix) with ESMTP id CE3461020;
- Mon, 23 Dec 2019 10:34:44 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-SKE-CHECKED: 1
-X-ABS-CHECKED: 1
-Received: from [172.16.12.9] (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P10935T140244619876096S1577068484517456_; 
- Mon, 23 Dec 2019 10:34:45 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <3a77f17dec9629f372461ed796395926>
-X-RL-SENDER: kever.yang@rock-chips.com
-X-SENDER: yk@rock-chips.com
-X-LOGIN-NAME: kever.yang@rock-chips.com
-X-FST-TO: linux-rockchip@lists.infradead.org
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-Subject: Re: [PATCH 07/11] env: Enable SPI flash env for rockchip
-To: Jagan Teki <jagan@amarulasolutions.com>, Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-References: <20191221075440.6944-1-jagan@amarulasolutions.com>
- <20191221075440.6944-8-jagan@amarulasolutions.com>
-From: Kever Yang <kever.yang@rock-chips.com>
-Message-ID: <87672c9e-5f49-edf9-a97d-2ed83d33d375@rock-chips.com>
-Date: Mon, 23 Dec 2019 10:34:43 +0800
+ id 1ijDyk-0003sE-Hw; Mon, 23 Dec 2019 03:01:56 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga005.fm.intel.com ([10.253.24.32])
+ by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 22 Dec 2019 19:01:49 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.69,346,1571727600"; d="scan'208";a="417121170"
+Received: from allen-box.sh.intel.com (HELO [10.239.159.136])
+ ([10.239.159.136])
+ by fmsmga005.fm.intel.com with ESMTP; 22 Dec 2019 19:01:43 -0800
+Subject: Re: [PATCH 1/8] iommu/vt-d: clean up 32bit si_domain assignment
+To: Tom Murphy <murphyt7@tcd.ie>, iommu@lists.linux-foundation.org
+References: <20191221150402.13868-1-murphyt7@tcd.ie>
+ <20191221150402.13868-2-murphyt7@tcd.ie>
+From: Lu Baolu <baolu.lu@linux.intel.com>
+Message-ID: <e569e246-11a1-e8bd-9347-310284e96885@linux.intel.com>
+Date: Mon, 23 Dec 2019 11:00:47 +0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <20191221075440.6944-8-jagan@amarulasolutions.com>
+In-Reply-To: <20191221150402.13868-2-murphyt7@tcd.ie>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_183449_354301_5AF73F55 
-X-CRM114-Status: GOOD (  14.66  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20191222_190154_633160_AE92A8A3 
+X-CRM114-Status: GOOD (  17.24  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.196 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.20 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [134.134.136.20 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,48 +71,76 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: u-boot@lists.denx.de, linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-rockchip@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Heiko Stuebner <heiko@sntech.de>, kvm@vger.kernel.org,
+ David Airlie <airlied@linux.ie>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ dri-devel@lists.freedesktop.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-tegra@vger.kernel.org, Julien Grall <julien.grall@arm.com>,
+ Thierry Reding <thierry.reding@gmail.com>, Will Deacon <will@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ linux-samsung-soc@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ Joerg Roedel <joro@8bytes.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, linux-rockchip@lists.infradead.org,
+ Andy Gross <agross@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ linux-s390@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ intel-gfx@lists.freedesktop.org, Jani Nikula <jani.nikula@linux.intel.com>,
+ Eric Auger <eric.auger@redhat.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ linux-mediatek@lists.infradead.org, Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ virtualization@lists.linux-foundation.org,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ David Woodhouse <dwmw2@infradead.org>, Cornelia Huck <cohuck@redhat.com>,
+ linux-kernel@vger.kernel.org, Rob Clark <robdclark@gmail.com>,
+ Kukjin Kim <kgene@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Robin Murphy <robin.murphy@arm.com>, baolu.lu@linux.intel.com
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SmFnYW4sCgoKT24gMjAxOS8xMi8yMSDkuIvljYgzOjU0LCBKYWdhbiBUZWtpIHdyb3RlOgo+IE1v
-c3Qgb2YgdGhlIFNQSSBmbGFzaCBkZXZpY2VzIGluIHJvY2tjaGlwIGFyZSAxNk1pQiBzaXplLgo+
-Cj4gU28sIGtlZXBpbmcgVS1Cb290IHByb3BlciBvZmZzZXQgc3RhcnQgZnJvbSAxMjhNaUIgd2l0
-aCAxTWlCCj4gc2l6ZSBhbmQgdGhlbiBzdGFydCBlbnYgb2YgOEtpQiB3b3VsZCBiZSBhIGNvbXBh
-dGlibGUgbG9jYXRpb24KPiBiZXR3ZWVuIGFsbCB2YXJpYW50cyBvZiBmbGFzaCBzaXplcy4KPgo+
-IFRoaXMgcGF0Y2ggYWRkIGVudiBzdGFydCBmcm9tIDB4MTQwMDAgd2l0aCBhIHNpemUgb2YgOEtp
-Qi4KCldoYXQncyB0aGUgc3BhY2UgbWFwIGluIFNQSSBmbGFzaCBzdXBwb3NlIHRvIGJlPyBJbmNs
-dWRpbmcgCnRwbC9zcGwvdS1ib290Lml0YgoKSSB3b3VsZCBwcmVmZXIgdG8gdXNlIDEyOEtpQi04
-S2lCIGFzIHRoZSBlbnYgc3RhcnQgYWRkcmVzcywgd2UnZCBiZXR0ZXIgCnRvIGF2b2lkIHRoZQoK
-cmlzayBvZiBvdmVybGFwIGJldHdlZW4gdGhlIGVudiBzcGFjZSBhbmQgdGhlIGZpcm13YXJlIHNw
-YWNlLgoKPgo+IFNpZ25lZC1vZmYtYnk6IEphZ2FuIFRla2kgPGphZ2FuQGFtYXJ1bGFzb2x1dGlv
-bnMuY29tPgo+IC0tLQo+ICAgZW52L0tjb25maWcgfCAzICsrKwo+ICAgMSBmaWxlIGNoYW5nZWQs
-IDMgaW5zZXJ0aW9ucygrKQo+Cj4gZGlmZiAtLWdpdCBhL2Vudi9LY29uZmlnIGIvZW52L0tjb25m
-aWcKPiBpbmRleCA5NDE2YTcwMDIyLi4xYmIzZTEwNzhlIDEwMDY0NAo+IC0tLSBhL2Vudi9LY29u
-ZmlnCj4gKysrIGIvZW52L0tjb25maWcKPiBAQCAtNDg5LDYgKzQ4OSw3IEBAIGNvbmZpZyBFTlZf
-T0ZGU0VUCj4gICAJZGVwZW5kcyBvbiBFTlZfSVNfSU5fRUVQUk9NIHx8IEVOVl9JU19JTl9NTUMg
-fHwgRU5WX0lTX0lOX05BTkQgfHwgXAo+ICAgCQkgICAgRU5WX0lTX0lOX1NQSV9GTEFTSAo+ICAg
-CWRlZmF1bHQgMHgzZjgwMDAgaWYgQVJDSF9ST0NLQ0hJUCAmJiBFTlZfSVNfSU5fTU1DCj4gKwlk
-ZWZhdWx0IDB4MTQwMDAwIGlmIEFSQ0hfUk9DS0NISVAgJiYgRU5WX0lTX0lOX1NQSV9GTEFTSAoK
-SXMgdGhpcyAweDE0MDAwMCBvciAweDE0MDAwPwoKClRoYW5rcywKCi0gS2V2ZXIKCj4gICAJZGVm
-YXVsdCAweDg4MDAwIGlmIEFSQ0hfU1VOWEkKPiAgIAlkZWZhdWx0IDB4RTAwMDAgaWYgQVJDSF9a
-WU5RCj4gICAJZGVmYXVsdCAweDFFMDAwMDAgaWYgQVJDSF9aWU5RTVAKPiBAQCAtNTEyLDYgKzUx
-Myw3IEBAIGNvbmZpZyBFTlZfU0laRQo+ICAgCWRlZmF1bHQgMHg0MDAwMCBpZiBFTlZfSVNfSU5f
-U1BJX0ZMQVNIICYmIEFSQ0hfWllOUU1QCj4gICAJZGVmYXVsdCAweDIwMDAwIGlmIEFSQ0hfU1VO
-WEkgfHwgQVJDSF9aWU5RIHx8IEFSQ0hfT01BUDJQTFVTIHx8IEFSQ0hfQVQ5MQo+ICAgCWRlZmF1
-bHQgMHg4MDAwIGlmIEFSQ0hfUk9DS0NISVAgJiYgRU5WX0lTX0lOX01NQwo+ICsJZGVmYXVsdCAw
-eDIwMDAgaWYgQVJDSF9ST0NLQ0hJUCAmJiBFTlZfSVNfSU5fU1BJX0ZMQVNICj4gICAJZGVmYXVs
-dCAweDgwMDAgaWYgQVJDSF9aWU5RTVAgfHwgQVJDSF9WRVJTQUwKPiAgIAlkZWZhdWx0IDB4NDAw
-MCBpZiBBUkMKPiAgIAlkZWZhdWx0IDB4MWYwMDAKPiBAQCAtNTIxLDYgKzUyMyw3IEBAIGNvbmZp
-ZyBFTlZfU0laRQo+ICAgY29uZmlnIEVOVl9TRUNUX1NJWkUKPiAgIAloZXggIkVudmlyb25tZW50
-IFNlY3Rvci1TaXplIgo+ICAgCWRlcGVuZHMgb24gRU5WX0lTX0lOX0ZMQVNIIHx8IEVOVl9JU19J
-Tl9TUElfRkxBU0gKPiArCWRlZmF1bHQgMHgyMDAwIGlmIEFSQ0hfUk9DS0NISVAKPiAgIAlkZWZh
-dWx0IDB4NDAwMDAgaWYgQVJDSF9aWU5RTVAgfHwgQVJDSF9WRVJTQUwKPiAgIAlkZWZhdWx0IDB4
-MjAwMDAgaWYgQVJDSF9aWU5RIHx8IEFSQ0hfT01BUDJQTFVTIHx8IEFSQ0hfQVQ5MQo+ICAgCWhl
-bHAKCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGlu
-dXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2Nr
-Y2hpcAo=
+Hi,
+
+On 12/21/19 11:03 PM, Tom Murphy wrote:
+> @@ -5618,9 +5583,13 @@ static int intel_iommu_add_device(struct device *dev)
+>   	struct iommu_domain *domain;
+>   	struct intel_iommu *iommu;
+>   	struct iommu_group *group;
+> +	u64 dma_mask = *dev->dma_mask;
+>   	u8 bus, devfn;
+>   	int ret;
+>   
+> +	if (dev->coherent_dma_mask && dev->coherent_dma_mask < dma_mask)
+> +		dma_mask = dev->coherent_dma_mask;
+> +
+>   	iommu = device_to_iommu(dev, &bus, &devfn);
+>   	if (!iommu)
+>   		return -ENODEV;
+> @@ -5640,7 +5609,12 @@ static int intel_iommu_add_device(struct device *dev)
+>   	domain = iommu_get_domain_for_dev(dev);
+>   	dmar_domain = to_dmar_domain(domain);
+>   	if (domain->type == IOMMU_DOMAIN_DMA) {
+> -		if (device_def_domain_type(dev) == IOMMU_DOMAIN_IDENTITY) {
+> +		/*
+> +		 * We check dma_mask >= dma_get_required_mask(dev) because
+> +		 * 32 bit DMA falls back to non-identity mapping.
+> +		 */
+> +		if (device_def_domain_type(dev) == IOMMU_DOMAIN_IDENTITY &&
+> +				dma_mask >= dma_get_required_mask(dev)) {
+>   			ret = iommu_request_dm_for_dev(dev);
+>   			if (ret) {
+>   				dmar_remove_one_dev_info(dev);
+
+dev->dma_mask is set to 32bit by default. During loading driver, it sets
+the real dma_mask with dma_set_mask() according to the real capability.
+Here you will always see 32bit dma_mask for each device.
+
+Best regards,
+baolu
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
