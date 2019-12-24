@@ -2,45 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C29F212A291
-	for <lists+linux-rockchip@lfdr.de>; Tue, 24 Dec 2019 15:43:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77E3912A293
+	for <lists+linux-rockchip@lfdr.de>; Tue, 24 Dec 2019 15:43:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KVzH+tgwNq4FfgNlm7HL1zX0dvCqqif4FglWWX9oNMY=; b=W6gFtCaI2z5p2t
-	b3J+hW00cWYL2/PmObFSKlchc9tGE0PugI5EKY9yZS6oEmGqQWsyaGnmstdsAMi+4q/++gQuKwP/z
-	SivHNx5zv8HDWD2So80Jzd9TykqIWtia09zNK3SPc2Lb95bqzQoAHYclun6D9GK6G1A5Uy0Gy5l38
-	3/oNAzxfRRukndVsI9IW5P/XYg6vfr2hMAH+aJGDZlBKcbb4dcZctxSVxx7wTEnmPaE3st9/4BffM
-	OZTrDVUF7HvrB9ZKzkGDEO2o4qH5WXB5dFiw3cgPpTkwSrM/frJf9F7V3mBGJXEK2Zzg6zh+dOr99
-	5PR+CuQ9rESZl+bBlIrQ==;
+	List-Owner; bh=sPy/T+1P+iZXzqvv1nN3A1U3LRQmaQE/CbsvTDdg22s=; b=V8v+lKKj/gT9Ie
+	vp6Kpq2Lz2bk8R86zUvAWR6dqgdyiY0I423j1dzjU3QyTMgDLSFqZZNrIOH1qDaQgvA1o/s/c3AcK
+	yaM3W9kHIw4QSLquHA9FvLnCLLCxhvWy1TlR2omv8husHHOX2LvW1imhPC7RnbE6+IuyDEUOKswOe
+	341zkNfXFMgU3WLbP7D04zFQaV9YsTtDgjYVE9TP2/0UGP29w2kVBbhJ7oLbeC2tXc7FnIE+K8o8k
+	1zqTc1wbh0aAMhQC74fMO+cCZYowugHF8el86M3VxqTTq5Bi+KCGzACHu0GeMC/6Wa8cSHS+Pt2IC
+	8BA4rMaklz/zYQT+7sLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijlOn-0006I5-Om; Tue, 24 Dec 2019 14:43:01 +0000
+	id 1ijlOq-0006M2-Hn; Tue, 24 Dec 2019 14:43:04 +0000
 Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijlLN-0001yt-C5; Tue, 24 Dec 2019 14:39:32 +0000
+ id 1ijlLP-00020E-D6; Tue, 24 Dec 2019 14:39:34 +0000
 X-Originating-IP: 91.224.148.103
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 1DE12E0007;
- Tue, 24 Dec 2019 14:39:26 +0000 (UTC)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id BADA1E0003;
+ Tue, 24 Dec 2019 14:39:27 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Sandy Huang <hjc@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>,
  <linux-rockchip@lists.infradead.org>
-Subject: [PATCH v2 09/11] drm/rockchip: lvds: Add PX30 support
-Date: Tue, 24 Dec 2019 15:38:58 +0100
-Message-Id: <20191224143900.23567-10-miquel.raynal@bootlin.com>
+Subject: [PATCH v2 10/11] arm64: dts: rockchip: Add PX30 DSI DPHY
+Date: Tue, 24 Dec 2019 15:38:59 +0100
+Message-Id: <20191224143900.23567-11-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191224143900.23567-1-miquel.raynal@bootlin.com>
 References: <20191224143900.23567-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_063929_713066_219A52A2 
-X-CRM114-Status: GOOD (  15.86  )
+X-CRM114-CacheID: sfid-20191224_063931_671216_CFF60876 
+X-CRM114-Status: UNSURE (   9.62  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -78,231 +79,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Introduce PX30 LVDS support. This means adding the relevant helper
-functions, a specific probe and also the initialization of a specific
-PHY.
+Add the PHY which outputs MIPI DSI and LVDS.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- drivers/gpu/drm/rockchip/rockchip_lvds.c | 143 +++++++++++++++++++++++
- drivers/gpu/drm/rockchip/rockchip_lvds.h |  14 +++
- 2 files changed, 157 insertions(+)
+ arch/arm64/boot/dts/rockchip/px30.dtsi | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-diff --git a/drivers/gpu/drm/rockchip/rockchip_lvds.c b/drivers/gpu/drm/rockchip/rockchip_lvds.c
-index f2ece09e4e24..d762cdd114f9 100644
---- a/drivers/gpu/drm/rockchip/rockchip_lvds.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_lvds.c
-@@ -10,6 +10,7 @@
- #include <linux/component.h>
- #include <linux/mfd/syscon.h>
- #include <linux/of_graph.h>
-+#include <linux/phy/phy.h>
- #include <linux/pinctrl/devinfo.h>
- #include <linux/platform_device.h>
- #include <linux/pm_runtime.h>
-@@ -53,6 +54,7 @@ struct rockchip_lvds {
- 	void __iomem *regs;
- 	struct regmap *grf;
- 	struct clk *pclk;
-+	struct phy *dphy;
- 	const struct rockchip_lvds_soc_data *soc_data;
- 	int output; /* rgb lvds or dual lvds output */
- 	int format; /* vesa or jeida format */
-@@ -321,6 +323,103 @@ static void rk3288_lvds_encoder_disable(struct drm_encoder *encoder)
- 	drm_panel_unprepare(lvds->panel);
- }
+diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
+index b2af0f02ecbe..672a3a2f42b9 100644
+--- a/arch/arm64/boot/dts/rockchip/px30.dtsi
++++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+@@ -849,6 +849,17 @@
+ 		};
+ 	};
  
-+static int px30_lvds_poweron(struct rockchip_lvds *lvds)
-+{
-+	int ret;
++	dsi_dphy: phy@ff2e0000 {
++		compatible = "rockchip,px30-dsi-dphy";
++		reg = <0x0 0xff2e0000 0x0 0x10000>;
++		clocks = <&pmucru SCLK_MIPIDSIPHY_REF>, <&cru PCLK_MIPIDSIPHY>;
++		clock-names = "ref", "pclk";
++		resets = <&cru SRST_MIPIDSIPHY_P>;
++		reset-names = "apb";
++		#phy-cells = <0>;
++		status = "disabled";
++	};
 +
-+	ret = pm_runtime_get_sync(lvds->dev);
-+	if (ret < 0) {
-+		DRM_DEV_ERROR(lvds->dev, "failed to get pm runtime: %d\n", ret);
-+		return ret;
-+	}
-+
-+	/* Enable LVDS mode */
-+	return regmap_update_bits(lvds->grf, PX30_LVDS_GRF_PD_VO_CON1,
-+				  PX30_LVDS_MODE_EN(1) | PX30_LVDS_P2S_EN(1),
-+				  PX30_LVDS_MODE_EN(1) | PX30_LVDS_P2S_EN(1));
-+}
-+
-+static void px30_lvds_poweroff(struct rockchip_lvds *lvds)
-+{
-+	regmap_update_bits(lvds->grf, PX30_LVDS_GRF_PD_VO_CON1,
-+			   PX30_LVDS_MODE_EN(1) | PX30_LVDS_P2S_EN(1),
-+			   PX30_LVDS_MODE_EN(0) | PX30_LVDS_P2S_EN(0));
-+
-+	pm_runtime_put(lvds->dev);
-+}
-+
-+static int px30_lvds_grf_config(struct drm_encoder *encoder,
-+				struct drm_display_mode *mode)
-+{
-+	struct rockchip_lvds *lvds = encoder_to_lvds(encoder);
-+
-+	if (lvds->output != DISPLAY_OUTPUT_LVDS) {
-+		DRM_DEV_ERROR(lvds->dev, "Unsupported display output %d\n",
-+			      lvds->output);
-+		return -EINVAL;
-+	}
-+
-+	/* Set format */
-+	return regmap_update_bits(lvds->grf, PX30_LVDS_GRF_PD_VO_CON1,
-+				  PX30_LVDS_FORMAT(lvds->format),
-+				  PX30_LVDS_FORMAT(lvds->format));
-+}
-+
-+static int px30_lvds_set_vop_source(struct rockchip_lvds *lvds,
-+				    struct drm_encoder *encoder)
-+{
-+	int vop;
-+
-+	vop = drm_of_encoder_active_endpoint_id(lvds->dev->of_node, encoder);
-+	if (vop < 0)
-+		return vop;
-+
-+	return regmap_update_bits(lvds->grf, PX30_LVDS_GRF_PD_VO_CON1,
-+				  PX30_LVDS_VOP_SEL(1),
-+				  PX30_LVDS_VOP_SEL(vop));
-+}
-+
-+static void px30_lvds_encoder_enable(struct drm_encoder *encoder)
-+{
-+	struct rockchip_lvds *lvds = encoder_to_lvds(encoder);
-+	struct drm_display_mode *mode = &encoder->crtc->state->adjusted_mode;
-+	int ret;
-+
-+	drm_panel_prepare(lvds->panel);
-+
-+	ret = px30_lvds_poweron(lvds);
-+	if (ret) {
-+		DRM_DEV_ERROR(lvds->dev, "failed to power on LVDS: %d\n", ret);
-+		drm_panel_unprepare(lvds->panel);
-+		return;
-+	}
-+
-+	ret = px30_lvds_grf_config(encoder, mode);
-+	if (ret) {
-+		DRM_DEV_ERROR(lvds->dev, "failed to configure LVDS: %d\n", ret);
-+		drm_panel_unprepare(lvds->panel);
-+		return;
-+	}
-+
-+	ret = px30_lvds_set_vop_source(lvds, encoder);
-+	if (ret) {
-+		DRM_DEV_ERROR(lvds->dev, "failed to set VOP source: %d\n", ret);
-+		drm_panel_unprepare(lvds->panel);
-+		return;
-+	}
-+
-+	drm_panel_enable(lvds->panel);
-+}
-+
-+static void px30_lvds_encoder_disable(struct drm_encoder *encoder)
-+{
-+	struct rockchip_lvds *lvds = encoder_to_lvds(encoder);
-+
-+	drm_panel_disable(lvds->panel);
-+	px30_lvds_poweroff(lvds);
-+	drm_panel_unprepare(lvds->panel);
-+}
-+
- static const
- struct drm_encoder_helper_funcs rk3288_lvds_encoder_helper_funcs = {
- 	.enable = rk3288_lvds_encoder_enable,
-@@ -328,6 +427,13 @@ struct drm_encoder_helper_funcs rk3288_lvds_encoder_helper_funcs = {
- 	.atomic_check = rockchip_lvds_encoder_atomic_check,
- };
- 
-+static const
-+struct drm_encoder_helper_funcs px30_lvds_encoder_helper_funcs = {
-+	.enable = px30_lvds_encoder_enable,
-+	.disable = px30_lvds_encoder_disable,
-+	.atomic_check = rockchip_lvds_encoder_atomic_check,
-+};
-+
- static const struct drm_encoder_funcs rockchip_lvds_encoder_funcs = {
- 	.destroy = drm_encoder_cleanup,
- };
-@@ -378,16 +484,53 @@ static int rk3288_lvds_probe(struct platform_device *pdev,
- 	return 0;
- }
- 
-+static int px30_lvds_probe(struct platform_device *pdev,
-+			   struct rockchip_lvds *lvds)
-+{
-+	int ret;
-+
-+	/* MSB */
-+	ret =  regmap_update_bits(lvds->grf, PX30_LVDS_GRF_PD_VO_CON1,
-+				  PX30_LVDS_MSBSEL(1),
-+				  PX30_LVDS_MSBSEL(1));
-+	if (ret)
-+		return ret;
-+
-+	/* PHY */
-+	lvds->dphy = devm_phy_get(&pdev->dev, "dphy");
-+	if (IS_ERR(lvds->dphy))
-+		return PTR_ERR(lvds->dphy);
-+
-+	phy_init(lvds->dphy);
-+	if (ret)
-+		return ret;
-+
-+	phy_set_mode(lvds->dphy, PHY_MODE_LVDS);
-+	if (ret)
-+		return ret;
-+
-+	return phy_power_on(lvds->dphy);
-+}
-+
- static const struct rockchip_lvds_soc_data rk3288_lvds_data = {
- 	.probe = rk3288_lvds_probe,
- 	.helper_funcs = &rk3288_lvds_encoder_helper_funcs,
- };
- 
-+static const struct rockchip_lvds_soc_data px30_lvds_data = {
-+	.probe = px30_lvds_probe,
-+	.helper_funcs = &px30_lvds_encoder_helper_funcs,
-+};
-+
- static const struct of_device_id rockchip_lvds_dt_ids[] = {
- 	{
- 		.compatible = "rockchip,rk3288-lvds",
- 		.data = &rk3288_lvds_data
- 	},
-+	{
-+		.compatible = "rockchip,px30-lvds",
-+		.data = &px30_lvds_data
-+	},
- 	{}
- };
- MODULE_DEVICE_TABLE(of, rockchip_lvds_dt_ids);
-diff --git a/drivers/gpu/drm/rockchip/rockchip_lvds.h b/drivers/gpu/drm/rockchip/rockchip_lvds.h
-index e41e9ab3c306..ff3cffc4770d 100644
---- a/drivers/gpu/drm/rockchip/rockchip_lvds.h
-+++ b/drivers/gpu/drm/rockchip/rockchip_lvds.h
-@@ -106,4 +106,18 @@
- #define LVDS_VESA_18				2
- #define LVDS_JEIDA_18				3
- 
-+#define HIWORD_UPDATE(v, h, l)  ((GENMASK(h, l) << 16) | (v << l))
-+
-+#define PX30_LVDS_GRF_PD_VO_CON0		0x434
-+#define   PX30_LVDS_TIE_CLKS(val)		HIWORD_UPDATE(val,  8,  8)
-+#define   PX30_LVDS_INVERT_CLKS(val)		HIWORD_UPDATE(val,  9,  9)
-+#define   PX30_LVDS_INVERT_DCLK(val)		HIWORD_UPDATE(val,  5,  5)
-+
-+#define PX30_LVDS_GRF_PD_VO_CON1		0x438
-+#define   PX30_LVDS_FORMAT(val)			HIWORD_UPDATE(val, 14, 13)
-+#define   PX30_LVDS_MODE_EN(val)		HIWORD_UPDATE(val, 12, 12)
-+#define   PX30_LVDS_MSBSEL(val)			HIWORD_UPDATE(val, 11, 11)
-+#define   PX30_LVDS_P2S_EN(val)			HIWORD_UPDATE(val,  6,  6)
-+#define   PX30_LVDS_VOP_SEL(val)		HIWORD_UPDATE(val,  1,  1)
-+
- #endif /* _ROCKCHIP_LVDS_ */
+ 	usb20_otg: usb@ff300000 {
+ 		compatible = "rockchip,px30-usb", "rockchip,rk3066-usb",
+ 			     "snps,dwc2";
 -- 
 2.20.1
 
