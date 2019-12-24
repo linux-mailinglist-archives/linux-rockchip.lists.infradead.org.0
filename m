@@ -2,90 +2,62 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE0EB129A44
-	for <lists+linux-rockchip@lfdr.de>; Mon, 23 Dec 2019 20:02:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6E8D129CFC
+	for <lists+linux-rockchip@lfdr.de>; Tue, 24 Dec 2019 04:00:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=EPb5VQ6Q+njtCFFmSIUeXESwgaH+prjuBihSL1VKKzg=; b=QBxiXz7EFQR7/KokkgiXieYBBY
-	POGbb3JGAClSIV6HnXDkYJk5fo+yhsaInB95VGNDlbNNXfTAwsBWyTYPIAY25HgQBk8KqlEvTgcKq
-	o9wdQ72f1ibBqATncAg9Emf4COTFwHPYs1zKOg764s3BXDkjsk4O3zuMQcmaAeLBPuEMhG3UrYsrN
-	UmxvkiDmiGFXlv0ZwL5tWBL9XFGGtfQlHs+pl2V3Ujr/+3PQ3AFWeV14QGNosjTmt5XZC7r+O2g8o
-	7gXfsgmGtIWz7DV7KCy4gnew22PRLiVNGggohoe3JWEH7zAAeiSMJsRDRm6bIyUJ516TIP+Gw1b/c
-	AmqBezgw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V3UCQkqudmb/ikNHzrC/gU/ODH0mTTtZTk7pVabkvyc=; b=sydEfC9HSD4rHz
+	wL3CRZ2Tq57YoSuHi/PsSDfHYG/yERVaQ7I7xkep1VipniCEyToSmla6O21ExW8SAnAJvXmHsVf3M
+	cJqeHSyJarF/6DZarulazhtyQ9sSNCCYEOcs4hf30LFIMivVlcV57Vk+/9EjCfcMJlLy8jTBFDjSv
+	c72zQdmy9w63YewqGFG+fcfvU3QA8OucDOTYl1TR93NuuhazYcrBfWdIi7+OEn6Nkl2PZ2mt1QY0O
+	9Z98oSgF6SrwkrRWRaG2gplgEe83Vnhx7MLwe8zpbp61sdO2E2Pnp6H7BJex8/H7h2+T2JmjKwVZu
+	ksWl5qzmRR+bGeX1ra0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijSy6-0006FS-17; Mon, 23 Dec 2019 19:02:14 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1ijaQM-0003VC-MA; Tue, 24 Dec 2019 02:59:54 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijSwp-0004q3-27; Mon, 23 Dec 2019 19:00:56 +0000
-Received: by mail-io1-xd41.google.com with SMTP id x1so17070488iop.7;
- Mon, 23 Dec 2019 11:00:54 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=5WjW3vD2cx3BUd8M8ubJSzV7k9hmJV/MjBgFD4V36+U=;
- b=SfdIJwjQd53LNcv5/C/cr6A9iEyMN7mtz3lYF9IKVOqEJF4K/GVWvOWQb1Kcd791wO
- 78vVQCVClSM/UdNaSwbCDwWR2jbpSt6wIcGgF6Fmr0HxzOX+mFetSE5kyXy1IHA0B2my
- DoJQiMO+vOPmtRaInuM2Fwt72TC1vzyknqOYRgvk/JLMKeP2yIX4+ZuP/VDK8u4fzpYj
- URmGVaJLjdvXbrgjsALnwGUzPTgVQ7B7JftpvLnvVhxko3Eh3aiesJmQE3pannLAC87a
- RehuChGYDJbbt7hUZrQ6xHXdrCoGMGIZWB6SbrjJ5yzrICvMwvOAcdqO+6iyhfQkVpyJ
- graQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=5WjW3vD2cx3BUd8M8ubJSzV7k9hmJV/MjBgFD4V36+U=;
- b=ktWTJJL8mArWd/j/kWTEF0vqrYwEBHAJiZeLetYPydIQJjC7E9SHO2Pk491nIcoCdD
- sx7C3/gKZU50fktpUc1sBUcsUuY19SCnv+d1YTK6t4Z00QAoYhDpmxcdgbG8g0xYDRU3
- rwoli2jp7w+uql7B+tpKT2Rfx1X2Ce6MgmvJ7aFJew9/atHsEQoKdK0iFH8KU1t4Uwhd
- 5u6mLfN6lfRhLG8AzLExmZ9lxAH3WdM02PRY4FfKO2rIK7Jw0JYEi0l3SSpgAXh1HDrY
- hKJhbqKFn1H5kYm48TJumtsjLU4mMOpa1nnFUwCYCmdG8kTgmxxVyaa6GVvFS+Zj8QhD
- 68Yg==
-X-Gm-Message-State: APjAAAWGhNF1Y1Rp01VqXeRGBo352L2CyHCicpUdY6xSp1cpa+4Kf3lK
- 73CNEs8Fat8l2ozW+n+pstmvISqB4DqwP0a7TMQ=
-X-Google-Smtp-Source: APXvYqwaFZg7aCu6nzs0ZutPtYsj9R32aQwWIh0wX+JYOxpu64SuDTLXdlqTyVyvXRJJzV59D2yYDwSiSzYDcnKN32Y=
-X-Received: by 2002:a6b:b941:: with SMTP id j62mr22074614iof.168.1577127653723; 
- Mon, 23 Dec 2019 11:00:53 -0800 (PST)
+ id 1ijaQJ-0003U0-CE; Tue, 24 Dec 2019 02:59:52 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 41011206B7;
+ Tue, 24 Dec 2019 02:59:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1577156388;
+ bh=aptjoahnooeliDkbo4bcZ4z4A3PI74XI3gbsgTgKgDE=;
+ h=In-Reply-To:References:Cc:From:To:Subject:Date:From;
+ b=OIRuftxtRDB40Z3TgxvRKo7wsZWb4lIOaDP4VyPffyPfR78htWDWi7rS6mWp3uiLs
+ rlrnjPSnaEzIbCgzzRX3NeQeve/p9RLZ78TLXSvZZCpUa44bfEe/JthHo2ptTLQ9Op
+ 8sCMPEySr3wSSd/ML4c5xZB4CRebuWnn34SUytxs=
 MIME-Version: 1.0
-References: <20191223185918.9877-1-tiny.windzz@gmail.com>
- <20191223185918.9877-2-tiny.windzz@gmail.com>
-In-Reply-To: <20191223185918.9877-2-tiny.windzz@gmail.com>
-From: Frank Lee <tiny.windzz@gmail.com>
-Date: Tue, 24 Dec 2019 03:00:42 +0800
-Message-ID: <CAEExFWu771PdyjqHa3vF5W46ch_YecE6Dvv8iF42r5799yuF7A@mail.gmail.com>
-Subject: Re: [PATCH] virtio-mmio: convert to devm_platform_ioremap_resource
-To: m.szyprowski@samsung.com, joro@8bytes.org, Kukjin Kim <kgene@kernel.org>, 
- Krzysztof Kozlowski <krzk@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, agross@kernel.org, 
- bjorn.andersson@linaro.org, Rob Clark <robdclark@gmail.com>, 
- =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>, mst@redhat.com, 
- jasowang@redhat.com, iommu@lists.linux-foundation.org, 
- Linux ARM <linux-arm-kernel@lists.infradead.org>, 
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>, 
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-mediatek@lists.infradead.org, linux-arm-msm@vger.kernel.org, 
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>, 
- virtualization@lists.linux-foundation.org
+In-Reply-To: <20190924123954.31561-3-jbrunet@baylibre.com>
+References: <20190924123954.31561-1-jbrunet@baylibre.com>
+ <20190924123954.31561-3-jbrunet@baylibre.com>
+From: Stephen Boyd <sboyd@kernel.org>
+To: Jerome Brunet <jbrunet@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>
+Subject: Re: [PATCH 2/3] clk: let init callback return an error code
+User-Agent: alot/0.8.1
+Date: Mon, 23 Dec 2019 18:59:47 -0800
+Message-Id: <20191224025948.41011206B7@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_110055_163369_2534920C 
-X-CRM114-Status: UNSURE (   3.62  )
+X-CRM114-CacheID: sfid-20191223_185951_437058_820F0909 
+X-CRM114-Status: UNSURE (   5.53  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -93,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,14 +78,27 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
+Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
+ Heiko Stuebner <heiko@sntech.de>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
+ Tero Kristo <t-kristo@ti.com>, linux-rockchip@lists.infradead.org,
+ linux-omap@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, Heiner Kallweit <hkallweit1@gmail.com>,
+ linux-clk@vger.kernel.org, Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Please ignore this patch.
+Quoting Jerome Brunet (2019-09-24 05:39:53)
+> If the init callback is allowed to request resources, it needs a return
+> value to report the outcome of such a request.
+> 
+> Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
+> ---
 
-Thx!
+Applied to clk-next
+
 
 _______________________________________________
 Linux-rockchip mailing list
