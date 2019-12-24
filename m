@@ -2,47 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6270112A27D
-	for <lists+linux-rockchip@lfdr.de>; Tue, 24 Dec 2019 15:40:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4932112A27F
+	for <lists+linux-rockchip@lfdr.de>; Tue, 24 Dec 2019 15:40:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cXqV6j6p/ntQzf/qA/gmsRURvqg8Xp/wb2twWCZe52o=; b=b3EhzCgb+17c78
-	AjL8wB5LCQAQC9Tg1Kfk1GQDyn+rWcUoMuobx9+51cHrXOhS9W3nNQrk7wNaAkbo8QBQFTlStLf2g
-	9EnrwdFbgpARK55VyHiINhZ3/nG2xrCu0VFUatwXnWLrpCJHMQbZG7IUmrujuQqfPtoZToESTJ7Nn
-	W6iOevD7gycy57SfDWAaRT6oBPxU4mP57/qT+bs3jI5Rws0HpcqvWhV/70Dy10eUqFaud2OJOWnAN
-	aZHRsbjhg3Ofiw0NhU0bNB/ebJmTOofsPgXMNxuwTFLL0mlegXq3XulAPI9N9wjP7IXUaOOS0Ahuq
-	fakna19gWbk65s1XLY3Q==;
+	List-Owner; bh=B1FM6JkZ8TXMUr2tVr3/L7ZAHjcG/0xLSKS++r7sG7w=; b=Cnap/jFNy95jfG
+	/x3PrD60t8wolbp+N91KFi93e6zDr5YoHdnrlGt1NbGudhz15LwXar4YquKwFDgIxp+mS5WvflkR3
+	UoXqyQQ8nW/QjiLTjoBgXnTfRLredOwOKF2WCdUfCf2z8nq8dQahKpvw/vN2l3AdsHLyrpbo8cxf1
+	stXSjhXkdEejDM1Atq7ul8Wy7Uh9C7htYx2SwncBasavP+/AzXB3T6Y8mXm1TsreGx8duOAnwPmSb
+	ESyL7fg2OyI2AwyQhKTGxTMGD2A9aRAlkjEdrSbzcU3x1/o5joHkn+7AZMnNHWuW0pUZxafp20Df7
+	uhFvzRzurMu6R0zQdE8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijlLo-0002Hr-Hb; Tue, 24 Dec 2019 14:39:56 +0000
+	id 1ijlMP-0003sb-JU; Tue, 24 Dec 2019 14:40:33 +0000
 Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijlL7-0001hn-Vp; Tue, 24 Dec 2019 14:39:15 +0000
+ id 1ijlL9-0001iR-Un; Tue, 24 Dec 2019 14:39:17 +0000
 X-Originating-IP: 91.224.148.103
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id A495EE0009;
- Tue, 24 Dec 2019 14:39:04 +0000 (UTC)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id AC761E000A;
+ Tue, 24 Dec 2019 14:39:12 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Sandy Huang <hjc@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>,
  <linux-rockchip@lists.infradead.org>
-Subject: [PATCH v2 01/11] dt-bindings: display: rockchip-lvds: Declare PX30
- compatible
-Date: Tue, 24 Dec 2019 15:38:50 +0100
-Message-Id: <20191224143900.23567-2-miquel.raynal@bootlin.com>
+Subject: [PATCH v2 02/11] dt-bindings: display: rockchip-lvds: Document PX30
+ PHY
+Date: Tue, 24 Dec 2019 15:38:51 +0100
+Message-Id: <20191224143900.23567-3-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191224143900.23567-1-miquel.raynal@bootlin.com>
 References: <20191224143900.23567-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_063914_155148_E390F4A9 
-X-CRM114-Status: UNSURE (   9.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191224_063916_125121_F2CEB4D1 
+X-CRM114-Status: GOOD (  10.24  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -68,8 +67,7 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Rob Herring <robh@kernel.org>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
  Maxime Chevallier <maxime.chevallier@bootlin.com>,
  Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  Rob Herring <robh+dt@kernel.org>,
@@ -81,26 +79,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Document the PX30 LVDS compatible.
+PX30 SoCs use a single PHY shared by two display pipelines: MIPI DSI
+and LVDS. In the case of the LVDS IP, document the possibility to fill
+a PHY handle.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-Acked-by: Rob Herring <robh@kernel.org>
 ---
- .../devicetree/bindings/display/rockchip/rockchip-lvds.txt       | 1 +
- 1 file changed, 1 insertion(+)
+ .../devicetree/bindings/display/rockchip/rockchip-lvds.txt     | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-lvds.txt b/Documentation/devicetree/bindings/display/rockchip/rockchip-lvds.txt
-index 7849ff039229..aa5663a6fd42 100644
+index aa5663a6fd42..aaf8c44cf90f 100644
 --- a/Documentation/devicetree/bindings/display/rockchip/rockchip-lvds.txt
 +++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-lvds.txt
-@@ -4,6 +4,7 @@ Rockchip RK3288 LVDS interface
- Required properties:
- - compatible: matching the soc type, one of
- 	- "rockchip,rk3288-lvds";
-+	- "rockchip,px30-lvds";
+@@ -19,6 +19,9 @@ Required properties:
+ - rockchip,grf: phandle to the general register files syscon
+ - rockchip,output: "rgb", "lvds" or "duallvds", This describes the output interface
  
- - reg: physical base address of the controller and length
- 	of memory mapped region.
++- phys: LVDS/DSI DPHY (px30 only)
++- phy-names: name of the PHY, must be "dphy" (px30 only)
++
+ Optional properties:
+ - pinctrl-names: must contain a "lcdc" entry.
+ - pinctrl-0: pin control group to be used for this controller.
 -- 
 2.20.1
 
