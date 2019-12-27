@@ -2,41 +2,41 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74BE512BB08
-	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Dec 2019 21:05:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58C0E12BB0A
+	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Dec 2019 21:05:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rGp4SbXUDeV96aOkXx7YMQ3Xql1z5j47dwzt4Ojg7qc=; b=R0lk+v3YK5MfHw
-	A7EAgKQ52g4U3EPB8zY1PAgcltz+hcT+SurlouCJZly2TsIVTyDbo5o8EGsTL07lIisVh0Xw5Z6Ff
-	Kk+y0bE5cypv3sZpNapvq5TeqZvzJ09V1BaNPPkIju/nTOpLBzuULUS05+KkDCnxSS+Z4nK02Hfgm
-	02eQ1CbfeQ6YXSXKus69T7cgE/DwIHuBP2ld1g8zuPI7nS8uIqcU9v/r0EnU7/aIEZQfMsyvSz9GY
-	XxZnYVsUZEt26p0TE0fSMc2J/m+aPBmNZNVYoXZI6gfc3dm3M3OefUnIuQTZ8Qtagz2ssvVHwY/4I
-	aiy3N+fOv5FwriUVCFTg==;
+	List-Owner; bh=jmZlqfmXwFp3HYrvPYMlv1oqGYRrUiXuA68CNtzEl+A=; b=kA2qN/8HySnk83
+	mjFBStu81i3hUx+/OCsdN8IkafC7XQ5USy6kuicUTwx6SOP0uLQ5BenIkARh5i5tI7nStNCWouxE5
+	AaT1E/O4lCCR8zdjRDevPJS2qDQeikBb8iXZmxtJ+QUj9pvVxDUYxZBR6TaPZkyN+OFelJYCv4jup
+	TdHlkTmcoD45iPrsgz50KtIgKAX9XHa3w7OBefXhyPB2eS0XdGETUruIDONey9Qc7JomMqqd71Ooa
+	Z8SYBIKEtXsy7HKlWcrkGneqI305w9jF5j6Qu44dcRHtiLw7ccSz/AkDcRDXbpx9F67qXBo5OwItH
+	NxSHx9jZLjOE+Ga0ZiPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikvr0-00021G-0v; Fri, 27 Dec 2019 20:04:58 +0000
+	id 1ikvrQ-0002OH-Ct; Fri, 27 Dec 2019 20:05:24 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikvoa-0000FL-Qo; Fri, 27 Dec 2019 20:02:33 +0000
+ id 1ikvog-0000Ir-S4; Fri, 27 Dec 2019 20:02:37 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id 1B18929288B
+ (Authenticated sender: koike) with ESMTPSA id CFF4C292885
 From: Helen Koike <helen.koike@collabora.com>
 To: linux-rockchip@lists.infradead.org
-Subject: [PATCH v12 07/11] media: staging: rkisp1: add document for rkisp1
- meta buffer format
-Date: Fri, 27 Dec 2019 17:01:12 -0300
-Message-Id: <20191227200116.2612137-8-helen.koike@collabora.com>
+Subject: [PATCH v12 08/11] media: staging: dt-bindings: add Rockchip ISP1 yaml
+ bindings
+Date: Fri, 27 Dec 2019 17:01:13 -0300
+Message-Id: <20191227200116.2612137-9-helen.koike@collabora.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191227200116.2612137-1-helen.koike@collabora.com>
 References: <20191227200116.2612137-1-helen.koike@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_120229_209616_8F093205 
-X-CRM114-Status: UNSURE (   8.16  )
+X-CRM114-CacheID: sfid-20191227_120235_193197_F4B0D29F 
+X-CRM114-Status: UNSURE (   9.83  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -67,108 +67,250 @@ Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
  linux-kernel@vger.kernel.org, tfiga@chromium.org,
  Helen Koike <helen.koike@collabora.com>, robh+dt@kernel.org,
  hans.verkuil@cisco.com, laurent.pinchart@ideasonboard.com,
- sakari.ailus@linux.intel.com, Jacob Chen <jacob2.chen@rock-chips.com>,
- joacim.zetterling@gmail.com, mchehab@kernel.org, andrey.konovalov@linaro.org,
- jacob-chen@iotwrt.com, linux-media@vger.kernel.org
+ sakari.ailus@linux.intel.com, joacim.zetterling@gmail.com, mchehab@kernel.org,
+ andrey.konovalov@linaro.org, jacob-chen@iotwrt.com,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Jacob Chen <jacob2.chen@rock-chips.com>
+Add yaml DT bindings for Rockchip ISP1.
 
-This commit add document for rkisp1 meta buffer format
+This was tested and verified with:
+mv drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml Documentation/devicetree/bindings/media/
+make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
 
-Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
 Signed-off-by: Helen Koike <helen.koike@collabora.com>
 
 ---
 
 Changes in v12:
-- Change Jacob's email to original jacob2.chen@rock-chips.com
+- The commit replaces the following commit in previous series named
+media: staging: dt-bindings: Document the Rockchip ISP1 bindings
+This new patch adds yaml binding and was verified with
+make dtbs_check and make dt_binding_check
 
-Changes in v11: None
+Changes in v11:
+- add clock-names values
+
 Changes in v10:
 - unsquash
 
 Changes in v9:
 - squash
-- migrate to staging
-- remove meta-formats.rst update
+- move to staging
 
 Changes in v8:
-- Add SPDX in the header
-- Remove emacs configs
-- Fix doc style
+- fix title division style
 
 Changes in v7:
-- s/correspond/corresponding
-- s/use/uses
-- s/docuemnt/document
+- update document with new design and tested example
 
- .../uapi/v4l/pixfmt-meta-rkisp1-params.rst    | 23 +++++++++++++++++++
- .../uapi/v4l/pixfmt-meta-rkisp1-stat.rst      | 22 ++++++++++++++++++
- 2 files changed, 45 insertions(+)
- create mode 100644 drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst
- create mode 100644 drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst
+ .../bindings/media/rockchip-isp1.yaml         | 193 ++++++++++++++++++
+ 1 file changed, 193 insertions(+)
+ create mode 100644 drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
 
-diff --git a/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst b/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst
+diff --git a/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
 new file mode 100644
-index 000000000000..32034e481357
+index 000000000000..4d1b2c67a4cd
 --- /dev/null
-+++ b/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst
-@@ -0,0 +1,23 @@
-+.. SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++++ b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+@@ -0,0 +1,193 @@
++# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/media/rockchip-isp1.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+.. _v4l2-meta-fmt-rkisp1-params:
++title: Rockchip SoC Image Signal Processing unit v1
 +
-+============================
-+V4L2_META_FMT_RK_ISP1_PARAMS
-+============================
++maintainers:
++  - Helen Koike <helen.koike@collabora.com>
 +
-+Rockchip ISP1 Parameters Data
++description: |
++  Rockchip ISP1 is the Camera interface for the Rockchip series of SoCs
++  which contains image processing, scaling, and compression funcitons.
 +
-+Description
-+===========
++properties:
++  compatible:
++    const: rockchip,rk3399-cif-isp
 +
-+This format describes input parameters for the Rockchip ISP1.
++  reg:
++    maxItems: 1
 +
-+It uses c-struct :c:type:`rkisp1_params_cfg`, which is defined in
-+the ``linux/rkisp1-config.h`` header file.
++  interrupts:
++    maxItems: 1
 +
-+The parameters consist of multiple modules.
-+The module won't be updated if the corresponding bit was not set in module_*_update.
++  iommus:
++    maxItems: 1
 +
-+.. kernel-doc:: include/uapi/linux/rkisp1-config.h
-+   :functions: rkisp1_params_cfg
-diff --git a/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst b/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst
-new file mode 100644
-index 000000000000..4ad303f96421
---- /dev/null
-+++ b/drivers/staging/media/rkisp1/Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst
-@@ -0,0 +1,22 @@
-+.. SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++  power-domains:
++    maxItems: 1
 +
-+.. _v4l2-meta-fmt-rkisp1-stat:
++  phys:
++    maxItems: 1
++    description: phandle for the PHY port
 +
-+=============================
-+V4L2_META_FMT_RK_ISP1_STAT_3A
-+=============================
++  phy-names:
++    const: dphy
 +
++  clocks:
++    items:
++      - description: ISP clock
++      - description: ISP aclk clock
++      - description: ISP aclk wrapper clock
++      - description: ISP hclk clock
++      - description: ISP hclk wrapper clock
 +
-+Rockchip ISP1 Statistics Data
++  clock-names:
++    items:
++      - const: clk_isp
++      - const: aclk_isp
++      - const: aclk_isp_wrap
++      - const: hclk_isp
++      - const: hclk_isp_wrap
 +
-+Description
-+===========
++  # See ./video-interfaces.txt for details
++  ports:
++    type: object
++    additionalProperties: false
 +
-+This format describes image color statistics information generated by the Rockchip
-+ISP1.
++    properties:
++      "#address-cells":
++        const: 1
 +
-+It uses c-struct :c:type:`rkisp1_stat_buffer`, which is defined in
-+the ``linux/rkisp1-config.h`` header file.
++      "#size-cells":
++        const: 0
 +
-+.. kernel-doc:: include/uapi/linux/rkisp1-config.h
-+   :functions: rkisp1_stat_buffer
++      port@0:
++        type: object
++        additionalProperties: false
++
++        properties:
++          "#address-cells":
++            const: 1
++
++          "#size-cells":
++            const: 0
++
++          reg:
++            const: 0
++            description: port identifier.
++
++        patternProperties:
++          endpoint:
++            type: object
++            additionalProperties: false
++
++            properties:
++              reg:
++                maxItems: 1
++                description: endpoint identifier.
++
++              data-lanes:
++                minItems: 1
++                maxItems: 4
++
++              remote-endpoint: true
++
++    required:
++      - port@0
++
++required:
++  - compatible
++  - interrupts
++  - clocks
++  - clock-names
++  - power-domains
++  - iommus
++  - phys
++  - phy-names
++  - ports
++
++additionalProperties: false
++
++examples:
++  - |
++
++    #include <dt-bindings/clock/rk3399-cru.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/power/rk3399-power.h>
++
++    parent0: parent@0 {
++        #address-cells = <2>;
++        #size-cells = <2>;
++
++        isp0: isp0@ff910000 {
++            compatible = "rockchip,rk3399-cif-isp";
++            reg = <0x0 0xff910000 0x0 0x4000>;
++            interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH 0>;
++            clocks = <&cru SCLK_ISP0>,
++                     <&cru ACLK_ISP0>, <&cru ACLK_ISP0_WRAPPER>,
++                     <&cru HCLK_ISP0>, <&cru HCLK_ISP0_WRAPPER>;
++            clock-names = "clk_isp",
++                          "aclk_isp", "aclk_isp_wrap",
++                          "hclk_isp", "hclk_isp_wrap";
++            power-domains = <&power RK3399_PD_ISP0>;
++            iommus = <&isp0_mmu>;
++            phys = <&dphy>;
++            phy-names = "dphy";
++
++            ports {
++                #address-cells = <1>;
++                #size-cells = <0>;
++
++                port@0 {
++                    #address-cells = <1>;
++                    #size-cells = <0>;
++                    reg = <0>;
++
++                    mipi_in_wcam: endpoint@0 {
++                        reg = <0>;
++                        remote-endpoint = <&wcam_out>;
++                        data-lanes = <1 2>;
++                    };
++
++                    mipi_in_ucam: endpoint@1 {
++                        reg = <1>;
++                        remote-endpoint = <&ucam_out>;
++                        data-lanes = <1>;
++                    };
++                };
++            };
++        };
++
++        i2c7: i2c@ff160000 {
++            clock-frequency = <400000>;
++            #address-cells = <1>;
++            #size-cells = <0>;
++
++            wcam: camera@36 {
++                compatible = "ovti,ov5695";
++                reg = <0x36>;
++
++                port {
++                    wcam_out: endpoint {
++                        remote-endpoint = <&mipi_in_wcam>;
++                        data-lanes = <1 2>;
++                    };
++                };
++            };
++
++            ucam: camera@3c {
++                compatible = "ovti,ov2685";
++                reg = <0x3c>;
++
++                  port {
++                      ucam_out: endpoint {
++                          remote-endpoint = <&mipi_in_ucam>;
++                          data-lanes = <1>;
++                      };
++                  };
++            };
++        };
++    };
 -- 
 2.24.0
 
