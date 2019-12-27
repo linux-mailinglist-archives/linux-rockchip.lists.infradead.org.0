@@ -2,47 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E16A712BB0C
-	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Dec 2019 21:05:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C619D12BB0E
+	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Dec 2019 21:05:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nbLHK0da0YcYBlIRFNJPOOCZ3mqsynKFcS17wd8EkKU=; b=a7Gd3NGtDErgc+
-	BUKe5lv51BNV1xg2QQhVK9EnhPyaxoVUWRBjgzfTTvSSOsaX89hUTICUC67KhpLHIK52gWYlv7i1R
-	l9EJY/L5CTlIgyPlprdv6DtKwoU4IcK6pPEQemc1M0CwcxpeNp63A2f8l67pIdzrLutd2CZ4HopP/
-	tjHLLYTkox6UQaIxadDHt1CN8qR3q7y9lsh3OCjYl8ojfi1JoPgckwzBNXENN0wtxNC/28EbjHdpR
-	vQoyz4UwVVjz1g3J0v9vyOeHRh4uUnFI4sstTX8JihJC/IyE67VXVIixDxUe8ePMb3IMulBcozE80
-	VAcAG1FDblww/jo+ZTDA==;
+	List-Owner; bh=yjFetx4tf/5KZmul9nsu4h7QF7Hb3/dDv2nmbKkN5Ds=; b=RjKj2ZHgjRw+Gr
+	XqKzKj+IdQ/3BTZjnwZK/qsc0ycwS4+8CtVTpd3BdRz9DK1Gw7dogcu/G68lfk5DrapszN92NKZGL
+	AF7YF6M/gRFwe3MrqGJuBSJGePRoMod/mMTD+hKZ1NgZpsbDNbksLIoCEcoY4u2+2c+OLi2Wei0j6
+	RO3S5leSQRSFjYums9ulnqW3YNqzp9KNWHxJXWdyckdZ3R/eILlErd6DkiFHloYxIWmTxWiqIVHs1
+	g3bWdVM42nWGnSph/ROXLImmmx2QcbXCRFgWsVjgreO4Mu9/r/vLpxnGYy+IHtYCmWFqe1wH728Us
+	JiegVSYB1hbckQIpCwKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikvrh-0003kN-VD; Fri, 27 Dec 2019 20:05:41 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1ikvrv-0003zH-NH; Fri, 27 Dec 2019 20:05:55 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikvol-0000Mn-MQ; Fri, 27 Dec 2019 20:02:41 +0000
+ id 1ikvor-0000RY-N5; Fri, 27 Dec 2019 20:02:47 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id 5B7AC29288A
+ (Authenticated sender: koike) with ESMTPSA id 01C94292887
 From: Helen Koike <helen.koike@collabora.com>
 To: linux-rockchip@lists.infradead.org
-Subject: [PATCH v12 09/11] media: staging: dt-bindings: add Rockchip MIPI RX
- D-PHY yaml bindings
-Date: Fri, 27 Dec 2019 17:01:14 -0300
-Message-Id: <20191227200116.2612137-10-helen.koike@collabora.com>
+Subject: [PATCH v12 10/11] media: staging: rkisp1: add TODO file for staging
+Date: Fri, 27 Dec 2019 17:01:15 -0300
+Message-Id: <20191227200116.2612137-11-helen.koike@collabora.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191227200116.2612137-1-helen.koike@collabora.com>
 References: <20191227200116.2612137-1-helen.koike@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_120240_013279_BC048BB6 
-X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-CacheID: sfid-20191227_120245_940594_06BCA5E1 
+X-CRM114-Status: UNSURE (   8.38  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -73,121 +74,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add yaml DT bindings for Rockchip MIPI D-PHY RX
-
-This was tested and verified with:
-mv drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml  Documentation/devicetree/bindings/phy/
-make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
-make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
+Add TODO file with requirements to move this driver out of staging.
 
 Signed-off-by: Helen Koike <helen.koike@collabora.com>
-
 ---
 
-Changes in v12:
-- The commit replaces the following commit in previous series named
-media: staging: dt-bindings: Document the Rockchip MIPI RX D-PHY bindings
-This new patch adds yaml binding and was verified with
-make dtbs_check and make dt_binding_check
-
+Changes in v12: None
 Changes in v11: None
-Changes in v10:
-- unsquash
-
-Changes in v9:
-- fix title division style
-- squash
-- move to staging
-
+Changes in v10: None
+Changes in v9: None
 Changes in v8: None
-Changes in v7:
-- updated doc with new design and tested example
+Changes in v7: None
 
- .../bindings/phy/rockchip-mipi-dphy.yaml      | 75 +++++++++++++++++++
- 1 file changed, 75 insertions(+)
- create mode 100644 drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
+ drivers/staging/media/rkisp1/TODO | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+ create mode 100644 drivers/staging/media/rkisp1/TODO
 
-diff --git a/drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml b/drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
+diff --git a/drivers/staging/media/rkisp1/TODO b/drivers/staging/media/rkisp1/TODO
 new file mode 100644
-index 000000000000..af97f1b3e005
+index 000000000000..03cd9a4e70f7
 --- /dev/null
-+++ b/drivers/staging/media/phy-rockchip-dphy/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
-@@ -0,0 +1,75 @@
-+# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/rockchip-mipi-dphy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
++++ b/drivers/staging/media/rkisp1/TODO
+@@ -0,0 +1,23 @@
++* Fix serialization on subdev ops.
++* Don't use v4l2_async_notifier_parse_fwnode_endpoints_by_port().
++e.g. isp_parse_of_endpoints in drivers/media/platform/omap3isp/isp.c
++cio2_parse_firmware in drivers/media/pci/intel/ipu3/ipu3-cio2.c.
++* Fix pad format size for statistics and parameters entities.
++* Use threaded interrupt for rkisp1_stats_isr(), remove work queue.
++* Fix checkpatch errors.
++* Make sure uapi structs have the same size and layout in 32 and 62 bits,
++and that there are no holes in the structures (pahole is a utility that
++can be used to test this).
++* Review and comment every lock
++* Handle quantization
++* Document rkisp1-common.h
++* streaming paths (mainpath and selfpath) check if the other path is streaming
++in several places of the code, review this, specially that it doesn't seem it
++supports streaming from both paths at the same time.
 +
-+title: Rockchip SoC MIPI RX0 D-PHY Device Tree Bindings
++NOTES:
++* All v4l2-compliance test must pass.
++* Stats and params can be tested with libcamera and ChromiumOS stack.
 +
-+maintainers:
-+  - Helen Koike <helen.koike@collabora.com>
-+  - Ezequiel Garcia <ezequiel@collabora.com>
-+
-+description: |
-+  The Rockchip SoC has a MIPI D-PHY bus with an RX0 entry which connects to
-+  the ISP1 (Image Signal Processing unit v1.0) for CSI cameras.
-+
-+properties:
-+  compatible:
-+    const: rockchip,rk3399-mipi-dphy
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: Mipi d-phy ref clock
-+      - description: Mipi d-phy rx0 cfg clock
-+      - description: Video in/out general register file clock
-+
-+  clock-names:
-+    items:
-+      - const: dphy-ref
-+      - const: dphy-cfg
-+      - const: grf
-+
-+  '#phy-cells':
-+    const: 0
-+
-+  power-domains:
-+    description: Video in/out power domain.
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - clocks
-+  - clock-names
-+  - '#phy-cells'
-+  - power-domains
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+
-+    /*
-+     * MIPI RX D-PHY use registers in "general register files", it
-+     * should be a child of the GRF.
-+     *
-+     * grf: syscon@ff770000 {
-+     *  compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
-+     *  ...
-+     */
-+
-+    #include <dt-bindings/clock/rk3399-cru.h>
-+    #include <dt-bindings/power/rk3399-power.h>
-+
-+    dphy: mipi-dphy {
-+        compatible = "rockchip,rk3399-mipi-dphy";
-+        clocks = <&cru SCLK_MIPIDPHY_REF>,
-+                 <&cru SCLK_DPHY_RX0_CFG>,
-+                 <&cru PCLK_VIO_GRF>;
-+        clock-names = "dphy-ref", "dphy-cfg", "grf";
-+        power-domains = <&power RK3399_PD_VIO>;
-+        #phy-cells = <0>;
-+    };
++Please CC patches to Linux Media <linux-media@vger.kernel.org> and
++Helen Koike <helen.koike@collabora.com>.
 -- 
 2.24.0
 
