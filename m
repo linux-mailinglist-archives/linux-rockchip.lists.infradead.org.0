@@ -2,52 +2,91 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BA8812BB10
-	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Dec 2019 21:06:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3B2C12BCF8
+	for <lists+linux-rockchip@lfdr.de>; Sat, 28 Dec 2019 08:48:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OydcnH9QXDYgB+cysRKHu+tpEh75AiyLyyyLgnneNrw=; b=P90zPp0mPrPj+Z
-	KRwKPjMrQ+qd9Vt6puv5Y+RBs+k3zJOIPORcaGzu+ccMZEfKx3NTyl1VcIrVOScYuZuYkxBzKK//O
-	T5n4R02UI9OxdiSEY3zTMntrrVZ34CZYXcZLMS/5CdAw8pMKV/TEQK6XSMHx6UbsaWidqXOrig2R4
-	rwptwsz1Ivnv3tLt+Avrl1TVhimt2VlEhYt85WlVoyJOH7VHLV0bBvqHS/MifU/iBZ/QGTcLZtQo6
-	DEMrnXcivOiLcTz1N1dk6XVkIJK75NjBGA4oH34stkd8MTX/XujW82MZ8rJEtv2/7NTjJ5JTW4x+i
-	9X/J/ovVpoxUNsbdpk7g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=HB/73V86x8D1uqtSLaGmbQHKbD82Qw/3Sa9PjJJKjls=; b=WyStQ5z4aYT+czVx8vuwEiMLCV
+	qABRYHRJOfgjjVNeEiJG5gD+4emgaYYHQAUGUmsYdqvVWgiFiD1CNnvti90Zl7hVA5ae+iJHLSUfm
+	8qa8hcXhe/WBRqw9hetkgUEcSe0aff4HnWv3hQGn2XtjJCthJ7T/liPFpt+IVnKOQR5mlpty31uiE
+	KIQ26lp8Oj2KoLGfoAfaguN91b30K5iGyw+PSIU8VgkannIFtsP+tVgF+3q54mC63W15+GSGB9A5Q
+	KFPdvGywVOFYoDpSCM818XcKxOcyd5rcRFrBqSdp/+/xTU9uQtwDw3OuKbZ1U2MdKmEZBSOvJ2ecE
+	wBQsD3gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikvsB-0004Dd-A4; Fri, 27 Dec 2019 20:06:11 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1il6pc-0002n0-Vr; Sat, 28 Dec 2019 07:48:17 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikvox-0000VO-BI; Fri, 27 Dec 2019 20:02:54 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id 9F50528A768
-From: Helen Koike <helen.koike@collabora.com>
-To: linux-rockchip@lists.infradead.org
-Subject: [PATCH v12 11/11] MAINTAINERS: add entry for Rockchip ISP1 driver
-Date: Fri, 27 Dec 2019 17:01:16 -0300
-Message-Id: <20191227200116.2612137-12-helen.koike@collabora.com>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191227200116.2612137-1-helen.koike@collabora.com>
-References: <20191227200116.2612137-1-helen.koike@collabora.com>
-MIME-Version: 1.0
+ id 1il6pT-0002hL-9c; Sat, 28 Dec 2019 07:48:08 +0000
+Received: by mail-wr1-x444.google.com with SMTP id z3so28069592wru.3;
+ Fri, 27 Dec 2019 23:48:05 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=hxfnZMBs1EEg7q0rSJrZ/QwgArDGkn1GU7trZB2ysxo=;
+ b=IcVDWAGvv3NwbPgy6alH+NmPo2MqsIxTURvGL/WI5jN6mTyp3nhN4Gka3bC97hItnI
+ o3in/nW7Tja1ASm47AYQ9t36ddYobpfx+mFpH9JWOFFeELlGLsFyO+IXwNa+oEc5vsVt
+ 3HjI6rwdFK18YGHlgNIoVFdZoE+vRTOAt1doILPt7GrLgp4BnhNZZNa/12TcaqQvguGR
+ qB07U74euKi0+VpI2smpmU/5oSL/fQipvYOD4rUXMwaDeD4c50oBLTgop0OQSXi+s4o1
+ oZ7dWW0xAVZGHOYk49k8cg2mPfO7rkL+9aYlwughmFJQ2ha09o/duP+vfyTKwhQs0RIN
+ hqhA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=hxfnZMBs1EEg7q0rSJrZ/QwgArDGkn1GU7trZB2ysxo=;
+ b=SLY6mlTDz3aP5vNYYyOsghKYr3Xj9LUUh0+X+FkM+X9IqIh9hc9Rhh1e8AK+s3SaJe
+ KgitWkMiUWn3nOuLYPJGkMtgCdq8P4CXd1qx2X2g9ntnIvouHdn8vj0OLq1hE8Hye9yJ
+ R3P9LK0dKedUDPL9ASgPtEP3NCTXiUwv4gYwsXpDBgyUIdaXWV1KX8LejxpvMtGHJ4NP
+ 2JDltswy+rj4H6I/n04gp7t9asihJDszyeYUhSuncbQlnUMtioh1B6e98OYCY4pyEmjF
+ jwNjwLD/V7gY+sb+YPeQBnXD1wv20V9FVspkMYspdjJgAU6sv6ajm0TrXppzM9IRV36s
+ MRgA==
+X-Gm-Message-State: APjAAAUxAN5AGRA6PCPyocuxeItbRBWbuZEpl/ukDLw6UuH3I7ISZdG4
+ B3Xk+lCahHQ6g8fmkHdiin8=
+X-Google-Smtp-Source: APXvYqzbeDGPi6mv9YGx0XuuDAd8x/X+KAyCAU9avVfvpQmcfji8fwkI4Qi+dD3S4rYyS2qlcAlAUQ==
+X-Received: by 2002:adf:e591:: with SMTP id l17mr50523032wrm.139.1577519284705; 
+ Fri, 27 Dec 2019 23:48:04 -0800 (PST)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id s19sm13553258wmj.33.2019.12.27.23.48.03
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 27 Dec 2019 23:48:04 -0800 (PST)
+From: Johan Jonker <jbx6244@gmail.com>
+To: robh+dt@kernel.org
+Subject: [PATCH v2] arm64: dts: rockchip: rk3368-lion-haikou: remove identical
+ &uart0 node
+Date: Sat, 28 Dec 2019 08:47:57 +0100
+Message-Id: <20191228074757.2075-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20191220125520.29871-1-jbx6244@gmail.com>
+References: <20191220125520.29871-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_120251_523183_1DB6D188 
-X-CRM114-Status: UNSURE (   5.72  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191227_234807_359012_0030A56D 
+X-CRM114-Status: GOOD (  10.41  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (jbx6244[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jbx6244[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,57 +99,42 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
- kernel@collabora.com, heiko@sntech.de, linux-arm-kernel@lists.infradead.org,
- ezequiel@collabora.com, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, tfiga@chromium.org,
- Helen Koike <helen.koike@collabora.com>, robh+dt@kernel.org,
- hans.verkuil@cisco.com, laurent.pinchart@ideasonboard.com,
- sakari.ailus@linux.intel.com, joacim.zetterling@gmail.com, mchehab@kernel.org,
- andrey.konovalov@linaro.org, jacob-chen@iotwrt.com,
- linux-media@vger.kernel.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add MAINTAINERS entry for the rockchip isp1 driver.
+There are two identical &uart0 nodes in this dts file,
+so remove one of them.
 
-Signed-off-by: Helen Koike <helen.koike@collabora.com>
-
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
+ arch/arm64/boot/dts/rockchip/rk3368-lion-haikou.dts | 6 ------
+ 1 file changed, 6 deletions(-)
 
-Changes in v12: None
-Changes in v11: None
-Changes in v10: None
-Changes in v9:
-- Move to staging
-
-Changes in v8: None
-Changes in v7: None
-
- MAINTAINERS | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 87f3d89d44a2..5ed1287cbb1c 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -14117,6 +14117,12 @@ F:	drivers/hid/hid-roccat*
- F:	include/linux/hid-roccat*
- F:	Documentation/ABI/*/sysfs-driver-hid-roccat*
+diff --git a/arch/arm64/boot/dts/rockchip/rk3368-lion-haikou.dts b/arch/arm64/boot/dts/rockchip/rk3368-lion-haikou.dts
+index 8251f3c0d..cbde279ae 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3368-lion-haikou.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3368-lion-haikou.dts
+@@ -83,12 +83,6 @@
+ 	status = "okay";
+ };
  
-+ROCKCHIP ISP V1 DRIVER
-+M:	Helen Koike <helen.koike@collabora.com>
-+L:	linux-media@vger.kernel.org
-+S:	Maintained
-+F:	drivers/staging/media/rkisp1/
-+
- ROCKCHIP RASTER 2D GRAPHIC ACCELERATION UNIT DRIVER
- M:	Jacob Chen <jacob-chen@iotwrt.com>
- M:	Ezequiel Garcia <ezequiel@collabora.com>
+-&uart0 {
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
+-	status = "okay";
+-};
+-
+ &usb_otg {
+ 	dr_mode = "otg";
+ 	status = "okay";
 -- 
-2.24.0
+2.11.0
 
 
 _______________________________________________
