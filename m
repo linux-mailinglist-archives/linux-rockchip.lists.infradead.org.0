@@ -2,7 +2,7 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50A7512BD25
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C00D12BD24
 	for <lists+linux-rockchip@lfdr.de>; Sat, 28 Dec 2019 10:31:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -11,69 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=PAkL2kczGqcQKfIFpNYJl5rmYazMcYAeuFYEUztnoXA=; b=nAZFmUonCUnWoC0rCODLnvgKBu
-	5mAkUwApqA8HLd78gpMJIEUKKn+Fn1agld0x3Vel1i8abp2vsoNE+q8P6cYqzliL13oBQAAps1HIj
-	t3Li54If4v0StpIbz+YIGtwCGka57bw/WhhqL+5oBStRipIt3diqCQD/+PK4MxTN1Re5UxjtWBaE8
-	zRSRg5YXTmm9jNAAFRo25gBBLXFlzhhcTNdAEbPF8x+kr3fJwUXfPBykJtgIG+OBw7bEmDbh0Gtyo
-	65l0QgsOWAqEEYadlWR4DpIXUYMdGZgnr9EL2ZZS+LeO2a9ZRZuPFwJ/YIAtx9M/hpWPOcmrdcvbe
-	q9fNWJqA==;
+	bh=i1tm+fE1+vWJVNk95t55aDn0lk847eyC1UVWq7LkpOo=; b=DQy0+lQ5KfcMV/Chyftw4e8C7T
+	aBD8li6A54KRcfRpLfo1Cy2MG5XbDrxRZuIpeRxDRzOljnZC22YweutT8EvWwA5oKiW2AtdMYN7lw
+	O/1am7QMCgh98++YF8Oz5w+rTKAiyO4IGlaSF4Le2WDrYX8UaHlh8NFEFCKkXDWaJVyGYTxVJ3+3j
+	ffnsj1FTGEKYi+s4U+rYY0yr8QwOM/M+F+90HSvrN+OzjNPSDOrdioXi2Z3B1d4r+XlvhboF7/l62
+	+sLP5TczMCcI9reI9CdBi+IVvx9swaRmvXnRx9Ito0zz1PZ6b6j/fosMtVFJk0AuCzBl+pjGZi6jI
+	u8ijPQtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1il8RH-0002Qf-59; Sat, 28 Dec 2019 09:31:15 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1il8RI-0002RK-Kb; Sat, 28 Dec 2019 09:31:16 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1il8RD-0002P9-VI
- for linux-rockchip@lists.infradead.org; Sat, 28 Dec 2019 09:31:14 +0000
-Received: by mail-wr1-x443.google.com with SMTP id z7so28135041wrl.13
+ id 1il8RF-0002PE-VM
+ for linux-rockchip@lists.infradead.org; Sat, 28 Dec 2019 09:31:15 +0000
+Received: by mail-wr1-x444.google.com with SMTP id g17so28189202wro.2
  for <linux-rockchip@lists.infradead.org>; Sat, 28 Dec 2019 01:31:10 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=C1Yhclh1rO03TNl8BGVnCeZSpEaHjzvQF/HLnspJXUo=;
- b=UF2l6vUzWgQRLwbEC3+YvM5hGubotXdidH8OdLBgnmTH/RD80HhdZlD88JdaS8GAal
- VtnLyQhrUP6hP/vSyuUkKE/khyWu3nwtzsIbGDp7hzJEFbF1NK/iqDKR0nRSmwBv/AMO
- /6EM7FQBM+l9hk9iFl84STiLVEO7SMKoVzv8o5mrSdKOjfI+yacF3q5eEgZNZ6KbUf7x
- BjqyI/gtQSN0bCjjgnrOsTRtl+HIjZSCxG1ywzPQpJ/DIJ3y55AvvclakTMF0FynwnVV
- fg8B4RVWtVKXnORJHh5oEosm6UZBcRQC1Q5cDdHmxoQZIMAm0q34TUMRj3BnEtzH1MZ1
- XzBw==
+ bh=o9uPVfods/TVOloLC6n+hV7w8ZRoPGnL5hHWUQYyLUc=;
+ b=o0Fg+5oi5HSyrmfBEZQq8OyJEp0SmiMuZ0A6ig6Fmmz+gqe/bQgTgSi1lLY7NsLW7T
+ m4uuidhPQuD611jssxsFee3aPyYuQ92haXXnqhqFFk0cp3aaDtkfwev12eSX5kSCkc1D
+ IbpnolD1qExRXPokhFofQYFRO2h8yKPLDkj0nQ3rMe84NhDLSjigtjHPkUS8khMPg/U3
+ Moud9sMPQuEtJ2sULFizndLerwDI/znaFA77AvVMSKq2QjPpQS2qJ4nRTpfR8VERWFL0
+ 0V3gezJUiyS3z9M1TcwjB+KkGgnrAD0qH39jhJJnrKTT09RqWej37cbHZ8mAGMXi1f5R
+ 6aww==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=C1Yhclh1rO03TNl8BGVnCeZSpEaHjzvQF/HLnspJXUo=;
- b=heVILhEbTIJKDbwMtTIGyGErr+JYHW3i6YfeWjF1nvpuF6izd/lIoSIV6kTZ9dx3ny
- 8EIDYDvgVzvcXikyE0DqmVdJR3cNQCdZYp7XP8j3WRVRzNUTJ7kbYdOXL3Lfo/BmTFpM
- 52DsGwY6ZeQQWvVSXP9ZrCDM4ouc2zyr3tg/0WF1ghw8qqYJIhA0YHcRw7S4BcBHCchO
- z75t+5DCG4lm5EBorILjOOXMzFx5yo3Lck+EiEV180qi56+uLJn5zVZFnWKKWcP5x//w
- Xm462+z9YmQP2Jrqb7iBgdH0JuB5zyk/2rCsYZ/AXjUaASyVHZSn/qAfGXg50t9PnKwJ
- 4JGA==
-X-Gm-Message-State: APjAAAWCimQ4LLrynCv3Rm6FCESdGTZ1G2hhcQh9VBj5UZlwZpaK9qD+
- Xv5XfdawGzfGO05Rr2H4Afw=
-X-Google-Smtp-Source: APXvYqwlnqVc7lbLCW9DYPOLB9f1dCvRIPPtiRq05ZZxZYuTyAl2jQdy3IZk/NVFYr5tVYuZRLMSgg==
-X-Received: by 2002:a5d:4cc9:: with SMTP id c9mr53663014wrt.70.1577525468939; 
- Sat, 28 Dec 2019 01:31:08 -0800 (PST)
+ bh=o9uPVfods/TVOloLC6n+hV7w8ZRoPGnL5hHWUQYyLUc=;
+ b=HTW4QAwIz5C891kKc5s8mNHYhdBLNGPCYB7obA7Zn0icPU6/mKyiGOow7H4WTjFR7+
+ aZdBPBKwT3i69vBFxG48yBLU1Fs2U/Xar62sk0qeuC2X0cPyI2xIb1aGagAnDg9ydOew
+ QcpHJ/Oarm4IO4vy+82TU1qqQGXQS5GDMjdN2N7RAVHXhejFgx5wkInAWA51m8OATeR9
+ zoqO2ShiaALjWSl7gETRMi/POfPidSRLxP3RDKzhey7poDhE6d8mNbosN60Q/xoqNhH0
+ SffNP7CN6B7fkO2FhO16xWOb4DcZM2SVqLAvHMP6O4rHv9s4APVyFJz6j+ESeaGKu8rI
+ AmMg==
+X-Gm-Message-State: APjAAAWCQ3WaBFJJZfl9Fj3cdJwJlMgepKfxKRjUdnNROJfOMX/wmp2h
+ gvlO9cJC/QH9f6n02vNVZ+g=
+X-Google-Smtp-Source: APXvYqxwhzxrrXhowjx87gKHx7n+poe0jh8A6oRsexhxdA6dIFus+27xymrwqEZwbLBvIWQomfISXQ==
+X-Received: by 2002:a5d:46c7:: with SMTP id g7mr54555918wrs.11.1577525469686; 
+ Sat, 28 Dec 2019 01:31:09 -0800 (PST)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
  by smtp.gmail.com with ESMTPSA id w20sm13776710wmk.34.2019.12.28.01.31.08
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 28 Dec 2019 01:31:08 -0800 (PST)
+ Sat, 28 Dec 2019 01:31:09 -0800 (PST)
 From: Johan Jonker <jbx6244@gmail.com>
 To: robh+dt@kernel.org
-Subject: [PATCH v2 1/2] dt-bindings: mmc: remove identical phrase in
- disable-wp text
-Date: Sat, 28 Dec 2019 10:30:58 +0100
-Message-Id: <20191228093059.2817-1-jbx6244@gmail.com>
+Subject: [PATCH v2 2/2] dt-bindings: mmc: clarify disable-wp text
+Date: Sat, 28 Dec 2019 10:30:59 +0100
+Message-Id: <20191228093059.2817-2-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20191219145843.3823-1-jbx6244@gmail.com>
+In-Reply-To: <20191228093059.2817-1-jbx6244@gmail.com>
 References: <20191219145843.3823-1-jbx6244@gmail.com>
+ <20191228093059.2817-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191228_013112_030974_B7EAF2B1 
-X-CRM114-Status: GOOD (  12.60  )
+X-CRM114-CacheID: sfid-20191228_013114_007641_D14C7B3D 
+X-CRM114-Status: GOOD (  12.90  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -109,28 +109,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-There are two identical phrases in the disable-wp text,
-so remove one of them.
+"disable-wp" has been removed from all Rockchip eMMC and SDIO dts nodes,
+but people still continue to submit new patches with "disable-wp" added
+to other nodes then for the SD card slot,
+what it was designed for in the first place.
+So clarify the "disable-wp" text by adding that this option should
+not be used in combination with eMMC or SDIO.
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- Documentation/devicetree/bindings/mmc/mmc-controller.yaml | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ Documentation/devicetree/bindings/mmc/mmc-controller.yaml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/Documentation/devicetree/bindings/mmc/mmc-controller.yaml b/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
-index b130450c3..d668d0fbe 100644
+index d668d0fbe..3c0df4016 100644
 --- a/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
 +++ b/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
-@@ -96,8 +96,7 @@ properties:
-     description:
-       When set, no physical write-protect line is present. This
-       property should only be specified when the controller has a
--      dedicated write-protect detection logic. If a GPIO is always
--      used for the write-protect detection. If a GPIO is always used
-+      dedicated write-protect detection logic. If a GPIO is always used
+@@ -99,7 +99,7 @@ properties:
+       dedicated write-protect detection logic. If a GPIO is always used
        for the write-protect detection logic, it is sufficient to not
        specify the wp-gpios property in the absence of a write-protect
-       line.
+-      line.
++      line. Not used in combination with eMMC or SDIO.
+ 
+   wp-gpios:
+     description:
 -- 
 2.11.0
 
