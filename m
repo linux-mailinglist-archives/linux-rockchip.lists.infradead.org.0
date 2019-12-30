@@ -2,87 +2,107 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17BBE12CB53
-	for <lists+linux-rockchip@lfdr.de>; Mon, 30 Dec 2019 00:19:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCE2F12CB64
+	for <lists+linux-rockchip@lfdr.de>; Mon, 30 Dec 2019 01:09:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4z4yDDcezW/IwC39q+BEuePYNYwEQ0JpxaAp4dcN47U=; b=DPj8twSU/E5f5+
-	I23LVovAGs6sjBNqPHm3RSxdSkxR99A2Ax6oi14msO9Ge/iRUtFN20FTWzZ/6s9ey0T2iDxe4Y8iL
-	WLWGoCwW69PZqEGhTtb49FcoI6pE2AhDLYHhII4moz6+NnPdc8hRRjEqqYMNfCOIIkXdzaSW4JByS
-	wu58QsupIxoQ3RCd2n5U8EXwlg/wlJCTLnWuHUCnZjPIxlT1XFISkoPFC1dam0tRiYmKYzV/k1OOW
-	NlRyuB9o8dioRI2CYCi09lWa9EgwJs4+PRbNjCCGbQA6UgJuIPi5jYNLM1JFhBg5X1tUyUebwLxQt
-	7S7Fyo5cXhS+mTpU7p9g==;
+	List-Owner; bh=jYhpjF4rn3qB0Mixly/VJqYKFJAG5dRgzse19jNZfWo=; b=R2BlA+FRlMYYjD
+	yB2j86TOwDHKqbCMh+AiwHV3MZBaVjGkFQeNz76/knLhsNZx3ewMsLJDqRVsJ7H6oFdDTodOJvtRr
+	ke9oTG0XDh+1oqdwjXWKgeNYbVOORDNo25KVyHqtPehM9PvjWDjArAE1OWxQQjIaS1jA1gjAtw592
+	hCgaP/VpM6Ct5Vt7uNBCCWf9T0uAJryG+kC6+QwnZcLEI3ASJyrDCBjJR9tAR+URZ+yu68Mj3g5+X
+	JE6VixgZBWnJxe0tyHLB0/O+y/EQqAp5rJNbbMMWaKkFqCoXPXnhhKKpbohQjR5t7uG/70UKjQ7xT
+	8XrUdIBQDrl9wpAuphtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilhqM-0005EO-1C; Sun, 29 Dec 2019 23:19:30 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1ilicv-0002Nq-7g; Mon, 30 Dec 2019 00:09:41 +0000
+Received: from mail-oln040092067051.outbound.protection.outlook.com
+ ([40.92.67.51] helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilhqI-0005Dn-EI; Sun, 29 Dec 2019 23:19:27 +0000
-Received: by mail-ed1-x544.google.com with SMTP id f8so31284915edv.2;
- Sun, 29 Dec 2019 15:19:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=XxSZstiEaMg+m65lDkW2E8KdL5f2Kpio4F4xfu4/sKE=;
- b=qEqcxGvrL6Xx0mQ/8Z3GHtEKOGcTeVvqVgOM2yp8DAnAgG0eVY8UHkYkhMS07BxKzY
- WqQXGPhS2yeWl3144e7q6YMX/2OJQ9VDtqy2K16OhSEm8Cx0elYHZlEEeJL060DazFvT
- vskiCsMN0M1sPeQSpUPBZNb/LILTYVqOKdfmj/3wCIXX6bcsFHh7fQicz3v4/CUVoAeM
- QjiDh5N+scPktd1DVSvLqHyyYn2nNMr9YZRXPnbQ+9JFpbj3LVgXrGntEW0846Qb28ex
- NU1dwyNKr4E/RoF919Qr3QM6N0DQvEA3nByGuaBvSldBPXa+StlqqGTxCTXW8mwpfLwO
- ec3g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=XxSZstiEaMg+m65lDkW2E8KdL5f2Kpio4F4xfu4/sKE=;
- b=H6XtyeJep5LsRNgpz+z29z9s6TCSGXGnFubsCHST0UQMvJalV+8U7azuRz7zVj/KZ2
- BLog9imkpVOYZApfv0R89OiZ6g5UCA2FxDuoOjBbaUMvTqnYakEdFWWzHczTdwMkiSAc
- kGMset8ll3kO2czvma8FJRORZ9C7w9EEn6CtyKBCvZRlOVfWOBagTT38jHLe4EGf7OQv
- 0RQhAEOukgp/6mvcfAd01IEm+AE2spw82yEVNCYhJFHGs4VwvpP6PaMzW/+bRdYInE5w
- 0feal/opffTtndUhdIEefdsQj4m/agcpRA1PF/QaMx8g2ChSAUXy0sE2+Yaz253heif+
- Pjeg==
-X-Gm-Message-State: APjAAAUB0G9xDNV51p03kMOoEIU8INhbGNiozXun9a8BuzHhj9eHmFgI
- SZVP4s0RfpkPyUVLarOZ9dKdXrsU2amTHLflMc0=
-X-Google-Smtp-Source: APXvYqx5hpszRc1esYWuJMYLxjiI1twZUv4Oyfi4w8d8PUEWWIYhTywMgOhwl9CLM8r56NOREovBKjh3zWBx5AgNoQ4=
-X-Received: by 2002:a17:906:cc8b:: with SMTP id
- oq11mr67972062ejb.193.1577661561171; 
- Sun, 29 Dec 2019 15:19:21 -0800 (PST)
+ id 1ilicn-0002JS-Sq; Mon, 30 Dec 2019 00:09:36 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=f0C1o8lqQlYDmPO0ecEigfulWlahkrN2WMg3Q8WevTc2ozTH30NgahJKbf+K7bSBNwi2MBW2J7pdibkoV9gj6Qf6j0Zl11pJ1ChK+1EiW8XVOWPGJG13ldgtPYpt4fBkeP8PCmXKwn5EZA3yP6QqfIc8WrkSGv+IfwGKd9Mx9lQwAUlNXxW+ruVmPVWCWArVp8e6d1fUw934Tq3wFqQ4DG+odBvxTUQsn9ock9quegN2fFLDsenXADY5qoUMpSw1F4AJWeX+0spdgjxJ+4Daz8O63FjCrJvtn4TQspVUOp8Pyee03U2cW/PKShAW6FVBp3xT0N0LguxjRhK2sSS3SQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lZnJ0DhEmV3EMmGvDd2qfpN9Zi9PBq3W7yE+Rqgek7k=;
+ b=mv7qukd8jQPW3xqULgqw1XhbS6YuFi6lVjl6uXDIC0OfTCqQ7ArbKokXFFxtyWTR9g0Hf214LHPd/j2Q2KVGHdZORTs6jbp2yJSszJc+Z8jQfkZsfrN4csAbStyARNSWSNLGtsgHDvIB6UbTOMhvmOArKXHIbiTXbTEj9b/a4d8/o9tr2SEUuuwtgEsyHxmpzsY3oG84wIrSA8a2XCowQIMCoQOYGIiaV/DNNJBMZnGhthdnFRWQiqAeXGFwsd0LRINd/qX73Zlke61O+/jm0AD/yDaypygmmlqXrFZS0ZiAVEuhQHMrbteRpel8JDlD4Rv9CQgsImA7SK9P7pZD3w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+Received: from AM5EUR02FT016.eop-EUR02.prod.protection.outlook.com
+ (10.152.8.53) by AM5EUR02HT159.eop-EUR02.prod.protection.outlook.com
+ (10.152.9.174) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2581.11; Mon, 30 Dec
+ 2019 00:09:22 +0000
+Received: from HE1PR06MB4011.eurprd06.prod.outlook.com (10.152.8.52) by
+ AM5EUR02FT016.mail.protection.outlook.com (10.152.8.90) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2581.11 via Frontend Transport; Mon, 30 Dec 2019 00:09:22 +0000
+Received: from HE1PR06MB4011.eurprd06.prod.outlook.com
+ ([fe80::b957:6908:9f62:c28b]) by HE1PR06MB4011.eurprd06.prod.outlook.com
+ ([fe80::b957:6908:9f62:c28b%5]) with mapi id 15.20.2581.007; Mon, 30 Dec 2019
+ 00:09:22 +0000
+Received: from [192.168.42.2] (89.253.98.102) by
+ AM6PR05CA0033.eurprd05.prod.outlook.com (2603:10a6:20b:2e::46) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2581.11 via Frontend Transport; Mon, 30 Dec 2019 00:09:21 +0000
+From: Jonas Karlman <jonas@kwiboo.se>
+To: Robin Murphy <robin.murphy@arm.com>, "heiko@sntech.de" <heiko@sntech.de>
+Subject: Re: [PATCH] arm64: dts: rockchip: Add RK3328 GPU OPPs
+Thread-Topic: [PATCH] arm64: dts: rockchip: Add RK3328 GPU OPPs
+Thread-Index: AQHVvoSobY0UI0qS/k2kVw/C6W/QbafRzb0A
+Date: Mon, 30 Dec 2019 00:09:22 +0000
+Message-ID: <HE1PR06MB4011483BC5EF6C87066983CCAC270@HE1PR06MB4011.eurprd06.prod.outlook.com>
+References: <48607c137d46452291510e88d5891e705dc7993c.1577650403.git.robin.murphy@arm.com>
+In-Reply-To: <48607c137d46452291510e88d5891e705dc7993c.1577650403.git.robin.murphy@arm.com>
+Accept-Language: sv-SE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: AM6PR05CA0033.eurprd05.prod.outlook.com
+ (2603:10a6:20b:2e::46) To HE1PR06MB4011.eurprd06.prod.outlook.com
+ (2603:10a6:7:9c::32)
+x-incomingtopheadermarker: OriginalChecksum:2A7E96757D38D52A7DB3F630FF3FAC07A2D10E3DFA3A5785D7A1E0E9DCAE133A;
+ UpperCasedChecksum:5E5E66D22D9360CA19E9630DA2AD54EC0F1C9F8382FBBF4C3BF672DA520783A4;
+ SizeAsReceived:7726; Count:50
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tmn: [bvi6BSDSvVzU5XQF+hXOE1Q6jfZ2LUjI]
+x-microsoft-original-message-id: <3a3ea32d-dbfb-7934-9871-928c5a8b13aa@kwiboo.se>
+x-ms-publictraffictype: Email
+x-incomingheadercount: 50
+x-eopattributedmessage: 0
+x-ms-office365-filtering-correlation-id: 1a924471-848c-4549-66b9-08d78cbc8581
+x-ms-traffictypediagnostic: AM5EUR02HT159:
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: wrmqibVYHFVhwJoBD1frrclIc+JagEmxmU3BQhb50GoQcoXGaZDJdvaaGCRzEo0EOxk2J5SE6v30cLBPvKm0qtw4Cj6zey2rX0KcSD+AJOrPa5nG38djn3Vvujwd1Yn4ZOmWsm2kJM/dY/Ga5zlhiXmmj9nXDWrPPTnMrYkTF8e648j6wG+/74985TNCYqdv
+x-ms-exchange-transport-forked: True
+Content-ID: <ABCA922A364A964D80FE323B5337C08A@eurprd06.prod.outlook.com>
 MIME-Version: 1.0
-References: <20191227173707.20413-1-martin.blumenstingl@googlemail.com>
- <20191227173707.20413-2-martin.blumenstingl@googlemail.com>
- <dd38ff5c-6a14-bb6a-4df5-d706f99234e9@arm.com>
-In-Reply-To: <dd38ff5c-6a14-bb6a-4df5-d706f99234e9@arm.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Mon, 30 Dec 2019 00:19:10 +0100
-Message-ID: <CAFBinCDs3a8TJcQKgHUkDvssMR6Y2Kys38p50P0q=2KOiDTNHg@mail.gmail.com>
-Subject: Re: [RFC v2 1/1] drm/lima: Add optional devfreq support
-To: Robin Murphy <robin.murphy@arm.com>
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1a924471-848c-4549-66b9-08d78cbc8581
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Dec 2019 00:09:22.3561 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5EUR02HT159
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_151926_509001_5D34BCD6 
-X-CRM114-Status: GOOD (  19.21  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191229_160933_933258_5068146D 
+X-CRM114-Status: GOOD (  14.89  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.92.67.51 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.92.67.51 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,63 +115,72 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: robh@kernel.org, tomeu.vizoso@collabora.com, airlied@linux.ie,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- steven.price@arm.com, linux-rockchip@lists.infradead.org, wens@csie.org,
- yuq825@gmail.com, daniel@ffwll.ch, linux-amlogic@lists.infradead.org,
- alyssa.rosenzweig@collabora.com
+Cc: "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Robin,
+On 2019-12-29 21:14, Robin Murphy wrote:
+> Add OPPs for the GPU, derived from the downstream Beelink A1 DTB.
 
-On Sun, Dec 29, 2019 at 11:58 PM Robin Murphy <robin.murphy@arm.com> wrote:
+My RK3328 devices (rock64, roc-cc and other android tv boxes) used to become
+unstable when I used similar OPPs as these and vdd_logic got changed to anything
+below 1.05v some time ago, network speeds slowed down and devices usually
+become unresponsive.
+
+I do use vendor ddr init blobs to run ddr at 786 or 933 MHz, gpu runs at 500 Mhz
+and rock64/roc-cc LDO3 is set to use 1.0v instead of 1.1v used in A1 dts,
+in case that could be affecting the stability at lower vdd_logic voltages.
+
+These observations was a few months back so I will redo some tests and see if I
+still get unstable systems using anything below default 1.1v for vdd_logic.
+
+Best regards,
+Jonas
+
 >
-> Hi Martin,
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
+>  arch/arm64/boot/dts/rockchip/rk3328.dtsi | 22 ++++++++++++++++++++++
+>  1 file changed, 22 insertions(+)
 >
-> On 2019-12-27 5:37 pm, Martin Blumenstingl wrote:
-> > Most platforms with a Mali-400 or Mali-450 GPU also have support for
-> > changing the GPU clock frequency. Add devfreq support so the GPU clock
-> > rate is updated based on the actual GPU usage when the
-> > "operating-points-v2" property is present in the board.dts.
-> >
-> > The actual devfreq code is taken from panfrost_devfreq.c and modified so
-> > it matches what the lima hardware needs:
-> > - a call to dev_pm_opp_set_clkname() during initialization because there
-> >    are two clocks on Mali-4x0 IPs. "core" is the one that actually clocks
-> >    the GPU so we need to control it using devfreq.
-> > - locking when reading or writing the devfreq statistics because (unlike
-> >    than panfrost) we have multiple PP and GP IRQs which may finish jobs
-> >    concurrently.
->
-> I gave this a quick try on my RK3328, and the clock scaling indeed kicks
-> in nicely on the glmark2 scenes that struggle, however something appears
-> to be missing in terms of regulator association, as the appropriate OPP
-> voltages aren't reflected in the GPU supply (fortunately the initial
-> voltage seems close enough to that of the highest OPP not to cause major
-> problems, on my box at least). With panfrost on RK3399 I do see the
-> supply voltage scaling accordingly, but I don't know my way around
-> devfreq well enough to know what matters in the difference :/
-first of all: thank you for trying this out! :-)
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+> index 91306ebed4da..e1b1b4551a8b 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+> @@ -605,6 +605,28 @@
+>  		clocks = <&cru ACLK_GPU>, <&cru ACLK_GPU>;
+>  		clock-names = "bus", "core";
+>  		resets = <&cru SRST_GPU_A>;
+> +		operating-points-v2 = <&gpu_opp_table>;
+> +	};
+> +
+> +	gpu_opp_table: opp_table1 {
+> +		compatible = "operating-points-v2";
+> +
+> +		opp-200000000 {
+> +			opp-hz = /bits/ 64 <200000000>;
+> +			opp-microvolt = <900000>;
+> +		};
+> +		opp-300000000 {
+> +			opp-hz = /bits/ 64 <300000000>;
+> +			opp-microvolt = <950000>;
+> +		};
+> +		opp-400000000 {
+> +			opp-hz = /bits/ 64 <400000000>;
+> +			opp-microvolt = <1025000>;
+> +		};
+> +		opp-500000000 {
+> +			opp-hz = /bits/ 64 <500000000>;
+> +			opp-microvolt = <1125000>;
+> +		};
+>  	};
+>  
+>  	h265e_mmu: iommu@ff330200 {
 
-does your kernel include commit 221bc77914cbcc ("drm/panfrost: Use
-generic code for devfreq") for your panfrost test?
-if I understand the devfreq API correct then I suspect with that
-commit panfrost also won't change the voltage anymore.
-
-this is probably due to a missing call to dev_pm_opp_set_regulators()
-which is supposed to attach the regulator to the devfreq instance.
-I didn't notice this yet because on Amlogic SoCs the voltage is the
-same for all OPPs.
-
-I'll debug this in the next days and send an updated patch (and drop
-the RFC prefix if there are no more comments).
-
-
-Regards
-Martin
 
 _______________________________________________
 Linux-rockchip mailing list
