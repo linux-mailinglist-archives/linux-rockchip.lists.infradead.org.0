@@ -2,66 +2,95 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1B9A12CFC0
-	for <lists+linux-rockchip@lfdr.de>; Mon, 30 Dec 2019 12:51:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94D8312D15C
+	for <lists+linux-rockchip@lfdr.de>; Mon, 30 Dec 2019 16:11:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SaywvaGjxR4BmOK746fmyN4VhqqCoR3fBSamYq3dFKI=; b=Y4mad2xRD/N8jN
-	z05tmZ5eT9mr9aRypG7Zch2NTjqFMjeuCVOPMIp5tsYGO6fteFVfVXv1OnFYGXRZ6q6R5Rz/hHiHW
-	zIy2qqa//Muz7IFfOe7tt+bEaRSdCb6PylzDzHGFn5Ik7nB7P3YiN+HMh0/QzEwm0LOzqTwN1QePW
-	Yr3WgtxI9g/uv9nkjUAoJn5OqP1UL5okG+nKixGDdE8INiVtUec/eHWM7lNwf9rZvva28SuFRRsbC
-	fxBClvHeOAyO8T/p2axX7PjqcM8AmE4rzQkhQT4wMeZWgpeFh9IXEGVKC+YuWviOI6M+F3TlNgKaw
-	MjPk3IDYGsTt0mWc5L/A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=cIPCnX7vQ9HYyAQESXcDoNHAw4o/rC/6HZ8jAZSHx+Q=; b=qSp
+	IJ41awAbnkjXf/+10RZdjxxlxOUUBHzmwvEPw0lrikghYgwQyoqTOHDnwKIxIVxG4waXlLm3UkKTV
+	fDjLycQD1MFgYCqZcozi4ppPPP5fAZru7SP12O9Vf6kqdrLq1IPO3brrXMBSFzqLFhwbGoRLPn+TQ
+	7btU9ikdTHKpkPqrAP1u5L5sgasLnxiWrrm4QLUR7S9s/Cvfmp1vHZG6FeizdaG6bBPZ9J0yQReMn
+	ULsPp7y7Gh61Nwxxh2tH3Cm4T4RIRXSly0In+N8/Llesx2vOQZw9CYxxo3yuPpoeGY174yUXtZboQ
+	p2qCUN5ETmqahcI0kZ1EPDHN3ofOLIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iltaH-0002Vp-V1; Mon, 30 Dec 2019 11:51:41 +0000
-Received: from mail.blih.net ([212.83.177.182])
+	id 1ilwhN-0007W2-FZ; Mon, 30 Dec 2019 15:11:13 +0000
+Received: from [198.54.122.235] (helo=se15p.web-hosting.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iltaF-0002VJ-1c
- for linux-rockchip@lists.infradead.org; Mon, 30 Dec 2019 11:51:40 +0000
-Received: from mail.blih.net (mail.blih.net [212.83.177.182])
- by mail.blih.net (OpenSMTPD) with ESMTP id 045c5596;
- Mon, 30 Dec 2019 12:51:35 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=bidouilliste.com; h=date
- :from:to:cc:subject:message-id:in-reply-to:references
- :mime-version:content-type:content-transfer-encoding; s=mail;
- bh=vWqMAAPNxqWbIqMuo3XJ6EI3G90=; b=qIxsOJ+/WjFs+/jKsQScE8Kv4R4V
- LiPZ3UVPfhNu5WkhDDGtTpkPfWyPI5w/aRrwB6ViT3DT6Jqeojp/p3Xp87VXeqMU
- qIg/sJeCvoMi02DxK4Eb2nBZv/IvQmciUQM9bYchiJOVoZl2j9K7CHjdxmnKO1tl
- Efg4OcezlIkNzt4=
-DomainKey-Signature: a=rsa-sha1; c=nofws; d=bidouilliste.com; h=date
- :from:to:cc:subject:message-id:in-reply-to:references
- :mime-version:content-type:content-transfer-encoding; q=dns; s=
- mail; b=bDqQB+j0JrCbo+M2Q4koZIG/q7Z7OCemhTqf2kWcWsov4EuV0Ck5YJz5
- eKv7bsfyByvASwenPkuwvpa4Z5f4wAuR6WG3Z8rpo24h72fobzipeW641He0FEzw
- wPEC/qSpwxYNPgxzcLW9tn0lsMFG+ANeKDPw6wMVdedIy/6ANUg=
-Received: from sonic.home.blih.net (ip-9.net-89-3-105.rev.numericable.fr
- [89.3.105.9]) by mail.blih.net (OpenSMTPD) with ESMTPSA id 5da987f4
- TLS version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO;
- Mon, 30 Dec 2019 12:51:35 +0100 (CET)
-Date: Mon, 30 Dec 2019 12:51:34 +0100
-From: Emmanuel Vadot <manu@bidouilliste.com>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH 10/11] rockpro-rk3399: Enable SPI Flash
-Message-Id: <20191230125134.189ba860e7fc99b4ad2f1def@bidouilliste.com>
-In-Reply-To: <20191221075440.6944-11-jagan@amarulasolutions.com>
-References: <20191221075440.6944-1-jagan@amarulasolutions.com>
- <20191221075440.6944-11-jagan@amarulasolutions.com>
-X-Mailer: Sylpheed 3.7.0 (GTK+ 2.24.32; amd64-portbld-freebsd13.0)
-Mime-Version: 1.0
+ id 1ilwhC-0007Ny-Dl; Mon, 30 Dec 2019 15:11:04 +0000
+Received: from [68.65.123.203] (helo=server153.web-hosting.com)
+ by se18.registrar-servers.com with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.89)
+ (envelope-from <akash@openedev.com>)
+ id 1ilwOv-00036N-5c; Mon, 30 Dec 2019 06:52:16 -0800
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=openedev.com; s=default; h=Message-Id:Date:Subject:Cc:To:From:Sender:
+ Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=EPC28Yt+0aNznX9u35/jd/LjH/k2Ll+t1weLDks5sDs=; b=A6VpKFJGYozOvIFVAp/2Dvj7Ef
+ MIguw+EXZFC4MqyRjRYzg8p9lRPPloeNwa56xAJEwI2tEFmtSkUYPGTYTuh0ZD9VECWub9BU1nA72
+ 93Y+WzxODIiLB1K/cyNo+yWLA4Mwsht2bLOBNFyJ8Pzkc1qrb0l5bbXgrLK5rwV7SEc7Wxk1qBpBo
+ 1VY18pK3LdtqPIZC9BMZzRXwU448ynufFLEsh4pDddBChINc2JysESijHNtwAjh9qKqIWJ15h8bMp
+ JyQHzDSoLe9Hu/pDHrsvLGpKVlO5pbB/inKKbtgTiGJfr1VkpnqEotc3dAwbqS16toeLum5I25Pnn
+ JLwpEoxA==;
+Received: from [49.36.128.245] (port=59110 helo=localhost.localdomain)
+ by server153.web-hosting.com with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
+ (envelope-from <akash@openedev.com>)
+ id 1ilwOl-0017h3-6w; Mon, 30 Dec 2019 09:52:04 -0500
+From: Akash Gajjar <akash@openedev.com>
+To: heiko@sntech.de
+Subject: [PATCH V3, 1/1] arm64: dts: rockchip: add ROCK Pi S DTS support
+Date: Mon, 30 Dec 2019 20:19:32 +0530
+Message-Id: <20191230145008.5899-1-akash@openedev.com>
+X-Mailer: git-send-email 2.17.1
+X-OutGoing-Spam-Status: No, score=-1.0
+X-Originating-IP: 68.65.123.203
+X-SpamExperts-Domain: nctest.net
+X-SpamExperts-Username: whmcalls3
+Authentication-Results: registrar-servers.com;
+ auth=pass (login) smtp.auth=whmcalls3@nctest.net
+X-SpamExperts-Outgoing-Class: ham
+X-SpamExperts-Outgoing-Evidence: SB/global_tokens (0.0050750456871)
+X-Recommended-Action: accept
+X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0c2Pj46HODYmpAMVAv0J1pOpSDasLI4SayDByyq9LIhVwuy0bjI8yMj4
+ KW/O1QaBLUTNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3Kk502M/hntTzIKfCMISdhHQGg
+ t7nAtP8WjkKKy9v/mXRCAg6KUuZyAxDB8pQ0X3Jup8g+vUEWo2xV2cCG5z+oTIyPxzzUKqrj0vuL
+ tXb9Nw/flUZ4BFx+4YXFlO7mBYPmdFr44S8zCdjYD6YTfF54r/OdvTlaILyNoayDbNYC1LCy9smr
+ iOQ9hYLpsfWILKZqhWnXQ5+sjoHb49mQVwu4lVHEnxwfnexlt7brFUzAUjTUgfw6dCob2+yTo5F5
+ c3MnYqln29C8iMP+rqW7oClJFWlyp8IFiFCMnPLD5Hr2XR0lyP9Su2lBO8661vc7U/5cFhsTmTbQ
+ JhZCcd1O4A+1/pbELehAitXOQi1N5mEMvUsdqfJRZtBgv+Wjrt5wk1gISSW8WTkFJKrk3QCrr40r
+ 15F3Rm8ytD0IqrihDfnyCUa3wL2Y4F0412ezGCyTUPan2AUIlBctiMvX5F8XBiwx5Rs40cmSL9tP
+ fD9p0Q30Opo+bd5lBrozqCj+0HE/yRZixXNOUX3LUkv9SqakBdzhOOUvg5TIg80/EueZoip8aHbu
+ 4ONX+wVRdCv4IOs1C4geIT5LUm075ewdrul30woFSUGlz8CJSOMrvzx9TVg3RkVkPUrQufwg7jHj
+ rPoPP1IuI3+BNO/vWxLUxUxbR529+jcSGt6GKtM6B+u5NgVXVJx8AoRwxB3UXPpqW9YYMmJAiIwb
+ dFqdboRlBgJOYFBIvh9AMnALq+p/7V6RsW71M8iDBuG4NXpcGX0BewE6kCMGUa3FdyXge5giNlzZ
+ jmssnacbGwN9oPEGphWQkRzetKPpxOsB8gG0slV7ra6jI4BSTwrYfJFsGsxM5/ek60XeHiIhiBbv
+ 1wt8gji8ewfaR3A21jAytTM7ul2pus+MytmYMPHvc6+8qs7qroeV5HFWgQskaPHAtLJBxO9AXoKm
+ PqZHBQQL7n9+OTZ37LZfI/sWwyJSOSGKlUBLYSbGwjymBMs+y2lddnrRl/tSPbCh7uprC4QcUKGu
+ TX/23E8AyqKqJt2lL6TNy1dtcXTis6Dsj8hzB3NHYhYaYo0xHDICv1Yx6b3cWXoC6UmizshdZtj8
+ cxw3qqhc+N6cuEg4XWh5Fn4+lLgwzoFrDlzunWdf0LZdg/BKPqUSdnYelyQNvR+dIiEXs83LgwjD
+ aO5UWsSRdMXIdc0MLkzSqE63qJ+zngn7m6CAstID+vrS5Thb0c/s7mun+E/RGrGHGDuwRkuP1qh7
+ YyoiU7NMbzmxUlDjlFLe1QlsqnWpvw1TU8J/E3GJvtyAbczV850+DxFtbVlxu7ie3fMgkIagEDDY
+ 4gfnEZ4doHEpKKo/b09r+um3pKaKeKIVtFIy9LlOZCNnSGcq99Dbe7/IbgyY4V1IcY73X0gZcGQT
+ bPM5zqrjMI79CjbRoqLnS70LPBISpYNOps7qsSzkj4d0bp8lX/ci14DI8fLw5N/ojaomCoWWiTto
+ l8oIToKHMVx7fTUwDt8WIXPmYakRLzBY3AuXWIccBDJTaBcDik4cfyhwRfSZqBUJ2eng
+X-Report-Abuse-To: spam@se16.registrar-servers.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_035139_497390_073AAD48 
-X-CRM114-Status: GOOD (  11.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191230_071102_464353_D8C99804 
+X-CRM114-Status: GOOD (  15.76  )
+X-Spam-Score: 2.0 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -70,6 +99,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,69 +112,312 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Simon Glass <sjg@chromium.org>,
- Kever Yang <kever.yang@rock-chips.com>, u-boot@lists.denx.de,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ tom@radxa.com, Robin Murphy <robin.murphy@arm.com>,
+ Douglas Anderson <dianders@chromium.org>,
+ Kever Yang <kever.yang@rock-chips.com>, Markus Reichl <m.reichl@fivetechno.de>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Akash Gajjar <akash@openedev.com>, Nick Xie <nick@khadas.com>,
+ Andy Yan <andy.yan@rock-chips.com>, jagan@openedev.com,
+ Matthias Kaehlcke <mka@chromium.org>, Vivek Unune <npcomplete13@gmail.com>,
+ Jagan Teki <jagan@amarulasolutions.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+ROCK Pi S is RK3308 based SBC from radxa.com. ROCK Pi S has a,
+- 256MB/512MB DDR3 RAM
+- SD, NAND flash (optional on board 1/2/4/8Gb)
+- 100MB ethernet, PoE (optional)
+- Onboard 802.11 b/g/n wifi + Bluetooth 4.0 Module
+- USB2.0 Type-A HOST x1
+- USB3.0 Type-C OTG x1
+- 26-pin expansion header
+- USB Type-C DC 5V Power Supply
 
- Hi Jagan,
+This patch enables
+- Console
+- NAND Flash
+- SD Card
 
-On Sat, 21 Dec 2019 13:24:39 +0530
-Jagan Teki <jagan@amarulasolutions.com> wrote:
+Signed-off-by: Akash Gajjar <akash@openedev.com>
+---
+Changes for v2
+- Use pwm-supply for vdd_core node instead of vi-supply
+- Add USB2.0 node support
+ 
+Changes for v3
+- Use small S on dts file name
+- Add missing semicolon
+- Remove USB2.0 node support
 
-> Enable winbond SPI flash for ROC-PC-RK3399 board.
+ .../devicetree/bindings/arm/rockchip.yaml     |   5 +
+ arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+ .../boot/dts/rockchip/rk3308-rock-pi-s.dts    | 221 ++++++++++++++++++
+ 3 files changed, 227 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3308-rock-pi-s.dts
 
- s/ROC-PC-RK3399/RockPro64/
-
-> 
-> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> ---
->  arch/arm/dts/rk3399-rockpro64-u-boot.dtsi | 4 ++++
->  configs/rockpro64-rk3399_defconfig        | 2 ++
->  2 files changed, 6 insertions(+)
-> 
-> diff --git a/arch/arm/dts/rk3399-rockpro64-u-boot.dtsi b/arch/arm/dts/rk3399-rockpro64-u-boot.dtsi
-> index 4648513ea9..deaa3efd39 100644
-> --- a/arch/arm/dts/rk3399-rockpro64-u-boot.dtsi
-> +++ b/arch/arm/dts/rk3399-rockpro64-u-boot.dtsi
-> @@ -6,6 +6,10 @@
->  #include "rk3399-u-boot.dtsi"
->  #include "rk3399-sdram-lpddr4-100.dtsi"
->  / {
-> +	aliases {
-> +		spi0 = &spi1;
-
- That looks weird ... what's the point of this alias exactly ?
-
-> +	};
-> +
->  	chosen {
->  		u-boot,spl-boot-order = "same-as-spl", &sdmmc, &sdhci;
->  	};
-> diff --git a/configs/rockpro64-rk3399_defconfig b/configs/rockpro64-rk3399_defconfig
-> index 49e27c91cb..6a50ec7dbc 100644
-> --- a/configs/rockpro64-rk3399_defconfig
-> +++ b/configs/rockpro64-rk3399_defconfig
-> @@ -46,6 +46,8 @@ CONFIG_RAM_RK3399_LPDDR4=y
->  CONFIG_BAUDRATE=1500000
->  CONFIG_DEBUG_UART_SHIFT=2
->  CONFIG_SYSRESET=y
-> +CONFIG_SPI_FLASH_GIGADEVICE=y
-> +CONFIG_ROCKCHIP_SPI=y
->  CONFIG_USB=y
->  CONFIG_USB_XHCI_HCD=y
->  CONFIG_USB_XHCI_DWC3=y
-> -- 
-> 2.18.0.321.gffc6fa0e3
-
-
+diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+index d9847b306b83..48d40c928d45 100644
+--- a/Documentation/devicetree/bindings/arm/rockchip.yaml
++++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+@@ -422,6 +422,11 @@ properties:
+           - const: radxa,rockpi4
+           - const: rockchip,rk3399
+ 
++      - description: Radxa ROCK Pi S
++        items:
++          - const: radxa,rockpis
++          - const: rockchip,rk3308
++
+       - description: Radxa Rock2 Square
+         items:
+           - const: radxa,rock2-square
+diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
+index 48fb631d5451..e56a5527bab4 100644
+--- a/arch/arm64/boot/dts/rockchip/Makefile
++++ b/arch/arm64/boot/dts/rockchip/Makefile
+@@ -2,6 +2,7 @@
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += px30-evb.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-evb.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-roc-cc.dtb
++dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-rock-pi-s.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-a1.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-rock64.dtb
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308-rock-pi-s.dts b/arch/arm64/boot/dts/rockchip/rk3308-rock-pi-s.dts
+new file mode 100644
+index 000000000000..4fccae43f008
+--- /dev/null
++++ b/arch/arm64/boot/dts/rockchip/rk3308-rock-pi-s.dts
+@@ -0,0 +1,221 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright (c) 2019 Akash Gajjar <akash@openedev.com>
++ * Copyright (c) 2019 Jagan Teki <jagan@openedev.com>
++ */
++
++/dts-v1/;
++#include "rk3308.dtsi"
++
++/ {
++	model = "Radxa ROCK Pi S";
++	compatible = "radxa,rockpis", "rockchip,rk3308";
++
++	chosen {
++		stdout-path = "serial0:1500000n8";
++	};
++
++	leds {
++		compatible = "gpio-leds";
++		pinctrl-names = "default";
++		pinctrl-0 = <&green_led_gio>, <&heartbeat_led_gpio>;
++
++		green-led {
++			label = "rockpis:green:power";
++			gpios = <&gpio0 RK_PA6 GPIO_ACTIVE_HIGH>;
++			linux,default-trigger = "default-on";
++			default-state = "on";
++		};
++
++		blue-led {
++			label = "rockpis:blue:user";
++			gpios = <&gpio0 RK_PA5 GPIO_ACTIVE_HIGH>;
++			default-state = "on";
++			linux,default-trigger = "heartbeat";
++		};
++	};
++
++	sdio_pwrseq: sdio-pwrseq {
++		compatible = "mmc-pwrseq-simple";
++		pinctrl-names = "default";
++		pinctrl-0 = <&wifi_enable_h>;
++		reset-gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_LOW>;
++	};
++
++	vcc5v0_sys: vcc5v0-sys {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc5v0_sys";
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++	};
++
++	vdd_core: vdd-core {
++		compatible = "pwm-regulator";
++		pwms = <&pwm0 0 5000 1>;
++		regulator-name = "vdd_core";
++		regulator-min-microvolt = <827000>;
++		regulator-max-microvolt = <1340000>;
++		regulator-init-microvolt = <1015000>;
++		regulator-settling-time-up-us = <250>;
++		regulator-always-on;
++		regulator-boot-on;
++		pwm-supply = <&vcc5v0_sys>;
++	};
++
++	vdd_log: vdd-log {
++		compatible = "regulator-fixed";
++		regulator-name = "vdd_log";
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-min-microvolt = <1050000>;
++		regulator-max-microvolt = <1050000>;
++		vin-supply = <&vcc5v0_sys>;
++	};
++
++	vcc_ddr: vcc-ddr {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc_ddr";
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-min-microvolt = <1500000>;
++		regulator-max-microvolt = <1500000>;
++		vin-supply = <&vcc5v0_sys>;
++	};
++
++	vcc_1v8: vcc-1v8 {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc_1v8";
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++		vin-supply = <&vcc_io>;
++	};
++
++	vcc_io: vcc-io {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc_io";
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		vin-supply = <&vcc5v0_sys>;
++	};
++
++	vcc5v0_otg: vcc5v0-otg {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc5v0_otg";
++		regulator-always-on;
++		gpio = <&gpio0 RK_PC5 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++		pinctrl-names = "default";
++		pinctrl-0 = <&otg_vbus_drv>;
++		vin-supply = <&vcc5v0_sys>;
++	};
++};
++
++&cpu0 {
++	cpu-supply = <&vdd_core>;
++};
++
++&emmc {
++	bus-width = <4>;
++	cap-mmc-highspeed;
++	mmc-hs200-1_8v;
++	supports-sd;
++	disable-wp;
++	non-removable;
++	num-slots = <1>;
++	vin-supply = <&vcc_io>;
++	status = "okay";
++};
++
++&i2c1 {
++	status = "okay";
++};
++
++&sdmmc {
++	bus-width = <4>;
++	cap-mmc-highspeed;
++	cap-sd-highspeed;
++	max-frequeency = <150000000>;
++	supports-sd;
++	disable-wp;
++	num-slots = <1>;
++	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_det &sdmmc_bus4>;
++	card-detect-delay = <800>;
++	status = "okay";
++};
++
++&spi2 {
++	status = "okay";
++	max-freq = <10000000>;
++};
++
++&pinctrl {
++	pinctrl-names = "default";
++	pinctrl-0 = <&rtc_32k>;
++
++	leds {
++		green_led_gio: green-led-gpio {
++			rockchip,pins = <0 RK_PA6 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++
++		heartbeat_led_gpio: heartbeat-led-gpio {
++			rockchip,pins = <0 RK_PA5 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++
++	usb {
++		otg_vbus_drv: otg-vbus-drv {
++			rockchip,pins = <0 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++
++	sdio-pwrseq {
++		wifi_enable_h: wifi-enable-h {
++			rockchip,pins = <0 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++
++		wifi_host_wake: wifi-host-wake {
++			rockchip,pins = <0 RK_PA0 RK_FUNC_GPIO &pcfg_pull_down>;
++		};
++	};
++};
++
++&pwm0 {
++	status = "okay";
++	pinctrl-0 = <&pwm0_pin_pull_down>;
++};
++
++&saradc {
++	vref-supply = <&vcc_1v8>;
++	status = "okay";
++};
++
++&sdio {
++	#address-cells = <1>;
++	#size-cells = <0>;
++	bus-width = <4>;
++	max-frequency = <1000000>;
++	cap-sd-highspeed;
++	cap-sdio-irq;
++	supports-sdio;
++	keep-power-in-suspend;
++	mmc-pwrseq = <&sdio_pwrseq>;
++	non-removable;
++	sd-uhs-sdr104;
++	status = "okay";
++};
++
++&uart0 {
++	status = "okay";
++};
++
++&uart4 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart4_xfer &uart4_rts &uart4_cts>;
++	status = "okay";
++};
 -- 
-Emmanuel Vadot <manu@bidouilliste.com>
+2.17.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
