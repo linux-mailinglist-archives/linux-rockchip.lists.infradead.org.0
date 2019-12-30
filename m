@@ -2,55 +2,70 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9366D12D361
-	for <lists+linux-rockchip@lfdr.de>; Mon, 30 Dec 2019 19:25:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA06312D3BB
+	for <lists+linux-rockchip@lfdr.de>; Mon, 30 Dec 2019 20:07:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A2hk9SJR0Nb+gNuW7pCKq9ZCzxl+mAqVTx8m9MjrL4k=; b=NXXFuqiq0aHxa7
-	AInfKE22bu5NjBHiBO49QfEp6o5OvDEf6H7bIQPlltaYZQECtfK+my6p0UmqauTROnxnEJ9vDbZLL
-	zbUy/jwA2U8j9BAjiRVTLKW4tCk2SZFYsnGtYfwO190cGD9NxPAYPUQVEYuWW7Qnh1VU44hDT8hyX
-	a0S2ugxg55PYbKZT/wBLPg5/TrdVi/Sue5EM9/t/4Dg7O7afK+a5G7AyM4Af2VQHnN+kwK9pGEbG0
-	0U5lNeCEJre5lwS+LcfT0dJI8AIwUzkQt0wnUiSw/hoasg5Y4FrdmY1phqcyhlJJc6dlIOwKG+5Zv
-	I2S+EQcSaeSmGCnft5pg==;
+	List-Owner; bh=j0QyQ9ygUqCDB+vbDabheOv2LZ/m2Gf9/qxNL0Gi4c0=; b=qMm9SBIXI1Kn4m
+	G2ljl4xkgh0YwbbnTsirRBulDfnLrRr+0HD+M/64TYs/b51PMuxUDo03PW81T5JFVBQ0iDpPdWWWq
+	NGFXhBJXI6m31pt/H8QxF7CmvSA9jqG5Nx265oWm6Tgl248rjz2jU9LKyCZiJru15+p8ho9AMrUoX
+	xx6UL65nJIBfKiHErtHxIklVu83RNvRorHnBp9p2h8j0p54uecJ1QOCw/Qu03E4NUoOBlV1AUtmRu
+	8QbMi4pAUDt62hKIm8kE4AXH9OesgKtGilfwURyVhPGHNu3YO+sptPy+OY8CyrCWQhWU1gLkAUxAC
+	9vjGOaMAwFxaMGDCC9dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilzjT-0001mT-NN; Mon, 30 Dec 2019 18:25:35 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1im0Ni-0006iI-DS; Mon, 30 Dec 2019 19:07:10 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilzjH-0001cd-5b; Mon, 30 Dec 2019 18:25:24 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 045A128DFAB
-Message-ID: <c6514f8e8bf49913e3cb907ba91c0a47de39e68c.camel@collabora.com>
-Subject: Re: [PATCH v12 01/11] media: staging: phy-rockchip-dphy: add
- Rockchip MIPI Synopsys DPHY driver
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Helen Koike <helen.koike@collabora.com>, 
- linux-rockchip@lists.infradead.org
-Date: Mon, 30 Dec 2019 15:25:10 -0300
-In-Reply-To: <20191227200116.2612137-2-helen.koike@collabora.com>
-References: <20191227200116.2612137-1-helen.koike@collabora.com>
- <20191227200116.2612137-2-helen.koike@collabora.com>
-Organization: Collabora
-User-Agent: Evolution 3.34.1-2 
+ id 1im0NV-0006Zn-HX; Mon, 30 Dec 2019 19:07:00 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 869962053B;
+ Mon, 30 Dec 2019 19:06:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1577732816;
+ bh=amHJ3V8VY49awvnFzBQckNdcZQlngO4oOAhvrvKvXvc=;
+ h=In-Reply-To:References:From:Cc:To:Subject:Date:From;
+ b=QCYOal0vGfypOs41/Of7RCc1ZfFTPz69uWYRGfbYSTb6gPqDOytdtlWbft3JAO1Qf
+ Cy25zqMi+/U2DMQ/cTYGyCq/D4wdKDQORHw5aMW9bus2nwdbL4xBBNa6NXo8oo+t0i
+ vo69H0jz2y/pMZ6jGZKaSjoJPur8Q+zoMZSdh6PI=
 MIME-Version: 1.0
+In-Reply-To: <20191204081859.19454-5-zhangqing@rock-chips.com>
+References: <20191204081859.19454-1-zhangqing@rock-chips.com>
+ <20191204081859.19454-5-zhangqing@rock-chips.com>
+From: Stephen Boyd <sboyd@kernel.org>
+To: Elaine Zhang <zhangqing@rock-chips.com>, heiko@sntech.de
+Subject: Re: [PATCH v4 4/5] clk: rockchip: add pll up and down when change pll
+ freq
+User-Agent: alot/0.8.1
+Date: Mon, 30 Dec 2019 11:06:55 -0800
+Message-Id: <20191230190656.869962053B@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_102523_472594_9874C552 
-X-CRM114-Status: GOOD (  15.97  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191230_110657_599359_0693E28C 
+X-CRM114-Status: UNSURE (   5.00  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,138 +78,33 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
- kernel@collabora.com, heiko@sntech.de, linux-arm-kernel@lists.infradead.org,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, tfiga@chromium.org,
- robh+dt@kernel.org, hans.verkuil@cisco.com, laurent.pinchart@ideasonboard.com,
- sakari.ailus@linux.intel.com, joacim.zetterling@gmail.com, mchehab@kernel.org,
- andrey.konovalov@linaro.org, jacob-chen@iotwrt.com,
- linux-media@vger.kernel.org
+Cc: huangtao@rock-chips.com, xf@rock-chips.com, mturquette@baylibre.com,
+ Elaine Zhang <zhangqing@rock-chips.com>, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ xxx@rock-chips.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Helen,
-
-Thanks for taking care of this.
-
-On Fri, 2019-12-27 at 17:01 -0300, Helen Koike wrote:
-> From: Ezequiel Garcia <ezequiel@collabora.com>
+Quoting Elaine Zhang (2019-12-04 00:18:58)
+> set pll sequence:
+>         ->set pll to slow mode or other plls
+>         ->set pll down
+>         ->set pll params
+>         ->set pll up
+>         ->wait pll lock status
+>         ->set pll to normal mode
 > 
-> Add driver for Rockchip MIPI Synopsys DPHY driver
-> 
-> Signed-off-by: Tomasz Figa <tfiga@chromium.org>
-> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-> Signed-off-by: Helen Koike <helen.koike@collabora.com>
-> 
-> ---
-> 
-> Changes in v12:
-> - several cleanups
-> - remove "rx" from function names, as this driver only supports rx
-> 
-> Changes in v11:
-> - fix checkpatch errors
-> 
-> Changes in v10: None
-> Changes in v9:
-> - Move to staging
-> - replace memcpy by a directly assignment
-> - remove unecessary ret variable in rockchip_dphy_init
-> - s/0x1/1
-> - s/0x0/0
-> - coding style changes
-> - dphy_reg variable sizes
-> - variables from int to unsigned int
-> - rename functions to start with rk_
-> - rename dphy0 to rx
-> - fix hardcoded lane0 usage
-> - disable rx on power off
-> - general cleanups of unused variables
-> 
-> Changes in v8:
-> - Remove boiler plate license text
-> 
-> Changes in v7:
-> - Migrate dphy specific code from
-> drivers/media/platform/rockchip/isp1/mipi_dphy_sy.c
-> to drivers/phy/rockchip/phy-rockchip-dphy.c
-> - Drop support for rk3288
-> - Drop support for dphy txrx
-> - code styling and checkpatch fixes
-> 
->  drivers/staging/media/Kconfig                 |   2 +
->  drivers/staging/media/Makefile                |   1 +
->  .../staging/media/phy-rockchip-dphy/Kconfig   |  11 +
->  .../staging/media/phy-rockchip-dphy/Makefile  |   2 +
->  drivers/staging/media/phy-rockchip-dphy/TODO  |   6 +
->  .../phy-rockchip-dphy/phy-rockchip-dphy.c     | 396 ++++++++++++++++++
->  6 files changed, 418 insertions(+)
->  create mode 100644 drivers/staging/media/phy-rockchip-dphy/Kconfig
->  create mode 100644 drivers/staging/media/phy-rockchip-dphy/Makefile
->  create mode 100644 drivers/staging/media/phy-rockchip-dphy/TODO
->  create mode 100644 drivers/staging/media/phy-rockchip-dphy/phy-rockchip-dphy.c
-> 
-> diff --git a/drivers/staging/media/Kconfig b/drivers/staging/media/Kconfig
-> index 642adc4c24d2..a47484473883 100644
-> --- a/drivers/staging/media/Kconfig
-> +++ b/drivers/staging/media/Kconfig
-> @@ -38,4 +38,6 @@ source "drivers/staging/media/ipu3/Kconfig"
->  
->  source "drivers/staging/media/soc_camera/Kconfig"
->  
-> +source "drivers/staging/media/phy-rockchip-dphy/Kconfig"
-> +
->  endif
-> diff --git a/drivers/staging/media/Makefile b/drivers/staging/media/Makefile
-> index 2f1711a8aeed..b0eae3906208 100644
-> --- a/drivers/staging/media/Makefile
-> +++ b/drivers/staging/media/Makefile
-> @@ -8,3 +8,4 @@ obj-$(CONFIG_TEGRA_VDE)		+= tegra-vde/
->  obj-$(CONFIG_VIDEO_HANTRO)	+= hantro/
->  obj-$(CONFIG_VIDEO_IPU3_IMGU)	+= ipu3/
->  obj-$(CONFIG_SOC_CAMERA)	+= soc_camera/
-> +obj-$(CONFIG_PHY_ROCKCHIP_DPHY)		+= phy-rockchip-dphy/
-> diff --git a/drivers/staging/media/phy-rockchip-dphy/Kconfig b/drivers/staging/media/phy-rockchip-dphy/Kconfig
-> new file mode 100644
-> index 000000000000..7378bd75fa7c
-> --- /dev/null
+> To slove the system error:
 
-Seems I overlooked the Kconfig file for this driver,
-sorry about that!
+s/slove/solve/
 
-> +++ b/drivers/staging/media/phy-rockchip-dphy/Kconfig
-> @@ -0,0 +1,11 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +#
-> +# Phy drivers for Rockchip platforms
-> +#
-> +config PHY_ROCKCHIP_DPHY
-> +	tristate "Rockchip MIPI Synopsys DPHY driver"
-> +	depends on (ARCH_ROCKCHIP || COMPILE_TEST) && OF
-> +	select GENERIC_PHY_MIPI_DPHY
-> +	select GENERIC_PHY
-> +	help
-> +	  Enable this to support the Rockchip MIPI Synopsys DPHY.
-
-Following a more user-friendly convention, this should read
-more like:
-
-"""
-Enable this to support the Rockchip MIPI Synopsys DPHY
-associated to the Rockchip ISP module present in RK3399 SoCs.
-
-To compile this driver as a module, choose M here: the module
-will be called phy-rockchip-dphy. 
-"""
-
-And I believe the same improvement should be applied to the
-ISP driver Kconfig help.
-
-Thanks,
-Ezequiel
-
+> wait_pll_lock: timeout waiting for pll to lock
+> pll_set_params: pll update unsucessful,
+>                 trying to restore old params
+> 
+> Signed-off-by: Elaine Zhang <zhangqing@rock-chips.com>
 
 _______________________________________________
 Linux-rockchip mailing list
