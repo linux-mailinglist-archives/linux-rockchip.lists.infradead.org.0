@@ -2,52 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0366812D85A
-	for <lists+linux-rockchip@lfdr.de>; Tue, 31 Dec 2019 12:34:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDEBC12D865
+	for <lists+linux-rockchip@lfdr.de>; Tue, 31 Dec 2019 12:35:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pf8kQuVkTonTTwk165oWS5asr/NBy3wUrIu9Hrp/3gg=; b=pfFH5MKpsH/XgX
-	Iz7K/Vup76ThAuQvI7xeKWHA6Zn/qcibk+wAdp2G7Hy03FW00QebVX0Eni8cwmsUau+ZIllMAG+Z1
-	zDFUmbU9dnUZrxKwledSAiwuJNtAh94RRKIgQfI4C4j8YPTUe3vEzHXbj8H0NEWEaTEkVDlQ8zb6V
-	UhVroC5qncCCGT7h27T2ilxXnvL5E9YOQC32Cnb6XoYOaue3Hyegg1/PrlC84N5n1++QXWbahuDhv
-	Cx71IXHYftosTg7cDIDYKJyMs3NvRU+fk5sqz/8N/jjJK/9qSjWthwG2pZj27PkdV9p5hnd0RBw8y
-	ZZyAw3QBbN5YWG6h6dpg==;
+	List-Owner; bh=fZ0xDzLcbR8DzWaD41dR+mBR2/DaKfLXjjpH3UX41Cw=; b=lssMn0ZafHDxLQ
+	ZRZ6okWwAmR8dm4dOjKGYgrZ57bHWNTrA+TfMHkOQDso7Arq+YQrttqh0Sw0dsW0QEJ3sgwd7IykJ
+	0QLfQOl9z2zqfSLTSioqWT7Sf69Ufj1ZAkdkoRR0nvXoa4RxGx3euiTp5B8gGgZxqjaLa95DK3iti
+	J7RBzUObFm3aUEjPlRoRyFWfRPaKuZPkFXdnqfgfC2Low0Le3VWvfjAFrdejhtUBRwyrTlRNyG0pd
+	qi+iudKUh+s4DuV1aJ027xLml02uhhLHwY+VkWoDNFtAGkhgf+ts/cKoqBsWPAp5mZp6kDmH9hLUd
+	y25Pb455Ew/z5NqXI1Kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imFnK-00005H-Ks; Tue, 31 Dec 2019 11:34:38 +0000
+	id 1imFnf-0000Mg-7e; Tue, 31 Dec 2019 11:34:59 +0000
 Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imFmf-0007pL-5a; Tue, 31 Dec 2019 11:33:58 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBVBXiiF117359;
- Tue, 31 Dec 2019 05:33:44 -0600
+ id 1imFmh-0007q6-6U; Tue, 31 Dec 2019 11:34:00 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBVBXooJ117381;
+ Tue, 31 Dec 2019 05:33:50 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1577792025;
- bh=Zgv5kKXEm0tGssEL2rZei0b8iDsdKd/7gxbFA0EbGJ0=;
+ s=ti-com-17Q1; t=1577792030;
+ bh=pyb5BGFKhI/g5TGZ5x/+8IE+fcZyupjTjB03k+gnDLA=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=LxTajdmEA1opLpYGrfYdkrp37fx68617N57vcZUIEsR548YXf5WMuZrPQJ7p43m/J
- gtD54EtPpLAMt5z0XGryj4uHmQLKRRdjy+dj+RRf5Ls3JPePXupRBouVwrIQK+W5xz
- rrVNeeH/kc6cPbZCZadn3QHeAPj9U1ccicCgZ4dk=
-Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBVBXi5n040074
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 31 Dec 2019 05:33:44 -0600
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ b=XJ5Q0pZPrYgV582tAST8auFK4EOd1zfU2SbRWQKBbUbjArFGs9Rmgw7FtuQrdroj7
+ wDte2FwBAcDLzQIgfQqLiCQhhyv92wA9EgZqqxjdb1cG6qoJRV0Aia02sZJe3Jyr7A
+ 0OwlOXHcKzHhabFAOjxIqV6ANL9hD1BYb7wrRHfY=
+Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBVBXoKp089470;
+ Tue, 31 Dec 2019 05:33:50 -0600
+Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 31
- Dec 2019 05:33:44 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2019 05:33:49 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 31 Dec 2019 05:33:44 -0600
+ Frontend Transport; Tue, 31 Dec 2019 05:33:49 -0600
 Received: from a0393678ub.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBVBXX32024759;
- Tue, 31 Dec 2019 05:33:39 -0600
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBVBXX33024759;
+ Tue, 31 Dec 2019 05:33:44 -0600
 From: Kishon Vijay Abraham I <kishon@ti.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Lorenzo Pieralisi
  <lorenzo.pieralisi@arm.com>, Bjorn Helgaas <bhelgaas@google.com>, Andrew
@@ -56,18 +55,18 @@ To: Kishon Vijay Abraham I <kishon@ti.com>, Lorenzo Pieralisi
  Arnd Bergmann <arnd@arndb.de>, Jingoo Han <jingoohan1@gmail.com>,
  Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
  Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH 1/7] Documentation: PCI: endpoint/pci-endpoint-cfs: Guide to
- use SR-IOV
-Date: Tue, 31 Dec 2019 17:05:28 +0530
-Message-ID: <20191231113534.30405-2-kishon@ti.com>
+Subject: [PATCH 2/7] dt-bindings: PCI: cadence: Add binding to specify max
+ virtual functions
+Date: Tue, 31 Dec 2019 17:05:29 +0530
+Message-ID: <20191231113534.30405-3-kishon@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191231113534.30405-1-kishon@ti.com>
 References: <20191231113534.30405-1-kishon@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191231_033357_292373_8256769E 
-X-CRM114-Status: GOOD (  17.08  )
+X-CRM114-CacheID: sfid-20191231_033359_337405_B54E73E3 
+X-CRM114-Status: GOOD (  15.62  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -107,53 +106,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add Documentation to help users use PCI endpoint to create virtual
-functions using configfs. An endpoint function is designated as a
-virtual endpoint function device when it is linked to a physical
-endpoint function device (instead of a endpoint controller).
+Add binding to specify maximum number of virtual functions that can be
+associated with each physical function.
 
 Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
 ---
- Documentation/PCI/endpoint/pci-endpoint-cfs.rst | 12 +++++++++++-
- 1 file changed, 11 insertions(+), 1 deletion(-)
+ .../devicetree/bindings/pci/cdns,cdns-pcie-ep.txt         | 2 ++
+ .../devicetree/bindings/pci/ti,j721e-pci-ep.yaml          | 8 ++++++++
+ 2 files changed, 10 insertions(+)
 
-diff --git a/Documentation/PCI/endpoint/pci-endpoint-cfs.rst b/Documentation/PCI/endpoint/pci-endpoint-cfs.rst
-index b6d39cdec56e..0f55c5511c6c 100644
---- a/Documentation/PCI/endpoint/pci-endpoint-cfs.rst
-+++ b/Documentation/PCI/endpoint/pci-endpoint-cfs.rst
-@@ -43,6 +43,7 @@ entries corresponding to EPF driver will be created by the EPF core.
- 		.. <EPF Driver1>/
- 			... <EPF Device 11>/
- 			... <EPF Device 21>/
-+			... <EPF Device 31>/
- 		.. <EPF Driver2>/
- 			... <EPF Device 12>/
- 			... <EPF Device 22>/
-@@ -68,6 +69,14 @@ created)
- 				... subsys_vendor_id
- 				... subsys_id
- 				... interrupt_pin
-+			        ... <Symlink EPF Device 31>/
+diff --git a/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.txt b/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.txt
+index 4a0475e2ba7e..432578202733 100644
+--- a/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.txt
++++ b/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.txt
+@@ -9,6 +9,8 @@ Required properties:
+ 
+ Optional properties:
+ - max-functions: Maximum number of functions that can be configured (default 1).
++- max-virtual-functions: Maximum number of virtual functions that can be
++    associated with each physical function.
+ - phys: From PHY bindings: List of Generic PHY phandles. One per lane if more
+   than one in the list.  If only one PHY listed it must manage all lanes. 
+ - phy-names:  List of names to identify the PHY.
+diff --git a/Documentation/devicetree/bindings/pci/ti,j721e-pci-ep.yaml b/Documentation/devicetree/bindings/pci/ti,j721e-pci-ep.yaml
+index 4621c62016c7..1d4964ba494f 100644
+--- a/Documentation/devicetree/bindings/pci/ti,j721e-pci-ep.yaml
++++ b/Documentation/devicetree/bindings/pci/ti,j721e-pci-ep.yaml
+@@ -61,6 +61,12 @@ properties:
+     minimum: 1
+     maximum: 6
+ 
++  max-virtual-functions:
++    minItems: 1
++    maxItems: 6
++    description: As defined in
++                 Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.txt
 +
-+The <EPF Device> directory can have a list of symbolic links to
-+other <EPF Device>. These symbolic links should be created by the user
-+to represent the virtual functions that are bound to the physical
-+function. In the above directory structure <EPF Device 11> is a physical
-+function and <EPF Device 31> is a virtual function. A EPF device once it's
-+linked to another EPF device, cannot be linked to a EPC device.
+   dma-coherent:
+     description: Indicates that the PCIe IP block can ensure the coherency
  
- EPC Device
- ==========
-@@ -88,7 +97,8 @@ entries corresponding to EPC device will be created by the EPC core.
+@@ -85,6 +91,7 @@ required:
+   - cdns,max-outbound-regions
+   - dma-coherent
+   - max-functions
++  - max-virtual-functions
+   - phys
+   - phy-names
  
- The <EPC Device> directory will have a list of symbolic links to
- <EPF Device>. These symbolic links should be created by the user to
--represent the functions present in the endpoint device.
-+represent the functions present in the endpoint device. Only <EPF Device>
-+that represents a physical function can be linked to a EPC device.
- 
- The <EPC Device> directory will also have a *start* field. Once
- "1" is written to this field, the endpoint device will be ready to
+@@ -107,6 +114,7 @@ examples:
+             clock-names = "fck";
+             cdns,max-outbound-regions = <16>;
+             max-functions = /bits/ 8 <6>;
++            max-virtual-functions = /bits/ 16 <4 4 4 4 0 0>;
+             dma-coherent;
+             phys = <&serdes0_pcie_link>;
+             phy-names = "pcie_phy";
 -- 
 2.17.1
 
