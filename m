@@ -2,53 +2,47 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FB2312DEEA
-	for <lists+linux-rockchip@lfdr.de>; Wed,  1 Jan 2020 13:56:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80B4212DEFF
+	for <lists+linux-rockchip@lfdr.de>; Wed,  1 Jan 2020 14:06:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ng5poL1LWh9chJ0tsFulc7LSGT1x7AiQ5wZzIkxbj38=; b=rWHzx0xG6Cc03mEmN0NuFQL67
-	2yiwBkF2nNJSu/WkZtjBcDugeHGpnPcUecO3CnJKIBnTUIy9EgSXWrgSgrmROrnL+50wvNEfsa+c1
-	7XiQtz22JqdVlDOR8P45pPt+FIwWAfgw0h2679nsG80OOOqDFlWWIb5kw9ERuyU5ADuks5+ACVcJC
-	r41ifm46Uxf7W2EpMeduq7KVK/iFvOCyq/GAwhoujcv5ylvt8h84vOX62+dSqmix6TBD3R/YSjKkz
-	bslydTth1CXhCXwLiCHi4dsv3XqAyKKU/XKp3gZLGbnA57fxz5urifIaemE4JUyheuUUaRyDiXyJX
-	qaKpTNfAw==;
+	 bh=NvPs4OSwpAOsz2d/Nvy8LR6kMOFB8lHZwVG2ejE6uvw=; b=AOJTPgw6e679bA/iqh366fO9m
+	PIK5aXWbjI7ygzg783nrBK4+MJdDPsucaPSKvBkhAQudZxR2mYMz7zDwLTPTqiiGCixU3ofeK2T1X
+	KU6duTzBvOfp/LDkKqpbjVvt95HABJVRqhQJ5ttPdz4R2ahRoy9fAbHxhlw07b83QE9bCCfrhVkHT
+	PAOjZTT8d1rTsBvbzr7BZFNrhFfY4CImL+2kvnXPqRQOsS+GfLTAf5fqjo6129UPSo1vcWCaDn6kJ
+	IXN1aRdh5ta3R/P3Aq7VgB70dImok+G78b+2kU8KeqbmkEThPwETLA+2RC+SGmW+G6kffQzudS+sg
+	JC+bdvJIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imdXX-0000mH-6V; Wed, 01 Jan 2020 12:55:55 +0000
+	id 1imdhw-0003pl-Lt; Wed, 01 Jan 2020 13:06:40 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imdXR-0000km-Cu; Wed, 01 Jan 2020 12:55:53 +0000
+ id 1imdd1-0003zt-BU; Wed, 01 Jan 2020 13:01:36 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 952F831B;
- Wed,  1 Jan 2020 04:55:46 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 857F531B;
+ Wed,  1 Jan 2020 05:01:33 -0800 (PST)
 Received: from [192.168.1.123] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BDD9E3F68F;
- Wed,  1 Jan 2020 04:55:44 -0800 (PST)
-Subject: Re: [RFC v2 1/1] drm/lima: Add optional devfreq support
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-References: <20191227173707.20413-1-martin.blumenstingl@googlemail.com>
- <20191227173707.20413-2-martin.blumenstingl@googlemail.com>
- <dd38ff5c-6a14-bb6a-4df5-d706f99234e9@arm.com>
- <CAFBinCDs3a8TJcQKgHUkDvssMR6Y2Kys38p50P0q=2KOiDTNHg@mail.gmail.com>
- <fe45f4f8-8c67-ded2-90bf-8d5fd6874876@arm.com>
- <CAFBinCByzLLdVTL0v=eC-TbZQnwnDY7cBLf4jyWq7N4PA1rr+A@mail.gmail.com>
- <ff2bdd26-3c34-63db-beb5-8f7c9fc7e790@arm.com>
- <CAFBinCAgzHJQpcf1WVQPkNXOq1ziXp7nx=ZAU9_2-VzA9hg-Yw@mail.gmail.com>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E84953F68F;
+ Wed,  1 Jan 2020 05:01:32 -0800 (PST)
+Subject: Re: [PATCH] arm64: dts: rockchip: Fix IR on Beelink A1
+To: Heiko Stuebner <heiko@sntech.de>
+References: <44269c08e2a5d75b03ded87d2eb11621762d8249.1577636223.git.robin.murphy@arm.com>
+ <30349756.SWxbmzi8ve@phil>
 From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <629205c8-68c5-5895-d926-75984110dd49@arm.com>
-Date: Wed, 1 Jan 2020 12:55:44 +0000
+Message-ID: <3d0f69d5-739a-0566-b1d7-bc3c2f0c8045@arm.com>
+Date: Wed, 1 Jan 2020 13:01:32 +0000
 User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
  Thunderbird/68.3.1
 MIME-Version: 1.0
-In-Reply-To: <CAFBinCAgzHJQpcf1WVQPkNXOq1ziXp7nx=ZAU9_2-VzA9hg-Yw@mail.gmail.com>
+In-Reply-To: <30349756.SWxbmzi8ve@phil>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200101_045549_528000_5FB6B91E 
-X-CRM114-Status: GOOD (  23.11  )
+X-CRM114-CacheID: sfid-20200101_050135_437408_54100BCB 
+X-CRM114-Status: GOOD (  11.09  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,100 +64,30 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: robh@kernel.org, tomeu.vizoso@collabora.com, airlied@linux.ie,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- steven.price@arm.com, linux-rockchip@lists.infradead.org, wens@csie.org,
- yuq825@gmail.com, daniel@ffwll.ch, linux-amlogic@lists.infradead.org,
- alyssa.rosenzweig@collabora.com
+Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 2019-12-31 4:47 pm, Martin Blumenstingl wrote:
-> Hi Robin,
+On 2019-12-31 11:50 am, Heiko Stuebner wrote:
+> Am Sonntag, 29. Dezember 2019, 18:48:05 CET schrieb Robin Murphy:
+>> Apparently I wasn't paying enough attention... And nor is the lazy
+>> test of `cat /dev/lirc0` sufficiently blunder-proof. Oh well, with
+>> the correct polarity, let's also hook up a keymap now that one for
+>> the standard Beelink remote has handily appeared.
+>>
+>> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+>> ---
 > 
-> On Tue, Dec 31, 2019 at 5:40 PM Robin Murphy <robin.murphy@arm.com> wrote:
->>
->> On 2019-12-31 2:17 pm, Martin Blumenstingl wrote:
->>> Hi Robin,
->>>
->>> On Mon, Dec 30, 2019 at 1:47 AM Robin Murphy <robin.murphy@arm.com> wrote:
->>>>
->>>> On 2019-12-29 11:19 pm, Martin Blumenstingl wrote:
->>>>> Hi Robin,
->>>>>
->>>>> On Sun, Dec 29, 2019 at 11:58 PM Robin Murphy <robin.murphy@arm.com> wrote:
->>>>>>
->>>>>> Hi Martin,
->>>>>>
->>>>>> On 2019-12-27 5:37 pm, Martin Blumenstingl wrote:
->>>>>>> Most platforms with a Mali-400 or Mali-450 GPU also have support for
->>>>>>> changing the GPU clock frequency. Add devfreq support so the GPU clock
->>>>>>> rate is updated based on the actual GPU usage when the
->>>>>>> "operating-points-v2" property is present in the board.dts.
->>>>>>>
->>>>>>> The actual devfreq code is taken from panfrost_devfreq.c and modified so
->>>>>>> it matches what the lima hardware needs:
->>>>>>> - a call to dev_pm_opp_set_clkname() during initialization because there
->>>>>>>       are two clocks on Mali-4x0 IPs. "core" is the one that actually clocks
->>>>>>>       the GPU so we need to control it using devfreq.
->>>>>>> - locking when reading or writing the devfreq statistics because (unlike
->>>>>>>       than panfrost) we have multiple PP and GP IRQs which may finish jobs
->>>>>>>       concurrently.
->>>>>>
->>>>>> I gave this a quick try on my RK3328, and the clock scaling indeed kicks
->>>>>> in nicely on the glmark2 scenes that struggle, however something appears
->>>>>> to be missing in terms of regulator association, as the appropriate OPP
->>>>>> voltages aren't reflected in the GPU supply (fortunately the initial
->>>>>> voltage seems close enough to that of the highest OPP not to cause major
->>>>>> problems, on my box at least). With panfrost on RK3399 I do see the
->>>>>> supply voltage scaling accordingly, but I don't know my way around
->>>>>> devfreq well enough to know what matters in the difference :/
->>>>> first of all: thank you for trying this out! :-)
->>>>>
->>>>> does your kernel include commit 221bc77914cbcc ("drm/panfrost: Use
->>>>> generic code for devfreq") for your panfrost test?
->>>>> if I understand the devfreq API correct then I suspect with that
->>>>> commit panfrost also won't change the voltage anymore.
->>>>
->>>> Oh, you're quite right - I was already considering that change as
->>>> ancient history, but indeed it's only in 5.5-rc, while that board is
->>>> still on 5.4.y release kernels. No wonder I couldn't make sense of how
->>>> the (current) code could possibly be working :)
->>>>
->>>> I'll try the latest -rc kernel tomorrow to confirm (now that PCIe is
->>>> hopefully fixed), but I'm already fairly confident you've called it
->>>> correctly.
->>> I just tested it with the lima driver (by undervolting the GPU by
->>> 0.05V) and it seems that dev_pm_opp_set_regulators is really needed.
->>> I'll fix this in the next version of this patch and also submit a fix
->>> for panfrost (I won't be able to test that though, so help is
->>> appreciated in terms of testing :))
->>
->> Yeah, I started hacking something up for panfrost yesterday, but at the
->> point of realising the core OPP code wants refactoring to actually
->> handle optional regulators without spewing errors, decided that was
->> crossing the line into "work" and thus could wait until next week :D
-> I'm not sure what you mean, dev_pm_opp_set_regulators uses
-> regulator_get_optional.
-> doesn't that mean that it is optional already?
+> applied for 5.6
 
-Indeed it does call regulator_get_optional(), but it then goes on to 
-treat the absence of a supposedly-optional regulator as a hard failure. 
-It doesn't seem very useful having a nice abstracted interface if users 
-still end up have to dance around and duplicate half the parsing in 
-order to work out whether it's worth calling or not - far better IMO if 
-it could just successfully set/put zero regulators in the cases where 
-the OPPs are behind a firmware/mailbox DVFS interface rather than 
-explicit in-kernel clock/regulator control.
+Thanks Heiko - although if you have any other fixes to send for 5.5 do 
+you think this might be able to sneak in too? Someone mentioned on IRC 
+that unlike mine, their box wouldn't even generate interrupts with the 
+polarity backwards.
 
-That said, given that I think the current lima/panfrost users should all 
-be relatively simple with either 0 or 1 regulator, you could probably 
-just special-case -ENODEV and accept a spurious error message sometimes 
-for the sake of an immediate fix, then we can make general improvements 
-to the interface separately afterwards.
-
+Cheers,
 Robin.
 
 _______________________________________________
