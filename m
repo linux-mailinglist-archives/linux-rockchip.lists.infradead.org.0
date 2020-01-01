@@ -2,87 +2,62 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FA2012DB1E
-	for <lists+linux-rockchip@lfdr.de>; Tue, 31 Dec 2019 20:12:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FB2312DEEA
+	for <lists+linux-rockchip@lfdr.de>; Wed,  1 Jan 2020 13:56:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=UsjqbXNCkXV9FCcW5bfgoeRd8uOYUKSWpXWMQayLRBM=; b=jgr
-	U0G9w7fSRi6xDl2nq8PXcXaW0nusM+eTFgNM7OFDI1CGEHjqGgUeAby6aSV3TYjW4tgR98WT2YtRn
-	MTH81Db/oMWM6qdQ3O5hFNAOzJjPdHzCfvABHmCoDE4SfkBuJDmEQM/C3AtS10k5ZUWoP0P++WG/v
-	rauEEwuFe9uUaKA0gTr+EjtxTxdbZlEjafUKSa1R+doySrqJizEbVjl9IwUh1t7ADDRPdmNQL1Viu
-	R4rphXpM1W9hAnIRo52bU4jmtEB/Zn7sDYwXENKCCDw+Rpcxgw32ktzwLd6K3u4YQcIDnb+S2zcvM
-	kl09itdLkNPgRzx1GgbxY6YuLbludYg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ng5poL1LWh9chJ0tsFulc7LSGT1x7AiQ5wZzIkxbj38=; b=rWHzx0xG6Cc03mEmN0NuFQL67
+	2yiwBkF2nNJSu/WkZtjBcDugeHGpnPcUecO3CnJKIBnTUIy9EgSXWrgSgrmROrnL+50wvNEfsa+c1
+	7XiQtz22JqdVlDOR8P45pPt+FIwWAfgw0h2679nsG80OOOqDFlWWIb5kw9ERuyU5ADuks5+ACVcJC
+	r41ifm46Uxf7W2EpMeduq7KVK/iFvOCyq/GAwhoujcv5ylvt8h84vOX62+dSqmix6TBD3R/YSjKkz
+	bslydTth1CXhCXwLiCHi4dsv3XqAyKKU/XKp3gZLGbnA57fxz5urifIaemE4JUyheuUUaRyDiXyJX
+	qaKpTNfAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imMw7-00008z-Qr; Tue, 31 Dec 2019 19:12:11 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imMvz-0008UU-TX; Tue, 31 Dec 2019 19:12:05 +0000
-Received: by mail-wr1-x441.google.com with SMTP id t2so35831766wrr.1;
- Tue, 31 Dec 2019 11:12:01 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=Ugkmn+9FfNrqX0nLEPxcXHS7THYr0ykg5MLCv/1z8zQ=;
- b=hPoYQr6hMewVT8HtmuJwWQC8WdcrMBGE/UrhU2h5c5RnmqBdO49jlqYz8Y9MkJTNs9
- k1WVy2CyUSgJyQmeko3i8bczYU7u1ATfoFn+nRmG0luUfq6PfNHNgE1dsaxNOMCWDqNz
- xatqT2VOpXN/e0Oy8UVoJ3fo4Gk+LthmCCENPLQOQridmr7QnkY49h9mqPo9i4wEYPJn
- kH7YsFPZwsQlu1tHi0hk/U5I9FazLr7NeAWxvuiCDPVCvmQXrmaAckzKEqM5NFRsP6Z7
- IJOIiwNvOAK3vfOfgXyaTZCPLWSZ5H1a1v8nB8H/UveDGaN+72Gc9utfRL4E3RfFMK7Z
- KuGg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=Ugkmn+9FfNrqX0nLEPxcXHS7THYr0ykg5MLCv/1z8zQ=;
- b=ggVsWo3UdR+Acl8ErejDP9RJQSqkl4uO5lUrmH7nqsZQWJmviid9ZnUJoCPbMmvpnE
- KRA3iwuSuwYNkodVTn/NioMSLeUKrHlv9dCajboGNSL0vSV/w3Oo5OA7vs6/GdtoLRdW
- r7jlICwQUC6+Sz6A98hJ5/h1Vt3+mqL3qb0CsZ6DOeruD7Il2tJY4wqU+CDpJe7Bx3wX
- Gia2XU+m3ZHCxVM3DMtfg4TyueypkrNmhPxPVzHive2wjm3WlXbyCI9/Y417uJxOHyi7
- 2ghtL8YHjuKGP8dl6IZ8RyRHeBPO+mdi6w4gYRCUVARxYE8+nu3DFfoNGE4ziwsEVjzZ
- KLhQ==
-X-Gm-Message-State: APjAAAVV3cP29dpMnCyL8Uw2LokTGWYn8rbpume10lpI9coauy1PeQvd
- TgwaXqK3SrvjoAx0bJOd9Dg=
-X-Google-Smtp-Source: APXvYqyF0D0ikIVwTiFMzj6mqfRpTZsJr/v++9vO8XHr7OjNm2eCLMU36XEndCzwnyitR0Cm69XkjA==
-X-Received: by 2002:adf:d183:: with SMTP id v3mr43483613wrc.180.1577819520818; 
- Tue, 31 Dec 2019 11:12:00 -0800 (PST)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id q6sm53695403wrx.72.2019.12.31.11.11.59
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 31 Dec 2019 11:12:00 -0800 (PST)
-From: Johan Jonker <jbx6244@gmail.com>
-To: robh+dt@kernel.org
-Subject: [PATCH] arm64: dts: rockchip: rk3399-firefly: remove num-slots from
- &sdio0 node
-Date: Tue, 31 Dec 2019 20:11:54 +0100
-Message-Id: <20191231191154.5587-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+	id 1imdXX-0000mH-6V; Wed, 01 Jan 2020 12:55:55 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1imdXR-0000km-Cu; Wed, 01 Jan 2020 12:55:53 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 952F831B;
+ Wed,  1 Jan 2020 04:55:46 -0800 (PST)
+Received: from [192.168.1.123] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BDD9E3F68F;
+ Wed,  1 Jan 2020 04:55:44 -0800 (PST)
+Subject: Re: [RFC v2 1/1] drm/lima: Add optional devfreq support
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+References: <20191227173707.20413-1-martin.blumenstingl@googlemail.com>
+ <20191227173707.20413-2-martin.blumenstingl@googlemail.com>
+ <dd38ff5c-6a14-bb6a-4df5-d706f99234e9@arm.com>
+ <CAFBinCDs3a8TJcQKgHUkDvssMR6Y2Kys38p50P0q=2KOiDTNHg@mail.gmail.com>
+ <fe45f4f8-8c67-ded2-90bf-8d5fd6874876@arm.com>
+ <CAFBinCByzLLdVTL0v=eC-TbZQnwnDY7cBLf4jyWq7N4PA1rr+A@mail.gmail.com>
+ <ff2bdd26-3c34-63db-beb5-8f7c9fc7e790@arm.com>
+ <CAFBinCAgzHJQpcf1WVQPkNXOq1ziXp7nx=ZAU9_2-VzA9hg-Yw@mail.gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <629205c8-68c5-5895-d926-75984110dd49@arm.com>
+Date: Wed, 1 Jan 2020 12:55:44 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.1
+MIME-Version: 1.0
+In-Reply-To: <CAFBinCAgzHJQpcf1WVQPkNXOq1ziXp7nx=ZAU9_2-VzA9hg-Yw@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191231_111203_951893_019FC5C6 
-X-CRM114-Status: GOOD (  10.67  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200101_045549_528000_5FB6B91E 
+X-CRM114-Status: GOOD (  23.11  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jbx6244[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jbx6244[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,37 +70,101 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: robh@kernel.org, tomeu.vizoso@collabora.com, airlied@linux.ie,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ steven.price@arm.com, linux-rockchip@lists.infradead.org, wens@csie.org,
+ yuq825@gmail.com, daniel@ffwll.ch, linux-amlogic@lists.infradead.org,
+ alyssa.rosenzweig@collabora.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The option "num-slots" was deprecated long time ago, so remove it.
+On 2019-12-31 4:47 pm, Martin Blumenstingl wrote:
+> Hi Robin,
+> 
+> On Tue, Dec 31, 2019 at 5:40 PM Robin Murphy <robin.murphy@arm.com> wrote:
+>>
+>> On 2019-12-31 2:17 pm, Martin Blumenstingl wrote:
+>>> Hi Robin,
+>>>
+>>> On Mon, Dec 30, 2019 at 1:47 AM Robin Murphy <robin.murphy@arm.com> wrote:
+>>>>
+>>>> On 2019-12-29 11:19 pm, Martin Blumenstingl wrote:
+>>>>> Hi Robin,
+>>>>>
+>>>>> On Sun, Dec 29, 2019 at 11:58 PM Robin Murphy <robin.murphy@arm.com> wrote:
+>>>>>>
+>>>>>> Hi Martin,
+>>>>>>
+>>>>>> On 2019-12-27 5:37 pm, Martin Blumenstingl wrote:
+>>>>>>> Most platforms with a Mali-400 or Mali-450 GPU also have support for
+>>>>>>> changing the GPU clock frequency. Add devfreq support so the GPU clock
+>>>>>>> rate is updated based on the actual GPU usage when the
+>>>>>>> "operating-points-v2" property is present in the board.dts.
+>>>>>>>
+>>>>>>> The actual devfreq code is taken from panfrost_devfreq.c and modified so
+>>>>>>> it matches what the lima hardware needs:
+>>>>>>> - a call to dev_pm_opp_set_clkname() during initialization because there
+>>>>>>>       are two clocks on Mali-4x0 IPs. "core" is the one that actually clocks
+>>>>>>>       the GPU so we need to control it using devfreq.
+>>>>>>> - locking when reading or writing the devfreq statistics because (unlike
+>>>>>>>       than panfrost) we have multiple PP and GP IRQs which may finish jobs
+>>>>>>>       concurrently.
+>>>>>>
+>>>>>> I gave this a quick try on my RK3328, and the clock scaling indeed kicks
+>>>>>> in nicely on the glmark2 scenes that struggle, however something appears
+>>>>>> to be missing in terms of regulator association, as the appropriate OPP
+>>>>>> voltages aren't reflected in the GPU supply (fortunately the initial
+>>>>>> voltage seems close enough to that of the highest OPP not to cause major
+>>>>>> problems, on my box at least). With panfrost on RK3399 I do see the
+>>>>>> supply voltage scaling accordingly, but I don't know my way around
+>>>>>> devfreq well enough to know what matters in the difference :/
+>>>>> first of all: thank you for trying this out! :-)
+>>>>>
+>>>>> does your kernel include commit 221bc77914cbcc ("drm/panfrost: Use
+>>>>> generic code for devfreq") for your panfrost test?
+>>>>> if I understand the devfreq API correct then I suspect with that
+>>>>> commit panfrost also won't change the voltage anymore.
+>>>>
+>>>> Oh, you're quite right - I was already considering that change as
+>>>> ancient history, but indeed it's only in 5.5-rc, while that board is
+>>>> still on 5.4.y release kernels. No wonder I couldn't make sense of how
+>>>> the (current) code could possibly be working :)
+>>>>
+>>>> I'll try the latest -rc kernel tomorrow to confirm (now that PCIe is
+>>>> hopefully fixed), but I'm already fairly confident you've called it
+>>>> correctly.
+>>> I just tested it with the lima driver (by undervolting the GPU by
+>>> 0.05V) and it seems that dev_pm_opp_set_regulators is really needed.
+>>> I'll fix this in the next version of this patch and also submit a fix
+>>> for panfrost (I won't be able to test that though, so help is
+>>> appreciated in terms of testing :))
+>>
+>> Yeah, I started hacking something up for panfrost yesterday, but at the
+>> point of realising the core OPP code wants refactoring to actually
+>> handle optional regulators without spewing errors, decided that was
+>> crossing the line into "work" and thus could wait until next week :D
+> I'm not sure what you mean, dev_pm_opp_set_regulators uses
+> regulator_get_optional.
+> doesn't that mean that it is optional already?
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/rk3399-firefly.dts | 1 -
- 1 file changed, 1 deletion(-)
+Indeed it does call regulator_get_optional(), but it then goes on to 
+treat the absence of a supposedly-optional regulator as a hard failure. 
+It doesn't seem very useful having a nice abstracted interface if users 
+still end up have to dance around and duplicate half the parsing in 
+order to work out whether it's worth calling or not - far better IMO if 
+it could just successfully set/put zero regulators in the cases where 
+the OPPs are behind a firmware/mailbox DVFS interface rather than 
+explicit in-kernel clock/regulator control.
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
-index 92de83dd4..7584351a1 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
-@@ -660,7 +660,6 @@
- 	keep-power-in-suspend;
- 	mmc-pwrseq = <&sdio_pwrseq>;
- 	non-removable;
--	num-slots = <1>;
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
- 	sd-uhs-sdr104;
--- 
-2.11.0
+That said, given that I think the current lima/panfrost users should all 
+be relatively simple with either 0 or 1 regulator, you could probably 
+just special-case -ENODEV and accept a spurious error message sometimes 
+for the sake of an immediate fix, then we can make general improvements 
+to the interface separately afterwards.
 
+Robin.
 
 _______________________________________________
 Linux-rockchip mailing list
