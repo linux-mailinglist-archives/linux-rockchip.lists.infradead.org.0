@@ -2,56 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80B4212DEFF
-	for <lists+linux-rockchip@lfdr.de>; Wed,  1 Jan 2020 14:06:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFEB012E3FA
+	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Jan 2020 09:45:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NvPs4OSwpAOsz2d/Nvy8LR6kMOFB8lHZwVG2ejE6uvw=; b=AOJTPgw6e679bA/iqh366fO9m
-	PIK5aXWbjI7ygzg783nrBK4+MJdDPsucaPSKvBkhAQudZxR2mYMz7zDwLTPTqiiGCixU3ofeK2T1X
-	KU6duTzBvOfp/LDkKqpbjVvt95HABJVRqhQJ5ttPdz4R2ahRoy9fAbHxhlw07b83QE9bCCfrhVkHT
-	PAOjZTT8d1rTsBvbzr7BZFNrhFfY4CImL+2kvnXPqRQOsS+GfLTAf5fqjo6129UPSo1vcWCaDn6kJ
-	IXN1aRdh5ta3R/P3Aq7VgB70dImok+G78b+2kU8KeqbmkEThPwETLA+2RC+SGmW+G6kffQzudS+sg
-	JC+bdvJIg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=c0uSjmLKhSYDQSwH/eovSLC0Q0Mi0p9lh2GMCfZ39ac=; b=dt3f4CFU7/ONE7
+	HfoCUK4GEIhNbgRwVKQj0gT/Xfow0J9CyEjvvMUF77DA2uWOxMN2IUVXZvdQ0V/5Oqvb7dL6Jl4nv
+	Udmsi+aibFdwIClt63XTSAR3HiTs6ZI/PISv3VzsLLrL9OwEFK05gNBfQ94DsATJK59EUO9pKvWW6
+	RE+wkWZJNH0CTou9f1PXZMxerj3Se06WkQljnAFyq19tVgzFTkprRfPEJrJlUhlFDHYjaxCcMbUZK
+	l9B9Y2jpcbkLlnodsrtt4HxyGnlNaSgIU8hX3+ZytymtDnG2AXu35P1/gJSniqEDb8T2jhkwTCVDY
+	xqUuXTlcPsbKN+KC7j7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imdhw-0003pl-Lt; Wed, 01 Jan 2020 13:06:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imdd1-0003zt-BU; Wed, 01 Jan 2020 13:01:36 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 857F531B;
- Wed,  1 Jan 2020 05:01:33 -0800 (PST)
-Received: from [192.168.1.123] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E84953F68F;
- Wed,  1 Jan 2020 05:01:32 -0800 (PST)
-Subject: Re: [PATCH] arm64: dts: rockchip: Fix IR on Beelink A1
-To: Heiko Stuebner <heiko@sntech.de>
-References: <44269c08e2a5d75b03ded87d2eb11621762d8249.1577636223.git.robin.murphy@arm.com>
- <30349756.SWxbmzi8ve@phil>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <3d0f69d5-739a-0566-b1d7-bc3c2f0c8045@arm.com>
-Date: Wed, 1 Jan 2020 13:01:32 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
+	id 1imw6F-0004Q1-74; Thu, 02 Jan 2020 08:44:59 +0000
+Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1imw66-0004Ha-0D; Thu, 02 Jan 2020 08:44:51 +0000
+Received: by mail-ot1-x341.google.com with SMTP id 59so56140525otp.12;
+ Thu, 02 Jan 2020 00:44:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=RJXFVlyRwTqj9HkStatG/uviJjFGvZJlZBeqka9UDNY=;
+ b=gdiUCeOPqScjXzrbvIh+ShMJdMtOIFx3qiDxl8Rnx0tRID+ljoSEDWZXifZyy+UDoK
+ ZbP+uX2yH0Lua7XN3AMGacK2rVrdEAdaFX09Pn8/uzG3t01jvXUKjmInkQIVS+QHIezD
+ VXX6JM5ur/SC4XeH73Y6MZ2pf8t8dk3hLl6vy6PahZF9tKuqXwq53iy00PMcaIcImJvz
+ a0qOXjUw9jKbNkcQk34Ejg4DCSj/O8c7yFs5z0bZaMFOy6CrljgugPlFvg6n+X9/iQEw
+ F/xgEeo5JX2ZN4LVxKsTrzXDRQO8ty7llvBlWTz/fa7rkDg9PweY+jOm9fuFBl4kD2F5
+ 0bPg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=RJXFVlyRwTqj9HkStatG/uviJjFGvZJlZBeqka9UDNY=;
+ b=cqgdHkmyGCDhxUBTKMfYsdpEn09nWvjQJiy71fssopQ1LEnsf3Vv/istn/5uwufC6E
+ BMC03hQRUH41kv4xCtG5WpNkzbwPruqmiIImAfFDFpZg0IDQ9ItuxUtc6KwG8i2Oexrb
+ f5uWEdQPYj9GPMp3ojtZRvtwrkGFYB91p+LFlgMShiPL97y2Rd450hQEGHl9SB1Pduuv
+ b0S4Q6n29FoLFTItWHPdAEOOzBVGScYHVe0ZXzlOrpH/fECDU+eeOnocG7Rr1vck2bos
+ VlPww2e6jdGsyDpv4epGTJ4lDtOHVGUZdoj1ZmMFFoHTV/arh1iWP4Q0rZhUTh4GHYrb
+ 8uag==
+X-Gm-Message-State: APjAAAV7i58bi4eihmGCrRv/8DZtjcFoC+0haNwi0jKB0zRqHx7dKP03
+ E9GIwlEe+LEUwjL0fnNaepHgSQVAERbxzcieRas=
+X-Google-Smtp-Source: APXvYqzOhzS82AptAf2MZPwDekJw6thW0D54iQ6Qt4TuLUMBcVXdHaCHrtJnYpVCXcsxnGiGCP9GyLgDg6gsrK4LUGE=
+X-Received: by 2002:a9d:5c02:: with SMTP id o2mr83617674otk.176.1577954688818; 
+ Thu, 02 Jan 2020 00:44:48 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <30349756.SWxbmzi8ve@phil>
-Content-Language: en-GB
+References: <20191213084748.11210-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20191213084748.11210-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <CAL_JsqLSYroDZGWksJJ=E+01X=3Tji4+GmK8s3i+d2BJphqiLQ@mail.gmail.com>
+ <CA+V-a8uKBuVUQvkoJ9pJYX97Qy3JazTyLCy-2T35gOX77AP8vg@mail.gmail.com>
+ <20191219233129.GA5484@bogus>
+In-Reply-To: <20191219233129.GA5484@bogus>
+From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Date: Thu, 2 Jan 2020 08:44:23 +0000
+Message-ID: <CA+V-a8vjwqkH5rYsy_rsHF93d91izsaEwmFXNpYqk3_=_Asd2g@mail.gmail.com>
+Subject: Re: [v2 3/6] of: address: add support to parse PCI outbound-ranges
+To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200101_050135_437408_54100BCB 
-X-CRM114-Status: GOOD (  11.09  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200102_004450_046460_46E9744A 
+X-CRM114-Status: GOOD (  20.45  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (prabhakar.csengg[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,31 +95,92 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, PCI <linux-pci@vger.kernel.org>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
+ Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Arnd Bergmann <arnd@arndb.de>, "Lad,
+ Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:MEDIA DRIVERS FOR RENESAS - FCP"
+ <linux-renesas-soc@vger.kernel.org>, Tom Joseph <tjoseph@cadence.com>,
+ Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 2019-12-31 11:50 am, Heiko Stuebner wrote:
-> Am Sonntag, 29. Dezember 2019, 18:48:05 CET schrieb Robin Murphy:
->> Apparently I wasn't paying enough attention... And nor is the lazy
->> test of `cat /dev/lirc0` sufficiently blunder-proof. Oh well, with
->> the correct polarity, let's also hook up a keymap now that one for
->> the standard Beelink remote has handily appeared.
->>
->> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
->> ---
-> 
-> applied for 5.6
+Hi Rob,
 
-Thanks Heiko - although if you have any other fixes to send for 5.5 do 
-you think this might be able to sneak in too? Someone mentioned on IRC 
-that unlike mine, their box wouldn't even generate interrupts with the 
-polarity backwards.
+On Thu, Dec 19, 2019 at 11:31 PM Rob Herring <robh@kernel.org> wrote:
+>
+> On Mon, Dec 16, 2019 at 08:49:23AM +0000, Lad, Prabhakar wrote:
+> > Hi Rob,
+> >
+> > Thank you for the review.
+> >
+> > On Fri, Dec 13, 2019 at 8:37 PM Rob Herring <robh+dt@kernel.org> wrote:
+> > >
+> > > On Fri, Dec 13, 2019 at 2:48 AM Lad Prabhakar
+> > > <prabhakar.csengg@gmail.com> wrote:
+> > > >
+> > > > From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> > > >
+> > > > this patch adds support to parse PCI outbound-ranges, the
+> > > > outbound-regions are similar to pci ranges except it doesn't
+> > > > have pci address, below is the format for bar-ranges:
+> > > >
+> > > > outbound-ranges = <flags upper32_cpuaddr lower32_cpuaddr
+> > > >                    upper32_size lower32_size>;
+> > >
+> > > You can't just make up a new ranges property. Especially one that
+> > > doesn't follow how 'ranges' works. We already have 'dma-ranges' to
+> > > translate device to memory addresses.
+> > >
+> > > Explain the problem or feature you need, not the solution you came up
+> > > with. Why do you need this and other endpoint bindings haven't?
+> > >
+> > rcar SoC's supports multiple outbound region for mapping the PCI address
+> > locally to the system. This lead to discussion where there exist controllers
+> > which support regions for high/low priority transfer and similarly regions
+> > for large/small memory allocations, as a result a new ranges property was
+> > added, where we can specify the flags which would indicate how the outbound
+> > region can be used during requests.
+>
+> What are the flags?
+
+below are the flags which were discussed in first version of the
+series, but since the driver is
+currently using just PCI_EPC_WINDOW_FLAG_NON_MULTI_ALLOC flag I'll be
+dropping them in
+next version (suggested by Kishon) and rest will be added as and when
+required by the driver.
+
+ * @PCI_EPC_WINDOW_FLAG_MULTI_ALLOC: Indicates multiple chunks of memory can be
+ *                                  allocated from same window
+ * @PCI_EPC_WINDOW_FLAG_NON_MULTI_ALLOC: Indicates only single memory allocation
+ *                                      is possible on the window
+ * @PCI_EPC_WINDOW_FLAG_LARGE_ALLOC: Window is used for large memory allocation
+ * @PCI_EPC_WINDOW_FLAG_SMALL_ALLOC: Window is used for small memory allocation
+ * @PCI_EPC_WINDOW_FLAG_HIGH_PRI_ALLOC: Window is used for high priority data
+ *                                     transfers
+ * @PCI_EPC_WINDOW_FLAG_LOW_PRI_ALLOC: Window is used for low priority data
+ *                                    transfers
 
 Cheers,
-Robin.
+--Prabhakar
 
 _______________________________________________
 Linux-rockchip mailing list
