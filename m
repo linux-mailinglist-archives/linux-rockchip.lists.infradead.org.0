@@ -2,98 +2,61 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 097F91301B6
-	for <lists+linux-rockchip@lfdr.de>; Sat,  4 Jan 2020 11:01:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E93B130349
+	for <lists+linux-rockchip@lfdr.de>; Sat,  4 Jan 2020 16:34:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:Subject:References:To:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=zd/V+9LLQ7acmxgUN0P3Ij8eYkFOYbuIQP5NM+WNR0s=; b=DpQyugQK6DZdoXFWakdmBKNfE+
-	tsnLQXGLAK5UV2nGtoHbjH8TzFO9WHFDm0uHgrpob/Z1gz7HK1wryz/jmuRkf3Ee5vsTbHbKe30bh
-	ktxCDTPXRVLFPpx9bVHGZYYASp1kANKdvy8goh+vRRWUibPafYFV7UltXPnhiiLou1MCdYQv6I+3K
-	dfcVkF7HGPUujaEvay3Qkc7Y2VsV6rKFAreARS2Zi1z+rZWHZnRu3k7vATeGAaUDfKxtM8hHS4WUB
-	1uXZvQx49BVx/23R+CI7xtkqDKw4HL8JhG61H4jhHK1MGvasLf8Ft060OW6/nTxdXMUvq4mCIHach
-	AkSQtsmg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zQTZqW1FNbo/5ofRA80/AB8edrHXPS9A6CG00+2F2RM=; b=Vme1X2F7dv4X4j
+	JeUdBSuz/22bFRI7uTeCfFONe7r607kyL/Ua6OLZFdrjCpqElJokauWcSxTOFD9KTc97tsLochuZ2
+	F0ZuTPApb57Axt84sWBbrQ16HeXwu0kz/kvCXgTfqwrGJLex89QDbnPYyjWavNJg25JXSH6S+470t
+	9Y/YEGq4pyEYFsEYNWwdrD1RTVIc/QMvszvBOrvXclansnNGgPRHrI/r2dBBlyVzjmJyo8Y+HHNCO
+	jBmb3m57NyRAjuUnfTgF3R+dvVZWYiCl+04MkSXJEMa2D1LL9k7/T59P0xnc0j4ZodQ0J4hEONELJ
+	0N9OJ3lO74aRGcxrDmkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ingFB-0005yJ-Jf; Sat, 04 Jan 2020 10:01:17 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1inlR9-0008HJ-SN; Sat, 04 Jan 2020 15:33:59 +0000
+Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ingF7-0005xm-UW
- for linux-rockchip@lists.infradead.org; Sat, 04 Jan 2020 10:01:15 +0000
-Received: by mail-wr1-x444.google.com with SMTP id c9so44547261wrw.8
- for <linux-rockchip@lists.infradead.org>; Sat, 04 Jan 2020 02:01:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:references:subject:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=f60JLF6tOiUS9TAbLUAYZ7Rh9LzzPz6/4Lsp+VulVjU=;
- b=a7RPdcdoJBxolN0j7gtLvtYoYm3kYYnJEuHgYzz460xGDwUWqp6UL/GDlgISA+8d2m
- e67oLHD/NlBPLvuJIEUmzQ57v7bFI6yKfnxJxZ+Jqls1QQgIPJ5LbtF0hvp9lCwAOdsR
- 1wRvbuoBwZYTPiwKVsMX2p2WPYSAZGmX9vBE/v/sJHBYsUGC5NRGktZeswOgLgvEXv35
- Tf9YaKKB299/0nbo15ZMxngVY4SI4tmcd+10Pyakda7t/QhsO4kvsGeGq7HQNP/z/ZLW
- GJz1fNuLHbXoSnU57F2/kS+d+Ad+OsWf3Pv1A8zUoXTYOlhnSztPLKYWG6KnK/1Ht+M1
- xsYg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:to:references:subject:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=f60JLF6tOiUS9TAbLUAYZ7Rh9LzzPz6/4Lsp+VulVjU=;
- b=CAzu0fX6oByDE7jDHCmyAb0QjrKX7xvfIvBj8+uHAqFkxFzuk3rJ5cvgtSK2WADzQt
- PN836GTPYueGti/1UmDiMyEwit07Z3QMVTGGIxwleNU0CB9ngVJUwi6c2GXWDwYIyT0P
- tvrL12Ogj+xtZKVgT5x82eBn6k1aiB/onY35PQu1yavwKTFeCCN/WxoNOY1ZPoqswBr+
- vZ7G1ZGqFydoiadmBl+iJLFsO241ZcI+TcqGLL2jwmCBYDk346JkViDIumhd6rxKqRV7
- qJfOdRm3bKIj9jG5OgAPyq6kuZZgfpxBsb/8OC4dfdzP4b/vo9elHlQ4YmK6VeiWa77D
- 5Z9Q==
-X-Gm-Message-State: APjAAAU5hJOln45zpbEG4kCWHnzap+/vGj5tDMi9Clxb7a8P0kZCrUzu
- QFySCdbQzP/yQsjfDkmysgdmE3qU
-X-Google-Smtp-Source: APXvYqz9PKO7SBuJRxIAM9LGavm9wDzJkbV3KkvxIBIOPIeEcBtkYue6sXAwO9Ok97gTbBbxuRkobQ==
-X-Received: by 2002:adf:dcc2:: with SMTP id x2mr14713829wrm.24.1578132071342; 
- Sat, 04 Jan 2020 02:01:11 -0800 (PST)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id w13sm64325762wru.38.2020.01.04.02.01.10
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 04 Jan 2020 02:01:10 -0800 (PST)
+ id 1inlR3-0008DD-Kv; Sat, 04 Jan 2020 15:33:55 +0000
+Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
+ (helo=hermes.fivetechno.de); authenticated
+ by wp126.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ id 1inlQn-0000ox-Gq; Sat, 04 Jan 2020 16:33:37 +0100
+X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
+ linuxbbg.five-lan.de
+Received: from roc-pc (p508F384D.dip0.t-ipconnect.de [80.143.56.77])
+ (authenticated bits=0)
+ by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
+ 004FXass009220
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Sat, 4 Jan 2020 16:33:36 +0100
+From: Markus Reichl <m.reichl@fivetechno.de>
 To: linux-rockchip@lists.infradead.org
-References: <20200104003939.GA15565@bogus>
-Subject: Re: Re: [PATCH V3, 1/1] arm64: dts: rockchip: add ROCK Pi S DTS
- support
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <d8816df1-2e00-468e-94f3-06b2845c1a81@gmail.com>
-Date: Sat, 4 Jan 2020 11:01:09 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+Subject: [PATCH 0/5] regulator: mp8859: add driver for DC/DC converter used on
+ rk3399-roc-pc board
+Date: Sat,  4 Jan 2020 16:32:44 +0100
+Message-Id: <20200104153321.6584-1-m.reichl@fivetechno.de>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-In-Reply-To: <20200104003939.GA15565@bogus>
-Content-Language: en-US
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1578152033;
+ 4d7df217; 
+X-HE-SMSGID: 1inlQn-0000ox-Gq
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200104_020114_010028_BAE19A71 
-X-CRM114-Status: GOOD (  15.40  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200104_073353_827105_83553D9D 
+X-CRM114-Status: UNSURE (   9.53  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jbx6244[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jbx6244[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,56 +69,44 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
+Cc: devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
+ Stephan Gerhold <stephan@gerhold.net>, Rob Herring <robh@kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ "Angus Ainslie \(Purism\)" <angus@akkea.ca>, linux-kernel@vger.kernel.org,
+ Maxime Ripard <mripard@kernel.org>, Markus Reichl <m.reichl@fivetechno.de>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Jagan Teki <jagan@amarulasolutions.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+On rk3399-roc-pc board a voltage regulator MP8859 from Monolithic Power Systems
+is used to supply the 12V power line. This delivers 5V as a default value after
+boot. The voltage is controllable via I2C.
+Add a basic driver to set and get the voltage of the MP8859 and add a matching
+node with fixed 12V in the DT of the board. 
 
-Question for Rob Herring.
-See my comments at version 2.
-What is the reason that the non valid/existent node options
-supports-sd, supports-sd max-frequeency num-slots and disable-wp
-together with the many style issues are accepted?
+Markus Reichl (5):
+  regulator: mp8859: add driver
+  regulator: mp8859: add config option and build entry
+  dt-bindings: add vendor Monolithic Power Systems
+  dt-bindings: regulator: add MPS mp8859 voltage regulator
+  arm64: dts: rockchip: Enable mp8859 regulator on rk3399-roc-pc
 
-Thanks.
+ .../devicetree/bindings/regulator/mp8859.txt  |  22 +++
+ .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
+ .../boot/dts/rockchip/rk3399-roc-pc.dtsi      |  32 ++--
+ drivers/regulator/Kconfig                     |  11 ++
+ drivers/regulator/Makefile                    |   1 +
+ drivers/regulator/mp8859.c                    | 156 ++++++++++++++++++
+ 6 files changed, 210 insertions(+), 14 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/regulator/mp8859.txt
+ create mode 100644 drivers/regulator/mp8859.c
 
-On Mon, 30 Dec 2019 20:19:32 +0530, Akash Gajjar wrote:
-> ROCK Pi S is RK3308 based SBC from radxa.com. ROCK Pi S has a,
-> - 256MB/512MB DDR3 RAM
-> - SD, NAND flash (optional on board 1/2/4/8Gb)
-> - 100MB ethernet, PoE (optional)
-> - Onboard 802.11 b/g/n wifi + Bluetooth 4.0 Module
-> - USB2.0 Type-A HOST x1
-> - USB3.0 Type-C OTG x1
-> - 26-pin expansion header
-> - USB Type-C DC 5V Power Supply
->
-> This patch enables
-> - Console
-> - NAND Flash
-> - SD Card
->
-> Signed-off-by: Akash Gajjar <akash at openedev.com>
-> ---
-> Changes for v2
-> - Use pwm-supply for vdd_core node instead of vi-supply
-> - Add USB2.0 node support
->
-> Changes for v3
-> - Use small S on dts file name
-> - Add missing semicolon
-> - Remove USB2.0 node support
->
->  .../devicetree/bindings/arm/rockchip.yaml     |   5 +
->  arch/arm64/boot/dts/rockchip/Makefile         |   1 +
->  .../boot/dts/rockchip/rk3308-rock-pi-s.dts    | 221 ++++++++++++++++++
->  3 files changed, 227 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/rockchip/rk3308-rock-pi-s.dts
->
-
-Reviewed-by: Rob Herring <robh at kernel.org>
+-- 
+2.24.1
 
 
 _______________________________________________
