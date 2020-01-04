@@ -2,87 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FA1912FFBF
-	for <lists+linux-rockchip@lfdr.de>; Sat,  4 Jan 2020 01:40:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9544130171
+	for <lists+linux-rockchip@lfdr.de>; Sat,  4 Jan 2020 09:38:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SPYBlLfKZJ3BgEDzcyNyB2UFMBxy7vePSDQ7GsR1sCs=; b=pKNK8dyj1B50sb
-	DoVe5H1MGhWbpx2BKUecjh2Xrt5LDfnfJGQA+ERL79RueG7WokRLvcbasDvn41p0ST162HyZNlgJO
-	iiSxlDilE/pLDzD/skPkrTKRLZsOeEtPTu2lUAMXrSqx58aYhbPPTF3VSQVuC7USYBNJsaFHFwdHi
-	pYPvYLfMj3PhX1FRiA7hu7WefoQ1dFAT74OGiN//7RYKdU7V0NWGLE8qNUSbKkmOoltZcNHV12l/+
-	Q5mGbBIbFxAXzPgpx7AXcKhO5sdmBwghfxIYRNsOrZp9i4kwJtbUe2AuXcDvajpFllFdxr8ltzWYZ
-	imeqxcMmkaxaVFiJUG5g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Yt88k6VKItaLkKvKzGv9Afiw2m3PbA4NoX17e7ajxLU=; b=it35P69X4Dy7N5
+	5NQn5n70yalb5Y0ISrxVTUJ/9aI61BOVFbaUrYqdVDChSd/pktsFAp5RFa8kxLbZtBVaTmJmJUsGJ
+	0bqg2g7EznzkC1HPP6Tby1GLH1tCdTA1CMi4eyCSheSxThx0BTyp+Nw/4DctvGv9a9D8/+xncKMzj
+	Z2B9VHd5hhNOsC9dgP5Np2MC/23Huzl0uHm8YNcZ2jX7CKWkQftCJtOyYKG8yBkjOT4y8LGfUq+05
+	wcCMiDw93ts+yI1SE841/CWAacJ1yA3JLXReYHMndl/Y7MHKq0e552zTjyiJTQKG6M9bVp4y1sayU
+	s1hznVotUifpOsSsm6Nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inXUG-0006fK-V3; Sat, 04 Jan 2020 00:40:16 +0000
-Received: from mail-il1-f195.google.com ([209.85.166.195])
+	id 1inewy-00037B-5l; Sat, 04 Jan 2020 08:38:24 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inXUD-0006ex-JR
- for linux-rockchip@lists.infradead.org; Sat, 04 Jan 2020 00:40:15 +0000
-Received: by mail-il1-f195.google.com with SMTP id v69so37977386ili.10
- for <linux-rockchip@lists.infradead.org>; Fri, 03 Jan 2020 16:40:13 -0800 (PST)
+ id 1inewt-00035t-Lv
+ for linux-rockchip@lists.infradead.org; Sat, 04 Jan 2020 08:38:21 +0000
+Received: by mail-pg1-x544.google.com with SMTP id b9so24455836pgk.12
+ for <linux-rockchip@lists.infradead.org>; Sat, 04 Jan 2020 00:38:19 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=xEBrsWUQtuerJ+y7ZBAe3tgVNuRJ0vPppcHoi7n1s18=;
+ b=mqYzb1pehwGEHC69Pr90zhdKCcBBxUyMm5NHEeY1GJTUjMDL2O1jk0dWfBz9YyK/bj
+ aEmxTRA/L1GlS8guW8hsPsgMoJJR85psKPB4jKGP9CxzzAf0sew5zk1IfgENhhC/qolM
+ P3jkYq7D3S9HIJSRgdeT11YAEuYcr4t2r640c=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=dKtl1NpRX8aOyUbBGch9yTP0h5jL9ht++jj3F8wRx1Y=;
- b=FCXncYdHlosmQQS48zMStxE1jhKrw8NNqTKl37Ipr7101zJLjaC2BeMYDoAYOkvQhw
- zIBDyAvgVfgnH5N8VtefFtqhCuNCDQuyb7xvFRbRdFCNsDfPoniYerFK2nvVpNY9FQjm
- gCMlXaZtYD5z5I8ASD9tSvP7dLHWGyNdPT+1jLDIzw5jbMUra9jIjjKKxsPFQUFKARMZ
- mnT0IXhkTRsG2EaYXP+Fpdo7syxe2FGzGpG+Oaw/K9pgI/ddt5VTNRFUFAKlMOZXCYwq
- htpvPOSGjjvDBy/22DtncM5rJz4HEu1Mi2y6Vw82C4BmasECGTIxjm6TI5fpDWXblPbm
- aJMA==
-X-Gm-Message-State: APjAAAUaTQuAjSE8FjNqN/NRNwO3QxUzkuSaufBaxbZI9Z5WVoHWZ7nM
- NnY8D7xgLjfGCQnRhrF/nMS05+M=
-X-Google-Smtp-Source: APXvYqzDrbZLtbEnBjSJe8FARbgzyeRYhC9Ttv/phqACCdfvjan8Zt02C2W2aaSPqJYPlh9eOjJbDw==
-X-Received: by 2002:a92:8712:: with SMTP id m18mr73741933ild.40.1578098412717; 
- Fri, 03 Jan 2020 16:40:12 -0800 (PST)
-Received: from rob-hp-laptop ([64.188.179.251])
- by smtp.gmail.com with ESMTPSA id v64sm21546031ila.36.2020.01.03.16.40.12
- for <linux-rockchip@lists.infradead.org>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=xEBrsWUQtuerJ+y7ZBAe3tgVNuRJ0vPppcHoi7n1s18=;
+ b=Ex2RG260im/+kvBFSa8Uqs95cOoFVJ1WyZThBnN0eT9i3o48DGZlsVamWU4vIUMKD8
+ s7ybtdpLdQZoANNbCQgLOb2DcTZMzs7KlwC8D79ejI++GUREir4LTgt1AxGubpYrJz0z
+ Aj5mQVsLvMzZWIfkccF9ZrJjeFCc/yBV+w8MTQ6vA+Puv/rgfkyQAOrakNf9xEOC52m4
+ Pl5q0/kj1Fhnjh0AanB/99Mm00bLeCCeSKeW1h4hxEQYI0PEkAEbkmyhaF+wWIGJBnVH
+ EuM5Jl0qHOpvko50vzO8MToXwTQlBQIOuxTJD1Jn1+p67F4yr9FnfO1wXYVJgVCIdZuw
+ 1nTw==
+X-Gm-Message-State: APjAAAVSoswS93gBzHn3rNKF9SdGDpWEznSQuP5XtS1n+GIvZUyt21y0
+ b406h4Q9ocacgtkM17hv5shGMw==
+X-Google-Smtp-Source: APXvYqwZMUvHoWZGl0zjNDx1MP3FrdHGvnyqILFd3XP6WT8GtTzQcqSinjMqPq29osWzP85f1c+l6A==
+X-Received: by 2002:a63:ff52:: with SMTP id
+ s18mr101998432pgk.253.1578127099011; 
+ Sat, 04 Jan 2020 00:38:19 -0800 (PST)
+Received: from localhost.localdomain ([49.206.201.128])
+ by smtp.gmail.com with ESMTPSA id z4sm70201623pfn.42.2020.01.04.00.38.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 03 Jan 2020 16:40:12 -0800 (PST)
-Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 2219b7
- by rob-hp-laptop (DragonFly Mail Agent v0.11);
- Fri, 03 Jan 2020 17:39:39 -0700
-Date: Fri, 3 Jan 2020 17:39:39 -0700
-From: Rob Herring <robh@kernel.org>
-To: Akash Gajjar <akash@openedev.com>
-Subject: Re: [PATCH V3, 1/1] arm64: dts: rockchip: add ROCK Pi S DTS support
-Message-ID: <20200104003939.GA15565@bogus>
-References: <20191230145008.5899-1-akash@openedev.com>
+ Sat, 04 Jan 2020 00:38:18 -0800 (PST)
+From: Jagan Teki <jagan@amarulasolutions.com>
+To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
+Subject: [PATCH v6 0/6] rockchip: Add Binman support 
+Date: Sat,  4 Jan 2020 14:08:00 +0530
+Message-Id: <20200104083806.3930-1-jagan@amarulasolutions.com>
+X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191230145008.5899-1-akash@openedev.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_164013_643185_EB9B9145 
-X-CRM114-Status: GOOD (  12.99  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20200104_003819_854419_446642D8 
+X-CRM114-Status: GOOD (  10.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.195 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.195 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,55 +94,75 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, heiko@sntech.de,
- linux-arm-kernel@lists.infradead.org, tom@radxa.com,
- Robin Murphy <robin.murphy@arm.com>, Douglas Anderson <dianders@chromium.org>,
- Kever Yang <kever.yang@rock-chips.com>, Markus Reichl <m.reichl@fivetechno.de>,
- linux-rockchip@lists.infradead.org, Matthias Kaehlcke <mka@chromium.org>,
- Akash Gajjar <akash@openedev.com>, Nick Xie <nick@khadas.com>,
- Andy Yan <andy.yan@rock-chips.com>, jagan@openedev.com,
- Vivek Unune <npcomplete13@gmail.com>, Jagan Teki <jagan@amarulasolutions.com>
+Cc: linux-rockchip@lists.infradead.org, u-boot@lists.denx.de,
+ "Matwey V . Kornilov" <matwey.kornilov@gmail.com>,
+ Jagan Teki <jagan@amarulasolutions.com>, linux-amarula@amarulasolutions.com,
+ Akash Gajjar <akash@openedev.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, 30 Dec 2019 20:19:32 +0530, Akash Gajjar wrote:
-> ROCK Pi S is RK3308 based SBC from radxa.com. ROCK Pi S has a,
-> - 256MB/512MB DDR3 RAM
-> - SD, NAND flash (optional on board 1/2/4/8Gb)
-> - 100MB ethernet, PoE (optional)
-> - Onboard 802.11 b/g/n wifi + Bluetooth 4.0 Module
-> - USB2.0 Type-A HOST x1
-> - USB3.0 Type-C OTG x1
-> - 26-pin expansion header
-> - USB Type-C DC 5V Power Supply
-> 
-> This patch enables
-> - Console
-> - NAND Flash
-> - SD Card
-> 
-> Signed-off-by: Akash Gajjar <akash@openedev.com>
-> ---
-> Changes for v2
-> - Use pwm-supply for vdd_core node instead of vi-supply
-> - Add USB2.0 node support
->  
-> Changes for v3
-> - Use small S on dts file name
-> - Add missing semicolon
-> - Remove USB2.0 node support
-> 
->  .../devicetree/bindings/arm/rockchip.yaml     |   5 +
->  arch/arm64/boot/dts/rockchip/Makefile         |   1 +
->  .../boot/dts/rockchip/rk3308-rock-pi-s.dts    | 221 ++++++++++++++++++
->  3 files changed, 227 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/rockchip/rk3308-rock-pi-s.dts
-> 
+This is v6 set for Binman support in rockchip, [1] here is
+previous patchset.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+This series add single boot image with binman for arm32 and
+pad_cat for arm64 rockchip platforms both TPL + SPL and SPL-alone
+targets.
+
+Changes for v6:
+- drop idbloader.img filename change patch
+- update rockchip.rst to include, rockchip TPL, SPI boot as TODO
+Changes for v5:
+- collect kever review tag
+- drop idbloader.img from clean target
+Changes for v4:
+- support all rockchip platforms
+- add new patches for dtsi changes
+- update documentation
+- format proper commit message
+- rebase on master
+Changes for v3:
+- rebase on master
+- add binman for rk3288, rk3328, rk3368, rk3399
+- added rst documentation for rockchip
+Changes for v2:
+- Add few clean target patches
+- update bl31.elf env handling code, with logging
+- support puma itb, via BL31 and PMUM0 env
+- enable BUILD_TARGET for ROCKCHIP_RK3399
+
+[1] https://patchwork.ozlabs.org/cover/1216263/
+
+Any inputs?
+Jagan.
+
+Jagan Teki (6):
+  Makefile: Add rockchip image type
+  Makefile: rockchip: Suffix platform type with tpl name
+  Makefile: rockchip: Support SPL-alone mkimage
+  arm: dts: rk3036: Add rk3036-u-boot.dtsi
+  rockchip: Add Single boot image (with binman, pad_cat)
+  doc: boards: Add rockchip documentation
+
+ Makefile                            |  36 ++++++--
+ arch/arm/Kconfig                    |   1 +
+ arch/arm/dts/rk3036-sdk-u-boot.dtsi |   2 +
+ arch/arm/dts/rk3036-u-boot.dtsi     |   6 ++
+ arch/arm/dts/rk3288-u-boot.dtsi     |   2 +
+ arch/arm/dts/rockchip-u-boot.dtsi   |  21 +++++
+ doc/board/rockchip/index.rst        |  10 +++
+ doc/board/rockchip/rockchip.rst     | 130 ++++++++++++++++++++++++++++
+ include/configs/rockchip-common.h   |   3 +
+ 9 files changed, 206 insertions(+), 5 deletions(-)
+ create mode 100644 arch/arm/dts/rk3036-u-boot.dtsi
+ create mode 100644 arch/arm/dts/rockchip-u-boot.dtsi
+ create mode 100644 doc/board/rockchip/index.rst
+ create mode 100644 doc/board/rockchip/rockchip.rst
+
+-- 
+2.18.0.321.gffc6fa0e3
+
 
 _______________________________________________
 Linux-rockchip mailing list
