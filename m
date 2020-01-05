@@ -2,58 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AA621306E9
-	for <lists+linux-rockchip@lfdr.de>; Sun,  5 Jan 2020 10:16:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FCB213085D
+	for <lists+linux-rockchip@lfdr.de>; Sun,  5 Jan 2020 15:05:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JaI+iQOdPYUPD86/WIIXLnMk0IRpIwU4pHCKgSX9zz0=; b=LozTNIirL9k2Gr
-	O9zmLTDhP694c/78l+mcXPwOMmZzHTX9Bb4WMvjql7SAaYbZ8RKSfsPaGYo4L53mQL5valtU/9C6o
-	2DOVCLYih2hInIAgkipNVr+ekb5ET6uVIgeDtKWo8GrmUBzI17NBCSkbHtDGupMAW/9GTgbCTyUP/
-	VVr9BKe6cugjJyiNfWkvExu5I4eTqDrBYNqzOeZ3ne74mda3ixmOHVKFrXuWfjI2vVKHy7M9NnXbc
-	lxG9W4jX1Xe2nphbW2YfFf+6F/Gjlk0PxmUf2+VyxyiiqRMAQkHOvqW5ewJP4zYdR1vi3EYkGk2R9
-	ksJdIqzJikQvCiSb1TKA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YqFt4glMd0f65aWJeF8hX6wmgovgQiuGVGBGP67kgTg=; b=jDLw0ZeVF6G9it
+	6ptCjwGQ1bdCDwH0U7Nd0YW9gnv6OMBgR4AfHb5RaDvWXEixTFEsGc947hFYrcdigR2AtiwuPCuU9
+	ThlBknxr9zj8pDmmvsGEntQslYhMLlEcZI9HBTnmRXaa2Zz7Pt9VIE1i/rxCF1FStL3CtOANESfqo
+	q3MtwCaEXq7yZAQKHXXmSM+HfBhTlHDiDyaPrdyoyvYPMuJurXLllriLQViuaMODkJxXNa2VnQNnM
+	NpAdG6nlN92zARZWzyaQMiHyF+STHbevhco4D+t5qPJ/INp6cUsJy/s0IE31rQdnTq6IHYigioYkK
+	Q92xi5wN3wpD6ip2tlXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1io21U-0007eF-8t; Sun, 05 Jan 2020 09:16:36 +0000
-Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
+	id 1io6XG-0001hB-Ri; Sun, 05 Jan 2020 14:05:42 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1io21Q-0007dA-4G; Sun, 05 Jan 2020 09:16:34 +0000
-Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
- (helo=hermes.fivetechno.de); authenticated
- by wp126.webpack.hosteurope.de running ExIM with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- id 1io215-0007wK-3N; Sun, 05 Jan 2020 10:16:11 +0100
-X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
- linuxbbg.five-lan.de
-Received: from dell2.five-lan.de (p508F34C7.dip0.t-ipconnect.de
- [80.143.52.199]) (authenticated bits=0)
- by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
- 0059G9tA005418
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
- Sun, 5 Jan 2020 10:16:09 +0100
-Subject: Re: [PATCH 5/5] arm64: dts: rockchip: Enable mp8859 regulator on
- rk3399-roc-pc
-To: Heiko Stuebner <heiko@sntech.de>
-References: <20200104153321.6584-1-m.reichl@fivetechno.de>
- <20200104153321.6584-6-m.reichl@fivetechno.de> <11639547.aalzkRAYeW@phil>
-From: Markus Reichl <m.reichl@fivetechno.de>
-Message-ID: <2dd59b6a-7890-8546-8030-198c6ae8608b@fivetechno.de>
-Date: Sun, 5 Jan 2020 10:16:09 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1io6XE-0001ge-Fz; Sun, 05 Jan 2020 14:05:41 +0000
+Received: from p508fce23.dip0.t-ipconnect.de ([80.143.206.35]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1io6X0-0007kM-Qo; Sun, 05 Jan 2020 15:05:26 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH v2 00/11] Add PX30 LVDS support
+Date: Sun, 05 Jan 2020 15:05:26 +0100
+Message-ID: <1885398.klecWcqSHf@phil>
+In-Reply-To: <20191224143900.23567-1-miquel.raynal@bootlin.com>
+References: <20191224143900.23567-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
-In-Reply-To: <11639547.aalzkRAYeW@phil>
-Content-Language: de-DE
-X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1578215792;
- ccc61575; 
-X-HE-SMSGID: 1io215-0007wK-3N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200105_011632_308927_4750F86F 
-X-CRM114-Status: GOOD (  18.25  )
+X-CRM114-CacheID: sfid-20200105_060540_682755_30FACE4F 
+X-CRM114-Status: GOOD (  17.80  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -74,66 +58,91 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ David Airlie <airlied@linux.ie>, Sandy Huang <hjc@rock-chips.com>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sCgpBbSAwNC4wMS4yMCB1bSAyMjoyMyBzY2hyaWViIEhlaWtvIFN0dWVibmVyOgo+
-IEhpIE1hcmt1cywKPiAKPiBBbSBTYW1zdGFnLCA0LiBKYW51YXIgMjAyMCwgMTY6MzI6NDkgQ0VU
-IHNjaHJpZWIgTWFya3VzIFJlaWNobDoKPj4gVGhlIHJrMzM5OS1yb2MtcGMgdXNlcyBhIE1QODg1
-OSBEQy9EQyBjb252ZXJ0ZXIgZm9yIDEyViBzdXBwbHkuCj4+IFRoaXMgc3VwcGxpZXMgNVYgb25s
-eSBpbiBkZWZhdWx0IHN0YXRlIGFmdGVyIGJvb3RpbmcuCj4gCj4gSnVzdCBmb3IgbXkgdW5kZXJz
-dGFuZGluZyAuLi4gYm90aCB0aGUgb2xkIHN0YXRpYyByZWd1bGF0b3IgYmVmb3JlIGFzCj4gd2Vs
-bCBhcyB0aGUgbmV3IGkyYyBub2RlIHNhaWQgdG8gc3VwcGx5IDEyViwgYnV0IGFib3ZlIHlvdSBz
-YXkgdGhhdAo+IHRoZSBkZWZhdWx0IGlzIDVWIC4uLiBzbyBJJ20gd29uZGVyaW5nIHdobyBjb25m
-aWd1cmVkIHRoZSAxMlYgYmVmb3JlLgo+IAo+IE9yIHdhcyBpdCB0aGUgY2FzZSB0aGF0IHRoZSBv
-bGQgcmVndWxhdG9yIG5vZGUgd2FzIGp1c3Qgd3JvbmcgYW5kIHdlCj4gaGFkIDVWIHJ1bm5pbmcg
-b24gdGhlIGRjXzEydiBsaW5lPwoKWWVzLCB0aGUgZGNfMTJ2IGxpbmUgd2FzIHJ1bm5pbmcgYXQg
-NVYgKG1lYXN1cmVkIDQsN1YpIGFzIGl0IGlzIHRoZQpkZWZhdWx0IHBvd2VyIHVwIHZhbHVlIGZv
-ciB0aGUgTVA4ODU5LiBUaGlzIGlzIGFzIGRvY3VtZW50ZWQgaW4gdGhlIGRhdGEKc2hlZXQgWzFd
-LgoKWzFdIGh0dHBzOi8vd3d3Lm1vbm9saXRoaWNwb3dlci5jb20vZW4vZG9jdW1lbnR2aWV3L3By
-b2R1Y3Rkb2N1bWVudC9pbmRleC92ZXJzaW9uLzIvZG9jdW1lbnRfdHlwZS9EYXRhc2hlZXQvbGFu
-Zy9lbi9za3UvTVA4ODU5L2RvY3VtZW50X2lkLzQwMzMvCgpHcnXDnwotLQpNYXJrdXMKPiAKPiBU
-aGFua3MKPiBIZWlrbwo+IAo+PiBOb3cgd2UgY2FuIGNvbnRyb2wgdGhlIG91dHB1dCB2b2x0YWdl
-IHZpYSBJMkMgaW50ZXJmYWNlLgo+PiBBZGQgYSBub2RlIGZvciB0aGUgZHJpdmVyIHRvIHJlYWNo
-IDEyVi4KPj4gCj4+IFNpZ25lZC1vZmYtYnk6IE1hcmt1cyBSZWljaGwgPG0ucmVpY2hsQGZpdmV0
-ZWNobm8uZGU+Cj4+IC0tLQo+PiAgLi4uL2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5OS1yb2MtcGMu
-ZHRzaSAgICAgIHwgMzIgKysrKysrKysrKystLS0tLS0tLQo+PiAgMSBmaWxlIGNoYW5nZWQsIDE4
-IGluc2VydGlvbnMoKyksIDE0IGRlbGV0aW9ucygtKQo+PiAKPj4gZGlmZiAtLWdpdCBhL2FyY2gv
-YXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJvYy1wYy5kdHNpIGIvYXJjaC9hcm02NC9i
-b290L2R0cy9yb2NrY2hpcC9yazMzOTktcm9jLXBjLmR0c2kKPj4gaW5kZXggOGUwMWIwNDE0NGI3
-Li45ZjIyNWU5YzNkNTQgMTAwNjQ0Cj4+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2No
-aXAvcmszMzk5LXJvYy1wYy5kdHNpCj4+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2No
-aXAvcmszMzk5LXJvYy1wYy5kdHNpCj4+IEBAIC0xMTAsMjAgKzExMCw2IEBAIHZjY192YnVzX3R5
-cGVjMDogdmNjLXZidXMtdHlwZWMwIHsKPj4gIAkJcmVndWxhdG9yLW1heC1taWNyb3ZvbHQgPSA8
-NTAwMDAwMD47Cj4+ICAJfTsKPj4gIAo+PiAtCS8qCj4+IC0JICogc2hvdWxkIGJlIHBsYWNlZCBp
-bnNpZGUgbXA4ODU5LCBidXQgbm90IHVudGlsIG1wODg1OSBoYXMKPj4gLQkgKiBpdHMgb3duIGR0
-LWJpbmRpbmcuCj4+IC0JICovCj4+IC0JZGNfMTJ2OiBtcDg4NTktZGNkYzEgewo+PiAtCQljb21w
-YXRpYmxlID0gInJlZ3VsYXRvci1maXhlZCI7Cj4+IC0JCXJlZ3VsYXRvci1uYW1lID0gImRjXzEy
-diI7Cj4+IC0JCXJlZ3VsYXRvci1hbHdheXMtb247Cj4+IC0JCXJlZ3VsYXRvci1ib290LW9uOwo+
-PiAtCQlyZWd1bGF0b3ItbWluLW1pY3Jvdm9sdCA9IDwxMjAwMDAwMD47Cj4+IC0JCXJlZ3VsYXRv
-ci1tYXgtbWljcm92b2x0ID0gPDEyMDAwMDAwPjsKPj4gLQkJdmluLXN1cHBseSA9IDwmdmNjX3Zi
-dXNfdHlwZWMwPjsKPj4gLQl9Owo+PiAtCj4+ICAJLyogc3dpdGNoZWQgYnkgcG1pY19zbGVlcCAq
-Lwo+PiAgCXZjYzF2OF9zMzogdmNjYTF2OF9zMzogdmNjMXY4LXMzIHsKPj4gIAkJY29tcGF0aWJs
-ZSA9ICJyZWd1bGF0b3ItZml4ZWQiOwo+PiBAQCAtNTQ2LDYgKzUzMiwyNCBAQCBmdXNiMDogdXNi
-LXR5cGVjQDIyIHsKPj4gIAkJdmJ1cy1zdXBwbHkgPSA8JnZjY192YnVzX3R5cGVjMD47Cj4+ICAJ
-CXN0YXR1cyA9ICJva2F5IjsKPj4gIAl9Owo+PiArCj4+ICsJbXA4ODU5OiByZWd1bGF0b3JANjYg
-ewo+PiArCQljb21wYXRpYmxlID0gIm1wcyxtcDg4NTkiOwo+PiArCQlyZWcgPSA8MHg2Nj47Cj4+
-ICsJCWRjXzEydjogbXA4ODU5X2RjZGMgewo+PiArCQkJcmVndWxhdG9yLW5hbWUgPSAiZGNfMTJ2
-IjsKPj4gKwkJCXJlZ3VsYXRvci1taW4tbWljcm92b2x0ID0gPDEyMDAwMDAwPjsKPj4gKwkJCXJl
-Z3VsYXRvci1tYXgtbWljcm92b2x0ID0gPDEyMDAwMDAwPjsKPj4gKwkJCXJlZ3VsYXRvci1hbHdh
-eXMtb247Cj4+ICsJCQlyZWd1bGF0b3ItYm9vdC1vbjsKPj4gKwkJCXZpbi1zdXBwbHkgPSA8JnZj
-Y192YnVzX3R5cGVjMD47Cj4+ICsKPj4gKwkJCXJlZ3VsYXRvci1zdGF0ZS1tZW0gewo+PiArCQkJ
-CXJlZ3VsYXRvci1vbi1pbi1zdXNwZW5kOwo+PiArCQkJCXJlZ3VsYXRvci1zdXNwZW5kLW1pY3Jv
-dm9sdCA9IDwxMjAwMDAwMD47Cj4+ICsJCQl9Owo+PiArCQl9Owo+PiArCX07Cj4+ICB9Owo+PiAg
-Cj4+ICAmaTJzMCB7Cj4+IAo+IAo+IAo+IAo+IAo+IAo+IF9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCj4gTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0Cj4g
-TGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAKPiAKCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcg
-bGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+Am Dienstag, 24. Dezember 2019, 15:38:49 CET schrieb Miquel Raynal:
+> Hello,
+> =
+
+> This series aims at supporting LVDS on PX30.
+> =
+
+> A first couple of patches update the documentation with the new
+> compatible and the presence of a PHY. Then, the existing Rockchip
+> driver is cleaned and extended to support PX30 specificities. Finally,
+> the PX30 DTSI is updated with CRTC routes, the DSI DPHY and the LVDS
+> IP itself.
+> =
+
+> Cheers,
+> Miqu=E8l
+> =
+
+> Changes since v1:
+> * Added Rob's Ack.
+> * Used "must" instead of "should" in the bindings.
+> * Precised that phy-names is an optional property in the case of
+>   PX30.
+> * Renamed the WRITE_EN macro into HIWORD_UPDATE to be aligned with
+>   other files.
+> * Removed extra configuration, not needed for generic panels (see
+>   Sandy Huang answer).
+> * Dropped the display-subsystem routes (useless).
+> * Merged two patches to avoid phandle interdependencies in graphs and
+>   intermediate build errors.
+> =
+
+> Miquel Raynal (11):
+>   dt-bindings: display: rockchip-lvds: Declare PX30 compatible
+>   dt-bindings: display: rockchip-lvds: Document PX30 PHY
+>   drm/rockchip: lvds: Fix indentation of a #define
+>   drm/rockchip: lvds: Harmonize function names
+>   drm/rockchip: lvds: Change platform data
+>   drm/rockchip: lvds: Create an RK3288 specific probe function
+>   drm/rockchip: lvds: Helpers should return decent values
+>   drm/rockchip: lvds: Pack functions together
+
+applied patches 1-8 to drm-misc-next
+
+>   drm/rockchip: lvds: Add PX30 support
+
+drm-misc-next is currently still at 5.4-rc4, so I'll need to find out how
+to get newer kernel changes in there, as right now we're missing
+the PHY_MODE_LVDS constant.
+
+
+Heiko
+
+>   arm64: dts: rockchip: Add PX30 DSI DPHY
+>   arm64: dts: rockchip: Add PX30 LVDS
+> =
+
+>  .../display/rockchip/rockchip-lvds.txt        |   4 +
+>  arch/arm64/boot/dts/rockchip/px30.dtsi        |  48 ++
+>  drivers/gpu/drm/rockchip/rockchip_lvds.c      | 486 ++++++++++++------
+>  drivers/gpu/drm/rockchip/rockchip_lvds.h      |  19 +-
+>  4 files changed, 401 insertions(+), 156 deletions(-)
+> =
+
+> =
+
+
+
+
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
