@@ -2,50 +2,59 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD73513138C
-	for <lists+linux-rockchip@lfdr.de>; Mon,  6 Jan 2020 15:23:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 822F0131990
+	for <lists+linux-rockchip@lfdr.de>; Mon,  6 Jan 2020 21:45:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8JgzBwVip8KJ12HlZAE+5+TWcAu13F2vZpzVxI4YRqw=; b=YFtlAuE1B2ktDf
-	wkcRFdVMH2KslVFVuR3Y/QwNb7M+eAWUnX8OByKWBy62OpEriKV98VjfxALrGdcJhr9ukyno4or94
-	iPbtrUUYYkbk5MixWZk8PDumzswana9nmb1hOKuIJBJWBNHPkxwGpmb3WVCiREzgH4RU8Sv1C2/Xl
-	3tpd/n6uZtnVUnB8fUXJPIhWopHALSuvNarpiMdRfLL2QsSNRCsJdROs45Ltc2im9QsOaYpTFVQWO
-	SRsZ71gg34MmAw2BkodCAz2lagh/9izqURlvcHM6SNS3I68P/Le4CfVpSAwqnwHi4M9Z0+ozwTUS6
-	099IVAFMpFbcbTupkpCQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vW7Z7XkYQ+JnjmJKTvLinSg+aAgXcvg0oe2VnKGSdmk=; b=MGpDbSd65MZZ18ZJOF91HBRsN
+	bFiGt+y86I1Oe2nIdnesfzJ6Hovm2DBub1F0RNIQgb+Tc1pP6pxy7olcJlryQEekwmTqBKZ0LJH25
+	bR2u77AjxR83tpf1ZD2ZX748gag+co9/zi2XTw6y6g6HWXgVeThh+EdUpv/MK8uXWlXo00mHGBqOK
+	mVS5SpfhN8UMPMMHBfsD7rcKk1oAp7zVZ2+zYWwOSfDaTuXDGNHBuxDFMK8UOoQn2xrlQLGNGrwWt
+	p2NXk3dlOh/updu1rOBn6T1tpDozw+uJg3wh6oyHv1xQER/C3YD1utSm7iLuEUfMMnebutZe/zcKu
+	XP4MbCpWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioTHg-0000yv-Rb; Mon, 06 Jan 2020 14:23:08 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioTHd-0000yL-SP; Mon, 06 Jan 2020 14:23:07 +0000
-Received: from ip5f5a5f74.dynamic.kabel-deutschland.de ([95.90.95.116]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1ioTHc-0005Nq-Ix; Mon, 06 Jan 2020 15:23:04 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: Fix IR on Beelink A1
-Date: Mon, 06 Jan 2020 15:23:04 +0100
-Message-ID: <12698221.yjhRjYoh56@diego>
-In-Reply-To: <3d0f69d5-739a-0566-b1d7-bc3c2f0c8045@arm.com>
-References: <44269c08e2a5d75b03ded87d2eb11621762d8249.1577636223.git.robin.murphy@arm.com>
- <30349756.SWxbmzi8ve@phil> <3d0f69d5-739a-0566-b1d7-bc3c2f0c8045@arm.com>
+	id 1ioZFe-0001UR-UG; Mon, 06 Jan 2020 20:45:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ioZFb-0001TX-T1
+ for linux-rockchip@lists.infradead.org; Mon, 06 Jan 2020 20:45:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E6394328;
+ Mon,  6 Jan 2020 12:45:22 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6C91A3F534;
+ Mon,  6 Jan 2020 12:45:22 -0800 (PST)
+Date: Mon, 6 Jan 2020 20:45:20 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Markus Reichl <m.reichl@fivetechno.de>
+Subject: Re: [PATCH 1/5] regulator: mp8859: add driver
+Message-ID: <20200106204520.GD6448@sirena.org.uk>
+References: <20200104153321.6584-1-m.reichl@fivetechno.de>
+ <20200104153321.6584-2-m.reichl@fivetechno.de>
 MIME-Version: 1.0
+In-Reply-To: <20200104153321.6584-2-m.reichl@fivetechno.de>
+X-Cookie: It's later than you think.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_062306_061723_2D49376F 
-X-CRM114-Status: GOOD (  13.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200106_124523_984262_0FF4EC66 
+X-CRM114-Status: UNSURE (   7.53  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,39 +67,58 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-rockchip@lists.infradead.org, Liam Girdwood <lgirdwood@gmail.com>,
+ linux-kernel@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============4338651922691682475=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Robin,
 
-Am Mittwoch, 1. Januar 2020, 14:01:32 CET schrieb Robin Murphy:
-> On 2019-12-31 11:50 am, Heiko Stuebner wrote:
-> > Am Sonntag, 29. Dezember 2019, 18:48:05 CET schrieb Robin Murphy:
-> >> Apparently I wasn't paying enough attention... And nor is the lazy
-> >> test of `cat /dev/lirc0` sufficiently blunder-proof. Oh well, with
-> >> the correct polarity, let's also hook up a keymap now that one for
-> >> the standard Beelink remote has handily appeared.
-> >>
-> >> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> >> ---
-> > 
-> > applied for 5.6
-> 
-> Thanks Heiko - although if you have any other fixes to send for 5.5 do 
-> you think this might be able to sneak in too? Someone mentioned on IRC 
-> that unlike mine, their box wouldn't even generate interrupts with the 
-> polarity backwards.
-
-I've moved the patch over to a shiny new fixes branch for 5.5 now :-)
-
-Heiko
+--===============4338651922691682475==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="iVCmgExH7+hIHJ1A"
+Content-Disposition: inline
 
 
+--iVCmgExH7+hIHJ1A
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Sat, Jan 04, 2020 at 04:32:45PM +0100, Markus Reichl wrote:
+> The MP8859 from Monolithic Power Systems is a single output DC/DC
+> converter. The voltage can be controlled via I2C.
+
+I have patches 1, 2 and 4 with no cover letter or other information
+about dependencies.  What's the story there?
+
+--iVCmgExH7+hIHJ1A
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4TnGAACgkQJNaLcl1U
+h9A46gf/bxiSXCC7UE5lAyiSv1Ty0tmILgIugHIDfpv1kiItsznOj8o8gd3t8Xak
+RfV15p/RE5SEf5Mt9PmQ9HZLYrz57LYhPdIW8mdqPYEBBSLIK6yomYITST5+FrH7
+pc36LC/KBi310B2EzWReP45Tmw+oEWw/CTYHYcto48soSNDBsoaqoqfM59GrLRP5
+2YapCH/IaVzmrxAToY00vPDGeOvkeRIzXV4ewVTedOB/ZDU0tUtKZhDPLzjv6P2+
+lEGdUmRK+TYlP9UIB0i9b4i+Rmvx9LjHpZ3e+HZ3WOIiv6ONfgt2j9AcpgZUraeF
+ExDGyMhZQFn9v/qcJs5Txp0Tdrebzw==
+=5TQL
+-----END PGP SIGNATURE-----
+
+--iVCmgExH7+hIHJ1A--
+
+
+--===============4338651922691682475==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============4338651922691682475==--
+
