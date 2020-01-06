@@ -2,142 +2,59 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0B90130B87
-	for <lists+linux-rockchip@lfdr.de>; Mon,  6 Jan 2020 02:31:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5887130E37
+	for <lists+linux-rockchip@lfdr.de>; Mon,  6 Jan 2020 08:52:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:To:From:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wky8Z/rUctuRjMt2qtN6fdoQgPT0OBuU1GqMCaq/jLQ=; b=dhhWRY4Gpd7+NT
-	aoNp8G19FlrvfT4yh3guZs2m/8aOQ9Mny5BqVk0q5gewOJNw25k4fRm9kKACp6WtHM5nNqOXil8yr
-	v8w1XN2XtY2IQ2ame2CDki5miVImHAz7CItv52A1aPRIvJBYNVlOk7S256bkIjbKIjcySjkg5M5CP
-	FZyXU22382q6hJXMLYUR5CHlM7FzvqysUCng1casBVRPCISokR9e8XLlAcjzjS7q1E2LI4xKFwiug
-	i3njevMZAPbRLrJ10Zo/A3Ox7DTHWMfhYFiPPEaNejeGiF0qQqrSvQqJBGuOAkS5DW3k0ziKkFuzN
-	TDlgWwz7EhMlIO/8z1Aw==;
+	List-Owner; bh=GbQ+k8E6B8iilGEVHcfnPrcUmrFhEJyBq5mjXtdCffw=; b=DPATTCgdlwdui7
+	dL1udfUQIsTbH4syJBAD6T11XHHdMxS2xKjcjEA7va/Te8V39mcYIaj1k+smVsAOuVeRQeNCkBa83
+	jGEipPJDQ31aqVlrrP1edI55CJ1fwJbTc0MUGFOfgMeKqNTzc3NGHEpR6sACdB+nbNiD3AJ9Ur/Sk
+	LYT379S5fTNyjtY+axBdrV1nbhRKG5BhtMfpw2FhFqjCt2oxUBWRNzVjoXq7JDT2psiwisOKd6QHH
+	HBfK2JiRV57FqXIA9YUEcaPflVL+Af+jwbWgD/1jRzJuaueGwpZdAd+/n1NrsjKl1iZa6f7Q0Y5A9
+	1Qlh1+xXvC129H0sOl5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioHF5-0006DB-J8; Mon, 06 Jan 2020 01:31:39 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1ioNBx-0000Wr-0e; Mon, 06 Jan 2020 07:52:49 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioHEx-00067h-U1
- for linux-rockchip@lists.infradead.org; Mon, 06 Jan 2020 01:31:34 +0000
-Received: from epcas1p4.samsung.com (unknown [182.195.41.48])
- by mailout3.samsung.com (KnoxPortal) with ESMTP id
- 20200106013126epoutp036d3851a63c47b0a03b23e5a2f26cb7a6~nKBoHUksr2275222752epoutp03G
- for <linux-rockchip@lists.infradead.org>; Mon,  6 Jan 2020 01:31:26 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
- 20200106013126epoutp036d3851a63c47b0a03b23e5a2f26cb7a6~nKBoHUksr2275222752epoutp03G
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1578274286;
- bh=3VT2jsnbqSwTZB49bAGF93TSEbfGxtSZE2W2NtD5GKg=;
- h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
- b=IFjvS9gWfzR/5IqUANVNWMF6w+8lzxWSC/djOd4S07OGCFjG+9Ew4OOXQdXGeVn1V
- TJzoGVtAixOfvsIJsjEi2BqS12UlrEp+VE4W85yZTYDNhWlMrZ255OpFO1Hi8qjCHJ
- wIUnEhgjzwygKSLWYgj+Zm9WO1F6lqQcd3ulS98o=
-Received: from epsnrtp4.localdomain (unknown [182.195.42.165]) by
- epcas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20200106013126epcas1p139555304382a9b47900ba799655158ca~nKBnieZMJ0763307633epcas1p1f;
- Mon,  6 Jan 2020 01:31:26 +0000 (GMT)
-Received: from epsmges1p2.samsung.com (unknown [182.195.40.157]) by
- epsnrtp4.localdomain (Postfix) with ESMTP id 47rdJW4lWBzMqYkd; Mon,  6 Jan
- 2020 01:31:23 +0000 (GMT)
-Received: from epcas1p4.samsung.com ( [182.195.41.48]) by
- epsmges1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
- 28.CD.48498.BED821E5; Mon,  6 Jan 2020 10:31:23 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas1p4.samsung.com (KnoxPortal) with ESMTPA id
- 20200106013123epcas1p49edbebd5bf248f8814d56240ef670218~nKBk1VO5f0639406394epcas1p4G;
- Mon,  6 Jan 2020 01:31:23 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200106013123epsmtrp10e2268e22f89952b99c6a2893017c241~nKBk0Y2YR2423224232epsmtrp19;
- Mon,  6 Jan 2020 01:31:23 +0000 (GMT)
-X-AuditID: b6c32a36-a55ff7000001bd72-7a-5e128debde22
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- F2.47.10238.AED821E5; Mon,  6 Jan 2020 10:31:22 +0900 (KST)
-Received: from [10.113.221.102] (unknown [10.113.221.102]) by
- epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20200106013122epsmtip1d1087755a7ebce07ebc8ba09f1acd44f~nKBkfaiSH1136211362epsmtip1c;
- Mon,  6 Jan 2020 01:31:22 +0000 (GMT)
-Subject: Re: [PATCH 4/9] PM / devfreq: exynos-bus: Replace deprecated
- 'devfreq' property
-From: Chanwoo Choi <cw00.choi@samsung.com>
-To: Rob Herring <robh@kernel.org>
-Organization: Samsung Electronics
-Message-ID: <76616499-7c19-06b1-461a-28ae17a76c60@samsung.com>
-Date: Mon, 6 Jan 2020 10:38:29 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:59.0) Gecko/20100101
- Thunderbird/59.0
+ id 1ioNBu-0000VH-25
+ for linux-rockchip@lists.infradead.org; Mon, 06 Jan 2020 07:52:47 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 657BB283C0A;
+ Mon,  6 Jan 2020 07:52:38 +0000 (GMT)
+Date: Mon, 6 Jan 2020 08:52:35 +0100
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Mauro Carvalho Chehab <mchehab@kernel.org>, Hans Verkuil
+ <hans.verkuil@cisco.com>, Laurent Pinchart
+ <laurent.pinchart@ideasonboard.com>, Sakari Ailus <sakari.ailus@iki.fi>,
+ linux-media@vger.kernel.org
+Subject: Re: [PATCH v3 6/7] media: rkvdec: Add the rkvdec driver
+Message-ID: <20200106085235.0e639ecb@collabora.com>
+In-Reply-To: <20191213125414.90725-7-boris.brezillon@collabora.com>
+References: <20191213125414.90725-1-boris.brezillon@collabora.com>
+ <20191213125414.90725-7-boris.brezillon@collabora.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <a54e4275-012e-77d9-bdbe-1aab64b5c12b@samsung.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrPJsWRmVeSWpSXmKPExsWy7bCmge7rXqE4g6cf1Szuz2tltJh/5Byr
- xf9Hr1kt+h+/ZrY4f34Du8XZpjfsFivufmS12PT4GqvF5V1z2Cw+9x5htPj04D+zxYzz+5gs
- Fja1sFusPXKX3WLp9YtMFrcbV7BZ/N+zg91B0GPNvDWMHptWdbJ5bF5S77Hx3Q4mj74tqxg9
- tl+bx+zxeZNcAHtUtk1GamJKapFCal5yfkpmXrqtkndwvHO8qZmBoa6hpYW5kkJeYm6qrZKL
- T4CuW2YO0AdKCmWJOaVAoYDE4mIlfTubovzSklSFjPziElul1IKUnALLAr3ixNzi0rx0veT8
- XCtDAwMjU6DChOyMl3+vMBacEqtoWdzC1sC4SKiLkZNDQsBE4uTixcwgtpDADkaJ/4vCuxi5
- gOxPjBKPp/9jhXC+MUq8+t/HBtMxrXk6C0RiL6PE7fO/2SCc94wSm5beYgWpEhaIkth2YBGY
- zSagJbH/xQ2wbhEBRYnfbdPAxjILrGGWaJvymwUkwQ+UuPrjMSOIzStgJ7F1/xmgIg4OFgEV
- idvNFSBhUYEwiZPbWqBKBCVOznzCAlLCKWAvceWUPUiYWUBc4taT+UwQtrzE9rdzmEFWSQic
- YpeYdnITE8QHLhIt++ZBfSMs8er4FnYIW0riZX8blF0tsfLkETaI5g5GiS37L7BCJIwl9i+d
- zASymFlAU2L9Ln2IsKLEzt9zGSEW80m8+9oDdr6EAK9ERxs0qJUlLj+4C3WCpMTi9k62CYxK
- s5B8MwvJC7OQvDALYdkCRpZVjGKpBcW56anFhgVGyJG9iRGcuLXMdjAuOudziFGAg1GJh5ch
- WChOiDWxrLgy9xCjBAezkghvo5tgnBBvSmJlVWpRfnxRaU5q8SFGU2BYT2SWEk3OB2aVvJJ4
- Q1MjY2NjCxNDM1NDQyVxXo4fF2OFBNITS1KzU1MLUotg+pg4OKUaGFXm7eLaacTF9XOK68Lr
- +Xonv0Q8Wfp6rcZW4euJuQbMZlon2qtkfVfqbT3wM/xmeMHE+OjZry+nR39zTfiv+ObgrvRX
- z3WsDbZnWDVaxW5ebdi5f+F5qz2ePwL+bq3bzfBeu/X2hwf7gxeKvlm43n6tRnhUM4ONlzJ7
- PkcYC3PG1HyFE9PidymxFGckGmoxFxUnAgCG0r0r8gMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrJIsWRmVeSWpSXmKPExsWy7bCSnO6rXqE4g7edNhb357UyWsw/co7V
- 4v+j16wW/Y9fM1ucP7+B3eJs0xt2ixV3P7JabHp8jdXi8q45bBafe48wWnx68J/ZYsb5fUwW
- C5ta2C3WHrnLbrH0+kUmi9uNK9gs/u/Zwe4g6LFm3hpGj02rOtk8Ni+p99j4bgeTR9+WVYwe
- 26/NY/b4vEkugD2KyyYlNSezLLVI3y6BK+Pl3yuMBafEKloWt7A1MC4S6mLk5JAQMJGY1jyd
- pYuRi0NIYDejRO/Kn0wQCUmJaRePMncxcgDZwhKHDxeDhIUE3jJK/G8PBLGFBaIkth1YxApi
- swloSex/cYMNxBYRUJT43TaNFWQms8AaZonzPd1QCyYxSax8sxGsih+o6uqPx4wgNq+AncTW
- /WdYQZaxCKhI3G6uAAmLCoRJ7FzymAmiRFDi5MwnLCAlnAL2EldO2YOEmQXUJf7Mu8QMYYtL
- 3HoynwnClpfY/nYO8wRG4VlIumchaZmFpGUWkpYFjCyrGCVTC4pz03OLDQsM81LL9YoTc4tL
- 89L1kvNzNzGCI1hLcwfj5SXxhxgFOBiVeHhXBAjFCbEmlhVX5h5ilOBgVhLhbXQTjBPiTUms
- rEotyo8vKs1JLT7EKM3BoiTO+zTvWKSQQHpiSWp2ampBahFMlomDU6qBUavr0C3B4Cn8z4zv
- Nd+p0fP4fuhobP/17esrHpvwHk+ZPJPVevKKd5oN2reCPDUfzOdvapjLKdlcvTJV4BFba03k
- BRun6aKfbI0+mgWbfWZ4a5v2uzyaeTPbX8fIg/89a132rm5cn+B2xcLpcprVYsdq35x0XkbJ
- QE6m3Q9vRU8VqdnzO3uLEktxRqKhFnNRcSIAgoO6E9wCAAA=
-X-CMS-MailID: 20200106013123epcas1p49edbebd5bf248f8814d56240ef670218
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20191217055106epcas1p11f2bc81d6bb2db3fc4bc257d78c337b9
-References: <20191217055738.28445-1-cw00.choi@samsung.com>
- <CGME20191217055106epcas1p11f2bc81d6bb2db3fc4bc257d78c337b9@epcas1p1.samsung.com>
- <20191217055738.28445-5-cw00.choi@samsung.com> <20191226210119.GA8706@bogus>
- <a54e4275-012e-77d9-bdbe-1aab64b5c12b@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200105_173132_339070_9A1945E0 
-X-CRM114-Status: GOOD (  23.64  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200105_235246_236242_C5BA012C 
+X-CRM114-Status: GOOD (  15.05  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.33 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.33 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -150,93 +67,78 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, heiko@sntech.de,
- linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org,
- a.swigon@samsung.com, krzk@kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, kyungmin.park@samsung.com,
- kgene@kernel.org, myungjoo.ham@samsung.com, leonard.crestez@nxp.com,
- lukasz.luba@arm.com, m.szyprowski@samsung.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
+ Jonas Karlman <jonas@kwiboo.se>, Nicolas Dufresne <nicolas@ndufresne.ca>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ kernel@collabora.com, Ezequiel Garcia <ezequiel@collabora.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Rob,
+On Fri, 13 Dec 2019 13:54:13 +0100
+Boris Brezillon <boris.brezillon@collabora.com> wrote:
 
-Gently Ping.
+> +static int rkvdec_try_capture_fmt(struct file *file, void *priv,
+> +				  struct v4l2_format *f)
+> +{
+> +	struct rkvdec_ctx *ctx = fh_to_rkvdec_ctx(priv);
+> +	const struct rkvdec_coded_fmt_desc *coded_desc;
+> +	u32 fourcc, width, height;
+> +	unsigned int i;
+> +
+> +	/*
+> +	 * The codec context should point to a coded format desc, if the format
+> +	 * on the coded end has not been set yet, it should point to the
+> +	 * default value.
+> +	 */
+> +	coded_desc = ctx->coded_fmt_desc;
+> +	if (WARN_ON(!coded_desc))
+> +		return -EINVAL;
+> +
+> +	fourcc = f->fmt.pix_mp.pixelformat;
+> +	for (i = 0; i < coded_desc->num_decoded_fmts; i++) {
+> +		if (coded_desc->decoded_fmts[i] == fourcc)
+> +			break;
+> +	}
+> +
+> +	if (i == coded_desc->num_decoded_fmts)
+> +		return -EINVAL;
+> +
+> +	/* Save the original width/height before aligning them. */
+> +	width = f->fmt.pix_mp.width;
+> +	height = f->fmt.pix_mp.height;
+> +
+> +	/* Always apply the frmsize constraint of the coded end. */
+> +	v4l2_apply_frmsize_constraints(&f->fmt.pix_mp.width,
+> +				       &f->fmt.pix_mp.height,
+> +				       &coded_desc->frmsize);
+> +
+> +	v4l2_fill_pixfmt_mp(&f->fmt.pix_mp, fourcc, f->fmt.pix_mp.width,
+> +			    f->fmt.pix_mp.height);
+> +
+> +	/*
+> +	 * Now that we have computed sizeimage and bytesperline we can restore
+> +	 * the original width/height (before macro block alignment).
+> +	 */
+> +	f->fmt.pix_mp.width = width;
+> +	f->fmt.pix_mp.height = height;
 
-On 12/27/19 9:09 AM, Chanwoo Choi wrote:
-> On 12/27/19 6:01 AM, Rob Herring wrote:
->> On Tue, Dec 17, 2019 at 02:57:33PM +0900, Chanwoo Choi wrote:
->>> In order to remove the deprecated 'devfreq' property, replace with
->>> new 'exynos,parent-bus' property in order to get the parent devfreq device
->>> in devicetree file instead of 'devfreq' property. But, to guarantee the
->>> backward-compatibility, keep the support 'devfreq' property.
->>>
->>> Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
->>> ---
->>>  .../bindings/devfreq/exynos-bus.txt           | 16 +++++++--------
->>>  drivers/devfreq/exynos-bus.c                  | 20 ++++++++++++-------
->>>  2 files changed, 21 insertions(+), 15 deletions(-)
->>>
->>> diff --git a/Documentation/devicetree/bindings/devfreq/exynos-bus.txt b/Documentation/devicetree/bindings/devfreq/exynos-bus.txt
->>> index e71f752cc18f..c948cee01124 100644
->>> --- a/Documentation/devicetree/bindings/devfreq/exynos-bus.txt
->>> +++ b/Documentation/devicetree/bindings/devfreq/exynos-bus.txt
->>> @@ -45,7 +45,7 @@ Required properties only for parent bus device:
->>>    of buses.
->>>  
->>>  Required properties only for passive bus device:
->>> -- devfreq: the parent bus device.
->>> +- exynos,parent-bus: the parent bus device.
->>
->> If you are going to do something new, why not use the interconnect 
->> binding here?
-> 
-> As I knew, interconnect make the data path among multiple nodes
-> and set the average and peak bandwidth to the specific data path.
-> 
-> It means that some data will be flowed from node_a to node_d
-> or the reverse way because each node has the tightly coupled
-> dependency for data flow.
-> 
-> 	node_a <-> node_b <-> node_c <-> node_d
-> 
-> 
-> On the other hand, exynos-bus.c driver is not related to 'data path'.
-> Each bus just need to control the their own frequency and voltage.
-> But, share the power line (regulator) between exynos-bus device
-> even if there are no any dependency of data flow.
-> 
-> 'exynos,parent-bus' property just indicate the specific
-> devfreq device(parent bus device) which controls
-> the shared power line(regulator) in order to prevent
-> the h/w problem due to the wrong pair of frequency and voltage.
-> 
-> 'exynos,parent-bus' property is only used to catch
-> the change timing of shared power line.
-> 
-> 
-> And,
-> as you commented, there are some data path among the exynos-bus
-> devices for the display h/w as following:
-> 
-> 	bus_display -> bus_leftbus -> bus_dmc
-> 
-> In order to make the data path between bus devices,
-> interconnect binding is required. This approach[1] was posted.
-> [1] https://patchwork.kernel.org/cover/11305265/
-> - [RFC,v3,0/7] PM / devfreq: Simple QoS for exynos-bus using interconnect
-> 
+Looks like restoring the original width/height was a bad idea (it
+breaks the odd_size tests of the VP9 testsuite [1]). I'll adjust the
+test in validate_dec_params() [2] to align the ctrl width/height params
+on a superblock size (64 pixels) instead.
 
-Are there any other commentss?
+> +
+> +	f->fmt.pix_mp.field = V4L2_FIELD_NONE;
+> +
+> +	return 0;
+> +}
 
-
--- 
-Best Regards,
-Chanwoo Choi
-Samsung Electronics
+[1]https://storage.googleapis.com/downloads.webmproject.org/vp9/decoder-test-streams/Profile_0_8bit.zip
+[2]https://patchwork.kernel.org/patch/11290603/
 
 _______________________________________________
 Linux-rockchip mailing list
