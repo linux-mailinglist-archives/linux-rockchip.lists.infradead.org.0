@@ -2,81 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF95B131AC3
-	for <lists+linux-rockchip@lfdr.de>; Mon,  6 Jan 2020 22:54:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46C94131B4B
+	for <lists+linux-rockchip@lfdr.de>; Mon,  6 Jan 2020 23:26:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OIS7AugYcuHQX7yfWjdxDEEKIH+YCadokA1dsq+FFbE=; b=GwKQaTs9pl2GKu
-	4vmL7cZpJu19EvgjC3CGZNAwJYu8AD6GFfxMRClziUYfDVlzFo4ygXN00Nym18xFy2OM95tdPSA3G
-	dLZorUjkP/PLRqQET0rR1BjHkab7fXO/RcFmLZ7Qf7usimuJXB1lpSakE6xC181bBN6NjI+BmpIwN
-	O8QC41ypHVJ/zfxkxacjD6Tl0NeOXBGqVg7AAIn3ZvjdUC0oIr3EBADaQ5ctIRMJoyccte2iQx9hx
-	sf0hDUbpWfsQIQ9fz+uddAy84kOeVsw50aNIkml/IGoNDp3tN22zhjM/J0VMSQzrK/kzZNxXk+9O2
-	+lQw6PHIsWsONP6xZ8EA==;
+	List-Owner; bh=+it8T3b24N8sBzrcQjKQFXPvz08IyyjB6t0swi0Dnks=; b=tAQJBQkEtqpNl8
+	cvuoNWD5YJhXSmyiuujvS7qdPOIdPk0Nhb0pwbxzdUxuXfzKCAieihbw5Y32mJ1xJo1/b7RyxX+IL
+	hXfFOkf8QvQC4U1TNH9HJjE3BBArfLtd3i0p+Hw3O9VsseeX99lTaVgEyueWNe7dtC8/CdDvbEMus
+	Qq0guONPOIpv0Pmm9VZkcgJF5aQL1oPEAfK1D3fbfbAJe5Ns5h7kaeILAO39fwsftdXLlSuId9eS5
+	8Ljh6f6RhAgIVlsKmc41C9g11JukzkrWBt5cJLsMbqJwEjVoENnUynvc8CxkARMCxy1dYw0zrzYzo
+	D/adUHtWGcR8Miqh0j1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioaJz-0005Jo-QW; Mon, 06 Jan 2020 21:53:59 +0000
-Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
+	id 1ioaov-0001fJ-0e; Mon, 06 Jan 2020 22:25:57 +0000
+Received: from mail-vk1-xa44.google.com ([2607:f8b0:4864:20::a44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioaJw-0005IY-3C
- for linux-rockchip@lists.infradead.org; Mon, 06 Jan 2020 21:53:57 +0000
-Received: by mail-ua1-x942.google.com with SMTP id 1so17714455uao.1
- for <linux-rockchip@lists.infradead.org>; Mon, 06 Jan 2020 13:53:55 -0800 (PST)
+ id 1ioaop-0001aV-LT
+ for linux-rockchip@lists.infradead.org; Mon, 06 Jan 2020 22:25:53 +0000
+Received: by mail-vk1-xa44.google.com with SMTP id i78so12909362vke.0
+ for <linux-rockchip@lists.infradead.org>; Mon, 06 Jan 2020 14:25:51 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=faKcBWRoBE2UlX7M22RMok2qsMWbJzCtmjkdjEhBadM=;
- b=KvRZwXcjreqaUPQ8TQS+8WGmX5JXgVz7Aa9cosBD9uIqp73RCLi8IaddTYv+Bb9+h7
- GG8wLl5227sVwjU/+vyr0VolH7MIFadz+ccCHeWYZfBVvNx1dQAAE2/51+k1bF87UHvw
- VrZJS+oLe9imzSxxt+SDyBB4xP9x9UU2clpSE=
+ :cc; bh=eV/1akoxP7P3ABmGBw2S16HDMJ8eaLjqFUo1f5/sSLU=;
+ b=Nyopb1GgYHuYm4R4qPjbmQiRz9pqSDRwa0NMCNwzi97cVj5VOB0eC1RQIKPkLo7RAY
+ 3Yfg8Sb5Xzxc2VGfuD3QSRolbSggv0XZfau1AluQ0W6H97XjPI2HXUl3iqL/kDoH8Uf3
+ zHQkdzZ2Dg3uxiLBFDyXjtSHyOlzhm3/QNAgk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=faKcBWRoBE2UlX7M22RMok2qsMWbJzCtmjkdjEhBadM=;
- b=qayJW7P1GnYIDvIgAU9viAP5NdNwOXD1Ble+UHyJ845Qd4qlVEdH5u7QAs3SID5K2i
- DP+ygDyxVZzw5idZQA/8CqmXc0sGfOuItjEeFTYnThYe6tl5xGYoTqLS0r66/Tb2LKUG
- frl7emyKyFSt2mfzfs8DmedqjMQeyywmZEwq2TcvlrqaA488C50lfn3XKjebxYXG82Ky
- 9Rz4M28maVG4Q/CMe9se6rEMDf2VDZgFFxJ1iNMY7Q14PJaHPuKrOUvd0ewEVLiR+sY1
- Wc0/+EkfikK/S2mKu/sYLd51HsHugZYhyLkTlHc5GIEDE1HMuIqa0ItAvcNM2jqgVGRp
- n9jA==
-X-Gm-Message-State: APjAAAWp8rxkus/OmUTLFDp3cBAk4PziacOmrU1UEh/eeWiw5YnIslLs
- lRz+V/2n+wQk0BCBVmE/bBDIDJ/JleE=
-X-Google-Smtp-Source: APXvYqyo+0hf6fvq9wmEjB2Amjfuj5a7yXtcAAHYjz+sAL5QR0gMWmsCSfkG/D75SC2ApeAHIFweIQ==
-X-Received: by 2002:ab0:728b:: with SMTP id w11mr43758337uao.1.1578347634022; 
- Mon, 06 Jan 2020 13:53:54 -0800 (PST)
-Received: from mail-vk1-f177.google.com (mail-vk1-f177.google.com.
- [209.85.221.177])
- by smtp.gmail.com with ESMTPSA id v85sm18571689vkd.8.2020.01.06.13.53.53
+ bh=eV/1akoxP7P3ABmGBw2S16HDMJ8eaLjqFUo1f5/sSLU=;
+ b=Pfigz6mgwFjZtKlFVgmSYxIE7cF89fDh57bF/WKXCILnJPXyvV4dZJc4j89O0LF3+N
+ QVoojkbMXJyt1ammk3O+WY/PdS7H/wpe3ShH1/2mgFuduwD3toKFOohmNnvuRD1pFltO
+ RIOoOw4qejyh67OSyBnI1fd1AMd+mA2/OdIiWjsUX1YX/Z9peBgqFuWBSdVFFu0DA/Cy
+ zhafS+DgLmnTRjKPX81yOQ+8sPeJSlMIHXerr/DRYhzioWLjrVUFc2YDc6/SBxmX8KSo
+ 2NUa1AuCt82/jRrdXouz6xV8VIiVcD+8nrLbN72i3WMAuZaOPvH3mlQ5IhOK0hKGc6Im
+ IMVA==
+X-Gm-Message-State: APjAAAW5oFJIgzcBwEqZ990A+T+OzPOce6+Il8PDX63HIFrhIDZPlD/r
+ lsLqBK6UsAUI2Db4hfXsiINd9zIO1L4=
+X-Google-Smtp-Source: APXvYqzMW/NJpjvkwzQEcSLKgz/qWkdyzjbREShkCUCXgOluHltArHBJ46Hu7E4/9vbxoym8u+yR2g==
+X-Received: by 2002:ac5:cc7a:: with SMTP id w26mr60000738vkm.64.1578349550163; 
+ Mon, 06 Jan 2020 14:25:50 -0800 (PST)
+Received: from mail-vs1-f46.google.com (mail-vs1-f46.google.com.
+ [209.85.217.46])
+ by smtp.gmail.com with ESMTPSA id m80sm18633770vka.26.2020.01.06.14.25.49
  for <linux-rockchip@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 06 Jan 2020 13:53:53 -0800 (PST)
-Received: by mail-vk1-f177.google.com with SMTP id u6so12889445vkn.13
- for <linux-rockchip@lists.infradead.org>; Mon, 06 Jan 2020 13:53:53 -0800 (PST)
-X-Received: by 2002:a1f:2197:: with SMTP id h145mr55322972vkh.75.1578347632921; 
- Mon, 06 Jan 2020 13:53:52 -0800 (PST)
+ Mon, 06 Jan 2020 14:25:49 -0800 (PST)
+Received: by mail-vs1-f46.google.com with SMTP id u14so32672169vsu.3
+ for <linux-rockchip@lists.infradead.org>; Mon, 06 Jan 2020 14:25:49 -0800 (PST)
+X-Received: by 2002:a67:8704:: with SMTP id j4mr55143272vsd.106.1578349548941; 
+ Mon, 06 Jan 2020 14:25:48 -0800 (PST)
 MIME-Version: 1.0
-References: <20200106135142.1.I3f99ac8399a564c88ff48ae6290cc691b47c16ae@changeid>
-In-Reply-To: <20200106135142.1.I3f99ac8399a564c88ff48ae6290cc691b47c16ae@changeid>
+References: <HE1PR06MB40118544456FC5461F49DDE8AC2E0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+In-Reply-To: <HE1PR06MB40118544456FC5461F49DDE8AC2E0@HE1PR06MB4011.eurprd06.prod.outlook.com>
 From: Doug Anderson <dianders@chromium.org>
-Date: Mon, 6 Jan 2020 13:53:41 -0800
-X-Gmail-Original-Message-ID: <CAD=FV=WcpjiVQ6zNN8fO4ZUCTr6GZkcPXjMW1hq8fvif6_QBpw@mail.gmail.com>
-Message-ID: <CAD=FV=WcpjiVQ6zNN8fO4ZUCTr6GZkcPXjMW1hq8fvif6_QBpw@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: rockchip: Use ABI name for write protect pin on
- veyron fievel/tiger
-To: Matthias Kaehlcke <mka@chromium.org>
+Date: Mon, 6 Jan 2020 14:25:37 -0800
+X-Gmail-Original-Message-ID: <CAD=FV=XbmwC1H446Og9juqYBR66ozjNVw9SDa2WWz=sKQg_imw@mail.gmail.com>
+Message-ID: <CAD=FV=XbmwC1H446Og9juqYBR66ozjNVw9SDa2WWz=sKQg_imw@mail.gmail.com>
+Subject: Re: [PATCH for 5.5] phy/rockchip: inno-hdmi: round clock rate down to
+ closest 1000 Hz
+To: Jonas Karlman <jonas@kwiboo.se>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_135356_132541_37302E60 
-X-CRM114-Status: GOOD (  12.58  )
+X-CRM114-CacheID: sfid-20200106_142551_740402_C908F07C 
+X-CRM114-Status: GOOD (  11.45  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a44 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -100,13 +100,13 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- LKML <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Heiko Stuebner <heiko@sntech.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Sean Paul <seanpaul@chromium.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
@@ -114,19 +114,30 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 Hi,
 
-On Mon, Jan 6, 2020 at 1:52 PM Matthias Kaehlcke <mka@chromium.org> wrote:
+On Mon, Dec 23, 2019 at 12:49 AM Jonas Karlman <jonas@kwiboo.se> wrote:
 >
-> The flash write protect pin is currently named 'FW_WP_AP', which is
-> how the signal is called in the schematics. The Chrome OS ABI
-> requires the pin to be named 'AP_FLASH_WP_L', which is also how
-> it is called on all other veyron devices. Rename the pin to match
-> the ABI.
+> Commit 287422a95fe2 ("drm/rockchip: Round up _before_ giving to the clock framework")
+> changed what rate clk_round_rate() is called with, an additional 999 Hz
+> added to the requsted mode clock. This has caused a regression on RK3328
+> and presumably also on RK3228 because the inno-hdmi-phy clock requires an
+> exact match of the requested rate in the pre pll config table.
 >
-> Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+> When an exact match is not found the parent clock rate (24MHz) is returned
+> to the clk_round_rate() caller. This cause wrong pixel clock to be used and
+> result in no-signal when configuring a mode on RK3328.
+>
+> Fix this by rounding the rate down to closest 1000 Hz in round_rate func,
+> this allows an exact match to be found in pre pll config table.
+>
+> Fixes: 287422a95fe2 ("drm/rockchip: Round up _before_ giving to the clock framework")
+> Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
 > ---
->
->  arch/arm/boot/dts/rk3288-veyron-fievel.dts | 6 +++++-
->  1 file changed, 5 insertions(+), 1 deletion(-)
+>  drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 4 ++++
+>  1 file changed, 4 insertions(+)
+
+Sorry for the regression and thanks for the fix.  It seems sane to me
+since you're just matching against your own table and all the rates
+there are all in kHz.
 
 Reviewed-by: Douglas Anderson <dianders@chromium.org>
 
