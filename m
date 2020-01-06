@@ -2,108 +2,67 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B2B61319E2
-	for <lists+linux-rockchip@lfdr.de>; Mon,  6 Jan 2020 21:52:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D460B1319E8
+	for <lists+linux-rockchip@lfdr.de>; Mon,  6 Jan 2020 21:53:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cjZ3uBBVkdNTgTaGr9ObBZER6tvi5pbC410Mlxwu708=; b=YmS2Tp05/yMCeC
-	SxhHJEUdnRcM4DKgTDDrx01VQPt9ZzFTV/bSj2OncH+WBmrI4cIzDkZsgYLur+HNdEHLFVAY9td6A
-	/t8+u/cfaeEjAcEeNm3FVqJCQpJRQj4w0kHXKIcfihxMqxBlqRWXKhiYE0bKw7hFskC38CHviMo3h
-	fJf+C0Z9deKcXpdr/HAQ0stVTVdvCZCZAyWZrXWF1jxLi5TSacklAe4qUn5dNCYvaEuQoiU24LS89
-	az/JM7z+Evx4glI8J4nxx6zvqSaniumcJkTfNWWKfOO7lA8/sCnJiMsM1tJ/u/+lMKPvFL50a1zgs
-	YCU6QQyTq8N5K88v7OdQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vEPD7TMf1zk4IQGdEjwiFy2p0hT89xVH72AIqXBSqWA=; b=KJ3jvWh1uoaZTK
+	ZhrP1pxGNgb5BW9sAbnJtvduPz9afOW89a2PSgL/14GQqeWFJXJH/ZaKyH8fv1Z3k99A29RXlc5mu
+	uj83vMCgFy6H/z0sb9KWE2B7pD3vonUwD+qvmqfWcNVz1zC6MLb16566Q00a+Q0KkrEnsZZogWS14
+	lrAIFOdXmwbT3YaAIxEiHtY9dtdaqjI6avGV3l/WOv+GA/adVz39TbcXLqVqCgoqMhJG8HzcTAkkq
+	u2oVrkZdPEvv/YUtlm5FP92Oi4Jmm+pf/sVjohONohuebuS4shMd/iJiHe7M8bAjtvVzBqDNHTAYV
+	qHnU0sMFFaw+UhRV23jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioZM3-0006pe-4y; Mon, 06 Jan 2020 20:52:03 +0000
-Received: from mail-oln040092070077.outbound.protection.outlook.com
- ([40.92.70.77] helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1ioZN8-0007zU-Pq; Mon, 06 Jan 2020 20:53:10 +0000
+Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioZKA-0004BM-TO; Mon, 06 Jan 2020 20:50:09 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=SDfhMFlR8ZEsP5RilCbA78abQPwFFvoS/J03re+B5JPWxcHOTjTsAo65qYFjWGseG5BqlFMphDcAYnxpK9BVMpe6DqWxtJLNKqIK+znsBWebkYR8UUflLtI7IPKyHmbX2XXj11FJEOYd0P8kFtHK63gWKTNYiNWBLhTU/twfNwsgVWnqgtpeKRSScgQp+hbVpMhxiPlGJRWYdp+BBXAHsZEGDRkKpH1+aTCT261prnDsRTmvN8LXQkoTE0xHHVwi87Vp4TZbgQhpPYmNfRafxbZG0+Tyqg3N9vum+yd+pdQ1kV3O1IqYktiLHtVIa+MdN9MmrwoMaIYKlHnooLZwKw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=xfEjjT7phf3IpQQ6r2FMJF1tn4dQx+ocNDmmTLUdkhQ=;
- b=Z0bC9jJk647k2YzM0lQ/by13y8CvSvxZTjWkbX2n6JyyS4l2k+9o8lmq1bLRSJHOJleyM6qFUuh/3O8VaomU1WMU05OieQvTqompy4lcHraE7axsy41YrMy3onR66reO5jl2IyFAAMz9W5kcTKAI8tr7bNnmFycrVuXfcIydYNgHE85F8yA3UIoGWwYJEHtiazkKMX472broC57naSicHQ+cfyxifHa9lUKb2bG/XRZiehYKqVZzJr+oFnpHJx5Q/9zGcV72f7rpEKucnVGSRF+zsZMTqLr/I/CW+zUXOwvykYHyyqjAjCsIP4QFY8SgyWMkZv2tim14YN3HYlLFlw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-Received: from VE1EUR03FT047.eop-EUR03.prod.protection.outlook.com
- (10.152.18.60) by VE1EUR03HT148.eop-EUR03.prod.protection.outlook.com
- (10.152.19.183) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2602.11; Mon, 6 Jan
- 2020 20:50:02 +0000
-Received: from HE1PR06MB4011.eurprd06.prod.outlook.com (10.152.18.51) by
- VE1EUR03FT047.mail.protection.outlook.com (10.152.19.218) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2602.11 via Frontend Transport; Mon, 6 Jan 2020 20:50:02 +0000
-Received: from HE1PR06MB4011.eurprd06.prod.outlook.com
- ([fe80::b957:6908:9f62:c28b]) by HE1PR06MB4011.eurprd06.prod.outlook.com
- ([fe80::b957:6908:9f62:c28b%5]) with mapi id 15.20.2602.015; Mon, 6 Jan 2020
- 20:50:02 +0000
-Received: from bionic.localdomain (98.128.173.80) by
- AM6PR02CA0026.eurprd02.prod.outlook.com (2603:10a6:20b:6e::39) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2602.12 via Frontend Transport; Mon, 6 Jan 2020 20:50:01 +0000
-From: Jonas Karlman <jonas@kwiboo.se>
-To: Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>
-Subject: [PATCH 15/15] phy/rockchip: inno-hdmi: Support more pre-pll
- configuration
-Thread-Topic: [PATCH 15/15] phy/rockchip: inno-hdmi: Support more pre-pll
- configuration
-Thread-Index: AQHVxNLeb9bmNBh5w0iliQOavTNhAg==
-Date: Mon, 6 Jan 2020 20:50:02 +0000
-Message-ID: <HE1PR06MB4011666845128FD3C89F9DACAC3C0@HE1PR06MB4011.eurprd06.prod.outlook.com>
-References: <HE1PR06MB4011254424EDB4485617513CAC3C0@HE1PR06MB4011.eurprd06.prod.outlook.com>
- <20200106204951.6060-1-jonas@kwiboo.se>
-In-Reply-To: <20200106204951.6060-1-jonas@kwiboo.se>
-Accept-Language: sv-SE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM6PR02CA0026.eurprd02.prod.outlook.com
- (2603:10a6:20b:6e::39) To HE1PR06MB4011.eurprd06.prod.outlook.com
- (2603:10a6:7:9c::32)
-x-incomingtopheadermarker: OriginalChecksum:6EDC33D1958C96123F65A2177CF009137D3C9B7876641AD7AF808D72AEA5A4D2;
- UpperCasedChecksum:52F85FFF0539CB37C2B48EB4C776416EB630F8BCE560206D222E6E49B389AE6E;
- SizeAsReceived:8238; Count:51
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.17.1
-x-tmn: [+PrFFl+3onmP2d8JW05MrrI8Nfl1TC5s]
-x-microsoft-original-message-id: <20200106204951.6060-3-jonas@kwiboo.se>
-x-ms-publictraffictype: Email
-x-incomingheadercount: 51
-x-eopattributedmessage: 0
-x-ms-office365-filtering-correlation-id: 6ead8de7-c625-440a-1abc-08d792ea0048
-x-ms-traffictypediagnostic: VE1EUR03HT148:
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: FPcR7xmjBK1YDXnmjDwmcsmDUfq5GFoqw2cWyBLTQI4dmIRS+aImXYArCC1dbW5Q0UB9/xGbSNCBSjlWzU4fnyseFIs5VLOBoAfTGcli7Ie0S4sGAMnofqbE7fLOs2DAto+dfj1DB3uaal8E7sppe8NzgbltuhhA4GbExMoO5wID5W14F2BDYeCbSEaaw5EH
-x-ms-exchange-transport-forked: True
+ id 1ioZMJ-0007BI-D6
+ for linux-rockchip@lists.infradead.org; Mon, 06 Jan 2020 20:52:21 +0000
+Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
+ (helo=hermes.fivetechno.de); authenticated
+ by wp126.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ id 1ioZMD-0005xN-TP; Mon, 06 Jan 2020 21:52:13 +0100
+X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
+ linuxbbg.five-lan.de
+Received: from dell2.five-lan.de (pD9E89450.dip0.t-ipconnect.de
+ [217.232.148.80]) (authenticated bits=0)
+ by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
+ 006KqCX5031411
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
+ Mon, 6 Jan 2020 21:52:13 +0100
+Subject: Re: [PATCH 1/5] regulator: mp8859: add driver
+To: Mark Brown <broonie@kernel.org>
+References: <20200104153321.6584-1-m.reichl@fivetechno.de>
+ <20200104153321.6584-2-m.reichl@fivetechno.de>
+ <20200106204520.GD6448@sirena.org.uk>
+From: Markus Reichl <m.reichl@fivetechno.de>
+Message-ID: <1216f846-0a3b-70f0-70b9-49f8fa90720d@fivetechno.de>
+Date: Mon, 6 Jan 2020 21:52:12 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6ead8de7-c625-440a-1abc-08d792ea0048
-X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Jan 2020 20:50:02.6399 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Internet
-X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1EUR03HT148
+In-Reply-To: <20200106204520.GD6448@sirena.org.uk>
+Content-Language: de-DE
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1578343939;
+ d7e446e1; 
+X-HE-SMSGID: 1ioZMD-0005xN-TP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_125006_991096_9B651239 
-X-CRM114-Status: GOOD (  12.56  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200106_125219_599240_D96BEDAB 
+X-CRM114-Status: UNSURE (   8.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.70.77 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -116,134 +75,30 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Algea Cao <algea.cao@rock-chips.com>,
- Jonas Karlman <jonas@kwiboo.se>, David Airlie <airlied@linux.ie>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Zheng Yang <zhengyang@rock-chips.com>
+Cc: linux-rockchip@lists.infradead.org, Liam Girdwood <lgirdwood@gmail.com>,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Algea Cao <algea.cao@rock-chips.com>
+Am 06.01.20 um 21:45 schrieb Mark Brown:
+> On Sat, Jan 04, 2020 at 04:32:45PM +0100, Markus Reichl wrote:
+>> The MP8859 from Monolithic Power Systems is a single output DC/DC
+>> converter. The voltage can be controlled via I2C.
+> 
+> I have patches 1, 2 and 4 with no cover letter or other information
+> about dependencies.  What's the story there?
+> 
+I used scripts/get_maintainer.pl on the single patches, will resend to 
+a combined list.
 
-Adding the following freq cfg in 8-bit and 10-bit color depth:
-
-{
-  40000000,  65000000,  71000000,  83500000, 85750000,
-  88750000, 108000000, 119000000, 162000000
-}
-
-New freq has been validated by quantumdata 980.
-
-For some freq which can't be got by only using integer freq div,
-frac freq div is needed, Such as 88.75Mhz 10-bit. But The actual
-freq is different from the target freq, We must try to narrow
-the gap between them. RK322X only support integer freq div.
-
-The VCO of pre-PLL must be more than 2Ghz, otherwise PLL may be
-unlocked.
-
-Signed-off-by: Algea Cao <algea.cao@rock-chips.com>
-Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
----
- drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 74 ++++++++++++-------
- 1 file changed, 49 insertions(+), 25 deletions(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-index 3719309ad0d0..bb8bdf5e3301 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-@@ -291,32 +291,56 @@ struct inno_hdmi_phy_drv_data {
- 	const struct phy_config		*phy_cfg_table;
- };
- 
-+/*
-+ * If only using integer freq div can't get frequency we want, frac
-+ * freq div is needed. For example, pclk 88.75 Mhz and tmdsclk
-+ * 110.9375 Mhz must use frac div 0xF00000. The actual frequency is different
-+ * from the target frequency. Such as the tmds clock 110.9375 Mhz,
-+ * the actual tmds clock we get is 110.93719 Mhz. It is important
-+ * to note that RK322X platforms do not support frac div.
-+ */
- static const struct pre_pll_config pre_pll_cfg_table[] = {
--	{ 27000000,  27000000, 1,  90, 3, 2, 2, 10, 3, 3, 4, 0, 0},
--	{ 27000000,  33750000, 1,  90, 1, 3, 3, 10, 3, 3, 4, 0, 0},
--	{ 40000000,  40000000, 1,  80, 2, 2, 2, 12, 2, 2, 2, 0, 0},
--	{ 59341000,  59341000, 1,  98, 3, 1, 2,  1, 3, 3, 4, 0, 0xE6AE6B},
--	{ 59400000,  59400000, 1,  99, 3, 1, 1,  1, 3, 3, 4, 0, 0},
--	{ 59341000,  74176250, 1,  98, 0, 3, 3,  1, 3, 3, 4, 0, 0xE6AE6B},
--	{ 59400000,  74250000, 1,  99, 1, 2, 2,  1, 3, 3, 4, 0, 0},
--	{ 74176000,  74176000, 1,  98, 1, 2, 2,  1, 2, 3, 4, 0, 0xE6AE6B},
--	{ 74250000,  74250000, 1,  99, 1, 2, 2,  1, 2, 3, 4, 0, 0},
--	{ 74176000,  92720000, 4, 494, 1, 2, 2,  1, 3, 3, 4, 0, 0x816817},
--	{ 74250000,  92812500, 4, 495, 1, 2, 2,  1, 3, 3, 4, 0, 0},
--	{148352000, 148352000, 1,  98, 1, 1, 1,  1, 2, 2, 2, 0, 0xE6AE6B},
--	{148500000, 148500000, 1,  99, 1, 1, 1,  1, 2, 2, 2, 0, 0},
--	{148352000, 185440000, 4, 494, 0, 2, 2,  1, 3, 2, 2, 0, 0x816817},
--	{148500000, 185625000, 4, 495, 0, 2, 2,  1, 3, 2, 2, 0, 0},
--	{296703000, 296703000, 1,  98, 0, 1, 1,  1, 0, 2, 2, 0, 0xE6AE6B},
--	{297000000, 297000000, 1,  99, 0, 1, 1,  1, 0, 2, 2, 0, 0},
--	{296703000, 370878750, 4, 494, 1, 2, 0,  1, 3, 1, 1, 0, 0x816817},
--	{297000000, 371250000, 4, 495, 1, 2, 0,  1, 3, 1, 1, 0, 0},
--	{593407000, 296703500, 1,  98, 0, 1, 1,  1, 0, 2, 1, 0, 0xE6AE6B},
--	{594000000, 297000000, 1,  99, 0, 1, 1,  1, 0, 2, 1, 0, 0},
--	{593407000, 370879375, 4, 494, 1, 2, 0,  1, 3, 1, 1, 1, 0x816817},
--	{594000000, 371250000, 4, 495, 1, 2, 0,  1, 3, 1, 1, 1, 0},
--	{593407000, 593407000, 1,  98, 0, 2, 0,  1, 0, 1, 1, 0, 0xE6AE6B},
--	{594000000, 594000000, 1,  99, 0, 2, 0,  1, 0, 1, 1, 0, 0},
-+	{ 27000000,  27000000, 1,  90, 3, 2, 2, 10, 3, 3,  4, 0, 0},
-+	{ 27000000,  33750000, 1,  90, 1, 3, 3, 10, 3, 3,  4, 0, 0},
-+	{ 40000000,  40000000, 1,  80, 2, 2, 2, 12, 2, 2,  2, 0, 0},
-+	{ 40000000,  50000000, 1, 100, 2, 2, 2,  1, 0, 0, 15, 0, 0},
-+	{ 59341000,  59341000, 1,  98, 3, 1, 2,  1, 3, 3,  4, 0, 0xE6AE6B},
-+	{ 59400000,  59400000, 1,  99, 3, 1, 1,  1, 3, 3,  4, 0, 0},
-+	{ 59341000,  74176250, 1,  98, 0, 3, 3,  1, 3, 3,  4, 0, 0xE6AE6B},
-+	{ 59400000,  74250000, 1,  99, 1, 2, 2,  1, 3, 3,  4, 0, 0},
-+	{ 65000000,  65000000, 1, 130, 2, 2, 2,  1, 0, 0, 12, 0, 0},
-+	{ 65000000,  81250000, 3, 325, 0, 3, 3,  1, 0, 0, 10, 0, 0},
-+	{ 71000000,  71000000, 3, 284, 0, 3, 3,  1, 0, 0,  8, 0, 0},
-+	{ 71000000,  88750000, 3, 355, 0, 3, 3,  1, 0, 0, 10, 0, 0},
-+	{ 74176000,  74176000, 1,  98, 1, 2, 2,  1, 2, 3,  4, 0, 0xE6AE6B},
-+	{ 74250000,  74250000, 1,  99, 1, 2, 2,  1, 2, 3,  4, 0, 0},
-+	{ 74176000,  92720000, 4, 494, 1, 2, 2,  1, 3, 3,  4, 0, 0x816817},
-+	{ 74250000,  92812500, 4, 495, 1, 2, 2,  1, 3, 3,  4, 0, 0},
-+	{ 83500000,  83500000, 2, 167, 2, 1, 1,  1, 0, 0,  6, 0, 0},
-+	{ 83500000, 104375000, 1, 104, 2, 1, 1,  1, 1, 0,  5, 0, 0x600000},
-+	{ 85750000,  85750000, 3, 343, 0, 3, 3,  1, 0, 0,  8, 0, 0},
-+	{ 88750000,  88750000, 3, 355, 0, 3, 3,  1, 0, 0,  8, 0, 0},
-+	{ 88750000, 110937500, 1, 110, 2, 1, 1,  1, 1, 0,  5, 0, 0xF00000},
-+	{108000000, 108000000, 1,  90, 3, 0, 0,  1, 0, 0,  5, 0, 0},
-+	{108000000, 135000000, 1,  90, 0, 2, 2,  1, 0, 0,  5, 0, 0},
-+	{119000000, 119000000, 1, 119, 2, 1, 1,  1, 0, 0,  6, 0, 0},
-+	{119000000, 148750000, 1,  99, 0, 2, 2,  1, 0, 0,  5, 0, 0x2AAAAA},
-+	{148352000, 148352000, 1,  98, 1, 1, 1,  1, 2, 2,  2, 0, 0xE6AE6B},
-+	{148500000, 148500000, 1,  99, 1, 1, 1,  1, 2, 2,  2, 0, 0},
-+	{148352000, 185440000, 4, 494, 0, 2, 2,  1, 3, 2,  2, 0, 0x816817},
-+	{148500000, 185625000, 4, 495, 0, 2, 2,  1, 3, 2,  2, 0, 0},
-+	{162000000, 162000000, 1, 108, 0, 2, 2,  1, 0, 0,  4, 0, 0},
-+	{162000000, 202500000, 1, 135, 0, 2, 2,  1, 0, 0,  5, 0, 0},
-+	{296703000, 296703000, 1,  98, 0, 1, 1,  1, 0, 2,  2, 0, 0xE6AE6B},
-+	{297000000, 297000000, 1,  99, 0, 1, 1,  1, 0, 2,  2, 0, 0},
-+	{296703000, 370878750, 4, 494, 1, 2, 0,  1, 3, 1,  1, 0, 0x816817},
-+	{297000000, 371250000, 4, 495, 1, 2, 0,  1, 3, 1,  1, 0, 0},
-+	{593407000, 296703500, 1,  98, 0, 1, 1,  1, 0, 2,  1, 0, 0xE6AE6B},
-+	{594000000, 297000000, 1,  99, 0, 1, 1,  1, 0, 2,  1, 0, 0},
-+	{593407000, 370879375, 4, 494, 1, 2, 0,  1, 3, 1,  1, 1, 0x816817},
-+	{594000000, 371250000, 4, 495, 1, 2, 0,  1, 3, 1,  1, 1, 0},
-+	{593407000, 593407000, 1,  98, 0, 2, 0,  1, 0, 1,  1, 0, 0xE6AE6B},
-+	{594000000, 594000000, 1,  99, 0, 2, 0,  1, 0, 1,  1, 0, 0},
- 	{ /* sentinel */ }
- };
- 
--- 
-2.17.1
-
+> 
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
