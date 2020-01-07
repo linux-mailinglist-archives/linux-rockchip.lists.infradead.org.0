@@ -2,61 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1959F132B00
-	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Jan 2020 17:20:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A51E1132DE1
+	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Jan 2020 19:01:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5N8XNmY+q+4xDkD0ZhATScF/MG/HmUj2ZodajKnHzfM=; b=gGn8S9UP9bWYlT
-	XsC9ydJQVXaZCshxBtX/nlEwHpZpcGsgD405sME1UTsWOh8wPPoXCKSgCdMd+zVmo2lJzUCTruf06
-	OO8ofMi1JGevKQJXnGdc88TuIIMjaxmn311M2wOBw1e32cdh/zrAcawzYzvRas+055MNNFBjzNMON
-	uCSXbGfhz1qn0o2FfFSnni0rSmE8NRM7gkje9BG7k24KnKEoLCGfDypGWUo3SOBAc34/2Xyh8DKiD
-	6mhbDVMrykJyhMu51PvrahKP1U7lNFQWb6eiM5OJYIm00BijBnLhhhNkM1lUDLvqX5M949h94T65/
-	pj5QboB6/RKMuo0oy9fg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Rgbwqv1I+sWUQNa+dd8Oogfa5BERWM2gKGQd/3ijJdc=; b=kA6
+	rKiIxHkdp4t2aDPliCYb9ZS8MSl3vuoqofVLqjwnS6SxP1eMDAHTzJAJKOU8630DuuEhC+Gwe5soG
+	bPu+Ie6dohUModSspwBjOkirFmbCJehOwS9HLhqhsX7Z+yH22D/670XFt47Nx270Al1D9x77tvxyC
+	FM3a1S/6c+E6Yqtcw15qvTQ4FOyp8ImC4MLurP2yEYGdr6qChgxoZhN1QRcPzqnsqu+FwniWDoF/w
+	7TjbqiQFLNnBZQ7iVLX1Nhzt1dinTFq/46CevnaPDItWb1RzL58V1wd8TqLwgqnZ5d9n3NfZQJ7Ie
+	9MCT7iL/f5+oBJLTtGCQU11u6fk7lTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioraK-0006OJ-I7; Tue, 07 Jan 2020 16:20:00 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1iotA5-0003w6-8X; Tue, 07 Jan 2020 18:01:01 +0000
+Received: from mail-io1-xd31.google.com ([2607:f8b0:4864:20::d31])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioraB-0006Gw-12; Tue, 07 Jan 2020 16:19:53 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id C028352F;
- Tue,  7 Jan 2020 17:19:42 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1578413982;
- bh=ePBq3gwBEwF1GIYrfuJj8013Yt+Uie+hLIRudyo/dw0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=HkNn+Mclmn9Y3BBpXeUWX3gJmCnnzXIOv+0DeFaMGiwyssNdHA2IwGKzCWkwrEKiP
- AaAQjjEG/kOgNVsDF/kSzXUyTC4YsnBMNRk1cKSCCKx2DjRPfDROz4JrISCAx1ze+N
- ih/no+WPtqkoYyg3FWcEcX/vYVjkD7n7F9weFwwc=
-Date: Tue, 7 Jan 2020 18:19:32 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Ezequiel Garcia <ezequiel@collabora.com>
-Subject: Re: [PATCH v12 08/11] media: staging: dt-bindings: add Rockchip ISP1
- yaml bindings
-Message-ID: <20200107161932.GJ4871@pendragon.ideasonboard.com>
-References: <20191227200116.2612137-1-helen.koike@collabora.com>
- <20191227200116.2612137-9-helen.koike@collabora.com>
- <20200106235957.GA28230@pendragon.ideasonboard.com>
- <a465c895f944b5cb0b63bfab2f8642fc81f1576e.camel@collabora.com>
+ id 1iot9w-0003ui-4l
+ for linux-rockchip@lists.infradead.org; Tue, 07 Jan 2020 18:00:58 +0000
+Received: by mail-io1-xd31.google.com with SMTP id n11so222702iom.9
+ for <linux-rockchip@lists.infradead.org>; Tue, 07 Jan 2020 10:00:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=z+bvT+/ytTL9caOk5nOSZNgNPK5IXu1waPag5ni3RY4=;
+ b=RbkorQp7Bk9GzvnQ3IytFbbLruz3TkfpGbrhRrPVtbM8+b6CbkYyTGswCLP6z/zbre
+ Nx4ep+JnqjJGAaQriJ/9YWsabLjfbybEKvwrRFQbvgbe7TutqLlJS8fNOXMbwxVHHS0i
+ g+e9O25Z6MHKpq6KQeBr0Pmh8ucQs07dez5rTBGivwQRhwki6ZMPieS66j1jcsM6P2xZ
+ e0rIxpP77ybYi8lpZjACsXDnmlwYuI68bUwBgZoDRZuNqvCE7RkPSB2GTT2fl3HRzmQZ
+ Km/8zTeeU9eFji0NfE8EVStH+yQzZjBfMC45xhEe36ROG+Q+NPmtC3zK6Zp/sfWVAumh
+ nagA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=z+bvT+/ytTL9caOk5nOSZNgNPK5IXu1waPag5ni3RY4=;
+ b=M2WzdLtF9eeZdiA18ugDj1LT8Wcdr8gNrBetcvuMXv+I1O8zi6Nyt3YF7fgLSN7BEv
+ /EtAEEbGyuOoZYnT/uCp3gKCgDYmhSgUx7MAA/8oPJvsrGPm/X1u5L3Xhn1yoP9VmekJ
+ umsKK5PRW8h2FU3EtG0EANkzLvJAcN8VTavSpMrsgL8xqaECtYtCr2oL9SkSC+/HhMBL
+ 1JiCKsbj0PcxXR+2dkiyYakj6Y2k7Oh7lrfKFtAWr1vo9bhJ2rUOMsTowQuEvYn7Nn5G
+ qyoSz4BVcT9p8d0dhQ8+cDdbmMmcbmxlwUbOIs/thEavdLvQN0WxB353fonGHOuAhpO7
+ +KEg==
+X-Gm-Message-State: APjAAAUW326EF0RU+uOC0EYQzDsObGQ/zaA1JA9rmumQzwuD2LD/qXM2
+ 0LYAwgrPi5F+Nf63GNzsq+IG0m3vehsrzAM0Zy8=
+X-Google-Smtp-Source: APXvYqxIj+1Bk9V+Rh0oBa0IhD+RRl3drp1/OaGgV+JZLeWgsfQWw345vaV54vIj550/goE0nWmEyYkbkI04TO07XT4=
+X-Received: by 2002:a5e:9617:: with SMTP id a23mr93671ioq.243.1578420049588;
+ Tue, 07 Jan 2020 10:00:49 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <a465c895f944b5cb0b63bfab2f8642fc81f1576e.camel@collabora.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Tue, 7 Jan 2020 23:30:37 +0530
+Message-ID: <CANAwSgRXd=w87CKO4WQz7ZRAk+un7ctTPCi5XSa7GfNDhjy0YQ@mail.gmail.com>
+Subject: rk3399 rockchip pcie power domain is saying unsupported
+To: Heiko Stuebner <heiko@sntech.de>, Robin Murphy <robin.murphy@arm.com>, 
+ Linux Kernel <linux-kernel@vger.kernel.org>, linux-rockchip@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_081951_363776_81216B39 
-X-CRM114-Status: GOOD (  27.51  )
+X-CRM114-CacheID: sfid-20200107_100053_060090_6ADC67DA 
+X-CRM114-Status: UNSURE (   6.54  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d31 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (linux.amoon[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -76,277 +91,54 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
- kernel@collabora.com, heiko@sntech.de, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, tfiga@chromium.org,
- linux-rockchip@lists.infradead.org, Helen Koike <helen.koike@collabora.com>,
- robh+dt@kernel.org, hans.verkuil@cisco.com,
- linux-arm-kernel@lists.infradead.org, sakari.ailus@linux.intel.com,
- joacim.zetterling@gmail.com, mchehab@kernel.org, andrey.konovalov@linaro.org,
- jacob-chen@iotwrt.com, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Ezequiel,
+Hi All,
 
-On Tue, Jan 07, 2020 at 10:45:15AM -0300, Ezequiel Garcia wrote:
-> On Tue, 2020-01-07 at 01:59 +0200, Laurent Pinchart wrote:
-> > On Fri, Dec 27, 2019 at 05:01:13PM -0300, Helen Koike wrote:
-> > > Add yaml DT bindings for Rockchip ISP1.
-> > > 
-> > > This was tested and verified with:
-> > > mv drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml Documentation/devicetree/bindings/media/
-> > > make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
-> > > make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
-> > > 
-> > > Signed-off-by: Helen Koike <helen.koike@collabora.com>
-> > > 
-> > > ---
-> > > 
-> > > Changes in v12:
-> > > - The commit replaces the following commit in previous series named
-> > > media: staging: dt-bindings: Document the Rockchip ISP1 bindings
-> > > This new patch adds yaml binding and was verified with
-> > > make dtbs_check and make dt_binding_check
-> > > 
-> > > Changes in v11:
-> > > - add clock-names values
-> > > 
-> > > Changes in v10:
-> > > - unsquash
-> > > 
-> > > Changes in v9:
-> > > - squash
-> > > - move to staging
-> > > 
-> > > Changes in v8:
-> > > - fix title division style
-> > > 
-> > > Changes in v7:
-> > > - update document with new design and tested example
-> > > 
-> > >  .../bindings/media/rockchip-isp1.yaml         | 193 ++++++++++++++++++
-> > >  1 file changed, 193 insertions(+)
-> > >  create mode 100644 drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
-> > > 
-> > > diff --git a/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
-> > > b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
-> > > new file mode 100644
-> > > index 000000000000..4d1b2c67a4cd
-> > > --- /dev/null
-> > > +++ b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
-> > > @@ -0,0 +1,193 @@
-> > > +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/media/rockchip-isp1.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: Rockchip SoC Image Signal Processing unit v1
-> > > +
-> > > +maintainers:
-> > > +  - Helen Koike <helen.koike@collabora.com>
-> > > +
-> > > +description: |
-> > > +  Rockchip ISP1 is the Camera interface for the Rockchip series of SoCs
-> > > +  which contains image processing, scaling, and compression funcitons.
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    const: rockchip,rk3399-cif-isp
-> > > +
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +
-> > > +  interrupts:
-> > > +    maxItems: 1
-> > > +
-> > > +  iommus:
-> > > +    maxItems: 1
-> > > +
-> > > +  power-domains:
-> > > +    maxItems: 1
-> > > +
-> > > +  phys:
-> > > +    maxItems: 1
-> > > +    description: phandle for the PHY port
-> > 
-> > According to http://opensource.rock-chips.com/wiki_Camera_driver, RK3388
-> > can route either of DPHY RX0 or DPHY RX1 to the single ISP instance,
-> > while RK3399 has one PHY per ISP instance, with DPHY RX1 being shared
-> > with the display. Have you given any thought on how we will support this
-> > in a backward-compatible way in the DT bindings ?
-> 
-> As discussed on IRC, we could have multiple PHYs specifiers
-> in the phy property. The ISP would have multiple ports,
-> with one PHY per port.
-> 
-> > > +
-> > > +  phy-names:
-> > > +    const: dphy
-> > > +
-> > > +  clocks:
-> > > +    items:
-> > > +      - description: ISP clock
-> > > +      - description: ISP aclk clock
-> > > +      - description: ISP aclk wrapper clock
-> > > +      - description: ISP hclk clock
-> > > +      - description: ISP hclk wrapper clock
-> > 
-> > I wonder what aclk and hclk stand far. In any case those names match the
-> > CRU documentation, so that seems fine.
-> 
-> IIRC, traditionally, Rockchip calls aclk to the AXI clock,
-> and hclk to the AHB. We'll improve this description.
-> 
-> > > +
-> > > +  clock-names:
-> > > +    items:
-> > > +      - const: clk_isp
-> > > +      - const: aclk_isp
-> > > +      - const: aclk_isp_wrap
-> > > +      - const: hclk_isp
-> > > +      - const: hclk_isp_wrap
-> > > +
-> 
-> I wonder if we should better amend the names as well.
+On my rock960 I want to add power domain feature for pcie node using
+following patch. [0] https://patchwork.kernel.org/patch/9322549/
+I also tried to add some more cru to see below
+but the power domain summary shows unsupported
 
-We could, but they match the names in the CRU documentation, so I think
-they're fine.
+# cat /sys/kernel/debug/pm_genpd/pm_genpd_summary
+...
+pd_sdioaudio                    off-0
+    /devices/platform/fe310000.dwmmc                    suspended
+    /devices/platform/ff8a0000.i2s                      suspended
+pd_perihp                       on
+    /devices/platform/fe380000.usb                      unsupported
+    /devices/platform/fe3c0000.usb                      unsupported
+    /devices/platform/fe3a0000.usb                      suspended
+    /devices/platform/fe3e0000.usb                      suspended
+    /devices/platform/f8000000.pcie                     unsupported
+pd_sd                           on
+    /devices/platform/fe320000.dwmmc                    active
+pd_gmac                         off-0
+...
+can any one share more inputs.
+----
+@@ -1049,6 +1056,19 @@
+                                         <&cru SCLK_SDMMC>;
+                                pm_qos = <&qos_sd>;
+                        };
++                       pd_perihp@RK3399_PD_PERIHP {
++                               reg = <RK3399_PD_PERIHP>;
++                               clocks = <&cru ACLK_PERIHP>,
++                                        <&cru SCLK_PCIEPHY_REF>,
++                                        <&cru ACLK_PERF_PCIE>,
++                                        <&cru ACLK_PCIE>,
++                                        <&cru PCLK_PCIE>,
++                                        <&cru SCLK_PCIE_PM>;
++                               pm_qos = <&qos_perihp>,
++                                        <&qos_pcie>,
++                                        <&qos_usb_host0>,
++                                        <&qos_usb_host1>;
++                       };
 
-> > > +  # See ./video-interfaces.txt for details
-> > > +  ports:
-> > > +    type: object
-> > > +    additionalProperties: false
-> > > +
-> > > +    properties:
-> > > +      "#address-cells":
-> > > +        const: 1
-> > > +
-> > > +      "#size-cells":
-> > > +        const: 0
-> > > +
-> > > +      port@0:
-> > > +        type: object
-> > > +        additionalProperties: false
-> > 
-> > I think this should have a description to tell what this port
-> > corresponds to.
-> 
-> OK.
-> 
-> > > +
-> > > +        properties:
-> > > +          "#address-cells":
-> > > +            const: 1
-> > > +
-> > > +          "#size-cells":
-> > > +            const: 0
-> > > +
-> > > +          reg:
-> > > +            const: 0
-> > > +            description: port identifier.
-> > 
-> > Here and for the endpoint below the description is probably not needed.
-> 
-> OK.
-> 
-> > > +
-> > > +        patternProperties:
-> > > +          endpoint:
-> > > +            type: object
-> > > +            additionalProperties: false
-> > > +
-> > > +            properties:
-> > > +              reg:
-> > > +                maxItems: 1
-> > > +                description: endpoint identifier.
-> > > +
-> > > +              data-lanes:
-> > > +                minItems: 1
-> > > +                maxItems: 4
-> > > +
-> > > +              remote-endpoint: true
-> > > +
-> > > +    required:
-> > > +      - port@0
-> > > +
-> > > +required:
-> > > +  - compatible
-> > > +  - interrupts
-> > > +  - clocks
-> > > +  - clock-names
-> > > +  - power-domains
-> > > +  - iommus
-> > > +  - phys
-> > > +  - phy-names
-> > > +  - ports
-> > > +
-> > > +additionalProperties: false
-> > > +
-> > > +examples:
-> > > +  - |
-> > > +
-> > > +    #include <dt-bindings/clock/rk3399-cru.h>
-> > > +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> > > +    #include <dt-bindings/power/rk3399-power.h>
-> > > +
-> > > +    parent0: parent@0 {
-> > > +        #address-cells = <2>;
-> > > +        #size-cells = <2>;
-> > > +
-> > > +        isp0: isp0@ff910000 {
-> > > +            compatible = "rockchip,rk3399-cif-isp";
-> > > +            reg = <0x0 0xff910000 0x0 0x4000>;
-> > > +            interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH 0>;
-> > > +            clocks = <&cru SCLK_ISP0>,
-> > > +                     <&cru ACLK_ISP0>, <&cru ACLK_ISP0_WRAPPER>,
-> > > +                     <&cru HCLK_ISP0>, <&cru HCLK_ISP0_WRAPPER>;
-> > > +            clock-names = "clk_isp",
-> > > +                          "aclk_isp", "aclk_isp_wrap",
-> > > +                          "hclk_isp", "hclk_isp_wrap";
-> > > +            power-domains = <&power RK3399_PD_ISP0>;
-> > > +            iommus = <&isp0_mmu>;
-> > > +            phys = <&dphy>;
-> > > +            phy-names = "dphy";
-> > > +
-> > > +            ports {
-> > > +                #address-cells = <1>;
-> > > +                #size-cells = <0>;
-> > > +
-> > > +                port@0 {
-> > > +                    #address-cells = <1>;
-> > > +                    #size-cells = <0>;
-> > > +                    reg = <0>;
-> > > +
-> > > +                    mipi_in_wcam: endpoint@0 {
-> > > +                        reg = <0>;
-> > > +                        remote-endpoint = <&wcam_out>;
-> > > +                        data-lanes = <1 2>;
-> > > +                    };
-> > > +
-> > > +                    mipi_in_ucam: endpoint@1 {
-> > > +                        reg = <1>;
-> > > +                        remote-endpoint = <&ucam_out>;
-> > > +                        data-lanes = <1>;
-> > > +                    };
-> > 
-> > Are those two cameras connected to the same CSI-2 lines with at most one
-> > sensor out of reset ?
-> 
-> Indeed, these are two cameras connected to the same DPHY,
-> and only one can work at a time.
-> 
-> > With the above small issues addressed,
-> > 
-> > Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-
--- 
-Regards,
-
-Laurent Pinchart
+-Anand
 
 _______________________________________________
 Linux-rockchip mailing list
