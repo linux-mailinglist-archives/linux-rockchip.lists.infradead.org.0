@@ -2,53 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A772D132777
-	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Jan 2020 14:20:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FE14132805
+	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Jan 2020 14:45:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TEZNZq+T5IkZFXgtQS3lQO3urR63QymH1dru9eYEZmg=; b=aexPAy+reEUxzE
-	2Ul5OfhQEKyB6eRQ71qZDW3OJOnmqDcvqr56KJVyZqsossLT3C+wA/15gW0lOM5GWgz/NqWXheDNc
-	EEvf0VVKdppqrHEWkDy4I9DXh3VlLqpY0VZ/KwF5FKQhWbGDQwvZJVT6aPYzniSHPHHZgXkQM6Btl
-	8kbYzIrvoX0CCNFUtr0VGocHYc1x/bVg3ao/23HJuw0Gs/83Jybi3hcnPV9PZCX69i7RxgC96qBpO
-	wgJARr2Uz4A9krCbQR4gc5rEIXZ5hFtENeIPyCtzJtleCZk4bx5bPHUzxXVzGEW491Miuq8LEc7IQ
-	oc43B9e67UQmCKUnN+5Q==;
+	List-Owner; bh=XAcgjmhaxgc8aRbvpUD8mqUILkgNmu/xj8ygejy47MY=; b=NoLxSld11mNInN
+	+0OM4cj0YcRMjLHM0+RVkCE34arNBjT6iSZ8bHY463nAw63PrN4TkdFxZNV52k8C/3bEELp/HQYOq
+	2yzAyjDQxRh3auF52r6OwCPHuLNJ+vwMQuBzwVBJfALhAKSNXQQjVaj2aVa3H7fxYqPcL4kjunNPS
+	O7GahIccHNumrcS8ppUeLSeo4ZRPXoRg9RsUSGsGjmDRkJyvu0yLAHkqWrdTWn0wqIABmWb/UZZT2
+	p1b8JWlLtQ2rYtcEvsfQ0f4ArCLvy4370MxHdOBIyPth2XgZfwZEHxYaAgrSdwFCb79YE8cGCnWo5
+	v1KjTb7jwR14W9sSMPJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioomk-00087l-6q; Tue, 07 Jan 2020 13:20:38 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1iopB2-0001Mm-De; Tue, 07 Jan 2020 13:45:44 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iooma-00080X-Si; Tue, 07 Jan 2020 13:20:31 +0000
+ id 1iopAr-0001Fy-BD; Tue, 07 Jan 2020 13:45:35 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 75A0B2909E6
-Message-ID: <657de953782be2514849bc8bd12a3fbcb6794427.camel@collabora.com>
-Subject: Re: [PATCH v12 09/11] media: staging: dt-bindings: add Rockchip
- MIPI RX D-PHY yaml bindings
+ (Authenticated sender: ezequiel) with ESMTPSA id 4E9E82751AC
+Message-ID: <a465c895f944b5cb0b63bfab2f8642fc81f1576e.camel@collabora.com>
+Subject: Re: [PATCH v12 08/11] media: staging: dt-bindings: add Rockchip
+ ISP1 yaml bindings
 From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>, Laurent Pinchart
- <laurent.pinchart@ideasonboard.com>
-Date: Tue, 07 Jan 2020 10:20:10 -0300
-In-Reply-To: <2549505.MsbA2le1sL@diego>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>, Helen Koike
+ <helen.koike@collabora.com>
+Date: Tue, 07 Jan 2020 10:45:15 -0300
+In-Reply-To: <20200106235957.GA28230@pendragon.ideasonboard.com>
 References: <20191227200116.2612137-1-helen.koike@collabora.com>
- <cfd5156f09358a428d0c40cfcd17d688e0225f2b.camel@collabora.com>
- <20200107023721.GG22189@pendragon.ideasonboard.com>
- <2549505.MsbA2le1sL@diego>
+ <20191227200116.2612137-9-helen.koike@collabora.com>
+ <20200106235957.GA28230@pendragon.ideasonboard.com>
 Organization: Collabora
 User-Agent: Evolution 3.34.1-2 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_052029_217465_A8B8BDBD 
-X-CRM114-Status: GOOD (  25.70  )
+X-CRM114-CacheID: sfid-20200107_054533_647028_0DA20436 
+X-CRM114-Status: GOOD (  26.87  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -66,104 +63,280 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
- kernel@collabora.com, gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
- tfiga@chromium.org, linux-rockchip@lists.infradead.org,
- Helen Koike <helen.koike@collabora.com>, robh+dt@kernel.org,
- hans.verkuil@cisco.com, linux-arm-kernel@lists.infradead.org,
- sakari.ailus@linux.intel.com, joacim.zetterling@gmail.com, mchehab@kernel.org,
- andrey.konovalov@linaro.org, jacob-chen@iotwrt.com,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ kernel@collabora.com, heiko@sntech.de, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, hans.verkuil@cisco.com,
+ linux-arm-kernel@lists.infradead.org, sakari.ailus@linux.intel.com,
+ joacim.zetterling@gmail.com, mchehab@kernel.org, andrey.konovalov@linaro.org,
+ jacob-chen@iotwrt.com, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sIExhdXJlbnQsCgpPbiBUdWUsIDIwMjAtMDEtMDcgYXQgMTA6MjggKzAxMDAsIEhl
-aWtvIFN0w7xibmVyIHdyb3RlOgo+IEFtIERpZW5zdGFnLCA3LiBKYW51YXIgMjAyMCwgMDM6Mzc6
-MjEgQ0VUIHNjaHJpZWIgTGF1cmVudCBQaW5jaGFydDoKPiA+IE9uIE1vbiwgSmFuIDA2LCAyMDIw
-IGF0IDExOjA2OjEyUE0gLTAzMDAsIEV6ZXF1aWVsIEdhcmNpYSB3cm90ZToKPiA+ID4gT24gVHVl
-LCAyMDIwLTAxLTA3IGF0IDAyOjEwICswMjAwLCBMYXVyZW50IFBpbmNoYXJ0IHdyb3RlOgo+ID4g
-PiA+IEhpIEhlbGVuLAo+ID4gPiA+IAo+ID4gPiA+IFRoYW5rIHlvdSBmb3IgdGhlIHBhdGNoLgo+
-ID4gPiA+IAo+ID4gPiA+IE9uIEZyaSwgRGVjIDI3LCAyMDE5IGF0IDA1OjAxOjE0UE0gLTAzMDAs
-IEhlbGVuIEtvaWtlIHdyb3RlOgo+ID4gPiA+ID4gQWRkIHlhbWwgRFQgYmluZGluZ3MgZm9yIFJv
-Y2tjaGlwIE1JUEkgRC1QSFkgUlgKPiA+ID4gPiA+IAo+ID4gPiA+ID4gVGhpcyB3YXMgdGVzdGVk
-IGFuZCB2ZXJpZmllZCB3aXRoOgo+ID4gPiA+ID4gbXYgZHJpdmVycy9zdGFnaW5nL21lZGlhL3Bo
-eS1yb2NrY2hpcC1kcGh5L0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvcm9j
-a2NoaXAtbWlwaS0KPiA+ID4gPiA+IGRwaHkueWFtbCAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
-L2JpbmRpbmdzL3BoeS8KPiA+ID4gPiA+IG1ha2UgZHRfYmluZGluZ19jaGVjayBEVF9TQ0hFTUFf
-RklMRVM9RG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9yb2NrY2hpcC1taXBp
-LWRwaHkueWFtbAo+ID4gPiA+ID4gbWFrZSBkdGJzX2NoZWNrIERUX1NDSEVNQV9GSUxFUz1Eb2N1
-bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L3JvY2tjaGlwLW1pcGktZHBoeS55YW1s
-Cj4gPiA+ID4gPiAKPiA+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IEhlbGVuIEtvaWtlIDxoZWxlbi5r
-b2lrZUBjb2xsYWJvcmEuY29tPgo+ID4gPiA+ID4gCj4gPiA+ID4gPiAtLS0KPiA+ID4gPiA+IAo+
-ID4gPiA+ID4gQ2hhbmdlcyBpbiB2MTI6Cj4gPiA+ID4gPiAtIFRoZSBjb21taXQgcmVwbGFjZXMg
-dGhlIGZvbGxvd2luZyBjb21taXQgaW4gcHJldmlvdXMgc2VyaWVzIG5hbWVkCj4gPiA+ID4gPiBt
-ZWRpYTogc3RhZ2luZzogZHQtYmluZGluZ3M6IERvY3VtZW50IHRoZSBSb2NrY2hpcCBNSVBJIFJY
-IEQtUEhZIGJpbmRpbmdzCj4gPiA+ID4gPiBUaGlzIG5ldyBwYXRjaCBhZGRzIHlhbWwgYmluZGlu
-ZyBhbmQgd2FzIHZlcmlmaWVkIHdpdGgKPiA+ID4gPiA+IG1ha2UgZHRic19jaGVjayBhbmQgbWFr
-ZSBkdF9iaW5kaW5nX2NoZWNrCj4gPiA+ID4gPiAKPiA+ID4gPiA+IENoYW5nZXMgaW4gdjExOiBO
-b25lCj4gPiA+ID4gPiBDaGFuZ2VzIGluIHYxMDoKPiA+ID4gPiA+IC0gdW5zcXVhc2gKPiA+ID4g
-PiA+IAo+ID4gPiA+ID4gQ2hhbmdlcyBpbiB2OToKPiA+ID4gPiA+IC0gZml4IHRpdGxlIGRpdmlz
-aW9uIHN0eWxlCj4gPiA+ID4gPiAtIHNxdWFzaAo+ID4gPiA+ID4gLSBtb3ZlIHRvIHN0YWdpbmcK
-PiA+ID4gPiA+IAo+ID4gPiA+ID4gQ2hhbmdlcyBpbiB2ODogTm9uZQo+ID4gPiA+ID4gQ2hhbmdl
-cyBpbiB2NzoKPiA+ID4gPiA+IC0gdXBkYXRlZCBkb2Mgd2l0aCBuZXcgZGVzaWduIGFuZCB0ZXN0
-ZWQgZXhhbXBsZQo+ID4gPiA+ID4gCj4gPiA+ID4gPiAgLi4uL2JpbmRpbmdzL3BoeS9yb2NrY2hp
-cC1taXBpLWRwaHkueWFtbCAgICAgIHwgNzUgKysrKysrKysrKysrKysrKysrKwo+ID4gPiA+ID4g
-IDEgZmlsZSBjaGFuZ2VkLCA3NSBpbnNlcnRpb25zKCspCj4gPiA+ID4gPiAgY3JlYXRlIG1vZGUg
-MTAwNjQ0IGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9waHktcm9ja2NoaXAtZHBoeS9Eb2N1bWVudGF0
-aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L3JvY2tjaGlwLW1pcGktZHBoeS55YW1sCj4gPiA+
-ID4gPiAKPiA+ID4gPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3N0YWdpbmcvbWVkaWEvcGh5LXJv
-Y2tjaGlwLWRwaHkvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9yb2NrY2hp
-cC1taXBpLWRwaHkueWFtbAo+ID4gPiA+ID4gYi9kcml2ZXJzL3N0YWdpbmcvbWVkaWEvcGh5LQo+
-ID4gPiA+ID4gcm9ja2NoaXAtZHBoeS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
-cGh5L3JvY2tjaGlwLW1pcGktZHBoeS55YW1sCj4gPiA+ID4gPiBuZXcgZmlsZSBtb2RlIDEwMDY0
-NAo+ID4gPiA+ID4gaW5kZXggMDAwMDAwMDAwMDAwLi5hZjk3ZjFiM2UwMDUKPiA+ID4gPiA+IC0t
-LSAvZGV2L251bGwKPiA+ID4gPiA+ICsrKyBiL2RyaXZlcnMvc3RhZ2luZy9tZWRpYS9waHktcm9j
-a2NoaXAtZHBoeS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L3JvY2tjaGlw
-LW1pcGktZHBoeS55YW1sCj4gPiA+ID4gPiBAQCAtMCwwICsxLDc1IEBACj4gPiA+ID4gPiArIyBT
-UERYLUxpY2Vuc2UtSWRlbnRpZmllcjogKEdQTC0yLjArIE9SIE1JVCkKPiA+ID4gPiA+ICslWUFN
-TCAxLjIKPiA+ID4gPiA+ICstLS0KPiA+ID4gPiA+ICskaWQ6IGh0dHA6Ly9kZXZpY2V0cmVlLm9y
-Zy9zY2hlbWFzL3BoeS9yb2NrY2hpcC1taXBpLWRwaHkueWFtbCMKPiA+ID4gPiA+ICskc2NoZW1h
-OiBodHRwOi8vZGV2aWNldHJlZS5vcmcvbWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKPiA+ID4gPiA+
-ICsKPiA+ID4gPiA+ICt0aXRsZTogUm9ja2NoaXAgU29DIE1JUEkgUlgwIEQtUEhZIERldmljZSBU
-cmVlIEJpbmRpbmdzCj4gPiA+ID4gCj4gPiA+ID4gU2hvdWxkIHRoaXMgYmUgcy9SWDAvUlgvID8g
-T3IgZG8geW91IGV4cGVjdCBkaWZmZXJlbnQgYmluZGluZ3MgZm9yIFJYMSA/Cj4gPiA+IAo+ID4g
-PiBUaGUgZHJpdmVyIGN1cnJlbnRseSBvbmx5IHN1cHBvcnRzIFJYMCwgYnV0IEkgdGhpbmsgeW91
-IGFyZSByaWdodCwKPiA+ID4gaXQgc2hvdWxkIHNheSBSWCBoZXJlLiBUaGlzIGJpbmRpbmcgY291
-bGQgYmUgZXh0ZW5kZWQgZm9yIFJYMS4KPiA+ID4gCj4gPiA+ID4gTG9va2luZyBhdCB0aGUgUEhZ
-IGRyaXZlciwgaXQgc2VlbXMgdG8gaGFuZGxlIGFsbCBQSFlzIHdpdGggYSBzaW5nbGUKPiA+ID4g
-PiBzdHJ1Y3QgZGV2aWNlLiBTaG91bGQgd2UgdGh1cyB1c2UgI3BoeS1jZWxscyA9IDwxPiB0byBz
-ZWxlY3QgdGhlIFBIWSA/Cj4gPiA+IAo+ID4gPiBJIGFtIG5vdCBmb2xsb3dpbmcgdGhpcy4gVGhl
-IGRyaXZlciBoYW5kbGVzIGp1c3Qgb25lIFBIWS4gRWFjaCBQSFkKPiA+ID4gc2hvdWxkIGhhdmUg
-aXRzIG93biBub2RlLgo+ID4gCj4gPiBMb29raW5nIGF0IHRoZSByZWdpc3RlcnMsIGl0IHNlZW1z
-IHRoYXQgdGhlIGRpZmZlcmVudCBQSFlzIGFyZQo+ID4gaW50ZXJ0d2luZWQgYW5kIHdlIHdvdWxk
-IGNvdWxkIGhhdmUgdHJvdWJsZSBoYW5kbGluZyB0aGUgZGlmZmVyZW50IFBIWXMKPiA+IHdpdGgg
-ZGlmZmVyZW50IERUIG5vZGVzIGFuZCB0aHVzIHN0cnVjdCBkZXZpY2UgaW5zdGFuY2VzLgo+IAo+
-IEkgaGF2ZSB0byBjb25mZXNzIHRvIG5vdCBmb2xsb3dpbmcgX0FMTF8gb2YgdGhlIHRocmVhZHMs
-IHNvIG1heSBzYXkKPiBzb21ldGhpbmcgc3R1cGlkLCBidXQgSSBkb24ndCB0aGluayB0aGUgUEhZ
-cyBhcmUgaW50ZXJ0d2luZWQgc28gbXVjaC4KPiAKPiBXaGVyZSBSWDAgaXMgY29udHJvbGxlZCBm
-cm9tIHRoZSAiR2VuZXJhbCBSZWdpc3RlciBGaWxlcyIgYWxvbmUKPiBbcmVnaXN0ZXIgZHVtcGlu
-ZyBncm91bmQgZm9yIHNvYyBkZXNpZ25lcnNdLCB0aGUgVFgxUlgxLXBoeQo+IGFjdHVhbGx5IGdl
-dHMgY29udHJvbGxlZCBmcm9tIGluc2lkZSB0aGUgZHNpMSByZWdpc3RlciBhcmVhIGl0IHNlZW1z
-Lgo+IAo+IFNvIGluIG15IHByZXZpb3VzIChzdGlsbCB1bnN1Y2Vzc2Z1bCkgdGVzdHMsIEkgd2Fz
-IHJvbGxpbmcgd2l0aCBzb21ldGhpbmcgbGlrZQo+IGh0dHBzOi8vZ2l0aHViLmNvbS9tbWluZC9s
-aW51eC1yb2NrY2hpcC9jb21taXQvZTBkNGIwMzk3NmQyYWFiODVhOGMxNjMwYmU5MzdlYTAwM2I1
-ZGY4OAo+IAo+IFdpdGggdGhlIGFjdHVhbCAibG9naWMiIHBpY2tlZCBmcm9tIHRoZSB2ZW5kb3Ig
-a2VybmVsLCB0aGF0IGp1c3QgZG91YmxlLQo+IG1hcHMgdGhlIGRzaTEtcmVnaXN0ZXJzIGluIGJv
-dGggZHNpIGFuZCBkcGh5IGRyaXZlciwgd2hpY2ggd2FzIHN0cmFuZ2UuCj4gCj4gCgpEZXNjcmli
-aW5nIGVhY2ggUEhZIGluIGl0cyBvd24gZGV2aWNlIG5vZGUgKGFzIHdlIGN1cnJlbnRseSBkbykK
-cmVzdWx0cyBpbjoKCiAgICAgICAgbWlwaV9kcGh5X3R4MXJ4MTogbWlwaS1kcGh5LXR4MXJ4MUBm
-Zjk2ODAwMCB7CiAgICAgICAgICAgICAgICBjb21wYXRpYmxlID0gInJvY2tjaGlwLHJrMzM5OS1t
-aXBpLWRwaHkiOwogICAgICAgICAgICAgICAgcmVnID0gPDB4MCAweGZmOTY4MDAwIDB4MCAweDgw
-MDA+OwogICAgICAgICAgICAgICAgcm9ja2NoaXAsZ3JmID0gPCZncmY+OwogICAgICAgIH07Cgog
-ICAgICAgIGdyZjogc3lzY29uQGZmNzcwMDAwIHsKICAgICAgICAgICAgICAgIG1pcGlfZHBoeV9y
-eDA6IG1pcGktZHBoeS1yeDAgewogICAgICAgICAgICAgICAgICAgICAgICBjb21wYXRpYmxlID0g
-InJvY2tjaGlwLHJrMzM5OS1taXBpLWRwaHkiOwogICAgICAgICAgICAgICAgfTsKICAgICAgICB9
-OwoKV2hpY2ggaXMgbWlsZGx5IHVnbHksIGFzIGl0IHVzZXMgdHdvIG1lY2hhbmlzbSB0byBkZXNj
-cmliZQp0aGUgR1JGIHJlc291cmNlLiBJbiBhZGRpdGlvbiwgdGhlIGRyaXZlciB3aWxsIHRoZW4g
-X2luZmVyXwp3aGljaCBkZXZpY2Ugbm9kZSBpcyBSWDAgYW5kIHdoaWNoIGlzIFRYMVJYMSwgZnJv
-bSB0aGlzLgoKUGVyaGFwcyBMYXVyZW50J3MgcHJvcG9zYWwsIGRlc2NyaWJpbmcgZWFjaCBQSFkg
-ZXhwbGljaXRseSwKd291bGQgYmUgY2xlYW5lcj8KClRoYW5rcywKRXplcXVpZWwKCgoKCl9fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlw
-IG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+On Tue, 2020-01-07 at 01:59 +0200, Laurent Pinchart wrote:
+> Hi Helen,
+> 
+> Thank you for the patch.
+> 
+> On Fri, Dec 27, 2019 at 05:01:13PM -0300, Helen Koike wrote:
+> > Add yaml DT bindings for Rockchip ISP1.
+> > 
+> > This was tested and verified with:
+> > mv drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml Documentation/devicetree/bindings/media/
+> > make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> > make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> > 
+> > Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> > 
+> > ---
+> > 
+> > Changes in v12:
+> > - The commit replaces the following commit in previous series named
+> > media: staging: dt-bindings: Document the Rockchip ISP1 bindings
+> > This new patch adds yaml binding and was verified with
+> > make dtbs_check and make dt_binding_check
+> > 
+> > Changes in v11:
+> > - add clock-names values
+> > 
+> > Changes in v10:
+> > - unsquash
+> > 
+> > Changes in v9:
+> > - squash
+> > - move to staging
+> > 
+> > Changes in v8:
+> > - fix title division style
+> > 
+> > Changes in v7:
+> > - update document with new design and tested example
+> > 
+> >  .../bindings/media/rockchip-isp1.yaml         | 193 ++++++++++++++++++
+> >  1 file changed, 193 insertions(+)
+> >  create mode 100644 drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> > 
+> > diff --git a/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> > b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> > new file mode 100644
+> > index 000000000000..4d1b2c67a4cd
+> > --- /dev/null
+> > +++ b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> > @@ -0,0 +1,193 @@
+> > +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/media/rockchip-isp1.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Rockchip SoC Image Signal Processing unit v1
+> > +
+> > +maintainers:
+> > +  - Helen Koike <helen.koike@collabora.com>
+> > +
+> > +description: |
+> > +  Rockchip ISP1 is the Camera interface for the Rockchip series of SoCs
+> > +  which contains image processing, scaling, and compression funcitons.
+> > +
+> > +properties:
+> > +  compatible:
+> > +    const: rockchip,rk3399-cif-isp
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +
+> > +  interrupts:
+> > +    maxItems: 1
+> > +
+> > +  iommus:
+> > +    maxItems: 1
+> > +
+> > +  power-domains:
+> > +    maxItems: 1
+> > +
+> > +  phys:
+> > +    maxItems: 1
+> > +    description: phandle for the PHY port
+> 
+> According to http://opensource.rock-chips.com/wiki_Camera_driver, RK3388
+> can route either of DPHY RX0 or DPHY RX1 to the single ISP instance,
+> while RK3399 has one PHY per ISP instance, with DPHY RX1 being shared
+> with the display. Have you given any thought on how we will support this
+> in a backward-compatible way in the DT bindings ?
+> 
+
+As discussed on IRC, we could have multiple PHYs specifiers
+in the phy property. The ISP would have multiple ports,
+with one PHY per port.
+
+> > +
+> > +  phy-names:
+> > +    const: dphy
+> > +
+> > +  clocks:
+> > +    items:
+> > +      - description: ISP clock
+> > +      - description: ISP aclk clock
+> > +      - description: ISP aclk wrapper clock
+> > +      - description: ISP hclk clock
+> > +      - description: ISP hclk wrapper clock
+> 
+> I wonder what aclk and hclk stand far. In any case those names match the
+> CRU documentation, so that seems fine.
+> 
+
+IIRC, traditionally, Rockchip calls aclk to the AXI clock,
+and hclk to the AHB. We'll improve this description.
+
+> > +
+> > +  clock-names:
+> > +    items:
+> > +      - const: clk_isp
+> > +      - const: aclk_isp
+> > +      - const: aclk_isp_wrap
+> > +      - const: hclk_isp
+> > +      - const: hclk_isp_wrap
+> > +
+
+I wonder if we should better amend the names as well.
+
+> > +  # See ./video-interfaces.txt for details
+> > +  ports:
+> > +    type: object
+> > +    additionalProperties: false
+> > +
+> > +    properties:
+> > +      "#address-cells":
+> > +        const: 1
+> > +
+> > +      "#size-cells":
+> > +        const: 0
+> > +
+> > +      port@0:
+> > +        type: object
+> > +        additionalProperties: false
+> 
+> I think this should have a description to tell what this port
+> corresponds to.
+> 
+
+OK.
+
+> > +
+> > +        properties:
+> > +          "#address-cells":
+> > +            const: 1
+> > +
+> > +          "#size-cells":
+> > +            const: 0
+> > +
+> > +          reg:
+> > +            const: 0
+> > +            description: port identifier.
+> 
+> Here and for the endpoint below the description is probably not needed.
+> 
+
+OK.
+
+> > +
+> > +        patternProperties:
+> > +          endpoint:
+> > +            type: object
+> > +            additionalProperties: false
+> > +
+> > +            properties:
+> > +              reg:
+> > +                maxItems: 1
+> > +                description: endpoint identifier.
+> > +
+> > +              data-lanes:
+> > +                minItems: 1
+> > +                maxItems: 4
+> > +
+> > +              remote-endpoint: true
+> > +
+> > +    required:
+> > +      - port@0
+> > +
+> > +required:
+> > +  - compatible
+> > +  - interrupts
+> > +  - clocks
+> > +  - clock-names
+> > +  - power-domains
+> > +  - iommus
+> > +  - phys
+> > +  - phy-names
+> > +  - ports
+> > +
+> > +additionalProperties: false
+> > +
+> > +examples:
+> > +  - |
+> > +
+> > +    #include <dt-bindings/clock/rk3399-cru.h>
+> > +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> > +    #include <dt-bindings/power/rk3399-power.h>
+> > +
+> > +    parent0: parent@0 {
+> > +        #address-cells = <2>;
+> > +        #size-cells = <2>;
+> > +
+> > +        isp0: isp0@ff910000 {
+> > +            compatible = "rockchip,rk3399-cif-isp";
+> > +            reg = <0x0 0xff910000 0x0 0x4000>;
+> > +            interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH 0>;
+> > +            clocks = <&cru SCLK_ISP0>,
+> > +                     <&cru ACLK_ISP0>, <&cru ACLK_ISP0_WRAPPER>,
+> > +                     <&cru HCLK_ISP0>, <&cru HCLK_ISP0_WRAPPER>;
+> > +            clock-names = "clk_isp",
+> > +                          "aclk_isp", "aclk_isp_wrap",
+> > +                          "hclk_isp", "hclk_isp_wrap";
+> > +            power-domains = <&power RK3399_PD_ISP0>;
+> > +            iommus = <&isp0_mmu>;
+> > +            phys = <&dphy>;
+> > +            phy-names = "dphy";
+> > +
+> > +            ports {
+> > +                #address-cells = <1>;
+> > +                #size-cells = <0>;
+> > +
+> > +                port@0 {
+> > +                    #address-cells = <1>;
+> > +                    #size-cells = <0>;
+> > +                    reg = <0>;
+> > +
+> > +                    mipi_in_wcam: endpoint@0 {
+> > +                        reg = <0>;
+> > +                        remote-endpoint = <&wcam_out>;
+> > +                        data-lanes = <1 2>;
+> > +                    };
+> > +
+> > +                    mipi_in_ucam: endpoint@1 {
+> > +                        reg = <1>;
+> > +                        remote-endpoint = <&ucam_out>;
+> > +                        data-lanes = <1>;
+> > +                    };
+> 
+> Are those two cameras connected to the same CSI-2 lines with at most one
+> sensor out of reset ?
+> 
+
+Indeed, these are two cameras connected to the same DPHY,
+and only one can work at a time.
+
+> With the above small issues addressed,
+> 
+> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> 
+
+Thanks for the review!
+Ezequiel
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
