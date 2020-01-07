@@ -2,45 +2,44 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6BA81335AB
-	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Jan 2020 23:25:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 524DF1335C8
+	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Jan 2020 23:32:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/lBWA0fGr08qg97TY3IkFwBpuAS9wXX3o/DpSn0GL/g=; b=g9yQbmYmWsmlea
-	TJuhNP7cjhkAM4MBGFrTjz+VSPD+TOx7xYHMSHPDvsTIeyj8pRPuSJqUL6U1+D94x7EnyJVxvlMP9
-	zxzrkvVNVpKlD7XyBsMLqNv903P1BOtargQAKn4cC970kuQuHFJzndJ2ZjhWLOHNp06ckLc28ed/q
-	uYHb5Wjrql1Rmq1f47cG5SdhiWTqNkrgRiNLI1D79aZ4Q9U6OlKesZBZt/0/iwbGBJN6/o5idIyV8
-	vVlR1oi9tYFQqoQLIzVjx0jdBHhHp6mQjaDnjWoB9pxZ3XuvWQ1cKrHhOu/gpHzBCcRH2htPTe6vE
-	3UQVKJXqzcIWQ38gxvtw==;
+	List-Owner; bh=lQfBbNqYurpv9kHaMV65Vc/avDdqEyVMP60rG8e+hr8=; b=Q9i8gb7ESPFXcy
+	tRVKr8unKu9ctgCgoImz63/pqqFZq7oP0a3+qGFwbjEZFyupudysHPjdUXEEhh6X16gZ8HHRNcWZw
+	yQSm6MknKVolvCOQjH2QCc3IljYOWmtzz2SMEhEsS+p8VjxpVboRx7gy8XQa7cfBItraarX6rBaP/
+	PcSaR1tDk6SJu702Gb7FwXvocSmRMtIcTDxUGKJSp8DxSMj/PFqqd4hLRd9QQ0TXX0VYPiJbCESZW
+	nbXIw9/M2iGRi+nxiUcKSulq5FW9by/7QBcB0YgcCp+sJ9Jr9XfCZM71t03Zt5UtPouhXVk34Ra9d
+	29wjgy1MXi+EI5QdzxTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioxIA-0005hz-WF; Tue, 07 Jan 2020 22:25:39 +0000
+	id 1ioxOb-0007zs-LI; Tue, 07 Jan 2020 22:32:17 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioxI7-0005hE-3X; Tue, 07 Jan 2020 22:25:37 +0000
+ id 1ioxOU-0007t8-6e; Tue, 07 Jan 2020 22:32:11 +0000
 Received: from ip5f5a5f74.dynamic.kabel-deutschland.de ([95.90.95.116]
  helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1ioxHq-00051T-Rh; Tue, 07 Jan 2020 23:25:18 +0100
+ id 1ioxOP-000534-Gq; Tue, 07 Jan 2020 23:32:05 +0100
 From: Heiko Stuebner <heiko@sntech.de>
-To: Ezequiel Garcia <ezequiel@collabora.com>
-Subject: Re: [PATCH v12 09/11] media: staging: dt-bindings: add Rockchip MIPI
- RX D-PHY yaml bindings
-Date: Tue, 07 Jan 2020 23:25:17 +0100
-Message-ID: <3869290.WS1K4CcMg6@phil>
-In-Reply-To: <4d5a896ee0f40908365800dcd0554eb39c5d68c1.camel@collabora.com>
-References: <20191227200116.2612137-1-helen.koike@collabora.com>
- <2299954.gvZHxIxoM0@diego>
- <4d5a896ee0f40908365800dcd0554eb39c5d68c1.camel@collabora.com>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH] arm64: dts: rockchip: rk3399-firefly: remove num-slots
+ from &sdio0 node
+Date: Tue, 07 Jan 2020 23:32:04 +0100
+Message-ID: <2012646.CMKZZmdTN9@phil>
+In-Reply-To: <20191231191154.5587-1-jbx6244@gmail.com>
+References: <20191231191154.5587-1-jbx6244@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_142535_299040_AEE8899E 
-X-CRM114-Status: GOOD (  35.40  )
+X-CRM114-CacheID: sfid-20200107_143210_388154_6A7B865A 
+X-CRM114-Status: UNSURE (   9.54  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -60,261 +59,22 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
- kernel@collabora.com, linux-arm-kernel@lists.infradead.org,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, tfiga@chromium.org,
- linux-rockchip@lists.infradead.org, Helen Koike <helen.koike@collabora.com>,
- robh+dt@kernel.org, hans.verkuil@cisco.com,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- sakari.ailus@linux.intel.com, joacim.zetterling@gmail.com, mchehab@kernel.org,
- andrey.konovalov@linaro.org, jacob-chen@iotwrt.com,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Dienstag, 7. Januar 2020, 23:03:54 CET schrieb Ezequiel Garcia:
-> On Tue, 2020-01-07 at 22:30 +0100, Heiko St=FCbner wrote:
-> > Hi Ezequiel,
-> > =
+Am Dienstag, 31. Dezember 2019, 20:11:54 CET schrieb Johan Jonker:
+> The option "num-slots" was deprecated long time ago, so remove it.
+> 
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 
-> > Am Dienstag, 7. Januar 2020, 14:20:10 CET schrieb Ezequiel Garcia:
-> > > Hi Heiko, Laurent,
-> > > =
+applied for 5.6
 
-> > > On Tue, 2020-01-07 at 10:28 +0100, Heiko St=FCbner wrote:
-> > > > Am Dienstag, 7. Januar 2020, 03:37:21 CET schrieb Laurent Pinchart:
-> > > > > On Mon, Jan 06, 2020 at 11:06:12PM -0300, Ezequiel Garcia wrote:
-> > > > > > On Tue, 2020-01-07 at 02:10 +0200, Laurent Pinchart wrote:
-> > > > > > > Hi Helen,
-> > > > > > > =
-
-> > > > > > > Thank you for the patch.
-> > > > > > > =
-
-> > > > > > > On Fri, Dec 27, 2019 at 05:01:14PM -0300, Helen Koike wrote:
-> > > > > > > > Add yaml DT bindings for Rockchip MIPI D-PHY RX
-> > > > > > > > =
-
-> > > > > > > > This was tested and verified with:
-> > > > > > > > mv drivers/staging/media/phy-rockchip-dphy/Documentation/de=
-vicetree/bindings/phy/rockchip-mipi-
-> > > > > > > > dphy.yaml  Documentation/devicetree/bindings/phy/
-> > > > > > > > make dt_binding_check DT_SCHEMA_FILES=3DDocumentation/devic=
-etree/bindings/phy/rockchip-mipi-dphy.yaml
-> > > > > > > > make dtbs_check DT_SCHEMA_FILES=3DDocumentation/devicetree/=
-bindings/phy/rockchip-mipi-dphy.yaml
-> > > > > > > > =
-
-> > > > > > > > Signed-off-by: Helen Koike <helen.koike@collabora.com>
-> > > > > > > > =
-
-> > > > > > > > ---
-> > > > > > > > =
-
-> > > > > > > > Changes in v12:
-> > > > > > > > - The commit replaces the following commit in previous seri=
-es named
-> > > > > > > > media: staging: dt-bindings: Document the Rockchip MIPI RX =
-D-PHY bindings
-> > > > > > > > This new patch adds yaml binding and was verified with
-> > > > > > > > make dtbs_check and make dt_binding_check
-> > > > > > > > =
-
-> > > > > > > > Changes in v11: None
-> > > > > > > > Changes in v10:
-> > > > > > > > - unsquash
-> > > > > > > > =
-
-> > > > > > > > Changes in v9:
-> > > > > > > > - fix title division style
-> > > > > > > > - squash
-> > > > > > > > - move to staging
-> > > > > > > > =
-
-> > > > > > > > Changes in v8: None
-> > > > > > > > Changes in v7:
-> > > > > > > > - updated doc with new design and tested example
-> > > > > > > > =
-
-> > > > > > > >  .../bindings/phy/rockchip-mipi-dphy.yaml      | 75 +++++++=
-++++++++++++
-> > > > > > > >  1 file changed, 75 insertions(+)
-> > > > > > > >  create mode 100644 drivers/staging/media/phy-rockchip-dphy=
-/Documentation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
-> > > > > > > > =
-
-> > > > > > > > diff --git a/drivers/staging/media/phy-rockchip-dphy/Docume=
-ntation/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
-> > > > > > > > b/drivers/staging/media/phy-
-> > > > > > > > rockchip-dphy/Documentation/devicetree/bindings/phy/rockchi=
-p-mipi-dphy.yaml
-> > > > > > > > new file mode 100644
-> > > > > > > > index 000000000000..af97f1b3e005
-> > > > > > > > --- /dev/null
-> > > > > > > > +++ b/drivers/staging/media/phy-rockchip-dphy/Documentation=
-/devicetree/bindings/phy/rockchip-mipi-dphy.yaml
-> > > > > > > > @@ -0,0 +1,75 @@
-> > > > > > > > +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> > > > > > > > +%YAML 1.2
-> > > > > > > > +---
-> > > > > > > > +$id: http://devicetree.org/schemas/phy/rockchip-mipi-dphy.=
-yaml#
-> > > > > > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > > > > > +
-> > > > > > > > +title: Rockchip SoC MIPI RX0 D-PHY Device Tree Bindings
-> > > > > > > =
-
-> > > > > > > Should this be s/RX0/RX/ ? Or do you expect different binding=
-s for RX1 ?
-> > > > > > =
-
-> > > > > > The driver currently only supports RX0, but I think you are rig=
-ht,
-> > > > > > it should say RX here. This binding could be extended for RX1.
-> > > > > > =
-
-> > > > > > > Looking at the PHY driver, it seems to handle all PHYs with a=
- single
-> > > > > > > struct device. Should we thus use #phy-cells =3D <1> to selec=
-t the PHY ?
-> > > > > > =
-
-> > > > > > I am not following this. The driver handles just one PHY. Each =
-PHY
-> > > > > > should have its own node.
-> > > > > =
-
-> > > > > Looking at the registers, it seems that the different PHYs are
-> > > > > intertwined and we would could have trouble handling the differen=
-t PHYs
-> > > > > with different DT nodes and thus struct device instances.
-> > > > =
-
-> > > > I have to confess to not following _ALL_ of the threads, so may say
-> > > > something stupid, but I don't think the PHYs are intertwined so muc=
-h.
-> > > > =
-
-> > > > Where RX0 is controlled from the "General Register Files" alone
-> > > > [register dumping ground for soc designers], the TX1RX1-phy
-> > > > actually gets controlled from inside the dsi1 register area it seem=
-s.
-> > > > =
-
-> > > > So in my previous (still unsucessful) tests, I was rolling with som=
-ething like
-> > > > https://github.com/mmind/linux-rockchip/commit/e0d4b03976d2aab85a8c=
-1630be937ea003b5df88
-> > > > =
-
-> > > > With the actual "logic" picked from the vendor kernel, that just do=
-uble-
-> > > > maps the dsi1-registers in both dsi and dphy driver, which was stra=
-nge.
-> > > > =
-
-> > > > =
-
-> > > =
-
-> > > Describing each PHY in its own device node (as we currently do)
-> > > results in:
-> > > =
-
-> > >         mipi_dphy_tx1rx1: mipi-dphy-tx1rx1@ff968000 {
-> > >                 compatible =3D "rockchip,rk3399-mipi-dphy";
-> > >                 reg =3D <0x0 0xff968000 0x0 0x8000>;
-> > >                 rockchip,grf =3D <&grf>;
-> > >         };
-> > =
-
-> > 0xff968000 actually really is the dsi1 controller, so we'll already
-> > have a node for that area. That is the reason I went that way to make
-> > the rockchip-dsi optionally also behave as phy-provider.
-> > =
-
-> > So when it's used in combination with drm and a panel or so it will
-> > behave as dsi controller, but when requested via the phy-framework
-> > it will expose the dphy functionality.
-> > =
-
-> =
-
-> Hm, and will this driver also support RX1?
-
-what is RX1 in your book? :-)
-
-According to the TRM the rk3399 has 3 DPHYs,
-tx0 - connected exclusively to dsi0
-      (this is handled internally by the dw-mipi-dsi driver with controls
-       in the dsi0 register space)
-rx0 - connected exclusively to isp0
-      (this is handled by the individual dphy driver from Helen's series)
-tx1rx1 - shared between dsi1 and isp1
-      (again inside the dsi1 register space)
-
-
-> =
-
-> > =
-
-> > >         grf: syscon@ff770000 {
-> > >                 mipi_dphy_rx0: mipi-dphy-rx0 {
-> > >                         compatible =3D "rockchip,rk3399-mipi-dphy";
-> > >                 };
-> > >         };
-> > > =
-
-> > > Which is mildly ugly, as it uses two mechanism to describe
-> > > the GRF resource. In addition, the driver will then _infer_
-> > > which device node is RX0 and which is TX1RX1, from this.
-> > > =
-
-> > > Perhaps Laurent's proposal, describing each PHY explicitly,
-> > > would be cleaner?
-> > =
-
-> > so I really think we shouldn't merge these two things together,
-> > especially to not break the dsi1 controller part.
-> > =
-
-> =
-
-> I don't think it would necesarily break the dsi1 controller part.
-> =
-
-> You can declare both device nodes as sharing the address region,
-> and then the driver can request the I/O resource only when it needs to,
-> i.e. in the PHY .init hook.
-
-dsi1 is of course a dw-mipi-dsi one, which in turn shares a common bridge
-driver over multiple variants (non-rockchip), which expects its registers
-mapped during probe.
-
-I think it would not really work well if you need to make the whole world
-follow that idea ;-) .
-
-
-Hence my approach with exposing the phy interface from the dsi driver.
-If you look at the dts part, it also just looks like it should be ... as
-a regular phy:
-	https://github.com/mmind/linux-rockchip/blob/wip/tc358749/arch/arm64/boot/=
-dts/rockchip/rk3399.dtsi#L1764
-
-And on the driver side there is even some short circuit protection.
-When used as phy, it won't allow to be used as a component and
-vice versa.
-
-
-> It's not super nice, but there's no real reason two devices
-> can't share an I/O memory resource.
-
-Counter argument, devicetree is not a means to handle Linux
-peculiarites - instead it should describe the hardware ...
-and the area there _is_ the dsi1 controller ;-)
-
+Thanks
 Heiko
 
 
