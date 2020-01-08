@@ -2,58 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A5FF1344D4
-	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Jan 2020 15:20:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D37491346DA
+	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Jan 2020 16:59:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=6GCRPwuTJaGa2gK1h3rFryaSDxlQSUDPNhYcKvKN7BI=; b=cCw1jc3FTyRnTcT91idHtXwSF
-	eU5xbwb/6oGqyNthfcpqob9v4HQySrXqOdd4cxzBVehM9hZ3TIRbk4STuu9Bs0M7sGg+zGxg/3mGI
-	SdbSCRMkeKsNN624Jta2p4nYWKhRfYyJjmYjl0M8Xl/yxlzQ5EHhtaPv/thxx/zpx5fctTT4vFUaF
-	bxjYpFD6EGFeEW1qg1n0kHCAXL1dkAy5voBhXjexMdBcGF/0+ngY6okkgJdUbgRfmbPNozj0vZt4H
-	eKx934d/66h6ZKRhTmYhRDeZPRkAu6oqDivSVUAoGKGso3RD9dZQ2jYbQqzKVsfGLlyDoJa1EIGOJ
-	/rTQ13FoA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=8jDZGHlVlzhIZZTOV6M2xtj2v00gjivXenkXWHe96R8=; b=CU2
+	DOoZEmKWfdtSe+jtxv24LfDO0P4W2dJ+3Qdf004UuiPu9YH4QYwVQ+g3rjKJ33s4VTEr4Eaf1lMTe
+	099wgi28xaswqtlnh5RLaWNfjpQtowVw7KJIUGiI/sMhmHE+NV4c/ZPcV+M47k7125Dh7B2DxW1kl
+	JHFVb9/VMJo2WbofVAnjvCbT0l19XSwdtbbj+l8r+aIi/M9uLmclTw4IFi2+NKA72dph8jqIFmBQD
+	uMOC9YjQChKjbCQHZa+CeChz6DwEVQF3Qvn53f7KCwsMj9isXjc2rkH4UdMDw7pKF7fuZzBDem2yY
+	0txBoZ0MatQFSZra4Id+VsfDx2thT8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipCCF-0006C2-16; Wed, 08 Jan 2020 14:20:31 +0000
+	id 1ipDjp-0005vj-Nm; Wed, 08 Jan 2020 15:59:18 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipCC9-0006AI-7D; Wed, 08 Jan 2020 14:20:28 +0000
+ id 1ipDjV-0005jX-OD; Wed, 08 Jan 2020 15:58:59 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8F23B31B;
- Wed,  8 Jan 2020 06:20:24 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0E4533F703;
- Wed,  8 Jan 2020 06:20:22 -0800 (PST)
-Subject: Re: [PATCH RFT v1 1/3] drm/panfrost: enable devfreq based the
- "operating-points-v2" property
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-References: <20200107230626.885451-1-martin.blumenstingl@googlemail.com>
- <20200107230626.885451-2-martin.blumenstingl@googlemail.com>
- <a85f2063-f412-9762-58d1-47fdffb24af9@arm.com>
- <CAFBinCBYrNC+ULV6Y=77qogowkDZwM+H0bxOqPN4sT6q3krGfw@mail.gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <be59a20b-af08-5b55-fa69-f87d5aa9f277@arm.com>
-Date: Wed, 8 Jan 2020 14:20:21 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <CAFBinCBYrNC+ULV6Y=77qogowkDZwM+H0bxOqPN4sT6q3krGfw@mail.gmail.com>
-Content-Language: en-GB
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B61B7106F;
+ Wed,  8 Jan 2020 07:58:56 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3F7A23F534;
+ Wed,  8 Jan 2020 07:58:56 -0800 (PST)
+Date: Wed, 08 Jan 2020 15:58:54 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Markus Reichl <m.reichl@fivetechno.de>
+Subject: Applied "regulator: mp8859: add config option and build entry" to the
+ regulator tree
+In-Reply-To: <20200106211633.2882-3-m.reichl@fivetechno.de>
+Message-Id: <applied-20200106211633.2882-3-m.reichl@fivetechno.de>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_062027_081206_9CA037C1 
-X-CRM114-Status: GOOD (  15.05  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200108_075857_843889_BC089C4A 
+X-CRM114-Status: GOOD (  15.22  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -67,48 +63,97 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: robh@kernel.org, tomeu.vizoso@collabora.com, airlied@linux.ie,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- steven.price@arm.com, linux-rockchip@lists.infradead.org, daniel@ffwll.ch,
- Sudeep Holla <sudeep.holla@arm.com>, linux-amlogic@lists.infradead.org,
- alyssa@rosenzweig.io
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-[ +Sudeep ]
+The patch
 
-On 08/01/2020 12:38 pm, Martin Blumenstingl wrote:
-> Hi Robin,
-> 
-> On Wed, Jan 8, 2020 at 12:18 PM Robin Murphy <robin.murphy@arm.com> wrote:
->>
->> On 07/01/2020 11:06 pm, Martin Blumenstingl wrote:
->>> Decouple the check to see whether we want to enable devfreq for the GPU
->>> from dev_pm_opp_set_regulators(). This is preparation work for adding
->>> back support for regulator control (which means we need to call
->>> dev_pm_opp_set_regulators() before dev_pm_opp_of_add_table(), which
->>> means having a check for "is devfreq enabled" that is not tied to
->>> dev_pm_opp_of_add_table() makes things easier).
->>
->> Hmm, what about cases like the SCMI DVFS protocol where the OPPs are
->> dynamically discovered rather than statically defined in DT?
-> where can I find such an example (Amlogic SoCs use SCPI instead of
-> SCMI, so I don't think that I have any board with SCMI support) or
-> some documentation?
-> (I could only find SCPI clock and CPU DVFS implementations, but no
-> generic "OPPs for any device" implementation)
+   regulator: mp8859: add config option and build entry
 
-On closer inspection I think this applies to the SCPI DVFS protocol 
-too[1]. AIUI the fact that neither is wired up to a devfreq driver yet 
-is merely due to lack of demand and suitable systems to develop/test on 
-so far - the panfrost devfreq code is only now looking like the first 
-viable upstream use-case ;)
+has been applied to the regulator tree at
 
-Robin.
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regulator.git for-5.6
 
-[1] http://infocenter.arm.com/help/topic/com.arm.doc.dui0922g/BABFEBCD.html
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From c66f1cbad53a61f00f8b6273e737d5e560b69ec7 Mon Sep 17 00:00:00 2001
+From: Markus Reichl <m.reichl@fivetechno.de>
+Date: Mon, 6 Jan 2020 22:16:25 +0100
+Subject: [PATCH] regulator: mp8859: add config option and build entry
+
+Add entries for the mp8859 regulator driver
+to the build system.
+
+Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
+Link: https://lore.kernel.org/r/20200106211633.2882-3-m.reichl@fivetechno.de
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ drivers/regulator/Kconfig  | 11 +++++++++++
+ drivers/regulator/Makefile |  1 +
+ 2 files changed, 12 insertions(+)
+
+diff --git a/drivers/regulator/Kconfig b/drivers/regulator/Kconfig
+index 56512748a47d..593733a88a61 100644
+--- a/drivers/regulator/Kconfig
++++ b/drivers/regulator/Kconfig
+@@ -612,6 +612,17 @@ config REGULATOR_MCP16502
+ 	  through the regulator interface. In addition it enables
+ 	  suspend-to-ram/standby transition.
+ 
++config REGULATOR_MP8859
++	tristate "MPS MP8859 regulator driver"
++	depends on I2C
++	select REGMAP_I2C
++	help
++	  Say y here to support the MP8859 voltage regulator. This driver
++	  supports basic operations (get/set voltage) through the regulator
++	  interface.
++	  Say M here if you want to include support for the regulator as a
++	  module. The module will be named "mp8859".
++
+ config REGULATOR_MT6311
+ 	tristate "MediaTek MT6311 PMIC"
+ 	depends on I2C
+diff --git a/drivers/regulator/Makefile b/drivers/regulator/Makefile
+index 9eccf93bc3ab..8ba8e5deebbd 100644
+--- a/drivers/regulator/Makefile
++++ b/drivers/regulator/Makefile
+@@ -78,6 +78,7 @@ obj-$(CONFIG_REGULATOR_MC13783) += mc13783-regulator.o
+ obj-$(CONFIG_REGULATOR_MC13892) += mc13892-regulator.o
+ obj-$(CONFIG_REGULATOR_MC13XXX_CORE) +=  mc13xxx-regulator-core.o
+ obj-$(CONFIG_REGULATOR_MCP16502) += mcp16502.o
++obj-$(CONFIG_REGULATOR_MP8859) += mp8859.o
+ obj-$(CONFIG_REGULATOR_MT6311) += mt6311-regulator.o
+ obj-$(CONFIG_REGULATOR_MT6323)	+= mt6323-regulator.o
+ obj-$(CONFIG_REGULATOR_MT6358)	+= mt6358-regulator.o
+-- 
+2.20.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
