@@ -2,73 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3BF5134364
-	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Jan 2020 14:07:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07ADD13436A
+	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Jan 2020 14:07:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JmVGS/G0Xs4cZDuSUOqq4g4DhQVOdFBsKEWjBAn2leQ=; b=C3mNRIHwp1Iklj
-	HkmN9hOUeyEJonsIFTf+Bjd6PdfRjKBVzefyImK3i49/wqBcUhhjk5CkWNqs0l5wzzfVkxg43AfQo
-	vB2mG6sQ89rYcEszjcHmL+FvcjDLCILYo89zQAbI921wfZrZgE52NyNSFxlI0FmpmZSci6IQ/eYSc
-	/aQxeMysq/lFwJUaDfobu7BZqWKFnbhdTDGHgS3wJVvYcBLnt5BLM2xZo6fxKi7pnn0/tYO3LTnse
-	0oKGdkbZ8vMx3oGcoMvQ6ba9oTlzYBD8+6QgyZOzHJj9l0Dzb4yHJkcxYiUfHSptErvU6FLAZ0rq+
-	z3udMkCH0a7Dl9Gdtsdw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=j0QoMvJRt0vZ/fqa1/Bsp99s/kptTO2seWbEe76uMHI=; b=N7V6kG61DUqsrZ+jn5yFZg1Tn
+	LFOPbv3bxK3SPZKCjWeppoP6V7/a9YYKel56K5Nj1dNr/waMecyFcbv6LJkUzOseDKWWp/JT4U6L8
+	Sr0h+j/wA7bkM0cexA+2j2111r7Y5UXEJwWwjsZAWIc2KrZxH+waH3aiEhb6HRHP1CSela+9+jvwY
+	/nuFfXis2FcADg6Dmaq/lIXN2AXWcBcOItEQOhPWkiZSZog/8zplydASpx9IqDrtew8/deG8514Yk
+	j2zaKOpJj7fG+uy0+g6IEH6XBcRIsIAlY3EniaRqLtlqUf5D5JZ9L76QBUHX63YWJEDC3/tNgf8b9
+	7fpRFrkQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipB38-00061Q-QS; Wed, 08 Jan 2020 13:07:02 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1ipB3i-0006bi-Pe; Wed, 08 Jan 2020 13:07:38 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipAvh-0005dL-NB
- for linux-rockchip@lists.infradead.org; Wed, 08 Jan 2020 12:59:24 +0000
-Received: by mail-io1-xd44.google.com with SMTP id h8so3104593iob.2
- for <linux-rockchip@lists.infradead.org>; Wed, 08 Jan 2020 04:59:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=oXLJuk6Ljv9MUgn7rnXyTz5fLHDWIgN+JrCATJrpHfk=;
- b=JWaQqcO4WH7GgBPNaCR5+frY0QNXqZwrgMa/E2qC1Nm8QS4i0m1mKIEofTkdhxyc94
- s2azXfphTczHB1vyK883H9eBLBEbwK17/JpKWuyalmH9/+kGbGW24hHOXSkGpQUD/NKk
- AjbeHlnx3folngOQc4ZyW26038F7UNzl06ulo=
+ id 1ipAxE-0008AT-KT; Wed, 08 Jan 2020 13:00:58 +0000
+Received: by mail-wr1-x441.google.com with SMTP id b6so3340358wrq.0;
+ Wed, 08 Jan 2020 05:00:55 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=8s6MBY17dmKuqB1spd1Y2svCKY1mGBybzjzWrguhdKw=;
+ b=gE1Ze7d22HE5Q5vnTBA9TJ3sklMoxYoqc4qi5fHipRECxI0AbbTe7yOGYletjJPSmG
+ +ni93Xnu1tzfiZFnXRrNN7/9U4sSHQNRhWB3u0H5/5LgIBx8y6JZ2dvG6K9UzFfeIs+t
+ ucmWMwc34F1bCjWif80BBpDX+NigheLltnGLMjReolPZ5SDW/DH4dUm+wUq5r/jUmJ7s
+ e2m0AP/4myXBS3YYO7G6r3U33CARN3WLrhMxJEK0ZB3mfe/XXCblny9ZEPEACVa0kLmj
+ 3U+hwLGgcCpRcrE4b/ohDwhGIOeoYtr9t3UJp9qpLX3nPDKIaslKdYClYnIKHOhib/Rq
+ UFDw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=oXLJuk6Ljv9MUgn7rnXyTz5fLHDWIgN+JrCATJrpHfk=;
- b=Jdq6ihXGkad4qM3vNOrmDMIjK9yf6Optzx4PbVs6D+VcABkwf4Y78iYc5Z81ahkiNi
- hEUtVf+FHsD7key1qiGj0cDT2aym9UVlwMAMLq/tZ4JeupzBUp+yov00VEAiOWrOXZkt
- N1pBxogfKl2YjvLkm7pQQVg0s6x7PO3V8Zx10xpNNWBLlCEKWKIZkrAQDCAvVZNYzt5c
- qsg1LZgiH7BAduGyUkZ7ggRvOTZViPsII+s44FDw2vjG2UbWnfBTp71zsKCPWnPCktZd
- sFXMACyQb7A45mDJPRplP6WxTq+/RPDEDpt4OVuNGj3C8WTnZpHTC/w4AFMC0w6aLWl0
- 41Gw==
-X-Gm-Message-State: APjAAAUcD+7ot+9jIgfimF8N7ABeHqa+a9OCzZ6yvW91KLaB9O/aJJcO
- jCgiYAB2n7grRvCWXA66Sek7RSmBxcNaQzMR9Jbd1w==
-X-Google-Smtp-Source: APXvYqwkIieL8pmn8cRfdxEw8THdXkDQZ2ce1QPzyAYn5Uz0TVYPqNUveRrGMH74WgCOyX5IzCzRvhNBJZIPnEFQm+A=
-X-Received: by 2002:a02:b893:: with SMTP id p19mr3832359jam.103.1578488358424; 
- Wed, 08 Jan 2020 04:59:18 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=8s6MBY17dmKuqB1spd1Y2svCKY1mGBybzjzWrguhdKw=;
+ b=rslTwfNAAYU4y25qpeu0whfxi8ZJLu2S+0Oi1mggdCmB4U8P+nBN727NMAgqyl9buS
+ DHhtElSmB6fRdlRwV5/EKmQZQhSaHfHDW0QLaH5YRWA6S1v7x7bM+dM18KhvL3GcPsTa
+ fZIlFK+e5QnaryTrwZVOUbC4f4BD/sFjzmrNxRIpXivMv0vuS5TvAXf07zePu+k6SEfk
+ o6lPSxHj7mI5KwZAUBY82BG8TQMlKsTI6AbDi10UKiIqri47tKOYJIEEotNF7oGVEbsl
+ vpXx8t0oCozd02hkr5RU1jsd3b6pJrSY2/H6uFOHYnljnY6V3J+XKp7a7piwlntuePTu
+ 3Y3A==
+X-Gm-Message-State: APjAAAV2AVOXjdxmERxlMl0GgOBJSFXB+scqZgtqdwxsW3SUhD3SVhTJ
+ BaR08QXQ1Xh5Xy+T3HKvTn8=
+X-Google-Smtp-Source: APXvYqyiUk9DjLJLQC9p0jB9yqPCOOzRwx8SecHw6EXXSg6lP6Y/JDhW00O/AZmFm6lHLnBCa9UkDg==
+X-Received: by 2002:a05:6000:cf:: with SMTP id
+ q15mr4321652wrx.393.1578488454567; 
+ Wed, 08 Jan 2020 05:00:54 -0800 (PST)
+Received: from localhost (p2E5BEF3F.dip0.t-ipconnect.de. [46.91.239.63])
+ by smtp.gmail.com with ESMTPSA id x7sm3931711wrq.41.2020.01.08.05.00.52
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 08 Jan 2020 05:00:53 -0800 (PST)
+Date: Wed, 8 Jan 2020 14:00:52 +0100
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH 1/2] pwm: Fix minor Kconfig whitespace issues
+Message-ID: <20200108130052.GF1993114@ulmo>
+References: <20191230172113.17222-1-krzk@kernel.org>
 MIME-Version: 1.0
-References: <20191221075440.6944-1-jagan@amarulasolutions.com>
- <20191221075440.6944-11-jagan@amarulasolutions.com>
- <20191230125134.189ba860e7fc99b4ad2f1def@bidouilliste.com>
-In-Reply-To: <20191230125134.189ba860e7fc99b4ad2f1def@bidouilliste.com>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Wed, 8 Jan 2020 18:29:07 +0530
-Message-ID: <CAMty3ZDQfV5XXAiBynNwBw7-6rWMU-Zf34EQ1AjRf8r9+crrZw@mail.gmail.com>
-Subject: Re: [PATCH 10/11] rockpro-rk3399: Enable SPI Flash
-To: Emmanuel Vadot <manu@bidouilliste.com>
+In-Reply-To: <20191230172113.17222-1-krzk@kernel.org>
+User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_045922_048640_FF2A76F2 
-X-CRM114-Status: GOOD (  10.94  )
+X-CRM114-CacheID: sfid-20200108_050056_675232_801B406D 
+X-CRM114-Status: UNSURE (   9.05  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (thierry.reding[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -90,52 +99,74 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Simon Glass <sjg@chromium.org>, Kever Yang <kever.yang@rock-chips.com>,
- U-Boot-Denx <u-boot@lists.denx.de>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-riscv@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6302218909075529891=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Dec 30, 2019 at 5:21 PM Emmanuel Vadot <manu@bidouilliste.com> wrote:
->
->
->  Hi Jagan,
->
-> On Sat, 21 Dec 2019 13:24:39 +0530
-> Jagan Teki <jagan@amarulasolutions.com> wrote:
->
-> > Enable winbond SPI flash for ROC-PC-RK3399 board.
->
->  s/ROC-PC-RK3399/RockPro64/
->
-> >
-> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > ---
-> >  arch/arm/dts/rk3399-rockpro64-u-boot.dtsi | 4 ++++
-> >  configs/rockpro64-rk3399_defconfig        | 2 ++
-> >  2 files changed, 6 insertions(+)
-> >
-> > diff --git a/arch/arm/dts/rk3399-rockpro64-u-boot.dtsi b/arch/arm/dts/rk3399-rockpro64-u-boot.dtsi
-> > index 4648513ea9..deaa3efd39 100644
-> > --- a/arch/arm/dts/rk3399-rockpro64-u-boot.dtsi
-> > +++ b/arch/arm/dts/rk3399-rockpro64-u-boot.dtsi
-> > @@ -6,6 +6,10 @@
-> >  #include "rk3399-u-boot.dtsi"
-> >  #include "rk3399-sdram-lpddr4-100.dtsi"
-> >  / {
-> > +     aliases {
-> > +             spi0 = &spi1;
->
->  That looks weird ... what's the point of this alias exactly ?
 
-spi uclass would require alias number to bind the driver, no way to
-escape as of now.
+--===============6302218909075529891==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="+jhVVhN62yS6hEJ8"
+Content-Disposition: inline
+
+
+--+jhVVhN62yS6hEJ8
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, Dec 30, 2019 at 06:21:12PM +0100, Krzysztof Kozlowski wrote:
+> Remove double whitespace after "config" keyword.
+>=20
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> ---
+>  drivers/pwm/Kconfig | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+
+Applied, thanks.
+
+Thierry
+
+--+jhVVhN62yS6hEJ8
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl4V0oQACgkQ3SOs138+
+s6GW+RAAqt7l9DVUT1XZy2TgE7UeLRkeCbnVtYRqr1q4kqqjW1uRyRc2gbd6Q15a
+Orl53tUGiuE+Fr/t+UpQSLOmsc93zRIqkhbyMdfyTXJRGhzU5UCx2BuBDkelvmZ/
+ZcTgvi8IkXRVh7SJx6E2i956iFXifCQQKd/pbS3oPZbUCeRPJuhCTgmfD7NAKvCR
+YsaDo4MWHuuulx05CCLeZ+g915YEGXCV5nKr5RdY9/uf1ifS1waeUZK8+C+uwAy6
+17J7Ee4+27mydyVzsutgTLAWfnNf3wcwDzbYaR61G4dKZXHWZBlzjq1hAlyfLrfI
+Ue9fAv71KPfLULXpotqvoVkzKeTzW5SSnbtsi22wLJfmu5RI2ZCS2gXdRN0Z5f8y
+9M59CBmSSOvoQ7b/nBbOCxxlUqZTXGjnlJCXqrqGmomCMQvKZIJBNBILlFoQDDtZ
+wCVV+XXEHq3j4qvgsjgkAHLGyxkjmryg6fOFe9mqCGwk1huV5NYbI4aP1xiSCmTt
+00wLZMd67PnKuPv1GAgvRW+BLif97N1U7g2OP5ewhYXPj7cd1DVQHsgwbKnKkz1H
+UWG3gn+7n3KcstFfKsgS3X8fhKQ2+HalnX9hBfeORhPef5cCtIURILtOU/sS/pvZ
+f30UWoLal+Aylqbsc01nUJmxg27i/m0q4+v7waQmAJlE0L+1c6o=
+=p5N4
+-----END PGP SIGNATURE-----
+
+--+jhVVhN62yS6hEJ8--
+
+
+--===============6302218909075529891==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============6302218909075529891==--
+
