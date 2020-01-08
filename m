@@ -2,98 +2,128 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BB971347CD
-	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Jan 2020 17:24:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BF8E134878
+	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Jan 2020 17:51:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6gOtIxRt5IrcyPcVCkp4iRbK3nl0/ytrm4qHZwQiU2Y=; b=QnHnWuZiWniudd
-	sc38kFWmg76YpvPRHrPcdiO2a3fks7q0q+3M1n6CN+hbwmlkpRK41admuivhuSZZG3VaImsHKwW8J
-	mm1EwpUoPNRuNysgEGdV1Z7lq3BN+xxZ+Eh5wsbKlERIXJooMsCiizbBrixvttVh20pQ/gN6lqVY7
-	2UZLcRlsFlkESJJNZfaWZLdsm1lZR1KWcuhgabos1ANbwS+S1E3vEl+kN1CPFatsR1aa1rxIi2I8D
-	MrxDM+keU+BU3I2mDBH8I0Awz1o4IbXPpcatEkV17ir2QYMUxJLsJJDvV7Yib7Y7NiHmXLKTEEB0B
-	zATAOYEGf2FGNw0CIqkg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mg5cVlw4h+M8jRzw0n0IQ1nCWy+lthSn3seaLhsBnzs=; b=bY9a6wXE7lqJM7
+	qC72Qhyd5x72Vvp/ry3EUgHbDIiffyzt2/fs/FLmQb4A4QjzvwVY7aL5dA/0ES+4pbwZe27iLW1kd
+	VacyZRcQfO252tLlUUgFMQlnsoPlLmeKv+aNYZvEoIjeljLvujOmPj+Bz46t74TaVVY0jWBNZProN
+	BLg06FZht6dg0jijAkUmkFjAVXwqlVSfZgbBGZjuVCAvm0A/GWaOEc+zr5mixVMiO8/Qaem7nHGBL
+	5pp8ncXX4xEcXLrIdIvjOPLNg1S+HO17n9aMt/bftZgI2qKmYo21i1IpRGLhU7UyQnWVFUSB5jdQd
+	oS9fCmgj+Eu0LtAp0mxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipE8I-00038k-Al; Wed, 08 Jan 2020 16:24:34 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1ipEY0-0005Yd-6w; Wed, 08 Jan 2020 16:51:08 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipE6A-0000q8-Rq; Wed, 08 Jan 2020 16:22:25 +0000
-Received: by mail-wm1-x341.google.com with SMTP id a5so3144707wmb.0;
- Wed, 08 Jan 2020 08:22:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=aBpKzW0DysSlCqpBbIOQ7IwtG+vQDqbV9o/9aw4xq+E=;
- b=sxgseL/7cesCABwZJ1lkUkZMf3g+t22y92wXapWpsRzLZPLcJgG758dCEJjCtnHIFb
- 385Bw00mjiXslrxf0PJPtvPoAWbCeB28o+pu98WujS7hgyYHpc47909CrM1A6D8KQCON
- 3mN8IOPrKDfpigRHDlZXQQY8/7CJ7U6zz2pURwZdf18xO84Sy9DaIdxTq7RiH303ZBm6
- 2Z1xvuoZxr1uAFbLyF9kJKzwfzs/RvwepZguHuw0YhbWbJnm9aoF9pCzQWXS+0/vznVf
- 82y1A5IcIvlC6ojD66Seq9zwPgSKvNpm6p1NYOf4NPFLnFJkyGBYRbOwZ4oy7GPM8vZa
- XWDg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=aBpKzW0DysSlCqpBbIOQ7IwtG+vQDqbV9o/9aw4xq+E=;
- b=eKyC+jYckA4LihxwCsdw0JVyBQTYeCBzQaOjT7jX1WX+Ox1+J2tF5pq+Tboc1FPb+q
- yvpc0QJu/DDzKiDRzrEfi2tG/VjNcL3kMGvyzWZ7FHd4bFJxcixlxJtR5iPpbtIFnYL7
- CDku7l+AcFD+mKvYjZyZXZROE87ypdEgeQ/x8cJ1gvKr5vapGodumFQUHPOi6VaQgKen
- LF3UM7M3Hlvh4epNNGpLkQPYpDMEFL7/KTP8Oh36gBANLNBZREipPSvg1EPWcQnTj+nJ
- KW+OkaSWv58IFARRfjLiTSYy3M01iXoZDvbO1vu25fQDkK2Zwcn6xbOA5/UsZVN5iS5Y
- r9JA==
-X-Gm-Message-State: APjAAAWcLLvBTPSLczds+oiH8QEA0FzxnRHO9oIwst0CBu/RRq+Dfg3L
- hzR8v2zMAwFn+eQa05EkqgA=
-X-Google-Smtp-Source: APXvYqxwsO4hRnwBU4qNvNBYudqrLRYtxXPrDL2K47Q4rMNDd8IDSR95WAp82oBtVNj39288uOZ/1w==
-X-Received: by 2002:a1c:6588:: with SMTP id z130mr4941894wmb.0.1578500540987; 
- Wed, 08 Jan 2020 08:22:20 -0800 (PST)
-Received: from prasmi.home ([2a00:23c6:d18:6d00:2811:8b65:294e:fa09])
- by smtp.gmail.com with ESMTPSA id q3sm5112180wrn.33.2020.01.08.08.22.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 08 Jan 2020 08:22:20 -0800 (PST)
-From: Lad Prabhakar <prabhakar.csengg@gmail.com>
-X-Google-Original-From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Magnus Damm <magnus.damm@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- linux-pci@vger.kernel.org
-Subject: [v3 6/6] misc: pci_endpoint_test: Add Device ID for RZ/G2E PCIe
- controller
-Date: Wed,  8 Jan 2020 16:22:11 +0000
-Message-Id: <20200108162211.22358-7-prabhakar.mahadev-lad.rj@bp.renesas.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200108162211.22358-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-References: <20200108162211.22358-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ id 1ipEXr-0005SI-JM; Wed, 08 Jan 2020 16:51:01 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: koike) with ESMTPSA id 236DB281E5B
+Subject: Re: [PATCH v12 08/11] media: staging: dt-bindings: add Rockchip ISP1
+ yaml bindings
+To: Sakari Ailus <sakari.ailus@linux.intel.com>
+References: <20191227200116.2612137-1-helen.koike@collabora.com>
+ <20191227200116.2612137-9-helen.koike@collabora.com>
+ <20200107140115.GQ19828@paasikivi.fi.intel.com>
+From: Helen Koike <helen.koike@collabora.com>
+Autocrypt: addr=helen.koike@collabora.com; keydata=
+ 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
+Message-ID: <ad9d8ef7-5b52-d27e-ac95-db07dc1d443c@collabora.com>
+Date: Wed, 8 Jan 2020 13:50:38 -0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
+In-Reply-To: <20200107140115.GQ19828@paasikivi.fi.intel.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_082222_979055_C47AB282 
-X-CRM114-Status: GOOD (  12.05  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200108_085059_896447_BBBD2D4D 
+X-CRM114-Status: GOOD (  15.68  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (prabhakar.csengg[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,56 +136,277 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Chris Paterson <Chris.Paterson2@renesas.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
- Jingoo Han <jingoohan1@gmail.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
- linux-kernel@vger.kernel.org,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
+ kernel@collabora.com, heiko@sntech.de, linux-arm-kernel@lists.infradead.org,
+ ezequiel@collabora.com, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, hans.verkuil@cisco.com,
+ laurent.pinchart@ideasonboard.com, joacim.zetterling@gmail.com,
+ mchehab@kernel.org, andrey.konovalov@linaro.org, jacob-chen@iotwrt.com,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add RZ/G2E in pci_device_id table so that pci-epf-test can be used for
-testing PCIe EP in RZ/G2E.
+Hi,
 
-Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
----
- drivers/misc/pci_endpoint_test.c | 3 +++
- 1 file changed, 3 insertions(+)
+Thank you for your review.
 
-diff --git a/drivers/misc/pci_endpoint_test.c b/drivers/misc/pci_endpoint_test.c
-index a5e317073d95..3c84e9a98a05 100644
---- a/drivers/misc/pci_endpoint_test.c
-+++ b/drivers/misc/pci_endpoint_test.c
-@@ -66,6 +66,8 @@
- 
- #define PCI_DEVICE_ID_TI_AM654			0xb00c
- 
-+#define PCI_DEVICE_ID_RENESAS_RZG2E		0x002d
-+
- #define is_am654_pci_dev(pdev)		\
- 		((pdev)->device == PCI_DEVICE_ID_TI_AM654)
- 
-@@ -797,6 +799,7 @@ static const struct pci_device_id pci_endpoint_test_tbl[] = {
- 	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_AM654),
- 	  .driver_data = (kernel_ulong_t)&am654_data
- 	},
-+	{ PCI_DEVICE(PCI_VENDOR_ID_RENESAS, PCI_DEVICE_ID_RENESAS_RZG2E) },
- 	{ }
- };
- MODULE_DEVICE_TABLE(pci, pci_endpoint_test_tbl);
--- 
-2.20.1
+On 1/7/20 12:01 PM, Sakari Ailus wrote:
+> Hi Helen,
+> 
+> On Fri, Dec 27, 2019 at 05:01:13PM -0300, Helen Koike wrote:
+>> Add yaml DT bindings for Rockchip ISP1.
+>>
+>> This was tested and verified with:
+>> mv drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml Documentation/devicetree/bindings/media/
+>> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+>> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+>>
+>> Signed-off-by: Helen Koike <helen.koike@collabora.com>
+>>
+>> ---
+>>
+>> Changes in v12:
+>> - The commit replaces the following commit in previous series named
+>> media: staging: dt-bindings: Document the Rockchip ISP1 bindings
+>> This new patch adds yaml binding and was verified with
+>> make dtbs_check and make dt_binding_check
+>>
+>> Changes in v11:
+>> - add clock-names values
+>>
+>> Changes in v10:
+>> - unsquash
+>>
+>> Changes in v9:
+>> - squash
+>> - move to staging
+>>
+>> Changes in v8:
+>> - fix title division style
+>>
+>> Changes in v7:
+>> - update document with new design and tested example
+>>
+>>  .../bindings/media/rockchip-isp1.yaml         | 193 ++++++++++++++++++
+>>  1 file changed, 193 insertions(+)
+>>  create mode 100644 drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+>>
+>> diff --git a/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+>> new file mode 100644
+>> index 000000000000..4d1b2c67a4cd
+>> --- /dev/null
+>> +++ b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+>> @@ -0,0 +1,193 @@
+>> +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/media/rockchip-isp1.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: Rockchip SoC Image Signal Processing unit v1
+>> +
+>> +maintainers:
+>> +  - Helen Koike <helen.koike@collabora.com>
+>> +
+>> +description: |
+>> +  Rockchip ISP1 is the Camera interface for the Rockchip series of SoCs
+>> +  which contains image processing, scaling, and compression funcitons.
+> 
+> "functions"
+> 
+>> +
+>> +properties:
+>> +  compatible:
+>> +    const: rockchip,rk3399-cif-isp
+>> +
+>> +  reg:
+>> +    maxItems: 1
+>> +
+>> +  interrupts:
+>> +    maxItems: 1
+>> +
+>> +  iommus:
+>> +    maxItems: 1
+>> +
+>> +  power-domains:
+>> +    maxItems: 1
+>> +
+>> +  phys:
+>> +    maxItems: 1
+>> +    description: phandle for the PHY port
+>> +
+>> +  phy-names:
+>> +    const: dphy
+>> +
+>> +  clocks:
+>> +    items:
+>> +      - description: ISP clock
+>> +      - description: ISP aclk clock
+>> +      - description: ISP aclk wrapper clock
+>> +      - description: ISP hclk clock
+>> +      - description: ISP hclk wrapper clock
+>> +
+>> +  clock-names:
+>> +    items:
+>> +      - const: clk_isp
+>> +      - const: aclk_isp
+>> +      - const: aclk_isp_wrap
+>> +      - const: hclk_isp
+>> +      - const: hclk_isp_wrap
+>> +
+>> +  # See ./video-interfaces.txt for details
+>> +  ports:
+>> +    type: object
+>> +    additionalProperties: false
+>> +
+>> +    properties:
+>> +      "#address-cells":
+>> +        const: 1
+>> +
+>> +      "#size-cells":
+>> +        const: 0
+>> +
+>> +      port@0:
+> 
+> If you only have a single port node, you could drop reg as well as @0 on
+> the port node.
 
+After the discussions, we have a single port for now, but we might have port@1
+for tx1rx1 in the future.
+
+Helen
+
+> 
+>> +        type: object
+>> +        additionalProperties: false
+>> +
+>> +        properties:
+>> +          "#address-cells":
+>> +            const: 1
+>> +
+>> +          "#size-cells":
+>> +            const: 0
+>> +
+>> +          reg:
+>> +            const: 0
+>> +            description: port identifier.
+>> +
+>> +        patternProperties:
+>> +          endpoint:
+>> +            type: object
+>> +            additionalProperties: false
+>> +
+>> +            properties:
+>> +              reg:
+>> +                maxItems: 1
+>> +                description: endpoint identifier.
+>> +
+>> +              data-lanes:
+>> +                minItems: 1
+>> +                maxItems: 4
+>> +
+>> +              remote-endpoint: true
+>> +
+>> +    required:
+>> +      - port@0
+>> +
+>> +required:
+>> +  - compatible
+>> +  - interrupts
+>> +  - clocks
+>> +  - clock-names
+>> +  - power-domains
+>> +  - iommus
+>> +  - phys
+>> +  - phy-names
+>> +  - ports
+>> +
+>> +additionalProperties: false
+>> +
+>> +examples:
+>> +  - |
+>> +
+>> +    #include <dt-bindings/clock/rk3399-cru.h>
+>> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+>> +    #include <dt-bindings/power/rk3399-power.h>
+>> +
+>> +    parent0: parent@0 {
+>> +        #address-cells = <2>;
+>> +        #size-cells = <2>;
+>> +
+>> +        isp0: isp0@ff910000 {
+>> +            compatible = "rockchip,rk3399-cif-isp";
+>> +            reg = <0x0 0xff910000 0x0 0x4000>;
+>> +            interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH 0>;
+>> +            clocks = <&cru SCLK_ISP0>,
+>> +                     <&cru ACLK_ISP0>, <&cru ACLK_ISP0_WRAPPER>,
+>> +                     <&cru HCLK_ISP0>, <&cru HCLK_ISP0_WRAPPER>;
+>> +            clock-names = "clk_isp",
+>> +                          "aclk_isp", "aclk_isp_wrap",
+>> +                          "hclk_isp", "hclk_isp_wrap";
+>> +            power-domains = <&power RK3399_PD_ISP0>;
+>> +            iommus = <&isp0_mmu>;
+>> +            phys = <&dphy>;
+>> +            phy-names = "dphy";
+>> +
+>> +            ports {
+>> +                #address-cells = <1>;
+>> +                #size-cells = <0>;
+>> +
+>> +                port@0 {
+>> +                    #address-cells = <1>;
+>> +                    #size-cells = <0>;
+>> +                    reg = <0>;
+>> +
+>> +                    mipi_in_wcam: endpoint@0 {
+>> +                        reg = <0>;
+>> +                        remote-endpoint = <&wcam_out>;
+>> +                        data-lanes = <1 2>;
+>> +                    };
+>> +
+>> +                    mipi_in_ucam: endpoint@1 {
+>> +                        reg = <1>;
+>> +                        remote-endpoint = <&ucam_out>;
+>> +                        data-lanes = <1>;
+>> +                    };
+>> +                };
+>> +            };
+>> +        };
+>> +
+>> +        i2c7: i2c@ff160000 {
+>> +            clock-frequency = <400000>;
+>> +            #address-cells = <1>;
+>> +            #size-cells = <0>;
+>> +
+>> +            wcam: camera@36 {
+>> +                compatible = "ovti,ov5695";
+>> +                reg = <0x36>;
+>> +
+>> +                port {
+>> +                    wcam_out: endpoint {
+>> +                        remote-endpoint = <&mipi_in_wcam>;
+>> +                        data-lanes = <1 2>;
+>> +                    };
+>> +                };
+>> +            };
+>> +
+>> +            ucam: camera@3c {
+>> +                compatible = "ovti,ov2685";
+>> +                reg = <0x3c>;
+>> +
+>> +                  port {
+>> +                      ucam_out: endpoint {
+>> +                          remote-endpoint = <&mipi_in_ucam>;
+>> +                          data-lanes = <1>;
+>> +                      };
+>> +                  };
+>> +            };
+>> +        };
+>> +    };
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
