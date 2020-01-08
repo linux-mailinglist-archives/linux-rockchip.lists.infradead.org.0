@@ -2,79 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6C9B1341DD
-	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Jan 2020 13:38:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3BF5134364
+	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Jan 2020 14:07:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LaZIpbLnrRBSx60CpbAEUJ6nKNJZKAABA489aqmsnDg=; b=Xfm0fAqjxoqzNB
-	yCXY9hEONtNJYM7l4sRkaNSIfOv9JeZq7tQnBZPKzf3sKzxX/5JUMgGPG6Dnz906SbzrKyfaCjk95
-	PcNR3kHBv1JSY+ai1hx0Ejx3/Mz9sn43iiJls2B/v0fvEPtGem1UA7xghmcU6Q9EdeL+Fq6nLM6XX
-	CqrKmwUfxEG7UDqvkF/H+Vw7xhU1lf/1PiB5GHVGSxt/fr6V3LNjAcDVSSh79K3y0yyRuhUsoAOzr
-	J2PmSQFRxzAIJSBGUBRfdT6XGnqxjwZAVCHxnFnwE9fxLa8oOm0nUqp67sqmsJf4l61cWnYcLIu/z
-	OOzuPrJziT6u0pM/15Kg==;
+	List-Owner; bh=JmVGS/G0Xs4cZDuSUOqq4g4DhQVOdFBsKEWjBAn2leQ=; b=C3mNRIHwp1Iklj
+	HkmN9hOUeyEJonsIFTf+Bjd6PdfRjKBVzefyImK3i49/wqBcUhhjk5CkWNqs0l5wzzfVkxg43AfQo
+	vB2mG6sQ89rYcEszjcHmL+FvcjDLCILYo89zQAbI921wfZrZgE52NyNSFxlI0FmpmZSci6IQ/eYSc
+	/aQxeMysq/lFwJUaDfobu7BZqWKFnbhdTDGHgS3wJVvYcBLnt5BLM2xZo6fxKi7pnn0/tYO3LTnse
+	0oKGdkbZ8vMx3oGcoMvQ6ba9oTlzYBD8+6QgyZOzHJj9l0Dzb4yHJkcxYiUfHSptErvU6FLAZ0rq+
+	z3udMkCH0a7Dl9Gdtsdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipAbH-00027M-RE; Wed, 08 Jan 2020 12:38:15 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1ipB38-00061Q-QS; Wed, 08 Jan 2020 13:07:02 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipAbE-000268-HW; Wed, 08 Jan 2020 12:38:13 +0000
-Received: by mail-ed1-x544.google.com with SMTP id v28so2384584edw.12;
- Wed, 08 Jan 2020 04:38:12 -0800 (PST)
+ id 1ipAvh-0005dL-NB
+ for linux-rockchip@lists.infradead.org; Wed, 08 Jan 2020 12:59:24 +0000
+Received: by mail-io1-xd44.google.com with SMTP id h8so3104593iob.2
+ for <linux-rockchip@lists.infradead.org>; Wed, 08 Jan 2020 04:59:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
+ d=amarulasolutions.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=RotMCjOJKktSIUBCGAb4BBJvwMzxDTEukuKk1C8nR/Y=;
- b=DVTb0EFtmqEPjuV03pnzZK8BsOoSGErBVKLIgk8UCu08OyrkYyp+HrCskvsX5sy5Ff
- 7dgC90WFdqalh7qU8HwYisvMIeBkmy+stiyz7LUL0LjF2/5fICa+Z4jUYnRAwAV4kksQ
- 7dZZUA2bit+LnZ4BIwweatxdmsnogHTuTJ2y1kqqYR2/oD1hUVcpiVL6nExK6EfOAQIE
- bqcVrcApy0/mju2Mt+SP/RFG4is3ocgdJpHtYhpE74dGn55SZ2FCKUSQmnx5qLeY5PyP
- qt9S8KPXnqjmbCkZ7ZHnvoc+ZArLCNgibMc4uWYw8FFqFFLTlLcbfckZ9XhF/1HEvSog
- eEMA==
+ :cc; bh=oXLJuk6Ljv9MUgn7rnXyTz5fLHDWIgN+JrCATJrpHfk=;
+ b=JWaQqcO4WH7GgBPNaCR5+frY0QNXqZwrgMa/E2qC1Nm8QS4i0m1mKIEofTkdhxyc94
+ s2azXfphTczHB1vyK883H9eBLBEbwK17/JpKWuyalmH9/+kGbGW24hHOXSkGpQUD/NKk
+ AjbeHlnx3folngOQc4ZyW26038F7UNzl06ulo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=RotMCjOJKktSIUBCGAb4BBJvwMzxDTEukuKk1C8nR/Y=;
- b=OnnWk4ZYJ42wnJX0Ylbr4JYbzIVZfG8jrFq86m/MomSXuIUUNO7Q2yVixX2B6jTx1D
- MRwxQd2YMXinAh2vmdk26yoPb7QEcWobfvjfNklZbJ3JW1IYCGUhxludH8t4QT3hlKU4
- 3M683exlNtbNtpbvkUXisZQhdpoHYHwsHj0ds0DWvK1fc6p03bSYil9lNgxMj7tpSqYg
- V6yTZBOJUzT1SZRXDJyNNsIie1CbdzrZ0/nHHmwzt3vsm1AXbjPEW+Uc10cOC2X+z8N6
- IYmSEJ/lYV7y8Hwdlenf/XrnmDzks5oFtSWTHFuxFE7+T2VPr7NH2AAXDaYqCtSCoWZo
- LaAQ==
-X-Gm-Message-State: APjAAAUDJYh5vv5HdnEhoI0xZpyI62g7VLX6SfEjP8an8PuKFG5k2udG
- DezKsnEVjM3PpjkaegS4LS1HC/LQCixG3P3EKVU=
-X-Google-Smtp-Source: APXvYqzi0WPsidDDmVj1R0p4gUv6jfBMcq5h5l5TD4QO3F5rD/GE1j0AN/0+zT53es3eTRwo2dDerj4WmIdMbbc4SpY=
-X-Received: by 2002:a17:906:1a50:: with SMTP id
- j16mr4721042ejf.106.1578487090894; 
- Wed, 08 Jan 2020 04:38:10 -0800 (PST)
+ bh=oXLJuk6Ljv9MUgn7rnXyTz5fLHDWIgN+JrCATJrpHfk=;
+ b=Jdq6ihXGkad4qM3vNOrmDMIjK9yf6Optzx4PbVs6D+VcABkwf4Y78iYc5Z81ahkiNi
+ hEUtVf+FHsD7key1qiGj0cDT2aym9UVlwMAMLq/tZ4JeupzBUp+yov00VEAiOWrOXZkt
+ N1pBxogfKl2YjvLkm7pQQVg0s6x7PO3V8Zx10xpNNWBLlCEKWKIZkrAQDCAvVZNYzt5c
+ qsg1LZgiH7BAduGyUkZ7ggRvOTZViPsII+s44FDw2vjG2UbWnfBTp71zsKCPWnPCktZd
+ sFXMACyQb7A45mDJPRplP6WxTq+/RPDEDpt4OVuNGj3C8WTnZpHTC/w4AFMC0w6aLWl0
+ 41Gw==
+X-Gm-Message-State: APjAAAUcD+7ot+9jIgfimF8N7ABeHqa+a9OCzZ6yvW91KLaB9O/aJJcO
+ jCgiYAB2n7grRvCWXA66Sek7RSmBxcNaQzMR9Jbd1w==
+X-Google-Smtp-Source: APXvYqwkIieL8pmn8cRfdxEw8THdXkDQZ2ce1QPzyAYn5Uz0TVYPqNUveRrGMH74WgCOyX5IzCzRvhNBJZIPnEFQm+A=
+X-Received: by 2002:a02:b893:: with SMTP id p19mr3832359jam.103.1578488358424; 
+ Wed, 08 Jan 2020 04:59:18 -0800 (PST)
 MIME-Version: 1.0
-References: <20200107230626.885451-1-martin.blumenstingl@googlemail.com>
- <20200107230626.885451-2-martin.blumenstingl@googlemail.com>
- <a85f2063-f412-9762-58d1-47fdffb24af9@arm.com>
-In-Reply-To: <a85f2063-f412-9762-58d1-47fdffb24af9@arm.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Wed, 8 Jan 2020 13:38:00 +0100
-Message-ID: <CAFBinCBYrNC+ULV6Y=77qogowkDZwM+H0bxOqPN4sT6q3krGfw@mail.gmail.com>
-Subject: Re: [PATCH RFT v1 1/3] drm/panfrost: enable devfreq based the
- "operating-points-v2" property
-To: Robin Murphy <robin.murphy@arm.com>
+References: <20191221075440.6944-1-jagan@amarulasolutions.com>
+ <20191221075440.6944-11-jagan@amarulasolutions.com>
+ <20191230125134.189ba860e7fc99b4ad2f1def@bidouilliste.com>
+In-Reply-To: <20191230125134.189ba860e7fc99b4ad2f1def@bidouilliste.com>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Wed, 8 Jan 2020 18:29:07 +0530
+Message-ID: <CAMty3ZDQfV5XXAiBynNwBw7-6rWMU-Zf34EQ1AjRf8r9+crrZw@mail.gmail.com>
+Subject: Re: [PATCH 10/11] rockpro-rk3399: Enable SPI Flash
+To: Emmanuel Vadot <manu@bidouilliste.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_043812_580842_1943D317 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20200108_045922_048640_FF2A76F2 
+X-CRM114-Status: GOOD (  10.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -96,37 +90,50 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: robh@kernel.org, tomeu.vizoso@collabora.com, airlied@linux.ie,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- steven.price@arm.com, linux-rockchip@lists.infradead.org, daniel@ffwll.ch,
- linux-amlogic@lists.infradead.org, alyssa@rosenzweig.io
+Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Simon Glass <sjg@chromium.org>, Kever Yang <kever.yang@rock-chips.com>,
+ U-Boot-Denx <u-boot@lists.denx.de>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Robin,
-
-On Wed, Jan 8, 2020 at 12:18 PM Robin Murphy <robin.murphy@arm.com> wrote:
+On Mon, Dec 30, 2019 at 5:21 PM Emmanuel Vadot <manu@bidouilliste.com> wrote:
 >
-> On 07/01/2020 11:06 pm, Martin Blumenstingl wrote:
-> > Decouple the check to see whether we want to enable devfreq for the GPU
-> > from dev_pm_opp_set_regulators(). This is preparation work for adding
-> > back support for regulator control (which means we need to call
-> > dev_pm_opp_set_regulators() before dev_pm_opp_of_add_table(), which
-> > means having a check for "is devfreq enabled" that is not tied to
-> > dev_pm_opp_of_add_table() makes things easier).
 >
-> Hmm, what about cases like the SCMI DVFS protocol where the OPPs are
-> dynamically discovered rather than statically defined in DT?
-where can I find such an example (Amlogic SoCs use SCPI instead of
-SCMI, so I don't think that I have any board with SCMI support) or
-some documentation?
-(I could only find SCPI clock and CPU DVFS implementations, but no
-generic "OPPs for any device" implementation)
+>  Hi Jagan,
+>
+> On Sat, 21 Dec 2019 13:24:39 +0530
+> Jagan Teki <jagan@amarulasolutions.com> wrote:
+>
+> > Enable winbond SPI flash for ROC-PC-RK3399 board.
+>
+>  s/ROC-PC-RK3399/RockPro64/
+>
+> >
+> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> > ---
+> >  arch/arm/dts/rk3399-rockpro64-u-boot.dtsi | 4 ++++
+> >  configs/rockpro64-rk3399_defconfig        | 2 ++
+> >  2 files changed, 6 insertions(+)
+> >
+> > diff --git a/arch/arm/dts/rk3399-rockpro64-u-boot.dtsi b/arch/arm/dts/rk3399-rockpro64-u-boot.dtsi
+> > index 4648513ea9..deaa3efd39 100644
+> > --- a/arch/arm/dts/rk3399-rockpro64-u-boot.dtsi
+> > +++ b/arch/arm/dts/rk3399-rockpro64-u-boot.dtsi
+> > @@ -6,6 +6,10 @@
+> >  #include "rk3399-u-boot.dtsi"
+> >  #include "rk3399-sdram-lpddr4-100.dtsi"
+> >  / {
+> > +     aliases {
+> > +             spi0 = &spi1;
+>
+>  That looks weird ... what's the point of this alias exactly ?
 
-
-Martin
+spi uclass would require alias number to bind the driver, no way to
+escape as of now.
 
 _______________________________________________
 Linux-rockchip mailing list
