@@ -2,44 +2,44 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D37491346DA
-	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Jan 2020 16:59:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE02F1346DB
+	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Jan 2020 16:59:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=8jDZGHlVlzhIZZTOV6M2xtj2v00gjivXenkXWHe96R8=; b=CU2
-	DOoZEmKWfdtSe+jtxv24LfDO0P4W2dJ+3Qdf004UuiPu9YH4QYwVQ+g3rjKJ33s4VTEr4Eaf1lMTe
-	099wgi28xaswqtlnh5RLaWNfjpQtowVw7KJIUGiI/sMhmHE+NV4c/ZPcV+M47k7125Dh7B2DxW1kl
-	JHFVb9/VMJo2WbofVAnjvCbT0l19XSwdtbbj+l8r+aIi/M9uLmclTw4IFi2+NKA72dph8jqIFmBQD
-	uMOC9YjQChKjbCQHZa+CeChz6DwEVQF3Qvn53f7KCwsMj9isXjc2rkH4UdMDw7pKF7fuZzBDem2yY
-	0txBoZ0MatQFSZra4Id+VsfDx2thT8Q==;
+	References:List-Owner; bh=nnlpc9f0YORxXfZbZ4nHISyX7lLvjf/hs9E//nRFmQ4=; b=NEi
+	olOwgZimdDhvqmTVpE9WDZcZzIV7WrBfLcVLduIN5Ja32k1HyW3he/es8GL/nSNeU0LcWypmV7RBg
+	qmYQQcgGrSwQ/dbwmZAH1Agn0rMyIbA0DDuLgLTYnmFelgMgl67M6kVGkAupvS4wq5xfkxPoa8qF5
+	uvi5hFzLtt3epANiv1iO/8tjx51jHYt2kNTKU7COfWpHRZyl2XX9kw5jN+AZ8wQMoHAu9mc1cfUnT
+	chD75DyVLlCwuPv+Zjbsq1O2rmq4FpO5n5AKMGUg5MiGA8lSP2L8INlw7sRQi6r4cJCUhiNcEarja
+	GPgvgpb6WPyv2yfW6f2arMW8gFEG7cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipDjp-0005vj-Nm; Wed, 08 Jan 2020 15:59:18 +0000
+	id 1ipDk4-0006Cl-2I; Wed, 08 Jan 2020 15:59:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipDjV-0005jX-OD; Wed, 08 Jan 2020 15:58:59 +0000
+ id 1ipDjY-0005kh-DV; Wed, 08 Jan 2020 15:59:02 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B61B7106F;
- Wed,  8 Jan 2020 07:58:56 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 03B4911B3;
+ Wed,  8 Jan 2020 07:58:59 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3F7A23F534;
- Wed,  8 Jan 2020 07:58:56 -0800 (PST)
-Date: Wed, 08 Jan 2020 15:58:54 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 827393F534;
+ Wed,  8 Jan 2020 07:58:58 -0800 (PST)
+Date: Wed, 08 Jan 2020 15:58:57 +0000
 From: Mark Brown <broonie@kernel.org>
 To: Markus Reichl <m.reichl@fivetechno.de>
-Subject: Applied "regulator: mp8859: add config option and build entry" to the
- regulator tree
-In-Reply-To: <20200106211633.2882-3-m.reichl@fivetechno.de>
-Message-Id: <applied-20200106211633.2882-3-m.reichl@fivetechno.de>
+Subject: Applied "regulator: bindings: add MPS mp8859 voltage regulator" to
+ the regulator tree
+In-Reply-To: <20200106211633.2882-5-m.reichl@fivetechno.de>
+Message-Id: <applied-20200106211633.2882-5-m.reichl@fivetechno.de>
 X-Patchwork-Hint: ignore
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_075857_843889_BC089C4A 
-X-CRM114-Status: GOOD (  15.22  )
+X-CRM114-CacheID: sfid-20200108_075900_497702_AB0B8463 
+X-CRM114-Status: GOOD (  14.48  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -76,7 +76,7 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 The patch
 
-   regulator: mp8859: add config option and build entry
+   regulator: bindings: add MPS mp8859 voltage regulator
 
 has been applied to the regulator tree at
 
@@ -101,56 +101,50 @@ to this mail.
 Thanks,
 Mark
 
-From c66f1cbad53a61f00f8b6273e737d5e560b69ec7 Mon Sep 17 00:00:00 2001
+From 44665f7d082977e8bb1803ec0e596f141cba7196 Mon Sep 17 00:00:00 2001
 From: Markus Reichl <m.reichl@fivetechno.de>
-Date: Mon, 6 Jan 2020 22:16:25 +0100
-Subject: [PATCH] regulator: mp8859: add config option and build entry
+Date: Mon, 6 Jan 2020 22:16:27 +0100
+Subject: [PATCH] regulator: bindings: add MPS mp8859 voltage regulator
 
-Add entries for the mp8859 regulator driver
-to the build system.
+The MP8859 from Monolithic Power Systems is a single output dc/dc converter
+with voltage control over i2c.
 
 Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
-Link: https://lore.kernel.org/r/20200106211633.2882-3-m.reichl@fivetechno.de
+Link: https://lore.kernel.org/r/20200106211633.2882-5-m.reichl@fivetechno.de
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/regulator/Kconfig  | 11 +++++++++++
- drivers/regulator/Makefile |  1 +
- 2 files changed, 12 insertions(+)
+ .../devicetree/bindings/regulator/mp8859.txt  | 22 +++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/regulator/mp8859.txt
 
-diff --git a/drivers/regulator/Kconfig b/drivers/regulator/Kconfig
-index 56512748a47d..593733a88a61 100644
---- a/drivers/regulator/Kconfig
-+++ b/drivers/regulator/Kconfig
-@@ -612,6 +612,17 @@ config REGULATOR_MCP16502
- 	  through the regulator interface. In addition it enables
- 	  suspend-to-ram/standby transition.
- 
-+config REGULATOR_MP8859
-+	tristate "MPS MP8859 regulator driver"
-+	depends on I2C
-+	select REGMAP_I2C
-+	help
-+	  Say y here to support the MP8859 voltage regulator. This driver
-+	  supports basic operations (get/set voltage) through the regulator
-+	  interface.
-+	  Say M here if you want to include support for the regulator as a
-+	  module. The module will be named "mp8859".
+diff --git a/Documentation/devicetree/bindings/regulator/mp8859.txt b/Documentation/devicetree/bindings/regulator/mp8859.txt
+new file mode 100644
+index 000000000000..74ad69730989
+--- /dev/null
++++ b/Documentation/devicetree/bindings/regulator/mp8859.txt
+@@ -0,0 +1,22 @@
++Monolithic Power Systems MP8859 voltage regulator
 +
- config REGULATOR_MT6311
- 	tristate "MediaTek MT6311 PMIC"
- 	depends on I2C
-diff --git a/drivers/regulator/Makefile b/drivers/regulator/Makefile
-index 9eccf93bc3ab..8ba8e5deebbd 100644
---- a/drivers/regulator/Makefile
-+++ b/drivers/regulator/Makefile
-@@ -78,6 +78,7 @@ obj-$(CONFIG_REGULATOR_MC13783) += mc13783-regulator.o
- obj-$(CONFIG_REGULATOR_MC13892) += mc13892-regulator.o
- obj-$(CONFIG_REGULATOR_MC13XXX_CORE) +=  mc13xxx-regulator-core.o
- obj-$(CONFIG_REGULATOR_MCP16502) += mcp16502.o
-+obj-$(CONFIG_REGULATOR_MP8859) += mp8859.o
- obj-$(CONFIG_REGULATOR_MT6311) += mt6311-regulator.o
- obj-$(CONFIG_REGULATOR_MT6323)	+= mt6323-regulator.o
- obj-$(CONFIG_REGULATOR_MT6358)	+= mt6358-regulator.o
++Required properties:
++- compatible: "mps,mp8859";
++- reg: I2C slave address.
++
++Optional subnode for regulator: "mp8859_dcdc", using common regulator
++bindings given in <Documentation/devicetree/bindings/regulator/regulator.txt>.
++
++Example:
++
++	mp8859: regulator@66 {
++		compatible = "mps,mp8859";
++		reg = <0x66>;
++		dc_12v: mp8859_dcdc {
++			regulator-name = "dc_12v";
++			regulator-min-microvolt = <12000000>;
++			regulator-max-microvolt = <12000000>;
++			regulator-boot-on;
++			regulator-always-on;
++		};
++	};
 -- 
 2.20.1
 
