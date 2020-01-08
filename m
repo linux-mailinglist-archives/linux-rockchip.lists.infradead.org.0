@@ -2,54 +2,97 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3D7D1346DF
-	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Jan 2020 16:59:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07D691347A3
+	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Jan 2020 17:22:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=SjnJXKN3/TKhhVlZb151XRe1onfblA+Xzx0u9BwwdeI=; b=Ts+
-	WyCbE21g7o1kkXtbEFLnuiV++A61TJrPPrs6/9n8NhQKsQPsfhI6BjX9kQmz49Xgg0QNN6+mmic71
-	fzZle4rSpc2MtEaiPCfaqXl4IAPU4yQLKtkew9aPBdoUHC9bwIALZ+JI1D9PVG6d5sqhVAgh7046C
-	7dxeKG9YsJmfb/yrHwc5seDoruOPu28PISq8qXRZfsjXQHrtgmqpNqkKxhaMgNPbDB++yCD+LVc2f
-	nTqWYMPo/7lW7uFvpNk1dnxCvVsmQ+7/zgUHH54K6ZLimJYEP3PGeBQbPUdRrOb389h1XK9BOaGpj
-	fKEFp9kzfbE2XTJGH/qzEUrcVDQ6u1w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7hqJuB550jwxzaskJBBSsNKf++NwFz/30/LFaimeoHQ=; b=iBctOyJ1vEoc6r
+	41laoEPPstJZ38mu7wnnG30qvbxh6UEM4SIF/ASSYSRDP+hw9Y4wIQUhtzy9653Da9jnx/OosYW3G
+	4IpMsqpliLf1W5JQZbPOZhm0b/40oe1PRNKwPhRPENmzR4bSQwnVqPcploXun4yFABGCIX5Y2yfXm
+	PwnzHKj79VY2dzT/ZVdK7Om2wq5xZ3i4hrAAFH6qGfupgAguPuyXmdinS7+0b4prmbWa9jfEohqRa
+	6ugmKaR97uGQ+HX9BHrmsx5iW2RvV34DOQ3kk1yiGY4EVv6L7u3YBdDzZtHOq7x2b4/jRM7TZ8Iq0
+	cOUSf/N6Xp30k7Dyc08A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipDkQ-0006lv-MA; Wed, 08 Jan 2020 15:59:54 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipDjc-0005o6-4x; Wed, 08 Jan 2020 15:59:06 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 92E9EDA7;
- Wed,  8 Jan 2020 07:59:03 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1A67F3F534;
- Wed,  8 Jan 2020 07:59:02 -0800 (PST)
-Date: Wed, 08 Jan 2020 15:59:01 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Markus Reichl <m.reichl@fivetechno.de>
-Subject: Applied "regulator: mp8859: add driver" to the regulator tree
-In-Reply-To: <20200106211633.2882-2-m.reichl@fivetechno.de>
-Message-Id: <applied-20200106211633.2882-2-m.reichl@fivetechno.de>
-X-Patchwork-Hint: ignore
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+	id 1ipE6M-0000yA-OI; Wed, 08 Jan 2020 16:22:34 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipE62-0000lH-TZ; Wed, 08 Jan 2020 16:22:16 +0000
+Received: by mail-wr1-x444.google.com with SMTP id g17so4052328wro.2;
+ Wed, 08 Jan 2020 08:22:14 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=cUbkapGV6usokmQ+FjkB5jOvk1qHqcO9wl6AKNn00Nk=;
+ b=h8knQN1o2rUkXrs6cmqV6R0pZjpNIqTB7V3oR6JagTvF2BpOTk33TgZQ2VL93ruQ7P
+ NNtDsRaibXPh7F02dYHtJ23M3Y3TC1viY/GMDwFXVwsH7Drp2dVaq+ui+IOEhKqEWxww
+ RkI1XxZjkJLPRpBc3L41n30oe3o1GEAs4M3Vf0C9LFw4uYItxRTiYzLwTXE8YL6e6lF7
+ ejW2UtnyvBVNEuAw3RGFEgpsA20udS2bYVFlzlOWNZ6OhFIWCLIfEayHqXthpZXu3lfl
+ ruevaOxPDyQiiiDNRjoGGGj4DGK0ynXBLEITcvzszreVeWlDIGmLWGx9Dl8JZK2FYWcR
+ rrxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=cUbkapGV6usokmQ+FjkB5jOvk1qHqcO9wl6AKNn00Nk=;
+ b=aB9vbuhggDZRahFxPQ61BKqgHoRE4b9y8oq24RsBlnPkvNYT3/8t/qtSvuwN48ga/6
+ 7OdpqO2dughmN9yeOSLU+pxNQ3jWOV50tQbznv7RuhQdXOBvAqcVEoKzuCjJXusvZnHb
+ KBTsC1pbdn144/1GZwW5yH+Qgp9WQeObXreBp+Asp8Oe9HwECgztmFcvNBbEbTKzyGzN
+ yEZ+Qg2H4UqVUvGlGTUpYN/9uaHMFrmuQO30n8Wx7Ek4oLS24XtoufDlQpQ2nIdC3Zmp
+ 1ncCKBc8qR5pf70iwtOYaEilIskh+JG8XmYOBLG65CBwBsu9eU18I/olpcKJBoZQvZun
+ JDmg==
+X-Gm-Message-State: APjAAAXH6a+2MaYeXizqUTuBHSrxX1rbhDmxMu+QnAAfhj2VKnaWSu0T
+ O4l+NuQMB3U2nKNLSARqA/0=
+X-Google-Smtp-Source: APXvYqwhZnXB7Q+A6al2Q81sPowDetau5NML4GV6kVoXXoSM8NYtMGUCa8Dyubp6uMZAvSBs3Fp6EA==
+X-Received: by 2002:a05:6000:12c9:: with SMTP id
+ l9mr5761235wrx.304.1578500533082; 
+ Wed, 08 Jan 2020 08:22:13 -0800 (PST)
+Received: from prasmi.home ([2a00:23c6:d18:6d00:2811:8b65:294e:fa09])
+ by smtp.gmail.com with ESMTPSA id q3sm5112180wrn.33.2020.01.08.08.22.11
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 08 Jan 2020 08:22:12 -0800 (PST)
+From: Lad Prabhakar <prabhakar.csengg@gmail.com>
+X-Google-Original-From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Magnus Damm <magnus.damm@gmail.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ linux-pci@vger.kernel.org
+Subject: [v3 0/6] Add support for PCIe controller to work in endpoint mode on
+ R-Car SoCs
+Date: Wed,  8 Jan 2020 16:22:05 +0000
+Message-Id: <20200108162211.22358-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_075904_308602_39F85B23 
-X-CRM114-Status: GOOD (  17.83  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200108_082214_955153_0DB361FB 
+X-CRM114-Status: GOOD (  17.52  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (prabhakar.csengg[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,222 +105,187 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
- linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
+ Jingoo Han <jingoohan1@gmail.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
+ linux-kernel@vger.kernel.org,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The patch
+This patch series adds support for PCIe controller on rcar to work in
+endpoint mode, this also extends the epf framework to handle base region
+for mapping PCI address locally..
 
-   regulator: mp8859: add driver
+Note:
+The cadence/rockchip/designware endpoint drivers are build tested only.
 
-has been applied to the regulator tree at
+Changes for v3:
+1] Fixed review comments from Bjorn and Kishon.
+3] Converted to DT schema
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regulator.git for-5.6
+Changes for v2:
+1] Fixed review comments from Biju for dt-bindings to include an example
+   for a tested platform.
+2] Fixed review comments from Kishon to extend the features of outbound
+   regions in epf framework.
+3] Added support to parse outbound-ranges in OF.
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
+lspci output on host:
+=====================
 
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
+01:00.0 Unassigned class [ff00]: Renesas Technology Corp. Device 002d
+        Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx-
+        Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+        Latency: 0
+        Interrupt: pin A routed to IRQ 152
+        Region 0: Memory at fe200200 (64-bit, non-prefetchable) [size=128]
+        Region 2: Memory at fe200000 (64-bit, non-prefetchable) [size=256]
+        Region 4: Memory at fe200100 (64-bit, non-prefetchable) [size=256]
+        Capabilities: [40] Power Management version 3
+                Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0+,D1-,D2-,D3hot+,D3cold+)
+                Status: D0 NoSoftRst- PME-Enable- DSel=0 DScale=0 PME-
+        Capabilities: [50] MSI: Enable- Count=1/1 Maskable+ 64bit+
+                Address: 00000004fa36d000  Data: 0001
+                Masking: fffffffe  Pending: 00000000
+        Capabilities: [70] Express (v2) Endpoint, MSI 00
+                DevCap: MaxPayload 128 bytes, PhantFunc 0, Latency L0s unlimited, L1 unlimited
+                        ExtTag+ AttnBtn- AttnInd- PwrInd- RBE+ FLReset- SlotPowerLimit 0.000W
+                DevCtl: Report errors: Correctable- Non-Fatal- Fatal- Unsupported-
+                        RlxdOrd- ExtTag+ PhantFunc- AuxPwr- NoSnoop+
+                        MaxPayload 128 bytes, MaxReadReq 128 bytes
+                DevSta: CorrErr+ UncorrErr+ FatalErr- UnsuppReq+ AuxPwr- TransPend-
+                LnkCap: Port #0, Speed 5GT/s, Width x1, ASPM L0s, Exit Latency L0s unlimited
+                        ClockPM- Surprise- LLActRep- BwNot- ASPMOptComp-
+                LnkCtl: ASPM Disabled; RCB 64 bytes Disabled- CommClk-
+                        ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
+                LnkSta: Speed 5GT/s, Width x1, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+                DevCap2: Completion Timeout: Not Supported, TimeoutDis+, LTR-, OBFF Not Supported
+                         AtomicOpsCap: 32bit- 64bit- 128bitCAS-
+                DevCtl2: Completion Timeout: 50us to 50ms, TimeoutDis-, LTR-, OBFF Disabled
+                         AtomicOpsCtl: ReqEn-
+                LnkCtl2: Target Link Speed: 5GT/s, EnterCompliance- SpeedDis-
+                         Transmit Margin: Normal Operating Range, EnterModifiedCompliance- ComplianceSOS-
+                         Compliance De-emphasis: -6dB
+                LnkSta2: Current De-emphasis Level: -6dB, EqualizationComplete-, EqualizationPhase1-
+                         EqualizationPhase2-, EqualizationPhase3-, LinkEqualizationRequest-
+        Capabilities: [100 v1] Virtual Channel
+                Caps:   LPEVC=0 RefClk=100ns PATEntryBits=1
+                Arb:    Fixed- WRR32- WRR64- WRR128-
+                Ctrl:   ArbSelect=Fixed
+                Status: InProgress-
+                VC0:    Caps:   PATOffset=00 MaxTimeSlots=1 RejSnoopTrans-
+                        Arb:    Fixed- WRR32- WRR64- WRR128- TWRR128- WRR256-
+                        Ctrl:   Enable+ ID=0 ArbSelect=Fixed TC/VC=ff
+                        Status: NegoPending- InProgress-
+        Kernel driver in use: pci-endpoint-test
 
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
+BAR Test
+========
+root@g2e:~# pcitest -b 0
+BAR0:           OKAY
+root@g2e:~# pcitest -b 1
+BAR1:           NOT OKAY
+root@g2e:~# pcitest -b 2
+BAR2:           OKAY
+root@g2e:~# pcitest -b 3
+BAR3:           NOT OKAY
+root@g2e:~# pcitest -b 4
+BAR4:           OKAY
+root@g2e:~# pcitest -b 5
+BAR5:           NOT OKAY
 
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
+Note: BAR test for 1/3/5 fail because they are configured to be 64bits
 
-Thanks,
-Mark
+Interrupt Test
+==============
+root@g2e:~# pcitest -i 0
+SET IRQ TYPE TO LEGACY:         OKAY
+root@g2e:~# pcitest -l
+LEGACY IRQ:     OKAY
 
-From 4444a1c10069e2f371fa497ba22feafafed5aada Mon Sep 17 00:00:00 2001
-From: Markus Reichl <m.reichl@fivetechno.de>
-Date: Mon, 6 Jan 2020 22:16:24 +0100
-Subject: [PATCH] regulator: mp8859: add driver
+Read Test
+=========
+root@g2e:~# pcitest -r -s 1
+READ (      1 bytes):           OKAY
+root@g2e:~# pcitest -r -s 1024
+READ (   1024 bytes):           OKAY
+root@g2e:~# pcitest -r -s 1025
+READ (   1025 bytes):           OKAY
+root@g2e:~# pcitest -r -s 1024000
+READ (1024000 bytes):           OKAY
+root@g2e:~# pcitest -r -s 1024001
+READ (1024001 bytes):           OKAY
 
-The MP8859 from Monolithic Power Systems is a single output DC/DC
-converter. The voltage can be controlled via I2C.
+Write Test
+==========
+root@g2e:~# pcitest -w -s 1
+WRITE (      1 bytes):          OKAY
+root@g2e:~# pcitest -w -s 1024
+WRITE (   1024 bytes):          OKAY
+root@g2e:~# pcitest -w -s 1025
+WRITE (   1025 bytes):          OKAY
+root@g2e:~# pcitest -w -s 1024000
+WRITE (1024000 bytes):          OKAY
+root@g2e:~# pcitest -w -s 1024001
+WRITE (1024001 bytes):          OKAY
 
-Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
-Link: https://lore.kernel.org/r/20200106211633.2882-2-m.reichl@fivetechno.de
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- drivers/regulator/mp8859.c | 156 +++++++++++++++++++++++++++++++++++++
- 1 file changed, 156 insertions(+)
- create mode 100644 drivers/regulator/mp8859.c
+Copy Test
+=========
+root@g2e:~# pcitest -c -s 1
+COPY (      1 bytes):           OKAY
+root@g2e:~# pcitest -c -s 1024
+COPY (   1024 bytes):           OKAY
+root@g2e:~# pcitest -c -s 1025
+COPY (   1025 bytes):           OKAY
+root@g2e:~# pcitest -c -s 1024000
+COPY (1024000 bytes):           OKAY
+root@g2e:~# pcitest -c -s 1024001
+COPY (1024001 bytes):           OKAY
 
-diff --git a/drivers/regulator/mp8859.c b/drivers/regulator/mp8859.c
-new file mode 100644
-index 000000000000..e804a5267301
---- /dev/null
-+++ b/drivers/regulator/mp8859.c
-@@ -0,0 +1,156 @@
-+// SPDX-License-Identifier: GPL-2.0
-+//
-+// Copyright (c) 2019 five technologies GmbH
-+// Author: Markus Reichl <m.reichl@fivetechno.de>
-+
-+#include <linux/module.h>
-+#include <linux/i2c.h>
-+#include <linux/of.h>
-+#include <linux/regulator/driver.h>
-+#include <linux/regmap.h>
-+
-+
-+#define VOL_MIN_IDX			0x00
-+#define VOL_MAX_IDX			0x7ff
-+
-+/* Register definitions */
-+#define MP8859_VOUT_L_REG		0    //3 lo Bits
-+#define MP8859_VOUT_H_REG		1    //8 hi Bits
-+#define MP8859_VOUT_GO_REG		2
-+#define MP8859_IOUT_LIM_REG		3
-+#define MP8859_CTL1_REG			4
-+#define MP8859_CTL2_REG			5
-+#define MP8859_RESERVED1_REG		6
-+#define MP8859_RESERVED2_REG		7
-+#define MP8859_RESERVED3_REG		8
-+#define MP8859_STATUS_REG		9
-+#define MP8859_INTERRUPT_REG		0x0A
-+#define MP8859_MASK_REG			0x0B
-+#define MP8859_ID1_REG			0x0C
-+#define MP8859_MFR_ID_REG		0x27
-+#define MP8859_DEV_ID_REG		0x28
-+#define MP8859_IC_REV_REG		0x29
-+
-+#define MP8859_MAX_REG			0x29
-+
-+#define MP8859_GO_BIT			0x01
-+
-+
-+static int mp8859_set_voltage_sel(struct regulator_dev *rdev, unsigned int sel)
-+{
-+	int ret;
-+
-+	ret = regmap_write(rdev->regmap, MP8859_VOUT_L_REG, sel & 0x7);
-+
-+	if (ret)
-+		return ret;
-+	ret = regmap_write(rdev->regmap, MP8859_VOUT_H_REG, sel >> 3);
-+
-+	if (ret)
-+		return ret;
-+	ret = regmap_update_bits(rdev->regmap, MP8859_VOUT_GO_REG,
-+					MP8859_GO_BIT, 1);
-+	return ret;
-+}
-+
-+static int mp8859_get_voltage_sel(struct regulator_dev *rdev)
-+{
-+	unsigned int val_tmp;
-+	unsigned int val;
-+	int ret;
-+
-+	ret = regmap_read(rdev->regmap, MP8859_VOUT_H_REG, &val_tmp);
-+
-+	if (ret)
-+		return ret;
-+	val = val_tmp << 3;
-+
-+	ret = regmap_read(rdev->regmap, MP8859_VOUT_L_REG, &val_tmp);
-+
-+	if (ret)
-+		return ret;
-+	val |= val_tmp & 0x07;
-+	return val;
-+}
-+
-+static const struct regulator_linear_range mp8859_dcdc_ranges[] = {
-+	REGULATOR_LINEAR_RANGE(0, VOL_MIN_IDX, VOL_MAX_IDX, 10000),
-+};
-+
-+static const struct regmap_config mp8859_regmap = {
-+	.reg_bits = 8,
-+	.val_bits = 8,
-+	.max_register = MP8859_MAX_REG,
-+	.cache_type = REGCACHE_RBTREE,
-+};
-+
-+static const struct regulator_ops mp8859_ops = {
-+	.set_voltage_sel = mp8859_set_voltage_sel,
-+	.get_voltage_sel = mp8859_get_voltage_sel,
-+	.list_voltage = regulator_list_voltage_linear_range,
-+};
-+
-+static const struct regulator_desc mp8859_regulators[] = {
-+	{
-+		.id = 0,
-+		.type = REGULATOR_VOLTAGE,
-+		.name = "mp8859_dcdc",
-+		.of_match = of_match_ptr("mp8859_dcdc"),
-+		.n_voltages = VOL_MAX_IDX + 1,
-+		.linear_ranges = mp8859_dcdc_ranges,
-+		.n_linear_ranges = 1,
-+		.ops = &mp8859_ops,
-+		.owner = THIS_MODULE,
-+	},
-+};
-+
-+static int mp8859_i2c_probe(struct i2c_client *i2c)
-+{
-+	int ret;
-+	struct regulator_config config = {.dev = &i2c->dev};
-+	struct regmap *regmap = devm_regmap_init_i2c(i2c, &mp8859_regmap);
-+	struct regulator_dev *rdev;
-+
-+	if (IS_ERR(regmap)) {
-+		ret = PTR_ERR(regmap);
-+		dev_err(&i2c->dev, "regmap init failed: %d\n", ret);
-+		return ret;
-+	}
-+	rdev = devm_regulator_register(&i2c->dev, &mp8859_regulators[0],
-+					&config);
-+
-+	if (IS_ERR(rdev)) {
-+		ret = PTR_ERR(rdev);
-+		dev_err(&i2c->dev, "failed to register %s: %d\n",
-+			mp8859_regulators[0].name, ret);
-+			return ret;
-+		}
-+	return 0;
-+}
-+
-+static const struct of_device_id mp8859_dt_id[] = {
-+	{.compatible =  "mps,mp8859"},
-+	{},
-+};
-+MODULE_DEVICE_TABLE(of, mp8859_dt_id);
-+
-+static const struct i2c_device_id mp8859_i2c_id[] = {
-+	{ "mp8859", },
-+	{  },
-+};
-+MODULE_DEVICE_TABLE(i2c, mp8859_i2c_id);
-+
-+static struct i2c_driver mp8859_regulator_driver = {
-+	.driver = {
-+		.name = "mp8859",
-+		.of_match_table = of_match_ptr(mp8859_dt_id),
-+	},
-+	.probe_new = mp8859_i2c_probe,
-+	.id_table = mp8859_i2c_id,
-+};
-+
-+module_i2c_driver(mp8859_regulator_driver);
-+
-+MODULE_DESCRIPTION("Monolithic Power Systems MP8859 voltage regulator driver");
-+MODULE_AUTHOR("Markus Reichl <m.reichl@fivetechno.de>");
-+MODULE_LICENSE("GPL v2");
+
+Lad Prabhakar (6):
+  PCI: rcar: Preparation for adding endpoint support
+  PCI: rcar: Fix calculating mask for PCIEPAMR register
+  PCI: endpoint: Add support to handle multiple base for mapping
+    outbound memory
+  dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
+    controller
+  PCI: rcar: Add support for rcar PCIe controller in endpoint mode
+  misc: pci_endpoint_test: Add Device ID for RZ/G2E PCIe controller
+
+ .../devicetree/bindings/pci/rcar-pci-ep.yaml  |   76 +
+ arch/arm64/configs/defconfig                  |    2 +-
+ drivers/misc/pci_endpoint_test.c              |    3 +
+ drivers/pci/controller/Kconfig                |   11 +-
+ drivers/pci/controller/Makefile               |    3 +-
+ .../pci/controller/cadence/pcie-cadence-ep.c  |   12 +-
+ .../pci/controller/dwc/pcie-designware-ep.c   |   31 +-
+ drivers/pci/controller/pcie-rcar-ep.c         |  497 +++++++
+ drivers/pci/controller/pcie-rcar-host.c       | 1044 ++++++++++++++
+ drivers/pci/controller/pcie-rcar.c            | 1232 +----------------
+ drivers/pci/controller/pcie-rcar.h            |  132 ++
+ drivers/pci/controller/pcie-rockchip-ep.c     |   14 +-
+ drivers/pci/endpoint/functions/pci-epf-test.c |   29 +-
+ drivers/pci/endpoint/pci-epc-core.c           |    7 +-
+ drivers/pci/endpoint/pci-epc-mem.c            |  199 ++-
+ include/linux/pci-epc.h                       |   46 +-
+ 16 files changed, 2064 insertions(+), 1274 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+ create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
+ create mode 100644 drivers/pci/controller/pcie-rcar-host.c
+ create mode 100644 drivers/pci/controller/pcie-rcar.h
+
 -- 
 2.20.1
 
