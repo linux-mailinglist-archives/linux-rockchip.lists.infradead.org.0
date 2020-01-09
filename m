@@ -2,78 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76275136069
-	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 19:48:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACEDA13606C
+	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 19:48:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LhMPnJ/etF4xiQNWPAWCGFq+jZeSrqiMqG9gHL4JpVs=; b=lWz4/yN7Pv9ERy
-	62I0PvjgNu+aTDY+icMlmiXMZRHfziAtaWGPOmMvD9qtoeA4dsVZbWNo6xHCIbKP/o922agu8ab8W
-	WsZTRQl4d7PO7WPY2gezyaYB5DWLLNYeknW3+SzrZ23h+eDEZ2v0f2KCAcA43Q1KzWwjdTJ9gZoaL
-	SRo0Hkgg3DmnVXzMOdzjknUOs8M8TYaVERBNXdJW9dJsC852z3gWjqz2/Kygec6NRbOBPDl41BEhj
-	bHHFhueZhxq7JUKbCXrPME0a9vtf1Z33ipcf6iHyZkd9ad7bGYow38s5cho42MhoqJeGbtZUszhfF
-	mB0CokkFsn+SY4ZkvrGA==;
+	List-Owner; bh=EQRuc/0WPtACaOCH0dZpRe0O9Yep0g2SIHfVe0BMNbo=; b=kz22uSK1aFUS2B
+	gR0MXKr1PxAoldMMGZi6S3UHawFRQK1S6Q6l47kOkOw7XnrBeB3rcEfEeLcB5aUJTErgzj3O+NeRy
+	XDP5aF4uJRr6YCAwjgUjacW+Lx7CvO+NVwUIkLq/+RfLvozQm8KDQy+CrLqP4ZRlPWrENvhrnhxP0
+	C5I7TAjhCOJbC5q7pOFAkuEi1sdJiiQQBk2jGDftIqEPF0+mI46Zj6AFdy8Ocl2S3qub0gsDkqccq
+	u1KDBxD3w6rx32BFKfDCgNxl4wYlo/pdKzasJAG/VKNISDghBkHr/sKC22qDdnIpa/OFrXvAhXXnL
+	YTgYi+7ZvJiY/m7xPAIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipcqo-0002n4-LU; Thu, 09 Jan 2020 18:48:10 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1ipcr1-00030N-Cx; Thu, 09 Jan 2020 18:48:23 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipcql-0002mK-PZ
- for linux-rockchip@lists.infradead.org; Thu, 09 Jan 2020 18:48:08 +0000
-Received: by mail-pf1-x444.google.com with SMTP id q10so3779521pfs.6
- for <linux-rockchip@lists.infradead.org>; Thu, 09 Jan 2020 10:48:07 -0800 (PST)
+ id 1ipcqw-0002vp-VF
+ for linux-rockchip@lists.infradead.org; Thu, 09 Jan 2020 18:48:20 +0000
+Received: by mail-pg1-x543.google.com with SMTP id x7so3615045pgl.11
+ for <linux-rockchip@lists.infradead.org>; Thu, 09 Jan 2020 10:48:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ZU8kvWg4m+hftYZcxYVQAS3W4JM96ciVS2kwizCqq9M=;
- b=oP0uRYPAEAOaggQ/REYXW7UaoBex/A5GL3FZCs1QGkko9ghyflhb3SrVuOyzqryGoe
- zjECopiK6iv1k58vemjNePDUvPKAJ7QDgspQKiQPaij3c2i4hssiJI8GIEe1KLlf9ynq
- EiziVUGvM1SjR8imUjwD/pJm4xoXp5bMqDuKQ=
+ bh=ohtCegxGTC6Cqe4V14RfDztSgq/DwnKYmeUpgrodjx4=;
+ b=YH6eV3eCDtnsHKmePAzRqe3RQsvPnizhVNvcWdjktOnGpGxH4BAeL3txaetnNsYdky
+ z+T2RR/xrZLWofAFTm6k/CrV6OTAWxRrfJJ19YlPZchL0yxPJsaYUQi/fnLaZjxz57u4
+ 7Vjldo3IZqS/7DtauzKRakDF2yH17MImwn/bk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ZU8kvWg4m+hftYZcxYVQAS3W4JM96ciVS2kwizCqq9M=;
- b=JYc4Bae6aFDB/zyF5/99of7DmL1sfspMdC9yn0leoCv3ggMwkG4goqXitsJwlCm0tI
- mzKh7BheMXyObcrwlZzKZuMmG4SrNrX4/DjSb9CX4MMt31oyBzyRqK7WKXqm6t8Eb5gL
- 1HAGwkJwHavlfQJkuBFHXX+xLBorHA/5WBSk5u0dTJg8Tu/WA0fzHTdQIUc6fxxVDEZe
- mEVkdSYgXAAv5oCXIQRZ83Z/RGJ41+VcLr2blj114cm3Dod12zejSbczDHc7btVampoD
- EAfixCPKBzF8iI91aE83CqXVnwqNs91lWKA/+BUpoBngNE9DWm6XvDsnKUGJPeacYnuf
- KkuA==
-X-Gm-Message-State: APjAAAXiJtOr1mN6BBbppHtRfxd12LiB1rlFMq8RR01KGfzqFCfwyBZz
- bbYKLrIvm64UUnWTE7WTXwBXXQ==
-X-Google-Smtp-Source: APXvYqz5tJVW15+xI0hAosP1sJb7rIXahl8WM6ylzL3uzisT540VClKQiLvR58JFHSrWcZ6Gpul7kA==
-X-Received: by 2002:a65:6898:: with SMTP id e24mr13386669pgt.59.1578595687111; 
- Thu, 09 Jan 2020 10:48:07 -0800 (PST)
+ bh=ohtCegxGTC6Cqe4V14RfDztSgq/DwnKYmeUpgrodjx4=;
+ b=Z9pwksd7gb5d5bJrinUyvcwd+Z1BtphzDYbDMBs2XeH+9BNRbS810vQ5s/PtNZKrkF
+ X7x+NgLu0mcktLV9CkDkvX0bOm/8WwE+aKw3N0Eob4G6HqD4ceGPKZWspU/ndS9J8q3S
+ 74ZCecte9HBbNTuu0Yu1cx+u39Nipqg4diIp+1aFCeeBX5sCk7BG+aeE9kM7utXDlhpi
+ w3udgCLAi0SVEPJYFzOtWUS97xq6ifhghR1iJgaZAJX7zl6Di6SODXnjVD7k9oFbN5g5
+ hWiR0sGG4//Uy4TKq5+ORhRrh/DK1Vq77zwg1qH1bImfydFLJHuC87F3aM3haagBB+zh
+ iMVQ==
+X-Gm-Message-State: APjAAAXVlOog5DzUagifQd38puTNk+dje+Sq38f1khp4zspmMT47Wjpl
+ VBnGf0SDfZLOdaEebrbe70eGOA==
+X-Google-Smtp-Source: APXvYqxRFGs4yozuVbdMQ9qGzD8SKZnYZxyPBrekHt8IsGLUMZIWVQvWESICQZFhVkb40Yk7hKRErw==
+X-Received: by 2002:a63:213:: with SMTP id 19mr13075880pgc.160.1578595698338; 
+ Thu, 09 Jan 2020 10:48:18 -0800 (PST)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:c4eb:be5d:1485:edee])
- by smtp.gmail.com with ESMTPSA id i8sm8967306pfa.109.2020.01.09.10.47.56
+ by smtp.gmail.com with ESMTPSA id i8sm8967306pfa.109.2020.01.09.10.48.07
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Jan 2020 10:48:06 -0800 (PST)
+ Thu, 09 Jan 2020 10:48:17 -0800 (PST)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v7 3/7] Makefile: rockchip: Support SPL-alone mkimage
-Date: Fri, 10 Jan 2020 00:16:18 +0530
-Message-Id: <20200109184622.3098-4-jagan@amarulasolutions.com>
+Subject: [PATCH v7 4/7] arm: dts: rk3036: Add rk3036-u-boot.dtsi
+Date: Fri, 10 Jan 2020 00:16:19 +0530
+Message-Id: <20200109184622.3098-5-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20200109184622.3098-1-jagan@amarulasolutions.com>
 References: <20200109184622.3098-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_104807_832137_4C78CEC7 
-X-CRM114-Status: UNSURE (   7.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200109_104819_020998_2EFD1340 
+X-CRM114-Status: GOOD (  10.45  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,51 +103,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add SPL-alone mkimage tooling support via Makefile for
-few platforms or boards used in rockchip family.
+Add U-Boot specific dtsi file for rk3036 SoC. This
+would help to add U-Boot specific dts nodes, properties
+which are common across rk3036.
 
-With this users would get rid of explicitly creating
-mkimage tool for rockchip rksd or rkspi boot modes.
+Right now, the file is empty, will add required changes
+in future patches.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
 ---
- Makefile | 10 +++++++++-
- 1 file changed, 9 insertions(+), 1 deletion(-)
+ arch/arm/dts/rk3036-sdk-u-boot.dtsi | 2 ++
+ arch/arm/dts/rk3036-u-boot.dtsi     | 4 ++++
+ 2 files changed, 6 insertions(+)
+ create mode 100644 arch/arm/dts/rk3036-u-boot.dtsi
 
-diff --git a/Makefile b/Makefile
-index 50ac12fe9b..5361524f77 100644
---- a/Makefile
-+++ b/Makefile
-@@ -908,7 +908,7 @@ ifeq ($(CONFIG_MPC85xx)$(CONFIG_OF_SEPARATE),yy)
- ALL-y += u-boot-with-dtb.bin
- endif
- 
--ifeq ($(CONFIG_ARCH_ROCKCHIP)$(CONFIG_SPL)$(CONFIG_TPL),yyy)
-+ifeq ($(CONFIG_ARCH_ROCKCHIP)$(CONFIG_SPL),yy)
- ALL-y += idbloader.img
- endif
- 
-@@ -1382,11 +1382,19 @@ else
- ROCKCHIP_IMG_TYPE := rksd
- endif
- 
-+# TPL + SPL
-+ifeq ($(CONFIG_SPL)$(CONFIG_TPL),yy)
- MKIMAGEFLAGS_u-boot-tpl-rockchip.bin = -n $(CONFIG_SYS_SOC) -T $(ROCKCHIP_IMG_TYPE)
- tpl/u-boot-tpl-rockchip.bin: tpl/u-boot-tpl.bin FORCE
- 	$(call if_changed,mkimage)
- idbloader.img: tpl/u-boot-tpl-rockchip.bin spl/u-boot-spl.bin FORCE
- 	$(call if_changed,cat)
-+else
-+MKIMAGEFLAGS_idbloader.img = -n $(CONFIG_SYS_SOC) -T $(ROCKCHIP_IMG_TYPE)
-+idbloader.img: spl/u-boot-spl.bin FORCE
-+	$(call if_changed,mkimage)
-+endif
+diff --git a/arch/arm/dts/rk3036-sdk-u-boot.dtsi b/arch/arm/dts/rk3036-sdk-u-boot.dtsi
+index 6f15f4a8ec..754800c6e6 100644
+--- a/arch/arm/dts/rk3036-sdk-u-boot.dtsi
++++ b/arch/arm/dts/rk3036-sdk-u-boot.dtsi
+@@ -1,3 +1,5 @@
++#include "rk3036-u-boot.dtsi"
 +
- endif
- 
- ifeq ($(CONFIG_ARCH_LPC32XX)$(CONFIG_SPL),yy)
+ &uart2 {
+ 	u-boot,dm-pre-reloc;
+ };
+diff --git a/arch/arm/dts/rk3036-u-boot.dtsi b/arch/arm/dts/rk3036-u-boot.dtsi
+new file mode 100644
+index 0000000000..1e7d079315
+--- /dev/null
++++ b/arch/arm/dts/rk3036-u-boot.dtsi
+@@ -0,0 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
++ */
 -- 
 2.18.0.321.gffc6fa0e3
 
