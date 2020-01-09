@@ -2,52 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AFDE135784
-	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 11:57:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3255213580A
+	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 12:32:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9cCgRryauJljzwkVMRSBkz2WLcnOWzkziZPGfmX18P0=; b=OHZ2jO9azmPBz25l8lpFsyepl
-	bvsarq2ArI4lkDl54VB4buugmXnp3Z5sxmakC8IBzkRjBKdSYMM9RoamE2pTpKZMJIkoXc9tdSqVY
-	r5yYyVd0Udr114xAmR3Vc8tBHhtD4wwTh3TyksvHdRYIA0UfUHQLsatkdVoBonVYZq0TVnloiT1ck
-	5J73l5osLhKtp9xREvvLbWejqYnkEW5KapfnzG3G8RcQrFlQtLzK03nsmexHNJCRd8Mb4Tk0BMwWs
-	rLkYIAqbatPjf9jpAOnDn6PhCP9ZbBXtfQPHK1UsCNOAfvGusuamGI933RjRH0qZqV0Wxq3/iJce1
-	HgXBNc+Fw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=b+IH4hNoPuPxw+xFYCARgaioE/VEeALYOJUk6qRuP2w=; b=kpsU9w+TiOgfvd
+	KnS4BwtEb2a1cBlGrdyqv9YcLVzr2zYOZFVLkf+0XlNM0MW/mgXbQ4Rrgy5DdsJAW2gl5ta43KLKL
+	db7UNqqvJGvck3QghhmDAyjzlMXtqRstLK78srwGpR6/KF/V8mpzWs/WYFe6L87XMPHLu73EvoRSn
+	lvzih+lMiNI82RZhZCTeuWgNn53Q+jZppXmvY41mEJ3Go4sRMqU98ZMz6nR2RXkJrfNlr95Ref3Xa
+	GhPBVxaAIF58hcjF0yjK3HfR9zEMAHkLJhmkB5gnYmTjjzWCNHD6lW0PbWd6F+k04vVuGyMSQGjgR
+	JYVQL4JzNmLrZC1D8MKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipVVE-0004qW-QR; Thu, 09 Jan 2020 10:57:24 +0000
+	id 1ipW2q-0007uS-PM; Thu, 09 Jan 2020 11:32:08 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipVUz-0004gP-Hk; Thu, 09 Jan 2020 10:57:11 +0000
+ id 1ipW2a-0007em-IQ; Thu, 09 Jan 2020 11:31:54 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EAB9C31B;
- Thu,  9 Jan 2020 02:57:08 -0800 (PST)
-Received: from [10.37.12.111] (unknown [10.37.12.111])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3DA023F703;
- Thu,  9 Jan 2020 02:57:05 -0800 (PST)
-Subject: Re: [PATCH v2 02/11] PM / devfreq: Remove
- devfreq_get_devfreq_by_phandle function
-To: Chanwoo Choi <cw00.choi@samsung.com>, robh+dt@kernel.org,
- krzk@kernel.org, heiko@sntech.de, leonard.crestez@nxp.com
-References: <20191220002430.11995-1-cw00.choi@samsung.com>
- <CGME20191220001759epcas1p4ce1c2017937a35de84eab720b9732df0@epcas1p4.samsung.com>
- <20191220002430.11995-3-cw00.choi@samsung.com>
- <b9a1ebe5-e114-3a6b-6081-c794e1341329@arm.com>
- <22cde618-d51e-2d4d-461e-e2d2c1b52af2@samsung.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <3cb1e237-84b2-f110-4eb3-6394151cecc4@arm.com>
-Date: Thu, 9 Jan 2020 10:57:03 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DE3CF31B;
+ Thu,  9 Jan 2020 03:31:51 -0800 (PST)
+Received: from [10.1.194.52] (e112269-lin.cambridge.arm.com [10.1.194.52])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 85AD23F703;
+ Thu,  9 Jan 2020 03:31:50 -0800 (PST)
+Subject: Re: [PATCH RFT v1 3/3] drm/panfrost: Use the mali-supply regulator
+ for control again
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ dri-devel@lists.freedesktop.org, alyssa@rosenzweig.io,
+ tomeu.vizoso@collabora.com, robh@kernel.org
+References: <20200107230626.885451-1-martin.blumenstingl@googlemail.com>
+ <20200107230626.885451-4-martin.blumenstingl@googlemail.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <2ceffe46-57a8-79a8-2c41-d04b227d3792@arm.com>
+Date: Thu, 9 Jan 2020 11:31:48 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-In-Reply-To: <22cde618-d51e-2d4d-461e-e2d2c1b52af2@samsung.com>
+In-Reply-To: <20200107230626.885451-4-martin.blumenstingl@googlemail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_025709_679639_9D1F0E54 
-X-CRM114-Status: GOOD (  17.35  )
+X-CRM114-CacheID: sfid-20200109_033152_690502_9C9DD596 
+X-CRM114-Status: GOOD (  22.09  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,99 +67,123 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
- a.swigon@samsung.com, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, kyungmin.park@samsung.com,
- myungjoo.ham@samsung.com, kgene@kernel.org,
- linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: airlied@linux.ie, linux-rockchip@lists.infradead.org, robin.murphy@arm.com,
+ linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-CgpPbiAxLzkvMjAgMTA6NTQgQU0sIENoYW53b28gQ2hvaSB3cm90ZToKPiBPbiAxLzkvMjAgNzoz
-NyBQTSwgTHVrYXN6IEx1YmEgd3JvdGU6Cj4+IEhpIENoYW53b28sCj4+Cj4+IE9uIDEyLzIwLzE5
-IDEyOjI0IEFNLCBDaGFud29vIENob2kgd3JvdGU6Cj4+PiBQcmV2aW91c2x5LCBkZXZmcmVxIGNv
-cmUgc3VwcG9ydCAnZGV2ZnJlcScgcHJvcGVydHkgaW4gb3JkZXIgdG8gZ2V0Cj4+PiB0aGUgZGV2
-ZnJlcSBkZXZpY2UgYnkgcGhhbmRsZS4gQnV0LCAnZGV2ZnJlcScgcHJvcGVydHkgbmFtZSBpcyBu
-b3QgcHJvcGVyCj4+PiBvbiBkZXZpY2V0cmVlIGJpbmRpbmcgYmVjYXVzZSB0aGlzIG5hbWUgZG9l
-c24ndCBtZWFuIHRoZSBhbnkgaC93IGF0dHJpYnV0ZS4KPj4+Cj4+PiBUaGUgZGV2ZnJlcSBjb3Jl
-IGhhbmQgb3ZlciB0aGUgcmlnaHQgdG8gZGVjaWRlIHRoZSBwcm9wZXJ0eSBuYW1lCj4+PiBmb3Ig
-Z2V0dGluZyB0aGUgZGV2ZnJlcSBkZXZpY2Ugb24gZGV2aWNldHJlZS4gRWFjaCBkZXZmcmVxIGRy
-aXZlcgo+Pj4gd2lsbCBkZWNpZGUgdGhlIHByb3BlcnR5IG5hbWUgb24gZGV2aWNldHJlZSBiaW5k
-aW5nIGFuZCB0aGVuIGdldAo+Pj4gdGhlIGRldmZyZXEgZGV2aWNlIGJ5IHVzaW5nIGRldmZyZXFf
-Z2V0X2RldmZyZXFfYnlfbm9kZSgpLgo+Pj4KPj4+IFNpZ25lZC1vZmYtYnk6IENoYW53b28gQ2hv
-aSA8Y3cwMC5jaG9pQHNhbXN1bmcuY29tPgo+Pj4gLS0tCj4+PiAgwqAgZHJpdmVycy9kZXZmcmVx
-L2RldmZyZXEuY8KgwqDCoCB8IDM1IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-Cj4+PiAgwqAgZHJpdmVycy9kZXZmcmVxL2V4eW5vcy1idXMuYyB8IDEyICsrKysrKysrKysrLQo+
-Pj4gIMKgIGluY2x1ZGUvbGludXgvZGV2ZnJlcS5owqDCoMKgwqDCoCB8wqAgOCAtLS0tLS0tLQo+
-Pj4gIMKgIDMgZmlsZXMgY2hhbmdlZCwgMTEgaW5zZXJ0aW9ucygrKSwgNDQgZGVsZXRpb25zKC0p
-Cj4+Pgo+Pj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZGV2ZnJlcS9kZXZmcmVxLmMgYi9kcml2ZXJz
-L2RldmZyZXEvZGV2ZnJlcS5jCj4+PiBpbmRleCBjYjhjYTgxYzg5NzMuLmMzZDNjN2M4MDJhMCAx
-MDA2NDQKPj4+IC0tLSBhL2RyaXZlcnMvZGV2ZnJlcS9kZXZmcmVxLmMKPj4+ICsrKyBiL2RyaXZl
-cnMvZGV2ZnJlcS9kZXZmcmVxLmMKPj4+IEBAIC05OTEsNDggKzk5MSwxMyBAQCBzdHJ1Y3QgZGV2
-ZnJlcSAqZGV2ZnJlcV9nZXRfZGV2ZnJlcV9ieV9ub2RlKHN0cnVjdCBkZXZpY2Vfbm9kZSAqbm9k
-ZSkKPj4+ICDCoCDCoMKgwqDCoMKgIHJldHVybiBFUlJfUFRSKC1FTk9ERVYpOwo+Pj4gIMKgIH0K
-Pj4+IC0KPj4+IC0vKgo+Pj4gLSAqIGRldmZyZXFfZ2V0X2RldmZyZXFfYnlfcGhhbmRsZSAtIEdl
-dCB0aGUgZGV2ZnJlcSBkZXZpY2UgZnJvbSBkZXZpY2V0cmVlCj4+PiAtICogQGRldiAtIGluc3Rh
-bmNlIHRvIHRoZSBnaXZlbiBkZXZpY2UKPj4+IC0gKiBAaW5kZXggLSBpbmRleCBpbnRvIGxpc3Qg
-b2YgZGV2ZnJlcQo+Pj4gLSAqCj4+PiAtICogcmV0dXJuIHRoZSBpbnN0YW5jZSBvZiBkZXZmcmVx
-IGRldmljZQo+Pj4gLSAqLwo+Pj4gLXN0cnVjdCBkZXZmcmVxICpkZXZmcmVxX2dldF9kZXZmcmVx
-X2J5X3BoYW5kbGUoc3RydWN0IGRldmljZSAqZGV2LCBpbnQgaW5kZXgpCj4+PiAtewo+Pj4gLcKg
-wqDCoCBzdHJ1Y3QgZGV2aWNlX25vZGUgKm5vZGU7Cj4+PiAtwqDCoMKgIHN0cnVjdCBkZXZmcmVx
-ICpkZXZmcmVxOwo+Pj4gLQo+Pj4gLcKgwqDCoCBpZiAoIWRldikKPj4+IC3CoMKgwqDCoMKgwqDC
-oCByZXR1cm4gRVJSX1BUUigtRUlOVkFMKTsKPj4+IC0KPj4+IC3CoMKgwqAgaWYgKCFkZXYtPm9m
-X25vZGUpCj4+PiAtwqDCoMKgwqDCoMKgwqAgcmV0dXJuIEVSUl9QVFIoLUVJTlZBTCk7Cj4+PiAt
-Cj4+PiAtwqDCoMKgIG5vZGUgPSBvZl9wYXJzZV9waGFuZGxlKGRldi0+b2Zfbm9kZSwgImRldmZy
-ZXEiLCBpbmRleCk7Cj4+PiAtwqDCoMKgIGlmICghbm9kZSkKPj4+IC3CoMKgwqDCoMKgwqDCoCBy
-ZXR1cm4gRVJSX1BUUigtRU5PREVWKTsKPj4+IC0KPj4+IC3CoMKgwqAgZGV2ZnJlcSA9IGRldmZy
-ZXFfZ2V0X2RldmZyZXFfYnlfbm9kZShub2RlKTsKPj4+IC3CoMKgwqAgb2Zfbm9kZV9wdXQobm9k
-ZSk7Cj4+PiAtCj4+PiAtwqDCoMKgIHJldHVybiBkZXZmcmVxOwo+Pj4gLX0KPj4+IC0KPj4+ICDC
-oCAjZWxzZQo+Pj4gIMKgIHN0cnVjdCBkZXZmcmVxICpkZXZmcmVxX2dldF9kZXZmcmVxX2J5X25v
-ZGUoc3RydWN0IGRldmljZV9ub2RlICpub2RlKQo+Pj4gIMKgIHsKPj4+ICDCoMKgwqDCoMKgIHJl
-dHVybiBFUlJfUFRSKC1FTk9ERVYpOwo+Pj4gIMKgIH0KPj4+IC0KPj4+IC1zdHJ1Y3QgZGV2ZnJl
-cSAqZGV2ZnJlcV9nZXRfZGV2ZnJlcV9ieV9waGFuZGxlKHN0cnVjdCBkZXZpY2UgKmRldiwgaW50
-IGluZGV4KQo+Pj4gLXsKPj4+IC3CoMKgwqAgcmV0dXJuIEVSUl9QVFIoLUVOT0RFVik7Cj4+PiAt
-fQo+Pj4gIMKgICNlbmRpZiAvKiBDT05GSUdfT0YgKi8KPj4+ICDCoCBFWFBPUlRfU1lNQk9MX0dQ
-TChkZXZmcmVxX2dldF9kZXZmcmVxX2J5X25vZGUpOwo+Pj4gLUVYUE9SVF9TWU1CT0xfR1BMKGRl
-dmZyZXFfZ2V0X2RldmZyZXFfYnlfcGhhbmRsZSk7Cj4+PiAgwqAgwqAgLyoqCj4+PiAgwqDCoCAq
-IGRldm1fZGV2ZnJlcV9yZW1vdmVfZGV2aWNlKCkgLSBSZXNvdXJjZS1tYW5hZ2VkIGRldmZyZXFf
-cmVtb3ZlX2RldmljZSgpCj4+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9kZXZmcmVxL2V4eW5vcy1i
-dXMuYyBiL2RyaXZlcnMvZGV2ZnJlcS9leHlub3MtYnVzLmMKPj4+IGluZGV4IDdmNTkxN2Q1OTA3
-Mi4uMWJjNGUzYzgxMTE1IDEwMDY0NAo+Pj4gLS0tIGEvZHJpdmVycy9kZXZmcmVxL2V4eW5vcy1i
-dXMuYwo+Pj4gKysrIGIvZHJpdmVycy9kZXZmcmVxL2V4eW5vcy1idXMuYwo+Pj4gQEAgLTg2LDYg
-Kzg2LDE2IEBAIHN0YXRpYyBpbnQgZXh5bm9zX2J1c19nZXRfZXZlbnQoc3RydWN0IGV4eW5vc19i
-dXMgKmJ1cywKPj4+ICDCoMKgwqDCoMKgIHJldHVybiByZXQ7Cj4+PiAgwqAgfQo+Pj4gIMKgICtz
-dGF0aWMgc3RydWN0IGRldmZyZXEgKmV4eW5vc19idXNfZ2V0X3BhcmVudF9kZXZmcmVxKHN0cnVj
-dCBkZXZpY2Vfbm9kZSAqbnApCj4+PiArewo+Pj4gK8KgwqDCoCBzdHJ1Y3QgZGV2aWNlX25vZGUg
-Km5vZGUgPSBvZl9wYXJzZV9waGFuZGxlKG5wLCAiZGV2ZnJlcSIsIDApOwo+Pj4gKwo+Pj4gK8Kg
-wqDCoCBpZiAoIW5vZGUpCj4+PiArwqDCoMKgwqDCoMKgwqAgcmV0dXJuIEVSUl9QVFIoLUVOT0RF
-Vik7Cj4+PiArCj4+PiArwqDCoMKgIHJldHVybiBkZXZmcmVxX2dldF9kZXZmcmVxX2J5X25vZGUo
-bm9kZSk7Cj4+PiArfQo+Pj4gKwo+Pj4gIMKgIC8qCj4+PiAgwqDCoCAqIGRldmZyZXEgZnVuY3Rp
-b24gZm9yIGJvdGggc2ltcGxlLW9uZGVtYW5kIGFuZCBwYXNzaXZlIGdvdmVybm9yCj4+PiAgwqDC
-oCAqLwo+Pj4gQEAgLTM1Myw3ICszNjMsNyBAQCBzdGF0aWMgaW50IGV4eW5vc19idXNfcHJvZmls
-ZV9pbml0X3Bhc3NpdmUoc3RydWN0IGV4eW5vc19idXMgKmJ1cywKPj4+ICDCoMKgwqDCoMKgIHBy
-b2ZpbGUtPmV4aXQgPSBleHlub3NfYnVzX3Bhc3NpdmVfZXhpdDsKPj4+ICDCoCDCoMKgwqDCoMKg
-IC8qIEdldCB0aGUgaW5zdGFuY2Ugb2YgcGFyZW50IGRldmZyZXEgZGV2aWNlICovCj4+PiAtwqDC
-oMKgIHBhcmVudF9kZXZmcmVxID0gZGV2ZnJlcV9nZXRfZGV2ZnJlcV9ieV9waGFuZGxlKGRldiwg
-MCk7Cj4+PiArwqDCoMKgIHBhcmVudF9kZXZmcmVxID0gZXh5bm9zX2J1c19nZXRfcGFyZW50X2Rl
-dmZyZXEoZGV2LT5vZl9ub2RlKTsKPj4+ICDCoMKgwqDCoMKgIGlmIChJU19FUlIocGFyZW50X2Rl
-dmZyZXEpKQo+Pj4gIMKgwqDCoMKgwqDCoMKgwqDCoCByZXR1cm4gLUVQUk9CRV9ERUZFUjsKPj4+
-ICAgIAo+Pgo+PiBUaGVzZSBjaGFuZ2VzIHdvbid0IGFwcGx5LCBwcm9iYWJseSBJIG5lZWQgc29t
-ZSBiYXNlIGZvciBpdC4KPiAKPiBJIGRldmVsb3BlZCBpdCBvbiBkZXZmcmVxLW5leHQgYnJhbmNo
-WzFdCj4gWzFdIGh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0
-L2NoYW53b28vbGludXguZ2l0L2xvZy8/aD1kZXZmcmVxLW5leHQKPiAKPiBBbmQgSSB0cnkgdG8g
-YXBwbHkgdGhlc2UgcGF0Y2hzZXQgdG8gbGludXgtbmV4dFsyXSB3aXRoIHRhZ3MvbmV4dC0yMDIw
-MDEwOS4KPiBCdXQsIHBhdGNoMTAvMTEgb2YgZGV2aWNlZXRyZWUgaGFzIHNvbWUgbWVyZ2UgY29u
-ZmxpY3QKPiBiZWNhdXNlIHBhdGNoWzNdIHJlbGF0ZWQgdG8gZXh5bm9zLWJ1cyB3YXMgbWVyZ2Vk
-Lgo+IFsyXSBodHRwczovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9u
-ZXh0L2xpbnV4LW5leHQuZ2l0L2xvZy8KPiBbM10gaHR0cHM6Ly9wYXRjaHdvcmsua2VybmVsLm9y
-Zy9jb3Zlci8xMTMwMzIzNS8KPiAgICAgIC0gW3YyLDAvMl0gRXh5bm9zNTQyMjogZml4IGJ1cyBy
-ZWxhdGVkIE9QUHMgZm9yIE9kcm9pZCBYVTMvWFU0L0hDMQo+IAo+IE9uIG5leHQgdmVyc2lvbiwg
-SSdsbCByZWJhc2UgaXQgb24gbGF0ZXN0IHBhdGNoZXMuCgpUaGFuayB5b3UgZm9yIHRoZSBpbmZv
-cm1hdGlvbi4gSSB3aWxsIHVwZGF0ZSB0aGUgYmFzZSBhbmQgY29udGludWUgdGhlCnJldmlldy4K
-Ckx1a2FzegoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-TGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1y
-b2NrY2hpcAo=
+On 07/01/2020 23:06, Martin Blumenstingl wrote:
+> dev_pm_opp_set_rate() needs a reference to the regulator which should be
+> updated when updating the GPU frequency. The name of the regulator has
+> to be passed at initialization-time using dev_pm_opp_set_regulators().
+> Add the call to dev_pm_opp_set_regulators() so dev_pm_opp_set_rate()
+> will update the GPU regulator when updating the frequency (just like
+> we did this manually before when we open-coded dev_pm_opp_set_rate()).
+
+This patch causes a warning from debugfs on my firefly (RK3288) board:
+
+debugfs: Directory 'ffa30000.gpu-mali' with parent 'vdd_gpu' already
+present!
+
+So it looks like the regulator is being added twice - but I haven't
+investigated further.
+
+> Fixes: 221bc77914cbcc ("drm/panfrost: Use generic code for devfreq")
+> Reported-by: Robin Murphy <robin.murphy@arm.com>
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> ---
+>  drivers/gpu/drm/panfrost/panfrost_devfreq.c | 22 ++++++++++++++++++++-
+>  drivers/gpu/drm/panfrost/panfrost_device.h  |  1 +
+>  2 files changed, 22 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/gpu/drm/panfrost/panfrost_devfreq.c b/drivers/gpu/drm/panfrost/panfrost_devfreq.c
+> index 170f6c8c9651..4f7999c7b44c 100644
+> --- a/drivers/gpu/drm/panfrost/panfrost_devfreq.c
+> +++ b/drivers/gpu/drm/panfrost/panfrost_devfreq.c
+> @@ -74,6 +74,7 @@ static struct devfreq_dev_profile panfrost_devfreq_profile = {
+>  int panfrost_devfreq_init(struct panfrost_device *pfdev)
+>  {
+>  	int ret;
+> +	struct opp_table *opp_table;
+>  	struct dev_pm_opp *opp;
+>  	unsigned long cur_freq;
+>  	struct device *dev = &pfdev->pdev->dev;
+> @@ -84,9 +85,24 @@ int panfrost_devfreq_init(struct panfrost_device *pfdev)
+>  		/* Optional, continue without devfreq */
+>  		return 0;
+>  
+> +	opp_table = dev_pm_opp_set_regulators(dev,
+> +					      (const char *[]){ "mali" },
+> +					      1);
+> +	if (IS_ERR(opp_table)) {
+> +		ret = PTR_ERR(opp_table);
+> +
+> +		/* Continue if the optional regulator is missing */
+> +		if (ret != -ENODEV)
+> +			return ret;
+> +	} else {
+> +		pfdev->devfreq.regulators_opp_table = opp_table;
+> +	}
+> +
+>  	ret = dev_pm_opp_of_add_table(dev);
+> -	if (ret)
+> +	if (ret) {
+> +		dev_pm_opp_put_regulators(pfdev->devfreq.regulators_opp_table);
+
+If we don't have a regulator then regulators_opp_table will be NULL and
+sadly dev_pm_opp_put_regulators() doesn't handle a NULL argument. The
+same applies to the two below calls obviously.
+
+Steve
+
+>  		return ret;
+> +	}
+>  
+>  	panfrost_devfreq_reset(pfdev);
+>  
+> @@ -95,6 +111,7 @@ int panfrost_devfreq_init(struct panfrost_device *pfdev)
+>  	opp = devfreq_recommended_opp(dev, &cur_freq, 0);
+>  	if (IS_ERR(opp)) {
+>  		dev_pm_opp_of_remove_table(dev);
+> +		dev_pm_opp_put_regulators(pfdev->devfreq.regulators_opp_table);
+>  		return PTR_ERR(opp);
+>  	}
+>  
+> @@ -106,6 +123,7 @@ int panfrost_devfreq_init(struct panfrost_device *pfdev)
+>  	if (IS_ERR(devfreq)) {
+>  		DRM_DEV_ERROR(dev, "Couldn't initialize GPU devfreq\n");
+>  		dev_pm_opp_of_remove_table(dev);
+> +		dev_pm_opp_put_regulators(pfdev->devfreq.regulators_opp_table);
+>  		return PTR_ERR(devfreq);
+>  	}
+>  	pfdev->devfreq.devfreq = devfreq;
+> @@ -124,6 +142,8 @@ void panfrost_devfreq_fini(struct panfrost_device *pfdev)
+>  	if (pfdev->devfreq.cooling)
+>  		devfreq_cooling_unregister(pfdev->devfreq.cooling);
+>  	dev_pm_opp_of_remove_table(&pfdev->pdev->dev);
+> +	if (pfdev->devfreq.regulators_opp_table)
+> +		dev_pm_opp_put_regulators(pfdev->devfreq.regulators_opp_table);
+>  }
+>  
+>  void panfrost_devfreq_resume(struct panfrost_device *pfdev)
+> diff --git a/drivers/gpu/drm/panfrost/panfrost_device.h b/drivers/gpu/drm/panfrost/panfrost_device.h
+> index 06713811b92c..4878b239e301 100644
+> --- a/drivers/gpu/drm/panfrost/panfrost_device.h
+> +++ b/drivers/gpu/drm/panfrost/panfrost_device.h
+> @@ -85,6 +85,7 @@ struct panfrost_device {
+>  
+>  	struct {
+>  		struct devfreq *devfreq;
+> +		struct opp_table *regulators_opp_table;
+>  		struct thermal_cooling_device *cooling;
+>  		ktime_t busy_time;
+>  		ktime_t idle_time;
+> 
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
