@@ -2,50 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDFFE13561E
-	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 10:48:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A384F135720
+	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 11:38:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=lkL07zIw6UIcoa27xpupFL++OZEnXKO/eocx2SNeYSY=; b=cZ4N6NQU9u5bo3Vw9yD5eF0Sy
-	PJ0wvfSh8QvY5Nu7NSojb7oG6lpN1AyoDbYurG8gyFlfNNwgJ16NbXuR/MsyBTMBbHtsILq785xGt
-	AIISo67SFDHq0KOcNn0wEucdJZuXRmP4nepderxK5JVnHWAnHlVK6gBynA9Rmk0ZILZ+t6FJzsc12
-	szLgf9ybItLty4ZMwDmsSTW/PER/aEbldU4qf1Uukt8WO2ILiAL6E/pPbETYzzcUR7EqiiYk938vb
-	dzj0FEGjpCvXkdhUJsUvfZwHxaQtBxTP9X0XCQMpMDY4J0zQnvhrYIu9oHZ26uxETrTOpde2vxbU9
-	Qs0wf8WtQ==;
+	 bh=b8bLnATU6pJHlvRYxuzuloOHOUBwFyKPOy7o+PZ+d00=; b=GL/iXZHbXRv5+g7DIhTBqm2co
+	/Mo/JXIb/2y17LzSNe/AGr7ZnTGbRlJj1AcXvqt00FgH7lDf6Ejxm16VoucJivEuot4cOMAJEc3L8
+	bgb+pKuFBpDwVnSHeiKRzfpfaLxhzcz2chz+SWsYC5Ws4RJDUuxFySVWGPDw5Knpa9VugJz+WneSW
+	OmQrnV8bVCM7nW4pMIlzHyF00hOtWMQCe43BHkR2NTCnrHtQ7ADGhNjBkqKzmJE1pq0WJV2UiLkja
+	7acGNwY5Y8hK3tM0EPzU2vRAVPmkbloSMml4ApEhzSw9mYAqhosCLgHRd4OlANK0x9y/EaOi+V8cx
+	HCzsjRMHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipUPz-0001vJ-Hm; Thu, 09 Jan 2020 09:47:55 +0000
+	id 1ipVCY-0002em-9T; Thu, 09 Jan 2020 10:38:06 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipUPj-0001m2-TB; Thu, 09 Jan 2020 09:47:41 +0000
+ id 1ipVCA-0002Ke-RP; Thu, 09 Jan 2020 10:37:45 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CB55D31B;
- Thu,  9 Jan 2020 01:47:36 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7852E31B;
+ Thu,  9 Jan 2020 02:37:41 -0800 (PST)
 Received: from [10.37.12.111] (unknown [10.37.12.111])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 399463F6C4;
- Thu,  9 Jan 2020 01:47:33 -0800 (PST)
-Subject: Re: [PATCH v2 01/11] PM / devfreq: Add devfreq_get_devfreq_by_node
- function
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BD0053F6C4;
+ Thu,  9 Jan 2020 02:37:37 -0800 (PST)
+Subject: Re: [PATCH v2 02/11] PM / devfreq: Remove
+ devfreq_get_devfreq_by_phandle function
 To: Chanwoo Choi <cw00.choi@samsung.com>, robh+dt@kernel.org,
  krzk@kernel.org, heiko@sntech.de, leonard.crestez@nxp.com
 References: <20191220002430.11995-1-cw00.choi@samsung.com>
- <CGME20191220001759epcas1p4bbbcf6a84c09229db0ddae86be294405@epcas1p4.samsung.com>
- <20191220002430.11995-2-cw00.choi@samsung.com>
+ <CGME20191220001759epcas1p4ce1c2017937a35de84eab720b9732df0@epcas1p4.samsung.com>
+ <20191220002430.11995-3-cw00.choi@samsung.com>
 From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <71da0ef9-1e72-dddc-dcb4-e4cb28b67183@arm.com>
-Date: Thu, 9 Jan 2020 09:47:31 +0000
+Message-ID: <b9a1ebe5-e114-3a6b-6081-c794e1341329@arm.com>
+Date: Thu, 9 Jan 2020 10:37:35 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191220002430.11995-2-cw00.choi@samsung.com>
+In-Reply-To: <20191220002430.11995-3-cw00.choi@samsung.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_014740_034440_CC32F0F9 
-X-CRM114-Status: GOOD (  22.05  )
+X-CRM114-CacheID: sfid-20200109_023743_002631_2CB47D2B 
+X-CRM114-Status: GOOD (  20.12  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -80,134 +80,112 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 Hi Chanwoo,
 
-
 On 12/20/19 12:24 AM, Chanwoo Choi wrote:
-> From: Leonard Crestez <leonard.crestez@nxp.com>
+> Previously, devfreq core support 'devfreq' property in order to get
+> the devfreq device by phandle. But, 'devfreq' property name is not proper
+> on devicetree binding because this name doesn't mean the any h/w attribute.
 > 
-> Split off part of devfreq_get_devfreq_by_phandle into a separate
-> function. This allows callers to fetch devfreq instances by enumerating
-> devicetree instead of explicit phandles.
+> The devfreq core hand over the right to decide the property name
+> for getting the devfreq device on devicetree. Each devfreq driver
+> will decide the property name on devicetree binding and then get
+> the devfreq device by using devfreq_get_devfreq_by_node().
 > 
-> [lkp: Reported the build error]
-> Reported-by: kbuild test robot <lkp@intel.com>
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> [cw00.choi: Export devfreq_get_devfreq_by_node function and
->   add function to devfreq.h when CONFIG_PM_DEVFREQ is enabled.]
 > Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
 > ---
->   drivers/devfreq/devfreq.c | 46 +++++++++++++++++++++++++++++----------
->   include/linux/devfreq.h   |  6 +++++
->   2 files changed, 41 insertions(+), 11 deletions(-)
+>   drivers/devfreq/devfreq.c    | 35 -----------------------------------
+>   drivers/devfreq/exynos-bus.c | 12 +++++++++++-
+>   include/linux/devfreq.h      |  8 --------
+>   3 files changed, 11 insertions(+), 44 deletions(-)
 > 
 > diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-> index 89260b17598f..cb8ca81c8973 100644
+> index cb8ca81c8973..c3d3c7c802a0 100644
 > --- a/drivers/devfreq/devfreq.c
 > +++ b/drivers/devfreq/devfreq.c
-> @@ -966,6 +966,32 @@ struct devfreq *devm_devfreq_add_device(struct device *dev,
->   EXPORT_SYMBOL(devm_devfreq_add_device);
+> @@ -991,48 +991,13 @@ struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
 >   
->   #ifdef CONFIG_OF
-> +/*
-> + * devfreq_get_devfreq_by_node - Get the devfreq device from devicetree
-> + * @node - pointer to device_node
-> + *
-> + * return the instance of devfreq device
-> + */
-> +struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
-> +{
-> +	struct devfreq *devfreq;
-> +
-> +	if (!node)
-> +		return ERR_PTR(-EINVAL);
-> +
-> +	mutex_lock(&devfreq_list_lock);
-> +	list_for_each_entry(devfreq, &devfreq_list, node) {
-> +		if (devfreq->dev.parent
-> +			&& devfreq->dev.parent->of_node == node) {
-> +			mutex_unlock(&devfreq_list_lock);
-> +			return devfreq;
-> +		}
-> +	}
-> +	mutex_unlock(&devfreq_list_lock);
-> +
-> +	return ERR_PTR(-ENODEV);
-> +}
-> +
->   /*
->    * devfreq_get_devfreq_by_phandle - Get the devfreq device from devicetree
->    * @dev - instance to the given device
-> @@ -988,26 +1014,24 @@ struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev, int index)
->   	if (!node)
->   		return ERR_PTR(-ENODEV);
->   
-> -	mutex_lock(&devfreq_list_lock);
-> -	list_for_each_entry(devfreq, &devfreq_list, node) {
-> -		if (devfreq->dev.parent
-> -			&& devfreq->dev.parent->of_node == node) {
-> -			mutex_unlock(&devfreq_list_lock);
-> -			of_node_put(node);
-> -			return devfreq;
-> -		}
-> -	}
-> -	mutex_unlock(&devfreq_list_lock);
-> +	devfreq = devfreq_get_devfreq_by_node(node);
->   	of_node_put(node);
->   
-> -	return ERR_PTR(-EPROBE_DEFER);
-> +	return devfreq;
+>   	return ERR_PTR(-ENODEV);
 >   }
-> +
+> -
+> -/*
+> - * devfreq_get_devfreq_by_phandle - Get the devfreq device from devicetree
+> - * @dev - instance to the given device
+> - * @index - index into list of devfreq
+> - *
+> - * return the instance of devfreq device
+> - */
+> -struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev, int index)
+> -{
+> -	struct device_node *node;
+> -	struct devfreq *devfreq;
+> -
+> -	if (!dev)
+> -		return ERR_PTR(-EINVAL);
+> -
+> -	if (!dev->of_node)
+> -		return ERR_PTR(-EINVAL);
+> -
+> -	node = of_parse_phandle(dev->of_node, "devfreq", index);
+> -	if (!node)
+> -		return ERR_PTR(-ENODEV);
+> -
+> -	devfreq = devfreq_get_devfreq_by_node(node);
+> -	of_node_put(node);
+> -
+> -	return devfreq;
+> -}
+> -
 >   #else
-> +struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
-> +{
-> +	return ERR_PTR(-ENODEV);
-> +}
-> +
->   struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev, int index)
+>   struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
 >   {
 >   	return ERR_PTR(-ENODEV);
 >   }
+> -
+> -struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev, int index)
+> -{
+> -	return ERR_PTR(-ENODEV);
+> -}
 >   #endif /* CONFIG_OF */
-> +EXPORT_SYMBOL_GPL(devfreq_get_devfreq_by_node);
->   EXPORT_SYMBOL_GPL(devfreq_get_devfreq_by_phandle);
+>   EXPORT_SYMBOL_GPL(devfreq_get_devfreq_by_node);
+> -EXPORT_SYMBOL_GPL(devfreq_get_devfreq_by_phandle);
 >   
 >   /**
-> diff --git a/include/linux/devfreq.h b/include/linux/devfreq.h
-> index c6f82d4bec9f..1dccc47acbce 100644
-> --- a/include/linux/devfreq.h
-> +++ b/include/linux/devfreq.h
-> @@ -253,6 +253,7 @@ extern void devm_devfreq_unregister_notifier(struct device *dev,
->   				struct devfreq *devfreq,
->   				struct notifier_block *nb,
->   				unsigned int list);
-> +extern struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node);
-
-It can go without 'extern' in the header.
-
->   extern struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev,
->   						int index);
->   
-> @@ -407,6 +408,11 @@ static inline void devm_devfreq_unregister_notifier(struct device *dev,
->   {
+>    * devm_devfreq_remove_device() - Resource-managed devfreq_remove_device()
+> diff --git a/drivers/devfreq/exynos-bus.c b/drivers/devfreq/exynos-bus.c
+> index 7f5917d59072..1bc4e3c81115 100644
+> --- a/drivers/devfreq/exynos-bus.c
+> +++ b/drivers/devfreq/exynos-bus.c
+> @@ -86,6 +86,16 @@ static int exynos_bus_get_event(struct exynos_bus *bus,
+>   	return ret;
 >   }
 >   
-> +static inline struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
+> +static struct devfreq *exynos_bus_get_parent_devfreq(struct device_node *np)
 > +{
-> +	return ERR_PTR(-ENODEV);
+> +	struct device_node *node = of_parse_phandle(np, "devfreq", 0);
+> +
+> +	if (!node)
+> +		return ERR_PTR(-ENODEV);
+> +
+> +	return devfreq_get_devfreq_by_node(node);
 > +}
 > +
->   static inline struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev,
->   							int index)
->   {
-> 
+>   /*
+>    * devfreq function for both simple-ondemand and passive governor
+>    */
+> @@ -353,7 +363,7 @@ static int exynos_bus_profile_init_passive(struct exynos_bus *bus,
+>   	profile->exit = exynos_bus_passive_exit;
+>   
+>   	/* Get the instance of parent devfreq device */
+> -	parent_devfreq = devfreq_get_devfreq_by_phandle(dev, 0);
+> +	parent_devfreq = exynos_bus_get_parent_devfreq(dev->of_node);
+>   	if (IS_ERR(parent_devfreq))
+>   		return -EPROBE_DEFER;
+>   
 
-Apart from this minor thing, looks good to me.
-When you fix it, feel free to add
-
-Reviewed-by: Lukasz Luba <lukasz.luba@arm.com>
+These changes won't apply, probably I need some base for it.
 
 Regards,
 Lukasz
+
 
 _______________________________________________
 Linux-rockchip mailing list
