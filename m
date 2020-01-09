@@ -2,78 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32EBC1354D1
-	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 09:53:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69DEC1354D2
+	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 09:53:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IvglB7OJwu9sxa5OW/UGDsAQ8Dd/ytIrK0+QYeo/z6c=; b=act4TND2lDHeqo
-	30KasEfcRCzw/k7Kecsp3IMCw9U3YOzHpgnDG/yF8SwDx0Jc1hXLwYb2k+Hwhl7de2u3ZURAs5d8z
-	Afen6r8ko2UA21u0MBdToimLULVj0jM13wCF5/CXS9kWZsx+xhUpwYuB92A/wOq6VOGa0Zh3VJbpu
-	j1scBnKGLryLiwOxT2HQjEylq/22kHc4ltx/DU91NjNyExj1rZkfwnuLBQQPgcQ3aVhMgg89Ox3T6
-	S8YW3mttMvconRFdhN2E//w+m+33XTCXk7CILW6EiEDsfaUXqlqxxCE1uIRL5c+jd+PSS+QWjxdgf
-	O+Lcfcu5RUxjfbIADWkA==;
+	List-Owner; bh=Ozz9cMV9dm3HqtUIkUq+vYTj6zP6gzf4l4mNGWGiCfE=; b=j1F8uaV/NqVXa7
+	TIT9DCuyCRD4Zsv70sK08SE8gfcIDQqfvSVe7aaxD0lzS+ed9Jvo5QwaiKp0Os5JZMHfBWc5jACl1
+	4lvqZos3OM16neuIjODbTYg5TZmfgvw6rUKgE/k+Ze8fzcIHX97eIe+QvgarlUpRgL/pdZzy0T0sE
+	Zk/2lQVlCJLy3LoC0zBplPEnR8NhUcQBIMGWyZqXtDNe1qUk8z8ccXjI0dVYhH936AfaMIcixTown
+	jXy5tRdLGx/bmloM+1ZMcIWMbhrfk2jRwo3s24HdglFGjU/Txomw8sFVgA8ZmQOrTwZQKdXZ4stfZ
+	f5lsKcAZMmP2yrTo0Q2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipTYv-0006Jb-Jw; Thu, 09 Jan 2020 08:53:05 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1ipTYx-0006OE-R2; Thu, 09 Jan 2020 08:53:07 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipTYi-000646-AJ
- for linux-rockchip@lists.infradead.org; Thu, 09 Jan 2020 08:52:54 +0000
-Received: by mail-pl1-x641.google.com with SMTP id s21so2296845plr.7
- for <linux-rockchip@lists.infradead.org>; Thu, 09 Jan 2020 00:52:52 -0800 (PST)
+ id 1ipTYn-00068k-0k
+ for linux-rockchip@lists.infradead.org; Thu, 09 Jan 2020 08:52:58 +0000
+Received: by mail-pg1-x544.google.com with SMTP id k25so2895144pgt.7
+ for <linux-rockchip@lists.infradead.org>; Thu, 09 Jan 2020 00:52:56 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=20owJ56ZMVW9WaAfTMGTpTd1hkqe5DN6/beUbHwtw88=;
- b=RzIwIlRDY3OgYwZuDCcFetW51jD0046owNhHTsOs9UohfxwbFQLG3xsogYvTHtYcUY
- nsVAEovjxDaEJ+75PNvq9FmQy4VsQ3XbfMHQ6h0uulw7nFUZ5Zr2YWDzF8iexlLo3BsB
- ZGzjQDaNNGUiJxff7GsJyxdUt31OUdIsBESuQ=
+ bh=oRKgs2PetZDvzDu1FBC+Mjjc1xHu28pIwI8pYrZq3es=;
+ b=iywMJA+Qp8etlYyUsVRGlzdkZJr9d5L8s3C1uWZMMyCMPTho7EX9CDw1b/RFC59Jt1
+ qIdXuodySDTu0QXTDtmgXr0615PXaSM1YFzVe3krpAMjupnXVh5kk4HYvIxyoXJuurDD
+ RBHrVLrh7cCb231rKFbg0d1EKTVrQdb0sg5uM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=20owJ56ZMVW9WaAfTMGTpTd1hkqe5DN6/beUbHwtw88=;
- b=UVA47hKPE6aELF/ZPW45V07PuyJ7pN3wXI9jhFqGIYMDHdScCVE2F+/kwY9x+dlxMu
- xctdO1gZRM8N2WkkQU9yKRz1K7BRDUluM904J2oxHC4+QK+8cHSREOtBP4tr+vqh5x3i
- b/Vximcn6ZV5F6mXbF8L3S1WCiXGtwX6M1VBmKJKQgeLT/901DuoIHOa2bWuR3iZKkxd
- z76MI7NKBVSfisO8Hy4cyU12JfWusasS4heyEGpDJsz24GJd+nvZfgqvwjqegcwAQcn4
- XIREsDOLvYjqNSguxPmgdTM6yW/N6yx+bXhAOzKgnYXPiyxuB8/tMdZ0j7cN6giAF2nH
- NiKQ==
-X-Gm-Message-State: APjAAAX1B69H2qSPhFkSZEeGLURuySS876OYIdVyQCAgnOXyNOXl4AT3
- XqAeFOGj0XO5yNkg4Zi8oVf1Kk9Ehkk=
-X-Google-Smtp-Source: APXvYqz6V0ksapXciphcYrLvI7fdTn/SfLvrcYgCFaWK2vctFn9RrrS0Uj/MlnQt3Yq4eFjkbDFiKw==
-X-Received: by 2002:a17:902:8497:: with SMTP id
- c23mr11000845plo.59.1578559971367; 
- Thu, 09 Jan 2020 00:52:51 -0800 (PST)
+ bh=oRKgs2PetZDvzDu1FBC+Mjjc1xHu28pIwI8pYrZq3es=;
+ b=KlKNc/d1MwTN9BPyLeKhP901yOWYHCyfYIu+X2dKC+zeSbn1EI1G8D7hqNW7f2TM6I
+ drAROl0j7Zfb84nmBzl8tgSGCcuAelqkCDHsELd9CqjYKAo23HTeSRqvEW9vc33ZlUSv
+ R96BVaJauzkyi4NmdvDhu35Ja8d9OdlmyDhQh0Uj0vNhGCOWkBz/trErVbJz03rkBDKk
+ G0QQUgFIRbhXmYDOITWzEdGPXyAB46wcKOrI/yo58BhZubkUk266EIX1LRG/EXHJLyBu
+ eRIW257Guk62hTLoxLyWBmPmUrTxUXztezO23i6psZFYjrbUCLletkmKo/olKx+MkZWW
+ XHcQ==
+X-Gm-Message-State: APjAAAUFPrmOAlPl6ccLHoeUwL3/zchEfAVw7Iwa3e3zYNEidIrVo6ZG
+ xGnwIPmhXtF1Fl4aWcMhooqKkw==
+X-Google-Smtp-Source: APXvYqxQd6qn/IWpn64hVmGxsTowpWIXJcbZlmF9NSFS0MhhUyCjXxfjNibcDCJ1EP62DL+mYpKfqQ==
+X-Received: by 2002:a63:2949:: with SMTP id p70mr10177435pgp.191.1578559975335; 
+ Thu, 09 Jan 2020 00:52:55 -0800 (PST)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:d888:9871:544a:b516])
- by smtp.gmail.com with ESMTPSA id o17sm2139121pjq.1.2020.01.09.00.52.47
+ by smtp.gmail.com with ESMTPSA id o17sm2139121pjq.1.2020.01.09.00.52.51
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Jan 2020 00:52:50 -0800 (PST)
+ Thu, 09 Jan 2020 00:52:54 -0800 (PST)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v4 4/8] rockchip: Add common reset cause
-Date: Thu,  9 Jan 2020 14:22:18 +0530
-Message-Id: <20200109085222.22670-5-jagan@amarulasolutions.com>
+Subject: [PATCH v4 5/8] rockchip: rk3399: Add bootcount support
+Date: Thu,  9 Jan 2020 14:22:19 +0530
+Message-Id: <20200109085222.22670-6-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20200109085222.22670-1-jagan@amarulasolutions.com>
 References: <20200109085222.22670-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_005252_476096_12FAE061 
-X-CRM114-Status: GOOD (  13.95  )
+X-CRM114-CacheID: sfid-20200109_005257_103090_239F3A22 
+X-CRM114-Status: GOOD (  10.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,197 +102,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add cpu reset cause in common cpu-info file.
+Add bootcount support for Rockchip rk3399.
 
-This would help to print the reset cause for
-various resets.
+The bootcount value is preserved in PMU_SYS_REG0 register,
+this would help to support redundent boot.
 
-Right now it support rk3288, rk3399. rest of rockchip
-platforms doesn't have reset cause support ye but this
-code is more feasible to extend the same.
+Once the redundant boot triggers, the altboot command
+will look for extlinux-rollback.conf on particular
+bootable partition which supposed to be a recovery
+partition where redundant boot required.
 
 Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- arch/arm/include/asm/arch-rockchip/cru.h      | 12 +++++
- .../include/asm/arch-rockchip/cru_rk3288.h    | 14 +-----
- arch/arm/mach-rockchip/cpu-info.c             | 49 +++++++++++++++++++
- arch/arm/mach-rockchip/rk3288/rk3288.c        | 39 ---------------
- 4 files changed, 62 insertions(+), 52 deletions(-)
+ arch/arm/mach-rockchip/Kconfig        |  2 ++
+ arch/arm/mach-rockchip/rk3399/Kconfig | 10 ++++++++++
+ include/configs/rk3399_common.h       |  5 ++++-
+ 3 files changed, 16 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/include/asm/arch-rockchip/cru.h b/arch/arm/include/asm/arch-rockchip/cru.h
-index 475d772fb6..5cf2aec11a 100644
---- a/arch/arm/include/asm/arch-rockchip/cru.h
-+++ b/arch/arm/include/asm/arch-rockchip/cru.h
-@@ -13,6 +13,18 @@
- # include <asm/arch-rockchip/cru_rk3399.h>
+diff --git a/arch/arm/mach-rockchip/Kconfig b/arch/arm/mach-rockchip/Kconfig
+index d8d68ba447..9a3c65ec58 100644
+--- a/arch/arm/mach-rockchip/Kconfig
++++ b/arch/arm/mach-rockchip/Kconfig
+@@ -244,6 +244,8 @@ config ROCKCHIP_RK3399
+ 	imply TPL_CLK
+ 	imply TPL_TINY_MEMSET
+ 	imply TPL_ROCKCHIP_COMMON_BOARD
++	imply SYS_BOOTCOUNT_SINGLEWORD if BOOTCOUNT_LIMIT
++	imply CMD_BOOTCOUNT if BOOTCOUNT_LIMIT
+ 	help
+ 	  The Rockchip RK3399 is a ARM-based SoC with a dual-core Cortex-A72
+ 	  and quad-core Cortex-A53.
+diff --git a/arch/arm/mach-rockchip/rk3399/Kconfig b/arch/arm/mach-rockchip/rk3399/Kconfig
+index 868e85fc2a..f994152803 100644
+--- a/arch/arm/mach-rockchip/rk3399/Kconfig
++++ b/arch/arm/mach-rockchip/rk3399/Kconfig
+@@ -113,6 +113,16 @@ config TPL_TEXT_BASE
+ config SPL_STACK_R_ADDR
+ 	default 0x04000000
+ 
++if BOOTCOUNT_LIMIT
++
++config BOOTCOUNT_BOOTLIMIT
++	default 3
++
++config SYS_BOOTCOUNT_ADDR
++	default 0xff3100f0	# PMU_SYS_REG0
++
++endif # BOOTCOUNT_LIMIT
++
+ source "board/rockchip/evb_rk3399/Kconfig"
+ source "board/theobroma-systems/puma_rk3399/Kconfig"
+ source "board/vamrs/rock960_rk3399/Kconfig"
+diff --git a/include/configs/rk3399_common.h b/include/configs/rk3399_common.h
+index 127ca1f09c..89a8a44bbe 100644
+--- a/include/configs/rk3399_common.h
++++ b/include/configs/rk3399_common.h
+@@ -63,7 +63,10 @@
+ 	"fdtfile=" CONFIG_DEFAULT_FDT_FILE "\0" \
+ 	"partitions=" PARTS_DEFAULT \
+ 	ROCKCHIP_DEVICE_SETTINGS \
+-	BOOTENV
++	BOOTENV \
++	"altbootcmd=" \
++		"setenv boot_syslinux_conf extlinux/extlinux-rollback.conf;" \
++		"run distro_bootcmd\0"
+ 
  #endif
- 
-+/* CRU_GLB_RST_ST */
-+enum {
-+	GLB_POR_RST,
-+	FST_GLB_RST_ST		= BIT(0),
-+	SND_GLB_RST_ST		= BIT(1),
-+	FST_GLB_TSADC_RST_ST	= BIT(2),
-+	SND_GLB_TSADC_RST_ST	= BIT(3),
-+	FST_GLB_WDT_RST_ST	= BIT(4),
-+	SND_GLB_WDT_RST_ST	= BIT(5),
-+	GLB_RST_ST_MASK		= GENMASK(5, 0),
-+};
-+
- #define MHz		1000000
- 
- #endif /* _ROCKCHIP_CLOCK_H */
-diff --git a/arch/arm/include/asm/arch-rockchip/cru_rk3288.h b/arch/arm/include/asm/arch-rockchip/cru_rk3288.h
-index 7aa6efe46c..412b73e55f 100644
---- a/arch/arm/include/asm/arch-rockchip/cru_rk3288.h
-+++ b/arch/arm/include/asm/arch-rockchip/cru_rk3288.h
-@@ -51,7 +51,7 @@ struct rockchip_cru {
- 	u32 cru_glb_cnt_th;
- 	u32 cru_glb_rst_con;
- 	u32 reserved3;
--	u32 cru_glb_rst_st;
-+	u32 glb_rst_st;
- 	u32 reserved4;
- 	u32 cru_sdmmc_con[2];
- 	u32 cru_sdio0_con[2];
-@@ -227,16 +227,4 @@ enum {
- 	CLKF_MASK		= 0x1fff << CLKF_SHIFT,
- };
- 
--/* CRU_GLB_RST_ST */
--enum {
--	GLB_POR_RST,
--	FST_GLB_RST_ST		= BIT(0),
--	SND_GLB_RST_ST		= BIT(1),
--	FST_GLB_TSADC_RST_ST	= BIT(2),
--	SND_GLB_TSADC_RST_ST	= BIT(3),
--	FST_GLB_WDT_RST_ST	= BIT(4),
--	SND_GLB_WDT_RST_ST	= BIT(5),
--	GLB_RST_ST_MASK		= GENMASK(5, 0),
--};
--
- #endif
-diff --git a/arch/arm/mach-rockchip/cpu-info.c b/arch/arm/mach-rockchip/cpu-info.c
-index 9bccbd4f68..4b0e99299a 100644
---- a/arch/arm/mach-rockchip/cpu-info.c
-+++ b/arch/arm/mach-rockchip/cpu-info.c
-@@ -5,10 +5,59 @@
-  */
- 
- #include <common.h>
-+#include <asm/io.h>
-+#include <asm/arch-rockchip/clock.h>
-+#include <asm/arch-rockchip/cru.h>
-+#include <asm/arch-rockchip/hardware.h>
-+#include <linux/err.h>
-+
-+static char *get_reset_cause(void)
-+{
-+	struct rockchip_cru *cru = rockchip_get_cru();
-+	char *cause = NULL;
-+
-+	if (IS_ERR(cru))
-+		return cause;
-+
-+	switch (cru->glb_rst_st) {
-+	case GLB_POR_RST:
-+		cause = "POR";
-+		break;
-+	case FST_GLB_RST_ST:
-+	case SND_GLB_RST_ST:
-+		cause = "RST";
-+		break;
-+	case FST_GLB_TSADC_RST_ST:
-+	case SND_GLB_TSADC_RST_ST:
-+		cause = "THERMAL";
-+		break;
-+	case FST_GLB_WDT_RST_ST:
-+	case SND_GLB_WDT_RST_ST:
-+		cause = "WDOG";
-+		break;
-+	default:
-+		cause = "unknown reset";
-+	}
-+
-+	/**
-+	 * reset_reason env is used by rk3288, due to special use case
-+	 * to figure it the boot behavior. so keep this as it is.
-+	 */
-+	env_set("reset_reason", cause);
-+
-+	/*
-+	 * Clear glb_rst_st, so we can determine the last reset cause
-+	 * for following resets.
-+	 */
-+	rk_clrreg(&cru->glb_rst_st, GLB_RST_ST_MASK);
-+
-+	return cause;
-+}
- 
- int print_cpuinfo(void)
- {
- 	printf("SoC: Rockchip %s\n", CONFIG_SYS_SOC);
-+	printf("Reset cause: %s\n", get_reset_cause());
- 
- 	/* TODO print operating temparature and clock */
- 
-diff --git a/arch/arm/mach-rockchip/rk3288/rk3288.c b/arch/arm/mach-rockchip/rk3288/rk3288.c
-index 47ee5d440b..18ea7f35fb 100644
---- a/arch/arm/mach-rockchip/rk3288/rk3288.c
-+++ b/arch/arm/mach-rockchip/rk3288/rk3288.c
-@@ -102,43 +102,6 @@ void board_debug_uart_init(void)
- }
- #endif
- 
--static void rk3288_detect_reset_reason(void)
--{
--	struct rockchip_cru *cru = rockchip_get_cru();
--	const char *reason;
--
--	if (IS_ERR(cru))
--		return;
--
--	switch (cru->cru_glb_rst_st) {
--	case GLB_POR_RST:
--		reason = "POR";
--		break;
--	case FST_GLB_RST_ST:
--	case SND_GLB_RST_ST:
--		reason = "RST";
--		break;
--	case FST_GLB_TSADC_RST_ST:
--	case SND_GLB_TSADC_RST_ST:
--		reason = "THERMAL";
--		break;
--	case FST_GLB_WDT_RST_ST:
--	case SND_GLB_WDT_RST_ST:
--		reason = "WDOG";
--		break;
--	default:
--		reason = "unknown reset";
--	}
--
--	env_set("reset_reason", reason);
--
--	/*
--	 * Clear cru_glb_rst_st, so we can determine the last reset cause
--	 * for following resets.
--	 */
--	rk_clrreg(&cru->cru_glb_rst_st, GLB_RST_ST_MASK);
--}
--
- __weak int rk3288_board_late_init(void)
- {
- 	return 0;
-@@ -146,8 +109,6 @@ __weak int rk3288_board_late_init(void)
- 
- int rk_board_late_init(void)
- {
--	rk3288_detect_reset_reason();
--
- 	return rk3288_board_late_init();
- }
  
 -- 
 2.18.0.321.gffc6fa0e3
