@@ -2,59 +2,143 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A384F135720
-	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 11:38:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53C47135758
+	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 11:47:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=b8bLnATU6pJHlvRYxuzuloOHOUBwFyKPOy7o+PZ+d00=; b=GL/iXZHbXRv5+g7DIhTBqm2co
-	/Mo/JXIb/2y17LzSNe/AGr7ZnTGbRlJj1AcXvqt00FgH7lDf6Ejxm16VoucJivEuot4cOMAJEc3L8
-	bgb+pKuFBpDwVnSHeiKRzfpfaLxhzcz2chz+SWsYC5Ws4RJDUuxFySVWGPDw5Knpa9VugJz+WneSW
-	OmQrnV8bVCM7nW4pMIlzHyF00hOtWMQCe43BHkR2NTCnrHtQ7ADGhNjBkqKzmJE1pq0WJV2UiLkja
-	7acGNwY5Y8hK3tM0EPzU2vRAVPmkbloSMml4ApEhzSw9mYAqhosCLgHRd4OlANK0x9y/EaOi+V8cx
-	HCzsjRMHw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Kt/BBpCby6Xzev2lEEXCW4rBJmPsKaLg/KRVuCkRT+E=; b=YPh15o2c8hh7GC
+	yokXdX/ZQbRD4wd4GQFC0wsjnXCVuS6WNf+8S8UGoX9QvN5VwalYCIxobZJIF6RSbeqGtZNjckumS
+	Bo8owj2kUMpQt8qfitd8BS8U+Tt7Qj+ySmJyzGAhWczb3gPyBZfzZN9MIUv4L10fYoOCogLvYtV8r
+	xbeZM0qzU+YpiJsv8ka/cmADeju7xCzmJ5wH7VbTAhmUjpzK06W6e//XlTxcC9nEMWQJamkMn4mw2
+	2arJ1nXeqDsrXZYpYHNOfHMur+1C56cYM7bkiub+On932TMuGoMGz7i+dexx/5g4wL4H4gmV3yBW3
+	T2dvdBw9gVWqTpdInydA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipVCY-0002em-9T; Thu, 09 Jan 2020 10:38:06 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipVCA-0002Ke-RP; Thu, 09 Jan 2020 10:37:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7852E31B;
- Thu,  9 Jan 2020 02:37:41 -0800 (PST)
-Received: from [10.37.12.111] (unknown [10.37.12.111])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BD0053F6C4;
- Thu,  9 Jan 2020 02:37:37 -0800 (PST)
+	id 1ipVLJ-0007QL-FF; Thu, 09 Jan 2020 10:47:09 +0000
+Received: from mailout1.samsung.com ([203.254.224.24])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ipVLF-0007PT-DV
+ for linux-rockchip@lists.infradead.org; Thu, 09 Jan 2020 10:47:07 +0000
+Received: from epcas1p2.samsung.com (unknown [182.195.41.46])
+ by mailout1.samsung.com (KnoxPortal) with ESMTP id
+ 20200109104701epoutp01686c042a17e83de605a32eb27409e4fa~oMikx5i791685616856epoutp01P
+ for <linux-rockchip@lists.infradead.org>; Thu,  9 Jan 2020 10:47:01 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com
+ 20200109104701epoutp01686c042a17e83de605a32eb27409e4fa~oMikx5i791685616856epoutp01P
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1578566821;
+ bh=q8vj0BcK18G8xmFgVWnFYICGZOyJli/3tcnfk3LTJ8A=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=Vhlsglha3Fm/BY5NMERIOFlFGbKnYdhVjVpipaiOuL4mlVuv3qZjQmaQ+PKg17+xY
+ UKmRdiHDkRSczn8/6UP4Uzi1++NZrAt5EQZigEq4tW6H/dzmo5DuaddnRucNv9zf91
+ 38lHeFfFC7jkfOTNziphBIVcDNLl1e3CfLWb6Z/A=
+Received: from epsnrtp3.localdomain (unknown [182.195.42.164]) by
+ epcas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20200109104701epcas1p29b302a54bf7ad5b1f453de9d6e965274~oMikScT0K0845108451epcas1p20;
+ Thu,  9 Jan 2020 10:47:01 +0000 (GMT)
+Received: from epsmges1p2.samsung.com (unknown [182.195.40.153]) by
+ epsnrtp3.localdomain (Postfix) with ESMTP id 47tjVB1bSXzMqYkZ; Thu,  9 Jan
+ 2020 10:46:58 +0000 (GMT)
+Received: from epcas1p3.samsung.com ( [182.195.41.47]) by
+ epsmges1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 20.0F.48498.2A4071E5; Thu,  9 Jan 2020 19:46:58 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+ epcas1p4.samsung.com (KnoxPortal) with ESMTPA id
+ 20200109104657epcas1p41d90cb9037af506897e14e15b0ed43a0~oMihCjHQe2909129091epcas1p48;
+ Thu,  9 Jan 2020 10:46:57 +0000 (GMT)
+Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
+ epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20200109104657epsmtrp1a2c3598f84f274456c8b5ffb4bc4a7de~oMihBp2MA0405704057epsmtrp1J;
+ Thu,  9 Jan 2020 10:46:57 +0000 (GMT)
+X-AuditID: b6c32a36-a3dff7000001bd72-29-5e1704a2a1a7
+Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
+ epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ AA.14.06569.1A4071E5; Thu,  9 Jan 2020 19:46:57 +0900 (KST)
+Received: from [10.113.221.102] (unknown [10.113.221.102]) by
+ epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200109104657epsmtip1cf3e05328ada9f32d7e46b8409ca6f84~oMigv4SII0075600756epsmtip1A;
+ Thu,  9 Jan 2020 10:46:57 +0000 (GMT)
 Subject: Re: [PATCH v2 02/11] PM / devfreq: Remove
  devfreq_get_devfreq_by_phandle function
-To: Chanwoo Choi <cw00.choi@samsung.com>, robh+dt@kernel.org,
- krzk@kernel.org, heiko@sntech.de, leonard.crestez@nxp.com
+To: Lukasz Luba <lukasz.luba@arm.com>, robh+dt@kernel.org, krzk@kernel.org,
+ heiko@sntech.de, leonard.crestez@nxp.com
+From: Chanwoo Choi <cw00.choi@samsung.com>
+Organization: Samsung Electronics
+Message-ID: <22cde618-d51e-2d4d-461e-e2d2c1b52af2@samsung.com>
+Date: Thu, 9 Jan 2020 19:54:04 +0900
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:59.0) Gecko/20100101
+ Thunderbird/59.0
+MIME-Version: 1.0
+In-Reply-To: <b9a1ebe5-e114-3a6b-6081-c794e1341329@arm.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrIJsWRmVeSWpSXmKPExsWy7bCmvu4iFvE4g74OTov781oZLeYfOcdq
+ 8f/Ra1aL/sevmS3On9/AbnG26Q27xYq7H1ktNj2+xmpxedccNovPvUcYLT49+M9sMeP8PiaL
+ hU0t7BZrj9xlt1h6/SKTxe3GFWwWrXuPsDsIeqyZt4bRY9OqTjaPzUvqPTa+28Hk0bdlFaPH
+ 9mvzmD0+b5ILYI/KtslITUxJLVJIzUvOT8nMS7dV8g6Od443NTMw1DW0tDBXUshLzE21VXLx
+ CdB1y8wB+kBJoSwxpxQoFJBYXKykb2dTlF9akqqQkV9cYquUWpCSU2BZoFecmFtcmpeul5yf
+ a2VoYGBkClSYkJ3x4vBZpoKzyhVnJrYyNzD+ke1i5OSQEDCR2HO7hb2LkYtDSGAHo8SFj7dZ
+ IZxPjBKLljyFcr4BZbYvYIZpeXblKBtEYi+jxKmXHVD97xkl1nxYygZSJSwQI/Fx4QZWEFtE
+ oExiwp6bjCBFzAI3mCQutyxgB0mwCWhJ7H9xA6yBX0BR4uqPx4wgNq+AncSkzcvAmlkEVCR2
+ 7nsEFhcVCJM4ua0FqkZQ4uTMJywgNqeAtcSr17/B6pkFxCVuPZnPBGHLSzRvnQ119il2iVkd
+ 8RC2i0T/qrmsELawxKvjW9ghbCmJl/1tUHa1xMqTR8DelBDoYJTYsv8CVIOxxP6lk4EWcAAt
+ 0JRYv0sfIqwosfP3XEaIvXwS7772sIKUSAjwSnS0CUGUKEtcfnCXCcKWlFjc3sk2gVFpFpJv
+ ZiH5YBaSD2YhLFvAyLKKUSy1oDg3PbXYsMAIObo3MYKTt5bZDsZF53wOMQpwMCrx8DIoicUJ
+ sSaWFVfmHmKU4GBWEuE9egMoxJuSWFmVWpQfX1Sak1p8iNEUGNgTmaVEk/OBmSWvJN7Q1MjY
+ 2NjCxNDM1NBQSZyX48fFWCGB9MSS1OzU1ILUIpg+Jg5OqQZGn2uV/29Iz5SvZUlbrvWV6eJ9
+ na9cUvL3bknN2cs0f5PrYcG1089F/9/B9zk9e79h1H3D1Y52F7oNHieu8711yCtHvqY5MGvj
+ YWfR9I8H/vQKajPr8B95/Dvm49nP71KC1/DX30x4Hmh4Y+r+irB09V2v+uST66wj3m94z68q
+ 538rLi0vycxTiaU4I9FQi7moOBEAnoLKzfQDAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrDIsWRmVeSWpSXmKPExsWy7bCSnO5CFvE4g9tXdCzuz2tltJh/5Byr
+ xf9Hr1kt+h+/ZrY4f34Du8XZpjfsFivufmS12PT4GqvF5V1z2Cw+9x5htPj04D+zxYzz+5gs
+ Fja1sFusPXKX3WLp9YtMFrcbV7BZtO49wu4g6LFm3hpGj02rOtk8Ni+p99j4bgeTR9+WVYwe
+ 26/NY/b4vEkugD2KyyYlNSezLLVI3y6BK+PF4bNMBWeVK85MbGVuYPwj28XIySEhYCLx7MpR
+ ti5GLg4hgd2MElP/fWaGSEhKTLt4FMjmALKFJQ4fLoaoecsoMefEHiaQGmGBGImPCzewgtgi
+ AmUSm9YtZwcpYha4wSRx8PwMVoiOD4wS3d9nM4JUsQloSex/cYMNxOYXUJS4+uMxWJxXwE5i
+ 0uZlYJNYBFQkdu57BBYXFQiT2LnkMRNEjaDEyZlPWEBsTgFriVevf4PVMwuoS/yZd4kZwhaX
+ uPVkPhOELS/RvHU28wRG4VlI2mchaZmFpGUWkpYFjCyrGCVTC4pz03OLDQuM8lLL9YoTc4tL
+ 89L1kvNzNzGC41hLawfjiRPxhxgFOBiVeHgZlMTihFgTy4orcw8xSnAwK4nwHr0BFOJNSays
+ Si3Kjy8qzUktPsQozcGiJM4rn38sUkggPbEkNTs1tSC1CCbLxMEp1cAoxKLu+mJ/QL8pg9OO
+ oxfW//qwcGq27BTnjyx/fMQOpZ4Onhj65flN97vteSpF7kq39wUcUkqyddrsZqIrzFhUuerP
+ sQnJPTVZbJK7mz7LmJ5ewGL/42FFeX91Cv+0ne7LCzVYtNY4hGtemqvWpDPFlu/HhvrSJR38
+ z1kVFkgynA1peRO+eKYSS3FGoqEWc1FxIgAEWzda3wIAAA==
+X-CMS-MailID: 20200109104657epcas1p41d90cb9037af506897e14e15b0ed43a0
+X-Msg-Generator: CA
+X-Sendblock-Type: SVC_REQ_APPROVE
+CMS-TYPE: 101P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20191220001759epcas1p4ce1c2017937a35de84eab720b9732df0
 References: <20191220002430.11995-1-cw00.choi@samsung.com>
  <CGME20191220001759epcas1p4ce1c2017937a35de84eab720b9732df0@epcas1p4.samsung.com>
  <20191220002430.11995-3-cw00.choi@samsung.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <b9a1ebe5-e114-3a6b-6081-c794e1341329@arm.com>
-Date: Thu, 9 Jan 2020 10:37:35 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20191220002430.11995-3-cw00.choi@samsung.com>
-Content-Language: en-US
+ <b9a1ebe5-e114-3a6b-6081-c794e1341329@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_023743_002631_2CB47D2B 
-X-CRM114-Status: GOOD (  20.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_024705_799064_C8538D8D 
+X-CRM114-Status: GOOD (  23.83  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.24 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [203.254.224.24 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,121 +157,89 @@ Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
  linux-rockchip@lists.infradead.org, kyungmin.park@samsung.com,
  myungjoo.ham@samsung.com, kgene@kernel.org,
  linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Chanwoo,
-
-On 12/20/19 12:24 AM, Chanwoo Choi wrote:
-> Previously, devfreq core support 'devfreq' property in order to get
-> the devfreq device by phandle. But, 'devfreq' property name is not proper
-> on devicetree binding because this name doesn't mean the any h/w attribute.
-> 
-> The devfreq core hand over the right to decide the property name
-> for getting the devfreq device on devicetree. Each devfreq driver
-> will decide the property name on devicetree binding and then get
-> the devfreq device by using devfreq_get_devfreq_by_node().
-> 
-> Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
-> ---
->   drivers/devfreq/devfreq.c    | 35 -----------------------------------
->   drivers/devfreq/exynos-bus.c | 12 +++++++++++-
->   include/linux/devfreq.h      |  8 --------
->   3 files changed, 11 insertions(+), 44 deletions(-)
-> 
-> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-> index cb8ca81c8973..c3d3c7c802a0 100644
-> --- a/drivers/devfreq/devfreq.c
-> +++ b/drivers/devfreq/devfreq.c
-> @@ -991,48 +991,13 @@ struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
->   
->   	return ERR_PTR(-ENODEV);
->   }
-> -
-> -/*
-> - * devfreq_get_devfreq_by_phandle - Get the devfreq device from devicetree
-> - * @dev - instance to the given device
-> - * @index - index into list of devfreq
-> - *
-> - * return the instance of devfreq device
-> - */
-> -struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev, int index)
-> -{
-> -	struct device_node *node;
-> -	struct devfreq *devfreq;
-> -
-> -	if (!dev)
-> -		return ERR_PTR(-EINVAL);
-> -
-> -	if (!dev->of_node)
-> -		return ERR_PTR(-EINVAL);
-> -
-> -	node = of_parse_phandle(dev->of_node, "devfreq", index);
-> -	if (!node)
-> -		return ERR_PTR(-ENODEV);
-> -
-> -	devfreq = devfreq_get_devfreq_by_node(node);
-> -	of_node_put(node);
-> -
-> -	return devfreq;
-> -}
-> -
->   #else
->   struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
->   {
->   	return ERR_PTR(-ENODEV);
->   }
-> -
-> -struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev, int index)
-> -{
-> -	return ERR_PTR(-ENODEV);
-> -}
->   #endif /* CONFIG_OF */
->   EXPORT_SYMBOL_GPL(devfreq_get_devfreq_by_node);
-> -EXPORT_SYMBOL_GPL(devfreq_get_devfreq_by_phandle);
->   
->   /**
->    * devm_devfreq_remove_device() - Resource-managed devfreq_remove_device()
-> diff --git a/drivers/devfreq/exynos-bus.c b/drivers/devfreq/exynos-bus.c
-> index 7f5917d59072..1bc4e3c81115 100644
-> --- a/drivers/devfreq/exynos-bus.c
-> +++ b/drivers/devfreq/exynos-bus.c
-> @@ -86,6 +86,16 @@ static int exynos_bus_get_event(struct exynos_bus *bus,
->   	return ret;
->   }
->   
-> +static struct devfreq *exynos_bus_get_parent_devfreq(struct device_node *np)
-> +{
-> +	struct device_node *node = of_parse_phandle(np, "devfreq", 0);
-> +
-> +	if (!node)
-> +		return ERR_PTR(-ENODEV);
-> +
-> +	return devfreq_get_devfreq_by_node(node);
-> +}
-> +
->   /*
->    * devfreq function for both simple-ondemand and passive governor
->    */
-> @@ -353,7 +363,7 @@ static int exynos_bus_profile_init_passive(struct exynos_bus *bus,
->   	profile->exit = exynos_bus_passive_exit;
->   
->   	/* Get the instance of parent devfreq device */
-> -	parent_devfreq = devfreq_get_devfreq_by_phandle(dev, 0);
-> +	parent_devfreq = exynos_bus_get_parent_devfreq(dev->of_node);
->   	if (IS_ERR(parent_devfreq))
->   		return -EPROBE_DEFER;
->   
-
-These changes won't apply, probably I need some base for it.
-
-Regards,
-Lukasz
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gMS85LzIwIDc6MzcgUE0sIEx1a2FzeiBMdWJhIHdyb3RlOgo+IEhpIENoYW53b28sCj4gCj4g
+T24gMTIvMjAvMTkgMTI6MjQgQU0sIENoYW53b28gQ2hvaSB3cm90ZToKPj4gUHJldmlvdXNseSwg
+ZGV2ZnJlcSBjb3JlIHN1cHBvcnQgJ2RldmZyZXEnIHByb3BlcnR5IGluIG9yZGVyIHRvIGdldAo+
+PiB0aGUgZGV2ZnJlcSBkZXZpY2UgYnkgcGhhbmRsZS4gQnV0LCAnZGV2ZnJlcScgcHJvcGVydHkg
+bmFtZSBpcyBub3QgcHJvcGVyCj4+IG9uIGRldmljZXRyZWUgYmluZGluZyBiZWNhdXNlIHRoaXMg
+bmFtZSBkb2Vzbid0IG1lYW4gdGhlIGFueSBoL3cgYXR0cmlidXRlLgo+Pgo+PiBUaGUgZGV2ZnJl
+cSBjb3JlIGhhbmQgb3ZlciB0aGUgcmlnaHQgdG8gZGVjaWRlIHRoZSBwcm9wZXJ0eSBuYW1lCj4+
+IGZvciBnZXR0aW5nIHRoZSBkZXZmcmVxIGRldmljZSBvbiBkZXZpY2V0cmVlLiBFYWNoIGRldmZy
+ZXEgZHJpdmVyCj4+IHdpbGwgZGVjaWRlIHRoZSBwcm9wZXJ0eSBuYW1lIG9uIGRldmljZXRyZWUg
+YmluZGluZyBhbmQgdGhlbiBnZXQKPj4gdGhlIGRldmZyZXEgZGV2aWNlIGJ5IHVzaW5nIGRldmZy
+ZXFfZ2V0X2RldmZyZXFfYnlfbm9kZSgpLgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBDaGFud29vIENo
+b2kgPGN3MDAuY2hvaUBzYW1zdW5nLmNvbT4KPj4gLS0tCj4+IMKgIGRyaXZlcnMvZGV2ZnJlcS9k
+ZXZmcmVxLmPCoMKgwqAgfCAzNSAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQo+
+PiDCoCBkcml2ZXJzL2RldmZyZXEvZXh5bm9zLWJ1cy5jIHwgMTIgKysrKysrKysrKystCj4+IMKg
+IGluY2x1ZGUvbGludXgvZGV2ZnJlcS5owqDCoMKgwqDCoCB8wqAgOCAtLS0tLS0tLQo+PiDCoCAz
+IGZpbGVzIGNoYW5nZWQsIDExIGluc2VydGlvbnMoKyksIDQ0IGRlbGV0aW9ucygtKQo+Pgo+PiBk
+aWZmIC0tZ2l0IGEvZHJpdmVycy9kZXZmcmVxL2RldmZyZXEuYyBiL2RyaXZlcnMvZGV2ZnJlcS9k
+ZXZmcmVxLmMKPj4gaW5kZXggY2I4Y2E4MWM4OTczLi5jM2QzYzdjODAyYTAgMTAwNjQ0Cj4+IC0t
+LSBhL2RyaXZlcnMvZGV2ZnJlcS9kZXZmcmVxLmMKPj4gKysrIGIvZHJpdmVycy9kZXZmcmVxL2Rl
+dmZyZXEuYwo+PiBAQCAtOTkxLDQ4ICs5OTEsMTMgQEAgc3RydWN0IGRldmZyZXEgKmRldmZyZXFf
+Z2V0X2RldmZyZXFfYnlfbm9kZShzdHJ1Y3QgZGV2aWNlX25vZGUgKm5vZGUpCj4+IMKgIMKgwqDC
+oMKgwqAgcmV0dXJuIEVSUl9QVFIoLUVOT0RFVik7Cj4+IMKgIH0KPj4gLQo+PiAtLyoKPj4gLSAq
+IGRldmZyZXFfZ2V0X2RldmZyZXFfYnlfcGhhbmRsZSAtIEdldCB0aGUgZGV2ZnJlcSBkZXZpY2Ug
+ZnJvbSBkZXZpY2V0cmVlCj4+IC0gKiBAZGV2IC0gaW5zdGFuY2UgdG8gdGhlIGdpdmVuIGRldmlj
+ZQo+PiAtICogQGluZGV4IC0gaW5kZXggaW50byBsaXN0IG9mIGRldmZyZXEKPj4gLSAqCj4+IC0g
+KiByZXR1cm4gdGhlIGluc3RhbmNlIG9mIGRldmZyZXEgZGV2aWNlCj4+IC0gKi8KPj4gLXN0cnVj
+dCBkZXZmcmVxICpkZXZmcmVxX2dldF9kZXZmcmVxX2J5X3BoYW5kbGUoc3RydWN0IGRldmljZSAq
+ZGV2LCBpbnQgaW5kZXgpCj4+IC17Cj4+IC3CoMKgwqAgc3RydWN0IGRldmljZV9ub2RlICpub2Rl
+Owo+PiAtwqDCoMKgIHN0cnVjdCBkZXZmcmVxICpkZXZmcmVxOwo+PiAtCj4+IC3CoMKgwqAgaWYg
+KCFkZXYpCj4+IC3CoMKgwqDCoMKgwqDCoCByZXR1cm4gRVJSX1BUUigtRUlOVkFMKTsKPj4gLQo+
+PiAtwqDCoMKgIGlmICghZGV2LT5vZl9ub2RlKQo+PiAtwqDCoMKgwqDCoMKgwqAgcmV0dXJuIEVS
+Ul9QVFIoLUVJTlZBTCk7Cj4+IC0KPj4gLcKgwqDCoCBub2RlID0gb2ZfcGFyc2VfcGhhbmRsZShk
+ZXYtPm9mX25vZGUsICJkZXZmcmVxIiwgaW5kZXgpOwo+PiAtwqDCoMKgIGlmICghbm9kZSkKPj4g
+LcKgwqDCoMKgwqDCoMKgIHJldHVybiBFUlJfUFRSKC1FTk9ERVYpOwo+PiAtCj4+IC3CoMKgwqAg
+ZGV2ZnJlcSA9IGRldmZyZXFfZ2V0X2RldmZyZXFfYnlfbm9kZShub2RlKTsKPj4gLcKgwqDCoCBv
+Zl9ub2RlX3B1dChub2RlKTsKPj4gLQo+PiAtwqDCoMKgIHJldHVybiBkZXZmcmVxOwo+PiAtfQo+
+PiAtCj4+IMKgICNlbHNlCj4+IMKgIHN0cnVjdCBkZXZmcmVxICpkZXZmcmVxX2dldF9kZXZmcmVx
+X2J5X25vZGUoc3RydWN0IGRldmljZV9ub2RlICpub2RlKQo+PiDCoCB7Cj4+IMKgwqDCoMKgwqAg
+cmV0dXJuIEVSUl9QVFIoLUVOT0RFVik7Cj4+IMKgIH0KPj4gLQo+PiAtc3RydWN0IGRldmZyZXEg
+KmRldmZyZXFfZ2V0X2RldmZyZXFfYnlfcGhhbmRsZShzdHJ1Y3QgZGV2aWNlICpkZXYsIGludCBp
+bmRleCkKPj4gLXsKPj4gLcKgwqDCoCByZXR1cm4gRVJSX1BUUigtRU5PREVWKTsKPj4gLX0KPj4g
+wqAgI2VuZGlmIC8qIENPTkZJR19PRiAqLwo+PiDCoCBFWFBPUlRfU1lNQk9MX0dQTChkZXZmcmVx
+X2dldF9kZXZmcmVxX2J5X25vZGUpOwo+PiAtRVhQT1JUX1NZTUJPTF9HUEwoZGV2ZnJlcV9nZXRf
+ZGV2ZnJlcV9ieV9waGFuZGxlKTsKPj4gwqAgwqAgLyoqCj4+IMKgwqAgKiBkZXZtX2RldmZyZXFf
+cmVtb3ZlX2RldmljZSgpIC0gUmVzb3VyY2UtbWFuYWdlZCBkZXZmcmVxX3JlbW92ZV9kZXZpY2Uo
+KQo+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9kZXZmcmVxL2V4eW5vcy1idXMuYyBiL2RyaXZlcnMv
+ZGV2ZnJlcS9leHlub3MtYnVzLmMKPj4gaW5kZXggN2Y1OTE3ZDU5MDcyLi4xYmM0ZTNjODExMTUg
+MTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvZGV2ZnJlcS9leHlub3MtYnVzLmMKPj4gKysrIGIvZHJp
+dmVycy9kZXZmcmVxL2V4eW5vcy1idXMuYwo+PiBAQCAtODYsNiArODYsMTYgQEAgc3RhdGljIGlu
+dCBleHlub3NfYnVzX2dldF9ldmVudChzdHJ1Y3QgZXh5bm9zX2J1cyAqYnVzLAo+PiDCoMKgwqDC
+oMKgIHJldHVybiByZXQ7Cj4+IMKgIH0KPj4gwqAgK3N0YXRpYyBzdHJ1Y3QgZGV2ZnJlcSAqZXh5
+bm9zX2J1c19nZXRfcGFyZW50X2RldmZyZXEoc3RydWN0IGRldmljZV9ub2RlICpucCkKPj4gK3sK
+Pj4gK8KgwqDCoCBzdHJ1Y3QgZGV2aWNlX25vZGUgKm5vZGUgPSBvZl9wYXJzZV9waGFuZGxlKG5w
+LCAiZGV2ZnJlcSIsIDApOwo+PiArCj4+ICvCoMKgwqAgaWYgKCFub2RlKQo+PiArwqDCoMKgwqDC
+oMKgwqAgcmV0dXJuIEVSUl9QVFIoLUVOT0RFVik7Cj4+ICsKPj4gK8KgwqDCoCByZXR1cm4gZGV2
+ZnJlcV9nZXRfZGV2ZnJlcV9ieV9ub2RlKG5vZGUpOwo+PiArfQo+PiArCj4+IMKgIC8qCj4+IMKg
+wqAgKiBkZXZmcmVxIGZ1bmN0aW9uIGZvciBib3RoIHNpbXBsZS1vbmRlbWFuZCBhbmQgcGFzc2l2
+ZSBnb3Zlcm5vcgo+PiDCoMKgICovCj4+IEBAIC0zNTMsNyArMzYzLDcgQEAgc3RhdGljIGludCBl
+eHlub3NfYnVzX3Byb2ZpbGVfaW5pdF9wYXNzaXZlKHN0cnVjdCBleHlub3NfYnVzICpidXMsCj4+
+IMKgwqDCoMKgwqAgcHJvZmlsZS0+ZXhpdCA9IGV4eW5vc19idXNfcGFzc2l2ZV9leGl0Owo+PiDC
+oCDCoMKgwqDCoMKgIC8qIEdldCB0aGUgaW5zdGFuY2Ugb2YgcGFyZW50IGRldmZyZXEgZGV2aWNl
+ICovCj4+IC3CoMKgwqAgcGFyZW50X2RldmZyZXEgPSBkZXZmcmVxX2dldF9kZXZmcmVxX2J5X3Bo
+YW5kbGUoZGV2LCAwKTsKPj4gK8KgwqDCoCBwYXJlbnRfZGV2ZnJlcSA9IGV4eW5vc19idXNfZ2V0
+X3BhcmVudF9kZXZmcmVxKGRldi0+b2Zfbm9kZSk7Cj4+IMKgwqDCoMKgwqAgaWYgKElTX0VSUihw
+YXJlbnRfZGV2ZnJlcSkpCj4+IMKgwqDCoMKgwqDCoMKgwqDCoCByZXR1cm4gLUVQUk9CRV9ERUZF
+UjsKPj4gwqAgCj4gCj4gVGhlc2UgY2hhbmdlcyB3b24ndCBhcHBseSwgcHJvYmFibHkgSSBuZWVk
+IHNvbWUgYmFzZSBmb3IgaXQuCgpJIGRldmVsb3BlZCBpdCBvbiBkZXZmcmVxLW5leHQgYnJhbmNo
+WzFdClsxXSBodHRwczovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9j
+aGFud29vL2xpbnV4LmdpdC9sb2cvP2g9ZGV2ZnJlcS1uZXh0CgpBbmQgSSB0cnkgdG8gYXBwbHkg
+dGhlc2UgcGF0Y2hzZXQgdG8gbGludXgtbmV4dFsyXSB3aXRoIHRhZ3MvbmV4dC0yMDIwMDEwOS4K
+QnV0LCBwYXRjaDEwLzExIG9mIGRldmljZWV0cmVlIGhhcyBzb21lIG1lcmdlIGNvbmZsaWN0CmJl
+Y2F1c2UgcGF0Y2hbM10gcmVsYXRlZCB0byBleHlub3MtYnVzIHdhcyBtZXJnZWQuClsyXSBodHRw
+czovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9uZXh0L2xpbnV4LW5l
+eHQuZ2l0L2xvZy8KWzNdIGh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5vcmcvY292ZXIvMTEzMDMy
+MzUvCiAgICAtIFt2MiwwLzJdIEV4eW5vczU0MjI6IGZpeCBidXMgcmVsYXRlZCBPUFBzIGZvciBP
+ZHJvaWQgWFUzL1hVNC9IQzEKCk9uIG5leHQgdmVyc2lvbiwgSSdsbCByZWJhc2UgaXQgb24gbGF0
+ZXN0IHBhdGNoZXMuCgo+IAo+IFJlZ2FyZHMsCj4gTHVrYXN6Cj4gCj4gCj4gCgoKLS0gCkJlc3Qg
+UmVnYXJkcywKQ2hhbndvbyBDaG9pClNhbXN1bmcgRWxlY3Ryb25pY3MKCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcg
+bGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
