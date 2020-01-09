@@ -2,78 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 501FB1354C8
-	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 09:52:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B284F1354C9
+	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 09:52:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wt0z0lcz+ePKC3TyhWNcWGe+QaAtjb3ILnFN8sLTpUM=; b=CW9zxP9d6U7EMQ
-	fARTw1WohM3D0MFcfwGyybs8yjIMZLhwwBtx4HNm5GK46Rz6sXbAzcEmYgl31bxl3j7+D03vvn28I
-	uOEE8a3Xwdm+W/xFeH1oNEKt8b5fM3gUzbeufVfSL3UjU45Tw+ZfVCZK2LnMtZnvJ5xtAuZTHMtPI
-	efiI72BDNAl027ZePkNRGigsXmTaaxvUxL5SdPSkQi6eHyhVVIzu0mnTg1/pypxUkwZTqz/TORvJ4
-	A6ahog+7pxVWEPkDPlUEt1VA5LXxNOwSdxLOSVFzMOmsNQ/YrqEHTh5uC95cGF6u+XWeBqnpRmUiZ
-	Tg75sOSYbV5Hf7pGta5w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7VDLrKE3VmIxDqJ8e840Cb2OY8heL1s3aHlJvN/4di0=; b=o8mVaBWQh8Oi6/
+	uT4lUOrJ0mHCsERHkhzpmPoyt1IcEh04EyxEBwVo7O80IEfG/ZRuQtC03Ak26u8mzw8kSaRzNSwCn
+	23oQCxp8wUEo/vHbsG7J5L8qA9/4tCXt9ddGXPI7S0mcb4HxAct6eUqaPVcUEFVTitM8wS7Xy3stf
+	5IE/DKUmEkhJiV45MAcE1m4csx1Y1hSvVh5UupF/0aLn8eaybypBfwlfosYUefTZaRHPW32V7la11
+	TTixJHz8xJyByt6/YKGB+7KNjmePxGazYFAN68Yd6PAgp859nz8vWcCWCQ5RBdSLA6Wa+pBAoPtEI
+	7cAT4/bgZEhzUj+X1A+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipTYV-0005kM-5j; Thu, 09 Jan 2020 08:52:39 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1ipTYm-000650-9m; Thu, 09 Jan 2020 08:52:56 +0000
+Received: from mail-pj1-x102b.google.com ([2607:f8b0:4864:20::102b])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipTYR-0005XJ-32
- for linux-rockchip@lists.infradead.org; Thu, 09 Jan 2020 08:52:36 +0000
-Received: by mail-pl1-x644.google.com with SMTP id x17so2311724pln.1
- for <linux-rockchip@lists.infradead.org>; Thu, 09 Jan 2020 00:52:35 -0800 (PST)
+ id 1ipTYW-0005mU-1z
+ for linux-rockchip@lists.infradead.org; Thu, 09 Jan 2020 08:52:41 +0000
+Received: by mail-pj1-x102b.google.com with SMTP id l35so874990pje.3
+ for <linux-rockchip@lists.infradead.org>; Thu, 09 Jan 2020 00:52:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=+G2wTQjYnk77KB6rEiwLgDcyPxGw48Lq2j8/Bllx3Bs=;
- b=easbO/zm2QtMslT9GzBSPNU8lWteQgPAlID3oLclJVL98jSOT2MMSTJq6pH4zVjOFh
- GQj6gexficMH2c51t3qGtA9tWpxKRNqu/RYVsP7txfuBNsX+bPtdcq5cFDqx5hhRylNz
- GvL9aSMmtVA0ffM/7/yT16pmS+jJmTDv2HggE=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=30ccU2NBOUtSV7DOUopHwnFzt1mfF8Y1Cu5jsAQdzIY=;
+ b=SmE1zTHiUZ0FOXZNeO03uhDAC7De/emcdPw/ddaO4+2DKcGxjQk15ZY2qqdJNK7GfW
+ pYdD5qzbjZGEHjenWo7H0+9SfVu1x7WVb5XepzM/JD2UPqUP8hAGS+P3eyvj0HARMEfz
+ lTaUFLOIZsBRuAXq/sY4k25wLp4RGE9DLLoxg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=+G2wTQjYnk77KB6rEiwLgDcyPxGw48Lq2j8/Bllx3Bs=;
- b=maU9KPy737WPHTwtjLzQfPWA40vEkR3Hvl50beE9edWsaxsV0ZMJMwfWzifxGctVJq
- mb8ieex4UO7OuW9Yoin4ZX8wwlBT2CWwfyK0yQ2mnU3BXSulPs4wTpTj4kzEVdAe/1KE
- JBYbCdATFsKts/Q5PhfmUKCKmzaIZAVZDC+yKOQ8DhoNzPdvsigfqynxKqfb5FLdWkQ9
- zmPZC0dEc8TSKqeJRHmONe+OENrmJ/oSmtOJ+7l8YyOuRGj/rrlafhK/Ua16VDwtztMx
- ryLgo9GuWlUhEYG5dpX5U1b0sClw2/w162UxlkGCmA6oZsGHLdxDLzWSEHkenGXq6LHs
- Sfmg==
-X-Gm-Message-State: APjAAAUNb1iLEvxrjYVgwddoOiXWhX6/uyHTFl+9wGXcc0Cwq5Us6LjU
- SpuCUCx6PuGNDnZrFRuYn67QYw==
-X-Google-Smtp-Source: APXvYqwM9YUwiF9kbMX0gm4ox7tXchZKWC+teoqgqjvUaQIY5N249DLQEper8HD1ydrKzj1M8jwMpg==
-X-Received: by 2002:a17:902:b087:: with SMTP id
- p7mr10899975plr.10.1578559954467; 
- Thu, 09 Jan 2020 00:52:34 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=30ccU2NBOUtSV7DOUopHwnFzt1mfF8Y1Cu5jsAQdzIY=;
+ b=Z6C9X20M+ntqyUA9IWi3QYF9AIocWw0BNwaU2n+hchFyKIMrYswtUoZvajrZKezlmO
+ Pbng+O4A620yEI9tDEkUgqn3LvyzPype5Js4VmzUsTprwhn/T+pXkJKlSBkqQMVs0cRp
+ 1s254Nej+bguGQlWs9bFnf1UNMCKr0JiZB4bUYIv+wHoQO+iFV/xpbJcprNmdl+ioJA7
+ DOV5fDaTeIARRn19tP0reXxgIS8PC09Y4dYMkPDX4Q+XF+VSONxoCUZ1yYrYN3LkmMnX
+ d3JzGXYyYGL6fxe66vD+EN4s8A0jtr0O71QSHJVcTVkuh80J6rGsGsmwB3jQhsF1dt9+
+ cI9Q==
+X-Gm-Message-State: APjAAAUTCPABc2892nCASSH6bWSXzkDyZ/SmoF3T3tJDRq/2FCCt/y7E
+ AngnL1DM/q6PEkfzmeekI6sJis35OAc=
+X-Google-Smtp-Source: APXvYqzSb69X1XpBWr05j4yPXTJIVwJKartqvZqkuY3rzZ4jx7JNJBN4GJ/sMjV3lyRu8sUMBVu7qQ==
+X-Received: by 2002:a17:902:16a:: with SMTP id
+ 97mr10266010plb.163.1578559959005; 
+ Thu, 09 Jan 2020 00:52:39 -0800 (PST)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:d888:9871:544a:b516])
- by smtp.gmail.com with ESMTPSA id o17sm2139121pjq.1.2020.01.09.00.52.30
+ by smtp.gmail.com with ESMTPSA id o17sm2139121pjq.1.2020.01.09.00.52.34
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Jan 2020 00:52:33 -0800 (PST)
+ Thu, 09 Jan 2020 00:52:38 -0800 (PST)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v4 0/8] rk3399: Add redundant boot support
-Date: Thu,  9 Jan 2020 14:22:14 +0530
-Message-Id: <20200109085222.22670-1-jagan@amarulasolutions.com>
+Subject: [PATCH v4 1/8] rockchip: Add cpu-info
+Date: Thu,  9 Jan 2020 14:22:15 +0530
+Message-Id: <20200109085222.22670-2-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
+In-Reply-To: <20200109085222.22670-1-jagan@amarulasolutions.com>
+References: <20200109085222.22670-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_005235_288412_490B14F3 
-X-CRM114-Status: UNSURE (   9.29  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200109_005240_135571_A735CF56 
+X-CRM114-Status: GOOD (  10.89  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -102,90 +100,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Boot redundancy is one of the key criteria for switch
-recovery or golden partition based on the bootcount 
-value, which indeed very much needed in production 
-systems on the fields.
+Add cpu information for rockchip soc.
 
-This is v4 patchset support redundant boot on Rockchip 
-rk3399.
+This would help to print the SoC family number, with
+associated temparature, clock and reason for reset etc.
 
-Changes for v4:
-- fixed compilation issue
-- add wdt kconfig option
-- tested wdt and bootcount
-Changes for v3:
-- rework of cru.h to include rk3288
-- rebase on master
-Changes for v2:
-- Handle TPL build for watchdog, if TPL won't enable
-- Fix comments for dw_wdt driver-model comments from Andy
-- Add Kconfig items for WDT_TPL
-- Support WDT on TPL as well
-- Use SYS_SOC for cpu-info
-
-Any inputs?
-Jagan.
-
-Jagan Teki (8):
-  rockchip: Add cpu-info
-  rockchip: rk3399: Enable DISPLAY_CPUINFO
-  arm: rockchip: Add common cru.h
-  rockchip: Add common reset cause
-  rockchip: rk3399: Add bootcount support
-  watchdog: kconfig: Enable designware for rk3399
-  [DO NOT MERGE] roc-rk3399-pc: Enable watchdog
-  [DO NOT MERGE] roc-rk3399-pc: Enable bootcount
-
- arch/arm/include/asm/arch-rockchip/clock.h    |  4 +-
- arch/arm/include/asm/arch-rockchip/cru.h      | 30 +++++++++
- .../include/asm/arch-rockchip/cru_rk3288.h    | 20 ++----
- .../include/asm/arch-rockchip/cru_rk3399.h    | 11 ++--
- arch/arm/mach-rockchip/Kconfig                |  2 +
- arch/arm/mach-rockchip/Makefile               |  1 +
- arch/arm/mach-rockchip/cpu-info.c             | 65 +++++++++++++++++++
- arch/arm/mach-rockchip/rk3288/clk_rk3288.c    |  2 +-
- arch/arm/mach-rockchip/rk3288/rk3288.c        | 41 +-----------
- arch/arm/mach-rockchip/rk3399/Kconfig         | 10 +++
- arch/arm/mach-rockchip/rk3399/clk_rk3399.c    |  2 +-
- arch/arm/mach-rockchip/rk3399/rk3399.c        |  2 +-
- configs/evb-rk3288_defconfig                  |  1 -
- configs/evb-rk3399_defconfig                  |  1 -
- configs/ficus-rk3399_defconfig                |  1 -
- configs/firefly-rk3288_defconfig              |  1 -
- configs/firefly-rk3399_defconfig              |  1 -
- configs/khadas-edge-captain-rk3399_defconfig  |  1 -
- configs/khadas-edge-rk3399_defconfig          |  1 -
- configs/khadas-edge-v-rk3399_defconfig        |  1 -
- configs/leez-rk3399_defconfig                 |  1 -
- configs/miqi-rk3288_defconfig                 |  1 -
- configs/nanopc-t4-rk3399_defconfig            |  1 -
- configs/nanopi-m4-rk3399_defconfig            |  1 -
- configs/nanopi-neo4-rk3399_defconfig          |  1 -
- configs/orangepi-rk3399_defconfig             |  1 -
- configs/phycore-rk3288_defconfig              |  1 -
- configs/popmetal-rk3288_defconfig             |  1 -
- configs/puma-rk3399_defconfig                 |  1 -
- configs/roc-pc-rk3399_defconfig               |  3 +-
- configs/rock-pi-4-rk3399_defconfig            |  1 -
- configs/rock960-rk3399_defconfig              |  1 -
- configs/rockpro64-rk3399_defconfig            |  1 -
- configs/tinker-rk3288_defconfig               |  1 -
- configs/tinker-s-rk3288_defconfig             |  1 -
- configs/vyasa-rk3288_defconfig                |  1 -
- drivers/clk/rockchip/clk_rk3288.c             | 42 ++++++------
- drivers/clk/rockchip/clk_rk3399.c             | 36 +++++-----
- drivers/ram/rockchip/sdram_rk3288.c           | 10 +--
- drivers/ram/rockchip/sdram_rk3399.c           | 10 +--
- drivers/video/rockchip/rk3288_mipi.c          |  2 +-
- drivers/video/rockchip/rk3399_mipi.c          |  2 +-
- drivers/video/rockchip/rk_mipi.c              |  2 +-
- drivers/watchdog/Kconfig                      |  1 +
- include/configs/rk3399_common.h               |  5 +-
- 45 files changed, 182 insertions(+), 144 deletions(-)
- create mode 100644 arch/arm/include/asm/arch-rockchip/cru.h
+Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ arch/arm/mach-rockchip/Makefile   |  1 +
+ arch/arm/mach-rockchip/cpu-info.c | 16 ++++++++++++++++
+ 2 files changed, 17 insertions(+)
  create mode 100644 arch/arm/mach-rockchip/cpu-info.c
 
+diff --git a/arch/arm/mach-rockchip/Makefile b/arch/arm/mach-rockchip/Makefile
+index a728acda24..5b38526fe0 100644
+--- a/arch/arm/mach-rockchip/Makefile
++++ b/arch/arm/mach-rockchip/Makefile
+@@ -22,6 +22,7 @@ ifeq ($(CONFIG_SPL_BUILD)$(CONFIG_TPL_BUILD),)
+ # we can have the preprocessor correctly recognise both 0x0 and 0
+ # meaning "turn it off".
+ obj-y += boot_mode.o
++obj-$(CONFIG_DISPLAY_CPUINFO) += cpu-info.o
+ obj-$(CONFIG_ROCKCHIP_COMMON_BOARD) += board.o
+ obj-$(CONFIG_MISC_INIT_R) += misc.o
+ endif
+diff --git a/arch/arm/mach-rockchip/cpu-info.c b/arch/arm/mach-rockchip/cpu-info.c
+new file mode 100644
+index 0000000000..9bccbd4f68
+--- /dev/null
++++ b/arch/arm/mach-rockchip/cpu-info.c
+@@ -0,0 +1,16 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * (C) Copyright 2019 Amarula Solutions(India)
++ * Author: Jagan Teki <jagan@amarulasolutions.com>
++ */
++
++#include <common.h>
++
++int print_cpuinfo(void)
++{
++	printf("SoC: Rockchip %s\n", CONFIG_SYS_SOC);
++
++	/* TODO print operating temparature and clock */
++
++	return 0;
++}
 -- 
 2.18.0.321.gffc6fa0e3
 
