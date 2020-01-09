@@ -2,67 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FD25135E45
-	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 17:29:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7400D135F45
+	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 18:27:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=jsWXdoWbie49lpuyqjeo9H1+lVoK108bkKIXZXLs93A=; b=ceZwU6o5Zcr047oUcTbbRLEKIv
-	RY7yLZMapWfB2JpQJIa7pODnurb8F2p1zBqLQT7EE7g01/87HDEFtBUIpaTR72UVoBcZzD3id+X+J
-	u1E//w9dhmuq/W+fSLQHUqfTeQpUpqWXcwxkhfsRE0K2NzIoMrNleFGsZALg/0/SePvFdcYMTTKCg
-	81T0f8UY0eHBcBXp1VwEzSzaosTJ17b2Q/pgvefD+5ObGXjUd+W5+Rb1JfiSD70llnpTd+KA1rUD7
-	3408nP2gnLVsMZcQxFbbCDapm8HCY0jicgKsXjPGLYw4TWes5ZqSDb979MtEgBw71z/AKAPDIcLWN
-	mSGe5h9g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vu+ExuMCdKuG4dHZ+KMG/0qxA++lN6+BxOIoqAP4OTo=; b=aFn/NguLXoYkRz
+	W2HMEZ807qYIeux9JLinq0fYaU0a41VRAnNUc7x2+KjO9UauHg4CRBpr7mT5STCrGn/tCj+9abrC3
+	nNmQj6oXwUHVc71veZpRErsQKMHS3nAsIxHYaR1VkrLudm7Tw99hJsGmqSmscJyPDXi9GMrWD8Si7
+	h9unjPywqc9XdTe6sHMGBh3dN2R/v+1nlU2ayIkji55G67MYdTkzoZG/hKRFwMsKDU7EJ+tb+/rKG
+	wDki9y4/B09Qn19qPhAkSUwqMXxBvNGwV2wXwVKq+n97AG/Eb3mmKu1VO6jCd046mImo0vgu3ohvF
+	wT9911BUOO0sWsH99bzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipagQ-0005Z3-BS; Thu, 09 Jan 2020 16:29:18 +0000
-Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
+	id 1ipbaf-0001Lg-Nz; Thu, 09 Jan 2020 17:27:25 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipagM-0005XP-Md
- for linux-rockchip@lists.infradead.org; Thu, 09 Jan 2020 16:29:16 +0000
-Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
- (helo=hermes.fivetechno.de); authenticated
- by wp126.webpack.hosteurope.de running ExIM with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- id 1ipagH-0005oH-AL; Thu, 09 Jan 2020 17:29:09 +0100
-X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
- linuxbbg.five-lan.de
-Received: from [192.168.34.101] (p5098d998.dip0.t-ipconnect.de
- [80.152.217.152]) (authenticated bits=0)
- by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
- 009GT7fs001705
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
- Thu, 9 Jan 2020 17:29:07 +0100
-From: Markus Reichl <m.reichl@fivetechno.de>
-Organization: five technologies GmbH
-To: Guenter Roeck <linux@roeck-us.net>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Heiko Stuebner <heiko@sntech.de>
-Subject: [Bug ?] usb :typec :tcpm :fusb302
-Message-ID: <0ac6bbe7-6395-526d-213c-ac58a19d8673@fivetechno.de>
-Date: Thu, 9 Jan 2020 17:29:07 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1ipbad-0001LJ-FD; Thu, 09 Jan 2020 17:27:24 +0000
+Received: by mail-ed1-x544.google.com with SMTP id m8so6265223edi.13;
+ Thu, 09 Jan 2020 09:27:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=NFFo4lYAoR+ztQi+bc+shgpxvHEpz1hycdVXq2pda/E=;
+ b=Bq+zDCp8utnqC9vMcJB/9oXqT1bWMXHa9K3cjrXkVmVYBP/ZIdLLfGDxDgPktAJpPc
+ uDYgQR6bCFp8fdwsIvv0sWXgr9FBuzJqreq7T9hmyWCwHAr2vcfVPJCCEUp2NECox+fi
+ zmyZQ2zO+D8GV6q5/rDZdUGfjWEu3R7OzVs5gFMShCfE5zEHEqMcqaJCnCEFXBNLW0+i
+ NjJvOr1EXZymyaujysT4RdeA6n0A+SRdv2jVrVR4+eqCNYkrSNwMW8weozYmXO+uiFCL
+ 8IomC0iUekQ+Rr41GSxJd9EGJcJ7cgy3qRopzDCAknRfsyjo1/pb+Cj7/h5dOiOqQAbp
+ EfeQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=NFFo4lYAoR+ztQi+bc+shgpxvHEpz1hycdVXq2pda/E=;
+ b=da6LAGq6chc0kYNyOWgcEW3Jmyp4gyAY1AjotG4SVhPykZrBSEwV4uH13LGGFqNlE4
+ XJdekgLLMSzMZQ+3I4NhZZiRLsUJ0fl5F5FmPY5RZ5z1Xivn67rSRDLy/LxtkvPYJTid
+ 6RTU9c7lrAZPgv75MlwEKvZcQwoDWCpDJ7M5+ajkpXBuIloAGTG+Ua+2cOow8SVjRDLH
+ EDTWPX8LbrBQzSsffdY8HMKdIH2G3qNlMQsRVYGuGUcIgOLusSmgtB8qrSKbpO+ZsU59
+ R4C4byZSDz+iyyBnn9elYTck/1uWm2Fx0HHb3DdZfm4TzfOkuOyYy4W7sQlvIKw2uQ8Q
+ 5NVA==
+X-Gm-Message-State: APjAAAXsJ4VQt0YdyHW3A5gB8i5jb5rSzAJdO63R6TlfF7DRfnUviYK0
+ Kun2Sw3O7Aq9watGG9CJ1JRf8LYjOGlle9OT160=
+X-Google-Smtp-Source: APXvYqxns+YYQrgWQriAT/C78R+M4y26/fH9IfQcErryWfYvFhFx6Chl+31zO8yU40ApwcokfeGqoyXjdVewMru6CFg=
+X-Received: by 2002:a50:fb96:: with SMTP id e22mr12240111edq.18.1578590841789; 
+ Thu, 09 Jan 2020 09:27:21 -0800 (PST)
 MIME-Version: 1.0
-Content-Language: de-DE
-X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1578587354;
- 525c3895; 
-X-HE-SMSGID: 1ipagH-0005oH-AL
+References: <20200107230626.885451-1-martin.blumenstingl@googlemail.com>
+ <20200107230626.885451-4-martin.blumenstingl@googlemail.com>
+ <2ceffe46-57a8-79a8-2c41-d04b227d3792@arm.com>
+In-Reply-To: <2ceffe46-57a8-79a8-2c41-d04b227d3792@arm.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Thu, 9 Jan 2020 18:27:11 +0100
+Message-ID: <CAFBinCD7o-q-i66zZhOro1DanKAfG-8obQtzxxD==xOwsy_d6A@mail.gmail.com>
+Subject: Re: [PATCH RFT v1 3/3] drm/panfrost: Use the mali-supply regulator
+ for control again
+To: Steven Price <steven.price@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_082914_876942_37394BE7 
-X-CRM114-Status: UNSURE (   9.96  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_092723_512103_0E2374C4 
+X-CRM114-Status: GOOD (  16.97  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,34 +95,57 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Markus Reichl <m.reichl@fivetechno.de>, linux-rockchip@lists.infradead.org,
- Linux USB Mailing List <linux-usb@vger.kernel.org>,
- Linux Kernel <linux-kernel@vger.kernel.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: robh@kernel.org, tomeu.vizoso@collabora.com, airlied@linux.ie,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-rockchip@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ robin.murphy@arm.com, alyssa@rosenzweig.io
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGksCgpJJ20gd29ya2luZyB3aXRoIGEgUk9DLVJLMzM5OS1QQyBhcm02NCBib2FyZCBmcm9tIGZp
-cmVmbHksIGNpcmN1aXQgc2hlZXQgWzFdLgpUaGUgYm9hcmQgaXMgcG93ZXJlZCBmcm9tIGFuIFVT
-Qi1DIHR5cGUgY29ubmVjdG9yIHZpYSBhbiBGVVNCMzAyIFBEIGNvbnRyb2xsZXIuCldpdGggbWVh
-c3VyZWQgMTVXKyBwb3dlciBjb25zdW1wdGlvbiBpdCBzaG91bGQgdXNlIGhpZ2hlciB2b2x0YWdl
-IFBEIG1vZGVzIHRoYW4KdGhlIHN0YW5kYXJkIDVWIFVTQi1DIG1vZGUuCgpXaGVuIEkgYWRkIHRo
-ZSByZWxhdGVkIGNvbm5lY3RvciBub2RlIGluIERUUyBbMl0gdGhlIEZVU0IzMDIgaW5pdGlhbGl6
-ZXMKdGhlIHJpZ2h0IFBEIG1vZGUgKGUuZy4gMTVWLzNBKS4KCkJ1dCBkdXJpbmcgaW5pdGlhbGlz
-YXRpb24gdGhlIFBEIGlzIHN3aXRjaGVkIG9mZiBzaG9ydGx5IGFuZCB0aGUgYm9hcmQgaGFzIGEg
-YmxhY2tvdXQuCldoZW4gSSBpbmplY3QgYSBiYWNrdXAgc3VwcGx5IHZvbHRhZ2UgYmVoaW5kIHRo
-ZSBGVVNCMzAyIChlLmcuIGF0IFNZU18xMlYgbGluZSkgZHVyaW5nIGJvb3QKSSBjYW4gcmVtb3Zl
-IHRoZSBiYWNrdXAgYWZ0ZXIgc3VjY2VzZnVsbCBzZXR0aW5nIHVwIHRoZSBQRCBhbmQgdGhlIGJv
-YXJkIHdpbGwgcnVuIGZpbmUuCgpJcyBpdCBwb3NzaWJsZSB0byBjaGFuZ2UgdGhlIGJlaGF2aW91
-ciBvZiB0aGUgZnVzYjMwMiBkcml2ZXIgdG8gbm90IHBvd2VyIGRvd24gdGhlIFBEIHN1cHBseQpk
-dXJpbmcgaW5pdD8KCkluIHZlbmRvciBrZXJuZWwgKDQuNCkgdGhpcyBpcyBkb25lIHNvbWVob3cg
-YnV0IHRoZSBzb3VyY2VzIGFyZSB0b28gZGlmZmVyZW50IGZvciBtZSB0byBmaW5kCm91dCBob3cu
-CgpHcnXDnywKLS0gCk1hcmt1cyBSZWljaGwKClsxXQpodHRwOi8vZG93bmxvYWQudC1maXJlZmx5
-LmNvbS9wcm9kdWN0L1JLMzM5OS9Eb2NzL0hhcmR3YXJlLyVFNSU4RSU5RiVFNyU5MCU4NiVFNSU5
-QiVCRSVFNSU5MiU4QyVFOCVCNCVCNCVFNyU4OSU4NyVFNSU5QiVCRS9ST0MtUkszMzk5LVBDL1JP
-Qy0zMzk5LVBDLVYxMC1BLTIwMTgwODA0XyVFNSU4RSU5RiVFNyU5MCU4NiVFNSU5QiVCRS5wZGYK
-ClsyXQpodHRwczovL2xrbWwub3JnL2xrbWwvMjAxOS8xMi8xMC81MTcKCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcg
-bGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+On Thu, Jan 9, 2020 at 12:31 PM Steven Price <steven.price@arm.com> wrote:
+>
+> On 07/01/2020 23:06, Martin Blumenstingl wrote:
+> > dev_pm_opp_set_rate() needs a reference to the regulator which should be
+> > updated when updating the GPU frequency. The name of the regulator has
+> > to be passed at initialization-time using dev_pm_opp_set_regulators().
+> > Add the call to dev_pm_opp_set_regulators() so dev_pm_opp_set_rate()
+> > will update the GPU regulator when updating the frequency (just like
+> > we did this manually before when we open-coded dev_pm_opp_set_rate()).
+>
+> This patch causes a warning from debugfs on my firefly (RK3288) board:
+>
+> debugfs: Directory 'ffa30000.gpu-mali' with parent 'vdd_gpu' already
+> present!
+>
+> So it looks like the regulator is being added twice - but I haven't
+> investigated further.
+I *think* it's because the regulator is already fetched by the
+panfrost driver itself to enable it
+(the devfreq code currently does not support enabling the regulator,
+it can only control the voltage)
+
+I'm not sure what to do about this though
+
+[...]
+> >       ret = dev_pm_opp_of_add_table(dev);
+> > -     if (ret)
+> > +     if (ret) {
+> > +             dev_pm_opp_put_regulators(pfdev->devfreq.regulators_opp_table);
+>
+> If we don't have a regulator then regulators_opp_table will be NULL and
+> sadly dev_pm_opp_put_regulators() doesn't handle a NULL argument. The
+> same applies to the two below calls obviously.
+good catch, thank you!
+are you happy with the general approach here or do you think that
+dev_pm_opp_set_regulators is the wrong way to go (for whatever
+reason)?
+
+
+Martin
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
