@@ -2,77 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41F721354D0
-	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 09:53:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32EBC1354D1
+	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Jan 2020 09:53:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HJ1PWHM3mfM1iyHIRe5IIS43hX5fwDiIylni0bQvmwo=; b=A6p4NLGEu5stYv
-	t4KLOn55QKvtjhGnScn0r6gCgMtq//FFKMwXVnA5doU6f+aA12r+iqrAISoCR6kcy9ziFKAEqB2v3
-	tnjNfCl2hOD0su//F3e2Oi+iw+x2eowDeItTG2x1H4iQxxFs7CwYKb3iGoZibarMTNLXMpXkxGNr7
-	WTuePPJ1fLXMP1pIv5h1014ZrGAHz8v2SlrJocTUAtjv4LuReiyUXjbxhwh9HY/vAP4fxdk1w0sx6
-	OR+ICYuHoDnkPL11MN3dhQNnH4kBCGR0Rw08M0KcdQA21zyRyQqOrZQH3777dOLk7tliez4DCSWbN
-	EQH5G0cij3lcEUEK/xzA==;
+	List-Owner; bh=IvglB7OJwu9sxa5OW/UGDsAQ8Dd/ytIrK0+QYeo/z6c=; b=act4TND2lDHeqo
+	30KasEfcRCzw/k7Kecsp3IMCw9U3YOzHpgnDG/yF8SwDx0Jc1hXLwYb2k+Hwhl7de2u3ZURAs5d8z
+	Afen6r8ko2UA21u0MBdToimLULVj0jM13wCF5/CXS9kWZsx+xhUpwYuB92A/wOq6VOGa0Zh3VJbpu
+	j1scBnKGLryLiwOxT2HQjEylq/22kHc4ltx/DU91NjNyExj1rZkfwnuLBQQPgcQ3aVhMgg89Ox3T6
+	S8YW3mttMvconRFdhN2E//w+m+33XTCXk7CILW6EiEDsfaUXqlqxxCE1uIRL5c+jd+PSS+QWjxdgf
+	O+Lcfcu5RUxjfbIADWkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipTYs-0006Gi-De; Thu, 09 Jan 2020 08:53:02 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1ipTYv-0006Jb-Jw; Thu, 09 Jan 2020 08:53:05 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipTYe-0005yv-Ja
- for linux-rockchip@lists.infradead.org; Thu, 09 Jan 2020 08:52:51 +0000
-Received: by mail-pf1-x442.google.com with SMTP id n9so3027139pff.13
- for <linux-rockchip@lists.infradead.org>; Thu, 09 Jan 2020 00:52:48 -0800 (PST)
+ id 1ipTYi-000646-AJ
+ for linux-rockchip@lists.infradead.org; Thu, 09 Jan 2020 08:52:54 +0000
+Received: by mail-pl1-x641.google.com with SMTP id s21so2296845plr.7
+ for <linux-rockchip@lists.infradead.org>; Thu, 09 Jan 2020 00:52:52 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=znv8QwcHGQcOGdRNQ+C4z5hHSfQT5ovpaHPF1scKIhs=;
- b=ZOP1wzlSeFMNEcD2YzlxIdDQT9+7ZVsX5qqNnbGWv9xOzqZJYpO+mdZxXnmiLxZFA+
- 4Od8P3v92k1vN/V5rdPn6ABvfrRXXj5qHamQmq2eBWAqtCvdZvmhU+3IaLjoiEhEHtzR
- IyrU5LXpuS/hx1E75Ke4Xwzi9KsV4H+TjhOPM=
+ bh=20owJ56ZMVW9WaAfTMGTpTd1hkqe5DN6/beUbHwtw88=;
+ b=RzIwIlRDY3OgYwZuDCcFetW51jD0046owNhHTsOs9UohfxwbFQLG3xsogYvTHtYcUY
+ nsVAEovjxDaEJ+75PNvq9FmQy4VsQ3XbfMHQ6h0uulw7nFUZ5Zr2YWDzF8iexlLo3BsB
+ ZGzjQDaNNGUiJxff7GsJyxdUt31OUdIsBESuQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=znv8QwcHGQcOGdRNQ+C4z5hHSfQT5ovpaHPF1scKIhs=;
- b=cCM8RwrD2e++16YXIccTDKRyYSMNs5bw4TKCHXjFLE8d8WcwvlzPFDppbkCFZMiddB
- TMokHaJOesgrzJlKFcjPD+xvm8ZrcBfiKwyobvQWvWXp9qAwk3+OLETYiCJZvK4ACdSh
- 0KZKItqLGMroX9/Q2emrci0TBtc3H6ccVRL4TNlq8cZn/QS7ITuoCofkfrMaJGYPhRfq
- itjgWjGPIAK0j5WlQCxQNNW2glb7LfjsnjQEtu48GTNXHpIAait2DoKdiaR4vyJNDuof
- GAEn7Esn66rOCvWNCBbq5SPJxXHuuGNvAfGvSEAl67v/ZgxDq3tFZjSA4r5iE4ssC/pO
- WoRQ==
-X-Gm-Message-State: APjAAAUUnOLl1h/Xj1RZOPEiorgvkvB7eEXjid5eggHardeLirSIGq6T
- Iw6uVDw9z6lXJ5LeNV7myWHK+GNAaps=
-X-Google-Smtp-Source: APXvYqxdD/m9li6ToUuAoWzHvZKAa2nU7RYak/7yh2sGemiQF8YPSZleBU57nSdQiVAlyKlxezmSLA==
-X-Received: by 2002:a63:465b:: with SMTP id v27mr10232129pgk.257.1578559967134; 
- Thu, 09 Jan 2020 00:52:47 -0800 (PST)
+ bh=20owJ56ZMVW9WaAfTMGTpTd1hkqe5DN6/beUbHwtw88=;
+ b=UVA47hKPE6aELF/ZPW45V07PuyJ7pN3wXI9jhFqGIYMDHdScCVE2F+/kwY9x+dlxMu
+ xctdO1gZRM8N2WkkQU9yKRz1K7BRDUluM904J2oxHC4+QK+8cHSREOtBP4tr+vqh5x3i
+ b/Vximcn6ZV5F6mXbF8L3S1WCiXGtwX6M1VBmKJKQgeLT/901DuoIHOa2bWuR3iZKkxd
+ z76MI7NKBVSfisO8Hy4cyU12JfWusasS4heyEGpDJsz24GJd+nvZfgqvwjqegcwAQcn4
+ XIREsDOLvYjqNSguxPmgdTM6yW/N6yx+bXhAOzKgnYXPiyxuB8/tMdZ0j7cN6giAF2nH
+ NiKQ==
+X-Gm-Message-State: APjAAAX1B69H2qSPhFkSZEeGLURuySS876OYIdVyQCAgnOXyNOXl4AT3
+ XqAeFOGj0XO5yNkg4Zi8oVf1Kk9Ehkk=
+X-Google-Smtp-Source: APXvYqz6V0ksapXciphcYrLvI7fdTn/SfLvrcYgCFaWK2vctFn9RrrS0Uj/MlnQt3Yq4eFjkbDFiKw==
+X-Received: by 2002:a17:902:8497:: with SMTP id
+ c23mr11000845plo.59.1578559971367; 
+ Thu, 09 Jan 2020 00:52:51 -0800 (PST)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:d888:9871:544a:b516])
- by smtp.gmail.com with ESMTPSA id o17sm2139121pjq.1.2020.01.09.00.52.43
+ by smtp.gmail.com with ESMTPSA id o17sm2139121pjq.1.2020.01.09.00.52.47
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Jan 2020 00:52:46 -0800 (PST)
+ Thu, 09 Jan 2020 00:52:50 -0800 (PST)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v4 3/8] arm: rockchip: Add common cru.h
-Date: Thu,  9 Jan 2020 14:22:17 +0530
-Message-Id: <20200109085222.22670-4-jagan@amarulasolutions.com>
+Subject: [PATCH v4 4/8] rockchip: Add common reset cause
+Date: Thu,  9 Jan 2020 14:22:18 +0530
+Message-Id: <20200109085222.22670-5-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20200109085222.22670-1-jagan@amarulasolutions.com>
 References: <20200109085222.22670-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_005248_695548_828AAC84 
-X-CRM114-Status: GOOD (  17.48  )
+X-CRM114-CacheID: sfid-20200109_005252_476096_12FAE061 
+X-CRM114-Status: GOOD (  13.95  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -102,691 +103,197 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Few of the rockchip family SoC atleast rk3288,
-rk3399 are sharing some cru register bits so
-adding common code between these SoC families
-would require to include both cru include files
-that indeed resulting function declarations error.
+Add cpu reset cause in common cpu-info file.
 
-So, create a common cru include as cru.h then
-include the rk3399 arch cru include file and move
-the common cru register bit definitions into it.
+This would help to print the reset cause for
+various resets.
 
-The rest of rockchip cru files will add it in future.
+Right now it support rk3288, rk3399. rest of rockchip
+platforms doesn't have reset cause support ye but this
+code is more feasible to extend the same.
 
 Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- arch/arm/include/asm/arch-rockchip/clock.h    |  4 +-
- arch/arm/include/asm/arch-rockchip/cru.h      | 18 ++++++++
- .../include/asm/arch-rockchip/cru_rk3288.h    |  6 +--
- .../include/asm/arch-rockchip/cru_rk3399.h    | 11 +++--
- arch/arm/mach-rockchip/rk3288/clk_rk3288.c    |  2 +-
- arch/arm/mach-rockchip/rk3288/rk3288.c        |  4 +-
- arch/arm/mach-rockchip/rk3399/clk_rk3399.c    |  2 +-
- arch/arm/mach-rockchip/rk3399/rk3399.c        |  2 +-
- drivers/clk/rockchip/clk_rk3288.c             | 42 +++++++++----------
- drivers/clk/rockchip/clk_rk3399.c             | 36 ++++++++--------
- drivers/ram/rockchip/sdram_rk3288.c           | 10 ++---
- drivers/ram/rockchip/sdram_rk3399.c           | 10 ++---
- drivers/video/rockchip/rk3288_mipi.c          |  2 +-
- drivers/video/rockchip/rk3399_mipi.c          |  2 +-
- drivers/video/rockchip/rk_mipi.c              |  2 +-
- 15 files changed, 85 insertions(+), 68 deletions(-)
- create mode 100644 arch/arm/include/asm/arch-rockchip/cru.h
+ arch/arm/include/asm/arch-rockchip/cru.h      | 12 +++++
+ .../include/asm/arch-rockchip/cru_rk3288.h    | 14 +-----
+ arch/arm/mach-rockchip/cpu-info.c             | 49 +++++++++++++++++++
+ arch/arm/mach-rockchip/rk3288/rk3288.c        | 39 ---------------
+ 4 files changed, 62 insertions(+), 52 deletions(-)
 
-diff --git a/arch/arm/include/asm/arch-rockchip/clock.h b/arch/arm/include/asm/arch-rockchip/clock.h
-index 8f7fc86a9e..22de0aef8d 100644
---- a/arch/arm/include/asm/arch-rockchip/clock.h
-+++ b/arch/arm/include/asm/arch-rockchip/clock.h
-@@ -153,10 +153,10 @@ void *rockchip_get_cru(void);
-  */
- void *rockchip_get_pmucru(void);
- 
--struct rk3288_cru;
-+struct rockchip_cru;
- struct rk3288_grf;
- 
--void rk3288_clk_configure_cpu(struct rk3288_cru *cru, struct rk3288_grf *grf);
-+void rk3288_clk_configure_cpu(struct rockchip_cru *cru, struct rk3288_grf *grf);
- 
- int rockchip_get_clk(struct udevice **devp);
- 
 diff --git a/arch/arm/include/asm/arch-rockchip/cru.h b/arch/arm/include/asm/arch-rockchip/cru.h
-new file mode 100644
-index 0000000000..475d772fb6
---- /dev/null
+index 475d772fb6..5cf2aec11a 100644
+--- a/arch/arm/include/asm/arch-rockchip/cru.h
 +++ b/arch/arm/include/asm/arch-rockchip/cru.h
-@@ -0,0 +1,18 @@
-+/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
-+/*
-+ * (C) Copyright 2019 Amarula Solutions.
-+ * Author: Jagan Teki <jagan@amarulasolutions.com>
-+ */
+@@ -13,6 +13,18 @@
+ # include <asm/arch-rockchip/cru_rk3399.h>
+ #endif
+ 
++/* CRU_GLB_RST_ST */
++enum {
++	GLB_POR_RST,
++	FST_GLB_RST_ST		= BIT(0),
++	SND_GLB_RST_ST		= BIT(1),
++	FST_GLB_TSADC_RST_ST	= BIT(2),
++	SND_GLB_TSADC_RST_ST	= BIT(3),
++	FST_GLB_WDT_RST_ST	= BIT(4),
++	SND_GLB_WDT_RST_ST	= BIT(5),
++	GLB_RST_ST_MASK		= GENMASK(5, 0),
++};
 +
-+#ifndef _ROCKCHIP_CLOCK_H
-+#define _ROCKCHIP_CLOCK_H
-+
-+#if defined(CONFIG_ROCKCHIP_RK3288)
-+# include <asm/arch-rockchip/cru_rk3288.h>
-+#elif defined(CONFIG_ROCKCHIP_RK3399)
-+# include <asm/arch-rockchip/cru_rk3399.h>
-+#endif
-+
-+#define MHz		1000000
-+
-+#endif /* _ROCKCHIP_CLOCK_H */
+ #define MHz		1000000
+ 
+ #endif /* _ROCKCHIP_CLOCK_H */
 diff --git a/arch/arm/include/asm/arch-rockchip/cru_rk3288.h b/arch/arm/include/asm/arch-rockchip/cru_rk3288.h
-index e891f20b37..7aa6efe46c 100644
+index 7aa6efe46c..412b73e55f 100644
 --- a/arch/arm/include/asm/arch-rockchip/cru_rk3288.h
 +++ b/arch/arm/include/asm/arch-rockchip/cru_rk3288.h
-@@ -27,11 +27,11 @@
- /* Private data for the clock driver - used by rockchip_get_cru() */
- struct rk3288_clk_priv {
- 	struct rk3288_grf *grf;
--	struct rk3288_cru *cru;
-+	struct rockchip_cru *cru;
- 	ulong rate;
+@@ -51,7 +51,7 @@ struct rockchip_cru {
+ 	u32 cru_glb_cnt_th;
+ 	u32 cru_glb_rst_con;
+ 	u32 reserved3;
+-	u32 cru_glb_rst_st;
++	u32 glb_rst_st;
+ 	u32 reserved4;
+ 	u32 cru_sdmmc_con[2];
+ 	u32 cru_sdio0_con[2];
+@@ -227,16 +227,4 @@ enum {
+ 	CLKF_MASK		= 0x1fff << CLKF_SHIFT,
  };
  
--struct rk3288_cru {
-+struct rockchip_cru {
- 	struct rk3288_pll {
- 		u32 con0;
- 		u32 con1;
-@@ -58,7 +58,7 @@ struct rk3288_cru {
- 	u32 cru_sdio1_con[2];
- 	u32 cru_emmc_con[2];
- };
--check_member(rk3288_cru, cru_emmc_con[1], 0x021c);
-+check_member(rockchip_cru, cru_emmc_con[1], 0x021c);
+-/* CRU_GLB_RST_ST */
+-enum {
+-	GLB_POR_RST,
+-	FST_GLB_RST_ST		= BIT(0),
+-	SND_GLB_RST_ST		= BIT(1),
+-	FST_GLB_TSADC_RST_ST	= BIT(2),
+-	SND_GLB_TSADC_RST_ST	= BIT(3),
+-	FST_GLB_WDT_RST_ST	= BIT(4),
+-	SND_GLB_WDT_RST_ST	= BIT(5),
+-	GLB_RST_ST_MASK		= GENMASK(5, 0),
+-};
+-
+ #endif
+diff --git a/arch/arm/mach-rockchip/cpu-info.c b/arch/arm/mach-rockchip/cpu-info.c
+index 9bccbd4f68..4b0e99299a 100644
+--- a/arch/arm/mach-rockchip/cpu-info.c
++++ b/arch/arm/mach-rockchip/cpu-info.c
+@@ -5,10 +5,59 @@
+  */
  
- /* CRU_CLKSEL11_CON */
- enum {
-diff --git a/arch/arm/include/asm/arch-rockchip/cru_rk3399.h b/arch/arm/include/asm/arch-rockchip/cru_rk3399.h
-index 15eeb9c440..789ca6aa28 100644
---- a/arch/arm/include/asm/arch-rockchip/cru_rk3399.h
-+++ b/arch/arm/include/asm/arch-rockchip/cru_rk3399.h
-@@ -10,7 +10,7 @@
- 
- /* Private data for the clock driver - used by rockchip_get_cru() */
- struct rk3399_clk_priv {
--	struct rk3399_cru *cru;
-+	struct rockchip_cru *cru;
- };
- 
- struct rk3399_pmuclk_priv {
-@@ -33,7 +33,7 @@ struct rk3399_pmucru {
- };
- check_member(rk3399_pmucru, pmucru_gatedis_con[1], 0x134);
- 
--struct rk3399_cru {
-+struct rockchip_cru {
- 	u32 apll_l_con[6];
- 	u32 reserved[2];
- 	u32 apll_b_con[6];
-@@ -65,8 +65,7 @@ struct rk3399_cru {
- 	u32 sdio0_con[2];
- 	u32 sdio1_con[2];
- };
--check_member(rk3399_cru, sdio1_con[1], 0x594);
--#define MHz		1000000
-+check_member(rockchip_cru, sdio1_con[1], 0x594);
- #define KHz		1000
- #define OSC_HZ		(24*MHz)
- #define LPLL_HZ		(600*MHz)
-@@ -107,9 +106,9 @@ enum apll_b_frequencies {
- 	APLL_B_600_MHZ,
- };
- 
--void rk3399_configure_cpu_l(struct rk3399_cru *cru,
-+void rk3399_configure_cpu_l(struct rockchip_cru *cru,
- 			    enum apll_l_frequencies apll_l_freq);
--void rk3399_configure_cpu_b(struct rk3399_cru *cru,
-+void rk3399_configure_cpu_b(struct rockchip_cru *cru,
- 			    enum apll_b_frequencies apll_b_freq);
- 
- #endif	/* __ASM_ARCH_CRU_RK3399_H_ */
-diff --git a/arch/arm/mach-rockchip/rk3288/clk_rk3288.c b/arch/arm/mach-rockchip/rk3288/clk_rk3288.c
-index e64ee86f08..1730f12443 100644
---- a/arch/arm/mach-rockchip/rk3288/clk_rk3288.c
-+++ b/arch/arm/mach-rockchip/rk3288/clk_rk3288.c
-@@ -8,7 +8,7 @@
- #include <dm.h>
- #include <syscon.h>
- #include <asm/arch-rockchip/clock.h>
--#include <asm/arch-rockchip/cru_rk3288.h>
+ #include <common.h>
++#include <asm/io.h>
++#include <asm/arch-rockchip/clock.h>
 +#include <asm/arch-rockchip/cru.h>
++#include <asm/arch-rockchip/hardware.h>
++#include <linux/err.h>
++
++static char *get_reset_cause(void)
++{
++	struct rockchip_cru *cru = rockchip_get_cru();
++	char *cause = NULL;
++
++	if (IS_ERR(cru))
++		return cause;
++
++	switch (cru->glb_rst_st) {
++	case GLB_POR_RST:
++		cause = "POR";
++		break;
++	case FST_GLB_RST_ST:
++	case SND_GLB_RST_ST:
++		cause = "RST";
++		break;
++	case FST_GLB_TSADC_RST_ST:
++	case SND_GLB_TSADC_RST_ST:
++		cause = "THERMAL";
++		break;
++	case FST_GLB_WDT_RST_ST:
++	case SND_GLB_WDT_RST_ST:
++		cause = "WDOG";
++		break;
++	default:
++		cause = "unknown reset";
++	}
++
++	/**
++	 * reset_reason env is used by rk3288, due to special use case
++	 * to figure it the boot behavior. so keep this as it is.
++	 */
++	env_set("reset_reason", cause);
++
++	/*
++	 * Clear glb_rst_st, so we can determine the last reset cause
++	 * for following resets.
++	 */
++	rk_clrreg(&cru->glb_rst_st, GLB_RST_ST_MASK);
++
++	return cause;
++}
  
- int rockchip_get_clk(struct udevice **devp)
+ int print_cpuinfo(void)
  {
+ 	printf("SoC: Rockchip %s\n", CONFIG_SYS_SOC);
++	printf("Reset cause: %s\n", get_reset_cause());
+ 
+ 	/* TODO print operating temparature and clock */
+ 
 diff --git a/arch/arm/mach-rockchip/rk3288/rk3288.c b/arch/arm/mach-rockchip/rk3288/rk3288.c
-index 9572f7ea9c..47ee5d440b 100644
+index 47ee5d440b..18ea7f35fb 100644
 --- a/arch/arm/mach-rockchip/rk3288/rk3288.c
 +++ b/arch/arm/mach-rockchip/rk3288/rk3288.c
-@@ -11,7 +11,7 @@
- #include <asm/io.h>
- #include <asm/arch-rockchip/bootrom.h>
- #include <asm/arch-rockchip/clock.h>
--#include <asm/arch-rockchip/cru_rk3288.h>
-+#include <asm/arch-rockchip/cru.h>
- #include <asm/arch-rockchip/hardware.h>
- #include <asm/arch-rockchip/grf_rk3288.h>
- #include <asm/arch-rockchip/pmu_rk3288.h>
-@@ -104,7 +104,7 @@ void board_debug_uart_init(void)
+@@ -102,43 +102,6 @@ void board_debug_uart_init(void)
+ }
+ #endif
  
- static void rk3288_detect_reset_reason(void)
+-static void rk3288_detect_reset_reason(void)
+-{
+-	struct rockchip_cru *cru = rockchip_get_cru();
+-	const char *reason;
+-
+-	if (IS_ERR(cru))
+-		return;
+-
+-	switch (cru->cru_glb_rst_st) {
+-	case GLB_POR_RST:
+-		reason = "POR";
+-		break;
+-	case FST_GLB_RST_ST:
+-	case SND_GLB_RST_ST:
+-		reason = "RST";
+-		break;
+-	case FST_GLB_TSADC_RST_ST:
+-	case SND_GLB_TSADC_RST_ST:
+-		reason = "THERMAL";
+-		break;
+-	case FST_GLB_WDT_RST_ST:
+-	case SND_GLB_WDT_RST_ST:
+-		reason = "WDOG";
+-		break;
+-	default:
+-		reason = "unknown reset";
+-	}
+-
+-	env_set("reset_reason", reason);
+-
+-	/*
+-	 * Clear cru_glb_rst_st, so we can determine the last reset cause
+-	 * for following resets.
+-	 */
+-	rk_clrreg(&cru->cru_glb_rst_st, GLB_RST_ST_MASK);
+-}
+-
+ __weak int rk3288_board_late_init(void)
  {
--	struct rk3288_cru *cru = rockchip_get_cru();
-+	struct rockchip_cru *cru = rockchip_get_cru();
- 	const char *reason;
- 
- 	if (IS_ERR(cru))
-diff --git a/arch/arm/mach-rockchip/rk3399/clk_rk3399.c b/arch/arm/mach-rockchip/rk3399/clk_rk3399.c
-index f0411c0a21..a80a46f1db 100644
---- a/arch/arm/mach-rockchip/rk3399/clk_rk3399.c
-+++ b/arch/arm/mach-rockchip/rk3399/clk_rk3399.c
-@@ -8,7 +8,7 @@
- #include <dm.h>
- #include <syscon.h>
- #include <asm/arch-rockchip/clock.h>
--#include <asm/arch-rockchip/cru_rk3399.h>
-+#include <asm/arch-rockchip/cru.h>
- 
- static int rockchip_get_cruclk(struct udevice **devp)
- {
-diff --git a/arch/arm/mach-rockchip/rk3399/rk3399.c b/arch/arm/mach-rockchip/rk3399/rk3399.c
-index 863024d071..dafa142824 100644
---- a/arch/arm/mach-rockchip/rk3399/rk3399.c
-+++ b/arch/arm/mach-rockchip/rk3399/rk3399.c
-@@ -240,7 +240,7 @@ static void rk3399_force_power_on_reset(void)
- void spl_board_init(void)
- {
- #if defined(SPL_GPIO_SUPPORT)
--	struct rk3399_cru *cru = rockchip_get_cru();
-+	struct rockchip_cru *cru = rockchip_get_cru();
- 
- 	/*
- 	 * The RK3399 resets only 'almost all logic' (see also in the TRM
-diff --git a/drivers/clk/rockchip/clk_rk3288.c b/drivers/clk/rockchip/clk_rk3288.c
-index 85d1b67e43..cc1c1e81e9 100644
---- a/drivers/clk/rockchip/clk_rk3288.c
-+++ b/drivers/clk/rockchip/clk_rk3288.c
-@@ -14,7 +14,7 @@
- #include <syscon.h>
- #include <asm/io.h>
- #include <asm/arch-rockchip/clock.h>
--#include <asm/arch-rockchip/cru_rk3288.h>
-+#include <asm/arch-rockchip/cru.h>
- #include <asm/arch-rockchip/grf_rk3288.h>
- #include <asm/arch-rockchip/hardware.h>
- #include <dt-bindings/clock/rk3288-cru.h>
-@@ -141,7 +141,7 @@ static const struct pll_div apll_init_cfg = PLL_DIVISORS(APLL_HZ, 1, 1);
- static const struct pll_div gpll_init_cfg = PLL_DIVISORS(GPLL_HZ, 2, 2);
- static const struct pll_div cpll_init_cfg = PLL_DIVISORS(CPLL_HZ, 1, 2);
- 
--static int rkclk_set_pll(struct rk3288_cru *cru, enum rk_clk_id clk_id,
-+static int rkclk_set_pll(struct rockchip_cru *cru, enum rk_clk_id clk_id,
- 			 const struct pll_div *div)
- {
- 	int pll_id = rk_pll_id(clk_id);
-@@ -172,7 +172,7 @@ static int rkclk_set_pll(struct rk3288_cru *cru, enum rk_clk_id clk_id,
  	return 0;
+@@ -146,8 +109,6 @@ __weak int rk3288_board_late_init(void)
+ 
+ int rk_board_late_init(void)
+ {
+-	rk3288_detect_reset_reason();
+-
+ 	return rk3288_board_late_init();
  }
- 
--static int rkclk_configure_ddr(struct rk3288_cru *cru, struct rk3288_grf *grf,
-+static int rkclk_configure_ddr(struct rockchip_cru *cru, struct rk3288_grf *grf,
- 			       unsigned int hz)
- {
- 	static const struct pll_div dpll_cfg[] = {
-@@ -295,7 +295,7 @@ static int pll_para_config(ulong freq_hz, struct pll_div *div, uint *ext_div)
- 	return 0;
- }
- 
--static int rockchip_mac_set_clk(struct rk3288_cru *cru, uint freq)
-+static int rockchip_mac_set_clk(struct rockchip_cru *cru, uint freq)
- {
- 	ulong ret;
- 
-@@ -333,7 +333,7 @@ static int rockchip_mac_set_clk(struct rk3288_cru *cru, uint freq)
- 	return ret;
- }
- 
--static int rockchip_vop_set_clk(struct rk3288_cru *cru, struct rk3288_grf *grf,
-+static int rockchip_vop_set_clk(struct rockchip_cru *cru, struct rk3288_grf *grf,
- 				int periph, unsigned int rate_hz)
- {
- 	struct pll_div npll_config = {0};
-@@ -384,7 +384,7 @@ static u32 rockchip_clk_gcd(u32 a, u32 b)
- 	return a;
- }
- 
--static ulong rockchip_i2s_get_clk(struct rk3288_cru *cru, uint gclk_rate)
-+static ulong rockchip_i2s_get_clk(struct rockchip_cru *cru, uint gclk_rate)
- {
- 	unsigned long long rate;
- 	uint val;
-@@ -400,7 +400,7 @@ static ulong rockchip_i2s_get_clk(struct rk3288_cru *cru, uint gclk_rate)
- 	return (ulong)rate;
- }
- 
--static ulong rockchip_i2s_set_clk(struct rk3288_cru *cru, uint gclk_rate,
-+static ulong rockchip_i2s_set_clk(struct rockchip_cru *cru, uint gclk_rate,
- 				  uint freq)
- {
- 	int n, d;
-@@ -418,7 +418,7 @@ static ulong rockchip_i2s_set_clk(struct rk3288_cru *cru, uint gclk_rate,
- }
- #endif /* CONFIG_SPL_BUILD */
- 
--static void rkclk_init(struct rk3288_cru *cru, struct rk3288_grf *grf)
-+static void rkclk_init(struct rockchip_cru *cru, struct rk3288_grf *grf)
- {
- 	u32 aclk_div;
- 	u32 hclk_div;
-@@ -492,7 +492,7 @@ static void rkclk_init(struct rk3288_cru *cru, struct rk3288_grf *grf)
- 		     CPLL_MODE_NORMAL << CPLL_MODE_SHIFT);
- }
- 
--void rk3288_clk_configure_cpu(struct rk3288_cru *cru, struct rk3288_grf *grf)
-+void rk3288_clk_configure_cpu(struct rockchip_cru *cru, struct rk3288_grf *grf)
- {
- 	/* pll enter slow-mode */
- 	rk_clrsetreg(&cru->cru_mode_con, APLL_MODE_MASK,
-@@ -534,7 +534,7 @@ void rk3288_clk_configure_cpu(struct rk3288_cru *cru, struct rk3288_grf *grf)
- }
- 
- /* Get pll rate by id */
--static uint32_t rkclk_pll_get_rate(struct rk3288_cru *cru,
-+static uint32_t rkclk_pll_get_rate(struct rockchip_cru *cru,
- 				   enum rk_clk_id clk_id)
- {
- 	uint32_t nr, no, nf;
-@@ -567,7 +567,7 @@ static uint32_t rkclk_pll_get_rate(struct rk3288_cru *cru,
- 	}
- }
- 
--static ulong rockchip_mmc_get_clk(struct rk3288_cru *cru, uint gclk_rate,
-+static ulong rockchip_mmc_get_clk(struct rockchip_cru *cru, uint gclk_rate,
- 				  int periph)
- {
- 	uint src_rate;
-@@ -601,7 +601,7 @@ static ulong rockchip_mmc_get_clk(struct rk3288_cru *cru, uint gclk_rate,
- 	return DIV_TO_RATE(src_rate, div);
- }
- 
--static ulong rockchip_mmc_set_clk(struct rk3288_cru *cru, uint gclk_rate,
-+static ulong rockchip_mmc_set_clk(struct rockchip_cru *cru, uint gclk_rate,
- 				  int  periph, uint freq)
- {
- 	int src_clk_div;
-@@ -651,7 +651,7 @@ static ulong rockchip_mmc_set_clk(struct rk3288_cru *cru, uint gclk_rate,
- 	return rockchip_mmc_get_clk(cru, gclk_rate, periph);
- }
- 
--static ulong rockchip_spi_get_clk(struct rk3288_cru *cru, uint gclk_rate,
-+static ulong rockchip_spi_get_clk(struct rockchip_cru *cru, uint gclk_rate,
- 				  int periph)
- {
- 	uint div, mux;
-@@ -681,7 +681,7 @@ static ulong rockchip_spi_get_clk(struct rk3288_cru *cru, uint gclk_rate,
- 	return DIV_TO_RATE(gclk_rate, div);
- }
- 
--static ulong rockchip_spi_set_clk(struct rk3288_cru *cru, uint gclk_rate,
-+static ulong rockchip_spi_set_clk(struct rockchip_cru *cru, uint gclk_rate,
- 				  int periph, uint freq)
- {
- 	int src_clk_div;
-@@ -715,7 +715,7 @@ static ulong rockchip_spi_set_clk(struct rk3288_cru *cru, uint gclk_rate,
- 	return rockchip_spi_get_clk(cru, gclk_rate, periph);
- }
- 
--static ulong rockchip_saradc_get_clk(struct rk3288_cru *cru)
-+static ulong rockchip_saradc_get_clk(struct rockchip_cru *cru)
- {
- 	u32 div, val;
- 
-@@ -726,7 +726,7 @@ static ulong rockchip_saradc_get_clk(struct rk3288_cru *cru)
- 	return DIV_TO_RATE(OSC_HZ, div);
- }
- 
--static ulong rockchip_saradc_set_clk(struct rk3288_cru *cru, uint hz)
-+static ulong rockchip_saradc_set_clk(struct rockchip_cru *cru, uint hz)
- {
- 	int src_clk_div;
- 
-@@ -785,7 +785,7 @@ static ulong rk3288_clk_get_rate(struct clk *clk)
- static ulong rk3288_clk_set_rate(struct clk *clk, ulong rate)
- {
- 	struct rk3288_clk_priv *priv = dev_get_priv(clk->dev);
--	struct rk3288_cru *cru = priv->cru;
-+	struct rockchip_cru *cru = priv->cru;
- 	ulong new_rate, gclk_rate;
- 
- 	gclk_rate = rkclk_pll_get_rate(priv->cru, CLK_GENERAL);
-@@ -892,7 +892,7 @@ static ulong rk3288_clk_set_rate(struct clk *clk, ulong rate)
- static int __maybe_unused rk3288_gmac_set_parent(struct clk *clk, struct clk *parent)
- {
- 	struct rk3288_clk_priv *priv = dev_get_priv(clk->dev);
--	struct rk3288_cru *cru = priv->cru;
-+	struct rockchip_cru *cru = priv->cru;
- 	const char *clock_output_name;
- 	int ret;
- 
-@@ -1008,15 +1008,15 @@ static int rk3288_clk_bind(struct udevice *dev)
- 		debug("Warning: No sysreset driver: ret=%d\n", ret);
- 	} else {
- 		priv = malloc(sizeof(struct sysreset_reg));
--		priv->glb_srst_fst_value = offsetof(struct rk3288_cru,
-+		priv->glb_srst_fst_value = offsetof(struct rockchip_cru,
- 						    cru_glb_srst_fst_value);
--		priv->glb_srst_snd_value = offsetof(struct rk3288_cru,
-+		priv->glb_srst_snd_value = offsetof(struct rockchip_cru,
- 						    cru_glb_srst_snd_value);
- 		sys_child->priv = priv;
- 	}
- 
- #if CONFIG_IS_ENABLED(RESET_ROCKCHIP)
--	ret = offsetof(struct rk3288_cru, cru_softrst_con[0]);
-+	ret = offsetof(struct rockchip_cru, cru_softrst_con[0]);
- 	ret = rockchip_reset_bind(dev, ret, 12);
- 	if (ret)
- 		debug("Warning: software reset driver bind faile\n");
-diff --git a/drivers/clk/rockchip/clk_rk3399.c b/drivers/clk/rockchip/clk_rk3399.c
-index 9020a9f202..37fc142a7a 100644
---- a/drivers/clk/rockchip/clk_rk3399.c
-+++ b/drivers/clk/rockchip/clk_rk3399.c
-@@ -14,7 +14,7 @@
- #include <bitfield.h>
- #include <asm/io.h>
- #include <asm/arch-rockchip/clock.h>
--#include <asm/arch-rockchip/cru_rk3399.h>
-+#include <asm/arch-rockchip/cru.h>
- #include <asm/arch-rockchip/hardware.h>
- #include <dm/lists.h>
- #include <dt-bindings/clock/rk3399-cru.h>
-@@ -418,7 +418,7 @@ static int pll_para_config(u32 freq_hz, struct pll_div *div)
- 	return 0;
- }
- 
--void rk3399_configure_cpu_l(struct rk3399_cru *cru,
-+void rk3399_configure_cpu_l(struct rockchip_cru *cru,
- 			    enum apll_l_frequencies apll_l_freq)
- {
- 	u32 aclkm_div;
-@@ -453,7 +453,7 @@ void rk3399_configure_cpu_l(struct rk3399_cru *cru,
- 		     atclk_div << ATCLK_CORE_L_DIV_SHIFT);
- }
- 
--void rk3399_configure_cpu_b(struct rk3399_cru *cru,
-+void rk3399_configure_cpu_b(struct rockchip_cru *cru,
- 			    enum apll_b_frequencies apll_b_freq)
- {
- 	u32 aclkm_div;
-@@ -505,7 +505,7 @@ void rk3399_configure_cpu_b(struct rk3399_cru *cru,
- #define I2C_PMUCLK_REG_VALUE(bus, clk_div) \
- 	((clk_div - 1) << CLK_I2C ##bus## _DIV_CON_SHIFT)
- 
--static ulong rk3399_i2c_get_clk(struct rk3399_cru *cru, ulong clk_id)
-+static ulong rk3399_i2c_get_clk(struct rockchip_cru *cru, ulong clk_id)
- {
- 	u32 div, con;
- 
-@@ -542,7 +542,7 @@ static ulong rk3399_i2c_get_clk(struct rk3399_cru *cru, ulong clk_id)
- 	return DIV_TO_RATE(GPLL_HZ, div);
- }
- 
--static ulong rk3399_i2c_set_clk(struct rk3399_cru *cru, ulong clk_id, uint hz)
-+static ulong rk3399_i2c_set_clk(struct rockchip_cru *cru, ulong clk_id, uint hz)
- {
- 	int src_clk_div;
- 
-@@ -619,7 +619,7 @@ static const struct spi_clkreg spi_clkregs[] = {
- 		.sel_shift = CLK_SPI5_PLL_SEL_SHIFT, },
- };
- 
--static ulong rk3399_spi_get_clk(struct rk3399_cru *cru, ulong clk_id)
-+static ulong rk3399_spi_get_clk(struct rockchip_cru *cru, ulong clk_id)
- {
- 	const struct spi_clkreg *spiclk = NULL;
- 	u32 div, val;
-@@ -641,7 +641,7 @@ static ulong rk3399_spi_get_clk(struct rk3399_cru *cru, ulong clk_id)
- 	return DIV_TO_RATE(GPLL_HZ, div);
- }
- 
--static ulong rk3399_spi_set_clk(struct rk3399_cru *cru, ulong clk_id, uint hz)
-+static ulong rk3399_spi_set_clk(struct rockchip_cru *cru, ulong clk_id, uint hz)
- {
- 	const struct spi_clkreg *spiclk = NULL;
- 	int src_clk_div;
-@@ -668,7 +668,7 @@ static ulong rk3399_spi_set_clk(struct rk3399_cru *cru, ulong clk_id, uint hz)
- 	return rk3399_spi_get_clk(cru, clk_id);
- }
- 
--static ulong rk3399_vop_set_clk(struct rk3399_cru *cru, ulong clk_id, u32 hz)
-+static ulong rk3399_vop_set_clk(struct rockchip_cru *cru, ulong clk_id, u32 hz)
- {
- 	struct pll_div vpll_config = {0};
- 	int aclk_vop = 198 * MHz;
-@@ -712,7 +712,7 @@ static ulong rk3399_vop_set_clk(struct rk3399_cru *cru, ulong clk_id, u32 hz)
- 	return hz;
- }
- 
--static ulong rk3399_mmc_get_clk(struct rk3399_cru *cru, uint clk_id)
-+static ulong rk3399_mmc_get_clk(struct rockchip_cru *cru, uint clk_id)
- {
- 	u32 div, con;
- 
-@@ -739,7 +739,7 @@ static ulong rk3399_mmc_get_clk(struct rk3399_cru *cru, uint clk_id)
- 		return DIV_TO_RATE(GPLL_HZ, div);
- }
- 
--static ulong rk3399_mmc_set_clk(struct rk3399_cru *cru,
-+static ulong rk3399_mmc_set_clk(struct rockchip_cru *cru,
- 				ulong clk_id, ulong set_rate)
- {
- 	int src_clk_div;
-@@ -792,7 +792,7 @@ static ulong rk3399_mmc_set_clk(struct rk3399_cru *cru,
- 	return rk3399_mmc_get_clk(cru, clk_id);
- }
- 
--static ulong rk3399_gmac_set_clk(struct rk3399_cru *cru, ulong rate)
-+static ulong rk3399_gmac_set_clk(struct rockchip_cru *cru, ulong rate)
- {
- 	ulong ret;
- 
-@@ -817,7 +817,7 @@ static ulong rk3399_gmac_set_clk(struct rk3399_cru *cru, ulong rate)
- }
- 
- #define PMUSGRF_DDR_RGN_CON16 0xff330040
--static ulong rk3399_ddr_set_clk(struct rk3399_cru *cru,
-+static ulong rk3399_ddr_set_clk(struct rockchip_cru *cru,
- 				ulong set_rate)
- {
- 	struct pll_div dpll_cfg;
-@@ -863,7 +863,7 @@ static ulong rk3399_ddr_set_clk(struct rk3399_cru *cru,
- 	return set_rate;
- }
- 
--static ulong rk3399_saradc_get_clk(struct rk3399_cru *cru)
-+static ulong rk3399_saradc_get_clk(struct rockchip_cru *cru)
- {
- 	u32 div, val;
- 
-@@ -874,7 +874,7 @@ static ulong rk3399_saradc_get_clk(struct rk3399_cru *cru)
- 	return DIV_TO_RATE(OSC_HZ, div);
- }
- 
--static ulong rk3399_saradc_set_clk(struct rk3399_cru *cru, uint hz)
-+static ulong rk3399_saradc_set_clk(struct rockchip_cru *cru, uint hz)
- {
- 	int src_clk_div;
- 
-@@ -1071,7 +1071,7 @@ static struct clk_ops rk3399_clk_ops = {
- };
- 
- #ifdef CONFIG_SPL_BUILD
--static void rkclk_init(struct rk3399_cru *cru)
-+static void rkclk_init(struct rockchip_cru *cru)
- {
- 	u32 aclk_div;
- 	u32 hclk_div;
-@@ -1188,15 +1188,15 @@ static int rk3399_clk_bind(struct udevice *dev)
- 		debug("Warning: No sysreset driver: ret=%d\n", ret);
- 	} else {
- 		priv = malloc(sizeof(struct sysreset_reg));
--		priv->glb_srst_fst_value = offsetof(struct rk3399_cru,
-+		priv->glb_srst_fst_value = offsetof(struct rockchip_cru,
- 						    glb_srst_fst_value);
--		priv->glb_srst_snd_value = offsetof(struct rk3399_cru,
-+		priv->glb_srst_snd_value = offsetof(struct rockchip_cru,
- 						    glb_srst_snd_value);
- 		sys_child->priv = priv;
- 	}
- 
- #if CONFIG_IS_ENABLED(RESET_ROCKCHIP)
--	ret = offsetof(struct rk3399_cru, softrst_con[0]);
-+	ret = offsetof(struct rockchip_cru, softrst_con[0]);
- 	ret = rockchip_reset_bind(dev, ret, 21);
- 	if (ret)
- 		debug("Warning: software reset driver bind faile\n");
-diff --git a/drivers/ram/rockchip/sdram_rk3288.c b/drivers/ram/rockchip/sdram_rk3288.c
-index 690751d074..fd5b204e1f 100644
---- a/drivers/ram/rockchip/sdram_rk3288.c
-+++ b/drivers/ram/rockchip/sdram_rk3288.c
-@@ -16,7 +16,7 @@
- #include <syscon.h>
- #include <asm/io.h>
- #include <asm/arch-rockchip/clock.h>
--#include <asm/arch-rockchip/cru_rk3288.h>
-+#include <asm/arch-rockchip/cru.h>
- #include <asm/arch-rockchip/ddr_rk3288.h>
- #include <asm/arch-rockchip/grf_rk3288.h>
- #include <asm/arch-rockchip/pmu_rk3288.h>
-@@ -36,7 +36,7 @@ struct dram_info {
- 	struct chan_info chan[2];
- 	struct ram_info info;
- 	struct clk ddr_clk;
--	struct rk3288_cru *cru;
-+	struct rockchip_cru *cru;
- 	struct rk3288_grf *grf;
- 	struct rk3288_sgrf *sgrf;
- 	struct rk3288_pmu *pmu;
-@@ -92,7 +92,7 @@ static void copy_to_reg(u32 *dest, const u32 *src, u32 n)
- 	}
- }
- 
--static void ddr_reset(struct rk3288_cru *cru, u32 ch, u32 ctl, u32 phy)
-+static void ddr_reset(struct rockchip_cru *cru, u32 ch, u32 ctl, u32 phy)
- {
- 	u32 phy_ctl_srstn_shift = 4 + 5 * ch;
- 	u32 ctl_psrstn_shift = 3 + 5 * ch;
-@@ -109,7 +109,7 @@ static void ddr_reset(struct rk3288_cru *cru, u32 ch, u32 ctl, u32 phy)
- 		     phy << phy_srstn_shift);
- }
- 
--static void ddr_phy_ctl_reset(struct rk3288_cru *cru, u32 ch, u32 n)
-+static void ddr_phy_ctl_reset(struct rockchip_cru *cru, u32 ch, u32 n)
- {
- 	u32 phy_ctl_srstn_shift = 4 + 5 * ch;
- 
-@@ -117,7 +117,7 @@ static void ddr_phy_ctl_reset(struct rk3288_cru *cru, u32 ch, u32 n)
- 		     1 << phy_ctl_srstn_shift, n << phy_ctl_srstn_shift);
- }
- 
--static void phy_pctrl_reset(struct rk3288_cru *cru,
-+static void phy_pctrl_reset(struct rockchip_cru *cru,
- 			    struct rk3288_ddr_publ *publ,
- 			    int channel)
- {
-diff --git a/drivers/ram/rockchip/sdram_rk3399.c b/drivers/ram/rockchip/sdram_rk3399.c
-index 7b2bba03fe..08bf0393a7 100644
---- a/drivers/ram/rockchip/sdram_rk3399.c
-+++ b/drivers/ram/rockchip/sdram_rk3399.c
-@@ -14,7 +14,7 @@
- #include <syscon.h>
- #include <asm/io.h>
- #include <asm/arch-rockchip/clock.h>
--#include <asm/arch-rockchip/cru_rk3399.h>
-+#include <asm/arch-rockchip/cru.h>
- #include <asm/arch-rockchip/grf_rk3399.h>
- #include <asm/arch-rockchip/pmu_rk3399.h>
- #include <asm/arch-rockchip/hardware.h>
-@@ -66,7 +66,7 @@ struct dram_info {
- 	u32 pwrup_srefresh_exit[2];
- 	struct chan_info chan[2];
- 	struct clk ddr_clk;
--	struct rk3399_cru *cru;
-+	struct rockchip_cru *cru;
- 	struct rk3399_grf_regs *grf;
- 	struct rk3399_pmu_regs *pmu;
- 	struct rk3399_pmucru *pmucru;
-@@ -228,7 +228,7 @@ static void *get_ddrc0_con(struct dram_info *dram, u8 channel)
- 	return (channel == 0) ? &dram->grf->ddrc0_con0 : &dram->grf->ddrc1_con0;
- }
- 
--static void rkclk_ddr_reset(struct rk3399_cru *cru, u32 channel, u32 ctl,
-+static void rkclk_ddr_reset(struct rockchip_cru *cru, u32 channel, u32 ctl,
- 			    u32 phy)
- {
- 	channel &= 0x1;
-@@ -239,7 +239,7 @@ static void rkclk_ddr_reset(struct rk3399_cru *cru, u32 channel, u32 ctl,
- 				   &cru->softrst_con[4]);
- }
- 
--static void phy_pctrl_reset(struct rk3399_cru *cru,  u32 channel)
-+static void phy_pctrl_reset(struct rockchip_cru *cru,  u32 channel)
- {
- 	rkclk_ddr_reset(cru, channel, 1, 1);
- 	udelay(10);
-@@ -2945,7 +2945,7 @@ static int sdram_init(struct dram_info *dram,
- 			for (channel = 0; channel < 2; channel++) {
- 				const struct chan_info *chan =
- 					&dram->chan[channel];
--				struct rk3399_cru *cru = dram->cru;
-+				struct rockchip_cru *cru = dram->cru;
- 				struct rk3399_ddr_publ_regs *publ = chan->publ;
- 
- 				phy_pctrl_reset(cru, channel);
-diff --git a/drivers/video/rockchip/rk3288_mipi.c b/drivers/video/rockchip/rk3288_mipi.c
-index 7c4a4cc53b..65891ce45c 100644
---- a/drivers/video/rockchip/rk3288_mipi.c
-+++ b/drivers/video/rockchip/rk3288_mipi.c
-@@ -18,7 +18,7 @@
- #include <dm/uclass-internal.h>
- #include <linux/kernel.h>
- #include <asm/arch-rockchip/clock.h>
--#include <asm/arch-rockchip/cru_rk3288.h>
-+#include <asm/arch-rockchip/cru.h>
- #include <asm/arch-rockchip/grf_rk3288.h>
- #include <asm/arch-rockchip/hardware.h>
- #include <asm/arch-rockchip/rockchip_mipi_dsi.h>
-diff --git a/drivers/video/rockchip/rk3399_mipi.c b/drivers/video/rockchip/rk3399_mipi.c
-index a93b73400b..a5b7ba69a8 100644
---- a/drivers/video/rockchip/rk3399_mipi.c
-+++ b/drivers/video/rockchip/rk3399_mipi.c
-@@ -18,7 +18,7 @@
- #include <dm/uclass-internal.h>
- #include <linux/kernel.h>
- #include <asm/arch-rockchip/clock.h>
--#include <asm/arch-rockchip/cru_rk3399.h>
-+#include <asm/arch-rockchip/cru.h>
- #include <asm/arch-rockchip/grf_rk3399.h>
- #include <asm/arch-rockchip/hardware.h>
- #include <asm/arch-rockchip/rockchip_mipi_dsi.h>
-diff --git a/drivers/video/rockchip/rk_mipi.c b/drivers/video/rockchip/rk_mipi.c
-index bcd039b7bc..f9280e8607 100644
---- a/drivers/video/rockchip/rk_mipi.c
-+++ b/drivers/video/rockchip/rk_mipi.c
-@@ -18,7 +18,7 @@
- #include <dm/uclass-internal.h>
- #include <linux/kernel.h>
- #include <asm/arch-rockchip/clock.h>
--#include <asm/arch-rockchip/cru_rk3399.h>
-+#include <asm/arch-rockchip/cru.h>
- #include <asm/arch-rockchip/grf_rk3399.h>
- #include <asm/arch-rockchip/rockchip_mipi_dsi.h>
  
 -- 
 2.18.0.321.gffc6fa0e3
