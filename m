@@ -2,79 +2,74 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3DDE136A16
-	for <lists+linux-rockchip@lfdr.de>; Fri, 10 Jan 2020 10:42:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 074E0136B93
+	for <lists+linux-rockchip@lfdr.de>; Fri, 10 Jan 2020 11:59:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ki7yplsph5J143AQKE/j6Vou5sTQhUXXieZDU+4H1eE=; b=lDCcivaqeJqe3Z
-	imFw794SvXGjeSC4mSNBWIMlNNjy5eR/8mBMOk6vv9honTMwvJ938i7ShuCGaXpFUexlr/kgz3Vw2
-	Vof13545LGX6c4+qEoi8cSOWXoF4zwoBkT3Zpp81xuNz5l0U32IiPXhaWYtWQ2SWPVvmjVvBUSqfI
-	57xTuykE8n2+FufthN8BBr1ekOPYSx8JIFRU1hKa1quafG53AqCsmFvt6ulWie7oJCr6tJe8Qi7bG
-	Tlvhvs3xoBSw8oXuqiSygN3aWNqDug6wfwCaCeorvfGFZ/EjD04iNQ61bh7t12UFBQPgGv+CO6HZR
-	0QHWEyDyMba0RdI5ltJg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Bc6IojPQZVOyUrzU/TETy/JOdimr5dOxkMQ1aSZLFeg=; b=B2YAQesgN+6k41
+	eP4YVsaX70Yz1K87RGI3V1npKrz9MJb9MmNVnc3z++OrMIPcM8I1cg59bfRT2TBs4tL11LY7Bp2gD
+	rwUYTnr9lI6e6HY+/FniR0QRkrCObVKivoFxxQn4OtjZNhXckPw6tlEOubHLQv/8jqfidhwpa2S/b
+	mYQuYp8qeU9hu3vJwJxV3iZafqLD3dOVOst0+2qCaZ/7Z+lsby7RdKUHvflnrDau2CWAvy/uP1S8R
+	WjMSeOKtvd7+STTe2eZI23e9raHnWMg76ltlL3Nma+ck3IqSr3hNAzmhawuswFplFjgy0+C9F38K9
+	EZvB24hZpKZXJoMlxUYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipqo8-0001k6-K3; Fri, 10 Jan 2020 09:42:20 +0000
-Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
+	id 1ips17-0004jJ-BC; Fri, 10 Jan 2020 10:59:49 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipqo5-0001jP-Rl
- for linux-rockchip@lists.infradead.org; Fri, 10 Jan 2020 09:42:19 +0000
-Received: by mail-il1-x144.google.com with SMTP id g12so1318255ild.2
- for <linux-rockchip@lists.infradead.org>; Fri, 10 Jan 2020 01:42:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=318bz1iipoOPcu+jYfuRZtXJ8N5+/jjj5N/ZjvB/Bs0=;
- b=eMxpIKBr3NqiPL4EO3ZrsOakBNVKUJfPCSjrULacOnIhrk0Vd01QO1r7nnoRSH/Xsq
- YbNwmXYZ9+hIGa6KnMDAJS386Ofk6Lkc4AK0ytNU4DAH3eI2mpc0iV7dDaWbyUwJ4DXQ
- NVYIpqWkIyk+VfyQ3YrvEfiDf4rMEnwG7PgeqNBJRG2basj1LhNzLxMk+OmOXjGsvA93
- 42vpcXI3yzXrL9nGTQ+k0Avals66Kfbqpdi1hYFApQ0s/rf5YbLbCJNd8vaF1l04N+/c
- Q27Ziik5G8k1bexZsNcs1YowNtNlEk+0eItGTX5WvEnxwftSOi+eUeGXdnKbkTfPnBya
- LwKw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=318bz1iipoOPcu+jYfuRZtXJ8N5+/jjj5N/ZjvB/Bs0=;
- b=Yd4hu3Qz9CXqLhdq6lbnNXjWMu2M0sfcm3fdOWdB26MRR21ymv+w0uncy2/vEM+zFv
- N1NpvEToz2fiB8KVmubhBgFpY6JTutComclnJotNULa3JYb0n0CfLdb5hQwNaU4cqHfh
- utqnawQsK6ZJ9zbFyqxNrXfFrQB5Wo+K7i4Zkq5UuOm/c0SLgRXQCfIFLZ/YLiTi6UNm
- hDhJ7KtfBNMQeEDGMooM03N9x3syvsfABxcEVC5A20jXtbNzshtUDgkdS3db5b8sNY7+
- VvZT3mErVmNez523aH6ovYtX86G/72C8/b2C0JoYzORhzkc1Jkdy8Y/CaAzVr5iG14rA
- +iTw==
-X-Gm-Message-State: APjAAAWUY/iUHHwUp6fJJewYMPLk0a6orO+vwqmDInLGTmIFtYEeqM7L
- Cl0BTeJj2vn/0UXmOtz2z2GRU5+ykg21TmUF0BY=
-X-Google-Smtp-Source: APXvYqystfujR19hcNJRRjXvUKuizLbvHAOk0apS2NtdJ84/VXofDNjeJ/XHQPKT1Gchq39qxJzH53XboxyXZ/GsCxU=
-X-Received: by 2002:a92:8893:: with SMTP id m19mr1886804ilh.4.1578649335465;
- Fri, 10 Jan 2020 01:42:15 -0800 (PST)
+ id 1ips14-0004hj-AP; Fri, 10 Jan 2020 10:59:48 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00AAxZTe081793;
+ Fri, 10 Jan 2020 04:59:35 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1578653975;
+ bh=9+Ck3PRaRVIdp1krLVpCgf4FURcXnlnWOb8T6coy79M=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=nyfrNejkNB1FiPAWgbDHVtQ3iiC2/Jp8H1uiZfT+cRUg1ai0DpE4z38L1wvYHw6Hq
+ 8cWFwy/ozYcxI31BVErd34xjIXMOHvvUdkNWpstpTW72gan8oeLU1scsQrmutxpChP
+ jalicy0DTy0H6D+m2wH6BzDJ/S8XBZFmMsJS2to4=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00AAxZhE012420
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 10 Jan 2020 04:59:35 -0600
+Received: from DFLE113.ent.ti.com (10.64.6.34) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 10
+ Jan 2020 04:59:34 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Fri, 10 Jan 2020 04:59:35 -0600
+Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00AAxWRT044018;
+ Fri, 10 Jan 2020 04:59:32 -0600
+Subject: Re: [PATCH v2 00/14] Support more HDMI modes on RK3228/RK3328
+To: Jonas Karlman <jonas@kwiboo.se>, Heiko Stuebner <heiko@sntech.de>, Sandy
+ Huang <hjc@rock-chips.com>
+References: <20200108210740.28769-1-jonas@kwiboo.se>
+From: Kishon Vijay Abraham I <kishon@ti.com>
+Message-ID: <b159ee28-213e-35d2-6d09-516abc3358bb@ti.com>
+Date: Fri, 10 Jan 2020 16:31:40 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <20200104083806.3930-1-jagan@amarulasolutions.com>
- <20200104083806.3930-6-jagan@amarulasolutions.com>
- <CAPnjgZ0u7E=KmiJodARvVFfVv+u0vdxCC1NN_2tnFNAMkp4NLw@mail.gmail.com>
-In-Reply-To: <CAPnjgZ0u7E=KmiJodARvVFfVv+u0vdxCC1NN_2tnFNAMkp4NLw@mail.gmail.com>
-From: "Matwey V. Kornilov" <matwey.kornilov@gmail.com>
-Date: Fri, 10 Jan 2020 12:42:03 +0300
-Message-ID: <CAJs94EYEr82dv0_Wu_Y0XY=fA1kxvBt-Cav+vuR1MUA2U3811w@mail.gmail.com>
-Subject: Re: [PATCH v6 5/6] rockchip: Add Single boot image (with binman,
- pad_cat)
-To: Simon Glass <sjg@chromium.org>
+In-Reply-To: <20200108210740.28769-1-jonas@kwiboo.se>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_014217_923278_3FC8617D 
-X-CRM114-Status: GOOD (  14.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200110_025946_481804_E3C00B3D 
+X-CRM114-Status: GOOD (  23.78  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (matwey.kornilov[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -84,6 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,49 +92,93 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Rockchip SoC support" <linux-rockchip@lists.infradead.org>,
- Kever Yang <kever.yang@rock-chips.com>,
- U-Boot Mailing List <u-boot@lists.denx.de>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- Akash Gajjar <akash@openedev.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ Zheng Yang <zhengyang@rock-chips.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-0L/RgiwgMTAg0Y/QvdCyLiAyMDIwINCzLiDQsiAxMjozOSwgU2ltb24gR2xhc3MgPHNqZ0BjaHJv
-bWl1bS5vcmc+Ogo+Cj4gSGkgSmFnYW4sCj4KPiBPbiBTYXQsIDQgSmFuIDIwMjAgYXQgMjE6Mzgs
-IEphZ2FuIFRla2kgPGphZ2FuQGFtYXJ1bGFzb2x1dGlvbnMuY29tPiB3cm90ZToKPiA+Cj4gPiBB
-bGwgcm9ja2NoaXAgcGxhdGZvcm1zIHN1cHBvcnQgVFBMIG9yIFNQTC1iYXNlZCBib290bG9hZGVy
-Cj4gPiBpbiBtYWlubGluZSB3aXRoIFUtQm9vdCBwcm9wZXIgYXMgZmluYWwgc3RhZ2UuIEZvciBl
-YWNoCj4gPiBzdGFnZSB3ZSBuZWVkIHRvIGJ1cm4gdGhlIGltYWdlIG9uIHRvIGZsYXNoIHdpdGgg
-cmVzcGVjdGl2ZQo+ID4gb2Zmc2V0cy4KPiA+Cj4gPiBUaGlzIHBhdGNoIGNyZWF0ZXMgYSBzaW5n
-bGUgYm9vdCBpbWFnZSBjb21wb25lbnQgdXNpbmcKPiA+IC0gYmlubWFuLCBmb3IgYXJtMzIgcm9j
-a2NoaXAgcGxhdGZvcm1zCj4gPiAtIHBhZF9jYXQsIGZvciBhcm02NCByb2NrY2hpcCBwbGF0Zm9y
-bXMuCj4gPgo+ID4gVGhpcyB3b3VsZCBoZWxwIHVzZXJzIHRvIGdldCByaWQgb2YgYnVybmluZyBk
-aWZmZXJlbnQKPiA+IGJvb3Qgc3RhZ2UgaW1hZ2VzLgo+ID4KPiA+IFRoZSBuZXcgaW1hZ2UgY2Fs
-bGVkICd1LWJvb3Qtcm9ja2NoaXAuYmluJwo+ID4gd2hpY2ggY2FuIGJ1cm4gaW50byBmbGFzaCBs
-aWtlOgo+ID4KPiA+IOKCuSBzdWRvIGRkIGlmPXUtYm9vdC1yb2NrY2hpcC5iaW4gb2Y9L2Rldi9z
-ZGEgc2Vlaz02NAo+Cj4gSG93IGFib3V0IGFkZGluZyB0aGUgaW5pdGlhbCA2NCBibG9ja3MgaW50
-byB0aGUgaW1hZ2UgdG9vLCBzbyB0aGUgc2Vlawo+IGlzbid0IG5lZWRlZD8KPgoKSXQgd2lsbCBi
-cmVhayBwYXJ0aXRpb24gdGFibGVzIG9uIHRoZSB0YXJnZXQgZGV2aWNlLgoKPiA+IFRoaXMgd291
-bGQgc3VwcG9ydCBhbGwgcm9ja2NoaXAgcGxhdGZvcm1zLCBleGNlcHQgcmszMTI4Cj4gPiBzaW5j
-ZSBpdCBkb2Vzbid0IHN1cHBvcnQgZm9yIFNQTCB5ZXQuCj4gPgo+ID4gQ2M6IEtldmVyIFlhbmcg
-PGtldmVyLnlhbmdAcm9jay1jaGlwcy5jb20+Cj4gPiBDYzogTWF0d2V5IFYuIEtvcm5pbG92IDxt
-YXR3ZXkua29ybmlsb3ZAZ21haWwuY29tPgo+ID4gU2lnbmVkLW9mZi1ieTogSmFnYW4gVGVraSA8
-amFnYW5AYW1hcnVsYXNvbHV0aW9ucy5jb20+Cj4gPiBSZXZpZXdlZC1ieTogS2V2ZXIgWWFuZyA8
-a2V2ZXIueWFuZ0Byb2NrLWNoaXBzLmNvbT4KPiA+IC0tLQo+ID4gIE1ha2VmaWxlICAgICAgICAg
-ICAgICAgICAgICAgICAgICB8IDE0ICsrKysrKysrKysrKy0tCj4gPiAgYXJjaC9hcm0vS2NvbmZp
-ZyAgICAgICAgICAgICAgICAgIHwgIDEgKwo+ID4gIGFyY2gvYXJtL2R0cy9yazMwMzYtdS1ib290
-LmR0c2kgICB8ICAyICsrCj4gPiAgYXJjaC9hcm0vZHRzL3JrMzI4OC11LWJvb3QuZHRzaSAgIHwg
-IDIgKysKPiA+ICBhcmNoL2FybS9kdHMvcm9ja2NoaXAtdS1ib290LmR0c2kgfCAyMSArKysrKysr
-KysrKysrKysrKysrKysKPiA+ICBpbmNsdWRlL2NvbmZpZ3Mvcm9ja2NoaXAtY29tbW9uLmggfCAg
-MyArKysKPiA+ICA2IGZpbGVzIGNoYW5nZWQsIDQxIGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25z
-KC0pCj4gPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtL2R0cy9yb2NrY2hpcC11LWJvb3Qu
-ZHRzaQo+Cj4gUmVnYXJkcywKPiBTaW1vbgoKCgotLSAKV2l0aCBiZXN0IHJlZ2FyZHMsCk1hdHdl
-eSBWLiBLb3JuaWxvdgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1yb2NrY2hpcAo=
+
+
+On 09/01/20 2:37 AM, Jonas Karlman wrote:
+> This series make it possible to use more HDMI modes on RK3328,
+> and presumably also on RK3228. It also prepares for a future YUV420 and
+> 10-bit output series.
+> 
+> Part of this has been reworked from vendor BSP 4.4 kernel commits.
+> 
+> Patch 1-5 fixes issues and shortcomings in the inno hdmi phy driver.
+> 
+> Patch 6 prepares for use of high TMDS bit rates used with HDMI 2.0 and
+> 10-bit output modes.
+> 
+> Patch 7-13 changes rk3228/rk3328 to use mode_valid functions suited for
+> the inno hdmi phy instead of the dw-hdmi phy. These changes allows for
+> more CEA modes to be usable, e.g. some 4K and fractal modes.
+> 
+> Patch 14 adds support for more pixel clock rates in order to support
+> common DMT modes in addition to CEA modes.
+
+Is it possible to split the series targeted for different subsystems or
+is it required for all the patches to be merged together?
+
+Thanks
+Kishon
+> 
+> Note: I have only been able to build test RK322x related changes
+> as I do not have any RK322x device to test on.
+> 
+> All modes, including fractal modes, has been tested with modetest on
+> a RK3328 Rock64 device using e.g.
+> 
+>   modetest -M rockchip -s 39:3840x2160-29.97
+> 
+> Changes in v2:
+>   - collect acked-by tag
+>   - drop the limit resolution width to 3840 patch
+> 
+> This series is also available at [1] and the early work on YUV420 and
+> 10-bit output is available at [2].
+> 
+> [1] https://github.com/Kwiboo/linux-rockchip/commits/next-20200108-inno-hdmi-phy
+> [2] https://github.com/Kwiboo/linux-rockchip/commits/next-20200108-bus-format
+> 
+> Regards,
+> Jonas
+> 
+> Algea Cao (1):
+>   phy/rockchip: inno-hdmi: Support more pre-pll configuration
+> 
+> Huicong Xu (1):
+>   phy/rockchip: inno-hdmi: force set_rate on power_on
+> 
+> Jonas Karlman (11):
+>   phy/rockchip: inno-hdmi: use correct vco_div_5 macro on rk3328
+>   phy/rockchip: inno-hdmi: remove unused no_c from rk3328 recalc_rate
+>   phy/rockchip: inno-hdmi: do not power on rk3328 post pll on reg write
+>   drm/rockchip: dw-hdmi: allow high tmds bit rates
+>   drm/rockchip: dw-hdmi: require valid vpll clock rate on rk3228/rk3328
+>   clk: rockchip: set parent rate for DCLK_VOP clock on rk3228
+>   arm64: dts: rockchip: increase vop clock rate on rk3328
+>   arm64: dts: rockchip: add vpll clock to hdmi node on rk3328
+>   ARM: dts: rockchip: add vpll clock to hdmi node on rk3228
+>   drm/rockchip: dw-hdmi: limit tmds to 340mhz on rk3228/rk3328
+>   drm/rockchip: dw-hdmi: remove unused plat_data on rk3228/rk3328
+> 
+> Zheng Yang (1):
+>   phy/rockchip: inno-hdmi: round fractal pixclock in rk3328 recalc_rate
+> 
+>  arch/arm/boot/dts/rk322x.dtsi                 |   4 +-
+>  arch/arm64/boot/dts/rockchip/rk3328.dtsi      |   6 +-
+>  drivers/clk/rockchip/clk-rk3228.c             |   2 +-
+>  drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c   |  47 ++++++--
+>  drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 110 ++++++++++++------
+>  5 files changed, 120 insertions(+), 49 deletions(-)
+> 
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
