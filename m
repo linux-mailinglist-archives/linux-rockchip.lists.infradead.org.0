@@ -2,83 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3668313842A
-	for <lists+linux-rockchip@lfdr.de>; Sun, 12 Jan 2020 01:16:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EACD138432
+	for <lists+linux-rockchip@lfdr.de>; Sun, 12 Jan 2020 01:17:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9YDJdKPYlzOKOkrKo58yRhiT1i4WVaBaZicgTBp7BsI=; b=ACaHE5vBsg/QmJ
-	fligN6Od6OxIxfUz2iwO43ju1xRN8LTAqTq8pEedD0hUEuoq+63BkvU1oqYG1F1E3k2ly2OxJxEW3
-	4q3+amNwXXLNeSUYQbiDZW9OrX4W3X3EI/RbkOFwCMSoxJ6oOfDzQEekpaxANLSBUOOtEVRoS8gy7
-	MmKtqjqWBafXI4wjG+BbfSyMTi8z9Iv8vBghasYkwd7IuiGLFCv0cJ/+VssAaCzXDZpTdmzpTTDPJ
-	Tkvsj9avbitxKKUCcihHkDDZQAY7pUxrpOnOVB2DawcWG6FAJyK3NsthM1Wojz9unjqDjbdVJkkPz
-	sy+VCMJntT99JE9mZXRA==;
+	List-Owner; bh=QUsnMypa5eF1+/RIZuYuO+pWRK+fplaYO/eWcns6pBI=; b=AuPIVVA5UCpQFu
+	siyqXgOcvdmy02ztbtm/NG8qXHxgEU8OYjS0tgdbZmMH6XmSgwpAhjdMkwDZoUO/yMsZq+qXtsA6C
+	ff1CGZGwIz/IfnrDDQh7JFUMi9Fg7RSlOOaNGYur2FPXf3GQJi6yAx+Um6v2S+BmzKvzAfwWqBf7z
+	Bgpo9Fw+cpuBBIup/NSO9kDHVZf4KfWYZzOLUgVN9ECAlV9RiSYVJEqkx+ygQxYjoZDvRUmopE7ef
+	AC7zHnk7WHN+JJz/LiUabWWpiYfE55hXZyLVL0R/pVIbY5f2NncDrKOmINzq2YhxjsMVxvysBAKTw
+	wKB34jscoJw4uZQhfj0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqQw2-0005hZ-Nb; Sun, 12 Jan 2020 00:16:54 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iqQw7-0005nP-UV; Sun, 12 Jan 2020 00:16:59 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqQvu-0005cV-GP; Sun, 12 Jan 2020 00:16:47 +0000
-Received: by mail-wm1-x342.google.com with SMTP id t14so5826354wmi.5;
- Sat, 11 Jan 2020 16:16:46 -0800 (PST)
+ id 1iqQvv-0005cu-Bc; Sun, 12 Jan 2020 00:16:48 +0000
+Received: by mail-wr1-x444.google.com with SMTP id y11so5191330wrt.6;
+ Sat, 11 Jan 2020 16:16:47 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=TO4ro9G4vD3zIHyJt/0agdTa39l4m1TB7ZW3wf7lrf0=;
- b=UH7MWGgmwpk+vFbDOSAfRRM5C2mVjwsDV1I/lidLxqldDbgNh2mQf1YvA9C/MsU15K
- eSNVEdudBaJL3+6RGJN2DaZN3xbK4vXy5fdslb47DmZYmpER4EKUUIMYxqpmcOntHN1l
- h0OGL18OHKnXe/pn/dS+JeYnlNQ36lO5c+iEAPAm95AnQBFva2HCmFAgf9whFsoL3rPk
- vAP5147OME9RQ3F9CGQP5epoyqVAK/twGXgZIFxRjJM97l6b+4qqcaRMLldmjvfZtp/g
- hTifIsQG74JrK5hFgARq04sLxGb7P2nGygPB1DnFV1tFlija8XeEg34NvACoT25k77PD
- 2ThA==
+ bh=u/ZwSehH+63Wca8LW+bRhFH9IjAyR/Srx1YNfx4JoKc=;
+ b=vFu1zH2Ow9/UtMn8FnIkbj8ye3ZG0bOu0Pf6UW3FtStq7LsxbfNrGKZexZ8gMh+R3w
+ LIFytqdtv6aLFMhHeEMrc3wpr7jrdElrel5sEauFkNVjRiOfrYvXTw8u94Lj+OurjBdE
+ +OfJby1/+M3z4Bp8z9LZAu6r8bTmnQPnIjvZo7ZZeipiwHJGdmNSgyLu8MW7mpmb+C2K
+ BCWoY1HHgjKoR2IQ9afeWq0GbqEQWj+QiIN2BMh7MK8XyJl1gJqiMDAc8AqCo2c2d4X4
+ h7wpI+lzeFs+ODa6SRFF1+RffGHidTfLvHQrdHfRWFJ/EnzEfTTrE7pAIiJ9u5jGekbg
+ yf4g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=TO4ro9G4vD3zIHyJt/0agdTa39l4m1TB7ZW3wf7lrf0=;
- b=TwZw27TvQI7W3XYlZKcvLqvJgsBT51YofG3RJmIy6uP6UH/zmPOUYwjEZHYWf8qw0C
- rUVJGSfifwBXek28fbIU7kjSvTuufONqoR0B87q9zFk4MuggGf24/HDqPaNFlLqVJZm3
- 1K6FKUfXmEgH9gDKPTn1Uwr9s5hCCohZd/7yy44cz/VoasjHSCHdPA2D+XJhV7rmaeE7
- aoW6eo1eFnMz/m7yRP7E9UEeexc/OorNnc9kfqEADjEWUshwZLOIjCiz56pWYa83io+R
- L8scwJsLdHYtkNYzFrkZCfw8iCHJck4O1zLOv4Fw3Xqt/bWkj+BOuQBdCA4jJEpofjQ0
- 60bw==
-X-Gm-Message-State: APjAAAX9twXFujOt/2qTdxev8xsRuJBUedf4A85uU+iXmug5v+sfX+la
- hpcXb+5FzdbmldFuMJ9GS3I=
-X-Google-Smtp-Source: APXvYqxwsOHaGPq94M95EVR5OBQt7fgZiB2P/O5Jg9DgUSfO9JLb4kiGFlvW8Na/knMYtda6GHHQNg==
-X-Received: by 2002:a05:600c:230d:: with SMTP id
- 13mr11799060wmo.12.1578788204957; 
- Sat, 11 Jan 2020 16:16:44 -0800 (PST)
+ bh=u/ZwSehH+63Wca8LW+bRhFH9IjAyR/Srx1YNfx4JoKc=;
+ b=os0+HmP28uDbmO7z9CLJI6H55y1z04F1Q6cLUKksFM4VFCpREz9u5LRXVjLO7Iofx2
+ rRx5KOxevHxx6lZSuMcDnnddG38pGMw7H7H3mRlaOGfR+tzvd0LkIjnMDX9QFH29L72y
+ Saorr7okOajKENrM0FrC6DIqlb6cOLFHtQTuEXUB3TW3WzHgahcsDXzPsmbnKReN22jF
+ AVZScx2qvDcLdXF4Tcb2REjTC7klQH/P68beVD+EO6P4zhViluT9RYK8ytFompgT2h6k
+ Gq9Nx5CHprU7wu3xhkd/Oew3NCJtUmgCqBBcZQlNEj5MoNonqtnQ1G2Moy0tcCWXnJFU
+ 4k+g==
+X-Gm-Message-State: APjAAAVl9GnAL8ur71MSof8T63WCWBRz8TObP9MxAI13IlU9lmE5ZtDz
+ C4xHEeIdiqa//XGIvXkFlMc=
+X-Google-Smtp-Source: APXvYqzhBnH1QtVtoGevRNkruEHHQpOM3dYTmLALFHsUQVXGJIlv0gbK5NlcKnKn5cWW9AvIFcCrJA==
+X-Received: by 2002:adf:f78e:: with SMTP id q14mr10672631wrp.186.1578788206180; 
+ Sat, 11 Jan 2020 16:16:46 -0800 (PST)
 Received: from localhost.localdomain
  (p200300F1373A1900428D5CFFFEB99DB8.dip0.t-ipconnect.de.
  [2003:f1:373a:1900:428d:5cff:feb9:9db8])
  by smtp.googlemail.com with ESMTPSA id h66sm8575535wme.41.2020.01.11.16.16.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 11 Jan 2020 16:16:44 -0800 (PST)
+ Sat, 11 Jan 2020 16:16:45 -0800 (PST)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: dri-devel@lists.freedesktop.org, alyssa@rosenzweig.io,
  steven.price@arm.com, tomeu.vizoso@collabora.com, robh@kernel.org
-Subject: [PATCH RFT v2 1/3] drm/panfrost: enable devfreq based the
- "operating-points-v2" property
-Date: Sun, 12 Jan 2020 01:16:21 +0100
-Message-Id: <20200112001623.2121227-2-martin.blumenstingl@googlemail.com>
+Subject: [PATCH RFT v2 2/3] drm/panfrost: call dev_pm_opp_of_remove_table() in
+ all error-paths
+Date: Sun, 12 Jan 2020 01:16:22 +0100
+Message-Id: <20200112001623.2121227-3-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200112001623.2121227-1-martin.blumenstingl@googlemail.com>
 References: <20200112001623.2121227-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200111_161646_542040_A89DF5B1 
-X-CRM114-Status: GOOD (  11.80  )
+X-CRM114-CacheID: sfid-20200111_161647_396896_97C4CFA3 
+X-CRM114-Status: GOOD (  10.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -112,46 +111,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Decouple the check to see whether we want to enable devfreq for the GPU
-from dev_pm_opp_set_regulators(). This is preparation work for adding
-back support for regulator control (which means we need to call
-dev_pm_opp_set_regulators() before dev_pm_opp_of_add_table(), which
-means having a check for "is devfreq enabled" that is not tied to
-dev_pm_opp_of_add_table() makes things easier).
+If devfreq_recommended_opp() fails we need to undo
+dev_pm_opp_of_add_table() by calling dev_pm_opp_of_remove_table() (just
+like we do it in the other error-path below).
 
+Fixes: f3ba91228e8e91 ("drm/panfrost: Add initial panfrost driver")
+Reviewed-by: Steven Price <steven.price@arm.com>
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- drivers/gpu/drm/panfrost/panfrost_devfreq.c | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
+ drivers/gpu/drm/panfrost/panfrost_devfreq.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/gpu/drm/panfrost/panfrost_devfreq.c b/drivers/gpu/drm/panfrost/panfrost_devfreq.c
-index 413987038fbf..1471588763ce 100644
+index 1471588763ce..170f6c8c9651 100644
 --- a/drivers/gpu/drm/panfrost/panfrost_devfreq.c
 +++ b/drivers/gpu/drm/panfrost/panfrost_devfreq.c
-@@ -5,6 +5,7 @@
- #include <linux/platform_device.h>
- #include <linux/pm_opp.h>
- #include <linux/clk.h>
-+#include <linux/property.h>
- #include <linux/regulator/consumer.h>
+@@ -93,8 +93,10 @@ int panfrost_devfreq_init(struct panfrost_device *pfdev)
+ 	cur_freq = clk_get_rate(pfdev->clock);
  
- #include "panfrost_device.h"
-@@ -79,10 +80,12 @@ int panfrost_devfreq_init(struct panfrost_device *pfdev)
- 	struct devfreq *devfreq;
- 	struct thermal_cooling_device *cooling;
+ 	opp = devfreq_recommended_opp(dev, &cur_freq, 0);
+-	if (IS_ERR(opp))
++	if (IS_ERR(opp)) {
++		dev_pm_opp_of_remove_table(dev);
+ 		return PTR_ERR(opp);
++	}
  
--	ret = dev_pm_opp_of_add_table(dev);
--	if (ret == -ENODEV) /* Optional, continue without devfreq */
-+	if (!device_property_present(dev, "operating-points-v2"))
-+		/* Optional, continue without devfreq */
- 		return 0;
--	else if (ret)
-+
-+	ret = dev_pm_opp_of_add_table(dev);
-+	if (ret)
- 		return ret;
- 
- 	panfrost_devfreq_reset(pfdev);
+ 	panfrost_devfreq_profile.initial_freq = cur_freq;
+ 	dev_pm_opp_put(opp);
 -- 
 2.24.1
 
