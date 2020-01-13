@@ -2,42 +2,43 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58736138DB1
-	for <lists+linux-rockchip@lfdr.de>; Mon, 13 Jan 2020 10:24:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DA6C138DBF
+	for <lists+linux-rockchip@lfdr.de>; Mon, 13 Jan 2020 10:26:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=65MMOYqp7blpDkwFYdv0OY6g8yOBV9UKOsLn9Gdh3k8=; b=i5oBMxniJzAPt6
-	glRoL6btAxoGPZueB9/I9Dgn8rch+ArOWX+hRnBrvSKVf0JMMeksv1jyCRsKWUSRqYs3F3Ndyt6V0
-	pO2ScLi9NuUqoWOSJE4GXxq0id1fIsUXtufNLZanvTHMEphF0zvUbnziJ7aKxlz5DXu8XsXGGMCoC
-	kEoT8ru5L0vTCB+OF8V2FXTq6mgRtWpys8lecGPQak/gMIvQbk7hcjPwo1/6frhwsW8dkEx9MU+WJ
-	bGC/8LZuXSjv6HSebV24qAa6MPv15/Zye87D8L1c48o1zmt9gj3mkoQFyib0oWFQvTZdqqXUVRM5s
-	Ip89x171pyA27zCVR1Lg==;
+	List-Owner; bh=/zxI9jIMEC9asRT1Hc6i2qR6XXMhV6gIynGkW83z5fQ=; b=uYdJgtctq7ydYk
+	GIQ+KhfJj21Nt4HCNHtUjZDDfjBNlIVJ8RBNDTgz4XOzBbUMyq+xX5pRPKW7yL61Rm7noOpeV/MI6
+	qouuwchZ2RhpZ83RuwpMmlgZgP3ZO29/NdQxYuP/Aio/vFsd65dT41M3OHuZpnwC88v18vG9HHnrp
+	CqkPr9y4D2xElv73/QfvPU5nQ02kQ3xrYnSiV3ooMcpxMZrHGtS/w9lZ6aauqSIkuEtrBjRPjHyS1
+	XtqlF+PaEoj5jCOGS4OsFl8YLDi9dGV1WGbQdTwdq45MttrwJw6opHvGNH7BWBnrYn0kl5m2IA5A+
+	JdNeKq9+R1O3diV7mh/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqvxJ-0006Z6-CP; Mon, 13 Jan 2020 09:24:17 +0000
+	id 1iqvzl-0000Lk-IU; Mon, 13 Jan 2020 09:26:49 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqvx6-0006Ps-MI; Mon, 13 Jan 2020 09:24:05 +0000
+ id 1iqvzY-0000Cl-HN; Mon, 13 Jan 2020 09:26:38 +0000
 Received: from wf0253.dip.tu-dresden.de ([141.76.180.253] helo=phil.localnet)
  by gloria.sntech.de with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
  (envelope-from <heiko@sntech.de>)
- id 1iqvx3-0001zw-Vv; Mon, 13 Jan 2020 10:24:02 +0100
+ id 1iqvzU-000219-9u; Mon, 13 Jan 2020 10:26:32 +0100
 From: Heiko Stuebner <heiko@sntech.de>
 To: Johan Jonker <jbx6244@gmail.com>
 Subject: Re: [PATCH] arm64: dts: rockchip: add reg property to brcmf sub node
-Date: Mon, 13 Jan 2020 10:24:01 +0100
-Message-ID: <1821445.7jhtsCTu8y@phil>
-In-Reply-To: <20200110142128.13522-1-jbx6244@gmail.com>
+Date: Mon, 13 Jan 2020 10:26:31 +0100
+Message-ID: <2116127.mXfZQK7onI@phil>
+In-Reply-To: <CA+z=w3UjX71Nw7W+iiGkQh=UJkPMsEn1phSdp25d--O8QM-ETQ@mail.gmail.com>
 References: <20200110142128.13522-1-jbx6244@gmail.com>
+ <CA+z=w3UjX71Nw7W+iiGkQh=UJkPMsEn1phSdp25d--O8QM-ETQ@mail.gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_012404_875530_A487465E 
-X-CRM114-Status: GOOD (  10.81  )
+X-CRM114-CacheID: sfid-20200113_012636_725607_A2B3AA46 
+X-CRM114-Status: GOOD (  19.89  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,30 +66,116 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Freitag, 10. Januar 2020, 15:21:28 CET schrieb Johan Jonker:
-> An experimental test with the command below gives this error:
-> rk3399-firefly.dt.yaml: dwmmc@fe310000: wifi@1:
-> 'reg' is a required property
-> rk3399-orangepi.dt.yaml: dwmmc@fe310000: wifi@1:
-> 'reg' is a required property
-> rk3399-khadas-edge.dt.yaml: dwmmc@fe310000: wifi@1:
-> 'reg' is a required property
-> rk3399-khadas-edge-captain.dt.yaml: dwmmc@fe310000: wifi@1:
-> 'reg' is a required property
-> rk3399-khadas-edge-v.dt.yaml: dwmmc@fe310000: wifi@1:
-> 'reg' is a required property
-> So fix this by adding a reg property to the brcmf sub node.
-> Also add #address-cells and #size-cells to prevent more warnings.
-> 
-> make ARCH=arm64 dtbs_check
-> DT_SCHEMA_FILES=Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Hi Johan,
 
-applied for 5.6
+Am Freitag, 10. Januar 2020, 16:40:24 CET schrieb Johan Jonker:
+> Hi,
+> 
+> Question for Heiko or rob+dt.
+> Where would should #address-cells and #size-cells go in the dts or to the dtsi.
+> In case they become required in a futhure rockchip-dw-mshc.yaml?
+> ie. Should we patch all XXX rockchip,rk3288-dw-mshc nodes with them?
 
-Thanks
+I don't think it is a required property for the dw-mmc itself, as only
+in special-cases do you need subnodes there. Like emmc and sd-cards
+are completely probeable without needing further information and
+only the wifi/bt chips _might_ need these.
+
+So I don't think that this is a property of the controller itself, but te
+connected card - hence should stay in the board file.
+
 Heiko
+
+
+> 
+> Thanks
+> 
+> 2020-01-10 15:21 GMT+01:00, Johan Jonker <jbx6244@gmail.com>:
+> > An experimental test with the command below gives this error:
+> > rk3399-firefly.dt.yaml: dwmmc@fe310000: wifi@1:
+> > 'reg' is a required property
+> > rk3399-orangepi.dt.yaml: dwmmc@fe310000: wifi@1:
+> > 'reg' is a required property
+> > rk3399-khadas-edge.dt.yaml: dwmmc@fe310000: wifi@1:
+> > 'reg' is a required property
+> > rk3399-khadas-edge-captain.dt.yaml: dwmmc@fe310000: wifi@1:
+> > 'reg' is a required property
+> > rk3399-khadas-edge-v.dt.yaml: dwmmc@fe310000: wifi@1:
+> > 'reg' is a required property
+> > So fix this by adding a reg property to the brcmf sub node.
+> > Also add #address-cells and #size-cells to prevent more warnings.
+> >
+> > make ARCH=arm64 dtbs_check
+> > DT_SCHEMA_FILES=Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
+> >
+> > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> > ---
+> >  arch/arm64/boot/dts/rockchip/rk3399-firefly.dts      | 3 +++
+> >  arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi | 3 +++
+> >  arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts     | 3 +++
+> >  3 files changed, 9 insertions(+)
+> >
+> > diff --git a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+> > b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+> > index 92de83dd4..06043179f 100644
+> > --- a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+> > +++ b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+> > @@ -669,9 +669,12 @@
+> >  	vqmmc-supply = &vcc1v8_s3;	/* IO line */
+> >  	vmmc-supply = &vcc_sdio;	/* card's power */
+> >
+> > +	#address-cells = <1>;
+> > +	#size-cells = <0>;
+> >  	status = "okay";
+> >
+> >  	brcmf: wifi@1 {
+> > +		reg = <1>;
+> >  		compatible = "brcm,bcm4329-fmac";
+> >  		interrupt-parent = <&gpio0>;
+> >  		interrupts = <RK_PA3 GPIO_ACTIVE_HIGH>;
+> > diff --git a/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
+> > b/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
+> > index 4944d78a0..e87a04477 100644
+> > --- a/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
+> > +++ b/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
+> > @@ -654,9 +654,12 @@
+> >  	sd-uhs-sdr104;
+> >  	vqmmc-supply = <&vcc1v8_s3>;
+> >  	vmmc-supply = <&vccio_sd>;
+> > +	#address-cells = <1>;
+> > +	#size-cells = <0>;
+> >  	status = "okay";
+> >
+> >  	brcmf: wifi@1 {
+> > +		reg = <1>;
+> >  		compatible = "brcm,bcm4329-fmac";
+> >  		interrupt-parent = <&gpio0>;
+> >  		interrupts = <RK_PA3 GPIO_ACTIVE_HIGH>;
+> > diff --git a/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
+> > b/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
+> > index 0541dfce9..9c659f311 100644
+> > --- a/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
+> > +++ b/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
+> > @@ -648,9 +648,12 @@
+> >  	pinctrl-names = "default";
+> >  	pinctrl-0 = <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
+> >  	sd-uhs-sdr104;
+> > +	#address-cells = <1>;
+> > +	#size-cells = <0>;
+> >  	status = "okay";
+> >
+> >  	brcmf: wifi@1 {
+> > +		reg = <1>;
+> >  		compatible = "brcm,bcm4329-fmac";
+> >  		interrupt-parent = <&gpio0>;
+> >  		interrupts = <RK_PA3 GPIO_ACTIVE_HIGH>;
+> > --
+> > 2.11.0
+> >
+> >
+> 
+
+
 
 
 
