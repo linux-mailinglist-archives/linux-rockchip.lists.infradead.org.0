@@ -2,59 +2,99 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A978B139741
-	for <lists+linux-rockchip@lfdr.de>; Mon, 13 Jan 2020 18:12:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 145361398F8
+	for <lists+linux-rockchip@lfdr.de>; Mon, 13 Jan 2020 19:34:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9OrQpVt9ilcDNa+aJwQDH+SqoOiG+ggTTrYVLOn02pY=; b=tQlmo9GX7f8zUQ
-	MSuFjgTtSY14u4qVF3wVXz471WHrd7QEzLGdj1c9kx/fdOpoTz+1cErBRGXM4F/5ardzCnD9uSq6f
-	+7UAoP5WcjWp/orPWVNNL/Iti3w2rrHu6nSWCoJyTU6cssa619p/3SyPr4dXyqhNmkTGVrKlAmyP4
-	mVqdqh1IeJ5EPYeyKAFWlPoCj99yxVkf2AFe4GokXKQaoDxfU2zvNfssFy3Msl5IeOsW0ASyBKf6B
-	CRcenaKxveARFHCsrstkk2wBdnULut/uWmUgazarIMp5jaroC7idyOLDbbOdLjpOn1/H1+jBVA2CY
-	mEt3mezi+GLXcUvUNzgw==;
+	List-Owner; bh=7jAiNN6QNunLLCzRCPkNABUxWRQEO81wYxpnYjocb7c=; b=JEQlDhfvsU3v+L
+	eYRFTe/MLGuJVrft2jip0B3dM2DCGJ0Wyd0qlFjbxCvSea/5v+LiFHgsLnG0M2w7i4vqmmHHzrMEF
+	LBUO2OGlHX0FfxXPntqcnuYyxeAJZtsAK26cBC5gA3lHc5WRAKe2fOMmtu7ka6n5Rk19S0rW4+hOK
+	I30z3AJ4t8Vq/yh1V66jw3SLRCudqbj/CeA/dbjjJPsuo6Z10aNTRPc9V/kOqAN4Seg1CinjBKlN7
+	4wal+xVN6OzEGhxqt7odKlfvrJWLq3MoKUZDvTa6zpkesUXHXA1ToQDlukDRVZuLX9skDvtM+W6sk
+	kiySrAmog3f0Wvph7FSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir3GB-00071E-R4; Mon, 13 Jan 2020 17:12:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir3EQ-000554-T0; Mon, 13 Jan 2020 17:10:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 98A4C11B3;
- Mon, 13 Jan 2020 09:10:25 -0800 (PST)
-Received: from [10.1.194.52] (e112269-lin.cambridge.arm.com [10.1.194.52])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 48CE13F534;
- Mon, 13 Jan 2020 09:10:24 -0800 (PST)
-Subject: Re: [PATCH RFT v1 3/3] drm/panfrost: Use the mali-supply regulator
- for control again
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-References: <20200107230626.885451-1-martin.blumenstingl@googlemail.com>
- <20200107230626.885451-4-martin.blumenstingl@googlemail.com>
- <2ceffe46-57a8-79a8-2c41-d04b227d3792@arm.com>
- <CAFBinCD7o-q-i66zZhOro1DanKAfG-8obQtzxxD==xOwsy_d6A@mail.gmail.com>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <21d0730b-8299-8bfd-4321-746ccb3772d0@arm.com>
-Date: Mon, 13 Jan 2020 17:10:23 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+	id 1ir4Xm-0007Up-LE; Mon, 13 Jan 2020 18:34:30 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ir4XG-00075Q-7g; Mon, 13 Jan 2020 18:33:59 +0000
+Received: by mail-wm1-x344.google.com with SMTP id d139so509412wmd.0;
+ Mon, 13 Jan 2020 10:33:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=ZXLr4jt3Z0ly6bJlY2S1K+QAkB0UsTXiQL9zQoG2s4c=;
+ b=mXHlDgiSO7p/uX3R9XNTgDdGIu/YGZA6qA1uL9FgkaEBt6vhBsjXg3YO9i7CMOhB3j
+ MuaaxXJs/7qCYAEOy2rl0yDccD8H+XsP1E4tFJlOvdnNzUnD0BS58a3jfG/MalY4chV0
+ dOr1o8A8uUET4aVYVcbOfbaTOTLCHvjclGvrZHrFOgqByKRWF+qdD17NoRYOZLFIxhHw
+ dVpVKw9JiDqQN8uveu+hdDr0HHc1vnPKJI8ooC9hXAW2MKWtxD6feQNOS4M+xLC11235
+ ln/lgNKbndSLF+653ME1m/3cWrD6ygFqw8OM/mUwQF8A2ApvzcXk4Bt4GOH+ySRbDtCN
+ hmlw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=ZXLr4jt3Z0ly6bJlY2S1K+QAkB0UsTXiQL9zQoG2s4c=;
+ b=AGxaw+4ex+TvPz0GR0V32vMI7q97rpHSnUZZFiLGxqy/NRChIdn5h+bLyGdCSIMXi7
+ by3yyOg7J/GcCH2ooYhDkRslxb+sMVinRXx4zZmHUM25SSMxWjhR5N3TS7dVlS4HOf7k
+ 7EC3fgX8s/DELM9ghC+ym/6/FKhbJouAxjSMYcM2bexllPY65UbP7R9y19gV5CGq6Zyp
+ USq1uV8z7BXapNXnjsaJAKcY9UPAMKnFtI1mThlrbH/432nLSd55tM5AbOntYUo9+oFc
+ CzfIvxR+6bxduDpeO8mmH+AI8h8BopYwjCdwcs9kdcnWXpQYEAJsQ7Km+KGIIRq8S5Fe
+ y14g==
+X-Gm-Message-State: APjAAAV8MLKhd6lGU3tZxwx99zpFPdtJdEbBhVRUG6QAB2GWd8BD/jlC
+ 0CSqUW/0RaMf6TjdZYnzhkA=
+X-Google-Smtp-Source: APXvYqyGePBR9ORItEnsI4A/VolH7tK5HABxUgERqXN9F5gLMCg+0OuRxmIZVKfdKncZ1preY0W6VA==
+X-Received: by 2002:a7b:c5cd:: with SMTP id n13mr21557885wmk.172.1578940433124; 
+ Mon, 13 Jan 2020 10:33:53 -0800 (PST)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id n1sm15518360wrw.52.2020.01.13.10.33.52
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 13 Jan 2020 10:33:52 -0800 (PST)
+Subject: =?UTF-8?Q?Re=3a_=5bRFC_PATCH_v1_00/10=5d_Enable_RK3066_NANDC_for_MK?=
+ =?UTF-8?B?ODA444CQ6K+35rOo5oSP77yM6YKu5Lu255SxbGludXgtcm9ja2NoaXAtYm91bmNl?=
+ =?UTF-8?Q?s+shawn=2elin=3drock-chips=2ecom=40lists=2einfradead=2eorg?=
+ =?UTF-8?B?5Luj5Y+R44CR?=
+To: Shawn Lin <shawn.lin@rock-chips.com>, miquel.raynal@bootlin.com
+References: <20200108205338.11369-1-jbx6244@gmail.com>
+ <aad92eb5-00ed-5071-c206-491eff243537@rock-chips.com>
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <73cb4b1a-aad3-c613-a642-1887905e3932@gmail.com>
+Date: Mon, 13 Jan 2020 19:33:50 +0100
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
  Thunderbird/68.3.0
 MIME-Version: 1.0
-In-Reply-To: <CAFBinCD7o-q-i66zZhOro1DanKAfG-8obQtzxxD==xOwsy_d6A@mail.gmail.com>
+In-Reply-To: <aad92eb5-00ed-5071-c206-491eff243537@rock-chips.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_091027_075740_F2C88A22 
-X-CRM114-Status: GOOD (  18.95  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200113_103358_277669_7FFCD5E6 
+X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (jbx6244[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jbx6244[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,68 +107,35 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: tomeu.vizoso@collabora.com, airlied@linux.ie, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
- linux-amlogic@lists.infradead.org, robin.murphy@arm.com, alyssa@rosenzweig.io
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, vigneshr@ti.com,
+ richard@nod.at, =?UTF-8?B?6LW15Luq5bOw?= <yifeng.zhao@rock-chips.com>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-mtd@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, heiko@sntech.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 09/01/2020 17:27, Martin Blumenstingl wrote:
-> On Thu, Jan 9, 2020 at 12:31 PM Steven Price <steven.price@arm.com> wrote:
->>
->> On 07/01/2020 23:06, Martin Blumenstingl wrote:
->>> dev_pm_opp_set_rate() needs a reference to the regulator which should be
->>> updated when updating the GPU frequency. The name of the regulator has
->>> to be passed at initialization-time using dev_pm_opp_set_regulators().
->>> Add the call to dev_pm_opp_set_regulators() so dev_pm_opp_set_rate()
->>> will update the GPU regulator when updating the frequency (just like
->>> we did this manually before when we open-coded dev_pm_opp_set_rate()).
->>
->> This patch causes a warning from debugfs on my firefly (RK3288) board:
->>
->> debugfs: Directory 'ffa30000.gpu-mali' with parent 'vdd_gpu' already
->> present!
->>
->> So it looks like the regulator is being added twice - but I haven't
->> investigated further.
-> I *think* it's because the regulator is already fetched by the
-> panfrost driver itself to enable it
-> (the devfreq code currently does not support enabling the regulator,
-> it can only control the voltage)
+Hi Shawn,
+
+Thank you for your notice.
+In that case I think that I produce a version 2 "light",
+where I address only a small amount of the TODO's and leave all other
+things up to you, so that you can do what suits you best.
+Hope that RK3066 support for MTD can be included.(Linux and Uboot)
+
+Thanks
+
+On 1/13/20 2:55 AM, Shawn Lin wrote:
+
 > 
-> I'm not sure what to do about this though
-
-Having a little play around with this, I think you can simply remove the
-panfrost_regulator_init() call. This at least works for me - the call to
-dev_pm_opp_set_regulators() seems to set everything up. However I
-suspect you need to do this unconditionally even if there are no
-operating points defined.
-
-> [...]
->>>       ret = dev_pm_opp_of_add_table(dev);
->>> -     if (ret)
->>> +     if (ret) {
->>> +             dev_pm_opp_put_regulators(pfdev->devfreq.regulators_opp_table);
->>
->> If we don't have a regulator then regulators_opp_table will be NULL and
->> sadly dev_pm_opp_put_regulators() doesn't handle a NULL argument. The
->> same applies to the two below calls obviously.
-> good catch, thank you!
-> are you happy with the general approach here or do you think that
-> dev_pm_opp_set_regulators is the wrong way to go (for whatever
-> reason)?
-
-To be honest this is an area I still don't fully understand. There's a
-lot of magic helper functions and very little in the way of helpful
-documentation to work out which are the right ones to call. It seems
-reasonable to me, hopefully someone more in the know will chime in it
-there's something fundamentally wrong!
-
-Thanks,
-
-Steve
+> Hi Johan,
+> 
+> I loop in the author of the original NANDC driver who is now gonna to
+> develop a new version of NANDC driver in near future that supports more
+> features like bad block supoort. Maybe he could share his TODO.
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
