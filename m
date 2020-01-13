@@ -2,49 +2,57 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF3F2138E55
-	for <lists+linux-rockchip@lfdr.de>; Mon, 13 Jan 2020 10:57:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A5DE138EFF
+	for <lists+linux-rockchip@lfdr.de>; Mon, 13 Jan 2020 11:27:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=edeBb0kc8mUEA/9m5z9234vxCLMNWKamd9WGvDV5PRU=; b=sfnvvXattojTzg
-	hPwstSUeQopZsEl5h/d4gF0iA+OtBYDuQqG3bcuBX1+X3dLoCrlbbg4FnzfdTyaXSbde2iVk6iHdp
-	9f6Daiu/VT3hlX5iPhIkt/oAJ+fE3SsiikF5ryUXfuoLVLZ7YO/WPgtZ5ml5vPVrTt1PbnjAfMeRU
-	blfQ+eT5+3YqFMSldMkpophBPsPxc1cKs9EeERB9u61QmSMt29CaMisQlETeIiBGsWCRUBYQGzJKe
-	T9cv6Fd4HhnsYkvvCYL8C1EEfJ/qXKe1NR4xwF7tA13CgG7k4upojeVGuwLFKRnif6AsNoK9qSZyb
-	7LtES/Ifa0MhRdM8OXow==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RDXgD0pXt3UhzEP8BHBsj7+ZhX7WK2CLmh1KAPgz4TA=; b=Aubz00ZsLSBcLynj9eUOsh7Ff
+	BsCRbIl+bVt494o6LTq6b9HA9XDX5LgmXLDi7I+WFQ81nLxZIxtAhi1xIjl/TLekRkN/70GQAve/F
+	C9jNtWQsD9zDUIrvPzCZfNjX4QgoQttZyHsCFHvoB/5j3CSZtiwY28asobq49Tv+Hfh6C0JX4t8gK
+	SCw8iw+F07ahJvwN99juHXuPj40u4qVC285xSoqC+rV+wMtat7GGi7QCbjAUpqiL70MNeThOKR2uM
+	kd9nv8oYMEgWjufvItL0HC0s//iF5mgdV1QPTmcb/AELmaePmsUiiXH/B/gokIs62j9r+TcJhor33
+	97Xx3+AwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqwTZ-0007nL-SG; Mon, 13 Jan 2020 09:57:37 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqwTM-0007dP-DE; Mon, 13 Jan 2020 09:57:25 +0000
-Received: from wf0253.dip.tu-dresden.de ([141.76.180.253] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <heiko@sntech.de>)
- id 1iqwTL-0002BQ-3R; Mon, 13 Jan 2020 10:57:23 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: Add GPU cooling device for RK3399
-Date: Mon, 13 Jan 2020 10:57:22 +0100
-Message-ID: <2721205.SfLTEEbdde@phil>
-In-Reply-To: <cb905e17526d846d6d35fb86fbd3c8ba4af4cdaf.1574974673.git.robin.murphy@arm.com>
-References: <cb905e17526d846d6d35fb86fbd3c8ba4af4cdaf.1574974673.git.robin.murphy@arm.com>
+	id 1iqwwX-0000KG-BS; Mon, 13 Jan 2020 10:27:33 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iqwwI-0000Ab-0S; Mon, 13 Jan 2020 10:27:20 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6570413D5;
+ Mon, 13 Jan 2020 02:27:15 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5AC473F534;
+ Mon, 13 Jan 2020 02:27:14 -0800 (PST)
+Subject: Re: [PATCH] arm64: dts: rockchip: add reg property to brcmf sub node
+To: Heiko Stuebner <heiko@sntech.de>, Johan Jonker <jbx6244@gmail.com>
+References: <20200110142128.13522-1-jbx6244@gmail.com>
+ <CA+z=w3UjX71Nw7W+iiGkQh=UJkPMsEn1phSdp25d--O8QM-ETQ@mail.gmail.com>
+ <2116127.mXfZQK7onI@phil>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <6159eaa4-4729-0c3d-0967-e855e2652772@arm.com>
+Date: Mon, 13 Jan 2020 10:27:12 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <2116127.mXfZQK7onI@phil>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_015724_596102_5E0850B1 
-X-CRM114-Status: GOOD (  10.04  )
+X-CRM114-CacheID: sfid-20200113_022718_096899_326CCD8B 
+X-CRM114-Status: GOOD (  13.38  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,25 +65,41 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Donnerstag, 28. November 2019, 21:59:27 CET schrieb Robin Murphy:
-> As for RK3288, now that we have a binding for the GPU we can
-> hook up the missing cooling device for the thermal zone.
+On 13/01/2020 9:26 am, Heiko Stuebner wrote:
+> Hi Johan,
 > 
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> Am Freitag, 10. Januar 2020, 16:40:24 CET schrieb Johan Jonker:
+>> Hi,
+>>
+>> Question for Heiko or rob+dt.
+>> Where would should #address-cells and #size-cells go in the dts or to the dtsi.
+>> In case they become required in a futhure rockchip-dw-mshc.yaml?
+>> ie. Should we patch all XXX rockchip,rk3288-dw-mshc nodes with them?
+> 
+> I don't think it is a required property for the dw-mmc itself, as only
+> in special-cases do you need subnodes there. Like emmc and sd-cards
+> are completely probeable without needing further information and
+> only the wifi/bt chips _might_ need these.
+> 
+> So I don't think that this is a property of the controller itself, but te
+> connected card - hence should stay in the board file.
 
-applied for 5.6
-(and already in arm-soc)
+Indeed, and in general dtc already warns about those properties being 
+present unnecessarily, e.g.:
 
-Thanks
-Heiko
+arch/arm64/boot/dts/rockchip/rk3399.dtsi:1812.27-1847.4: Warning 
+(avoid_unnecessary_addr_size): /mipi@ff968000: unnecessary 
+#address-cells/#size-cells without "ranges" or child "reg" property
 
-
+Robin.
 
 _______________________________________________
 Linux-rockchip mailing list
