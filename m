@@ -2,84 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B6531393FD
-	for <lists+linux-rockchip@lfdr.de>; Mon, 13 Jan 2020 15:52:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B354B1394C4
+	for <lists+linux-rockchip@lfdr.de>; Mon, 13 Jan 2020 16:27:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PjOzyvjnmFLm0cRh+ET5x1XG9eRz3BHkRn7YBE+9Qhk=; b=tTjRoRgDLzDRBk
-	rERAG0Cfp/v9wd6AhdiDXj5se0qaOcMGZ9i7zde2F4JxLp0GwnSca4KUQDGE5ksLFMsHsb2o1yiYB
-	+e3sYdEGn4p28YKsg/MNylw72VdhhryCeydG+zLnyIYIyFw6/VJfgl7zjot7srMMd8Tbl+xW2efzu
-	+LfZORzJQiubTUUswXXbpYJPHRf4mQ1830UMEHDtcnkz52GX6uiOTj6KucMUS522g3yobL1TKsvUj
-	zDuB9t55LdNp4sMJbLCGwvAC2sbvF2dKhUbV23N3mZFTcIqJlFVuYN4aa+TRPlevp6Trsznrfsbcg
-	SC9RxL+8RaaUJ8KP5gsg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=b0AT0g8slPptWnmLbYVzARWaKniHm/bIkcXWMk0R9jw=; b=SIB3yUZfmAAh++
+	801YfV6ShrwoWlR6WkmFpT0DVdjZv5MWtgFM/g609loZSLDJEaqWfItTc4/4qa4eaLNgvjyCzKzn8
+	xSEgrE9yzOY/+xMP3aXkkBtgTmCjrCo9XUNs91poNxbIy4CSYTFd7zX3MPwv3GgaRWfM0T4fDgoem
+	wLYy3+STjhnVXEeUQPlOCLzi/qgiFzq2eN6x20B4RwDv/1RLzAHpsdWW5pdCvHZ/xieaZi5CrSjh7
+	AKdwgUj+of7a/GrfX5sy9VWiVuW5e3U/so6KXA895kdfwPzuEltV4LzqxSQj/XACzWUF/WkTNhOt3
+	9srMweZtOzAym5hxaLUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir14Z-0000fw-RY; Mon, 13 Jan 2020 14:52:07 +0000
-Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1ir1ce-0002dc-KT; Mon, 13 Jan 2020 15:27:20 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir14X-0000er-1E
- for linux-rockchip@lists.infradead.org; Mon, 13 Jan 2020 14:52:06 +0000
-Received: by mail-il1-x141.google.com with SMTP id c4so8375604ilo.7
- for <linux-rockchip@lists.infradead.org>; Mon, 13 Jan 2020 06:52:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=YX2j6/aVYY0oyXSlbbCOKmU+Ff+R7PXUUFucGLtqEZc=;
- b=pD54b2vF0OL3APyGS2FYWquHYvbSHt2+mDz0qqZYJVJKS4xrJEU3kGi9UQAQui03aP
- oPxoThY+/eB3UiBL63ipXM0eyzZW8Yg0WvXiVe14BeqC2dBJOMA1D13T+viEgaShwfCC
- 3+jdDcJxFZ9PUdbfKr5VlpJoAwdcMnZ8RbUGYKR8e8sAW6tmzASNLJWHVEsPQXp7FuSM
- gr4Emm85qKxkNitHkdeoE4GZSIEw92HAjxpXIDhle9/Mu6BEsx/pllKJnyvmPECsU9/K
- v654FIVxSz5HuaQOfKF55qNMUIQyTqQ6Sm0Sg4m+MEW4COFiwkyeZoTAYhDgwE7NjKT2
- LXCw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=YX2j6/aVYY0oyXSlbbCOKmU+Ff+R7PXUUFucGLtqEZc=;
- b=EywIznQ7WrgKGvsfRGJG93ncGYFfOmMuZFUXLc59tktIZAK6WC+t1TsR3sIBHnV36z
- olOUnE0Y+o3x8Cc/CgNDUOLCSgHCSJI6OEEvav/7p+mnFpLQUZINrOrLQwSnhrv/BjSu
- Q1jXw1EMP6fBPT63LwpPXWR/N+HjbzSuXmy3hpW5Os15g//mCzB+AzF+vvY+KiCInrV8
- JicLtKYMbWkTxSyDoYGBn2P/A/9XtOj+DJBgzVtnMl/WnOL5Fl5ezsfk1FxrrjT4KALY
- I3oFSavwC++yWdOBiEEF1gBTu+kNpI8K27E+Z7GCtpHLGc9Nrv5jywMLK+dkjUpn7hOT
- p4eA==
-X-Gm-Message-State: APjAAAWQmzCYqViUBJJ5jsHgUNdHmoZ7MmUSvwkZ2z5HYWNk5JvLx49d
- laujxYwrUPRb3Ogd+g4GwDuXo51U7/AnOwv5Il8=
-X-Google-Smtp-Source: APXvYqyt+vEO+HWXZFJbDJmsViNsAKH88qGkQ/e/5oAuQgR33TSr56D6tCedpeUHpa+P2JqBu9+hmpBQr0J05fwog3s=
-X-Received: by 2002:a92:390c:: with SMTP id g12mr14496630ila.246.1578927123873; 
- Mon, 13 Jan 2020 06:52:03 -0800 (PST)
+ id 1ir1cU-0002Wj-OO; Mon, 13 Jan 2020 15:27:12 +0000
+Received: from wf0253.dip.tu-dresden.de ([141.76.180.253] helo=phil.sntech)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1ir1cQ-0003Zh-SO; Mon, 13 Jan 2020 16:27:06 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: linux-clk@vger.kernel.org
+Subject: [PATCH] clk: rockchip: convert rk3036 pll type to use internal lock
+ status
+Date: Mon, 13 Jan 2020 16:26:56 +0100
+Message-Id: <20200113152656.2313846-1-heiko@sntech.de>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-References: <cover.1578789410.git.robin.murphy@arm.com>
-In-Reply-To: <cover.1578789410.git.robin.murphy@arm.com>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Mon, 13 Jan 2020 20:21:53 +0530
-Message-ID: <CANAwSgTTx3TvtxWgp1E3LW15ejc06v7jiKg7xg_95GwuuVtb+w@mail.gmail.com>
-Subject: Re: [PATCH v2 0/5] mfd: RK8xx tidyup
-To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_065205_075945_665A7020 
-X-CRM114-Status: GOOD (  10.29  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200113_072710_963680_093DA0E4 
+X-CRM114-Status: GOOD (  12.67  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (linux.amoon[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,58 +56,84 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Soeren Moch <smoch@web.de>,
- Lee Jones <lee.jones@linaro.org>, Linux Kernel <linux-kernel@vger.kernel.org>,
- Heiko Stuebner <heiko@sntech.de>
+Cc: heiko@sntech.de, sboyd@kernel.org,
+ Heiko Stuebner <heiko.stuebner@theobroma-systems.com>, mturquette@baylibre.com,
+ zhangqing@rock-chips.com, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ christoph.muellner@theobroma-systems.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Robin,
+From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 
-On Sun, 12 Jan 2020 at 07:25, Robin Murphy <robin.murphy@arm.com> wrote:
->
-> Hi all,
->
-> Here's a second crack at my RK805-inspired cleanup. There was a bit
-> of debate around v1[1], but it seems like we're now all happy that this
-> is a reasonable way to go. For clarity I decided to include Soeren's
-> patch as #1/5, but since I've rewritten most of my patches I've not
-> included the tested-by tags.
->
-> Robin.
->
-> [1] https://lore.kernel.org/lkml/cover.1575932654.git.robin.murphy@arm.com/
->
+The rk3036 pll type exposes its lock status in both its pllcon registers
+as well as the General Register Files. To remove one dependency convert
+it to the "internal" lock status, similar to how rk3399 handles it.
 
-Despite the i2c warning message  it performs clean shutdown. So Please add my
+Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+---
+ drivers/clk/rockchip/clk-pll.c | 24 +++++++++++++++++++++---
+ 1 file changed, 21 insertions(+), 3 deletions(-)
 
-Tested-by: Anand Moon <linux.amoon@gmail.com>
+diff --git a/drivers/clk/rockchip/clk-pll.c b/drivers/clk/rockchip/clk-pll.c
+index 198417d56300..37378ded0993 100644
+--- a/drivers/clk/rockchip/clk-pll.c
++++ b/drivers/clk/rockchip/clk-pll.c
+@@ -118,12 +118,30 @@ static int rockchip_pll_wait_lock(struct rockchip_clk_pll *pll)
+ #define RK3036_PLLCON1_REFDIV_SHIFT		0
+ #define RK3036_PLLCON1_POSTDIV2_MASK		0x7
+ #define RK3036_PLLCON1_POSTDIV2_SHIFT		6
++#define RK3036_PLLCON1_LOCK_STATUS		BIT(10)
+ #define RK3036_PLLCON1_DSMPD_MASK		0x1
+ #define RK3036_PLLCON1_DSMPD_SHIFT		12
++#define RK3036_PLLCON1_PWRDOWN			BIT(13)
+ #define RK3036_PLLCON2_FRAC_MASK		0xffffff
+ #define RK3036_PLLCON2_FRAC_SHIFT		0
+ 
+-#define RK3036_PLLCON1_PWRDOWN			(1 << 13)
++static int rockchip_rk3036_pll_wait_lock(struct rockchip_clk_pll *pll)
++{
++	u32 pllcon;
++	int delay = 24000000;
++
++	/* poll check the lock status in rk3399 xPLLCON2 */
++	while (delay > 0) {
++		pllcon = readl_relaxed(pll->reg_base + RK3036_PLLCON(1));
++		if (pllcon & RK3036_PLLCON1_LOCK_STATUS)
++			return 0;
++
++		delay--;
++	}
++
++	pr_err("%s: timeout waiting for pll to lock\n", __func__);
++	return -ETIMEDOUT;
++}
+ 
+ static void rockchip_rk3036_pll_get_params(struct rockchip_clk_pll *pll,
+ 					struct rockchip_pll_rate_table *rate)
+@@ -221,7 +239,7 @@ static int rockchip_rk3036_pll_set_params(struct rockchip_clk_pll *pll,
+ 	writel_relaxed(pllcon, pll->reg_base + RK3036_PLLCON(2));
+ 
+ 	/* wait for the pll to lock */
+-	ret = rockchip_pll_wait_lock(pll);
++	ret = rockchip_rk3036_pll_wait_lock(pll);
+ 	if (ret) {
+ 		pr_warn("%s: pll update unsuccessful, trying to restore old params\n",
+ 			__func__);
+@@ -260,7 +278,7 @@ static int rockchip_rk3036_pll_enable(struct clk_hw *hw)
+ 
+ 	writel(HIWORD_UPDATE(0, RK3036_PLLCON1_PWRDOWN, 0),
+ 	       pll->reg_base + RK3036_PLLCON(1));
+-	rockchip_pll_wait_lock(pll);
++	rockchip_rk3036_pll_wait_lock(pll);
+ 
+ 	return 0;
+ }
+-- 
+2.24.1
 
--Anand
-
-> Robin Murphy (4):
->   mfd: rk808: Ensure suspend/resume hooks always work
->   mfd: rk808: Stop using syscore ops
->   mfd: rk808: Reduce shutdown duplication
->   mfd: rk808: Convert RK805 to shutdown/suspend hooks
->
-> Soeren Moch (1):
->   mfd: rk808: Always use poweroff when requested
->
->  drivers/mfd/rk808.c       | 139 +++++++++++++-------------------------
->  include/linux/mfd/rk808.h |   2 -
->  2 files changed, 48 insertions(+), 93 deletions(-)
->
-> --
-> 2.17.1
->
->
-> _______________________________________________
-> Linux-rockchip mailing list
-> Linux-rockchip@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
 _______________________________________________
 Linux-rockchip mailing list
