@@ -2,75 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A63A13895F
-	for <lists+linux-rockchip@lfdr.de>; Mon, 13 Jan 2020 02:56:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5E0B138D47
+	for <lists+linux-rockchip@lfdr.de>; Mon, 13 Jan 2020 09:57:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Ep4XrtDtOQef9fxT3gU5wjHzNz4ikV+mvYGJjpb9Xy4=; b=KpHysecsfofkgjlPzNAsSsNTn
-	wGdnAa98AkqsZ01tZ3GOB7RlbwPTClcs5hefRhezFAIEdRJXi52mp9yVX3h9JtOXEOupKTt3pVZO4
-	yTj8G4AFvQ/5Y1j2+vNseogoYdK66o/Mez7ld5TVRQOTSrN3FagvBzwoQOrvgy2vfoEiIue5xFjTw
-	Vm1qlMWACtfWGBzwKxP19GDffdg/KOxxwvXDlpYVGjUgU8QIuvhqOmnPw+jI5Adv81/Cpt4vorkxF
-	aBkqGQ0JUHAY0eWUL+MEfqNG76l0eu1kDCDwUa+kBTKqo97eRlk41z5fgMRbeNHakuKof3rCkqU1L
-	blVuzWVQA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=13TtbOhUWMiUYf+Gwa8AXuf31g183yR6U4Qs3mWA2Y8=; b=hSmxHJMIXJqqVc
+	bdzpWIRcTM+QgvbVGd8TGjKIyI9Qr9QHCRdDRKMrXQkc4rIvzM+w2sQ+qn/vRwNCMwP81cZijig9q
+	F3fgiBYj6zMHKrQfCuOCU5d5EYUrlOpGnsMObHJPkFdm1sJbSTZPs2f7jt09zDIir4EOtNcP9PdV+
+	mJ8aaeFrpZCpm6d94lq3YyM6Seff26b8B3T1eio9yx8HyKXAL2cbeuuStOTygxSLBoVIuLdBfqzEm
+	eOPvD1K4kSkpthUo8cl8kC8DyiS9JzOV3OmPtTuxV74XqVLZD8UAA97C3E4ss9dTiBdvwigalbe5G
+	2SAYZYk8hxwAkm2z6syA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqoxb-0003HS-9v; Mon, 13 Jan 2020 01:56:07 +0000
-Received: from lucky1.263xmail.com ([211.157.147.135])
+	id 1iqvWs-0001VI-Ui; Mon, 13 Jan 2020 08:56:58 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqoxB-0002rl-SQ; Mon, 13 Jan 2020 01:55:43 +0000
-Received: from localhost (unknown [192.168.167.32])
- by lucky1.263xmail.com (Postfix) with ESMTP id D031C4FED9;
- Mon, 13 Jan 2020 09:55:29 +0800 (CST)
-X-MAIL-GRAY: 1
-X-MAIL-DELIVERY: 0
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-SKE-CHECKED: 1
-X-ABS-CHECKED: 1
-Received: from [172.16.12.37] (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P42449T140532558391040S1578880527820565_; 
- Mon, 13 Jan 2020 09:55:28 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <94200a1cdef87e531379bdde04cd5b27>
-X-RL-SENDER: shawn.lin@rock-chips.com
-X-SENDER: lintao@rock-chips.com
-X-LOGIN-NAME: shawn.lin@rock-chips.com
-X-FST-TO: zyf@rock-chips.com
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-Subject: =?UTF-8?Q?Re=3a_=5bRFC_PATCH_v1_00/10=5d_Enable_RK3066_NANDC_for_MK?=
- =?UTF-8?B?ODA444CQ6K+35rOo5oSP77yM6YKu5Lu255SxbGludXgtcm9ja2NoaXAtYm91bmNl?=
- =?UTF-8?Q?s+shawn=2elin=3drock-chips=2ecom=40lists=2einfradead=2eorg?=
- =?UTF-8?B?5Luj5Y+R44CR?=
-To: Johan Jonker <jbx6244@gmail.com>, miquel.raynal@bootlin.com
-References: <20200108205338.11369-1-jbx6244@gmail.com>
-From: Shawn Lin <shawn.lin@rock-chips.com>
-Message-ID: <aad92eb5-00ed-5071-c206-491eff243537@rock-chips.com>
-Date: Mon, 13 Jan 2020 09:55:28 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
+ id 1iqvWg-0001NZ-Jo; Mon, 13 Jan 2020 08:56:48 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00D8uPmw052759;
+ Mon, 13 Jan 2020 02:56:25 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1578905785;
+ bh=qiluW+qBpvQyARnjqX2JEhlxa6K7JfbnE7vKlMFGKsQ=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=rYZZxqHUR9N6nLKtsz38/NT5IEKxu8f9c1YxZL9P8v4I0w5+jmY2yA0ez7Q6zyJKp
+ pyNkqSeWVw4w1aHLDlCFPt7dNX3XcYKPred2L+ha0F+yxZi3sGUARnEdBOpBD7GgGE
+ Y58DBXtybW3uCVrjHg/Cy0PdnHf5Uyuk0E9rsh7U=
+Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00D8uPvS120096;
+ Mon, 13 Jan 2020 02:56:25 -0600
+Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 13
+ Jan 2020 02:56:24 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE110.ent.ti.com
+ (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Mon, 13 Jan 2020 02:56:24 -0600
+Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00D8uGnf076383;
+ Mon, 13 Jan 2020 02:56:17 -0600
+Subject: Re: [v3 3/6] PCI: endpoint: Add support to handle multiple base for
+ mapping outbound memory
+To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+References: <20200108162211.22358-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200108162211.22358-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <53d74632-34ee-f7f7-656f-a93a6c10e7ba@ti.com>
+ <CA+V-a8tHkqkxE_5DMtt6PbJyGz1vfKZUezE5nOFmJXarJAugkw@mail.gmail.com>
+From: Kishon Vijay Abraham I <kishon@ti.com>
+Message-ID: <2b4dd351-76ee-60bd-bd91-20d5f1ac4e79@ti.com>
+Date: Mon, 13 Jan 2020 14:28:26 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200108205338.11369-1-jbx6244@gmail.com>
+In-Reply-To: <CA+V-a8tHkqkxE_5DMtt6PbJyGz1vfKZUezE5nOFmJXarJAugkw@mail.gmail.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_175542_402669_71DA381E 
-X-CRM114-Status: GOOD (  22.03  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20200113_005646_797904_C1102F2D 
+X-CRM114-Status: GOOD (  26.71  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.135 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,131 +94,249 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, vigneshr@ti.com,
- richard@nod.at, shawn.lin@rock-chips.com, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- linux-mtd@lists.infradead.org,
- =?UTF-8?B?6LW15Luq5bOw?= <yifeng.zhao@rock-chips.com>,
- linux-arm-kernel@lists.infradead.org, heiko@sntech.de
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-pci <linux-pci@vger.kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
+ Magnus Damm <magnus.damm@gmail.com>, "open
+ list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE
+ BINDINGS" <devicetree@vger.kernel.org>,
+ Chris Paterson <Chris.Paterson2@renesas.com>, Arnd Bergmann <arnd@arndb.de>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Rob Herring <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ LAK <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
+ Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-+ Yifeng Zhao
+Hi Prabhakar,
 
-On 2020/1/9 4:53, Johan Jonker wrote:
-> DISCLAIMER: Use at your own risk.
-> Status: For testing only!
+On 10/01/20 11:38 PM, Lad, Prabhakar wrote:
+> Hi Kishon,
 > 
-> Version: V1
+> Thank you for the review.
 > 
-> Title: Enable RK3066 NANDC for MK808.
+> On Thu, Jan 9, 2020 at 6:25 AM Kishon Vijay Abraham I <kishon@ti.com> wrote:
+>>
+>> Hi Prabhakar,
+>>
+>> On 08/01/20 9:52 PM, Lad Prabhakar wrote:
+>>> R-Car PCIe controller has support to map multiple memory regions for
+>>> mapping the outbound memory in local system also the controller limits
+>>> single allocation for each region (that is, once a chunk is used from the
+>>> region it cannot be used to allocate a new one). This features inspires to
+>>> add support for handling multiple memory bases in endpoint framework.
+>>>
+>>> With this patch pci_epc_mem_init() now accepts multiple regions, also
+>>> page_size for each memory region is passed during initialization so as
+>>> to handle single allocation for each region by setting the page_size to
+>>> window_size.
+>>>
+>>> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+>>> ---
+>>>  .../pci/controller/cadence/pcie-cadence-ep.c  |  12 +-
+>>>  .../pci/controller/dwc/pcie-designware-ep.c   |  31 ++-
+>>>  drivers/pci/controller/pcie-rockchip-ep.c     |  14 +-
+>>>  drivers/pci/endpoint/functions/pci-epf-test.c |  29 +--
+>>>  drivers/pci/endpoint/pci-epc-core.c           |   7 +-
+>>>  drivers/pci/endpoint/pci-epc-mem.c            | 199 ++++++++++++++----
+>>>  include/linux/pci-epc.h                       |  46 ++--
+>>>  7 files changed, 245 insertions(+), 93 deletions(-)
+>>>
+>> .
+>> .
+>> <snip>
+>> .
+>> .
+>>> diff --git a/drivers/pci/endpoint/pci-epc-core.c b/drivers/pci/endpoint/pci-epc-core.c
+>>> index 2091508c1620..289c266c2d90 100644
+>>> --- a/drivers/pci/endpoint/pci-epc-core.c
+>>> +++ b/drivers/pci/endpoint/pci-epc-core.c
+>>> @@ -358,13 +358,15 @@ EXPORT_SYMBOL_GPL(pci_epc_unmap_addr);
+>>>   * @epc: the EPC device on which address is allocated
+>>>   * @func_no: the endpoint function number in the EPC device
+>>>   * @phys_addr: physical address of the local system
+>>> + * @window: index to the window region where PCI address will be mapped
+>>>   * @pci_addr: PCI address to which the physical address should be mapped
+>>>   * @size: the size of the allocation
+>>>   *
+>>>   * Invoke to map CPU address with PCI address.
+>>>   */
+>>>  int pci_epc_map_addr(struct pci_epc *epc, u8 func_no,
+>>> -                  phys_addr_t phys_addr, u64 pci_addr, size_t size)
+>>> +                  phys_addr_t phys_addr, int window,
+>>> +                  u64 pci_addr, size_t size)
+>>>  {
+>>>       int ret;
+>>>       unsigned long flags;
+>>> @@ -376,7 +378,8 @@ int pci_epc_map_addr(struct pci_epc *epc, u8 func_no,
+>>>               return 0;
+>>>
+>>>       spin_lock_irqsave(&epc->lock, flags);
+>>> -     ret = epc->ops->map_addr(epc, func_no, phys_addr, pci_addr, size);
+>>> +     ret = epc->ops->map_addr(epc, func_no, phys_addr,
+>>> +                              window, pci_addr, size);
+>>>       spin_unlock_irqrestore(&epc->lock, flags);
+>>>
+>>>       return ret;
+>>> diff --git a/drivers/pci/endpoint/pci-epc-mem.c b/drivers/pci/endpoint/pci-epc-mem.c
+>>> index d2b174ce15de..f205f7819292 100644
+>>> --- a/drivers/pci/endpoint/pci-epc-mem.c
+>>> +++ b/drivers/pci/endpoint/pci-epc-mem.c
+>>> @@ -38,57 +38,77 @@ static int pci_epc_mem_get_order(struct pci_epc_mem *mem, size_t size)
+>>>  /**
+>>>   * __pci_epc_mem_init() - initialize the pci_epc_mem structure
+>>>   * @epc: the EPC device that invoked pci_epc_mem_init
+>>> - * @phys_base: the physical address of the base
+>>> - * @size: the size of the address space
+>>> - * @page_size: size of each page
+>>> + * @windows: pointer to windows supported by the device
+>>> + * @num_windows: number of windows device supports
+>>>   *
+>>>   * Invoke to initialize the pci_epc_mem structure used by the
+>>>   * endpoint functions to allocate mapped PCI address.
+>>>   */
+>>> -int __pci_epc_mem_init(struct pci_epc *epc, phys_addr_t phys_base, size_t size,
+>>> -                    size_t page_size)
+>>> +int __pci_epc_mem_init(struct pci_epc *epc, struct pci_epc_mem_window *windows,
+>>> +                    int num_windows)
+>>>  {
+>>> -     int ret;
+>>> -     struct pci_epc_mem *mem;
+>>> -     unsigned long *bitmap;
+>>> +     struct pci_epc_mem *mem = NULL;
+>>> +     unsigned long *bitmap = NULL;
+>>>       unsigned int page_shift;
+>>> -     int pages;
+>>> +     size_t page_size;
+>>>       int bitmap_size;
+>>> +     int pages;
+>>> +     int ret;
+>>> +     int i;
+>>>
+>>> -     if (page_size < PAGE_SIZE)
+>>> -             page_size = PAGE_SIZE;
+>>> +     epc->mem_windows = 0;
+>>>
+>>> -     page_shift = ilog2(page_size);
+>>> -     pages = size >> page_shift;
+>>> -     bitmap_size = BITS_TO_LONGS(pages) * sizeof(long);
+>>> +     if (!windows)
+>>> +             return -EINVAL;
+>>>
+>>> -     mem = kzalloc(sizeof(*mem), GFP_KERNEL);
+>>> -     if (!mem) {
+>>> -             ret = -ENOMEM;
+>>> -             goto err;
+>>> -     }
+>>> +     if (num_windows <= 0)
+>>> +             return -EINVAL;
+>>>
+>>> -     bitmap = kzalloc(bitmap_size, GFP_KERNEL);
+>>> -     if (!bitmap) {
+>>> -             ret = -ENOMEM;
+>>> -             goto err_mem;
+>>> -     }
+>>> +     epc->mem = kcalloc(num_windows, sizeof(*mem), GFP_KERNEL);
+>>> +     if (!epc->mem)
+>>> +             return -EINVAL;
+>>> +
+>>> +     for (i = 0; i < num_windows; i++) {
+>>> +             page_size = windows[i].page_size;
+>>> +             if (page_size < PAGE_SIZE)
+>>> +                     page_size = PAGE_SIZE;
+>>> +             page_shift = ilog2(page_size);
+>>> +             pages = windows[i].size >> page_shift;
+>>> +             bitmap_size = BITS_TO_LONGS(pages) * sizeof(long);
+>>> +
+>>> +             mem = kzalloc(sizeof(*mem), GFP_KERNEL);
+>>> +             if (!mem) {
+>>> +                     ret = -ENOMEM;
+>>> +                     goto err_mem;
+>>> +             }
+>>>
+>>> -     mem->bitmap = bitmap;
+>>> -     mem->phys_base = phys_base;
+>>> -     mem->page_size = page_size;
+>>> -     mem->pages = pages;
+>>> -     mem->size = size;
+>>> +             bitmap = kzalloc(bitmap_size, GFP_KERNEL);
+>>> +             if (!bitmap) {
+>>> +                     ret = -ENOMEM;
+>>> +                     goto err_mem;
+>>> +             }
+>>>
+>>> -     epc->mem = mem;
+>>> +             mem->bitmap = bitmap;
+>>> +             mem->window.phys_base = windows[i].phys_base;
+>>> +             mem->page_size = page_size;
+>>> +             mem->pages = pages;
+>>> +             mem->window.size = windows[i].size;
+>>> +             mem->window.map_size = 0;
+>>> +
+>>> +             epc->mem[i] = mem;
+>>> +     }
+>>> +     epc->mem_windows = num_windows;
+>>>
+>>>       return 0;
+>>>
+>>>  err_mem:
+>>> -     kfree(mem);
+>>> +     for (; i >= 0; i--) {
+>>
+>> mem has to be reinitialized for every iteration of the loop.
+> not sure what exactly you mean here, could you please elaborate.
+
+You are invoking "kfree(mem->bitmap);" in a loop without re-initializing
+mem. Refer pci_epc_mem_exit() where you are doing the free properly.
+
 > 
-> The majority of Rockchip devices use a closed source FTL driver
-> to reduce wear leveling. This patch serie proposes
-> an experimental raw NAND controller driver for basic tasks
-> in order to get the bindings and the nodes accepted for in the dts files.
-> 
-> What does it do:
-> 
-> On module load this driver will reserve its resources.
-> After initialization the MTD framework will then try to detect
-> the type and number of NAND chips. When all conditions are met,
-> it registers it self as MTD device.
-> This driver is then ready to receive user commands
-> such as to read and write NAND pages.
-> 
-> Test examples:
-> 
-> # dd if-/dev/mtd0 of=dd.bin bs=8192 count=4
-> 
-> # nanddump -a -l 32768 -f nanddump.bin /dev/mtd0
-> 
-> Not tested:
-> 
-> NANDC version 9.
-> NAND raw write.
-> RK3066 still has no support for Uboot.
-> Any write command would interfere with data structures made by the boot loader.
-> 
-> Etc.
-> 
-> Problems:
-> 
-> No bad block support. Most devices use a FTL bad block map with tags
-> that must be located on specific page locations which is outside
-> the scope of the raw MTD framework.
-> 
+>>> +             kfree(mem->bitmap);
+>>> +             kfree(epc->mem[i]);
+>>> +     }
+>>> +     kfree(epc->mem);
+>>>
+>>> -err:
+>>> -return ret;
+>>> +     return ret;
+>>>  }
+>>>  EXPORT_SYMBOL_GPL(__pci_epc_mem_init);
+>>>
+>>> @@ -101,48 +121,127 @@ EXPORT_SYMBOL_GPL(__pci_epc_mem_init);
+>>>   */
+>>>  void pci_epc_mem_exit(struct pci_epc *epc)
+>>>  {
+>>> -     struct pci_epc_mem *mem = epc->mem;
+>>> +     struct pci_epc_mem *mem;
+>>> +     int i;
+>>> +
+>>> +     if (!epc->mem_windows)
+>>> +             return;
+>>> +
+>>> +     for (i = 0; i <= epc->mem_windows; i++) {
+>>> +             mem = epc->mem[i];
+
+Missing the above line in the error handling above.
 
 
-Hi Johan,
+>>> +             kfree(mem->bitmap);
+>>> +             kfree(epc->mem[i]);
+>>> +     }
 
-I loop in the author of the original NANDC driver who is now gonna to
-develop a new version of NANDC driver in near future that supports more
-features like bad block supoort. Maybe he could share his TODO.
-
-> No partition support. A FTL driver will store at random locations and
-> a linear user specific layout does not fit within
-> the generic character of this basic driver.
-> 
-> Etc.
-> 
-> Chris Zhong (1):
->    ARM: dts: rockchip: add nandc node for rk3066a/rk3188
-> 
-> Dingqiang Lin (2):
->    arm64: dts: rockchip: add nandc node for px30
->    arm64: dts: rockchip: add nandc node for rk3308
-> 
-> Jianqun Xu (1):
->    ARM: dts: rockchip: add nandc nodes for rk3288
-> 
-> Johan Jonker (2):
->    dt-bindings: mtd: add rockchip nand controller bindings
->    ARM: dts: rockchip: rk3066a-mk808: enable nandc node
-> 
-> Jon Lin (1):
->    ARM: dts: rockchip: add nandc node for rv1108
-> 
-> Wenping Zhang (1):
->    ARM: dts: rockchip: add nandc node for rk322x
-> 
-> Yifeng Zhao (1):
->    mtd: nand: raw: add rockchip nand controller driver
-> 
-> Zhaoyifeng (1):
->    arm64: dts: rockchip: add nandc node for rk3368
-> 
->   .../devicetree/bindings/mtd/rockchip,nandc.yaml    |   78 ++
->   arch/arm/boot/dts/rk3066a-mk808.dts                |    9 +
->   arch/arm/boot/dts/rk322x.dtsi                      |   11 +
->   arch/arm/boot/dts/rk3288.dtsi                      |   24 +
->   arch/arm/boot/dts/rk3xxx.dtsi                      |   11 +
->   arch/arm/boot/dts/rv1108.dtsi                      |   11 +
->   arch/arm64/boot/dts/rockchip/px30.dtsi             |   15 +
->   arch/arm64/boot/dts/rockchip/rk3308.dtsi           |   11 +
->   arch/arm64/boot/dts/rockchip/rk3368.dtsi           |   12 +
->   drivers/mtd/nand/raw/Kconfig                       |    8 +
->   drivers/mtd/nand/raw/Makefile                      |    1 +
->   drivers/mtd/nand/raw/rockchip_nandc.c              | 1224 ++++++++++++++++++++
->   12 files changed, 1415 insertions(+)
->   create mode 100644 Documentation/devicetree/bindings/mtd/rockchip,nandc.yaml
->   create mode 100644 drivers/mtd/nand/raw/rockchip_nandc.c
-> 
-> --
-> 2.11.0
-> 
-> 
-> _______________________________________________
-> Linux-rockchip mailing list
-> Linux-rockchip@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-rockchip
-> 
-> 
-> 
-
-
+Thanks
+Kishon
 
 _______________________________________________
 Linux-rockchip mailing list
