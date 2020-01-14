@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98CEF13A1A8
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Jan 2020 08:24:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DDA013A1B4
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Jan 2020 08:24:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,22 +11,22 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=f0WOAKLZ/mtkLU+uQNwOCz31Q+MSKFwWSRdycMMFGk8=; b=oHBaDLNHyR3rKM/wr9QxmvEnZq
-	MAd5rYCjekHAbcAzX4fpjNS3WECx6mkKfD7U9cbgWLhJ3RLvqia9OzJeNHV5HsWmmDI9+SlrFnEXu
-	OmV23Wo4hDQpRwWE5iWZ2EYBfJUgjv+X2ycRXZ2o90NPxC9CtX3QvrCrRZuS93/5TYIQNGBhV/XQj
-	88Xp72j1k4zF9+ws7xArG/69rSlihPgAUam8pgTOmRexDmmUkXOucL0ZWez+l0AsG/BCeW4ENM7L/
-	88TDnJxeukB39tK1CKJhsv64wG8XEBk8hIIXyTqDo+05WJH5whjOIPShKC234mW0ztSGK1NMRKUHK
-	sSOrlDkw==;
+	bh=U3EKU8+R9eFni8P2pElJYQ1d9iOZQIgvVbLZAUgAxSA=; b=Ik9ZpHWP1romdwwK9v5MK+7LzC
+	KuJUWDlLSgig8H8o76hh/c0o3frtlgi/n6llitXjn9MmZJLq7gQRXHN/lHzeDE7zaZuc7QmUyzUsR
+	nVSuEKJoq21vBw6Qdt+VAW/iEWHEHoG2oFTEB7a+s21XiHoN5Ya+FfTMQ0Ba5iTSvhmAGIyeTjpr/
+	qEeBu4nmmXCYqbCgMRff3uYpFJ9chswm1dWrrIesi6e2fVexa4pq7dHG3QmuWczqBEDbc6/LjLA7A
+	qGju+ITqB3XytRU1oQl7su089evl2eNIGXUnBsu8UUWUan+4iCvMtROwqyoJMmeSQuEUAcpOVrm0P
+	5nxSVXXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irGYx-0000mg-Oh; Tue, 14 Jan 2020 07:24:31 +0000
-Received: from lucky1.263xmail.com ([211.157.147.134])
+	id 1irGZD-0000r8-9a; Tue, 14 Jan 2020 07:24:47 +0000
+Received: from lucky1.263xmail.com ([211.157.147.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irGYu-0000m2-HP
- for linux-rockchip@lists.infradead.org; Tue, 14 Jan 2020 07:24:29 +0000
+ id 1irGZ9-0000qS-Qz
+ for linux-rockchip@lists.infradead.org; Tue, 14 Jan 2020 07:24:45 +0000
 Received: from localhost (unknown [192.168.167.16])
- by lucky1.263xmail.com (Postfix) with ESMTP id 983A34D08A;
- Tue, 14 Jan 2020 15:24:24 +0800 (CST)
+ by lucky1.263xmail.com (Postfix) with ESMTP id 124AC7CF0C;
+ Tue, 14 Jan 2020 15:24:42 +0800 (CST)
 X-MAIL-GRAY: 1
 X-MAIL-DELIVERY: 0
 X-ADDR-CHECKED4: 1
@@ -35,9 +35,9 @@ X-ABS-CHECKED: 0
 Received: from localhost.localdomain (unknown [58.22.7.114])
  by smtp.263.net (postfix) whith ESMTP id
  P5437T140292994864896S1578986620990337_; 
- Tue, 14 Jan 2020 15:24:25 +0800 (CST)
+ Tue, 14 Jan 2020 15:24:42 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <808cfcb29a022183481baf5b4f977dfe>
+X-UNIQUE-TAG: <f25456ee66a8a74a07826691950c75a3>
 X-RL-SENDER: shawn.lin@rock-chips.com
 X-SENDER: lintao@rock-chips.com
 X-LOGIN-NAME: shawn.lin@rock-chips.com
@@ -50,23 +50,23 @@ To: Heiko Stuebner <heiko@sntech.de>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Rob Herring <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
  Bjorn Helgaas <bhelgaas@google.com>
-Subject: [PATCH 3/6] PCI: dwc: Skip allocating own MSI domain if using
- external MSI domain
-Date: Tue, 14 Jan 2020 15:22:57 +0800
-Message-Id: <1578986580-71974-4-git-send-email-shawn.lin@rock-chips.com>
+Subject: [PATCH 4/6] dt-bindings: rockchip: Add DesignWare based PCIe
+ controller
+Date: Tue, 14 Jan 2020 15:22:58 +0800
+Message-Id: <1578986580-71974-5-git-send-email-shawn.lin@rock-chips.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1578986580-71974-1-git-send-email-shawn.lin@rock-chips.com>
 References: <1578986580-71974-1-git-send-email-shawn.lin@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_232428_739851_3CC7239C 
-X-CRM114-Status: GOOD (  16.79  )
+X-CRM114-CacheID: sfid-20200113_232444_196001_7049E883 
+X-CRM114-Status: GOOD (  12.86  )
 X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.134 listed in list.dnswl.org]
+ no trust [211.157.147.130 listed in list.dnswl.org]
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [58.22.7.114 listed in dnsbl.sorbs.net]
  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
@@ -93,67 +93,154 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On some platform, external MSI domain is using instead of the one
-created by designware driver. For instance, if using GIC-V3-ITS
-as a MSI domain, we only need set msi-map in the devicetree but
-never need any bit in the designware driver to handle MSI stuff.
-So skip allocating its own MSI domain for that case.
+From: Simon Xue <xxm@rock-chips.com>
 
-Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
 Signed-off-by: Simon Xue <xxm@rock-chips.com>
+Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
 ---
 
- drivers/pci/controller/dwc/pcie-designware-host.c | 10 +++++++++-
- drivers/pci/controller/dwc/pcie-designware.h      |  1 +
- 2 files changed, 10 insertions(+), 1 deletion(-)
+ .../devicetree/bindings/pci/rockchip-dw-pcie.yaml  | 132 +++++++++++++++++++++
+ 1 file changed, 132 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/pci/rockchip-dw-pcie.yaml
 
-diff --git a/drivers/pci/controller/dwc/pcie-designware-host.c b/drivers/pci/controller/dwc/pcie-designware-host.c
-index 395feb8..e78d094 100644
---- a/drivers/pci/controller/dwc/pcie-designware-host.c
-+++ b/drivers/pci/controller/dwc/pcie-designware-host.c
-@@ -257,6 +257,10 @@ int dw_pcie_allocate_domains(struct pcie_port *pp)
- 	struct dw_pcie *pci = to_dw_pcie_from_pp(pp);
- 	struct fwnode_handle *fwnode = of_node_to_fwnode(pci->dev->of_node);
- 
-+	/* Rely on the external MSI domain */
-+	if (pp->msi_ext)
-+		return 0;
+diff --git a/Documentation/devicetree/bindings/pci/rockchip-dw-pcie.yaml b/Documentation/devicetree/bindings/pci/rockchip-dw-pcie.yaml
+new file mode 100644
+index 0000000..c5205f6
+--- /dev/null
++++ b/Documentation/devicetree/bindings/pci/rockchip-dw-pcie.yaml
+@@ -0,0 +1,132 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/pci/rockchip-dw-pcie.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
- 	pp->irq_domain = irq_domain_create_linear(fwnode, pp->num_vectors,
- 					       &dw_pcie_msi_domain_ops, pp);
- 	if (!pp->irq_domain) {
-@@ -278,6 +282,9 @@ int dw_pcie_allocate_domains(struct pcie_port *pp)
- 
- void dw_pcie_free_msi(struct pcie_port *pp)
- {
-+	if (pp->msi_ext)
-+		return;
++title: DesignWare based PCIe RC controller on Rockchip SoCs
 +
- 	if (pp->msi_irq) {
- 		irq_set_chained_handler(pp->msi_irq, NULL);
- 		irq_set_handler_data(pp->msi_irq, NULL);
-@@ -413,7 +420,8 @@ int dw_pcie_host_init(struct pcie_port *pp)
- 	if (ret)
- 		pci->num_viewport = 2;
- 
--	if (pci_msi_enabled()) {
-+	if (pci_msi_enabled() &&
-+	    !pp->msi_ext) {
- 		/*
- 		 * If a specific SoC driver needs to change the
- 		 * default number of vectors, it needs to implement
-diff --git a/drivers/pci/controller/dwc/pcie-designware.h b/drivers/pci/controller/dwc/pcie-designware.h
-index a22ea59..eeafa52 100644
---- a/drivers/pci/controller/dwc/pcie-designware.h
-+++ b/drivers/pci/controller/dwc/pcie-designware.h
-@@ -201,6 +201,7 @@ struct pcie_port {
- 	u32			irq_mask[MAX_MSI_CTRLS];
- 	struct pci_bus		*root_bus;
- 	raw_spinlock_t		lock;
-+	int			msi_ext;
- 	DECLARE_BITMAP(msi_irq_in_use, MAX_MSI_IRQS);
- };
- 
++maintainers:
++        - Shawn Lin <shawn.lin@rock-chips.com>
++        - Simon Xue <xxm@rock-chips.com>
++
++properties:
++  compatible:
++    enum:
++      - rockchip,rk1808-pcie
++      - snps,dw-pcie
++
++  reg:
++    maxItems: 2
++
++  clocks:
++    items:
++      - description: High speed clock for PCIe
++      - description: Low speed clock for PCIe
++      - description: AHB clock for PCIe
++      - description: APB clock for PCIe
++      - description: Auxiliary clock for PCIe
++
++  clock-names:
++    items:
++      - const: hsclk
++      - const: lsclk
++      - const: aclk
++      - const: pclk
++      - const: sclk-aux
++
++  resets:
++    items:
++      - description: PCIe niu high reset line
++      - description: PCIe niu low reset line
++      - description: PCIe grf reset line
++      - description: PCIe control reset line
++      - description: PCIe control powerup reset line
++      - description: PCIe control master reset line
++      - description: PCIe control slave reset line
++      - description: PCIe control dbi reset line
++      - description: PCIe control button reset line
++      - description: PCIe control power engine reset line
++      - description: PCIe control core reset line
++      - description: PCIe control non-sticky reset line
++      - description: PCIe control sticky reset line
++      - description: PCIe control power reset line
++      - description: PCIe niu ahb reset line
++      - description: PCIe niu apb reset line
++
++  reset-names:
++    items:
++      - const: niu-h
++      - const: niu-l
++      - const: grf-p
++      - const: ctl-p
++      - const: ctl-powerup
++      - const: ctl-mst-a
++      - const: ctl-slv-a
++      - const: ctl-dbi-a
++      - const: ctl-button
++      - const: ctl-pe
++      - const: ctl-core
++      - const: ctl-nsticky
++      - const: ctl-sticky
++      - const: ctl-pwr
++      - const: ctl-niu-a
++      - const: ctl-niu-p
++
++  rockchip,usbpciegrf:
++    items:
++      - description: The grf for COMBPHY configuration and state registers.
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - msi-map
++  - num-lanes
++  - phys
++  - phy-names
++  - resets
++  - reset-names
++  - rockchip,usbpciegrf
++
++additionalProperties: false
++
++examples:
++  - |
++    usb_pcie_grf: syscon@fe040000 {
++        compatible = "rockchip,usb-pcie-grf", "syscon";
++        reg = <0x0 0xfe040000 0x0 0x1000>;
++    };
++
++    pcie0: pcie@fc400000 {
++        compatible = "rockchip,rk1808-pcie", "snps,dw-pcie";
++        reg = <0x0 0xfc000000 0x0 0x400000>,
++              <0x0 0xfc400000 0x0 0x10000>;
++        clocks = <&cru HSCLK_PCIE>, <&cru LSCLK_PCIE>,
++                 <&cru ACLK_PCIE>, <&cru PCLK_PCIE>,
++                 <&cru SCLK_PCIE_AUX>;
++        clock-names = "hsclk", "lsclk",
++                      "aclk", "pclk",
++                      "sclk-aux";
++        msi-map = <0x0 &its 0x0 0x1000>;
++        num-lanes = <2>;
++        phys = <&combphy PHY_TYPE_PCIE>;
++        phy-names = "pcie-phy";
++        resets = <&cru SRST_PCIE_NIU_H>, <&cru SRST_PCIE_NIU_L>,
++                 <&cru SRST_PCIEGRF_P>, <&cru SRST_PCIECTL_P>,
++                 <&cru SRST_PCIECTL_POWERUP>, <&cru SRST_PCIECTL_MST_A>,
++                 <&cru SRST_PCIECTL_SLV_A>, <&cru SRST_PCIECTL_DBI_A>,
++                 <&cru SRST_PCIECTL_BUTTON>, <&cru SRST_PCIECTL_PE>,
++                 <&cru SRST_PCIECTL_CORE>, <&cru SRST_PCIECTL_NSTICKY>,
++                 <&cru SRST_PCIECTL_STICKY>, <&cru SRST_PCIECTL_PWR>,
++                 <&cru SRST_PCIE_NIU_A>, <&cru SRST_PCIE_NIU_P>;
++        reset-names = "niu-h", "niu-l", "grf-p", "ctl-p",
++                      "ctl-powerup", "ctl-mst-a", "ctl-slv-a",
++                      "ctl-dbi-a", "ctl-button", "ctl-pe",
++                      "ctl-core", "ctl-nsticky", "ctl-sticky",
++                      "ctl-pwr", "ctl-niu-a", "ctl-niu-p";
++        rockchip,usbpciegrf = <&usb_pcie_grf>;
++    };
++
++...
 -- 
 1.9.1
 
