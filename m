@@ -2,92 +2,68 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB4D5139B53
-	for <lists+linux-rockchip@lfdr.de>; Mon, 13 Jan 2020 22:23:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1281213A067
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Jan 2020 06:05:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:To:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GEoA2XkbHLi99bGyOlZ1IqwXJZbCsHHgqwEtFCvexRo=; b=pa1+2RHy63tLx2
-	XunuO3aUUognvxI3EHCuMK+Ye/Bt1cFwTVrUEBvEbHvBhxgfg6qbLq41sS6Mn6jokLArCgFaGkYgY
-	rq1Qaj1KZY6+pZehHGnN+CvXOqUgYtisGABMk2UiUcNeziFwRF69Bs/vSw90zMig8Da3cqTTVplaK
-	jY6Fw+MDt0YKQS2E/XKxVh25Z8JRfLmYfiJDaBtIjBFMAY6/SRfXxYaCdQB5JTyYggkJU/0W/MUAE
-	4tkUbqjxuMrWXXmJqV21ZE9G/pv3vNIL2jIX7kwTw1kmOaJbx0wZn44Oz5eyvxKCov558V5chkOJS
-	i4uBa1+C3r4Y0vPi9Bvg==;
+	List-Owner; bh=koFTUllwXwYZEg+OXmR1hqgOG1cVJjJ+P5accON/AOM=; b=JPRY11oARGzdtk
+	RQLzMPuXKCz8MdRk/XxpnDKeCfh5W+amls5JUMIl/7m73N8wdsCQkDhu8E7BGy9CdeCedQ8aZI2KV
+	ab3L8uMUZ3tPR+8FPelVdqr2HDNq0qzRLDhjAbLzIJXy6r+3CX94jPwyrIH+EwUKGPKWmc6iarKdD
+	PDCI9DdSJXDw/NGjBjvK3gjh3IpXPumRSoP2c3H0boXmHyt1/phDhZn8U0EvEyrcmeywwUjqYJfRM
+	maadWIXjDvuJbJH2uE4okOzArq0EvAcraC5hWKF+/NuIUaeDLZ4qL+DrvLXNEFHmmjTtZSagLVgNo
+	BefzxZ6oGTFTsoWbADhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir7Ap-0007RR-Au; Mon, 13 Jan 2020 21:22:59 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1irEOO-0002XA-Jz; Tue, 14 Jan 2020 05:05:28 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir7Al-0007Pr-U2
- for linux-rockchip@lists.infradead.org; Mon, 13 Jan 2020 21:22:57 +0000
-Received: by mail-ot1-f65.google.com with SMTP id h9so10374786otj.11
- for <linux-rockchip@lists.infradead.org>; Mon, 13 Jan 2020 13:22:55 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Kdq9aN9RfFQuJmNV+vqMSqQdkkLqzs/g4fONHkpv+9g=;
- b=J3PSwAK/KHkNsmhcmZIcoqdrwcfe8fcwKYjx/3FHvFRAM2MSrlQYqQGxv4pRiv5p1L
- QUO/bFWa9Cf6KJ8tDuoscMqZhZb8uy9Q5nkoV069AwmKvcF+sXgJp9MkrIgyohs606wi
- eSZgjmBryj+vRgwQvHgvkX9woNUZXVhIspDvDhMhtdRar/FPU+fEnsn1etHygLlVxokZ
- ffOnKXfupbCv27U9PcR7Rke4HWFBBY8r3iMcr7xQ97i00R0Zo5G3IFwjWddNJDH0odqj
- PhXV4I7eqq1q6GMhHcRiCHk0/6Ii1mxhRZ1i41oX0rR5/E9QhcY70FMijHx6fRic14tn
- G3GQ==
-X-Gm-Message-State: APjAAAUIuUv0xQbATjQKhip8jlZAbbgyoMAD4b3s1JPcJdRyP51HTQz1
- TOe0lUzKChGitkdwfindYxWXEx0=
-X-Google-Smtp-Source: APXvYqzsAKr1/UkMaJG3ZhHPOF8NO4fU/DfrgESzd51bspOUrMgRo2bTY5ZUGLM5mdwOywE4dbz9GA==
-X-Received: by 2002:a05:6830:114f:: with SMTP id
- x15mr13978216otq.291.1578950574981; 
- Mon, 13 Jan 2020 13:22:54 -0800 (PST)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id a65sm4561159otb.68.2020.01.13.13.22.52
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 13 Jan 2020 13:22:53 -0800 (PST)
-Received: from rob (uid 1000) (envelope-from rob@rob-hp-laptop) id 221998
- by rob-hp-laptop (DragonFly Mail Agent v0.11);
- Mon, 13 Jan 2020 15:22:52 -0600
-Date: Mon, 13 Jan 2020 15:22:52 -0600
-From: Rob Herring <robh@kernel.org>
-To: Lad Prabhakar <prabhakar.csengg@gmail.com>
-Subject: Re: [v3 4/6] dt-bindings: PCI: rcar: Add bindings for R-Car PCIe
- endpoint controller
-Message-ID: <20200113212252.GA3120@bogus>
-References: <20200108162211.22358-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200108162211.22358-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ id 1irEOG-0002Q2-UX; Tue, 14 Jan 2020 05:05:22 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D3C40222C3;
+ Tue, 14 Jan 2020 05:05:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1578978318;
+ bh=INba1xdEIwGsxg5/+8HUTWAWDyD5+1mPLHM16YWCq7c=;
+ h=In-Reply-To:References:Subject:To:Cc:From:Date:From;
+ b=M99tkshMFr0pBW9/iJtP0EuYu8ctbwBfQGSff/xDKd54TT8VlA4efJqny4g1mjL3f
+ GPx2wdQffDodKpq6CIejkhJplIL0zrhzNgxbuawv+ORKnzwgej6xRJwF1yAzc6+S68
+ M5Y60z4QqkHyoAFc9OAD+PSyonPu1g3TrjT2hB0o=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200108162211.22358-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200113152656.2313846-1-heiko@sntech.de>
+References: <20200113152656.2313846-1-heiko@sntech.de>
+Subject: Re: [PATCH] clk: rockchip: convert rk3036 pll type to use internal
+ lock status
+To: Heiko Stuebner <heiko@sntech.de>, linux-clk@vger.kernel.org
+From: Stephen Boyd <sboyd@kernel.org>
+User-Agent: alot/0.8.1
+Date: Mon, 13 Jan 2020 21:05:18 -0800
+Message-Id: <20200114050518.D3C40222C3@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_132255_973249_201F47CA 
-X-CRM114-Status: GOOD (  17.68  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200113_210521_014993_149FBE49 
+X-CRM114-Status: GOOD (  10.61  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,129 +76,57 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Geert Uytterhoeven <geert+renesas@glider.be>, linux-pci@vger.kernel.org,
- Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
- Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-rockchip@lists.infradead.org, Catalin Marinas <catalin.marinas@arm.com>,
- devicetree@vger.kernel.org, Chris Paterson <Chris.Paterson2@renesas.com>,
- Arnd Bergmann <arnd@arndb.de>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
- linux-arm-kernel@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- Tom Joseph <tjoseph@cadence.com>, Jingoo Han <jingoohan1@gmail.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+Cc: heiko@sntech.de, Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ mturquette@baylibre.com, zhangqing@rock-chips.com,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, christoph.muellner@theobroma-systems.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Jan 08, 2020 at 04:22:09PM +0000, Lad Prabhakar wrote:
-> This patch adds the bindings for the R-Car PCIe endpoint driver.
-> 
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> ---
->  .../devicetree/bindings/pci/rcar-pci-ep.yaml  | 76 +++++++++++++++++++
->  1 file changed, 76 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+Quoting Heiko Stuebner (2020-01-13 07:26:56)
+> diff --git a/drivers/clk/rockchip/clk-pll.c b/drivers/clk/rockchip/clk-pll.c
+> index 198417d56300..37378ded0993 100644
+> --- a/drivers/clk/rockchip/clk-pll.c
+> +++ b/drivers/clk/rockchip/clk-pll.c
+> @@ -118,12 +118,30 @@ static int rockchip_pll_wait_lock(struct rockchip_clk_pll *pll)
+>  #define RK3036_PLLCON1_REFDIV_SHIFT            0
+>  #define RK3036_PLLCON1_POSTDIV2_MASK           0x7
+>  #define RK3036_PLLCON1_POSTDIV2_SHIFT          6
+> +#define RK3036_PLLCON1_LOCK_STATUS             BIT(10)
+>  #define RK3036_PLLCON1_DSMPD_MASK              0x1
+>  #define RK3036_PLLCON1_DSMPD_SHIFT             12
+> +#define RK3036_PLLCON1_PWRDOWN                 BIT(13)
+>  #define RK3036_PLLCON2_FRAC_MASK               0xffffff
+>  #define RK3036_PLLCON2_FRAC_SHIFT              0
+>  
+> -#define RK3036_PLLCON1_PWRDOWN                 (1 << 13)
+> +static int rockchip_rk3036_pll_wait_lock(struct rockchip_clk_pll *pll)
+> +{
+> +       u32 pllcon;
+> +       int delay = 24000000;
+> +
+> +       /* poll check the lock status in rk3399 xPLLCON2 */
+> +       while (delay > 0) {
+> +               pllcon = readl_relaxed(pll->reg_base + RK3036_PLLCON(1));
+> +               if (pllcon & RK3036_PLLCON1_LOCK_STATUS)
+> +                       return 0;
+> +
+> +               delay--;
 
-Fails 'make dt_binding_check':
+There isn't any udelay here. So the timeout is just as fast as the CPU
+can churn through this? Why not use an actual time? Or use the
+readl_poll_timeout() APIs?
 
-Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml: $id: 
-path/filename 'pci/rcar-pcie-ep.yaml' doesn't match actual filename
-
-> 
-> diff --git a/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
-> new file mode 100644
-> index 000000000000..99c2a1174463
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
-> @@ -0,0 +1,76 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +# Copyright (C) 2020 Renesas Electronics Europe GmbH - https://www.renesas.com/eu/en/
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/pci/rcar-pcie-ep.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +       }
 > +
-> +title: Renesas R-Car PCIe Endpoint
-> +
-> +maintainers:
-> +  - Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> +
-> +properties:
-> +  compatible:
-> +    items:
-> +      - const: renesas,r8a774c0-pcie-ep
-> +      - const: renesas,rcar-gen3-pcie-ep
-> +
-> +  reg:
-> +    maxItems: 5
-> +
-> +  reg-names:
-> +    items:
-> +      - const: apb-base
-> +      - const: memory0
-> +      - const: memory1
-> +      - const: memory2
-> +      - const: memory3
-> +
-> +  power-domains:
-> +    maxItems: 1
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    items:
-> +      - const: pcie
-> +
-> +  max-functions:
-> +    minimum: 1
-> +    maximum: 6
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - reg-names
-> +  - resets
-> +  - power-domains
-> +  - clocks
-> +  - clock-names
-> +  - max-functions
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/r8a774c0-cpg-mssr.h>
-> +    #include <dt-bindings/power/r8a774c0-sysc.h>
-> +
-> +     pcie0_ep: pcie-ep@fe000000 {
-> +            compatible = "renesas,r8a774c0-pcie-ep",
-> +                         "renesas,rcar-gen3-pcie-ep";
-> +            reg = <0 0xfe000000 0 0x80000>,
-> +                  <0x0 0xfe100000 0 0x100000>,
-> +                  <0x0 0xfe200000 0 0x200000>,
-> +                  <0x0 0x30000000 0 0x8000000>,
-> +                  <0x0 0x38000000 0 0x8000000>;
-> +            reg-names = "apb-base", "memory0", "memory1", "memory2", "memory3";
-> +            resets = <&cpg 319>;
-> +            power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
-> +            clocks = <&cpg CPG_MOD 319>;
-> +            clock-names = "pcie";
-> +            max-functions = /bits/ 8 <1>;
-> +    };
-> -- 
-> 2.20.1
-> 
+> +       pr_err("%s: timeout waiting for pll to lock\n", __func__);
+> +       return -ETIMEDOUT;
+> +}
+>  
+>  static void rockchip_rk3036_pll_get_params(struct rockchip_clk_pll *pll,
+>                                         struct rockchip_pll_rate_table *rate)
 
 _______________________________________________
 Linux-rockchip mailing list
