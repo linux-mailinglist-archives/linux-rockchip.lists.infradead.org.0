@@ -2,82 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7355013B393
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Jan 2020 21:21:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9859313B47D
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Jan 2020 22:38:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5xC2ElddYYDGSA3XcrGkwS7w76B1tI4USGoiORXc8EE=; b=F6yD+CHef01rfo
-	ZrzKZPMMAmbwYOn9BPQfW/zoGC5hEZ7nMrEb67Lq9FzZX7ZVKO+6qK3uVcdcPMymh9/b5/KcD9Lrg
-	x6zcL5WN/wud74WoqOWEOx7y6OziCBz9HW7gO+m7CdhBt5C1VAWUrBuGhhkCKweD38VNTrYcL/ufn
-	v7lngbTFCkU0DMwDU8UZUWbeHrUP81c8Se8ZfN87fr1qGmbezbrAhN2RWin7GXo/EMfLqVJLqdhja
-	aPB0ZKl7t5Tm9dYCGLo+NEVHWQcORn4DkvgMQ7StYcEy8U36nbtSkxwk7LfdhdT5uZ3JgWFSX6/0T
-	Xrxf2EFurBBAtgR0JL7Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=pUwpesl1Vg819Lw9uOTqXpohuiW7zEcE/BXlGqpbsKs=; b=Jw/
+	tTC6LzO2t+by0uT1fBWMYMxnquOkKRE70UX6SBbs4h1cIq+9+69S8f/wWBHK4mpxpjr8BNlnuEJ73
+	4DfzhPVryF1dyOUlq7iuqbT960/7I9W9iDDT2wgg3Iy4JLHkKVmoe9G1w3BFMcDUcVAlEMrSdanII
+	eNGjvNF6EVro1cBb5UHheoDxtWHXZULXF0CNle50akx+ft1Zr/j+UQGR4pHiCkFFnk1dTSK4gcFAN
+	BLT5PlEjdpr4iandNIwy0ULIqMKOYpoOm29wvOyUL+tHYSw/zou68kF6tJAE7Fy3eFwLEPQRAMVZr
+	QDGCa0gWHrt9by7FL8o7oGTFVt26Obw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irSh5-0000DX-SL; Tue, 14 Jan 2020 20:21:43 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1irTtV-0000bD-JT; Tue, 14 Jan 2020 21:38:37 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irSgz-0000Ck-GO; Tue, 14 Jan 2020 20:21:41 +0000
-Received: by mail-ed1-x541.google.com with SMTP id v28so13162998edw.12;
- Tue, 14 Jan 2020 12:21:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=eTYOdAjqpPQyd/dKUd7t4m1y6m6buUvTbOTtmO8r2xg=;
- b=uPnlPYExpuZKHXBq0k1aDFQypwDgNSHN+5V84q3ieCd874DrCu8HeEwMpj5bzRFH+P
- F1QXEi8rne5kzXiaawvx7TbGhZwwQR+x3dVDWFlXR/Sc1lLsa8eIVcEv+YyC2/NwDMIy
- pJvXxofQ1Xj7CuoHioC8CVqOX+C6PwyQK43bhK2g/wxMUW9PeRKGwvVBGi1yRgOJx1EH
- 3SoHWKXB2QHnuzpGffvxygQR1x1L9Id36rfosShZB3jm6tCQR3W8Pky/sS2jaRWP4FgF
- Zhx9TOCGmzN4LHksxWRKSzE91ZH8b6LOCoqNMjE1VBfHBLCVNWqVZkP5b85iiKkTGoQe
- vcQQ==
+ id 1irTtE-0000R1-1Q; Tue, 14 Jan 2020 21:38:22 +0000
+Received: by mail-wr1-x443.google.com with SMTP id z3so13732330wru.3;
+ Tue, 14 Jan 2020 13:38:19 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=f9U5Bcu50iadv0QgDoBy+54uXwpfM8hXO8Wzm2sPm+4=;
+ b=gfGJgRQSF8cGe6buDT2zg5bh5jYRCHzk/iOUGakroYL3N+SVnzgtZ53tSfPs7hMM3G
+ y+XVNos8uAnEFk+rz3Ztp2zrZ3riiEsikZrYrbySCEDUq9VslAG93dvMirJsMpoj3IF9
+ BPFtJ8XRlFa2YhAX8cB7fH3dcSDMtP+0CTPbcFOLBPtdnL5NhhlMX+tWXJfiS6BP5lXd
+ BwOl3Eu6JOTGl/rfQcBSYdc4b/d4z4eiEwXVrgRqsTu2WvXYMgop40MdzV16gMq02hK3
+ e9qVpd6NoNPqCnhwHX3oxQMsjHxXKSLqUH+gY+4Q6cumFUCXirC9kaeTPUTW4OnyVjIj
+ 1HXg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=eTYOdAjqpPQyd/dKUd7t4m1y6m6buUvTbOTtmO8r2xg=;
- b=AvFTNLhf5XRpBp0ZvkvOmqzmRKJces6B+aNM2AcHqcVWgaI9MPdE4diZInjcGAfgKL
- tDHPzKlH5YVN2zZDu2MNTug60NhhtJagjyol4E3fJFGLQgssEC1Mv2DkcSXq+m/igxP1
- xtjlSJa2FK3CXPxSK9ZORPG52wn5+TgmaZUpdinN2K/RdJ9Bsui4WLCY0w3HwvmZYc8a
- 2mS+dFAlkgLdIM8+gaJjIsrVsCmoj6wmkaHllKKYZgk4iCHxj3eZjjogRKPfn8xuSdsO
- /J6vtnWJ5YSlgw10IinWlCiA22xVVBjw6VnS9Z1qWto+sKddDDbj9RIdZvzEdyTNqag+
- pVGg==
-X-Gm-Message-State: APjAAAVnJRZFioQKmdO5e0g9YLjC6UDkPpylGOCWDHMh8doHDA/QOlAR
- 0z8Hek6qF6hlGlgzk2U/0V/vqbiLAwdyR27GiSU=
-X-Google-Smtp-Source: APXvYqwUGwwmpnBLO0b5hpgDEXjku/e8Ri4iad2bNMoLATaQhP7Vu24eJWlvCK7tUZvc70ovkb7JVC8NryjWKrbam2A=
-X-Received: by 2002:aa7:d94d:: with SMTP id l13mr23832761eds.328.1579033295846; 
- Tue, 14 Jan 2020 12:21:35 -0800 (PST)
-MIME-Version: 1.0
-References: <20200107230626.885451-1-martin.blumenstingl@googlemail.com>
- <20200107230626.885451-4-martin.blumenstingl@googlemail.com>
- <2ceffe46-57a8-79a8-2c41-d04b227d3792@arm.com>
- <CAFBinCD7o-q-i66zZhOro1DanKAfG-8obQtzxxD==xOwsy_d6A@mail.gmail.com>
- <21d0730b-8299-8bfd-4321-746ccb3772d0@arm.com>
-In-Reply-To: <21d0730b-8299-8bfd-4321-746ccb3772d0@arm.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Tue, 14 Jan 2020 21:21:24 +0100
-Message-ID: <CAFBinCC4LttRsWDpMDEsYFa-ccRcErOuhpwa41O54f9Cmn4v0A@mail.gmail.com>
-Subject: Re: [PATCH RFT v1 3/3] drm/panfrost: Use the mali-supply regulator
- for control again
-To: Steven Price <steven.price@arm.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=f9U5Bcu50iadv0QgDoBy+54uXwpfM8hXO8Wzm2sPm+4=;
+ b=SqieeWBsGN8MceuAzhwXK6/nM0fpdrP0wKjanDHMxm/wnIqwmmM9ffkxIE2XVaoJAl
+ sUZEy+lGGbi66c8J8bIZi18DWzTloNWgnd9dGcQeiQedaTSgbsC5oMm12hIecba9Ofbp
+ YAxBCq1r4j40sn99li+IZXRfSWKxcrGdUiyXBwFtpcc/DVPUTtHERJyQLPd9Zfj9F+/G
+ n2/tYAstOby3HZFH5TxKmifj0LumLHNfe5MssdeuutSgojtf+iJNgCRduwSTymt+S2dJ
+ sgPVoNA50robkw/Bg1ON2pfLjgzIGcZ6bR9SkFSXuuN/gr+03s7kDFB0SyPgKQ1GQ9gT
+ YsSQ==
+X-Gm-Message-State: APjAAAVE3bxI3rIe5xOiivTHatUtlyjGVEVxukOuuCEDc0Tnz4R/QDp1
+ YWlpZ6CBWODOmOrPIxXc2rc=
+X-Google-Smtp-Source: APXvYqx7jlovPuzPwm+3f5goeCHcrWhmaN+zGSu6JtqQaKt8TKMrJ9ixa+Z423zRHHFdOQu5pahIjg==
+X-Received: by 2002:adf:db84:: with SMTP id u4mr28121908wri.317.1579037897557; 
+ Tue, 14 Jan 2020 13:38:17 -0800 (PST)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id w17sm21639511wrt.89.2020.01.14.13.38.16
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 14 Jan 2020 13:38:17 -0800 (PST)
+From: Johan Jonker <jbx6244@gmail.com>
+To: ulf.hansson@linaro.org
+Subject: [RFC PATCH v1 1/3] dt-bindings: mmc: combine common mmc and dw-mshc
+ properties
+Date: Tue, 14 Jan 2020 22:38:07 +0100
+Message-Id: <20200114213809.27166-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_122137_572690_F007A2F9 
-X-CRM114-Status: GOOD (  23.44  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200114_133820_115451_EDD48C18 
+X-CRM114-Status: GOOD (  24.12  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (jbx6244[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
+ provider (jbx6244[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -97,78 +95,727 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: tomeu.vizoso@collabora.com, airlied@linux.ie, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
- linux-amlogic@lists.infradead.org, robin.murphy@arm.com, alyssa@rosenzweig.io
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Steven,
+Combine the common properties for mmc and dw-mshc in
+mmc-controller-common.yaml
 
-On Mon, Jan 13, 2020 at 6:10 PM Steven Price <steven.price@arm.com> wrote:
->
-> On 09/01/2020 17:27, Martin Blumenstingl wrote:
-> > On Thu, Jan 9, 2020 at 12:31 PM Steven Price <steven.price@arm.com> wrote:
-> >>
-> >> On 07/01/2020 23:06, Martin Blumenstingl wrote:
-> >>> dev_pm_opp_set_rate() needs a reference to the regulator which should be
-> >>> updated when updating the GPU frequency. The name of the regulator has
-> >>> to be passed at initialization-time using dev_pm_opp_set_regulators().
-> >>> Add the call to dev_pm_opp_set_regulators() so dev_pm_opp_set_rate()
-> >>> will update the GPU regulator when updating the frequency (just like
-> >>> we did this manually before when we open-coded dev_pm_opp_set_rate()).
-> >>
-> >> This patch causes a warning from debugfs on my firefly (RK3288) board:
-> >>
-> >> debugfs: Directory 'ffa30000.gpu-mali' with parent 'vdd_gpu' already
-> >> present!
-> >>
-> >> So it looks like the regulator is being added twice - but I haven't
-> >> investigated further.
-> > I *think* it's because the regulator is already fetched by the
-> > panfrost driver itself to enable it
-> > (the devfreq code currently does not support enabling the regulator,
-> > it can only control the voltage)
-> >
-> > I'm not sure what to do about this though
->
-> Having a little play around with this, I think you can simply remove the
-> panfrost_regulator_init() call. This at least works for me - the call to
-> dev_pm_opp_set_regulators() seems to set everything up. However I
-> suspect you need to do this unconditionally even if there are no
-> operating points defined.
-I'm not sure if I can safely remove panfrost_regulator_init() because
-it calls regulator_enable()
-but there's no regulator_enable() equivalent in devfreq or OPP
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ .../bindings/mmc/mmc-controller-common.yaml        | 342 +++++++++++++++++++++
+ .../devicetree/bindings/mmc/mmc-controller.yaml    | 335 +-------------------
+ 2 files changed, 346 insertions(+), 331 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/mmc/mmc-controller-common.yaml
 
-I'm not sure how this is supposed to work
-if someone has an idea: please let me know
+diff --git a/Documentation/devicetree/bindings/mmc/mmc-controller-common.yaml b/Documentation/devicetree/bindings/mmc/mmc-controller-common.yaml
+new file mode 100644
+index 000000000..92e5c3129
+--- /dev/null
++++ b/Documentation/devicetree/bindings/mmc/mmc-controller-common.yaml
+@@ -0,0 +1,342 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/mmc/mmc-controller-common.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: MMC Controller Common Properties
++
++maintainers:
++  - Ulf Hansson <ulf.hansson@linaro.org>
++
++properties:
++  "#address-cells":
++    const: 1
++    description: |
++      The cell is the slot ID if a function subnode is used.
++
++  "#size-cells":
++    const: 0
++
++  # Card Detection.
++  # If none of these properties are supplied, the host native card
++  # detect will be used. Only one of them should be provided.
++
++  broken-cd:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      There is no card detection available; polling must be used.
++
++  cd-gpios:
++    description:
++      The card detection will be done using the GPIO provided.
++
++  non-removable:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      Non-removable slot (like eMMC); assume always present.
++
++  # *NOTE* on CD and WP polarity. To use common for all SD/MMC host
++  # controllers line polarity properties, we have to fix the meaning
++  # of the "normal" and "inverted" line levels. We choose to follow
++  # the SDHCI standard, which specifies both those lines as "active
++  # low." Therefore, using the "cd-inverted" property means, that the
++  # CD line is active high, i.e. it is high, when a card is
++  # inserted. Similar logic applies to the "wp-inverted" property.
++  #
++  # CD and WP lines can be implemented on the hardware in one of two
++  # ways: as GPIOs, specified in cd-gpios and wp-gpios properties, or
++  # as dedicated pins. Polarity of dedicated pins can be specified,
++  # using *-inverted properties. GPIO polarity can also be specified
++  # using the GPIO_ACTIVE_LOW flag. This creates an ambiguity in the
++  # latter case. We choose to use the XOR logic for GPIO CD and WP
++  # lines.  This means, the two properties are "superimposed," for
++  # example leaving the GPIO_ACTIVE_LOW flag clear and specifying the
++  # respective *-inverted property property results in a
++  # double-inversion and actually means the "normal" line polarity is
++  # in effect.
++  wp-inverted:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      The Write Protect line polarity is inverted.
++
++  cd-inverted:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      The CD line polarity is inverted.
++
++  # Other properties
++
++  bus-width:
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++      - enum: [1, 4, 8]
++        default: 1
++    description:
++      Number of data lines.
++
++  max-frequency:
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++      - minimum: 400000
++      - maximum: 200000000
++    description:
++      Maximum operating frequency of the bus.
++
++  disable-wp:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      When set, no physical write-protect line is present. This
++      property should only be specified when the controller has a
++      dedicated write-protect detection logic. If a GPIO is always used
++      for the write-protect detection logic, it is sufficient to not
++      specify the wp-gpios property in the absence of a write-protect
++      line. Not used in combination with eMMC or SDIO.
++
++  wp-gpios:
++    description:
++      GPIO to use for the write-protect detection.
++
++  cd-debounce-delay-ms:
++    description:
++      Set delay time before detecting card after card insert
++      interrupt.
++
++  no-1-8-v:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      When specified, denotes that 1.8V card voltage is not supported
++      on this system, even if the controller claims it.
++
++  cap-sd-highspeed:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      SD high-speed timing is supported.
++
++  cap-mmc-highspeed:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      MMC high-speed timing is supported.
++
++  sd-uhs-sdr12:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      SD UHS SDR12 speed is supported.
++
++  sd-uhs-sdr25:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      SD UHS SDR25 speed is supported.
++
++  sd-uhs-sdr50:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      SD UHS SDR50 speed is supported.
++
++  sd-uhs-sdr104:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      SD UHS SDR104 speed is supported.
++
++  sd-uhs-ddr50:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      SD UHS DDR50 speed is supported.
++
++  cap-power-off-card:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      Powering off the card is safe.
++
++  cap-mmc-hw-reset:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      eMMC hardware reset is supported
++
++  cap-sdio-irq:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      enable SDIO IRQ signalling on this interface
++
++  full-pwr-cycle:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      Full power cycle of the card is supported.
++
++  mmc-ddr-1_2v:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      eMMC high-speed DDR mode (1.2V I/O) is supported.
++
++  mmc-ddr-1_8v:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      eMMC high-speed DDR mode (1.8V I/O) is supported.
++
++  mmc-ddr-3_3v:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      eMMC high-speed DDR mode (3.3V I/O) is supported.
++
++  mmc-hs200-1_2v:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      eMMC HS200 mode (1.2V I/O) is supported.
++
++  mmc-hs200-1_8v:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      eMMC HS200 mode (1.8V I/O) is supported.
++
++  mmc-hs400-1_2v:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      eMMC HS400 mode (1.2V I/O) is supported.
++
++  mmc-hs400-1_8v:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      eMMC HS400 mode (1.8V I/O) is supported.
++
++  mmc-hs400-enhanced-strobe:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      eMMC HS400 enhanced strobe mode is supported
++
++  dsr:
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++      - minimum: 0
++      - maximum: 0xffff
++    description:
++      Value the card Driver Stage Register (DSR) should be programmed
++      with.
++
++  no-sdio:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      Controller is limited to send SDIO commands during
++      initialization.
++
++  no-sd:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      Controller is limited to send SD commands during initialization.
++
++  no-mmc:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      Controller is limited to send MMC commands during
++      initialization.
++
++  fixed-emmc-driver-type:
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++      - minimum: 0
++      - maximum: 4
++    description:
++      For non-removable eMMC, enforce this driver type. The value is
++      the driver type as specified in the eMMC specification (table
++      206 in spec version 5.1)
++
++  post-power-on-delay-ms:
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++      - default: 10
++    description:
++      It was invented for MMC pwrseq-simple which could be referred to
++      mmc-pwrseq-simple.txt. But now it\'s reused as a tunable delay
++      waiting for I/O signalling and card power supply to be stable,
++      regardless of whether pwrseq-simple is used. Default to 10ms if
++      no available.
++
++  supports-cqe:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      The presence of this property indicates that the corresponding
++      MMC host controller supports HW command queue feature.
++
++  disable-cqe-dcmd:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      The presence of this property indicates that the MMC
++      controller\'s command queue engine (CQE) does not support direct
++      commands (DCMDs).
++
++  keep-power-in-suspend:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      SDIO only. Preserves card power during a suspend/resume cycle.
++
++  # Deprecated: enable-sdio-wakeup
++  wakeup-source:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      SDIO only. Enables wake up of host system on SDIO IRQ assertion.
++
++  vmmc-supply:
++    description:
++      Supply for the card power
++
++  vqmmc-supply:
++    description:
++      Supply for the bus IO line power
++
++  mmc-pwrseq:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description:
++      System-on-Chip designs may specify a specific MMC power
++      sequence. To successfully detect an (e)MMC/SD/SDIO card, that
++      power sequence must be maintained while initializing the card.
++
++patternProperties:
++  "^.*@[0-9]+$":
++    type: object
++    description: |
++      On embedded systems the cards connected to a host may need
++      additional properties. These can be specified in subnodes to the
++      host controller node. The subnodes are identified by the
++      standard \'reg\' property. Which information exactly can be
++      specified depends on the bindings for the SDIO function driver
++      for the subnode, as specified by the compatible string.
++
++    properties:
++      compatible:
++        description: |
++          Name of SDIO function following generic names recommended
++          practice
++
++      reg:
++        items:
++          - minimum: 0
++            maximum: 7
++            description:
++              Must contain the SDIO function number of the function this
++              subnode describes. A value of 0 denotes the memory SD
++              function, values from 1 to 7 denote the SDIO functions.
++
++      broken-hpi:
++        $ref: /schemas/types.yaml#/definitions/flag
++        description:
++          Use this to indicate that the mmc-card has a broken hpi
++          implementation, and that hpi should not be used.
++
++    required:
++      - reg
++
++  "^clk-phase-(legacy|sd-hs|mmc-(hs|hs[24]00|ddr52)|uhs-(sdr(12|25|50|104)|ddr50))$":
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32-array
++    minItems: 2
++    maxItems: 2
++    items:
++      minimum: 0
++      maximum: 359
++      description:
++        Set the clock (phase) delays which are to be configured in the
++        controller while switching to particular speed mode. These values
++        are in pair of degrees.
++
++dependencies:
++  cd-debounce-delay-ms: [ cd-gpios ]
++  fixed-emmc-driver-type: [ non-removable ]
+diff --git a/Documentation/devicetree/bindings/mmc/mmc-controller.yaml b/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
+index 3c0df4016..6c7085395 100644
+--- a/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
++++ b/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
+@@ -14,341 +14,14 @@ description: |
+   that requires the respective functionality should implement them using
+   these definitions.
+ 
++allOf:
++  - $ref: "mmc-controller-common.yaml"
++
++# Everything else is described in the common file
+ properties:
+   $nodename:
+     pattern: "^mmc(@.*)?$"
+ 
+-  "#address-cells":
+-    const: 1
+-    description: |
+-      The cell is the slot ID if a function subnode is used.
+-
+-  "#size-cells":
+-    const: 0
+-
+-  # Card Detection.
+-  # If none of these properties are supplied, the host native card
+-  # detect will be used. Only one of them should be provided.
+-
+-  broken-cd:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      There is no card detection available; polling must be used.
+-
+-  cd-gpios:
+-    description:
+-      The card detection will be done using the GPIO provided.
+-
+-  non-removable:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      Non-removable slot (like eMMC); assume always present.
+-
+-  # *NOTE* on CD and WP polarity. To use common for all SD/MMC host
+-  # controllers line polarity properties, we have to fix the meaning
+-  # of the "normal" and "inverted" line levels. We choose to follow
+-  # the SDHCI standard, which specifies both those lines as "active
+-  # low." Therefore, using the "cd-inverted" property means, that the
+-  # CD line is active high, i.e. it is high, when a card is
+-  # inserted. Similar logic applies to the "wp-inverted" property.
+-  #
+-  # CD and WP lines can be implemented on the hardware in one of two
+-  # ways: as GPIOs, specified in cd-gpios and wp-gpios properties, or
+-  # as dedicated pins. Polarity of dedicated pins can be specified,
+-  # using *-inverted properties. GPIO polarity can also be specified
+-  # using the GPIO_ACTIVE_LOW flag. This creates an ambiguity in the
+-  # latter case. We choose to use the XOR logic for GPIO CD and WP
+-  # lines.  This means, the two properties are "superimposed," for
+-  # example leaving the GPIO_ACTIVE_LOW flag clear and specifying the
+-  # respective *-inverted property property results in a
+-  # double-inversion and actually means the "normal" line polarity is
+-  # in effect.
+-  wp-inverted:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      The Write Protect line polarity is inverted.
+-
+-  cd-inverted:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      The CD line polarity is inverted.
+-
+-  # Other properties
+-
+-  bus-width:
+-    allOf:
+-      - $ref: /schemas/types.yaml#/definitions/uint32
+-      - enum: [1, 4, 8]
+-        default: 1
+-    description:
+-      Number of data lines.
+-
+-  max-frequency:
+-    allOf:
+-      - $ref: /schemas/types.yaml#/definitions/uint32
+-      - minimum: 400000
+-      - maximum: 200000000
+-    description:
+-      Maximum operating frequency of the bus.
+-
+-  disable-wp:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      When set, no physical write-protect line is present. This
+-      property should only be specified when the controller has a
+-      dedicated write-protect detection logic. If a GPIO is always used
+-      for the write-protect detection logic, it is sufficient to not
+-      specify the wp-gpios property in the absence of a write-protect
+-      line. Not used in combination with eMMC or SDIO.
+-
+-  wp-gpios:
+-    description:
+-      GPIO to use for the write-protect detection.
+-
+-  cd-debounce-delay-ms:
+-    description:
+-      Set delay time before detecting card after card insert
+-      interrupt.
+-
+-  no-1-8-v:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      When specified, denotes that 1.8V card voltage is not supported
+-      on this system, even if the controller claims it.
+-
+-  cap-sd-highspeed:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      SD high-speed timing is supported.
+-
+-  cap-mmc-highspeed:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      MMC high-speed timing is supported.
+-
+-  sd-uhs-sdr12:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      SD UHS SDR12 speed is supported.
+-
+-  sd-uhs-sdr25:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      SD UHS SDR25 speed is supported.
+-
+-  sd-uhs-sdr50:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      SD UHS SDR50 speed is supported.
+-
+-  sd-uhs-sdr104:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      SD UHS SDR104 speed is supported.
+-
+-  sd-uhs-ddr50:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      SD UHS DDR50 speed is supported.
+-
+-  cap-power-off-card:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      Powering off the card is safe.
+-
+-  cap-mmc-hw-reset:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      eMMC hardware reset is supported
+-
+-  cap-sdio-irq:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      enable SDIO IRQ signalling on this interface
+-
+-  full-pwr-cycle:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      Full power cycle of the card is supported.
+-
+-  mmc-ddr-1_2v:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      eMMC high-speed DDR mode (1.2V I/O) is supported.
+-
+-  mmc-ddr-1_8v:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      eMMC high-speed DDR mode (1.8V I/O) is supported.
+-
+-  mmc-ddr-3_3v:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      eMMC high-speed DDR mode (3.3V I/O) is supported.
+-
+-  mmc-hs200-1_2v:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      eMMC HS200 mode (1.2V I/O) is supported.
+-
+-  mmc-hs200-1_8v:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      eMMC HS200 mode (1.8V I/O) is supported.
+-
+-  mmc-hs400-1_2v:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      eMMC HS400 mode (1.2V I/O) is supported.
+-
+-  mmc-hs400-1_8v:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      eMMC HS400 mode (1.8V I/O) is supported.
+-
+-  mmc-hs400-enhanced-strobe:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      eMMC HS400 enhanced strobe mode is supported
+-
+-  dsr:
+-    allOf:
+-      - $ref: /schemas/types.yaml#/definitions/uint32
+-      - minimum: 0
+-      - maximum: 0xffff
+-    description:
+-      Value the card Driver Stage Register (DSR) should be programmed
+-      with.
+-
+-  no-sdio:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      Controller is limited to send SDIO commands during
+-      initialization.
+-
+-  no-sd:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      Controller is limited to send SD commands during initialization.
+-
+-  no-mmc:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      Controller is limited to send MMC commands during
+-      initialization.
+-
+-  fixed-emmc-driver-type:
+-    allOf:
+-      - $ref: /schemas/types.yaml#/definitions/uint32
+-      - minimum: 0
+-      - maximum: 4
+-    description:
+-      For non-removable eMMC, enforce this driver type. The value is
+-      the driver type as specified in the eMMC specification (table
+-      206 in spec version 5.1)
+-
+-  post-power-on-delay-ms:
+-    allOf:
+-      - $ref: /schemas/types.yaml#/definitions/uint32
+-      - default: 10
+-    description:
+-      It was invented for MMC pwrseq-simple which could be referred to
+-      mmc-pwrseq-simple.txt. But now it\'s reused as a tunable delay
+-      waiting for I/O signalling and card power supply to be stable,
+-      regardless of whether pwrseq-simple is used. Default to 10ms if
+-      no available.
+-
+-  supports-cqe:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      The presence of this property indicates that the corresponding
+-      MMC host controller supports HW command queue feature.
+-
+-  disable-cqe-dcmd:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      The presence of this property indicates that the MMC
+-      controller\'s command queue engine (CQE) does not support direct
+-      commands (DCMDs).
+-
+-  keep-power-in-suspend:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      SDIO only. Preserves card power during a suspend/resume cycle.
+-
+-  # Deprecated: enable-sdio-wakeup
+-  wakeup-source:
+-    $ref: /schemas/types.yaml#/definitions/flag
+-    description:
+-      SDIO only. Enables wake up of host system on SDIO IRQ assertion.
+-
+-  vmmc-supply:
+-    description:
+-      Supply for the card power
+-
+-  vqmmc-supply:
+-    description:
+-      Supply for the bus IO line power
+-
+-  mmc-pwrseq:
+-    $ref: /schemas/types.yaml#/definitions/phandle
+-    description:
+-      System-on-Chip designs may specify a specific MMC power
+-      sequence. To successfully detect an (e)MMC/SD/SDIO card, that
+-      power sequence must be maintained while initializing the card.
+-
+-patternProperties:
+-  "^.*@[0-9]+$":
+-    type: object
+-    description: |
+-      On embedded systems the cards connected to a host may need
+-      additional properties. These can be specified in subnodes to the
+-      host controller node. The subnodes are identified by the
+-      standard \'reg\' property. Which information exactly can be
+-      specified depends on the bindings for the SDIO function driver
+-      for the subnode, as specified by the compatible string.
+-
+-    properties:
+-      compatible:
+-        description: |
+-          Name of SDIO function following generic names recommended
+-          practice
+-
+-      reg:
+-        items:
+-          - minimum: 0
+-            maximum: 7
+-            description:
+-              Must contain the SDIO function number of the function this
+-              subnode describes. A value of 0 denotes the memory SD
+-              function, values from 1 to 7 denote the SDIO functions.
+-
+-      broken-hpi:
+-        $ref: /schemas/types.yaml#/definitions/flag
+-        description:
+-          Use this to indicate that the mmc-card has a broken hpi
+-          implementation, and that hpi should not be used.
+-
+-    required:
+-      - reg
+-
+-  "^clk-phase-(legacy|sd-hs|mmc-(hs|hs[24]00|ddr52)|uhs-(sdr(12|25|50|104)|ddr50))$":
+-    allOf:
+-      - $ref: /schemas/types.yaml#/definitions/uint32-array
+-    minItems: 2
+-    maxItems: 2
+-    items:
+-      minimum: 0
+-      maximum: 359
+-      description:
+-        Set the clock (phase) delays which are to be configured in the
+-        controller while switching to particular speed mode. These values
+-        are in pair of degrees.
+-
+-dependencies:
+-  cd-debounce-delay-ms: [ cd-gpios ]
+-  fixed-emmc-driver-type: [ non-removable ]
+-
+ examples:
+   - |
+     sdhci@ab000000 {
+-- 
+2.11.0
 
-> > [...]
-> >>>       ret = dev_pm_opp_of_add_table(dev);
-> >>> -     if (ret)
-> >>> +     if (ret) {
-> >>> +             dev_pm_opp_put_regulators(pfdev->devfreq.regulators_opp_table);
-> >>
-> >> If we don't have a regulator then regulators_opp_table will be NULL and
-> >> sadly dev_pm_opp_put_regulators() doesn't handle a NULL argument. The
-> >> same applies to the two below calls obviously.
-> > good catch, thank you!
-> > are you happy with the general approach here or do you think that
-> > dev_pm_opp_set_regulators is the wrong way to go (for whatever
-> > reason)?
->
-> To be honest this is an area I still don't fully understand. There's a
-> lot of magic helper functions and very little in the way of helpful
-> documentation to work out which are the right ones to call. It seems
-> reasonable to me, hopefully someone more in the know will chime in it
-> there's something fundamentally wrong!
-OK, if you know anybody who could help then please Cc them
-
-
-Martin
 
 _______________________________________________
 Linux-rockchip mailing list
