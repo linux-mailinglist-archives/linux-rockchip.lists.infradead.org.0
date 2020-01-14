@@ -2,86 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5458713A295
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Jan 2020 09:11:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE81713AF53
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Jan 2020 17:28:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d+IvLLBbg6oVJircnU1FY4PELCtwI5bNEw4uy7r6vaw=; b=Joop4WzGIcbL6j
-	/xxfWXKY4D9E0XTb43dFnzCFEGSnqn/EpvSlRG1NOTzotjOsUkQcDMKFPabDlKvWOZ8P/d1ds9UdR
-	Kn/BtYsLeh2DNMIuRVTANyxMegetRPlP4yb1e0vtq78QdEFsTyqqydhDyw4xkpLn95ULKX/ZGN9tp
-	+NAPEMcovW9lu/NvJ/5vFSoX0OY06KSKgbI0tVDZTShX5j/ny9uSQB5ZpPbMM0XpefWhHBHwDl4w/
-	cAq74qtkdEnCvQpAIOHzaSOF20MusRqZH2s/ND6RbrVpYa7+ynbsC7eUEplpkh/VfQddy4edWEwgL
-	JzzvCt/0bSkgSQlZJFnA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ZvFSfMGzuUjYVIFkFvXt4Xqlxl1BqIvNKRxNp9u0bfo=; b=PGI
+	3lRUf76DJ+1SDFk5/tOzePkiwf8ftEoSnvXUnqNAO32JPTZRM+JotrGizk60ne568PAIbwFyD9gvE
+	86l9gxiBRDHqQ5m8rLSqDuI5KEjlCfb8Wml4e1KSlIE3JU+UG2xUARvnudI+GJFHA5ypO7J/oBkFY
+	LTEZCkIa0+8nUcXdYLKJWpvyPA6o5oOt25G65k9eY06lUZzz7bac4BK2rlrQNGbi4T4WDjhEz9YK0
+	F8+Vw9mF1jbZEUFRNXsc4gjL42veWf27y5FBnWqNIQafcSFUjp1xsTKiAzHRgDMVYPOA1z6i0gghq
+	I/rPjI5VAMRlr2Fs1s64noLhONlvMmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irHIf-000595-PJ; Tue, 14 Jan 2020 08:11:45 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	id 1irP3I-0005iy-3H; Tue, 14 Jan 2020 16:28:24 +0000
+Received: from outgoing18.flk.host-h.net ([197.242.87.52])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irHIa-00056L-T2; Tue, 14 Jan 2020 08:11:42 +0000
-Received: by mail-oi1-x242.google.com with SMTP id p125so10967281oif.10;
- Tue, 14 Jan 2020 00:11:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ESgbHWyyXZkUE+Zt5y6qd3pCusxZlx2vlVaiZEg9MHY=;
- b=qs1x37BdbYn5t6+23mL0IE+dw5g0PGcS5ldK99AKnwJhurHow1kPcdhAGd29oDAm8D
- vZBnicg0mFy4ulUyWo0e8COjmB12/uPF+VtzOLHMl3i2Y1CA3Ok+t56Iw7roc0KjzqaL
- oP5L7jiNCAM4qY4BkmOi/LHpeFyDNKziaX5S1OHwT9HS2QKe7wriSs4oHZJxZyRmwF+I
- yVc/UuBYs6IkcHdWcknqLstN1X15uGDB/JZ1R29VlAT0nx8/An6hzNW9Qbqclaec5XYC
- 4dh6dw3o/hl+Q22PdhB8rlk0cLlApYHShdgEnK3Tts+cco5LAo1nulGT+ZpVyzFZBbHQ
- SF7A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ESgbHWyyXZkUE+Zt5y6qd3pCusxZlx2vlVaiZEg9MHY=;
- b=pw2YH1fTyun3YK0lHWZVuXRFEzTSAJOvM6r1/hL8l+DnmG91y+hNp31TZppOiKzd+Z
- VuhsghtGE1pO2alBCBNZTNuyRfmdtseJZeDTVHPo+Tpg0Bo1XHGqlQWQiSMdAzf5lVdQ
- eOD7/Z3fUF/e/l7j+axRHftCeWl+KcUBYcGTapeDooQoFNc7GEQ3cKdrFDD5b1F/G7ed
- DYeG4S8OykUF1Oe2JKEZ4A/yb6ntLbI5VPGnUuxIOeAwXVK7OCX+Sxyv+jpjetvRjDzY
- SkweAi/8Sk46WW53FIleO91b6/AwGzbfa3gEjDR0+tVs15Z1xE9qMmfmUwsS2jB79tLY
- QT7Q==
-X-Gm-Message-State: APjAAAUaB9CSBo8ipUAb2A0pq5j/zEZH7yoTGSX1XFVzGLXc8DhzZw+s
- kmwhEsfULTr89c7SKesi9xA23x5p1XFHqhu+ytw=
-X-Google-Smtp-Source: APXvYqzCDP1HlSPkjT+Ko+pskg045pRBOTrM+W3f2eEy7IcfuScVnML1cmr+MHU+++hW/8MQQKSTseULh6yeUpc2qVo=
-X-Received: by 2002:aca:1309:: with SMTP id e9mr15897662oii.7.1578989498871;
- Tue, 14 Jan 2020 00:11:38 -0800 (PST)
-MIME-Version: 1.0
-References: <20200108162211.22358-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200108162211.22358-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200113212252.GA3120@bogus>
-In-Reply-To: <20200113212252.GA3120@bogus>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Tue, 14 Jan 2020 08:11:12 +0000
-Message-ID: <CA+V-a8sP=zTU1UAbXBWCpAn0uduNnUg+JEK0-y8G-4dV4AVVGQ@mail.gmail.com>
-Subject: Re: [v3 4/6] dt-bindings: PCI: rcar: Add bindings for R-Car PCIe
- endpoint controller
-To: Rob Herring <robh@kernel.org>
+ id 1irP3C-0005i7-KW; Tue, 14 Jan 2020 16:28:23 +0000
+Received: from www31.flk1.host-h.net ([188.40.1.173])
+ by antispam5-flk1.host-h.net with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.89)
+ (envelope-from <justin.swartz@risingedge.co.za>)
+ id 1irP2z-0005f4-Ct; Tue, 14 Jan 2020 18:28:06 +0200
+Received: from [130.255.73.16] (helo=v01.28459.vpscontrol.net)
+ by www31.flk1.host-h.net with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.89)
+ (envelope-from <justin.swartz@risingedge.co.za>)
+ id 1irP2v-0007ID-6N; Tue, 14 Jan 2020 18:28:01 +0200
+From: Justin Swartz <justin.swartz@risingedge.co.za>
+To: Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH] clk: rockchip: fix incorrect configuration of rk3228
+ aclk_gpu* clocks
+Date: Tue, 14 Jan 2020 16:25:02 +0000
+Message-Id: <20200114162503.7548-1-justin.swartz@risingedge.co.za>
+X-Mailer: git-send-email 2.11.0
+X-Authenticated-Sender: justin.swartz@risingedge.co.za
+X-Virus-Scanned: Clear
+X-Originating-IP: 188.40.1.173
+X-SpamExperts-Domain: risingedge.co.za
+X-SpamExperts-Username: 
+Authentication-Results: host-h.net;
+ auth=pass (login) smtp.auth=@risingedge.co.za
+X-SpamExperts-Outgoing-Class: ham
+X-SpamExperts-Outgoing-Evidence: Combined (0.03)
+X-Recommended-Action: accept
+X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0YvzwMmgjmY0UwihWARy7g6pSDasLI4SayDByyq9LIhVQj5rfp7t2+1U
+ Z1jMPOrlNUTNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3K7uDjV/sFUXQr+CDrNQuIHgQg
+ mAX8Bxy/iUu0ThNZg0h/RxVysY5Ye6+GGw0VqdJD7ren9RtRNyYim5e3GD8LGfWrcbYvelpuN/Pk
+ qhBpvAyWwieZyauFYqHkIbFa+ipFJdVl2Qo16OdG/SgJyrKdw0Znvotuy3L4aSJjqFExmwGwvf6h
+ PQx0fYKjNC9VXDo4KyWWo0k/XI0fGv8bNm7IfazUKrTRmPfW13HBdTouyUQiTqTLnMPwSR2klzqa
+ C1hRfn6HuUe9L0a5vwf8PHac6dlnibl3vcBqVmvQB4A18acnPwH1VlXOoo++LXPjBzJ/AVXirbLu
+ Jjy3NtnGWLbnBGfrUBEXB2fYGLNieGQuoHtJvp0r29Rf3ZjFwL+MhHEWw/0qBlNDp8uABz3dkWV+
+ tgmYFaNu+2UDArzT1gq7P+ZTycYLFeAN4+MGwnsp7SkU6CLbyF0Zq4b1/7rjUzETJrWks4pbbQJq
+ 6gWopI3ep45X19ZysgQ+31LcAX8eoFXAhohfegXGH2GIVQVglJFbK771YV8YbC29CtmpcTqTfSIf
+ CWq9oj7OiT8GwpAriB+3/81I3rvR8KJ2fK9jiDYgijyqqY0rATpzHKGfmtNsYTr4SmDZ/bGW8xZC
+ RRs6ZD24UhFcZZEpLhnBCwImTQNvxaLyCc35VA7RvW/HGiGqxL09Cymermt8NAa/gGopT3kKfO4C
+ gvcKmV0o9jYzsFpuc43pp/LzIs3ornuRuAAdgrkq+6l7ZLNYJcf7Z6PCydDzoYZgInuDxgFOs7AZ
+ TwbwMWQbSR6Wmuan/Ls9Qsz9RDDIN7T0mcqBMddGdUDgESur38NrFoXSENXH6UXfnav35JPA4YfM
+ 6tBkXsqvKY6zoLLTPpuFqUUQz+mM8JAD4ECWNo09vb0YLIRnK477e9Xake5PIWKjIXX7qe2zOXoS
+ foyP6zRt50eEqxpBU45i9YX9FCnI0IkSddJcntdBoUG5LGbjO41FyBEqIaDudcVplPE6wCr6GXU1
+ lCw88ijyus1sGnWknJqS8gGhNQxpB5P3qu7c1xMljx2PG/R+pKBSKy8hXOgvE1zSS7XUhkYEQYeb
+ 3jR5NeVaJQBh0uawl0Cg8j+knAzOA9mmoJvkuhKHiekUuskYaI6ERCKp8gXWqnT9kLHhStr5fiGK
+ 7KncpWELuTEvuGslKTrRIXcXpFg5ivY=
+X-Report-Abuse-To: spam@antispammaster.host-h.net
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_001140_944509_05358B6A 
-X-CRM114-Status: GOOD (  18.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200114_082818_673572_D28E7526 
+X-CRM114-Status: UNSURE (   9.32  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [197.242.87.52 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (prabhakar.csengg[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,148 +94,81 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-pci <linux-pci@vger.kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
- Will Deacon <will@kernel.org>, Marek Vasut <marek.vasut+renesas@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Frank Rowand <frowand.list@gmail.com>, Magnus Damm <magnus.damm@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
- Arnd Bergmann <arnd@arndb.de>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
- LAK <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Tom Joseph <tjoseph@cadence.com>, Jingoo Han <jingoohan1@gmail.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+Cc: linux-rockchip@lists.infradead.org,
+ Justin Swartz <justin.swartz@risingedge.co.za>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Rob,
+The following changes prevent the unrecoverable freezes and rcu_sched
+stall warnings experienced in each of my attempts to take advantage of
+lima.
 
-thank you for the review.
+Replace the COMPOSITE_NOGATE definition of aclk_gpu_pre with a
+COMPOSITE that retains the selection of HDMIPHY as the PLL source, but
+instead makes uses of the aclk_gpu PLL source gate and parent names
+defined by mux_pll_src_4plls_p rather than mux_aclk_gpu_pre_p.
 
-On Mon, Jan 13, 2020 at 9:23 PM Rob Herring <robh@kernel.org> wrote:
->
-> On Wed, Jan 08, 2020 at 04:22:09PM +0000, Lad Prabhakar wrote:
-> > This patch adds the bindings for the R-Car PCIe endpoint driver.
-> >
-> > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > ---
-> >  .../devicetree/bindings/pci/rcar-pci-ep.yaml  | 76 +++++++++++++++++++
-> >  1 file changed, 76 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
->
-> Fails 'make dt_binding_check':
->
-> Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml: $id:
-> path/filename 'pci/rcar-pcie-ep.yaml' doesn't match actual filename
->
-my bad fill that and post a v4.
+Remove the now unused mux_aclk_gpu_pre_p and the four named but also
+unused definitions (cpll_gpu, gpll_gpu, hdmiphy_gpu and usb480m_gpu)
+of the aclk_gpu PLL source gate.
 
-Cheers,
---Prabhakar Lad
-> >
-> > diff --git a/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
-> > new file mode 100644
-> > index 000000000000..99c2a1174463
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
-> > @@ -0,0 +1,76 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +# Copyright (C) 2020 Renesas Electronics Europe GmbH - https://www.renesas.com/eu/en/
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/pci/rcar-pcie-ep.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Renesas R-Car PCIe Endpoint
-> > +
-> > +maintainers:
-> > +  - Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > +
-> > +properties:
-> > +  compatible:
-> > +    items:
-> > +      - const: renesas,r8a774c0-pcie-ep
-> > +      - const: renesas,rcar-gen3-pcie-ep
-> > +
-> > +  reg:
-> > +    maxItems: 5
-> > +
-> > +  reg-names:
-> > +    items:
-> > +      - const: apb-base
-> > +      - const: memory0
-> > +      - const: memory1
-> > +      - const: memory2
-> > +      - const: memory3
-> > +
-> > +  power-domains:
-> > +    maxItems: 1
-> > +
-> > +  resets:
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    maxItems: 1
-> > +
-> > +  clock-names:
-> > +    items:
-> > +      - const: pcie
-> > +
-> > +  max-functions:
-> > +    minimum: 1
-> > +    maximum: 6
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - reg-names
-> > +  - resets
-> > +  - power-domains
-> > +  - clocks
-> > +  - clock-names
-> > +  - max-functions
-> > +
-> > +examples:
-> > +  - |
-> > +    #include <dt-bindings/clock/r8a774c0-cpg-mssr.h>
-> > +    #include <dt-bindings/power/r8a774c0-sysc.h>
-> > +
-> > +     pcie0_ep: pcie-ep@fe000000 {
-> > +            compatible = "renesas,r8a774c0-pcie-ep",
-> > +                         "renesas,rcar-gen3-pcie-ep";
-> > +            reg = <0 0xfe000000 0 0x80000>,
-> > +                  <0x0 0xfe100000 0 0x100000>,
-> > +                  <0x0 0xfe200000 0 0x200000>,
-> > +                  <0x0 0x30000000 0 0x8000000>,
-> > +                  <0x0 0x38000000 0 0x8000000>;
-> > +            reg-names = "apb-base", "memory0", "memory1", "memory2", "memory3";
-> > +            resets = <&cpg 319>;
-> > +            power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
-> > +            clocks = <&cpg CPG_MOD 319>;
-> > +            clock-names = "pcie";
-> > +            max-functions = /bits/ 8 <1>;
-> > +    };
-> > --
-> > 2.20.1
-> >
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Use the correct gate offset for aclk_gpu and aclk_gpu_noc.
+
+Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
+---
+ drivers/clk/rockchip/clk-rk3228.c | 17 ++++-------------
+ 1 file changed, 4 insertions(+), 13 deletions(-)
+
+diff --git a/drivers/clk/rockchip/clk-rk3228.c b/drivers/clk/rockchip/clk-rk3228.c
+index d17cfb7a3..d7243c09c 100644
+--- a/drivers/clk/rockchip/clk-rk3228.c
++++ b/drivers/clk/rockchip/clk-rk3228.c
+@@ -156,8 +156,6 @@ PNAME(mux_i2s_out_p)		= { "i2s1_pre", "xin12m" };
+ PNAME(mux_i2s2_p)		= { "i2s2_src", "i2s2_frac", "xin12m" };
+ PNAME(mux_sclk_spdif_p)		= { "sclk_spdif_src", "spdif_frac", "xin12m" };
+ 
+-PNAME(mux_aclk_gpu_pre_p)	= { "cpll_gpu", "gpll_gpu", "hdmiphy_gpu", "usb480m_gpu" };
+-
+ PNAME(mux_uart0_p)		= { "uart0_src", "uart0_frac", "xin24m" };
+ PNAME(mux_uart1_p)		= { "uart1_src", "uart1_frac", "xin24m" };
+ PNAME(mux_uart2_p)		= { "uart2_src", "uart2_frac", "xin24m" };
+@@ -468,16 +466,9 @@ static struct rockchip_clk_branch rk3228_clk_branches[] __initdata = {
+ 			RK2928_CLKSEL_CON(24), 6, 10, DFLAGS,
+ 			RK2928_CLKGATE_CON(2), 8, GFLAGS),
+ 
+-	GATE(0, "cpll_gpu", "cpll", 0,
+-			RK2928_CLKGATE_CON(3), 13, GFLAGS),
+-	GATE(0, "gpll_gpu", "gpll", 0,
+-			RK2928_CLKGATE_CON(3), 13, GFLAGS),
+-	GATE(0, "hdmiphy_gpu", "hdmiphy", 0,
+-			RK2928_CLKGATE_CON(3), 13, GFLAGS),
+-	GATE(0, "usb480m_gpu", "usb480m", 0,
++	COMPOSITE(0, "aclk_gpu_pre", mux_pll_src_4plls_p, 0,
++			RK2928_CLKSEL_CON(34), 5, 2, MFLAGS, 0, 5, DFLAGS,
+ 			RK2928_CLKGATE_CON(3), 13, GFLAGS),
+-	COMPOSITE_NOGATE(0, "aclk_gpu_pre", mux_aclk_gpu_pre_p, 0,
+-			RK2928_CLKSEL_CON(34), 5, 2, MFLAGS, 0, 5, DFLAGS),
+ 
+ 	COMPOSITE(SCLK_SPI0, "sclk_spi0", mux_pll_src_2plls_p, 0,
+ 			RK2928_CLKSEL_CON(25), 8, 1, MFLAGS, 0, 7, DFLAGS,
+@@ -582,8 +573,8 @@ static struct rockchip_clk_branch rk3228_clk_branches[] __initdata = {
+ 	GATE(0, "pclk_peri_noc", "pclk_peri", CLK_IGNORE_UNUSED, RK2928_CLKGATE_CON(12), 2, GFLAGS),
+ 
+ 	/* PD_GPU */
+-	GATE(ACLK_GPU, "aclk_gpu", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(13), 14, GFLAGS),
+-	GATE(0, "aclk_gpu_noc", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(13), 15, GFLAGS),
++	GATE(ACLK_GPU, "aclk_gpu", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(7), 14, GFLAGS),
++	GATE(0, "aclk_gpu_noc", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(7), 15, GFLAGS),
+ 
+ 	/* PD_BUS */
+ 	GATE(0, "sclk_initmem_mbist", "aclk_cpu", 0, RK2928_CLKGATE_CON(8), 1, GFLAGS),
+-- 
+2.11.0
+
 
 _______________________________________________
 Linux-rockchip mailing list
