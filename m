@@ -2,86 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE81713AF53
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Jan 2020 17:28:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2EB9413B27A
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Jan 2020 19:58:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ZvFSfMGzuUjYVIFkFvXt4Xqlxl1BqIvNKRxNp9u0bfo=; b=PGI
-	3lRUf76DJ+1SDFk5/tOzePkiwf8ftEoSnvXUnqNAO32JPTZRM+JotrGizk60ne568PAIbwFyD9gvE
-	86l9gxiBRDHqQ5m8rLSqDuI5KEjlCfb8Wml4e1KSlIE3JU+UG2xUARvnudI+GJFHA5ypO7J/oBkFY
-	LTEZCkIa0+8nUcXdYLKJWpvyPA6o5oOt25G65k9eY06lUZzz7bac4BK2rlrQNGbi4T4WDjhEz9YK0
-	F8+Vw9mF1jbZEUFRNXsc4gjL42veWf27y5FBnWqNIQafcSFUjp1xsTKiAzHRgDMVYPOA1z6i0gghq
-	I/rPjI5VAMRlr2Fs1s64noLhONlvMmg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=t1MdiKqikGyw+QwyBvsKbeoeFcKtAYu+9Dge/uVM8Gk=; b=C6z4Bjw0Y3YX+q
+	hFEweIcHRtrJEBfaliVH1k4/iGn/cUAbjn3Hq3ctG43j2TpcU4ET1jrP6wR1y2e+xfWOO+tYxq58b
+	X4SHlQN7pqj4WV9mm6dfomK3IzS/g+MMpFDHZpF8nCUj2vngY+yrPR8fZfEc9XDF4nmwr0WRD26g3
+	w3ciaL4k9MkiliclloHjdZmJiJb5z/C5Y8gQuT8PbF1cDk1aIQ61usATFazRenIuVJmbUcFoD5gIK
+	DSDP0Yu8SGWVdDxxZPYRStw4s8rwf6p4pxMlVW9E8FdCezdUQw2Lc5Jma/XPsEsO2Y84YhoZRuMTR
+	LKtrY0IsB8KfWPo/+qcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irP3I-0005iy-3H; Tue, 14 Jan 2020 16:28:24 +0000
-Received: from outgoing18.flk.host-h.net ([197.242.87.52])
+	id 1irROX-0001or-3M; Tue, 14 Jan 2020 18:58:29 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irP3C-0005i7-KW; Tue, 14 Jan 2020 16:28:23 +0000
-Received: from www31.flk1.host-h.net ([188.40.1.173])
- by antispam5-flk1.host-h.net with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.89)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1irP2z-0005f4-Ct; Tue, 14 Jan 2020 18:28:06 +0200
-Received: from [130.255.73.16] (helo=v01.28459.vpscontrol.net)
- by www31.flk1.host-h.net with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.89)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1irP2v-0007ID-6N; Tue, 14 Jan 2020 18:28:01 +0200
-From: Justin Swartz <justin.swartz@risingedge.co.za>
-To: Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH] clk: rockchip: fix incorrect configuration of rk3228
- aclk_gpu* clocks
-Date: Tue, 14 Jan 2020 16:25:02 +0000
-Message-Id: <20200114162503.7548-1-justin.swartz@risingedge.co.za>
-X-Mailer: git-send-email 2.11.0
-X-Authenticated-Sender: justin.swartz@risingedge.co.za
-X-Virus-Scanned: Clear
-X-Originating-IP: 188.40.1.173
-X-SpamExperts-Domain: risingedge.co.za
-X-SpamExperts-Username: 
-Authentication-Results: host-h.net;
- auth=pass (login) smtp.auth=@risingedge.co.za
-X-SpamExperts-Outgoing-Class: ham
-X-SpamExperts-Outgoing-Evidence: Combined (0.03)
-X-Recommended-Action: accept
-X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0YvzwMmgjmY0UwihWARy7g6pSDasLI4SayDByyq9LIhVQj5rfp7t2+1U
- Z1jMPOrlNUTNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3K7uDjV/sFUXQr+CDrNQuIHgQg
- mAX8Bxy/iUu0ThNZg0h/RxVysY5Ye6+GGw0VqdJD7ren9RtRNyYim5e3GD8LGfWrcbYvelpuN/Pk
- qhBpvAyWwieZyauFYqHkIbFa+ipFJdVl2Qo16OdG/SgJyrKdw0Znvotuy3L4aSJjqFExmwGwvf6h
- PQx0fYKjNC9VXDo4KyWWo0k/XI0fGv8bNm7IfazUKrTRmPfW13HBdTouyUQiTqTLnMPwSR2klzqa
- C1hRfn6HuUe9L0a5vwf8PHac6dlnibl3vcBqVmvQB4A18acnPwH1VlXOoo++LXPjBzJ/AVXirbLu
- Jjy3NtnGWLbnBGfrUBEXB2fYGLNieGQuoHtJvp0r29Rf3ZjFwL+MhHEWw/0qBlNDp8uABz3dkWV+
- tgmYFaNu+2UDArzT1gq7P+ZTycYLFeAN4+MGwnsp7SkU6CLbyF0Zq4b1/7rjUzETJrWks4pbbQJq
- 6gWopI3ep45X19ZysgQ+31LcAX8eoFXAhohfegXGH2GIVQVglJFbK771YV8YbC29CtmpcTqTfSIf
- CWq9oj7OiT8GwpAriB+3/81I3rvR8KJ2fK9jiDYgijyqqY0rATpzHKGfmtNsYTr4SmDZ/bGW8xZC
- RRs6ZD24UhFcZZEpLhnBCwImTQNvxaLyCc35VA7RvW/HGiGqxL09Cymermt8NAa/gGopT3kKfO4C
- gvcKmV0o9jYzsFpuc43pp/LzIs3ornuRuAAdgrkq+6l7ZLNYJcf7Z6PCydDzoYZgInuDxgFOs7AZ
- TwbwMWQbSR6Wmuan/Ls9Qsz9RDDIN7T0mcqBMddGdUDgESur38NrFoXSENXH6UXfnav35JPA4YfM
- 6tBkXsqvKY6zoLLTPpuFqUUQz+mM8JAD4ECWNo09vb0YLIRnK477e9Xake5PIWKjIXX7qe2zOXoS
- foyP6zRt50eEqxpBU45i9YX9FCnI0IkSddJcntdBoUG5LGbjO41FyBEqIaDudcVplPE6wCr6GXU1
- lCw88ijyus1sGnWknJqS8gGhNQxpB5P3qu7c1xMljx2PG/R+pKBSKy8hXOgvE1zSS7XUhkYEQYeb
- 3jR5NeVaJQBh0uawl0Cg8j+knAzOA9mmoJvkuhKHiekUuskYaI6ERCKp8gXWqnT9kLHhStr5fiGK
- 7KncpWELuTEvuGslKTrRIXcXpFg5ivY=
-X-Report-Abuse-To: spam@antispammaster.host-h.net
+ id 1irROG-0001fO-8L; Tue, 14 Jan 2020 18:58:13 +0000
+Received: from mail-lf1-f44.google.com (mail-lf1-f44.google.com
+ [209.85.167.44])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AE68624655;
+ Tue, 14 Jan 2020 18:58:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579028291;
+ bh=tf/o2SOslhx05jLtLdGaZMcY/dh7CAZd9De5mDkeMf4=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=rhHPwkDsEYo5s9OaBOs8zWlRq1ckApWqZBX6XG5ON2yMQCrS0rVFA3Oq4GbC81lMC
+ k4fdwcZntrM+DImSAtEzIlVzTcp8eX64KU/Lvq0wTsx4+p35gL9opG8cMGcRXj3riC
+ sTdrKifhnvYLTAsuwrV4+sJ9bMoEAkJLnsIEMt78=
+Received: by mail-lf1-f44.google.com with SMTP id m30so10658756lfp.8;
+ Tue, 14 Jan 2020 10:58:10 -0800 (PST)
+X-Gm-Message-State: APjAAAUfTDozBGCA21ENlFXz6LpmpwdXvvNshsfuHXvYgHo/mBL8SNS/
+ XRLng8xQ3CUzMUGfwjrZKlBP0aDCjsVDU5vf7xM=
+X-Google-Smtp-Source: APXvYqwHQ2f4elu47X/7QicsiPxxCMwcNqD1zJyF4zqRmDXWzwTdd9U1U4qAAURR3V9bYvYPHyPXbFdnwTsZfi93v+4=
+X-Received: by 2002:a19:c80a:: with SMTP id y10mr2322353lff.177.1579028288854; 
+ Tue, 14 Jan 2020 10:58:08 -0800 (PST)
+MIME-Version: 1.0
+References: <20191217055738.28445-1-cw00.choi@samsung.com>
+ <CGME20191217055106epcas1p11f2bc81d6bb2db3fc4bc257d78c337b9@epcas1p1.samsung.com>
+ <20191217055738.28445-5-cw00.choi@samsung.com> <20191226210119.GA8706@bogus>
+ <a54e4275-012e-77d9-bdbe-1aab64b5c12b@samsung.com>
+ <76616499-7c19-06b1-461a-28ae17a76c60@samsung.com>
+In-Reply-To: <76616499-7c19-06b1-461a-28ae17a76c60@samsung.com>
+From: Chanwoo Choi <chanwoo@kernel.org>
+Date: Wed, 15 Jan 2020 03:57:30 +0900
+X-Gmail-Original-Message-ID: <CAGTfZH0K65ON0FQGUjQbr71_9VWJXTmRbih1gko6Pcuy+PL63Q@mail.gmail.com>
+Message-ID: <CAGTfZH0K65ON0FQGUjQbr71_9VWJXTmRbih1gko6Pcuy+PL63Q@mail.gmail.com>
+Subject: Re: [PATCH 4/9] PM / devfreq: exynos-bus: Replace deprecated
+ 'devfreq' property
+To: Chanwoo Choi <cw00.choi@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_082818_673572_D28E7526 
-X-CRM114-Status: UNSURE (   9.32  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200114_105812_346026_1E45A5B3 
+X-CRM114-Status: GOOD (  23.72  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [197.242.87.52 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,81 +88,116 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org,
- Justin Swartz <justin.swartz@risingedge.co.za>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Linux PM list <linux-pm@vger.kernel.org>,
+ devicetree <devicetree@vger.kernel.org>,
+ =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@samsung.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>, lukasz.luba@arm.com,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The following changes prevent the unrecoverable freezes and rcu_sched
-stall warnings experienced in each of my attempts to take advantage of
-lima.
+Hi Rob,
 
-Replace the COMPOSITE_NOGATE definition of aclk_gpu_pre with a
-COMPOSITE that retains the selection of HDMIPHY as the PLL source, but
-instead makes uses of the aclk_gpu PLL source gate and parent names
-defined by mux_pll_src_4plls_p rather than mux_aclk_gpu_pre_p.
+On Mon, Jan 6, 2020 at 10:32 AM Chanwoo Choi <cw00.choi@samsung.com> wrote:
+>
+> Hi Rob,
+>
+> Gently Ping.
 
-Remove the now unused mux_aclk_gpu_pre_p and the four named but also
-unused definitions (cpll_gpu, gpll_gpu, hdmiphy_gpu and usb480m_gpu)
-of the aclk_gpu PLL source gate.
+Once again, ping. Could you please review?
 
-Use the correct gate offset for aclk_gpu and aclk_gpu_noc.
+On v2[1], made separate patches for dt-binding.
+[1] https://patchwork.kernel.org/cover/11304545/
 
-Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
----
- drivers/clk/rockchip/clk-rk3228.c | 17 ++++-------------
- 1 file changed, 4 insertions(+), 13 deletions(-)
+>
+> On 12/27/19 9:09 AM, Chanwoo Choi wrote:
+> > On 12/27/19 6:01 AM, Rob Herring wrote:
+> >> On Tue, Dec 17, 2019 at 02:57:33PM +0900, Chanwoo Choi wrote:
+> >>> In order to remove the deprecated 'devfreq' property, replace with
+> >>> new 'exynos,parent-bus' property in order to get the parent devfreq device
+> >>> in devicetree file instead of 'devfreq' property. But, to guarantee the
+> >>> backward-compatibility, keep the support 'devfreq' property.
+> >>>
+> >>> Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
+> >>> ---
+> >>>  .../bindings/devfreq/exynos-bus.txt           | 16 +++++++--------
+> >>>  drivers/devfreq/exynos-bus.c                  | 20 ++++++++++++-------
+> >>>  2 files changed, 21 insertions(+), 15 deletions(-)
+> >>>
+> >>> diff --git a/Documentation/devicetree/bindings/devfreq/exynos-bus.txt b/Documentation/devicetree/bindings/devfreq/exynos-bus.txt
+> >>> index e71f752cc18f..c948cee01124 100644
+> >>> --- a/Documentation/devicetree/bindings/devfreq/exynos-bus.txt
+> >>> +++ b/Documentation/devicetree/bindings/devfreq/exynos-bus.txt
+> >>> @@ -45,7 +45,7 @@ Required properties only for parent bus device:
+> >>>    of buses.
+> >>>
+> >>>  Required properties only for passive bus device:
+> >>> -- devfreq: the parent bus device.
+> >>> +- exynos,parent-bus: the parent bus device.
+> >>
+> >> If you are going to do something new, why not use the interconnect
+> >> binding here?
+> >
+> > As I knew, interconnect make the data path among multiple nodes
+> > and set the average and peak bandwidth to the specific data path.
+> >
+> > It means that some data will be flowed from node_a to node_d
+> > or the reverse way because each node has the tightly coupled
+> > dependency for data flow.
+> >
+> >       node_a <-> node_b <-> node_c <-> node_d
+> >
+> >
+> > On the other hand, exynos-bus.c driver is not related to 'data path'.
+> > Each bus just need to control the their own frequency and voltage.
+> > But, share the power line (regulator) between exynos-bus device
+> > even if there are no any dependency of data flow.
+> >
+> > 'exynos,parent-bus' property just indicate the specific
+> > devfreq device(parent bus device) which controls
+> > the shared power line(regulator) in order to prevent
+> > the h/w problem due to the wrong pair of frequency and voltage.
+> >
+> > 'exynos,parent-bus' property is only used to catch
+> > the change timing of shared power line.
+> >
+> >
+> > And,
+> > as you commented, there are some data path among the exynos-bus
+> > devices for the display h/w as following:
+> >
+> >       bus_display -> bus_leftbus -> bus_dmc
+> >
+> > In order to make the data path between bus devices,
+> > interconnect binding is required. This approach[1] was posted.
+> > [1] https://patchwork.kernel.org/cover/11305265/
+> > - [RFC,v3,0/7] PM / devfreq: Simple QoS for exynos-bus using interconnect
+> >
+>
+> Are there any other commentss?
+>
+>
+> --
+> Best Regards,
+> Chanwoo Choi
+> Samsung Electronics
 
-diff --git a/drivers/clk/rockchip/clk-rk3228.c b/drivers/clk/rockchip/clk-rk3228.c
-index d17cfb7a3..d7243c09c 100644
---- a/drivers/clk/rockchip/clk-rk3228.c
-+++ b/drivers/clk/rockchip/clk-rk3228.c
-@@ -156,8 +156,6 @@ PNAME(mux_i2s_out_p)		= { "i2s1_pre", "xin12m" };
- PNAME(mux_i2s2_p)		= { "i2s2_src", "i2s2_frac", "xin12m" };
- PNAME(mux_sclk_spdif_p)		= { "sclk_spdif_src", "spdif_frac", "xin12m" };
- 
--PNAME(mux_aclk_gpu_pre_p)	= { "cpll_gpu", "gpll_gpu", "hdmiphy_gpu", "usb480m_gpu" };
--
- PNAME(mux_uart0_p)		= { "uart0_src", "uart0_frac", "xin24m" };
- PNAME(mux_uart1_p)		= { "uart1_src", "uart1_frac", "xin24m" };
- PNAME(mux_uart2_p)		= { "uart2_src", "uart2_frac", "xin24m" };
-@@ -468,16 +466,9 @@ static struct rockchip_clk_branch rk3228_clk_branches[] __initdata = {
- 			RK2928_CLKSEL_CON(24), 6, 10, DFLAGS,
- 			RK2928_CLKGATE_CON(2), 8, GFLAGS),
- 
--	GATE(0, "cpll_gpu", "cpll", 0,
--			RK2928_CLKGATE_CON(3), 13, GFLAGS),
--	GATE(0, "gpll_gpu", "gpll", 0,
--			RK2928_CLKGATE_CON(3), 13, GFLAGS),
--	GATE(0, "hdmiphy_gpu", "hdmiphy", 0,
--			RK2928_CLKGATE_CON(3), 13, GFLAGS),
--	GATE(0, "usb480m_gpu", "usb480m", 0,
-+	COMPOSITE(0, "aclk_gpu_pre", mux_pll_src_4plls_p, 0,
-+			RK2928_CLKSEL_CON(34), 5, 2, MFLAGS, 0, 5, DFLAGS,
- 			RK2928_CLKGATE_CON(3), 13, GFLAGS),
--	COMPOSITE_NOGATE(0, "aclk_gpu_pre", mux_aclk_gpu_pre_p, 0,
--			RK2928_CLKSEL_CON(34), 5, 2, MFLAGS, 0, 5, DFLAGS),
- 
- 	COMPOSITE(SCLK_SPI0, "sclk_spi0", mux_pll_src_2plls_p, 0,
- 			RK2928_CLKSEL_CON(25), 8, 1, MFLAGS, 0, 7, DFLAGS,
-@@ -582,8 +573,8 @@ static struct rockchip_clk_branch rk3228_clk_branches[] __initdata = {
- 	GATE(0, "pclk_peri_noc", "pclk_peri", CLK_IGNORE_UNUSED, RK2928_CLKGATE_CON(12), 2, GFLAGS),
- 
- 	/* PD_GPU */
--	GATE(ACLK_GPU, "aclk_gpu", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(13), 14, GFLAGS),
--	GATE(0, "aclk_gpu_noc", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(13), 15, GFLAGS),
-+	GATE(ACLK_GPU, "aclk_gpu", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(7), 14, GFLAGS),
-+	GATE(0, "aclk_gpu_noc", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(7), 15, GFLAGS),
- 
- 	/* PD_BUS */
- 	GATE(0, "sclk_initmem_mbist", "aclk_cpu", 0, RK2928_CLKGATE_CON(8), 1, GFLAGS),
+
+
 -- 
-2.11.0
-
+Best Regards,
+Chanwoo Choi
 
 _______________________________________________
 Linux-rockchip mailing list
