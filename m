@@ -2,72 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EB9413B27A
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Jan 2020 19:58:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7355013B393
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Jan 2020 21:21:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t1MdiKqikGyw+QwyBvsKbeoeFcKtAYu+9Dge/uVM8Gk=; b=C6z4Bjw0Y3YX+q
-	hFEweIcHRtrJEBfaliVH1k4/iGn/cUAbjn3Hq3ctG43j2TpcU4ET1jrP6wR1y2e+xfWOO+tYxq58b
-	X4SHlQN7pqj4WV9mm6dfomK3IzS/g+MMpFDHZpF8nCUj2vngY+yrPR8fZfEc9XDF4nmwr0WRD26g3
-	w3ciaL4k9MkiliclloHjdZmJiJb5z/C5Y8gQuT8PbF1cDk1aIQ61usATFazRenIuVJmbUcFoD5gIK
-	DSDP0Yu8SGWVdDxxZPYRStw4s8rwf6p4pxMlVW9E8FdCezdUQw2Lc5Jma/XPsEsO2Y84YhoZRuMTR
-	LKtrY0IsB8KfWPo/+qcQ==;
+	List-Owner; bh=5xC2ElddYYDGSA3XcrGkwS7w76B1tI4USGoiORXc8EE=; b=F6yD+CHef01rfo
+	ZrzKZPMMAmbwYOn9BPQfW/zoGC5hEZ7nMrEb67Lq9FzZX7ZVKO+6qK3uVcdcPMymh9/b5/KcD9Lrg
+	x6zcL5WN/wud74WoqOWEOx7y6OziCBz9HW7gO+m7CdhBt5C1VAWUrBuGhhkCKweD38VNTrYcL/ufn
+	v7lngbTFCkU0DMwDU8UZUWbeHrUP81c8Se8ZfN87fr1qGmbezbrAhN2RWin7GXo/EMfLqVJLqdhja
+	aPB0ZKl7t5Tm9dYCGLo+NEVHWQcORn4DkvgMQ7StYcEy8U36nbtSkxwk7LfdhdT5uZ3JgWFSX6/0T
+	Xrxf2EFurBBAtgR0JL7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irROX-0001or-3M; Tue, 14 Jan 2020 18:58:29 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1irSh5-0000DX-SL; Tue, 14 Jan 2020 20:21:43 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irROG-0001fO-8L; Tue, 14 Jan 2020 18:58:13 +0000
-Received: from mail-lf1-f44.google.com (mail-lf1-f44.google.com
- [209.85.167.44])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AE68624655;
- Tue, 14 Jan 2020 18:58:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579028291;
- bh=tf/o2SOslhx05jLtLdGaZMcY/dh7CAZd9De5mDkeMf4=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=rhHPwkDsEYo5s9OaBOs8zWlRq1ckApWqZBX6XG5ON2yMQCrS0rVFA3Oq4GbC81lMC
- k4fdwcZntrM+DImSAtEzIlVzTcp8eX64KU/Lvq0wTsx4+p35gL9opG8cMGcRXj3riC
- sTdrKifhnvYLTAsuwrV4+sJ9bMoEAkJLnsIEMt78=
-Received: by mail-lf1-f44.google.com with SMTP id m30so10658756lfp.8;
- Tue, 14 Jan 2020 10:58:10 -0800 (PST)
-X-Gm-Message-State: APjAAAUfTDozBGCA21ENlFXz6LpmpwdXvvNshsfuHXvYgHo/mBL8SNS/
- XRLng8xQ3CUzMUGfwjrZKlBP0aDCjsVDU5vf7xM=
-X-Google-Smtp-Source: APXvYqwHQ2f4elu47X/7QicsiPxxCMwcNqD1zJyF4zqRmDXWzwTdd9U1U4qAAURR3V9bYvYPHyPXbFdnwTsZfi93v+4=
-X-Received: by 2002:a19:c80a:: with SMTP id y10mr2322353lff.177.1579028288854; 
- Tue, 14 Jan 2020 10:58:08 -0800 (PST)
+ id 1irSgz-0000Ck-GO; Tue, 14 Jan 2020 20:21:41 +0000
+Received: by mail-ed1-x541.google.com with SMTP id v28so13162998edw.12;
+ Tue, 14 Jan 2020 12:21:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=eTYOdAjqpPQyd/dKUd7t4m1y6m6buUvTbOTtmO8r2xg=;
+ b=uPnlPYExpuZKHXBq0k1aDFQypwDgNSHN+5V84q3ieCd874DrCu8HeEwMpj5bzRFH+P
+ F1QXEi8rne5kzXiaawvx7TbGhZwwQR+x3dVDWFlXR/Sc1lLsa8eIVcEv+YyC2/NwDMIy
+ pJvXxofQ1Xj7CuoHioC8CVqOX+C6PwyQK43bhK2g/wxMUW9PeRKGwvVBGi1yRgOJx1EH
+ 3SoHWKXB2QHnuzpGffvxygQR1x1L9Id36rfosShZB3jm6tCQR3W8Pky/sS2jaRWP4FgF
+ Zhx9TOCGmzN4LHksxWRKSzE91ZH8b6LOCoqNMjE1VBfHBLCVNWqVZkP5b85iiKkTGoQe
+ vcQQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=eTYOdAjqpPQyd/dKUd7t4m1y6m6buUvTbOTtmO8r2xg=;
+ b=AvFTNLhf5XRpBp0ZvkvOmqzmRKJces6B+aNM2AcHqcVWgaI9MPdE4diZInjcGAfgKL
+ tDHPzKlH5YVN2zZDu2MNTug60NhhtJagjyol4E3fJFGLQgssEC1Mv2DkcSXq+m/igxP1
+ xtjlSJa2FK3CXPxSK9ZORPG52wn5+TgmaZUpdinN2K/RdJ9Bsui4WLCY0w3HwvmZYc8a
+ 2mS+dFAlkgLdIM8+gaJjIsrVsCmoj6wmkaHllKKYZgk4iCHxj3eZjjogRKPfn8xuSdsO
+ /J6vtnWJ5YSlgw10IinWlCiA22xVVBjw6VnS9Z1qWto+sKddDDbj9RIdZvzEdyTNqag+
+ pVGg==
+X-Gm-Message-State: APjAAAVnJRZFioQKmdO5e0g9YLjC6UDkPpylGOCWDHMh8doHDA/QOlAR
+ 0z8Hek6qF6hlGlgzk2U/0V/vqbiLAwdyR27GiSU=
+X-Google-Smtp-Source: APXvYqwUGwwmpnBLO0b5hpgDEXjku/e8Ri4iad2bNMoLATaQhP7Vu24eJWlvCK7tUZvc70ovkb7JVC8NryjWKrbam2A=
+X-Received: by 2002:aa7:d94d:: with SMTP id l13mr23832761eds.328.1579033295846; 
+ Tue, 14 Jan 2020 12:21:35 -0800 (PST)
 MIME-Version: 1.0
-References: <20191217055738.28445-1-cw00.choi@samsung.com>
- <CGME20191217055106epcas1p11f2bc81d6bb2db3fc4bc257d78c337b9@epcas1p1.samsung.com>
- <20191217055738.28445-5-cw00.choi@samsung.com> <20191226210119.GA8706@bogus>
- <a54e4275-012e-77d9-bdbe-1aab64b5c12b@samsung.com>
- <76616499-7c19-06b1-461a-28ae17a76c60@samsung.com>
-In-Reply-To: <76616499-7c19-06b1-461a-28ae17a76c60@samsung.com>
-From: Chanwoo Choi <chanwoo@kernel.org>
-Date: Wed, 15 Jan 2020 03:57:30 +0900
-X-Gmail-Original-Message-ID: <CAGTfZH0K65ON0FQGUjQbr71_9VWJXTmRbih1gko6Pcuy+PL63Q@mail.gmail.com>
-Message-ID: <CAGTfZH0K65ON0FQGUjQbr71_9VWJXTmRbih1gko6Pcuy+PL63Q@mail.gmail.com>
-Subject: Re: [PATCH 4/9] PM / devfreq: exynos-bus: Replace deprecated
- 'devfreq' property
-To: Chanwoo Choi <cw00.choi@samsung.com>
+References: <20200107230626.885451-1-martin.blumenstingl@googlemail.com>
+ <20200107230626.885451-4-martin.blumenstingl@googlemail.com>
+ <2ceffe46-57a8-79a8-2c41-d04b227d3792@arm.com>
+ <CAFBinCD7o-q-i66zZhOro1DanKAfG-8obQtzxxD==xOwsy_d6A@mail.gmail.com>
+ <21d0730b-8299-8bfd-4321-746ccb3772d0@arm.com>
+In-Reply-To: <21d0730b-8299-8bfd-4321-746ccb3772d0@arm.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Tue, 14 Jan 2020 21:21:24 +0100
+Message-ID: <CAFBinCC4LttRsWDpMDEsYFa-ccRcErOuhpwa41O54f9Cmn4v0A@mail.gmail.com>
+Subject: Re: [PATCH RFT v1 3/3] drm/panfrost: Use the mali-supply regulator
+ for control again
+To: Steven Price <steven.price@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_105812_346026_1E45A5B3 
-X-CRM114-Status: GOOD (  23.72  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200114_122137_572690_F007A2F9 
+X-CRM114-Status: GOOD (  23.44  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -75,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,116 +97,78 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux PM list <linux-pm@vger.kernel.org>,
- devicetree <devicetree@vger.kernel.org>,
- =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@samsung.com>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Leonard Crestez <leonard.crestez@nxp.com>, lukasz.luba@arm.com,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: tomeu.vizoso@collabora.com, airlied@linux.ie, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+ linux-amlogic@lists.infradead.org, robin.murphy@arm.com, alyssa@rosenzweig.io
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Rob,
+Hi Steven,
 
-On Mon, Jan 6, 2020 at 10:32 AM Chanwoo Choi <cw00.choi@samsung.com> wrote:
+On Mon, Jan 13, 2020 at 6:10 PM Steven Price <steven.price@arm.com> wrote:
 >
-> Hi Rob,
->
-> Gently Ping.
-
-Once again, ping. Could you please review?
-
-On v2[1], made separate patches for dt-binding.
-[1] https://patchwork.kernel.org/cover/11304545/
-
->
-> On 12/27/19 9:09 AM, Chanwoo Choi wrote:
-> > On 12/27/19 6:01 AM, Rob Herring wrote:
-> >> On Tue, Dec 17, 2019 at 02:57:33PM +0900, Chanwoo Choi wrote:
-> >>> In order to remove the deprecated 'devfreq' property, replace with
-> >>> new 'exynos,parent-bus' property in order to get the parent devfreq device
-> >>> in devicetree file instead of 'devfreq' property. But, to guarantee the
-> >>> backward-compatibility, keep the support 'devfreq' property.
-> >>>
-> >>> Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
-> >>> ---
-> >>>  .../bindings/devfreq/exynos-bus.txt           | 16 +++++++--------
-> >>>  drivers/devfreq/exynos-bus.c                  | 20 ++++++++++++-------
-> >>>  2 files changed, 21 insertions(+), 15 deletions(-)
-> >>>
-> >>> diff --git a/Documentation/devicetree/bindings/devfreq/exynos-bus.txt b/Documentation/devicetree/bindings/devfreq/exynos-bus.txt
-> >>> index e71f752cc18f..c948cee01124 100644
-> >>> --- a/Documentation/devicetree/bindings/devfreq/exynos-bus.txt
-> >>> +++ b/Documentation/devicetree/bindings/devfreq/exynos-bus.txt
-> >>> @@ -45,7 +45,7 @@ Required properties only for parent bus device:
-> >>>    of buses.
-> >>>
-> >>>  Required properties only for passive bus device:
-> >>> -- devfreq: the parent bus device.
-> >>> +- exynos,parent-bus: the parent bus device.
+> On 09/01/2020 17:27, Martin Blumenstingl wrote:
+> > On Thu, Jan 9, 2020 at 12:31 PM Steven Price <steven.price@arm.com> wrote:
 > >>
-> >> If you are going to do something new, why not use the interconnect
-> >> binding here?
+> >> On 07/01/2020 23:06, Martin Blumenstingl wrote:
+> >>> dev_pm_opp_set_rate() needs a reference to the regulator which should be
+> >>> updated when updating the GPU frequency. The name of the regulator has
+> >>> to be passed at initialization-time using dev_pm_opp_set_regulators().
+> >>> Add the call to dev_pm_opp_set_regulators() so dev_pm_opp_set_rate()
+> >>> will update the GPU regulator when updating the frequency (just like
+> >>> we did this manually before when we open-coded dev_pm_opp_set_rate()).
+> >>
+> >> This patch causes a warning from debugfs on my firefly (RK3288) board:
+> >>
+> >> debugfs: Directory 'ffa30000.gpu-mali' with parent 'vdd_gpu' already
+> >> present!
+> >>
+> >> So it looks like the regulator is being added twice - but I haven't
+> >> investigated further.
+> > I *think* it's because the regulator is already fetched by the
+> > panfrost driver itself to enable it
+> > (the devfreq code currently does not support enabling the regulator,
+> > it can only control the voltage)
 > >
-> > As I knew, interconnect make the data path among multiple nodes
-> > and set the average and peak bandwidth to the specific data path.
-> >
-> > It means that some data will be flowed from node_a to node_d
-> > or the reverse way because each node has the tightly coupled
-> > dependency for data flow.
-> >
-> >       node_a <-> node_b <-> node_c <-> node_d
-> >
-> >
-> > On the other hand, exynos-bus.c driver is not related to 'data path'.
-> > Each bus just need to control the their own frequency and voltage.
-> > But, share the power line (regulator) between exynos-bus device
-> > even if there are no any dependency of data flow.
-> >
-> > 'exynos,parent-bus' property just indicate the specific
-> > devfreq device(parent bus device) which controls
-> > the shared power line(regulator) in order to prevent
-> > the h/w problem due to the wrong pair of frequency and voltage.
-> >
-> > 'exynos,parent-bus' property is only used to catch
-> > the change timing of shared power line.
-> >
-> >
-> > And,
-> > as you commented, there are some data path among the exynos-bus
-> > devices for the display h/w as following:
-> >
-> >       bus_display -> bus_leftbus -> bus_dmc
-> >
-> > In order to make the data path between bus devices,
-> > interconnect binding is required. This approach[1] was posted.
-> > [1] https://patchwork.kernel.org/cover/11305265/
-> > - [RFC,v3,0/7] PM / devfreq: Simple QoS for exynos-bus using interconnect
-> >
+> > I'm not sure what to do about this though
 >
-> Are there any other commentss?
+> Having a little play around with this, I think you can simply remove the
+> panfrost_regulator_init() call. This at least works for me - the call to
+> dev_pm_opp_set_regulators() seems to set everything up. However I
+> suspect you need to do this unconditionally even if there are no
+> operating points defined.
+I'm not sure if I can safely remove panfrost_regulator_init() because
+it calls regulator_enable()
+but there's no regulator_enable() equivalent in devfreq or OPP
+
+I'm not sure how this is supposed to work
+if someone has an idea: please let me know
+
+> > [...]
+> >>>       ret = dev_pm_opp_of_add_table(dev);
+> >>> -     if (ret)
+> >>> +     if (ret) {
+> >>> +             dev_pm_opp_put_regulators(pfdev->devfreq.regulators_opp_table);
+> >>
+> >> If we don't have a regulator then regulators_opp_table will be NULL and
+> >> sadly dev_pm_opp_put_regulators() doesn't handle a NULL argument. The
+> >> same applies to the two below calls obviously.
+> > good catch, thank you!
+> > are you happy with the general approach here or do you think that
+> > dev_pm_opp_set_regulators is the wrong way to go (for whatever
+> > reason)?
 >
->
-> --
-> Best Regards,
-> Chanwoo Choi
-> Samsung Electronics
+> To be honest this is an area I still don't fully understand. There's a
+> lot of magic helper functions and very little in the way of helpful
+> documentation to work out which are the right ones to call. It seems
+> reasonable to me, hopefully someone more in the know will chime in it
+> there's something fundamentally wrong!
+OK, if you know anybody who could help then please Cc them
 
 
-
--- 
-Best Regards,
-Chanwoo Choi
+Martin
 
 _______________________________________________
 Linux-rockchip mailing list
