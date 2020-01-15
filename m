@@ -2,60 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB2AE13CAE6
-	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Jan 2020 18:24:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3B6E13CC9B
+	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Jan 2020 19:53:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=9XwbRBjiCnDbbpjlurk0f7gDGLwKpkZL2EYQ84BuTtA=; b=N714MK4prU5qtr
-	h+4E938s0V7oorUe4s9TGh1crrVoqtg8hz6AH7uSU4keZ7L/kfS/ZAeibmb27VfYX2hdw2UToS0T0
-	CpkkaKV9Hm5fqprTwVqitDQar8dcEw3FjYlD7RSoy0fRXvSEEbYeu8I/9L6bM8/ljE6F8eQgJVdYb
-	kYJ5jsvtYeRDN1+he+Mtde4CUq5VS87BoZrPek5cMazEQAhOLnpyUwFzi+xSJTEP67C2B8xz1zUZM
-	N1h1fMtoxcvU1bsC5FdJURsrK7CJRoqsyL5H0ADrPQubS98BPiAH0tOvBcn6xlNeZYCXdVon09QkU
-	u7A3Jd3994QPxjGYFnHQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ydO09UKoFbvueURt6UDMa2KlFv+7NOu72+/5QjD36MI=; b=QfR
+	sOQl4eeQtcxs12O40jzWvylIGqXYbzvZYEmel6gx0qpEQA3cujw+5x/jZgoDo2OBNnpp/cK1UgGtL
+	rWVT8QhpPMuQNW246XNhTgztFkjph/deuGvkzy18Eavl2gcHbF0tqhrNmN8vwCbIkL477eLaSoBsL
+	4+ykidwG8qbePQZUa85F0TeDzFK8vvWzHP4jW4aR37vMEnxxblz34fLUPokRIyEePVuXyUzL3gFNc
+	ruaA6y6IK1lsnAET5giXzCgTd5/jxsul3GQZLeG5rAMBHTvpCfgxyuDSf6FEhNGe0cUWYsfvfhQ+t
+	4h3MPjfksnc49B4p2WbhYoeUXwPluuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irmPH-00042r-6L; Wed, 15 Jan 2020 17:24:39 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1irnmx-0000wT-L8; Wed, 15 Jan 2020 18:53:11 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irmPA-00041u-Cn
- for linux-rockchip@lists.infradead.org; Wed, 15 Jan 2020 17:24:37 +0000
-Received: from localhost (odyssey.drury.edu [64.22.249.253])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7682424656;
- Wed, 15 Jan 2020 17:24:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579109071;
- bh=Gr0yrIgG+HqfegwFxg1FX94l6Lsqg7CDnxr0Tft90sI=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=RTECrJeYi2YWP68omuR47D1bzi/o9sJXOtnJfCHIDlfMPdp32jUlc2HmBC8G8U+al
- I0wuJlqAqSrJ+5hDOYaj9tH974hO1q6Q1BonG1X6lsChpGc1vdvUAqxqcym8/Bv/eZ
- /BSkGTWYyH8pieTHdwplcwNDmn7GKRxrxy4/0ryI=
-Date: Wed, 15 Jan 2020 11:24:30 -0600
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Shawn Lin <shawn.lin@rock-chips.com>
-Subject: Re: [PATCH 5/6] PCI: rockchip: add DesignWare based PCIe controller
-Message-ID: <20200115172430.GA180494@google.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1578986701-72072-1-git-send-email-shawn.lin@rock-chips.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1irnmg-0000az-1D; Wed, 15 Jan 2020 18:52:59 +0000
+Received: by mail-wr1-x442.google.com with SMTP id c14so16800652wrn.7;
+ Wed, 15 Jan 2020 10:52:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=ZKbkfQFGcDjwsClT1OKqzInSbgiQQ9mGLFaz9bGeYd4=;
+ b=AOf0Dy5Fon60mpk9fYvpXhjPf7hixSrjiVwgONswX+BJ8gWUDq/uHcM2K5eRbkAiwv
+ 8THTdT1rXx9bK44xOZ1ZBl4M9ciSmt4yKo49OsGp0mK9NF1wQ8a2K6oqiKeWq4ggf0qi
+ lI1kmOB1Pnexkje26KK6JkCAxWXhaw4ymLKQK142EVGl9t0ptvNE1Rgjvb26KSUQcQrR
+ 881ghRw/MXSApVG4ou2o4yu2+oW4sxxBW919SCLhEcNGbrL4H/i65xdwIythdo7KRl5n
+ mKaJx/zFPu1qsXXy17Hi9kAEYySnT/1+qNIr+aUoxib3+VZ6eYq/uCzHVV3Z1UytG5Wg
+ eBiw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=ZKbkfQFGcDjwsClT1OKqzInSbgiQQ9mGLFaz9bGeYd4=;
+ b=U94WpytWHRjVXC/w3vrbap8EyZz5jY9poT0otQlhxwk+RVPXJm9msdIF7HGobmMkPX
+ PUOPoDWO7YMyYGXb9xD3T2JX87AixrXA/i9H8p5xXCRp0Ni0DxjIgp3HLmlxwDppYCNr
+ ZttFwKbQTB0yzqiJkxdRijBgkeOWlov3RLgyo+MUHpHsvuRCQYJiUU6Uh2f0/f5ZI/rn
+ ZbLHIVxaBsMY2P9hh6bN6YoB4u8LE8pUgc3FQc/HrVwkXsEcLbhTK8DmSYFkaUcUANOT
+ amnJO3alugrgXhSGoB2ZS5zDSqIFvBvIttcHr65FXAmv9NlKL3POzbjy9ytk9emisI0g
+ /ugQ==
+X-Gm-Message-State: APjAAAXCG58yqaoUyslSVVhIHacmbfG5sfcUFI0CRIejkKXv5lRK9+r6
+ SvThpgTxm7hjPRNo0Fh+zjA=
+X-Google-Smtp-Source: APXvYqxV12+42V6D8tiScZA75LHa8aUfF3oUkAivjr11wUSnWolsYdOchApqGdsdwKamXM031jFVvQ==
+X-Received: by 2002:adf:f18b:: with SMTP id h11mr31825959wro.56.1579114372394; 
+ Wed, 15 Jan 2020 10:52:52 -0800 (PST)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id i5sm26296759wrv.34.2020.01.15.10.52.51
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 15 Jan 2020 10:52:51 -0800 (PST)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH 1/2] ARM: dts: rockchip: rename dwmmc node names to mmc
+Date: Wed, 15 Jan 2020 19:52:43 +0100
+Message-Id: <20200115185244.18149-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_092432_733266_F94C87F3 
-X-CRM114-Status: GOOD (  16.32  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200115_105254_100004_E04B15AC 
+X-CRM114-Status: GOOD (  11.98  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (jbx6244[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jbx6244[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -63,8 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 FAKE_REPLY_C           No description available.
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,71 +94,199 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, Jingoo Han <jingoohan1@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, linux-pci@vger.kernel.org,
- William Wu <william.wu@rock-chips.com>, Simon Xue <xxm@rock-chips.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Follow subject line convention.
+Current dts files with 'dwmmc' nodes are manually verified.
+In order to automate this process rockchip-dw-mshc.txt
+has to be converted to yaml. In the new setup
+rockchip-dw-mshc.yaml will inherit properties from
+mmc-controller.yaml and synopsys-dw-mshc-common.yaml.
+'dwmmc' will no longer be a valid name for a node,
+so change them all to 'mmc'
 
-On Tue, Jan 14, 2020 at 03:25:01PM +0800, Shawn Lin wrote:
-> From: Simon Xue <xxm@rock-chips.com>
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm/boot/dts/rk3036.dtsi | 6 +++---
+ arch/arm/boot/dts/rk322x.dtsi | 6 +++---
+ arch/arm/boot/dts/rk3288.dtsi | 8 ++++----
+ arch/arm/boot/dts/rk3xxx.dtsi | 6 +++---
+ arch/arm/boot/dts/rv1108.dtsi | 6 +++---
+ 5 files changed, 16 insertions(+), 16 deletions(-)
 
-Needs a commit log.  Please describe the relationship with the
-existing drivers/pci/controller/pcie-rockchip-host.c.  Are they for
-different devices?  Does this supercede the other?
+diff --git a/arch/arm/boot/dts/rk3036.dtsi b/arch/arm/boot/dts/rk3036.dtsi
+index c70182c5a..cf36e2519 100644
+--- a/arch/arm/boot/dts/rk3036.dtsi
++++ b/arch/arm/boot/dts/rk3036.dtsi
+@@ -224,7 +224,7 @@
+ 		status = "disabled";
+ 	};
+ 
+-	sdmmc: dwmmc@10214000 {
++	sdmmc: mmc@10214000 {
+ 		compatible = "rockchip,rk3036-dw-mshc", "rockchip,rk3288-dw-mshc";
+ 		reg = <0x10214000 0x4000>;
+ 		clock-frequency = <37500000>;
+@@ -238,7 +238,7 @@
+ 		status = "disabled";
+ 	};
+ 
+-	sdio: dwmmc@10218000 {
++	sdio: mmc@10218000 {
+ 		compatible = "rockchip,rk3036-dw-mshc", "rockchip,rk3288-dw-mshc";
+ 		reg = <0x10218000 0x4000>;
+ 		max-frequency = <37500000>;
+@@ -252,7 +252,7 @@
+ 		status = "disabled";
+ 	};
+ 
+-	emmc: dwmmc@1021c000 {
++	emmc: mmc@1021c000 {
+ 		compatible = "rockchip,rk3036-dw-mshc", "rockchip,rk3288-dw-mshc";
+ 		reg = <0x1021c000 0x4000>;
+ 		interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
+diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
+index 340ed6ccb..4e90efdc9 100644
+--- a/arch/arm/boot/dts/rk322x.dtsi
++++ b/arch/arm/boot/dts/rk322x.dtsi
+@@ -662,7 +662,7 @@
+ 		};
+ 	};
+ 
+-	sdmmc: dwmmc@30000000 {
++	sdmmc: mmc@30000000 {
+ 		compatible = "rockchip,rk3228-dw-mshc", "rockchip,rk3288-dw-mshc";
+ 		reg = <0x30000000 0x4000>;
+ 		interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
+@@ -675,7 +675,7 @@
+ 		status = "disabled";
+ 	};
+ 
+-	sdio: dwmmc@30010000 {
++	sdio: mmc@30010000 {
+ 		compatible = "rockchip,rk3228-dw-mshc", "rockchip,rk3288-dw-mshc";
+ 		reg = <0x30010000 0x4000>;
+ 		interrupts = <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>;
+@@ -688,7 +688,7 @@
+ 		status = "disabled";
+ 	};
+ 
+-	emmc: dwmmc@30020000 {
++	emmc: mmc@30020000 {
+ 		compatible = "rockchip,rk3228-dw-mshc", "rockchip,rk3288-dw-mshc";
+ 		reg = <0x30020000 0x4000>;
+ 		interrupts = <GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>;
+diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+index 415c75f57..9beb66216 100644
+--- a/arch/arm/boot/dts/rk3288.dtsi
++++ b/arch/arm/boot/dts/rk3288.dtsi
+@@ -247,7 +247,7 @@
+ 		ports = <&vopl_out>, <&vopb_out>;
+ 	};
+ 
+-	sdmmc: dwmmc@ff0c0000 {
++	sdmmc: mmc@ff0c0000 {
+ 		compatible = "rockchip,rk3288-dw-mshc";
+ 		max-frequency = <150000000>;
+ 		clocks = <&cru HCLK_SDMMC>, <&cru SCLK_SDMMC>,
+@@ -261,7 +261,7 @@
+ 		status = "disabled";
+ 	};
+ 
+-	sdio0: dwmmc@ff0d0000 {
++	sdio0: mmc@ff0d0000 {
+ 		compatible = "rockchip,rk3288-dw-mshc";
+ 		max-frequency = <150000000>;
+ 		clocks = <&cru HCLK_SDIO0>, <&cru SCLK_SDIO0>,
+@@ -275,7 +275,7 @@
+ 		status = "disabled";
+ 	};
+ 
+-	sdio1: dwmmc@ff0e0000 {
++	sdio1: mmc@ff0e0000 {
+ 		compatible = "rockchip,rk3288-dw-mshc";
+ 		max-frequency = <150000000>;
+ 		clocks = <&cru HCLK_SDIO1>, <&cru SCLK_SDIO1>,
+@@ -289,7 +289,7 @@
+ 		status = "disabled";
+ 	};
+ 
+-	emmc: dwmmc@ff0f0000 {
++	emmc: mmc@ff0f0000 {
+ 		compatible = "rockchip,rk3288-dw-mshc";
+ 		max-frequency = <150000000>;
+ 		clocks = <&cru HCLK_EMMC>, <&cru SCLK_EMMC>,
+diff --git a/arch/arm/boot/dts/rk3xxx.dtsi b/arch/arm/boot/dts/rk3xxx.dtsi
+index 97307a405..241f43e29 100644
+--- a/arch/arm/boot/dts/rk3xxx.dtsi
++++ b/arch/arm/boot/dts/rk3xxx.dtsi
+@@ -231,7 +231,7 @@
+ 		status = "disabled";
+ 	};
+ 
+-	mmc0: dwmmc@10214000 {
++	mmc0: mmc@10214000 {
+ 		compatible = "rockchip,rk2928-dw-mshc";
+ 		reg = <0x10214000 0x1000>;
+ 		interrupts = <GIC_SPI 23 IRQ_TYPE_LEVEL_HIGH>;
+@@ -245,7 +245,7 @@
+ 		status = "disabled";
+ 	};
+ 
+-	mmc1: dwmmc@10218000 {
++	mmc1: mmc@10218000 {
+ 		compatible = "rockchip,rk2928-dw-mshc";
+ 		reg = <0x10218000 0x1000>;
+ 		interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
+@@ -259,7 +259,7 @@
+ 		status = "disabled";
+ 	};
+ 
+-	emmc: dwmmc@1021c000 {
++	emmc: mmc@1021c000 {
+ 		compatible = "rockchip,rk2928-dw-mshc";
+ 		reg = <0x1021c000 0x1000>;
+ 		interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+diff --git a/arch/arm/boot/dts/rv1108.dtsi b/arch/arm/boot/dts/rv1108.dtsi
+index 5876690ee..1fd06e7cb 100644
+--- a/arch/arm/boot/dts/rv1108.dtsi
++++ b/arch/arm/boot/dts/rv1108.dtsi
+@@ -456,7 +456,7 @@
+ 		#reset-cells = <1>;
+ 	};
+ 
+-	emmc: dwmmc@30110000 {
++	emmc: mmc@30110000 {
+ 		compatible = "rockchip,rv1108-dw-mshc", "rockchip,rk3288-dw-mshc";
+ 		reg = <0x30110000 0x4000>;
+ 		interrupts = <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>;
+@@ -468,7 +468,7 @@
+ 		status = "disabled";
+ 	};
+ 
+-	sdio: dwmmc@30120000 {
++	sdio: mmc@30120000 {
+ 		compatible = "rockchip,rv1108-dw-mshc", "rockchip,rk3288-dw-mshc";
+ 		reg = <0x30120000 0x4000>;
+ 		interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
+@@ -480,7 +480,7 @@
+ 		status = "disabled";
+ 	};
+ 
+-	sdmmc: dwmmc@30130000 {
++	sdmmc: mmc@30130000 {
+ 		compatible = "rockchip,rv1108-dw-mshc", "rockchip,rk3288-dw-mshc";
+ 		reg = <0x30130000 0x4000>;
+ 		interrupts = <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>;
+-- 
+2.11.0
 
-> Signed-off-by: Simon Xue <xxm@rock-chips.com>
-> Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
-> ---
-> 
->  drivers/pci/controller/dwc/Kconfig            |   9 +
->  drivers/pci/controller/dwc/Makefile           |   1 +
->  drivers/pci/controller/dwc/pcie-dw-rockchip.c | 441 ++++++++++++++++++++++++++
->  3 files changed, 451 insertions(+)
->  create mode 100644 drivers/pci/controller/dwc/pcie-dw-rockchip.c
-> 
-> diff --git a/drivers/pci/controller/dwc/Kconfig b/drivers/pci/controller/dwc/Kconfig
-> index 0830dfc..9160264 100644
-> --- a/drivers/pci/controller/dwc/Kconfig
-> +++ b/drivers/pci/controller/dwc/Kconfig
-> @@ -82,6 +82,15 @@ config PCIE_DW_PLAT_EP
->  	  order to enable device-specific features PCI_DW_PLAT_EP must be
->  	  selected.
->  
-> +config PCIE_DW_ROCKCHIP
-> +	bool "Rockchip DesignWare PCIe controller"
-> +	select PCIE_DW
-> +	select PCIE_DW_HOST
-> +	depends on ARCH_ROCKCHIP
-> +	depends on OF
-> +	help
-> +	  Enables support for the DW PCIe controller in the Rockchip SoC.
-
-A user needs to be able to tell whether to enable
-CONFIG_PCIE_ROCKCHIP_HOST or CONFIG_PCIE_DW_ROCKCHIP.  Is there an
-endpoint driver coming?  Should this be named PCIE_DW_ROCKCHIP_HOST?
-
-> +	ret = rockchip_pcie_reset_grant_ctrl(rockchip, true);
-> +	if (ret)
-> +		goto deinit_clk;
-> +
-> +//	if (rockchip->mode == DW_PCIE_RC_TYPE)
-> +//		ret = rk_add_pcie_port(rockchip);
-
-Remove commented-out code.  I do like an "if" statement better than
-the complicated assignment/ternary thing below, though.
-
-> +	ret = rockchip->mode == DW_PCIE_RC_TYPE ?
-> +		rk_add_pcie_port(rockchip) : -EINVAL;
-> +
-> +	if (ret)
-> +		goto deinit_clk;
 
 _______________________________________________
 Linux-rockchip mailing list
