@@ -2,60 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77BD613C742
-	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Jan 2020 16:19:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB2AE13CAE6
+	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Jan 2020 18:24:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ne6Y6UDDJ6gl2SvOz5aTMR1cmIfg8EX5BFY4Ciyv72k=; b=IICg0EZMADRdcM
-	EokCpjxWKbX/v6ARQv1YWSRbnmYbZr/TWqZpGXhhTy4qBWF4C2w4w73dRaCp02mEQvs1s5hlEGOqC
-	1g6dh+U+STFLxH6J6ZVGxs4UJakUfOGXevyds5zc9XCLjklSrTZGz7KOQBxwTCOLxIRfZiR5AAr9V
-	W1QJFEL607mqzlNCRkoKFRaCcO5xpMvXgUKcIz66VMM9o1+nAeeEajJXW/FvUHdMahsQny5uBH5Vh
-	gBFa09JWWu7RIF8ARnndYhiMDh0/33R/XUpdM5JezTJ/L1LBVTvpoiI4nCenUXuK/TPZbDC6RwEHn
-	lXZcwD7R+Pyg1yv/fgNw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=9XwbRBjiCnDbbpjlurk0f7gDGLwKpkZL2EYQ84BuTtA=; b=N714MK4prU5qtr
+	h+4E938s0V7oorUe4s9TGh1crrVoqtg8hz6AH7uSU4keZ7L/kfS/ZAeibmb27VfYX2hdw2UToS0T0
+	CpkkaKV9Hm5fqprTwVqitDQar8dcEw3FjYlD7RSoy0fRXvSEEbYeu8I/9L6bM8/ljE6F8eQgJVdYb
+	kYJ5jsvtYeRDN1+he+Mtde4CUq5VS87BoZrPek5cMazEQAhOLnpyUwFzi+xSJTEP67C2B8xz1zUZM
+	N1h1fMtoxcvU1bsC5FdJURsrK7CJRoqsyL5H0ADrPQubS98BPiAH0tOvBcn6xlNeZYCXdVon09QkU
+	u7A3Jd3994QPxjGYFnHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irkS8-0004og-Oy; Wed, 15 Jan 2020 15:19:28 +0000
+	id 1irmPH-00042r-6L; Wed, 15 Jan 2020 17:24:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irkRp-0004fS-BA; Wed, 15 Jan 2020 15:19:12 +0000
-Received: from mail-qk1-f182.google.com (mail-qk1-f182.google.com
- [209.85.222.182])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1irmPA-00041u-Cn
+ for linux-rockchip@lists.infradead.org; Wed, 15 Jan 2020 17:24:37 +0000
+Received: from localhost (odyssey.drury.edu [64.22.249.253])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CF0E424679;
- Wed, 15 Jan 2020 15:19:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7682424656;
+ Wed, 15 Jan 2020 17:24:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579101549;
- bh=9fd40CcaGI6cWpHZqU/yIPuhJQktGKOinNy8wSPMGzU=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=hPOyLzthFNGE32NfBFtYYkNK3eDgOaaBz0HKqcBTrGmtvzZ1YzjuNDlGruyTSz9ae
- d7erGkP7WxB0DbHXKHgaptLE6rsVq2JKjCR3dQb5U7Q5GIRiGFvSyjA1bhF1XTCjLJ
- 6SiWUJieVKpNHduugiPGzvU+WB46WiiTSYv+BA40=
-Received: by mail-qk1-f182.google.com with SMTP id k6so15955884qki.5;
- Wed, 15 Jan 2020 07:19:08 -0800 (PST)
-X-Gm-Message-State: APjAAAWcqflQnq565Kzj0xI+Cs8mlOkcGAK09LZLxQQHKcTD/SeOfu0D
- zxeIHETNC+LQU6nE+9UgOh2OtzukFJ+V0lqFOw==
-X-Google-Smtp-Source: APXvYqyN8g7pSkmCg1vlfsZZaysMWT3v4Sz80/kQhpNjtL9wRuGIv82iL272dibRm6hdlkYlcWUOz2DhUOSMuY+m7/w=
-X-Received: by 2002:a37:a70b:: with SMTP id q11mr22845608qke.393.1579101547856; 
- Wed, 15 Jan 2020 07:19:07 -0800 (PST)
+ s=default; t=1579109071;
+ bh=Gr0yrIgG+HqfegwFxg1FX94l6Lsqg7CDnxr0Tft90sI=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=RTECrJeYi2YWP68omuR47D1bzi/o9sJXOtnJfCHIDlfMPdp32jUlc2HmBC8G8U+al
+ I0wuJlqAqSrJ+5hDOYaj9tH974hO1q6Q1BonG1X6lsChpGc1vdvUAqxqcym8/Bv/eZ
+ /BSkGTWYyH8pieTHdwplcwNDmn7GKRxrxy4/0ryI=
+Date: Wed, 15 Jan 2020 11:24:30 -0600
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Shawn Lin <shawn.lin@rock-chips.com>
+Subject: Re: [PATCH 5/6] PCI: rockchip: add DesignWare based PCIe controller
+Message-ID: <20200115172430.GA180494@google.com>
 MIME-Version: 1.0
-References: <20200114213809.27166-1-jbx6244@gmail.com>
- <20200114213809.27166-2-jbx6244@gmail.com>
-In-Reply-To: <20200114213809.27166-2-jbx6244@gmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Wed, 15 Jan 2020 09:18:56 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqJ0QJ9uG9NY7vMGG00G4Jfk2mXS4OPdUzEaRVaCP++GzQ@mail.gmail.com>
-Message-ID: <CAL_JsqJ0QJ9uG9NY7vMGG00G4Jfk2mXS4OPdUzEaRVaCP++GzQ@mail.gmail.com>
-Subject: Re: [RFC PATCH v1 2/3] dt-bindings: mmc: convert synopsys dw-mshc
- bindings to yaml
-To: Johan Jonker <jbx6244@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <1578986701-72072-1-git-send-email-shawn.lin@rock-chips.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_071909_427684_463E5659 
-X-CRM114-Status: GOOD (  25.76  )
+X-CRM114-CacheID: sfid-20200115_092432_733266_F94C87F3 
+X-CRM114-Status: GOOD (  16.32  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -72,6 +63,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 FAKE_REPLY_C           No description available.
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -85,236 +77,71 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Ulf Hansson <ulf.hansson@linaro.org>, "heiko@sntech.de" <heiko@sntech.de>,
- linux-mmc <linux-mmc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Jingoo Han <jingoohan1@gmail.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, linux-pci@vger.kernel.org,
+ William Wu <william.wu@rock-chips.com>, Simon Xue <xxm@rock-chips.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Jan 14, 2020 at 3:38 PM Johan Jonker <jbx6244@gmail.com> wrote:
->
-> Convert the Synopsys designware mobile storage host controller
-> device tree bindings to yaml
->
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Follow subject line convention.
+
+On Tue, Jan 14, 2020 at 03:25:01PM +0800, Shawn Lin wrote:
+> From: Simon Xue <xxm@rock-chips.com>
+
+Needs a commit log.  Please describe the relationship with the
+existing drivers/pci/controller/pcie-rockchip-host.c.  Are they for
+different devices?  Does this supercede the other?
+
+> Signed-off-by: Simon Xue <xxm@rock-chips.com>
+> Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
 > ---
->  .../bindings/mmc/synopsys-dw-mshc-common.yaml      |  81 ++++++++++++
->  .../devicetree/bindings/mmc/synopsys-dw-mshc.txt   | 141 ---------------------
->  .../devicetree/bindings/mmc/synopsys-dw-mshc.yaml  |  88 +++++++++++++
->  3 files changed, 169 insertions(+), 141 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc-common.yaml
->  delete mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.txt
->  create mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
->
-> diff --git a/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc-common.yaml b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc-common.yaml
-> new file mode 100644
-> index 000000000..aae84a4bc
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc-common.yaml
-> @@ -0,0 +1,81 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/mmc/synopsys-dw-mshc-common.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Synopsys Designware Mobile Storage Host Controller Common Properties
-> +
-> +allOf:
-> +  - $ref: "mmc-controller-common.yaml"
-> +
-> +maintainers:
-> +  - Ulf Hansson <ulf.hansson@linaro.org>
-> +
-> +properties:
-> +  resets:
-> +    maxItems: 1
-> +    description:
-> +      phandle + reset specifier pair, intended to represent hardware
-> +      reset signal present internally in some host controller IC designs.
-> +      See Documentation/devicetree/bindings/reset/reset.txt for details.
+> 
+>  drivers/pci/controller/dwc/Kconfig            |   9 +
+>  drivers/pci/controller/dwc/Makefile           |   1 +
+>  drivers/pci/controller/dwc/pcie-dw-rockchip.c | 441 ++++++++++++++++++++++++++
+>  3 files changed, 451 insertions(+)
+>  create mode 100644 drivers/pci/controller/dwc/pcie-dw-rockchip.c
+> 
+> diff --git a/drivers/pci/controller/dwc/Kconfig b/drivers/pci/controller/dwc/Kconfig
+> index 0830dfc..9160264 100644
+> --- a/drivers/pci/controller/dwc/Kconfig
+> +++ b/drivers/pci/controller/dwc/Kconfig
+> @@ -82,6 +82,15 @@ config PCIE_DW_PLAT_EP
+>  	  order to enable device-specific features PCI_DW_PLAT_EP must be
+>  	  selected.
+>  
+> +config PCIE_DW_ROCKCHIP
+> +	bool "Rockchip DesignWare PCIe controller"
+> +	select PCIE_DW
+> +	select PCIE_DW_HOST
+> +	depends on ARCH_ROCKCHIP
+> +	depends on OF
+> +	help
+> +	  Enables support for the DW PCIe controller in the Rockchip SoC.
 
-Drop the description. It has nothing unique to this binding.
+A user needs to be able to tell whether to enable
+CONFIG_PCIE_ROCKCHIP_HOST or CONFIG_PCIE_DW_ROCKCHIP.  Is there an
+endpoint driver coming?  Should this be named PCIE_DW_ROCKCHIP_HOST?
 
+> +	ret = rockchip_pcie_reset_grant_ctrl(rockchip, true);
+> +	if (ret)
+> +		goto deinit_clk;
 > +
-> +  reset-names:
-> +    const: reset
-> +    description:
-> +      Request name for using "resets" property.
-> +      (It will be used together with "resets" property.)
+> +//	if (rockchip->mode == DW_PCIE_RC_TYPE)
+> +//		ret = rk_add_pcie_port(rockchip);
 
-Drop.
+Remove commented-out code.  I do like an "if" statement better than
+the complicated assignment/ternary thing below, though.
 
+> +	ret = rockchip->mode == DW_PCIE_RC_TYPE ?
+> +		rk_add_pcie_port(rockchip) : -EINVAL;
 > +
-> +  clock-frequency:
-> +    description:
-> +      Should be the frequency (in Hz) of the ciu clock.  If this
-> +      is specified and the ciu clock is specified then we'll try to set the ciu
-> +      clock to this at probe time.
-> +
-> +  fifo-depth:
-> +    allOf:
-> +      - $ref: /schemas/types.yaml#/definitions/uint32
-> +    description:
-> +      The maximum size of the tx/rx fifo's. If this property is not
-> +      specified, the default value of the fifo size is determined from the
-> +      controller registers.
-> +
-> +  card-detect-delay:
-> +    allOf:
-> +      - $ref: /schemas/types.yaml#/definitions/uint32
-> +      - default: 0
-> +    description:
-> +      Delay in milli-seconds before detecting card after card
-> +      insert event. The default value is 0.
-> +
-> +  data-addr:
-> +    allOf:
-> +      - $ref: /schemas/types.yaml#/definitions/uint32
-> +    description:
-> +      Override fifo address with value provided by DT. The default FIFO reg
-> +      offset is assumed as 0x100 (version < 0x240A) and 0x200(version >= 0x240A)
-> +      by driver. If the controller does not follow this rule, please use
-> +      this property to set fifo address in device tree.
-> +
-> +  fifo-watermark-aligned:
-> +    allOf:
-> +      - $ref: /schemas/types.yaml#/definitions/flag
-> +    description:
-> +      Data done irq is expected if data length is less than
-> +      watermark in PIO mode. But fifo watermark is requested to be aligned
-> +      with data length in some SoC so that TX/RX irq can be generated with
-> +      data done irq. Add this watermark quirk to mark this requirement and
-> +      force fifo watermark setting accordingly.
-> +
-> +  dmas:
-> +    maxItems: 1
-> +    description:
-> +      List of DMA specifiers with the controller specific format as described
-> +      in the generic DMA client binding.
-> +      Refer to dma-controller.yaml for details.
-
-Drop the description.
-
-> +
-> +  dma-names:
-> +    const: rx-tx
-> +    description:
-> +      Request names for generic DMA client binding.
-> +      Refer to dma-controller.yaml for details.
-
-Drop
-
-[...]
-
-> diff --git a/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
-> new file mode 100644
-> index 000000000..6f85a21d0
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
-> @@ -0,0 +1,88 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/mmc/synopsys-dw-mshc.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Synopsys Designware Mobile Storage Host Controller Binding
-> +
-> +allOf:
-> +  - $ref: "synopsys-dw-mshc-common.yaml"
-> +
-> +maintainers:
-> +  - Ulf Hansson <ulf.hansson@linaro.org>
-> +
-> +properties:
-> +  compatible:
-> +    const: snps,dw-mshc
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    minItems: 2
-> +    maxItems: 2
-> +    description:
-> +      Handle to "biu" and "ciu" clocks for the
-> +      bus interface unit clock and the card interface unit clock.
-> +
-> +  clock-names:
-> +    items:
-> +      - const: biu
-> +      - const: ciu
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +
-> +examples:
-> +  # The MSHC controller node can be split into two portions, SoC specific and
-> +  # board specific portions as listed below.
-
-This split doesn't work because the examples are built and validated
-now. It may happen to because all the props are optional, but the
-board hunk goes unchecked. So please combine.
-
-> +  - |
-> +    dwmmc0@12200000 {
-> +      compatible = "snps,dw-mshc";
-> +      clocks = <&clock 351>, <&clock 132>;
-> +      clock-names = "biu", "ciu";
-> +      reg = <0x12200000 0x1000>;
-> +      interrupts = <0 75 0>;
-> +      #address-cells = <1>;
-> +      #size-cells = <0>;
-> +      data-addr = <0x200>;
-> +      fifo-watermark-aligned;
-> +      resets = <&rst 20>;
-> +      reset-names = "reset";
-> +    };
-> +  # [board specific internal DMA resources]
-> +  - |
-> +    dwmmc0@12200000 {
-> +      clock-frequency = <400000000>;
-> +      clock-freq-min-max = <400000 200000000>;
-> +      broken-cd;
-> +      fifo-depth = <0x80>;
-> +      card-detect-delay = <200>;
-> +      vmmc-supply = <&buck8>;
-> +      bus-width = <8>;
-> +      cap-mmc-highspeed;
-> +      cap-sd-highspeed;
-> +    };
-> +  # [board specific generic DMA request binding]
-> +  - |
-> +    dwmmc0@12200000 {
-> +      clock-frequency = <400000000>;
-> +      clock-freq-min-max = <400000 200000000>;
-> +      broken-cd;
-> +      fifo-depth = <0x80>;
-> +      card-detect-delay = <200>;
-> +      vmmc-supply = <&buck8>;
-> +      bus-width = <8>;
-> +      cap-mmc-highspeed;
-> +      cap-sd-highspeed;
-> +      dmas = <&pdma 12>;
-> +      dma-names = "rx-tx";
-> +    };
-> --
-> 2.11.0
->
+> +	if (ret)
+> +		goto deinit_clk;
 
 _______________________________________________
 Linux-rockchip mailing list
