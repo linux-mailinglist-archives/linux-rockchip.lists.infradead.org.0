@@ -2,79 +2,89 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F39EF13C1B0
-	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Jan 2020 13:52:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F65713C22C
+	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Jan 2020 14:02:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m46ENiOxCLx3RFOcW2JjPOpu4SPyETEiXQ/+gsDXTkI=; b=dRAmOKOTDsjKBj
-	Uz8yT44NUBCVoaKdIxN8ix3f+bZFmFHQIjNMQaAnEo6dgPs75wX/BqSkbaG+o0E6iIuWzQRJoOUmK
-	HStIZnISzuIqVah1+WntGx8kaJ/wlIPDba59bxjNHwQ3h8uYTacYndVaAWQauWxUI2kVDhWCGvOtt
-	ANSAWzacC/hOqQKqX8vE9eyb8aP2DX/cAoHqxhkMWN+8c71RqiUz+TARkM8ds8VTICi9mNdMgbijy
-	ICOHTJ3am3M7M8L/VkRRA3bn/3SF6eFFd4cI3SWJ3tMYzETLFH/ZvddgSCObRycxyy6ibMf3SQMha
-	liZdtbJM2ISNMdF3piCA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gjytajqATm9E27y2QkGLxvUeEpDTEqK/r5jMk7KXdyQ=; b=AFuGLP8h1eRdeI
+	kMJGblYOcJCkIkJy6QXCdsrmiZLBZXqyC77TTk+M77LuSEa53MAPTc5cDk8S6I9gfnje5WjSLtyit
+	nAz7ZrPEu21WaphYQRgcvwGJNjedsYFxqdwj2QDk1DKy5NMkTV1ls+Pxj+OOdaYORORxGQe1kd+Lh
+	vw4KjVDXOzrS5WXJ0llSigN1moVEVch5Z/dy8MqhhC9xkEl8gGvTVPU9407xhn8ywqcRFGdTxBFJH
+	10/0XorYjyplUeEkLsTjdUHzINkaKRMoF8vjKbu9l6ZvptF6G1jvQXT7T36DmGLamBP0wE1MKWdyN
+	K/XrmZu21CkzVNjkSNjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iri9M-0004uc-1g; Wed, 15 Jan 2020 12:51:56 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1iriJb-00044I-AL; Wed, 15 Jan 2020 13:02:31 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iri9J-0004ty-Tp
- for linux-rockchip@lists.infradead.org; Wed, 15 Jan 2020 12:51:55 +0000
-Received: by mail-lj1-x244.google.com with SMTP id r19so18431185ljg.3
- for <linux-rockchip@lists.infradead.org>; Wed, 15 Jan 2020 04:51:53 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hsr/oi2XrIAmmbP163wTd/MCf3p12+DUNarrq/kg9sg=;
- b=xrzSeApfEb6DAeNeLYgX7j/LWntJQinaR4oIz/1UnnXu31QZuRkQ52mokkML3w8Th9
- JVP9mym3jJOxZFbTcKpBGqRYr07Rpg9oPhhSDckVL4EsjgxxDh3/hXwjCGteoDMIefKA
- pGfIEuCLB/Df5dpac286FNC1PHf+NkSl4HINYNkXJoeMO1uHTz3tJDmGOEgQK7sWlVFT
- ZK1UkQu6k8Soyq9q4i3Tp0N1aKP6UvvuGZA1nesiRI8PNDriNECKpTDTkV+Fu4NA2NXU
- fRjEYbkMP1JDI+CdFPuSoCJYALL41ulOLRNW6lpUezYXwr3DYKnTfd5SOPcPXzBJFDnV
- cl/Q==
+ id 1iriJT-00043D-Rk; Wed, 15 Jan 2020 13:02:29 +0000
+Received: by mail-wr1-x443.google.com with SMTP id z7so15606183wrl.13;
+ Wed, 15 Jan 2020 05:02:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=Dd/fpZjUl0bvpdYK2/HoiWMjO/ltnHe3ct+x9nyIfFk=;
+ b=p3MkQlYTQj+lULTBr6mWn5nKzLDUF5GJ9cat1feO+Q3nCwwmKt7aJRqL3jb8Xypk6t
+ 5K3Zyc5pjjBItrPOQkjZpSi+P+SBB6aY9ZSoI7Dkwuczv7HnBk9NKnzWO91rxXupd4A1
+ ucnu3R3CAPXZQAGX0XU+Lt/U7EgARw1EwYbNZ8/cul9gYaEeW00ZQ5+lB3iIFdGO5wa8
+ zg+4xaiTNx+kSKfvHbOTyQhwokkdI1VaCx0nGVZcC6v/EJ3+8Q6YoTiur4K5TW8vWdV3
+ rHxz6NYn2z0u+1WamRmX0on1wJU/FN1ZzovgHY9f4qsArULVd2M/p6dKrDnfrgJFVjdD
+ OKyw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=hsr/oi2XrIAmmbP163wTd/MCf3p12+DUNarrq/kg9sg=;
- b=NS2VbUVjFvoX4GgutUBXgpUDiHXCutDw+Ood8ULEkOTPw3dsTnU4lHz+v1A3OQsnbK
- DalWnBYhJlU+eGyEgQrmMX7lDIkMtXYKySOGEV0HrsY5xlgxrksjcPvpT9ZCybOkKQQ2
- nuQncLuHJ4erDsStJ6lRyAlmYzsDGks3a0gQhJKYVXTO1GZp+mIkigBOOL0JczmE/R6v
- 3uM/bEe2BsOZ8ZGJKILDtJE/9jCEBQtrQ4xMTYFVU4+LwTJGriJOA9Ow7G5o7XFUFlXz
- P0/bIUydZ5ZRXhEEFnGzFLu/jUXyHQYsBODQdZBzYXSZYqMi+Cx703ixgasmE16xE2qd
- hn6g==
-X-Gm-Message-State: APjAAAW4GmtLCxw6ljgnMgkjE3LKAOgf/4+iag+1bWbcW4CCNzCTbOC4
- FrPgxPezH1jgpxZunZ5OolIZFZwVkGEokT7dKZcEsA==
-X-Google-Smtp-Source: APXvYqyPLiNMYFjq+10C4y9GPJ4omzojNt3A/uO0N7XjKPjzPb413C4mDt6k4ydemhY/RqaqtsTUqp4qjoKTT9DRbqA=
-X-Received: by 2002:a05:651c:111c:: with SMTP id
- d28mr1762433ljo.32.1579092712068; 
- Wed, 15 Jan 2020 04:51:52 -0800 (PST)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Dd/fpZjUl0bvpdYK2/HoiWMjO/ltnHe3ct+x9nyIfFk=;
+ b=lGOalSv1bWMer3tkhObaN/2FkXMjrsSoDH1ICBfI5rod3+QuO6UgPPFBdbIN5gXXNH
+ 8okfHByhWJmIoa2qpYLOA2Bkq7wRWgVaMvUerk1UxX3vl7MvtSb6YNdtHspgSlp37l/L
+ 2XhtF5IIII0Wn1qZz0ZmKEXQvyxdEeZxUHuCcU0BtwdjGMORewdeaWI+h/K1HMPCgE7/
+ NE9LaD9OjXLyl84v++1VbPVxUIZQO9ja473XOJz+inwf/sjl+Si16y17Fz+Z887KkA5/
+ XGQCEXgh785p6Oknk8sOrXQ6S5POwIIJlJJxngTc5QMS7kVsNg0UeVejOmoCcTtTJZm8
+ ISig==
+X-Gm-Message-State: APjAAAUit3+2vbghAG+FB9LCsClqozT3ktf0rAWs20qL+zRQL8HrhsIE
+ VooEvLDugeOZ649oJEXayWkTmgjM
+X-Google-Smtp-Source: APXvYqxcOwmlY+O6QGUZ/kxCeDj2gNn1kTWrnJRjeqw5YwD9D/edsH1lRUE34oPl6X1lmo7nvZDggA==
+X-Received: by 2002:adf:fa12:: with SMTP id m18mr30163062wrr.309.1579093342407; 
+ Wed, 15 Jan 2020 05:02:22 -0800 (PST)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id p26sm22390808wmc.24.2020.01.15.05.02.21
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 15 Jan 2020 05:02:21 -0800 (PST)
+Subject: Re: [RFC PATCH v1 1/3] dt-bindings: mmc: combine common mmc and
+ dw-mshc properties
+To: Rob Herring <robh+dt@kernel.org>
+References: <20200114213809.27166-1-jbx6244@gmail.com>
+ <CAL_Jsq+8X0oRykiQOKVyaxis4H0yO=nzUtnFF_BXdwBkuigr7g@mail.gmail.com>
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <12bbbdbc-027e-90de-fd57-291013167b06@gmail.com>
+Date: Wed, 15 Jan 2020 14:02:18 +0100
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-References: <20200109094001.24343-1-jay.xu@rock-chips.com>
- <20200113011616.19791-1-jay.xu@rock-chips.com>
-In-Reply-To: <20200113011616.19791-1-jay.xu@rock-chips.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 15 Jan 2020 13:51:40 +0100
-Message-ID: <CACRpkdY_EHQbF4rRyGwoxEk8LeWfmRzmCd=8=SY95LPXMHYOmw@mail.gmail.com>
-Subject: Re: [PATCH v2] pinctrl/rockchip: splite soc data to separated driver
-To: Jianqun Xu <jay.xu@rock-chips.com>,
- =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
+In-Reply-To: <CAL_Jsq+8X0oRykiQOKVyaxis4H0yO=nzUtnFF_BXdwBkuigr7g@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_045153_971274_C4C4CFB4 
-X-CRM114-Status: UNSURE (   9.74  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200115_050223_920432_A379CC86 
+X-CRM114-Status: GOOD (  14.35  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (jbx6244[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jbx6244[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -94,40 +104,46 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ulf Hansson <ulf.hansson@linaro.org>, "heiko@sntech.de" <heiko@sntech.de>,
+ linux-mmc <linux-mmc@vger.kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Kever Yang <kever.yang@rock-chips.com>, David Wu <david.wu@rock-chips.com>
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Jan 13, 2020 at 2:16 AM Jianqun Xu <jay.xu@rock-chips.com> wrote:
+Hi,
 
-> * Decrease codes of pinctrl-rockchip.c from 4,000 lines to 2000 by
-> separating soc data to a new file.
+Thank you for your explanation.
+I was not aware that was playing.
+So now we go from a 'simple' txt to yaml conversion to a complete
+'change your node name first' operation.
+Can you indicate if that common yaml file for dw-mshc and Rockchip
+is still a good idea?
+
+Thanks
+
+
+On 1/14/20 11:06 PM, Rob Herring wrote:
+> On Tue, Jan 14, 2020 at 3:38 PM Johan Jonker <jbx6244@gmail.com> wrote:
+>>
+>> Combine the common properties for mmc and dw-mshc in
+>> mmc-controller-common.yaml
 >
-> * Move rockchip pinctrl related struct definations to a head file.
+> Commit messages should explain the why, not what.
 >
-> * Keep legency pinctrl-rockchip.c under driver/pinctrl but not to
-> compile it, conveniently for reviewers.
+> AFAICT, the only reason is to not have a node name of 'mmc'. That's
+> entirely the reason why it is defined. Fix your node names to use the
+> standard name.
 >
-> Signed-off-by: Jianqun Xu <jay.xu@rock-chips.com>
-
-This patch looks good, two things are missing:
-
-- Review from Heiko
-
-- A change to MAINTAINERS so that the file pattern still
-  matches
-
-Should someone from Rockchip also sign up as comaintainer
-for this driver by the way? (Though the people at Rockchip
-posting patches for this seem to change a bit.)
-
-Yours,
-Linus Walleij
+>
+>
+> Rob
+>
 
 _______________________________________________
 Linux-rockchip mailing list
