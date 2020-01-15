@@ -2,89 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F65713C22C
-	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Jan 2020 14:02:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5935313C6E3
+	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Jan 2020 16:04:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gjytajqATm9E27y2QkGLxvUeEpDTEqK/r5jMk7KXdyQ=; b=AFuGLP8h1eRdeI
-	kMJGblYOcJCkIkJy6QXCdsrmiZLBZXqyC77TTk+M77LuSEa53MAPTc5cDk8S6I9gfnje5WjSLtyit
-	nAz7ZrPEu21WaphYQRgcvwGJNjedsYFxqdwj2QDk1DKy5NMkTV1ls+Pxj+OOdaYORORxGQe1kd+Lh
-	vw4KjVDXOzrS5WXJ0llSigN1moVEVch5Z/dy8MqhhC9xkEl8gGvTVPU9407xhn8ywqcRFGdTxBFJH
-	10/0XorYjyplUeEkLsTjdUHzINkaKRMoF8vjKbu9l6ZvptF6G1jvQXT7T36DmGLamBP0wE1MKWdyN
-	K/XrmZu21CkzVNjkSNjA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7tQM1x/pYkQSmInmE+YRis6M4RF60H1Vm/cXxByoOs8=; b=WjHvppHM3GOUV5
+	/Pjpvjz1jCtOks9bgD8K7p4Bgb+LPchT/MCyG9ddTbgU/glwpV8ry9W1nB08kNl5ynwLwROPEM68D
+	K5gV6CtNt7hi+z+n46+IB/SAS/2xTbpW98pCiciPYrgHPjPXB58hGT5raCOsl3nvbeWfnjkzOAREs
+	dnC0qWjq7ofHLjgWsLOWY1Q2bl5lISglskcQobVLPb8HUfPp4dR2JPUhSt+Oocak2Su+6k+Kobhm4
+	7/0d2UXiHPotsN3aP4t3ZRD/1sR3R3UxtfRmqiQfXMM/vmUIw8pGmdomgj6rwLbT6cmOTxXze8wB0
+	LCy+3ANb1aqxi+F+aJnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iriJb-00044I-AL; Wed, 15 Jan 2020 13:02:31 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1irkDT-00076u-G2; Wed, 15 Jan 2020 15:04:19 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iriJT-00043D-Rk; Wed, 15 Jan 2020 13:02:29 +0000
-Received: by mail-wr1-x443.google.com with SMTP id z7so15606183wrl.13;
- Wed, 15 Jan 2020 05:02:23 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Dd/fpZjUl0bvpdYK2/HoiWMjO/ltnHe3ct+x9nyIfFk=;
- b=p3MkQlYTQj+lULTBr6mWn5nKzLDUF5GJ9cat1feO+Q3nCwwmKt7aJRqL3jb8Xypk6t
- 5K3Zyc5pjjBItrPOQkjZpSi+P+SBB6aY9ZSoI7Dkwuczv7HnBk9NKnzWO91rxXupd4A1
- ucnu3R3CAPXZQAGX0XU+Lt/U7EgARw1EwYbNZ8/cul9gYaEeW00ZQ5+lB3iIFdGO5wa8
- zg+4xaiTNx+kSKfvHbOTyQhwokkdI1VaCx0nGVZcC6v/EJ3+8Q6YoTiur4K5TW8vWdV3
- rHxz6NYn2z0u+1WamRmX0on1wJU/FN1ZzovgHY9f4qsArULVd2M/p6dKrDnfrgJFVjdD
- OKyw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Dd/fpZjUl0bvpdYK2/HoiWMjO/ltnHe3ct+x9nyIfFk=;
- b=lGOalSv1bWMer3tkhObaN/2FkXMjrsSoDH1ICBfI5rod3+QuO6UgPPFBdbIN5gXXNH
- 8okfHByhWJmIoa2qpYLOA2Bkq7wRWgVaMvUerk1UxX3vl7MvtSb6YNdtHspgSlp37l/L
- 2XhtF5IIII0Wn1qZz0ZmKEXQvyxdEeZxUHuCcU0BtwdjGMORewdeaWI+h/K1HMPCgE7/
- NE9LaD9OjXLyl84v++1VbPVxUIZQO9ja473XOJz+inwf/sjl+Si16y17Fz+Z887KkA5/
- XGQCEXgh785p6Oknk8sOrXQ6S5POwIIJlJJxngTc5QMS7kVsNg0UeVejOmoCcTtTJZm8
- ISig==
-X-Gm-Message-State: APjAAAUit3+2vbghAG+FB9LCsClqozT3ktf0rAWs20qL+zRQL8HrhsIE
- VooEvLDugeOZ649oJEXayWkTmgjM
-X-Google-Smtp-Source: APXvYqxcOwmlY+O6QGUZ/kxCeDj2gNn1kTWrnJRjeqw5YwD9D/edsH1lRUE34oPl6X1lmo7nvZDggA==
-X-Received: by 2002:adf:fa12:: with SMTP id m18mr30163062wrr.309.1579093342407; 
- Wed, 15 Jan 2020 05:02:22 -0800 (PST)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id p26sm22390808wmc.24.2020.01.15.05.02.21
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 15 Jan 2020 05:02:21 -0800 (PST)
-Subject: Re: [RFC PATCH v1 1/3] dt-bindings: mmc: combine common mmc and
- dw-mshc properties
-To: Rob Herring <robh+dt@kernel.org>
+ id 1irkDF-0006ya-68; Wed, 15 Jan 2020 15:04:10 +0000
+Received: from mail-qv1-f44.google.com (mail-qv1-f44.google.com
+ [209.85.219.44])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 73EB224679;
+ Wed, 15 Jan 2020 15:04:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579100644;
+ bh=akWHDw2dp4HMSLYd4jf1ctNTQ9StsTvZ7vOESv0YuV8=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=g8eCWlkZqL/jzhSCeIT40O391LHpxlseTdeisKA6ISmouHLCGxYtkunfdbcYe/gq1
+ qeuwhwrmIrlubUv8W9g+Lp4d/chlvUSDur7Q5o1XJGfjFLTUpkx/xEj93spqHo1433
+ OVsXhHMREYBBTAvyxY1VghmQ6qP6b3ERNrWAl9S0=
+Received: by mail-qv1-f44.google.com with SMTP id t6so7477759qvs.5;
+ Wed, 15 Jan 2020 07:04:04 -0800 (PST)
+X-Gm-Message-State: APjAAAWHf2t21GUl9JpEuITrmzuJWgHGnryfYbHi85jNVp1SZYk1OpAj
+ 0nWnyuqOW3sTI/8A0KokbQtVljDoebSaWEaIig==
+X-Google-Smtp-Source: APXvYqz6mHF45DAWUWUWDfYEf+gWOnBboSfWtevRnQLUakjB2gyNulzLFf97N1Zxr7ADVDMR2Ywe1q7Xh7UzrSo7WBY=
+X-Received: by 2002:a05:6214:11ac:: with SMTP id
+ u12mr22630609qvv.85.1579100643580; 
+ Wed, 15 Jan 2020 07:04:03 -0800 (PST)
+MIME-Version: 1.0
 References: <20200114213809.27166-1-jbx6244@gmail.com>
  <CAL_Jsq+8X0oRykiQOKVyaxis4H0yO=nzUtnFF_BXdwBkuigr7g@mail.gmail.com>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <12bbbdbc-027e-90de-fd57-291013167b06@gmail.com>
-Date: Wed, 15 Jan 2020 14:02:18 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
-MIME-Version: 1.0
-In-Reply-To: <CAL_Jsq+8X0oRykiQOKVyaxis4H0yO=nzUtnFF_BXdwBkuigr7g@mail.gmail.com>
-Content-Language: en-US
+ <12bbbdbc-027e-90de-fd57-291013167b06@gmail.com>
+In-Reply-To: <12bbbdbc-027e-90de-fd57-291013167b06@gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Wed, 15 Jan 2020 09:03:52 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJD4CY6P+76pM69-4UPpTC+pE5BmyCm+gWhCA-Dd1YB4A@mail.gmail.com>
+Message-ID: <CAL_JsqJD4CY6P+76pM69-4UPpTC+pE5BmyCm+gWhCA-Dd1YB4A@mail.gmail.com>
+Subject: Re: [RFC PATCH v1 1/3] dt-bindings: mmc: combine common mmc and
+ dw-mshc properties
+To: Johan Jonker <jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_050223_920432_A379CC86 
-X-CRM114-Status: GOOD (  14.35  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200115_070405_253768_9F62D6D6 
+X-CRM114-Status: GOOD (  12.99  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jbx6244[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jbx6244[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,6 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -116,34 +99,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+On Wed, Jan 15, 2020 at 7:02 AM Johan Jonker <jbx6244@gmail.com> wrote:
+>
+> Hi,
+>
+> Thank you for your explanation.
+> I was not aware that was playing.
+> So now we go from a 'simple' txt to yaml conversion to a complete
+> 'change your node name first' operation.
 
-Thank you for your explanation.
-I was not aware that was playing.
-So now we go from a 'simple' txt to yaml conversion to a complete
-'change your node name first' operation.
-Can you indicate if that common yaml file for dw-mshc and Rockchip
-is still a good idea?
+You only need to update the examples, not all the dts files for now.
 
-Thanks
+> Can you indicate if that common yaml file for dw-mshc and Rockchip
+> is still a good idea?
 
+Yes, that's fine.
 
-On 1/14/20 11:06 PM, Rob Herring wrote:
-> On Tue, Jan 14, 2020 at 3:38 PM Johan Jonker <jbx6244@gmail.com> wrote:
->>
->> Combine the common properties for mmc and dw-mshc in
->> mmc-controller-common.yaml
->
-> Commit messages should explain the why, not what.
->
-> AFAICT, the only reason is to not have a node name of 'mmc'. That's
-> entirely the reason why it is defined. Fix your node names to use the
-> standard name.
->
->
->
-> Rob
->
+Rob
 
 _______________________________________________
 Linux-rockchip mailing list
