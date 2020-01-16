@@ -2,90 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88C9213CC9D
-	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Jan 2020 19:53:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3C9D13D0DE
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 01:04:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=zdAnijM+aIF1CIC850rTWQqc/MZWItcNMkYa8oSdcYw=; b=sI5LxhPBORdupTylAFHF6rMbmt
-	XOq/dqNJVUubhaE6tgj/86nUqPOi3jIlFi/iHFavJd74c6MgfRW87spIvVB85ysiUtS7ZPKK6GJ6v
-	EtQxz6JXphR6diCFA2h/2T/fCXTrXCPUrSOKuIUaM79Rrm6S4hTIqSfZVGrqV+oLMvkSiXZhifpp/
-	Hb5LqGewxwdYo/LW26wmLfPxivYVZIyEHKgCN8CS3WkunbRmO8X4rLoHQzJkGxtUL9pKOZwUJpo8k
-	ToukWsoj/01QmyUyYqWnNKFEEYpNYuTt2IyLm4v1yoQtIhEiPjgtxHTIATRpkMVzDthc4hmD+l2GI
-	GBwkNKhg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=VV22heMlM317FTjPknnMQQjeb0yi9E48VEIUDwyeuOo=; b=YaDAcTlEaWe2MR3RaN1ocxrKo
+	Q+zYps1W48xNtR1CEZbQH+bp9zF/IrDhjVH+QvUNp4FxUV4y+vNgJ3QBapz5vOE7k8A81HRkpUVVq
+	HKhKWCSeCRPazZCGmp5u1fra0GOwLNgR9A+eNjXSzVpHqLQDrALJOMN/y5c/a1T0G2ICJ9jRg6RCU
+	kiT4vzyXLRB6oFtJlQJlKq5y31uFHc6F6c7++tbg5Qt6WSLZaC5dxARLywfUBm4nqxibvFqjrwEhb
+	oESxewXjq/eS1gE9EzM5DiCMmunkgfY2hhPLNs/y7m0nccGWz/T51aead+Tn75cOr3TXx1/Ua8iIe
+	tCqNQai7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irnnD-0001Ef-Vd; Wed, 15 Jan 2020 18:53:27 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1irsdr-0006G1-QW; Thu, 16 Jan 2020 00:04:07 +0000
+Received: from lucky1.263xmail.com ([211.157.147.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irnmg-0000b8-In; Wed, 15 Jan 2020 18:53:00 +0000
-Received: by mail-wr1-x442.google.com with SMTP id y17so16817868wrh.5;
- Wed, 15 Jan 2020 10:52:54 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=fKeq8tFcSLHJkn6QSQqYD/5g8utINbdDLtdwNyNEqW4=;
- b=g3Yvbzc2/oSJbfhTH6JaJp2Qe9E1DGE7f7QjCd+z+Ij4tcyCxl2FfLxNq2ZV2xJMb/
- an7c+Akg/FwWYUEcDwDw/vfxSgZkYEB+XRpPDDjkIjuNe8KTJuggT0go8chdesQzK41r
- ScQiU7ArJmzpm1pobwp2EjOhJRgd6/K5chAGj+FzLtbbHKR0mG4umBN+XrYBkPcD3Vgm
- Mpj6e/oVvYZjUFwusNQ/0b4oCMDU4EdrfCdcTy+oy1HoJ5ysZUjfghfLg8myoqx6MRm+
- Dc0BPvdGD7VvS8+mn5tPHWl2E45CBef30B3QEYk8+C7lGCvrqwp1HSYF05PnEdYDBcF4
- o4sQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=fKeq8tFcSLHJkn6QSQqYD/5g8utINbdDLtdwNyNEqW4=;
- b=f7Fe9Z5zjiT78W+z0odVJmgTeJqvtKhiZb9mh6v/5I+S5828H8V+/z9BzMyf+ZSi5o
- FrlQsutld/Ec96GBJLHveZ+xd+nLiSyNmTePS55O8giTFqFmKnHedkU0dEDRNFhLquFW
- I2aj3Io7FuOqHQs2v2E64NJQ3rqCNNd82Q9boKemIGpRLPFPuyJj/4noupOpikeAU+HS
- xGa/NDECQCI1z7DRV6KDQi8e9ouAJas96JzfkYvu9ijel3hrsPwlmyUIULz+ooXk+y6n
- N/cE7Lt0NimaKlW9DtVlgS97cS4+TWJOpoQFfqtCuBKn96cmwDtLJe9xgBqn/wf2EwjU
- CAYA==
-X-Gm-Message-State: APjAAAWLXTlm+Yf8dP0Ca++1m7OqhwRVaUyeBC4yujX5oyBIFC795gQC
- toTcD/v4O6zZaaNt2pBmIb8=
-X-Google-Smtp-Source: APXvYqzkLZfz2dbHy4Hqedrh3BrPKB+8frv2Otn76ljLVvnsbG51oSX9N6Z8/7bKT/Porz+sJ+Xf4w==
-X-Received: by 2002:a5d:68cf:: with SMTP id p15mr33079769wrw.31.1579114373365; 
- Wed, 15 Jan 2020 10:52:53 -0800 (PST)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id i5sm26296759wrv.34.2020.01.15.10.52.52
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 15 Jan 2020 10:52:53 -0800 (PST)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH 2/2] arm64: dts: rockchip: rename dwmmc node names to mmc
-Date: Wed, 15 Jan 2020 19:52:44 +0100
-Message-Id: <20200115185244.18149-2-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200115185244.18149-1-jbx6244@gmail.com>
-References: <20200115185244.18149-1-jbx6244@gmail.com>
+ id 1irsdn-0006FJ-K5
+ for linux-rockchip@lists.infradead.org; Thu, 16 Jan 2020 00:04:06 +0000
+Received: from localhost (unknown [192.168.167.32])
+ by lucky1.263xmail.com (Postfix) with ESMTP id 826EE4E735;
+ Thu, 16 Jan 2020 08:03:55 +0800 (CST)
+X-MAIL-GRAY: 1
+X-MAIL-DELIVERY: 0
+X-ADDR-CHECKED4: 1
+X-ANTISPAM-LEVEL: 2
+X-SKE-CHECKED: 1
+X-ABS-CHECKED: 1
+Received: from [172.16.12.37] (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P9174T140331144181504S1579133034317848_; 
+ Thu, 16 Jan 2020 08:03:55 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <161c3253a650a55ec4915d63e8b13e0c>
+X-RL-SENDER: shawn.lin@rock-chips.com
+X-SENDER: lintao@rock-chips.com
+X-LOGIN-NAME: shawn.lin@rock-chips.com
+X-FST-TO: xxm@rock-chips.com
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+Subject: =?UTF-8?Q?Re=3a_=5bPATCH_1/6=5d_dt-bindings=3a_add_binding_for_Rock?=
+ =?UTF-8?B?Y2hpcCBjb21ibyBwaHkgdXNpbmcgYW4gSW5ub3NpbGljb24gSVDjgJDor7fms6g=?=
+ =?UTF-8?B?5oSP77yM6YKu5Lu255SxbGludXgtcm9ja2NoaXAtYm91bmNlcytzaGF3bi5saW49?=
+ =?UTF-8?B?cm9jay1jaGlwcy5jb21AbGlzdHMuaW5mcmFkZWFkLm9yZ+S7o+WPkeOAkQ==?=
+To: Rob Herring <robh@kernel.org>
+References: <1578986580-71974-1-git-send-email-shawn.lin@rock-chips.com>
+ <1578986580-71974-2-git-send-email-shawn.lin@rock-chips.com>
+ <20200114234323.GA5823@bogus>
+From: Shawn Lin <shawn.lin@rock-chips.com>
+Message-ID: <75a1b9d2-6dff-eaad-dab5-87321a7ca9cd@rock-chips.com>
+Date: Thu, 16 Jan 2020 08:03:54 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.1
+MIME-Version: 1.0
+In-Reply-To: <20200114234323.GA5823@bogus>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_105254_624148_D1326756 
-X-CRM114-Status: GOOD (  14.44  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200115_160404_024180_1A3DA12F 
+X-CRM114-Status: GOOD (  18.87  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jbx6244[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [211.157.147.134 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jbx6244[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,180 +86,157 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Jingoo Han <jingoohan1@gmail.com>,
+ shawn.lin@rock-chips.com, Kishon Vijay Abraham I <kishon@ti.com>,
+ linux-rockchip@lists.infradead.org, linux-pci@vger.kernel.org,
+ William Wu <william.wu@rock-chips.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Simon Xue <xxm@rock-chips.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Current dts files with 'dwmmc' nodes are manually verified.
-In order to automate this process rockchip-dw-mshc.txt
-has to be converted to yaml. In the new setup
-rockchip-dw-mshc.yaml will inherit properties from
-mmc-controller.yaml and synopsys-dw-mshc-common.yaml.
-'dwmmc' will no longer be a valid name for a node,
-so change them all to 'mmc'
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/px30.dtsi   | 6 +++---
- arch/arm64/boot/dts/rockchip/rk3308.dtsi | 6 +++---
- arch/arm64/boot/dts/rockchip/rk3328.dtsi | 6 +++---
- arch/arm64/boot/dts/rockchip/rk3368.dtsi | 6 +++---
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 4 ++--
- 5 files changed, 14 insertions(+), 14 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-index 07fe187cf..32e752312 100644
---- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-@@ -879,7 +879,7 @@
- 		status = "disabled";
- 	};
- 
--	sdmmc: dwmmc@ff370000 {
-+	sdmmc: mmc@ff370000 {
- 		compatible = "rockchip,px30-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xff370000 0x0 0x4000>;
- 		interrupts = <GIC_SPI 54 IRQ_TYPE_LEVEL_HIGH>;
-@@ -894,7 +894,7 @@
- 		status = "disabled";
- 	};
- 
--	sdio: dwmmc@ff380000 {
-+	sdio: mmc@ff380000 {
- 		compatible = "rockchip,px30-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xff380000 0x0 0x4000>;
- 		interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
-@@ -909,7 +909,7 @@
- 		status = "disabled";
- 	};
- 
--	emmc: dwmmc@ff390000 {
-+	emmc: mmc@ff390000 {
- 		compatible = "rockchip,px30-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xff390000 0x0 0x4000>;
- 		interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-index fa0d55f1a..116f1900e 100644
---- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-@@ -584,7 +584,7 @@
- 		status = "disabled";
- 	};
- 
--	sdmmc: dwmmc@ff480000 {
-+	sdmmc: mmc@ff480000 {
- 		compatible = "rockchip,rk3308-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xff480000 0x0 0x4000>;
- 		interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH>;
-@@ -599,7 +599,7 @@
- 		status = "disabled";
- 	};
- 
--	emmc: dwmmc@ff490000 {
-+	emmc: mmc@ff490000 {
- 		compatible = "rockchip,rk3308-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xff490000 0x0 0x4000>;
- 		interrupts = <GIC_SPI 77 IRQ_TYPE_LEVEL_HIGH>;
-@@ -612,7 +612,7 @@
- 		status = "disabled";
- 	};
- 
--	sdio: dwmmc@ff4a0000 {
-+	sdio: mmc@ff4a0000 {
- 		compatible = "rockchip,rk3308-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xff4a0000 0x0 0x4000>;
- 		interrupts = <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-index 91306ebed..acfaefdd3 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-@@ -837,7 +837,7 @@
- 		};
- 	};
- 
--	sdmmc: dwmmc@ff500000 {
-+	sdmmc: mmc@ff500000 {
- 		compatible = "rockchip,rk3328-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xff500000 0x0 0x4000>;
- 		interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
-@@ -849,7 +849,7 @@
- 		status = "disabled";
- 	};
- 
--	sdio: dwmmc@ff510000 {
-+	sdio: mmc@ff510000 {
- 		compatible = "rockchip,rk3328-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xff510000 0x0 0x4000>;
- 		interrupts = <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>;
-@@ -861,7 +861,7 @@
- 		status = "disabled";
- 	};
- 
--	emmc: dwmmc@ff520000 {
-+	emmc: mmc@ff520000 {
- 		compatible = "rockchip,rk3328-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xff520000 0x0 0x4000>;
- 		interrupts = <GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3368.dtsi b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-index fd8618801..a0df61c61 100644
---- a/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-@@ -204,7 +204,7 @@
- 		#clock-cells = <0>;
- 	};
- 
--	sdmmc: dwmmc@ff0c0000 {
-+	sdmmc: mmc@ff0c0000 {
- 		compatible = "rockchip,rk3368-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xff0c0000 0x0 0x4000>;
- 		max-frequency = <150000000>;
-@@ -218,7 +218,7 @@
- 		status = "disabled";
- 	};
- 
--	sdio0: dwmmc@ff0d0000 {
-+	sdio0: mmc@ff0d0000 {
- 		compatible = "rockchip,rk3368-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xff0d0000 0x0 0x4000>;
- 		max-frequency = <150000000>;
-@@ -232,7 +232,7 @@
- 		status = "disabled";
- 	};
- 
--	emmc: dwmmc@ff0f0000 {
-+	emmc: mmc@ff0f0000 {
- 		compatible = "rockchip,rk3368-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xff0f0000 0x0 0x4000>;
- 		max-frequency = <150000000>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index e62ea0e2b..ed654758c 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -291,7 +291,7 @@
- 		status = "disabled";
- 	};
- 
--	sdio0: dwmmc@fe310000 {
-+	sdio0: mmc@fe310000 {
- 		compatible = "rockchip,rk3399-dw-mshc",
- 			     "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xfe310000 0x0 0x4000>;
-@@ -307,7 +307,7 @@
- 		status = "disabled";
- 	};
- 
--	sdmmc: dwmmc@fe320000 {
-+	sdmmc: mmc@fe320000 {
- 		compatible = "rockchip,rk3399-dw-mshc",
- 			     "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xfe320000 0x0 0x4000>;
--- 
-2.11.0
+On 2020/1/15 7:43, Rob Herring wrote:
+> On Tue, Jan 14, 2020 at 03:22:55PM +0800, Shawn Lin wrote:
+>> This IP could supports USB3.0 and PCIe.
+>>
+>> Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+>>
+>> ---
+>>
+>>   .../bindings/phy/rockchip,inno-combophy.yaml       | 84 ++++++++++++++++++++++
+>>   1 file changed, 84 insertions(+)
+>>   create mode 100644 Documentation/devicetree/bindings/phy/rockchip,inno-combophy.yaml
+> 
+> Fails 'make dt_binding_check':
+> 
+> /builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/rockchip,inno-combophy.yaml:
+> ignoring, error in schema: properties: rockchip,combphygrf
+> Documentation/devicetree/bindings/display/simple-framebuffer.example.dts:21.16-37.11:
+> Warning (chosen_node_is_root): /example-0/chosen: chosen node must be at root node
+> /builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/rockchip,inno-combophy.yaml:
+> properties:rockchip,combphygrf: {'items': [{'description': 'The grf for
+> COMBPHY configuration and state registers.'}]} is not valid under any of
+> the given schemas (Possible causes of the failure):
+> 	
+> /builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/rockchip,inno-combophy.yaml:
+> properties:rockchip,combphygrf: 'description' is a required property
+> 
+
+Thanks Rob, will fix them in v2.
+
+> 
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/rockchip,inno-combophy.yaml b/Documentation/devicetree/bindings/phy/rockchip,inno-combophy.yaml
+>> new file mode 100644
+>> index 0000000..d647ab3
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/phy/rockchip,inno-combophy.yaml
+>> @@ -0,0 +1,84 @@
+>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/phy/rockchip,inno-combophy.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: Rockchip USB3.0/PCI-e combo phy
+>> +
+>> +maintainers:
+>> +        - Shawn Lin <shawn.lin@rock-chips.com>
+>> +        - William Wu <william.wu@rock-chips.com>
+> 
+> 2 space indent.
+> 
+>> +
+>> +properties:
+>> +  "#phy-cells":
+>> +    const: 1
+>> +
+>> +  compatible:
+>> +    enum:
+>> +      - rockchip,rk1808-combphy
+>> +
+>> +  reg:
+>> +    maxItems: 1
+>> +
+>> +  clocks:
+>> +    items:
+>> +      - description: PLL reference clock
+>> +
+>> +  clock-names:
+>> +    items:
+>> +      - const: refclk
+>> +
+>> +  resets:
+>> +    items:
+>> +      - description: OTG unit reset line
+>> +      - description: POR unit reset line
+>> +      - description: APB interface reset line
+>> +      - description: PIPE unit reset line
+>> +
+>> +  reset-names:
+>> +    items:
+>> +      - const: otg-rst
+>> +      - const: combphy-por
+>> +      - const: combphy-apb
+>> +      - const: combphy-pipe
+>> +
+>> +  rockchip,combphygrf:
+>> +    items:
+>> +      - description: The grf for COMBPHY configuration and state registers.
+>> +
+>> +required:
+>> +  - "#phy-cells"
+>> +  - compatible
+>> +  - reg
+>> +  - clocks
+>> +  - clock-names
+>> +  - resets
+>> +  - reset-names
+>> +  - rockchip,combphygrf
+>> +
+>> +additionalProperties: false
+>> +
+>> +examples:
+>> +  - |
+>> +    combphy_grf: syscon@fe018000 {
+>> +        compatible = "rockchip,usb3phy-grf", "syscon";
+>> +        reg = <0x0 0xfe018000 0x0 0x8000>;
+>> +    };
+>> +
+>> +    combphy: phy@ff380000 {
+>> +        compatible = "rockchip,rk1808-combphy";
+>> +        reg = <0x0 0xff380000 0x0 0x10000>;
+>> +        #phy-cells = <1>;
+>> +        clocks = <&cru SCLK_PCIEPHY_REF>;
+>> +        clock-names = "refclk";
+>> +        assigned-clocks = <&cru SCLK_PCIEPHY_REF>;
+>> +        assigned-clock-rates = <25000000>;
+>> +        resets = <&cru SRST_USB3_OTG_A>, <&cru SRST_PCIEPHY_POR>,
+>> +                 <&cru SRST_PCIEPHY_P>, <&cru SRST_PCIEPHY_PIPE>;
+>> +        reset-names = "otg-rst", "combphy-por",
+>> +                      "combphy-apb", "combphy-pipe";
+>> +        rockchip,combphygrf = <&combphy_grf>;
+>> +    };
+>> +
+>> +...
+>> -- 
+>> 1.9.1
+>>
+>>
+>>
+> 
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+> 
+> 
+> 
+
 
 
 _______________________________________________
