@@ -2,84 +2,64 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1983C13DEB9
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 16:24:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 250A813E114
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 17:47:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=6a4dy597V6aHXVfQwHhGwkyykL71GIim/rKQTEzkMGg=; b=rWEB+wfyTM7HVwCk+BP0KdoNC7
-	0NZGMX5WtelDU4rn6kR0gk+CcvMgA53nFH/xvR0TpL4HNOIJB1E5mGKk+aAxX8jGU/t+DOynOc9ud
-	+b1nwatrou9NUyy7WuYdGt5JHXlPpjP0Gn9CBlGbwACtcBFbsYWPhFhDpYsLU86YIQC/OUnJc7mj3
-	2UyvqRuTiexwWUVQpp5oQGpbyRd/LhVvYavIKQ0a+Zye+Q4r7+GM58wDePkMg1LLTgtC/fhze07VA
-	q5jNzMsQqw2JvvADBdMLtfRRQ1Nw1ZatOaS2ENrrv5PE+3os8X8wHL95iVru6suFv22TgN6QTKtKj
-	LvXFcniA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tI2rAxvx83q7bjCAddvW1CnLgbnC3PIagnur2Nd3qOU=; b=CrWT/8cGHjWsUI
+	8x+jZPSJcmIsWxEoCNreznovIv9Fxp+L9uaIwobTphQsmH96c9/oaAWNc3S1x3BcajxMsl3KJmLtY
+	JlnfiwiYXq02XvRfJwbp3COKm6P0JMIa3Udq2UqL/4WeBnc1uvqDcxNm4b1SU3z1YEu91UVnqIL99
+	W1XG90KEZnLomrV3uWXU7/e4FqXIreZCnXes459MdH+pqVu9T5JfYTFvK3qlZq7i8rFRAdRUy9jBQ
+	BhsTl3HiyhpMLEOPVWbpBhd4MG8nF4FSxzG+C+JZwzTR6WNUrQZGSaHmG2QuNI6w8jVxMBo6hkkx8
+	1NFNR61HjZnvy9g8vd7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is70O-000364-4w; Thu, 16 Jan 2020 15:24:20 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1is8J1-0002HK-0V; Thu, 16 Jan 2020 16:47:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is6yo-0001YS-9f; Thu, 16 Jan 2020 15:22:55 +0000
-Received: by mail-wr1-x441.google.com with SMTP id w15so19594177wru.4;
- Thu, 16 Jan 2020 07:22:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=vZZ9VyOzV34iQ0VxY5F4QTnc79//k1XDbodGn0X9/BI=;
- b=lzs8yVanbsLsplmx8X5y+FC2PfGxjVxhWovxdAuhr5n1AMnQj6FcgATftk365XldMm
- Pg6rwZzsLrHwxedRZIpfDWG/kaEmH8p0mtVGeojY0qDZ+y6XV7YD7HJH4dR1T3CBYmMb
- 2tYs6RM1uClP+oESBKqqsYBi0AuGK+VvDstUPSvOSGhh20BlPZLlOLZIOQujpc4oOABC
- 1n18InsiE7iRJBH9QmX9lArDfeWyw+pPptGBBQqd0sROgz27kBLzU3XclzaECs4Zh0US
- fCgktVQY7pHYg4Gl+nQB1JrW4X5QP68n0p1NKuKLr63K1TdzapLQMdjWztcHHYHWhzVO
- WYvw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=vZZ9VyOzV34iQ0VxY5F4QTnc79//k1XDbodGn0X9/BI=;
- b=G4u2hX8jxPlDtVY30sWBXzY30Bb0p7UzVYoqxQr8PotPKlKRNjCGMmPldEbRVJdPhB
- iZVvTDgsO8hsllR4KWtl5FSXNeQc/NXBQmylxqWe8FvY8rRwyxQwQ6A5b+YRGwrK7TTZ
- VKepVdO6hqs1R9q47CVI0q64es55UCgAkRYFP4BZzVB+uwS0G7gMlNdreu1WB8/ybTet
- dEeqYLfhZMTmGHCNsJuGJSGEXXzf2fxZSL55fz7V1JJzjkraQbrHlT0jTueIXSlXoBVd
- 8Pe11CH9qAb5jjME4G/oE8U2KR5f0QS092occ/vPyC4AjfeJZjxjZ6b2TQMMrquxKW6T
- K3KQ==
-X-Gm-Message-State: APjAAAVsoLuo5O+f/ENSsso3dl8Vtf1LoRW4KEkzuJYmZPl54Sm709DP
- ErJf9vsXrccotPNmHKLaSCw=
-X-Google-Smtp-Source: APXvYqyuFSu4gLbVEvoyKNl3FBhw734PapU1CBJhHea/vYM4blIBscvJQWf3mxNqEwlCKpMp0wwGYg==
-X-Received: by 2002:a5d:4fd0:: with SMTP id h16mr3735432wrw.255.1579188160843; 
- Thu, 16 Jan 2020 07:22:40 -0800 (PST)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id w8sm18193wmd.2.2020.01.16.07.22.39
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 16 Jan 2020 07:22:40 -0800 (PST)
-From: Johan Jonker <jbx6244@gmail.com>
-To: ulf.hansson@linaro.org
-Subject: [PATCH v2 3/3] dt-bindings: mmc: rockchip-dw-mshc: add description
- for rk3308
-Date: Thu, 16 Jan 2020 16:22:30 +0100
-Message-Id: <20200116152230.29831-3-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200116152230.29831-1-jbx6244@gmail.com>
-References: <20200116152230.29831-1-jbx6244@gmail.com>
+ id 1is8HL-0000ox-T7; Thu, 16 Jan 2020 16:46:02 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7CA4C2081E;
+ Thu, 16 Jan 2020 16:45:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579193154;
+ bh=zrtug52BmZXPYpKd1XK968zeRSRJc2alCuFgpYu/tK0=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=qZ80nJes95A0EtwUVl+xtYVbbnV5p9bwEE/invClvQmw2/JJzonV5epPJ7E/ChVuq
+ gte70akMowggxXPPrm387o8wwyJ2+94tANP3NvJ5FtX7SxCJuJaUCgVUWLCxPyfFNp
+ 5i5xSKHhtDc4Qg60lc0CRI8QrR6BMHf/ruhDutyE=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.4 035/205] drm/rockchip: Round up _before_ giving to
+ the clock framework
+Date: Thu, 16 Jan 2020 11:40:10 -0500
+Message-Id: <20200116164300.6705-35-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200116164300.6705-1-sashal@kernel.org>
+References: <20200116164300.6705-1-sashal@kernel.org>
+MIME-Version: 1.0
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_072242_438656_E91916B8 
-X-CRM114-Status: GOOD (  11.40  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200116_084556_760641_6FF7B24A 
+X-CRM114-Status: GOOD (  20.60  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jbx6244[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jbx6244[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -87,6 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,41 +80,122 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Sasha Levin <sashal@kernel.org>, Douglas Anderson <dianders@chromium.org>,
+ dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+ Sean Paul <seanpaul@chromium.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The description below is already in use for rk3308.dtsi,
-but was somehow never added to a document, so add
-"rockchip,rk3308-dw-mshc", "rockchip,rk3288-dw-mshc"
-for mmc nodes on a rk3308 platform to rockchip-dw-mshc.yaml.
+From: Douglas Anderson <dianders@chromium.org>
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+[ Upstream commit 287422a95fe28e05c1952de0472e0dfdffa6caae ]
+
+I'm embarassed to say that even though I've touched
+vop_crtc_mode_fixup() twice and I swear I tested it, there's still a
+stupid glaring bug in it.  Specifically, on veyron_minnie (with all
+the latest display timings) we want to be setting our pixel clock to
+66,666,666.67 Hz and we tell userspace that's what we set, but we're
+actually choosing 66,000,000 Hz.  This is confirmed by looking at the
+clock tree.
+
+The problem is that in drm_display_mode_from_videomode() we convert
+from Hz to kHz with:
+
+  dmode->clock = vm->pixelclock / 1000;
+
+...and drm_display_mode_from_videomode() is called from panel-simple
+when we have an "override_mode" like we do on veyron_minnie.  See
+commit 123643e5c40a ("ARM: dts: rockchip: Specify
+rk3288-veyron-minnie's display timings").
+
+...so when the device tree specifies a clock of 66666667 for the panel
+then DRM translates that to 66666000.  The clock framework will always
+pick a clock that is _lower_ than the one requested, so it will refuse
+to pick 66666667 and we'll end up at 66000000.
+
+While we could try to fix drm_display_mode_from_videomode() to round
+to the nearest kHz and it would fix our problem, it wouldn't help if
+the clock we actually needed was 60,000,001 Hz.  We could
+alternatively have DRM always round up, but maybe this would break
+someone else who already baked in the assumption that DRM rounds down.
+Specifically note that clock drivers are not consistent about whether
+they round up or round down when you call clk_set_rate().  We know how
+Rockchip's clock driver works, but (for instance) you can see that on
+most Qualcomm clocks the default is clk_rcg2_ops which rounds up.
+
+Let's solve this by just adding 999 Hz before calling
+clk_round_rate().  This should be safe and work everywhere.  As
+discussed in more detail in comments in the commit, Rockchip's PLLs
+are configured in a way that there shouldn't be another PLL setting
+that is only a few kHz off so we won't get mixed up.
+
+NOTE: if this is picked to stable, it's probably easiest to first pick
+commit 527e4ca3b6d1 ("drm/rockchip: Base adjustments of the mode based
+on prev adjustments") which shouldn't hurt in stable.
+
+Fixes: b59b8de31497 ("drm/rockchip: return a true clock rate to adjusted_mode")
+Signed-off-by: Douglas Anderson <dianders@chromium.org>
+Reviewed-by: Sean Paul <seanpaul@chromium.org>
+Signed-off-by: Sean Paul <seanpaul@chromium.org>
+Link: https://patchwork.freedesktop.org/patch/msgid/20191003114726.v2.1.Ib233b3e706cf6317858384264d5b0ed35657456e@changeid
+Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 37 +++++++++++++++++++--
+ 1 file changed, 34 insertions(+), 3 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml b/Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
-index 2f70f5ef0..89c3edd6a 100644
---- a/Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
-+++ b/Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
-@@ -35,6 +35,8 @@ properties:
-             - rockchip,rk3036-dw-mshc
-             # for Rockchip RK322x
-             - rockchip,rk3228-dw-mshc
-+            # for Rockchip RK3308
-+            - rockchip,rk3308-dw-mshc
-             # for Rockchip RK3328
-             - rockchip,rk3328-dw-mshc
-             # for Rockchip RK3368
+diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+index 613404f86668..84e3decb17b1 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
++++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+@@ -1040,10 +1040,41 @@ static bool vop_crtc_mode_fixup(struct drm_crtc *crtc,
+ 				struct drm_display_mode *adjusted_mode)
+ {
+ 	struct vop *vop = to_vop(crtc);
++	unsigned long rate;
+ 
+-	adjusted_mode->clock =
+-		DIV_ROUND_UP(clk_round_rate(vop->dclk,
+-					    adjusted_mode->clock * 1000), 1000);
++	/*
++	 * Clock craziness.
++	 *
++	 * Key points:
++	 *
++	 * - DRM works in in kHz.
++	 * - Clock framework works in Hz.
++	 * - Rockchip's clock driver picks the clock rate that is the
++	 *   same _OR LOWER_ than the one requested.
++	 *
++	 * Action plan:
++	 *
++	 * 1. When DRM gives us a mode, we should add 999 Hz to it.  That way
++	 *    if the clock we need is 60000001 Hz (~60 MHz) and DRM tells us to
++	 *    make 60000 kHz then the clock framework will actually give us
++	 *    the right clock.
++	 *
++	 *    NOTE: if the PLL (maybe through a divider) could actually make
++	 *    a clock rate 999 Hz higher instead of the one we want then this
++	 *    could be a problem.  Unfortunately there's not much we can do
++	 *    since it's baked into DRM to use kHz.  It shouldn't matter in
++	 *    practice since Rockchip PLLs are controlled by tables and
++	 *    even if there is a divider in the middle I wouldn't expect PLL
++	 *    rates in the table that are just a few kHz different.
++	 *
++	 * 2. Get the clock framework to round the rate for us to tell us
++	 *    what it will actually make.
++	 *
++	 * 3. Store the rounded up rate so that we don't need to worry about
++	 *    this in the actual clk_set_rate().
++	 */
++	rate = clk_round_rate(vop->dclk, adjusted_mode->clock * 1000 + 999);
++	adjusted_mode->clock = DIV_ROUND_UP(rate, 1000);
+ 
+ 	return true;
+ }
 -- 
-2.11.0
+2.20.1
 
 
 _______________________________________________
