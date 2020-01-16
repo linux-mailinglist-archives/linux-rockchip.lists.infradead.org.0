@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D04C413D4DB
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 08:15:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D84713D550
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 08:48:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,22 +11,22 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=t5/5rGNXK1cOq+jEdgbh3G5W6YobXDzohX7Uc5s6Qak=; b=Esd1VknsdmcpXC9mseDQ8BT8K8
-	ITVijAOLXRxjDqJlGlpcRAI/BfFFk33RctQFTWLa59spVzMcPiDSlYM4qdWtdZ9ZxCiqxCSvTy9Uj
-	lBtPFsKdbQYlAlRA4G3KE6/s2rAn8OccRNXS3UE/yKO3MQ2mGL39eFiuIGYvE5woAq3eUx+fLJCv9
-	F7Z55YzE7j91ycQ2VIJQUuogJKEq9oW04xHpAiQpikdIduKrqWaYrpCytNTvDlWXggnYVePXVNOyj
-	nOtOmrRUJ5E9wPv9Lehuwt/Biaau/osXv9g5yFGeKfVhaRTMsaYGZewzMXWi0tgFM76lZ0HXK3iHV
-	LDu3rMFg==;
+	bh=pWW/ZHPamulBQOUH36Z5Y0lHrhkPNIiv4ZGveUGkTAc=; b=RoUK9kh2mgdbJBCNXtg1yWOXQV
+	b0E5AB9S6Ib6Ta0eggfbddaQDJsQ+Xbo4iT6UIegmrLTTz43hXvsU4SevCT/Mf4yW/6tiBuxiiA1p
+	IGhZRzuOH0Ss1SPdb2YxTX+LOgM7IC0LodD5Dl7jKZVNtzjDh3ZFKdPjR21zcM750PL+DcxlwH8yR
+	vBdo6ZZjFzo3M4ISVej4tnDZRE03ErveS72emSF/iytLY3ALQ5fz5v54v0y7Vr67/pBwwBvFi4Uas
+	DB6R6KON+f/meOCY0DqXUHHG9H+zZ4pe2vN9/JnYn40YKdfQvPuFXSVHhVopF5TcJnQBDq3DkrIpC
+	A2qB+1zA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irzMl-0007Gr-4x; Thu, 16 Jan 2020 07:14:55 +0000
-Received: from lucky1.263xmail.com ([211.157.147.132])
+	id 1irzsm-0005b9-47; Thu, 16 Jan 2020 07:48:00 +0000
+Received: from lucky1.263xmail.com ([211.157.147.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irzMa-0007Fb-IO
- for linux-rockchip@lists.infradead.org; Thu, 16 Jan 2020 07:14:53 +0000
-Received: from localhost (unknown [192.168.167.70])
- by lucky1.263xmail.com (Postfix) with ESMTP id 729F08BD08;
- Thu, 16 Jan 2020 15:14:30 +0800 (CST)
+ id 1irzsX-0005a6-Fe
+ for linux-rockchip@lists.infradead.org; Thu, 16 Jan 2020 07:47:57 +0000
+Received: from localhost (unknown [192.168.167.32])
+ by lucky1.263xmail.com (Postfix) with ESMTP id F3B427D3A1;
+ Thu, 16 Jan 2020 15:47:41 +0800 (CST)
 X-MAIL-GRAY: 0
 X-MAIL-DELIVERY: 1
 X-ADDR-CHECKED4: 1
@@ -34,10 +34,10 @@ X-ANTISPAM-LEVEL: 2
 X-ABS-CHECKED: 0
 Received: from localhost.localdomain (unknown [58.22.7.114])
  by smtp.263.net (postfix) whith ESMTP id
- P20736T140093614442240S1579158868089890_; 
- Thu, 16 Jan 2020 15:14:29 +0800 (CST)
+ P9176T140331145094912S1579160859779571_; 
+ Thu, 16 Jan 2020 15:47:41 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <3d1708647d364b363664a47ef99b77a9>
+X-UNIQUE-TAG: <7a38c79bdc0cfc1695b9d8fb41ab6ab1>
 X-RL-SENDER: jay.xu@rock-chips.com
 X-SENDER: xjq@rock-chips.com
 X-LOGIN-NAME: jay.xu@rock-chips.com
@@ -48,21 +48,21 @@ X-DNS-TYPE: 0
 From: Jianqun Xu <jay.xu@rock-chips.com>
 To: linus.walleij@linaro.org, heiko@sntech.de, david.wu@rock-chips.com,
  kever.yang@rock-chips.com
-Subject: [PATCH v3] pinctrl: rockchip: split rockchip pinctrl driver by SoC
- type
-Date: Thu, 16 Jan 2020 15:14:26 +0800
-Message-Id: <20200116071426.13430-1-jay.xu@rock-chips.com>
+Subject: [PATCH v3 RESEND] pinctrl: rockchip: split rockchip pinctrl driver by
+ SoC type
+Date: Thu, 16 Jan 2020 15:47:38 +0800
+Message-Id: <20200116074738.14144-1-jay.xu@rock-chips.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <c4ec95a7-aaf1-2331-352f-2def319a1c7d@rock-chips.com>
 References: <c4ec95a7-aaf1-2331-352f-2def319a1c7d@rock-chips.com>
-X-Spam-Note: CRM114 run bypassed due to message size (138628 bytes)
+X-Spam-Note: CRM114 run bypassed due to message size (138630 bytes)
 X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.132 listed in list.dnswl.org]
+ no trust [211.157.147.130 listed in list.dnswl.org]
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [58.22.7.114 listed in dnsbl.sorbs.net]
  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
@@ -356,7 +356,7 @@ index 000000000000..a250b60631f5
 +obj-$(CONFIG_PINCTRL_RV1108)	+= pinctrl-rv1108.o
 diff --git a/drivers/pinctrl/rockchip/pinctrl-px30.c b/drivers/pinctrl/rockchip/pinctrl-px30.c
 new file mode 100644
-index 000000000000..b589c2166a3f
+index 000000000000..d92563cdf957
 --- /dev/null
 +++ b/drivers/pinctrl/rockchip/pinctrl-px30.c
 @@ -0,0 +1,224 @@
@@ -556,7 +556,7 @@ index 000000000000..b589c2166a3f
 +		.iomux_routes		= px30_mux_route_data,
 +		.niomux_routes		= ARRAY_SIZE(px30_mux_route_data),
 +		.pull_calc_reg		= px30_calc_pull,
-+		.drv_calc_reg		= px30_calc_drv_reg,
++		.drv_calc_reg		= px30_calc_drv,
 +		.schmitt_calc_reg	= px30_calc_schmitt,
 +};
 +
