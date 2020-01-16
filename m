@@ -2,76 +2,75 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D723B13D8CE
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 12:17:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E916D13D8EE
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 12:27:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o03PgZ8fCmfJG8pPG501XqonGXZ3tqBweFB2gWTusnA=; b=EJdFKzwAkgQDKQ
-	G4UqXSd+TBDjpphPj5VWYAfMd+CALTbUaiicPo/57N88U6pk6uVr+pleTrAk3GqVb5shORMmzno8G
-	kFyP2MQQjgYmwY1WXqiKQ71FId5FJQ/RE6H88fFqYmA9QPDKECzcAbv244U5op05ASV6djJzydR78
-	XScrU3tD9WiTNNMpe4ET45xIKjtukEZ1/dzUKfIpCEosw0f2/lslMXAVVxTHj7cIJwps2Z00Y2Z2z
-	Q4NHUjMVXthZmXFzMMKw2xW6ILc58WRUawAk5aPOW9i2LdDLRB8gz+1JXNLHN5Fq3isqkksf5lkSL
-	LM6tAZNLpdvz6FDWFTVg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+4YMP3VcFTkVpromskxRKRx2APZBCSBtC5CR0BQ5LTo=; b=idccuF6YxB2JcZ
+	nL8f65hb1AxhPawVgnjpifNCpYI+cdPbbM6LcVk3SzJ/t2u8qK1lqd2C1JEH9neIgtiHF9+l5DorH
+	nGxAcZNZC64S6o5ldywYIWUf26vj9i63LU8TEXHF5ZYVL4Emxv543rqT+jqChPxqYzbuTiLezIpg0
+	DhA0Im8LX5XZlezOOYU1qtNFeEjMvdV3kxfGdp9PhvEGs1vTCviJJQzfLMdBI6Ypq7Ki5+P17D7yT
+	rhB/xOldx2adK581f/R8y3IP6QGHzpHWhHk6oGEt4nN6LOWgTsxIb2elEgE9celBalElOCJUxn8id
+	qGZl7tLV4hDn4srtRAnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is39K-0000dD-C7; Thu, 16 Jan 2020 11:17:18 +0000
-Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
+	id 1is3JH-00044i-2p; Thu, 16 Jan 2020 11:27:35 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is39D-0000cA-Ez
- for linux-rockchip@lists.infradead.org; Thu, 16 Jan 2020 11:17:16 +0000
-Received: by mail-ua1-x943.google.com with SMTP id 59so7483673uap.12
- for <linux-rockchip@lists.infradead.org>; Thu, 16 Jan 2020 03:17:09 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=F7tUdno7ArtPSiaOPdMNn5wVN9V2qtibzn63/OmNwzM=;
- b=lwcdtRWLk0imKl7E0r3n6TJW8xeDU1FBZjrxdwbB1j1Ol8VLI6md87iF6Ei32CqstB
- iZsxa6IJPvBFh4/KZIDh7uRZ4kCTldU8Hs1BMoPEFCwDTo7QdO9PKkKKeMCczAi+zG/4
- JZfYXGg313YN4TZwuOTHONOstMiYv8zbow0CFVohUQbrYitLoSQqIkeDcuxGp6qNSXRF
- MSkysZR6XwblHa8eMmPSQT/qJd8xv8W9O4E2ppMNt4Lo0lJZCGfmkzvlu2IAtDMnEnbB
- 1QjcmJa6xjbZVSVMx8kwvXsDZZBH7G6592G8of/U/0t0mCjvPQm1g4udNBlpI6gURr5r
- am4Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=F7tUdno7ArtPSiaOPdMNn5wVN9V2qtibzn63/OmNwzM=;
- b=IDxnFk/wy950UR8Yr7NMpI6XZzJqiUWhCXqulxyhkOSLsGTMzmAhalPQac0wFdpgqa
- 15lugLqkPaK2lRSf1SAatvn+jDaa3cx3wOlqcl1LR9htsPtyrZ4sO0q9u4JBPplAUf2R
- 4J3G/CgPUJ3M8duT36hwFBJKUk4LGNLHgYblQH7xCXT8eL3/VcUrfwA1Ben0rKG8DflG
- VS+7LpnlsBrgHZ8UuM69Gq+n5B/HatUWxju0rlUcdi3vRZ9G5K+Nk/SAM5hi5SKJ7a24
- VM2F9bHFHU43kBBU4y1vehwTZbJpyCFdToeze3ixRNGIlq5LCBpK8mWlvLnzWacYFNTQ
- 6ywA==
-X-Gm-Message-State: APjAAAXvn93gRHNojW0KYnGHOD7PalikL2T7KywW9M2W/bHB7UWlY8uZ
- wvQ/XoWNgXg7Rfpg8BOx/+MkQfzSnzNBzPPYooHsHw==
-X-Google-Smtp-Source: APXvYqyiD7on53LJXj+IvnXLqg0ezI6WrramGC7O26YFNv+/TCtHx+KoDKnYfKLOvap+43EPQJV5R5WFI/gCOGKBRMA=
-X-Received: by 2002:ab0:20a:: with SMTP id 10mr17143795uas.19.1579173428886;
- Thu, 16 Jan 2020 03:17:08 -0800 (PST)
-MIME-Version: 1.0
-References: <20191219145843.3823-1-jbx6244@gmail.com>
- <20191228093059.2817-1-jbx6244@gmail.com>
- <20200104215524.GA28188@bogus>
-In-Reply-To: <20200104215524.GA28188@bogus>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 16 Jan 2020 12:16:32 +0100
-Message-ID: <CAPDyKFp5BvA7tKpBUh-bpn5X4xvg8b9HuMO7+fZVJEp78=ToRw@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: mmc: remove identical phrase in
- disable-wp text
+ id 1is3JB-000442-Bp; Thu, 16 Jan 2020 11:27:33 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00GBRGdj061689;
+ Thu, 16 Jan 2020 05:27:16 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1579174036;
+ bh=myfrgAkACHwJfmdNtMcuEJNJskU9ZB6VVutnIR84JH4=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=nEFmlIIkHRmg720elyKMOm+dhwS+GmQz54J/Pk0oyMkOmh+nf69RXMnk221Fm2/e7
+ NSzzCU2NpIciRM4d5s7zg63jd0GcYITe/s87EiYMWMO+9mg4DS68MEI0wBotVnoNJ0
+ KvXPQQC6+eWZhLjEpa5vffjlE8C0JzoLPGRujhCI=
+Received: from DLEE110.ent.ti.com (dlee110.ent.ti.com [157.170.170.21])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00GBRGVV021247
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 16 Jan 2020 05:27:16 -0600
+Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE110.ent.ti.com
+ (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 16
+ Jan 2020 05:27:16 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Thu, 16 Jan 2020 05:27:15 -0600
+Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00GBR8Tb095885;
+ Thu, 16 Jan 2020 05:27:11 -0600
+Subject: Re: [PATCH 2/7] dt-bindings: PCI: cadence: Add binding to specify max
+ virtual functions
 To: Rob Herring <robh@kernel.org>
+References: <20191231113534.30405-1-kishon@ti.com>
+ <20191231113534.30405-3-kishon@ti.com> <20200115014026.GA10726@bogus>
+From: Kishon Vijay Abraham I <kishon@ti.com>
+Message-ID: <f0690395-4ce7-df93-e837-670829aafb03@ti.com>
+Date: Thu, 16 Jan 2020 16:59:20 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
+MIME-Version: 1.0
+In-Reply-To: <20200115014026.GA10726@bogus>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_031711_522273_FA9E6FB0 
-X-CRM114-Status: GOOD (  12.60  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200116_032729_485427_945292E9 
+X-CRM114-Status: GOOD (  17.27  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -81,6 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,44 +93,77 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, Johan Jonker <jbx6244@gmail.com>
+Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
+ Jonathan Corbet <corbet@lwn.net>, Jingoo Han <jingoohan1@gmail.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, linux-doc@vger.kernel.org,
+ linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Tom Joseph <tjoseph@cadence.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sat, 4 Jan 2020 at 22:55, Rob Herring <robh@kernel.org> wrote:
->
-> On Sat, 28 Dec 2019 10:30:58 +0100, Johan Jonker wrote:
-> > There are two identical phrases in the disable-wp text,
-> > so remove one of them.
-> >
-> > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> > ---
-> >  Documentation/devicetree/bindings/mmc/mmc-controller.yaml | 3 +--
-> >  1 file changed, 1 insertion(+), 2 deletions(-)
-> >
->
-> Applied, thanks.
->
-> Rob
+Hi Rob,
 
-Rob,
+On 15/01/20 7:10 AM, Rob Herring wrote:
+> On Tue, Dec 31, 2019 at 05:05:29PM +0530, Kishon Vijay Abraham I wrote:
+>> Add binding to specify maximum number of virtual functions that can be
+>> associated with each physical function.
+>>
+>> Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
+>> ---
+>>  .../devicetree/bindings/pci/cdns,cdns-pcie-ep.txt         | 2 ++
+>>  .../devicetree/bindings/pci/ti,j721e-pci-ep.yaml          | 8 ++++++++
+>>  2 files changed, 10 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.txt b/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.txt
+>> index 4a0475e2ba7e..432578202733 100644
+>> --- a/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.txt
+>> +++ b/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.txt
+>> @@ -9,6 +9,8 @@ Required properties:
+>>  
+>>  Optional properties:
+>>  - max-functions: Maximum number of functions that can be configured (default 1).
+>> +- max-virtual-functions: Maximum number of virtual functions that can be
+>> +    associated with each physical function.
+>>  - phys: From PHY bindings: List of Generic PHY phandles. One per lane if more
+>>    than one in the list.  If only one PHY listed it must manage all lanes. 
+>>  - phy-names:  List of names to identify the PHY.
+>> diff --git a/Documentation/devicetree/bindings/pci/ti,j721e-pci-ep.yaml b/Documentation/devicetree/bindings/pci/ti,j721e-pci-ep.yaml
+>> index 4621c62016c7..1d4964ba494f 100644
+>> --- a/Documentation/devicetree/bindings/pci/ti,j721e-pci-ep.yaml
+>> +++ b/Documentation/devicetree/bindings/pci/ti,j721e-pci-ep.yaml
+>> @@ -61,6 +61,12 @@ properties:
+>>      minimum: 1
+>>      maximum: 6
+>>  
+>> +  max-virtual-functions:
+>> +    minItems: 1
+>> +    maxItems: 6
+> 
+> Is there a PCIe spec limit to number of virtual functions per phy 
+> function? Or 2^32 virtual functions is okay.
 
-Normally I pick up the DT doc changes for mmc whenever you have acked
-them (at least more non-trivial changes). I regards to the
-mmc-controller.yaml file, I have no queued changes in my tree for this
-cycle so this should be fine in regards to conflicts.
+The PCIe spec provides a 16 bit field to specify number of virtual
+functions in the SR-IOV extended capability.
 
-Going forward, do you prefer to pick the DT doc changes for mmc, or
-can I consider this as a single occasion thingy?
 
-Kind regards
-Uffe
+> 
+>> +    description: As defined in
+>> +                 Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.txt
+> 
+> I suspect this this be a common property.
+
+Right now we don't have common EP property binding across all
+controllers. Maybe should create one?
+
+Thanks
+Kishon
 
 _______________________________________________
 Linux-rockchip mailing list
