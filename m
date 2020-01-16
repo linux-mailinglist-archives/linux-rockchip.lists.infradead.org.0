@@ -2,80 +2,91 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5E1613D2DA
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 04:45:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 119FD13D3F8
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 06:53:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HyHKsEzutjQjg6yMniHT53wNZdc2Ru7eNlPQ3eShPr0=; b=sQDfsecgJ96H2uT43LrTeqszD
-	XIJb6/MwVgFSYdoL+zsvOoYlPkQPinpUHMKMzNbaHZNoDg8C11lnkME+WoGg65EPPTyEd3nqVaG2Z
-	SdNN6om+oI1niEFjNSRZ0D+UpMkU1ug73w3evyLIQ3t2b+4Z2ZQetcI4jRNX8tyYPrrFJJ+l3wHqq
-	vITAObJzEhLEaQotacvWKVVHB1TIgbIJxG7K17DtI6W8aktCFt1jVOZPMeG4KZTHdhIRqE9Y9TWwl
-	7piaWgBEYEXnJQrqs2MvbVA23UC5nJ6yJkxe0yF5sOjoBXvL2IylZJvOscxh46EL02X5S7pj7FR63
-	JeMfpafEg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SjBeDQx8418ZxHHQrH7NTDKdr9HU0+IO5O06G2ueIHk=; b=UJQopgAmnAjvkd
+	yrrkC48IGL4TAfvf37FfTJdn7itE5uDXTHgpHydUGkdiUOqvaKwMII+bZ4U8reZ4tHiX5LxgBTNpg
+	6t/LltIe+8QOeo4acUgIFABBABkNAcVLnq5VmOsO0F3oiE2KyHixPLUqefC4Eao/XNxF+0brcrNEn
+	Ntzd9zfZz60KPG6+p0zmoilmsOiJMvSeJk25RUvekHcW8E+L1lY+4IDAScc1j7MA5gedapgqRdauS
+	jSLh74BnpBf7o4qUVmHFKPjAh8Ih/Sp8IUPgS3ZkghBVjp0GRwdxnlf4HT3qMzQ9OU+KIjnLOP1qj
+	y95grwuKbwD9OOoSnLKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irw5b-0005fK-AS; Thu, 16 Jan 2020 03:44:59 +0000
-Received: from regular1.263xmail.com ([211.150.70.204])
+	id 1iry6B-0004lM-CZ; Thu, 16 Jan 2020 05:53:43 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irw5Y-0005eV-4r
- for linux-rockchip@lists.infradead.org; Thu, 16 Jan 2020 03:44:57 +0000
-Received: from localhost (unknown [192.168.167.223])
- by regular1.263xmail.com (Postfix) with ESMTP id B32AB25B;
- Thu, 16 Jan 2020 11:44:46 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-SKE-CHECKED: 1
-X-ABS-CHECKED: 1
-Received: from [172.16.12.9] (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P614T140606315673344S1579146284883989_; 
- Thu, 16 Jan 2020 11:44:45 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <c5786d4e514634879cef127dc9caa3a5>
-X-RL-SENDER: kever.yang@rock-chips.com
-X-SENDER: yk@rock-chips.com
-X-LOGIN-NAME: kever.yang@rock-chips.com
-X-FST-TO: huangtao@rock-chips.com
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-Subject: Re: [PATCH v2] pinctrl/rockchip: splite soc data to separated driver
-To: Linus Walleij <linus.walleij@linaro.org>,
- Jianqun Xu <jay.xu@rock-chips.com>, =?UTF-8?Q?Heiko_St=c3=bcbner?=
- <heiko@sntech.de>
-References: <20200109094001.24343-1-jay.xu@rock-chips.com>
- <20200113011616.19791-1-jay.xu@rock-chips.com>
- <CACRpkdY_EHQbF4rRyGwoxEk8LeWfmRzmCd=8=SY95LPXMHYOmw@mail.gmail.com>
-From: Kever Yang <kever.yang@rock-chips.com>
-Message-ID: <c4ec95a7-aaf1-2331-352f-2def319a1c7d@rock-chips.com>
-Date: Thu, 16 Jan 2020 11:44:44 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1iry5y-0004cf-UT; Thu, 16 Jan 2020 05:53:32 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00G5rAQA064244;
+ Wed, 15 Jan 2020 23:53:10 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1579153990;
+ bh=sOYcxg4iNklbKYvqwCFV5iSNCYi87ZaFpe1ow9AnDTU=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=YbFoQy/NnB0Fi70gEYTGrbWZ9o5nFdZJ7Z3UtPUiMe+IjeJ3qgs7+qECWuxJwjjBt
+ cDPuq/5yx6ImrbqYJ7mdLwHBmTS1FN9cNyYH4NqselWP4aCmMz14pqNkUoFkPFx4ZR
+ kgveTfWlqEChZCam07S1dGkJjO1jYmXG6qhzMtiw=
+Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00G5rAxA039773
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 15 Jan 2020 23:53:10 -0600
+Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 15
+ Jan 2020 23:53:10 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Wed, 15 Jan 2020 23:53:10 -0600
+Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00G5r064074235;
+ Wed, 15 Jan 2020 23:53:02 -0600
+Subject: Re: [v3 5/6] PCI: rcar: Add support for rcar PCIe controller in
+ endpoint mode
+To: Lad Prabhakar <prabhakar.csengg@gmail.com>, Bjorn Helgaas
+ <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Magnus Damm <magnus.damm@gmail.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ <linux-pci@vger.kernel.org>
+References: <20200108162211.22358-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200108162211.22358-6-prabhakar.mahadev-lad.rj@bp.renesas.com>
+From: Kishon Vijay Abraham I <kishon@ti.com>
+Message-ID: <5cf7fbe3-c7e4-8e8e-9815-a5e52a62615b@ti.com>
+Date: Thu, 16 Jan 2020 11:25:12 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <CACRpkdY_EHQbF4rRyGwoxEk8LeWfmRzmCd=8=SY95LPXMHYOmw@mail.gmail.com>
+In-Reply-To: <20200108162211.22358-6-prabhakar.mahadev-lad.rj@bp.renesas.com>
 Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_194456_353159_BA55FE00 
-X-CRM114-Status: GOOD (  15.34  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20200115_215331_088403_83605293 
+X-CRM114-Status: GOOD (  27.21  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.204 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [211.150.70.204 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,40 +99,208 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Tao Huang <huangtao@rock-chips.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Vagrant Cascadian <vagrant@debian.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Peter Robinson <pbrobinson@gmail.com>, David Wu <david.wu@rock-chips.com>,
- afaerber@suse.de
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: devicetree@vger.kernel.org, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
+ Jingoo Han <jingoohan1@gmail.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
+ linux-kernel@vger.kernel.org,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Ck9uIDIwMjAvMS8xNSDkuIvljYg4OjUxLCBMaW51cyBXYWxsZWlqIHdyb3RlOgo+IE9uIE1vbiwg
-SmFuIDEzLCAyMDIwIGF0IDI6MTYgQU0gSmlhbnF1biBYdSA8amF5Lnh1QHJvY2stY2hpcHMuY29t
-PiB3cm90ZToKPgo+PiAqIERlY3JlYXNlIGNvZGVzIG9mIHBpbmN0cmwtcm9ja2NoaXAuYyBmcm9t
-IDQsMDAwIGxpbmVzIHRvIDIwMDAgYnkKPj4gc2VwYXJhdGluZyBzb2MgZGF0YSB0byBhIG5ldyBm
-aWxlLgo+Pgo+PiAqIE1vdmUgcm9ja2NoaXAgcGluY3RybCByZWxhdGVkIHN0cnVjdCBkZWZpbmF0
-aW9ucyB0byBhIGhlYWQgZmlsZS4KPj4KPj4gKiBLZWVwIGxlZ2VuY3kgcGluY3RybC1yb2NrY2hp
-cC5jIHVuZGVyIGRyaXZlci9waW5jdHJsIGJ1dCBub3QgdG8KPj4gY29tcGlsZSBpdCwgY29udmVu
-aWVudGx5IGZvciByZXZpZXdlcnMuCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IEppYW5xdW4gWHUgPGph
-eS54dUByb2NrLWNoaXBzLmNvbT4KPiBUaGlzIHBhdGNoIGxvb2tzIGdvb2QsIHR3byB0aGluZ3Mg
-YXJlIG1pc3Npbmc6Cj4KPiAtIFJldmlldyBmcm9tIEhlaWtvCj4KPiAtIEEgY2hhbmdlIHRvIE1B
-SU5UQUlORVJTIHNvIHRoYXQgdGhlIGZpbGUgcGF0dGVybiBzdGlsbAo+ICAgIG1hdGNoZXMKPgo+
-IFNob3VsZCBzb21lb25lIGZyb20gUm9ja2NoaXAgYWxzbyBzaWduIHVwIGFzIGNvbWFpbnRhaW5l
-cgo+IGZvciB0aGlzIGRyaXZlciBieSB0aGUgd2F5PyAoVGhvdWdoIHRoZSBwZW9wbGUgYXQgUm9j
-a2NoaXAKPiBwb3N0aW5nIHBhdGNoZXMgZm9yIHRoaXMgc2VlbSB0byBjaGFuZ2UgYSBiaXQuKQoK
-ClRoZSBrZXJuZWwgSW1hZ2Ugc2l6ZSBpcyBrZWVwIGdyb3dpbmcsIHRoaXMgcGF0Y2ggY2FuIGhl
-bHAgcmVkdWNlIHRoZSAKc2l6ZSBvZgoKa2VybmVsIGltYWdlIGZvciBvbmUgU29DLCBhbmQgdGhp
-cyBpcyB3aGF0IHdlIGhhdmUgZG9uZSBpbiBVLUJvb3QgbWFpbmxpbmUuCgpBbmQgZm9yIGRpc3Ry
-aWJ1dGlvbiBrZXJuZWwgd2hvIG5lZWQgdG8gY292ZXIgYWxsIHRoZSBTb0NzIHdpdGggb25lIApr
-ZXJuZWwgaW1hZ2UsCgpuZWVkIHRvIHVwZGF0ZSB0aGUgZGVmY29uZmlnLgoKVGhlIHBhdGNoIGxv
-b2tzIGdvb2QgdG8gbWUsCgpSZXZpZXdlZC1ieTogS2V2ZXIgWWFuZyA8a2V2ZXIueWFuZ0Byb2Nr
-LWNoaXBzLmNvbT4KClRoYW5rcywKLSBLZXZlcgoKCj4KPiBZb3VycywKPiBMaW51cyBXYWxsZWlq
-Cj4KPgoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpM
-aW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJv
-Y2tjaGlwCg==
+Hi,
+
+On 08/01/20 9:52 PM, Lad Prabhakar wrote:
+> This patch adds support for rcar PCIe controller to work in endpoint mode.
+> 
+> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> ---
+>  drivers/pci/controller/Kconfig        |   7 +
+>  drivers/pci/controller/Makefile       |   1 +
+>  drivers/pci/controller/pcie-rcar-ep.c | 497 ++++++++++++++++++++++++++
+>  drivers/pci/controller/pcie-rcar.h    |   6 +
+>  4 files changed, 511 insertions(+)
+>  create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
+> 
+> diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
+> index b022ac5678f7..69b1c778dad4 100644
+> --- a/drivers/pci/controller/Kconfig
+> +++ b/drivers/pci/controller/Kconfig
+> @@ -61,6 +61,13 @@ config PCIE_RCAR_HOST
+>  	help
+>  	  Say Y here if you want PCIe controller support on R-Car SoCs in host mode.
+>  
+> +config PCIE_RCAR_EP
+> +	bool "Renesas R-Car PCIe endpoint controller"
+> +	depends on ARCH_RENESAS || COMPILE_TEST
+> +	depends on PCI_ENDPOINT
+> +	help
+> +	  Say Y here if you want PCIe controller support on R-Car SoCs in endpoint mode.
+> +
+>  config PCI_HOST_COMMON
+>  	bool
+>  	select PCI_ECAM
+> diff --git a/drivers/pci/controller/Makefile b/drivers/pci/controller/Makefile
+> index 69ba1dbf837b..61505b1fc66a 100644
+> --- a/drivers/pci/controller/Makefile
+> +++ b/drivers/pci/controller/Makefile
+> @@ -8,6 +8,7 @@ obj-$(CONFIG_PCI_AARDVARK) += pci-aardvark.o
+>  obj-$(CONFIG_PCI_TEGRA) += pci-tegra.o
+>  obj-$(CONFIG_PCI_RCAR_GEN2) += pci-rcar-gen2.o
+>  obj-$(CONFIG_PCIE_RCAR_HOST) += pcie-rcar.o pcie-rcar-host.o
+> +obj-$(CONFIG_PCIE_RCAR_EP) += pcie-rcar.o pcie-rcar-ep.o
+>  obj-$(CONFIG_PCI_HOST_COMMON) += pci-host-common.o
+>  obj-$(CONFIG_PCI_HOST_GENERIC) += pci-host-generic.o
+>  obj-$(CONFIG_PCIE_XILINX) += pcie-xilinx.o
+> diff --git a/drivers/pci/controller/pcie-rcar-ep.c b/drivers/pci/controller/pcie-rcar-ep.c
+> new file mode 100644
+> index 000000000000..40cd2aad8c3c
+> --- /dev/null
+> +++ b/drivers/pci/controller/pcie-rcar-ep.c
+> @@ -0,0 +1,497 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * PCIe endpoint driver for Renesas R-Car SoCs
+> + *  Copyright (c) 2020 Renesas Electronics Europe GmbH
+> + *
+> + * Author: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/delay.h>
+> +#include <linux/of_address.h>
+> +#include <linux/of_irq.h>
+> +#include <linux/of_pci.h>
+> +#include <linux/of_platform.h>
+> +#include <linux/pci.h>
+> +#include <linux/pci-epc.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/platform_device.h>
+> +
+> +#include "pcie-rcar.h"
+> +
+> +#define MAX_NR_INBOUND_MAPS	6
+> +#define MAX_NR_OUTBOUND_MAPS	4
+> +
+> +/* Structure representing the PCIe interface */
+> +struct rcar_pcie {
+> +	phys_addr_t		*ob_addr;
+> +	struct pci_epc_mem_window *ob_window;
+> +	struct pci_epc		*epc;
+> +	struct device		*dev;
+> +	void __iomem		*base;
+> +	u8			max_functions;
+> +	unsigned int		bar_to_atu[MAX_NR_INBOUND_MAPS];
+> +	unsigned long		*ib_window_map;
+> +	u32			num_ib_windows;
+> +	u32			num_ob_windows;
+> +};
+> +
+> +static void rcar_pcie_ep_hw_init(struct rcar_pcie *pcie)
+> +{
+> +	u32 val;
+> +
+> +	rcar_pci_write_reg(pcie->base, 0, PCIETCTLR);
+> +
+> +	/* Set endpoint mode */
+> +	rcar_pci_write_reg(pcie->base, 0, PCIEMSR);
+> +
+> +	/* Initialize default capabilities. */
+> +	rcar_rmw32(pcie->base, REXPCAP(0), 0xff, PCI_CAP_ID_EXP);
+> +	rcar_rmw32(pcie->base, REXPCAP(PCI_EXP_FLAGS),
+> +		   PCI_EXP_FLAGS_TYPE, PCI_EXP_TYPE_ENDPOINT << 4);
+> +	rcar_rmw32(pcie->base, RCONF(PCI_HEADER_TYPE), 0x7f,
+> +		   PCI_HEADER_TYPE_NORMAL);
+> +
+> +	/* Write out the physical slot number = 0 */
+> +	rcar_rmw32(pcie->base, REXPCAP(PCI_EXP_SLTCAP), PCI_EXP_SLTCAP_PSN, 0);
+> +
+> +	val = rcar_pci_read_reg(pcie->base, EXPCAP(1));
+> +	/* device supports fixed 128 bytes MPSS */
+> +	val &= ~GENMASK(2, 0);
+> +	/* L1 to L0 transition latency no time limit */
+> +	val |= GENMASK(11, 9);
+> +	/* L0s to L0 transistion no time limit */
+> +	val |= GENMASK(8, 6);
+> +	rcar_pci_write_reg(pcie->base, val, EXPCAP(1));
+> +
+> +	val = rcar_pci_read_reg(pcie->base, EXPCAP(2));
+> +	/* read requests size 128 bytes */
+> +	val &= ~GENMASK(14, 12);
+> +	/* payload size 128 bytes */
+> +	val &= ~GENMASK(7, 5);
+> +	/* disable relaxed ordering transaction */
+> +	val &= ~BIT(4);
+> +	rcar_pci_write_reg(pcie->base, val, EXPCAP(2));
+> +
+> +	val = rcar_pci_read_reg(pcie->base, EXPCAP(4));
+> +	/* disable ASPM control */
+> +	val &= ~GENMASK(1, 0);
+> +	rcar_pci_write_reg(pcie->base, val, EXPCAP(4));
+> +
+> +	/* Set target link speed to 5.0 GT/s */
+> +	rcar_rmw32(pcie->base, EXPCAP(12), PCI_EXP_LNKSTA_CLS,
+> +		   PCI_EXP_LNKSTA_CLS_5_0GB);
+> +
+> +	/* Set the completion timer timeout to the maximum 50ms. */
+> +	rcar_rmw32(pcie->base, TLCTLR + 1, 0x3f, 50);
+> +
+> +	/* Terminate list of capabilities (Next Capability Offset=0) */
+> +	rcar_rmw32(pcie->base, RVCCAP(0), 0xfff00000, 0);
+> +
+> +	/* flush modifications */
+> +	wmb();
+> +}
+> +
+> +static int rcar_pcie_parse_outbound_ranges(struct rcar_pcie *pcie,
+> +					   struct platform_device *pdev)
+> +{
+> +	char outbound_name[10];
+> +	struct resource *res;
+> +	unsigned int i = 0;
+> +
+> +	pcie->num_ob_windows = 0;
+> +	for (i = 0; i < MAX_NR_OUTBOUND_MAPS; i++) {
+> +		sprintf(outbound_name, "memory%u", i);
+> +		res = platform_get_resource_byname(pdev,
+> +						   IORESOURCE_MEM,
+> +						   outbound_name);
+> +		if (!res) {
+> +			dev_err(pcie->dev, "missing outbound window %u\n", i);
+> +			return -EINVAL;
+> +		}
+> +		if (!devm_request_mem_region(&pdev->dev, res->start,
+> +					     resource_size(res),
+> +					     outbound_name)) {
+> +			dev_err(pcie->dev, "Cannot request memory region %s.\n",
+> +				outbound_name);
+> +			return -EIO;
+> +		}
+> +
+> +		pcie->ob_window[i].phys_base = res->start;
+> +		pcie->ob_window[i].size = resource_size(res);
+> +		/* controller doesn't support multiple allocation
+> +		 * from same window, so set page_size to window size
+> +		 */
+> +		pcie->ob_window[i].page_size = resource_size(res);
+
+I would prefer the page_size comes from device tree. I'm also thinking
+if we should add a standard binding for specifying the outbound memory
+regions. Rob, what do you think?
+
+Thanks
+Kishon
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
