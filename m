@@ -2,55 +2,64 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E7BB13E667
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 18:20:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACB1213EBE9
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 18:54:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OLnITxWgNVgpaHHw2Ux1qnIX4zeGTxZt4Z/tBERZDy4=; b=MwYKGGN8ux5wIf
-	ySXUZQ1SfcDVOy288h7mPuVl1KiKle2AGlNh+NkR8DFyzIDVgiwiKNdAMHjaT1SxF4FHAnS46qflr
-	nVpDNobRwhCFHAUisbHsS9sVGvzEv/X3ubyZz0Yzu0xOGXeKx5fGGBnKhD4p5afS2rAsooC/x/YEF
-	0Vrj6WsLiRgpAWZSn3UQ4SKKjyuwxc9pUDZF55Bp7a3Kl99zDN1LJH7EYK9lPTG8GVPay+YNInyrr
-	fjcLjOEibrBj5eqOBjTkh2Ld5IsJXx0gM85MbJSG0LnxGs1jNiV34TcK21vnpNVdgVu+GwnoPEjBs
-	MFh82jjNoGCgktggUDZw==;
+	List-Owner; bh=RuTcMQ8/VDl3pJ4oI0ub2uFWlFlgr1nmDkEdJFSk4gs=; b=KYAaZ4strrkL3t
+	BIp4G4fPH+QBfN8sfLruJmS2AGDEiczqTDO+p8FDZoecjmQtXBoxe6gZucvjzSWtP7a5vdDB4yA20
+	RmX/ezsdZ0jIEC4BAiPzZKRWgkOQrQAwuFh+5VnCqQphBLtq6usWP+JO1beHe9xaiAPBe6uiUnOIr
+	gQ4enKyzpmybdzeGGegjuq/6u73l1689eFpoLqRN40aUfncpeOgw6SteEU+WRIvoH+bxZ7TD337Tz
+	c3tBESBCyKJEXHSuLoWHDfekgtDEjzt0HxhLzYx/9333Phft8s6bJ1wNeGh2mU6ORf9y3F9O8fO8S
+	3i+UezB02KNAckstt9Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8oa-0004vO-8K; Thu, 16 Jan 2020 17:20:16 +0000
+	id 1is9LG-00056x-Io; Thu, 16 Jan 2020 17:54:02 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8ah-0007ay-9U; Thu, 16 Jan 2020 17:06:08 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
+ id 1is8ms-0003gL-FC
+ for linux-rockchip@lists.infradead.org; Thu, 16 Jan 2020 17:18:34 +0000
+Received: from mail-qk1-f182.google.com (mail-qk1-f182.google.com
+ [209.85.222.182])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9D805217F4;
- Thu, 16 Jan 2020 17:05:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C9738246CB
+ for <linux-rockchip@lists.infradead.org>; Thu, 16 Jan 2020 17:18:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194353;
- bh=nPZ1XTnaEG3wsEn3/9GneQYMObYjOmeffnxVFFkkbUg=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=DCaTg6b06C8KN3Qmb0E9olqbC8JMT6V2z6zvw+g9BPtqdJFAGMJawTUgsVS64CZtO
- LcFmBwLDU3PTcii4PpN9Lz/o0ipKfaRWQrnI5SKkXoeX6ILkxH5uG4mOP5idOuZt4X
- Rt/grCc9LZGu+9yWtecoT2h0KZpDZcoo6a5cdUSI=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 292/671] PCI: rockchip: Fix
- rockchip_pcie_ep_assert_intx() bitwise operations
-Date: Thu, 16 Jan 2020 11:58:50 -0500
-Message-Id: <20200116170509.12787-29-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
-References: <20200116170509.12787-1-sashal@kernel.org>
+ s=default; t=1579195109;
+ bh=yeSp0fGwJ/dgY0fFHiYhsov/EbuVK+ryQi59MzAqvno=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=qN99BKR4uuYvaV0p7EkeJpD0n1G7OxycmMcmdYmyiwnqsT3GBQWRzT3SZeWjAUYn7
+ 53YsrY1f4tOvKorJAq2KHbUBpxpwMPWFai4XnmBwLslwSXR201rnGSwV/ZRtnEoIJB
+ Ue/ErdA7tyXwktsjcmnKzM04KsD+AiEsFYg8kEIs=
+Received: by mail-qk1-f182.google.com with SMTP id x129so19807718qke.8
+ for <linux-rockchip@lists.infradead.org>; Thu, 16 Jan 2020 09:18:29 -0800 (PST)
+X-Gm-Message-State: APjAAAVOyB0tc+kshLHoJjMPdU0/vsE8TWvSAB+foP9irZTsVJZDShBP
+ rJHiHUNR5Aj38o2Wete24IGgubJj48FtTrij2w==
+X-Google-Smtp-Source: APXvYqwFGJOr8mcO10BEbC3XUTOrgXEnY5Gd03lvreXKQUpv+wwI5MMwTMEmeMNDEkHT1VsOrGSSi3n3CwzN8ewQfCQ=
+X-Received: by 2002:a37:85c4:: with SMTP id
+ h187mr34765113qkd.223.1579195108958; 
+ Thu, 16 Jan 2020 09:18:28 -0800 (PST)
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+References: <20191219145843.3823-1-jbx6244@gmail.com>
+ <20191228093059.2817-1-jbx6244@gmail.com>
+ <20200104215524.GA28188@bogus>
+ <CAPDyKFp5BvA7tKpBUh-bpn5X4xvg8b9HuMO7+fZVJEp78=ToRw@mail.gmail.com>
+In-Reply-To: <CAPDyKFp5BvA7tKpBUh-bpn5X4xvg8b9HuMO7+fZVJEp78=ToRw@mail.gmail.com>
+From: Rob Herring <robh@kernel.org>
+Date: Thu, 16 Jan 2020 11:18:17 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+9w2wjwoOfnnKUBk9kOkZFcU6aWwyaw05ye-p3_WDcaQ@mail.gmail.com>
+Message-ID: <CAL_Jsq+9w2wjwoOfnnKUBk9kOkZFcU6aWwyaw05ye-p3_WDcaQ@mail.gmail.com>
+Subject: Re: [PATCH v2 1/2] dt-bindings: mmc: remove identical phrase in
+ disable-wp text
+To: Ulf Hansson <ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090555_380489_D3BDF605 
-X-CRM114-Status: GOOD (  11.26  )
+X-CRM114-CacheID: sfid-20200116_091830_690263_F6F51FF2 
+X-CRM114-Status: GOOD (  17.63  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,53 +89,51 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
- Mukesh Ojha <mojha@codeaurora.org>, linux-rockchip@lists.infradead.org,
- Colin Ian King <colin.king@canonical.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Johan Jonker <jbx6244@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Colin Ian King <colin.king@canonical.com>
+On Thu, Jan 16, 2020 at 5:17 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+>
+> On Sat, 4 Jan 2020 at 22:55, Rob Herring <robh@kernel.org> wrote:
+> >
+> > On Sat, 28 Dec 2019 10:30:58 +0100, Johan Jonker wrote:
+> > > There are two identical phrases in the disable-wp text,
+> > > so remove one of them.
+> > >
+> > > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> > > ---
+> > >  Documentation/devicetree/bindings/mmc/mmc-controller.yaml | 3 +--
+> > >  1 file changed, 1 insertion(+), 2 deletions(-)
+> > >
+> >
+> > Applied, thanks.
+> >
+> > Rob
+>
+> Rob,
+>
+> Normally I pick up the DT doc changes for mmc whenever you have acked
+> them (at least more non-trivial changes). I regards to the
+> mmc-controller.yaml file, I have no queued changes in my tree for this
+> cycle so this should be fine in regards to conflicts.
+>
+> Going forward, do you prefer to pick the DT doc changes for mmc, or
+> can I consider this as a single occasion thingy?
 
-[ Upstream commit c577f4a5a08bb9677e12ddafb62e2f3a901de87f ]
+I usually only pick up small changes if they are a binding only series
+and if they haven't been picked up already.
 
-Currently the bitwise operations on the u16 variable 'status' with
-the setting ROCKCHIP_PCIE_EP_CMD_STATUS_IS are incorrect because
-ROCKCHIP_PCIE_EP_CMD_STATUS_IS is 1UL<<19 which is wider than the
-u16 variable.
+Though I've been picking up a few schema conversions primarily so I
+can check that they validate. Hopefully that's temporary.
 
-Fix this by making status a u32.
-
-Fixes: cf590b078391 ("PCI: rockchip: Add EP driver for Rockchip PCIe controller")
-Signed-off-by: Colin Ian King <colin.king@canonical.com>
-Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Reviewed-by: Mukesh Ojha <mojha@codeaurora.org>
-Acked-by: Shawn Lin <shawn.lin@rock-chips.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/pci/controller/pcie-rockchip-ep.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/pci/controller/pcie-rockchip-ep.c b/drivers/pci/controller/pcie-rockchip-ep.c
-index b8163c56a142..caf34661d38d 100644
---- a/drivers/pci/controller/pcie-rockchip-ep.c
-+++ b/drivers/pci/controller/pcie-rockchip-ep.c
-@@ -350,7 +350,7 @@ static void rockchip_pcie_ep_assert_intx(struct rockchip_pcie_ep *ep, u8 fn,
- 	struct rockchip_pcie *rockchip = &ep->rockchip;
- 	u32 r = ep->max_regions - 1;
- 	u32 offset;
--	u16 status;
-+	u32 status;
- 	u8 msg_code;
- 
- 	if (unlikely(ep->irq_pci_addr != ROCKCHIP_PCIE_EP_PCI_LEGACY_IRQ_ADDR ||
--- 
-2.20.1
-
+Rob
 
 _______________________________________________
 Linux-rockchip mailing list
