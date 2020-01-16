@@ -2,56 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03F6913E30A
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 17:59:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E7BB13E667
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 18:20:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GPGFULcU0m4U3Hf5Q/iGCS65Oo97YjxGkMxwqqMn0Hw=; b=t5x/7YtobBzJNN
-	r1t4vEI2hBdI24rDon5XbYETL/NTgzHfjhlwr7P44zCwydQtitQ7JSuxSHGdOwcCTEBfPxSUe+5gD
-	79CelxKmVG044bruJUE+uyIm3Y+Yfe6yiTtKqx9EBqSgWMCCNxzsM2Sr4k8Wi9UYglOfrvooZD59U
-	yWPosLW92E8yaoNkt26ePY5niqg4PavAiYnZlBbQu4wTebMp9+ZIIeCDMHYUyV2GawmNxnmqQ8PP+
-	UTCZxX0V8zgfEttTKkKstxKg9pvVLAIVx0/OTd2yMdp2bV07A35Fs25ZFuWVuq+XWGTg2pYecvMCl
-	AF/KjP6GPnBAIJXibHKA==;
+	List-Owner; bh=OLnITxWgNVgpaHHw2Ux1qnIX4zeGTxZt4Z/tBERZDy4=; b=MwYKGGN8ux5wIf
+	ySXUZQ1SfcDVOy288h7mPuVl1KiKle2AGlNh+NkR8DFyzIDVgiwiKNdAMHjaT1SxF4FHAnS46qflr
+	nVpDNobRwhCFHAUisbHsS9sVGvzEv/X3ubyZz0Yzu0xOGXeKx5fGGBnKhD4p5afS2rAsooC/x/YEF
+	0Vrj6WsLiRgpAWZSn3UQ4SKKjyuwxc9pUDZF55Bp7a3Kl99zDN1LJH7EYK9lPTG8GVPay+YNInyrr
+	fjcLjOEibrBj5eqOBjTkh2Ld5IsJXx0gM85MbJSG0LnxGs1jNiV34TcK21vnpNVdgVu+GwnoPEjBs
+	MFh82jjNoGCgktggUDZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8Ud-0007Fi-AB; Thu, 16 Jan 2020 16:59:39 +0000
+	id 1is8oa-0004vO-8K; Thu, 16 Jan 2020 17:20:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8Pq-0001JA-QJ; Thu, 16 Jan 2020 16:54:46 +0000
+ id 1is8ah-0007ay-9U; Thu, 16 Jan 2020 17:06:08 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 357D0205F4;
- Thu, 16 Jan 2020 16:54:41 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9D805217F4;
+ Thu, 16 Jan 2020 17:05:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579193681;
- bh=2+gpWsmpb5DF4ayCzhFM7rLPmr+bUI4pfCSdEsSq01U=;
+ s=default; t=1579194353;
+ bh=nPZ1XTnaEG3wsEn3/9GneQYMObYjOmeffnxVFFkkbUg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=QYggzVXXCODFuSTZWZYU5+bxpeO6VaNDduKGM30USXdWBfawyJU0JgGR3YdxZBeKW
- Mm4GTk1Cj/pSbyYFv/wbRmYAomlUQY/n9ElWjevunkZ491Fd3XleQMglM6EwX1PINO
- P3JroINuGe3dYoo2ICls2iQAcmQ8pO1smhTQp+gk=
+ b=DCaTg6b06C8KN3Qmb0E9olqbC8JMT6V2z6zvw+g9BPtqdJFAGMJawTUgsVS64CZtO
+ LcFmBwLDU3PTcii4PpN9Lz/o0ipKfaRWQrnI5SKkXoeX6ILkxH5uG4mOP5idOuZt4X
+ Rt/grCc9LZGu+9yWtecoT2h0KZpDZcoo6a5cdUSI=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 205/205] phy/rockchip: inno-hdmi: round clock rate
- down to closest 1000 Hz
-Date: Thu, 16 Jan 2020 11:43:00 -0500
-Message-Id: <20200116164300.6705-205-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 292/671] PCI: rockchip: Fix
+ rockchip_pcie_ep_assert_intx() bitwise operations
+Date: Thu, 16 Jan 2020 11:58:50 -0500
+Message-Id: <20200116170509.12787-29-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200116164300.6705-1-sashal@kernel.org>
-References: <20200116164300.6705-1-sashal@kernel.org>
+In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
+References: <20200116170509.12787-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_085442_888371_8720E261 
-X-CRM114-Status: UNSURE (   9.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_090555_380489_D3BDF605 
+X-CRM114-Status: GOOD (  11.26  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,61 +80,50 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-rockchip@lists.infradead.org,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-kernel@lists.infradead.org,
- Jonas Karlman <jonas@kwiboo.se>
+Cc: Sasha Levin <sashal@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
+ Mukesh Ojha <mojha@codeaurora.org>, linux-rockchip@lists.infradead.org,
+ Colin Ian King <colin.king@canonical.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Jonas Karlman <jonas@kwiboo.se>
+From: Colin Ian King <colin.king@canonical.com>
 
-[ Upstream commit 4f510aa10468954b1da4e94689c38ac6ea8d3627 ]
+[ Upstream commit c577f4a5a08bb9677e12ddafb62e2f3a901de87f ]
 
-Commit 287422a95fe2 ("drm/rockchip: Round up _before_ giving to the clock framework")
-changed what rate clk_round_rate() is called with, an additional 999 Hz
-added to the requsted mode clock. This has caused a regression on RK3328
-and presumably also on RK3228 because the inno-hdmi-phy clock requires an
-exact match of the requested rate in the pre pll config table.
+Currently the bitwise operations on the u16 variable 'status' with
+the setting ROCKCHIP_PCIE_EP_CMD_STATUS_IS are incorrect because
+ROCKCHIP_PCIE_EP_CMD_STATUS_IS is 1UL<<19 which is wider than the
+u16 variable.
 
-When an exact match is not found the parent clock rate (24MHz) is returned
-to the clk_round_rate() caller. This cause wrong pixel clock to be used and
-result in no-signal when configuring a mode on RK3328.
+Fix this by making status a u32.
 
-Fix this by rounding the rate down to closest 1000 Hz in round_rate func,
-this allows an exact match to be found in pre pll config table.
-
-Fixes: 287422a95fe2 ("drm/rockchip: Round up _before_ giving to the clock framework")
-Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
-Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
+Fixes: cf590b078391 ("PCI: rockchip: Add EP driver for Rockchip PCIe controller")
+Signed-off-by: Colin Ian King <colin.king@canonical.com>
+Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Reviewed-by: Mukesh Ojha <mojha@codeaurora.org>
+Acked-by: Shawn Lin <shawn.lin@rock-chips.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/pci/controller/pcie-rockchip-ep.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-index 2b97fb1185a0..9ca20c947283 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-@@ -603,6 +603,8 @@ static long inno_hdmi_phy_rk3228_clk_round_rate(struct clk_hw *hw,
- {
- 	const struct pre_pll_config *cfg = pre_pll_cfg_table;
+diff --git a/drivers/pci/controller/pcie-rockchip-ep.c b/drivers/pci/controller/pcie-rockchip-ep.c
+index b8163c56a142..caf34661d38d 100644
+--- a/drivers/pci/controller/pcie-rockchip-ep.c
++++ b/drivers/pci/controller/pcie-rockchip-ep.c
+@@ -350,7 +350,7 @@ static void rockchip_pcie_ep_assert_intx(struct rockchip_pcie_ep *ep, u8 fn,
+ 	struct rockchip_pcie *rockchip = &ep->rockchip;
+ 	u32 r = ep->max_regions - 1;
+ 	u32 offset;
+-	u16 status;
++	u32 status;
+ 	u8 msg_code;
  
-+	rate = (rate / 1000) * 1000;
-+
- 	for (; cfg->pixclock != 0; cfg++)
- 		if (cfg->pixclock == rate && !cfg->fracdiv)
- 			break;
-@@ -755,6 +757,8 @@ static long inno_hdmi_phy_rk3328_clk_round_rate(struct clk_hw *hw,
- {
- 	const struct pre_pll_config *cfg = pre_pll_cfg_table;
- 
-+	rate = (rate / 1000) * 1000;
-+
- 	for (; cfg->pixclock != 0; cfg++)
- 		if (cfg->pixclock == rate)
- 			break;
+ 	if (unlikely(ep->irq_pci_addr != ROCKCHIP_PCIE_EP_PCI_LEGACY_IRQ_ADDR ||
 -- 
 2.20.1
 
