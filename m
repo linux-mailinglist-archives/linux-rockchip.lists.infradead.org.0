@@ -2,90 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2079613D97C
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 13:01:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8040913DCF4
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 15:08:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WPzYB1cU5BIvVOwYGT4q+yilnAYwUljGGiu5aIC+2lM=; b=pxunHsHiynXrvE
-	ByrySH8VQaSD4ckB3yEChylKZCYXSdXrIgb6jwNA95XUxkxodrbrzoyC03Ls2arr/+MqQT+l6XD+A
-	qBviXdrNlNBl9VN4z3K1W/7vDoGllBVfpyq9kDLMXrKb9KQNjeUHeLDaTy78POFOBJ8XeqofDE73P
-	lUYLrtgWdopAf08+NTcjq2oE0yO8j48n/NijHcKWRFI3PQU0+TySxIc9OzGTWgJj1cAOjkEP0DvY+
-	pHX78BQb229iSQ11rjmp45RAjX7LHlyjp1Cbi7hrh83eJwT26Kcg3UWN4VUkgfZJ7sJvXobJGi0Ns
-	oU9kUSLQ1iJfvLU48h9Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KquEbpvcVLuZGEpCM5PemuAQFbHorCCWM7bhdBmFk7w=; b=Di8ZuuPLdqz/7X
+	mdY5OZkDpAF9iFB+EBjmTMBb3YEyAHReyMXjvWFFrkO2mmKJFdzaP4a8qHtz6MqqhX1Cv+dSU/ivP
+	kHZe87+FqGjsITHPBes97LluYk4NyHnIwUMxSqSH4DbVQBuoTMmXE2IiaDSbsYsJ3nntkPNEK8v/V
+	7Dbj50+GK42XTYMuPOe1AICdld36z9t5+vAVX0eQiBfdDfykjc50XWGhPTHSKiTOIc6wI61z0Nf58
+	2ohOFdtNxB3Wh4tFMykvSR6E3Dit3bBwCYCco4y0N+1vchce8E3DfGhJI3eywxz7uzamcVl3ksqQJ
+	jIBvJtINsEMEXD9KbGSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is3pi-0004Km-Lx; Thu, 16 Jan 2020 12:01:06 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1is5p4-0001ZL-E0; Thu, 16 Jan 2020 14:08:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is3pb-0004Ib-SR; Thu, 16 Jan 2020 12:01:04 +0000
-Received: by mail-wm1-x341.google.com with SMTP id 20so3503486wmj.4;
- Thu, 16 Jan 2020 04:00:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=K45x8SHvjhN/SqzbB8kaaG/ZwA6tE8xnF2TMFaLqgWo=;
- b=qCzhhL1fyhuF4uJ30kAHFGAgukb2dvuIkZZpSFnV9Bvopy1uHd2JmGaTH/DeCT9jyv
- zEUV7VfHwdLK6lkcDTsPPilyk7vBAk66Hv5ZqEtNm5rvhSmQFJNwXylpl/1Bzs0Imv54
- Rql4Hhs2Qoq6nyXXVoyhzL+DHoBZKRWba01HL4UK/mcUTyOescWybJpHAQgDx/pXVWSy
- sJYb4yzMCfKhh+CdyHvrc37xdZ2akspJyGCpvLnT7IdhY/SV04oZpEBReXF04SJJVP6x
- J28UY9KUlAdKPgt5lH0M4MEw2dkG7DX7hH3Y0T5ZXy89bOP8Cr4xXFmOEGzUCW/onAH+
- sjIQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=K45x8SHvjhN/SqzbB8kaaG/ZwA6tE8xnF2TMFaLqgWo=;
- b=J95cLY4UPGP/rlogGlFqw5mHvElbiE8Te3dx1qRwFWlEXcdNDNzaqv45XHBK6MwDX+
- cAWrD/FxQZTm94ScYPpvZqmLeBk7GrqL8D0W22P5zo3RVsuiwl7/SWhL48UNJpCK5BCJ
- dSmRH2QXbBgUO6bVLKJIjDWMxqwvCzFsOH/KvnTqttZMscHMYcrYWdHtNtpFfT8prtNC
- TQdYN9+ZHoT/dRxSQkLeG9lUXjL3x+KTamziYM/kK6A1ezPw6qVv816EmNB6hDiLbm9h
- I4gLMuUJnCateZo9bxXOO1c/kIbfm5vvXt3XsoFinIOX5G9iMxT97rr4iHt38PkodXi9
- hNQg==
-X-Gm-Message-State: APjAAAWQ+uxzaDvG3AnK4/u1RHzCf/PwrKEALwWZCkuqJOUHa0geMxrm
- iC3GJYbm81hyQCq62RXbrk5wJwYn
-X-Google-Smtp-Source: APXvYqxSG6XX0qeAUXiXclajDgAqCIR4Vw2T5QnvgyIxq5EiuPtxzO1/xghNLthqCFKePTImdZDOOg==
-X-Received: by 2002:a7b:cb86:: with SMTP id m6mr5686130wmi.51.1579176057805;
- Thu, 16 Jan 2020 04:00:57 -0800 (PST)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id n8sm28902799wrx.42.2020.01.16.04.00.56
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 16 Jan 2020 04:00:57 -0800 (PST)
-Subject: Re: [RFC PATCH v1 2/3] dt-bindings: mmc: convert synopsys dw-mshc
- bindings to yaml
-To: Rob Herring <robh+dt@kernel.org>
+ id 1is5ok-0001JY-Rb; Thu, 16 Jan 2020 14:08:19 +0000
+Received: from mail-qv1-f51.google.com (mail-qv1-f51.google.com
+ [209.85.219.51])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5A5F72081E;
+ Thu, 16 Jan 2020 14:08:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579183692;
+ bh=ZxkxbPI6NB+qslqenM1VguIV+ka+agAz0tPoV5Dlv88=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=Sbzl/C+9E3Romi6TePNREX+gQjoxYwdnxEMR5vQElQWkvqLhrESPM7k0bHWBgn+yU
+ vyISsyebITJCQPzWBfQ5JvKfbuoe64kto7/6FeFhrlhLPKYtqMoaVu2nPuDGHJo/ZJ
+ +RKjDnua8QaOG0KpT7pgHsA1qYXlXKt5d0POj8pY=
+Received: by mail-qv1-f51.google.com with SMTP id n8so9075537qvg.11;
+ Thu, 16 Jan 2020 06:08:12 -0800 (PST)
+X-Gm-Message-State: APjAAAU8QWC3ouJG7Dd/hXIFitL0ZIWLPqRBQKsmCJf204fBNtNT5arE
+ A/ykwVBqbzgNqhBP2FVFGb04gGtYvMRXzmKH+A==
+X-Google-Smtp-Source: APXvYqx0fiWdQh99DDa9iyjEeQMVJwq4um15JGwrzKiS3meVyPIMlcnqQ5A6IgAke6Qr+dljfrbL0MMk6QxnsO93Q3k=
+X-Received: by 2002:a0c:f68f:: with SMTP id p15mr2644594qvn.79.1579183691461; 
+ Thu, 16 Jan 2020 06:08:11 -0800 (PST)
+MIME-Version: 1.0
 References: <20200114213809.27166-1-jbx6244@gmail.com>
  <20200114213809.27166-2-jbx6244@gmail.com>
  <CAL_JsqJ0QJ9uG9NY7vMGG00G4Jfk2mXS4OPdUzEaRVaCP++GzQ@mail.gmail.com>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <203e9217-9aa8-b65e-4411-2d9b23c1362a@gmail.com>
-Date: Thu, 16 Jan 2020 13:00:55 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
-MIME-Version: 1.0
-In-Reply-To: <CAL_JsqJ0QJ9uG9NY7vMGG00G4Jfk2mXS4OPdUzEaRVaCP++GzQ@mail.gmail.com>
-Content-Language: en-US
+ <203e9217-9aa8-b65e-4411-2d9b23c1362a@gmail.com>
+In-Reply-To: <203e9217-9aa8-b65e-4411-2d9b23c1362a@gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 16 Jan 2020 08:07:59 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+cJd0Ht+4FNX9RjbZL2vHjF90+G-v05XuyxrT7Ng15sA@mail.gmail.com>
+Message-ID: <CAL_Jsq+cJd0Ht+4FNX9RjbZL2vHjF90+G-v05XuyxrT7Ng15sA@mail.gmail.com>
+Subject: Re: [RFC PATCH v1 2/3] dt-bindings: mmc: convert synopsys dw-mshc
+ bindings to yaml
+To: Johan Jonker <jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_040059_946390_D341528F 
-X-CRM114-Status: GOOD (  15.00  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200116_060814_918928_E7B6D2BA 
+X-CRM114-Status: GOOD (  14.95  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jbx6244[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jbx6244[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -93,6 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -117,95 +99,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-See below.
+On Thu, Jan 16, 2020 at 6:00 AM Johan Jonker <jbx6244@gmail.com> wrote:
+>
+> See below.
+>
+> On 1/15/20 4:18 PM, Rob Herring wrote:
+> > On Tue, Jan 14, 2020 at 3:38 PM Johan Jonker <jbx6244@gmail.com> wrote:
+> >>
+>
+> > [...]
+> >
+> >> diff --git a/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
+> >> new file mode 100644
+> >> index 000000000..6f85a21d0
+> >> --- /dev/null
+> >> +++ b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
+> >> @@ -0,0 +1,88 @@
+> >> +# SPDX-License-Identifier: GPL-2.0
+> >> +%YAML 1.2
+> >> +---
+> >> +$id: http://devicetree.org/schemas/mmc/synopsys-dw-mshc.yaml#
+> >> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> >> +
+> >> +title: Synopsys Designware Mobile Storage Host Controller Binding
+>
+> [..]
+>
+> >> +examples:
+> >> +  # The MSHC controller node can be split into two portions, SoC specific and
+> >> +  # board specific portions as listed below.
+> >
+>
+>
+> > This split doesn't work because the examples are built and validated
+> > now. It may happen to because all the props are optional, but the
+> > board hunk goes unchecked. So please combine.
+> >
+>
+> Hi,
+>
+> I have no knowledge about this particular hardware to give a realistic
+> example. Could someone advise here? Or should I just use the first
+> example for now?
 
-On 1/15/20 4:18 PM, Rob Herring wrote:
-> On Tue, Jan 14, 2020 at 3:38 PM Johan Jonker <jbx6244@gmail.com> wrote:
->>
+Just combine the first part and one of the the 2 board hunks. I don't
+think having 2 board examples with the only diff being the dma
+properties adds much value.
 
-> [...]
-> 
->> diff --git a/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
->> new file mode 100644
->> index 000000000..6f85a21d0
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
->> @@ -0,0 +1,88 @@
->> +# SPDX-License-Identifier: GPL-2.0
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/mmc/synopsys-dw-mshc.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: Synopsys Designware Mobile Storage Host Controller Binding
-
-[..]
-
->> +examples:
->> +  # The MSHC controller node can be split into two portions, SoC specific and
->> +  # board specific portions as listed below.
-> 
-
-
-> This split doesn't work because the examples are built and validated
-> now. It may happen to because all the props are optional, but the
-> board hunk goes unchecked. So please combine.
-> 
-
-Hi,
-
-I have no knowledge about this particular hardware to give a realistic
-example. Could someone advise here? Or should I just use the first
-example for now?
-
-Thanks
-
->> +  - |
->> +    dwmmc0@12200000 {
->> +      compatible = "snps,dw-mshc";
->> +      clocks = <&clock 351>, <&clock 132>;
->> +      clock-names = "biu", "ciu";
->> +      reg = <0x12200000 0x1000>;
->> +      interrupts = <0 75 0>;
->> +      #address-cells = <1>;
->> +      #size-cells = <0>;
->> +      data-addr = <0x200>;
->> +      fifo-watermark-aligned;
->> +      resets = <&rst 20>;
->> +      reset-names = "reset";
->> +    };
->> +  # [board specific internal DMA resources]
->> +  - |
->> +    dwmmc0@12200000 {
->> +      clock-frequency = <400000000>;
->> +      clock-freq-min-max = <400000 200000000>;
->> +      broken-cd;
->> +      fifo-depth = <0x80>;
->> +      card-detect-delay = <200>;
->> +      vmmc-supply = <&buck8>;
->> +      bus-width = <8>;
->> +      cap-mmc-highspeed;
->> +      cap-sd-highspeed;
->> +    };
->> +  # [board specific generic DMA request binding]
->> +  - |
->> +    dwmmc0@12200000 {
->> +      clock-frequency = <400000000>;
->> +      clock-freq-min-max = <400000 200000000>;
->> +      broken-cd;
->> +      fifo-depth = <0x80>;
->> +      card-detect-delay = <200>;
->> +      vmmc-supply = <&buck8>;
->> +      bus-width = <8>;
->> +      cap-mmc-highspeed;
->> +      cap-sd-highspeed;
->> +      dmas = <&pdma 12>;
->> +      dma-names = "rx-tx";
->> +    };
->> --
->> 2.11.0
->>
-
+Rob
 
 _______________________________________________
 Linux-rockchip mailing list
