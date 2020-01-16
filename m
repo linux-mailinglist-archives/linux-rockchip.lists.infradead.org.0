@@ -2,77 +2,90 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E916D13D8EE
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 12:27:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2079613D97C
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Jan 2020 13:01:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+4YMP3VcFTkVpromskxRKRx2APZBCSBtC5CR0BQ5LTo=; b=idccuF6YxB2JcZ
-	nL8f65hb1AxhPawVgnjpifNCpYI+cdPbbM6LcVk3SzJ/t2u8qK1lqd2C1JEH9neIgtiHF9+l5DorH
-	nGxAcZNZC64S6o5ldywYIWUf26vj9i63LU8TEXHF5ZYVL4Emxv543rqT+jqChPxqYzbuTiLezIpg0
-	DhA0Im8LX5XZlezOOYU1qtNFeEjMvdV3kxfGdp9PhvEGs1vTCviJJQzfLMdBI6Ypq7Ki5+P17D7yT
-	rhB/xOldx2adK581f/R8y3IP6QGHzpHWhHk6oGEt4nN6LOWgTsxIb2elEgE9celBalElOCJUxn8id
-	qGZl7tLV4hDn4srtRAnw==;
+	List-Owner; bh=WPzYB1cU5BIvVOwYGT4q+yilnAYwUljGGiu5aIC+2lM=; b=pxunHsHiynXrvE
+	ByrySH8VQaSD4ckB3yEChylKZCYXSdXrIgb6jwNA95XUxkxodrbrzoyC03Ls2arr/+MqQT+l6XD+A
+	qBviXdrNlNBl9VN4z3K1W/7vDoGllBVfpyq9kDLMXrKb9KQNjeUHeLDaTy78POFOBJ8XeqofDE73P
+	lUYLrtgWdopAf08+NTcjq2oE0yO8j48n/NijHcKWRFI3PQU0+TySxIc9OzGTWgJj1cAOjkEP0DvY+
+	pHX78BQb229iSQ11rjmp45RAjX7LHlyjp1Cbi7hrh83eJwT26Kcg3UWN4VUkgfZJ7sJvXobJGi0Ns
+	oU9kUSLQ1iJfvLU48h9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is3JH-00044i-2p; Thu, 16 Jan 2020 11:27:35 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1is3pi-0004Km-Lx; Thu, 16 Jan 2020 12:01:06 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is3JB-000442-Bp; Thu, 16 Jan 2020 11:27:33 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00GBRGdj061689;
- Thu, 16 Jan 2020 05:27:16 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1579174036;
- bh=myfrgAkACHwJfmdNtMcuEJNJskU9ZB6VVutnIR84JH4=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=nEFmlIIkHRmg720elyKMOm+dhwS+GmQz54J/Pk0oyMkOmh+nf69RXMnk221Fm2/e7
- NSzzCU2NpIciRM4d5s7zg63jd0GcYITe/s87EiYMWMO+9mg4DS68MEI0wBotVnoNJ0
- KvXPQQC6+eWZhLjEpa5vffjlE8C0JzoLPGRujhCI=
-Received: from DLEE110.ent.ti.com (dlee110.ent.ti.com [157.170.170.21])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00GBRGVV021247
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 16 Jan 2020 05:27:16 -0600
-Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE110.ent.ti.com
- (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 16
- Jan 2020 05:27:16 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE106.ent.ti.com
- (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 16 Jan 2020 05:27:15 -0600
-Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00GBR8Tb095885;
- Thu, 16 Jan 2020 05:27:11 -0600
-Subject: Re: [PATCH 2/7] dt-bindings: PCI: cadence: Add binding to specify max
- virtual functions
-To: Rob Herring <robh@kernel.org>
-References: <20191231113534.30405-1-kishon@ti.com>
- <20191231113534.30405-3-kishon@ti.com> <20200115014026.GA10726@bogus>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <f0690395-4ce7-df93-e837-670829aafb03@ti.com>
-Date: Thu, 16 Jan 2020 16:59:20 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1is3pb-0004Ib-SR; Thu, 16 Jan 2020 12:01:04 +0000
+Received: by mail-wm1-x341.google.com with SMTP id 20so3503486wmj.4;
+ Thu, 16 Jan 2020 04:00:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=K45x8SHvjhN/SqzbB8kaaG/ZwA6tE8xnF2TMFaLqgWo=;
+ b=qCzhhL1fyhuF4uJ30kAHFGAgukb2dvuIkZZpSFnV9Bvopy1uHd2JmGaTH/DeCT9jyv
+ zEUV7VfHwdLK6lkcDTsPPilyk7vBAk66Hv5ZqEtNm5rvhSmQFJNwXylpl/1Bzs0Imv54
+ Rql4Hhs2Qoq6nyXXVoyhzL+DHoBZKRWba01HL4UK/mcUTyOescWybJpHAQgDx/pXVWSy
+ sJYb4yzMCfKhh+CdyHvrc37xdZ2akspJyGCpvLnT7IdhY/SV04oZpEBReXF04SJJVP6x
+ J28UY9KUlAdKPgt5lH0M4MEw2dkG7DX7hH3Y0T5ZXy89bOP8Cr4xXFmOEGzUCW/onAH+
+ sjIQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=K45x8SHvjhN/SqzbB8kaaG/ZwA6tE8xnF2TMFaLqgWo=;
+ b=J95cLY4UPGP/rlogGlFqw5mHvElbiE8Te3dx1qRwFWlEXcdNDNzaqv45XHBK6MwDX+
+ cAWrD/FxQZTm94ScYPpvZqmLeBk7GrqL8D0W22P5zo3RVsuiwl7/SWhL48UNJpCK5BCJ
+ dSmRH2QXbBgUO6bVLKJIjDWMxqwvCzFsOH/KvnTqttZMscHMYcrYWdHtNtpFfT8prtNC
+ TQdYN9+ZHoT/dRxSQkLeG9lUXjL3x+KTamziYM/kK6A1ezPw6qVv816EmNB6hDiLbm9h
+ I4gLMuUJnCateZo9bxXOO1c/kIbfm5vvXt3XsoFinIOX5G9iMxT97rr4iHt38PkodXi9
+ hNQg==
+X-Gm-Message-State: APjAAAWQ+uxzaDvG3AnK4/u1RHzCf/PwrKEALwWZCkuqJOUHa0geMxrm
+ iC3GJYbm81hyQCq62RXbrk5wJwYn
+X-Google-Smtp-Source: APXvYqxSG6XX0qeAUXiXclajDgAqCIR4Vw2T5QnvgyIxq5EiuPtxzO1/xghNLthqCFKePTImdZDOOg==
+X-Received: by 2002:a7b:cb86:: with SMTP id m6mr5686130wmi.51.1579176057805;
+ Thu, 16 Jan 2020 04:00:57 -0800 (PST)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id n8sm28902799wrx.42.2020.01.16.04.00.56
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 16 Jan 2020 04:00:57 -0800 (PST)
+Subject: Re: [RFC PATCH v1 2/3] dt-bindings: mmc: convert synopsys dw-mshc
+ bindings to yaml
+To: Rob Herring <robh+dt@kernel.org>
+References: <20200114213809.27166-1-jbx6244@gmail.com>
+ <20200114213809.27166-2-jbx6244@gmail.com>
+ <CAL_JsqJ0QJ9uG9NY7vMGG00G4Jfk2mXS4OPdUzEaRVaCP++GzQ@mail.gmail.com>
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <203e9217-9aa8-b65e-4411-2d9b23c1362a@gmail.com>
+Date: Thu, 16 Jan 2020 13:00:55 +0100
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-In-Reply-To: <20200115014026.GA10726@bogus>
+In-Reply-To: <CAL_JsqJ0QJ9uG9NY7vMGG00G4Jfk2mXS4OPdUzEaRVaCP++GzQ@mail.gmail.com>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_032729_485427_945292E9 
-X-CRM114-Status: GOOD (  17.27  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200116_040059_946390_D341528F 
+X-CRM114-Status: GOOD (  15.00  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (jbx6244[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jbx6244[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -80,7 +93,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,77 +105,107 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
- Jonathan Corbet <corbet@lwn.net>, Jingoo Han <jingoohan1@gmail.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, linux-doc@vger.kernel.org,
- linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Tom Joseph <tjoseph@cadence.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ulf Hansson <ulf.hansson@linaro.org>, "heiko@sntech.de" <heiko@sntech.de>,
+ linux-mmc <linux-mmc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Rob,
+See below.
 
-On 15/01/20 7:10 AM, Rob Herring wrote:
-> On Tue, Dec 31, 2019 at 05:05:29PM +0530, Kishon Vijay Abraham I wrote:
->> Add binding to specify maximum number of virtual functions that can be
->> associated with each physical function.
+On 1/15/20 4:18 PM, Rob Herring wrote:
+> On Tue, Jan 14, 2020 at 3:38 PM Johan Jonker <jbx6244@gmail.com> wrote:
 >>
->> Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
->> ---
->>  .../devicetree/bindings/pci/cdns,cdns-pcie-ep.txt         | 2 ++
->>  .../devicetree/bindings/pci/ti,j721e-pci-ep.yaml          | 8 ++++++++
->>  2 files changed, 10 insertions(+)
->>
->> diff --git a/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.txt b/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.txt
->> index 4a0475e2ba7e..432578202733 100644
->> --- a/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.txt
->> +++ b/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.txt
->> @@ -9,6 +9,8 @@ Required properties:
->>  
->>  Optional properties:
->>  - max-functions: Maximum number of functions that can be configured (default 1).
->> +- max-virtual-functions: Maximum number of virtual functions that can be
->> +    associated with each physical function.
->>  - phys: From PHY bindings: List of Generic PHY phandles. One per lane if more
->>    than one in the list.  If only one PHY listed it must manage all lanes. 
->>  - phy-names:  List of names to identify the PHY.
->> diff --git a/Documentation/devicetree/bindings/pci/ti,j721e-pci-ep.yaml b/Documentation/devicetree/bindings/pci/ti,j721e-pci-ep.yaml
->> index 4621c62016c7..1d4964ba494f 100644
->> --- a/Documentation/devicetree/bindings/pci/ti,j721e-pci-ep.yaml
->> +++ b/Documentation/devicetree/bindings/pci/ti,j721e-pci-ep.yaml
->> @@ -61,6 +61,12 @@ properties:
->>      minimum: 1
->>      maximum: 6
->>  
->> +  max-virtual-functions:
->> +    minItems: 1
->> +    maxItems: 6
+
+> [...]
 > 
-> Is there a PCIe spec limit to number of virtual functions per phy 
-> function? Or 2^32 virtual functions is okay.
+>> diff --git a/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
+>> new file mode 100644
+>> index 000000000..6f85a21d0
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
+>> @@ -0,0 +1,88 @@
+>> +# SPDX-License-Identifier: GPL-2.0
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/mmc/synopsys-dw-mshc.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: Synopsys Designware Mobile Storage Host Controller Binding
 
-The PCIe spec provides a 16 bit field to specify number of virtual
-functions in the SR-IOV extended capability.
+[..]
 
-
+>> +examples:
+>> +  # The MSHC controller node can be split into two portions, SoC specific and
+>> +  # board specific portions as listed below.
 > 
->> +    description: As defined in
->> +                 Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.txt
-> 
-> I suspect this this be a common property.
 
-Right now we don't have common EP property binding across all
-controllers. Maybe should create one?
+
+> This split doesn't work because the examples are built and validated
+> now. It may happen to because all the props are optional, but the
+> board hunk goes unchecked. So please combine.
+> 
+
+Hi,
+
+I have no knowledge about this particular hardware to give a realistic
+example. Could someone advise here? Or should I just use the first
+example for now?
 
 Thanks
-Kishon
+
+>> +  - |
+>> +    dwmmc0@12200000 {
+>> +      compatible = "snps,dw-mshc";
+>> +      clocks = <&clock 351>, <&clock 132>;
+>> +      clock-names = "biu", "ciu";
+>> +      reg = <0x12200000 0x1000>;
+>> +      interrupts = <0 75 0>;
+>> +      #address-cells = <1>;
+>> +      #size-cells = <0>;
+>> +      data-addr = <0x200>;
+>> +      fifo-watermark-aligned;
+>> +      resets = <&rst 20>;
+>> +      reset-names = "reset";
+>> +    };
+>> +  # [board specific internal DMA resources]
+>> +  - |
+>> +    dwmmc0@12200000 {
+>> +      clock-frequency = <400000000>;
+>> +      clock-freq-min-max = <400000 200000000>;
+>> +      broken-cd;
+>> +      fifo-depth = <0x80>;
+>> +      card-detect-delay = <200>;
+>> +      vmmc-supply = <&buck8>;
+>> +      bus-width = <8>;
+>> +      cap-mmc-highspeed;
+>> +      cap-sd-highspeed;
+>> +    };
+>> +  # [board specific generic DMA request binding]
+>> +  - |
+>> +    dwmmc0@12200000 {
+>> +      clock-frequency = <400000000>;
+>> +      clock-freq-min-max = <400000 200000000>;
+>> +      broken-cd;
+>> +      fifo-depth = <0x80>;
+>> +      card-detect-delay = <200>;
+>> +      vmmc-supply = <&buck8>;
+>> +      bus-width = <8>;
+>> +      cap-mmc-highspeed;
+>> +      cap-sd-highspeed;
+>> +      dmas = <&pdma 12>;
+>> +      dma-names = "rx-tx";
+>> +    };
+>> --
+>> 2.11.0
+>>
+
 
 _______________________________________________
 Linux-rockchip mailing list
