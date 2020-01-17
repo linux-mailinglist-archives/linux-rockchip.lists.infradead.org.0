@@ -2,76 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 463D1140427
-	for <lists+linux-rockchip@lfdr.de>; Fri, 17 Jan 2020 07:53:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D332140515
+	for <lists+linux-rockchip@lfdr.de>; Fri, 17 Jan 2020 09:14:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BD9wO/QtWgBbCmmi3qbJ3Yh9xHKlsAlQF3/3sy5AYeU=; b=UnviqO9MFeaoW4QPoqNzt+l9/
-	ujkwhgQ22ywvAE/xo0Bv1JFhiSFPK2Rgvu9166miqvqsLI3bfVdONygzd3abn9Sbo6tiUsg0vw9e+
-	vN4LyqiW37HRgao1BOCx+6cmrYGLEWMdAm6kudBatJOWaVKjGl7QJ1rpzhsRbdhZkIc3v4zLEoWY2
-	y3FFVpPL9u9RTiLlBwecn6tk2F/uhj+3Fes7nKedkKH0Kg/htLM0w4wAr2mifZkMwRCUCIZHfAVHE
-	C0lybN/t+rlgRR6VjJnCeBnIZwk9hgKQs9NAB5ltWPE7GzN1BqO5TauK9gI6jalx4twmw641/nVwS
-	7e6xzJs4A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=5fS3APOLcUwaj3kNH0FLAWc1T7pElvfAx2LW2Ig6Vko=; b=G3gZ2vHDSa8Po4WEXKCqMSu2Zw
+	JPb7FieqoKRYisO2EURo2av3Rm3vaaIL0A/PL/lP5PqUTmapeTxSeuF1pLZOwO0Br5vCLFhKqYwGQ
+	L1rdzIBQAFpOidgqiklYjb5f3NWUTJ3IJj3LfrqqVwME2s4yE3xiKVYTU1ypnzy6YhxwMUyeperRw
+	aYqgQg0GfxitCGgUxS+a2Rco3DdhlNPQJE9Q30fRZ0MQwGUFk+oLQHkw3g+fpMT2epRHzmx+bEKkn
+	YD2H6RvcuLVQIFLhOqJCXX5LIE4UQHc8N5E1BqSssoDeHC0dkQ+K/LYJVp8m0R1neItWfOiEooxoq
+	UPs0FNLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isLVV-0006Sp-Hv; Fri, 17 Jan 2020 06:53:25 +0000
-Received: from regular1.263xmail.com ([211.150.70.201])
+	id 1isMlj-0005QD-VC; Fri, 17 Jan 2020 08:14:15 +0000
+Received: from lucky1.263xmail.com ([211.157.147.132])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isLVR-0006SS-L3
- for linux-rockchip@lists.infradead.org; Fri, 17 Jan 2020 06:53:23 +0000
-Received: from localhost (unknown [192.168.167.13])
- by regular1.263xmail.com (Postfix) with ESMTP id A33583B2;
- Fri, 17 Jan 2020 14:53:16 +0800 (CST)
+ id 1isMld-0005OT-Cz
+ for linux-rockchip@lists.infradead.org; Fri, 17 Jan 2020 08:14:14 +0000
+Received: from localhost (unknown [192.168.167.69])
+ by lucky1.263xmail.com (Postfix) with ESMTP id F072E8BF33;
+ Fri, 17 Jan 2020 16:14:00 +0800 (CST)
 X-MAIL-GRAY: 0
 X-MAIL-DELIVERY: 1
 X-ADDR-CHECKED4: 1
 X-ANTISPAM-LEVEL: 2
-X-SKE-CHECKED: 1
-X-ABS-CHECKED: 1
-Received: from [172.16.12.9] (unknown [58.22.7.114])
+X-ABS-CHECKED: 0
+Received: from localhost.localdomain (unknown [58.22.7.114])
  by smtp.263.net (postfix) whith ESMTP id
- P19896T140279015253760S1579243996042524_; 
- Fri, 17 Jan 2020 14:53:16 +0800 (CST)
+ P20995T139699247118080S1579248839183075_; 
+ Fri, 17 Jan 2020 16:14:00 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <fe75a5b9292047a86bf2a9e807711209>
-X-RL-SENDER: kever.yang@rock-chips.com
-X-SENDER: yk@rock-chips.com
-X-LOGIN-NAME: kever.yang@rock-chips.com
-X-FST-TO: linux-amarula@amarulasolutions.com
+X-UNIQUE-TAG: <5ec44f345caa1a6dbf50f637c1b15412>
+X-RL-SENDER: jay.xu@rock-chips.com
+X-SENDER: xjq@rock-chips.com
+X-LOGIN-NAME: jay.xu@rock-chips.com
+X-FST-TO: linus.walleij@linaro.org
 X-SENDER-IP: 58.22.7.114
 X-ATTACHMENT-NUM: 0
 X-DNS-TYPE: 0
-Subject: Re: [PATCH v7 5/7] arm: dts: rk3188: Add rk3188-u-boot.dtsi
-To: Jagan Teki <jagan@amarulasolutions.com>, Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-References: <20200109184622.3098-1-jagan@amarulasolutions.com>
- <20200109184622.3098-6-jagan@amarulasolutions.com>
-From: Kever Yang <kever.yang@rock-chips.com>
-Message-ID: <dac808a1-f96d-e5e7-f565-6ba88ad1bb86@rock-chips.com>
-Date: Fri, 17 Jan 2020 14:53:15 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
-MIME-Version: 1.0
-In-Reply-To: <20200109184622.3098-6-jagan@amarulasolutions.com>
-Content-Language: en-US
+From: Jianqun Xu <jay.xu@rock-chips.com>
+To: linus.walleij@linaro.org, heiko@sntech.de, david.wu@rock-chips.com,
+ kever.yang@rock-chips.com
+Subject: [PATCH 0/2] pinctrl: rockchip: codingstyle for pinctrl-rockchip
+Date: Fri, 17 Jan 2020 16:13:56 +0800
+Message-Id: <20200117081358.5772-1-jay.xu@rock-chips.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <c4ec95a7-aaf1-2331-352f-2def319a1c7d@rock-chips.com>
+References: <c4ec95a7-aaf1-2331-352f-2def319a1c7d@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_225322_477491_BED8396A 
-X-CRM114-Status: GOOD (  13.72  )
+X-CRM114-CacheID: sfid-20200117_001409_689862_DC691022 
+X-CRM114-Status: UNSURE (   8.86  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [211.157.147.132 listed in list.dnswl.org]
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [58.22.7.114 listed in dnsbl.sorbs.net]
  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.201 listed in list.dnswl.org]
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,37 +81,71 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: u-boot@lists.denx.de, linux-amarula@amarulasolutions.com,
- Akash Gajjar <akash@openedev.com>, linux-rockchip@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: linux-gpio@vger.kernel.org, jay.xu@rock-chips.com,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Ck9uIDIwMjAvMS8xMCDkuIrljYgyOjQ2LCBKYWdhbiBUZWtpIHdyb3RlOgo+IEFkZCBVLUJvb3Qg
-c3BlY2lmaWMgZHRzaSBmaWxlIGZvciByazMxODggU29DLiBUaGlzCj4gd291bGQgaGVscCB0byBh
-ZGQgVS1Cb290IHNwZWNpZmljIGR0cyBub2RlcywgcHJvcGVydGllcwo+IHdoaWNoIGFyZSBjb21t
-b24gYWNyb3NzIHJrMzE4OC4KPgo+IFJpZ2h0IG5vdywgdGhlIGZpbGUgaXMgZW1wdHksIHdpbGwg
-YWRkIHJlcXVpcmVkIGNoYW5nZXMKPiBpbiBmdXR1cmUgcGF0Y2hlcy4KPgo+IFNpZ25lZC1vZmYt
-Ynk6IEphZ2FuIFRla2kgPGphZ2FuQGFtYXJ1bGFzb2x1dGlvbnMuY29tPgpSZXZpZXdlZC1ieTog
-S2V2ZXIgWWFuZyA8a2V2ZXIueWFuZ0Byb2NrLWNoaXBzLmNvbT4KClRoYW5rcywKLSBLZXZlcgo+
-IC0tLQo+ICAgYXJjaC9hcm0vZHRzL3JrMzE4OC1yYWR4YXJvY2stdS1ib290LmR0c2kgfCAyICsr
-Cj4gICBhcmNoL2FybS9kdHMvcmszMTg4LXUtYm9vdC5kdHNpICAgICAgICAgICB8IDQgKysrKwo+
-ICAgMiBmaWxlcyBjaGFuZ2VkLCA2IGluc2VydGlvbnMoKykKPiAgIGNyZWF0ZSBtb2RlIDEwMDY0
-NCBhcmNoL2FybS9kdHMvcmszMTg4LXUtYm9vdC5kdHNpCj4KPiBkaWZmIC0tZ2l0IGEvYXJjaC9h
-cm0vZHRzL3JrMzE4OC1yYWR4YXJvY2stdS1ib290LmR0c2kgYi9hcmNoL2FybS9kdHMvcmszMTg4
-LXJhZHhhcm9jay11LWJvb3QuZHRzaQo+IGluZGV4IDFiYjU0MDg1OTIuLjIwNGJiM2E5MGUgMTAw
-NjQ0Cj4gLS0tIGEvYXJjaC9hcm0vZHRzL3JrMzE4OC1yYWR4YXJvY2stdS1ib290LmR0c2kKPiAr
-KysgYi9hcmNoL2FybS9kdHMvcmszMTg4LXJhZHhhcm9jay11LWJvb3QuZHRzaQo+IEBAIC0zLDYg
-KzMsOCBAQAo+ICAgICogQ29weXJpZ2h0IChjKSAyMDE4IEZ1emhvdSBSb2NrY2hpcCBFbGVjdHJv
-bmljcyBDby4sIEx0ZC4KPiAgICAqLwo+ICAgCj4gKyNpbmNsdWRlICJyazMxODgtdS1ib290LmR0
-c2kiCj4gKwo+ICAgJmNydSB7Cj4gICAJdS1ib290LGRtLXNwbDsKPiAgIH07Cj4gZGlmZiAtLWdp
-dCBhL2FyY2gvYXJtL2R0cy9yazMxODgtdS1ib290LmR0c2kgYi9hcmNoL2FybS9kdHMvcmszMTg4
-LXUtYm9vdC5kdHNpCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAwMDAwMDAwLi4x
-ZTdkMDc5MzE1Cj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2FyY2gvYXJtL2R0cy9yazMxODgtdS1i
-b290LmR0c2kKPiBAQCAtMCwwICsxLDQgQEAKPiArLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6
-IEdQTC0yLjArCj4gKy8qCj4gKyAqIENvcHlyaWdodCAoQykgMjAxOSBKYWdhbiBUZWtpIDxqYWdh
-bkBhbWFydWxhc29sdXRpb25zLmNvbT4KPiArICovCgoKCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51
-eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+Do codingstyle for pinctrl-rockchip by spliting driver by SoC types.
+
+Convenienty for reviewing, the first patch only moving
+pinctrl-rockchip.c from driver/pinctrl to driver/pinctrl/rockchip/ .
+
+Jianqun Xu (2):
+  pinctrl: rockchip: new rockchip dir for pinctrl-rockchip
+  pinctrl: rockchip: split rockchip pinctrl driver by SoC type
+
+ drivers/pinctrl/Kconfig                     |    7 -
+ drivers/pinctrl/pinctrl-rockchip.c          | 4254 -------------------
+ drivers/pinctrl/rockchip/Kconfig            |  126 +
+ drivers/pinctrl/rockchip/Makefile           |   16 +
+ drivers/pinctrl/rockchip/pinctrl-px30.c     |  224 +
+ drivers/pinctrl/rockchip/pinctrl-rk2928.c   |   70 +
+ drivers/pinctrl/rockchip/pinctrl-rk3036.c   |   69 +
+ drivers/pinctrl/rockchip/pinctrl-rk3066a.c  |   72 +
+ drivers/pinctrl/rockchip/pinctrl-rk3066b.c  |   51 +
+ drivers/pinctrl/rockchip/pinctrl-rk3128.c   |  161 +
+ drivers/pinctrl/rockchip/pinctrl-rk3188.c   |  147 +
+ drivers/pinctrl/rockchip/pinctrl-rk3228.c   |  225 +
+ drivers/pinctrl/rockchip/pinctrl-rk3288.c   |  210 +
+ drivers/pinctrl/rockchip/pinctrl-rk3308.c   |  420 ++
+ drivers/pinctrl/rockchip/pinctrl-rk3328.c   |  272 ++
+ drivers/pinctrl/rockchip/pinctrl-rk3368.c   |  125 +
+ drivers/pinctrl/rockchip/pinctrl-rk3399.c   |  195 +
+ drivers/pinctrl/rockchip/pinctrl-rockchip.c | 2063 +++++++++
+ drivers/pinctrl/rockchip/pinctrl-rockchip.h |  388 ++
+ drivers/pinctrl/rockchip/pinctrl-rv1108.c   |  214 +
+ 20 files changed, 5048 insertions(+), 4261 deletions(-)
+ delete mode 100644 drivers/pinctrl/pinctrl-rockchip.c
+ create mode 100644 drivers/pinctrl/rockchip/Kconfig
+ create mode 100644 drivers/pinctrl/rockchip/Makefile
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-px30.c
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-rk2928.c
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-rk3036.c
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-rk3066a.c
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-rk3066b.c
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-rk3128.c
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-rk3188.c
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-rk3228.c
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-rk3288.c
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-rk3308.c
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-rk3328.c
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-rk3368.c
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-rk3399.c
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-rockchip.c
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-rockchip.h
+ create mode 100644 drivers/pinctrl/rockchip/pinctrl-rv1108.c
+
+-- 
+2.17.1
+
+
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
