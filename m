@@ -1,92 +1,52 @@
 Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
-Received: from bombadil.infradead.org (unknown [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E352141A6A
-	for <lists+linux-rockchip@lfdr.de>; Sun, 19 Jan 2020 00:10:03 +0100 (CET)
+Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D095141FF2
+	for <lists+linux-rockchip@lfdr.de>; Sun, 19 Jan 2020 21:18:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mdwJ/3ol0RsXTccZxxMvQB/cShQs/Pr75MJcjNxRc5o=; b=PAhzqiZJKnWJIsjK7aDhbVzKvs
-	kJXUjHzqkRz1sNv2WHK6xv5pkhm+igrpIxMSZgkD1PLZp0cUo0Y4ydlAtkyrrm+F0bhaL215VEU5R
-	ySuwmBbtbOV+fhJuZXtGJosTN3Ilq9w4VGa9grN6AoiflcKwuIjrTKzs6Skd07pPRshxXRrZlQx1B
-	i5Lrtk1QKJGNHbQAbZ8ROFJD/qb/XfR7KrtAhlvviwneeNNDS9vwT4ZoxsCBE9a6uJUeh8e4vN92c
-	6H7Eu533WBriRdcp/uRETy/XH7rT4HnedRYulor5TTe07BqGTg5+jJW9eolmnU74MVSny2brlaShs
-	foWumhqg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Rczk4I4lJyGgHY0Z2ThTJl+RXQpooJFqzJ7KfOgF79M=; b=SRP8XNzFNC9dnc
+	YMhkCB/MYTsuaYxwzeozWITk5dPLaB/3zZFTh3TkzCEGSmQY3URewiFLZaSYShPdBDZJy3aoP+sMV
+	p+xTNmhdeIVeYc45N/YT6nzgFW5TG7SJ2nlZ1H6Nd+1RvgCPE0c33Psnm6QQQWPb3IZr+fwmXZzvF
+	k9tmjdmUFZKfSHES0iJd2mM4tImqIClVfI4BNzdGSwsLOzaYNrGLw7F6LAn4TP5roAdTyJcPMLmiR
+	RR/djoXlp4a3WPN40eW0hZIiixYhvbyefg8IjmZDN3RPiGB2RRy0+susDKkrMeCaoK8u14d0gDoNg
+	zoYJFbdQhIt52l5fayHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isxDl-0003QO-AI; Sat, 18 Jan 2020 23:09:37 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1itH1a-0002MM-Tz; Sun, 19 Jan 2020 20:18:22 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isxD8-0002rJ-De; Sat, 18 Jan 2020 23:08:59 +0000
-Received: by mail-wr1-x441.google.com with SMTP id g17so25963830wro.2;
- Sat, 18 Jan 2020 15:08:58 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=zieK1rZ40R+8dR9w9wxIfPfmZcLHznAHvHJSGV+7afI=;
- b=WcOPjCFxbQWN8I82H5+ql2IT5LtNNZEE54Ef1UQEznrAlFFQXvjOAAp7l95UefDFNS
- sM8rfr3puhtQih9QwjB8lgLbpQW+1pl84qKR1dtOyHoj80fgXj14bSdwyBPtD4nCBgAu
- r4JKfQzwqy/2UdJotQ4fW8GH+X3hrxLYIAmUk8XmbYO67tu4LW/XAwM3qUfWN6L4jWVi
- uLNlfl1Bqm7jOCu8h76EFoIQkUw8VSsfYlFjJ8qj0gZ+6vmWVgbnVEB+ZG5tk2ovR5AQ
- VWv4+iOzUpx7qNTcWQhFq02mgr0DZvKT89oxZ7tRKJ8XbA8m5m/BtpgAU6aHzrPrFkiy
- Lmgw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=zieK1rZ40R+8dR9w9wxIfPfmZcLHznAHvHJSGV+7afI=;
- b=n2r8nferpO0Aw+h6jlsb9Kiu3EFqHc+gAku87z7b7fZzHvPvIAhj/KjwKmIDSIjuNb
- PyaUgK2fU3f9nsWjWH/qarV6fAQwxzReoNfUWV0enrrqmnaioSPoJIIQGu9IrV+7001w
- M3Pw6JvOR74QsNnqJM1035uPlPBnidrRTKRRIFFqYcRtmj+LjPmEIu5wFhwzh+KJVbac
- nGC/cg+JyxXYANk619MSBdq4hfPjTuT0nmzujdJ58vynzXWF/cRGENUA0Fwchj0Jh7b4
- QwBGDx4ipqpQbkzx27wYJsBbCpCV6FcXpt8HIZIRjlGrjKtpVnjqAgiOD5Nh5T+Q9Nz/
- N6iw==
-X-Gm-Message-State: APjAAAU8Kx0RO6nuU315mD/4GR/R7uDdBwhTVRwBf2eaTsVTCfO8yluQ
- +pSPN0yz5xW1hTFwObMKIenXl2JK
-X-Google-Smtp-Source: APXvYqwUVkfqKTEe+IdcTJGpN/Oh1StsZugRXWPB63ViZ0Prt/rRHknvczy59Jrcs1kniRrGyk/cBw==
-X-Received: by 2002:a5d:46c7:: with SMTP id g7mr10351910wrs.11.1579388937355; 
- Sat, 18 Jan 2020 15:08:57 -0800 (PST)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id x16sm5746408wmk.35.2020.01.18.15.08.56
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 18 Jan 2020 15:08:56 -0800 (PST)
-From: Johan Jonker <jbx6244@gmail.com>
-To: broonie@kernel.org
-Subject: [RFC PATCH v1 3/3] dt-bindings: spi: spi-rockchip: add description
- for rk3328
-Date: Sun, 19 Jan 2020 00:08:48 +0100
-Message-Id: <20200118230848.15326-3-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200118230848.15326-1-jbx6244@gmail.com>
-References: <20200118230848.15326-1-jbx6244@gmail.com>
+ id 1itH1M-0002Bn-Or; Sun, 19 Jan 2020 20:18:10 +0000
+Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1itH0z-0002ec-GB; Sun, 19 Jan 2020 21:17:46 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Emmanuel Vadot <manu@freebsd.org>
+Subject: Re: [PATCH 2/2] arm64: dts: rockchip: Add initial support for
+ Pinebook Pro
+Date: Sun, 19 Jan 2020 21:17:39 +0100
+Message-ID: <2816238.fSnfubHXRg@diego>
+In-Reply-To: <20200116225617.6318-2-manu@freebsd.org>
+References: <20200116225617.6318-1-manu@freebsd.org>
+ <20200116225617.6318-2-manu@freebsd.org>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200118_150858_456027_64FADE16 
-X-CRM114-Status: GOOD (  10.97  )
-X-Spam-Score: 0.1 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+X-CRM114-CacheID: sfid-20200119_121808_959662_A8F3E04D 
+X-CRM114-Status: GOOD (  18.91  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jbx6244[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jbx6244[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,40 +59,312 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, aballier@gentoo.org,
+ vicencb@gmail.com, linux-kernel@vger.kernel.org, dianders@chromium.org,
+ robh+dt@kernel.org, kever.yang@rock-chips.com, m.reichl@fivetechno.de,
+ linux-rockchip@lists.infradead.org, mka@chromium.org,
+ jagan@amarulasolutions.com, nick@khadas.com, andy.yan@rock-chips.com,
+ robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org,
+ pbrobinson@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The description below is already in use for rk3328.dtsi,
-but was somehow never added to a document, so add
-"rockchip,rk3328-spi", "rockchip,rk3066-spi"
-for spi nodes on a rk3328 platform to spi-rockchip.yaml.
+Hi,
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- Documentation/devicetree/bindings/spi/spi-rockchip.yaml | 1 +
- 1 file changed, 1 insertion(+)
+overall looks good, but some small things below
 
-diff --git a/Documentation/devicetree/bindings/spi/spi-rockchip.yaml b/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
-index 24d9567a6..27b2d1df9 100644
---- a/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
-+++ b/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
-@@ -30,6 +30,7 @@ properties:
-             - rockchip,rk3188-spi  #for rk3188 SoCs.
-             - rockchip,rk3288-spi  #for rk3288 SoCs.
-             - rockchip,rk3308-spi  #for rk3308 SoCs.
-+            - rockchip,rk3328-spi  #for rk3328 SoCs.
-             - rockchip,rk3368-spi  #for rk3368 SoCs.
-             - rockchip,rk3399-spi  #for rk3399 SoCs.
-           - const: rockchip,rk3066-spi
--- 
-2.11.0
+Am Donnerstag, 16. Januar 2020, 23:56:17 CET schrieb Emmanuel Vadot:
+> From: Peter Robinson <pbrobinson@gmail.com>
+> 
+> Pinebook Pro is a RK3399 based laptop produced by Pine64.
+> 
+> Add a basic DTS for it.
+> 
+> Signed-off-by: Peter Robinson <pbrobinson@gmail.com>
+> Signed-off-by: Emmanuel Vadot <manu@freebsd.org>
+> ---
+>  arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+>  .../boot/dts/rockchip/rk3399-pinebook-pro.dts | 626 ++++++++++++++++++
+>  2 files changed, 627 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
+> index 48fb631d5451..9099fb7e2073 100644
+> --- a/arch/arm64/boot/dts/rockchip/Makefile
+> +++ b/arch/arm64/boot/dts/rockchip/Makefile
+> @@ -28,6 +28,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-nanopc-t4.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-nanopi-m4.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-nanopi-neo4.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-orangepi.dtb
+> +dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-pinebook-pro.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-puma-haikou.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-roc-pc.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-roc-pc-mezzanine.dtb
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts b/arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts
+> new file mode 100644
+> index 000000000000..d2e3d7b35cc6
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts
+> @@ -0,0 +1,626 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Copyright (c) 2017 Fuzhou Rockchip Electronics Co., Ltd.
+
+You might want to clarify the copyright ... 2020 and Pine64-something?
+
+> + */
+> +
+> +/dts-v1/;
+> +#include <dt-bindings/input/linux-event-codes.h>
+> +#include <dt-bindings/pwm/pwm.h>
+> +#include <dt-bindings/pinctrl/rockchip.h>
+> +#include "rk3399.dtsi"
+> +#include "rk3399-opp.dtsi"
+> +
+> +/ {
+> +	model = "Pine64 Pinebook Pro";
+> +	compatible = "pine64,pinebook-pro", "rockchip,rk3399";
+> +
+> +	chosen {
+> +		stdout-path = "serial2:115200n8";
+> +	};
+> +
+> +	aliases {
+> +		spi0 = &spi1;
+
+why is this needed ... I'd think spi can just enumerate itself?
+
+> +	};
+> +
+> +	backlight: backlight {
+> +		compatible = "pwm-backlight";
+> +		enable-gpios = <&gpio1 RK_PA0 GPIO_ACTIVE_HIGH>;
+> +		pwms = <&pwm0 0 740740 0>;
+> +	};
+> +
+> +	gpio-keys {
+> +		compatible = "gpio-keys";
+> +		autorepeat;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pwrbtn>;
+> +
+> +		power {
+> +			debounce-interval = <100>;
+> +			gpios = <&gpio0 RK_PA5 GPIO_ACTIVE_LOW>;
+> +			label = "GPIO Key Power";
+> +			linux,code = <KEY_POWER>;
+> +			wakeup-source;
+> +		};
+> +	};
+> +
+> +	leds {
+> +		status = "okay";
+
+new board-specific nodes don't need a status property
+
+> +		compatible = "gpio-leds";
+> +
+> +		work-led {
+> +			label = "work";
+> +			gpios = <&gpio0 RK_PB3 GPIO_ACTIVE_HIGH>;
+> +		};
+> +
+> +		standby-led {
+> +			label = "standby";
+> +			gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_HIGH>;
+> +		};
+> +	};
+> +
+> +	vcc1v8_s3: vcca1v8_s3: vcc1v8-s3 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "vcc1v8_s3";
+> +		regulator-always-on;
+> +		regulator-boot-on;
+> +		regulator-min-microvolt = <1800000>;
+> +		regulator-max-microvolt = <1800000>;
+> +		vin-supply = <&vcc_1v8>;
+> +	};
+> +
+> +	dc_12v: dc-12v {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "dc_12v";
+> +		regulator-always-on;
+> +		regulator-boot-on;
+> +		regulator-min-microvolt = <12000000>;
+> +		regulator-max-microvolt = <12000000>;
+> +	};
+> +
+> +	vcc3v3_sys: vcc3v3-sys {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "vcc3v3_sys";
+> +		regulator-always-on;
+> +		regulator-boot-on;
+> +		regulator-min-microvolt = <3300000>;
+> +		regulator-max-microvolt = <3300000>;
+> +		vin-supply = <&vcc_sys>;
+> +	};
+> +
+> +	vcc5v0_host: vcc5v0-host-regulator {
+> +		compatible = "regulator-fixed";
+> +		gpio = <&gpio4 RK_PD2 GPIO_ACTIVE_HIGH>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&host_vbus_drv>;
+> +		regulator-name = "vcc5v0_host";
+> +	};
+> +
+> +	vcc5v0_usb3_host: vcc5v0-usb3-host-regulator {
+> +		compatible = "regulator-fixed";
+> +		enable-active-high;
+> +		gpio = <&gpio1 RK_PB5 GPIO_ACTIVE_HIGH>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&host_usb3_drv>;
+> +		regulator-name = "vcc5v0_usb3_host";
+> +		regulator-always-on;
+> +	};
+> +
+> +	vcc3v3_s0: vcc3v3-s0-regulator {
+> +		compatible = "regulator-fixed";
+> +		enable-active-high;
+> +		gpio = <&gpio1 RK_PC6 GPIO_ACTIVE_HIGH>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&lcdvcc_en>;
+> +		regulator-name = "vcc3v3_s0";
+> +		regulator-always-on;
+> +	};
+> +
+> +	vcc_sys: vcc-sys {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "vcc_sys";
+> +		regulator-always-on;
+> +		regulator-boot-on;
+> +		regulator-min-microvolt = <5000000>;
+> +		regulator-max-microvolt = <5000000>;
+> +		vin-supply = <&dc_12v>;
+> +	};
+> +
+> +	vdd_log: vdd-log {
+> +		compatible = "pwm-regulator";
+> +		pwms = <&pwm2 0 25000 1>;
+> +		pwm-supply = <&vcc_sys>;
+> +		regulator-name = "vdd_log";
+> +		regulator-always-on;
+> +		regulator-boot-on;
+> +		regulator-init-microvolt = <950000>;
+
+There is no init-microvolt property in mainline, I'd think bootloader should
+already setup the pwm to a suitable setting?
+
+Not
+
+> +		regulator-min-microvolt = <800000>;
+> +		regulator-max-microvolt = <1400000>;
+> +	};
+> +};
+> +
+> +&cpu_l0 {
+> +	cpu-supply = <&vdd_cpu_l>;
+> +};
+> +
+> +&cpu_l1 {
+> +	cpu-supply = <&vdd_cpu_l>;
+> +};
+> +
+> +&cpu_l2 {
+> +	cpu-supply = <&vdd_cpu_l>;
+> +};
+> +
+> +&cpu_l3 {
+> +	cpu-supply = <&vdd_cpu_l>;
+> +};
+
+what happened to cpu_b0 and cpu_b1 supplies?
+Should probably reference the cpu_b regulator below?
+
+> +
+> +&emmc_phy {
+> +	status = "okay";
+> +};
+> +
+> +&i2c0 {
+> +	clock-frequency = <400000>;
+> +	i2c-scl-rising-time-ns = <168>;
+> +	i2c-scl-falling-time-ns = <4>;
+> +	status = "okay";
+
+[...]
+
+> +	vdd_cpu_b: regulator@40 {
+> +		compatible = "silergy,syr827";
+> +		reg = <0x40>;
+> +		fcs,suspend-voltage-selector = <1>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&vsel1_gpio>;
+> +		vsel-gpios = <&gpio1 RK_PC1 GPIO_ACTIVE_HIGH>;
+
+This is not yet specified in the syr82x (fan5355) bindings and
+also unknown to the driver
+
+> +		regulator-compatible = "fan53555-reg";
+> +		regulator-name = "vdd_cpu_b";
+> +		regulator-min-microvolt = <712500>;
+> +		regulator-max-microvolt = <1500000>;
+> +		regulator-ramp-delay = <1000>;
+> +		regulator-always-on;
+> +		regulator-boot-on;
+> +		vin-supply = <&vcc_sys>;
+> +
+> +		regulator-state-mem {
+> +			regulator-off-in-suspend;
+> +		};
+> +	};
+> +
+> +	vdd_gpu: regulator@41 {
+> +		compatible = "silergy,syr828";
+> +		reg = <0x41>;
+> +		fcs,suspend-voltage-selector = <1>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&vsel2_gpio>;
+> +		vsel-gpios = <&gpio1 RK_PB6 GPIO_ACTIVE_HIGH>;
+
+same
+
+> +		regulator-compatible = "fan53555-reg";
+> +		regulator-name = "vdd_gpu";
+> +		regulator-min-microvolt = <712500>;
+> +		regulator-max-microvolt = <1500000>;
+> +		regulator-ramp-delay = <1000>;
+> +		regulator-always-on;
+> +		regulator-boot-on;
+> +		vin-supply = <&vcc_sys>;
+> +
+> +		regulator-state-mem {
+> +			regulator-off-in-suspend;
+> +		};
+> +	};
+> +
+> +};
+
+[...]
+
+> +&saradc {
+> +	status = "okay";
+
+needs a vref-supply
+
+> +};
+> +
+> +&sdmmc {
+> +	bus-width = <4>;
+> +	status = "okay";
+> +	max-frequency = <20000000>;
+
+vmmc / vqmmc supplies?
+Especially if one wants to achieve higher speeds on uhs cards.
+
+Heiko
+
 
 
 _______________________________________________
