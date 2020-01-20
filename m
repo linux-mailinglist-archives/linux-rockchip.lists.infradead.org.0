@@ -2,51 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 618AD143114
-	for <lists+linux-rockchip@lfdr.de>; Mon, 20 Jan 2020 18:51:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A66D7143293
+	for <lists+linux-rockchip@lfdr.de>; Mon, 20 Jan 2020 20:45:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7lxIARKBTMJQYidw3PKCY1uOhJiwS59RR+nbIMdXwK0=; b=fVIJmHq74jZivKnL5jUzzsw5+
-	JDrOQ2BOhwwUAnyGy19L2RQZIMqPVHrfa7fvb/xtJf/0qlBMS7PwufK+DtllYEMknmajeEqQKnLSN
-	Z91rKJ+Vi7sCFvuSyzRY872cafYGD09a6e0s2QtZ6itzu+2G0s6gYRiP3wpGcMEvvP1Ssguq3rXVx
-	Igi/f6Zd6PemODGoMaVH9R3ry7DznAfSAnhf2499SYGZUT3a6RgmaPQNTcNW43FTP+BynjVoI8CiC
-	6wzT2kRnn0KVJ3FAAiRteLL6L1RTegxnrE9eKtqtSVzy+lOxbauE1VOAuNrDbT13kGoY8Y6C1dClA
-	eZmjQc82Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=NAKReOcuAUZulOtL6zgBHN9FOdYa8XODdOwrIjBkf90=; b=oWe
+	ZkD2I0+BNtDiEuPBXc0M4vg47dDrzWJXl2KxycXkS32BePZKbNCDhTfqEltAkzZEab93VxzmMYaS8
+	N06KShgF+imXOnGY8+MR+odBEMSwMCjdZWzFAOLQ4Nu1wPjMpqf22HFx2U9/WR7R7DGRSQSIoC9Pf
+	oJJEuGseC6AebD0oXgyZmg9sXAocBQlzIse80nQeeKECx7p0AafQHGBcFIeDFJGn3bfBD88/5q4J9
+	uIiaDY9EWNpNzobzzyPMAnbWOQZQJT1WLQOZHDwvQPyUoJtoRAqHNxEF0FtqyRc1h4CGxscmGjrJA
+	g9bBA7303yO4k9n03pE7jkwnqRDL4eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itbCS-0000u3-3j; Mon, 20 Jan 2020 17:50:56 +0000
-Received: from mail.csgraf.de ([188.138.100.120] helo=zulu616.server4you.de)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itbCK-0000tR-Kz
- for linux-rockchip@lists.infradead.org; Mon, 20 Jan 2020 17:50:54 +0000
-Received: from 38f9d3867b82.ant.amazon.com (unknown [3.122.114.9])
- by csgraf.de (Postfix) with ESMTPSA id EEACD390037A;
- Mon, 20 Jan 2020 18:40:39 +0100 (CET)
-Subject: Re: [PATCH 02/11] distro_bootcmd: Add SF support
-To: Tom Rini <trini@konsulko.com>, Jagan Teki <jagan@amarulasolutions.com>
-References: <20191221075440.6944-1-jagan@amarulasolutions.com>
- <20191221075440.6944-3-jagan@amarulasolutions.com>
- <20200120172240.GX8732@bill-the-cat>
-From: Alexander Graf <agraf@csgraf.de>
-Message-ID: <8dddd74f-7b17-a614-48ab-aea0bc9148db@csgraf.de>
-Date: Mon, 20 Jan 2020 18:40:39 +0100
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:68.0)
- Gecko/20100101 Thunderbird/68.3.1
-MIME-Version: 1.0
-In-Reply-To: <20200120172240.GX8732@bill-the-cat>
-Content-Language: en-US
+	id 1itczW-0000Dk-E3; Mon, 20 Jan 2020 19:45:42 +0000
+Received: from outgoing4.flk.host-h.net ([188.40.0.90])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itczO-00009o-7l; Mon, 20 Jan 2020 19:45:40 +0000
+Received: from www31.flk1.host-h.net ([188.40.1.173])
+ by antispam1-flk1.host-h.net with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.89)
+ (envelope-from <justin.swartz@risingedge.co.za>)
+ id 1itczB-0004Ot-OT; Mon, 20 Jan 2020 21:45:22 +0200
+Received: from [130.255.73.16] (helo=v01.28459.vpscontrol.net)
+ by www31.flk1.host-h.net with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.89)
+ (envelope-from <justin.swartz@risingedge.co.za>)
+ id 1itcz9-0004Hk-Dw; Mon, 20 Jan 2020 21:45:19 +0200
+From: Justin Swartz <justin.swartz@risingedge.co.za>
+To: Jacob Chen <jacob-chen@iotwrt.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH 1/4] media: rockchip/rga: add rk3228-rga to
+ rockchip_rga_match[]
+Date: Mon, 20 Jan 2020 19:41:54 +0000
+Message-Id: <20200120194158.25357-1-justin.swartz@risingedge.co.za>
+X-Mailer: git-send-email 2.11.0
+X-Authenticated-Sender: justin.swartz@risingedge.co.za
+X-Virus-Scanned: Clear
+X-Originating-IP: 188.40.1.173
+X-SpamExperts-Domain: risingedge.co.za
+X-SpamExperts-Username: 
+Authentication-Results: host-h.net;
+ auth=pass (login) smtp.auth=@risingedge.co.za
+X-SpamExperts-Outgoing-Class: ham
+X-SpamExperts-Outgoing-Evidence: Combined (0.01)
+X-Recommended-Action: accept
+X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0Xm17NJf4el5vffImWwWrhCpSDasLI4SayDByyq9LIhVc0MzHfOnMfVI
+ AlgH8Xwbq0TNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3K7uDjV/sFUXQr+CDrNQuIHgQg
+ mAX8Bxy/iUu0ThNZg0h/RxVysY5Ye6+GGw0VqdJD7ren9RtRNyYim5e3GD8LGfWrcbYvelpuN/Pk
+ qhBpvAyWwieZyauFYqHkIbFa+ipFflSrcyn7M3A1M8P7YyCISF7Ax1jp5415hfbnHhmkWKwQ798N
+ tjgwOHRNrKlsLSLsR2phe2H+VQ5drqtLHIQXdB2sPQC/ZXf7OFUBPjBV0jlRnibyCuwag8UEnjV9
+ dfsBVFAo2VqRJ3PoUK3i2GylNtZWYK6FgocWFgIy83G1Ziw5PsG3ZK/CX16OekmbPreOnw2lIbsC
+ g5hAk2rbw6y01wTJsjWw5+0eZIpQIcK9yrSpnIazZEQP7rhBhxNqNx7Ljd12v0hRQV2TuWFKPYIZ
+ hSoXjZRXPZeF/ozRyNShALTpAuRsQ7f/A1SBbUaDAMpCdiFVwaP90eVaqnDphEW4xGx2bCpzxgBv
+ RJlZffR315YiXq0P29rzRb3/fujGPSO0ZjPN6GBtX9ob7G66M73K7lEBopH59S/bhUmo0Kkx+QUC
+ X/JlYVPK+a5jKpRW4VkG9koSZx4AE7ErDJQIhG9sWvIZWUifSNHSdOCLRQ7jpnXnmAJSLoHk+mB7
+ rvqdepOw2titfOjo27VsmUXl5Dlu0Ez4hiPVrwbHSJw7Xp/7OsyH8g27Tr7mENICHJaR53upNsj0
+ ZNx9ROADUXTdQZTyOamR3KMXZiZ/EdUuc9x8TOdIW6qv7Prfdfuh2V6P2IH+fu/1ze9XG6SFbqNq
+ ARXGm2iH1Wgh6RAenBR+licROGZLSOPJ7pouDn/lmAaZNciLjY4Bum3Cz9zMKWDsCgJgzAyOo8uz
+ gLvzPUQ4WO1VIxT90NysgdUUHBaOGnMZ3fVqqKS4K27k8O0AKLf9g2axxclWHXeuOCUCSaU4vgJw
+ yjPlnmxH7Pd4xT6MyYGIdovMjseuwUIt8Ke1zYmTdImomsn9uPyWahCadieo4QRLnvbNjcvkOxlt
+ YcJZ/YLv0cjthSk55ObUg7TpMbFmZ6g5Ky+1Stg9rJ7bhjXv2caQWgXrjuU3A3io6xJmD59iFVkb
+ kXGPzFwfHhKt2wjdkKIWbyf+T8iepkOFBDDkCgKb9Tgwyo3k9+KsRmFMu5VQ9KBOovIJzflUDtG9
+ b8caIarEvU/OX3xYChUDPsYuWEJtniNfuGO37qWHEu6DA1YYHSc7
+X-Report-Abuse-To: spam@antispammaster.host-h.net
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_095048_828952_D510C8BF 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20200120_114534_280880_76E86462 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [188.40.0.90 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -62,53 +97,37 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: linux-rockchip@lists.infradead.org,
- Heinrich Schuchardt <xypron.glpk@gmx.de>, Simon Glass <sjg@chromium.org>,
- Kever Yang <kever.yang@rock-chips.com>, u-boot@lists.denx.de,
- Peter Robinson <pbrobinson@gmail.com>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>
+ Justin Swartz <justin.swartz@risingedge.co.za>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+Add an entry to the rockchip_rga_match array for "rockchip,rk3228-rga"
 
-On 20.01.20 18:22, Tom Rini wrote:
-> +A few people that may have insight to my question
->
-> On Sat, Dec 21, 2019 at 01:24:31PM +0530, Jagan Teki wrote:
->
->> Add distro boot command support for SPI flash.
->>
->> This distro boot will read the boot script at specific
->> location at the flash and start sourcing the same.
->>
->> The common macro like BOOTENV_SHARED_FLASH would help
->> to extend the support for nand flash in future.
->>
->> Cc: Tom Rini <trini@konsulko.com>
->> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> What distro is this for?  My concern here is that hundreds of boards
-> (literally) grow by a few hundred bytes to add in this bit of additional
-> default logic.  That's not a big problem if distributions are now going
-> to be using SPI flash as where they're programming in their bootscript.
-> But, who is doing that?  Thanks!
+Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
+---
+ drivers/media/platform/rockchip/rga/rga.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-
-I am not aware of any "distro" that puts a U-Boot script at offset 0 of 
-the SPI Flash.
-
-Traditionally, SPI Flash boot setups were always very hand crafted - 
-exactly the opposite of what distro boot is for. That said, I think 
-supporting SPI Flash boot for rk3399 is great! Albeit I would personally 
-only store U-Boot and the environment on SPI, not the target OS.
-
-Jagan, is putting a U-Boot script on the SPI Flash something you thought 
-of or something that the rk3399 reference board already does? If it's 
-the latter, maybe you could add it as a board custom boot function?
-
-
-Alex
+diff --git a/drivers/media/platform/rockchip/rga/rga.c b/drivers/media/platform/rockchip/rga/rga.c
+index e9ff12b6b..268116cd5 100644
+--- a/drivers/media/platform/rockchip/rga/rga.c
++++ b/drivers/media/platform/rockchip/rga/rga.c
+@@ -956,6 +956,9 @@ static const struct dev_pm_ops rga_pm = {
+ 
+ static const struct of_device_id rockchip_rga_match[] = {
+ 	{
++		.compatible = "rockchip,rk3228-rga",
++	},
++	{
+ 		.compatible = "rockchip,rk3288-rga",
+ 	},
+ 	{
+-- 
+2.11.0
 
 
 _______________________________________________
