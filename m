@@ -2,55 +2,95 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E995144009
-	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Jan 2020 15:57:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26FDB144040
+	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Jan 2020 16:11:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=RHK03R8AlROfgH7Y5Y/QkRo7NCE+7nWXNlvSx9wmsDM=; b=NRQtWnGmS/G29olYVHrWKMlWf
-	jHpb4WLyXs6VoY5Lp5ngmwYIZ0KXWRe/WqSS/uyC8swJ051Smh4/8hznOZMwvVk7e+W0G+je9/YqZ
-	PzUqswT33eUXkebKnfCRqtceVqJOWOUXZKr1ae2+JjwrBsvb51HoItncTAKiS4SxtatsAGa0qTIJX
-	wQdf3UiNTEhNTQpmmH0g//3k0H/D9j8j6psGusc7T0wKh0TYz8BdDjjbdzLLwNXYcgEb8QfrvCTsF
-	z0oLRklGILkQ9Pv87/oupGhGj+0389a0lWhv0budkdWm9+hV6kWkInFm6PM30lM+mwLRzfQMenDS1
-	l9EZnCmeg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iVVfQS3C6UzE/aQyF45GFVtGFQ+aylUGp8vCj7RE50U=; b=RH0UrYrc0ez8xE
+	RgyX2QaGD4v5y2aA++tiL8I6e25vCN5pP3/r5KRSwHmpmLPQbs3x/8933uvLP8M7cP6buXjy+rp1Z
+	X9FR1u9g5HDN5RlnTo7Z6cyDb0TGsSb+5jLPW24Ir4flY6QYPJfb1Qe5pEPUbOOrkeD/unfcyPVpM
+	EZ6wgjDqsGGA0sfpFDw+oUOqzsWkw4OchE3NRt343vAYXMuwZsMSsXdz4f4+WDtXr++oNRNknTHr/
+	9rZl5Zre8iUm9NQTvfXMSHL31QZ0Fvi4AEbgtfYyVVO/ENDWnDrebyQaOEzmy+w3ZsWNrbGTjrd6q
+	sXfkfBciKFxJczAw1Xbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ituxu-0001X9-RU; Tue, 21 Jan 2020 14:57:14 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ituxh-0001MA-FQ; Tue, 21 Jan 2020 14:57:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C0F0330E;
- Tue, 21 Jan 2020 06:57:00 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D725C3F52E;
- Tue, 21 Jan 2020 06:56:59 -0800 (PST)
-Subject: Re: [PATCH] arm64: dts: rockchip: fix px30 lvds ports
-To: Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org
-References: <20200121134510.3893487-1-heiko@sntech.de>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <1cd15d49-3c4f-6da2-4d4f-0414dd6d6adc@arm.com>
-Date: Tue, 21 Jan 2020 14:56:58 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1itvBg-00071S-TJ; Tue, 21 Jan 2020 15:11:28 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itvBZ-0006yy-Mh; Tue, 21 Jan 2020 15:11:27 +0000
+Received: by mail-wm1-x342.google.com with SMTP id w5so2313358wmi.1;
+ Tue, 21 Jan 2020 07:11:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=to:cc:references:subject:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=kV29KCb1tTjsoAawp5eJRY4AocgYk483wI8KhDn3Mn0=;
+ b=RUX/r9XczXOUQ8uWuvKZBE0mKNBA3OSB7liIzJ9cde+h/JBPVxnlsyHI+9HaqUxGzn
+ 6yeNjvGkLD2sZLLRct9PvTBZTkHCpMeBPq0ABBHZK5jmDShaa8+7PMnME8xcH9Je/OnY
+ GW4kOJYOuoGiYn3jMem/accrJTGgFIKAe4P2m8Je5AjyPOl+gsHDC5IjObvHxbx4Ao4e
+ 3K5b1jgZHS1jqW2kYjOd56PFBDBdarIM8I/VjrX1FpoLplXu4bIuFbnPaCt+rBmlVm/T
+ EwB3t9OyeVSsyosVjzVZ8vCcl8UDJiALvyHjNfh0kzvPEm0l/T0oMwqys25Z9x7uxcBa
+ mKxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:to:cc:references:subject:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=kV29KCb1tTjsoAawp5eJRY4AocgYk483wI8KhDn3Mn0=;
+ b=cUKY7MQYszehfHS5GKWgU6f2YKvOZ/G0QQXK05a6MWZ5xQh6L21g3BQbA5qWf2mGpl
+ RqBV0qbJwAIvEcNYFbqe+Qe8zzgxZI5ILCKtyatLi6YmKrnK/wtu8VLD1cFo4jlPsHNX
+ F46em0oG7I3uBCmu9o4M/cIqEy6FQu4sGqnZUl9a06sxw8pB42JBJt6E73hvpPpywEeC
+ WsdYfyMqxACbfD8ifidJimESKXgBnzFNO2n58tQw1vkq1tVZ7QzMSgxZHpwGa2AtWIw7
+ AS0f4DzsBB1rkqMxCHv+GUJCReiF4SiU0Qy+bEBFdJjL7gSD4vopXG6xr/xFvTp61983
+ OUcQ==
+X-Gm-Message-State: APjAAAXTRiB2vOhoEqpg+ckgZNduwquNg+9ysOiQlc5+i7ruBNux27ps
+ x7AAi9Htk4/ys/DiTRj7z9nUO3lO
+X-Google-Smtp-Source: APXvYqzVxW20eNVZ9aiYI5P39LBGVZIhsGs+GUktDebjr7JOrRBt1iJHlF1C395ejIGm9PyahohwIg==
+X-Received: by 2002:a1c:5f06:: with SMTP id t6mr4912501wmb.32.1579619480435;
+ Tue, 21 Jan 2020 07:11:20 -0800 (PST)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id v83sm4639782wmg.16.2020.01.21.07.11.18
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 21 Jan 2020 07:11:19 -0800 (PST)
+To: dafna.hirschfeld@collabora.com
+References: <6371f95f-8bf8-47c9-021e-b23006f25405@collabora.com>
+Subject: Re: [PATCH v2] dt-bindings: convert rockchip-drm.txt to
+ rockchip-drm.yaml
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <573dc6d1-5857-f3ba-a392-67351db727b5@gmail.com>
+Date: Tue, 21 Jan 2020 16:11:17 +0100
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-In-Reply-To: <20200121134510.3893487-1-heiko@sntech.de>
-Content-Language: en-GB
+In-Reply-To: <6371f95f-8bf8-47c9-021e-b23006f25405@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_065701_575808_748AD72F 
-X-CRM114-Status: GOOD (  17.69  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200121_071121_762515_EA5D1B19 
+X-CRM114-Status: GOOD (  11.65  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,71 +103,64 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
- christoph.muellner@theobroma-systems.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, miquel.raynal@bootlin.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
+ airlied@linux.ie, dafna3@gmail.com, hjc@rock-chips.com,
+ dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+ helen.koike@collabora.com, robh+dt@kernel.org, daniel@ffwll.ch,
+ kernel@collabora.com, ezequiel@collabora.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 21/01/2020 1:45 pm, Heiko Stuebner wrote:
-> From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
-> 
-> The lvds controller has two ports. port@0 for the connection
-> to the display controller(s) and port@1 for the connection to
-> the panel, so should have a ports node covering the port@x nodes.
-> 
-> Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
-> ---
->   arch/arm64/boot/dts/rockchip/px30.dtsi | 23 ++++++++++++++---------
->   1 file changed, 14 insertions(+), 9 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-> index 9b1c92132007..37e014444214 100644
-> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-> @@ -421,19 +421,24 @@ lvds: lvds {
->   			rockchip,output = "lvds";
->   			status = "disabled";
+Hi Dafna,
 
-FWIW, the main node's "#{address,size}-cells" properties above here 
-should now be unnecessary too.
 
-Robin.
-
->   
-> -			port@0 {
-> -				reg = <0>;
-> +			ports {
->   				#address-cells = <1>;
->   				#size-cells = <0>;
->   
-> -				lvds_vopb_in: endpoint@0 {
-> +				port@0 {
->   					reg = <0>;
-> -					remote-endpoint = <&vopb_out_lvds>;
-> -				};
-> -
-> -				lvds_vopl_in: endpoint@1 {
-> -					reg = <1>;
-> -					remote-endpoint = <&vopl_out_lvds>;
-> +					#address-cells = <1>;
-> +					#size-cells = <0>;
-> +
-> +					lvds_vopb_in: endpoint@0 {
-> +						reg = <0>;
-> +						remote-endpoint = <&vopb_out_lvds>;
-> +					};
-> +
-> +					lvds_vopl_in: endpoint@1 {
-> +						reg = <1>;
-> +						remote-endpoint = <&vopl_out_lvds>;
-> +					};
->   				};
->   			};
->   		};
 > 
+> 
+> On 21.01.20 15:03, Rob Herring wrote:
+>> On Tue, Jan 21, 2020 at 6:35 AM Dafna Hirschfeld
+>> <dafna.hirschfeld@collabora.com> wrote:
+>>>
+>>> convert the binding file rockchip-drm.txt to yaml format.
+>>> This was tested and verified with:
+>>> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+>> 
+>> Also, make sure just 'make dt_binding_check' passes as that checks the
+>> example against all schemas.
+> 
+> But this also checks the other schemas in general, and when running it, 
+> it fails because of bugs in other schemas.
+
+
+> For example with arm=ARM I get:
+
+Use:
+
+# enable Rockchip arm in menuconfig
+make ARCH=arm menuconfig
+
+make ARCH=arm dt_binding_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+
+and not:
+arm=ARM
+
+
+> 
+>    DTC     Documentation/devicetree/bindings/clock/qcom,gcc.example.dt.yaml
+> Error: 
+> Documentation/devicetree/bindings/clock/qcom,gcc.example.dts:111.28-29 
+> syntax error
+> FATAL ERROR: Unable to parse input tree
+> 
+> Dafna
+> 
+>> 
+>>> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+>>>
+
 
 _______________________________________________
 Linux-rockchip mailing list
