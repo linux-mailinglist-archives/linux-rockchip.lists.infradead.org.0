@@ -2,89 +2,95 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F3271445B9
-	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Jan 2020 21:16:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B007144684
+	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Jan 2020 22:34:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=EuLRCmJksZCffcAB30Jmojhx9ACJFycNIoXd8Mvzba4=; b=u6xjlgBZB3+BD+3Y9C7X+aL+4z
-	crvVMnZ2+JRbUmBMg9JAnJvB0oIYt3Indp4ccQt7AzzXyZPWqPXuV8kmZ1f8i352QQpRf++ZMR/ZF
-	pzseQcK2vRW/t7hs/D16im7QjiH6CrYT/E7A+MLVCmgVYTmdEsurVB9zwo6rwqpe+1sYeB7HH6Z7S
-	IFtl6b9Hr7/5XyDCGqo4376ocmO15ERnb3VqyyM7M6aL6zeaLOMaKCK5QlqaQq3UzfmQXpjnq7g6g
-	ijRyEQbni0khD7+upjeI6ybdscD+FO7Q1gkHm5kS8E5TnnGfqKghUCOScRVLO6+LnEko/chquhWlF
-	+iJVUi9A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/FUtKlin/UaNKdE6mbpBTv4wyKZl3mJapn8nqe1BHK4=; b=unCHXafimv0t7o
+	5GOeM+HUBi3imPWnhwIujr7OM7PfWq3DkYQYXF3bP9uEw38HAdJAXFZa+3n/3nfDylAfoaye6yDeN
+	/0SCLi34nyo2MjKwia0S5J5ggtsDb37Wl5sSkTNR+zPKxjnkJkp+5KYM5cT39SIeBFEzr8+RhmGRB
+	m8HTwdlIf1MlLiSGA3dxOYmc7JAP+t7yNiY81s6bIoeSujK3k57rLzyR78K+XH/1m9ht/Hx2bH2WW
+	Srm3MnksyuFuTQbq+ANSfk+sWSeqgxpaz/Sqa9NvXlVSTjxLVs3NaHVC73NA3VfSMneeSXXlqyd6R
+	rR1eRZVnNceEq4bwT4Cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itzwd-0001j5-Jw; Tue, 21 Jan 2020 20:16:15 +0000
-Received: from outgoing2.flk.host-h.net ([188.40.0.84])
+	id 1iu1Ac-0003O8-8a; Tue, 21 Jan 2020 21:34:46 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itzw8-0001Pz-Iz; Tue, 21 Jan 2020 20:15:51 +0000
-Received: from www31.flk1.host-h.net ([188.40.1.173])
- by antispam3-flk1.host-h.net with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.89)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1itzvt-0003Gw-7S; Tue, 21 Jan 2020 22:15:29 +0200
-Received: from [130.255.73.16] (helo=v01.28459.vpscontrol.net)
- by www31.flk1.host-h.net with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.89)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1itzvs-0005QX-St; Tue, 21 Jan 2020 22:15:28 +0200
-From: Justin Swartz <justin.swartz@risingedge.co.za>
-To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 2/2] ARM: dts: rockchip: enable rga for rk3229-xms6
-Date: Tue, 21 Jan 2020 20:11:46 +0000
-Message-Id: <20200121201146.18038-3-justin.swartz@risingedge.co.za>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200121201146.18038-1-justin.swartz@risingedge.co.za>
-References: <20200120194158.25357-1-justin.swartz@risingedge.co.za>
- <20200121201146.18038-1-justin.swartz@risingedge.co.za>
-X-Authenticated-Sender: justin.swartz@risingedge.co.za
-X-Virus-Scanned: Clear
-X-Originating-IP: 188.40.1.173
-X-SpamExperts-Domain: risingedge.co.za
-X-SpamExperts-Username: 
-Authentication-Results: host-h.net;
- auth=pass (login) smtp.auth=@risingedge.co.za
-X-SpamExperts-Outgoing-Class: ham
-X-SpamExperts-Outgoing-Evidence: Combined (0.02)
-X-Recommended-Action: accept
-X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0fKZ8wcD78QFAaYhvfMzLIKpSDasLI4SayDByyq9LIhVfuKK9Uo1uWoA
- /NXuXmiXP0TNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3K7uDjV/sFUXQr+CDrNQuIHgQg
- mAX8Bxy/iUu0ThNZg0jxJtcVJProrT987X1VDPOqN+OoDzRTdku7DidYUZdNf38Sp7Of4wP429AA
- f49baR+f3He7jw4SoVhmTJ/3eP9ORQWVx8ds1M4qmk3/bYr2p8zbg4Paoa3pNVQ0zl7t/+UfQLYB
- qEPnp1U88kqVD8AM2G81dFO0E3gi+MOI1foZYzDggRXhpvoPtF3cVkniFXU3qJSqpdJudO6+rkiw
- E5i8Wl78Q18OeOfsy4h7jF1Uv9lnibl3vcBqVmvQB4A18acHt4EDyAWDRJ7+/jIjTbbaAVXirbLu
- Jjy3NtnGWLbnBGfrUBEXB2fYGLNieGQuoHtJvp0r29Rf3ZjFwL+MhHEWw/0qBlNDp8uABz3dkWV+
- ttWGem52QLIiDo2hv5/Q58JTycYLFeAN4+MGwnsp7SkU6CLbyF0Zq4b1/7rjUzETJrWks4pbbQJq
- 6gWopI3ep45X19ZysgQ+31LcAX8eoFXAhohfegXGH2GIVQVglJFbK771YV8YbC29CtmpcTqTfSIf
- CWq9oj7OiT8GwpAriB+3/81I3rvR8KJ2fK9jiDYgijyqqY0rATpzHKGfmtNsYTr4SmDZ/bGW8xZC
- RRs6ZD24UhFcZZEpLhnBCwImTQNvxaLyCc35VA7RvW/HGiGqxL09Cymermt8NAa/gGopT3kKfO4C
- gvcKmV0o9jYzsFpuc43pp/LzIs3ornuRuAAdgrkq+6l7ZLNYJcf7Z6PCydDzoYZgInuDxgFOs7AZ
- TwbwMaed1BaNkB2/QnXFItfl/CVLQy1gvJYzH+CgV/G6e/ic38NrFoXSENXH6UXfnav35JPA4YfM
- 6tBkXsqvKY6zoLLTPpuFqUUQz+mM8JAD4ECWNo09vb0YLIRnK477e9Xake5PIWKjIXX7qe2zOXoS
- fozMcmxsshwvmyhbp6p25CNmKIxse/51so+LHYWZWygiXmbjO41FyBEqIaDudcVplPE6wCr6GXU1
- lCw88ijyus1sGnWknJqS8gGhNQxpB5P3qu7c1xMljx2PG/R+pKBSKy8hXOgvE1zSS7XUhkYEQYeb
- 3jR5NeVaJQBh0uawl0Cg8j+knAzOA9mmoJvkuhKHiekUuskYaI6ERCKp8gXWqnT9kLHhStr5fiGK
- 7KncpWELuTEvuGslKTrRIXcXpFg5ivY=
-X-Report-Abuse-To: spam@antispammaster.host-h.net
+ id 1iu1Aa-0003NV-25; Tue, 21 Jan 2020 21:34:45 +0000
+Received: by mail-wm1-x344.google.com with SMTP id p17so4902291wmb.0;
+ Tue, 21 Jan 2020 13:34:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=to:cc:references:subject:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=QFH+//39kLcoKOXngfJAlgHhrZQMBT4NmggY27rdTyU=;
+ b=fbrEasHoDjvPf4cA4L0MXUjPMeps2Tmyr8xvgIceVWSNiBOfTtn0nIuyQTHoPCtXJw
+ hKqfTEhssZJVp5fhLfQo2YUF1TyTW4WgH+WvixzRc1sUff5cpMdJPHP05eCpORSD+dwa
+ AF8yCjwqEbL7+MBPiGYHfehU/Cvc0sPxntoT0e68t9zp+tKAioe2nBcWYtRDVJq6ZJ40
+ QmLOzmIMw4FV4MhZxQaeribnqbyiLydAX+cRwBXhB4NV9uXffpqcgqu6SiIevq9N4cp0
+ fEFisw4lce/nWoEeLLqnLVwSiKZa5cSe693QvgrK1xwvkwcWAgBTKwZNGYJjoI9G+x3f
+ VNJw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:to:cc:references:subject:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=QFH+//39kLcoKOXngfJAlgHhrZQMBT4NmggY27rdTyU=;
+ b=OkK6n0CWkYyz9tCYrE9Xbc3RKThKzcFIvPv91XKLhno5ab8Py5A82P1cLQgoYRsLfK
+ S8ZcprLt418oWnDLkJqzBeOcQg74qacWwARkb/Y1qtd+TLI/tOrc15Gp7wkx0dTyX96f
+ A0a3vqKHhzbtg0gE1HwYONrJuC1olchuiAJRvzbVVxOWuZbyBme/lNJ6aGpHfTSagXfA
+ prKpH8KTeIjkW12fcd+Q33bICwWLp65t2nLjVcLS5XQgD16C4l6rg1kMgrpg5GQbW6tr
+ tIISULvBCvsDcuP0EKTwewjV15/ClepI+5dMA5Jd9ODWP6J2yEcNg9DGEzD8B29XTBLv
+ ebQw==
+X-Gm-Message-State: APjAAAXxl/UKHofERVbRWmo9L7EArH+vvandNm7nFp8S6Om9B/WT/2h0
+ DRYyItALGd0JbDdrK7tQtOA=
+X-Google-Smtp-Source: APXvYqwkXwtjqW26Qcpp7Hc7ja9Peywxh2VKCHRM058jDHvPrCPmq+NCtFnrfyEZR0PUI5IV4EMZtA==
+X-Received: by 2002:a05:600c:22d3:: with SMTP id
+ 19mr372114wmg.20.1579642480490; 
+ Tue, 21 Jan 2020 13:34:40 -0800 (PST)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id p5sm51848659wrt.79.2020.01.21.13.34.39
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 21 Jan 2020 13:34:40 -0800 (PST)
+To: justin.swartz@risingedge.co.za
+References: <20200121201146.18038-2-justin.swartz@risingedge.co.za>
+Subject: Re: [PATCH v2 1/2] ARM: dts: rockchip: add rga node for rk322x
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <7d85210b-e554-d875-0615-c2e93a264b5b@gmail.com>
+Date: Tue, 21 Jan 2020 22:34:38 +0100
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
+MIME-Version: 1.0
+In-Reply-To: <20200121201146.18038-2-justin.swartz@risingedge.co.za>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_121544_628365_789C44A7 
-X-CRM114-Status: UNSURE (   9.35  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200121_133444_102483_A6EA9257 
+X-CRM114-Status: GOOD (  15.48  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [188.40.0.84 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,39 +103,60 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org,
- Justin Swartz <justin.swartz@risingedge.co.za>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Enable RGA for Mecer Xtreme Mini S6.
+Hi Justin,
 
-Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
----
- arch/arm/boot/dts/rk3229-xms6.dts | 4 ++++
- 1 file changed, 4 insertions(+)
+rga is now inserted above vpu_mmu.
+Please check the address.
 
-diff --git a/arch/arm/boot/dts/rk3229-xms6.dts b/arch/arm/boot/dts/rk3229-xms6.dts
-index 679fc2b00..894f64a4a 100644
---- a/arch/arm/boot/dts/rk3229-xms6.dts
-+++ b/arch/arm/boot/dts/rk3229-xms6.dts
-@@ -202,6 +202,10 @@
- 	status = "okay";
- };
- 
-+&rga {
-+	status = "okay";
-+};
-+
- &sdmmc {
- 	cap-mmc-highspeed;
- 	disable-wp;
--- 
-2.11.0
+rga:       rga@20060000 {
+vpu_mmu: iommu@20020800 {
+
+Should go between vop_mmu and iep_mmu.
+
+vop_mmu: iommu@20053f00 {
+rga:       rga@20060000 {
+iep_mmu: iommu@20070800 {
+
+> Add a node to define the presence of RGA, a 2D raster graphic
+> acceleration unit.
+> 
+> Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
+> ---
+>  arch/arm/boot/dts/rk322x.dtsi | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
+> 
+> diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
+> index 340ed6ccb..efa733207 100644
+> --- a/arch/arm/boot/dts/rk322x.dtsi
+> +++ b/arch/arm/boot/dts/rk322x.dtsi
+> @@ -566,6 +566,17 @@
+>  		status = "disabled";
+>  	};
+>  
+> +	rga: rga@20060000 {
+> +		compatible = "rockchip,rk3228-rga", "rockchip,rk3288-rga";
+> +		reg = <0x20060000 0x1000>;
+> +		interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
+> +		clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA>;
+> +		clock-names = "aclk", "hclk", "sclk";
+> +		resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
+> +		reset-names = "core", "axi", "ahb";
+> +		status = "disabled";
+> +	};
+> +
+>  	vpu_mmu: iommu@20020800 {
+>  		compatible = "rockchip,iommu";
+>  		reg = <0x20020800 0x100>;
+> -- 
+> 2.11.0
 
 
 _______________________________________________
