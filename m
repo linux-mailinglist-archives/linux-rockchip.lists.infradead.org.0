@@ -2,88 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2587A14412A
-	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Jan 2020 17:01:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C3251443CC
+	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Jan 2020 18:58:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eCoSGs4YEbuT6V5rUaiZp+bMmqf9xitXGzZ7CmvHL5U=; b=EFqGBSFrEYJMTT
-	nsu04GBDw7My0EFtKC8w4o82POjYW3nXCNfKOAU+VdJNZGktSJESyILHIDwrH/ISV6KigTZIwHdfy
-	DPteJbaY9o37VYyy9TgkISMZ5AnyoKYu6/t+cfqaah9vrq2pkszCU1Hykh61riTweWNSD3ZzUAH/Y
-	0t8S6Lf8yFd4GiPQSdHs+n4v033G3TFhxZCS3vg6vQRlmBRfbz85xDaQWEec7a9ES2sdwTn068XXa
-	pHyTBjClJRHW0hk3eqw42CCnh2i9i/eAubpBvG2zLzhVTMAqrJUu4XpYPJxYd464jZsFqPmciihiJ
-	/D+tD8ugNxLz64XuNK+w==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TmXcRIpAlNV59Jj6zwMl37r1ZnVu0xJHOvABJlhHV70=; b=py8gVUnAutcc7H
+	om8UomGiEoGV7qFBzEkZRcbxORDph4krpB5fB6k16hdJ/B4aKBnzPDsNo/0GZnHdaKx5IY25oNCz0
+	hW6KY8piJOkGGpbfwPIehPVtI2+AJAz3i1wuEUdBNpo8+gdUJyb0aOepVSknyjkbBIWi6F77s0riG
+	kvEh1v8ENAZmFrHPZpyYMC61skIaiWL4E1cdFBwbuRuKGWONTwv7mTn0yaWGHLz46ZqWmFqCgmDBi
+	p3Labglx5BCwXPISnWSaA7xbfkb2KIK2KfOYC+lsvzHGwFCmFpJUdr7Chhq+CeyY1Hy5RSPEWBCa3
+	nsNMaGYSqR5ohG7ad45w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itvy1-00038i-Ae; Tue, 21 Jan 2020 16:01:25 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1itxmz-0002AP-VP; Tue, 21 Jan 2020 17:58:09 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itvxH-00033P-Dn; Tue, 21 Jan 2020 16:00:44 +0000
-Received: by mail-wm1-x344.google.com with SMTP id p17so3694934wma.1;
- Tue, 21 Jan 2020 08:00:37 -0800 (PST)
+ id 1itxma-0001qv-Bg; Tue, 21 Jan 2020 17:57:48 +0000
+Received: by mail-oi1-x244.google.com with SMTP id 18so3396474oin.9;
+ Tue, 21 Jan 2020 09:57:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=ytwKdiKDkBrq5dWN34mZGZBl7UpibNepadICMkoJFGA=;
- b=A3g8phgaxu7x2jJLxOOrTVVNprEJJJPK5vGTb65L/lIrSnqdZod0XDVtme4mjiZWmB
- tbew2hAP3T/tHd19LKPUnuHOwrZhT0zt/NvwCaVQrx9VhHjbFJOK9+CKbCksBbq4sy/7
- 1eOvdE6fyAYUUJfR6BjXc3TKC6jRXwx4dawndZh3kksTjoT+G7KX7yyuwfjEMc3z+6xn
- uUPo3msBSjzJ6zx4QL3Kg0YBK7HGBW67OG7ymS7ZOZ+CBl0D9gOmIxJ/im5KvK6tEDN0
- 5xgt0RFB6O5JTrS1WJOljBYb3636Iy35GI1N22oQwN0sydZmNcXUeL03g/Uogpxhj9c8
- zbkQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Mp6DdFVSXVePI6iSGCnPMxvllFc7taA3faXPCTrJyOk=;
+ b=fvs0k64WTpLPoEYSU10yB4vhu1oKNCS3z851fAJBpMS31H71pFpdt95LE6mt0lodMh
+ Jdqv99H4gGi4rcE1ufxinz/IjL1qBRzTshBYn4yImdugBHqsI/JvBDKbrLNnszNs8xDQ
+ 7CACHghR7TC+u1H1Yz57CoWfMmQiueT0PCEvJJHkVw72rFCT5yBklHSpu+SqGcn8vxNN
+ 8/lDvlGdM44tQFfDAWN260vjs6rXfoO5JpDNlqIuhvQJWCGbaCFHPIxVhRtMpVzJM3ye
+ NPI62fQL1BoPCFs8rgxB6F9lcQFjMQlGgM4h7Y0zL2uDpQAFC7BdMYhoTEx8/xAwnt7p
+ C3Pw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=ytwKdiKDkBrq5dWN34mZGZBl7UpibNepadICMkoJFGA=;
- b=mZsBKPE5GQGfwyMGn72VhY0qIuQAEWMARkwnUG/h0KGjHjDyfNpXUWC7ryO/jxQHQ1
- FywOZu22GcJhEcHf5JVaIiwArsRXdvBWAM/H/2/vCF/8LoEsgHyNG+X2/csl/vKZ8l+g
- ZobKvHr98C4UHugWzHG7KXLAIl4UZRBeUkFA1PHN0B2qMgWc3LdM2ydqJGif3Ahykyaz
- 5LjftqEvxtteEjctT6YQby9nEPlzATmJXLYOYukAzVh369/uRQDkDSISBepLTWbmR31m
- 2R9AqrSbqhYkx6yXCLwfCKDW4OdF7zN6xRAsTArhnLBKns6JtdK9cB+FaXgQMBVYxHjx
- g+qg==
-X-Gm-Message-State: APjAAAVsw26jIG/+1v61Lq0IkBwxPVfc4zFauQr51kGCWna14rNbOlMJ
- pHY9iHrp9LbFcKJTEhVwfaE=
-X-Google-Smtp-Source: APXvYqw/5uPfelRwAOPcMQ/7ch5/ttpQTTV4/ZW3Orj4e+6tsxvKNnOwkfDYFwEyTwz4cepmMWDCIg==
-X-Received: by 2002:a1c:3c89:: with SMTP id j131mr5150540wma.34.1579622436737; 
- Tue, 21 Jan 2020 08:00:36 -0800 (PST)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id u1sm4335276wmc.5.2020.01.21.08.00.35
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 21 Jan 2020 08:00:36 -0800 (PST)
-Subject: Re: [PATCH v2] dt-bindings: convert rockchip-drm.txt to
- rockchip-drm.yaml
-To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-References: <6371f95f-8bf8-47c9-021e-b23006f25405@collabora.com>
- <573dc6d1-5857-f3ba-a392-67351db727b5@gmail.com>
- <7c79efd2-f5b0-6736-19b0-4d116714f887@collabora.com>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <633202b7-31cb-a2ff-9461-631652cd94c0@gmail.com>
-Date: Tue, 21 Jan 2020 17:00:34 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Mp6DdFVSXVePI6iSGCnPMxvllFc7taA3faXPCTrJyOk=;
+ b=oeGH25hl0120KrOWJpWqTKVgMdtI7O3D+I3qMviu0QKkoCBBLyxq54tgqUp4xpSWHW
+ a9WT5MkDOXkv7ad6bIeqqzu0fjgAbUMAkkctanlV9uAAx66CijtNY+a8gGK/85m+sNcP
+ dN6SmJw5UCnk6Zr0hM69Jflbf7nGtDbIHSLLIKj3qDCr5/0afLUGKGF4HOWQIAAPT7ZM
+ 3vdu6A7dXWXhcsMafDhGfmc5qSXAnDnZMf1dKwIR9o//u+Zi/yKrv+DsUF7r1AQbB9TF
+ J00HHcsST5VPm++Zpdyke8POFORACOHVtJi+oEB/2w0sy5ZRyEbHpWd0UVMJlPukDm/6
+ r9hA==
+X-Gm-Message-State: APjAAAUkFWUqRZJVgzIbNDagB3tzHAzRbIa6klmHwhuEHyuAqu0l06xZ
+ ckZ+YAWCQjMcxsgnblQWbBI9V7aMqP1cTPGF6Ok=
+X-Google-Smtp-Source: APXvYqz8UqpqSR+lXSTxQDudfV5ATY6jfXYA7jHRsg0MIEWnG2M2frTp3v08cP9d/Qo4VBKw58GIa5lu+/MAx1m8ARs=
+X-Received: by 2002:aca:4ad5:: with SMTP id x204mr3773363oia.162.1579629462726; 
+ Tue, 21 Jan 2020 09:57:42 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <7c79efd2-f5b0-6736-19b0-4d116714f887@collabora.com>
-Content-Language: en-US
+References: <20200108162211.22358-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200108162211.22358-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <20200108162211.22358-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
+From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Date: Tue, 21 Jan 2020 17:57:18 +0000
+Message-ID: <CA+V-a8s1Jx8uZiSr0uiryS492EbFRoFg9QTwkosZsuyfRYp-3g@mail.gmail.com>
+Subject: Re: [v3 4/6] dt-bindings: PCI: rcar: Add bindings for R-Car PCIe
+ endpoint controller
+To: Rob Herring <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, 
+ Mark Rutland <mark.rutland@arm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, 
+ Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>, 
+ Marek Vasut <marek.vasut+renesas@gmail.com>, 
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ linux-pci <linux-pci@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_080039_464841_E794A1C6 
-X-CRM114-Status: GOOD (  13.35  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200121_095744_424532_54B678AA 
+X-CRM114-Status: GOOD (  18.34  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
+ provider [prabhakar.csengg[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -105,60 +99,130 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- airlied@linux.ie, dafna3@gmail.com, hjc@rock-chips.com,
- dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
- helen.koike@collabora.com, robh+dt@kernel.org, daniel@ffwll.ch,
- kernel@collabora.com, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
+ Jingoo Han <jingoohan1@gmail.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Will Deacon <will@kernel.org>, LAK <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGksCgpPbiAxLzIxLzIwIDQ6MjYgUE0sIERhZm5hIEhpcnNjaGZlbGQgd3JvdGU6Cj4gCj4gCj4g
-T24gMjEuMDEuMjAgMTY6MTEsIEpvaGFuIEpvbmtlciB3cm90ZToKPj4gSGkgRGFmbmEsCj4+Cj4+
-Cj4+Pgo+Pj4KPj4+IE9uIDIxLjAxLjIwIDE1OjAzLCBSb2IgSGVycmluZyB3cm90ZToKPj4+PiBP
-biBUdWUsIEphbiAyMSwgMjAyMCBhdCA2OjM1IEFNIERhZm5hIEhpcnNjaGZlbGQKPj4+PiA8ZGFm
-bmEuaGlyc2NoZmVsZEBjb2xsYWJvcmEuY29tPiB3cm90ZToKPj4+Pj4KPj4+Pj4gY29udmVydCB0
-aGUgYmluZGluZyBmaWxlIHJvY2tjaGlwLWRybS50eHQgdG8geWFtbCBmb3JtYXQuCj4+Pj4+IFRo
-aXMgd2FzIHRlc3RlZCBhbmQgdmVyaWZpZWQgd2l0aDoKPj4+Pj4gbWFrZSBkdF9iaW5kaW5nX2No
-ZWNrCj4+Pj4+IERUX1NDSEVNQV9GSUxFUz1Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
-Z3MvZGlzcGxheS9yb2NrY2hpcC9yb2NrY2hpcC1kcm0ueWFtbAo+Pj4+Pgo+Pj4+Cj4+Pj4gQWxz
-bywgbWFrZSBzdXJlIGp1c3QgJ21ha2UgZHRfYmluZGluZ19jaGVjaycgcGFzc2VzIGFzIHRoYXQg
-Y2hlY2tzIHRoZQo+Pj4+IGV4YW1wbGUgYWdhaW5zdCBhbGwgc2NoZW1hcy4KPj4+Cj4+PiBCdXQg
-dGhpcyBhbHNvIGNoZWNrcyB0aGUgb3RoZXIgc2NoZW1hcyBpbiBnZW5lcmFsLCBhbmQgd2hlbiBy
-dW5uaW5nIGl0LAo+Pj4gaXQgZmFpbHMgYmVjYXVzZSBvZiBidWdzIGluIG90aGVyIHNjaGVtYXMu
-Cj4+Cj4+Cj4+PiBGb3IgZXhhbXBsZSB3aXRoIGFybT1BUk0gSSBnZXQ6Cj4+Cj4+IFVzZToKPj4K
-Pj4gIyBlbmFibGUgUm9ja2NoaXAgYXJtIGluIG1lbnVjb25maWcKPj4gbWFrZSBBUkNIPWFybSBt
-ZW51Y29uZmlnCj4+Cj4+IG1ha2UgQVJDSD1hcm0gZHRfYmluZGluZ19jaGVjawo+PiBEVF9TQ0hF
-TUFfRklMRVM9RG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Rpc3BsYXkvcm9ja2No
-aXAvcm9ja2NoaXAtZHJtLnlhbWwKPj4KPj4KPj4gYW5kIG5vdDoKPj4gYXJtPUFSTQo+Pgo+IHll
-cywgc29ycnksIHRoaXMgaXMgd2hhdCBJIGRpZC4gV2hlbiBydW5uaW5nIHdpdGggdGhlIERUX1ND
-SEVNQV9GSUxFUwo+IHNldCB0aGVuIGl0IHBhc3NlcyBib3RoIG9uIEFSTSBhbmQgQVJNNjQKPiBi
-dXQgd2hlbiB0aGlzIHZhcmlhYmxlIGlzIG5vdCBzZXQgSSBnZXQgdGhlIGFib3ZlIGVycm9yLgoK
-IyBmb3IgSW50ZWwgdXNlOgptYWtlIGR0YnNfY2hlY2sKRFRfU0NIRU1BX0ZJTEVTPURvY3VtZW50
-YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L3JvY2tjaGlwL3JvY2tjaGlwLWRybS55
-YW1sCgoKIyBmb3IgUm9ja2NoaXAgdXNlOgptYWtlIEFSQ0g9YXJtIGR0YnNfY2hlY2sKRFRfU0NI
-RU1BX0ZJTEVTPURvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L3JvY2tj
-aGlwL3JvY2tjaGlwLWRybS55YW1sCgptYWtlIEFSQ0g9YXJtNjQgZHRic19jaGVjawpEVF9TQ0hF
-TUFfRklMRVM9RG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Rpc3BsYXkvcm9ja2No
-aXAvcm9ja2NoaXAtZHJtLnlhbWwKCkFsc28gY2hhbmdlOgoKZXhhbXBsZToKICBSZWR1Y2Ugc29t
-ZSBzcGFjZXMgaGVyZS4KCkFsc28gcmVtb3ZlICJ8IiBmcm9tIGRlc2NyaXB0aW9uLgoKU2VlOgpk
-ZXNjcmlwdGlvbjogfAogIEEgbW9yZSBkZXRhaWxlZCBtdWx0aS1saW5lIGRlc2NyaXB0aW9uIG9m
-IHRoZSBiaW5kaW5nLgoKICBEZXRhaWxzIGFib3V0IHRoZSBoYXJkd2FyZSBkZXZpY2UgYW5kIGFu
-eSBsaW5rcyB0byBkYXRhc2hlZXRzIGNhbiBnbyBoZXJlLgoKICBMaXRlcmFsIGJsb2NrcyBhcmUg
-bWFya2VkIHdpdGggdGhlICd8JyBhdCB0aGUgYmVnaW5uaW5nLiBUaGUgZW5kIGlzCm1hcmtlZCBi
-eQogIGluZGVudGF0aW9uIGxlc3MgdGhhbiB0aGUgZmlyc3QgbGluZSBvZiB0aGUgbGl0ZXJhbCBi
-bG9jay4gTGluZXMgYWxzbwpjYW5ub3QKICBiZWdpbiB3aXRoIGEgdGFiIGNoYXJhY3Rlci4KCj4g
-Cj4gRGFmbmEKPiAKPj4KPj4+Cj4+PiDCoMKgwqAgRFRDwqDCoMKgwqAKPj4+IERvY3VtZW50YXRp
-b24vZGV2aWNldHJlZS9iaW5kaW5ncy9jbG9jay9xY29tLGdjYy5leGFtcGxlLmR0LnlhbWwKPj4+
-IEVycm9yOgo+Pj4gRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Nsb2NrL3Fjb20s
-Z2NjLmV4YW1wbGUuZHRzOjExMS4yOC0yOQo+Pj4gc3ludGF4IGVycm9yCj4+PiBGQVRBTCBFUlJP
-UjogVW5hYmxlIHRvIHBhcnNlIGlucHV0IHRyZWUKPj4+Cj4+PiBEYWZuYQo+Pj4KPj4+Pgo+Pj4+
-PiBtYWtlIGR0YnNfY2hlY2sKPj4+Pj4gRFRfU0NIRU1BX0ZJTEVTPURvY3VtZW50YXRpb24vZGV2
-aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L3JvY2tjaGlwL3JvY2tjaGlwLWRybS55YW1sCj4+Pj4+
-Cj4+Pj4+Cj4+CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1yb2NrY2hpcAo=
+Hi Rob/Kishon,
+
+On Wed, Jan 8, 2020 at 4:22 PM Lad Prabhakar <prabhakar.csengg@gmail.com> wrote:
+>
+> This patch adds the bindings for the R-Car PCIe endpoint driver.
+>
+> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> ---
+>  .../devicetree/bindings/pci/rcar-pci-ep.yaml  | 76 +++++++++++++++++++
+>  1 file changed, 76 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+> new file mode 100644
+> index 000000000000..99c2a1174463
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+> @@ -0,0 +1,76 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +# Copyright (C) 2020 Renesas Electronics Europe GmbH - https://www.renesas.com/eu/en/
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/pci/rcar-pcie-ep.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Renesas R-Car PCIe Endpoint
+> +
+> +maintainers:
+> +  - Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - const: renesas,r8a774c0-pcie-ep
+> +      - const: renesas,rcar-gen3-pcie-ep
+> +
+> +  reg:
+> +    maxItems: 5
+> +
+> +  reg-names:
+> +    items:
+> +      - const: apb-base
+> +      - const: memory0
+> +      - const: memory1
+> +      - const: memory2
+> +      - const: memory3
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  clock-names:
+> +    items:
+> +      - const: pcie
+> +
+> +  max-functions:
+> +    minimum: 1
+> +    maximum: 6
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - resets
+> +  - power-domains
+> +  - clocks
+> +  - clock-names
+> +  - max-functions
+> +
+apart from dt_binding_check error are we OK with dt bindings ?
+
+Cheers,
+--Prabhakar
+
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/r8a774c0-cpg-mssr.h>
+> +    #include <dt-bindings/power/r8a774c0-sysc.h>
+> +
+> +     pcie0_ep: pcie-ep@fe000000 {
+> +            compatible = "renesas,r8a774c0-pcie-ep",
+> +                         "renesas,rcar-gen3-pcie-ep";
+> +            reg = <0 0xfe000000 0 0x80000>,
+> +                  <0x0 0xfe100000 0 0x100000>,
+> +                  <0x0 0xfe200000 0 0x200000>,
+> +                  <0x0 0x30000000 0 0x8000000>,
+> +                  <0x0 0x38000000 0 0x8000000>;
+> +            reg-names = "apb-base", "memory0", "memory1", "memory2", "memory3";
+> +            resets = <&cpg 319>;
+> +            power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
+> +            clocks = <&cpg CPG_MOD 319>;
+> +            clock-names = "pcie";
+> +            max-functions = /bits/ 8 <1>;
+> +    };
+> --
+> 2.20.1
+>
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
