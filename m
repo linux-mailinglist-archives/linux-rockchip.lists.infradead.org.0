@@ -2,46 +2,97 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D3411440BF
-	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Jan 2020 16:44:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2587A14412A
+	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Jan 2020 17:01:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=8Q1DFjAmzin+RgXosRHZC5VwkR6KCma6joDM+l9dIbU=; b=gRw
-	qAi4DEfYf+hYDC7IlDPevBsNPDnj8zlmd1S9xXmYJ25XgAC/G/atf43rjHaz6ZKBErEFxqP2V6EpS
-	ft9CbhYFUfZHEF2t2cUFwgmdQQnkfUC2wH1ncTf9fKmesbDTVYZ+wNoGp7qVWdhp8iW0+dUxGq9AP
-	LCA8clI2cPQTKvf8IOdWmgRjv5zqOee76SvFjx36QFRaYUvh2pQLutIOMTio8iBEI7C932Phea8U1
-	O7SUsyyfz4gCGXWlk4lJFaZO/wNFobJ3mbj2xCBQpkH2U5s3HOjYQM8EIFq0L6YaabozH5P3syrAU
-	g8nOI+110T72NDcD8J8UE+pvhZmyPZQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eCoSGs4YEbuT6V5rUaiZp+bMmqf9xitXGzZ7CmvHL5U=; b=EFqGBSFrEYJMTT
+	nsu04GBDw7My0EFtKC8w4o82POjYW3nXCNfKOAU+VdJNZGktSJESyILHIDwrH/ISV6KigTZIwHdfy
+	DPteJbaY9o37VYyy9TgkISMZ5AnyoKYu6/t+cfqaah9vrq2pkszCU1Hykh61riTweWNSD3ZzUAH/Y
+	0t8S6Lf8yFd4GiPQSdHs+n4v033G3TFhxZCS3vg6vQRlmBRfbz85xDaQWEec7a9ES2sdwTn068XXa
+	pHyTBjClJRHW0hk3eqw42CCnh2i9i/eAubpBvG2zLzhVTMAqrJUu4XpYPJxYd464jZsFqPmciihiJ
+	/D+tD8ugNxLz64XuNK+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itvh9-0002tJ-Rp; Tue, 21 Jan 2020 15:43:59 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1itvy1-00038i-Ae; Tue, 21 Jan 2020 16:01:25 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itvgh-0002V0-Uj; Tue, 21 Jan 2020 15:43:36 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: dafna) with ESMTPSA id E28BA263BC7
-From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3] dt-bindings: convert rockchip-drm.txt to rockchip-drm.yaml
-Date: Tue, 21 Jan 2020 16:43:14 +0100
-Message-Id: <20200121154314.3444-1-dafna.hirschfeld@collabora.com>
-X-Mailer: git-send-email 2.17.1
+ id 1itvxH-00033P-Dn; Tue, 21 Jan 2020 16:00:44 +0000
+Received: by mail-wm1-x344.google.com with SMTP id p17so3694934wma.1;
+ Tue, 21 Jan 2020 08:00:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=ytwKdiKDkBrq5dWN34mZGZBl7UpibNepadICMkoJFGA=;
+ b=A3g8phgaxu7x2jJLxOOrTVVNprEJJJPK5vGTb65L/lIrSnqdZod0XDVtme4mjiZWmB
+ tbew2hAP3T/tHd19LKPUnuHOwrZhT0zt/NvwCaVQrx9VhHjbFJOK9+CKbCksBbq4sy/7
+ 1eOvdE6fyAYUUJfR6BjXc3TKC6jRXwx4dawndZh3kksTjoT+G7KX7yyuwfjEMc3z+6xn
+ uUPo3msBSjzJ6zx4QL3Kg0YBK7HGBW67OG7ymS7ZOZ+CBl0D9gOmIxJ/im5KvK6tEDN0
+ 5xgt0RFB6O5JTrS1WJOljBYb3636Iy35GI1N22oQwN0sydZmNcXUeL03g/Uogpxhj9c8
+ zbkQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=ytwKdiKDkBrq5dWN34mZGZBl7UpibNepadICMkoJFGA=;
+ b=mZsBKPE5GQGfwyMGn72VhY0qIuQAEWMARkwnUG/h0KGjHjDyfNpXUWC7ryO/jxQHQ1
+ FywOZu22GcJhEcHf5JVaIiwArsRXdvBWAM/H/2/vCF/8LoEsgHyNG+X2/csl/vKZ8l+g
+ ZobKvHr98C4UHugWzHG7KXLAIl4UZRBeUkFA1PHN0B2qMgWc3LdM2ydqJGif3Ahykyaz
+ 5LjftqEvxtteEjctT6YQby9nEPlzATmJXLYOYukAzVh369/uRQDkDSISBepLTWbmR31m
+ 2R9AqrSbqhYkx6yXCLwfCKDW4OdF7zN6xRAsTArhnLBKns6JtdK9cB+FaXgQMBVYxHjx
+ g+qg==
+X-Gm-Message-State: APjAAAVsw26jIG/+1v61Lq0IkBwxPVfc4zFauQr51kGCWna14rNbOlMJ
+ pHY9iHrp9LbFcKJTEhVwfaE=
+X-Google-Smtp-Source: APXvYqw/5uPfelRwAOPcMQ/7ch5/ttpQTTV4/ZW3Orj4e+6tsxvKNnOwkfDYFwEyTwz4cepmMWDCIg==
+X-Received: by 2002:a1c:3c89:: with SMTP id j131mr5150540wma.34.1579622436737; 
+ Tue, 21 Jan 2020 08:00:36 -0800 (PST)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id u1sm4335276wmc.5.2020.01.21.08.00.35
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 21 Jan 2020 08:00:36 -0800 (PST)
+Subject: Re: [PATCH v2] dt-bindings: convert rockchip-drm.txt to
+ rockchip-drm.yaml
+To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+References: <6371f95f-8bf8-47c9-021e-b23006f25405@collabora.com>
+ <573dc6d1-5857-f3ba-a392-67351db727b5@gmail.com>
+ <7c79efd2-f5b0-6736-19b0-4d116714f887@collabora.com>
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <633202b7-31cb-a2ff-9461-631652cd94c0@gmail.com>
+Date: Tue, 21 Jan 2020 17:00:34 +0100
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
+MIME-Version: 1.0
+In-Reply-To: <7c79efd2-f5b0-6736-19b0-4d116714f887@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_074332_295510_166B45C5 
-X-CRM114-Status: GOOD (  12.68  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200121_080039_464841_E794A1C6 
+X-CRM114-Status: GOOD (  13.35  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -54,132 +105,60 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- dafna.hirschfeld@collabora.com, heiko@sntech.de, airlied@linux.ie,
- dafna3@gmail.com, hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
- linux-rockchip@lists.infradead.org, helen.koike@collabora.com,
- robh+dt@kernel.org, daniel@ffwll.ch, kernel@collabora.com,
- ezequiel@collabora.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
+ airlied@linux.ie, dafna3@gmail.com, hjc@rock-chips.com,
+ dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+ helen.koike@collabora.com, robh+dt@kernel.org, daniel@ffwll.ch,
+ kernel@collabora.com, ezequiel@collabora.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-convert the binding file rockchip-drm.txt to yaml format.
-This was tested and verified on ARM and ARM64 with:
-make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
-make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
-
-Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
----
-the detail of the ARM tests:
-export ARCH=arm KBUILD_OUTPUT=../kbuild/arm-test-dtc/ CROSS_COMPILE=arm-linux-gnueabi-
-make menuconfig # set rockchip system
-make clean
-make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
-make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
-
-the detail of the ARM64 tests:
-export ARCH=arm64 KBUILD_OUTPUT=../kbuild/arm64-test-dtc/ CROSS_COMPILE=aarch64-linux-gnu-
-make menuconfig # set rockchip system
-make clean
-make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
-make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
-
-
-Changes since v1:
-- fixed worng sign-off
-- fixed the path of the $id property to be the path of the yaml file
-Changes since v2:
-- add a missing ">" sign in maintainers list
-- change the licens to GPL-2.0-only
-- add "additionalProperties: false"
-- change the commit message to conform that it was tested on both ARM and ARM64
-
-
- .../display/rockchip/rockchip-drm.txt         | 19 ---------
- .../display/rockchip/rockchip-drm.yaml        | 40 +++++++++++++++++++
- 2 files changed, 40 insertions(+), 19 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
- create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
-
-diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt b/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
-deleted file mode 100644
-index 5707af89319d..000000000000
---- a/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
-+++ /dev/null
-@@ -1,19 +0,0 @@
--Rockchip DRM master device
--================================
--
--The Rockchip DRM master device is a virtual device needed to list all
--vop devices or other display interface nodes that comprise the
--graphics subsystem.
--
--Required properties:
--- compatible: Should be "rockchip,display-subsystem"
--- ports: Should contain a list of phandles pointing to display interface port
--  of vop devices. vop definitions as defined in
--  Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
--
--example:
--
--display-subsystem {
--	compatible = "rockchip,display-subsystem";
--	ports = <&vopl_out>, <&vopb_out>;
--};
-diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
-new file mode 100644
-index 000000000000..ec8ae742d4da
---- /dev/null
-+++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
-@@ -0,0 +1,40 @@
-+# SPDX-License-Identifier: (GPL-2.0-only)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/display/rockchip/rockchip-drm.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Rockchip DRM master device
-+
-+maintainers:
-+  - Sandy Huang <hjc@rock-chips.com>
-+  - Heiko Stuebner <heiko@sntech.de>
-+
-+description: |
-+  The Rockchip DRM master device is a virtual device needed to list all
-+  vop devices or other display interface nodes that comprise the
-+  graphics subsystem.
-+
-+properties:
-+  compatible:
-+    const: rockchip,display-subsystem
-+
-+  ports:
-+    $ref: /schemas/types.yaml#/definitions/phandle-array
-+    description: |
-+      Should contain a list of phandles pointing to display interface port
-+      of vop devices. vop definitions as defined in
-+      Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
-+
-+required:
-+  - compatible
-+  - ports
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    display-subsystem {
-+        compatible = "rockchip,display-subsystem";
-+        ports = <&vopl_out>, <&vopb_out>;
-+    };
--- 
-2.17.1
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGksCgpPbiAxLzIxLzIwIDQ6MjYgUE0sIERhZm5hIEhpcnNjaGZlbGQgd3JvdGU6Cj4gCj4gCj4g
+T24gMjEuMDEuMjAgMTY6MTEsIEpvaGFuIEpvbmtlciB3cm90ZToKPj4gSGkgRGFmbmEsCj4+Cj4+
+Cj4+Pgo+Pj4KPj4+IE9uIDIxLjAxLjIwIDE1OjAzLCBSb2IgSGVycmluZyB3cm90ZToKPj4+PiBP
+biBUdWUsIEphbiAyMSwgMjAyMCBhdCA2OjM1IEFNIERhZm5hIEhpcnNjaGZlbGQKPj4+PiA8ZGFm
+bmEuaGlyc2NoZmVsZEBjb2xsYWJvcmEuY29tPiB3cm90ZToKPj4+Pj4KPj4+Pj4gY29udmVydCB0
+aGUgYmluZGluZyBmaWxlIHJvY2tjaGlwLWRybS50eHQgdG8geWFtbCBmb3JtYXQuCj4+Pj4+IFRo
+aXMgd2FzIHRlc3RlZCBhbmQgdmVyaWZpZWQgd2l0aDoKPj4+Pj4gbWFrZSBkdF9iaW5kaW5nX2No
+ZWNrCj4+Pj4+IERUX1NDSEVNQV9GSUxFUz1Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
+Z3MvZGlzcGxheS9yb2NrY2hpcC9yb2NrY2hpcC1kcm0ueWFtbAo+Pj4+Pgo+Pj4+Cj4+Pj4gQWxz
+bywgbWFrZSBzdXJlIGp1c3QgJ21ha2UgZHRfYmluZGluZ19jaGVjaycgcGFzc2VzIGFzIHRoYXQg
+Y2hlY2tzIHRoZQo+Pj4+IGV4YW1wbGUgYWdhaW5zdCBhbGwgc2NoZW1hcy4KPj4+Cj4+PiBCdXQg
+dGhpcyBhbHNvIGNoZWNrcyB0aGUgb3RoZXIgc2NoZW1hcyBpbiBnZW5lcmFsLCBhbmQgd2hlbiBy
+dW5uaW5nIGl0LAo+Pj4gaXQgZmFpbHMgYmVjYXVzZSBvZiBidWdzIGluIG90aGVyIHNjaGVtYXMu
+Cj4+Cj4+Cj4+PiBGb3IgZXhhbXBsZSB3aXRoIGFybT1BUk0gSSBnZXQ6Cj4+Cj4+IFVzZToKPj4K
+Pj4gIyBlbmFibGUgUm9ja2NoaXAgYXJtIGluIG1lbnVjb25maWcKPj4gbWFrZSBBUkNIPWFybSBt
+ZW51Y29uZmlnCj4+Cj4+IG1ha2UgQVJDSD1hcm0gZHRfYmluZGluZ19jaGVjawo+PiBEVF9TQ0hF
+TUFfRklMRVM9RG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Rpc3BsYXkvcm9ja2No
+aXAvcm9ja2NoaXAtZHJtLnlhbWwKPj4KPj4KPj4gYW5kIG5vdDoKPj4gYXJtPUFSTQo+Pgo+IHll
+cywgc29ycnksIHRoaXMgaXMgd2hhdCBJIGRpZC4gV2hlbiBydW5uaW5nIHdpdGggdGhlIERUX1ND
+SEVNQV9GSUxFUwo+IHNldCB0aGVuIGl0IHBhc3NlcyBib3RoIG9uIEFSTSBhbmQgQVJNNjQKPiBi
+dXQgd2hlbiB0aGlzIHZhcmlhYmxlIGlzIG5vdCBzZXQgSSBnZXQgdGhlIGFib3ZlIGVycm9yLgoK
+IyBmb3IgSW50ZWwgdXNlOgptYWtlIGR0YnNfY2hlY2sKRFRfU0NIRU1BX0ZJTEVTPURvY3VtZW50
+YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L3JvY2tjaGlwL3JvY2tjaGlwLWRybS55
+YW1sCgoKIyBmb3IgUm9ja2NoaXAgdXNlOgptYWtlIEFSQ0g9YXJtIGR0YnNfY2hlY2sKRFRfU0NI
+RU1BX0ZJTEVTPURvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L3JvY2tj
+aGlwL3JvY2tjaGlwLWRybS55YW1sCgptYWtlIEFSQ0g9YXJtNjQgZHRic19jaGVjawpEVF9TQ0hF
+TUFfRklMRVM9RG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Rpc3BsYXkvcm9ja2No
+aXAvcm9ja2NoaXAtZHJtLnlhbWwKCkFsc28gY2hhbmdlOgoKZXhhbXBsZToKICBSZWR1Y2Ugc29t
+ZSBzcGFjZXMgaGVyZS4KCkFsc28gcmVtb3ZlICJ8IiBmcm9tIGRlc2NyaXB0aW9uLgoKU2VlOgpk
+ZXNjcmlwdGlvbjogfAogIEEgbW9yZSBkZXRhaWxlZCBtdWx0aS1saW5lIGRlc2NyaXB0aW9uIG9m
+IHRoZSBiaW5kaW5nLgoKICBEZXRhaWxzIGFib3V0IHRoZSBoYXJkd2FyZSBkZXZpY2UgYW5kIGFu
+eSBsaW5rcyB0byBkYXRhc2hlZXRzIGNhbiBnbyBoZXJlLgoKICBMaXRlcmFsIGJsb2NrcyBhcmUg
+bWFya2VkIHdpdGggdGhlICd8JyBhdCB0aGUgYmVnaW5uaW5nLiBUaGUgZW5kIGlzCm1hcmtlZCBi
+eQogIGluZGVudGF0aW9uIGxlc3MgdGhhbiB0aGUgZmlyc3QgbGluZSBvZiB0aGUgbGl0ZXJhbCBi
+bG9jay4gTGluZXMgYWxzbwpjYW5ub3QKICBiZWdpbiB3aXRoIGEgdGFiIGNoYXJhY3Rlci4KCj4g
+Cj4gRGFmbmEKPiAKPj4KPj4+Cj4+PiDCoMKgwqAgRFRDwqDCoMKgwqAKPj4+IERvY3VtZW50YXRp
+b24vZGV2aWNldHJlZS9iaW5kaW5ncy9jbG9jay9xY29tLGdjYy5leGFtcGxlLmR0LnlhbWwKPj4+
+IEVycm9yOgo+Pj4gRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Nsb2NrL3Fjb20s
+Z2NjLmV4YW1wbGUuZHRzOjExMS4yOC0yOQo+Pj4gc3ludGF4IGVycm9yCj4+PiBGQVRBTCBFUlJP
+UjogVW5hYmxlIHRvIHBhcnNlIGlucHV0IHRyZWUKPj4+Cj4+PiBEYWZuYQo+Pj4KPj4+Pgo+Pj4+
+PiBtYWtlIGR0YnNfY2hlY2sKPj4+Pj4gRFRfU0NIRU1BX0ZJTEVTPURvY3VtZW50YXRpb24vZGV2
+aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L3JvY2tjaGlwL3JvY2tjaGlwLWRybS55YW1sCj4+Pj4+
+Cj4+Pj4+Cj4+CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1yb2NrY2hpcAo=
