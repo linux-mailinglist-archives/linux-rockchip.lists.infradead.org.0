@@ -2,49 +2,44 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41391143B50
-	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Jan 2020 11:45:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5ED1143C03
+	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Jan 2020 12:27:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s205rDILIKFk6AW8tMJcOchJVETtP/maN2TAOhESMf4=; b=k5Xq4Wh0rukTA/
-	qSGMbuZOB/IJVBZICAJDyurZGJLesqjQ4SaO92WK/irsZNOP56DE1PwY7Xd2Um9g5qkmtP8dKQ7ef
-	LEq8PSXu99u/Ydc8ZFWoToMrSjeyni2nTJxhcbgef0Xbga6D6FzcwX9VI34hrxMl8rz8LqVjnv21u
-	LOl2I2uz6g76xGYivKhF6KOsxZD4Zq9Am7wzt5EQIn9dNQhCbr8bVunTdoxb6IP0Be9CJV/tCvglq
-	Q92I4IuFvtGIxxB4Vh51RiGAmWJ31sNNHhUen3tQ0eHWrj4T54WmhQRHjAoPr7xghKRbWueC1L+Y9
-	G6/CQY76lztG8lq5c2WA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=HIAgOfr+LVg8MDRVicN8H4rGv0DF9nkVX4LIQFXHxxQ=; b=h41
+	hdmn55v51U2OeFdzCDg59BU14bYyOPtzEuChjvE2wPvos8FD62gU19eqBnYMXjgUasArhkr1luRsQ
+	WE4+KN41a+zhLUyhc7bbKQ+xi4f4g/Twho1zdChLQ2hvjr5nCamPeTzBTLo+xUYYdWBmPIiiiXmCH
+	ybYVGZSF3sZllsNPAOCiFYfDM52nobNmnrNaC4R/rNFQ3pEBHauBK3b+T5ZeyrlttP3YiTA2O+5lc
+	VRtW3YygsiLa/yiyq2OJcsV/uVKsECDSQmBHrfuQCQF3J5cs53+rjYtgPLCoXwKbIyBUEv6pS3W7n
+	V/FnWZ5qZYdkAC50UbGtKuskdPIFWtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itr2B-0005zq-Ej; Tue, 21 Jan 2020 10:45:23 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1itrhI-0005pf-Uz; Tue, 21 Jan 2020 11:27:52 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itr1y-0005sV-Kl; Tue, 21 Jan 2020 10:45:15 +0000
+ id 1itrh2-0005h5-SP; Tue, 21 Jan 2020 11:27:40 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id ED66F293365
-Message-ID: <241033bf82fc7e955dd20c0084bfd4f6fc9fc75b.camel@collabora.com>
-Subject: Re: [PATCH 1/4] media: rockchip/rga: add rk3228-rga to
- rockchip_rga_match[]
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Justin Swartz <justin.swartz@risingedge.co.za>, Jacob Chen
- <jacob-chen@iotwrt.com>, Mauro Carvalho Chehab <mchehab@kernel.org>, Heiko
- Stuebner <heiko@sntech.de>
-Date: Tue, 21 Jan 2020 07:45:01 -0300
-In-Reply-To: <20200120194158.25357-1-justin.swartz@risingedge.co.za>
-References: <20200120194158.25357-1-justin.swartz@risingedge.co.za>
-Organization: Collabora
-User-Agent: Evolution 3.34.1-2 
-MIME-Version: 1.0
+ (Authenticated sender: dafna) with ESMTPSA id CBB7F29255D
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] dt-bindings: convert rockchip-drm.txt to rockchip-drm.yaml
+Date: Tue, 21 Jan 2020 12:27:18 +0100
+Message-Id: <20200121112718.18466-1-dafna.hirschfeld@collabora.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_024510_809314_98751A3A 
-X-CRM114-Status: GOOD (  13.39  )
+X-CRM114-CacheID: sfid-20200121_032737_050807_816D9BF1 
+X-CRM114-Status: GOOD (  10.43  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -61,45 +56,104 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ dafna.hirschfeld@collabora.com, heiko@sntech.de, airlied@linux.ie,
+ dafna3@gmail.com, hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
+ linux-rockchip@lists.infradead.org, helen.koike@collabora.com,
+ robh+dt@kernel.org, daniel@ffwll.ch, kernel@collabora.com,
+ ezequiel@collabora.com, Dafna Hirschfeld <dafna.hirschfeld@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, 2020-01-20 at 19:41 +0000, Justin Swartz wrote:
-> Add an entry to the rockchip_rga_match array for "rockchip,rk3228-rga"
-> 
-> Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
-> ---
->  drivers/media/platform/rockchip/rga/rga.c | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> diff --git a/drivers/media/platform/rockchip/rga/rga.c b/drivers/media/platform/rockchip/rga/rga.c
-> index e9ff12b6b..268116cd5 100644
-> --- a/drivers/media/platform/rockchip/rga/rga.c
-> +++ b/drivers/media/platform/rockchip/rga/rga.c
-> @@ -956,6 +956,9 @@ static const struct dev_pm_ops rga_pm = {
->  
->  static const struct of_device_id rockchip_rga_match[] = {
->  	{
-> +		.compatible = "rockchip,rk3228-rga",
-> +	},
+From: Dafna Hirschfeld <dafna.hirschfeld@gmail.com>
 
-Unless you need to tune something in the driver
-specifically for rk3228, then you don't need a
-new compatible string.
+convert the binding file rockchip-drm.txt to yaml format.
+This was tested and verified with:
+make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
 
-As the name implies, it's just a "compatible",
-so you may simply declare your rga dts node as
-compatible to "rockchip,rk3288-rga".
+Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@gmail.com>
+---
+ .../display/rockchip/rockchip-drm.txt         | 19 ----------
+ .../display/rockchip/rockchip-drm.yaml        | 38 +++++++++++++++++++
+ 2 files changed, 38 insertions(+), 19 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
+ create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
 
-(Of course, this means we shouldn't have added
-the rk3399 compatible string.)
-
-Regards,
-Ezequiel
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt b/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
+deleted file mode 100644
+index 5707af89319d..000000000000
+--- a/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
++++ /dev/null
+@@ -1,19 +0,0 @@
+-Rockchip DRM master device
+-================================
+-
+-The Rockchip DRM master device is a virtual device needed to list all
+-vop devices or other display interface nodes that comprise the
+-graphics subsystem.
+-
+-Required properties:
+-- compatible: Should be "rockchip,display-subsystem"
+-- ports: Should contain a list of phandles pointing to display interface port
+-  of vop devices. vop definitions as defined in
+-  Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+-
+-example:
+-
+-display-subsystem {
+-	compatible = "rockchip,display-subsystem";
+-	ports = <&vopl_out>, <&vopb_out>;
+-};
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+new file mode 100644
+index 000000000000..e4ef1a02196d
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+@@ -0,0 +1,38 @@
++# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/rockchip-drm.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip DRM master device
++
++maintainers:
++  - Sandy Huang <hjc@rock-chips.com
++  - Heiko Stuebner <heiko@sntech.de>
++
++description: |
++  The Rockchip DRM master device is a virtual device needed to list all
++  vop devices or other display interface nodes that comprise the
++  graphics subsystem.
++
++properties:
++  compatible:
++    const: rockchip,display-subsystem
++
++  ports:
++    $ref: /schemas/types.yaml#/definitions/phandle-array
++    description: |
++      Should contain a list of phandles pointing to display interface port
++      of vop devices. vop definitions as defined in
++      Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
++
++required:
++  - compatible
++  - ports
++
++examples:
++  - |
++    display-subsystem {
++        compatible = "rockchip,display-subsystem";
++        ports = <&vopl_out>, <&vopb_out>;
++    };
+-- 
+2.17.1
 
 
 _______________________________________________
