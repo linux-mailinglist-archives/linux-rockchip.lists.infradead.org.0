@@ -2,95 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26FDB144040
-	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Jan 2020 16:11:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A46B144078
+	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Jan 2020 16:26:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iVVfQS3C6UzE/aQyF45GFVtGFQ+aylUGp8vCj7RE50U=; b=RH0UrYrc0ez8xE
-	RgyX2QaGD4v5y2aA++tiL8I6e25vCN5pP3/r5KRSwHmpmLPQbs3x/8933uvLP8M7cP6buXjy+rp1Z
-	X9FR1u9g5HDN5RlnTo7Z6cyDb0TGsSb+5jLPW24Ir4flY6QYPJfb1Qe5pEPUbOOrkeD/unfcyPVpM
-	EZ6wgjDqsGGA0sfpFDw+oUOqzsWkw4OchE3NRt343vAYXMuwZsMSsXdz4f4+WDtXr++oNRNknTHr/
-	9rZl5Zre8iUm9NQTvfXMSHL31QZ0Fvi4AEbgtfYyVVO/ENDWnDrebyQaOEzmy+w3ZsWNrbGTjrd6q
-	sXfkfBciKFxJczAw1Xbg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=fzpE/s5LB+SLBi6FJtSTExFOYukWPXxf5yxLBdtv3S4=; b=UG7zikIIdmWASmpyePbkyjsh+
+	t+aGZJCscxR/r47XEI62xODlDTOnNmB5in4Rvf9sbGhp2lm/HnhLAElmyVnqcKJ4fwwt2MBHbG3pw
+	wCaC0P3C+cxW7WLnwkG/bAc+CvEgPApDHqSSgwzgJyLznMY4fhaYeGhRfzp8jET5hgVi4shBWnDiP
+	ZShBViSXfIE995OnfdznTsLrGWYuOhC39bpxGciRleyKXqKPEpESzQM61Td26UHyqYZ+aWPg5VcYt
+	aFZ/P3B6yhh4knzk2/7at25z05qEswy4ZnvwHCjoWwIMPLsx11uwqd6ikQgylNiZfwzrRfkf8CdqX
+	lOcmRpQDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itvBg-00071S-TJ; Tue, 21 Jan 2020 15:11:28 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1itvQ5-0004Zf-S6; Tue, 21 Jan 2020 15:26:21 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itvBZ-0006yy-Mh; Tue, 21 Jan 2020 15:11:27 +0000
-Received: by mail-wm1-x342.google.com with SMTP id w5so2313358wmi.1;
- Tue, 21 Jan 2020 07:11:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:cc:references:subject:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=kV29KCb1tTjsoAawp5eJRY4AocgYk483wI8KhDn3Mn0=;
- b=RUX/r9XczXOUQ8uWuvKZBE0mKNBA3OSB7liIzJ9cde+h/JBPVxnlsyHI+9HaqUxGzn
- 6yeNjvGkLD2sZLLRct9PvTBZTkHCpMeBPq0ABBHZK5jmDShaa8+7PMnME8xcH9Je/OnY
- GW4kOJYOuoGiYn3jMem/accrJTGgFIKAe4P2m8Je5AjyPOl+gsHDC5IjObvHxbx4Ao4e
- 3K5b1jgZHS1jqW2kYjOd56PFBDBdarIM8I/VjrX1FpoLplXu4bIuFbnPaCt+rBmlVm/T
- EwB3t9OyeVSsyosVjzVZ8vCcl8UDJiALvyHjNfh0kzvPEm0l/T0oMwqys25Z9x7uxcBa
- mKxA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:to:cc:references:subject:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=kV29KCb1tTjsoAawp5eJRY4AocgYk483wI8KhDn3Mn0=;
- b=cUKY7MQYszehfHS5GKWgU6f2YKvOZ/G0QQXK05a6MWZ5xQh6L21g3BQbA5qWf2mGpl
- RqBV0qbJwAIvEcNYFbqe+Qe8zzgxZI5ILCKtyatLi6YmKrnK/wtu8VLD1cFo4jlPsHNX
- F46em0oG7I3uBCmu9o4M/cIqEy6FQu4sGqnZUl9a06sxw8pB42JBJt6E73hvpPpywEeC
- WsdYfyMqxACbfD8ifidJimESKXgBnzFNO2n58tQw1vkq1tVZ7QzMSgxZHpwGa2AtWIw7
- AS0f4DzsBB1rkqMxCHv+GUJCReiF4SiU0Qy+bEBFdJjL7gSD4vopXG6xr/xFvTp61983
- OUcQ==
-X-Gm-Message-State: APjAAAXTRiB2vOhoEqpg+ckgZNduwquNg+9ysOiQlc5+i7ruBNux27ps
- x7AAi9Htk4/ys/DiTRj7z9nUO3lO
-X-Google-Smtp-Source: APXvYqzVxW20eNVZ9aiYI5P39LBGVZIhsGs+GUktDebjr7JOrRBt1iJHlF1C395ejIGm9PyahohwIg==
-X-Received: by 2002:a1c:5f06:: with SMTP id t6mr4912501wmb.32.1579619480435;
- Tue, 21 Jan 2020 07:11:20 -0800 (PST)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id v83sm4639782wmg.16.2020.01.21.07.11.18
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 21 Jan 2020 07:11:19 -0800 (PST)
-To: dafna.hirschfeld@collabora.com
-References: <6371f95f-8bf8-47c9-021e-b23006f25405@collabora.com>
+ id 1itvPq-0004Qy-2H; Tue, 21 Jan 2020 15:26:12 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: dafna) with ESMTPSA id C679F28C03C
 Subject: Re: [PATCH v2] dt-bindings: convert rockchip-drm.txt to
  rockchip-drm.yaml
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <573dc6d1-5857-f3ba-a392-67351db727b5@gmail.com>
-Date: Tue, 21 Jan 2020 16:11:17 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+To: Johan Jonker <jbx6244@gmail.com>
+References: <6371f95f-8bf8-47c9-021e-b23006f25405@collabora.com>
+ <573dc6d1-5857-f3ba-a392-67351db727b5@gmail.com>
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Message-ID: <7c79efd2-f5b0-6736-19b0-4d116714f887@collabora.com>
+Date: Tue, 21 Jan 2020 16:26:00 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <6371f95f-8bf8-47c9-021e-b23006f25405@collabora.com>
+In-Reply-To: <573dc6d1-5857-f3ba-a392-67351db727b5@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_071121_762515_EA5D1B19 
-X-CRM114-Status: GOOD (  11.65  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200121_072606_239104_DAB0DED4 
+X-CRM114-Status: GOOD (  13.78  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,58 +69,67 @@ Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
  helen.koike@collabora.com, robh+dt@kernel.org, daniel@ffwll.ch,
  kernel@collabora.com, ezequiel@collabora.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Dafna,
 
 
+On 21.01.20 16:11, Johan Jonker wrote:
+> Hi Dafna,
 > 
 > 
-> On 21.01.20 15:03, Rob Herring wrote:
->> On Tue, Jan 21, 2020 at 6:35 AM Dafna Hirschfeld
->> <dafna.hirschfeld@collabora.com> wrote:
+>>
+>>
+>> On 21.01.20 15:03, Rob Herring wrote:
+>>> On Tue, Jan 21, 2020 at 6:35 AM Dafna Hirschfeld
+>>> <dafna.hirschfeld@collabora.com> wrote:
+>>>>
+>>>> convert the binding file rockchip-drm.txt to yaml format.
+>>>> This was tested and verified with:
+>>>> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
 >>>
->>> convert the binding file rockchip-drm.txt to yaml format.
->>> This was tested and verified with:
->>> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
->> 
->> Also, make sure just 'make dt_binding_check' passes as that checks the
->> example against all schemas.
+>>> Also, make sure just 'make dt_binding_check' passes as that checks the
+>>> example against all schemas.
+>>
+>> But this also checks the other schemas in general, and when running it,
+>> it fails because of bugs in other schemas.
 > 
-> But this also checks the other schemas in general, and when running it, 
-> it fails because of bugs in other schemas.
+> 
+>> For example with arm=ARM I get:
+> 
+> Use:
+> 
+> # enable Rockchip arm in menuconfig
+> make ARCH=arm menuconfig
+> 
+> make ARCH=arm dt_binding_check
+> DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+> 
+> and not:
+> arm=ARM
+> 
+yes, sorry, this is what I did. When running with the DT_SCHEMA_FILES 
+set then it passes both on ARM and ARM64
+but when this variable is not set I get the above error.
 
-
-> For example with arm=ARM I get:
-
-Use:
-
-# enable Rockchip arm in menuconfig
-make ARCH=arm menuconfig
-
-make ARCH=arm dt_binding_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
-
-and not:
-arm=ARM
-
+Dafna
 
 > 
->    DTC     Documentation/devicetree/bindings/clock/qcom,gcc.example.dt.yaml
-> Error: 
-> Documentation/devicetree/bindings/clock/qcom,gcc.example.dts:111.28-29 
-> syntax error
-> FATAL ERROR: Unable to parse input tree
-> 
-> Dafna
-> 
->> 
->>> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+>>
+>>     DTC     Documentation/devicetree/bindings/clock/qcom,gcc.example.dt.yaml
+>> Error:
+>> Documentation/devicetree/bindings/clock/qcom,gcc.example.dts:111.28-29
+>> syntax error
+>> FATAL ERROR: Unable to parse input tree
+>>
+>> Dafna
+>>
 >>>
-
+>>>> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+>>>>
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
