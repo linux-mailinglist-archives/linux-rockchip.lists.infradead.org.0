@@ -2,56 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 469FB143EBE
-	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Jan 2020 14:59:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A79A7143EDF
+	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Jan 2020 15:04:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0GMSqitXDN9OPCB3CuYF+d7atcM/DCfuoglmsw5WQVM=; b=GZv9hpqmjKGziL
-	Hqm4OeG551kHP6E75i4T0AY25oA6YLahTHU+pfpASXtbwUZIm19vyuYawsnocGXA5PE+Ok9tQVUVP
-	joT66hROjq8QENUaVBbiSUI54vbnZx/M4kllPNpTtLRX0QXiVqalFXpzjdADZOIH2ZFATfKWFPQoM
-	toGmcyNu8rEAiaihJsV0Sy66qFwnC3OjSDZkZww7m5j1UIchS1f9henZQePwvXS2hGtGKU1HK4Bi7
-	XKYPne90UD4nTBzHBalGboyTEwgqihTeRj/cnO0LqehDm1r/Ilxel7jUp8fzWPtBLroeJI6Wyzcfl
-	Et3fpiV1uLD06H/zWG4g==;
+	List-Owner; bh=bHPTGTliQcLYjp2MyPLZL4CR0HQbPL2lt0J3fx6JqKw=; b=lpz3PaIGX6zOtU
+	9NSo0Z+c44hJ7g8VazdsUd1WW7YO70JmOhZCF1tAF4fnl5Es44otkAlQhRHQCZFIoBC9DEmyq0S2z
+	rnsdbFrRFi1DmGQ9qnC/ErHduaFXzFMqlO6CWka+F9tWmPdKwwLFzAgH8WyTlo75skx381wQFrpeS
+	skwkJYqFzgGmzg8pr2hOHIZr7fgFB8rkjVQMH2qbBXgqrwqSi42xScfacRXUPNu/gZ0/BAsUXYZt5
+	enxu9p7zqMx0IBk/MZ/QIIpj5xq5PfZd8tQzRwGe19JmSRUSufT5c766Z/nCoop7qWgHGj6e2kfm9
+	BZlIlewi9KZ1h4mfrTXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itu46-0007At-VR; Tue, 21 Jan 2020 13:59:35 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+	id 1itu8n-0000ez-Q1; Tue, 21 Jan 2020 14:04:25 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itu3t-000723-EG; Tue, 21 Jan 2020 13:59:23 +0000
-X-Originating-IP: 90.76.211.102
-Received: from xps13 (lfbn-tou-1-1151-102.w90-76.abo.wanadoo.fr
- [90.76.211.102]) (Authenticated sender: miquel.raynal@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id B446B60016;
- Tue, 21 Jan 2020 13:59:08 +0000 (UTC)
-Date: Tue, 21 Jan 2020 14:59:07 +0100
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Heiko Stuebner <heiko@sntech.de>
-Subject: Re: [PATCH] arm64: dts: rockchip: fix px30 lvds ports
-Message-ID: <20200121145907.7fef0316@xps13>
-In-Reply-To: <20200121134510.3893487-1-heiko@sntech.de>
-References: <20200121134510.3893487-1-heiko@sntech.de>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1itu8Y-0000WD-Bc; Tue, 21 Jan 2020 14:04:14 +0000
+Received: from mail-qv1-f49.google.com (mail-qv1-f49.google.com
+ [209.85.219.49])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6142821569;
+ Tue, 21 Jan 2020 14:04:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579615449;
+ bh=RhQe3QXk/zDnaa/l8gaC+5yGDQC5asHgWocfmrxWn1U=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=TDc74Oc8pNrYsPvvSU21bExn8W8A9aUaQ4WNv6QuED+ZABtq9gzLTSYnZpKmvHEyt
+ RTecwQwHWtLID8+6KiPJJHrGoksK1fwqQd1AZk3WU9MUmFElh7LP0gcPuMDLfc4+yE
+ pXdr0Dvvso8wRoPlGfU5RQ6IgFmXPFlhOe6W3NnI=
+Received: by mail-qv1-f49.google.com with SMTP id p2so1460286qvo.10;
+ Tue, 21 Jan 2020 06:04:09 -0800 (PST)
+X-Gm-Message-State: APjAAAXG+iECJ+Gx4q+lgInvHEnrxQrhpurFih9akVXBa9a5oCNPhx6b
+ f2B4ATJNgNKUQJdAo2LNZzZXV4q0nxuNfGAWvA==
+X-Google-Smtp-Source: APXvYqwJp13n5rPTJJDOXfMUKI9hXM9vs+rUXNz1Y5Q8u6qz7eER6mpKwoqon55uA3F4Uxi8MfmUkTp8hNPqSH0uU+Y=
+X-Received: by 2002:ad4:4511:: with SMTP id k17mr4650910qvu.135.1579615447751; 
+ Tue, 21 Jan 2020 06:04:07 -0800 (PST)
 MIME-Version: 1.0
+References: <20200121123445.29774-1-dafna.hirschfeld@collabora.com>
+In-Reply-To: <20200121123445.29774-1-dafna.hirschfeld@collabora.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Tue, 21 Jan 2020 08:03:55 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJv-gXOK=80nqnO0TB1P-+1+E_vDaN3XSymKQfSLVTBsQ@mail.gmail.com>
+Message-ID: <CAL_JsqJv-gXOK=80nqnO0TB1P-+1+E_vDaN3XSymKQfSLVTBsQ@mail.gmail.com>
+Subject: Re: [PATCH v2] dt-bindings: convert rockchip-drm.txt to
+ rockchip-drm.yaml
+To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_055921_616701_4B6F341B 
-X-CRM114-Status: GOOD (  14.81  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200121_060410_443090_556CEA00 
+X-CRM114-Status: GOOD (  20.25  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.195 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.195 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,44 +84,128 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, christoph.muellner@theobroma-systems.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ "heiko@sntech.de" <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
+ dafna3@gmail.com, =?UTF-8?B?6buE5a626ZKX?= <hjc@rock-chips.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Helen Koike <helen.koike@collabora.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sCgpIZWlrbyBTdHVlYm5lciA8aGVpa29Ac250ZWNoLmRlPiB3cm90ZSBvbiBUdWUs
-IDIxIEphbiAyMDIwIDE0OjQ1OjEwCiswMTAwOgoKPiBGcm9tOiBIZWlrbyBTdHVlYm5lciA8aGVp
-a28uc3R1ZWJuZXJAdGhlb2Jyb21hLXN5c3RlbXMuY29tPgo+IAo+IFRoZSBsdmRzIGNvbnRyb2xs
-ZXIgaGFzIHR3byBwb3J0cy4gcG9ydEAwIGZvciB0aGUgY29ubmVjdGlvbgo+IHRvIHRoZSBkaXNw
-bGF5IGNvbnRyb2xsZXIocykgYW5kIHBvcnRAMSBmb3IgdGhlIGNvbm5lY3Rpb24gdG8KPiB0aGUg
-cGFuZWwsIHNvIHNob3VsZCBoYXZlIGEgcG9ydHMgbm9kZSBjb3ZlcmluZyB0aGUgcG9ydEB4IG5v
-ZGVzLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEhlaWtvIFN0dWVibmVyIDxoZWlrby5zdHVlYm5lckB0
-aGVvYnJvbWEtc3lzdGVtcy5jb20+Cj4gLS0tCj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2No
-aXAvcHgzMC5kdHNpIHwgMjMgKysrKysrKysrKysrKystLS0tLS0tLS0KPiAgMSBmaWxlIGNoYW5n
-ZWQsIDE0IGluc2VydGlvbnMoKyksIDkgZGVsZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2Fy
-Y2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcHgzMC5kdHNpIGIvYXJjaC9hcm02NC9ib290L2R0
-cy9yb2NrY2hpcC9weDMwLmR0c2kKPiBpbmRleCA5YjFjOTIxMzIwMDcuLjM3ZTAxNDQ0NDIxNCAx
-MDA2NDQKPiAtLS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3B4MzAuZHRzaQo+ICsr
-KyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcHgzMC5kdHNpCj4gQEAgLTQyMSwxOSAr
-NDIxLDI0IEBAIGx2ZHM6IGx2ZHMgewo+ICAJCQlyb2NrY2hpcCxvdXRwdXQgPSAibHZkcyI7Cj4g
-IAkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7Cj4gIAo+IC0JCQlwb3J0QDAgewo+IC0JCQkJcmVnID0g
-PDA+Owo+ICsJCQlwb3J0cyB7Cj4gIAkJCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsKPiAgCQkJCSNz
-aXplLWNlbGxzID0gPDA+Owo+ICAKPiAtCQkJCWx2ZHNfdm9wYl9pbjogZW5kcG9pbnRAMCB7Cj4g
-KwkJCQlwb3J0QDAgewo+ICAJCQkJCXJlZyA9IDwwPjsKPiAtCQkJCQlyZW1vdGUtZW5kcG9pbnQg
-PSA8JnZvcGJfb3V0X2x2ZHM+Owo+IC0JCQkJfTsKPiAtCj4gLQkJCQlsdmRzX3ZvcGxfaW46IGVu
-ZHBvaW50QDEgewo+IC0JCQkJCXJlZyA9IDwxPjsKPiAtCQkJCQlyZW1vdGUtZW5kcG9pbnQgPSA8
-JnZvcGxfb3V0X2x2ZHM+Owo+ICsJCQkJCSNhZGRyZXNzLWNlbGxzID0gPDE+Owo+ICsJCQkJCSNz
-aXplLWNlbGxzID0gPDA+Owo+ICsKPiArCQkJCQlsdmRzX3ZvcGJfaW46IGVuZHBvaW50QDAgewo+
-ICsJCQkJCQlyZWcgPSA8MD47Cj4gKwkJCQkJCXJlbW90ZS1lbmRwb2ludCA9IDwmdm9wYl9vdXRf
-bHZkcz47Cj4gKwkJCQkJfTsKPiArCj4gKwkJCQkJbHZkc192b3BsX2luOiBlbmRwb2ludEAxIHsK
-PiArCQkJCQkJcmVnID0gPDE+Owo+ICsJCQkJCQlyZW1vdGUtZW5kcG9pbnQgPSA8JnZvcGxfb3V0
-X2x2ZHM+Owo+ICsJCQkJCX07Cj4gIAkJCQl9Owo+ICAJCQl9Owo+ICAJCX07CgpJIGRvbid0IGtu
-b3cgdGhlIGV4YWN0IHJ1bGUgYnV0IHRoaXMgc2VlbXMgY2xlYW5lciBpbmRlZWQuCgpSZXZpZXdl
-ZC1ieTogTWlxdWVsIFJheW5hbCA8bWlxdWVsLnJheW5hbEBib290bGluLmNvbT4KCgpUaGFua3Ms
-Ck1pcXXDqGwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRl
-YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-cm9ja2NoaXAK
+On Tue, Jan 21, 2020 at 6:35 AM Dafna Hirschfeld
+<dafna.hirschfeld@collabora.com> wrote:
+>
+> convert the binding file rockchip-drm.txt to yaml format.
+> This was tested and verified with:
+> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+
+Also, make sure just 'make dt_binding_check' passes as that checks the
+example against all schemas.
+
+> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+>
+> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+> ---
+> Changes since v1:
+> - fixed worng sign-off
+> - fixed the path of the $id property to be the path of the yaml file
+>
+>  .../display/rockchip/rockchip-drm.txt         | 19 ----------
+>  .../display/rockchip/rockchip-drm.yaml        | 38 +++++++++++++++++++
+>  2 files changed, 38 insertions(+), 19 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
+>  create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt b/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
+> deleted file mode 100644
+> index 5707af89319d..000000000000
+> --- a/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
+> +++ /dev/null
+> @@ -1,19 +0,0 @@
+> -Rockchip DRM master device
+> -================================
+> -
+> -The Rockchip DRM master device is a virtual device needed to list all
+> -vop devices or other display interface nodes that comprise the
+> -graphics subsystem.
+> -
+> -Required properties:
+> -- compatible: Should be "rockchip,display-subsystem"
+> -- ports: Should contain a list of phandles pointing to display interface port
+> -  of vop devices. vop definitions as defined in
+> -  Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+> -
+> -example:
+> -
+> -display-subsystem {
+> -       compatible = "rockchip,display-subsystem";
+> -       ports = <&vopl_out>, <&vopb_out>;
+> -};
+> diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+> new file mode 100644
+> index 000000000000..538898ada9d1
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+> @@ -0,0 +1,38 @@
+> +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+
+Do you have rights to change the license? The default is GPL-2.0-only.
+Looks like Rockchip owns the copyright.
+
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/rockchip/rockchip-drm.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Rockchip DRM master device
+> +
+> +maintainers:
+> +  - Sandy Huang <hjc@rock-chips.com
+> +  - Heiko Stuebner <heiko@sntech.de>
+> +
+> +description: |
+> +  The Rockchip DRM master device is a virtual device needed to list all
+> +  vop devices or other display interface nodes that comprise the
+> +  graphics subsystem.
+> +
+> +properties:
+> +  compatible:
+> +    const: rockchip,display-subsystem
+> +
+> +  ports:
+> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+> +    description: |
+> +      Should contain a list of phandles pointing to display interface port
+> +      of vop devices. vop definitions as defined in
+> +      Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+> +
+> +required:
+> +  - compatible
+> +  - ports
+
+Add:
+
+additionalProperties: false
+
+> +
+> +examples:
+> +  - |
+> +    display-subsystem {
+> +        compatible = "rockchip,display-subsystem";
+> +        ports = <&vopl_out>, <&vopb_out>;
+> +    };
+> --
+> 2.17.1
+>
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
