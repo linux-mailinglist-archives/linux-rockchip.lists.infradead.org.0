@@ -2,51 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F089145C43
-	for <lists+linux-rockchip@lfdr.de>; Wed, 22 Jan 2020 20:09:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7444145EC7
+	for <lists+linux-rockchip@lfdr.de>; Wed, 22 Jan 2020 23:46:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=C6xIFPO/BGEgJvMa1rDGZHEA/XUMMgCZdXTQe9u4Ea0=; b=ZqcxF9y12W1A4Z
-	jkh/Qk4iiG17i4A3EHzXmI3ZElQDkqC+7FReDLHIsp3nRYOw8/oBuTP6nqgzNy/OZA4x3zZdF4DYX
-	86OHBcmN8ntZIhaUZPmnsEHDrd/s5F3ytB5OQ2j7dUO/R4/I3cBm/rNohqsPB9JlouVrFaY9Gdjs2
-	/242j71fTovpJA/GMma3e1otctwIvQ8j0M9NoVtNKx49HjkxLWajYR5UbgynffaCokIU4g7H/g0b3
-	HqpUSgO+0lGwpZSR2KsSO/piVxTs0+aBQdSK5j9CxyX6gQ/xlVL+DdO5lJrA0qMS0krbHo6j3pnnS
-	nLcrc9T4J7MJTKtY8d8w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=02cXa2sX+BEQohoB9aGxlN4cc7sZGJrroj7T54E8QCo=; b=q3H
+	UDl2wdr3qLnANDSRa+bwe33mnbGTENDp4hXYIjGLsmLMtYdzNNGtSaAtyLXpC6UlNdRfliEIp5F44
+	wyaiZoGY0glQZ+CXnegIxOlaEM9ZnwEHId8XoJUadGmxKdxKCzhc3k8tKRkQZ1WTh360PeBWIghv8
+	iU0IhNKG93hrO776j0Y9lBj10+uj5u6H8aGBLTaOtf2KdNX1ZR9B5UAeCarQJAsktcdsrFJwi7yKJ
+	EhLYFY2t3vwcvlWO7TNt+W5hJNoyfNtFW0dwWoVkFSGx3rgJftEDGZgGzV/s2ZOO/tp4dc2d5FRTO
+	e1dQWlW3ckX/dRTpoRSOw7tFerDFTWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuLNa-0002u9-IT; Wed, 22 Jan 2020 19:09:30 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1iuOli-0003vM-8K; Wed, 22 Jan 2020 22:46:38 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuLNK-0002kM-3w; Wed, 22 Jan 2020 19:09:16 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 57FAF28FD19
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Sandy Huang <hjc@rock-chips.com>,
- =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>
-Subject: [PATCH] drm/rockchip: Add GEM create ioctl support
-Date: Wed, 22 Jan 2020 16:08:55 -0300
-Message-Id: <20200122190855.20385-1-ezequiel@collabora.com>
-X-Mailer: git-send-email 2.25.0
-MIME-Version: 1.0
+ id 1iuOlC-0003Th-Ca; Wed, 22 Jan 2020 22:46:08 +0000
+Received: by mail-wr1-x443.google.com with SMTP id z7so886624wrl.13;
+ Wed, 22 Jan 2020 14:46:05 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=MCqGyviW/tmvDr3828HB9zRo2d0D7zhBetq/RRoppAo=;
+ b=ZXC5CPLbVoyjDhfM3wRKk1g+2/bMBj2KsWlUKfarnVA4JqgC08hYf+ClX/0j/NxYdR
+ gnLnzUdLNoMkixrSqmkvKmtJ2bxOlwaf2NiFDJ4AKCFXj/5T364/K2XSJPHqeUp9qULh
+ d4I2U4wJvB79CRaCZvEmmclcG+feE4iBi2nqBEXFhSAYU5+QXjPg+vqjWcz//VK5+hFw
+ YBCVrA14pdI1LeCyYxKCgtE4/jI/sOr8KbDawML4fB2aYK+GrN5ICTzpmq42xzlcnkYl
+ ppDSwa/FWubVo+1wdJvIiHdyB3a/bjFnhghtRbYkMn5JEptRrMxj0gkCSY4kwkdslF68
+ TixA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=MCqGyviW/tmvDr3828HB9zRo2d0D7zhBetq/RRoppAo=;
+ b=kqx5RIQduHUDRQC36Ia9QdZmW/Pdzh5Auz+z6UqSsFAB2jQLp5A0wO4cluFzzH7MkI
+ p7DvcWp+yFguLB5pOEbYqCfMdRbZg8IWXYL7W0jaKxdi0Eo/LzIcW8Jo9RXfU9v41QQO
+ D6rFUhjNy69fsXGtwLYq2ZN1X52l9MBDGFu+YQrqH8PFQ3RMRi16aiEcMKLNnTamojLx
+ W24X0j/6Ux4mW61rrkYvibz6o+OBBseJaPsJSslX4mgRy1/5z6rDhMnvILW9RLUAKGS7
+ tIuoEI6VgkC1UCGQCZyp05I0ZGm1B0serxNzkrym5eeZ5BWRQhq23F6S63DOp5PxAjQZ
+ +WaQ==
+X-Gm-Message-State: APjAAAUYQLVDsAL0yH7ztzlT67RxeqVPfXedSthu95nVOjK3bkCQM4po
+ +Y8twxqatp2L9vhF8p2Dbfk=
+X-Google-Smtp-Source: APXvYqzZG10AEF2jozV7H1kRJvn6uvUc923vmhPqyktJYEdzkrlSkBoI/Rhqz2Y1khzX5/Y80wTKFA==
+X-Received: by 2002:a05:6000:12:: with SMTP id
+ h18mr13071078wrx.87.1579733164580; 
+ Wed, 22 Jan 2020 14:46:04 -0800 (PST)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id f1sm342559wro.85.2020.01.22.14.46.03
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 22 Jan 2020 14:46:03 -0800 (PST)
+From: Johan Jonker <jbx6244@gmail.com>
+To: broonie@kernel.org
+Subject: [PATCH v2 1/3] dt-bindings: spi: convert rockchip spi bindings to yaml
+Date: Wed, 22 Jan 2020 23:45:53 +0100
+Message-Id: <20200122224555.6845-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_110914_534971_ABD08218 
-X-CRM114-Status: GOOD (  14.16  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200122_144606_428936_37475590 
+X-CRM114-Status: GOOD (  19.38  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,202 +95,231 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Tomasz Figa <tfiga@chromium.org>, Douglas Anderson <dianders@chromium.org>,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, kernel@collabora.com,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
- Mark Yao <mark.yao@rock-chips.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Mark Yao <mark.yao@rock-chips.com>
+Current dts files with 'spi' nodes are manually verified.
+In order to automate this process spi-rockchip.txt
+has to be converted to yaml. In the new setup
+spi-rockchip.yaml will inherit properties from
+spi-controller.yaml.
 
-Add driver-specific GEM create/offset ioctls, to allow users
-to create objects of arbitrary size.
+Add document to MAINTAINERS.
 
-These are required to allocate buffers to be shared with
-video decoder block, with hardware-specific needs such as
-macroblock alignment and extra room for motion vectors.
+Also rk3188.dtsi, rk3288.dtsi, rk3368.dtsi and rk3399.dtsi
+use an extra fallback string, so change this in the documentation.
 
-Signed-off-by: Mark Yao <mark.yao@rock-chips.com>
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
-Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+Changed:
+"rockchip,rk3188-spi", "rockchip,rk3066-spi"
+"rockchip,rk3288-spi", "rockchip,rk3066-spi"
+"rockchip,rk3368-spi", "rockchip,rk3066-spi"
+"rockchip,rk3399-spi", "rockchip,rk3066-spi"
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- drivers/gpu/drm/rockchip/rockchip_drm_drv.c | 11 ++++
- drivers/gpu/drm/rockchip/rockchip_drm_gem.c | 21 +++++++
- drivers/gpu/drm/rockchip/rockchip_drm_gem.h | 13 +++++
- include/uapi/drm/rockchip_drm.h             | 61 +++++++++++++++++++++
- 4 files changed, 106 insertions(+)
- create mode 100644 include/uapi/drm/rockchip_drm.h
+ .../devicetree/bindings/spi/spi-rockchip.txt       |  58 ------------
+ .../devicetree/bindings/spi/spi-rockchip.yaml      | 105 +++++++++++++++++++++
+ MAINTAINERS                                        |   1 +
+ 3 files changed, 106 insertions(+), 58 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/spi/spi-rockchip.txt
+ create mode 100644 Documentation/devicetree/bindings/spi/spi-rockchip.yaml
 
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_drv.c b/drivers/gpu/drm/rockchip/rockchip_drm_drv.c
-index ca12a35483f9..bd35a0b1aa5a 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_drv.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_drv.c
-@@ -22,6 +22,7 @@
- #include <drm/drm_of.h>
- #include <drm/drm_probe_helper.h>
- #include <drm/drm_vblank.h>
-+#include <drm/rockchip_drm.h>
- 
- #include "rockchip_drm_drv.h"
- #include "rockchip_drm_fb.h"
-@@ -206,6 +207,14 @@ static void rockchip_drm_unbind(struct device *dev)
- 	drm_dev_put(drm_dev);
- }
- 
-+static const struct drm_ioctl_desc rockchip_ioctls[] = {
-+	DRM_IOCTL_DEF_DRV(ROCKCHIP_GEM_CREATE, rockchip_gem_create_ioctl,
-+			  DRM_UNLOCKED | DRM_AUTH),
-+	DRM_IOCTL_DEF_DRV(ROCKCHIP_GEM_MAP_OFFSET,
-+			  rockchip_gem_map_offset_ioctl,
-+			  DRM_UNLOCKED | DRM_AUTH),
-+};
-+
- static const struct file_operations rockchip_drm_driver_fops = {
- 	.owner = THIS_MODULE,
- 	.open = drm_open,
-@@ -230,6 +239,8 @@ static struct drm_driver rockchip_drm_driver = {
- 	.gem_prime_vmap		= rockchip_gem_prime_vmap,
- 	.gem_prime_vunmap	= rockchip_gem_prime_vunmap,
- 	.gem_prime_mmap		= rockchip_gem_mmap_buf,
-+	.ioctls			= rockchip_ioctls,
-+	.num_ioctls		= ARRAY_SIZE(rockchip_ioctls),
- 	.fops			= &rockchip_drm_driver_fops,
- 	.name	= DRIVER_NAME,
- 	.desc	= DRIVER_DESC,
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c b/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-index 0d1884684dcb..315fa67d5668 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-@@ -12,6 +12,7 @@
- #include <drm/drm_gem.h>
- #include <drm/drm_prime.h>
- #include <drm/drm_vma_manager.h>
-+#include <drm/rockchip_drm.h>
- 
- #include "rockchip_drm_drv.h"
- #include "rockchip_drm_gem.h"
-@@ -428,6 +429,26 @@ int rockchip_gem_dumb_create(struct drm_file *file_priv,
- 	return PTR_ERR_OR_ZERO(rk_obj);
- }
- 
-+int rockchip_gem_map_offset_ioctl(struct drm_device *drm, void *data,
-+				  struct drm_file *file_priv)
-+{
-+	struct drm_rockchip_gem_map_off *args = data;
-+
-+	return drm_gem_dumb_map_offset(file_priv, drm, args->handle,
-+				       &args->offset);
-+}
-+
-+int rockchip_gem_create_ioctl(struct drm_device *dev, void *data,
-+			      struct drm_file *file_priv)
-+{
-+	struct drm_rockchip_gem_create *args = data;
-+	struct rockchip_gem_object *rk_obj;
-+
-+	rk_obj = rockchip_gem_create_with_handle(file_priv, dev, args->size,
-+						 &args->handle);
-+	return PTR_ERR_OR_ZERO(rk_obj);
-+}
-+
- /*
-  * Allocate a sg_table for this GEM object.
-  * Note: Both the table's contents, and the sg_table itself must be freed by
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_gem.h b/drivers/gpu/drm/rockchip/rockchip_drm_gem.h
-index 7ffc541bea07..87fe58b05bf6 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_gem.h
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_gem.h
-@@ -50,4 +50,17 @@ void rockchip_gem_free_object(struct drm_gem_object *obj);
- int rockchip_gem_dumb_create(struct drm_file *file_priv,
- 			     struct drm_device *dev,
- 			     struct drm_mode_create_dumb *args);
-+
-+/*
-+ * request gem object creation and buffer allocation as the size
-+ * that it is calculated with framebuffer information such as width,
-+ * height and bpp.
-+ */
-+int rockchip_gem_create_ioctl(struct drm_device *dev, void *data,
-+			      struct drm_file *file_priv);
-+
-+/* get buffer offset to map to user space. */
-+int rockchip_gem_map_offset_ioctl(struct drm_device *dev, void *data,
-+				  struct drm_file *file_priv);
-+
- #endif /* _ROCKCHIP_DRM_GEM_H */
-diff --git a/include/uapi/drm/rockchip_drm.h b/include/uapi/drm/rockchip_drm.h
+diff --git a/Documentation/devicetree/bindings/spi/spi-rockchip.txt b/Documentation/devicetree/bindings/spi/spi-rockchip.txt
+deleted file mode 100644
+index a0edac12d..000000000
+--- a/Documentation/devicetree/bindings/spi/spi-rockchip.txt
++++ /dev/null
+@@ -1,58 +0,0 @@
+-* Rockchip SPI Controller
+-
+-The Rockchip SPI controller is used to interface with various devices such as flash
+-and display controllers using the SPI communication interface.
+-
+-Required Properties:
+-
+-- compatible: should be one of the following.
+-    "rockchip,rv1108-spi" for rv1108 SoCs.
+-    "rockchip,px30-spi", "rockchip,rk3066-spi" for px30 SoCs.
+-    "rockchip,rk3036-spi" for rk3036 SoCS.
+-    "rockchip,rk3066-spi" for rk3066 SoCs.
+-    "rockchip,rk3188-spi" for rk3188 SoCs.
+-    "rockchip,rk3228-spi" for rk3228 SoCS.
+-    "rockchip,rk3288-spi" for rk3288 SoCs.
+-    "rockchip,rk3368-spi" for rk3368 SoCs.
+-    "rockchip,rk3399-spi" for rk3399 SoCs.
+-- reg: physical base address of the controller and length of memory mapped
+-       region.
+-- interrupts: The interrupt number to the cpu. The interrupt specifier format
+-              depends on the interrupt controller.
+-- clocks: Must contain an entry for each entry in clock-names.
+-- clock-names: Shall be "spiclk" for the transfer-clock, and "apb_pclk" for
+-			   the peripheral clock.
+-- #address-cells: should be 1.
+-- #size-cells: should be 0.
+-
+-Optional Properties:
+-
+-- dmas: DMA specifiers for tx and rx dma. See the DMA client binding,
+-		Documentation/devicetree/bindings/dma/dma.txt
+-- dma-names: DMA request names should include "tx" and "rx" if present.
+-- rx-sample-delay-ns: nanoseconds to delay after the SCLK edge before sampling
+-		Rx data (may need to be fine tuned for high capacitance lines).
+-		No delay (0) by default.
+-- pinctrl-names: Names for the pin configuration(s); may be "default" or
+-		"sleep", where the "sleep" configuration may describe the state
+-		the pins should be in during system suspend. See also
+-		pinctrl/pinctrl-bindings.txt.
+-
+-
+-Example:
+-
+-	spi0: spi@ff110000 {
+-		compatible = "rockchip,rk3066-spi";
+-		reg = <0xff110000 0x1000>;
+-		dmas = <&pdma1 11>, <&pdma1 12>;
+-		dma-names = "tx", "rx";
+-		rx-sample-delay-ns = <10>;
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-		interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
+-		clocks = <&cru SCLK_SPI0>, <&cru PCLK_SPI0>;
+-		clock-names = "spiclk", "apb_pclk";
+-		pinctrl-0 = <&spi1_pins>;
+-		pinctrl-1 = <&spi1_sleep>;
+-		pinctrl-names = "default", "sleep";
+-	};
+diff --git a/Documentation/devicetree/bindings/spi/spi-rockchip.yaml b/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
 new file mode 100644
-index 000000000000..3185f72f36b9
+index 000000000..bca8c6142
 --- /dev/null
-+++ b/include/uapi/drm/rockchip_drm.h
-@@ -0,0 +1,61 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
++++ b/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
+@@ -0,0 +1,105 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/spi/spi-rockchip.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+/*
-+ * Copyright (c) Fuzhou Rockchip Electronics Co.Ltd
-+ * Authors:
-+ *       Mark Yao <yzq@rock-chips.com>
-+ *
-+ * base on exynos_drm.h
-+ */
++title: Rockchip SPI Controller
 +
-+#ifndef _ROCKCHIP_DRM_H
-+#define _ROCKCHIP_DRM_H
++description:
++  The Rockchip SPI controller is used to interface with various devices such
++  as flash and display controllers using the SPI communication interface.
 +
-+#include <drm/drm.h>
++allOf:
++  - $ref: "spi-controller.yaml#"
 +
-+#if defined(__cplusplus)
-+extern "C" {
-+#endif
++maintainers:
++  - Heiko Stuebner <heiko@sntech.de>
 +
-+/**
-+ * User-desired buffer creation information structure.
-+ *
-+ * @size: user-desired memory allocation size.
-+ * @flags: user request for setting memory type or cache attributes.
-+ * @handle: returned a handle to created gem object.
-+ *     - this handle will be set by gem module of kernel side.
-+ */
-+struct drm_rockchip_gem_create {
-+	uint64_t size;
-+	uint32_t flags;
-+	uint32_t handle;
-+};
++# Everything else is described in the common file
++properties:
++  compatible:
++    oneOf:
++      - const: rockchip,rk3036-spi #for rk3036 SoCS.
++      - const: rockchip,rk3066-spi #for rk3066 SoCs.
++      - const: rockchip,rk3228-spi #for rk3228 SoCS.
++      - const: rockchip,rv1108-spi #for rv1108 SoCs.
++      - items:
++          - enum:
++            - rockchip,px30-spi    #for px30 SoCs.
++            - rockchip,rk3188-spi  #for rk3188 SoCs.
++            - rockchip,rk3288-spi  #for rk3288 SoCs.
++            - rockchip,rk3368-spi  #for rk3368 SoCs.
++            - rockchip,rk3399-spi  #for rk3399 SoCs.
++          - const: rockchip,rk3066-spi
 +
-+/**
-+ * A structure for getting buffer offset.
-+ *
-+ * @handle: a pointer to gem object created.
-+ * @pad: just padding to be 64-bit aligned.
-+ * @offset: relatived offset value of the memory region allocated.
-+ *     - this value should be set by user.
-+ */
-+struct drm_rockchip_gem_map_off {
-+	uint32_t handle;
-+	uint32_t pad;
-+	uint64_t offset;
-+};
++  reg:
++    maxItems: 1
 +
-+#define DRM_ROCKCHIP_GEM_CREATE		0x00
-+#define DRM_ROCKCHIP_GEM_MAP_OFFSET	0x01
++  interrupts:
++    maxItems: 1
 +
-+#define DRM_IOCTL_ROCKCHIP_GEM_CREATE	DRM_IOWR(DRM_COMMAND_BASE + \
-+		DRM_ROCKCHIP_GEM_CREATE, struct drm_rockchip_gem_create)
++  clocks:
++    items:
++      - description: transfer-clock
++      - description: peripheral clock
 +
-+#define DRM_IOCTL_ROCKCHIP_GEM_MAP_OFFSET	DRM_IOWR(DRM_COMMAND_BASE + \
-+		DRM_ROCKCHIP_GEM_MAP_OFFSET, struct drm_rockchip_gem_map_off)
++  clock-names:
++    items:
++      - const: spiclk
++      - const: apb_pclk
 +
-+#if defined(__cplusplus)
-+}
-+#endif
++  dmas:
++    items:
++      - description: TX DMA Channel
++      - description: RX DMA Channel
 +
-+#endif /* _ROCKCHIP_DRM_H */
++  dma-names:
++    items:
++      - const: tx
++      - const: rx
++
++  rx-sample-delay-ns:
++    default: 0
++    description:
++      Nano seconds to delay after the SCLK edge before sampling Rx data
++      (may need to be fine tuned for high capacitance lines).
++      If not specified 0 will be used.
++
++  pinctrl-names:
++    minItems: 1
++    items:
++      - const: default
++      - const: sleep
++    description:
++      Names for the pin configuration(s); may be "default" or "sleep",
++      where the "sleep" configuration may describe the state
++      the pins should be in during system suspend.
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3188-cru-common.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/interrupt-controller/irq.h>
++    spi0: spi@ff110000 {
++      compatible = "rockchip,rk3066-spi";
++      reg = <0xff110000 0x1000>;
++      interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
++      clocks = <&cru SCLK_SPI0>, <&cru PCLK_SPI0>;
++      clock-names = "spiclk", "apb_pclk";
++      dmas = <&pdma1 11>, <&pdma1 12>;
++      dma-names = "tx", "rx";
++      pinctrl-0 = <&spi1_pins>;
++      pinctrl-1 = <&spi1_sleep>;
++      pinctrl-names = "default", "sleep";
++      rx-sample-delay-ns = <10>;
++      #address-cells = <1>;
++      #size-cells = <0>;
++    };
+diff --git a/MAINTAINERS b/MAINTAINERS
+index d6ad01d71..096c324f9 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -2240,6 +2240,7 @@ L:	linux-rockchip@lists.infradead.org
+ T:	git git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git
+ S:	Maintained
+ F:	Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
++F:	Documentation/devicetree/bindings/spi/spi-rockchip.yaml
+ F:	arch/arm/boot/dts/rk3*
+ F:	arch/arm/boot/dts/rv1108*
+ F:	arch/arm/mach-rockchip/
 -- 
-2.25.0
+2.11.0
 
 
 _______________________________________________
