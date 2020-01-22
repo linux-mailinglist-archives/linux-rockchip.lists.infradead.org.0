@@ -2,92 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27388144D0B
-	for <lists+linux-rockchip@lfdr.de>; Wed, 22 Jan 2020 09:13:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A48C14594B
+	for <lists+linux-rockchip@lfdr.de>; Wed, 22 Jan 2020 17:05:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pdCmdW20M+RKG7BXEDhTHTv1ka8zSlOG3p7fcukVrxM=; b=LHsMDP050c7LJH
-	Jmh0rsP2Ak639MhHbYpA7SYd6gJeh5c5KphSsNE4hU8U6loWHImr0NtebXrew9KfnJFO34zJfSp6I
-	eto4teF0VyOvJho3CR21HNfPVG3Q8h3WiwbxHh2x4ID0TIi7X/wc116NxwM09x3t/rgmIuz2PGxYi
-	bbNNFzxcaZNNKSkqNTdAydvrDqaceLpJuGgApVOgk4QRUYkmgB7VD0TCXob8lDh7Iiwp6m74idJ/X
-	e5w9iKXGYyK/PjVyqbI13iIQpgCvB5P749jriQ8wfoZ9OGDrlmMPFYz3/0mtuioxJ3JvaxwNcmV+o
-	QQeC9TzKELJo+eNU3y5Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2r3pGW2/7GMm95lY8+NmU5jDqgtTvYmuUopAzfotEMQ=; b=VdMW1CDfaOwuda
+	qqtuP8dL/znrqx/eGejxalrqzMckoYd8JKVdcgEUNa4UR3WddmlP3xu2RWfLxyTxXj7JXO9WqtnmN
+	nPhkHC8J15QsBiltr+lcO/BcqMJFi6kEJZ37ysYs9Ivfj/vdoJKw63gZgyrfVaqBBZUExZ253hlvO
+	Ki3gfF8sxFa8Yv7+jP0OHk7fL7SPfAXGn2KTKJbLJu3J2mnUBZuMNSekSaEGqPjUXAEELkXlS8L8l
+	mj6eJigTWPwmHU874lZRd3EsnbTGlSjP3K3P/akELbUf2Dt3EOaSN+UCTob/te6vJDHJlnRhUvUaJ
+	0+2SJFWZ4xXHnTNydmtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuB8n-0002NV-Q8; Wed, 22 Jan 2020 08:13:33 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1iuIVP-0006Cv-IA; Wed, 22 Jan 2020 16:05:23 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuB8W-0002E0-RF; Wed, 22 Jan 2020 08:13:18 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00M8Cxqb099296;
- Wed, 22 Jan 2020 02:12:59 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1579680779;
- bh=DhZNPVYtbrpKrZkAkg13qDd9TroZfhPQ/2aqImA4XLQ=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=YyTGJm0CliogdcFd9gnifEAk8QmkOT+QCVGoH27ocDzrZPB7avzwnza5mzPX+UheB
- WfIed/40LSUiLyMMRn74ExRwIwhhSSv1UJr7souRbL0Yr2UkTH1rE9itP9it9eg9Og
- aM+RXxLq2QWw9UixnNzaKOvthN/78MMYypz3cRkI=
-Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00M8CwGh095984
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 22 Jan 2020 02:12:58 -0600
-Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 22
- Jan 2020 02:12:58 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE108.ent.ti.com
- (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Wed, 22 Jan 2020 02:12:58 -0600
-Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00M8Co0Y069651;
- Wed, 22 Jan 2020 02:12:51 -0600
-Subject: Re: [v3 4/6] dt-bindings: PCI: rcar: Add bindings for R-Car PCIe
- endpoint controller
-To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>, Rob Herring
- <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, Mark Rutland
- <mark.rutland@arm.com>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Magnus Damm <magnus.damm@gmail.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, linux-pci
- <linux-pci@vger.kernel.org>
-References: <20200108162211.22358-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200108162211.22358-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <CA+V-a8s1Jx8uZiSr0uiryS492EbFRoFg9QTwkosZsuyfRYp-3g@mail.gmail.com>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <9c65eb7a-539b-1fa3-f988-40c32aa8dfe3@ti.com>
-Date: Wed, 22 Jan 2020 13:45:53 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1iuIVD-00063q-Cc; Wed, 22 Jan 2020 16:05:12 +0000
+Received: by mail-ot1-f67.google.com with SMTP id h9so6672844otj.11;
+ Wed, 22 Jan 2020 08:05:10 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=P2nj0uogA4rRFo/vGoXxjKcugggOl6yz11QVdYb92dk=;
+ b=Fsxb481fgTfcUugKzVJOIXR0lnBjOPnfEQM4egakFYZ9lYn06dzUx0Tv4FZp1os5QN
+ 9H604PzjeffGwuHT+5hnbsQjOIthZ386wgfTvACNMRaI2vBZUCwnvj8DlZO5UEc4EINk
+ iZtxBZ2mzaYWdJ+4AWHZooRMuo4srZmy0xB31a9Dqnp3TakQAnnPSQ7jBIw7C6XyhK7I
+ xO+f6vcapOUF8bY2KxLDO5YyQ4ExU3dcc4/Zt031D4oU7okg/UFjEr8xDBbrv0nK8UjZ
+ 5wO4pgdM0vrkbqN05aeZLMXis3J4XdlgTkwXEaPgorvToddodoj1AzDal+pSKZuq8U8U
+ nuyQ==
+X-Gm-Message-State: APjAAAU+wFB1gtHezBBYEjJWZeuFvTOVqIJAZQTh5C/rYb/JaQMKIjDo
+ SAgbvZ2ElpyjP4J77f0OOw==
+X-Google-Smtp-Source: APXvYqyrhkKZuH0Rsv16TrhCL+xfS8KG9mD/Inml67F3FVNPVpf7HCEz4as/foIuTdlUwhiChYJj8g==
+X-Received: by 2002:a9d:60c4:: with SMTP id b4mr8167324otk.166.1579709110222; 
+ Wed, 22 Jan 2020 08:05:10 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id a19sm14764576oto.60.2020.01.22.08.05.08
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 22 Jan 2020 08:05:09 -0800 (PST)
+Received: (nullmailer pid 9378 invoked by uid 1000);
+ Wed, 22 Jan 2020 16:05:08 -0000
+Date: Wed, 22 Jan 2020 10:05:08 -0600
+From: Rob Herring <robh@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH v2 1/3] dt-bindings: mmc: convert synopsys dw-mshc
+ bindings to yaml
+Message-ID: <20200122160508.GA9316@bogus>
+References: <20200116152230.29831-1-jbx6244@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <CA+V-a8s1Jx8uZiSr0uiryS492EbFRoFg9QTwkosZsuyfRYp-3g@mail.gmail.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20200116152230.29831-1-jbx6244@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_001316_964165_A0F402A3 
-X-CRM114-Status: GOOD (  26.87  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200122_080511_431409_75E5DA0F 
+X-CRM114-Status: GOOD (  11.14  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,150 +93,36 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE
- BINDINGS" <devicetree@vger.kernel.org>,
- Chris Paterson <Chris.Paterson2@renesas.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
- Jingoo Han <jingoohan1@gmail.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>, "open
- list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Will Deacon <will@kernel.org>, LAK <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ulf.hansson@linaro.org,
+ heiko@sntech.de, linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Prabhakar,
-
-On 21/01/20 11:27 PM, Lad, Prabhakar wrote:
-> Hi Rob/Kishon,
+On Thu, 16 Jan 2020 16:22:28 +0100, Johan Jonker wrote:
+> Current dts files with 'dwmmc' nodes are manually verified.
+> In order to automate this process synopsys-dw-mshc.txt
+> has to be converted to yaml. In the new setup
+> synopsys-dw-mshc.yaml will inherit properties from
+> mmc-controller.yaml and synopsys-dw-mshc-common.yaml.
+> 'dwmmc' will no longer be a valid name for a node and
+> should be changed to 'mmc'.
 > 
-> On Wed, Jan 8, 2020 at 4:22 PM Lad Prabhakar <prabhakar.csengg@gmail.com> wrote:
->>
->> This patch adds the bindings for the R-Car PCIe endpoint driver.
->>
->> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
->> ---
->>  .../devicetree/bindings/pci/rcar-pci-ep.yaml  | 76 +++++++++++++++++++
->>  1 file changed, 76 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
->>
->> diff --git a/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
->> new file mode 100644
->> index 000000000000..99c2a1174463
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
->> @@ -0,0 +1,76 @@
->> +# SPDX-License-Identifier: GPL-2.0
->> +# Copyright (C) 2020 Renesas Electronics Europe GmbH - https://www.renesas.com/eu/en/
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/pci/rcar-pcie-ep.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: Renesas R-Car PCIe Endpoint
->> +
->> +maintainers:
->> +  - Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
->> +
->> +properties:
->> +  compatible:
->> +    items:
->> +      - const: renesas,r8a774c0-pcie-ep
->> +      - const: renesas,rcar-gen3-pcie-ep
->> +
->> +  reg:
->> +    maxItems: 5
->> +
->> +  reg-names:
->> +    items:
->> +      - const: apb-base
->> +      - const: memory0
->> +      - const: memory1
->> +      - const: memory2
->> +      - const: memory3
-
-As I had mentioned in the other patch, I'd prefer if we can create
-standard binding for representing the memory regions. IMHO we should
-create subnode for memory regions Each sub-node itself may or may not
-have more than one memory region.
-
-In your platform, since there can be only one allocation in a memory
-region, there should be 4 sub-nodes for each of the memory region and
-each node should have page_size (or some equivalent property) property
-to indicate page_size (= region_size).
-
-For a platform that doesn't have the restriction, there can be a single
-sub-node containing all the memory region.
-
-Let's wait for Rob's comment though.
-
-Thanks
-Kishon
->> +
->> +  power-domains:
->> +    maxItems: 1
->> +
->> +  resets:
->> +    maxItems: 1
->> +
->> +  clocks:
->> +    maxItems: 1
->> +
->> +  clock-names:
->> +    items:
->> +      - const: pcie
->> +
->> +  max-functions:
->> +    minimum: 1
->> +    maximum: 6
->> +
->> +required:
->> +  - compatible
->> +  - reg
->> +  - reg-names
->> +  - resets
->> +  - power-domains
->> +  - clocks
->> +  - clock-names
->> +  - max-functions
->> +
-> apart from dt_binding_check error are we OK with dt bindings ?
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+>  .../bindings/mmc/synopsys-dw-mshc-common.yaml      |  68 ++++++++++
+>  .../devicetree/bindings/mmc/synopsys-dw-mshc.txt   | 141 ---------------------
+>  .../devicetree/bindings/mmc/synopsys-dw-mshc.yaml  |  70 ++++++++++
+>  3 files changed, 138 insertions(+), 141 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc-common.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.txt
+>  create mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
 > 
-> Cheers,
-> --Prabhakar
-> 
->> +examples:
->> +  - |
->> +    #include <dt-bindings/clock/r8a774c0-cpg-mssr.h>
->> +    #include <dt-bindings/power/r8a774c0-sysc.h>
->> +
->> +     pcie0_ep: pcie-ep@fe000000 {
->> +            compatible = "renesas,r8a774c0-pcie-ep",
->> +                         "renesas,rcar-gen3-pcie-ep";
->> +            reg = <0 0xfe000000 0 0x80000>,
->> +                  <0x0 0xfe100000 0 0x100000>,
->> +                  <0x0 0xfe200000 0 0x200000>,
->> +                  <0x0 0x30000000 0 0x8000000>,
->> +                  <0x0 0x38000000 0 0x8000000>;
->> +            reg-names = "apb-base", "memory0", "memory1", "memory2", "memory3";
->> +            resets = <&cpg 319>;
->> +            power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
->> +            clocks = <&cpg CPG_MOD 319>;
->> +            clock-names = "pcie";
->> +            max-functions = /bits/ 8 <1>;
->> +    };
->> --
->> 2.20.1
->>
+
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 Linux-rockchip mailing list
