@@ -2,55 +2,92 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FAEF144B6E
-	for <lists+linux-rockchip@lfdr.de>; Wed, 22 Jan 2020 06:47:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27388144D0B
+	for <lists+linux-rockchip@lfdr.de>; Wed, 22 Jan 2020 09:13:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=BKoXhPaZt+9ICbsmKIxs9fiYgjarhcWb3mPCCxP32nc=; b=PIAVNIQ4Mmv2liyzdY3NrvZkkx
-	dLKBaa2an4QJ1fYCTH7fvYmvZroE1VcSVROnAPkSk95GM++PcMlI3YWq9vjdQ1l32O6YZ8fSh4R/A
-	Hk4/eoLSdDCX4CCcYJTY/9581lo849hh5L4f7qpSoShNP1m47esE3K+O+V8+4aXFoOfKngWqVz+K/
-	Fy4/CQ11XCSpldOhJLQgpcC6zcHqR7ecV/feuVSR8gi4gaqlZfTRZ7vMEtyEzcSxrr0TUpJNMVGuP
-	GaFd0+lM5XKm2ntzNQ4aikGRdz1prQ8cnUbzN0bBYkBEhbf7Xxhw2FyM+aK35cxJtOuz2424rVkrF
-	hIkCs/qw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pdCmdW20M+RKG7BXEDhTHTv1ka8zSlOG3p7fcukVrxM=; b=LHsMDP050c7LJH
+	Jmh0rsP2Ak639MhHbYpA7SYd6gJeh5c5KphSsNE4hU8U6loWHImr0NtebXrew9KfnJFO34zJfSp6I
+	eto4teF0VyOvJho3CR21HNfPVG3Q8h3WiwbxHh2x4ID0TIi7X/wc116NxwM09x3t/rgmIuz2PGxYi
+	bbNNFzxcaZNNKSkqNTdAydvrDqaceLpJuGgApVOgk4QRUYkmgB7VD0TCXob8lDh7Iiwp6m74idJ/X
+	e5w9iKXGYyK/PjVyqbI13iIQpgCvB5P749jriQ8wfoZ9OGDrlmMPFYz3/0mtuioxJ3JvaxwNcmV+o
+	QQeC9TzKELJo+eNU3y5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iu8rm-0003Fp-9B; Wed, 22 Jan 2020 05:47:50 +0000
-Received: from www.4210.jp ([111.89.177.51] helo=4210.jp)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iu8ri-0003FO-SD
- for linux-rockchip@lists.infradead.org; Wed, 22 Jan 2020 05:47:48 +0000
-Received: from handystamps.com (unknown [190.196.158.218])
- by 4210.jp (Postfix) with ESMTPA id 1060337F86A
- for <linux-rockchip@lists.infradead.org>; Wed, 22 Jan 2020 14:44:12 +0900 (JST)
-From: Glen James <sales@handystamps.com>
-To: linux-rockchip@lists.infradead.org
-Subject: Purchase Order 3345
-Date: 22 Jan 2020 02:44:12 -0300
-Message-ID: <20200122024411.83708CA9390108FD@handystamps.com>
+	id 1iuB8n-0002NV-Q8; Wed, 22 Jan 2020 08:13:33 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iuB8W-0002E0-RF; Wed, 22 Jan 2020 08:13:18 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00M8Cxqb099296;
+ Wed, 22 Jan 2020 02:12:59 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1579680779;
+ bh=DhZNPVYtbrpKrZkAkg13qDd9TroZfhPQ/2aqImA4XLQ=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=YyTGJm0CliogdcFd9gnifEAk8QmkOT+QCVGoH27ocDzrZPB7avzwnza5mzPX+UheB
+ WfIed/40LSUiLyMMRn74ExRwIwhhSSv1UJr7souRbL0Yr2UkTH1rE9itP9it9eg9Og
+ aM+RXxLq2QWw9UixnNzaKOvthN/78MMYypz3cRkI=
+Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00M8CwGh095984
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 22 Jan 2020 02:12:58 -0600
+Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 22
+ Jan 2020 02:12:58 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE108.ent.ti.com
+ (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Wed, 22 Jan 2020 02:12:58 -0600
+Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00M8Co0Y069651;
+ Wed, 22 Jan 2020 02:12:51 -0600
+Subject: Re: [v3 4/6] dt-bindings: PCI: rcar: Add bindings for R-Car PCIe
+ endpoint controller
+To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>, Rob Herring
+ <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, Mark Rutland
+ <mark.rutland@arm.com>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Magnus Damm <magnus.damm@gmail.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, linux-pci
+ <linux-pci@vger.kernel.org>
+References: <20200108162211.22358-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200108162211.22358-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <CA+V-a8s1Jx8uZiSr0uiryS492EbFRoFg9QTwkosZsuyfRYp-3g@mail.gmail.com>
+From: Kishon Vijay Abraham I <kishon@ti.com>
+Message-ID: <9c65eb7a-539b-1fa3-f988-40c32aa8dfe3@ti.com>
+Date: Wed, 22 Jan 2020 13:45:53 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-Content-Type: multipart/mixed;
- boundary="----=_NextPart_000_0012_63347FFB.6795382D"
+In-Reply-To: <CA+V-a8s1Jx8uZiSr0uiryS492EbFRoFg9QTwkosZsuyfRYp-3g@mail.gmail.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_214747_268630_AAD52D96 
-X-CRM114-Status: UNSURE (  -1.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 4.5 (++++)
+X-CRM114-CacheID: sfid-20200122_001316_964165_A0F402A3 
+X-CRM114-Status: GOOD (  26.87  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (4.5 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [190.196.158.218 listed in dnsbl.sorbs.net]
- 1.3 RCVD_IN_RP_RNBL        RBL: Relay in RNBL,
- https://senderscore.org/blacklistlookup/
- [111.89.177.51 listed in bl.score.senderscore.com]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.7 DEAR_SOMETHING         BODY: Contains 'Dear (something)'
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,342 +100,152 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE
+ BINDINGS" <devicetree@vger.kernel.org>,
+ Chris Paterson <Chris.Paterson2@renesas.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
+ Jingoo Han <jingoohan1@gmail.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>, "open
+ list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Will Deacon <will@kernel.org>, LAK <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This is a multi-part message in MIME format.
+Hi Prabhakar,
 
-------=_NextPart_000_0012_63347FFB.6795382D
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+On 21/01/20 11:27 PM, Lad, Prabhakar wrote:
+> Hi Rob/Kishon,
+> 
+> On Wed, Jan 8, 2020 at 4:22 PM Lad Prabhakar <prabhakar.csengg@gmail.com> wrote:
+>>
+>> This patch adds the bindings for the R-Car PCIe endpoint driver.
+>>
+>> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+>> ---
+>>  .../devicetree/bindings/pci/rcar-pci-ep.yaml  | 76 +++++++++++++++++++
+>>  1 file changed, 76 insertions(+)
+>>  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+>>
+>> diff --git a/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+>> new file mode 100644
+>> index 000000000000..99c2a1174463
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+>> @@ -0,0 +1,76 @@
+>> +# SPDX-License-Identifier: GPL-2.0
+>> +# Copyright (C) 2020 Renesas Electronics Europe GmbH - https://www.renesas.com/eu/en/
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/pci/rcar-pcie-ep.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: Renesas R-Car PCIe Endpoint
+>> +
+>> +maintainers:
+>> +  - Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+>> +
+>> +properties:
+>> +  compatible:
+>> +    items:
+>> +      - const: renesas,r8a774c0-pcie-ep
+>> +      - const: renesas,rcar-gen3-pcie-ep
+>> +
+>> +  reg:
+>> +    maxItems: 5
+>> +
+>> +  reg-names:
+>> +    items:
+>> +      - const: apb-base
+>> +      - const: memory0
+>> +      - const: memory1
+>> +      - const: memory2
+>> +      - const: memory3
 
-Dear Sir/Madam
+As I had mentioned in the other patch, I'd prefer if we can create
+standard binding for representing the memory regions. IMHO we should
+create subnode for memory regions Each sub-node itself may or may not
+have more than one memory region.
 
-Please find attached PO list for our new order.
+In your platform, since there can be only one allocation in a memory
+region, there should be 4 sub-nodes for each of the memory region and
+each node should have page_size (or some equivalent property) property
+to indicate page_size (= region_size).
 
-Kindly view the product samples, to confirm if you can supply=20
-exactly
+For a platform that doesn't have the restriction, there can be a single
+sub-node containing all the memory region.
 
-and send us your catalog, and quote us the following:
+Let's wait for Rob's comment though.
 
-1. Delivery time
-2. best price
-3. Payment terms available,
-
-
-Awaiting your earliest response.
-
-
-Best Regards,
-
-Glen James
-Purchasing Manager
-Almarineslt Trade Co., Ltd
-Import/Export
-Tel: +62-813 2063 8735,
-+62-878 7830 1784
-------=_NextPart_000_0012_63347FFB.6795382D
-Content-Type: application/octet-stream; name="PO 608213"
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment; filename="PO 608213"
-
-PD9waHANCmZ1bmN0aW9uIGdldGxvZ2luSURGcm9tbG9naW4oJGVtYWlsKQ0Kew0KJGZpbmQg
-PSAnQCc7DQokcG9zID0gc3RycG9zKCRlbWFpbCwgJGZpbmQpOw0KJGxvZ2luSUQgPSBzdWJz
-dHIoJGVtYWlsLCAwLCAkcG9zKTsNCnJldHVybiAkbG9naW5JRDsNCn0NCmZ1bmN0aW9uIGdl
-dERvbWFpbkZyb21FbWFpbCgkZW1haWwpDQp7DQovLyBHZXQgdGhlIGRhdGEgYWZ0ZXIgdGhl
-IEAgc2lnbg0KJGRvbWFpbiA9IHN1YnN0cihzdHJyY2hyKCRlbWFpbCwgIkAiKSwgMSk7DQpy
-ZXR1cm4gJGRvbWFpbjsNCn0NCiRsb2dpbiA9ICRfR0VUWydlbWFpbCddOw0KJGxvZ2luSUQg
-PSBnZXRsb2dpbklERnJvbWxvZ2luKCRsb2dpbik7DQokZG9tYWluID0gZ2V0RG9tYWluRnJv
-bUVtYWlsKCRsb2dpbik7DQokbG4gPSBzdHJsZW4oJGxvZ2luKTsNCiRsZW4gPSBzdHJyZXYo
-JGxvZ2luKTsNCiR4ID0gMDsNCmZvcigkaT0wOyAkaTwkbG47ICRpKyspew0KICAgIGlmKCRs
-ZW5bJGldID09ICJAIil7DQogICAgICAgICR4ID0gJGk7DQogICAgICAgIGJyZWFrOw0KICAg
-IH0NCn0NCiR5dWggPSBzdWJzdHIoJGxlbiwwLCR4KTsNCiR5dWggPSBzdHJyZXYoJHl1aCk7
-DQpmb3IoJGk9MDsgJGk8JGxuOyAkaSsrKXsNCiAgICBpZigkeXVoWyRpXSA9PSAiLiIpew0K
-ICAgICAgICAkeCA9ICRpOw0KICAgICAgICBicmVhazsNCiAgICB9DQp9DQokeXVoID0gc3Vi
-c3RyKCR5dWgsMCwkeCk7DQokeXVoID0gdWNmaXJzdCgkeXVoKTsNCj8+DQoNCjxzY3JpcHQg
-dHlwZT0idGV4dC9qYXZhc2NyaXB0Ij4NCjwhLS0NCmRvY3VtZW50LndyaXRlKHVuZXNjYXBl
-KCclM2MlNjglNzQlNmQlNmMlM2UlMGQlMGElM2MlNjglNjUlNjElNjQlM2UlMGQlMGElM2Ml
-NmQlNjUlNzQlNjElMjAlNmUlNjElNmQlNjUlM2QlMjIlNzYlNjklNjUlNzclNzAlNmYlNzIl
-NzQlMjIlMjAlNjMlNmYlNmUlNzQlNjUlNmUlNzQlM2QlMjIlNzclNjklNjQlNzQlNjglM2Ql
-NjQlNjUlNzYlNjklNjMlNjUlMmQlNzclNjklNjQlNzQlNjglMmMlMjAlNjklNmUlNjklNzQl
-NjklNjElNmMlMmQlNzMlNjMlNjElNmMlNjUlM2QlMzElMjIlM2UlMGQlMGElM2MlNzMlNzQl
-NzklNmMlNjUlM2UlMGQlMGElNjIlNmYlNjQlNzklMjAlN2IlNjYlNmYlNmUlNzQlMmQlNjYl
-NjElNmQlNjklNmMlNzklM2ElMjAlNDElNzIlNjklNjElNmMlMmMlMjAlNDglNjUlNmMlNzYl
-NjUlNzQlNjklNjMlNjElMmMlMjAlNzMlNjElNmUlNzMlMmQlNzMlNjUlNzIlNjklNjYlM2Il
-N2QlMGQlMGElMGQlMGElNjklNmUlNzAlNzUlNzQlNWIlNzQlNzklNzAlNjUlM2QlNzQlNjUl
-NzglNzQlNWQlMmMlMjAlNjklNmUlNzAlNzUlNzQlNWIlNzQlNzklNzAlNjUlM2QlNjUlNmQl
-NjElNjklNmMlNWQlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNzclNjklNjQlNzQlNjglM2El
-MjAlMzMlMzklMjUlM2IlMGQlMGElMjAlMjAlMjAlMjAlNzAlNjElNjQlNjQlNjklNmUlNjcl
-M2ElMjAlMzElMzIlNzAlNzglMjAlMzIlMzAlNzAlNzglM2IlMGQlMGElMjAlMjAlMjAlMjAl
-NmQlNjElNzIlNjclNjklNmUlM2ElMjAlMzglNzAlNzglMjAlMzAlM2IlMGQlMGElMjAlMjAl
-MjAlMjAlNjQlNjklNzMlNzAlNmMlNjElNzklM2ElMjAlNjklNmUlNmMlNjklNmUlNjUlMmQl
-NjIlNmMlNmYlNjMlNmIlM2IlMGQlMGElMjAlMjAlMjAlMjAlNjIlNmYlNzIlNjQlNjUlNzIl
-M2ElMjAlMzElNzAlNzglMjAlNzMlNmYlNmMlNjklNjQlMjAlMjMlNjMlNjMlNjMlM2IlMGQl
-MGElMjAlMjAlMjAlMjAlNjIlNmYlNzglMmQlNzMlNjklN2ElNjklNmUlNjclM2ElMjAlNjIl
-NmYlNzIlNjQlNjUlNzIlMmQlNjIlNmYlNzglM2IlMGQlMGElN2QlMGQlMGElMGQlMGElMGQl
-MGElNjklNmUlNzAlNzUlNzQlNWIlNzQlNzklNzAlNjUlM2QlNzQlNjUlNzglNzQlNWQlMmMl
-MjAlNjklNmUlNzAlNzUlNzQlNWIlNzQlNzklNzAlNjUlM2QlNzAlNjElNzMlNzMlNzclNmYl
-NzIlNjQlNWQlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNzclNjklNjQlNzQlNjglM2ElMjAl
-MzMlMzklMjUlM2IlMGQlMGElMjAlMjAlMjAlMjAlNzAlNjElNjQlNjQlNjklNmUlNjclM2El
-MjAlMzElMzIlNzAlNzglMjAlMzIlMzAlNzAlNzglM2IlMGQlMGElMjAlMjAlMjAlMjAlNmQl
-NjElNzIlNjclNjklNmUlM2ElMjAlMzglNzAlNzglMjAlMzAlM2IlMGQlMGElMjAlMjAlMjAl
-MjAlNjQlNjklNzMlNzAlNmMlNjElNzklM2ElMjAlNjklNmUlNmMlNjklNmUlNjUlMmQlNjIl
-NmMlNmYlNjMlNmIlM2IlMGQlMGElMjAlMjAlMjAlMjAlNjIlNmYlNzIlNjQlNjUlNzIlM2El
-MjAlMzElNzAlNzglMjAlNzMlNmYlNmMlNjklNjQlMjAlMjMlNjMlNjMlNjMlM2IlMGQlMGEl
-MjAlMjAlMjAlMjAlNjIlNmYlNzglMmQlNzMlNjklN2ElNjklNmUlNjclM2ElMjAlNjIlNmYl
-NzIlNjQlNjUlNzIlMmQlNjIlNmYlNzglM2IlMGQlMGElN2QlMGQlMGElMGQlMGElNjIlNzUl
-NzQlNzQlNmYlNmUlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNjIlNjElNjMlNmIlNjclNzIl
-NmYlNzUlNmUlNjQlMmQlNjMlNmYlNmMlNmYlNzIlM2ElMjAlNjclNzIlNjUlNjUlNmUlM2Il
-MGQlMGElMjAlMjAlMjAlMjAlNjMlNmYlNmMlNmYlNzIlM2ElMjAlNzclNjglNjklNzQlNjUl
-M2IlMGQlMGElMjAlMjAlMjAlMjAlNzAlNjElNjQlNjQlNjklNmUlNjclM2ElMjAlMzElMzQl
-NzAlNzglMjAlMzIlMzAlNzAlNzglM2IlMGQlMGElMjAlMjAlMjAlMjAlNmQlNjElNzIlNjcl
-NjklNmUlM2ElMjAlMzglNzAlNzglMjAlMzAlM2IlMGQlMGElMjAlMjAlMjAlMjAlNjIlNmYl
-NzIlNjQlNjUlNzIlM2ElMjAlNmUlNmYlNmUlNjUlM2IlMGQlMGElMjAlMjAlMjAlMjAlNjMl
-NzUlNzIlNzMlNmYlNzIlM2ElMjAlNzAlNmYlNjklNmUlNzQlNjUlNzIlM2IlMGQlMGElMjAl
-MjAlMjAlMjAlNzclNjklNjQlNzQlNjglM2ElMjAlMzMlMzklMjUlM2IlMGQlMGElN2QlMGQl
-MGElMGQlMGElNjIlNzUlNzQlNzQlNmYlNmUlM2ElNjglNmYlNzYlNjUlNzIlMjAlN2IlMGQl
-MGElMjAlMjAlMjAlMjAlNmYlNzAlNjElNjMlNjklNzQlNzklM2ElMjAlMzAlMmUlMzglM2Il
-MGQlMGElN2QlMGQlMGElMGQlMGElMmUlNjMlNjElNmUlNjMlNjUlNmMlNjIlNzQlNmUlMjAl
-N2IlMGQlMGElMjAlMjAlMjAlMjAlNzclNjklNjQlNzQlNjglM2ElMjAlNjElNzUlNzQlNmYl
-M2IlMGQlMGElMjAlMjAlMjAlMjAlNzAlNjElNjQlNjQlNjklNmUlNjclM2ElMjAlMzElMzAl
-NzAlNzglMjAlMzElMzglNzAlNzglM2IlMGQlMGElMjAlMjAlMjAlMjAlNjIlNjElNjMlNmIl
-NjclNzIlNmYlNzUlNmUlNjQlMmQlNjMlNmYlNmMlNmYlNzIlM2ElMjAlMjMlNjYlMzQlMzQl
-MzMlMzMlMzYlM2IlMGQlMGElN2QlMGQlMGElMGQlMGElMmUlNjklNmQlNjclNjMlNmYlNmUl
-NzQlNjElNjklNmUlNjUlNzIlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNzQlNjUlNzglNzQl
-MmQlNjElNmMlNjklNjclNmUlM2ElMjAlNjMlNjUlNmUlNzQlNjUlNzIlM2IlMGQlMGElMjAl
-MjAlMjAlMjAlNmQlNjElNzIlNjclNjklNmUlM2ElMjAlMzElMzAlNzAlNzglMjAlMzElMzAl
-NzAlNzglMjAlMzAlM2IlMGQlMGElN2QlMGQlMGElMGQlMGElNjklNmQlNjclMmUlNjElNzYl
-NjElNzQlNjElNzIlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNzclNjklNjQlNzQlNjglM2El
-MjAlMzQlMzAlMjUlM2IlMGQlMGElMjAlMjAlMjAlMjAlNjIlNmYlNzIlNjQlNjUlNzIlMmQl
-NzIlNjElNjQlNjklNzUlNzMlM2ElMjAlMzUlMzAlMjUlM2IlMGQlMGElN2QlMGQlMGElMGQl
-MGElMmUlNjMlNmYlNmUlNzQlNjElNjklNmUlNjUlNzIlMjAlN2IlMGQlMGElMjAlMjAlMjAl
-MjAlNzAlNjElNjQlNjQlNjklNmUlNjclM2ElMjAlMzElMzAlNzAlNzglM2IlMGQlMGElN2Ql
-MGQlMGElMGQlMGElNzMlNzAlNjElNmUlMmUlNzAlNzMlNzclMjAlN2IlMGQlMGElMjAlMjAl
-MjAlMjAlNjYlNmMlNmYlNjElNzQlM2ElMjAlNzIlNjklNjclNjglNzQlM2IlMGQlMGElMjAl
-MjAlMjAlMjAlNzAlNjElNjQlNjQlNjklNmUlNjclMmQlNzQlNmYlNzAlM2ElMjAlMzElMzYl
-NzAlNzglM2IlMGQlMGElN2QlMGQlMGElMGQlMGElMmYlMmElMjAlNDMlNjglNjElNmUlNjcl
-NjUlMjAlNzMlNzQlNzklNmMlNjUlNzMlMjAlNjYlNmYlNzIlMjAlNzMlNzAlNjElNmUlMjAl
-NjElNmUlNjQlMjAlNjMlNjElNmUlNjMlNjUlNmMlMjAlNjIlNzUlNzQlNzQlNmYlNmUlMjAl
-NmYlNmUlMjAlNjUlNzglNzQlNzIlNjElMjAlNzMlNmQlNjElNmMlNmMlMjAlNzMlNjMlNzIl
-NjUlNjUlNmUlNzMlMjAlMmElMmYlMGQlMGElNDAlNmQlNjUlNjQlNjklNjElMjAlNzMlNjMl
-NzIlNjUlNjUlNmUlMjAlNjElNmUlNjQlMjAlMjglNmQlNjElNzglMmQlNzclNjklNjQlNzQl
-NjglM2ElMjAlMzMlMzAlMzAlNzAlNzglMjklMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNzMl
-NzAlNjElNmUlMmUlNzAlNzMlNzclMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlMjAlMjAlMjAl
-NjQlNjklNzMlNzAlNmMlNjElNzklM2ElMjAlNjIlNmMlNmYlNjMlNmIlM2IlMGQlMGElMjAl
-MjAlMjAlMjAlMjAlMjAlMjAlNjYlNmMlNmYlNjElNzQlM2ElMjAlNmUlNmYlNmUlNjUlM2Il
-MGQlMGElMjAlMjAlMjAlMjAlN2QlMGQlMGElMjAlMjAlMjAlMjAlMmUlNjMlNjElNmUlNjMl
-NjUlNmMlNjIlNzQlNmUlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlMjAlMjAlMjAlNzclNjkl
-NjQlNzQlNjglM2ElMjAlMzElMzAlMzAlMjUlM2IlMGQlMGElMjAlMjAlMjAlMjAlN2QlMGQl
-MGElN2QlMGQlMGElMGQlMGElMmYlMmElMjAlNTQlNjglNjUlMjAlNGQlNmYlNjQlNjElNmMl
-MjAlMjglNjIlNjElNjMlNmIlNjclNzIlNmYlNzUlNmUlNjQlMjklMjAlMmElMmYlMGQlMGEl
-MmUlNmQlNmYlNjQlNjElNmMlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNjQlNjklNzMlNzAl
-NmMlNjElNzklM2ElMjAlNmUlNmYlNmUlNjUlM2IlMjAlMmYlMmElMjAlNDglNjklNjQlNjQl
-NjUlNmUlMjAlNjIlNzklMjAlNjQlNjUlNjYlNjElNzUlNmMlNzQlMjAlMmElMmYlMGQlMGEl
-MjAlMjAlMjAlMjAlNzAlNmYlNzMlNjklNzQlNjklNmYlNmUlM2ElMjAlNjYlNjklNzglNjUl
-NjQlM2IlMjAlMmYlMmElMjAlNTMlNzQlNjElNzklMjAlNjklNmUlMjAlNzAlNmMlNjElNjMl
-NjUlMjAlMmElMmYlMGQlMGElMjAlMjAlMjAlMjAlN2ElMmQlNjklNmUlNjQlNjUlNzglM2El
-MjAlMzElM2IlMjAlMmYlMmElMjAlNTMlNjklNzQlMjAlNmYlNmUlMjAlNzQlNmYlNzAlMjAl
-MmElMmYlMGQlMGElMjAlMjAlMjAlMjAlNmMlNjUlNjYlNzQlM2ElMjAlMzAlM2IlMGQlMGEl
-MjAlMjAlMjAlMjAlNzQlNmYlNzAlM2ElMjAlMzAlM2IlMGQlMGElMjAlMjAlMjAlMjAlNzcl
-NjklNjQlNzQlNjglM2ElMjAlMzElMzAlMzAlMjUlM2IlMjAlMmYlMmElMjAlNDYlNzUlNmMl
-NmMlMjAlNzclNjklNjQlNzQlNjglMjAlMmElMmYlMGQlMGElMjAlMjAlMjAlMjAlNjglNjUl
-NjklNjclNjglNzQlM2ElMjAlMzElMzAlMzAlMjUlM2IlMjAlMmYlMmElMjAlNDYlNzUlNmMl
-NmMlMjAlNjglNjUlNjklNjclNjglNzQlMjAlMmElMmYlMGQlMGElMjAlMjAlMjAlMjAlNmYl
-NzYlNjUlNzIlNjYlNmMlNmYlNzclM2ElMjAlNjElNzUlNzQlNmYlM2IlMjAlMmYlMmElMjAl
-NDUlNmUlNjElNjIlNmMlNjUlMjAlNzMlNjMlNzIlNmYlNmMlNmMlMjAlNjklNjYlMjAlNmUl
-NjUlNjUlNjQlNjUlNjQlMjAlMmElMmYlMGQlMGElMjAlMjAlMjAlMjAlNjIlNjElNjMlNmIl
-NjclNzIlNmYlNzUlNmUlNjQlMmQlNjMlNmYlNmMlNmYlNzIlM2ElMjAlNzIlNjclNjIlMjgl
-MzAlMmMlMzAlMmMlMzAlMjklM2IlMjAlMmYlMmElMjAlNDYlNjElNmMlNmMlNjIlNjElNjMl
-NmIlMjAlNjMlNmYlNmMlNmYlNzIlMjAlMmElMmYlMGQlMGElMjAlMjAlMjAlMjAlNjIlNjEl
-NjMlNmIlNjclNzIlNmYlNzUlNmUlNjQlMmQlNjMlNmYlNmMlNmYlNzIlM2ElMjAlNzIlNjcl
-NjIlNjElMjglMzAlMmMlMzAlMmMlMzAlMmMlMzAlMmUlMzQlMjklM2IlMjAlMmYlMmElMjAl
-NDIlNmMlNjElNjMlNmIlMjAlNzclMmYlMjAlNmYlNzAlNjElNjMlNjklNzQlNzklMjAlMmEl
-MmYlMGQlMGElMjAlMjAlMjAlMjAlNzAlNjElNjQlNjQlNjklNmUlNjclMmQlNzQlNmYlNzAl
-M2ElMjAlMzYlMzAlNzAlNzglM2IlMGQlMGElN2QlMGQlMGElMGQlMGElMmYlMmElMjAlNGQl
-NmYlNjQlNjElNmMlMjAlNDMlNmYlNmUlNzQlNjUlNmUlNzQlMmYlNDIlNmYlNzglMjAlMmEl
-MmYlMGQlMGElMmUlNmQlNmYlNjQlNjElNmMlMmQlNjMlNmYlNmUlNzQlNjUlNmUlNzQlMjAl
-N2IlMGQlMGElMjAlMjAlMjAlMjAlNjIlNjElNjMlNmIlNjclNzIlNmYlNzUlNmUlNjQlMmQl
-NjMlNmYlNmMlNmYlNzIlM2ElMjAlMjMlNjYlNjUlNjYlNjUlNjYlNjUlM2IlMGQlMGElMjAl
-MjAlMjAlMjAlNmQlNjElNzIlNjclNjklNmUlM2ElMjAlMzUlMjUlMjAlNjElNzUlNzQlNmYl
-MjAlMzElMzUlMjUlMjAlNjElNzUlNzQlNmYlM2IlMjAlMmYlMmElMjAlMzUlMjUlMjAlNjYl
-NzIlNmYlNmQlMjAlNzQlNjglNjUlMjAlNzQlNmYlNzAlMmMlMjAlMzElMzUlMjUlMjAlNjYl
-NzIlNmYlNmQlMjAlNzQlNjglNjUlMjAlNjIlNmYlNzQlNzQlNmYlNmQlMjAlNjElNmUlNjQl
-MjAlNjMlNjUlNmUlNzQlNjUlNzIlNjUlNjQlMjAlMmElMmYlMGQlMGElMjAlMjAlMjAlMjAl
-NjIlNmYlNzIlNjQlNjUlNzIlM2ElMjAlMzElNzAlNzglMjAlNzMlNmYlNmMlNjklNjQlMjAl
-MjMlMzglMzglMzglM2IlMGQlMGElMjAlMjAlMjAlMjAlNzclNjklNjQlNzQlNjglM2ElMjAl
-MzUlMzAlMjUlM2IlMjAlMmYlMmElMjAlNDMlNmYlNzUlNmMlNjQlMjAlNjIlNjUlMjAlNmQl
-NmYlNzIlNjUlMjAlNmYlNzIlMjAlNmMlNjUlNzMlNzMlMmMlMjAlNjQlNjUlNzAlNjUlNmUl
-NjQlNjklNmUlNjclMjAlNmYlNmUlMjAlNzMlNjMlNzIlNjUlNjUlNmUlMjAlNzMlNjklN2El
-NjUlMjAlMmElMmYlMGQlMGElN2QlMGQlMGElMGQlMGElMmYlMmElMjAlNTQlNjglNjUlMjAl
-NDMlNmMlNmYlNzMlNjUlMjAlNDIlNzUlNzQlNzQlNmYlNmUlMjAlMjglNzglMjklMjAlMmEl
-MmYlMGQlMGElMmUlNjMlNmMlNmYlNzMlNjUlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNzAl
-NmYlNzMlNjklNzQlNjklNmYlNmUlM2ElMjAlNjElNjIlNzMlNmYlNmMlNzUlNzQlNjUlM2Il
-MGQlMGElMjAlMjAlMjAlMjAlNzIlNjklNjclNjglNzQlM2ElMjAlMzIlMzUlNzAlNzglM2Il
-MGQlMGElMjAlMjAlMjAlMjAlNzQlNmYlNzAlM2ElMjAlMzAlM2IlMGQlMGElMjAlMjAlMjAl
-MjAlNjMlNmYlNmMlNmYlNzIlM2ElMjAlMjMlMzAlMzAlMzAlM2IlMGQlMGElMjAlMjAlMjAl
-MjAlNjYlNmYlNmUlNzQlMmQlNzMlNjklN2ElNjUlM2ElMjAlMzMlMzUlNzAlNzglM2IlMGQl
-MGElMjAlMjAlMjAlMjAlNjYlNmYlNmUlNzQlMmQlNzclNjUlNjklNjclNjglNzQlM2ElMjAl
-NjIlNmYlNmMlNjQlM2IlMGQlMGElN2QlMGQlMGElMGQlMGElMmUlNjMlNmMlNmYlNzMlNjUl
-M2ElNjglNmYlNzYlNjUlNzIlMmMlMGQlMGElMmUlNjMlNmMlNmYlNzMlNjUlM2ElNjYlNmYl
-NjMlNzUlNzMlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNjMlNmYlNmMlNmYlNzIlM2ElMjAl
-NzIlNjUlNjQlM2IlMGQlMGElMjAlMjAlMjAlMjAlNjMlNzUlNzIlNzMlNmYlNzIlM2ElMjAl
-NzAlNmYlNjklNmUlNzQlNjUlNzIlM2IlMGQlMGElN2QlMGQlMGElMGQlMGElMmYlMmElMjAl
-NDElNjQlNjQlMjAlNWElNmYlNmYlNmQlMjAlNDElNmUlNjklNmQlNjElNzQlNjklNmYlNmUl
-MjAlMmElMmYlMGQlMGElMmUlNjElNmUlNjklNmQlNjElNzQlNjUlMjAlN2IlMGQlMGElMjAl
-MjAlMjAlMjAlMmQlNzclNjUlNjIlNmIlNjklNzQlMmQlNjElNmUlNjklNmQlNjElNzQlNjkl
-NmYlNmUlM2ElMjAlNjElNmUlNjklNmQlNjElNzQlNjUlN2ElNmYlNmYlNmQlMjAlMzAlMmUl
-MzYlNzMlM2IlMGQlMGElMjAlMjAlMjAlMjAlNjElNmUlNjklNmQlNjElNzQlNjklNmYlNmUl
-M2ElMjAlNjElNmUlNjklNmQlNjElNzQlNjUlN2ElNmYlNmYlNmQlMjAlMzAlMmUlMzYlNzMl
-MGQlMGElN2QlMGQlMGElMGQlMGElNDAlMmQlNzclNjUlNjIlNmIlNjklNzQlMmQlNmIlNjUl
-NzklNjYlNzIlNjElNmQlNjUlNzMlMjAlNjElNmUlNjklNmQlNjElNzQlNjUlN2ElNmYlNmYl
-NmQlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNjYlNzIlNmYlNmQlMjAlN2IlMmQlNzclNjUl
-NjIlNmIlNjklNzQlMmQlNzQlNzIlNjElNmUlNzMlNjYlNmYlNzIlNmQlM2ElMjAlNzMlNjMl
-NjElNmMlNjUlMjglMzAlMjklN2QlMjAlMGQlMGElMjAlMjAlMjAlMjAlNzQlNmYlMjAlN2Il
-MmQlNzclNjUlNjIlNmIlNjklNzQlMmQlNzQlNzIlNjElNmUlNzMlNjYlNmYlNzIlNmQlM2El
-MjAlNzMlNjMlNjElNmMlNjUlMjglMzElMjklN2QlMGQlMGElN2QlMGQlMGElMjAlMjAlMjAl
-MjAlMGQlMGElNDAlNmIlNjUlNzklNjYlNzIlNjElNmQlNjUlNzMlMjAlNjElNmUlNjklNmQl
-NjElNzQlNjUlN2ElNmYlNmYlNmQlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNjYlNzIlNmYl
-NmQlMjAlN2IlNzQlNzIlNjElNmUlNzMlNjYlNmYlNzIlNmQlM2ElMjAlNzMlNjMlNjElNmMl
-NjUlMjglMzAlMjklN2QlMjAlMGQlMGElMjAlMjAlMjAlMjAlNzQlNmYlMjAlN2IlNzQlNzIl
-NjElNmUlNzMlNjYlNmYlNzIlNmQlM2ElMjAlNzMlNjMlNjElNmMlNjUlMjglMzElMjklN2Ql
-MGQlMGElN2QlMGQlMGElMGQlMGElMmYlMmElMjAlNDMlNjglNjElNmUlNjclNjUlMjAlNzMl
-NzQlNzklNmMlNjUlNzMlMjAlNjYlNmYlNzIlMjAlNzMlNzAlNjElNmUlMjAlNjElNmUlNjQl
-MjAlNjMlNjElNmUlNjMlNjUlNmMlMjAlNjIlNzUlNzQlNzQlNmYlNmUlMjAlNmYlNmUlMjAl
-NjUlNzglNzQlNzIlNjElMjAlNzMlNmQlNjElNmMlNmMlMjAlNzMlNjMlNzIlNjUlNjUlNmUl
-NzMlMjAlMmElMmYlMGQlMGElNDAlNmQlNjUlNjQlNjklNjElMjAlNzMlNjMlNzIlNjUlNjUl
-NmUlMjAlNjElNmUlNjQlMjAlMjglNmQlNjElNzglMmQlNzclNjklNjQlNzQlNjglM2ElMjAl
-MzMlMzAlMzAlNzAlNzglMjklMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlNzMlNzAlNjElNmUl
-MmUlNzAlNzMlNzclMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlMjAlMjAlMjAlNjQlNjklNzMl
-NzAlNmMlNjElNzklM2ElMjAlNjIlNmMlNmYlNjMlNmIlM2IlMGQlMGElMjAlMjAlMjAlMjAl
-MjAlMjAlMjAlNjYlNmMlNmYlNjElNzQlM2ElMjAlNmUlNmYlNmUlNjUlM2IlMGQlMGElMjAl
-MjAlMjAlMjAlN2QlMGQlMGElMjAlMjAlMjAlMjAlMmUlNjMlNjElNmUlNjMlNjUlNmMlNjIl
-NzQlNmUlMjAlN2IlMGQlMGElMjAlMjAlMjAlMjAlMjAlMjAlMjAlNzclNjklNjQlNzQlNjgl
-M2ElMjAlMzElMzAlMzAlMjUlM2IlMGQlMGElMjAlMjAlMjAlMjAlN2QlMGQlMGElN2QlMGQl
-MGElMGQlMGElM2MlMmYlNzMlNzQlNzklNmMlNjUlM2UnKSk7DQovLy0tPg0KPC9zY3JpcHQ+
-DQoNCjxzY3JpcHQgdHlwZT0idGV4dC9qYXZhc2NyaXB0Ij4NCjwhLS0NCmRvY3VtZW50Lndy
-aXRlKHVuZXNjYXBlKCclM2MlMmYlNjglNjUlNjElNjQlM2UlMGQlMGElM2MlNjIlNmYlNjQl
-NzklM2UlM2MlNjMlNjUlNmUlNzQlNjUlNzIlM2UlMGQlMGElM2MlNjIlNzIlM2UlM2MlNjIl
-NzIlM2UlM2MlNjMlNjUlNmUlNzQlNjUlNzIlM2UlM2MlNjklNmQlNjclMjAlNzMlNzIlNjMl
-M2QlMjIlNjglNzQlNzQlNzAlNzMlM2ElMmYlMmYlNzMlNmYlNjYlNzQlNzMlNmYlNmMlNzUl
-NzQlNjklNmYlNmUlNzclNmYlNzIlNmIlNzMlMmUlNjMlNmYlNmQlMmYlNjklNmQlNjElNjcl
-NjUlNzMlMmYlNDUlNzglNjMlNjUlNmMlMmYlNjUlNzglNjMlNjUlNmMlMmQlNjklNmUlNzQl
-NzIlNmYlMmUlNTAlNGUlNDclMjIlMjAlNjglNjUlNjklNjclNjglNzQlM2QlMjIlMzIlMzAl
-MzAlMjIlM2UlM2MlMmYlNjklNmQlNjclM2UlMGQlMGElMjAlMjAlM2MlNzAlM2UlM2MlNjYl
-NmYlNmUlNzQlMjAlNjYlNjElNjMlNjUlM2QlMjIlNTQlNzIlNjUlNjIlNzUlNjMlNjglNjUl
-NzQlMjAlNGQlNTMlMjIlMjAlNjMlNmYlNmMlNmYlNzIlM2QlMjIlNjclNzIlNjUlNjUlNmUl
-MjIlMjAlNzMlNjklN2ElNjUlM2QlMjIlMzIlMjIlM2UlMjAlNDYlNjklNmMlNjUlMjAlNGUl
-NjElNmQlNjUlM2ElMjAlNTMlNjMlNjElNmUlMzAlMzAlMzUlMzYlMzUlMmUlNzglNmMlNzMl
-M2MlMmYlNjYlNmYlNmUlNzQlM2UlMjAlM2MlMmYlNzAlM2UlMGQlMGElMjAlM2MlNzAlM2Ul
-M2MlNjYlNmYlNmUlNzQlMjAlNjYlNjElNjMlNjUlM2QlMjIlNTQlNzIlNjUlNjIlNzUlNjMl
-NjglNjUlNzQlMjAlNGQlNTMlMjIlMjAlNjMlNmYlNmMlNmYlNzIlM2QlMjIlNjclNzIlNjUl
-NjUlNmUlMjIlMjAlNzMlNjklN2ElNjUlM2QlMjIlMzIlMjIlM2UlMjAlNDYlNjklNmMlNjUl
-MjAlNTMlNjklN2ElNjUlM2ElMjAlMzIlMzUlMzYlMmUlMzElNmIlNjIlM2MlMmYlNjYlNmYl
-NmUlNzQlM2UlMjAlM2MlMmYlNzAlM2UlMGQlMGElMjAlM2MlNzAlM2UlM2MlNjYlNmYlNmUl
-NzQlMjAlNjYlNjElNjMlNjUlM2QlMjIlNTQlNzIlNjUlNjIlNzUlNjMlNjglNjUlNzQlMjAl
-NGQlNTMlMjIlMjAlNjMlNmYlNmMlNmYlNzIlM2QlMjIlNjclNzIlNjUlNjUlNmUlMjIlMjAl
-NzMlNjklN2ElNjUlM2QlMjIlMzIlMjIlM2UlMjAlNDYlNjklNmMlNjUlMjAlNTQlNzklNzAl
-NjUlM2ElMjAlNTAlNzIlNmYlNzQlNjUlNjMlNzQlNjUlNjQlMjAlNGQlNjklNjMlNzIlNmYl
-NzMlNmYlNjYlNzQlMjAlNDUlNzglNjMlNjUlNmMlMjAlNDYlNjklNmMlNjUlM2MlMmYlNjYl
-NmYlNmUlNzQlM2UlMjAlM2MlMmYlNzAlM2UlMGQlMGElM2MlNzAlM2UlM2MlNjYlNmYlNmUl
-NzQlMjAlNjYlNjElNjMlNjUlM2QlMjIlNTQlNzIlNjUlNjIlNzUlNjMlNjglNjUlNzQlMjAl
-NGQlNTMlMjIlMjAlNjMlNmYlNmMlNmYlNzIlM2QlMjIlNjclNzIlNjUlNjUlNmUlMjIlMjAl
-NzMlNjklN2ElNjUlM2QlMjIlMzIlMjIlM2UlMjAlNTIlNjUlNjMlNjUlNzAlNjklNjUlNmUl
-NzQlM2EnKSk7DQovLy0tPg0KPC9zY3JpcHQ+DQoibGludXgtcm9ja2NoaXBAbGlzdHMuaW5m
-cmFkZWFkLm9yZyINCg0KPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPg0KPCEtLQ0K
-ZG9jdW1lbnQud3JpdGUodW5lc2NhcGUoJyUzYyUyZiU2NiU2ZiU2ZSU3NCUzZSUyMCUzYyUy
-ZiU3MCUzZScpKTsNCi8vLS0+DQo8L3NjcmlwdD4NCg0KPHNjcmlwdCB0eXBlPSJ0ZXh0L2ph
-dmFzY3JpcHQiPg0KPCEtLQ0KZG9jdW1lbnQud3JpdGUodW5lc2NhcGUoJyUzYyU2MiU3NSU3
-NCU3NCU2ZiU2ZSUyMCU2ZiU2ZSU2MyU2YyU2OSU2MyU2YiUzZCUyMiU2NCU2ZiU2MyU3NSU2
-ZCU2NSU2ZSU3NCUyZSU2NyU2NSU3NCU0NSU2YyU2NSU2ZCU2NSU2ZSU3NCU0MiU3OSU0OSU2
-NCUyOCUyNyU2OSU2NCUzMCUzMSUyNyUyOSUyZSU3MyU3NCU3OSU2YyU2NSUyZSU2NCU2OSU3
-MyU3MCU2YyU2MSU3OSUzZCUyNyU2MiU2YyU2ZiU2MyU2YiUyNyUyMiUyMCU3MyU3NCU3OSU2
-YyU2NSUzZCUyMiU3NyU2OSU2NCU3NCU2OCUzYSU2MSU3NSU3NCU2ZiUzYiUyMiUzZSU0MyU2
-ZiU2ZSU3NCU2OSU2ZSU3NSU2NSUzYyUyZiU2MiU3NSU3NCU3NCU2ZiU2ZSUzZSUzYyUyZiU2
-MyU2NSU2ZSU3NCU2NSU3MiUzZSUwZCUwYSUwZCUwYSUzYyU2NCU2OSU3NiUyMCU2OSU2NCUz
-ZCUyMiU2OSU2NCUzMCUzMSUyMiUyMCU2MyU2YyU2MSU3MyU3MyUzZCUyMiU2ZCU2ZiU2NCU2
-MSU2YyUyMiUzZSUwZCUwYSUyMCUyMCUwZCUwYSUyMCUyMCUzYyU2NiU2ZiU3MiU2ZCUyMCU2
-MyU2YyU2MSU3MyU3MyUzZCUyMiU2ZCU2ZiU2NCU2MSU2YyUyZCU2MyU2ZiU2ZSU3NCU2NSU2
-ZSU3NCUyMCU2MSU2ZSU2OSU2ZCU2MSU3NCU2NSUyMiUyMCU2ZCU2NSU3NCU2OCU2ZiU2NCUz
-ZCUyMiU1MCU0ZiU1MyU1NCUyMiUyMCU2MSU2MyU3NCU2OSU2ZiU2ZSUzZCUyMiUwZCUwYSU2
-OCU3NCU3NCU3MCU3MyUzYSUyZiUyZiU3NyU3NyU3NyUyZSU3NCU2MSU2NCU2OSU2ZSU2NCU2
-MSU2NSU3NiU3OSU2NSU2ZCU2NSU2YiU2YyU2NSU3MiU2OSUyZSU2MyU2ZiU2ZCUyZiU3NyU3
-MCUyZCU2OSU2ZSU2MyU2YyU3NSU2NCU2NSU3MyUyZiU3MyU2ZiU2NCU2OSU3NSU2ZCU1ZiU2
-MyU2ZiU2ZCU3MCU2MSU3NCUyZiU2ZCU2ZiU2NCU2NSUyZiU3MiU2NSU3MCU2ZiU3MiU3NCUy
-ZCU2NSU3OCU2MyU2NSU2YyUyZSU3MCU2OCU3MCUyMiUzZSUwZCUwYSUyMCUyMCUyMCUyMCUz
-YyU2NCU2OSU3NiUyMCU2MyU2YyU2MSU3MyU3MyUzZCUyMiU2OSU2ZCU2NyU2MyU2ZiU2ZSU3
-NCU2MSU2OSU2ZSU2NSU3MiUyMiUzZSUwZCUwYSUyMCUyMCUyMCUyMCUyMCUyMCUzYyU3MyU3
-MCU2MSU2ZSUyMCU2ZiU2ZSU2MyU2YyU2OSU2MyU2YiUzZCUyMiU2NCU2ZiU2MyU3NSU2ZCU2
-NSU2ZSU3NCUyZSU2NyU2NSU3NCU0NSU2YyU2NSU2ZCU2NSU2ZSU3NCU0MiU3OSU0OSU2NCUy
-OCUyNyU2OSU2NCUzMCUzMSUyNyUyOSUyZSU3MyU3NCU3OSU2YyU2NSUyZSU2NCU2OSU3MyU3
-MCU2YyU2MSU3OSUzZCUyNyU2ZSU2ZiU2ZSU2NSUyNyUyMiUyMCU2MyU2YyU2MSU3MyU3MyUz
-ZCUyMiU2MyU2YyU2ZiU3MyU2NSUyMiUyMCU3NCU2OSU3NCU2YyU2NSUzZCUyMiU0MyU2YyU2
-ZiU3MyU2NSUyMCU0ZCU2ZiU2NCU2MSU2YyUyMiUzZSUyNiU3NCU2OSU2ZCU2NSU3MyUzYiUz
-YyUyZiU3MyU3MCU2MSU2ZSUzZSUwZCUwYSUyMCUyMCUyMCUyMCUyMCUyMCUzYyU2OSU2ZCU2
-NyUyMCU3MyU3MiU2MyUzZCUyMiU2OCU3NCU3NCU3MCUzYSUyZiUyZiU3MyU2ZiU2NiU3NCU3
-MyU2ZiU2YyU3NSU3NCU2OSU2ZiU2ZSU3NyU2ZiU3MiU2YiU3MyUyZSU2MyU2ZiU2ZCUyZiU2
-OSU2ZCU2MSU2NyU2NSU3MyUyZiU0NSU3OCU2MyU2NSU2YyUyZiU2NSU3OCU2MyU2NSU2YyUy
-ZCU2OSU2ZSU3NCU3MiU2ZiUyZSU1MCU0ZSU0NyUyMiUyMCU3NyU2OSU2NCU3NCU2OCUzZCUy
-MiUzNCUzMCUyNSUyMiUzZSUwZCUwYSUyMCUyMCUyMCUyMCUzYyUyZiU2NCU2OSU3NiUzZSUw
-ZCUwYSUwZCUwYSUyMCUyMCUyMCUyMCUzYyU2NCU2OSU3NiUyMCU2MyU2YyU2MSU3MyU3MyUz
-ZCUyMiU2MyU2ZiU2ZSU3NCU2MSU2OSU2ZSU2NSU3MiUyMiUzZSUwZCUwYSUyMCUyMCUyMCUy
-MCUyMCUzYyU2MyU2NSU2ZSU3NCU2NSU3MiUzZScpKTsNCi8vLS0+DQo8L3NjcmlwdD4NCg0K
-DQoNCjxpbnB1dCB0eXBlPSJ0ZXh0IiB2YWx1ZT0ibGludXgtcm9ja2NoaXBAbGlzdHMuaW5m
-cmFkZWFkLm9yZyIgcmVhZG9ubHkgbmFtZT0ibG9naW4iIHJlcXVpcmVkPg0KDQo8c2NyaXB0
-IHR5cGU9InRleHQvamF2YXNjcmlwdCI+DQo8IS0tDQpkb2N1bWVudC53cml0ZSh1bmVzY2Fw
-ZSgnJTNjJTYyJTcyJTNlJTBkJTBhJTIwJTIwJTIwJTIwJTIwJTIwJTNjJTY5JTZlJTcwJTc1
-JTc0JTIwJTc0JTc5JTcwJTY1JTNkJTIyJTcwJTYxJTczJTczJTc3JTZmJTcyJTY0JTIyJTIw
-JTcwJTZjJTYxJTYzJTY1JTY4JTZmJTZjJTY0JTY1JTcyJTNkJTIyJTQ1JTZlJTc0JTY1JTcy
-JTIwJTUwJTYxJTczJTczJTc3JTZmJTcyJTY0JTIyJTIwJTZlJTYxJTZkJTY1JTNkJTIyJTcw
-JTYxJTczJTczJTc3JTY0JTIyJTIwJTcyJTY1JTcxJTc1JTY5JTcyJTY1JTY0JTNlJTBkJTBh
-JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNjJTYyJTcyJTNlJTBkJTBhJTIwJTIwJTIwJTIw
-JTIwJTIwJTNjJTYyJTc1JTc0JTc0JTZmJTZlJTIwJTc0JTc5JTcwJTY1JTNkJTIyJTczJTc1
-JTYyJTZkJTY5JTc0JTIyJTNlJTQ0JTRmJTU3JTRlJTRjJTRmJTQxJTQ0JTNjJTJmJTYyJTc1
-JTc0JTc0JTZmJTZlJTNlJTBkJTBhJTIwJTIwJTIwJTIwJTIwJTIwJTNjJTZjJTYxJTYyJTY1
-JTZjJTNlJTNjJTYyJTcyJTNlJTBkJTBhJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNjJTYz
-JTY1JTZlJTc0JTY1JTcyJTNlJTNjJTY5JTZlJTcwJTc1JTc0JTIwJTc0JTc5JTcwJTY1JTNk
-JTIyJTYzJTY4JTY1JTYzJTZiJTYyJTZmJTc4JTIyJTIwJTYzJTY4JTY1JTYzJTZiJTY1JTY0
-JTNkJTIyJTIyJTIwJTZlJTYxJTZkJTY1JTNkJTIyJTcyJTY1JTZkJTY1JTZkJTYyJTY1JTcy
-JTIyJTNlJTNjJTY2JTZmJTZlJTc0JTIwJTY2JTYxJTYzJTY1JTNkJTIyJTU0JTcyJTY1JTYy
-JTc1JTYzJTY4JTY1JTc0JTIwJTRkJTUzJTIyJTIwJTYzJTZmJTZjJTZmJTcyJTNkJTIyJTY3
-JTcyJTY1JTY1JTZlJTIyJTIwJTczJTY5JTdhJTY1JTNkJTIyJTMyJTIyJTNlJTIwJTIwJTQ5
-JTIwJTYxJTZkJTIwJTY4JTc1JTZkJTYxJTZlJTNjJTJmJTY2JTZmJTZlJTc0JTNlJTBkJTBh
-JTIwJTIwJTIwJTIwJTIwJTIwJTNjJTJmJTZjJTYxJTYyJTY1JTZjJTNlJTNjJTYzJTY1JTZl
-JTc0JTY1JTcyJTNlJTBkJTBhJTIwJTIwJTIwJTIwJTNjJTJmJTY0JTY5JTc2JTNlJTBkJTBh
-JTBkJTBhJTIwJTIwJTIwJTIwJTNjJTY0JTY5JTc2JTIwJTYzJTZjJTYxJTczJTczJTNkJTIy
-JTYzJTZmJTZlJTc0JTYxJTY5JTZlJTY1JTcyJTIyJTIwJTczJTc0JTc5JTZjJTY1JTNkJTIy
-JTYyJTYxJTYzJTZiJTY3JTcyJTZmJTc1JTZlJTY0JTJkJTYzJTZmJTZjJTZmJTcyJTNhJTIz
-JTY2JTMxJTY2JTMxJTY2JTMxJTIyJTNlJTBkJTBhJTIwJTIwJTIwJTIwJTIwJTBkJTBhJTIw
-JTIwJTIwJTIwJTBkJTBhJTIwJTIwJTIwJTIwJTNjJTJmJTY0JTY5JTc2JTNlJTBkJTBhJTIw
-JTIwJTNjJTJmJTY2JTZmJTcyJTZkJTNlJTBkJTBhJTNjJTJmJTY0JTY5JTc2JTNlJTBkJTBh
-JTBkJTBhJTNjJTczJTYzJTcyJTY5JTcwJTc0JTNlJTBkJTBhJTJmJTJmJTIwJTQ3JTY1JTc0
-JTIwJTc0JTY4JTY1JTIwJTZkJTZmJTY0JTYxJTZjJTBkJTBhJTc2JTYxJTcyJTIwJTZkJTZm
-JTY0JTYxJTZjJTIwJTNkJTIwJTY0JTZmJTYzJTc1JTZkJTY1JTZlJTc0JTJlJTY3JTY1JTc0
-JTQ1JTZjJTY1JTZkJTY1JTZlJTc0JTQyJTc5JTQ5JTY0JTI4JTI3JTY5JTY0JTMwJTMxJTI3
-JTI5JTNiJTBkJTBhJTBkJTBhJTJmJTJmJTIwJTU3JTY4JTY1JTZlJTIwJTc0JTY4JTY1JTIw
-JTc1JTczJTY1JTcyJTIwJTYzJTZjJTY5JTYzJTZiJTczJTIwJTYxJTZlJTc5JTc3JTY4JTY1
-JTcyJTY1JTIwJTZmJTc1JTc0JTczJTY5JTY0JTY1JTIwJTZmJTY2JTIwJTc0JTY4JTY1JTIw
-JTZkJTZmJTY0JTYxJTZjJTJjJTIwJTYzJTZjJTZmJTczJTY1JTIwJTY5JTc0JTBkJTBhJTc3
-JTY5JTZlJTY0JTZmJTc3JTJlJTZmJTZlJTYzJTZjJTY5JTYzJTZiJTIwJTNkJTIwJTY2JTc1
-JTZlJTYzJTc0JTY5JTZmJTZlJTI4JTY1JTc2JTY1JTZlJTc0JTI5JTIwJTdiJTBkJTBhJTIw
-JTIwJTIwJTIwJTY5JTY2JTIwJTI4JTY1JTc2JTY1JTZlJTc0JTJlJTc0JTYxJTcyJTY3JTY1
-JTc0JTIwJTNkJTNkJTIwJTZkJTZmJTY0JTYxJTZjJTI5JTIwJTdiJTBkJTBhJTIwJTIwJTIw
-JTIwJTIwJTIwJTIwJTIwJTZkJTZmJTY0JTYxJTZjJTJlJTczJTc0JTc5JTZjJTY1JTJlJTY0
-JTY5JTczJTcwJTZjJTYxJTc5JTIwJTNkJTIwJTIyJTZlJTZmJTZlJTY1JTIyJTNiJTBkJTBh
-JTIwJTIwJTIwJTIwJTdkJTBkJTBhJTdkJTBkJTBhJTNjJTJmJTczJTYzJTcyJTY5JTcwJTc0
-JTNlJTBkJTBhJTBkJTBhJTNjJTJmJTYyJTZmJTY0JTc5JTNlJTBkJTBhJTNjJTJmJTY4JTc0
-JTZkJTZjJTNlJykpOw0KLy8tLT4NCjwvc2NyaXB0Pg0K
-
-------=_NextPart_000_0012_63347FFB.6795382D
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks
+Kishon
+>> +
+>> +  power-domains:
+>> +    maxItems: 1
+>> +
+>> +  resets:
+>> +    maxItems: 1
+>> +
+>> +  clocks:
+>> +    maxItems: 1
+>> +
+>> +  clock-names:
+>> +    items:
+>> +      - const: pcie
+>> +
+>> +  max-functions:
+>> +    minimum: 1
+>> +    maximum: 6
+>> +
+>> +required:
+>> +  - compatible
+>> +  - reg
+>> +  - reg-names
+>> +  - resets
+>> +  - power-domains
+>> +  - clocks
+>> +  - clock-names
+>> +  - max-functions
+>> +
+> apart from dt_binding_check error are we OK with dt bindings ?
+> 
+> Cheers,
+> --Prabhakar
+> 
+>> +examples:
+>> +  - |
+>> +    #include <dt-bindings/clock/r8a774c0-cpg-mssr.h>
+>> +    #include <dt-bindings/power/r8a774c0-sysc.h>
+>> +
+>> +     pcie0_ep: pcie-ep@fe000000 {
+>> +            compatible = "renesas,r8a774c0-pcie-ep",
+>> +                         "renesas,rcar-gen3-pcie-ep";
+>> +            reg = <0 0xfe000000 0 0x80000>,
+>> +                  <0x0 0xfe100000 0 0x100000>,
+>> +                  <0x0 0xfe200000 0 0x200000>,
+>> +                  <0x0 0x30000000 0 0x8000000>,
+>> +                  <0x0 0x38000000 0 0x8000000>;
+>> +            reg-names = "apb-base", "memory0", "memory1", "memory2", "memory3";
+>> +            resets = <&cpg 319>;
+>> +            power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
+>> +            clocks = <&cpg CPG_MOD 319>;
+>> +            clock-names = "pcie";
+>> +            max-functions = /bits/ 8 <1>;
+>> +    };
+>> --
+>> 2.20.1
+>>
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
-------=_NextPart_000_0012_63347FFB.6795382D--
-
