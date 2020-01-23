@@ -2,78 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DB8F14697E
-	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Jan 2020 14:47:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00FD7146982
+	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Jan 2020 14:47:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e+iEcd2n6AJjH8a7KXNKSLiaF/QfgR+DwRg5knmDiG0=; b=IrDHPekKevPflw
-	7lbaR1v8+5DKX0zaxIAJ2KmNudn9GMDVn9UQkywdLrvLxp5lA3Sdo7C88DL1uXgokgMYgOLDnwPlA
-	+dALO3I0cddUEWs+7XY+z5tdyPNIMdHvj0UG7jRCOMkoo5y3DqASSL84plPKp4fxQDwKaJV3520Pd
-	VIgTfe7AtRwn/LkeGuVIIHufSS4Dk4o6gvSx/GzgzsVIL1UvP5sYgb9MbnxOEmFfe1aGpP3k+lthV
-	1g1+dyOJ8Q9NoCrwsmtIX5v5flOviYyp/SXeUhM/xFOSXtknlf4fa4P3orTcFd3JjoSPk/md1lW8Q
-	VdBgRy7rFqwenktsstUA==;
+	List-Owner; bh=5OuaFwFt+erCh5SnJDpLx0cHAZopijXB6msXVI9bjnA=; b=q/Ka9ZkU23w/HZ
+	a6UnCQMg/2nrO+5jvPfOG/MCkc964U6IBCxGAiSgUFRKRDXa95wNrAggDrnY43JBaMpHyX1kPkZzx
+	JTMPNGIvUkTYD7j9cU4jAo3ZOKx3jEFKcfiodxjbO+1VVJTxjVQTGnog2ft9xpM6NA7J9wUDrW38K
+	jP9zyda3Z0oEMI6y71L5wE7z/NnTlP5uzc4tu5/QBh4v7TJ8bQZFsiPPD660xz11ctQ9iPECvy0BY
+	ltV4HgWlTR/F/e+DbkJbOECGrg8eBBNzzaTl54bySrZ6bF3CEVpvr0XYmyIExotbUFtKoqUdUNxBf
+	3LKPdJqHyTWhye+me8Aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iucpB-0007sd-E7; Thu, 23 Jan 2020 13:47:09 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iucpN-00088l-Ov; Thu, 23 Jan 2020 13:47:21 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iucp4-0007iw-4Y
- for linux-rockchip@lists.infradead.org; Thu, 23 Jan 2020 13:47:03 +0000
-Received: by mail-pf1-x441.google.com with SMTP id n9so1555415pff.13
- for <linux-rockchip@lists.infradead.org>; Thu, 23 Jan 2020 05:47:02 -0800 (PST)
+ id 1iucp9-0007rq-UA
+ for linux-rockchip@lists.infradead.org; Thu, 23 Jan 2020 13:47:09 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id e11so1324299pjt.4
+ for <linux-rockchip@lists.infradead.org>; Thu, 23 Jan 2020 05:47:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ztEalupp6BA2B+aVvucMD9r9wzMzPi+seVlAfbkGBSY=;
- b=r2TdoJh3xNcI6aPSASEmM7iVrVjviU5MeW5jnthU0vB/kcfqFr1FiiRWiPbmfx68SC
- KB+gldgRCAcRl9GljoTr8lfedMt80CfwxE9rqrcVUwFUFTApepBPwrNSU5GpvlBbTEnf
- jQpTUp3N0cyod2pFFZDcpGDcBCwTPZ8tTu7so=
+ bh=6qQxJ2SyEvVPvMIErsNNl1ijsgX+GmiVrQvVTmqjFSI=;
+ b=nOFVLQvmwK7zQcfoX6RgA2rrAPXk4uIPXzRXCI/bneBDiL0Ik2eIKCNwhvr4BnCr5H
+ wvsxMbXx6Ve+D9iIe6dS2smIjruESE1T7KPLu5LG0YaI7vKLsy2rK7EFLq5z73+/VkSX
+ xjWrBRsLB8Opl9F6BmXyYe+0uWyqsaOK50p2w=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ztEalupp6BA2B+aVvucMD9r9wzMzPi+seVlAfbkGBSY=;
- b=kHE+vA2DWpTVAJi0aC8uhjmUk470PzsSjiGoeQvb7cehikeeoiLZmr0jzSwGD1400M
- gqZfwhDD1eoInNrXL3VdHpZZGtfpEq3olVB7X45A0uzEaWGPvu4jgnkLFDumS8oZYZcW
- VqNJtA7H0+b2kvS9foagYIaAoUPSApgbs14z+WMXRHScLghO9UEnp49ZiGhhzIL/Qlgj
- cmvNZlTUbwPJc7fDIim6zZ2EmP9uaRzunPkeH/QUWTB9gbcfT54oFzG08vZ+HHD/ba9g
- HGp1DtB9ho5PZ6QYpdadsYMcEfSCwSbIPsBaVPF0XKACryc4UJwttzRCE6Wn129tBSyD
- OYxQ==
-X-Gm-Message-State: APjAAAWeOyvxB3CUUpMw36ccQTDPFur1PEKAEf7z1IIg7idjBefZWgO8
- enWu+eClKkryO4lMxyihQtmHwQ==
-X-Google-Smtp-Source: APXvYqxFydOJhKTAqNJ/gjtGiD+8xdXtBtmxRScl0NEraMgo7kIjEDWa7r9V30TPrrfAY7WNIg7mcA==
-X-Received: by 2002:a62:5544:: with SMTP id j65mr7702003pfb.121.1579787221444; 
- Thu, 23 Jan 2020 05:47:01 -0800 (PST)
+ bh=6qQxJ2SyEvVPvMIErsNNl1ijsgX+GmiVrQvVTmqjFSI=;
+ b=bgeBpZF06wq78CnHwYsRutEjIUKpxE/+SVKwOhINMs3kErrKqgwKSdpsZ0QwSfAHQX
+ KtbkwXkevwwRRBPHJcudod7BNUEqZGXWQO6QMPZqqjv4nznYXw3BIK6VmDRmKfhJoH6h
+ nAH+3yuStd3SfovJOfXwFzVIMCVLWNB1WeIfPQ7SaKqNhoElFmiOMitQP/JTpzyYAJO1
+ rwz/PnwJMNhk+f5WSfU57YFbtkJtPYGdt2CJg0dsdpI8Q2nQ04loafC7pVricmSBd4hT
+ aSSZjwjxU9/SIneIpJY9FtDCsKvxkEN+vFXYH8HYjvHXzhE6vQZMqXxNuomeh5RKKDlZ
+ GdEQ==
+X-Gm-Message-State: APjAAAXeKVa8jKouNPaP53RDy7CzAY4KzTXNfbVPjDTUmLKFZxk4Wwz0
+ o4Ix4M0NqZPUSyqLavytOyrmJA==
+X-Google-Smtp-Source: APXvYqxluBr8pbd/5ZuACzarEI+J3Nv0qKlV4YpT+VWQoiazdSaVUD7XjER8s9Oeyn6ZbbfLh5m2jA==
+X-Received: by 2002:a17:902:16a:: with SMTP id
+ 97mr16134852plb.163.1579787227342; 
+ Thu, 23 Jan 2020 05:47:07 -0800 (PST)
 Received: from localhost.localdomain ([49.206.202.109])
- by smtp.gmail.com with ESMTPSA id a10sm3119275pgm.81.2020.01.23.05.46.55
+ by smtp.gmail.com with ESMTPSA id a10sm3119275pgm.81.2020.01.23.05.47.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 23 Jan 2020 05:47:00 -0800 (PST)
+ Thu, 23 Jan 2020 05:47:06 -0800 (PST)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 2/3] ARM: dts: rockchip: Fix ddc-i2c-bus for rk3288-vyasa
-Date: Thu, 23 Jan 2020 19:16:40 +0530
-Message-Id: <20200123134641.30720-2-jagan@amarulasolutions.com>
+Subject: [PATCH 3/3] ARM: dts: rockchip: Add vcc50_hdmi for rk3288-vyasa
+Date: Thu, 23 Jan 2020 19:16:41 +0530
+Message-Id: <20200123134641.30720-3-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20200123134641.30720-1-jagan@amarulasolutions.com>
 References: <20200123134641.30720-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_054702_196050_3FD3258F 
-X-CRM114-Status: GOOD (  11.20  )
+X-CRM114-CacheID: sfid-20200123_054707_987048_25002186 
+X-CRM114-Status: UNSURE (   9.53  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -104,38 +103,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-ddc-i2c-bus routed for HDMI is i2c2 not i2c5 on
-Vyasa RK3288 board.
+Add vcc50_hdmi regulator for Vyasa RK3288 board.
 
-Add support for fixing the same.
+VCC50_HDMI is the real name used for this regulator as
+per the schematics.
+
+This regulator used for HDMI connector by detecting the
+cable via HDMI_EN gpio and input rails are sourced from
+VSUS_5V regulator.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- arch/arm/boot/dts/rk3288-vyasa.dts | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/rk3288-vyasa.dts | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
 
 diff --git a/arch/arm/boot/dts/rk3288-vyasa.dts b/arch/arm/boot/dts/rk3288-vyasa.dts
-index d2f79e5bee87..88c63946f2a3 100644
+index 88c63946f2a3..52291faf7aef 100644
 --- a/arch/arm/boot/dts/rk3288-vyasa.dts
 +++ b/arch/arm/boot/dts/rk3288-vyasa.dts
-@@ -150,7 +150,7 @@
- };
- 
- &hdmi {
--	ddc-i2c-bus = <&i2c2>;
-+	ddc-i2c-bus = <&i2c5>;
- 	status = "okay";
- };
- 
-@@ -347,7 +347,7 @@
+@@ -78,6 +78,17 @@
+ 		vin-supply = <&vcc_io>;
  	};
- };
  
--&i2c2 {
-+&i2c5 {
- 	status = "okay";
- };
++	vcc50_hdmi: vcc50-hdmi {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc50_hdmi";
++		enable-active-high;
++		gpio = <&gpio7 RK_PB4 GPIO_ACTIVE_HIGH>; /* HDMI_EN */
++		pinctrl-names = "default";
++		pinctrl-0 = <&vcc50_hdmi_en>;
++		regulator-always-on;
++		regulator-boot-on;
++		vin-supply = <&vsus_5v>;
++	};
+ 	vusb1_5v: vusb1-5v {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "vusb1_5v";
+@@ -446,6 +457,12 @@
+ 		};
+ 	};
  
++	hdmi {
++		vcc50_hdmi_en: vcc50-hdmi-en {
++			rockchip,pins = <7 RK_PB4 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++
+ 	pmic {
+ 		pmic_int: pmic-int {
+ 			rockchip,pins = <0 RK_PA4 RK_FUNC_GPIO &pcfg_pull_up>;
 -- 
 2.18.0.321.gffc6fa0e3
 
