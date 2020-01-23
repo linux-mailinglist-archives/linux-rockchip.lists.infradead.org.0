@@ -2,78 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63A0B146E72
-	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Jan 2020 17:29:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51E7A146EB4
+	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Jan 2020 17:56:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=irHO8+gsiiRXb7I+Nef0IL/D7zlxrQk2/JPiYzHSrGo=; b=fCNmFX08/hwHPU
-	+fXL/ESdfS8utkl1FsPOeopaBW23oBUfQuP/3/Acg4HUZ67RWKYvfeL8Za9nGSgSFpObV+mFLHdFo
-	rrXZ/KnFXwqJA4Otw9PLRPxvi5djS8qDda8LfYeIdwo6vX7w/kxixtcgi5bh+OHQQdNIGkdqOHGKL
-	bkx9jJzV6wCVtgJ8YcnpaZk2ponCK9BQvu5aiItmiIAOAFhrfLvaZjIWbiQn+mwHbVG/LM77Ou1XE
-	al6elWwhb3IocaxCx2ham+jFKQbrvkeSFWoHPYdqbrqSgle6b6bMauzNMremvEFnM6S+tE2LbidNB
-	0TAFRywDsnnFZP9KB2iQ==;
+	List-Owner; bh=/JD3BuV8bqeckdEmXcHNgQa0ABriTs/wQ0q8tHKruus=; b=D4o1cQ+i5ShY3s
+	FKYHCtZoJWvUMvM3HcXxDPL6I/y7vDY1r0KMLpnHDv7Ki6+5pduU4Cbl2GdIj3MXy/GEKrfFyYm1p
+	VIAz+E1HG1JRmx0zZiCh3bGb+Q0jvqRb8RrcniXcafDF5cho6n3JIAQVCUTSgx+RzMPLSEHD78sKd
+	76hs8S8udaZfgxsviQ8qYFKBDm+JF0060vuygNejAz3kAX5Li2FoYfwxbM3+6cf1UPNhdtF2fza+z
+	hSICfyoeDFSn5UvlS+32+dkAM2YecX3+tr7kh9CzhqzhylmJDQjOKLEq8TiTD1A2LvZ6jvlHQnndY
+	Wc9jXoZYaKp7uGXVHRXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iufMF-0007dP-EB; Thu, 23 Jan 2020 16:29:27 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iufm1-0000dR-On; Thu, 23 Jan 2020 16:56:05 +0000
+Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iufMC-0007bA-Ln
- for linux-rockchip@lists.infradead.org; Thu, 23 Jan 2020 16:29:26 +0000
-Received: by mail-pg1-x543.google.com with SMTP id k3so1632537pgc.3
- for <linux-rockchip@lists.infradead.org>; Thu, 23 Jan 2020 08:29:24 -0800 (PST)
+ id 1iufly-0000d8-A6
+ for linux-rockchip@lists.infradead.org; Thu, 23 Jan 2020 16:56:04 +0000
+Received: by mail-il1-x144.google.com with SMTP id v69so2570682ili.10
+ for <linux-rockchip@lists.infradead.org>; Thu, 23 Jan 2020 08:56:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=baaDoeDkotpglxjsNTDoBouhmXKpmsImZXmCo5dx/Oo=;
- b=CGRx2/w0keMNPfkwqURXY+7XRkvcPVE77a0IdSvFXU4caClfNq/+LeKQTa8Jgnrnqu
- JPksD9LJKvL6fNnuOXCZcggGhSYfMCToiy1Zah91zD1hVspDQHDWBtq77L6eefPSPZRp
- RZJFD8prL0cSWjMYrbLi63kNOHkeavm9Eoq5Y=
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=YIM8cGtXJeDSUZ5rx4E9o0ABegFU5w/IoycbPZ/X/Ps=;
+ b=QPOusPhj86vc++2f0TcTV5PtpmEx5mlMlNaNexj6mbD7iC2x7VRThRSMhRJoEg0bRQ
+ HCTc35IKUDe+FMaBvZF06urzmGiS7F4bjD6xzNdFTSaOgkqmI00yXZ7+T0SVcQB2gQXh
+ +W8EQwfiR/4KRke6ue+nAQJASmFD6sT8BGSXE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=baaDoeDkotpglxjsNTDoBouhmXKpmsImZXmCo5dx/Oo=;
- b=oC/0cP/dKx072vVtFzJEQhnKcQZaBkdpwZRFpwrvYsg/jWDm0lC7UcZl1nc7LTspcr
- P9OJV9LEB8HmQAXH3ky4MJNsWogV655pEBOmzGtCgVgMpiWcLCgJd7k5NvW88QMIlNVF
- egLwnADuATJm+AuBIBhYv1ECWZCk6Vtaz1MtDi5jJNmR1I8ej3FZPSF0F3cq6dJ/aG2n
- Ex9YNVxutkYaDwU8r7kMhceGKdTqDDfA1fTGYrk4fkIWRjsJ0S1YxkgqZb2sPCkvsGOH
- RcmXUpnZenwVGqrQN1L2lqFaY4gqeiEYkT1pU2JEnJ2UE5xZmcHdE1JtVlV25K/6uFtG
- 4wxA==
-X-Gm-Message-State: APjAAAU3vELZr0ZiuZYME7otCClPo68puhalylG78sBvVSbvcXR4VxS7
- OZXXjmshMs+5qg1lcn/P05UOyw==
-X-Google-Smtp-Source: APXvYqyh/tlOIxtYfiIwgoIlAluCLps5+vYnNlq2RooEWtM1qZBU5Dh7KFC/JZG3SidRkcXXMwB6EQ==
-X-Received: by 2002:a63:213:: with SMTP id 19mr4818279pgc.160.1579796963913;
- Thu, 23 Jan 2020 08:29:23 -0800 (PST)
-Received: from localhost.localdomain ([49.206.202.109])
- by smtp.gmail.com with ESMTPSA id u1sm3188909pfn.133.2020.01.23.08.29.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 23 Jan 2020 08:29:23 -0800 (PST)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH 4/4] rockchip: Enable HDMI output on rk3399 board w/ HDMI
-Date: Thu, 23 Jan 2020 21:58:45 +0530
-Message-Id: <20200123162845.10651-5-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
-In-Reply-To: <20200123162845.10651-1-jagan@amarulasolutions.com>
-References: <20200123162845.10651-1-jagan@amarulasolutions.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=YIM8cGtXJeDSUZ5rx4E9o0ABegFU5w/IoycbPZ/X/Ps=;
+ b=RntZzq8oi4Y+xo/uqcKzFKY9g/Hp/mwImO2pkV7uVfY3I08hxHZodugW5im2Ui2qwz
+ 4NRus99Oh6fgHH5d+BhfYiYUtSRZrIxYYz4D/mYG6CXFREUAJat8YD5NXEu3Fx+jgXyP
+ 8WLC9sZAePb20sDZQuH75+XnfJPB4xA0j9dqAMpwnY4Wr3t+Rd/un9V79n7cMZDjSqT2
+ j/z19dRlk+QF/tTc1EhwzY15UA8M65xD08YRuO/EbjlVnOBKyAisUF8v2zlhWyWIWkqE
+ 2xYZWpyGEWhr+Aps1ZVTCogT9AIMXtgQwLdgolPwk1r3ubYLi/kSeD8EhCDKG3xnJEgS
+ ocvw==
+X-Gm-Message-State: APjAAAWFCwdfDhZrMtvz55GPycNZBcHDBd+jLOVnngO3OSTeW0q7KiiN
+ UK9AqAabxeImgnigNuX2QPH6/JjDBb1kAQoZNcem1A==
+X-Google-Smtp-Source: APXvYqxBPEIsOGcp806Hb0lNkcYBxLyipHqkKQEpC2B/hlXFJ9xf7tQiiE3bATdcrNIUjg+NJpieKpPQbPsU5PyumBM=
+X-Received: by 2002:a92:9f1b:: with SMTP id u27mr13665562ili.173.1579798560979; 
+ Thu, 23 Jan 2020 08:56:00 -0800 (PST)
 MIME-Version: 1.0
+References: <20191221075440.6944-1-jagan@amarulasolutions.com>
+ <20191221075440.6944-3-jagan@amarulasolutions.com>
+ <20200120172240.GX8732@bill-the-cat>
+ <8dddd74f-7b17-a614-48ab-aea0bc9148db@csgraf.de>
+In-Reply-To: <8dddd74f-7b17-a614-48ab-aea0bc9148db@csgraf.de>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Thu, 23 Jan 2020 22:25:50 +0530
+Message-ID: <CAMty3ZAq+aDMuEKGYk9UyTS4Z4=TgtNcKRDtiBC-=mqRWUWAyA@mail.gmail.com>
+Subject: Re: [PATCH 02/11] distro_bootcmd: Add SF support
+To: Alexander Graf <agraf@csgraf.de>, Tom Rini <trini@konsulko.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_082924_721171_51A985FB 
-X-CRM114-Status: UNSURE (   7.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200123_085603_001108_ABE0004D 
+X-CRM114-Status: GOOD (  15.03  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -96,107 +91,59 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: u-boot@lists.denx.de, Michael Trimarchi <michael@amarulasolutions.com>,
- linux-amarula@amarulasolutions.com, Jagan Teki <jagan@amarulasolutions.com>,
- linux-rockchip@lists.infradead.org
+Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Heinrich Schuchardt <xypron.glpk@gmx.de>, Simon Glass <sjg@chromium.org>,
+ Kever Yang <kever.yang@rock-chips.com>, U-Boot-Denx <u-boot@lists.denx.de>,
+ Peter Robinson <pbrobinson@gmail.com>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Enable config options and console setting to respective
-rk3399 board for HDMI output.
+On Mon, Jan 20, 2020 at 11:10 PM Alexander Graf <agraf@csgraf.de> wrote:
+>
+>
+> On 20.01.20 18:22, Tom Rini wrote:
+> > +A few people that may have insight to my question
+> >
+> > On Sat, Dec 21, 2019 at 01:24:31PM +0530, Jagan Teki wrote:
+> >
+> >> Add distro boot command support for SPI flash.
+> >>
+> >> This distro boot will read the boot script at specific
+> >> location at the flash and start sourcing the same.
+> >>
+> >> The common macro like BOOTENV_SHARED_FLASH would help
+> >> to extend the support for nand flash in future.
+> >>
+> >> Cc: Tom Rini <trini@konsulko.com>
+> >> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> > What distro is this for?  My concern here is that hundreds of boards
+> > (literally) grow by a few hundred bytes to add in this bit of additional
+> > default logic.  That's not a big problem if distributions are now going
+> > to be using SPI flash as where they're programming in their bootscript.
+> > But, who is doing that?  Thanks!
+>
+>
+> I am not aware of any "distro" that puts a U-Boot script at offset 0 of
+> the SPI Flash.
+>
+> Traditionally, SPI Flash boot setups were always very hand crafted -
+> exactly the opposite of what distro boot is for. That said, I think
+> supporting SPI Flash boot for rk3399 is great! Albeit I would personally
+> only store U-Boot and the environment on SPI, not the target OS.
+>
+> Jagan, is putting a U-Boot script on the SPI Flash something you thought
+> of or something that the rk3399 reference board already does? If it's
+> the latter, maybe you could add it as a board custom boot function?
 
-Boards supported and tested on this patch are:
-- NanoPc T4
-- NanoPi M4
-- NanoPi Neo4
-- ROC-RK3399-PC
+Yes it would be later that points to. rk3399 has SPI flash layout and
+out of which one of offset(script_offset_f=0xffe000 from
+include/configs/rk3399_common.h) stored the programming script.
 
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- configs/nanopc-t4-rk3399_defconfig   | 6 ++++++
- configs/nanopi-m4-rk3399_defconfig   | 6 ++++++
- configs/nanopi-neo4-rk3399_defconfig | 6 ++++++
- configs/roc-pc-rk3399_defconfig      | 6 ++++++
- include/configs/evb_rk3399.h         | 5 +++++
- 5 files changed, 29 insertions(+)
-
-diff --git a/configs/nanopc-t4-rk3399_defconfig b/configs/nanopc-t4-rk3399_defconfig
-index bd6d60ff6c..17e8a18d31 100644
---- a/configs/nanopc-t4-rk3399_defconfig
-+++ b/configs/nanopc-t4-rk3399_defconfig
-@@ -53,3 +53,9 @@ CONFIG_USB_ETHER_RTL8152=y
- CONFIG_USB_ETHER_SMSC95XX=y
- CONFIG_SPL_TINY_MEMSET=y
- CONFIG_ERRNO_STR=y
-+CONFIG_DM_VIDEO=y
-+CONFIG_VIDEO_BPP16=y
-+CONFIG_VIDEO_BPP32=y
-+CONFIG_DISPLAY=y
-+CONFIG_VIDEO_ROCKCHIP=y
-+CONFIG_DISPLAY_ROCKCHIP_HDMI=y
-diff --git a/configs/nanopi-m4-rk3399_defconfig b/configs/nanopi-m4-rk3399_defconfig
-index 74ede13c23..b73b2fdc27 100644
---- a/configs/nanopi-m4-rk3399_defconfig
-+++ b/configs/nanopi-m4-rk3399_defconfig
-@@ -53,3 +53,9 @@ CONFIG_USB_ETHER_RTL8152=y
- CONFIG_USB_ETHER_SMSC95XX=y
- CONFIG_SPL_TINY_MEMSET=y
- CONFIG_ERRNO_STR=y
-+CONFIG_DM_VIDEO=y
-+CONFIG_VIDEO_BPP16=y
-+CONFIG_VIDEO_BPP32=y
-+CONFIG_DISPLAY=y
-+CONFIG_VIDEO_ROCKCHIP=y
-+CONFIG_DISPLAY_ROCKCHIP_HDMI=y
-diff --git a/configs/nanopi-neo4-rk3399_defconfig b/configs/nanopi-neo4-rk3399_defconfig
-index a44124aac0..2ecb50967b 100644
---- a/configs/nanopi-neo4-rk3399_defconfig
-+++ b/configs/nanopi-neo4-rk3399_defconfig
-@@ -53,3 +53,9 @@ CONFIG_USB_ETHER_RTL8152=y
- CONFIG_USB_ETHER_SMSC95XX=y
- CONFIG_SPL_TINY_MEMSET=y
- CONFIG_ERRNO_STR=y
-+CONFIG_DM_VIDEO=y
-+CONFIG_VIDEO_BPP16=y
-+CONFIG_VIDEO_BPP32=y
-+CONFIG_DISPLAY=y
-+CONFIG_VIDEO_ROCKCHIP=y
-+CONFIG_DISPLAY_ROCKCHIP_HDMI=y
-diff --git a/configs/roc-pc-rk3399_defconfig b/configs/roc-pc-rk3399_defconfig
-index 3a051d9b0c..a9f99f992d 100644
---- a/configs/roc-pc-rk3399_defconfig
-+++ b/configs/roc-pc-rk3399_defconfig
-@@ -56,3 +56,9 @@ CONFIG_USB_ETHER_RTL8152=y
- CONFIG_USB_ETHER_SMSC95XX=y
- CONFIG_SPL_TINY_MEMSET=y
- CONFIG_ERRNO_STR=y
-+CONFIG_DM_VIDEO=y
-+CONFIG_VIDEO_BPP16=y
-+CONFIG_VIDEO_BPP32=y
-+CONFIG_DISPLAY=y
-+CONFIG_VIDEO_ROCKCHIP=y
-+CONFIG_DISPLAY_ROCKCHIP_HDMI=y
-diff --git a/include/configs/evb_rk3399.h b/include/configs/evb_rk3399.h
-index c0b0358893..09eb361655 100644
---- a/include/configs/evb_rk3399.h
-+++ b/include/configs/evb_rk3399.h
-@@ -6,6 +6,11 @@
- #ifndef __EVB_RK3399_H
- #define __EVB_RK3399_H
- 
-+#define ROCKCHIP_DEVICE_SETTINGS \
-+		"stdin=serial,cros-ec-keyb\0" \
-+		"stdout=serial,vidconsole\0" \
-+		"stderr=serial,vidconsole\0"
-+
- #include <configs/rk3399_common.h>
- 
- #if defined(CONFIG_ENV_IS_IN_MMC)
--- 
-2.18.0.321.gffc6fa0e3
-
+Jagan.
 
 _______________________________________________
 Linux-rockchip mailing list
