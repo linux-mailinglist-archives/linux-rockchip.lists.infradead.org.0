@@ -2,91 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E196145EC8
-	for <lists+linux-rockchip@lfdr.de>; Wed, 22 Jan 2020 23:46:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0B5B146017
+	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Jan 2020 01:48:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=jzntFpuDeKbn9HHo10LghBh00VDDTRic6N6V4zHXZ8g=; b=jLLqPJZj46J90SdAjOk/6Nhbu+
-	QwXcjSRtKrh1Z3xaDoZO5zztPixJW+RAwh7REiXSSdF0ZhPwT0+OsueEIkZxCScjG4zW4ZrcM1qoU
-	/HxnFb8jDUNt7OoO59SxAPSEBlQmoOirs0e0cPqW5EbsHu9MzcSQ/zeHTbnwCLB4C84jGgTcDDSC0
-	5O2jnimNVFKtOuiRG4+YkyNJJvDW4I/NeiJ+hB2ztFtGGfoEOZe5UbU/xaN7SxOJRMfVJ/y9HIFiV
-	k2Uxp/QIEbgMw+82wPJp5MP6UZG1II/qGZwOWJy5BZEsCefZ6w6DX/QrMHoK3ZSslTSEDfQO7qPWa
-	9a+ZJoqA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rGQOFdRLDxOITkpdyQKNnvqPv0iBsP6RX/WHLE+fxQ0=; b=nxG38qO51b1oq5
+	elLFzLeKv+77rLV0Itm40iBnFhT3Av/iEB35q+NM33dCzr364JM6vVyLyRu2BBp1MQ5IatPY4kKaD
+	6PitJBT9uUqH+DYCVQG9DUG/CZoulywM2PcKh4lc055GNiny2GBQkgeRYVVYIRS2hi2QuX5tcys7i
+	KjKVKcnnPxvf2UMtV2IZFoisr7Vf2TZNdYoo7UlZaz87QT6yAGlaZKrtYjVMKN2dbcPO3jCAajWi/
+	fQO+wnVGZ4vYQbpJbSc42xHGjxYDHuCKQzFTUEEPzombqy3mM4vavhoUi4dqzQ/JwGQEt/t9w9F80
+	eP7gfzsMHI3xGoK8BZ0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuOlv-0004C7-Su; Wed, 22 Jan 2020 22:46:51 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iuQfX-0007D2-Nc; Thu, 23 Jan 2020 00:48:23 +0000
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuOlD-0003U4-JC; Wed, 22 Jan 2020 22:46:09 +0000
-Received: by mail-wr1-x442.google.com with SMTP id b6so979521wrq.0;
- Wed, 22 Jan 2020 14:46:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=pWxnPQXLd+Q1xr02wkxqUJDAE8DS8+PwJcPiG+afbrk=;
- b=I0fdhWiB41zdWDXu3XXbsSFAdjgrRW152IEIC/13IrtPI/utS9IBzUHxzsWQOORADu
- FNJW2ywG6LfuQ+Iw432bFzTM0OP/gSZYvZ+C8KnxErBOlO72oom9mSqUgI3f4YHYoc6J
- LKXwOuZAQ5jbFfmWCZIUackWR4dboT1eVR/58v1aASUJf+XrWCTiEtwxglbS5fanZAsB
- iHERNVZ5WU73kN0JJJDx8D9o1Mphl/ZyZshW3I2FFCzTbFNSZujINWTwOgsqgukTrGWw
- Ugs/edLPj9isfGj1bH39KXgbt8fAzVlmlAYGVFe6g9ydc2nqidgPuylBwQksmZxPXWaM
- 8mKA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=pWxnPQXLd+Q1xr02wkxqUJDAE8DS8+PwJcPiG+afbrk=;
- b=ajVWxGYNwrBdYPFz5Q0E56PWgroPrDvz3n5ljVZ55GiNjhehG/nzbNJZZRFj75K0Lx
- SrMTJwmtFe0rELIS2g3PwT4x3vG3S41X4dpIgWLv4ebhiEYoLbIBzfuIvPC382eTG5UG
- jpGi0oF6tU66lrcqWgflv8RbSZnGB09s3f3A/xROM+dSTCvG3E7ZG+Kndtgg1C5NX+2f
- UJ3yasMVDT5dKmryX/GEDdgG5YDpLgO5Iy/1NBSJMoXvFSVRWZBD3KILKa3bMGnvpAqJ
- qDH0UP751FdCLfzOa5lHPU8qOmf4n4uun0Eiq+cgEF/oAHZ/usDUK7VqyhDY6Ya8PVsE
- 5FYQ==
-X-Gm-Message-State: APjAAAWc8k39l18o/u+eqHJ7zZPvzgdbODutwrza2xC8lUsdFMhzhQUP
- TbUJqH/BiFneRRuagtgw53k=
-X-Google-Smtp-Source: APXvYqzB0krEdYHfsT/a9zb3dXi65M8ljwfJsmqQQOo0r/RttSk83FS5IrLrFgtXh1DnTPNL1Rj7WQ==
-X-Received: by 2002:adf:fa43:: with SMTP id y3mr13505642wrr.65.1579733166449; 
- Wed, 22 Jan 2020 14:46:06 -0800 (PST)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id f1sm342559wro.85.2020.01.22.14.46.05
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 22 Jan 2020 14:46:06 -0800 (PST)
-From: Johan Jonker <jbx6244@gmail.com>
-To: broonie@kernel.org
-Subject: [PATCH v2 3/3] dt-bindings: spi: spi-rockchip: add description for
- rk3328
-Date: Wed, 22 Jan 2020 23:45:55 +0100
-Message-Id: <20200122224555.6845-3-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200122224555.6845-1-jbx6244@gmail.com>
-References: <20200122224555.6845-1-jbx6244@gmail.com>
+ id 1iuQfP-00076F-EJ; Thu, 23 Jan 2020 00:48:16 +0000
+Received: from [82.43.126.140] (helo=localhost)
+ by youngberry.canonical.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
+ (envelope-from <colin.king@canonical.com>)
+ id 1iuQfN-0006ib-2P; Thu, 23 Jan 2020 00:48:13 +0000
+From: Colin King <colin.king@canonical.com>
+To: Russell King <linux@armlinux.org.uk>, Heiko Stuebner <heiko@sntech.de>,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
+Subject: [PATCH] ARM: rockchip: fix spelling mistake "to" -> "too"
+Date: Thu, 23 Jan 2020 00:48:07 +0000
+Message-Id: <20200123004807.2833556-1-colin.king@canonical.com>
+X-Mailer: git-send-email 2.24.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_144607_628235_5F875652 
-X-CRM114-Status: GOOD (  10.91  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200122_164815_618244_29420C9A 
+X-CRM114-Status: GOOD (  11.05  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [91.189.89.112 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [91.189.89.112 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,41 +62,36 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The description below is already in use for rk3328.dtsi,
-but was somehow never added to a document, so add
-"rockchip,rk3328-spi", "rockchip,rk3066-spi"
-for spi nodes on a rk3328 platform to spi-rockchip.yaml.
+From: Colin Ian King <colin.king@canonical.com>
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Acked-by: Rob Herring <robh@kernel.org>
+There is a spelling mistake in a pr_err message. Fix it.
+
+Signed-off-by: Colin Ian King <colin.king@canonical.com>
 ---
- Documentation/devicetree/bindings/spi/spi-rockchip.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/mach-rockchip/platsmp.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/spi/spi-rockchip.yaml b/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
-index a797a4748..5e0fab1bc 100644
---- a/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
-+++ b/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
-@@ -30,6 +30,7 @@ properties:
-             - rockchip,rk3188-spi  #for rk3188 SoCs.
-             - rockchip,rk3288-spi  #for rk3288 SoCs.
-             - rockchip,rk3308-spi  #for rk3308 SoCs.
-+            - rockchip,rk3328-spi  #for rk3328 SoCs.
-             - rockchip,rk3368-spi  #for rk3368 SoCs.
-             - rockchip,rk3399-spi  #for rk3399 SoCs.
-           - const: rockchip,rk3066-spi
+diff --git a/arch/arm/mach-rockchip/platsmp.c b/arch/arm/mach-rockchip/platsmp.c
+index 649e0a54784c..d60856898d97 100644
+--- a/arch/arm/mach-rockchip/platsmp.c
++++ b/arch/arm/mach-rockchip/platsmp.c
+@@ -180,7 +180,7 @@ static int __init rockchip_smp_prepare_sram(struct device_node *node)
+ 
+ 	rsize = resource_size(&res);
+ 	if (rsize < trampoline_sz) {
+-		pr_err("%s: reserved block with size 0x%x is to small for trampoline size 0x%x\n",
++		pr_err("%s: reserved block with size 0x%x is too small for trampoline size 0x%x\n",
+ 		       __func__, rsize, trampoline_sz);
+ 		return -EINVAL;
+ 	}
 -- 
-2.11.0
+2.24.0
 
 
 _______________________________________________
