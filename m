@@ -2,77 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 409D8146E6F
-	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Jan 2020 17:29:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81F84146E70
+	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Jan 2020 17:29:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9+u2/tI0o4SC0qo9MimmswktYgGfJXdjeKgoro4WyMc=; b=ezR+5wD6A/IVuT
-	3oPnRrggoG60+U76ilNonND4YDvrqdurm81+cjRDFTGEBgyNRu2SUEEeZ7C/ILK7FDI7u5kuz7jXg
-	WJDX33Gls0yaAq7HivVdoM/AOoV0ygxEUXoXTN5D8ECoz01Rd1YivFxgeeynbH3Y0RiQP0rn+ufMo
-	lEnjfU/e5EYOe1EXGTXJ6JAZBHG7iNlsuEjUIsO03WDlrJHEaCkfn8QkWOMlUvo6FXCsBNNLt3UyX
-	6UHGHdC5iUdyFrUbLJ43qvgZKSPfEVaaEBe3D616/TJtoCZHmLSFHtNT4F1EUS8Cnt2PY7UI6kqm2
-	trMj/xcI4W5kko4mjw+Q==;
+	List-Owner; bh=mgRB30ZbaPRBogpDnZeRY/Uy2pZeuCTEdidmw2QELaY=; b=tVJAb2ymERdbt5
+	0dl5GuKcuVx5r9xKEFe5b/BqYnTQMJYQn/rnXK4Rf7s/TBG0pqvdSIfAut0l6FF8qps2NHaL932He
+	awOXGwM3akrIOkHI5kmlmD5dU6JM8MSILzyPy7lJI1yTn6/J9MN4QWz/aC4gjOKJZs/q3jYYTObQC
+	lMgy82llzjKcSX7NejHeHFHe5wQgvps2WiZp+Tb7Jk79ADgc0rRBTL6chhHcuhlu1OmUgDY901Cqr
+	lmgIJXLSxCkmwrt5EP3dTupiAWH0sWeS0ziiMe1++7mg6vIYMS/FRVwvh0XzCPQrHqETmJJS/nUq3
+	VgnGUljGY1RgxkXsohqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iufM9-0007XR-Cv; Thu, 23 Jan 2020 16:29:21 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iufMC-0007aL-Hs; Thu, 23 Jan 2020 16:29:24 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iufM5-0007Vb-Vi
- for linux-rockchip@lists.infradead.org; Thu, 23 Jan 2020 16:29:19 +0000
-Received: by mail-pg1-x544.google.com with SMTP id l24so1637459pgk.2
- for <linux-rockchip@lists.infradead.org>; Thu, 23 Jan 2020 08:29:17 -0800 (PST)
+ id 1iufM9-0007Y8-Gj
+ for linux-rockchip@lists.infradead.org; Thu, 23 Jan 2020 16:29:22 +0000
+Received: by mail-pg1-x541.google.com with SMTP id x8so1621273pgk.8
+ for <linux-rockchip@lists.infradead.org>; Thu, 23 Jan 2020 08:29:21 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=JZjaZueugpYt326WNoZ6QPw0PlT7W0gDge9nb36q0kk=;
- b=Bwp7pmpfPD/Mxq1lEGsA48YFBTsbkbHjvlDaHOOQUSlDRgY9wonkoIj0aHSG5ejhwK
- 6dmboDyfunpERJYsDFeZmhbYTJyKZSbUaR5ZiEyBI2RGmrggKJv8+AA6ijCHDGX9gPQn
- CMVgGuI2mnW67zDyKz9IEHgTVVa5uEgEmUjgY=
+ bh=J+OiRInHosqjCdmhqjIGvub+XWktp878CWzZRNlLP4A=;
+ b=XchflPEbw2uUM4HrEWINj2vewEvxWEqkwMyOWLlw8SXq6j7Yfhdcif3FtD1BdORPS/
+ mgnv1aR7jQhKZSVFnE3q4km+Q1ao7Kkk99q1qcSk88sCtvCURIg3JKq6L4q/bXIFbvVO
+ qEUu3J3LSANWundsgBsc1K9V1pQltfxaQ+mKo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=JZjaZueugpYt326WNoZ6QPw0PlT7W0gDge9nb36q0kk=;
- b=c65bmJxRKrK4KcNbK06z7D5cxWIH5dJW7pVdhYNg5kobwxur/8yjsj9KsAq3OZpChP
- yi/48afxERmsCsjl0K76fweda/I4xuzvd5bzd/bGSj3vnxWzQJqIfHabFCNjgK8kLPRn
- qGCUYZSAKg6y5Nle9i+ZuuNH445SJ78r2zbZ02jKrJMttz8LnT2VeuXyMVHgj+656muS
- XtgYSDVjlItfYbBHyIdDHOz6XJCnpVWoC074BGqwc/InLBrTErSwNL9y2GVlOB/UPoWa
- jftnko7W4+sY5AWLAbCraM3uzurgVatYQl9d9yA8b1JvAXCZqwL4IYinx0LJvmJN24d8
- nVKw==
-X-Gm-Message-State: APjAAAU37eCi+RttF7Oh+ixp1tpnmQIEVg8UBM5hwWywzO3xo6zVnD6r
- 7jvCtLKZ0Mbbt3ckFSHkzG8t6A==
-X-Google-Smtp-Source: APXvYqyce9PeWozpWCrtVKI0W1jysz8OP288Njlo7DtHo+8/nnxufNXkNLV2nyfqxJp8u3P1FCTvmA==
-X-Received: by 2002:aa7:86ce:: with SMTP id h14mr8285366pfo.31.1579796957206; 
- Thu, 23 Jan 2020 08:29:17 -0800 (PST)
+ bh=J+OiRInHosqjCdmhqjIGvub+XWktp878CWzZRNlLP4A=;
+ b=S4Sf8Ly9BVSh40ha79ibKer4vviv7AHMWnYk+MqJOJBsmZaIO0CEsZskQ6YWG5w4Di
+ 5x6SUQ26zyxwn6hE2gNQk2NsR1AnxKcZ0KWOfBswvMr1Az5lIL4Cu1NjSUn3gZJqEeow
+ +Hmd1+NM6LDN+WCBdhZsDLvx3wtNvawg0ae6qRSxNgx0wHbH4LTEAdTXv1jge498rLyp
+ F3AxoOnUfy4inkZ+GVFKpSyoj00za4VcNc2cifnXamEWb8Ns96n/wsAUNJcI1nTto7/9
+ o/NhAQL2OvilVXv1aN0aOAixWQjErDlOEEa8VRXvEMaSLUXTUW2btJWe3DLvctXsV8if
+ lPOg==
+X-Gm-Message-State: APjAAAVZy9w1jW4UKlpMAaG6BSoE2GowDz+/G1bAnYQIp1unn5J553/L
+ kuGk2HblGRFL1cUm2pUIwP09Pw==
+X-Google-Smtp-Source: APXvYqxEqNuQ/6mbbF0m79lfPWVLkmnmK9U1xjW4mcsNRzlVTnQxcJt8mhLD5NgQtqs9EcGsR/pM2w==
+X-Received: by 2002:a63:6f8a:: with SMTP id k132mr4915552pgc.70.1579796960871; 
+ Thu, 23 Jan 2020 08:29:20 -0800 (PST)
 Received: from localhost.localdomain ([49.206.202.109])
- by smtp.gmail.com with ESMTPSA id u1sm3188909pfn.133.2020.01.23.08.29.14
+ by smtp.gmail.com with ESMTPSA id u1sm3188909pfn.133.2020.01.23.08.29.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 23 Jan 2020 08:29:16 -0800 (PST)
+ Thu, 23 Jan 2020 08:29:20 -0800 (PST)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH 2/4] video: rockchip: Fix vop modes for rk3399
-Date: Thu, 23 Jan 2020 21:58:43 +0530
-Message-Id: <20200123162845.10651-3-jagan@amarulasolutions.com>
+Subject: [PATCH 3/4] rockchip: Enable pre console for rk3399
+Date: Thu, 23 Jan 2020 21:58:44 +0530
+Message-Id: <20200123162845.10651-4-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20200123162845.10651-1-jagan@amarulasolutions.com>
 References: <20200123162845.10651-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_082918_025420_D2DBDB54 
-X-CRM114-Status: GOOD (  11.71  )
+X-CRM114-CacheID: sfid-20200123_082921_590385_1B4B6E80 
+X-CRM114-Status: UNSURE (   9.77  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,150 +104,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-VOP display endpoint pipeline configuration is differs
-between rk3288 vs rk3399.
+Enable pre console buffer for rk3399 platform.
 
-These VOP pipeline configuration depends on how the
-different display interfaces connected in sequence to
-IN and OUT ports like for,
+This would help to capture the console messages prior to
+the console being initialised. Enabling this would help
+to capture all the console messages on video output source
+like HDMI. So we can find the full console messages of
+U-Boot proper on HDMI display when enabled it for RK3399
+platform boards.
 
-RK3288:
-
-vopb_out: port {
-	#address-cells = <1>;
-	#size-cells = <0>;
-	vopb_out_edp: endpoint@0 {
-		reg = <0>;
-		remote-endpoint = <&edp_in_vopb>;
-	};
-	vopb_out_hdmi: endpoint@1 {
-		reg = <1>;
-                remote-endpoint = <&hdmi_in_vopb>;
-        };
-        vopb_out_lvds: endpoint@2 {
-                reg = <2>;
-                remote-endpoint = <&lvds_in_vopb>;
-        };
-        vopb_out_mipi: endpoint@3 {
-                reg = <3>;
-                remote-endpoint = <&mipi_in_vopb>;
-        };
-};
-
-RK3399:
-
-vopb_out: port {
-         #address-cells = <1>;
-         #size-cells = <0>;
-         vopb_out_edp: endpoint@0 {
-                reg = <0>;
-                remote-endpoint = <&edp_in_vopb>;
-         };
-         vopb_out_mipi: endpoint@1 {
-                reg = <1>;
-                remote-endpoint = <&mipi_in_vopb>;
-         };
-         vopb_out_hdmi: endpoint@2 {
-                reg = <2>;
-                remote-endpoint = <&hdmi_in_vopb>;
-         };
-         vopb_out_mipi1: endpoint@3 {
-                reg = <3>;
-                remote-endpoint = <&mipi1_in_vopb>;
-         };
-         vopb_out_dp: endpoint@4 {
-                reg = <4>;
-                remote-endpoint = <&dp_in_vopb>;
-         };
-};
-
-here, HDMI interface has endpoint 1 in rk3288 and 2 in rk3399.
-
-The rockchip vop driver often depends on this determined endpoint
-number and stored in vop_mode. So based on this vop_mode the bpp
-and pin polarity would configure on detected display interface.
-
-Since, the existing driver using rk3288 vop mode settings enabling
-the same will result wrong display interface configuration for rk3399.
-
-Add the patch for fixing these vop modes for rk3399.
+Buffer address used for pre console is 0x0f200000 which is
+ram base plus 240MiB. right now the Allwinner SoC is using
+similar computation.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- arch/arm/include/asm/arch-rockchip/vop_rk3288.h | 11 +++++++++++
- drivers/video/rockchip/rk3399_vop.c             |  2 --
- drivers/video/rockchip/rk_vop.c                 |  4 ++++
- 3 files changed, 15 insertions(+), 2 deletions(-)
+ arch/arm/mach-rockchip/Kconfig | 1 +
+ common/Kconfig                 | 1 +
+ 2 files changed, 2 insertions(+)
 
-diff --git a/arch/arm/include/asm/arch-rockchip/vop_rk3288.h b/arch/arm/include/asm/arch-rockchip/vop_rk3288.h
-index 8398249509..872a158b71 100644
---- a/arch/arm/include/asm/arch-rockchip/vop_rk3288.h
-+++ b/arch/arm/include/asm/arch-rockchip/vop_rk3288.h
-@@ -85,6 +85,16 @@ enum {
- 	LB_RGB_1280X8 = 0x5
- };
- 
-+#if defined(CONFIG_ROCKCHIP_RK3399)
-+enum vop_modes {
-+	VOP_MODE_EDP = 0,
-+	VOP_MODE_MIPI,
-+	VOP_MODE_HDMI,
-+	VOP_MODE_MIPI1,
-+	VOP_MODE_DP,
-+	VOP_MODE_NONE,
-+};
-+#else
- enum vop_modes {
- 	VOP_MODE_EDP = 0,
- 	VOP_MODE_HDMI,
-@@ -94,6 +104,7 @@ enum vop_modes {
- 	VOP_MODE_AUTO_DETECT,
- 	VOP_MODE_UNKNOWN,
- };
-+#endif
- 
- /* VOP_VERSION_INFO */
- #define M_FPGA_VERSION (0xffff << 16)
-diff --git a/drivers/video/rockchip/rk3399_vop.c b/drivers/video/rockchip/rk3399_vop.c
-index 81c122d7a9..1d5b3931a6 100644
---- a/drivers/video/rockchip/rk3399_vop.c
-+++ b/drivers/video/rockchip/rk3399_vop.c
-@@ -45,8 +45,6 @@ static void rk3399_set_pin_polarity(struct udevice *dev,
- 				V_RK3399_DSP_MIPI_POL(polarity));
- 		break;
- 
--	case VOP_MODE_LVDS:
--		/* The RK3399 has neither parallel RGB nor LVDS output. */
- 	default:
- 		debug("%s: unsupported output mode %x\n", __func__, mode);
- 	}
-diff --git a/drivers/video/rockchip/rk_vop.c b/drivers/video/rockchip/rk_vop.c
-index b56c3f336c..bdb790a0c5 100644
---- a/drivers/video/rockchip/rk_vop.c
-+++ b/drivers/video/rockchip/rk_vop.c
-@@ -117,10 +117,12 @@ static void rkvop_enable_output(struct udevice *dev, enum vop_modes mode)
- 				V_EDP_OUT_EN(1));
- 		break;
- 
-+#if defined(CONFIG_ROCKCHIP_RK3288)
- 	case VOP_MODE_LVDS:
- 		clrsetbits_le32(&regs->sys_ctrl, M_ALL_OUT_EN,
- 				V_RGB_OUT_EN(1));
- 		break;
-+#endif
- 
- 	case VOP_MODE_MIPI:
- 		clrsetbits_le32(&regs->sys_ctrl, M_ALL_OUT_EN,
-@@ -312,7 +314,9 @@ static int rk_display_init(struct udevice *dev, ulong fbbase, ofnode ep_node)
- 	/* Set bitwidth for vop display according to vop mode */
- 	switch (vop_id) {
- 	case VOP_MODE_EDP:
-+#if defined(CONFIG_ROCKCHIP_RK3288)
- 	case VOP_MODE_LVDS:
-+#endif
- 		l2bpp = VIDEO_BPP16;
- 		break;
- 	case VOP_MODE_HDMI:
+diff --git a/arch/arm/mach-rockchip/Kconfig b/arch/arm/mach-rockchip/Kconfig
+index ed7514ab75..0cb1f23d0f 100644
+--- a/arch/arm/mach-rockchip/Kconfig
++++ b/arch/arm/mach-rockchip/Kconfig
+@@ -229,6 +229,7 @@ config ROCKCHIP_RK3399
+ 	select DM_PMIC
+ 	select DM_REGULATOR_FIXED
+ 	select BOARD_LATE_INIT
++	imply PRE_CONSOLE_BUFFER
+ 	imply ROCKCHIP_COMMON_BOARD
+ 	imply ROCKCHIP_SDRAM_COMMON
+ 	imply SPL_ROCKCHIP_COMMON_BOARD
+diff --git a/common/Kconfig b/common/Kconfig
+index 21d0244050..7d81924340 100644
+--- a/common/Kconfig
++++ b/common/Kconfig
+@@ -568,6 +568,7 @@ config PRE_CON_BUF_ADDR
+ 	default 0x2f000000 if ARCH_SUNXI && MACH_SUN9I
+ 	default 0x4f000000 if ARCH_SUNXI && !MACH_SUN9I
+ 	default 0x0f000000 if ROCKCHIP_RK3288
++	default 0x0f200000 if ROCKCHIP_RK3399
+ 	help
+ 	  This sets the start address of the pre-console buffer. This must
+ 	  be in available memory and is accessed before relocation and
 -- 
 2.18.0.321.gffc6fa0e3
 
