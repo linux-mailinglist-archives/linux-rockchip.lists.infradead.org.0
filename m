@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70239148C32
-	for <lists+linux-rockchip@lfdr.de>; Fri, 24 Jan 2020 17:33:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B202148C38
+	for <lists+linux-rockchip@lfdr.de>; Fri, 24 Jan 2020 17:34:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,61 +11,60 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=g4B4ecscSgS6Vbf5pwZQs+VLQQy2bQqhd3FNs+x6yaU=; b=IQXaquSXOAYjOIjqsah+kKUJTp
-	1GOE5O+ewNs782T3Hd5kWBoZQnDyaJEKltduzxNh17VbPChJynhPcoYSqLI3E60Hu7ZqPAZuLwlKX
-	kT9VnbMfnHZ7FcxdvtwZlys29Iw+J7pJcrJzymR9+3eqHdxm/BE2c1XeOijvPY2I2x+aYDZ1D90Ts
-	lLMVM0M3YpYcJdt2FQ9JgofPsZBZl5knmKDSzhKxpFexZpscShstsJpAl0MvhqJ7rqV1HfmQcSskJ
-	P/kWdsen9wLHmqt1XJLH/7HdWwhrej7hUW5B3kqwbSg+CxYTlDPPacbiiYJY6D+myntP0mBfy3BdE
-	TsrV8Mqg==;
+	bh=AR5GDLiNOADMvwFzo+l7LhvJe11+yd0NNxs28NNF+aU=; b=ksl8zVN1cb041WQljIKS0GYOqr
+	ojdvDLpIPYb4aT4W2UAR25X1mpULcjRX4L2adSvbfHyncbpR5vAb0Hc0BZAyygxL6+ZlvEw522IkZ
+	AdZ48owVgO6fZPze5tw0iDUUaqvgyEkq9f0DIwolEne9+GNpEEh8J8JV93L/bn27uf25EI/6oExj7
+	DiT2QkK+SO4a9iOmC5vA7rjHpnw3ZZ/SMgfWPQsLZ5Hg1qM6pkdSBlYcqwYiTDqaGXmGbvXQ+IkmA
+	Ji8cLRQBj6B9Gu23YwHsEmDJ80qbuIP3q9julR61e5Q8oSVC/KOnooCQAWS412tpNW3qHFLKCZUyh
+	wLX9+S+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iv1th-0005OV-QO; Fri, 24 Jan 2020 16:33:29 +0000
+	id 1iv1uc-00068w-Gz; Fri, 24 Jan 2020 16:34:26 +0000
 Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iv1qa-0002TZ-3f; Fri, 24 Jan 2020 16:30:17 +0000
-Received: by mail-wr1-x442.google.com with SMTP id d16so2689058wre.10;
- Fri, 24 Jan 2020 08:30:15 -0800 (PST)
+ id 1iv1qa-0002U4-L3; Fri, 24 Jan 2020 16:30:19 +0000
+Received: by mail-wr1-x442.google.com with SMTP id t2so2722094wrr.1;
+ Fri, 24 Jan 2020 08:30:16 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=hYFbabH/1+eJ5tgZu8gLApj2AMrLFA7PILlgYylYfww=;
- b=ttoW4FJX0uyIo4LvuzYHHh6Q2hKvvZTOmQ1R9vyPsn8wHAhh4UrcWnvxbYR6M8Lw5O
- VnfCpwIO34bxDsK2hKHXo/dc+uANQ3V76q0PsA0QV6N9/wTbxci2fcBVupoItf1DH9xb
- 08R1vxFYvluoAXgpJjLElER8668aFhH+gda3dQe+uUOvjvIMWNzEqPHbWxNBl/5G/9uT
- 6CdZahcOpZG2SlVgZqUGrXL16FPRdM6wNgimndjOqiwO9OxmPoC0TMvbWSwAdJJrGZnG
- rm1RxYAtmNzQNVKQKAVxuFdGYQ7m+4JyGQpo9UhZRqhPjkFVMQhAq0DU3S6fq4cjPgzy
- Nz0Q==
+ bh=5CG21ojEDjECTj7XUBPSg8AMrBX1gphh8BPherlSg2c=;
+ b=qODzbZGmaHGWOL3dDb3Xify6xkGEbOZyCAuqjPjEIaPY8V6dE42lSq2czZnDgXBpUG
+ 7auQNJ2tdS+OMddJObOB02bB0h12ZrwpqtFLHg1hlmO2MtcbeSXfw6hwogMvGmXXG0Rq
+ hAyyxGmJmWE3AdA/1RdJ7y+J22+B04xgc5Gq0GZa2jgbbH+SMWXEH8LErXNVr3JPEJfu
+ Fr/zJqBqy+XGPgKnRqvDGP+OamI41kH+w0KAvqYV+Yb4tjmH6yv2237dABwohRIrA48C
+ oomdcNS3Y6flFc9EoLqbLn2zbxr8IstdVfrNwZlNKbGp4mSW/HmCBdJcsYMBgdpsg+5s
+ i9Yw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=hYFbabH/1+eJ5tgZu8gLApj2AMrLFA7PILlgYylYfww=;
- b=F8pKNSforeW7IJPvW4Aj65D8XLVoiQ933iSjI42e37bcWByWv+rXAeLguZsYGeg0vj
- AO0pJ2SUU8U3Q8/9qBtyNUtHBaRIwpyJDr6bJrjoZIYDz9TyrgVOAbYWdIyxHIOIi9+h
- i4jH9+yVQnFmWAYFgCbiQutgyAPjoBC4q0p+jMVwLqN9k/eZG+JtxdGzp+nPJ8QBL8Pm
- zKybyZ18CtS5wfOCgjfStN7alFIwXlxWAcWtVkHMjN6r/uDlaVkugtaLhHqh3eUlKqIz
- uDl6zqgnNYdf+yZjevj+lOW/p5qM1MRkX3uOVyxZT3OFS9hOznGCAWkiRXEqZ78Voouw
- 3iuA==
-X-Gm-Message-State: APjAAAWnXbB9+MoeUnkYgtFCrLxA3tiXzlW8BnRF57t5t6nSDBg2Uxfj
- vZR+E/ITxo/uHgPnj6QqN8A=
-X-Google-Smtp-Source: APXvYqykWcME/KmUDZrrd7CGyy/O95zP9Xfvvz6gjuR9vTr6EyI82sKy8dHM95zTWTcR0vjltX6/ng==
-X-Received: by 2002:adf:f288:: with SMTP id k8mr5516067wro.301.1579883414238; 
- Fri, 24 Jan 2020 08:30:14 -0800 (PST)
+ bh=5CG21ojEDjECTj7XUBPSg8AMrBX1gphh8BPherlSg2c=;
+ b=k3q0d+c82jWle/bwZe2YfwFPGcIDnijKfygZfCPgJ6BpOv4+7goJ1sTicAQc88wi0Q
+ nDOdFaJ66UgFY9u3umanM3cWoc1pl1mBM9bfxYccyQR8uqVAMRsV7cdi5z57Z/gYMwPB
+ xj7QTwQRetbIELmaI9qybMKrVtITfVbOcDmv0UOZqRUaoQQArPNj8eqh0CXOKhirdk83
+ Pm4V9Op17FA/gU6ppQ0Mb7fs1xOZHwzoOTyFSewmQ+/Xm2OSJ06VEROXCB5jxo1lvbQ+
+ 14H7qzk9jLmeF5tU9DNBeDfMdjYv4mHzEbwONVi/8weAtuOcmaJmow+nStghUWMChd/V
+ ycXg==
+X-Gm-Message-State: APjAAAVJ8OdF8j+SqkXzA4JsART3VlaNH/leBVfMGs4Trk291aQqODGf
+ xeI4az1DLy6BgvM+OgAO7co=
+X-Google-Smtp-Source: APXvYqyb6Y4gGv12/4HSD8PzStB662RmnSDlEdKQLoXAtCs6xALQmyQQxt8zVDbHFXtpDTTV1Yl7TA==
+X-Received: by 2002:a5d:6a10:: with SMTP id m16mr5110889wru.411.1579883415317; 
+ Fri, 24 Jan 2020 08:30:15 -0800 (PST)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id 205sm1977304wmd.42.2020.01.24.08.30.13
+ by smtp.gmail.com with ESMTPSA id 205sm1977304wmd.42.2020.01.24.08.30.14
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 24 Jan 2020 08:30:13 -0800 (PST)
+ Fri, 24 Jan 2020 08:30:14 -0800 (PST)
 From: Johan Jonker <jbx6244@gmail.com>
 To: miquel.raynal@bootlin.com
-Subject: [RFC PATCH v2 03/10] ARM: dts: rockchip: add nandc node for
- rk3066a/rk3188
-Date: Fri, 24 Jan 2020 17:29:54 +0100
-Message-Id: <20200124163001.28910-4-jbx6244@gmail.com>
+Subject: [RFC PATCH v2 04/10] ARM: dts: rockchip: add nandc node for rk322x
+Date: Fri, 24 Jan 2020 17:29:55 +0100
+Message-Id: <20200124163001.28910-5-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200124163001.28910-1-jbx6244@gmail.com>
 References: <20200124163001.28910-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_083016_167520_EBCEFFCC 
-X-CRM114-Status: GOOD (  10.83  )
+X-CRM114-CacheID: sfid-20200124_083016_740074_FC2E8C04 
+X-CRM114-Status: GOOD (  10.54  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
@@ -110,36 +109,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Chris Zhong <zyw@rock-chips.com>
+From: Wenping Zhang <wenping.zhang@rock-chips.com>
 
-Add nandc node for rk3066a/rk3188.
+Add nandc node for rk322x.
 
-Signed-off-by: Chris Zhong <zyw@rock-chips.com>
+Signed-off-by: Wenping Zhang <wenping.zhang@rock-chips.com>
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm/boot/dts/rk3xxx.dtsi | 9 +++++++++
+ arch/arm/boot/dts/rk322x.dtsi | 9 +++++++++
  1 file changed, 9 insertions(+)
 
-diff --git a/arch/arm/boot/dts/rk3xxx.dtsi b/arch/arm/boot/dts/rk3xxx.dtsi
-index 97307a405..221c30314 100644
---- a/arch/arm/boot/dts/rk3xxx.dtsi
-+++ b/arch/arm/boot/dts/rk3xxx.dtsi
-@@ -273,6 +273,15 @@
+diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
+index 340ed6ccb..2f5122206 100644
+--- a/arch/arm/boot/dts/rk322x.dtsi
++++ b/arch/arm/boot/dts/rk322x.dtsi
+@@ -707,6 +707,15 @@
  		status = "disabled";
  	};
  
-+	nandc: nand-controller@10500000 {
-+		compatible = "rockchip,rk3066-nand-controller";
-+		reg = <0x10500000 0x4000>;
-+		interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>;
-+		clocks = <&cru HCLK_NANDC0>;
-+		clock-names = "hclk_nandc";
++	nandc: nand-controller@30030000 {
++		compatible = "rockchip,rk3228-nand-controller";
++		reg = <0x30030000 0x4000>;
++		interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&cru HCLK_NANDC>, <&cru SCLK_NANDC>;
++		clock-names = "hclk_nandc", "clk_nandc";
 +		status = "disabled";
 +	};
 +
- 	pmu: pmu@20004000 {
- 		compatible = "rockchip,rk3066-pmu", "syscon", "simple-mfd";
- 		reg = <0x20004000 0x100>;
+ 	usb_otg: usb@30040000 {
+ 		compatible = "rockchip,rk3228-usb", "rockchip,rk3066-usb",
+ 			     "snps,dwc2";
 -- 
 2.11.0
 
