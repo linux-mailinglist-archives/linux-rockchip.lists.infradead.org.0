@@ -2,90 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34C3F14702F
-	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Jan 2020 18:59:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95A79148235
+	for <lists+linux-rockchip@lfdr.de>; Fri, 24 Jan 2020 12:26:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2YbrZDTmoko9M70jsTDKy+xyZ2QHTp9IVSIjpgyncxw=; b=jgEdygHgsSGUmNxLpfod+eiaN
-	N9QWCQTfiN+ys4UDKP4GOxqefV7kCROsHpSAzjVYYiWSaUYwAC3QzbzeafGp3Gf8tq65GtWH+NH+o
-	v+So/fDKQ/Pr9eQ2cnbkKZZqA5vBwRnL3fJ6W19FVZnTsHvqPDe18Orow5QzAv5p4DTIjJTbezfIF
-	lUHdv/2eQwRPlAYcyLNu2KlCoS52m7+o+nBgKcHRZ4aQkjyai56OQPIgFfSewTyFWb8WQxuWJ0RhM
-	3C5R2YxItH/H6lsyU8EXkW8I28dusNC+MnzZiJ4lErc4WPB1+QaaMlAGn1ZTHPnX/imHXaoYjW5HL
-	DhQoqoXaA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Pg8W+47yf7zBnkNHRuz/dN+sWkX4+wv9y9VT36ZfU5M=; b=QY9K54FhQS/okM
+	3Zus79YQmElAfJD6dDb0EoOvw3YUoRtXkQ2bd3CcbsYS2JHY4LGKoLm7Nj7riS4Ah/SCOtzc8Ornq
+	dM6FqulpRTKxmlm5QkbTGL0KcI8Yc25XaC4CfMhCPH2kGNeMrMKZXaXqJMtOoJjUFppTfUbhu8F2u
+	OhJgTD/3cx3Dulptz2X2qYGoXbfkzIL/kUGnyGW+hDmq3zDC8azlADIEurxxdPrHJAAqnGR9TWBE8
+	utapacGYM5SdOoE0UYXNsGQ+Kw8bGm0l9V/Wl4TO6cQfq8t0drPae6dlJkyJNQCe5/WN4Gjw/J3Lr
+	q4nww6aN7bBh1QGhgY0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuglE-0007kK-FP; Thu, 23 Jan 2020 17:59:20 +0000
-Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
+	id 1iux6L-0005G3-Ay; Fri, 24 Jan 2020 11:26:13 +0000
+Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuglA-0007jw-AX
- for linux-rockchip@lists.infradead.org; Thu, 23 Jan 2020 17:59:17 +0000
-Received: by mail-yw1-xc41.google.com with SMTP id t141so1941224ywc.11
- for <linux-rockchip@lists.infradead.org>; Thu, 23 Jan 2020 09:59:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=konsulko.com; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=vWpBtzuFtcFcSX4MCI8KWGqQcT/pIuuwbsMYx0VA1nU=;
- b=QHI0CijFsIW2/SI5blxKGQMPNrdIN6iEAOK9ga9Dy9RKs3qioWZ2ygsFABleHNhkTv
- kEFJVCV1hHqR5jO/WI+FBkH/aJqTsmdXsUdUfm5cagj+kup6wRCeas1OlC9vBs/FQG+E
- C7l6YXmKEHgxmECJhqCE/BmvMA/zrZ8FhJAs4=
+ id 1iux66-00052T-1g
+ for linux-rockchip@lists.infradead.org; Fri, 24 Jan 2020 11:26:00 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id r18so981541vso.5
+ for <linux-rockchip@lists.infradead.org>; Fri, 24 Jan 2020 03:25:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=F2jETx1K2QROvuqY65KaH9YzpqUlnDhQy9Jrb9ahM4g=;
+ b=ELgej1eneLjocmxUcRdNNa2G/bM/1I8WD3QAC7JMAowuwaxD23XyMiM6P2ctm0FjCM
+ 0Zkx0NZGHUJPrpd5uzytEy7RI7KKVfJQRdVOkoOhZlwxht5LtvCu+mRqSW5ficRC+2uX
+ Wtavp5xOUQaXM1LfU2NC/DShfBYWpt/YtZPwev53cop08KRrfwejMRwBrqGrR7eWdln0
+ FYISyd7Hg94AGWvojH2V8gZ0H9taOIPnBnQaLCQ/28G+xpPAY8U1oeG/kWi/zBIkniaj
+ 0vxSaKnsgOYfJLoC0Xw0iTFldsHiXFpbFAfGk7Ru+GZhFm4DM9blzBfFFGl0L2bJoBVd
+ Br1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=vWpBtzuFtcFcSX4MCI8KWGqQcT/pIuuwbsMYx0VA1nU=;
- b=ns7L6jlZAEnZfXssBIJCLPWBxDVwtxQWOmlxyH8KCpd8W/fPrGTkfei9yovEnnRRkm
- xaMTALMvBHUmCXHeqehElndt3OLfAeAfm6DFPn0X2A6XpcqxQ8/n68jX1DTAJNMgI/jE
- Y85t7Knzilwi4uTTAkCycF3o9jN9UyQepxm5Hq1MAMfTHKqn/DXey3SaD1LeLsBr5z+B
- xLFdPO9n8Xovvh2XHy/ogcWB+UTRbN7G4TtjyLeYxWu4JbdB2d9MYIDALJ/fKtgwb7L1
- aOFh4pLnJMTkRTjGh24jKg99+jvmn9h9R91048euqVtKQLYQMkAL1S0aNrsLgNTRlNkM
- HybQ==
-X-Gm-Message-State: APjAAAUvDWXuqIw9reXJLM0VOr9+ds7lU654zSbvH9sQLiYlIlxp+PF/
- eeswdRUSGBbiX0onyLZTJdc8Rg==
-X-Google-Smtp-Source: APXvYqz0MDTzKyIgLNAruFgyT72Le53wCvIDY8oPTINAtYSrsFuvElT2xRtt3M3Fp+eyxWKO1fa8yw==
-X-Received: by 2002:a81:4686:: with SMTP id
- t128mr12215194ywa.183.1579802355129; 
- Thu, 23 Jan 2020 09:59:15 -0800 (PST)
-Received: from bill-the-cat
- (2606-a000-1401-86dd-4d1b-b279-03ac-0199.inf6.spectrum.com.
- [2606:a000:1401:86dd:4d1b:b279:3ac:199])
- by smtp.gmail.com with ESMTPSA id j68sm1113254ywg.6.2020.01.23.09.59.13
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 23 Jan 2020 09:59:14 -0800 (PST)
-Date: Thu, 23 Jan 2020 12:59:12 -0500
-From: Tom Rini <trini@konsulko.com>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH 02/11] distro_bootcmd: Add SF support
-Message-ID: <20200123175912.GZ26536@bill-the-cat>
-References: <20191221075440.6944-1-jagan@amarulasolutions.com>
- <20191221075440.6944-3-jagan@amarulasolutions.com>
- <20200120172240.GX8732@bill-the-cat>
- <8dddd74f-7b17-a614-48ab-aea0bc9148db@csgraf.de>
- <CAMty3ZAq+aDMuEKGYk9UyTS4Z4=TgtNcKRDtiBC-=mqRWUWAyA@mail.gmail.com>
- <20200123170301.GX26536@bill-the-cat>
- <CAMty3ZC6j+fo4c28V05OL7dn0VSWMoKdngneTBBSw1n_LQ+3bQ@mail.gmail.com>
- <20200123171500.GY26536@bill-the-cat>
- <CAMty3ZDd0PSDbRir4mqqePDfFi5fdc2Pg8JL7TyGKu_zbsBCGQ@mail.gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=F2jETx1K2QROvuqY65KaH9YzpqUlnDhQy9Jrb9ahM4g=;
+ b=I6kevkWH8Dy3r+z9xfJ3Intyv/7+Ocykhkl3tUiRU6pRGjY6YhDdp4nqBeJ4HUSVIo
+ 0m3RSEVejEEuAt/xPrrgtPmp321Z+WnRJGBylJdWUxeNeRcGb7QYOdepYOv8WTnvuwdR
+ iq3i5M21fuBnW0hBEAhpwFQwFdJaIkj4x9k+XRwCRW9ZK+r94VOjczvHhIQZfrr8ZPKo
+ VvmRsJJyMNhEt+nLLYYbLrfkk8R1AHaZdD0i/j16p2XReERBVH6MuYr5wpWL4ilG6Lu0
+ UWfXu4W9wSj50VwM5rbbr9HW+W8ebelEZu4V4mfMcb60LpdofZneEF6yQQ1XTVht5vtn
+ q9ew==
+X-Gm-Message-State: APjAAAVmQ2p5c8fTmaBahug491p07XFqNBK+EAwmmhKsneULlZJSfXpr
+ qgdtzfYppHKdGn+Vu4J/LEMxdqqIJFTGy5kHEk02wQ==
+X-Google-Smtp-Source: APXvYqxM6zYamgN6EVeKj7kVi1fOSzFudc87cWzGYD3HJobgEqJgawyNx4yUZWp27wRfHgwmoNQU5Nvwm+RSd45hGqo=
+X-Received: by 2002:a67:de15:: with SMTP id q21mr1800776vsk.165.1579865156235; 
+ Fri, 24 Jan 2020 03:25:56 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <CAMty3ZDd0PSDbRir4mqqePDfFi5fdc2Pg8JL7TyGKu_zbsBCGQ@mail.gmail.com>
-X-Clacks-Overhead: GNU Terry Pratchett
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20200116152230.29831-1-jbx6244@gmail.com>
+In-Reply-To: <20200116152230.29831-1-jbx6244@gmail.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Fri, 24 Jan 2020 12:25:19 +0100
+Message-ID: <CAPDyKFoGCs5ZoYfzPN1D6KZN+bQkuTa+iAWhwkan1noBdfu0CQ@mail.gmail.com>
+Subject: Re: [PATCH v2 1/3] dt-bindings: mmc: convert synopsys dw-mshc
+ bindings to yaml
+To: Johan Jonker <jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_095916_364011_8EF680FB 
-X-CRM114-Status: GOOD (  26.86  )
+X-CRM114-CacheID: sfid-20200124_032558_153399_44EFB781 
+X-CRM114-Status: GOOD (  33.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -105,147 +91,347 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Heinrich Schuchardt <xypron.glpk@gmx.de>, Simon Glass <sjg@chromium.org>,
- Kever Yang <kever.yang@rock-chips.com>, U-Boot-Denx <u-boot@lists.denx.de>,
- Alexander Graf <agraf@csgraf.de>, Peter Robinson <pbrobinson@gmail.com>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>
-Content-Type: multipart/mixed; boundary="===============4148465039524555456=="
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+On Thu, 16 Jan 2020 at 16:22, Johan Jonker <jbx6244@gmail.com> wrote:
+>
+> Current dts files with 'dwmmc' nodes are manually verified.
+> In order to automate this process synopsys-dw-mshc.txt
+> has to be converted to yaml. In the new setup
+> synopsys-dw-mshc.yaml will inherit properties from
+> mmc-controller.yaml and synopsys-dw-mshc-common.yaml.
+> 'dwmmc' will no longer be a valid name for a node and
+> should be changed to 'mmc'.
+>
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 
---===============4148465039524555456==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="iIOavGAISvUeFFLW"
-Content-Disposition: inline
+Applied for next, thanks!
 
-
---iIOavGAISvUeFFLW
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, Jan 23, 2020 at 10:59:17PM +0530, Jagan Teki wrote:
-> On Thu, Jan 23, 2020 at 10:45 PM Tom Rini <trini@konsulko.com> wrote:
-> >
-> > On Thu, Jan 23, 2020 at 10:41:15PM +0530, Jagan Teki wrote:
-> > > On Thu, Jan 23, 2020 at 10:33 PM Tom Rini <trini@konsulko.com> wrote:
-> > > >
-> > > > On Thu, Jan 23, 2020 at 10:25:50PM +0530, Jagan Teki wrote:
-> > > > > On Mon, Jan 20, 2020 at 11:10 PM Alexander Graf <agraf@csgraf.de>=
- wrote:
-> > > > > >
-> > > > > >
-> > > > > > On 20.01.20 18:22, Tom Rini wrote:
-> > > > > > > +A few people that may have insight to my question
-> > > > > > >
-> > > > > > > On Sat, Dec 21, 2019 at 01:24:31PM +0530, Jagan Teki wrote:
-> > > > > > >
-> > > > > > >> Add distro boot command support for SPI flash.
-> > > > > > >>
-> > > > > > >> This distro boot will read the boot script at specific
-> > > > > > >> location at the flash and start sourcing the same.
-> > > > > > >>
-> > > > > > >> The common macro like BOOTENV_SHARED_FLASH would help
-> > > > > > >> to extend the support for nand flash in future.
-> > > > > > >>
-> > > > > > >> Cc: Tom Rini <trini@konsulko.com>
-> > > > > > >> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > > > > > > What distro is this for?  My concern here is that hundreds of=
- boards
-> > > > > > > (literally) grow by a few hundred bytes to add in this bit of=
- additional
-> > > > > > > default logic.  That's not a big problem if distributions are=
- now going
-> > > > > > > to be using SPI flash as where they're programming in their b=
-ootscript.
-> > > > > > > But, who is doing that?  Thanks!
-> > > > > >
-> > > > > >
-> > > > > > I am not aware of any "distro" that puts a U-Boot script at off=
-set 0 of
-> > > > > > the SPI Flash.
-> > > > > >
-> > > > > > Traditionally, SPI Flash boot setups were always very hand craf=
-ted -
-> > > > > > exactly the opposite of what distro boot is for. That said, I t=
-hink
-> > > > > > supporting SPI Flash boot for rk3399 is great! Albeit I would p=
-ersonally
-> > > > > > only store U-Boot and the environment on SPI, not the target OS.
-> > > > > >
-> > > > > > Jagan, is putting a U-Boot script on the SPI Flash something yo=
-u thought
-> > > > > > of or something that the rk3399 reference board already does? I=
-f it's
-> > > > > > the latter, maybe you could add it as a board custom boot funct=
-ion?
-> > > > >
-> > > > > Yes it would be later that points to. rk3399 has SPI flash layout=
- and
-> > > > > out of which one of offset(script_offset_f=3D0xffe000 from
-> > > > > include/configs/rk3399_common.h) stored the programming script.
-> > > >
-> > > > So I'm not sure why we're adding distro boot support to SPI flash. =
- What
-> > > > is the reference platform storing there exactly?  Thanks!
-> > >
-> > > I'm not sure I understand the question? we have rk3399 SBC's that boot
-> > > from SPI and have feasibility to run distro boot using programming
-> > > script store in flash offset like boot.scr does for MMC.
-> >
-> > OK, and what distro(s) today are doing that?  I'm not happy with this
-> > patch as it's growing hundreds (literally) of boards in size and I'd
-> > like to know what is leveraging this functionality today, or is going to
-> > be as soon as it's upstream and widely available.  Thanks!
->=20
-> Not sure about the possibility more boards using this at this point,
-> but I was initially created custom to rockchip and feel that it would
-> be useful to rest if it's generic. May be will split into rockchip
-> area if it's eating too much footprint.
-
-Yes, the "distro boot" functionality refers to what we need to allow
-boards to easily Just Work with standard off the shelf *nix
-distributions.  Thanks!
-
---=20
-Tom
-
---iIOavGAISvUeFFLW
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE6HLbQJwaaH776GM2h/n2NdMddlIFAl4p3u0ACgkQh/n2NdMd
-dlJGLg//fgjMxpwkOJx4ZJE2wfdLFIjIaWfayY89nChRiywlK9RM3QYH4LnDbOMI
-xcJKYupT8f7KayukWlModfgOV0umA/uWLf3PFgg5Un7attGH4EmvKhvg+wqYrYTU
-bkPRJ0DSPB+R2vDuy1c3JPYYHeyIYh/r2zLL2aJH6RPtJkdadvB3ZXxFINaSQxsB
-9aI9zJg4/oD/VPwBdd8BcROfc/YZj8AqtlQYYHIwCUGgTghyIRnaecl1lZD3ca3R
-RoEGt+1cw7WTyYpOAgneZFB489tlbelSc91xvDLo9gXL64CLMLDRmF3cnuQCvgcm
-w/0+J1zrQ5jhIdaYhCMxEVaFC+7XnZB96nLbBv9H250CtpdmZ3lZhiPE1r+1jF0j
-Xnggd57XQdkgfQyXlh662qYkZ8dX+HmkuFUEObHWZbRj0rQqkwQ2C0Ycctuhl9x0
-FN0/VGpyr0PbtG9/AsPWpRUtra2qA8crSfPlwMUsPD/6vWtVyIc3KNalq4b0j6dl
-+s+hPn5fhvXVad+mpX01F6DRvFO1Ta+tSsR/T3uqoDHdCBZQwCTHE5XW71bxNBs0
-CTfBGt01VpYORb6XFsYwSCgx37LNbBtVkkAC7a0cyV8s48tztWOwRujI1j5oGHJl
-2uOqfzxFiOJuYfMhTtx2A7bfFC7Bs3kZCoVSbvl5e0ga5RnldgE=
-=y6iy
------END PGP SIGNATURE-----
-
---iIOavGAISvUeFFLW--
+Kind regards
+Uffe
 
 
---===============4148465039524555456==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> ---
+>  .../bindings/mmc/synopsys-dw-mshc-common.yaml      |  68 ++++++++++
+>  .../devicetree/bindings/mmc/synopsys-dw-mshc.txt   | 141 ---------------------
+>  .../devicetree/bindings/mmc/synopsys-dw-mshc.yaml  |  70 ++++++++++
+>  3 files changed, 138 insertions(+), 141 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc-common.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.txt
+>  create mode 100644 Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc-common.yaml b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc-common.yaml
+> new file mode 100644
+> index 000000000..890d47a87
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc-common.yaml
+> @@ -0,0 +1,68 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/mmc/synopsys-dw-mshc-common.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Synopsys Designware Mobile Storage Host Controller Common Properties
+> +
+> +allOf:
+> +  - $ref: "mmc-controller.yaml#"
+> +
+> +maintainers:
+> +  - Ulf Hansson <ulf.hansson@linaro.org>
+> +
+> +# Everything else is described in the common file
+> +properties:
+> +  resets:
+> +    maxItems: 1
+> +
+> +  reset-names:
+> +    const: reset
+> +
+> +  clock-frequency:
+> +    description:
+> +      Should be the frequency (in Hz) of the ciu clock.  If this
+> +      is specified and the ciu clock is specified then we'll try to set the ciu
+> +      clock to this at probe time.
+> +
+> +  fifo-depth:
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +    description:
+> +      The maximum size of the tx/rx fifo's. If this property is not
+> +      specified, the default value of the fifo size is determined from the
+> +      controller registers.
+> +
+> +  card-detect-delay:
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +      - default: 0
+> +    description:
+> +      Delay in milli-seconds before detecting card after card
+> +      insert event. The default value is 0.
+> +
+> +  data-addr:
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +    description:
+> +      Override fifo address with value provided by DT. The default FIFO reg
+> +      offset is assumed as 0x100 (version < 0x240A) and 0x200(version >= 0x240A)
+> +      by driver. If the controller does not follow this rule, please use
+> +      this property to set fifo address in device tree.
+> +
+> +  fifo-watermark-aligned:
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/flag
+> +    description:
+> +      Data done irq is expected if data length is less than
+> +      watermark in PIO mode. But fifo watermark is requested to be aligned
+> +      with data length in some SoC so that TX/RX irq can be generated with
+> +      data done irq. Add this watermark quirk to mark this requirement and
+> +      force fifo watermark setting accordingly.
+> +
+> +  dmas:
+> +    maxItems: 1
+> +
+> +  dma-names:
+> +    const: rx-tx
+> diff --git a/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.txt b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.txt
+> deleted file mode 100644
+> index 7e5e427a2..000000000
+> --- a/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.txt
+> +++ /dev/null
+> @@ -1,141 +0,0 @@
+> -* Synopsys Designware Mobile Storage Host Controller
+> -
+> -The Synopsys designware mobile storage host controller is used to interface
+> -a SoC with storage medium such as eMMC or SD/MMC cards. This file documents
+> -differences between the core mmc properties described by mmc.txt and the
+> -properties used by the Synopsys Designware Mobile Storage Host Controller.
+> -
+> -Required Properties:
+> -
+> -* compatible: should be
+> -       - snps,dw-mshc: for controllers compliant with synopsys dw-mshc.
+> -* #address-cells: should be 1.
+> -* #size-cells: should be 0.
+> -
+> -# Slots (DEPRECATED): The slot specific information are contained within
+> -  child-nodes with each child-node representing a supported slot. There should
+> -  be atleast one child node representing a card slot. The name of the child node
+> -  representing the slot is recommended to be slot@n where n is the unique number
+> -  of the slot connected to the controller. The following are optional properties
+> -  which can be included in the slot child node.
+> -
+> -       * reg: specifies the physical slot number. The valid values of this
+> -         property is 0 to (num-slots -1), where num-slots is the value
+> -         specified by the num-slots property.
+> -
+> -       * bus-width: as documented in mmc core bindings.
+> -
+> -       * wp-gpios: specifies the write protect gpio line. The format of the
+> -         gpio specifier depends on the gpio controller. If a GPIO is not used
+> -         for write-protect, this property is optional.
+> -
+> -       * disable-wp: If the wp-gpios property isn't present then (by default)
+> -         we'd assume that the write protect is hooked up directly to the
+> -         controller's special purpose write protect line (accessible via
+> -         the WRTPRT register).  However, it's possible that we simply don't
+> -         want write protect.  In that case specify 'disable-wp'.
+> -         NOTE: This property is not required for slots known to always
+> -         connect to eMMC or SDIO cards.
+> -
+> -Optional properties:
+> -
+> -* resets: phandle + reset specifier pair, intended to represent hardware
+> -  reset signal present internally in some host controller IC designs.
+> -  See Documentation/devicetree/bindings/reset/reset.txt for details.
+> -
+> -* reset-names: request name for using "resets" property. Must be "reset".
+> -       (It will be used together with "resets" property.)
+> -
+> -* clocks: from common clock binding: handle to biu and ciu clocks for the
+> -  bus interface unit clock and the card interface unit clock.
+> -
+> -* clock-names: from common clock binding: Shall be "biu" and "ciu".
+> -  If the biu clock is missing we'll simply skip enabling it.  If the
+> -  ciu clock is missing we'll just assume that the clock is running at
+> -  clock-frequency.  It is an error to omit both the ciu clock and the
+> -  clock-frequency.
+> -
+> -* clock-frequency: should be the frequency (in Hz) of the ciu clock.  If this
+> -  is specified and the ciu clock is specified then we'll try to set the ciu
+> -  clock to this at probe time.
+> -
+> -* fifo-depth: The maximum size of the tx/rx fifo's. If this property is not
+> -  specified, the default value of the fifo size is determined from the
+> -  controller registers.
+> -
+> -* card-detect-delay: Delay in milli-seconds before detecting card after card
+> -  insert event. The default value is 0.
+> -
+> -* data-addr: Override fifo address with value provided by DT. The default FIFO reg
+> -  offset is assumed as 0x100 (version < 0x240A) and 0x200(version >= 0x240A) by
+> -  driver. If the controller does not follow this rule, please use this property
+> -  to set fifo address in device tree.
+> -
+> -* fifo-watermark-aligned: Data done irq is expected if data length is less than
+> -  watermark in PIO mode. But fifo watermark is requested to be aligned with data
+> -  length in some SoC so that TX/RX irq can be generated with data done irq. Add this
+> -  watermark quirk to mark this requirement and force fifo watermark setting
+> -  accordingly.
+> -
+> -* vmmc-supply: The phandle to the regulator to use for vmmc.  If this is
+> -  specified we'll defer probe until we can find this regulator.
+> -
+> -* dmas: List of DMA specifiers with the controller specific format as described
+> -  in the generic DMA client binding. Refer to dma.txt for details.
+> -
+> -* dma-names: request names for generic DMA client binding. Must be "rx-tx".
+> -  Refer to dma.txt for details.
+> -
+> -Aliases:
+> -
+> -- All the MSHC controller nodes should be represented in the aliases node using
+> -  the following format 'mshc{n}' where n is a unique number for the alias.
+> -
+> -Example:
+> -
+> -The MSHC controller node can be split into two portions, SoC specific and
+> -board specific portions as listed below.
+> -
+> -       dwmmc0@12200000 {
+> -               compatible = "snps,dw-mshc";
+> -               clocks = <&clock 351>, <&clock 132>;
+> -               clock-names = "biu", "ciu";
+> -               reg = <0x12200000 0x1000>;
+> -               interrupts = <0 75 0>;
+> -               #address-cells = <1>;
+> -               #size-cells = <0>;
+> -               data-addr = <0x200>;
+> -               fifo-watermark-aligned;
+> -               resets = <&rst 20>;
+> -               reset-names = "reset";
+> -       };
+> -
+> -[board specific internal DMA resources]
+> -
+> -       dwmmc0@12200000 {
+> -               clock-frequency = <400000000>;
+> -               clock-freq-min-max = <400000 200000000>;
+> -               broken-cd;
+> -               fifo-depth = <0x80>;
+> -               card-detect-delay = <200>;
+> -               vmmc-supply = <&buck8>;
+> -               bus-width = <8>;
+> -               cap-mmc-highspeed;
+> -               cap-sd-highspeed;
+> -       };
+> -
+> -[board specific generic DMA request binding]
+> -
+> -       dwmmc0@12200000 {
+> -               clock-frequency = <400000000>;
+> -               clock-freq-min-max = <400000 200000000>;
+> -               broken-cd;
+> -               fifo-depth = <0x80>;
+> -               card-detect-delay = <200>;
+> -               vmmc-supply = <&buck8>;
+> -               bus-width = <8>;
+> -               cap-mmc-highspeed;
+> -               cap-sd-highspeed;
+> -               dmas = <&pdma 12>;
+> -               dma-names = "rx-tx";
+> -       };
+> diff --git a/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
+> new file mode 100644
+> index 000000000..05f9f36dc
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
+> @@ -0,0 +1,70 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/mmc/synopsys-dw-mshc.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Synopsys Designware Mobile Storage Host Controller Binding
+> +
+> +allOf:
+> +  - $ref: "synopsys-dw-mshc-common.yaml#"
+> +
+> +maintainers:
+> +  - Ulf Hansson <ulf.hansson@linaro.org>
+> +
+> +# Everything else is described in the common file
+> +properties:
+> +  compatible:
+> +    const: snps,dw-mshc
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    minItems: 2
+> +    maxItems: 2
+> +    description:
+> +      Handle to "biu" and "ciu" clocks for the
+> +      bus interface unit clock and the card interface unit clock.
+> +
+> +  clock-names:
+> +    items:
+> +      - const: biu
+> +      - const: ciu
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +
+> +examples:
+> +  - |
+> +    mmc@12200000 {
+> +      compatible = "snps,dw-mshc";
+> +      reg = <0x12200000 0x1000>;
+> +      interrupts = <0 75 0>;
+> +      clocks = <&clock 351>, <&clock 132>;
+> +      clock-names = "biu", "ciu";
+> +      dmas = <&pdma 12>;
+> +      dma-names = "rx-tx";
+> +      resets = <&rst 20>;
+> +      reset-names = "reset";
+> +      vmmc-supply = <&buck8>;
+> +      #address-cells = <1>;
+> +      #size-cells = <0>;
+> +      broken-cd;
+> +      bus-width = <8>;
+> +      cap-mmc-highspeed;
+> +      cap-sd-highspeed;
+> +      card-detect-delay = <200>;
+> +      clock-freq-min-max = <400000 200000000>;
+> +      clock-frequency = <400000000>;
+> +      data-addr = <0x200>;
+> +      fifo-depth = <0x80>;
+> +      fifo-watermark-aligned;
+> +    };
+> --
+> 2.11.0
+>
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
---===============4148465039524555456==--
-
