@@ -2,74 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4D11148249
-	for <lists+linux-rockchip@lfdr.de>; Fri, 24 Jan 2020 12:26:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11605148B3C
+	for <lists+linux-rockchip@lfdr.de>; Fri, 24 Jan 2020 16:27:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lQTNU0w+XWoQiQd9X5/+SKKahO73EBQHknqaHCc+4cQ=; b=Td6Xmd/OCkhA8m
-	ez8LngyFNxqGCbAH/5+rSIbdBoXIdMrZ7U6KhHzuBEvTHvtJG/UQ6OsWlVoNag2Oivf8b432cczEV
-	wctRrQB0kxefJz2nXeBasUz1ACHhRxRgNp/g0xq1bQtAxIh2RrfyU0Jftiv4GB5ivouwO+QIoVwpN
-	Gn+JIfGyt8e0Sk70NaABDoT1FZU9S79YPZ6+QBom/Q1gr/3p6N5molFlLGGBvoIR96E8qmfyLL5ig
-	jxLloPcIC6x5ZoA/FMR9tq/Oc0TQgD5QBndjJ7t3AgRkWm2QsnQAdCssQG36WUak6NyjbZ9AGmKfS
-	ugrB8sZD+yEJlJa+8kMg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=0hk2bKucgd16b98EQrNzBOnf0XyVzpMJW8GxsZEoOAI=; b=Y7r+/SedjCxvYFf8W+3GjvUzN
+	LtFWN70OJJu2ziUPbrB1x1JnPa0vx2GlLn06z0hlPk83TbrQfRK+g5YG/IBGod9Lj48NPTFmbrOsR
+	H7q/JXCfOUb5gPssdzGOhjOVfG9p0Cu6t2sRgbDhRU/lrLidenDvRUwR5ATFylfFeXSQJk9VE4cGL
+	g3CSpESjd4BR0olOzjlg6ms6WiqHsQLcm4ihiPIqyJDHBMyJiqVDgziaE3w9X3jGsbcnqd8LutIJZ
+	rPIvmcBKoaw36xLTPJjtEXs4UkRVHaelSpqF0OW4RT99FJfcQc+zTUavQKvMgsLiV+fj9ESSYqbvv
+	vnpaFdvnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iux6w-0005uY-MJ; Fri, 24 Jan 2020 11:26:50 +0000
-Received: from mail-vk1-xa41.google.com ([2607:f8b0:4864:20::a41])
+	id 1iv0s7-00052d-Ft; Fri, 24 Jan 2020 15:27:47 +0000
+Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iux6C-00056Y-4Q
- for linux-rockchip@lists.infradead.org; Fri, 24 Jan 2020 11:26:06 +0000
-Received: by mail-vk1-xa41.google.com with SMTP id h13so423415vkn.10
- for <linux-rockchip@lists.infradead.org>; Fri, 24 Jan 2020 03:26:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yA+q0/tdz9pHwwQsFpujNL3r5hUZDki5Wt7XV+ptBKg=;
- b=b6o5NV0ph6Q5glGwWKgOfj96/rl7OpNF7ROax+CxomyD2+2mjB8eOKk92zzzlJ6YeN
- m6WZ1HBJjJtrPgxLvTAK0EHIQHE4gg/fAH3C6jVOCwyK2lHpsGzvwjrNw/RIzmOCxh2v
- +xqEFOtn3154mXloQvuBC/YS6t8zWwfAGDcQRSVi398wv0mvGB9vdEaRPldzpUeAmbjB
- 9nLVp0UFICNnuTz/4JGrZUC85F58N9OYvxNwC0jY1gf71+W+JyTlwEfm+cpItbglH0IC
- SbAVfwF5wlW5zfQM7k47puAe/fp9WqLf65EgRQuecEzLJHYQhQrj6qiORWAu5cM+mo3W
- viyA==
+ id 1iv0s4-00051X-D7
+ for linux-rockchip@lists.infradead.org; Fri, 24 Jan 2020 15:27:45 +0000
+Received: by mail-yb1-xb43.google.com with SMTP id w17so1094152ybm.1
+ for <linux-rockchip@lists.infradead.org>; Fri, 24 Jan 2020 07:27:39 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=konsulko.com; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=o+khmEMULcXFe9gz0YtrtP6zNw5Aafrnh4/Sys25Mt4=;
+ b=c046JTA8LB2BkRpeLM7lZZxTgbfvXP22hBW/DIE/82pJ1xzqqayflqmnKD/0UoBsbP
+ f7OEUDLxrWdghVSrsG1IasIRwNfjMxiHY07XDiURewReZhV5HtBMV+uO7RugS7ZVC0w8
+ ShJToOGBHslxVIqojQdT2uwUThytCF1WQgRAE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yA+q0/tdz9pHwwQsFpujNL3r5hUZDki5Wt7XV+ptBKg=;
- b=a4olgAUE3MIZHcbRQw3prfZPEUmQFvG+FFcvIqSEjSQqT6bD7j//XuUvSRdk6Q5c2r
- evInRBcDcDeq4KZFoDTu6rXb6ixr4aQgCSIbXwTpCcKC/EhDCM+xAj/OC/JPWPRlVTZF
- RIuRZVibQBnfBnC/6X7vX+scIdd/5AGkX3qFRXh3BFKXmx2sqs65vFz4iMjFWNuiXhon
- lhzocyAMhcDwCvrEVIkH1O5Kbck99PNdobPuPX537hoXlaMlruCJr95H/EXwz0wH6Ezi
- 8OjfXtfxT4cMpFz0DmOTW3zsbtlkSggwCMXXuOtSxnDC09Vg6d/Z71Ywej9Op2WQTJrl
- P2Xw==
-X-Gm-Message-State: APjAAAXbz+BBuCERJKAFJXHYA7WHGgV9orxDr5LHUis1uxl2FLynEmhy
- DoCJyhqsWArSF96wn6/Qk+kw3gdl+yNceOqv5F/nZA==
-X-Google-Smtp-Source: APXvYqyJdUDT6GFcqq2yfAaUP/QP9wvF8DIKUg6lcbvTtc2pgywF0VGwYxowttRK1UdAtwMIFixCI2grpuBptG0UGQQ=
-X-Received: by 2002:a1f:94c1:: with SMTP id w184mr1709760vkd.43.1579865162655; 
- Fri, 24 Jan 2020 03:26:02 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=o+khmEMULcXFe9gz0YtrtP6zNw5Aafrnh4/Sys25Mt4=;
+ b=UsV2vKLvwxwKrZDpbnBIc8BlizSY7nJ9tSXXjk5fbfPM+FYXNJDiHHxLQutqYbf0t8
+ L0AwIwfEQLd2FmE8TIsxMCLWhSmLQJgm7uVlmSt8nLY3o8Ml+PtmkHsy8SVm63z2HGh9
+ rn6VyEDA5FNXXRm2M0mJjp/FHKu36Kd4niwxb/Wy9Q6XQCi4phLDQhdD66xfBdXjmPlI
+ 8tswLSyJPp8xhGYwrQBPEe9VXo/QhYq9Pb9Ge7WuwDklSDm4I8SGl8XVNmFJnzcz19BN
+ ImOrLSqUgTU/OKmjqzohNNu0TK0RBWeRtWpeNz0IFksPLIYOVbe+sc8CvXrgFyh1evGr
+ Ksgg==
+X-Gm-Message-State: APjAAAWefpwYAEIZi8XFugpp0zkDiO/wUYL7uPfAyEl/xhBuK9+w+vfB
+ 8vR3w4ujEKYJyuMCH49qHLwW2w==
+X-Google-Smtp-Source: APXvYqynMsW9i8Yo3EErW+NZ0kJ6mmjtoliw7baBUC6yLdPGQrW9sOQPwiO3X8QJvYLe+OgYfIfRlA==
+X-Received: by 2002:a25:d9c3:: with SMTP id q186mr2898054ybg.466.1579879658727; 
+ Fri, 24 Jan 2020 07:27:38 -0800 (PST)
+Received: from bill-the-cat
+ (2606-a000-1401-86dd-650b-9d45-de1d-6190.inf6.spectrum.com.
+ [2606:a000:1401:86dd:650b:9d45:de1d:6190])
+ by smtp.gmail.com with ESMTPSA id 71sm2366700ywd.59.2020.01.24.07.27.37
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 24 Jan 2020 07:27:38 -0800 (PST)
+Date: Fri, 24 Jan 2020 10:27:35 -0500
+From: Tom Rini <trini@konsulko.com>
+To: Jagan Teki <jagan@amarulasolutions.com>, Anatolij Gustschin <agust@denx.de>
+Subject: Re: [PATCH 4/4] rockchip: Enable HDMI output on rk3399 board w/ HDMI
+Message-ID: <20200124152735.GR26536@bill-the-cat>
+References: <20200123162845.10651-1-jagan@amarulasolutions.com>
+ <20200123162845.10651-5-jagan@amarulasolutions.com>
 MIME-Version: 1.0
-References: <20200116152230.29831-1-jbx6244@gmail.com>
- <20200116152230.29831-2-jbx6244@gmail.com>
-In-Reply-To: <20200116152230.29831-2-jbx6244@gmail.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Fri, 24 Jan 2020 12:25:26 +0100
-Message-ID: <CAPDyKFrgGTDK_4bv3ofs2ky6d5optfTh2H-99uBMjZzNpcOhUQ@mail.gmail.com>
-Subject: Re: [PATCH v2 2/3] dt-bindings: mmc: convert rockchip dw-mshc
- bindings to yaml
-To: Johan Jonker <jbx6244@gmail.com>
+In-Reply-To: <20200123162845.10651-5-jagan@amarulasolutions.com>
+X-Clacks-Overhead: GNU Terry Pratchett
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_032604_221548_B8105F63 
-X-CRM114-Status: GOOD (  26.28  )
+X-CRM114-CacheID: sfid-20200124_072744_456242_8676B946 
+X-CRM114-Status: GOOD (  13.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b43 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -92,245 +97,165 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Heiko Stuebner <heiko@sntech.de>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-rockchip@lists.infradead.org, Simon Glass <sjg@chromium.org>,
+ Kever Yang <kever.yang@rock-chips.com>, u-boot@lists.denx.de,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ linux-amarula@amarulasolutions.com
+Content-Type: multipart/mixed; boundary="===============5491684901911844395=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, 16 Jan 2020 at 16:22, Johan Jonker <jbx6244@gmail.com> wrote:
->
-> Current dts files with 'dwmmc' nodes are manually verified.
-> In order to automate this process rockchip-dw-mshc.txt
-> has to be converted to yaml. In the new setup
-> rockchip-dw-mshc.yaml will inherit properties from
-> mmc-controller.yaml and synopsys-dw-mshc-common.yaml.
-> 'dwmmc' will no longer be a valid name for a node and
-> should be changed to 'mmc'.
->
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 
-Applied for next, thanks!
-
-Kind regards
-Uffe
+--===============5491684901911844395==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Uc2nn8srCdMFAHlk"
+Content-Disposition: inline
 
 
+--Uc2nn8srCdMFAHlk
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Thu, Jan 23, 2020 at 09:58:45PM +0530, Jagan Teki wrote:
+
+> Enable config options and console setting to respective
+> rk3399 board for HDMI output.
+>=20
+> Boards supported and tested on this patch are:
+> - NanoPc T4
+> - NanoPi M4
+> - NanoPi Neo4
+> - ROC-RK3399-PC
+>=20
+> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 > ---
->  .../devicetree/bindings/mmc/rockchip-dw-mshc.txt   |  49 --------
->  .../devicetree/bindings/mmc/rockchip-dw-mshc.yaml  | 123 +++++++++++++++++++++
->  MAINTAINERS                                        |   1 +
->  3 files changed, 124 insertions(+), 49 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.txt
->  create mode 100644 Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
->
-> diff --git a/Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.txt b/Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.txt
-> deleted file mode 100644
-> index 6f629b12b..000000000
-> --- a/Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.txt
-> +++ /dev/null
-> @@ -1,49 +0,0 @@
-> -* Rockchip specific extensions to the Synopsys Designware Mobile
-> -  Storage Host Controller
-> -
-> -The Synopsys designware mobile storage host controller is used to interface
-> -a SoC with storage medium such as eMMC or SD/MMC cards. This file documents
-> -differences between the core Synopsys dw mshc controller properties described
-> -by synopsys-dw-mshc.txt and the properties used by the Rockchip specific
-> -extensions to the Synopsys Designware Mobile Storage Host Controller.
-> -
-> -Required Properties:
-> -
-> -* compatible: should be
-> -       - "rockchip,rk2928-dw-mshc": for Rockchip RK2928 and following,
-> -                                                       before RK3288
-> -       - "rockchip,rk3288-dw-mshc": for Rockchip RK3288
-> -       - "rockchip,rv1108-dw-mshc", "rockchip,rk3288-dw-mshc": for Rockchip RV1108
-> -       - "rockchip,px30-dw-mshc", "rockchip,rk3288-dw-mshc": for Rockchip PX30
-> -       - "rockchip,rk3036-dw-mshc", "rockchip,rk3288-dw-mshc": for Rockchip RK3036
-> -       - "rockchip,rk3228-dw-mshc", "rockchip,rk3288-dw-mshc": for Rockchip RK322x
-> -       - "rockchip,rk3328-dw-mshc", "rockchip,rk3288-dw-mshc": for Rockchip RK3328
-> -       - "rockchip,rk3368-dw-mshc", "rockchip,rk3288-dw-mshc": for Rockchip RK3368
-> -       - "rockchip,rk3399-dw-mshc", "rockchip,rk3288-dw-mshc": for Rockchip RK3399
-> -
-> -Optional Properties:
-> -* clocks: from common clock binding: if ciu-drive and ciu-sample are
-> -  specified in clock-names, should contain handles to these clocks.
-> -
-> -* clock-names: Apart from the clock-names described in synopsys-dw-mshc.txt
-> -  two more clocks "ciu-drive" and "ciu-sample" are supported. They are used
-> -  to control the clock phases, "ciu-sample" is required for tuning high-
-> -  speed modes.
-> -
-> -* rockchip,default-sample-phase: The default phase to set ciu-sample at
-> -  probing, low speeds or in case where all phases work at tuning time.
-> -  If not specified 0 deg will be used.
-> -
-> -* rockchip,desired-num-phases: The desired number of times that the host
-> -  execute tuning when needed. If not specified, the host will do tuning
-> -  for 360 times, namely tuning for each degree.
-> -
-> -Example:
-> -
-> -       rkdwmmc0@12200000 {
-> -               compatible = "rockchip,rk3288-dw-mshc";
-> -               reg = <0x12200000 0x1000>;
-> -               interrupts = <0 75 0>;
-> -               #address-cells = <1>;
-> -               #size-cells = <0>;
-> -       };
-> diff --git a/Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml b/Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
-> new file mode 100644
-> index 000000000..2f70f5ef0
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
-> @@ -0,0 +1,123 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/mmc/rockchip-dw-mshc.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>  configs/nanopc-t4-rk3399_defconfig   | 6 ++++++
+>  configs/nanopi-m4-rk3399_defconfig   | 6 ++++++
+>  configs/nanopi-neo4-rk3399_defconfig | 6 ++++++
+>  configs/roc-pc-rk3399_defconfig      | 6 ++++++
+>  include/configs/evb_rk3399.h         | 5 +++++
+>  5 files changed, 29 insertions(+)
+>=20
+> diff --git a/configs/nanopc-t4-rk3399_defconfig b/configs/nanopc-t4-rk339=
+9_defconfig
+> index bd6d60ff6c..17e8a18d31 100644
+> --- a/configs/nanopc-t4-rk3399_defconfig
+> +++ b/configs/nanopc-t4-rk3399_defconfig
+> @@ -53,3 +53,9 @@ CONFIG_USB_ETHER_RTL8152=3Dy
+>  CONFIG_USB_ETHER_SMSC95XX=3Dy
+>  CONFIG_SPL_TINY_MEMSET=3Dy
+>  CONFIG_ERRNO_STR=3Dy
+> +CONFIG_DM_VIDEO=3Dy
+> +CONFIG_VIDEO_BPP16=3Dy
+> +CONFIG_VIDEO_BPP32=3Dy
+> +CONFIG_DISPLAY=3Dy
+> +CONFIG_VIDEO_ROCKCHIP=3Dy
+> +CONFIG_DISPLAY_ROCKCHIP_HDMI=3Dy
+> diff --git a/configs/nanopi-m4-rk3399_defconfig b/configs/nanopi-m4-rk339=
+9_defconfig
+> index 74ede13c23..b73b2fdc27 100644
+> --- a/configs/nanopi-m4-rk3399_defconfig
+> +++ b/configs/nanopi-m4-rk3399_defconfig
+> @@ -53,3 +53,9 @@ CONFIG_USB_ETHER_RTL8152=3Dy
+>  CONFIG_USB_ETHER_SMSC95XX=3Dy
+>  CONFIG_SPL_TINY_MEMSET=3Dy
+>  CONFIG_ERRNO_STR=3Dy
+> +CONFIG_DM_VIDEO=3Dy
+> +CONFIG_VIDEO_BPP16=3Dy
+> +CONFIG_VIDEO_BPP32=3Dy
+> +CONFIG_DISPLAY=3Dy
+> +CONFIG_VIDEO_ROCKCHIP=3Dy
+> +CONFIG_DISPLAY_ROCKCHIP_HDMI=3Dy
+> diff --git a/configs/nanopi-neo4-rk3399_defconfig b/configs/nanopi-neo4-r=
+k3399_defconfig
+> index a44124aac0..2ecb50967b 100644
+> --- a/configs/nanopi-neo4-rk3399_defconfig
+> +++ b/configs/nanopi-neo4-rk3399_defconfig
+> @@ -53,3 +53,9 @@ CONFIG_USB_ETHER_RTL8152=3Dy
+>  CONFIG_USB_ETHER_SMSC95XX=3Dy
+>  CONFIG_SPL_TINY_MEMSET=3Dy
+>  CONFIG_ERRNO_STR=3Dy
+> +CONFIG_DM_VIDEO=3Dy
+> +CONFIG_VIDEO_BPP16=3Dy
+> +CONFIG_VIDEO_BPP32=3Dy
+> +CONFIG_DISPLAY=3Dy
+> +CONFIG_VIDEO_ROCKCHIP=3Dy
+> +CONFIG_DISPLAY_ROCKCHIP_HDMI=3Dy
+> diff --git a/configs/roc-pc-rk3399_defconfig b/configs/roc-pc-rk3399_defc=
+onfig
+> index 3a051d9b0c..a9f99f992d 100644
+> --- a/configs/roc-pc-rk3399_defconfig
+> +++ b/configs/roc-pc-rk3399_defconfig
+> @@ -56,3 +56,9 @@ CONFIG_USB_ETHER_RTL8152=3Dy
+>  CONFIG_USB_ETHER_SMSC95XX=3Dy
+>  CONFIG_SPL_TINY_MEMSET=3Dy
+>  CONFIG_ERRNO_STR=3Dy
+> +CONFIG_DM_VIDEO=3Dy
+> +CONFIG_VIDEO_BPP16=3Dy
+> +CONFIG_VIDEO_BPP32=3Dy
+> +CONFIG_DISPLAY=3Dy
+> +CONFIG_VIDEO_ROCKCHIP=3Dy
+> +CONFIG_DISPLAY_ROCKCHIP_HDMI=3Dy
+> diff --git a/include/configs/evb_rk3399.h b/include/configs/evb_rk3399.h
+> index c0b0358893..09eb361655 100644
+> --- a/include/configs/evb_rk3399.h
+> +++ b/include/configs/evb_rk3399.h
+> @@ -6,6 +6,11 @@
+>  #ifndef __EVB_RK3399_H
+>  #define __EVB_RK3399_H
+> =20
+> +#define ROCKCHIP_DEVICE_SETTINGS \
+> +		"stdin=3Dserial,cros-ec-keyb\0" \
+> +		"stdout=3Dserial,vidconsole\0" \
+> +		"stderr=3Dserial,vidconsole\0"
 > +
-> +title: Rockchip designware mobile storage host controller device tree bindings
-> +
-> +description:
-> +  Rockchip uses the Synopsys designware mobile storage host controller
-> +  to interface a SoC with storage medium such as eMMC or SD/MMC cards.
-> +  This file documents the combined properties for the core Synopsys dw mshc
-> +  controller that are not already included in the synopsys-dw-mshc-common.yaml
-> +  file and the Rockchip specific extensions.
-> +
-> +allOf:
-> +  - $ref: "synopsys-dw-mshc-common.yaml#"
-> +
-> +maintainers:
-> +  - Heiko Stuebner <heiko@sntech.de>
-> +
-> +# Everything else is described in the common file
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      # for Rockchip RK2928 and before RK3288
-> +      - const: rockchip,rk2928-dw-mshc
-> +      # for Rockchip RK3288
-> +      - const: rockchip,rk3288-dw-mshc
-> +      - items:
-> +          - enum:
-> +            # for Rockchip PX30
-> +            - rockchip,px30-dw-mshc
-> +            # for Rockchip RK3036
-> +            - rockchip,rk3036-dw-mshc
-> +            # for Rockchip RK322x
-> +            - rockchip,rk3228-dw-mshc
-> +            # for Rockchip RK3328
-> +            - rockchip,rk3328-dw-mshc
-> +            # for Rockchip RK3368
-> +            - rockchip,rk3368-dw-mshc
-> +            # for Rockchip RK3399
-> +            - rockchip,rk3399-dw-mshc
-> +            # for Rockchip RV1108
-> +            - rockchip,rv1108-dw-mshc
-> +          - const: rockchip,rk3288-dw-mshc
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    minItems: 2
-> +    maxItems: 4
-> +    description:
-> +      Handle to "biu" and "ciu" clocks for the bus interface unit clock and
-> +      the card interface unit clock. If "ciu-drive" and "ciu-sample" are
-> +      specified in clock-names, it should also contain
-> +      handles to these clocks.
-> +
-> +  clock-names:
-> +    minItems: 2
-> +    items:
-> +      - const: biu
-> +      - const: ciu
-> +      - const: ciu-drive
-> +      - const: ciu-sample
-> +    description:
-> +      Apart from the clock-names "biu" and "ciu" two more clocks
-> +      "ciu-drive" and "ciu-sample" are supported. They are used
-> +      to control the clock phases, "ciu-sample" is required for tuning
-> +      high speed modes.
-> +
-> +  rockchip,default-sample-phase:
-> +    allOf:
-> +      - $ref: /schemas/types.yaml#/definitions/uint32
-> +    minimum: 0
-> +    maximum: 360
-> +    default: 0
-> +    description:
-> +      The default phase to set "ciu-sample" at probing,
-> +      low speeds or in case where all phases work at tuning time.
-> +      If not specified 0 deg will be used.
-> +
-> +  rockchip,desired-num-phases:
-> +    allOf:
-> +      - $ref: /schemas/types.yaml#/definitions/uint32
-> +    minimum: 0
-> +    maximum: 360
-> +    default: 360
-> +    description:
-> +      The desired number of times that the host execute tuning when needed.
-> +      If not specified, the host will do tuning for 360 times,
-> +      namely tuning for each degree.
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/rk3288-cru.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/interrupt-controller/irq.h>
-> +    sdmmc: mmc@ff0c0000 {
-> +      compatible = "rockchip,rk3288-dw-mshc";
-> +      reg = <0x0 0xff0c0000 0x0 0x4000>;
-> +      interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
-> +      clocks = <&cru HCLK_SDMMC>, <&cru SCLK_SDMMC>,
-> +               <&cru SCLK_SDMMC_DRV>, <&cru SCLK_SDMMC_SAMPLE>;
-> +      clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
-> +      resets = <&cru SRST_MMC0>;
-> +      reset-names = "reset";
-> +      fifo-depth = <0x100>;
-> +      max-frequency = <150000000>;
-> +    };
-> +
-> +...
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index d6ad01d71..1b16c0fdf 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -2240,6 +2240,7 @@ L:        linux-rockchip@lists.infradead.org
->  T:     git git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git
->  S:     Maintained
->  F:     Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
-> +F:     Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
->  F:     arch/arm/boot/dts/rk3*
->  F:     arch/arm/boot/dts/rv1108*
->  F:     arch/arm/mach-rockchip/
-> --
-> 2.11.0
->
+>  #include <configs/rk3399_common.h>
+> =20
+>  #if defined(CONFIG_ENV_IS_IN_MMC)
+
+This seems like another commit (along with the question I saw about
+i.MX FB not showing the right colors) 2cc393f32fd9 needs to be reworked
+so that we default to enabling everything still but let boards opt out
+rather than forcing everyone to opt-in as it seems like there's a lot of
+cases where people need to opt-in and didn't know.
+
+--=20
+Tom
+
+--Uc2nn8srCdMFAHlk
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE6HLbQJwaaH776GM2h/n2NdMddlIFAl4rDOQACgkQh/n2NdMd
+dlIMsw//Siyk8dgBJqO6PiD3hE1PRyWVMcCzfwmhths5+0v1V/PVbwNhrFfXdBkA
+r4NKvMI1AvM+LzpEBrn8djgxEaVHd0mc1INJ1lFDNvc6/fU3qgiOXYE7WKm2If02
+4n84lqqk7o1vE3cw1UikooTOj4uOkrW0m7lSvb8mUbBaq50awDWfmdGZbEk5P0g8
+jMIOpVBkK4pHHfr9uP+uAilmqeQcZG8rf1lTXl89eBDn2LuCR6Fc/JVb+fW11zoY
+lYgJdhDonDM2pIPI7QJdP9Hr+u6E5nnQ95TAbUb7g0OPTvlT7CE+gTdhsG0rTmSk
+eQTiLRz8zPQlWe+Swm5JIhAJaimS3hoXTNfM0zh4kt7MmWVs3u8/uxDn7s/m0pcG
+THKyK1SWi+VlmUV1TB7ZIyL8/eWD6925H8dt+joKY2Au1l71JH44G2AUDSvotr0U
+mv6nfL8LRO+ukzE3BGucDo5o9WKnqpANpoXplwcL8Ak4UTZbDOdTnz3EwhPcLTtz
+GJQEMqIV2yoEEsasdcvSMnP7FEtZgy4xhsDwasEadBa8m1tIGeG/UcknTEoSLKEV
+ezlouc1q4FllnD507PkuwpEs2ilI1/NCBD70mpxV0IeUrDa4BeqPiq8ZPqJUv0ev
+er68P7cEoVr5d053nyIVM7SK4pR380h1pitLcA8Ac6Dv0O6u5ik=
+=4o2C
+-----END PGP SIGNATURE-----
+
+--Uc2nn8srCdMFAHlk--
+
+
+--===============5491684901911844395==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============5491684901911844395==--
+
