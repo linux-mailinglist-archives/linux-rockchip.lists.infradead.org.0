@@ -2,85 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C737F14983B
-	for <lists+linux-rockchip@lfdr.de>; Sun, 26 Jan 2020 00:25:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35FCB14A74D
+	for <lists+linux-rockchip@lfdr.de>; Mon, 27 Jan 2020 16:37:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EY8M3t/ELbx0hgb+5Y9ojllZG5PxMqP6wnneoNIarNs=; b=qJGMDjo32VIF8N
-	Ak1rHSSPPwQJD/1FrqI0+1uC2RaR+Usnvtaspgticor8bEz2pyeC96OdodmksjBCGBBPWTc+bOwQm
-	cZYEAGx1aCsM+pNbS3KsA53nihUk+HGbb0hNkEOgY1hG5c86LTI74YGAZ3H0ii7hJVLfiTXMNT88F
-	FiwINVbqe3iKAxYhwaPZmmp79PkIQo9kUGEJrBXAzyrNoIJXFzIV0euDjF8KlC2xlvtkj3Xoq/dkW
-	2oFtTM15qsZOveJKfVEPQ6BgEsljrPkOYKVYo4iSsI4EnYSDvSRUn4a8ynJ2BlnK35ILmH/aSbciA
-	p8F+gvse9fKpSY4GOl9g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VL36gKPo2YGFGFQbSAJ4gvsaK6uv+S61uz8c3itnKX4=; b=VRT1D+12vk11Vx
+	WMxqfhID5eZUFntLXJHoKb/dRa2IQcnQqfdOgB7hvWXyrJx0LfEFzGFaRGUXAJ38BV/XsibaNxeLd
+	oXzx8TnDTNm4g8A0FEmIvupqfo1xNXL9KhY7xfbFpLRfm6+OU1869FZxNDCBuEYniuedzAfkiV+1v
+	E2kkBSxwdlmnpHLdjUk+FzMwVC7FpMehKw8mhCZhkRqFjHm3UdUy2Hc8A/rTBosGHDd4u0irW//lr
+	O6I+VZGErlueaOum0J+XiWDcNwiz3m/LqRaEGbQO4AtoVqW8QnFN2nWpWVglpwYcne0Slib+e4g8E
+	pgcsjJTeXIEOTcs9Umbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivUne-0000KR-4l; Sat, 25 Jan 2020 23:25:10 +0000
-Received: from server126-2.web-hosting.com ([198.54.126.166])
+	id 1iw6Rq-00049L-Ei; Mon, 27 Jan 2020 15:37:10 +0000
+Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivUna-0008CI-Fk
- for linux-rockchip@lists.infradead.org; Sat, 25 Jan 2020 23:25:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=westerntelegraphic.net; s=default; h=Content-Transfer-Encoding:Content-Type
- :MIME-Version:Message-ID:Subject:To:From:Date:Sender:Reply-To:Cc:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Fy1FY0HBukaq+WaJA8Bn2npOrY0Tn7HMCTDCS7flfvI=; b=N/2ZfL0HZ83O2rEswgeZnGi1jZ
- hWAAYC8gzIhdQSLh/zIfW+mNy0/ZuYyuMzHi/2lGIYAEcxGl47fZROZWQpM0gGM39eYedg0S5zprJ
- l5V0GZUkqUh8KvSM/7ciguSLPYx2lnWCIQL7PwutrzJYgZyZsxetDBgupFV/s9p5BVnObaLSneFM+
- Ss2oyD+P9IiXhTmE4rmkLbdbaLajv2dNUMB+PoDqpzsAFRzKn0k5DSQ2KXlaYs1C02ajD4Xp9SKFe
- TO4HJcOShUgBailThhHnJf5+VSOwL7bgKb96abzyOGqY8loO06Ax1K6NYzkyxmhmi9NZN87zemKbq
- /MR0VfTQ==;
-Received: from cpe-98-151-158-107.hawaii.res.rr.com ([98.151.158.107]:46992
- helo=kleene) by server126.web-hosting.com with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92)
- (envelope-from <adam@westerntelegraphic.net>) id 1ivUnL-0018S8-2u
- for linux-rockchip@lists.infradead.org; Sat, 25 Jan 2020 18:24:55 -0500
-Date: Sat, 25 Jan 2020 13:24:47 -1000
-From: Adam Joseph <adam@westerntelegraphic.net>
-To: linux-rockchip@lists.infradead.org
-Subject: [Question] rk3399-gru-kevin post-kexec() severe screen flickering
-Message-ID: <20200125132447.48f01721@kleene>
-Organization: Western Telegraphic Corporation
+ id 1iw6RX-0003y5-8d; Mon, 27 Jan 2020 15:36:52 +0000
+Received: by mail-oi1-f193.google.com with SMTP id b18so3083645oie.2;
+ Mon, 27 Jan 2020 07:36:50 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=2tMp6J7RhsN6lAcTje3kjguQsBuUD423RsgoOzLk7mU=;
+ b=t7oUW1Zv5ShILiYUrbH7F32UA9SvazBjmaNZD4654cIf5nOLKqQLg3qGsi3MUTzhDM
+ G80w9vGEra795TCBQsDGHOm+c41J7Bl8AogoIQhJjxD62SZM5I99Dj5d8XmnpztT0/yp
+ ONqhUyITHeGiM2I2fv0xoeul/kmsWpROJ3B3/IOr3QSp/Szz3IsyXfGaAGxWKj8oMDYs
+ Qx3P+3gV0e15MIDTgY7M6C7x2j15KlusVT+vfN5wp7UwECyFnhueqS46iqFnW1XCQHyK
+ UFIk/z9pMm1CmGijCZR6GjEKSnUCfslvl69CCO8IT1o0k3PP3z1K9KrzWEhQT+hVxeWJ
+ QguQ==
+X-Gm-Message-State: APjAAAWS+wjaglxQG03Uz1a8VwdqQrBz5utbeZ89H7uVqYwgiqGe6nGe
+ 7r4jCNcVdsL5BR/i9lS8rQ==
+X-Google-Smtp-Source: APXvYqzGekj/ZFmSdDOyY4AAWBk440EzsKOKyc1gewORI8sKL5QW+luY/btzprKvUk099ZEBhUGrkQ==
+X-Received: by 2002:aca:1c0d:: with SMTP id c13mr7487529oic.44.1580139409565; 
+ Mon, 27 Jan 2020 07:36:49 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id u18sm5637408otq.26.2020.01.27.07.36.47
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 27 Jan 2020 07:36:48 -0800 (PST)
+Received: (nullmailer pid 32549 invoked by uid 1000);
+ Mon, 27 Jan 2020 15:36:47 -0000
+Date: Mon, 27 Jan 2020 09:36:47 -0600
+From: Rob Herring <robh@kernel.org>
+To: Akash Gajjar <akash@openedev.com>
+Subject: Re: [PATCH v4, 1/1] arm64: dts: rockchip: add ROCK Pi S DTS support
+Message-ID: <20200127153647.GA32343@bogus>
+References: <20200125063153.2720-1-akash@openedev.com>
 MIME-Version: 1.0
-X-OutGoing-Spam-Status: No, score=-1.0
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - server126.web-hosting.com
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - westerntelegraphic.net
-X-Get-Message-Sender-Via: server126.web-hosting.com: authenticated_id:
- westmjlc/from_h
-X-Authenticated-Sender: server126.web-hosting.com: adam@westerntelegraphic.net
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-From-Rewrite: unmodified, already matched
+Content-Disposition: inline
+In-Reply-To: <20200125063153.2720-1-akash@openedev.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200125_152506_642182_3804AB30 
-X-CRM114-Status: UNSURE (   9.61  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200127_073651_307226_2D87F618 
+X-CRM114-Status: GOOD (  15.11  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [198.54.126.166 listed in list.dnswl.org]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ no trust [209.85.167.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,71 +91,64 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Jagan Teki <jagan@amarulasolutions.com>, linux-kernel@vger.kernel.org,
+ heiko@sntech.de, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org, Robin Murphy <robin.murphy@arm.com>,
+ Douglas Anderson <dianders@chromium.org>,
+ Kever Yang <kever.yang@rock-chips.com>, Markus Reichl <m.reichl@fivetechno.de>,
+ linux-rockchip@lists.infradead.org, Matthias Kaehlcke <mka@chromium.org>,
+ Akash Gajjar <akash@openedev.com>, Nick Xie <nick@khadas.com>,
+ Andy Yan <andy.yan@rock-chips.com>, jagan@openedev.com,
+ Vivek Unune <npcomplete13@gmail.com>, Alexis Ballier <aballier@gentoo.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hello all,
+On Sat, 25 Jan 2020 12:01:37 +0530, Akash Gajjar wrote:
+> ROCK Pi S is RK3308 based SBC from radxa.com. ROCK Pi S has a,
+> - 256MB/512MB DDR3 RAM
+> - SD, NAND flash (optional on board 1/2/4/8Gb)
+> - 100MB ethernet, PoE (optional)
+> - Onboard 802.11 b/g/n wifi + Bluetooth 4.0 Module
+> - USB2.0 Type-A HOST x1
+> - USB3.0 Type-C OTG x1
+> - 26-pin expansion header
+> - USB Type-C DC 5V Power Supply
+> 
+> This patch enables
+> - Console
+> - NAND Flash
+> - SD Card
+> 
+> Signed-off-by: Akash Gajjar <akash@openedev.com>
+> ---
+> Changes in v4
+> - remove supports-sd/sdio, nums-slots property
+> - use vmmc-supply for emmc node
+> 
+> Changes in v3
+> - Use small S on dts file name
+> - Add missing semicolon
+> - Remove USB2.0 node support
+> 
+> Changes in v2
+> - Use pwm-supply for vdd_core node instead of vi-supply
+> - Add USB2.0 node support
+>  
+>  .../devicetree/bindings/arm/rockchip.yaml     |   5 +
+>  arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+>  .../boot/dts/rockchip/rk3308-rock-pi-s.dts    | 216 ++++++++++++++++++
+>  3 files changed, 222 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/rockchip/rk3308-rock-pi-s.dts
+> 
 
-My daily driver is a linux on a Samsung XE513 aka "Chromebook Plus"
-aka rk3399-gru-kevin, using coreboot (loaded from SPI NOR) with a
-hardwired linux kernel FIT image compiled into the coreboot.rom.
-I'm moving towards this "burned-in" kernel being merely a first-stage
-bootloader that loads the real kernel from non-eeprom storage, checks
-its hash, and then kexec()'s it.
+Please add Acked-by/Reviewed-by tags when posting new versions. However,
+there's no need to repost patches *only* to add the tags. The upstream
+maintainer will do that for acks received on the version they apply.
 
-I've managed to get this working; the magic incantation is to add
-"irqchip.gicv3_nolpi=1" for the first-stage kernel, and pull this
-patch when compiling it:
-
-  https://lore.kernel.org/patchwork/cover/933456/
-
-This works great, except that after loading the second kernel the
-screen flickers very badly and continuously.  The flicker is
-especially bad if I use the touchscreen.  This doesn't happen if the
-exact same "second kernel" image is booted directly out of NOR flash
-by coreboot.  Is there some way to totally power down the touchscreen
-digitizer, and if so would that help?  I could live without the
-touchscreen if I had to.  Can cut PCB traces if necessary.
-
-I noticed that eballetbo (to whom I am eternally grateful for all the
-work he does to make mainline linux on gru-kevin possible) came across
-the same problem, as documented here:
-
-  https://freenode.irclog.whitequark.org/linux-rockchip/2018-11-20#23524255
-
-Has there been any more progress on this?  If not, can anybody get me
-pointed in the right direction to try to fix this myself?
-
-I'm guessing the "clocks" here refer to PLL registers -- VCO taps,
-dividers, etc.  I'm very familiar with that sort of stuff from the
-FPGA world, although the last time I did any kernel hacking was before
-devicetrees were popular.  Is there some way to brute-force dump the
-state of all the rk3399's clocking-related registers so I can diff the
-results from a post-kexec() and pre-kexec() kernel?
-
-I see a lot of comments from rockchip employees about flicker being
-caused by the resident ATF code deciding to fiddle with the DRAM DVFS
-settings outside of the vertical blanking interval; is this relevant?
-For example:
-
-  https://groups.google.com/a/chromium.org/d/msg/chromium-os-reviews/8SD-sEw5_-Y/uJaXssVqFQAJ
-
-On a related note, is there any way to have the ATF code delete itself
-from memory after returning control to the coreboot ramstage?  I went
-many months without usable suspend-to-ram and invested an absurd
-amount of time before discovering that the intricate dance needed to
-get the ATF to agree to suspend the machine only works with certain
-versions of special branches of the ATF code.  It was a pretty unhappy
-experience, and at this point I don't see the post-boot resident
-portion of the ATF adding positive value.  If I can just boot linux
-in EL3-secure-world after the ATF has set up the DRAM timings that
-would seem to be simpler.
-
-Thanks for any pointers,
-
-  - a
+If a tag was not added on purpose, please state why and what changed.
 
 _______________________________________________
 Linux-rockchip mailing list
