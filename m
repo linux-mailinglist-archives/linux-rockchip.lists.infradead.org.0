@@ -2,73 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35FCB14A74D
-	for <lists+linux-rockchip@lfdr.de>; Mon, 27 Jan 2020 16:37:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F221114A7E0
+	for <lists+linux-rockchip@lfdr.de>; Mon, 27 Jan 2020 17:13:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VL36gKPo2YGFGFQbSAJ4gvsaK6uv+S61uz8c3itnKX4=; b=VRT1D+12vk11Vx
-	WMxqfhID5eZUFntLXJHoKb/dRa2IQcnQqfdOgB7hvWXyrJx0LfEFzGFaRGUXAJ38BV/XsibaNxeLd
-	oXzx8TnDTNm4g8A0FEmIvupqfo1xNXL9KhY7xfbFpLRfm6+OU1869FZxNDCBuEYniuedzAfkiV+1v
-	E2kkBSxwdlmnpHLdjUk+FzMwVC7FpMehKw8mhCZhkRqFjHm3UdUy2Hc8A/rTBosGHDd4u0irW//lr
-	O6I+VZGErlueaOum0J+XiWDcNwiz3m/LqRaEGbQO4AtoVqW8QnFN2nWpWVglpwYcne0Slib+e4g8E
-	pgcsjJTeXIEOTcs9Umbg==;
+	List-Owner; bh=YLk7p41iKcLwGJt9NXJrijECUQxdFIvvu0mwpVPJkfU=; b=Ni7PmbEhA3bpf4
+	aH3j97r9l6xw3Ug1Mv5mUCKNE811tgsGSHZ50g51r3pYaHBXIuYO9C4VP7jaYlCrUYX3jtBjVPkEz
+	DJDFDNi/0QwHhInBDdwfxnrNCWjsDfIfJvtqcdJXL9luvZixZuFxOjK/s42jpB8Me9QGFqzYE9m/3
+	jYi1CrdTAFLKogXMr+Q/ljf4+zNaZwS4Et2Qm6lzh6IugWXsahN5e6/6u2Tsm0BHWvmzM7XIeASbZ
+	fyvHkhGFjwmHdQOgiIUw+rPsyLraAYwcXlBs95K8VBKC1Vh8phhOiwqP54PrYA5jCS+mauT86kkuo
+	f2H2+UVxNVTKdrbib+dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw6Rq-00049L-Ei; Mon, 27 Jan 2020 15:37:10 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1iw71J-0001VG-W2; Mon, 27 Jan 2020 16:13:50 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw6RX-0003y5-8d; Mon, 27 Jan 2020 15:36:52 +0000
-Received: by mail-oi1-f193.google.com with SMTP id b18so3083645oie.2;
- Mon, 27 Jan 2020 07:36:50 -0800 (PST)
+ id 1iw714-00017M-F4; Mon, 27 Jan 2020 16:13:35 +0000
+Received: by mail-ot1-f68.google.com with SMTP id i6so5014462otr.7;
+ Mon, 27 Jan 2020 08:13:34 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=2tMp6J7RhsN6lAcTje3kjguQsBuUD423RsgoOzLk7mU=;
- b=t7oUW1Zv5ShILiYUrbH7F32UA9SvazBjmaNZD4654cIf5nOLKqQLg3qGsi3MUTzhDM
- G80w9vGEra795TCBQsDGHOm+c41J7Bl8AogoIQhJjxD62SZM5I99Dj5d8XmnpztT0/yp
- ONqhUyITHeGiM2I2fv0xoeul/kmsWpROJ3B3/IOr3QSp/Szz3IsyXfGaAGxWKj8oMDYs
- Qx3P+3gV0e15MIDTgY7M6C7x2j15KlusVT+vfN5wp7UwECyFnhueqS46iqFnW1XCQHyK
- UFIk/z9pMm1CmGijCZR6GjEKSnUCfslvl69CCO8IT1o0k3PP3z1K9KrzWEhQT+hVxeWJ
- QguQ==
-X-Gm-Message-State: APjAAAWS+wjaglxQG03Uz1a8VwdqQrBz5utbeZ89H7uVqYwgiqGe6nGe
- 7r4jCNcVdsL5BR/i9lS8rQ==
-X-Google-Smtp-Source: APXvYqzGekj/ZFmSdDOyY4AAWBk440EzsKOKyc1gewORI8sKL5QW+luY/btzprKvUk099ZEBhUGrkQ==
-X-Received: by 2002:aca:1c0d:: with SMTP id c13mr7487529oic.44.1580139409565; 
- Mon, 27 Jan 2020 07:36:49 -0800 (PST)
+ bh=JNhU3ozUFErUx+4UTT5ltSBuP2mFt3zi7r84jg0CNoc=;
+ b=t1bncv+m2a1zuWGJ/PEVc+5878OIZnXArIzYZbJhZdJ0GD3eOvWBgJikB/QNEfB0AE
+ pdet3YGZDlucE0e+AavsYxr6ivuOsjKn9Fuk7Rw5h3O8bBnrUrKOYxt97RO4BWyinmz5
+ SBHQd+GSfrArXAD2GQYZjjBErZFLaaX9Npg67+XR9GvhGWoqgw/1rP9pV7rbcKy+RHTs
+ KBKvL8VJlDKP5MWG0xDRxrD/XDK1H4GkWQJNeynU+FnE+1+ACRS/g1CaXm+B6qrH1vF1
+ kKgVSyoaMh7dqc8oJIUWaAHk97NnUVGHK1ic/iwmnn+kBca7M6ViOUQCUQ7dAoqQYrvr
+ aY6g==
+X-Gm-Message-State: APjAAAU480ynmEJjeZj10hEEHx4a6MrlJjkmW3jJmaoOXvBVvlEWzqma
+ ZCuUWcicZYUMlSjP8k8hpQ==
+X-Google-Smtp-Source: APXvYqx+crNryziVOs9TPZ584wS5oJiSpLsXp+K6NXnR1XqPGiQwSyxOkcd4SFNU/i5Tt2bP+RwJrw==
+X-Received: by 2002:a9d:7305:: with SMTP id e5mr12473441otk.64.1580141613803; 
+ Mon, 27 Jan 2020 08:13:33 -0800 (PST)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id u18sm5637408otq.26.2020.01.27.07.36.47
+ by smtp.gmail.com with ESMTPSA id e6sm5649617otl.12.2020.01.27.08.13.32
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 27 Jan 2020 07:36:48 -0800 (PST)
-Received: (nullmailer pid 32549 invoked by uid 1000);
- Mon, 27 Jan 2020 15:36:47 -0000
-Date: Mon, 27 Jan 2020 09:36:47 -0600
+ Mon, 27 Jan 2020 08:13:33 -0800 (PST)
+Received: (nullmailer pid 20252 invoked by uid 1000);
+ Mon, 27 Jan 2020 16:13:31 -0000
+Date: Mon, 27 Jan 2020 10:13:31 -0600
 From: Rob Herring <robh@kernel.org>
-To: Akash Gajjar <akash@openedev.com>
-Subject: Re: [PATCH v4, 1/1] arm64: dts: rockchip: add ROCK Pi S DTS support
-Message-ID: <20200127153647.GA32343@bogus>
-References: <20200125063153.2720-1-akash@openedev.com>
+To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Subject: Re: [PATCH v3] dt-bindings: convert rockchip-drm.txt to
+ rockchip-drm.yaml
+Message-ID: <20200127161331.GA20191@bogus>
+References: <20200121154314.3444-1-dafna.hirschfeld@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200125063153.2720-1-akash@openedev.com>
+In-Reply-To: <20200121154314.3444-1-dafna.hirschfeld@collabora.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_073651_307226_2D87F618 
-X-CRM114-Status: GOOD (  15.11  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200127_081334_501573_1E4167D4 
+X-CRM114-Status: GOOD (  13.19  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
+ no trust [209.85.210.68 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -77,6 +76,9 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -91,64 +93,58 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Jagan Teki <jagan@amarulasolutions.com>, linux-kernel@vger.kernel.org,
- heiko@sntech.de, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org, Robin Murphy <robin.murphy@arm.com>,
- Douglas Anderson <dianders@chromium.org>,
- Kever Yang <kever.yang@rock-chips.com>, Markus Reichl <m.reichl@fivetechno.de>,
- linux-rockchip@lists.infradead.org, Matthias Kaehlcke <mka@chromium.org>,
- Akash Gajjar <akash@openedev.com>, Nick Xie <nick@khadas.com>,
- Andy Yan <andy.yan@rock-chips.com>, jagan@openedev.com,
- Vivek Unune <npcomplete13@gmail.com>, Alexis Ballier <aballier@gentoo.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ dafna.hirschfeld@collabora.com, heiko@sntech.de, airlied@linux.ie,
+ dafna3@gmail.com, hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
+ linux-rockchip@lists.infradead.org, helen.koike@collabora.com,
+ robh+dt@kernel.org, daniel@ffwll.ch, kernel@collabora.com,
+ ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sat, 25 Jan 2020 12:01:37 +0530, Akash Gajjar wrote:
-> ROCK Pi S is RK3308 based SBC from radxa.com. ROCK Pi S has a,
-> - 256MB/512MB DDR3 RAM
-> - SD, NAND flash (optional on board 1/2/4/8Gb)
-> - 100MB ethernet, PoE (optional)
-> - Onboard 802.11 b/g/n wifi + Bluetooth 4.0 Module
-> - USB2.0 Type-A HOST x1
-> - USB3.0 Type-C OTG x1
-> - 26-pin expansion header
-> - USB Type-C DC 5V Power Supply
+On Tue, 21 Jan 2020 16:43:14 +0100, Dafna Hirschfeld wrote:
+> convert the binding file rockchip-drm.txt to yaml format.
+> This was tested and verified on ARM and ARM64 with:
+> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
 > 
-> This patch enables
-> - Console
-> - NAND Flash
-> - SD Card
-> 
-> Signed-off-by: Akash Gajjar <akash@openedev.com>
+> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 > ---
-> Changes in v4
-> - remove supports-sd/sdio, nums-slots property
-> - use vmmc-supply for emmc node
+> the detail of the ARM tests:
+> export ARCH=arm KBUILD_OUTPUT=../kbuild/arm-test-dtc/ CROSS_COMPILE=arm-linux-gnueabi-
+> make menuconfig # set rockchip system
+> make clean
+> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
 > 
-> Changes in v3
-> - Use small S on dts file name
-> - Add missing semicolon
-> - Remove USB2.0 node support
+> the detail of the ARM64 tests:
+> export ARCH=arm64 KBUILD_OUTPUT=../kbuild/arm64-test-dtc/ CROSS_COMPILE=aarch64-linux-gnu-
+> make menuconfig # set rockchip system
+> make clean
+> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
 > 
-> Changes in v2
-> - Use pwm-supply for vdd_core node instead of vi-supply
-> - Add USB2.0 node support
->  
->  .../devicetree/bindings/arm/rockchip.yaml     |   5 +
->  arch/arm64/boot/dts/rockchip/Makefile         |   1 +
->  .../boot/dts/rockchip/rk3308-rock-pi-s.dts    | 216 ++++++++++++++++++
->  3 files changed, 222 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/rockchip/rk3308-rock-pi-s.dts
+> 
+> Changes since v1:
+> - fixed worng sign-off
+> - fixed the path of the $id property to be the path of the yaml file
+> Changes since v2:
+> - add a missing ">" sign in maintainers list
+> - change the licens to GPL-2.0-only
+> - add "additionalProperties: false"
+> - change the commit message to conform that it was tested on both ARM and ARM64
+> 
+> 
+>  .../display/rockchip/rockchip-drm.txt         | 19 ---------
+>  .../display/rockchip/rockchip-drm.yaml        | 40 +++++++++++++++++++
+>  2 files changed, 40 insertions(+), 19 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
+>  create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
 > 
 
-Please add Acked-by/Reviewed-by tags when posting new versions. However,
-there's no need to repost patches *only* to add the tags. The upstream
-maintainer will do that for acks received on the version they apply.
-
-If a tag was not added on purpose, please state why and what changed.
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 Linux-rockchip mailing list
