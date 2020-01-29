@@ -2,41 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3985314D17A
+	by mail.lfdr.de (Postfix) with ESMTPS id CB55E14D17B
 	for <lists+linux-rockchip@lfdr.de>; Wed, 29 Jan 2020 20:55:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=cpnQwQnigl/cK+UqB0C4mDUvxFp3KB72nZpnv9m+hrk=; b=t/tu8v1ca44+3S
-	ldMItNIxcnXMJJVrxpsuPtiT/eGFuX35PSErTy7cxcgppO41yoplCSqXnWKbch/4zsjdS4Y8djuFO
-	bfiyaiZ1ngdEo+nNYr4by7acHaWYFCa1/i4TPB6Mt03AGAkkplaReCgnBdmvg1w8ZAvEAkLdRorXl
-	Aew6HhQn64klUurxwJqKfGvAvD537HLwHawWfAHpn879/e3k36NAOSov6oCrUWPTQKscGlpNjkRP0
-	ezmJakUYHmt9ZJLgFtYo5uHwfZ9mWh5xAAsrTBNjM1jO+rWDobdccn5yVCuXElFWESXIscS4K8Pjh
-	YOPfH4d96VzTwNXvV1cw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uKlhTjSau2+rPKAfCL/TkmBwpKthbEU0ALjayQIXU9Q=; b=dFtcphovbpX4An
+	fyzkOEnUDmzKzlhOo7hXH+BBUxxFK6pSLw65+UU7JylTSiZTXK5dYMGoauC4LpV2rvyLuPbfZPjF4
+	FyPFT5TO26IfGgb5/RFTKFL96JBsYrbxn+TmhHXKARFeq8LkriQpKzxz1Go+nzFcaoYfy4TGoIYZb
+	nTADuHfHZmG9DwGaciAe0F6xrJRKkxGHFqaxJlRcaIRF/lw2Lk/KryIp70JHX5/43Vcjl9iXQqapA
+	mOH/CzESqhReHWD0a1p9cLpUuxfolV0ysAQRh4CHKlya7C/ASQgCKN64dsobGJlIMJWXWFO8ArRaE
+	Fc+lA2WtLvR0hgvAICqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwtQo-0004JE-9j; Wed, 29 Jan 2020 19:55:22 +0000
+	id 1iwtQq-0004Km-VN; Wed, 29 Jan 2020 19:55:24 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwtQk-0004Ic-Vs
- for linux-rockchip@lists.infradead.org; Wed, 29 Jan 2020 19:55:20 +0000
+ id 1iwtQn-0004J8-Eq
+ for linux-rockchip@lists.infradead.org; Wed, 29 Jan 2020 19:55:23 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 01137294ADD
+ (Authenticated sender: ezequiel) with ESMTPSA id 3F52D294ADE
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v4 0/6] media: rockchip: Add the rkvdec driver
-Date: Wed, 29 Jan 2020 16:54:55 -0300
-Message-Id: <20200129195501.8317-1-ezequiel@collabora.com>
+Subject: [PATCH v4 1/6] media: uapi: h264: Add DPB entry field reference flags
+Date: Wed, 29 Jan 2020 16:54:56 -0300
+Message-Id: <20200129195501.8317-2-ezequiel@collabora.com>
 X-Mailer: git-send-email 2.25.0
+In-Reply-To: <20200129195501.8317-1-ezequiel@collabora.com>
+References: <20200129195501.8317-1-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200129_115519_154578_E99048EF 
-X-CRM114-Status: UNSURE (   6.69  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200129_115521_757896_E3F2A84F 
+X-CRM114-Status: GOOD (  11.26  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -71,55 +72,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hello,
+From: Jonas Karlman <jonas@kwiboo.se>
 
-This is v4 of Boris' rkvdec driver.
+Using the field information attached to v4l2 buffers is not enough to
+determine the type of field referenced by a DPB entry: the decoded
+frame might contain the full picture (both top and bottom fields)
+but the reference only point to one of them.
+Let's add new V4L2_H264_DPB_ENTRY_FLAG_ flags to express that.
 
-I've addressed the comments received during v3, all of them
-quite minor. Please check each patch changelog for more details.
+Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
+[Keep only 2 flags and add some details about they mean]
+Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+---
+v4:
+* None
+v3:
+* This patch was previously part of https://lkml.org/lkml/2019/10/28/956
+* Kept the FIELD and BOTTOM_FIELD flags
+* Updated the doc with more details
+---
+ Documentation/media/uapi/v4l/ext-ctrls-codec.rst | 16 ++++++++++++++++
+ include/media/h264-ctrls.h                       |  2 ++
+ 2 files changed, 18 insertions(+)
 
-Thanks,
-Ezequiel
-
-Boris Brezillon (5):
-  media: v4l2-core: Add helpers to build the H264 P/B0/B1 reflists
-  media: hantro: h264: Use the generic H264 reflist builder
-  media: dt-bindings: rockchip: Document RK3399 Video Decoder bindings
-  media: rkvdec: Add the rkvdec driver
-  arm64: dts: rockchip: rk3399: Define the rockchip Video Decoder node
-
-Jonas Karlman (1):
-  media: uapi: h264: Add DPB entry field reference flags
-
- .../bindings/media/rockchip,vdec.yaml         |   71 +
- .../media/uapi/v4l/ext-ctrls-codec.rst        |   16 +
- arch/arm64/boot/dts/rockchip/rk3399.dtsi      |   14 +-
- drivers/media/v4l2-core/Kconfig               |    4 +
- drivers/media/v4l2-core/Makefile              |    1 +
- drivers/media/v4l2-core/v4l2-h264.c           |  258 ++++
- drivers/staging/media/Kconfig                 |    2 +
- drivers/staging/media/Makefile                |    1 +
- drivers/staging/media/hantro/Kconfig          |    1 +
- drivers/staging/media/hantro/hantro_h264.c    |  237 +---
- drivers/staging/media/rkvdec/Kconfig          |   15 +
- drivers/staging/media/rkvdec/Makefile         |    3 +
- drivers/staging/media/rkvdec/rkvdec-h264.c    | 1154 +++++++++++++++++
- drivers/staging/media/rkvdec/rkvdec-regs.h    |  239 ++++
- drivers/staging/media/rkvdec/rkvdec.c         | 1134 ++++++++++++++++
- drivers/staging/media/rkvdec/rkvdec.h         |  124 ++
- include/media/h264-ctrls.h                    |    2 +
- include/media/v4l2-h264.h                     |   86 ++
- 18 files changed, 3132 insertions(+), 230 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/media/rockchip,vdec.yaml
- create mode 100644 drivers/media/v4l2-core/v4l2-h264.c
- create mode 100644 drivers/staging/media/rkvdec/Kconfig
- create mode 100644 drivers/staging/media/rkvdec/Makefile
- create mode 100644 drivers/staging/media/rkvdec/rkvdec-h264.c
- create mode 100644 drivers/staging/media/rkvdec/rkvdec-regs.h
- create mode 100644 drivers/staging/media/rkvdec/rkvdec.c
- create mode 100644 drivers/staging/media/rkvdec/rkvdec.h
- create mode 100644 include/media/v4l2-h264.h
-
+diff --git a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+index 28313c0f4e7c..d4fc5f25aa14 100644
+--- a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
++++ b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+@@ -2028,6 +2028,22 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type -
+     * - ``V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM``
+       - 0x00000004
+       - The DPB entry is a long term reference frame
++    * - ``V4L2_H264_DPB_ENTRY_FLAG_FIELD``
++      - 0x00000008
++      - The DPB entry is a field reference, which means only one of the field
++        will be used when decoding the new frame/field. When not set the DPB
++        entry is a frame reference (both fields will be used). Note that this
++        flag does not say anything about the number of fields contained in the
++        reference frame, it just describes the one used to decode the new
++        field/frame
++    * - ``V4L2_H264_DPB_ENTRY_FLAG_BOTTOM_FIELD``
++      - 0x00000010
++      - The DPB entry is a bottom field reference (only the bottom field of the
++        reference frame is needed to decode the new frame/field). Only valid if
++        V4L2_H264_DPB_ENTRY_FLAG_FIELD is set. When
++        V4L2_H264_DPB_ENTRY_FLAG_FIELD is set but
++        V4L2_H264_DPB_ENTRY_FLAG_BOTTOM_FIELD is not, that means the
++        DPB entry is a top field reference
+ 
+ ``V4L2_CID_MPEG_VIDEO_H264_DECODE_MODE (enum)``
+     Specifies the decoding mode to use. Currently exposes slice-based and
+diff --git a/include/media/h264-ctrls.h b/include/media/h264-ctrls.h
+index e877bf1d537c..1c6ff7d63bca 100644
+--- a/include/media/h264-ctrls.h
++++ b/include/media/h264-ctrls.h
+@@ -185,6 +185,8 @@ struct v4l2_ctrl_h264_slice_params {
+ #define V4L2_H264_DPB_ENTRY_FLAG_VALID		0x01
+ #define V4L2_H264_DPB_ENTRY_FLAG_ACTIVE		0x02
+ #define V4L2_H264_DPB_ENTRY_FLAG_LONG_TERM	0x04
++#define V4L2_H264_DPB_ENTRY_FLAG_FIELD		0x08
++#define V4L2_H264_DPB_ENTRY_FLAG_BOTTOM_FIELD	0x10
+ 
+ struct v4l2_h264_dpb_entry {
+ 	__u64 reference_ts;
 -- 
 2.25.0
 
