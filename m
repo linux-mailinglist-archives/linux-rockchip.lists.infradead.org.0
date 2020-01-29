@@ -2,51 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D73D514CE8A
-	for <lists+linux-rockchip@lfdr.de>; Wed, 29 Jan 2020 17:39:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3985314D17A
+	for <lists+linux-rockchip@lfdr.de>; Wed, 29 Jan 2020 20:55:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JfNuLNulEOuwgbn3EZ3pKhUYLH6syETYUZ9b04bCo4I=; b=uCAWrnaZTcwkon
-	UWJOIib0gXvR+dJRdc4o8aVBHiCalBQts/G6ZWd9PuHYr2YpRFv2HYll4islp76lrxSpeh4V7ovFQ
-	rJCC35vf9Ck9ArbL01emDNbnrpTRDCvkl5qsiURHYTLDrHR9/YPWGOxOiItj9LZr20zzHepeHZK2N
-	WJ5g8L9V78k7NdMsiMAYMGrgriJLUHF5YfCm3HVb5mDqFb3jM0h9ENvqh6L66OW/I2lHqY7gwKhAw
-	e7GmSXeE2c1V9KZwqefqjver/0jiAGByllN8X4ouWN5p2U868vxsTNFEhsrDmhCKd1H8/+VljiqCb
-	g1+SAjJO72yrjWmFy48g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cpnQwQnigl/cK+UqB0C4mDUvxFp3KB72nZpnv9m+hrk=; b=t/tu8v1ca44+3S
+	ldMItNIxcnXMJJVrxpsuPtiT/eGFuX35PSErTy7cxcgppO41yoplCSqXnWKbch/4zsjdS4Y8djuFO
+	bfiyaiZ1ngdEo+nNYr4by7acHaWYFCa1/i4TPB6Mt03AGAkkplaReCgnBdmvg1w8ZAvEAkLdRorXl
+	Aew6HhQn64klUurxwJqKfGvAvD537HLwHawWfAHpn879/e3k36NAOSov6oCrUWPTQKscGlpNjkRP0
+	ezmJakUYHmt9ZJLgFtYo5uHwfZ9mWh5xAAsrTBNjM1jO+rWDobdccn5yVCuXElFWESXIscS4K8Pjh
+	YOPfH4d96VzTwNXvV1cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwqNA-0005kI-Fe; Wed, 29 Jan 2020 16:39:24 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1iwtQo-0004JE-9j; Wed, 29 Jan 2020 19:55:22 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwqMW-0004y5-G4; Wed, 29 Jan 2020 16:38:45 +0000
-Received: from p508fd499.dip0.t-ipconnect.de ([80.143.212.153]
- helo=phil.sntech)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iwqMO-0006rE-SM; Wed, 29 Jan 2020 17:38:36 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: linux-clk@vger.kernel.org
-Subject: [PATCH v3 3/3] clk: rockchip: convert rk3036 pll type to use internal
- lock status
-Date: Wed, 29 Jan 2020 17:38:21 +0100
-Message-Id: <20200129163821.1547295-3-heiko@sntech.de>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200129163821.1547295-1-heiko@sntech.de>
-References: <20200129163821.1547295-1-heiko@sntech.de>
+ id 1iwtQk-0004Ic-Vs
+ for linux-rockchip@lists.infradead.org; Wed, 29 Jan 2020 19:55:20 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 01137294ADD
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v4 0/6] media: rockchip: Add the rkvdec driver
+Date: Wed, 29 Jan 2020 16:54:55 -0300
+Message-Id: <20200129195501.8317-1-ezequiel@collabora.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200129_083844_686111_BFEB1D79 
-X-CRM114-Status: GOOD (  14.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200129_115519_154578_E99048EF 
+X-CRM114-Status: UNSURE (   6.69  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,97 +58,70 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: heiko@sntech.de, sboyd@kernel.org,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>, mturquette@baylibre.com,
- zhangqing@rock-chips.com, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robin.murphy@arm.com,
- linux-arm-kernel@lists.infradead.org, christoph.muellner@theobroma-systems.com
+Cc: Hans Verkuil <hverkuil@xs4all.nl>, Tomasz Figa <tfiga@chromium.org>,
+ Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
+ Nicolas Dufresne <nicolas@ndufresne.ca>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Rob Herring <robh+dt@kernel.org>, Sakari Ailus <sakari.ailus@iki.fi>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Boris Brezillon <boris.brezillon@collabora.com>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+Hello,
 
-The rk3036 pll type exposes its lock status in both its pllcon registers
-as well as the General Register Files. To remove one dependency convert
-it to the "internal" lock status, similar to how rk3399 handles it.
+This is v4 of Boris' rkvdec driver.
 
-Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
----
-changes in v3:
-- switch to readl_relaxed_poll_timeout
-changes in v2:
-- use readl_poll_timeout instead of opencoding
+I've addressed the comments received during v3, all of them
+quite minor. Please check each patch changelog for more details.
 
- drivers/clk/rockchip/clk-pll.c | 26 +++++++++++++++++++++++---
- 1 file changed, 23 insertions(+), 3 deletions(-)
+Thanks,
+Ezequiel
 
-diff --git a/drivers/clk/rockchip/clk-pll.c b/drivers/clk/rockchip/clk-pll.c
-index c7c3848d68e8..eccd9d49ee59 100644
---- a/drivers/clk/rockchip/clk-pll.c
-+++ b/drivers/clk/rockchip/clk-pll.c
-@@ -12,6 +12,7 @@
- #include <linux/io.h>
- #include <linux/delay.h>
- #include <linux/clk-provider.h>
-+#include <linux/iopoll.h>
- #include <linux/regmap.h>
- #include <linux/clk.h>
- #include "clk.h"
-@@ -109,12 +110,31 @@ static int rockchip_pll_wait_lock(struct rockchip_clk_pll *pll)
- #define RK3036_PLLCON1_REFDIV_SHIFT		0
- #define RK3036_PLLCON1_POSTDIV2_MASK		0x7
- #define RK3036_PLLCON1_POSTDIV2_SHIFT		6
-+#define RK3036_PLLCON1_LOCK_STATUS		BIT(10)
- #define RK3036_PLLCON1_DSMPD_MASK		0x1
- #define RK3036_PLLCON1_DSMPD_SHIFT		12
-+#define RK3036_PLLCON1_PWRDOWN			BIT(13)
- #define RK3036_PLLCON2_FRAC_MASK		0xffffff
- #define RK3036_PLLCON2_FRAC_SHIFT		0
- 
--#define RK3036_PLLCON1_PWRDOWN			(1 << 13)
-+static int rockchip_rk3036_pll_wait_lock(struct rockchip_clk_pll *pll)
-+{
-+	u32 pllcon;
-+	int ret;
-+
-+	/*
-+	 * Lock time typical 250, max 500 input clock cycles @24MHz
-+	 * So define a very safe maximum of 1000us, meaning 24000 cycles.
-+	 */
-+	ret = readl_relaxed_poll_timeout(pll->reg_base + RK3036_PLLCON(1),
-+					 pllcon,
-+					 pllcon & RK3036_PLLCON1_LOCK_STATUS,
-+					 0, 1000);
-+	if (ret)
-+		pr_err("%s: timeout waiting for pll to lock\n", __func__);
-+
-+	return ret;
-+}
- 
- static void rockchip_rk3036_pll_get_params(struct rockchip_clk_pll *pll,
- 					struct rockchip_pll_rate_table *rate)
-@@ -212,7 +232,7 @@ static int rockchip_rk3036_pll_set_params(struct rockchip_clk_pll *pll,
- 	writel_relaxed(pllcon, pll->reg_base + RK3036_PLLCON(2));
- 
- 	/* wait for the pll to lock */
--	ret = rockchip_pll_wait_lock(pll);
-+	ret = rockchip_rk3036_pll_wait_lock(pll);
- 	if (ret) {
- 		pr_warn("%s: pll update unsuccessful, trying to restore old params\n",
- 			__func__);
-@@ -251,7 +271,7 @@ static int rockchip_rk3036_pll_enable(struct clk_hw *hw)
- 
- 	writel(HIWORD_UPDATE(0, RK3036_PLLCON1_PWRDOWN, 0),
- 	       pll->reg_base + RK3036_PLLCON(1));
--	rockchip_pll_wait_lock(pll);
-+	rockchip_rk3036_pll_wait_lock(pll);
- 
- 	return 0;
- }
+Boris Brezillon (5):
+  media: v4l2-core: Add helpers to build the H264 P/B0/B1 reflists
+  media: hantro: h264: Use the generic H264 reflist builder
+  media: dt-bindings: rockchip: Document RK3399 Video Decoder bindings
+  media: rkvdec: Add the rkvdec driver
+  arm64: dts: rockchip: rk3399: Define the rockchip Video Decoder node
+
+Jonas Karlman (1):
+  media: uapi: h264: Add DPB entry field reference flags
+
+ .../bindings/media/rockchip,vdec.yaml         |   71 +
+ .../media/uapi/v4l/ext-ctrls-codec.rst        |   16 +
+ arch/arm64/boot/dts/rockchip/rk3399.dtsi      |   14 +-
+ drivers/media/v4l2-core/Kconfig               |    4 +
+ drivers/media/v4l2-core/Makefile              |    1 +
+ drivers/media/v4l2-core/v4l2-h264.c           |  258 ++++
+ drivers/staging/media/Kconfig                 |    2 +
+ drivers/staging/media/Makefile                |    1 +
+ drivers/staging/media/hantro/Kconfig          |    1 +
+ drivers/staging/media/hantro/hantro_h264.c    |  237 +---
+ drivers/staging/media/rkvdec/Kconfig          |   15 +
+ drivers/staging/media/rkvdec/Makefile         |    3 +
+ drivers/staging/media/rkvdec/rkvdec-h264.c    | 1154 +++++++++++++++++
+ drivers/staging/media/rkvdec/rkvdec-regs.h    |  239 ++++
+ drivers/staging/media/rkvdec/rkvdec.c         | 1134 ++++++++++++++++
+ drivers/staging/media/rkvdec/rkvdec.h         |  124 ++
+ include/media/h264-ctrls.h                    |    2 +
+ include/media/v4l2-h264.h                     |   86 ++
+ 18 files changed, 3132 insertions(+), 230 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/media/rockchip,vdec.yaml
+ create mode 100644 drivers/media/v4l2-core/v4l2-h264.c
+ create mode 100644 drivers/staging/media/rkvdec/Kconfig
+ create mode 100644 drivers/staging/media/rkvdec/Makefile
+ create mode 100644 drivers/staging/media/rkvdec/rkvdec-h264.c
+ create mode 100644 drivers/staging/media/rkvdec/rkvdec-regs.h
+ create mode 100644 drivers/staging/media/rkvdec/rkvdec.c
+ create mode 100644 drivers/staging/media/rkvdec/rkvdec.h
+ create mode 100644 include/media/v4l2-h264.h
+
 -- 
-2.24.1
+2.25.0
 
 
 _______________________________________________
