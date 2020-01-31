@@ -2,49 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51AA714EC5C
-	for <lists+linux-rockchip@lfdr.de>; Fri, 31 Jan 2020 13:18:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A44314F2DC
+	for <lists+linux-rockchip@lfdr.de>; Fri, 31 Jan 2020 20:39:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nLPbK7PvT0TCCVwmVJp9HvINdOZ2kFQq6D41p5ienLw=; b=n+bh6pgpQ7GanH
-	P+FNp9MS+7MZ5+rh9H3yMKotvTU4BfrZZ2o2/LmTOjFhE5VX6vJGOAsnDt9cuM66G4GRHoWaZ+B//
-	//G2BY+F+GRyUX4apsZzaiLv/2WAwsbGF8nhrnBS1uQwYgVVrVySRTJ3FIv0MiFWziDuVSXkVtUI7
-	aJrDQ+xo1GSsV33tChHVL4MGbHgs3x/dGHV+sQH6b5sIH3YwAvakpRFPQbLUnvGB7MKB13x+GJ6T/
-	gSLXBR+/ic59NYJV3JvIKGixbDOn/eOSFujb1B4ihLixlPTGBHFGcWR+V8zxyql8v3LvDDt6BOO99
-	1dzNgPV8MNQx/hH0Fc2Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=DCivVAYY44v1QhhZ1afTfVVxL3f3w0cPoDblGJsQAUk=; b=OlUvhNv+dS6v3muxk0jWirn7z
+	f5d6kuQiPni/6El5M4Fk9uy+zf8oLsJV48XdfM38tHkMWD4mg0qo28qDpA0adR5qrrNmYkNjyjBSg
+	Os5pScAtfSBlDDjmalvxbrM1zjcJclqE87vxIEckG2LCFHc18NrbqHtE+L/+EBL+EyhRsqsTVv9TB
+	VP1UN8ZsqlIEFVBpwIQvu5HunqrFFuZmwh1UJyUXv/ez0x6zGjVODYixb4Q1i/ILOQqY5PVq6cb7g
+	EDFFIFCQDAZJv/n+2PKV6sCayzns7zbcMW6d55NaNFKV/5+SoCqgwZ0DlTQh8/BgxnKC20RLIKs+T
+	6YcVU65DA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixVGA-0004a3-Gn; Fri, 31 Jan 2020 12:18:54 +0000
+	id 1ixc7x-0000OL-TP; Fri, 31 Jan 2020 19:38:53 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixVG7-0004Yz-1k
- for linux-rockchip@lists.infradead.org; Fri, 31 Jan 2020 12:18:52 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id C86692954FD;
- Fri, 31 Jan 2020 12:18:48 +0000 (GMT)
-Date: Fri, 31 Jan 2020 13:18:45 +0100
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Ezequiel Garcia <ezequiel@collabora.com>
-Subject: Re: [PATCH v4 5/6] media: rkvdec: Add the rkvdec driver
-Message-ID: <20200131131845.65451a8c@collabora.com>
-In-Reply-To: <739f60a89646cc92f26e34523cbe8aaab5697351.camel@collabora.com>
-References: <20200129195501.8317-1-ezequiel@collabora.com>
- <20200129195501.8317-6-ezequiel@collabora.com>
- <20200130171249.3ae0444a@collabora.com>
- <739f60a89646cc92f26e34523cbe8aaab5697351.camel@collabora.com>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1ixc7k-0000Cz-Sf; Fri, 31 Jan 2020 19:38:42 +0000
+Received: from [IPv6:2003:cb:8716:6a00:1956:2e0:5d2c:ff7c]
+ (p200300CB87166A00195602E05D2CFF7C.dip0.t-ipconnect.de
+ [IPv6:2003:cb:8716:6a00:1956:2e0:5d2c:ff7c])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: dafna)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 4D99026068C;
+ Fri, 31 Jan 2020 19:38:37 +0000 (GMT)
+Subject: Re: [PATCH v8 05/14] media: rkisp1: add Rockchip ISP1 subdev driver
+To: Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Helen Koike <helen.koike@collabora.com>
+References: <20190730184256.30338-1-helen.koike@collabora.com>
+ <20190730184256.30338-6-helen.koike@collabora.com>
+ <20190808091406.GQ21370@paasikivi.fi.intel.com>
+ <da6c1d01-e3f6-ad73-db55-145d7832a665@collabora.com>
+ <20190815082422.GM6133@paasikivi.fi.intel.com>
+ <20190815131748.GS6133@paasikivi.fi.intel.com>
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Message-ID: <78856358-1afd-31a7-86dd-22f7d6d7fb05@collabora.com>
+Date: Fri, 31 Jan 2020 20:38:34 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <20190815131748.GS6133@paasikivi.fi.intel.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_041851_235582_CF1F14DA 
-X-CRM114-Status: GOOD (  17.21  )
+X-CRM114-CacheID: sfid-20200131_113841_192891_7CE2847B 
+X-CRM114-Status: GOOD (  19.91  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -64,52 +68,81 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kernel@collabora.com,
- Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
- linux-kernel@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Sakari Ailus <sakari.ailus@iki.fi>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Hans Verkuil <hverkuil@xs4all.nl>, Nicolas Dufresne <nicolas@ndufresne.ca>,
+Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
+ heiko@sntech.de, jacob2.chen@rock-chips.com,
+ Dafna Hirschfeld <dafna3@gmail.com>, jeffy.chen@rock-chips.com,
+ zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ linux-rockchip@lists.infradead.org, Allon Huang <allon.huang@rock-chips.com>,
+ Jacob Chen <cc@rock-chips.com>, hans.verkuil@cisco.com,
+ laurent.pinchart@ideasonboard.com, zhengsq@rock-chips.com, mchehab@kernel.org,
+ ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
  linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, 31 Jan 2020 08:53:47 -0300
-Ezequiel Garcia <ezequiel@collabora.com> wrote:
+Hi,
+I (Dafna Hirschfeld) will work in following months with Helen Koike to fix the issues
+in the TODO file of this driver: drivers/staging/media/rkisp1/TODO
 
-> On Thu, 2020-01-30 at 17:12 +0100, Boris Brezillon wrote:
-> > On Wed, 29 Jan 2020 16:55:00 -0300
-> > Ezequiel Garcia <ezequiel@collabora.com> wrote:
-> >   
-> > > From: Boris Brezillon <boris.brezillon@collabora.com>
-> > > 
-> > > The rockchip vdec block is a stateless decoder that's able to decode
-> > > H264, HEVC and VP9 content. This commit adds the core infrastructure
-> > > and the H264 backend. Support for VP9 and HEVS will be added later on.
+On 15.08.19 15:17, Sakari Ailus wrote:
+> On Thu, Aug 15, 2019 at 11:24:22AM +0300, Sakari Ailus wrote:
+>> Hi Helen,
+>>
+>> On Wed, Aug 14, 2019 at 09:58:05PM -0300, Helen Koike wrote:
+>>
+>> ...
+>>
+>>>>> +static int rkisp1_isp_sd_set_fmt(struct v4l2_subdev *sd,
+>>>>> +				 struct v4l2_subdev_pad_config *cfg,
+>>>>> +				 struct v4l2_subdev_format *fmt)
+>>>>> +{
+>>>>> +	struct rkisp1_device *isp_dev = sd_to_isp_dev(sd);
+>>>>> +	struct rkisp1_isp_subdev *isp_sd = &isp_dev->isp_sdev;
+>>>>> +	struct v4l2_mbus_framefmt *mf = &fmt->format;
+>>>>> +
+>>>>
+>>>> Note that for sub-device nodes, the driver is itself responsible for
+>>>> serialising the access to its data structures.
+>>>
+>>> But looking at subdev_do_ioctl_lock(), it seems that it serializes the
+>>> ioctl calls for subdevs, no? Or I'm misunderstanding something (which is
+>>> most probably) ?
+>>
+>> Good question. I had missed this change --- subdev_do_ioctl_lock() is
+>> relatively new. But setting that lock is still not possible as the struct
 
-						 ^HEVC
+'the struct' - do you mean the 'vdev' struct allocated in
+'v4l2_device_register_subdev_nodes' ?
 
-> > > 
-> > > Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
-> > > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-> > > ---
-> > > v4:
-> > > * Make poc tables const, as suggested by Hans
-> > > * Move buffer extra space calculation TRY_FMT, as done on Hantro.
-> > > * Get rid of vb2_request_get_buf and open-code
-> > >   following Cedrus. We can move it to a helper as a follow-up patch.  
-> > 
-> > Well, we know what that means in practice :-).
-> >   
+>> is allocated in the framework and the device is registered before the
+
+>> driver gets hold of it. It's a good idea to provide the same serialisation
+>> for subdevs as well.
+>>
+>> I'll get back to this later.
 > 
-> Well, not necesarily. I think we can expect a helper soon,
-> but it doesn't have to be part of this series :-)
+> The main reason is actually that these ops are also called through the
+> sub-device kAPI, not only through the uAPI, and the locks are only taken
+> through the calls via uAPI.
 
-I'd be happy to be proven wrong ;-).
+actually it seems that although 'subdev_do_ioctl_lock' exit, I wonder if
+any subdevice uses that vdev->lock in  subdev_do_ioctl_lock.
+It is not initialized in v4l2_device_register_subdev_nodes where the vdev is allocated
+and I wonder if any subdevice actually initialize it somewhere else. For example it is null in this
+driver and in vimc.
+
+> 
+> So adding the locks to uAPI calls alone would not address the issue.
+
+What I can do is add a mutex to every struct of a subdevice and lock it
+at the beginning of each subdevice operation.
+Is this an acceptable solution?
+
+Thanks,
+Dafna
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
