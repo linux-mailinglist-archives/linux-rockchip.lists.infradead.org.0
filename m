@@ -2,7 +2,7 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 323FC15220C
+	by mail.lfdr.de (Postfix) with ESMTPS id 34EAC15220D
 	for <lists+linux-rockchip@lfdr.de>; Tue,  4 Feb 2020 22:45:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -11,46 +11,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=HJaTFwxx78MOXbQ6TlZ8wyFDnJ9idspPnUs/RssGFKE=; b=Lp/vpEQhMfkIms4UqgyHmiagZE
-	Mto3B89lE27KDjYI2WUXBbyLLSVoFE8Nc1daUCs3Y/zmjl5tk2aqrohHP2egWcuh62LYxslkq8okv
-	hp24u+A6eAstz/CT7YjY4+TuGYgip4stODSgw2MP/mEQMZRftzANk/xMLRKQTU5nmpiQ5ZiApdDJw
-	eFHjT1PZ8UyUHAVISPWzbCFeDBUNwVhv/pPKXXo7jdOSCHwowV/nGo13wE4qe+AQOV9SpBjN+7N/X
-	ClfsVH1SYi7kuPZ7Os+j4i58eVe8NsQP+UUza1AqpCAR/wJVhhU6y1VZEYT+/oUlVyPksfVH2HiJ1
-	M0tPzy5w==;
+	bh=1ApOWMgQT1RU+LuC+InDLOBMzlJdQyhVvPXXL4iOaAE=; b=AIcI/bwcxc1PaTiXQPrObzHeEb
+	ivsvKA1yWy6xoJs4kmimBR2DTVtMhutlSk+lJ7BVZnLLx/08UQpNUCcuDCQm40Pmc8ghB74vObn5v
+	Mnl3LNWuEMmRm/ebcMjRtm6Y5yPyllo2OMdtZ190+Cm8ZMj+lDcxLkwndVQrBWcItt3EkoNyrw6xD
+	Dq2WteZOBI4ZWBswUaXnrx9SixeH8MY1VGNUzOhz6M0vL/t4bqBeAgotCFTp4VGeHpPSm7VK5/8Qv
+	COlQwDu3SwCwHk+i5bGGsIpZGmi4YQt+A6E2nU2o41HIplgQ7VbryY3AZrYQx/vAJj/rxniZT74zJ
+	T63Dw4Lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iz60d-0004Ff-Dv; Tue, 04 Feb 2020 21:45:27 +0000
+	id 1iz60f-0004GK-8j; Tue, 04 Feb 2020 21:45:29 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iz60a-0004EG-N4
- for linux-rockchip@lists.infradead.org; Tue, 04 Feb 2020 21:45:26 +0000
+ id 1iz60b-0004Es-RX
+ for linux-rockchip@lists.infradead.org; Tue, 04 Feb 2020 21:45:27 +0000
 Received: from localhost.localdomain (unknown
  [IPv6:2a02:810a:113f:ad1c:28d4:5c9b:1c04:c661])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested) (Authenticated sender: dafna)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 004E6294286;
- Tue,  4 Feb 2020 21:45:19 +0000 (GMT)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 68001294288;
+ Tue,  4 Feb 2020 21:45:24 +0000 (GMT)
 From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 To: linux-media@vger.kernel.org
-Subject: [PATCH] media: staging: rkisp1: fix test of return value of
- media_entity_get_fwnode_pad
-Date: Tue,  4 Feb 2020 22:44:45 +0100
-Message-Id: <20200204214446.20381-2-dafna.hirschfeld@collabora.com>
+Subject: [PATCH] media: staging: rkisp1: improve inner documentation in
+ rkisp1-isp.c
+Date: Tue,  4 Feb 2020 22:44:46 +0100
+Message-Id: <20200204214446.20381-3-dafna.hirschfeld@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200204214446.20381-1-dafna.hirschfeld@collabora.com>
 References: <20200204214446.20381-1-dafna.hirschfeld@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_134524_878009_AA5167CB 
-X-CRM114-Status: GOOD (  11.43  )
+X-CRM114-CacheID: sfid-20200204_134526_018519_B4B9A3C1 
+X-CRM114-Status: GOOD (  10.60  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,29 +73,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-media_entity_get_fwnode_pad returns negative value on error
-and the pad numeber on success. Therefore change the error test
-from 'if (ret)' to 'if (ret < 0)' .
+Improve the documentation in the beginning of the file
+rkisp1-isp1.c
 
-Fixes: d65dd85281fb ("media: staging: rkisp1: add Rockchip ISP1 base driver")
 Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 ---
- drivers/staging/media/rkisp1/rkisp1-dev.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/staging/media/rkisp1/rkisp1-isp.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/staging/media/rkisp1/rkisp1-dev.c b/drivers/staging/media/rkisp1/rkisp1-dev.c
-index 21837d4dc9e1..9d866396a5de 100644
---- a/drivers/staging/media/rkisp1/rkisp1-dev.c
-+++ b/drivers/staging/media/rkisp1/rkisp1-dev.c
-@@ -128,7 +128,7 @@ static int rkisp1_create_links(struct rkisp1_device *rkisp1)
+diff --git a/drivers/staging/media/rkisp1/rkisp1-isp.c b/drivers/staging/media/rkisp1/rkisp1-isp.c
+index 2b0513e826fe..844556389b0b 100644
+--- a/drivers/staging/media/rkisp1/rkisp1-isp.c
++++ b/drivers/staging/media/rkisp1/rkisp1-isp.c
+@@ -28,9 +28,9 @@
+ #define RKISP1_DIR_SINK_SRC (RKISP1_DIR_SINK | RKISP1_DIR_SRC)
  
- 		ret = media_entity_get_fwnode_pad(&sd->entity, sd->fwnode,
- 						  MEDIA_PAD_FL_SOURCE);
--		if (ret) {
-+		if (ret < 0) {
- 			dev_err(sd->dev, "failed to find src pad for %s\n",
- 				sd->name);
- 			return ret;
+ /*
+- * NOTE: MIPI controller and input MUX are also configured in this file,
+- * because ISP Subdev is not only describe ISP submodule(input size,format,
+- * output size, format), but also a virtual route device.
++ * NOTE: MIPI controller and input MUX are also configured in this file.
++ * This is because ISP Subdev describes not only ISP submodule (input size,
++ * format, output size, format), but also a virtual route device.
+  */
+ 
+ /*
 -- 
 2.17.1
 
