@@ -2,55 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D7EA151DF8
-	for <lists+linux-rockchip@lfdr.de>; Tue,  4 Feb 2020 17:14:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 202D2151ED7
+	for <lists+linux-rockchip@lfdr.de>; Tue,  4 Feb 2020 18:01:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=90Jw3Wglk6sNyl84OufahcNQcU1TGZAcB0BLffmM52g=; b=o0zBTE9wsqPkuI
-	O+2fyhO1mgAg0ibh0Pin4WaO9afJvzOu2kWVoZUCPgqGq8YKlrzQkB3S7QoR7fHctdzE9mq6WSuVJ
-	20+L+4as9O6aiaikrPXCdoMgzzyvx/rCNul6VR5upeocdK1yFsCtK9HZKySc2YxkEIUkHa5c7rIMc
-	kvWMwKIkQtzwey4q9Sh8kKsZFiS5IEXx6PeEISPkYZjVpXlXEuUsGqXzqcW1X3OXykK3F3i6stHMg
-	Tu5sNuxKYNfcCHlraNaJGBn98WteV9pZib+19nQNncYv9BZg57VvHWrPRhJHzo7Z8Y59qKTw2gD2W
-	usVYINcSwWHcfzJ106VA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=N2qWY8MCMbIWMVBR3sKmiilaB7jSsUuxXHZPndHhhyY=; b=CWkLJrWay2FBBFzl5Bao8F0vP
+	kn6XU8i7nUMTE/yWO4L/F8vPip0B8HRjnWBDeMn6Y7RlmLTAtd35rx3U0KUWK+vxJW3bQUP3cRnX8
+	4FpGyJgONZdnw1C43eqP+VJPXqdhY6t7rm7BOMIsq+Dc3/1cIndcAdaMeThsT95uzSbE0fMLUdXSR
+	U6PuuWeWXZ4YE+O166mF/M9Ai8vbrGSbUqClK3j8CE+0Lpc4gwNyR+IWe4dbLd15SP0HGbsYzlkV6
+	6dOiLGezfRLqIcQYuVsM+2rbFSRg6kiqfXfk9verbc8kdO/WpI++5sSTBc5JaAb3j8IsKhk+DQNds
+	LkNoGDwtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iz0qj-0004ff-PB; Tue, 04 Feb 2020 16:14:53 +0000
-Received: from mail2.vany.ca ([142.54.190.254])
+	id 1iz1ZT-0004PE-1K; Tue, 04 Feb 2020 17:01:07 +0000
+Received: from mail-qv1-xf42.google.com ([2607:f8b0:4864:20::f42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iz0qc-0004aN-LF; Tue, 04 Feb 2020 16:14:48 +0000
-Received: from [10.0.4.177] (unknown [205.210.143.170])
- by mail2.vany.ca (Postfix) with ESMTPSA id 7C803AC0278;
- Tue,  4 Feb 2020 10:14:43 -0600 (CST)
-Subject: Re: [PATCH] arm64: dts: rockchip: Fix rk3328-roc-cc sdmmcio-regulator
-To: Peter Geis <pgwipeout@gmail.com>
-References: <87imkryz5t.fsf@vany.ca>
- <7b9829b3-e2d2-95b1-03cb-1af7a3c6acad@arm.com>
- <4a6a9d81-c831-4167-7fbf-64805940fb6f@vany.ca>
- <d8a8b696-268b-1ea8-7b5e-406a651011ff@arm.com>
- <510d310b-30af-7b24-d472-907bc6b2ef46@vany.ca>
- <CAMdYzYo5V2rHE6Axx9p67n3FcCFpQ5TA+m7kqaE3Uqn6d0QUhw@mail.gmail.com>
-From: Adam Van Ymeren <adam@vany.ca>
-Message-ID: <7b36198e-25c0-4f3b-d871-6bd5aaf619d8@vany.ca>
-Date: Tue, 4 Feb 2020 11:14:41 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Icedove/68.4.1
+ id 1iz1ZP-0004On-2d
+ for linux-rockchip@lists.infradead.org; Tue, 04 Feb 2020 17:01:05 +0000
+Received: by mail-qv1-xf42.google.com with SMTP id db9so8890241qvb.3
+ for <linux-rockchip@lists.infradead.org>; Tue, 04 Feb 2020 09:01:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=konsulko.com; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=MWQy9n/3aEKDGg2g8pvvFkj+PQO1oVWfVOmil8iD4bw=;
+ b=EIpZAGfeAO9IplYiCaDu7pit7cEMiaDfW1kZ6JGjYq9tl0i68FWO4acxw+xyFuYxqY
+ aUDdRsFIKgBrQWPFZovSv+/KNbHKvLSt8IFrI2ZMVZ5sBPiL+Xd0nC+1C1ZjLiK4h1qN
+ t6fOel3N+MtrHWfAH6MTFd8/f0gIRNQsYyk0o=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=MWQy9n/3aEKDGg2g8pvvFkj+PQO1oVWfVOmil8iD4bw=;
+ b=Xufs2+oCZE+FLau1qB8RMacsxQUIjBIhwMxHV7/L6YFzAs0ATSbimH1sD5qkjmYV6D
+ qaV2c49DX7TvDZ1R93Npt5yBMXYdqrKOCs5M6naZwsoK5hHDmCKg+/cMk4gO5Ab4Kixw
+ RJZr4mJQiAS9S8sV8AQRu8NvSlXgvnvuiDNt/MtIpEOl5LBKar4YREE3lDgz5Y5kgeIN
+ wetxm0SAfuExQgIbxMtE0pf0IvznOuEH65qkZjPquePhDllo4y6L0xoABw79eE9iwtn9
+ geEpELy+vliHKxFO98B7pCGi/GgOu0+WFiP86VV0Uvtv3chqXG1XyjP671OwhIG1Qhdp
+ OYFQ==
+X-Gm-Message-State: APjAAAUpfIs4SSp28QAzkmwjM3XTPRakqaeMEDH7eebJL5FkFYMqrn+R
+ phG4qslh3hCjGW1jwhhgOVerfw==
+X-Google-Smtp-Source: APXvYqxzwwr4+lcRoZCoJdOJ4qOa6kBXWGSVBSv3CGJV7Y9lxxuQNiWf2i/6XliMvzlQpVX9foVx8Q==
+X-Received: by 2002:a0c:f6c8:: with SMTP id d8mr29107487qvo.234.1580835661606; 
+ Tue, 04 Feb 2020 09:01:01 -0800 (PST)
+Received: from bill-the-cat
+ (2606-a000-1401-86dd-f0fd-eb62-6062-7840.inf6.spectrum.com.
+ [2606:a000:1401:86dd:f0fd:eb62:6062:7840])
+ by smtp.gmail.com with ESMTPSA id x6sm11153285qkh.20.2020.02.04.09.01.00
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 04 Feb 2020 09:01:00 -0800 (PST)
+Date: Tue, 4 Feb 2020 12:00:58 -0500
+From: Tom Rini <trini@konsulko.com>
+To: Jagan Teki <jagan@amarulasolutions.com>
+Subject: Re: [PATCH 2/2] rockchip: Add SF distro bootcmd
+Message-ID: <20200204170058.GK13379@bill-the-cat>
+References: <20200203091924.15385-1-jagan@amarulasolutions.com>
+ <20200203091924.15385-2-jagan@amarulasolutions.com>
 MIME-Version: 1.0
-In-Reply-To: <CAMdYzYo5V2rHE6Axx9p67n3FcCFpQ5TA+m7kqaE3Uqn6d0QUhw@mail.gmail.com>
-Content-Language: en-US
+In-Reply-To: <20200203091924.15385-2-jagan@amarulasolutions.com>
+X-Clacks-Overhead: GNU Terry Pratchett
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_081446_762323_06B7078D 
-X-CRM114-Status: GOOD (  21.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200204_090103_129259_0AAD7162 
+X-CRM114-Status: GOOD (  17.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,89 +94,122 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Robin Murphy <robin.murphy@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-rockchip@lists.infradead.org, Simon Glass <sjg@chromium.org>,
+ Kever Yang <kever.yang@rock-chips.com>, u-boot@lists.denx.de,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ linux-amarula@amarulasolutions.com
+Content-Type: multipart/mixed; boundary="===============3341779400679018586=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Ck9uIDIwMjAtMDItMDQgMTA6MTUgYS5tLiwgUGV0ZXIgR2VpcyB3cm90ZToKPiBJJ20gaW50ZXJl
-c3RlZCBpbiB0aGlzLCBzaW5jZSBJJ3ZlIGVuY291bnRlcmVkIHNvbWUgb2RkaXRpZXMgd2l0aCB0
-aGUKPiBzZGNhcmQgb24gdGhpcyBib2FyZC4KPiBXaXRoIHRoZSByZWNlbnQgYWRkaXRpb24gb2Yg
-c3VwcG9ydCBmb3IgZGRyNCB0cGwgaW5pdCBpbiB1LWJvb3QgSQo+IHN0YXJ0ZWQgcGxheWluZyB3
-aXRoIGl0IGFnYWluLgo+IEkgY291bGRuJ3QgZ2V0IHRoZSBzZGNhcmQgdG8gZGV0ZWN0IGxlYXZp
-bmcgdHBsIGludG8gc3BsLCBjYXVzaW5nIGEKPiBib290IGZhaWx1cmUuCj4gVGhlIGV4YWN0IHNh
-bWUgaW1hZ2Ugd29ya3Mgd2hlbiBmbGFzaGVkIHRvIHRoZSBlbW1jIHRob3VnaC4KCkF3ZXNvbWUg
-SSB3YXMgaG9waW5nIHRvIGdldCBtYWlubGluZSB1LWJvb3QgbG9hZGluZyB0aGlzIGJvYXJkIGFz
-IHdlbGwuwqAKSG93ZXZlciBJIGRvbid0IGtub3cgaG93IHRvIHNldHVwIHRoZSBzZHJhbS1wYXJh
-bXMgZm9yIHRoZSBkZDQgb24gdGhpcwpib2FyZC7CoCBEbyB5b3UgaGF2ZSB0aGUgYXBwcm9wcmlh
-dGUgY29uZmlnP8KgIFdvdWxkIGJlIGdyZWF0IG5vdCB0bwpyZXF1aXJlIHRoZSB2ZW5kb3IncyBi
-bG9iIGZvciBib290aW5nLgoKPgo+IE9uY2Ugd2UgYXJlIGluIHRoZSBrZXJuZWwgdGhlIHNkY2Fy
-ZCBkZXRlY3RzIGZpbmUuCj4KPiBJIG5vdGljZWQgdS1ib290IGRvZXNuJ3QgaGF2ZSBhIGdyZi1n
-cGlvIGRyaXZlciwgc28gdGhlIDMuM3YvMS44dgo+IHJlZ3VsYXRvciBpcyB1bmF2YWlsYWJsZS4K
-Pgo+IHJvb3RAZmlyZWZseTovc3lzL2tlcm5lbC9kZWJ1Zy9tbWMxIyBjYXQgaW9zCj4gY2xvY2s6
-ICAgICAgICAgIDE1MDAwMDAwMCBIego+IGFjdHVhbCBjbG9jazogICAxNTAwMDAwMDAgSHoKPiB2
-ZGQ6ICAgICAgICAgICAgMjEgKDMuMyB+IDMuNCBWKQo+IGJ1cyBtb2RlOiAgICAgICAyIChwdXNo
-LXB1bGwpCj4gY2hpcCBzZWxlY3Q6ICAgIDAgKGRvbid0IGNhcmUpCj4gcG93ZXIgbW9kZTogICAg
-IDIgKG9uKQo+IGJ1cyB3aWR0aDogICAgICAyICg0IGJpdHMpCj4gdGltaW5nIHNwZWM6ICAgIDYg
-KHNkIHVocyBTRFIxMDQpCj4gc2lnbmFsIHZvbHRhZ2U6IDEgKDEuODAgVikKPiBkcml2ZXIgdHlw
-ZTogICAgMCAoZHJpdmVyIHR5cGUgQikKPgo+IHJvb3RAZmlyZWZseTovc3lzL2tlcm5lbC9kZWJ1
-ZyMgY2F0IGdwaW8KPiBncGlvY2hpcDA6IEdQSU9zIDAtMzEsIHBhcmVudDogcGxhdGZvcm0vcGlu
-Y3RybCwgZ3BpbzA6Cj4gIGdwaW8tMCAgICggICAgICAgICAgICAgICAgICAgIHx2Y2MtaG9zdC01
-di1yZWd1bGF0bykgb3V0IGhpCj4gIGdwaW8tMzAgICggICAgICAgICAgICAgICAgICAgIHxzZG1t
-Yy1yZWd1bGF0b3IgICAgICkgb3V0IGxvIEFDVElWRSBMT1cKPgo+IGdwaW9jaGlwMTogR1BJT3Mg
-MzItNjMsIHBhcmVudDogcGxhdGZvcm0vcGluY3RybCwgZ3BpbzE6Cj4gIGdwaW8tNTAgICggICAg
-ICAgICAgICAgICAgICAgIHxzbnBzLHJlc2V0ICAgICAgICAgICkgb3V0IGhpIEFDVElWRSBMT1cK
-PiAgZ3Bpby01OCAgKCAgICAgICAgICAgICAgICAgICAgfHZjYy1ob3N0MS01di1yZWd1bGF0KSBv
-dXQgaGkKPgo+IGdwaW9jaGlwMjogR1BJT3MgNjQtOTUsIHBhcmVudDogcGxhdGZvcm0vcGluY3Ry
-bCwgZ3BpbzI6Cj4KPiBncGlvY2hpcDM6IEdQSU9zIDk2LTEyNywgcGFyZW50OiBwbGF0Zm9ybS9w
-aW5jdHJsLCBncGlvMzoKPgo+IGdwaW9jaGlwNTogR1BJT3MgNTA5LTUxMCwgcGFyZW50OiBwbGF0
-Zm9ybS9yazgwNS1waW5jdHJsLCByazgwNS1ncGlvLCBjYW4gc2xlZXA6Cj4gIGdwaW8tNTA5ICgg
-ICAgICAgICAgICAgICAgICAgIHw/ICAgICAgICAgICAgICAgICAgICkgb3V0IGhpIEFDVElWRSBM
-T1cKPiAgZ3Bpby01MTAgKCAgICAgICAgICAgICAgICAgICAgfD8gICAgICAgICAgICAgICAgICAg
-KSBvdXQgaGkgQUNUSVZFIExPVwo+Cj4gZ3Bpb2NoaXA0OiBHUElPcyA1MTEtNTExLCBwYXJlbnQ6
-IHBsYXRmb3JtL2ZmMTAwMDAwLnN5c2NvbjpncmYtZ3BpbywKPiBmZjEwMDAwMC5zeXNjb246Z3Jm
-LWdwaW86Cj4gIGdwaW8tNTExICggICAgICAgICAgICAgICAgICAgIHx2Y2Nfc2RpbyAgICAgICAg
-ICAgICkgb3V0IGhpCgoKT24gbXkgYm9hcmQgSSB0cmllZCBldmVyeSBjb21iaW5hdGlvbiBvZiBH
-UElPX0FDVElWRV9ISUdIL0xPVywKZW5hYmxlLWFjdGl2ZS1oaWdoIG9yIG5vdCwgYW5kIHN0YXRl
-ID0gPDE4Li4uIDB4MSAzMy4uLiAweDA+IHZzIHN0YXRlID0KPDE4Li4uIDB4MCAzMy4uLjB4MT4g
-Zm9yIHRoZSB2Y2Nfc2RpbyByZWd1bGF0b3IuwqAgTm9uZSBvZiB0aG9zZSBhbGxvd2VkCm15IGtl
-cm5lbCB0byBkZXRlY3QgdGhlIFNEIENhcmQuwqAgVGhlIG9ubHkgcmVsaWFibGUgbWV0aG9kIHNv
-IGZhciBzZWVtCnRvIGJlIHNldHRpbmcgdGhlIGdwaW8gb2YgdGhlIHJlZ3VsYXRvciB0byBzb21l
-IG5vbiBleGlzdGVudCBwaW4sIGJ1dAp0aGF0IGNsZWFybHkgaXNuJ3QgdGhlIGNvcnJlbnQgYW5z
-d2VyLsKgIEJvdGggZ3Bpb3MgPSA8JmdwaW8wIDI1CkdQSU9fQUNUSVZFX0hJR0g+IGFuZCBncGlv
-cyA9IDwmZ3BpbzIgUktfUEQzIEdQSU9fQUNUSVZFX0hJR0g+IGFsbG93IHRoZQpib2FyZCB0byBi
-b2FyZCwgYm90aCBvZiB3aGljaCBhcmUgbm9uLWV4aXN0ZW50IHBpbnMgZnJvbSBteSByZWFkaW5n
-IG9mCnRoZSBkYXRhc2hlZXQuCgpJJ20gYmVnaW5uaW5nIHRvIHN1c3BlY3QgdGhhdCBpdCBtYXkg
-YmUgYSBidWcgaW4gdGhlIGdwaW8tc3lzY29uIGRyaXZlciwKb3IgdGhhdCB0aGUgYWN0dWFsIGNp
-cmN1aXQgb24gdGhlIGJvYXJkIGp1c3QgZG9lc24ndCB3b3JrIGFzIHRoZSB2ZW5kb3IKaW50ZW5k
-ZWQuCgpJbiBteSBkbWVzZyBJIHNlZQoKW8KgwqDCoCAwLjQwNjgzMF0gZ3Bpby1zeXNjb24gZmYx
-MDAwMDAuc3lzY29uOmdyZi1ncGlvOiBjYW4ndCByZWFkIHRoZSBkYXRhCnJlZ2lzdGVyIG9mZnNl
-dCEKCndoaWNoIGlzIGF3ZnVsbHkgc3VzcGljaW91cy7CoCBCdXQgdGhpcyBkb2Vzbid0IGFwcGVh
-ciB0byBiZSBhIGZhdGFsCmVycm9yIGZvciB0aGUgZHJpdmVyLCBsb2dnaW5nIF9yZWdtYXBfd3Jp
-dGUgY2FsbHMgc2hvd3MgdGhhdCBpdCBhcHBlYXJzCnRvIGJlIHVwZGF0aW5nIHRoZSBjb3JyZWN0
-IHJlZ2lzdGVyICgweDQyOCkKCgpGcm9tIGdwaW8tc3lzY29uLmM6MTM0Cgp8CgpzdGF0aWMgdm9p
-ZCByb2NrY2hpcF9ncGlvX3NldChzdHJ1Y3QgZ3Bpb19jaGlwICpjaGlwLCB1bnNpZ25lZCBpbnQg
-b2Zmc2V0LAoJCQkgICAgICBpbnQgdmFsKQp7CglzdHJ1Y3Qgc3lzY29uX2dwaW9fcHJpdiAqcHJp
-diA9IGdwaW9jaGlwX2dldF9kYXRhKGNoaXApOwoJdW5zaWduZWQgaW50IG9mZnM7Cgl1OCBiaXQ7
-Cgl1MzIgZGF0YTsKCWludCByZXQ7CgoJb2ZmcyA9IHByaXYtPmRyZWdfb2Zmc2V0ICsgcHJpdi0+
-ZGF0YS0+ZGF0X2JpdF9vZmZzZXQgKyBvZmZzZXQ7CgliaXQgPSBvZmZzICUgU1lTQ09OX1JFR19C
-SVRTOwoJZGF0YSA9ICh2YWwgPyBCSVQoYml0KSA6IDApIHwgQklUKGJpdCArIDE2KTsKCXJldCA9
-IHJlZ21hcF93cml0ZShwcml2LT5zeXNjb24sCgkJCSAgIChvZmZzIC8gU1lTQ09OX1JFR19CSVRT
-KSAqIFNZU0NPTl9SRUdfU0laRSwKCQkJICAgZGF0YSk7CglpZiAocmV0IDwgMCkKCQlkZXZfZXJy
-KGNoaXAtPnBhcmVudCwgImdwaW8gd3JpdGUgZmFpbGVkIHJldCglZClcbiIsIHJldCk7Cn0KCkNh
-bGxpbmcgcmVnbWFwX3dyaXRlIHNlZW1zIHdyb25nLCBhcyB3ZSBlbmQgdXAgc2V0dGluZyBhbGwg
-Yml0cyBpbiB0aGUgcmVnaXN0ZXIsIHNvIHRoaXMgc2hvdWxkIHByb2JhYmx5IGJlIHJlZ21hcF91
-cGRhdGVfYml0cy4gIFRoZSB0b3AgMTYtYml0cyBhcmUgd3JpdGUtZW5hYmxlIGZvciB0aGUgbG93
-ZXIgMTYtYml0cywgYnV0IEkgY2FuJ3QgZmluZCBkb2N1bWVudGF0aW9uIGlmIGl0IHdvcmtzIHRv
-IHNldCBib3RoIHRoZSB3cml0ZSBlbmFibGUgYml0IGFuZCB0aGUgdGFyZ2V0IGJpdCBhdCB0aGUg
-c2FtZSB0aW1lLgoKVG9uaWdodCBJIHdpbGwgdHJ5IHNwbGl0dGluZyB0aGF0IGludG8gdHdvIGNh
-bGxzIHRvIHVwZGF0ZSB0aGUgaGlnaCBiaXQgZmlyc3QgYXMgd2VsbCBhcyBjaGFuZ2luZyB0byBy
-ZWdtYXBfdXBkYXRlX2JpdHMuICBBbnkgb3RoZXIgaWRlYXMgd2VsY29tZS4KClNvcnJ5IGlmIHRo
-aXMgd2FzIHRvbyB2ZXJib3NlIG9yIHRvbyBtdWNoIGNvbnRleHQsIEknbSBuZXcgdG8gdGhpcyBr
-aW5kIG9mIHdvcmsuCgp8CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1yb2NrY2hpcAo=
+
+--===============3341779400679018586==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="K7jxEI7rEZN6gxvu"
+Content-Disposition: inline
+
+
+--K7jxEI7rEZN6gxvu
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, Feb 03, 2020 at 02:49:24PM +0530, Jagan Teki wrote:
+
+> Add distro boot command support for SPI flash in Rockchip.
+>=20
+> This distro boot will read the boot script at specific
+> location at the flash and start sourcing the same.
+>=20
+> Included the SF device at the last of the target devices
+> list since all the rest of the devices on the list have
+> more possibility to boot the distribution due to the
+> size of the SPI flash is concern.
+>=20
+> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> ---
+>  include/configs/rockchip-common.h | 17 ++++++++++++++++-
+>  1 file changed, 16 insertions(+), 1 deletion(-)
+>=20
+> diff --git a/include/configs/rockchip-common.h b/include/configs/rockchip=
+-common.h
+> index b55e09a9ca..8e7c994266 100644
+> --- a/include/configs/rockchip-common.h
+> +++ b/include/configs/rockchip-common.h
+> @@ -41,11 +41,26 @@
+>  	#define BOOT_TARGET_DHCP(func)
+>  #endif
+> =20
+> +#if CONFIG_IS_ENABLED(CMD_SF)
+> +	#define BOOT_TARGET_SF(func)	func(SF, sf, na)
+> +#else
+> +	#define BOOT_TARGET_SF(func)
+> +#endif
+> +
+> +#define BOOTENV_DEV_SF(devtypeu, devtypel, instance) \
+> +	"bootcmd_sf=3Dsf probe 0 0 0 && " \
+> +		"sf read ${scriptaddr} ${script_offset_f} ${script_size_f} && " \
+> +		"source ${scriptaddr}; echo SCRIPT FAILED: continuing...;\0"
+> +
+> +#define BOOTENV_DEV_NAME_SF(devtypeu, devtypel, instance) \
+> +	"sf "
+> +
+>  #define BOOT_TARGET_DEVICES(func) \
+>  	BOOT_TARGET_MMC(func) \
+>  	BOOT_TARGET_USB(func) \
+>  	BOOT_TARGET_PXE(func) \
+> -	BOOT_TARGET_DHCP(func)
+> +	BOOT_TARGET_DHCP(func) \
+> +	BOOT_TARGET_SF(func)
+> =20
+>  #ifdef CONFIG_ARM64
+>  #define ROOT_UUID "B921B045-1DF0-41C3-AF44-4C6F280D3FAE;\0"
+
+Something I lamented in another thread is that we need to move things to
+include/environment/ so that they can be re-used easily.  Lets start by
+putting the "distro boot" SF stuff in to include/environment/distro/sf.h
+and #include that here.  That way anything else that really does have
+something written to SPI flash in this manner can opt-in without
+duplication of the logic.
+
+Thanks!
+
+--=20
+Tom
+
+--K7jxEI7rEZN6gxvu
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE6HLbQJwaaH776GM2h/n2NdMddlIFAl45o0cACgkQh/n2NdMd
+dlIJVA/+LYWNOCrEOXtp6OQbell8TSLP5thzSfglbL5z4HwuWQkAPfJA/UXb6uqB
+ZQ2fbYJg0zu8DaCgjeNxh2I5D88szY/igoJopcZjaCeF0G4+CnAddXP2pID5Iasi
+NX1sFFq/K8lLZ/Vs4V3jTGNqK+d3IfsIgJKaBGw4RZx5O2apjQ67L2VIb5y0mnGH
++FfjZqljLD2cfR4nUU2vKqu4vwCPW2mFGomX3mgyXHP1ipTxKt5n/gVoFXgge/aY
+R39qhjwFvwuTm1VoTdoztPr+YFB825pF5p5QkoinFOtN+nEJySRV0hrqGM65cMKa
+9qFwjuHrJIQQQOhdeMPQKsDf3lg2SGCbSQusNttyh4LSKmvNlj3Ygi+Ug8oKaYUu
+R1yEzS9kS/weiad/2bo67DQUTrBiVKWj42DmUe1EgoSON1+MljzBNpGJCm/UjnY5
+vFE8nBA9pYhDcaqIurpwREfTRVb7N8lntBw1/9wu73zaSj0i7q2MGJAzYokwclRn
+tojrA2bqircGqXFotxPkB5hFi5OTqDkvivkZPRxZ/LPzkwlbqlYlaQw/ued7vKY+
+Bgl8mQQ9ko+DX3UFFyrrThl30ZZoC4LsLjehcN0nXovgSgGSkVD4jM68vK7urH4k
+x0cenRdkjvZxAsrJ2AVQT7SrBIj5f3r7OWIJwD1jSWAVkIx3owU=
+=SGbc
+-----END PGP SIGNATURE-----
+
+--K7jxEI7rEZN6gxvu--
+
+
+--===============3341779400679018586==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============3341779400679018586==--
+
