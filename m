@@ -2,55 +2,112 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0DDC153C70
-	for <lists+linux-rockchip@lfdr.de>; Thu,  6 Feb 2020 02:08:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63DA8153D2B
+	for <lists+linux-rockchip@lfdr.de>; Thu,  6 Feb 2020 04:06:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=lCGveJp7jhO/+P7gtx0FhjMW943QbIp+E8h8aIVr/a8=; b=WrbXqWivyfQhZ5P6SmFXGP1T1l
-	YIHoVv3c0LhuFgzXNYaJgUxoX1oXOA6GN1NSbQHf9vzq9qCCdn8Daq2RdxYkOorVnZfYkQ8PyfmHt
-	gN1qzYHR9R9lG8H6w2uRjOj8k5sNxQSJRduB2BmkQFFkNDYzCvGyYi13/9wPmAzEAmiPRrck+SeR/
-	YTIHwQTGHMSsDSgO+WEesCPgwvHks5ROc4e/I6qYYW26r45JaZMD37f2EriDir8jy9D0m3Xov/duG
-	BoZtDZOO8MSPJDuVZWntpUH5udgC+0ceKKpTUc3dMu0sCzXpsOc8vad2Pz94+1z4A70W9tefpoh3x
-	v2Ee+ZqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=3XdI7NG6KWI9MjpaDVrSAJvODdyolRvRlChB+FMEyT8=; b=gYC1bTWYzcHMuXdlsykR/SGlz
+	D24oWLaMGAWa/jLjfXBcjuOZH7O6Ak/05SU+BhJ1UbjnaYvvX9q0MKD1uNRHzjEBruv0OGdmp397i
+	yfpCZb6DOPDg7EM7gVpKXC63iNwi/zLFLiqfhAwsMwyaHRXVt2LchC6WJ/3eHVTs9ZHjegC9esIyn
+	gPZ7eKXxEMpSvs4fvlVA21BtuwfPsqOX6xakHBYAlwUYpMc5pesIlN6X+QY0xUAAgcm8qN2z4hILz
+	Ltoou8khvnpaiLUagPniu41EyX8nZ1VmRGgK3uxv1NBMwQn9Vg+okTdm2C6ndJzVOnjE/g1TQcibR
+	3vH4mU3gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izVeH-0002J2-G8; Thu, 06 Feb 2020 01:08:05 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izVdW-0001Zu-CK; Thu, 06 Feb 2020 01:07:19 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1174C106F;
- Wed,  5 Feb 2020 17:07:17 -0800 (PST)
-Received: from DESKTOP-VLO843J.lan (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id BA1803F68E;
- Wed,  5 Feb 2020 17:07:15 -0800 (PST)
-From: Robin Murphy <robin.murphy@arm.com>
-To: lgirdwood@gmail.com,
-	broonie@kernel.org,
-	heiko@sntech.de
-Subject: [PATCH 3/3] arm64: dts: rockchip: Describe RK3328 GPIO_MUTE users
-Date: Thu,  6 Feb 2020 01:07:13 +0000
-Message-Id: <462e0f9fba41a990f7dd118d32935d8c9e5fd9d5.1580950046.git.robin.murphy@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1580950046.git.robin.murphy@arm.com>
-References: <cover.1580950046.git.robin.murphy@arm.com>
+	id 1izXUd-0007TD-G5; Thu, 06 Feb 2020 03:06:15 +0000
+Received: from gateway24.websitewelcome.com ([192.185.51.253])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1izXUT-0007MY-Ps
+ for linux-rockchip@lists.infradead.org; Thu, 06 Feb 2020 03:06:08 +0000
+Received: from cm17.websitewelcome.com (cm17.websitewelcome.com [100.42.49.20])
+ by gateway24.websitewelcome.com (Postfix) with ESMTP id B078F9DD5
+ for <linux-rockchip@lists.infradead.org>; Wed,  5 Feb 2020 21:05:52 -0600 (CST)
+Received: from e36.ehosts.com ([192.185.128.17]) by cmsmtp with SMTP
+ id zXUGiIGvEgMuvzXUGiw5ES; Wed, 05 Feb 2020 21:05:52 -0600
+X-Authority-Reason: nr=8
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=singleboardsolutions.com; s=default; h=Content-Transfer-Encoding:
+ Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:
+ Subject:Sender:Reply-To:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=buOrf6jVhdx2KD8QwEGJ/RfFJAHXbgJqH6I1U7ttgNA=; b=ZgbRtcSxYgiBFcUZzTaFWQXCC
+ v0tl637EkGjodVkDfxC7vQya3MQOPGEVy8xxgDssfUbzP1Ms0gZy7KTChD5ptywQLSsukCs2UmDfl
+ ZUPwS2vZuumT4C+q1UAeDRjJHHJ0FfuzKP/YYg7SQAHRSJzZZ3ECytE12Zrds+p2Bx53oV4xyrgr3
+ bTCvOqCTsDH1k7/p5V/8kTDvZ/XwAp4w69TRd5yv3RC1RGKugVm6Hmzv2YkZQ1om5+6a9Hfk4E7X4
+ dDveJ47uAH+5sj8uvx8E3dPzgvzOUBN+mdiQRR5To+Jkk0q2O5jR71lt66iMl+OhwbSioB4JonQwr
+ xQ05Km3rQ==;
+Received: from 23-126-112-120.lightspeed.livnmi.sbcglobal.net
+ ([23.126.112.120]:61634 helo=[10.0.0.33])
+ by e36.ehosts.com with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
+ (Exim 4.92) (envelope-from <tmckahan@singleboardsolutions.com>)
+ id 1izXUG-003bJx-Cr; Wed, 05 Feb 2020 20:05:52 -0700
+Subject: Re: [PATCH] arm64: dts: rockchip: Fix rk3328-roc-cc sdmmcio-regulator
+To: Robin Murphy <robin.murphy@arm.com>, Peter Geis <pgwipeout@gmail.com>,
+ Adam Van Ymeren <adam@vany.ca>
+References: <87imkryz5t.fsf@vany.ca>
+ <7b9829b3-e2d2-95b1-03cb-1af7a3c6acad@arm.com>
+ <4a6a9d81-c831-4167-7fbf-64805940fb6f@vany.ca>
+ <d8a8b696-268b-1ea8-7b5e-406a651011ff@arm.com>
+ <510d310b-30af-7b24-d472-907bc6b2ef46@vany.ca>
+ <CAMdYzYo5V2rHE6Axx9p67n3FcCFpQ5TA+m7kqaE3Uqn6d0QUhw@mail.gmail.com>
+ <7b36198e-25c0-4f3b-d871-6bd5aaf619d8@vany.ca>
+ <CAMdYzYp_dVjn18-6gy5MVpuGcOpf26eaPitfNZhARCixfrtYCA@mail.gmail.com>
+ <2f863743-f5fd-7702-ac22-762dbca834cb@vany.ca>
+ <CAMdYzYopKjRpVnyq2k84XZK0kmR_ZBH8KNjVyPz3upQjx0rLJQ@mail.gmail.com>
+ <382b4bd5-279d-b227-5d0c-774d9c164168@arm.com>
+From: Thomas McKahan <tmckahan@singleboardsolutions.com>
+Message-ID: <477af575-d43f-fab8-36a4-0a75a4272667@singleboardsolutions.com>
+Date: Wed, 5 Feb 2020 22:05:50 -0500
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
+MIME-Version: 1.0
+In-Reply-To: <382b4bd5-279d-b227-5d0c-774d9c164168@arm.com>
+Content-Language: en-US
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - e36.ehosts.com
+X-AntiAbuse: Original Domain - lists.infradead.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - singleboardsolutions.com
+X-BWhitelist: no
+X-Source-IP: 23.126.112.120
+X-Source-L: No
+X-Exim-ID: 1izXUG-003bJx-Cr
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Source-Sender: 23-126-112-120.lightspeed.livnmi.sbcglobal.net ([10.0.0.33])
+ [23.126.112.120]:61634
+X-Source-Auth: tmckahan@singleboardsolutions.com
+X-Email-Count: 4
+X-Source-Cap: ZWxlY3RyaTk7ZWxlY3RyaTk7ZTM2LmVob3N0cy5jb20=
+X-Local-Domain: yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_170718_458647_B4E23BD1 
-X-CRM114-Status: GOOD (  12.88  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200205_190605_960825_12CC2F8F 
+X-CRM114-Status: GOOD (  10.68  )
+X-Spam-Score: 3.3 (+++)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (3.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 2.5 URIBL_DBL_ABUSE_MALW   Contains an abused malware URL listed in
+ the Spamhaus DBL blocklist [URIs: infradead.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [192.185.51.253 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,51 +120,48 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
- pgwipeout@gmail.com, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Heiko Stuebner <heiko@sntech.de>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add explicit properties to describe existing boards' GPIO_MUTE usage
-for the analog codec.
 
-Signed-off-by: Robin Murphy <robin.murphy@arm.com>
----
- arch/arm64/boot/dts/rockchip/rk3328-a1.dts     | 1 +
- arch/arm64/boot/dts/rockchip/rk3328-rock64.dts | 1 +
- 2 files changed, 2 insertions(+)
+On 2/5/2020 2:02 PM, Robin Murphy wrote:
+> On 05/02/2020 6:43 pm, Peter Geis wrote:
+> [...]
+>>> One thing I did notice, though, is that GPIO_MUTE seems to have some
+>>> inherent coupling to the analog codec, as the value automatically goes
+>>> high when starting to play audio, and low again when stopping (but can
+>>> still be manually toggled in between). Thus unless there's some secret
+>>> to disabling that behaviour then it might not be safe to enable analog
+>>> audio on these ROC-CC boards for fear of messing up peoples' SD cards.
+>>
+>> Robin,
+>> Do you know if that is the SOC doing that or the drivers?
+>
+> Ha, once again I hastily jump to a conclusion without fully 
+> investigating... I'm really not doing too well in this thread :)
+>
+> You're absolutely right; on closer inspection rk3328_analog_output() 
+> in the codec driver is poking GRF_SOC_CON10 directly. That should be 
+> straightforward enough to sort out, phew!
+>
+> Cheers,
+> Robin.
+>
+I've had random reports of SD problems from people using our mainline 
+images with Armbian on RK3328, I recently enabled the audio codec since 
+it looked like all the pieces were in place. I'll take a look at the 
+GPIO_MUTE patchset I saw just landed.
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328-a1.dts b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
-index 5822cd0ee7db..6cd4543720fd 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
-@@ -60,6 +60,7 @@
- };
- 
- &codec {
-+	mute-gpios = <&grf_gpio 0 GPIO_ACTIVE_LOW>;
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-index 62936b432f9a..bf3e546f5266 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-@@ -104,6 +104,7 @@
- };
- 
- &codec {
-+	mute-gpios = <&grf_gpio 0 GPIO_ACTIVE_LOW>;
- 	status = "okay";
- 
- 	port@0 {
--- 
-2.17.1
+-Tony
 
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
 _______________________________________________
 Linux-rockchip mailing list
