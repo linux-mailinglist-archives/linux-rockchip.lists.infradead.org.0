@@ -2,72 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81891155E8A
-	for <lists+linux-rockchip@lfdr.de>; Fri,  7 Feb 2020 20:14:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3833F156025
+	for <lists+linux-rockchip@lfdr.de>; Fri,  7 Feb 2020 21:48:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NinpfZxwuOyDwYbtqwSrkTihnoIFjce0g7/BoxgkdXs=; b=rDucUeB0821Iu3
-	IWFcNcegKeUqXWke6GBWK1z56MXKvipfV8OheoPrnGIiINYiy8F5TpVTn1i+TeZDvVXGNxsCSGf7x
-	wc1zcmtYN6OtBQqkroNV5hG424uqqBfmwJ9NmcA5QWxYf1vDE3XUBeIVh6cEYBkutyZrqn196WA6Q
-	NIS0VzUCfdfa5EMslz4LLr799z7BvoaykDQB6ShJ1OCduX244FAPGyQ0Jl4S6YyfWAO4G0sMEUgnp
-	fYsYtHSrSDtGZHNJdEh18yzcETe2lffolkF4tD5ndbdhcF4GX17VkMZT09EgU8Qtl6ert197sd4U5
-	XFGy2qlNknHLk2gSYqGg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wR6/EPIIy3tXT1hV7yw9fHULv3UzNu8iCaE4UNEwG8g=; b=aKPxGS4KeD9Z5x
+	BvBOi7EBZC7mMaX00DXQcD//haOTrimOcW4W667dLWLtDvh6P7TjAvyFfjS2FXcIpbYdfMDygXStp
+	VuN4KA7kgNeW7ek0LFU/EJFuKJIZBeQFMzHxxIAinomlynykmsDSdIt33zoec9Naeny48SQM6oZs3
+	6rlVSj01b3AKRqU6FlaenwET/P2A3oUzBIoytlHZDQOSMyIPlBV3RB//cVVp2e0mxmchJA3kOHlSU
+	rmhGhNuNROUtg1JaDYHXJwK481tsadlKSn7+AccRKPRkj/jrf1Y8yAPS7nwBnqYeh1K6zQccA1KZJ
+	ZpBl7t/yi6rMhhCE9IXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0957-0003cy-EY; Fri, 07 Feb 2020 19:14:25 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1j0AYX-0003XM-HL; Fri, 07 Feb 2020 20:48:53 +0000
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0954-0003c0-Mx
- for linux-rockchip@lists.infradead.org; Fri, 07 Feb 2020 19:14:24 +0000
-Received: by mail-wr1-x443.google.com with SMTP id z9so173813wrs.10
- for <linux-rockchip@lists.infradead.org>; Fri, 07 Feb 2020 11:14:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=7vk1aAjw8ZtladZlhG16b83EoOxZYSlkCdQBetmjBWM=;
- b=SThYRxgudG2HjC2XQPPAR7aYj87HC2rcbMw8NyyC39D7pclzWLzkNhmo+kQd0+An1X
- kTkRoMqZRizKNOC9wdnifiQZbEnh2FB0l+vSprHtp2v/Z10BTzhoagrl/8yVmwbIzi5V
- 9sk6xwalJKggeMECSV1i+1vRKCUjhf7YnVMIY=
+ id 1j0AYT-0003Wu-UX; Fri, 07 Feb 2020 20:48:51 +0000
+Received: by mail-wm1-x330.google.com with SMTP id f129so4236928wmf.2;
+ Fri, 07 Feb 2020 12:48:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=Vo3y/3LI/9xS6ovXLyiIY19qZ4rNDgl5cjTrH5DGm4I=;
+ b=HIcSkZzdBvgR0WPcV6MG53XbfktoeIflCnUKVByWe0jBVHEfCzzei6rSL0pCM7RKDY
+ wOvMog9dnWZEgWH2WvNPvv9oxFMCMI2ePH54mtU+k/JkksURgPOxbzsjjvLKSiQMLu3u
+ Coi36nEJkRtD5bOrgG7lxQKGTGbp1O4j9GjUUn4D8JZW8fujXkvnsykngs5jlBCpQhsf
+ WK87zaQPNiICgy5PpkE2HvhNwcZKHZmd0BtOJFD61Om+Nq7nihY5yrvaUJ3r1wFYvS3F
+ W36Qkw7vvt6+d+Vqz1rPdcd2MpVRA1dVA2bnCfzw1TsAoogFmSk2vLlP9K4/9XGaJRQY
+ swUA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=7vk1aAjw8ZtladZlhG16b83EoOxZYSlkCdQBetmjBWM=;
- b=fbpEp0PpwoNdehoV0UIs/slu+aXJAnxXME/cyQmgQkUOlUMkrp0iqBr5MEjpVm/2Nc
- 90aGu2WkyVXbT09ox34KkCAGWJWtrxVaSXJxDaQavYL0O/5VifkmjKYgzT0BkSSfXe4J
- WmiE2Zd6/tSh9b0hD4zUHn/b8M4jJW1nOQnF7UZw8ylt0WGe+OAh5uXFoLEnR6gjRZWM
- edObnVROZYxGaLEhRGWkMqgtHHckKNxV8b485p7R4HMOWg+tqPddurxg6Jd6PgwIySeq
- dF9Cm/hmAVjc5a/FdwQs0FGUhj4y3WFXDZQxSUeneSPMSqdTmUycRkWeMN8cXF0E6252
- n73Q==
-X-Gm-Message-State: APjAAAXEaMJK1J3vSKwt9Z7hMQkzlS5uXH6QPUe1sILIUOCVJki30QYF
- rNcGbMayr8LD9x4eWIbY3IjruiajCy9A3lcUxKq7RA==
-X-Google-Smtp-Source: APXvYqyZkIAZ4BXvFcG5Oq2N9Gzy4VxNWIabeIvUv/ObWa0bGX94f4+F/ifSy3djcWk9SISgHxgds+kWx+674IGfnzM=
-X-Received: by 2002:adf:f586:: with SMTP id f6mr497161wro.46.1581102856853;
- Fri, 07 Feb 2020 11:14:16 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=Vo3y/3LI/9xS6ovXLyiIY19qZ4rNDgl5cjTrH5DGm4I=;
+ b=J0OzNkqBCeGVnJaFhzxAVxXeIN1xb7n4zaQEEx9gO8N/Ait/IZUx+xtoxn7UXSXjJ3
+ rT+zr8J6Wd+LHfiF5rqqjvDpewmV9CCUEWSPukUWphMb0qxvIpW3fjJNo3AqdyKat9RB
+ tzUlsezVfiwWrHTh8YtdrlLRkTYcOxVaBF/clPMU5/uYsApMpu13t1bk93jaVwtNBGoq
+ uiIngvqtWQllLM0X6jywJ+2uI/EBYNjDNBYlayvse7I80QyqjLTwv0RL9+xpsXp9/anB
+ wsLGCd5KP+ZN+FtVvJPhO8z9JbSFKpyauU6zz7YYmAGOEJ3QLiAAvv13sK2JGUmmPJe+
+ AIeg==
+X-Gm-Message-State: APjAAAUDWp2CkB4OhGCCLcLTsIClqAjw7K4lJV9DLkqLM+JLQMmyo1tn
+ iQWVqHMdIOHyIH+jEmRgivE=
+X-Google-Smtp-Source: APXvYqww2HjjQMNwdkQTkIkLEammO08yj4O42JmLPef87CvM4J1Vq8Ec3LZwBSGk+vtbq6vnsV4cfA==
+X-Received: by 2002:a1c:4b0f:: with SMTP id y15mr116024wma.87.1581108528197;
+ Fri, 07 Feb 2020 12:48:48 -0800 (PST)
+Received: from Red ([2a01:cb1d:3d5:a100:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id g128sm4518742wme.47.2020.02.07.12.48.47
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 07 Feb 2020 12:48:47 -0800 (PST)
+Date: Fri, 7 Feb 2020 21:48:45 +0100
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: herbert@gondor.apana.org.au, davem@davemloft.net, heiko@sntech.de,
+ linux-rockchip@lists.infradead.org
+Subject: [BUG] crypto: rk3288: ecb-aes-rk encryption failed
+Message-ID: <20200207204845.GA15221@Red>
 MIME-Version: 1.0
-References: <CAOf5uwmPMRq4v9=5-Z=XLH7hATC-AhXQWthfy_uvYTXSo6V+CA@mail.gmail.com>
-In-Reply-To: <CAOf5uwmPMRq4v9=5-Z=XLH7hATC-AhXQWthfy_uvYTXSo6V+CA@mail.gmail.com>
-From: Michael Nazzareno Trimarchi <michael@amarulasolutions.com>
-Date: Fri, 7 Feb 2020 20:14:04 +0100
-Message-ID: <CAOf5uwnRLn7tXFRxjPGASuCnmOwooA4Ytk28Zc+A0kp=UZDQWw@mail.gmail.com>
-Subject: Re: siimple-framebuffer rockchip persistent logo
-To: Kever Yang <kever.yang@rock-chips.com>, 
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>
+Content-Disposition: inline
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_111423_176654_5523C986 
-X-CRM114-Status: GOOD (  12.84  )
+X-CRM114-CacheID: sfid-20200207_124849_988082_B6D10584 
+X-CRM114-Status: UNSURE (   5.09  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:330 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [clabbe.montjoie[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -89,69 +97,23 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- LKML <linux-kernel@vger.kernel.org>, Jagan Teki <jagan@amarulasolutions.com>
+Cc: linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi all
+Hello
 
-I move a bit on this
+When running next-20200207 on a rk3288-miqi, I get
+alg: skcipher: ecb-aes-rk encryption failed on test vector \"random: len=0 klen=32\"; expected_error=0, actual_error=-22, cfg=\"random: use_final nosimd src_divs=[<flush>54.11%@+27, 29.21%@+0, <flush>0.9%@+3586, 16.59%@+3971] dst_divs=[100.0%@+20] key_offset=63\"
 
-On Sun, Jan 12, 2020 at 6:16 PM Michael Nazzareno Trimarchi
-<michael@amarulasolutions.com> wrote:
->
-> Hi Kever
->
-> Trying to have a persistent banner from uboot to linux-kernel. I'm
-> right now working on linux-rockchip kernel but I think that the
-> problem is even on mainline
->
-> +               framebuffer: framebuffer@7f800000 {
-> +                       compatible = "rockchip,simple-framebuffer",
-> +                                    "simple-framebuffer";
-> +                       reg = <0x7f800000 (1920 * 1080 * 4)>;
-> +                       width = <1920>;
-> +                       height = <1080>;
-> +                       stride = <(1920 * 4)>;
-> +                       format = "a8b8g8r8";
-> +                       clocks = <&cru  PCLK_HDMI_CTRL>, <&cru SCLK_HDMI_HDCP>,
-> +                                <&cru SRST_LCDC0_AXI>, <&cru
-> SRST_LCDC0_AHB>, <&cru SRST_LCDC0_DCLK>,
-> +                                <&cru ACLK_VOP0>, <&cru HCLK_VOP0>;
-> +                       status = "okay";
-> +               };
->
+Loading tcrypt later give me:
+udevd[117]: worker [125] /devices/platform/ff8a0000.cypto-controller is taking a long time
+udevd[117]: worker [125] /devices/platform/ff8a0000.cypto-controller timeout; kill it
 
-Now I can allocate the parameter using the bootloader and create the
-right mapping for the simple framebuffer. I don't even understand
-how sunxi and meson can work if they don't create a reserved memory
-using no-map. This is fixed on my side so the log is totally clean.
-I have added the deregister of simple fb and handover to the drm
-
-Now my boot parameters are:
-Kernel command line: console=ttyS2,115200n8 root=/dev/mmcblk0p1
-rootwait pd_ignore_unused clk_ignore_unused
-
-Still I have display go off on tinker during boot. Any suggestion?
-
-Michael
-
-
-> Seems that it get off before I reach the drm registration
->
-> [    2.077495] simple-framebuffer 7f800000.framebuffer: framebuffer at
-> 0x7f800000, 0x7e9000 bytes, mapped to 0xf0900000
-> [    2.077519] simple-framebuffer 7f800000.framebuffer:
-> format=a8b8g8r8, mode=1920x1080x32, linelength=7680
-> [    2.161225] simple-framebuffer 7f800000.framebuffer: fb0: simplefb
-> registered!
-> [    3.433847] fb: switching to rockchip-drm-fb from simple
->
-> I don't find all the clocks and if those are the only think that I
-> need to stay on. Any suggestion?
+Regards
 
 _______________________________________________
 Linux-rockchip mailing list
