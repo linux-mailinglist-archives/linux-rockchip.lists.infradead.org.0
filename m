@@ -2,54 +2,94 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1C4C156C56
-	for <lists+linux-rockchip@lfdr.de>; Sun,  9 Feb 2020 21:09:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54248156DA3
+	for <lists+linux-rockchip@lfdr.de>; Mon, 10 Feb 2020 03:45:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:Reply-To
-	:List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=LZX19qp8Sc4okqx0blDzEZQJUqImb21gNzeAq9yOx3M=; b=BHDkcgHD3n4JKRrj2XQhHwsR3
-	hmPrXd4vhFozTFvSXCTFJnwryJXKvXS6Giojte8/fhsiruozWI7SXzlMBGxQE8uTjG6NXm15/JRqQ
-	ubfgV8f15tgiJXEMOmJYzGKRNSTn9DmwyUl0fGFlBtUYGB4w+nlPy+8gWrPcSWtq+GHaR0f/fOk5h
-	R1bO/Ya+dh4Un73MPV0w7xPzheLKfm73DYdcgS+1b3CmUxEntYjflYLztRrs0RFFDAGau4AN2fAi6
-	zxf8fk7QAGUDwLDGefnMe2BIYilog16mpUOKfMsJN9Fjn1sufuvs5BWOwjVXk6Y80p9AwFjJnEN/j
-	Vzupx2vfg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/NbnLorVFBh8ad16arzzvPDiEzfa/7MAQMVxc61QeAc=; b=Pfpa+A8rZUyR2f
+	Ayta+GxB76anMrJG0CLrzPSn50V7OUWVK1c6Z0KgY0zpB56T+jqO3Tx463gDixUR035UZ37zPuE7K
+	4/qNOK1ISQgCKwFsHYWiNzaTkMHtJx0f1RgJI044SfJG0u/W+VxYUwKZCYgw6MZqbab8hJ+7Qr+2B
+	Poc5WGGPZOZpUTydh6ShT7l5rvGNkkZInJ4BNOksi6O8duweSI6wDesPcb7zOnBHfIv/7uwf6fhq0
+	IsVT/nWn1cajqptAvx/6m1IXw6FZ646kZJj3tCyPKY3KRM20g7y9HHruLfHYyiBrhYBN867fjvPK1
+	4mU3MZanNEToszlUo0NQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0st0-00020f-Jl; Sun, 09 Feb 2020 20:08:58 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1j0z53-0004Hd-KK; Mon, 10 Feb 2020 02:45:49 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0ssw-0001zK-Jw
- for linux-rockchip@lists.infradead.org; Sun, 09 Feb 2020 20:08:56 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: nicolas) with ESMTPSA id 15612291429
-Message-ID: <7666b3a6a73aed0d4dd28dba8b0bcd08b2df6a3d.camel@collabora.com>
-Subject: Re: [PATCH v7 04/11] media: uapi: h264: Add the concept of start code
-From: Nicolas Dufresne <nicolas.dufresne@collabora.com>
-To: Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
-Date: Sun, 09 Feb 2020 15:08:45 -0500
-In-Reply-To: <20190816160132.7352-5-ezequiel@collabora.com>
-References: <20190816160132.7352-1-ezequiel@collabora.com>
- <20190816160132.7352-5-ezequiel@collabora.com>
-Organization: Collabora
-User-Agent: Evolution 3.34.3 (3.34.3-1.fc31) 
+ id 1j0z50-0004HA-7D
+ for linux-rockchip@lists.infradead.org; Mon, 10 Feb 2020 02:45:48 +0000
+Received: by mail-ed1-x542.google.com with SMTP id g19so6881008eds.11
+ for <linux-rockchip@lists.infradead.org>; Sun, 09 Feb 2020 18:45:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=6BOdkflw0F8fh+pcm/A4VGksRSh2LmfGqE8fze11kVU=;
+ b=njnDO0Uw5pFBphWZ/lxyvTRoVa7n6/kAPMJL9leHs+YzGd4xAYvyTCkF1pX8jVsgo3
+ bHc65ricH3IhK/A0wqAq61TdAaybVTqbd3XMm0JJ+OcwZh39jG0HfeWwQvckWxPkFlhW
+ OmnnEbCY7oSgyU/kbvF39WlCDe4C/TRk4xTqI=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=6BOdkflw0F8fh+pcm/A4VGksRSh2LmfGqE8fze11kVU=;
+ b=k2DG2BYjE4BLXaXTgNK3c33IQkzAYNwwgzVR8BCvu0Jux09TYYw7INYOsl6XFPD0ZJ
+ aEpIxW7Z8KxAzOgrGqAo9HWFjBGU/YpGyn6ZDz+AAE/ohJUpRWP+TYFyFh9OD8cQ7dUC
+ MWtIqzvifGsZdg/yj2Tzl8/m9OPJXXO+CPnEXXN4KoAAykQWQiQsE5/LjbAsEh5OvF7o
+ 03SusnHjZOAjIuv8ofTdyeN9r2YJTTvSZi2n8qqL2ZdppqnGP01+rtrncoYCOsZeP4Cq
+ TSOBdBj1HH3BT+BWicggmXnKa5ho114gLAqlHvLg2IYhKpgkKCZQ4kfy4HxDz1l/9ZYD
+ lLJA==
+X-Gm-Message-State: APjAAAWd/BAnzTDxtdGqF6cC102yMChMaW/mmwNRrKyvKd+sElS5W9sU
+ n/tVbtwbQA060JeGfUkXLqiNIcjfX0XaBA==
+X-Google-Smtp-Source: APXvYqxsOVCuJ6Q91yAvJaI2QE8mHRk8UrNys3fxJfWVRHcbP/SLuzT4js6gLtzot52r1iZFw3SHDA==
+X-Received: by 2002:a17:906:4f93:: with SMTP id
+ o19mr10023038eju.52.1581302743375; 
+ Sun, 09 Feb 2020 18:45:43 -0800 (PST)
+Received: from mail-wr1-f42.google.com (mail-wr1-f42.google.com.
+ [209.85.221.42])
+ by smtp.gmail.com with ESMTPSA id lu4sm1517799ejb.76.2020.02.09.18.45.42
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 09 Feb 2020 18:45:42 -0800 (PST)
+Received: by mail-wr1-f42.google.com with SMTP id t2so5659852wrr.1
+ for <linux-rockchip@lists.infradead.org>; Sun, 09 Feb 2020 18:45:42 -0800 (PST)
+X-Received: by 2002:adf:f6c1:: with SMTP id y1mr13652670wrp.17.1581302741582; 
+ Sun, 09 Feb 2020 18:45:41 -0800 (PST)
 MIME-Version: 1.0
+References: <20191113175603.24742-1-ezequiel@collabora.com>
+ <74fea061a52ee3f8e25793bf9e47eba90a52c3e3.camel@ndufresne.ca>
+In-Reply-To: <74fea061a52ee3f8e25793bf9e47eba90a52c3e3.camel@ndufresne.ca>
+From: Tomasz Figa <tfiga@chromium.org>
+Date: Mon, 10 Feb 2020 11:45:30 +0900
+X-Gmail-Original-Message-ID: <CAAFQd5A8Y3C64NozqXjMDV0CQ5==dW9Y-6KtFigYFmO3EDd3+A@mail.gmail.com>
+Message-ID: <CAAFQd5A8Y3C64NozqXjMDV0CQ5==dW9Y-6KtFigYFmO3EDd3+A@mail.gmail.com>
+Subject: Re: [PATCH v3 0/3] Enable Hantro G1 post-processor
+To: Nicolas Dufresne <nicolas@ndufresne.ca>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200209_120854_920840_A62C568E 
-X-CRM114-Status: GOOD (  23.31  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200209_184546_287205_301FFADF 
+X-CRM114-Status: GOOD (  31.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,235 +102,131 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Reply-To: Nicolas Dufresne <nicolas.dufresne@collabora.com>
-Cc: fbuergisser@chromium.org, Heiko Stuebner <heiko@sntech.de>,
- Alexandre Courbot <acourbot@chromium.org>, Jonas Karlman <jonas@kwiboo.se>,
- linux-kernel@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org,
+Cc: Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
+ Jonas Karlman <jonas@kwiboo.se>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
  Boris Brezillon <boris.brezillon@collabora.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com
-Content-Type: multipart/mixed; boundary="===============7839829462817856306=="
+ Philipp Zabel <p.zabel@pengutronix.de>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>, Chris Healy <cphealy@gmail.com>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-
---===============7839829462817856306==
-Content-Type: multipart/signed; micalg="pgp-sha1"; protocol="application/pgp-signature";
-	boundary="=-U0pbP9NiBTf40tHmv8JJ"
-
-
---=-U0pbP9NiBTf40tHmv8JJ
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-Le vendredi 16 ao=C3=BBt 2019 =C3=A0 13:01 -0300, Ezequiel Garcia a =C3=A9c=
-rit :
-> Stateless decoders have different expectations about the
-> start code that is prepended on H264 slices. Add a
-> menu control to express the supported start code types
-> (including no start code).
->=20
-> Drivers are allowed to support only one start code type,
-> but they can support both too.
->=20
-> Note that this is independent of the H264 decoding mode,
-> which specifies the granularity of the decoding operations.
-> Either in frame-based or slice-based mode, this new control
-> will allow to define the start code expected on H264 slices.
->=20
-> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-> Tested-by: Philipp Zabel <p.zabel@pengutronix.de>
-> ---
-> Changes in v7:
-> * None.
-> Changes in v6:
-> * Rename to START_CODE and enum values
->   as suggested by Hand and Paul.
-> Changes in v5:
-> * Improve specification as suggested by Hans.
-> Changes in v4:
-> * New patch.
-> ---
->  .../media/uapi/v4l/ext-ctrls-codec.rst        | 33 +++++++++++++++++++
->  .../media/uapi/v4l/pixfmt-compressed.rst      |  5 +--
->  drivers/media/v4l2-core/v4l2-ctrls.c          |  9 +++++
->  include/media/h264-ctrls.h                    |  6 ++++
->  4 files changed, 51 insertions(+), 2 deletions(-)
->=20
-> diff --git a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst b/Documenta=
-tion/media/uapi/v4l/ext-ctrls-codec.rst
-> index 7e7447d9998c..3703c705286f 100644
-> --- a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-> +++ b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-> @@ -2076,6 +2076,39 @@ enum v4l2_mpeg_video_h264_hierarchical_coding_type=
- -
->          The OUTPUT buffer must contain all slices needed to decode the
->          frame. The OUTPUT buffer must also contain both fields.
-> =20
-> +``V4L2_CID_MPEG_VIDEO_H264_START_CODE (enum)``
-
-I believe we need to revisit the naming here. In most documents I've
-read, start code refers to a header that allow parsing a bit stream
-from a random location. In H264, this is used as synonyme of ANNEX B
-NAL Headers. In this context, the obvious future value to this enum is
-AVCc headers, which is not a start code.
-
-I would suggest to revisite and rename to:
-
-  V4L2_CID_MPEG_VIDEO_H264_NAL_HDR_TYPE
-
-
-> +    Specifies the H264 slice start code expected for each slice.
-> +    This control is used as a modifier for V4L2_PIX_FMT_H264_SLICE
-> +    pixel format. Applications that support V4L2_PIX_FMT_H264_SLICE
-> +    are required to set this control in order to specify the start code
-> +    that is expected for the buffer.
-> +    Drivers may expose a single or multiple start codes, depending
-> +    on what they can support.
-> +
-> +    .. note::
-> +
-> +       This menu control is not yet part of the public kernel API and
-> +       it is expected to change.
-> +
-> +.. c:type:: v4l2_mpeg_video_h264_start_code
-> +
-> +.. cssclass:: longtable
-> +
-> +.. flat-table::
-> +    :header-rows:  0
-> +    :stub-columns: 0
-> +    :widths:       1 1 2
-> +
-> +    * - ``V4L2_MPEG_VIDEO_H264_START_CODE_NONE``
-> +      - 0
-> +      - Selecting this value specifies that H264 slices are passed
-> +        to the driver without any start code.
-> +    * - ``V4L2_MPEG_VIDEO_H264_START_CODE_ANNEX_B``
-> +      - 1
-> +      - Selecting this value specifies that H264 slices are expected
-> +        to be prefixed by Annex B start codes. According to :ref:`h264`
-> +        valid start codes can be 3-bytes 0x000001 or 4-bytes 0x00000001.
-> +
->  .. _v4l2-mpeg-mpeg2:
-> =20
->  ``V4L2_CID_MPEG_VIDEO_MPEG2_SLICE_PARAMS (struct)``
-> diff --git a/Documentation/media/uapi/v4l/pixfmt-compressed.rst b/Documen=
-tation/media/uapi/v4l/pixfmt-compressed.rst
-> index d666eb51741a..493b6020107d 100644
-> --- a/Documentation/media/uapi/v4l/pixfmt-compressed.rst
-> +++ b/Documentation/media/uapi/v4l/pixfmt-compressed.rst
-> @@ -60,8 +60,9 @@ Compressed Formats
->  	extracted from the H264 bitstream.  This format is adapted for
->  	stateless video decoders that implement an H264 pipeline
->  	(using the :ref:`mem2mem` and :ref:`media-request-api`).
-> -	This pixelformat has a modifier that must be set at least once
-> -	through the ``V4L2_CID_MPEG_VIDEO_H264_DECODE_MODE`` control.
-> +	This pixelformat has two modifiers that must be set at least once
-> +	through the ``V4L2_CID_MPEG_VIDEO_H264_DECODE_MODE``
-> +        and ``V4L2_CID_MPEG_VIDEO_H264_START_CODE`` controls.
->  	In addition, metadata associated with the frame to decode are
->  	required to be passed through the ``V4L2_CID_MPEG_VIDEO_H264_SPS``,
->  	``V4L2_CID_MPEG_VIDEO_H264_PPS``,
-> diff --git a/drivers/media/v4l2-core/v4l2-ctrls.c b/drivers/media/v4l2-co=
-re/v4l2-ctrls.c
-> index 2c67f9fc4d5b..1d8f38824631 100644
-> --- a/drivers/media/v4l2-core/v4l2-ctrls.c
-> +++ b/drivers/media/v4l2-core/v4l2-ctrls.c
-> @@ -407,6 +407,11 @@ const char * const *v4l2_ctrl_get_menu(u32 id)
->  		"Frame-Based",
->  		NULL,
->  	};
-> +	static const char * const h264_start_code[] =3D {
-> +		"No Start Code",
-> +		"Annex B Start Code",
-> +		NULL,
-> +	};
->  	static const char * const mpeg_mpeg2_level[] =3D {
->  		"Low",
->  		"Main",
-> @@ -640,6 +645,8 @@ const char * const *v4l2_ctrl_get_menu(u32 id)
->  		return h264_fmo_map_type;
->  	case V4L2_CID_MPEG_VIDEO_H264_DECODE_MODE:
->  		return h264_decode_mode;
-> +	case V4L2_CID_MPEG_VIDEO_H264_START_CODE:
-> +		return h264_start_code;
->  	case V4L2_CID_MPEG_VIDEO_MPEG2_LEVEL:
->  		return mpeg_mpeg2_level;
->  	case V4L2_CID_MPEG_VIDEO_MPEG2_PROFILE:
-> @@ -860,6 +867,7 @@ const char *v4l2_ctrl_get_name(u32 id)
->  	case V4L2_CID_MPEG_VIDEO_H264_SLICE_PARAMS:		return "H264 Slice Paramet=
-ers";
->  	case V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS:		return "H264 Decode Param=
-eters";
->  	case V4L2_CID_MPEG_VIDEO_H264_DECODE_MODE:		return "H264 Decode Mode";
-> +	case V4L2_CID_MPEG_VIDEO_H264_START_CODE:		return "H264 Start Code";
->  	case V4L2_CID_MPEG_VIDEO_MPEG2_LEVEL:			return "MPEG2 Level";
->  	case V4L2_CID_MPEG_VIDEO_MPEG2_PROFILE:			return "MPEG2 Profile";
->  	case V4L2_CID_MPEG_VIDEO_MPEG4_I_FRAME_QP:		return "MPEG4 I-Frame QP Va=
-lue";
-> @@ -1229,6 +1237,7 @@ void v4l2_ctrl_fill(u32 id, const char **name, enum=
- v4l2_ctrl_type *type,
->  	case V4L2_CID_MPEG_VIDEO_H264_SEI_FP_ARRANGEMENT_TYPE:
->  	case V4L2_CID_MPEG_VIDEO_H264_FMO_MAP_TYPE:
->  	case V4L2_CID_MPEG_VIDEO_H264_DECODE_MODE:
-> +	case V4L2_CID_MPEG_VIDEO_H264_START_CODE:
->  	case V4L2_CID_MPEG_VIDEO_MPEG2_LEVEL:
->  	case V4L2_CID_MPEG_VIDEO_MPEG2_PROFILE:
->  	case V4L2_CID_MPEG_VIDEO_MPEG4_LEVEL:
-> diff --git a/include/media/h264-ctrls.h b/include/media/h264-ctrls.h
-> index 928c48c57282..ba2876a64cf6 100644
-> --- a/include/media/h264-ctrls.h
-> +++ b/include/media/h264-ctrls.h
-> @@ -27,6 +27,7 @@
->  #define V4L2_CID_MPEG_VIDEO_H264_SLICE_PARAMS	(V4L2_CID_MPEG_BASE+1003)
->  #define V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS	(V4L2_CID_MPEG_BASE+1004)
->  #define V4L2_CID_MPEG_VIDEO_H264_DECODE_MODE	(V4L2_CID_MPEG_BASE+1005)
-> +#define V4L2_CID_MPEG_VIDEO_H264_START_CODE	(V4L2_CID_MPEG_BASE+1006)
-> =20
->  /* enum v4l2_ctrl_type type values */
->  #define V4L2_CTRL_TYPE_H264_SPS			0x0110
-> @@ -40,6 +41,11 @@ enum v4l2_mpeg_video_h264_decode_mode {
->  	V4L2_MPEG_VIDEO_H264_DECODE_MODE_FRAME_BASED,
->  };
-> =20
-> +enum v4l2_mpeg_video_h264_start_code {
-> +	V4L2_MPEG_VIDEO_H264_START_CODE_NONE,
-> +	V4L2_MPEG_VIDEO_H264_START_CODE_ANNEX_B,
-> +};
-> +
->  #define V4L2_H264_SPS_CONSTRAINT_SET0_FLAG			0x01
->  #define V4L2_H264_SPS_CONSTRAINT_SET1_FLAG			0x02
->  #define V4L2_H264_SPS_CONSTRAINT_SET2_FLAG			0x04
-
---=-U0pbP9NiBTf40tHmv8JJ
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iF0EABECAB0WIQSScpfJiL+hb5vvd45xUwItrAaoHAUCXkBmzQAKCRBxUwItrAao
-HJvFAJ9j3qmEHp+mn63qDT+EnFrH3WHs5gCgwXqSR01WgQ6l1I0jPQ+PR0AT5Wc=
-=3XxE
------END PGP SIGNATURE-----
-
---=-U0pbP9NiBTf40tHmv8JJ--
-
-
-
---===============7839829462817856306==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
---===============7839829462817856306==--
-
-
+T24gTW9uLCBGZWIgMTAsIDIwMjAgYXQgNDo1MiBBTSBOaWNvbGFzIER1ZnJlc25lIDxuaWNvbGFz
+QG5kdWZyZXNuZS5jYT4gd3JvdGU6Cj4KPiBMZSBtZXJjcmVkaSAxMyBub3ZlbWJyZSAyMDE5IMOg
+IDE0OjU2IC0wMzAwLCBFemVxdWllbCBHYXJjaWEgYSDDqWNyaXQgOgo+ID4gSGkgYWxsLAo+ID4K
+PiA+IFRoZSBIYW50cm8gRzEgVlBVIHBvc3QtcHJvY2Vzc29yIGJsb2NrIGNhbiBiZSBwaXBlbGlu
+ZWQgd2l0aAo+ID4gdGhlIGRlY29kZXIgaGFyZHdhcmUsIGFsbG93aW5nIHRvIHBlcmZvcm0gb3Bl
+cmF0aW9ucyBzdWNoIGFzCj4gPiBjb2xvciBjb252ZXJzaW9uLCBzY2FsaW5nLCByb3RhdGlvbiwg
+Y3JvcHBpbmcsIGFtb25nIG90aGVycy4KPiA+Cj4gPiBXaGVuIHRoZSBwb3N0LXByb2Nlc3NvciBp
+cyBlbmFibGVkLCB0aGUgZGVjb2RlciBoYXJkd2FyZQo+ID4gbmVlZHMgaXRzIG93biBzZXQgb2Yg
+TlYxMiBidWZmZXJzICh0aGUgbmF0aXZlIGRlY29kZXIgZm9ybWF0KSwKPiA+IGFuZCB0aGUgcG9z
+dC1wcm9jZXNzb3IgaXMgdGhlIG93bmVyIG9mIHRoZSBDQVBUVVJFIGJ1ZmZlcnMsCj4gPiBhbGxv
+Y2F0ZWQgZm9yIHRoZSBwb3N0LXByb2Nlc3NlZCBmb3JtYXQuCj4gPgo+ID4gVGhpcyB3YXksIGFw
+cGxpY2F0aW9ucyBvYnRhaW4gcG9zdC1wcm9jZXNzZWQKPiA+IChzY2FsZWQsIGNvbnZlcnRlZCwg
+ZXRjKSBidWZmZXJzIHRyYW5zcGFyZW50bHkuCj4gPgo+ID4gVGhpcyBmZWF0dXJlIGlzIGltcGxl
+bWVudGVkIGJ5IGV4cG9zaW5nIHRoZSBwb3N0LXByb2Nlc3NlZCBwaXhlbAo+ID4gZm9ybWF0cyBv
+biBFTlVNX0ZNVCwgb3JkZXJlZCBhcyAicHJlZmVycmVkIHBpeGVsZm9ybWF0IGZpcnN0IjoKPiA+
+Cj4gPiB2NGwyLWN0bCAtZCAxIC0tbGlzdC1mb3JtYXRzCj4gPiBpb2N0bDogVklESU9DX0VOVU1f
+Rk1UCj4gPiAgICAgICBUeXBlOiBWaWRlbyBDYXB0dXJlIE11bHRpcGxhbmFyCj4gPgo+ID4gICAg
+ICAgWzBdOiAnTlYxMicgKFkvQ2JDciA0OjI6MCkKPiA+ICAgICAgIFsxXTogJ1lVWVYnIChZVVlW
+IDQ6MjoyKQo+ID4KPiA+IFRoZSBvcmRlciBvZiBwcmVmZXJlbmNlIGluIEVOVU1fRk1UIGNhbiBi
+ZSB1c2VkIGFzIGEgaGludAo+ID4gYnkgYXBwbGljYXRpb25zLiBUaGlzIHNlcmllcyB1cGRhdGVz
+IHRoZSB1QVBJIHNwZWNpZmljYXRpb24KPiA+IGFjY29yZGluZ2x5Lgo+Cj4gQXMgSSdtIGltcGxl
+bWVudGluZyB0aGlzLCBJIHJlYWxpemUgdGhhdCB0aGVyZSBtYXkgbWUgYSBnYXAgaW4gYmVpbmcK
+PiBhYmxlIHRvIGltcGxlbWVudCBib3RoIElQUCBhbmQgbm9uLUlQUCBzdXBwb3J0IGluIGEgZ2Vu
+ZXJpYyBmcmFtZXdvcmsuCj4gVW5saWtlIHRoZSBhYm92ZSBjb21tZW50LCB3ZSBmb3Igbm9uLUlQ
+UCBkZWNvZGVyIHdlIGNhbm5vdCBuYWl2ZWx5IHBpY2sKPiB0aGUgZmlyc3QgZm9ybWF0LiBJbiBm
+YWN0IHdlIHBhcnNlIHRoZSBjaHJvbWEgYW5kIGRlcHRoIGluZm9ybWF0aW9uCj4gZnJvbSB0aGUg
+aGVhZGVycyAobGlrZSBwcHMgZnJvbSBIMjY0KSwgYW5kIHdlIHBpY2sgYSBtYXRjaGluZyBwaXhl
+bAo+IGZvcm1hdC4gVGhpcyB3YXksIGlmIHdlIGhhdmUgYSAxMGJpdCBzdHJlYW0sIGFuZCBvdXIg
+SVAgc3VwcG9ydHMgMTBiaXQsCj4gd2Ugd2lsbCBwaWNrIGEgMTBiaXQgcGl4ZWwgZm9ybWF0cywg
+b3RoZXJ3aXNlIGRlY29kaW5nIHdpbGwganVzdCBmYWlsLgo+Cj4gTm9uZSBvZiB0aGlzIGluZm9y
+bWF0aW9uIGlzIHBhc3NlZCB0byB0aGUgZHJpdmVyIHByaW9yIHRvIHRoZSBmaXJzdAo+IFJlcXVl
+c3QgYmVpbmcgbWFkZSwgc28gdGhlcmUgaXMgbm8gd2F5IChhcyBvZiBjdXJyZW50IHNwZWMpIHRo
+YXQgdGhlCj4gZHJpdmVyIGNhbiB2YWxpZGF0ZSB0aGlzIGluIHRyeV9mbXQgYWhlYWQgb2YgdGlt
+ZS4gVW5sZXNzIEkgc2V0IHBpY3R1cmUKPiBwYXJhbWV0ZXJzIHdpdGhvdXQgYSByZXF1ZXN0X2Zk
+IGZvciB0aGF0IHB1cnBvc2UuIElmIHRoaXMgaXMgdGhlIHdheSwKPiB0aGVuIHdlIHNob3VsZCBk
+b2N1bWVudCB0aGlzLgoKK0FsZXhhbmRyZSBDb3VyYm90CgpJdCB3YXMgc3VnZ2VzdGVkIGluIHRo
+ZSB2ZXJ5IGVhcmx5IFJGQyBzdGFnZSwgYnV0IGl0IGxvb2tzIGxpa2UgaXQKZGlkbid0IG1ha2Ug
+aXQgdG8gdGhlIGZpbmFsIHNwZWMuCmh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5vcmcvcGF0Y2gv
+MTA1ODMyMzMvIzIyMjA5NTU1Cgo+Cj4gSXMgdGhpcyB0aGUgaW50ZW5kZWQgd2F5IHRvIG5lZ290
+aWF0aW9uIElQUCBmdW5jdGlvbnMgd2l0aCB0aGUgZHJpdmVyID8KPgoKSW4gdGhlb3J5LCBpZiB0
+aGUgdXNlcnNwYWNlIGtub3dzIHdoZXRoZXIgdGhlIHN0cmVhbSBpcyA0OjI6MCBvciA0OjI6Mgph
+bmQgOC1iaXQgb3IgMTAtYml0LCBpdCBjYW4gc3RpbGwgc2VsZWN0IHRoZSBmaXJzdCBmb3JtYXQg
+ZnJvbSB0aGUgdG9wCnRoYXQgbWF0Y2hlcyB0aGVzZSBwcm9wZXJ0aWVzLgoKVGhhdCdzIG5vdCBo
+b3cgZm9ybWF0IGhhbmRsaW5nIGluIFY0TDIgd29ya3MsIHRob3VnaC4gRU5VTV9GTVQgaXMKZXhw
+ZWN0ZWQgdG8gcmV0dXJuIGEgbGlzdCBvZiB2YWxpZCBmb3JtYXRzIGFuZCBpZiB3ZSBmb3JnZXQg
+YWJvdXQgdGhlCmltYWdlIHByb2Nlc3NvciBmb3IgYSBtb21lbnQsIGEgc3RhdGVsZXNzIGRlY29k
+ZXIgd291bGQgYWx3YXlzIHJldHVybgphbnkgcG9zc2libGUgZm9ybWF0LCBpbmNsdWRpbmcgb25l
+cyBpbnZhbGlkIGZvciB0aGUgc3RyZWFtLgoKTm93IGJhY2sgdG8gdGhlIGltYWdlIHByb2Nlc3Nv
+ciwgaWYgaXQgaGFuZGxlcyBjb252ZXJzaW9ucyBmcm9tIGFueSB0bwphbnkgZm9ybWF0IGxpc3Rl
+ZCBieSBFTlVNX0ZNVCwgd2Uga2luZCBvZiByZWdhaW4gdGhlIFY0TDIgY29tcGxpYW5jZSwKYnV0
+IGlmIHRoZSBjb252ZXJzaW9ucyBhcmUgbGltaXRlZCwgdGhlIGFib3ZlIHJlcXVpcmVtZW50IHN0
+aWxsCmRvZXNuJ3QgaG9sZCBhbmQgd2UncmUgbm90IGltcGxlbWVudGluZyBWNEwyIGNvcnJlY3Rs
+eS4KClBlcmhhcHMgd2UgY2FuIHN0aWxsIGFtZW5kIHRoZSBzcGVjIGFuZCByZXF1aXJlIGNvbnRy
+b2xzIHRoYXQKZGV0ZXJtaW5lIHRoZSBzdHJlYW0gcHJvcGVydGllcyB0byBiZSBzZXQgYmVmb3Jl
+IHN0YXJ0aW5nIHRoZQpzdHJlYW1pbmc/IEkgY2FuIGltYWdpbmUgaXQgY291bGQgYWxzbyBoZWxw
+IHRoZSBkcml2ZXIgZmlsdGVyIG91dCBzb21lCnVuc3VwcG9ydGVkIHN0cmVhbXMgZWFybHksIGJl
+Zm9yZSBhbGxvY2F0aW5nIGJ1ZmZlcnMgYW5kIGF0dGVtcHRpbmcgdG8KZGVjb2RlLgoKQmVzdCBy
+ZWdhcmRzLApUb21hc3oKCj4gPgo+ID4gV2hlbiB0aGUgYXBwbGljYXRpb24gc2V0cyBhIHBpeGVs
+IGZvcm1hdCBvdGhlciB0aGFuIE5WMTIsCj4gPiB0aGUgcG9zdC1wcm9jZXNzb3IgaXMgdHJhbnNw
+YXJlbnRseSBlbmFibGVkLgo+ID4KPiA+IFBhdGNoIDEgaXMgYSBjbGVhbnVwcyBuZWVkZWQgdG8g
+ZWFzaWVyIGludGVncmF0ZSB0aGUgcG9zdC1wcm9jZXNzb3IuCj4gPiBQYXRjaCAyIGludHJvZHVj
+ZXMgdGhlIHBvc3QtcHJvY2Vzc2luZyBzdXBwb3J0Lgo+ID4gUGF0Y2ggMyB1cGRhdGVzIHRoZSB1
+QVBJIHNwZWNpZmljYXRpb24uCj4gPgo+ID4gVGhpcyBpcyB0ZXN0ZWQgb24gUkszMjg4IHBsYXRm
+b3JtcyB3aXRoIE1QRUctMiwgVlA4IGFuZAo+ID4gSDI2NCBzdHJlYW1zLCBkZWNvZGluZyB0byBZ
+VVkyIHN1cmZhY2VzLiBGb3Igbm93LCB0aGlzIHNlcmllcwo+ID4gaXMgb25seSBhZGRpbmcgc3Vw
+cG9ydCBmb3IgTlYxMi10by1ZVVkyIGNvbnZlcnNpb24uCj4gPgo+ID4gQXBwbGllcyB0byBtZWRp
+YS9tYXN0ZXIuCj4gPgo+ID4gRnV0dXJlIHBsYW5zCj4gPiAtLS0tLS0tLS0tLS0KPiA+Cj4gPiBJ
+dCBzZWVtcyB0byBtZSB0aGF0IHdlIHNob3VsZCBzdGFydCBtb3ZpbmcgdGhpcyBkcml2ZXIgdG8g
+dXNlCj4gPiByZWdtYXAtYmFzZWQgYWNjZXNzIHRvIHJlZ2lzdGVycy4gSG93ZXZlciwgc3VjaCBt
+b3ZlIGlzIG91dCBvZiBzY29wZQo+ID4gYW5kIG5vdCBlbnRpcmVseSByZWxhdGVkIHRvIHRoaXMg
+cG9zdC1wcm9jZXNzb3IgZW5hYmxlbWVudC4KPiA+Cj4gPiBXZSdsbCB3b3JrIG9uIHRoYXQgYXMg
+Zm9sbG93LXVwIHBhdGNoZXMuCj4gPgo+ID4gQ2hhbmdlbG9nCj4gPiAtLS0tLS0tLS0KPiA+Cj4g
+PiBDaGFuZ2VzIHYzOgo+ID4KPiA+ICogQWZ0ZXIgZGlzY3Vzc2luZyB3aXRoIEhhbnMgYW5kIFRv
+bWFzeiBkdXJpbmcgdGhlIG1lZGlhIHN1bW1pdAo+ID4gaW4gRUxDRSwgd2UgZGVjaWRlZCB0byBn
+byBiYWNrIG9uIHRoZSBNQyBjaGFuZ2VzLiBUaGUgTUMgdG9wb2xvZ3kKPiA+IGlzIG5vdyB1bnRv
+dWNoZWQuIFRoaXMgbWVhbnMgdGhlIHNlcmllcyBpcyBub3cgc2ltaWxhciB0byB2MSwKPiA+IGV4
+Y2VwdCB3ZSBleHBsaWNpdGx5IHVzZSB0aGUgRU5VTV9GTVQgdG8gaGludCBhYm91dCB0aGUgcG9z
+dC1wcm9jZXNzZWQKPiA+IGZvcm1hdHMuCj4gPgo+ID4gQ2hhbmdlcyB2MjoKPiA+Cj4gPiAqIFRo
+ZSBkZWNvZGVyLT5wb3N0LXByb2Nlc3NvciB0b3BvbG9neSBpcyBub3cgZXhwb3NlZAo+ID4gICBl
+eHBsaWNpdGx5IGFuZCBhcHBsaWNhdGlvbnMgbmVlZCB0byBjb25maWd1cmUgdGhlIHBpcGVsaW5l
+Lgo+ID4gICBCeSBkZWZhdWx0LCB0aGUgZGVjb2RlciBpcyBlbmFibGVkIGFuZCB0aGUgcG9zdC1w
+cm9jZXNzb3IKPiA+ICAgaXMgZGlzYWJsZWQuCj4gPgo+ID4gKiBSR0IgcG9zdC1wcm9jZXNzaW5n
+IG91dHB1dCBoYXMgYmVlbiBkcm9wcGVkLiBXZSBtaWdodAo+ID4gICBhZGQgdGhpcyBpbiB0aGUg
+ZnV0dXJlLCBidXQgZm9yIG5vdywgaXQgc2VlbXMgaXQgd291bGQKPiA+ICAgbWFrZSB0aGUgY29k
+ZSBtb3JlIGNvbXBsZXggd2l0aG91dCBhIHVzZS1jYXNlIGluIG1pbmQuCj4gPiAgIFJHQiBpcyBt
+dWNoIG1vcmUgbWVtb3J5LWNvbnN1bWluZyBzbyBsZXNzIGF0dHJhY3RpdmUKPiA+ICAgdGhhbiBZ
+VVYsIGFuZCBtb2Rlcm4gR1BVcyBhbmQgZGlzcGxheSBjb250cm9sbGVycyBzdXBwb3J0IFlVVi4K
+PiA+Cj4gPiAqIFRoZSBwb3N0LXByb2Nlc3NvciBpbXBsZW1lbnRhdGlvbiBzdGlsbCBzdXBwb3J0
+cyBSSzMyODgKPiA+ICAgb25seS4gSG93ZXZlciwgYSBnZW5lcmljIHJlZ2lzdGVyIGluZnJhc3Ry
+dWN0dXJlIGlzIGludHJvZHVjZWQKPiA+ICAgdG8gbWFrZSBhZGRpdGlvbiBvZiBvdGhlciB2YXJp
+YW50cyBzdWNoIGFzIFJLMzM5OSByZWFsbHkgZWFzeS4KPiA+Cj4gPiBFemVxdWllbCBHYXJjaWEg
+KDMpOgo+ID4gICBtZWRpYTogaGFudHJvOiBDbGVhbnVwIGZvcm1hdCBuZWdvdGlhdGlvbiBoZWxw
+ZXJzCj4gPiAgIG1lZGlhOiBoYW50cm86IFN1cHBvcnQgY29sb3IgY29udmVyc2lvbiB2aWEgcG9z
+dC1wcm9jZXNzaW5nCj4gPiAgIG1lZGlhOiB2aWRpb2MtZW51bS1mbXQucnN0OiBjbGFyaWZ5IGZv
+cm1hdCBwcmVmZXJlbmNlCj4gPgo+ID4gIC4uLi9tZWRpYS91YXBpL3Y0bC92aWRpb2MtZW51bS1m
+bXQucnN0ICAgICAgICB8ICAgNCArLQo+ID4gIGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9oYW50cm8v
+TWFrZWZpbGUgICAgICAgICB8ICAgMSArCj4gPiAgZHJpdmVycy9zdGFnaW5nL21lZGlhL2hhbnRy
+by9oYW50cm8uaCAgICAgICAgIHwgIDY0ICsrKysrKystCj4gPiAgZHJpdmVycy9zdGFnaW5nL21l
+ZGlhL2hhbnRyby9oYW50cm9fZHJ2LmMgICAgIHwgICA4ICstCj4gPiAgLi4uL3N0YWdpbmcvbWVk
+aWEvaGFudHJvL2hhbnRyb19nMV9oMjY0X2RlYy5jIHwgICAyICstCj4gPiAgLi4uL21lZGlhL2hh
+bnRyby9oYW50cm9fZzFfbXBlZzJfZGVjLmMgICAgICAgIHwgICAyICstCj4gPiAgZHJpdmVycy9z
+dGFnaW5nL21lZGlhL2hhbnRyby9oYW50cm9fZzFfcmVncy5oIHwgIDUzICsrKysrKysKPiA+ICAu
+Li4vc3RhZ2luZy9tZWRpYS9oYW50cm8vaGFudHJvX2cxX3ZwOF9kZWMuYyAgfCAgIDIgKy0KPiA+
+ICBkcml2ZXJzL3N0YWdpbmcvbWVkaWEvaGFudHJvL2hhbnRyb19oMjY0LmMgICAgfCAgIDYgKy0K
+PiA+ICBkcml2ZXJzL3N0YWdpbmcvbWVkaWEvaGFudHJvL2hhbnRyb19ody5oICAgICAgfCAgMTMg
+KysKPiA+ICAuLi4vc3RhZ2luZy9tZWRpYS9oYW50cm8vaGFudHJvX3Bvc3Rwcm9jLmMgICAgfCAx
+NDEgKysrKysrKysrKysrKysrKysrCj4gPiAgZHJpdmVycy9zdGFnaW5nL21lZGlhL2hhbnRyby9o
+YW50cm9fdjRsMi5jICAgIHwgMTA1ICsrKysrKysrLS0tLS0KPiA+ICBkcml2ZXJzL3N0YWdpbmcv
+bWVkaWEvaGFudHJvL3JrMzI4OF92cHVfaHcuYyAgfCAgMTAgKysKPiA+ICAxMyBmaWxlcyBjaGFu
+Z2VkLCAzNjYgaW5zZXJ0aW9ucygrKSwgNDUgZGVsZXRpb25zKC0pCj4gPiAgY3JlYXRlIG1vZGUg
+MTAwNjQ0IGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9oYW50cm8vaGFudHJvX3Bvc3Rwcm9jLmMKPiA+
+Cj4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4
+LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2No
+aXAK
