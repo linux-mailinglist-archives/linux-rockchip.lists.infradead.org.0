@@ -2,98 +2,67 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0A6D15AE8F
-	for <lists+linux-rockchip@lfdr.de>; Wed, 12 Feb 2020 18:16:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35D7915B29E
+	for <lists+linux-rockchip@lfdr.de>; Wed, 12 Feb 2020 22:15:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EEqLTnZxpxHNOciJDrkeZ5x/6+/Dzkn5uvMjr1QExak=; b=gHhDwLpJ6FghGtzYcrlXnac9a
-	Vagx+hKXfVABKTZp6mMkBcAR62t+nKDIoez1spHEyBmLRyBo20FP1xNvg+OUjtUaopKBO9zDCDslU
-	nAUJnizsduwvZFCkGaZxJVfFNRHp7yl2biJ++hvWcQ67kCqUKATjk70iZwir+SjLDRR+R48SAXKV6
-	CTeufyu9R3M4QHKE0eMP0bZ0xSu6OKiiwwsFsRrr7K9Kn1rsACdZyCyYQshyPKDQsCG0ulnUZonEN
-	zgnaOO3sPdQhzQ9yEH608UPF4E2LiwQjIgS3BTbbw3y3oCsfZDdz4Ji3qDNcaH8DuX/QxlPJzM6N3
-	NP9lakNMg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ACoLR2sw9zgL0wBcznG5CDQJbDg+aNjb3hOttir+2xc=; b=KJAyb7RW1/F9Cr
+	TKam6Wr1fEa0jTODYrxM3aOCjO/eNoHyNcSo2rFP59c0u7ti7eZ36DjXZkFwPN3Mz4xFzmVSVtCPA
+	8dTm4kqhoxIzz6lSErZeP8cGdIIFzzvZ24gm+i4pkM6DjkHAO0kM50IjeFtyiNoPa2QpmpelzVNu3
+	y1RxNYLPCE6mIPoXWmwcgiSnnil2UoerqHI19RPOuxlsD6/AH0ICuPJj7tW/V3DRIDnukCyTFPu5u
+	tAlRKyjdiBHU4DnmG1Lhv/Kw3UPp2RjxtK/03wWKDWjLmN9KZCJtxu/igQIC7TO0j1uy66a8bDkrQ
+	sy1SkIiXz05HqBosae/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1vcY-0005eU-KW; Wed, 12 Feb 2020 17:16:18 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1j1zM7-0002i2-3B; Wed, 12 Feb 2020 21:15:35 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1vcK-0005TW-FN; Wed, 12 Feb 2020 17:16:06 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id 373D77B86;
- Wed, 12 Feb 2020 12:16:00 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Wed, 12 Feb 2020 12:16:00 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=VlwaHrYSMc5EXnk7OL7eHGgUQRx
- 9+OHs9o+E4xgjGdg=; b=hYIlU5K4+ezqu7KluFhemjtph9JOs+x11ZR5fXOy0zW
- kq/xY2VBXMX3S4I+qE0fXsNQrIpAu1cOYcCm3t8I7qrLhalik1b9oKjJ6EpT3xov
- 8/7iBexBt2i/aydlwFqSh7oiHChvKi7SmJgmv90dFD34oNSOn0rsoXCnBuMqM7yR
- Cvezfcu9kB8wMPSNrvROYswP/61c9xMg7YB6oy4//k+dJpbpOn6c/Hgur+bpWKUP
- YCBd8U0nJALJojMf3cmeM/FvSLXOVGQlT2fyX5sD+JkzDWq1T5RZFpkbkbKnZeOD
- kL6lvzEVR4hoGq+TKBaaj1KbGl92MREUNKjuh9PHDhQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=VlwaHr
- YSMc5EXnk7OL7eHGgUQRx9+OHs9o+E4xgjGdg=; b=w4dQ1bvkrRBqTnYkwbOESa
- 5Q3Itg4wv4HIEiNLypSnDC9vw5/Or1wnm27ZHa0Jr07PMBZbC9m1j6uzxzOTKXSJ
- MCaUi6CraFraYKsy1+6UaL0U+TvGNbGP4Tow0w0sv0PgDTtOh11DnDH5SFwtDa6o
- cn5rIM8lBSJtiXlmSoA5cAMwO80n/B6bJot2/TZbCY1APr7hVCQArIRSoXO7+36D
- b6Y6ECkYlbluMSOSIO2Nt9q0fI3wjA0s5+jQp4bKwqf27YkSzX37011B/1rMr4gl
- A3/dzay78+4zK6xw0YFq+CKh9PfsPFowEwA9x1Y8rtFoOv6V4DqJOLV/FuRhf6fQ
- ==
-X-ME-Sender: <xms:zTJEXk6EtNTrdAC_6kwRCIcAhu0CuZLe0RUaLqvKA621vAbYoSUG8A>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrieehgddutddtucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
- lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:zTJEXqNUOvm3UA2ubbpF_Mn1RE9LyA6nP91YSYaPQpIRo0jz9JXPAg>
- <xmx:zTJEXikuucGRdFkbOzYAUFF2EO1s2d_p6nErMSPNQqNkd383GH6-yQ>
- <xmx:zTJEXhR176hzeg3xaL_go2tR1R3dCGONt-5Kwg8QurmJNHuhng5LTw>
- <xmx:0DJEXlEm2yYxWz6W9MxkKZt8pA49S7ySE_nGRRDsAF5U_RUkpLBazg>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 5A7833060717;
- Wed, 12 Feb 2020 12:15:57 -0500 (EST)
-Date: Wed, 12 Feb 2020 18:15:55 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH 6/7] ARM: sunxi: Replace <linux/clk-provider.h> by
- <linux/of_clk.h>
-Message-ID: <20200212171555.rhglnhhfxljd2ktb@gilmour.lan>
-References: <20200212100830.446-1-geert+renesas@glider.be>
- <20200212100830.446-7-geert+renesas@glider.be>
- <158152739647.121156.16877229572128607400@swboyd.mtv.corp.google.com>
+ id 1j1zLy-00019i-Bm; Wed, 12 Feb 2020 21:15:27 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga005.fm.intel.com ([10.253.24.32])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 12 Feb 2020 13:13:25 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,434,1574150400"; d="scan'208";a="432449589"
+Received: from wendeand-mobl.ger.corp.intel.com (HELO kekkonen.fi.intel.com)
+ ([10.252.52.16])
+ by fmsmga005.fm.intel.com with ESMTP; 12 Feb 2020 13:13:20 -0800
+Received: by kekkonen.fi.intel.com (Postfix, from userid 1000)
+ id 0320921D13; Wed, 12 Feb 2020 23:13:17 +0200 (EET)
+Date: Wed, 12 Feb 2020 23:13:17 +0200
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Subject: Re: [PATCH v8 05/14] media: rkisp1: add Rockchip ISP1 subdev driver
+Message-ID: <20200212211317.GD3087@kekkonen.localdomain>
+References: <20190730184256.30338-1-helen.koike@collabora.com>
+ <20190730184256.30338-6-helen.koike@collabora.com>
+ <20190808091406.GQ21370@paasikivi.fi.intel.com>
+ <da6c1d01-e3f6-ad73-db55-145d7832a665@collabora.com>
+ <20190815082422.GM6133@paasikivi.fi.intel.com>
+ <20190815131748.GS6133@paasikivi.fi.intel.com>
+ <78856358-1afd-31a7-86dd-22f7d6d7fb05@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <158152739647.121156.16877229572128607400@swboyd.mtv.corp.google.com>
+Content-Disposition: inline
+In-Reply-To: <78856358-1afd-31a7-86dd-22f7d6d7fb05@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_091604_862604_566A826B 
-X-CRM114-Status: UNSURE (   9.17  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200212_131526_425050_30A8A91B 
+X-CRM114-Status: GOOD (  25.15  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.230 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,68 +75,99 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- Magnus Damm <magnus.damm@gmail.com>, Michal Simek <michal.simek@xilinx.com>,
- Russell King <linux@armlinux.org.uk>, linux-renesas-soc@vger.kernel.org,
- Lubomir Rintel <lkundrak@v3.sk>, Chen-Yu Tsai <wens@csie.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8593850036922239864=="
+Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
+ heiko@sntech.de, jacob2.chen@rock-chips.com,
+ Dafna Hirschfeld <dafna3@gmail.com>, jeffy.chen@rock-chips.com,
+ zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ Allon Huang <allon.huang@rock-chips.com>, linux-rockchip@lists.infradead.org,
+ Helen Koike <helen.koike@collabora.com>, Jacob Chen <cc@rock-chips.com>,
+ hans.verkuil@cisco.com, laurent.pinchart@ideasonboard.com,
+ zhengsq@rock-chips.com, mchehab@kernel.org, ezequiel@collabora.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+Hi Dafna,
 
---===============8593850036922239864==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ww2rdwwsu4sgynif"
-Content-Disposition: inline
+Apologies for the late reply. I learned the mail had got lost due to mail
+server issues.
 
+On Fri, Jan 31, 2020 at 08:38:34PM +0100, Dafna Hirschfeld wrote:
+> Hi,
+> I (Dafna Hirschfeld) will work in following months with Helen Koike to fix the issues
+> in the TODO file of this driver: drivers/staging/media/rkisp1/TODO
+> 
+> On 15.08.19 15:17, Sakari Ailus wrote:
+> > On Thu, Aug 15, 2019 at 11:24:22AM +0300, Sakari Ailus wrote:
+> > > Hi Helen,
+> > > 
+> > > On Wed, Aug 14, 2019 at 09:58:05PM -0300, Helen Koike wrote:
+> > > 
+> > > ...
+> > > 
+> > > > > > +static int rkisp1_isp_sd_set_fmt(struct v4l2_subdev *sd,
+> > > > > > +				 struct v4l2_subdev_pad_config *cfg,
+> > > > > > +				 struct v4l2_subdev_format *fmt)
+> > > > > > +{
+> > > > > > +	struct rkisp1_device *isp_dev = sd_to_isp_dev(sd);
+> > > > > > +	struct rkisp1_isp_subdev *isp_sd = &isp_dev->isp_sdev;
+> > > > > > +	struct v4l2_mbus_framefmt *mf = &fmt->format;
+> > > > > > +
+> > > > > 
+> > > > > Note that for sub-device nodes, the driver is itself responsible for
+> > > > > serialising the access to its data structures.
+> > > > 
+> > > > But looking at subdev_do_ioctl_lock(), it seems that it serializes the
+> > > > ioctl calls for subdevs, no? Or I'm misunderstanding something (which is
+> > > > most probably) ?
+> > > 
+> > > Good question. I had missed this change --- subdev_do_ioctl_lock() is
+> > > relatively new. But setting that lock is still not possible as the struct
+> 
+> 'the struct' - do you mean the 'vdev' struct allocated in
+> 'v4l2_device_register_subdev_nodes' ?
 
---ww2rdwwsu4sgynif
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Yes.
 
-On Wed, Feb 12, 2020 at 09:09:56AM -0800, Stephen Boyd wrote:
-> Quoting Geert Uytterhoeven (2020-02-12 02:08:29)
-> > The Allwinner platform code is not a clock provider, and just needs to
-> > call of_clk_init().
-> >
-> > Hence it can include <linux/of_clk.h> instead of <linux/clk-provider.h>.
-> >
-> > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> > ---
->
-> Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+> 
+> > > is allocated in the framework and the device is registered before the
+> 
+> > > driver gets hold of it. It's a good idea to provide the same serialisation
+> > > for subdevs as well.
+> > > 
+> > > I'll get back to this later.
+> > 
+> > The main reason is actually that these ops are also called through the
+> > sub-device kAPI, not only through the uAPI, and the locks are only taken
+> > through the calls via uAPI.
+> 
+> actually it seems that although 'subdev_do_ioctl_lock' exit, I wonder if
+> any subdevice uses that vdev->lock in  subdev_do_ioctl_lock.
+> It is not initialized in v4l2_device_register_subdev_nodes where the vdev is allocated
+> and I wonder if any subdevice actually initialize it somewhere else. For example it is null in this
+> driver and in vimc.
 
-Applied, thanks!
-Maxime
+It needs to be set before the video device is registered, so indeed, it
+seems no driver can make use it.
 
---ww2rdwwsu4sgynif
-Content-Type: application/pgp-signature; name="signature.asc"
+> 
+> > 
+> > So adding the locks to uAPI calls alone would not address the issue.
+> 
+> What I can do is add a mutex to every struct of a subdevice and lock it
+> at the beginning of each subdevice operation.
+> Is this an acceptable solution?
 
------BEGIN PGP SIGNATURE-----
+Please do. That's what other drivers do at the moment as well.
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXkQyywAKCRDj7w1vZxhR
-xVAyAP44cXhjx/0CW1CFNAKxhdKU4gzpGWXvxPJibw12XvM6WQD/a/OTdlgu8Ofs
-1nDzz3yzF/+ciyJSn/Q0Gv9vy5DD3Qs=
-=bEj4
------END PGP SIGNATURE-----
+-- 
+Kind regards,
 
---ww2rdwwsu4sgynif--
-
-
---===============8593850036922239864==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Sakari Ailus
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
---===============8593850036922239864==--
-
