@@ -2,50 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B212715AAA1
-	for <lists+linux-rockchip@lfdr.de>; Wed, 12 Feb 2020 15:01:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D967515AAB4
+	for <lists+linux-rockchip@lfdr.de>; Wed, 12 Feb 2020 15:04:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
 	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=shIr+AIuq7e2OAZ4NW/BG9uV6uyuQiX76rweLh6/zTQ=; b=XoStM7+MkKoIgV
-	6NwpHjdolilb4zNt7RU+UyiDnNRVlkOFdm98gBu73Hu5skuePYiK/w1CGz+YKJUBJEqAQN7Eemev7
-	uXTarj7ywuSM/l9UyG8wchb0qUugel4uP1CmvMwpg2jNfwIibSSGV5dZywwjH1aV+tRzBFUIaUa+b
-	67bo+jF2odFh+rJecAHJ1AaDjBIbJhWG3r6ubzqOfj46KBt2AMnDLpTCR7r7Gb/3/IC4u4NzoI24P
-	lVf11kqBSdww6bdgvg/fUs8g9tZsFnxsSWkSIqus7njbCtiA7vTimKXHgQhYhNFLnLStKTvhZCxY6
-	salsRTwZ2gJXlcING8ag==;
+	List-Owner; bh=Cy96XS2RP+eIbX0KmifOvHtQtvHuVbAfo8oqgAd9goc=; b=GcOPOfqEhoojLe
+	ufUT3YWwtcJC6zsktr3OA7/0Q50s1i9xP6MZEqDK21zhv/r3J9TPe02RONOhtcRlZ05Bk0TDjatUx
+	CM/wK/C0N9dTVhe0MQOrDEJbQFML2Io5DnMa11l21sd8R6shvsqF+M2DqKfbSRwlz62vlrlI7kYWQ
+	2x7zlhFLlpWExOLsVkgFHuAR9pm5S1fSDaPIkExyNPJLCrzjziZbUQN99kx5922GRl2xWLUrSesx3
+	FN24LVYrwiVw8oi5fD0GxNx8wENlXy+6/Y8SJHbiUcJWCnhCyevIuJc1LC/jejaIC7d6ZxpATbISD
+	6KaJP5Z3cA5f4z4NcMfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1saA-0005wP-NQ; Wed, 12 Feb 2020 14:01:38 +0000
+	id 1j1sdA-0007DE-Ri; Wed, 12 Feb 2020 14:04:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1sa1-0005p7-Uv; Wed, 12 Feb 2020 14:01:31 +0000
+ id 1j1sd2-00075o-1R; Wed, 12 Feb 2020 14:04:37 +0000
 Received: from localhost (173-25-83-245.client.mchsi.com [173.25.83.245])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EEEDB20658;
- Wed, 12 Feb 2020 14:01:28 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7839A20724;
+ Wed, 12 Feb 2020 14:04:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581516089;
- bh=k9etYqQgRrkh7cyiZwIyrLs0t114fOpffvtkOo61KWY=;
+ s=default; t=1581516275;
+ bh=o9BHn+9tET4BD0g8kAYLMhwyFEa94It7nBIG65XyVow=;
  h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=EPX57e7K2CocHRjleSrYsOC4jcMI5oxr+HevHew+S+JLsugZIC+yBlaB/zNAvFapK
- UZKM6UR6vbTNWupREPcs7S6z357GJD+mZV4emsonCxc74ssTH9I3BK6QzchZrhXNXT
- P5IrxlIh5dph6VfbTvbebxGRjB9m1vimurMg3Zds=
-Date: Wed, 12 Feb 2020 08:01:28 -0600
+ b=ybhA5sw1XC0h+W6Zeya0JSyVEIzLi+xMgWYE+Dwss2uAZuddrdzio//rz6eimr3jf
+ 5fLzed0lzlgiW1e3gJzM4JGdbsZRLPLhAOBWjt9aGVTFpyj7hLZk6qW6Tax2jy+LJS
+ zVOS8XI3s1D5+v5kCab07CmDWyahtMIe3CLy9eEY=
+Date: Wed, 12 Feb 2020 08:04:34 -0600
 From: Bjorn Helgaas <helgaas@kernel.org>
 To: Lad Prabhakar <prabhakar.csengg@gmail.com>
-Subject: Re: [PATCH v4 1/6] PCI: rcar: Preparation for adding endpoint support
-Message-ID: <20200212140127.GA127398@google.com>
+Subject: Re: [PATCH v4 2/6] PCI: rcar: Fix calculating mask for PCIEPAMR
+ register
+Message-ID: <20200212140434.GA129189@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200208183641.6674-2-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <20200208183641.6674-3-prabhakar.mahadev-lad.rj@bp.renesas.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_060130_034405_7B114967 
-X-CRM114-Status: GOOD (  20.31  )
+X-CRM114-CacheID: sfid-20200212_060436_103621_030906C8 
+X-CRM114-Status: GOOD (  17.63  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -97,84 +98,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-To make the changelog from "git log --oneline" read nicely, the
-subject should begin with a verb, e.g.,
+On Sat, Feb 08, 2020 at 06:36:37PM +0000, Lad Prabhakar wrote:
+> The mask value was calculated incorrectly for PCIEPAMR register if the
+> size was less the 128bytes, this patch fixes the above by adding a check
+> on size.
 
-  PCI: rcar: Move shareable code to a common file
-
-On Sat, Feb 08, 2020 at 06:36:36PM +0000, Lad Prabhakar wrote:
-> Prepare for adding endpoint support to rcar controller, there are no
-> functional changes with this patch, a common file is created so that
-> it can be shared with endpoint driver.
-
-This commit log doesn't tell us what this patch does.  "Prepare"
-conveys no real information.  It's a giant patch and it's difficult
-to verify that there's no functional change.
-
-I *think* what you did was move most of the #defines from pcie-rcar.c
-to pcie-rcar.h and most of the code from pcie-rcar.c to
-pcie-rcar-host.c.  And in both case, these were strict *moves* without
-any changes.  If that's the case, please say that explicitly in the
-commit log.
-
-That's good; thanks for making this a separate patch so it's not
-mingled with real changes.
+s/less the/less than/
+s/128bytes,/128 bytes./
+s/this patch fixes the above/Fix this issue/
 
 > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 > ---
->  arch/arm64/configs/defconfig            |    2 +-
->  drivers/pci/controller/Kconfig          |    4 +-
->  drivers/pci/controller/Makefile         |    2 +-
->  drivers/pci/controller/pcie-rcar-host.c | 1044 ++++++++++++++++++++++++++
->  drivers/pci/controller/pcie-rcar.c      | 1229 ++-----------------------------
->  drivers/pci/controller/pcie-rcar.h      |  126 ++++
->  6 files changed, 1227 insertions(+), 1180 deletions(-)
->  create mode 100644 drivers/pci/controller/pcie-rcar-host.c
->  create mode 100644 drivers/pci/controller/pcie-rcar.h
+>  drivers/pci/controller/pcie-rcar.c | 5 +++--
+>  1 file changed, 3 insertions(+), 2 deletions(-)
 > 
-> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index b2f6673..8a1f51d 100644
-> --- a/arch/arm64/configs/defconfig
-> +++ b/arch/arm64/configs/defconfig
-> @@ -182,7 +182,7 @@ CONFIG_HOTPLUG_PCI=y
->  CONFIG_HOTPLUG_PCI_ACPI=y
->  CONFIG_PCI_AARDVARK=y
->  CONFIG_PCI_TEGRA=y
-> -CONFIG_PCIE_RCAR=y
-> +CONFIG_PCIE_RCAR_HOST=y
->  CONFIG_PCI_HOST_GENERIC=y
->  CONFIG_PCI_XGENE=y
->  CONFIG_PCIE_ALTERA=y
-> diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
-> index f84e5ff..94bb5e9 100644
-> --- a/drivers/pci/controller/Kconfig
-> +++ b/drivers/pci/controller/Kconfig
-> @@ -54,12 +54,12 @@ config PCI_RCAR_GEN2
->  	  There are 3 internal PCI controllers available with a single
->  	  built-in EHCI/OHCI host controller present on each one.
+> diff --git a/drivers/pci/controller/pcie-rcar.c b/drivers/pci/controller/pcie-rcar.c
+> index d5568db..c76a92a 100644
+> --- a/drivers/pci/controller/pcie-rcar.c
+> +++ b/drivers/pci/controller/pcie-rcar.c
+> @@ -71,7 +71,7 @@ void rcar_pcie_set_outbound(int win, void __iomem *base,
+>  	/* Setup PCIe address space mappings for each resource */
+>  	resource_size_t res_start;
+>  	resource_size_t size;
+> -	u32 mask;
+> +	u32 mask = 0x0;
 >  
-> -config PCIE_RCAR
-> +config PCIE_RCAR_HOST
+>  	rcar_pci_write_reg(base, 0x00000000, PCIEPTCTLR(win));
+>  
+> @@ -80,7 +80,8 @@ void rcar_pcie_set_outbound(int win, void __iomem *base,
+>  	 * keeps things pretty simple.
+>  	 */
+>  	size = resource_size(res);
+> -	mask = (roundup_pow_of_two(size) / SZ_128) - 1;
+> +	if (size > 128)
+> +		mask = (roundup_pow_of_two(size) / SZ_128) - 1;
 
-The config symbol change should be mentioned in the commit log.  In
-general we try to avoid changing config symbols because it's likely to
-confuse people who keep their .config and update their kernel.  But I
-guess your audience is probably pretty small.
+I would put the "mask = 0x0" right here so it's all in one place,
+i.e.,
 
->  	bool "Renesas R-Car PCIe controller"
+  if (size > 128)
+    mask = (roundup_pow_of_two(size) / SZ_128) - 1;
+  else
+    mask = 0x0;
 
-The description needs to be updated, too.  This is what people will
-see in menuconfig.
-
->  	depends on ARCH_RENESAS || COMPILE_TEST
->  	depends on PCI_MSI_IRQ_DOMAIN
->  	help
-> -	  Say Y here if you want PCIe controller support on R-Car SoCs.
-> +	  Say Y here if you want PCIe controller support on R-Car SoCs in host mode.
-
-Wrap this so it fits in 80 columns like the rest of the file.
-
-Bjorn
+>  	rcar_pci_write_reg(base, mask << 7, PCIEPAMR(win));
+>  
+>  	if (!host) {
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
