@@ -2,43 +2,43 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1C5C15AE5D
-	for <lists+linux-rockchip@lfdr.de>; Wed, 12 Feb 2020 18:10:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97DFC15AE6C
+	for <lists+linux-rockchip@lfdr.de>; Wed, 12 Feb 2020 18:10:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JNRCFAxYYpzZEjETus4oeZjNhPL5qBIYoPu6Y2WzX44=; b=ljNPQWjercBHBE
-	2L6tT65fDMZQPTUz1+nxbNEk1tOu1zpVs/O+JR7hEVNHODmJqDu/3VmuyJgnavTnoyX5KRp0rCiSx
-	BBGaSvGnBZUl/87hcYLkIBfghG6GDB1CuZkbdRZHxuYwMtfRPhGjwfURwWTN8Y+D+KiAt453U8dd9
-	6SJMKXE3EfPLDiRYGeXf2B7qsvgPqN85UwzHFurYzd3Fo2ejVEK9XoJNi9l6NvkSkhbs4PPlwmI8W
-	3tXGYf/AWEsaiR660gP1FTvKSobCU25EliIdbHRWcnv5EeyNs8edRR5/BPeyuPU3OvlPX3vqI9K7b
-	KN9CUAOGBtLNWoIzrh1A==;
+	List-Owner; bh=7PG+2OUWA1S+nev4lz29HBgKzt9jfVWBPHryOiozflw=; b=EXXiEFW5OIl88Z
+	QuylnLzxgWKypNpukIkVX8SpnAp3SHi3hRr0vkDmhCrpXG4zul6aqXOVEpx7NVDvY+PfqtXwlpbw/
+	0isus91xGXKdHRQr6wse83PZWymtGLh+SSmnhv7wSfFDSZuUKaOscgM3DTQ5QBxQtbDlhd/Zg/qDv
+	5aP0Xy71evFvIRpuuDxNaJJUSM/hcJYiiaPri8VsWRK73uOieAOjB7zYDjRfcc+RpnS3F39QG6opH
+	tdfhyueq6RgW52txditliAFXdLoqSwizAklj0/xLZRwogLjt6mmclL48Fr4QUHe8Puihxw3FkCw7Y
+	JVhwNvf3xR73q/d0Qz4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1vWW-0000f3-BE; Wed, 12 Feb 2020 17:10:04 +0000
+	id 1j1vX0-0002Mv-Ep; Wed, 12 Feb 2020 17:10:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1vVm-0008Rs-Sx; Wed, 12 Feb 2020 17:09:20 +0000
+ id 1j1vVv-00007g-AN; Wed, 12 Feb 2020 17:09:28 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5D33C20658;
- Wed, 12 Feb 2020 17:09:18 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 72ACD206D7;
+ Wed, 12 Feb 2020 17:09:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581527358;
- bh=Ms18AFYMJJs9CTQf+OnEnXNdqo5oWSloKrt5rZKf4t0=;
+ s=default; t=1581527365;
+ bh=WxQ7PbbXyIoC7+GJrQ+uRoXEdtshYOhNhga+Q5j5StU=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=DTq7nvfsXFWhnCTs/UmHCwiBDz0FNSkNwRCJZHROJzS/Et+icCWGxl2qmINJhfcu1
- +NgdiPlJWl47gJm3NxTynqKE2Ch6CPuOeir5Qvzb4BEXD6kd9vEs5Y/wn3ANjO2Gnh
- YNsI5XJYXMdDcbtXRppyqd0YnQHhq0ul5APZyG8I=
+ b=XpRX7ne2mZkalX9khWt5mbVKEE+pTXnEivDwPc1ytzZaF8Ikxuz/DzSybwhXFMZ7z
+ vAugyREUU5xdwNYxGsMH2zCGj/BqqHmyrKKxCgkWRv/f/YEDTPG6xb1HzXWTeq0w3w
+ cxb0L7ikrzIL7lKvc3yacFK9POK3dyz4MqgbnpcQ=
 MIME-Version: 1.0
-In-Reply-To: <20200212100830.446-4-geert+renesas@glider.be>
+In-Reply-To: <20200212100830.446-5-geert+renesas@glider.be>
 References: <20200212100830.446-1-geert+renesas@glider.be>
- <20200212100830.446-4-geert+renesas@glider.be>
-Subject: Re: [PATCH 3/7] ARM: mmp: Replace <linux/clk-provider.h> by
+ <20200212100830.446-5-geert+renesas@glider.be>
+Subject: Re: [PATCH 4/7] ARM: rockchip: Replace <linux/clk-provider.h> by
  <linux/of_clk.h>
 From: Stephen Boyd <sboyd@kernel.org>
 To: Chen-Yu Tsai <wens@csie.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
@@ -46,12 +46,12 @@ To: Chen-Yu Tsai <wens@csie.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
  Magnus Damm <magnus.damm@gmail.com>, Matthias Brugger <matthias.bgg@gmail.com>,
  Maxime Ripard <mripard@kernel.org>, Michal Simek <michal.simek@xilinx.com>,
  Russell King <linux@armlinux.org.uk>
-Date: Wed, 12 Feb 2020 09:09:17 -0800
-Message-ID: <158152735760.121156.12656312630814539415@swboyd.mtv.corp.google.com>
+Date: Wed, 12 Feb 2020 09:09:24 -0800
+Message-ID: <158152736474.121156.2573812734157351119@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_090918_972138_581CB905 
-X-CRM114-Status: UNSURE (   6.83  )
+X-CRM114-CacheID: sfid-20200212_090927_496656_35B5C300 
+X-CRM114-Status: UNSURE (   7.07  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -91,8 +91,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Quoting Geert Uytterhoeven (2020-02-12 02:08:26)
-> The Marvell MMP platform code is not a clock provider, and just needs to
+Quoting Geert Uytterhoeven (2020-02-12 02:08:27)
+> The Rockchip platform code is not a clock provider, and just needs to
 > call of_clk_init().
 > 
 > Hence it can include <linux/of_clk.h> instead of <linux/clk-provider.h>.
