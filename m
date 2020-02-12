@@ -2,51 +2,57 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D967515AAB4
-	for <lists+linux-rockchip@lfdr.de>; Wed, 12 Feb 2020 15:04:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C3D415AE49
+	for <lists+linux-rockchip@lfdr.de>; Wed, 12 Feb 2020 18:09:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=Cy96XS2RP+eIbX0KmifOvHtQtvHuVbAfo8oqgAd9goc=; b=GcOPOfqEhoojLe
-	ufUT3YWwtcJC6zsktr3OA7/0Q50s1i9xP6MZEqDK21zhv/r3J9TPe02RONOhtcRlZ05Bk0TDjatUx
-	CM/wK/C0N9dTVhe0MQOrDEJbQFML2Io5DnMa11l21sd8R6shvsqF+M2DqKfbSRwlz62vlrlI7kYWQ
-	2x7zlhFLlpWExOLsVkgFHuAR9pm5S1fSDaPIkExyNPJLCrzjziZbUQN99kx5922GRl2xWLUrSesx3
-	FN24LVYrwiVw8oi5fD0GxNx8wENlXy+6/Y8SJHbiUcJWCnhCyevIuJc1LC/jejaIC7d6ZxpATbISD
-	6KaJP5Z3cA5f4z4NcMfw==;
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Im6USF15ROunGtLm4/qFwyvQ887yLa3UFB4DNiOHPyY=; b=R02F1we0JC89ta
+	hWzE72CQVHaO1oRlJKJeBrIZnv3hRPIHs4g0slZg48qGknLOYTvoqSwnexv1TwKkoPqGtSVBKyJg7
+	F1f+9CWfWIJPifaheQ5GMgr4SuytD+tfN7kmpHabGfbbbZwacVW77w5d6mHuRBPLvNz37D3ER4u2Y
+	deMWVtbCrfetipPij6YQVArVGOvuojqzQ14I8NbksmwZh45NFzSAyz/MhJV7435VIdogvSRHrfk+y
+	kHN3eD0Gq4+n5wu8bxqkpVXVcOLAhMqREVAzZzbTBc6Bx3zjxWSjdvqNn/ObnNBd2wSX5dHpiPahj
+	ajBgIBDFXrjN2uYfqzPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1sdA-0007DE-Ri; Wed, 12 Feb 2020 14:04:44 +0000
+	id 1j1vVm-0008Pm-Bi; Wed, 12 Feb 2020 17:09:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1sd2-00075o-1R; Wed, 12 Feb 2020 14:04:37 +0000
-Received: from localhost (173-25-83-245.client.mchsi.com [173.25.83.245])
+ id 1j1vVN-00084T-GS; Wed, 12 Feb 2020 17:08:54 +0000
+Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7839A20724;
- Wed, 12 Feb 2020 14:04:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 11BC320658;
+ Wed, 12 Feb 2020 17:08:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581516275;
- bh=o9BHn+9tET4BD0g8kAYLMhwyFEa94It7nBIG65XyVow=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=ybhA5sw1XC0h+W6Zeya0JSyVEIzLi+xMgWYE+Dwss2uAZuddrdzio//rz6eimr3jf
- 5fLzed0lzlgiW1e3gJzM4JGdbsZRLPLhAOBWjt9aGVTFpyj7hLZk6qW6Tax2jy+LJS
- zVOS8XI3s1D5+v5kCab07CmDWyahtMIe3CLy9eEY=
-Date: Wed, 12 Feb 2020 08:04:34 -0600
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Lad Prabhakar <prabhakar.csengg@gmail.com>
-Subject: Re: [PATCH v4 2/6] PCI: rcar: Fix calculating mask for PCIEPAMR
- register
-Message-ID: <20200212140434.GA129189@google.com>
+ s=default; t=1581527333;
+ bh=DqTtoQ6aehDoJ238WLdSqLjrCgNaYe/u9hsG3x16DbU=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=aAjkg+DTc17NlZhO9SLIVPV2QxkleB0FG242wSUYiJlGCSOKCQ+o8k5zu2YiOFWCy
+ P53EBKkdZCwZZyIdjHD5QZ9useF/1BNJhWOB4+9UNCDhZpfG1Q1XdpFb0KeAYMYFfR
+ Hj87e6qi4VtU8qzMDUyeB8p6Eqe8PK5T2s0vFyek=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200208183641.6674-3-prabhakar.mahadev-lad.rj@bp.renesas.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200212100830.446-2-geert+renesas@glider.be>
+References: <20200212100830.446-1-geert+renesas@glider.be>
+ <20200212100830.446-2-geert+renesas@glider.be>
+Subject: Re: [PATCH 1/7] ARM/time: Replace <linux/clk-provider.h> by
+ <linux/of_clk.h>
+From: Stephen Boyd <sboyd@kernel.org>
+To: Chen-Yu Tsai <wens@csie.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Heiko Stuebner <heiko@sntech.de>, Lubomir Rintel <lkundrak@v3.sk>,
+ Magnus Damm <magnus.damm@gmail.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Maxime Ripard <mripard@kernel.org>, Michal Simek <michal.simek@xilinx.com>,
+ Russell King <linux@armlinux.org.uk>
+Date: Wed, 12 Feb 2020 09:08:52 -0800
+Message-ID: <158152733235.121156.10015443943029373617@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_060436_103621_030906C8 
-X-CRM114-Status: GOOD (  17.63  )
+X-CRM114-CacheID: sfid-20200212_090853_572171_A9ACFFA8 
+X-CRM114-Status: UNSURE (   6.75  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -63,7 +69,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 FAKE_REPLY_C           No description available.
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -77,76 +82,25 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, Will Deacon <will@kernel.org>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-rockchip@lists.infradead.org,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- Arnd Bergmann <arnd@arndb.de>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Jingoo Han <jingoohan1@gmail.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>, linux-kernel@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sat, Feb 08, 2020 at 06:36:37PM +0000, Lad Prabhakar wrote:
-> The mask value was calculated incorrectly for PCIEPAMR register if the
-> size was less the 128bytes, this patch fixes the above by adding a check
-> on size.
-
-s/less the/less than/
-s/128bytes,/128 bytes./
-s/this patch fixes the above/Fix this issue/
-
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Quoting Geert Uytterhoeven (2020-02-12 02:08:24)
+> The ARM time code is not a clock provider, and just needs to call
+> of_clk_init().
+> 
+> Hence it can include <linux/of_clk.h> instead of <linux/clk-provider.h>.
+> 
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 > ---
->  drivers/pci/controller/pcie-rcar.c | 5 +++--
->  1 file changed, 3 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/pcie-rcar.c b/drivers/pci/controller/pcie-rcar.c
-> index d5568db..c76a92a 100644
-> --- a/drivers/pci/controller/pcie-rcar.c
-> +++ b/drivers/pci/controller/pcie-rcar.c
-> @@ -71,7 +71,7 @@ void rcar_pcie_set_outbound(int win, void __iomem *base,
->  	/* Setup PCIe address space mappings for each resource */
->  	resource_size_t res_start;
->  	resource_size_t size;
-> -	u32 mask;
-> +	u32 mask = 0x0;
->  
->  	rcar_pci_write_reg(base, 0x00000000, PCIEPTCTLR(win));
->  
-> @@ -80,7 +80,8 @@ void rcar_pcie_set_outbound(int win, void __iomem *base,
->  	 * keeps things pretty simple.
->  	 */
->  	size = resource_size(res);
-> -	mask = (roundup_pow_of_two(size) / SZ_128) - 1;
-> +	if (size > 128)
-> +		mask = (roundup_pow_of_two(size) / SZ_128) - 1;
 
-I would put the "mask = 0x0" right here so it's all in one place,
-i.e.,
-
-  if (size > 128)
-    mask = (roundup_pow_of_two(size) / SZ_128) - 1;
-  else
-    mask = 0x0;
-
->  	rcar_pci_write_reg(base, mask << 7, PCIEPAMR(win));
->  
->  	if (!host) {
-> -- 
-> 2.7.4
-> 
+Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 
 _______________________________________________
 Linux-rockchip mailing list
