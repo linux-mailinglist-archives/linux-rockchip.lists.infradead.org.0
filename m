@@ -2,86 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DED4D15A23C
-	for <lists+linux-rockchip@lfdr.de>; Wed, 12 Feb 2020 08:39:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 665C615A648
+	for <lists+linux-rockchip@lfdr.de>; Wed, 12 Feb 2020 11:26:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nm+DEeoxxK+RyY8SXUzmvJ4MYjCKJR+is9xC4Spsa/k=; b=MyZUcg4xkzl6Al
-	8MAhscctBBbdkudr9HdhJ4HAHbJui1KOW6hWeH2pQQSee0K5raFCl4rYR7Y/hm1VslKD2zkbHfgOL
-	MDSWeFD1HNVwvhrCNfMoJqFRZew4t7GeImbpiqBxTXDqpv8E/VqZST+g7/4LlYwbYYM/TfMp+ikVO
-	a+iogCTCpzmUwnDjN6BDR/7Mgk1ovNaqN6nyqS8y1Z7GY5WqPqoWQHW7mcOvAzLS7tMCr2FRh6hdB
-	edZUlEQalucVmE5gd1+ZjVk5kyH6BbxX6M5OUUVf5uJrkdtGCzjWV0Mgqeptdn44yLtn0O41qyi/p
-	yHPSQbeVGAT+FH+DZ/DQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Ds4pVlKXhDTvP2H35mMGW+kcknFZ7lh3iIiNUKOCVzY=; b=RnB
+	iXr/pOOhFk+W03rTb5zOu4dgOS50f68KsochGtqnMfGETgSjo81n2h/BvSow++ZFlv40vvDrCMvdy
+	JmzVjtivdQwB1QosB375KIuKSOGPH1NShQqmHZR0Y4VoK+YozlFU2fSkLXHZFWXtSiiTCdVlUcV5Z
+	DYOLDLMJp+RGd2BGr5BO3E+k8ZEz7NstQzUnr9WCCFV3l1w32lkylEBLMmlP25Scw+sxrc+bPwIbp
+	1dsTHefZuUp0iX27Pkn8S/juSEYjLOXKSLOR2XIXXuvx0BrL9xHNm8NXcVZWk3I5BbJ+c/GqhTU0W
+	3NMRfBxt7s6yVKdVYzpG/+NPDrrYvsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1mcB-0006We-EB; Wed, 12 Feb 2020 07:39:19 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1j1pDb-00081x-7h; Wed, 12 Feb 2020 10:26:07 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1mbt-0006MS-L6; Wed, 12 Feb 2020 07:39:06 +0000
-Received: by mail-oi1-x243.google.com with SMTP id c16so1157882oic.3;
- Tue, 11 Feb 2020 23:38:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=XWghytwp0n8q64ohIAtcpx40VHgmilMQUtH3KTGYx7s=;
- b=TC9l1keL4Hd58ZG6CwkLWbCSXi5tO6plnzWPUvdQr3NN3ngxbK8wuGWtKxo3V2o0IF
- 35uTR//ax4ujBc5PoSxF448KRz+e2JRA/9tboijhEqO4xvGUdJ3w3qu0cgB7JLy3KCvN
- ZV9RPjikYG5lPOx/BpbwfcbWOa4ta+57T3E/8GZT72GEbeDiyk4YbifmxU2gA7bX7stq
- Yyay/i9ESUd6i51aqEw9scXiXaPLZR7cl2dA/XS4X1b1DvLceTqs36YW0fBJe0TNWdQN
- dR8NlBMscQr7A7gjx+20IohWRh97Il+wzZJKrowF0vOxTG4AORg/XckkIfwTFN+Hrxlw
- xKow==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=XWghytwp0n8q64ohIAtcpx40VHgmilMQUtH3KTGYx7s=;
- b=HuBkXon5aXeaRIY/LnC/LYgKigU+zKECIHgijml+mwVOjr1RcvSj+BtESBxN5a+oFP
- RwVD7E9kWlu+VHT4Bmxlt8dkHsSMKz88TAMokSqi4SQd142gDDUl2Wk0wYewaBH21asm
- LXT2yrwWvfqBz3xJHd7DgPQ07cGCzOXOB9r5f+Bls/C6tRjxa8oGidUUNRqM8IJPEs3B
- NXZrCMwk0Xvs4aMepaqMjrYSUf1AXVuZ7FFmqJqyi6BDj044J/TO+UxukMiM5aY1Wrbe
- 4AF86AR0OXOh+cQWv6+G0CTnmCrcE/m9IlH8VnPbmXPhSdco+sCUoPTJmwXC43+Y/2H5
- qE7A==
-X-Gm-Message-State: APjAAAWztYJF79ecDxmtOc+3Jzfumwz/T3Hh88vLKlnRtXQ0QJ89WUtm
- uU8k5ou4yXcREZUEWyKu7nnSJ3YNmimrjC+vjD0=
-X-Google-Smtp-Source: APXvYqy+D0WYnWREpjT/u0UNR1D7So/F/RtHMLjlI1VSXbpeR4V4jqXmLbxEl/+iyD6g9WR4zGz6r2ARl+qBlG1GTW0=
-X-Received: by 2002:aca:5a04:: with SMTP id o4mr5370457oib.71.1581493138499;
- Tue, 11 Feb 2020 23:38:58 -0800 (PST)
-MIME-Version: 1.0
-References: <20200208183641.6674-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200208183641.6674-6-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200212034239.GA38314@ubuntu-m2-xlarge-x86>
-In-Reply-To: <20200212034239.GA38314@ubuntu-m2-xlarge-x86>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Wed, 12 Feb 2020 07:38:32 +0000
-Message-ID: <CA+V-a8vMcRvsh7+pcgD4jk50X0DtZ9uXFegZVXM5M1k-R6jOVA@mail.gmail.com>
-Subject: Re: [PATCH v4 5/6] PCI: rcar: Add support for rcar PCIe controller in
- endpoint mode
-To: Nathan Chancellor <natechancellor@gmail.com>
+ id 1j1pD9-0007ZR-TI
+ for linux-rockchip@bombadil.infradead.org; Wed, 12 Feb 2020 10:25:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Message-Id:Date:Subject:Cc:To:From:
+ Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:In-Reply-To:References;
+ bh=suyB3h9ymK6CP8F2Bu89jnW4Krg9WTnc1zFYUunw61Y=; b=Wr7MI23L3A8w20FvrZ0zjoE+H5
+ Y9QRh8JNADfgMJg6MuGXWtZPM2lrZMNUDGxIkUI/1NtNCdVTfStTcU4lmG6rausFL+E7eMCwYFqFB
+ 7awC18zy+9Qsz7KwgYLT2CBYLx0g0kRRBVUfVL2ZSuncbjmy58AMe6bexzzEVoFSNBdDmme0XZNfz
+ E8Gpl3WP6Z+U+GCe1c6g64WW4ljCBWYtOWKi7tlzkG7Q9Dzb+us7eK7u48CUpInrmyLNK/j69TriP
+ vNIg7gzBbQbiTKLvYRc1pAUKdCjMpc8SsvDHVj9DRVhm/Sz02jMSONslGMbP/aYZh4uulzePAWOck
+ GqFHnRMg==;
+Received: from newton.telenet-ops.be ([195.130.132.45])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1ox6-0004Zt-6a
+ for linux-rockchip@lists.infradead.org; Wed, 12 Feb 2020 10:09:06 +0000
+Received: from baptiste.telenet-ops.be (baptiste.telenet-ops.be
+ [IPv6:2a02:1800:120:4::f00:13])
+ by newton.telenet-ops.be (Postfix) with ESMTPS id 48Hb2M5FpBzMrFNx
+ for <linux-rockchip@lists.infradead.org>; Wed, 12 Feb 2020 11:08:43 +0100 (CET)
+Received: from ramsan ([84.195.182.253])
+ by baptiste.telenet-ops.be with bizsmtp
+ id 1m8Y2200H5USYZQ01m8YUq; Wed, 12 Feb 2020 11:08:39 +0100
+Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1j1owa-0001EO-IO; Wed, 12 Feb 2020 11:08:32 +0100
+Received: from geert by rox.of.borg with local (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1j1owa-0000LV-FB; Wed, 12 Feb 2020 11:08:32 +0100
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: Russell King <linux@armlinux.org.uk>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Lubomir Rintel <lkundrak@v3.sk>,
+ Heiko Stuebner <heiko@sntech.de>, Magnus Damm <magnus.damm@gmail.com>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Michal Simek <michal.simek@xilinx.com>
+Subject: [PATCH 0/7] ARM: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+Date: Wed, 12 Feb 2020 11:08:23 +0100
+Message-Id: <20200212100830.446-1-geert+renesas@glider.be>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_233904_637518_746FDD45 
-X-CRM114-Status: GOOD (  22.06  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-CRM114-CacheID: sfid-20200212_100904_416608_47419A9B 
+X-CRM114-Status: GOOD (  17.67  )
+X-Spam-Score: 0.1 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
+ Content analysis details:   (0.1 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.csengg[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [195.130.132.45 listed in list.dnswl.org]
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 1.7 SUBJ_OBFU_PUNCT_MANY   Punctuation-obfuscated Subject: header
+ 0.7 SUBJ_OBFU_PUNCT_FEW    Possible punctuation-obfuscated Subject:
+ header
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,110 +91,60 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, Will Deacon <will@kernel.org>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- clang-built-linux@googlegroups.com, Kishon Vijay Abraham I <kishon@ti.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- linux-pci <linux-pci@vger.kernel.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Rob Herring <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- LAK <linux-arm-kernel@lists.infradead.org>, Jingoo Han <jingoohan1@gmail.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>, linux-kernel@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Nathan,
+	Hi all,
 
-On Wed, Feb 12, 2020 at 3:42 AM Nathan Chancellor
-<natechancellor@gmail.com> wrote:
->
-> Hi Lad,
->
-> On Sat, Feb 08, 2020 at 06:36:40PM +0000, Lad Prabhakar wrote:
-> > This patch adds support for rcar PCIe controller to work in endpoint mode.
-> >
-> > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > ---
-> >  drivers/pci/controller/Kconfig        |   7 +
-> >  drivers/pci/controller/Makefile       |   1 +
-> >  drivers/pci/controller/pcie-rcar-ep.c | 492 ++++++++++++++++++++++++++++++++++
-> >  drivers/pci/controller/pcie-rcar.h    |   6 +
-> >  4 files changed, 506 insertions(+)
-> >  create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
-> >
->
-> <snip>
->
-> > diff --git a/drivers/pci/controller/pcie-rcar-ep.c b/drivers/pci/controller/pcie-rcar-ep.c
-> > new file mode 100644
-> > index 0000000..32a7fca
-> > --- /dev/null
-> > +++ b/drivers/pci/controller/pcie-rcar-ep.c
->
-> <snip>
->
-> > +static int rcar_pcie_ep_set_bar(struct pci_epc *epc, u8 func_no,
-> > +                             struct pci_epf_bar *epf_bar)
-> > +{
-> > +     struct rcar_pcie *ep = epc_get_drvdata(epc);
-> > +     dma_addr_t cpu_addr = epf_bar->phys_addr;
-> > +     int flags = epf_bar->flags | LAR_ENABLE | LAM_64BIT;
-> > +     enum pci_barno bar = epf_bar->barno;
-> > +     u64 size = 1ULL << fls64(epf_bar->size - 1);
-> > +     u32 mask;
-> > +     int idx;
-> > +     int err;
-> > +
-> > +     idx = find_first_zero_bit(ep->ib_window_map, ep->num_ib_windows);
-> > +     if (idx >= ep->num_ib_windows) {
-> > +             dev_err(ep->dev, "no free inbound window\n");
-> > +             return -EINVAL;
-> > +     }
-> > +
-> > +     if ((flags & PCI_BASE_ADDRESS_SPACE) == PCI_BASE_ADDRESS_SPACE_IO)
-> > +             flags |= IO_SPACE;
-> > +
-> > +     ep->bar_to_atu[bar] = idx;
-> > +     /* use 64 bit bars */
-> > +     set_bit(idx, ep->ib_window_map);
-> > +     set_bit(idx + 1, ep->ib_window_map);
-> > +
-> > +     if (cpu_addr > 0) {
-> > +             unsigned long nr_zeros = __ffs64(cpu_addr);
-> > +             u64 alignment = 1ULL << nr_zeros;
-> > +
-> > +             size = min(size, alignment);
-> > +     } else {
-> > +             size = size;
-> > +     }
->
-> We received a report from the 0day bot that clang warns that this is
-> unnecessary. Would you mind removing it if you have to spin up a new
-> version?
->
-Sure ill fix that.
+The OF clock helpers were moved to <linux/of_clk.h> a while ago.
+Hence code that is not a clock provider, but just needs to call
+of_clk_init(), can (and should) include <linux/of_clk.h> instead of
+<linux/clk-provider.h>.
 
-Cheers,
---Prabhakar Lad
+All these patches are independent of each others, and thus can be
+applied by the corresponding subsystem maintainers.
 
-> You can view the full report here:
->
-> https://groups.google.com/d/msg/clang-built-linux/KHUKw5L8yxw/Mb7KRMG7BQAJ
->
-> Cheers,
-> Nathan
+Thanks!
+
+Geert Uytterhoeven (7):
+  ARM/time: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+  ARM: mediatek: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+  ARM: mmp: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+  ARM: rockchip: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+  ARM: shmobile: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+  ARM: sunxi: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+  ARM: zynq: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+
+ arch/arm/kernel/time.c                   | 2 +-
+ arch/arm/mach-mediatek/mediatek.c        | 2 +-
+ arch/arm/mach-mmp/mmp-dt.c               | 2 +-
+ arch/arm/mach-mmp/mmp2-dt.c              | 2 +-
+ arch/arm/mach-rockchip/rockchip.c        | 2 +-
+ arch/arm/mach-shmobile/setup-rcar-gen2.c | 2 +-
+ arch/arm/mach-sunxi/sunxi.c              | 2 +-
+ arch/arm/mach-zynq/common.c              | 2 +-
+ 8 files changed, 8 insertions(+), 8 deletions(-)
+
+-- 
+2.17.1
+
+Gr{oetje,eeting}s,
+
+						Geert
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+							    -- Linus Torvalds
 
 _______________________________________________
 Linux-rockchip mailing list
