@@ -2,55 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 060E715DF81
-	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Feb 2020 17:09:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EFDD15E265
+	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Feb 2020 17:23:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=153e5GyL4HPOa6xzKNtcWOC04aYTgi6s+uitkY6wklI=; b=bi4PN3FgdH8gci
-	Sh+1juR9WkwkREH3nyPpYBQL1YgoBk9V73XXbXq6vO6+7mo39KbYMx58dW0oo9gApq+cfEqnrOleL
-	N9LqiY+YVEWu+WMfozPDMXYQtVA082JSt4Ofr0lnH37+s/qMoECCioGImPeWV/UrlyXi9lkiPfg0u
-	11RFHLiBMFoocjfuH3iVms0M3TjXUJrC3mzsEzWKsYn368zyoGKe06ufRzoE/TQfwb8fOZiPFw0uJ
-	ksUpv/sOLcak/15NoHSbrGQkiEh6UwzLlhQRzRvPVL3LynIkLNuYDJKuR7E7jkz4dCwWOLuRM7equ
-	W1Nw1aRQeIAEWKByv1LQ==;
+	List-Owner; bh=LmKPoxFFl7y7kDF9yp1O1CYP78zRlzTI3KmA0qwqt68=; b=h/XXJJHZPkjLty
+	vmdQAi9yl5OsKq7HINxFKYMAFksXvCl6h+Y9gW6SLyqh9hQx7JlGyvCgikcQ8JPHbd5zAOiUA74gR
+	rZsynUhsJLJZ7uSu5M4ja7arBrvmBAqehwZcAV7Z4hHGL+vCHrib8xy/N/lZ2p4oHYUFDdc9SSW/k
+	tGgmlFdvjxmWfvw0M8V3mYjJ5M3HFlW7iM9oCRTvR4wGaPSinT5L7nLgatblfVNtRtVMIHNk0JSuY
+	j7/KhiXhjuK9uJ/0bD4vC9UQ+vRgPg9F8X79zlYYpHd1wOKH56NIh3HEGe3z9rChHT3mKSu7TTupD
+	jIDFT2QHSSIzFHSltrHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dWe-0000D3-NP; Fri, 14 Feb 2020 16:09:08 +0000
+	id 1j2dka-00072q-Mz; Fri, 14 Feb 2020 16:23:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dK2-0001SB-7N; Fri, 14 Feb 2020 15:56:10 +0000
+ id 1j2dSj-0003lb-7P; Fri, 14 Feb 2020 16:05:07 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4966E222C4;
- Fri, 14 Feb 2020 15:56:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A638724695;
+ Fri, 14 Feb 2020 16:05:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581695765;
- bh=JvWkGWu+zJTSt92/+C6IwYRDtjcfu7RIC81rjcj5734=;
+ s=default; t=1581696304;
+ bh=j27L0uvNh+GXvHJve/VVwZnTA0Mp4pOfRumbA87sMpU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=TTRI66nYB6bjGjTkhsiAnORyyaC+WipCURdl/VPmglhPP1akP2W1XQ5ahZBb7+rYz
- r+vhSai35+xSnSpNA2Q79kiLH18YbmcFh/J5PN3dVXRSnQCU4coEui+6z+NE7frdoH
- J0I1q9mBosalJEYwLU10mYFkyU/0gLA6cHed1i6Q=
+ b=tj2kdl1EJt9h7her1FvKgZVcdJUH/Akz0bnCE7s7T+inkHrtJPJsBnBDpJD8eZfY9
+ YZ4ITHc3pO6g6Fh3JH3F+HJX7rQocUXLtR73/VwLv4P+a8mU6zozyZT/RnA48Bp5fd
+ z7JsedqKRYoRL2OVLxHMnfax22zHuihu8+xgnFLM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 332/542] ARM: dts: rockchip: add reg property to
- brcmf sub node for rk3188-bqedison2qc
-Date: Fri, 14 Feb 2020 10:45:24 -0500
-Message-Id: <20200214154854.6746-332-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 148/459] arm64: dts: rockchip: Fix NanoPC-T4
+ cooling maps
+Date: Fri, 14 Feb 2020 10:56:38 -0500
+Message-Id: <20200214160149.11681-148-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200214154854.6746-1-sashal@kernel.org>
-References: <20200214154854.6746-1-sashal@kernel.org>
+In-Reply-To: <20200214160149.11681-1-sashal@kernel.org>
+References: <20200214160149.11681-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_075606_415803_07F2A45B 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20200214_080505_312293_45BF97F3 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,51 +83,70 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
  Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
- Johan Jonker <jbx6244@gmail.com>, linux-arm-kernel@lists.infradead.org
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Johan Jonker <jbx6244@gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
 
-[ Upstream commit cf206bca178cd5b5a436494b2e0cea75295944f4 ]
+[ Upstream commit a793e19c15f25a126138ac4ae9facf9204754af3 ]
 
-An experimental test with the command below gives this error:
-rk3188-bqedison2qc.dt.yaml: dwmmc@10218000: wifi@1:
-'reg' is a required property
+Although it appeared to follow logically from the bindings, apparently
+the thermal framework can't properly cope with a single cooling device
+being shared between multiple maps. The CPU zone is probably easier to
+overheat, so remove the references to the (optional) fan from the GPU
+cooling zone to avoid things getting confused. Hopefully GPU-intensive
+tasks will leak enough heat across to the CPU zone to still hit the
+fan trips before reaching critical GPU temperatures.
 
-So fix this by adding a reg property to the brcmf sub node.
-Also add #address-cells and #size-cells to prevent more warnings.
-
-make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
-
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Link: https://lore.kernel.org/r/20200110134420.11280-1-jbx6244@gmail.com
+Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+Link: https://lore.kernel.org/r/5bb39f3115df1a487d717d3ae87e523b03749379.1573908197.git.robin.murphy@arm.com
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/rk3188-bqedison2qc.dts | 3 +++
- 1 file changed, 3 insertions(+)
+ .../boot/dts/rockchip/rk3399-nanopc-t4.dts    | 27 -------------------
+ 1 file changed, 27 deletions(-)
 
-diff --git a/arch/arm/boot/dts/rk3188-bqedison2qc.dts b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-index c8b62bbd6a4a4..ad1afd403052a 100644
---- a/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-+++ b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-@@ -466,9 +466,12 @@
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&sd1_clk>, <&sd1_cmd>, <&sd1_bus4>;
- 	vmmcq-supply = <&vccio_wl>;
-+	#address-cells = <1>;
-+	#size-cells = <0>;
- 	status = "okay";
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts b/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts
+index 2a127985ab171..d3ed8e5e770f1 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts
+@@ -94,33 +94,6 @@
+ 	};
+ };
  
- 	brcmf: wifi@1 {
-+		reg = <1>;
- 		compatible = "brcm,bcm4329-fmac";
- 		interrupt-parent = <&gpio3>;
- 		interrupts = <RK_PD2 GPIO_ACTIVE_HIGH>;
+-&gpu_thermal {
+-	trips {
+-		gpu_warm: gpu_warm {
+-			temperature = <55000>;
+-			hysteresis = <2000>;
+-			type = "active";
+-		};
+-
+-		gpu_hot: gpu_hot {
+-			temperature = <65000>;
+-			hysteresis = <2000>;
+-			type = "active";
+-		};
+-	};
+-	cooling-maps {
+-		map1 {
+-			trip = <&gpu_warm>;
+-			cooling-device = <&fan THERMAL_NO_LIMIT 1>;
+-		};
+-
+-		map2 {
+-			trip = <&gpu_hot>;
+-			cooling-device = <&fan 2 THERMAL_NO_LIMIT>;
+-		};
+-	};
+-};
+-
+ &pinctrl {
+ 	ir {
+ 		ir_rx: ir-rx {
 -- 
 2.20.1
 
