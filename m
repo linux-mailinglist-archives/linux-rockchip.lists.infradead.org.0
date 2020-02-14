@@ -2,84 +2,92 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55B9215D65E
-	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Feb 2020 12:14:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1285C15D8A7
+	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Feb 2020 14:41:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ywmFtdXtzYO2TBBpKQJ0u3l5EOS4l6fXB9AI+eGcrDA=; b=d3BsyQdw+j5r+H
-	tLimQGCPusC6jxf9AHSgIvvTYd/t56etWg5q1uXhpHHwDnsz5U6rGY/cfCwIXOkDijXMyU5ZmUNIH
-	9N+Hj4iEsB63dqYg5uRXKnZytsCHYL4wQuk3rs+SKDKf9fsjBiIy08xCyIFOGKrdO5IlkitD9fmQx
-	bkUBTEvIv9lu59ZSck/1+LYqwOh9UHNQgRPnLfTZAseepzFzgmWLLgsYWNaJWXGfQcXVyln6FuEHO
-	Myk5ZK585dmiLmGu4DBaV3X//M1hEZGILAKF1mo8mYjzLGUmeZWoHv6snlvm26ai5hNox+yJPhU6o
-	q2IwxCjZqDlCW2vaD60Q==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:MIME-Version
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rVjfl5FgsE2KZSrJURUfZV6Ork7w07Db89ft9u6Hqfw=; b=Kbh+AKBZz9yply
+	r8ygDU4BXIom6OxRcb3vb/uXbz67yADh0QRBnKqR+enK7mDQKBOjOX4ync3xk2e0Dtfzv2Kzp9Wpq
+	qXY8MyTscP80RroHuO383y6cU0d5b2bbvrLjqPkOkWYLAEjLUMYSuMGPpdzR52GVqSC57SSExDoZ3
+	VfWcBMRnNQy/Xygb99Bv8QdETI0tlUO5aYtll/CGw2afg9g3VPtjOtG30vZQ2KER/kAcUatp3opWc
+	FjeZg45ZisW1oB8qjQdGOjxGGMCMtAZfAPmgIcH/YSHCPtlGEaOg19HoigdoBEwMxJd38Sh/b4538
+	Ou1wntpf3j8Hj+DlEJjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2Yvp-0005K6-0K; Fri, 14 Feb 2020 11:14:49 +0000
-Received: from mailgate1.rohmeurope.com ([178.15.145.194])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2Yvd-0005C2-P0; Fri, 14 Feb 2020 11:14:39 +0000
-X-AuditID: c0a8fbf4-279ff70000001e6c-6b-5e46811668cc
-Received: from smtp.reu.rohmeu.com (will-cas002.reu.rohmeu.com
- [192.168.251.178])
- by mailgate1.rohmeurope.com (Symantec Messaging Gateway) with SMTP id
- E8.DD.07788.611864E5; Fri, 14 Feb 2020 12:14:30 +0100 (CET)
-Received: from WILL-MAIL002.REu.RohmEu.com ([fe80::e0c3:e88c:5f22:d174]) by
- WILL-CAS002.REu.RohmEu.com ([fe80::fc24:4cbc:e287:8659%12]) with mapi id
- 14.03.0439.000; Fri, 14 Feb 2020 12:14:18 +0100
-From: "Vaittinen, Matti" <Matti.Vaittinen@fi.rohmeurope.com>
-To: "linus.walleij@linaro.org" <linus.walleij@linaro.org>
-Subject: Re: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
-Thread-Topic: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
-Thread-Index: AQHVmWQOgs5cHlsmlU+Vdtkf5ZbC06eIlAaAgAAGWoCAAC7LgICSQxwA
-Date: Fri, 14 Feb 2020 11:14:18 +0000
-Message-ID: <81f96837457028ad9eeb690776526701d5b1bc8c.camel@fi.rohmeurope.com>
-References: <20191112141819.GA22076@localhost.localdomain>
- <201911131438.KT6pnFZ7%lkp@intel.com>
- <ac16492e11899ef4ec981f7f2e84714c7d61d2a7.camel@fi.rohmeurope.com>
- <CACRpkdYAmye8wT39fqy=LN+6pXDvrcQ0SyDTCvG7aSgea3Uumw@mail.gmail.com>
-In-Reply-To: <CACRpkdYAmye8wT39fqy=LN+6pXDvrcQ0SyDTCvG7aSgea3Uumw@mail.gmail.com>
-Accept-Language: en-US, de-DE
-Content-Language: de-DE
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [213.255.186.46]
-Content-ID: <B125B6ABB10ADA4B93001582484ED809@de.rohmeurope.com>
+	id 1j2bDG-0008MX-0l; Fri, 14 Feb 2020 13:40:58 +0000
+Received: from mail-qv1-xf29.google.com ([2607:f8b0:4864:20::f29])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j2bDC-0008Ln-32
+ for linux-rockchip@lists.infradead.org; Fri, 14 Feb 2020 13:40:56 +0000
+Received: by mail-qv1-xf29.google.com with SMTP id l14so4254629qvu.12
+ for <linux-rockchip@lists.infradead.org>; Fri, 14 Feb 2020 05:40:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=ossystems-com-br.20150623.gappssmtp.com; s=20150623;
+ h=from:mime-version:date:message-id:subject:to;
+ bh=51AC91Nhs+ZUAy33jEU8LnyzCLeeyuPv8ZSEzgFOI+4=;
+ b=hhHh9whpLefLEHQMiR0WG9owJqSS4XpABDGyDECnDXDUmeOEtCD8DdzaAeNKoe6aY0
+ KwrNtnwxCVEQ/35UarzQ6cQPs37O0LaYwj0CBV/1OuvOxjeQvIA57bvPO4veB7rZnecL
+ C2t3/u4A3RZp3nyfX7Y1EN4CoMeiebo6IJQkNtCJ4AA54X/O2xgkV3gXWxbnocZCutFg
+ 9az/XvVMCs3/8ll1W8uHPG8uBeM2KNTcnNhVtTJ7Bwz5jlMoGXKYQlokdlGCLLQMxRT0
+ Rem1dPH0mR4g8L7nNMeGwPeWf7KTOjnNcXls4Uvu/vQsO3liVGtDDJlnI0YSLg7ikr83
+ WvvQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:mime-version:date:message-id:subject:to;
+ bh=51AC91Nhs+ZUAy33jEU8LnyzCLeeyuPv8ZSEzgFOI+4=;
+ b=S3WX/QionaM7s9vczV31JbgFTlq+TRt1+PyrnY+Dqfa6hLSu6ujTdX9LvH5uXYMnIj
+ oJC/p1MatE6NYST4OxaeIbvsPiBXpHBlYm7N4FCOAiptZ+jeyGMmtlGAC8aWAUj2fhx5
+ jI2qgFgWoCktXWfzNLYNOcFOVWnvx+eOtPyLSaCNVJYoeXlU5bMEO95tlbyLi2l+9lyU
+ NOkz9Z1bPt9PmXaF4k/k0+5F7qPCx0Nwc0+8nl0ldxC/wNqB1Ai70W5WiQYhL9U/laZj
+ xkHMS/tScmThgCQlYLw54EGnLg9LCjSRmNtZlGdy2WmLjs0y3VgPqdVmoBaY+q/4FSa8
+ o1yA==
+X-Gm-Message-State: APjAAAWdzC6x8LwBbed3ttt9dSejZc60u92hm1m9GjIRHToopw04hXFR
+ c399AtV6ZkWbwNA/UINFxibQIO95e9Zasg==
+X-Google-Smtp-Source: APXvYqzNmx48leHNi8749/tbqawoG/1sV6J29eqUYA/wHQ8bow0wRr8gHMn1NW+3JALAgc/tX4rxvQ==
+X-Received: by 2002:a05:6214:108a:: with SMTP id
+ o10mr2096704qvr.246.1581687647861; 
+ Fri, 14 Feb 2020 05:40:47 -0800 (PST)
+Received: from mail-qk1-f181.google.com (mail-qk1-f181.google.com.
+ [209.85.222.181])
+ by smtp.gmail.com with ESMTPSA id v78sm3357733qkb.48.2020.02.14.05.40.46
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 14 Feb 2020 05:40:47 -0800 (PST)
+From: Otavio Salvador <otavio.salvador@ossystems.com.br>
+X-Google-Original-From: Otavio Salvador <otavio@ossystems.com.br>
+Received: by mail-qk1-f181.google.com with SMTP id d11so9166176qko.8
+ for <linux-rockchip@lists.infradead.org>; Fri, 14 Feb 2020 05:40:46 -0800 (PST)
+X-Received: by 2002:a05:620a:1037:: with SMTP id
+ a23mr383586qkk.82.1581687646320; 
+ Fri, 14 Feb 2020 05:40:46 -0800 (PST)
 MIME-Version: 1.0
-X-Brightmail-Tracker: H4sIAAAAAAAAA02TbVBUVRzG59x3wK3LirvH9WXGJTNyhLS3Y2MmTsNcPqQ11ZQ2Qte4shDs
- 0t3FYWWKBVNml0xWmRrXRQmwmF23bDchDAZafFkjREGXzCiBJVhqlolphuFN2utN4dN97nme
- 5/87H/6HwZU3aA2TozcJop7P01KxRHvDjHeDqjQt46nhay+ga0MzBCqPfEmjb0OdAHX3+3Hk
- OXKJQJ1tEQK1l/YCNB25SKPqk8cAcjaY0fzgXyQqre8lUFdFEKCq2a8w5B0Kksje1kUj3+lZ
- gHovOCnUe/AGQJ1TbhydD0cwNHF3Hkf2O+doZAuGSDR2cJBCo54+EpV9/DRyngkQ6NSch0T+
- T99BTb4vcOQM3ALoaF0PgYZP+CgUcYcAOv51OhqfSkVXAlYcTfm7sW3ruLLxyxQ3/sshmjt1
- tphz/NFFce6ecoo7N+gmOXvXBq7Z0U9zdd42ijttncS4upYwxnldVoqztHcT3G/BFoqrOHmP
- 4Hz1Ja+qdsdt2cub9r+ek61P2fpunO7zpiqiYAIWNfzooS2gBtoAw0D2GVg5nW4DsYySvQVg
- 6w+1lPwTALDs9mVcClHsFmi7TdtADJPAboYdASchaZw9Fg/HOp6Q9FL2RXjncA8lxRPYrdD3
- XZws02BgNlVKEOxaOH54lJS0gt0Bj3s/IWXSPwD2jQ4DyYhhX4ONTsv98YBdBa2WCCaj1ND7
- 5+T9MmRZWN/Sjct6GQwP3fv/XAtbpwYIiYuzSfCbCylydRv02PpoWa+BVRUDtHyHeHj1RIio
- BCrHIoJjoe1Y1HYsajsWtWsA6QIwn8/Jy+ZNwsZkUShMFg26/OjnPUO+F8gr+u/3YN6f7gcY
- A/xgOYNplyly9WkZykf2GrLMOt6oyxQL8wSjH0AG1yYoOtZEPUUWbz4giIYH1gqG0KoV6wbs
- e5SsxHpfEAoE8YG7kmG0UBH+KFqMF4VsoWhfTp5pwcaYGGl4rCbBKOizBJEvNOkypeXINEa3
- Q7KWRLn2EolrLODzo6dy9SewnqkMV9fizMXqM7W4ktAb9IJGrVglRVkpqivUPwSNATUDtEsV
- v0vukug7fThnLIrAoogjSS9LCBO/YGkswK48NLFLNe2uefyVzPVUyvaiZnOr+9H03OXq7eII
- s69/9/Xnm38OWWcm9TtuXndcTYp8uHOzqzELuF6aeyN1V+Jnc40u/9ri4kuhTaXq54KJtl+5
- mStv3ky0v/3B/rMlq1ePHD3wbKWTX/lW7t97mu42qEY0JebG5BXnNzU/llFuLN85pCWMOn7j
- k7ho5P8DL+cyqWQEAAA=
+Date: Fri, 14 Feb 2020 10:40:35 -0300
+X-Gmail-Original-Message-ID: <CAP9ODKprPi8N-dU8NaKwneXH-3b0ipSEDpU5mDbGntxuyhGhJw@mail.gmail.com>
+Message-ID: <CAP9ODKprPi8N-dU8NaKwneXH-3b0ipSEDpU5mDbGntxuyhGhJw@mail.gmail.com>
+Subject: USB DWC2 stops responding when insert/remove cable multiple times
+To: Minas Harutyunyan <hminas@synopsys.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ linux-usb@vger.kernel.org, Felipe Balbi <balbi@kernel.org>, 
+ Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org, 
+ Johan Hovold <johan@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_031437_960693_993A3A6B 
-X-CRM114-Status: GOOD (  15.63  )
+X-CRM114-CacheID: sfid-20200214_054054_166134_ED339AFA 
+X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.15.145.194 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,110 +100,355 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "andrew@lunn.ch" <andrew@lunn.ch>,
- "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "heiko@sntech.de" <heiko@sntech.de>,
- "geert+renesas@glider.be" <geert+renesas@glider.be>,
- "narmstrong@baylibre.com" <narmstrong@baylibre.com>,
- "patrice.chotard@st.com" <patrice.chotard@st.com>,
- "paul@crapouillou.net" <paul@crapouillou.net>,
- "eric@anholt.net" <eric@anholt.net>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "jason@lakedaemon.net" <jason@lakedaemon.net>,
- "f.fainelli@gmail.com" <f.fainelli@gmail.com>, "lkp@intel.com" <lkp@intel.com>,
- "gregory.clement@bootlin.com" <gregory.clement@bootlin.com>,
- "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "wens@csie.org" <wens@csie.org>, "agross@kernel.org" <agross@kernel.org>,
- "bcm-kernel-feedback-list@broadcom.com"
- <bcm-kernel-feedback-list@broadcom.com>,
- "rjui@broadcom.com" <rjui@broadcom.com>,
- "sebastian.hesselbarth@gmail.com" <sebastian.hesselbarth@gmail.com>,
- "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
- "mazziesaccount@gmail.com" <mazziesaccount@gmail.com>,
- "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
- "nicolas.ferre@microchip.com" <nicolas.ferre@microchip.com>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "linux-rpi-kernel@lists.infradead.org" <linux-rpi-kernel@lists.infradead.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "kbuild-all@lists.01.org" <kbuild-all@lists.01.org>,
- "sbranden@broadcom.com" <sbranden@broadcom.com>,
- "sean.wang@kernel.org" <sean.wang@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- "wahrenst@gmx.net" <wahrenst@gmx.net>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "linux-oxnas@groups.io" <linux-oxnas@groups.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi-deeee-Ho Peeps!
+ the USB port stops responding. To recover the port we need to reload
+the g_serial module.
+
+I have reports of it happening in the field, on the device but, until
+recently, it very hard to reproduce. We found that it is very easy to
+reproduce when we use the Microsoft Surface Dock, as hub.
+
+Description of the host:
+
+    Operating System: Windows 10 Pro
+    Driver: libusb-1.0 1.0.22
+
+Description of the target:
+
+    SoC: Rockchip RV1108G
+    Gadget: g_serial
+    Linux: 5.4.19
+
+dmesg:
+
+    [    0.000000] Booting Linux on physical CPU 0xf00
+    [    0.000000] Linux version 5.4.19 (oe-user@oe-host) (gcc version
+8.3.0 (GCC)) #1 SMP Thu Feb 13 20:45:28 UTC 2020
+    [    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7),
+cr=10c5387d
+    [    0.005064] rcu: Hierarchical SRCU implementation.
+    [    0.005746] smp: Bringing up secondary CPUs ...
+    [    0.005774] smp: Brought up 1 node, 1 CPU
+    [    0.005793] SMP: Total of 1 processors activated (48.00 BogoMIPS).
+    [    0.005807] CPU: All CPU(s) started in SVC mode.
+    [    0.006567] devtmpfs: initialized
+    [    0.015073] VFP support v0.3: implementor 41 architecture 2
+part 30 variant 7 rev 5
+    [    0.015550] clocksource: jiffies: mask: 0xffffffff max_cycles:
+0xffffffff, max_idle_ns: 19112604462750000 ns
+    [    0.015598] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+    [    0.015793] pinctrl core: initialized pinctrl subsystem
+    [    0.017748] NET: Registered protocol family 16
+    [    0.018265] DMA: preallocated 256 KiB pool for atomic coherent
+allocations
+    [    0.021331] cpuidle: using governor menu
+    [    0.021896] Failed to find PMU node
+    [    0.022081] hw-breakpoint: found 5 (+1 reserved) breakpoint and
+4 watchpoint registers.
+    [    0.022101] hw-breakpoint: maximum watchpoint size is 8 bytes.
+    [    0.022469] Serial: AMBA PL011 UART driver
+    [    0.071825] iommu: Default domain type: Translated
+    [    0.073343] usbcore: registered new interface driver usbfs
+    [    0.073455] usbcore: registered new interface driver hub
+    [    0.073558] usbcore: registered new device driver usb
+    [    0.074199] pps_core: LinuxPPS API ver. 1 registered
+    [    0.074228] pps_core: Software ver. 5.3.6 - Copyright 2005-2007
+Rodolfo Giometti <giometti@linux.it>
+    [    0.074281] PTP clock support registered
+    [    0.077278] clocksource: Switched to clocksource arch_sys_counter
+    [    0.872886] thermal_sys: Registered thermal governor 'step_wise'
+    [    0.873716] NET: Registered protocol family 2
+    [    0.874688] tcp_listen_portaddr_hash hash table entries: 512
+(order: 0, 6144 bytes, linear)
+    [    0.874747] TCP established hash table entries: 1024 (order: 0,
+4096 bytes, linear)
+    [    0.874793] TCP bind hash table entries: 1024 (order: 1, 8192
+bytes, linear)
+    [    0.874832] TCP: Hash tables configured (established 1024 bind 1024)
+    [    0.874997] UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+    [    0.875055] UDP-Lite hash table entries: 256 (order: 1, 8192
+bytes, linear)
+    [    0.875376] NET: Registered protocol family 1
+    [    0.876470] RPC: Registered named UNIX socket transport module.
+    [    0.876498] RPC: Registered udp transport module.
+    [    0.876513] RPC: Registered tcp transport module.
+    [    0.876527] RPC: Registered tcp NFSv4.1 backchannel transport module.
+    [    0.877671] hw perfevents: enabled with armv7_cortex_a7 PMU
+driver, 5 counters available
+    [    0.880681] workingset: timestamp_bits=30 max_order=15 bucket_order=0
+    [    0.893227] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+    [    0.894966] NFS: Registering the id_resolver key type
+    [    0.895040] Key type id_resolver registered
+    [    0.895057] Key type id_legacy registered
+    [    0.895155] ntfs: driver 2.1.32 [Flags: R/O].
+    [    0.896438] Block layer SCSI generic (bsg) driver version 0.4
+loaded (major 249)
+    [    0.896470] io scheduler mq-deadline registered
+    [    0.896487] io scheduler kyber registered
+    [    0.904739] dma-pl330 102a0000.pdma: Loaded driver for PL330 DMAC-241330
+    [    0.904778] dma-pl330 102a0000.pdma:         DBUFF-128x8bytes
+Num_Chans-8 Num_Peri-20 Num_Events-16
+    [    1.046331] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+    [    1.051059] printk: console [ttyS2] disabled
+    [    1.051192] 10210000.serial: ttyS2 at MMIO 0x10210000 (irq =
+22, base_baud = 1500000) is a 16550A
+    [    1.100239] printk: console [ttyS2] enabled
+    [    1.103015] 10230000.serial: ttyS0 at MMIO 0x10230000 (irq =
+23, base_baud = 1500000) is a 16550A
+    [    1.105538] STMicroelectronics ASC driver initialized
+    [    1.127141] brd: module loaded
+    [    1.143433] loop: module loaded
+    [    1.146411] libphy: Fixed MDIO Bus: probed
+    [    1.149263] rk_gmac-dwmac 30200000.eth: IRQ eth_lpi not found
+    [    1.150017] rk_gmac-dwmac 30200000.eth: PTP uses main clock
+    [    1.150537] rk_gmac-dwmac 30200000.eth: no reset control found
+    [    1.151100] rk_gmac-dwmac 30200000.eth: clock input or output? (output).
+    [    1.151712] rk_gmac-dwmac 30200000.eth: Can not read property: tx_delay.
+    [    1.152321] rk_gmac-dwmac 30200000.eth: set tx_delay to 0x30
+    [    1.152834] rk_gmac-dwmac 30200000.eth: Can not read property: rx_delay.
+    [    1.153434] rk_gmac-dwmac 30200000.eth: set rx_delay to 0x10
+    [    1.153957] rk_gmac-dwmac 30200000.eth: integrated PHY? (no).
+    [    1.154582] rk_gmac-dwmac 30200000.eth: cannot get clock clk_mac_speed
+    [    1.160389] rk_gmac-dwmac 30200000.eth: init for RMII
+    [    1.161278] rk_gmac-dwmac 30200000.eth: User ID: 0x10, Synopsys ID: 0x35
+    [    1.161903] rk_gmac-dwmac 30200000.eth:      DWMAC1000
+    [    1.162350] rk_gmac-dwmac 30200000.eth: DMA HW capability
+register supported
+    [    1.162988] rk_gmac-dwmac 30200000.eth: RX Checksum Offload
+Engine supported
+    [    1.163621] rk_gmac-dwmac 30200000.eth: COE Type 2
+    [    1.164055] rk_gmac-dwmac 30200000.eth: TX Checksum insertion supported
+    [    1.164647] rk_gmac-dwmac 30200000.eth: Wake-Up On Lan supported
+    [    1.165261] rk_gmac-dwmac 30200000.eth: Normal descriptors
+    [    1.165764] rk_gmac-dwmac 30200000.eth: Ring mode enabled
+    [    1.166254] rk_gmac-dwmac 30200000.eth: Enable RX Mitigation
+via HW Watchdog Timer
+    [    1.166952] rk_gmac-dwmac 30200000.eth: device MAC address
+1e:39:35:98:a1:87
+    [    1.178781] libphy: stmmac: probed
+    [    1.179133] Micrel KSZ886X Switch stmmac-0:01: attached PHY
+driver [Micrel KSZ886X Switch] (mii_bus:phy_addr=stmmac-0:01,
+irq=POLL)
+    [    1.180193] Micrel KSZ886X Switch stmmac-0:02: attached PHY
+driver [Micrel KSZ886X Switch] (mii_bus:phy_addr=stmmac-0:02,
+irq=POLL)
+    [    1.181245] Micrel KSZ886X Switch stmmac-0:03: attached PHY
+driver [Micrel KSZ886X Switch] (mii_bus:phy_addr=stmmac-0:03,
+irq=POLL)
+    [    1.184175] PPP generic driver version 2.4.2
+    [    1.184975] NET: Registered protocol family 24
+    [    1.185589] usbcore: registered new interface driver asix
+    [    1.186175] usbcore: registered new interface driver ax88179_178a
+    [    1.186796] usbcore: registered new interface driver cdc_ether
+    [    1.187547] usbcore: registered new interface driver net1080
+    [    1.188148] usbcore: registered new interface driver cdc_subset
+    [    1.188748] usbcore: registered new interface driver zaurus
+    [    1.189387] usbcore: registered new interface driver cdc_ncm
+    [    1.189969] usbcore: registered new interface driver qmi_wwan
+    [    1.191575] dwc2 30180000.usb: 30180000.usb supply vusb_d not
+found, using dummy regulator
+    [    1.192497] dwc2 30180000.usb: 30180000.usb supply vusb_a not
+found, using dummy regulator
+    [    1.195816] dwc2 30180000.usb: Configuration mismatch. dr_mode
+forced to device
+    [    1.196585] dwc2 30180000.usb: dwc2_check_params: Invalid
+parameter lpm_clock_gating=1
+    [    1.197503] dwc2 30180000.usb: EPs: 10, dedicated fifos, 972
+entries in SPRAM
+    [    1.199459] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+    [    1.489983] mmcblk0rpmb: mmc0:0001 M62704 partition 3 512 KiB,
+chardev (244:0)
+    [    1.493533]  mmcblk0: p1 p2 p3
+    [    1.524856] EXT4-fs (mmcblk0p1): mounted filesystem with
+ordered data mode. Opts: (null)
+    [    1.525716] VFS: Mounted root (ext4 filesystem) on device 179:1.
+    [    1.527211] devtmpfs: mounted
+    [    1.530123] Freeing unused kernel memory: 1024K
+    [    1.537665] Run /sbin/init as init process
+    [    1.597420] usb 1-1: new high-speed USB device number 2 using
+ehci-platform
+    [    1.649836] usb 1-1: New USB device found, idVendor=05e3,
+idProduct=0610, bcdDevice=32.98
+    [    1.650591] usb 1-1: New USB device strings: Mfr=0, Product=1,
+SerialNumber=0
+    [    1.651236] usb 1-1: Product: USB2.0 Hub
+    [    1.653862] hub 1-1:1.0: USB hub found
+    [    1.654696] hub 1-1:1.0: 4 ports detected
+    [    1.977454] usb 1-1.1: new full-speed USB device number 3 using
+ehci-platform
+    [    2.130837] usb 1-1.1: New USB device found, idVendor=163c,
+idProduct=0407, bcdDevice= 0.01
+    [    2.131654] usb 1-1.1: New USB device strings: Mfr=1,
+Product=2, SerialNumber=0
+    [    2.132317] usb 1-1.1: Product: USB Key
+    [    2.132673] usb 1-1.1: Manufacturer: Watchdata
+    [    2.442526] EXT4-fs: Warning: mounting with data=journal
+disables delayed allocation and O_DIRECT support!
+    [    2.453496] EXT4-fs (mmcblk0p3): mounted filesystem with
+journalled data mode. Opts: data=journal
+    [    2.619187] udevd[96]: starting version 3.2.7
+    [    2.635211] random: udevd: uninitialized urandom read (16 bytes read)
+    [    2.637861] random: udevd: uninitialized urandom read (16 bytes read)
+    [    2.638686] random: udevd: uninitialized urandom read (16 bytes read)
+    [    2.656198] udevd[96]: specified group 'kvm' unknown
+    [    2.693678] udevd[97]: starting eudev-3.2.7
+    [    3.022805] rk808-rtc rk808-rtc: registered as rtc0
+    [    3.227418] wdtoken: loading out-of-tree module taints kernel.
+    [    3.248176] usbcore: registered new interface driver WatchToken(2.6)
+    [    5.290161] emlog:emlog_init: version 0.70 running, major is
+243, MINOR is 1, max size 900 K.
+    [    5.392396] EXT4-fs (mmcblk0p1): re-mounted. Opts: (null)
+    [    6.792766] urandom_read: 1 callbacks suppressed
+    [    6.792781] random: dd: uninitialized urandom read (512 bytes read)
+    [    7.074770] random: dbus-uuidgen: uninitialized urandom read
+(12 bytes read)
+    [    7.075530] random: dbus-uuidgen: uninitialized urandom read (8
+bytes read)
+    [   35.146552] random: crng init done
+    [   35.146887] random: 2 urandom warning(s) missed due to ratelimiting
+    [   35.227827] zram: Added device: zram0
+    [   35.257802] zram0: detected capacity change from 0 to 108220416
+    [   35.289142] Adding 105680k swap on /dev/zram0.  Priority:100
+extents:1 across:105680k SS
+    [   44.339044] of_dma_request_slave_channel: dma-names property of
+node '/serial@10230000' missing or empty
+    [   44.339905] ttyS0 - failed to request DMA
+    [   44.679614] rk_gmac-dwmac 30200000.eth eth0: PHY [stmmac-0:01]
+driver [Micrel KSZ886X Switch]
+    [   44.687858] rk_gmac-dwmac 30200000.eth eth0: No Safety Features
+support found
+    [   44.688546] rk_gmac-dwmac 30200000.eth eth0: PTP not supported by HW
+    [   44.689140] rk_gmac-dwmac 30200000.eth eth0: configuring for
+phy/rmii link mode
+    [   46.807797] rk_gmac-dwmac 30200000.eth eth0: Link is Up -
+100Mbps/Full - flow control rx/tx
+    [   59.647746] g_serial gadget: Gadget Serial v2.4
+    [   59.648178] g_serial gadget: g_serial ready
+    [   59.653920] dwc2 30180000.usb: bound driver g_serial
+    [   59.912364] dwc2 30180000.usb: new device is high-speed
+    [   59.949981] dwc2 30180000.usb: new address 12
+    [   60.034937] g_serial gadget: high-speed config #2: CDC ACM config
+    [   65.980382] phy phy-10300000.syscon:usb2-phy@100.0: charger =
+USB_CDP_CHARGER
+    [   66.313267] dwc2 30180000.usb: new device is high-speed
+    [   66.350902] dwc2 30180000.usb: new address 13
+    [   66.388065] g_serial gadget: high-speed config #2: CDC ACM config
+    [  311.604251] dwc2 30180000.usb: new device is high-speed
+    [  311.641798] dwc2 30180000.usb: new address 14
+    [  311.745597] g_serial gadget: high-speed config #2: CDC ACM config
+    [  312.905102] dwc2 30180000.usb: new device is high-speed
+    [  312.944301] dwc2 30180000.usb: new address 15
+    [  312.967867] g_serial gadget: high-speed config #2: CDC ACM config
+    [  314.828173] dwc2 30180000.usb: new device is high-speed
+    [  314.866943] dwc2 30180000.usb: new address 16
+    [  314.889550] g_serial gadget: high-speed config #2: CDC ACM config
 
 
-On Wed, 2019-11-13 at 10:40 +0100, Linus Walleij wrote:
-> On Wed, Nov 13, 2019 at 7:52 AM Vaittinen, Matti
-> <Matti.Vaittinen@fi.rohmeurope.com> wrote:
-> > On Wed, 2019-11-13 at 14:30 +0800, kbuild test robot wrote:
-> > > Hi Matti,
-> > > 
-> > > Thank you for the patch! Perhaps something to improve:
-> > > 
-> > > [auto build test WARNING on
-> > > 70d97e099bb426ecb3ad4bf31e88dbf2ef4b2e4c]
-> > > 
-> > >    480        static int wmt_gpio_get_direction(struct gpio_chip
-> > > *chip, unsigned offset)
-> > >    481        {
-> > >    482                struct wmt_pinctrl_data *data =
-> > > gpiochip_get_data(chip);
-> > >    483                u32 bank = WMT_BANK_FROM_PIN(offset);
-> > >    484                u32 bit = WMT_BIT_FROM_PIN(offset);
-> > >    485                u32 reg_dir = data->banks[bank].reg_dir;
-> > >    486                u32 val;
-> > >    487
-> > >    488                val = readl_relaxed(data->base + reg_dir);
-> > >    489                if (val & BIT(bit))
-> > >  > 490                        GPIO_LINE_DIRECTION_OUT;
-> > 
-> > Right. Return is missing. I think I already fixed this - I guess I
-> > sent
-> > wrong version... Sorry guys. I'll do v3 with only this return added
-> > -
-> > and I'll send it to limited amount of recipients as I think most of
-> > you
-> > guys may not be interested. Probably to Linus W, Geert and GPIO
-> > list
-> > only. Let me know if you want to see the v3 (or other subsequent
-> > patches)
+The "[  314.889550] g_serial gadget: high-speed config #2: CDC ACM
+config" message is the last time it is detected. As mentioned, to
+restore the port to work, we need to reload the g_serial module.
 
-I just noticed this was never merged even though I was sure I sent a
-fixed version. It took me a while but I guess I managed to dig out the
-reason...
+When we reload it, following exception happens:
 
-First I sent v2 with the return missing:
-https://lore.kernel.org/linux-gpio/20191112141819.GA22076@localhost.localdomain/
+    [  923.942418] pc : [<c0850638>]    lr : [<bf045d44>]    psr: a00f0093
+    [  923.942979] sp : c6739d48  ip : 00005401  fp : c5938038
+    [  923.943445] r10: 00000000  r9 : ffffffed  r8 : c5c88480
+    [  923.943914] r7 : c0aef318  r6 : 000000d4  r5 : 00000000  r4 : 00000000
+    [  923.944498] r3 : 00000000  r2 : c5ecd400  r1 : c5c88480  r0 : 000000d4
+    [  923.945092] Flags: NzCv  IRQs off  FIQs on  Mode SVC_32  ISA
+ARM  Segment none
+    [  923.945737] Control: 10c5387d  Table: 65cbc06a  DAC: 00000051
+    [  923.946256] Process sat (pid: 604, stack limit = 0xa8f463ac)
+    [  923.946768] Stack: (0xc6739d48 to 0xc673a000)
+    [  923.947168] 9d40:                   c6738000 00000000 c5c88480
+c5ecd400 c5c88480 c0d05c88
+    [  923.947901] 9d60: 00000000 c5ecd400 00000000 0f200000 c0aef318
+c5c88480 ffffffed c04f96e8
+    [  923.948634] 9d80: c5ecd400 c05013bc c5ecd400 00000000 00000000
+c5c88480 c5ecd400 0f200000
+    [  923.949367] 9da0: c0aef318 c6738000 ffffffed c096dc70 c5938038
+c04fb5a4 00000902 c0d8ec98
+    [  923.950099] 9dc0: c5ecd400 c708b9d0 00000000 c0d05c88 00000000
+c096dcf0 c593a140 00000000
+    [  923.950832] 9de0: 00000000 c5938038 c5c88480 c5938038 c5c88480
+c02b509c c6739ec8 c0d05c88
+    [  923.951564] 9e00: c5938038 c5c88480 00000000 c5938038 00000000
+c5c88488 c02b4fbc c02ac538
+    [  923.952296] 9e20: c6739ec8 00000000 00000902 00000000 00000002
+00000000 c5938038 c02bf778
+    [  923.953028] 9e40: c6739e68 00000003 00000000 00000006 00000000
+000041ed 00000000 00000000
+    [  923.953760] 9e60: 00000041 00000047 00000000 00000000 00000000
+ffffe000 00000000 c0a744d0
+    [  923.954493] 9e80: 00000002 c5938038 c708b9d0 c6f313b8 c6d138c0
+00004000 00000000 c0d05c88
+    [  923.955225] 9ea0: c6738000 00000012 c6739f70 00000001 fffff000
+c0101204 c6738000 00000142
+    [  923.955958] 9ec0: b6346874 c02c1930 c708b9d0 c6f313b8 ad6e75ef
+00000006 c70dc015 00000000
+    [  923.956689] 9ee0: 00000000 c6cba6e8 c5938038 00000101 00000002
+00000054 00000000 00000000
+    [  923.957421] 9f00: 00000000 c6739f08 c59116f8 c65c3608 00000001
+00000000 00000000 00000000
+    [  923.958153] 9f20: 00000000 c0d05c88 c0d0626c 00000012 00000020
+c593eb00 c70dc000 00000000
+    [  923.958885] 9f40: 00000400 00000002 ffffff9c ffffff9c c70dc000
+c0d05c88 00000012 ffffff9c
+    [  923.959617] 9f60: c70dc000 c02adb5c 0000004e c0101204 00000902
+00000000 00000006 00000100
+    [  923.960349] 9f80: 00000001 c0d05c88 00000047 003e4ff0 00674450
+0000000d 00000142 c0101204
+    [  923.961082] 9fa0: c6738000 c0101000 003e4ff0 00674450 ffffff9c
+003e4ff0 00000902 00000000
+    [  923.961814] 9fc0: 003e4ff0 00674450 0000000d 00000142 b57ff011
+00040000 00040000 b6346874
+    [  923.962547] 9fe0: 00000002 b6346688 b65478d0 b6f4867c 600f0010
+ffffff9c 00000000 00000000
+    [  923.963304] [<c0850638>] (_raw_spin_lock_irq) from [<bf045d44>]
+(gs_close+0x2c/0x1f0 [u_serial])
+    [  923.964117] [<bf045d44>] (gs_close [u_serial]) from
+[<c04f96e8>] (tty_release+0xf0/0x49c)
+    [  923.964863] [<c04f96e8>] (tty_release) from [<c04fb5a4>]
+(tty_open+0x118/0x450)
+    [  923.965526] [<c04fb5a4>] (tty_open) from [<c02b509c>]
+(chrdev_open+0xe0/0x1b4)
+    [  923.966188] [<c02b509c>] (chrdev_open) from [<c02ac538>]
+(do_dentry_open+0x114/0x3f4)
+    [  923.966897] [<c02ac538>] (do_dentry_open) from [<c02bf778>]
+(path_openat+0x2f8/0x1128)
+    [  923.967613] [<c02bf778>] (path_openat) from [<c02c1930>]
+(do_filp_open+0x74/0xe4)
+    [  923.968290] [<c02c1930>] (do_filp_open) from [<c02adb5c>]
+(do_sys_open+0x174/0x208)
+    [  923.968985] [<c02adb5c>] (do_sys_open) from [<c0101000>]
+(ret_fast_syscall+0x0/0x54)
+    [  923.969675] Exception stack(0xc6739fa8 to 0xc6739ff0)
+    [  923.970136] 9fa0:                   003e4ff0 00674450 ffffff9c
+003e4ff0 00000902 00000000
+    [  923.970868] 9fc0: 003e4ff0 00674450 0000000d 00000142 b57ff011
+00040000 00040000 b6346874
+    [  923.971597] 9fe0: 00000002 b6346688 b65478d0 b6f4867c
+    [  923.972065] Code: f57ff05b e12fff1e f10c0080 f590f000 (e1903f9f)
+    [  923.972618] ---[ end trace 02edbbb9948c159c ]---
+    [  938.908716] g_serial gadget: Gadget Serial v2.4
+    [  938.909152] g_serial gadget: g_serial ready
+    [  938.917148] dwc2 30180000.usb: bound driver g_serial
+    [  939.176179] dwc2 30180000.usb: new device is high-speed
+    [  939.215459] dwc2 30180000.usb: new address 17
+    [  939.422037] g_serial gadget: high-speed config #2: CDC ACM config
 
-And then I did indeed send a fixed version:
-https://lore.kernel.org/linux-gpio/20191113071501.GA22158@localhost.localdomain/#Z30drivers:pinctrl:vt8500:pinctrl-wmt.c
+So, I am a bit lost how to debug this so I'd like to know what kind of
+information might be useful to find the root cause of it?
 
-...but titled this as v2 too. I guess that's why it never caught
-correct attention.
+-- 
+Otavio Salvador                             O.S. Systems
+http://www.ossystems.com.br        http://code.ossystems.com.br
+Mobile: +55 (53) 9 9981-7854          Mobile: +1 (347) 903-9750
 
-I tried rebasing this to current gpio/devel. The pinctrl-ingenic.c had
-gained trivial conflict - do you want me to get the pinctrl tree and do
-merging on top of it && resending this or do you want to try applying
-it?
-
-Sorry for messing with the versions!
-
-Br,
-	Matti Vaittinen
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
