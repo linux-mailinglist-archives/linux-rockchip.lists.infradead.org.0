@@ -2,89 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0C4715FCF3
-	for <lists+linux-rockchip@lfdr.de>; Sat, 15 Feb 2020 06:36:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2118F15FE18
+	for <lists+linux-rockchip@lfdr.de>; Sat, 15 Feb 2020 12:11:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X0d8LMu5FAiuWaGFyYEJOWL59UE71WPQX5bkg/c+J2M=; b=QRZUOszOLDkm02
-	uXYSMeIxE51I6lFMJvfj8/gCZP9JjAyj7LnZK724qLMejayEL4Hn6nsRsW7xA/i+xVoSkdXe1n1RZ
-	/iDBg+UgYLvh66XjgsiDYM35p6PEVPJ6j+Z8yQeK//vcoOJI1aHY5R50xrjikvXDYBLYEJHAeFMsx
-	rODlXSWI2T1AMH9ODCwY9bD8vTAaZaNhCttbGwMcpAJhfZLgffYmzFax6frWfZ6gYC5BrExW/87C7
-	HpWnbmR7TrP398vBZnHWpHLI2oHhVzyMiGgbmwgGz1/bKrBjLcQ9Xk/21O0XUkdfHg9Z/+SkYW/hi
-	0CumPjZI03L+FLzcA/vA==;
+	List-Owner; bh=u4BPQeGd1BkRvyfuPQQDMFfkkhNgDsAXhoZpdFq6eQU=; b=d6nqKUIZv822Ro
+	GhP8SHnuqgkrL9pQu2ulfbNA2lZqm/i4BCiGmGjOg/wxnNrytHa5UrlYoAFrQ6v8EEBBdk/XXBRXr
+	f8QILSvocyBVR3ioqxGWUrTOuGaBLaIMus8/9xlbQw6AQsChXS38/F2Ri3O4bz9LiR8ZOHr1ouL22
+	KwkciipuueBn1dKfQL97EVVjAmMmkx5xzW20ty3ZIM61yHHdC79dk+UlUDkJdBd8uCL52kHCO8uxX
+	F8gTA/NgUPxtefH+t33xKibTPlvUXVcQNye9vh42imxNmQfwGbdRP4YVcQXgK118dSdSDm/u5aDF5
+	PteDf5kyXppGiKFFfwXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2q7v-0004R4-Ly; Sat, 15 Feb 2020 05:36:27 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1j2vMM-0008BH-5t; Sat, 15 Feb 2020 11:11:42 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2q7f-0004Fl-47
- for linux-rockchip@lists.infradead.org; Sat, 15 Feb 2020 05:36:13 +0000
-Received: by mail-pg1-x543.google.com with SMTP id d6so6114916pgn.5
- for <linux-rockchip@lists.infradead.org>; Fri, 14 Feb 2020 21:36:10 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=umSLSqFdcTUcW15IlOni/Tuec1i7imfq7Q7J9RYYX4g=;
- b=cIxrqNRp65WCtK+fiYn9g3PVPZKXWCeUB0uFKNIzbK215QX3Al36Ke7lSPKliczQPG
- zRn7Bi6DqLKPjlqWNiNyIv1hfnOjroG9dJAo7zBVoxdcOscAu96nnIAHZ0M1KbXjm0Sl
- ZR04ZlFB/h9Rx1G6+2XpmHZ6qc00E2hKTf9RBjGMhvM/S7iYiuAY2TTttm/rFAuLs3bq
- Tl4EPCrQfsVTe0Oz0o9vN+XxWzhv+LiQ+CYz/xTgBuLMVClebtR7iuNxNAyHBtWlm0Wp
- bHYgpgS19tzczImghBSGzs7yS4YbFHy+7+42F6gNr1Xyalax7P6gX0gNY6JBKTkCYKiJ
- SqhA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=umSLSqFdcTUcW15IlOni/Tuec1i7imfq7Q7J9RYYX4g=;
- b=CWiSBzKs1+dhzXbIxPNBgCqcdB6TwCIWF/jr+D6153u7tn61v5IbMhcXCbKIJR9J65
- njGUwvqOphi94sJvmoXHRMO+dooEMOY/Ve6XK+maHiVi9AagtLb4fkqF0t/dBGWX2gIY
- 7cgNw+KsDPtSmLX4MUrnUuXqwtCNmyRY2EpAeb5FoKuFbapj/3JlS7ZIQr5JrrCkAR7k
- q2QcvwqlW0lU2F4cpoGIHxUr6GacX3EoH3ONRcm4khQCF8VCtoHqApzP0uGbUejKLvYR
- DLUID6zSTFbtwVZuVsOUy008mXGFZNYRoWTFaGSDGsFXgu8jiEG8cwXWEYXB7ScmlpdF
- gPoA==
-X-Gm-Message-State: APjAAAXBmls+MjIDR4x1ip5UxR4zupqh5CpK6UpigjqOKrmEDE5w6kMo
- ajNOO6Em3I0OaSwiHBKXoANJoA==
-X-Google-Smtp-Source: APXvYqzk4mzSWnD3eisseNOAoKEFSWYJ3iXu/MnMV3x1ieUnd9jyOy7C/UGmCSr9X/1fRkBJKg6m3w==
-X-Received: by 2002:a62:6842:: with SMTP id d63mr6945184pfc.113.1581744969478; 
- Fri, 14 Feb 2020 21:36:09 -0800 (PST)
-Received: from ripper (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id q12sm8411743pfh.158.2020.02.14.21.36.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 14 Feb 2020 21:36:08 -0800 (PST)
-Date: Fri, 14 Feb 2020 21:35:17 -0800
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
-Subject: Re: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
-Message-ID: <20200215053517.GN955802@ripper>
-References: <20191112141819.GA22076@localhost.localdomain>
+ id 1j2vMH-000875-Ts
+ for linux-rockchip@lists.infradead.org; Sat, 15 Feb 2020 11:11:39 +0000
+Received: from p508fda41.dip0.t-ipconnect.de ([80.143.218.65]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1j2vM0-0006YX-5X; Sat, 15 Feb 2020 12:11:20 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Jianqun Xu <jay.xu@rock-chips.com>
+Subject: Re: [PATCH v4 2/2] pinctrl: rockchip: split rockchip pinctrl driver
+ by SoC type
+Date: Sat, 15 Feb 2020 12:11:19 +0100
+Message-ID: <6201612.znBgJCgWHB@phil>
+In-Reply-To: <20200117081358.5772-3-jay.xu@rock-chips.com>
+References: <c4ec95a7-aaf1-2331-352f-2def319a1c7d@rock-chips.com>
+ <20200117081358.5772-1-jay.xu@rock-chips.com>
+ <20200117081358.5772-3-jay.xu@rock-chips.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191112141819.GA22076@localhost.localdomain>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_213611_161805_89551FB9 
-X-CRM114-Status: GOOD (  11.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200215_031138_117931_C9FAABF5 
+X-CRM114-Status: GOOD (  17.09  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,56 +61,115 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Heiko Stuebner <heiko@sntech.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Patrice Chotard <patrice.chotard@st.com>, Paul Cercueil <paul@crapouillou.net>,
- Eric Anholt <eric@anholt.net>, linux-stm32@st-md-mailman.stormreply.com,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Gregory Clement <gregory.clement@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- linux-rockchip@lists.infradead.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Andy Gross <agross@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-msm@vger.kernel.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Jason Cooper <jason@lakedaemon.net>, mazziesaccount@gmail.com,
- Ray Jui <rjui@broadcom.com>, linux-gpio@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Scott Branden <sbranden@broadcom.com>,
- Sean Wang <sean.wang@kernel.org>, Nicolas Ferre <nicolas.ferre@microchip.com>,
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- Stefan Wahren <wahrenst@gmx.net>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-oxnas@groups.io
+Cc: linux-gpio@vger.kernel.org, linus.walleij@linaro.org,
+ linux-kernel@vger.kernel.org, kever.yang@rock-chips.com,
+ linux-rockchip@lists.infradead.org, david.wu@rock-chips.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue 12 Nov 06:18 PST 2019, Matti Vaittinen wrote:
-> diff --git a/drivers/pinctrl/qcom/pinctrl-msm.c b/drivers/pinctrl/qcom/pinctrl-msm.c
-> index 763da0be10d6..8844ca1261d5 100644
-> --- a/drivers/pinctrl/qcom/pinctrl-msm.c
-> +++ b/drivers/pinctrl/qcom/pinctrl-msm.c
-> @@ -485,8 +485,8 @@ static int msm_gpio_get_direction(struct gpio_chip *chip, unsigned int offset)
+Hi Jay,
+
+Am Freitag, 17. Januar 2020, 09:13:58 CET schrieb Jianqun Xu:
+> The pinctrl-rockchip driver grows larger by adding support for
+> each new SoC, that make the kernel Image size too large since
+> it only under one config named PINCTRL_ROCKCHIP.
+> 
+> This patch split driver in the form of core driver + soc driver,
+> - pinctrl-rockchip.c defined an platform probe register function
+> - pinctrl-rkxxxx.c init module by matching compatible name
+> 
+> For rockchip_defconfig, it needs to select all PINCTRL_RKxxxx to
+> keep same with old driver.
+> 
+> For some special defconfig, it can only select one PINCTRL_RKxxxx.
+> 
+> Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
+> Signed-off-by: Jianqun Xu <jay.xu@rock-chips.com>
+> ---
+> changes since v3:
+> - add base patch with directory change only, suggested by Robin
+> - rebase patch
+> 
+> changes since v2:
+> - remove rockchip_pinctrl_remove
+> - rename rockchip_pinctrl_* to rockchip_pctrl_*
+> - redule arguments for get_soc_data
+> - add module author for each new driver files
+> - add copyright for new driver files
+> 
+> changes since v1:
+> - add rockchip_pinctrl_remove
+> - remove unused head files in pinctrl-rockchip.h
+> 
+>  drivers/pinctrl/rockchip/Kconfig            |  114 +
+>  drivers/pinctrl/rockchip/Makefile           |   14 +
+>  drivers/pinctrl/rockchip/pinctrl-px30.c     |  224 ++
+>  drivers/pinctrl/rockchip/pinctrl-rk2928.c   |   70 +
+>  drivers/pinctrl/rockchip/pinctrl-rk3036.c   |   69 +
+>  drivers/pinctrl/rockchip/pinctrl-rk3066a.c  |   72 +
+>  drivers/pinctrl/rockchip/pinctrl-rk3066b.c  |   51 +
+>  drivers/pinctrl/rockchip/pinctrl-rk3128.c   |  161 ++
+>  drivers/pinctrl/rockchip/pinctrl-rk3188.c   |  147 ++
+>  drivers/pinctrl/rockchip/pinctrl-rk3228.c   |  225 ++
+>  drivers/pinctrl/rockchip/pinctrl-rk3288.c   |  210 ++
+>  drivers/pinctrl/rockchip/pinctrl-rk3308.c   |  420 +++
+>  drivers/pinctrl/rockchip/pinctrl-rk3328.c   |  272 ++
+>  drivers/pinctrl/rockchip/pinctrl-rk3368.c   |  125 +
+>  drivers/pinctrl/rockchip/pinctrl-rk3399.c   |  195 ++
+>  drivers/pinctrl/rockchip/pinctrl-rockchip.c | 2547 ++-----------------
+>  drivers/pinctrl/rockchip/pinctrl-rockchip.h |  388 +++
+>  drivers/pinctrl/rockchip/pinctrl-rv1108.c   |  214 ++
+>  18 files changed, 3149 insertions(+), 2369 deletions(-)
+
+What Robin suggested, was doing this incrementally. So keep your patch1
+but then do
+- patch2: split out px30-pinctrl
+- patch3: split out rk3288 pinctrl
+- etc
+
+Because even my mail client chokes on this massive 6000 line patch, so a
+real review is actually very difficult.
+
+
+> diff --git a/drivers/pinctrl/rockchip/Kconfig b/drivers/pinctrl/rockchip/Kconfig
+> index 7a0077ca32dd..4873a05108f8 100644
+> --- a/drivers/pinctrl/rockchip/Kconfig
+> +++ b/drivers/pinctrl/rockchip/Kconfig
+> @@ -5,8 +5,122 @@ if (ARCH_ROCKCHIP || COMPILE_TEST)
+>  config PINCTRL_ROCKCHIP
+>  	bool
+>  	select PINMUX
+> +	select PINCONF
+>  	select GENERIC_PINCONF
+> +	select GPIOLIB_IRQCHIP
+>  	select GENERIC_IRQ_CHIP
+>  	select MFD_SYSCON
 >  
->  	val = msm_readl_ctl(pctrl, g);
->  
-> -	/* 0 = output, 1 = input */
-> -	return val & BIT(g->oe_bit) ? 0 : 1;
-> +	return val & BIT(g->oe_bit) ? GPIO_LINE_DIRECTION_OUT :
-> +				      GPIO_LINE_DIRECTION_IN;
+> +config PINCTRL_PX30
+> +	tristate "PX30 pin controller driver"
+> +	depends on GPIOLIB && OF
+> +	select PINCTRL_ROCKCHIP
 
-For pinctrl-msm:
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+you might want to add a
+	default y if ARM64
+here
+(similar default y if ARM for arm32 pinctrl drivers)
 
->  }
+Because otherwise you're breaking peoples kernel configs and also
+the default is to build a somewhat unified kernel in the default defconfigs,
+so we want all matching pinctrl drivers by default and people then can
+disable drivers if they really want to build a slimmed down kernel.
 
-Regards,
-Bjorn
+With the "if ARM" / "if ARM64" parts you even save some space by
+default as well, as you build only the relevant drivers.
+
+
+Heiko
+
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
