@@ -2,62 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56BCA15E40B
-	for <lists+linux-rockchip@lfdr.de>; Fri, 14 Feb 2020 17:33:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0C4715FCF3
+	for <lists+linux-rockchip@lfdr.de>; Sat, 15 Feb 2020 06:36:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=153e5GyL4HPOa6xzKNtcWOC04aYTgi6s+uitkY6wklI=; b=Xyrb58FZchC1MO
-	lscWjYwOGHXgD/1ogXLyyNjpIuwmLfmrBP/Vk91GlZwQbvSj01upxjmyzX6s0hgaaH/L3sq21DP8k
-	4zuQkHWPlCBYBanDYeKsAaA6kPrYGgPUd7F4qd6KktRFl/dzRsWxFOmQ9X1+zEHwkby404czXXl/T
-	NOXITiu+x6gxhzPVg2TfLXmk7UJtbfRWAijaCKwYm1dfwV78k9KA+ZkMBmcUyX+xX8oGLC9qXSVTy
-	l1z5CFuAFlF8KqkYwK8QGy6ZF2MjHMpyAUvuoCuF8EszxBZg7rDfEjA5NHnVfqf6Yg3zEAXP/pmSs
-	oCtSotkn8bpmfMfRkKWg==;
+	List-Owner; bh=X0d8LMu5FAiuWaGFyYEJOWL59UE71WPQX5bkg/c+J2M=; b=QRZUOszOLDkm02
+	uXYSMeIxE51I6lFMJvfj8/gCZP9JjAyj7LnZK724qLMejayEL4Hn6nsRsW7xA/i+xVoSkdXe1n1RZ
+	/iDBg+UgYLvh66XjgsiDYM35p6PEVPJ6j+Z8yQeK//vcoOJI1aHY5R50xrjikvXDYBLYEJHAeFMsx
+	rODlXSWI2T1AMH9ODCwY9bD8vTAaZaNhCttbGwMcpAJhfZLgffYmzFax6frWfZ6gYC5BrExW/87C7
+	HpWnbmR7TrP398vBZnHWpHLI2oHhVzyMiGgbmwgGz1/bKrBjLcQ9Xk/21O0XUkdfHg9Z/+SkYW/hi
+	0CumPjZI03L+FLzcA/vA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2duY-0002Pf-9i; Fri, 14 Feb 2020 16:33:50 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j2q7v-0004R4-Ly; Sat, 15 Feb 2020 05:36:27 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dVc-0007kB-L7; Fri, 14 Feb 2020 16:08:08 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EF9D624699;
- Fri, 14 Feb 2020 16:08:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696483;
- bh=JvWkGWu+zJTSt92/+C6IwYRDtjcfu7RIC81rjcj5734=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ugOKhRb0nHHGn5bOFsv7z+sgnj/4FLQwW6el7IlzxNnKpbCz+39EoZL1S5VNZ4dI7
- cNMYK3QAHY22Yx1dz2PjqVmikfTudb3Wt9oagD0BnqsnGyaNKh5gAG0dYEs3TLNxPA
- 8vYN/JCEi8STkb++k6cD58nzC74iI6sxlrqq1WIg=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 290/459] ARM: dts: rockchip: add reg property to
- brcmf sub node for rk3188-bqedison2qc
-Date: Fri, 14 Feb 2020 10:59:00 -0500
-Message-Id: <20200214160149.11681-290-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200214160149.11681-1-sashal@kernel.org>
-References: <20200214160149.11681-1-sashal@kernel.org>
+ id 1j2q7f-0004Fl-47
+ for linux-rockchip@lists.infradead.org; Sat, 15 Feb 2020 05:36:13 +0000
+Received: by mail-pg1-x543.google.com with SMTP id d6so6114916pgn.5
+ for <linux-rockchip@lists.infradead.org>; Fri, 14 Feb 2020 21:36:10 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=umSLSqFdcTUcW15IlOni/Tuec1i7imfq7Q7J9RYYX4g=;
+ b=cIxrqNRp65WCtK+fiYn9g3PVPZKXWCeUB0uFKNIzbK215QX3Al36Ke7lSPKliczQPG
+ zRn7Bi6DqLKPjlqWNiNyIv1hfnOjroG9dJAo7zBVoxdcOscAu96nnIAHZ0M1KbXjm0Sl
+ ZR04ZlFB/h9Rx1G6+2XpmHZ6qc00E2hKTf9RBjGMhvM/S7iYiuAY2TTttm/rFAuLs3bq
+ Tl4EPCrQfsVTe0Oz0o9vN+XxWzhv+LiQ+CYz/xTgBuLMVClebtR7iuNxNAyHBtWlm0Wp
+ bHYgpgS19tzczImghBSGzs7yS4YbFHy+7+42F6gNr1Xyalax7P6gX0gNY6JBKTkCYKiJ
+ SqhA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=umSLSqFdcTUcW15IlOni/Tuec1i7imfq7Q7J9RYYX4g=;
+ b=CWiSBzKs1+dhzXbIxPNBgCqcdB6TwCIWF/jr+D6153u7tn61v5IbMhcXCbKIJR9J65
+ njGUwvqOphi94sJvmoXHRMO+dooEMOY/Ve6XK+maHiVi9AagtLb4fkqF0t/dBGWX2gIY
+ 7cgNw+KsDPtSmLX4MUrnUuXqwtCNmyRY2EpAeb5FoKuFbapj/3JlS7ZIQr5JrrCkAR7k
+ q2QcvwqlW0lU2F4cpoGIHxUr6GacX3EoH3ONRcm4khQCF8VCtoHqApzP0uGbUejKLvYR
+ DLUID6zSTFbtwVZuVsOUy008mXGFZNYRoWTFaGSDGsFXgu8jiEG8cwXWEYXB7ScmlpdF
+ gPoA==
+X-Gm-Message-State: APjAAAXBmls+MjIDR4x1ip5UxR4zupqh5CpK6UpigjqOKrmEDE5w6kMo
+ ajNOO6Em3I0OaSwiHBKXoANJoA==
+X-Google-Smtp-Source: APXvYqzk4mzSWnD3eisseNOAoKEFSWYJ3iXu/MnMV3x1ieUnd9jyOy7C/UGmCSr9X/1fRkBJKg6m3w==
+X-Received: by 2002:a62:6842:: with SMTP id d63mr6945184pfc.113.1581744969478; 
+ Fri, 14 Feb 2020 21:36:09 -0800 (PST)
+Received: from ripper (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id q12sm8411743pfh.158.2020.02.14.21.36.07
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 14 Feb 2020 21:36:08 -0800 (PST)
+Date: Fri, 14 Feb 2020 21:35:17 -0800
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+Subject: Re: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
+Message-ID: <20200215053517.GN955802@ripper>
+References: <20191112141819.GA22076@localhost.localdomain>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+Content-Disposition: inline
+In-Reply-To: <20191112141819.GA22076@localhost.localdomain>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_080804_754263_5A2C1E67 
-X-CRM114-Status: GOOD (  10.20  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200214_213611_161805_89551FB9 
+X-CRM114-Status: GOOD (  11.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -67,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,56 +97,56 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
- Johan Jonker <jbx6244@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Heiko Stuebner <heiko@sntech.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Patrice Chotard <patrice.chotard@st.com>, Paul Cercueil <paul@crapouillou.net>,
+ Eric Anholt <eric@anholt.net>, linux-stm32@st-md-mailman.stormreply.com,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Gregory Clement <gregory.clement@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ linux-rockchip@lists.infradead.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Andy Gross <agross@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ linux-arm-msm@vger.kernel.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ Jason Cooper <jason@lakedaemon.net>, mazziesaccount@gmail.com,
+ Ray Jui <rjui@broadcom.com>, linux-gpio@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Scott Branden <sbranden@broadcom.com>,
+ Sean Wang <sean.wang@kernel.org>, Nicolas Ferre <nicolas.ferre@microchip.com>,
+ linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+ Stefan Wahren <wahrenst@gmx.net>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-oxnas@groups.io
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Johan Jonker <jbx6244@gmail.com>
+On Tue 12 Nov 06:18 PST 2019, Matti Vaittinen wrote:
+> diff --git a/drivers/pinctrl/qcom/pinctrl-msm.c b/drivers/pinctrl/qcom/pinctrl-msm.c
+> index 763da0be10d6..8844ca1261d5 100644
+> --- a/drivers/pinctrl/qcom/pinctrl-msm.c
+> +++ b/drivers/pinctrl/qcom/pinctrl-msm.c
+> @@ -485,8 +485,8 @@ static int msm_gpio_get_direction(struct gpio_chip *chip, unsigned int offset)
+>  
+>  	val = msm_readl_ctl(pctrl, g);
+>  
+> -	/* 0 = output, 1 = input */
+> -	return val & BIT(g->oe_bit) ? 0 : 1;
+> +	return val & BIT(g->oe_bit) ? GPIO_LINE_DIRECTION_OUT :
+> +				      GPIO_LINE_DIRECTION_IN;
 
-[ Upstream commit cf206bca178cd5b5a436494b2e0cea75295944f4 ]
+For pinctrl-msm:
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 
-An experimental test with the command below gives this error:
-rk3188-bqedison2qc.dt.yaml: dwmmc@10218000: wifi@1:
-'reg' is a required property
+>  }
 
-So fix this by adding a reg property to the brcmf sub node.
-Also add #address-cells and #size-cells to prevent more warnings.
-
-make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
-
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Link: https://lore.kernel.org/r/20200110134420.11280-1-jbx6244@gmail.com
-Signed-off-by: Heiko Stuebner <heiko@sntech.de>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- arch/arm/boot/dts/rk3188-bqedison2qc.dts | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/arch/arm/boot/dts/rk3188-bqedison2qc.dts b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-index c8b62bbd6a4a4..ad1afd403052a 100644
---- a/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-+++ b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-@@ -466,9 +466,12 @@
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&sd1_clk>, <&sd1_cmd>, <&sd1_bus4>;
- 	vmmcq-supply = <&vccio_wl>;
-+	#address-cells = <1>;
-+	#size-cells = <0>;
- 	status = "okay";
- 
- 	brcmf: wifi@1 {
-+		reg = <1>;
- 		compatible = "brcm,bcm4329-fmac";
- 		interrupt-parent = <&gpio3>;
- 		interrupts = <RK_PD2 GPIO_ACTIVE_HIGH>;
--- 
-2.20.1
-
+Regards,
+Bjorn
 
 _______________________________________________
 Linux-rockchip mailing list
