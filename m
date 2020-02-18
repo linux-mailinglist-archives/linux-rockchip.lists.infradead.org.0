@@ -2,85 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D15DC163490
-	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Feb 2020 22:14:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA41B16350D
+	for <lists+linux-rockchip@lfdr.de>; Tue, 18 Feb 2020 22:32:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2HPZRQCZSgwqE+jA0cE3iKX8ODYVc7VaN+crmRCOtS8=; b=mDRg4Ek7d4pMVB
-	iGGsLo1e3QdrhQdxoOdATTSKEB8DzottztVGvkYlkIghmiih1J51cGhuTM9fOAo+Tlep9oinEjK6G
-	D6FcBDj2Tf58PfP4MKCkht2hJoenx7w0SX4YQ9Ji/NYsp6UsT1DYsA+xoJ53wCC1xUSUF+fWXgqx3
-	cDpvF8mmxywllo3Gnh9jZxfvq2X1TehU9vQtdSdxvyZXdJhuZEWXyLgZBuCBr7zPMN9InsdzGu96/
-	kdEKrKkaU88P2/ZE98APjPz/1V795a4MYwmTjKPyPWJNxhhuJegihQAJ7erA6h3FasGGVenbnjDCe
-	hJNm0vOyVobKoslVth2w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=HFLqxsWCh4Au3tpsaTH2FT29q21o4uyvuVcQboAPOTw=; b=Kda
+	+nAsmrQYeoCv/8Qm2WsAfn7TnUmL59qACEZoHzaWYOonV7QKZGBoTkq/5dTiKde5ZGu+sP4CINBUv
+	PTZaLYpcuh1MowEzskacNq8iPHJuV81xoX23Ks0QI+v9h8Iy79XfgKNsD7XK3imZ5z5tWhlgM9GdS
+	xbOdunK7VpihwsX5APk+l5Y8y1avI/6+R9AQQ0CePxRJ3WAPesJAaW0n314xPUuAjvJxeP1h8b+2G
+	bsNGtlQmMYwJNMc2IwsMvjRf3NN71Y5VUz16qiY7Ant1dcx3O9Jkmj1+aBSprWOe6xG/BFkekCYtv
+	SuQ6dXelNfEIRFsXCpYpgq/X52/OJOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4ABv-0008HB-93; Tue, 18 Feb 2020 21:14:03 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4ABj-00089C-HW; Tue, 18 Feb 2020 21:13:53 +0000
-Received: by mail-oi1-f195.google.com with SMTP id i1so21586929oie.8;
- Tue, 18 Feb 2020 13:13:50 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Wsp21LIcG4NslijziS7uyMDJScAYzOtQaO+9/p80IQ4=;
- b=huKNAzTQ/RfSRJ39e+WFreo6GHjoZdO1b2u2XwURPkxRxf+3kL2J1QKLAD2aNVqwrO
- gl8E5bJzMqc5WGFk6uZ8ra5hv6I63Kq9AcyaJ4LwLlluMGRIyQ/aA8/J1b/HiHhZObPA
- V39p2fUBBuCBgRdbduB18MFfNzr+8QtgHoqyDkv3UXUpn7zIsdxQ4uiVmMml9/xrIyiI
- okXxWlTdoX3YF8Gn1NAorC5XpSZQGLUvGPq8Qla19REPIKiVlB4OK1Vh/8v+e+OmNefz
- QelacGR965CpgkFjKZQJfPx+d9vBsUIBkjC7j/59WqlJ6J1OZ511/wrubwvNJCzXrxUN
- uzOg==
-X-Gm-Message-State: APjAAAWmR2p/Y53mbriAQvsSzKpH+bsKMGtFaATmM0KN/cA11V1iRWiz
- 03/8noHOKXiyCZ/CX12FMQ==
-X-Google-Smtp-Source: APXvYqzV9oocyBJZGvkp1bADAbLS2xQl21KF+EyRyietsBdKoEM/3HRmoC9kQcpKj2d8Pz3raOUtlA==
-X-Received: by 2002:aca:3542:: with SMTP id c63mr2575156oia.135.1582060430256; 
- Tue, 18 Feb 2020 13:13:50 -0800 (PST)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id m185sm13530oia.26.2020.02.18.13.13.49
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 18 Feb 2020 13:13:49 -0800 (PST)
-Received: (nullmailer pid 15304 invoked by uid 1000);
- Tue, 18 Feb 2020 21:13:48 -0000
-Date: Tue, 18 Feb 2020 15:13:48 -0600
-From: Rob Herring <robh@kernel.org>
-To: Lad Prabhakar <prabhakar.csengg@gmail.com>
-Subject: Re: [PATCH v4 4/6] dt-bindings: PCI: rcar: Add bindings for R-Car
- PCIe  endpoint controller
-Message-ID: <20200218211348.GA15246@bogus>
-References: <20200208183641.6674-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200208183641.6674-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200208183641.6674-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1j4ATn-0000il-S4; Tue, 18 Feb 2020 21:32:32 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4ATZ-0000Ye-90; Tue, 18 Feb 2020 21:32:18 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7DD841FB;
+ Tue, 18 Feb 2020 13:32:15 -0800 (PST)
+Received: from DESKTOP-VLO843J.lan (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CA3723F68F;
+ Tue, 18 Feb 2020 13:32:13 -0800 (PST)
+From: Robin Murphy <robin.murphy@arm.com>
+To: lgirdwood@gmail.com,
+	broonie@kernel.org,
+	heiko@sntech.de
+Subject: [PATCH v2 0/3] Clean up RK3328 audio codec GPIO control
+Date: Tue, 18 Feb 2020 21:31:57 +0000
+Message-Id: <cover.1581376744.git.robin.murphy@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_131351_634587_0C63B4D3 
-X-CRM114-Status: GOOD (  10.40  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200218_133217_362640_EEBB1F04 
+X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,34 +61,38 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-renesas-soc@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Jingoo Han <jingoohan1@gmail.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, linux-arm-kernel@lists.infradead.org,
- Marek Vasut <marek.vasut+renesas@gmail.com>
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
+ pgwipeout@gmail.com, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sat,  8 Feb 2020 18:36:39 +0000, Lad Prabhakar wrote:
-> This patch adds the bindings for the R-Car PCIe endpoint driver.
-> 
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> ---
->  .../devicetree/bindings/pci/rcar-pci-ep.yaml       | 76 ++++++++++++++++++++++
->  1 file changed, 76 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
-> 
+Hi all,
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Since nobody said anything resembling "that looks like a terrible idea!"
+to what I propsed on top of v1, resending as a full v2 per Mark's
+request.
+
+Robin.
+
+
+Robin Murphy (3):
+  ASoC: dt-bindings: Make RK3328 codec GPIO explicit
+  ASoC: rockchip: Make RK3328 GPIO_MUTE control explicit
+  arm64: dts: rockchip: Describe RK3328 GPIO_MUTE users
+
+ .../bindings/sound/rockchip,rk3328-codec.txt  |  7 ++++-
+ arch/arm64/boot/dts/rockchip/rk3328-a1.dts    |  1 +
+ .../arm64/boot/dts/rockchip/rk3328-rock64.dts |  1 +
+ sound/soc/codecs/rk3328_codec.c               | 31 ++++++++++---------
+ 4 files changed, 24 insertions(+), 16 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
