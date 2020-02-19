@@ -2,66 +2,65 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B2F9163F9A
-	for <lists+linux-rockchip@lfdr.de>; Wed, 19 Feb 2020 09:48:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAFDE163FFA
+	for <lists+linux-rockchip@lfdr.de>; Wed, 19 Feb 2020 10:07:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cLk1pUI4OI8gAm0X55Nj7SPiiXqm1wIZOvzd2Oo7WRA=; b=k3oQl6+t0H2a30
-	DZyYKFChbSIf0RKAQ7Xp0c0ESLnJqOlXJWu7QfPiXHt9jCXbZxlHSvP5huHe8VL6RmLNZGr863YeD
-	6B4H38L7KObUepVfYiBLbnwTXCHYr1gv6V3fPSnT6VxF3IYU4EuZ0mxfWAhA1+RSwJjsVVIDo9eFj
-	fWFvXZZKnXuLOM++gA2/M2DuUToPls3MfN33y2CHlqyc0r+aJDBqiyaSFasZOHAPAHBjdn7T3phM4
-	X5IAnhMk7ppQBNa3wFi7EWsKb3qd2qG60h6aVmjDG+CeMnIW4JreMeu7fJQsTD8EuacKuEUpFl32V
-	bR5gaa2FQDCH8xAvKs4w==;
+	List-Owner; bh=6MBf0MSZgkbzg+ZcROAuWQDB56azbJbHXbMdlfEheh4=; b=sZboo4WQEKco2B
+	cHhxdx6V8LurC9c0Te6dMP38nNtiO9nvMboF9nE78BhBApLK7BQqq1oanY7y2L8gnrC/iLshOqi+/
+	h2R0CqfpRnPsz9guac4YpMMlSE6kB4X4zFLpHHHy1h2IiHNO///XlaFdIv1SroFG/22khKiDo15GF
+	eoHSfXYcbweJiGvLEoElbUVIkFT4dqwLDHEl7GO6g73J5PvQPUgtddZ1bAI0LD+vgWoHl7ND7nJDm
+	SiFGD+MhotWwdK63aeXqPn7E4DxtDXy/7bYgcvW9MSm6cm586SYoPaIiPVSiWUir2K/bAMEwS04k1
+	oXdEI1bnKwgjo/6SdF+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4L1t-0003F5-Ki; Wed, 19 Feb 2020 08:48:25 +0000
+	id 1j4LKU-0003Sw-4Y; Wed, 19 Feb 2020 09:07:38 +0000
 Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4L1i-00036F-Na; Wed, 19 Feb 2020 08:48:16 +0000
-Received: by mail-ot1-x342.google.com with SMTP id h9so22337625otj.11;
- Wed, 19 Feb 2020 00:48:13 -0800 (PST)
+ id 1j4LK4-0003GI-Pj; Wed, 19 Feb 2020 09:07:14 +0000
+Received: by mail-ot1-x342.google.com with SMTP id r16so22461357otd.2;
+ Wed, 19 Feb 2020 01:07:12 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=R08prwaXuvTYAVVThubWpAvz2VPPRFnMx93j3J6DFWA=;
- b=ZYDvn5yyYTUZAneLoxLh7tNN/BgyWo8q9Zz8A3QhxnB+c2kruqQe2yFxotIwq/UNMh
- pCX9UQZ7f/8WP6GBXFTNl/rpeNW2cboFPXLL3SPMvTq24KjAt1NSBUiOwyGmU7bkn5w5
- PyhJ/4m3EdSclk6A8bY7Z30e5cbYvRcpJ+pA06hZBbgmTJDggae1ejIOHxqPkyjDdZo1
- H09h5m2NSoRKlpBBOlxt0NT1qFVrrM6qoM6hrZ5ytQxh6o2QGakAqC2WABvzZgay7eUx
- YQ+V/YJk0myvKQTjayfxo95WPmZEaknEK6toa5xdgHgewiXXaYbX/4gOy6xH2JHIbaPS
- AOjQ==
+ :cc; bh=hl9R42S7bTmTIImSyFBNArkLnawsxqytbv3I5jer4iE=;
+ b=XwnW4WNhvn8JGvbdWoY7h4s3J9zIhVUWIk9heioPvbq/FxrffWd1t6dLCIQSjYfwps
+ SBSwawhTSiUw5UEU0m4jchppkrSpXXRgSDXT84Brg5JQg0XZbUWhvnLkAidZSr+beN7D
+ Dv1TjI6UmRs1GjZE2LaBCmoWAZVdPHTrEwoKM0k9vyRI1Avn+zIO+EF3ulIvlpqHw479
+ F2m/agZ1clfz1bpokaCGjmvVI+Tih4XM+li1o/gG0o/WiDoMBarpoP9Vm7EICL9mVaGg
+ +fmatW0lJPsQPnyHwIwyoGswfjj3TxNOV4c1OPY1PC36OyMuSDDGzdhoJt1n+ije6i7h
+ ilew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=R08prwaXuvTYAVVThubWpAvz2VPPRFnMx93j3J6DFWA=;
- b=j92+RSfAhDJZ0ONPgIQUvupTgQxfIZGAol537gWl7nusXtTCSFUE+//Z2lDObOJm9i
- bF9AKqVS6Frv9j4YeXH9kBWR2UwSroVp/Yyir/GIOw50QppXfwZlMaKHnQoAO6R+2BIQ
- 2uqikPYE9j/6aw0mmgzIboAkGBAutGX3WUWmFIXY8FeRcxlukd9atfI8Fk4yO9hndH0F
- IUFkT+GyBbjVQP/CawwbNpbzQHMD9m2tSLXItF47D2CtIe1GfLwr1sqeLkNgp+k2H5Ch
- J+Hjl3ykNoV0pnaZi97RSsoaQZnRRw5UpuNGEabxeTfANX58EF2u++norE0g87IsvYK0
- JpSA==
-X-Gm-Message-State: APjAAAW5ql7NGH05w8n97OIsDeJeDZeyJzq5nZBQoF0MZmIUVLmlhtpH
- LNPIroy2TghHeezImMAhzd68osXiYDnJ039JzPw=
-X-Google-Smtp-Source: APXvYqyJ+/2xM4/pRZqtjAw7TzJq3x97VyAVdB+hLIZ/Kwd+N1nBgR0qLGPwOHDKMHc8A7r6EXU6PhMoAtXdWTjZD4w=
-X-Received: by 2002:a9d:d06:: with SMTP id 6mr19490799oti.176.1582102092752;
- Wed, 19 Feb 2020 00:48:12 -0800 (PST)
+ bh=hl9R42S7bTmTIImSyFBNArkLnawsxqytbv3I5jer4iE=;
+ b=m132KFhpUzmeufRZ2lkrBY+GgpndjKTvsRW9b8/2adYJmAlXn1P4WJdJJLWU2T1aHX
+ vdxgzVQqXJ8uS4SC23u7x2kseKNYBxCl3o+CYf3B8zpoxsNvdgAf+Cx2qYze1ei+KH7g
+ ZbAmWpCGHurrCzxpo66tDqS69V7PeSjAK5iIW5OH8fa2H4/+6/NvJ0+lmZ3Q5nneW7yA
+ yD5emsER3Uv83tEcnD4MQthSH1LNIiGgQveQqHJuel6znY9NSo5pPb1faiT+E9jDhDHK
+ nJmGNwuuPfLt9IiNQeRR6W2LBnWWrGTvQKZXhUj5pb98/7YxUNZ5p6Aw+HZ97SZv5pEr
+ 82OA==
+X-Gm-Message-State: APjAAAUZwuT7YtHxbPTRaI1S4XaPf+4CnKFAq7jlF0TYnR/MYrrysaMi
+ FGwVZRpX6UuNY9Wvckj/TmSK6eHy1iTQC+WFzWuTPkvF+ExSTQ==
+X-Google-Smtp-Source: APXvYqxHKoYOKLSVj2I0oZVyHx/701r0aK9W1LUqkpwYs0YWVF09ezzLoeZkXL7bRk/YGzWf/TnmQEwIspJzwjO/ZWo=
+X-Received: by 2002:a9d:d06:: with SMTP id 6mr19535224oti.176.1582103232048;
+ Wed, 19 Feb 2020 01:07:12 -0800 (PST)
 MIME-Version: 1.0
-References: <20200208183641.6674-3-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200212140434.GA129189@google.com>
-In-Reply-To: <20200212140434.GA129189@google.com>
+References: <20200208183641.6674-2-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200212140127.GA127398@google.com>
+In-Reply-To: <20200212140127.GA127398@google.com>
 From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Wed, 19 Feb 2020 08:47:46 +0000
-Message-ID: <CA+V-a8vVaLpVofr=tp0AXwUzDMwCJ+Byc8VGtmmtOWVSs3GVvg@mail.gmail.com>
-Subject: Re: [PATCH v4 2/6] PCI: rcar: Fix calculating mask for PCIEPAMR
- register
+Date: Wed, 19 Feb 2020 09:06:45 +0000
+Message-ID: <CA+V-a8sBPT-RLvzRFFFwbNghD9X26P5qPntoUvgNHQ6_eUzQBg@mail.gmail.com>
+Subject: Re: [PATCH v4 1/6] PCI: rcar: Preparation for adding endpoint support
 To: Bjorn Helgaas <helgaas@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_004814_770506_CA7DE3B3 
-X-CRM114-Status: GOOD (  20.55  )
+X-CRM114-CacheID: sfid-20200219_010712_838983_9568190E 
+X-CRM114-Status: GOOD (  28.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -121,64 +120,103 @@ Hi Bjorn,
 
 Thank you for the review.
 
-On Wed, Feb 12, 2020 at 2:04 PM Bjorn Helgaas <helgaas@kernel.org> wrote:
+On Wed, Feb 12, 2020 at 2:01 PM Bjorn Helgaas <helgaas@kernel.org> wrote:
 >
-> On Sat, Feb 08, 2020 at 06:36:37PM +0000, Lad Prabhakar wrote:
-> > The mask value was calculated incorrectly for PCIEPAMR register if the
-> > size was less the 128bytes, this patch fixes the above by adding a check
-> > on size.
+> To make the changelog from "git log --oneline" read nicely, the
+> subject should begin with a verb, e.g.,
 >
-> s/less the/less than/
-> s/128bytes,/128 bytes./
-> s/this patch fixes the above/Fix this issue/
+>   PCI: rcar: Move shareable code to a common file
 >
-My bad will fix that.
+> On Sat, Feb 08, 2020 at 06:36:36PM +0000, Lad Prabhakar wrote:
+> > Prepare for adding endpoint support to rcar controller, there are no
+> > functional changes with this patch, a common file is created so that
+> > it can be shared with endpoint driver.
+>
+> This commit log doesn't tell us what this patch does.  "Prepare"
+> conveys no real information.  It's a giant patch and it's difficult
+> to verify that there's no functional change.
+>
+> I *think* what you did was move most of the #defines from pcie-rcar.c
+> to pcie-rcar.h and most of the code from pcie-rcar.c to
+> pcie-rcar-host.c.  And in both case, these were strict *moves* without
+> any changes.  If that's the case, please say that explicitly in the
+> commit log.
+>
+> That's good; thanks for making this a separate patch so it's not
+> mingled with real changes.
+>
+Agreed I shall split this patch further more, first patch just
+renaming the file from
+pcie-rcar.c to pcie-rcar-host.c along with Makefile/Kconfig/defconfig
+changes and
+the second patch pulling out common code that shall be share between
+two drivers.
+This shall make it more easier to review.
 
 > > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 > > ---
-> >  drivers/pci/controller/pcie-rcar.c | 5 +++--
-> >  1 file changed, 3 insertions(+), 2 deletions(-)
+> >  arch/arm64/configs/defconfig            |    2 +-
+> >  drivers/pci/controller/Kconfig          |    4 +-
+> >  drivers/pci/controller/Makefile         |    2 +-
+> >  drivers/pci/controller/pcie-rcar-host.c | 1044 ++++++++++++++++++++++++++
+> >  drivers/pci/controller/pcie-rcar.c      | 1229 ++-----------------------------
+> >  drivers/pci/controller/pcie-rcar.h      |  126 ++++
+> >  6 files changed, 1227 insertions(+), 1180 deletions(-)
+> >  create mode 100644 drivers/pci/controller/pcie-rcar-host.c
+> >  create mode 100644 drivers/pci/controller/pcie-rcar.h
 > >
-> > diff --git a/drivers/pci/controller/pcie-rcar.c b/drivers/pci/controller/pcie-rcar.c
-> > index d5568db..c76a92a 100644
-> > --- a/drivers/pci/controller/pcie-rcar.c
-> > +++ b/drivers/pci/controller/pcie-rcar.c
-> > @@ -71,7 +71,7 @@ void rcar_pcie_set_outbound(int win, void __iomem *base,
-> >       /* Setup PCIe address space mappings for each resource */
-> >       resource_size_t res_start;
-> >       resource_size_t size;
-> > -     u32 mask;
-> > +     u32 mask = 0x0;
+> > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> > index b2f6673..8a1f51d 100644
+> > --- a/arch/arm64/configs/defconfig
+> > +++ b/arch/arm64/configs/defconfig
+> > @@ -182,7 +182,7 @@ CONFIG_HOTPLUG_PCI=y
+> >  CONFIG_HOTPLUG_PCI_ACPI=y
+> >  CONFIG_PCI_AARDVARK=y
+> >  CONFIG_PCI_TEGRA=y
+> > -CONFIG_PCIE_RCAR=y
+> > +CONFIG_PCIE_RCAR_HOST=y
+> >  CONFIG_PCI_HOST_GENERIC=y
+> >  CONFIG_PCI_XGENE=y
+> >  CONFIG_PCIE_ALTERA=y
+> > diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
+> > index f84e5ff..94bb5e9 100644
+> > --- a/drivers/pci/controller/Kconfig
+> > +++ b/drivers/pci/controller/Kconfig
+> > @@ -54,12 +54,12 @@ config PCI_RCAR_GEN2
+> >         There are 3 internal PCI controllers available with a single
+> >         built-in EHCI/OHCI host controller present on each one.
 > >
-> >       rcar_pci_write_reg(base, 0x00000000, PCIEPTCTLR(win));
-> >
-> > @@ -80,7 +80,8 @@ void rcar_pcie_set_outbound(int win, void __iomem *base,
-> >        * keeps things pretty simple.
-> >        */
-> >       size = resource_size(res);
-> > -     mask = (roundup_pow_of_two(size) / SZ_128) - 1;
-> > +     if (size > 128)
-> > +             mask = (roundup_pow_of_two(size) / SZ_128) - 1;
+> > -config PCIE_RCAR
+> > +config PCIE_RCAR_HOST
 >
-> I would put the "mask = 0x0" right here so it's all in one place,
-> i.e.,
+> The config symbol change should be mentioned in the commit log.  In
+> general we try to avoid changing config symbols because it's likely to
+> confuse people who keep their .config and update their kernel.  But I
+> guess your audience is probably pretty small.
 >
->   if (size > 128)
->     mask = (roundup_pow_of_two(size) / SZ_128) - 1;
->   else
->     mask = 0x0;
+I shall mention it in my commit message.
+
+> >       bool "Renesas R-Car PCIe controller"
 >
-Sure will change that.
+> The description needs to be updated, too.  This is what people will
+> see in menuconfig.
+>
+I shall update it accordingly.
+
+> >       depends on ARCH_RENESAS || COMPILE_TEST
+> >       depends on PCI_MSI_IRQ_DOMAIN
+> >       help
+> > -       Say Y here if you want PCIe controller support on R-Car SoCs.
+> > +       Say Y here if you want PCIe controller support on R-Car SoCs in host mode.
+>
+> Wrap this so it fits in 80 columns like the rest of the file.
+>
+Will fix that.
 
 Cheers,
 --Prabhakar Lad
 
-> >       rcar_pci_write_reg(base, mask << 7, PCIEPAMR(win));
-> >
-> >       if (!host) {
-> > --
-> > 2.7.4
-> >
+> Bjorn
 
 _______________________________________________
 Linux-rockchip mailing list
