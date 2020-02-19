@@ -2,54 +2,88 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6312E164C22
-	for <lists+linux-rockchip@lfdr.de>; Wed, 19 Feb 2020 18:38:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B278216502F
+	for <lists+linux-rockchip@lfdr.de>; Wed, 19 Feb 2020 21:42:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AB42GClUJDWnDBlJKk7bcVKvEtE92uRT1UfSbbklH+g=; b=s48WRgCGRO11ph
-	n7mBRFUmt6hA/3SZRa+LA72g+aHEpHA4dcci3QQ2kaug9hmQavStwSE5a31NOAVs9v0vrtuCgU7On
-	ytnN+/rICRyBZ8nTypUdpekFsPxaU272HhDPL1fYtwFb2vpTJEKobLx4ilDKt8lCX+sVEpR/5b3YX
-	76ZV2J+X1amzajlT5HQa6+8xjActdcBnI4rbVuNC19ul4sQ4a0BTgyJ1jeb7J2rw6StVeFrT2BuKB
-	4gj+1HSdG7mvytJRkBnCygPARaGHAj0hTsxsIkFiFrTm6n1hC90ua4hLRVXfeM1zltRB4XZ2LXS23
-	S0grwPg+OJ0rj7d56bKA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=nwU7AqWvCFudFnVTZhaasGP3ZcpTgdH+BnoE9tQau14=; b=ZsT
+	04oODiSg0rUuQmdwIE2tCWJ1Yhms8H3hkP7KIuDDjvlEAYpg8vFxJloPHmfnzEs5CnA41pv0mr2yX
+	fKc1ov31GBVKpOKJ6nr7cwiquxtksLoSjVvvyTSl08q5B034ny000fAKYaEamxi1O0fUzVwXj5YaH
+	5LEoA5rrLHGL7j3JU8bziTHWfBbZ1Za1g0Xe6Hud7sofOVSqr/VKATxTl6ChXclnXDsA5WNPhYRpb
+	TjdI99XI1ITWPKhWI3t9xjS2KDy4klOuNDiD8kzQ1XaaOUnafGZqfzDL6x0h4tifRuM2OxuD96Ku1
+	Bb0IfGiFwOGB2jvMzn1BS7tMOp8/jtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4TJ1-0004sA-CR; Wed, 19 Feb 2020 17:38:39 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1j4WB5-0006HR-FH; Wed, 19 Feb 2020 20:42:39 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4TIx-0004rf-VB
- for linux-rockchip@lists.infradead.org; Wed, 19 Feb 2020 17:38:37 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 5F2DD2946E9
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v5 6/6] arm64: dts: rockchip: rk3399: Define the rockchip
- Video Decoder node
-Date: Wed, 19 Feb 2020 14:37:50 -0300
-Message-Id: <20200219173750.26453-7-ezequiel@collabora.com>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200219173750.26453-1-ezequiel@collabora.com>
-References: <20200219173750.26453-1-ezequiel@collabora.com>
-MIME-Version: 1.0
+ id 1j4WAv-00069U-5V; Wed, 19 Feb 2020 20:42:30 +0000
+Received: by mail-il1-x143.google.com with SMTP id g12so21780795ild.2;
+ Wed, 19 Feb 2020 12:42:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=xMDNRqXigFwE5mAPTxNYoRMwFlx8Rk5qiR4uZXsscw4=;
+ b=qfNCQIIH2j6wCkLKQ2mqWetFZntTRzqNjtBUM8anjzkPqf4Ynd0oWZWBb6hyrQPdCF
+ uN3+mto+zq5HiY0xnelQ4PTO7z5fp0Jptf5qhcMwXW26QHdu1ppBMrN3gLdBGvkz9+7T
+ uRGr6xPSZ2CPQYBvje7dwuPnzGTMvObbihSz3JgDRUVY/mlY9r1FmcAbwILshnrGxHoV
+ YQ7XIWi0j7DxuapC2Mxf0BgFsQfhqPDfPdS4oL0kZVxd1wsk1YdXR26HaffZljlbj16u
+ HGigXFMIMG0GQvDQ1WBnBaABCa1Y1CGM0wnxF/ut7KE88BxGE0dzo71L5H0o2zyYBRH3
+ /9hw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=xMDNRqXigFwE5mAPTxNYoRMwFlx8Rk5qiR4uZXsscw4=;
+ b=oNYSf5JPWVOz4uXnQneW52J5RNmXYVESdcoWqbtbXSv2+/3MOY9KeueTiCeCrihMbu
+ VOs9TfIY8zqCNPbuv+ech6nuElb6K+sL5tjf1/IHEpwmSvYrvbp0Z1MxQh1g4V5Y/jBo
+ Z2WPzWf9a4GZ1aQrBpMYGfqc5yMH3dFCyk47Ppnp0c+3cmM0kzTq1WC/+L9/XAbXXm5n
+ j4rg0yfsJUaC4PU/9ywQqPsQGQx8OSJfMiUcRzk58zw7z+3RnqCcA+sgdR/WKC9k/L5C
+ eRcp8tpNB1evlWOlm9FpFddZvtJG4nwQjbnU07INeFCKU6Jn9afl3BYgZScdk+mBAPDh
+ GKaQ==
+X-Gm-Message-State: APjAAAV3LRdO8y5GmYurCNE6W9TxLbmDycK95nTE9eb2HJ8L8029OWXs
+ HhqvS9JdP1vku7RaLm8gOvT2fsk/
+X-Google-Smtp-Source: APXvYqxamlA1ssz9lk4Vdd4EvOofQze/gD2b+EfZA1Xkq+0ovJF0gt8l+vaKreCew2We51oCAM8OcA==
+X-Received: by 2002:a92:35c9:: with SMTP id c70mr26726162ilf.79.1582144947299; 
+ Wed, 19 Feb 2020 12:42:27 -0800 (PST)
+Received: from OLA-8C37N23.ad.garmin.com ([204.77.163.55])
+ by smtp.gmail.com with ESMTPSA id l81sm305023ild.87.2020.02.19.12.42.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 19 Feb 2020 12:42:26 -0800 (PST)
+From: Joshua Watt <jpewhacker@gmail.com>
+X-Google-Original-From: Joshua Watt <JPEWhacker@gmail.com>
+To: linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] ARM: dts: rockchip: Keep rk3288-tinker SD card IO powered
+ during reboot
+Date: Wed, 19 Feb 2020 14:42:20 -0600
+Message-Id: <20200219204224.34154-1-JPEWhacker@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_093836_134083_7510FC55 
-X-CRM114-Status: GOOD (  10.18  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200219_124229_207786_F2ED6DAB 
+X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jpewhacker[at]gmail.com]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,65 +96,37 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Hans Verkuil <hverkuil@xs4all.nl>, Tomasz Figa <tfiga@chromium.org>,
- Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
- Nicolas Dufresne <nicolas@ndufresne.ca>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Rob Herring <robh+dt@kernel.org>, Sakari Ailus <sakari.ailus@iki.fi>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Boris Brezillon <boris.brezillon@collabora.com>, kernel@collabora.com,
- Ezequiel Garcia <ezequiel@collabora.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>, Joshua Watt <JPEWhacker@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Boris Brezillon <boris.brezillon@collabora.com>
+IO voltage regulator for the SD card must be kept on all the time,
+otherwise when the board reboots the SD card can't be read by the
+bootloader.
 
-RK3399 has a Video decoder, define the node in the dtsi. We also add
-the missing power-domain in mmu node and enable the block.
-
-Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
-Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+Signed-off-by: Joshua Watt <JPEWhacker@gmail.com>
 ---
-v5:
-* None.
-v4:
-* Correct clock names.
-v3:
-* None.
----
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 14 +++++++++++++-
- 1 file changed, 13 insertions(+), 1 deletion(-)
+ arch/arm/boot/dts/rk3288-tinker.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 33cc21fcf4c1..a07f857df12f 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -1285,8 +1285,20 @@ vdec_mmu: iommu@ff660480 {
- 		interrupt-names = "vdec_mmu";
- 		clocks = <&cru ACLK_VDU>, <&cru HCLK_VDU>;
- 		clock-names = "aclk", "iface";
-+		power-domains = <&power RK3399_PD_VDU>;
- 		#iommu-cells = <0>;
--		status = "disabled";
-+	};
-+
-+	vdec: video-codec@ff660000 {
-+		compatible = "rockchip,rk3399-vdec";
-+		reg = <0x0 0xff660000 0x0 0x400>;
-+		interrupts = <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH 0>;
-+		interrupt-names = "vdpu";
-+		clocks = <&cru ACLK_VDU>, <&cru HCLK_VDU>,
-+			 <&cru SCLK_VDU_CA>, <&cru SCLK_VDU_CORE>;
-+		clock-names = "axi", "ahb", "cabac", "core";
-+		power-domains = <&power RK3399_PD_VDU>;
-+		iommus = <&vdec_mmu>;
- 	};
+diff --git a/arch/arm/boot/dts/rk3288-tinker.dtsi b/arch/arm/boot/dts/rk3288-tinker.dtsi
+index 312582c1bd37..acfaa12ec239 100644
+--- a/arch/arm/boot/dts/rk3288-tinker.dtsi
++++ b/arch/arm/boot/dts/rk3288-tinker.dtsi
+@@ -276,6 +276,7 @@
+ 			};
  
- 	iep_mmu: iommu@ff670800 {
+ 			vccio_sd: LDO_REG5 {
++				regulator-always-on;
+ 				regulator-boot-on;
+ 				regulator-min-microvolt = <1800000>;
+ 				regulator-max-microvolt = <3300000>;
 -- 
-2.25.0
+2.17.1
 
 
 _______________________________________________
