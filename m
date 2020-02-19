@@ -2,88 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B278216502F
-	for <lists+linux-rockchip@lfdr.de>; Wed, 19 Feb 2020 21:42:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2028B165067
+	for <lists+linux-rockchip@lfdr.de>; Wed, 19 Feb 2020 21:57:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=nwU7AqWvCFudFnVTZhaasGP3ZcpTgdH+BnoE9tQau14=; b=ZsT
-	04oODiSg0rUuQmdwIE2tCWJ1Yhms8H3hkP7KIuDDjvlEAYpg8vFxJloPHmfnzEs5CnA41pv0mr2yX
-	fKc1ov31GBVKpOKJ6nr7cwiquxtksLoSjVvvyTSl08q5B034ny000fAKYaEamxi1O0fUzVwXj5YaH
-	5LEoA5rrLHGL7j3JU8bziTHWfBbZ1Za1g0Xe6Hud7sofOVSqr/VKATxTl6ChXclnXDsA5WNPhYRpb
-	TjdI99XI1ITWPKhWI3t9xjS2KDy4klOuNDiD8kzQ1XaaOUnafGZqfzDL6x0h4tifRuM2OxuD96Ku1
-	Bb0IfGiFwOGB2jvMzn1BS7tMOp8/jtQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=ZxHdqz06OlRgsdV3uEatS1nan97nJUQ605bJejUU4gA=; b=tfS
+	4PRf8l9mkye80VKeetcAmPqxTiBA8H8550O1SODlsLhGZbQX/NfhrZA64zVuLpGwAUak7XcveCjFQ
+	EAMLMHyaiZVAy0kqGHTDRDs3X3wzcUJFL0EFsnqz5GcTX+d6YmINyiPMpwNAPdxbgl75MGBkB4IsT
+	dYFcC7sQNIO6sJRG/8IdLNx7h3+tdeMAW5940tgKYE2/3yKsmX0LFitfpT13wE1sbVz5fkxbgaY8e
+	m2I0mcu5R40clG4IhhjW2VV3NoGCjBhKIxIfam3TAKZF8s0gCIDl8zLAOQZfFN+R179tkVBWnrvDe
+	u4tl8xCoVIXmIVzhyKA+eRzlykuyS+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4WB5-0006HR-FH; Wed, 19 Feb 2020 20:42:39 +0000
-Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4WAv-00069U-5V; Wed, 19 Feb 2020 20:42:30 +0000
-Received: by mail-il1-x143.google.com with SMTP id g12so21780795ild.2;
- Wed, 19 Feb 2020 12:42:28 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=xMDNRqXigFwE5mAPTxNYoRMwFlx8Rk5qiR4uZXsscw4=;
- b=qfNCQIIH2j6wCkLKQ2mqWetFZntTRzqNjtBUM8anjzkPqf4Ynd0oWZWBb6hyrQPdCF
- uN3+mto+zq5HiY0xnelQ4PTO7z5fp0Jptf5qhcMwXW26QHdu1ppBMrN3gLdBGvkz9+7T
- uRGr6xPSZ2CPQYBvje7dwuPnzGTMvObbihSz3JgDRUVY/mlY9r1FmcAbwILshnrGxHoV
- YQ7XIWi0j7DxuapC2Mxf0BgFsQfhqPDfPdS4oL0kZVxd1wsk1YdXR26HaffZljlbj16u
- HGigXFMIMG0GQvDQ1WBnBaABCa1Y1CGM0wnxF/ut7KE88BxGE0dzo71L5H0o2zyYBRH3
- /9hw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=xMDNRqXigFwE5mAPTxNYoRMwFlx8Rk5qiR4uZXsscw4=;
- b=oNYSf5JPWVOz4uXnQneW52J5RNmXYVESdcoWqbtbXSv2+/3MOY9KeueTiCeCrihMbu
- VOs9TfIY8zqCNPbuv+ech6nuElb6K+sL5tjf1/IHEpwmSvYrvbp0Z1MxQh1g4V5Y/jBo
- Z2WPzWf9a4GZ1aQrBpMYGfqc5yMH3dFCyk47Ppnp0c+3cmM0kzTq1WC/+L9/XAbXXm5n
- j4rg0yfsJUaC4PU/9ywQqPsQGQx8OSJfMiUcRzk58zw7z+3RnqCcA+sgdR/WKC9k/L5C
- eRcp8tpNB1evlWOlm9FpFddZvtJG4nwQjbnU07INeFCKU6Jn9afl3BYgZScdk+mBAPDh
- GKaQ==
-X-Gm-Message-State: APjAAAV3LRdO8y5GmYurCNE6W9TxLbmDycK95nTE9eb2HJ8L8029OWXs
- HhqvS9JdP1vku7RaLm8gOvT2fsk/
-X-Google-Smtp-Source: APXvYqxamlA1ssz9lk4Vdd4EvOofQze/gD2b+EfZA1Xkq+0ovJF0gt8l+vaKreCew2We51oCAM8OcA==
-X-Received: by 2002:a92:35c9:: with SMTP id c70mr26726162ilf.79.1582144947299; 
- Wed, 19 Feb 2020 12:42:27 -0800 (PST)
-Received: from OLA-8C37N23.ad.garmin.com ([204.77.163.55])
- by smtp.gmail.com with ESMTPSA id l81sm305023ild.87.2020.02.19.12.42.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 19 Feb 2020 12:42:26 -0800 (PST)
-From: Joshua Watt <jpewhacker@gmail.com>
-X-Google-Original-From: Joshua Watt <JPEWhacker@gmail.com>
-To: linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] ARM: dts: rockchip: Keep rk3288-tinker SD card IO powered
- during reboot
-Date: Wed, 19 Feb 2020 14:42:20 -0600
-Message-Id: <20200219204224.34154-1-JPEWhacker@gmail.com>
-X-Mailer: git-send-email 2.17.1
+	id 1j4WPK-0005rd-UK; Wed, 19 Feb 2020 20:57:23 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4WP8-0005hO-Qh; Wed, 19 Feb 2020 20:57:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2F106FEC;
+ Wed, 19 Feb 2020 12:57:10 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A63AE3F68F;
+ Wed, 19 Feb 2020 12:57:09 -0800 (PST)
+Date: Wed, 19 Feb 2020 20:57:08 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Applied "ASoC: rockchip: Make RK3328 GPIO_MUTE control explicit" to
+ the asoc tree
+In-Reply-To: <5bc383ed1832f0f5d1dcb3c97ad92fd68e5217e3.1581376744.git.robin.murphy@arm.com>
+Message-Id: <applied-5bc383ed1832f0f5d1dcb3c97ad92fd68e5217e3.1581376744.git.robin.murphy@arm.com>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_124229_207786_F2ED6DAB 
-X-CRM114-Status: UNSURE (   9.99  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200219_125710_954266_D13F6B4D 
+X-CRM114-Status: GOOD (  19.55  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jpewhacker[at]gmail.com]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,37 +63,150 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>, Joshua Watt <JPEWhacker@gmail.com>
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
+ lgirdwood@gmail.com, linux-rockchip@lists.infradead.org,
+ Mark Brown <broonie@kernel.org>, pgwipeout@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-IO voltage regulator for the SD card must be kept on all the time,
-otherwise when the board reboots the SD card can't be read by the
-bootloader.
+The patch
 
-Signed-off-by: Joshua Watt <JPEWhacker@gmail.com>
+   ASoC: rockchip: Make RK3328 GPIO_MUTE control explicit
+
+has been applied to the asoc tree at
+
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git 
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From 87d12d5545fa72d67d99d797cdb464c0c7efb9c9 Mon Sep 17 00:00:00 2001
+From: Robin Murphy <robin.murphy@arm.com>
+Date: Tue, 18 Feb 2020 21:31:59 +0000
+Subject: [PATCH] ASoC: rockchip: Make RK3328 GPIO_MUTE control explicit
+
+The RK3328 reference design uses an external line driver IC as a buffer
+on the analog codec output, enabled by the GPIO_MUTE pin, and such a
+configuration is currently assumed in the codec driver's direct poking
+of GRF_SOC_CON10 to control the GPIO_MUTE output value. However, some
+boards wire up analog audio yet use that pin for some other purpose, so
+that assumption doesn't always hold. Update this functionality to rely
+on an explicit GPIO descriptor, such that it can be managed at the
+board level.
+
+Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+Link: https://lore.kernel.org/r/5bc383ed1832f0f5d1dcb3c97ad92fd68e5217e3.1581376744.git.robin.murphy@arm.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm/boot/dts/rk3288-tinker.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+ sound/soc/codecs/rk3328_codec.c | 31 ++++++++++++++++---------------
+ 1 file changed, 16 insertions(+), 15 deletions(-)
 
-diff --git a/arch/arm/boot/dts/rk3288-tinker.dtsi b/arch/arm/boot/dts/rk3288-tinker.dtsi
-index 312582c1bd37..acfaa12ec239 100644
---- a/arch/arm/boot/dts/rk3288-tinker.dtsi
-+++ b/arch/arm/boot/dts/rk3288-tinker.dtsi
-@@ -276,6 +276,7 @@
- 			};
+diff --git a/sound/soc/codecs/rk3328_codec.c b/sound/soc/codecs/rk3328_codec.c
+index 287c962ba00d..115706a55577 100644
+--- a/sound/soc/codecs/rk3328_codec.c
++++ b/sound/soc/codecs/rk3328_codec.c
+@@ -7,6 +7,7 @@
+ #include <linux/clk.h>
+ #include <linux/delay.h>
+ #include <linux/device.h>
++#include <linux/gpio/consumer.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
+ #include <linux/platform_device.h>
+@@ -31,7 +32,7 @@
  
- 			vccio_sd: LDO_REG5 {
-+				regulator-always-on;
- 				regulator-boot-on;
- 				regulator-min-microvolt = <1800000>;
- 				regulator-max-microvolt = <3300000>;
+ struct rk3328_codec_priv {
+ 	struct regmap *regmap;
+-	struct regmap *grf;
++	struct gpio_desc *mute;
+ 	struct clk *mclk;
+ 	struct clk *pclk;
+ 	unsigned int sclk;
+@@ -106,16 +107,6 @@ static int rk3328_set_dai_fmt(struct snd_soc_dai *dai, unsigned int fmt)
+ 	return 0;
+ }
+ 
+-static void rk3328_analog_output(struct rk3328_codec_priv *rk3328, int mute)
+-{
+-	unsigned int val = BIT(17);
+-
+-	if (mute)
+-		val |= BIT(1);
+-
+-	regmap_write(rk3328->grf, RK3328_GRF_SOC_CON10, val);
+-}
+-
+ static int rk3328_digital_mute(struct snd_soc_dai *dai, int mute)
+ {
+ 	struct rk3328_codec_priv *rk3328 =
+@@ -205,7 +196,7 @@ static int rk3328_codec_open_playback(struct rk3328_codec_priv *rk3328)
+ 	}
+ 
+ 	msleep(rk3328->spk_depop_time);
+-	rk3328_analog_output(rk3328, 1);
++	gpiod_set_value(rk3328->mute, 0);
+ 
+ 	regmap_update_bits(rk3328->regmap, HPOUTL_GAIN_CTRL,
+ 			   HPOUTL_GAIN_MASK, OUT_VOLUME);
+@@ -246,7 +237,7 @@ static int rk3328_codec_close_playback(struct rk3328_codec_priv *rk3328)
+ {
+ 	size_t i;
+ 
+-	rk3328_analog_output(rk3328, 0);
++	gpiod_set_value(rk3328->mute, 1);
+ 
+ 	regmap_update_bits(rk3328->regmap, HPOUTL_GAIN_CTRL,
+ 			   HPOUTL_GAIN_MASK, 0);
+@@ -446,7 +437,6 @@ static int rk3328_platform_probe(struct platform_device *pdev)
+ 		dev_err(&pdev->dev, "missing 'rockchip,grf'\n");
+ 		return PTR_ERR(grf);
+ 	}
+-	rk3328->grf = grf;
+ 	/* enable i2s_acodec_en */
+ 	regmap_write(grf, RK3328_GRF_SOC_CON2,
+ 		     (BIT(14) << 16 | BIT(14)));
+@@ -458,7 +448,18 @@ static int rk3328_platform_probe(struct platform_device *pdev)
+ 		rk3328->spk_depop_time = 200;
+ 	}
+ 
+-	rk3328_analog_output(rk3328, 0);
++	rk3328->mute = gpiod_get_optional(&pdev->dev, "mute", GPIOD_OUT_HIGH);
++	if (IS_ERR(rk3328->mute))
++		return PTR_ERR(rk3328->mute);
++	/*
++	 * Rock64 is the only supported platform to have widely relied on
++	 * this; if we do happen to come across an old DTB, just leave the
++	 * external mute forced off.
++	 */
++	if (!rk3328->mute && of_machine_is_compatible("pine64,rock64")) {
++		dev_warn(&pdev->dev, "assuming implicit control of GPIO_MUTE; update devicetree if possible\n");
++		regmap_write(grf, RK3328_GRF_SOC_CON10, BIT(17) | BIT(1));
++	}
+ 
+ 	rk3328->mclk = devm_clk_get(&pdev->dev, "mclk");
+ 	if (IS_ERR(rk3328->mclk))
 -- 
-2.17.1
+2.20.1
 
 
 _______________________________________________
