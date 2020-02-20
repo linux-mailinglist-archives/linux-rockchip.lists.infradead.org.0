@@ -2,81 +2,99 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 851CE165984
-	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Feb 2020 09:45:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC782165E7E
+	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Feb 2020 14:16:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pTpMHqPTyxXyNpoQCmie1dKP5HzrUYGgbdzYdC1dehI=; b=F0anXoNNTQg82w
-	vC+ltEa/ex76wCJhTDaqq3B7opOrzai5IiknkT6jAPKmYHKfCXR5U67U7AxunyDgEvfpTXRZq3DTx
-	U0Eden1e5rhg4qS67vRXI0cNKUTD7rIKgDIChzcQ1MGwD13TfoA68bbiPHhettWoKjEtiD0fo+QNm
-	IzTmL5P93uWBlYi1YNbYlnLMUofAL+difIHHY2KbPI81UpXwA5b/uR0BHespjMx1FdlxJndCnz80G
-	LGe6VOwvSMg4rroeTpL/R8jYoCKoE9KYEIfvr5hhRx4NB5bMaroAKzch5Ivb5ypStBk4M3QkFOWAJ
-	Y4KMkR4dBsXnBSHkdnPw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:In-Reply-To:
+	References:MIME-Version:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4XGjiorhp+gZrXedI+h1y/1Xis0GGz7dTczIqoFjjQE=; b=Qldmkd9L4Wtb8c
+	7Fx1+ormtI+Rfzqkf0YSufsc96amCfSgn77aHP88sxJC7IGt7nPgR8pw3tDoFKxeL2kSjvN8155VU
+	HkYNl8P+tJHbxZhyJobkthkgIP9HZJE2FCM+l3AJ23u03XTFgb2YjaHljyEh44farxu/Q8mGp1cfp
+	ssJpx6WBfY4Pqu9GKaCyIwBvDkiyL6hZyGNfSmERfhbWmQyIhKY9LfKBT5+huEOOQ+tdO1X5O2Pto
+	Rd6m3DxPllqNy2WBBR0KtCRZDPnbWDh3k0g7H9Iv2CO16ZR9ZILNlQA0ClqgEh+GHzzbfSLbJqc0k
+	eScJaE8WZ9ci37JnOz8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4hSw-00059b-6n; Thu, 20 Feb 2020 08:45:50 +0000
-Received: from lb1-smtp-cloud9.xs4all.net ([194.109.24.22])
+	id 1j4lgf-00017A-Ao; Thu, 20 Feb 2020 13:16:17 +0000
+Received: from mail-qt1-x82d.google.com ([2607:f8b0:4864:20::82d])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4hSs-00054Z-Ea
- for linux-rockchip@lists.infradead.org; Thu, 20 Feb 2020 08:45:48 +0000
-Received: from [192.168.2.10] ([46.9.235.248])
- by smtp-cloud9.xs4all.net with ESMTPA
- id 4hSkj9f9DyIme4hSnjicPj; Thu, 20 Feb 2020 09:45:41 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
- t=1582188341; bh=n1KovKvq/q7CIfGUBL0d+FJ4p0KVxipSS2I4qj0qbjY=;
- h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
- Subject;
- b=jeXfjP86TikbtpD3J5VM+gOlslNigQ3trmHXSBe5ZjocZN9D33MAOue90O/UO7ahl
- QToWoYt+tLkBWWswLNeClIk9egzyswdF+oy5dwSejQSY0BcUpxs/IAoJAyIhFS2iS+
- PKc3xqtMswCYD3RytkalsISdAJFmcCZkn1V/guato+ZS6D1GiQdxtPqaG+t7KH8e0Y
- i1MIalfnweVfP2rkNTy1sXrq33fq188GTrjmMjy0rtgKuUwQipNchR1zxnWC6A38TT
- VPOkjOHL6qN9/w82j0cWR83XvGidJ+yMKLROgJpKeGkf1YMOQYMQCJ01O7t/u8bYBt
- rb04LfTm6G9ZA==
-Subject: Re: [PATCH v5 0/6] media: rockchip: Add the rkvdec driver
-To: Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org,
- devicetree@vger.kernel.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20200219173750.26453-1-ezequiel@collabora.com>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <933b8189-5541-a7ff-e1dc-05ca3b2d65d5@xs4all.nl>
-Date: Thu, 20 Feb 2020 09:45:37 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1j4lgc-00016q-D5
+ for linux-rockchip@lists.infradead.org; Thu, 20 Feb 2020 13:16:15 +0000
+Received: by mail-qt1-x82d.google.com with SMTP id d9so2775389qte.12
+ for <linux-rockchip@lists.infradead.org>; Thu, 20 Feb 2020 05:16:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=ossystems-com-br.20150623.gappssmtp.com; s=20150623;
+ h=from:mime-version:references:in-reply-to:date:message-id:subject:to
+ :cc; bh=+NfiYwwPA7ooP+cdAEaBr1ztzKat3cXTXeQyrILmnPI=;
+ b=vG1QEkrA3Uvi8+PJ36gPJrxIpo8W+zB7FdH4ofKAwjvIm6ioIVs5qIUf70m2FpH3Qu
+ bs9vjwKuo3/9gyeTxSBqp1okU84fYRQChyl8pNgJzVFseu/cDPP7QBrf1LqEXv6Ru6Po
+ gXBmL/GP7K4mYpsUVOQPYGWkDx83nyBTt4YavfgMf+cLoPeUCdztudq9E7wH2GC4eG/F
+ dR73YP+qYb+CI3BFu7LIRonB39T4L4UmeTxk10GrjTnAX+wnBWNj55d3comWvnAkc0Pb
+ ESla6kB9n+uZXL1MHIKxlkNIe+o8zGrx1qxgt0bi2PgjVwoIRKZrCSKZ+yHWhmfXs72D
+ A0rA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:mime-version:references:in-reply-to:date
+ :message-id:subject:to:cc;
+ bh=+NfiYwwPA7ooP+cdAEaBr1ztzKat3cXTXeQyrILmnPI=;
+ b=AU80ZdfoSidUhrpv1D0/oLcx7xCBefuw/dIWTmjNIBAF3Z3HRVotgsj5IRgIxsJ0TS
+ WnSaconzlQOLftzXBQDCI1pGfsuVEoJvvW9EPWqy497UtQh/6barNlSV7lqoPJLiDl2f
+ 1bigdxG3vZyQEw0equ73UiwxxYPswBj1Dt8oymoNgaUgvP/+IoI/7tjVPoaC7Io2ZuxZ
+ ZDPuE/xyueG3YP5NCTDgz5uFc9eLmASXI1s8sU+NUMDWn6Go2hq4gu2aLU3C2qvVoS8f
+ uYksz7FqEXk9O2jQmSamvbuLwLQY8KeqbvsG+M5SqV2ROFh6HCyRq3uEZASWuHjkehbW
+ 1RDQ==
+X-Gm-Message-State: APjAAAU/1pMTPlrVAYdm8144IrgV0205AmWr0acd2bgtp7qGisRhz0gE
+ 5mR3LeFJo/2LvOq6wwZ+YvoLVbaYj8WyGg==
+X-Google-Smtp-Source: APXvYqydYAU2pPsSbR6wqOz1haF2z9ymaVwVFcPqi/GNWGvBPIS1miNOE9MDSd/XmqJ0lIwuQ/gm1Q==
+X-Received: by 2002:ac8:4289:: with SMTP id o9mr26407360qtl.277.1582204572714; 
+ Thu, 20 Feb 2020 05:16:12 -0800 (PST)
+Received: from mail-qk1-f177.google.com (mail-qk1-f177.google.com.
+ [209.85.222.177])
+ by smtp.gmail.com with ESMTPSA id 132sm1588041qkn.109.2020.02.20.05.16.11
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 20 Feb 2020 05:16:12 -0800 (PST)
+From: Otavio Salvador <otavio.salvador@ossystems.com.br>
+X-Google-Original-From: Otavio Salvador <otavio@ossystems.com.br>
+Received: by mail-qk1-f177.google.com with SMTP id d11so3441037qko.8
+ for <linux-rockchip@lists.infradead.org>; Thu, 20 Feb 2020 05:16:11 -0800 (PST)
+X-Received: by 2002:a37:a111:: with SMTP id k17mr1060759qke.26.1582204571511; 
+ Thu, 20 Feb 2020 05:16:11 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200219173750.26453-1-ezequiel@collabora.com>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfCIE1D8IrPKqAzrx2WDTcm5C6VJb1hktJWZM2wFnyVwAi4U00BlQBVxdgIrnegfo5ze+3BZKzUXGO8cxlQPs5vQti08iUW+80WqJLRhT7RuAtfoIcdBb
- ZUnK6dj/BIP++yf1V8jAqwrbUNUW9rpw23QgJrzuDbPeyb0ps1YcvTiN/ZTeK89vspQ5tttTtSjovKQWR9lHx39MEFbFie9iFjuuMLr4dU2rwgbuvquEnzEP
- HglOUv8e44p712AelnuV0P2kvDnUyqSXo40pTKjhCJcQYjSMeG9LRzohRMDpggUH9l5I71WrLaFl3pZ8s/2VgIAt0RD+HBQaXAZtrMu9rR80TNjGD88Rr4io
- sxDhTfuqN/1Izqg4ExpWJxktDZnwijHzyYTf+EjUN3R8BjLYZhYOdTb2YHHi5sTbOiefVXME4ajMs2SQ//FdTruIrJCXnbaVJK5u3OtO+Al0ortWFWGu2IU3
- RACIZovXQUNdrkfZUeUOCuL+MB7BjBpv/2Oan0zw1An3ln0f6Et+gDESrxg4XHXv7xGwwO0k8fAOxtL/IedjKvKT4ei5kLADE1Ob2RwhaEE+ilGzBHq6uyGO
- y+QclkE4lAHfE2YQkJFkDz1CQiqYFVX9sugqg/6C1+MrKgusnLo70Stp5xFXpQiGPWP1u16KgdhwLk6y2NqfjQPNX1ffJIvi+z6reco8M0Q8/g==
+References: <CAP9ODKprPi8N-dU8NaKwneXH-3b0ipSEDpU5mDbGntxuyhGhJw@mail.gmail.com>
+ <41a7bfe7-54b1-84eb-091f-469d971ab968@synopsys.com>
+ <CAP9ODKoUH=Cc=uuhfaUy7fkSVdfBHhX-6oS9_hi3Wd6GgDiZYw@mail.gmail.com>
+ <ee47be28-ba9f-750f-65d2-51a722ce291d@synopsys.com>
+ <CAP9ODKqa_4NSsFMUpyFDt3ohgGBCMgbOyKaVjYfSjmcZLmmC+A@mail.gmail.com>
+ <380d765b-8867-a899-b67a-c016c09fa27b@synopsys.com>
+ <CAP9ODKqL_GN+iebL3wPX_9fEUtUVP8Ahv03yJ1R-JLDr=Cn0BA@mail.gmail.com>
+ <beddbc55-fd22-96b7-c980-e4ea207a42f5@synopsys.com>
+In-Reply-To: <beddbc55-fd22-96b7-c980-e4ea207a42f5@synopsys.com>
+Date: Thu, 20 Feb 2020 10:16:00 -0300
+X-Gmail-Original-Message-ID: <CAP9ODKq2nEHz_rbwwCv-94LSBOq0it2Kc4yhCqrLT-XxoXommg@mail.gmail.com>
+Message-ID: <CAP9ODKq2nEHz_rbwwCv-94LSBOq0it2Kc4yhCqrLT-XxoXommg@mail.gmail.com>
+Subject: Re: USB DWC2 stops responding when insert/remove cable multiple times
+To: Minas Harutyunyan <Minas.Harutyunyan@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_004546_653852_63BCD067 
-X-CRM114-Status: GOOD (  15.47  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200220_051614_467232_CE48F2F8 
+X-CRM114-Status: UNSURE (   7.89  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.22 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [194.109.24.22 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:82d listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,90 +107,37 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Tomasz Figa <tfiga@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
- Jonas Karlman <jonas@kwiboo.se>, Nicolas Dufresne <nicolas@ndufresne.ca>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Rob Herring <robh+dt@kernel.org>, Sakari Ailus <sakari.ailus@iki.fi>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Boris Brezillon <boris.brezillon@collabora.com>, kernel@collabora.com
+Cc: Felipe Balbi <balbi@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ Johan Hovold <johan@kernel.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 2/19/20 6:37 PM, Ezequiel Garcia wrote:
-> Hello,
-> 
-> This is v5 of Boris' rkvdec driver.
-> 
-> This version corrects wrong copyright notices and then adds
-> a TODO file for the staging driver. The only reason to keep the
-> driver in staging are the staging uAPI controls.
+Hello Minas,
 
-I got some sparse warnings for this series, should be trivial to fix:
+Thanks for all your help on this, ...
 
-sparse: WARNINGS
-drivers/media/v4l2-core/v4l2-h264.c:214: warning: Function parameter or member 'reflist' not described in 'v4l2_h264_build_p_ref_list'
-drivers/media/v4l2-core/v4l2-h264.c:214: warning: Excess function parameter 'p_reflist' description in 'v4l2_h264_build_p_ref_list'
-SPARSE:drivers/staging/media/rkvdec/rkvdec.c drivers/staging/media/rkvdec/rkvdec.c:561:22:  warning: symbol 'rkvdec_queue_ops' was not
-declared. Should it be static?
+On Thu, Feb 20, 2020 at 3:59 AM Minas Harutyunyan
+<Minas.Harutyunyan@synopsys.com> wrote:
+>
+> On 2/19/2020 7:10 PM, Otavio Salvador wrote:
+...
+> > What sequence do you want us to do?
+>
+> Yes. Can you provide also USB trace?
 
-Also, checkpatch.pl --strict complains about empty trailing lines in two
-files.
+I can, however, it is not clear to me what you want us to do.
 
-Together with the missing MAINTAINERS it is probably best if you post
-a v6.
+Should we use, on host side, usbmon? or do you want something different?
 
-Regards,
-
-	Hans
-
-> 
-> Thanks,
-> Ezequiel
-> 
-> Boris Brezillon (5):
->   media: v4l2-core: Add helpers to build the H264 P/B0/B1 reflists
->   media: hantro: h264: Use the generic H264 reflist builder
->   media: dt-bindings: rockchip: Document RK3399 Video Decoder bindings
->   media: rkvdec: Add the rkvdec driver
->   arm64: dts: rockchip: rk3399: Define the rockchip Video Decoder node
-> 
-> Jonas Karlman (1):
->   media: uapi: h264: Add DPB entry field reference flags
-> 
->  .../bindings/media/rockchip,vdec.yaml         |   71 +
->  .../media/uapi/v4l/ext-ctrls-codec.rst        |   16 +
->  arch/arm64/boot/dts/rockchip/rk3399.dtsi      |   14 +-
->  drivers/media/v4l2-core/Kconfig               |    4 +
->  drivers/media/v4l2-core/Makefile              |    1 +
->  drivers/media/v4l2-core/v4l2-h264.c           |  258 ++++
->  drivers/staging/media/Kconfig                 |    2 +
->  drivers/staging/media/Makefile                |    1 +
->  drivers/staging/media/hantro/Kconfig          |    1 +
->  drivers/staging/media/hantro/hantro_h264.c    |  237 +---
->  drivers/staging/media/rkvdec/Kconfig          |   15 +
->  drivers/staging/media/rkvdec/Makefile         |    3 +
->  drivers/staging/media/rkvdec/TODO             |   11 +
->  drivers/staging/media/rkvdec/rkvdec-h264.c    | 1154 +++++++++++++++++
->  drivers/staging/media/rkvdec/rkvdec-regs.h    |  223 ++++
->  drivers/staging/media/rkvdec/rkvdec.c         | 1134 ++++++++++++++++
->  drivers/staging/media/rkvdec/rkvdec.h         |  123 ++
->  include/media/h264-ctrls.h                    |    2 +
->  include/media/v4l2-h264.h                     |   86 ++
->  19 files changed, 3126 insertions(+), 230 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/media/rockchip,vdec.yaml
->  create mode 100644 drivers/media/v4l2-core/v4l2-h264.c
->  create mode 100644 drivers/staging/media/rkvdec/Kconfig
->  create mode 100644 drivers/staging/media/rkvdec/Makefile
->  create mode 100644 drivers/staging/media/rkvdec/TODO
->  create mode 100644 drivers/staging/media/rkvdec/rkvdec-h264.c
->  create mode 100644 drivers/staging/media/rkvdec/rkvdec-regs.h
->  create mode 100644 drivers/staging/media/rkvdec/rkvdec.c
->  create mode 100644 drivers/staging/media/rkvdec/rkvdec.h
->  create mode 100644 include/media/v4l2-h264.h
-> 
-
+-- 
+Otavio Salvador                             O.S. Systems
+http://www.ossystems.com.br        http://code.ossystems.com.br
+Mobile: +55 (53) 9 9981-7854          Mobile: +1 (347) 903-9750
 
 _______________________________________________
 Linux-rockchip mailing list
