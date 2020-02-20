@@ -2,51 +2,45 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0A9E16631A
-	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Feb 2020 17:33:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0E131666B4
+	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Feb 2020 19:56:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lOXIA9OanePj29g0Y08BVSXCSeOsnE4XEik7yneNjWM=; b=ga0P8nVuA6YcGW
-	BQ7hs43PNBsXHzL8j7RChcuPGknrIxAXqhkBibNSS3FI9bFt+mnYU7hsK6JRK3p9hDXOQ225SCFbM
-	O6pHXV/FPkVJyOI7/3mqhntSs+zwjfdQgMit+w595zI+HEsWt0zsspqpxEscABXQkQCOIrmbS5rnj
-	OL0w1iyGA1Eo/nJNkLQ6NbhZOAr3Vf6XOs2mIPUTNMM9if3la0nBTOs+RmVwId0iXbcjNFDpLr82W
-	QQR0u3lSF7SPFCeDAidgzJEWhVmm+bE0NcvPogooise4ncgkD5ZpwL8XccyUVlVJJZpsnMC2k2Hqk
-	qgNgIiXQ55iALUsrMdKg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=KtcJ9BXt/ln+yKyPkpLStfqIm8nNk6X9P6LafIbxNlI=; b=JV7
+	oWV0OiquL98CCOvswdUjEntSw0J7Le/X3tR++HhwAJTTqPYPc46CThyEsptAVY7wPyM3gi9yAbE3G
+	rTar2p/L6I+p4FPctyW4kedzW8Vp1zwvB3ZpcN6yxs5BnJTwIC8HnEBwseGUH27RfYjGL9e0Vuyxz
+	j8ifQKDDmkDlCZv2wQO3t3xDrLWE9tOHVrUaJ/COqzLiPRd9AOqE21jjkHdFMGNbXvYRTxYliDZQ8
+	acR7ApOXdFuyvPQH9DvL2/K2LOTd8LZahcVqxRgPFkEgjslsK7o+j1CPcKSA+ciyOfqYT/pHjbd2C
+	DBrvEg/J6X4I1dIKzSbHc+znBmvtbaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4olD-00021l-3Y; Thu, 20 Feb 2020 16:33:11 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1j4qzo-0001sS-Gu; Thu, 20 Feb 2020 18:56:24 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4oj6-00086f-4A
- for linux-rockchip@lists.infradead.org; Thu, 20 Feb 2020 16:31:02 +0000
+ id 1j4qzk-0001rY-SE
+ for linux-rockchip@lists.infradead.org; Thu, 20 Feb 2020 18:56:22 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 896A02951E0
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v6 6/6] arm64: dts: rockchip: rk3399: Define the rockchip
- Video Decoder node
-Date: Thu, 20 Feb 2020 13:30:16 -0300
-Message-Id: <20200220163016.21708-7-ezequiel@collabora.com>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200220163016.21708-1-ezequiel@collabora.com>
-References: <20200220163016.21708-1-ezequiel@collabora.com>
-MIME-Version: 1.0
+ (Authenticated sender: dafna) with ESMTPSA id 3291729257A
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+To: linux-media@vger.kernel.org
+Subject: [PATCH] media: staging: rkisp1: capture: remove support to userptr
+ memory
+Date: Thu, 20 Feb 2020 19:56:03 +0100
+Message-Id: <20200220185603.26968-1-dafna.hirschfeld@collabora.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_083100_308004_24201B6E 
-X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-CacheID: sfid-20200220_105621_040172_4AB343DE 
+X-CRM114-Status: UNSURE (   9.11  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -63,58 +57,39 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Hans Verkuil <hverkuil@xs4all.nl>, Tomasz Figa <tfiga@chromium.org>,
- Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
- Nicolas Dufresne <nicolas@ndufresne.ca>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Rob Herring <robh+dt@kernel.org>, Sakari Ailus <sakari.ailus@iki.fi>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Boris Brezillon <boris.brezillon@collabora.com>, kernel@collabora.com,
- Ezequiel Garcia <ezequiel@collabora.com>
+Cc: mchehab@kernel.org, dafna.hirschfeld@collabora.com, dafna3@gmail.com,
+ hverkuil@xs4all.nl, linux-rockchip@lists.infradead.org,
+ helen.koike@collabora.com, sakari.ailus@linux.intel.com, kernel@collabora.com,
+ ezequiel@collabora.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Boris Brezillon <boris.brezillon@collabora.com>
+The dma_contig memory operations which is used by the capture
+should not support userptr. Therefore remove it.
 
-RK3399 has a Video decoder, define the node in the dtsi. We also add
-the missing power-domain in mmu node and enable the block.
-
-Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
-Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 ---
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 14 +++++++++++++-
- 1 file changed, 13 insertions(+), 1 deletion(-)
+ drivers/staging/media/rkisp1/rkisp1-capture.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 33cc21fcf4c1..a07f857df12f 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -1285,8 +1285,20 @@ vdec_mmu: iommu@ff660480 {
- 		interrupt-names = "vdec_mmu";
- 		clocks = <&cru ACLK_VDU>, <&cru HCLK_VDU>;
- 		clock-names = "aclk", "iface";
-+		power-domains = <&power RK3399_PD_VDU>;
- 		#iommu-cells = <0>;
--		status = "disabled";
-+	};
-+
-+	vdec: video-codec@ff660000 {
-+		compatible = "rockchip,rk3399-vdec";
-+		reg = <0x0 0xff660000 0x0 0x400>;
-+		interrupts = <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH 0>;
-+		interrupt-names = "vdpu";
-+		clocks = <&cru ACLK_VDU>, <&cru HCLK_VDU>,
-+			 <&cru SCLK_VDU_CA>, <&cru SCLK_VDU_CORE>;
-+		clock-names = "axi", "ahb", "cabac", "core";
-+		power-domains = <&power RK3399_PD_VDU>;
-+		iommus = <&vdec_mmu>;
- 	};
+diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
+index 5f97af5cd95f..a006cd03228d 100644
+--- a/drivers/staging/media/rkisp1/rkisp1-capture.c
++++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
+@@ -1349,7 +1349,7 @@ static int rkisp1_register_capture(struct rkisp1_capture *cap)
  
- 	iep_mmu: iommu@ff670800 {
+ 	q = &node->buf_queue;
+ 	q->type = V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE;
+-	q->io_modes = VB2_MMAP | VB2_DMABUF | VB2_USERPTR;
++	q->io_modes = VB2_MMAP | VB2_DMABUF;
+ 	q->drv_priv = cap;
+ 	q->ops = &rkisp1_vb2_ops;
+ 	q->mem_ops = &vb2_dma_contig_memops;
 -- 
-2.25.0
+2.17.1
 
 
 _______________________________________________
