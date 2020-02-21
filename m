@@ -2,95 +2,100 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BACE0167C40
-	for <lists+linux-rockchip@lfdr.de>; Fri, 21 Feb 2020 12:37:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 152DA167F9B
+	for <lists+linux-rockchip@lfdr.de>; Fri, 21 Feb 2020 15:06:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+abt0L1Qld8EUBjY/RfOpBYPlpLdQLF3fzlFojQKHT8=; b=D+b/XFv0Ts5qwe
-	UMCt0DiYRLKkPKkpE2EDuM8tSeTAhCKIMfKhXAb7AfxIucSB5uScqZfHkXCTb3HjMLL5uHnJuli2B
-	5xylpqsgoNsIAWO6r9EIPIuYz3gBnEsNkQTFKdPMgt+GAcb9aRhFeu4Uy3RdvziEJqjD8xGc6ZFPP
-	zPzDZLAXVVzMrTk8jMNoI95PS5KZKwmTJAcxAVo5z9E0g5DPXrbuI2naHOUU6w6sMWtgtPlN+BII3
-	+wpti+fyHz21x0ZK6msMYR6PlSDeN852jUZWS4+/U5UYwWQ000HzdqqKRKS+gCCdoyUU3bO0m7JL7
-	EupxcgPkyftlQ/TqVW0A==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:In-Reply-To:
+	References:MIME-Version:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QZOa6zDXVemYm6eTykJ+zizqRsX8rnNt09VmpgIxMzo=; b=I0mN/ZDMGZfPof
+	t5PtIIr1NWak/8TD6ItmHS5pD0GiG1CNUSKr7o8hB2uOkkh40zhG3qhV8XwWh81r4giD3JIhGB69V
+	do2H5rTbUzYKR0iGTtTjN4pRNbxF04n9wWTiDeGm2d7rZnKAVeF8ldABoAZKniWRX6T4VSzAIgNcL
+	F1GrLgFuCbCD5jiKTuTQWvBnfq6OMJ1pgwZ09X5wO5XDpTNtDGqZXFd6Mf/ypB7rKshbTaVyt5gV7
+	u40Fz0QwowmSLPIhkS0vqNEC6vIYaYQYK8vZiOfW3V6vs7QklFxEjM9dHVaI0K96JdnLhL80oRaUF
+	Ar1VrzN+eD3t2VESzOpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j56c6-0004oN-JU; Fri, 21 Feb 2020 11:36:58 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1j58wj-0006w4-D5; Fri, 21 Feb 2020 14:06:25 +0000
+Received: from mail-qk1-x732.google.com ([2607:f8b0:4864:20::732])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j56c2-0004nK-9v; Fri, 21 Feb 2020 11:36:56 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01LBaeiV060451;
- Fri, 21 Feb 2020 05:36:40 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1582285000;
- bh=EcRsLSr8W7nw5h4+Jtj+iHEI5lrm+n8a9Rg2plUXAEg=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=uLFB0+JoRywtNV6I1qOYMV6dmYyC57xd8KPxR+txKiEfEG1DweTd+v3WwJ5sSkbtN
- 2q8PQiNtcue3WO1R/bNqQIKWaKiI1nyKKtpPrSbdyl+3KwqRWTNW/Gi9j935WWuHeg
- t9it8jXfe9oTRL0TwGhlIZBxxVa/gVGn2ukRbCIc=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01LBaeYs094127
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 21 Feb 2020 05:36:40 -0600
-Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 21
- Feb 2020 05:36:40 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 21 Feb 2020 05:36:40 -0600
-Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01LBaXsg070114;
- Fri, 21 Feb 2020 05:36:34 -0600
-Subject: Re: [PATCH v4 3/6] PCI: endpoint: Add support to handle multiple base
- for mapping outbound memory
-To: Lad Prabhakar <prabhakar.csengg@gmail.com>, Bjorn Helgaas
- <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>, Catalin Marinas <catalin.marinas@arm.com>, Will
- Deacon <will@kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Jingoo Han <jingoohan1@gmail.com>, Gustavo Pimentel
- <gustavo.pimentel@synopsys.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Shawn Lin
- <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>
-References: <20200208183641.6674-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200208183641.6674-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <ea5fa2ec-3c0c-0343-0b14-9bbfa93feaa3@ti.com>
-Date: Fri, 21 Feb 2020 17:10:15 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.2
+ id 1j58wg-0006vM-5N
+ for linux-rockchip@lists.infradead.org; Fri, 21 Feb 2020 14:06:23 +0000
+Received: by mail-qk1-x732.google.com with SMTP id o28so1861898qkj.9
+ for <linux-rockchip@lists.infradead.org>; Fri, 21 Feb 2020 06:06:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=ossystems-com-br.20150623.gappssmtp.com; s=20150623;
+ h=from:mime-version:references:in-reply-to:date:message-id:subject:to
+ :cc; bh=DiyvrX9xQKujU8ps51BYPHqKGJq6CWTBSoEZ36cxK9o=;
+ b=h5ekut7f9mAYdIsbofbHgwxljL5Ld8S9zUzMm34R2D16whmTzt29fj0dOn2M/ZxERG
+ s8ps6ii0Uh6357U4zyAA8oI1cnp/uvK/rUJWqmwA0qo5lTe5V+pIVcXmM3b3IAdPHtf7
+ 4HEjAG8VPFoOCURl7PTlteg4hlUJJpnEKIIq4lo1HoqIiVR895Y5DdXUHqgCRX5RtXk0
+ 7Mm90ZM+F5BuOkdrKCiGYzmeWtLWN2OdKd9g+6hOagi3B9nLT7NvS57egp2uRU1LUru9
+ VqzRvnhTN/or/jR4UMLWfiaI4cygxNb5uMBnLhiPl1Bp1wryBPNiy1n5pREVTnpuyYPr
+ 7GyA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:mime-version:references:in-reply-to:date
+ :message-id:subject:to:cc;
+ bh=DiyvrX9xQKujU8ps51BYPHqKGJq6CWTBSoEZ36cxK9o=;
+ b=JeZPQD535Sqhqi35+MdU3ueTMSWY75jxF8grsudBPrm4qfsYXXfk3hV+nY1zlRVCim
+ Unus6EUf3gh7zlt+14HyZ8yjfNRnVuGTFAsNUIjHapn8PNjKYddWYE8uJ42kD8t8rWsh
+ 1ZGq6Ka+nMqIXFVSsSVM+ji0of0ygoOa7Y4OMQ83uEGlTKGzhJbIIDmChobAZuAzusyV
+ kyMAZp8KSW62/KZ0KxyXNl2+v3IeHsmNfYuFBC+QT2qjs53Nmi/WAuDrPRc6JXXeV0aC
+ u1ptojDYnam0rgFYJ+PrsVjjWqe87bpyqlgOmr6v2qMTp5vZ12A8Qo4iDo0Y2IWeuDMf
+ /E2g==
+X-Gm-Message-State: APjAAAW6wQSE4pqhRVERHorm2bNrr5fBVC6MeRgNGloTg1iwsY1RZf1y
+ H/xuwjd0bJ4Yw+o7vh5UVydZZZrZpmhg1w==
+X-Google-Smtp-Source: APXvYqwW5ZU37f76vwt8WloVcB7o4jeADJE7jG3Zosn1PqGTUCmFlN+0NdbONcXLuZaqSc/TDOwmiw==
+X-Received: by 2002:a37:349:: with SMTP id 70mr33870858qkd.351.1582293980249; 
+ Fri, 21 Feb 2020 06:06:20 -0800 (PST)
+Received: from mail-qt1-f169.google.com (mail-qt1-f169.google.com.
+ [209.85.160.169])
+ by smtp.gmail.com with ESMTPSA id v7sm1582581qkg.103.2020.02.21.06.06.19
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 21 Feb 2020 06:06:20 -0800 (PST)
+From: Otavio Salvador <otavio.salvador@ossystems.com.br>
+X-Google-Original-From: Otavio Salvador <otavio@ossystems.com.br>
+Received: by mail-qt1-f169.google.com with SMTP id t13so1328372qto.3
+ for <linux-rockchip@lists.infradead.org>; Fri, 21 Feb 2020 06:06:19 -0800 (PST)
+X-Received: by 2002:ac8:607:: with SMTP id d7mr31861329qth.271.1582293978531; 
+ Fri, 21 Feb 2020 06:06:18 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200208183641.6674-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <CAP9ODKprPi8N-dU8NaKwneXH-3b0ipSEDpU5mDbGntxuyhGhJw@mail.gmail.com>
+ <41a7bfe7-54b1-84eb-091f-469d971ab968@synopsys.com>
+ <CAP9ODKoUH=Cc=uuhfaUy7fkSVdfBHhX-6oS9_hi3Wd6GgDiZYw@mail.gmail.com>
+ <ee47be28-ba9f-750f-65d2-51a722ce291d@synopsys.com>
+ <CAP9ODKqa_4NSsFMUpyFDt3ohgGBCMgbOyKaVjYfSjmcZLmmC+A@mail.gmail.com>
+ <380d765b-8867-a899-b67a-c016c09fa27b@synopsys.com>
+ <CAP9ODKqL_GN+iebL3wPX_9fEUtUVP8Ahv03yJ1R-JLDr=Cn0BA@mail.gmail.com>
+ <beddbc55-fd22-96b7-c980-e4ea207a42f5@synopsys.com>
+ <CAP9ODKq2nEHz_rbwwCv-94LSBOq0it2Kc4yhCqrLT-XxoXommg@mail.gmail.com>
+ <1d2ee918-57e4-53b2-6953-0107d7720c59@synopsys.com>
+In-Reply-To: <1d2ee918-57e4-53b2-6953-0107d7720c59@synopsys.com>
+Date: Fri, 21 Feb 2020 11:06:06 -0300
+X-Gmail-Original-Message-ID: <CAP9ODKoS5KQrhTrUvahHEhQG-WA+bfLnP4tTFxzrQaGh1nTcZw@mail.gmail.com>
+Message-ID: <CAP9ODKoS5KQrhTrUvahHEhQG-WA+bfLnP4tTFxzrQaGh1nTcZw@mail.gmail.com>
+Subject: Re: USB DWC2 stops responding when insert/remove cable multiple times
+To: Minas Harutyunyan <Minas.Harutyunyan@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_033654_477921_D5437298 
-X-CRM114-Status: GOOD (  28.22  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200221_060622_265234_DAD9FA89 
+X-CRM114-Status: GOOD (  12.13  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:732 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,251 +108,52 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Felipe Balbi <balbi@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ Johan Hovold <johan@kernel.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Prabhakar,
+Hello Minas,
 
-On 09/02/20 12:06 am, Lad Prabhakar wrote:
-> R-Car PCIe controller has support to map multiple memory regions for
-> mapping the outbound memory in local system also the controller limits
-> single allocation for each region (that is, once a chunk is used from the
-> region it cannot be used to allocate a new one). This features inspires to
-> add support for handling multiple memory bases in endpoint framework.
-> 
-> With this patch pci_epc_mem_init() now accepts multiple regions, also
-> page_size for each memory region is passed during initialization so as
-> to handle single allocation for each region by setting the page_size to
-> window_size.
+On Fri, Feb 21, 2020 at 3:52 AM Minas Harutyunyan
+<Minas.Harutyunyan@synopsys.com> wrote:
+> On 2/20/2020 5:16 PM, Otavio Salvador wrote:
+> > Hello Minas,
+> >
+> > Thanks for all your help on this, ...
+> >
+> > On Thu, Feb 20, 2020 at 3:59 AM Minas Harutyunyan
+> > <Minas.Harutyunyan@synopsys.com> wrote:
+> >>
+> >> On 2/19/2020 7:10 PM, Otavio Salvador wrote:
+> > ...
+> >>> What sequence do you want us to do?
+> >>
+> Please provide dwc2 debug log when stop working with g_serial exception
+> dump inside.
+> Also provide dwc2 log when it's work without issue.
 
-This patch looks much better now except for one comment below..
-> 
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> ---
->  drivers/pci/controller/cadence/pcie-cadence-ep.c |   7 +-
->  drivers/pci/controller/dwc/pcie-designware-ep.c  |  29 ++--
->  drivers/pci/controller/pcie-rockchip-ep.c        |   7 +-
->  drivers/pci/endpoint/pci-epc-mem.c               | 166 ++++++++++++++++-------
->  include/linux/pci-epc.h                          |  39 ++++--
->  5 files changed, 168 insertions(+), 80 deletions(-)
-> 
-.
-.
-<snip>
-.
-.
-> diff --git a/drivers/pci/endpoint/pci-epc-mem.c b/drivers/pci/endpoint/pci-epc-mem.c
-> index d2b174c..b3eedee 100644
-> --- a/drivers/pci/endpoint/pci-epc-mem.c
-> +++ b/drivers/pci/endpoint/pci-epc-mem.c
-> @@ -38,57 +38,76 @@ static int pci_epc_mem_get_order(struct pci_epc_mem *mem, size_t size)
->  /**
->   * __pci_epc_mem_init() - initialize the pci_epc_mem structure
->   * @epc: the EPC device that invoked pci_epc_mem_init
-> - * @phys_base: the physical address of the base
-> - * @size: the size of the address space
-> - * @page_size: size of each page
-> + * @windows: pointer to windows supported by the device
-> + * @num_windows: number of windows device supports
->   *
->   * Invoke to initialize the pci_epc_mem structure used by the
->   * endpoint functions to allocate mapped PCI address.
->   */
-> -int __pci_epc_mem_init(struct pci_epc *epc, phys_addr_t phys_base, size_t size,
-> -		       size_t page_size)
-> +int __pci_epc_mem_init(struct pci_epc *epc, struct pci_epc_mem_window *windows,
-> +		       int num_windows)
->  {
-> -	int ret;
-> -	struct pci_epc_mem *mem;
-> -	unsigned long *bitmap;
-> +	struct pci_epc_mem *mem = NULL;
-> +	unsigned long *bitmap = NULL;
->  	unsigned int page_shift;
-> -	int pages;
-> +	size_t page_size;
->  	int bitmap_size;
-> -
-> -	if (page_size < PAGE_SIZE)
-> -		page_size = PAGE_SIZE;
-> -
-> -	page_shift = ilog2(page_size);
-> -	pages = size >> page_shift;
-> -	bitmap_size = BITS_TO_LONGS(pages) * sizeof(long);
-> -
-> -	mem = kzalloc(sizeof(*mem), GFP_KERNEL);
-> -	if (!mem) {
-> -		ret = -ENOMEM;
-> -		goto err;
-> -	}
-> -
-> -	bitmap = kzalloc(bitmap_size, GFP_KERNEL);
-> -	if (!bitmap) {
-> -		ret = -ENOMEM;
-> -		goto err_mem;
-> +	int pages;
-> +	int ret;
-> +	int i;
-> +
-> +	epc->mem_windows = 0;
-> +
-> +	if (!windows)
-> +		return -EINVAL;
-> +
-> +	if (num_windows <= 0)
-> +		return -EINVAL;
-> +
-> +	epc->mem = kcalloc(num_windows, sizeof(*mem), GFP_KERNEL);
-> +	if (!epc->mem)
-> +		return -EINVAL;
-> +
-> +	for (i = 0; i < num_windows; i++) {
-> +		page_size = windows[i].page_size;
-> +		if (page_size < PAGE_SIZE)
-> +			page_size = PAGE_SIZE;
-> +		page_shift = ilog2(page_size);
-> +		pages = windows[i].size >> page_shift;
-> +		bitmap_size = BITS_TO_LONGS(pages) * sizeof(long);
-> +
-> +		mem = kzalloc(sizeof(*mem), GFP_KERNEL);
-> +		if (!mem) {
-> +			ret = -ENOMEM;
-> +			goto err_mem;
-> +		}
-> +
-> +		bitmap = kzalloc(bitmap_size, GFP_KERNEL);
-> +		if (!bitmap) {
-> +			ret = -ENOMEM;
-> +			goto err_mem;
-> +		}
-> +
-> +		mem->bitmap = bitmap;
-> +		mem->window.phys_base = windows[i].phys_base;
-> +		mem->page_size = page_size;
-> +		mem->pages = pages;
-> +		mem->window.size = windows[i].size;
-> +		epc->mem[i] = mem;
->  	}
-> -
-> -	mem->bitmap = bitmap;
-> -	mem->phys_base = phys_base;
-> -	mem->page_size = page_size;
-> -	mem->pages = pages;
-> -	mem->size = size;
-> -
-> -	epc->mem = mem;
-> +	epc->mem_windows = num_windows;
->  
->  	return 0;
->  
->  err_mem:
-> -	kfree(mem);
-> +	for (; i >= 0; i--) {
-> +		mem = epc->mem[i];
-> +		kfree(mem->bitmap);
-> +		kfree(mem);
-> +	}
-> +	kfree(epc->mem);
->  
-> -err:
-> -return ret;
-> +	return ret;
->  }
->  EXPORT_SYMBOL_GPL(__pci_epc_mem_init);
->  
-> @@ -101,11 +120,21 @@ EXPORT_SYMBOL_GPL(__pci_epc_mem_init);
->   */
->  void pci_epc_mem_exit(struct pci_epc *epc)
->  {
-> -	struct pci_epc_mem *mem = epc->mem;
-> +	struct pci_epc_mem *mem;
-> +	int i;
-> +
-> +	if (!epc->mem_windows)
-> +		return;
-> +
-> +	for (i = 0; i <= epc->mem_windows; i++) {
-> +		mem = epc->mem[i];
-> +		kfree(mem->bitmap);
-> +		kfree(mem);
-> +	}
-> +	kfree(epc->mem);
->  
->  	epc->mem = NULL;
-> -	kfree(mem->bitmap);
-> -	kfree(mem);
-> +	epc->mem_windows = 0;
->  }
->  EXPORT_SYMBOL_GPL(pci_epc_mem_exit);
->  
-> @@ -121,20 +150,30 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_exit);
->  void __iomem *pci_epc_mem_alloc_addr(struct pci_epc *epc,
->  				     phys_addr_t *phys_addr, size_t size)
->  {
-> -	int pageno;
-> -	void __iomem *virt_addr;
-> -	struct pci_epc_mem *mem = epc->mem;
-> -	unsigned int page_shift = ilog2(mem->page_size);
-> +	void __iomem *virt_addr = NULL;
-> +	struct pci_epc_mem *mem;
-> +	unsigned int page_shift;
-> +	int pageno = -EINVAL;
->  	int order;
-> +	int i;
->  
-> -	size = ALIGN(size, mem->page_size);
-> -	order = pci_epc_mem_get_order(mem, size);
-> +	for (i = 0; i < epc->mem_windows; i++) {
-> +		mem = epc->mem[i];
-> +		size = ALIGN(size, mem->page_size);
-> +		order = pci_epc_mem_get_order(mem, size);
-> +
-> +		pageno = bitmap_find_free_region(mem->bitmap, mem->pages,
-> +						 order);
-> +		if (pageno >= 0)
-> +			break;
-> +	}
->  
-> -	pageno = bitmap_find_free_region(mem->bitmap, mem->pages, order);
->  	if (pageno < 0)
->  		return NULL;
->  
-> -	*phys_addr = mem->phys_base + ((phys_addr_t)pageno << page_shift);
-> +	page_shift = ilog2(mem->page_size);
-> +	*phys_addr = mem->window.phys_base +
-> +		     ((phys_addr_t)pageno << page_shift);
->  	virt_addr = ioremap(*phys_addr, size);
->  	if (!virt_addr)
->  		bitmap_release_region(mem->bitmap, pageno, order);
-> @@ -143,6 +182,22 @@ void __iomem *pci_epc_mem_alloc_addr(struct pci_epc *epc,
->  }
->  EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
->  
-> +struct pci_epc_mem *pci_epc_get_matching_window(struct pci_epc *epc,
-> +						phys_addr_t phys_addr)
-> +{
-> +	struct pci_epc_mem *mem;
-> +	int i;
-> +
-> +	for (i = 0; i < epc->mem_windows; i++) {
-> +		mem = epc->mem[i];
-> +
-> +		if (mem->window.phys_base == phys_addr)
-> +			return mem;
+Attached.
 
-This will work only if the phys_addr is same as start of windows base.
-This need not be true for all the platforms and will fail for all the
-allocations except the first allocation.
+> >> Yes. Can you provide also USB trace >
+> > I can, however, it is not clear to me what you want us to do.
+> >
+> > Should we use, on host side, usbmon? or do you want something different?
+> >
+> Do you have any USB tracer equipment to record trace between host and
+> device?
 
-Thanks
-Kishon
+I don't. Can we instrument the kernel somehow to gather the info we need?
+
+-- 
+Otavio Salvador                             O.S. Systems
+http://www.ossystems.com.br        http://code.ossystems.com.br
+Mobile: +55 (53) 9 9981-7854          Mobile: +1 (347) 903-9750
 
 _______________________________________________
 Linux-rockchip mailing list
