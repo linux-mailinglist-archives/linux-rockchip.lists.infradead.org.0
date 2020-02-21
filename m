@@ -2,175 +2,142 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA0A01668ED
-	for <lists+linux-rockchip@lfdr.de>; Thu, 20 Feb 2020 21:50:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2727166FE1
+	for <lists+linux-rockchip@lfdr.de>; Fri, 21 Feb 2020 07:53:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mNu9qFL8cuRK0bVGvRWPUkSn1MW+eE6WJp4pF8InkIw=; b=Uns72RYC0pohJ/3CYNAmqukE4x
-	Ex288m8ng+/4X+6eeE1YL/Q8OkjV9c70Zn3qaf5ZF7boWWxKgKgLhwFkQOWnigji5t4I+vUN4YX+4
-	/J2W7cy7BJU7ZbsLOwEDIz0s5nVJKgm7PC2dBx33bOYOC+VdjD6gUon3vUEcujp85DOfdoln+6VHR
-	q4hH0/139mD8Ffygdz9e/GSmG3JVYf4W7wIbd0GZzGzGfK473uplBvUFyYwkIlWrDqww6jkkNbWRJ
-	ojlhPS9UOZuDdQqvQvYUaRFPyOjNt95LWU8FvMTSiCYgF40HAPGyOjufrcnY+Kp9cdqCqnEkoQ0ZG
-	f7V4Ihpg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ks5nM3JG3R+H9oZMUXGmhFZ3Dyr7jmzn59+zovQBTUk=; b=VXJWLUWbZMef4+
+	szFaq3JuC5He2ujN5tQlRsT2RmV7oMjPE8QWWm1xf/qvg8kVT6eCr8QFwmXbOXeX/FIGFB3h92vIy
+	qkuA8ZzmewSyipfdDnhS7OtxCMWYQO6EN15jjglhDS4Y3+ZDmnMT9EWg57OmTIZaem1BzXdzHgqW7
+	HAOxvkBiB5lTC3gWK24ePruHpa+z8ObkDN47k5KxY+x4xu2SCmFVHwZ9KQEBkWOnXHYuAq3HO9ymG
+	HAhQrT+jlfrbhB37+lMOwcxRs+7AOpOQj+JgmU48zmRUdnxj8lUF450UvwraOO4onkO2N8DHSNPt/
+	qkdmSS0pImoQLvR6Uiqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4sm0-0001E6-L3; Thu, 20 Feb 2020 20:50:16 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+	id 1j52Bb-0003jy-JB; Fri, 21 Feb 2020 06:53:19 +0000
+Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4slt-00011h-Lf; Thu, 20 Feb 2020 20:50:11 +0000
-Received: by mail-oi1-x241.google.com with SMTP id a142so28957064oii.7;
- Thu, 20 Feb 2020 12:50:09 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=1T06iAVBZVq+nQ4a2+iKkLsA3Onlr9mFchfoBKekUKo=;
- b=BoExM5uxna7crt8ZdqmuY3PBNK/FHHmuR+nFve1V5UrC7MPjJOzaS4t+B4/hdsUE/c
- 0kt1UUo6ThOVuIgec5UCXV3VWQ4j3Gfd61tovVKBzcQ0Bb6gKjHcyNvfU4InhSCTZMOg
- QQw1FMC4MGNxqZD3w4jiB+SV2GgoTnwjKwsa9N18Bngz85tG+Ygu0UtNNeMkEwJ/9kj4
- pimxO3WGwP7cbVcmsGgWYN/ldF8q5sspxzfWe6LT9RXRZm1Pp678k/nWmFactlMf/sJ/
- GBk5zi0PtD2GqYyWTe8QaIOJMIF0/qjNCwwaKYg7nKNl58/j5WuN9LEgFjmOHprMLO/7
- uWvw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:autocrypt:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=1T06iAVBZVq+nQ4a2+iKkLsA3Onlr9mFchfoBKekUKo=;
- b=WQTThMMIuuAkXmvBRFFLf0wtHsZLi/rxrnWWtMWRu7funxVtTp+BmKNnEVkIxDDREx
- KWp0NB4N5kq3X80yRnOMLU7EUv/lz/x363OQY1aDWrlVzJ0zRTffKngCNug0V2RzA0iI
- 7rVEejN5yX+bbDECqFIswRWPM6Vv+ZkCTxMuqeo5iL33diMVCN84Qk1W+Wo2SLVn7fpl
- sqoMDgjCTYKOBwCH07s09PYunGTOYN/7tPuTvGdGfjTih3tGAgyvqUci6oKWuq3tdBiT
- Et1KDsiZCCVNTOeLiXlInuxsFbH90deBFNwWSUNtuJdorIm3MA/fuI+0XnVBfHbYPuz+
- yn3A==
-X-Gm-Message-State: APjAAAXqHWm0oZWFfKUVitfJwZlUyAv0ykzKNljToM/vcD5IcR1ArpQM
- OIkZsKUQTKvAEzn0u7ESaeg=
-X-Google-Smtp-Source: APXvYqyDqjBg55LjbV10AWlTyztdfY9QMnv+v+c1WBz0JKUTwk10E2KXA7GoqvE+ropsfj53Ae5Oog==
-X-Received: by 2002:a54:408f:: with SMTP id i15mr3397558oii.64.1582231808623; 
- Thu, 20 Feb 2020 12:50:08 -0800 (PST)
-Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id j5sm200626otl.71.2020.02.20.12.49.59
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 20 Feb 2020 12:50:07 -0800 (PST)
-Subject: Re: [PATCH 26/32] pwm: mtk-disp: convert to
- devm_platform_ioremap_resource
-To: Yangtao Li <tiny.windzz@gmail.com>, claudiu.beznea@microchip.com,
- thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de,
- nicolas.ferre@microchip.com, alexandre.belloni@bootlin.com,
- ludovic.desroches@microchip.com, rjui@broadcom.com, sbranden@broadcom.com,
- bcm-kernel-feedback-list@broadcom.com, f.fainelli@gmail.com,
- nsaenzjulienne@suse.de, shc_work@mail.ru, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- linux-imx@nxp.com, vz@mleia.com, slemieux.tyco@gmail.com,
- khilman@baylibre.com, heiko@sntech.de, palmer@dabbelt.com,
- paul.walmsley@sifive.com, mripard@kernel.org, wens@csie.org,
- jonathanh@nvidia.com, linux@prisktech.co.nz,
- linux-arm-kernel@lists.infradead.org, linux-pwm@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org,
- linux-tegra@vger.kernel.org
-References: <20191229080610.7597-1-tiny.windzz@gmail.com>
- <20191229080610.7597-26-tiny.windzz@gmail.com>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <12bba091-f095-8474-0032-e0d5acf3357c@gmail.com>
-Date: Thu, 20 Feb 2020 21:49:56 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
-MIME-Version: 1.0
-In-Reply-To: <20191229080610.7597-26-tiny.windzz@gmail.com>
+ id 1j52BY-0003jA-Ei
+ for linux-rockchip@lists.infradead.org; Fri, 21 Feb 2020 06:53:17 +0000
+Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
+ [10.192.0.17])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id C3AC0C008C;
+ Fri, 21 Feb 2020 06:53:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1582267993; bh=lSSoHadAux+NSyOr/UQoXR3OiTdP6h8kp/PUFr4MRgg=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=X2+Qn6sfXWcV6SQue4rY1I/jXjBNtmJ3J0pTsBQzdUgsF2USll68jBKMHVY9ff6m1
+ 2haXq6AkRSjMRQzlRvRtTiIVGJNcIOo1hAX65x0geKhjpxszlOSuMtuhnc0+N5/V6I
+ xC0etCduVHZqyKWJZrP7bxmtQJl0m73LN+/e9m23LKFxtI1KLC72C6zRCCBtEZM80k
+ yNZa5noCcsLK0tDiPoODE7bKRM7M0WO4scbXYN7SgUnicL2RqX6jgA8K5za5IqyjgO
+ MqgJiNq90fGLjGuU3lAHUgnDg5GemPcApzOglkykTeRWUiCpXSiH+TKYrkrVyBMSAI
+ 8xrH1th0rrLGg==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id DD0C9A00B0;
+ Fri, 21 Feb 2020 06:53:08 +0000 (UTC)
+Received: from us01hybrid1.internal.synopsys.com (10.200.27.51) by
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Thu, 20 Feb 2020 22:52:57 -0800
+Received: from NAM12-BN8-obe.outbound.protection.outlook.com (10.202.3.67) by
+ mrs.synopsys.com (10.200.27.51) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Thu, 20 Feb 2020 22:52:56 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=nmgsMVLeUVORATP7qngAB4YUbJH/G5A/5tH0RcsmHzDO0jdalc2F+tXt0pCALxLu89iAMmOMJwQ1ZHb1qMEU+9pyroJjliBxeEu1pk4j+Pw+ata4uNr740i3uMPPomkHGygA9aWYA7G6j8tmUgcslLZ0rsaqH8NwaKfXYwWqvRu0X3syQJxjforptGvVQWIVu7x8LH13ojVCnF5HKrX0McLTO5hdNbHNhfHeJCWyB0EtIb24ptXtdRDo+XTsjg6RkVfe6MI10ZlhWhYh3ohCUc1J4FekDtp+ErjGSKBBJuBNwwS8LPSjBUMqN2ftOFzwMnn+0S8yAhILev3d0JLN8w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lSSoHadAux+NSyOr/UQoXR3OiTdP6h8kp/PUFr4MRgg=;
+ b=EuMkkrCo788S5r2KlKkZrNd7QZjSPK40DMpq7V1kZw5rxc9EurPDIFDkHbo9Sxp9iYBF/KxB1vzOnZdupB6oddB52Af9+HqzdECIzgLbAsUr6PdMS8MJiRwcv6O3mRAg5a/Ff8v0DnC+V/qbSUOutG2Xus0Gc4rA4URSwEHuL6djND33i7hIQwi3vkQZUPayVgRZpbrjuP6VKRbjk3OPjcj11AFJaZrMh4SfyyoedSMI8zJOP0T62MBKkFDqxht1HN0C9C+dnORDUxvJpkrFdocKuUgtyffiZP5f2zugijt3wXiNdIOvQwZw7mYPQ327JOP4rGfZEVBaxoyI3FjRXQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
+ dkim=pass header.d=synopsys.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lSSoHadAux+NSyOr/UQoXR3OiTdP6h8kp/PUFr4MRgg=;
+ b=pNVljr6+M6WR4ofbBijPC4AQVJkNwPs+b63LpoJVSVgbXQCmLrfjfjoSYzsNozF9BV+Lx5Lm3+QWURiaRnN0AMTqsIrW1gBc28HLfVqzpOATSsOo0zscam6kBP4mDKpxkdx6wTMSBxlK/yOKjCudNfstZlnF7iXaosJtvrid7ik=
+Received: from MN2PR12MB4093.namprd12.prod.outlook.com (2603:10b6:208:198::11)
+ by MN2PR12MB3935.namprd12.prod.outlook.com (2603:10b6:208:168::31)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2729.31; Fri, 21 Feb
+ 2020 06:52:55 +0000
+Received: from MN2PR12MB4093.namprd12.prod.outlook.com
+ ([fe80::35cf:644a:cfa6:72f8]) by MN2PR12MB4093.namprd12.prod.outlook.com
+ ([fe80::35cf:644a:cfa6:72f8%7]) with mapi id 15.20.2750.021; Fri, 21 Feb 2020
+ 06:52:55 +0000
+From: Minas Harutyunyan <Minas.Harutyunyan@synopsys.com>
+To: Otavio Salvador <otavio.salvador@ossystems.com.br>,
+ Minas Harutyunyan <Minas.Harutyunyan@synopsys.com>
+Subject: Re: USB DWC2 stops responding when insert/remove cable multiple times
+Thread-Topic: USB DWC2 stops responding when insert/remove cable multiple times
+Thread-Index: AQHV4zxylJsWeUZ0JUKEDMOhhpCodKgfGkgAgAA7cgCAAA+HAIAAbA0AgAKn7gCAAC2+gIABCQCAgABpVgCAASdLgA==
+Date: Fri, 21 Feb 2020 06:52:55 +0000
+Message-ID: <1d2ee918-57e4-53b2-6953-0107d7720c59@synopsys.com>
+References: <CAP9ODKprPi8N-dU8NaKwneXH-3b0ipSEDpU5mDbGntxuyhGhJw@mail.gmail.com>
+ <41a7bfe7-54b1-84eb-091f-469d971ab968@synopsys.com>
+ <CAP9ODKoUH=Cc=uuhfaUy7fkSVdfBHhX-6oS9_hi3Wd6GgDiZYw@mail.gmail.com>
+ <ee47be28-ba9f-750f-65d2-51a722ce291d@synopsys.com>
+ <CAP9ODKqa_4NSsFMUpyFDt3ohgGBCMgbOyKaVjYfSjmcZLmmC+A@mail.gmail.com>
+ <380d765b-8867-a899-b67a-c016c09fa27b@synopsys.com>
+ <CAP9ODKqL_GN+iebL3wPX_9fEUtUVP8Ahv03yJ1R-JLDr=Cn0BA@mail.gmail.com>
+ <beddbc55-fd22-96b7-c980-e4ea207a42f5@synopsys.com>
+ <CAP9ODKq2nEHz_rbwwCv-94LSBOq0it2Kc4yhCqrLT-XxoXommg@mail.gmail.com>
+In-Reply-To: <CAP9ODKq2nEHz_rbwwCv-94LSBOq0it2Kc4yhCqrLT-XxoXommg@mail.gmail.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=hminas@synopsys.com; 
+x-originating-ip: [46.162.196.54]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 76d18a43-84df-4dce-4275-08d7b69aadbc
+x-ms-traffictypediagnostic: MN2PR12MB3935:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <MN2PR12MB3935F14BAD4246C7C1FFC158A7120@MN2PR12MB3935.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6108;
+x-forefront-prvs: 0320B28BE1
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(136003)(376002)(346002)(366004)(396003)(39850400004)(199004)(189003)(54906003)(66446008)(66556008)(71200400001)(66476007)(66946007)(2616005)(110136005)(316002)(81166006)(31686004)(8676002)(81156014)(2906002)(64756008)(8936002)(36756003)(76116006)(91956017)(478600001)(4326008)(86362001)(6506007)(53546011)(186003)(5660300002)(31696002)(6486002)(6512007)(4744005)(26005);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:MN2PR12MB3935;
+ H:MN2PR12MB4093.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: Mb2HJ0ErJ4lhRqbqa1Y8YEuntBQF9PzSwhGvrAFpo3S3Sf5GMwuAvd+tGrgKXBrgo0fdA8nHQBw8ZteD3PxV2oM0K9rv8nIqTXVwXDk+HlKiMkNtCZBZQGviblzrkg9YeBvqTjFL0SXTM/+7PJWVmyG7EOjgJpJ0C90m7cOsPN4r9mRrN5HD1C2vG2Q3etniOaOdnkSRE/GCN4MSZGFrycjVkVONahxPqq80KXv43Rs1+ARqHqtTtHBJhDYvJU+fITorbL9sTJ8OZ8pek2dZ3BS2FUbtWxiq5UqsQ6DsOwWzIACpszW+Sw4FJtuwfgKZiMPsqH/XY8d86IJWRaOYP3bSw17ibn505CElOH1QRSU5QVC3peT9GpSCNbdMKhMafvnhXMrq0s909mIwviDja9JDOOJJH0xuweaO7D2N+ouElMRH3DxbiqpO5Rh+AQmB
+x-ms-exchange-antispam-messagedata: 8QZ2qwXmxQdcyhY+aR8Zv0WjQXZrdaE4FzRVfOClpuWvHwcF3I/hNzADIq0dYHCo1ltQZcB6HBq54N51iZq5yw/erwJdvvUN72YPbls66pIUloR+x5NXgJmEPtl/hmH6ypSnmz0FgX9lITH5qIVFeQ==
+Content-ID: <A0FA17DE08992D46951D53D1D2CFD12E@namprd12.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 76d18a43-84df-4dce-4275-08d7b69aadbc
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Feb 2020 06:52:55.0357 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 059VbqZ9pfW2GJffxknR7sY3ieBWKBNUXfPfZBK1/n+w9y+rRMXrKRvO284qTvnbkYV7RnrJJzIWc3mlcQJ/jQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR12MB3935
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_125009_757494_2855995D 
-X-CRM114-Status: GOOD (  15.00  )
+X-CRM114-CacheID: sfid-20200220_225316_588632_0EA163C8 
+X-CRM114-Status: GOOD (  12.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [matthias.bgg[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -192,48 +159,44 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
+Cc: Felipe Balbi <balbi@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ Johan Hovold <johan@kernel.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+Hi Otavio,
 
-
-On 29/12/2019 09:06, Yangtao Li wrote:
-> Use devm_platform_ioremap_resource() to simplify code.
+On 2/20/2020 5:16 PM, Otavio Salvador wrote:
+> Hello Minas,
 > 
-> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-
-Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
-
-> ---
->  drivers/pwm/pwm-mtk-disp.c | 4 +---
->  1 file changed, 1 insertion(+), 3 deletions(-)
+> Thanks for all your help on this, ...
 > 
-> diff --git a/drivers/pwm/pwm-mtk-disp.c b/drivers/pwm/pwm-mtk-disp.c
-> index 83b8be0209b7..87c6b4bc5d43 100644
-> --- a/drivers/pwm/pwm-mtk-disp.c
-> +++ b/drivers/pwm/pwm-mtk-disp.c
-> @@ -172,7 +172,6 @@ static const struct pwm_ops mtk_disp_pwm_ops = {
->  static int mtk_disp_pwm_probe(struct platform_device *pdev)
->  {
->  	struct mtk_disp_pwm *mdp;
-> -	struct resource *r;
->  	int ret;
->  
->  	mdp = devm_kzalloc(&pdev->dev, sizeof(*mdp), GFP_KERNEL);
-> @@ -181,8 +180,7 @@ static int mtk_disp_pwm_probe(struct platform_device *pdev)
->  
->  	mdp->data = of_device_get_match_data(&pdev->dev);
->  
-> -	r = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	mdp->base = devm_ioremap_resource(&pdev->dev, r);
-> +	mdp->base = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(mdp->base))
->  		return PTR_ERR(mdp->base);
->  
-> 
+> On Thu, Feb 20, 2020 at 3:59 AM Minas Harutyunyan
+> <Minas.Harutyunyan@synopsys.com> wrote:
+>>
+>> On 2/19/2020 7:10 PM, Otavio Salvador wrote:
+> ...
+>>> What sequence do you want us to do?
+>>
+Please provide dwc2 debug log when stop working with g_serial exception 
+dump inside.
+Also provide dwc2 log when it's work without issue.
 
+>> Yes. Can you provide also USB trace >
+> I can, however, it is not clear to me what you want us to do.
+> 
+> Should we use, on host side, usbmon? or do you want something different?
+> 
+Do you have any USB tracer equipment to record trace between host and 
+device?
+
+Thanks,
+Minas
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
