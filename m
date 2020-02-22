@@ -2,73 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7181C169193
-	for <lists+linux-rockchip@lfdr.de>; Sat, 22 Feb 2020 20:42:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2FA0169203
+	for <lists+linux-rockchip@lfdr.de>; Sat, 22 Feb 2020 23:04:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GHzOHG/yLSiSVMob0m8ult4OoxGhyaJEnjEIFqhjo7w=; b=qZBelkmjc2MMYh
-	t91S9Kv/8KsbxbwLkYGFHYLrJl2fFcQhxZD8Bbc6tCD/dA+Uf15NxICIWLV3IOQi3PeHUmipnuTDS
-	CP2UihNaPyfrIvGOnswTlbjzY73EqkZnqDk/BmdcdaEJl6vAvxRka2lyhTxipib6gc0jgFwnTcvSE
-	GMDJm0/2PATByGwHp8cA+9dmyGV9UtFDXCpvLAE9PvHiR7qZx/bVo/898WC+JxI6bI7gBQOUJtnaK
-	8i2no7J/6nF0QGIkQqW25/kQn51goEb8wb3ax2QE7Em/ppBwhVq8vZKRt/UZ1oFVQl7vZkgvLLgX8
-	4/ZS+7Uymvl0mCBhUdmg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5YTD9hIG+pweQLqYGdWmmAuaObSgOjfm7V+eq6xvtr8=; b=JA41a+qCsFJurD
+	qGsaJMIIA4PSFJCGnOLWjpo6/yqXqF/N/8C9PwzttfEjhdT2AvUKqZhJZkQivMTQswgx1cWZJ+vb4
+	r0klpMv9576zXEdqizzpVhDejMwa6ViyCMESUjHzLYcflM6x5OeBZCoWBz8PgGhLop5hQOD2g4/4d
+	A76rvyaqMRUcOQxP0dKjaTaVhJnTkut20a519IbPvQuHeBdpkATYlZgkRCbQFk2IE3KnHLR3Uq3ht
+	cmoWTtkTpatj4MPIeN/I9p0EqwN0urDcxulY+4C4ZLB2mj3tst5J9dNWbqnxbsfDXgPuYnBWWJ6hl
+	nJO5iY8iXI/xgpGqIm6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5afc-0006D2-W0; Sat, 22 Feb 2020 19:42:36 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1j5ctI-0006PW-V5; Sat, 22 Feb 2020 22:04:52 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5afY-0006BU-Li; Sat, 22 Feb 2020 19:42:34 +0000
-Received: by mail-ed1-x544.google.com with SMTP id p23so6821816edr.5;
- Sat, 22 Feb 2020 11:42:32 -0800 (PST)
+ id 1j5ctC-0006KH-PQ; Sat, 22 Feb 2020 22:04:48 +0000
+Received: by mail-wm1-x342.google.com with SMTP id a9so5539728wmj.3;
+ Sat, 22 Feb 2020 14:04:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jxXwmG/BoLt3/DuSIM90nibgbKIiQUu8A/JCVZrI5aE=;
- b=UMIrgNyD6Xysh3omTsoSt+PHA41YQHPYK5cghpRVeHlz77TJ7VeDmYfWrDvhOmc1qI
- jHj7IHIBLOuwbuN1YbltxeLjSG+oGJTz9lKiXLh0GMtSkLa3f1CwAu3mApEn9rY6zIWW
- qnsZoJPouP5O0tOJ2Fg/kJvcf+p4ecUGrx6pfZfPCXo+4iInjRvgm14RUbXu0l9Elg0w
- EN2Xi+CKWIITk0Rucsz09925+BtHNYF+NBKK8MSOemJ6EYCxNgqaNmXop5RgFYxkjfd9
- I4IW9qJwpAxIZ8H6bp14M8B4losIzyNOG2OR4lniKVyn+PmOQhWAYji3fViIQWDlM1iY
- MG9Q==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=f6UYYZbApbZsahGyunKgNImaPux/N+TMxTyzK7wQqbw=;
+ b=RZWyUZLk97pzOEiYzgmzB89sc1Bwnug6G48w+yV9zxEwhg9oHn+Qmtun6mlEam4R9N
+ ynpl4GU03wIY6egej0Y4nKvJTZg1LagXZe8vNXvkgpMSKK3uRWSGmuKDmUyS6EcfDWXL
+ 8iz0foFlztubOEBwp2SnkeB3tKp+6HoQ/XCbof/bWtKxhg/VLogkEu7JrK58uKSRtWaI
+ imNLZ4cP90wkcvLjshM/r9OI3pjUs4YIGjvTapAa139M7P+oalYArnnA4+ECw+lazk2w
+ X60iiorwqugsI5DkIZd+lk+5F1a07+J+6WTKHb6UxQf3Z6v/cDjQOOu4xN5R0nHUy+aA
+ 4bBQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=jxXwmG/BoLt3/DuSIM90nibgbKIiQUu8A/JCVZrI5aE=;
- b=pyNDvZYwO4T3U3Y8C+ttqJrZGPVRTAc6VQymHO1iJ0qmBDigpQSiiaLeyPoE/hBjHL
- QlZ9aF++CDzYC/8JcEdgI67mrNQhMvDCm/vWxJlLgPH4n6HCuA6jobDGWLP/6C311vV8
- C4vZlWFwVmcf+mdiC1Aq7CV9f1Mcl2w9byjhwGlE8e3DkxPA9CK0Wg1Ho3ptJCTNSXo5
- 6pXyP2NleVNCr+dGWauyoQrcG0wNdWcYAT+pCpkZaEYqLIUcJEu9vrqFpg8/H6FXAICT
- InPljSgQTdbLVxL/zOuzCgzu8SJAdYQELNvl1WVBOISY85pVvmW2vzhMMFXkpbuOQKGq
- 8Phg==
-X-Gm-Message-State: APjAAAWx3vNJv2LpLh121EAA6IMnp6wpl3wxMF7KRh95PKsA+y8Hjy1m
- ZmYxXGZ79IRCRyNyNR9Ey766o+CCw3TwcVDFAEs=
-X-Google-Smtp-Source: APXvYqwfAkL5gcMkA/17+706cDRZPOl9loVVEPtWeFZTvqzB7twy3wihTpHS8mLjeiRkAbjzkyTYXKADIgMaiqwtzIM=
-X-Received: by 2002:a05:6402:b2e:: with SMTP id
- bo14mr41025601edb.13.1582400551407; 
- Sat, 22 Feb 2020 11:42:31 -0800 (PST)
-MIME-Version: 1.0
-References: <20200112001623.2121227-1-martin.blumenstingl@googlemail.com>
-In-Reply-To: <20200112001623.2121227-1-martin.blumenstingl@googlemail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=f6UYYZbApbZsahGyunKgNImaPux/N+TMxTyzK7wQqbw=;
+ b=aKtnlyso6uMJSKMAUykxLze267rqGXM3grvFlBDRK18rsQ+GzsRXyFNdaHPm+rCVLM
+ ITwgpE+0LhW9XBjtz4UU+Wn/N8UeJcF3gvNGN/KN32Jc2jKSwonVf1Jn5Wp+dur3cYoq
+ b/Dc+I+VKfZqH2/URryxScFMccI98VBOBZa4PU1T68tB8bOPW4aBu773L5Qm/KqY2R67
+ Q72OblEaVLnW8BEvXUviBh2+mTIOE/wIsICU94qQUDI+IWSwLqk0VUzEE6oxNfr39/0E
+ /8OMXsZGFJHmlhhc+RDPT81EJHB+M4yt3l9Uu+uj0um9yRdkIuxWgNihQxS+v5FLPRE0
+ q2JA==
+X-Gm-Message-State: APjAAAXf9Y/JVrYPaIKs/Qp7l/f8YuBe5yDYiCpXZy+Cx+kkJPreuREI
+ XUTq5sZ4Rw9DGzDGoron6qw=
+X-Google-Smtp-Source: APXvYqyfdi+JXp0MxngH5Bq+GtkY2TQMY1vKoP54zc4iYXW8MDmAPUoZxpWIHiELs6qqIKdd6Qb55A==
+X-Received: by 2002:a1c:b0c3:: with SMTP id z186mr11652445wme.36.1582409084970; 
+ Sat, 22 Feb 2020 14:04:44 -0800 (PST)
+Received: from localhost.localdomain
+ (p200300F1373A1900428D5CFFFEB99DB8.dip0.t-ipconnect.de.
+ [2003:f1:373a:1900:428d:5cff:feb9:9db8])
+ by smtp.googlemail.com with ESMTPSA id
+ q130sm11151738wme.19.2020.02.22.14.04.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 22 Feb 2020 14:04:44 -0800 (PST)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Sat, 22 Feb 2020 20:42:20 +0100
-Message-ID: <CAFBinCBLJyPxOBv0JNe7o0ME3rvPi+2Qv7Lwgw6T92f15ZXcxA@mail.gmail.com>
-Subject: Re: [PATCH RFT v2 0/3] devfreq fixes for panfrost
-To: steven.price@arm.com
+To: yuq825@gmail.com,
+	dri-devel@lists.freedesktop.org
+Subject: [PATCH RFC v3 0/2] drm: lima: devfreq and cooling device support
+Date: Sat, 22 Feb 2020 23:04:30 +0100
+Message-Id: <20200222220432.448115-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.25.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200222_114232_739180_5FEF980C 
-X-CRM114-Status: GOOD (  13.26  )
+X-CRM114-CacheID: sfid-20200222_140446_855907_69FCB6C7 
+X-CRM114-Status: GOOD (  13.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [martin.blumenstingl[at]googlemail.com]
@@ -93,65 +100,88 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: robh@kernel.org, tomeu.vizoso@collabora.com, airlied@linux.ie,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-rockchip@lists.infradead.org, daniel@ffwll.ch, sudeep.holla@arm.com,
- linux-amlogic@lists.infradead.org, robin.murphy@arm.com, alyssa@rosenzweig.io
+Cc: robh@kernel.org, tomeu.vizoso@collabora.com, linux-pm@vger.kernel.org,
+ airlied@linux.ie, linux-kernel@vger.kernel.org, steven.price@arm.com,
+ linux-rockchip@lists.infradead.org, wens@csie.org,
+ alyssa.rosenzweig@collabora.com, daniel@ffwll.ch,
+ linux-amlogic@lists.infradead.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Steven,
+This is my attempt at adding devfreq (and cooling device) support to
+the lima driver.
 
-On Sun, Jan 12, 2020 at 1:16 AM Martin Blumenstingl
-<martin.blumenstingl@googlemail.com> wrote:
->
-> These are a bunch of devfreq fixes for panfrost that came up in a
-> discussion with Robin Murphy during the code-review of the lima
-> devfreq patches: [0]
->
-> I am only able to test patch #1 properly because the only boards with
-> panfrost GPU that I have are using an Amlogic SoC. We don't have
-> support for the OPP tables or dynamic clock changes there yet.
-> So patches #2 and #3 are compile-tested only.
->
->
-> Changes since v1 at [1]
-> - added Steven's Reviewed-by to patch #2 (thank you!)
-> - only use dev_pm_opp_put_regulators() to clean up in
->   panfrost_devfreq_init() if regulators_opp_table is not NULL to fix
->   a potential crash inside dev_pm_opp_put_regulators() as spotted by
->   Steven Price (thank you!). While here, I also switched to "goto err"
->   pattern to avoid lines with more than 80 characters.
->
-> Known discussion topics (I have no way to test either of these, so I am
-> looking for help here):
-> - Steven Price reported the following message on his firefly (RK3288)
->   board:
->   "debugfs: Directory 'ffa30000.gpu-mali' with parent 'vdd_gpu' already
->   present!"
-> - Robin Murphy suggested that patch #1 may not work once the OPP table
->   for the GPU comes from SCMI
->
->
-> [0] https://patchwork.freedesktop.org/patch/346898/
-> [1] https://patchwork.freedesktop.org/series/71744/
->
->
-> Martin Blumenstingl (3):
->   drm/panfrost: enable devfreq based the "operating-points-v2" property
->   drm/panfrost: call dev_pm_opp_of_remove_table() in all error-paths
->   drm/panfrost: Use the mali-supply regulator for control again
-I don't have time to work on these patches in the near future
-can you (or if someone else is interested then please speak up) please
-take these over? you are familiar with the panfrost devfreq code and
-you have at least one board where the GPU regulator actually has to
-change the voltage (which means you can test this properly; on Amlogic
-SoCs the GPU voltage is fixed across all frequencies).
+Test results from a Meson8m2 board:
+TEST #1: glmark2-es2-drm --off-screen in an infinite loop while cycling
+         through all available frequencies using the userspace governor
+
+     From  :   To
+           : 182142857 318750000 425000000 510000000 637500000   time(ms)
+  182142857:         0      1274      1274      1273      1279   5399468
+  318750000:      1274         0      1274      1273      1272   5114700
+  425000000:      1276      1274         0      1272      1271   5122008
+  510000000:      1909      1273      1273         0       636   5274292
+* 637500000:       640      1272      1272      1273         0   5186796
+Total transition : 24834
+
+TEST #2: glmark2-es2-drm --off-screen in an infinite loop with the
+         simple_ondemand governor
+     From  :   To
+           : 182142857 318750000 425000000 510000000 637500000   time(ms)
+  182142857:         0         0         0         0       203    318328
+  318750000:        53         0         0         0        21     56044
+  425000000:        27        18         0         0         2     34172
+  510000000:        27         6        14         0         1     41348
+* 637500000:        95        50        33        48         0   2085312
 
 
-Martin
+Changes since RFC v2 at [1]:
+- added #cooling-cells to the dt-bindings (new patch #1)
+- skip devfreq initialization when the operating-points-v2 property is
+  absent
+- call dev_pm_opp_set_regulators() so devfreq will actually manage the
+  mali-supply regulator
+- rebased on top of drm-misc-next-2020-02-21
+
+Changes since RFC v1 at [0]:
+- added lock to protect the statistics as these can be written 
+  concurrently for example when the GP and PP IRQ are firing at the
+  same time. Thanks to Qiang Yu for the suggestion!
+- updated the copyright notice of lima_devfreq.c to indicate that the
+  code is derived from panfrost_devfreq.c. Thanks to  Chen-Yu Tsai  for
+  the suggestion!
+- I did not unify the code with panfrost yet because I don't know where
+  to put the result. any suggestion is welcome though!
+
+
+[0] https://patchwork.freedesktop.org/series/70967/
+[1] https://patchwork.kernel.org/cover/11311293/
+
+
+Martin Blumenstingl (2):
+  dt-bindings: gpu: mali-utgard: Add the #cooling-cells property
+  drm/lima: Add optional devfreq and cooling device support
+
+ .../bindings/gpu/arm,mali-utgard.yaml         |   4 +
+ drivers/gpu/drm/lima/Kconfig                  |   1 +
+ drivers/gpu/drm/lima/Makefile                 |   3 +-
+ drivers/gpu/drm/lima/lima_devfreq.c           | 215 ++++++++++++++++++
+ drivers/gpu/drm/lima/lima_devfreq.h           |  15 ++
+ drivers/gpu/drm/lima/lima_device.c            |   4 +
+ drivers/gpu/drm/lima/lima_device.h            |  18 ++
+ drivers/gpu/drm/lima/lima_drv.c               |  14 +-
+ drivers/gpu/drm/lima/lima_sched.c             |   9 +
+ drivers/gpu/drm/lima/lima_sched.h             |   3 +
+ 10 files changed, 283 insertions(+), 3 deletions(-)
+ create mode 100644 drivers/gpu/drm/lima/lima_devfreq.c
+ create mode 100644 drivers/gpu/drm/lima/lima_devfreq.h
+
+-- 
+2.25.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
