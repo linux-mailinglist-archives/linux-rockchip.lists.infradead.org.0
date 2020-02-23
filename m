@@ -2,42 +2,45 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E9DD16984B
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B07C16984A
 	for <lists+linux-rockchip@lfdr.de>; Sun, 23 Feb 2020 16:07:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aBhQfqXWC42t2q07KqMNG/nb0OeJ7kf0Rtx/T3hhpo4=; b=D35Izef+We9CHg
-	nYEOhwfmgqtXbKeqxk97btqnhKaCqd/9hHXLRI1VhlMgjb9ETpUmNZOBljzVFYSJPqYd+g6UtMsUX
-	KAbJZHMkoC/Cssn4eyt1SusPO/MRUzXSYSepUjFbkZ+17p0eh3AZ0URpcRwjTRgdH8IivvThVBRIt
-	E6w5m5s1s55/mVpvLhQCoFUuL3db4soPInfEnK8iGMXdPfUEUqEVHXL6NuzmOy5lteU1DEF9aOzQ5
-	JbhubdX6rGP7CECNz+cEqQY60g6zqt9IDUX+VbjF+ojFm/8WWIfAmuDK9YGG+4Hy8tyvugXx/jIQz
-	J4rMabOvPIePbc2ntSiw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=o/iBDP0gBn2SaEslPWXZOtLmOoata/flSp3WMEEKfhI=; b=WZq9NaXxiNwPi0
+	wbIkTEMq/7eXxf+PskGGK9ubjMNMCAuUG7KtGHIaN0FP7bkizWY4Gj9MtynZJbF1CX1myS1f6ze4s
+	izN8Qh9FnfPgtPsZdGJ2UrmL1R2UeaCPLRlVJ2Ya803g8g9AJU6qGjeiRuuZZoQqXkVA3f1l5XdBI
+	iNZELfMhSAfETkng/Ic/XdCzYBEs/SINTUEs/0DMp7TBGCyu/R71dp3oQmOqCxMhgI1FyAysKeKJT
+	TLCRpeLOXyTlpW4oUPR0NSAxyEa6G3pgMaFrR/yQHZONf0kFkPQGLSaknNM1V4F9V2+W57I4GiIuY
+	BT39XqMP30oRvsvqguOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5srC-0006yA-4E; Sun, 23 Feb 2020 15:07:46 +0000
+	id 1j5srC-0006yu-Qi; Sun, 23 Feb 2020 15:07:46 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5sr8-0006wM-Ge
+ id 1j5sr8-0006wL-HV
  for linux-rockchip@lists.infradead.org; Sun, 23 Feb 2020 15:07:44 +0000
 Received: from p508fd060.dip0.t-ipconnect.de ([80.143.208.96]
  helo=phil.fritz.box)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1j5sqs-0003if-PL; Sun, 23 Feb 2020 16:07:26 +0100
+ id 1j5sqt-0003if-3r; Sun, 23 Feb 2020 16:07:27 +0100
 From: Heiko Stuebner <heiko@sntech.de>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 1/3] dt-bindings: Add vendor prefix for Elida
-Date: Sun, 23 Feb 2020 16:07:09 +0100
-Message-Id: <20200223150711.194482-1-heiko@sntech.de>
+Subject: [PATCH 2/3] dt-bindings: display: panel: Add binding document for
+ Elida KD35T133
+Date: Sun, 23 Feb 2020 16:07:10 +0100
+Message-Id: <20200223150711.194482-2-heiko@sntech.de>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200223150711.194482-1-heiko@sntech.de>
+References: <20200223150711.194482-1-heiko@sntech.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_070742_708993_AFCD3DED 
-X-CRM114-Status: UNSURE (   7.56  )
+X-CRM114-CacheID: sfid-20200223_070742_726788_A01E22B5 
+X-CRM114-Status: UNSURE (   9.77  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -70,26 +73,70 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 
-Shenzen Elida Technology Co. Ltd. is a Chinese TFT manufacturer.
+The KD35T133 is a 3.5" 320x480 DSI display used in the RK3326-based
+Odroid Go Advance handheld device.
 
 Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 ---
- Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+ .../display/panel/elida,kd35t133.yaml         | 49 +++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/display/panel/elida,kd35t133.yaml
 
-diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-index 9e67944bec9c..38d3149d3adc 100644
---- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
-+++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-@@ -285,6 +285,8 @@ patternProperties:
-     description: Elan Microelectronic Corp.
-   "^elgin,.*":
-     description: Elgin S/A.
-+  "^elida,.*":
-+    description: Shenzhen Elida Technology Co., Ltd.
-   "^embest,.*":
-     description: Shenzhen Embest Technology Co., Ltd.
-   "^emlid,.*":
+diff --git a/Documentation/devicetree/bindings/display/panel/elida,kd35t133.yaml b/Documentation/devicetree/bindings/display/panel/elida,kd35t133.yaml
+new file mode 100644
+index 000000000000..4bd74eaa61be
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/panel/elida,kd35t133.yaml
+@@ -0,0 +1,49 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/panel/elida,kd35t133.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Elida KD35T133 3.5in 320x480 DSI panel
++
++maintainers:
++  - Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
++
++allOf:
++  - $ref: panel-common.yaml#
++
++properties:
++  compatible:
++    const: elida,kd35t133
++  reg: true
++  backlight: true
++  reset-gpios: true
++  iovcc-supply:
++     description: regulator that supplies the iovcc voltage
++  vdd-supply:
++     description: regulator that supplies the vdd voltage
++
++required:
++  - compatible
++  - reg
++  - backlight
++  - iovcc-supply
++  - vdd-supply
++
++additionalProperties: false
++
++examples:
++  - |
++    dsi@ff450000 {
++        #address-cells = <1>;
++        #size-cells = <0>;
++        panel@0 {
++            compatible = "elida,kd35t133";
++            reg = <0>;
++            backlight = <&backlight>;
++            iovcc-supply = <&vcc_1v8>;
++            vdd-supply = <&vcc3v3_lcd>;
++        };
++    };
++
++...
 -- 
 2.24.1
 
