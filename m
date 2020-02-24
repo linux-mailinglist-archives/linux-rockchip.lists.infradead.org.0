@@ -2,51 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B320916A0B0
-	for <lists+linux-rockchip@lfdr.de>; Mon, 24 Feb 2020 09:56:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40A2616A0C4
+	for <lists+linux-rockchip@lfdr.de>; Mon, 24 Feb 2020 09:56:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=76XnBRcqwxBO9YQ8v3chclP6Kz1nhLZKhqA1iTi9bFU=; b=fbL+xa80ylG1Fn
-	5+PAGQEbvmVGi8Im7UK72tWHooAuTRKDielKLIE+ZUM3vzwL/k17xd6z1+0JRTW3oJkUMMpG8VWBZ
-	3XfxWrxlokVnO95wOsXxNOwETzk1Vwp7S/gcirUVaMrE3HnRI8NaerXBrlO3AlI78989SxmttEGGy
-	AAhL1o9Ju/x3vLL8oiTuxl+RjZLQUW8dc4mCMXrSCFWvk+Jz1wTQsn2MST36Yzwu26UZxq0uvG7sN
-	Non0Ky+6berGJLMKZ/BjeBNmJNguioAudbRXoaAXcdFEfcTfGPe7ZgMzIEwvm4DLNYFcUX5Rv5PSF
-	+B623CVErmsAjlqlfV9A==;
+	List-Owner; bh=NwITOOEBPDvSiKCeddT7ZKXVXT3d/dZZmhiWoZiVEPw=; b=b43ApUVgrC3SYq
+	/oK8XZl8sC1sHBbNWJH+uaEQR2F4/S0W/7kdemQg7sknp6nPj+h7OCbM7nrOdtl3Pw51eJngmS8Ao
+	cYbsEXCA5iXsdD2Tp7ATfV4GQNsipuO44Y83qzFg8LUr9OjeRqUYwlFYgoJtaxreE8oM7FT4mpycG
+	HSNyVqGcuWzEl38qw8oc815w9cgnkGO9+L7CbLM5q401VkoHMlaqsegjDmPVC0ToIUp9uOzRZ+L+j
+	k+RkGiH8KRIAdfLLrzCIM+AMSMWx+fJ7wtlz2MxT8wA9iVztRIvh2QL3eNdtEZk3Gmk4XM3zqJucw
+	u8w7a8uirKROh8cBBBug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j69XU-0002Vd-3l; Mon, 24 Feb 2020 08:56:32 +0000
+	id 1j69Xm-0002s1-Nm; Mon, 24 Feb 2020 08:56:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j69Uh-00078D-Al; Mon, 24 Feb 2020 08:53:41 +0000
+ id 1j69Ul-0007As-S2; Mon, 24 Feb 2020 08:53:46 +0000
 Received: from localhost (unknown [213.57.247.131])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 440D520880;
- Mon, 24 Feb 2020 08:53:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B6497214DB;
+ Mon, 24 Feb 2020 08:53:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582534418;
- bh=jLtAPhwXKRIYi8hoepp1P4IjkM/yEjLYulzEjNIxRGk=;
+ s=default; t=1582534421;
+ bh=PqykvPQQ/udBG704OUeCLp9f/aB1NAyE9uTf+TCbpz8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=zOsEW4IkEySlpKnb+omU7upJ/n3o+YVnJdQAlFCltuNHSYGo24LD6X9lQzg2l2f7+
- 9FEIZVW7B7RzvsHVAZp7u7D+k+JQ+9scK+PChBYFZYVRuSQ41KrEDHMqkuWLJwO2SD
- XG4pyBDFae1Zi5ccsI3yazBlOvx7NpMoa9ZWbde4=
+ b=t/pjM/vcm8JA8QuRjS1Bu+1SaGDuSYghfazALvLx7jH4zI0/CnwUOeFhjLEyaBm0D
+ oPdvP4f8CNmalkFD1hQDQg+pJMX2pb6mAEwS88pHG/k0RfcczV8h++l1QkKUbQFmOT
+ Fll+u2HS/YvFQlHo70Zuj/eXl/5BtJ+uRmo30hj0=
 From: Leon Romanovsky <leon@kernel.org>
 To: "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>
-Subject: [PATCH net-next v1 06/18] net/aeroflex: Don't assign FW if it is not
- available
-Date: Mon, 24 Feb 2020 10:52:59 +0200
-Message-Id: <20200224085311.460338-7-leon@kernel.org>
+Subject: [PATCH net-next v1 07/18] net/agere: Delete unneeded driver version
+Date: Mon, 24 Feb 2020 10:53:00 +0200
+Message-Id: <20200224085311.460338-8-leon@kernel.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200224085311.460338-1-leon@kernel.org>
 References: <20200224085311.460338-1-leon@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_005339_581938_6414ED10 
-X-CRM114-Status: GOOD (  10.45  )
+X-CRM114-CacheID: sfid-20200224_005344_523706_0C087898 
+X-CRM114-Status: UNSURE (   9.50  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -100,26 +100,38 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Leon Romanovsky <leonro@mellanox.com>
 
-If FW version is not available, it is enough to leave that field as
-empty, there is no need to write N/A.
+There is no need in driver version for in-tree kernel code.
 
 Signed-off-by: Leon Romanovsky <leonro@mellanox.com>
 ---
- drivers/net/ethernet/aeroflex/greth.c | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/net/ethernet/agere/et131x.c | 1 -
+ drivers/net/ethernet/agere/et131x.h | 1 -
+ 2 files changed, 2 deletions(-)
 
-diff --git a/drivers/net/ethernet/aeroflex/greth.c b/drivers/net/ethernet/aeroflex/greth.c
-index 198f1544e271..bf546118dbc6 100644
---- a/drivers/net/ethernet/aeroflex/greth.c
-+++ b/drivers/net/ethernet/aeroflex/greth.c
-@@ -1115,7 +1115,6 @@ static void greth_get_drvinfo(struct net_device *dev, struct ethtool_drvinfo *in
- 	strlcpy(info->driver, dev_driver_string(greth->dev),
- 		sizeof(info->driver));
- 	strlcpy(info->bus_info, greth->dev->bus->name, sizeof(info->bus_info));
--	strlcpy(info->fw_version, "N/A", sizeof(info->fw_version));
+diff --git a/drivers/net/ethernet/agere/et131x.c b/drivers/net/ethernet/agere/et131x.c
+index cb6a761d5c11..1b19385ad8a9 100644
+--- a/drivers/net/ethernet/agere/et131x.c
++++ b/drivers/net/ethernet/agere/et131x.c
+@@ -2958,7 +2958,6 @@ static void et131x_get_drvinfo(struct net_device *netdev,
+ 	struct et131x_adapter *adapter = netdev_priv(netdev);
+
+ 	strlcpy(info->driver, DRIVER_NAME, sizeof(info->driver));
+-	strlcpy(info->version, DRIVER_VERSION, sizeof(info->version));
+ 	strlcpy(info->bus_info, pci_name(adapter->pdev),
+ 		sizeof(info->bus_info));
  }
+diff --git a/drivers/net/ethernet/agere/et131x.h b/drivers/net/ethernet/agere/et131x.h
+index be9a11c02526..d0e922584d8a 100644
+--- a/drivers/net/ethernet/agere/et131x.h
++++ b/drivers/net/ethernet/agere/et131x.h
+@@ -46,7 +46,6 @@
+  */
 
- static void greth_get_regs(struct net_device *dev, struct ethtool_regs *regs, void *p)
+ #define DRIVER_NAME "et131x"
+-#define DRIVER_VERSION "v2.0"
+
+ /* EEPROM registers */
+
 --
 2.24.1
 
