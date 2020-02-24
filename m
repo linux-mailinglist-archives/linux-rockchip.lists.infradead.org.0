@@ -2,62 +2,91 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A4ED16A33C
-	for <lists+linux-rockchip@lfdr.de>; Mon, 24 Feb 2020 10:56:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3CB416A340
+	for <lists+linux-rockchip@lfdr.de>; Mon, 24 Feb 2020 10:56:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZiJ3KkFl6DPTTitnNlmcwQUEuxpVgNxxDr5znz+c/o4=; b=BhfdINl0XGqb0P
-	LiEqKbDHRu1M/Sg4C6dMOObUCiMqCMgUGhP8K2F0BBXWsvygWkCUvZcdNOvd//IcYeaaluQ4V5AmU
-	FnUOyk50HJY6WQJvOXr4bDZ+EucyDNHorZQd4zdry/2ryiZbA4eOG52tcuLQA0zbuOkRiWsIF322H
-	FcP3FNq3VkAK9C3ncTn0vj0f0Sx7TItlBSFcZg+5gzmEBZQM5rTXSPS+T9u9NmaONQrnu2h8/SoT3
-	T+mL+okQztsakvtKsnxEnqAa+d4Hsr23Mz0j7H1jDR4JgjplOE/3MRyCGCMQfiyYO5ZFQPe10XvHr
-	jA+cwuvBp7nZ31WQgfqw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=SOSDEMcx4p+l21PeU5k54vznExWZ1CQR/7J0emptAvk=; b=Z3BW4PRg9OmCKNjo4oOk56vHL
+	2qtugfCOrBJZ92lgmj2NE2jT3y+4clztZ5lpJVylSV0r86nKIl8bEnrgAmU++C42SgyinEKyEvhMX
+	+qNxc+mmi6AP4X7lNjZtVTQQ//zPXHxVFYby8UuIQ8uAZn1hYMv5q18blFZc5CmZ6CnFs/FA3rF5b
+	O/Mstnd2Xe5Or/iwu1OCopeFU7UQiw/sIzXnYeZEsu4tLawIsBzNO6lHcBQjBuRl2WGRxQKjflN+Y
+	JrOxOJTyMr8TJXp5Xzzk5RsOPwFNHhOfBEw/9UkLlfzpbZ5gtOFjGPpKkDotqe9hKaCkF/uJQfC67
+	bvAmc5FSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6AT1-0003My-EN; Mon, 24 Feb 2020 09:55:59 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j6ATM-0003gX-PG; Mon, 24 Feb 2020 09:56:20 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6AEq-0002WN-OD; Mon, 24 Feb 2020 09:41:22 +0000
-Received: from localhost (unknown [213.57.247.131])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 369712082E;
- Mon, 24 Feb 2020 09:41:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582537280;
- bh=1nAZsSaUpHnLId7l7noD4HYXX57ZdAUDrqEkhcXwCPM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=GskwDtqL8f/ZWRzCOvxGcyxW6mNShCW4StY026PH6q/pDUg7tyPsi1NDpHEPqYTyX
- n4Qwp1T/y5YcTHSj+6iAGjmOodjHRq5qCwbhYdOl97tIujIo7+N5x0no0YeI4lUw5Q
- Lp1Vj/BfZuEJ0I+HOis1+V3nFXWuVeS3Rgk8QFjc=
-Date: Mon, 24 Feb 2020 11:41:16 +0200
-From: Leon Romanovsky <leon@kernel.org>
-To: "Kiyanovski, Arthur" <akiyano@amazon.com>
-Subject: Re: [PATCH net-next v1 12/18] net/amazon: Ensure that driver version
- is aligned to the linux kernel
-Message-ID: <20200224094116.GD422704@unreal>
+ id 1j6AHW-0005Dr-Jm; Mon, 24 Feb 2020 09:44:08 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 403056F45;
+ Mon, 24 Feb 2020 04:44:03 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Mon, 24 Feb 2020 04:44:03 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=8D6LuRxaoCzIVrsMtMaDax+b3gC
+ RwpjTTxEPY3vi8sw=; b=QyiSrbuZDxmS0/3x848Zpki0l0UZmW5Yf8y/ybpvHvj
+ abrv3S7nodrCGVcZ3sQDUk43E61bIuadELNRNr7dUd5PxzKA7gZj3Gm3FYNewMjI
+ QIXGP958QZhd1d9S4+yYbBuCzjvQdcatRjxyC6PK6+tJlb96xbrFbyzWlfxb9oYx
+ z7U64L8WPHFmS/Iq9JrZKGlCIIzFoUMpicsXbAHwLivvm94QhX2Bwbqjaof4+TjT
+ D/7ZvO3hyLDFcnCyPGHQRkanznRYHRGd5h0n0YPd5gj2OtnYEirxnAmfWwfy89oY
+ Qy8t+zwMPxBE7yqIwjvLO7068uWs7nMCkKFoDjNWuEg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=8D6LuR
+ xaoCzIVrsMtMaDax+b3gCRwpjTTxEPY3vi8sw=; b=CP7WwY699l786hOUiAf6by
+ x+rtB9SqF4VItFWahkIJvBCFerSGh96TPZBN/xlAlZHdGfNu7co/Sdtv7QbjH3Vn
+ PjJGuwmCWIxTLxmVNQlt92ACsrOrji6++jG9UXrHIXH5hPC9Qt1AfZzUR71He+MD
+ +BD/xi2ZZSAVmEAmet6mlzjZxYDBE1A372+B5qbNOp+/eYk6LBnAy4vP5Hk5PaBd
+ OvlzhHu7Hu2XLO7TRUCY29tQ/3quEhJA+ZB5DDBNXl8BDnwpult6ZPsKMDuEVOoW
+ b47LhPXTDhFttduUuL/GBfA0f9vICjcQL/z7eWCY9wqJOzYcy75KYKTQekD6peuA
+ ==
+X-ME-Sender: <xms:4JpTXrBS8PvxoPN3aNrnvWeIr6vKHF5DhVRlbmO1vLTtzSaDaSHHfA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrledtgddtjecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
+ ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
+ fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:4JpTXuOghxf55SQ45Xzn2t26MYdJiU5nBulwT8t8eIChzKP6rdHjNA>
+ <xmx:4JpTXqdVfYQUWKMrIzWesJaxoUkspZQTqu91Rps0AxTOaVTTOcoE_Q>
+ <xmx:4JpTXn51C2oCOSGhVLu1wrcmiaPQsRMBbGzBhWUWMddKZobl_qHEJQ>
+ <xmx:45pTXpHYENYFLJ05uceH-qzs201WXROOgFkCY2-ug9XZqkeAMOglMg>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 7FF6A3280059;
+ Mon, 24 Feb 2020 04:44:00 -0500 (EST)
+Date: Mon, 24 Feb 2020 10:43:59 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Leon Romanovsky <leon@kernel.org>
+Subject: Re: [PATCH net-next v1 09/18] net/allwinner: Remove driver version
+Message-ID: <20200224094359.t2qevsxzilgq3faj@gilmour.lan>
 References: <20200224085311.460338-1-leon@kernel.org>
- <20200224085311.460338-13-leon@kernel.org>
- <79ed2b392b4e413faef03f4bb2f8d562@EX13D22EUA004.ant.amazon.com>
+ <20200224085311.460338-10-leon@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <79ed2b392b4e413faef03f4bb2f8d562@EX13D22EUA004.ant.amazon.com>
+In-Reply-To: <20200224085311.460338-10-leon@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_014120_850882_18E642AF 
-X-CRM114-Status: GOOD (  27.71  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200224_014406_799779_3FD67795 
+X-CRM114-Status: UNSURE (   6.91  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.221 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -65,7 +94,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,192 +112,69 @@ Cc: Thor Thayer <thor.thayer@linux.intel.com>, Heiko Stuebner <heiko@sntech.de>,
  Chris Snook <chris.snook@gmail.com>, David Dillow <dave@thedillows.org>,
  Jes Sorensen <jes@trained-monkey.org>,
  Iyappan Subramanian <iyappan@os.amperecomputing.com>,
- Quan Nguyen <quan@os.amperecomputing.com>,
- "linux-acenic@sunsite.dk" <linux-acenic@sunsite.dk>,
- Andy Gospodarek <andy@greyhouse.net>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Chen-Yu Tsai <wens@csie.org>, Lino Sanfilippo <LinoSanfilippo@gmx.de>,
- Veaceslav Falico <vfalico@gmail.com>, Jakub Kicinski <kuba@kernel.org>,
- Tom Lendacky <thomas.lendacky@amd.com>, Jay Cliburn <jcliburn@gmail.com>,
- Jay Vosburgh <j.vosburgh@gmail.com>,
+ Quan Nguyen <quan@os.amperecomputing.com>, linux-acenic@sunsite.dk,
+ Andy Gospodarek <andy@greyhouse.net>, Arthur Kiyanovski <akiyano@amazon.com>,
+ linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
+ Lino Sanfilippo <LinoSanfilippo@gmx.de>, Veaceslav Falico <vfalico@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, Tom Lendacky <thomas.lendacky@amd.com>,
+ Jay Cliburn <jcliburn@gmail.com>, Jay Vosburgh <j.vosburgh@gmail.com>,
  Keyur Chudgar <keyur@os.amperecomputing.com>,
- Maxime Ripard <mripard@kernel.org>, Don Fry <pcnet32@frontier.com>,
- "nios2-dev@lists.rocketboards.org" <nios2-dev@lists.rocketboards.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Ion Badulescu <ionut@badula.org>, "Belgazal, Netanel" <netanel@amazon.com>,
+ Leon Romanovsky <leonro@mellanox.com>, Don Fry <pcnet32@frontier.com>,
+ nios2-dev@lists.rocketboards.org, linux-arm-kernel@lists.infradead.org,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Ion Badulescu <ionut@badula.org>, Netanel Belgazal <netanel@amazon.com>,
  Mark Einon <mark.einon@gmail.com>, "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============8617811803151042489=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Feb 24, 2020 at 09:03:14AM +0000, Kiyanovski, Arthur wrote:
->
->
-> > -----Original Message-----
-> > From: Leon Romanovsky <leon@kernel.org>
-> > Sent: Monday, February 24, 2020 10:53 AM
-> > To: David S. Miller <davem@davemloft.net>; Jakub Kicinski <kuba@kernel.org>
-> > Cc: Leon Romanovsky <leonro@mellanox.com>; Tom Lendacky
-> > <thomas.lendacky@amd.com>; Keyur Chudgar
-> > <keyur@os.amperecomputing.com>; Don Fry <pcnet32@frontier.com>;
-> > Veaceslav Falico <vfalico@gmail.com>; Jay Vosburgh <j.vosburgh@gmail.com>;
-> > linux-acenic@sunsite.dk; Maxime Ripard <mripard@kernel.org>; Heiko Stuebner
-> > <heiko@sntech.de>; Mark Einon <mark.einon@gmail.com>; Chris Snook
-> > <chris.snook@gmail.com>; linux-rockchip@lists.infradead.org; Iyappan
-> > Subramanian <iyappan@os.amperecomputing.com>; Igor Russkikh
-> > <irusskikh@marvell.com>; David Dillow <dave@thedillows.org>; Belgazal,
-> > Netanel <netanel@amazon.com>; Quan Nguyen
-> > <quan@os.amperecomputing.com>; Jay Cliburn <jcliburn@gmail.com>; Lino
-> > Sanfilippo <LinoSanfilippo@gmx.de>; linux-arm-kernel@lists.infradead.org;
-> > Andreas Larsson <andreas@gaisler.com>; Andy Gospodarek
-> > <andy@greyhouse.net>; netdev@vger.kernel.org; Thor Thayer
-> > <thor.thayer@linux.intel.com>; linux-kernel@vger.kernel.org; Ion Badulescu
-> > <ionut@badula.org>; Kiyanovski, Arthur <akiyano@amazon.com>; Jes Sorensen
-> > <jes@trained-monkey.org>; nios2-dev@lists.rocketboards.org; Chen-Yu Tsai
-> > <wens@csie.org>
-> > Subject: [PATCH net-next v1 12/18] net/amazon: Ensure that driver version is
-> > aligned to the linux kernel
-> >
-> > From: Leon Romanovsky <leonro@mellanox.com>
-> >
-> > Upstream drivers are managed inside global repository and released all
-> > together, this ensure that driver version is the same as linux kernel, so update
-> > amazon drivers to properly reflect it.
-> >
-> > Signed-off-by: Leon Romanovsky <leonro@mellanox.com>
-> > ---
-> >  drivers/net/ethernet/amazon/ena/ena_ethtool.c |  1 -
-> > drivers/net/ethernet/amazon/ena/ena_netdev.c  | 17 ++---------------
-> > drivers/net/ethernet/amazon/ena/ena_netdev.h  | 11 -----------
-> >  3 files changed, 2 insertions(+), 27 deletions(-)
-> >
-> > diff --git a/drivers/net/ethernet/amazon/ena/ena_ethtool.c
-> > b/drivers/net/ethernet/amazon/ena/ena_ethtool.c
-> > index ced1d577b62a..19262f37db84 100644
-> > --- a/drivers/net/ethernet/amazon/ena/ena_ethtool.c
-> > +++ b/drivers/net/ethernet/amazon/ena/ena_ethtool.c
-> > @@ -404,7 +404,6 @@ static void ena_get_drvinfo(struct net_device *dev,
-> >  	struct ena_adapter *adapter = netdev_priv(dev);
-> >
-> >  	strlcpy(info->driver, DRV_MODULE_NAME, sizeof(info->driver));
-> > -	strlcpy(info->version, DRV_MODULE_VERSION, sizeof(info->version));
-> >  	strlcpy(info->bus_info, pci_name(adapter->pdev),
-> >  		sizeof(info->bus_info));
-> >  }
-> > diff --git a/drivers/net/ethernet/amazon/ena/ena_netdev.c
-> > b/drivers/net/ethernet/amazon/ena/ena_netdev.c
-> > index 0b2fd96b93d7..4faf81c456d8 100644
-> > --- a/drivers/net/ethernet/amazon/ena/ena_netdev.c
-> > +++ b/drivers/net/ethernet/amazon/ena/ena_netdev.c
-> > @@ -49,12 +49,9 @@
-> >  #include <linux/bpf_trace.h>
-> >  #include "ena_pci_id_tbl.h"
-> >
-> > -static char version[] = DEVICE_NAME " v" DRV_MODULE_VERSION "\n";
-> > -
-> >  MODULE_AUTHOR("Amazon.com, Inc. or its affiliates");
-> > MODULE_DESCRIPTION(DEVICE_NAME);  MODULE_LICENSE("GPL"); -
-> > MODULE_VERSION(DRV_MODULE_VERSION);
-> >
-> >  /* Time in jiffies before concluding the transmitter is hung. */  #define
-> > TX_TIMEOUT  (5 * HZ) @@ -3093,11 +3090,7 @@ static void
-> > ena_config_host_info(struct ena_com_dev *ena_dev,
-> >  	host_info->os_dist = 0;
-> >  	strncpy(host_info->os_dist_str, utsname()->release,
-> >  		sizeof(host_info->os_dist_str) - 1);
-> > -	host_info->driver_version =
-> > -		(DRV_MODULE_VER_MAJOR) |
-> > -		(DRV_MODULE_VER_MINOR <<
-> > ENA_ADMIN_HOST_INFO_MINOR_SHIFT) |
-> > -		(DRV_MODULE_VER_SUBMINOR <<
-> > ENA_ADMIN_HOST_INFO_SUB_MINOR_SHIFT) |
-> > -		("K"[0] << ENA_ADMIN_HOST_INFO_MODULE_TYPE_SHIFT);
-> > +	host_info->driver_version = LINUX_VERSION_CODE;
-> >  	host_info->num_cpus = num_online_cpus();
-> >
-> >  	host_info->driver_supported_features = @@ -3476,9 +3469,7 @@
-> > static int ena_restore_device(struct ena_adapter *adapter)
-> >  		netif_carrier_on(adapter->netdev);
-> >
-> >  	mod_timer(&adapter->timer_service, round_jiffies(jiffies + HZ));
-> > -	dev_err(&pdev->dev,
-> > -		"Device reset completed successfully, Driver info: %s\n",
-> > -		version);
-> > +	dev_err(&pdev->dev, "Device reset completed successfully\n");
-> >
-> >  	return rc;
-> >  err_disable_msix:
-> > @@ -4116,8 +4107,6 @@ static int ena_probe(struct pci_dev *pdev, const
-> > struct pci_device_id *ent)
-> >
-> >  	dev_dbg(&pdev->dev, "%s\n", __func__);
-> >
-> > -	dev_info_once(&pdev->dev, "%s", version);
-> > -
-> >  	rc = pci_enable_device_mem(pdev);
-> >  	if (rc) {
-> >  		dev_err(&pdev->dev, "pci_enable_device_mem() failed!\n");
-> > @@ -4429,8 +4418,6 @@ static struct pci_driver ena_pci_driver = {
-> >
-> >  static int __init ena_init(void)
-> >  {
-> > -	pr_info("%s", version);
-> > -
-> >  	ena_wq = create_singlethread_workqueue(DRV_MODULE_NAME);
-> >  	if (!ena_wq) {
-> >  		pr_err("Failed to create workqueue\n"); diff --git
-> > a/drivers/net/ethernet/amazon/ena/ena_netdev.h
-> > b/drivers/net/ethernet/amazon/ena/ena_netdev.h
-> > index 8795e0b1dc3c..74c7f10b60dd 100644
-> > --- a/drivers/net/ethernet/amazon/ena/ena_netdev.h
-> > +++ b/drivers/net/ethernet/amazon/ena/ena_netdev.h
-> > @@ -45,18 +45,7 @@
-> >  #include "ena_com.h"
-> >  #include "ena_eth_com.h"
-> >
-> > -#define DRV_MODULE_VER_MAJOR	2
-> > -#define DRV_MODULE_VER_MINOR	1
-> > -#define DRV_MODULE_VER_SUBMINOR 0
-> > -
-> >  #define DRV_MODULE_NAME		"ena"
-> > -#ifndef DRV_MODULE_VERSION
-> > -#define DRV_MODULE_VERSION \
-> > -	__stringify(DRV_MODULE_VER_MAJOR) "."	\
-> > -	__stringify(DRV_MODULE_VER_MINOR) "."	\
-> > -	__stringify(DRV_MODULE_VER_SUBMINOR) "K"
-> > -#endif
-> > -
-> >  #define DEVICE_NAME	"Elastic Network Adapter (ENA)"
-> >
-> >  /* 1 for AENQ + ADMIN */
-> > --
-> > 2.24.1
->
-> Hi Leon, David,
->
-> This patch is not good for the ENA driver as it breaks the interface with the FW of the ENA device in ena_config_host_info(), host_info is later reported to the FW.
-> Please do not merge it yet.
 
-As I wrote here [1], I tried to avoid any changes in SW<->FW interfaces.
-Can you please show me the dump stack of how is such info forwarded to FW?
-How do you distinguish between different distro versions and driver
-releases?
+--===============8617811803151042489==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="3l2hq75myvlmy434"
+Content-Disposition: inline
 
-> We are now working on altering your patch so that it won't break this interface and will send it to you in the next few hours.
 
-It is good, thanks.
+--3l2hq75myvlmy434
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-[1] https://lore.kernel.org/netdev/20200223091031.GA422704@unreal
-
+On Mon, Feb 24, 2020 at 10:53:02AM +0200, Leon Romanovsky wrote:
+> From: Leon Romanovsky <leonro@mellanox.com>
 >
-> Thanks,
-> Arthur
+> There is no need in custom driver version for in-tree code.
 >
+> Signed-off-by: Leon Romanovsky <leonro@mellanox.com>
+
+Acked-by: Maxime Ripard <mripard@kernel.org>
+
+Thanks!
+Maxime
+
+--3l2hq75myvlmy434
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXlOa3wAKCRDj7w1vZxhR
+xcbKAQD34RQIuVr/Eh3rqW6wAmdRFzMj82wPjjPCwVxOnFdvRgEA5ad/HOXd1R53
+M1v0PShtjx6kM890phDjQwlRq6EvWAE=
+=V9ws
+-----END PGP SIGNATURE-----
+
+--3l2hq75myvlmy434--
+
+
+--===============8617811803151042489==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============8617811803151042489==--
+
