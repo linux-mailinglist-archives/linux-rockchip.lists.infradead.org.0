@@ -2,50 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4822616A0DF
-	for <lists+linux-rockchip@lfdr.de>; Mon, 24 Feb 2020 09:58:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CF0F16A0E2
+	for <lists+linux-rockchip@lfdr.de>; Mon, 24 Feb 2020 09:58:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=czcBYYlbIq3SSAPtnj3GObISrTS006nBv47SQmXgV10=; b=FxtFe7BUXPaPV+
-	G5mrZEa8lTnPN1tL2TNXVytMZt3+FWW7bF+OUBt5omJ+kSO/uSi6qLmvNI9vQtSem/QJ4GyAC7Bpj
-	hZ+FDbCNVOGDvGDhjkDsvfGMduGy1nu+Ooh6wy6RIXG2b5AmCFI1/SjWikX3+C+YLja4QZoUMqV3P
-	TVG0VuQVV5HLOa8+GitXrTHlfhNUCpDrkbekPy6GP0hWjNH7BLS/QSgP8VBa8Zptt9pmWe5xS3UVV
-	XZtQIplM5DqyQiFz1rAelKoVDsa+TJ2fhP63MyT4ezjJkG79gxmzhsImX7Z65UHC1HRLyhHlfvkFZ
-	Il5je2UzrrdCKdaGnxag==;
+	List-Owner; bh=ntq8vAwCuaNvjzZlm8ZALzuCHkan3P1GNDuV1IS69Ag=; b=LXGy5NW6fqMm/z
+	A5AR0giKzd9I4uEdLaWassXEAAAf+NeqgsLNwQjLfK4P9mA8FAi4pywtNChaSf4890tZYI5MNu3fR
+	N6X5lDmqHBlCbSlPra8T9c0In+Xan1YjJwNyTCAgTTSrFwltnccapgfYealsrOrwatw+5thwEUaLC
+	gyxeuLclVm4XBQqvGRruz8tK+OQioOa/4ix+udL1olOYccbI6GTwdJXxYspNjUzXWqzSBt0ho1Gu1
+	Ns0lJlOFfTO8aXv8pbVb+KnQ1CHcgyrXn7FLXUD6hGC7uihc74q4OX1S9KrRR7OQabyM+SsMspn5g
+	s9usoxq6xxiLqkZzyVRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j69Yu-00049W-1s; Mon, 24 Feb 2020 08:58:00 +0000
+	id 1j69ZB-0004Pg-Pq; Mon, 24 Feb 2020 08:58:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j69V4-0007Pu-IV; Mon, 24 Feb 2020 08:54:04 +0000
+ id 1j69V8-0007TW-GI; Mon, 24 Feb 2020 08:54:07 +0000
 Received: from localhost (unknown [213.57.247.131])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 581D121739;
- Mon, 24 Feb 2020 08:54:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BDE072086A;
+ Mon, 24 Feb 2020 08:54:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582534442;
- bh=tamgSzt9tc/+8AbKzANEjCcCAiCwMC1sry9XBcGyZT4=;
+ s=default; t=1582534445;
+ bh=jyTuYbkOx/qFl/ghU7khrY1Sboh+eGIbH2DRwV3peeI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=NXFipNyL3lIp+Vi6JqzP6J72/yBR0kYgblnglVMtc+xFmi1w+GEWmjMOtbU0Gon73
- Q0GCT5bh54u8S1FPPT3TyyKAb9cCcw2kPJSusg0S9Kyldk1yRPreo6RSpVZIbE8JLQ
- Gx9VWlkPgpFhl9SdV7Eh1XLHmF8mKaS8AiMn2Bio=
+ b=vGsg7GJZqiMJzCQGqK+jMAi+LsSkpS3MURNIW/WgjCKtog/6l1dfEP1AtfQ5va1rI
+ eO4f8QZaTdQZLZpQKKKIVDWIZued0dVu8tIgk66RRxFsmwXSeLBLqFhwfAVNKN3Lk/
+ mR6zaw20ZjTWclTRqVC16mxvJNd7N2ycZtZc3HAU=
 From: Leon Romanovsky <leon@kernel.org>
 To: "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>
-Subject: [PATCH net-next v1 14/18] net/apm: Remove useless driver version
-Date: Mon, 24 Feb 2020 10:53:07 +0200
-Message-Id: <20200224085311.460338-15-leon@kernel.org>
+Subject: [PATCH net-next v1 15/18] net/apm: Properly mark absence of FW
+Date: Mon, 24 Feb 2020 10:53:08 +0200
+Message-Id: <20200224085311.460338-16-leon@kernel.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200224085311.460338-1-leon@kernel.org>
 References: <20200224085311.460338-1-leon@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_005402_670675_B610492C 
-X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-CacheID: sfid-20200224_005406_649647_3AA1CB7F 
+X-CRM114-Status: UNSURE (   9.94  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -100,88 +100,38 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Leon Romanovsky <leonro@mellanox.com>
 
-Delete module version in favor of global and unique linux kernel.
+There is no need to set "N/A" if FW is not available.
 
 Signed-off-by: Leon Romanovsky <leonro@mellanox.com>
 ---
  drivers/net/ethernet/apm/xgene-v2/ethtool.c         | 1 -
- drivers/net/ethernet/apm/xgene-v2/main.c            | 1 -
- drivers/net/ethernet/apm/xgene-v2/main.h            | 1 -
  drivers/net/ethernet/apm/xgene/xgene_enet_ethtool.c | 1 -
- drivers/net/ethernet/apm/xgene/xgene_enet_main.c    | 1 -
- drivers/net/ethernet/apm/xgene/xgene_enet_main.h    | 1 -
- 6 files changed, 6 deletions(-)
+ 2 files changed, 2 deletions(-)
 
 diff --git a/drivers/net/ethernet/apm/xgene-v2/ethtool.c b/drivers/net/ethernet/apm/xgene-v2/ethtool.c
-index a58250c1b57a..da748beb7047 100644
+index da748beb7047..b78d1a99fe81 100644
 --- a/drivers/net/ethernet/apm/xgene-v2/ethtool.c
 +++ b/drivers/net/ethernet/apm/xgene-v2/ethtool.c
 @@ -89,7 +89,6 @@ static void xge_get_drvinfo(struct net_device *ndev,
  	struct platform_device *pdev = pdata->pdev;
 
  	strcpy(info->driver, "xgene-enet-v2");
--	strcpy(info->version, XGENE_ENET_V2_VERSION);
- 	snprintf(info->fw_version, ETHTOOL_FWVERS_LEN, "N/A");
+-	snprintf(info->fw_version, ETHTOOL_FWVERS_LEN, "N/A");
  	sprintf(info->bus_info, "%s", pdev->name);
  }
-diff --git a/drivers/net/ethernet/apm/xgene-v2/main.c b/drivers/net/ethernet/apm/xgene-v2/main.c
-index c48f60996761..860c18fb7aae 100644
---- a/drivers/net/ethernet/apm/xgene-v2/main.c
-+++ b/drivers/net/ethernet/apm/xgene-v2/main.c
-@@ -741,5 +741,4 @@ module_platform_driver(xge_driver);
 
- MODULE_DESCRIPTION("APM X-Gene SoC Ethernet v2 driver");
- MODULE_AUTHOR("Iyappan Subramanian <isubramanian@apm.com>");
--MODULE_VERSION(XGENE_ENET_V2_VERSION);
- MODULE_LICENSE("GPL");
-diff --git a/drivers/net/ethernet/apm/xgene-v2/main.h b/drivers/net/ethernet/apm/xgene-v2/main.h
-index d41439d2709d..b3985a7be59d 100644
---- a/drivers/net/ethernet/apm/xgene-v2/main.h
-+++ b/drivers/net/ethernet/apm/xgene-v2/main.h
-@@ -28,7 +28,6 @@
- #include "ring.h"
- #include "ethtool.h"
-
--#define XGENE_ENET_V2_VERSION	"v1.0"
- #define XGENE_ENET_STD_MTU	1536
- #define XGENE_ENET_MIN_FRAME	60
- #define IRQ_ID_SIZE             16
 diff --git a/drivers/net/ethernet/apm/xgene/xgene_enet_ethtool.c b/drivers/net/ethernet/apm/xgene/xgene_enet_ethtool.c
-index 246dec27140d..4e7a95bd83d7 100644
+index 4e7a95bd83d7..ada70425b48c 100644
 --- a/drivers/net/ethernet/apm/xgene/xgene_enet_ethtool.c
 +++ b/drivers/net/ethernet/apm/xgene/xgene_enet_ethtool.c
 @@ -103,7 +103,6 @@ static void xgene_get_drvinfo(struct net_device *ndev,
  	struct platform_device *pdev = pdata->pdev;
 
  	strcpy(info->driver, "xgene_enet");
--	strcpy(info->version, XGENE_DRV_VERSION);
- 	snprintf(info->fw_version, ETHTOOL_FWVERS_LEN, "N/A");
+-	snprintf(info->fw_version, ETHTOOL_FWVERS_LEN, "N/A");
  	sprintf(info->bus_info, "%s", pdev->name);
  }
-diff --git a/drivers/net/ethernet/apm/xgene/xgene_enet_main.c b/drivers/net/ethernet/apm/xgene/xgene_enet_main.c
-index 6aee2f0fc0db..5f1fc6582d74 100644
---- a/drivers/net/ethernet/apm/xgene/xgene_enet_main.c
-+++ b/drivers/net/ethernet/apm/xgene/xgene_enet_main.c
-@@ -2179,7 +2179,6 @@ static struct platform_driver xgene_enet_driver = {
- module_platform_driver(xgene_enet_driver);
 
- MODULE_DESCRIPTION("APM X-Gene SoC Ethernet driver");
--MODULE_VERSION(XGENE_DRV_VERSION);
- MODULE_AUTHOR("Iyappan Subramanian <isubramanian@apm.com>");
- MODULE_AUTHOR("Keyur Chudgar <kchudgar@apm.com>");
- MODULE_LICENSE("GPL");
-diff --git a/drivers/net/ethernet/apm/xgene/xgene_enet_main.h b/drivers/net/ethernet/apm/xgene/xgene_enet_main.h
-index 18f4923b1723..d35a338120cf 100644
---- a/drivers/net/ethernet/apm/xgene/xgene_enet_main.h
-+++ b/drivers/net/ethernet/apm/xgene/xgene_enet_main.h
-@@ -28,7 +28,6 @@
- #include "xgene_enet_ring2.h"
- #include "../../../phy/mdio-xgene.h"
-
--#define XGENE_DRV_VERSION	"v1.0"
- #define ETHER_MIN_PACKET	64
- #define ETHER_STD_PACKET	1518
- #define XGENE_ENET_STD_MTU	1536
 --
 2.24.1
 
