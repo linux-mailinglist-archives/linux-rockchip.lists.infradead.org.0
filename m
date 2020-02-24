@@ -2,50 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CECF16A0EA
-	for <lists+linux-rockchip@lfdr.de>; Mon, 24 Feb 2020 09:59:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9475A16A0C7
+	for <lists+linux-rockchip@lfdr.de>; Mon, 24 Feb 2020 09:57:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DQ0EadT7MtG0g12T9xSUwTat2CEu7CvVmQyz6dHrbPE=; b=jjlH+wucZOiBqx
-	aBy/NFb0xSYQ0Qh91tr2+MBdN00wu9QDBQUuEY4IKtvlGLgqV2hjEPiR/OZfEg32mF6ajTIbH0XAa
-	REau7GcEX8Z+FnoHT7L8m6EYHLBIOFYNOKG5RfjxUh5xQvCThLkmFDeI5MJ6XWTJUSPUDyNv9hMhY
-	FAD95O1BfeUTc1WNO8XLeVgUtCVWREiAciUfN9Ya1ZHHxASvgaIEb/0c7KyGwmupclJmJ7ISl6s2w
-	DNbZDAHAECALtgZ6Yq0NAGhRMWjPL23AuxR1I1JlmYZ/OEV0CU7zZWQYcm9RMymaOXuEdgFWFFP/r
-	mor8jo7T7XFIThSqKgiQ==;
+	List-Owner; bh=hgEJaD7OYM4RmihxklZEkFlyBMjqAcKT7Yj/yEMFyiw=; b=mZv2p68VaK01ko
+	OolLGauWV0YLZsgD0yvthLHNNQ9QGWx6A6Fktq3uW8/OgapukSefDJVaFzrJJq9F4XYyAC4WVzMvd
+	KsVuAFyi57ZAuqB8FTL1RH49cZVmIgl2eqIITU7kcWtwm1jncFPtV+2ILyjDD+6C4qN/daR+Sl8kg
+	X7hyTKvj+EFwNHUS0Rgn2xzyzUhQLYRh3Ad6ZHyBRorHsAVOFUg0UdfU19hMFwYe9zhtpB44dhsxb
+	hrgdUV8qq5xvaT9roWNRCkP5KLiCPOuwOok98+ABpXJYT9Y0WgTiP/FxCINvh0ebtHLChuhHvw4JJ
+	nqyn2P2zARX/WwXV5j5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j69a7-0005Yh-JY; Mon, 24 Feb 2020 08:59:15 +0000
+	id 1j69Y0-00039z-4a; Mon, 24 Feb 2020 08:57:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j69VL-0007fw-L1; Mon, 24 Feb 2020 08:54:20 +0000
+ id 1j69Ur-0007FH-Cc; Mon, 24 Feb 2020 08:53:51 +0000
 Received: from localhost (unknown [213.57.247.131])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 71FB02467B;
- Mon, 24 Feb 2020 08:54:18 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 937492187F;
+ Mon, 24 Feb 2020 08:53:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582534459;
- bh=7CICMqnQF7xoeXIcHQwwcYQyrJAiXAKQVpcrdIOkVs0=;
+ s=default; t=1582534428;
+ bh=LUxYTwwdwf6SHIjajoLDNPMJKCyZMEOBchMPulk8V+o=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=JJTAeR9ayq/7gpoqTs0ucBNF6RjjiUfWLGqKFQotgasYidscHQDypnj0noNXhKuKc
- 6YxHl2uZXwI/55RAxsonoICXoxR/Cq8iThS3AjjsrqmiMVnXhJE7YCa8lrIqA7YrNl
- 4Iry43nvcx2moeiY/pbbjrYEsj5hBFt4fSWZRu10=
+ b=Xf6bxCQVjrbPD1yNAqNMJxDdwz23WBF6fa9g7Ckp6zWe+GxeC0iSpZYdMccNPNm7E
+ M4Xq4O3XW/jHdWxMaXt+dXlhJ4MlVsDUlntN4Kvc0eD5Fo/E5bDY4Lx3fOUBb4gIX+
+ WsPc+pfW9mph/3bgGuTnd6NS8B3GDoYjYYxZoZ1A=
 From: Leon Romanovsky <leon@kernel.org>
 To: "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>
-Subject: [PATCH net-next v1 09/18] net/allwinner: Remove driver version
-Date: Mon, 24 Feb 2020 10:53:02 +0200
-Message-Id: <20200224085311.460338-10-leon@kernel.org>
+Subject: [PATCH net-next v1 10/18] net/alteon: Properly report FW version
+Date: Mon, 24 Feb 2020 10:53:03 +0200
+Message-Id: <20200224085311.460338-11-leon@kernel.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200224085311.460338-1-leon@kernel.org>
 References: <20200224085311.460338-1-leon@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_005419_729378_DAA27DD9 
-X-CRM114-Status: UNSURE (   9.05  )
+X-CRM114-CacheID: sfid-20200224_005349_550591_255807F3 
+X-CRM114-Status: UNSURE (   9.61  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -100,33 +100,30 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Leon Romanovsky <leonro@mellanox.com>
 
-There is no need in custom driver version for in-tree code.
+The acenic driver assigns FW version in driver version field,
+as part of cleanup driver version, set FW version properly.
 
 Signed-off-by: Leon Romanovsky <leonro@mellanox.com>
 ---
- drivers/net/ethernet/allwinner/sun4i-emac.c | 2 --
- 1 file changed, 2 deletions(-)
+ drivers/net/ethernet/alteon/acenic.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/ethernet/allwinner/sun4i-emac.c b/drivers/net/ethernet/allwinner/sun4i-emac.c
-index 22cadfbeedfb..18d3b4340bd4 100644
---- a/drivers/net/ethernet/allwinner/sun4i-emac.c
-+++ b/drivers/net/ethernet/allwinner/sun4i-emac.c
-@@ -33,7 +33,6 @@
- #include "sun4i-emac.h"
+diff --git a/drivers/net/ethernet/alteon/acenic.c b/drivers/net/ethernet/alteon/acenic.c
+index f366faf88eee..5d192d551623 100644
+--- a/drivers/net/ethernet/alteon/acenic.c
++++ b/drivers/net/ethernet/alteon/acenic.c
+@@ -2699,9 +2699,8 @@ static void ace_get_drvinfo(struct net_device *dev,
+ 	struct ace_private *ap = netdev_priv(dev);
 
- #define DRV_NAME		"sun4i-emac"
--#define DRV_VERSION		"1.02"
+ 	strlcpy(info->driver, "acenic", sizeof(info->driver));
+-	snprintf(info->version, sizeof(info->version), "%i.%i.%i",
+-		 ap->firmware_major, ap->firmware_minor,
+-		 ap->firmware_fix);
++	snprintf(info->fw_version, sizeof(info->version), "%i.%i.%i",
++		 ap->firmware_major, ap->firmware_minor, ap->firmware_fix);
 
- #define EMAC_MAX_FRAME_LEN	0x0600
-
-@@ -212,7 +211,6 @@ static void emac_get_drvinfo(struct net_device *dev,
- 			      struct ethtool_drvinfo *info)
- {
- 	strlcpy(info->driver, DRV_NAME, sizeof(info->driver));
--	strlcpy(info->version, DRV_VERSION, sizeof(info->version));
- 	strlcpy(info->bus_info, dev_name(&dev->dev), sizeof(info->bus_info));
- }
-
+ 	if (ap->pdev)
+ 		strlcpy(info->bus_info, pci_name(ap->pdev),
 --
 2.24.1
 
