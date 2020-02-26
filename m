@@ -2,84 +2,89 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 687A816FC4E
-	for <lists+linux-rockchip@lfdr.de>; Wed, 26 Feb 2020 11:32:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A13C316FEDF
+	for <lists+linux-rockchip@lfdr.de>; Wed, 26 Feb 2020 13:25:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=24nqR6/65HcFtORGCY7+c/nN/05vfiZ3uw35i22PgUk=; b=uqCGQAvkXgeLAO
-	ercLrC+VDvXRSXpDE8RxbMlayKVjABrQnP0548Z65x150cO6FOAe+PiwRHzh5TdjkA/3aKy2zLqBW
-	fnCW9dyS2fW44pJ92RA7mFSRTUiYN2WaHsX4JG36pYZ1c6y5cMr+18Rmjdt4+T9Yj46jHr8Z4SDjG
-	nLeiZ+uyTBDU8Zb72BhPl0NTGfS0E3d7bYlix+n9MV0eyR8CFQvQB65dDRWT9btDzD+BafX1zqDVE
-	b/YhRha2Rp7BgT2Y3RnI4iXRFtgfPlR2P/cr/eulzDX8xFnFKF8XVyZyNYize5cm+koLNawvRAksH
-	rkqWTz6Q+dEGYtTKdVuA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ieBg4BxAfUOgJF1LlkUSiviMtazwidL5Zy2ObN9SL2o=; b=Ew50FaEGX6bQ4O
+	jPq9OnYPra26Z+OWsnW2xEFK9dGUCvnDA6PD3S7dHeifSUjPFftdQ5RoVVbnVqEdL4cvdEn2jkUzp
+	D5isKMsX7wWYGyFKQVX7l20I6WD7TDA9k7YUDrBN2l7X1DlR1cBs7Ut6Ri5FSYL2ChAtO7DGPx4Rb
+	s+J88u/gi9Z67nHTxIm8MCGX1NZfOo/KRvLURh3YjgFIyaxG5u/7FZi/tb1QU+EJUaO7rxyQTvbsk
+	uFJEMl+acMnkRH9xeka8Glce9arSl5jRpE0pEqWdwJyRrhXsTT+nb7oLdKj7l/SphI6+abVggPF4j
+	NFIoUzmUc1Jm3gBDMy6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6tzb-000336-Ef; Wed, 26 Feb 2020 10:32:39 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1j6vkM-0003Wq-Ss; Wed, 26 Feb 2020 12:25:02 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6tzY-00031c-7S
- for linux-rockchip@lists.infradead.org; Wed, 26 Feb 2020 10:32:37 +0000
-Received: by mail-wr1-x443.google.com with SMTP id v4so2293254wrs.8
- for <linux-rockchip@lists.infradead.org>; Wed, 26 Feb 2020 02:32:36 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=vngWQlvz3qLNyE+RsUPpIfx3/4/BoM3TdKapXgnGefM=;
- b=rAVr+MQ9asGFFPCwpGmzPYsJlVLnY+y+A7jEF6EWliOMg9tNZo6vsGdn3DRk9Nyco/
- L9yHexqIT9vF7QZThDoVLUQ2oY2ezWj5n2KccdFdsYHiW6CsVByLm11YAx+6QN/KxePG
- P4brvkXzi041clzd4qD7Cx5EdUhgDuk7+238QvsirzfvVvWRXpcEiqrS4/yeOF6DPJvR
- YNor9oPqFalMkHt8miFVRcecUHCXiHpPtuNm7L49996lfbrzihkOCfIipNhJuiQVwtau
- qYhVSBmbcLciOYLfuoc6SXgU1MB6MbToQaUHaSJh0+ZNqXKQsVAM+mK4ssuNd2AlRDGi
- 3V7g==
+ id 1j6vkI-0003WI-5Y
+ for linux-rockchip@lists.infradead.org; Wed, 26 Feb 2020 12:24:59 +0000
+Received: by mail-wm1-x341.google.com with SMTP id q9so2824117wmj.5
+ for <linux-rockchip@lists.infradead.org>; Wed, 26 Feb 2020 04:24:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=to:cc:references:subject:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=IvhXItdd4X1YXydMqRqD+tdcTcMEd0LYsl8PcoH++pk=;
+ b=Pm5HWF73aJ9VZcK/5Zlg1TkuMduL1Z0xp2H7Tf54k04xSGZJJXLHLvKQeMdHL+zJYr
+ pPiwRu+UndJu3ZSYNetFEJdoMpn2fyL8aufv0VPRtbL3/nvBusVWG+5yztsop2Dv+UU3
+ AoeyskahRt+cDZAxIsfHiT8TbsUPrhERZ0kK0iBKH0iWuILF0PbKXDlODXyBTmFYTH8F
+ zy/4nUoxWO0igZl95eYU2cbPiOZSSbL543ND5gG+xJo+CCZv1YY8iFW0gGJfpYzPCrnB
+ 0T9KuaH6iqs9hgFnT3hqGoAy9nSzJi0M3gsFxzE3eLM2t1zv2yTU2VUgy2A2wNWWGehp
+ llGA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=vngWQlvz3qLNyE+RsUPpIfx3/4/BoM3TdKapXgnGefM=;
- b=mVI5zyEidLaXgqbpzs19WsIWUvuZdNNXY1P338AKDfLNzVFybgfNno/fgSRaUmG8+l
- 3GyM+dK4YdR+iHNsn6/kpIkGFa/B3KyS6Jcb8mqrE1DS0iuo+HlTmIk7q05w2zF417Ye
- qtRRtFFwb0nce2mOhxp4VN6kDK6+Ems/AtFJVYiyszZ5ablWvb4lCeXWBALmef6x/RTi
- Lf/jDcLkQYKWwUpPo+hKxXWJQmKMSStCU0J3Un2m50Bl7kzpuHNu3B/41UFAuCQGz+n1
- g9re9uQ7QTyBkmtLr9/HhxOyJH1YmKF5tdntoumN+Uag7SGxRFlkC4p86m0uUHy1+2Qt
- rpRQ==
-X-Gm-Message-State: APjAAAWKNYv+4nGR/ANRJ7dPaL3emcam8LuzQVHNS4sgGbcwFmhgvEpI
- meG1SADJ0r+BLjUNW9O5kumUYg==
-X-Google-Smtp-Source: APXvYqzb6yyf+vODvB2zbXWNfTMDHQRw4bYGUlcc7kj85tOH4WaE/t+FchzQiTLY9dQFy5/m85Znlg==
-X-Received: by 2002:a5d:4c41:: with SMTP id n1mr4513692wrt.183.1582713155057; 
- Wed, 26 Feb 2020 02:32:35 -0800 (PST)
-Received: from dell ([2.31.163.122])
- by smtp.gmail.com with ESMTPSA id z16sm2587090wrp.33.2020.02.26.02.32.34
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 26 Feb 2020 02:32:34 -0800 (PST)
-Date: Wed, 26 Feb 2020 10:33:06 +0000
-From: Lee Jones <lee.jones@linaro.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH v2 5/5] mfd: rk808: Convert RK805 to shutdown/suspend hooks
-Message-ID: <20200226103306.GI3494@dell>
-References: <cover.1578789410.git.robin.murphy@arm.com>
- <02639ae880b9d945c4134a28b1eef3db2ed9353f.1578789410.git.robin.murphy@arm.com>
+ h=x-gm-message-state:to:cc:references:subject:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=IvhXItdd4X1YXydMqRqD+tdcTcMEd0LYsl8PcoH++pk=;
+ b=qx2OUXk9Rww/3OIDgq0jmclGcJvZ+ZRZfTEKYEWgSx4wHo/iR0SxeOHrs0rxm3eknM
+ BY3utFTdpmc9kMlWLLc0YipT2a61PciaZpWJjlGbk0Rhidp8cORHO2YJt8UXTtieZfbK
+ IdiX/ZwVfcX5kQ7rP9aa/IHnsTlcV5JMNGSIV7iQFjflVR9YcOj0kqVlyUP5+u2yovut
+ k5AI9tjf3XNFxosi4pAy9RNGP3wHrPZTgaciubxLKtzzw/hKZQzon2TXgv/kyjAmlULR
+ DsuOcHDLQajoIhl25XpmNGcPFY6V2WfkR2a3t4NEXoaSC2pOFxuU1vXOTOmxJmJzKiQH
+ poGA==
+X-Gm-Message-State: APjAAAUdYJutCKHcdjcEac46H6fq9IanFRc7WIq0fFjoTPckxmlLyuL7
+ 98GozwkQ0LWv1Fs3AKa6SBM=
+X-Google-Smtp-Source: APXvYqzyTzyUPRQdIy8Rfhx8ubVi+C6umoNFwiXeFqS0v+Ld0G8ObmhzMOrwd3BzwL6ZjxmlWPhcrg==
+X-Received: by 2002:a1c:7718:: with SMTP id t24mr5311847wmi.119.1582719896307; 
+ Wed, 26 Feb 2020 04:24:56 -0800 (PST)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id g14sm3226354wrv.58.2020.02.26.04.24.55
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 26 Feb 2020 04:24:55 -0800 (PST)
+To: ezequiel@collabora.com
+References: <20200220163016.21708-7-ezequiel@collabora.com>
+Subject: Re: [PATCH v6 6/6] arm64: dts: rockchip: rk3399: Define the rockchip
+ Video Decoder node
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <817821e3-bc51-8037-b9b9-e429c5eeb280@gmail.com>
+Date: Wed, 26 Feb 2020 13:24:53 +0100
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <02639ae880b9d945c4134a28b1eef3db2ed9353f.1578789410.git.robin.murphy@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200220163016.21708-7-ezequiel@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_023236_275582_61591CB6 
-X-CRM114-Status: GOOD (  10.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200226_042458_234792_7D572BF6 
+X-CRM114-Status: GOOD (  15.39  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -99,26 +104,78 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, smoch@web.de,
- linux-kernel@vger.kernel.org, heiko@sntech.de
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, tfiga@chromium.org, heiko@sntech.de,
+ jonas@kwiboo.se, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ nicolas@ndufresne.ca, hverkuil@xs4all.nl, linux-rockchip@lists.infradead.org,
+ boris.brezillon@collabora.com, sakari.ailus@iki.fi,
+ laurent.pinchart@ideasonboard.com, kernel@collabora.com,
+ paul.kocialkowski@bootlin.com, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gU3VuLCAxMiBKYW4gMjAyMCwgUm9iaW4gTXVycGh5IHdyb3RlOgoKPiBSSzgwNSBoYXMgdGhl
-IHNhbWUga2luZCBvZiBkdWFsLXJvbGUgc2xlZXAvc2h1dGRvd24gcGluIGFzIFJLODA5L1JLODE3
-LAo+IHNvIGl0IG1ha2VzIGxpdHRsZSBzZW5zZSBmb3IgdGhlIGRyaXZlciB0byBoYXZlIHRvIGhh
-dmUgdHdvIGNvbXBsZXRlbHkKPiBkaWZmZXJlbnQgbWVjaGFuaXNtcyB0byBoYW5kbGUgZXNzZW50
-aWFsbHkgdGhlIHNhbWUgdGhpbmcuIE1vdmUgUks4MDUKPiBvdmVyIHRvIHRoZSBzaHV0ZG93bi9z
-dXNwZW5kIGZsb3cgdG8gY2xlYW4gdGhpbmdzIHVwLgo+IAo+IFNpZ25lZC1vZmYtYnk6IFJvYmlu
-IE11cnBoeSA8cm9iaW4ubXVycGh5QGFybS5jb20+Cj4gLS0tCj4gIGRyaXZlcnMvbWZkL3JrODA4
-LmMgICAgICAgfCAzNyArKysrKysrKysrKystLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCj4gIGlu
-Y2x1ZGUvbGludXgvbWZkL3JrODA4LmggfCAgMSAtCj4gIDIgZmlsZXMgY2hhbmdlZCwgMTIgaW5z
-ZXJ0aW9ucygrKSwgMjYgZGVsZXRpb25zKC0pCgpBcHBsaWVkLCB0aGFua3MuCgotLSAKTGVlIEpv
-bmVzIFvmnY7nkLzmlq9dCkxpbmFybyBTZXJ2aWNlcyBUZWNobmljYWwgTGVhZApMaW5hcm8ub3Jn
-IOKUgiBPcGVuIHNvdXJjZSBzb2Z0d2FyZSBmb3IgQVJNIFNvQ3MKRm9sbG93IExpbmFybzogRmFj
-ZWJvb2sgfCBUd2l0dGVyIHwgQmxvZwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlw
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1yb2NrY2hpcAo=
+Hi Boris,
+
+Dtsi nodes are sort on address.
+The vdec node is now inserted between:
+
+vdec_mmu: iommu       @ff660480
+vdec    : video-codec @ff660000
+iep_mmu : iommu       @ff670800
+
+This should be:
+
+vpu_mmu : iommu       @ff650800
+vdec    : video-codec @ff660000
+vdec_mmu: iommu       @ff660480
+
+
+
+> From: Boris Brezillon <boris.brezillon at collabora.com>
+> 
+> RK3399 has a Video decoder, define the node in the dtsi. We also add
+> the missing power-domain in mmu node and enable the block.
+> 
+> Signed-off-by: Boris Brezillon <boris.brezillon at collabora.com>
+> Signed-off-by: Ezequiel Garcia <ezequiel at collabora.com>
+> ---
+>  arch/arm64/boot/dts/rockchip/rk3399.dtsi | 14 +++++++++++++-
+>  1 file changed, 13 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> index 33cc21fcf4c1..a07f857df12f 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> @@ -1285,8 +1285,20 @@ vdec_mmu: iommu at ff660480 {
+>  		interrupt-names = "vdec_mmu";
+>  		clocks = <&cru ACLK_VDU>, <&cru HCLK_VDU>;
+>  		clock-names = "aclk", "iface";
+> +		power-domains = <&power RK3399_PD_VDU>;
+>  		#iommu-cells = <0>;
+> -		status = "disabled";
+> +	};
+> +
+> +	vdec: video-codec at ff660000 {
+> +		compatible = "rockchip,rk3399-vdec";
+> +		reg = <0x0 0xff660000 0x0 0x400>;
+> +		interrupts = <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH 0>;
+> +		interrupt-names = "vdpu";
+> +		clocks = <&cru ACLK_VDU>, <&cru HCLK_VDU>,
+> +			 <&cru SCLK_VDU_CA>, <&cru SCLK_VDU_CORE>;
+> +		clock-names = "axi", "ahb", "cabac", "core";
+> +		power-domains = <&power RK3399_PD_VDU>;
+> +		iommus = <&vdec_mmu>;
+>  	};
+>  
+>  	iep_mmu: iommu at ff670800 {
+> -- 
+> 2.25.0
+
+
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
