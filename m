@@ -2,52 +2,100 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31352173B25
-	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 16:15:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26822173BC3
+	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 16:41:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eiA7TAnP1FmUGV0ATfpXI4APu3jqsl0rKRNe+23Z/bc=; b=TpG0OZ13ONCPL/
-	zUAfiY/KcxhHljhtjgEIQf8CEubvhUX34yZup88wJsjYuCta5iRpfQKG631rmQNGLQdrRz0BC7uVd
-	KFm9/y87yJt7W6jdjgR9ZCZ8gQ+KgB0R7IuPwAWmBhiYQiwNi5X1fqfW8zV9V/u7axjeHZusfp/n3
-	ZDvzVt+Cw4/0FcXWA5nN3T558Abl0OOZ/zLFOp9HEkvWY/D60A+y++/685UPYXtgyeJpN1h4Cdi0O
-	IvoTDBKN1XOjZElfJiyBGWFOLjnK2LhPQtmPgl7aVAwWYWhPYJww5Dpdwng6eEpTlkHAoI2zrThph
-	P/GOd4GaVr69aqwIUzbQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TS9W/o0JW91bl1naN855i+RQ8Ignz5ab7Gh5/jyfUhU=; b=IFQa95s7jFxEvk
+	B2LexULO52kEo4IxIJM6sxlBhAYuqptXl7hcwzdnFkLOHyGOAUr0eSjRBJIo86TxUs+0T5gG0nMuy
+	x9WUlOclHfhrXkuC03lZzTgyLkCPSDwMafFFx/upg7idOZAGWsNebtAHXHfsBsHIrxHotuUtrU77I
+	TW7arZZz9B9wuyaVAeVeIpTRboXCpXCqt5PiMGa9RPKayb76IAz+uBhWMi2J/KmooOYzC+0GekAyy
+	0cbyUX8nuBNrjlIkKpveM2FaQRxnsIfO4KddLvZ8/Vg0aOYVyDq7xQvks5l6WeHDBzqLX5+yRHW2D
+	usKkhp+HtIrOjH10Bbng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7hMo-0002AO-NO; Fri, 28 Feb 2020 15:15:54 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1j7hll-0005Vq-9N; Fri, 28 Feb 2020 15:41:41 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7hMd-0001zp-2Y; Fri, 28 Feb 2020 15:15:44 +0000
-Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1j7hMM-0006eU-6O; Fri, 28 Feb 2020 16:15:26 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Tobias Schramm <t.schramm@manjaro.org>
-Subject: Re: [PATCH 2/2] arm64: dts: rockchip: Add initial support for
- Pinebook Pro
-Date: Fri, 28 Feb 2020 16:15:25 +0100
-Message-ID: <3144691.gaQQKPV42P@diego>
-In-Reply-To: <37190f26-48aa-dcad-d4b1-8a534ba1360e@manjaro.org>
-References: <20200227180630.166982-1-t.schramm@manjaro.org>
- <12370413.gKdrHkWbHd@diego>
- <37190f26-48aa-dcad-d4b1-8a534ba1360e@manjaro.org>
+ id 1j7hlZ-0005NK-SL; Fri, 28 Feb 2020 15:41:31 +0000
+Received: by mail-wm1-x341.google.com with SMTP id g83so1484034wme.1;
+ Fri, 28 Feb 2020 07:41:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=XNr9LS4NdBHHOaGNbY4Rvbef+Vzw8n41HfwyhtLS84U=;
+ b=V+4T56gijWkocDCf9UuoVhIlpqQou5tVyjGVTxcqIhks9Ikt5iJs6SyM+ArNyb3AaJ
+ yXm2/PfBheCmPfkkn1K6kgvJEoMAoaZ2SPw4G0BZmG8lpER5EEBuQ9KQET1ESWQO7nas
+ /IErfsz4Cf7rsxnTfdkNspNCHZsac6f7X1wNWhuB9kmzFq4sKC6Bbuo5SWEJ6XdoNlsb
+ o/0dh8BcJQlEQbIk3V3c+FmVxXyS91iHErWDX/ssZZAgW55B720dQtLlsl66IN3ixKEu
+ PB2r3pZunzJMhrXyfDjwGlmv06I8TlRt/6U7jeExuuLhrJVMk+T288qgq3AQLUvsgWEp
+ zukg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=XNr9LS4NdBHHOaGNbY4Rvbef+Vzw8n41HfwyhtLS84U=;
+ b=HWsWlqalE9/SMrr2gWIxaAy8xghPMNYlvdt6qL21ZLc+eoFSZPvPe1h1FcpzAAhlGX
+ 4JOx1wjEGO/3yyTx+HDdJi30Ii78wuOpLBxmfYDMJGKdThNC+LUXd6mQHnZGHsSAUSju
+ my+wy754etIAUVLLtvb5UMmdI0W+eiZn0GqT6K18xzJpD2A0Wif8UlvFJq8/Fv5oMs+M
+ xZJu0Vi3tOPwmeWBElwku+OJAXi2t31p7uJQNMYl/2M4+chERfAh1DtA77K2+721xum7
+ EiwFDs1K4Bd1WACwNe2RNEflTcUtfgp2WaBPxgj9nw+M26VqS0qx2PCp9wh0Zjk4kyEY
+ MFqQ==
+X-Gm-Message-State: APjAAAUPmwL8+92srGEJLtNwMCGFVzHTWgc4yy8V/xNEg+it5qLEmCqO
+ p4rG5ZV1RwtN0Md9VluVXX4=
+X-Google-Smtp-Source: APXvYqx07nbNnJcNa+gIPlfmOe/rE95wPUQ9FmQByVrfLSt460UDzFev6s0hSOVfySBvJ0w5DozNQA==
+X-Received: by 2002:a1c:4908:: with SMTP id w8mr5178421wma.57.1582904488030;
+ Fri, 28 Feb 2020 07:41:28 -0800 (PST)
+Received: from prasmi.home ([2a00:23c8:2510:d000:3855:fd13:6b76:a11b])
+ by smtp.gmail.com with ESMTPSA id k16sm13355349wrd.17.2020.02.28.07.41.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 28 Feb 2020 07:41:27 -0800 (PST)
+From: Lad Prabhakar <prabhakar.csengg@gmail.com>
+X-Google-Original-From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Jingoo Han <jingoohan1@gmail.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH v5 0/7] Add support for PCIe controller to work in endpoint
+ mode on R-Car SoCs
+Date: Fri, 28 Feb 2020 15:41:15 +0000
+Message-Id: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_071543_274305_1D8BD4F9 
-X-CRM114-Status: GOOD (  15.69  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200228_074129_940999_86128DA6 
+X-CRM114-Status: GOOD (  14.57  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [prabhakar.csengg[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,50 +108,85 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexis Ballier <aballier@gentoo.org>,
- Katsuhiro Suzuki <katsuhiro@katsuster.net>, linux-kernel@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>,
- Kever Yang <kever.yang@rock-chips.com>, Markus Reichl <m.reichl@fivetechno.de>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Jagan Teki <jagan@amarulasolutions.com>, Nick Xie <nick@khadas.com>,
- enric.balletbo@collabora.com, Andy Yan <andy.yan@rock-chips.com>,
- anarsoul@gmail.com, Matthias Kaehlcke <mka@chromium.org>,
- Vivek Unune <npcomplete13@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Tobias,
+This patch series adds support for PCIe controller on rcar to work in
+endpoint mode, this also extends the epf framework to handle base region
+for mapping PCI address locally.
 
-Am Freitag, 28. Februar 2020, 15:57:10 CET schrieb Tobias Schramm:
-> thanks for the review. I'll implement the changes and send a v2.
-> 
-> >> +	 * of wakeup sources without disabling the whole key
-> > Also can you explain the problem a bit? If there is a deficit in the input
-> > subsystem regarding wakeup events, dt is normally not the place to work
-> > around things [we're supposed to be OS independent]
-> 
-> The issue is that some users wanted to be able to control the wakeup
-> functionality of the keys separately via sysfs. That does not seem to be
-> possible when combining both keys into one gpio-keys node. A more
-> detailed explanation of the issue can be found at [1].
+Note:
+The cadence/rockchip/designware endpoint drivers are build tested only.
 
-ok ... but that is really strange, because looking at gpio-keys.c I see
-it checking the individual button wakeup-property before setting
-the irq-wake in gpio_keys_enable_wakeup() .
+Changes for v5:
+1] Rebased the patches on next branch of https://git.kernel.org/pub/scm/
+   linux/kernel/git/helgaas/pci.git
+2] Fixed review comments reported by Kishon while fetching the matching
+   window in function pci_epc_get_matching_window()
+3] Fixed review comments reported by Bjorn
+   a] Split patch up first patch so that its easier to review and incremental
+   b] Fixed typos
+4] Included Reviewed tag from Rob for the dt-binding patch
+5] Fixed issue reported by Nathan for assigning variable to itself
 
-Ah, but I guess manually disabling/enabling wakeup via sysfs only
-works for the whole device and all wakeup buttons.
+Changes for v4:
+1] Fixed dtb_check error reported by Rob
+2] Fixed review comments reported by Kishon
+   a] Dropped pci_epc_find_best_fit_window()
+   b] Fixed initializing mem ptr in __pci_epc_mem_init()
+   c] Dropped map_size from pci_epc_mem_window structure
 
-In general this sounds more like a gpio-keys deficit, but in the end
-we can keep the separate gpio-key nodes here, they don't violate any
-dt-bindings ;-) .
+Changes for v3:
+1] Fixed review comments from Bjorn and Kishon.
+3] Converted to DT schema
 
+Changes for v2:
+1] Fixed review comments from Biju for dt-bindings to include an example
+   for a tested platform.
+2] Fixed review comments from Kishon to extend the features of outbound
+   regions in epf framework.
+3] Added support to parse outbound-ranges in OF.
 
-Heiko
+Lad Prabhakar (7):
+  PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
+  PCI: rcar: Move shareable code to a common file
+  PCI: rcar: Fix calculating mask for PCIEPAMR register
+  PCI: endpoint: Add support to handle multiple base for mapping
+    outbound memory
+  dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
+    controller
+  PCI: rcar: Add support for rcar PCIe controller in endpoint mode
+  misc: pci_endpoint_test: Add Device ID for RZ/G2E PCIe controller
 
+ .../devicetree/bindings/pci/rcar-pci-ep.yaml       |   76 ++
+ arch/arm64/configs/defconfig                       |    2 +-
+ drivers/misc/pci_endpoint_test.c                   |    3 +
+ drivers/pci/controller/Kconfig                     |   15 +-
+ drivers/pci/controller/Makefile                    |    3 +-
+ drivers/pci/controller/cadence/pcie-cadence-ep.c   |    7 +-
+ drivers/pci/controller/dwc/pcie-designware-ep.c    |   29 +-
+ drivers/pci/controller/pcie-rcar-ep.c              |  490 ++++++++
+ drivers/pci/controller/pcie-rcar-host.c            | 1053 +++++++++++++++++
+ drivers/pci/controller/pcie-rcar.c                 | 1229 +-------------------
+ drivers/pci/controller/pcie-rcar.h                 |  129 ++
+ drivers/pci/controller/pcie-rockchip-ep.c          |    7 +-
+ drivers/pci/endpoint/pci-epc-mem.c                 |  167 ++-
+ include/linux/pci-epc.h                            |   39 +-
+ 14 files changed, 1985 insertions(+), 1264 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+ create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
+ create mode 100644 drivers/pci/controller/pcie-rcar-host.c
+ create mode 100644 drivers/pci/controller/pcie-rcar.h
+
+-- 
+2.7.4
 
 
 _______________________________________________
