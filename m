@@ -2,77 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77B531730E6
-	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 07:16:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DBC9173343
+	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 09:48:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=UgVnbpNjbeWLPqfEuw4RWG0njBc2hG67sD8tUWX0vao=; b=aZLFvjRM5SadfjmIjDKt6PrjBJ
-	JkenAel/1fjPJQoh7EBHTS+s5fkv6GN58ZtkGldvuzAbhxOcKx7anKhFTszMi09qPNyrid4Y1too2
-	hPILh+34+08+e0sK3n7VIwaa8HoQunZF6XHfLIP/qYAItbe4W6CicQtHKkbstlbSephC969QmJuzX
-	y99QRiSYztok42XNWsWbEjp7yD7esA5hi1XsG6/NHW3yeIwR6p/ADxAy1cK2fAl1IoHG8Mxm7NvGp
-	Uh+P9aA9Cmu9fRtcskbLH1bUOdfG0nBrg7eDm7G/L017Op1vEY9umTVYmfDm4rAr9OV1s7RjT5n/d
-	7zHaHpdw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=MDktLZ4cQt7/BbIYVOjhu1TTSKarsM/B7FUbc8qQJDw=; b=HNM
+	Ypqyb1c2fvPCEvA5bkQ96sa1aeSxR9hm4UQCS8ZeI1YVRUwVf9QvQLcmJV1fdrzG+RiT9memBhLGk
+	MC1BffEtbksOemfjhf1t92tglx6LDAEeJGz0YMi29+qJjXa44+rL3RNfXReNVRQgNp4YJnHvYh9j7
+	XgASnnnTnOAXS46N0mYGWSIMK/qEW/N1UaQx5ahQK/g9Y+5MdhcMCeq0EV3JJj3a8Jr6opUhjJRRU
+	i9VwiwdC8GdV7rBzE7OYO+N9cimml1zGlu8FskZkaQxdQRZ+tVxxappkDMMaAWc43Q0e5dkc8W5vJ
+	27Sv1fiSuEhCUJDJfqMGk7JBrmH3u9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7YwP-0002Zd-UA; Fri, 28 Feb 2020 06:16:05 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1j7bKC-0007tz-Qe; Fri, 28 Feb 2020 08:48:48 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Yv9-0000L4-AW; Fri, 28 Feb 2020 06:14:48 +0000
-Received: by mail-wm1-x344.google.com with SMTP id q9so1916813wmj.5;
- Thu, 27 Feb 2020 22:14:46 -0800 (PST)
+ id 1j7bK0-0007mZ-H3; Fri, 28 Feb 2020 08:48:37 +0000
+Received: by mail-wm1-x343.google.com with SMTP id m3so2319924wmi.0;
+ Fri, 28 Feb 2020 00:48:35 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=K8JeMMhWRctus7267Io0iVJS6S3sXLRQ7sAyYhtTk6U=;
- b=PkDQqn4IfrkR95joYJSIQr1vwu7N4tEy3FTCOgp1MASfZ5B4eX42l22pSHvNDg4VbU
- Aol3iyfGZvpV8jVhb8BUxnoeo5XhB69R9gyJq+1yjs+ss8C7tx7C+vkU5ZNwCODxsF5y
- s4k3V5ilGwWxveBymFNnuY2EgK62sJwV9UCqmW53G3QjtHcw6ltNNQyHdrFl/xmSBmRY
- XbSL6R1tzE+YRAu8WzJJaLi5npTnknfmEnCy/zpf6XbZwskojtSS9rcbtF/AZlz3bCTu
- mi91W/HKUn2PJhK7IWj75/V9Zi7CXnnCCr8Wkk8MHy0Osh7sSbNW0ahbB7uC5PFjhO8Z
- NfLQ==
+ h=from:to:cc:subject:date:message-id;
+ bh=kSTO66soFbvc/5Jm/tEDfZFDRH8dNbe8ver6F7pISSU=;
+ b=t8nLVzUAuYfbtG81ZKfM6k4Iiq22yAcFELg8c8fyrEXnuq3RHaTsEVHWCRrcekNowk
+ zwoaEr5b5s6BsOhLnMu9vvrFjpmZL3ydmLdEqkP/Mdju3GROnN3RgJgS3FWS67RRebmn
+ QV/qBZ2xvvuxMB/Lg4vxXzkAvlXBl2Msegis4TD2qOVuYQv3SDnw9aNU3uggXdZejCVg
+ ebQzb4QZD20BbpcsqzSRifFqAl68kzyTIGdK/rfoY0fYJ3wQkHgt/NUH0L0ytTXmlT3O
+ dFVJGkGWudoMVg0UHBWRKFBIbHKJbwiGzvUsDs/7L3u3w5r+hKqUbutT8u3geyTges5B
+ 7Iig==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=K8JeMMhWRctus7267Io0iVJS6S3sXLRQ7sAyYhtTk6U=;
- b=j0gk84PkXHcZBWW5ExiMOmgOP9c4pPWK4WYothWJHjhfADZYdWsk/PMKT2A0eH6K7K
- 1yWxihEs8an6PgFjcK8LjUZb4xaw5ORniBNqyPRTThjFXvvJeAIa4k4CXuIeuxnbr3MY
- c2t5I6/4XUjjXvcluqxkt71RU1ak1635BAIOh1gZhPasiCPX4EwQELtCDh5nRDgWLWdA
- BI3XEbIcD6SaqEjZ02nywOZHVgY63f8IwsZCznS1Q8HG6G+QCII3OHsdjJfT1YTv3O2g
- E799fVr0cYxxWq63xrUFRbs7swnlfDejdqS8OQT3Pq1e2+NQB8bbTcxOaQgtMQsyiVxU
- ewNA==
-X-Gm-Message-State: APjAAAVJoAjIeda4I37KLlNrs+FWpu+9QhYyZ11/eJIee7XBWiFfDpLq
- GHEp33trcvFWBQyRre3RFuc=
-X-Google-Smtp-Source: APXvYqws2FKIOQBYK5QacYbEvACBYX92jzAaAdc8ChQ3XWXBMBbvIC/43wn818U5yWZfpS4kmKMSKg==
-X-Received: by 2002:a1c:7d92:: with SMTP id y140mr2876961wmc.145.1582870485825; 
- Thu, 27 Feb 2020 22:14:45 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=kSTO66soFbvc/5Jm/tEDfZFDRH8dNbe8ver6F7pISSU=;
+ b=bDqI3dKahz8mm+gxaa28fSKgJRutD6vEaKzD6CltOiNdNwKoZ4VIrVoNiQBFB9RO62
+ 40SlYftL6TygZDYqbV6Ij8OLhpDM1HS8L3Kmdxh9+UxHe5eGgcozQdP2xfuTa3hqW66l
+ KgfRexVv9K1kfFookTbMFJIqvL+FDyBYlInZ5ek1HOsoeXK0DJIx1DcVbqN7hn5bjgR3
+ BuUaR405m9VFCsit4Y7WCpFw5hX2UOXrpp6hwqaWfEAlXHaSHdko8iGiZdRRtCxw2SvA
+ BdkvSF1T89UcTlzh/KIe+4PwWWDJ+iAptyatr/86UJmLGE60mjLi2fsgTxCpm1uk3L6b
+ 78iw==
+X-Gm-Message-State: APjAAAWpa2cXC6iCyFoPM+Z4IcgNTPVlnXzatQRmw/rHF12YmM5P3ate
+ KouJtt82VV+16hepYOmKA+4=
+X-Google-Smtp-Source: APXvYqyqHsz+mxqVS4aLRQAeppLeop3ADBWwBXJvRWEgLA6x8ZR5U0eUOgB2g79t4bbxWiNTpy4Ayw==
+X-Received: by 2002:a1c:2b44:: with SMTP id r65mr3659938wmr.72.1582879714750; 
+ Fri, 28 Feb 2020 00:48:34 -0800 (PST)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id w7sm682554wmi.9.2020.02.27.22.14.44
+ by smtp.gmail.com with ESMTPSA id y3sm1209337wmi.14.2020.02.28.00.48.33
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 27 Feb 2020 22:14:45 -0800 (PST)
+ Fri, 28 Feb 2020 00:48:34 -0800 (PST)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH 4/4] arm64: dts: rockchip: fix compatible property for Radxa
- ROCK Pi N10
-Date: Fri, 28 Feb 2020 07:14:36 +0100
-Message-Id: <20200228061436.13506-4-jbx6244@gmail.com>
+Subject: [PATCH] arm64: dts: rockchip: fix cpu compatible property for rk3308
+Date: Fri, 28 Feb 2020 09:48:27 +0100
+Message-Id: <20200228084827.16198-1-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200228061436.13506-1-jbx6244@gmail.com>
-References: <20200228061436.13506-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_221447_358921_7FC21E9F 
-X-CRM114-Status: GOOD (  12.70  )
+X-CRM114-CacheID: sfid-20200228_004836_593394_5DC429B8 
+X-CRM114-Status: GOOD (  10.32  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -108,37 +103,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-A test with the command below gives this error:
+A test with the command below gives for example these errors:
 
-arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dt.yaml: /: compatible:
-['radxa,rockpi-n10', 'rockchip,rk3399pro']
-is not valid under any of the given schemas
+arch/arm64/boot/dts/rockchip/rk3308-evb.dt.yaml: cpu@0: compatible:
+Additional items are not allowed ('arm,armv8' was unexpected)
+arch/arm64/boot/dts/rockchip/rk3308-evb.dt.yaml: cpu@0: compatible:
+['arm,cortex-a35', 'arm,armv8']
+is too long
 
-During the review process the binding was changed,
-but the dts file was somehow not updated.
-Fix this error by adding 'vamrs,rk3399pro-vmarc-som' to
-the compatible property.
+Fix these errors by removing the last argument of
+the cpu compatible property in rk3308.dtsi.
 
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/rockchip.yaml
+make ARCH=arm64
+dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/cpus.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/rockchip/rk3308.dtsi | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts b/arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
-index b42f94179..a1783e7f7 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
-@@ -13,5 +13,6 @@
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+index 116f1900e..3bd5bc860 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+@@ -40,7 +40,7 @@
  
- / {
- 	model = "Radxa ROCK Pi N10";
--	compatible = "radxa,rockpi-n10", "rockchip,rk3399pro";
-+	compatible = "radxa,rockpi-n10", "vamrs,rk3399pro-vmarc-som",
-+		     "rockchip,rk3399pro";
- };
+ 		cpu0: cpu@0 {
+ 			device_type = "cpu";
+-			compatible = "arm,cortex-a35", "arm,armv8";
++			compatible = "arm,cortex-a35";
+ 			reg = <0x0 0x0>;
+ 			enable-method = "psci";
+ 			clocks = <&cru ARMCLK>;
+@@ -53,7 +53,7 @@
+ 
+ 		cpu1: cpu@1 {
+ 			device_type = "cpu";
+-			compatible = "arm,cortex-a35", "arm,armv8";
++			compatible = "arm,cortex-a35";
+ 			reg = <0x0 0x1>;
+ 			enable-method = "psci";
+ 			operating-points-v2 = <&cpu0_opp_table>;
+@@ -63,7 +63,7 @@
+ 
+ 		cpu2: cpu@2 {
+ 			device_type = "cpu";
+-			compatible = "arm,cortex-a35", "arm,armv8";
++			compatible = "arm,cortex-a35";
+ 			reg = <0x0 0x2>;
+ 			enable-method = "psci";
+ 			operating-points-v2 = <&cpu0_opp_table>;
+@@ -73,7 +73,7 @@
+ 
+ 		cpu3: cpu@3 {
+ 			device_type = "cpu";
+-			compatible = "arm,cortex-a35", "arm,armv8";
++			compatible = "arm,cortex-a35";
+ 			reg = <0x0 0x3>;
+ 			enable-method = "psci";
+ 			operating-points-v2 = <&cpu0_opp_table>;
 -- 
 2.11.0
 
