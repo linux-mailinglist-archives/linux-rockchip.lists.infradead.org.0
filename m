@@ -2,91 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59109173638
-	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 12:40:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B571173742
+	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 13:34:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=0IXZDTOBzvBZE0RcS7Jhde1Vs7t+ov1GoaqZnZPthn4=; b=g/0HNnRs+vNoyJR8Zxj38ktFZa
-	/6i4JeDpXVLx/9XyWBV52gnCmk8TjxOFALPzb2rbsqzS0D173tTi3vh9vB3w01EghH0HfX3gGnuZn
-	UPKWLrrBJYAMjHDYWFhwm+wTk3xHivvG1Ba3Zrvrt9y3O1UTItSsWzlvYPXJ/uMzXb3uquY32KiXO
-	UYStzrRuK6Q9zhrmH6q3PncfNsyJULRrTawxPUvyhfTHxB7xHpBxoebVds0jtY2/IgTkxLAK+7QAk
-	+4K+yqOcZCCK3phSbynpEDTBSr9NkTzNvtPTR2nH3vyL7P3FizJMgClVu4z8CcN8lvF3g2j+IvbeV
-	HjYTsVUA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=/5boQkKjUgAIjbnN3JWxUq2hWOlet/TAmWxv5AsOBKw=; b=cl4BbBoOKqlZH5sfbIa85haib
+	v83phYjQbTn4dVCkUaIpe6bBjVKu8ucYICUdUapWRCbWAa8eQyOMriOl4KiL2c0geo6io+mICklLo
+	1iRKHG52xikhITIX76HyLHtV6nB6+OHMSdAYmdqrCMdGMaaZWXjNOzU4/pCaq+EddASf11DpQNNEu
+	quuuMRa2Y0VIJjZi8hn9J9u9YpCD5/R3gykag59jD3PtOaj13X47uXlqq2LlLXALkRNKwXJ58Rh/h
+	LbOOzaaxUoNLHt+0+Qrnxktp2BulNd513+jN6HiAabexMa0wsuGRobVSP/OT0yLqPnFz6U3lh36ZK
+	Kd9+lWi5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7e09-0007DE-GV; Fri, 28 Feb 2020 11:40:17 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7dzS-000625-Of; Fri, 28 Feb 2020 11:39:36 +0000
-Received: by mail-wm1-x342.google.com with SMTP id z12so2842805wmi.4;
- Fri, 28 Feb 2020 03:39:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=HmPLXJpOCywpZeq5lAD4FjaTX4sOpZWVoDemtjk5yXw=;
- b=sWmxNJ2/LfZPrwNbIlrcBLLDjCgorHwi+uDe9ivm0XmvKzs3C7A+9/OX45MvkFI1NY
- bMh+KV5Zjy1uXcPIFddnKJ4wWmJrWMnI70QLnh1N7NumFw098Vi9w3qgONutUWmgrqbc
- Dk5M5RO6rBey+OqWzVdOIOG/Ew4s2SPI+ksKGgFjPyqV/3gvtCrYi85af+lVDQzpKU9J
- i42QqVVi9cYS39pTZZLPz1PGUe+ZXJG7qBbq4HFyLE7+8BYlfyeDUxHkzGAGfo3LMC40
- 0K1jQhu5R7QGRDM20zW4pPaM5tBLkwPSx3VdopFhDvFuz5px2CNVk6hFBVopHMBV/O/c
- EkoQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=HmPLXJpOCywpZeq5lAD4FjaTX4sOpZWVoDemtjk5yXw=;
- b=GymNoswLE8kzNbnXCJ3mZU2HL0NeNZ6KSZr6Z3qYNzj7mcX/WuBr4Bb7vs3xDjbZ/9
- sAILMkjRPtP4q/M7DPjw1amyYDn+QKn8AoH5Ncifhgjo7Jit5SdaLAeEsTnqOq5lSp1K
- 7AXnvivA02RsDtV+H/qM1jzcqRkN0W6GYe5jgF9mlUHLMya9o1HoF1ycK7eUk5eotHq0
- 5Z5L3R6hzjKOmB82EN926kNeRrSJ28xxeJPMhTukSswy2yyzPzj1YGq9RxKL9iF5ehDS
- Vudi454QjvSfMF+lDn580KrJpAULalodafWQP37nIiF+Q+oAPRuuCHKtUxaLdmOJKp7x
- jz6Q==
-X-Gm-Message-State: APjAAAWhNYGAY3T/I7a5Dh/uZJaHCh9/PAsYZAwK4JkGCvCCxc/UPeqN
- pqoUlJ/NhR4rSHm4NHj/uyM=
-X-Google-Smtp-Source: APXvYqybX1CYwMeuUYbdLHcAbibwv6Xf3qhi54cLwS/IJwbBOzV5j6W4y3iXzUnZoGBvUYIPlYnYxQ==
-X-Received: by 2002:a05:600c:20c6:: with SMTP id
- y6mr4515359wmm.95.1582889971316; 
- Fri, 28 Feb 2020 03:39:31 -0800 (PST)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id q1sm11554294wrw.5.2020.02.28.03.39.30
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 28 Feb 2020 03:39:30 -0800 (PST)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH 2/2] arm64: dts: remove g-use-dma from rockchip usb nodes
-Date: Fri, 28 Feb 2020 12:39:22 +0100
-Message-Id: <20200228113922.20266-2-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200228113922.20266-1-jbx6244@gmail.com>
-References: <20200228113922.20266-1-jbx6244@gmail.com>
+	id 1j7eq2-0003LD-FF; Fri, 28 Feb 2020 12:33:54 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7epc-0002t7-5c; Fri, 28 Feb 2020 12:33:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B68224B2;
+ Fri, 28 Feb 2020 04:33:24 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 800F53F7B4;
+ Fri, 28 Feb 2020 04:33:23 -0800 (PST)
+Subject: Re: [PATCH] arm64: dts: rockchip: fix cpu compatible property for
+ rk3308
+To: Johan Jonker <jbx6244@gmail.com>, heiko@sntech.de
+References: <20200228084827.16198-1-jbx6244@gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <6a6beced-a8cb-448e-a4b2-331cd09d0c61@arm.com>
+Date: Fri, 28 Feb 2020 12:33:21 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <20200228084827.16198-1-jbx6244@gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_033934_798741_BEC35472 
-X-CRM114-Status: GOOD (  13.54  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200228_043328_271257_B49E1717 
+X-CRM114-Status: GOOD (  16.67  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,65 +67,77 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
 Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-A test with the command below gives these errors:
+On 28/02/2020 8:48 am, Johan Jonker wrote:
+> A test with the command below gives for example these errors:
+> 
+> arch/arm64/boot/dts/rockchip/rk3308-evb.dt.yaml: cpu@0: compatible:
+> Additional items are not allowed ('arm,armv8' was unexpected)
+> arch/arm64/boot/dts/rockchip/rk3308-evb.dt.yaml: cpu@0: compatible:
+> ['arm,cortex-a35', 'arm,armv8']
+> is too long
+> 
+> Fix these errors by removing the last argument of
+> the cpu compatible property in rk3308.dtsi.
 
-arch/arm64/boot/dts/rockchip/px30-evb.dt.yaml: usb@ff300000:
-'g-use-dma', 'power-domains' do not match any of the regexes:
-'pinctrl-[0-9]+'
-arch/arm64/boot/dts/rockchip/rk3328-a1.dt.yaml: usb@ff580000:
-'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
-arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: usb@ff580000:
-'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
-arch/arm64/boot/dts/rockchip/rk3328-rock64.dt.yaml: usb@ff580000:
-'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
-arch/arm64/boot/dts/rockchip/rk3328-roc-cc.dt.yaml: usb@ff580000:
-'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
+Bah, seems this snuck in a couple of releases after we blitzed the last 
+of these from the tree :)
 
-'g-use-dma' is not a valid option in dwc2.yaml, so remove it
-from all Rockchip dtsi files.
+Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/usb/dwc2.yaml
-
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/px30.dtsi   | 1 -
- arch/arm64/boot/dts/rockchip/rk3328.dtsi | 1 -
- 2 files changed, 2 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-index 75908c587..4f484119f 100644
---- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-@@ -870,7 +870,6 @@
- 		g-np-tx-fifo-size = <16>;
- 		g-rx-fifo-size = <280>;
- 		g-tx-fifo-size = <256 128 128 64 32 16>;
--		g-use-dma;
- 		phys = <&u2phy_otg>;
- 		phy-names = "usb2-phy";
- 		power-domains = <&power PX30_PD_USB>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-index 1f53ead52..bad41bc6f 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-@@ -957,7 +957,6 @@
- 		g-np-tx-fifo-size = <16>;
- 		g-rx-fifo-size = <280>;
- 		g-tx-fifo-size = <256 128 128 64 32 16>;
--		g-use-dma;
- 		phys = <&u2phy_otg>;
- 		phy-names = "usb2-phy";
- 		status = "disabled";
--- 
-2.11.0
-
+> make ARCH=arm64
+> dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/cpus.yaml
+> 
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+>   arch/arm64/boot/dts/rockchip/rk3308.dtsi | 8 ++++----
+>   1 file changed, 4 insertions(+), 4 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+> index 116f1900e..3bd5bc860 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+> @@ -40,7 +40,7 @@
+>   
+>   		cpu0: cpu@0 {
+>   			device_type = "cpu";
+> -			compatible = "arm,cortex-a35", "arm,armv8";
+> +			compatible = "arm,cortex-a35";
+>   			reg = <0x0 0x0>;
+>   			enable-method = "psci";
+>   			clocks = <&cru ARMCLK>;
+> @@ -53,7 +53,7 @@
+>   
+>   		cpu1: cpu@1 {
+>   			device_type = "cpu";
+> -			compatible = "arm,cortex-a35", "arm,armv8";
+> +			compatible = "arm,cortex-a35";
+>   			reg = <0x0 0x1>;
+>   			enable-method = "psci";
+>   			operating-points-v2 = <&cpu0_opp_table>;
+> @@ -63,7 +63,7 @@
+>   
+>   		cpu2: cpu@2 {
+>   			device_type = "cpu";
+> -			compatible = "arm,cortex-a35", "arm,armv8";
+> +			compatible = "arm,cortex-a35";
+>   			reg = <0x0 0x2>;
+>   			enable-method = "psci";
+>   			operating-points-v2 = <&cpu0_opp_table>;
+> @@ -73,7 +73,7 @@
+>   
+>   		cpu3: cpu@3 {
+>   			device_type = "cpu";
+> -			compatible = "arm,cortex-a35", "arm,armv8";
+> +			compatible = "arm,cortex-a35";
+>   			reg = <0x0 0x3>;
+>   			enable-method = "psci";
+>   			operating-points-v2 = <&cpu0_opp_table>;
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
