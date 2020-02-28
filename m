@@ -2,96 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3908417384C
-	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 14:28:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85AF21739AD
+	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 15:20:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8TCJVodqoEbZ0y8ahvNA8kjLMG69og78mqJ/hs1lrDk=; b=sBXD3rXf4zB4DF
-	1paLKGecmiPVIZ+8BaYJC+sKpmoXZcsBfR6dKXuVHF5fHb4IYaA4DJ/7ltZQVWlR76N03Z11qsKYu
-	nmOSZU0uVQysduj2DYVqO1c3B4ZWGcAmMITpBeHuEU4Ox5/4mQnamAoM9yEU6jOqsrNto5SKEio30
-	k6sp2x3qzGK023ykgfuHBplDQ2BkqMtfvCGNF7ch0YEV/U9T9MhfZXgIeJCvgwiE552AItKTntpZZ
-	eFK/tewpkD1UkuSYXxZSU0tQiCLKf9Sibsmd2PCZkutr4Pz8J275RqZ8SPGeQ25NxMBdqyZxxky0H
-	4gu5yeoW147CQA/VUzKA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z3WMvVroziZ3dfTKS/AvBoQHVJkAtzjY2EoYOSdj5r8=; b=SeoYKG3bWtc7cb
+	iEPhSLA8GMAcRoz+yKCbPEoYwEWKvWWwznPv54n0fUEgtyPEg30tnCMTGUnPjlXOUWP8iCdtEwcE1
+	E/SBC24A96qVAOw+DUKPBobaLUKukJqOOwTG75RJY2fgqcw4JbBc+LT5JFn5/soRRVE0bRKH+RWNf
+	hCE6R+SAkOOQpvS0CdBSt4CfMHF3XPQ1YuynbC1GtI1OtKJleL6a+5rStWQYrpPw0tNMhlwSO3MGT
+	cgkCwCXH0Lczd82vQIuprDC9vksOadRRkQc3C197dVregkbehXNQXckpeD32vtioMHTyLjsunXUEC
+	s8aVKuIpWEUgCW9hMvFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7fh5-00072o-Vb; Fri, 28 Feb 2020 13:28:43 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j7gUz-0001Z9-4L; Fri, 28 Feb 2020 14:20:17 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7fh2-00072I-PF; Fri, 28 Feb 2020 13:28:42 +0000
-Received: by mail-wr1-x444.google.com with SMTP id j16so2969838wrt.3;
- Fri, 28 Feb 2020 05:28:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=NrHT7T88RoyQjD1urqyZZ0aRh9a3eutzKOCuX5K1yeY=;
- b=j6znWTYLAzRRvkNdjZ9zjIGXFuDM7tFBO5sd5AZONq1ZAuvPhGMFHHQOAoP61wNFNI
- mNHtRD/kP22UvMXlJ5U3VoD1aUGzx6sA9covL0XoeczLGAAjioSJiDDNcQC4NskJXa6q
- 0EFE3AyjZ/CkTqKnG23nCGcNxYr4hN0h+3Z6ZnqPkULjB6NGlS0UIKjC1FZm8taT0yTZ
- qEhmjFrXYy3BYHOU3YFz9EzKp63awNX/eiyDNLZcfi3ZZVdeM5B6PwIZzbFriEQPT8zv
- ZIgCDKgj2COpOcdpjZ8iZDxOlFRZNROL9pmbfA8xT5yHobnGvQ0uIRxTTMHafZufC2m5
- +tow==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=NrHT7T88RoyQjD1urqyZZ0aRh9a3eutzKOCuX5K1yeY=;
- b=pG9/d/2ThSFrpXnQZhAN4tIfSNZ4G1QYRJBJ6FCkZJhWw9qedoi7tLPRSDsWCX3h2R
- IFG0o3YE1xtoDtv77BtWGAuks0pRaeE4Q5CpBNXOKLROP4XOXX/Ar4gE23rRkfLl6LUv
- GMgme4/D4GVozKxzA5DCNbe1gqen+hoEMq8g2NUJ9nDOmgcH+Nan0lRTedUcrNbkpYzk
- TSDb3ghTABB4AsUTL/hfT0xr80I9LQcPqbgokn5wLCgZqZtve98ttiKudbLJiUJLw+RM
- /C3SvgQhfh6SxQXIkEvH2Av/v7vuK4jaREOXySz5C8YbW28OZqNOvADT05IlRUrz3z/+
- +yVg==
-X-Gm-Message-State: APjAAAUqayeTV6/crJkLJh4h8n74FCtWd1aChx7UhILha8OhA7ThOCE9
- 2ftGS9VGPvkC7+Gg1G5RRVXmnjO0
-X-Google-Smtp-Source: APXvYqzcazyu+zLUhQgdULQfW0b/6JUEwzdAx/yhhMPyZiEnDR8uFexywppZaicqNefTUid2wvto4g==
-X-Received: by 2002:a5d:5609:: with SMTP id l9mr4697197wrv.48.1582896518952;
- Fri, 28 Feb 2020 05:28:38 -0800 (PST)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id q9sm12906735wrx.18.2020.02.28.05.28.37
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 28 Feb 2020 05:28:38 -0800 (PST)
-Subject: Re: [PATCH 3/4] dt-bindings: arm: fix Rockchip rk3399-evb bindings
-To: Robin Murphy <robin.murphy@arm.com>, heiko@sntech.de
-References: <20200228061436.13506-1-jbx6244@gmail.com>
- <20200228061436.13506-3-jbx6244@gmail.com>
- <78b8b53f-2e2a-3804-41fb-bb2610947ca2@arm.com>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <229c3511-d99d-8bac-6241-0088c5fc13ef@gmail.com>
-Date: Fri, 28 Feb 2020 14:28:36 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j7gUf-0000A8-96; Fri, 28 Feb 2020 14:19:59 +0000
+Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1j7gUA-0006Mp-46; Fri, 28 Feb 2020 15:19:26 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Tobias Schramm <t.schramm@manjaro.org>
+Subject: Re: [PATCH 2/2] arm64: dts: rockchip: Add initial support for
+ Pinebook Pro
+Date: Fri, 28 Feb 2020 15:19:25 +0100
+Message-ID: <12370413.gKdrHkWbHd@diego>
+In-Reply-To: <20200227180630.166982-3-t.schramm@manjaro.org>
+References: <20200227180630.166982-1-t.schramm@manjaro.org>
+ <20200227180630.166982-3-t.schramm@manjaro.org>
 MIME-Version: 1.0
-In-Reply-To: <78b8b53f-2e2a-3804-41fb-bb2610947ca2@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_052840_825143_5379F070 
-X-CRM114-Status: GOOD (  20.29  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200228_061957_472177_D01232AD 
+X-CRM114-Status: GOOD (  21.17  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,58 +59,460 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Alexis Ballier <aballier@gentoo.org>,
+ Katsuhiro Suzuki <katsuhiro@katsuster.net>, linux-kernel@vger.kernel.org,
+ Douglas Anderson <dianders@chromium.org>,
+ Kever Yang <kever.yang@rock-chips.com>, Markus Reichl <m.reichl@fivetechno.de>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Jagan Teki <jagan@amarulasolutions.com>, Nick Xie <nick@khadas.com>,
+ enric.balletbo@collabora.com, Andy Yan <andy.yan@rock-chips.com>,
+ anarsoul@gmail.com, Matthias Kaehlcke <mka@chromium.org>,
+ Vivek Unune <npcomplete13@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgUm9iaW4sCgpXaGVuIEkgbG9vayBhdCB0aGUgcmV2aWV3IHByb2Nlc3Mgb2YgcmszMzk5LWV2
-Yi5kdHMKaXQgaXMgbWVudGlvbmVkIGhlcmU6CgpodHRwczovL2xvcmUua2VybmVsLm9yZy9wYXRj
-aHdvcmsvcGF0Y2gvNjcyMzI3LwoKPj4gKwltb2RlbCA9ICJSb2NrY2hpcCBSSzMzOTkgRXZhbHVh
-dGlvbiBCb2FyZCI7Cj4+ICsJY29tcGF0aWJsZSA9ICJyb2NrY2hpcCxyazMzOTktZXZiIiwgInJv
-Y2tjaGlwLHJrMzM5OSIsCj4+ICsJCSAgICAgImdvb2dsZSxyazMzOTlldmItcmV2MiIsIGdvb2ds
-ZSxyazMzOTlldmItcmV2MSIsCj4+ICsJCSAgICAgImdvb2dsZSxyazMzOTlldmItcmV2MCIgOwo+
-IAo+IGNhbiB5b3UgY2hlY2sgYWdhaW5zdCB3aGljaCBjb21wYXRpYmxlcyB0aGF0IGNvcmVib290
-IHJlYWxseSBtYXRjaGVzPwo+IAo+IEFzIHdlIHNhaWQgdGhhdCB0aGUgZXZiIGNoYW5nZWQgYmV0
-d2VlbiByZXYxIGFuZCByZXYyLCBJIHdvdWxkIGV4cGVjdCB0aGUgCj4gY29tcGF0aWJsZSB0byBi
-ZSBzb21ldGhpbmcgbGlrZQo+IAo+IAljb21wYXRpYmxlID0gInJvY2tjaGlwLHJrMzM5OS1ldmIi
-LCAgImdvb2dsZSxyazMzOTlldmItcmV2MiIsIAo+IAkJCSJyb2NrY2hpcCxyazMzOTkiOwo+IAo+
-IGxlYXZpbmcgb3V0IHRoZSByZXYxIGFuZCByZXYwCgpUaGUgY29uc2Vuc3VzIGluIHZlcnNpb24g
-NCBlbmRzIGluIHdoYXQgaXMgc2hvd24gaW4gdGhlIGR0cyBmaWxlLCBzbyBJCmNoYW5nZWQgaXQg
-aW4gcm9ja2NoaXAueWFtbC4gVGhpbmdzIGZyb20gdGhlIHBhc3QgbWF5YmUgY2FuIGJldHRlciBi
-ZQpleHBsYWluZWQgYnkgSGVpa28uIFBsZWFzZSBhZHZpc2UgaWYgdGhpcyBwYXRjaCBuZWVkcyB0
-byBjaGFuZ2UgYW5kIGluCndoYXQgZmlsZS4KCktpbmQgcmVnYXJkcywKCkpvaGFuCgoKT24gMi8y
-OC8yMCAxOjQyIFBNLCBSb2JpbiBNdXJwaHkgd3JvdGU6Cj4gT24gMjgvMDIvMjAyMCA2OjE0IGFt
-LCBKb2hhbiBKb25rZXIgd3JvdGU6Cj4+IEEgdGVzdCB3aXRoIHRoZSBjb21tYW5kIGJlbG93IGdp
-dmVzIHRoaXMgZXJyb3I6Cj4+Cj4+IGFyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5
-LWV2Yi5kdC55YW1sOiAvOiBjb21wYXRpYmxlOgo+PiBbJ3JvY2tjaGlwLHJrMzM5OS1ldmInLCAn
-cm9ja2NoaXAscmszMzk5JywgJ2dvb2dsZSxyazMzOTlldmItcmV2MiddCj4+IGlzIG5vdCB2YWxp
-ZCB1bmRlciBhbnkgb2YgdGhlIGdpdmVuIHNjaGVtYXMKPj4KPj4gRml4IHRoaXMgZXJyb3IgYnkg
-YWRkaW5nICdnb29nbGUscmszMzk5ZXZiLXJldjInIHRvIHRoZSBjb21wYXRpYmxlCj4+IHByb3Bl
-cnR5IGluIHJvY2tjaGlwLnlhbWwKPj4KPj4gbWFrZSBBUkNIPWFybTY0IGR0YnNfY2hlY2sKPj4g
-RFRfU0NIRU1BX0ZJTEVTPURvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vcm9j
-a2NoaXAueWFtbAo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBKb2hhbiBKb25rZXIgPGpieDYyNDRAZ21h
-aWwuY29tPgo+PiAtLS0KPj4gwqAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Fy
-bS9yb2NrY2hpcC55YW1sIHwgMSArCj4+IMKgIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigr
-KQo+Pgo+PiBkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Fy
-bS9yb2NrY2hpcC55YW1sCj4+IGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Fy
-bS9yb2NrY2hpcC55YW1sCj4+IGluZGV4IGQzMDM3OTBmNS4uNmM2ZTgyNzNlIDEwMDY0NAo+PiAt
-LS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvYXJtL3JvY2tjaGlwLnlhbWwK
-Pj4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9yb2NrY2hpcC55
-YW1sCj4+IEBAIC01MDksNiArNTA5LDcgQEAgcHJvcGVydGllczoKPj4gwqDCoMKgwqDCoMKgwqDC
-oMKgIGl0ZW1zOgo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC0gY29uc3Q6IHJvY2tjaGlwLHJr
-MzM5OS1ldmIKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAtIGNvbnN0OiByb2NrY2hpcCxyazMz
-OTkKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoCAtIGNvbnN0OiBnb29nbGUscmszMzk5ZXZiLXJldjIK
-PiAKPiBUaGlzIGxvb2tzIHdyb25nIC0gdGhlIGJvYXJkIGNhbid0IHJlYXNvbmFibHkgYmUgYSAq
-bW9yZSogZ2VuZXJhbCBtYXRjaAo+IHRoYW4gdGhlIFNvQy4gSWYgdGhpcyBpcyBzdXBwb3NlZCB0
-byByZXByZXNlbnQgYSBzcGVjaWZpYyB2YXJpYW50IG9mIHRoZQo+IGJhc2ljIEVWQiBkZXNpZ24g
-dGhlbiBpdCBzaG91bGQgY29tZSBiZWZvcmUgInJvY2tjaGlwLHJrMzM5OS1ldmIiIChhbmQKPiBw
-b3NzaWJseSBiZSBvcHRpb25hbCBpZiBvdGhlciB2YXJpYW50cyBhbHNvIGV4aXN0KS4KPiAKPiBS
-b2Jpbi4KPiAKPj4gwqAgwqDCoMKgwqDCoMKgwqAgLSBkZXNjcmlwdGlvbjogUm9ja2NoaXAgUksz
-Mzk5IFNhcHBoaXJlIHN0YW5kYWxvbmUKPj4gwqDCoMKgwqDCoMKgwqDCoMKgIGl0ZW1zOgo+PgoK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJv
-Y2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+Hi Tobias,
+
+Am Donnerstag, 27. Februar 2020, 19:06:30 CET schrieb Tobias Schramm:
+> This commit adds initial dt support for the rk3399 based Pinebook Pro.
+> 
+> Signed-off-by: Tobias Schramm <t.schramm@manjaro.org>
+
+
+> +	chosen {
+> +		bootargs = "earlycon=uart8250,mmio32,0xff1a0000";
+
+hmm, bootargs in a mainline dt seem awkward (argument about dt not being
+a place for configuration) ... so please drop that ... stdout-path can
+of course stay.
+
+> +		stdout-path = "serial2:1500000n8";
+> +	};
+> +
+> +	leds {
+
+node sorting preference is by address for foo@bar nodes
+and alphabetically for everything else, so
+- backlight
+- edp-panel
+- gpio-key-lid
+....
+
+> +		compatible = "gpio-leds";
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pwrled_gpio &slpled_gpio>;
+> +
+> +		green-led {
+> +			color = <LED_COLOR_ID_GREEN>;
+> +			default-state = "off";
+> +			function = LED_FUNCTION_POWER;
+> +			gpios = <&gpio0 RK_PB3 GPIO_ACTIVE_HIGH>;
+> +			label = "green:disk-activity";
+> +			linux,default-trigger = "mmc2";
+
+hmm, LED_FUNCTION_POWER but trigger for mmc2 ?
+So if there is no activity on the LED it looks to be off?
+
+> +		};
+> +
+> +		red-led {
+> +			color = <LED_COLOR_ID_RED>;
+> +			default-state = "off";
+> +			function = LED_FUNCTION_STANDBY;
+> +			gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_HIGH>;
+> +			label = "red:standby";
+> +			panic-indicator;
+> +			retain-state-suspended;
+> +		};
+> +	};
+> +
+> +	/* Use separate nodes for gpio-keys to allow for selective deactivation
+
+nit:
+/*
+ * Use separate ....
+
+> +	 * of wakeup sources without disabling the whole key
+
+Also can you explain the problem a bit? If there is a deficit in the input
+subsystem regarding wakeup events, dt is normally not the place to work
+around things [we're supposed to be OS independent]
+
+> +	 */
+> +	gpio-key-power {
+> +		compatible = "gpio-keys";
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pwrbtn_gpio>;
+> +
+> +		power {
+> +			debounce-interval = <20>;
+> +			gpios = <&gpio0 RK_PA5 GPIO_ACTIVE_LOW>;
+> +			label = "Power";
+> +			linux,code = <KEY_POWER>;
+> +			wakeup-source;
+> +		};
+> +	};
+> +
+> +	gpio-key-lid {
+> +		compatible = "gpio-keys";
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&lidbtn_gpio>;
+> +
+> +		lid {
+> +			debounce-interval = <20>;
+> +			gpios = <&gpio1 RK_PA1 GPIO_ACTIVE_LOW>;
+> +			label = "Lid";
+> +			linux,code = <SW_LID>;
+> +			linux,input-type = <EV_SW>;
+> +			wakeup-event-action = <EV_ACT_DEASSERTED>;
+> +			wakeup-source;
+> +		};
+> +	};
+> +
+> +	/* first 128k(0xff8d0000~0xff8f0000) for ddr and ATF */
+> +	sram@ff8d0000 {
+> +		compatible = "mmio-sram";
+> +		reg = <0x0 0xff8d0000 0x0 0x20000>; /* 128k */
+> +	};
+
+(1) The sram would be soc property, so shouldn't be in a board-dts
+(2) nobody is using the sram?
+(3) you say 0xff8d0000~0xff8f0000 but then provide the same memory
+    to the kernel? ATF will likely protect that memory from unsecure access.
+    (not necessarily the old BSP binary-ATF though)
+
+So I'd suggest dropping the sram for now.
+
+> +
+> +	edp_panel: edp-panel {
+> +		compatible = "boe,nv140fhmn49", "simple-panel";
+> +		backlight = <&backlight>;
+> +
+> +		enable-delay-ms = <20>;
+> +		enable-gpios = <&gpio1 RK_PA0 GPIO_ACTIVE_HIGH>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&panel_en_gpio>;
+> +
+> +		power-supply = <&vcc3v3_panel>;
+> +		prepare-delay-ms = <20>;
+> +		status = "okay";
+
+edp-panel is a board-node and therefore default status okay
+
+> +
+> +		ports {
+> +			#address-cells = <0x01>;
+> +			#size-cells = <0x00>;
+> +			port@0 {
+> +				panel_in_edp: endpoint@0 {
+> +					remote-endpoint = <&edp_out_panel>;
+> +				};
+> +			};
+> +		};
+> +	};
+> +
+> +	backlight: edp-backlight {
+> +		compatible = "pwm-backlight";
+> +		brightness-levels = <
+> +			  0   1   2   3   4   5   6   7
+> +			  8   9  10  11  12  13  14  15
+> +			 16  17  18  19  20  21  22  23
+> +			 24  25  26  27  28  29  30  31
+> +			 32  33  34  35  36  37  38  39
+> +			 40  41  42  43  44  45  46  47
+> +			 48  49  50  51  52  53  54  55
+> +			 56  57  58  59  60  61  62  63
+> +			 64  65  66  67  68  69  70  71
+> +			 72  73  74  75  76  77  78  79
+> +			 80  81  82  83  84  85  86  87
+> +			 88  89  90  91  92  93  94  95
+> +			 96  97  98  99 100 101 102 103
+> +			104 105 106 107 108 109 110 111
+> +			112 113 114 115 116 117 118 119
+> +			120 121 122 123 124 125 126 127
+> +			128 129 130 131 132 133 134 135
+> +			136 137 138 139 140 141 142 143
+> +			144 145 146 147 148 149 150 151
+> +			152 153 154 155 156 157 158 159
+> +			160 161 162 163 164 165 166 167
+> +			168 169 170 171 172 173 174 175
+> +			176 177 178 179 180 181 182 183
+> +			184 185 186 187 188 189 190 191
+> +			192 193 194 195 196 197 198 199
+> +			200 201 202 203 204 205 206 207
+> +			208 209 210 211 212 213 214 215
+> +			216 217 218 219 220 221 222 223
+> +			224 225 226 227 228 229 230 231
+> +			232 233 234 235 236 237 238 239
+> +			240 241 242 243 244 245 246 247
+> +			248 249 250 251 252 253 254 255>;
+> +		default-brightness-level = <200>;
+
+pwm-backlight can now calculate default brightness-levels, so you don't need
+the table and default-brightness-level.
+
+> +		power-supply = <&vcc_12v>;
+> +		pwms = <&pwm0 0 740740 0>;
+> +		status = "okay";
+
+same okay comment as above
+
+> +	};
+
+> +	/* Audio components */
+> +	speaker_amp: speaker-amplifier {
+> +		compatible = "simple-audio-amplifier";
+> +		enable-gpios = <&gpio4 RK_PD3 GPIO_ACTIVE_HIGH>;
+> +		sound-name-prefix = "Speaker Amplifier";
+> +		status = "okay";
+
+same okay comment as above
+[and I guess I should stop repeating this for all following status=okay
+in board nodes ;-) ]
+
+> +		VCC-supply = <&pa_5v>;
+> +	};
+> +
+> +	es8316-sound {
+> +		compatible = "simple-audio-card";
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&hp_det_gpio>;
+> +		simple-audio-card,name = "rockchip,es8316-codec";
+> +		simple-audio-card,format = "i2s";
+> +		simple-audio-card,mclk-fs = <256>;
+> +
+> +		simple-audio-card,widgets =
+> +			"Microphone", "Mic Jack",
+> +			"Headphone", "Headphones",
+> +			"Speaker", "Speaker";
+> +		simple-audio-card,routing =
+> +			"MIC1", "Mic Jack",
+> +			"Headphones", "HPOL",
+> +			"Headphones", "HPOR",
+> +			"Speaker Amplifier INL", "HPOL",
+> +			"Speaker Amplifier INR", "HPOR",
+> +			"Speaker", "Speaker Amplifier OUTL",
+> +			"Speaker", "Speaker Amplifier OUTR";
+> +
+> +		simple-audio-card,hp-det-gpio = <&gpio0 RK_PB0 GPIO_ACTIVE_LOW>;
+> +		simple-audio-card,aux-devs = <&speaker_amp>;
+> +		simple-audio-card,pin-switches = "Speaker";
+> +		status = "okay";
+> +
+> +		simple-audio-card,cpu {
+> +			sound-dai = <&i2s1>;
+> +		};
+> +
+> +		simple-audio-card,codec {
+> +			sound-dai = <&es8316>;
+> +		};
+> +	};
+> +
+> +	/* Power tree */
+
+I really like clean power-trees, so thanks for probably digging through
+the schematics to get this right.
+
+[...]
+
+> +&cluster1_opp {
+> +	opp08 {
+> +		opp-hz = /bits/ 64 <2000000000>;
+> +		opp-microvolt = <1300000>;
+
+Where does this operating point come from.
+The opp-table Rockchip specified for the stock-rk3399 ends at 1.8Ghz@1.2V
+and the OP1 variant only has a 2.016Ghz@1.25V .
+
+Adding overclocked cou rates to the DT we ship in the mainline
+
+> +	};
+> +};
+> +
+> +&cdn_dp {
+> +	status = "okay";
+> +	extcon = <&fusb0>;
+
+The fusb-extcon is Rockchip-BSP voodoo. This should use the kernel's
+type-c framework, which in turn is depending on the cros-ec-pd stuff
+from rk3399-gru also moving to the type-c framework (
+
+> +};
+> +
+> +/* CPU */
+> +&cpu_alert0 {
+> +	temperature = <80000>;
+> +};
+> +
+> +&cpu_alert1 {
+> +	temperature = <95000>;
+> +};
+> +
+> +&cpu_crit {
+> +	temperature = <100000>;
+> +};
+
+Same issue for the temperatures. You're increasing the max allowed
+temperature and so may decrease the life expectancy of devices.
+
+The only other board-level changes for temperatures are decreasing
+them to actually prevent thermal issues.
+
+
+> +&i2c0 {
+> +	clock-frequency = <400000>;
+> +	i2c-scl-rising-time-ns = <168>;
+> +	i2c-scl-falling-time-ns = <4>;
+> +	status = "okay";
+> +
+> +	rk808: pmic@1b {
+> +		compatible = "rockchip,rk808";
+> +		reg = <0x1b>;
+> +		#clock-cells = <1>;
+> +		clock-output-names = "xin32k", "rk808-clkout2";
+> +		interrupt-parent = <&gpio3>;
+> +		interrupts = <10 IRQ_TYPE_LEVEL_LOW>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pmic_int_l_gpio>;
+> +		rockchip,system-power-controller;
+> +		wakeup-source;
+> +
+> +		vddio-supply = <&vcc_3v0>;
+
+where does this come from? Aka it's not specified in the dt-binding
+(though the example falsely uses it) and also not referenced in the driver.
+
+> +
+> +	vdd_cpu_b: regulator@40 {
+> +		compatible = "silergy,syr827";
+> +		reg = <0x40>;
+> +		fcs,suspend-voltage-selector = <1>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&vsel1_gpio>;
+> +		regulator-always-on;
+> +		regulator-boot-on;
+> +		regulator-compatible = "fan53555-reg";
+> +		regulator-min-microvolt = <712500>;
+> +		regulator-max-microvolt = <1500000>;
+> +		regulator-name = "vdd_cpu_b";
+> +		regulator-ramp-delay = <1000>;
+> +		vin-supply = <&vcc_1v8>;
+> +		vsel-gpios = <&gpio1 RK_PC1 GPIO_ACTIVE_HIGH>;
+
+not part of the regulator binding nor driver
+
+> +
+> +		regulator-state-mem {
+> +			regulator-off-in-suspend;
+> +		};
+> +	};
+> +
+> +	vdd_gpu: regulator@41 {
+> +		compatible = "silergy,syr828";
+> +		reg = <0x41>;
+> +		fcs,suspend-voltage-selector = <1>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&vsel2_gpio>;
+> +		regulator-always-on;
+> +		regulator-boot-on;
+> +		regulator-compatible = "fan53555-reg";
+> +		regulator-min-microvolt = <712500>;
+> +		regulator-max-microvolt = <1500000>;
+> +		regulator-name = "vdd_gpu";
+> +		regulator-ramp-delay = <1000>;
+> +		vin-supply = <&vcc_1v8>;
+> +		vsel-gpios = <&gpio1 RK_PB6 GPIO_ACTIVE_HIGH>;
+
+same
+
+> +
+> +		regulator-state-mem {
+> +			regulator-off-in-suspend;
+> +		};
+> +	};
+> +};
+
+[...]
+
+> +&sdio0 {
+> +	bus-width = <4>;
+> +	cap-sd-highspeed;
+> +	cap-sdio-irq;
+> +	disable-wp;
+> +	keep-power-in-suspend;
+> +	mmc-pwrseq = <&sdio_pwrseq>;
+> +	non-removable;
+> +	num-slots = <1>;
+
+num-slots got removed a while ago
+
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
+> +	sd-uhs-sdr104;
+> +	status = "okay";
+> +	supports-sdio;
+
+not part of the binding
+
+
+> +&tcphy0 {
+> +	extcon = <&fusb0>;
+
+that is Rockchip voodoo. The fusb302 in mainline does not (and should not)
+export an extcon for status informations. Instead this should use the
+type-c framework.
+
+
+> +	status = "okay";
+> +};
+> +
+> +&tcphy0_dp {
+> +	port {
+> +		tcphy0_typec_dp: endpoint {
+> +			remote-endpoint = <&usbc_dp>;
+> +		};
+> +	};
+> +};
+> +
+> +&tcphy0_usb3 {
+> +	port {
+> +		tcphy0_typec_ss: endpoint {
+> +			remote-endpoint = <&usbc_ss>;
+> +		};
+> +	};
+> +};
+
+[...]
+
+> +&u2phy1 {
+> +	status = "okay";
+> +
+> +	u2phy1_otg: otg-port {
+> +		status = "okay";
+> +	};
+> +
+> +	u2phy1_host: host-port {
+> +		phy-supply = <&vcc5v0_otg>;
+> +		status = "okay";
+> +	};
+> +};
+> +
+> +
+
+nit: double empty line
+
+> +&uart0 {
+
+
+Thanks
+Heiko
+
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
