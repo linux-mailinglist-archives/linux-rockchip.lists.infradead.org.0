@@ -2,47 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D0D2173761
-	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 13:43:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 464AA17378C
+	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 13:49:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SYN33tmNzKlTgS+lZ/1LB0Y9aH+21KE0D+8YJXY0UlE=; b=IfpVpVqTfVYXEuxss3+R/bo19
-	VF2+wNdejXRlj6khxNlBRVZe+BoP9eeF7sle8P/JGtDn0//4kNlTe8ktJ8dFY1aay0kfmq3YxNJBC
-	c9abfsq6f+PSc74mu1zfZFRlvEqqsnEipN+oXXAKMKFNb81IFRlzQp1o0Ud97pbUOftd9hqPZ3YT1
-	HaE/qPl6QGPfz6xm2xakmqsxUVE8SE/UdtozLB4BS+qWVTRXuyttq37xETSKf1gL3C33cf3ugGGVg
-	lRShIvl6TucSoV1svtr540XPIDuadietiZ1el7oTXcuiEH38TdbhpDfHlA0z9Pl1uSnI1XAo8znJr
-	TFZsqBmJg==;
+	 bh=t5tp54zEs27kEOf4gjoTPad0ght3JkQKX6roRfz5RZw=; b=oL18yqi4Kc1BjHPArIJFUOb6d
+	bnmCOgvduKgIiaxT14tGnrWexfXCOGDPmeooouV07DsMgvJ22dtbrRwNzT3rtpaZnx0wyiM1xFlti
+	huydEEgIxoZKLs8nvKS1/mhy1BMlWvTzr5stx6OeYRu4iHiJi/qzlSwIrQXnz5BuKmh8XQB/VBKLb
+	8713eyzCyzYvrsOgj65ApIps8vEg7FelW/KGa1VjnlSIGGrUjioqHMl2fNYbHdroXJepcF2JZl9Lh
+	YD7kn6IhBZjvVKA8Bk0yYoSblsMifnXMA5IFxOGF1msu23Wj2Si/+jgqEoq72v/e/TR8tKYQicNXt
+	JjM3C77VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7ez3-0007TK-LF; Fri, 28 Feb 2020 12:43:13 +0000
+	id 1j7f4k-0001dy-3W; Fri, 28 Feb 2020 12:49:06 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7eyp-0007Iy-8f; Fri, 28 Feb 2020 12:43:00 +0000
+ id 1j7f4Y-0001UG-04; Fri, 28 Feb 2020 12:48:55 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 66E794B2;
- Fri, 28 Feb 2020 04:42:58 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 12BE34B2;
+ Fri, 28 Feb 2020 04:48:53 -0800 (PST)
 Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 229663F7B4;
- Fri, 28 Feb 2020 04:42:57 -0800 (PST)
-Subject: Re: [PATCH 3/4] dt-bindings: arm: fix Rockchip rk3399-evb bindings
-To: Johan Jonker <jbx6244@gmail.com>, heiko@sntech.de
-References: <20200228061436.13506-1-jbx6244@gmail.com>
- <20200228061436.13506-3-jbx6244@gmail.com>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D82A33F7B4;
+ Fri, 28 Feb 2020 04:48:51 -0800 (PST)
+Subject: Re: [PATCH v2 3/3] arm64: dts: rockchip: Describe RK3328 GPIO_MUTE
+ users
 From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <78b8b53f-2e2a-3804-41fb-bb2610947ca2@arm.com>
-Date: Fri, 28 Feb 2020 12:42:55 +0000
+To: heiko@sntech.de
+References: <cover.1581376744.git.robin.murphy@arm.com>
+ <53637c0359ad9473dc1391a8428ba21017ec467e.1581376744.git.robin.murphy@arm.com>
+Message-ID: <59fe8a7d-22ab-6098-5266-4fdf4bf41adb@arm.com>
+Date: Fri, 28 Feb 2020 12:48:50 +0000
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200228061436.13506-3-jbx6244@gmail.com>
+In-Reply-To: <53637c0359ad9473dc1391a8428ba21017ec467e.1581376744.git.robin.murphy@arm.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_044259_350218_50C548BD 
-X-CRM114-Status: GOOD (  18.58  )
+X-CRM114-CacheID: sfid-20200228_044854_093493_51D3F336 
+X-CRM114-Status: GOOD (  17.41  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -64,52 +65,58 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
+ lgirdwood@gmail.com, linux-rockchip@lists.infradead.org, broonie@kernel.org,
+ pgwipeout@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 28/02/2020 6:14 am, Johan Jonker wrote:
-> A test with the command below gives this error:
-> 
-> arch/arm64/boot/dts/rockchip/rk3399-evb.dt.yaml: /: compatible:
-> ['rockchip,rk3399-evb', 'rockchip,rk3399', 'google,rk3399evb-rev2']
-> is not valid under any of the given schemas
-> 
-> Fix this error by adding 'google,rk3399evb-rev2' to the compatible
-> property in rockchip.yaml
-> 
-> make ARCH=arm64 dtbs_check
-> DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/rockchip.yaml
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> ---
->   Documentation/devicetree/bindings/arm/rockchip.yaml | 1 +
->   1 file changed, 1 insertion(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
-> index d303790f5..6c6e8273e 100644
-> --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
-> +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
-> @@ -509,6 +509,7 @@ properties:
->           items:
->             - const: rockchip,rk3399-evb
->             - const: rockchip,rk3399
-> +          - const: google,rk3399evb-rev2
+Hi Heiko,
 
-This looks wrong - the board can't reasonably be a *more* general match 
-than the SoC. If this is supposed to represent a specific variant of the 
-basic EVB design then it should come before "rockchip,rk3399-evb" (and 
-possibly be optional if other variants also exist).
+On 18/02/2020 9:32 pm, Robin Murphy wrote:
+> Add explicit properties to describe existing boards' GPIO_MUTE usage
+> for the analog codec.
 
+Are you happy to pick this up now that the driver patches are queued?
+
+Thanks,
 Robin.
 
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
+> 
+> v2: no change
+> 
+>   arch/arm64/boot/dts/rockchip/rk3328-a1.dts     | 1 +
+>   arch/arm64/boot/dts/rockchip/rk3328-rock64.dts | 1 +
+>   2 files changed, 2 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3328-a1.dts b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
+> index 16f1656d5203..797e90a3ac92 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
+> @@ -60,6 +60,7 @@
+>   };
 >   
->         - description: Rockchip RK3399 Sapphire standalone
->           items:
+>   &codec {
+> +	mute-gpios = <&grf_gpio 0 GPIO_ACTIVE_LOW>;
+>   	status = "okay";
+>   };
+>   
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+> index 62936b432f9a..bf3e546f5266 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+> @@ -104,6 +104,7 @@
+>   };
+>   
+>   &codec {
+> +	mute-gpios = <&grf_gpio 0 GPIO_ACTIVE_LOW>;
+>   	status = "okay";
+>   
+>   	port@0 {
 > 
 
 _______________________________________________
