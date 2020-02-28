@@ -2,72 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3303D1730DC
-	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 07:15:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEAFA1730DE
+	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 07:15:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=eRfag0PWnfHOkW1qxeAJ+gT6SFEDp3Y/nrN7M25Qi+8=; b=Ftb
-	QWlQXAMnmPawU8XZqrqmDWmz8oCpWXzuZsjZ1Uz9kBc9ozcTNOWmaFmeWCsbTWIEecOxsNH6CZGLd
-	sEW/sVt9drh9KxstGct8aeWQIosIrq9we4le2sgYrhhAJCdCiaakHJxR5TqZSmBM2iAfJKUiFgmxH
-	T/QUlAcZq3kOavNeCLv7pe2l4U5IKgG+nXVaSmspaLvKskkmL4Qs+jsrcQSoXeYzUX6r1jvMOpOxp
-	RRQfRon4EEJTjNsxrxZnf96gmi/yYNpA3OzGhEB7NfAnM16wpWiwtsT3kqGA7dn7bZFQY30F/EbEw
-	Dsr7Ed3MZ5t/zID2VwrR6m1EOzUXZAw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=wxNGRSAbH6ZpRJdlIyUGBQyxWZEXb1pF5VD3C7TXplE=; b=gC9jlsZN0GnJ/0mv40M9G7DDwm
+	klKmva+YDkhzMriXax1fJcHzexg1cjaRhWzILNG/ASNx2HQnCq0y1h7akFb9Sgm+9zWF0jcM1kuNJ
+	o9kwJ4qNieboJFnpV97F/fi+9bMFolK08d9NWBElpP/UN6imvxakkHW0EF6DbTlOiP6EfndWpW7gh
+	JqKlFmRzYITrbpcgPg5gwt9K1RFVAMHxpyqh6AdIDAA/A0NoeK8Liwhu+LF/wFf3CeLlTEIcWNjl3
+	vFufG8k7CvgazgUSH/GJ6w5yXZsb4LZhUEy2bvpp1rArzQOQt5buSpb2PIyADzYVybiVEYmxiPK2o
+	mljrjp/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7YvQ-0000Vx-Q3; Fri, 28 Feb 2020 06:15:04 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1j7Yvo-00020g-1x; Fri, 28 Feb 2020 06:15:28 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Yv7-0000KV-7j; Fri, 28 Feb 2020 06:14:46 +0000
-Received: by mail-wr1-x443.google.com with SMTP id p18so1577012wre.9;
- Thu, 27 Feb 2020 22:14:44 -0800 (PST)
+ id 1j7Yv7-0000KW-Dh; Fri, 28 Feb 2020 06:14:46 +0000
+Received: by mail-wr1-x441.google.com with SMTP id e10so162594wrr.10;
+ Thu, 27 Feb 2020 22:14:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=V7hcfg4eflxPQJhhG1KndzdHDXeH+yawJ68Tsyyhejo=;
- b=oEn4bNNwpMt6DqG3AmAQqLjKM5UUcUdjQY0aWw6vyjicqAaWzpM9BHLTp1jHJoXVm3
- HQDdayMMifnuuBkft9/YFeNKfyyIfZLB4mKhtOxODdV9h+9TyL7rF7lBBX7ytiEFfSZ5
- mgNG3mkwccHJAc9hiQHYnYqXBQnkvlE+0e6Lj6vUPN7F62/4TD/nNoIfpJUSGV8LnEyR
- qf5ryWMFcA9NyQnnMWdgMk1BJncEj0NDZNo6ebBrW5GJu593T5ySY5XmZ/iOkOEEqoAx
- DkZI8QaN3Q8hgmK78UTeq534oen07/myJEiqKUh+fvsAzvcxyMUXk11jLcd/AF0XgZ16
- RQXQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=fknAu4Mi7mPoGch0tjoJSjMYmeswX/bt/k6r2YfuwWE=;
+ b=VUwJLlVXSKSgcaIhw50JvvmveSXLCDh1CGogCEz6lY1i29ZORjezua0aUrYDvKjrha
+ MdGmcns+aYzVqlJMcmsJksgBCbZQraZJAfjKOOkhMhtpTUPP4TysyoaDqLZyuvTWhEEX
+ vtcoKmzezrGBibu1JPmMDFYFHvnJq2o0NOnXIyd6MQBuYT6f4sr/WecMVe8CO+p7R9Nw
+ wZtuIAcgL9gdrsGJECb68Cfmc/rthyi0qLTKIBq+gq7FT1YvEpsW6MBQ6IMkrBXjj2/n
+ V/ti3NatCujPiuT54QMWuJztFIpJHEJ8PalUaEi98DrQQkaPeNOdRY4lqm4LE2P6sRJt
+ xOGw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=V7hcfg4eflxPQJhhG1KndzdHDXeH+yawJ68Tsyyhejo=;
- b=HTsJWpDWS/n32KeWFSWC4AW23AGnLxxj+CVdxW7AWwANvTRkt6pZNVz7xO04kuNp5B
- oT11XfqcKpkq5CkA+a/0m3wolP6JZtOdlxF5f6GUJmzXxCOdZHBiROfK54Fn1vdcGZ7T
- bu9xiQZkkRKCxdZTD5OUt2v51/P1EBPRz983BJ6ih9S4SzgttmRJ/aurlELMZP2k61hp
- 2k0BkxUn5bovJXORR4i9rVS4AC4/XY4u7dWNKu7sgO6Lee1+lOyHOZLcUesCeM7NxNCU
- e04QRHrNyHiLFqxx1FG7Cl67CTG3g2yhzMdd/YInPhuRYb/i6c5du9gRiEX7N3SUbh5R
- ka/A==
-X-Gm-Message-State: APjAAAVz6RHJSAJV7SRjht4O99x5pDBPgVqUT72Uw5hJFRIj4Nk9t/Dx
- hoyKu3iTZ4GCN+JHLqcwdPI=
-X-Google-Smtp-Source: APXvYqwb8w751wXsSCK0pdQEDc0f1MsYrHDqMC4V0cCyXZwk1vuD4FeHuMsy7PsXoJ7wCkCZzEmN6Q==
-X-Received: by 2002:a5d:5647:: with SMTP id j7mr3068045wrw.265.1582870483014; 
- Thu, 27 Feb 2020 22:14:43 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=fknAu4Mi7mPoGch0tjoJSjMYmeswX/bt/k6r2YfuwWE=;
+ b=hjh1DEt455XnadTTt1MtIrqejtxET1GbM8BjrK++FxWRThJt0wYXCdgoT+EWgxyPGS
+ CZHTVS4IxnTUGNVteMvNKHddnXoWc9RKv7n2hxNxA7yt+CLYb5i5jtuEVT7IUB0cAR0p
+ mC9A8lg3JMOMW3qGcaocKsrkwsKYhSVfcOuI9j0qVDHYVvvu6UFNN3atMvT5a6ocKVdF
+ k2+0P5rev5a2ZDgGfl5qMvE2NRkC5rlwCKO1i+28Xu72P03iSRG0UQM7BXv4nDKCEjHv
+ nIZAfODXN9xhZrtajYRwFr51c9xFgIW654cQGsruRcoANtuWrTf9CF0TVMznaM/64Tgw
+ 1Y2g==
+X-Gm-Message-State: APjAAAVmFOWjDKWC+7wL5avvHH2zG09ORPAPqbeztX4nQ0/DiXqMpWpW
+ x5e41LUgKr7t1yIEdES4WNpejdqk
+X-Google-Smtp-Source: APXvYqxErNBAtzXh8TNUphjZpmr4q6vyV2vjAJ24Bzh1e+oe8X1teN/nm2W6cUBiA2AP/eUn8fffcg==
+X-Received: by 2002:adf:f892:: with SMTP id u18mr2954643wrp.328.1582870484010; 
+ Thu, 27 Feb 2020 22:14:44 -0800 (PST)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id w7sm682554wmi.9.2020.02.27.22.14.42
+ by smtp.gmail.com with ESMTPSA id w7sm682554wmi.9.2020.02.27.22.14.43
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 27 Feb 2020 22:14:42 -0800 (PST)
+ Thu, 27 Feb 2020 22:14:43 -0800 (PST)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH 1/4] dt-bindings: arm: fix Rockchip Kylin board bindings
-Date: Fri, 28 Feb 2020 07:14:33 +0100
-Message-Id: <20200228061436.13506-1-jbx6244@gmail.com>
+Subject: [PATCH 2/4] dt-bindings: arm: add Rockchip rk3036-evb board
+Date: Fri, 28 Feb 2020 07:14:34 +0100
+Message-Id: <20200228061436.13506-2-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200228061436.13506-1-jbx6244@gmail.com>
+References: <20200228061436.13506-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_221445_279019_D5954EF2 
-X-CRM114-Status: GOOD (  11.38  )
+X-CRM114-CacheID: sfid-20200227_221445_458611_7BB9D1AA 
+X-CRM114-Status: GOOD (  11.02  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -105,34 +109,37 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 A test with the command below gives this error:
 
-arch/arm/boot/dts/rk3036-kylin.dt.yaml: /: compatible:
-['rockchip,rk3036-kylin', 'rockchip,rk3036']
+arch/arm/boot/dts/rk3036-evb.dt.yaml: /: compatible:
+['rockchip,rk3036-evb', 'rockchip,rk3036']
 is not valid under any of the given schemas
 
-Fix this error by changing 'rockchip,kylin-rk3036' to
-'rockchip,rk3036-kylin' in rockchip.yaml.
+This board was somehow never added to the documentation.
+Fix this error by adding the rk3036-evb board to rockchip.yaml.
 
 make ARCH=arm dtbs_check
 DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/rockchip.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- Documentation/devicetree/bindings/arm/rockchip.yaml | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ Documentation/devicetree/bindings/arm/rockchip.yaml | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
-index 874b0eaa2..203158038 100644
+index 203158038..d303790f5 100644
 --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
 +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
-@@ -443,7 +443,7 @@ properties:
+@@ -468,6 +468,11 @@ properties:
+           - const: rockchip,r88
+           - const: rockchip,rk3368
  
-       - description: Rockchip Kylin
++      - description: Rockchip RK3036 Evaluation board
++        items:
++          - const: rockchip,rk3036-evb
++          - const: rockchip,rk3036
++
+       - description: Rockchip RK3228 Evaluation board
          items:
--          - const: rockchip,kylin-rk3036
-+          - const: rockchip,rk3036-kylin
-           - const: rockchip,rk3036
- 
-       - description: Rockchip PX3 Evaluation board
+           - const: rockchip,rk3228-evb
 -- 
 2.11.0
 
