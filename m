@@ -2,56 +2,52 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21491173A73
-	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 15:56:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31352173B25
+	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 16:15:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xrBXWmGu9Kh2qkvwhnOPdnFOPdu04fBLXPtsspHiO3Q=; b=igbEUuXp1WmKpa
-	itbApwsGHi2gsMdeHLEj3785Lvq9uavd5H9jVCKtjQPgYuAoDPvk6P/DYkIJrbu+20ZCD2XPBWBPD
-	M2QEi50/rmVwxPu0F6itqHtGAs8TBx0Nxt0qNtiHXkXziBA1XC53/nydRl0mhhCO6OsP+kE2h2ZAn
-	mfzpwAOiKpJDWU9U4ih4qY4If5lcuW+tOjxkernkhn5VByqwhlvYSLie1YFkyNCGS4H1XR0dJGZ2j
-	FEwDf7QVkknHesHjD2hjd3Pt74M1vqrYyoNzkgx39sSST8xU03ZC2obHkM74H8N13APVM2Y34/hDz
-	PTqvaXjk+ay8ifotlkcQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eiA7TAnP1FmUGV0ATfpXI4APu3jqsl0rKRNe+23Z/bc=; b=TpG0OZ13ONCPL/
+	zUAfiY/KcxhHljhtjgEIQf8CEubvhUX34yZup88wJsjYuCta5iRpfQKG631rmQNGLQdrRz0BC7uVd
+	KFm9/y87yJt7W6jdjgR9ZCZ8gQ+KgB0R7IuPwAWmBhiYQiwNi5X1fqfW8zV9V/u7axjeHZusfp/n3
+	ZDvzVt+Cw4/0FcXWA5nN3T558Abl0OOZ/zLFOp9HEkvWY/D60A+y++/685UPYXtgyeJpN1h4Cdi0O
+	IvoTDBKN1XOjZElfJiyBGWFOLjnK2LhPQtmPgl7aVAwWYWhPYJww5Dpdwng6eEpTlkHAoI2zrThph
+	P/GOd4GaVr69aqwIUzbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7h4L-0008Kh-Mt; Fri, 28 Feb 2020 14:56:49 +0000
-Received: from mail.manjaro.org ([176.9.38.148])
+	id 1j7hMo-0002AO-NO; Fri, 28 Feb 2020 15:15:54 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7h46-000868-6O; Fri, 28 Feb 2020 14:56:36 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.manjaro.org (Postfix) with ESMTP id D085F3941E12;
- Fri, 28 Feb 2020 15:56:31 +0100 (CET)
-X-Virus-Scanned: Debian amavisd-new at manjaro.org
-Received: from mail.manjaro.org ([127.0.0.1])
- by localhost (manjaro.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 1dWdwfYRA7sh; Fri, 28 Feb 2020 15:56:29 +0100 (CET)
+ id 1j7hMd-0001zp-2Y; Fri, 28 Feb 2020 15:15:44 +0000
+Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1j7hMM-0006eU-6O; Fri, 28 Feb 2020 16:15:26 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Tobias Schramm <t.schramm@manjaro.org>
 Subject: Re: [PATCH 2/2] arm64: dts: rockchip: Add initial support for
  Pinebook Pro
-To: =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>
+Date: Fri, 28 Feb 2020 16:15:25 +0100
+Message-ID: <3144691.gaQQKPV42P@diego>
+In-Reply-To: <37190f26-48aa-dcad-d4b1-8a534ba1360e@manjaro.org>
 References: <20200227180630.166982-1-t.schramm@manjaro.org>
- <20200227180630.166982-3-t.schramm@manjaro.org> <12370413.gKdrHkWbHd@diego>
-From: Tobias Schramm <t.schramm@manjaro.org>
-Message-ID: <37190f26-48aa-dcad-d4b1-8a534ba1360e@manjaro.org>
-Date: Fri, 28 Feb 2020 15:57:10 +0100
+ <12370413.gKdrHkWbHd@diego>
+ <37190f26-48aa-dcad-d4b1-8a534ba1360e@manjaro.org>
 MIME-Version: 1.0
-In-Reply-To: <12370413.gKdrHkWbHd@diego>
-Content-Language: en-US-large
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_065634_382834_4A9EC16E 
-X-CRM114-Status: GOOD (  15.43  )
+X-CRM114-CacheID: sfid-20200228_071543_274305_1D8BD4F9 
+X-CRM114-Status: GOOD (  15.69  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [176.9.38.148 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,52 +70,43 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  enric.balletbo@collabora.com, Andy Yan <andy.yan@rock-chips.com>,
  anarsoul@gmail.com, Matthias Kaehlcke <mka@chromium.org>,
  Vivek Unune <npcomplete13@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sCgp0aGFua3MgZm9yIHRoZSByZXZpZXcuIEknbGwgaW1wbGVtZW50IHRoZSBjaGFu
-Z2VzIGFuZCBzZW5kIGEgdjIuCgo+PiArCQljb21wYXRpYmxlID0gImdwaW8tbGVkcyI7Cj4+ICsJ
-CXBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+ICsJCXBpbmN0cmwtMCA9IDwmcHdybGVkX2dw
-aW8gJnNscGxlZF9ncGlvPjsKPj4gKwo+PiArCQlncmVlbi1sZWQgewo+PiArCQkJY29sb3IgPSA8
-TEVEX0NPTE9SX0lEX0dSRUVOPjsKPj4gKwkJCWRlZmF1bHQtc3RhdGUgPSAib2ZmIjsKPj4gKwkJ
-CWZ1bmN0aW9uID0gTEVEX0ZVTkNUSU9OX1BPV0VSOwo+PiArCQkJZ3Bpb3MgPSA8JmdwaW8wIFJL
-X1BCMyBHUElPX0FDVElWRV9ISUdIPjsKPj4gKwkJCWxhYmVsID0gImdyZWVuOmRpc2stYWN0aXZp
-dHkiOwo+PiArCQkJbGludXgsZGVmYXVsdC10cmlnZ2VyID0gIm1tYzIiOwo+IGhtbSwgTEVEX0ZV
-TkNUSU9OX1BPV0VSIGJ1dCB0cmlnZ2VyIGZvciBtbWMyID8KPiBTbyBpZiB0aGVyZSBpcyBubyBh
-Y3Rpdml0eSBvbiB0aGUgTEVEIGl0IGxvb2tzIHRvIGJlIG9mZj8KCkkgc2VlIHdoeSB0aGlzIGlz
-IGxvb2tpbmcgd2VpcmQuIEl0IGRvZXMgbm90IG1ha2UgYSB3aG9sZSBsb3Qgb2Ygc2Vuc2UKYXQg
-dGhlIG1vbWVudCBhbmQgSSdsbCBjaGFuZ2UgdGhhdCBmb3IgdjIuwqAKCkhvd2V2ZXIgSSBoYXZl
-IGEgcGF0Y2ggaW4gdGhlIG1ha2luZyB0aGF0IGFkZHMgIi1pbnZlcnRlZCIgdmFyaWFudHMgZm9y
-CmFsbCB0cmlnZ2VycyBzbyB0aGUgcG93ZXIgTEVEIGNhbiBiZSB0dXJuZWQgb2YgYnJpZWZseSB0
-byBpbmRpY2F0ZSBtbWMKYWN0aXZpdHkuCgpOb3Qgc3VyZSB3ZXRoZXIgcGVvcGxlIHdpbGwgbGlr
-ZSBpdCBvciBub3QgYnV0IEknbGwgdHJ5IGl0IGFzIGEgUkZDLgoKPj4gKwkgKiBvZiB3YWtldXAg
-c291cmNlcyB3aXRob3V0IGRpc2FibGluZyB0aGUgd2hvbGUga2V5Cj4gQWxzbyBjYW4geW91IGV4
-cGxhaW4gdGhlIHByb2JsZW0gYSBiaXQ/IElmIHRoZXJlIGlzIGEgZGVmaWNpdCBpbiB0aGUgaW5w
-dXQKPiBzdWJzeXN0ZW0gcmVnYXJkaW5nIHdha2V1cCBldmVudHMsIGR0IGlzIG5vcm1hbGx5IG5v
-dCB0aGUgcGxhY2UgdG8gd29yawo+IGFyb3VuZCB0aGluZ3MgW3dlJ3JlIHN1cHBvc2VkIHRvIGJl
-IE9TIGluZGVwZW5kZW50XQoKVGhlIGlzc3VlIGlzIHRoYXQgc29tZSB1c2VycyB3YW50ZWQgdG8g
-YmUgYWJsZSB0byBjb250cm9sIHRoZSB3YWtldXAKZnVuY3Rpb25hbGl0eSBvZiB0aGUga2V5cyBz
-ZXBhcmF0ZWx5IHZpYSBzeXNmcy4gVGhhdCBkb2VzIG5vdCBzZWVtIHRvIGJlCnBvc3NpYmxlIHdo
-ZW4gY29tYmluaW5nIGJvdGgga2V5cyBpbnRvIG9uZSBncGlvLWtleXMgbm9kZS4gQSBtb3JlCmRl
-dGFpbGVkIGV4cGxhbmF0aW9uIG9mIHRoZSBpc3N1ZSBjYW4gYmUgZm91bmQgYXQgWzFdLgoKPj4g
-KyZpMmMwIHsKPj4gKwljbG9jay1mcmVxdWVuY3kgPSA8NDAwMDAwPjsKPj4gKwlpMmMtc2NsLXJp
-c2luZy10aW1lLW5zID0gPDE2OD47Cj4+ICsJaTJjLXNjbC1mYWxsaW5nLXRpbWUtbnMgPSA8ND47
-Cj4+ICsJc3RhdHVzID0gIm9rYXkiOwo+PiArCj4+ICsJcms4MDg6IHBtaWNAMWIgewo+PiArCQlj
-b21wYXRpYmxlID0gInJvY2tjaGlwLHJrODA4IjsKPj4gKwkJcmVnID0gPDB4MWI+Owo+PiArCQkj
-Y2xvY2stY2VsbHMgPSA8MT47Cj4+ICsJCWNsb2NrLW91dHB1dC1uYW1lcyA9ICJ4aW4zMmsiLCAi
-cms4MDgtY2xrb3V0MiI7Cj4+ICsJCWludGVycnVwdC1wYXJlbnQgPSA8JmdwaW8zPjsKPj4gKwkJ
-aW50ZXJydXB0cyA9IDwxMCBJUlFfVFlQRV9MRVZFTF9MT1c+Owo+PiArCQlwaW5jdHJsLW5hbWVz
-ID0gImRlZmF1bHQiOwo+PiArCQlwaW5jdHJsLTAgPSA8JnBtaWNfaW50X2xfZ3Bpbz47Cj4+ICsJ
-CXJvY2tjaGlwLHN5c3RlbS1wb3dlci1jb250cm9sbGVyOwo+PiArCQl3YWtldXAtc291cmNlOwo+
-PiArCj4+ICsJCXZkZGlvLXN1cHBseSA9IDwmdmNjXzN2MD47Cj4gd2hlcmUgZG9lcyB0aGlzIGNv
-bWUgZnJvbT8gQWthIGl0J3Mgbm90IHNwZWNpZmllZCBpbiB0aGUgZHQtYmluZGluZwo+ICh0aG91
-Z2ggdGhlIGV4YW1wbGUgZmFsc2VseSB1c2VzIGl0KSBhbmQgYWxzbyBub3QgcmVmZXJlbmNlZCBp
-biB0aGUgZHJpdmVyLgoKVGhpcyBkb2VzIGxpa2VseSBjb21lIGZyb20gdGhlIEJTUCBkdHMuIFNl
-ZW1zIEkgbWlzc2VkIGl0IHdoaWxlIGNoZWNraW5nCmJpbmRpbmdzLgoKClRoYW5rcyBhZ2FpbiBm
-b3IgdGhlIHJldmlldywKClRvYmlhcwoKClsxXSBodHRwczovL2dpdGxhYi5tYW5qYXJvLm9yZy90
-c3lzL2xpbnV4LXBpbmVib29rLXByby9pc3N1ZXMvNQoKCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51
-eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+Hi Tobias,
+
+Am Freitag, 28. Februar 2020, 15:57:10 CET schrieb Tobias Schramm:
+> thanks for the review. I'll implement the changes and send a v2.
+> 
+> >> +	 * of wakeup sources without disabling the whole key
+> > Also can you explain the problem a bit? If there is a deficit in the input
+> > subsystem regarding wakeup events, dt is normally not the place to work
+> > around things [we're supposed to be OS independent]
+> 
+> The issue is that some users wanted to be able to control the wakeup
+> functionality of the keys separately via sysfs. That does not seem to be
+> possible when combining both keys into one gpio-keys node. A more
+> detailed explanation of the issue can be found at [1].
+
+ok ... but that is really strange, because looking at gpio-keys.c I see
+it checking the individual button wakeup-property before setting
+the irq-wake in gpio_keys_enable_wakeup() .
+
+Ah, but I guess manually disabling/enabling wakeup via sysfs only
+works for the whole device and all wakeup buttons.
+
+In general this sounds more like a gpio-keys deficit, but in the end
+we can keep the separate gpio-key nodes here, they don't violate any
+dt-bindings ;-) .
+
+
+Heiko
+
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
