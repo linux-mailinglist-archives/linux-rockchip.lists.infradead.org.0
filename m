@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEAFA1730DE
-	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 07:15:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 599471730E4
+	for <lists+linux-rockchip@lfdr.de>; Fri, 28 Feb 2020 07:15:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,67 +11,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=wxNGRSAbH6ZpRJdlIyUGBQyxWZEXb1pF5VD3C7TXplE=; b=gC9jlsZN0GnJ/0mv40M9G7DDwm
-	klKmva+YDkhzMriXax1fJcHzexg1cjaRhWzILNG/ASNx2HQnCq0y1h7akFb9Sgm+9zWF0jcM1kuNJ
-	o9kwJ4qNieboJFnpV97F/fi+9bMFolK08d9NWBElpP/UN6imvxakkHW0EF6DbTlOiP6EfndWpW7gh
-	JqKlFmRzYITrbpcgPg5gwt9K1RFVAMHxpyqh6AdIDAA/A0NoeK8Liwhu+LF/wFf3CeLlTEIcWNjl3
-	vFufG8k7CvgazgUSH/GJ6w5yXZsb4LZhUEy2bvpp1rArzQOQt5buSpb2PIyADzYVybiVEYmxiPK2o
-	mljrjp/A==;
+	bh=NO2wRgQzzcyPMSh/iQKHm5mWomMYKrMC/OT7ToZPnrE=; b=gYdVrodAs3C5VWRPwKpvb0wMjG
+	E5rwgi2mWYxW07cohPFirp1DgHxO2XPuUxk3FE6nnRxFJUHjFBWg6rHmAEapI7YmxM3/0Qz4HuLai
+	KhrrE516IawoiIE0s65FcpRWiF+qiH3KLKG4tgm5GGc8uzWNISzuKxUtb/qAB5cksuz/MowNpFbdZ
+	/T8ljwE71GDuE/UCDmXME+57xL28545acmCoiCwrJ4I3ZwGoVIutO41CdnWF+Cm8mqLR52bCwW+4R
+	k8QPYsYSplI/0OBRQtqd3kgA3rw+ywxY2+AdS0uJfkWWcNwoLEsVqcmKHCc3Y915yzvEE+9KqsW3X
+	Y6hEZw0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7Yvo-00020g-1x; Fri, 28 Feb 2020 06:15:28 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1j7Yw8-0002II-Qc; Fri, 28 Feb 2020 06:15:48 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Yv7-0000KW-Dh; Fri, 28 Feb 2020 06:14:46 +0000
-Received: by mail-wr1-x441.google.com with SMTP id e10so162594wrr.10;
- Thu, 27 Feb 2020 22:14:45 -0800 (PST)
+ id 1j7Yv8-0000Kl-Di; Fri, 28 Feb 2020 06:14:47 +0000
+Received: by mail-wm1-x343.google.com with SMTP id z12so1932125wmi.4;
+ Thu, 27 Feb 2020 22:14:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=fknAu4Mi7mPoGch0tjoJSjMYmeswX/bt/k6r2YfuwWE=;
- b=VUwJLlVXSKSgcaIhw50JvvmveSXLCDh1CGogCEz6lY1i29ZORjezua0aUrYDvKjrha
- MdGmcns+aYzVqlJMcmsJksgBCbZQraZJAfjKOOkhMhtpTUPP4TysyoaDqLZyuvTWhEEX
- vtcoKmzezrGBibu1JPmMDFYFHvnJq2o0NOnXIyd6MQBuYT6f4sr/WecMVe8CO+p7R9Nw
- wZtuIAcgL9gdrsGJECb68Cfmc/rthyi0qLTKIBq+gq7FT1YvEpsW6MBQ6IMkrBXjj2/n
- V/ti3NatCujPiuT54QMWuJztFIpJHEJ8PalUaEi98DrQQkaPeNOdRY4lqm4LE2P6sRJt
- xOGw==
+ bh=gnsdy3185ncPeDCu04aM13mod5LknXvQmY6PFV6k+Es=;
+ b=sWbwqJ5FFtEag/dRIgtrIWnyWc+3s/A91H3JPqrpyB+iE6SQogJjDL1r+AI+DJ1EEw
+ zWq2oGLU9ArISWq5LR+PH+fjBKVjSbZ5RhiLdJvxIih/TJMTzzvr2EYKbDddKTGxs6Zv
+ SCSRivHvVGozcmJPj1za9jv4VireOKoEzQ7ZFnCQfZhGrg0hraklxJxjuMRUVTfqhJl/
+ BZBPqNsqGvgx7sgSRJGQH2tFWSqtzozR4ckbUtxxAxXvGMvLachJ+JXRGvn+nMDPKZdC
+ Onb6Ykx1imL8l98OALk5VZt9gTR9GRwY5YVUQpd84RXGUm0mzjd7otq3PudlpGQqerdF
+ 14cg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=fknAu4Mi7mPoGch0tjoJSjMYmeswX/bt/k6r2YfuwWE=;
- b=hjh1DEt455XnadTTt1MtIrqejtxET1GbM8BjrK++FxWRThJt0wYXCdgoT+EWgxyPGS
- CZHTVS4IxnTUGNVteMvNKHddnXoWc9RKv7n2hxNxA7yt+CLYb5i5jtuEVT7IUB0cAR0p
- mC9A8lg3JMOMW3qGcaocKsrkwsKYhSVfcOuI9j0qVDHYVvvu6UFNN3atMvT5a6ocKVdF
- k2+0P5rev5a2ZDgGfl5qMvE2NRkC5rlwCKO1i+28Xu72P03iSRG0UQM7BXv4nDKCEjHv
- nIZAfODXN9xhZrtajYRwFr51c9xFgIW654cQGsruRcoANtuWrTf9CF0TVMznaM/64Tgw
- 1Y2g==
-X-Gm-Message-State: APjAAAVmFOWjDKWC+7wL5avvHH2zG09ORPAPqbeztX4nQ0/DiXqMpWpW
- x5e41LUgKr7t1yIEdES4WNpejdqk
-X-Google-Smtp-Source: APXvYqxErNBAtzXh8TNUphjZpmr4q6vyV2vjAJ24Bzh1e+oe8X1teN/nm2W6cUBiA2AP/eUn8fffcg==
-X-Received: by 2002:adf:f892:: with SMTP id u18mr2954643wrp.328.1582870484010; 
+ bh=gnsdy3185ncPeDCu04aM13mod5LknXvQmY6PFV6k+Es=;
+ b=mihkC/qso5zzU5+tN7LuEkhgKK8QAT6CEhSFtM+YCzouKftj5V6PLhXqAFwVGk1PPd
+ 7oL8QgXGCkqU0YBqFghf5wabV3osAVFAmW3W6EUwwCxql6mkfi+AmXdo53BGB/cfFDMT
+ /YweariJTAsaR+fVPZwx8/bcgJya/UDl4xeoG4kSupHs6mK4xAuJcLoPiRY37P/COzWt
+ R/qpmPvCOR+YgWFyMDwfTtlCzXjHMNs7Z/ztyc2fEZblrLNh/iEQ73KbPZl0j9xD+G+9
+ y2FK1Fx1xDDOKHBw+5lzKJF+AlsyfmkfVbfs1qMQBeAbXruXRYpsf2mpqlmCI5jcGWjb
+ o5cA==
+X-Gm-Message-State: APjAAAUd3QlbTO1DPS0ba99wdVJZLQ/pGPlmSS7GhsRjr9l/1vPgNHiu
+ iLUTWLKLrVTk62ktp8r8fWc=
+X-Google-Smtp-Source: APXvYqxvicgbrGm82t+XVd96YBTlzhDK+AmuO43jDyiUn5cCb6UCtMVmCCw2P8kKev3sOpHQ65zqEA==
+X-Received: by 2002:a1c:f707:: with SMTP id v7mr2964697wmh.121.1582870484899; 
  Thu, 27 Feb 2020 22:14:44 -0800 (PST)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id w7sm682554wmi.9.2020.02.27.22.14.43
+ by smtp.gmail.com with ESMTPSA id w7sm682554wmi.9.2020.02.27.22.14.44
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 27 Feb 2020 22:14:43 -0800 (PST)
+ Thu, 27 Feb 2020 22:14:44 -0800 (PST)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH 2/4] dt-bindings: arm: add Rockchip rk3036-evb board
-Date: Fri, 28 Feb 2020 07:14:34 +0100
-Message-Id: <20200228061436.13506-2-jbx6244@gmail.com>
+Subject: [PATCH 3/4] dt-bindings: arm: fix Rockchip rk3399-evb bindings
+Date: Fri, 28 Feb 2020 07:14:35 +0100
+Message-Id: <20200228061436.13506-3-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200228061436.13506-1-jbx6244@gmail.com>
 References: <20200228061436.13506-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_221445_458611_7BB9D1AA 
-X-CRM114-Status: GOOD (  11.02  )
+X-CRM114-CacheID: sfid-20200227_221446_459683_EF2F509B 
+X-CRM114-Status: GOOD (  11.37  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -109,37 +109,33 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 A test with the command below gives this error:
 
-arch/arm/boot/dts/rk3036-evb.dt.yaml: /: compatible:
-['rockchip,rk3036-evb', 'rockchip,rk3036']
+arch/arm64/boot/dts/rockchip/rk3399-evb.dt.yaml: /: compatible:
+['rockchip,rk3399-evb', 'rockchip,rk3399', 'google,rk3399evb-rev2']
 is not valid under any of the given schemas
 
-This board was somehow never added to the documentation.
-Fix this error by adding the rk3036-evb board to rockchip.yaml.
+Fix this error by adding 'google,rk3399evb-rev2' to the compatible
+property in rockchip.yaml
 
-make ARCH=arm dtbs_check
+make ARCH=arm64 dtbs_check
 DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/rockchip.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- Documentation/devicetree/bindings/arm/rockchip.yaml | 5 +++++
- 1 file changed, 5 insertions(+)
+ Documentation/devicetree/bindings/arm/rockchip.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
-index 203158038..d303790f5 100644
+index d303790f5..6c6e8273e 100644
 --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
 +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
-@@ -468,6 +468,11 @@ properties:
-           - const: rockchip,r88
-           - const: rockchip,rk3368
- 
-+      - description: Rockchip RK3036 Evaluation board
-+        items:
-+          - const: rockchip,rk3036-evb
-+          - const: rockchip,rk3036
-+
-       - description: Rockchip RK3228 Evaluation board
+@@ -509,6 +509,7 @@ properties:
          items:
-           - const: rockchip,rk3228-evb
+           - const: rockchip,rk3399-evb
+           - const: rockchip,rk3399
++          - const: google,rk3399evb-rev2
+ 
+       - description: Rockchip RK3399 Sapphire standalone
+         items:
 -- 
 2.11.0
 
