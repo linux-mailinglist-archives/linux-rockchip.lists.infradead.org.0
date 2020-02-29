@@ -2,44 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E0F617477D
-	for <lists+linux-rockchip@lfdr.de>; Sat, 29 Feb 2020 15:49:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DA0017477F
+	for <lists+linux-rockchip@lfdr.de>; Sat, 29 Feb 2020 15:50:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WF2GOL32GIndYcfiBbbwe3cgTVjrzu9JG8Wl+x0d+hc=; b=rbjpxdBjoVHNHF
-	njewItTsusEV2zYH3mdVz/LgAjUJOnBAmSv2KB4JXOnKnT28HdAWlncUIucbd7krmczlfbq24RjN4
-	ilspZeBcd5I6VokrnPDrSkBz/2+0LkUybJ3AmVpvQGjR1wXvcDMM54Ak25ySymEHptAIzjGpDxqEx
-	9d2NNsExdCuOEzuXQijutfVApHudKfxOZ4RWEbXTUSrL6vc+xjURciDVzJUH2Y0fOqej9tHVa0uyI
-	x/0YnorsIxBEpGkCRbDGcB+GmeeFf5yIYNZjfHcFMsom9m7cOnax3PHYv1P34Fd5i3aYC3x1woGfJ
-	9Jw0/enTUQdYSnM0OEnA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tahxzvk3MOAGvoiVtQHq8iEj4cpkd92Mg7M2vFsaCk0=; b=dPLSwDxY7mNwZR
+	rzaYEFuh5CQEwC3qZNuvxT0JXhJwUWQQklU0wbvUF9is18D0rRzY5HvH5gro8wFZQKZdIR+v28V3m
+	i5Qc3GxQ+kITWom7i+yUSOKregyVsoSoN6O5L/ExKaLB9Dqv6Y0gorjHWoxbuIMDyokX7TEMpu5++
+	oMsJn1Kg+SL44Iikkd8NREO3/FGMscVDdAAkXZmqpyOXSbXxd/2+qvUabDvkTKJSMn7yxxpLW+srs
+	ME8PL/wmmVmrPRP1+Z0bup60DfU34Vfj2Fy6oWNrUsXu828h+olhRNJzPEVxw6+0PXhO2iYdlk5u8
+	Y3UIogPYVhM9P3Sq77RA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j83R1-00062f-KI; Sat, 29 Feb 2020 14:49:43 +0000
+	id 1j83RN-0006Lf-Kg; Sat, 29 Feb 2020 14:50:05 +0000
 Received: from mail.manjaro.org ([176.9.38.148])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j83Qh-0005ro-9M; Sat, 29 Feb 2020 14:49:25 +0000
+ id 1j83Qp-0005ww-Mw; Sat, 29 Feb 2020 14:49:33 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.manjaro.org (Postfix) with ESMTP id B65D33C40D8B;
- Sat, 29 Feb 2020 15:49:21 +0100 (CET)
+ by mail.manjaro.org (Postfix) with ESMTP id 581173C40D8B;
+ Sat, 29 Feb 2020 15:49:30 +0100 (CET)
 X-Virus-Scanned: Debian amavisd-new at manjaro.org
 Received: from mail.manjaro.org ([127.0.0.1])
  by localhost (manjaro.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 8e_t4z3z750i; Sat, 29 Feb 2020 15:49:18 +0100 (CET)
+ with ESMTP id LUE0dUV5ZXet; Sat, 29 Feb 2020 15:49:28 +0100 (CET)
 From: Tobias Schramm <t.schramm@manjaro.org>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Heiko Stuebner <heiko@sntech.de>, Andy Yan <andy.yan@rock-chips.com>,
  Johan Jonker <jbx6244@gmail.com>
-Subject: [PATCH v3 0/2] Add support for the pine64 Pinebook Pro
-Date: Sat, 29 Feb 2020 15:48:15 +0100
-Message-Id: <20200229144817.355678-1-t.schramm@manjaro.org>
+Subject: [PATCH v3 1/2] dt-bindings: Add doc for pine64 Pinebook Pro
+Date: Sat, 29 Feb 2020 15:48:16 +0100
+Message-Id: <20200229144817.355678-2-t.schramm@manjaro.org>
+In-Reply-To: <20200229144817.355678-1-t.schramm@manjaro.org>
+References: <20200229144817.355678-1-t.schramm@manjaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_064923_473877_58AA6808 
-X-CRM114-Status: UNSURE (   8.35  )
+X-CRM114-CacheID: sfid-20200229_064931_972132_5A8F359D 
+X-CRM114-Status: UNSURE (   7.40  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -75,30 +77,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This patchset adds an initial dts and compatible string for the rk3399
-based Pinebook Pro 14" laptop.
+This commit adds a compatible for the Pinebook Pro.
 
-This is version 3 of the original patchset with additional fixes proposed
-by Johan.
+Signed-off-by: Tobias Schramm <t.schramm@manjaro.org>
+---
+ Documentation/devicetree/bindings/arm/rockchip.yaml | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-Contrary to the Rockchip BSP dts proposed mid January this dts has a
-power tree reflecting the actual schematic of the device and features
-full display, audio and WiFi/Bluetooth support.
-
-Changelog:
- v2: Incorporate review by Heiko
- v3: Add fixes suggested by Johan
-
-Tobias Schramm (2):
-  dt-bindings: Add doc for pine64 Pinebook Pro
-  arm64: dts: rockchip: Add initial support for Pinebook Pro
-
- .../devicetree/bindings/arm/rockchip.yaml     |    5 +
- arch/arm64/boot/dts/rockchip/Makefile         |    1 +
- .../boot/dts/rockchip/rk3399-pinebook-pro.dts | 1105 +++++++++++++++++
- 3 files changed, 1111 insertions(+)
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts
-
+diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+index 874b0eaa2a75..482a0cbfb18a 100644
+--- a/Documentation/devicetree/bindings/arm/rockchip.yaml
++++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+@@ -402,6 +402,11 @@ properties:
+           - const: phytec,rk3288-phycore-som
+           - const: rockchip,rk3288
+ 
++      - description: Pine64 Pinebook Pro
++        items:
++          - const: pine64,pinebook-pro
++          - const: rockchip,rk3399
++
+       - description: Pine64 Rock64
+         items:
+           - const: pine64,rock64
 -- 
 2.24.1
 
