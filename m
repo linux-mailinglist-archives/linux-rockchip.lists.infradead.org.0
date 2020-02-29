@@ -2,43 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B19DE174A37
-	for <lists+linux-rockchip@lfdr.de>; Sun,  1 Mar 2020 00:44:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C6F6174A3C
+	for <lists+linux-rockchip@lfdr.de>; Sun,  1 Mar 2020 00:47:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g5W/skm91A92MJDupTJLtHAunCRAcUfly+Bc6CZYWqA=; b=agbKbO2ERM/RdI
-	at1rzuDKtSiWCZT04AiW7Rc7eFsQGWbHCyOGUJ4DcvBOV+uWiusAWCf7f0TWDGjN2zwVWFRVCNCVt
-	qYye7Gm8HeoZqt1cuax4xmIzGuOup8GXRPNNn/P5QRrqapSOZbypyxfpTkk00LE1Z0NyGA5w76Q57
-	uQBtiVcFPNCOY7fxMrE0kMqn3wmFw8zZpIMm+jy9dPBNP71RQsb4mv94NuWDNoTol47pEAv2ag2uF
-	MVapQJJes8ZcoYGj08cK3zMcJXVD4Un/wu174WaUanubiH0D4kMp9coy5iMIfKGOZ8mzqkbslxfMx
-	OJlBpqSxIHdN/M73T6lw==;
+	List-Owner; bh=u77sOEKdE18f1mXeCr/fslxzeDFS3Ed+MbTnuyME/6k=; b=JXac6t3Sthi0r8
+	vVX48v6M0VySzFlBDuMjc5u3tc65m9aWvr2ov7mynO7uIURZ5/pdKAzOZ4QmPIy/c2b60E4kTWDFx
+	R13A8dHWoaAbgAHh8cwwV/cXoBDKHJsFBzXrhm+CRN6ke7WSVCWWeWCkuAXvMAf6AcsB8qXldOxp5
+	2uiAuMOZ43T4JPpEUUfEitOZ+9FmV0OhQ0tarW9P4R9ztLEBjUi8yv4E/uQhA0W5XiIDbRd18Ibcz
+	ODgQP+t6+Xace/Opl4PdATI6xD/SK84xc6ozpYjS3DWMkMuoYpH32s/I3nRM+hkyqz6pRb/7gjnMw
+	7VdvBnu1s7tpPCY8pYag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8Bm5-0005mE-Nw; Sat, 29 Feb 2020 23:44:01 +0000
+	id 1j8BpJ-0007Vv-Uw; Sat, 29 Feb 2020 23:47:21 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8Blt-0005cP-AE; Sat, 29 Feb 2020 23:43:50 +0000
+ id 1j8Bp7-0007Lq-Tj; Sat, 29 Feb 2020 23:47:11 +0000
 Received: from p508fcd9d.dip0.t-ipconnect.de ([80.143.205.157]
  helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1j8Blr-0004pd-AW; Sun, 01 Mar 2020 00:43:47 +0100
+ id 1j8Bp6-0004qM-8P; Sun, 01 Mar 2020 00:47:08 +0100
 From: Heiko Stuebner <heiko@sntech.de>
 To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: fix cpu compatible property for
- rk3308
-Date: Sun, 01 Mar 2020 00:43:46 +0100
-Message-ID: <2296994.saQPy0AWz7@phil>
-In-Reply-To: <20200228084827.16198-1-jbx6244@gmail.com>
-References: <20200228084827.16198-1-jbx6244@gmail.com>
+Subject: Re: [PATCH 1/2] ARM: dts: remove g-use-dma from rockchip usb nodes
+Date: Sun, 01 Mar 2020 00:47:07 +0100
+Message-ID: <8908074.NjHMO83URx@phil>
+In-Reply-To: <20200228113922.20266-1-jbx6244@gmail.com>
+References: <20200228113922.20266-1-jbx6244@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_154349_510552_EF38C571 
-X-CRM114-Status: GOOD (  10.66  )
+X-CRM114-CacheID: sfid-20200229_154710_110480_F3899175 
+X-CRM114-Status: GOOD (  12.04  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -66,24 +65,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Freitag, 28. Februar 2020, 09:48:27 CET schrieb Johan Jonker:
-> A test with the command below gives for example these errors:
+Am Freitag, 28. Februar 2020, 12:39:21 CET schrieb Johan Jonker:
+> A test with the command below gives these errors:
 > 
-> arch/arm64/boot/dts/rockchip/rk3308-evb.dt.yaml: cpu@0: compatible:
-> Additional items are not allowed ('arm,armv8' was unexpected)
-> arch/arm64/boot/dts/rockchip/rk3308-evb.dt.yaml: cpu@0: compatible:
-> ['arm,cortex-a35', 'arm,armv8']
-> is too long
+> arch/arm/boot/dts/rv1108-elgin-r1.dt.yaml: usb@30180000:
+> 'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
+> arch/arm/boot/dts/rv1108-evb.dt.yaml: usb@30180000:
+> 'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
+> arch/arm/boot/dts/rk3228-evb.dt.yaml: usb@30040000:
+> 'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
+> arch/arm/boot/dts/rk3229-evb.dt.yaml: usb@30040000:
+> 'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
+> arch/arm/boot/dts/rk3229-xms6.dt.yaml: usb@30040000:
+> 'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
 > 
-> Fix these errors by removing the last argument of
-> the cpu compatible property in rk3308.dtsi.
+> 'g-use-dma' is not a valid option in dwc2.yaml, so remove it
+> from all Rockchip dtsi files.
 > 
-> make ARCH=arm64
-> dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/cpus.yaml
+> make ARCH=arm dtbs_check
+> DT_SCHEMA_FILES=Documentation/devicetree/bindings/usb/dwc2.yaml
 > 
 > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 
-applied for 5.7 with Robins Rb
+applied both patches for 5.7
 
 Thanks
 Heiko
