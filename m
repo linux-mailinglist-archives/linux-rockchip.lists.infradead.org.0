@@ -2,49 +2,60 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CBC117479F
-	for <lists+linux-rockchip@lfdr.de>; Sat, 29 Feb 2020 16:15:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 337851747D3
+	for <lists+linux-rockchip@lfdr.de>; Sat, 29 Feb 2020 16:59:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aJh8UH8351kGKodR9m0ffuueuScVe+ok3ISOhO5c23U=; b=XcDSNia9+AvJY7
-	pblRYKJM86WSafjnG51WbJ50+iMZjPYEg+ZDStiO1qnVg5WSWtw2YZWlSqWc76qf67/qxvW5mElzr
-	DIRJf2V3lptCiZp+9lerydAytIkdxxEW3i0L6ic066AcQiNwhjHVARd+ymSdhzDq69nSQPKs7TdCW
-	gOg1fpLLMSErE6p6ZAPwNdRqWPZ9RBggsNb4PnNBjWgeCZSSjbBAnk4FYklmA6nJXnzS/shAzlrBI
-	cToPoMG2l5dvv4ldNr9Mfanw0Hfh24e99E5KFJgA7C3NafBUk9kdNEl5CiUncKyV7ZtcKInPeemE7
-	pCvd0qghoV3BcwVZYJOg==;
+	List-Owner; bh=nZU628pWDjsJYGqaDPGJmtalemYPEH3H3YWbpVY3BWA=; b=HmjU+8v+fFvHW3
+	kO/K7tKIbNiyxMWFUHYcPHXpg2hjEM4Erm74jJlMuRdJoXpl/B4ty0kCtpfrurLt1YLFeQ7T9Srvx
+	HTEvXzKV2xZ3yGE9by02CIybqWY8A6D2yJ2uGDhpAZRSi0SA80hIZSl0+KTBa2s/yeHbXcJ9Fz5m8
+	JIcqsHciMWp16lvmT9WQ6hOyA/P7p2Buhh7ltkBK3QnduXoRn+HP8aFYy/DBYTXbfDBQiqSx9d2hJ
+	Zy3F2R4dk7QHk6hV0YcDUebfhOSLsxGkp+OS2m0zpi7J6Wh/WtQq4vJpKPrv0waXjnNGjGWuAEYqn
+	NouwdRgO3Y1GyzalHubA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j83pz-0006df-Da; Sat, 29 Feb 2020 15:15:31 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1j84Wf-0003Il-Rv; Sat, 29 Feb 2020 15:59:37 +0000
+Received: from asavdk4.altibox.net ([109.247.116.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j83pv-0006c3-Hs
- for linux-rockchip@lists.infradead.org; Sat, 29 Feb 2020 15:15:29 +0000
-Received: from p508fcd9d.dip0.t-ipconnect.de ([80.143.205.157]
- helo=phil.fritz.box)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1j83pp-0003GL-1R; Sat, 29 Feb 2020 16:15:21 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v3 3/3] drm/panel: add panel driver for Elida KD35T133 panels
-Date: Sat, 29 Feb 2020 16:15:06 +0100
-Message-Id: <20200229151506.750242-3-heiko@sntech.de>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200229151506.750242-1-heiko@sntech.de>
+ id 1j84Wc-0003IO-OR
+ for linux-rockchip@lists.infradead.org; Sat, 29 Feb 2020 15:59:36 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk4.altibox.net (Postfix) with ESMTPS id 7330F804CE;
+ Sat, 29 Feb 2020 16:59:29 +0100 (CET)
+Date: Sat, 29 Feb 2020 16:59:27 +0100
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: Re: [PATCH v3 1/3] dt-bindings: Add vendor prefix for Elida
+Message-ID: <20200229155927.GA10195@ravnborg.org>
 References: <20200229151506.750242-1-heiko@sntech.de>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200229151506.750242-1-heiko@sntech.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=XpTUx2N9 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=NXpJzYs8AAAA:8
+ a=7gkXJVJtAAAA:8 a=VwQbUJbxAAAA:8 a=f_A56fBUF81MkGDvIQsA:9
+ a=CjuIK1q_8ugA:10 a=cwV61pgf2j4Cq8VD9hE_:22 a=E9Po1WZjFZOl8hwRPBS3:22
+ a=AjGcO6oz07-iQ99wixmX:22 a=pHzHmUro8NiASowvMSCR:22
+ a=Ew2E2A-JSTLzCXPT_086:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_071527_746002_B1946681 
-X-CRM114-Status: GOOD (  18.96  )
+X-CRM114-CacheID: sfid-20200229_075934_978632_1B2ACEB3 
+X-CRM114-Status: GOOD (  13.83  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [109.247.116.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -59,431 +70,56 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- francescolavra.fl@gmail.com, robin.murphy@arm.com, robh+dt@kernel.org,
- linux-rockchip@lists.infradead.org, thierry.reding@gmail.com,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>, sam@ravnborg.org,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ francescolavra.fl@gmail.com,
+ Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, thierry.reding@gmail.com, robin.murphy@arm.com,
  christoph.muellner@theobroma-systems.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+On Sat, Feb 29, 2020 at 04:15:04PM +0100, Heiko Stuebner wrote:
+> From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+> 
+> Shenzen Elida Technology Co. Ltd. is a Chinese TFT manufacturer.
+> 
+> Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+> Acked-by: Sam Ravnborg <sam@ravnborg.org>
+> ---
+> Hi Rob,
+> 
+> as can be seen on [0], Sam expects you to apply the vendor prefix
+> to the main dt-tree.
+Or just an ack - then we take it via drm-misc-next.
 
-Panel driver for the KD35T133 display from Elida, used for example
-in the rk3326-based Odroid Go Advance handheld.
-
-changes in v3:
-- add missing return value assignment (Francesco)
-- re-sort header includes (Sam)
-changes in v2:
-- rename dsi_generic_write_seq macro to dsi_dcs_write_seq to honor
-  the underlying mipi_dsi_dcs_write (Robin)
-
-Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
-Reviewed-by: Sam Ravnborg <sam@ravnborg.org>
----
- drivers/gpu/drm/panel/Kconfig                |  10 +
- drivers/gpu/drm/panel/Makefile               |   1 +
- drivers/gpu/drm/panel/panel-elida-kd35t133.c | 352 +++++++++++++++++++
- 3 files changed, 363 insertions(+)
- create mode 100644 drivers/gpu/drm/panel/panel-elida-kd35t133.c
-
-diff --git a/drivers/gpu/drm/panel/Kconfig b/drivers/gpu/drm/panel/Kconfig
-index db7ba062027e..56149fdbdf53 100644
---- a/drivers/gpu/drm/panel/Kconfig
-+++ b/drivers/gpu/drm/panel/Kconfig
-@@ -50,6 +50,16 @@ config DRM_PANEL_SIMPLE
- 	  that it can be automatically turned off when the panel goes into a
- 	  low power state.
- 
-+config DRM_PANEL_ELIDA_KD35T133
-+	tristate "Elida KD35T133 panel driver"
-+	depends on OF
-+	depends on DRM_MIPI_DSI
-+	depends on BACKLIGHT_CLASS_DEVICE
-+	help
-+	  Say Y here if you want to enable support for the Elida
-+	  KD35T133 controller for 320x480 LCD panels with MIPI-DSI
-+	  system interfaces.
-+
- config DRM_PANEL_FEIYANG_FY07024DI26A30D
- 	tristate "Feiyang FY07024DI26A30-D MIPI-DSI LCD panel"
- 	depends on OF
-diff --git a/drivers/gpu/drm/panel/Makefile b/drivers/gpu/drm/panel/Makefile
-index 276907410a45..63189c015ba5 100644
---- a/drivers/gpu/drm/panel/Makefile
-+++ b/drivers/gpu/drm/panel/Makefile
-@@ -3,6 +3,7 @@ obj-$(CONFIG_DRM_PANEL_ARM_VERSATILE) += panel-arm-versatile.o
- obj-$(CONFIG_DRM_PANEL_BOE_HIMAX8279D) += panel-boe-himax8279d.o
- obj-$(CONFIG_DRM_PANEL_LVDS) += panel-lvds.o
- obj-$(CONFIG_DRM_PANEL_SIMPLE) += panel-simple.o
-+obj-$(CONFIG_DRM_PANEL_ELIDA_KD35T133) += panel-elida-kd35t133.o
- obj-$(CONFIG_DRM_PANEL_FEIYANG_FY07024DI26A30D) += panel-feiyang-fy07024di26a30d.o
- obj-$(CONFIG_DRM_PANEL_ILITEK_IL9322) += panel-ilitek-ili9322.o
- obj-$(CONFIG_DRM_PANEL_ILITEK_ILI9881C) += panel-ilitek-ili9881c.o
-diff --git a/drivers/gpu/drm/panel/panel-elida-kd35t133.c b/drivers/gpu/drm/panel/panel-elida-kd35t133.c
-new file mode 100644
-index 000000000000..75fbecdbf65a
---- /dev/null
-+++ b/drivers/gpu/drm/panel/panel-elida-kd35t133.c
-@@ -0,0 +1,352 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Elida kd35t133 5.5" MIPI-DSI panel driver
-+ * Copyright (C) 2020 Theobroma Systems Design und Consulting GmbH
-+ *
-+ * based on
-+ *
-+ * Rockteck jh057n00900 5.5" MIPI-DSI panel driver
-+ * Copyright (C) Purism SPC 2019
-+ */
-+
-+#include <linux/delay.h>
-+#include <linux/gpio/consumer.h>
-+#include <linux/media-bus-format.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/regulator/consumer.h>
-+
-+#include <video/display_timing.h>
-+#include <video/mipi_display.h>
-+
-+#include <drm/drm_mipi_dsi.h>
-+#include <drm/drm_modes.h>
-+#include <drm/drm_panel.h>
-+#include <drm/drm_print.h>
-+
-+/* Manufacturer specific Commands send via DSI */
-+#define KD35T133_CMD_INTERFACEMODECTRL		0xb0
-+#define KD35T133_CMD_FRAMERATECTRL		0xb1
-+#define KD35T133_CMD_DISPLAYINVERSIONCTRL	0xb4
-+#define KD35T133_CMD_DISPLAYFUNCTIONCTRL	0xb6
-+#define KD35T133_CMD_POWERCONTROL1		0xc0
-+#define KD35T133_CMD_POWERCONTROL2		0xc1
-+#define KD35T133_CMD_VCOMCONTROL		0xc5
-+#define KD35T133_CMD_POSITIVEGAMMA		0xe0
-+#define KD35T133_CMD_NEGATIVEGAMMA		0xe1
-+#define KD35T133_CMD_SETIMAGEFUNCTION		0xe9
-+#define KD35T133_CMD_ADJUSTCONTROL3		0xf7
-+
-+struct kd35t133 {
-+	struct device *dev;
-+	struct drm_panel panel;
-+	struct gpio_desc *reset_gpio;
-+	struct regulator *vdd;
-+	struct regulator *iovcc;
-+	bool prepared;
-+};
-+
-+static inline struct kd35t133 *panel_to_kd35t133(struct drm_panel *panel)
-+{
-+	return container_of(panel, struct kd35t133, panel);
-+}
-+
-+#define dsi_dcs_write_seq(dsi, cmd, seq...) do {			\
-+		static const u8 d[] = { seq };				\
-+		int ret;						\
-+		ret = mipi_dsi_dcs_write(dsi, cmd, d, ARRAY_SIZE(d));	\
-+		if (ret < 0)						\
-+			return ret;					\
-+	} while (0)
-+
-+static int kd35t133_init_sequence(struct kd35t133 *ctx)
-+{
-+	struct mipi_dsi_device *dsi = to_mipi_dsi_device(ctx->dev);
-+	struct device *dev = ctx->dev;
-+
-+	/*
-+	 * Init sequence was supplied by the panel vendor with minimal
-+	 * documentation.
-+	 */
-+	dsi_dcs_write_seq(dsi, KD35T133_CMD_POSITIVEGAMMA,
-+			      0x00, 0x13, 0x18, 0x04, 0x0f, 0x06, 0x3a, 0x56,
-+			      0x4d, 0x03, 0x0a, 0x06, 0x30, 0x3e, 0x0f);
-+	dsi_dcs_write_seq(dsi, KD35T133_CMD_NEGATIVEGAMMA,
-+			      0x00, 0x13, 0x18, 0x01, 0x11, 0x06, 0x38, 0x34,
-+			      0x4d, 0x06, 0x0d, 0x0b, 0x31, 0x37, 0x0f);
-+	dsi_dcs_write_seq(dsi, KD35T133_CMD_POWERCONTROL1, 0x18, 0x17);
-+	dsi_dcs_write_seq(dsi, KD35T133_CMD_POWERCONTROL2, 0x41);
-+	dsi_dcs_write_seq(dsi, KD35T133_CMD_VCOMCONTROL, 0x00, 0x1a, 0x80);
-+	dsi_dcs_write_seq(dsi, MIPI_DCS_SET_ADDRESS_MODE, 0x48);
-+	dsi_dcs_write_seq(dsi, MIPI_DCS_SET_PIXEL_FORMAT, 0x55);
-+	dsi_dcs_write_seq(dsi, KD35T133_CMD_INTERFACEMODECTRL, 0x00);
-+	dsi_dcs_write_seq(dsi, KD35T133_CMD_FRAMERATECTRL, 0xa0);
-+	dsi_dcs_write_seq(dsi, KD35T133_CMD_DISPLAYINVERSIONCTRL, 0x02);
-+	dsi_dcs_write_seq(dsi, KD35T133_CMD_DISPLAYFUNCTIONCTRL,
-+			      0x20, 0x02);
-+	dsi_dcs_write_seq(dsi, KD35T133_CMD_SETIMAGEFUNCTION, 0x00);
-+	dsi_dcs_write_seq(dsi, KD35T133_CMD_ADJUSTCONTROL3,
-+			      0xa9, 0x51, 0x2c, 0x82);
-+	mipi_dsi_dcs_write(dsi, MIPI_DCS_ENTER_INVERT_MODE, NULL, 0);
-+
-+	DRM_DEV_DEBUG_DRIVER(dev, "Panel init sequence done\n");
-+	return 0;
-+}
-+
-+static int kd35t133_unprepare(struct drm_panel *panel)
-+{
-+	struct kd35t133 *ctx = panel_to_kd35t133(panel);
-+	struct mipi_dsi_device *dsi = to_mipi_dsi_device(ctx->dev);
-+	int ret;
-+
-+	if (!ctx->prepared)
-+		return 0;
-+
-+	ret = mipi_dsi_dcs_set_display_off(dsi);
-+	if (ret < 0)
-+		DRM_DEV_ERROR(ctx->dev, "failed to set display off: %d\n",
-+			      ret);
-+
-+	ret = mipi_dsi_dcs_enter_sleep_mode(dsi);
-+	if (ret < 0) {
-+		DRM_DEV_ERROR(ctx->dev, "failed to enter sleep mode: %d\n",
-+			      ret);
-+		return ret;
-+	}
-+
-+	regulator_disable(ctx->iovcc);
-+	regulator_disable(ctx->vdd);
-+
-+	ctx->prepared = false;
-+
-+	return 0;
-+}
-+
-+static int kd35t133_prepare(struct drm_panel *panel)
-+{
-+	struct kd35t133 *ctx = panel_to_kd35t133(panel);
-+	struct mipi_dsi_device *dsi = to_mipi_dsi_device(ctx->dev);
-+	int ret;
-+
-+	if (ctx->prepared)
-+		return 0;
-+
-+	DRM_DEV_DEBUG_DRIVER(ctx->dev, "Resetting the panel\n");
-+	ret = regulator_enable(ctx->vdd);
-+	if (ret < 0) {
-+		DRM_DEV_ERROR(ctx->dev,
-+			      "Failed to enable vdd supply: %d\n", ret);
-+		return ret;
-+	}
-+
-+	ret = regulator_enable(ctx->iovcc);
-+	if (ret < 0) {
-+		DRM_DEV_ERROR(ctx->dev,
-+			      "Failed to enable iovcc supply: %d\n", ret);
-+		goto disable_vdd;
-+	}
-+
-+	msleep(20);
-+
-+	gpiod_set_value_cansleep(ctx->reset_gpio, 1);
-+	usleep_range(10, 20);
-+	gpiod_set_value_cansleep(ctx->reset_gpio, 0);
-+
-+	msleep(20);
-+
-+	ret = mipi_dsi_dcs_exit_sleep_mode(dsi);
-+	if (ret < 0) {
-+		DRM_DEV_ERROR(ctx->dev, "Failed to exit sleep mode: %d\n", ret);
-+		goto disable_iovcc;
-+	}
-+
-+	msleep(250);
-+
-+	ret = kd35t133_init_sequence(ctx);
-+	if (ret < 0) {
-+		DRM_DEV_ERROR(ctx->dev, "Panel init sequence failed: %d\n",
-+			      ret);
-+		goto disable_iovcc;
-+	}
-+
-+	ret = mipi_dsi_dcs_set_display_on(dsi);
-+	if (ret < 0) {
-+		DRM_DEV_ERROR(ctx->dev, "Failed to set display on: %d\n", ret);
-+		goto disable_iovcc;
-+	}
-+
-+	msleep(50);
-+
-+	ctx->prepared = true;
-+
-+	return 0;
-+
-+disable_iovcc:
-+	regulator_disable(ctx->iovcc);
-+disable_vdd:
-+	regulator_disable(ctx->vdd);
-+	return ret;
-+}
-+
-+static const struct drm_display_mode default_mode = {
-+	.hdisplay	= 320,
-+	.hsync_start	= 320 + 130,
-+	.hsync_end	= 320 + 130 + 4,
-+	.htotal		= 320 + 130 + 4 + 130,
-+	.vdisplay	= 480,
-+	.vsync_start	= 480 + 2,
-+	.vsync_end	= 480 + 2 + 1,
-+	.vtotal		= 480 + 2 + 1 + 2,
-+	.vrefresh	= 60,
-+	.clock		= 17000,
-+	.width_mm	= 42,
-+	.height_mm	= 82,
-+};
-+
-+static int kd35t133_get_modes(struct drm_panel *panel,
-+				struct drm_connector *connector)
-+{
-+	struct kd35t133 *ctx = panel_to_kd35t133(panel);
-+	struct drm_display_mode *mode;
-+
-+	mode = drm_mode_duplicate(connector->dev, &default_mode);
-+	if (!mode) {
-+		DRM_DEV_ERROR(ctx->dev, "Failed to add mode %ux%u@%u\n",
-+			      default_mode.hdisplay, default_mode.vdisplay,
-+			      default_mode.vrefresh);
-+		return -ENOMEM;
-+	}
-+
-+	drm_mode_set_name(mode);
-+
-+	mode->type = DRM_MODE_TYPE_DRIVER | DRM_MODE_TYPE_PREFERRED;
-+	connector->display_info.width_mm = mode->width_mm;
-+	connector->display_info.height_mm = mode->height_mm;
-+	drm_mode_probed_add(connector, mode);
-+
-+	return 1;
-+}
-+
-+static const struct drm_panel_funcs kd35t133_funcs = {
-+	.unprepare	= kd35t133_unprepare,
-+	.prepare	= kd35t133_prepare,
-+	.get_modes	= kd35t133_get_modes,
-+};
-+
-+static int kd35t133_probe(struct mipi_dsi_device *dsi)
-+{
-+	struct device *dev = &dsi->dev;
-+	struct kd35t133 *ctx;
-+	int ret;
-+
-+	ctx = devm_kzalloc(dev, sizeof(*ctx), GFP_KERNEL);
-+	if (!ctx)
-+		return -ENOMEM;
-+
-+	ctx->reset_gpio = devm_gpiod_get_optional(dev, "reset", GPIOD_OUT_LOW);
-+	if (IS_ERR(ctx->reset_gpio)) {
-+		DRM_DEV_ERROR(dev, "cannot get reset gpio\n");
-+		return PTR_ERR(ctx->reset_gpio);
-+	}
-+
-+	ctx->vdd = devm_regulator_get(dev, "vdd");
-+	if (IS_ERR(ctx->vdd)) {
-+		ret = PTR_ERR(ctx->vdd);
-+		if (ret != -EPROBE_DEFER)
-+			DRM_DEV_ERROR(dev,
-+				      "Failed to request vdd regulator: %d\n",
-+				      ret);
-+		return ret;
-+	}
-+
-+	ctx->iovcc = devm_regulator_get(dev, "iovcc");
-+	if (IS_ERR(ctx->iovcc)) {
-+		ret = PTR_ERR(ctx->iovcc);
-+		if (ret != -EPROBE_DEFER)
-+			DRM_DEV_ERROR(dev,
-+				      "Failed to request iovcc regulator: %d\n",
-+				      ret);
-+		return ret;
-+	}
-+
-+	mipi_dsi_set_drvdata(dsi, ctx);
-+
-+	ctx->dev = dev;
-+
-+	dsi->lanes = 1;
-+	dsi->format = MIPI_DSI_FMT_RGB888;
-+	dsi->mode_flags = MIPI_DSI_MODE_VIDEO | MIPI_DSI_MODE_VIDEO_BURST |
-+			  MIPI_DSI_MODE_LPM | MIPI_DSI_MODE_EOT_PACKET;
-+
-+	drm_panel_init(&ctx->panel, &dsi->dev, &kd35t133_funcs,
-+		       DRM_MODE_CONNECTOR_DSI);
-+
-+	ret = drm_panel_of_backlight(&ctx->panel);
-+	if (ret)
-+		return ret;
-+
-+	drm_panel_add(&ctx->panel);
-+
-+	ret = mipi_dsi_attach(dsi);
-+	if (ret < 0) {
-+		DRM_DEV_ERROR(dev, "mipi_dsi_attach failed: %d\n", ret);
-+		drm_panel_remove(&ctx->panel);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static void kd35t133_shutdown(struct mipi_dsi_device *dsi)
-+{
-+	struct kd35t133 *ctx = mipi_dsi_get_drvdata(dsi);
-+	int ret;
-+
-+	ret = drm_panel_unprepare(&ctx->panel);
-+	if (ret < 0)
-+		DRM_DEV_ERROR(&dsi->dev, "Failed to unprepare panel: %d\n",
-+			      ret);
-+
-+	ret = drm_panel_disable(&ctx->panel);
-+	if (ret < 0)
-+		DRM_DEV_ERROR(&dsi->dev, "Failed to disable panel: %d\n",
-+			      ret);
-+}
-+
-+static int kd35t133_remove(struct mipi_dsi_device *dsi)
-+{
-+	struct kd35t133 *ctx = mipi_dsi_get_drvdata(dsi);
-+	int ret;
-+
-+	kd35t133_shutdown(dsi);
-+
-+	ret = mipi_dsi_detach(dsi);
-+	if (ret < 0)
-+		DRM_DEV_ERROR(&dsi->dev, "Failed to detach from DSI host: %d\n",
-+			      ret);
-+
-+	drm_panel_remove(&ctx->panel);
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id kd35t133_of_match[] = {
-+	{ .compatible = "elida,kd35t133" },
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(of, kd35t133_of_match);
-+
-+static struct mipi_dsi_driver kd35t133_driver = {
-+	.driver = {
-+		.name = "panel-elida-kd35t133",
-+		.of_match_table = kd35t133_of_match,
-+	},
-+	.probe	= kd35t133_probe,
-+	.remove = kd35t133_remove,
-+	.shutdown = kd35t133_shutdown,
-+};
-+module_mipi_dsi_driver(kd35t133_driver);
-+
-+MODULE_AUTHOR("Heiko Stuebner <heiko.stuebner@theobroma-systems.com>");
-+MODULE_DESCRIPTION("DRM driver for Elida kd35t133 MIPI DSI panel");
-+MODULE_LICENSE("GPL v2");
--- 
-2.24.1
-
+	Sam
+> 
+> Thanks
+> Heiko
+> 
+> [0] http://lore.kernel.org/r/20200229125725.GC5447@ravnborg.org
+> 
+>  Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+> index 9e67944bec9c..38d3149d3adc 100644
+> --- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
+> +++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+> @@ -285,6 +285,8 @@ patternProperties:
+>      description: Elan Microelectronic Corp.
+>    "^elgin,.*":
+>      description: Elgin S/A.
+> +  "^elida,.*":
+> +    description: Shenzhen Elida Technology Co., Ltd.
+>    "^embest,.*":
+>      description: Shenzhen Embest Technology Co., Ltd.
+>    "^emlid,.*":
+> -- 
+> 2.24.1
 
 _______________________________________________
 Linux-rockchip mailing list
