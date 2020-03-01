@@ -2,50 +2,91 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B139174A8A
-	for <lists+linux-rockchip@lfdr.de>; Sun,  1 Mar 2020 01:42:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC621174ABD
+	for <lists+linux-rockchip@lfdr.de>; Sun,  1 Mar 2020 03:07:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z4k8IcAnBY7Ra8b2nlM6t063EtAaNvSll/Kgk6kj1+U=; b=AMnw8MYveBKLA8
-	aSNF0Oc0EDjHPjhSTNCfmHca5KrSomTdtIWRXJmj8Q4U++p02izFM5RYp9tTD5+jSMpqcP1wiW67T
-	zrX2fhsbe5MPtzIQyPjYcAYNMEK9XMlCHzxw7yNi/fo20VRZwnJYFfbrozWu5wpmTQImRj5VI+Wo+
-	sHWAOWC8wldTSsC0NiETpSppQUvKe72ZHpLntJ8m1MtbYzSPIkCsZP+ZnQKKBaUUko8XvsfS2IfqY
-	YjpE3W7bAPQ+6TW2PNT8w+GaBvNIyjQ9/aTpZSPR6jAihEPJExOWWlw/9rdfCoglhcN5ICJZ6ftyI
-	fYsei33dPN9PJvbNlOcw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:To:
+	Subject:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Wbm4uFxpybqUKpJFA7uMaEHWouf2B4nfDO/eRwdJHPs=; b=C9706NzC9m/FfWUmIIUdO9CFz
+	rs2I6FXsWL2xoe7areNWzKMXTrD3l9nnTz+lN3MOTxiSlnhK8Kne8DxlUtNjyu+TBW5d3WlRmyxEf
+	LGEXha8Y5kFLe/jBIyF8GHgDjZr7HqQQyFplQozV4HYDUuTTiuUq/RebmYMeZ4NcHb0tnqG9yhi/B
+	zEG5jAVaNzExDikIfrrOCGLMMHFQqtd24L9Kd2M95mIB0vHzf1e2IG7q/0rkG/0n+MfqwwV9ZOP9X
+	7CBcmDP61ZGROVLBgPAwGsOu0FS+gtzixtXmF3i9gUO+QKmN+WbSWuDG7Cp0418xiNRdGriYFtcsU
+	KWww0DLUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8Ch2-0002SU-4L; Sun, 01 Mar 2020 00:42:52 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1j8E0c-0002RZ-UR; Sun, 01 Mar 2020 02:07:10 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8Cgn-0002Js-B4; Sun, 01 Mar 2020 00:42:38 +0000
-Received: from p508fcd9d.dip0.t-ipconnect.de ([80.143.205.157]
- helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1j8CgT-00052P-9b; Sun, 01 Mar 2020 01:42:17 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: Tobias Schramm <t.schramm@manjaro.org>
-Subject: Re: [PATCH v3 1/2] dt-bindings: Add doc for pine64 Pinebook Pro
-Date: Sun, 01 Mar 2020 01:42:16 +0100
-Message-ID: <2852313.2ZqhBMtFLq@phil>
-In-Reply-To: <20200229144817.355678-2-t.schramm@manjaro.org>
-References: <20200229144817.355678-1-t.schramm@manjaro.org>
- <20200229144817.355678-2-t.schramm@manjaro.org>
+ id 1j8E0S-0002Li-M7; Sun, 01 Mar 2020 02:07:01 +0000
+Received: by mail-wm1-x344.google.com with SMTP id p9so7547870wmc.2;
+ Sat, 29 Feb 2020 18:06:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:subject:to:cc:message-id:in-reply-to:references
+ :mime-version; bh=mFMK4D+LnUKRd/F79nEwyUOb2aPeDQ33LhkUgHUmiGc=;
+ b=WxqEXM8LNzUi/E7hr0gNTnCsdZ3nu91HgDePZERGtz3W9noXE+0ktjuMCq5ufbOiYq
+ T8rXIsM/gYs6Eb4CPv0RE7G7jyOzqpE9I6Do9tnbZ2b20Hj2l+5lkGdt17BCST/BU77Z
+ zpwE6Z5GZ9PaJk5ovCzdQ+H3SNzV1BOhOkVfpEwDUWJ5Ur2oweOKLRGGwXbEViHuamKX
+ mmT7nIeWRgad4+IfBfSvTjsEVj9AzZIEr1DpKrryRclGh9lWAq/Nx9pORGuiXjDl5b44
+ NKHzxUVU/75XqVjK2BZU/x5YbQcO/EFzmjmOvkAm6BbkihQCnwHRBj3+MUgvdcIbe2HK
+ R+xA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:subject:to:cc:message-id:in-reply-to
+ :references:mime-version;
+ bh=mFMK4D+LnUKRd/F79nEwyUOb2aPeDQ33LhkUgHUmiGc=;
+ b=Y7S3SYZXKdjKWW4kw1JTRA/P+I0jdUvKB6MqQzJ0Ld1MJJyEHX36iB32G9/sTdFE+o
+ om4Ta2jHgu0/4DGTUlW1G6OkJdnNBWOdMIx1aoNGUzLu+J7E4FKKINhivX7YBxFDHtuw
+ E81AhYsf701BRv1xq6/J2kqYKcm+EYSXkyEStytN6dpdkYAgObwaxT8X+h7/+BxlFFF+
+ /sbyZqpw3feYqZLMkN35N/Ikq4aemdEyfEoU4Z/uK55hCVOf6sapDpBWaWmMPiSlzHDC
+ TVzRuLZbabTrTs5x6F7baXYC4jDSjVgGDjf+8ORtGwoiMbooBn5XCDPFQISbdwcIleNH
+ +wAg==
+X-Gm-Message-State: APjAAAXIuJsjumWEe9H5aumJ7dii+x3all0RSXaEgDaz9dWE0h0GbRwa
+ F8CY931FHAJMk0DsQj+G+vo=
+X-Google-Smtp-Source: APXvYqzo/NeLjiWLx17CFDKlODf5uCGNKaEDGv01jvjeA8hCO8or8bNmA4KCjZe/q9m0WsEFjEbPaw==
+X-Received: by 2002:a1c:238d:: with SMTP id
+ j135mr12374607wmj.165.1583028418492; 
+ Sat, 29 Feb 2020 18:06:58 -0800 (PST)
+Received: from [192.168.1.6] (ppp141237210022.access.hol.gr. [141.237.210.22])
+ by smtp.gmail.com with ESMTPSA id
+ f195sm8614206wmf.17.2020.02.29.18.06.55
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 29 Feb 2020 18:06:58 -0800 (PST)
+Date: Sun, 01 Mar 2020 04:06:54 +0200
+From: "Leonidas P." <papadakospan@gmail.com>
+Subject: Re: [PATCH] arm64: dts: rockchip: Add txpbl node for RK3399/RK3328
+To: Heiko Stuebner <heiko@sntech.de>
+Message-Id: <1583028414.33600.0@gmail.com>
+In-Reply-To: <6132615.msM8OCcsVu@phil>
+References: <20200218221040.10955-1-me@carlosedp.com> <6132615.msM8OCcsVu@phil>
+X-Mailer: geary/3.34.2
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_164237_532108_54504DE6 
-X-CRM114-Status: GOOD (  14.77  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200229_180700_750798_E8FF8F07 
+X-CRM114-Status: UNSURE (   7.66  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [papadakospan[at]gmail.com]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,59 +99,26 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexis Ballier <aballier@gentoo.org>,
- Katsuhiro Suzuki <katsuhiro@katsuster.net>, linux-kernel@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>,
- Kever Yang <kever.yang@rock-chips.com>, Markus Reichl <m.reichl@fivetechno.de>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Jagan Teki <jagan@amarulasolutions.com>, Nick Xie <nick@khadas.com>,
- Andy Yan <andy.yan@rock-chips.com>, Johan Jonker <jbx6244@gmail.com>,
- Vasily Khoruzhick <anarsoul@gmail.com>, Matthias Kaehlcke <mka@chromium.org>,
- Vivek Unune <npcomplete13@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: jose.abreu@synopsys.com, Mark Rutland <mark.rutland@arm.com>,
+ Carlos de Paula <me@carlosedp.com>, Jonas Karlman <jonas@kwiboo.se>,
+ Katsuhiro Suzuki <katsuhiro@katsuster.net>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Peter Geis <pgwipeout@gmail.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Johan Jonker <jbx6244@gmail.com>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Christoph Muellner <christoph.muellner@theobroma-systems.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Samstag, 29. Februar 2020, 15:48:16 CET schrieb Tobias Schramm:
-> This commit adds a compatible for the Pinebook Pro.
-> 
-> Signed-off-by: Tobias Schramm <t.schramm@manjaro.org>
 
-The old patch from Emmanuel already got an
-
-Reviewed-by: Rob Herring <robh@kernel.org>
-
-and as this is the same binding, this should just be kept :-)
-
-[Mainly for me to remember as well]
-
-Heiko
-
-> ---
->  Documentation/devicetree/bindings/arm/rockchip.yaml | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
-> index 874b0eaa2a75..482a0cbfb18a 100644
-> --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
-> +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
-> @@ -402,6 +402,11 @@ properties:
->            - const: phytec,rk3288-phycore-som
->            - const: rockchip,rk3288
->  
-> +      - description: Pine64 Pinebook Pro
-> +        items:
-> +          - const: pine64,pinebook-pro
-> +          - const: rockchip,rk3399
-> +
->        - description: Pine64 Rock64
->          items:
->            - const: pine64,rock64
-> 
-
-
+I am also in favor of this but I think we should remove the line that 
+specifies the txpbl in the rk3328-roc-cc.dts gmac2io since it will get 
+applied here in the .dtsi
 
 
 
