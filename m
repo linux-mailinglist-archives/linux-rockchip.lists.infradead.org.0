@@ -2,91 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7BC9175714
-	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Mar 2020 10:29:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 318AC175724
+	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Mar 2020 10:31:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ZfAT4ceF24OPqZidUXbNhU3yg7v7bX6uw7LpFvk0Ouk=; b=YUsa0qRIlpdLON9ByhfwxwUiUs
-	/+yX5DBRq6EwZ51MeoSAKIhxZd2MHlam9BUOZVCUgxoqO0zBB0DIuFZYJ4Um8suUOBvIhTKd8UQNK
-	ILwr3/Qbq13tFXOgBQjT5r+J1bNOn1RQCcSoxTmP1uXOQ7UUGYjgaxf7f5VjjEWSmXR2ngB1yV5CL
-	mRKEO1/ayoNL8gvuBun8Ydvi6C+4uquEAJeIKk3mO2MhX/joUDbLPg69ohx2clmM06s4eHSJd3HGD
-	7Qi3oeLvjpMxXGAJMM+qsMi3E+gkGQQmK7Br/f+02+uvHhRcJ383kpoKiwrupcTKGiU1630qNp0al
-	qi7DEaWg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=a5XfcQ5Z8rimcG4zyix+p/9uWZSkhI4NX+/bZOlQN6g=; b=M4GcYrVTtyL1pt
+	EIOVoc9i/9hCIJsG4dXCU6NowYsIuh3M6yUsPBaMemIY90SV8NCHbw7jZVV/11CMCRGQiOB3mTCtg
+	Sqb+azKmNfE3940zoE4SXFsJuS1HOBWS3ya1fTggLT0kKk5u/fd8RYkYY3FJqa4hkyg2Q76GpHo9/
+	k3yPDP29tqj681nudzLcaUY/b8PgURTr0xTBV3g1gyyRYE8ala4TVwkyM5vp7Z1PkgxTSspmR5XzD
+	JSRCxUPESqYEcAebSupAYkABdQ3mUItGbqzs9/IqrHNJH6JE8FLMvKV5BWyPeujXAe90ZQz96z2ef
+	rb0oTXIvkhyiyHNb1P7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8hNh-0006sQ-Bp; Mon, 02 Mar 2020 09:28:57 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j8hQV-0000bG-1g; Mon, 02 Mar 2020 09:31:51 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8hMy-00066q-A3; Mon, 02 Mar 2020 09:28:13 +0000
-Received: by mail-wr1-x444.google.com with SMTP id j16so11614533wrt.3;
- Mon, 02 Mar 2020 01:28:10 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=JT9LGJ3nprOFd57YdHFTo6kmk4rD0oOGffgTW8cRvZI=;
- b=GjhnHUAs17IpwhpIp4EZFaFCjGdIMvqXOl3gcf0RMYe3UkTvWSpAM2NPK9wbb7+qzg
- +ru36XkESaCNdY3Po6JQvG2rFJssKOi1GQYirmXNjKqntHvOAdLzqoqsMPJVASt2mY0L
- Gk3yHOlg6JZXifIic6opV9dIFOimFgGi/YT1tW4+UxB9DgRrUIE/9SH4KAp2tGfR/HXO
- MfFXTMG2DFuLXzDQn6kFdf1GUcM6EpEkbRJZnvuj8/6SC1uSr6w2TDs2b1gl6JeHaw6i
- v2wowbsg+sPT5wAmlWnpwbxKEaG0kDPJgNszXWP0roOi9K+H95ibCVtCeqWjO8LGHLc5
- D2HA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=JT9LGJ3nprOFd57YdHFTo6kmk4rD0oOGffgTW8cRvZI=;
- b=WvgEV2OcnmwLm5OvNH7tmvYLpTvwaCvDVGuqUv1n9NoguHXZx+aI8BYW8OFF8fbMOO
- zvMsl1DM7ytOLbzwhI6JwTEMUWA9kxTSZ4YWIfSzc10PUvyVz8DRQhX1BdmAa7Yf97u1
- RnYNngZjUhpoVSu7OgYN72K95KZG7/rDF3MSW4rJjaM9LstbjEAp6gQNW2S5x82Mf/QH
- Md8kXkYJJA3V9/yB/7Wv9jKgoM7QTBBYHmO16ZKaUt8WUCgGhvk4VncCx2rvakTRuiVE
- Xb/8yJyg04aDNl95eFVs4PFAOhD9u83oq0O+nnGStSORkC3fVLh7Mrh27Ch3dsJSS2a0
- Ukxw==
-X-Gm-Message-State: APjAAAX0wq0JuVvTnbPi/5B190lbxCR3BHm4h4vSjuLkmH6G94jrjKh1
- SanXNzAxBPlH72TXE0NtpHU=
-X-Google-Smtp-Source: APXvYqzL+2Y04yOkKtalVlUtycPgO8/i1gUbA2dSLsaEONtKnP6nRDz3qDuKl9EaY2YE+bZHdqN2KA==
-X-Received: by 2002:adf:dd05:: with SMTP id a5mr21467583wrm.108.1583141289113; 
- Mon, 02 Mar 2020 01:28:09 -0800 (PST)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id m3sm6409586wrx.9.2020.03.02.01.28.08
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 02 Mar 2020 01:28:08 -0800 (PST)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH v2 3/3] arm64: dts: rockchip: fix compatible property for
- rk3399-evb
-Date: Mon,  2 Mar 2020 10:27:59 +0100
-Message-Id: <20200302092759.3291-3-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200302092759.3291-1-jbx6244@gmail.com>
-References: <20200302092759.3291-1-jbx6244@gmail.com>
+ id 1j8hQG-0000Q1-Oj; Mon, 02 Mar 2020 09:31:38 +0000
+X-Originating-IP: 90.89.41.158
+Received: from xps13 (lfbn-tou-1-1473-158.w90-89.abo.wanadoo.fr [90.89.41.158])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 80483FF803;
+ Mon,  2 Mar 2020 09:31:03 +0000 (UTC)
+Date: Mon, 2 Mar 2020 10:31:03 +0100
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+Subject: Re: [PATCH 0/3] Add Rockchip NFC drivers for RK3308 and others
+Message-ID: <20200302103103.1eb7df94@xps13>
+In-Reply-To: <1582884076-27615-1-git-send-email-yifeng.zhao@rock-chips.com>
+References: <1582884076-27615-1-git-send-email-yifeng.zhao@rock-chips.com>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_012812_390020_11BDC706 
-X-CRM114-Status: GOOD (  14.30  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200302_013136_944736_AEE4DFD0 
+X-CRM114-Status: UNSURE (   7.65  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.199 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,54 +62,25 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, vigneshr@ti.com, richard@nod.at,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-mtd@lists.infradead.org, heiko@sntech.de
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-A test with the command below gives this error:
-
-arch/arm64/boot/dts/rockchip/rk3399-evb.dt.yaml: /: compatible:
-['rockchip,rk3399-evb', 'rockchip,rk3399', 'google,rk3399evb-rev2']
-is not valid under any of the given schemas
-
-'google,rk3399evb-rev2' was a no longer used variant for Google.
-The binding only mentions 'rockchip,rk3399-evb', 'rockchip,rk3399',
-so fix this error by removing 'google,rk3399evb-rev2' from
-the compatible property in rk3399-evb.dts and change it into
-generic rk3399-evb support only.
-
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/rockchip.yaml
-
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/rk3399-evb.dts | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-evb.dts b/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
-index 77008dca4..d1afd1e1d 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
-@@ -9,8 +9,7 @@
- 
- / {
- 	model = "Rockchip RK3399 Evaluation Board";
--	compatible = "rockchip,rk3399-evb", "rockchip,rk3399",
--		     "google,rk3399evb-rev2";
-+	compatible = "rockchip,rk3399-evb", "rockchip,rk3399";
- 
- 	backlight: backlight {
- 		compatible = "pwm-backlight";
--- 
-2.11.0
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgWWlmZW5nLAoKWWlmZW5nIFpoYW8gPHlpZmVuZy56aGFvQHJvY2stY2hpcHMuY29tPiB3cm90
+ZSBvbiBGcmksIDI4IEZlYiAyMDIwCjE4OjAxOjEzICswODAwOgoKPiBSb2NrY2hwJ3MgTkZDKE5h
+bmQgRmxhc2ggQ29udHJvbGxlcikgaGFzIHRocmVlIHZlcnNpb25zOiBWNiwgVjggYW5kIFY5Lgo+
+IFRoaXMgc2VyaWVzIHBhdGNoIGNhbiBzdXBwb3J0IGFsbCAgdGhyZWUgdmVyc2lvbnMuCj4gCgpZ
+b3VyIHNlcmllcyBoYXMgYmVlbiBiYWRseSBjcmVhdGVkLCBzdHJhbmdlbHkgSSByZWNlaXZlZCB0
+d2ljZSBwYXRjaCAxCndpdGggdHdvIGRpZmZlcmVudCBjb250ZW50cywgcGF0Y2ggMiBhcnJpdmVk
+IHdheSBsYXRlciB0aGFuIHBhdGNoIDEgYW5kCjMgYW5kIHRoZSBjb21taXQgdGl0bGUgb2YgdGhl
+IGJpbmRpbmdzIHBhdGNoIGlzIHdyb25nLCBpdCBzaG91bGQKYmVzb21ldGhpbmcgbGlrZToKCglk
+dC1iaW5kaW5nczogbXRkOiBEZXNjcmliZSBSb2NrY2hpcCBSSzN4eHggTkFORCBmbGFzaCBjb250
+cm9sbGVyCgpDYW4geW91IHBsZWFzZSByZXNlbmQgdGhpcyBzZXJpZXMgaW4gYSB2Mj8KClRoYW5r
+cywKTWlxdcOobAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1yb2NrY2hpcAo=
