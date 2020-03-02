@@ -2,57 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0581D175D49
-	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Mar 2020 15:35:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 769D5175D62
+	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Mar 2020 15:39:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/k2j2ufHsMJM95bbQeN6AYFF5ym6l3lLGAQJuqKEi3c=; b=MNsZV6UIdwciKS
-	MOlmHnoN4z+je38Xq/g2nvzj+sx8CGdG+Br/EPNGMi11p+3CN9KEZx0WoNFhptftx1UON8UmAN1M0
-	f4EdKJ5FOdvmuUEfJLiJxAjMlM4uQNB3aPNmx8TKTw8Uy/v3VqGHKLVGd59nBZt+bhV0fZu3udwZJ
-	hK8K3oOsXGkbX3APVZtfOfg0zsxBiN2GKePMwHMrUlXu+PQWYvZsuJYCrvEsErc1FG0reRjUyY2TM
-	KZg7vOcbkgOIQx5GVKqxhKxOhe7un54JTjrD5/L10kX2I+92mpvhkUjvIl8qqvFi2rjjIlQES75uk
-	q8Iz/RdNVeECRfcNJJew==;
+	List-Owner; bh=CvZrOD25vYxPicjFr+He7bjpeRKrhTkMUExKfk31E1E=; b=hXdd7s8LFFJ1am
+	aQ7l2KkhKQOtQN9Ewj5hxPBsN5jmaqP5fbPQQwxYY+BNJqd+A57ZTy6ESWM/WGE0TgGMuM5z+wRXM
+	9kFCung97y5loIv6eidjHJmsAHHajdYh+CMcoe+UD6LHKza8kyG9YpgBYs0xWpzIHGuft8wXELNrG
+	WP+YTmD7WY4vYdb6QBfQ4ywpEnpNELbz0iEwugIZs9pQX6lKSqz4Bxwspbz14+MeaTzvGuTuLhM+d
+	pDnu0MOCTuOv14azVfYDwR0iyzKi1Uo4dAElkIoxSCO/TWmgOlfappcdNuIw6OFlaxLxYQXwvkgTU
+	t2ILl7QVeAh9poYiX9NQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8mAU-0008Iv-1b; Mon, 02 Mar 2020 14:35:38 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1j8mE4-0000W3-EU; Mon, 02 Mar 2020 14:39:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8mAQ-0008IB-Mh
- for linux-rockchip@lists.infradead.org; Mon, 02 Mar 2020 14:35:36 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 162EB294121;
- Mon,  2 Mar 2020 14:35:33 +0000 (GMT)
-Date: Mon, 2 Mar 2020 15:35:29 +0100
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+ id 1j8mE1-0000VY-3h
+ for linux-rockchip@lists.infradead.org; Mon, 02 Mar 2020 14:39:18 +0000
+Received: from coco.lan (ip5f5ad4e9.dynamic.kabel-deutschland.de
+ [95.90.212.233])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CAD482166E;
+ Mon,  2 Mar 2020 14:39:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583159956;
+ bh=S9YX6OjPgbMI3SxRJ44ChncEyJ5JHI0lpyN8E4uSJiU=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=CDZyD8IsBQz3OtxC4HycZ3hNtuU4udOa6Si9GzEMN1YVu+n0rBPysyWzqP/5kXoG4
+ t3L2ShtbPDuTkqZJNpO/XNu5NmPjiZh+EZPlWvOnnJg4PaDuXCcpC9Kxvwl/8znEDG
+ F9DqUHwh+TRAnlDNGko/ruh+vXpXLrzV4nP51y8A=
+Date: Mon, 2 Mar 2020 15:39:09 +0100
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Boris Brezillon <boris.brezillon@collabora.com>
 Subject: Re: [PATCH v6 5/6] media: rkvdec: Add the rkvdec driver
-Message-ID: <20200302153529.4e2429e7@collabora.com>
-In-Reply-To: <20200302145746.3e94c1d1@coco.lan>
+Message-ID: <20200302153909.4e90227d@coco.lan>
+In-Reply-To: <20200302153529.4e2429e7@collabora.com>
 References: <20200220163016.21708-1-ezequiel@collabora.com>
  <20200220163016.21708-6-ezequiel@collabora.com>
  <20200302145746.3e94c1d1@coco.lan>
-Organization: Collabora
+ <20200302153529.4e2429e7@collabora.com>
 X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_063534_873799_F13E2356 
-X-CRM114-Status: GOOD (  10.79  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200302_063917_174415_8AA08B5D 
+X-CRM114-Status: GOOD (  12.10  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,18 +94,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, 2 Mar 2020 14:57:46 +0100
-Mauro Carvalho Chehab <mchehab+huawei@kernel.org> wrote:
+Em Mon, 2 Mar 2020 15:35:29 +0100
+Boris Brezillon <boris.brezillon@collabora.com> escreveu:
 
-> > +	for (j = 0; j < 3; j++) {  
+> On Mon, 2 Mar 2020 14:57:46 +0100
+> Mauro Carvalho Chehab <mchehab+huawei@kernel.org> wrote:
 > 
-> Again a magic number. I guess this came from that big "M_N" table with 4
-> elements, right? Please use a define instead of hardcoding a number
-> here.
+> > > +	for (j = 0; j < 3; j++) {    
+> > 
+> > Again a magic number. I guess this came from that big "M_N" table with 4
+> > elements, right? Please use a define instead of hardcoding a number
+> > here.  
+> 
+> Nope, it's unrelated to the cabac_table size, it's related to how the
+> HW accesses the P/B reflists (there are 1 P reflist, and 2 B reflists,
+> hence the 3 here).
 
-Nope, it's unrelated to the cabac_table size, it's related to how the
-HW accesses the P/B reflists (there are 1 P reflist, and 2 B reflists,
-hence the 3 here). I guess we can have a '#define NUM_REFLISTS 3'.
+Ah, ok!
+
+> I guess we can have a '#define NUM_REFLISTS 3'.
+
+Works for me. Please use NUM_REFLISTS on a consistent way, making it 
+to reflect everywhere you might define or loop over those 3 reflists.
+
+
+Thanks,
+Mauro
 
 _______________________________________________
 Linux-rockchip mailing list
