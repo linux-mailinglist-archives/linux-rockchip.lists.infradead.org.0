@@ -2,43 +2,43 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8746175F95
-	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Mar 2020 17:28:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21E28175F9C
+	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Mar 2020 17:29:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xvv/E2pHN3P6fbvPu6ilsV87QFu+PMuCrIGQMrYlbfM=; b=uDrFuJ23NlrEKT
-	kuPJERppDnlf6d25ryN1rokzfXJtGWlDY1unUHh3fSdQarRA4Vvye5uTVXHdAbyfsYECc+ryZUpgH
-	0gE3y3MFfjcsCkHqzlsQlvWM3pSdRaIbs3ELVwp0zNx+FLeuhkoVJmLuW0y3r+DrrnjhxzlSTDZTD
-	fsMWrSdFr6vULa66Eju64jedrSUJln1ORyxbRFDUA3EANlvb15cvP1mSXU8TKoCzi6PUScEOoylv6
-	a7EXB2OYQ3YATca6y9tTYYKs1E8H1cmqF7pVKEddDiNqJRzqweI6mbYwvXodw09hvrl3dp5bGBcKt
-	Udyo8IuIkl7NPNZvifNQ==;
+	List-Owner; bh=VkrdmLB86Iz+yDYserp8q94MG7fnp9orNSiArrsg09w=; b=rAxnm+Z0MDI8g5
+	Mo6xdADEagfg1pqo7rYXvwA1VjnavnEKGInW5mH4i1mhTUM/46WoM/zhrOnmD4m2gUAoInN6TFZN3
+	riXjCy2cjwXGRnCJdlo2hNIGEW7mhtbSvQjjilTpzN1WrrUiole9wgr+p8vNkhsUNlSwr4ZVRFXC5
+	dR7Pj2LV+b1J8elFFlOBDjq6JEGtp9TSpF+8z+CAtzHmqZWeeBhvdyOVyzpgRZMmxMawSyPF3o+xs
+	fa/A/hOoA61F0uP/kAVCVLCjlCOPtX0gapZJYMNioANoBglojfg488op33TB1cbXnhD3zeI+OEogE
+	jORjiu06Q6rpU7+BDsHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8nve-0003p6-8K; Mon, 02 Mar 2020 16:28:26 +0000
+	id 1j8nwN-0004Od-12; Mon, 02 Mar 2020 16:29:11 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8nvZ-0003oC-GE; Mon, 02 Mar 2020 16:28:23 +0000
+ id 1j8nwJ-0004ML-9m; Mon, 02 Mar 2020 16:29:08 +0000
 Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
  helo=diego.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1j8nvP-0003vM-Sj; Mon, 02 Mar 2020 17:28:11 +0100
+ id 1j8nwF-0003w2-0L; Mon, 02 Mar 2020 17:29:03 +0100
 From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
 To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Re: [PATCH 2/2] arm64: dts: rockchip: Describe PX30 GPU
-Date: Mon, 02 Mar 2020 17:28:11 +0100
-Message-ID: <3626817.RKRXn6i3ii@diego>
-In-Reply-To: <20200302155808.11273-2-miquel.raynal@bootlin.com>
+Subject: Re: [PATCH 1/2] dt-bindings: gpu: mali-bifrost: Add Rockchip PX30
+ compatible
+Date: Mon, 02 Mar 2020 17:29:02 +0100
+Message-ID: <2766954.FXckbfHlGz@diego>
+In-Reply-To: <20200302155808.11273-1-miquel.raynal@bootlin.com>
 References: <20200302155808.11273-1-miquel.raynal@bootlin.com>
- <20200302155808.11273-2-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_082821_698941_E2602845 
-X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-CacheID: sfid-20200302_082907_487135_FBB9C115 
+X-CRM114-Status: UNSURE (   8.46  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -72,27 +72,18 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Miquel,
-
-Am Montag, 2. M=E4rz 2020, 16:58:08 CET schrieb Miquel Raynal:
-> PX30 SoCs feature an ARM Bifrost GPU.
+Am Montag, 2. M=E4rz 2020, 16:58:07 CET schrieb Miquel Raynal:
+> Rockchip PX30 SoCs feature a Bifrost Mali GPU.
 > =
 
 > Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 > ---
-> =
+>  Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml | 1 +
 
-> Hello, this change is just adding basic GPU support, more work is
-> needed on the devfreq/opp side to be sure everything works and is
-> properly described. Hence, this proposal aims at describing the HW
-> block only, not its hability to change voltages/frequencies.
-
-please check mainline for existing patches ;-)
+already in mainline ;-)
 
 https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?=
-id=3Da07f34a083f211c5f2f9b073a9b499accee078a2
-
-Heiko
+id=3Dad848dd53385b61f3c2b94d3466bf799f31035a7
 
 
 
