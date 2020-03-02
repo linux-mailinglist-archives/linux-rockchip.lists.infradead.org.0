@@ -2,73 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B70F1751EE
-	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Mar 2020 03:49:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C560917570A
+	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Mar 2020 10:28:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ZXXgOM8HkisYu6pciz/DFjJiAoWEPpJcv4+LXYeoCrM=; b=iqa62dgz7aHwldK1diQiJ25mFO
-	HN3tbNrj7G47ZqEgoXIAVc3ZfJULvgmadBDwkNipbJmMGqeF264pJJx4i+T6lXg6PTquN3x8tOs/x
-	103lucLgI93+X08lbPictdIY3pUpnnFiRMyaylOW83ShjHE6f83ECatJkZMRobhWE216Hb7KNDYNe
-	a/cV85J+4nr5ctV/rpAbSTL/3JXsHkB7K3P+3LJP2Ec9Yvmf1JpruM2JHUVe+eHcuzKdoTZL4+GI2
-	FcLSzGnGOlFbrKmyw+nntPIsreo3rkFHpF9Qv5GJcmCXG9wzrJgZ6eTOxsWedLmwqjpLi1yHOYbJD
-	uAU8pFZg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=v7dDikFi6t+lxiFsA9g9OCOM/J8naBE9P+2kDKcecnA=; b=hF8
+	5DmUHgJPzk1AXc/6r9ai0NEzbLMrtq3Z4h9YrEKIvs516l/WrdaIKWgnIhkqcmvAql3yiocNiy9Od
+	2OP0JX1kbJViXamlJKqy6dY4YCcY8Zeyjee30ZEqZ5K3RrMctEkoYa+GzpREOj6D9BT6tzeWUkfPZ
+	0Ggx2CbOJpPvB7Eit142GjgDf+0v7gHMfHycu+cftjqbzqlOSawIDhQBLTguSyXiYhRqp2qIWxBUA
+	CGU75qQ1Li44H95hB1YFsFH7i/k7HKzdG+w2mRDXWr4JhCHd7FWCgoaf9U7UrUXp2bfMTCQ6IFb69
+	ZAlQlRHmzV9rVUi80f5RM7ME1Rl4p5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8b8b-0005Le-2Q; Mon, 02 Mar 2020 02:48:57 +0000
-Received: from lucky1.263xmail.com ([211.157.147.130])
+	id 1j8hNK-0006XV-RR; Mon, 02 Mar 2020 09:28:34 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8b7v-0004qI-4g; Mon, 02 Mar 2020 02:48:18 +0000
-Received: from localhost (unknown [192.168.167.209])
- by lucky1.263xmail.com (Postfix) with ESMTP id 9A11D88B7C;
- Mon,  2 Mar 2020 10:48:10 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-ABS-CHECKED: 0
-Received: from ubuntu18.lan (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P32633T140274292483840S1583117267237852_; 
- Mon, 02 Mar 2020 10:48:10 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <c5eb842b9ce8545d356d288e04daeba7>
-X-RL-SENDER: yifeng.zhao@rock-chips.com
-X-SENDER: zyf@rock-chips.com
-X-LOGIN-NAME: yifeng.zhao@rock-chips.com
-X-FST-TO: miquel.raynal@bootlin.com
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-X-System-Flag: 0
-From: Yifeng Zhao <yifeng.zhao@rock-chips.com>
-To: miquel.raynal@bootlin.com, richard@nod.at, vigneshr@ti.com,
- robh+dt@kernel.org
-Subject: [PATCH 3/3] MAINTAINERS: add maintainers to rockchip nfc
-Date: Mon,  2 Mar 2020 10:47:44 +0800
-Message-Id: <20200302024744.28185-4-yifeng.zhao@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200302024744.28185-1-yifeng.zhao@rock-chips.com>
-References: <20200302024744.28185-1-yifeng.zhao@rock-chips.com>
+ id 1j8hMw-00066h-5D; Mon, 02 Mar 2020 09:28:11 +0000
+Received: by mail-wm1-x341.google.com with SMTP id f15so10217930wml.3;
+ Mon, 02 Mar 2020 01:28:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=sR0FhEsXSKCCDrYRRwKUYpG9davzGH2FG45Vb4rPVY0=;
+ b=pe2NDbzEDUeJVBuGPCC0zHwwRrT2VgikGLIph0jn/amj7jKusxj8bBgx6xhWEh6+ys
+ Dln/FDJbTM2pAwgFnMu6mLaqxZhH0Yf5kWOKxv9iy+uma5UlYkOXrR22t6SwSiz9YmFV
+ UE/qvfBMjf/GMqsq0UAB87X4ysYD5sCn6f7kLR8Wz+sJUEB7wB3a2kZsp4aVYOKe2Mx+
+ p5t+Ma3TwPiW0J+Rm0rW6VJbOf5DkjNDnF31IJeIgEvLUjH9qjyl3oJad8gznYQCXP5i
+ rBYftUrErtUSpYZCizAtnye+vXYI7TIWm/UMZe4G2vT6nC3rxFIUAa5fSrjSc0zuAqjg
+ 9s6w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=sR0FhEsXSKCCDrYRRwKUYpG9davzGH2FG45Vb4rPVY0=;
+ b=R/lTk7IUGti+ij771cs3SVBY+C/bHDoWExm4nY4RVPFYC2GeOkUSFQh0ET02V/aTtY
+ mm+7xp4XsH11t8aNudaBaqNTs/pQvCk4Muz9uI7qORNiRaghKe255LNPyCrEuFXDcYlk
+ N0pf6+hld8KC+CUR752a7t99jVRS+fHh4XZ86qy/4XMCMyYtSjpzIAw2Rb2GeaT/wVB9
+ zdsuaDTXKOSIJv8vsKC/EArLUe+F44Iy0L18BvGjy6w6luTqNxvaDFodmwDwdr+DqPen
+ Hzffdr9KrjnFYzS5yyQhFMhmn08dMyLUhuTRqg5UjYhnNDYcaXsvL5U0EYITOO/D3ttt
+ g8Iw==
+X-Gm-Message-State: APjAAAU1OCl6NYgEV4hMa8tRZYkhyr6k6tnIBjB2bdqUkw9YftMifFdh
+ 4ecX7HqoMjwVSXan2sC8Duna/gcr
+X-Google-Smtp-Source: APXvYqy8B+IgcMqy+8qba2hEueNLMFC5ir1xC35q040W4SL8MWxcVg98fLxouNiejPKaNx3J23vsNw==
+X-Received: by 2002:a1c:7419:: with SMTP id p25mr18094748wmc.129.1583141287239; 
+ Mon, 02 Mar 2020 01:28:07 -0800 (PST)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id m3sm6409586wrx.9.2020.03.02.01.28.06
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 02 Mar 2020 01:28:06 -0800 (PST)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH v2 1/3] dt-bindings: arm: fix Rockchip Kylin board bindings
+Date: Mon,  2 Mar 2020 10:27:57 +0100
+Message-Id: <20200302092759.3291-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200301_184815_451559_3B6D0B9D 
-X-CRM114-Status: UNSURE (   7.60  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20200302_012810_195532_0BE32E72 
+X-CRM114-Status: GOOD (  12.35  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.130 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,8 +94,8 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Yifeng Zhao <yifeng.zhao@rock-chips.com>,
- linux-mtd@lists.infradead.org, heiko@sntech.de,
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-rockchip@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -90,38 +103,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+A test with the command below gives this error:
+
+arch/arm/boot/dts/rk3036-kylin.dt.yaml: /: compatible:
+['rockchip,rk3036-kylin', 'rockchip,rk3036']
+is not valid under any of the given schemas
+
+Normally the dt-binding is the authoritative part, so boards should follow
+the binding, but in the kylin-case the compatible from the .dts is used for
+years in the field now, so fix the binding, as otherwise
+we would break old users.
+
+Fix this error by changing 'rockchip,kylin-rk3036' to
+'rockchip,rk3036-kylin' in rockchip.yaml.
+
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/rockchip.yaml
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
+ Documentation/devicetree/bindings/arm/rockchip.yaml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Changes in v2: None
-
- MAINTAINERS | 2 ++
- 1 file changed, 2 insertions(+)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 4017e6b760be..79cfad293549 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -2242,6 +2242,7 @@ L:	linux-rockchip@lists.infradead.org
- T:	git git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git
- S:	Maintained
- F:	Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
-+F:	Documentation/devicetree/bindings/*/*rockchip*.yaml
- F:	arch/arm/boot/dts/rk3*
- F:	arch/arm/boot/dts/rv1108*
- F:	arch/arm/mach-rockchip/
-@@ -2249,6 +2250,7 @@ F:	drivers/clk/rockchip/
- F:	drivers/i2c/busses/i2c-rk3x.c
- F:	drivers/*/*rockchip*
- F:	drivers/*/*/*rockchip*
-+F:	drivers/*/*/*/*rockchip*
- F:	sound/soc/rockchip/
- N:	rockchip
+diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+index 874b0eaa2..203158038 100644
+--- a/Documentation/devicetree/bindings/arm/rockchip.yaml
++++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+@@ -443,7 +443,7 @@ properties:
  
+       - description: Rockchip Kylin
+         items:
+-          - const: rockchip,kylin-rk3036
++          - const: rockchip,rk3036-kylin
+           - const: rockchip,rk3036
+ 
+       - description: Rockchip PX3 Evaluation board
 -- 
-2.17.1
-
-
+2.11.0
 
 
 _______________________________________________
