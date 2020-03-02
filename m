@@ -2,56 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A78F175D7B
-	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Mar 2020 15:44:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1ABA2175D9A
+	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Mar 2020 15:53:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LLjXaMPY84qoYXlbifxie82ezeZRNgE+UNE4rG7brNc=; b=ITHZTY75RiAFEM
-	Q24X/uyC/C5Z5OnwS4y9Stg85gbglG1pJzQgLyvYsXZF4VdGWKWi3wLvsjVc+S1QxBqEipw8LR0ax
-	3JCN6vyWQMN5U/DVFYl84D3RIJnTbZzDf/k1K1GoiXcmMHPcTNKibdb621oItXxxKOU1kx9ra8cHV
-	HNntjzP4JPDDu2CMZ6GB19MtLxydrYAb3qSx5MK+K8ohokOkrvfF3WpE5fU02BWTGiKngJomc04ti
-	RPtJii15o7/hXl9fVs9EhimvF55peSkKCAd8hsPk6ywJ8egXedNr2tHD/okAgkzNLqwm3VXcIycDj
-	ecZXzSE3ryG+uc0k2TEg==;
+	List-Owner; bh=tOqA/oZMUTPhEbixCwGq+Am2Jhs3lhVk1UQH3O+nT6E=; b=jQ1gZ44B8/Ipgr
+	B1LBicTlcQRawcGKQ+6Zl/GRoJKLAohECY24iyWCirvllLmzk57aOBkom7IK9gHufHOCoA318qquG
+	hlun//GBNFCiSyKN9yNpKZm8LmjTGSp9rY37e2Qa/kFG/qQQ8sUzi+aWgJyrPgqBTd9DiGV84vXRh
+	/m3mBzQWBW2vhPZEb5hMC31Kzr5Pbv1Q5xcfcJBNqUd5FsTqJn2H55WgynQE2NWcNYtmYQ4b0APfk
+	zIIlZUafTt7dmCDAgaEKx2zEgzEJYyMXPnDDjbr+m7MphNL/7AlKu55Dtpvt4q3A/xUq8oVyKLbfL
+	hkChwM51O/haxXDIilyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8mJA-00028q-K6; Mon, 02 Mar 2020 14:44:36 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1j8mRd-0005iv-TG; Mon, 02 Mar 2020 14:53:21 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8mJ7-00028M-82
- for linux-rockchip@lists.infradead.org; Mon, 02 Mar 2020 14:44:35 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 4B76F295793;
- Mon,  2 Mar 2020 14:44:30 +0000 (GMT)
-Date: Mon, 2 Mar 2020 15:44:26 +0100
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Subject: Re: [PATCH v6 2/6] media: v4l2-core: Add helpers to build the H264
- P/B0/B1 reflists
-Message-ID: <20200302154426.5fb09f91@collabora.com>
-In-Reply-To: <20200302142433.0ad1b383@coco.lan>
+ id 1j8mRb-0005iS-1p
+ for linux-rockchip@lists.infradead.org; Mon, 02 Mar 2020 14:53:20 +0000
+Received: from coco.lan (ip5f5ad4e9.dynamic.kabel-deutschland.de
+ [95.90.212.233])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 33B702080C;
+ Mon,  2 Mar 2020 14:53:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583160798;
+ bh=1w9gTDD0mrerWDAhBZGXC4+5deyJLyj8xbrGt2brb1M=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=vbwhZe/bLsp7NOTdfaVhIg+efxFdCJXjCBx2bckpQ3qaVSuNgaPyuipY86T6XKLqX
+ DOW1RIhCiMORXa1+yh/1bhqlm3O6V8hFAnkYx0EswUdqMs97/5Y36Y2eWBV0tHP8WC
+ KxF/fGryhEoQqyJOI147qTKoyO0TkR3UmSczIyxQ=
+Date: Mon, 2 Mar 2020 15:53:12 +0100
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Boris Brezillon <boris.brezillon@collabora.com>
+Subject: Re: [PATCH v6 5/6] media: rkvdec: Add the rkvdec driver
+Message-ID: <20200302155312.62185b98@coco.lan>
+In-Reply-To: <20200302153039.0c4ff54f@collabora.com>
 References: <20200220163016.21708-1-ezequiel@collabora.com>
- <20200220163016.21708-3-ezequiel@collabora.com>
- <20200302142433.0ad1b383@coco.lan>
-Organization: Collabora
+ <20200220163016.21708-6-ezequiel@collabora.com>
+ <20200302145746.3e94c1d1@coco.lan>
+ <20200302153039.0c4ff54f@collabora.com>
 X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_064433_553907_A6310DB2 
-X-CRM114-Status: GOOD (  29.74  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200302_065319_134176_A7500C12 
+X-CRM114-Status: GOOD (  22.18  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,188 +89,72 @@ Cc: devicetree@vger.kernel.org, kernel@collabora.com,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Hans Verkuil <hverkuil@xs4all.nl>, Nicolas Dufresne <nicolas@ndufresne.ca>,
  Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, 2 Mar 2020 14:24:33 +0100
-Mauro Carvalho Chehab <mchehab+huawei@kernel.org> wrote:
-
-> Em Thu, 20 Feb 2020 13:30:12 -0300
-> Ezequiel Garcia <ezequiel@collabora.com> escreveu:
-> 
-> > From: Boris Brezillon <boris.brezillon@collabora.com>
-> > 
-> > Building those list is a standard procedure described in section
-> > '8.2.4 Decoding process for reference picture lists construction' of
-> > the H264 specification.
-> > 
-> > We already have 2 drivers needing the same logic (hantro and rkvdec) and
-> > I suspect we will soon have more.
-> > 
-> > Let's provide generic helpers to create those lists.
-> > 
-> > Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
-> > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-> > ---
-> >  drivers/media/v4l2-core/Kconfig     |   4 +
-> >  drivers/media/v4l2-core/Makefile    |   1 +
-> >  drivers/media/v4l2-core/v4l2-h264.c | 258 ++++++++++++++++++++++++++++
-> >  include/media/v4l2-h264.h           |  85 +++++++++
-> >  4 files changed, 348 insertions(+)
-> >  create mode 100644 drivers/media/v4l2-core/v4l2-h264.c
-> >  create mode 100644 include/media/v4l2-h264.h
-> > 
-> > diff --git a/drivers/media/v4l2-core/Kconfig b/drivers/media/v4l2-core/Kconfig
-> > index 39e3fb30ba0b..8a4ccfbca8cf 100644
-> > --- a/drivers/media/v4l2-core/Kconfig
-> > +++ b/drivers/media/v4l2-core/Kconfig
-> > @@ -45,6 +45,10 @@ config VIDEO_PCI_SKELETON
-> >  config VIDEO_TUNER
-> >  	tristate
-> >  
-> > +# Used by drivers that need v4l2-h264.ko
-> > +config V4L2_H264
-> > +	tristate
-> > +
-> >  # Used by drivers that need v4l2-mem2mem.ko
-> >  config V4L2_MEM2MEM_DEV
-> >  	tristate
-> > diff --git a/drivers/media/v4l2-core/Makefile b/drivers/media/v4l2-core/Makefile
-> > index 786bd1ec4d1b..c5c53e0941ad 100644
-> > --- a/drivers/media/v4l2-core/Makefile
-> > +++ b/drivers/media/v4l2-core/Makefile
-> > @@ -21,6 +21,7 @@ obj-$(CONFIG_VIDEO_V4L2) += v4l2-dv-timings.o
-> >  obj-$(CONFIG_VIDEO_TUNER) += tuner.o
-> >  
-> >  obj-$(CONFIG_V4L2_MEM2MEM_DEV) += v4l2-mem2mem.o
-> > +obj-$(CONFIG_V4L2_H264) += v4l2-h264.o
-> >  
-> >  obj-$(CONFIG_V4L2_FLASH_LED_CLASS) += v4l2-flash-led-class.o
-> >  
-> > diff --git a/drivers/media/v4l2-core/v4l2-h264.c b/drivers/media/v4l2-core/v4l2-h264.c
-> > new file mode 100644
-> > index 000000000000..4f68c27ec7fd
-> > --- /dev/null
-> > +++ b/drivers/media/v4l2-core/v4l2-h264.c
-> > @@ -0,0 +1,258 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * V4L2 H264 helpers.
-> > + *
-> > + * Copyright (C) 2019 Collabora, Ltd.
-> > + *
-> > + * Author: Boris Brezillon <boris.brezillon@collabora.com>
-> > + */
-> > +
-> > +#include <linux/module.h>
-> > +#include <linux/sort.h>
-> > +
-> > +#include <media/v4l2-h264.h>
-> > +
-> > +/**
-> > + * v4l2_h264_init_reflist_builder() - Initialize a P/B0/B1 reference list
-> > + *				      builder
-> > + *
-> > + * @b: the builder context to initialize
-> > + * @dec_params: decode parameters control
-> > + * @slice_params: first slice parameters control
-> > + * @sps: SPS control
-> > + * @dpb: DPB to use when creating the reference list
-> > + */
-> > +void
-> > +v4l2_h264_init_reflist_builder(struct v4l2_h264_reflist_builder *b,
-> > +		const struct v4l2_ctrl_h264_decode_params *dec_params,
-> > +		const struct v4l2_ctrl_h264_slice_params *slice_params,
-> > +		const struct v4l2_ctrl_h264_sps *sps,
-> > +		const struct v4l2_h264_dpb_entry *dpb)  
-> 
-> The prototype here is not nice...
-> 
-> > +{
-> > +	int cur_frame_num, max_frame_num;
-> > +	unsigned int i;
-> > +
-> > +	max_frame_num = 1 << (sps->log2_max_frame_num_minus4 + 4);
-> > +	cur_frame_num = slice_params->frame_num;
-> > +
-> > +	memset(b, 0, sizeof(*b));
-> > +	if (!(slice_params->flags & V4L2_H264_SLICE_FLAG_FIELD_PIC))
-> > +		b->cur_pic_order_count = min(dec_params->bottom_field_order_cnt,
-> > +					     dec_params->top_field_order_cnt);
-> > +	else if (slice_params->flags & V4L2_H264_SLICE_FLAG_BOTTOM_FIELD)
-> > +		b->cur_pic_order_count = dec_params->bottom_field_order_cnt;
-> > +	else
-> > +		b->cur_pic_order_count = dec_params->top_field_order_cnt;
-> > +
-> > +	for (i = 0; i < 16; i++) {
-> > +		u32 pic_order_count;
-> > +
-> > +		if (!(dpb[i].flags & V4L2_H264_DPB_ENTRY_FLAG_ACTIVE))
-> > +			continue;
-> > +
-> > +		b->refs[i].pic_num = dpb[i].pic_num;  
-> 
-> ... as you're expecting a fixed number of elements at DPB array, and using
-> a magic number (16) inside the for loop.
-
-I used to have a '#define V4L2_H264_NUM_DPB_ENTRIES 16' but have been
-told that this is an arbitrary limitation (the spec does not explicitly
-limit the DPB size, even if all the HW we've seen seem to limit it to
-16). Maybe we can pass the DPB array size as an argument so it stays
-HW-specific.
-
-> 
-> > +
-> > +		/*
-> > +		 * Handle frame_num wraparound as described in section
-> > +		 * '8.2.4.1 Decoding process for picture numbers' of the spec.
-> > +		 * TODO: This logic will have to be adjusted when we start
-> > +		 * supporting interlaced content.
-> > +		 */
-> > +		if (dpb[i].frame_num > cur_frame_num)
-> > +			b->refs[i].frame_num = (int)dpb[i].frame_num -
-> > +					       max_frame_num;
-> > +		else
-> > +			b->refs[i].frame_num = dpb[i].frame_num;
-> > +
-> > +		if (!(dpb[i].flags & V4L2_H264_DPB_ENTRY_FLAG_FIELD))
-> > +			pic_order_count = min(dpb[i].top_field_order_cnt,
-> > +					      dpb[i].bottom_field_order_cnt);
-> > +		else if (dpb[i].flags & V4L2_H264_DPB_ENTRY_FLAG_BOTTOM_FIELD)
-> > +			pic_order_count = dpb[i].bottom_field_order_cnt;
-> > +		else
-> > +			pic_order_count = dpb[i].top_field_order_cnt;
-> > +
-> > +		b->refs[i].pic_order_count = pic_order_count;
-> > +		b->unordered_reflist[b->num_valid] = i;
-> > +		b->num_valid++;
-> > +	}
-> > +
-> > +	for (i = b->num_valid; i < ARRAY_SIZE(b->unordered_reflist); i++)
-> > +		b->unordered_reflist[i] = i;
-> > +}
-> > +EXPORT_SYMBOL_GPL(v4l2_h264_init_reflist_builder);
-> > +
-> > +static int v4l2_h264_p_ref_list_cmp(const void *ptra, const void *ptrb,
-> > +				    const void *data)
-> > +{
-> > +	const struct v4l2_h264_reflist_builder *builder = data;
-> > +	u8 idxa, idxb;
-> > +
-> > +	idxa = *((u8 *)ptra);
-> > +	idxb = *((u8 *)ptrb);
-> > +
-> > +	if (builder->refs[idxa].longterm != builder->refs[idxb].longterm) {  
-> 
-> Where do you ensure that idxa and idxb won't be bigger than NUM_DPB_ENTRIES?
-
-If it does that means something went wrong in the init func. I can add
-a WARN_ON() and bail out if you want, but I can't return an error here
-(that's not what the caller of the callback expects).
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+RW0gTW9uLCAyIE1hciAyMDIwIDE1OjMwOjM5ICswMTAwCkJvcmlzIEJyZXppbGxvbiA8Ym9yaXMu
+YnJlemlsbG9uQGNvbGxhYm9yYS5jb20+IGVzY3JldmV1OgoKPiBPbiBNb24sIDIgTWFyIDIwMjAg
+MTQ6NTc6NDYgKzAxMDAKPiBNYXVybyBDYXJ2YWxobyBDaGVoYWIgPG1jaGVoYWIraHVhd2VpQGtl
+cm5lbC5vcmc+IHdyb3RlOgo+IAo+ID4gPiArI2RlZmluZSBNX04oY3R4aWR4LCBpZGMwX20sIGlk
+YzBfbiwgaWRjMV9tLCBpZGMxX24sCQlcCj4gPiA+ICsJICAgIGlkYzJfbSwgaWRjMl9uLCBpbnRy
+YV9tLCBpbnRyYV9uKQkJCVwKPiA+ID4gKwlbMF1bKGN0eGlkeCldID0ge2lkYzBfbSwgaWRjMF9u
+fSwJCQlcCj4gPiA+ICsJWzFdWyhjdHhpZHgpXSA9IHtpZGMxX20sIGlkYzFfbn0sCQkJXAo+ID4g
+PiArCVsyXVsoY3R4aWR4KV0gPSB7aWRjMl9tLCBpZGMyX259LAkJCVwKPiA+ID4gKwlbM11bKGN0
+eGlkeCldID0ge2ludHJhX20sIGludHJhX259ICAgIAo+ID4gCj4gPiBIbW0uLi4gSSBjYW4ndCBl
+dmVuIGltYWdpbmUgd2hhdCBhIG1hY3JvIG5hbWVkICJNX04iIHdvdWxkIGRvLgo+ID4gUGxlYXNl
+IHVzZSBhIGJldHRlciBuYW1lIGZvciBpdC4gIAo+IAo+IFdlbGwsIHRoZSBtZWFuaW5nIG9mIHRo
+b3NlIGZpZWxkcyBpcyBleHBsYWluZWQgaW4gdGhlIHNwZWMsIGFuZCB0aGUKPiBuYW1lIGl0c2Vs
+ZiBoYXMgYmVlbiBjaG9zZW4gc28gaXQncyBzaG9ydCBlbm91Z2ggdG8gbm90IGhhdmUgbGluZXMK
+PiBleGNlZWRpbmcgODAgY2hhcnMgd2hpbGUgc3RpbGwga2VlcGluZyB0aGUgbnVtYmVyIG9mIGxp
+bmVzIHVzZWQgZm9yIHRoZQo+IGNhYmFjX3RhYmxlW10gZGVmaW5pdGlvbiBhY2NlcHRhYmxlLiBC
+dXQsIEknbSBvcGVuIHRvIGFueSBvdGhlcgo+IHN1Z2dlc3Rpb24uCgpXZWxsLCBjb2RlIHJldmll
+d2VycyBtYXkgbm90IGhhdmUgdGhlIHNwZWNzIG9uIHRoZWlyIGhhbmRzIHdoZW4KcmV2aWV3aW5n
+IHBhdGNoZXMgOi0pCgpLZWVwIDgwIGNvbHVtbnMgaXMgc29tZXRoaW5nIHdlIGRlc2lyZSwgYnV0
+IG5vdCBhdCB0aGUgZXhwZW5zZSBvZgptYWtpbmcgdGhlIGNvZGUgaGFyZGVyIHRvIG1haW50YWlu
+IG9yIHVuZGVyc3RhbmQuIFlldCwgSSBzdXNwZWN0CnRoYXQgaW5jcmVhc2luZyB0aGUgbmFtZSBi
+eSBhIGZldyBleHRyYSBieXRlcyB3aWxsIHN0aWxsIGFsbG93IGl0IHRvCnNpdCBhdCB0aGUgODAg
+Y29sdW1ucyBzcGFjZVsxXS4KClsxXSBUaGlzIG1hY3JvIHBhc3NlcyA5IHBhcmFtZXRlcnMuIElm
+IGVhY2ggcGFyYW1ldGVyIGNvbnN1bWVzIDQgY2hhcnMsCiAgICBhbmQgdGhleSdyZSBwcmVjZWRl
+ZCBieSBhIHRhYiwgdGhhdCB3b3VsZCBtZWFuIDQ0IGNvbHVtbnMuCgpQZXJoYXBzIHNvbWV0aGlu
+ZyBsaWtlIENBQkFDX0VOVFJZIG9yIGV2ZW4gTU5fVkFMVUVTIHdvdWxkIGJlIGJldHRlci4KCj4g
+Cj4gPiAKPiA+IC0KPiA+IAo+ID4gV2l0aCByZWdhcmRzIHRvIHRoZSBtYWNybyBpdHNlbGYsIGF0
+IGxlYXN0IGZvciBteSBleWVzLCBpdCBsb29rZWQgYmFkLAo+ID4gZnJvbSBsb25nLXRlcm0gbWFp
+bnRlbmFuY2UgUG9WLCB0byBoYXZlIGEgZmlyc3QgYXJndW1lbnQgKGN0eGlkeCkgd2hvc2UKPiA+
+IHZhbHVlIGlzIGp1c3QgYSBtb25vdG9uaWMgbGluZWFybHktaW5jcmVtZW50ZWQgY291bnRlci4g
+IAo+IAo+IEl0J3Mgbm90LCB3ZSBoYXZlIGhvbGVzIGluIHRoZSBtaWRkbGUsIGhlbmNlIHRoZSBl
+eHBsaWNpdCBpbmRleGluZy4gSQo+IGFsc28gdHJpZWQgdG8gaGF2ZSBzb21ldGhpbmcgYXMgY2xv
+c2UgYXMgcG9zc2libGUgdG8gdGhlIHNwZWMsIHNvCj4gcGVvcGxlIGNhbiBlYXNpbHkgc2VlIHdo
+ZXJlIGl0IGNvbWVzIGZyb20uCj4gCj4gPiAKPiA+IEkgbWVhbiwgdGhlIHdheSBpdCBpcywgaXQg
+c291bmRzIHJpc2t5LCBhcyBvbmUgbWlnaHQgbWlzcyBhIG51bWJlcgo+ID4gYW5kIG9uZSBlbnRp
+cmUgbGluZSBvZiB0aGUgYXJyYXkgd291bGQgYmUgZmlsbGVkIHdpdGggemVyb3MuICAKPiAKPiBU
+aGF0J3MgZXhhY3RseSB3aHkgSSB1c2VkIGV4cGxpY2l0IGluZGV4aW5nOiBJIHdhbnQgc3BlY2lm
+aWMgcG9ydGlvbnMKPiBvZiB0aGUgdGFibGUgdG8gYmUgMC1maWxsZWQgOi0pLgoKQWgsIE9LISBJ
+bXBsZW1lbnRhdGlvbiBtYWtlcyBzZW5zZSB0aGVuLgo+IAo+ID4gICAKPiA+ID4gKwo+ID4gPiAr
+LyoKPiA+ID4gKyAqIENvbnN0YW50IENBQkFDIHRhYmxlLgo+ID4gPiArICogQnVpbHQgZnJvbSB0
+aGUgdGFibGVzIGRlc2NyaWJlZCBpbiBzZWN0aW9uICc5LjMuMS4xIEluaXRpYWxpc2F0aW9uIHBy
+b2Nlc3MKPiA+ID4gKyAqIGZvciBjb250ZXh0IHZhcmlhYmxlcycgb2YgdGhlIEgyNjQgc3BlYy4K
+PiA+ID4gKyAqLwo+ID4gPiArc3RhdGljIGNvbnN0IHM4IHJrdmRlY19oMjY0X2NhYmFjX3RhYmxl
+WzRdWzQ2NF1bMl0gPSB7Cj4gPiA+ICsJLyogVGFibGUgOS0xMiDigJMgVmFsdWVzIG9mIHZhcmlh
+YmxlcyBtIGFuZCBuIGZvciBjdHhJZHggZnJvbSAwIHRvIDEwICovCj4gPiA+ICsJTV9OKDAsIDIw
+LCAtMTUsIDIwLCAtMTUsIDIwLCAtMTUsIDIwLCAtMTUpLCAgICAKPiA+IAo+ID4gU28sIChtYXli
+ZSBleGNlcHQgaWYgdGhlIGN0eGlkeCB2YWx1ZSBoYXMgc29tZSByZWFsIG1lYW5pbmcpLAo+ID4g
+cGVyaGFwcyB5b3UgY291bGQsIGluc3RlYWQsIHN3aXRjaCB0aGUgYXJyYXkgb3JkZXIgYXQgdGhl
+IHRhYmxlcywKPiA+IGFuZCBnZXQgcmlkIG9mIGN0eGlkeCBwYXJhbWV0ZXIgZm9yIGdvb2QsIHNv
+IHRoZSBhYm92ZSBjb2RlIHdvdWxkCj4gPiBiZSBsaWtlOiAgCj4gCj4gSSBjYW4ndCBzd2l0Y2gg
+dGhlIGFycmF5IG9yZGVyIHNpbmNlIHRoZSBIVyBleHBlY3RzIHRoaW5ncyB0byBiZQo+IG9yZ2Fu
+aXplZCB0aGlzIHdheSAodGhhdCB0YWJsZSBpcyBkaXJlY3RseSBjb3BpZWQgdG8gYSBtZW1vcnkg
+cmVnaW9uCj4gdGhhdCdzIHBhc3NlZCB0byB0aGUgSFcpLgo+IAo+ID4gCj4gPiAjZGVmaW5lIElO
+SVRfTU5fUEFJUlMoaWRjMF9tLCBpZGMwX24sIGlkYzFfbSwgaWRjMV9uLAlcCj4gPiAJICAgICAg
+IGlkYzJfbSwgaWRjMl9uLCBpbnRyYV9tLCBpbnRyYV9uKQlcCj4gPiAJewkJCQkJCVwKPiA+IAkJ
+WzBdID0ge2lkYzBfbSwgaWRjMF9ufSwJCQlcCj4gPiAJCVsxXSA9IHtpZGMxX20sIGlkYzFfbn0s
+CQkJXAo+ID4gCQlbMl0gPSB7aWRjMl9tLCBpZGMyX259LAkJCVwKPiA+IAkJWzNdID0ge2ludHJh
+X20sIGludHJhX259CQlcCj4gPiAJfSwKPiA+IAo+ID4gc3RhdGljIGNvbnN0IHM4IHJrdmRlY19o
+MjY0X2NhYmFjX3RhYmxlWzQ2NF1bNF1bMl0gPSB7Cj4gPiAJLyogVGFibGUgOS0xMiDigJMgVmFs
+dWVzIG9mIHZhcmlhYmxlcyBtIGFuZCBuIGZvciBjdHhJZHggZnJvbSAwIHRvIDEwICovCj4gPiAJ
+SU5JVF9NTl9QQUlSUygyMCwgLTE1LCAyMCwgLTE1LCAyMCwgLTE1LCAyMCwgLTE1KSwKPiA+IAku
+Li4gIAo+IAoKClRoYW5rcywKTWF1cm8KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hp
+cEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtcm9ja2NoaXAK
