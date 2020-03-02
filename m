@@ -2,54 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0ED31175EFF
-	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Mar 2020 16:59:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8746175F95
+	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Mar 2020 17:28:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vn4h6WWhtkugpiyae4gbXAXb2kDxjnYO2+ONetm1DD8=; b=pxVlGj1XnR/l9Z
-	4ioxyqzWG6xJcHqhaTu/hpHLuYXVXqzeWTSigKHDX5OYiNq7rOE2IbSeIjdgAg4/pp/IKsN023Td7
-	RPYRw98EtSEpaVdX9OPDRSlmJ3Y6N7DJOTYpi3vqr1sSxm4shyHUcyZTAe7jymnCRlvdCyShumRo6
-	xIfjX+dVV4MbawVOyANOJkcVcO4BBZXo4+T6Dlsrl+rMxNETXoAEwJgImqpuSc3VZyCzbo426S1hT
-	m84lY/XzMp0fiDQF22mU0Dz9AoJ9UaLJ8+k7iaeCSBmKoG+Clw0K0gT1nrpuDHkF9724l54DVZEDR
-	rWJb4YBbgsl8MX6dePfw==;
+	List-Owner; bh=xvv/E2pHN3P6fbvPu6ilsV87QFu+PMuCrIGQMrYlbfM=; b=uDrFuJ23NlrEKT
+	kuPJERppDnlf6d25ryN1rokzfXJtGWlDY1unUHh3fSdQarRA4Vvye5uTVXHdAbyfsYECc+ryZUpgH
+	0gE3y3MFfjcsCkHqzlsQlvWM3pSdRaIbs3ELVwp0zNx+FLeuhkoVJmLuW0y3r+DrrnjhxzlSTDZTD
+	fsMWrSdFr6vULa66Eju64jedrSUJln1ORyxbRFDUA3EANlvb15cvP1mSXU8TKoCzi6PUScEOoylv6
+	a7EXB2OYQ3YATca6y9tTYYKs1E8H1cmqF7pVKEddDiNqJRzqweI6mbYwvXodw09hvrl3dp5bGBcKt
+	Udyo8IuIkl7NPNZvifNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8nTF-0005p8-VL; Mon, 02 Mar 2020 15:59:05 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1j8nve-0003p6-8K; Mon, 02 Mar 2020 16:28:26 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8nSc-0005DI-P6; Mon, 02 Mar 2020 15:58:29 +0000
-X-Originating-IP: 90.89.41.158
-Received: from localhost.localdomain
- (lfbn-tou-1-1473-158.w90-89.abo.wanadoo.fr [90.89.41.158])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 175FB1BF217;
- Mon,  2 Mar 2020 15:58:21 +0000 (UTC)
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- <linux-rockchip@lists.infradead.org>
-Subject: [PATCH 2/2] arm64: dts: rockchip: Describe PX30 GPU
-Date: Mon,  2 Mar 2020 16:58:08 +0100
-Message-Id: <20200302155808.11273-2-miquel.raynal@bootlin.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200302155808.11273-1-miquel.raynal@bootlin.com>
+ id 1j8nvZ-0003oC-GE; Mon, 02 Mar 2020 16:28:23 +0000
+Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1j8nvP-0003vM-Sj; Mon, 02 Mar 2020 17:28:11 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH 2/2] arm64: dts: rockchip: Describe PX30 GPU
+Date: Mon, 02 Mar 2020 17:28:11 +0100
+Message-ID: <3626817.RKRXn6i3ii@diego>
+In-Reply-To: <20200302155808.11273-2-miquel.raynal@bootlin.com>
 References: <20200302155808.11273-1-miquel.raynal@bootlin.com>
+ <20200302155808.11273-2-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_075826_985880_8005B807 
-X-CRM114-Status: GOOD (  10.07  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200302_082821_698941_E2602845 
+X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -63,40 +59,44 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org,
  Maxime Chevallier <maxime.chevallier@bootlin.com>,
  Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Daniel Vetter <daniel@ffwll.ch>, Miquel Raynal <miquel.raynal@bootlin.com>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-UFgzMCBTb0NzIGZlYXR1cmUgYW4gQVJNIEJpZnJvc3QgR1BVLgoKU2lnbmVkLW9mZi1ieTogTWlx
-dWVsIFJheW5hbCA8bWlxdWVsLnJheW5hbEBib290bGluLmNvbT4KLS0tCgpIZWxsbywgdGhpcyBj
-aGFuZ2UgaXMganVzdCBhZGRpbmcgYmFzaWMgR1BVIHN1cHBvcnQsIG1vcmUgd29yayBpcwpuZWVk
-ZWQgb24gdGhlIGRldmZyZXEvb3BwIHNpZGUgdG8gYmUgc3VyZSBldmVyeXRoaW5nIHdvcmtzIGFu
-ZCBpcwpwcm9wZXJseSBkZXNjcmliZWQuIEhlbmNlLCB0aGlzIHByb3Bvc2FsIGFpbXMgYXQgZGVz
-Y3JpYmluZyB0aGUgSFcKYmxvY2sgb25seSwgbm90IGl0cyBoYWJpbGl0eSB0byBjaGFuZ2Ugdm9s
-dGFnZXMvZnJlcXVlbmNpZXMuCgpUaGFua3MsCk1pcXXDqGwKCiBhcmNoL2FybTY0L2Jvb3QvZHRz
-L3JvY2tjaGlwL3B4MzAuZHRzaSB8IDEzICsrKysrKysrKysrKysKIDEgZmlsZSBjaGFuZ2VkLCAx
-MyBpbnNlcnRpb25zKCspCgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hp
-cC9weDMwLmR0c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3B4MzAuZHRzaQppbmRl
-eCBmOTk5ODhiMDgyNDQuLjc3ODBlNTMyZDMxYiAxMDA2NDQKLS0tIGEvYXJjaC9hcm02NC9ib290
-L2R0cy9yb2NrY2hpcC9weDMwLmR0c2kKKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hp
-cC9weDMwLmR0c2kKQEAgLTk5Nyw2ICs5OTcsMTkgQEAKIAkJc3RhdHVzID0gImRpc2FibGVkIjsK
-IAl9OwogCisJZ3B1OiBncHVAZmY0MDAwMDAgeworCQljb21wYXRpYmxlID0gInJvY2tjaGlwLHB4
-MzAtbWFsaSIsICJhcm0sbWFsaS1iaWZyb3N0IjsKKwkJcmVnID0gPDB4MCAweGZmNDAwMDAwIDB4
-MCAweDQwMDA+OworCQlpbnRlcnJ1cHRzID0gPEdJQ19TUEkgNDUgSVJRX1RZUEVfTEVWRUxfSElH
-SD4sCisJCQkgICAgIDxHSUNfU1BJIDQ2IElSUV9UWVBFX0xFVkVMX0hJR0g+LAorCQkJICAgICA8
-R0lDX1NQSSA0NyBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKKwkJaW50ZXJydXB0LW5hbWVzID0gImdw
-dSIsICJtbXUiLCAiam9iIjsKKwkJY2xvY2tzID0gPCZjcnUgU0NMS19HUFU+OworCQljbG9jay1u
-YW1lcyA9ICJjbGtfbWFsaSI7CisJCXBvd2VyLWRvbWFpbnMgPSA8JnBvd2VyIFBYMzBfUERfR1BV
-PjsKKwkJc3RhdHVzID0gImRpc2FibGVkIjsKKwl9OworCiAJdm9wYjogdm9wQGZmNDYwMDAwIHsK
-IAkJY29tcGF0aWJsZSA9ICJyb2NrY2hpcCxweDMwLXZvcC1iaWciOwogCQlyZWcgPSA8MHgwIDB4
-ZmY0NjAwMDAgMHgwIDB4ZWZjPjsKLS0gCjIuMjAuMQoKCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51
-eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+Hi Miquel,
+
+Am Montag, 2. M=E4rz 2020, 16:58:08 CET schrieb Miquel Raynal:
+> PX30 SoCs feature an ARM Bifrost GPU.
+> =
+
+> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+> ---
+> =
+
+> Hello, this change is just adding basic GPU support, more work is
+> needed on the devfreq/opp side to be sure everything works and is
+> properly described. Hence, this proposal aims at describing the HW
+> block only, not its hability to change voltages/frequencies.
+
+please check mainline for existing patches ;-)
+
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?=
+id=3Da07f34a083f211c5f2f9b073a9b499accee078a2
+
+Heiko
+
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
