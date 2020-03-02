@@ -2,90 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5001175E39
-	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Mar 2020 16:31:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD0C6175EEC
+	for <lists+linux-rockchip@lfdr.de>; Mon,  2 Mar 2020 16:58:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=na2E+FRhfMBaNiyphKO/mrOm0RT2hGxwG7rMyE95evU=; b=ob0WMT7x05QtHr7/iKmTbWPwhe
-	i4nOHwZjkJ8QvDl2aZpZYEv1Pr+RXACoi3vgoSbEX6JOfSQZy9iKuwYscM6WBEuOMGum/Kp4k9isf
-	UDPCuamCFUMzpQFbnimHoY4FHnKwDEwV4jNDP0K22bYHThgS2G8aFXAyBYMeXGoWbIwKbUuUxWu88
-	3+t53KIJfjics+vYbKWi4/pL1pMy9hxzblohXNSCVf9Ec//PJjMA+C1I0LE+VvnfwO8sHL7jGUtgx
-	oRQi09B69rsO9nfTlV5Qg4m5FwzvuDuYFy4tsaF7ENiG2VFbu24eeOscfYi4XiEN33GX5CGj0INkC
-	ZhsW4alw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UbiEvqrTdgV4XtgAxCCRJar8FYcu+LFbOck0ux2l9yk=; b=C8GrBOe+oTZTON
+	LnYJHS5cLxzbud8iO0mmDhUYtKn5DZ08IW/0tN7ftJn7bUhAsOFXfqy5aT20e+HAZYVOum5nlkDbe
+	Mfhgr5Ze3tDn3s380UguiM6pjqIPSpRbvTh4uDQcpix1BXosFpdxVmgPpvVxCx2Ydj3lB+hXrSzDT
+	W1WbVNT9wYay1JdA6W1vAqke6s1YfP1jgZlidKrTqQ3yhyRFzhfqzLto6jeKeovCDFHUMd8DaODiL
+	kmXWv2356nR9LJeC6R1XR9p+ytW2Mth4NhzVVIS0+1TXUgoHg406LljiBoWrFJJcUVN9+HfsNXq5u
+	kXBRmehVb2x++jzumB3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8n2d-0002jA-NK; Mon, 02 Mar 2020 15:31:35 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1j8nSj-0005HB-BZ; Mon, 02 Mar 2020 15:58:33 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8n29-0002F6-Fd; Mon, 02 Mar 2020 15:31:06 +0000
-Received: by mail-wr1-x442.google.com with SMTP id j7so116594wrp.13;
- Mon, 02 Mar 2020 07:31:05 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=eFDMzvNJhb9C/gjmO5CDDLNllKw2BwatUidg0r9OWqc=;
- b=NSQIFwJD1hXMDRKHfbPuIpu/mXLa55KLrT5j9PkX2LU2p6fhyD5ya9mMjqqi9hYXns
- ojy+Xua5CGm/m0RBQPSaq2h6039qAft3JpLhUHEFvmilxIJM7zps6og557U91v93+M/S
- lYz1C1YMUA8gKmbKd5PDDp3nHPW1kJbvQ/Rvsj2NwajiE5d/5dgwslqDIJ+QV+ubL921
- e+kmE0tuiwM4jTR2vUUVzi3J9iWRp4xpFRhiGTgKquBIqWqb2PGCj5L+xNvLw+K32d/C
- xvSrsD/d3RvqeiYWxUDCMW8XtKGORklwjwOIbe3l6XJ3F1dDSyoeUEP3x7jAPBEL0DPy
- V4YA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=eFDMzvNJhb9C/gjmO5CDDLNllKw2BwatUidg0r9OWqc=;
- b=C8wr2Ud2EREFU6Wp2ZXJ6YXlS956J9ig/HQyrGXkOm8Y9c3u/Sardt3FdTOpMQ5MGm
- RzHzyDJQ6qBNrMdIHt99aNOcAQoUxlLdnmMxn3dHMtPWQdFru6s0xVkERi8Fc81oVqqg
- yhNglYcvG+JeI7KPJnG6hyTT1mgdBuReeW13F3OpJKwsas5fRPfhm6r4xfsXv8QjdMxW
- i0uE8bBqBxKpCavnZHY0Tw8rLSZkoxzF1/hTTcecW43wDF6KHqei3uy9vCJ4OJsO80x9
- Ev2cQiSbCAYbd0Kjfl0huNOqLxqxBH3Wz6oWJnYk2nO1KZG6t29Ti+0gXUhR7I5F9wAd
- /pVA==
-X-Gm-Message-State: ANhLgQ30sSHOX+193A6ss+T/UFpjqgLuRAu0cPSPJhpLSUB9ePUBlvFk
- FzHbUxGazI8f+YpGh52SIeY=
-X-Google-Smtp-Source: ADFU+vvbIMHFtMOd/nNEBuz9Sck5/PZWnPzOs6+fSxM1d70yAvo48rCFI0OCKH6irEXdAFZNLy9kgw==
-X-Received: by 2002:adf:dfcc:: with SMTP id q12mr140710wrn.171.1583163063985; 
- Mon, 02 Mar 2020 07:31:03 -0800 (PST)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id g7sm23967540wrm.72.2020.03.02.07.31.02
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 02 Mar 2020 07:31:03 -0800 (PST)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH 2/2] arm64: dts: add bus to rockchip amba nodenames
-Date: Mon,  2 Mar 2020 16:30:47 +0100
-Message-Id: <20200302153047.17101-2-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200302153047.17101-1-jbx6244@gmail.com>
-References: <20200302153047.17101-1-jbx6244@gmail.com>
+ id 1j8nSS-00055F-4U; Mon, 02 Mar 2020 15:58:17 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: myjosserand) with ESMTPSA id BFAD1296058
+From: =?UTF-8?q?Myl=C3=A8ne=20Josserand?= <mylene.josserand@collabora.com>
+To: linux@armlinux.org.uk, heiko@sntech.de, mturquette@baylibre.com,
+ sboyd@kernel.org
+Subject: [PATCH 0/2] ARM: Add Rockchip rk3288w support
+Date: Mon,  2 Mar 2020 16:57:01 +0100
+Message-Id: <20200302155703.278421-1-mylene.josserand@collabora.com>
+X-Mailer: git-send-email 2.25.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_073105_522317_A89A6C38 
-X-CRM114-Status: GOOD (  15.07  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200302_075816_310037_5B3062F1 
+X-CRM114-Status: GOOD (  11.86  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,109 +56,38 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+Cc: mylene.josserand@collabora.com, kernel@collabora.com,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-A test with the command below gives for example this error:
-
-arch/arm64/boot/dts/rockchip/rk3399-evb.dt.yaml: amba: $nodename:0:
-'amba' does not match
-'^(bus|soc|axi|ahb|apb)(@[0-9a-f]+)?$'
-
-AMBA is a open standard for the connection and
-management of functional blocks in a SoC.
-It's compatible with 'simple-bus', so fix this error
-by adding 'bus' to all Rockchip 'amba' nodes.
-
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/
-schemas/simple-bus.yaml
-
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/px30.dtsi   | 2 +-
- arch/arm64/boot/dts/rockchip/rk3308.dtsi | 2 +-
- arch/arm64/boot/dts/rockchip/rk3328.dtsi | 2 +-
- arch/arm64/boot/dts/rockchip/rk3368.dtsi | 2 +-
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 2 +-
- 5 files changed, 5 insertions(+), 5 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-index 4f484119f..215515ccb 100644
---- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-@@ -700,7 +700,7 @@
- 		clock-names = "pclk", "timer";
- 	};
- 
--	amba {
-+	amba: bus {
- 		compatible = "simple-bus";
- 		#address-cells = <2>;
- 		#size-cells = <2>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-index 3bd5bc860..ac43bc3f7 100644
---- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-@@ -513,7 +513,7 @@
- 		status = "disabled";
- 	};
- 
--	amba {
-+	amba: bus {
- 		compatible = "simple-bus";
- 		#address-cells = <2>;
- 		#size-cells = <2>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-index bad41bc6f..d9490f417 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-@@ -142,7 +142,7 @@
- 		};
- 	};
- 
--	amba {
-+	amba: bus {
- 		compatible = "simple-bus";
- 		#address-cells = <2>;
- 		#size-cells = <2>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3368.dtsi b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-index a0df61c61..2079e877a 100644
---- a/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-@@ -136,7 +136,7 @@
- 		};
- 	};
- 
--	amba {
-+	amba: bus {
- 		compatible = "simple-bus";
- 		#address-cells = <2>;
- 		#size-cells = <2>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 33cc21fcf..63355ba7c 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -197,7 +197,7 @@
- 		#clock-cells = <0>;
- 	};
- 
--	amba {
-+	amba: bus {
- 		compatible = "simple-bus";
- 		#address-cells = <2>;
- 		#size-cells = <2>;
--- 
-2.11.0
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGVsbG8gZXZlcnlvbmUsCgpUaGlzIHNlcmllcyBhZGRzIHRoZSBzdXBwb3J0IGZvciB0aGUgUm9j
+a2NoaXAgUkszMjg4dyB3aGljaAppcyBhIHJldmlzaW9uIG9mIHRoZSBSSzMyODguIEl0IGlzIG1v
+c3RseSB0aGUgc2FtZSBTT0MgZXhjZXB0CmZvciwgYXQgbGVhc3QsIG9uZSBjbG9jayB0cmVlIHdo
+aWNoIGlzIGRpZmZlcmVudC4gVGhpcyBkaWZmZXJlbmNlCmlzIG9ubHkga25vd24gYnkgdGhlIEJT
+UCBrZXJuZWwgcmVwb3NpdG9yeSBbMV0uCgpDdXJyZW50bHksIHRoZSBtYWlubGluZSBrZXJuZWwg
+d2lsbCBub3QgaGFuZyBvbiByazMyODh3IGJ1dCBpdCBpcwpwcm9iYWJseSBieSAiY2hhbmNlIiBi
+ZWNhdXNlIHdlIGdvdCBhbiBpc3N1ZSBvbiBhIGxvd2VyIGtlcm5lbCB2ZXJzaW9uLgoKQWNjb3Jk
+aW5nIHRvIFJvY2tjaGlwJ3MgVS1Cb290IFsyXSwgdGhlIHJrMzI4OHcgY2FuIGJlIGRldGVjdGVk
+IHVzaW5nCnRoZSBIRE1JIHJldmlzaW9uIG51bWJlciAoPSAweDFBKSBpbiB0aGlzIHZlcnNpb24g
+b2YgdGhlIFNPQy4KTm90IHRvIHJlbHkgb24gVS1Cb290IGFib3V0IHRoZSBjb21wYXRpYmxlLCB0
+aGUgcGF0Y2ggMDEgd2lsbCBoYW5kbGUKdGhlIGRldGVjdGlvbiBvZiB0aGUgSERNSSB2ZXJzaW9u
+IGluIHRoZSByb2NrY2hpcCBzdWJzeXN0ZW0uCgpMZXQgbWUga25vdyB3aGF0IHlvdSB0aGluayEK
+CkJlc3QgcmVnYXJkcywKTXlsw6huZSBKb3NzZXJhbmQKClsxXSBodHRwczovL2dpdGh1Yi5jb20v
+cm9ja2NoaXAtbGludXgva2VybmVsL2Jsb2IvZGV2ZWxvcC00LjQvZHJpdmVycy9jbGsvcm9ja2No
+aXAvY2xrLXJrMzI4OC5jI0w5NjAuLkw5NjQKWzJdIGh0dHBzOi8vZ2l0aHViLmNvbS9yb2NrY2hp
+cC1saW51eC91LWJvb3QvYmxvYi9uZXh0LWRldi9hcmNoL2FybS9tYWNoLXJvY2tjaGlwL3JrMzI4
+OC9yazMyODguYyNMMzc4Li5MMzg4CgpNeWzDqG5lIEpvc3NlcmFuZCAoMik6CiAgQVJNOiBSb2Nr
+Y2hpcDogSGFuZGxlIHJrMzI4OC9yazMyODh3IHJldmlzaW9uCiAgY2xrOiByb2NrY2hpcDogcmsz
+Mjg4OiBIYW5kbGUgY2xvY2sgdHJlZSBmb3IgcmszMjg4dwoKIGFyY2gvYXJtL21hY2gtcm9ja2No
+aXAvcm9ja2NoaXAuYyB8IDQ1ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKIGRyaXZl
+cnMvY2xrL3JvY2tjaGlwL2Nsay1yazMyODguYyB8IDIxICsrKysrKysrKysrKystLQogaW5jbHVk
+ZS9zb2Mvcm9ja2NoaXAvcmV2aXNpb24uaCAgIHwgMjIgKysrKysrKysrKysrKysrCiAzIGZpbGVz
+IGNoYW5nZWQsIDg2IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCiBjcmVhdGUgbW9kZSAx
+MDA2NDQgaW5jbHVkZS9zb2Mvcm9ja2NoaXAvcmV2aXNpb24uaAoKLS0gCjIuMjUuMQoKCl9fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlw
+IG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
