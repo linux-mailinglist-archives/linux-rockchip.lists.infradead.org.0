@@ -2,99 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEC23177BA0
-	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Mar 2020 17:11:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30408177E5E
+	for <lists+linux-rockchip@lfdr.de>; Tue,  3 Mar 2020 19:18:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZAyfmWAr4tFEWYRs+lL/akQ6hg18jqj9L5zXUfS3t9U=; b=TG00PiM4/kVNvx
-	ZIil/a0V9zfe7sPsZUcdDkUipQWsNPXNuNG5HFf2/KxVdKV3Y0YJCvlJpakNa3ibzwNXZPnm77Utt
-	+TZs/9CJMPE9ofRv/hdYzKrd7MwcEkVgagEKu6lP2HE+wHouifpZb6te0+NE6FiccKoL1uFtcaW6D
-	4SKiiau5wYUpvEbQ2s34K2ml9GQsrPOAyQVNohBt9kdeWIfn3rw7jZOWwc//bwwvxnwOUZPCVTebN
-	DhkMvB7EgKMKpRZNtlcVx4kAt0uYfbhRT6ejEmbKu0rXQKYwRBQAY7uIB/Ih5PXVsMQTmhYoC32nM
-	PSO3sPYRkbJlsgUgADoA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XjcSzcCj/r2B4uZp/WJ0NhtsqMEh+TlAo3vT6tPxDjw=; b=MQmJR22pM55XXA
+	s/Q4KQ5OzKfhfMAGkLIbR+qExynAYhKbEAmX+jJZSM861oBvxf106bm6LDHv2sOc2Dnqcb9YSUBaS
+	k1v6LGT9IkhzAoy+XPOlGb8k7G3b1hhhFJJcujWyM4ftBn+Qz+c6PdR0X+2qyiqDsYII7PHmcun5m
+	8+cIlI/qe3vDgpMlw8rjyyOBNFG56WP4zHrdNFzc03tY7tp+L4O9WynyPKaKcfHNUux6o/Ibg8HhF
+	nksQMwd027Vh478SkD4X1XsCC+bvwFfkNsBb0Y3Vqw5kU64uBbJHnwgpcDiENgsSzbVd/KsmY1tly
+	uEuERr2feP1QgTakYE+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9A8m-0007R0-F3; Tue, 03 Mar 2020 16:11:28 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1j9C7u-0001Ou-NP; Tue, 03 Mar 2020 18:18:42 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9A8k-0007Qc-0n; Tue, 03 Mar 2020 16:11:27 +0000
-Received: by mail-wr1-x443.google.com with SMTP id v4so5056285wrs.8;
- Tue, 03 Mar 2020 08:11:25 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:from:to:cc:references:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=+SzpTWQT3Ru6kg4f8Uj442Z+FLl17Fjj2BOSrwBP2tA=;
- b=JvMOlYXWMq0Xw1p+AMSLlLQea6qJWe/imSAwECDX0rMvjouX6tXhiTzi6l9PrEOKZH
- mdkAi2TI7TwqRHeOSAeN4q9w+Mfvk/US67aBFw14KS0w9HiygV3cRD7xJ9z5VRS3PXBr
- 1jaA30b2hzUR0OE/6lXyX2IVnqwBLNuda+OJC4XozRGsax9OtpUhBPfs8c9xgxYWsIqA
- VuTKw5sjUPmNkpaU06pgtELNoVNP1YKm/LPYmN5gz9+5lVtFmcvVqJxFf5crA986u4HC
- RRz7ZOhDNXYl+enXW+x20gh545dfWhHil10Ywy6BIlDvrtAIwOqafQWOWpl3U18e7JhH
- mXOg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:from:to:cc:references:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=+SzpTWQT3Ru6kg4f8Uj442Z+FLl17Fjj2BOSrwBP2tA=;
- b=ecnkHYaO4j8qHi6bx9JTJ1QqmvvNPv9erRwBd0rFoz/1mUBGRUThFHc4xUw+GBB+h+
- /wVvEXB/nHaUDVgj1DbcRchxxXFwNtFllCjFmR+jgLZOdoSMXwyX6ofRbUxuK5AmU+ZJ
- 6FcNx5Gizo907QttVT7wIfS7tq2Dx6RQKY+7F6RGmO6ucoIHIy6MjwCh6xMqSDABP5eZ
- CYXNThcnrP7j6D2S0SYWpPxDrBrEJM20Sd0hM65yIt0xO0IXX116PAsGbjiUNvU6LIL0
- ProxZYDDCeECCvPGCVx+jdOeKnHB9V5DJYcPuOYLyZOpzi5ukajB6+DC23xd3uMcc/ib
- o4Vg==
-X-Gm-Message-State: ANhLgQ33BxgBxT97KLJyllUd3pfWTxsq80OC/M2lh6gLAdY+OMP4jVHi
- jsjsW553jFVNN6lqu5dhWNE=
-X-Google-Smtp-Source: ADFU+vsxfAPm/x+IV3Wuxbup+iavPIjBhYZz58QDdng5ipw9V1mPOt2TMllv6EsxNgKf3ODQBhebjg==
-X-Received: by 2002:a5d:5743:: with SMTP id q3mr6227104wrw.135.1583251884664; 
- Tue, 03 Mar 2020 08:11:24 -0800 (PST)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id s5sm32669295wru.39.2020.03.03.08.11.23
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 03 Mar 2020 08:11:23 -0800 (PST)
-Subject: Re: [PATCH v3 2/2] arm64: dts: rockchip: Add initial support for
- Pinebook Pro
-From: Johan Jonker <jbx6244@gmail.com>
-To: Tobias Schramm <t.schramm@manjaro.org>, Rob Herring <robh+dt@kernel.org>, 
- Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Andy Yan <andy.yan@rock-chips.com>
-References: <20200229144817.355678-1-t.schramm@manjaro.org>
- <20200229144817.355678-3-t.schramm@manjaro.org>
- <bcc2c8d4-a2cd-58c1-89af-e42439f8f344@gmail.com>
-Message-ID: <850e60b0-c260-c184-839f-93b064388e32@gmail.com>
-Date: Tue, 3 Mar 2020 17:11:21 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j9C7m-0001Hk-21; Tue, 03 Mar 2020 18:18:35 +0000
+Received: from xps13 (unknown [91.224.148.103])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id A38CA200006;
+ Tue,  3 Mar 2020 18:18:17 +0000 (UTC)
+Date: Tue, 3 Mar 2020 19:18:16 +0100
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Heiko =?UTF-8?B?U3TDvGJuZXI=?= <heiko@sntech.de>
+Subject: Re: [PATCH 1/2] dt-bindings: gpu: mali-bifrost: Add Rockchip PX30
+ compatible
+Message-ID: <20200303191816.11dbc313@xps13>
+In-Reply-To: <2766954.FXckbfHlGz@diego>
+References: <20200302155808.11273-1-miquel.raynal@bootlin.com>
+ <2766954.FXckbfHlGz@diego>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <bcc2c8d4-a2cd-58c1-89af-e42439f8f344@gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_081126_064326_A0D726BD 
-X-CRM114-Status: GOOD (  14.81  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200303_101834_234770_185B7D2C 
+X-CRM114-Status: GOOD (  10.20  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,104 +62,31 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- Alexis Ballier <aballier@gentoo.org>,
- Katsuhiro Suzuki <katsuhiro@katsuster.net>, linux-kernel@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>,
- Kever Yang <kever.yang@rock-chips.com>, Markus Reichl <m.reichl@fivetechno.de>,
- linux-rockchip@lists.infradead.org, Matthias Kaehlcke <mka@chromium.org>,
- Jagan Teki <jagan@amarulasolutions.com>, Nick Xie <nick@khadas.com>,
- Vasily Khoruzhick <anarsoul@gmail.com>, Vivek Unune <npcomplete13@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
-
-Add more reg = <..>
-
-On 3/3/20 4:37 PM, Johan Jonker wrote:
-> Hi Tobias,
-> 
-> Some minor style issues.
-> This dts file contains a partition node.
-> Question for the maintainers (Heiko?):
-> Should that partition be included or not?
-
-[..]
-
->> +&i2c4 {
->> +	i2c-scl-falling-time-ns = <20>;
->> +	i2c-scl-rising-time-ns = <600>;
->> +	status = "okay";
->> +
->> +	fusb0: fusb30x@22 {
->> +		compatible = "fcs,fusb302";
->> +		reg = <0x22>;
->> +		fcs,int_n = <&gpio1 RK_PA2 GPIO_ACTIVE_HIGH>;
->> +		pinctrl-names = "default";
->> +		pinctrl-0 = <&fusb0_int_gpio>;
-> 
->> +		status = "okay";
-> 
-> Remove or else status below.
-> New nodes are already okay I think.
-> If insure check compiled flat dts output to see if it is still there.
-> 
->> +		vbus-supply = <&vbus_typec>;
->> +
->> +		connector {
->> +			compatible = "usb-c-connector";
->> +			label = "USB-C";
->> +			op-sink-microwatt = <1000000>;
->> +			power-role = "dual";
->> +			sink-pdos =
->> +				<PDO_FIXED(5000, 2500, PDO_FIXED_USB_COMM)>;
->> +			source-pdos =
->> +				<PDO_FIXED(5000, 1400, PDO_FIXED_USB_COMM)>;
->> +			try-power-role = "sink";
->> +
->> +			ports {
->> +				#address-cells = <1>;
->> +				#size-cells = <0>;
->> +
->> +				port@0 {
-
-reg = <0>;
-
->> +					usbc_hs: endpoint {
->> +						remote-endpoint =
->> +							<&u2phy0_typec_hs>;
->> +					};
->> +				};
->> +
->> +				port@1 {
-
-reg = <1>;
-
->> +					usbc_ss: endpoint {
->> +						remote-endpoint =
->> +							<&tcphy0_typec_ss>;
->> +					};
->> +				};
->> +
->> +				port@2 {
-
-reg = <2>;
-
->> +					usbc_dp: endpoint {
->> +						remote-endpoint =
->> +							<&tcphy0_typec_dp>;
->> +					};
->> +				};
->> +			};
->> +		};
->> +	};
->> +};
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+CkhlaWtvIFN0w7xibmVyIDxoZWlrb0BzbnRlY2guZGU+IHdyb3RlIG9uIE1vbiwgMDIgTWFyIDIw
+MjAgMTc6Mjk6MDIKKzAxMDA6Cgo+IEFtIE1vbnRhZywgMi4gTcOkcnogMjAyMCwgMTY6NTg6MDcg
+Q0VUIHNjaHJpZWIgTWlxdWVsIFJheW5hbDoKPiA+IFJvY2tjaGlwIFBYMzAgU29DcyBmZWF0dXJl
+IGEgQmlmcm9zdCBNYWxpIEdQVS4KPiA+IAo+ID4gU2lnbmVkLW9mZi1ieTogTWlxdWVsIFJheW5h
+bCA8bWlxdWVsLnJheW5hbEBib290bGluLmNvbT4KPiA+IC0tLQo+ID4gIERvY3VtZW50YXRpb24v
+ZGV2aWNldHJlZS9iaW5kaW5ncy9ncHUvYXJtLG1hbGktYmlmcm9zdC55YW1sIHwgMSArICAKPiAK
+PiBhbHJlYWR5IGluIG1haW5saW5lIDstKQo+IAo+IGh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHVi
+L3NjbS9saW51eC9rZXJuZWwvZ2l0L3RvcnZhbGRzL2xpbnV4LmdpdC9jb21taXQvP2lkPWFkODQ4
+ZGQ1MzM4NWI2MWYzYzJiOTRkMzQ2NmJmNzk5ZjMxMDM1YTcKPiAKPiAKCllvdSBzaG91bGQgcHJv
+YmFibHkgc2V0dXAgYW4gYXV0b21hdGljIGFuc3dlciA7KQoKSSBhZG1pdCB0aGF0IEkgd3JvdGUg
+dGhlc2UgcGF0Y2hlcyBzb21lIHRpbWUgYWdvIHdoZW4gaXQgd2FzIG5vdCBpbgptYWlubGluZSBh
+bmQgZGlkIG5vdCBjaGVjayBiZWZvcmUgc2VuZGluZyBpdCA6JAoKQ2hlZXJzLApNaXF1w6hsCgpf
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2Nr
+Y2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
