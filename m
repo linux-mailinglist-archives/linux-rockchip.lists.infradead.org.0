@@ -2,85 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A20E1795CC
-	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Mar 2020 17:56:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABCB2179666
+	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Mar 2020 18:11:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Oc1NEuO4DTCvdsyM7Gkav48nnmInuAZJ2pjt/wl3ywI=; b=d5ZUf2lxuAeI02
-	TT2HZVKJY0baznx/qTt87xaaqwAwU6ku9V0viXBOsSKO+8rM0JusPizBYEDKZjVqIrnQfB9FBu2Sw
-	vQWdxfIgWxSBgXJ0RyoI76P1oEPRVDnxLe7seEtoG/zVVmEmQEBYKvmNZ8imJx5z+1dBsu6a6cPo9
-	GduMr9PL0BOrjiwtXUek6jA4tILfYsNlhjntvMb7kVdJHAkRgSYpE3ovi3jv5XsupvXdWpg7WVITm
-	FanYUfa+Nc3C3GVL+r/54+08D3CRsg/nxP4xr+tCO4vGO507yRkcgKyiBq+TZ1A7jroj8+hgxzNE5
-	5rVih4yyjsnd5tkCPI8A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=R9yic3FyyDQN63CfHO77Lv6rEzw12HFEL8IlRPeFS84=; b=Iy5qRbgr+JEwwkJBcEFor8kNH
+	tlHnghBlZtpwcSHY8zdu91YLtWAMoapmsGRSaPCN8a0r77siK29cGeLz1+MCjK1X/l1eRzxinzA6H
+	Vl/h5Uuo8+5+OUSxU7VNhsVwr4fad9Ey+2nKRcf4KB+0UB6CCj/Kn/8QjCBZaNxC+cHx5axF5EHy2
+	Wxz61nyAD2nJszC6FtmcKLZz3S47Hj/te4NWs+u5PSVHhk8SIF5+yRsMMjYotm1nELIKffsdf+GGp
+	0WE+4969wgAaMDcAO5hruaqsPOHXrpxlq1mDcN/JHOaHlkb0y5ErEyI1Xc6/SgAApXNUgT6Vtr4JI
+	YZwCw5pkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9XJy-00036R-Bw; Wed, 04 Mar 2020 16:56:34 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9XJr-00031V-Bd; Wed, 04 Mar 2020 16:56:29 +0000
-Received: by mail-oi1-f196.google.com with SMTP id i1so2766006oie.8;
- Wed, 04 Mar 2020 08:56:26 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=1x6Tl4FkquqbFK2U7e561blQbQkLtLaOfZkxuV3Uifk=;
- b=gnmZBclf+jY+oMns5hLMUDdPwvPSFsPKHJUVOxSsLHgy1KNdvSWUZVx8WFrmljdHU4
- XCQ28jR0UD1osZx4zajukHk6EXtwy0Idiq87bKgVtoDvKLM01G4+6yGK21VImU3GazzO
- zxp1SnVc5ZZvlI61+45q9mUjXRmkq0CenA1y83EZT4I1CnXsJ9AY0ZdRD1LVgowT+NcJ
- +ussLjvkzM4WCnwvVFhzE5Sw/RgC3erqnpmXVuZe8IvtYs9qGBbHQ5B4s9amKa/FvEB8
- VAghaeZZHc1G69PBR7E/4FpOEYyzAhN3DTGfZ9fP0l4S/CH0ZKRlfJV9UwatgKc0Nh2t
- 15NQ==
-X-Gm-Message-State: ANhLgQ1ns7MIEwPG3rnYav6SrWRMwv4A9fO+hxY2+Nwyw9JcnGBXdZGm
- YWGoMJ5P/NU+xBm4fqLQnw==
-X-Google-Smtp-Source: ADFU+vvN0s8xtsegXAsk83hpqJfBSA3bQkx7dF0MVL1rhBScQPKr6TdRvIrDvNFvUBC3bmvtUvwhqg==
-X-Received: by 2002:aca:c0c5:: with SMTP id q188mr2299956oif.169.1583340986232; 
- Wed, 04 Mar 2020 08:56:26 -0800 (PST)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id y14sm8992584oih.23.2020.03.04.08.56.25
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Mar 2020 08:56:25 -0800 (PST)
-Received: (nullmailer pid 18755 invoked by uid 1000);
- Wed, 04 Mar 2020 16:56:24 -0000
-Date: Wed, 4 Mar 2020 10:56:24 -0600
-From: Rob Herring <robh@kernel.org>
-To: Yifeng Zhao <yifeng.zhao@rock-chips.com>
-Subject: Re: [PATCH v3 2/3] dt-bindings: mtd: Describe Rockchip RK3xxx NAND
- flash controller
-Message-ID: <20200304165624.GA2630@bogus>
-References: <20200303094736.7490-1-yifeng.zhao@rock-chips.com>
- <20200303094736.7490-3-yifeng.zhao@rock-chips.com>
+	id 1j9XXw-0001aW-0A; Wed, 04 Mar 2020 17:11:00 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9XXm-0001Sd-Ru; Wed, 04 Mar 2020 17:10:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C8DF031B;
+ Wed,  4 Mar 2020 09:10:49 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4D0173F6CF;
+ Wed,  4 Mar 2020 09:10:49 -0800 (PST)
+Date: Wed, 4 Mar 2020 17:10:47 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH v2 1/3] dt-bindings: spi: convert rockchip spi bindings
+ to yaml
+Message-ID: <20200304171047.GD5646@sirena.org.uk>
+References: <20200122224555.6845-1-jbx6244@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200303094736.7490-3-yifeng.zhao@rock-chips.com>
+In-Reply-To: <20200122224555.6845-1-jbx6244@gmail.com>
+X-Cookie: Tomorrow, you can be anywhere.
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_085627_415385_48C0CE96 
-X-CRM114-Status: GOOD (  17.10  )
-X-Spam-Score: -1.0 (-)
+X-CRM114-CacheID: sfid-20200304_091050_946333_229B3D05 
+X-CRM114-Status: UNSURE (   9.96  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-1.0 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
- -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,161 +66,65 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, richard@nod.at,
- linux-rockchip@lists.infradead.org, linux-mtd@lists.infradead.org,
- miquel.raynal@bootlin.com, vigneshr@ti.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4494136438205786245=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Mar 03, 2020 at 05:47:35PM +0800, Yifeng Zhao wrote:
-> Documentation support for Rockchip RK3xxx NAND flash controllers
-> 
-> Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
-> ---
-> 
-> Changes in v3:
-> -change the title for the dt-bindings
-> 
-> Changes in v2: None
-> 
->  .../bindings/mtd/rockchip,nand.yaml           | 95 +++++++++++++++++++
->  1 file changed, 95 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/mtd/rockchip,nand.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/mtd/rockchip,nand.yaml b/Documentation/devicetree/bindings/mtd/rockchip,nand.yaml
-> new file mode 100644
-> index 000000000000..9a81f682ac01
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/mtd/rockchip,nand.yaml
-> @@ -0,0 +1,95 @@
-> +# SPDX-License-Identifier: GPL-2.0
 
-Dual license new bindings:
+--===============4494136438205786245==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="kvUQC+jR9YzypDnK"
+Content-Disposition: inline
 
-(GPL-2.0-only OR BSD-2-Clause)
 
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/mtd/rockchip,nand.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Rockchip SoCs NAND FLASH Controller (NFC) Device Tree Bindings
-> +
-> +allOf:
-> +  - $ref: "nand-controller.yaml"
-> +
-> +maintainers:
-> +  - Yifeng Zhao <yifeng.zhao@rock-chips.com>
-> +
-> +properties:
-> +  "#address-cells": true
-> +  "#size-cells": true
-> +
-> +  compatible:
-> +    const: rockchip,nfc
+--kvUQC+jR9YzypDnK
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Should be SoC specific.
+On Wed, Jan 22, 2020 at 11:45:53PM +0100, Johan Jonker wrote:
+> Current dts files with 'spi' nodes are manually verified.
+> In order to automate this process spi-rockchip.txt
+> has to be converted to yaml. In the new setup
+> spi-rockchip.yaml will inherit properties from
+> spi-controller.yaml.
+>=20
+> Add document to MAINTAINERS.
 
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: Module Clock
-> +      - description: Bus Clock
-> +
-> +  clock-names:
-> +    items:
-> +      - const: clk_nfc
-> +      - const: clk_ahb
+This doesn't apply against current code, please check and resend.
 
-'clk_' is redundant.
+--kvUQC+jR9YzypDnK
+Content-Type: application/pgp-signature; name="signature.asc"
 
-> +
-> +  clock-rates:
-> +      maximum: 150000000
+-----BEGIN PGP SIGNATURE-----
 
-Not a standard property. Should be implied by the compatible string.
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5f4RYACgkQJNaLcl1U
+h9AUJQf+NIBVp/NuXcA8ap1DTnZKngd1ChQwtZBK7j45Ck2jg/rcwmKK8WT3Dd89
+tlhn7yP8Ad1Bx7jxd7w76jpBVuPE3K9z0EjZeI6nnxxMdv15bW5+Rcrp8QetP0qA
+Yn5L8jNUSpFS97y7ACecT98AkKB8C6mExQ84U4s9qxjl5rZqzzlPmJBJASt9rgF4
+Ox/eSAEqdiv85KsmMGzqc5171uhicslVUvjCw5YFB0RVhm+fZw8G3PFpdJdQGt1w
+KRQkMrkEyLUU/znr92Ggk6ehIdMu4gzoLSk3Qe6DihtXVQPyE9LuY5PUZi81RpVZ
+GyDX0FN7FIBIO0xBFkF+V1cPyGtWPA==
+=JWON
+-----END PGP SIGNATURE-----
 
-> +
-> +  pinctrl-names: true
+--kvUQC+jR9YzypDnK--
 
-No need to specify this, pinctrl properties are allowed on any node and 
-added by the tool.
 
-> +
-> +patternProperties:
-> +  "^pinctrl-[0-9]+$": true
-
-Same here.
-
-> +
-> +  "^nand@[a-f0-9]$":
-
-Based on reg, should be only '[0-3]'
-
-> +    type: object
-> +    properties:
-> +      reg:
-> +        minimum: 0
-> +        maximum: 3
-> +
-> +      nand-ecc-step-size:
-> +        const: 1024
-> +
-> +      nand-ecc-strength:
-> +        enum: [16, 24 , 40, 60, 70]
-> +
-> +      nand-bus-width:
-> +        const: 8
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/clock/rk3308-cru.h>
-> +    nfc: nand-controller@ff4b0000 {
-> +      compatible = "rockchip,nfc";
-> +      reg = <0x0 0xff4b0000 0x0 0x4000>;
-> +      interrupts = <GIC_SPI 81 IRQ_TYPE_LEVEL_HIGH>;
-> +      clocks = <&cru SCLK_NANDC>, <&cru HCLK_NANDC>;
-> +      clock-names = "clk_nfc", "clk_ahb";
-> +      clock-rates = <150000000>;
-> +      pinctrl-names = "default";
-> +      pinctrl-0 = <&flash_csn0 &flash_rdy &flash_ale &flash_cle
-> +                  &flash_wrn &flash_rdn &flash_bus8>;
-> +
-> +      #address-cells = <1>;
-> +      #size-cells = <0>;
-> +      nand@0 {
-> +        reg = <0>;
-> +        nand-ecc-mode = "hw";
-> +        nand-ecc-strength = <16>;
-> +        nand-ecc-step-size = <1024>;
-> +        nand-bus-width = <8>;
-> +      };
-> +    };
-> +
-> +...
-> -- 
-> 2.17.1
-> 
-> 
-> 
+--===============4494136438205786245==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============4494136438205786245==--
+
