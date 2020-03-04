@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B26B179AF7
-	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Mar 2020 22:30:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F423179AF8
+	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Mar 2020 22:30:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
@@ -18,17 +18,17 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	L4lOnHlrX5zBdeQMcmbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9bb0-0003Rl-7f; Wed, 04 Mar 2020 21:30:26 +0000
+	id 1j9bbD-0003jl-Ul; Wed, 04 Mar 2020 21:30:39 +0000
 Received: from mail.manjaro.org ([176.9.38.148])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9bai-00030R-GR; Wed, 04 Mar 2020 21:30:10 +0000
+ id 1j9baj-00039C-3J; Wed, 04 Mar 2020 21:30:10 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.manjaro.org (Postfix) with ESMTP id 84C4237019F4;
- Wed,  4 Mar 2020 22:30:06 +0100 (CET)
+ by mail.manjaro.org (Postfix) with ESMTP id CA3C73701EA3;
+ Wed,  4 Mar 2020 22:30:07 +0100 (CET)
 X-Virus-Scanned: Debian amavisd-new at manjaro.org
 Received: from mail.manjaro.org ([127.0.0.1])
  by localhost (manjaro.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 3W5thPF20-qO; Wed,  4 Mar 2020 22:29:59 +0100 (CET)
+ with ESMTP id GD5JVFRiPpK4; Wed,  4 Mar 2020 22:30:06 +0100 (CET)
 From: Tobias Schramm <t.schramm@manjaro.org>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Heiko Stuebner <heiko@sntech.de>, Andy Yan <andy.yan@rock-chips.com>,
@@ -38,7 +38,7 @@ Date: Wed,  4 Mar 2020 22:29:16 +0100
 Message-Id: <20200304212918.689936-1-t.schramm@manjaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_133008_699153_D4C1F915 
+X-CRM114-CacheID: sfid-20200304_133009_289714_CBD2FB62 
 X-CRM114-Status: UNSURE (   8.89  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
