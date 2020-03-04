@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B4DB179829
-	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Mar 2020 19:42:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68CDE17982D
+	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Mar 2020 19:42:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,68 +11,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Fkp+BDZl+sv5qMmpVDTSrYxWETwp3v5GeJfyNnu367I=; b=dP7VATZSDfUJzRkj7Sjquqn/GJ
-	GAouHEL3yV2IyafmmXoP/9SHydSTFX+3rc2GvRKPGUOCeV7h9v+r0rW4kd43ewgNvGNc4HkKf+07l
-	RmoO+3jVfMBjmWSrDIuCMGrdqs5BTA0TM9fBtLWTFhdI9ZlJPBCIWsmhOaFtRVWAggxDebxA4oRAm
-	dz8k5gomDtiYS9zBYfauwv4lpFbPGqoiOKzULV8/5O0OUd/W7ljSC0mNKDssUkRlvxri9+xlFmKES
-	GU2zSvGjw6WcT4fSP4DAhpUDDct/u2xieWISyAV58oukVvGKTyZuCDPIjQDeIu7TnJtiqj+jd/a1s
-	/Fz5R00A==;
+	bh=hTYdhSit9LLrfKOv2FQD82JfLPUoxZBiFOZgbLMjr34=; b=gsw+sv8LvzQ1IcvmmfIk5ITfF4
+	20Dk+AS7QK8prdyZRcz0Zs8ms3vhJzmEoqaXgUo4Y4e2t/CaLkW6DKCw9gPgMS2MrY9Jhz5wsRGRZ
+	xcbm6yr6P3vF8CqYlT85y3HufLxZrt/2usbTP2ul8g3XjvH94b6xSUWqwthHy+2XvuCwXIQlt7gFK
+	t3f3UPkOn8G4THX7fPrXgVizOLSbem4vHiZATWIX7VzJA3atwwcHy0WtUqQb7ItfaRhyTsvAZnDsz
+	OfwDxEjtUfRwQYr0kBWLrj59yawpN4AyRomtp7XB+h7gokej/+vruB3ZMiBOMETbbs0aAjgDqQyqn
+	7StkcZ6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9YyP-00044B-LI; Wed, 04 Mar 2020 18:42:25 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1j9Yyj-0004NG-0q; Wed, 04 Mar 2020 18:42:45 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9YyD-0003uG-F7; Wed, 04 Mar 2020 18:42:14 +0000
-Received: by mail-wr1-x441.google.com with SMTP id q8so3739935wrm.4;
- Wed, 04 Mar 2020 10:42:12 -0800 (PST)
+ id 1j9YyI-0003uV-HZ; Wed, 04 Mar 2020 18:42:20 +0000
+Received: by mail-wm1-x343.google.com with SMTP id u9so2961821wml.3;
+ Wed, 04 Mar 2020 10:42:14 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=0UatWJRIzkcWGUuRmNqWrdQb/4B3d2GrjC9oWPA9fFA=;
- b=bu7AzKrEyWTLSQWup7Y583C+Z80x7nj+gl8okSAguu48FQinboxTn8wHQch3TOJyNC
- me9wGMP9R8Y3tNo7xuMfNOpnim3WB9zW6bfXkodb851c1qFe94gra0/00vMB8Vs542tn
- Z9zlqoXG90D5OaMNL7AGTXDTbywHoUJ0DjgLNaS95f3u12T1AKAhQ91hTIbur0j8jkXh
- zJgJEFGx2AJed/Yxw7LkAgV4OmpbHYZ4l1Gjolav8pNzQFhq4XGWJU2vzZ4FnqbwGOxL
- vuQ2r5ciLliE2QoWKKQwB3Jhve8SAbGU8igivsH9cBhmCNLtCl92eq2d5FbtMqSkJows
- pXWw==
+ bh=Taz9B582B17QJFHq4vnyy3ks6+/Yxqr+YFZUhRft8sQ=;
+ b=JOyfmgSGO+maesgkLYYDa0CJeG7EdGd6AzUXmExJB2vvYlruA9zcJHaLaBClmeMSEs
+ q1SjIwXR4xJfZLtV5cXNlVWfBv1EWzNZj7Rnh5EnLDHTGsYSlDX8njy2SoiOjEX0qoJs
+ fQeoeP1NW8tmls0GKQkkLWdpUU4NADd7UwAuXobByJrORXReSn6EuqRrBC9wZ4dmUnVf
+ mgHxVCrA0eSDGpUREUE7knc8U4GsHJsZmuypfQKeij2bPTwllOH0Zcvs1fC3PbH3oF1J
+ R24Umg04leHsDw7iUWZm7DPtnqwGavl/ldcx8UG21M2VWrkZQ/qpApMVzzu0jscUjmLs
+ kmIQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=0UatWJRIzkcWGUuRmNqWrdQb/4B3d2GrjC9oWPA9fFA=;
- b=pvMuqvV/0ZRBv/tFH4icMBNw3Sk4SI5F7Fhg9Di458clgQat3dqWEJd5hEdM5Epf6s
- Bfjd9IdG/ZTHYXSCxsoJha6vrKVNzimWE0rVxVAQIALUxcyAaxl4nV587IVc0/4Z3Cqc
- ykqKZDlj0N4zrqELAI+gZ+HiF1J0V7UJCi7ZbmZqNuyE3r7eHMfHy1g5AotIlsh8M1KH
- Y0lnkqVJY9uUo6o7jzHDP09rWinfkpGNn29QTvKztjPfm+VN0aSrTEI1SNg1kspFcwW+
- H4VdM0G80esMcxGONP03PYjqu+e9x/hzM8LpWzhGHzgKCDN8F3iBNzykQPC4GpHGmgLJ
- Kcgg==
-X-Gm-Message-State: ANhLgQ1G9EJIm/Iz7Os8T/Buhd1Pd79uP7nyTW3N1TV/XkvLjYMFBUWk
- A2v0TtN+GWJ3GTBYDWMHv9s=
-X-Google-Smtp-Source: ADFU+vu2xLFs0sTZU9LUPGXLq1/B03boUDmHmJpVrmdihRJCfutuFIrYDce+tXyeVYoLabi3eyl4qg==
-X-Received: by 2002:adf:fa07:: with SMTP id m7mr5254056wrr.384.1583347331260; 
- Wed, 04 Mar 2020 10:42:11 -0800 (PST)
+ bh=Taz9B582B17QJFHq4vnyy3ks6+/Yxqr+YFZUhRft8sQ=;
+ b=FXIlUhWktcI/kwUQC2be8C/dvL5ZCGx7b/8WKEIqNmN9ZzOvkddCI198uqL9i+IaJs
+ Uz4cfy+SMHWL3zWDBgQpNpRsOvNvhw6SyOS9VJCHjLwXAxwLMVYVBrqaEYJ/2pyKKzvv
+ rroLmrP/1R2BMB/TyGAbe5wWpcj7TAEhWYPBUYznBhbryLa55hBSZWISPtEjmv96kMyB
+ qUC2QVBDl+F6vJRTBZgU4+bJIxOcOYIzRR0sdfhmnd+nkaj1dM5jF4NoVMwNssdM8YVn
+ ve6eBcgZLSPk76MfCcY40eM+7EI729WpXvUeYQv1ORhs/uZxfePZFzJ5wginiT2mYa1Y
+ +5Gw==
+X-Gm-Message-State: ANhLgQ3OKVHSGUijeEBhDHjIgsSn+tV0O43zWF8h+oa+Ev3ZePzfUlB3
+ 9qbiEmQQ1UewiCZXoK2brHz7jR6A
+X-Google-Smtp-Source: ADFU+vu89SUtNLXOa0wDBls7mVKttadFUyRVC8wIrTXOR1+RiC1XClyH+9OgoeF0Ll5q4Sa3ayoZlw==
+X-Received: by 2002:a7b:c4d9:: with SMTP id g25mr3634960wmk.121.1583347332383; 
+ Wed, 04 Mar 2020 10:42:12 -0800 (PST)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id v11sm28175848wrs.54.2020.03.04.10.42.10
+ by smtp.gmail.com with ESMTPSA id v11sm28175848wrs.54.2020.03.04.10.42.11
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 04 Mar 2020 10:42:10 -0800 (PST)
+ Wed, 04 Mar 2020 10:42:11 -0800 (PST)
 From: Johan Jonker <jbx6244@gmail.com>
 To: broonie@kernel.org
-Subject: [PATCH v3 2/3] dt-bindings: spi: spi-rockchip: add description for
- rk3308
-Date: Wed,  4 Mar 2020 19:42:02 +0100
-Message-Id: <20200304184203.9548-2-jbx6244@gmail.com>
+Subject: [PATCH v3 3/3] dt-bindings: spi: spi-rockchip: add description for
+ rk3328
+Date: Wed,  4 Mar 2020 19:42:03 +0100
+Message-Id: <20200304184203.9548-3-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200304184203.9548-1-jbx6244@gmail.com>
 References: <20200304184203.9548-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_104213_532508_7075FF74 
-X-CRM114-Status: GOOD (  11.36  )
+X-CRM114-CacheID: sfid-20200304_104218_631682_CC0B87B2 
+X-CRM114-Status: GOOD (  11.46  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -108,10 +108,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The description below is already in use for rk3308.dtsi,
+The description below is already in use for rk3328.dtsi,
 but was somehow never added to a document, so add
-"rockchip,rk3308-spi", "rockchip,rk3066-spi"
-for spi nodes on a rk3308 platform to spi-rockchip.yaml.
+"rockchip,rk3328-spi", "rockchip,rk3066-spi"
+for spi nodes on a rk3328 platform to spi-rockchip.yaml.
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 Acked-by: Rob Herring <robh@kernel.org>
@@ -126,14 +126,14 @@ Changes v2:
  1 file changed, 1 insertion(+)
 
 diff --git a/Documentation/devicetree/bindings/spi/spi-rockchip.yaml b/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
-index bd1450c12..456896e2d 100644
+index 456896e2d..81ad4b761 100644
 --- a/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
 +++ b/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
-@@ -29,6 +29,7 @@ properties:
-             - rockchip,px30-spi
+@@ -30,6 +30,7 @@ properties:
              - rockchip,rk3188-spi
              - rockchip,rk3288-spi
-+            - rockchip,rk3308-spi
+             - rockchip,rk3308-spi
++            - rockchip,rk3328-spi
              - rockchip,rk3368-spi
              - rockchip,rk3399-spi
            - const: rockchip,rk3066-spi
