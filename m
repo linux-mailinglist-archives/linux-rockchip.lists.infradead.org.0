@@ -2,72 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FE89179569
-	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Mar 2020 17:34:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A99E179575
+	for <lists+linux-rockchip@lfdr.de>; Wed,  4 Mar 2020 17:35:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hoZvTFnmLxLIa+JQoCJRBtKjRc6fKzCYl9OKl9pXfCs=; b=NP1EqMZAzEqso7
-	xejlXi4osTixDM9SFlCyufC2jXLbj4MtvWC8nnLJjEzWvzkzjK51DuIYchpcuqbBW8Kn96FL/w+pT
-	aw77BE1D1PidFWPxJ2+Sufn9pG9UJ+96DXMHl/AtpVppx2xxSZT2OzAGUuzRSBNUIKiz4PMYIsefG
-	Pg/mi2IFk0Cx9EbwT0jYUpTHLlybbojbCC7J2dzPdMtJqzjbI4dRO++ZlcVkIJw53RQ27/JzkpgEW
-	VK7AvANtMGTLSKqXQtvqgu09lFYrPMBNhP3/6TH4j3UFCIdJB1RHjEEJ3yfSHUD+K7UxE8BV3SgzI
-	Q8ez6noJZceSt4k/HXaQ==;
+	List-Owner; bh=edjh1B+sFcC0C4OK9tUR40hmp4heIJTRxao7mOd/A6s=; b=IZDFy18AI2jfOv
+	p4CZ8VwHs97A7eUVb80fIBOJE+XZ/Eo+OQ4ZkCPEG4/73x/BQqZSyqp4dRnn4RmTx+EwrzfHZ8ca/
+	bTpv9vecDETXPvSTZQmUNjf2y2zentNs4qfUWrawiiXtxoRbksdFy9L9xzIotazt/a0LXTF3DiZpO
+	L/Gvx/bGf1X4jYmGZ/rkNpLx5zUVZ/aNzAp5vcFXbgNs2k0xlJ4Ugw65bAG/sAXGwh4GHwr4qpYMv
+	LoqS8KvXm5df7LsYI/6SvBsV0fiwE/goTJWP8o9FwIOCQCt6Ecj9Ht13GijOaSS2hdx5yIenKVFg5
+	RP1qZlUQBdqmZN+J7Yqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Wyh-00021X-Vw; Wed, 04 Mar 2020 16:34:35 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1j9Wzu-0003cH-QK; Wed, 04 Mar 2020 16:35:50 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9Wyb-0001u1-Pi
- for linux-rockchip@lists.infradead.org; Wed, 04 Mar 2020 16:34:31 +0000
-Received: by mail-ot1-f66.google.com with SMTP id v22so2595019otq.11
- for <linux-rockchip@lists.infradead.org>; Wed, 04 Mar 2020 08:34:29 -0800 (PST)
+ id 1j9Wzk-0003Tu-OL
+ for linux-rockchip@lists.infradead.org; Wed, 04 Mar 2020 16:35:42 +0000
+Received: by mail-ot1-f68.google.com with SMTP id g96so2601423otb.13
+ for <linux-rockchip@lists.infradead.org>; Wed, 04 Mar 2020 08:35:40 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=HYgnap7JcbfyJ9LwlrBSQ6khAGsJZr+4LoSP4vff9D8=;
- b=NVvevOaLXILVhzL+mZOee5q1ERJyGmomaMaaUYnQM08yPAdOR0+ChZA6jH7BwaZ0A8
- R7vWHbypj5Ks0UCN+C/yQQQRvGjnnF5oF1e0ec8G7kO/QD2o21eUWqYrUHzSkU0QIL1A
- dGw9TEmvd9tWsiCvSt5a9LLjIl/gynrF5B9CMl9GR0qJ8wW1gXdJlePuuCcNYx4TkKqg
- NPX8FpszlzGrPCE0mxGOeO+7P01HOkALBBwBpIT1rEWUCvH3VYIXkEj7p9FvSocBa6rw
- lKqRGlueUJjOCcSMpFIZWeUf+e77g99oW7y6kqAWyR3rnlV7efiCUd3Db0VXA//+N50Z
- QSkA==
-X-Gm-Message-State: ANhLgQ1vDlQ5tV50TceDdB4veuqZR+0d6Aq58yCAjczIP0n7eBjzaNan
- xdysKuv9FoJV/KP76jLvJ7hpn6k=
-X-Google-Smtp-Source: ADFU+vt5Q6fikJmgeBqJkMGvP+8/KykDpQZFFE+L6Qzd+haE4wied4mpTIXVkprwHCGx1VthdflbWA==
-X-Received: by 2002:a9d:3de4:: with SMTP id l91mr3113287otc.35.1583339668343; 
- Wed, 04 Mar 2020 08:34:28 -0800 (PST)
+ bh=h1Gvo7Uhl99kC+f2DHRk2dtpXA+8wwG3dDT0Nr8Q1sw=;
+ b=ZZ92BdOuYsgrNP1ZOSldHjKNO0b2t2J1qr+P4D7dv96gv4tPdWGi3j5W2LCC1/AOT0
+ B4lHuLMdY1pVBFI9+lxks2lK113z6/W0OkDfMg8BRG8zgy8uUHxRdVfE+0Wc9eA1bm2a
+ SkNShDkpVMJ9gkh60w5hCMnLmE1+DjcQu2Pcc+Rr5EbX+NphMCqxBPThSjgnz35+2y/+
+ ISBFkKCdN/xC+GvktfWzYMug+SGv1AOIG6N4QYgD6czc6I1m2dayvrGANwYwy+MZVijf
+ uvQ6mdz+Z3pIrvGJiMJvEWFmNz6ICGIABKKrbpfhWWl/1hkY1gXARGryl4aEw2DcCg8a
+ VHcA==
+X-Gm-Message-State: ANhLgQ0BckUnldn1TQKrEIrBxhXwtINUAmZxefDudIxDclokBXOH7lqU
+ cxhGg0Dk21b00vMYBeX8rw==
+X-Google-Smtp-Source: ADFU+vvs0zKwSe7pdBbmhxfAEsM04vKmv9ZOGaPA/anuEGyMrANs8OpulogLb0VTYVxwyF6vIThI4w==
+X-Received: by 2002:a9d:aa7:: with SMTP id 36mr3152106otq.52.1583339739892;
+ Wed, 04 Mar 2020 08:35:39 -0800 (PST)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id w18sm3076845otl.60.2020.03.04.08.34.27
+ by smtp.gmail.com with ESMTPSA id p24sm4959687oth.21.2020.03.04.08.35.38
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Mar 2020 08:34:27 -0800 (PST)
-Received: (nullmailer pid 20763 invoked by uid 1000);
- Wed, 04 Mar 2020 16:34:26 -0000
-Date: Wed, 4 Mar 2020 10:34:26 -0600
+ Wed, 04 Mar 2020 08:35:39 -0800 (PST)
+Received: (nullmailer pid 22504 invoked by uid 1000);
+ Wed, 04 Mar 2020 16:35:38 -0000
+Date: Wed, 4 Mar 2020 10:35:38 -0600
 From: Rob Herring <robh@kernel.org>
 To: Heiko Stuebner <heiko@sntech.de>
-Subject: Re: [PATCH v3 1/3] dt-bindings: Add vendor prefix for Elida
-Message-ID: <20200304163426.GA20664@bogus>
+Subject: Re: [PATCH v3 2/3] dt-bindings: display: panel: Add binding document
+ for Elida KD35T133
+Message-ID: <20200304163538.GA22445@bogus>
 References: <20200229151506.750242-1-heiko@sntech.de>
+ <20200229151506.750242-2-heiko@sntech.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200229151506.750242-1-heiko@sntech.de>
+In-Reply-To: <20200229151506.750242-2-heiko@sntech.de>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_083429_849626_FB14B54F 
-X-CRM114-Status: GOOD (  10.24  )
+X-CRM114-CacheID: sfid-20200304_083540_834683_90C00E28 
+X-CRM114-Status: UNSURE (   9.63  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -76,8 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
@@ -104,31 +107,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sat, 29 Feb 2020 16:15:04 +0100, Heiko Stuebner wrote:
+On Sat, 29 Feb 2020 16:15:05 +0100, Heiko Stuebner wrote:
 > From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 > 
-> Shenzen Elida Technology Co. Ltd. is a Chinese TFT manufacturer.
+> The KD35T133 is a 3.5" 320x480 DSI display used in the RK3326-based
+> Odroid Go Advance handheld device.
 > 
 > Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
-> Acked-by: Sam Ravnborg <sam@ravnborg.org>
+> Reviewed-by: Sam Ravnborg <sam@ravnborg.org>
 > ---
-> Hi Rob,
-> 
-> as can be seen on [0], Sam expects you to apply the vendor prefix
-> to the main dt-tree.
-> 
-> Thanks
-> Heiko
-> 
-> [0] http://lore.kernel.org/r/20200229125725.GC5447@ravnborg.org
-> 
->  Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+>  .../display/panel/elida,kd35t133.yaml         | 49 +++++++++++++++++++
+>  1 file changed, 49 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/panel/elida,kd35t133.yaml
 > 
 
-Applied, thanks.
-
-Rob
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 Linux-rockchip mailing list
