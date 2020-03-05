@@ -2,30 +2,30 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AEB117AA0A
-	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Mar 2020 17:02:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6178717AA0B
+	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Mar 2020 17:02:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PxdwyEfVcY2vhRot8rtCPOjSxk3C0Z9UyuUqVPF9iPE=; b=ARJrz3IbrdvysC
-	OkmwAboq5MDZ94ipW/zUJPldAJbX2Yh33F2EZ3/mswPW6CPPYF4COrmTHqnDDFlEFkRqxWQjoVvFg
-	0tuhU7l05ORmQBUvccl9rTg22Q30yw83Og76D7uZF0sYITJmXPIFxK7easc98FU5XhINDo9+opRC1
-	RL0HcuiomKy2W7JaPbl2tfIPu6j7SEyOsmI6vyuZJJUdboj68pPUMEoMGC7uEBenJ8/qLeqywslIC
-	hWue8vrH9+T0kYVLln3DIe5z+11uPPIA/51lXwhhzvQqIqhrfPEcf09Vl8O6siZZKyQKYk/QKKmll
-	emdF4VrGSl6EoQefPvkQ==;
+	List-Owner; bh=p+ydIBal3Q6HgNA0H0+GECbgakNWEOCkKmgdp6joGMA=; b=HEREpTRcqf7P/O
+	uOtmJYRmD3+DsYnDQw5t4BybpBGwfZ2Io/s/ze7MngEjDVDAqviOEM+L67uv4BP5ccbATq/SDD1tq
+	061X34hvaZQaj68pUezKDJB4gqc9mHp2x98V/bvGzgZ6Qrz0uDrgV3B9/jueGJ3ieZLETDJS2cNVc
+	c275UHVR66BZ3SNOH3QwmsdguwzT6HKx0gSobzPgF89blce60ly94/Lu4vTZB6PulrCHCAOlGPgsO
+	h0jtN8CR9ukiXHyx1L9WT8zDeuDlqQmc7gfeO63quPuzQNEx1u2AQlJiJM6M7tryVT5MI/THOozw8
+	MTq8LjGmpJNAjfc8baHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9sxL-0000pD-MY; Thu, 05 Mar 2020 16:02:39 +0000
+	id 1j9sxR-0000w2-67; Thu, 05 Mar 2020 16:02:45 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9svC-0007GI-Tx; Thu, 05 Mar 2020 16:00:28 +0000
+ id 1j9svE-0007HK-8M; Thu, 05 Mar 2020 16:00:30 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 05BC8B317;
- Thu,  5 Mar 2020 16:00:23 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 77B4DB0C6;
+ Thu,  5 Mar 2020 16:00:25 +0000 (UTC)
 From: Thomas Zimmermann <tzimmermann@suse.de>
 To: airlied@linux.ie, daniel@ffwll.ch, sam@ravnborg.org, abrodkin@synopsys.com,
  bbrezillon@kernel.org, nicolas.ferre@microchip.com,
@@ -47,16 +47,16 @@ To: airlied@linux.ie, daniel@ffwll.ch, sam@ravnborg.org, abrodkin@synopsys.com,
  tomi.valkeinen@ti.com, eric@anholt.net, kraxel@redhat.com,
  rodrigosiqueiramelo@gmail.com, hamohammed.sa@gmail.com,
  sebastian.reichel@collabora.com
-Subject: [PATCH 21/22] drm/writeback: Use simple encoder
-Date: Thu,  5 Mar 2020 16:59:49 +0100
-Message-Id: <20200305155950.2705-22-tzimmermann@suse.de>
+Subject: [PATCH 22/22] drm/zte: Use simple encoder
+Date: Thu,  5 Mar 2020 16:59:50 +0100
+Message-Id: <20200305155950.2705-23-tzimmermann@suse.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200305155950.2705-1-tzimmermann@suse.de>
 References: <20200305155950.2705-1-tzimmermann@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_080027_132420_0993A474 
-X-CRM114-Status: GOOD (  11.82  )
+X-CRM114-CacheID: sfid-20200305_080028_610161_E80D5813 
+X-CRM114-Status: GOOD (  12.23  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -90,49 +90,115 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The writeback code uses an empty implementation for its encoder. Replace
+The zte driver uses empty implementations for its encoders. Replace
 the code with the generic simple encoder.
 
 Signed-off-by: Thomas Zimmermann <tzimmermann@suse.de>
 ---
- drivers/gpu/drm/drm_writeback.c | 10 +++-------
- 1 file changed, 3 insertions(+), 7 deletions(-)
+ drivers/gpu/drm/zte/zx_hdmi.c  | 8 ++------
+ drivers/gpu/drm/zte/zx_tvenc.c | 8 ++------
+ drivers/gpu/drm/zte/zx_vga.c   | 8 ++------
+ 3 files changed, 6 insertions(+), 18 deletions(-)
 
-diff --git a/drivers/gpu/drm/drm_writeback.c b/drivers/gpu/drm/drm_writeback.c
-index 43d9e3bb3a94..cefb500c4ed7 100644
---- a/drivers/gpu/drm/drm_writeback.c
-+++ b/drivers/gpu/drm/drm_writeback.c
-@@ -16,6 +16,7 @@
- #include <drm/drm_drv.h>
- #include <drm/drm_modeset_helper_vtables.h>
- #include <drm/drm_property.h>
+diff --git a/drivers/gpu/drm/zte/zx_hdmi.c b/drivers/gpu/drm/zte/zx_hdmi.c
+index b98a1420dcd3..76a16d997a23 100644
+--- a/drivers/gpu/drm/zte/zx_hdmi.c
++++ b/drivers/gpu/drm/zte/zx_hdmi.c
+@@ -20,6 +20,7 @@
+ #include <drm/drm_of.h>
+ #include <drm/drm_probe_helper.h>
+ #include <drm/drm_print.h>
 +#include <drm/drm_simple_kms_helper.h>
- #include <drm/drm_writeback.h>
  
- /**
-@@ -146,10 +147,6 @@ static int create_writeback_properties(struct drm_device *dev)
- 	return 0;
- }
+ #include <sound/hdmi-codec.h>
  
--static const struct drm_encoder_funcs drm_writeback_encoder_funcs = {
+@@ -254,10 +255,6 @@ static const struct drm_encoder_helper_funcs zx_hdmi_encoder_helper_funcs = {
+ 	.mode_set = zx_hdmi_encoder_mode_set,
+ };
+ 
+-static const struct drm_encoder_funcs zx_hdmi_encoder_funcs = {
 -	.destroy = drm_encoder_cleanup,
 -};
 -
- /**
-  * drm_writeback_connector_init - Initialize a writeback connector and its properties
-  * @dev: DRM device
-@@ -191,9 +188,8 @@ int drm_writeback_connector_init(struct drm_device *dev,
- 		return PTR_ERR(blob);
+ static int zx_hdmi_connector_get_modes(struct drm_connector *connector)
+ {
+ 	struct zx_hdmi *hdmi = to_zx_hdmi(connector);
+@@ -313,8 +310,7 @@ static int zx_hdmi_register(struct drm_device *drm, struct zx_hdmi *hdmi)
  
- 	drm_encoder_helper_add(&wb_connector->encoder, enc_helper_funcs);
--	ret = drm_encoder_init(dev, &wb_connector->encoder,
--			       &drm_writeback_encoder_funcs,
--			       DRM_MODE_ENCODER_VIRTUAL, NULL);
-+	ret = drm_simple_encoder_init(dev, &wb_connector->encoder,
-+				      DRM_MODE_ENCODER_VIRTUAL);
- 	if (ret)
- 		goto fail;
+ 	encoder->possible_crtcs = VOU_CRTC_MASK;
  
+-	drm_encoder_init(drm, encoder, &zx_hdmi_encoder_funcs,
+-			 DRM_MODE_ENCODER_TMDS, NULL);
++	drm_simple_encoder_init(drm, encoder, DRM_MODE_ENCODER_TMDS);
+ 	drm_encoder_helper_add(encoder, &zx_hdmi_encoder_helper_funcs);
+ 
+ 	hdmi->connector.polled = DRM_CONNECTOR_POLL_HPD;
+diff --git a/drivers/gpu/drm/zte/zx_tvenc.c b/drivers/gpu/drm/zte/zx_tvenc.c
+index c598b7daf1f1..d8a89ba383bc 100644
+--- a/drivers/gpu/drm/zte/zx_tvenc.c
++++ b/drivers/gpu/drm/zte/zx_tvenc.c
+@@ -14,6 +14,7 @@
+ #include <drm/drm_atomic_helper.h>
+ #include <drm/drm_print.h>
+ #include <drm/drm_probe_helper.h>
++#include <drm/drm_simple_kms_helper.h>
+ 
+ #include "zx_drm_drv.h"
+ #include "zx_tvenc_regs.h"
+@@ -218,10 +219,6 @@ static const struct drm_encoder_helper_funcs zx_tvenc_encoder_helper_funcs = {
+ 	.mode_set = zx_tvenc_encoder_mode_set,
+ };
+ 
+-static const struct drm_encoder_funcs zx_tvenc_encoder_funcs = {
+-	.destroy = drm_encoder_cleanup,
+-};
+-
+ static int zx_tvenc_connector_get_modes(struct drm_connector *connector)
+ {
+ 	struct zx_tvenc *tvenc = to_zx_tvenc(connector);
+@@ -285,8 +282,7 @@ static int zx_tvenc_register(struct drm_device *drm, struct zx_tvenc *tvenc)
+ 	 */
+ 	encoder->possible_crtcs = BIT(1);
+ 
+-	drm_encoder_init(drm, encoder, &zx_tvenc_encoder_funcs,
+-			 DRM_MODE_ENCODER_TVDAC, NULL);
++	drm_simple_encoder_init(drm, encoder, DRM_MODE_ENCODER_TVDAC);
+ 	drm_encoder_helper_add(encoder, &zx_tvenc_encoder_helper_funcs);
+ 
+ 	connector->interlace_allowed = true;
+diff --git a/drivers/gpu/drm/zte/zx_vga.c b/drivers/gpu/drm/zte/zx_vga.c
+index c4fa3bbaba78..a7ed7f5ca837 100644
+--- a/drivers/gpu/drm/zte/zx_vga.c
++++ b/drivers/gpu/drm/zte/zx_vga.c
+@@ -14,6 +14,7 @@
+ #include <drm/drm_atomic_helper.h>
+ #include <drm/drm_print.h>
+ #include <drm/drm_probe_helper.h>
++#include <drm/drm_simple_kms_helper.h>
+ 
+ #include "zx_drm_drv.h"
+ #include "zx_vga_regs.h"
+@@ -72,10 +73,6 @@ static const struct drm_encoder_helper_funcs zx_vga_encoder_helper_funcs = {
+ 	.disable = zx_vga_encoder_disable,
+ };
+ 
+-static const struct drm_encoder_funcs zx_vga_encoder_funcs = {
+-	.destroy = drm_encoder_cleanup,
+-};
+-
+ static int zx_vga_connector_get_modes(struct drm_connector *connector)
+ {
+ 	struct zx_vga *vga = to_zx_vga(connector);
+@@ -154,8 +151,7 @@ static int zx_vga_register(struct drm_device *drm, struct zx_vga *vga)
+ 
+ 	encoder->possible_crtcs = VOU_CRTC_MASK;
+ 
+-	ret = drm_encoder_init(drm, encoder, &zx_vga_encoder_funcs,
+-			       DRM_MODE_ENCODER_DAC, NULL);
++	ret = drm_simple_encoder_init(drm, encoder, DRM_MODE_ENCODER_DAC);
+ 	if (ret) {
+ 		DRM_DEV_ERROR(dev, "failed to init encoder: %d\n", ret);
+ 		return ret;
 -- 
 2.25.1
 
