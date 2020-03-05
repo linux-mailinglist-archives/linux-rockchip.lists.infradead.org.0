@@ -2,90 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9848717A7D1
-	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Mar 2020 15:37:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC20E17A7E4
+	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Mar 2020 15:38:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=A8+066ae3qn8ez4hbdQdkufevhHiU0YpEVeDjwZqGdU=; b=k2aBxLetzcc4d9bGmg4K6xCa6B
-	q5eRLWgTDediz02oRYayhSiZo2CDGEX1BhooObS++2Jev5pl++NW57tqarZ5KpmZt9jdLzPC2NgR7
-	S7pjy9r5XP/9qlnQn2tj8nQTeRmJ7ZA+/PnjHP123Bffpmnx+v3zpvPW16m0OhVJ5Htlkgxpj1DXp
-	kAxZg/Vud42JD+enQK0mif+w1+NMkmvJL6Qp5BOCZPfaddoMo6IlQhbiF2ISaCP0CX0gwKHHKVmGl
-	s6/9WAphkCue8ws/sgq0f3+8PQcUmFdF6e7vjEqi2uEy9eudiVF4rY7/sS8dQjC0zwKcPLg0lyQhn
-	cUHm31mw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=LzuiQfrZyvGCbhEZ79gUvcer/aB0iqhGxDtHbwgxwyU=; b=r2x
+	bqVG7+K24cmWyh0Zk7lTj3unp9cfCqHPlPU55xSZpG2aPBVL0G2GBDp0Ih4u5/8qhfYwbwtEVUihi
+	6M0CMOK7HJZavR2GmgBblsoq1300NxEFoIOwWADQpM9H3Klk9LyclCzlmH8TiNc2A1bI3VrhS3718
+	Bd3l9rZxj1Uip7hjOf7DXy3ImyR0PAsnUc1fCU+yp8vJblkY0MaKEpHc5GTgNaQW+EkCnjoLf8zTx
+	hwU1lB3W1lQtL3Efi/ng1c/wd5Vrmn6cCGrvY2p9bLe64T9FTq+VneOHxCa/W2kqQwNSGvry2pLXp
+	2262m6C50HxY6XKvlKevAkLBdM7SX3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9rdK-000315-FU; Thu, 05 Mar 2020 14:37:54 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9rbu-0001cN-4N; Thu, 05 Mar 2020 14:36:27 +0000
-Received: by mail-wm1-x341.google.com with SMTP id g83so6002990wme.1;
- Thu, 05 Mar 2020 06:36:26 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=QlXzIeykIQUpEBdYcwxd+wvAWmRVIxL3eGhm6mPv2tU=;
- b=bLCvUgvqw8iVKbPkM4EtHEjlr9hoXI6ts2HiI7NyS33acPByckia3FvdKNdmCw+shk
- dzqU7y7L3wfAuvNZSkXea2DmXqj9gOftfhhf3HnhWtGd5rQgdfsWBmyIvQpcTFftHPYr
- Yy2JE8V7sk/cTfBwh0xdC4AX7qlqgQAqPpUyOikjfX4/zrT0gDtySOja6ziWgHJZS7TF
- THFlRkQYf2xwcxogTqSRleSo5Tsxrdc5y+ksVnpEU38JWpZVU4NbBZH+hSfcYeqZ3oto
- inPT+91oHpIhwEjHmow5anaiUDsBUjQPRKyQv7iJ+9RFwOB7JR28vmSJIx7EqUGuay9f
- X79A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=QlXzIeykIQUpEBdYcwxd+wvAWmRVIxL3eGhm6mPv2tU=;
- b=tuZo+6XHTt2scKkmfKmhNMpe13/vLVgfWu1ixuiVyXc2KDhSHol5+ixhE1F6NlCx+R
- 33lLmZ2YBshvTXILZ7DQLKcGdInIWGaRKAFlMb6KgNavtLNcN03a+pmnXcZNg0dT3ndi
- Cqmc6g135MGNp2tmOMhkESzrKf6DEOvSipc8363OhhZsmLnXhyhD6NZlFAKWRzud/38y
- aOQsyyjdtv2lzSKHZeAjIOhIkiSiOlM2I9lqxTezenzZkRpz6d3h2cLX5ryNgXf10yyB
- eW/BhvFDL3wh50x04dbHdgjmvYWHjFkKSuWeJim3SrhwVaxa1v/D5q95UO0hJy4L3b4D
- z+hw==
-X-Gm-Message-State: ANhLgQ26kp8OP0u8Kzm/W0fk4+fekMXyeXCegrCcfORKhrwEJYXJyAnx
- vaqqvJnxeeiTtMdVKZ3zvK0=
-X-Google-Smtp-Source: ADFU+vsdfwf4i6qjYFXBcYbvtQoEzb0ZAfQyCvkvWDrzRecAr1kQ48Dp8uEzHOKDHtF8X0uY5u9yIg==
-X-Received: by 2002:a7b:c3d4:: with SMTP id t20mr4123131wmj.102.1583418984953; 
- Thu, 05 Mar 2020 06:36:24 -0800 (PST)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id g201sm9365124wme.23.2020.03.05.06.36.24
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 05 Mar 2020 06:36:24 -0800 (PST)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH v1 5/5] dt-bindings: i2c: i2c-rk3x: add description for px30
-Date: Thu,  5 Mar 2020 15:36:11 +0100
-Message-Id: <20200305143611.10733-5-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200305143611.10733-1-jbx6244@gmail.com>
-References: <20200305143611.10733-1-jbx6244@gmail.com>
+	id 1j9reF-0003tk-4X; Thu, 05 Mar 2020 14:38:51 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9rcD-0001sJ-JV; Thu, 05 Mar 2020 14:36:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AB6DD4B2;
+ Thu,  5 Mar 2020 06:36:39 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2D5073F534;
+ Thu,  5 Mar 2020 06:36:39 -0800 (PST)
+Date: Thu, 05 Mar 2020 14:36:37 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Applied "dt-bindings: spi: spi-rockchip: add description for rk3328"
+ to the spi tree
+In-Reply-To: <20200304184203.9548-3-jbx6244@gmail.com>
+Message-Id: <applied-20200304184203.9548-3-jbx6244@gmail.com>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_063626_175553_D7579CBB 
-X-CRM114-Status: GOOD (  11.99  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200305_063645_708388_61FF5BE5 
+X-CRM114-Status: GOOD (  14.59  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,39 +63,75 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, heiko@sntech.de, Rob Herring <robh@kernel.org>,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-spi@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The description below is already in use for px30.dtsi,
+The patch
+
+   dt-bindings: spi: spi-rockchip: add description for rk3328
+
+has been applied to the spi tree at
+
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git 
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From 6ac12131699b4ec1d8f339e40528bdd474542075 Mon Sep 17 00:00:00 2001
+From: Johan Jonker <jbx6244@gmail.com>
+Date: Wed, 4 Mar 2020 19:42:03 +0100
+Subject: [PATCH] dt-bindings: spi: spi-rockchip: add description for rk3328
+
+The description below is already in use for rk3328.dtsi,
 but was somehow never added to a document, so add
-"rockchip,px30-i2c", "rockchip,rk3399-i2c"
-for i2c nodes on a px30 platform to i2c-rk3x.yaml.
+"rockchip,rk3328-spi", "rockchip,rk3066-spi"
+for spi nodes on a rk3328 platform to spi-rockchip.yaml.
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Acked-by: Rob Herring <robh@kernel.org>
+Link: https://lore.kernel.org/r/20200304184203.9548-3-jbx6244@gmail.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml | 1 +
+ Documentation/devicetree/bindings/spi/spi-rockchip.yaml | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml b/Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml
-index edee8f699..61eac76c8 100644
---- a/Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml
-+++ b/Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml
-@@ -33,6 +33,7 @@ properties:
-           - const: rockchip,rk3288-i2c
-       - items:
-           - enum:
-+            - rockchip,px30-i2c
-             - rockchip,rk3308-i2c
-             - rockchip,rk3328-i2c
-           - const: rockchip,rk3399-i2c
+diff --git a/Documentation/devicetree/bindings/spi/spi-rockchip.yaml b/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
+index 456896e2d514..81ad4b761502 100644
+--- a/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
++++ b/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
+@@ -30,6 +30,7 @@ properties:
+             - rockchip,rk3188-spi
+             - rockchip,rk3288-spi
+             - rockchip,rk3308-spi
++            - rockchip,rk3328-spi
+             - rockchip,rk3368-spi
+             - rockchip,rk3399-spi
+           - const: rockchip,rk3066-spi
 -- 
-2.11.0
+2.20.1
 
 
 _______________________________________________
