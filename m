@@ -2,29 +2,30 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FCE317A470
-	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Mar 2020 12:41:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B83E317A469
+	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Mar 2020 12:40:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=o8aBFIXZ2CV0fHiBCczjNXLEzxZ8hLn57C2lWOCuU1k=; b=W5a
-	wrOyKrbJcPeSSyFhcgPR9hNkYr4RcfU+VT2IloJlTGShVmnGcO3wfwmnzteExvZiNiwYNc1Kcst/9
-	UsRjoVxMX7ydK0gi9+jYBrtFbaxiMBogD7Ws9Z70K5yVwS/XHNtoWUGmRGR8WGBi4Xa6tNedklE6n
-	IPa2GnrpUcqTd0jyA1/5r/Zm5ZeVTDd2QP1q+nXKmbgNPHCIuSXDRxPdGKOoVuBvOaA1fWKeMuN6N
-	nypMLFc+EJL19sRV6nbJ/NdQAczq9tWrSE8MvGzgnRXsujWCH4CLs88PK/zUlshh4zUfWSzp1Ef/p
-	L6SRoWzdNvYGJcOcr2QiyvNPlKJQFyA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=yRDc2D4bhl7wGKFzKaORzB5PA+l33P75M4MUN4tAprU=; b=ikCQyLVRLMl4lMRfwZ0EtPAL7v
+	YOg77bTxTsaq+jPi0qNf0mkk3AMDFs7cSXr970Ds940cd2poMaU29tSMErNh2gv0NLcBxak1yL1kS
+	+GV7d7SsVicRiVRSiKrKUpIV08/N1mdbOKEwjIdSET4j1/YElJjlMAMZ7o3lFEesSmUDCtngnuFXL
+	QlbArw5I3/2UfAEK5BpXyruhE5OgIHyJMU+nKhQBPdPTBh0m9mvWThYJ7RO2Dbha0zmF00czCUSS8
+	5z0jvcYdQKWHy+Np3KGLF84xaG6YA8QyYcmlzz0hL5oz1I8Xyt92uz53aAsYrYesDFoAgaB+cfPqU
+	I9hkjcWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9os9-0000ck-0X; Thu, 05 Mar 2020 11:41:01 +0000
-Received: from lucky1.263xmail.com ([211.157.147.134])
+	id 1j9orH-000727-Qa; Thu, 05 Mar 2020 11:40:08 +0000
+Received: from lucky1.263xmail.com ([211.157.147.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9oqv-0006kJ-S3; Thu, 05 Mar 2020 11:39:47 +0000
+ id 1j9oqh-0006WL-A2; Thu, 05 Mar 2020 11:39:33 +0000
 Received: from localhost (unknown [192.168.167.32])
- by lucky1.263xmail.com (Postfix) with ESMTP id 491126D08C;
- Thu,  5 Mar 2020 19:39:24 +0800 (CST)
+ by lucky1.263xmail.com (Postfix) with ESMTP id 144C99F7A8;
+ Thu,  5 Mar 2020 19:39:25 +0800 (CST)
 X-MAIL-GRAY: 1
 X-MAIL-DELIVERY: 0
 X-ADDR-CHECKED4: 1
@@ -35,7 +36,7 @@ Received: from localhost.localdomain (unknown [58.22.7.114])
  P32419T139954420168448S1583408354858766_; 
  Thu, 05 Mar 2020 19:39:24 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <60c9cb10d66f05175c03168580c048c6>
+X-UNIQUE-TAG: <b85c29214760703da72370561256f029>
 X-RL-SENDER: andy.yan@rock-chips.com
 X-SENDER: yxj@rock-chips.com
 X-LOGIN-NAME: andy.yan@rock-chips.com
@@ -47,13 +48,16 @@ X-System-Flag: 0
 From: Andy Yan <andy.yan@rock-chips.com>
 To: heiko@sntech.de, robh+dt@kernel.org, devicetree@vger.kernel.org,
  linux-rockchip@lists.infradead.org
-Subject: [PATCH 0/4] Enable eDP display on rk3399 evb.
-Date: Thu,  5 Mar 2020 19:39:08 +0800
-Message-Id: <20200305113912.32226-1-andy.yan@rock-chips.com>
+Subject: [PATCH 1/4] arm64: dts: rockchip: remove dvs2 pinctrl for pmic on
+ rk3399 evb
+Date: Thu,  5 Mar 2020 19:39:09 +0800
+Message-Id: <20200305113912.32226-2-andy.yan@rock-chips.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200305113912.32226-1-andy.yan@rock-chips.com>
+References: <20200305113912.32226-1-andy.yan@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_033946_146996_C6FA0AE3 
-X-CRM114-Status: UNSURE (   8.96  )
+X-CRM114-CacheID: sfid-20200305_033931_611526_64006F9F 
+X-CRM114-Status: UNSURE (   8.98  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -61,11 +65,11 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.134 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
+ no trust [211.157.147.133 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,21 +90,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+DVS2 of pmic is connected to GND, no pinctrl for it.
 
-When I try to test a patch for eDP on mainline, I found there is no
-display suport for this board. So I try to add all the releated things
-for it.
+Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
 
+---
 
-Andy Yan (4):
-  arm64: dts: rockchip: remove dvs2 pinctrl for pmic on rk3399 evb
-  arm64: dts: rockchip: Add pmic dt tree for rk3399 evb
-  arm64: dts: rockchip: remove enable-gpio of backlight on rk3399 evb
-  arm64: dts: rockchip: Enable eDP display on rk3399 evb
+ arch/arm64/boot/dts/rockchip/rk3399-evb.dts | 5 -----
+ 1 file changed, 5 deletions(-)
 
- arch/arm64/boot/dts/rockchip/rk3399-evb.dts | 267 +++++++++++++++++++-
- 1 file changed, 261 insertions(+), 6 deletions(-)
-
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-evb.dts b/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
+index 77008dca45bc..eb501bb8f426 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
+@@ -210,11 +210,6 @@
+ 			rockchip,pins =
+ 				<1 RK_PC5 RK_FUNC_GPIO &pcfg_pull_up>;
+ 		};
+-
+-		pmic_dvs2: pmic-dvs2 {
+-			rockchip,pins =
+-				<1 RK_PC2 RK_FUNC_GPIO &pcfg_pull_down>;
+-		};
+ 	};
+ 
+ 	usb2 {
 -- 
 2.17.1
 
