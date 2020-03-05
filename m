@@ -2,55 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20EBE17A7E8
-	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Mar 2020 15:39:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C97D17A9F4
+	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Mar 2020 17:01:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=v2KP0+2Ji0HNEJhJ3M3P7NfIaDR917UiKuDqLGSYyKo=; b=EnE
-	Sqrp7ObLamTKu0NYEN22QuUKJBrICBAW/7QEHh7DkAff77g0QYmerK0Hr8JBsnPalc+ZdzYoNJVkg
-	eYM7xAkPKa77JzW6oouc/9Vk4mr1rBMIyZx5DbGzKu/lzkmpQZDpMtV2jv6zzjlXGMvCBYcNKDJdV
-	1LCdJr3YvTOTFhg4RsqXWGqG3uCP1iLbeV2n9VxmwQf1AE7z6L01AfsSEpbsLt5jkDvn3wtpcOfhy
-	8MZq5bXQrCpsMoftOMYyrSoq8sbgreV2Dj9W4VAK9yQljIDqUjSy2WBVaA7vNx/nEc/vOWEzgJv1G
-	RIHYdeqzl3UjdW2531uFBAddxoyHddw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PP0bpMmyvk0umxeDx59Veuk0IMlQMxD7P3+x+FI9YEE=; b=T9nbSeYgjjbRAd
+	GAQ9Oi/G6alendM9dzHSymOxyZzy1UA/J3oNwp1WbVYwy+Qqn0rF6uRRVGbhyls3ekpXC+ekI1fo/
+	8WsKkCb9d1DA+X1ATY3BUI6HnNP9H9bqJgIsY96JgAsNxfyllIgTyhfNIg6V7rph11pEHT1ZXE3Qa
+	++sfPwMO4vT4R1H+I79QBhf0tozjxlQCZVIaL1/m27eEa7AGtg9hcUQYoip4uFuU3OJYGKD/6A7Yi
+	rRVIY8CA0BCB8+nEzMD30GeA4ZihcVG+bptGmKpM3p1VN9F+6F8crNxnaUwFlfWJwyxgwxSCcFieD
+	QwQ2iHV0PbsQ/8QRPBIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9reQ-000445-9R; Thu, 05 Mar 2020 14:39:02 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9rcH-00022Y-It; Thu, 05 Mar 2020 14:36:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9E4101045;
- Thu,  5 Mar 2020 06:36:48 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 207613F534;
- Thu,  5 Mar 2020 06:36:47 -0800 (PST)
-Date: Thu, 05 Mar 2020 14:36:46 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Applied "dt-bindings: spi: convert rockchip spi bindings to yaml" to
- the spi tree
-In-Reply-To: <20200304184203.9548-1-jbx6244@gmail.com>
-Message-Id: <applied-20200304184203.9548-1-jbx6244@gmail.com>
-X-Patchwork-Hint: ignore
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+	id 1j9swS-0008Ty-5E; Thu, 05 Mar 2020 16:01:44 +0000
+Received: from mx2.suse.de ([195.135.220.15])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9suu-0006LG-MR; Thu, 05 Mar 2020 16:00:15 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 5CD7BAF9F;
+ Thu,  5 Mar 2020 15:59:59 +0000 (UTC)
+From: Thomas Zimmermann <tzimmermann@suse.de>
+To: airlied@linux.ie, daniel@ffwll.ch, sam@ravnborg.org, abrodkin@synopsys.com,
+ bbrezillon@kernel.org, nicolas.ferre@microchip.com,
+ alexandre.belloni@bootlin.com, ludovic.desroches@microchip.com,
+ maarten.lankhorst@linux.intel.com, mripard@kernel.org,
+ jingoohan1@gmail.com, inki.dae@samsung.com, jy0922.shim@samsung.com,
+ sw0312.kim@samsung.com, kyungmin.park@samsung.com, kgene@kernel.org,
+ krzk@kernel.org, stefan@agner.ch, alison.wang@nxp.com,
+ patrik.r.jakobsson@gmail.com, xinliang.liu@linaro.org,
+ zourongrong@gmail.com, john.stultz@linaro.org,
+ kong.kongxinwei@hisilicon.com, puck.chen@hisilicon.com,
+ linux@armlinux.org.uk, p.zabel@pengutronix.de, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-imx@nxp.com, paul@crapouillou.net, ck.hu@mediatek.com,
+ matthias.bgg@gmail.com, laurent.pinchart@ideasonboard.com,
+ kieran.bingham+renesas@ideasonboard.com, hjc@rock-chips.com,
+ heiko@sntech.de, wens@csie.org, jernej.skrabec@siol.net,
+ thierry.reding@gmail.com, jonathanh@nvidia.com, jsarha@ti.com,
+ tomi.valkeinen@ti.com, eric@anholt.net, kraxel@redhat.com,
+ rodrigosiqueiramelo@gmail.com, hamohammed.sa@gmail.com,
+ sebastian.reichel@collabora.com
+Subject: [PATCH 00/22] drm: Convert drivers to drm_simple_encoder_init()
+Date: Thu,  5 Mar 2020 16:59:28 +0100
+Message-Id: <20200305155950.2705-1-tzimmermann@suse.de>
+X-Mailer: git-send-email 2.25.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_063649_715599_2A90E8AF 
-X-CRM114-Status: GOOD (  23.46  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200305_080009_101356_6A5A210A 
+X-CRM114-Status: GOOD (  12.56  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,265 +79,136 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, linux-spi@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-samsung-soc@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ virtualization@lists.linux-foundation.org, linux-rockchip@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, Thomas Zimmermann <tzimmermann@suse.de>,
+ linux-tegra@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The patch
+A call to drm_simple_encoder_init() initializes an encoder without
+further functionality. It only provides the destroy callback to
+cleanup the encoder's state. Only few drivers implement more
+sophisticated encoders than that. Most drivers implement such a
+simple encoder and can use drm_simple_encoder_init() instead.
 
-   dt-bindings: spi: convert rockchip spi bindings to yaml
+The patchset converts drivers where the encoder's instance is
+embedded in a larger data structure. The driver releases the
+memory during cleanup. Each patch replaces drm_encoder_init() with
+drm_simple_encoder_init() and removes the (now unused) driver's
+encoder functions.
 
-has been applied to the spi tree at
+While the patchset is fairly large, the indiviual patches are self-
+contained and can be merged independently from each other. The
+simple-encoder functionality is currently in drm-misc-next, where
+these patches could go as well.
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git 
+Future directions: There's another common case where the driver
+calls kzalloc() plus drm_encoder_init(). Such drivers are not
+handled by this patchset. The plan here is to use a simple encoder
+with either managed memory allocation (once it's merged), or embed
+the encoder in a larger data structure and drop kzalloc() entirely.
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
+The patchset has been compile-tested on x86-64, aarch64 and arm.
 
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
+Thomas Zimmermann (22):
+  drm/arc: Use simple encoder
+  drm/atmel-hlcdc: Use simple encoder
+  drm/exynos: Use simple encoder
+  drm/fsl-dcu: Use simple encoder
+  drm/gma500: Use simple encoder
+  drm/hisilicon/kirin: Use simple encoder
+  drm/i2c/tda998x: Use simple encoder
+  drm/imx: Use simple encoder
+  drm/ingenic: Use simple encoder
+  drm/mediatek: Use simple encoder
+  drm/rcar-du: Use simple encoder
+  drm/rockchip: Use simple encoder
+  drm/shmobile: Use simple encoder
+  drm/sun4i: Use simple encoder
+  drm/tegra: Use simple encoder
+  drm/tidss: Use simple encoder
+  drm/tilcdc: Use simple encoder
+  drm/vc4: Use simple encoder
+  drm/virtgpu: Use simple encoder
+  drm/vkms: Use simple encoder
+  drm/writeback: Use simple encoder
+  drm/zte: Use simple encoder
 
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
+ drivers/gpu/drm/arc/arcpgu_hdmi.c              | 10 +++-------
+ drivers/gpu/drm/arc/arcpgu_sim.c               |  8 ++------
+ .../gpu/drm/atmel-hlcdc/atmel_hlcdc_output.c   | 12 ++++--------
+ drivers/gpu/drm/drm_writeback.c                | 10 +++-------
+ drivers/gpu/drm/exynos/exynos_dp.c             |  8 ++------
+ drivers/gpu/drm/exynos/exynos_drm_dpi.c        |  8 ++------
+ drivers/gpu/drm/exynos/exynos_drm_dsi.c        |  8 ++------
+ drivers/gpu/drm/exynos/exynos_drm_vidi.c       |  8 ++------
+ drivers/gpu/drm/exynos/exynos_hdmi.c           |  8 ++------
+ drivers/gpu/drm/fsl-dcu/fsl_dcu_drm_rgb.c      | 14 +++-----------
+ drivers/gpu/drm/gma500/cdv_intel_crt.c         | 14 +++-----------
+ drivers/gpu/drm/gma500/cdv_intel_dp.c          | 16 +++-------------
+ drivers/gpu/drm/gma500/cdv_intel_hdmi.c        |  4 ++--
+ drivers/gpu/drm/gma500/cdv_intel_lvds.c        | 17 +++--------------
+ drivers/gpu/drm/gma500/mdfld_dsi_dpi.c         |  7 +++----
+ drivers/gpu/drm/gma500/mdfld_output.h          |  1 -
+ drivers/gpu/drm/gma500/mdfld_tmd_vid.c         |  6 ------
+ drivers/gpu/drm/gma500/mdfld_tpo_vid.c         |  6 ------
+ drivers/gpu/drm/gma500/oaktrail_hdmi.c         | 14 ++------------
+ drivers/gpu/drm/gma500/oaktrail_lvds.c         |  5 +++--
+ drivers/gpu/drm/gma500/psb_intel_drv.h         |  1 -
+ drivers/gpu/drm/gma500/psb_intel_lvds.c        | 18 +++---------------
+ drivers/gpu/drm/gma500/tc35876x-dsi-lvds.c     |  5 -----
+ drivers/gpu/drm/hisilicon/kirin/dw_drm_dsi.c   |  8 ++------
+ drivers/gpu/drm/i2c/tda998x_drv.c              | 14 +++-----------
+ drivers/gpu/drm/imx/dw_hdmi-imx.c              |  8 ++------
+ drivers/gpu/drm/imx/imx-drm-core.c             |  6 ------
+ drivers/gpu/drm/imx/imx-drm.h                  |  1 -
+ drivers/gpu/drm/imx/imx-ldb.c                  |  8 ++------
+ drivers/gpu/drm/imx/imx-tve.c                  |  8 ++------
+ drivers/gpu/drm/imx/parallel-display.c         |  8 ++------
+ drivers/gpu/drm/ingenic/ingenic-drm.c          |  9 +++------
+ drivers/gpu/drm/mediatek/mtk_dpi.c             | 14 +++-----------
+ drivers/gpu/drm/mediatek/mtk_dsi.c             | 14 +++-----------
+ drivers/gpu/drm/rcar-du/rcar_du_encoder.c      | 14 +++-----------
+ .../gpu/drm/rockchip/analogix_dp-rockchip.c    |  9 +++------
+ drivers/gpu/drm/rockchip/cdn-dp-core.c         |  9 +++------
+ .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c    |  8 ++------
+ drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c    |  8 ++------
+ drivers/gpu/drm/rockchip/inno_hdmi.c           |  8 ++------
+ drivers/gpu/drm/rockchip/rk3066_hdmi.c         |  8 ++------
+ drivers/gpu/drm/rockchip/rockchip_lvds.c       | 10 +++-------
+ drivers/gpu/drm/rockchip/rockchip_rgb.c        |  8 ++------
+ drivers/gpu/drm/shmobile/shmob_drm_crtc.c      | 14 +++-----------
+ drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c         | 12 +++---------
+ drivers/gpu/drm/sun4i/sun4i_lvds.c             | 12 +++---------
+ drivers/gpu/drm/sun4i/sun4i_rgb.c              | 17 +++--------------
+ drivers/gpu/drm/sun4i/sun4i_tv.c               | 17 +++--------------
+ drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c         | 12 +++---------
+ drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c          |  8 ++------
+ drivers/gpu/drm/tegra/drm.h                    |  2 --
+ drivers/gpu/drm/tegra/dsi.c                    | 10 +++-------
+ drivers/gpu/drm/tegra/hdmi.c                   |  9 +++------
+ drivers/gpu/drm/tegra/output.c                 |  6 +-----
+ drivers/gpu/drm/tegra/rgb.c                    |  8 ++------
+ drivers/gpu/drm/tegra/sor.c                    |  8 ++------
+ drivers/gpu/drm/tidss/tidss_encoder.c          | 10 +++-------
+ drivers/gpu/drm/tilcdc/tilcdc_external.c       | 10 +++-------
+ drivers/gpu/drm/tilcdc/tilcdc_panel.c          |  8 ++------
+ drivers/gpu/drm/vc4/vc4_dpi.c                  |  8 ++------
+ drivers/gpu/drm/vc4/vc4_dsi.c                  | 15 +++------------
+ drivers/gpu/drm/vc4/vc4_hdmi.c                 | 17 ++++-------------
+ drivers/gpu/drm/vc4/vc4_vec.c                  |  8 ++------
+ drivers/gpu/drm/virtio/virtgpu_display.c       |  8 ++------
+ drivers/gpu/drm/vkms/vkms_output.c             |  8 ++------
+ drivers/gpu/drm/zte/zx_hdmi.c                  |  8 ++------
+ drivers/gpu/drm/zte/zx_tvenc.c                 |  8 ++------
+ drivers/gpu/drm/zte/zx_vga.c                   |  8 ++------
+ 68 files changed, 151 insertions(+), 488 deletions(-)
 
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
-From 5de04175fa2720bacf34196275123be5f32e2b82 Mon Sep 17 00:00:00 2001
-From: Johan Jonker <jbx6244@gmail.com>
-Date: Wed, 4 Mar 2020 19:42:01 +0100
-Subject: [PATCH] dt-bindings: spi: convert rockchip spi bindings to yaml
-
-Current dts files with 'spi' nodes are manually verified.
-In order to automate this process spi-rockchip.txt
-has to be converted to yaml. In the new setup
-spi-rockchip.yaml will inherit properties from
-spi-controller.yaml.
-
-Add document to MAINTAINERS.
-
-Also rk3188.dtsi, rk3288.dtsi, rk3368.dtsi and rk3399.dtsi
-use an extra fallback string, so change this in the documentation.
-
-Changed:
-"rockchip,rk3188-spi", "rockchip,rk3066-spi"
-"rockchip,rk3288-spi", "rockchip,rk3066-spi"
-"rockchip,rk3368-spi", "rockchip,rk3066-spi"
-"rockchip,rk3399-spi", "rockchip,rk3066-spi"
-
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Link: https://lore.kernel.org/r/20200304184203.9548-1-jbx6244@gmail.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- .../devicetree/bindings/spi/spi-rockchip.txt  |  58 ----------
- .../devicetree/bindings/spi/spi-rockchip.yaml | 105 ++++++++++++++++++
- MAINTAINERS                                   |   1 +
- 3 files changed, 106 insertions(+), 58 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/spi/spi-rockchip.txt
- create mode 100644 Documentation/devicetree/bindings/spi/spi-rockchip.yaml
-
-diff --git a/Documentation/devicetree/bindings/spi/spi-rockchip.txt b/Documentation/devicetree/bindings/spi/spi-rockchip.txt
-deleted file mode 100644
-index a0edac12d8df..000000000000
---- a/Documentation/devicetree/bindings/spi/spi-rockchip.txt
-+++ /dev/null
-@@ -1,58 +0,0 @@
--* Rockchip SPI Controller
--
--The Rockchip SPI controller is used to interface with various devices such as flash
--and display controllers using the SPI communication interface.
--
--Required Properties:
--
--- compatible: should be one of the following.
--    "rockchip,rv1108-spi" for rv1108 SoCs.
--    "rockchip,px30-spi", "rockchip,rk3066-spi" for px30 SoCs.
--    "rockchip,rk3036-spi" for rk3036 SoCS.
--    "rockchip,rk3066-spi" for rk3066 SoCs.
--    "rockchip,rk3188-spi" for rk3188 SoCs.
--    "rockchip,rk3228-spi" for rk3228 SoCS.
--    "rockchip,rk3288-spi" for rk3288 SoCs.
--    "rockchip,rk3368-spi" for rk3368 SoCs.
--    "rockchip,rk3399-spi" for rk3399 SoCs.
--- reg: physical base address of the controller and length of memory mapped
--       region.
--- interrupts: The interrupt number to the cpu. The interrupt specifier format
--              depends on the interrupt controller.
--- clocks: Must contain an entry for each entry in clock-names.
--- clock-names: Shall be "spiclk" for the transfer-clock, and "apb_pclk" for
--			   the peripheral clock.
--- #address-cells: should be 1.
--- #size-cells: should be 0.
--
--Optional Properties:
--
--- dmas: DMA specifiers for tx and rx dma. See the DMA client binding,
--		Documentation/devicetree/bindings/dma/dma.txt
--- dma-names: DMA request names should include "tx" and "rx" if present.
--- rx-sample-delay-ns: nanoseconds to delay after the SCLK edge before sampling
--		Rx data (may need to be fine tuned for high capacitance lines).
--		No delay (0) by default.
--- pinctrl-names: Names for the pin configuration(s); may be "default" or
--		"sleep", where the "sleep" configuration may describe the state
--		the pins should be in during system suspend. See also
--		pinctrl/pinctrl-bindings.txt.
--
--
--Example:
--
--	spi0: spi@ff110000 {
--		compatible = "rockchip,rk3066-spi";
--		reg = <0xff110000 0x1000>;
--		dmas = <&pdma1 11>, <&pdma1 12>;
--		dma-names = "tx", "rx";
--		rx-sample-delay-ns = <10>;
--		#address-cells = <1>;
--		#size-cells = <0>;
--		interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
--		clocks = <&cru SCLK_SPI0>, <&cru PCLK_SPI0>;
--		clock-names = "spiclk", "apb_pclk";
--		pinctrl-0 = <&spi1_pins>;
--		pinctrl-1 = <&spi1_sleep>;
--		pinctrl-names = "default", "sleep";
--	};
-diff --git a/Documentation/devicetree/bindings/spi/spi-rockchip.yaml b/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
-new file mode 100644
-index 000000000000..bd1450c1274c
---- /dev/null
-+++ b/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
-@@ -0,0 +1,105 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/spi/spi-rockchip.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Rockchip SPI Controller
-+
-+description:
-+  The Rockchip SPI controller is used to interface with various devices such
-+  as flash and display controllers using the SPI communication interface.
-+
-+allOf:
-+  - $ref: "spi-controller.yaml#"
-+
-+maintainers:
-+  - Heiko Stuebner <heiko@sntech.de>
-+
-+# Everything else is described in the common file
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: rockchip,rk3036-spi
-+      - const: rockchip,rk3066-spi
-+      - const: rockchip,rk3228-spi
-+      - const: rockchip,rv1108-spi
-+      - items:
-+          - enum:
-+            - rockchip,px30-spi
-+            - rockchip,rk3188-spi
-+            - rockchip,rk3288-spi
-+            - rockchip,rk3368-spi
-+            - rockchip,rk3399-spi
-+          - const: rockchip,rk3066-spi
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: transfer-clock
-+      - description: peripheral clock
-+
-+  clock-names:
-+    items:
-+      - const: spiclk
-+      - const: apb_pclk
-+
-+  dmas:
-+    items:
-+      - description: TX DMA Channel
-+      - description: RX DMA Channel
-+
-+  dma-names:
-+    items:
-+      - const: tx
-+      - const: rx
-+
-+  rx-sample-delay-ns:
-+    default: 0
-+    description:
-+      Nano seconds to delay after the SCLK edge before sampling Rx data
-+      (may need to be fine tuned for high capacitance lines).
-+      If not specified 0 will be used.
-+
-+  pinctrl-names:
-+    minItems: 1
-+    items:
-+      - const: default
-+      - const: sleep
-+    description:
-+      Names for the pin configuration(s); may be "default" or "sleep",
-+      where the "sleep" configuration may describe the state
-+      the pins should be in during system suspend.
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/rk3188-cru-common.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/interrupt-controller/irq.h>
-+    spi0: spi@ff110000 {
-+      compatible = "rockchip,rk3066-spi";
-+      reg = <0xff110000 0x1000>;
-+      interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
-+      clocks = <&cru SCLK_SPI0>, <&cru PCLK_SPI0>;
-+      clock-names = "spiclk", "apb_pclk";
-+      dmas = <&pdma1 11>, <&pdma1 12>;
-+      dma-names = "tx", "rx";
-+      pinctrl-0 = <&spi1_pins>;
-+      pinctrl-1 = <&spi1_sleep>;
-+      pinctrl-names = "default", "sleep";
-+      rx-sample-delay-ns = <10>;
-+      #address-cells = <1>;
-+      #size-cells = <0>;
-+    };
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 48c372e7c718..7c1080015943 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -2276,6 +2276,7 @@ T:	git git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git
- S:	Maintained
- F:	Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
- F:	Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
-+F:	Documentation/devicetree/bindings/spi/spi-rockchip.yaml
- F:	arch/arm/boot/dts/rk3*
- F:	arch/arm/boot/dts/rv1108*
- F:	arch/arm/mach-rockchip/
--- 
-2.20.1
+--
+2.25.1
 
 
 _______________________________________________
