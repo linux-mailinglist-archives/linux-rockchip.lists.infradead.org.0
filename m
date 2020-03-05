@@ -2,30 +2,30 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 578B717A9FE
-	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Mar 2020 17:02:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63C1A17A9FF
+	for <lists+linux-rockchip@lfdr.de>; Thu,  5 Mar 2020 17:02:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9ZYQTj6bKowqRjI5q5mC6XN4HgEf4+h2jIdkvczDZpk=; b=sX4m/4fQnOq7nx
-	ixq0a/akWOa8dlgwy5QgAc0beciuBrDai1Zkr/+lPXtGoKrLGvTFvhBTXFJcpYuL6ZSKJ7kinBOUK
-	YhRmP/8W8fsv87mt0VTpl562eP7E2X7cOuilMA3gd6e7ondydvSas9h1RDQXaJWP8tsjYpY9IJhEd
-	g1i7nLQ3LLXbX+jEsHMNuYE3QB4Y7BDq6uIVvhMpn61Mk48qc/ZUH4uSJEF8Vmt3a7TeVZUgVc8n5
-	+KLO6s91BQtdFmxE+j055caMV5WvLyFL/Pu4ZOnp2DfHgYeqMIqLdhfYEs3QwLZU60Eof3nd/rQWU
-	uB3px1IEg+Io6Z6lSHMQ==;
+	List-Owner; bh=I7vZsYqG/TYwrnt1WO40WVoe43YHvtRqdZQbGGTwIm4=; b=rFiuJa6pufkz7k
+	35V8lsT5/CV2or6HHNg6aDSu9TElIN62nN4bmKakmoeXgpiqs5Ysr2H6cXruTrDBGkFeQoMbqREQj
+	ru0N5sZgmBJdH0FxMTuZ7hrFynBylZusjLro6YxA6pZ15W1780L3Z1NXC2aXoOQC6LospG4P375X5
+	uO5sU9T2LIg4ntVVDALGciOkN1BD8G43E2GyM0LrzoDXlvo3ZLZYHdq7If6H1o8ZfQ1/IRMtJ8Lmk
+	IWno2meXGGWQt4PDT9FHGRomLzvlqmRh0jVLq3M1kr9/tTGLefKP7wwIDzeiBb2zDrtUEUOemhbmx
+	b9ewcMF/qTDp9LRhvIDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9swk-0000Mk-3U; Thu, 05 Mar 2020 16:02:02 +0000
+	id 1j9swt-0000Tj-9Y; Thu, 05 Mar 2020 16:02:11 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9sv5-00072v-2Z; Thu, 05 Mar 2020 16:00:20 +0000
+ id 1j9sv7-0007C2-0X; Thu, 05 Mar 2020 16:00:22 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id A8350B11A;
- Thu,  5 Mar 2020 16:00:16 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 27703B12D;
+ Thu,  5 Mar 2020 16:00:18 +0000 (UTC)
 From: Thomas Zimmermann <tzimmermann@suse.de>
 To: airlied@linux.ie, daniel@ffwll.ch, sam@ravnborg.org, abrodkin@synopsys.com,
  bbrezillon@kernel.org, nicolas.ferre@microchip.com,
@@ -47,16 +47,16 @@ To: airlied@linux.ie, daniel@ffwll.ch, sam@ravnborg.org, abrodkin@synopsys.com,
  tomi.valkeinen@ti.com, eric@anholt.net, kraxel@redhat.com,
  rodrigosiqueiramelo@gmail.com, hamohammed.sa@gmail.com,
  sebastian.reichel@collabora.com
-Subject: [PATCH 16/22] drm/tidss: Use simple encoder
-Date: Thu,  5 Mar 2020 16:59:44 +0100
-Message-Id: <20200305155950.2705-17-tzimmermann@suse.de>
+Subject: [PATCH 17/22] drm/tilcdc: Use simple encoder
+Date: Thu,  5 Mar 2020 16:59:45 +0100
+Message-Id: <20200305155950.2705-18-tzimmermann@suse.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200305155950.2705-1-tzimmermann@suse.de>
 References: <20200305155950.2705-1-tzimmermann@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_080019_320222_5AF640D5 
-X-CRM114-Status: GOOD (  11.84  )
+X-CRM114-CacheID: sfid-20200305_080021_401549_5289EA10 
+X-CRM114-Status: GOOD (  12.54  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -90,49 +90,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The tidss driver uses an empty implementation for its encoder. Replace
+The tilcdc driver uses empty implementations for its encoders. Replace
 the code with the generic simple encoder.
 
 Signed-off-by: Thomas Zimmermann <tzimmermann@suse.de>
 ---
- drivers/gpu/drm/tidss/tidss_encoder.c | 10 +++-------
- 1 file changed, 3 insertions(+), 7 deletions(-)
+ drivers/gpu/drm/tilcdc/tilcdc_external.c | 10 +++-------
+ drivers/gpu/drm/tilcdc/tilcdc_panel.c    |  8 ++------
+ 2 files changed, 5 insertions(+), 13 deletions(-)
 
-diff --git a/drivers/gpu/drm/tidss/tidss_encoder.c b/drivers/gpu/drm/tidss/tidss_encoder.c
-index 83785b0a66a9..4c0558286f5e 100644
---- a/drivers/gpu/drm/tidss/tidss_encoder.c
-+++ b/drivers/gpu/drm/tidss/tidss_encoder.c
-@@ -8,8 +8,9 @@
- 
- #include <drm/drm_crtc.h>
- #include <drm/drm_crtc_helper.h>
--#include <drm/drm_panel.h>
+diff --git a/drivers/gpu/drm/tilcdc/tilcdc_external.c b/drivers/gpu/drm/tilcdc/tilcdc_external.c
+index 28b7f703236e..b177525588c1 100644
+--- a/drivers/gpu/drm/tilcdc/tilcdc_external.c
++++ b/drivers/gpu/drm/tilcdc/tilcdc_external.c
+@@ -10,6 +10,7 @@
+ #include <drm/drm_atomic_helper.h>
+ #include <drm/drm_bridge.h>
  #include <drm/drm_of.h>
-+#include <drm/drm_panel.h>
 +#include <drm/drm_simple_kms_helper.h>
  
- #include "tidss_crtc.h"
- #include "tidss_drv.h"
-@@ -59,10 +60,6 @@ static const struct drm_encoder_helper_funcs encoder_helper_funcs = {
- 	.atomic_check = tidss_encoder_atomic_check,
- };
+ #include "tilcdc_drv.h"
+ #include "tilcdc_external.h"
+@@ -83,10 +84,6 @@ int tilcdc_add_component_encoder(struct drm_device *ddev)
+ 	return 0;
+ }
  
--static const struct drm_encoder_funcs encoder_funcs = {
--	.destroy = drm_encoder_cleanup,
+-static const struct drm_encoder_funcs tilcdc_external_encoder_funcs = {
+-	.destroy	= drm_encoder_cleanup,
 -};
 -
- struct drm_encoder *tidss_encoder_create(struct tidss_device *tidss,
- 					 u32 encoder_type, u32 possible_crtcs)
+ static
+ int tilcdc_attach_bridge(struct drm_device *ddev, struct drm_bridge *bridge)
  {
-@@ -75,8 +72,7 @@ struct drm_encoder *tidss_encoder_create(struct tidss_device *tidss,
+@@ -131,9 +128,8 @@ int tilcdc_attach_external_device(struct drm_device *ddev)
+ 	if (!priv->external_encoder)
+ 		return -ENOMEM;
  
- 	enc->possible_crtcs = possible_crtcs;
+-	ret = drm_encoder_init(ddev, priv->external_encoder,
+-			       &tilcdc_external_encoder_funcs,
+-			       DRM_MODE_ENCODER_NONE, NULL);
++	ret = drm_simple_encoder_init(ddev, priv->external_encoder,
++				      DRM_MODE_ENCODER_NONE);
+ 	if (ret) {
+ 		dev_err(ddev->dev, "drm_encoder_init() failed %d\n", ret);
+ 		return ret;
+diff --git a/drivers/gpu/drm/tilcdc/tilcdc_panel.c b/drivers/gpu/drm/tilcdc/tilcdc_panel.c
+index 5584e656b857..12823d60c4e8 100644
+--- a/drivers/gpu/drm/tilcdc/tilcdc_panel.c
++++ b/drivers/gpu/drm/tilcdc/tilcdc_panel.c
+@@ -16,6 +16,7 @@
+ #include <drm/drm_connector.h>
+ #include <drm/drm_modeset_helper_vtables.h>
+ #include <drm/drm_probe_helper.h>
++#include <drm/drm_simple_kms_helper.h>
  
--	ret = drm_encoder_init(&tidss->ddev, enc, &encoder_funcs,
--			       encoder_type, NULL);
-+	ret = drm_simple_encoder_init(&tidss->ddev, enc, encoder_type);
+ #include "tilcdc_drv.h"
+ #include "tilcdc_panel.h"
+@@ -74,10 +75,6 @@ static void panel_encoder_mode_set(struct drm_encoder *encoder,
+ 	/* nothing needed */
+ }
+ 
+-static const struct drm_encoder_funcs panel_encoder_funcs = {
+-		.destroy        = drm_encoder_cleanup,
+-};
+-
+ static const struct drm_encoder_helper_funcs panel_encoder_helper_funcs = {
+ 		.dpms           = panel_encoder_dpms,
+ 		.prepare        = panel_encoder_prepare,
+@@ -102,8 +99,7 @@ static struct drm_encoder *panel_encoder_create(struct drm_device *dev,
+ 	encoder = &panel_encoder->base;
+ 	encoder->possible_crtcs = 1;
+ 
+-	ret = drm_encoder_init(dev, encoder, &panel_encoder_funcs,
+-			DRM_MODE_ENCODER_LVDS, NULL);
++	ret = drm_simple_encoder_init(dev, encoder, DRM_MODE_ENCODER_LVDS);
  	if (ret < 0)
- 		return ERR_PTR(ret);
+ 		goto fail;
  
 -- 
 2.25.1
