@@ -2,62 +2,62 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D521217BB48
-	for <lists+linux-rockchip@lfdr.de>; Fri,  6 Mar 2020 12:13:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C20DE17BCF2
+	for <lists+linux-rockchip@lfdr.de>; Fri,  6 Mar 2020 13:39:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
 	Content-Type:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To
 	:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=My7NbKsBi+c+f8Fl4xJddsP1dmfFTvxBp3Xtv8FOFaU=; b=I3gcbaFMXD3gacB6uyU476qiQ
-	+O26SXJhyzN08kf/CO45SuRYwIQ8Q84KXJLc0Qgb7FsEcApZR8+k8ElffQo2DEQHW1vvmU6L8qB9l
-	iElg/hb3YHJ34kjsQ9drKekc/Lm1BCxu5HbTozxPglYfMDc3Txr5pMPctONwHL2UlqqliFsSp/+c7
-	tpzMh1w3L+/1gIAa6LMPVrIUzlVpUOEzHWRqLouyd6oIclsQXhOOziBUFRgSlX6TvoWNftE9SLJsN
-	hCkQxJfqpC9zwtGFvCHp6eq3y9xaTflcuCcxFTe0c+C4UFnuSk2kcLqFX+UgwnGS4GSHi1IcR0F3k
-	k/KuKzpHg==;
+	 bh=avs+D200x1jaK/jpahhbBeNwDSWULCz7Nmz42v/Conc=; b=fIIufxCTfThmWd2j/KbnQLAzO
+	31vD5uPoQ/QGRUozpdgn1pWG+729vJ6cNsaWC+2yxsggzQmAvX7OHvJJ1I1bM7k+MF2HS4TdVdtl6
+	lRMcnPcKJNYyyJGfLflt7XvEqO7lrS87T6+atDduQvicdPw0MoglLcK7dajps1m2HDr6hBnz3rqQK
+	NNpNf+BKxOq62XA1Qu05LVFEah8NQefqRkz9UGzhyirBVj2nJjTnzkNH0vzxnJ7u42MmtWjR08P0m
+	8pyWYunEy08dCGDKGITe7PEUvvdh5a4kG3BkMbXLTSjO+jNec3Qvb6EkAW85iq+perB2N6+L3QeK3
+	NbRlZTAVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAAv7-0000KF-T8; Fri, 06 Mar 2020 11:13:33 +0000
-Received: from mga05.intel.com ([192.55.52.43])
+	id 1jACG4-000528-D7; Fri, 06 Mar 2020 12:39:16 +0000
+Received: from mga03.intel.com ([134.134.136.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAAv4-0000Js-NQ; Fri, 06 Mar 2020 11:13:32 +0000
+ id 1jACG0-00051P-GX; Fri, 06 Mar 2020 12:39:14 +0000
 X-Amp-Result: UNKNOWN
 X-Amp-Original-Verdict: FILE UNKNOWN
 X-Amp-File-Uploaded: False
-Received: from fmsmga005.fm.intel.com ([10.253.24.32])
- by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 06 Mar 2020 03:13:29 -0800
+Received: from orsmga008.jf.intel.com ([10.7.209.65])
+ by orsmga103.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 06 Mar 2020 04:39:10 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,521,1574150400"; 
- d="gz'50?scan'50,208,50";a="440084132"
+X-IronPort-AV: E=Sophos;i="5.70,522,1574150400"; 
+ d="gz'50?scan'50,208,50";a="234792907"
 Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga005.fm.intel.com with ESMTP; 06 Mar 2020 03:13:13 -0800
+ by orsmga008.jf.intel.com with ESMTP; 06 Mar 2020 04:38:56 -0800
 Received: from kbuild by lkp-server01 with local (Exim 4.89)
  (envelope-from <lkp@intel.com>)
- id 1jAAun-0008mH-2t; Fri, 06 Mar 2020 19:13:13 +0800
-Date: Fri, 6 Mar 2020 19:12:30 +0800
+ id 1jACFj-0002Bg-Ff; Fri, 06 Mar 2020 20:38:55 +0800
+Date: Fri, 6 Mar 2020 20:38:53 +0800
 From: kbuild test robot <lkp@intel.com>
 To: Thomas Zimmermann <tzimmermann@suse.de>
-Subject: Re: [PATCH 14/22] drm/sun4i: Use simple encoder
-Message-ID: <202003061907.fMUbMEuY%lkp@intel.com>
-References: <20200305155950.2705-15-tzimmermann@suse.de>
+Subject: Re: [PATCH 15/22] drm/tegra: Use simple encoder
+Message-ID: <202003062053.isBJJQ7H%lkp@intel.com>
+References: <20200305155950.2705-16-tzimmermann@suse.de>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="RnlQjJ0d97Da+TV1"
+Content-Type: multipart/mixed; boundary="6TrnltStXW4iwmi0"
 Content-Disposition: inline
-In-Reply-To: <20200305155950.2705-15-tzimmermann@suse.de>
+In-Reply-To: <20200305155950.2705-16-tzimmermann@suse.de>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_031330_818797_6B827656 
-X-CRM114-Status: UNSURE (   7.37  )
+X-CRM114-CacheID: sfid-20200306_043912_668281_01AFE613 
+X-CRM114-Status: UNSURE (   7.29  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.43 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -98,7 +98,7 @@ Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
 
---RnlQjJ0d97Da+TV1
+--6TrnltStXW4iwmi0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
@@ -124,96 +124,94 @@ Reported-by: kbuild test robot <lkp@intel.com>
 
 All errors (new ones prefixed by >>):
 
->> drivers/gpu/drm/sun4i/sun4i_lvds.c:121:8: error: implicit declaration of function 'drm_simple_encoder_init' [-Werror,-Wimplicit-function-declaration]
-           ret = drm_simple_encoder_init(drm, &lvds->encoder,
-                 ^
-   drivers/gpu/drm/sun4i/sun4i_lvds.c:121:8: note: did you mean 'drm_encoder_init'?
-   include/drm/drm_encoder.h:189:5: note: 'drm_encoder_init' declared here
-   int drm_encoder_init(struct drm_device *dev,
-       ^
-   1 error generated.
---
->> drivers/gpu/drm/sun4i/sun4i_rgb.c:213:8: error: implicit declaration of function 'drm_simple_encoder_init' [-Werror,-Wimplicit-function-declaration]
-           ret = drm_simple_encoder_init(drm, &rgb->encoder,
-                 ^
-   drivers/gpu/drm/sun4i/sun4i_rgb.c:213:8: note: did you mean 'drm_encoder_init'?
-   include/drm/drm_encoder.h:189:5: note: 'drm_encoder_init' declared here
-   int drm_encoder_init(struct drm_device *dev,
-       ^
-   1 error generated.
---
->> drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c:611:8: error: implicit declaration of function 'drm_simple_encoder_init' [-Werror,-Wimplicit-function-declaration]
-           ret = drm_simple_encoder_init(drm, &hdmi->encoder,
-                 ^
-   drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c:611:8: note: did you mean 'drm_encoder_init'?
-   include/drm/drm_encoder.h:189:5: note: 'drm_encoder_init' declared here
-   int drm_encoder_init(struct drm_device *dev,
-       ^
-   1 error generated.
---
->> drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c:220:2: error: implicit declaration of function 'drm_simple_encoder_init' [-Werror,-Wimplicit-function-declaration]
-           drm_simple_encoder_init(drm, encoder, DRM_MODE_ENCODER_TMDS);
+>> drivers/gpu/drm/tegra/rgb.c:281:2: error: implicit declaration of function 'drm_simple_encoder_init' [-Werror,-Wimplicit-function-declaration]
+           drm_simple_encoder_init(drm, &output->encoder, DRM_MODE_ENCODER_LVDS);
            ^
-   drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c:220:2: note: did you mean 'drm_encoder_init'?
+   drivers/gpu/drm/tegra/rgb.c:281:2: note: did you mean 'drm_encoder_init'?
    include/drm/drm_encoder.h:189:5: note: 'drm_encoder_init' declared here
    int drm_encoder_init(struct drm_device *dev,
        ^
    1 error generated.
 --
->> drivers/gpu/drm/sun4i/sun4i_tv.c:587:8: error: implicit declaration of function 'drm_simple_encoder_init' [-Werror,-Wimplicit-function-declaration]
-           ret = drm_simple_encoder_init(drm, &tv->encoder,
-                 ^
-   drivers/gpu/drm/sun4i/sun4i_tv.c:587:8: note: did you mean 'drm_encoder_init'?
+>> drivers/gpu/drm/tegra/hdmi.c:1445:2: error: implicit declaration of function 'drm_simple_encoder_init' [-Werror,-Wimplicit-function-declaration]
+           drm_simple_encoder_init(drm, &hdmi->output.encoder,
+           ^
+   drivers/gpu/drm/tegra/hdmi.c:1445:2: note: did you mean 'drm_encoder_init'?
    include/drm/drm_encoder.h:189:5: note: 'drm_encoder_init' declared here
    int drm_encoder_init(struct drm_device *dev,
        ^
    1 error generated.
 --
->> drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c:1062:8: error: implicit declaration of function 'drm_simple_encoder_init' [-Werror,-Wimplicit-function-declaration]
-           ret = drm_simple_encoder_init(drm, &dsi->encoder,
-                 ^
-   drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c:1062:8: note: did you mean 'drm_encoder_init'?
+>> drivers/gpu/drm/tegra/dsi.c:1058:3: error: implicit declaration of function 'drm_simple_encoder_init' [-Werror,-Wimplicit-function-declaration]
+                   drm_simple_encoder_init(drm, &dsi->output.encoder,
+                   ^
+   drivers/gpu/drm/tegra/dsi.c:1058:3: note: did you mean 'drm_encoder_init'?
+   include/drm/drm_encoder.h:189:5: note: 'drm_encoder_init' declared here
+   int drm_encoder_init(struct drm_device *dev,
+       ^
+   1 error generated.
+--
+>> drivers/gpu/drm/tegra/sor.c:3102:2: error: implicit declaration of function 'drm_simple_encoder_init' [-Werror,-Wimplicit-function-declaration]
+           drm_simple_encoder_init(drm, &sor->output.encoder, encoder);
+           ^
+   drivers/gpu/drm/tegra/sor.c:3102:2: note: did you mean 'drm_encoder_init'?
    include/drm/drm_encoder.h:189:5: note: 'drm_encoder_init' declared here
    int drm_encoder_init(struct drm_device *dev,
        ^
    1 error generated.
 
-vim +/drm_simple_encoder_init +121 drivers/gpu/drm/sun4i/sun4i_lvds.c
+vim +/drm_simple_encoder_init +281 drivers/gpu/drm/tegra/rgb.c
 
-    99	
-   100	int sun4i_lvds_init(struct drm_device *drm, struct sun4i_tcon *tcon)
-   101	{
-   102		struct drm_encoder *encoder;
-   103		struct drm_bridge *bridge;
-   104		struct sun4i_lvds *lvds;
-   105		int ret;
-   106	
-   107		lvds = devm_kzalloc(drm->dev, sizeof(*lvds), GFP_KERNEL);
-   108		if (!lvds)
-   109			return -ENOMEM;
-   110		encoder = &lvds->encoder;
-   111	
-   112		ret = drm_of_find_panel_or_bridge(tcon->dev->of_node, 1, 0,
-   113						  &lvds->panel, &bridge);
-   114		if (ret) {
-   115			dev_info(drm->dev, "No panel or bridge found... LVDS output disabled\n");
-   116			return 0;
-   117		}
-   118	
-   119		drm_encoder_helper_add(&lvds->encoder,
-   120				       &sun4i_lvds_enc_helper_funcs);
- > 121		ret = drm_simple_encoder_init(drm, &lvds->encoder,
+   266	
+   267	int tegra_dc_rgb_init(struct drm_device *drm, struct tegra_dc *dc)
+   268	{
+   269		struct tegra_output *output = dc->rgb;
+   270		int err;
+   271	
+   272		if (!dc->rgb)
+   273			return -ENODEV;
+   274	
+   275		drm_connector_init(drm, &output->connector, &tegra_rgb_connector_funcs,
+   276				   DRM_MODE_CONNECTOR_LVDS);
+   277		drm_connector_helper_add(&output->connector,
+   278					 &tegra_rgb_connector_helper_funcs);
+   279		output->connector.dpms = DRM_MODE_DPMS_OFF;
+   280	
+ > 281		drm_simple_encoder_init(drm, &output->encoder, DRM_MODE_ENCODER_LVDS);
+   282		drm_encoder_helper_add(&output->encoder,
+   283				       &tegra_rgb_encoder_helper_funcs);
+   284	
+   285		drm_connector_attach_encoder(&output->connector,
+   286						  &output->encoder);
+   287		drm_connector_register(&output->connector);
+   288	
+   289		err = tegra_output_init(drm, output);
+   290		if (err < 0) {
+   291			dev_err(output->dev, "failed to initialize output: %d\n", err);
+   292			return err;
+   293		}
+   294	
+   295		/*
+   296		 * Other outputs can be attached to either display controller. The RGB
+   297		 * outputs are an exception and work only with their parent display
+   298		 * controller.
+   299		 */
+   300		output->encoder.possible_crtcs = drm_crtc_mask(&dc->base);
+   301	
+   302		return 0;
+   303	}
+   304	
 
 ---
 0-DAY CI Kernel Test Service, Intel Corporation
 https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
---RnlQjJ0d97Da+TV1
+--6TrnltStXW4iwmi0
 Content-Type: application/gzip
 Content-Disposition: attachment; filename=".config.gz"
 Content-Transfer-Encoding: base64
 
-H4sICCMqYl4AAy5jb25maWcAnDzJdhu3svv7FTzJJlnE4SRKue9oAaLRJMKeDKBJSps+tEQ5
+H4sICOc/Yl4AAy5jb25maWcAnDzJdhu3svv7FTzJJlnE4SRKue9oAaLRJMKeDKBJSps+tEQ5
 etHgS0lO/Pe3CugBQKMVv5eTOGZVYS7UjP7xXz+OyNvr8+Ph9f7m8PDwbfT5+HQ8HV6Pt6O7
 +4fj/4yifJTlasQirj4AcXL/9Pb3r4fT42I+Ovuw+DD+5XQzH22Op6fjw4g+P93df36D5vfP
 T//68V/w748AfPwCPZ3+Pbp5ODx9Hn09nl4APZpMPow/jEc/fb5//fevv8Kfj/en0/Pp14eH
@@ -1099,7 +1097,7 @@ wEsOxceLESa/id2aruo8uus6I6nVCGZjw48uHHM8QwbZzQuGMAlwFnpPC3dt0zCPQREdGSiV
 JnKkP+4j6IYhKfDbHY5PTBmnIxwBO5QvgDFHP4J2gUOstpUMAQ0ZKIjQj7lHJbkVu6suF/4H
 +SLxE204AwA=
 
---RnlQjJ0d97Da+TV1
+--6TrnltStXW4iwmi0
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -1110,5 +1108,5 @@ Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
---RnlQjJ0d97Da+TV1--
+--6TrnltStXW4iwmi0--
 
