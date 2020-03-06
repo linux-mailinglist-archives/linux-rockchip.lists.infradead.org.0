@@ -2,54 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F340A17B60F
-	for <lists+linux-rockchip@lfdr.de>; Fri,  6 Mar 2020 06:15:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDE4417B6A2
+	for <lists+linux-rockchip@lfdr.de>; Fri,  6 Mar 2020 07:17:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
 	Content-Type:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To
 	:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cU3AShwZHY8NK9UfYxRpczd/gXUAFwRfftrkY0pkxeY=; b=Y1gj2C+IB8IqpZwMpUCit8OCR
-	e/P5FVZWoOVwlhWNOdC7ClgvZZVk9wi3fT8Wv5Ks+4YKrJOTx7f5JMEgQo2PxT4tQkuo9AntEy2tl
-	EQBIim1UMaz683oY8rlN+3TRIvIe1l2nEkvdc0ZbwyX2JFngk4RxLoCJMg0H8GNr3skbs34wwk7Pu
-	f5Z14FEoqm1Ehjzbeu6zZ7aT5RIrF5UISACVYOYhq0k1wdTbCQyK4oWJlohAmgeQy+ZrXTWoJ2aIS
-	XGwE8LhmzsjStj2wTYcmklpZkwhYWLQ/hyzkr8D+G5fUM5DUWyvnWkAfvC61Npgq54o4NoXmpvAvU
-	ig3qZONew==;
+	 bh=ZdquEqs6GpiDbtJmhQfJw+25lvycWzJ+flkYt5ZtJvw=; b=AJC0QUG/TUkWV0XmdEozKS90E
+	Tq1541NVjB/W9bI9UitV8oeSw0O1Rd+z2VbY7eSpotAPKGOFJ0SjXHEstiYK53gFJGbBVjQtLHfxc
+	bLOnlNdo4JUSJOhdHj5xTKU1GYw2VHhP8pEDd81Ekwrltt5c/N5bFvVwzssHUh5VLwcVxi29Og4sb
+	xEmLOLI8zOb5H7xFWcm2DxKsXsTtQuBrfNNfvlPUzMJUVicifLtA0j/EYJ97U/xRTSh50DCz0mp26
+	U7gpCZK0Z9GjdfEDjT+c+Th6eDEBVyKULG75i4MZftyJBc8vpdaKPWq5Kfq4P9Aithn1ycHvLp/nU
+	4AAw953mA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jA5KN-0005JW-4Y; Fri, 06 Mar 2020 05:15:15 +0000
+	id 1jA6Id-0006vC-NI; Fri, 06 Mar 2020 06:17:31 +0000
 Received: from mga02.intel.com ([134.134.136.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jA5KJ-0005CQ-I1; Fri, 06 Mar 2020 05:15:13 +0000
+ id 1jA6IZ-0006uW-Ve; Fri, 06 Mar 2020 06:17:29 +0000
 X-Amp-Result: UNKNOWN
 X-Amp-Original-Verdict: FILE UNKNOWN
 X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
+Received: from fmsmga002.fm.intel.com ([10.253.24.26])
  by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 05 Mar 2020 21:15:07 -0800
+ 05 Mar 2020 22:17:24 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,520,1574150400"; 
- d="gz'50?scan'50,208,50";a="234753968"
+X-IronPort-AV: E=Sophos;i="5.70,521,1574150400"; 
+ d="gz'50?scan'50,208,50";a="275424251"
 Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga008.fm.intel.com with ESMTP; 05 Mar 2020 21:14:54 -0800
+ by fmsmga002.fm.intel.com with ESMTP; 05 Mar 2020 22:17:11 -0800
 Received: from kbuild by lkp-server01 with local (Exim 4.89)
  (envelope-from <lkp@intel.com>)
- id 1jA5K1-0007uK-Lv; Fri, 06 Mar 2020 13:14:53 +0800
-Date: Fri, 6 Mar 2020 13:14:04 +0800
+ id 1jA6II-000J5f-Lb; Fri, 06 Mar 2020 14:17:10 +0800
+Date: Fri, 6 Mar 2020 14:16:48 +0800
 From: kbuild test robot <lkp@intel.com>
 To: Thomas Zimmermann <tzimmermann@suse.de>
-Subject: Re: [PATCH 03/22] drm/exynos: Use simple encoder
-Message-ID: <202003061311.5Ii8rcnV%lkp@intel.com>
-References: <20200305155950.2705-4-tzimmermann@suse.de>
+Subject: Re: [PATCH 06/22] drm/hisilicon/kirin: Use simple encoder
+Message-ID: <202003061415.76jjt0tz%lkp@intel.com>
+References: <20200305155950.2705-7-tzimmermann@suse.de>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="k+w/mQv8wyuph6w0"
+Content-Type: multipart/mixed; boundary="2oS5YaxWCcQjTEyO"
 Content-Disposition: inline
-In-Reply-To: <20200305155950.2705-4-tzimmermann@suse.de>
+In-Reply-To: <20200305155950.2705-7-tzimmermann@suse.de>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_211511_713177_0435229F 
-X-CRM114-Status: UNSURE (   5.14  )
+X-CRM114-CacheID: sfid-20200305_221728_130583_AE0A25D9 
+X-CRM114-Status: UNSURE (   3.41  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -101,7 +101,7 @@ Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
 
---k+w/mQv8wyuph6w0
+--2oS5YaxWCcQjTEyO
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
@@ -128,64 +128,53 @@ Reported-by: kbuild test robot <lkp@intel.com>
 
 All errors (new ones prefixed by >>):
 
->> drivers/gpu/drm/exynos/exynos_drm_dsi.c:1705:2: error: implicit declaration of function 'drm_simple_encoder_init' [-Werror,-Wimplicit-function-declaration]
-           drm_simple_encoder_init(drm_dev, encoder, DRM_MODE_ENCODER_TMDS);
-           ^
-   drivers/gpu/drm/exynos/exynos_drm_dsi.c:1705:2: note: did you mean 'drm_encoder_init'?
-   include/drm/drm_encoder.h:189:5: note: 'drm_encoder_init' declared here
-   int drm_encoder_init(struct drm_device *dev,
-       ^
-   1 error generated.
---
->> drivers/gpu/drm/exynos/exynos_hdmi.c:1851:2: error: implicit declaration of function 'drm_simple_encoder_init' [-Werror,-Wimplicit-function-declaration]
-           drm_simple_encoder_init(drm_dev, encoder, DRM_MODE_ENCODER_TMDS);
-           ^
-   drivers/gpu/drm/exynos/exynos_hdmi.c:1851:2: note: did you mean 'drm_encoder_init'?
-   include/drm/drm_encoder.h:189:5: note: 'drm_encoder_init' declared here
-   int drm_encoder_init(struct drm_device *dev,
+>> drivers/gpu//drm/hisilicon/kirin/dw_drm_dsi.c:713:8: error: implicit declaration of function 'drm_simple_encoder_init' [-Werror,-Wimplicit-function-declaration]
+           ret = drm_simple_encoder_init(drm_dev, encoder, DRM_MODE_ENCODER_DSI);
+                 ^
+   drivers/gpu//drm/hisilicon/kirin/dw_drm_dsi.c:713:8: note: did you mean 'drm_i2c_encoder_init'?
+   include/drm/drm_encoder_slave.h:104:5: note: 'drm_i2c_encoder_init' declared here
+   int drm_i2c_encoder_init(struct drm_device *dev,
        ^
    1 error generated.
 
-vim +/drm_simple_encoder_init +1705 drivers/gpu/drm/exynos/exynos_drm_dsi.c
+vim +/drm_simple_encoder_init +713 drivers/gpu//drm/hisilicon/kirin/dw_drm_dsi.c
 
-  1695	
-  1696	static int exynos_dsi_bind(struct device *dev, struct device *master,
-  1697					void *data)
-  1698	{
-  1699		struct drm_encoder *encoder = dev_get_drvdata(dev);
-  1700		struct exynos_dsi *dsi = encoder_to_dsi(encoder);
-  1701		struct drm_device *drm_dev = data;
-  1702		struct drm_bridge *in_bridge;
-  1703		int ret;
-  1704	
-> 1705		drm_simple_encoder_init(drm_dev, encoder, DRM_MODE_ENCODER_TMDS);
-  1706	
-  1707		drm_encoder_helper_add(encoder, &exynos_dsi_encoder_helper_funcs);
-  1708	
-  1709		ret = exynos_drm_set_possible_crtcs(encoder, EXYNOS_DISPLAY_TYPE_LCD);
-  1710		if (ret < 0)
-  1711			return ret;
-  1712	
-  1713		if (dsi->in_bridge_node) {
-  1714			in_bridge = of_drm_find_bridge(dsi->in_bridge_node);
-  1715			if (in_bridge)
-  1716				drm_bridge_attach(encoder, in_bridge, NULL, 0);
-  1717		}
-  1718	
-  1719		return mipi_dsi_host_register(&dsi->dsi_host);
-  1720	}
-  1721	
+   699	
+   700	static int dw_drm_encoder_init(struct device *dev,
+   701				       struct drm_device *drm_dev,
+   702				       struct drm_encoder *encoder)
+   703	{
+   704		int ret;
+   705		u32 crtc_mask = drm_of_find_possible_crtcs(drm_dev, dev->of_node);
+   706	
+   707		if (!crtc_mask) {
+   708			DRM_ERROR("failed to find crtc mask\n");
+   709			return -EINVAL;
+   710		}
+   711	
+   712		encoder->possible_crtcs = crtc_mask;
+ > 713		ret = drm_simple_encoder_init(drm_dev, encoder, DRM_MODE_ENCODER_DSI);
+   714		if (ret) {
+   715			DRM_ERROR("failed to init dsi encoder\n");
+   716			return ret;
+   717		}
+   718	
+   719		drm_encoder_helper_add(encoder, &dw_encoder_helper_funcs);
+   720	
+   721		return 0;
+   722	}
+   723	
 
 ---
 0-DAY CI Kernel Test Service, Intel Corporation
 https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
---k+w/mQv8wyuph6w0
+--2oS5YaxWCcQjTEyO
 Content-Type: application/gzip
 Content-Disposition: attachment; filename=".config.gz"
 Content-Transfer-Encoding: base64
 
-H4sICDPYYV4AAy5jb25maWcAnDzJdhu3svv7FTzJJlnE4SRKue9oAaLRJMKeDKBJSps+tEQ5
+H4sICAnmYV4AAy5jb25maWcAnDzJdhu3svv7FTzJJlnE4SRKue9oAaLRJMKeDKBJSps+tEQ5
 etHgS0lO/Pe3CugBQKMVv5eTOGZVYS7UjP7xXz+OyNvr8+Ph9f7m8PDwbfT5+HQ8HV6Pt6O7
 +4fj/4yifJTlasQirj4AcXL/9Pb3r4fT42I+Ovuw+DD+5XQzH22Op6fjw4g+P93df36D5vfP
 T//68V/w748AfPwCPZ3+Pbp5ODx9Hn09nl4APZpMPow/jEc/fb5//fevv8Kfj/en0/Pp14eH
@@ -1071,7 +1060,7 @@ wEsOxceLESa/id2aruo8uus6I6nVCGZjw48uHHM8QwbZzQuGMAlwFnpPC3dt0zCPQREdGSiV
 JnKkP+4j6IYhKfDbHY5PTBmnIxwBO5QvgDFHP4J2gUOstpUMAQ0ZKIjQj7lHJbkVu6suF/4H
 +SLxE204AwA=
 
---k+w/mQv8wyuph6w0
+--2oS5YaxWCcQjTEyO
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -1082,5 +1071,5 @@ Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
---k+w/mQv8wyuph6w0--
+--2oS5YaxWCcQjTEyO--
 
