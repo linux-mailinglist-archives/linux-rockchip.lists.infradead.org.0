@@ -2,74 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A2D317BAAF
-	for <lists+linux-rockchip@lfdr.de>; Fri,  6 Mar 2020 11:45:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3937317BADD
+	for <lists+linux-rockchip@lfdr.de>; Fri,  6 Mar 2020 11:57:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p25sEQy/iPzsydwtG9u3DZSQMiY1sFiWuDLef+wt9mI=; b=bQN3RfIzkqi4vy
-	na1nparQCBrOE2oDo8TVbmR9NpYAOR9QxyHJQWlBq4WiphOxaxXfEFyY5gQzUVS/CQRZGV9jI7Og+
-	lHolwaFlPexIC5GYzAVHHCOtfh7xVn28lpgnbKZn4j6huj99f70Pr9GpZ3iv/aCGytjR8H9quBCdH
-	u2j3tp2zrsJqQqa0iEpvRh+wcjOBPjRF4OlWXA2UZPPmzSC7RCEVNMpDZHDDQroMRIOkkWrdAPlb0
-	WoCRDm7+xVza2Q9tchQUii6OWk3zcxQR2/NvDElg2hyNZFjsDAhNEnSn43x8sknKzofVsYkRlJWxE
-	dWO3ASAZOgNmsByAdUOA==;
+	List-Owner; bh=MZFc+EKs2BSPNGn3eqB5BQUFH8o3blzGtWqVn9bbQuM=; b=T4fUeGuiW/eDzC
+	6r5Raj5SJQdiiSAlPv9YIiPqUBoPJ0mKWPByz+d5FT4QvmavL7euUWYAw9hbDyNLJm1UECX316J9u
+	NP38BpjlVzBLPKDNeUKzpTGquk8suroG5C1V8Crwq63d5GsZEC+dAvSTu6oSqV/VW1Hdui6KMfr2r
+	tm83FBWvws7AZt6eoc9lYFmdKAU9wpNvkKjCWi0JSzxlnbt52iFs/bLIWM0bFqPAB8rPFZwyWCZWV
+	Eqay9YuzIsg5PBTXSRetX5eefHOdvS1KjikSqKktQHkSPaeq5qo5eGZeHIfMuBYt5fKryw5NfGNc/
+	4E/IhoabEIl33OnJ9RNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAAUA-0006Aq-3F; Fri, 06 Mar 2020 10:45:42 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1jAAfE-00027s-2k; Fri, 06 Mar 2020 10:57:08 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAAU7-000696-3F; Fri, 06 Mar 2020 10:45:40 +0000
-Received: by mail-oi1-f196.google.com with SMTP id a22so2046162oid.13;
- Fri, 06 Mar 2020 02:45:37 -0800 (PST)
+ id 1jAAfA-000276-KG
+ for linux-rockchip@lists.infradead.org; Fri, 06 Mar 2020 10:57:06 +0000
+Received: by mail-wm1-x342.google.com with SMTP id p9so1880472wmc.2
+ for <linux-rockchip@lists.infradead.org>; Fri, 06 Mar 2020 02:57:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=7rrE7Mh/VC4v8EhKmWswWSWB2baVjxpmAL/nTxqthaY=;
+ b=d2qudtTvQazENZdB0E1Ugs4TiEWdjEh+sF5HkI/qMuAz1lhVxP+7jJ7IMt5HaphPzP
+ 5DxLj/MhLkdg2wPief+M95Xgo8kLO0XxU7PsK0Ih/1XNOcaBx0JTPt14bGOTe9dw2/L/
+ v80v+GtgQ0pM22uXV5txDnK85ki9Af31ZRI+s=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=HroD0on08tLEMYhs9qrREoR+/CxJ/32j4jpzzO71uX0=;
- b=c4fklFyB7FFMNJ8U4/gSTO49rNKoeU4dGmm7w4FD/EoDmBkIyXSeHuBwLF+srWsPYo
- EcovG7jQCxpSsn3i2V2KEJKOZXFtAGnYAQ/q0nUKLuYR2CswOhYOSkqTC6cxNyNO4Wew
- xxsTp6ipCSwA91hGppV4EKMHa0M1UhAs8xq+CpkIQxw6A0jnsz80poNipb5tvchig5oo
- huen5cJvceQbIO44ykTwynNfaevyasdlnLFaSJ7VY7+Bpp1g0sE/w8xC2q6651jPf4n3
- /uMuxLbe/ltIO3j1cCXbPIpFUlhrd1z/AHy0jFzwUtwmd8IRBbonvc6SUEcY40ZnkC40
- mX8g==
-X-Gm-Message-State: ANhLgQ3B2KPu8nxnmd0QnHHKmgkMYGEI+s6SUS7YM+g7HJx7FueCC+ZA
- 3aoX7HqkEsR0CXa1bqfejU2sNqhNg2sE8fEELagTDHYT
-X-Google-Smtp-Source: ADFU+vvtUPH3/Ph9fb3frspC4QqnvQ+CWNfeWzdZ5p3uA2hEhHOsJ1oZpb7TnnmVwlAmCRdczLdbAoij4DJyvJ/brwE=
-X-Received: by 2002:aca:1a06:: with SMTP id a6mr2005904oia.148.1583491536148; 
- Fri, 06 Mar 2020 02:45:36 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=7rrE7Mh/VC4v8EhKmWswWSWB2baVjxpmAL/nTxqthaY=;
+ b=cwRhUenpnZZ/gYvY9Q1ST3jXeDr/Eqw1+FFJRgPdtSRYb2gf14WB8FcrcpBOYDknMi
+ w6fT3f5UqHNily1B0sMRMhNc2eWndktEA1d45sHi9DjNhy8eaEwv4E++4FwzX624Ri7t
+ c7j2u7Vmy8nzCQbEl48V4kr8bKZQSPExCQClW/OPX6ZLdxxUjMpoEdvZj1Btpu1r0lhA
+ hyFMRF4sGB+3w2NKcBuXgYfNK+mhDoP7wn7MUEoxwFweUkydOZ1N7VmHjHd7Shp7b8iE
+ 0I0APQId2BthX57Q8xfGoc5uTjOkcnI9FPfQGL+qLMJInVBeiFFzQoki1OZ9TNoCPt9o
+ mwdg==
+X-Gm-Message-State: ANhLgQ3l916N5DI6g6QOO+LsxdsjEKXUIIex3uN6G3vtwvQ6ecwXM8X/
+ qS4hrKN1UvEKHBK+KQvGDPSx9Q==
+X-Google-Smtp-Source: ADFU+vu8MQamXRdd0QBPum9kh+cSyHKPSAUhm+lD5hy3LLs4xarlv6b6xFmutidwsLBLwmFf5dsvQw==
+X-Received: by 2002:a1c:bd45:: with SMTP id n66mr3312185wmf.167.1583492223205; 
+ Fri, 06 Mar 2020 02:57:03 -0800 (PST)
+Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
+ by smtp.gmail.com with ESMTPSA id e7sm28718865wrt.70.2020.03.06.02.57.00
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 06 Mar 2020 02:57:01 -0800 (PST)
+Date: Fri, 6 Mar 2020 11:56:59 +0100
+From: Daniel Vetter <daniel@ffwll.ch>
+To: Thomas Zimmermann <tzimmermann@suse.de>
+Subject: Re: [PATCH 00/22] drm: Convert drivers to drm_simple_encoder_init()
+Message-ID: <20200306105659.GY2363188@phenom.ffwll.local>
+References: <20200305155950.2705-1-tzimmermann@suse.de>
 MIME-Version: 1.0
-References: <20200302155703.278421-1-mylene.josserand@collabora.com>
- <20200302155703.278421-2-mylene.josserand@collabora.com>
- <2221545.2vEflg7qi2@diego>
-In-Reply-To: <2221545.2vEflg7qi2@diego>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 6 Mar 2020 11:45:25 +0100
-Message-ID: <CAMuHMdXJQqaCcMko9GUAeUiYQzmy3vnX42yVQNPzhj5ijtFuYA@mail.gmail.com>
-Subject: Re: [PATCH 1/2] ARM: Rockchip: Handle rk3288/rk3288w revision
-To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
+Content-Disposition: inline
+In-Reply-To: <20200305155950.2705-1-tzimmermann@suse.de>
+X-Operating-System: Linux phenom 5.3.0-3-amd64 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_024539_139638_F3880DCB 
-X-CRM114-Status: GOOD (  16.91  )
-X-Spam-Score: -1.2 (-)
+X-CRM114-CacheID: sfid-20200306_025704_670356_940177F7 
+X-CRM114-Status: GOOD (  16.32  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-1.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
- -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,55 +94,170 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?Q?Myl=C3=A8ne_Josserand?= <mylene.josserand@collabora.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Russell King <linux@armlinux.org.uk>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Collabora Kernel ML <kernel@collabora.com>,
- linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: hamohammed.sa@gmail.com, alexandre.belloni@bootlin.com, heiko@sntech.de,
+ airlied@linux.ie, stefan@agner.ch, linux@armlinux.org.uk, paul@crapouillou.net,
+ eric@anholt.net, thierry.reding@gmail.com, krzk@kernel.org, sam@ravnborg.org,
+ sebastian.reichel@collabora.com, linux-samsung-soc@vger.kernel.org,
+ jy0922.shim@samsung.com, hjc@rock-chips.com, festevam@gmail.com,
+ abrodkin@synopsys.com, kong.kongxinwei@hisilicon.com,
+ patrik.r.jakobsson@gmail.com, jonathanh@nvidia.com, xinliang.liu@linaro.org,
+ ludovic.desroches@microchip.com, kgene@kernel.org, linux-imx@nxp.com,
+ ck.hu@mediatek.com, linux-rockchip@lists.infradead.org,
+ virtualization@lists.linux-foundation.org, linux-tegra@vger.kernel.org,
+ p.zabel@pengutronix.de, puck.chen@hisilicon.com, s.hauer@pengutronix.de,
+ alison.wang@nxp.com, maarten.lankhorst@linux.intel.com, mripard@kernel.org,
+ inki.dae@samsung.com, john.stultz@linaro.org, jsarha@ti.com,
+ matthias.bgg@gmail.com, wens@csie.org, kernel@pengutronix.de,
+ jernej.skrabec@siol.net, kraxel@redhat.com, rodrigosiqueiramelo@gmail.com,
+ tomi.valkeinen@ti.com, bbrezillon@kernel.org, jingoohan1@gmail.com,
+ dri-devel@lists.freedesktop.org, sw0312.kim@samsung.com,
+ nicolas.ferre@microchip.com, kyungmin.park@samsung.com,
+ kieran.bingham+renesas@ideasonboard.com, daniel@ffwll.ch,
+ zourongrong@gmail.com, linux-mediatek@lists.infradead.org, shawnguo@kernel.org,
+ laurent.pinchart@ideasonboard.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sCgpPbiBXZWQsIE1hciA0LCAyMDIwIGF0IDEyOjAwIFBNIEhlaWtvIFN0w7xibmVy
-IDxoZWlrb0BzbnRlY2guZGU+IHdyb3RlOgo+IEFtIE1vbnRhZywgMi4gTcOkcnogMjAyMCwgMTY6
-NTc6MDIgQ0VUIHNjaHJpZWIgTXlsw6huZSBKb3NzZXJhbmQ6Cj4gPiBEZXRlcm1pbmUgd2hpY2gg
-cmV2aXNpb24gb2YgcmszMjg4IGJ5IGNoZWNraW5nIHRoZSBIRE1JIHZlcnNpb24uCj4gPiBBY2Nv
-cmRpbmcgdG8gdGhlIFJvY2tjaGlwIEJTUCBrZXJuZWwsIG9uIHJrMzI4OHcsIHRoZSBIRE1JCj4g
-PiByZXZpc2lvbiBlcXVhbHMgMHgxQSB3aGljaCBpcyBub3QgdGhlIGNhc2UgZm9yIHRoZSByazMy
-ODggWzFdLgo+ID4KPiA+IEFzIHRoZXNlIFNPQyBoYXZlIHNvbWUgZGlmZmVyZW5jZXMsIHRoZSBu
-ZXcgZnVuY3Rpb24KPiA+ICdzb2NfaXNfcmszMjg4dycgd2lsbCBoZWxwIHVzIHRvIGtub3cgb24g
-d2hpY2ggcmV2aXNpb24KPiA+IHdlIGFyZS4KPgo+IHdoYXQgaGFwcGVuZWQgdG8ganVzdCBoYXZp
-bmcgYSBkaWZmZXJlbnQgY29tcGF0aWJsZSBpbiB0aGUgZHRzPwo+IEFrYSBkb2luZyBhCj4KPiBy
-azMyODh3LmR0c2kgd2l0aAo+Cj4gI2luY2x1ZGUgInJrMzI4OC5kdHNpIgo+Cj4gJmNydSB7Cj4g
-ICAgICAgICBjb21wYXRpYmxlID0gInJvY2tjaGlwLHJrMzI4OHctY3J1IjsKPiB9Cj4KPiBJIHNv
-bWVob3cgZG9uJ3QgZXhwZWN0IGJvYXJkcyB0byBqdXN0IHN3aXRjaCBiZXR3ZWVuIHNvYyB2YXJp
-YW50cwo+IG9uIHRoZSBmbHkuCj4KPiBBbHNvLCBkb2luZyB0aGluZ3MgaW4gbWFjaC1yb2NrY2hp
-cCBpcyBub3QgdmVyeSBmdXR1cmUtcHJvb2Y6Cj4KPiAoMSkgaGF2aW5nIHJhbmRvbSBzb2Mtc3Bl
-Y2lmaWMgQVBJcyBzcGFubmluZyB0aGUga2VybmVsIGZlZWxzIHdyb25nLAo+ICAgICBlc3BlY2lh
-bGx5IGFzIGF0IHNvbWUgcG9pbnQgaXQgbWlnaHQgbm90IGJlIGNvbnRhaW5lZCB0byBvdXIgb3du
-IHNwZWNpYWwKPiAgICAgZHJpdmVycyBsaWtlIHRoZSBjcnUuIEkgY2Fubm90IHJlYWxseSBzZWUg
-cGVvcGxlIGJlaW5nIGVudGh1c2lhc3RpYyBpZgo+ICAgICBzb21ldGhpbmcgbGlrZSB0aGlzIHdv
-dWxkIGJlIG5lZWRlZCBpbiBzYXkgdGhlIGNvcmUgQW5hbG9naXgtRFAgYnJpZGdlIDstKQoKSW5k
-ZWVkLiAgWW91J3JlIGJldHRlciBvZiByZWdpc3RlcmluZyBhbiBzb2NfZGV2aWNlX2F0dHJpYnV0
-ZSB1c2luZwpzb2NfZGV2aWNlX3JlZ2lzdGVyKCksIGFmdGVyIHdoaWNoIGFueSBkcml2ZXIgY2Fu
-IHVzZSBzb2NfZGV2aWNlX21hdGNoKCkKdG8gZGlmZmVyZW50aWF0ZSBiYXNlZCBvbiB0aGUgU29D
-IHJldmlzaW9uLgoKPiAoMikgSSBndWVzcyB0aGUgcmszMjg4dyB3aWxsIG5vdCBiZSB0aGUgbGFz
-dCBzb2MgZG9pbmcgdGhpcyBhbmQgb24gYXJtNjQgeW91Cj4gICAgIGNhbid0IGRvIGl0IHRoYXQg
-d2F5LCBhcyB0aGVyZSBpcyBubyBtYWNoLXJvY2tjaGlwIHRoZXJlCgpUaGVyZSdzIGRyaXZlcnMv
-c29jL3JvY2tjaGlwIDstKQoKPiBTbyBteSBwZXJzb25hbCBwcmVmZXJlbmNlIHdvdWxkIHJlYWxs
-eSB3b3VsZCBiZSBqdXN0IGEgc3BlY2lmaWMgY29tcGF0aWJsZQo+IGZvciBhZmZlY3RlZCBpcCBi
-bG9ja3MuCgpEb2luZyB0aGF0IG9ubHkgZm9yIGFmZmVjdGVkIElQIGJsb2NrcyBtYXkgbWlzcyBp
-bnRlZ3JhdGlvbiBkaWZmZXJlbmNlcy4KT2YgY291cnNlLCB5b3UgY2FuIGFsd2F5cyByZXNvcnQg
-dG8gc29jX2RldmljZV9tYXRjaCgpIHRvIGhhbmRsZSB0aG9zZS4uLgoKR3J7b2V0amUsZWV0aW5n
-fXMsCgogICAgICAgICAgICAgICAgICAgICAgICBHZWVydAoKLS0gCkdlZXJ0IFV5dHRlcmhvZXZl
-biAtLSBUaGVyZSdzIGxvdHMgb2YgTGludXggYmV5b25kIGlhMzIgLS0gZ2VlcnRAbGludXgtbTY4
-ay5vcmcKCkluIHBlcnNvbmFsIGNvbnZlcnNhdGlvbnMgd2l0aCB0ZWNobmljYWwgcGVvcGxlLCBJ
-IGNhbGwgbXlzZWxmIGEgaGFja2VyLiBCdXQKd2hlbiBJJ20gdGFsa2luZyB0byBqb3VybmFsaXN0
-cyBJIGp1c3Qgc2F5ICJwcm9ncmFtbWVyIiBvciBzb21ldGhpbmcgbGlrZSB0aGF0LgogICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgIC0tIExpbnVzIFRvcnZhbGRzCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5n
-IGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
+On Thu, Mar 05, 2020 at 04:59:28PM +0100, Thomas Zimmermann wrote:
+> A call to drm_simple_encoder_init() initializes an encoder without
+> further functionality. It only provides the destroy callback to
+> cleanup the encoder's state. Only few drivers implement more
+> sophisticated encoders than that. Most drivers implement such a
+> simple encoder and can use drm_simple_encoder_init() instead.
+> 
+> The patchset converts drivers where the encoder's instance is
+> embedded in a larger data structure. The driver releases the
+> memory during cleanup. Each patch replaces drm_encoder_init() with
+> drm_simple_encoder_init() and removes the (now unused) driver's
+> encoder functions.
+> 
+> While the patchset is fairly large, the indiviual patches are self-
+> contained and can be merged independently from each other. The
+> simple-encoder functionality is currently in drm-misc-next, where
+> these patches could go as well.
+> 
+> Future directions: There's another common case where the driver
+> calls kzalloc() plus drm_encoder_init(). Such drivers are not
+> handled by this patchset. The plan here is to use a simple encoder
+> with either managed memory allocation (once it's merged), or embed
+> the encoder in a larger data structure and drop kzalloc() entirely.
+> 
+> The patchset has been compile-tested on x86-64, aarch64 and arm.
+
+So from a cursory look all these drivers get it wrong and devm_kzalloc
+their encoders. But I guess simplifying stuff like you do here will at
+least give us a nice list of things to look at once we get to the
+drmm_simple_encoder_init version of all this. On the series:
+
+Acked-by: Daniel Vetter <daniel.vetter@ffwll.ch>
+
+> 
+> Thomas Zimmermann (22):
+>   drm/arc: Use simple encoder
+>   drm/atmel-hlcdc: Use simple encoder
+>   drm/exynos: Use simple encoder
+>   drm/fsl-dcu: Use simple encoder
+>   drm/gma500: Use simple encoder
+>   drm/hisilicon/kirin: Use simple encoder
+>   drm/i2c/tda998x: Use simple encoder
+>   drm/imx: Use simple encoder
+>   drm/ingenic: Use simple encoder
+>   drm/mediatek: Use simple encoder
+>   drm/rcar-du: Use simple encoder
+>   drm/rockchip: Use simple encoder
+>   drm/shmobile: Use simple encoder
+>   drm/sun4i: Use simple encoder
+>   drm/tegra: Use simple encoder
+>   drm/tidss: Use simple encoder
+>   drm/tilcdc: Use simple encoder
+>   drm/vc4: Use simple encoder
+>   drm/virtgpu: Use simple encoder
+>   drm/vkms: Use simple encoder
+>   drm/writeback: Use simple encoder
+>   drm/zte: Use simple encoder
+> 
+>  drivers/gpu/drm/arc/arcpgu_hdmi.c              | 10 +++-------
+>  drivers/gpu/drm/arc/arcpgu_sim.c               |  8 ++------
+>  .../gpu/drm/atmel-hlcdc/atmel_hlcdc_output.c   | 12 ++++--------
+>  drivers/gpu/drm/drm_writeback.c                | 10 +++-------
+>  drivers/gpu/drm/exynos/exynos_dp.c             |  8 ++------
+>  drivers/gpu/drm/exynos/exynos_drm_dpi.c        |  8 ++------
+>  drivers/gpu/drm/exynos/exynos_drm_dsi.c        |  8 ++------
+>  drivers/gpu/drm/exynos/exynos_drm_vidi.c       |  8 ++------
+>  drivers/gpu/drm/exynos/exynos_hdmi.c           |  8 ++------
+>  drivers/gpu/drm/fsl-dcu/fsl_dcu_drm_rgb.c      | 14 +++-----------
+>  drivers/gpu/drm/gma500/cdv_intel_crt.c         | 14 +++-----------
+>  drivers/gpu/drm/gma500/cdv_intel_dp.c          | 16 +++-------------
+>  drivers/gpu/drm/gma500/cdv_intel_hdmi.c        |  4 ++--
+>  drivers/gpu/drm/gma500/cdv_intel_lvds.c        | 17 +++--------------
+>  drivers/gpu/drm/gma500/mdfld_dsi_dpi.c         |  7 +++----
+>  drivers/gpu/drm/gma500/mdfld_output.h          |  1 -
+>  drivers/gpu/drm/gma500/mdfld_tmd_vid.c         |  6 ------
+>  drivers/gpu/drm/gma500/mdfld_tpo_vid.c         |  6 ------
+>  drivers/gpu/drm/gma500/oaktrail_hdmi.c         | 14 ++------------
+>  drivers/gpu/drm/gma500/oaktrail_lvds.c         |  5 +++--
+>  drivers/gpu/drm/gma500/psb_intel_drv.h         |  1 -
+>  drivers/gpu/drm/gma500/psb_intel_lvds.c        | 18 +++---------------
+>  drivers/gpu/drm/gma500/tc35876x-dsi-lvds.c     |  5 -----
+>  drivers/gpu/drm/hisilicon/kirin/dw_drm_dsi.c   |  8 ++------
+>  drivers/gpu/drm/i2c/tda998x_drv.c              | 14 +++-----------
+>  drivers/gpu/drm/imx/dw_hdmi-imx.c              |  8 ++------
+>  drivers/gpu/drm/imx/imx-drm-core.c             |  6 ------
+>  drivers/gpu/drm/imx/imx-drm.h                  |  1 -
+>  drivers/gpu/drm/imx/imx-ldb.c                  |  8 ++------
+>  drivers/gpu/drm/imx/imx-tve.c                  |  8 ++------
+>  drivers/gpu/drm/imx/parallel-display.c         |  8 ++------
+>  drivers/gpu/drm/ingenic/ingenic-drm.c          |  9 +++------
+>  drivers/gpu/drm/mediatek/mtk_dpi.c             | 14 +++-----------
+>  drivers/gpu/drm/mediatek/mtk_dsi.c             | 14 +++-----------
+>  drivers/gpu/drm/rcar-du/rcar_du_encoder.c      | 14 +++-----------
+>  .../gpu/drm/rockchip/analogix_dp-rockchip.c    |  9 +++------
+>  drivers/gpu/drm/rockchip/cdn-dp-core.c         |  9 +++------
+>  .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c    |  8 ++------
+>  drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c    |  8 ++------
+>  drivers/gpu/drm/rockchip/inno_hdmi.c           |  8 ++------
+>  drivers/gpu/drm/rockchip/rk3066_hdmi.c         |  8 ++------
+>  drivers/gpu/drm/rockchip/rockchip_lvds.c       | 10 +++-------
+>  drivers/gpu/drm/rockchip/rockchip_rgb.c        |  8 ++------
+>  drivers/gpu/drm/shmobile/shmob_drm_crtc.c      | 14 +++-----------
+>  drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c         | 12 +++---------
+>  drivers/gpu/drm/sun4i/sun4i_lvds.c             | 12 +++---------
+>  drivers/gpu/drm/sun4i/sun4i_rgb.c              | 17 +++--------------
+>  drivers/gpu/drm/sun4i/sun4i_tv.c               | 17 +++--------------
+>  drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c         | 12 +++---------
+>  drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c          |  8 ++------
+>  drivers/gpu/drm/tegra/drm.h                    |  2 --
+>  drivers/gpu/drm/tegra/dsi.c                    | 10 +++-------
+>  drivers/gpu/drm/tegra/hdmi.c                   |  9 +++------
+>  drivers/gpu/drm/tegra/output.c                 |  6 +-----
+>  drivers/gpu/drm/tegra/rgb.c                    |  8 ++------
+>  drivers/gpu/drm/tegra/sor.c                    |  8 ++------
+>  drivers/gpu/drm/tidss/tidss_encoder.c          | 10 +++-------
+>  drivers/gpu/drm/tilcdc/tilcdc_external.c       | 10 +++-------
+>  drivers/gpu/drm/tilcdc/tilcdc_panel.c          |  8 ++------
+>  drivers/gpu/drm/vc4/vc4_dpi.c                  |  8 ++------
+>  drivers/gpu/drm/vc4/vc4_dsi.c                  | 15 +++------------
+>  drivers/gpu/drm/vc4/vc4_hdmi.c                 | 17 ++++-------------
+>  drivers/gpu/drm/vc4/vc4_vec.c                  |  8 ++------
+>  drivers/gpu/drm/virtio/virtgpu_display.c       |  8 ++------
+>  drivers/gpu/drm/vkms/vkms_output.c             |  8 ++------
+>  drivers/gpu/drm/zte/zx_hdmi.c                  |  8 ++------
+>  drivers/gpu/drm/zte/zx_tvenc.c                 |  8 ++------
+>  drivers/gpu/drm/zte/zx_vga.c                   |  8 ++------
+>  68 files changed, 151 insertions(+), 488 deletions(-)
+> 
+> --
+> 2.25.1
+> 
+
+-- 
+Daniel Vetter
+Software Engineer, Intel Corporation
+http://blog.ffwll.ch
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
