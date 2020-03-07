@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FD6C17CE84
-	for <lists+linux-rockchip@lfdr.de>; Sat,  7 Mar 2020 14:49:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE1CE17CE82
+	for <lists+linux-rockchip@lfdr.de>; Sat,  7 Mar 2020 14:49:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,69 +11,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=nHsEtSj26qAHDFWqSmIsPAkJgLy/sOptMg7mgnIxDj0=; b=HxiNCwmGLOUJ1ycaQzBuWm2+Z3
-	1AYK+3kduokDWtt+XTT/8zXWc/pfTb/j5kjvxqfvgNZEFT/jwRKzU2nPLFpMD30niKmJ1bjh6AGrP
-	jf2Pd1jjWgM4/kfiZKwwvlZJSmPJNlAnWHK0BCzxdeW8K0kqn3w7J3BwAIapVUEmB//fNv40Vu6L5
-	ISIJB2pP7Uxu+hLDihoKlXXXQEIrlN7cpi1OUyWp51zm3SZMVu25JWnlqTQRREjNz8CEvi6B/nIYb
-	n96a8k4DSE63Aysnlfsqybp3adPYVMta1X7NbztyjNz7CSf43iZ5aPrUc7em0Tusg2Gc+rvaPXV28
-	pQWzm8BA==;
+	bh=NXkv+rXGXCi9mZOBdh7YXSdI5V2LZmoOVQpKo+Jww64=; b=n/cppmHcOJ+ZvhfdnkGWvLVu0c
+	SEwYN0j2JFE6r9YzY8ndZacr0E3Xkga2i5UZM+Ymudsp3mlU1mOZ/IT8GAv4yU8nd4GgDXqqlJv7W
+	GxoXp2cSVkiQuL5DYKqgDBCR7fU9t3s5EBPgTBg/SgoE9ZR8KF9OSWW0kjhC/rblfVuBnVGI8Mgk9
+	dT0uv0z0W583lgwRHD5tUCudxn/IJ28mT5Lb/Rf8VgKz0givyEEApITo/4ekP0ZWdK/E0PhGdj7H7
+	qDrTVNf0R+r3mGZaCetYUgrOJ2oLWCulkc5poCJP341y5D8YtUj2LYmaGpTQ1A79hqvw6sawg2tgS
+	rilbtCZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAZpr-000226-3o; Sat, 07 Mar 2020 13:49:47 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jAZpj-0001tl-72; Sat, 07 Mar 2020 13:49:39 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAZow-00019K-Vi; Sat, 07 Mar 2020 13:48:52 +0000
-Received: by mail-wm1-x343.google.com with SMTP id a132so5393294wme.1;
- Sat, 07 Mar 2020 05:48:50 -0800 (PST)
+ id 1jAZox-00019Z-Qv; Sat, 07 Mar 2020 13:48:53 +0000
+Received: by mail-wm1-x344.google.com with SMTP id e26so5241734wme.5;
+ Sat, 07 Mar 2020 05:48:51 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=2imEdS/PBWfabOn+dN51LVNZ4eyxGJ7p2pvJGQCDbMA=;
- b=Zq0bI2jEf9UR4l3dw4/5Q20mWx9OFcm4BXeRZihBnHD77OfRm41Te+m7y0b3E3wYk/
- OW9F+mRGvUT4/yHOWoOTXtzcWqaHYuCQL63AYI+wJhPTdn39ROdOP6oezU8c4g1wX0jP
- 32O33kibj9C6ND4j4Lw0ZJWiQ96pCUmfsSCDy6A8UjORaRnVto9vAHJzriQCpabDNW2n
- +4UhR1aXzOoc8E4g2ymLuOBwO/mYavCGa0lwGxexZHcfePDNh3E6NGaEk/sJoCmfv09G
- Om2iD1R39JblW6s5FVs+hbRTjFcv/eXhUjmdsF1PD8j4chZMPOMsaDRrXS7TozTHSGsy
- m+kA==
+ bh=2IH7KzQC1elq12VnowpNAipmMQUPET2Kh6DcuNwrX+E=;
+ b=guNv2u8aad75h2Dy+CJemJg8fZOWKV4MRdf8+4vmo1vcdNRW4xM0xlxHbfDzcSVTWH
+ lpKIilyU+OfrRv9S4WBaa9wGJYEmYtV8cQfsmwHTeKzpchK29R3S/OWZVMtH/DlKV+L+
+ wdQvR7I0hckZ/b4y6ewyPLyuhF0n5h1/g1TXJiTwltIOG2NpgAckcU44N0O8PMVaDnpl
+ Gr+DAdmg1TUfS0AVs0sDJVJu4PILQ/CYpCEgsqUHZ8ukdPqafisx3oJve9p5h6LMUdM2
+ iozvkvfbM2szO74WAIW4QRYDCzVo5E/Pgp/J1w91GdxIGAz7diGsiwe9TAd1siaXorel
+ CRQw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=2imEdS/PBWfabOn+dN51LVNZ4eyxGJ7p2pvJGQCDbMA=;
- b=DNDtqZ6egVxJw9Wkf7EXkhvG19cDOh3lW1m2FmiXTvgLmxHZpfojBgXn8I/f2E4ez/
- bejA+J8n24gncCoJ1uK+iARLRkv7FjlQEugXbBJlRT/H5SZnhPBC/hHRRBTCR7vSG7Bj
- V6mNduSFLjiD7WRth6Jo9nbEh+1LHw3mkNFiSQeuUcoYb+Rq2QAgJfrnpWqp3LM+BY2V
- W42xcYHKjVQqzkMOs45TG/GmAzkC0rD+MdYLBqEMPjwQomSah0eoL7gWk6QaLFkcf68u
- q2QneXwQuicjpUbceslD5hjXCfZ3BSCdSvJOGIta53b7ngrd/8NR3lbo1iYc2Gx2EHrf
- eWog==
-X-Gm-Message-State: ANhLgQ04TP2sn2os/m9K1Swsgtmui1s7MxuNZAHaNhvbWFz1LI1ifez8
- zrZt4YHd/xn7lpYc6+JTSWw=
-X-Google-Smtp-Source: ADFU+vu8s4n5Jiy9JVKXd+Qg1OTKkxCBR1qUX5tnXAgdtgg4qZfDvCaWow+W0/h6haum4suXa5MHVg==
-X-Received: by 2002:a05:600c:290e:: with SMTP id
- i14mr10103753wmd.139.1583588929397; 
- Sat, 07 Mar 2020 05:48:49 -0800 (PST)
+ bh=2IH7KzQC1elq12VnowpNAipmMQUPET2Kh6DcuNwrX+E=;
+ b=HOdN6lS/OitduK7Bv+EmJQrP8NbrFdBKmKG/uXQ0MLtmyO1u+SdD/kVxc35vkRA35I
+ p+bRew+HHSF4xkdabW6LdGkjufElhCvpdM9KqbJm6rwNQLtBua+yb8wQZ/Bd+DgGV49C
+ +7chBDtU1oXu2OJ5vkPThGttUfBZjmuMPIFAfuSEilc5Cz56zuX1e6P1VC2+ffwAMOyq
+ PDX9MnRyTKgxApCC2bpaLem8T+YCGy3s89sbYq1G85xgMMLr4qgSHzSSJ2bVnY5qgLB+
+ fKnK6T59P/jHtGpW5J+KlUBpxe0fAEJuRrkH5WDCsDZ6DgAUd+JrCz9pwyTGp/fI+oEn
+ EQsg==
+X-Gm-Message-State: ANhLgQ01IBBp7FOZ12kcsdLER7tit+cdh1yzi/nY7dicXrqK94LKPScu
+ AoYB/JHyxPSpEKjf4tfCK0k=
+X-Google-Smtp-Source: ADFU+vv3PgqIbCaqS+/cHZ/qOpqqVZm0POM2tszTay3g45d6g3SYV6XbuREuuyTf4OoiuGgSVA9FVg==
+X-Received: by 2002:a1c:cc11:: with SMTP id h17mr10429280wmb.154.1583588930249; 
+ Sat, 07 Mar 2020 05:48:50 -0800 (PST)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id 9sm11767265wmx.32.2020.03.07.05.48.48
+ by smtp.gmail.com with ESMTPSA id 9sm11767265wmx.32.2020.03.07.05.48.49
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
  Sat, 07 Mar 2020 05:48:49 -0800 (PST)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH v1 2/5] ARM: dts: rockchip: fix rockchip,
- default-sample-phase property names
-Date: Sat,  7 Mar 2020 14:48:38 +0100
-Message-Id: <20200307134841.13803-2-jbx6244@gmail.com>
+Subject: [PATCH v1 3/5] arm64: dts: remove no-emmc from mmc node for Rockchip
+ PX5 EVB
+Date: Sat,  7 Mar 2020 14:48:39 +0100
+Message-Id: <20200307134841.13803-3-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200307134841.13803-1-jbx6244@gmail.com>
 References: <20200307134841.13803-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200307_054851_064988_02F2FA68 
-X-CRM114-Status: GOOD (  16.46  )
+X-CRM114-CacheID: sfid-20200307_054851_906224_4A5E5FFC 
+X-CRM114-Status: GOOD (  12.09  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [jbx6244[at]gmail.com]
@@ -122,65 +121,36 @@ the immediate schema.
 
 First when we combine rockchip-dw-mshc.yaml,
 synopsys-dw-mshc-common.yaml and mmc-controller.yaml it gives
-for example this error:
+this error:
 
-arch/arm/boot/dts/rk3036-evb.dt.yaml: mmc@1021c000:
-'default-sample-phase' does not match any of the regexes:
+arch/arm64/boot/dts/rockchip/rk3368-px5-evb.dt.yaml: mmc@ff0c0000:
+'no-emmc' does not match any of the regexes:
 '^.*@[0-9]+$', '^clk-phase-(legacy|sd-hs|mmc-(hs|hs[24]00|ddr52)|
 uhs-(sdr(12|25|50|104)|ddr50))$', 'pinctrl-[0-9]+'
 
-'default-sample-phase' is not a valid property name for mmc nodes.
-Fix this error by renaming it to 'rockchip,default-sample-phase'.
+'no-emmc' is not a valid property name for mmc nodes,
+so remove it.
 
-make ARCH=arm dtbs_check
+make ARCH=arm64 dtbs_check
 DT_SCHEMA_FILES=Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm/boot/dts/rk3036-kylin.dts | 2 +-
- arch/arm/boot/dts/rk3036.dtsi      | 2 +-
- arch/arm/boot/dts/rk322x.dtsi      | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+ arch/arm64/boot/dts/rockchip/rk3368-px5-evb.dts | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/rk3036-kylin.dts b/arch/arm/boot/dts/rk3036-kylin.dts
-index fb3cf005c..2ff9f152d 100644
---- a/arch/arm/boot/dts/rk3036-kylin.dts
-+++ b/arch/arm/boot/dts/rk3036-kylin.dts
-@@ -319,7 +319,7 @@
- 	bus-width = <4>;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3368-px5-evb.dts b/arch/arm64/boot/dts/rockchip/rk3368-px5-evb.dts
+index 231db0305..5ffd7b4d3 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3368-px5-evb.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3368-px5-evb.dts
+@@ -239,7 +239,6 @@
+ 	cap-mmc-highspeed;
  	cap-sd-highspeed;
- 	cap-sdio-irq;
--	default-sample-phase = <90>;
-+	rockchip,default-sample-phase = <90>;
- 	keep-power-in-suspend;
- 	mmc-pwrseq = <&sdio_pwrseq>;
- 	non-removable;
-diff --git a/arch/arm/boot/dts/rk3036.dtsi b/arch/arm/boot/dts/rk3036.dtsi
-index c28d293df..2226f0d70 100644
---- a/arch/arm/boot/dts/rk3036.dtsi
-+++ b/arch/arm/boot/dts/rk3036.dtsi
-@@ -263,7 +263,7 @@
- 		clocks = <&cru HCLK_EMMC>, <&cru SCLK_EMMC>,
- 			 <&cru SCLK_EMMC_DRV>, <&cru SCLK_EMMC_SAMPLE>;
- 		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
--		default-sample-phase = <158>;
-+		rockchip,default-sample-phase = <158>;
- 		disable-wp;
- 		dmas = <&pdma 12>;
- 		dma-names = "rx-tx";
-diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
-index b98579035..8ad44213f 100644
---- a/arch/arm/boot/dts/rk322x.dtsi
-+++ b/arch/arm/boot/dts/rk322x.dtsi
-@@ -698,7 +698,7 @@
- 			 <&cru SCLK_EMMC_DRV>, <&cru SCLK_EMMC_SAMPLE>;
- 		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
- 		bus-width = <8>;
--		default-sample-phase = <158>;
-+		rockchip,default-sample-phase = <158>;
- 		fifo-depth = <0x100>;
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&emmc_clk &emmc_cmd &emmc_bus8>;
+ 	card-detect-delay = <200>;
+-	no-emmc;
+ 	no-sdio;
+ 	sd-uhs-sdr12;
+ 	sd-uhs-sdr25;
 -- 
 2.11.0
 
