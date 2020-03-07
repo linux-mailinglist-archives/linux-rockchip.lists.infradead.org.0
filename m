@@ -2,59 +2,94 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 640ED17C7E9
-	for <lists+linux-rockchip@lfdr.de>; Fri,  6 Mar 2020 22:35:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0356817CCDC
+	for <lists+linux-rockchip@lfdr.de>; Sat,  7 Mar 2020 09:36:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1OhiNNJDEZvzzY2OTifxR1Ews+edW/Q5lJ8n2W2GGwU=; b=UGRDyz5kZGGlb8
-	2DxYWfePlw0sfXJCjtRZoUqIw8h3QtxYhpSHxkyZ/pCw4MBtwO4AbQQqZ/YkQFaKzV0YhMFRNohBe
-	V1W2t4un/aeZLGtzqAmAPCcK16kPccUSKJIF1hfyHFxDe9ls8ObmgNqwaPt2KvWlFJOmjzL2ZSWpl
-	UP+hvW8IIMpUSgEJ5UzY9Qv9ugGyGqqCe96gel3DUkxOhSH1nf4avTy54LJ80m0iJ740mxRmyQ4P1
-	ctoLriV8dmvaGjLS0gaqdv/LwDjRhAtWXt75ayvNTWwNE6lf8Khtps8NHhMfyUhYWNw0sTXIfsN5x
-	7xXMTF6RnGxs3c6m/Q+Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AAgzDXk1lD5UoqOHpCHllScPaR/PCrotE6C2st80Z90=; b=I1/1RoNYdQPFPt
+	7ZuhXMvCp1GyQYi3A41M0vz9vfGoBlPCekYfZfAsNnXkHYXtoM21Bpx+xY5RVf8TukUoKjSMma0c7
+	8OoYXD9mn/KYYxSzvpRn65Mnv7Z0frESDe9zOpjqhYlxaGYkMV+yagXZRjdQMh8TM+UBpVPvyzhXX
+	UoZTXWS/1NGqYeD6qmnnw3viGc/B3MZRNwVhji8cz0WpghlkQ1gl4H3NQa1fAJvSqoeeCDod0xbVt
+	j8qaESZ5RTYIW5FfLySh9COOCpbIhivdlF/HsoBE8nEJCGsPkPIaCqTB0CThbzgbDKckCUBJFoyoP
+	m+95kBZgtBSTCba30UGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAKd0-0004jr-Ae; Fri, 06 Mar 2020 21:35:30 +0000
-Received: from asavdk3.altibox.net ([109.247.116.14])
+	id 1jAUwg-0000hA-79; Sat, 07 Mar 2020 08:36:30 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAKcv-0004ia-NX; Fri, 06 Mar 2020 21:35:28 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id C48062001E;
- Fri,  6 Mar 2020 22:35:20 +0100 (CET)
-Date: Fri, 6 Mar 2020 22:35:19 +0100
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Thomas Zimmermann <tzimmermann@suse.de>
-Subject: Re: [PATCH 05/22] drm/gma500: Use simple encoder
-Message-ID: <20200306213519.GD17369@ravnborg.org>
-References: <20200305155950.2705-1-tzimmermann@suse.de>
- <20200305155950.2705-6-tzimmermann@suse.de>
+ id 1jAUwc-0000gf-13; Sat, 07 Mar 2020 08:36:28 +0000
+Received: by mail-wm1-x344.google.com with SMTP id a141so4759716wme.2;
+ Sat, 07 Mar 2020 00:36:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=to:cc:references:subject:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=+llLPrGd5t8/uzhFM/JY7vfZMQbUY9JxBp7ItfeQETg=;
+ b=ZRhN2JuBc1yZkvqlv8Nz7tw90jGoUvvyG5U5lSFosjd87xniaE35kHUCrXF3gbRgLO
+ 8sCahkAPj+kUccqOrd4W4nZB+MOZ0pcyAYA3jJdTbG0dwvmKvVCtI1AH1D8csPp0s219
+ UvO7kbWsUHIs9Kez4Bquy4BtmJ4yrbY2afogLT1fHIS/Yk++SNF8dOa5znqbjKMRSk6N
+ BT1N3wYStmxMV+cfQPACYhHZ5r/PsUDPzZ/LnIsus9Kz2M3ZpTyykH4XP3iT6ka9Tx9y
+ vFFEAfm6qDCMb7RnLrmbKYMqEQoGoDv5gXsq5241upGF9shsghC2DcKTfpKHF83a8iUU
+ pOlw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:to:cc:references:subject:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=+llLPrGd5t8/uzhFM/JY7vfZMQbUY9JxBp7ItfeQETg=;
+ b=fANIiuPX4WgMeZsaWJKvGnhx0Uhk8T2Y8Y4koLWsZvmoXsWhLee7TyiLeupewc/TlV
+ dy6hiJCYOI9Rid99GOLY874r46/uQM9bSBS1n8rMxighpsrqxzbgQZqcB95nTXKVceqj
+ /b5g75TrmCNl5ArAjUiIN5SxOH0gKtPn6OuZiGD1FYc4RMiJh/5qH07qCWWgY0/TNOVw
+ M5ODAYHxPMIS+YuGSSyAjXT4MD2SkX6XOheCW/1hZiyHn2Ql2dmproHpo3PSCmwbG5qk
+ LEv6/sDo5ZGiLIe9cwXTv+X0L2+u8GfivaXWvurXh2ugo/srS+T9WgSz7UQ6u5AZr/I9
+ dA7Q==
+X-Gm-Message-State: ANhLgQ1fHG3u8EjSL4JzuTgMx5sUcXZ8Xd3qtnJUVSupz/99Z/R4cAE3
+ YjSrEGl7LBE6LKSL2EGhkDw=
+X-Google-Smtp-Source: ADFU+vuyotHzjwL5WHrLpokrRMf3GK6+z5AfHgvriTox//HNu4OX1ioXJSvmX6mkBnSUaOZ/5FGaVQ==
+X-Received: by 2002:a7b:cb42:: with SMTP id v2mr8904028wmj.170.1583570181971; 
+ Sat, 07 Mar 2020 00:36:21 -0800 (PST)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id f17sm31420661wrm.3.2020.03.07.00.36.20
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sat, 07 Mar 2020 00:36:21 -0800 (PST)
+To: heiko@sntech.de
+References: <20200306210922.172346-3-heiko@sntech.de>
+Subject: Re: [PATCH 3/3] arm64: dts: rockchip: add Odroid Advance Go
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <59bdf2c1-79cf-2c45-263e-80a9358c7fdd@gmail.com>
+Date: Sat, 7 Mar 2020 09:36:19 +0100
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200305155950.2705-6-tzimmermann@suse.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=eMA9ckh1 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=7gkXJVJtAAAA:8
- a=WhbsdxYEUz5OCNYPzC0A:9 a=CjuIK1q_8ugA:10 a=E9Po1WZjFZOl8hwRPBS3:22
+In-Reply-To: <20200306210922.172346-3-heiko@sntech.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_133526_313211_8E05BAC3 
-X-CRM114-Status: GOOD (  19.40  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200307_003626_104031_9735F40A 
+X-CRM114-Status: GOOD (  19.39  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.14 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,434 +102,649 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: hamohammed.sa@gmail.com, alexandre.belloni@bootlin.com, heiko@sntech.de,
- airlied@linux.ie, stefan@agner.ch, linux@armlinux.org.uk, paul@crapouillou.net,
- eric@anholt.net, thierry.reding@gmail.com, krzk@kernel.org, festevam@gmail.com,
- sebastian.reichel@collabora.com, linux-samsung-soc@vger.kernel.org,
- jy0922.shim@samsung.com, hjc@rock-chips.com, tomi.valkeinen@ti.com,
- abrodkin@synopsys.com, kong.kongxinwei@hisilicon.com,
- patrik.r.jakobsson@gmail.com, jonathanh@nvidia.com, xinliang.liu@linaro.org,
- ludovic.desroches@microchip.com, kgene@kernel.org, linux-imx@nxp.com,
- ck.hu@mediatek.com, linux-rockchip@lists.infradead.org,
- virtualization@lists.linux-foundation.org, linux-tegra@vger.kernel.org,
- p.zabel@pengutronix.de, puck.chen@hisilicon.com, s.hauer@pengutronix.de,
- alison.wang@nxp.com, maarten.lankhorst@linux.intel.com, mripard@kernel.org,
- inki.dae@samsung.com, john.stultz@linaro.org, jsarha@ti.com,
- matthias.bgg@gmail.com, wens@csie.org, kernel@pengutronix.de,
- jernej.skrabec@siol.net, kraxel@redhat.com, rodrigosiqueiramelo@gmail.com,
- bbrezillon@kernel.org, jingoohan1@gmail.com, dri-devel@lists.freedesktop.org,
- sw0312.kim@samsung.com, nicolas.ferre@microchip.com, kyungmin.park@samsung.com,
- kieran.bingham+renesas@ideasonboard.com, daniel@ffwll.ch,
- zourongrong@gmail.com, linux-mediatek@lists.infradead.org, shawnguo@kernel.org,
- laurent.pinchart@ideasonboard.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ heiko.stuebner@theobroma-systems.com, kever.yang@rock-chips.com,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, robin.murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org, christoph.muellner@theobroma-systems.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Thomas.
+Hi Heiko,
 
-On Thu, Mar 05, 2020 at 04:59:33PM +0100, Thomas Zimmermann wrote:
-> The gma500 driver uses empty implementations for some of its encoders.
-> Replace the code with the generic simple encoder.
-This parts looks good.
+The 'heartbeat' led seems to need some changes. The rest is inherited
+from px30.dtsi I think. How do you deal with all the compatible
+properties names that are normally SoC specific?
 
+Also include all mail lists found with:
+./scripts/get_maintainer.pl --nogit-fallback --nogit
 
-> As a side effect, the
-> patch also removes an indirection in the encoder setup for Medfield.
+linux-kernel@vger.kernel.org
 
-I failed to see where this was done. Maybe too late for me to review
-patches, so I will stop now.
+  DTC     arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dtb
+  DTC     arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml
+  CHECK   arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml
+arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: tsadc:
+tsadc-otp-gpio: {'rockchip,pins': [[0, 6, 0, 123]], 'phandle': [[90]]}
+is not of type 'array'
+arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: usb@ff340000:
+'clock-names', 'power-domains' do not match any of the regexes:
+'pinctrl-[0-9]+'
+arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: usb@ff300000:
+'power-domains' does not match any of the regexes: 'pinctrl-[0-9]+'
+arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: usb@ff350000:
+'clock-names', 'power-domains' do not match any of the regexes:
+'pinctrl-[0-9]+'
+arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: gpio-leds:
+'heartbeat' does not match any of the regexes: '(^led-[0-9a-f]$|led)',
+'pinctrl-[0-9]+'
+arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: usb2-phy@100:
+'#phy-cells' is a required property
 
-
-No matter - patch is:
-Acked-by: Sam Ravnborg <sam@ravnborg.org>
-
+> From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 > 
-> Signed-off-by: Thomas Zimmermann <tzimmermann@suse.de>
+> The Odroid Advance Go is a handheld based on Rockchip's rk3326 soc
+> with a DSI display and some handheld controls including an analog
+> joystick connected to the saradc.
+> 
+> Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 > ---
->  drivers/gpu/drm/gma500/cdv_intel_crt.c     | 14 +++-----------
->  drivers/gpu/drm/gma500/cdv_intel_dp.c      | 16 +++-------------
->  drivers/gpu/drm/gma500/cdv_intel_hdmi.c    |  4 ++--
->  drivers/gpu/drm/gma500/cdv_intel_lvds.c    | 17 +++--------------
->  drivers/gpu/drm/gma500/mdfld_dsi_dpi.c     |  7 +++----
->  drivers/gpu/drm/gma500/mdfld_output.h      |  1 -
->  drivers/gpu/drm/gma500/mdfld_tmd_vid.c     |  6 ------
->  drivers/gpu/drm/gma500/mdfld_tpo_vid.c     |  6 ------
->  drivers/gpu/drm/gma500/oaktrail_hdmi.c     | 14 ++------------
->  drivers/gpu/drm/gma500/oaktrail_lvds.c     |  5 +++--
->  drivers/gpu/drm/gma500/psb_intel_drv.h     |  1 -
->  drivers/gpu/drm/gma500/psb_intel_lvds.c    | 18 +++---------------
->  drivers/gpu/drm/gma500/tc35876x-dsi-lvds.c |  5 -----
->  13 files changed, 22 insertions(+), 92 deletions(-)
+>  arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+>  .../boot/dts/rockchip/rk3326-odroid-go2.dts   | 544 ++++++++++++++++++
+>  2 files changed, 545 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts
 > 
-> diff --git a/drivers/gpu/drm/gma500/cdv_intel_crt.c b/drivers/gpu/drm/gma500/cdv_intel_crt.c
-> index 29c36d63b20e..88535f5aacc5 100644
-> --- a/drivers/gpu/drm/gma500/cdv_intel_crt.c
-> +++ b/drivers/gpu/drm/gma500/cdv_intel_crt.c
-> @@ -28,6 +28,8 @@
->  #include <linux/i2c.h>
->  #include <linux/pm_runtime.h>
->  
-> +#include <drm/drm_simple_kms_helper.h>
+> diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
+> index af1e1c3707d0..86c38467d487 100644
+> --- a/arch/arm64/boot/dts/rockchip/Makefile
+> +++ b/arch/arm64/boot/dts/rockchip/Makefile
+> @@ -6,6 +6,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += px30-copperhead-ltk101b4029w.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += px30-evb.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-evb.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-roc-cc.dtb
+> +dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3326-odroid-go2.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-a1.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-rock64.dtb
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts b/arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts
+> new file mode 100644
+> index 000000000000..a16f4a0d1d4d
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts
+> @@ -0,0 +1,544 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Copyright (c) 2019 Hardkernel Co., Ltd
+> + * Copyright (c) 2020 Theobroma Systems Design und Consulting GmbH
+> + */
 > +
->  #include "cdv_device.h"
->  #include "intel_bios.h"
->  #include "power.h"
-> @@ -237,15 +239,6 @@ static const struct drm_connector_helper_funcs
->  	.best_encoder = gma_best_encoder,
->  };
->  
-> -static void cdv_intel_crt_enc_destroy(struct drm_encoder *encoder)
-> -{
-> -	drm_encoder_cleanup(encoder);
-> -}
-> -
-> -static const struct drm_encoder_funcs cdv_intel_crt_enc_funcs = {
-> -	.destroy = cdv_intel_crt_enc_destroy,
-> -};
-> -
->  void cdv_intel_crt_init(struct drm_device *dev,
->  			struct psb_intel_mode_device *mode_dev)
->  {
-> @@ -271,8 +264,7 @@ void cdv_intel_crt_init(struct drm_device *dev,
->  		&cdv_intel_crt_connector_funcs, DRM_MODE_CONNECTOR_VGA);
->  
->  	encoder = &gma_encoder->base;
-> -	drm_encoder_init(dev, encoder,
-> -		&cdv_intel_crt_enc_funcs, DRM_MODE_ENCODER_DAC, NULL);
-> +	drm_simple_encoder_init(dev, encoder, DRM_MODE_ENCODER_DAC);
->  
->  	gma_connector_attach_encoder(gma_connector, gma_encoder);
->  
-> diff --git a/drivers/gpu/drm/gma500/cdv_intel_dp.c b/drivers/gpu/drm/gma500/cdv_intel_dp.c
-> index 5772b2dce0d6..13947ec06dbb 100644
-> --- a/drivers/gpu/drm/gma500/cdv_intel_dp.c
-> +++ b/drivers/gpu/drm/gma500/cdv_intel_dp.c
-> @@ -32,6 +32,7 @@
->  #include <drm/drm_crtc.h>
->  #include <drm/drm_crtc_helper.h>
->  #include <drm/drm_dp_helper.h>
-> +#include <drm/drm_simple_kms_helper.h>
->  
->  #include "gma_display.h"
->  #include "psb_drv.h"
-> @@ -1908,11 +1909,6 @@ cdv_intel_dp_destroy(struct drm_connector *connector)
->  	kfree(connector);
->  }
->  
-> -static void cdv_intel_dp_encoder_destroy(struct drm_encoder *encoder)
-> -{
-> -	drm_encoder_cleanup(encoder);
-> -}
-> -
->  static const struct drm_encoder_helper_funcs cdv_intel_dp_helper_funcs = {
->  	.dpms = cdv_intel_dp_dpms,
->  	.mode_fixup = cdv_intel_dp_mode_fixup,
-> @@ -1935,11 +1931,6 @@ static const struct drm_connector_helper_funcs cdv_intel_dp_connector_helper_fun
->  	.best_encoder = gma_best_encoder,
->  };
->  
-> -static const struct drm_encoder_funcs cdv_intel_dp_enc_funcs = {
-> -	.destroy = cdv_intel_dp_encoder_destroy,
-> -};
-> -
-> -
->  static void cdv_intel_dp_add_properties(struct drm_connector *connector)
->  {
->  	cdv_intel_attach_force_audio_property(connector);
-> @@ -2016,8 +2007,7 @@ cdv_intel_dp_init(struct drm_device *dev, struct psb_intel_mode_device *mode_dev
->  	encoder = &gma_encoder->base;
->  
->  	drm_connector_init(dev, connector, &cdv_intel_dp_connector_funcs, type);
-> -	drm_encoder_init(dev, encoder, &cdv_intel_dp_enc_funcs,
-> -			 DRM_MODE_ENCODER_TMDS, NULL);
-> +	drm_simple_encoder_init(dev, encoder, DRM_MODE_ENCODER_TMDS);
->  
->  	gma_connector_attach_encoder(gma_connector, gma_encoder);
->  
-> @@ -2120,7 +2110,7 @@ cdv_intel_dp_init(struct drm_device *dev, struct psb_intel_mode_device *mode_dev
->  		if (ret == 0) {
->  			/* if this fails, presume the device is a ghost */
->  			DRM_INFO("failed to retrieve link info, disabling eDP\n");
-> -			cdv_intel_dp_encoder_destroy(encoder);
-> +			drm_encoder_cleanup(encoder);
->  			cdv_intel_dp_destroy(connector);
->  			goto err_priv;
->  		} else {
-> diff --git a/drivers/gpu/drm/gma500/cdv_intel_hdmi.c b/drivers/gpu/drm/gma500/cdv_intel_hdmi.c
-> index 1711a41acc16..0d12c6ffbc40 100644
-> --- a/drivers/gpu/drm/gma500/cdv_intel_hdmi.c
-> +++ b/drivers/gpu/drm/gma500/cdv_intel_hdmi.c
-> @@ -32,6 +32,7 @@
->  #include <drm/drm.h>
->  #include <drm/drm_crtc.h>
->  #include <drm/drm_edid.h>
-> +#include <drm/drm_simple_kms_helper.h>
->  
->  #include "cdv_device.h"
->  #include "psb_drv.h"
-> @@ -311,8 +312,7 @@ void cdv_hdmi_init(struct drm_device *dev,
->  			   &cdv_hdmi_connector_funcs,
->  			   DRM_MODE_CONNECTOR_DVID);
->  
-> -	drm_encoder_init(dev, encoder, &psb_intel_lvds_enc_funcs,
-> -			 DRM_MODE_ENCODER_TMDS, NULL);
-> +	drm_simple_encoder_init(dev, encoder, DRM_MODE_ENCODER_TMDS);
->  
->  	gma_connector_attach_encoder(gma_connector, gma_encoder);
->  	gma_encoder->type = INTEL_OUTPUT_HDMI;
-> diff --git a/drivers/gpu/drm/gma500/cdv_intel_lvds.c b/drivers/gpu/drm/gma500/cdv_intel_lvds.c
-> index ea0a5d9a0acc..18de10e9ff9a 100644
-> --- a/drivers/gpu/drm/gma500/cdv_intel_lvds.c
-> +++ b/drivers/gpu/drm/gma500/cdv_intel_lvds.c
-> @@ -12,6 +12,8 @@
->  #include <linux/i2c.h>
->  #include <linux/pm_runtime.h>
->  
-> +#include <drm/drm_simple_kms_helper.h>
+> +/dts-v1/;
+> +#include <dt-bindings/gpio/gpio.h>
+> +#include <dt-bindings/input/input.h>
+> +#include <dt-bindings/pinctrl/rockchip.h>
+> +#include "rk3326.dtsi"
 > +
->  #include "cdv_device.h"
->  #include "intel_bios.h"
->  #include "power.h"
-> @@ -499,16 +501,6 @@ static const struct drm_connector_funcs cdv_intel_lvds_connector_funcs = {
->  	.destroy = cdv_intel_lvds_destroy,
->  };
->  
-> -
-> -static void cdv_intel_lvds_enc_destroy(struct drm_encoder *encoder)
-> -{
-> -	drm_encoder_cleanup(encoder);
-> -}
-> -
-> -static const struct drm_encoder_funcs cdv_intel_lvds_enc_funcs = {
-> -	.destroy = cdv_intel_lvds_enc_destroy,
-> -};
-> -
->  /*
->   * Enumerate the child dev array parsed from VBT to check whether
->   * the LVDS is present.
-> @@ -616,10 +608,7 @@ void cdv_intel_lvds_init(struct drm_device *dev,
->  			   &cdv_intel_lvds_connector_funcs,
->  			   DRM_MODE_CONNECTOR_LVDS);
->  
-> -	drm_encoder_init(dev, encoder,
-> -			 &cdv_intel_lvds_enc_funcs,
-> -			 DRM_MODE_ENCODER_LVDS, NULL);
-> -
-> +	drm_simple_encoder_init(dev, encoder, DRM_MODE_ENCODER_LVDS);
->  
->  	gma_connector_attach_encoder(gma_connector, gma_encoder);
->  	gma_encoder->type = INTEL_OUTPUT_LVDS;
-> diff --git a/drivers/gpu/drm/gma500/mdfld_dsi_dpi.c b/drivers/gpu/drm/gma500/mdfld_dsi_dpi.c
-> index d4c65f268922..aa5aa293ddb6 100644
-> --- a/drivers/gpu/drm/gma500/mdfld_dsi_dpi.c
-> +++ b/drivers/gpu/drm/gma500/mdfld_dsi_dpi.c
-> @@ -27,6 +27,8 @@
->  
->  #include <linux/delay.h>
->  
-> +#include <drm/drm_simple_kms_helper.h>
+> +/ {
+> +	model = "ODROID-GO Advance";
+> +	compatible = "hardkernel,rk3326-odroid-go2", "rockchip,rk3326";
 > +
->  #include "mdfld_dsi_dpi.h"
->  #include "mdfld_dsi_pkg_sender.h"
->  #include "mdfld_output.h"
-> @@ -993,10 +995,7 @@ struct mdfld_dsi_encoder *mdfld_dsi_dpi_init(struct drm_device *dev,
->  	/*create drm encoder object*/
->  	connector = &dsi_connector->base.base;
->  	encoder = &dpi_output->base.base.base;
-> -	drm_encoder_init(dev,
-> -			encoder,
-> -			p_funcs->encoder_funcs,
-> -			DRM_MODE_ENCODER_LVDS, NULL);
-> +	drm_simple_encoder_init(dev, encoder, DRM_MODE_ENCODER_LVDS);
->  	drm_encoder_helper_add(encoder,
->  				p_funcs->encoder_helper_funcs);
->  
-> diff --git a/drivers/gpu/drm/gma500/mdfld_output.h b/drivers/gpu/drm/gma500/mdfld_output.h
-> index ab2b27c0f037..17a944d70add 100644
-> --- a/drivers/gpu/drm/gma500/mdfld_output.h
-> +++ b/drivers/gpu/drm/gma500/mdfld_output.h
-> @@ -51,7 +51,6 @@ struct panel_info {
->  };
->  
->  struct panel_funcs {
-> -	const struct drm_encoder_funcs *encoder_funcs;
->  	const struct drm_encoder_helper_funcs *encoder_helper_funcs;
->  	struct drm_display_mode * (*get_config_mode)(struct drm_device *);
->  	int (*get_panel_info)(struct drm_device *, int, struct panel_info *);
-> diff --git a/drivers/gpu/drm/gma500/mdfld_tmd_vid.c b/drivers/gpu/drm/gma500/mdfld_tmd_vid.c
-> index 49c92debb7b2..25e897b98f86 100644
-> --- a/drivers/gpu/drm/gma500/mdfld_tmd_vid.c
-> +++ b/drivers/gpu/drm/gma500/mdfld_tmd_vid.c
-> @@ -188,13 +188,7 @@ static const struct drm_encoder_helper_funcs
->  	.commit = mdfld_dsi_dpi_commit,
->  };
->  
-> -/*TPO DPI encoder funcs*/
-> -static const struct drm_encoder_funcs mdfld_tpo_dpi_encoder_funcs = {
-> -	.destroy = drm_encoder_cleanup,
-> -};
-> -
->  const struct panel_funcs mdfld_tmd_vid_funcs = {
-> -	.encoder_funcs = &mdfld_tpo_dpi_encoder_funcs,
->  	.encoder_helper_funcs = &mdfld_tpo_dpi_encoder_helper_funcs,
->  	.get_config_mode = &tmd_vid_get_config_mode,
->  	.get_panel_info = tmd_vid_get_panel_info,
-> diff --git a/drivers/gpu/drm/gma500/mdfld_tpo_vid.c b/drivers/gpu/drm/gma500/mdfld_tpo_vid.c
-> index a9420bf9a419..11845978fb0a 100644
-> --- a/drivers/gpu/drm/gma500/mdfld_tpo_vid.c
-> +++ b/drivers/gpu/drm/gma500/mdfld_tpo_vid.c
-> @@ -76,13 +76,7 @@ static const struct drm_encoder_helper_funcs
->  	.commit = mdfld_dsi_dpi_commit,
->  };
->  
-> -/*TPO DPI encoder funcs*/
-> -static const struct drm_encoder_funcs mdfld_tpo_dpi_encoder_funcs = {
-> -	.destroy = drm_encoder_cleanup,
-> -};
-> -
->  const struct panel_funcs mdfld_tpo_vid_funcs = {
-> -	.encoder_funcs = &mdfld_tpo_dpi_encoder_funcs,
->  	.encoder_helper_funcs = &mdfld_tpo_dpi_encoder_helper_funcs,
->  	.get_config_mode = &tpo_vid_get_config_mode,
->  	.get_panel_info = tpo_vid_get_panel_info,
-> diff --git a/drivers/gpu/drm/gma500/oaktrail_hdmi.c b/drivers/gpu/drm/gma500/oaktrail_hdmi.c
-> index f4370232767d..b25086f252ae 100644
-> --- a/drivers/gpu/drm/gma500/oaktrail_hdmi.c
-> +++ b/drivers/gpu/drm/gma500/oaktrail_hdmi.c
-> @@ -27,6 +27,7 @@
->  #include <linux/delay.h>
->  
->  #include <drm/drm.h>
-> +#include <drm/drm_simple_kms_helper.h>
->  
->  #include "psb_drv.h"
->  #include "psb_intel_drv.h"
-> @@ -620,15 +621,6 @@ static const struct drm_connector_funcs oaktrail_hdmi_connector_funcs = {
->  	.destroy = oaktrail_hdmi_destroy,
->  };
->  
-> -static void oaktrail_hdmi_enc_destroy(struct drm_encoder *encoder)
-> -{
-> -	drm_encoder_cleanup(encoder);
-> -}
-> -
-> -static const struct drm_encoder_funcs oaktrail_hdmi_enc_funcs = {
-> -	.destroy = oaktrail_hdmi_enc_destroy,
-> -};
-> -
->  void oaktrail_hdmi_init(struct drm_device *dev,
->  					struct psb_intel_mode_device *mode_dev)
->  {
-> @@ -651,9 +643,7 @@ void oaktrail_hdmi_init(struct drm_device *dev,
->  			   &oaktrail_hdmi_connector_funcs,
->  			   DRM_MODE_CONNECTOR_DVID);
->  
-> -	drm_encoder_init(dev, encoder,
-> -			 &oaktrail_hdmi_enc_funcs,
-> -			 DRM_MODE_ENCODER_TMDS, NULL);
-> +	drm_simple_encoder_init(dev, encoder, DRM_MODE_ENCODER_TMDS);
->  
->  	gma_connector_attach_encoder(gma_connector, gma_encoder);
->  
-> diff --git a/drivers/gpu/drm/gma500/oaktrail_lvds.c b/drivers/gpu/drm/gma500/oaktrail_lvds.c
-> index 582e09597500..2828360153d1 100644
-> --- a/drivers/gpu/drm/gma500/oaktrail_lvds.c
-> +++ b/drivers/gpu/drm/gma500/oaktrail_lvds.c
-> @@ -13,6 +13,8 @@
->  
->  #include <asm/intel-mid.h>
->  
-> +#include <drm/drm_simple_kms_helper.h>
+> +	chosen {
+> +		stdout-path = "serial2:115200n8";
+> +	};
 > +
->  #include "intel_bios.h"
->  #include "power.h"
->  #include "psb_drv.h"
-> @@ -311,8 +313,7 @@ void oaktrail_lvds_init(struct drm_device *dev,
->  			   &psb_intel_lvds_connector_funcs,
->  			   DRM_MODE_CONNECTOR_LVDS);
->  
-> -	drm_encoder_init(dev, encoder, &psb_intel_lvds_enc_funcs,
-> -			 DRM_MODE_ENCODER_LVDS, NULL);
-> +	drm_simple_encoder_init(dev, encoder, DRM_MODE_ENCODER_LVDS);
->  
->  	gma_connector_attach_encoder(gma_connector, gma_encoder);
->  	gma_encoder->type = INTEL_OUTPUT_LVDS;
-> diff --git a/drivers/gpu/drm/gma500/psb_intel_drv.h b/drivers/gpu/drm/gma500/psb_intel_drv.h
-> index 16c6136f778b..fb601983cef0 100644
-> --- a/drivers/gpu/drm/gma500/psb_intel_drv.h
-> +++ b/drivers/gpu/drm/gma500/psb_intel_drv.h
-> @@ -252,7 +252,6 @@ extern int psb_intel_lvds_set_property(struct drm_connector *connector,
->  					struct drm_property *property,
->  					uint64_t value);
->  extern void psb_intel_lvds_destroy(struct drm_connector *connector);
-> -extern const struct drm_encoder_funcs psb_intel_lvds_enc_funcs;
->  
->  /* intel_gmbus.c */
->  extern void gma_intel_i2c_reset(struct drm_device *dev);
-> diff --git a/drivers/gpu/drm/gma500/psb_intel_lvds.c b/drivers/gpu/drm/gma500/psb_intel_lvds.c
-> index afaebab7bc17..063c66bb946d 100644
-> --- a/drivers/gpu/drm/gma500/psb_intel_lvds.c
-> +++ b/drivers/gpu/drm/gma500/psb_intel_lvds.c
-> @@ -11,6 +11,8 @@
->  #include <linux/i2c.h>
->  #include <linux/pm_runtime.h>
->  
-> +#include <drm/drm_simple_kms_helper.h>
+> +	gpio-keys {
+> +		compatible = "gpio-keys";
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&btn_pins>;
 > +
->  #include "intel_bios.h"
->  #include "power.h"
->  #include "psb_drv.h"
-> @@ -621,18 +623,6 @@ const struct drm_connector_funcs psb_intel_lvds_connector_funcs = {
->  	.destroy = psb_intel_lvds_destroy,
->  };
->  
-> -
-> -static void psb_intel_lvds_enc_destroy(struct drm_encoder *encoder)
-> -{
-> -	drm_encoder_cleanup(encoder);
-> -}
-> -
-> -const struct drm_encoder_funcs psb_intel_lvds_enc_funcs = {
-> -	.destroy = psb_intel_lvds_enc_destroy,
-> -};
-> -
-> -
-> -
->  /**
->   * psb_intel_lvds_init - setup LVDS connectors on this device
->   * @dev: drm device
-> @@ -683,9 +673,7 @@ void psb_intel_lvds_init(struct drm_device *dev,
->  			   &psb_intel_lvds_connector_funcs,
->  			   DRM_MODE_CONNECTOR_LVDS);
->  
-> -	drm_encoder_init(dev, encoder,
-> -			 &psb_intel_lvds_enc_funcs,
-> -			 DRM_MODE_ENCODER_LVDS, NULL);
-> +	drm_simple_encoder_init(dev, encoder, DRM_MODE_ENCODER_LVDS);
->  
->  	gma_connector_attach_encoder(gma_connector, gma_encoder);
->  	gma_encoder->type = INTEL_OUTPUT_LVDS;
-> diff --git a/drivers/gpu/drm/gma500/tc35876x-dsi-lvds.c b/drivers/gpu/drm/gma500/tc35876x-dsi-lvds.c
-> index 9e8224456ea2..f7e121f4c609 100644
-> --- a/drivers/gpu/drm/gma500/tc35876x-dsi-lvds.c
-> +++ b/drivers/gpu/drm/gma500/tc35876x-dsi-lvds.c
-> @@ -765,12 +765,7 @@ static const struct drm_encoder_helper_funcs tc35876x_encoder_helper_funcs = {
->  	.commit = mdfld_dsi_dpi_commit,
->  };
->  
-> -static const struct drm_encoder_funcs tc35876x_encoder_funcs = {
-> -	.destroy = drm_encoder_cleanup,
-> -};
-> -
->  const struct panel_funcs mdfld_tc35876x_funcs = {
-> -	.encoder_funcs = &tc35876x_encoder_funcs,
->  	.encoder_helper_funcs = &tc35876x_encoder_helper_funcs,
->  	.get_config_mode = tc35876x_get_config_mode,
->  	.get_panel_info = tc35876x_get_panel_info,
-> -- 
-> 2.25.1
+> +		/*
+> +		 *      *** ODROIDGO2-Advance Switch layoout ***
+> +		 * |------------------------------------------------|
+> +		 * | sw15                                      sw16 |
+> +		 * |------------------------------------------------|
+> +		 * |     sw1      |-------------------|      sw8    |
+> +		 * |  sw3   sw4   |                   |   sw7   sw5 |
+> +		 * |     sw2      |    LCD Display    |      sw6    |
+> +		 * |              |                   |             |
+> +		 * |              |-------------------|             |
+> +		 * |         sw9 sw10   sw11 sw12   sw13 sw14       |
+> +		 * |------------------------------------------------|
+> +		 */
+> +
+> +		sw1 {
+> +			gpios = <&gpio1 RK_PB4 GPIO_ACTIVE_LOW>;
+> +			label = "DPAD-UP";
+> +			linux,code = <BTN_DPAD_UP>;
+> +		};
+> +		sw2 {
+> +			gpios = <&gpio1 RK_PB5 GPIO_ACTIVE_LOW>;
+> +			label = "DPAD-DOWN";
+> +			linux,code = <BTN_DPAD_DOWN>;
+> +		};
+> +		sw3 {
+> +			gpios = <&gpio1 RK_PB6 GPIO_ACTIVE_LOW>;
+> +			label = "DPAD-LEFT";
+> +			linux,code = <BTN_DPAD_LEFT>;
+> +		};
+> +		sw4 {
+> +			gpios = <&gpio1 RK_PB7 GPIO_ACTIVE_LOW>;
+> +			label = "DPAD-RIGHT";
+> +			linux,code = <BTN_DPAD_RIGHT>;
+> +		};
+> +		sw5 {
+> +			gpios = <&gpio1 RK_PA2 GPIO_ACTIVE_LOW>;
+> +			label = "BTN-A";
+> +			linux,code = <BTN_EAST>;
+> +		};
+> +		sw6 {
+> +			gpios = <&gpio1 RK_PA5 GPIO_ACTIVE_LOW>;
+> +			label = "BTN-B";
+> +			linux,code = <BTN_SOUTH>;
+> +		};
+> +		sw7 {
+> +			gpios = <&gpio1 RK_PA6 GPIO_ACTIVE_LOW>;
+> +			label = "BTN-Y";
+> +			linux,code = <BTN_WEST>;
+> +		};
+> +		sw8 {
+> +			gpios = <&gpio1 RK_PA7 GPIO_ACTIVE_LOW>;
+> +			label = "BTN-X";
+> +			linux,code = <BTN_NORTH>;
+> +		};
+> +		sw9 {
+> +			gpios = <&gpio2 RK_PA0 GPIO_ACTIVE_LOW>;
+> +			label = "F1";
+> +			linux,code = <BTN_TRIGGER_HAPPY1>;
+> +		};
+> +		sw10 {
+> +			gpios = <&gpio2 RK_PA1 GPIO_ACTIVE_LOW>;
+> +			label = "F2";
+> +			linux,code = <BTN_TRIGGER_HAPPY2>;
+> +		};
+> +		sw11 {
+> +			gpios = <&gpio2 RK_PA2 GPIO_ACTIVE_LOW>;
+> +			label = "F3";
+> +			linux,code = <BTN_TRIGGER_HAPPY3>;
+> +		};
+> +		sw12 {
+> +			gpios = <&gpio2 RK_PA3 GPIO_ACTIVE_LOW>;
+> +			label = "F4";
+> +			linux,code = <BTN_TRIGGER_HAPPY4>;
+> +		};
+> +		sw13 {
+> +			gpios = <&gpio2 RK_PA4 GPIO_ACTIVE_LOW>;
+> +			label = "F5";
+> +			linux,code = <BTN_TRIGGER_HAPPY5>;
+> +		};
+> +		sw14 {
+> +			gpios = <&gpio2 RK_PA5 GPIO_ACTIVE_LOW>;
+> +			label = "F6";
+> +			linux,code = <BTN_TRIGGER_HAPPY6>;
+> +		};
+> +		sw15 {
+> +			gpios = <&gpio2 RK_PA6 GPIO_ACTIVE_LOW>;
+> +			label = "TOP-LEFT";
+> +			linux,code = <BTN_TL>;
+> +		};
+> +		sw16 {
+> +			gpios = <&gpio2 RK_PA7 GPIO_ACTIVE_LOW>;
+> +			label = "TOP-RIGHT";
+> +			linux,code = <BTN_TR>;
+> +		};
+> +	};
+> +
+> +	leds: gpio-leds {
+> +		compatible = "gpio-leds";
+> +		pinctrl-names = "led_pins";
+> +		pinctrl-0 = <&led_pins>;
+> +
+> +		/* Blue LED : GPIO0_C1 */
+> +		heartbeat {
+> +			label = "blue:heartbeat";
+> +			gpios = <&gpio0 RK_PC1 GPIO_ACTIVE_HIGH>;
+> +			linux,default-trigger = "heartbeat";
+> +		};
+> +	};
+> +
+
+> +	backlight: backlight {
+> +		compatible = "pwm-backlight";
+> +		power-supply = <&vcc_bl>;
+> +		pwms = <&pwm1 0 25000 0>;
+> +	};
+
+sort nodenames
+
+> +
+> +	vccsys: vccsys {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "vcc3v8_sys";
+> +		regulator-always-on;
+> +		regulator-min-microvolt = <3800000>;
+> +		regulator-max-microvolt = <3800000>;
+> +	};
+> +
+> +	vcc_host: vcc_host {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "vcc_host";
+> +		regulator-min-microvolt = <5000000>;
+> +		regulator-max-microvolt = <5000000>;
+> +
+> +		gpio = <&gpio0 RK_PB7 GPIO_ACTIVE_HIGH>;
+> +		enable-active-high;
+> +		regulator-always-on;
+> +		vin-supply = <&vccsys>;
+> +	};
+> +};
+> +
+> +&cpu0 {
+> +	cpu-supply = <&vdd_arm>;
+> +};
+> +
+> +&cpu1 {
+> +	cpu-supply = <&vdd_arm>;
+> +};
+> +
+> +&cpu2 {
+> +	cpu-supply = <&vdd_arm>;
+> +};
+> +
+> +&cpu3 {
+> +	cpu-supply = <&vdd_arm>;
+> +};
+> +
+> +&cru {
+> +	assigned-clocks = <&cru PLL_NPLL>,
+> +		<&cru ACLK_BUS_PRE>, <&cru ACLK_PERI_PRE>,
+> +		<&cru HCLK_BUS_PRE>, <&cru HCLK_PERI_PRE>,
+> +		<&cru PCLK_BUS_PRE>, <&cru SCLK_GPU>,
+> +		<&cru PLL_CPLL>;
+> +
+> +	assigned-clock-rates = <1188000000>,
+> +		<200000000>, <200000000>,
+> +		<150000000>, <150000000>,
+> +		<100000000>, <200000000>,
+> +		<17000000>;
+> +};
+> +
+> +&display_subsystem {
+> +	status = "okay";
+> +};
+> +
+> +&dsi {
+> +	status = "okay";
+> +
+> +	ports {
+> +		mipi_out: port@1 {
+> +			reg = <1>;
+> +
+> +			mipi_out_panel: endpoint {
+> +				remote-endpoint = <&mipi_in_panel>;
+> +			};
+> +		};
+> +	};
+> +
+> +	panel@0 {
+> +		compatible = "elida,kd35t133";
+> +		reg = <0>;
+> +		backlight = <&backlight>;
+> +		iovcc-supply = <&vcc_lcd>;
+> +		reset-gpios = <&gpio3 RK_PC0 GPIO_ACTIVE_LOW>;
+> +		vdd-supply = <&vcc_lcd>;
+> +
+> +		port {
+> +			mipi_in_panel: endpoint {
+> +				remote-endpoint = <&mipi_out_panel>;
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&dsi_dphy {
+> +	status = "okay";
+> +};
+> +
+> +&gpu {
+> +	mali-supply = <&vdd_logic>;
+> +	status = "okay";
+> +};
+> +
+> +&i2c0 {
+
+> +	status = "okay";
+
+status below
+
+> +	clock-frequency = <400000>;
+
+> +	i2c-scl-rising-time-ns = <280>;
+> +	i2c-scl-falling-time-ns = <16>;
+
+sort
+
+> +
+> +	rk817: pmic@20 {
+> +		compatible = "rockchip,rk817";
+> +		reg = <0x20>;
+> +		interrupt-parent = <&gpio0>;
+> +		interrupts = <RK_PB2 IRQ_TYPE_LEVEL_LOW>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pmic_int>;
+> +		rockchip,system-power-controller;
+> +		wakeup-source;
+> +		#clock-cells = <1>;
+> +		clock-output-names = "rk808-clkout1", "xin32k";
+> +
+> +		vcc1-supply = <&vccsys>;
+> +		vcc2-supply = <&vccsys>;
+> +		vcc3-supply = <&vccsys>;
+> +		vcc4-supply = <&vccsys>;
+> +		vcc5-supply = <&vccsys>;
+> +		vcc6-supply = <&vccsys>;
+> +		vcc7-supply = <&vccsys>;
+> +
+> +		regulators {
+> +			vdd_logic: DCDC_REG1 {
+> +				regulator-name = "vdd_logic";
+> +				regulator-min-microvolt = <950000>;
+> +				regulator-max-microvolt = <1150000>;
+> +				regulator-ramp-delay = <6001>;
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-on-in-suspend;
+> +					regulator-suspend-microvolt = <950000>;
+> +				};
+> +			};
+> +
+> +			vdd_arm: DCDC_REG2 {
+> +				regulator-name = "vdd_arm";
+> +				regulator-min-microvolt = <950000>;
+> +				regulator-max-microvolt = <1350000>;
+> +				regulator-ramp-delay = <6001>;
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-off-in-suspend;
+> +					regulator-suspend-microvolt = <950000>;
+> +				};
+> +			};
+> +
+> +			vcc_ddr: DCDC_REG3 {
+> +				regulator-name = "vcc_ddr";
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-on-in-suspend;
+> +				};
+> +			};
+> +
+> +			vcc_3v3: DCDC_REG4 {
+> +				regulator-name = "vcc_3v3";
+> +				regulator-min-microvolt = <3300000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-off-in-suspend;
+> +					regulator-suspend-microvolt = <3300000>;
+> +				};
+> +			};
+> +
+> +			vcc_1v8: LDO_REG2 {
+> +				regulator-name = "vcc_1v8";
+> +				regulator-min-microvolt = <1800000>;
+> +				regulator-max-microvolt = <1800000>;
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-on-in-suspend;
+> +					regulator-suspend-microvolt = <1800000>;
+> +				};
+> +			};
+> +
+> +			vdd_1v0: LDO_REG3 {
+> +				regulator-name = "vdd_1v0";
+> +				regulator-min-microvolt = <1000000>;
+> +				regulator-max-microvolt = <1000000>;
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-on-in-suspend;
+> +					regulator-suspend-microvolt = <1000000>;
+> +				};
+> +			};
+> +
+> +			vcc3v3_pmu: LDO_REG4 {
+> +				regulator-name = "vcc3v3_pmu";
+> +				regulator-min-microvolt = <3300000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-on-in-suspend;
+> +					regulator-suspend-microvolt = <3300000>;
+> +				};
+> +			};
+> +
+> +			vccio_sd: LDO_REG5 {
+> +				regulator-name = "vccio_sd";
+> +				regulator-min-microvolt = <1800000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-on-in-suspend;
+> +					regulator-suspend-microvolt = <3300000>;
+> +				};
+> +			};
+> +
+> +			vcc_sd: LDO_REG6 {
+> +				regulator-name = "vcc_sd";
+> +				regulator-min-microvolt = <3300000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-on-in-suspend;
+> +					regulator-suspend-microvolt = <3300000>;
+> +				};
+> +			};
+> +
+> +			vcc_bl: LDO_REG7 {
+> +				regulator-name = "vcc_bl";
+> +				regulator-min-microvolt = <3300000>;
+> +				regulator-max-microvolt = <3300000>;
+> +
+> +				regulator-state-mem {
+> +					regulator-off-in-suspend;
+> +					regulator-suspend-microvolt = <3300000>;
+> +				};
+> +			};
+> +
+> +			vcc_lcd: LDO_REG8 {
+> +				regulator-name = "vcc_lcd";
+> +				regulator-min-microvolt = <2800000>;
+> +				regulator-max-microvolt = <2800000>;
+> +
+> +				regulator-state-mem {
+> +					regulator-off-in-suspend;
+> +					regulator-suspend-microvolt = <2800000>;
+> +				};
+> +			};
+> +
+> +			vcc_cam: LDO_REG9 {
+> +				regulator-name = "vcc_cam";
+> +				regulator-min-microvolt = <3000000>;
+> +				regulator-max-microvolt = <3000000>;
+> +
+> +				regulator-state-mem {
+> +					regulator-off-in-suspend;
+> +					regulator-suspend-microvolt = <3000000>;
+> +				};
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +/* EXT Header(P2) : 7(SCL:GPIO0.C2), 8(SDA:GPIO0.C3) */
+> +&i2c1 {
+
+> +	status = "okay";
+
+status below
+
+> +	clock-frequency = <400000>;
+> +};
+> +
+> +/* I2S 1 Channel Used */
+> +&i2s1_2ch {
+
+> +	status = "okay";
+
+status below
+
+> +	#sound-dai-cells = <0>;
+> +};
+> +
+> +&io_domains {
+> +	vccio1-supply = <&vcc_3v3>;
+> +	vccio2-supply = <&vccio_sd>;
+> +	vccio3-supply = <&vcc_3v3>;
+> +	vccio4-supply = <&vcc_3v3>;
+> +	vccio5-supply = <&vcc_3v3>;
+> +	vccio6-supply = <&vcc_3v3>;
+> +	status = "okay";
+> +};
+> +
+> +&pmu_io_domains {
+> +	pmuio1-supply = <&vcc3v3_pmu>;
+> +	pmuio2-supply = <&vcc3v3_pmu>;
+> +	status = "okay";
+> +};
+> +
+> +&pwm1 {
+> +	status = "okay";
+> +};
+> +
+> +&saradc {
+> +	vref-supply = <&vcc_1v8>;
+> +	status = "okay";
+> +};
+> +
+> +&sdmmc {
+> +	bus-width = <4>;
+> +	cap-sd-highspeed;
+
+> +	card-detect-delay = <800>;
+
+Other dts use 200. Why we need 800?
+
+> +	cd-gpios = <&gpio0 RK_PA3 GPIO_ACTIVE_LOW>;
+> +	sd-uhs-sdr12;
+> +	sd-uhs-sdr25;
+> +	sd-uhs-sdr50;
+> +	sd-uhs-sdr104;
+> +	vmmc-supply = <&vcc_sd>;
+> +	vqmmc-supply = <&vccio_sd>;
+> +	status = "okay";
+> +};
+> +
+> +&tsadc {
+> +	pinctrl-names = "gpio", "otpout";
+> +	pinctrl-0 = <&tsadc_otp_gpio>;
+> +	pinctrl-1 = <&tsadc_otp_out>;
+> +	status = "okay";
+> +};
+> +
+> +&u2phy {
+> +	status = "okay";
+> +
+> +	u2phy_host: host-port {
+> +		status = "okay";
+> +	};
+> +
+> +	u2phy_otg: otg-port {
+> +		status = "disabled";
+> +	};
+> +};
+> +
+> +&usb20_otg {
+> +	status = "okay";
+> +};
+> +
+> +&uart1 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&uart1_xfer &uart1_cts>;
+> +	status = "okay";
+> +};
+> +
+> +&uart2 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&uart2m1_xfer>;
+> +	status = "okay";
+> +};
+> +
+> +&vopb {
+> +	status = "okay";
+> +};
+> +
+> +&vopb_mmu {
+> +	status = "okay";
+> +};
+> +
+> +&pinctrl {
+> +	pmic {
+> +		pmic_int: pmic-int {
+> +			rockchip,pins = <0 RK_PB2 RK_FUNC_GPIO &pcfg_pull_up>;
+> +		};
+> +
+> +		dc_det: dc-det {
+> +			rockchip,pins = <0 RK_PB3 RK_FUNC_GPIO &pcfg_pull_none>;
+> +		};
+> +	};
+> +
+> +	leds {
+> +		led_pins: led-pins {
+> +			rockchip,pins = <0 RK_PC1 RK_FUNC_GPIO &pcfg_pull_none>;
+> +		};
+> +	};
+> +
+> +	btns {
+> +		btn_pins: btn-pins {
+> +			rockchip,pins = <1 RK_PB4 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<1 RK_PB5 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<1 RK_PB6 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<1 RK_PB7 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<1 RK_PA2 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<1 RK_PA5 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<1 RK_PA6 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<1 RK_PA7 RK_FUNC_GPIO &pcfg_pull_up>,
+> +
+> +					<2 RK_PA0 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<2 RK_PA1 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<2 RK_PA2 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<2 RK_PA3 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<2 RK_PA4 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<2 RK_PA5 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<2 RK_PA6 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<2 RK_PA7 RK_FUNC_GPIO &pcfg_pull_up>;
+> +		};
+> +	};
+> +};
+> --
+> 2.24.1
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
