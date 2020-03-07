@@ -2,75 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C435D17CDE6
-	for <lists+linux-rockchip@lfdr.de>; Sat,  7 Mar 2020 12:42:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E26C017CE72
+	for <lists+linux-rockchip@lfdr.de>; Sat,  7 Mar 2020 14:48:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CGrAlTPgTJ7lq2Ib3n26BDez6n22TkWjQS9nvAEpCdI=; b=eKtrL4NAluyCVI
-	8SkAT1wPp1YRvSecYuppWGfNz9Ej53kKMhr4fectF0TCpaouQUYQzPNyfQ1ApLSy/XNgtKbL7pv8E
-	3vIV4u7VC/zqpgMzGjubbBsV1UClS+cQz8BCp844ZUT+X9H0Z0C3gCkdmjqrx4ZWQlCujnid8UZbT
-	S8VMgOLDsL7CZDcXvOr4qSWAipPHJgGM+lDGST1bJrxqSMhWAnHSvLYLmp0q+hTi14wXci3o8gh/T
-	50Z0Vhrq8rDr9R2Mf/sbZvOP5EmmkIwU7LRQzWPYnwT1QY0RKgkOEuX3f625THn+kPdImyL7aJCYR
-	34l9i96p/+TXEdC3QHfg==;
+	List-Owner; bh=idz+wnqHX/EvKVo5P49l3/pc3sb4pf0uO9oA14kbgvw=; b=pnfHWl9MHV30cF
+	qe/jTnc3Bu1Yl31zHiOgAvSjWuP9hM1gf56IXUsEvW7mv7i+bsLLx9/mbRUlZ7ApPo2sZxoVVSvj4
+	3RjBn/1OvA2BMg6C4SGliJ+dSI+vR/+vQdzqbPc14wRzXeYarOEw+TSPgPJf50ekfj6H8F3yahhw7
+	BNeKy2zD69tzlHGrL2tsDzcUAMbENhuBJwM0bLYCXcMyEUAwThqpxL0Jt9G7IlBgt4bvpDnxFpOYt
+	kbv2z8QA0lCc9pdw82msJJBtsMLXOfnXywvnbyqDxvvUG6mrSG3m8V/tdkBYSUUiCgKe7F17Fq9Wm
+	U70+Mz+/XamaqjAJC2jA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAXqq-00048c-Nb; Sat, 07 Mar 2020 11:42:40 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jAZoI-0000qE-RX; Sat, 07 Mar 2020 13:48:10 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAXqn-00048I-12
- for linux-rockchip@lists.infradead.org; Sat, 07 Mar 2020 11:42:38 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 704742073C;
- Sat,  7 Mar 2020 11:42:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583581356;
- bh=E6m+Cvd7VXvkzjdxK/ZRTKYIia3elhGZMFemu9cqZAM=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=LnVGFXGjdTw7aIWPzFER0BcndfhxhvApovXwFU6kSj2/DD2FaeZxDf59Bwcukw59H
- 4smXbCFho8X1D5Nlqx0hNSRu4Yg0diFDP7+Fvx0PzLED0IZmt7Iw529e56kKyvoMnb
- 39bcROttKtRubReUzkXlMQOcteNstnlo52bGQ7Z8=
-Date: Sat, 7 Mar 2020 11:42:31 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: xxm <xxm@rock-chips.com>
-Subject: Re: [PATCH] iio: adc: rockchip_saradc: Add support iio
- =?UTF-8?B?YnVmZmVyc+OAkOivt+azqOaEj++8jOmCruS7tueUsWxpbnV4LXJvY2tjaGlw?=
- =?UTF-8?B?LWJvdW5jZXMreHhtPXJvY2stY2hpcHMuY29tQGxpc3RzLmluZnJhZGVhZC5v?=
- =?UTF-8?B?cmfku6Plj5HjgJE=?=
-Message-ID: <20200307114231.41832f07@archlinux>
-In-Reply-To: <9036a57e-be5e-49e1-6f0e-77b3a5e9fa12@rock-chips.com>
-References: <20200301112353.887028-1-heiko@sntech.de>
- <67e46e36-ebac-ebe3-b4f4-9edb88fb0dcf@rock-chips.com>
- <20200303203236.2cbcfeee@archlinux>
- <9036a57e-be5e-49e1-6f0e-77b3a5e9fa12@rock-chips.com>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1jAZo6-0000jP-Jz; Sat, 07 Mar 2020 13:48:02 +0000
+Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1jAZnl-0006a4-U4; Sat, 07 Mar 2020 14:47:37 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH 3/3] arm64: dts: rockchip: add Odroid Advance Go
+Date: Sat, 07 Mar 2020 14:47:37 +0100
+Message-ID: <1813727.zy6ATufqe5@diego>
+In-Reply-To: <59bdf2c1-79cf-2c45-263e-80a9358c7fdd@gmail.com>
+References: <20200306210922.172346-3-heiko@sntech.de>
+ <59bdf2c1-79cf-2c45-263e-80a9358c7fdd@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200307_034237_114772_95707B36 
-X-CRM114-Status: GOOD (  25.22  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200307_054758_964425_03EA82D8 
+X-CRM114-Status: GOOD (  19.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,218 +58,701 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: lars@metafoo.de, Heiko Stuebner <heiko@sntech.de>,
- linux-iio@vger.kernel.org,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
- kever.yang@rock-chips.com, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, pmeerw@pmeerw.net, knaack.h@gmx.de
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, kever.yang@rock-chips.com,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, robin.murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org, christoph.muellner@theobroma-systems.com
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gV2VkLCA0IE1hciAyMDIwIDA5OjM5OjEwICswODAwCnh4bSA8eHhtQHJvY2stY2hpcHMuY29t
-PiB3cm90ZToKCj4gSGksCj4gCj4g5ZyoIDIwMjAvMy80IDQ6MzIsIEpvbmF0aGFuIENhbWVyb24g
-5YaZ6YGTOgo+ID4gT24gTW9uLCAyIE1hciAyMDIwIDEwOjExOjAyICswODAwCj4gPiB4eG0gPHh4
-bUByb2NrLWNoaXBzLmNvbT4gd3JvdGU6Cj4gPiAgIAo+ID4+IEhpLCBIZWlrbwo+ID4+Cj4gPj4g
-5ZyoIDIwMjAvMy8xIDE5OjIzLCBIZWlrbyBTdHVlYm5lciDlhpnpgZM6ICAKPiA+Pj4gRnJvbTog
-U2ltb24gWHVlIDx4eG1Acm9jay1jaGlwcy5jb20+Cj4gPj4+Cj4gPj4+IEFkZCB0aGUgYWJpbGl0
-eSB0byBhbHNvIHN1cHBvcnQgYWNjZXNzIHZpYSAodHJpZ2dlcmVkKSBidWZmZXJzCj4gPj4+IG5l
-eHQgdG8gdGhlIGV4aXN0aW5nIGRpcmVjdCBtb2RlLgo+ID4+Pgo+ID4+PiBEZXZpY2UgaW4gcXVl
-c3Rpb24gaXMgdGhlIE9kcm9pZCBHbyBBZHZhbmNlIHRoYXQgY29ubmVjdHMgYSBqb3lzdGljawo+
-ID4+PiB0byB0d28gb2YgdGhlIHNhcmFkYyBjaGFubmVscyBmb3IgWCBhbmQgWSBheGlzIGFuZCB0
-aGUgbmV3IChhbmQgc3RpbGwKPiA+Pj4gcGVuZGluZykgYWRjIGpveXN0aWNrIGRyaXZlciBvZiBj
-b3Vyc2Ugd2FudHMgdG8gdXNlIHRyaWdnZXJlZCBidWZmZXJzCj4gPj4+IGZyb20gdGhlIGlpbyBz
-dWJzeXN0ZW0uCj4gPj4+Cj4gPj4+IFNpZ25lZC1vZmYtYnk6IFNpbW9uIFh1ZSA8eHhtQHJvY2st
-Y2hpcHMuY29tPgo+ID4+PiBbc29tZSBzaW1wbGlmaWNhdGlvbnMgYW5kIGFkZGVkIGNvbW1pdCBk
-ZXNjcmlwdGlvbl0KPiA+Pj4gU2lnbmVkLW9mZi1ieTogSGVpa28gU3R1ZWJuZXIgPGhlaWtvLnN0
-dWVibmVyQHRoZW9icm9tYS1zeXN0ZW1zLmNvbT4KPiA+Pj4gLS0tCj4gPj4+ICAgIGRyaXZlcnMv
-aWlvL2FkYy9LY29uZmlnICAgICAgICAgICB8ICAgMiArCj4gPj4+ICAgIGRyaXZlcnMvaWlvL2Fk
-Yy9yb2NrY2hpcF9zYXJhZGMuYyB8IDEzNyArKysrKysrKysrKysrKysrKysrKysrLS0tLS0tLS0K
-PiA+Pj4gICAgMiBmaWxlcyBjaGFuZ2VkLCAxMDIgaW5zZXJ0aW9ucygrKSwgMzcgZGVsZXRpb25z
-KC0pCj4gPj4+Cj4gPj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2lpby9hZGMvS2NvbmZpZyBiL2Ry
-aXZlcnMvaWlvL2FkYy9LY29uZmlnCj4gPj4+IGluZGV4IDgyZTMzMDgyOTU4Yy4uNTVkMjQ5OWZm
-NzU3IDEwMDY0NAo+ID4+PiAtLS0gYS9kcml2ZXJzL2lpby9hZGMvS2NvbmZpZwo+ID4+PiArKysg
-Yi9kcml2ZXJzL2lpby9hZGMvS2NvbmZpZwo+ID4+PiBAQCAtNzg3LDYgKzc4Nyw4IEBAIGNvbmZp
-ZyBST0NLQ0hJUF9TQVJBREMKPiA+Pj4gICAgCXRyaXN0YXRlICJSb2NrY2hpcCBTQVJBREMgZHJp
-dmVyIgo+ID4+PiAgICAJZGVwZW5kcyBvbiBBUkNIX1JPQ0tDSElQIHx8IChBUk0gJiYgQ09NUElM
-RV9URVNUKQo+ID4+PiAgICAJZGVwZW5kcyBvbiBSRVNFVF9DT05UUk9MTEVSCj4gPj4+ICsJc2Vs
-ZWN0IElJT19CVUZGRVIKPiA+Pj4gKwlzZWxlY3QgSUlPX1RSSUdHRVJFRF9CVUZGRVIKPiA+Pj4g
-ICAgCWhlbHAKPiA+Pj4gICAgCSAgU2F5IHllcyBoZXJlIHRvIGJ1aWxkIHN1cHBvcnQgZm9yIHRo
-ZSBTQVJBREMgZm91bmQgaW4gU29DcyBmcm9tCj4gPj4+ICAgIAkgIFJvY2tjaGlwLgo+ID4+PiBk
-aWZmIC0tZ2l0IGEvZHJpdmVycy9paW8vYWRjL3JvY2tjaGlwX3NhcmFkYy5jIGIvZHJpdmVycy9p
-aW8vYWRjL3JvY2tjaGlwX3NhcmFkYy5jCj4gPj4+IGluZGV4IDU4MmJhMDQ3YzRhNi4uNDAyYjIy
-MTBhNjgyIDEwMDY0NAo+ID4+PiAtLS0gYS9kcml2ZXJzL2lpby9hZGMvcm9ja2NoaXBfc2FyYWRj
-LmMKPiA+Pj4gKysrIGIvZHJpdmVycy9paW8vYWRjL3JvY2tjaGlwX3NhcmFkYy5jCj4gPj4+IEBA
-IC0xNSw3ICsxNSwxMSBAQAo+ID4+PiAgICAjaW5jbHVkZSA8bGludXgvZGVsYXkuaD4KPiA+Pj4g
-ICAgI2luY2x1ZGUgPGxpbnV4L3Jlc2V0Lmg+Cj4gPj4+ICAgICNpbmNsdWRlIDxsaW51eC9yZWd1
-bGF0b3IvY29uc3VtZXIuaD4KPiA+Pj4gKyNpbmNsdWRlIDxsaW51eC9paW8vYnVmZmVyLmg+Cj4g
-Pj4+ICAgICNpbmNsdWRlIDxsaW51eC9paW8vaWlvLmg+Cj4gPj4+ICsjaW5jbHVkZSA8bGludXgv
-aWlvL3RyaWdnZXIuaD4KPiA+Pj4gKyNpbmNsdWRlIDxsaW51eC9paW8vdHJpZ2dlcl9jb25zdW1l
-ci5oPgo+ID4+PiArI2luY2x1ZGUgPGxpbnV4L2lpby90cmlnZ2VyZWRfYnVmZmVyLmg+Cj4gPj4+
-ICAgIAo+ID4+PiAgICAjZGVmaW5lIFNBUkFEQ19EQVRBCQkJMHgwMAo+ID4+PiAgICAKPiA+Pj4g
-QEAgLTM0LDcgKzM4LDYgQEAKPiA+Pj4gICAgI2RlZmluZSBTQVJBRENfVElNRU9VVAkJCW1zZWNz
-X3RvX2ppZmZpZXMoMTAwKQo+ID4+PiAgICAKPiA+Pj4gICAgc3RydWN0IHJvY2tjaGlwX3NhcmFk
-Y19kYXRhIHsKPiA+Pj4gLQlpbnQJCQkJbnVtX2JpdHM7Cj4gPj4+ICAgIAljb25zdCBzdHJ1Y3Qg
-aWlvX2NoYW5fc3BlYwkqY2hhbm5lbHM7Cj4gPj4+ICAgIAlpbnQJCQkJbnVtX2NoYW5uZWxzOwo+
-ID4+PiAgICAJdW5zaWduZWQgbG9uZwkJCWNsa19yYXRlOwo+ID4+PiBAQCAtNDksOCArNTIsMzcg
-QEAgc3RydWN0IHJvY2tjaGlwX3NhcmFkYyB7Cj4gPj4+ICAgIAlzdHJ1Y3QgcmVzZXRfY29udHJv
-bAkqcmVzZXQ7Cj4gPj4+ICAgIAljb25zdCBzdHJ1Y3Qgcm9ja2NoaXBfc2FyYWRjX2RhdGEgKmRh
-dGE7Cj4gPj4+ICAgIAl1MTYJCQlsYXN0X3ZhbDsKPiA+Pj4gKwljb25zdCBzdHJ1Y3QgaWlvX2No
-YW5fc3BlYyAqbGFzdF9jaGFuOwo+ID4+PiAgICB9Owo+ID4+PiAgICAKPiA+Pj4gK3N0YXRpYyB2
-b2lkIHJvY2tjaGlwX3NhcmFkY19wb3dlcl9kb3duKHN0cnVjdCByb2NrY2hpcF9zYXJhZGMgKmlu
-Zm8pCj4gPj4+ICt7Cj4gPj4+ICsJLyogQ2xlYXIgaXJxICYgcG93ZXIgZG93biBhZGMgKi8KPiA+
-Pj4gKwl3cml0ZWxfcmVsYXhlZCgwLCBpbmZvLT5yZWdzICsgU0FSQURDX0NUUkwpOwo+ID4+PiAr
-fQo+ID4+PiArCj4gPj4+ICtzdGF0aWMgaW50IHJvY2tjaGlwX3NhcmFkY19jb252ZXJzaW9uKHN0
-cnVjdCByb2NrY2hpcF9zYXJhZGMgKmluZm8sCj4gPj4+ICsJCQkJICAgc3RydWN0IGlpb19jaGFu
-X3NwZWMgY29uc3QgKmNoYW4pCj4gPj4+ICt7Cj4gPj4+ICsJcmVpbml0X2NvbXBsZXRpb24oJmlu
-Zm8tPmNvbXBsZXRpb24pOwo+ID4+PiArCj4gPj4+ICsJLyogOCBjbG9jayBwZXJpb2RzIGFzIGRl
-bGF5IGJldHdlZW4gcG93ZXIgdXAgYW5kIHN0YXJ0IGNtZCAqLwo+ID4+PiArCXdyaXRlbF9yZWxh
-eGVkKDgsIGluZm8tPnJlZ3MgKyBTQVJBRENfRExZX1BVX1NPQyk7Cj4gPj4+ICsKPiA+Pj4gKwlp
-bmZvLT5sYXN0X2NoYW4gPSBjaGFuOwo+ID4+PiArCj4gPj4+ICsJLyogU2VsZWN0IHRoZSBjaGFu
-bmVsIHRvIGJlIHVzZWQgYW5kIHRyaWdnZXIgY29udmVyc2lvbiAqLwo+ID4+PiArCXdyaXRlbChT
-QVJBRENfQ1RSTF9QT1dFUl9DVFJMCj4gPj4+ICsJCQl8IChjaGFuLT5jaGFubmVsICYgU0FSQURD
-X0NUUkxfQ0hOX01BU0spCj4gPj4+ICsJCQl8IFNBUkFEQ19DVFJMX0lSUV9FTkFCTEUsCj4gPj4+
-ICsJCSAgIGluZm8tPnJlZ3MgKyBTQVJBRENfQ1RSTCk7Cj4gPj4+ICsKPiA+Pj4gKwlpZiAoIXdh
-aXRfZm9yX2NvbXBsZXRpb25fdGltZW91dCgmaW5mby0+Y29tcGxldGlvbiwgU0FSQURDX1RJTUVP
-VVQpKQo+ID4+PiArCQlyZXR1cm4gLUVUSU1FRE9VVDsKPiA+Pj4gKwo+ID4+PiArCXJldHVybiAw
-Owo+ID4+PiArfQo+ID4+PiArCj4gPj4+ICAgIHN0YXRpYyBpbnQgcm9ja2NoaXBfc2FyYWRjX3Jl
-YWRfcmF3KHN0cnVjdCBpaW9fZGV2ICppbmRpb19kZXYsCj4gPj4+ICAgIAkJCQkgICAgc3RydWN0
-IGlpb19jaGFuX3NwZWMgY29uc3QgKmNoYW4sCj4gPj4+ICAgIAkJCQkgICAgaW50ICp2YWwsIGlu
-dCAqdmFsMiwgbG9uZyBtYXNrKQo+ID4+PiBAQCAtNjIsMjQgKzk0LDEyIEBAIHN0YXRpYyBpbnQg
-cm9ja2NoaXBfc2FyYWRjX3JlYWRfcmF3KHN0cnVjdCBpaW9fZGV2ICppbmRpb19kZXYsCj4gPj4+
-ICAgIAljYXNlIElJT19DSEFOX0lORk9fUkFXOgo+ID4+PiAgICAJCW11dGV4X2xvY2soJmluZGlv
-X2Rldi0+bWxvY2spOwo+ID4+PiAgICAKPiA+Pj4gLQkJcmVpbml0X2NvbXBsZXRpb24oJmluZm8t
-PmNvbXBsZXRpb24pOwo+ID4+PiAtCj4gPj4+IC0JCS8qIDggY2xvY2sgcGVyaW9kcyBhcyBkZWxh
-eSBiZXR3ZWVuIHBvd2VyIHVwIGFuZCBzdGFydCBjbWQgKi8KPiA+Pj4gLQkJd3JpdGVsX3JlbGF4
-ZWQoOCwgaW5mby0+cmVncyArIFNBUkFEQ19ETFlfUFVfU09DKTsKPiA+Pj4gLQo+ID4+PiAtCQkv
-KiBTZWxlY3QgdGhlIGNoYW5uZWwgdG8gYmUgdXNlZCBhbmQgdHJpZ2dlciBjb252ZXJzaW9uICov
-Cj4gPj4+IC0JCXdyaXRlbChTQVJBRENfQ1RSTF9QT1dFUl9DVFJMCj4gPj4+IC0JCQkJfCAoY2hh
-bi0+Y2hhbm5lbCAmIFNBUkFEQ19DVFJMX0NITl9NQVNLKQo+ID4+PiAtCQkJCXwgU0FSQURDX0NU
-UkxfSVJRX0VOQUJMRSwKPiA+Pj4gLQkJICAgICAgIGluZm8tPnJlZ3MgKyBTQVJBRENfQ1RSTCk7
-Cj4gPj4+IC0KPiA+Pj4gLQkJaWYgKCF3YWl0X2Zvcl9jb21wbGV0aW9uX3RpbWVvdXQoJmluZm8t
-PmNvbXBsZXRpb24sCj4gPj4+IC0JCQkJCQkgU0FSQURDX1RJTUVPVVQpKSB7Cj4gPj4+IC0JCQl3
-cml0ZWxfcmVsYXhlZCgwLCBpbmZvLT5yZWdzICsgU0FSQURDX0NUUkwpOwo+ID4+PiArCQlyZXQg
-PSByb2NrY2hpcF9zYXJhZGNfY29udmVyc2lvbihpbmZvLCBjaGFuKTsKPiA+Pj4gKwkJaWYgKHJl
-dCkgewo+ID4+PiArCQkJcm9ja2NoaXBfc2FyYWRjX3Bvd2VyX2Rvd24oaW5mbyk7Cj4gPj4+ICAg
-IAkJCW11dGV4X3VubG9jaygmaW5kaW9fZGV2LT5tbG9jayk7Cj4gPj4+IC0JCQlyZXR1cm4gLUVU
-SU1FRE9VVDsKPiA+Pj4gKwkJCXJldHVybiByZXQ7Cj4gPj4+ICAgIAkJfQo+ID4+PiAtCj4gPj4+
-ICAgIAkJKnZhbCA9IGluZm8tPmxhc3RfdmFsOwo+ID4+PiAgICAJCW11dGV4X3VubG9jaygmaW5k
-aW9fZGV2LT5tbG9jayk7Cj4gPj4+ICAgIAkJcmV0dXJuIElJT19WQUxfSU5UOwo+ID4+PiBAQCAt
-OTEsNyArMTExLDcgQEAgc3RhdGljIGludCByb2NrY2hpcF9zYXJhZGNfcmVhZF9yYXcoc3RydWN0
-IGlpb19kZXYgKmluZGlvX2RldiwKPiA+Pj4gICAgCQl9Cj4gPj4+ICAgIAo+ID4+PiAgICAJCSp2
-YWwgPSByZXQgLyAxMDAwOwo+ID4+PiAtCQkqdmFsMiA9IGluZm8tPmRhdGEtPm51bV9iaXRzOwo+
-ID4+PiArCQkqdmFsMiA9IGNoYW4tPnNjYW5fdHlwZS5yZWFsYml0czsKPiA+Pj4gICAgCQlyZXR1
-cm4gSUlPX1ZBTF9GUkFDVElPTkFMX0xPRzI7Cj4gPj4+ICAgIAlkZWZhdWx0Ogo+ID4+PiAgICAJ
-CXJldHVybiAtRUlOVkFMOwo+ID4+PiBAQCAtMTA0LDEwICsxMjQsOSBAQCBzdGF0aWMgaXJxcmV0
-dXJuX3Qgcm9ja2NoaXBfc2FyYWRjX2lzcihpbnQgaXJxLCB2b2lkICpkZXZfaWQpCj4gPj4+ICAg
-IAo+ID4+PiAgICAJLyogUmVhZCB2YWx1ZSAqLwo+ID4+PiAgICAJaW5mby0+bGFzdF92YWwgPSBy
-ZWFkbF9yZWxheGVkKGluZm8tPnJlZ3MgKyBTQVJBRENfREFUQSk7Cj4gPj4+IC0JaW5mby0+bGFz
-dF92YWwgJj0gR0VOTUFTSyhpbmZvLT5kYXRhLT5udW1fYml0cyAtIDEsIDApOwo+ID4+PiArCWlu
-Zm8tPmxhc3RfdmFsICY9IEdFTk1BU0soaW5mby0+bGFzdF9jaGFuLT5zY2FuX3R5cGUucmVhbGJp
-dHMgLSAxLCAwKTsKPiA+Pj4gICAgCj4gPj4+IC0JLyogQ2xlYXIgaXJxICYgcG93ZXIgZG93biBh
-ZGMgKi8KPiA+Pj4gLQl3cml0ZWxfcmVsYXhlZCgwLCBpbmZvLT5yZWdzICsgU0FSQURDX0NUUkwp
-Owo+ID4+PiArCXJvY2tjaGlwX3NhcmFkY19wb3dlcl9kb3duKGluZm8pOwo+ID4+PiAgICAKPiA+
-Pj4gICAgCWNvbXBsZXRlKCZpbmZvLT5jb21wbGV0aW9uKTsKPiA+Pj4gICAgCj4gPj4+IEBAIC0x
-MTgsNTEgKzEzNyw1NSBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGlpb19pbmZvIHJvY2tjaGlwX3Nh
-cmFkY19paW9faW5mbyA9IHsKPiA+Pj4gICAgCS5yZWFkX3JhdyA9IHJvY2tjaGlwX3NhcmFkY19y
-ZWFkX3JhdywKPiA+Pj4gICAgfTsKPiA+Pj4gICAgCj4gPj4+IC0jZGVmaW5lIEFEQ19DSEFOTkVM
-KF9pbmRleCwgX2lkKSB7CQkJCVwKPiA+Pj4gKyNkZWZpbmUgQURDX0NIQU5ORUwoX2luZGV4LCBf
-aWQsIF9yZXMpIHsJCQlcCj4gPj4+ICAgIAkudHlwZSA9IElJT19WT0xUQUdFLAkJCQkJXAo+ID4+
-PiAgICAJLmluZGV4ZWQgPSAxLAkJCQkJCVwKPiA+Pj4gICAgCS5jaGFubmVsID0gX2luZGV4LAkJ
-CQkJXAo+ID4+PiAgICAJLmluZm9fbWFza19zZXBhcmF0ZSA9IEJJVChJSU9fQ0hBTl9JTkZPX1JB
-VyksCQlcCj4gPj4+ICAgIAkuaW5mb19tYXNrX3NoYXJlZF9ieV90eXBlID0gQklUKElJT19DSEFO
-X0lORk9fU0NBTEUpLAlcCj4gPj4+ICAgIAkuZGF0YXNoZWV0X25hbWUgPSBfaWQsCQkJCQlcCj4g
-Pj4+ICsJLnNjYW5faW5kZXggPSBfaW5kZXgsCQkJCQlcCj4gPj4+ICsJLnNjYW5fdHlwZSA9IHsJ
-CQkJCQlcCj4gPj4+ICsJCS5zaWduID0gJ3UnLAkJCQkJXAo+ID4+PiArCQkucmVhbGJpdHMgPSBf
-cmVzLAkJCQlcCj4gPj4+ICsJCS5zdG9yYWdlYml0cyA9IDE2LAkJCQlcCj4gPj4+ICsJCS5lbmRp
-YW5uZXNzID0gSUlPX0xFLAkJCQlcCj4gPj4+ICsJfSwJCQkJCQkJXAo+ID4+PiAgICB9Cj4gPj4+
-ICAgIAo+ID4+PiAgICBzdGF0aWMgY29uc3Qgc3RydWN0IGlpb19jaGFuX3NwZWMgcm9ja2NoaXBf
-c2FyYWRjX2lpb19jaGFubmVsc1tdID0gewo+ID4+PiAtCUFEQ19DSEFOTkVMKDAsICJhZGMwIiks
-Cj4gPj4+IC0JQURDX0NIQU5ORUwoMSwgImFkYzEiKSwKPiA+Pj4gLQlBRENfQ0hBTk5FTCgyLCAi
-YWRjMiIpLAo+ID4+PiArCUFEQ19DSEFOTkVMKDAsICJhZGMwIiwgMTApLAo+ID4+PiArCUFEQ19D
-SEFOTkVMKDEsICJhZGMxIiwgMTApLAo+ID4+PiArCUFEQ19DSEFOTkVMKDIsICJhZGMyIiwgMTAp
-LAo+ID4+PiAgICB9Owo+ID4+PiAgICAKPiA+Pj4gICAgc3RhdGljIGNvbnN0IHN0cnVjdCByb2Nr
-Y2hpcF9zYXJhZGNfZGF0YSBzYXJhZGNfZGF0YSA9IHsKPiA+Pj4gLQkubnVtX2JpdHMgPSAxMCwK
-PiA+Pj4gICAgCS5jaGFubmVscyA9IHJvY2tjaGlwX3NhcmFkY19paW9fY2hhbm5lbHMsCj4gPj4+
-ICAgIAkubnVtX2NoYW5uZWxzID0gQVJSQVlfU0laRShyb2NrY2hpcF9zYXJhZGNfaWlvX2NoYW5u
-ZWxzKSwKPiA+Pj4gICAgCS5jbGtfcmF0ZSA9IDEwMDAwMDAsCj4gPj4+ICAgIH07Cj4gPj4+ICAg
-IAo+ID4+PiAgICBzdGF0aWMgY29uc3Qgc3RydWN0IGlpb19jaGFuX3NwZWMgcm9ja2NoaXBfcmsz
-MDY2X3RzYWRjX2lpb19jaGFubmVsc1tdID0gewo+ID4+PiAtCUFEQ19DSEFOTkVMKDAsICJhZGMw
-IiksCj4gPj4+IC0JQURDX0NIQU5ORUwoMSwgImFkYzEiKSwKPiA+Pj4gKwlBRENfQ0hBTk5FTCgw
-LCAiYWRjMCIsIDEyKSwKPiA+Pj4gKwlBRENfQ0hBTk5FTCgxLCAiYWRjMSIsIDEyKSwKPiA+Pj4g
-ICAgfTsKPiA+Pj4gICAgCj4gPj4+ICAgIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgcm9ja2NoaXBfc2Fy
-YWRjX2RhdGEgcmszMDY2X3RzYWRjX2RhdGEgPSB7Cj4gPj4+IC0JLm51bV9iaXRzID0gMTIsCj4g
-Pj4+ICAgIAkuY2hhbm5lbHMgPSByb2NrY2hpcF9yazMwNjZfdHNhZGNfaWlvX2NoYW5uZWxzLAo+
-ID4+PiAgICAJLm51bV9jaGFubmVscyA9IEFSUkFZX1NJWkUocm9ja2NoaXBfcmszMDY2X3RzYWRj
-X2lpb19jaGFubmVscyksCj4gPj4+ICAgIAkuY2xrX3JhdGUgPSA1MDAwMCwKPiA+Pj4gICAgfTsK
-PiA+Pj4gICAgCj4gPj4+ICAgIHN0YXRpYyBjb25zdCBzdHJ1Y3QgaWlvX2NoYW5fc3BlYyByb2Nr
-Y2hpcF9yazMzOTlfc2FyYWRjX2lpb19jaGFubmVsc1tdID0gewo+ID4+PiAtCUFEQ19DSEFOTkVM
-KDAsICJhZGMwIiksCj4gPj4+IC0JQURDX0NIQU5ORUwoMSwgImFkYzEiKSwKPiA+Pj4gLQlBRENf
-Q0hBTk5FTCgyLCAiYWRjMiIpLAo+ID4+PiAtCUFEQ19DSEFOTkVMKDMsICJhZGMzIiksCj4gPj4+
-IC0JQURDX0NIQU5ORUwoNCwgImFkYzQiKSwKPiA+Pj4gLQlBRENfQ0hBTk5FTCg1LCAiYWRjNSIp
-LAo+ID4+PiArCUFEQ19DSEFOTkVMKDAsICJhZGMwIiwgMTApLAo+ID4+PiArCUFEQ19DSEFOTkVM
-KDEsICJhZGMxIiwgMTApLAo+ID4+PiArCUFEQ19DSEFOTkVMKDIsICJhZGMyIiwgMTApLAo+ID4+
-PiArCUFEQ19DSEFOTkVMKDMsICJhZGMzIiwgMTApLAo+ID4+PiArCUFEQ19DSEFOTkVMKDQsICJh
-ZGM0IiwgMTApLAo+ID4+PiArCUFEQ19DSEFOTkVMKDUsICJhZGM1IiwgMTApLAo+ID4+PiAgICB9
-Owo+ID4+PiAgICAKPiA+Pj4gICAgc3RhdGljIGNvbnN0IHN0cnVjdCByb2NrY2hpcF9zYXJhZGNf
-ZGF0YSByazMzOTlfc2FyYWRjX2RhdGEgPSB7Cj4gPj4+IC0JLm51bV9iaXRzID0gMTAsCj4gPj4+
-ICAgIAkuY2hhbm5lbHMgPSByb2NrY2hpcF9yazMzOTlfc2FyYWRjX2lpb19jaGFubmVscywKPiA+
-Pj4gICAgCS5udW1fY2hhbm5lbHMgPSBBUlJBWV9TSVpFKHJvY2tjaGlwX3JrMzM5OV9zYXJhZGNf
-aWlvX2NoYW5uZWxzKSwKPiA+Pj4gICAgCS5jbGtfcmF0ZSA9IDEwMDAwMDAsCj4gPj4+IEBAIC0x
-OTMsNiArMjE2LDM5IEBAIHN0YXRpYyB2b2lkIHJvY2tjaGlwX3NhcmFkY19yZXNldF9jb250cm9s
-bGVyKHN0cnVjdCByZXNldF9jb250cm9sICpyZXNldCkKPiA+Pj4gICAgCXJlc2V0X2NvbnRyb2xf
-ZGVhc3NlcnQocmVzZXQpOwo+ID4+PiAgICB9Cj4gPj4+ICAgIAo+ID4+PiArc3RhdGljIGlycXJl
-dHVybl90IHJvY2tjaGlwX3NhcmFkY190cmlnZ2VyX2hhbmRsZXIoaW50IGlycSwgdm9pZCAqcCkK
-PiA+Pj4gK3sKPiA+Pj4gKwlzdHJ1Y3QgaWlvX3BvbGxfZnVuYyAqcGYgPSBwOwo+ID4+PiArCXN0
-cnVjdCBpaW9fZGV2ICppX2RldiA9IHBmLT5pbmRpb19kZXY7Cj4gPj4+ICsJc3RydWN0IHJvY2tj
-aGlwX3NhcmFkYyAqaW5mbyA9IGlpb19wcml2KGlfZGV2KTsKPiA+Pj4gKwl1MTYgZGF0YVsyMF07
-ICAKPiA+PiBIb3cgYWJvdXQgdGhpczoKPiA+PiAjZGVmaW5lIE1BWF9DSEFOTkVMX05VTSAxNiAg
-Cj4gPiAKPiA+IFVuZm9ydHVuYXRlbHkgdGhpcyBpcyBhIGJpdCBtb3JlIGNvbXBsZXggdGhhbiBp
-dCBzZWVtcy4KPiA+IFRoZSBidWZmZXIgbmVlZHMgdG8gYmUgYmlnIGVub3VnaCBmb3IgYWxsIHRo
-ZSBjaGFubmVscwo+ID4gKyBhIDggYnl0ZSBhbGlnbmVkIHNwYWNlIHRvIHB1dCB0aGUgdGltZXN0
-YW1wIGluLgo+ID4gCj4gPiBZb3UgY2FuIGNvbnN0cnVjdCB0aGF0IGluIGEgZmFzaGlvbiBzdWl0
-YWJsZSB0byB1c2UgaW4gYQo+ID4gbWFjcm8gYnV0IGl0J3MgYSBiaXQgbW9yZSBmaWRkbHkgdGhh
-biBzaW1wbHkgYmVpbmcgdGhlCj4gPiBtYXhpbXVtIG51bWJlciBvZiBjaGFubmVscy4KPiA+ICAg
-Cj4gTWFrZSB1c2Ugb2YgaWlvX2Rldi0+c2Nhbl9ieXRlcyB0byBhbGxvYyBhIGJ1ZmZlciBpbiAK
-PiBpaW9faW5mby0+dXBkYXRlX3NjYW5fbW9kZSBjYWxsYmFjayBmb3Igc3RvcmluZyB0aGUKPiAi
-ZGF0YSArIHRpbWVzdGFtcCIgaXMgYW5vdGhlciB3YXkKClBsZWFzZSBkb24ndCBkbyB0aGF0LiBz
-Y2FuX2J5dGVzIGlzIG1hcmtlZCBhcyBbSU5URVJOXSBpbgp0aGUgZG9jcyBpbiBpaW8uaC4gICBU
-aGUgcmVhc29uIGZvciB0aGlzIGlzIGl0IGlzIGFuIGludGVybmFsCmltcGxlbWVudGF0aW9uIGRl
-dGFpbC4gIERyaXZlcnMgc2hvdWxkIG5vdCBiZSB0b3VjaGluZyBpdC4KV2UgbmV2ZXIgcHJvdmlk
-ZWQgYW55IHNvcnQgb2YgdXRpbGl0eSBmdW5jdGlvbiBiZWNhdXNlIGl0J3Mgbm9ybWFsbHkKcmVh
-bGx5IGVhc3kgZm9yIGEgZHJpdmVyIHRvIGVzdGFibGlzaCBhbiB1cHBlciBib3VuZCBmb3IgaXRz
-ZWxmLgoKSm9uYXRoYW4KCgo+ID4+IHUxNiBkYXRhW01BWF9DSEFOTkVMX05VTV07ICAKPiA+Pj4g
-KwlpbnQgcmV0Owo+ID4+PiArCWludCBpLCBqID0gMDsKPiA+Pj4gKwo+ID4+PiArCW11dGV4X2xv
-Y2soJmlfZGV2LT5tbG9jayk7Cj4gPj4+ICsKPiA+Pj4gKwlmb3JfZWFjaF9zZXRfYml0KGksIGlf
-ZGV2LT5hY3RpdmVfc2Nhbl9tYXNrLCBpX2Rldi0+bWFza2xlbmd0aCkgewo+ID4+PiArCQljb25z
-dCBzdHJ1Y3QgaWlvX2NoYW5fc3BlYyAqY2hhbiA9ICZpX2Rldi0+Y2hhbm5lbHNbaV07Cj4gPj4+
-ICsKPiA+Pj4gKwkJcmV0ID0gcm9ja2NoaXBfc2FyYWRjX2NvbnZlcnNpb24oaW5mbywgY2hhbik7
-Cj4gPj4+ICsJCWlmIChyZXQpIHsKPiA+Pj4gKwkJCXJvY2tjaGlwX3NhcmFkY19wb3dlcl9kb3du
-KGluZm8pOwo+ID4+PiArCQkJZ290byBvdXQ7Cj4gPj4+ICsJCX0KPiA+Pj4gKwo+ID4+PiArCQlk
-YXRhW2pdID0gaW5mby0+bGFzdF92YWw7Cj4gPj4+ICsJCWorKzsKPiA+Pj4gKwl9Cj4gPj4+ICsK
-PiA+Pj4gKwlpaW9fcHVzaF90b19idWZmZXJzX3dpdGhfdGltZXN0YW1wKGlfZGV2LCBkYXRhLCBp
-aW9fZ2V0X3RpbWVfbnMoaV9kZXYpKTsKPiA+Pj4gK291dDoKPiA+Pj4gKwltdXRleF91bmxvY2so
-JmlfZGV2LT5tbG9jayk7Cj4gPj4+ICsKPiA+Pj4gKwlpaW9fdHJpZ2dlcl9ub3RpZnlfZG9uZShp
-X2Rldi0+dHJpZyk7Cj4gPj4+ICsKPiA+Pj4gKwlyZXR1cm4gSVJRX0hBTkRMRUQ7Cj4gPj4+ICt9
-Cj4gPj4+ICsKPiA+Pj4gICAgc3RhdGljIGludCByb2NrY2hpcF9zYXJhZGNfcHJvYmUoc3RydWN0
-IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiA+Pj4gICAgewo+ID4+PiAgICAJc3RydWN0IHJvY2tj
-aGlwX3NhcmFkYyAqaW5mbyA9IE5VTEw7Cj4gPj4+IEBAIC0zMTUsMTIgKzM3MSwxOSBAQCBzdGF0
-aWMgaW50IHJvY2tjaGlwX3NhcmFkY19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2
-KQo+ID4+PiAgICAJaW5kaW9fZGV2LT5jaGFubmVscyA9IGluZm8tPmRhdGEtPmNoYW5uZWxzOwo+
-ID4+PiAgICAJaW5kaW9fZGV2LT5udW1fY2hhbm5lbHMgPSBpbmZvLT5kYXRhLT5udW1fY2hhbm5l
-bHM7Cj4gPj4+ICAgIAo+ID4+PiAtCXJldCA9IGlpb19kZXZpY2VfcmVnaXN0ZXIoaW5kaW9fZGV2
-KTsKPiA+Pj4gKwlyZXQgPSBpaW9fdHJpZ2dlcmVkX2J1ZmZlcl9zZXR1cChpbmRpb19kZXYsIE5V
-TEwsCj4gPj4+ICsJCQkJCSByb2NrY2hpcF9zYXJhZGNfdHJpZ2dlcl9oYW5kbGVyLCBOVUxMKTsg
-IAo+ID4+IGRldm1faWlvX3RyaWdnZXJlZF9idWZmZXJfc2V0dXAgc2VlbXMgYmV0dGVyICAKPiA+
-Pj4gICAgCWlmIChyZXQpCj4gPj4+ICAgIAkJZ290byBlcnJfY2xrOwo+ID4+PiAgICAKPiA+Pj4g
-KwlyZXQgPSBpaW9fZGV2aWNlX3JlZ2lzdGVyKGluZGlvX2Rldik7Cj4gPj4+ICsJaWYgKHJldCkK
-PiA+Pj4gKwkJZ290byBlcnJfYnVmZmVyX2NsZWFudXA7Cj4gPj4+ICsKPiA+Pj4gICAgCXJldHVy
-biAwOwo+ID4+PiAgICAKPiA+Pj4gK2Vycl9idWZmZXJfY2xlYW51cDoKPiA+Pj4gKwlpaW9fdHJp
-Z2dlcmVkX2J1ZmZlcl9jbGVhbnVwKGluZGlvX2Rldik7Cj4gPj4+ICAgIGVycl9jbGs6Cj4gPj4+
-ICAgIAljbGtfZGlzYWJsZV91bnByZXBhcmUoaW5mby0+Y2xrKTsKPiA+Pj4gICAgZXJyX3BjbGs6
-Cj4gPj4+ICAgICAgCj4gPj4geHhtQHJvY2stY2hpcHMuY29tCj4gPj4KPiA+PiAgCj4gPiAKPiA+
-IAo+ID4gCj4gPiAgIAo+IAo+IAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtcm9ja2NoaXAK
+Hi Johan,
+
+Am Samstag, 7. M=E4rz 2020, 09:36:19 CET schrieb Johan Jonker:
+> The 'heartbeat' led seems to need some changes. The rest is inherited
+> from px30.dtsi I think. How do you deal with all the compatible
+> properties names that are normally SoC specific?
+
+The rk3326 really is just a px30 with the little vop deactivated.
+So I really don't want to make "much fuss" over that ;-)
+
+Previous iterations where the arm32 px3/px3se/etc which essentially
+also just copied an existing soc and added some industrial voodoo
+to the chip itself (temperature range or whatever).
+
+
+And thanks for making sure the details are right below. I'll do a
+v2 with these things corrected.
+
+Thanks
+Heiko
+
+
+> Also include all mail lists found with:
+> ./scripts/get_maintainer.pl --nogit-fallback --nogit
+> =
+
+> linux-kernel@vger.kernel.org
+> =
+
+>   DTC     arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dtb
+>   DTC     arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml
+>   CHECK   arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml
+> arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: tsadc:
+> tsadc-otp-gpio: {'rockchip,pins': [[0, 6, 0, 123]], 'phandle': [[90]]}
+> is not of type 'array'
+> arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: usb@ff340000:
+> 'clock-names', 'power-domains' do not match any of the regexes:
+> 'pinctrl-[0-9]+'
+> arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: usb@ff300000:
+> 'power-domains' does not match any of the regexes: 'pinctrl-[0-9]+'
+> arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: usb@ff350000:
+> 'clock-names', 'power-domains' do not match any of the regexes:
+> 'pinctrl-[0-9]+'
+> arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: gpio-leds:
+> 'heartbeat' does not match any of the regexes: '(^led-[0-9a-f]$|led)',
+> 'pinctrl-[0-9]+'
+> arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: usb2-phy@100:
+> '#phy-cells' is a required property
+> =
+
+> > From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+> > =
+
+> > The Odroid Advance Go is a handheld based on Rockchip's rk3326 soc
+> > with a DSI display and some handheld controls including an analog
+> > joystick connected to the saradc.
+> > =
+
+> > Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+> > ---
+> >  arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+> >  .../boot/dts/rockchip/rk3326-odroid-go2.dts   | 544 ++++++++++++++++++
+> >  2 files changed, 545 insertions(+)
+> >  create mode 100644 arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts
+> > =
+
+> > diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dt=
+s/rockchip/Makefile
+> > index af1e1c3707d0..86c38467d487 100644
+> > --- a/arch/arm64/boot/dts/rockchip/Makefile
+> > +++ b/arch/arm64/boot/dts/rockchip/Makefile
+> > @@ -6,6 +6,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) +=3D px30-copperhead-ltk101=
+b4029w.dtb
+> >  dtb-$(CONFIG_ARCH_ROCKCHIP) +=3D px30-evb.dtb
+> >  dtb-$(CONFIG_ARCH_ROCKCHIP) +=3D rk3308-evb.dtb
+> >  dtb-$(CONFIG_ARCH_ROCKCHIP) +=3D rk3308-roc-cc.dtb
+> > +dtb-$(CONFIG_ARCH_ROCKCHIP) +=3D rk3326-odroid-go2.dtb
+> >  dtb-$(CONFIG_ARCH_ROCKCHIP) +=3D rk3328-a1.dtb
+> >  dtb-$(CONFIG_ARCH_ROCKCHIP) +=3D rk3328-evb.dtb
+> >  dtb-$(CONFIG_ARCH_ROCKCHIP) +=3D rk3328-rock64.dtb
+> > diff --git a/arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts b/arch/=
+arm64/boot/dts/rockchip/rk3326-odroid-go2.dts
+> > new file mode 100644
+> > index 000000000000..a16f4a0d1d4d
+> > --- /dev/null
+> > +++ b/arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts
+> > @@ -0,0 +1,544 @@
+> > +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> > +/*
+> > + * Copyright (c) 2019 Hardkernel Co., Ltd
+> > + * Copyright (c) 2020 Theobroma Systems Design und Consulting GmbH
+> > + */
+> > +
+> > +/dts-v1/;
+> > +#include <dt-bindings/gpio/gpio.h>
+> > +#include <dt-bindings/input/input.h>
+> > +#include <dt-bindings/pinctrl/rockchip.h>
+> > +#include "rk3326.dtsi"
+> > +
+> > +/ {
+> > +	model =3D "ODROID-GO Advance";
+> > +	compatible =3D "hardkernel,rk3326-odroid-go2", "rockchip,rk3326";
+> > +
+> > +	chosen {
+> > +		stdout-path =3D "serial2:115200n8";
+> > +	};
+> > +
+> > +	gpio-keys {
+> > +		compatible =3D "gpio-keys";
+> > +		pinctrl-names =3D "default";
+> > +		pinctrl-0 =3D <&btn_pins>;
+> > +
+> > +		/*
+> > +		 *      *** ODROIDGO2-Advance Switch layoout ***
+> > +		 * |------------------------------------------------|
+> > +		 * | sw15                                      sw16 |
+> > +		 * |------------------------------------------------|
+> > +		 * |     sw1      |-------------------|      sw8    |
+> > +		 * |  sw3   sw4   |                   |   sw7   sw5 |
+> > +		 * |     sw2      |    LCD Display    |      sw6    |
+> > +		 * |              |                   |             |
+> > +		 * |              |-------------------|             |
+> > +		 * |         sw9 sw10   sw11 sw12   sw13 sw14       |
+> > +		 * |------------------------------------------------|
+> > +		 */
+> > +
+> > +		sw1 {
+> > +			gpios =3D <&gpio1 RK_PB4 GPIO_ACTIVE_LOW>;
+> > +			label =3D "DPAD-UP";
+> > +			linux,code =3D <BTN_DPAD_UP>;
+> > +		};
+> > +		sw2 {
+> > +			gpios =3D <&gpio1 RK_PB5 GPIO_ACTIVE_LOW>;
+> > +			label =3D "DPAD-DOWN";
+> > +			linux,code =3D <BTN_DPAD_DOWN>;
+> > +		};
+> > +		sw3 {
+> > +			gpios =3D <&gpio1 RK_PB6 GPIO_ACTIVE_LOW>;
+> > +			label =3D "DPAD-LEFT";
+> > +			linux,code =3D <BTN_DPAD_LEFT>;
+> > +		};
+> > +		sw4 {
+> > +			gpios =3D <&gpio1 RK_PB7 GPIO_ACTIVE_LOW>;
+> > +			label =3D "DPAD-RIGHT";
+> > +			linux,code =3D <BTN_DPAD_RIGHT>;
+> > +		};
+> > +		sw5 {
+> > +			gpios =3D <&gpio1 RK_PA2 GPIO_ACTIVE_LOW>;
+> > +			label =3D "BTN-A";
+> > +			linux,code =3D <BTN_EAST>;
+> > +		};
+> > +		sw6 {
+> > +			gpios =3D <&gpio1 RK_PA5 GPIO_ACTIVE_LOW>;
+> > +			label =3D "BTN-B";
+> > +			linux,code =3D <BTN_SOUTH>;
+> > +		};
+> > +		sw7 {
+> > +			gpios =3D <&gpio1 RK_PA6 GPIO_ACTIVE_LOW>;
+> > +			label =3D "BTN-Y";
+> > +			linux,code =3D <BTN_WEST>;
+> > +		};
+> > +		sw8 {
+> > +			gpios =3D <&gpio1 RK_PA7 GPIO_ACTIVE_LOW>;
+> > +			label =3D "BTN-X";
+> > +			linux,code =3D <BTN_NORTH>;
+> > +		};
+> > +		sw9 {
+> > +			gpios =3D <&gpio2 RK_PA0 GPIO_ACTIVE_LOW>;
+> > +			label =3D "F1";
+> > +			linux,code =3D <BTN_TRIGGER_HAPPY1>;
+> > +		};
+> > +		sw10 {
+> > +			gpios =3D <&gpio2 RK_PA1 GPIO_ACTIVE_LOW>;
+> > +			label =3D "F2";
+> > +			linux,code =3D <BTN_TRIGGER_HAPPY2>;
+> > +		};
+> > +		sw11 {
+> > +			gpios =3D <&gpio2 RK_PA2 GPIO_ACTIVE_LOW>;
+> > +			label =3D "F3";
+> > +			linux,code =3D <BTN_TRIGGER_HAPPY3>;
+> > +		};
+> > +		sw12 {
+> > +			gpios =3D <&gpio2 RK_PA3 GPIO_ACTIVE_LOW>;
+> > +			label =3D "F4";
+> > +			linux,code =3D <BTN_TRIGGER_HAPPY4>;
+> > +		};
+> > +		sw13 {
+> > +			gpios =3D <&gpio2 RK_PA4 GPIO_ACTIVE_LOW>;
+> > +			label =3D "F5";
+> > +			linux,code =3D <BTN_TRIGGER_HAPPY5>;
+> > +		};
+> > +		sw14 {
+> > +			gpios =3D <&gpio2 RK_PA5 GPIO_ACTIVE_LOW>;
+> > +			label =3D "F6";
+> > +			linux,code =3D <BTN_TRIGGER_HAPPY6>;
+> > +		};
+> > +		sw15 {
+> > +			gpios =3D <&gpio2 RK_PA6 GPIO_ACTIVE_LOW>;
+> > +			label =3D "TOP-LEFT";
+> > +			linux,code =3D <BTN_TL>;
+> > +		};
+> > +		sw16 {
+> > +			gpios =3D <&gpio2 RK_PA7 GPIO_ACTIVE_LOW>;
+> > +			label =3D "TOP-RIGHT";
+> > +			linux,code =3D <BTN_TR>;
+> > +		};
+> > +	};
+> > +
+> > +	leds: gpio-leds {
+> > +		compatible =3D "gpio-leds";
+> > +		pinctrl-names =3D "led_pins";
+> > +		pinctrl-0 =3D <&led_pins>;
+> > +
+> > +		/* Blue LED : GPIO0_C1 */
+> > +		heartbeat {
+> > +			label =3D "blue:heartbeat";
+> > +			gpios =3D <&gpio0 RK_PC1 GPIO_ACTIVE_HIGH>;
+> > +			linux,default-trigger =3D "heartbeat";
+> > +		};
+> > +	};
+> > +
+> =
+
+> > +	backlight: backlight {
+> > +		compatible =3D "pwm-backlight";
+> > +		power-supply =3D <&vcc_bl>;
+> > +		pwms =3D <&pwm1 0 25000 0>;
+> > +	};
+> =
+
+> sort nodenames
+> =
+
+> > +
+> > +	vccsys: vccsys {
+> > +		compatible =3D "regulator-fixed";
+> > +		regulator-name =3D "vcc3v8_sys";
+> > +		regulator-always-on;
+> > +		regulator-min-microvolt =3D <3800000>;
+> > +		regulator-max-microvolt =3D <3800000>;
+> > +	};
+> > +
+> > +	vcc_host: vcc_host {
+> > +		compatible =3D "regulator-fixed";
+> > +		regulator-name =3D "vcc_host";
+> > +		regulator-min-microvolt =3D <5000000>;
+> > +		regulator-max-microvolt =3D <5000000>;
+> > +
+> > +		gpio =3D <&gpio0 RK_PB7 GPIO_ACTIVE_HIGH>;
+> > +		enable-active-high;
+> > +		regulator-always-on;
+> > +		vin-supply =3D <&vccsys>;
+> > +	};
+> > +};
+> > +
+> > +&cpu0 {
+> > +	cpu-supply =3D <&vdd_arm>;
+> > +};
+> > +
+> > +&cpu1 {
+> > +	cpu-supply =3D <&vdd_arm>;
+> > +};
+> > +
+> > +&cpu2 {
+> > +	cpu-supply =3D <&vdd_arm>;
+> > +};
+> > +
+> > +&cpu3 {
+> > +	cpu-supply =3D <&vdd_arm>;
+> > +};
+> > +
+> > +&cru {
+> > +	assigned-clocks =3D <&cru PLL_NPLL>,
+> > +		<&cru ACLK_BUS_PRE>, <&cru ACLK_PERI_PRE>,
+> > +		<&cru HCLK_BUS_PRE>, <&cru HCLK_PERI_PRE>,
+> > +		<&cru PCLK_BUS_PRE>, <&cru SCLK_GPU>,
+> > +		<&cru PLL_CPLL>;
+> > +
+> > +	assigned-clock-rates =3D <1188000000>,
+> > +		<200000000>, <200000000>,
+> > +		<150000000>, <150000000>,
+> > +		<100000000>, <200000000>,
+> > +		<17000000>;
+> > +};
+> > +
+> > +&display_subsystem {
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&dsi {
+> > +	status =3D "okay";
+> > +
+> > +	ports {
+> > +		mipi_out: port@1 {
+> > +			reg =3D <1>;
+> > +
+> > +			mipi_out_panel: endpoint {
+> > +				remote-endpoint =3D <&mipi_in_panel>;
+> > +			};
+> > +		};
+> > +	};
+> > +
+> > +	panel@0 {
+> > +		compatible =3D "elida,kd35t133";
+> > +		reg =3D <0>;
+> > +		backlight =3D <&backlight>;
+> > +		iovcc-supply =3D <&vcc_lcd>;
+> > +		reset-gpios =3D <&gpio3 RK_PC0 GPIO_ACTIVE_LOW>;
+> > +		vdd-supply =3D <&vcc_lcd>;
+> > +
+> > +		port {
+> > +			mipi_in_panel: endpoint {
+> > +				remote-endpoint =3D <&mipi_out_panel>;
+> > +			};
+> > +		};
+> > +	};
+> > +};
+> > +
+> > +&dsi_dphy {
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&gpu {
+> > +	mali-supply =3D <&vdd_logic>;
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&i2c0 {
+> =
+
+> > +	status =3D "okay";
+> =
+
+> status below
+> =
+
+> > +	clock-frequency =3D <400000>;
+> =
+
+> > +	i2c-scl-rising-time-ns =3D <280>;
+> > +	i2c-scl-falling-time-ns =3D <16>;
+> =
+
+> sort
+> =
+
+> > +
+> > +	rk817: pmic@20 {
+> > +		compatible =3D "rockchip,rk817";
+> > +		reg =3D <0x20>;
+> > +		interrupt-parent =3D <&gpio0>;
+> > +		interrupts =3D <RK_PB2 IRQ_TYPE_LEVEL_LOW>;
+> > +		pinctrl-names =3D "default";
+> > +		pinctrl-0 =3D <&pmic_int>;
+> > +		rockchip,system-power-controller;
+> > +		wakeup-source;
+> > +		#clock-cells =3D <1>;
+> > +		clock-output-names =3D "rk808-clkout1", "xin32k";
+> > +
+> > +		vcc1-supply =3D <&vccsys>;
+> > +		vcc2-supply =3D <&vccsys>;
+> > +		vcc3-supply =3D <&vccsys>;
+> > +		vcc4-supply =3D <&vccsys>;
+> > +		vcc5-supply =3D <&vccsys>;
+> > +		vcc6-supply =3D <&vccsys>;
+> > +		vcc7-supply =3D <&vccsys>;
+> > +
+> > +		regulators {
+> > +			vdd_logic: DCDC_REG1 {
+> > +				regulator-name =3D "vdd_logic";
+> > +				regulator-min-microvolt =3D <950000>;
+> > +				regulator-max-microvolt =3D <1150000>;
+> > +				regulator-ramp-delay =3D <6001>;
+> > +				regulator-always-on;
+> > +				regulator-boot-on;
+> > +
+> > +				regulator-state-mem {
+> > +					regulator-on-in-suspend;
+> > +					regulator-suspend-microvolt =3D <950000>;
+> > +				};
+> > +			};
+> > +
+> > +			vdd_arm: DCDC_REG2 {
+> > +				regulator-name =3D "vdd_arm";
+> > +				regulator-min-microvolt =3D <950000>;
+> > +				regulator-max-microvolt =3D <1350000>;
+> > +				regulator-ramp-delay =3D <6001>;
+> > +				regulator-always-on;
+> > +				regulator-boot-on;
+> > +
+> > +				regulator-state-mem {
+> > +					regulator-off-in-suspend;
+> > +					regulator-suspend-microvolt =3D <950000>;
+> > +				};
+> > +			};
+> > +
+> > +			vcc_ddr: DCDC_REG3 {
+> > +				regulator-name =3D "vcc_ddr";
+> > +				regulator-always-on;
+> > +				regulator-boot-on;
+> > +
+> > +				regulator-state-mem {
+> > +					regulator-on-in-suspend;
+> > +				};
+> > +			};
+> > +
+> > +			vcc_3v3: DCDC_REG4 {
+> > +				regulator-name =3D "vcc_3v3";
+> > +				regulator-min-microvolt =3D <3300000>;
+> > +				regulator-max-microvolt =3D <3300000>;
+> > +				regulator-always-on;
+> > +				regulator-boot-on;
+> > +
+> > +				regulator-state-mem {
+> > +					regulator-off-in-suspend;
+> > +					regulator-suspend-microvolt =3D <3300000>;
+> > +				};
+> > +			};
+> > +
+> > +			vcc_1v8: LDO_REG2 {
+> > +				regulator-name =3D "vcc_1v8";
+> > +				regulator-min-microvolt =3D <1800000>;
+> > +				regulator-max-microvolt =3D <1800000>;
+> > +				regulator-always-on;
+> > +				regulator-boot-on;
+> > +
+> > +				regulator-state-mem {
+> > +					regulator-on-in-suspend;
+> > +					regulator-suspend-microvolt =3D <1800000>;
+> > +				};
+> > +			};
+> > +
+> > +			vdd_1v0: LDO_REG3 {
+> > +				regulator-name =3D "vdd_1v0";
+> > +				regulator-min-microvolt =3D <1000000>;
+> > +				regulator-max-microvolt =3D <1000000>;
+> > +				regulator-always-on;
+> > +				regulator-boot-on;
+> > +
+> > +				regulator-state-mem {
+> > +					regulator-on-in-suspend;
+> > +					regulator-suspend-microvolt =3D <1000000>;
+> > +				};
+> > +			};
+> > +
+> > +			vcc3v3_pmu: LDO_REG4 {
+> > +				regulator-name =3D "vcc3v3_pmu";
+> > +				regulator-min-microvolt =3D <3300000>;
+> > +				regulator-max-microvolt =3D <3300000>;
+> > +				regulator-always-on;
+> > +				regulator-boot-on;
+> > +
+> > +				regulator-state-mem {
+> > +					regulator-on-in-suspend;
+> > +					regulator-suspend-microvolt =3D <3300000>;
+> > +				};
+> > +			};
+> > +
+> > +			vccio_sd: LDO_REG5 {
+> > +				regulator-name =3D "vccio_sd";
+> > +				regulator-min-microvolt =3D <1800000>;
+> > +				regulator-max-microvolt =3D <3300000>;
+> > +				regulator-always-on;
+> > +				regulator-boot-on;
+> > +
+> > +				regulator-state-mem {
+> > +					regulator-on-in-suspend;
+> > +					regulator-suspend-microvolt =3D <3300000>;
+> > +				};
+> > +			};
+> > +
+> > +			vcc_sd: LDO_REG6 {
+> > +				regulator-name =3D "vcc_sd";
+> > +				regulator-min-microvolt =3D <3300000>;
+> > +				regulator-max-microvolt =3D <3300000>;
+> > +				regulator-boot-on;
+> > +
+> > +				regulator-state-mem {
+> > +					regulator-on-in-suspend;
+> > +					regulator-suspend-microvolt =3D <3300000>;
+> > +				};
+> > +			};
+> > +
+> > +			vcc_bl: LDO_REG7 {
+> > +				regulator-name =3D "vcc_bl";
+> > +				regulator-min-microvolt =3D <3300000>;
+> > +				regulator-max-microvolt =3D <3300000>;
+> > +
+> > +				regulator-state-mem {
+> > +					regulator-off-in-suspend;
+> > +					regulator-suspend-microvolt =3D <3300000>;
+> > +				};
+> > +			};
+> > +
+> > +			vcc_lcd: LDO_REG8 {
+> > +				regulator-name =3D "vcc_lcd";
+> > +				regulator-min-microvolt =3D <2800000>;
+> > +				regulator-max-microvolt =3D <2800000>;
+> > +
+> > +				regulator-state-mem {
+> > +					regulator-off-in-suspend;
+> > +					regulator-suspend-microvolt =3D <2800000>;
+> > +				};
+> > +			};
+> > +
+> > +			vcc_cam: LDO_REG9 {
+> > +				regulator-name =3D "vcc_cam";
+> > +				regulator-min-microvolt =3D <3000000>;
+> > +				regulator-max-microvolt =3D <3000000>;
+> > +
+> > +				regulator-state-mem {
+> > +					regulator-off-in-suspend;
+> > +					regulator-suspend-microvolt =3D <3000000>;
+> > +				};
+> > +			};
+> > +		};
+> > +	};
+> > +};
+> > +
+> > +/* EXT Header(P2) : 7(SCL:GPIO0.C2), 8(SDA:GPIO0.C3) */
+> > +&i2c1 {
+> =
+
+> > +	status =3D "okay";
+> =
+
+> status below
+> =
+
+> > +	clock-frequency =3D <400000>;
+> > +};
+> > +
+> > +/* I2S 1 Channel Used */
+> > +&i2s1_2ch {
+> =
+
+> > +	status =3D "okay";
+> =
+
+> status below
+> =
+
+> > +	#sound-dai-cells =3D <0>;
+> > +};
+> > +
+> > +&io_domains {
+> > +	vccio1-supply =3D <&vcc_3v3>;
+> > +	vccio2-supply =3D <&vccio_sd>;
+> > +	vccio3-supply =3D <&vcc_3v3>;
+> > +	vccio4-supply =3D <&vcc_3v3>;
+> > +	vccio5-supply =3D <&vcc_3v3>;
+> > +	vccio6-supply =3D <&vcc_3v3>;
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&pmu_io_domains {
+> > +	pmuio1-supply =3D <&vcc3v3_pmu>;
+> > +	pmuio2-supply =3D <&vcc3v3_pmu>;
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&pwm1 {
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&saradc {
+> > +	vref-supply =3D <&vcc_1v8>;
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&sdmmc {
+> > +	bus-width =3D <4>;
+> > +	cap-sd-highspeed;
+> =
+
+> > +	card-detect-delay =3D <800>;
+> =
+
+> Other dts use 200. Why we need 800?
+> =
+
+> > +	cd-gpios =3D <&gpio0 RK_PA3 GPIO_ACTIVE_LOW>;
+> > +	sd-uhs-sdr12;
+> > +	sd-uhs-sdr25;
+> > +	sd-uhs-sdr50;
+> > +	sd-uhs-sdr104;
+> > +	vmmc-supply =3D <&vcc_sd>;
+> > +	vqmmc-supply =3D <&vccio_sd>;
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&tsadc {
+> > +	pinctrl-names =3D "gpio", "otpout";
+> > +	pinctrl-0 =3D <&tsadc_otp_gpio>;
+> > +	pinctrl-1 =3D <&tsadc_otp_out>;
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&u2phy {
+> > +	status =3D "okay";
+> > +
+> > +	u2phy_host: host-port {
+> > +		status =3D "okay";
+> > +	};
+> > +
+> > +	u2phy_otg: otg-port {
+> > +		status =3D "disabled";
+> > +	};
+> > +};
+> > +
+> > +&usb20_otg {
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&uart1 {
+> > +	pinctrl-names =3D "default";
+> > +	pinctrl-0 =3D <&uart1_xfer &uart1_cts>;
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&uart2 {
+> > +	pinctrl-names =3D "default";
+> > +	pinctrl-0 =3D <&uart2m1_xfer>;
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&vopb {
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&vopb_mmu {
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&pinctrl {
+> > +	pmic {
+> > +		pmic_int: pmic-int {
+> > +			rockchip,pins =3D <0 RK_PB2 RK_FUNC_GPIO &pcfg_pull_up>;
+> > +		};
+> > +
+> > +		dc_det: dc-det {
+> > +			rockchip,pins =3D <0 RK_PB3 RK_FUNC_GPIO &pcfg_pull_none>;
+> > +		};
+> > +	};
+> > +
+> > +	leds {
+> > +		led_pins: led-pins {
+> > +			rockchip,pins =3D <0 RK_PC1 RK_FUNC_GPIO &pcfg_pull_none>;
+> > +		};
+> > +	};
+> > +
+> > +	btns {
+> > +		btn_pins: btn-pins {
+> > +			rockchip,pins =3D <1 RK_PB4 RK_FUNC_GPIO &pcfg_pull_up>,
+> > +					<1 RK_PB5 RK_FUNC_GPIO &pcfg_pull_up>,
+> > +					<1 RK_PB6 RK_FUNC_GPIO &pcfg_pull_up>,
+> > +					<1 RK_PB7 RK_FUNC_GPIO &pcfg_pull_up>,
+> > +					<1 RK_PA2 RK_FUNC_GPIO &pcfg_pull_up>,
+> > +					<1 RK_PA5 RK_FUNC_GPIO &pcfg_pull_up>,
+> > +					<1 RK_PA6 RK_FUNC_GPIO &pcfg_pull_up>,
+> > +					<1 RK_PA7 RK_FUNC_GPIO &pcfg_pull_up>,
+> > +
+> > +					<2 RK_PA0 RK_FUNC_GPIO &pcfg_pull_up>,
+> > +					<2 RK_PA1 RK_FUNC_GPIO &pcfg_pull_up>,
+> > +					<2 RK_PA2 RK_FUNC_GPIO &pcfg_pull_up>,
+> > +					<2 RK_PA3 RK_FUNC_GPIO &pcfg_pull_up>,
+> > +					<2 RK_PA4 RK_FUNC_GPIO &pcfg_pull_up>,
+> > +					<2 RK_PA5 RK_FUNC_GPIO &pcfg_pull_up>,
+> > +					<2 RK_PA6 RK_FUNC_GPIO &pcfg_pull_up>,
+> > +					<2 RK_PA7 RK_FUNC_GPIO &pcfg_pull_up>;
+> > +		};
+> > +	};
+> > +};
+> > --
+> > 2.24.1
+> =
+
+> =
+
+> =
+
+
+
+
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
