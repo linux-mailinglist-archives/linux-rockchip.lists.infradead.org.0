@@ -2,96 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D90AE17D973
-	for <lists+linux-rockchip@lfdr.de>; Mon,  9 Mar 2020 07:55:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70BB217D9CB
+	for <lists+linux-rockchip@lfdr.de>; Mon,  9 Mar 2020 08:24:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yr2z8jIEO98jpRVCFiOc8f203szB9EA7OlWtNCqBkx8=; b=IUR8ivChKo2xll
-	jun8RRe6t2oKXttIViIIuFdce+9Xy6roxwec+izbhzWmHN6P1f3yEFUNX/Lcn1zOkhwvBkZAETJqq
-	RP/gW2sXsllK74F8I5zBTzR+nPYx02r3GixGQrQos8HR9zzv7+gJwHaxtWXvshMB3N2WIbqDF6Uf5
-	EG1/d8gicXy08u6ocVulpk0UoCVHBCweZ6/FPMqFzIUW++CJc+V3KHKmm75kfz6pVWKwZmJae+3PI
-	Kd2SmRpKAxAc/vpSffcU+1C2CvekLhm/zZslznB1xrnH6CDbY7nJd7XwsK0RuJ7RVRVDc2h0h1tZD
-	Eu3ThrerNsG60rYp2nJQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=SjiGdnY9jGxBf1Vyhxw+a7mhPshihDbhf1JmK5pDqkY=; b=KHanFy/az+OtSNfZ3zqvdcJFU
+	pvmIWp7WY0SrpWc3RN6EK9tBxFQNeDp1G45TTbwKCSUtdtrfrYteBfzCzHFqiQ6FRsqW1hGRBeMLI
+	+kdOPnR2CL2RbvMyK4qHLvmxwAL+cnM23+kO8oNwDAluA2+jD1OR+Uk3yRwWzWoPjLaAZIgScPSHa
+	ntn4dv6th3feTt2mjFIz5OG0qwjTRKhDwqn3cpprjJMauomQiPT/bfBNl8iN21bnOkh0T5oLrWmB/
+	SUJ1uTaPK0zvXP743yPtr/8DlSVHlW8AtcT9DnJjS0GkLxZ+qPszF2atv4H3/GVWGQDw2VHdAzeh8
+	tn+acHJ/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBCK2-0005Pq-De; Mon, 09 Mar 2020 06:55:30 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jBCm6-0000B2-DZ; Mon, 09 Mar 2020 07:24:30 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBCJz-0005PI-An; Mon, 09 Mar 2020 06:55:28 +0000
-Received: by mail-wr1-x442.google.com with SMTP id n15so9531999wrw.13;
- Sun, 08 Mar 2020 23:55:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:cc:references:subject:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=dm/e7fVVkyUEJNRr/yTEUzT0xvOhNYWpgvQvhHUhF68=;
- b=s3VbLfphTDUMOj5VgEB+bJaxg9XNGT89jpF7/fzn4h2lZjtBN2yMNm+e2Mk1q3vVbz
- 2hu8irwSULuWR6uM43Wv53RBYq6D8D2BBoG3YD6ovjl857cnhxhwjSTQ0PQTELIqogKQ
- /yyn6SfIz769wKub7xSny0zSlNeUbAq7qpI5RPwFPuVZ4IGqm67Sdov8lAwKUL+koX53
- 5kYAbSbYqLJrm/u2YaUvrq24vjlONNNEgpvHIGRtuzx++/LgRQmjp0JJgmQAqtAdfLkJ
- YpY1lGAWis9ADEi+SJCUaE0woOUY9hR3uXmr8drGmY4IegRi4kKBxCRU8B6pzqkrVbkY
- uBmA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:to:cc:references:subject:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=dm/e7fVVkyUEJNRr/yTEUzT0xvOhNYWpgvQvhHUhF68=;
- b=m833dHukhcWDAeICv+x5Y+PN0SNg4xBjTH8dTD3DzbJI0GNGYNsAfagevKY7I7DAl7
- gPTOJfSPXZrbA/F6rkE8sBE8BIz8zRwJmBT/XpHNrfQNz9rhrQdSt11vTRj4RmDtekoO
- P7TOSoebyRk3V3wp/WykjEUNnnGK80JBFlVopZiQjmjbBXBg/M8uYTZS61EbflZ5D9S5
- 8LvuUWwiWq+Wo8q/jIF7Hy14foylrrUFat/nqGGByW3SWN547auyFK5eeIPnksrhZja1
- Ng8icbfg5pFipVolmbc9zaJAm5PRNzg05E8+vIoENHZ3a5z3CLy/La5Hvyik2xCGOd9m
- k9Sw==
-X-Gm-Message-State: ANhLgQ093pNHOha2/C+uz31U8ONyWa9l6CIZ9fPCRNq/bqzGz5tQeqFo
- Q08YxnOViB7ztxU0n7cypMk=
-X-Google-Smtp-Source: ADFU+vuCkgUSr5KTXA5g4+RQ2G5B4vEX0HXc+ZOFzelH2n6p5QuIzylG840VCzpvNwVRkr+/89Abxw==
-X-Received: by 2002:adf:80af:: with SMTP id 44mr19311433wrl.241.1583736925115; 
- Sun, 08 Mar 2020 23:55:25 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id l5sm24320597wml.3.2020.03.08.23.55.24
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 08 Mar 2020 23:55:24 -0700 (PDT)
-To: jbx6244@gmail.com
-References: <20200306170353.11393-1-jbx6244@gmail.com>
-Subject: Re: [PATCH v1] dt-bindings: display: rockchip: convert rockchip vop
- bindings to yaml
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <590762ab-db79-c8b1-7f0e-b653ed4b1721@gmail.com>
-Date: Mon, 9 Mar 2020 07:55:22 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jBCm1-00007s-67; Mon, 09 Mar 2020 07:24:27 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 998B8B19E;
+ Mon,  9 Mar 2020 07:24:19 +0000 (UTC)
+Subject: Re: [PATCH 00/22] drm: Convert drivers to drm_simple_encoder_init()
+To: Sam Ravnborg <sam@ravnborg.org>
+References: <20200305155950.2705-1-tzimmermann@suse.de>
+ <20200306142212.GF4878@pendragon.ideasonboard.com>
+ <bccc380a-8925-81a7-34fe-5a1744a766d0@suse.de>
+ <20200307200813.GA15363@ravnborg.org>
+From: Thomas Zimmermann <tzimmermann@suse.de>
+Autocrypt: addr=tzimmermann@suse.de; keydata=
+ mQENBFs50uABCADEHPidWt974CaxBVbrIBwqcq/WURinJ3+2WlIrKWspiP83vfZKaXhFYsdg
+ XH47fDVbPPj+d6tQrw5lPQCyqjwrCPYnq3WlIBnGPJ4/jreTL6V+qfKRDlGLWFjZcsrPJGE0
+ BeB5BbqP5erN1qylK9i3gPoQjXGhpBpQYwRrEyQyjuvk+Ev0K1Jc5tVDeJAuau3TGNgah4Yc
+ hdHm3bkPjz9EErV85RwvImQ1dptvx6s7xzwXTgGAsaYZsL8WCwDaTuqFa1d1jjlaxg6+tZsB
+ 9GluwvIhSezPgnEmimZDkGnZRRSFiGP8yjqTjjWuf0bSj5rUnTGiyLyRZRNGcXmu6hjlABEB
+ AAG0J1Rob21hcyBaaW1tZXJtYW5uIDx0emltbWVybWFubkBzdXNlLmRlPokBVAQTAQgAPhYh
+ BHIX+6yM6c9jRKFo5WgNwR1TC3ojBQJbOdLgAhsDBQkDwmcABQsJCAcCBhUKCQgLAgQWAgMB
+ Ah4BAheAAAoJEGgNwR1TC3ojR80H/jH+vYavwQ+TvO8ksXL9JQWc3IFSiGpuSVXLCdg62AmR
+ irxW+qCwNncNQyb9rd30gzdectSkPWL3KSqEResBe24IbA5/jSkPweJasgXtfhuyoeCJ6PXo
+ clQQGKIoFIAEv1s8l0ggPZswvCinegl1diyJXUXmdEJRTWYAtxn/atut1o6Giv6D2qmYbXN7
+ mneMC5MzlLaJKUtoH7U/IjVw1sx2qtxAZGKVm4RZxPnMCp9E1MAr5t4dP5gJCIiqsdrVqI6i
+ KupZstMxstPU//azmz7ZWWxT0JzgJqZSvPYx/SATeexTYBP47YFyri4jnsty2ErS91E6H8os
+ Bv6pnSn7eAq5AQ0EWznS4AEIAMYmP4M/V+T5RY5at/g7rUdNsLhWv1APYrh9RQefODYHrNRH
+ UE9eosYbT6XMryR9hT8XlGOYRwKWwiQBoWSDiTMo/Xi29jUnn4BXfI2px2DTXwc22LKtLAgT
+ RjP+qbU63Y0xnQN29UGDbYgyyK51DW3H0If2a3JNsheAAK+Xc9baj0LGIc8T9uiEWHBnCH+R
+ dhgATnWWGKdDegUR5BkDfDg5O/FISymJBHx2Dyoklv5g4BzkgqTqwmaYzsl8UxZKvbaxq0zb
+ ehDda8lvhFXodNFMAgTLJlLuDYOGLK2AwbrS3Sp0AEbkpdJBb44qVlGm5bApZouHeJ/+n+7r
+ 12+lqdsAEQEAAYkBPAQYAQgAJhYhBHIX+6yM6c9jRKFo5WgNwR1TC3ojBQJbOdLgAhsMBQkD
+ wmcAAAoJEGgNwR1TC3ojpfcIAInwP5OlcEKokTnHCiDTz4Ony4GnHRP2fXATQZCKxmu4AJY2
+ h9ifw9Nf2TjCZ6AMvC3thAN0rFDj55N9l4s1CpaDo4J+0fkrHuyNacnT206CeJV1E7NYntxU
+ n+LSiRrOdywn6erjxRi9EYTVLCHcDhBEjKmFZfg4AM4GZMWX1lg0+eHbd5oL1as28WvvI/uI
+ aMyV8RbyXot1r/8QLlWldU3NrTF5p7TMU2y3ZH2mf5suSKHAMtbE4jKJ8ZHFOo3GhLgjVrBW
+ HE9JXO08xKkgD+w6v83+nomsEuf6C6LYrqY/tsZvyEX6zN8CtirPdPWu/VXNRYAl/lat7lSI
+ 3H26qrE=
+Message-ID: <f2db1418-5c97-dcef-667e-715d838dd42b@suse.de>
+Date: Mon, 9 Mar 2020 08:24:09 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <20200306170353.11393-1-jbx6244@gmail.com>
-Content-Language: en-US
+In-Reply-To: <20200307200813.GA15363@ravnborg.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200308_235527_395133_9E90F279 
-X-CRM114-Status: UNSURE (   8.33  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200309_002425_531890_0F8E32E4 
+X-CRM114-Status: GOOD (  26.79  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,36 +91,217 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, airlied@linux.ie,
- hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, daniel@ffwll.ch, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: hamohammed.sa@gmail.com, alexandre.belloni@bootlin.com, airlied@linux.ie,
+ dri-devel@lists.freedesktop.org, sebastian.reichel@collabora.com,
+ paul@crapouillou.net, matthias.bgg@gmail.com, ludovic.desroches@microchip.com,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ linux-samsung-soc@vger.kernel.org, jy0922.shim@samsung.com,
+ abrodkin@synopsys.com, linux@armlinux.org.uk, krzk@kernel.org,
+ jonathanh@nvidia.com, linux-rockchip@lists.infradead.org, wens@csie.org,
+ tomi.valkeinen@ti.com, linux-imx@nxp.com, xinliang.liu@linaro.org,
+ kong.kongxinwei@hisilicon.com, nicolas.ferre@microchip.com,
+ puck.chen@hisilicon.com, s.hauer@pengutronix.de, alison.wang@nxp.com,
+ jsarha@ti.com, linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org,
+ virtualization@lists.linux-foundation.org, jernej.skrabec@siol.net,
+ rodrigosiqueiramelo@gmail.com, bbrezillon@kernel.org, jingoohan1@gmail.com,
+ kieran.bingham+renesas@ideasonboard.com, sw0312.kim@samsung.com,
+ hjc@rock-chips.com, kyungmin.park@samsung.com, thierry.reding@gmail.com,
+ kgene@kernel.org, kernel@pengutronix.de, zourongrong@gmail.com,
+ shawnguo@kernel.org, kraxel@redhat.com
+Content-Type: multipart/mixed; boundary="===============3921075440575529624=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============3921075440575529624==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ protocol="application/pgp-signature";
+ boundary="0o1gLC99UZ6MblS6ftokgGpAQCE791IVd"
 
-Question for robh:
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--0o1gLC99UZ6MblS6ftokgGpAQCE791IVd
+Content-Type: multipart/mixed; boundary="kHuwg0qrcMYaHYPq8aj4tX3yyCOu5dGOV";
+ protected-headers="v1"
+From: Thomas Zimmermann <tzimmermann@suse.de>
+To: Sam Ravnborg <sam@ravnborg.org>
+Cc: ludovic.desroches@microchip.com, hamohammed.sa@gmail.com,
+ alexandre.belloni@bootlin.com, airlied@linux.ie,
+ dri-devel@lists.freedesktop.org, linux@armlinux.org.uk,
+ paul@crapouillou.net, linux-tegra@vger.kernel.org, thierry.reding@gmail.com,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ linux-samsung-soc@vger.kernel.org, jy0922.shim@samsung.com,
+ hjc@rock-chips.com, abrodkin@synopsys.com, sebastian.reichel@collabora.com,
+ krzk@kernel.org, jonathanh@nvidia.com, linux-rockchip@lists.infradead.org,
+ wens@csie.org, tomi.valkeinen@ti.com, linux-imx@nxp.com,
+ xinliang.liu@linaro.org, kong.kongxinwei@hisilicon.com,
+ puck.chen@hisilicon.com, s.hauer@pengutronix.de, alison.wang@nxp.com,
+ jsarha@ti.com, linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
+ virtualization@lists.linux-foundation.org, jernej.skrabec@siol.net,
+ rodrigosiqueiramelo@gmail.com, bbrezillon@kernel.org, jingoohan1@gmail.com,
+ sw0312.kim@samsung.com, nicolas.ferre@microchip.com,
+ kyungmin.park@samsung.com, kieran.bingham+renesas@ideasonboard.com,
+ kgene@kernel.org, kernel@pengutronix.de, zourongrong@gmail.com,
+ shawnguo@kernel.org, kraxel@redhat.com
+Message-ID: <f2db1418-5c97-dcef-667e-715d838dd42b@suse.de>
+Subject: Re: [PATCH 00/22] drm: Convert drivers to drm_simple_encoder_init()
+References: <20200305155950.2705-1-tzimmermann@suse.de>
+ <20200306142212.GF4878@pendragon.ideasonboard.com>
+ <bccc380a-8925-81a7-34fe-5a1744a766d0@suse.de>
+ <20200307200813.GA15363@ravnborg.org>
+In-Reply-To: <20200307200813.GA15363@ravnborg.org>
 
-In the old txt situation we add/describe only properties that are used
-by the driver/hardware itself. With yaml it also filters things in a
-node that are used by other drivers like:
+--kHuwg0qrcMYaHYPq8aj4tX3yyCOu5dGOV
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
 
-assigned-clocks:
-assigned-clock-rates:
-power-domains:
+Hi Sam
 
-Should we add or not?
+Am 07.03.20 um 21:08 schrieb Sam Ravnborg:
+> Hi Thomas.
+>=20
+> On Fri, Mar 06, 2020 at 04:18:52PM +0100, Thomas Zimmermann wrote:
+>> Hi Laurent
+>>
+>> Am 06.03.20 um 15:22 schrieb Laurent Pinchart:
+>>> Hi Thomas,
+>>>
+>>> Thank you for the patch.
+>>>
+>>> On Thu, Mar 05, 2020 at 04:59:28PM +0100, Thomas Zimmermann wrote:
+>>>> A call to drm_simple_encoder_init() initializes an encoder without
+>>>> further functionality. It only provides the destroy callback to
+>>>> cleanup the encoder's state. Only few drivers implement more
+>>>> sophisticated encoders than that. Most drivers implement such a
+>>>> simple encoder and can use drm_simple_encoder_init() instead.
+>>>>
+>>>> The patchset converts drivers where the encoder's instance is
+>>>> embedded in a larger data structure. The driver releases the
+>>>> memory during cleanup. Each patch replaces drm_encoder_init() with
+>>>> drm_simple_encoder_init() and removes the (now unused) driver's
+>>>> encoder functions.
+>>>>
+>>>> While the patchset is fairly large, the indiviual patches are self-
+>>>> contained and can be merged independently from each other. The
+>>>> simple-encoder functionality is currently in drm-misc-next, where
+>>>> these patches could go as well.
+>>>
+>>> I've reviewed the whole series, including verifying that the few
+>>> instances of struct drm_encoder_funcs that were not declared const we=
+re
+>>> not modified somewhere to add more function pointers.
+>>>
+>>> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+>>
+>> Thanks for the detailed review.
+>>
+>>>
+>>> for all the patches.
+>>>
+>>> However, I'd like to note that drm_simple_encoder_init() is a bit of =
+a
+>>> misnommer here. Several of the encoders in those drivers to implement=
 
-Kind regards,
+>>> additional functionality. They just expose them through
+>>> drm_encoder_helper_funcs, not drm_encoder_funcs.
+>>
+>> True. It's called 'simple encoder' for the lack of a better name. It's=
 
-Johan
+>> part of the simple KMS helpers, so the name's at least consistent. OTO=
+H
+>> I always find drm_simple_display_pipe a bad name.
+>>
+>> We can still rename the simple-encoder function without much effort. I=
+'m
+>> open for suggestions.
+>=20
+> IMO this does not belong in drm_simple_kms - but in drm_encoder.
+> This only occurs to me after looking a bit more on the patches,
+> you would have loved to get this feedback earlier.
 
-PS: Will drop 'rockchip,grf' in v2 for px30, not used in vop driver?
+Well, the simple-encoder functionality used to be located in the encoder
+code, but Daniel mentioned this is more of a helper and asked me to move
+it out of the core. [1] So it ended up with the simple-KMS helpers.
+
+Best regards
+Thomas
+
+[1] https://patchwork.freedesktop.org/patch/352370/?series=3D73130&rev=3D=
+1
+
+>=20
+> Most users do not need their owm drm_encoder_funcs definition,
+> and would be happy with the default as provided by drm_simple_*
+>=20
+> As the cleanup is handled automatically when the drm device
+> is teared down (in mode_config_rest()) I considered if we could here
+> use the drmm_ namespace - but that felt wrong.
+>=20
+> My proposal is the following:
+> - Move the implementation to drm_encoder.c
+> - Name it drm_encoder_init_nofuncs()
+>=20
+> The patches posted in this thread would be a little simpler
+> as they would loose the added include file.
+> And the three drivers using the current infrastructure would need a
+> small update.
+>=20
+> I you decide to keep the current approach where the
+> functions are in drm_simple_* then the full series is:
+> Acked-by: Sam Ravnborg <sam@ravnborg.org>
+>=20
+> But I think moving it to drm_encoder.c would be the approach that would=
+
+> make it simpler to understand/follow. So that get my (biased) vote.
+>=20
+> 	Sam
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+>=20
+
+--=20
+Thomas Zimmermann
+Graphics Driver Developer
+SUSE Software Solutions Germany GmbH
+Maxfeldstr. 5, 90409 N=C3=BCrnberg, Germany
+(HRB 36809, AG N=C3=BCrnberg)
+Gesch=C3=A4ftsf=C3=BChrer: Felix Imend=C3=B6rffer
+
+
+--kHuwg0qrcMYaHYPq8aj4tX3yyCOu5dGOV--
+
+--0o1gLC99UZ6MblS6ftokgGpAQCE791IVd
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEchf7rIzpz2NEoWjlaA3BHVMLeiMFAl5l7xwACgkQaA3BHVML
+eiNvogf/X7mT5FK9zeyGvttt382VuO7LI5DPLmioQNnsCV8djdNkvDMa1QgoizMR
++rBcr2HpJvGPYJADgdIjElZ1PdBbA2uy3fD18UsA9J3We6dLqWwFJGd63FiVgUEk
+3cz68wtYxo/158n1EKjdjRZLNrqmUpY7eIH8l5HmHzJiZA2BuxYNLPiasnn8/4fx
+ZIueyDVkit4t0o+1uDVUp1IngcCZDbvnRr9AimBHcNCHKdeGw2HO2NvIzeUpagqO
+0IR+FSMP2smmgs9rFvfxw+VeoL6yUnijkjohOH6eVrKrSWdmxIabreAxdLZDY0w+
+sjNbM1FRdpTDm3H4Q3wBBcwxp06Hcw==
+=AsaC
+-----END PGP SIGNATURE-----
+
+--0o1gLC99UZ6MblS6ftokgGpAQCE791IVd--
+
+
+--===============3921075440575529624==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============3921075440575529624==--
+
