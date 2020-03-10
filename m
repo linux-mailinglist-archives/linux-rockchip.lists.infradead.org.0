@@ -2,74 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5ED06180813
-	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Mar 2020 20:30:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5F7618082A
+	for <lists+linux-rockchip@lfdr.de>; Tue, 10 Mar 2020 20:33:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x3wvAFh+RY5ewY6fbz++x29imfVFx0dFjWRqprJxOrY=; b=u78qFdU14dp+J9
-	Y7qYpK1IUk6etgijQ2VbvlKBR9OmKKDfNCihkyJxRJRc3dByFVBKnlFSkvE2J6m4hGj8Y5odFTFjg
-	joUXq913ZNFld2zAqe1KTOam6QPsro10LGIeX+dkKTty2Lo2S/7/Ol2xmri7fzhaMbCwHwdVP7fMt
-	PDmLcWjThiOYmSr1akrlTE8E54VZAb0OJf/KSFWGZ8kylnLMTcTGQ32aHUuD9LpdUldyqs+uyY6da
-	xJQxDjQtFft9RP0DsWzW79sNCyar2PKRtV2ysV91edxA/CVF43xBGEW7Fkrsq90Py7aLRVMO5TRki
-	KChOWFMyewB6gV4uJBzg==;
+	List-Owner; bh=crmg4F2jOxjKDB/YTHisoVb7fDVqj25r0H+ktTiHRqg=; b=FyHPt7iABpwv8m
+	DtmdX8zcrTWIPdQDNmlrIws/ikkYUtfYFOVdrVbmLe4KiiJmL6A77GSLKWcF5yTXnr+EigtKglitw
+	CEnndu+lWPTLgJ6VJRT5ShEkR/+bKMYJjlbnlRxtyAGVQDB4+EMRTz5l2cHKvjXPUXIQ51cCJ7A7i
+	Xl7r10mk7qo1doyZVeokENGLLwQ8x3w8DD89XhjAIw4DWRMCcYWH97VF5JzeA/HobJRgbrbTJ4ZCy
+	9Cie0E6QiaUj19vXReFYZ1+//GAELkinvdoQi5tFzrgvLb2r3q4na/xSZtL3NgVJrSmDRz2Z00TN9
+	7eJeMNFyxRA18PNB6HcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBkaG-0002H1-GJ; Tue, 10 Mar 2020 19:30:32 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1jBkct-00035I-3m; Tue, 10 Mar 2020 19:33:15 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBkZz-00025C-Jn; Tue, 10 Mar 2020 19:30:16 +0000
-Received: by mail-oi1-f196.google.com with SMTP id k21so8221895oij.5;
- Tue, 10 Mar 2020 12:30:15 -0700 (PDT)
+ id 1jBkcZ-0002rf-EL; Tue, 10 Mar 2020 19:32:56 +0000
+Received: by mail-oi1-f195.google.com with SMTP id g6so15162188oiy.1;
+ Tue, 10 Mar 2020 12:32:55 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=TXsHaF4fOcNE2W9tq/AYJCOMZXblb3kZRBtXTvgUFHE=;
- b=uACk41qWMK9R/tt0XSygHJGSik4JEAXfw5dSQ7LjgEp9xN84LVWrGv2IWZZaej/DPr
- 3IRzzHvvPvLfU+5HfcPrY5VuwEGKNca5HW6/PaoMMdpz4lO7Je80JTFTPL9deNACHUsH
- cMco+VWeOyRLjcwJQmubmFVWZIUPgjE0Nx9Mr5qRwEI5OzNiX6Mo45jtlVdm9JswfiHs
- kxtYXieMO5jxKhqGgTKsHY7v4MEV8aOABElAJU/8L/tRNkYJzuAV6bgiuI2D+3WjI8Ar
- VLks79RrI94ngOD4jsNAAZGo9l3DMXAV3dQQxjJXORVhS8D6MEf19KJ1I10by9S45BLy
- Dz3g==
-X-Gm-Message-State: ANhLgQ1Cq6GyQIMgLvFBRqCvyalVPICXbsRX3XaLTrejt2IaMoyv84f0
- 5s2vzm3Mqvy3sP8rjurQHg==
-X-Google-Smtp-Source: ADFU+vvH5ymQhupC2P3V8EjfdHcq3DaB1uiTisg89ZmGHhSDnz8YXE2Mvbpo0sfVIj9y8PmrOGO7aQ==
-X-Received: by 2002:a05:6808:56:: with SMTP id
- v22mr2265636oic.116.1583868614910; 
- Tue, 10 Mar 2020 12:30:14 -0700 (PDT)
+ bh=eIE4b9URO1qb+MxsPOjVs9T43nhsRKMyMwg2+2kf3Bo=;
+ b=qO42SZTuO3XScwviWNAJHPwr00/wLe13Sls6tx7jDQS74s7Zfqi8Knk5cK4qNOBx35
+ jKTKKPerrc5AmNa5Vd0dSwCWNd93KL1bOAD2dLgesKG+4ieijs+PUOXxL47IMt/njtr4
+ ZG9JBSb3H1lu8gBy5zWA2Pjj0vFsX9BwwaaD7Sf83EOz/FjMfXYTOX9ziRD3t20GcTwH
+ f3npEOWKSb+659khPEdThOn28mAA2fWaIvAQLMUpYGTf+Um0jCM+H7qFDnL9hmWl7OvK
+ wNKTZePxQy9Amuw1OQtIVJCAvuWILX5OomQtvH0RPe6oyhTSlF+Ka0RWSKeRsuMX7ZSx
+ YtFg==
+X-Gm-Message-State: ANhLgQ2ivDKy5mz5dzGYWwcCZQ7iX47JgQPo/KUayFWD4+B0/5yIkz4l
+ nuwcEtooC7LQRoGWDIY3bQ==
+X-Google-Smtp-Source: ADFU+vtyF0UxNd2V5SNDAhbqfD+SoLrFN/9/7Iy1fakA8ZwCLf/fMWqKCvI1jf25Ndt1qbrkinmu+A==
+X-Received: by 2002:aca:d553:: with SMTP id m80mr1624311oig.30.1583868774574; 
+ Tue, 10 Mar 2020 12:32:54 -0700 (PDT)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id w2sm11049466otq.10.2020.03.10.12.30.13
+ by smtp.gmail.com with ESMTPSA id 96sm16366528otn.29.2020.03.10.12.32.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Mar 2020 12:30:13 -0700 (PDT)
-Received: (nullmailer pid 18889 invoked by uid 1000);
- Tue, 10 Mar 2020 19:30:13 -0000
-Date: Tue, 10 Mar 2020 14:30:13 -0500
+ Tue, 10 Mar 2020 12:32:53 -0700 (PDT)
+Received: (nullmailer pid 23387 invoked by uid 1000);
+ Tue, 10 Mar 2020 19:32:53 -0000
+Date: Tue, 10 Mar 2020 14:32:53 -0500
 From: Rob Herring <robh@kernel.org>
 To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH 2/2] dt-bindings: usb: dwc2: add compatible property for
- rk3368 usb
-Message-ID: <20200310193013.GA18080@bogus>
-References: <20200302115812.7207-1-jbx6244@gmail.com>
- <20200302115812.7207-2-jbx6244@gmail.com>
+Subject: Re: [PATCH] dt-bindings: serial: snps-dw-apb-uart: add compatible
+ property for rk3308 uart
+Message-ID: <20200310193253.GA23246@bogus>
+References: <20200302133910.10942-1-jbx6244@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200302115812.7207-2-jbx6244@gmail.com>
+In-Reply-To: <20200302133910.10942-1-jbx6244@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_123015_653573_C81F6ED4 
-X-CRM114-Status: GOOD (  13.80  )
+X-CRM114-CacheID: sfid-20200310_123255_484301_6473B312 
+X-CRM114-Status: GOOD (  10.77  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
+ no trust [209.85.167.195 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -79,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
+ [209.85.167.195 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -95,69 +93,41 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, heiko@sntech.de, gregkh@linuxfoundation.org,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-serial@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Mar 02, 2020 at 12:58:12PM +0100, Johan Jonker wrote:
+On Mon,  2 Mar 2020 14:39:10 +0100, Johan Jonker wrote:
 > A test with the command below gives these errors:
 > 
-> arch/arm64/boot/dts/rockchip/rk3368-evb-act8846.dt.yaml: usb@ff580000: compatible:
-> ['rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
+> arch/arm64/boot/dts/rockchip/rk3308-evb.dt.yaml: serial@ff0d0000: compatible:
+> ['rockchip,rk3308-uart', 'snps,dw-apb-uart']
 > is not valid under any of the given schemas
-> arch/arm64/boot/dts/rockchip/rk3368-geekbox.dt.yaml: usb@ff580000: compatible:
-> ['rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
-> is not valid under any of the given schemas
-> arch/arm64/boot/dts/rockchip/rk3368-lion-haikou.dt.yaml: usb@ff580000: compatible:
-> ['rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
-> is not valid under any of the given schemas
-> arch/arm64/boot/dts/rockchip/rk3368-orion-r68-meta.dt.yaml: usb@ff580000: compatible:
-> ['rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
-> is not valid under any of the given schemas
-> arch/arm64/boot/dts/rockchip/rk3368-px5-evb.dt.yaml: usb@ff580000: compatible:
-> ['rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
-> is not valid under any of the given schemas
-> arch/arm64/boot/dts/rockchip/rk3368-r88.dt.yaml: usb@ff580000: compatible:
-> ['rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
+> arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dt.yaml: serial@ff0a0000: compatible:
+> ['rockchip,rk3308-uart', 'snps,dw-apb-uart']
 > is not valid under any of the given schemas
 > 
-> The compatible property for rk3368 dwc2 usb was somehow never added to
-> the documention. Fix this error by adding
-> 'rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2'
-> to dwc2.yaml.
+> The compatible property for the Rockchip rk3308 uart was somehow never
+> added to the documention. Fix this error by adding 'rockchip,rk3308-uart'
+> to snps-dw-apb-uart.yaml.
 > 
 > make ARCH=arm64 dtbs_check
-> DT_SCHEMA_FILES=Documentation/devicetree/bindings/usb/dwc2.yaml
+> DT_SCHEMA_FILES=Documentation/devicetree/bindings/serial/
+> snps-dw-apb-uart.yaml
 > 
 > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 > ---
->  Documentation/devicetree/bindings/usb/dwc2.yaml | 4 ++++
->  1 file changed, 4 insertions(+)
+>  Documentation/devicetree/bindings/serial/snps-dw-apb-uart.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/usb/dwc2.yaml b/Documentation/devicetree/bindings/usb/dwc2.yaml
-> index e9f4cea21..14aeb67e8 100644
-> --- a/Documentation/devicetree/bindings/usb/dwc2.yaml
-> +++ b/Documentation/devicetree/bindings/usb/dwc2.yaml
-> @@ -45,6 +45,10 @@ properties:
->            - const: rockchip,rk3328-usb
->            - const: rockchip,rk3066-usb
->            - const: snps,dwc2
-> +      - items:
-> +          - const: rockchip,rk3368-usb
 
-And you can do the same thing with this.
+Applied, thanks.
 
-> +          - const: rockchip,rk3066-usb
-> +          - const: snps,dwc2
->        - const: lantiq,arx100-usb
->        - const: lantiq,xrx200-usb
->        - items:
-> -- 
-> 2.11.0
-> 
+Rob
 
 _______________________________________________
 Linux-rockchip mailing list
