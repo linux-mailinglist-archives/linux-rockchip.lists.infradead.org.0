@@ -2,49 +2,89 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC5441814E1
-	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Mar 2020 10:33:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18FE61817DF
+	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Mar 2020 13:21:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rLVlmXHw8GzuaVrPVf9XSRN5GaZKIwS6bfFfdPvN4e4=; b=KQvoi0xos0Y0Lh
-	KOVVb0pNWZqRdoibr2kx522QsXNvIOp0hfY7lh2MYCVhiXj1pokkwVnCAjnXoPwYOLjt2rVgHRY/w
-	D+rlwFeKfZc7DfLWXnWidONEgUTZeUUgs5PK0FDuC8ZZmVmeBbxXsAAhwXVuUHXKhpVPjFt0qgvSl
-	cXiO3gF2GBueIazFWK8R64aJ/6sQflEzdWnSUCB909okiIBQhECFsBsWWSInFl6g4F6VuQtm3OvLl
-	06bQCQe6pV5FeDNk3wUKBH8zsLiKPK4y46mO4KjfGJqWk+EktTlH9emSFVYCwznLSRi6TYFwDHffF
-	eezA2pGO9kkXD/XeTQLw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=2YM1AC/En5LTaKKHsSt1XRkPfq0svsrkaLhd51b78RM=; b=gf6
+	D06NbeydU5wmE6k5Bmm2XAhPIdt625dx5d9M5G83m4NExN3pAjJKb39YlhNSnKHCXlYxScPuWUfKD
+	X4/zjETji1jJHwxhBlGXjlhOqIfSO8tv1WbgKu0jorUfyGO7X2O/Sl/RDwhFKwrXa6noNaV85lwQf
+	xHbYo0o0q+IbWedu0Y0UUSQHYV6EB8GFuVCvxkWqvJcU4/AoyE5d/c54Xs44hnBtBcy4CjteasJ/+
+	7ErjDyJwcb6LStTPDoPGzcwKaOWuIJjBtW/GutYni84bHE/3M+epLxZiS4rBEWakOpFVu8ZZUPr4y
+	LcfKD1XX5a7gyfgxyDAwToM00sJt74g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBxjd-0002CC-Tg; Wed, 11 Mar 2020 09:33:05 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1jC0Mo-0005nW-U9; Wed, 11 Mar 2020 12:21:42 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBxjR-00023v-1u; Wed, 11 Mar 2020 09:32:54 +0000
-Received: from p5b127c69.dip0.t-ipconnect.de ([91.18.124.105]
- helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1jBxjP-0000hs-6C; Wed, 11 Mar 2020 10:32:51 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH 1/2] ARM: dts: add bus to rockchip amba nodenames
-Date: Wed, 11 Mar 2020 10:32:50 +0100
-Message-ID: <1741084.mhMtVdeNFd@phil>
-In-Reply-To: <20200302153047.17101-1-jbx6244@gmail.com>
-References: <20200302153047.17101-1-jbx6244@gmail.com>
-MIME-Version: 1.0
+ id 1jC0Md-0005ao-0N; Wed, 11 Mar 2020 12:21:32 +0000
+Received: by mail-wm1-x342.google.com with SMTP id a5so1866420wmb.0;
+ Wed, 11 Mar 2020 05:21:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=Bjy8AO/uhgcJDLcwPUOIt+S4XzlyY0iXNSdbKltQ36A=;
+ b=YrNGJzGF8Sz2KBSWeK/hf7PDvkuhUmUPaFUWpED2XjFzw8lBww62twa0MakQBVltJP
+ QSVOZsRbcvEHxN3/9nroTf6TmN4ijSRMvcYGRUrD8ILrTI8x02H2uRtst5zkj79NME9f
+ fbRMlZ5KFxbjcKsaPAtBbJfRqjFTvqAGdLc7LR4DAX2yJEg7yxfT2JApHkLu+/5BAKgz
+ 5RPMPL59oa9NJ5mbgSJho8Ku8mD9/LDcWmksukWb9N9YoIVhYOzXYOlZDaiWxSB7SgZW
+ RclTYtjNVQsDIyIAiF/Mp11e25GRj2NZOBvAjC4YvjI/ehZiote6WpeYLRczD1+N4Ppz
+ 0dpg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Bjy8AO/uhgcJDLcwPUOIt+S4XzlyY0iXNSdbKltQ36A=;
+ b=WZ3YXFQkE7kcH5HnK0KeA3tVrKa9WbjCxBHqIGJmtnmBTrQx/4rQjoO8d1MX8FH65V
+ LzxvL4x5tGmxvi2eqL6Dx2/cha4xe5zHdg8QtzfLaDSTnxitLzeEaFJH6VgLU8JIEsu+
+ MaI6TVmjJXHU08OFleVHQIMCU+az4pPCrMr0OzXa+WVOx6FuZCOAyRtZbxdgpMHOxrlE
+ 8vj+eroLTi4y72EJXLMdP9uBS5ikP9uhCAo1HgdvG89T3vwv2KRVzFefTnuxVnN9bBVI
+ nLtQHb4qIxMz3cRBwtaa3a1KdP9B1ttFEps10cyiJxKz4im7ttjtfWNWpqri8wW2B0eN
+ r3Yg==
+X-Gm-Message-State: ANhLgQ3CBd3q3Qln3qIr19RqF4K/M7evAMb50PYGiWD7C4WkY/MB+9uJ
+ gQelBUns6ZAFApaWaedYDNE=
+X-Google-Smtp-Source: ADFU+vuoxl7Rnu55mlVmnlycYhZAAsnWZUu9SUYm83N5yQjSKn6nH0w8BR0h43FMBG0sXrWPe1kBGg==
+X-Received: by 2002:a05:600c:2214:: with SMTP id
+ z20mr3458638wml.57.1583929289117; 
+ Wed, 11 Mar 2020 05:21:29 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id u25sm7998875wml.17.2020.03.11.05.21.28
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 11 Mar 2020 05:21:28 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH v2 1/2] dt-bindings: usb: dwc2: add compatible property for
+ rk3328 usb
+Date: Wed, 11 Mar 2020 13:21:20 +0100
+Message-Id: <20200311122121.8912-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_023253_245793_600B63A7 
-X-CRM114-Status: GOOD (  11.27  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200311_052131_067930_10A67605 
+X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,40 +97,81 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: devicetree@vger.kernel.org, gregkh@linuxfoundation.org,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Montag, 2. M=E4rz 2020, 16:30:46 CET schrieb Johan Jonker:
-> A test with the command below gives for example this error:
-> =
+A test with the command below gives for example this error:
 
-> arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml: amba: $nodename:0:
-> 'amba' does not match '^(bus|soc|axi|ahb|apb)(@[0-9a-f]+)?$'
-> =
+arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: usb@ff580000:
+compatible:
+['rockchip,rk3328-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
+is not valid under any of the given schemas
 
-> AMBA is a open standard for the connection and
-> management of functional blocks in a SoC.
-> It's compatible with 'simple-bus', so fix this error
-> by adding 'bus' to all Rockchip 'amba' nodes.
-> =
+The compatible property for rk3328 dwc2 usb was somehow never added to
+the documention. Fix this error by adding
+'rockchip,rk3328-usb', 'rockchip,rk3066-usb', 'snps,dwc2'
+to dwc2.yaml.
 
-> make ARCH=3Darm dtbs_check
-> DT_SCHEMA_FILES=3D~/.local/lib/python3.5/site-packages/dtschema/
-> schemas/simple-bus.yaml
-> =
+make ARCH=arm64 dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/usb/dwc2.yaml
 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+Changes v2:
+  Combine compatible properties with enum.
+---
+ Documentation/devicetree/bindings/usb/dwc2.yaml | 29 +++++++------------------
+ 1 file changed, 8 insertions(+), 21 deletions(-)
 
-applied both for 5.7
-
-Thanks
-Heiko
-
+diff --git a/Documentation/devicetree/bindings/usb/dwc2.yaml b/Documentation/devicetree/bindings/usb/dwc2.yaml
+index e95ba9373..d8d3c7c22 100644
+--- a/Documentation/devicetree/bindings/usb/dwc2.yaml
++++ b/Documentation/devicetree/bindings/usb/dwc2.yaml
+@@ -18,27 +18,14 @@ properties:
+           - const: rockchip,rk3066-usb
+           - const: snps,dwc2
+       - items:
+-          - const: rockchip,px30-usb
+-          - const: rockchip,rk3066-usb
+-          - const: snps,dwc2
+-      - items:
+-          - const: rockchip,rk3036-usb
+-          - const: rockchip,rk3066-usb
+-          - const: snps,dwc2
+-      - items:
+-          - const: rockchip,rv1108-usb
+-          - const: rockchip,rk3066-usb
+-          - const: snps,dwc2
+-      - items:
+-          - const: rockchip,rk3188-usb
+-          - const: rockchip,rk3066-usb
+-          - const: snps,dwc2
+-      - items:
+-          - const: rockchip,rk3228-usb
+-          - const: rockchip,rk3066-usb
+-          - const: snps,dwc2
+-      - items:
+-          - const: rockchip,rk3288-usb
++          - enum:
++            - rockchip,px30-usb
++            - rockchip,rk3036-usb
++            - rockchip,rk3188-usb
++            - rockchip,rk3228-usb
++            - rockchip,rk3288-usb
++            - rockchip,rk3328-usb
++            - rockchip,rv1108-usb
+           - const: rockchip,rk3066-usb
+           - const: snps,dwc2
+       - const: lantiq,arx100-usb
+-- 
+2.11.0
 
 
 _______________________________________________
