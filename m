@@ -2,73 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C2FB181FC6
-	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Mar 2020 18:43:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 254B6181FCB
+	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Mar 2020 18:44:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=VmejqkCqqvNM8WYJc14c+EuDa7FsPF4HEkXFs6mpeHg=; b=YdL
-	xDHQJg/EhibvIQkvauaUy/WosJ59UUs0a6uZQ0JfVOy4kHTA7m/uAxMgZXl1gWX5IZrnu0zWLbwUp
-	3leyn2ne1o8fQ4lMcY36PSH2ZTjz9qDWq1Tj3C887Zdo7hlx4+If6odUjmmkYuyYGQuqkaaGfLZgW
-	gJ0stS5qLpCdnaupd+xUkMSi4iNc4YiINsdCQUV0Io0yTAwppIZ3wamUE1gWaN3CBAb4QA0DybxvI
-	/DhstK3XuO34qg0fMN59HYOi/9Xq4QqobLizy63NMOjtCKJssF9uARtOBWxdUiZI9WeifXwnYfEeD
-	6/wFfvAtMHMUAHGzG3lNbPqkmNvTYFg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=cA6fRZGLsuQLRNIqPIMLkKorXJBmahGDDSMeIEjGcbA=; b=YwLi0iHrIQBwFxO3LzNdopCg3V
+	QdBXuOf+YBrPVTq+gE40pOk7duQvGDylkmKh2HGq5sKAvXBwQeRNmDVwt9SPOZ5juTszROKTZoGE6
+	XwTuMXoOaiZtlRXOVQlvMqgkM+HDtknftVvLeH4dQezYZyJk8fwaCib3nXY4X6RmnUl0Cyq5ROqse
+	0CJAH5YJOFGBj0lXrC+Is2XV51j8iNB0F9hsgKup8T2neje9zzpU2Wqvo2FOXpZEorDn/2DqP7ccy
+	wF4S9F4qQkEZXe1wCGe8EG2WPp1UIaQOQ1rddVHnndFToP25W4VjEQ2EHkpMKPjOuZqmzEjyQKnYQ
+	HkTwmjkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC5OX-0007M2-P2; Wed, 11 Mar 2020 17:43:49 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jC5Oq-0007hT-1O; Wed, 11 Mar 2020 17:44:08 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC5OG-00078v-6d; Wed, 11 Mar 2020 17:43:33 +0000
-Received: by mail-wr1-x443.google.com with SMTP id 6so3773332wre.4;
- Wed, 11 Mar 2020 10:43:31 -0700 (PDT)
+ id 1jC5OH-000792-7n; Wed, 11 Mar 2020 17:43:34 +0000
+Received: by mail-wm1-x343.google.com with SMTP id r7so3693362wmg.0;
+ Wed, 11 Mar 2020 10:43:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=1pJAR/sckcdLGJSwTx5sy+rsfwGpz9fPR5d1aK/vSAI=;
- b=IL8dp+f8Ls3O4ZBKg0S7q07Ne+0KPwrBNYU44a8fqCPSWcItDMq7pjC/Pr4uqGqNmK
- DHpK2vhTYvwwq0Lrf7gqR71/s3LT/NYqhabkqVpXujHAJfueU6HTfxAimK9nAYUlLRd7
- lt3Gv4w90ahkiZKxkl7iR1T+1EJ076xesoMRWnNEAvwJEsgQzPHtq9PRL8W8ekuVzTf7
- ioIU13aDkkHHPljPEklJFzPk4+p11P6iLhX8yW4vTwAqf94uLiO0QhJgwA/wvIMX4R4a
- NYuws1oJ3ECaYpHh6LOWP8PdZ8f0hxSndx8shMo16QBEBlt9zWHv5E1zISbAf9wfK8VC
- eliA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=2AsgLfDS4BH//bZzgWykwkfl2H5xfBl7A5I1f5MVUhg=;
+ b=noA+/Z1EG3yGGgsXsC3y4RHI7uOm1qZ3feLx1mroJlFFWwEH4nPGzOdJY2WeYCDqko
+ rfb5yFjjPfD6VFWhKPBS/cGHC6sJ/xh4uKadBsoJE7yhAW8VVNT5OnxXjUxP9NlSZkB6
+ V9UFsnuCu25buJPjoWovmUTCGtLIlxBUE9oZTZX9YAyIRWr6g7FDSwNkP3SALevEnjdy
+ X08kf2GRkmZ/F6jb9RlouPZAlvA44bxzRj0VROfW3N6OUFCUpzxY6hHBcdKWgk7Bguak
+ OoSslOOoA9z0yf3oATpR/5CEB+uk4Z6HQHw0LEJztYZRESj67kK3amEz4RAZ8AiM1EyF
+ sdvg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=1pJAR/sckcdLGJSwTx5sy+rsfwGpz9fPR5d1aK/vSAI=;
- b=iS4afhFEoX7Y7WzPy25m0AemJj46c6Kgsc4q+gCHwQVcaPyrU84FGCeADaPrvjc26s
- wpenOOpg2apIViezoLe2kZQd9NhZ3BjTMag8RnYEMAA7nSIzd0/ayWmjJ/ToKeUs08c5
- k3V0mb9+TL/M92qSvZQ4Cm7qiTaANhU5o9072OFF1zopwV7qyM2buD3LaQorSUKMlY6Z
- n5/oWP8JtE35P1FFrOUGuAKnWkF8AMvoOw7QGXSt+QgfmnkYkQFFnB6hZrAg9dyQsjId
- KqvoCw8j95mdxefofO6g4t0Ye8Asda3sil6y5kIwHCNIiDL84JCZRu95e40hpa3qmDnF
- Caig==
-X-Gm-Message-State: ANhLgQ35Szj98tNFwa3fMi7hpZR9pnX9Na9TxBbwEb7wjcp/3FElS3Zh
- 1Iw/uXV/utZA14crdMWS01c=
-X-Google-Smtp-Source: ADFU+vvKDdOtWWEdNwVAEQZQ9mrYzweIQAoDItXSKaFgMXGnDq8K7Z+Mo7oErH9P/yJc80PGZda9wA==
-X-Received: by 2002:a5d:6544:: with SMTP id z4mr5535066wrv.298.1583948610652; 
- Wed, 11 Mar 2020 10:43:30 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=2AsgLfDS4BH//bZzgWykwkfl2H5xfBl7A5I1f5MVUhg=;
+ b=R7+wYU+BVZ24KsVMtjrvI70I2AsAwdrKHnNBQuU3OeIwa8Bwz9O1/TBquvcFYuj7dJ
+ U8Lv6wvHU9iwTeC1SFxmmQqGY6RW5kuJ5/ls2BpS14J768B4Fzllqf+3hhOO2mk7phMa
+ nN4gvYY/gg+3UhXtG3gudrKuXB0bcTT5VGIZO8PjXr3ijgEjHbctRI9f40cqNIU159Le
+ 60LIlBZyQtVSNro2ok3DEgE+4fbds4ix2y9s54cREX7VooFg8xmdh5oKs/L/qOWfIeFu
+ oKWrI+8tC1yIuSObHmZwzO3mw//1RG9mxzQOdVNmlFTCY/frX7+BeRUwCgEoK9X3NKKK
+ jHmw==
+X-Gm-Message-State: ANhLgQ20X9ggwcxBXYOkTD8mlfoELpB+WblrnD3ee1N1AYlIcEm8CxzZ
+ RqcGfOaoFgNWPiGORAAAlmQ=
+X-Google-Smtp-Source: ADFU+vsGIHuUFLLALx+EZj11W8sJMVfT8mLaq6XyHbUXZwurQL5aYlv5E13r2MsZ4Y6uPYTI1JfqPQ==
+X-Received: by 2002:a1c:ab07:: with SMTP id u7mr4521159wme.23.1583948611726;
+ Wed, 11 Mar 2020 10:43:31 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id d1sm8933166wrw.52.2020.03.11.10.43.29
+ by smtp.gmail.com with ESMTPSA id d1sm8933166wrw.52.2020.03.11.10.43.30
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 11 Mar 2020 10:43:29 -0700 (PDT)
+ Wed, 11 Mar 2020 10:43:31 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: lgirdwood@gmail.com
-Subject: [PATCH v1 1/2] dt-bindings: sound: convert rockchip i2s bindings to
- yaml
-Date: Wed, 11 Mar 2020 18:43:21 +0100
-Message-Id: <20200311174322.23813-1-jbx6244@gmail.com>
+Subject: [PATCH v1 2/2] dt-bindings: sound: rockchip-i2s: add #sound-dai-cells
+ property
+Date: Wed, 11 Mar 2020 18:43:22 +0100
+Message-Id: <20200311174322.23813-2-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200311174322.23813-1-jbx6244@gmail.com>
+References: <20200311174322.23813-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_104332_268019_D78AA2BA 
-X-CRM114-Status: GOOD (  16.40  )
+X-CRM114-CacheID: sfid-20200311_104333_275194_2B52206C 
+X-CRM114-Status: GOOD (  10.91  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,185 +109,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Current dts files with 'i2s' nodes are manually verified.
-In order to automate this process rockchip-i2s.txt
-has to be converted to yaml.
+'#sound-dai-cells' is required to properly interpret
+the list of DAI specified in the 'sound-dai' property,
+so add them to 'rockchip-i2s.yaml'
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- .../devicetree/bindings/sound/rockchip-i2s.txt     |  49 ----------
- .../devicetree/bindings/sound/rockchip-i2s.yaml    | 106 +++++++++++++++++++++
- 2 files changed, 106 insertions(+), 49 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/sound/rockchip-i2s.txt
- create mode 100644 Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
+ Documentation/devicetree/bindings/sound/rockchip-i2s.yaml | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/sound/rockchip-i2s.txt b/Documentation/devicetree/bindings/sound/rockchip-i2s.txt
-deleted file mode 100644
-index 54aefab71..000000000
---- a/Documentation/devicetree/bindings/sound/rockchip-i2s.txt
-+++ /dev/null
-@@ -1,49 +0,0 @@
--* Rockchip I2S controller
--
--The I2S bus (Inter-IC sound bus) is a serial link for digital
--audio data transfer between devices in the system.
--
--Required properties:
--
--- compatible: should be one of the following:
--   - "rockchip,rk3066-i2s": for rk3066
--   - "rockchip,px30-i2s", "rockchip,rk3066-i2s": for px30
--   - "rockchip,rk3036-i2s", "rockchip,rk3066-i2s": for rk3036
--   - "rockchip,rk3188-i2s", "rockchip,rk3066-i2s": for rk3188
--   - "rockchip,rk3228-i2s", "rockchip,rk3066-i2s": for rk3228
--   - "rockchip,rk3288-i2s", "rockchip,rk3066-i2s": for rk3288
--   - "rockchip,rk3328-i2s", "rockchip,rk3066-i2s": for rk3328
--   - "rockchip,rk3366-i2s", "rockchip,rk3066-i2s": for rk3366
--   - "rockchip,rk3368-i2s", "rockchip,rk3066-i2s": for rk3368
--   - "rockchip,rk3399-i2s", "rockchip,rk3066-i2s": for rk3399
--- reg: physical base address of the controller and length of memory mapped
--  region.
--- interrupts: should contain the I2S interrupt.
--- dmas: DMA specifiers for tx and rx dma. See the DMA client binding,
--	Documentation/devicetree/bindings/dma/dma.txt
--- dma-names: should include "tx" and "rx".
--- clocks: a list of phandle + clock-specifer pairs, one for each entry in clock-names.
--- clock-names: should contain the following:
--   - "i2s_hclk": clock for I2S BUS
--   - "i2s_clk" : clock for I2S controller
--- rockchip,playback-channels: max playback channels, if not set, 8 channels default.
--- rockchip,capture-channels: max capture channels, if not set, 2 channels default.
--
--Required properties for controller which support multi channels
--playback/capture:
--
--- rockchip,grf: the phandle of the syscon node for GRF register.
--
--Example for rk3288 I2S controller:
--
--i2s@ff890000 {
--	compatible = "rockchip,rk3288-i2s", "rockchip,rk3066-i2s";
--	reg = <0xff890000 0x10000>;
--	interrupts = <GIC_SPI 85 IRQ_TYPE_LEVEL_HIGH>;
--	dmas = <&pdma1 0>, <&pdma1 1>;
--	dma-names = "tx", "rx";
--	clock-names = "i2s_hclk", "i2s_clk";
--	clocks = <&cru HCLK_I2S0>, <&cru SCLK_I2S0>;
--	rockchip,playback-channels = <8>;
--	rockchip,capture-channels = <2>;
--};
 diff --git a/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
-new file mode 100644
-index 000000000..eff06b4b5
---- /dev/null
+index eff06b4b5..7cd0e278e 100644
+--- a/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
 +++ b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
-@@ -0,0 +1,106 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/sound/rockchip-i2s.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+@@ -77,6 +77,9 @@ properties:
+       Required property for controllers which support multi channel
+       playback/capture.
+ 
++  "#sound-dai-cells":
++    const: 0
 +
-+title: Rockchip I2S controller
-+
-+description:
-+  The I2S bus (Inter-IC sound bus) is a serial link for digital
-+  audio data transfer between devices in the system.
-+
-+maintainers:
-+  - Heiko Stuebner <heiko@sntech.de>
-+
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: rockchip,rk3066-i2s
-+      - items:
-+          - enum:
-+            - rockchip,px30-i2s
-+            - rockchip,rk3036-i2s
-+            - rockchip,rk3188-i2s
-+            - rockchip,rk3228-i2s
-+            - rockchip,rk3288-i2s
-+            - rockchip,rk3328-i2s
-+            - rockchip,rk3366-i2s
-+            - rockchip,rk3368-i2s
-+            - rockchip,rk3399-i2s
-+          - const: rockchip,rk3066-i2s
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: clock for I2S controller
-+      - description: clock for I2S BUS
-+
-+  clock-names:
-+    items:
-+      - const: i2s_clk
-+      - const: i2s_hclk
-+
-+  dmas:
-+    items:
-+      - description: TX DMA Channel
-+      - description: RX DMA Channel
-+
-+  dma-names:
-+    items:
-+      - const: tx
-+      - const: rx
-+
-+  rockchip,capture-channels:
-+    allOf:
-+      - $ref: /schemas/types.yaml#/definitions/uint32
-+    default: 2
-+    description:
-+      Max capture channels, if not set, 2 channels default.
-+
-+  rockchip,playback-channels:
-+    allOf:
-+      - $ref: /schemas/types.yaml#/definitions/uint32
-+    default: 8
-+    description:
-+      Max playback channels, if not set, 8 channels default.
-+
-+  rockchip,grf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      The phandle of the syscon node for the GRF register.
-+      Required property for controllers which support multi channel
-+      playback/capture.
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+  - dmas
-+  - dma-names
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/rk3288-cru.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/interrupt-controller/irq.h>
-+    i2s@ff890000 {
-+      compatible = "rockchip,rk3288-i2s", "rockchip,rk3066-i2s";
-+      reg = <0xff890000 0x10000>;
-+      interrupts = <GIC_SPI 85 IRQ_TYPE_LEVEL_HIGH>;
-+      clocks = <&cru SCLK_I2S0>, <&cru HCLK_I2S0>;
-+      clock-names = "i2s_clk", "i2s_hclk";
-+      dmas = <&pdma1 0>, <&pdma1 1>;
-+      dma-names = "tx", "rx";
-+      rockchip,capture-channels = <2>;
-+      rockchip,playback-channels = <8>;
-+    };
+ required:
+   - compatible
+   - reg
+@@ -85,6 +88,7 @@ required:
+   - clock-names
+   - dmas
+   - dma-names
++  - "#sound-dai-cells"
+ 
+ additionalProperties: false
+ 
+@@ -103,4 +107,5 @@ examples:
+       dma-names = "tx", "rx";
+       rockchip,capture-channels = <2>;
+       rockchip,playback-channels = <8>;
++      #sound-dai-cells = <0>;
+     };
 -- 
 2.11.0
 
