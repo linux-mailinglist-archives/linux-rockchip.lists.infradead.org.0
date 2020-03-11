@@ -2,77 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 254B6181FCB
-	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Mar 2020 18:44:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFED1182085
+	for <lists+linux-rockchip@lfdr.de>; Wed, 11 Mar 2020 19:15:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=cA6fRZGLsuQLRNIqPIMLkKorXJBmahGDDSMeIEjGcbA=; b=YwLi0iHrIQBwFxO3LzNdopCg3V
-	QdBXuOf+YBrPVTq+gE40pOk7duQvGDylkmKh2HGq5sKAvXBwQeRNmDVwt9SPOZ5juTszROKTZoGE6
-	XwTuMXoOaiZtlRXOVQlvMqgkM+HDtknftVvLeH4dQezYZyJk8fwaCib3nXY4X6RmnUl0Cyq5ROqse
-	0CJAH5YJOFGBj0lXrC+Is2XV51j8iNB0F9hsgKup8T2neje9zzpU2Wqvo2FOXpZEorDn/2DqP7ccy
-	wF4S9F4qQkEZXe1wCGe8EG2WPp1UIaQOQ1rddVHnndFToP25W4VjEQ2EHkpMKPjOuZqmzEjyQKnYQ
-	HkTwmjkA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=vnmhbOblJ8PVag3WylcFnf4RCu+JGkfRl8R/yigySK4=; b=GD0
+	4Et+FTYJTEZFyJRhPvyPC9vQnX8GJAsL7cXwY9yU2HO1j2xCoKKNCTDoZmEFaLn+NxEVwbhPCzVR5
+	kFFb8P3Ok7isnRCmENOMH65RwT2Fbn8pwBkP7S6z1BhSD7XaVowbfxUoXBoy59pztTUA7PhTYrca/
+	KuLi2N/ZD61NM4pFiSM+qV1YjymB2ui0FGeHyyv/5Z4OzdMn11Y/In6OSBrSyDro1A+XA7shp/OZt
+	zAVlc+XX1Qwa+/J0WpM1eGwvLKST2ChIdg+Q6Gf3EFC8z2dBMKT4qd4sxtkJc/RZ0ArKYkDBZ17Fs
+	q9auxAWSqYYhnEkJVAQFXY6VM26N77Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC5Oq-0007hT-1O; Wed, 11 Mar 2020 17:44:08 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jC5tY-0001hn-3D; Wed, 11 Mar 2020 18:15:52 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC5OH-000792-7n; Wed, 11 Mar 2020 17:43:34 +0000
-Received: by mail-wm1-x343.google.com with SMTP id r7so3693362wmg.0;
- Wed, 11 Mar 2020 10:43:32 -0700 (PDT)
+ id 1jC5tI-0001VM-2U; Wed, 11 Mar 2020 18:15:37 +0000
+Received: by mail-wm1-x342.google.com with SMTP id n8so3147827wmc.4;
+ Wed, 11 Mar 2020 11:15:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=2AsgLfDS4BH//bZzgWykwkfl2H5xfBl7A5I1f5MVUhg=;
- b=noA+/Z1EG3yGGgsXsC3y4RHI7uOm1qZ3feLx1mroJlFFWwEH4nPGzOdJY2WeYCDqko
- rfb5yFjjPfD6VFWhKPBS/cGHC6sJ/xh4uKadBsoJE7yhAW8VVNT5OnxXjUxP9NlSZkB6
- V9UFsnuCu25buJPjoWovmUTCGtLIlxBUE9oZTZX9YAyIRWr6g7FDSwNkP3SALevEnjdy
- X08kf2GRkmZ/F6jb9RlouPZAlvA44bxzRj0VROfW3N6OUFCUpzxY6hHBcdKWgk7Bguak
- OoSslOOoA9z0yf3oATpR/5CEB+uk4Z6HQHw0LEJztYZRESj67kK3amEz4RAZ8AiM1EyF
- sdvg==
+ h=from:to:cc:subject:date:message-id;
+ bh=baF0cOc19NhVZBDcEbbxYRVso1Gej82kJBH4AZvQQX0=;
+ b=RgRlpXAARoK4UDgtbTLPZbVGgPugpS0EzzmUef6LcMt88NXtflrQHTKDcLRbitNJq2
+ LJG0RRFJOB9teE7rKadbmuoOD2Dd1Y6izSMWLKMbYlECEkq06GK217516s0jMynUcMhM
+ wZpN9z5Iwi8airyzJSZNTuDmyDx6PrD4gSciETn1zje4af5T/QZIp/jurfa91uokIT4Z
+ KyTOc8rBJZ9UuWau6+/DXkc2R907LOPAsvlB4wJdMEnqo0Lohdv87teoOQ96ZFWM4933
+ tITivDivoucRboacSC7h/bf7SwhH7AbmgeMhZJ/f1190ppQG8bpO148c1ESMKOJH6JPo
+ m3SA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=2AsgLfDS4BH//bZzgWykwkfl2H5xfBl7A5I1f5MVUhg=;
- b=R7+wYU+BVZ24KsVMtjrvI70I2AsAwdrKHnNBQuU3OeIwa8Bwz9O1/TBquvcFYuj7dJ
- U8Lv6wvHU9iwTeC1SFxmmQqGY6RW5kuJ5/ls2BpS14J768B4Fzllqf+3hhOO2mk7phMa
- nN4gvYY/gg+3UhXtG3gudrKuXB0bcTT5VGIZO8PjXr3ijgEjHbctRI9f40cqNIU159Le
- 60LIlBZyQtVSNro2ok3DEgE+4fbds4ix2y9s54cREX7VooFg8xmdh5oKs/L/qOWfIeFu
- oKWrI+8tC1yIuSObHmZwzO3mw//1RG9mxzQOdVNmlFTCY/frX7+BeRUwCgEoK9X3NKKK
- jHmw==
-X-Gm-Message-State: ANhLgQ20X9ggwcxBXYOkTD8mlfoELpB+WblrnD3ee1N1AYlIcEm8CxzZ
- RqcGfOaoFgNWPiGORAAAlmQ=
-X-Google-Smtp-Source: ADFU+vsGIHuUFLLALx+EZj11W8sJMVfT8mLaq6XyHbUXZwurQL5aYlv5E13r2MsZ4Y6uPYTI1JfqPQ==
-X-Received: by 2002:a1c:ab07:: with SMTP id u7mr4521159wme.23.1583948611726;
- Wed, 11 Mar 2020 10:43:31 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=baF0cOc19NhVZBDcEbbxYRVso1Gej82kJBH4AZvQQX0=;
+ b=HXqEa+TFa0YeBUi1friMdLCJ755C4FZvXD+wpp6EtwNSGY6AHqCZHGncPBm4kufWC5
+ ey9T6dhM4x67eu89QYGH47S3RZYbPRBNnNBfzZNLbVDkTfk3WHXrU2e6gCZUyJrxZI/q
+ BKXoXVmFrIVcryYJnDOC9wEtwsBPmVinZsQgG08aRi8SPMpL60tE6z9/y0eTCxxxU8z3
+ 44dXMX8edaJXx2Q0oEXm25mC3mC5Ro4jRon9ntrsZdF633sg0Gv2UhNrH5LhF64KAY8W
+ 5brlbh6kzqxoWG65+C5WRs+nQMihheDine2nnSNKgpUgK22+l5NwrIAZImsxjJfC5hQI
+ AzlQ==
+X-Gm-Message-State: ANhLgQ2NeIwgn+guHif9ZZAwhQufXxWL7JRLoEtAEnQCnYjs/zUuh8PR
+ fjhZ9a+9AoUt9qHvSHZDnkw=
+X-Google-Smtp-Source: ADFU+vu/bHKJRymIOBWOOfJ/ywf+yd0Ii6bT2EsqRKGhg2YUoMJQOomKVND21s+3CmCB/Gns8M+ySQ==
+X-Received: by 2002:a1c:9d09:: with SMTP id g9mr35901wme.68.1583950534502;
+ Wed, 11 Mar 2020 11:15:34 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id d1sm8933166wrw.52.2020.03.11.10.43.30
+ by smtp.gmail.com with ESMTPSA id b12sm45179202wro.66.2020.03.11.11.15.32
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 11 Mar 2020 10:43:31 -0700 (PDT)
+ Wed, 11 Mar 2020 11:15:33 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
-To: lgirdwood@gmail.com
-Subject: [PATCH v1 2/2] dt-bindings: sound: rockchip-i2s: add #sound-dai-cells
- property
-Date: Wed, 11 Mar 2020 18:43:22 +0100
-Message-Id: <20200311174322.23813-2-jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH v3] dt-bindings: display: convert rockchip vop bindings to yaml
+Date: Wed, 11 Mar 2020 19:15:24 +0100
+Message-Id: <20200311181524.25108-1-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200311174322.23813-1-jbx6244@gmail.com>
-References: <20200311174322.23813-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_104333_275194_2B52206C 
-X-CRM114-Status: GOOD (  10.91  )
+X-CRM114-CacheID: sfid-20200311_111536_145376_585692A2 
+X-CRM114-Status: GOOD (  15.74  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -99,9 +94,9 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-rockchip@lists.infradead.org, broonie@kernel.org,
+Cc: devicetree@vger.kernel.org, airlied@linux.ie, hjc@rock-chips.com,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, daniel@ffwll.ch,
  linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -109,43 +104,236 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-'#sound-dai-cells' is required to properly interpret
-the list of DAI specified in the 'sound-dai' property,
-so add them to 'rockchip-i2s.yaml'
+Current dts files with 'vop' nodes are manually verified.
+In order to automate this process rockchip-vop.txt
+has to be converted to yaml.
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- Documentation/devicetree/bindings/sound/rockchip-i2s.yaml | 5 +++++
- 1 file changed, 5 insertions(+)
+Changes v3:
+  Change description
 
-diff --git a/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
-index eff06b4b5..7cd0e278e 100644
---- a/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
-+++ b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
-@@ -77,6 +77,9 @@ properties:
-       Required property for controllers which support multi channel
-       playback/capture.
- 
-+  "#sound-dai-cells":
-+    const: 0
+Changes v2:
+  No new properties
+---
+ .../bindings/display/rockchip/rockchip-vop.txt     |  74 ------------
+ .../bindings/display/rockchip/rockchip-vop.yaml    | 126 +++++++++++++++++++++
+ 2 files changed, 126 insertions(+), 74 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+ create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
+
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+deleted file mode 100644
+index 8b3a5f514..000000000
+--- a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
++++ /dev/null
+@@ -1,74 +0,0 @@
+-device-tree bindings for rockchip soc display controller (vop)
+-
+-VOP (Visual Output Processor) is the Display Controller for the Rockchip
+-series of SoCs which transfers the image data from a video memory
+-buffer to an external LCD interface.
+-
+-Required properties:
+-- compatible: value should be one of the following
+-		"rockchip,rk3036-vop";
+-		"rockchip,rk3126-vop";
+-		"rockchip,px30-vop-lit";
+-		"rockchip,px30-vop-big";
+-		"rockchip,rk3066-vop";
+-		"rockchip,rk3188-vop";
+-		"rockchip,rk3288-vop";
+-		"rockchip,rk3368-vop";
+-		"rockchip,rk3366-vop";
+-		"rockchip,rk3399-vop-big";
+-		"rockchip,rk3399-vop-lit";
+-		"rockchip,rk3228-vop";
+-		"rockchip,rk3328-vop";
+-
+-- reg: Must contain one entry corresponding to the base address and length
+-	of the register space. Can optionally contain a second entry
+-	corresponding to the CRTC gamma LUT address.
+-
+-- interrupts: should contain a list of all VOP IP block interrupts in the
+-		 order: VSYNC, LCD_SYSTEM. The interrupt specifier
+-		 format depends on the interrupt controller used.
+-
+-- clocks: must include clock specifiers corresponding to entries in the
+-		clock-names property.
+-
+-- clock-names: Must contain
+-		aclk_vop: for ddr buffer transfer.
+-		hclk_vop: for ahb bus to R/W the phy regs.
+-		dclk_vop: pixel clock.
+-
+-- resets: Must contain an entry for each entry in reset-names.
+-  See ../reset/reset.txt for details.
+-- reset-names: Must include the following entries:
+-  - axi
+-  - ahb
+-  - dclk
+-
+-- iommus: required a iommu node
+-
+-- port: A port node with endpoint definitions as defined in
+-  Documentation/devicetree/bindings/media/video-interfaces.txt.
+-
+-Example:
+-SoC specific DT entry:
+-	vopb: vopb@ff930000 {
+-		compatible = "rockchip,rk3288-vop";
+-		reg = <0x0 0xff930000 0x0 0x19c>, <0x0 0xff931000 0x0 0x1000>;
+-		interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
+-		clocks = <&cru ACLK_VOP0>, <&cru DCLK_VOP0>, <&cru HCLK_VOP0>;
+-		clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
+-		resets = <&cru SRST_LCDC1_AXI>, <&cru SRST_LCDC1_AHB>, <&cru SRST_LCDC1_DCLK>;
+-		reset-names = "axi", "ahb", "dclk";
+-		iommus = <&vopb_mmu>;
+-		vopb_out: port {
+-			#address-cells = <1>;
+-			#size-cells = <0>;
+-			vopb_out_edp: endpoint@0 {
+-				reg = <0>;
+-				remote-endpoint=<&edp_in_vopb>;
+-			};
+-			vopb_out_hdmi: endpoint@1 {
+-				reg = <1>;
+-				remote-endpoint=<&hdmi_in_vopb>;
+-			};
+-		};
+-	};
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
+new file mode 100644
+index 000000000..be363e2e8
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
+@@ -0,0 +1,126 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/rockchip/rockchip-vop.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
- required:
-   - compatible
-   - reg
-@@ -85,6 +88,7 @@ required:
-   - clock-names
-   - dmas
-   - dma-names
-+  - "#sound-dai-cells"
- 
- additionalProperties: false
- 
-@@ -103,4 +107,5 @@ examples:
-       dma-names = "tx", "rx";
-       rockchip,capture-channels = <2>;
-       rockchip,playback-channels = <8>;
-+      #sound-dai-cells = <0>;
-     };
++title: Rockchip SoC display controller (VOP)
++
++description:
++  VOP (Video Out Processor) is the display controller for the Rockchip
++  series of SoCs which transfers the image data from a video memory
++  buffer to an external LCD interface.
++
++maintainers:
++  - Sandy Huang <hjc@rock-chips.com>
++  - Heiko Stuebner <heiko@sntech.de>
++
++properties:
++  compatible:
++    oneOf:
++      - const: rockchip,px30-vop-big
++      - const: rockchip,px30-vop-lit
++      - const: rockchip,rk3036-vop
++      - const: rockchip,rk3066-vop
++      - const: rockchip,rk3126-vop
++      - const: rockchip,rk3188-vop
++      - const: rockchip,rk3228-vop
++      - const: rockchip,rk3288-vop
++      - const: rockchip,rk3328-vop
++      - const: rockchip,rk3366-vop
++      - const: rockchip,rk3368-vop
++      - const: rockchip,rk3399-vop-big
++      - const: rockchip,rk3399-vop-lit
++
++  reg:
++    minItems: 1
++    items:
++      - description:
++          Must contain one entry corresponding to the base address and length
++          of the register space.
++      - description:
++          Can optionally contain a second entry corresponding to
++          the CRTC gamma LUT address.
++
++  interrupts:
++    maxItems: 1
++    description:
++      Should contain a list of all VOP IP block interrupts in the
++      order VSYNC, LCD_SYSTEM. The interrupt specifier
++      format depends on the interrupt controller used.
++
++  clocks:
++    items:
++      - description: Clock for ddr buffer transfer.
++      - description: Pixel clock.
++      - description: Clock for the ahb bus to R/W the phy regs.
++
++  clock-names:
++    items:
++      - const: aclk_vop
++      - const: dclk_vop
++      - const: hclk_vop
++
++  resets:
++    minItems: 3
++    maxItems: 3
++
++  reset-names:
++    items:
++      - const: axi
++      - const: ahb
++      - const: dclk
++
++  port:
++    type: object
++    description:
++      A port node with endpoint definitions as defined in
++      Documentation/devicetree/bindings/media/video-interfaces.txt.
++
++  iommus:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - resets
++  - reset-names
++  - port
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3288-cru.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/interrupt-controller/irq.h>
++    vopb: vopb@ff930000 {
++      compatible = "rockchip,rk3288-vop";
++      reg = <0x0 0xff930000 0x0 0x19c>,
++            <0x0 0xff931000 0x0 0x1000>;
++      interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
++      clocks = <&cru ACLK_VOP0>,
++               <&cru DCLK_VOP0>,
++               <&cru HCLK_VOP0>;
++      clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
++      resets = <&cru SRST_LCDC1_AXI>,
++               <&cru SRST_LCDC1_AHB>,
++               <&cru SRST_LCDC1_DCLK>;
++      reset-names = "axi", "ahb", "dclk";
++      iommus = <&vopb_mmu>;
++      vopb_out: port {
++        #address-cells = <1>;
++        #size-cells = <0>;
++        vopb_out_edp: endpoint@0 {
++          reg = <0>;
++          remote-endpoint=<&edp_in_vopb>;
++        };
++        vopb_out_hdmi: endpoint@1 {
++          reg = <1>;
++          remote-endpoint=<&hdmi_in_vopb>;
++        };
++      };
++    };
 -- 
 2.11.0
 
