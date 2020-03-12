@@ -2,73 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 023E0183729
-	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Mar 2020 18:15:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54E4418372C
+	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Mar 2020 18:15:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=rWNqob62jQ6xOz5GEq9PkpgeSApDIB7+pVPW+4Te9v0=; b=kE+
-	6o2uibZXyjTSVwBHOkAQbhRa3VBrWKX0EzsP0qJUkKyuswkjFF7qsRtDTjOG9d/yg9Bv1VJlpZBPc
-	w/ttOFucukwHGex73px6QCjB+9zbVXMo69kjCV54ujpvVMhti3dr8JXMWLCWr7Ni8rkW7TEvMuUeV
-	xzHQqFZ1AvuExE26DvmfThOEWp6ybB+TgZUzkOXdvgj/ifevZrSJd/56ls69wlMgkr+4oktb1To3u
-	joaC+5lwB16GQFNcTXDtunQXLLinHumCyPsUkavtjDHEyk5CszMJemQ4zGUpPGLqwnB21U1PyDQv8
-	F8vpgCXGGUPN5E9ns16nqTpUY6vl5SA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=sgbOjxENYjSNalZiBNSp50NURobKo4u3PMmxkF7M8I8=; b=XOH/IKLzFT0CM66B17eiWtheIW
+	JBSrVm03MWlQdOdSYOWrJHJ/LEEfLQ2zA0pUT+siYP1rRehj9T4tsVH31jhIr4qjbF+KRM6aQL5QY
+	5wEBh/MSvFXDLQcozpKuQbCRwPxACcw8162x+wyun1kKFnjT+bfr23JKhV+Qil4nzy59CXca4pAuo
+	izCJSNTHpiHvCJXO8utInmFnCmQagSqsIFNc1yEwolVEvvE3shcXLN7TdW6ksX+/fQ7hs1qpvPCFm
+	0AYdKHMYmqqt1rEcmsW7puf97ztlAPP2o/1xF9W50P7wCfWLfLSNR2bNdP0W/2DabsCG/KaT9DTEt
+	0jmIxPYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCRQU-000889-Th; Thu, 12 Mar 2020 17:15:18 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jCRQi-0008NJ-PI; Thu, 12 Mar 2020 17:15:32 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCRQ5-0006Mx-W9; Thu, 12 Mar 2020 17:14:55 +0000
-Received: by mail-wm1-x341.google.com with SMTP id e26so7211869wme.5;
- Thu, 12 Mar 2020 10:14:53 -0700 (PDT)
+ id 1jCRQ6-0006My-Vm; Thu, 12 Mar 2020 17:14:56 +0000
+Received: by mail-wm1-x342.google.com with SMTP id m3so7237764wmi.0;
+ Thu, 12 Mar 2020 10:14:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=/rHi3YAkRAcdMWtqtXDhFmgLSOL8x4zCT7svjD1llso=;
- b=CZBgUzmx+EEy6Hdu9DInRUBaFiOWh84iUnz4jURnXgTy+86cMmjyL+Xm/IiK5B0HBe
- mRg9AXxyeAbj6pJKhCGImAXZNQwQYE0+0WpiZ4u841pcqgBHauz7DHWB6rcY64d9niAh
- fzLFR7ZIA2K5/8mAAROD93RSBqLh2dM0gPW1ekQDJJ6RrLBwIB2qqD3klsEUspWSiurl
- Ywf3ZObsiUzImDTk30kKZwEhKeGYKFfUFrQW+7c+6DBGCUux0DjKdrBLdjMwcQhsRoSF
- 9XA8tSdQcF/jcTuGbDafn92DvX8CY2bBMBEebdro2EREy+07YkkBxeSb6zHQV2qUfUbU
- 9MxQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=EYdjJi1eg7gwDE8+qiJsI5fjOAKRoOIZdPVPZzHXbKM=;
+ b=M8Hey0ZIup/VKHiqLIq6b3cKb1xTOXZWyT6gZ3p9k0zIiwpnZqOMK/NXvJy6vrxPW0
+ irrMKZk9dIXmf7GvYxSwMBq2s4GuK64k6lzUS+lX9gSflctbgWaPA07GhFj4c1KNHfBf
+ FdE/xvA0ZSd/VSqUaOynJermbkYE5fUHZaaM/ku9/o9z5+1vhkY3QJrAv3N3WBblUQ4B
+ 2lQvlu8sQJ+VdF0Jwu5xAYoscqTEAX8SQmIp5tOPVifLuPbaGqCJlgwp7EHj6bsL9+8X
+ ZfBggl6QGE1xt77F0pH7bfdO4/6GU9YDSF/5Sg65sfW4UZj6KL6tauTT2xewUhFqGWVi
+ qZnA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=/rHi3YAkRAcdMWtqtXDhFmgLSOL8x4zCT7svjD1llso=;
- b=Y4A/5YMcezcLsWtO64nmZVO9/4KknTXemG4n9a2mnW5rbauKlMTTkfVWPK70ydRvDN
- j5KY5fmn1z6nWPOpb8nXogrRjd61jCgt9LJ4D3w3OObRQ8Zzi7bxdnZzKrtCtIxHzhkG
- 8K3080dZfndgTKd70faQk6doWVcpJlph0S7CNo48uhcu5mVmeN79MQ4zsbA6iJLZStvc
- XNo0RkSEQENa/oidRzvottdfF8wI3i4pMFjw1jf2LzeBuJGCrQbuurJ2iFMcxJzVkUFK
- ui1HACunnYLOQIyC0zW+xZ+mH5xUHByhj9cqgUbEu9fO9kLI8EiD+zZqPIAa4AOY9Z2r
- lFhQ==
-X-Gm-Message-State: ANhLgQ0GQzmANDw4CYXJMycsgKgW0lM1bhlW8mT8aARNzldaLpuDgt03
- uPRw6Z0w31FV44p2y9PTEtk=
-X-Google-Smtp-Source: ADFU+vuU7JONushGnh3yAgda3gxF27iAlAIS/lIT8K59ScQnS7AhYwvRjg88gHQjT88rLF0AWIIufQ==
-X-Received: by 2002:a1c:cc06:: with SMTP id h6mr5962352wmb.118.1584033292012; 
- Thu, 12 Mar 2020 10:14:52 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=EYdjJi1eg7gwDE8+qiJsI5fjOAKRoOIZdPVPZzHXbKM=;
+ b=MEgj1qv1S29P1l2e/I6m8l3dGz/ltBClNbsblXP62SZF75YnILqg4CFKXo1N87ty1m
+ iys55myxEM2RL1nHBcZlmoIgpQAoSiEUgLMZW/YuBZdEfbHajI2t4wDeE0AinQox7kD1
+ 9A+o4/yHXg5SPFT5KhuXuiiErypllsz12/u/eNfwT+z2rvIIPbBS8HnI64ZBnUFditAa
+ 625EOiu9aKRiwNjxVXatrWJJ3U5oS8H2LNzhKQC2STcxYao3AnFME+BOWErZQ2tpV2At
+ OxVzl/GRsi9bEVxH7gpy4P0KP9T/2sVzGFlTar61E3TZSOOYiZ4xN/C7O+xTTchdKzpk
+ 749g==
+X-Gm-Message-State: ANhLgQ2g5jfY5g3wKNjg8I18ZyArSDedItlNmfmKeSSHEPFAkI9tRzZI
+ A30PO4NaYIK/bKvjOlMXJivEiLFL
+X-Google-Smtp-Source: ADFU+vtU7C/3+s0Pk9eeP2zgYFICLmB/RyyyGdx933hyEaJXNcwP3tqeI/5HWn0ccTbWbpltz9yuHQ==
+X-Received: by 2002:a1c:1b8a:: with SMTP id b132mr5690411wmb.93.1584033293552; 
+ Thu, 12 Mar 2020 10:14:53 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id v10sm3398832wmh.17.2020.03.12.10.14.50
+ by smtp.gmail.com with ESMTPSA id v10sm3398832wmh.17.2020.03.12.10.14.52
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 12 Mar 2020 10:14:51 -0700 (PDT)
+ Thu, 12 Mar 2020 10:14:52 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH 1/4] ARM: dts: rockchip: remove clock-names property from
- 'generic-ehci' nodes
-Date: Thu, 12 Mar 2020 18:14:38 +0100
-Message-Id: <20200312171441.21144-1-jbx6244@gmail.com>
+Subject: [PATCH 2/4] ARM: dts: rockchip: remove clock-names property from
+ 'generic-ohci' nodes
+Date: Thu, 12 Mar 2020 18:14:39 +0100
+Message-Id: <20200312171441.21144-2-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200312171441.21144-1-jbx6244@gmail.com>
+References: <20200312171441.21144-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_101454_060881_4A61CF65 
-X-CRM114-Status: GOOD (  12.01  )
+X-CRM114-CacheID: sfid-20200312_101455_019722_97B5C883 
+X-CRM114-Status: GOOD (  12.07  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [jbx6244[at]gmail.com]
@@ -106,77 +110,56 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 A test with the command below gives for example this error:
 
-arch/arm/boot/dts/rv1108-evb.dt.yaml: usb@30140000:
+arch/arm/boot/dts/rv1108-evb.dt.yaml: usb@30160000:
 'clock-names' does not match any of the regexes: 'pinctrl-[0-9]+'
 
 'clock-names' is not a valid property name for usb_host nodes with
-compatible string 'generic-ehci', so remove them.
+compatible string 'generic-ohci', so remove them.
 
 make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/usb/generic-ehci.yaml
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/usb/generic-ohci.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
  arch/arm/boot/dts/rk322x.dtsi | 3 ---
- arch/arm/boot/dts/rk3288.dtsi | 2 --
  arch/arm/boot/dts/rv1108.dtsi | 1 -
- 3 files changed, 6 deletions(-)
+ 2 files changed, 4 deletions(-)
 
 diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
-index a0acf2ef8..6503247e9 100644
+index 6503247e9..06172ebbf 100644
 --- a/arch/arm/boot/dts/rk322x.dtsi
 +++ b/arch/arm/boot/dts/rk322x.dtsi
-@@ -722,7 +722,6 @@
- 		reg = <0x30080000 0x20000>;
- 		interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
+@@ -732,7 +732,6 @@
+ 		reg = <0x300a0000 0x20000>;
+ 		interrupts = <GIC_SPI 17 IRQ_TYPE_LEVEL_HIGH>;
  		clocks = <&cru HCLK_HOST0>, <&u2phy0>;
 -		clock-names = "usbhost", "utmi";
  		phys = <&u2phy0_host>;
  		phy-names = "usb";
  		status = "disabled";
-@@ -744,7 +743,6 @@
- 		reg = <0x300c0000 0x20000>;
- 		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
+@@ -753,7 +752,6 @@
+ 		reg = <0x300e0000 0x20000>;
+ 		interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
  		clocks = <&cru HCLK_HOST1>, <&u2phy1>;
 -		clock-names = "usbhost", "utmi";
  		phys = <&u2phy1_otg>;
  		phy-names = "usb";
  		status = "disabled";
-@@ -768,7 +766,6 @@
+@@ -774,7 +772,6 @@
+ 		reg = <0x30120000 0x20000>;
+ 		interrupts = <GIC_SPI 67 IRQ_TYPE_LEVEL_HIGH>;
  		clocks = <&cru HCLK_HOST2>, <&u2phy1>;
+-		clock-names = "usbhost", "utmi";
  		phys = <&u2phy1_host>;
  		phy-names = "usb";
--		clock-names = "usbhost", "utmi";
  		status = "disabled";
- 	};
- 
-diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
-index 4745be518..485234f6a 100644
---- a/arch/arm/boot/dts/rk3288.dtsi
-+++ b/arch/arm/boot/dts/rk3288.dtsi
-@@ -601,7 +601,6 @@
- 		reg = <0x0 0xff500000 0x0 0x100>;
- 		interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&cru HCLK_USBHOST0>;
--		clock-names = "usbhost";
- 		phys = <&usbphy1>;
- 		phy-names = "usb";
- 		status = "disabled";
-@@ -644,7 +643,6 @@
- 		reg = <0x0 0xff5c0000 0x0 0x100>;
- 		interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&cru HCLK_HSIC>;
--		clock-names = "usbhost";
- 		status = "disabled";
- 	};
- 
 diff --git a/arch/arm/boot/dts/rv1108.dtsi b/arch/arm/boot/dts/rv1108.dtsi
-index fda16f976..d33e606be 100644
+index d33e606be..153868c62 100644
 --- a/arch/arm/boot/dts/rv1108.dtsi
 +++ b/arch/arm/boot/dts/rv1108.dtsi
-@@ -495,7 +495,6 @@
- 		reg = <0x30140000 0x20000>;
- 		interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
+@@ -505,7 +505,6 @@
+ 		reg = <0x30160000 0x20000>;
+ 		interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
  		clocks = <&cru HCLK_HOST0>, <&u2phy>;
 -		clock-names = "usbhost", "utmi";
  		phys = <&u2phy_host>;
